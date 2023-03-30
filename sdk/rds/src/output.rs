@@ -2,50 +2,49 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SwitchoverReadReplicaOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+pub struct SwitchoverReadReplicaOutput  {
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl SwitchoverReadReplicaOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+    pub fn db_instance(&self) -> std::option::Option<& crate::model::DbInstance> {
         self.db_instance.as_ref()
     }
 }
 /// See [`SwitchoverReadReplicaOutput`](crate::output::SwitchoverReadReplicaOutput).
 pub mod switchover_read_replica_output {
-
+    
     /// A builder for [`SwitchoverReadReplicaOutput`](crate::output::SwitchoverReadReplicaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-        pub fn set_db_instance(
-            mut self,
-            input: std::option::Option<crate::model::DbInstance>,
-        ) -> Self {
-            self.db_instance = input;
-            self
+        pub fn set_db_instance(mut self, input: std::option::Option<crate::model::DbInstance>) -> Self {
+            self.db_instance = input; self
         }
         /// Consumes the builder and constructs a [`SwitchoverReadReplicaOutput`](crate::output::SwitchoverReadReplicaOutput).
         pub fn build(self) -> crate::output::SwitchoverReadReplicaOutput {
             crate::output::SwitchoverReadReplicaOutput {
-                db_instance: self.db_instance,
+                db_instance: self.db_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl SwitchoverReadReplicaOutput {
     /// Creates a new builder-style object to manufacture [`SwitchoverReadReplicaOutput`](crate::output::SwitchoverReadReplicaOutput).
@@ -57,50 +56,49 @@ impl SwitchoverReadReplicaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SwitchoverBlueGreenDeploymentOutput {
-    /// <p>Contains the details about a blue/green deployment.</p>
+pub struct SwitchoverBlueGreenDeploymentOutput  {
+    /// <p>Contains the details about a blue/green deployment.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
     #[doc(hidden)]
     pub blue_green_deployment: std::option::Option<crate::model::BlueGreenDeployment>,
 }
 impl SwitchoverBlueGreenDeploymentOutput {
-    /// <p>Contains the details about a blue/green deployment.</p>
+    /// <p>Contains the details about a blue/green deployment.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn blue_green_deployment(&self) -> std::option::Option<&crate::model::BlueGreenDeployment> {
+    pub fn blue_green_deployment(&self) -> std::option::Option<& crate::model::BlueGreenDeployment> {
         self.blue_green_deployment.as_ref()
     }
 }
 /// See [`SwitchoverBlueGreenDeploymentOutput`](crate::output::SwitchoverBlueGreenDeploymentOutput).
 pub mod switchover_blue_green_deployment_output {
-
+    
     /// A builder for [`SwitchoverBlueGreenDeploymentOutput`](crate::output::SwitchoverBlueGreenDeploymentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blue_green_deployment: std::option::Option<crate::model::BlueGreenDeployment>,
     }
     impl Builder {
-        /// <p>Contains the details about a blue/green deployment.</p>
+        /// <p>Contains the details about a blue/green deployment.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn blue_green_deployment(mut self, input: crate::model::BlueGreenDeployment) -> Self {
             self.blue_green_deployment = Some(input);
             self
         }
-        /// <p>Contains the details about a blue/green deployment.</p>
+        /// <p>Contains the details about a blue/green deployment.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
-        pub fn set_blue_green_deployment(
-            mut self,
-            input: std::option::Option<crate::model::BlueGreenDeployment>,
-        ) -> Self {
-            self.blue_green_deployment = input;
-            self
+        pub fn set_blue_green_deployment(mut self, input: std::option::Option<crate::model::BlueGreenDeployment>) -> Self {
+            self.blue_green_deployment = input; self
         }
         /// Consumes the builder and constructs a [`SwitchoverBlueGreenDeploymentOutput`](crate::output::SwitchoverBlueGreenDeploymentOutput).
         pub fn build(self) -> crate::output::SwitchoverBlueGreenDeploymentOutput {
             crate::output::SwitchoverBlueGreenDeploymentOutput {
-                blue_green_deployment: self.blue_green_deployment,
+                blue_green_deployment: self.blue_green_deployment
+                ,
             }
         }
     }
+    
+    
 }
 impl SwitchoverBlueGreenDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`SwitchoverBlueGreenDeploymentOutput`](crate::output::SwitchoverBlueGreenDeploymentOutput).
@@ -112,57 +110,49 @@ impl SwitchoverBlueGreenDeploymentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopDbInstanceAutomatedBackupsReplicationOutput {
+pub struct StopDbInstanceAutomatedBackupsReplicationOutput  {
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
     #[doc(hidden)]
     pub db_instance_automated_backup: std::option::Option<crate::model::DbInstanceAutomatedBackup>,
 }
 impl StopDbInstanceAutomatedBackupsReplicationOutput {
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
-    pub fn db_instance_automated_backup(
-        &self,
-    ) -> std::option::Option<&crate::model::DbInstanceAutomatedBackup> {
+    pub fn db_instance_automated_backup(&self) -> std::option::Option<& crate::model::DbInstanceAutomatedBackup> {
         self.db_instance_automated_backup.as_ref()
     }
 }
 /// See [`StopDbInstanceAutomatedBackupsReplicationOutput`](crate::output::StopDbInstanceAutomatedBackupsReplicationOutput).
 pub mod stop_db_instance_automated_backups_replication_output {
-
+    
     /// A builder for [`StopDbInstanceAutomatedBackupsReplicationOutput`](crate::output::StopDbInstanceAutomatedBackupsReplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) db_instance_automated_backup:
-            std::option::Option<crate::model::DbInstanceAutomatedBackup>,
+        pub(crate) db_instance_automated_backup: std::option::Option<crate::model::DbInstanceAutomatedBackup>,
     }
     impl Builder {
         /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
-        pub fn db_instance_automated_backup(
-            mut self,
-            input: crate::model::DbInstanceAutomatedBackup,
-        ) -> Self {
+        pub fn db_instance_automated_backup(mut self, input: crate::model::DbInstanceAutomatedBackup) -> Self {
             self.db_instance_automated_backup = Some(input);
             self
         }
         /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
-        pub fn set_db_instance_automated_backup(
-            mut self,
-            input: std::option::Option<crate::model::DbInstanceAutomatedBackup>,
-        ) -> Self {
-            self.db_instance_automated_backup = input;
-            self
+        pub fn set_db_instance_automated_backup(mut self, input: std::option::Option<crate::model::DbInstanceAutomatedBackup>) -> Self {
+            self.db_instance_automated_backup = input; self
         }
         /// Consumes the builder and constructs a [`StopDbInstanceAutomatedBackupsReplicationOutput`](crate::output::StopDbInstanceAutomatedBackupsReplicationOutput).
         pub fn build(self) -> crate::output::StopDbInstanceAutomatedBackupsReplicationOutput {
             crate::output::StopDbInstanceAutomatedBackupsReplicationOutput {
-                db_instance_automated_backup: self.db_instance_automated_backup,
+                db_instance_automated_backup: self.db_instance_automated_backup
+                ,
             }
         }
     }
+    
+    
 }
 impl StopDbInstanceAutomatedBackupsReplicationOutput {
     /// Creates a new builder-style object to manufacture [`StopDbInstanceAutomatedBackupsReplicationOutput`](crate::output::StopDbInstanceAutomatedBackupsReplicationOutput).
-    pub fn builder() -> crate::output::stop_db_instance_automated_backups_replication_output::Builder
-    {
+    pub fn builder() -> crate::output::stop_db_instance_automated_backups_replication_output::Builder {
         crate::output::stop_db_instance_automated_backups_replication_output::Builder::default()
     }
 }
@@ -170,50 +160,49 @@ impl StopDbInstanceAutomatedBackupsReplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopDbInstanceOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+pub struct StopDbInstanceOutput  {
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl StopDbInstanceOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+    pub fn db_instance(&self) -> std::option::Option<& crate::model::DbInstance> {
         self.db_instance.as_ref()
     }
 }
 /// See [`StopDbInstanceOutput`](crate::output::StopDbInstanceOutput).
 pub mod stop_db_instance_output {
-
+    
     /// A builder for [`StopDbInstanceOutput`](crate::output::StopDbInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-        pub fn set_db_instance(
-            mut self,
-            input: std::option::Option<crate::model::DbInstance>,
-        ) -> Self {
-            self.db_instance = input;
-            self
+        pub fn set_db_instance(mut self, input: std::option::Option<crate::model::DbInstance>) -> Self {
+            self.db_instance = input; self
         }
         /// Consumes the builder and constructs a [`StopDbInstanceOutput`](crate::output::StopDbInstanceOutput).
         pub fn build(self) -> crate::output::StopDbInstanceOutput {
             crate::output::StopDbInstanceOutput {
-                db_instance: self.db_instance,
+                db_instance: self.db_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl StopDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`StopDbInstanceOutput`](crate::output::StopDbInstanceOutput).
@@ -225,62 +214,61 @@ impl StopDbInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+pub struct StopDbClusterOutput  {
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl StopDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<& crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 /// See [`StopDbClusterOutput`](crate::output::StopDbClusterOutput).
 pub mod stop_db_cluster_output {
-
+    
     /// A builder for [`StopDbClusterOutput`](crate::output::StopDbClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-        pub fn set_db_cluster(
-            mut self,
-            input: std::option::Option<crate::model::DbCluster>,
-        ) -> Self {
-            self.db_cluster = input;
-            self
+        pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
+            self.db_cluster = input; self
         }
         /// Consumes the builder and constructs a [`StopDbClusterOutput`](crate::output::StopDbClusterOutput).
         pub fn build(self) -> crate::output::StopDbClusterOutput {
             crate::output::StopDbClusterOutput {
-                db_cluster: self.db_cluster,
+                db_cluster: self.db_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl StopDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`StopDbClusterOutput`](crate::output::StopDbClusterOutput).
@@ -292,8 +280,8 @@ impl StopDbClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopActivityStreamOutput {
-    /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p>
+pub struct StopActivityStreamOutput  {
+    /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p> 
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -305,23 +293,23 @@ pub struct StopActivityStreamOutput {
     pub status: std::option::Option<crate::model::ActivityStreamStatus>,
 }
 impl StopActivityStreamOutput {
-    /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p>
+    /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p> 
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
-    pub fn kinesis_stream_name(&self) -> std::option::Option<&str> {
+    pub fn kinesis_stream_name(&self) -> std::option::Option<& str> {
         self.kinesis_stream_name.as_deref()
     }
     /// <p>The status of the database activity stream.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ActivityStreamStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ActivityStreamStatus> {
         self.status.as_ref()
     }
 }
 /// See [`StopActivityStreamOutput`](crate::output::StopActivityStreamOutput).
 pub mod stop_activity_stream_output {
-
+    
     /// A builder for [`StopActivityStreamOutput`](crate::output::StopActivityStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -330,17 +318,16 @@ pub mod stop_activity_stream_output {
         pub(crate) status: std::option::Option<crate::model::ActivityStreamStatus>,
     }
     impl Builder {
-        /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p>
+        /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p> 
         /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p>
+        /// <p>The Amazon Web Services KMS key identifier used for encrypting messages in the database activity stream.</p> 
         /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
         pub fn kinesis_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -348,12 +335,8 @@ pub mod stop_activity_stream_output {
             self
         }
         /// <p>The name of the Amazon Kinesis data stream used for the database activity stream.</p>
-        pub fn set_kinesis_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.kinesis_stream_name = input;
-            self
+        pub fn set_kinesis_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kinesis_stream_name = input; self
         }
         /// <p>The status of the database activity stream.</p>
         pub fn status(mut self, input: crate::model::ActivityStreamStatus) -> Self {
@@ -361,22 +344,23 @@ pub mod stop_activity_stream_output {
             self
         }
         /// <p>The status of the database activity stream.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ActivityStreamStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ActivityStreamStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`StopActivityStreamOutput`](crate::output::StopActivityStreamOutput).
         pub fn build(self) -> crate::output::StopActivityStreamOutput {
             crate::output::StopActivityStreamOutput {
-                kms_key_id: self.kms_key_id,
-                kinesis_stream_name: self.kinesis_stream_name,
-                status: self.status,
+                kms_key_id: self.kms_key_id
+                ,
+                kinesis_stream_name: self.kinesis_stream_name
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl StopActivityStreamOutput {
     /// Creates a new builder-style object to manufacture [`StopActivityStreamOutput`](crate::output::StopActivityStreamOutput).
@@ -385,23 +369,23 @@ impl StopActivityStreamOutput {
     }
 }
 
-/// <p>Contains the details of a snapshot export to Amazon S3.</p>
+/// <p>Contains the details of a snapshot export to Amazon S3.</p> 
 /// <p>This data type is used as a response element in the <code>DescribeExportTasks</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartExportTaskOutput {
+pub struct StartExportTaskOutput  {
     /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to.</p>
     #[doc(hidden)]
     pub export_task_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
     #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
-    /// <p>The data exported from the snapshot. Valid values are the following:</p>
-    /// <ul>
-    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
-    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
-    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
-    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+    /// <p>The data exported from the snapshot. Valid values are the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li> 
+    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> 
+    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
+    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub export_only: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -447,53 +431,53 @@ pub struct StartExportTaskOutput {
 }
 impl StartExportTaskOutput {
     /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to.</p>
-    pub fn export_task_identifier(&self) -> std::option::Option<&str> {
+    pub fn export_task_identifier(&self) -> std::option::Option<& str> {
         self.export_task_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> std::option::Option<& str> {
         self.source_arn.as_deref()
     }
-    /// <p>The data exported from the snapshot. Valid values are the following:</p>
-    /// <ul>
-    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
-    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
-    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
-    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+    /// <p>The data exported from the snapshot. Valid values are the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li> 
+    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> 
+    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
+    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
     /// </ul>
-    pub fn export_only(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn export_only(&self) -> std::option::Option<& [std::string::String]> {
         self.export_only.as_deref()
     }
     /// <p>The time that the snapshot was created.</p>
-    pub fn snapshot_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn snapshot_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.snapshot_time.as_ref()
     }
     /// <p>The time that the snapshot export task started.</p>
-    pub fn task_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn task_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.task_start_time.as_ref()
     }
     /// <p>The time that the snapshot export task completed.</p>
-    pub fn task_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn task_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.task_end_time.as_ref()
     }
     /// <p>The Amazon S3 bucket that the snapshot is exported to.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The Amazon S3 bucket prefix that is the file name and path of the exported snapshot.</p>
-    pub fn s3_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_prefix(&self) -> std::option::Option<& str> {
         self.s3_prefix.as_deref()
     }
     /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot.</p>
-    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export must have encryption and decryption permissions to use this KMS key.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The progress status of the export task.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The progress of the snapshot export task as a percentage.</p>
@@ -505,21 +489,21 @@ impl StartExportTaskOutput {
         self.total_extracted_data_in_gb
     }
     /// <p>The reason the export failed, if it failed.</p>
-    pub fn failure_cause(&self) -> std::option::Option<&str> {
+    pub fn failure_cause(&self) -> std::option::Option<& str> {
         self.failure_cause.as_deref()
     }
     /// <p>A warning about the snapshot export task.</p>
-    pub fn warning_message(&self) -> std::option::Option<&str> {
+    pub fn warning_message(&self) -> std::option::Option<& str> {
         self.warning_message.as_deref()
     }
     /// <p>The type of source for the export.</p>
-    pub fn source_type(&self) -> std::option::Option<&crate::model::ExportSourceType> {
+    pub fn source_type(&self) -> std::option::Option<& crate::model::ExportSourceType> {
         self.source_type.as_ref()
     }
 }
 /// See [`StartExportTaskOutput`](crate::output::StartExportTaskOutput).
 pub mod start_export_task_output {
-
+    
     /// A builder for [`StartExportTaskOutput`](crate::output::StartExportTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -547,12 +531,8 @@ pub mod start_export_task_output {
             self
         }
         /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to.</p>
-        pub fn set_export_task_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.export_task_identifier = input;
-            self
+        pub fn set_export_task_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.export_task_identifier = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -561,39 +541,34 @@ pub mod start_export_task_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_arn = input;
-            self
+            self.source_arn = input; self
         }
         /// Appends an item to `export_only`.
         ///
         /// To override the contents of this collection use [`set_export_only`](Self::set_export_only).
         ///
-        /// <p>The data exported from the snapshot. Valid values are the following:</p>
-        /// <ul>
-        /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
-        /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
-        /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
-        /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+        /// <p>The data exported from the snapshot. Valid values are the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li> 
+        /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> 
+        /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
+        /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
         /// </ul>
         pub fn export_only(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.export_only.unwrap_or_default();
-            v.push(input.into());
-            self.export_only = Some(v);
-            self
+                            v.push(input.into());
+                            self.export_only = Some(v);
+                            self
         }
-        /// <p>The data exported from the snapshot. Valid values are the following:</p>
-        /// <ul>
-        /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
-        /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
-        /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
-        /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+        /// <p>The data exported from the snapshot. Valid values are the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li> 
+        /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> 
+        /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
+        /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
         /// </ul>
-        pub fn set_export_only(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.export_only = input;
-            self
+        pub fn set_export_only(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.export_only = input; self
         }
         /// <p>The time that the snapshot was created.</p>
         pub fn snapshot_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -601,12 +576,8 @@ pub mod start_export_task_output {
             self
         }
         /// <p>The time that the snapshot was created.</p>
-        pub fn set_snapshot_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.snapshot_time = input;
-            self
+        pub fn set_snapshot_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.snapshot_time = input; self
         }
         /// <p>The time that the snapshot export task started.</p>
         pub fn task_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -614,12 +585,8 @@ pub mod start_export_task_output {
             self
         }
         /// <p>The time that the snapshot export task started.</p>
-        pub fn set_task_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.task_start_time = input;
-            self
+        pub fn set_task_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.task_start_time = input; self
         }
         /// <p>The time that the snapshot export task completed.</p>
         pub fn task_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -627,12 +594,8 @@ pub mod start_export_task_output {
             self
         }
         /// <p>The time that the snapshot export task completed.</p>
-        pub fn set_task_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.task_end_time = input;
-            self
+        pub fn set_task_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.task_end_time = input; self
         }
         /// <p>The Amazon S3 bucket that the snapshot is exported to.</p>
         pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -641,8 +604,7 @@ pub mod start_export_task_output {
         }
         /// <p>The Amazon S3 bucket that the snapshot is exported to.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = input;
-            self
+            self.s3_bucket = input; self
         }
         /// <p>The Amazon S3 bucket prefix that is the file name and path of the exported snapshot.</p>
         pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -651,8 +613,7 @@ pub mod start_export_task_output {
         }
         /// <p>The Amazon S3 bucket prefix that is the file name and path of the exported snapshot.</p>
         pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_prefix = input;
-            self
+            self.s3_prefix = input; self
         }
         /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -661,8 +622,7 @@ pub mod start_export_task_output {
         }
         /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_role_arn = input;
-            self
+            self.iam_role_arn = input; self
         }
         /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export must have encryption and decryption permissions to use this KMS key.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -671,8 +631,7 @@ pub mod start_export_task_output {
         }
         /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export must have encryption and decryption permissions to use this KMS key.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>The progress status of the export task.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -681,8 +640,7 @@ pub mod start_export_task_output {
         }
         /// <p>The progress status of the export task.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The progress of the snapshot export task as a percentage.</p>
         pub fn percent_progress(mut self, input: i32) -> Self {
@@ -691,8 +649,7 @@ pub mod start_export_task_output {
         }
         /// <p>The progress of the snapshot export task as a percentage.</p>
         pub fn set_percent_progress(mut self, input: std::option::Option<i32>) -> Self {
-            self.percent_progress = input;
-            self
+            self.percent_progress = input; self
         }
         /// <p>The total amount of data exported, in gigabytes.</p>
         pub fn total_extracted_data_in_gb(mut self, input: i32) -> Self {
@@ -701,8 +658,7 @@ pub mod start_export_task_output {
         }
         /// <p>The total amount of data exported, in gigabytes.</p>
         pub fn set_total_extracted_data_in_gb(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_extracted_data_in_gb = input;
-            self
+            self.total_extracted_data_in_gb = input; self
         }
         /// <p>The reason the export failed, if it failed.</p>
         pub fn failure_cause(mut self, input: impl Into<std::string::String>) -> Self {
@@ -710,12 +666,8 @@ pub mod start_export_task_output {
             self
         }
         /// <p>The reason the export failed, if it failed.</p>
-        pub fn set_failure_cause(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_cause = input;
-            self
+        pub fn set_failure_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_cause = input; self
         }
         /// <p>A warning about the snapshot export task.</p>
         pub fn warning_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -723,12 +675,8 @@ pub mod start_export_task_output {
             self
         }
         /// <p>A warning about the snapshot export task.</p>
-        pub fn set_warning_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.warning_message = input;
-            self
+        pub fn set_warning_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.warning_message = input; self
         }
         /// <p>The type of source for the export.</p>
         pub fn source_type(mut self, input: crate::model::ExportSourceType) -> Self {
@@ -736,35 +684,51 @@ pub mod start_export_task_output {
             self
         }
         /// <p>The type of source for the export.</p>
-        pub fn set_source_type(
-            mut self,
-            input: std::option::Option<crate::model::ExportSourceType>,
-        ) -> Self {
-            self.source_type = input;
-            self
+        pub fn set_source_type(mut self, input: std::option::Option<crate::model::ExportSourceType>) -> Self {
+            self.source_type = input; self
         }
         /// Consumes the builder and constructs a [`StartExportTaskOutput`](crate::output::StartExportTaskOutput).
         pub fn build(self) -> crate::output::StartExportTaskOutput {
             crate::output::StartExportTaskOutput {
-                export_task_identifier: self.export_task_identifier,
-                source_arn: self.source_arn,
-                export_only: self.export_only,
-                snapshot_time: self.snapshot_time,
-                task_start_time: self.task_start_time,
-                task_end_time: self.task_end_time,
-                s3_bucket: self.s3_bucket,
-                s3_prefix: self.s3_prefix,
-                iam_role_arn: self.iam_role_arn,
-                kms_key_id: self.kms_key_id,
-                status: self.status,
-                percent_progress: self.percent_progress.unwrap_or_default(),
-                total_extracted_data_in_gb: self.total_extracted_data_in_gb.unwrap_or_default(),
-                failure_cause: self.failure_cause,
-                warning_message: self.warning_message,
-                source_type: self.source_type,
+                export_task_identifier: self.export_task_identifier
+                ,
+                source_arn: self.source_arn
+                ,
+                export_only: self.export_only
+                ,
+                snapshot_time: self.snapshot_time
+                ,
+                task_start_time: self.task_start_time
+                ,
+                task_end_time: self.task_end_time
+                ,
+                s3_bucket: self.s3_bucket
+                ,
+                s3_prefix: self.s3_prefix
+                ,
+                iam_role_arn: self.iam_role_arn
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                status: self.status
+                ,
+                percent_progress: self.percent_progress
+                    .unwrap_or_default()
+                ,
+                total_extracted_data_in_gb: self.total_extracted_data_in_gb
+                    .unwrap_or_default()
+                ,
+                failure_cause: self.failure_cause
+                ,
+                warning_message: self.warning_message
+                ,
+                source_type: self.source_type
+                ,
             }
         }
     }
+    
+    
 }
 impl StartExportTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartExportTaskOutput`](crate::output::StartExportTaskOutput).
@@ -776,57 +740,49 @@ impl StartExportTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDbInstanceAutomatedBackupsReplicationOutput {
+pub struct StartDbInstanceAutomatedBackupsReplicationOutput  {
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
     #[doc(hidden)]
     pub db_instance_automated_backup: std::option::Option<crate::model::DbInstanceAutomatedBackup>,
 }
 impl StartDbInstanceAutomatedBackupsReplicationOutput {
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
-    pub fn db_instance_automated_backup(
-        &self,
-    ) -> std::option::Option<&crate::model::DbInstanceAutomatedBackup> {
+    pub fn db_instance_automated_backup(&self) -> std::option::Option<& crate::model::DbInstanceAutomatedBackup> {
         self.db_instance_automated_backup.as_ref()
     }
 }
 /// See [`StartDbInstanceAutomatedBackupsReplicationOutput`](crate::output::StartDbInstanceAutomatedBackupsReplicationOutput).
 pub mod start_db_instance_automated_backups_replication_output {
-
+    
     /// A builder for [`StartDbInstanceAutomatedBackupsReplicationOutput`](crate::output::StartDbInstanceAutomatedBackupsReplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) db_instance_automated_backup:
-            std::option::Option<crate::model::DbInstanceAutomatedBackup>,
+        pub(crate) db_instance_automated_backup: std::option::Option<crate::model::DbInstanceAutomatedBackup>,
     }
     impl Builder {
         /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
-        pub fn db_instance_automated_backup(
-            mut self,
-            input: crate::model::DbInstanceAutomatedBackup,
-        ) -> Self {
+        pub fn db_instance_automated_backup(mut self, input: crate::model::DbInstanceAutomatedBackup) -> Self {
             self.db_instance_automated_backup = Some(input);
             self
         }
         /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
-        pub fn set_db_instance_automated_backup(
-            mut self,
-            input: std::option::Option<crate::model::DbInstanceAutomatedBackup>,
-        ) -> Self {
-            self.db_instance_automated_backup = input;
-            self
+        pub fn set_db_instance_automated_backup(mut self, input: std::option::Option<crate::model::DbInstanceAutomatedBackup>) -> Self {
+            self.db_instance_automated_backup = input; self
         }
         /// Consumes the builder and constructs a [`StartDbInstanceAutomatedBackupsReplicationOutput`](crate::output::StartDbInstanceAutomatedBackupsReplicationOutput).
         pub fn build(self) -> crate::output::StartDbInstanceAutomatedBackupsReplicationOutput {
             crate::output::StartDbInstanceAutomatedBackupsReplicationOutput {
-                db_instance_automated_backup: self.db_instance_automated_backup,
+                db_instance_automated_backup: self.db_instance_automated_backup
+                ,
             }
         }
     }
+    
+    
 }
 impl StartDbInstanceAutomatedBackupsReplicationOutput {
     /// Creates a new builder-style object to manufacture [`StartDbInstanceAutomatedBackupsReplicationOutput`](crate::output::StartDbInstanceAutomatedBackupsReplicationOutput).
-    pub fn builder(
-    ) -> crate::output::start_db_instance_automated_backups_replication_output::Builder {
+    pub fn builder() -> crate::output::start_db_instance_automated_backups_replication_output::Builder {
         crate::output::start_db_instance_automated_backups_replication_output::Builder::default()
     }
 }
@@ -834,50 +790,49 @@ impl StartDbInstanceAutomatedBackupsReplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDbInstanceOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+pub struct StartDbInstanceOutput  {
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl StartDbInstanceOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+    pub fn db_instance(&self) -> std::option::Option<& crate::model::DbInstance> {
         self.db_instance.as_ref()
     }
 }
 /// See [`StartDbInstanceOutput`](crate::output::StartDbInstanceOutput).
 pub mod start_db_instance_output {
-
+    
     /// A builder for [`StartDbInstanceOutput`](crate::output::StartDbInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-        pub fn set_db_instance(
-            mut self,
-            input: std::option::Option<crate::model::DbInstance>,
-        ) -> Self {
-            self.db_instance = input;
-            self
+        pub fn set_db_instance(mut self, input: std::option::Option<crate::model::DbInstance>) -> Self {
+            self.db_instance = input; self
         }
         /// Consumes the builder and constructs a [`StartDbInstanceOutput`](crate::output::StartDbInstanceOutput).
         pub fn build(self) -> crate::output::StartDbInstanceOutput {
             crate::output::StartDbInstanceOutput {
-                db_instance: self.db_instance,
+                db_instance: self.db_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl StartDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`StartDbInstanceOutput`](crate::output::StartDbInstanceOutput).
@@ -889,62 +844,61 @@ impl StartDbInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+pub struct StartDbClusterOutput  {
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl StartDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<& crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 /// See [`StartDbClusterOutput`](crate::output::StartDbClusterOutput).
 pub mod start_db_cluster_output {
-
+    
     /// A builder for [`StartDbClusterOutput`](crate::output::StartDbClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-        pub fn set_db_cluster(
-            mut self,
-            input: std::option::Option<crate::model::DbCluster>,
-        ) -> Self {
-            self.db_cluster = input;
-            self
+        pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
+            self.db_cluster = input; self
         }
         /// Consumes the builder and constructs a [`StartDbClusterOutput`](crate::output::StartDbClusterOutput).
         pub fn build(self) -> crate::output::StartDbClusterOutput {
             crate::output::StartDbClusterOutput {
-                db_cluster: self.db_cluster,
+                db_cluster: self.db_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl StartDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`StartDbClusterOutput`](crate::output::StartDbClusterOutput).
@@ -956,7 +910,7 @@ impl StartDbClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartActivityStreamOutput {
+pub struct StartActivityStreamOutput  {
     /// <p>The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -978,19 +932,19 @@ pub struct StartActivityStreamOutput {
 }
 impl StartActivityStreamOutput {
     /// <p>The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
-    pub fn kinesis_stream_name(&self) -> std::option::Option<&str> {
+    pub fn kinesis_stream_name(&self) -> std::option::Option<& str> {
         self.kinesis_stream_name.as_deref()
     }
     /// <p>The status of the database activity stream.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ActivityStreamStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ActivityStreamStatus> {
         self.status.as_ref()
     }
     /// <p>The mode of the database activity stream.</p>
-    pub fn mode(&self) -> std::option::Option<&crate::model::ActivityStreamMode> {
+    pub fn mode(&self) -> std::option::Option<& crate::model::ActivityStreamMode> {
         self.mode.as_ref()
     }
     /// <p>Indicates whether or not the database activity stream will start as soon as possible, regardless of the maintenance window for the database.</p>
@@ -1004,7 +958,7 @@ impl StartActivityStreamOutput {
 }
 /// See [`StartActivityStreamOutput`](crate::output::StartActivityStreamOutput).
 pub mod start_activity_stream_output {
-
+    
     /// A builder for [`StartActivityStreamOutput`](crate::output::StartActivityStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1023,8 +977,7 @@ pub mod start_activity_stream_output {
         }
         /// <p>The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
         pub fn kinesis_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1032,12 +985,8 @@ pub mod start_activity_stream_output {
             self
         }
         /// <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
-        pub fn set_kinesis_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.kinesis_stream_name = input;
-            self
+        pub fn set_kinesis_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kinesis_stream_name = input; self
         }
         /// <p>The status of the database activity stream.</p>
         pub fn status(mut self, input: crate::model::ActivityStreamStatus) -> Self {
@@ -1045,12 +994,8 @@ pub mod start_activity_stream_output {
             self
         }
         /// <p>The status of the database activity stream.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ActivityStreamStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ActivityStreamStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The mode of the database activity stream.</p>
         pub fn mode(mut self, input: crate::model::ActivityStreamMode) -> Self {
@@ -1058,12 +1003,8 @@ pub mod start_activity_stream_output {
             self
         }
         /// <p>The mode of the database activity stream.</p>
-        pub fn set_mode(
-            mut self,
-            input: std::option::Option<crate::model::ActivityStreamMode>,
-        ) -> Self {
-            self.mode = input;
-            self
+        pub fn set_mode(mut self, input: std::option::Option<crate::model::ActivityStreamMode>) -> Self {
+            self.mode = input; self
         }
         /// <p>Indicates whether or not the database activity stream will start as soon as possible, regardless of the maintenance window for the database.</p>
         pub fn apply_immediately(mut self, input: bool) -> Self {
@@ -1072,8 +1013,7 @@ pub mod start_activity_stream_output {
         }
         /// <p>Indicates whether or not the database activity stream will start as soon as possible, regardless of the maintenance window for the database.</p>
         pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
-            self.apply_immediately = input;
-            self
+            self.apply_immediately = input; self
         }
         /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
         pub fn engine_native_audit_fields_included(mut self, input: bool) -> Self {
@@ -1081,25 +1021,30 @@ pub mod start_activity_stream_output {
             self
         }
         /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
-        pub fn set_engine_native_audit_fields_included(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.engine_native_audit_fields_included = input;
-            self
+        pub fn set_engine_native_audit_fields_included(mut self, input: std::option::Option<bool>) -> Self {
+            self.engine_native_audit_fields_included = input; self
         }
         /// Consumes the builder and constructs a [`StartActivityStreamOutput`](crate::output::StartActivityStreamOutput).
         pub fn build(self) -> crate::output::StartActivityStreamOutput {
             crate::output::StartActivityStreamOutput {
-                kms_key_id: self.kms_key_id,
-                kinesis_stream_name: self.kinesis_stream_name,
-                status: self.status,
-                mode: self.mode,
-                apply_immediately: self.apply_immediately.unwrap_or_default(),
-                engine_native_audit_fields_included: self.engine_native_audit_fields_included,
+                kms_key_id: self.kms_key_id
+                ,
+                kinesis_stream_name: self.kinesis_stream_name
+                ,
+                status: self.status
+                ,
+                mode: self.mode
+                ,
+                apply_immediately: self.apply_immediately
+                    .unwrap_or_default()
+                ,
+                engine_native_audit_fields_included: self.engine_native_audit_fields_included
+                ,
             }
         }
     }
+    
+    
 }
 impl StartActivityStreamOutput {
     /// Creates a new builder-style object to manufacture [`StartActivityStreamOutput`](crate::output::StartActivityStreamOutput).
@@ -1111,50 +1056,49 @@ impl StartActivityStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RevokeDbSecurityGroupIngressOutput {
-    /// <p>Contains the details for an Amazon RDS DB security group.</p>
+pub struct RevokeDbSecurityGroupIngressOutput  {
+    /// <p>Contains the details for an Amazon RDS DB security group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
     #[doc(hidden)]
     pub db_security_group: std::option::Option<crate::model::DbSecurityGroup>,
 }
 impl RevokeDbSecurityGroupIngressOutput {
-    /// <p>Contains the details for an Amazon RDS DB security group.</p>
+    /// <p>Contains the details for an Amazon RDS DB security group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
-    pub fn db_security_group(&self) -> std::option::Option<&crate::model::DbSecurityGroup> {
+    pub fn db_security_group(&self) -> std::option::Option<& crate::model::DbSecurityGroup> {
         self.db_security_group.as_ref()
     }
 }
 /// See [`RevokeDbSecurityGroupIngressOutput`](crate::output::RevokeDbSecurityGroupIngressOutput).
 pub mod revoke_db_security_group_ingress_output {
-
+    
     /// A builder for [`RevokeDbSecurityGroupIngressOutput`](crate::output::RevokeDbSecurityGroupIngressOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_security_group: std::option::Option<crate::model::DbSecurityGroup>,
     }
     impl Builder {
-        /// <p>Contains the details for an Amazon RDS DB security group.</p>
+        /// <p>Contains the details for an Amazon RDS DB security group.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
         pub fn db_security_group(mut self, input: crate::model::DbSecurityGroup) -> Self {
             self.db_security_group = Some(input);
             self
         }
-        /// <p>Contains the details for an Amazon RDS DB security group.</p>
+        /// <p>Contains the details for an Amazon RDS DB security group.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
-        pub fn set_db_security_group(
-            mut self,
-            input: std::option::Option<crate::model::DbSecurityGroup>,
-        ) -> Self {
-            self.db_security_group = input;
-            self
+        pub fn set_db_security_group(mut self, input: std::option::Option<crate::model::DbSecurityGroup>) -> Self {
+            self.db_security_group = input; self
         }
         /// Consumes the builder and constructs a [`RevokeDbSecurityGroupIngressOutput`](crate::output::RevokeDbSecurityGroupIngressOutput).
         pub fn build(self) -> crate::output::RevokeDbSecurityGroupIngressOutput {
             crate::output::RevokeDbSecurityGroupIngressOutput {
-                db_security_group: self.db_security_group,
+                db_security_group: self.db_security_group
+                ,
             }
         }
     }
+    
+    
 }
 impl RevokeDbSecurityGroupIngressOutput {
     /// Creates a new builder-style object to manufacture [`RevokeDbSecurityGroupIngressOutput`](crate::output::RevokeDbSecurityGroupIngressOutput).
@@ -1166,50 +1110,49 @@ impl RevokeDbSecurityGroupIngressOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreDbInstanceToPointInTimeOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+pub struct RestoreDbInstanceToPointInTimeOutput  {
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl RestoreDbInstanceToPointInTimeOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+    pub fn db_instance(&self) -> std::option::Option<& crate::model::DbInstance> {
         self.db_instance.as_ref()
     }
 }
 /// See [`RestoreDbInstanceToPointInTimeOutput`](crate::output::RestoreDbInstanceToPointInTimeOutput).
 pub mod restore_db_instance_to_point_in_time_output {
-
+    
     /// A builder for [`RestoreDbInstanceToPointInTimeOutput`](crate::output::RestoreDbInstanceToPointInTimeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-        pub fn set_db_instance(
-            mut self,
-            input: std::option::Option<crate::model::DbInstance>,
-        ) -> Self {
-            self.db_instance = input;
-            self
+        pub fn set_db_instance(mut self, input: std::option::Option<crate::model::DbInstance>) -> Self {
+            self.db_instance = input; self
         }
         /// Consumes the builder and constructs a [`RestoreDbInstanceToPointInTimeOutput`](crate::output::RestoreDbInstanceToPointInTimeOutput).
         pub fn build(self) -> crate::output::RestoreDbInstanceToPointInTimeOutput {
             crate::output::RestoreDbInstanceToPointInTimeOutput {
-                db_instance: self.db_instance,
+                db_instance: self.db_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl RestoreDbInstanceToPointInTimeOutput {
     /// Creates a new builder-style object to manufacture [`RestoreDbInstanceToPointInTimeOutput`](crate::output::RestoreDbInstanceToPointInTimeOutput).
@@ -1221,50 +1164,49 @@ impl RestoreDbInstanceToPointInTimeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreDbInstanceFromS3Output {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+pub struct RestoreDbInstanceFromS3Output  {
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl RestoreDbInstanceFromS3Output {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+    pub fn db_instance(&self) -> std::option::Option<& crate::model::DbInstance> {
         self.db_instance.as_ref()
     }
 }
 /// See [`RestoreDbInstanceFromS3Output`](crate::output::RestoreDbInstanceFromS3Output).
 pub mod restore_db_instance_from_s3_output {
-
+    
     /// A builder for [`RestoreDbInstanceFromS3Output`](crate::output::RestoreDbInstanceFromS3Output).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-        pub fn set_db_instance(
-            mut self,
-            input: std::option::Option<crate::model::DbInstance>,
-        ) -> Self {
-            self.db_instance = input;
-            self
+        pub fn set_db_instance(mut self, input: std::option::Option<crate::model::DbInstance>) -> Self {
+            self.db_instance = input; self
         }
         /// Consumes the builder and constructs a [`RestoreDbInstanceFromS3Output`](crate::output::RestoreDbInstanceFromS3Output).
         pub fn build(self) -> crate::output::RestoreDbInstanceFromS3Output {
             crate::output::RestoreDbInstanceFromS3Output {
-                db_instance: self.db_instance,
+                db_instance: self.db_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl RestoreDbInstanceFromS3Output {
     /// Creates a new builder-style object to manufacture [`RestoreDbInstanceFromS3Output`](crate::output::RestoreDbInstanceFromS3Output).
@@ -1276,50 +1218,49 @@ impl RestoreDbInstanceFromS3Output {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreDbInstanceFromDbSnapshotOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+pub struct RestoreDbInstanceFromDbSnapshotOutput  {
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl RestoreDbInstanceFromDbSnapshotOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+    pub fn db_instance(&self) -> std::option::Option<& crate::model::DbInstance> {
         self.db_instance.as_ref()
     }
 }
 /// See [`RestoreDbInstanceFromDbSnapshotOutput`](crate::output::RestoreDbInstanceFromDbSnapshotOutput).
 pub mod restore_db_instance_from_db_snapshot_output {
-
+    
     /// A builder for [`RestoreDbInstanceFromDbSnapshotOutput`](crate::output::RestoreDbInstanceFromDbSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-        pub fn set_db_instance(
-            mut self,
-            input: std::option::Option<crate::model::DbInstance>,
-        ) -> Self {
-            self.db_instance = input;
-            self
+        pub fn set_db_instance(mut self, input: std::option::Option<crate::model::DbInstance>) -> Self {
+            self.db_instance = input; self
         }
         /// Consumes the builder and constructs a [`RestoreDbInstanceFromDbSnapshotOutput`](crate::output::RestoreDbInstanceFromDbSnapshotOutput).
         pub fn build(self) -> crate::output::RestoreDbInstanceFromDbSnapshotOutput {
             crate::output::RestoreDbInstanceFromDbSnapshotOutput {
-                db_instance: self.db_instance,
+                db_instance: self.db_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl RestoreDbInstanceFromDbSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`RestoreDbInstanceFromDbSnapshotOutput`](crate::output::RestoreDbInstanceFromDbSnapshotOutput).
@@ -1331,62 +1272,61 @@ impl RestoreDbInstanceFromDbSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreDbClusterToPointInTimeOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+pub struct RestoreDbClusterToPointInTimeOutput  {
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl RestoreDbClusterToPointInTimeOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<& crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 /// See [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput).
 pub mod restore_db_cluster_to_point_in_time_output {
-
+    
     /// A builder for [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-        pub fn set_db_cluster(
-            mut self,
-            input: std::option::Option<crate::model::DbCluster>,
-        ) -> Self {
-            self.db_cluster = input;
-            self
+        pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
+            self.db_cluster = input; self
         }
         /// Consumes the builder and constructs a [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput).
         pub fn build(self) -> crate::output::RestoreDbClusterToPointInTimeOutput {
             crate::output::RestoreDbClusterToPointInTimeOutput {
-                db_cluster: self.db_cluster,
+                db_cluster: self.db_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl RestoreDbClusterToPointInTimeOutput {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterToPointInTimeOutput`](crate::output::RestoreDbClusterToPointInTimeOutput).
@@ -1398,62 +1338,61 @@ impl RestoreDbClusterToPointInTimeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreDbClusterFromSnapshotOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+pub struct RestoreDbClusterFromSnapshotOutput  {
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl RestoreDbClusterFromSnapshotOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<& crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 /// See [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput).
 pub mod restore_db_cluster_from_snapshot_output {
-
+    
     /// A builder for [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-        pub fn set_db_cluster(
-            mut self,
-            input: std::option::Option<crate::model::DbCluster>,
-        ) -> Self {
-            self.db_cluster = input;
-            self
+        pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
+            self.db_cluster = input; self
         }
         /// Consumes the builder and constructs a [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput).
         pub fn build(self) -> crate::output::RestoreDbClusterFromSnapshotOutput {
             crate::output::RestoreDbClusterFromSnapshotOutput {
-                db_cluster: self.db_cluster,
+                db_cluster: self.db_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl RestoreDbClusterFromSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromSnapshotOutput`](crate::output::RestoreDbClusterFromSnapshotOutput).
@@ -1465,62 +1404,61 @@ impl RestoreDbClusterFromSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreDbClusterFromS3Output {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+pub struct RestoreDbClusterFromS3Output  {
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl RestoreDbClusterFromS3Output {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<& crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 /// See [`RestoreDbClusterFromS3Output`](crate::output::RestoreDbClusterFromS3Output).
 pub mod restore_db_cluster_from_s3_output {
-
+    
     /// A builder for [`RestoreDbClusterFromS3Output`](crate::output::RestoreDbClusterFromS3Output).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-        pub fn set_db_cluster(
-            mut self,
-            input: std::option::Option<crate::model::DbCluster>,
-        ) -> Self {
-            self.db_cluster = input;
-            self
+        pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
+            self.db_cluster = input; self
         }
         /// Consumes the builder and constructs a [`RestoreDbClusterFromS3Output`](crate::output::RestoreDbClusterFromS3Output).
         pub fn build(self) -> crate::output::RestoreDbClusterFromS3Output {
             crate::output::RestoreDbClusterFromS3Output {
-                db_cluster: self.db_cluster,
+                db_cluster: self.db_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl RestoreDbClusterFromS3Output {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromS3Output`](crate::output::RestoreDbClusterFromS3Output).
@@ -1532,20 +1470,20 @@ impl RestoreDbClusterFromS3Output {
 /// <p>Contains the result of a successful invocation of the <code>ModifyDBParameterGroup</code> or <code>ResetDBParameterGroup</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetDbParameterGroupOutput {
+pub struct ResetDbParameterGroupOutput  {
     /// <p>The name of the DB parameter group.</p>
     #[doc(hidden)]
     pub db_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl ResetDbParameterGroupOutput {
     /// <p>The name of the DB parameter group.</p>
-    pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_parameter_group_name(&self) -> std::option::Option<& str> {
         self.db_parameter_group_name.as_deref()
     }
 }
 /// See [`ResetDbParameterGroupOutput`](crate::output::ResetDbParameterGroupOutput).
 pub mod reset_db_parameter_group_output {
-
+    
     /// A builder for [`ResetDbParameterGroupOutput`](crate::output::ResetDbParameterGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1558,20 +1496,19 @@ pub mod reset_db_parameter_group_output {
             self
         }
         /// <p>The name of the DB parameter group.</p>
-        pub fn set_db_parameter_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_parameter_group_name = input;
-            self
+        pub fn set_db_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_parameter_group_name = input; self
         }
         /// Consumes the builder and constructs a [`ResetDbParameterGroupOutput`](crate::output::ResetDbParameterGroupOutput).
         pub fn build(self) -> crate::output::ResetDbParameterGroupOutput {
             crate::output::ResetDbParameterGroupOutput {
-                db_parameter_group_name: self.db_parameter_group_name,
+                db_parameter_group_name: self.db_parameter_group_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ResetDbParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`ResetDbParameterGroupOutput`](crate::output::ResetDbParameterGroupOutput).
@@ -1583,81 +1520,77 @@ impl ResetDbParameterGroupOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetDbClusterParameterGroupOutput {
-    /// <p>The name of the DB cluster parameter group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// </ul> <note>
-    /// <p>This value is stored as a lowercase string.</p>
+pub struct ResetDbClusterParameterGroupOutput  {
+    /// <p>The name of the DB cluster parameter group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li> 
+    /// <li> <p>First character must be a letter</p> </li> 
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> <note> 
+    /// <p>This value is stored as a lowercase string.</p> 
     /// </note>
     #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl ResetDbClusterParameterGroupOutput {
-    /// <p>The name of the DB cluster parameter group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// </ul> <note>
-    /// <p>This value is stored as a lowercase string.</p>
+    /// <p>The name of the DB cluster parameter group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li> 
+    /// <li> <p>First character must be a letter</p> </li> 
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> <note> 
+    /// <p>This value is stored as a lowercase string.</p> 
     /// </note>
-    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<& str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
 }
 /// See [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput).
 pub mod reset_db_cluster_parameter_group_output {
-
+    
     /// A builder for [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the DB cluster parameter group.</p>
-        /// <p>Constraints:</p>
-        /// <ul>
-        /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-        /// <li> <p>First character must be a letter</p> </li>
-        /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-        /// </ul> <note>
-        /// <p>This value is stored as a lowercase string.</p>
+        /// <p>The name of the DB cluster parameter group.</p> 
+        /// <p>Constraints:</p> 
+        /// <ul> 
+        /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li> 
+        /// <li> <p>First character must be a letter</p> </li> 
+        /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+        /// </ul> <note> 
+        /// <p>This value is stored as a lowercase string.</p> 
         /// </note>
-        pub fn db_cluster_parameter_group_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn db_cluster_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_parameter_group_name = Some(input.into());
             self
         }
-        /// <p>The name of the DB cluster parameter group.</p>
-        /// <p>Constraints:</p>
-        /// <ul>
-        /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-        /// <li> <p>First character must be a letter</p> </li>
-        /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-        /// </ul> <note>
-        /// <p>This value is stored as a lowercase string.</p>
+        /// <p>The name of the DB cluster parameter group.</p> 
+        /// <p>Constraints:</p> 
+        /// <ul> 
+        /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li> 
+        /// <li> <p>First character must be a letter</p> </li> 
+        /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+        /// </ul> <note> 
+        /// <p>This value is stored as a lowercase string.</p> 
         /// </note>
-        pub fn set_db_cluster_parameter_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_cluster_parameter_group_name = input;
-            self
+        pub fn set_db_cluster_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_cluster_parameter_group_name = input; self
         }
         /// Consumes the builder and constructs a [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput).
         pub fn build(self) -> crate::output::ResetDbClusterParameterGroupOutput {
             crate::output::ResetDbClusterParameterGroupOutput {
-                db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
+                db_cluster_parameter_group_name: self.db_cluster_parameter_group_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ResetDbClusterParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`ResetDbClusterParameterGroupOutput`](crate::output::ResetDbClusterParameterGroupOutput).
@@ -1669,19 +1602,24 @@ impl ResetDbClusterParameterGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveTagsFromResourceOutput {}
+pub struct RemoveTagsFromResourceOutput  {
+}
 /// See [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
 pub mod remove_tags_from_resource_output {
-
+    
     /// A builder for [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
         pub fn build(self) -> crate::output::RemoveTagsFromResourceOutput {
-            crate::output::RemoveTagsFromResourceOutput {}
+            crate::output::RemoveTagsFromResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveTagsFromResourceOutput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
@@ -1693,20 +1631,20 @@ impl RemoveTagsFromResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveSourceIdentifierFromSubscriptionOutput {
+pub struct RemoveSourceIdentifierFromSubscriptionOutput  {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl RemoveSourceIdentifierFromSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
-    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+    pub fn event_subscription(&self) -> std::option::Option<& crate::model::EventSubscription> {
         self.event_subscription.as_ref()
     }
 }
 /// See [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput).
 pub mod remove_source_identifier_from_subscription_output {
-
+    
     /// A builder for [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1719,20 +1657,19 @@ pub mod remove_source_identifier_from_subscription_output {
             self
         }
         /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
-        pub fn set_event_subscription(
-            mut self,
-            input: std::option::Option<crate::model::EventSubscription>,
-        ) -> Self {
-            self.event_subscription = input;
-            self
+        pub fn set_event_subscription(mut self, input: std::option::Option<crate::model::EventSubscription>) -> Self {
+            self.event_subscription = input; self
         }
         /// Consumes the builder and constructs a [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput).
         pub fn build(self) -> crate::output::RemoveSourceIdentifierFromSubscriptionOutput {
             crate::output::RemoveSourceIdentifierFromSubscriptionOutput {
-                event_subscription: self.event_subscription,
+                event_subscription: self.event_subscription
+                ,
             }
         }
     }
+    
+    
 }
 impl RemoveSourceIdentifierFromSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`RemoveSourceIdentifierFromSubscriptionOutput`](crate::output::RemoveSourceIdentifierFromSubscriptionOutput).
@@ -1744,19 +1681,24 @@ impl RemoveSourceIdentifierFromSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveRoleFromDbInstanceOutput {}
+pub struct RemoveRoleFromDbInstanceOutput  {
+}
 /// See [`RemoveRoleFromDbInstanceOutput`](crate::output::RemoveRoleFromDbInstanceOutput).
 pub mod remove_role_from_db_instance_output {
-
+    
     /// A builder for [`RemoveRoleFromDbInstanceOutput`](crate::output::RemoveRoleFromDbInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveRoleFromDbInstanceOutput`](crate::output::RemoveRoleFromDbInstanceOutput).
         pub fn build(self) -> crate::output::RemoveRoleFromDbInstanceOutput {
-            crate::output::RemoveRoleFromDbInstanceOutput {}
+            crate::output::RemoveRoleFromDbInstanceOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveRoleFromDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`RemoveRoleFromDbInstanceOutput`](crate::output::RemoveRoleFromDbInstanceOutput).
@@ -1768,19 +1710,24 @@ impl RemoveRoleFromDbInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveRoleFromDbClusterOutput {}
+pub struct RemoveRoleFromDbClusterOutput  {
+}
 /// See [`RemoveRoleFromDbClusterOutput`](crate::output::RemoveRoleFromDbClusterOutput).
 pub mod remove_role_from_db_cluster_output {
-
+    
     /// A builder for [`RemoveRoleFromDbClusterOutput`](crate::output::RemoveRoleFromDbClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveRoleFromDbClusterOutput`](crate::output::RemoveRoleFromDbClusterOutput).
         pub fn build(self) -> crate::output::RemoveRoleFromDbClusterOutput {
-            crate::output::RemoveRoleFromDbClusterOutput {}
+            crate::output::RemoveRoleFromDbClusterOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveRoleFromDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`RemoveRoleFromDbClusterOutput`](crate::output::RemoveRoleFromDbClusterOutput).
@@ -1792,20 +1739,20 @@ impl RemoveRoleFromDbClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveFromGlobalClusterOutput {
+pub struct RemoveFromGlobalClusterOutput  {
     /// <p>A data type representing an Aurora global database.</p>
     #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl RemoveFromGlobalClusterOutput {
     /// <p>A data type representing an Aurora global database.</p>
-    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+    pub fn global_cluster(&self) -> std::option::Option<& crate::model::GlobalCluster> {
         self.global_cluster.as_ref()
     }
 }
 /// See [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput).
 pub mod remove_from_global_cluster_output {
-
+    
     /// A builder for [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1818,20 +1765,19 @@ pub mod remove_from_global_cluster_output {
             self
         }
         /// <p>A data type representing an Aurora global database.</p>
-        pub fn set_global_cluster(
-            mut self,
-            input: std::option::Option<crate::model::GlobalCluster>,
-        ) -> Self {
-            self.global_cluster = input;
-            self
+        pub fn set_global_cluster(mut self, input: std::option::Option<crate::model::GlobalCluster>) -> Self {
+            self.global_cluster = input; self
         }
         /// Consumes the builder and constructs a [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput).
         pub fn build(self) -> crate::output::RemoveFromGlobalClusterOutput {
             crate::output::RemoveFromGlobalClusterOutput {
-                global_cluster: self.global_cluster,
+                global_cluster: self.global_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl RemoveFromGlobalClusterOutput {
     /// Creates a new builder-style object to manufacture [`RemoveFromGlobalClusterOutput`](crate::output::RemoveFromGlobalClusterOutput).
@@ -1843,25 +1789,24 @@ impl RemoveFromGlobalClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterDbProxyTargetsOutput {
+pub struct RegisterDbProxyTargetsOutput  {
     /// <p>One or more <code>DBProxyTarget</code> objects that are created when you register targets with a target group.</p>
     #[doc(hidden)]
     pub db_proxy_targets: std::option::Option<std::vec::Vec<crate::model::DbProxyTarget>>,
 }
 impl RegisterDbProxyTargetsOutput {
     /// <p>One or more <code>DBProxyTarget</code> objects that are created when you register targets with a target group.</p>
-    pub fn db_proxy_targets(&self) -> std::option::Option<&[crate::model::DbProxyTarget]> {
+    pub fn db_proxy_targets(&self) -> std::option::Option<& [crate::model::DbProxyTarget]> {
         self.db_proxy_targets.as_deref()
     }
 }
 /// See [`RegisterDbProxyTargetsOutput`](crate::output::RegisterDbProxyTargetsOutput).
 pub mod register_db_proxy_targets_output {
-
+    
     /// A builder for [`RegisterDbProxyTargetsOutput`](crate::output::RegisterDbProxyTargetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) db_proxy_targets:
-            std::option::Option<std::vec::Vec<crate::model::DbProxyTarget>>,
+        pub(crate) db_proxy_targets: std::option::Option<std::vec::Vec<crate::model::DbProxyTarget>>,
     }
     impl Builder {
         /// Appends an item to `db_proxy_targets`.
@@ -1871,25 +1816,24 @@ pub mod register_db_proxy_targets_output {
         /// <p>One or more <code>DBProxyTarget</code> objects that are created when you register targets with a target group.</p>
         pub fn db_proxy_targets(mut self, input: crate::model::DbProxyTarget) -> Self {
             let mut v = self.db_proxy_targets.unwrap_or_default();
-            v.push(input);
-            self.db_proxy_targets = Some(v);
-            self
+                            v.push(input);
+                            self.db_proxy_targets = Some(v);
+                            self
         }
         /// <p>One or more <code>DBProxyTarget</code> objects that are created when you register targets with a target group.</p>
-        pub fn set_db_proxy_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbProxyTarget>>,
-        ) -> Self {
-            self.db_proxy_targets = input;
-            self
+        pub fn set_db_proxy_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbProxyTarget>>) -> Self {
+            self.db_proxy_targets = input; self
         }
         /// Consumes the builder and constructs a [`RegisterDbProxyTargetsOutput`](crate::output::RegisterDbProxyTargetsOutput).
         pub fn build(self) -> crate::output::RegisterDbProxyTargetsOutput {
             crate::output::RegisterDbProxyTargetsOutput {
-                db_proxy_targets: self.db_proxy_targets,
+                db_proxy_targets: self.db_proxy_targets
+                ,
             }
         }
     }
+    
+    
 }
 impl RegisterDbProxyTargetsOutput {
     /// Creates a new builder-style object to manufacture [`RegisterDbProxyTargetsOutput`](crate::output::RegisterDbProxyTargetsOutput).
@@ -1901,50 +1845,49 @@ impl RegisterDbProxyTargetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RebootDbInstanceOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+pub struct RebootDbInstanceOutput  {
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl RebootDbInstanceOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+    pub fn db_instance(&self) -> std::option::Option<& crate::model::DbInstance> {
         self.db_instance.as_ref()
     }
 }
 /// See [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput).
 pub mod reboot_db_instance_output {
-
+    
     /// A builder for [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-        pub fn set_db_instance(
-            mut self,
-            input: std::option::Option<crate::model::DbInstance>,
-        ) -> Self {
-            self.db_instance = input;
-            self
+        pub fn set_db_instance(mut self, input: std::option::Option<crate::model::DbInstance>) -> Self {
+            self.db_instance = input; self
         }
         /// Consumes the builder and constructs a [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput).
         pub fn build(self) -> crate::output::RebootDbInstanceOutput {
             crate::output::RebootDbInstanceOutput {
-                db_instance: self.db_instance,
+                db_instance: self.db_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl RebootDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`RebootDbInstanceOutput`](crate::output::RebootDbInstanceOutput).
@@ -1956,62 +1899,61 @@ impl RebootDbInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RebootDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+pub struct RebootDbClusterOutput  {
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl RebootDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<& crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 /// See [`RebootDbClusterOutput`](crate::output::RebootDbClusterOutput).
 pub mod reboot_db_cluster_output {
-
+    
     /// A builder for [`RebootDbClusterOutput`](crate::output::RebootDbClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-        pub fn set_db_cluster(
-            mut self,
-            input: std::option::Option<crate::model::DbCluster>,
-        ) -> Self {
-            self.db_cluster = input;
-            self
+        pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
+            self.db_cluster = input; self
         }
         /// Consumes the builder and constructs a [`RebootDbClusterOutput`](crate::output::RebootDbClusterOutput).
         pub fn build(self) -> crate::output::RebootDbClusterOutput {
             crate::output::RebootDbClusterOutput {
-                db_cluster: self.db_cluster,
+                db_cluster: self.db_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl RebootDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`RebootDbClusterOutput`](crate::output::RebootDbClusterOutput).
@@ -2023,20 +1965,20 @@ impl RebootDbClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PurchaseReservedDbInstancesOfferingOutput {
+pub struct PurchaseReservedDbInstancesOfferingOutput  {
     /// <p>This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and <code>PurchaseReservedDBInstancesOffering</code> actions.</p>
     #[doc(hidden)]
     pub reserved_db_instance: std::option::Option<crate::model::ReservedDbInstance>,
 }
 impl PurchaseReservedDbInstancesOfferingOutput {
     /// <p>This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and <code>PurchaseReservedDBInstancesOffering</code> actions.</p>
-    pub fn reserved_db_instance(&self) -> std::option::Option<&crate::model::ReservedDbInstance> {
+    pub fn reserved_db_instance(&self) -> std::option::Option<& crate::model::ReservedDbInstance> {
         self.reserved_db_instance.as_ref()
     }
 }
 /// See [`PurchaseReservedDbInstancesOfferingOutput`](crate::output::PurchaseReservedDbInstancesOfferingOutput).
 pub mod purchase_reserved_db_instances_offering_output {
-
+    
     /// A builder for [`PurchaseReservedDbInstancesOfferingOutput`](crate::output::PurchaseReservedDbInstancesOfferingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2049,20 +1991,19 @@ pub mod purchase_reserved_db_instances_offering_output {
             self
         }
         /// <p>This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and <code>PurchaseReservedDBInstancesOffering</code> actions.</p>
-        pub fn set_reserved_db_instance(
-            mut self,
-            input: std::option::Option<crate::model::ReservedDbInstance>,
-        ) -> Self {
-            self.reserved_db_instance = input;
-            self
+        pub fn set_reserved_db_instance(mut self, input: std::option::Option<crate::model::ReservedDbInstance>) -> Self {
+            self.reserved_db_instance = input; self
         }
         /// Consumes the builder and constructs a [`PurchaseReservedDbInstancesOfferingOutput`](crate::output::PurchaseReservedDbInstancesOfferingOutput).
         pub fn build(self) -> crate::output::PurchaseReservedDbInstancesOfferingOutput {
             crate::output::PurchaseReservedDbInstancesOfferingOutput {
-                reserved_db_instance: self.reserved_db_instance,
+                reserved_db_instance: self.reserved_db_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl PurchaseReservedDbInstancesOfferingOutput {
     /// Creates a new builder-style object to manufacture [`PurchaseReservedDbInstancesOfferingOutput`](crate::output::PurchaseReservedDbInstancesOfferingOutput).
@@ -2074,62 +2015,61 @@ impl PurchaseReservedDbInstancesOfferingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PromoteReadReplicaDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+pub struct PromoteReadReplicaDbClusterOutput  {
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl PromoteReadReplicaDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<& crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 /// See [`PromoteReadReplicaDbClusterOutput`](crate::output::PromoteReadReplicaDbClusterOutput).
 pub mod promote_read_replica_db_cluster_output {
-
+    
     /// A builder for [`PromoteReadReplicaDbClusterOutput`](crate::output::PromoteReadReplicaDbClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-        pub fn set_db_cluster(
-            mut self,
-            input: std::option::Option<crate::model::DbCluster>,
-        ) -> Self {
-            self.db_cluster = input;
-            self
+        pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
+            self.db_cluster = input; self
         }
         /// Consumes the builder and constructs a [`PromoteReadReplicaDbClusterOutput`](crate::output::PromoteReadReplicaDbClusterOutput).
         pub fn build(self) -> crate::output::PromoteReadReplicaDbClusterOutput {
             crate::output::PromoteReadReplicaDbClusterOutput {
-                db_cluster: self.db_cluster,
+                db_cluster: self.db_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl PromoteReadReplicaDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`PromoteReadReplicaDbClusterOutput`](crate::output::PromoteReadReplicaDbClusterOutput).
@@ -2141,50 +2081,49 @@ impl PromoteReadReplicaDbClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PromoteReadReplicaOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+pub struct PromoteReadReplicaOutput  {
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl PromoteReadReplicaOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+    pub fn db_instance(&self) -> std::option::Option<& crate::model::DbInstance> {
         self.db_instance.as_ref()
     }
 }
 /// See [`PromoteReadReplicaOutput`](crate::output::PromoteReadReplicaOutput).
 pub mod promote_read_replica_output {
-
+    
     /// A builder for [`PromoteReadReplicaOutput`](crate::output::PromoteReadReplicaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-        pub fn set_db_instance(
-            mut self,
-            input: std::option::Option<crate::model::DbInstance>,
-        ) -> Self {
-            self.db_instance = input;
-            self
+        pub fn set_db_instance(mut self, input: std::option::Option<crate::model::DbInstance>) -> Self {
+            self.db_instance = input; self
         }
         /// Consumes the builder and constructs a [`PromoteReadReplicaOutput`](crate::output::PromoteReadReplicaOutput).
         pub fn build(self) -> crate::output::PromoteReadReplicaOutput {
             crate::output::PromoteReadReplicaOutput {
-                db_instance: self.db_instance,
+                db_instance: self.db_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl PromoteReadReplicaOutput {
     /// Creates a new builder-style object to manufacture [`PromoteReadReplicaOutput`](crate::output::PromoteReadReplicaOutput).
@@ -2196,20 +2135,20 @@ impl PromoteReadReplicaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyOptionGroupOutput {
+pub struct ModifyOptionGroupOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub option_group: std::option::Option<crate::model::OptionGroup>,
 }
 impl ModifyOptionGroupOutput {
     /// <p></p>
-    pub fn option_group(&self) -> std::option::Option<&crate::model::OptionGroup> {
+    pub fn option_group(&self) -> std::option::Option<& crate::model::OptionGroup> {
         self.option_group.as_ref()
     }
 }
 /// See [`ModifyOptionGroupOutput`](crate::output::ModifyOptionGroupOutput).
 pub mod modify_option_group_output {
-
+    
     /// A builder for [`ModifyOptionGroupOutput`](crate::output::ModifyOptionGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2222,20 +2161,19 @@ pub mod modify_option_group_output {
             self
         }
         /// <p></p>
-        pub fn set_option_group(
-            mut self,
-            input: std::option::Option<crate::model::OptionGroup>,
-        ) -> Self {
-            self.option_group = input;
-            self
+        pub fn set_option_group(mut self, input: std::option::Option<crate::model::OptionGroup>) -> Self {
+            self.option_group = input; self
         }
         /// Consumes the builder and constructs a [`ModifyOptionGroupOutput`](crate::output::ModifyOptionGroupOutput).
         pub fn build(self) -> crate::output::ModifyOptionGroupOutput {
             crate::output::ModifyOptionGroupOutput {
-                option_group: self.option_group,
+                option_group: self.option_group
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyOptionGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyOptionGroupOutput`](crate::output::ModifyOptionGroupOutput).
@@ -2247,20 +2185,20 @@ impl ModifyOptionGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyGlobalClusterOutput {
+pub struct ModifyGlobalClusterOutput  {
     /// <p>A data type representing an Aurora global database.</p>
     #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl ModifyGlobalClusterOutput {
     /// <p>A data type representing an Aurora global database.</p>
-    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+    pub fn global_cluster(&self) -> std::option::Option<& crate::model::GlobalCluster> {
         self.global_cluster.as_ref()
     }
 }
 /// See [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput).
 pub mod modify_global_cluster_output {
-
+    
     /// A builder for [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2273,20 +2211,19 @@ pub mod modify_global_cluster_output {
             self
         }
         /// <p>A data type representing an Aurora global database.</p>
-        pub fn set_global_cluster(
-            mut self,
-            input: std::option::Option<crate::model::GlobalCluster>,
-        ) -> Self {
-            self.global_cluster = input;
-            self
+        pub fn set_global_cluster(mut self, input: std::option::Option<crate::model::GlobalCluster>) -> Self {
+            self.global_cluster = input; self
         }
         /// Consumes the builder and constructs a [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput).
         pub fn build(self) -> crate::output::ModifyGlobalClusterOutput {
             crate::output::ModifyGlobalClusterOutput {
-                global_cluster: self.global_cluster,
+                global_cluster: self.global_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyGlobalClusterOutput {
     /// Creates a new builder-style object to manufacture [`ModifyGlobalClusterOutput`](crate::output::ModifyGlobalClusterOutput).
@@ -2298,20 +2235,20 @@ impl ModifyGlobalClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyEventSubscriptionOutput {
+pub struct ModifyEventSubscriptionOutput  {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl ModifyEventSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
-    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+    pub fn event_subscription(&self) -> std::option::Option<& crate::model::EventSubscription> {
         self.event_subscription.as_ref()
     }
 }
 /// See [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
 pub mod modify_event_subscription_output {
-
+    
     /// A builder for [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2324,20 +2261,19 @@ pub mod modify_event_subscription_output {
             self
         }
         /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
-        pub fn set_event_subscription(
-            mut self,
-            input: std::option::Option<crate::model::EventSubscription>,
-        ) -> Self {
-            self.event_subscription = input;
-            self
+        pub fn set_event_subscription(mut self, input: std::option::Option<crate::model::EventSubscription>) -> Self {
+            self.event_subscription = input; self
         }
         /// Consumes the builder and constructs a [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
         pub fn build(self) -> crate::output::ModifyEventSubscriptionOutput {
             crate::output::ModifyEventSubscriptionOutput {
-                event_subscription: self.event_subscription,
+                event_subscription: self.event_subscription
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyEventSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`ModifyEventSubscriptionOutput`](crate::output::ModifyEventSubscriptionOutput).
@@ -2349,50 +2285,49 @@ impl ModifyEventSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbSubnetGroupOutput {
-    /// <p>Contains the details of an Amazon RDS DB subnet group.</p>
+pub struct ModifyDbSubnetGroupOutput  {
+    /// <p>Contains the details of an Amazon RDS DB subnet group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
     #[doc(hidden)]
     pub db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
 }
 impl ModifyDbSubnetGroupOutput {
-    /// <p>Contains the details of an Amazon RDS DB subnet group.</p>
+    /// <p>Contains the details of an Amazon RDS DB subnet group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
-    pub fn db_subnet_group(&self) -> std::option::Option<&crate::model::DbSubnetGroup> {
+    pub fn db_subnet_group(&self) -> std::option::Option<& crate::model::DbSubnetGroup> {
         self.db_subnet_group.as_ref()
     }
 }
 /// See [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput).
 pub mod modify_db_subnet_group_output {
-
+    
     /// A builder for [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB subnet group.</p>
+        /// <p>Contains the details of an Amazon RDS DB subnet group.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
         pub fn db_subnet_group(mut self, input: crate::model::DbSubnetGroup) -> Self {
             self.db_subnet_group = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB subnet group.</p>
+        /// <p>Contains the details of an Amazon RDS DB subnet group.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
-        pub fn set_db_subnet_group(
-            mut self,
-            input: std::option::Option<crate::model::DbSubnetGroup>,
-        ) -> Self {
-            self.db_subnet_group = input;
-            self
+        pub fn set_db_subnet_group(mut self, input: std::option::Option<crate::model::DbSubnetGroup>) -> Self {
+            self.db_subnet_group = input; self
         }
         /// Consumes the builder and constructs a [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput).
         pub fn build(self) -> crate::output::ModifyDbSubnetGroupOutput {
             crate::output::ModifyDbSubnetGroupOutput {
-                db_subnet_group: self.db_subnet_group,
+                db_subnet_group: self.db_subnet_group
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyDbSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbSubnetGroupOutput`](crate::output::ModifyDbSubnetGroupOutput).
@@ -2404,57 +2339,49 @@ impl ModifyDbSubnetGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbSnapshotAttributeOutput {
-    /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p>
+pub struct ModifyDbSnapshotAttributeOutput  {
+    /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p> 
     /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p>
     #[doc(hidden)]
-    pub db_snapshot_attributes_result:
-        std::option::Option<crate::model::DbSnapshotAttributesResult>,
+    pub db_snapshot_attributes_result: std::option::Option<crate::model::DbSnapshotAttributesResult>,
 }
 impl ModifyDbSnapshotAttributeOutput {
-    /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p>
+    /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p> 
     /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p>
-    pub fn db_snapshot_attributes_result(
-        &self,
-    ) -> std::option::Option<&crate::model::DbSnapshotAttributesResult> {
+    pub fn db_snapshot_attributes_result(&self) -> std::option::Option<& crate::model::DbSnapshotAttributesResult> {
         self.db_snapshot_attributes_result.as_ref()
     }
 }
 /// See [`ModifyDbSnapshotAttributeOutput`](crate::output::ModifyDbSnapshotAttributeOutput).
 pub mod modify_db_snapshot_attribute_output {
-
+    
     /// A builder for [`ModifyDbSnapshotAttributeOutput`](crate::output::ModifyDbSnapshotAttributeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) db_snapshot_attributes_result:
-            std::option::Option<crate::model::DbSnapshotAttributesResult>,
+        pub(crate) db_snapshot_attributes_result: std::option::Option<crate::model::DbSnapshotAttributesResult>,
     }
     impl Builder {
-        /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p>
+        /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p> 
         /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p>
-        pub fn db_snapshot_attributes_result(
-            mut self,
-            input: crate::model::DbSnapshotAttributesResult,
-        ) -> Self {
+        pub fn db_snapshot_attributes_result(mut self, input: crate::model::DbSnapshotAttributesResult) -> Self {
             self.db_snapshot_attributes_result = Some(input);
             self
         }
-        /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p>
+        /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p> 
         /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p>
-        pub fn set_db_snapshot_attributes_result(
-            mut self,
-            input: std::option::Option<crate::model::DbSnapshotAttributesResult>,
-        ) -> Self {
-            self.db_snapshot_attributes_result = input;
-            self
+        pub fn set_db_snapshot_attributes_result(mut self, input: std::option::Option<crate::model::DbSnapshotAttributesResult>) -> Self {
+            self.db_snapshot_attributes_result = input; self
         }
         /// Consumes the builder and constructs a [`ModifyDbSnapshotAttributeOutput`](crate::output::ModifyDbSnapshotAttributeOutput).
         pub fn build(self) -> crate::output::ModifyDbSnapshotAttributeOutput {
             crate::output::ModifyDbSnapshotAttributeOutput {
-                db_snapshot_attributes_result: self.db_snapshot_attributes_result,
+                db_snapshot_attributes_result: self.db_snapshot_attributes_result
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyDbSnapshotAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbSnapshotAttributeOutput`](crate::output::ModifyDbSnapshotAttributeOutput).
@@ -2466,50 +2393,49 @@ impl ModifyDbSnapshotAttributeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbSnapshotOutput {
-    /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
+pub struct ModifyDbSnapshotOutput  {
+    /// <p>Contains the details of an Amazon RDS DB snapshot.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
     #[doc(hidden)]
     pub db_snapshot: std::option::Option<crate::model::DbSnapshot>,
 }
 impl ModifyDbSnapshotOutput {
-    /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
+    /// <p>Contains the details of an Amazon RDS DB snapshot.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
-    pub fn db_snapshot(&self) -> std::option::Option<&crate::model::DbSnapshot> {
+    pub fn db_snapshot(&self) -> std::option::Option<& crate::model::DbSnapshot> {
         self.db_snapshot.as_ref()
     }
 }
 /// See [`ModifyDbSnapshotOutput`](crate::output::ModifyDbSnapshotOutput).
 pub mod modify_db_snapshot_output {
-
+    
     /// A builder for [`ModifyDbSnapshotOutput`](crate::output::ModifyDbSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_snapshot: std::option::Option<crate::model::DbSnapshot>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
+        /// <p>Contains the details of an Amazon RDS DB snapshot.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
         pub fn db_snapshot(mut self, input: crate::model::DbSnapshot) -> Self {
             self.db_snapshot = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
+        /// <p>Contains the details of an Amazon RDS DB snapshot.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
-        pub fn set_db_snapshot(
-            mut self,
-            input: std::option::Option<crate::model::DbSnapshot>,
-        ) -> Self {
-            self.db_snapshot = input;
-            self
+        pub fn set_db_snapshot(mut self, input: std::option::Option<crate::model::DbSnapshot>) -> Self {
+            self.db_snapshot = input; self
         }
         /// Consumes the builder and constructs a [`ModifyDbSnapshotOutput`](crate::output::ModifyDbSnapshotOutput).
         pub fn build(self) -> crate::output::ModifyDbSnapshotOutput {
             crate::output::ModifyDbSnapshotOutput {
-                db_snapshot: self.db_snapshot,
+                db_snapshot: self.db_snapshot
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyDbSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbSnapshotOutput`](crate::output::ModifyDbSnapshotOutput).
@@ -2521,20 +2447,20 @@ impl ModifyDbSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbProxyTargetGroupOutput {
+pub struct ModifyDbProxyTargetGroupOutput  {
     /// <p>The settings of the modified <code>DBProxyTarget</code>.</p>
     #[doc(hidden)]
     pub db_proxy_target_group: std::option::Option<crate::model::DbProxyTargetGroup>,
 }
 impl ModifyDbProxyTargetGroupOutput {
     /// <p>The settings of the modified <code>DBProxyTarget</code>.</p>
-    pub fn db_proxy_target_group(&self) -> std::option::Option<&crate::model::DbProxyTargetGroup> {
+    pub fn db_proxy_target_group(&self) -> std::option::Option<& crate::model::DbProxyTargetGroup> {
         self.db_proxy_target_group.as_ref()
     }
 }
 /// See [`ModifyDbProxyTargetGroupOutput`](crate::output::ModifyDbProxyTargetGroupOutput).
 pub mod modify_db_proxy_target_group_output {
-
+    
     /// A builder for [`ModifyDbProxyTargetGroupOutput`](crate::output::ModifyDbProxyTargetGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2547,20 +2473,19 @@ pub mod modify_db_proxy_target_group_output {
             self
         }
         /// <p>The settings of the modified <code>DBProxyTarget</code>.</p>
-        pub fn set_db_proxy_target_group(
-            mut self,
-            input: std::option::Option<crate::model::DbProxyTargetGroup>,
-        ) -> Self {
-            self.db_proxy_target_group = input;
-            self
+        pub fn set_db_proxy_target_group(mut self, input: std::option::Option<crate::model::DbProxyTargetGroup>) -> Self {
+            self.db_proxy_target_group = input; self
         }
         /// Consumes the builder and constructs a [`ModifyDbProxyTargetGroupOutput`](crate::output::ModifyDbProxyTargetGroupOutput).
         pub fn build(self) -> crate::output::ModifyDbProxyTargetGroupOutput {
             crate::output::ModifyDbProxyTargetGroupOutput {
-                db_proxy_target_group: self.db_proxy_target_group,
+                db_proxy_target_group: self.db_proxy_target_group
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyDbProxyTargetGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbProxyTargetGroupOutput`](crate::output::ModifyDbProxyTargetGroupOutput).
@@ -2572,20 +2497,20 @@ impl ModifyDbProxyTargetGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbProxyEndpointOutput {
+pub struct ModifyDbProxyEndpointOutput  {
     /// <p>The <code>DBProxyEndpoint</code> object representing the new settings for the DB proxy endpoint.</p>
     #[doc(hidden)]
     pub db_proxy_endpoint: std::option::Option<crate::model::DbProxyEndpoint>,
 }
 impl ModifyDbProxyEndpointOutput {
     /// <p>The <code>DBProxyEndpoint</code> object representing the new settings for the DB proxy endpoint.</p>
-    pub fn db_proxy_endpoint(&self) -> std::option::Option<&crate::model::DbProxyEndpoint> {
+    pub fn db_proxy_endpoint(&self) -> std::option::Option<& crate::model::DbProxyEndpoint> {
         self.db_proxy_endpoint.as_ref()
     }
 }
 /// See [`ModifyDbProxyEndpointOutput`](crate::output::ModifyDbProxyEndpointOutput).
 pub mod modify_db_proxy_endpoint_output {
-
+    
     /// A builder for [`ModifyDbProxyEndpointOutput`](crate::output::ModifyDbProxyEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2598,20 +2523,19 @@ pub mod modify_db_proxy_endpoint_output {
             self
         }
         /// <p>The <code>DBProxyEndpoint</code> object representing the new settings for the DB proxy endpoint.</p>
-        pub fn set_db_proxy_endpoint(
-            mut self,
-            input: std::option::Option<crate::model::DbProxyEndpoint>,
-        ) -> Self {
-            self.db_proxy_endpoint = input;
-            self
+        pub fn set_db_proxy_endpoint(mut self, input: std::option::Option<crate::model::DbProxyEndpoint>) -> Self {
+            self.db_proxy_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`ModifyDbProxyEndpointOutput`](crate::output::ModifyDbProxyEndpointOutput).
         pub fn build(self) -> crate::output::ModifyDbProxyEndpointOutput {
             crate::output::ModifyDbProxyEndpointOutput {
-                db_proxy_endpoint: self.db_proxy_endpoint,
+                db_proxy_endpoint: self.db_proxy_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyDbProxyEndpointOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbProxyEndpointOutput`](crate::output::ModifyDbProxyEndpointOutput).
@@ -2623,20 +2547,20 @@ impl ModifyDbProxyEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbProxyOutput {
+pub struct ModifyDbProxyOutput  {
     /// <p>The <code>DBProxy</code> object representing the new settings for the proxy.</p>
     #[doc(hidden)]
     pub db_proxy: std::option::Option<crate::model::DbProxy>,
 }
 impl ModifyDbProxyOutput {
     /// <p>The <code>DBProxy</code> object representing the new settings for the proxy.</p>
-    pub fn db_proxy(&self) -> std::option::Option<&crate::model::DbProxy> {
+    pub fn db_proxy(&self) -> std::option::Option<& crate::model::DbProxy> {
         self.db_proxy.as_ref()
     }
 }
 /// See [`ModifyDbProxyOutput`](crate::output::ModifyDbProxyOutput).
 pub mod modify_db_proxy_output {
-
+    
     /// A builder for [`ModifyDbProxyOutput`](crate::output::ModifyDbProxyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2650,16 +2574,18 @@ pub mod modify_db_proxy_output {
         }
         /// <p>The <code>DBProxy</code> object representing the new settings for the proxy.</p>
         pub fn set_db_proxy(mut self, input: std::option::Option<crate::model::DbProxy>) -> Self {
-            self.db_proxy = input;
-            self
+            self.db_proxy = input; self
         }
         /// Consumes the builder and constructs a [`ModifyDbProxyOutput`](crate::output::ModifyDbProxyOutput).
         pub fn build(self) -> crate::output::ModifyDbProxyOutput {
             crate::output::ModifyDbProxyOutput {
-                db_proxy: self.db_proxy,
+                db_proxy: self.db_proxy
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyDbProxyOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbProxyOutput`](crate::output::ModifyDbProxyOutput).
@@ -2671,20 +2597,20 @@ impl ModifyDbProxyOutput {
 /// <p>Contains the result of a successful invocation of the <code>ModifyDBParameterGroup</code> or <code>ResetDBParameterGroup</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbParameterGroupOutput {
+pub struct ModifyDbParameterGroupOutput  {
     /// <p>The name of the DB parameter group.</p>
     #[doc(hidden)]
     pub db_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl ModifyDbParameterGroupOutput {
     /// <p>The name of the DB parameter group.</p>
-    pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_parameter_group_name(&self) -> std::option::Option<& str> {
         self.db_parameter_group_name.as_deref()
     }
 }
 /// See [`ModifyDbParameterGroupOutput`](crate::output::ModifyDbParameterGroupOutput).
 pub mod modify_db_parameter_group_output {
-
+    
     /// A builder for [`ModifyDbParameterGroupOutput`](crate::output::ModifyDbParameterGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2697,20 +2623,19 @@ pub mod modify_db_parameter_group_output {
             self
         }
         /// <p>The name of the DB parameter group.</p>
-        pub fn set_db_parameter_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_parameter_group_name = input;
-            self
+        pub fn set_db_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_parameter_group_name = input; self
         }
         /// Consumes the builder and constructs a [`ModifyDbParameterGroupOutput`](crate::output::ModifyDbParameterGroupOutput).
         pub fn build(self) -> crate::output::ModifyDbParameterGroupOutput {
             crate::output::ModifyDbParameterGroupOutput {
-                db_parameter_group_name: self.db_parameter_group_name,
+                db_parameter_group_name: self.db_parameter_group_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyDbParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbParameterGroupOutput`](crate::output::ModifyDbParameterGroupOutput).
@@ -2722,50 +2647,49 @@ impl ModifyDbParameterGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbInstanceOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+pub struct ModifyDbInstanceOutput  {
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl ModifyDbInstanceOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+    pub fn db_instance(&self) -> std::option::Option<& crate::model::DbInstance> {
         self.db_instance.as_ref()
     }
 }
 /// See [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput).
 pub mod modify_db_instance_output {
-
+    
     /// A builder for [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-        pub fn set_db_instance(
-            mut self,
-            input: std::option::Option<crate::model::DbInstance>,
-        ) -> Self {
-            self.db_instance = input;
-            self
+        pub fn set_db_instance(mut self, input: std::option::Option<crate::model::DbInstance>) -> Self {
+            self.db_instance = input; self
         }
         /// Consumes the builder and constructs a [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput).
         pub fn build(self) -> crate::output::ModifyDbInstanceOutput {
             crate::output::ModifyDbInstanceOutput {
-                db_instance: self.db_instance,
+                db_instance: self.db_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbInstanceOutput`](crate::output::ModifyDbInstanceOutput).
@@ -2777,57 +2701,49 @@ impl ModifyDbInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbClusterSnapshotAttributeOutput {
-    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+pub struct ModifyDbClusterSnapshotAttributeOutput  {
+    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> 
     /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
     #[doc(hidden)]
-    pub db_cluster_snapshot_attributes_result:
-        std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
+    pub db_cluster_snapshot_attributes_result: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
 }
 impl ModifyDbClusterSnapshotAttributeOutput {
-    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> 
     /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-    pub fn db_cluster_snapshot_attributes_result(
-        &self,
-    ) -> std::option::Option<&crate::model::DbClusterSnapshotAttributesResult> {
+    pub fn db_cluster_snapshot_attributes_result(&self) -> std::option::Option<& crate::model::DbClusterSnapshotAttributesResult> {
         self.db_cluster_snapshot_attributes_result.as_ref()
     }
 }
 /// See [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput).
 pub mod modify_db_cluster_snapshot_attribute_output {
-
+    
     /// A builder for [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) db_cluster_snapshot_attributes_result:
-            std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
+        pub(crate) db_cluster_snapshot_attributes_result: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
     }
     impl Builder {
-        /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+        /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> 
         /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-        pub fn db_cluster_snapshot_attributes_result(
-            mut self,
-            input: crate::model::DbClusterSnapshotAttributesResult,
-        ) -> Self {
+        pub fn db_cluster_snapshot_attributes_result(mut self, input: crate::model::DbClusterSnapshotAttributesResult) -> Self {
             self.db_cluster_snapshot_attributes_result = Some(input);
             self
         }
-        /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+        /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> 
         /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-        pub fn set_db_cluster_snapshot_attributes_result(
-            mut self,
-            input: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
-        ) -> Self {
-            self.db_cluster_snapshot_attributes_result = input;
-            self
+        pub fn set_db_cluster_snapshot_attributes_result(mut self, input: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>) -> Self {
+            self.db_cluster_snapshot_attributes_result = input; self
         }
         /// Consumes the builder and constructs a [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput).
         pub fn build(self) -> crate::output::ModifyDbClusterSnapshotAttributeOutput {
             crate::output::ModifyDbClusterSnapshotAttributeOutput {
-                db_cluster_snapshot_attributes_result: self.db_cluster_snapshot_attributes_result,
+                db_cluster_snapshot_attributes_result: self.db_cluster_snapshot_attributes_result
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyDbClusterSnapshotAttributeOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterSnapshotAttributeOutput`](crate::output::ModifyDbClusterSnapshotAttributeOutput).
@@ -2839,81 +2755,77 @@ impl ModifyDbClusterSnapshotAttributeOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbClusterParameterGroupOutput {
-    /// <p>The name of the DB cluster parameter group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// </ul> <note>
-    /// <p>This value is stored as a lowercase string.</p>
+pub struct ModifyDbClusterParameterGroupOutput  {
+    /// <p>The name of the DB cluster parameter group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li> 
+    /// <li> <p>First character must be a letter</p> </li> 
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> <note> 
+    /// <p>This value is stored as a lowercase string.</p> 
     /// </note>
     #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl ModifyDbClusterParameterGroupOutput {
-    /// <p>The name of the DB cluster parameter group.</p>
-    /// <p>Constraints:</p>
-    /// <ul>
-    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-    /// <li> <p>First character must be a letter</p> </li>
-    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-    /// </ul> <note>
-    /// <p>This value is stored as a lowercase string.</p>
+    /// <p>The name of the DB cluster parameter group.</p> 
+    /// <p>Constraints:</p> 
+    /// <ul> 
+    /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li> 
+    /// <li> <p>First character must be a letter</p> </li> 
+    /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+    /// </ul> <note> 
+    /// <p>This value is stored as a lowercase string.</p> 
     /// </note>
-    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<& str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
 }
 /// See [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput).
 pub mod modify_db_cluster_parameter_group_output {
-
+    
     /// A builder for [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the DB cluster parameter group.</p>
-        /// <p>Constraints:</p>
-        /// <ul>
-        /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-        /// <li> <p>First character must be a letter</p> </li>
-        /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-        /// </ul> <note>
-        /// <p>This value is stored as a lowercase string.</p>
+        /// <p>The name of the DB cluster parameter group.</p> 
+        /// <p>Constraints:</p> 
+        /// <ul> 
+        /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li> 
+        /// <li> <p>First character must be a letter</p> </li> 
+        /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+        /// </ul> <note> 
+        /// <p>This value is stored as a lowercase string.</p> 
         /// </note>
-        pub fn db_cluster_parameter_group_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn db_cluster_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_parameter_group_name = Some(input.into());
             self
         }
-        /// <p>The name of the DB cluster parameter group.</p>
-        /// <p>Constraints:</p>
-        /// <ul>
-        /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
-        /// <li> <p>First character must be a letter</p> </li>
-        /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
-        /// </ul> <note>
-        /// <p>This value is stored as a lowercase string.</p>
+        /// <p>The name of the DB cluster parameter group.</p> 
+        /// <p>Constraints:</p> 
+        /// <ul> 
+        /// <li> <p>Must be 1 to 255 letters or numbers.</p> </li> 
+        /// <li> <p>First character must be a letter</p> </li> 
+        /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> 
+        /// </ul> <note> 
+        /// <p>This value is stored as a lowercase string.</p> 
         /// </note>
-        pub fn set_db_cluster_parameter_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_cluster_parameter_group_name = input;
-            self
+        pub fn set_db_cluster_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_cluster_parameter_group_name = input; self
         }
         /// Consumes the builder and constructs a [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput).
         pub fn build(self) -> crate::output::ModifyDbClusterParameterGroupOutput {
             crate::output::ModifyDbClusterParameterGroupOutput {
-                db_cluster_parameter_group_name: self.db_cluster_parameter_group_name,
+                db_cluster_parameter_group_name: self.db_cluster_parameter_group_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyDbClusterParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterParameterGroupOutput`](crate::output::ModifyDbClusterParameterGroupOutput).
@@ -2922,17 +2834,17 @@ impl ModifyDbClusterParameterGroupOutput {
     }
 }
 
-/// <p>This data type represents the information you need to connect to an Amazon Aurora DB cluster. This data type is used as a response element in the following actions:</p>
-/// <ul>
-/// <li> <p> <code>CreateDBClusterEndpoint</code> </p> </li>
-/// <li> <p> <code>DescribeDBClusterEndpoints</code> </p> </li>
-/// <li> <p> <code>ModifyDBClusterEndpoint</code> </p> </li>
-/// <li> <p> <code>DeleteDBClusterEndpoint</code> </p> </li>
-/// </ul>
+/// <p>This data type represents the information you need to connect to an Amazon Aurora DB cluster. This data type is used as a response element in the following actions:</p> 
+/// <ul> 
+/// <li> <p> <code>CreateDBClusterEndpoint</code> </p> </li> 
+/// <li> <p> <code>DescribeDBClusterEndpoints</code> </p> </li> 
+/// <li> <p> <code>ModifyDBClusterEndpoint</code> </p> </li> 
+/// <li> <p> <code>DeleteDBClusterEndpoint</code> </p> </li> 
+/// </ul> 
 /// <p>For the data structure that represents Amazon RDS DB instance endpoints, see <code>Endpoint</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbClusterEndpointOutput {
+pub struct ModifyDbClusterEndpointOutput  {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
     #[doc(hidden)]
     pub db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
@@ -2966,56 +2878,55 @@ pub struct ModifyDbClusterEndpointOutput {
 }
 impl ModifyDbClusterEndpointOutput {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<& str> {
         self.db_cluster_endpoint_identifier.as_deref()
     }
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
-    pub fn db_cluster_endpoint_resource_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_endpoint_resource_identifier(&self) -> std::option::Option<& str> {
         self.db_cluster_endpoint_resource_identifier.as_deref()
     }
     /// <p>The DNS address of the endpoint.</p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
-    pub fn endpoint_type(&self) -> std::option::Option<&str> {
+    pub fn endpoint_type(&self) -> std::option::Option<& str> {
         self.endpoint_type.as_deref()
     }
     /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-    pub fn custom_endpoint_type(&self) -> std::option::Option<&str> {
+    pub fn custom_endpoint_type(&self) -> std::option::Option<& str> {
         self.custom_endpoint_type.as_deref()
     }
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub fn static_members(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn static_members(&self) -> std::option::Option<& [std::string::String]> {
         self.static_members.as_deref()
     }
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    pub fn excluded_members(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn excluded_members(&self) -> std::option::Option<& [std::string::String]> {
         self.excluded_members.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
-    pub fn db_cluster_endpoint_arn(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_endpoint_arn(&self) -> std::option::Option<& str> {
         self.db_cluster_endpoint_arn.as_deref()
     }
 }
 /// See [`ModifyDbClusterEndpointOutput`](crate::output::ModifyDbClusterEndpointOutput).
 pub mod modify_db_cluster_endpoint_output {
-
+    
     /// A builder for [`ModifyDbClusterEndpointOutput`](crate::output::ModifyDbClusterEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
-        pub(crate) db_cluster_endpoint_resource_identifier:
-            std::option::Option<std::string::String>,
+        pub(crate) db_cluster_endpoint_resource_identifier: std::option::Option<std::string::String>,
         pub(crate) endpoint: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) endpoint_type: std::option::Option<std::string::String>,
@@ -3026,20 +2937,13 @@ pub mod modify_db_cluster_endpoint_output {
     }
     impl Builder {
         /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
-        pub fn db_cluster_endpoint_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn db_cluster_endpoint_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_endpoint_identifier = Some(input.into());
             self
         }
         /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
-        pub fn set_db_cluster_endpoint_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_cluster_endpoint_identifier = input;
-            self
+        pub fn set_db_cluster_endpoint_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_cluster_endpoint_identifier = input; self
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3047,28 +2951,17 @@ pub mod modify_db_cluster_endpoint_output {
             self
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
-        pub fn set_db_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_cluster_identifier = input;
-            self
+        pub fn set_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_cluster_identifier = input; self
         }
         /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
-        pub fn db_cluster_endpoint_resource_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn db_cluster_endpoint_resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_endpoint_resource_identifier = Some(input.into());
             self
         }
         /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
-        pub fn set_db_cluster_endpoint_resource_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_cluster_endpoint_resource_identifier = input;
-            self
+        pub fn set_db_cluster_endpoint_resource_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_cluster_endpoint_resource_identifier = input; self
         }
         /// <p>The DNS address of the endpoint.</p>
         pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3077,8 +2970,7 @@ pub mod modify_db_cluster_endpoint_output {
         }
         /// <p>The DNS address of the endpoint.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = input;
-            self
+            self.endpoint = input; self
         }
         /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3087,8 +2979,7 @@ pub mod modify_db_cluster_endpoint_output {
         }
         /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
         pub fn endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3096,12 +2987,8 @@ pub mod modify_db_cluster_endpoint_output {
             self
         }
         /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
-        pub fn set_endpoint_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.endpoint_type = input;
-            self
+        pub fn set_endpoint_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_type = input; self
         }
         /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
         pub fn custom_endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3109,12 +2996,8 @@ pub mod modify_db_cluster_endpoint_output {
             self
         }
         /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-        pub fn set_custom_endpoint_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_endpoint_type = input;
-            self
+        pub fn set_custom_endpoint_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_endpoint_type = input; self
         }
         /// Appends an item to `static_members`.
         ///
@@ -3123,17 +3006,13 @@ pub mod modify_db_cluster_endpoint_output {
         /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
         pub fn static_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.static_members.unwrap_or_default();
-            v.push(input.into());
-            self.static_members = Some(v);
-            self
+                            v.push(input.into());
+                            self.static_members = Some(v);
+                            self
         }
         /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-        pub fn set_static_members(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.static_members = input;
-            self
+        pub fn set_static_members(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.static_members = input; self
         }
         /// Appends an item to `excluded_members`.
         ///
@@ -3142,17 +3021,13 @@ pub mod modify_db_cluster_endpoint_output {
         /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
         pub fn excluded_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.excluded_members.unwrap_or_default();
-            v.push(input.into());
-            self.excluded_members = Some(v);
-            self
+                            v.push(input.into());
+                            self.excluded_members = Some(v);
+                            self
         }
         /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-        pub fn set_excluded_members(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.excluded_members = input;
-            self
+        pub fn set_excluded_members(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.excluded_members = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
         pub fn db_cluster_endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3160,30 +3035,37 @@ pub mod modify_db_cluster_endpoint_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
-        pub fn set_db_cluster_endpoint_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_cluster_endpoint_arn = input;
-            self
+        pub fn set_db_cluster_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_cluster_endpoint_arn = input; self
         }
         /// Consumes the builder and constructs a [`ModifyDbClusterEndpointOutput`](crate::output::ModifyDbClusterEndpointOutput).
         pub fn build(self) -> crate::output::ModifyDbClusterEndpointOutput {
             crate::output::ModifyDbClusterEndpointOutput {
-                db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier,
-                db_cluster_identifier: self.db_cluster_identifier,
-                db_cluster_endpoint_resource_identifier: self
-                    .db_cluster_endpoint_resource_identifier,
-                endpoint: self.endpoint,
-                status: self.status,
-                endpoint_type: self.endpoint_type,
-                custom_endpoint_type: self.custom_endpoint_type,
-                static_members: self.static_members,
-                excluded_members: self.excluded_members,
-                db_cluster_endpoint_arn: self.db_cluster_endpoint_arn,
+                db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier
+                ,
+                db_cluster_identifier: self.db_cluster_identifier
+                ,
+                db_cluster_endpoint_resource_identifier: self.db_cluster_endpoint_resource_identifier
+                ,
+                endpoint: self.endpoint
+                ,
+                status: self.status
+                ,
+                endpoint_type: self.endpoint_type
+                ,
+                custom_endpoint_type: self.custom_endpoint_type
+                ,
+                static_members: self.static_members
+                ,
+                excluded_members: self.excluded_members
+                ,
+                db_cluster_endpoint_arn: self.db_cluster_endpoint_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyDbClusterEndpointOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterEndpointOutput`](crate::output::ModifyDbClusterEndpointOutput).
@@ -3195,62 +3077,61 @@ impl ModifyDbClusterEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+pub struct ModifyDbClusterOutput  {
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl ModifyDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<& crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 /// See [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput).
 pub mod modify_db_cluster_output {
-
+    
     /// A builder for [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-        pub fn set_db_cluster(
-            mut self,
-            input: std::option::Option<crate::model::DbCluster>,
-        ) -> Self {
-            self.db_cluster = input;
-            self
+        pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
+            self.db_cluster = input; self
         }
         /// Consumes the builder and constructs a [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput).
         pub fn build(self) -> crate::output::ModifyDbClusterOutput {
             crate::output::ModifyDbClusterOutput {
-                db_cluster: self.db_cluster,
+                db_cluster: self.db_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbClusterOutput`](crate::output::ModifyDbClusterOutput).
@@ -3262,7 +3143,7 @@ impl ModifyDbClusterOutput {
 /// <p>This data type is used as a response element in the action <code>DescribeDBEngineVersions</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyCustomDbEngineVersionOutput {
+pub struct ModifyCustomDbEngineVersionOutput  {
     /// <p>The name of the database engine.</p>
     #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
@@ -3292,8 +3173,7 @@ pub struct ModifyCustomDbEngineVersionOutput {
     pub supported_character_sets: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
     /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     #[doc(hidden)]
-    pub supported_nchar_character_sets:
-        std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
+    pub supported_nchar_character_sets: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
     #[doc(hidden)]
     pub valid_upgrade_target: std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>,
@@ -3312,16 +3192,16 @@ pub struct ModifyCustomDbEngineVersionOutput {
     /// <p>A list of the supported DB engine modes.</p>
     #[doc(hidden)]
     pub supported_engine_modes: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of features supported by the DB engine.</p>
-    /// <p>The supported features vary by DB engine and DB engine version.</p>
-    /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine
+    /// <p>A list of features supported by the DB engine.</p> 
+    /// <p>The supported features vary by DB engine and DB engine version.</p> 
+    /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p> 
+    /// <p> <code>aws rds describe-db-engine-versions --engine 
     /// <engine_name>
-    /// --engine-version
+    /// --engine-version 
     /// <engine_version></engine_version>
-    /// </engine_name></code> </p>
-    /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+    /// </engine_name></code> </p> 
+    /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p> 
+    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p> 
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
     #[doc(hidden)]
     pub supported_feature_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3364,65 +3244,62 @@ pub struct ModifyCustomDbEngineVersionOutput {
     /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     #[doc(hidden)]
     pub supports_certificate_rotation_without_restart: std::option::Option<bool>,
-    /// <p>A list of the supported CA certificate identifiers.</p>
+    /// <p>A list of the supported CA certificate identifiers.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     #[doc(hidden)]
-    pub supported_ca_certificate_identifiers:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub supported_ca_certificate_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ModifyCustomDbEngineVersionOutput {
     /// <p>The name of the database engine.</p>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The version number of the database engine.</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The name of the DB parameter group family for the database engine.</p>
-    pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
+    pub fn db_parameter_group_family(&self) -> std::option::Option<& str> {
         self.db_parameter_group_family.as_deref()
     }
     /// <p>The description of the database engine.</p>
-    pub fn db_engine_description(&self) -> std::option::Option<&str> {
+    pub fn db_engine_description(&self) -> std::option::Option<& str> {
         self.db_engine_description.as_deref()
     }
     /// <p>The description of the database engine version.</p>
-    pub fn db_engine_version_description(&self) -> std::option::Option<&str> {
+    pub fn db_engine_version_description(&self) -> std::option::Option<& str> {
         self.db_engine_version_description.as_deref()
     }
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
-    pub fn default_character_set(&self) -> std::option::Option<&crate::model::CharacterSet> {
+    pub fn default_character_set(&self) -> std::option::Option<& crate::model::CharacterSet> {
         self.default_character_set.as_ref()
     }
     /// <p>The EC2 image</p>
-    pub fn image(&self) -> std::option::Option<&crate::model::CustomDbEngineVersionAmi> {
+    pub fn image(&self) -> std::option::Option<& crate::model::CustomDbEngineVersionAmi> {
         self.image.as_ref()
     }
     /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
-    pub fn db_engine_media_type(&self) -> std::option::Option<&str> {
+    pub fn db_engine_media_type(&self) -> std::option::Option<& str> {
         self.db_engine_media_type.as_deref()
     }
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-    pub fn supported_character_sets(&self) -> std::option::Option<&[crate::model::CharacterSet]> {
+    pub fn supported_character_sets(&self) -> std::option::Option<& [crate::model::CharacterSet]> {
         self.supported_character_sets.as_deref()
     }
     /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-    pub fn supported_nchar_character_sets(
-        &self,
-    ) -> std::option::Option<&[crate::model::CharacterSet]> {
+    pub fn supported_nchar_character_sets(&self) -> std::option::Option<& [crate::model::CharacterSet]> {
         self.supported_nchar_character_sets.as_deref()
     }
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    pub fn valid_upgrade_target(&self) -> std::option::Option<&[crate::model::UpgradeTarget]> {
+    pub fn valid_upgrade_target(&self) -> std::option::Option<& [crate::model::UpgradeTarget]> {
         self.valid_upgrade_target.as_deref()
     }
     /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
-    pub fn supported_timezones(&self) -> std::option::Option<&[crate::model::Timezone]> {
+    pub fn supported_timezones(&self) -> std::option::Option<& [crate::model::Timezone]> {
         self.supported_timezones.as_deref()
     }
     /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
-    pub fn exportable_log_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn exportable_log_types(&self) -> std::option::Option<& [std::string::String]> {
         self.exportable_log_types.as_deref()
     }
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
@@ -3434,25 +3311,25 @@ impl ModifyCustomDbEngineVersionOutput {
         self.supports_read_replica
     }
     /// <p>A list of the supported DB engine modes.</p>
-    pub fn supported_engine_modes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_engine_modes(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_engine_modes.as_deref()
     }
-    /// <p>A list of features supported by the DB engine.</p>
-    /// <p>The supported features vary by DB engine and DB engine version.</p>
-    /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine
+    /// <p>A list of features supported by the DB engine.</p> 
+    /// <p>The supported features vary by DB engine and DB engine version.</p> 
+    /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p> 
+    /// <p> <code>aws rds describe-db-engine-versions --engine 
     /// <engine_name>
-    /// --engine-version
+    /// --engine-version 
     /// <engine_version></engine_version>
-    /// </engine_name></code> </p>
-    /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+    /// </engine_name></code> </p> 
+    /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p> 
+    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p> 
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
-    pub fn supported_feature_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_feature_names(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_feature_names.as_deref()
     }
     /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
@@ -3464,31 +3341,31 @@ impl ModifyCustomDbEngineVersionOutput {
         self.supports_global_databases
     }
     /// <p>The major engine version of the CEV.</p>
-    pub fn major_engine_version(&self) -> std::option::Option<&str> {
+    pub fn major_engine_version(&self) -> std::option::Option<& str> {
         self.major_engine_version.as_deref()
     }
     /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
-    pub fn database_installation_files_s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn database_installation_files_s3_bucket_name(&self) -> std::option::Option<& str> {
         self.database_installation_files_s3_bucket_name.as_deref()
     }
     /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
-    pub fn database_installation_files_s3_prefix(&self) -> std::option::Option<&str> {
+    pub fn database_installation_files_s3_prefix(&self) -> std::option::Option<& str> {
         self.database_installation_files_s3_prefix.as_deref()
     }
     /// <p>The ARN of the custom engine version.</p>
-    pub fn db_engine_version_arn(&self) -> std::option::Option<&str> {
+    pub fn db_engine_version_arn(&self) -> std::option::Option<& str> {
         self.db_engine_version_arn.as_deref()
     }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The creation time of the DB engine version.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tag_list(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tag_list.as_deref()
     }
     /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
@@ -3496,24 +3373,22 @@ impl ModifyCustomDbEngineVersionOutput {
         self.supports_babelfish
     }
     /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
-    pub fn custom_db_engine_version_manifest(&self) -> std::option::Option<&str> {
+    pub fn custom_db_engine_version_manifest(&self) -> std::option::Option<& str> {
         self.custom_db_engine_version_manifest.as_deref()
     }
     /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub fn supports_certificate_rotation_without_restart(&self) -> std::option::Option<bool> {
         self.supports_certificate_rotation_without_restart
     }
-    /// <p>A list of the supported CA certificate identifiers.</p>
+    /// <p>A list of the supported CA certificate identifiers.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn supported_ca_certificate_identifiers(
-        &self,
-    ) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_ca_certificate_identifiers(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_ca_certificate_identifiers.as_deref()
     }
 }
 /// See [`ModifyCustomDbEngineVersionOutput`](crate::output::ModifyCustomDbEngineVersionOutput).
 pub mod modify_custom_db_engine_version_output {
-
+    
     /// A builder for [`ModifyCustomDbEngineVersionOutput`](crate::output::ModifyCustomDbEngineVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3525,12 +3400,9 @@ pub mod modify_custom_db_engine_version_output {
         pub(crate) default_character_set: std::option::Option<crate::model::CharacterSet>,
         pub(crate) image: std::option::Option<crate::model::CustomDbEngineVersionAmi>,
         pub(crate) db_engine_media_type: std::option::Option<std::string::String>,
-        pub(crate) supported_character_sets:
-            std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
-        pub(crate) supported_nchar_character_sets:
-            std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
-        pub(crate) valid_upgrade_target:
-            std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>,
+        pub(crate) supported_character_sets: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
+        pub(crate) supported_nchar_character_sets: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
+        pub(crate) valid_upgrade_target: std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>,
         pub(crate) supported_timezones: std::option::Option<std::vec::Vec<crate::model::Timezone>>,
         pub(crate) exportable_log_types: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) supports_log_exports_to_cloudwatch_logs: std::option::Option<bool>,
@@ -3541,8 +3413,7 @@ pub mod modify_custom_db_engine_version_output {
         pub(crate) supports_parallel_query: std::option::Option<bool>,
         pub(crate) supports_global_databases: std::option::Option<bool>,
         pub(crate) major_engine_version: std::option::Option<std::string::String>,
-        pub(crate) database_installation_files_s3_bucket_name:
-            std::option::Option<std::string::String>,
+        pub(crate) database_installation_files_s3_bucket_name: std::option::Option<std::string::String>,
         pub(crate) database_installation_files_s3_prefix: std::option::Option<std::string::String>,
         pub(crate) db_engine_version_arn: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -3551,8 +3422,7 @@ pub mod modify_custom_db_engine_version_output {
         pub(crate) supports_babelfish: std::option::Option<bool>,
         pub(crate) custom_db_engine_version_manifest: std::option::Option<std::string::String>,
         pub(crate) supports_certificate_rotation_without_restart: std::option::Option<bool>,
-        pub(crate) supported_ca_certificate_identifiers:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) supported_ca_certificate_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the database engine.</p>
@@ -3562,8 +3432,7 @@ pub mod modify_custom_db_engine_version_output {
         }
         /// <p>The name of the database engine.</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.engine = input;
-            self
+            self.engine = input; self
         }
         /// <p>The version number of the database engine.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3571,12 +3440,8 @@ pub mod modify_custom_db_engine_version_output {
             self
         }
         /// <p>The version number of the database engine.</p>
-        pub fn set_engine_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.engine_version = input;
-            self
+        pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine_version = input; self
         }
         /// <p>The name of the DB parameter group family for the database engine.</p>
         pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3584,12 +3449,8 @@ pub mod modify_custom_db_engine_version_output {
             self
         }
         /// <p>The name of the DB parameter group family for the database engine.</p>
-        pub fn set_db_parameter_group_family(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_parameter_group_family = input;
-            self
+        pub fn set_db_parameter_group_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_parameter_group_family = input; self
         }
         /// <p>The description of the database engine.</p>
         pub fn db_engine_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3597,28 +3458,17 @@ pub mod modify_custom_db_engine_version_output {
             self
         }
         /// <p>The description of the database engine.</p>
-        pub fn set_db_engine_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_engine_description = input;
-            self
+        pub fn set_db_engine_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_engine_description = input; self
         }
         /// <p>The description of the database engine version.</p>
-        pub fn db_engine_version_description(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn db_engine_version_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_engine_version_description = Some(input.into());
             self
         }
         /// <p>The description of the database engine version.</p>
-        pub fn set_db_engine_version_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_engine_version_description = input;
-            self
+        pub fn set_db_engine_version_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_engine_version_description = input; self
         }
         /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
         pub fn default_character_set(mut self, input: crate::model::CharacterSet) -> Self {
@@ -3626,12 +3476,8 @@ pub mod modify_custom_db_engine_version_output {
             self
         }
         /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
-        pub fn set_default_character_set(
-            mut self,
-            input: std::option::Option<crate::model::CharacterSet>,
-        ) -> Self {
-            self.default_character_set = input;
-            self
+        pub fn set_default_character_set(mut self, input: std::option::Option<crate::model::CharacterSet>) -> Self {
+            self.default_character_set = input; self
         }
         /// <p>The EC2 image</p>
         pub fn image(mut self, input: crate::model::CustomDbEngineVersionAmi) -> Self {
@@ -3639,12 +3485,8 @@ pub mod modify_custom_db_engine_version_output {
             self
         }
         /// <p>The EC2 image</p>
-        pub fn set_image(
-            mut self,
-            input: std::option::Option<crate::model::CustomDbEngineVersionAmi>,
-        ) -> Self {
-            self.image = input;
-            self
+        pub fn set_image(mut self, input: std::option::Option<crate::model::CustomDbEngineVersionAmi>) -> Self {
+            self.image = input; self
         }
         /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
         pub fn db_engine_media_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3652,12 +3494,8 @@ pub mod modify_custom_db_engine_version_output {
             self
         }
         /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
-        pub fn set_db_engine_media_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_engine_media_type = input;
-            self
+        pub fn set_db_engine_media_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_engine_media_type = input; self
         }
         /// Appends an item to `supported_character_sets`.
         ///
@@ -3666,17 +3504,13 @@ pub mod modify_custom_db_engine_version_output {
         /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
         pub fn supported_character_sets(mut self, input: crate::model::CharacterSet) -> Self {
             let mut v = self.supported_character_sets.unwrap_or_default();
-            v.push(input);
-            self.supported_character_sets = Some(v);
-            self
+                            v.push(input);
+                            self.supported_character_sets = Some(v);
+                            self
         }
         /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-        pub fn set_supported_character_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
-        ) -> Self {
-            self.supported_character_sets = input;
-            self
+        pub fn set_supported_character_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>) -> Self {
+            self.supported_character_sets = input; self
         }
         /// Appends an item to `supported_nchar_character_sets`.
         ///
@@ -3685,17 +3519,13 @@ pub mod modify_custom_db_engine_version_output {
         /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
         pub fn supported_nchar_character_sets(mut self, input: crate::model::CharacterSet) -> Self {
             let mut v = self.supported_nchar_character_sets.unwrap_or_default();
-            v.push(input);
-            self.supported_nchar_character_sets = Some(v);
-            self
+                            v.push(input);
+                            self.supported_nchar_character_sets = Some(v);
+                            self
         }
         /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-        pub fn set_supported_nchar_character_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
-        ) -> Self {
-            self.supported_nchar_character_sets = input;
-            self
+        pub fn set_supported_nchar_character_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>) -> Self {
+            self.supported_nchar_character_sets = input; self
         }
         /// Appends an item to `valid_upgrade_target`.
         ///
@@ -3704,17 +3534,13 @@ pub mod modify_custom_db_engine_version_output {
         /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
         pub fn valid_upgrade_target(mut self, input: crate::model::UpgradeTarget) -> Self {
             let mut v = self.valid_upgrade_target.unwrap_or_default();
-            v.push(input);
-            self.valid_upgrade_target = Some(v);
-            self
+                            v.push(input);
+                            self.valid_upgrade_target = Some(v);
+                            self
         }
         /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-        pub fn set_valid_upgrade_target(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>,
-        ) -> Self {
-            self.valid_upgrade_target = input;
-            self
+        pub fn set_valid_upgrade_target(mut self, input: std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>) -> Self {
+            self.valid_upgrade_target = input; self
         }
         /// Appends an item to `supported_timezones`.
         ///
@@ -3723,17 +3549,13 @@ pub mod modify_custom_db_engine_version_output {
         /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
         pub fn supported_timezones(mut self, input: crate::model::Timezone) -> Self {
             let mut v = self.supported_timezones.unwrap_or_default();
-            v.push(input);
-            self.supported_timezones = Some(v);
-            self
+                            v.push(input);
+                            self.supported_timezones = Some(v);
+                            self
         }
         /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
-        pub fn set_supported_timezones(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Timezone>>,
-        ) -> Self {
-            self.supported_timezones = input;
-            self
+        pub fn set_supported_timezones(mut self, input: std::option::Option<std::vec::Vec<crate::model::Timezone>>) -> Self {
+            self.supported_timezones = input; self
         }
         /// Appends an item to `exportable_log_types`.
         ///
@@ -3742,17 +3564,13 @@ pub mod modify_custom_db_engine_version_output {
         /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
         pub fn exportable_log_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exportable_log_types.unwrap_or_default();
-            v.push(input.into());
-            self.exportable_log_types = Some(v);
-            self
+                            v.push(input.into());
+                            self.exportable_log_types = Some(v);
+                            self
         }
         /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
-        pub fn set_exportable_log_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.exportable_log_types = input;
-            self
+        pub fn set_exportable_log_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.exportable_log_types = input; self
         }
         /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
         pub fn supports_log_exports_to_cloudwatch_logs(mut self, input: bool) -> Self {
@@ -3760,12 +3578,8 @@ pub mod modify_custom_db_engine_version_output {
             self
         }
         /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
-        pub fn set_supports_log_exports_to_cloudwatch_logs(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.supports_log_exports_to_cloudwatch_logs = input;
-            self
+        pub fn set_supports_log_exports_to_cloudwatch_logs(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_log_exports_to_cloudwatch_logs = input; self
         }
         /// <p>Indicates whether the database engine version supports read replicas.</p>
         pub fn supports_read_replica(mut self, input: bool) -> Self {
@@ -3774,8 +3588,7 @@ pub mod modify_custom_db_engine_version_output {
         }
         /// <p>Indicates whether the database engine version supports read replicas.</p>
         pub fn set_supports_read_replica(mut self, input: std::option::Option<bool>) -> Self {
-            self.supports_read_replica = input;
-            self
+            self.supports_read_replica = input; self
         }
         /// Appends an item to `supported_engine_modes`.
         ///
@@ -3784,56 +3597,48 @@ pub mod modify_custom_db_engine_version_output {
         /// <p>A list of the supported DB engine modes.</p>
         pub fn supported_engine_modes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_engine_modes.unwrap_or_default();
-            v.push(input.into());
-            self.supported_engine_modes = Some(v);
-            self
+                            v.push(input.into());
+                            self.supported_engine_modes = Some(v);
+                            self
         }
         /// <p>A list of the supported DB engine modes.</p>
-        pub fn set_supported_engine_modes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_engine_modes = input;
-            self
+        pub fn set_supported_engine_modes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.supported_engine_modes = input; self
         }
         /// Appends an item to `supported_feature_names`.
         ///
         /// To override the contents of this collection use [`set_supported_feature_names`](Self::set_supported_feature_names).
         ///
-        /// <p>A list of features supported by the DB engine.</p>
-        /// <p>The supported features vary by DB engine and DB engine version.</p>
-        /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-        /// <p> <code>aws rds describe-db-engine-versions --engine
+        /// <p>A list of features supported by the DB engine.</p> 
+        /// <p>The supported features vary by DB engine and DB engine version.</p> 
+        /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p> 
+        /// <p> <code>aws rds describe-db-engine-versions --engine 
         /// <engine_name>
-        /// --engine-version
+        /// --engine-version 
         /// <engine_version></engine_version>
-        /// </engine_name></code> </p>
-        /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
-        /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+        /// </engine_name></code> </p> 
+        /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p> 
+        /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p> 
         /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
         pub fn supported_feature_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_feature_names.unwrap_or_default();
-            v.push(input.into());
-            self.supported_feature_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.supported_feature_names = Some(v);
+                            self
         }
-        /// <p>A list of features supported by the DB engine.</p>
-        /// <p>The supported features vary by DB engine and DB engine version.</p>
-        /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-        /// <p> <code>aws rds describe-db-engine-versions --engine
+        /// <p>A list of features supported by the DB engine.</p> 
+        /// <p>The supported features vary by DB engine and DB engine version.</p> 
+        /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p> 
+        /// <p> <code>aws rds describe-db-engine-versions --engine 
         /// <engine_name>
-        /// --engine-version
+        /// --engine-version 
         /// <engine_version></engine_version>
-        /// </engine_name></code> </p>
-        /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
-        /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+        /// </engine_name></code> </p> 
+        /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p> 
+        /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p> 
         /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
-        pub fn set_supported_feature_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_feature_names = input;
-            self
+        pub fn set_supported_feature_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.supported_feature_names = input; self
         }
         /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3842,8 +3647,7 @@ pub mod modify_custom_db_engine_version_output {
         }
         /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
         pub fn supports_parallel_query(mut self, input: bool) -> Self {
@@ -3852,8 +3656,7 @@ pub mod modify_custom_db_engine_version_output {
         }
         /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
         pub fn set_supports_parallel_query(mut self, input: std::option::Option<bool>) -> Self {
-            self.supports_parallel_query = input;
-            self
+            self.supports_parallel_query = input; self
         }
         /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
         pub fn supports_global_databases(mut self, input: bool) -> Self {
@@ -3862,8 +3665,7 @@ pub mod modify_custom_db_engine_version_output {
         }
         /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
         pub fn set_supports_global_databases(mut self, input: std::option::Option<bool>) -> Self {
-            self.supports_global_databases = input;
-            self
+            self.supports_global_databases = input; self
         }
         /// <p>The major engine version of the CEV.</p>
         pub fn major_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3871,44 +3673,26 @@ pub mod modify_custom_db_engine_version_output {
             self
         }
         /// <p>The major engine version of the CEV.</p>
-        pub fn set_major_engine_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.major_engine_version = input;
-            self
+        pub fn set_major_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.major_engine_version = input; self
         }
         /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
-        pub fn database_installation_files_s3_bucket_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn database_installation_files_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_installation_files_s3_bucket_name = Some(input.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
-        pub fn set_database_installation_files_s3_bucket_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_installation_files_s3_bucket_name = input;
-            self
+        pub fn set_database_installation_files_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_installation_files_s3_bucket_name = input; self
         }
         /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
-        pub fn database_installation_files_s3_prefix(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn database_installation_files_s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_installation_files_s3_prefix = Some(input.into());
             self
         }
         /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
-        pub fn set_database_installation_files_s3_prefix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_installation_files_s3_prefix = input;
-            self
+        pub fn set_database_installation_files_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_installation_files_s3_prefix = input; self
         }
         /// <p>The ARN of the custom engine version.</p>
         pub fn db_engine_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3916,12 +3700,8 @@ pub mod modify_custom_db_engine_version_output {
             self
         }
         /// <p>The ARN of the custom engine version.</p>
-        pub fn set_db_engine_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_engine_version_arn = input;
-            self
+        pub fn set_db_engine_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_engine_version_arn = input; self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3930,8 +3710,7 @@ pub mod modify_custom_db_engine_version_output {
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>The creation time of the DB engine version.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3939,12 +3718,8 @@ pub mod modify_custom_db_engine_version_output {
             self
         }
         /// <p>The creation time of the DB engine version.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// Appends an item to `tag_list`.
         ///
@@ -3953,17 +3728,13 @@ pub mod modify_custom_db_engine_version_output {
         /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input);
-            self.tag_list = Some(v);
-            self
+                            v.push(input);
+                            self.tag_list = Some(v);
+                            self
         }
         /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-        pub fn set_tag_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tag_list = input;
-            self
+        pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tag_list = input; self
         }
         /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
         pub fn supports_babelfish(mut self, input: bool) -> Self {
@@ -3972,24 +3743,16 @@ pub mod modify_custom_db_engine_version_output {
         }
         /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
         pub fn set_supports_babelfish(mut self, input: std::option::Option<bool>) -> Self {
-            self.supports_babelfish = input;
-            self
+            self.supports_babelfish = input; self
         }
         /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
-        pub fn custom_db_engine_version_manifest(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn custom_db_engine_version_manifest(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_db_engine_version_manifest = Some(input.into());
             self
         }
         /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
-        pub fn set_custom_db_engine_version_manifest(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_db_engine_version_manifest = input;
-            self
+        pub fn set_custom_db_engine_version_manifest(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_db_engine_version_manifest = input; self
         }
         /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
         pub fn supports_certificate_rotation_without_restart(mut self, input: bool) -> Self {
@@ -3997,80 +3760,101 @@ pub mod modify_custom_db_engine_version_output {
             self
         }
         /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
-        pub fn set_supports_certificate_rotation_without_restart(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.supports_certificate_rotation_without_restart = input;
-            self
+        pub fn set_supports_certificate_rotation_without_restart(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_certificate_rotation_without_restart = input; self
         }
         /// Appends an item to `supported_ca_certificate_identifiers`.
         ///
         /// To override the contents of this collection use [`set_supported_ca_certificate_identifiers`](Self::set_supported_ca_certificate_identifiers).
         ///
-        /// <p>A list of the supported CA certificate identifiers.</p>
+        /// <p>A list of the supported CA certificate identifiers.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-        pub fn supported_ca_certificate_identifiers(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            let mut v = self
-                .supported_ca_certificate_identifiers
-                .unwrap_or_default();
-            v.push(input.into());
-            self.supported_ca_certificate_identifiers = Some(v);
-            self
+        pub fn supported_ca_certificate_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.supported_ca_certificate_identifiers.unwrap_or_default();
+                            v.push(input.into());
+                            self.supported_ca_certificate_identifiers = Some(v);
+                            self
         }
-        /// <p>A list of the supported CA certificate identifiers.</p>
+        /// <p>A list of the supported CA certificate identifiers.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-        pub fn set_supported_ca_certificate_identifiers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_ca_certificate_identifiers = input;
-            self
+        pub fn set_supported_ca_certificate_identifiers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.supported_ca_certificate_identifiers = input; self
         }
         /// Consumes the builder and constructs a [`ModifyCustomDbEngineVersionOutput`](crate::output::ModifyCustomDbEngineVersionOutput).
         pub fn build(self) -> crate::output::ModifyCustomDbEngineVersionOutput {
             crate::output::ModifyCustomDbEngineVersionOutput {
-                engine: self.engine,
-                engine_version: self.engine_version,
-                db_parameter_group_family: self.db_parameter_group_family,
-                db_engine_description: self.db_engine_description,
-                db_engine_version_description: self.db_engine_version_description,
-                default_character_set: self.default_character_set,
-                image: self.image,
-                db_engine_media_type: self.db_engine_media_type,
-                supported_character_sets: self.supported_character_sets,
-                supported_nchar_character_sets: self.supported_nchar_character_sets,
-                valid_upgrade_target: self.valid_upgrade_target,
-                supported_timezones: self.supported_timezones,
-                exportable_log_types: self.exportable_log_types,
-                supports_log_exports_to_cloudwatch_logs: self
-                    .supports_log_exports_to_cloudwatch_logs
-                    .unwrap_or_default(),
-                supports_read_replica: self.supports_read_replica.unwrap_or_default(),
-                supported_engine_modes: self.supported_engine_modes,
-                supported_feature_names: self.supported_feature_names,
-                status: self.status,
-                supports_parallel_query: self.supports_parallel_query.unwrap_or_default(),
-                supports_global_databases: self.supports_global_databases.unwrap_or_default(),
-                major_engine_version: self.major_engine_version,
-                database_installation_files_s3_bucket_name: self
-                    .database_installation_files_s3_bucket_name,
-                database_installation_files_s3_prefix: self.database_installation_files_s3_prefix,
-                db_engine_version_arn: self.db_engine_version_arn,
-                kms_key_id: self.kms_key_id,
-                create_time: self.create_time,
-                tag_list: self.tag_list,
-                supports_babelfish: self.supports_babelfish.unwrap_or_default(),
-                custom_db_engine_version_manifest: self.custom_db_engine_version_manifest,
-                supports_certificate_rotation_without_restart: self
-                    .supports_certificate_rotation_without_restart,
-                supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers,
+                engine: self.engine
+                ,
+                engine_version: self.engine_version
+                ,
+                db_parameter_group_family: self.db_parameter_group_family
+                ,
+                db_engine_description: self.db_engine_description
+                ,
+                db_engine_version_description: self.db_engine_version_description
+                ,
+                default_character_set: self.default_character_set
+                ,
+                image: self.image
+                ,
+                db_engine_media_type: self.db_engine_media_type
+                ,
+                supported_character_sets: self.supported_character_sets
+                ,
+                supported_nchar_character_sets: self.supported_nchar_character_sets
+                ,
+                valid_upgrade_target: self.valid_upgrade_target
+                ,
+                supported_timezones: self.supported_timezones
+                ,
+                exportable_log_types: self.exportable_log_types
+                ,
+                supports_log_exports_to_cloudwatch_logs: self.supports_log_exports_to_cloudwatch_logs
+                    .unwrap_or_default()
+                ,
+                supports_read_replica: self.supports_read_replica
+                    .unwrap_or_default()
+                ,
+                supported_engine_modes: self.supported_engine_modes
+                ,
+                supported_feature_names: self.supported_feature_names
+                ,
+                status: self.status
+                ,
+                supports_parallel_query: self.supports_parallel_query
+                    .unwrap_or_default()
+                ,
+                supports_global_databases: self.supports_global_databases
+                    .unwrap_or_default()
+                ,
+                major_engine_version: self.major_engine_version
+                ,
+                database_installation_files_s3_bucket_name: self.database_installation_files_s3_bucket_name
+                ,
+                database_installation_files_s3_prefix: self.database_installation_files_s3_prefix
+                ,
+                db_engine_version_arn: self.db_engine_version_arn
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                create_time: self.create_time
+                ,
+                tag_list: self.tag_list
+                ,
+                supports_babelfish: self.supports_babelfish
+                    .unwrap_or_default()
+                ,
+                custom_db_engine_version_manifest: self.custom_db_engine_version_manifest
+                ,
+                supports_certificate_rotation_without_restart: self.supports_certificate_rotation_without_restart
+                ,
+                supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyCustomDbEngineVersionOutput {
     /// Creates a new builder-style object to manufacture [`ModifyCustomDbEngineVersionOutput`](crate::output::ModifyCustomDbEngineVersionOutput).
@@ -4082,7 +3866,7 @@ impl ModifyCustomDbEngineVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyCurrentDbClusterCapacityOutput {
+pub struct ModifyCurrentDbClusterCapacityOutput  {
     /// <p>A user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
     #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
@@ -4101,7 +3885,7 @@ pub struct ModifyCurrentDbClusterCapacityOutput {
 }
 impl ModifyCurrentDbClusterCapacityOutput {
     /// <p>A user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>A value that specifies the capacity that the DB cluster scales to next.</p>
@@ -4117,13 +3901,13 @@ impl ModifyCurrentDbClusterCapacityOutput {
         self.seconds_before_timeout
     }
     /// <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
-    pub fn timeout_action(&self) -> std::option::Option<&str> {
+    pub fn timeout_action(&self) -> std::option::Option<& str> {
         self.timeout_action.as_deref()
     }
 }
 /// See [`ModifyCurrentDbClusterCapacityOutput`](crate::output::ModifyCurrentDbClusterCapacityOutput).
 pub mod modify_current_db_cluster_capacity_output {
-
+    
     /// A builder for [`ModifyCurrentDbClusterCapacityOutput`](crate::output::ModifyCurrentDbClusterCapacityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4140,12 +3924,8 @@ pub mod modify_current_db_cluster_capacity_output {
             self
         }
         /// <p>A user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
-        pub fn set_db_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_cluster_identifier = input;
-            self
+        pub fn set_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_cluster_identifier = input; self
         }
         /// <p>A value that specifies the capacity that the DB cluster scales to next.</p>
         pub fn pending_capacity(mut self, input: i32) -> Self {
@@ -4154,8 +3934,7 @@ pub mod modify_current_db_cluster_capacity_output {
         }
         /// <p>A value that specifies the capacity that the DB cluster scales to next.</p>
         pub fn set_pending_capacity(mut self, input: std::option::Option<i32>) -> Self {
-            self.pending_capacity = input;
-            self
+            self.pending_capacity = input; self
         }
         /// <p>The current capacity of the DB cluster.</p>
         pub fn current_capacity(mut self, input: i32) -> Self {
@@ -4164,8 +3943,7 @@ pub mod modify_current_db_cluster_capacity_output {
         }
         /// <p>The current capacity of the DB cluster.</p>
         pub fn set_current_capacity(mut self, input: std::option::Option<i32>) -> Self {
-            self.current_capacity = input;
-            self
+            self.current_capacity = input; self
         }
         /// <p>The number of seconds before a call to <code>ModifyCurrentDBClusterCapacity</code> times out.</p>
         pub fn seconds_before_timeout(mut self, input: i32) -> Self {
@@ -4174,8 +3952,7 @@ pub mod modify_current_db_cluster_capacity_output {
         }
         /// <p>The number of seconds before a call to <code>ModifyCurrentDBClusterCapacity</code> times out.</p>
         pub fn set_seconds_before_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.seconds_before_timeout = input;
-            self
+            self.seconds_before_timeout = input; self
         }
         /// <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
         pub fn timeout_action(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4183,24 +3960,27 @@ pub mod modify_current_db_cluster_capacity_output {
             self
         }
         /// <p>The timeout action of a call to <code>ModifyCurrentDBClusterCapacity</code>, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
-        pub fn set_timeout_action(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.timeout_action = input;
-            self
+        pub fn set_timeout_action(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.timeout_action = input; self
         }
         /// Consumes the builder and constructs a [`ModifyCurrentDbClusterCapacityOutput`](crate::output::ModifyCurrentDbClusterCapacityOutput).
         pub fn build(self) -> crate::output::ModifyCurrentDbClusterCapacityOutput {
             crate::output::ModifyCurrentDbClusterCapacityOutput {
-                db_cluster_identifier: self.db_cluster_identifier,
-                pending_capacity: self.pending_capacity,
-                current_capacity: self.current_capacity,
-                seconds_before_timeout: self.seconds_before_timeout,
-                timeout_action: self.timeout_action,
+                db_cluster_identifier: self.db_cluster_identifier
+                ,
+                pending_capacity: self.pending_capacity
+                ,
+                current_capacity: self.current_capacity
+                ,
+                seconds_before_timeout: self.seconds_before_timeout
+                ,
+                timeout_action: self.timeout_action
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyCurrentDbClusterCapacityOutput {
     /// Creates a new builder-style object to manufacture [`ModifyCurrentDbClusterCapacityOutput`](crate::output::ModifyCurrentDbClusterCapacityOutput).
@@ -4212,50 +3992,49 @@ impl ModifyCurrentDbClusterCapacityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyCertificatesOutput {
-    /// <p>A CA certificate for an Amazon Web Services account.</p>
+pub struct ModifyCertificatesOutput  {
+    /// <p>A CA certificate for an Amazon Web Services account.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<crate::model::Certificate>,
 }
 impl ModifyCertificatesOutput {
-    /// <p>A CA certificate for an Amazon Web Services account.</p>
+    /// <p>A CA certificate for an Amazon Web Services account.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn certificate(&self) -> std::option::Option<&crate::model::Certificate> {
+    pub fn certificate(&self) -> std::option::Option<& crate::model::Certificate> {
         self.certificate.as_ref()
     }
 }
 /// See [`ModifyCertificatesOutput`](crate::output::ModifyCertificatesOutput).
 pub mod modify_certificates_output {
-
+    
     /// A builder for [`ModifyCertificatesOutput`](crate::output::ModifyCertificatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate: std::option::Option<crate::model::Certificate>,
     }
     impl Builder {
-        /// <p>A CA certificate for an Amazon Web Services account.</p>
+        /// <p>A CA certificate for an Amazon Web Services account.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn certificate(mut self, input: crate::model::Certificate) -> Self {
             self.certificate = Some(input);
             self
         }
-        /// <p>A CA certificate for an Amazon Web Services account.</p>
+        /// <p>A CA certificate for an Amazon Web Services account.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-        pub fn set_certificate(
-            mut self,
-            input: std::option::Option<crate::model::Certificate>,
-        ) -> Self {
-            self.certificate = input;
-            self
+        pub fn set_certificate(mut self, input: std::option::Option<crate::model::Certificate>) -> Self {
+            self.certificate = input; self
         }
         /// Consumes the builder and constructs a [`ModifyCertificatesOutput`](crate::output::ModifyCertificatesOutput).
         pub fn build(self) -> crate::output::ModifyCertificatesOutput {
             crate::output::ModifyCertificatesOutput {
-                certificate: self.certificate,
+                certificate: self.certificate
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`ModifyCertificatesOutput`](crate::output::ModifyCertificatesOutput).
@@ -4267,7 +4046,7 @@ impl ModifyCertificatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyActivityStreamOutput {
+pub struct ModifyActivityStreamOutput  {
     /// <p>The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -4289,19 +4068,19 @@ pub struct ModifyActivityStreamOutput {
 }
 impl ModifyActivityStreamOutput {
     /// <p>The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
-    pub fn kinesis_stream_name(&self) -> std::option::Option<&str> {
+    pub fn kinesis_stream_name(&self) -> std::option::Option<& str> {
         self.kinesis_stream_name.as_deref()
     }
     /// <p>The status of the modification to the database activity stream.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ActivityStreamStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ActivityStreamStatus> {
         self.status.as_ref()
     }
     /// <p>The mode of the database activity stream.</p>
-    pub fn mode(&self) -> std::option::Option<&crate::model::ActivityStreamMode> {
+    pub fn mode(&self) -> std::option::Option<& crate::model::ActivityStreamMode> {
         self.mode.as_ref()
     }
     /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
@@ -4309,13 +4088,13 @@ impl ModifyActivityStreamOutput {
         self.engine_native_audit_fields_included
     }
     /// <p>The status of the modification to the policy state of the database activity stream.</p>
-    pub fn policy_status(&self) -> std::option::Option<&crate::model::ActivityStreamPolicyStatus> {
+    pub fn policy_status(&self) -> std::option::Option<& crate::model::ActivityStreamPolicyStatus> {
         self.policy_status.as_ref()
     }
 }
 /// See [`ModifyActivityStreamOutput`](crate::output::ModifyActivityStreamOutput).
 pub mod modify_activity_stream_output {
-
+    
     /// A builder for [`ModifyActivityStreamOutput`](crate::output::ModifyActivityStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4334,8 +4113,7 @@ pub mod modify_activity_stream_output {
         }
         /// <p>The Amazon Web Services KMS key identifier for encryption of messages in the database activity stream.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
         pub fn kinesis_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4343,12 +4121,8 @@ pub mod modify_activity_stream_output {
             self
         }
         /// <p>The name of the Amazon Kinesis data stream to be used for the database activity stream.</p>
-        pub fn set_kinesis_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.kinesis_stream_name = input;
-            self
+        pub fn set_kinesis_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kinesis_stream_name = input; self
         }
         /// <p>The status of the modification to the database activity stream.</p>
         pub fn status(mut self, input: crate::model::ActivityStreamStatus) -> Self {
@@ -4356,12 +4130,8 @@ pub mod modify_activity_stream_output {
             self
         }
         /// <p>The status of the modification to the database activity stream.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ActivityStreamStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ActivityStreamStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The mode of the database activity stream.</p>
         pub fn mode(mut self, input: crate::model::ActivityStreamMode) -> Self {
@@ -4369,12 +4139,8 @@ pub mod modify_activity_stream_output {
             self
         }
         /// <p>The mode of the database activity stream.</p>
-        pub fn set_mode(
-            mut self,
-            input: std::option::Option<crate::model::ActivityStreamMode>,
-        ) -> Self {
-            self.mode = input;
-            self
+        pub fn set_mode(mut self, input: std::option::Option<crate::model::ActivityStreamMode>) -> Self {
+            self.mode = input; self
         }
         /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
         pub fn engine_native_audit_fields_included(mut self, input: bool) -> Self {
@@ -4382,12 +4148,8 @@ pub mod modify_activity_stream_output {
             self
         }
         /// <p>Indicates whether engine-native audit fields are included in the database activity stream.</p>
-        pub fn set_engine_native_audit_fields_included(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.engine_native_audit_fields_included = input;
-            self
+        pub fn set_engine_native_audit_fields_included(mut self, input: std::option::Option<bool>) -> Self {
+            self.engine_native_audit_fields_included = input; self
         }
         /// <p>The status of the modification to the policy state of the database activity stream.</p>
         pub fn policy_status(mut self, input: crate::model::ActivityStreamPolicyStatus) -> Self {
@@ -4395,25 +4157,29 @@ pub mod modify_activity_stream_output {
             self
         }
         /// <p>The status of the modification to the policy state of the database activity stream.</p>
-        pub fn set_policy_status(
-            mut self,
-            input: std::option::Option<crate::model::ActivityStreamPolicyStatus>,
-        ) -> Self {
-            self.policy_status = input;
-            self
+        pub fn set_policy_status(mut self, input: std::option::Option<crate::model::ActivityStreamPolicyStatus>) -> Self {
+            self.policy_status = input; self
         }
         /// Consumes the builder and constructs a [`ModifyActivityStreamOutput`](crate::output::ModifyActivityStreamOutput).
         pub fn build(self) -> crate::output::ModifyActivityStreamOutput {
             crate::output::ModifyActivityStreamOutput {
-                kms_key_id: self.kms_key_id,
-                kinesis_stream_name: self.kinesis_stream_name,
-                status: self.status,
-                mode: self.mode,
-                engine_native_audit_fields_included: self.engine_native_audit_fields_included,
-                policy_status: self.policy_status,
+                kms_key_id: self.kms_key_id
+                ,
+                kinesis_stream_name: self.kinesis_stream_name
+                ,
+                status: self.status
+                ,
+                mode: self.mode
+                ,
+                engine_native_audit_fields_included: self.engine_native_audit_fields_included
+                ,
+                policy_status: self.policy_status
+                ,
             }
         }
     }
+    
+    
 }
 impl ModifyActivityStreamOutput {
     /// Creates a new builder-style object to manufacture [`ModifyActivityStreamOutput`](crate::output::ModifyActivityStreamOutput).
@@ -4425,20 +4191,20 @@ impl ModifyActivityStreamOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>List of tags returned by the <code>ListTagsForResource</code> operation.</p>
     #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>List of tags returned by the <code>ListTagsForResource</code> operation.</p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tag_list(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tag_list.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4452,25 +4218,24 @@ pub mod list_tags_for_resource_output {
         /// <p>List of tags returned by the <code>ListTagsForResource</code> operation.</p>
         pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input);
-            self.tag_list = Some(v);
-            self
+                            v.push(input);
+                            self.tag_list = Some(v);
+                            self
         }
         /// <p>List of tags returned by the <code>ListTagsForResource</code> operation.</p>
-        pub fn set_tag_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tag_list = input;
-            self
+        pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tag_list = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                tag_list: self.tag_list,
+                tag_list: self.tag_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -4482,20 +4247,20 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailoverGlobalClusterOutput {
+pub struct FailoverGlobalClusterOutput  {
     /// <p>A data type representing an Aurora global database.</p>
     #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl FailoverGlobalClusterOutput {
     /// <p>A data type representing an Aurora global database.</p>
-    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+    pub fn global_cluster(&self) -> std::option::Option<& crate::model::GlobalCluster> {
         self.global_cluster.as_ref()
     }
 }
 /// See [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput).
 pub mod failover_global_cluster_output {
-
+    
     /// A builder for [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4508,20 +4273,19 @@ pub mod failover_global_cluster_output {
             self
         }
         /// <p>A data type representing an Aurora global database.</p>
-        pub fn set_global_cluster(
-            mut self,
-            input: std::option::Option<crate::model::GlobalCluster>,
-        ) -> Self {
-            self.global_cluster = input;
-            self
+        pub fn set_global_cluster(mut self, input: std::option::Option<crate::model::GlobalCluster>) -> Self {
+            self.global_cluster = input; self
         }
         /// Consumes the builder and constructs a [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput).
         pub fn build(self) -> crate::output::FailoverGlobalClusterOutput {
             crate::output::FailoverGlobalClusterOutput {
-                global_cluster: self.global_cluster,
+                global_cluster: self.global_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl FailoverGlobalClusterOutput {
     /// Creates a new builder-style object to manufacture [`FailoverGlobalClusterOutput`](crate::output::FailoverGlobalClusterOutput).
@@ -4533,62 +4297,61 @@ impl FailoverGlobalClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailoverDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+pub struct FailoverDbClusterOutput  {
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl FailoverDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<& crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 /// See [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput).
 pub mod failover_db_cluster_output {
-
+    
     /// A builder for [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-        pub fn set_db_cluster(
-            mut self,
-            input: std::option::Option<crate::model::DbCluster>,
-        ) -> Self {
-            self.db_cluster = input;
-            self
+        pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
+            self.db_cluster = input; self
         }
         /// Consumes the builder and constructs a [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput).
         pub fn build(self) -> crate::output::FailoverDbClusterOutput {
             crate::output::FailoverDbClusterOutput {
-                db_cluster: self.db_cluster,
+                db_cluster: self.db_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl FailoverDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`FailoverDbClusterOutput`](crate::output::FailoverDbClusterOutput).
@@ -4600,7 +4363,7 @@ impl FailoverDbClusterOutput {
 /// <p>This data type is used as a response element to <code>DownloadDBLogFilePortion</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DownloadDbLogFilePortionOutput {
+pub struct DownloadDbLogFilePortionOutput  {
     /// <p>Entries from the specified log file.</p>
     #[doc(hidden)]
     pub log_file_data: std::option::Option<std::string::String>,
@@ -4613,11 +4376,11 @@ pub struct DownloadDbLogFilePortionOutput {
 }
 impl DownloadDbLogFilePortionOutput {
     /// <p>Entries from the specified log file.</p>
-    pub fn log_file_data(&self) -> std::option::Option<&str> {
+    pub fn log_file_data(&self) -> std::option::Option<& str> {
         self.log_file_data.as_deref()
     }
     /// <p>A pagination token that can be used in a later <code>DownloadDBLogFilePortion</code> request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
@@ -4627,7 +4390,7 @@ impl DownloadDbLogFilePortionOutput {
 }
 /// See [`DownloadDbLogFilePortionOutput`](crate::output::DownloadDbLogFilePortionOutput).
 pub mod download_db_log_file_portion_output {
-
+    
     /// A builder for [`DownloadDbLogFilePortionOutput`](crate::output::DownloadDbLogFilePortionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4642,12 +4405,8 @@ pub mod download_db_log_file_portion_output {
             self
         }
         /// <p>Entries from the specified log file.</p>
-        pub fn set_log_file_data(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_file_data = input;
-            self
+        pub fn set_log_file_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_file_data = input; self
         }
         /// <p>A pagination token that can be used in a later <code>DownloadDBLogFilePortion</code> request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4656,8 +4415,7 @@ pub mod download_db_log_file_portion_output {
         }
         /// <p>A pagination token that can be used in a later <code>DownloadDBLogFilePortion</code> request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
         pub fn additional_data_pending(mut self, input: bool) -> Self {
@@ -4666,18 +4424,23 @@ pub mod download_db_log_file_portion_output {
         }
         /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
         pub fn set_additional_data_pending(mut self, input: std::option::Option<bool>) -> Self {
-            self.additional_data_pending = input;
-            self
+            self.additional_data_pending = input; self
         }
         /// Consumes the builder and constructs a [`DownloadDbLogFilePortionOutput`](crate::output::DownloadDbLogFilePortionOutput).
         pub fn build(self) -> crate::output::DownloadDbLogFilePortionOutput {
             crate::output::DownloadDbLogFilePortionOutput {
-                log_file_data: self.log_file_data,
-                marker: self.marker,
-                additional_data_pending: self.additional_data_pending.unwrap_or_default(),
+                log_file_data: self.log_file_data
+                ,
+                marker: self.marker
+                ,
+                additional_data_pending: self.additional_data_pending
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DownloadDbLogFilePortionOutput {
     /// Creates a new builder-style object to manufacture [`DownloadDbLogFilePortionOutput`](crate::output::DownloadDbLogFilePortionOutput).
@@ -4689,54 +4452,45 @@ impl DownloadDbLogFilePortionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeValidDbInstanceModificationsOutput {
+pub struct DescribeValidDbInstanceModificationsOutput  {
     /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>.</p>
     #[doc(hidden)]
-    pub valid_db_instance_modifications_message:
-        std::option::Option<crate::model::ValidDbInstanceModificationsMessage>,
+    pub valid_db_instance_modifications_message: std::option::Option<crate::model::ValidDbInstanceModificationsMessage>,
 }
 impl DescribeValidDbInstanceModificationsOutput {
     /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>.</p>
-    pub fn valid_db_instance_modifications_message(
-        &self,
-    ) -> std::option::Option<&crate::model::ValidDbInstanceModificationsMessage> {
+    pub fn valid_db_instance_modifications_message(&self) -> std::option::Option<& crate::model::ValidDbInstanceModificationsMessage> {
         self.valid_db_instance_modifications_message.as_ref()
     }
 }
 /// See [`DescribeValidDbInstanceModificationsOutput`](crate::output::DescribeValidDbInstanceModificationsOutput).
 pub mod describe_valid_db_instance_modifications_output {
-
+    
     /// A builder for [`DescribeValidDbInstanceModificationsOutput`](crate::output::DescribeValidDbInstanceModificationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) valid_db_instance_modifications_message:
-            std::option::Option<crate::model::ValidDbInstanceModificationsMessage>,
+        pub(crate) valid_db_instance_modifications_message: std::option::Option<crate::model::ValidDbInstanceModificationsMessage>,
     }
     impl Builder {
         /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>.</p>
-        pub fn valid_db_instance_modifications_message(
-            mut self,
-            input: crate::model::ValidDbInstanceModificationsMessage,
-        ) -> Self {
+        pub fn valid_db_instance_modifications_message(mut self, input: crate::model::ValidDbInstanceModificationsMessage) -> Self {
             self.valid_db_instance_modifications_message = Some(input);
             self
         }
         /// <p>Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <code>DescribeValidDBInstanceModifications</code> action. You can use this information when you call <code>ModifyDBInstance</code>.</p>
-        pub fn set_valid_db_instance_modifications_message(
-            mut self,
-            input: std::option::Option<crate::model::ValidDbInstanceModificationsMessage>,
-        ) -> Self {
-            self.valid_db_instance_modifications_message = input;
-            self
+        pub fn set_valid_db_instance_modifications_message(mut self, input: std::option::Option<crate::model::ValidDbInstanceModificationsMessage>) -> Self {
+            self.valid_db_instance_modifications_message = input; self
         }
         /// Consumes the builder and constructs a [`DescribeValidDbInstanceModificationsOutput`](crate::output::DescribeValidDbInstanceModificationsOutput).
         pub fn build(self) -> crate::output::DescribeValidDbInstanceModificationsOutput {
             crate::output::DescribeValidDbInstanceModificationsOutput {
-                valid_db_instance_modifications_message: self
-                    .valid_db_instance_modifications_message,
+                valid_db_instance_modifications_message: self.valid_db_instance_modifications_message
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeValidDbInstanceModificationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeValidDbInstanceModificationsOutput`](crate::output::DescribeValidDbInstanceModificationsOutput).
@@ -4748,7 +4502,7 @@ impl DescribeValidDbInstanceModificationsOutput {
 /// <p>Contains the result of a successful invocation of the <code>DescribeSourceRegions</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSourceRegionsOutput {
+pub struct DescribeSourceRegionsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -4758,17 +4512,17 @@ pub struct DescribeSourceRegionsOutput {
 }
 impl DescribeSourceRegionsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>SourceRegion</code> instances that contains each source Amazon Web Services Region that the current Amazon Web Services Region can get a read replica or a DB snapshot from.</p>
-    pub fn source_regions(&self) -> std::option::Option<&[crate::model::SourceRegion]> {
+    pub fn source_regions(&self) -> std::option::Option<& [crate::model::SourceRegion]> {
         self.source_regions.as_deref()
     }
 }
 /// See [`DescribeSourceRegionsOutput`](crate::output::DescribeSourceRegionsOutput).
 pub mod describe_source_regions_output {
-
+    
     /// A builder for [`DescribeSourceRegionsOutput`](crate::output::DescribeSourceRegionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4783,8 +4537,7 @@ pub mod describe_source_regions_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `source_regions`.
         ///
@@ -4793,26 +4546,26 @@ pub mod describe_source_regions_output {
         /// <p>A list of <code>SourceRegion</code> instances that contains each source Amazon Web Services Region that the current Amazon Web Services Region can get a read replica or a DB snapshot from.</p>
         pub fn source_regions(mut self, input: crate::model::SourceRegion) -> Self {
             let mut v = self.source_regions.unwrap_or_default();
-            v.push(input);
-            self.source_regions = Some(v);
-            self
+                            v.push(input);
+                            self.source_regions = Some(v);
+                            self
         }
         /// <p>A list of <code>SourceRegion</code> instances that contains each source Amazon Web Services Region that the current Amazon Web Services Region can get a read replica or a DB snapshot from.</p>
-        pub fn set_source_regions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SourceRegion>>,
-        ) -> Self {
-            self.source_regions = input;
-            self
+        pub fn set_source_regions(mut self, input: std::option::Option<std::vec::Vec<crate::model::SourceRegion>>) -> Self {
+            self.source_regions = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSourceRegionsOutput`](crate::output::DescribeSourceRegionsOutput).
         pub fn build(self) -> crate::output::DescribeSourceRegionsOutput {
             crate::output::DescribeSourceRegionsOutput {
-                marker: self.marker,
-                source_regions: self.source_regions,
+                marker: self.marker
+                ,
+                source_regions: self.source_regions
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSourceRegionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSourceRegionsOutput`](crate::output::DescribeSourceRegionsOutput).
@@ -4824,36 +4577,32 @@ impl DescribeSourceRegionsOutput {
 /// <p>Contains the result of a successful invocation of the <code>DescribeReservedDBInstancesOfferings</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReservedDbInstancesOfferingsOutput {
+pub struct DescribeReservedDbInstancesOfferingsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of reserved DB instance offerings.</p>
     #[doc(hidden)]
-    pub reserved_db_instances_offerings:
-        std::option::Option<std::vec::Vec<crate::model::ReservedDbInstancesOffering>>,
+    pub reserved_db_instances_offerings: std::option::Option<std::vec::Vec<crate::model::ReservedDbInstancesOffering>>,
 }
 impl DescribeReservedDbInstancesOfferingsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of reserved DB instance offerings.</p>
-    pub fn reserved_db_instances_offerings(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReservedDbInstancesOffering]> {
+    pub fn reserved_db_instances_offerings(&self) -> std::option::Option<& [crate::model::ReservedDbInstancesOffering]> {
         self.reserved_db_instances_offerings.as_deref()
     }
 }
 /// See [`DescribeReservedDbInstancesOfferingsOutput`](crate::output::DescribeReservedDbInstancesOfferingsOutput).
 pub mod describe_reserved_db_instances_offerings_output {
-
+    
     /// A builder for [`DescribeReservedDbInstancesOfferingsOutput`](crate::output::DescribeReservedDbInstancesOfferingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) reserved_db_instances_offerings:
-            std::option::Option<std::vec::Vec<crate::model::ReservedDbInstancesOffering>>,
+        pub(crate) reserved_db_instances_offerings: std::option::Option<std::vec::Vec<crate::model::ReservedDbInstancesOffering>>,
     }
     impl Builder {
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -4863,39 +4612,35 @@ pub mod describe_reserved_db_instances_offerings_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `reserved_db_instances_offerings`.
         ///
         /// To override the contents of this collection use [`set_reserved_db_instances_offerings`](Self::set_reserved_db_instances_offerings).
         ///
         /// <p>A list of reserved DB instance offerings.</p>
-        pub fn reserved_db_instances_offerings(
-            mut self,
-            input: crate::model::ReservedDbInstancesOffering,
-        ) -> Self {
+        pub fn reserved_db_instances_offerings(mut self, input: crate::model::ReservedDbInstancesOffering) -> Self {
             let mut v = self.reserved_db_instances_offerings.unwrap_or_default();
-            v.push(input);
-            self.reserved_db_instances_offerings = Some(v);
-            self
+                            v.push(input);
+                            self.reserved_db_instances_offerings = Some(v);
+                            self
         }
         /// <p>A list of reserved DB instance offerings.</p>
-        pub fn set_reserved_db_instances_offerings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReservedDbInstancesOffering>>,
-        ) -> Self {
-            self.reserved_db_instances_offerings = input;
-            self
+        pub fn set_reserved_db_instances_offerings(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReservedDbInstancesOffering>>) -> Self {
+            self.reserved_db_instances_offerings = input; self
         }
         /// Consumes the builder and constructs a [`DescribeReservedDbInstancesOfferingsOutput`](crate::output::DescribeReservedDbInstancesOfferingsOutput).
         pub fn build(self) -> crate::output::DescribeReservedDbInstancesOfferingsOutput {
             crate::output::DescribeReservedDbInstancesOfferingsOutput {
-                marker: self.marker,
-                reserved_db_instances_offerings: self.reserved_db_instances_offerings,
+                marker: self.marker
+                ,
+                reserved_db_instances_offerings: self.reserved_db_instances_offerings
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeReservedDbInstancesOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedDbInstancesOfferingsOutput`](crate::output::DescribeReservedDbInstancesOfferingsOutput).
@@ -4907,7 +4652,7 @@ impl DescribeReservedDbInstancesOfferingsOutput {
 /// <p>Contains the result of a successful invocation of the <code>DescribeReservedDBInstances</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReservedDbInstancesOutput {
+pub struct DescribeReservedDbInstancesOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -4917,25 +4662,22 @@ pub struct DescribeReservedDbInstancesOutput {
 }
 impl DescribeReservedDbInstancesOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of reserved DB instances.</p>
-    pub fn reserved_db_instances(
-        &self,
-    ) -> std::option::Option<&[crate::model::ReservedDbInstance]> {
+    pub fn reserved_db_instances(&self) -> std::option::Option<& [crate::model::ReservedDbInstance]> {
         self.reserved_db_instances.as_deref()
     }
 }
 /// See [`DescribeReservedDbInstancesOutput`](crate::output::DescribeReservedDbInstancesOutput).
 pub mod describe_reserved_db_instances_output {
-
+    
     /// A builder for [`DescribeReservedDbInstancesOutput`](crate::output::DescribeReservedDbInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) reserved_db_instances:
-            std::option::Option<std::vec::Vec<crate::model::ReservedDbInstance>>,
+        pub(crate) reserved_db_instances: std::option::Option<std::vec::Vec<crate::model::ReservedDbInstance>>,
     }
     impl Builder {
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -4945,8 +4687,7 @@ pub mod describe_reserved_db_instances_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `reserved_db_instances`.
         ///
@@ -4955,26 +4696,26 @@ pub mod describe_reserved_db_instances_output {
         /// <p>A list of reserved DB instances.</p>
         pub fn reserved_db_instances(mut self, input: crate::model::ReservedDbInstance) -> Self {
             let mut v = self.reserved_db_instances.unwrap_or_default();
-            v.push(input);
-            self.reserved_db_instances = Some(v);
-            self
+                            v.push(input);
+                            self.reserved_db_instances = Some(v);
+                            self
         }
         /// <p>A list of reserved DB instances.</p>
-        pub fn set_reserved_db_instances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReservedDbInstance>>,
-        ) -> Self {
-            self.reserved_db_instances = input;
-            self
+        pub fn set_reserved_db_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReservedDbInstance>>) -> Self {
+            self.reserved_db_instances = input; self
         }
         /// Consumes the builder and constructs a [`DescribeReservedDbInstancesOutput`](crate::output::DescribeReservedDbInstancesOutput).
         pub fn build(self) -> crate::output::DescribeReservedDbInstancesOutput {
             crate::output::DescribeReservedDbInstancesOutput {
-                marker: self.marker,
-                reserved_db_instances: self.reserved_db_instances,
+                marker: self.marker
+                ,
+                reserved_db_instances: self.reserved_db_instances
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeReservedDbInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservedDbInstancesOutput`](crate::output::DescribeReservedDbInstancesOutput).
@@ -4986,35 +4727,31 @@ impl DescribeReservedDbInstancesOutput {
 /// <p>Data returned from the <b>DescribePendingMaintenanceActions</b> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePendingMaintenanceActionsOutput {
+pub struct DescribePendingMaintenanceActionsOutput  {
     /// <p>A list of the pending maintenance actions for the resource.</p>
     #[doc(hidden)]
-    pub pending_maintenance_actions:
-        std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
+    pub pending_maintenance_actions: std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
     /// <p>An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribePendingMaintenanceActionsOutput {
     /// <p>A list of the pending maintenance actions for the resource.</p>
-    pub fn pending_maintenance_actions(
-        &self,
-    ) -> std::option::Option<&[crate::model::ResourcePendingMaintenanceActions]> {
+    pub fn pending_maintenance_actions(&self) -> std::option::Option<& [crate::model::ResourcePendingMaintenanceActions]> {
         self.pending_maintenance_actions.as_deref()
     }
     /// <p>An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
 pub mod describe_pending_maintenance_actions_output {
-
+    
     /// A builder for [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) pending_maintenance_actions:
-            std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
+        pub(crate) pending_maintenance_actions: std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5023,24 +4760,15 @@ pub mod describe_pending_maintenance_actions_output {
         /// To override the contents of this collection use [`set_pending_maintenance_actions`](Self::set_pending_maintenance_actions).
         ///
         /// <p>A list of the pending maintenance actions for the resource.</p>
-        pub fn pending_maintenance_actions(
-            mut self,
-            input: crate::model::ResourcePendingMaintenanceActions,
-        ) -> Self {
+        pub fn pending_maintenance_actions(mut self, input: crate::model::ResourcePendingMaintenanceActions) -> Self {
             let mut v = self.pending_maintenance_actions.unwrap_or_default();
-            v.push(input);
-            self.pending_maintenance_actions = Some(v);
-            self
+                            v.push(input);
+                            self.pending_maintenance_actions = Some(v);
+                            self
         }
         /// <p>A list of the pending maintenance actions for the resource.</p>
-        pub fn set_pending_maintenance_actions(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>,
-            >,
-        ) -> Self {
-            self.pending_maintenance_actions = input;
-            self
+        pub fn set_pending_maintenance_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourcePendingMaintenanceActions>>) -> Self {
+            self.pending_maintenance_actions = input; self
         }
         /// <p>An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5049,17 +4777,20 @@ pub mod describe_pending_maintenance_actions_output {
         }
         /// <p>An optional pagination token provided by a previous <code>DescribePendingMaintenanceActions</code> request. If this parameter is specified, the response includes only records beyond the marker, up to a number of records specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
         pub fn build(self) -> crate::output::DescribePendingMaintenanceActionsOutput {
             crate::output::DescribePendingMaintenanceActionsOutput {
-                pending_maintenance_actions: self.pending_maintenance_actions,
-                marker: self.marker,
+                pending_maintenance_actions: self.pending_maintenance_actions
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePendingMaintenanceActionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribePendingMaintenanceActionsOutput`](crate::output::DescribePendingMaintenanceActionsOutput).
@@ -5071,35 +4802,31 @@ impl DescribePendingMaintenanceActionsOutput {
 /// <p>Contains the result of a successful invocation of the <code>DescribeOrderableDBInstanceOptions</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOrderableDbInstanceOptionsOutput {
+pub struct DescribeOrderableDbInstanceOptionsOutput  {
     /// <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
     #[doc(hidden)]
-    pub orderable_db_instance_options:
-        std::option::Option<std::vec::Vec<crate::model::OrderableDbInstanceOption>>,
+    pub orderable_db_instance_options: std::option::Option<std::vec::Vec<crate::model::OrderableDbInstanceOption>>,
     /// <p>An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeOrderableDbInstanceOptionsOutput {
     /// <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
-    pub fn orderable_db_instance_options(
-        &self,
-    ) -> std::option::Option<&[crate::model::OrderableDbInstanceOption]> {
+    pub fn orderable_db_instance_options(&self) -> std::option::Option<& [crate::model::OrderableDbInstanceOption]> {
         self.orderable_db_instance_options.as_deref()
     }
     /// <p>An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput).
 pub mod describe_orderable_db_instance_options_output {
-
+    
     /// A builder for [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) orderable_db_instance_options:
-            std::option::Option<std::vec::Vec<crate::model::OrderableDbInstanceOption>>,
+        pub(crate) orderable_db_instance_options: std::option::Option<std::vec::Vec<crate::model::OrderableDbInstanceOption>>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5108,22 +4835,15 @@ pub mod describe_orderable_db_instance_options_output {
         /// To override the contents of this collection use [`set_orderable_db_instance_options`](Self::set_orderable_db_instance_options).
         ///
         /// <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
-        pub fn orderable_db_instance_options(
-            mut self,
-            input: crate::model::OrderableDbInstanceOption,
-        ) -> Self {
+        pub fn orderable_db_instance_options(mut self, input: crate::model::OrderableDbInstanceOption) -> Self {
             let mut v = self.orderable_db_instance_options.unwrap_or_default();
-            v.push(input);
-            self.orderable_db_instance_options = Some(v);
-            self
+                            v.push(input);
+                            self.orderable_db_instance_options = Some(v);
+                            self
         }
         /// <p>An <code>OrderableDBInstanceOption</code> structure containing information about orderable options for the DB instance.</p>
-        pub fn set_orderable_db_instance_options(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OrderableDbInstanceOption>>,
-        ) -> Self {
-            self.orderable_db_instance_options = input;
-            self
+        pub fn set_orderable_db_instance_options(mut self, input: std::option::Option<std::vec::Vec<crate::model::OrderableDbInstanceOption>>) -> Self {
+            self.orderable_db_instance_options = input; self
         }
         /// <p>An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5132,17 +4852,20 @@ pub mod describe_orderable_db_instance_options_output {
         }
         /// <p>An optional pagination token provided by a previous OrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput).
         pub fn build(self) -> crate::output::DescribeOrderableDbInstanceOptionsOutput {
             crate::output::DescribeOrderableDbInstanceOptionsOutput {
-                orderable_db_instance_options: self.orderable_db_instance_options,
-                marker: self.marker,
+                orderable_db_instance_options: self.orderable_db_instance_options
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeOrderableDbInstanceOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrderableDbInstanceOptionsOutput`](crate::output::DescribeOrderableDbInstanceOptionsOutput).
@@ -5154,7 +4877,7 @@ impl DescribeOrderableDbInstanceOptionsOutput {
 /// <p>List of option groups.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOptionGroupsOutput {
+pub struct DescribeOptionGroupsOutput  {
     /// <p>List of option groups.</p>
     #[doc(hidden)]
     pub option_groups_list: std::option::Option<std::vec::Vec<crate::model::OptionGroup>>,
@@ -5164,22 +4887,21 @@ pub struct DescribeOptionGroupsOutput {
 }
 impl DescribeOptionGroupsOutput {
     /// <p>List of option groups.</p>
-    pub fn option_groups_list(&self) -> std::option::Option<&[crate::model::OptionGroup]> {
+    pub fn option_groups_list(&self) -> std::option::Option<& [crate::model::OptionGroup]> {
         self.option_groups_list.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeOptionGroupsOutput`](crate::output::DescribeOptionGroupsOutput).
 pub mod describe_option_groups_output {
-
+    
     /// A builder for [`DescribeOptionGroupsOutput`](crate::output::DescribeOptionGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) option_groups_list:
-            std::option::Option<std::vec::Vec<crate::model::OptionGroup>>,
+        pub(crate) option_groups_list: std::option::Option<std::vec::Vec<crate::model::OptionGroup>>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5190,17 +4912,13 @@ pub mod describe_option_groups_output {
         /// <p>List of option groups.</p>
         pub fn option_groups_list(mut self, input: crate::model::OptionGroup) -> Self {
             let mut v = self.option_groups_list.unwrap_or_default();
-            v.push(input);
-            self.option_groups_list = Some(v);
-            self
+                            v.push(input);
+                            self.option_groups_list = Some(v);
+                            self
         }
         /// <p>List of option groups.</p>
-        pub fn set_option_groups_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OptionGroup>>,
-        ) -> Self {
-            self.option_groups_list = input;
-            self
+        pub fn set_option_groups_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::OptionGroup>>) -> Self {
+            self.option_groups_list = input; self
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5209,17 +4927,20 @@ pub mod describe_option_groups_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeOptionGroupsOutput`](crate::output::DescribeOptionGroupsOutput).
         pub fn build(self) -> crate::output::DescribeOptionGroupsOutput {
             crate::output::DescribeOptionGroupsOutput {
-                option_groups_list: self.option_groups_list,
-                marker: self.marker,
+                option_groups_list: self.option_groups_list
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeOptionGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOptionGroupsOutput`](crate::output::DescribeOptionGroupsOutput).
@@ -5231,7 +4952,7 @@ impl DescribeOptionGroupsOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOptionGroupOptionsOutput {
+pub struct DescribeOptionGroupOptionsOutput  {
     /// <p>List of available option group options.</p>
     #[doc(hidden)]
     pub option_group_options: std::option::Option<std::vec::Vec<crate::model::OptionGroupOption>>,
@@ -5241,22 +4962,21 @@ pub struct DescribeOptionGroupOptionsOutput {
 }
 impl DescribeOptionGroupOptionsOutput {
     /// <p>List of available option group options.</p>
-    pub fn option_group_options(&self) -> std::option::Option<&[crate::model::OptionGroupOption]> {
+    pub fn option_group_options(&self) -> std::option::Option<& [crate::model::OptionGroupOption]> {
         self.option_group_options.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeOptionGroupOptionsOutput`](crate::output::DescribeOptionGroupOptionsOutput).
 pub mod describe_option_group_options_output {
-
+    
     /// A builder for [`DescribeOptionGroupOptionsOutput`](crate::output::DescribeOptionGroupOptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) option_group_options:
-            std::option::Option<std::vec::Vec<crate::model::OptionGroupOption>>,
+        pub(crate) option_group_options: std::option::Option<std::vec::Vec<crate::model::OptionGroupOption>>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5267,17 +4987,13 @@ pub mod describe_option_group_options_output {
         /// <p>List of available option group options.</p>
         pub fn option_group_options(mut self, input: crate::model::OptionGroupOption) -> Self {
             let mut v = self.option_group_options.unwrap_or_default();
-            v.push(input);
-            self.option_group_options = Some(v);
-            self
+                            v.push(input);
+                            self.option_group_options = Some(v);
+                            self
         }
         /// <p>List of available option group options.</p>
-        pub fn set_option_group_options(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OptionGroupOption>>,
-        ) -> Self {
-            self.option_group_options = input;
-            self
+        pub fn set_option_group_options(mut self, input: std::option::Option<std::vec::Vec<crate::model::OptionGroupOption>>) -> Self {
+            self.option_group_options = input; self
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5286,17 +5002,20 @@ pub mod describe_option_group_options_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeOptionGroupOptionsOutput`](crate::output::DescribeOptionGroupOptionsOutput).
         pub fn build(self) -> crate::output::DescribeOptionGroupOptionsOutput {
             crate::output::DescribeOptionGroupOptionsOutput {
-                option_group_options: self.option_group_options,
-                marker: self.marker,
+                option_group_options: self.option_group_options
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeOptionGroupOptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOptionGroupOptionsOutput`](crate::output::DescribeOptionGroupOptionsOutput).
@@ -5308,7 +5027,7 @@ impl DescribeOptionGroupOptionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGlobalClustersOutput {
+pub struct DescribeGlobalClustersOutput  {
     /// <p>An optional pagination token provided by a previous <code>DescribeGlobalClusters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -5318,17 +5037,17 @@ pub struct DescribeGlobalClustersOutput {
 }
 impl DescribeGlobalClustersOutput {
     /// <p>An optional pagination token provided by a previous <code>DescribeGlobalClusters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The list of global clusters returned by this request.</p>
-    pub fn global_clusters(&self) -> std::option::Option<&[crate::model::GlobalCluster]> {
+    pub fn global_clusters(&self) -> std::option::Option<& [crate::model::GlobalCluster]> {
         self.global_clusters.as_deref()
     }
 }
 /// See [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput).
 pub mod describe_global_clusters_output {
-
+    
     /// A builder for [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5343,8 +5062,7 @@ pub mod describe_global_clusters_output {
         }
         /// <p>An optional pagination token provided by a previous <code>DescribeGlobalClusters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `global_clusters`.
         ///
@@ -5353,26 +5071,26 @@ pub mod describe_global_clusters_output {
         /// <p>The list of global clusters returned by this request.</p>
         pub fn global_clusters(mut self, input: crate::model::GlobalCluster) -> Self {
             let mut v = self.global_clusters.unwrap_or_default();
-            v.push(input);
-            self.global_clusters = Some(v);
-            self
+                            v.push(input);
+                            self.global_clusters = Some(v);
+                            self
         }
         /// <p>The list of global clusters returned by this request.</p>
-        pub fn set_global_clusters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GlobalCluster>>,
-        ) -> Self {
-            self.global_clusters = input;
-            self
+        pub fn set_global_clusters(mut self, input: std::option::Option<std::vec::Vec<crate::model::GlobalCluster>>) -> Self {
+            self.global_clusters = input; self
         }
         /// Consumes the builder and constructs a [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput).
         pub fn build(self) -> crate::output::DescribeGlobalClustersOutput {
             crate::output::DescribeGlobalClustersOutput {
-                marker: self.marker,
-                global_clusters: self.global_clusters,
+                marker: self.marker
+                ,
+                global_clusters: self.global_clusters
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeGlobalClustersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGlobalClustersOutput`](crate::output::DescribeGlobalClustersOutput).
@@ -5384,7 +5102,7 @@ impl DescribeGlobalClustersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeExportTasksOutput {
+pub struct DescribeExportTasksOutput  {
     /// <p>A pagination token that can be used in a later <code>DescribeExportTasks</code> request. A marker is used for pagination to identify the location to begin output for the next response of <code>DescribeExportTasks</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -5394,17 +5112,17 @@ pub struct DescribeExportTasksOutput {
 }
 impl DescribeExportTasksOutput {
     /// <p>A pagination token that can be used in a later <code>DescribeExportTasks</code> request. A marker is used for pagination to identify the location to begin output for the next response of <code>DescribeExportTasks</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Information about an export of a snapshot to Amazon S3.</p>
-    pub fn export_tasks(&self) -> std::option::Option<&[crate::model::ExportTask]> {
+    pub fn export_tasks(&self) -> std::option::Option<& [crate::model::ExportTask]> {
         self.export_tasks.as_deref()
     }
 }
 /// See [`DescribeExportTasksOutput`](crate::output::DescribeExportTasksOutput).
 pub mod describe_export_tasks_output {
-
+    
     /// A builder for [`DescribeExportTasksOutput`](crate::output::DescribeExportTasksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5419,8 +5137,7 @@ pub mod describe_export_tasks_output {
         }
         /// <p>A pagination token that can be used in a later <code>DescribeExportTasks</code> request. A marker is used for pagination to identify the location to begin output for the next response of <code>DescribeExportTasks</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `export_tasks`.
         ///
@@ -5429,26 +5146,26 @@ pub mod describe_export_tasks_output {
         /// <p>Information about an export of a snapshot to Amazon S3.</p>
         pub fn export_tasks(mut self, input: crate::model::ExportTask) -> Self {
             let mut v = self.export_tasks.unwrap_or_default();
-            v.push(input);
-            self.export_tasks = Some(v);
-            self
+                            v.push(input);
+                            self.export_tasks = Some(v);
+                            self
         }
         /// <p>Information about an export of a snapshot to Amazon S3.</p>
-        pub fn set_export_tasks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExportTask>>,
-        ) -> Self {
-            self.export_tasks = input;
-            self
+        pub fn set_export_tasks(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExportTask>>) -> Self {
+            self.export_tasks = input; self
         }
         /// Consumes the builder and constructs a [`DescribeExportTasksOutput`](crate::output::DescribeExportTasksOutput).
         pub fn build(self) -> crate::output::DescribeExportTasksOutput {
             crate::output::DescribeExportTasksOutput {
-                marker: self.marker,
-                export_tasks: self.export_tasks,
+                marker: self.marker
+                ,
+                export_tasks: self.export_tasks
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeExportTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeExportTasksOutput`](crate::output::DescribeExportTasksOutput).
@@ -5460,36 +5177,32 @@ impl DescribeExportTasksOutput {
 /// <p>Data returned by the <b>DescribeEventSubscriptions</b> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventSubscriptionsOutput {
+pub struct DescribeEventSubscriptionsOutput  {
     /// <p>An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of EventSubscriptions data types.</p>
     #[doc(hidden)]
-    pub event_subscriptions_list:
-        std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
+    pub event_subscriptions_list: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
 }
 impl DescribeEventSubscriptionsOutput {
     /// <p>An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of EventSubscriptions data types.</p>
-    pub fn event_subscriptions_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::EventSubscription]> {
+    pub fn event_subscriptions_list(&self) -> std::option::Option<& [crate::model::EventSubscription]> {
         self.event_subscriptions_list.as_deref()
     }
 }
 /// See [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
 pub mod describe_event_subscriptions_output {
-
+    
     /// A builder for [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) event_subscriptions_list:
-            std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
+        pub(crate) event_subscriptions_list: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
     }
     impl Builder {
         /// <p>An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -5499,8 +5212,7 @@ pub mod describe_event_subscriptions_output {
         }
         /// <p>An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `event_subscriptions_list`.
         ///
@@ -5509,26 +5221,26 @@ pub mod describe_event_subscriptions_output {
         /// <p>A list of EventSubscriptions data types.</p>
         pub fn event_subscriptions_list(mut self, input: crate::model::EventSubscription) -> Self {
             let mut v = self.event_subscriptions_list.unwrap_or_default();
-            v.push(input);
-            self.event_subscriptions_list = Some(v);
-            self
+                            v.push(input);
+                            self.event_subscriptions_list = Some(v);
+                            self
         }
         /// <p>A list of EventSubscriptions data types.</p>
-        pub fn set_event_subscriptions_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
-        ) -> Self {
-            self.event_subscriptions_list = input;
-            self
+        pub fn set_event_subscriptions_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>) -> Self {
+            self.event_subscriptions_list = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
         pub fn build(self) -> crate::output::DescribeEventSubscriptionsOutput {
             crate::output::DescribeEventSubscriptionsOutput {
-                marker: self.marker,
-                event_subscriptions_list: self.event_subscriptions_list,
+                marker: self.marker
+                ,
+                event_subscriptions_list: self.event_subscriptions_list
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEventSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventSubscriptionsOutput`](crate::output::DescribeEventSubscriptionsOutput).
@@ -5540,7 +5252,7 @@ impl DescribeEventSubscriptionsOutput {
 /// <p>Contains the result of a successful invocation of the <code>DescribeEvents</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventsOutput {
+pub struct DescribeEventsOutput  {
     /// <p>An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -5550,17 +5262,17 @@ pub struct DescribeEventsOutput {
 }
 impl DescribeEventsOutput {
     /// <p>An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>Event</code> instances.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+    pub fn events(&self) -> std::option::Option<& [crate::model::Event]> {
         self.events.as_deref()
     }
 }
 /// See [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
 pub mod describe_events_output {
-
+    
     /// A builder for [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5575,8 +5287,7 @@ pub mod describe_events_output {
         }
         /// <p>An optional pagination token provided by a previous Events request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `events`.
         ///
@@ -5585,26 +5296,26 @@ pub mod describe_events_output {
         /// <p>A list of <code>Event</code> instances.</p>
         pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input);
-            self.events = Some(v);
-            self
+                            v.push(input);
+                            self.events = Some(v);
+                            self
         }
         /// <p>A list of <code>Event</code> instances.</p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Event>>,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::Event>>) -> Self {
+            self.events = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
         pub fn build(self) -> crate::output::DescribeEventsOutput {
             crate::output::DescribeEventsOutput {
-                marker: self.marker,
-                events: self.events,
+                marker: self.marker
+                ,
+                events: self.events
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEventsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventsOutput`](crate::output::DescribeEventsOutput).
@@ -5616,28 +5327,24 @@ impl DescribeEventsOutput {
 /// <p>Data returned from the <code>DescribeEventCategories</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventCategoriesOutput {
+pub struct DescribeEventCategoriesOutput  {
     /// <p>A list of <code>EventCategoriesMap</code> data types.</p>
     #[doc(hidden)]
-    pub event_categories_map_list:
-        std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
+    pub event_categories_map_list: std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
 }
 impl DescribeEventCategoriesOutput {
     /// <p>A list of <code>EventCategoriesMap</code> data types.</p>
-    pub fn event_categories_map_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::EventCategoriesMap]> {
+    pub fn event_categories_map_list(&self) -> std::option::Option<& [crate::model::EventCategoriesMap]> {
         self.event_categories_map_list.as_deref()
     }
 }
 /// See [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
 pub mod describe_event_categories_output {
-
+    
     /// A builder for [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) event_categories_map_list:
-            std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
+        pub(crate) event_categories_map_list: std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
     }
     impl Builder {
         /// Appends an item to `event_categories_map_list`.
@@ -5645,30 +5352,26 @@ pub mod describe_event_categories_output {
         /// To override the contents of this collection use [`set_event_categories_map_list`](Self::set_event_categories_map_list).
         ///
         /// <p>A list of <code>EventCategoriesMap</code> data types.</p>
-        pub fn event_categories_map_list(
-            mut self,
-            input: crate::model::EventCategoriesMap,
-        ) -> Self {
+        pub fn event_categories_map_list(mut self, input: crate::model::EventCategoriesMap) -> Self {
             let mut v = self.event_categories_map_list.unwrap_or_default();
-            v.push(input);
-            self.event_categories_map_list = Some(v);
-            self
+                            v.push(input);
+                            self.event_categories_map_list = Some(v);
+                            self
         }
         /// <p>A list of <code>EventCategoriesMap</code> data types.</p>
-        pub fn set_event_categories_map_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>,
-        ) -> Self {
-            self.event_categories_map_list = input;
-            self
+        pub fn set_event_categories_map_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventCategoriesMap>>) -> Self {
+            self.event_categories_map_list = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
         pub fn build(self) -> crate::output::DescribeEventCategoriesOutput {
             crate::output::DescribeEventCategoriesOutput {
-                event_categories_map_list: self.event_categories_map_list,
+                event_categories_map_list: self.event_categories_map_list
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEventCategoriesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventCategoriesOutput`](crate::output::DescribeEventCategoriesOutput).
@@ -5680,20 +5383,20 @@ impl DescribeEventCategoriesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEngineDefaultParametersOutput {
+pub struct DescribeEngineDefaultParametersOutput  {
     /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
     #[doc(hidden)]
     pub engine_defaults: std::option::Option<crate::model::EngineDefaults>,
 }
 impl DescribeEngineDefaultParametersOutput {
     /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
-    pub fn engine_defaults(&self) -> std::option::Option<&crate::model::EngineDefaults> {
+    pub fn engine_defaults(&self) -> std::option::Option<& crate::model::EngineDefaults> {
         self.engine_defaults.as_ref()
     }
 }
 /// See [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput).
 pub mod describe_engine_default_parameters_output {
-
+    
     /// A builder for [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5706,20 +5409,19 @@ pub mod describe_engine_default_parameters_output {
             self
         }
         /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
-        pub fn set_engine_defaults(
-            mut self,
-            input: std::option::Option<crate::model::EngineDefaults>,
-        ) -> Self {
-            self.engine_defaults = input;
-            self
+        pub fn set_engine_defaults(mut self, input: std::option::Option<crate::model::EngineDefaults>) -> Self {
+            self.engine_defaults = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput).
         pub fn build(self) -> crate::output::DescribeEngineDefaultParametersOutput {
             crate::output::DescribeEngineDefaultParametersOutput {
-                engine_defaults: self.engine_defaults,
+                engine_defaults: self.engine_defaults
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEngineDefaultParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultParametersOutput`](crate::output::DescribeEngineDefaultParametersOutput).
@@ -5731,20 +5433,20 @@ impl DescribeEngineDefaultParametersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEngineDefaultClusterParametersOutput {
+pub struct DescribeEngineDefaultClusterParametersOutput  {
     /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
     #[doc(hidden)]
     pub engine_defaults: std::option::Option<crate::model::EngineDefaults>,
 }
 impl DescribeEngineDefaultClusterParametersOutput {
     /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
-    pub fn engine_defaults(&self) -> std::option::Option<&crate::model::EngineDefaults> {
+    pub fn engine_defaults(&self) -> std::option::Option<& crate::model::EngineDefaults> {
         self.engine_defaults.as_ref()
     }
 }
 /// See [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput).
 pub mod describe_engine_default_cluster_parameters_output {
-
+    
     /// A builder for [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5757,20 +5459,19 @@ pub mod describe_engine_default_cluster_parameters_output {
             self
         }
         /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultParameters</code> action.</p>
-        pub fn set_engine_defaults(
-            mut self,
-            input: std::option::Option<crate::model::EngineDefaults>,
-        ) -> Self {
-            self.engine_defaults = input;
-            self
+        pub fn set_engine_defaults(mut self, input: std::option::Option<crate::model::EngineDefaults>) -> Self {
+            self.engine_defaults = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput).
         pub fn build(self) -> crate::output::DescribeEngineDefaultClusterParametersOutput {
             crate::output::DescribeEngineDefaultClusterParametersOutput {
-                engine_defaults: self.engine_defaults,
+                engine_defaults: self.engine_defaults
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEngineDefaultClusterParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEngineDefaultClusterParametersOutput`](crate::output::DescribeEngineDefaultClusterParametersOutput).
@@ -5782,7 +5483,7 @@ impl DescribeEngineDefaultClusterParametersOutput {
 /// <p>Contains the result of a successful invocation of the <code>DescribeDBSubnetGroups</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbSubnetGroupsOutput {
+pub struct DescribeDbSubnetGroupsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -5792,23 +5493,22 @@ pub struct DescribeDbSubnetGroupsOutput {
 }
 impl DescribeDbSubnetGroupsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>DBSubnetGroup</code> instances.</p>
-    pub fn db_subnet_groups(&self) -> std::option::Option<&[crate::model::DbSubnetGroup]> {
+    pub fn db_subnet_groups(&self) -> std::option::Option<& [crate::model::DbSubnetGroup]> {
         self.db_subnet_groups.as_deref()
     }
 }
 /// See [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput).
 pub mod describe_db_subnet_groups_output {
-
+    
     /// A builder for [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) db_subnet_groups:
-            std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>,
+        pub(crate) db_subnet_groups: std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>,
     }
     impl Builder {
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -5818,8 +5518,7 @@ pub mod describe_db_subnet_groups_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `db_subnet_groups`.
         ///
@@ -5828,26 +5527,26 @@ pub mod describe_db_subnet_groups_output {
         /// <p>A list of <code>DBSubnetGroup</code> instances.</p>
         pub fn db_subnet_groups(mut self, input: crate::model::DbSubnetGroup) -> Self {
             let mut v = self.db_subnet_groups.unwrap_or_default();
-            v.push(input);
-            self.db_subnet_groups = Some(v);
-            self
+                            v.push(input);
+                            self.db_subnet_groups = Some(v);
+                            self
         }
         /// <p>A list of <code>DBSubnetGroup</code> instances.</p>
-        pub fn set_db_subnet_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>,
-        ) -> Self {
-            self.db_subnet_groups = input;
-            self
+        pub fn set_db_subnet_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbSubnetGroup>>) -> Self {
+            self.db_subnet_groups = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput).
         pub fn build(self) -> crate::output::DescribeDbSubnetGroupsOutput {
             crate::output::DescribeDbSubnetGroupsOutput {
-                marker: self.marker,
-                db_subnet_groups: self.db_subnet_groups,
+                marker: self.marker
+                ,
+                db_subnet_groups: self.db_subnet_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbSubnetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbSubnetGroupsOutput`](crate::output::DescribeDbSubnetGroupsOutput).
@@ -5859,7 +5558,7 @@ impl DescribeDbSubnetGroupsOutput {
 /// <p>Contains the result of a successful invocation of the <code>DescribeDBSnapshots</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbSnapshotsOutput {
+pub struct DescribeDbSnapshotsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -5869,17 +5568,17 @@ pub struct DescribeDbSnapshotsOutput {
 }
 impl DescribeDbSnapshotsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>DBSnapshot</code> instances.</p>
-    pub fn db_snapshots(&self) -> std::option::Option<&[crate::model::DbSnapshot]> {
+    pub fn db_snapshots(&self) -> std::option::Option<& [crate::model::DbSnapshot]> {
         self.db_snapshots.as_deref()
     }
 }
 /// See [`DescribeDbSnapshotsOutput`](crate::output::DescribeDbSnapshotsOutput).
 pub mod describe_db_snapshots_output {
-
+    
     /// A builder for [`DescribeDbSnapshotsOutput`](crate::output::DescribeDbSnapshotsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5894,8 +5593,7 @@ pub mod describe_db_snapshots_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `db_snapshots`.
         ///
@@ -5904,26 +5602,26 @@ pub mod describe_db_snapshots_output {
         /// <p>A list of <code>DBSnapshot</code> instances.</p>
         pub fn db_snapshots(mut self, input: crate::model::DbSnapshot) -> Self {
             let mut v = self.db_snapshots.unwrap_or_default();
-            v.push(input);
-            self.db_snapshots = Some(v);
-            self
+                            v.push(input);
+                            self.db_snapshots = Some(v);
+                            self
         }
         /// <p>A list of <code>DBSnapshot</code> instances.</p>
-        pub fn set_db_snapshots(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbSnapshot>>,
-        ) -> Self {
-            self.db_snapshots = input;
-            self
+        pub fn set_db_snapshots(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbSnapshot>>) -> Self {
+            self.db_snapshots = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbSnapshotsOutput`](crate::output::DescribeDbSnapshotsOutput).
         pub fn build(self) -> crate::output::DescribeDbSnapshotsOutput {
             crate::output::DescribeDbSnapshotsOutput {
-                marker: self.marker,
-                db_snapshots: self.db_snapshots,
+                marker: self.marker
+                ,
+                db_snapshots: self.db_snapshots
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbSnapshotsOutput`](crate::output::DescribeDbSnapshotsOutput).
@@ -5935,57 +5633,49 @@ impl DescribeDbSnapshotsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbSnapshotAttributesOutput {
-    /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p>
+pub struct DescribeDbSnapshotAttributesOutput  {
+    /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p> 
     /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p>
     #[doc(hidden)]
-    pub db_snapshot_attributes_result:
-        std::option::Option<crate::model::DbSnapshotAttributesResult>,
+    pub db_snapshot_attributes_result: std::option::Option<crate::model::DbSnapshotAttributesResult>,
 }
 impl DescribeDbSnapshotAttributesOutput {
-    /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p>
+    /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p> 
     /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p>
-    pub fn db_snapshot_attributes_result(
-        &self,
-    ) -> std::option::Option<&crate::model::DbSnapshotAttributesResult> {
+    pub fn db_snapshot_attributes_result(&self) -> std::option::Option<& crate::model::DbSnapshotAttributesResult> {
         self.db_snapshot_attributes_result.as_ref()
     }
 }
 /// See [`DescribeDbSnapshotAttributesOutput`](crate::output::DescribeDbSnapshotAttributesOutput).
 pub mod describe_db_snapshot_attributes_output {
-
+    
     /// A builder for [`DescribeDbSnapshotAttributesOutput`](crate::output::DescribeDbSnapshotAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) db_snapshot_attributes_result:
-            std::option::Option<crate::model::DbSnapshotAttributesResult>,
+        pub(crate) db_snapshot_attributes_result: std::option::Option<crate::model::DbSnapshotAttributesResult>,
     }
     impl Builder {
-        /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p>
+        /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p> 
         /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p>
-        pub fn db_snapshot_attributes_result(
-            mut self,
-            input: crate::model::DbSnapshotAttributesResult,
-        ) -> Self {
+        pub fn db_snapshot_attributes_result(mut self, input: crate::model::DbSnapshotAttributesResult) -> Self {
             self.db_snapshot_attributes_result = Some(input);
             self
         }
-        /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p>
+        /// <p>Contains the results of a successful call to the <code>DescribeDBSnapshotAttributes</code> API action.</p> 
         /// <p>Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code> API action.</p>
-        pub fn set_db_snapshot_attributes_result(
-            mut self,
-            input: std::option::Option<crate::model::DbSnapshotAttributesResult>,
-        ) -> Self {
-            self.db_snapshot_attributes_result = input;
-            self
+        pub fn set_db_snapshot_attributes_result(mut self, input: std::option::Option<crate::model::DbSnapshotAttributesResult>) -> Self {
+            self.db_snapshot_attributes_result = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbSnapshotAttributesOutput`](crate::output::DescribeDbSnapshotAttributesOutput).
         pub fn build(self) -> crate::output::DescribeDbSnapshotAttributesOutput {
             crate::output::DescribeDbSnapshotAttributesOutput {
-                db_snapshot_attributes_result: self.db_snapshot_attributes_result,
+                db_snapshot_attributes_result: self.db_snapshot_attributes_result
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbSnapshotAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbSnapshotAttributesOutput`](crate::output::DescribeDbSnapshotAttributesOutput).
@@ -5997,7 +5687,7 @@ impl DescribeDbSnapshotAttributesOutput {
 /// <p>Contains the result of a successful invocation of the <code>DescribeDBSecurityGroups</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbSecurityGroupsOutput {
+pub struct DescribeDbSecurityGroupsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -6007,23 +5697,22 @@ pub struct DescribeDbSecurityGroupsOutput {
 }
 impl DescribeDbSecurityGroupsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>DBSecurityGroup</code> instances.</p>
-    pub fn db_security_groups(&self) -> std::option::Option<&[crate::model::DbSecurityGroup]> {
+    pub fn db_security_groups(&self) -> std::option::Option<& [crate::model::DbSecurityGroup]> {
         self.db_security_groups.as_deref()
     }
 }
 /// See [`DescribeDbSecurityGroupsOutput`](crate::output::DescribeDbSecurityGroupsOutput).
 pub mod describe_db_security_groups_output {
-
+    
     /// A builder for [`DescribeDbSecurityGroupsOutput`](crate::output::DescribeDbSecurityGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) db_security_groups:
-            std::option::Option<std::vec::Vec<crate::model::DbSecurityGroup>>,
+        pub(crate) db_security_groups: std::option::Option<std::vec::Vec<crate::model::DbSecurityGroup>>,
     }
     impl Builder {
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -6033,8 +5722,7 @@ pub mod describe_db_security_groups_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `db_security_groups`.
         ///
@@ -6043,26 +5731,26 @@ pub mod describe_db_security_groups_output {
         /// <p>A list of <code>DBSecurityGroup</code> instances.</p>
         pub fn db_security_groups(mut self, input: crate::model::DbSecurityGroup) -> Self {
             let mut v = self.db_security_groups.unwrap_or_default();
-            v.push(input);
-            self.db_security_groups = Some(v);
-            self
+                            v.push(input);
+                            self.db_security_groups = Some(v);
+                            self
         }
         /// <p>A list of <code>DBSecurityGroup</code> instances.</p>
-        pub fn set_db_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbSecurityGroup>>,
-        ) -> Self {
-            self.db_security_groups = input;
-            self
+        pub fn set_db_security_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbSecurityGroup>>) -> Self {
+            self.db_security_groups = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbSecurityGroupsOutput`](crate::output::DescribeDbSecurityGroupsOutput).
         pub fn build(self) -> crate::output::DescribeDbSecurityGroupsOutput {
             crate::output::DescribeDbSecurityGroupsOutput {
-                marker: self.marker,
-                db_security_groups: self.db_security_groups,
+                marker: self.marker
+                ,
+                db_security_groups: self.db_security_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbSecurityGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbSecurityGroupsOutput`](crate::output::DescribeDbSecurityGroupsOutput).
@@ -6074,7 +5762,7 @@ impl DescribeDbSecurityGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbProxyTargetsOutput {
+pub struct DescribeDbProxyTargetsOutput  {
     /// <p>An arbitrary number of <code>DBProxyTarget</code> objects, containing details of the corresponding targets.</p>
     #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::DbProxyTarget>>,
@@ -6084,17 +5772,17 @@ pub struct DescribeDbProxyTargetsOutput {
 }
 impl DescribeDbProxyTargetsOutput {
     /// <p>An arbitrary number of <code>DBProxyTarget</code> objects, containing details of the corresponding targets.</p>
-    pub fn targets(&self) -> std::option::Option<&[crate::model::DbProxyTarget]> {
+    pub fn targets(&self) -> std::option::Option<& [crate::model::DbProxyTarget]> {
         self.targets.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeDbProxyTargetsOutput`](crate::output::DescribeDbProxyTargetsOutput).
 pub mod describe_db_proxy_targets_output {
-
+    
     /// A builder for [`DescribeDbProxyTargetsOutput`](crate::output::DescribeDbProxyTargetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6109,17 +5797,13 @@ pub mod describe_db_proxy_targets_output {
         /// <p>An arbitrary number of <code>DBProxyTarget</code> objects, containing details of the corresponding targets.</p>
         pub fn targets(mut self, input: crate::model::DbProxyTarget) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input);
-            self.targets = Some(v);
-            self
+                            v.push(input);
+                            self.targets = Some(v);
+                            self
         }
         /// <p>An arbitrary number of <code>DBProxyTarget</code> objects, containing details of the corresponding targets.</p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbProxyTarget>>,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbProxyTarget>>) -> Self {
+            self.targets = input; self
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6128,17 +5812,20 @@ pub mod describe_db_proxy_targets_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbProxyTargetsOutput`](crate::output::DescribeDbProxyTargetsOutput).
         pub fn build(self) -> crate::output::DescribeDbProxyTargetsOutput {
             crate::output::DescribeDbProxyTargetsOutput {
-                targets: self.targets,
-                marker: self.marker,
+                targets: self.targets
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbProxyTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbProxyTargetsOutput`](crate::output::DescribeDbProxyTargetsOutput).
@@ -6150,7 +5837,7 @@ impl DescribeDbProxyTargetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbProxyTargetGroupsOutput {
+pub struct DescribeDbProxyTargetGroupsOutput  {
     /// <p>An arbitrary number of <code>DBProxyTargetGroup</code> objects, containing details of the corresponding target groups.</p>
     #[doc(hidden)]
     pub target_groups: std::option::Option<std::vec::Vec<crate::model::DbProxyTargetGroup>>,
@@ -6160,22 +5847,21 @@ pub struct DescribeDbProxyTargetGroupsOutput {
 }
 impl DescribeDbProxyTargetGroupsOutput {
     /// <p>An arbitrary number of <code>DBProxyTargetGroup</code> objects, containing details of the corresponding target groups.</p>
-    pub fn target_groups(&self) -> std::option::Option<&[crate::model::DbProxyTargetGroup]> {
+    pub fn target_groups(&self) -> std::option::Option<& [crate::model::DbProxyTargetGroup]> {
         self.target_groups.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeDbProxyTargetGroupsOutput`](crate::output::DescribeDbProxyTargetGroupsOutput).
 pub mod describe_db_proxy_target_groups_output {
-
+    
     /// A builder for [`DescribeDbProxyTargetGroupsOutput`](crate::output::DescribeDbProxyTargetGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) target_groups:
-            std::option::Option<std::vec::Vec<crate::model::DbProxyTargetGroup>>,
+        pub(crate) target_groups: std::option::Option<std::vec::Vec<crate::model::DbProxyTargetGroup>>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6186,17 +5872,13 @@ pub mod describe_db_proxy_target_groups_output {
         /// <p>An arbitrary number of <code>DBProxyTargetGroup</code> objects, containing details of the corresponding target groups.</p>
         pub fn target_groups(mut self, input: crate::model::DbProxyTargetGroup) -> Self {
             let mut v = self.target_groups.unwrap_or_default();
-            v.push(input);
-            self.target_groups = Some(v);
-            self
+                            v.push(input);
+                            self.target_groups = Some(v);
+                            self
         }
         /// <p>An arbitrary number of <code>DBProxyTargetGroup</code> objects, containing details of the corresponding target groups.</p>
-        pub fn set_target_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbProxyTargetGroup>>,
-        ) -> Self {
-            self.target_groups = input;
-            self
+        pub fn set_target_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbProxyTargetGroup>>) -> Self {
+            self.target_groups = input; self
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6205,17 +5887,20 @@ pub mod describe_db_proxy_target_groups_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbProxyTargetGroupsOutput`](crate::output::DescribeDbProxyTargetGroupsOutput).
         pub fn build(self) -> crate::output::DescribeDbProxyTargetGroupsOutput {
             crate::output::DescribeDbProxyTargetGroupsOutput {
-                target_groups: self.target_groups,
-                marker: self.marker,
+                target_groups: self.target_groups
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbProxyTargetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbProxyTargetGroupsOutput`](crate::output::DescribeDbProxyTargetGroupsOutput).
@@ -6227,7 +5912,7 @@ impl DescribeDbProxyTargetGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbProxyEndpointsOutput {
+pub struct DescribeDbProxyEndpointsOutput  {
     /// <p>The list of <code>ProxyEndpoint</code> objects returned by the API operation.</p>
     #[doc(hidden)]
     pub db_proxy_endpoints: std::option::Option<std::vec::Vec<crate::model::DbProxyEndpoint>>,
@@ -6237,22 +5922,21 @@ pub struct DescribeDbProxyEndpointsOutput {
 }
 impl DescribeDbProxyEndpointsOutput {
     /// <p>The list of <code>ProxyEndpoint</code> objects returned by the API operation.</p>
-    pub fn db_proxy_endpoints(&self) -> std::option::Option<&[crate::model::DbProxyEndpoint]> {
+    pub fn db_proxy_endpoints(&self) -> std::option::Option<& [crate::model::DbProxyEndpoint]> {
         self.db_proxy_endpoints.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeDbProxyEndpointsOutput`](crate::output::DescribeDbProxyEndpointsOutput).
 pub mod describe_db_proxy_endpoints_output {
-
+    
     /// A builder for [`DescribeDbProxyEndpointsOutput`](crate::output::DescribeDbProxyEndpointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) db_proxy_endpoints:
-            std::option::Option<std::vec::Vec<crate::model::DbProxyEndpoint>>,
+        pub(crate) db_proxy_endpoints: std::option::Option<std::vec::Vec<crate::model::DbProxyEndpoint>>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6263,17 +5947,13 @@ pub mod describe_db_proxy_endpoints_output {
         /// <p>The list of <code>ProxyEndpoint</code> objects returned by the API operation.</p>
         pub fn db_proxy_endpoints(mut self, input: crate::model::DbProxyEndpoint) -> Self {
             let mut v = self.db_proxy_endpoints.unwrap_or_default();
-            v.push(input);
-            self.db_proxy_endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.db_proxy_endpoints = Some(v);
+                            self
         }
         /// <p>The list of <code>ProxyEndpoint</code> objects returned by the API operation.</p>
-        pub fn set_db_proxy_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbProxyEndpoint>>,
-        ) -> Self {
-            self.db_proxy_endpoints = input;
-            self
+        pub fn set_db_proxy_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbProxyEndpoint>>) -> Self {
+            self.db_proxy_endpoints = input; self
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6282,17 +5962,20 @@ pub mod describe_db_proxy_endpoints_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbProxyEndpointsOutput`](crate::output::DescribeDbProxyEndpointsOutput).
         pub fn build(self) -> crate::output::DescribeDbProxyEndpointsOutput {
             crate::output::DescribeDbProxyEndpointsOutput {
-                db_proxy_endpoints: self.db_proxy_endpoints,
-                marker: self.marker,
+                db_proxy_endpoints: self.db_proxy_endpoints
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbProxyEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbProxyEndpointsOutput`](crate::output::DescribeDbProxyEndpointsOutput).
@@ -6304,7 +5987,7 @@ impl DescribeDbProxyEndpointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbProxiesOutput {
+pub struct DescribeDbProxiesOutput  {
     /// <p>A return value representing an arbitrary number of <code>DBProxy</code> data structures.</p>
     #[doc(hidden)]
     pub db_proxies: std::option::Option<std::vec::Vec<crate::model::DbProxy>>,
@@ -6314,17 +5997,17 @@ pub struct DescribeDbProxiesOutput {
 }
 impl DescribeDbProxiesOutput {
     /// <p>A return value representing an arbitrary number of <code>DBProxy</code> data structures.</p>
-    pub fn db_proxies(&self) -> std::option::Option<&[crate::model::DbProxy]> {
+    pub fn db_proxies(&self) -> std::option::Option<& [crate::model::DbProxy]> {
         self.db_proxies.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeDbProxiesOutput`](crate::output::DescribeDbProxiesOutput).
 pub mod describe_db_proxies_output {
-
+    
     /// A builder for [`DescribeDbProxiesOutput`](crate::output::DescribeDbProxiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6339,17 +6022,13 @@ pub mod describe_db_proxies_output {
         /// <p>A return value representing an arbitrary number of <code>DBProxy</code> data structures.</p>
         pub fn db_proxies(mut self, input: crate::model::DbProxy) -> Self {
             let mut v = self.db_proxies.unwrap_or_default();
-            v.push(input);
-            self.db_proxies = Some(v);
-            self
+                            v.push(input);
+                            self.db_proxies = Some(v);
+                            self
         }
         /// <p>A return value representing an arbitrary number of <code>DBProxy</code> data structures.</p>
-        pub fn set_db_proxies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbProxy>>,
-        ) -> Self {
-            self.db_proxies = input;
-            self
+        pub fn set_db_proxies(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbProxy>>) -> Self {
+            self.db_proxies = input; self
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6358,17 +6037,20 @@ pub mod describe_db_proxies_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbProxiesOutput`](crate::output::DescribeDbProxiesOutput).
         pub fn build(self) -> crate::output::DescribeDbProxiesOutput {
             crate::output::DescribeDbProxiesOutput {
-                db_proxies: self.db_proxies,
-                marker: self.marker,
+                db_proxies: self.db_proxies
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbProxiesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbProxiesOutput`](crate::output::DescribeDbProxiesOutput).
@@ -6380,7 +6062,7 @@ impl DescribeDbProxiesOutput {
 /// <p>Contains the result of a successful invocation of the <code>DescribeDBParameters</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbParametersOutput {
+pub struct DescribeDbParametersOutput  {
     /// <p>A list of <code>Parameter</code> values.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -6390,17 +6072,17 @@ pub struct DescribeDbParametersOutput {
 }
 impl DescribeDbParametersOutput {
     /// <p>A list of <code>Parameter</code> values.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::model::Parameter]> {
         self.parameters.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeDbParametersOutput`](crate::output::DescribeDbParametersOutput).
 pub mod describe_db_parameters_output {
-
+    
     /// A builder for [`DescribeDbParametersOutput`](crate::output::DescribeDbParametersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6415,17 +6097,13 @@ pub mod describe_db_parameters_output {
         /// <p>A list of <code>Parameter</code> values.</p>
         pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input);
-            self.parameters = Some(v);
-            self
+                            v.push(input);
+                            self.parameters = Some(v);
+                            self
         }
         /// <p>A list of <code>Parameter</code> values.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Parameter>>) -> Self {
+            self.parameters = input; self
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6434,17 +6112,20 @@ pub mod describe_db_parameters_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbParametersOutput`](crate::output::DescribeDbParametersOutput).
         pub fn build(self) -> crate::output::DescribeDbParametersOutput {
             crate::output::DescribeDbParametersOutput {
-                parameters: self.parameters,
-                marker: self.marker,
+                parameters: self.parameters
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbParametersOutput`](crate::output::DescribeDbParametersOutput).
@@ -6456,7 +6137,7 @@ impl DescribeDbParametersOutput {
 /// <p>Contains the result of a successful invocation of the <code>DescribeDBParameterGroups</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbParameterGroupsOutput {
+pub struct DescribeDbParameterGroupsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -6466,23 +6147,22 @@ pub struct DescribeDbParameterGroupsOutput {
 }
 impl DescribeDbParameterGroupsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>DBParameterGroup</code> instances.</p>
-    pub fn db_parameter_groups(&self) -> std::option::Option<&[crate::model::DbParameterGroup]> {
+    pub fn db_parameter_groups(&self) -> std::option::Option<& [crate::model::DbParameterGroup]> {
         self.db_parameter_groups.as_deref()
     }
 }
 /// See [`DescribeDbParameterGroupsOutput`](crate::output::DescribeDbParameterGroupsOutput).
 pub mod describe_db_parameter_groups_output {
-
+    
     /// A builder for [`DescribeDbParameterGroupsOutput`](crate::output::DescribeDbParameterGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) db_parameter_groups:
-            std::option::Option<std::vec::Vec<crate::model::DbParameterGroup>>,
+        pub(crate) db_parameter_groups: std::option::Option<std::vec::Vec<crate::model::DbParameterGroup>>,
     }
     impl Builder {
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -6492,8 +6172,7 @@ pub mod describe_db_parameter_groups_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `db_parameter_groups`.
         ///
@@ -6502,26 +6181,26 @@ pub mod describe_db_parameter_groups_output {
         /// <p>A list of <code>DBParameterGroup</code> instances.</p>
         pub fn db_parameter_groups(mut self, input: crate::model::DbParameterGroup) -> Self {
             let mut v = self.db_parameter_groups.unwrap_or_default();
-            v.push(input);
-            self.db_parameter_groups = Some(v);
-            self
+                            v.push(input);
+                            self.db_parameter_groups = Some(v);
+                            self
         }
         /// <p>A list of <code>DBParameterGroup</code> instances.</p>
-        pub fn set_db_parameter_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbParameterGroup>>,
-        ) -> Self {
-            self.db_parameter_groups = input;
-            self
+        pub fn set_db_parameter_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbParameterGroup>>) -> Self {
+            self.db_parameter_groups = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbParameterGroupsOutput`](crate::output::DescribeDbParameterGroupsOutput).
         pub fn build(self) -> crate::output::DescribeDbParameterGroupsOutput {
             crate::output::DescribeDbParameterGroupsOutput {
-                marker: self.marker,
-                db_parameter_groups: self.db_parameter_groups,
+                marker: self.marker
+                ,
+                db_parameter_groups: self.db_parameter_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbParameterGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbParameterGroupsOutput`](crate::output::DescribeDbParameterGroupsOutput).
@@ -6533,35 +6212,31 @@ impl DescribeDbParameterGroupsOutput {
 /// <p>The response from a call to <code>DescribeDBLogFiles</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbLogFilesOutput {
+pub struct DescribeDbLogFilesOutput  {
     /// <p>The DB log files returned.</p>
     #[doc(hidden)]
-    pub describe_db_log_files:
-        std::option::Option<std::vec::Vec<crate::model::DescribeDbLogFilesDetails>>,
+    pub describe_db_log_files: std::option::Option<std::vec::Vec<crate::model::DescribeDbLogFilesDetails>>,
     /// <p>A pagination token that can be used in a later <code>DescribeDBLogFiles</code> request.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeDbLogFilesOutput {
     /// <p>The DB log files returned.</p>
-    pub fn describe_db_log_files(
-        &self,
-    ) -> std::option::Option<&[crate::model::DescribeDbLogFilesDetails]> {
+    pub fn describe_db_log_files(&self) -> std::option::Option<& [crate::model::DescribeDbLogFilesDetails]> {
         self.describe_db_log_files.as_deref()
     }
     /// <p>A pagination token that can be used in a later <code>DescribeDBLogFiles</code> request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeDbLogFilesOutput`](crate::output::DescribeDbLogFilesOutput).
 pub mod describe_db_log_files_output {
-
+    
     /// A builder for [`DescribeDbLogFilesOutput`](crate::output::DescribeDbLogFilesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) describe_db_log_files:
-            std::option::Option<std::vec::Vec<crate::model::DescribeDbLogFilesDetails>>,
+        pub(crate) describe_db_log_files: std::option::Option<std::vec::Vec<crate::model::DescribeDbLogFilesDetails>>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6570,22 +6245,15 @@ pub mod describe_db_log_files_output {
         /// To override the contents of this collection use [`set_describe_db_log_files`](Self::set_describe_db_log_files).
         ///
         /// <p>The DB log files returned.</p>
-        pub fn describe_db_log_files(
-            mut self,
-            input: crate::model::DescribeDbLogFilesDetails,
-        ) -> Self {
+        pub fn describe_db_log_files(mut self, input: crate::model::DescribeDbLogFilesDetails) -> Self {
             let mut v = self.describe_db_log_files.unwrap_or_default();
-            v.push(input);
-            self.describe_db_log_files = Some(v);
-            self
+                            v.push(input);
+                            self.describe_db_log_files = Some(v);
+                            self
         }
         /// <p>The DB log files returned.</p>
-        pub fn set_describe_db_log_files(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DescribeDbLogFilesDetails>>,
-        ) -> Self {
-            self.describe_db_log_files = input;
-            self
+        pub fn set_describe_db_log_files(mut self, input: std::option::Option<std::vec::Vec<crate::model::DescribeDbLogFilesDetails>>) -> Self {
+            self.describe_db_log_files = input; self
         }
         /// <p>A pagination token that can be used in a later <code>DescribeDBLogFiles</code> request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6594,17 +6262,20 @@ pub mod describe_db_log_files_output {
         }
         /// <p>A pagination token that can be used in a later <code>DescribeDBLogFiles</code> request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbLogFilesOutput`](crate::output::DescribeDbLogFilesOutput).
         pub fn build(self) -> crate::output::DescribeDbLogFilesOutput {
             crate::output::DescribeDbLogFilesOutput {
-                describe_db_log_files: self.describe_db_log_files,
-                marker: self.marker,
+                describe_db_log_files: self.describe_db_log_files
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbLogFilesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbLogFilesOutput`](crate::output::DescribeDbLogFilesOutput).
@@ -6616,7 +6287,7 @@ impl DescribeDbLogFilesOutput {
 /// <p>Contains the result of a successful invocation of the <code>DescribeDBInstances</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbInstancesOutput {
+pub struct DescribeDbInstancesOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -6626,17 +6297,17 @@ pub struct DescribeDbInstancesOutput {
 }
 impl DescribeDbInstancesOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>DBInstance</code> instances.</p>
-    pub fn db_instances(&self) -> std::option::Option<&[crate::model::DbInstance]> {
+    pub fn db_instances(&self) -> std::option::Option<& [crate::model::DbInstance]> {
         self.db_instances.as_deref()
     }
 }
 /// See [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput).
 pub mod describe_db_instances_output {
-
+    
     /// A builder for [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6651,8 +6322,7 @@ pub mod describe_db_instances_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `db_instances`.
         ///
@@ -6661,26 +6331,26 @@ pub mod describe_db_instances_output {
         /// <p>A list of <code>DBInstance</code> instances.</p>
         pub fn db_instances(mut self, input: crate::model::DbInstance) -> Self {
             let mut v = self.db_instances.unwrap_or_default();
-            v.push(input);
-            self.db_instances = Some(v);
-            self
+                            v.push(input);
+                            self.db_instances = Some(v);
+                            self
         }
         /// <p>A list of <code>DBInstance</code> instances.</p>
-        pub fn set_db_instances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbInstance>>,
-        ) -> Self {
-            self.db_instances = input;
-            self
+        pub fn set_db_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbInstance>>) -> Self {
+            self.db_instances = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput).
         pub fn build(self) -> crate::output::DescribeDbInstancesOutput {
             crate::output::DescribeDbInstancesOutput {
-                marker: self.marker,
-                db_instances: self.db_instances,
+                marker: self.marker
+                ,
+                db_instances: self.db_instances
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbInstancesOutput`](crate::output::DescribeDbInstancesOutput).
@@ -6692,36 +6362,32 @@ impl DescribeDbInstancesOutput {
 /// <p>Contains the result of a successful invocation of the <code>DescribeDBInstanceAutomatedBackups</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbInstanceAutomatedBackupsOutput {
+pub struct DescribeDbInstanceAutomatedBackupsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of <code>DBInstanceAutomatedBackup</code> instances.</p>
     #[doc(hidden)]
-    pub db_instance_automated_backups:
-        std::option::Option<std::vec::Vec<crate::model::DbInstanceAutomatedBackup>>,
+    pub db_instance_automated_backups: std::option::Option<std::vec::Vec<crate::model::DbInstanceAutomatedBackup>>,
 }
 impl DescribeDbInstanceAutomatedBackupsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>DBInstanceAutomatedBackup</code> instances.</p>
-    pub fn db_instance_automated_backups(
-        &self,
-    ) -> std::option::Option<&[crate::model::DbInstanceAutomatedBackup]> {
+    pub fn db_instance_automated_backups(&self) -> std::option::Option<& [crate::model::DbInstanceAutomatedBackup]> {
         self.db_instance_automated_backups.as_deref()
     }
 }
 /// See [`DescribeDbInstanceAutomatedBackupsOutput`](crate::output::DescribeDbInstanceAutomatedBackupsOutput).
 pub mod describe_db_instance_automated_backups_output {
-
+    
     /// A builder for [`DescribeDbInstanceAutomatedBackupsOutput`](crate::output::DescribeDbInstanceAutomatedBackupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) db_instance_automated_backups:
-            std::option::Option<std::vec::Vec<crate::model::DbInstanceAutomatedBackup>>,
+        pub(crate) db_instance_automated_backups: std::option::Option<std::vec::Vec<crate::model::DbInstanceAutomatedBackup>>,
     }
     impl Builder {
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -6731,39 +6397,35 @@ pub mod describe_db_instance_automated_backups_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `db_instance_automated_backups`.
         ///
         /// To override the contents of this collection use [`set_db_instance_automated_backups`](Self::set_db_instance_automated_backups).
         ///
         /// <p>A list of <code>DBInstanceAutomatedBackup</code> instances.</p>
-        pub fn db_instance_automated_backups(
-            mut self,
-            input: crate::model::DbInstanceAutomatedBackup,
-        ) -> Self {
+        pub fn db_instance_automated_backups(mut self, input: crate::model::DbInstanceAutomatedBackup) -> Self {
             let mut v = self.db_instance_automated_backups.unwrap_or_default();
-            v.push(input);
-            self.db_instance_automated_backups = Some(v);
-            self
+                            v.push(input);
+                            self.db_instance_automated_backups = Some(v);
+                            self
         }
         /// <p>A list of <code>DBInstanceAutomatedBackup</code> instances.</p>
-        pub fn set_db_instance_automated_backups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbInstanceAutomatedBackup>>,
-        ) -> Self {
-            self.db_instance_automated_backups = input;
-            self
+        pub fn set_db_instance_automated_backups(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbInstanceAutomatedBackup>>) -> Self {
+            self.db_instance_automated_backups = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbInstanceAutomatedBackupsOutput`](crate::output::DescribeDbInstanceAutomatedBackupsOutput).
         pub fn build(self) -> crate::output::DescribeDbInstanceAutomatedBackupsOutput {
             crate::output::DescribeDbInstanceAutomatedBackupsOutput {
-                marker: self.marker,
-                db_instance_automated_backups: self.db_instance_automated_backups,
+                marker: self.marker
+                ,
+                db_instance_automated_backups: self.db_instance_automated_backups
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbInstanceAutomatedBackupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbInstanceAutomatedBackupsOutput`](crate::output::DescribeDbInstanceAutomatedBackupsOutput).
@@ -6775,7 +6437,7 @@ impl DescribeDbInstanceAutomatedBackupsOutput {
 /// <p>Contains the result of a successful invocation of the <code>DescribeDBEngineVersions</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbEngineVersionsOutput {
+pub struct DescribeDbEngineVersionsOutput  {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -6785,23 +6447,22 @@ pub struct DescribeDbEngineVersionsOutput {
 }
 impl DescribeDbEngineVersionsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>DBEngineVersion</code> elements.</p>
-    pub fn db_engine_versions(&self) -> std::option::Option<&[crate::model::DbEngineVersion]> {
+    pub fn db_engine_versions(&self) -> std::option::Option<& [crate::model::DbEngineVersion]> {
         self.db_engine_versions.as_deref()
     }
 }
 /// See [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput).
 pub mod describe_db_engine_versions_output {
-
+    
     /// A builder for [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) db_engine_versions:
-            std::option::Option<std::vec::Vec<crate::model::DbEngineVersion>>,
+        pub(crate) db_engine_versions: std::option::Option<std::vec::Vec<crate::model::DbEngineVersion>>,
     }
     impl Builder {
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -6811,8 +6472,7 @@ pub mod describe_db_engine_versions_output {
         }
         /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `db_engine_versions`.
         ///
@@ -6821,26 +6481,26 @@ pub mod describe_db_engine_versions_output {
         /// <p>A list of <code>DBEngineVersion</code> elements.</p>
         pub fn db_engine_versions(mut self, input: crate::model::DbEngineVersion) -> Self {
             let mut v = self.db_engine_versions.unwrap_or_default();
-            v.push(input);
-            self.db_engine_versions = Some(v);
-            self
+                            v.push(input);
+                            self.db_engine_versions = Some(v);
+                            self
         }
         /// <p>A list of <code>DBEngineVersion</code> elements.</p>
-        pub fn set_db_engine_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbEngineVersion>>,
-        ) -> Self {
-            self.db_engine_versions = input;
-            self
+        pub fn set_db_engine_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbEngineVersion>>) -> Self {
+            self.db_engine_versions = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput).
         pub fn build(self) -> crate::output::DescribeDbEngineVersionsOutput {
             crate::output::DescribeDbEngineVersionsOutput {
-                marker: self.marker,
-                db_engine_versions: self.db_engine_versions,
+                marker: self.marker
+                ,
+                db_engine_versions: self.db_engine_versions
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbEngineVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbEngineVersionsOutput`](crate::output::DescribeDbEngineVersionsOutput).
@@ -6852,7 +6512,7 @@ impl DescribeDbEngineVersionsOutput {
 /// <p>Provides a list of DB cluster snapshots for the user as the result of a call to the <code>DescribeDBClusterSnapshots</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbClusterSnapshotsOutput {
+pub struct DescribeDbClusterSnapshotsOutput  {
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -6862,23 +6522,22 @@ pub struct DescribeDbClusterSnapshotsOutput {
 }
 impl DescribeDbClusterSnapshotsOutput {
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Provides a list of DB cluster snapshots for the user.</p>
-    pub fn db_cluster_snapshots(&self) -> std::option::Option<&[crate::model::DbClusterSnapshot]> {
+    pub fn db_cluster_snapshots(&self) -> std::option::Option<& [crate::model::DbClusterSnapshot]> {
         self.db_cluster_snapshots.as_deref()
     }
 }
 /// See [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput).
 pub mod describe_db_cluster_snapshots_output {
-
+    
     /// A builder for [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) db_cluster_snapshots:
-            std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshot>>,
+        pub(crate) db_cluster_snapshots: std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshot>>,
     }
     impl Builder {
         /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -6888,8 +6547,7 @@ pub mod describe_db_cluster_snapshots_output {
         }
         /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `db_cluster_snapshots`.
         ///
@@ -6898,26 +6556,26 @@ pub mod describe_db_cluster_snapshots_output {
         /// <p>Provides a list of DB cluster snapshots for the user.</p>
         pub fn db_cluster_snapshots(mut self, input: crate::model::DbClusterSnapshot) -> Self {
             let mut v = self.db_cluster_snapshots.unwrap_or_default();
-            v.push(input);
-            self.db_cluster_snapshots = Some(v);
-            self
+                            v.push(input);
+                            self.db_cluster_snapshots = Some(v);
+                            self
         }
         /// <p>Provides a list of DB cluster snapshots for the user.</p>
-        pub fn set_db_cluster_snapshots(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshot>>,
-        ) -> Self {
-            self.db_cluster_snapshots = input;
-            self
+        pub fn set_db_cluster_snapshots(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbClusterSnapshot>>) -> Self {
+            self.db_cluster_snapshots = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput).
         pub fn build(self) -> crate::output::DescribeDbClusterSnapshotsOutput {
             crate::output::DescribeDbClusterSnapshotsOutput {
-                marker: self.marker,
-                db_cluster_snapshots: self.db_cluster_snapshots,
+                marker: self.marker
+                ,
+                db_cluster_snapshots: self.db_cluster_snapshots
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbClusterSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotsOutput`](crate::output::DescribeDbClusterSnapshotsOutput).
@@ -6929,57 +6587,49 @@ impl DescribeDbClusterSnapshotsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbClusterSnapshotAttributesOutput {
-    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+pub struct DescribeDbClusterSnapshotAttributesOutput  {
+    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> 
     /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
     #[doc(hidden)]
-    pub db_cluster_snapshot_attributes_result:
-        std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
+    pub db_cluster_snapshot_attributes_result: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
 }
 impl DescribeDbClusterSnapshotAttributesOutput {
-    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+    /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> 
     /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-    pub fn db_cluster_snapshot_attributes_result(
-        &self,
-    ) -> std::option::Option<&crate::model::DbClusterSnapshotAttributesResult> {
+    pub fn db_cluster_snapshot_attributes_result(&self) -> std::option::Option<& crate::model::DbClusterSnapshotAttributesResult> {
         self.db_cluster_snapshot_attributes_result.as_ref()
     }
 }
 /// See [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput).
 pub mod describe_db_cluster_snapshot_attributes_output {
-
+    
     /// A builder for [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) db_cluster_snapshot_attributes_result:
-            std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
+        pub(crate) db_cluster_snapshot_attributes_result: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
     }
     impl Builder {
-        /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+        /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> 
         /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-        pub fn db_cluster_snapshot_attributes_result(
-            mut self,
-            input: crate::model::DbClusterSnapshotAttributesResult,
-        ) -> Self {
+        pub fn db_cluster_snapshot_attributes_result(mut self, input: crate::model::DbClusterSnapshotAttributesResult) -> Self {
             self.db_cluster_snapshot_attributes_result = Some(input);
             self
         }
-        /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
+        /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p> 
         /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-        pub fn set_db_cluster_snapshot_attributes_result(
-            mut self,
-            input: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>,
-        ) -> Self {
-            self.db_cluster_snapshot_attributes_result = input;
-            self
+        pub fn set_db_cluster_snapshot_attributes_result(mut self, input: std::option::Option<crate::model::DbClusterSnapshotAttributesResult>) -> Self {
+            self.db_cluster_snapshot_attributes_result = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput).
         pub fn build(self) -> crate::output::DescribeDbClusterSnapshotAttributesOutput {
             crate::output::DescribeDbClusterSnapshotAttributesOutput {
-                db_cluster_snapshot_attributes_result: self.db_cluster_snapshot_attributes_result,
+                db_cluster_snapshot_attributes_result: self.db_cluster_snapshot_attributes_result
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbClusterSnapshotAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterSnapshotAttributesOutput`](crate::output::DescribeDbClusterSnapshotAttributesOutput).
@@ -6991,7 +6641,7 @@ impl DescribeDbClusterSnapshotAttributesOutput {
 /// <p>Contains the result of a successful invocation of the <code>DescribeDBClusters</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbClustersOutput {
+pub struct DescribeDbClustersOutput  {
     /// <p>A pagination token that can be used in a later DescribeDBClusters request.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -7001,17 +6651,17 @@ pub struct DescribeDbClustersOutput {
 }
 impl DescribeDbClustersOutput {
     /// <p>A pagination token that can be used in a later DescribeDBClusters request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Contains a list of DB clusters for the user.</p>
-    pub fn db_clusters(&self) -> std::option::Option<&[crate::model::DbCluster]> {
+    pub fn db_clusters(&self) -> std::option::Option<& [crate::model::DbCluster]> {
         self.db_clusters.as_deref()
     }
 }
 /// See [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput).
 pub mod describe_db_clusters_output {
-
+    
     /// A builder for [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7026,8 +6676,7 @@ pub mod describe_db_clusters_output {
         }
         /// <p>A pagination token that can be used in a later DescribeDBClusters request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `db_clusters`.
         ///
@@ -7036,26 +6685,26 @@ pub mod describe_db_clusters_output {
         /// <p>Contains a list of DB clusters for the user.</p>
         pub fn db_clusters(mut self, input: crate::model::DbCluster) -> Self {
             let mut v = self.db_clusters.unwrap_or_default();
-            v.push(input);
-            self.db_clusters = Some(v);
-            self
+                            v.push(input);
+                            self.db_clusters = Some(v);
+                            self
         }
         /// <p>Contains a list of DB clusters for the user.</p>
-        pub fn set_db_clusters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbCluster>>,
-        ) -> Self {
-            self.db_clusters = input;
-            self
+        pub fn set_db_clusters(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbCluster>>) -> Self {
+            self.db_clusters = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput).
         pub fn build(self) -> crate::output::DescribeDbClustersOutput {
             crate::output::DescribeDbClustersOutput {
-                marker: self.marker,
-                db_clusters: self.db_clusters,
+                marker: self.marker
+                ,
+                db_clusters: self.db_clusters
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbClustersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClustersOutput`](crate::output::DescribeDbClustersOutput).
@@ -7067,7 +6716,7 @@ impl DescribeDbClustersOutput {
 /// <p>Provides details about a DB cluster parameter group including the parameters in the DB cluster parameter group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbClusterParametersOutput {
+pub struct DescribeDbClusterParametersOutput  {
     /// <p>Provides a list of parameters for the DB cluster parameter group.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -7077,17 +6726,17 @@ pub struct DescribeDbClusterParametersOutput {
 }
 impl DescribeDbClusterParametersOutput {
     /// <p>Provides a list of parameters for the DB cluster parameter group.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::model::Parameter]> {
+    pub fn parameters(&self) -> std::option::Option<& [crate::model::Parameter]> {
         self.parameters.as_deref()
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput).
 pub mod describe_db_cluster_parameters_output {
-
+    
     /// A builder for [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7102,17 +6751,13 @@ pub mod describe_db_cluster_parameters_output {
         /// <p>Provides a list of parameters for the DB cluster parameter group.</p>
         pub fn parameters(mut self, input: crate::model::Parameter) -> Self {
             let mut v = self.parameters.unwrap_or_default();
-            v.push(input);
-            self.parameters = Some(v);
-            self
+                            v.push(input);
+                            self.parameters = Some(v);
+                            self
         }
         /// <p>Provides a list of parameters for the DB cluster parameter group.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Parameter>>) -> Self {
+            self.parameters = input; self
         }
         /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7121,17 +6766,20 @@ pub mod describe_db_cluster_parameters_output {
         }
         /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterParameters</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput).
         pub fn build(self) -> crate::output::DescribeDbClusterParametersOutput {
             crate::output::DescribeDbClusterParametersOutput {
-                parameters: self.parameters,
-                marker: self.marker,
+                parameters: self.parameters
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbClusterParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterParametersOutput`](crate::output::DescribeDbClusterParametersOutput).
@@ -7143,36 +6791,32 @@ impl DescribeDbClusterParametersOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbClusterParameterGroupsOutput {
+pub struct DescribeDbClusterParameterGroupsOutput  {
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
     /// <p>A list of DB cluster parameter groups.</p>
     #[doc(hidden)]
-    pub db_cluster_parameter_groups:
-        std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
+    pub db_cluster_parameter_groups: std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
 }
 impl DescribeDbClusterParameterGroupsOutput {
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>A list of DB cluster parameter groups.</p>
-    pub fn db_cluster_parameter_groups(
-        &self,
-    ) -> std::option::Option<&[crate::model::DbClusterParameterGroup]> {
+    pub fn db_cluster_parameter_groups(&self) -> std::option::Option<& [crate::model::DbClusterParameterGroup]> {
         self.db_cluster_parameter_groups.as_deref()
     }
 }
 /// See [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput).
 pub mod describe_db_cluster_parameter_groups_output {
-
+    
     /// A builder for [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) db_cluster_parameter_groups:
-            std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
+        pub(crate) db_cluster_parameter_groups: std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
     }
     impl Builder {
         /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -7182,39 +6826,35 @@ pub mod describe_db_cluster_parameter_groups_output {
         }
         /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterParameterGroups</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `db_cluster_parameter_groups`.
         ///
         /// To override the contents of this collection use [`set_db_cluster_parameter_groups`](Self::set_db_cluster_parameter_groups).
         ///
         /// <p>A list of DB cluster parameter groups.</p>
-        pub fn db_cluster_parameter_groups(
-            mut self,
-            input: crate::model::DbClusterParameterGroup,
-        ) -> Self {
+        pub fn db_cluster_parameter_groups(mut self, input: crate::model::DbClusterParameterGroup) -> Self {
             let mut v = self.db_cluster_parameter_groups.unwrap_or_default();
-            v.push(input);
-            self.db_cluster_parameter_groups = Some(v);
-            self
+                            v.push(input);
+                            self.db_cluster_parameter_groups = Some(v);
+                            self
         }
         /// <p>A list of DB cluster parameter groups.</p>
-        pub fn set_db_cluster_parameter_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>,
-        ) -> Self {
-            self.db_cluster_parameter_groups = input;
-            self
+        pub fn set_db_cluster_parameter_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbClusterParameterGroup>>) -> Self {
+            self.db_cluster_parameter_groups = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput).
         pub fn build(self) -> crate::output::DescribeDbClusterParameterGroupsOutput {
             crate::output::DescribeDbClusterParameterGroupsOutput {
-                marker: self.marker,
-                db_cluster_parameter_groups: self.db_cluster_parameter_groups,
+                marker: self.marker
+                ,
+                db_cluster_parameter_groups: self.db_cluster_parameter_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbClusterParameterGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterParameterGroupsOutput`](crate::output::DescribeDbClusterParameterGroupsOutput).
@@ -7226,7 +6866,7 @@ impl DescribeDbClusterParameterGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbClusterEndpointsOutput {
+pub struct DescribeDbClusterEndpointsOutput  {
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -7236,23 +6876,22 @@ pub struct DescribeDbClusterEndpointsOutput {
 }
 impl DescribeDbClusterEndpointsOutput {
     /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
-    pub fn db_cluster_endpoints(&self) -> std::option::Option<&[crate::model::DbClusterEndpoint]> {
+    pub fn db_cluster_endpoints(&self) -> std::option::Option<& [crate::model::DbClusterEndpoint]> {
         self.db_cluster_endpoints.as_deref()
     }
 }
 /// See [`DescribeDbClusterEndpointsOutput`](crate::output::DescribeDbClusterEndpointsOutput).
 pub mod describe_db_cluster_endpoints_output {
-
+    
     /// A builder for [`DescribeDbClusterEndpointsOutput`](crate::output::DescribeDbClusterEndpointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) db_cluster_endpoints:
-            std::option::Option<std::vec::Vec<crate::model::DbClusterEndpoint>>,
+        pub(crate) db_cluster_endpoints: std::option::Option<std::vec::Vec<crate::model::DbClusterEndpoint>>,
     }
     impl Builder {
         /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
@@ -7262,8 +6901,7 @@ pub mod describe_db_cluster_endpoints_output {
         }
         /// <p>An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `db_cluster_endpoints`.
         ///
@@ -7272,26 +6910,26 @@ pub mod describe_db_cluster_endpoints_output {
         /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
         pub fn db_cluster_endpoints(mut self, input: crate::model::DbClusterEndpoint) -> Self {
             let mut v = self.db_cluster_endpoints.unwrap_or_default();
-            v.push(input);
-            self.db_cluster_endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.db_cluster_endpoints = Some(v);
+                            self
         }
         /// <p>Contains the details of the endpoints associated with the cluster and matching any filter conditions.</p>
-        pub fn set_db_cluster_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbClusterEndpoint>>,
-        ) -> Self {
-            self.db_cluster_endpoints = input;
-            self
+        pub fn set_db_cluster_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbClusterEndpoint>>) -> Self {
+            self.db_cluster_endpoints = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbClusterEndpointsOutput`](crate::output::DescribeDbClusterEndpointsOutput).
         pub fn build(self) -> crate::output::DescribeDbClusterEndpointsOutput {
             crate::output::DescribeDbClusterEndpointsOutput {
-                marker: self.marker,
-                db_cluster_endpoints: self.db_cluster_endpoints,
+                marker: self.marker
+                ,
+                db_cluster_endpoints: self.db_cluster_endpoints
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbClusterEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterEndpointsOutput`](crate::output::DescribeDbClusterEndpointsOutput).
@@ -7303,7 +6941,7 @@ impl DescribeDbClusterEndpointsOutput {
 /// <p>Contains the result of a successful invocation of the <code>DescribeDBClusterBacktracks</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbClusterBacktracksOutput {
+pub struct DescribeDbClusterBacktracksOutput  {
     /// <p>A pagination token that can be used in a later <code>DescribeDBClusterBacktracks</code> request.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -7313,25 +6951,22 @@ pub struct DescribeDbClusterBacktracksOutput {
 }
 impl DescribeDbClusterBacktracksOutput {
     /// <p>A pagination token that can be used in a later <code>DescribeDBClusterBacktracks</code> request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>Contains a list of backtracks for the user.</p>
-    pub fn db_cluster_backtracks(
-        &self,
-    ) -> std::option::Option<&[crate::model::DbClusterBacktrack]> {
+    pub fn db_cluster_backtracks(&self) -> std::option::Option<& [crate::model::DbClusterBacktrack]> {
         self.db_cluster_backtracks.as_deref()
     }
 }
 /// See [`DescribeDbClusterBacktracksOutput`](crate::output::DescribeDbClusterBacktracksOutput).
 pub mod describe_db_cluster_backtracks_output {
-
+    
     /// A builder for [`DescribeDbClusterBacktracksOutput`](crate::output::DescribeDbClusterBacktracksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) marker: std::option::Option<std::string::String>,
-        pub(crate) db_cluster_backtracks:
-            std::option::Option<std::vec::Vec<crate::model::DbClusterBacktrack>>,
+        pub(crate) db_cluster_backtracks: std::option::Option<std::vec::Vec<crate::model::DbClusterBacktrack>>,
     }
     impl Builder {
         /// <p>A pagination token that can be used in a later <code>DescribeDBClusterBacktracks</code> request.</p>
@@ -7341,8 +6976,7 @@ pub mod describe_db_cluster_backtracks_output {
         }
         /// <p>A pagination token that can be used in a later <code>DescribeDBClusterBacktracks</code> request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Appends an item to `db_cluster_backtracks`.
         ///
@@ -7351,26 +6985,26 @@ pub mod describe_db_cluster_backtracks_output {
         /// <p>Contains a list of backtracks for the user.</p>
         pub fn db_cluster_backtracks(mut self, input: crate::model::DbClusterBacktrack) -> Self {
             let mut v = self.db_cluster_backtracks.unwrap_or_default();
-            v.push(input);
-            self.db_cluster_backtracks = Some(v);
-            self
+                            v.push(input);
+                            self.db_cluster_backtracks = Some(v);
+                            self
         }
         /// <p>Contains a list of backtracks for the user.</p>
-        pub fn set_db_cluster_backtracks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DbClusterBacktrack>>,
-        ) -> Self {
-            self.db_cluster_backtracks = input;
-            self
+        pub fn set_db_cluster_backtracks(mut self, input: std::option::Option<std::vec::Vec<crate::model::DbClusterBacktrack>>) -> Self {
+            self.db_cluster_backtracks = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDbClusterBacktracksOutput`](crate::output::DescribeDbClusterBacktracksOutput).
         pub fn build(self) -> crate::output::DescribeDbClusterBacktracksOutput {
             crate::output::DescribeDbClusterBacktracksOutput {
-                marker: self.marker,
-                db_cluster_backtracks: self.db_cluster_backtracks,
+                marker: self.marker
+                ,
+                db_cluster_backtracks: self.db_cluster_backtracks
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDbClusterBacktracksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterBacktracksOutput`](crate::output::DescribeDbClusterBacktracksOutput).
@@ -7382,7 +7016,7 @@ impl DescribeDbClusterBacktracksOutput {
 /// <p>Data returned by the <b>DescribeCertificates</b> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCertificatesOutput {
+pub struct DescribeCertificatesOutput  {
     /// <p>The list of <code>Certificate</code> objects for the Amazon Web Services account.</p>
     #[doc(hidden)]
     pub certificates: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
@@ -7392,17 +7026,17 @@ pub struct DescribeCertificatesOutput {
 }
 impl DescribeCertificatesOutput {
     /// <p>The list of <code>Certificate</code> objects for the Amazon Web Services account.</p>
-    pub fn certificates(&self) -> std::option::Option<&[crate::model::Certificate]> {
+    pub fn certificates(&self) -> std::option::Option<& [crate::model::Certificate]> {
         self.certificates.as_deref()
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeCertificatesOutput`](crate::output::DescribeCertificatesOutput).
 pub mod describe_certificates_output {
-
+    
     /// A builder for [`DescribeCertificatesOutput`](crate::output::DescribeCertificatesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7417,17 +7051,13 @@ pub mod describe_certificates_output {
         /// <p>The list of <code>Certificate</code> objects for the Amazon Web Services account.</p>
         pub fn certificates(mut self, input: crate::model::Certificate) -> Self {
             let mut v = self.certificates.unwrap_or_default();
-            v.push(input);
-            self.certificates = Some(v);
-            self
+                            v.push(input);
+                            self.certificates = Some(v);
+                            self
         }
         /// <p>The list of <code>Certificate</code> objects for the Amazon Web Services account.</p>
-        pub fn set_certificates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Certificate>>,
-        ) -> Self {
-            self.certificates = input;
-            self
+        pub fn set_certificates(mut self, input: std::option::Option<std::vec::Vec<crate::model::Certificate>>) -> Self {
+            self.certificates = input; self
         }
         /// <p>An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7436,17 +7066,20 @@ pub mod describe_certificates_output {
         }
         /// <p>An optional pagination token provided by a previous <code>DescribeCertificates</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code> .</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCertificatesOutput`](crate::output::DescribeCertificatesOutput).
         pub fn build(self) -> crate::output::DescribeCertificatesOutput {
             crate::output::DescribeCertificatesOutput {
-                certificates: self.certificates,
-                marker: self.marker,
+                certificates: self.certificates
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCertificatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCertificatesOutput`](crate::output::DescribeCertificatesOutput).
@@ -7458,35 +7091,31 @@ impl DescribeCertificatesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBlueGreenDeploymentsOutput {
+pub struct DescribeBlueGreenDeploymentsOutput  {
     /// <p>Contains a list of blue/green deployments for the user.</p>
     #[doc(hidden)]
-    pub blue_green_deployments:
-        std::option::Option<std::vec::Vec<crate::model::BlueGreenDeployment>>,
+    pub blue_green_deployments: std::option::Option<std::vec::Vec<crate::model::BlueGreenDeployment>>,
     /// <p>A pagination token that can be used in a later DescribeBlueGreenDeployments request.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeBlueGreenDeploymentsOutput {
     /// <p>Contains a list of blue/green deployments for the user.</p>
-    pub fn blue_green_deployments(
-        &self,
-    ) -> std::option::Option<&[crate::model::BlueGreenDeployment]> {
+    pub fn blue_green_deployments(&self) -> std::option::Option<& [crate::model::BlueGreenDeployment]> {
         self.blue_green_deployments.as_deref()
     }
     /// <p>A pagination token that can be used in a later DescribeBlueGreenDeployments request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`DescribeBlueGreenDeploymentsOutput`](crate::output::DescribeBlueGreenDeploymentsOutput).
 pub mod describe_blue_green_deployments_output {
-
+    
     /// A builder for [`DescribeBlueGreenDeploymentsOutput`](crate::output::DescribeBlueGreenDeploymentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) blue_green_deployments:
-            std::option::Option<std::vec::Vec<crate::model::BlueGreenDeployment>>,
+        pub(crate) blue_green_deployments: std::option::Option<std::vec::Vec<crate::model::BlueGreenDeployment>>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7497,17 +7126,13 @@ pub mod describe_blue_green_deployments_output {
         /// <p>Contains a list of blue/green deployments for the user.</p>
         pub fn blue_green_deployments(mut self, input: crate::model::BlueGreenDeployment) -> Self {
             let mut v = self.blue_green_deployments.unwrap_or_default();
-            v.push(input);
-            self.blue_green_deployments = Some(v);
-            self
+                            v.push(input);
+                            self.blue_green_deployments = Some(v);
+                            self
         }
         /// <p>Contains a list of blue/green deployments for the user.</p>
-        pub fn set_blue_green_deployments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BlueGreenDeployment>>,
-        ) -> Self {
-            self.blue_green_deployments = input;
-            self
+        pub fn set_blue_green_deployments(mut self, input: std::option::Option<std::vec::Vec<crate::model::BlueGreenDeployment>>) -> Self {
+            self.blue_green_deployments = input; self
         }
         /// <p>A pagination token that can be used in a later DescribeBlueGreenDeployments request.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7516,17 +7141,20 @@ pub mod describe_blue_green_deployments_output {
         }
         /// <p>A pagination token that can be used in a later DescribeBlueGreenDeployments request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBlueGreenDeploymentsOutput`](crate::output::DescribeBlueGreenDeploymentsOutput).
         pub fn build(self) -> crate::output::DescribeBlueGreenDeploymentsOutput {
             crate::output::DescribeBlueGreenDeploymentsOutput {
-                blue_green_deployments: self.blue_green_deployments,
-                marker: self.marker,
+                blue_green_deployments: self.blue_green_deployments
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBlueGreenDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBlueGreenDeploymentsOutput`](crate::output::DescribeBlueGreenDeploymentsOutput).
@@ -7538,20 +7166,20 @@ impl DescribeBlueGreenDeploymentsOutput {
 /// <p>Data returned by the <b>DescribeAccountAttributes</b> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountAttributesOutput {
+pub struct DescribeAccountAttributesOutput  {
     /// <p>A list of <code>AccountQuota</code> objects. Within this list, each quota has a name, a count of usage toward the quota maximum, and a maximum value for the quota.</p>
     #[doc(hidden)]
     pub account_quotas: std::option::Option<std::vec::Vec<crate::model::AccountQuota>>,
 }
 impl DescribeAccountAttributesOutput {
     /// <p>A list of <code>AccountQuota</code> objects. Within this list, each quota has a name, a count of usage toward the quota maximum, and a maximum value for the quota.</p>
-    pub fn account_quotas(&self) -> std::option::Option<&[crate::model::AccountQuota]> {
+    pub fn account_quotas(&self) -> std::option::Option<& [crate::model::AccountQuota]> {
         self.account_quotas.as_deref()
     }
 }
 /// See [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput).
 pub mod describe_account_attributes_output {
-
+    
     /// A builder for [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7565,25 +7193,24 @@ pub mod describe_account_attributes_output {
         /// <p>A list of <code>AccountQuota</code> objects. Within this list, each quota has a name, a count of usage toward the quota maximum, and a maximum value for the quota.</p>
         pub fn account_quotas(mut self, input: crate::model::AccountQuota) -> Self {
             let mut v = self.account_quotas.unwrap_or_default();
-            v.push(input);
-            self.account_quotas = Some(v);
-            self
+                            v.push(input);
+                            self.account_quotas = Some(v);
+                            self
         }
         /// <p>A list of <code>AccountQuota</code> objects. Within this list, each quota has a name, a count of usage toward the quota maximum, and a maximum value for the quota.</p>
-        pub fn set_account_quotas(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccountQuota>>,
-        ) -> Self {
-            self.account_quotas = input;
-            self
+        pub fn set_account_quotas(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccountQuota>>) -> Self {
+            self.account_quotas = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput).
         pub fn build(self) -> crate::output::DescribeAccountAttributesOutput {
             crate::output::DescribeAccountAttributesOutput {
-                account_quotas: self.account_quotas,
+                account_quotas: self.account_quotas
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAccountAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput).
@@ -7595,19 +7222,24 @@ impl DescribeAccountAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterDbProxyTargetsOutput {}
+pub struct DeregisterDbProxyTargetsOutput  {
+}
 /// See [`DeregisterDbProxyTargetsOutput`](crate::output::DeregisterDbProxyTargetsOutput).
 pub mod deregister_db_proxy_targets_output {
-
+    
     /// A builder for [`DeregisterDbProxyTargetsOutput`](crate::output::DeregisterDbProxyTargetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterDbProxyTargetsOutput`](crate::output::DeregisterDbProxyTargetsOutput).
         pub fn build(self) -> crate::output::DeregisterDbProxyTargetsOutput {
-            crate::output::DeregisterDbProxyTargetsOutput {}
+            crate::output::DeregisterDbProxyTargetsOutput {
+            }
         }
     }
+    
+    
 }
 impl DeregisterDbProxyTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterDbProxyTargetsOutput`](crate::output::DeregisterDbProxyTargetsOutput).
@@ -7619,19 +7251,24 @@ impl DeregisterDbProxyTargetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteOptionGroupOutput {}
+pub struct DeleteOptionGroupOutput  {
+}
 /// See [`DeleteOptionGroupOutput`](crate::output::DeleteOptionGroupOutput).
 pub mod delete_option_group_output {
-
+    
     /// A builder for [`DeleteOptionGroupOutput`](crate::output::DeleteOptionGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteOptionGroupOutput`](crate::output::DeleteOptionGroupOutput).
         pub fn build(self) -> crate::output::DeleteOptionGroupOutput {
-            crate::output::DeleteOptionGroupOutput {}
+            crate::output::DeleteOptionGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteOptionGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOptionGroupOutput`](crate::output::DeleteOptionGroupOutput).
@@ -7643,20 +7280,20 @@ impl DeleteOptionGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGlobalClusterOutput {
+pub struct DeleteGlobalClusterOutput  {
     /// <p>A data type representing an Aurora global database.</p>
     #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl DeleteGlobalClusterOutput {
     /// <p>A data type representing an Aurora global database.</p>
-    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+    pub fn global_cluster(&self) -> std::option::Option<& crate::model::GlobalCluster> {
         self.global_cluster.as_ref()
     }
 }
 /// See [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput).
 pub mod delete_global_cluster_output {
-
+    
     /// A builder for [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7669,20 +7306,19 @@ pub mod delete_global_cluster_output {
             self
         }
         /// <p>A data type representing an Aurora global database.</p>
-        pub fn set_global_cluster(
-            mut self,
-            input: std::option::Option<crate::model::GlobalCluster>,
-        ) -> Self {
-            self.global_cluster = input;
-            self
+        pub fn set_global_cluster(mut self, input: std::option::Option<crate::model::GlobalCluster>) -> Self {
+            self.global_cluster = input; self
         }
         /// Consumes the builder and constructs a [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput).
         pub fn build(self) -> crate::output::DeleteGlobalClusterOutput {
             crate::output::DeleteGlobalClusterOutput {
-                global_cluster: self.global_cluster,
+                global_cluster: self.global_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteGlobalClusterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGlobalClusterOutput`](crate::output::DeleteGlobalClusterOutput).
@@ -7694,20 +7330,20 @@ impl DeleteGlobalClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEventSubscriptionOutput {
+pub struct DeleteEventSubscriptionOutput  {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl DeleteEventSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
-    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+    pub fn event_subscription(&self) -> std::option::Option<& crate::model::EventSubscription> {
         self.event_subscription.as_ref()
     }
 }
 /// See [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
 pub mod delete_event_subscription_output {
-
+    
     /// A builder for [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7720,20 +7356,19 @@ pub mod delete_event_subscription_output {
             self
         }
         /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
-        pub fn set_event_subscription(
-            mut self,
-            input: std::option::Option<crate::model::EventSubscription>,
-        ) -> Self {
-            self.event_subscription = input;
-            self
+        pub fn set_event_subscription(mut self, input: std::option::Option<crate::model::EventSubscription>) -> Self {
+            self.event_subscription = input; self
         }
         /// Consumes the builder and constructs a [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
         pub fn build(self) -> crate::output::DeleteEventSubscriptionOutput {
             crate::output::DeleteEventSubscriptionOutput {
-                event_subscription: self.event_subscription,
+                event_subscription: self.event_subscription
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteEventSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEventSubscriptionOutput`](crate::output::DeleteEventSubscriptionOutput).
@@ -7745,19 +7380,24 @@ impl DeleteEventSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbSubnetGroupOutput {}
+pub struct DeleteDbSubnetGroupOutput  {
+}
 /// See [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput).
 pub mod delete_db_subnet_group_output {
-
+    
     /// A builder for [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput).
         pub fn build(self) -> crate::output::DeleteDbSubnetGroupOutput {
-            crate::output::DeleteDbSubnetGroupOutput {}
+            crate::output::DeleteDbSubnetGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDbSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbSubnetGroupOutput`](crate::output::DeleteDbSubnetGroupOutput).
@@ -7769,50 +7409,49 @@ impl DeleteDbSubnetGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbSnapshotOutput {
-    /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
+pub struct DeleteDbSnapshotOutput  {
+    /// <p>Contains the details of an Amazon RDS DB snapshot.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
     #[doc(hidden)]
     pub db_snapshot: std::option::Option<crate::model::DbSnapshot>,
 }
 impl DeleteDbSnapshotOutput {
-    /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
+    /// <p>Contains the details of an Amazon RDS DB snapshot.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
-    pub fn db_snapshot(&self) -> std::option::Option<&crate::model::DbSnapshot> {
+    pub fn db_snapshot(&self) -> std::option::Option<& crate::model::DbSnapshot> {
         self.db_snapshot.as_ref()
     }
 }
 /// See [`DeleteDbSnapshotOutput`](crate::output::DeleteDbSnapshotOutput).
 pub mod delete_db_snapshot_output {
-
+    
     /// A builder for [`DeleteDbSnapshotOutput`](crate::output::DeleteDbSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_snapshot: std::option::Option<crate::model::DbSnapshot>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
+        /// <p>Contains the details of an Amazon RDS DB snapshot.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
         pub fn db_snapshot(mut self, input: crate::model::DbSnapshot) -> Self {
             self.db_snapshot = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
+        /// <p>Contains the details of an Amazon RDS DB snapshot.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
-        pub fn set_db_snapshot(
-            mut self,
-            input: std::option::Option<crate::model::DbSnapshot>,
-        ) -> Self {
-            self.db_snapshot = input;
-            self
+        pub fn set_db_snapshot(mut self, input: std::option::Option<crate::model::DbSnapshot>) -> Self {
+            self.db_snapshot = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDbSnapshotOutput`](crate::output::DeleteDbSnapshotOutput).
         pub fn build(self) -> crate::output::DeleteDbSnapshotOutput {
             crate::output::DeleteDbSnapshotOutput {
-                db_snapshot: self.db_snapshot,
+                db_snapshot: self.db_snapshot
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDbSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbSnapshotOutput`](crate::output::DeleteDbSnapshotOutput).
@@ -7824,19 +7463,24 @@ impl DeleteDbSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbSecurityGroupOutput {}
+pub struct DeleteDbSecurityGroupOutput  {
+}
 /// See [`DeleteDbSecurityGroupOutput`](crate::output::DeleteDbSecurityGroupOutput).
 pub mod delete_db_security_group_output {
-
+    
     /// A builder for [`DeleteDbSecurityGroupOutput`](crate::output::DeleteDbSecurityGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDbSecurityGroupOutput`](crate::output::DeleteDbSecurityGroupOutput).
         pub fn build(self) -> crate::output::DeleteDbSecurityGroupOutput {
-            crate::output::DeleteDbSecurityGroupOutput {}
+            crate::output::DeleteDbSecurityGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDbSecurityGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbSecurityGroupOutput`](crate::output::DeleteDbSecurityGroupOutput).
@@ -7848,20 +7492,20 @@ impl DeleteDbSecurityGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbProxyEndpointOutput {
+pub struct DeleteDbProxyEndpointOutput  {
     /// <p>The data structure representing the details of the DB proxy endpoint that you delete.</p>
     #[doc(hidden)]
     pub db_proxy_endpoint: std::option::Option<crate::model::DbProxyEndpoint>,
 }
 impl DeleteDbProxyEndpointOutput {
     /// <p>The data structure representing the details of the DB proxy endpoint that you delete.</p>
-    pub fn db_proxy_endpoint(&self) -> std::option::Option<&crate::model::DbProxyEndpoint> {
+    pub fn db_proxy_endpoint(&self) -> std::option::Option<& crate::model::DbProxyEndpoint> {
         self.db_proxy_endpoint.as_ref()
     }
 }
 /// See [`DeleteDbProxyEndpointOutput`](crate::output::DeleteDbProxyEndpointOutput).
 pub mod delete_db_proxy_endpoint_output {
-
+    
     /// A builder for [`DeleteDbProxyEndpointOutput`](crate::output::DeleteDbProxyEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7874,20 +7518,19 @@ pub mod delete_db_proxy_endpoint_output {
             self
         }
         /// <p>The data structure representing the details of the DB proxy endpoint that you delete.</p>
-        pub fn set_db_proxy_endpoint(
-            mut self,
-            input: std::option::Option<crate::model::DbProxyEndpoint>,
-        ) -> Self {
-            self.db_proxy_endpoint = input;
-            self
+        pub fn set_db_proxy_endpoint(mut self, input: std::option::Option<crate::model::DbProxyEndpoint>) -> Self {
+            self.db_proxy_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDbProxyEndpointOutput`](crate::output::DeleteDbProxyEndpointOutput).
         pub fn build(self) -> crate::output::DeleteDbProxyEndpointOutput {
             crate::output::DeleteDbProxyEndpointOutput {
-                db_proxy_endpoint: self.db_proxy_endpoint,
+                db_proxy_endpoint: self.db_proxy_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDbProxyEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbProxyEndpointOutput`](crate::output::DeleteDbProxyEndpointOutput).
@@ -7899,20 +7542,20 @@ impl DeleteDbProxyEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbProxyOutput {
+pub struct DeleteDbProxyOutput  {
     /// <p>The data structure representing the details of the DB proxy that you delete.</p>
     #[doc(hidden)]
     pub db_proxy: std::option::Option<crate::model::DbProxy>,
 }
 impl DeleteDbProxyOutput {
     /// <p>The data structure representing the details of the DB proxy that you delete.</p>
-    pub fn db_proxy(&self) -> std::option::Option<&crate::model::DbProxy> {
+    pub fn db_proxy(&self) -> std::option::Option<& crate::model::DbProxy> {
         self.db_proxy.as_ref()
     }
 }
 /// See [`DeleteDbProxyOutput`](crate::output::DeleteDbProxyOutput).
 pub mod delete_db_proxy_output {
-
+    
     /// A builder for [`DeleteDbProxyOutput`](crate::output::DeleteDbProxyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7926,16 +7569,18 @@ pub mod delete_db_proxy_output {
         }
         /// <p>The data structure representing the details of the DB proxy that you delete.</p>
         pub fn set_db_proxy(mut self, input: std::option::Option<crate::model::DbProxy>) -> Self {
-            self.db_proxy = input;
-            self
+            self.db_proxy = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDbProxyOutput`](crate::output::DeleteDbProxyOutput).
         pub fn build(self) -> crate::output::DeleteDbProxyOutput {
             crate::output::DeleteDbProxyOutput {
-                db_proxy: self.db_proxy,
+                db_proxy: self.db_proxy
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDbProxyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbProxyOutput`](crate::output::DeleteDbProxyOutput).
@@ -7947,19 +7592,24 @@ impl DeleteDbProxyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbParameterGroupOutput {}
+pub struct DeleteDbParameterGroupOutput  {
+}
 /// See [`DeleteDbParameterGroupOutput`](crate::output::DeleteDbParameterGroupOutput).
 pub mod delete_db_parameter_group_output {
-
+    
     /// A builder for [`DeleteDbParameterGroupOutput`](crate::output::DeleteDbParameterGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDbParameterGroupOutput`](crate::output::DeleteDbParameterGroupOutput).
         pub fn build(self) -> crate::output::DeleteDbParameterGroupOutput {
-            crate::output::DeleteDbParameterGroupOutput {}
+            crate::output::DeleteDbParameterGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDbParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbParameterGroupOutput`](crate::output::DeleteDbParameterGroupOutput).
@@ -7971,52 +7621,45 @@ impl DeleteDbParameterGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbInstanceAutomatedBackupOutput {
+pub struct DeleteDbInstanceAutomatedBackupOutput  {
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
     #[doc(hidden)]
     pub db_instance_automated_backup: std::option::Option<crate::model::DbInstanceAutomatedBackup>,
 }
 impl DeleteDbInstanceAutomatedBackupOutput {
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
-    pub fn db_instance_automated_backup(
-        &self,
-    ) -> std::option::Option<&crate::model::DbInstanceAutomatedBackup> {
+    pub fn db_instance_automated_backup(&self) -> std::option::Option<& crate::model::DbInstanceAutomatedBackup> {
         self.db_instance_automated_backup.as_ref()
     }
 }
 /// See [`DeleteDbInstanceAutomatedBackupOutput`](crate::output::DeleteDbInstanceAutomatedBackupOutput).
 pub mod delete_db_instance_automated_backup_output {
-
+    
     /// A builder for [`DeleteDbInstanceAutomatedBackupOutput`](crate::output::DeleteDbInstanceAutomatedBackupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) db_instance_automated_backup:
-            std::option::Option<crate::model::DbInstanceAutomatedBackup>,
+        pub(crate) db_instance_automated_backup: std::option::Option<crate::model::DbInstanceAutomatedBackup>,
     }
     impl Builder {
         /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
-        pub fn db_instance_automated_backup(
-            mut self,
-            input: crate::model::DbInstanceAutomatedBackup,
-        ) -> Self {
+        pub fn db_instance_automated_backup(mut self, input: crate::model::DbInstanceAutomatedBackup) -> Self {
             self.db_instance_automated_backup = Some(input);
             self
         }
         /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
-        pub fn set_db_instance_automated_backup(
-            mut self,
-            input: std::option::Option<crate::model::DbInstanceAutomatedBackup>,
-        ) -> Self {
-            self.db_instance_automated_backup = input;
-            self
+        pub fn set_db_instance_automated_backup(mut self, input: std::option::Option<crate::model::DbInstanceAutomatedBackup>) -> Self {
+            self.db_instance_automated_backup = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDbInstanceAutomatedBackupOutput`](crate::output::DeleteDbInstanceAutomatedBackupOutput).
         pub fn build(self) -> crate::output::DeleteDbInstanceAutomatedBackupOutput {
             crate::output::DeleteDbInstanceAutomatedBackupOutput {
-                db_instance_automated_backup: self.db_instance_automated_backup,
+                db_instance_automated_backup: self.db_instance_automated_backup
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDbInstanceAutomatedBackupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbInstanceAutomatedBackupOutput`](crate::output::DeleteDbInstanceAutomatedBackupOutput).
@@ -8028,50 +7671,49 @@ impl DeleteDbInstanceAutomatedBackupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbInstanceOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+pub struct DeleteDbInstanceOutput  {
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl DeleteDbInstanceOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+    pub fn db_instance(&self) -> std::option::Option<& crate::model::DbInstance> {
         self.db_instance.as_ref()
     }
 }
 /// See [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput).
 pub mod delete_db_instance_output {
-
+    
     /// A builder for [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-        pub fn set_db_instance(
-            mut self,
-            input: std::option::Option<crate::model::DbInstance>,
-        ) -> Self {
-            self.db_instance = input;
-            self
+        pub fn set_db_instance(mut self, input: std::option::Option<crate::model::DbInstance>) -> Self {
+            self.db_instance = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput).
         pub fn build(self) -> crate::output::DeleteDbInstanceOutput {
             crate::output::DeleteDbInstanceOutput {
-                db_instance: self.db_instance,
+                db_instance: self.db_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbInstanceOutput`](crate::output::DeleteDbInstanceOutput).
@@ -8083,50 +7725,49 @@ impl DeleteDbInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbClusterSnapshotOutput {
-    /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
+pub struct DeleteDbClusterSnapshotOutput  {
+    /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
     #[doc(hidden)]
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
 impl DeleteDbClusterSnapshotOutput {
-    /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
+    /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
-    pub fn db_cluster_snapshot(&self) -> std::option::Option<&crate::model::DbClusterSnapshot> {
+    pub fn db_cluster_snapshot(&self) -> std::option::Option<& crate::model::DbClusterSnapshot> {
         self.db_cluster_snapshot.as_ref()
     }
 }
 /// See [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput).
 pub mod delete_db_cluster_snapshot_output {
-
+    
     /// A builder for [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
     }
     impl Builder {
-        /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
+        /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
         pub fn db_cluster_snapshot(mut self, input: crate::model::DbClusterSnapshot) -> Self {
             self.db_cluster_snapshot = Some(input);
             self
         }
-        /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
+        /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
-        pub fn set_db_cluster_snapshot(
-            mut self,
-            input: std::option::Option<crate::model::DbClusterSnapshot>,
-        ) -> Self {
-            self.db_cluster_snapshot = input;
-            self
+        pub fn set_db_cluster_snapshot(mut self, input: std::option::Option<crate::model::DbClusterSnapshot>) -> Self {
+            self.db_cluster_snapshot = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput).
         pub fn build(self) -> crate::output::DeleteDbClusterSnapshotOutput {
             crate::output::DeleteDbClusterSnapshotOutput {
-                db_cluster_snapshot: self.db_cluster_snapshot,
+                db_cluster_snapshot: self.db_cluster_snapshot
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDbClusterSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbClusterSnapshotOutput`](crate::output::DeleteDbClusterSnapshotOutput).
@@ -8138,19 +7779,24 @@ impl DeleteDbClusterSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbClusterParameterGroupOutput {}
+pub struct DeleteDbClusterParameterGroupOutput  {
+}
 /// See [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput).
 pub mod delete_db_cluster_parameter_group_output {
-
+    
     /// A builder for [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput).
         pub fn build(self) -> crate::output::DeleteDbClusterParameterGroupOutput {
-            crate::output::DeleteDbClusterParameterGroupOutput {}
+            crate::output::DeleteDbClusterParameterGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDbClusterParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbClusterParameterGroupOutput`](crate::output::DeleteDbClusterParameterGroupOutput).
@@ -8159,17 +7805,17 @@ impl DeleteDbClusterParameterGroupOutput {
     }
 }
 
-/// <p>This data type represents the information you need to connect to an Amazon Aurora DB cluster. This data type is used as a response element in the following actions:</p>
-/// <ul>
-/// <li> <p> <code>CreateDBClusterEndpoint</code> </p> </li>
-/// <li> <p> <code>DescribeDBClusterEndpoints</code> </p> </li>
-/// <li> <p> <code>ModifyDBClusterEndpoint</code> </p> </li>
-/// <li> <p> <code>DeleteDBClusterEndpoint</code> </p> </li>
-/// </ul>
+/// <p>This data type represents the information you need to connect to an Amazon Aurora DB cluster. This data type is used as a response element in the following actions:</p> 
+/// <ul> 
+/// <li> <p> <code>CreateDBClusterEndpoint</code> </p> </li> 
+/// <li> <p> <code>DescribeDBClusterEndpoints</code> </p> </li> 
+/// <li> <p> <code>ModifyDBClusterEndpoint</code> </p> </li> 
+/// <li> <p> <code>DeleteDBClusterEndpoint</code> </p> </li> 
+/// </ul> 
 /// <p>For the data structure that represents Amazon RDS DB instance endpoints, see <code>Endpoint</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbClusterEndpointOutput {
+pub struct DeleteDbClusterEndpointOutput  {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
     #[doc(hidden)]
     pub db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
@@ -8203,56 +7849,55 @@ pub struct DeleteDbClusterEndpointOutput {
 }
 impl DeleteDbClusterEndpointOutput {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<& str> {
         self.db_cluster_endpoint_identifier.as_deref()
     }
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
-    pub fn db_cluster_endpoint_resource_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_endpoint_resource_identifier(&self) -> std::option::Option<& str> {
         self.db_cluster_endpoint_resource_identifier.as_deref()
     }
     /// <p>The DNS address of the endpoint.</p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
-    pub fn endpoint_type(&self) -> std::option::Option<&str> {
+    pub fn endpoint_type(&self) -> std::option::Option<& str> {
         self.endpoint_type.as_deref()
     }
     /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-    pub fn custom_endpoint_type(&self) -> std::option::Option<&str> {
+    pub fn custom_endpoint_type(&self) -> std::option::Option<& str> {
         self.custom_endpoint_type.as_deref()
     }
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub fn static_members(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn static_members(&self) -> std::option::Option<& [std::string::String]> {
         self.static_members.as_deref()
     }
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    pub fn excluded_members(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn excluded_members(&self) -> std::option::Option<& [std::string::String]> {
         self.excluded_members.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
-    pub fn db_cluster_endpoint_arn(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_endpoint_arn(&self) -> std::option::Option<& str> {
         self.db_cluster_endpoint_arn.as_deref()
     }
 }
 /// See [`DeleteDbClusterEndpointOutput`](crate::output::DeleteDbClusterEndpointOutput).
 pub mod delete_db_cluster_endpoint_output {
-
+    
     /// A builder for [`DeleteDbClusterEndpointOutput`](crate::output::DeleteDbClusterEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
-        pub(crate) db_cluster_endpoint_resource_identifier:
-            std::option::Option<std::string::String>,
+        pub(crate) db_cluster_endpoint_resource_identifier: std::option::Option<std::string::String>,
         pub(crate) endpoint: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) endpoint_type: std::option::Option<std::string::String>,
@@ -8263,20 +7908,13 @@ pub mod delete_db_cluster_endpoint_output {
     }
     impl Builder {
         /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
-        pub fn db_cluster_endpoint_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn db_cluster_endpoint_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_endpoint_identifier = Some(input.into());
             self
         }
         /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
-        pub fn set_db_cluster_endpoint_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_cluster_endpoint_identifier = input;
-            self
+        pub fn set_db_cluster_endpoint_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_cluster_endpoint_identifier = input; self
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8284,28 +7922,17 @@ pub mod delete_db_cluster_endpoint_output {
             self
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
-        pub fn set_db_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_cluster_identifier = input;
-            self
+        pub fn set_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_cluster_identifier = input; self
         }
         /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
-        pub fn db_cluster_endpoint_resource_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn db_cluster_endpoint_resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_endpoint_resource_identifier = Some(input.into());
             self
         }
         /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
-        pub fn set_db_cluster_endpoint_resource_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_cluster_endpoint_resource_identifier = input;
-            self
+        pub fn set_db_cluster_endpoint_resource_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_cluster_endpoint_resource_identifier = input; self
         }
         /// <p>The DNS address of the endpoint.</p>
         pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8314,8 +7941,7 @@ pub mod delete_db_cluster_endpoint_output {
         }
         /// <p>The DNS address of the endpoint.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = input;
-            self
+            self.endpoint = input; self
         }
         /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8324,8 +7950,7 @@ pub mod delete_db_cluster_endpoint_output {
         }
         /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
         pub fn endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8333,12 +7958,8 @@ pub mod delete_db_cluster_endpoint_output {
             self
         }
         /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
-        pub fn set_endpoint_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.endpoint_type = input;
-            self
+        pub fn set_endpoint_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_type = input; self
         }
         /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
         pub fn custom_endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8346,12 +7967,8 @@ pub mod delete_db_cluster_endpoint_output {
             self
         }
         /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-        pub fn set_custom_endpoint_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_endpoint_type = input;
-            self
+        pub fn set_custom_endpoint_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_endpoint_type = input; self
         }
         /// Appends an item to `static_members`.
         ///
@@ -8360,17 +7977,13 @@ pub mod delete_db_cluster_endpoint_output {
         /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
         pub fn static_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.static_members.unwrap_or_default();
-            v.push(input.into());
-            self.static_members = Some(v);
-            self
+                            v.push(input.into());
+                            self.static_members = Some(v);
+                            self
         }
         /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-        pub fn set_static_members(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.static_members = input;
-            self
+        pub fn set_static_members(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.static_members = input; self
         }
         /// Appends an item to `excluded_members`.
         ///
@@ -8379,17 +7992,13 @@ pub mod delete_db_cluster_endpoint_output {
         /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
         pub fn excluded_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.excluded_members.unwrap_or_default();
-            v.push(input.into());
-            self.excluded_members = Some(v);
-            self
+                            v.push(input.into());
+                            self.excluded_members = Some(v);
+                            self
         }
         /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-        pub fn set_excluded_members(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.excluded_members = input;
-            self
+        pub fn set_excluded_members(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.excluded_members = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
         pub fn db_cluster_endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8397,30 +8006,37 @@ pub mod delete_db_cluster_endpoint_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
-        pub fn set_db_cluster_endpoint_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_cluster_endpoint_arn = input;
-            self
+        pub fn set_db_cluster_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_cluster_endpoint_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDbClusterEndpointOutput`](crate::output::DeleteDbClusterEndpointOutput).
         pub fn build(self) -> crate::output::DeleteDbClusterEndpointOutput {
             crate::output::DeleteDbClusterEndpointOutput {
-                db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier,
-                db_cluster_identifier: self.db_cluster_identifier,
-                db_cluster_endpoint_resource_identifier: self
-                    .db_cluster_endpoint_resource_identifier,
-                endpoint: self.endpoint,
-                status: self.status,
-                endpoint_type: self.endpoint_type,
-                custom_endpoint_type: self.custom_endpoint_type,
-                static_members: self.static_members,
-                excluded_members: self.excluded_members,
-                db_cluster_endpoint_arn: self.db_cluster_endpoint_arn,
+                db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier
+                ,
+                db_cluster_identifier: self.db_cluster_identifier
+                ,
+                db_cluster_endpoint_resource_identifier: self.db_cluster_endpoint_resource_identifier
+                ,
+                endpoint: self.endpoint
+                ,
+                status: self.status
+                ,
+                endpoint_type: self.endpoint_type
+                ,
+                custom_endpoint_type: self.custom_endpoint_type
+                ,
+                static_members: self.static_members
+                ,
+                excluded_members: self.excluded_members
+                ,
+                db_cluster_endpoint_arn: self.db_cluster_endpoint_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDbClusterEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbClusterEndpointOutput`](crate::output::DeleteDbClusterEndpointOutput).
@@ -8432,62 +8048,61 @@ impl DeleteDbClusterEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+pub struct DeleteDbClusterOutput  {
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl DeleteDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<& crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 /// See [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput).
 pub mod delete_db_cluster_output {
-
+    
     /// A builder for [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-        pub fn set_db_cluster(
-            mut self,
-            input: std::option::Option<crate::model::DbCluster>,
-        ) -> Self {
-            self.db_cluster = input;
-            self
+        pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
+            self.db_cluster = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput).
         pub fn build(self) -> crate::output::DeleteDbClusterOutput {
             crate::output::DeleteDbClusterOutput {
-                db_cluster: self.db_cluster,
+                db_cluster: self.db_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbClusterOutput`](crate::output::DeleteDbClusterOutput).
@@ -8499,7 +8114,7 @@ impl DeleteDbClusterOutput {
 /// <p>This data type is used as a response element in the action <code>DescribeDBEngineVersions</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCustomDbEngineVersionOutput {
+pub struct DeleteCustomDbEngineVersionOutput  {
     /// <p>The name of the database engine.</p>
     #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
@@ -8529,8 +8144,7 @@ pub struct DeleteCustomDbEngineVersionOutput {
     pub supported_character_sets: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
     /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     #[doc(hidden)]
-    pub supported_nchar_character_sets:
-        std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
+    pub supported_nchar_character_sets: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
     #[doc(hidden)]
     pub valid_upgrade_target: std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>,
@@ -8549,16 +8163,16 @@ pub struct DeleteCustomDbEngineVersionOutput {
     /// <p>A list of the supported DB engine modes.</p>
     #[doc(hidden)]
     pub supported_engine_modes: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of features supported by the DB engine.</p>
-    /// <p>The supported features vary by DB engine and DB engine version.</p>
-    /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine
+    /// <p>A list of features supported by the DB engine.</p> 
+    /// <p>The supported features vary by DB engine and DB engine version.</p> 
+    /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p> 
+    /// <p> <code>aws rds describe-db-engine-versions --engine 
     /// <engine_name>
-    /// --engine-version
+    /// --engine-version 
     /// <engine_version></engine_version>
-    /// </engine_name></code> </p>
-    /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+    /// </engine_name></code> </p> 
+    /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p> 
+    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p> 
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
     #[doc(hidden)]
     pub supported_feature_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8601,65 +8215,62 @@ pub struct DeleteCustomDbEngineVersionOutput {
     /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     #[doc(hidden)]
     pub supports_certificate_rotation_without_restart: std::option::Option<bool>,
-    /// <p>A list of the supported CA certificate identifiers.</p>
+    /// <p>A list of the supported CA certificate identifiers.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     #[doc(hidden)]
-    pub supported_ca_certificate_identifiers:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub supported_ca_certificate_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteCustomDbEngineVersionOutput {
     /// <p>The name of the database engine.</p>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The version number of the database engine.</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The name of the DB parameter group family for the database engine.</p>
-    pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
+    pub fn db_parameter_group_family(&self) -> std::option::Option<& str> {
         self.db_parameter_group_family.as_deref()
     }
     /// <p>The description of the database engine.</p>
-    pub fn db_engine_description(&self) -> std::option::Option<&str> {
+    pub fn db_engine_description(&self) -> std::option::Option<& str> {
         self.db_engine_description.as_deref()
     }
     /// <p>The description of the database engine version.</p>
-    pub fn db_engine_version_description(&self) -> std::option::Option<&str> {
+    pub fn db_engine_version_description(&self) -> std::option::Option<& str> {
         self.db_engine_version_description.as_deref()
     }
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
-    pub fn default_character_set(&self) -> std::option::Option<&crate::model::CharacterSet> {
+    pub fn default_character_set(&self) -> std::option::Option<& crate::model::CharacterSet> {
         self.default_character_set.as_ref()
     }
     /// <p>The EC2 image</p>
-    pub fn image(&self) -> std::option::Option<&crate::model::CustomDbEngineVersionAmi> {
+    pub fn image(&self) -> std::option::Option<& crate::model::CustomDbEngineVersionAmi> {
         self.image.as_ref()
     }
     /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
-    pub fn db_engine_media_type(&self) -> std::option::Option<&str> {
+    pub fn db_engine_media_type(&self) -> std::option::Option<& str> {
         self.db_engine_media_type.as_deref()
     }
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-    pub fn supported_character_sets(&self) -> std::option::Option<&[crate::model::CharacterSet]> {
+    pub fn supported_character_sets(&self) -> std::option::Option<& [crate::model::CharacterSet]> {
         self.supported_character_sets.as_deref()
     }
     /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-    pub fn supported_nchar_character_sets(
-        &self,
-    ) -> std::option::Option<&[crate::model::CharacterSet]> {
+    pub fn supported_nchar_character_sets(&self) -> std::option::Option<& [crate::model::CharacterSet]> {
         self.supported_nchar_character_sets.as_deref()
     }
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    pub fn valid_upgrade_target(&self) -> std::option::Option<&[crate::model::UpgradeTarget]> {
+    pub fn valid_upgrade_target(&self) -> std::option::Option<& [crate::model::UpgradeTarget]> {
         self.valid_upgrade_target.as_deref()
     }
     /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
-    pub fn supported_timezones(&self) -> std::option::Option<&[crate::model::Timezone]> {
+    pub fn supported_timezones(&self) -> std::option::Option<& [crate::model::Timezone]> {
         self.supported_timezones.as_deref()
     }
     /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
-    pub fn exportable_log_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn exportable_log_types(&self) -> std::option::Option<& [std::string::String]> {
         self.exportable_log_types.as_deref()
     }
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
@@ -8671,25 +8282,25 @@ impl DeleteCustomDbEngineVersionOutput {
         self.supports_read_replica
     }
     /// <p>A list of the supported DB engine modes.</p>
-    pub fn supported_engine_modes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_engine_modes(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_engine_modes.as_deref()
     }
-    /// <p>A list of features supported by the DB engine.</p>
-    /// <p>The supported features vary by DB engine and DB engine version.</p>
-    /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine
+    /// <p>A list of features supported by the DB engine.</p> 
+    /// <p>The supported features vary by DB engine and DB engine version.</p> 
+    /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p> 
+    /// <p> <code>aws rds describe-db-engine-versions --engine 
     /// <engine_name>
-    /// --engine-version
+    /// --engine-version 
     /// <engine_version></engine_version>
-    /// </engine_name></code> </p>
-    /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+    /// </engine_name></code> </p> 
+    /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p> 
+    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p> 
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
-    pub fn supported_feature_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_feature_names(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_feature_names.as_deref()
     }
     /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
@@ -8701,31 +8312,31 @@ impl DeleteCustomDbEngineVersionOutput {
         self.supports_global_databases
     }
     /// <p>The major engine version of the CEV.</p>
-    pub fn major_engine_version(&self) -> std::option::Option<&str> {
+    pub fn major_engine_version(&self) -> std::option::Option<& str> {
         self.major_engine_version.as_deref()
     }
     /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
-    pub fn database_installation_files_s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn database_installation_files_s3_bucket_name(&self) -> std::option::Option<& str> {
         self.database_installation_files_s3_bucket_name.as_deref()
     }
     /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
-    pub fn database_installation_files_s3_prefix(&self) -> std::option::Option<&str> {
+    pub fn database_installation_files_s3_prefix(&self) -> std::option::Option<& str> {
         self.database_installation_files_s3_prefix.as_deref()
     }
     /// <p>The ARN of the custom engine version.</p>
-    pub fn db_engine_version_arn(&self) -> std::option::Option<&str> {
+    pub fn db_engine_version_arn(&self) -> std::option::Option<& str> {
         self.db_engine_version_arn.as_deref()
     }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The creation time of the DB engine version.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tag_list(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tag_list.as_deref()
     }
     /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
@@ -8733,24 +8344,22 @@ impl DeleteCustomDbEngineVersionOutput {
         self.supports_babelfish
     }
     /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
-    pub fn custom_db_engine_version_manifest(&self) -> std::option::Option<&str> {
+    pub fn custom_db_engine_version_manifest(&self) -> std::option::Option<& str> {
         self.custom_db_engine_version_manifest.as_deref()
     }
     /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub fn supports_certificate_rotation_without_restart(&self) -> std::option::Option<bool> {
         self.supports_certificate_rotation_without_restart
     }
-    /// <p>A list of the supported CA certificate identifiers.</p>
+    /// <p>A list of the supported CA certificate identifiers.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn supported_ca_certificate_identifiers(
-        &self,
-    ) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_ca_certificate_identifiers(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_ca_certificate_identifiers.as_deref()
     }
 }
 /// See [`DeleteCustomDbEngineVersionOutput`](crate::output::DeleteCustomDbEngineVersionOutput).
 pub mod delete_custom_db_engine_version_output {
-
+    
     /// A builder for [`DeleteCustomDbEngineVersionOutput`](crate::output::DeleteCustomDbEngineVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8762,12 +8371,9 @@ pub mod delete_custom_db_engine_version_output {
         pub(crate) default_character_set: std::option::Option<crate::model::CharacterSet>,
         pub(crate) image: std::option::Option<crate::model::CustomDbEngineVersionAmi>,
         pub(crate) db_engine_media_type: std::option::Option<std::string::String>,
-        pub(crate) supported_character_sets:
-            std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
-        pub(crate) supported_nchar_character_sets:
-            std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
-        pub(crate) valid_upgrade_target:
-            std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>,
+        pub(crate) supported_character_sets: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
+        pub(crate) supported_nchar_character_sets: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
+        pub(crate) valid_upgrade_target: std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>,
         pub(crate) supported_timezones: std::option::Option<std::vec::Vec<crate::model::Timezone>>,
         pub(crate) exportable_log_types: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) supports_log_exports_to_cloudwatch_logs: std::option::Option<bool>,
@@ -8778,8 +8384,7 @@ pub mod delete_custom_db_engine_version_output {
         pub(crate) supports_parallel_query: std::option::Option<bool>,
         pub(crate) supports_global_databases: std::option::Option<bool>,
         pub(crate) major_engine_version: std::option::Option<std::string::String>,
-        pub(crate) database_installation_files_s3_bucket_name:
-            std::option::Option<std::string::String>,
+        pub(crate) database_installation_files_s3_bucket_name: std::option::Option<std::string::String>,
         pub(crate) database_installation_files_s3_prefix: std::option::Option<std::string::String>,
         pub(crate) db_engine_version_arn: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -8788,8 +8393,7 @@ pub mod delete_custom_db_engine_version_output {
         pub(crate) supports_babelfish: std::option::Option<bool>,
         pub(crate) custom_db_engine_version_manifest: std::option::Option<std::string::String>,
         pub(crate) supports_certificate_rotation_without_restart: std::option::Option<bool>,
-        pub(crate) supported_ca_certificate_identifiers:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) supported_ca_certificate_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the database engine.</p>
@@ -8799,8 +8403,7 @@ pub mod delete_custom_db_engine_version_output {
         }
         /// <p>The name of the database engine.</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.engine = input;
-            self
+            self.engine = input; self
         }
         /// <p>The version number of the database engine.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8808,12 +8411,8 @@ pub mod delete_custom_db_engine_version_output {
             self
         }
         /// <p>The version number of the database engine.</p>
-        pub fn set_engine_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.engine_version = input;
-            self
+        pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine_version = input; self
         }
         /// <p>The name of the DB parameter group family for the database engine.</p>
         pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8821,12 +8420,8 @@ pub mod delete_custom_db_engine_version_output {
             self
         }
         /// <p>The name of the DB parameter group family for the database engine.</p>
-        pub fn set_db_parameter_group_family(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_parameter_group_family = input;
-            self
+        pub fn set_db_parameter_group_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_parameter_group_family = input; self
         }
         /// <p>The description of the database engine.</p>
         pub fn db_engine_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8834,28 +8429,17 @@ pub mod delete_custom_db_engine_version_output {
             self
         }
         /// <p>The description of the database engine.</p>
-        pub fn set_db_engine_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_engine_description = input;
-            self
+        pub fn set_db_engine_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_engine_description = input; self
         }
         /// <p>The description of the database engine version.</p>
-        pub fn db_engine_version_description(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn db_engine_version_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_engine_version_description = Some(input.into());
             self
         }
         /// <p>The description of the database engine version.</p>
-        pub fn set_db_engine_version_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_engine_version_description = input;
-            self
+        pub fn set_db_engine_version_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_engine_version_description = input; self
         }
         /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
         pub fn default_character_set(mut self, input: crate::model::CharacterSet) -> Self {
@@ -8863,12 +8447,8 @@ pub mod delete_custom_db_engine_version_output {
             self
         }
         /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
-        pub fn set_default_character_set(
-            mut self,
-            input: std::option::Option<crate::model::CharacterSet>,
-        ) -> Self {
-            self.default_character_set = input;
-            self
+        pub fn set_default_character_set(mut self, input: std::option::Option<crate::model::CharacterSet>) -> Self {
+            self.default_character_set = input; self
         }
         /// <p>The EC2 image</p>
         pub fn image(mut self, input: crate::model::CustomDbEngineVersionAmi) -> Self {
@@ -8876,12 +8456,8 @@ pub mod delete_custom_db_engine_version_output {
             self
         }
         /// <p>The EC2 image</p>
-        pub fn set_image(
-            mut self,
-            input: std::option::Option<crate::model::CustomDbEngineVersionAmi>,
-        ) -> Self {
-            self.image = input;
-            self
+        pub fn set_image(mut self, input: std::option::Option<crate::model::CustomDbEngineVersionAmi>) -> Self {
+            self.image = input; self
         }
         /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
         pub fn db_engine_media_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8889,12 +8465,8 @@ pub mod delete_custom_db_engine_version_output {
             self
         }
         /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
-        pub fn set_db_engine_media_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_engine_media_type = input;
-            self
+        pub fn set_db_engine_media_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_engine_media_type = input; self
         }
         /// Appends an item to `supported_character_sets`.
         ///
@@ -8903,17 +8475,13 @@ pub mod delete_custom_db_engine_version_output {
         /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
         pub fn supported_character_sets(mut self, input: crate::model::CharacterSet) -> Self {
             let mut v = self.supported_character_sets.unwrap_or_default();
-            v.push(input);
-            self.supported_character_sets = Some(v);
-            self
+                            v.push(input);
+                            self.supported_character_sets = Some(v);
+                            self
         }
         /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-        pub fn set_supported_character_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
-        ) -> Self {
-            self.supported_character_sets = input;
-            self
+        pub fn set_supported_character_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>) -> Self {
+            self.supported_character_sets = input; self
         }
         /// Appends an item to `supported_nchar_character_sets`.
         ///
@@ -8922,17 +8490,13 @@ pub mod delete_custom_db_engine_version_output {
         /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
         pub fn supported_nchar_character_sets(mut self, input: crate::model::CharacterSet) -> Self {
             let mut v = self.supported_nchar_character_sets.unwrap_or_default();
-            v.push(input);
-            self.supported_nchar_character_sets = Some(v);
-            self
+                            v.push(input);
+                            self.supported_nchar_character_sets = Some(v);
+                            self
         }
         /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-        pub fn set_supported_nchar_character_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
-        ) -> Self {
-            self.supported_nchar_character_sets = input;
-            self
+        pub fn set_supported_nchar_character_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>) -> Self {
+            self.supported_nchar_character_sets = input; self
         }
         /// Appends an item to `valid_upgrade_target`.
         ///
@@ -8941,17 +8505,13 @@ pub mod delete_custom_db_engine_version_output {
         /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
         pub fn valid_upgrade_target(mut self, input: crate::model::UpgradeTarget) -> Self {
             let mut v = self.valid_upgrade_target.unwrap_or_default();
-            v.push(input);
-            self.valid_upgrade_target = Some(v);
-            self
+                            v.push(input);
+                            self.valid_upgrade_target = Some(v);
+                            self
         }
         /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-        pub fn set_valid_upgrade_target(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>,
-        ) -> Self {
-            self.valid_upgrade_target = input;
-            self
+        pub fn set_valid_upgrade_target(mut self, input: std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>) -> Self {
+            self.valid_upgrade_target = input; self
         }
         /// Appends an item to `supported_timezones`.
         ///
@@ -8960,17 +8520,13 @@ pub mod delete_custom_db_engine_version_output {
         /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
         pub fn supported_timezones(mut self, input: crate::model::Timezone) -> Self {
             let mut v = self.supported_timezones.unwrap_or_default();
-            v.push(input);
-            self.supported_timezones = Some(v);
-            self
+                            v.push(input);
+                            self.supported_timezones = Some(v);
+                            self
         }
         /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
-        pub fn set_supported_timezones(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Timezone>>,
-        ) -> Self {
-            self.supported_timezones = input;
-            self
+        pub fn set_supported_timezones(mut self, input: std::option::Option<std::vec::Vec<crate::model::Timezone>>) -> Self {
+            self.supported_timezones = input; self
         }
         /// Appends an item to `exportable_log_types`.
         ///
@@ -8979,17 +8535,13 @@ pub mod delete_custom_db_engine_version_output {
         /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
         pub fn exportable_log_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exportable_log_types.unwrap_or_default();
-            v.push(input.into());
-            self.exportable_log_types = Some(v);
-            self
+                            v.push(input.into());
+                            self.exportable_log_types = Some(v);
+                            self
         }
         /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
-        pub fn set_exportable_log_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.exportable_log_types = input;
-            self
+        pub fn set_exportable_log_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.exportable_log_types = input; self
         }
         /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
         pub fn supports_log_exports_to_cloudwatch_logs(mut self, input: bool) -> Self {
@@ -8997,12 +8549,8 @@ pub mod delete_custom_db_engine_version_output {
             self
         }
         /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
-        pub fn set_supports_log_exports_to_cloudwatch_logs(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.supports_log_exports_to_cloudwatch_logs = input;
-            self
+        pub fn set_supports_log_exports_to_cloudwatch_logs(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_log_exports_to_cloudwatch_logs = input; self
         }
         /// <p>Indicates whether the database engine version supports read replicas.</p>
         pub fn supports_read_replica(mut self, input: bool) -> Self {
@@ -9011,8 +8559,7 @@ pub mod delete_custom_db_engine_version_output {
         }
         /// <p>Indicates whether the database engine version supports read replicas.</p>
         pub fn set_supports_read_replica(mut self, input: std::option::Option<bool>) -> Self {
-            self.supports_read_replica = input;
-            self
+            self.supports_read_replica = input; self
         }
         /// Appends an item to `supported_engine_modes`.
         ///
@@ -9021,56 +8568,48 @@ pub mod delete_custom_db_engine_version_output {
         /// <p>A list of the supported DB engine modes.</p>
         pub fn supported_engine_modes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_engine_modes.unwrap_or_default();
-            v.push(input.into());
-            self.supported_engine_modes = Some(v);
-            self
+                            v.push(input.into());
+                            self.supported_engine_modes = Some(v);
+                            self
         }
         /// <p>A list of the supported DB engine modes.</p>
-        pub fn set_supported_engine_modes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_engine_modes = input;
-            self
+        pub fn set_supported_engine_modes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.supported_engine_modes = input; self
         }
         /// Appends an item to `supported_feature_names`.
         ///
         /// To override the contents of this collection use [`set_supported_feature_names`](Self::set_supported_feature_names).
         ///
-        /// <p>A list of features supported by the DB engine.</p>
-        /// <p>The supported features vary by DB engine and DB engine version.</p>
-        /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-        /// <p> <code>aws rds describe-db-engine-versions --engine
+        /// <p>A list of features supported by the DB engine.</p> 
+        /// <p>The supported features vary by DB engine and DB engine version.</p> 
+        /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p> 
+        /// <p> <code>aws rds describe-db-engine-versions --engine 
         /// <engine_name>
-        /// --engine-version
+        /// --engine-version 
         /// <engine_version></engine_version>
-        /// </engine_name></code> </p>
-        /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
-        /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+        /// </engine_name></code> </p> 
+        /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p> 
+        /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p> 
         /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
         pub fn supported_feature_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_feature_names.unwrap_or_default();
-            v.push(input.into());
-            self.supported_feature_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.supported_feature_names = Some(v);
+                            self
         }
-        /// <p>A list of features supported by the DB engine.</p>
-        /// <p>The supported features vary by DB engine and DB engine version.</p>
-        /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-        /// <p> <code>aws rds describe-db-engine-versions --engine
+        /// <p>A list of features supported by the DB engine.</p> 
+        /// <p>The supported features vary by DB engine and DB engine version.</p> 
+        /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p> 
+        /// <p> <code>aws rds describe-db-engine-versions --engine 
         /// <engine_name>
-        /// --engine-version
+        /// --engine-version 
         /// <engine_version></engine_version>
-        /// </engine_name></code> </p>
-        /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
-        /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+        /// </engine_name></code> </p> 
+        /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p> 
+        /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p> 
         /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
-        pub fn set_supported_feature_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_feature_names = input;
-            self
+        pub fn set_supported_feature_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.supported_feature_names = input; self
         }
         /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9079,8 +8618,7 @@ pub mod delete_custom_db_engine_version_output {
         }
         /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
         pub fn supports_parallel_query(mut self, input: bool) -> Self {
@@ -9089,8 +8627,7 @@ pub mod delete_custom_db_engine_version_output {
         }
         /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
         pub fn set_supports_parallel_query(mut self, input: std::option::Option<bool>) -> Self {
-            self.supports_parallel_query = input;
-            self
+            self.supports_parallel_query = input; self
         }
         /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
         pub fn supports_global_databases(mut self, input: bool) -> Self {
@@ -9099,8 +8636,7 @@ pub mod delete_custom_db_engine_version_output {
         }
         /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
         pub fn set_supports_global_databases(mut self, input: std::option::Option<bool>) -> Self {
-            self.supports_global_databases = input;
-            self
+            self.supports_global_databases = input; self
         }
         /// <p>The major engine version of the CEV.</p>
         pub fn major_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9108,44 +8644,26 @@ pub mod delete_custom_db_engine_version_output {
             self
         }
         /// <p>The major engine version of the CEV.</p>
-        pub fn set_major_engine_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.major_engine_version = input;
-            self
+        pub fn set_major_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.major_engine_version = input; self
         }
         /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
-        pub fn database_installation_files_s3_bucket_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn database_installation_files_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_installation_files_s3_bucket_name = Some(input.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
-        pub fn set_database_installation_files_s3_bucket_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_installation_files_s3_bucket_name = input;
-            self
+        pub fn set_database_installation_files_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_installation_files_s3_bucket_name = input; self
         }
         /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
-        pub fn database_installation_files_s3_prefix(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn database_installation_files_s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_installation_files_s3_prefix = Some(input.into());
             self
         }
         /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
-        pub fn set_database_installation_files_s3_prefix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_installation_files_s3_prefix = input;
-            self
+        pub fn set_database_installation_files_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_installation_files_s3_prefix = input; self
         }
         /// <p>The ARN of the custom engine version.</p>
         pub fn db_engine_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9153,12 +8671,8 @@ pub mod delete_custom_db_engine_version_output {
             self
         }
         /// <p>The ARN of the custom engine version.</p>
-        pub fn set_db_engine_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_engine_version_arn = input;
-            self
+        pub fn set_db_engine_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_engine_version_arn = input; self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9167,8 +8681,7 @@ pub mod delete_custom_db_engine_version_output {
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>The creation time of the DB engine version.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9176,12 +8689,8 @@ pub mod delete_custom_db_engine_version_output {
             self
         }
         /// <p>The creation time of the DB engine version.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// Appends an item to `tag_list`.
         ///
@@ -9190,17 +8699,13 @@ pub mod delete_custom_db_engine_version_output {
         /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input);
-            self.tag_list = Some(v);
-            self
+                            v.push(input);
+                            self.tag_list = Some(v);
+                            self
         }
         /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-        pub fn set_tag_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tag_list = input;
-            self
+        pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tag_list = input; self
         }
         /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
         pub fn supports_babelfish(mut self, input: bool) -> Self {
@@ -9209,24 +8714,16 @@ pub mod delete_custom_db_engine_version_output {
         }
         /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
         pub fn set_supports_babelfish(mut self, input: std::option::Option<bool>) -> Self {
-            self.supports_babelfish = input;
-            self
+            self.supports_babelfish = input; self
         }
         /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
-        pub fn custom_db_engine_version_manifest(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn custom_db_engine_version_manifest(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_db_engine_version_manifest = Some(input.into());
             self
         }
         /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
-        pub fn set_custom_db_engine_version_manifest(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_db_engine_version_manifest = input;
-            self
+        pub fn set_custom_db_engine_version_manifest(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_db_engine_version_manifest = input; self
         }
         /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
         pub fn supports_certificate_rotation_without_restart(mut self, input: bool) -> Self {
@@ -9234,80 +8731,101 @@ pub mod delete_custom_db_engine_version_output {
             self
         }
         /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
-        pub fn set_supports_certificate_rotation_without_restart(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.supports_certificate_rotation_without_restart = input;
-            self
+        pub fn set_supports_certificate_rotation_without_restart(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_certificate_rotation_without_restart = input; self
         }
         /// Appends an item to `supported_ca_certificate_identifiers`.
         ///
         /// To override the contents of this collection use [`set_supported_ca_certificate_identifiers`](Self::set_supported_ca_certificate_identifiers).
         ///
-        /// <p>A list of the supported CA certificate identifiers.</p>
+        /// <p>A list of the supported CA certificate identifiers.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-        pub fn supported_ca_certificate_identifiers(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            let mut v = self
-                .supported_ca_certificate_identifiers
-                .unwrap_or_default();
-            v.push(input.into());
-            self.supported_ca_certificate_identifiers = Some(v);
-            self
+        pub fn supported_ca_certificate_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.supported_ca_certificate_identifiers.unwrap_or_default();
+                            v.push(input.into());
+                            self.supported_ca_certificate_identifiers = Some(v);
+                            self
         }
-        /// <p>A list of the supported CA certificate identifiers.</p>
+        /// <p>A list of the supported CA certificate identifiers.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-        pub fn set_supported_ca_certificate_identifiers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_ca_certificate_identifiers = input;
-            self
+        pub fn set_supported_ca_certificate_identifiers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.supported_ca_certificate_identifiers = input; self
         }
         /// Consumes the builder and constructs a [`DeleteCustomDbEngineVersionOutput`](crate::output::DeleteCustomDbEngineVersionOutput).
         pub fn build(self) -> crate::output::DeleteCustomDbEngineVersionOutput {
             crate::output::DeleteCustomDbEngineVersionOutput {
-                engine: self.engine,
-                engine_version: self.engine_version,
-                db_parameter_group_family: self.db_parameter_group_family,
-                db_engine_description: self.db_engine_description,
-                db_engine_version_description: self.db_engine_version_description,
-                default_character_set: self.default_character_set,
-                image: self.image,
-                db_engine_media_type: self.db_engine_media_type,
-                supported_character_sets: self.supported_character_sets,
-                supported_nchar_character_sets: self.supported_nchar_character_sets,
-                valid_upgrade_target: self.valid_upgrade_target,
-                supported_timezones: self.supported_timezones,
-                exportable_log_types: self.exportable_log_types,
-                supports_log_exports_to_cloudwatch_logs: self
-                    .supports_log_exports_to_cloudwatch_logs
-                    .unwrap_or_default(),
-                supports_read_replica: self.supports_read_replica.unwrap_or_default(),
-                supported_engine_modes: self.supported_engine_modes,
-                supported_feature_names: self.supported_feature_names,
-                status: self.status,
-                supports_parallel_query: self.supports_parallel_query.unwrap_or_default(),
-                supports_global_databases: self.supports_global_databases.unwrap_or_default(),
-                major_engine_version: self.major_engine_version,
-                database_installation_files_s3_bucket_name: self
-                    .database_installation_files_s3_bucket_name,
-                database_installation_files_s3_prefix: self.database_installation_files_s3_prefix,
-                db_engine_version_arn: self.db_engine_version_arn,
-                kms_key_id: self.kms_key_id,
-                create_time: self.create_time,
-                tag_list: self.tag_list,
-                supports_babelfish: self.supports_babelfish.unwrap_or_default(),
-                custom_db_engine_version_manifest: self.custom_db_engine_version_manifest,
-                supports_certificate_rotation_without_restart: self
-                    .supports_certificate_rotation_without_restart,
-                supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers,
+                engine: self.engine
+                ,
+                engine_version: self.engine_version
+                ,
+                db_parameter_group_family: self.db_parameter_group_family
+                ,
+                db_engine_description: self.db_engine_description
+                ,
+                db_engine_version_description: self.db_engine_version_description
+                ,
+                default_character_set: self.default_character_set
+                ,
+                image: self.image
+                ,
+                db_engine_media_type: self.db_engine_media_type
+                ,
+                supported_character_sets: self.supported_character_sets
+                ,
+                supported_nchar_character_sets: self.supported_nchar_character_sets
+                ,
+                valid_upgrade_target: self.valid_upgrade_target
+                ,
+                supported_timezones: self.supported_timezones
+                ,
+                exportable_log_types: self.exportable_log_types
+                ,
+                supports_log_exports_to_cloudwatch_logs: self.supports_log_exports_to_cloudwatch_logs
+                    .unwrap_or_default()
+                ,
+                supports_read_replica: self.supports_read_replica
+                    .unwrap_or_default()
+                ,
+                supported_engine_modes: self.supported_engine_modes
+                ,
+                supported_feature_names: self.supported_feature_names
+                ,
+                status: self.status
+                ,
+                supports_parallel_query: self.supports_parallel_query
+                    .unwrap_or_default()
+                ,
+                supports_global_databases: self.supports_global_databases
+                    .unwrap_or_default()
+                ,
+                major_engine_version: self.major_engine_version
+                ,
+                database_installation_files_s3_bucket_name: self.database_installation_files_s3_bucket_name
+                ,
+                database_installation_files_s3_prefix: self.database_installation_files_s3_prefix
+                ,
+                db_engine_version_arn: self.db_engine_version_arn
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                create_time: self.create_time
+                ,
+                tag_list: self.tag_list
+                ,
+                supports_babelfish: self.supports_babelfish
+                    .unwrap_or_default()
+                ,
+                custom_db_engine_version_manifest: self.custom_db_engine_version_manifest
+                ,
+                supports_certificate_rotation_without_restart: self.supports_certificate_rotation_without_restart
+                ,
+                supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteCustomDbEngineVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomDbEngineVersionOutput`](crate::output::DeleteCustomDbEngineVersionOutput).
@@ -9319,50 +8837,49 @@ impl DeleteCustomDbEngineVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBlueGreenDeploymentOutput {
-    /// <p>Contains the details about a blue/green deployment.</p>
+pub struct DeleteBlueGreenDeploymentOutput  {
+    /// <p>Contains the details about a blue/green deployment.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
     #[doc(hidden)]
     pub blue_green_deployment: std::option::Option<crate::model::BlueGreenDeployment>,
 }
 impl DeleteBlueGreenDeploymentOutput {
-    /// <p>Contains the details about a blue/green deployment.</p>
+    /// <p>Contains the details about a blue/green deployment.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn blue_green_deployment(&self) -> std::option::Option<&crate::model::BlueGreenDeployment> {
+    pub fn blue_green_deployment(&self) -> std::option::Option<& crate::model::BlueGreenDeployment> {
         self.blue_green_deployment.as_ref()
     }
 }
 /// See [`DeleteBlueGreenDeploymentOutput`](crate::output::DeleteBlueGreenDeploymentOutput).
 pub mod delete_blue_green_deployment_output {
-
+    
     /// A builder for [`DeleteBlueGreenDeploymentOutput`](crate::output::DeleteBlueGreenDeploymentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blue_green_deployment: std::option::Option<crate::model::BlueGreenDeployment>,
     }
     impl Builder {
-        /// <p>Contains the details about a blue/green deployment.</p>
+        /// <p>Contains the details about a blue/green deployment.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn blue_green_deployment(mut self, input: crate::model::BlueGreenDeployment) -> Self {
             self.blue_green_deployment = Some(input);
             self
         }
-        /// <p>Contains the details about a blue/green deployment.</p>
+        /// <p>Contains the details about a blue/green deployment.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
-        pub fn set_blue_green_deployment(
-            mut self,
-            input: std::option::Option<crate::model::BlueGreenDeployment>,
-        ) -> Self {
-            self.blue_green_deployment = input;
-            self
+        pub fn set_blue_green_deployment(mut self, input: std::option::Option<crate::model::BlueGreenDeployment>) -> Self {
+            self.blue_green_deployment = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBlueGreenDeploymentOutput`](crate::output::DeleteBlueGreenDeploymentOutput).
         pub fn build(self) -> crate::output::DeleteBlueGreenDeploymentOutput {
             crate::output::DeleteBlueGreenDeploymentOutput {
-                blue_green_deployment: self.blue_green_deployment,
+                blue_green_deployment: self.blue_green_deployment
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteBlueGreenDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBlueGreenDeploymentOutput`](crate::output::DeleteBlueGreenDeploymentOutput).
@@ -9374,20 +8891,20 @@ impl DeleteBlueGreenDeploymentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateOptionGroupOutput {
+pub struct CreateOptionGroupOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub option_group: std::option::Option<crate::model::OptionGroup>,
 }
 impl CreateOptionGroupOutput {
     /// <p></p>
-    pub fn option_group(&self) -> std::option::Option<&crate::model::OptionGroup> {
+    pub fn option_group(&self) -> std::option::Option<& crate::model::OptionGroup> {
         self.option_group.as_ref()
     }
 }
 /// See [`CreateOptionGroupOutput`](crate::output::CreateOptionGroupOutput).
 pub mod create_option_group_output {
-
+    
     /// A builder for [`CreateOptionGroupOutput`](crate::output::CreateOptionGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9400,20 +8917,19 @@ pub mod create_option_group_output {
             self
         }
         /// <p></p>
-        pub fn set_option_group(
-            mut self,
-            input: std::option::Option<crate::model::OptionGroup>,
-        ) -> Self {
-            self.option_group = input;
-            self
+        pub fn set_option_group(mut self, input: std::option::Option<crate::model::OptionGroup>) -> Self {
+            self.option_group = input; self
         }
         /// Consumes the builder and constructs a [`CreateOptionGroupOutput`](crate::output::CreateOptionGroupOutput).
         pub fn build(self) -> crate::output::CreateOptionGroupOutput {
             crate::output::CreateOptionGroupOutput {
-                option_group: self.option_group,
+                option_group: self.option_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateOptionGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateOptionGroupOutput`](crate::output::CreateOptionGroupOutput).
@@ -9425,20 +8941,20 @@ impl CreateOptionGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGlobalClusterOutput {
+pub struct CreateGlobalClusterOutput  {
     /// <p>A data type representing an Aurora global database.</p>
     #[doc(hidden)]
     pub global_cluster: std::option::Option<crate::model::GlobalCluster>,
 }
 impl CreateGlobalClusterOutput {
     /// <p>A data type representing an Aurora global database.</p>
-    pub fn global_cluster(&self) -> std::option::Option<&crate::model::GlobalCluster> {
+    pub fn global_cluster(&self) -> std::option::Option<& crate::model::GlobalCluster> {
         self.global_cluster.as_ref()
     }
 }
 /// See [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput).
 pub mod create_global_cluster_output {
-
+    
     /// A builder for [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9451,20 +8967,19 @@ pub mod create_global_cluster_output {
             self
         }
         /// <p>A data type representing an Aurora global database.</p>
-        pub fn set_global_cluster(
-            mut self,
-            input: std::option::Option<crate::model::GlobalCluster>,
-        ) -> Self {
-            self.global_cluster = input;
-            self
+        pub fn set_global_cluster(mut self, input: std::option::Option<crate::model::GlobalCluster>) -> Self {
+            self.global_cluster = input; self
         }
         /// Consumes the builder and constructs a [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput).
         pub fn build(self) -> crate::output::CreateGlobalClusterOutput {
             crate::output::CreateGlobalClusterOutput {
-                global_cluster: self.global_cluster,
+                global_cluster: self.global_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateGlobalClusterOutput {
     /// Creates a new builder-style object to manufacture [`CreateGlobalClusterOutput`](crate::output::CreateGlobalClusterOutput).
@@ -9476,20 +8991,20 @@ impl CreateGlobalClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEventSubscriptionOutput {
+pub struct CreateEventSubscriptionOutput  {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl CreateEventSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
-    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+    pub fn event_subscription(&self) -> std::option::Option<& crate::model::EventSubscription> {
         self.event_subscription.as_ref()
     }
 }
 /// See [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
 pub mod create_event_subscription_output {
-
+    
     /// A builder for [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9502,20 +9017,19 @@ pub mod create_event_subscription_output {
             self
         }
         /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
-        pub fn set_event_subscription(
-            mut self,
-            input: std::option::Option<crate::model::EventSubscription>,
-        ) -> Self {
-            self.event_subscription = input;
-            self
+        pub fn set_event_subscription(mut self, input: std::option::Option<crate::model::EventSubscription>) -> Self {
+            self.event_subscription = input; self
         }
         /// Consumes the builder and constructs a [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
         pub fn build(self) -> crate::output::CreateEventSubscriptionOutput {
             crate::output::CreateEventSubscriptionOutput {
-                event_subscription: self.event_subscription,
+                event_subscription: self.event_subscription
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateEventSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`CreateEventSubscriptionOutput`](crate::output::CreateEventSubscriptionOutput).
@@ -9527,50 +9041,49 @@ impl CreateEventSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDbSubnetGroupOutput {
-    /// <p>Contains the details of an Amazon RDS DB subnet group.</p>
+pub struct CreateDbSubnetGroupOutput  {
+    /// <p>Contains the details of an Amazon RDS DB subnet group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
     #[doc(hidden)]
     pub db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
 }
 impl CreateDbSubnetGroupOutput {
-    /// <p>Contains the details of an Amazon RDS DB subnet group.</p>
+    /// <p>Contains the details of an Amazon RDS DB subnet group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
-    pub fn db_subnet_group(&self) -> std::option::Option<&crate::model::DbSubnetGroup> {
+    pub fn db_subnet_group(&self) -> std::option::Option<& crate::model::DbSubnetGroup> {
         self.db_subnet_group.as_ref()
     }
 }
 /// See [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput).
 pub mod create_db_subnet_group_output {
-
+    
     /// A builder for [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_subnet_group: std::option::Option<crate::model::DbSubnetGroup>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB subnet group.</p>
+        /// <p>Contains the details of an Amazon RDS DB subnet group.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
         pub fn db_subnet_group(mut self, input: crate::model::DbSubnetGroup) -> Self {
             self.db_subnet_group = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB subnet group.</p>
+        /// <p>Contains the details of an Amazon RDS DB subnet group.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
-        pub fn set_db_subnet_group(
-            mut self,
-            input: std::option::Option<crate::model::DbSubnetGroup>,
-        ) -> Self {
-            self.db_subnet_group = input;
-            self
+        pub fn set_db_subnet_group(mut self, input: std::option::Option<crate::model::DbSubnetGroup>) -> Self {
+            self.db_subnet_group = input; self
         }
         /// Consumes the builder and constructs a [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput).
         pub fn build(self) -> crate::output::CreateDbSubnetGroupOutput {
             crate::output::CreateDbSubnetGroupOutput {
-                db_subnet_group: self.db_subnet_group,
+                db_subnet_group: self.db_subnet_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDbSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbSubnetGroupOutput`](crate::output::CreateDbSubnetGroupOutput).
@@ -9582,50 +9095,49 @@ impl CreateDbSubnetGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDbSnapshotOutput {
-    /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
+pub struct CreateDbSnapshotOutput  {
+    /// <p>Contains the details of an Amazon RDS DB snapshot.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
     #[doc(hidden)]
     pub db_snapshot: std::option::Option<crate::model::DbSnapshot>,
 }
 impl CreateDbSnapshotOutput {
-    /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
+    /// <p>Contains the details of an Amazon RDS DB snapshot.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
-    pub fn db_snapshot(&self) -> std::option::Option<&crate::model::DbSnapshot> {
+    pub fn db_snapshot(&self) -> std::option::Option<& crate::model::DbSnapshot> {
         self.db_snapshot.as_ref()
     }
 }
 /// See [`CreateDbSnapshotOutput`](crate::output::CreateDbSnapshotOutput).
 pub mod create_db_snapshot_output {
-
+    
     /// A builder for [`CreateDbSnapshotOutput`](crate::output::CreateDbSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_snapshot: std::option::Option<crate::model::DbSnapshot>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
+        /// <p>Contains the details of an Amazon RDS DB snapshot.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
         pub fn db_snapshot(mut self, input: crate::model::DbSnapshot) -> Self {
             self.db_snapshot = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
+        /// <p>Contains the details of an Amazon RDS DB snapshot.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
-        pub fn set_db_snapshot(
-            mut self,
-            input: std::option::Option<crate::model::DbSnapshot>,
-        ) -> Self {
-            self.db_snapshot = input;
-            self
+        pub fn set_db_snapshot(mut self, input: std::option::Option<crate::model::DbSnapshot>) -> Self {
+            self.db_snapshot = input; self
         }
         /// Consumes the builder and constructs a [`CreateDbSnapshotOutput`](crate::output::CreateDbSnapshotOutput).
         pub fn build(self) -> crate::output::CreateDbSnapshotOutput {
             crate::output::CreateDbSnapshotOutput {
-                db_snapshot: self.db_snapshot,
+                db_snapshot: self.db_snapshot
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDbSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbSnapshotOutput`](crate::output::CreateDbSnapshotOutput).
@@ -9637,50 +9149,49 @@ impl CreateDbSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDbSecurityGroupOutput {
-    /// <p>Contains the details for an Amazon RDS DB security group.</p>
+pub struct CreateDbSecurityGroupOutput  {
+    /// <p>Contains the details for an Amazon RDS DB security group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
     #[doc(hidden)]
     pub db_security_group: std::option::Option<crate::model::DbSecurityGroup>,
 }
 impl CreateDbSecurityGroupOutput {
-    /// <p>Contains the details for an Amazon RDS DB security group.</p>
+    /// <p>Contains the details for an Amazon RDS DB security group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
-    pub fn db_security_group(&self) -> std::option::Option<&crate::model::DbSecurityGroup> {
+    pub fn db_security_group(&self) -> std::option::Option<& crate::model::DbSecurityGroup> {
         self.db_security_group.as_ref()
     }
 }
 /// See [`CreateDbSecurityGroupOutput`](crate::output::CreateDbSecurityGroupOutput).
 pub mod create_db_security_group_output {
-
+    
     /// A builder for [`CreateDbSecurityGroupOutput`](crate::output::CreateDbSecurityGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_security_group: std::option::Option<crate::model::DbSecurityGroup>,
     }
     impl Builder {
-        /// <p>Contains the details for an Amazon RDS DB security group.</p>
+        /// <p>Contains the details for an Amazon RDS DB security group.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
         pub fn db_security_group(mut self, input: crate::model::DbSecurityGroup) -> Self {
             self.db_security_group = Some(input);
             self
         }
-        /// <p>Contains the details for an Amazon RDS DB security group.</p>
+        /// <p>Contains the details for an Amazon RDS DB security group.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
-        pub fn set_db_security_group(
-            mut self,
-            input: std::option::Option<crate::model::DbSecurityGroup>,
-        ) -> Self {
-            self.db_security_group = input;
-            self
+        pub fn set_db_security_group(mut self, input: std::option::Option<crate::model::DbSecurityGroup>) -> Self {
+            self.db_security_group = input; self
         }
         /// Consumes the builder and constructs a [`CreateDbSecurityGroupOutput`](crate::output::CreateDbSecurityGroupOutput).
         pub fn build(self) -> crate::output::CreateDbSecurityGroupOutput {
             crate::output::CreateDbSecurityGroupOutput {
-                db_security_group: self.db_security_group,
+                db_security_group: self.db_security_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDbSecurityGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbSecurityGroupOutput`](crate::output::CreateDbSecurityGroupOutput).
@@ -9692,20 +9203,20 @@ impl CreateDbSecurityGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDbProxyEndpointOutput {
+pub struct CreateDbProxyEndpointOutput  {
     /// <p>The <code>DBProxyEndpoint</code> object that is created by the API operation. The DB proxy endpoint that you create might provide capabilities such as read/write or read-only operations, or using a different VPC than the proxy's default VPC.</p>
     #[doc(hidden)]
     pub db_proxy_endpoint: std::option::Option<crate::model::DbProxyEndpoint>,
 }
 impl CreateDbProxyEndpointOutput {
     /// <p>The <code>DBProxyEndpoint</code> object that is created by the API operation. The DB proxy endpoint that you create might provide capabilities such as read/write or read-only operations, or using a different VPC than the proxy's default VPC.</p>
-    pub fn db_proxy_endpoint(&self) -> std::option::Option<&crate::model::DbProxyEndpoint> {
+    pub fn db_proxy_endpoint(&self) -> std::option::Option<& crate::model::DbProxyEndpoint> {
         self.db_proxy_endpoint.as_ref()
     }
 }
 /// See [`CreateDbProxyEndpointOutput`](crate::output::CreateDbProxyEndpointOutput).
 pub mod create_db_proxy_endpoint_output {
-
+    
     /// A builder for [`CreateDbProxyEndpointOutput`](crate::output::CreateDbProxyEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9718,20 +9229,19 @@ pub mod create_db_proxy_endpoint_output {
             self
         }
         /// <p>The <code>DBProxyEndpoint</code> object that is created by the API operation. The DB proxy endpoint that you create might provide capabilities such as read/write or read-only operations, or using a different VPC than the proxy's default VPC.</p>
-        pub fn set_db_proxy_endpoint(
-            mut self,
-            input: std::option::Option<crate::model::DbProxyEndpoint>,
-        ) -> Self {
-            self.db_proxy_endpoint = input;
-            self
+        pub fn set_db_proxy_endpoint(mut self, input: std::option::Option<crate::model::DbProxyEndpoint>) -> Self {
+            self.db_proxy_endpoint = input; self
         }
         /// Consumes the builder and constructs a [`CreateDbProxyEndpointOutput`](crate::output::CreateDbProxyEndpointOutput).
         pub fn build(self) -> crate::output::CreateDbProxyEndpointOutput {
             crate::output::CreateDbProxyEndpointOutput {
-                db_proxy_endpoint: self.db_proxy_endpoint,
+                db_proxy_endpoint: self.db_proxy_endpoint
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDbProxyEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbProxyEndpointOutput`](crate::output::CreateDbProxyEndpointOutput).
@@ -9743,20 +9253,20 @@ impl CreateDbProxyEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDbProxyOutput {
+pub struct CreateDbProxyOutput  {
     /// <p>The <code>DBProxy</code> structure corresponding to the new proxy.</p>
     #[doc(hidden)]
     pub db_proxy: std::option::Option<crate::model::DbProxy>,
 }
 impl CreateDbProxyOutput {
     /// <p>The <code>DBProxy</code> structure corresponding to the new proxy.</p>
-    pub fn db_proxy(&self) -> std::option::Option<&crate::model::DbProxy> {
+    pub fn db_proxy(&self) -> std::option::Option<& crate::model::DbProxy> {
         self.db_proxy.as_ref()
     }
 }
 /// See [`CreateDbProxyOutput`](crate::output::CreateDbProxyOutput).
 pub mod create_db_proxy_output {
-
+    
     /// A builder for [`CreateDbProxyOutput`](crate::output::CreateDbProxyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9770,16 +9280,18 @@ pub mod create_db_proxy_output {
         }
         /// <p>The <code>DBProxy</code> structure corresponding to the new proxy.</p>
         pub fn set_db_proxy(mut self, input: std::option::Option<crate::model::DbProxy>) -> Self {
-            self.db_proxy = input;
-            self
+            self.db_proxy = input; self
         }
         /// Consumes the builder and constructs a [`CreateDbProxyOutput`](crate::output::CreateDbProxyOutput).
         pub fn build(self) -> crate::output::CreateDbProxyOutput {
             crate::output::CreateDbProxyOutput {
-                db_proxy: self.db_proxy,
+                db_proxy: self.db_proxy
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDbProxyOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbProxyOutput`](crate::output::CreateDbProxyOutput).
@@ -9791,50 +9303,49 @@ impl CreateDbProxyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDbParameterGroupOutput {
-    /// <p>Contains the details of an Amazon RDS DB parameter group.</p>
+pub struct CreateDbParameterGroupOutput  {
+    /// <p>Contains the details of an Amazon RDS DB parameter group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
     #[doc(hidden)]
     pub db_parameter_group: std::option::Option<crate::model::DbParameterGroup>,
 }
 impl CreateDbParameterGroupOutput {
-    /// <p>Contains the details of an Amazon RDS DB parameter group.</p>
+    /// <p>Contains the details of an Amazon RDS DB parameter group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
-    pub fn db_parameter_group(&self) -> std::option::Option<&crate::model::DbParameterGroup> {
+    pub fn db_parameter_group(&self) -> std::option::Option<& crate::model::DbParameterGroup> {
         self.db_parameter_group.as_ref()
     }
 }
 /// See [`CreateDbParameterGroupOutput`](crate::output::CreateDbParameterGroupOutput).
 pub mod create_db_parameter_group_output {
-
+    
     /// A builder for [`CreateDbParameterGroupOutput`](crate::output::CreateDbParameterGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group: std::option::Option<crate::model::DbParameterGroup>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB parameter group.</p>
+        /// <p>Contains the details of an Amazon RDS DB parameter group.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
         pub fn db_parameter_group(mut self, input: crate::model::DbParameterGroup) -> Self {
             self.db_parameter_group = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB parameter group.</p>
+        /// <p>Contains the details of an Amazon RDS DB parameter group.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
-        pub fn set_db_parameter_group(
-            mut self,
-            input: std::option::Option<crate::model::DbParameterGroup>,
-        ) -> Self {
-            self.db_parameter_group = input;
-            self
+        pub fn set_db_parameter_group(mut self, input: std::option::Option<crate::model::DbParameterGroup>) -> Self {
+            self.db_parameter_group = input; self
         }
         /// Consumes the builder and constructs a [`CreateDbParameterGroupOutput`](crate::output::CreateDbParameterGroupOutput).
         pub fn build(self) -> crate::output::CreateDbParameterGroupOutput {
             crate::output::CreateDbParameterGroupOutput {
-                db_parameter_group: self.db_parameter_group,
+                db_parameter_group: self.db_parameter_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDbParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbParameterGroupOutput`](crate::output::CreateDbParameterGroupOutput).
@@ -9846,50 +9357,49 @@ impl CreateDbParameterGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDbInstanceReadReplicaOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+pub struct CreateDbInstanceReadReplicaOutput  {
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl CreateDbInstanceReadReplicaOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+    pub fn db_instance(&self) -> std::option::Option<& crate::model::DbInstance> {
         self.db_instance.as_ref()
     }
 }
 /// See [`CreateDbInstanceReadReplicaOutput`](crate::output::CreateDbInstanceReadReplicaOutput).
 pub mod create_db_instance_read_replica_output {
-
+    
     /// A builder for [`CreateDbInstanceReadReplicaOutput`](crate::output::CreateDbInstanceReadReplicaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-        pub fn set_db_instance(
-            mut self,
-            input: std::option::Option<crate::model::DbInstance>,
-        ) -> Self {
-            self.db_instance = input;
-            self
+        pub fn set_db_instance(mut self, input: std::option::Option<crate::model::DbInstance>) -> Self {
+            self.db_instance = input; self
         }
         /// Consumes the builder and constructs a [`CreateDbInstanceReadReplicaOutput`](crate::output::CreateDbInstanceReadReplicaOutput).
         pub fn build(self) -> crate::output::CreateDbInstanceReadReplicaOutput {
             crate::output::CreateDbInstanceReadReplicaOutput {
-                db_instance: self.db_instance,
+                db_instance: self.db_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDbInstanceReadReplicaOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbInstanceReadReplicaOutput`](crate::output::CreateDbInstanceReadReplicaOutput).
@@ -9901,50 +9411,49 @@ impl CreateDbInstanceReadReplicaOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDbInstanceOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+pub struct CreateDbInstanceOutput  {
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
     #[doc(hidden)]
     pub db_instance: std::option::Option<crate::model::DbInstance>,
 }
 impl CreateDbInstanceOutput {
-    /// <p>Contains the details of an Amazon RDS DB instance.</p>
+    /// <p>Contains the details of an Amazon RDS DB instance.</p> 
     /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-    pub fn db_instance(&self) -> std::option::Option<&crate::model::DbInstance> {
+    pub fn db_instance(&self) -> std::option::Option<& crate::model::DbInstance> {
         self.db_instance.as_ref()
     }
 }
 /// See [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput).
 pub mod create_db_instance_output {
-
+    
     /// A builder for [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_instance: std::option::Option<crate::model::DbInstance>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
         pub fn db_instance(mut self, input: crate::model::DbInstance) -> Self {
             self.db_instance = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB instance.</p>
+        /// <p>Contains the details of an Amazon RDS DB instance.</p> 
         /// <p>This data type is used as a response element in the operations <code>CreateDBInstance</code>, <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>, <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>, <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>, <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.</p>
-        pub fn set_db_instance(
-            mut self,
-            input: std::option::Option<crate::model::DbInstance>,
-        ) -> Self {
-            self.db_instance = input;
-            self
+        pub fn set_db_instance(mut self, input: std::option::Option<crate::model::DbInstance>) -> Self {
+            self.db_instance = input; self
         }
         /// Consumes the builder and constructs a [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput).
         pub fn build(self) -> crate::output::CreateDbInstanceOutput {
             crate::output::CreateDbInstanceOutput {
-                db_instance: self.db_instance,
+                db_instance: self.db_instance
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbInstanceOutput`](crate::output::CreateDbInstanceOutput).
@@ -9956,50 +9465,49 @@ impl CreateDbInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDbClusterSnapshotOutput {
-    /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
+pub struct CreateDbClusterSnapshotOutput  {
+    /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
     #[doc(hidden)]
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
 impl CreateDbClusterSnapshotOutput {
-    /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
+    /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
-    pub fn db_cluster_snapshot(&self) -> std::option::Option<&crate::model::DbClusterSnapshot> {
+    pub fn db_cluster_snapshot(&self) -> std::option::Option<& crate::model::DbClusterSnapshot> {
         self.db_cluster_snapshot.as_ref()
     }
 }
 /// See [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput).
 pub mod create_db_cluster_snapshot_output {
-
+    
     /// A builder for [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
     }
     impl Builder {
-        /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
+        /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
         pub fn db_cluster_snapshot(mut self, input: crate::model::DbClusterSnapshot) -> Self {
             self.db_cluster_snapshot = Some(input);
             self
         }
-        /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
+        /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
-        pub fn set_db_cluster_snapshot(
-            mut self,
-            input: std::option::Option<crate::model::DbClusterSnapshot>,
-        ) -> Self {
-            self.db_cluster_snapshot = input;
-            self
+        pub fn set_db_cluster_snapshot(mut self, input: std::option::Option<crate::model::DbClusterSnapshot>) -> Self {
+            self.db_cluster_snapshot = input; self
         }
         /// Consumes the builder and constructs a [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput).
         pub fn build(self) -> crate::output::CreateDbClusterSnapshotOutput {
             crate::output::CreateDbClusterSnapshotOutput {
-                db_cluster_snapshot: self.db_cluster_snapshot,
+                db_cluster_snapshot: self.db_cluster_snapshot
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDbClusterSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbClusterSnapshotOutput`](crate::output::CreateDbClusterSnapshotOutput).
@@ -10011,56 +9519,49 @@ impl CreateDbClusterSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDbClusterParameterGroupOutput {
-    /// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p>
+pub struct CreateDbClusterParameterGroupOutput  {
+    /// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
     #[doc(hidden)]
     pub db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
 }
 impl CreateDbClusterParameterGroupOutput {
-    /// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p>
+    /// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
-    pub fn db_cluster_parameter_group(
-        &self,
-    ) -> std::option::Option<&crate::model::DbClusterParameterGroup> {
+    pub fn db_cluster_parameter_group(&self) -> std::option::Option<& crate::model::DbClusterParameterGroup> {
         self.db_cluster_parameter_group.as_ref()
     }
 }
 /// See [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput).
 pub mod create_db_cluster_parameter_group_output {
-
+    
     /// A builder for [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) db_cluster_parameter_group:
-            std::option::Option<crate::model::DbClusterParameterGroup>,
+        pub(crate) db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p>
+        /// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
-        pub fn db_cluster_parameter_group(
-            mut self,
-            input: crate::model::DbClusterParameterGroup,
-        ) -> Self {
+        pub fn db_cluster_parameter_group(mut self, input: crate::model::DbClusterParameterGroup) -> Self {
             self.db_cluster_parameter_group = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p>
+        /// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
-        pub fn set_db_cluster_parameter_group(
-            mut self,
-            input: std::option::Option<crate::model::DbClusterParameterGroup>,
-        ) -> Self {
-            self.db_cluster_parameter_group = input;
-            self
+        pub fn set_db_cluster_parameter_group(mut self, input: std::option::Option<crate::model::DbClusterParameterGroup>) -> Self {
+            self.db_cluster_parameter_group = input; self
         }
         /// Consumes the builder and constructs a [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput).
         pub fn build(self) -> crate::output::CreateDbClusterParameterGroupOutput {
             crate::output::CreateDbClusterParameterGroupOutput {
-                db_cluster_parameter_group: self.db_cluster_parameter_group,
+                db_cluster_parameter_group: self.db_cluster_parameter_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDbClusterParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbClusterParameterGroupOutput`](crate::output::CreateDbClusterParameterGroupOutput).
@@ -10069,17 +9570,17 @@ impl CreateDbClusterParameterGroupOutput {
     }
 }
 
-/// <p>This data type represents the information you need to connect to an Amazon Aurora DB cluster. This data type is used as a response element in the following actions:</p>
-/// <ul>
-/// <li> <p> <code>CreateDBClusterEndpoint</code> </p> </li>
-/// <li> <p> <code>DescribeDBClusterEndpoints</code> </p> </li>
-/// <li> <p> <code>ModifyDBClusterEndpoint</code> </p> </li>
-/// <li> <p> <code>DeleteDBClusterEndpoint</code> </p> </li>
-/// </ul>
+/// <p>This data type represents the information you need to connect to an Amazon Aurora DB cluster. This data type is used as a response element in the following actions:</p> 
+/// <ul> 
+/// <li> <p> <code>CreateDBClusterEndpoint</code> </p> </li> 
+/// <li> <p> <code>DescribeDBClusterEndpoints</code> </p> </li> 
+/// <li> <p> <code>ModifyDBClusterEndpoint</code> </p> </li> 
+/// <li> <p> <code>DeleteDBClusterEndpoint</code> </p> </li> 
+/// </ul> 
 /// <p>For the data structure that represents Amazon RDS DB instance endpoints, see <code>Endpoint</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDbClusterEndpointOutput {
+pub struct CreateDbClusterEndpointOutput  {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
     #[doc(hidden)]
     pub db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
@@ -10113,56 +9614,55 @@ pub struct CreateDbClusterEndpointOutput {
 }
 impl CreateDbClusterEndpointOutput {
     /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<& str> {
         self.db_cluster_endpoint_identifier.as_deref()
     }
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
-    pub fn db_cluster_endpoint_resource_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_endpoint_resource_identifier(&self) -> std::option::Option<& str> {
         self.db_cluster_endpoint_resource_identifier.as_deref()
     }
     /// <p>The DNS address of the endpoint.</p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> std::option::Option<& str> {
         self.endpoint.as_deref()
     }
     /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
-    pub fn endpoint_type(&self) -> std::option::Option<&str> {
+    pub fn endpoint_type(&self) -> std::option::Option<& str> {
         self.endpoint_type.as_deref()
     }
     /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-    pub fn custom_endpoint_type(&self) -> std::option::Option<&str> {
+    pub fn custom_endpoint_type(&self) -> std::option::Option<& str> {
         self.custom_endpoint_type.as_deref()
     }
     /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-    pub fn static_members(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn static_members(&self) -> std::option::Option<& [std::string::String]> {
         self.static_members.as_deref()
     }
     /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-    pub fn excluded_members(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn excluded_members(&self) -> std::option::Option<& [std::string::String]> {
         self.excluded_members.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
-    pub fn db_cluster_endpoint_arn(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_endpoint_arn(&self) -> std::option::Option<& str> {
         self.db_cluster_endpoint_arn.as_deref()
     }
 }
 /// See [`CreateDbClusterEndpointOutput`](crate::output::CreateDbClusterEndpointOutput).
 pub mod create_db_cluster_endpoint_output {
-
+    
     /// A builder for [`CreateDbClusterEndpointOutput`](crate::output::CreateDbClusterEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
         pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
-        pub(crate) db_cluster_endpoint_resource_identifier:
-            std::option::Option<std::string::String>,
+        pub(crate) db_cluster_endpoint_resource_identifier: std::option::Option<std::string::String>,
         pub(crate) endpoint: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) endpoint_type: std::option::Option<std::string::String>,
@@ -10173,20 +9673,13 @@ pub mod create_db_cluster_endpoint_output {
     }
     impl Builder {
         /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
-        pub fn db_cluster_endpoint_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn db_cluster_endpoint_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_endpoint_identifier = Some(input.into());
             self
         }
         /// <p>The identifier associated with the endpoint. This parameter is stored as a lowercase string.</p>
-        pub fn set_db_cluster_endpoint_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_cluster_endpoint_identifier = input;
-            self
+        pub fn set_db_cluster_endpoint_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_cluster_endpoint_identifier = input; self
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10194,28 +9687,17 @@ pub mod create_db_cluster_endpoint_output {
             self
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
-        pub fn set_db_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_cluster_identifier = input;
-            self
+        pub fn set_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_cluster_identifier = input; self
         }
         /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
-        pub fn db_cluster_endpoint_resource_identifier(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn db_cluster_endpoint_resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_endpoint_resource_identifier = Some(input.into());
             self
         }
         /// <p>A unique system-generated identifier for an endpoint. It remains the same for the whole life of the endpoint.</p>
-        pub fn set_db_cluster_endpoint_resource_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_cluster_endpoint_resource_identifier = input;
-            self
+        pub fn set_db_cluster_endpoint_resource_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_cluster_endpoint_resource_identifier = input; self
         }
         /// <p>The DNS address of the endpoint.</p>
         pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10224,8 +9706,7 @@ pub mod create_db_cluster_endpoint_output {
         }
         /// <p>The DNS address of the endpoint.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.endpoint = input;
-            self
+            self.endpoint = input; self
         }
         /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10234,8 +9715,7 @@ pub mod create_db_cluster_endpoint_output {
         }
         /// <p>The current status of the endpoint. One of: <code>creating</code>, <code>available</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. The <code>inactive</code> state applies to an endpoint that can't be used for a certain kind of cluster, such as a <code>writer</code> endpoint for a read-only secondary cluster in a global database.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
         pub fn endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10243,12 +9723,8 @@ pub mod create_db_cluster_endpoint_output {
             self
         }
         /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>CUSTOM</code>.</p>
-        pub fn set_endpoint_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.endpoint_type = input;
-            self
+        pub fn set_endpoint_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_type = input; self
         }
         /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
         pub fn custom_endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10256,12 +9732,8 @@ pub mod create_db_cluster_endpoint_output {
             self
         }
         /// <p>The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-        pub fn set_custom_endpoint_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_endpoint_type = input;
-            self
+        pub fn set_custom_endpoint_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_endpoint_type = input; self
         }
         /// Appends an item to `static_members`.
         ///
@@ -10270,17 +9742,13 @@ pub mod create_db_cluster_endpoint_output {
         /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
         pub fn static_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.static_members.unwrap_or_default();
-            v.push(input.into());
-            self.static_members = Some(v);
-            self
+                            v.push(input.into());
+                            self.static_members = Some(v);
+                            self
         }
         /// <p>List of DB instance identifiers that are part of the custom endpoint group.</p>
-        pub fn set_static_members(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.static_members = input;
-            self
+        pub fn set_static_members(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.static_members = input; self
         }
         /// Appends an item to `excluded_members`.
         ///
@@ -10289,17 +9757,13 @@ pub mod create_db_cluster_endpoint_output {
         /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
         pub fn excluded_members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.excluded_members.unwrap_or_default();
-            v.push(input.into());
-            self.excluded_members = Some(v);
-            self
+                            v.push(input.into());
+                            self.excluded_members = Some(v);
+                            self
         }
         /// <p>List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty.</p>
-        pub fn set_excluded_members(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.excluded_members = input;
-            self
+        pub fn set_excluded_members(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.excluded_members = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
         pub fn db_cluster_endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10307,30 +9771,37 @@ pub mod create_db_cluster_endpoint_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the endpoint.</p>
-        pub fn set_db_cluster_endpoint_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_cluster_endpoint_arn = input;
-            self
+        pub fn set_db_cluster_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_cluster_endpoint_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateDbClusterEndpointOutput`](crate::output::CreateDbClusterEndpointOutput).
         pub fn build(self) -> crate::output::CreateDbClusterEndpointOutput {
             crate::output::CreateDbClusterEndpointOutput {
-                db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier,
-                db_cluster_identifier: self.db_cluster_identifier,
-                db_cluster_endpoint_resource_identifier: self
-                    .db_cluster_endpoint_resource_identifier,
-                endpoint: self.endpoint,
-                status: self.status,
-                endpoint_type: self.endpoint_type,
-                custom_endpoint_type: self.custom_endpoint_type,
-                static_members: self.static_members,
-                excluded_members: self.excluded_members,
-                db_cluster_endpoint_arn: self.db_cluster_endpoint_arn,
+                db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier
+                ,
+                db_cluster_identifier: self.db_cluster_identifier
+                ,
+                db_cluster_endpoint_resource_identifier: self.db_cluster_endpoint_resource_identifier
+                ,
+                endpoint: self.endpoint
+                ,
+                status: self.status
+                ,
+                endpoint_type: self.endpoint_type
+                ,
+                custom_endpoint_type: self.custom_endpoint_type
+                ,
+                static_members: self.static_members
+                ,
+                excluded_members: self.excluded_members
+                ,
+                db_cluster_endpoint_arn: self.db_cluster_endpoint_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDbClusterEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbClusterEndpointOutput`](crate::output::CreateDbClusterEndpointOutput).
@@ -10342,62 +9813,61 @@ impl CreateDbClusterEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+pub struct CreateDbClusterOutput  {
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::model::DbCluster>,
 }
 impl CreateDbClusterOutput {
-    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+    /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+    /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+    /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+    /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
     /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn db_cluster(&self) -> std::option::Option<&crate::model::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<& crate::model::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 /// See [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput).
 pub mod create_db_cluster_output {
-
+    
     /// A builder for [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster: std::option::Option<crate::model::DbCluster>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn db_cluster(mut self, input: crate::model::DbCluster) -> Self {
             self.db_cluster = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>
-        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p>
-        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p>
-        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
+        /// <p>Contains the details of an Amazon Aurora DB cluster or Multi-AZ DB cluster.</p> 
+        /// <p>For an Amazon Aurora DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>, <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>, <code>StartDBCluster</code>, and <code>StopDBCluster</code>.</p> 
+        /// <p>For a Multi-AZ DB cluster, this data type is used as a response element in the operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>, <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>, <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.</p> 
+        /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
         /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide.</i> </p>
-        pub fn set_db_cluster(
-            mut self,
-            input: std::option::Option<crate::model::DbCluster>,
-        ) -> Self {
-            self.db_cluster = input;
-            self
+        pub fn set_db_cluster(mut self, input: std::option::Option<crate::model::DbCluster>) -> Self {
+            self.db_cluster = input; self
         }
         /// Consumes the builder and constructs a [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput).
         pub fn build(self) -> crate::output::CreateDbClusterOutput {
             crate::output::CreateDbClusterOutput {
-                db_cluster: self.db_cluster,
+                db_cluster: self.db_cluster
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`CreateDbClusterOutput`](crate::output::CreateDbClusterOutput).
@@ -10409,7 +9879,7 @@ impl CreateDbClusterOutput {
 /// <p>This data type is used as a response element in the action <code>DescribeDBEngineVersions</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCustomDbEngineVersionOutput {
+pub struct CreateCustomDbEngineVersionOutput  {
     /// <p>The name of the database engine.</p>
     #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
@@ -10439,8 +9909,7 @@ pub struct CreateCustomDbEngineVersionOutput {
     pub supported_character_sets: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
     /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
     #[doc(hidden)]
-    pub supported_nchar_character_sets:
-        std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
+    pub supported_nchar_character_sets: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
     #[doc(hidden)]
     pub valid_upgrade_target: std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>,
@@ -10459,16 +9928,16 @@ pub struct CreateCustomDbEngineVersionOutput {
     /// <p>A list of the supported DB engine modes.</p>
     #[doc(hidden)]
     pub supported_engine_modes: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of features supported by the DB engine.</p>
-    /// <p>The supported features vary by DB engine and DB engine version.</p>
-    /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine
+    /// <p>A list of features supported by the DB engine.</p> 
+    /// <p>The supported features vary by DB engine and DB engine version.</p> 
+    /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p> 
+    /// <p> <code>aws rds describe-db-engine-versions --engine 
     /// <engine_name>
-    /// --engine-version
+    /// --engine-version 
     /// <engine_version></engine_version>
-    /// </engine_name></code> </p>
-    /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+    /// </engine_name></code> </p> 
+    /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p> 
+    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p> 
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
     #[doc(hidden)]
     pub supported_feature_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10511,65 +9980,62 @@ pub struct CreateCustomDbEngineVersionOutput {
     /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     #[doc(hidden)]
     pub supports_certificate_rotation_without_restart: std::option::Option<bool>,
-    /// <p>A list of the supported CA certificate identifiers.</p>
+    /// <p>A list of the supported CA certificate identifiers.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     #[doc(hidden)]
-    pub supported_ca_certificate_identifiers:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub supported_ca_certificate_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateCustomDbEngineVersionOutput {
     /// <p>The name of the database engine.</p>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> std::option::Option<& str> {
         self.engine.as_deref()
     }
     /// <p>The version number of the database engine.</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> std::option::Option<& str> {
         self.engine_version.as_deref()
     }
     /// <p>The name of the DB parameter group family for the database engine.</p>
-    pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
+    pub fn db_parameter_group_family(&self) -> std::option::Option<& str> {
         self.db_parameter_group_family.as_deref()
     }
     /// <p>The description of the database engine.</p>
-    pub fn db_engine_description(&self) -> std::option::Option<&str> {
+    pub fn db_engine_description(&self) -> std::option::Option<& str> {
         self.db_engine_description.as_deref()
     }
     /// <p>The description of the database engine version.</p>
-    pub fn db_engine_version_description(&self) -> std::option::Option<&str> {
+    pub fn db_engine_version_description(&self) -> std::option::Option<& str> {
         self.db_engine_version_description.as_deref()
     }
     /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
-    pub fn default_character_set(&self) -> std::option::Option<&crate::model::CharacterSet> {
+    pub fn default_character_set(&self) -> std::option::Option<& crate::model::CharacterSet> {
         self.default_character_set.as_ref()
     }
     /// <p>The EC2 image</p>
-    pub fn image(&self) -> std::option::Option<&crate::model::CustomDbEngineVersionAmi> {
+    pub fn image(&self) -> std::option::Option<& crate::model::CustomDbEngineVersionAmi> {
         self.image.as_ref()
     }
     /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
-    pub fn db_engine_media_type(&self) -> std::option::Option<&str> {
+    pub fn db_engine_media_type(&self) -> std::option::Option<& str> {
         self.db_engine_media_type.as_deref()
     }
     /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-    pub fn supported_character_sets(&self) -> std::option::Option<&[crate::model::CharacterSet]> {
+    pub fn supported_character_sets(&self) -> std::option::Option<& [crate::model::CharacterSet]> {
         self.supported_character_sets.as_deref()
     }
     /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-    pub fn supported_nchar_character_sets(
-        &self,
-    ) -> std::option::Option<&[crate::model::CharacterSet]> {
+    pub fn supported_nchar_character_sets(&self) -> std::option::Option<& [crate::model::CharacterSet]> {
         self.supported_nchar_character_sets.as_deref()
     }
     /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-    pub fn valid_upgrade_target(&self) -> std::option::Option<&[crate::model::UpgradeTarget]> {
+    pub fn valid_upgrade_target(&self) -> std::option::Option<& [crate::model::UpgradeTarget]> {
         self.valid_upgrade_target.as_deref()
     }
     /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
-    pub fn supported_timezones(&self) -> std::option::Option<&[crate::model::Timezone]> {
+    pub fn supported_timezones(&self) -> std::option::Option<& [crate::model::Timezone]> {
         self.supported_timezones.as_deref()
     }
     /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
-    pub fn exportable_log_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn exportable_log_types(&self) -> std::option::Option<& [std::string::String]> {
         self.exportable_log_types.as_deref()
     }
     /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
@@ -10581,25 +10047,25 @@ impl CreateCustomDbEngineVersionOutput {
         self.supports_read_replica
     }
     /// <p>A list of the supported DB engine modes.</p>
-    pub fn supported_engine_modes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_engine_modes(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_engine_modes.as_deref()
     }
-    /// <p>A list of features supported by the DB engine.</p>
-    /// <p>The supported features vary by DB engine and DB engine version.</p>
-    /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine
+    /// <p>A list of features supported by the DB engine.</p> 
+    /// <p>The supported features vary by DB engine and DB engine version.</p> 
+    /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p> 
+    /// <p> <code>aws rds describe-db-engine-versions --engine 
     /// <engine_name>
-    /// --engine-version
+    /// --engine-version 
     /// <engine_version></engine_version>
-    /// </engine_name></code> </p>
-    /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
-    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+    /// </engine_name></code> </p> 
+    /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p> 
+    /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p> 
     /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
-    pub fn supported_feature_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_feature_names(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_feature_names.as_deref()
     }
     /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
@@ -10611,31 +10077,31 @@ impl CreateCustomDbEngineVersionOutput {
         self.supports_global_databases
     }
     /// <p>The major engine version of the CEV.</p>
-    pub fn major_engine_version(&self) -> std::option::Option<&str> {
+    pub fn major_engine_version(&self) -> std::option::Option<& str> {
         self.major_engine_version.as_deref()
     }
     /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
-    pub fn database_installation_files_s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn database_installation_files_s3_bucket_name(&self) -> std::option::Option<& str> {
         self.database_installation_files_s3_bucket_name.as_deref()
     }
     /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
-    pub fn database_installation_files_s3_prefix(&self) -> std::option::Option<&str> {
+    pub fn database_installation_files_s3_prefix(&self) -> std::option::Option<& str> {
         self.database_installation_files_s3_prefix.as_deref()
     }
     /// <p>The ARN of the custom engine version.</p>
-    pub fn db_engine_version_arn(&self) -> std::option::Option<&str> {
+    pub fn db_engine_version_arn(&self) -> std::option::Option<& str> {
         self.db_engine_version_arn.as_deref()
     }
     /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The creation time of the DB engine version.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tag_list(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tag_list.as_deref()
     }
     /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
@@ -10643,24 +10109,22 @@ impl CreateCustomDbEngineVersionOutput {
         self.supports_babelfish
     }
     /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
-    pub fn custom_db_engine_version_manifest(&self) -> std::option::Option<&str> {
+    pub fn custom_db_engine_version_manifest(&self) -> std::option::Option<& str> {
         self.custom_db_engine_version_manifest.as_deref()
     }
     /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
     pub fn supports_certificate_rotation_without_restart(&self) -> std::option::Option<bool> {
         self.supports_certificate_rotation_without_restart
     }
-    /// <p>A list of the supported CA certificate identifiers.</p>
+    /// <p>A list of the supported CA certificate identifiers.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn supported_ca_certificate_identifiers(
-        &self,
-    ) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_ca_certificate_identifiers(&self) -> std::option::Option<& [std::string::String]> {
         self.supported_ca_certificate_identifiers.as_deref()
     }
 }
 /// See [`CreateCustomDbEngineVersionOutput`](crate::output::CreateCustomDbEngineVersionOutput).
 pub mod create_custom_db_engine_version_output {
-
+    
     /// A builder for [`CreateCustomDbEngineVersionOutput`](crate::output::CreateCustomDbEngineVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10672,12 +10136,9 @@ pub mod create_custom_db_engine_version_output {
         pub(crate) default_character_set: std::option::Option<crate::model::CharacterSet>,
         pub(crate) image: std::option::Option<crate::model::CustomDbEngineVersionAmi>,
         pub(crate) db_engine_media_type: std::option::Option<std::string::String>,
-        pub(crate) supported_character_sets:
-            std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
-        pub(crate) supported_nchar_character_sets:
-            std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
-        pub(crate) valid_upgrade_target:
-            std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>,
+        pub(crate) supported_character_sets: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
+        pub(crate) supported_nchar_character_sets: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
+        pub(crate) valid_upgrade_target: std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>,
         pub(crate) supported_timezones: std::option::Option<std::vec::Vec<crate::model::Timezone>>,
         pub(crate) exportable_log_types: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) supports_log_exports_to_cloudwatch_logs: std::option::Option<bool>,
@@ -10688,8 +10149,7 @@ pub mod create_custom_db_engine_version_output {
         pub(crate) supports_parallel_query: std::option::Option<bool>,
         pub(crate) supports_global_databases: std::option::Option<bool>,
         pub(crate) major_engine_version: std::option::Option<std::string::String>,
-        pub(crate) database_installation_files_s3_bucket_name:
-            std::option::Option<std::string::String>,
+        pub(crate) database_installation_files_s3_bucket_name: std::option::Option<std::string::String>,
         pub(crate) database_installation_files_s3_prefix: std::option::Option<std::string::String>,
         pub(crate) db_engine_version_arn: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -10698,8 +10158,7 @@ pub mod create_custom_db_engine_version_output {
         pub(crate) supports_babelfish: std::option::Option<bool>,
         pub(crate) custom_db_engine_version_manifest: std::option::Option<std::string::String>,
         pub(crate) supports_certificate_rotation_without_restart: std::option::Option<bool>,
-        pub(crate) supported_ca_certificate_identifiers:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) supported_ca_certificate_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the database engine.</p>
@@ -10709,8 +10168,7 @@ pub mod create_custom_db_engine_version_output {
         }
         /// <p>The name of the database engine.</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.engine = input;
-            self
+            self.engine = input; self
         }
         /// <p>The version number of the database engine.</p>
         pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10718,12 +10176,8 @@ pub mod create_custom_db_engine_version_output {
             self
         }
         /// <p>The version number of the database engine.</p>
-        pub fn set_engine_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.engine_version = input;
-            self
+        pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engine_version = input; self
         }
         /// <p>The name of the DB parameter group family for the database engine.</p>
         pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10731,12 +10185,8 @@ pub mod create_custom_db_engine_version_output {
             self
         }
         /// <p>The name of the DB parameter group family for the database engine.</p>
-        pub fn set_db_parameter_group_family(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_parameter_group_family = input;
-            self
+        pub fn set_db_parameter_group_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_parameter_group_family = input; self
         }
         /// <p>The description of the database engine.</p>
         pub fn db_engine_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10744,28 +10194,17 @@ pub mod create_custom_db_engine_version_output {
             self
         }
         /// <p>The description of the database engine.</p>
-        pub fn set_db_engine_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_engine_description = input;
-            self
+        pub fn set_db_engine_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_engine_description = input; self
         }
         /// <p>The description of the database engine version.</p>
-        pub fn db_engine_version_description(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn db_engine_version_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_engine_version_description = Some(input.into());
             self
         }
         /// <p>The description of the database engine version.</p>
-        pub fn set_db_engine_version_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_engine_version_description = input;
-            self
+        pub fn set_db_engine_version_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_engine_version_description = input; self
         }
         /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
         pub fn default_character_set(mut self, input: crate::model::CharacterSet) -> Self {
@@ -10773,12 +10212,8 @@ pub mod create_custom_db_engine_version_output {
             self
         }
         /// <p>The default character set for new instances of this engine version, if the <code>CharacterSetName</code> parameter of the CreateDBInstance API isn't specified.</p>
-        pub fn set_default_character_set(
-            mut self,
-            input: std::option::Option<crate::model::CharacterSet>,
-        ) -> Self {
-            self.default_character_set = input;
-            self
+        pub fn set_default_character_set(mut self, input: std::option::Option<crate::model::CharacterSet>) -> Self {
+            self.default_character_set = input; self
         }
         /// <p>The EC2 image</p>
         pub fn image(mut self, input: crate::model::CustomDbEngineVersionAmi) -> Self {
@@ -10786,12 +10221,8 @@ pub mod create_custom_db_engine_version_output {
             self
         }
         /// <p>The EC2 image</p>
-        pub fn set_image(
-            mut self,
-            input: std::option::Option<crate::model::CustomDbEngineVersionAmi>,
-        ) -> Self {
-            self.image = input;
-            self
+        pub fn set_image(mut self, input: std::option::Option<crate::model::CustomDbEngineVersionAmi>) -> Self {
+            self.image = input; self
         }
         /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
         pub fn db_engine_media_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10799,12 +10230,8 @@ pub mod create_custom_db_engine_version_output {
             self
         }
         /// <p>A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS Custom for SQL Server.</p>
-        pub fn set_db_engine_media_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_engine_media_type = input;
-            self
+        pub fn set_db_engine_media_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_engine_media_type = input; self
         }
         /// Appends an item to `supported_character_sets`.
         ///
@@ -10813,17 +10240,13 @@ pub mod create_custom_db_engine_version_output {
         /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
         pub fn supported_character_sets(mut self, input: crate::model::CharacterSet) -> Self {
             let mut v = self.supported_character_sets.unwrap_or_default();
-            v.push(input);
-            self.supported_character_sets = Some(v);
-            self
+                            v.push(input);
+                            self.supported_character_sets = Some(v);
+                            self
         }
         /// <p>A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-        pub fn set_supported_character_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
-        ) -> Self {
-            self.supported_character_sets = input;
-            self
+        pub fn set_supported_character_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>) -> Self {
+            self.supported_character_sets = input; self
         }
         /// Appends an item to `supported_nchar_character_sets`.
         ///
@@ -10832,17 +10255,13 @@ pub mod create_custom_db_engine_version_output {
         /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
         pub fn supported_nchar_character_sets(mut self, input: crate::model::CharacterSet) -> Self {
             let mut v = self.supported_nchar_character_sets.unwrap_or_default();
-            v.push(input);
-            self.supported_nchar_character_sets = Some(v);
-            self
+                            v.push(input);
+                            self.supported_nchar_character_sets = Some(v);
+                            self
         }
         /// <p>A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code> parameter of the <code>CreateDBInstance</code> operation.</p>
-        pub fn set_supported_nchar_character_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>,
-        ) -> Self {
-            self.supported_nchar_character_sets = input;
-            self
+        pub fn set_supported_nchar_character_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::CharacterSet>>) -> Self {
+            self.supported_nchar_character_sets = input; self
         }
         /// Appends an item to `valid_upgrade_target`.
         ///
@@ -10851,17 +10270,13 @@ pub mod create_custom_db_engine_version_output {
         /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
         pub fn valid_upgrade_target(mut self, input: crate::model::UpgradeTarget) -> Self {
             let mut v = self.valid_upgrade_target.unwrap_or_default();
-            v.push(input);
-            self.valid_upgrade_target = Some(v);
-            self
+                            v.push(input);
+                            self.valid_upgrade_target = Some(v);
+                            self
         }
         /// <p>A list of engine versions that this database engine version can be upgraded to.</p>
-        pub fn set_valid_upgrade_target(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>,
-        ) -> Self {
-            self.valid_upgrade_target = input;
-            self
+        pub fn set_valid_upgrade_target(mut self, input: std::option::Option<std::vec::Vec<crate::model::UpgradeTarget>>) -> Self {
+            self.valid_upgrade_target = input; self
         }
         /// Appends an item to `supported_timezones`.
         ///
@@ -10870,17 +10285,13 @@ pub mod create_custom_db_engine_version_output {
         /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
         pub fn supported_timezones(mut self, input: crate::model::Timezone) -> Self {
             let mut v = self.supported_timezones.unwrap_or_default();
-            v.push(input);
-            self.supported_timezones = Some(v);
-            self
+                            v.push(input);
+                            self.supported_timezones = Some(v);
+                            self
         }
         /// <p>A list of the time zones supported by this engine for the <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.</p>
-        pub fn set_supported_timezones(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Timezone>>,
-        ) -> Self {
-            self.supported_timezones = input;
-            self
+        pub fn set_supported_timezones(mut self, input: std::option::Option<std::vec::Vec<crate::model::Timezone>>) -> Self {
+            self.supported_timezones = input; self
         }
         /// Appends an item to `exportable_log_types`.
         ///
@@ -10889,17 +10300,13 @@ pub mod create_custom_db_engine_version_output {
         /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
         pub fn exportable_log_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exportable_log_types.unwrap_or_default();
-            v.push(input.into());
-            self.exportable_log_types = Some(v);
-            self
+                            v.push(input.into());
+                            self.exportable_log_types = Some(v);
+                            self
         }
         /// <p>The types of logs that the database engine has available for export to CloudWatch Logs.</p>
-        pub fn set_exportable_log_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.exportable_log_types = input;
-            self
+        pub fn set_exportable_log_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.exportable_log_types = input; self
         }
         /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
         pub fn supports_log_exports_to_cloudwatch_logs(mut self, input: bool) -> Self {
@@ -10907,12 +10314,8 @@ pub mod create_custom_db_engine_version_output {
             self
         }
         /// <p>A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.</p>
-        pub fn set_supports_log_exports_to_cloudwatch_logs(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.supports_log_exports_to_cloudwatch_logs = input;
-            self
+        pub fn set_supports_log_exports_to_cloudwatch_logs(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_log_exports_to_cloudwatch_logs = input; self
         }
         /// <p>Indicates whether the database engine version supports read replicas.</p>
         pub fn supports_read_replica(mut self, input: bool) -> Self {
@@ -10921,8 +10324,7 @@ pub mod create_custom_db_engine_version_output {
         }
         /// <p>Indicates whether the database engine version supports read replicas.</p>
         pub fn set_supports_read_replica(mut self, input: std::option::Option<bool>) -> Self {
-            self.supports_read_replica = input;
-            self
+            self.supports_read_replica = input; self
         }
         /// Appends an item to `supported_engine_modes`.
         ///
@@ -10931,56 +10333,48 @@ pub mod create_custom_db_engine_version_output {
         /// <p>A list of the supported DB engine modes.</p>
         pub fn supported_engine_modes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_engine_modes.unwrap_or_default();
-            v.push(input.into());
-            self.supported_engine_modes = Some(v);
-            self
+                            v.push(input.into());
+                            self.supported_engine_modes = Some(v);
+                            self
         }
         /// <p>A list of the supported DB engine modes.</p>
-        pub fn set_supported_engine_modes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_engine_modes = input;
-            self
+        pub fn set_supported_engine_modes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.supported_engine_modes = input; self
         }
         /// Appends an item to `supported_feature_names`.
         ///
         /// To override the contents of this collection use [`set_supported_feature_names`](Self::set_supported_feature_names).
         ///
-        /// <p>A list of features supported by the DB engine.</p>
-        /// <p>The supported features vary by DB engine and DB engine version.</p>
-        /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-        /// <p> <code>aws rds describe-db-engine-versions --engine
+        /// <p>A list of features supported by the DB engine.</p> 
+        /// <p>The supported features vary by DB engine and DB engine version.</p> 
+        /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p> 
+        /// <p> <code>aws rds describe-db-engine-versions --engine 
         /// <engine_name>
-        /// --engine-version
+        /// --engine-version 
         /// <engine_version></engine_version>
-        /// </engine_name></code> </p>
-        /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
-        /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+        /// </engine_name></code> </p> 
+        /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p> 
+        /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p> 
         /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
         pub fn supported_feature_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_feature_names.unwrap_or_default();
-            v.push(input.into());
-            self.supported_feature_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.supported_feature_names = Some(v);
+                            self
         }
-        /// <p>A list of features supported by the DB engine.</p>
-        /// <p>The supported features vary by DB engine and DB engine version.</p>
-        /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p>
-        /// <p> <code>aws rds describe-db-engine-versions --engine
+        /// <p>A list of features supported by the DB engine.</p> 
+        /// <p>The supported features vary by DB engine and DB engine version.</p> 
+        /// <p>To determine the supported features for a specific DB engine and DB engine version using the CLI, use the following command:</p> 
+        /// <p> <code>aws rds describe-db-engine-versions --engine 
         /// <engine_name>
-        /// --engine-version
+        /// --engine-version 
         /// <engine_version></engine_version>
-        /// </engine_name></code> </p>
-        /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p>
-        /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p>
+        /// </engine_name></code> </p> 
+        /// <p>For example, to determine the supported features for RDS for PostgreSQL version 13.3 using the CLI, use the following command:</p> 
+        /// <p> <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code> </p> 
         /// <p>The supported features are listed under <code>SupportedFeatureNames</code> in the output.</p>
-        pub fn set_supported_feature_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_feature_names = input;
-            self
+        pub fn set_supported_feature_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.supported_feature_names = input; self
         }
         /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10989,8 +10383,7 @@ pub mod create_custom_db_engine_version_output {
         }
         /// <p>The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
         pub fn supports_parallel_query(mut self, input: bool) -> Self {
@@ -10999,8 +10392,7 @@ pub mod create_custom_db_engine_version_output {
         }
         /// <p>A value that indicates whether you can use Aurora parallel query with a specific DB engine version.</p>
         pub fn set_supports_parallel_query(mut self, input: std::option::Option<bool>) -> Self {
-            self.supports_parallel_query = input;
-            self
+            self.supports_parallel_query = input; self
         }
         /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
         pub fn supports_global_databases(mut self, input: bool) -> Self {
@@ -11009,8 +10401,7 @@ pub mod create_custom_db_engine_version_output {
         }
         /// <p>A value that indicates whether you can use Aurora global databases with a specific DB engine version.</p>
         pub fn set_supports_global_databases(mut self, input: std::option::Option<bool>) -> Self {
-            self.supports_global_databases = input;
-            self
+            self.supports_global_databases = input; self
         }
         /// <p>The major engine version of the CEV.</p>
         pub fn major_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11018,44 +10409,26 @@ pub mod create_custom_db_engine_version_output {
             self
         }
         /// <p>The major engine version of the CEV.</p>
-        pub fn set_major_engine_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.major_engine_version = input;
-            self
+        pub fn set_major_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.major_engine_version = input; self
         }
         /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
-        pub fn database_installation_files_s3_bucket_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn database_installation_files_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_installation_files_s3_bucket_name = Some(input.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket that contains your database installation files.</p>
-        pub fn set_database_installation_files_s3_bucket_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_installation_files_s3_bucket_name = input;
-            self
+        pub fn set_database_installation_files_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_installation_files_s3_bucket_name = input; self
         }
         /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
-        pub fn database_installation_files_s3_prefix(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn database_installation_files_s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_installation_files_s3_prefix = Some(input.into());
             self
         }
         /// <p>The Amazon S3 directory that contains the database installation files. If not specified, then no prefix is assumed.</p>
-        pub fn set_database_installation_files_s3_prefix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_installation_files_s3_prefix = input;
-            self
+        pub fn set_database_installation_files_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_installation_files_s3_prefix = input; self
         }
         /// <p>The ARN of the custom engine version.</p>
         pub fn db_engine_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11063,12 +10436,8 @@ pub mod create_custom_db_engine_version_output {
             self
         }
         /// <p>The ARN of the custom engine version.</p>
-        pub fn set_db_engine_version_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_engine_version_arn = input;
-            self
+        pub fn set_db_engine_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_engine_version_arn = input; self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11077,8 +10446,7 @@ pub mod create_custom_db_engine_version_output {
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. This parameter is required for RDS Custom, but optional for Amazon RDS.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>The creation time of the DB engine version.</p>
         pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11086,12 +10454,8 @@ pub mod create_custom_db_engine_version_output {
             self
         }
         /// <p>The creation time of the DB engine version.</p>
-        pub fn set_create_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_time = input;
-            self
+        pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_time = input; self
         }
         /// Appends an item to `tag_list`.
         ///
@@ -11100,17 +10464,13 @@ pub mod create_custom_db_engine_version_output {
         /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
         pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input);
-            self.tag_list = Some(v);
-            self
+                            v.push(input);
+                            self.tag_list = Some(v);
+                            self
         }
         /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-        pub fn set_tag_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tag_list = input;
-            self
+        pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tag_list = input; self
         }
         /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
         pub fn supports_babelfish(mut self, input: bool) -> Self {
@@ -11119,24 +10479,16 @@ pub mod create_custom_db_engine_version_output {
         }
         /// <p>A value that indicates whether the engine version supports Babelfish for Aurora PostgreSQL.</p>
         pub fn set_supports_babelfish(mut self, input: std::option::Option<bool>) -> Self {
-            self.supports_babelfish = input;
-            self
+            self.supports_babelfish = input; self
         }
         /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
-        pub fn custom_db_engine_version_manifest(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn custom_db_engine_version_manifest(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_db_engine_version_manifest = Some(input.into());
             self
         }
         /// <p>JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields">JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>. </p>
-        pub fn set_custom_db_engine_version_manifest(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_db_engine_version_manifest = input;
-            self
+        pub fn set_custom_db_engine_version_manifest(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_db_engine_version_manifest = input; self
         }
         /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
         pub fn supports_certificate_rotation_without_restart(mut self, input: bool) -> Self {
@@ -11144,80 +10496,101 @@ pub mod create_custom_db_engine_version_output {
             self
         }
         /// <p>A value that indicates whether the engine version supports rotating the server certificate without rebooting the DB instance.</p>
-        pub fn set_supports_certificate_rotation_without_restart(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.supports_certificate_rotation_without_restart = input;
-            self
+        pub fn set_supports_certificate_rotation_without_restart(mut self, input: std::option::Option<bool>) -> Self {
+            self.supports_certificate_rotation_without_restart = input; self
         }
         /// Appends an item to `supported_ca_certificate_identifiers`.
         ///
         /// To override the contents of this collection use [`set_supported_ca_certificate_identifiers`](Self::set_supported_ca_certificate_identifiers).
         ///
-        /// <p>A list of the supported CA certificate identifiers.</p>
+        /// <p>A list of the supported CA certificate identifiers.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-        pub fn supported_ca_certificate_identifiers(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            let mut v = self
-                .supported_ca_certificate_identifiers
-                .unwrap_or_default();
-            v.push(input.into());
-            self.supported_ca_certificate_identifiers = Some(v);
-            self
+        pub fn supported_ca_certificate_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.supported_ca_certificate_identifiers.unwrap_or_default();
+                            v.push(input.into());
+                            self.supported_ca_certificate_identifiers = Some(v);
+                            self
         }
-        /// <p>A list of the supported CA certificate identifiers.</p>
+        /// <p>A list of the supported CA certificate identifiers.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
-        pub fn set_supported_ca_certificate_identifiers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.supported_ca_certificate_identifiers = input;
-            self
+        pub fn set_supported_ca_certificate_identifiers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.supported_ca_certificate_identifiers = input; self
         }
         /// Consumes the builder and constructs a [`CreateCustomDbEngineVersionOutput`](crate::output::CreateCustomDbEngineVersionOutput).
         pub fn build(self) -> crate::output::CreateCustomDbEngineVersionOutput {
             crate::output::CreateCustomDbEngineVersionOutput {
-                engine: self.engine,
-                engine_version: self.engine_version,
-                db_parameter_group_family: self.db_parameter_group_family,
-                db_engine_description: self.db_engine_description,
-                db_engine_version_description: self.db_engine_version_description,
-                default_character_set: self.default_character_set,
-                image: self.image,
-                db_engine_media_type: self.db_engine_media_type,
-                supported_character_sets: self.supported_character_sets,
-                supported_nchar_character_sets: self.supported_nchar_character_sets,
-                valid_upgrade_target: self.valid_upgrade_target,
-                supported_timezones: self.supported_timezones,
-                exportable_log_types: self.exportable_log_types,
-                supports_log_exports_to_cloudwatch_logs: self
-                    .supports_log_exports_to_cloudwatch_logs
-                    .unwrap_or_default(),
-                supports_read_replica: self.supports_read_replica.unwrap_or_default(),
-                supported_engine_modes: self.supported_engine_modes,
-                supported_feature_names: self.supported_feature_names,
-                status: self.status,
-                supports_parallel_query: self.supports_parallel_query.unwrap_or_default(),
-                supports_global_databases: self.supports_global_databases.unwrap_or_default(),
-                major_engine_version: self.major_engine_version,
-                database_installation_files_s3_bucket_name: self
-                    .database_installation_files_s3_bucket_name,
-                database_installation_files_s3_prefix: self.database_installation_files_s3_prefix,
-                db_engine_version_arn: self.db_engine_version_arn,
-                kms_key_id: self.kms_key_id,
-                create_time: self.create_time,
-                tag_list: self.tag_list,
-                supports_babelfish: self.supports_babelfish.unwrap_or_default(),
-                custom_db_engine_version_manifest: self.custom_db_engine_version_manifest,
-                supports_certificate_rotation_without_restart: self
-                    .supports_certificate_rotation_without_restart,
-                supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers,
+                engine: self.engine
+                ,
+                engine_version: self.engine_version
+                ,
+                db_parameter_group_family: self.db_parameter_group_family
+                ,
+                db_engine_description: self.db_engine_description
+                ,
+                db_engine_version_description: self.db_engine_version_description
+                ,
+                default_character_set: self.default_character_set
+                ,
+                image: self.image
+                ,
+                db_engine_media_type: self.db_engine_media_type
+                ,
+                supported_character_sets: self.supported_character_sets
+                ,
+                supported_nchar_character_sets: self.supported_nchar_character_sets
+                ,
+                valid_upgrade_target: self.valid_upgrade_target
+                ,
+                supported_timezones: self.supported_timezones
+                ,
+                exportable_log_types: self.exportable_log_types
+                ,
+                supports_log_exports_to_cloudwatch_logs: self.supports_log_exports_to_cloudwatch_logs
+                    .unwrap_or_default()
+                ,
+                supports_read_replica: self.supports_read_replica
+                    .unwrap_or_default()
+                ,
+                supported_engine_modes: self.supported_engine_modes
+                ,
+                supported_feature_names: self.supported_feature_names
+                ,
+                status: self.status
+                ,
+                supports_parallel_query: self.supports_parallel_query
+                    .unwrap_or_default()
+                ,
+                supports_global_databases: self.supports_global_databases
+                    .unwrap_or_default()
+                ,
+                major_engine_version: self.major_engine_version
+                ,
+                database_installation_files_s3_bucket_name: self.database_installation_files_s3_bucket_name
+                ,
+                database_installation_files_s3_prefix: self.database_installation_files_s3_prefix
+                ,
+                db_engine_version_arn: self.db_engine_version_arn
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                create_time: self.create_time
+                ,
+                tag_list: self.tag_list
+                ,
+                supports_babelfish: self.supports_babelfish
+                    .unwrap_or_default()
+                ,
+                custom_db_engine_version_manifest: self.custom_db_engine_version_manifest
+                ,
+                supports_certificate_rotation_without_restart: self.supports_certificate_rotation_without_restart
+                ,
+                supported_ca_certificate_identifiers: self.supported_ca_certificate_identifiers
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCustomDbEngineVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomDbEngineVersionOutput`](crate::output::CreateCustomDbEngineVersionOutput).
@@ -11229,50 +10602,49 @@ impl CreateCustomDbEngineVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBlueGreenDeploymentOutput {
-    /// <p>Contains the details about a blue/green deployment.</p>
+pub struct CreateBlueGreenDeploymentOutput  {
+    /// <p>Contains the details about a blue/green deployment.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
     #[doc(hidden)]
     pub blue_green_deployment: std::option::Option<crate::model::BlueGreenDeployment>,
 }
 impl CreateBlueGreenDeploymentOutput {
-    /// <p>Contains the details about a blue/green deployment.</p>
+    /// <p>Contains the details about a blue/green deployment.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
-    pub fn blue_green_deployment(&self) -> std::option::Option<&crate::model::BlueGreenDeployment> {
+    pub fn blue_green_deployment(&self) -> std::option::Option<& crate::model::BlueGreenDeployment> {
         self.blue_green_deployment.as_ref()
     }
 }
 /// See [`CreateBlueGreenDeploymentOutput`](crate::output::CreateBlueGreenDeploymentOutput).
 pub mod create_blue_green_deployment_output {
-
+    
     /// A builder for [`CreateBlueGreenDeploymentOutput`](crate::output::CreateBlueGreenDeploymentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) blue_green_deployment: std::option::Option<crate::model::BlueGreenDeployment>,
     }
     impl Builder {
-        /// <p>Contains the details about a blue/green deployment.</p>
+        /// <p>Contains the details about a blue/green deployment.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
         pub fn blue_green_deployment(mut self, input: crate::model::BlueGreenDeployment) -> Self {
             self.blue_green_deployment = Some(input);
             self
         }
-        /// <p>Contains the details about a blue/green deployment.</p>
+        /// <p>Contains the details about a blue/green deployment.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
-        pub fn set_blue_green_deployment(
-            mut self,
-            input: std::option::Option<crate::model::BlueGreenDeployment>,
-        ) -> Self {
-            self.blue_green_deployment = input;
-            self
+        pub fn set_blue_green_deployment(mut self, input: std::option::Option<crate::model::BlueGreenDeployment>) -> Self {
+            self.blue_green_deployment = input; self
         }
         /// Consumes the builder and constructs a [`CreateBlueGreenDeploymentOutput`](crate::output::CreateBlueGreenDeploymentOutput).
         pub fn build(self) -> crate::output::CreateBlueGreenDeploymentOutput {
             crate::output::CreateBlueGreenDeploymentOutput {
-                blue_green_deployment: self.blue_green_deployment,
+                blue_green_deployment: self.blue_green_deployment
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateBlueGreenDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`CreateBlueGreenDeploymentOutput`](crate::output::CreateBlueGreenDeploymentOutput).
@@ -11284,20 +10656,20 @@ impl CreateBlueGreenDeploymentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopyOptionGroupOutput {
+pub struct CopyOptionGroupOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub option_group: std::option::Option<crate::model::OptionGroup>,
 }
 impl CopyOptionGroupOutput {
     /// <p></p>
-    pub fn option_group(&self) -> std::option::Option<&crate::model::OptionGroup> {
+    pub fn option_group(&self) -> std::option::Option<& crate::model::OptionGroup> {
         self.option_group.as_ref()
     }
 }
 /// See [`CopyOptionGroupOutput`](crate::output::CopyOptionGroupOutput).
 pub mod copy_option_group_output {
-
+    
     /// A builder for [`CopyOptionGroupOutput`](crate::output::CopyOptionGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11310,20 +10682,19 @@ pub mod copy_option_group_output {
             self
         }
         /// <p></p>
-        pub fn set_option_group(
-            mut self,
-            input: std::option::Option<crate::model::OptionGroup>,
-        ) -> Self {
-            self.option_group = input;
-            self
+        pub fn set_option_group(mut self, input: std::option::Option<crate::model::OptionGroup>) -> Self {
+            self.option_group = input; self
         }
         /// Consumes the builder and constructs a [`CopyOptionGroupOutput`](crate::output::CopyOptionGroupOutput).
         pub fn build(self) -> crate::output::CopyOptionGroupOutput {
             crate::output::CopyOptionGroupOutput {
-                option_group: self.option_group,
+                option_group: self.option_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CopyOptionGroupOutput {
     /// Creates a new builder-style object to manufacture [`CopyOptionGroupOutput`](crate::output::CopyOptionGroupOutput).
@@ -11335,50 +10706,49 @@ impl CopyOptionGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopyDbSnapshotOutput {
-    /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
+pub struct CopyDbSnapshotOutput  {
+    /// <p>Contains the details of an Amazon RDS DB snapshot.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
     #[doc(hidden)]
     pub db_snapshot: std::option::Option<crate::model::DbSnapshot>,
 }
 impl CopyDbSnapshotOutput {
-    /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
+    /// <p>Contains the details of an Amazon RDS DB snapshot.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
-    pub fn db_snapshot(&self) -> std::option::Option<&crate::model::DbSnapshot> {
+    pub fn db_snapshot(&self) -> std::option::Option<& crate::model::DbSnapshot> {
         self.db_snapshot.as_ref()
     }
 }
 /// See [`CopyDbSnapshotOutput`](crate::output::CopyDbSnapshotOutput).
 pub mod copy_db_snapshot_output {
-
+    
     /// A builder for [`CopyDbSnapshotOutput`](crate::output::CopyDbSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_snapshot: std::option::Option<crate::model::DbSnapshot>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
+        /// <p>Contains the details of an Amazon RDS DB snapshot.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
         pub fn db_snapshot(mut self, input: crate::model::DbSnapshot) -> Self {
             self.db_snapshot = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB snapshot.</p>
+        /// <p>Contains the details of an Amazon RDS DB snapshot.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBSnapshots</code> action.</p>
-        pub fn set_db_snapshot(
-            mut self,
-            input: std::option::Option<crate::model::DbSnapshot>,
-        ) -> Self {
-            self.db_snapshot = input;
-            self
+        pub fn set_db_snapshot(mut self, input: std::option::Option<crate::model::DbSnapshot>) -> Self {
+            self.db_snapshot = input; self
         }
         /// Consumes the builder and constructs a [`CopyDbSnapshotOutput`](crate::output::CopyDbSnapshotOutput).
         pub fn build(self) -> crate::output::CopyDbSnapshotOutput {
             crate::output::CopyDbSnapshotOutput {
-                db_snapshot: self.db_snapshot,
+                db_snapshot: self.db_snapshot
+                ,
             }
         }
     }
+    
+    
 }
 impl CopyDbSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CopyDbSnapshotOutput`](crate::output::CopyDbSnapshotOutput).
@@ -11390,50 +10760,49 @@ impl CopyDbSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopyDbParameterGroupOutput {
-    /// <p>Contains the details of an Amazon RDS DB parameter group.</p>
+pub struct CopyDbParameterGroupOutput  {
+    /// <p>Contains the details of an Amazon RDS DB parameter group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
     #[doc(hidden)]
     pub db_parameter_group: std::option::Option<crate::model::DbParameterGroup>,
 }
 impl CopyDbParameterGroupOutput {
-    /// <p>Contains the details of an Amazon RDS DB parameter group.</p>
+    /// <p>Contains the details of an Amazon RDS DB parameter group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
-    pub fn db_parameter_group(&self) -> std::option::Option<&crate::model::DbParameterGroup> {
+    pub fn db_parameter_group(&self) -> std::option::Option<& crate::model::DbParameterGroup> {
         self.db_parameter_group.as_ref()
     }
 }
 /// See [`CopyDbParameterGroupOutput`](crate::output::CopyDbParameterGroupOutput).
 pub mod copy_db_parameter_group_output {
-
+    
     /// A builder for [`CopyDbParameterGroupOutput`](crate::output::CopyDbParameterGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_parameter_group: std::option::Option<crate::model::DbParameterGroup>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB parameter group.</p>
+        /// <p>Contains the details of an Amazon RDS DB parameter group.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
         pub fn db_parameter_group(mut self, input: crate::model::DbParameterGroup) -> Self {
             self.db_parameter_group = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB parameter group.</p>
+        /// <p>Contains the details of an Amazon RDS DB parameter group.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBParameterGroups</code> action.</p>
-        pub fn set_db_parameter_group(
-            mut self,
-            input: std::option::Option<crate::model::DbParameterGroup>,
-        ) -> Self {
-            self.db_parameter_group = input;
-            self
+        pub fn set_db_parameter_group(mut self, input: std::option::Option<crate::model::DbParameterGroup>) -> Self {
+            self.db_parameter_group = input; self
         }
         /// Consumes the builder and constructs a [`CopyDbParameterGroupOutput`](crate::output::CopyDbParameterGroupOutput).
         pub fn build(self) -> crate::output::CopyDbParameterGroupOutput {
             crate::output::CopyDbParameterGroupOutput {
-                db_parameter_group: self.db_parameter_group,
+                db_parameter_group: self.db_parameter_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CopyDbParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`CopyDbParameterGroupOutput`](crate::output::CopyDbParameterGroupOutput).
@@ -11445,50 +10814,49 @@ impl CopyDbParameterGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopyDbClusterSnapshotOutput {
-    /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
+pub struct CopyDbClusterSnapshotOutput  {
+    /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
     #[doc(hidden)]
     pub db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
 }
 impl CopyDbClusterSnapshotOutput {
-    /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
+    /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
-    pub fn db_cluster_snapshot(&self) -> std::option::Option<&crate::model::DbClusterSnapshot> {
+    pub fn db_cluster_snapshot(&self) -> std::option::Option<& crate::model::DbClusterSnapshot> {
         self.db_cluster_snapshot.as_ref()
     }
 }
 /// See [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput).
 pub mod copy_db_cluster_snapshot_output {
-
+    
     /// A builder for [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_cluster_snapshot: std::option::Option<crate::model::DbClusterSnapshot>,
     }
     impl Builder {
-        /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
+        /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
         pub fn db_cluster_snapshot(mut self, input: crate::model::DbClusterSnapshot) -> Self {
             self.db_cluster_snapshot = Some(input);
             self
         }
-        /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p>
+        /// <p>Contains the details for an Amazon RDS DB cluster snapshot</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code> action.</p>
-        pub fn set_db_cluster_snapshot(
-            mut self,
-            input: std::option::Option<crate::model::DbClusterSnapshot>,
-        ) -> Self {
-            self.db_cluster_snapshot = input;
-            self
+        pub fn set_db_cluster_snapshot(mut self, input: std::option::Option<crate::model::DbClusterSnapshot>) -> Self {
+            self.db_cluster_snapshot = input; self
         }
         /// Consumes the builder and constructs a [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput).
         pub fn build(self) -> crate::output::CopyDbClusterSnapshotOutput {
             crate::output::CopyDbClusterSnapshotOutput {
-                db_cluster_snapshot: self.db_cluster_snapshot,
+                db_cluster_snapshot: self.db_cluster_snapshot
+                ,
             }
         }
     }
+    
+    
 }
 impl CopyDbClusterSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`CopyDbClusterSnapshotOutput`](crate::output::CopyDbClusterSnapshotOutput).
@@ -11500,56 +10868,49 @@ impl CopyDbClusterSnapshotOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopyDbClusterParameterGroupOutput {
-    /// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p>
+pub struct CopyDbClusterParameterGroupOutput  {
+    /// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
     #[doc(hidden)]
     pub db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
 }
 impl CopyDbClusterParameterGroupOutput {
-    /// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p>
+    /// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
-    pub fn db_cluster_parameter_group(
-        &self,
-    ) -> std::option::Option<&crate::model::DbClusterParameterGroup> {
+    pub fn db_cluster_parameter_group(&self) -> std::option::Option<& crate::model::DbClusterParameterGroup> {
         self.db_cluster_parameter_group.as_ref()
     }
 }
 /// See [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput).
 pub mod copy_db_cluster_parameter_group_output {
-
+    
     /// A builder for [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) db_cluster_parameter_group:
-            std::option::Option<crate::model::DbClusterParameterGroup>,
+        pub(crate) db_cluster_parameter_group: std::option::Option<crate::model::DbClusterParameterGroup>,
     }
     impl Builder {
-        /// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p>
+        /// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
-        pub fn db_cluster_parameter_group(
-            mut self,
-            input: crate::model::DbClusterParameterGroup,
-        ) -> Self {
+        pub fn db_cluster_parameter_group(mut self, input: crate::model::DbClusterParameterGroup) -> Self {
             self.db_cluster_parameter_group = Some(input);
             self
         }
-        /// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p>
+        /// <p>Contains the details of an Amazon RDS DB cluster parameter group.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
-        pub fn set_db_cluster_parameter_group(
-            mut self,
-            input: std::option::Option<crate::model::DbClusterParameterGroup>,
-        ) -> Self {
-            self.db_cluster_parameter_group = input;
-            self
+        pub fn set_db_cluster_parameter_group(mut self, input: std::option::Option<crate::model::DbClusterParameterGroup>) -> Self {
+            self.db_cluster_parameter_group = input; self
         }
         /// Consumes the builder and constructs a [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput).
         pub fn build(self) -> crate::output::CopyDbClusterParameterGroupOutput {
             crate::output::CopyDbClusterParameterGroupOutput {
-                db_cluster_parameter_group: self.db_cluster_parameter_group,
+                db_cluster_parameter_group: self.db_cluster_parameter_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CopyDbClusterParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`CopyDbClusterParameterGroupOutput`](crate::output::CopyDbClusterParameterGroupOutput).
@@ -11558,23 +10919,23 @@ impl CopyDbClusterParameterGroupOutput {
     }
 }
 
-/// <p>Contains the details of a snapshot export to Amazon S3.</p>
+/// <p>Contains the details of a snapshot export to Amazon S3.</p> 
 /// <p>This data type is used as a response element in the <code>DescribeExportTasks</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelExportTaskOutput {
+pub struct CancelExportTaskOutput  {
     /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to.</p>
     #[doc(hidden)]
     pub export_task_identifier: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
     #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
-    /// <p>The data exported from the snapshot. Valid values are the following:</p>
-    /// <ul>
-    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
-    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
-    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
-    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+    /// <p>The data exported from the snapshot. Valid values are the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li> 
+    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> 
+    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
+    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub export_only: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11620,53 +10981,53 @@ pub struct CancelExportTaskOutput {
 }
 impl CancelExportTaskOutput {
     /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to.</p>
-    pub fn export_task_identifier(&self) -> std::option::Option<&str> {
+    pub fn export_task_identifier(&self) -> std::option::Option<& str> {
         self.export_task_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> std::option::Option<& str> {
         self.source_arn.as_deref()
     }
-    /// <p>The data exported from the snapshot. Valid values are the following:</p>
-    /// <ul>
-    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
-    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
-    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
-    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+    /// <p>The data exported from the snapshot. Valid values are the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li> 
+    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> 
+    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
+    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
     /// </ul>
-    pub fn export_only(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn export_only(&self) -> std::option::Option<& [std::string::String]> {
         self.export_only.as_deref()
     }
     /// <p>The time that the snapshot was created.</p>
-    pub fn snapshot_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn snapshot_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.snapshot_time.as_ref()
     }
     /// <p>The time that the snapshot export task started.</p>
-    pub fn task_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn task_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.task_start_time.as_ref()
     }
     /// <p>The time that the snapshot export task completed.</p>
-    pub fn task_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn task_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.task_end_time.as_ref()
     }
     /// <p>The Amazon S3 bucket that the snapshot is exported to.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The Amazon S3 bucket prefix that is the file name and path of the exported snapshot.</p>
-    pub fn s3_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_prefix(&self) -> std::option::Option<& str> {
         self.s3_prefix.as_deref()
     }
     /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot.</p>
-    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export must have encryption and decryption permissions to use this KMS key.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The progress status of the export task.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The progress of the snapshot export task as a percentage.</p>
@@ -11678,21 +11039,21 @@ impl CancelExportTaskOutput {
         self.total_extracted_data_in_gb
     }
     /// <p>The reason the export failed, if it failed.</p>
-    pub fn failure_cause(&self) -> std::option::Option<&str> {
+    pub fn failure_cause(&self) -> std::option::Option<& str> {
         self.failure_cause.as_deref()
     }
     /// <p>A warning about the snapshot export task.</p>
-    pub fn warning_message(&self) -> std::option::Option<&str> {
+    pub fn warning_message(&self) -> std::option::Option<& str> {
         self.warning_message.as_deref()
     }
     /// <p>The type of source for the export.</p>
-    pub fn source_type(&self) -> std::option::Option<&crate::model::ExportSourceType> {
+    pub fn source_type(&self) -> std::option::Option<& crate::model::ExportSourceType> {
         self.source_type.as_ref()
     }
 }
 /// See [`CancelExportTaskOutput`](crate::output::CancelExportTaskOutput).
 pub mod cancel_export_task_output {
-
+    
     /// A builder for [`CancelExportTaskOutput`](crate::output::CancelExportTaskOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11720,12 +11081,8 @@ pub mod cancel_export_task_output {
             self
         }
         /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for the Amazon S3 bucket where the snapshot is exported to.</p>
-        pub fn set_export_task_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.export_task_identifier = input;
-            self
+        pub fn set_export_task_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.export_task_identifier = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11734,39 +11091,34 @@ pub mod cancel_export_task_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_arn = input;
-            self
+            self.source_arn = input; self
         }
         /// Appends an item to `export_only`.
         ///
         /// To override the contents of this collection use [`set_export_only`](Self::set_export_only).
         ///
-        /// <p>The data exported from the snapshot. Valid values are the following:</p>
-        /// <ul>
-        /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
-        /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
-        /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
-        /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+        /// <p>The data exported from the snapshot. Valid values are the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li> 
+        /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> 
+        /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
+        /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
         /// </ul>
         pub fn export_only(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.export_only.unwrap_or_default();
-            v.push(input.into());
-            self.export_only = Some(v);
-            self
+                            v.push(input.into());
+                            self.export_only = Some(v);
+                            self
         }
-        /// <p>The data exported from the snapshot. Valid values are the following:</p>
-        /// <ul>
-        /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
-        /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
-        /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
-        /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+        /// <p>The data exported from the snapshot. Valid values are the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li> 
+        /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> 
+        /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
+        /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
         /// </ul>
-        pub fn set_export_only(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.export_only = input;
-            self
+        pub fn set_export_only(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.export_only = input; self
         }
         /// <p>The time that the snapshot was created.</p>
         pub fn snapshot_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11774,12 +11126,8 @@ pub mod cancel_export_task_output {
             self
         }
         /// <p>The time that the snapshot was created.</p>
-        pub fn set_snapshot_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.snapshot_time = input;
-            self
+        pub fn set_snapshot_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.snapshot_time = input; self
         }
         /// <p>The time that the snapshot export task started.</p>
         pub fn task_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11787,12 +11135,8 @@ pub mod cancel_export_task_output {
             self
         }
         /// <p>The time that the snapshot export task started.</p>
-        pub fn set_task_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.task_start_time = input;
-            self
+        pub fn set_task_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.task_start_time = input; self
         }
         /// <p>The time that the snapshot export task completed.</p>
         pub fn task_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -11800,12 +11144,8 @@ pub mod cancel_export_task_output {
             self
         }
         /// <p>The time that the snapshot export task completed.</p>
-        pub fn set_task_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.task_end_time = input;
-            self
+        pub fn set_task_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.task_end_time = input; self
         }
         /// <p>The Amazon S3 bucket that the snapshot is exported to.</p>
         pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11814,8 +11154,7 @@ pub mod cancel_export_task_output {
         }
         /// <p>The Amazon S3 bucket that the snapshot is exported to.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = input;
-            self
+            self.s3_bucket = input; self
         }
         /// <p>The Amazon S3 bucket prefix that is the file name and path of the exported snapshot.</p>
         pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11824,8 +11163,7 @@ pub mod cancel_export_task_output {
         }
         /// <p>The Amazon S3 bucket prefix that is the file name and path of the exported snapshot.</p>
         pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_prefix = input;
-            self
+            self.s3_prefix = input; self
         }
         /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot.</p>
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11834,8 +11172,7 @@ pub mod cancel_export_task_output {
         }
         /// <p>The name of the IAM role that is used to write to Amazon S3 when exporting a snapshot.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_role_arn = input;
-            self
+            self.iam_role_arn = input; self
         }
         /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export must have encryption and decryption permissions to use this KMS key.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11844,8 +11181,7 @@ pub mod cancel_export_task_output {
         }
         /// <p>The key identifier of the Amazon Web Services KMS key that is used to encrypt the snapshot when it's exported to Amazon S3. The KMS key identifier is its key ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export must have encryption and decryption permissions to use this KMS key.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>The progress status of the export task.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11854,8 +11190,7 @@ pub mod cancel_export_task_output {
         }
         /// <p>The progress status of the export task.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The progress of the snapshot export task as a percentage.</p>
         pub fn percent_progress(mut self, input: i32) -> Self {
@@ -11864,8 +11199,7 @@ pub mod cancel_export_task_output {
         }
         /// <p>The progress of the snapshot export task as a percentage.</p>
         pub fn set_percent_progress(mut self, input: std::option::Option<i32>) -> Self {
-            self.percent_progress = input;
-            self
+            self.percent_progress = input; self
         }
         /// <p>The total amount of data exported, in gigabytes.</p>
         pub fn total_extracted_data_in_gb(mut self, input: i32) -> Self {
@@ -11874,8 +11208,7 @@ pub mod cancel_export_task_output {
         }
         /// <p>The total amount of data exported, in gigabytes.</p>
         pub fn set_total_extracted_data_in_gb(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_extracted_data_in_gb = input;
-            self
+            self.total_extracted_data_in_gb = input; self
         }
         /// <p>The reason the export failed, if it failed.</p>
         pub fn failure_cause(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11883,12 +11216,8 @@ pub mod cancel_export_task_output {
             self
         }
         /// <p>The reason the export failed, if it failed.</p>
-        pub fn set_failure_cause(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_cause = input;
-            self
+        pub fn set_failure_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_cause = input; self
         }
         /// <p>A warning about the snapshot export task.</p>
         pub fn warning_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11896,12 +11225,8 @@ pub mod cancel_export_task_output {
             self
         }
         /// <p>A warning about the snapshot export task.</p>
-        pub fn set_warning_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.warning_message = input;
-            self
+        pub fn set_warning_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.warning_message = input; self
         }
         /// <p>The type of source for the export.</p>
         pub fn source_type(mut self, input: crate::model::ExportSourceType) -> Self {
@@ -11909,35 +11234,51 @@ pub mod cancel_export_task_output {
             self
         }
         /// <p>The type of source for the export.</p>
-        pub fn set_source_type(
-            mut self,
-            input: std::option::Option<crate::model::ExportSourceType>,
-        ) -> Self {
-            self.source_type = input;
-            self
+        pub fn set_source_type(mut self, input: std::option::Option<crate::model::ExportSourceType>) -> Self {
+            self.source_type = input; self
         }
         /// Consumes the builder and constructs a [`CancelExportTaskOutput`](crate::output::CancelExportTaskOutput).
         pub fn build(self) -> crate::output::CancelExportTaskOutput {
             crate::output::CancelExportTaskOutput {
-                export_task_identifier: self.export_task_identifier,
-                source_arn: self.source_arn,
-                export_only: self.export_only,
-                snapshot_time: self.snapshot_time,
-                task_start_time: self.task_start_time,
-                task_end_time: self.task_end_time,
-                s3_bucket: self.s3_bucket,
-                s3_prefix: self.s3_prefix,
-                iam_role_arn: self.iam_role_arn,
-                kms_key_id: self.kms_key_id,
-                status: self.status,
-                percent_progress: self.percent_progress.unwrap_or_default(),
-                total_extracted_data_in_gb: self.total_extracted_data_in_gb.unwrap_or_default(),
-                failure_cause: self.failure_cause,
-                warning_message: self.warning_message,
-                source_type: self.source_type,
+                export_task_identifier: self.export_task_identifier
+                ,
+                source_arn: self.source_arn
+                ,
+                export_only: self.export_only
+                ,
+                snapshot_time: self.snapshot_time
+                ,
+                task_start_time: self.task_start_time
+                ,
+                task_end_time: self.task_end_time
+                ,
+                s3_bucket: self.s3_bucket
+                ,
+                s3_prefix: self.s3_prefix
+                ,
+                iam_role_arn: self.iam_role_arn
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                status: self.status
+                ,
+                percent_progress: self.percent_progress
+                    .unwrap_or_default()
+                ,
+                total_extracted_data_in_gb: self.total_extracted_data_in_gb
+                    .unwrap_or_default()
+                ,
+                failure_cause: self.failure_cause
+                ,
+                warning_message: self.warning_message
+                ,
+                source_type: self.source_type
+                ,
             }
         }
     }
+    
+    
 }
 impl CancelExportTaskOutput {
     /// Creates a new builder-style object to manufacture [`CancelExportTaskOutput`](crate::output::CancelExportTaskOutput).
@@ -11949,7 +11290,7 @@ impl CancelExportTaskOutput {
 /// <p>This data type is used as a response element in the <code>DescribeDBClusterBacktracks</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BacktrackDbClusterOutput {
+pub struct BacktrackDbClusterOutput  {
     /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
     #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
@@ -11965,53 +11306,51 @@ pub struct BacktrackDbClusterOutput {
     /// <p>The timestamp of the time at which the backtrack was requested.</p>
     #[doc(hidden)]
     pub backtrack_request_creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the backtrack. This property returns one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li>
-    /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li>
-    /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li>
-    /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li>
+    /// <p>The status of the backtrack. This property returns one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li> 
+    /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li> 
+    /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li> 
+    /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl BacktrackDbClusterOutput {
     /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> std::option::Option<& str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>Contains the backtrack identifier.</p>
-    pub fn backtrack_identifier(&self) -> std::option::Option<&str> {
+    pub fn backtrack_identifier(&self) -> std::option::Option<& str> {
         self.backtrack_identifier.as_deref()
     }
     /// <p>The timestamp of the time to which the DB cluster was backtracked.</p>
-    pub fn backtrack_to(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn backtrack_to(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.backtrack_to.as_ref()
     }
     /// <p>The timestamp of the time from which the DB cluster was backtracked.</p>
-    pub fn backtracked_from(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn backtracked_from(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.backtracked_from.as_ref()
     }
     /// <p>The timestamp of the time at which the backtrack was requested.</p>
-    pub fn backtrack_request_creation_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn backtrack_request_creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.backtrack_request_creation_time.as_ref()
     }
-    /// <p>The status of the backtrack. This property returns one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li>
-    /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li>
-    /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li>
-    /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li>
+    /// <p>The status of the backtrack. This property returns one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li> 
+    /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li> 
+    /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li> 
+    /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`BacktrackDbClusterOutput`](crate::output::BacktrackDbClusterOutput).
 pub mod backtrack_db_cluster_output {
-
+    
     /// A builder for [`BacktrackDbClusterOutput`](crate::output::BacktrackDbClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12029,12 +11368,8 @@ pub mod backtrack_db_cluster_output {
             self
         }
         /// <p>Contains a user-supplied DB cluster identifier. This identifier is the unique key that identifies a DB cluster.</p>
-        pub fn set_db_cluster_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.db_cluster_identifier = input;
-            self
+        pub fn set_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.db_cluster_identifier = input; self
         }
         /// <p>Contains the backtrack identifier.</p>
         pub fn backtrack_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12042,12 +11377,8 @@ pub mod backtrack_db_cluster_output {
             self
         }
         /// <p>Contains the backtrack identifier.</p>
-        pub fn set_backtrack_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backtrack_identifier = input;
-            self
+        pub fn set_backtrack_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backtrack_identifier = input; self
         }
         /// <p>The timestamp of the time to which the DB cluster was backtracked.</p>
         pub fn backtrack_to(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -12055,12 +11386,8 @@ pub mod backtrack_db_cluster_output {
             self
         }
         /// <p>The timestamp of the time to which the DB cluster was backtracked.</p>
-        pub fn set_backtrack_to(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.backtrack_to = input;
-            self
+        pub fn set_backtrack_to(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.backtrack_to = input; self
         }
         /// <p>The timestamp of the time from which the DB cluster was backtracked.</p>
         pub fn backtracked_from(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -12068,63 +11395,59 @@ pub mod backtrack_db_cluster_output {
             self
         }
         /// <p>The timestamp of the time from which the DB cluster was backtracked.</p>
-        pub fn set_backtracked_from(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.backtracked_from = input;
-            self
+        pub fn set_backtracked_from(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.backtracked_from = input; self
         }
         /// <p>The timestamp of the time at which the backtrack was requested.</p>
-        pub fn backtrack_request_creation_time(
-            mut self,
-            input: aws_smithy_types::DateTime,
-        ) -> Self {
+        pub fn backtrack_request_creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.backtrack_request_creation_time = Some(input);
             self
         }
         /// <p>The timestamp of the time at which the backtrack was requested.</p>
-        pub fn set_backtrack_request_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.backtrack_request_creation_time = input;
-            self
+        pub fn set_backtrack_request_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.backtrack_request_creation_time = input; self
         }
-        /// <p>The status of the backtrack. This property returns one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li>
-        /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li>
-        /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li>
-        /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li>
+        /// <p>The status of the backtrack. This property returns one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li> 
+        /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li> 
+        /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li> 
+        /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The status of the backtrack. This property returns one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li>
-        /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li>
-        /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li>
-        /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li>
+        /// <p>The status of the backtrack. This property returns one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>applying</code> - The backtrack is currently being applied to or rolled back from the DB cluster.</p> </li> 
+        /// <li> <p> <code>completed</code> - The backtrack has successfully been applied to or rolled back from the DB cluster.</p> </li> 
+        /// <li> <p> <code>failed</code> - An error occurred while the backtrack was applied to or rolled back from the DB cluster.</p> </li> 
+        /// <li> <p> <code>pending</code> - The backtrack is currently pending application to or rollback from the DB cluster.</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`BacktrackDbClusterOutput`](crate::output::BacktrackDbClusterOutput).
         pub fn build(self) -> crate::output::BacktrackDbClusterOutput {
             crate::output::BacktrackDbClusterOutput {
-                db_cluster_identifier: self.db_cluster_identifier,
-                backtrack_identifier: self.backtrack_identifier,
-                backtrack_to: self.backtrack_to,
-                backtracked_from: self.backtracked_from,
-                backtrack_request_creation_time: self.backtrack_request_creation_time,
-                status: self.status,
+                db_cluster_identifier: self.db_cluster_identifier
+                ,
+                backtrack_identifier: self.backtrack_identifier
+                ,
+                backtrack_to: self.backtrack_to
+                ,
+                backtracked_from: self.backtracked_from
+                ,
+                backtrack_request_creation_time: self.backtrack_request_creation_time
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl BacktrackDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`BacktrackDbClusterOutput`](crate::output::BacktrackDbClusterOutput).
@@ -12136,50 +11459,49 @@ impl BacktrackDbClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthorizeDbSecurityGroupIngressOutput {
-    /// <p>Contains the details for an Amazon RDS DB security group.</p>
+pub struct AuthorizeDbSecurityGroupIngressOutput  {
+    /// <p>Contains the details for an Amazon RDS DB security group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
     #[doc(hidden)]
     pub db_security_group: std::option::Option<crate::model::DbSecurityGroup>,
 }
 impl AuthorizeDbSecurityGroupIngressOutput {
-    /// <p>Contains the details for an Amazon RDS DB security group.</p>
+    /// <p>Contains the details for an Amazon RDS DB security group.</p> 
     /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
-    pub fn db_security_group(&self) -> std::option::Option<&crate::model::DbSecurityGroup> {
+    pub fn db_security_group(&self) -> std::option::Option<& crate::model::DbSecurityGroup> {
         self.db_security_group.as_ref()
     }
 }
 /// See [`AuthorizeDbSecurityGroupIngressOutput`](crate::output::AuthorizeDbSecurityGroupIngressOutput).
 pub mod authorize_db_security_group_ingress_output {
-
+    
     /// A builder for [`AuthorizeDbSecurityGroupIngressOutput`](crate::output::AuthorizeDbSecurityGroupIngressOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) db_security_group: std::option::Option<crate::model::DbSecurityGroup>,
     }
     impl Builder {
-        /// <p>Contains the details for an Amazon RDS DB security group.</p>
+        /// <p>Contains the details for an Amazon RDS DB security group.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
         pub fn db_security_group(mut self, input: crate::model::DbSecurityGroup) -> Self {
             self.db_security_group = Some(input);
             self
         }
-        /// <p>Contains the details for an Amazon RDS DB security group.</p>
+        /// <p>Contains the details for an Amazon RDS DB security group.</p> 
         /// <p>This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.</p>
-        pub fn set_db_security_group(
-            mut self,
-            input: std::option::Option<crate::model::DbSecurityGroup>,
-        ) -> Self {
-            self.db_security_group = input;
-            self
+        pub fn set_db_security_group(mut self, input: std::option::Option<crate::model::DbSecurityGroup>) -> Self {
+            self.db_security_group = input; self
         }
         /// Consumes the builder and constructs a [`AuthorizeDbSecurityGroupIngressOutput`](crate::output::AuthorizeDbSecurityGroupIngressOutput).
         pub fn build(self) -> crate::output::AuthorizeDbSecurityGroupIngressOutput {
             crate::output::AuthorizeDbSecurityGroupIngressOutput {
-                db_security_group: self.db_security_group,
+                db_security_group: self.db_security_group
+                ,
             }
         }
     }
+    
+    
 }
 impl AuthorizeDbSecurityGroupIngressOutput {
     /// Creates a new builder-style object to manufacture [`AuthorizeDbSecurityGroupIngressOutput`](crate::output::AuthorizeDbSecurityGroupIngressOutput).
@@ -12191,53 +11513,45 @@ impl AuthorizeDbSecurityGroupIngressOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplyPendingMaintenanceActionOutput {
+pub struct ApplyPendingMaintenanceActionOutput  {
     /// <p>Describes the pending maintenance actions for a resource.</p>
     #[doc(hidden)]
-    pub resource_pending_maintenance_actions:
-        std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
+    pub resource_pending_maintenance_actions: std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
 }
 impl ApplyPendingMaintenanceActionOutput {
     /// <p>Describes the pending maintenance actions for a resource.</p>
-    pub fn resource_pending_maintenance_actions(
-        &self,
-    ) -> std::option::Option<&crate::model::ResourcePendingMaintenanceActions> {
+    pub fn resource_pending_maintenance_actions(&self) -> std::option::Option<& crate::model::ResourcePendingMaintenanceActions> {
         self.resource_pending_maintenance_actions.as_ref()
     }
 }
 /// See [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
 pub mod apply_pending_maintenance_action_output {
-
+    
     /// A builder for [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resource_pending_maintenance_actions:
-            std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
+        pub(crate) resource_pending_maintenance_actions: std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
     }
     impl Builder {
         /// <p>Describes the pending maintenance actions for a resource.</p>
-        pub fn resource_pending_maintenance_actions(
-            mut self,
-            input: crate::model::ResourcePendingMaintenanceActions,
-        ) -> Self {
+        pub fn resource_pending_maintenance_actions(mut self, input: crate::model::ResourcePendingMaintenanceActions) -> Self {
             self.resource_pending_maintenance_actions = Some(input);
             self
         }
         /// <p>Describes the pending maintenance actions for a resource.</p>
-        pub fn set_resource_pending_maintenance_actions(
-            mut self,
-            input: std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
-        ) -> Self {
-            self.resource_pending_maintenance_actions = input;
-            self
+        pub fn set_resource_pending_maintenance_actions(mut self, input: std::option::Option<crate::model::ResourcePendingMaintenanceActions>) -> Self {
+            self.resource_pending_maintenance_actions = input; self
         }
         /// Consumes the builder and constructs a [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
         pub fn build(self) -> crate::output::ApplyPendingMaintenanceActionOutput {
             crate::output::ApplyPendingMaintenanceActionOutput {
-                resource_pending_maintenance_actions: self.resource_pending_maintenance_actions,
+                resource_pending_maintenance_actions: self.resource_pending_maintenance_actions
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplyPendingMaintenanceActionOutput {
     /// Creates a new builder-style object to manufacture [`ApplyPendingMaintenanceActionOutput`](crate::output::ApplyPendingMaintenanceActionOutput).
@@ -12249,19 +11563,24 @@ impl ApplyPendingMaintenanceActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddTagsToResourceOutput {}
+pub struct AddTagsToResourceOutput  {
+}
 /// See [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
 pub mod add_tags_to_resource_output {
-
+    
     /// A builder for [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
         pub fn build(self) -> crate::output::AddTagsToResourceOutput {
-            crate::output::AddTagsToResourceOutput {}
+            crate::output::AddTagsToResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl AddTagsToResourceOutput {
     /// Creates a new builder-style object to manufacture [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
@@ -12273,20 +11592,20 @@ impl AddTagsToResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddSourceIdentifierToSubscriptionOutput {
+pub struct AddSourceIdentifierToSubscriptionOutput  {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
     #[doc(hidden)]
     pub event_subscription: std::option::Option<crate::model::EventSubscription>,
 }
 impl AddSourceIdentifierToSubscriptionOutput {
     /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
-    pub fn event_subscription(&self) -> std::option::Option<&crate::model::EventSubscription> {
+    pub fn event_subscription(&self) -> std::option::Option<& crate::model::EventSubscription> {
         self.event_subscription.as_ref()
     }
 }
 /// See [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput).
 pub mod add_source_identifier_to_subscription_output {
-
+    
     /// A builder for [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12299,20 +11618,19 @@ pub mod add_source_identifier_to_subscription_output {
             self
         }
         /// <p>Contains the results of a successful invocation of the <code>DescribeEventSubscriptions</code> action.</p>
-        pub fn set_event_subscription(
-            mut self,
-            input: std::option::Option<crate::model::EventSubscription>,
-        ) -> Self {
-            self.event_subscription = input;
-            self
+        pub fn set_event_subscription(mut self, input: std::option::Option<crate::model::EventSubscription>) -> Self {
+            self.event_subscription = input; self
         }
         /// Consumes the builder and constructs a [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput).
         pub fn build(self) -> crate::output::AddSourceIdentifierToSubscriptionOutput {
             crate::output::AddSourceIdentifierToSubscriptionOutput {
-                event_subscription: self.event_subscription,
+                event_subscription: self.event_subscription
+                ,
             }
         }
     }
+    
+    
 }
 impl AddSourceIdentifierToSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`AddSourceIdentifierToSubscriptionOutput`](crate::output::AddSourceIdentifierToSubscriptionOutput).
@@ -12324,19 +11642,24 @@ impl AddSourceIdentifierToSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddRoleToDbInstanceOutput {}
+pub struct AddRoleToDbInstanceOutput  {
+}
 /// See [`AddRoleToDbInstanceOutput`](crate::output::AddRoleToDbInstanceOutput).
 pub mod add_role_to_db_instance_output {
-
+    
     /// A builder for [`AddRoleToDbInstanceOutput`](crate::output::AddRoleToDbInstanceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddRoleToDbInstanceOutput`](crate::output::AddRoleToDbInstanceOutput).
         pub fn build(self) -> crate::output::AddRoleToDbInstanceOutput {
-            crate::output::AddRoleToDbInstanceOutput {}
+            crate::output::AddRoleToDbInstanceOutput {
+            }
         }
     }
+    
+    
 }
 impl AddRoleToDbInstanceOutput {
     /// Creates a new builder-style object to manufacture [`AddRoleToDbInstanceOutput`](crate::output::AddRoleToDbInstanceOutput).
@@ -12348,19 +11671,24 @@ impl AddRoleToDbInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddRoleToDbClusterOutput {}
+pub struct AddRoleToDbClusterOutput  {
+}
 /// See [`AddRoleToDbClusterOutput`](crate::output::AddRoleToDbClusterOutput).
 pub mod add_role_to_db_cluster_output {
-
+    
     /// A builder for [`AddRoleToDbClusterOutput`](crate::output::AddRoleToDbClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddRoleToDbClusterOutput`](crate::output::AddRoleToDbClusterOutput).
         pub fn build(self) -> crate::output::AddRoleToDbClusterOutput {
-            crate::output::AddRoleToDbClusterOutput {}
+            crate::output::AddRoleToDbClusterOutput {
+            }
         }
     }
+    
+    
 }
 impl AddRoleToDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`AddRoleToDbClusterOutput`](crate::output::AddRoleToDbClusterOutput).
@@ -12368,3 +11696,4 @@ impl AddRoleToDbClusterOutput {
         crate::output::add_role_to_db_cluster_output::Builder::default()
     }
 }
+

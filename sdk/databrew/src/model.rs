@@ -3,21 +3,20 @@
 /// <p>Represents a single data quality requirement that should be validated in the scope of this dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Rule {
+pub struct Rule  {
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>A value that specifies whether the rule is disabled. Once a rule is disabled, a profile job will not validate it during a job run. Default value is false.</p>
     #[doc(hidden)]
     pub disabled: bool,
-    /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no column reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p>
+    /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no column reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available checks</a> </p>
     #[doc(hidden)]
     pub check_expression: std::option::Option<std::string::String>,
     /// <p>The map of substitution variable names to their values used in a check expression. Variable names should start with a ':' (colon). Variable values can either be actual values or column names. To differentiate between the two, column names should be enclosed in backticks, for example, <code>":col1": "`Column A`".</code> </p>
     #[doc(hidden)]
-    pub substitution_map:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub substitution_map: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The threshold used with a non-aggregate check expression. Non-aggregate check expressions will be applied to each row in a specific column, and the threshold will be used to determine whether the validation succeeds.</p>
     #[doc(hidden)]
     pub threshold: std::option::Option<crate::model::Threshold>,
@@ -27,49 +26,43 @@ pub struct Rule {
 }
 impl Rule {
     /// <p>The name of the rule.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A value that specifies whether the rule is disabled. Once a rule is disabled, a profile job will not validate it during a job run. Default value is false.</p>
     pub fn disabled(&self) -> bool {
         self.disabled
     }
-    /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no column reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p>
+    /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no column reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available checks</a> </p>
-    pub fn check_expression(&self) -> std::option::Option<&str> {
+    pub fn check_expression(&self) -> std::option::Option<& str> {
         self.check_expression.as_deref()
     }
     /// <p>The map of substitution variable names to their values used in a check expression. Variable names should start with a ':' (colon). Variable values can either be actual values or column names. To differentiate between the two, column names should be enclosed in backticks, for example, <code>":col1": "`Column A`".</code> </p>
-    pub fn substitution_map(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn substitution_map(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.substitution_map.as_ref()
     }
     /// <p>The threshold used with a non-aggregate check expression. Non-aggregate check expressions will be applied to each row in a specific column, and the threshold will be used to determine whether the validation succeeds.</p>
-    pub fn threshold(&self) -> std::option::Option<&crate::model::Threshold> {
+    pub fn threshold(&self) -> std::option::Option<& crate::model::Threshold> {
         self.threshold.as_ref()
     }
     /// <p>List of column selectors. Selectors can be used to select columns using a name or regular expression from the dataset. Rule will be applied to selected columns.</p>
-    pub fn column_selectors(&self) -> std::option::Option<&[crate::model::ColumnSelector]> {
+    pub fn column_selectors(&self) -> std::option::Option<& [crate::model::ColumnSelector]> {
         self.column_selectors.as_deref()
     }
 }
 /// See [`Rule`](crate::model::Rule).
 pub mod rule {
-
+    
     /// A builder for [`Rule`](crate::model::Rule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) disabled: std::option::Option<bool>,
         pub(crate) check_expression: std::option::Option<std::string::String>,
-        pub(crate) substitution_map: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) substitution_map: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) threshold: std::option::Option<crate::model::Threshold>,
-        pub(crate) column_selectors:
-            std::option::Option<std::vec::Vec<crate::model::ColumnSelector>>,
+        pub(crate) column_selectors: std::option::Option<std::vec::Vec<crate::model::ColumnSelector>>,
     }
     impl Builder {
         /// <p>The name of the rule.</p>
@@ -79,8 +72,7 @@ pub mod rule {
         }
         /// <p>The name of the rule.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A value that specifies whether the rule is disabled. Once a rule is disabled, a profile job will not validate it during a job run. Default value is false.</p>
         pub fn disabled(mut self, input: bool) -> Self {
@@ -89,48 +81,33 @@ pub mod rule {
         }
         /// <p>A value that specifies whether the rule is disabled. Once a rule is disabled, a profile job will not validate it during a job run. Default value is false.</p>
         pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.disabled = input;
-            self
+            self.disabled = input; self
         }
-        /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no column reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p>
+        /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no column reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available checks</a> </p>
         pub fn check_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.check_expression = Some(input.into());
             self
         }
-        /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no column reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p>
+        /// <p>The expression which includes column references, condition names followed by variable references, possibly grouped and combined with other conditions. For example, <code>(:col1 starts_with :prefix1 or :col1 starts_with :prefix2) and (:col1 ends_with :suffix1 or :col1 ends_with :suffix2)</code>. Column and value references are substitution variables that should start with the ':' symbol. Depending on the context, substitution variables' values can be either an actual value or a column name. These values are defined in the SubstitutionMap. If a CheckExpression starts with a column reference, then ColumnSelectors in the rule should be null. If ColumnSelectors has been defined, then there should be no column reference in the left side of a condition, for example, <code>is_between :val1 and :val2</code>.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-available-checks.html">Available checks</a> </p>
-        pub fn set_check_expression(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.check_expression = input;
-            self
+        pub fn set_check_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.check_expression = input; self
         }
         /// Adds a key-value pair to `substitution_map`.
         ///
         /// To override the contents of this collection use [`set_substitution_map`](Self::set_substitution_map).
         ///
         /// <p>The map of substitution variable names to their values used in a check expression. Variable names should start with a ':' (colon). Variable values can either be actual values or column names. To differentiate between the two, column names should be enclosed in backticks, for example, <code>":col1": "`Column A`".</code> </p>
-        pub fn substitution_map(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn substitution_map(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.substitution_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.substitution_map = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.substitution_map = Some(hash_map);
+                            self
         }
         /// <p>The map of substitution variable names to their values used in a check expression. Variable names should start with a ':' (colon). Variable values can either be actual values or column names. To differentiate between the two, column names should be enclosed in backticks, for example, <code>":col1": "`Column A`".</code> </p>
-        pub fn set_substitution_map(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.substitution_map = input;
-            self
+        pub fn set_substitution_map(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.substitution_map = input; self
         }
         /// <p>The threshold used with a non-aggregate check expression. Non-aggregate check expressions will be applied to each row in a specific column, and the threshold will be used to determine whether the validation succeeds.</p>
         pub fn threshold(mut self, input: crate::model::Threshold) -> Self {
@@ -138,12 +115,8 @@ pub mod rule {
             self
         }
         /// <p>The threshold used with a non-aggregate check expression. Non-aggregate check expressions will be applied to each row in a specific column, and the threshold will be used to determine whether the validation succeeds.</p>
-        pub fn set_threshold(
-            mut self,
-            input: std::option::Option<crate::model::Threshold>,
-        ) -> Self {
-            self.threshold = input;
-            self
+        pub fn set_threshold(mut self, input: std::option::Option<crate::model::Threshold>) -> Self {
+            self.threshold = input; self
         }
         /// Appends an item to `column_selectors`.
         ///
@@ -152,30 +125,35 @@ pub mod rule {
         /// <p>List of column selectors. Selectors can be used to select columns using a name or regular expression from the dataset. Rule will be applied to selected columns.</p>
         pub fn column_selectors(mut self, input: crate::model::ColumnSelector) -> Self {
             let mut v = self.column_selectors.unwrap_or_default();
-            v.push(input);
-            self.column_selectors = Some(v);
-            self
+                            v.push(input);
+                            self.column_selectors = Some(v);
+                            self
         }
         /// <p>List of column selectors. Selectors can be used to select columns using a name or regular expression from the dataset. Rule will be applied to selected columns.</p>
-        pub fn set_column_selectors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ColumnSelector>>,
-        ) -> Self {
-            self.column_selectors = input;
-            self
+        pub fn set_column_selectors(mut self, input: std::option::Option<std::vec::Vec<crate::model::ColumnSelector>>) -> Self {
+            self.column_selectors = input; self
         }
         /// Consumes the builder and constructs a [`Rule`](crate::model::Rule).
         pub fn build(self) -> crate::model::Rule {
             crate::model::Rule {
-                name: self.name,
-                disabled: self.disabled.unwrap_or_default(),
-                check_expression: self.check_expression,
-                substitution_map: self.substitution_map,
-                threshold: self.threshold,
-                column_selectors: self.column_selectors,
+                name: self.name
+                ,
+                disabled: self.disabled
+                    .unwrap_or_default()
+                ,
+                check_expression: self.check_expression
+                ,
+                substitution_map: self.substitution_map
+                ,
+                threshold: self.threshold
+                ,
+                column_selectors: self.column_selectors
+                ,
             }
         }
     }
+    
+    
 }
 impl Rule {
     /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
@@ -187,7 +165,7 @@ impl Rule {
 /// <p>Selector of a column from a dataset for profile job configuration. One selector includes either a column name or a regular expression.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ColumnSelector {
+pub struct ColumnSelector  {
     /// <p>A regular expression for selecting a column from a dataset.</p>
     #[doc(hidden)]
     pub regex: std::option::Option<std::string::String>,
@@ -197,17 +175,17 @@ pub struct ColumnSelector {
 }
 impl ColumnSelector {
     /// <p>A regular expression for selecting a column from a dataset.</p>
-    pub fn regex(&self) -> std::option::Option<&str> {
+    pub fn regex(&self) -> std::option::Option<& str> {
         self.regex.as_deref()
     }
     /// <p>The name of a column from a dataset.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`ColumnSelector`](crate::model::ColumnSelector).
 pub mod column_selector {
-
+    
     /// A builder for [`ColumnSelector`](crate::model::ColumnSelector).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -222,8 +200,7 @@ pub mod column_selector {
         }
         /// <p>A regular expression for selecting a column from a dataset.</p>
         pub fn set_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.regex = input;
-            self
+            self.regex = input; self
         }
         /// <p>The name of a column from a dataset.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -232,17 +209,20 @@ pub mod column_selector {
         }
         /// <p>The name of a column from a dataset.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`ColumnSelector`](crate::model::ColumnSelector).
         pub fn build(self) -> crate::model::ColumnSelector {
             crate::model::ColumnSelector {
-                regex: self.regex,
-                name: self.name,
+                regex: self.regex
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl ColumnSelector {
     /// Creates a new builder-style object to manufacture [`ColumnSelector`](crate::model::ColumnSelector).
@@ -254,7 +234,7 @@ impl ColumnSelector {
 /// <p>The threshold used with a non-aggregate check expression. The non-aggregate check expression will be applied to each row in a specific column. Then the threshold will be used to determine whether the validation succeeds.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Threshold {
+pub struct Threshold  {
     /// <p>The value of a threshold.</p>
     #[doc(hidden)]
     pub value: f64,
@@ -271,17 +251,17 @@ impl Threshold {
         self.value
     }
     /// <p>The type of a threshold. Used for comparison of an actual count of rows that satisfy the rule to the threshold value.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ThresholdType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ThresholdType> {
         self.r#type.as_ref()
     }
     /// <p>Unit of threshold value. Can be either a COUNT or PERCENTAGE of the full sample size used for validation.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::model::ThresholdUnit> {
+    pub fn unit(&self) -> std::option::Option<& crate::model::ThresholdUnit> {
         self.unit.as_ref()
     }
 }
 /// See [`Threshold`](crate::model::Threshold).
 pub mod threshold {
-
+    
     /// A builder for [`Threshold`](crate::model::Threshold).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -297,8 +277,7 @@ pub mod threshold {
         }
         /// <p>The value of a threshold.</p>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>The type of a threshold. Used for comparison of an actual count of rows that satisfy the rule to the threshold value.</p>
         pub fn r#type(mut self, input: crate::model::ThresholdType) -> Self {
@@ -307,8 +286,7 @@ pub mod threshold {
         }
         /// <p>The type of a threshold. Used for comparison of an actual count of rows that satisfy the rule to the threshold value.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ThresholdType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>Unit of threshold value. Can be either a COUNT or PERCENTAGE of the full sample size used for validation.</p>
         pub fn unit(mut self, input: crate::model::ThresholdUnit) -> Self {
@@ -317,18 +295,23 @@ pub mod threshold {
         }
         /// <p>Unit of threshold value. Can be either a COUNT or PERCENTAGE of the full sample size used for validation.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::ThresholdUnit>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// Consumes the builder and constructs a [`Threshold`](crate::model::Threshold).
         pub fn build(self) -> crate::model::Threshold {
             crate::model::Threshold {
-                value: self.value.unwrap_or_default(),
-                r#type: self.r#type,
-                unit: self.unit,
+                value: self.value
+                    .unwrap_or_default()
+                ,
+                r#type: self.r#type
+                ,
+                unit: self.unit
+                ,
             }
         }
     }
+    
+    
 }
 impl Threshold {
     /// Creates a new builder-style object to manufacture [`Threshold`](crate::model::Threshold).
@@ -343,9 +326,9 @@ impl Threshold {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let thresholdunit = unimplemented!();
 /// match thresholdunit {
@@ -367,58 +350,52 @@ impl Threshold {
 /// Specifically, when `thresholdunit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ThresholdUnit::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ThresholdUnit {
     #[allow(missing_docs)] // documentation missing in model
     Count,
     #[allow(missing_docs)] // documentation missing in model
     Percentage,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ThresholdUnit {
     fn from(s: &str) -> Self {
         match s {
             "COUNT" => ThresholdUnit::Count,
             "PERCENTAGE" => ThresholdUnit::Percentage,
-            other => ThresholdUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ThresholdUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ThresholdUnit {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ThresholdUnit::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ThresholdUnit::from(s))
+                }
+            }
 impl ThresholdUnit {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ThresholdUnit::Count => "COUNT",
             ThresholdUnit::Percentage => "PERCENTAGE",
-            ThresholdUnit::Unknown(value) => value.as_str(),
+            ThresholdUnit::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COUNT", "PERCENTAGE"]
+        &[
+            "COUNT", "PERCENTAGE"
+        ]
     }
 }
 impl AsRef<str> for ThresholdUnit {
@@ -433,9 +410,9 @@ impl AsRef<str> for ThresholdUnit {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let thresholdtype = unimplemented!();
 /// match thresholdtype {
@@ -459,22 +436,14 @@ impl AsRef<str> for ThresholdUnit {
 /// Specifically, when `thresholdtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ThresholdType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ThresholdType {
     #[allow(missing_docs)] // documentation missing in model
     GreaterThan,
@@ -485,7 +454,7 @@ pub enum ThresholdType {
     #[allow(missing_docs)] // documentation missing in model
     LessThanOrEqual,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ThresholdType {
     fn from(s: &str) -> Self {
@@ -494,17 +463,17 @@ impl std::convert::From<&str> for ThresholdType {
             "GREATER_THAN_OR_EQUAL" => ThresholdType::GreaterThanOrEqual,
             "LESS_THAN" => ThresholdType::LessThan,
             "LESS_THAN_OR_EQUAL" => ThresholdType::LessThanOrEqual,
-            other => ThresholdType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ThresholdType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ThresholdType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ThresholdType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ThresholdType::from(s))
+                }
+            }
 impl ThresholdType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -513,16 +482,13 @@ impl ThresholdType {
             ThresholdType::GreaterThanOrEqual => "GREATER_THAN_OR_EQUAL",
             ThresholdType::LessThan => "LESS_THAN",
             ThresholdType::LessThanOrEqual => "LESS_THAN_OR_EQUAL",
-            ThresholdType::Unknown(value) => value.as_str(),
+            ThresholdType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "GREATER_THAN",
-            "GREATER_THAN_OR_EQUAL",
-            "LESS_THAN",
-            "LESS_THAN_OR_EQUAL",
+            "GREATER_THAN", "GREATER_THAN_OR_EQUAL", "LESS_THAN", "LESS_THAN_OR_EQUAL"
         ]
     }
 }
@@ -535,7 +501,7 @@ impl AsRef<str> for ThresholdType {
 /// <p>Represents a JDBC database output object which defines the output destination for a DataBrew recipe job to write into.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatabaseOutput {
+pub struct DatabaseOutput  {
     /// <p>The Glue connection that stores the connection information for the target database.</p>
     #[doc(hidden)]
     pub glue_connection_name: std::option::Option<std::string::String>,
@@ -548,23 +514,21 @@ pub struct DatabaseOutput {
 }
 impl DatabaseOutput {
     /// <p>The Glue connection that stores the connection information for the target database.</p>
-    pub fn glue_connection_name(&self) -> std::option::Option<&str> {
+    pub fn glue_connection_name(&self) -> std::option::Option<& str> {
         self.glue_connection_name.as_deref()
     }
     /// <p>Represents options that specify how and where DataBrew writes the database output generated by recipe jobs.</p>
-    pub fn database_options(
-        &self,
-    ) -> std::option::Option<&crate::model::DatabaseTableOutputOptions> {
+    pub fn database_options(&self) -> std::option::Option<& crate::model::DatabaseTableOutputOptions> {
         self.database_options.as_ref()
     }
     /// <p>The output mode to write into the database. Currently supported option: NEW_TABLE.</p>
-    pub fn database_output_mode(&self) -> std::option::Option<&crate::model::DatabaseOutputMode> {
+    pub fn database_output_mode(&self) -> std::option::Option<& crate::model::DatabaseOutputMode> {
         self.database_output_mode.as_ref()
     }
 }
 /// See [`DatabaseOutput`](crate::model::DatabaseOutput).
 pub mod database_output {
-
+    
     /// A builder for [`DatabaseOutput`](crate::model::DatabaseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -579,12 +543,8 @@ pub mod database_output {
             self
         }
         /// <p>The Glue connection that stores the connection information for the target database.</p>
-        pub fn set_glue_connection_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.glue_connection_name = input;
-            self
+        pub fn set_glue_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.glue_connection_name = input; self
         }
         /// <p>Represents options that specify how and where DataBrew writes the database output generated by recipe jobs.</p>
         pub fn database_options(mut self, input: crate::model::DatabaseTableOutputOptions) -> Self {
@@ -592,12 +552,8 @@ pub mod database_output {
             self
         }
         /// <p>Represents options that specify how and where DataBrew writes the database output generated by recipe jobs.</p>
-        pub fn set_database_options(
-            mut self,
-            input: std::option::Option<crate::model::DatabaseTableOutputOptions>,
-        ) -> Self {
-            self.database_options = input;
-            self
+        pub fn set_database_options(mut self, input: std::option::Option<crate::model::DatabaseTableOutputOptions>) -> Self {
+            self.database_options = input; self
         }
         /// <p>The output mode to write into the database. Currently supported option: NEW_TABLE.</p>
         pub fn database_output_mode(mut self, input: crate::model::DatabaseOutputMode) -> Self {
@@ -605,22 +561,23 @@ pub mod database_output {
             self
         }
         /// <p>The output mode to write into the database. Currently supported option: NEW_TABLE.</p>
-        pub fn set_database_output_mode(
-            mut self,
-            input: std::option::Option<crate::model::DatabaseOutputMode>,
-        ) -> Self {
-            self.database_output_mode = input;
-            self
+        pub fn set_database_output_mode(mut self, input: std::option::Option<crate::model::DatabaseOutputMode>) -> Self {
+            self.database_output_mode = input; self
         }
         /// Consumes the builder and constructs a [`DatabaseOutput`](crate::model::DatabaseOutput).
         pub fn build(self) -> crate::model::DatabaseOutput {
             crate::model::DatabaseOutput {
-                glue_connection_name: self.glue_connection_name,
-                database_options: self.database_options,
-                database_output_mode: self.database_output_mode,
+                glue_connection_name: self.glue_connection_name
+                ,
+                database_options: self.database_options
+                ,
+                database_output_mode: self.database_output_mode
+                ,
             }
         }
     }
+    
+    
 }
 impl DatabaseOutput {
     /// Creates a new builder-style object to manufacture [`DatabaseOutput`](crate::model::DatabaseOutput).
@@ -635,9 +592,9 @@ impl DatabaseOutput {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let databaseoutputmode = unimplemented!();
 /// match databaseoutputmode {
@@ -658,56 +615,48 @@ impl DatabaseOutput {
 /// Specifically, when `databaseoutputmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DatabaseOutputMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DatabaseOutputMode {
     #[allow(missing_docs)] // documentation missing in model
     NewTable,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DatabaseOutputMode {
     fn from(s: &str) -> Self {
         match s {
             "NEW_TABLE" => DatabaseOutputMode::NewTable,
-            other => {
-                DatabaseOutputMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DatabaseOutputMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DatabaseOutputMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DatabaseOutputMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DatabaseOutputMode::from(s))
+                }
+            }
 impl DatabaseOutputMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DatabaseOutputMode::NewTable => "NEW_TABLE",
-            DatabaseOutputMode::Unknown(value) => value.as_str(),
+            DatabaseOutputMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NEW_TABLE"]
+        &[
+            "NEW_TABLE"
+        ]
     }
 }
 impl AsRef<str> for DatabaseOutputMode {
@@ -719,7 +668,7 @@ impl AsRef<str> for DatabaseOutputMode {
 /// <p>Represents options that specify how and where DataBrew writes the database output generated by recipe jobs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatabaseTableOutputOptions {
+pub struct DatabaseTableOutputOptions  {
     /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can store intermediate results.</p>
     #[doc(hidden)]
     pub temp_directory: std::option::Option<crate::model::S3Location>,
@@ -729,17 +678,17 @@ pub struct DatabaseTableOutputOptions {
 }
 impl DatabaseTableOutputOptions {
     /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can store intermediate results.</p>
-    pub fn temp_directory(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn temp_directory(&self) -> std::option::Option<& crate::model::S3Location> {
         self.temp_directory.as_ref()
     }
     /// <p>A prefix for the name of a table DataBrew will create in the database.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
 }
 /// See [`DatabaseTableOutputOptions`](crate::model::DatabaseTableOutputOptions).
 pub mod database_table_output_options {
-
+    
     /// A builder for [`DatabaseTableOutputOptions`](crate::model::DatabaseTableOutputOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -753,12 +702,8 @@ pub mod database_table_output_options {
             self
         }
         /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can store intermediate results.</p>
-        pub fn set_temp_directory(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.temp_directory = input;
-            self
+        pub fn set_temp_directory(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.temp_directory = input; self
         }
         /// <p>A prefix for the name of a table DataBrew will create in the database.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -767,17 +712,20 @@ pub mod database_table_output_options {
         }
         /// <p>A prefix for the name of a table DataBrew will create in the database.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// Consumes the builder and constructs a [`DatabaseTableOutputOptions`](crate::model::DatabaseTableOutputOptions).
         pub fn build(self) -> crate::model::DatabaseTableOutputOptions {
             crate::model::DatabaseTableOutputOptions {
-                temp_directory: self.temp_directory,
-                table_name: self.table_name,
+                temp_directory: self.temp_directory
+                ,
+                table_name: self.table_name
+                ,
             }
         }
     }
+    
+    
 }
 impl DatabaseTableOutputOptions {
     /// Creates a new builder-style object to manufacture [`DatabaseTableOutputOptions`](crate::model::DatabaseTableOutputOptions).
@@ -789,7 +737,7 @@ impl DatabaseTableOutputOptions {
 /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>The Amazon S3 bucket name.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -802,21 +750,21 @@ pub struct S3Location {
 }
 impl S3Location {
     /// <p>The Amazon S3 bucket name.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The unique name of the object in the bucket.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the bucket owner.</p>
-    pub fn bucket_owner(&self) -> std::option::Option<&str> {
+    pub fn bucket_owner(&self) -> std::option::Option<& str> {
         self.bucket_owner.as_deref()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
-
+    
     /// A builder for [`S3Location`](crate::model::S3Location).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -832,8 +780,7 @@ pub mod s3_location {
         }
         /// <p>The Amazon S3 bucket name.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>The unique name of the object in the bucket.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -842,8 +789,7 @@ pub mod s3_location {
         }
         /// <p>The unique name of the object in the bucket.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The Amazon Web Services account ID of the bucket owner.</p>
         pub fn bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -852,18 +798,22 @@ pub mod s3_location {
         }
         /// <p>The Amazon Web Services account ID of the bucket owner.</p>
         pub fn set_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_owner = input;
-            self
+            self.bucket_owner = input; self
         }
         /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location).
         pub fn build(self) -> crate::model::S3Location {
             crate::model::S3Location {
-                bucket: self.bucket,
-                key: self.key,
-                bucket_owner: self.bucket_owner,
+                bucket: self.bucket
+                ,
+                key: self.key
+                ,
+                bucket_owner: self.bucket_owner
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Location {
     /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
@@ -875,7 +825,7 @@ impl S3Location {
 /// <p>Represents options that specify how and where in the Glue Data Catalog DataBrew writes the output generated by recipe jobs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataCatalogOutput {
+pub struct DataCatalogOutput  {
     /// <p>The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -897,25 +847,23 @@ pub struct DataCatalogOutput {
 }
 impl DataCatalogOutput {
     /// <p>The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data.</p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of a database in the Data Catalog.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of a table in the Data Catalog.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>Represents options that specify how and where DataBrew writes the Amazon S3 output generated by recipe jobs.</p>
-    pub fn s3_options(&self) -> std::option::Option<&crate::model::S3TableOutputOptions> {
+    pub fn s3_options(&self) -> std::option::Option<& crate::model::S3TableOutputOptions> {
         self.s3_options.as_ref()
     }
     /// <p>Represents options that specify how and where DataBrew writes the database output generated by recipe jobs.</p>
-    pub fn database_options(
-        &self,
-    ) -> std::option::Option<&crate::model::DatabaseTableOutputOptions> {
+    pub fn database_options(&self) -> std::option::Option<& crate::model::DatabaseTableOutputOptions> {
         self.database_options.as_ref()
     }
     /// <p>A value that, if true, means that any data in the location specified for output is overwritten with new output. Not supported with DatabaseOptions.</p>
@@ -925,7 +873,7 @@ impl DataCatalogOutput {
 }
 /// See [`DataCatalogOutput`](crate::model::DataCatalogOutput).
 pub mod data_catalog_output {
-
+    
     /// A builder for [`DataCatalogOutput`](crate::model::DataCatalogOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -944,8 +892,7 @@ pub mod data_catalog_output {
         }
         /// <p>The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.catalog_id = input;
-            self
+            self.catalog_id = input; self
         }
         /// <p>The name of a database in the Data Catalog.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -953,12 +900,8 @@ pub mod data_catalog_output {
             self
         }
         /// <p>The name of a database in the Data Catalog.</p>
-        pub fn set_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_name = input;
-            self
+        pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_name = input; self
         }
         /// <p>The name of a table in the Data Catalog.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -967,8 +910,7 @@ pub mod data_catalog_output {
         }
         /// <p>The name of a table in the Data Catalog.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// <p>Represents options that specify how and where DataBrew writes the Amazon S3 output generated by recipe jobs.</p>
         pub fn s3_options(mut self, input: crate::model::S3TableOutputOptions) -> Self {
@@ -976,12 +918,8 @@ pub mod data_catalog_output {
             self
         }
         /// <p>Represents options that specify how and where DataBrew writes the Amazon S3 output generated by recipe jobs.</p>
-        pub fn set_s3_options(
-            mut self,
-            input: std::option::Option<crate::model::S3TableOutputOptions>,
-        ) -> Self {
-            self.s3_options = input;
-            self
+        pub fn set_s3_options(mut self, input: std::option::Option<crate::model::S3TableOutputOptions>) -> Self {
+            self.s3_options = input; self
         }
         /// <p>Represents options that specify how and where DataBrew writes the database output generated by recipe jobs.</p>
         pub fn database_options(mut self, input: crate::model::DatabaseTableOutputOptions) -> Self {
@@ -989,12 +927,8 @@ pub mod data_catalog_output {
             self
         }
         /// <p>Represents options that specify how and where DataBrew writes the database output generated by recipe jobs.</p>
-        pub fn set_database_options(
-            mut self,
-            input: std::option::Option<crate::model::DatabaseTableOutputOptions>,
-        ) -> Self {
-            self.database_options = input;
-            self
+        pub fn set_database_options(mut self, input: std::option::Option<crate::model::DatabaseTableOutputOptions>) -> Self {
+            self.database_options = input; self
         }
         /// <p>A value that, if true, means that any data in the location specified for output is overwritten with new output. Not supported with DatabaseOptions.</p>
         pub fn overwrite(mut self, input: bool) -> Self {
@@ -1003,21 +937,29 @@ pub mod data_catalog_output {
         }
         /// <p>A value that, if true, means that any data in the location specified for output is overwritten with new output. Not supported with DatabaseOptions.</p>
         pub fn set_overwrite(mut self, input: std::option::Option<bool>) -> Self {
-            self.overwrite = input;
-            self
+            self.overwrite = input; self
         }
         /// Consumes the builder and constructs a [`DataCatalogOutput`](crate::model::DataCatalogOutput).
         pub fn build(self) -> crate::model::DataCatalogOutput {
             crate::model::DataCatalogOutput {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                s3_options: self.s3_options,
-                database_options: self.database_options,
-                overwrite: self.overwrite.unwrap_or_default(),
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                s3_options: self.s3_options
+                ,
+                database_options: self.database_options
+                ,
+                overwrite: self.overwrite
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DataCatalogOutput {
     /// Creates a new builder-style object to manufacture [`DataCatalogOutput`](crate::model::DataCatalogOutput).
@@ -1029,20 +971,20 @@ impl DataCatalogOutput {
 /// <p>Represents options that specify how and where DataBrew writes the Amazon S3 output generated by recipe jobs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3TableOutputOptions {
+pub struct S3TableOutputOptions  {
     /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can write output from a job.</p>
     #[doc(hidden)]
     pub location: std::option::Option<crate::model::S3Location>,
 }
 impl S3TableOutputOptions {
     /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can write output from a job.</p>
-    pub fn location(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn location(&self) -> std::option::Option<& crate::model::S3Location> {
         self.location.as_ref()
     }
 }
 /// See [`S3TableOutputOptions`](crate::model::S3TableOutputOptions).
 pub mod s3_table_output_options {
-
+    
     /// A builder for [`S3TableOutputOptions`](crate::model::S3TableOutputOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1055,20 +997,19 @@ pub mod s3_table_output_options {
             self
         }
         /// <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew can write output from a job.</p>
-        pub fn set_location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.location = input;
-            self
+        pub fn set_location(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.location = input; self
         }
         /// Consumes the builder and constructs a [`S3TableOutputOptions`](crate::model::S3TableOutputOptions).
         pub fn build(self) -> crate::model::S3TableOutputOptions {
             crate::model::S3TableOutputOptions {
-                location: self.location,
+                location: self.location
+                ,
             }
         }
     }
+    
+    
 }
 impl S3TableOutputOptions {
     /// Creates a new builder-style object to manufacture [`S3TableOutputOptions`](crate::model::S3TableOutputOptions).
@@ -1080,7 +1021,7 @@ impl S3TableOutputOptions {
 /// <p>Represents options that specify how and where in Amazon S3 DataBrew writes the output generated by recipe jobs or profile jobs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Output {
+pub struct Output  {
     /// <p>The compression algorithm used to compress the output text of the job.</p>
     #[doc(hidden)]
     pub compression_format: std::option::Option<crate::model::CompressionFormat>,
@@ -1105,19 +1046,19 @@ pub struct Output {
 }
 impl Output {
     /// <p>The compression algorithm used to compress the output text of the job.</p>
-    pub fn compression_format(&self) -> std::option::Option<&crate::model::CompressionFormat> {
+    pub fn compression_format(&self) -> std::option::Option<& crate::model::CompressionFormat> {
         self.compression_format.as_ref()
     }
     /// <p>The data format of the output of the job.</p>
-    pub fn format(&self) -> std::option::Option<&crate::model::OutputFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::model::OutputFormat> {
         self.format.as_ref()
     }
     /// <p>The names of one or more partition columns for the output of the job.</p>
-    pub fn partition_columns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn partition_columns(&self) -> std::option::Option<& [std::string::String]> {
         self.partition_columns.as_deref()
     }
     /// <p>The location in Amazon S3 where the job writes its output.</p>
-    pub fn location(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn location(&self) -> std::option::Option<& crate::model::S3Location> {
         self.location.as_ref()
     }
     /// <p>A value that, if true, means that any data in the location specified for output is overwritten with new output.</p>
@@ -1125,7 +1066,7 @@ impl Output {
         self.overwrite
     }
     /// <p>Represents options that define how DataBrew formats job output files.</p>
-    pub fn format_options(&self) -> std::option::Option<&crate::model::OutputFormatOptions> {
+    pub fn format_options(&self) -> std::option::Option<& crate::model::OutputFormatOptions> {
         self.format_options.as_ref()
     }
     /// <p>Maximum number of files to be generated by the job and written to the output folder. For output partitioned by column(s), the MaxOutputFiles value is the maximum number of files per partition.</p>
@@ -1135,7 +1076,7 @@ impl Output {
 }
 /// See [`Output`](crate::model::Output).
 pub mod output {
-
+    
     /// A builder for [`Output`](crate::model::Output).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1154,12 +1095,8 @@ pub mod output {
             self
         }
         /// <p>The compression algorithm used to compress the output text of the job.</p>
-        pub fn set_compression_format(
-            mut self,
-            input: std::option::Option<crate::model::CompressionFormat>,
-        ) -> Self {
-            self.compression_format = input;
-            self
+        pub fn set_compression_format(mut self, input: std::option::Option<crate::model::CompressionFormat>) -> Self {
+            self.compression_format = input; self
         }
         /// <p>The data format of the output of the job.</p>
         pub fn format(mut self, input: crate::model::OutputFormat) -> Self {
@@ -1167,12 +1104,8 @@ pub mod output {
             self
         }
         /// <p>The data format of the output of the job.</p>
-        pub fn set_format(
-            mut self,
-            input: std::option::Option<crate::model::OutputFormat>,
-        ) -> Self {
-            self.format = input;
-            self
+        pub fn set_format(mut self, input: std::option::Option<crate::model::OutputFormat>) -> Self {
+            self.format = input; self
         }
         /// Appends an item to `partition_columns`.
         ///
@@ -1181,17 +1114,13 @@ pub mod output {
         /// <p>The names of one or more partition columns for the output of the job.</p>
         pub fn partition_columns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.partition_columns.unwrap_or_default();
-            v.push(input.into());
-            self.partition_columns = Some(v);
-            self
+                            v.push(input.into());
+                            self.partition_columns = Some(v);
+                            self
         }
         /// <p>The names of one or more partition columns for the output of the job.</p>
-        pub fn set_partition_columns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.partition_columns = input;
-            self
+        pub fn set_partition_columns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.partition_columns = input; self
         }
         /// <p>The location in Amazon S3 where the job writes its output.</p>
         pub fn location(mut self, input: crate::model::S3Location) -> Self {
@@ -1199,12 +1128,8 @@ pub mod output {
             self
         }
         /// <p>The location in Amazon S3 where the job writes its output.</p>
-        pub fn set_location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.location = input;
-            self
+        pub fn set_location(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.location = input; self
         }
         /// <p>A value that, if true, means that any data in the location specified for output is overwritten with new output.</p>
         pub fn overwrite(mut self, input: bool) -> Self {
@@ -1213,8 +1138,7 @@ pub mod output {
         }
         /// <p>A value that, if true, means that any data in the location specified for output is overwritten with new output.</p>
         pub fn set_overwrite(mut self, input: std::option::Option<bool>) -> Self {
-            self.overwrite = input;
-            self
+            self.overwrite = input; self
         }
         /// <p>Represents options that define how DataBrew formats job output files.</p>
         pub fn format_options(mut self, input: crate::model::OutputFormatOptions) -> Self {
@@ -1222,12 +1146,8 @@ pub mod output {
             self
         }
         /// <p>Represents options that define how DataBrew formats job output files.</p>
-        pub fn set_format_options(
-            mut self,
-            input: std::option::Option<crate::model::OutputFormatOptions>,
-        ) -> Self {
-            self.format_options = input;
-            self
+        pub fn set_format_options(mut self, input: std::option::Option<crate::model::OutputFormatOptions>) -> Self {
+            self.format_options = input; self
         }
         /// <p>Maximum number of files to be generated by the job and written to the output folder. For output partitioned by column(s), the MaxOutputFiles value is the maximum number of files per partition.</p>
         pub fn max_output_files(mut self, input: i32) -> Self {
@@ -1236,22 +1156,31 @@ pub mod output {
         }
         /// <p>Maximum number of files to be generated by the job and written to the output folder. For output partitioned by column(s), the MaxOutputFiles value is the maximum number of files per partition.</p>
         pub fn set_max_output_files(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_output_files = input;
-            self
+            self.max_output_files = input; self
         }
         /// Consumes the builder and constructs a [`Output`](crate::model::Output).
         pub fn build(self) -> crate::model::Output {
             crate::model::Output {
-                compression_format: self.compression_format,
-                format: self.format,
-                partition_columns: self.partition_columns,
-                location: self.location,
-                overwrite: self.overwrite.unwrap_or_default(),
-                format_options: self.format_options,
-                max_output_files: self.max_output_files,
+                compression_format: self.compression_format
+                ,
+                format: self.format
+                ,
+                partition_columns: self.partition_columns
+                ,
+                location: self.location
+                ,
+                overwrite: self.overwrite
+                    .unwrap_or_default()
+                ,
+                format_options: self.format_options
+                ,
+                max_output_files: self.max_output_files
+                ,
             }
         }
     }
+    
+    
 }
 impl Output {
     /// Creates a new builder-style object to manufacture [`Output`](crate::model::Output).
@@ -1263,20 +1192,20 @@ impl Output {
 /// <p>Represents a set of options that define the structure of comma-separated (CSV) job output.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputFormatOptions {
+pub struct OutputFormatOptions  {
     /// <p>Represents a set of options that define the structure of comma-separated value (CSV) job output.</p>
     #[doc(hidden)]
     pub csv: std::option::Option<crate::model::CsvOutputOptions>,
 }
 impl OutputFormatOptions {
     /// <p>Represents a set of options that define the structure of comma-separated value (CSV) job output.</p>
-    pub fn csv(&self) -> std::option::Option<&crate::model::CsvOutputOptions> {
+    pub fn csv(&self) -> std::option::Option<& crate::model::CsvOutputOptions> {
         self.csv.as_ref()
     }
 }
 /// See [`OutputFormatOptions`](crate::model::OutputFormatOptions).
 pub mod output_format_options {
-
+    
     /// A builder for [`OutputFormatOptions`](crate::model::OutputFormatOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1289,18 +1218,19 @@ pub mod output_format_options {
             self
         }
         /// <p>Represents a set of options that define the structure of comma-separated value (CSV) job output.</p>
-        pub fn set_csv(
-            mut self,
-            input: std::option::Option<crate::model::CsvOutputOptions>,
-        ) -> Self {
-            self.csv = input;
-            self
+        pub fn set_csv(mut self, input: std::option::Option<crate::model::CsvOutputOptions>) -> Self {
+            self.csv = input; self
         }
         /// Consumes the builder and constructs a [`OutputFormatOptions`](crate::model::OutputFormatOptions).
         pub fn build(self) -> crate::model::OutputFormatOptions {
-            crate::model::OutputFormatOptions { csv: self.csv }
+            crate::model::OutputFormatOptions {
+                csv: self.csv
+                ,
+            }
         }
     }
+    
+    
 }
 impl OutputFormatOptions {
     /// Creates a new builder-style object to manufacture [`OutputFormatOptions`](crate::model::OutputFormatOptions).
@@ -1312,20 +1242,20 @@ impl OutputFormatOptions {
 /// <p>Represents a set of options that define how DataBrew will write a comma-separated value (CSV) file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CsvOutputOptions {
+pub struct CsvOutputOptions  {
     /// <p>A single character that specifies the delimiter used to create CSV job output.</p>
     #[doc(hidden)]
     pub delimiter: std::option::Option<std::string::String>,
 }
 impl CsvOutputOptions {
     /// <p>A single character that specifies the delimiter used to create CSV job output.</p>
-    pub fn delimiter(&self) -> std::option::Option<&str> {
+    pub fn delimiter(&self) -> std::option::Option<& str> {
         self.delimiter.as_deref()
     }
 }
 /// See [`CsvOutputOptions`](crate::model::CsvOutputOptions).
 pub mod csv_output_options {
-
+    
     /// A builder for [`CsvOutputOptions`](crate::model::CsvOutputOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1339,16 +1269,18 @@ pub mod csv_output_options {
         }
         /// <p>A single character that specifies the delimiter used to create CSV job output.</p>
         pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.delimiter = input;
-            self
+            self.delimiter = input; self
         }
         /// Consumes the builder and constructs a [`CsvOutputOptions`](crate::model::CsvOutputOptions).
         pub fn build(self) -> crate::model::CsvOutputOptions {
             crate::model::CsvOutputOptions {
-                delimiter: self.delimiter,
+                delimiter: self.delimiter
+                ,
             }
         }
     }
+    
+    
 }
 impl CsvOutputOptions {
     /// Creates a new builder-style object to manufacture [`CsvOutputOptions`](crate::model::CsvOutputOptions).
@@ -1363,9 +1295,9 @@ impl CsvOutputOptions {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let outputformat = unimplemented!();
 /// match outputformat {
@@ -1393,22 +1325,14 @@ impl CsvOutputOptions {
 /// Specifically, when `outputformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OutputFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OutputFormat {
     #[allow(missing_docs)] // documentation missing in model
     Avro,
@@ -1427,7 +1351,7 @@ pub enum OutputFormat {
     #[allow(missing_docs)] // documentation missing in model
     Xml,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OutputFormat {
     fn from(s: &str) -> Self {
@@ -1440,17 +1364,17 @@ impl std::convert::From<&str> for OutputFormat {
             "PARQUET" => OutputFormat::Parquet,
             "TABLEAUHYPER" => OutputFormat::Tableauhyper,
             "XML" => OutputFormat::Xml,
-            other => OutputFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OutputFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OutputFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OutputFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OutputFormat::from(s))
+                }
+            }
 impl OutputFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1463,20 +1387,13 @@ impl OutputFormat {
             OutputFormat::Parquet => "PARQUET",
             OutputFormat::Tableauhyper => "TABLEAUHYPER",
             OutputFormat::Xml => "XML",
-            OutputFormat::Unknown(value) => value.as_str(),
+            OutputFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AVRO",
-            "CSV",
-            "GLUEPARQUET",
-            "JSON",
-            "ORC",
-            "PARQUET",
-            "TABLEAUHYPER",
-            "XML",
+            "AVRO", "CSV", "GLUEPARQUET", "JSON", "ORC", "PARQUET", "TABLEAUHYPER", "XML"
         ]
     }
 }
@@ -1492,9 +1409,9 @@ impl AsRef<str> for OutputFormat {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let compressionformat = unimplemented!();
 /// match compressionformat {
@@ -1523,22 +1440,14 @@ impl AsRef<str> for OutputFormat {
 /// Specifically, when `compressionformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CompressionFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CompressionFormat {
     #[allow(missing_docs)] // documentation missing in model
     Brotli,
@@ -1559,7 +1468,7 @@ pub enum CompressionFormat {
     #[allow(missing_docs)] // documentation missing in model
     Zstd,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CompressionFormat {
     fn from(s: &str) -> Self {
@@ -1573,19 +1482,17 @@ impl std::convert::From<&str> for CompressionFormat {
             "SNAPPY" => CompressionFormat::Snappy,
             "ZLIB" => CompressionFormat::Zlib,
             "ZSTD" => CompressionFormat::Zstd,
-            other => {
-                CompressionFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CompressionFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CompressionFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CompressionFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CompressionFormat::from(s))
+                }
+            }
 impl CompressionFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1599,13 +1506,13 @@ impl CompressionFormat {
             CompressionFormat::Snappy => "SNAPPY",
             CompressionFormat::Zlib => "ZLIB",
             CompressionFormat::Zstd => "ZSTD",
-            CompressionFormat::Unknown(value) => value.as_str(),
+            CompressionFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BROTLI", "BZIP2", "DEFLATE", "GZIP", "LZ4", "LZO", "SNAPPY", "ZLIB", "ZSTD",
+            "BROTLI", "BZIP2", "DEFLATE", "GZIP", "LZ4", "LZO", "SNAPPY", "ZLIB", "ZSTD"
         ]
     }
 }
@@ -1621,9 +1528,9 @@ impl AsRef<str> for CompressionFormat {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let logsubscription = unimplemented!();
 /// match logsubscription {
@@ -1645,58 +1552,52 @@ impl AsRef<str> for CompressionFormat {
 /// Specifically, when `logsubscription` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LogSubscription::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LogSubscription {
     #[allow(missing_docs)] // documentation missing in model
     Disable,
     #[allow(missing_docs)] // documentation missing in model
     Enable,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LogSubscription {
     fn from(s: &str) -> Self {
         match s {
             "DISABLE" => LogSubscription::Disable,
             "ENABLE" => LogSubscription::Enable,
-            other => LogSubscription::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LogSubscription::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LogSubscription {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LogSubscription::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LogSubscription::from(s))
+                }
+            }
 impl LogSubscription {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LogSubscription::Disable => "DISABLE",
             LogSubscription::Enable => "ENABLE",
-            LogSubscription::Unknown(value) => value.as_str(),
+            LogSubscription::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLE", "ENABLE"]
+        &[
+            "DISABLE", "ENABLE"
+        ]
     }
 }
 impl AsRef<str> for LogSubscription {
@@ -1711,9 +1612,9 @@ impl AsRef<str> for LogSubscription {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let encryptionmode = unimplemented!();
 /// match encryptionmode {
@@ -1735,58 +1636,52 @@ impl AsRef<str> for LogSubscription {
 /// Specifically, when `encryptionmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EncryptionMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EncryptionMode {
     #[allow(missing_docs)] // documentation missing in model
     Ssekms,
     #[allow(missing_docs)] // documentation missing in model
     Sses3,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionMode {
     fn from(s: &str) -> Self {
         match s {
             "SSE-KMS" => EncryptionMode::Ssekms,
             "SSE-S3" => EncryptionMode::Sses3,
-            other => EncryptionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EncryptionMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EncryptionMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EncryptionMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EncryptionMode::from(s))
+                }
+            }
 impl EncryptionMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncryptionMode::Ssekms => "SSE-KMS",
             EncryptionMode::Sses3 => "SSE-S3",
-            EncryptionMode::Unknown(value) => value.as_str(),
+            EncryptionMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SSE-KMS", "SSE-S3"]
+        &[
+            "SSE-KMS", "SSE-S3"
+        ]
     }
 }
 impl AsRef<str> for EncryptionMode {
@@ -1798,40 +1693,36 @@ impl AsRef<str> for EncryptionMode {
 /// <p>Represents a single step from a DataBrew recipe to be performed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecipeStep {
+pub struct RecipeStep  {
     /// <p>The particular action to be performed in the recipe step.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::RecipeAction>,
-    /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note>
-    /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p>
+    /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note> 
+    /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p> 
     /// </note>
     #[doc(hidden)]
-    pub condition_expressions:
-        std::option::Option<std::vec::Vec<crate::model::ConditionExpression>>,
+    pub condition_expressions: std::option::Option<std::vec::Vec<crate::model::ConditionExpression>>,
 }
 impl RecipeStep {
     /// <p>The particular action to be performed in the recipe step.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::RecipeAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::RecipeAction> {
         self.action.as_ref()
     }
-    /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note>
-    /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p>
+    /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note> 
+    /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p> 
     /// </note>
-    pub fn condition_expressions(
-        &self,
-    ) -> std::option::Option<&[crate::model::ConditionExpression]> {
+    pub fn condition_expressions(&self) -> std::option::Option<& [crate::model::ConditionExpression]> {
         self.condition_expressions.as_deref()
     }
 }
 /// See [`RecipeStep`](crate::model::RecipeStep).
 pub mod recipe_step {
-
+    
     /// A builder for [`RecipeStep`](crate::model::RecipeStep).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::RecipeAction>,
-        pub(crate) condition_expressions:
-            std::option::Option<std::vec::Vec<crate::model::ConditionExpression>>,
+        pub(crate) condition_expressions: std::option::Option<std::vec::Vec<crate::model::ConditionExpression>>,
     }
     impl Builder {
         /// <p>The particular action to be performed in the recipe step.</p>
@@ -1840,44 +1731,40 @@ pub mod recipe_step {
             self
         }
         /// <p>The particular action to be performed in the recipe step.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::RecipeAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::RecipeAction>) -> Self {
+            self.action = input; self
         }
         /// Appends an item to `condition_expressions`.
         ///
         /// To override the contents of this collection use [`set_condition_expressions`](Self::set_condition_expressions).
         ///
-        /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note>
-        /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p>
+        /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note> 
+        /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p> 
         /// </note>
         pub fn condition_expressions(mut self, input: crate::model::ConditionExpression) -> Self {
             let mut v = self.condition_expressions.unwrap_or_default();
-            v.push(input);
-            self.condition_expressions = Some(v);
-            self
+                            v.push(input);
+                            self.condition_expressions = Some(v);
+                            self
         }
-        /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note>
-        /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p>
+        /// <p>One or more conditions that must be met for the recipe step to succeed.</p> <note> 
+        /// <p>All of the conditions in the array must be met. In other words, all of the conditions must be combined using a logical AND operation.</p> 
         /// </note>
-        pub fn set_condition_expressions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConditionExpression>>,
-        ) -> Self {
-            self.condition_expressions = input;
-            self
+        pub fn set_condition_expressions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConditionExpression>>) -> Self {
+            self.condition_expressions = input; self
         }
         /// Consumes the builder and constructs a [`RecipeStep`](crate::model::RecipeStep).
         pub fn build(self) -> crate::model::RecipeStep {
             crate::model::RecipeStep {
-                action: self.action,
-                condition_expressions: self.condition_expressions,
+                action: self.action
+                ,
+                condition_expressions: self.condition_expressions
+                ,
             }
         }
     }
+    
+    
 }
 impl RecipeStep {
     /// Creates a new builder-style object to manufacture [`RecipeStep`](crate::model::RecipeStep).
@@ -1886,12 +1773,12 @@ impl RecipeStep {
     }
 }
 
-/// <p>Represents an individual condition that evaluates to true or false.</p>
-/// <p>Conditions are used with recipe actions. The action is only performed for column values where the condition evaluates to true.</p>
+/// <p>Represents an individual condition that evaluates to true or false.</p> 
+/// <p>Conditions are used with recipe actions. The action is only performed for column values where the condition evaluates to true.</p> 
 /// <p>If a recipe requires more than one condition, then the recipe must specify multiple <code>ConditionExpression</code> elements. Each condition is applied to the rows in a dataset first, before the recipe action is performed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConditionExpression {
+pub struct ConditionExpression  {
     /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
     #[doc(hidden)]
     pub condition: std::option::Option<std::string::String>,
@@ -1904,21 +1791,21 @@ pub struct ConditionExpression {
 }
 impl ConditionExpression {
     /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
-    pub fn condition(&self) -> std::option::Option<&str> {
+    pub fn condition(&self) -> std::option::Option<& str> {
         self.condition.as_deref()
     }
     /// <p>A value that the condition must evaluate to for the condition to succeed.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>A column to apply this condition to.</p>
-    pub fn target_column(&self) -> std::option::Option<&str> {
+    pub fn target_column(&self) -> std::option::Option<& str> {
         self.target_column.as_deref()
     }
 }
 /// See [`ConditionExpression`](crate::model::ConditionExpression).
 pub mod condition_expression {
-
+    
     /// A builder for [`ConditionExpression`](crate::model::ConditionExpression).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1934,8 +1821,7 @@ pub mod condition_expression {
         }
         /// <p>A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
         pub fn set_condition(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.condition = input;
-            self
+            self.condition = input; self
         }
         /// <p>A value that the condition must evaluate to for the condition to succeed.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1944,8 +1830,7 @@ pub mod condition_expression {
         }
         /// <p>A value that the condition must evaluate to for the condition to succeed.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>A column to apply this condition to.</p>
         pub fn target_column(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1953,22 +1838,23 @@ pub mod condition_expression {
             self
         }
         /// <p>A column to apply this condition to.</p>
-        pub fn set_target_column(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_column = input;
-            self
+        pub fn set_target_column(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_column = input; self
         }
         /// Consumes the builder and constructs a [`ConditionExpression`](crate::model::ConditionExpression).
         pub fn build(self) -> crate::model::ConditionExpression {
             crate::model::ConditionExpression {
-                condition: self.condition,
-                value: self.value,
-                target_column: self.target_column,
+                condition: self.condition
+                ,
+                value: self.value
+                ,
+                target_column: self.target_column
+                ,
             }
         }
     }
+    
+    
 }
 impl ConditionExpression {
     /// Creates a new builder-style object to manufacture [`ConditionExpression`](crate::model::ConditionExpression).
@@ -1980,38 +1866,32 @@ impl ConditionExpression {
 /// <p>Represents a transformation and associated parameters that are used to apply a change to a DataBrew dataset. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html">Recipe actions reference</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecipeAction {
+pub struct RecipeAction  {
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>Contextual parameters for the transformation.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl RecipeAction {
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>Contextual parameters for the transformation.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
 }
 /// See [`RecipeAction`](crate::model::RecipeAction).
 pub mod recipe_action {
-
+    
     /// A builder for [`RecipeAction`](crate::model::RecipeAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation: std::option::Option<std::string::String>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
@@ -2021,42 +1901,35 @@ pub mod recipe_action {
         }
         /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>Contextual parameters for the transformation.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>Contextual parameters for the transformation.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`RecipeAction`](crate::model::RecipeAction).
         pub fn build(self) -> crate::model::RecipeAction {
             crate::model::RecipeAction {
-                operation: self.operation,
-                parameters: self.parameters,
+                operation: self.operation
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl RecipeAction {
     /// Creates a new builder-style object to manufacture [`RecipeAction`](crate::model::RecipeAction).
@@ -2068,7 +1941,7 @@ impl RecipeAction {
 /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Sample {
+pub struct Sample  {
     /// <p>The number of rows in the sample.</p>
     #[doc(hidden)]
     pub size: std::option::Option<i32>,
@@ -2082,13 +1955,13 @@ impl Sample {
         self.size
     }
     /// <p>The way in which DataBrew obtains rows from a dataset.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::SampleType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::SampleType> {
         self.r#type.as_ref()
     }
 }
 /// See [`Sample`](crate::model::Sample).
 pub mod sample {
-
+    
     /// A builder for [`Sample`](crate::model::Sample).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2103,8 +1976,7 @@ pub mod sample {
         }
         /// <p>The number of rows in the sample.</p>
         pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.size = input;
-            self
+            self.size = input; self
         }
         /// <p>The way in which DataBrew obtains rows from a dataset.</p>
         pub fn r#type(mut self, input: crate::model::SampleType) -> Self {
@@ -2113,17 +1985,20 @@ pub mod sample {
         }
         /// <p>The way in which DataBrew obtains rows from a dataset.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::SampleType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`Sample`](crate::model::Sample).
         pub fn build(self) -> crate::model::Sample {
             crate::model::Sample {
-                size: self.size,
-                r#type: self.r#type,
+                size: self.size
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl Sample {
     /// Creates a new builder-style object to manufacture [`Sample`](crate::model::Sample).
@@ -2138,9 +2013,9 @@ impl Sample {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sampletype = unimplemented!();
 /// match sampletype {
@@ -2163,22 +2038,14 @@ impl Sample {
 /// Specifically, when `sampletype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SampleType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SampleType {
     #[allow(missing_docs)] // documentation missing in model
     FirstN,
@@ -2187,7 +2054,7 @@ pub enum SampleType {
     #[allow(missing_docs)] // documentation missing in model
     Random,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SampleType {
     fn from(s: &str) -> Self {
@@ -2195,17 +2062,17 @@ impl std::convert::From<&str> for SampleType {
             "FIRST_N" => SampleType::FirstN,
             "LAST_N" => SampleType::LastN,
             "RANDOM" => SampleType::Random,
-            other => SampleType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SampleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SampleType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SampleType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SampleType::from(s))
+                }
+            }
 impl SampleType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2213,12 +2080,14 @@ impl SampleType {
             SampleType::FirstN => "FIRST_N",
             SampleType::LastN => "LAST_N",
             SampleType::Random => "RANDOM",
-            SampleType::Unknown(value) => value.as_str(),
+            SampleType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FIRST_N", "LAST_N", "RANDOM"]
+        &[
+            "FIRST_N", "LAST_N", "RANDOM"
+        ]
     }
 }
 impl AsRef<str> for SampleType {
@@ -2230,29 +2099,29 @@ impl AsRef<str> for SampleType {
 /// <p>A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobSample {
-    /// <p>A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This value must be one of the following:</p>
-    /// <ul>
-    /// <li> <p>FULL_DATASET - The profile job is run on the entire dataset.</p> </li>
-    /// <li> <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p> </li>
+pub struct JobSample  {
+    /// <p>A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This value must be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>FULL_DATASET - The profile job is run on the entire dataset.</p> </li> 
+    /// <li> <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub mode: std::option::Option<crate::model::SampleMode>,
-    /// <p>The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The profile job is run on the specified number of rows. The maximum value for size is Long.MAX_VALUE.</p>
+    /// <p>The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The profile job is run on the specified number of rows. The maximum value for size is Long.MAX_VALUE.</p> 
     /// <p>Long.MAX_VALUE = 9223372036854775807</p>
     #[doc(hidden)]
     pub size: std::option::Option<i64>,
 }
 impl JobSample {
-    /// <p>A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This value must be one of the following:</p>
-    /// <ul>
-    /// <li> <p>FULL_DATASET - The profile job is run on the entire dataset.</p> </li>
-    /// <li> <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p> </li>
+    /// <p>A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This value must be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>FULL_DATASET - The profile job is run on the entire dataset.</p> </li> 
+    /// <li> <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p> </li> 
     /// </ul>
-    pub fn mode(&self) -> std::option::Option<&crate::model::SampleMode> {
+    pub fn mode(&self) -> std::option::Option<& crate::model::SampleMode> {
         self.mode.as_ref()
     }
-    /// <p>The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The profile job is run on the specified number of rows. The maximum value for size is Long.MAX_VALUE.</p>
+    /// <p>The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The profile job is run on the specified number of rows. The maximum value for size is Long.MAX_VALUE.</p> 
     /// <p>Long.MAX_VALUE = 9223372036854775807</p>
     pub fn size(&self) -> std::option::Option<i64> {
         self.size
@@ -2260,7 +2129,7 @@ impl JobSample {
 }
 /// See [`JobSample`](crate::model::JobSample).
 pub mod job_sample {
-
+    
     /// A builder for [`JobSample`](crate::model::JobSample).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2268,44 +2137,46 @@ pub mod job_sample {
         pub(crate) size: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This value must be one of the following:</p>
-        /// <ul>
-        /// <li> <p>FULL_DATASET - The profile job is run on the entire dataset.</p> </li>
-        /// <li> <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p> </li>
+        /// <p>A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This value must be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>FULL_DATASET - The profile job is run on the entire dataset.</p> </li> 
+        /// <li> <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p> </li> 
         /// </ul>
         pub fn mode(mut self, input: crate::model::SampleMode) -> Self {
             self.mode = Some(input);
             self
         }
-        /// <p>A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This value must be one of the following:</p>
-        /// <ul>
-        /// <li> <p>FULL_DATASET - The profile job is run on the entire dataset.</p> </li>
-        /// <li> <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p> </li>
+        /// <p>A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This value must be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>FULL_DATASET - The profile job is run on the entire dataset.</p> </li> 
+        /// <li> <p>CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.</p> </li> 
         /// </ul>
         pub fn set_mode(mut self, input: std::option::Option<crate::model::SampleMode>) -> Self {
-            self.mode = input;
-            self
+            self.mode = input; self
         }
-        /// <p>The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The profile job is run on the specified number of rows. The maximum value for size is Long.MAX_VALUE.</p>
+        /// <p>The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The profile job is run on the specified number of rows. The maximum value for size is Long.MAX_VALUE.</p> 
         /// <p>Long.MAX_VALUE = 9223372036854775807</p>
         pub fn size(mut self, input: i64) -> Self {
             self.size = Some(input);
             self
         }
-        /// <p>The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The profile job is run on the specified number of rows. The maximum value for size is Long.MAX_VALUE.</p>
+        /// <p>The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The profile job is run on the specified number of rows. The maximum value for size is Long.MAX_VALUE.</p> 
         /// <p>Long.MAX_VALUE = 9223372036854775807</p>
         pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.size = input;
-            self
+            self.size = input; self
         }
         /// Consumes the builder and constructs a [`JobSample`](crate::model::JobSample).
         pub fn build(self) -> crate::model::JobSample {
             crate::model::JobSample {
-                mode: self.mode,
-                size: self.size,
+                mode: self.mode
+                ,
+                size: self.size
+                ,
             }
         }
     }
+    
+    
 }
 impl JobSample {
     /// Creates a new builder-style object to manufacture [`JobSample`](crate::model::JobSample).
@@ -2320,9 +2191,9 @@ impl JobSample {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let samplemode = unimplemented!();
 /// match samplemode {
@@ -2344,58 +2215,52 @@ impl JobSample {
 /// Specifically, when `samplemode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SampleMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SampleMode {
     #[allow(missing_docs)] // documentation missing in model
     CustomRows,
     #[allow(missing_docs)] // documentation missing in model
     FullDataset,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SampleMode {
     fn from(s: &str) -> Self {
         match s {
             "CUSTOM_ROWS" => SampleMode::CustomRows,
             "FULL_DATASET" => SampleMode::FullDataset,
-            other => SampleMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SampleMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SampleMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SampleMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SampleMode::from(s))
+                }
+            }
 impl SampleMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SampleMode::CustomRows => "CUSTOM_ROWS",
             SampleMode::FullDataset => "FULL_DATASET",
-            SampleMode::Unknown(value) => value.as_str(),
+            SampleMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUSTOM_ROWS", "FULL_DATASET"]
+        &[
+            "CUSTOM_ROWS", "FULL_DATASET"
+        ]
     }
 }
 impl AsRef<str> for SampleMode {
@@ -2407,7 +2272,7 @@ impl AsRef<str> for SampleMode {
 /// <p>Configuration for data quality validation. Used to select the Rulesets and Validation Mode to be used in the profile job. When ValidationConfiguration is null, the profile job will run without data quality validation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationConfiguration {
+pub struct ValidationConfiguration  {
     /// <p>The Amazon Resource Name (ARN) for the ruleset to be validated in the profile job. The TargetArn of the selected ruleset should be the same as the Amazon Resource Name (ARN) of the dataset that is associated with the profile job.</p>
     #[doc(hidden)]
     pub ruleset_arn: std::option::Option<std::string::String>,
@@ -2417,17 +2282,17 @@ pub struct ValidationConfiguration {
 }
 impl ValidationConfiguration {
     /// <p>The Amazon Resource Name (ARN) for the ruleset to be validated in the profile job. The TargetArn of the selected ruleset should be the same as the Amazon Resource Name (ARN) of the dataset that is associated with the profile job.</p>
-    pub fn ruleset_arn(&self) -> std::option::Option<&str> {
+    pub fn ruleset_arn(&self) -> std::option::Option<& str> {
         self.ruleset_arn.as_deref()
     }
     /// <p>Mode of data quality validation. Default mode is “CHECK_ALL” which verifies all rules defined in the selected ruleset.</p>
-    pub fn validation_mode(&self) -> std::option::Option<&crate::model::ValidationMode> {
+    pub fn validation_mode(&self) -> std::option::Option<& crate::model::ValidationMode> {
         self.validation_mode.as_ref()
     }
 }
 /// See [`ValidationConfiguration`](crate::model::ValidationConfiguration).
 pub mod validation_configuration {
-
+    
     /// A builder for [`ValidationConfiguration`](crate::model::ValidationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2442,8 +2307,7 @@ pub mod validation_configuration {
         }
         /// <p>The Amazon Resource Name (ARN) for the ruleset to be validated in the profile job. The TargetArn of the selected ruleset should be the same as the Amazon Resource Name (ARN) of the dataset that is associated with the profile job.</p>
         pub fn set_ruleset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ruleset_arn = input;
-            self
+            self.ruleset_arn = input; self
         }
         /// <p>Mode of data quality validation. Default mode is “CHECK_ALL” which verifies all rules defined in the selected ruleset.</p>
         pub fn validation_mode(mut self, input: crate::model::ValidationMode) -> Self {
@@ -2451,21 +2315,21 @@ pub mod validation_configuration {
             self
         }
         /// <p>Mode of data quality validation. Default mode is “CHECK_ALL” which verifies all rules defined in the selected ruleset.</p>
-        pub fn set_validation_mode(
-            mut self,
-            input: std::option::Option<crate::model::ValidationMode>,
-        ) -> Self {
-            self.validation_mode = input;
-            self
+        pub fn set_validation_mode(mut self, input: std::option::Option<crate::model::ValidationMode>) -> Self {
+            self.validation_mode = input; self
         }
         /// Consumes the builder and constructs a [`ValidationConfiguration`](crate::model::ValidationConfiguration).
         pub fn build(self) -> crate::model::ValidationConfiguration {
             crate::model::ValidationConfiguration {
-                ruleset_arn: self.ruleset_arn,
-                validation_mode: self.validation_mode,
+                ruleset_arn: self.ruleset_arn
+                ,
+                validation_mode: self.validation_mode
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationConfiguration {
     /// Creates a new builder-style object to manufacture [`ValidationConfiguration`](crate::model::ValidationConfiguration).
@@ -2480,9 +2344,9 @@ impl ValidationConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationmode = unimplemented!();
 /// match validationmode {
@@ -2503,54 +2367,48 @@ impl ValidationConfiguration {
 /// Specifically, when `validationmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationMode {
     #[allow(missing_docs)] // documentation missing in model
     CheckAll,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationMode {
     fn from(s: &str) -> Self {
         match s {
             "CHECK_ALL" => ValidationMode::CheckAll,
-            other => ValidationMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ValidationMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationMode::from(s))
+                }
+            }
 impl ValidationMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ValidationMode::CheckAll => "CHECK_ALL",
-            ValidationMode::Unknown(value) => value.as_str(),
+            ValidationMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CHECK_ALL"]
+        &[
+            "CHECK_ALL"
+        ]
     }
 }
 impl AsRef<str> for ValidationMode {
@@ -2562,78 +2420,58 @@ impl AsRef<str> for ValidationMode {
 /// <p>Configuration for profile jobs. Configuration can be used to select columns, do evaluations, and override default parameters of evaluations. When configuration is undefined, the profile job will apply default settings to all supported columns. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProfileConfiguration {
+pub struct ProfileConfiguration  {
     /// <p>Configuration for inter-column evaluations. Configuration can be used to select evaluations and override parameters of evaluations. When configuration is undefined, the profile job will run all supported inter-column evaluations. </p>
     #[doc(hidden)]
-    pub dataset_statistics_configuration:
-        std::option::Option<crate::model::StatisticsConfiguration>,
+    pub dataset_statistics_configuration: std::option::Option<crate::model::StatisticsConfiguration>,
     /// <p>List of column selectors. ProfileColumns can be used to select columns from the dataset. When ProfileColumns is undefined, the profile job will profile all supported columns. </p>
     #[doc(hidden)]
     pub profile_columns: std::option::Option<std::vec::Vec<crate::model::ColumnSelector>>,
     /// <p>List of configurations for column evaluations. ColumnStatisticsConfigurations are used to select evaluations and override parameters of evaluations for particular columns. When ColumnStatisticsConfigurations is undefined, the profile job will profile all supported columns and run all supported evaluations. </p>
     #[doc(hidden)]
-    pub column_statistics_configurations:
-        std::option::Option<std::vec::Vec<crate::model::ColumnStatisticsConfiguration>>,
+    pub column_statistics_configurations: std::option::Option<std::vec::Vec<crate::model::ColumnStatisticsConfiguration>>,
     /// <p>Configuration of entity detection for a profile job. When undefined, entity detection is disabled.</p>
     #[doc(hidden)]
-    pub entity_detector_configuration:
-        std::option::Option<crate::model::EntityDetectorConfiguration>,
+    pub entity_detector_configuration: std::option::Option<crate::model::EntityDetectorConfiguration>,
 }
 impl ProfileConfiguration {
     /// <p>Configuration for inter-column evaluations. Configuration can be used to select evaluations and override parameters of evaluations. When configuration is undefined, the profile job will run all supported inter-column evaluations. </p>
-    pub fn dataset_statistics_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::StatisticsConfiguration> {
+    pub fn dataset_statistics_configuration(&self) -> std::option::Option<& crate::model::StatisticsConfiguration> {
         self.dataset_statistics_configuration.as_ref()
     }
     /// <p>List of column selectors. ProfileColumns can be used to select columns from the dataset. When ProfileColumns is undefined, the profile job will profile all supported columns. </p>
-    pub fn profile_columns(&self) -> std::option::Option<&[crate::model::ColumnSelector]> {
+    pub fn profile_columns(&self) -> std::option::Option<& [crate::model::ColumnSelector]> {
         self.profile_columns.as_deref()
     }
     /// <p>List of configurations for column evaluations. ColumnStatisticsConfigurations are used to select evaluations and override parameters of evaluations for particular columns. When ColumnStatisticsConfigurations is undefined, the profile job will profile all supported columns and run all supported evaluations. </p>
-    pub fn column_statistics_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::ColumnStatisticsConfiguration]> {
+    pub fn column_statistics_configurations(&self) -> std::option::Option<& [crate::model::ColumnStatisticsConfiguration]> {
         self.column_statistics_configurations.as_deref()
     }
     /// <p>Configuration of entity detection for a profile job. When undefined, entity detection is disabled.</p>
-    pub fn entity_detector_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::EntityDetectorConfiguration> {
+    pub fn entity_detector_configuration(&self) -> std::option::Option<& crate::model::EntityDetectorConfiguration> {
         self.entity_detector_configuration.as_ref()
     }
 }
 /// See [`ProfileConfiguration`](crate::model::ProfileConfiguration).
 pub mod profile_configuration {
-
+    
     /// A builder for [`ProfileConfiguration`](crate::model::ProfileConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) dataset_statistics_configuration:
-            std::option::Option<crate::model::StatisticsConfiguration>,
-        pub(crate) profile_columns:
-            std::option::Option<std::vec::Vec<crate::model::ColumnSelector>>,
-        pub(crate) column_statistics_configurations:
-            std::option::Option<std::vec::Vec<crate::model::ColumnStatisticsConfiguration>>,
-        pub(crate) entity_detector_configuration:
-            std::option::Option<crate::model::EntityDetectorConfiguration>,
+        pub(crate) dataset_statistics_configuration: std::option::Option<crate::model::StatisticsConfiguration>,
+        pub(crate) profile_columns: std::option::Option<std::vec::Vec<crate::model::ColumnSelector>>,
+        pub(crate) column_statistics_configurations: std::option::Option<std::vec::Vec<crate::model::ColumnStatisticsConfiguration>>,
+        pub(crate) entity_detector_configuration: std::option::Option<crate::model::EntityDetectorConfiguration>,
     }
     impl Builder {
         /// <p>Configuration for inter-column evaluations. Configuration can be used to select evaluations and override parameters of evaluations. When configuration is undefined, the profile job will run all supported inter-column evaluations. </p>
-        pub fn dataset_statistics_configuration(
-            mut self,
-            input: crate::model::StatisticsConfiguration,
-        ) -> Self {
+        pub fn dataset_statistics_configuration(mut self, input: crate::model::StatisticsConfiguration) -> Self {
             self.dataset_statistics_configuration = Some(input);
             self
         }
         /// <p>Configuration for inter-column evaluations. Configuration can be used to select evaluations and override parameters of evaluations. When configuration is undefined, the profile job will run all supported inter-column evaluations. </p>
-        pub fn set_dataset_statistics_configuration(
-            mut self,
-            input: std::option::Option<crate::model::StatisticsConfiguration>,
-        ) -> Self {
-            self.dataset_statistics_configuration = input;
-            self
+        pub fn set_dataset_statistics_configuration(mut self, input: std::option::Option<crate::model::StatisticsConfiguration>) -> Self {
+            self.dataset_statistics_configuration = input; self
         }
         /// Appends an item to `profile_columns`.
         ///
@@ -2642,66 +2480,54 @@ pub mod profile_configuration {
         /// <p>List of column selectors. ProfileColumns can be used to select columns from the dataset. When ProfileColumns is undefined, the profile job will profile all supported columns. </p>
         pub fn profile_columns(mut self, input: crate::model::ColumnSelector) -> Self {
             let mut v = self.profile_columns.unwrap_or_default();
-            v.push(input);
-            self.profile_columns = Some(v);
-            self
+                            v.push(input);
+                            self.profile_columns = Some(v);
+                            self
         }
         /// <p>List of column selectors. ProfileColumns can be used to select columns from the dataset. When ProfileColumns is undefined, the profile job will profile all supported columns. </p>
-        pub fn set_profile_columns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ColumnSelector>>,
-        ) -> Self {
-            self.profile_columns = input;
-            self
+        pub fn set_profile_columns(mut self, input: std::option::Option<std::vec::Vec<crate::model::ColumnSelector>>) -> Self {
+            self.profile_columns = input; self
         }
         /// Appends an item to `column_statistics_configurations`.
         ///
         /// To override the contents of this collection use [`set_column_statistics_configurations`](Self::set_column_statistics_configurations).
         ///
         /// <p>List of configurations for column evaluations. ColumnStatisticsConfigurations are used to select evaluations and override parameters of evaluations for particular columns. When ColumnStatisticsConfigurations is undefined, the profile job will profile all supported columns and run all supported evaluations. </p>
-        pub fn column_statistics_configurations(
-            mut self,
-            input: crate::model::ColumnStatisticsConfiguration,
-        ) -> Self {
+        pub fn column_statistics_configurations(mut self, input: crate::model::ColumnStatisticsConfiguration) -> Self {
             let mut v = self.column_statistics_configurations.unwrap_or_default();
-            v.push(input);
-            self.column_statistics_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.column_statistics_configurations = Some(v);
+                            self
         }
         /// <p>List of configurations for column evaluations. ColumnStatisticsConfigurations are used to select evaluations and override parameters of evaluations for particular columns. When ColumnStatisticsConfigurations is undefined, the profile job will profile all supported columns and run all supported evaluations. </p>
-        pub fn set_column_statistics_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ColumnStatisticsConfiguration>>,
-        ) -> Self {
-            self.column_statistics_configurations = input;
-            self
+        pub fn set_column_statistics_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::ColumnStatisticsConfiguration>>) -> Self {
+            self.column_statistics_configurations = input; self
         }
         /// <p>Configuration of entity detection for a profile job. When undefined, entity detection is disabled.</p>
-        pub fn entity_detector_configuration(
-            mut self,
-            input: crate::model::EntityDetectorConfiguration,
-        ) -> Self {
+        pub fn entity_detector_configuration(mut self, input: crate::model::EntityDetectorConfiguration) -> Self {
             self.entity_detector_configuration = Some(input);
             self
         }
         /// <p>Configuration of entity detection for a profile job. When undefined, entity detection is disabled.</p>
-        pub fn set_entity_detector_configuration(
-            mut self,
-            input: std::option::Option<crate::model::EntityDetectorConfiguration>,
-        ) -> Self {
-            self.entity_detector_configuration = input;
-            self
+        pub fn set_entity_detector_configuration(mut self, input: std::option::Option<crate::model::EntityDetectorConfiguration>) -> Self {
+            self.entity_detector_configuration = input; self
         }
         /// Consumes the builder and constructs a [`ProfileConfiguration`](crate::model::ProfileConfiguration).
         pub fn build(self) -> crate::model::ProfileConfiguration {
             crate::model::ProfileConfiguration {
-                dataset_statistics_configuration: self.dataset_statistics_configuration,
-                profile_columns: self.profile_columns,
-                column_statistics_configurations: self.column_statistics_configurations,
-                entity_detector_configuration: self.entity_detector_configuration,
+                dataset_statistics_configuration: self.dataset_statistics_configuration
+                ,
+                profile_columns: self.profile_columns
+                ,
+                column_statistics_configurations: self.column_statistics_configurations
+                ,
+                entity_detector_configuration: self.entity_detector_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl ProfileConfiguration {
     /// Creates a new builder-style object to manufacture [`ProfileConfiguration`](crate::model::ProfileConfiguration).
@@ -2713,29 +2539,29 @@ impl ProfileConfiguration {
 /// <p>Configuration of entity detection for a profile job. When undefined, entity detection is disabled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EntityDetectorConfiguration {
-    /// <p>Entity types to detect. Can be any of the following:</p>
-    /// <ul>
-    /// <li> <p>USA_SSN</p> </li>
-    /// <li> <p>EMAIL</p> </li>
-    /// <li> <p>USA_ITIN</p> </li>
-    /// <li> <p>USA_PASSPORT_NUMBER</p> </li>
-    /// <li> <p>PHONE_NUMBER</p> </li>
-    /// <li> <p>USA_DRIVING_LICENSE</p> </li>
-    /// <li> <p>BANK_ACCOUNT</p> </li>
-    /// <li> <p>CREDIT_CARD</p> </li>
-    /// <li> <p>IP_ADDRESS</p> </li>
-    /// <li> <p>MAC_ADDRESS</p> </li>
-    /// <li> <p>USA_DEA_NUMBER</p> </li>
-    /// <li> <p>USA_HCPCS_CODE</p> </li>
-    /// <li> <p>USA_NATIONAL_PROVIDER_IDENTIFIER</p> </li>
-    /// <li> <p>USA_NATIONAL_DRUG_CODE</p> </li>
-    /// <li> <p>USA_HEALTH_INSURANCE_CLAIM_NUMBER</p> </li>
-    /// <li> <p>USA_MEDICARE_BENEFICIARY_IDENTIFIER</p> </li>
-    /// <li> <p>USA_CPT_CODE</p> </li>
-    /// <li> <p>PERSON_NAME</p> </li>
-    /// <li> <p>DATE</p> </li>
-    /// </ul>
+pub struct EntityDetectorConfiguration  {
+    /// <p>Entity types to detect. Can be any of the following:</p> 
+    /// <ul> 
+    /// <li> <p>USA_SSN</p> </li> 
+    /// <li> <p>EMAIL</p> </li> 
+    /// <li> <p>USA_ITIN</p> </li> 
+    /// <li> <p>USA_PASSPORT_NUMBER</p> </li> 
+    /// <li> <p>PHONE_NUMBER</p> </li> 
+    /// <li> <p>USA_DRIVING_LICENSE</p> </li> 
+    /// <li> <p>BANK_ACCOUNT</p> </li> 
+    /// <li> <p>CREDIT_CARD</p> </li> 
+    /// <li> <p>IP_ADDRESS</p> </li> 
+    /// <li> <p>MAC_ADDRESS</p> </li> 
+    /// <li> <p>USA_DEA_NUMBER</p> </li> 
+    /// <li> <p>USA_HCPCS_CODE</p> </li> 
+    /// <li> <p>USA_NATIONAL_PROVIDER_IDENTIFIER</p> </li> 
+    /// <li> <p>USA_NATIONAL_DRUG_CODE</p> </li> 
+    /// <li> <p>USA_HEALTH_INSURANCE_CLAIM_NUMBER</p> </li> 
+    /// <li> <p>USA_MEDICARE_BENEFICIARY_IDENTIFIER</p> </li> 
+    /// <li> <p>USA_CPT_CODE</p> </li> 
+    /// <li> <p>PERSON_NAME</p> </li> 
+    /// <li> <p>DATE</p> </li> 
+    /// </ul> 
     /// <p>The Entity type group USA_ALL is also supported, and includes all of the above entity types except PERSON_NAME and DATE.</p>
     #[doc(hidden)]
     pub entity_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2744,110 +2570,105 @@ pub struct EntityDetectorConfiguration {
     pub allowed_statistics: std::option::Option<std::vec::Vec<crate::model::AllowedStatistics>>,
 }
 impl EntityDetectorConfiguration {
-    /// <p>Entity types to detect. Can be any of the following:</p>
-    /// <ul>
-    /// <li> <p>USA_SSN</p> </li>
-    /// <li> <p>EMAIL</p> </li>
-    /// <li> <p>USA_ITIN</p> </li>
-    /// <li> <p>USA_PASSPORT_NUMBER</p> </li>
-    /// <li> <p>PHONE_NUMBER</p> </li>
-    /// <li> <p>USA_DRIVING_LICENSE</p> </li>
-    /// <li> <p>BANK_ACCOUNT</p> </li>
-    /// <li> <p>CREDIT_CARD</p> </li>
-    /// <li> <p>IP_ADDRESS</p> </li>
-    /// <li> <p>MAC_ADDRESS</p> </li>
-    /// <li> <p>USA_DEA_NUMBER</p> </li>
-    /// <li> <p>USA_HCPCS_CODE</p> </li>
-    /// <li> <p>USA_NATIONAL_PROVIDER_IDENTIFIER</p> </li>
-    /// <li> <p>USA_NATIONAL_DRUG_CODE</p> </li>
-    /// <li> <p>USA_HEALTH_INSURANCE_CLAIM_NUMBER</p> </li>
-    /// <li> <p>USA_MEDICARE_BENEFICIARY_IDENTIFIER</p> </li>
-    /// <li> <p>USA_CPT_CODE</p> </li>
-    /// <li> <p>PERSON_NAME</p> </li>
-    /// <li> <p>DATE</p> </li>
-    /// </ul>
+    /// <p>Entity types to detect. Can be any of the following:</p> 
+    /// <ul> 
+    /// <li> <p>USA_SSN</p> </li> 
+    /// <li> <p>EMAIL</p> </li> 
+    /// <li> <p>USA_ITIN</p> </li> 
+    /// <li> <p>USA_PASSPORT_NUMBER</p> </li> 
+    /// <li> <p>PHONE_NUMBER</p> </li> 
+    /// <li> <p>USA_DRIVING_LICENSE</p> </li> 
+    /// <li> <p>BANK_ACCOUNT</p> </li> 
+    /// <li> <p>CREDIT_CARD</p> </li> 
+    /// <li> <p>IP_ADDRESS</p> </li> 
+    /// <li> <p>MAC_ADDRESS</p> </li> 
+    /// <li> <p>USA_DEA_NUMBER</p> </li> 
+    /// <li> <p>USA_HCPCS_CODE</p> </li> 
+    /// <li> <p>USA_NATIONAL_PROVIDER_IDENTIFIER</p> </li> 
+    /// <li> <p>USA_NATIONAL_DRUG_CODE</p> </li> 
+    /// <li> <p>USA_HEALTH_INSURANCE_CLAIM_NUMBER</p> </li> 
+    /// <li> <p>USA_MEDICARE_BENEFICIARY_IDENTIFIER</p> </li> 
+    /// <li> <p>USA_CPT_CODE</p> </li> 
+    /// <li> <p>PERSON_NAME</p> </li> 
+    /// <li> <p>DATE</p> </li> 
+    /// </ul> 
     /// <p>The Entity type group USA_ALL is also supported, and includes all of the above entity types except PERSON_NAME and DATE.</p>
-    pub fn entity_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn entity_types(&self) -> std::option::Option<& [std::string::String]> {
         self.entity_types.as_deref()
     }
     /// <p>Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.</p>
-    pub fn allowed_statistics(&self) -> std::option::Option<&[crate::model::AllowedStatistics]> {
+    pub fn allowed_statistics(&self) -> std::option::Option<& [crate::model::AllowedStatistics]> {
         self.allowed_statistics.as_deref()
     }
 }
 /// See [`EntityDetectorConfiguration`](crate::model::EntityDetectorConfiguration).
 pub mod entity_detector_configuration {
-
+    
     /// A builder for [`EntityDetectorConfiguration`](crate::model::EntityDetectorConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_types: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) allowed_statistics:
-            std::option::Option<std::vec::Vec<crate::model::AllowedStatistics>>,
+        pub(crate) allowed_statistics: std::option::Option<std::vec::Vec<crate::model::AllowedStatistics>>,
     }
     impl Builder {
         /// Appends an item to `entity_types`.
         ///
         /// To override the contents of this collection use [`set_entity_types`](Self::set_entity_types).
         ///
-        /// <p>Entity types to detect. Can be any of the following:</p>
-        /// <ul>
-        /// <li> <p>USA_SSN</p> </li>
-        /// <li> <p>EMAIL</p> </li>
-        /// <li> <p>USA_ITIN</p> </li>
-        /// <li> <p>USA_PASSPORT_NUMBER</p> </li>
-        /// <li> <p>PHONE_NUMBER</p> </li>
-        /// <li> <p>USA_DRIVING_LICENSE</p> </li>
-        /// <li> <p>BANK_ACCOUNT</p> </li>
-        /// <li> <p>CREDIT_CARD</p> </li>
-        /// <li> <p>IP_ADDRESS</p> </li>
-        /// <li> <p>MAC_ADDRESS</p> </li>
-        /// <li> <p>USA_DEA_NUMBER</p> </li>
-        /// <li> <p>USA_HCPCS_CODE</p> </li>
-        /// <li> <p>USA_NATIONAL_PROVIDER_IDENTIFIER</p> </li>
-        /// <li> <p>USA_NATIONAL_DRUG_CODE</p> </li>
-        /// <li> <p>USA_HEALTH_INSURANCE_CLAIM_NUMBER</p> </li>
-        /// <li> <p>USA_MEDICARE_BENEFICIARY_IDENTIFIER</p> </li>
-        /// <li> <p>USA_CPT_CODE</p> </li>
-        /// <li> <p>PERSON_NAME</p> </li>
-        /// <li> <p>DATE</p> </li>
-        /// </ul>
+        /// <p>Entity types to detect. Can be any of the following:</p> 
+        /// <ul> 
+        /// <li> <p>USA_SSN</p> </li> 
+        /// <li> <p>EMAIL</p> </li> 
+        /// <li> <p>USA_ITIN</p> </li> 
+        /// <li> <p>USA_PASSPORT_NUMBER</p> </li> 
+        /// <li> <p>PHONE_NUMBER</p> </li> 
+        /// <li> <p>USA_DRIVING_LICENSE</p> </li> 
+        /// <li> <p>BANK_ACCOUNT</p> </li> 
+        /// <li> <p>CREDIT_CARD</p> </li> 
+        /// <li> <p>IP_ADDRESS</p> </li> 
+        /// <li> <p>MAC_ADDRESS</p> </li> 
+        /// <li> <p>USA_DEA_NUMBER</p> </li> 
+        /// <li> <p>USA_HCPCS_CODE</p> </li> 
+        /// <li> <p>USA_NATIONAL_PROVIDER_IDENTIFIER</p> </li> 
+        /// <li> <p>USA_NATIONAL_DRUG_CODE</p> </li> 
+        /// <li> <p>USA_HEALTH_INSURANCE_CLAIM_NUMBER</p> </li> 
+        /// <li> <p>USA_MEDICARE_BENEFICIARY_IDENTIFIER</p> </li> 
+        /// <li> <p>USA_CPT_CODE</p> </li> 
+        /// <li> <p>PERSON_NAME</p> </li> 
+        /// <li> <p>DATE</p> </li> 
+        /// </ul> 
         /// <p>The Entity type group USA_ALL is also supported, and includes all of the above entity types except PERSON_NAME and DATE.</p>
         pub fn entity_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.entity_types.unwrap_or_default();
-            v.push(input.into());
-            self.entity_types = Some(v);
-            self
+                            v.push(input.into());
+                            self.entity_types = Some(v);
+                            self
         }
-        /// <p>Entity types to detect. Can be any of the following:</p>
-        /// <ul>
-        /// <li> <p>USA_SSN</p> </li>
-        /// <li> <p>EMAIL</p> </li>
-        /// <li> <p>USA_ITIN</p> </li>
-        /// <li> <p>USA_PASSPORT_NUMBER</p> </li>
-        /// <li> <p>PHONE_NUMBER</p> </li>
-        /// <li> <p>USA_DRIVING_LICENSE</p> </li>
-        /// <li> <p>BANK_ACCOUNT</p> </li>
-        /// <li> <p>CREDIT_CARD</p> </li>
-        /// <li> <p>IP_ADDRESS</p> </li>
-        /// <li> <p>MAC_ADDRESS</p> </li>
-        /// <li> <p>USA_DEA_NUMBER</p> </li>
-        /// <li> <p>USA_HCPCS_CODE</p> </li>
-        /// <li> <p>USA_NATIONAL_PROVIDER_IDENTIFIER</p> </li>
-        /// <li> <p>USA_NATIONAL_DRUG_CODE</p> </li>
-        /// <li> <p>USA_HEALTH_INSURANCE_CLAIM_NUMBER</p> </li>
-        /// <li> <p>USA_MEDICARE_BENEFICIARY_IDENTIFIER</p> </li>
-        /// <li> <p>USA_CPT_CODE</p> </li>
-        /// <li> <p>PERSON_NAME</p> </li>
-        /// <li> <p>DATE</p> </li>
-        /// </ul>
+        /// <p>Entity types to detect. Can be any of the following:</p> 
+        /// <ul> 
+        /// <li> <p>USA_SSN</p> </li> 
+        /// <li> <p>EMAIL</p> </li> 
+        /// <li> <p>USA_ITIN</p> </li> 
+        /// <li> <p>USA_PASSPORT_NUMBER</p> </li> 
+        /// <li> <p>PHONE_NUMBER</p> </li> 
+        /// <li> <p>USA_DRIVING_LICENSE</p> </li> 
+        /// <li> <p>BANK_ACCOUNT</p> </li> 
+        /// <li> <p>CREDIT_CARD</p> </li> 
+        /// <li> <p>IP_ADDRESS</p> </li> 
+        /// <li> <p>MAC_ADDRESS</p> </li> 
+        /// <li> <p>USA_DEA_NUMBER</p> </li> 
+        /// <li> <p>USA_HCPCS_CODE</p> </li> 
+        /// <li> <p>USA_NATIONAL_PROVIDER_IDENTIFIER</p> </li> 
+        /// <li> <p>USA_NATIONAL_DRUG_CODE</p> </li> 
+        /// <li> <p>USA_HEALTH_INSURANCE_CLAIM_NUMBER</p> </li> 
+        /// <li> <p>USA_MEDICARE_BENEFICIARY_IDENTIFIER</p> </li> 
+        /// <li> <p>USA_CPT_CODE</p> </li> 
+        /// <li> <p>PERSON_NAME</p> </li> 
+        /// <li> <p>DATE</p> </li> 
+        /// </ul> 
         /// <p>The Entity type group USA_ALL is also supported, and includes all of the above entity types except PERSON_NAME and DATE.</p>
-        pub fn set_entity_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.entity_types = input;
-            self
+        pub fn set_entity_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.entity_types = input; self
         }
         /// Appends an item to `allowed_statistics`.
         ///
@@ -2856,26 +2677,26 @@ pub mod entity_detector_configuration {
         /// <p>Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.</p>
         pub fn allowed_statistics(mut self, input: crate::model::AllowedStatistics) -> Self {
             let mut v = self.allowed_statistics.unwrap_or_default();
-            v.push(input);
-            self.allowed_statistics = Some(v);
-            self
+                            v.push(input);
+                            self.allowed_statistics = Some(v);
+                            self
         }
         /// <p>Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.</p>
-        pub fn set_allowed_statistics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AllowedStatistics>>,
-        ) -> Self {
-            self.allowed_statistics = input;
-            self
+        pub fn set_allowed_statistics(mut self, input: std::option::Option<std::vec::Vec<crate::model::AllowedStatistics>>) -> Self {
+            self.allowed_statistics = input; self
         }
         /// Consumes the builder and constructs a [`EntityDetectorConfiguration`](crate::model::EntityDetectorConfiguration).
         pub fn build(self) -> crate::model::EntityDetectorConfiguration {
             crate::model::EntityDetectorConfiguration {
-                entity_types: self.entity_types,
-                allowed_statistics: self.allowed_statistics,
+                entity_types: self.entity_types
+                ,
+                allowed_statistics: self.allowed_statistics
+                ,
             }
         }
     }
+    
+    
 }
 impl EntityDetectorConfiguration {
     /// Creates a new builder-style object to manufacture [`EntityDetectorConfiguration`](crate::model::EntityDetectorConfiguration).
@@ -2887,20 +2708,20 @@ impl EntityDetectorConfiguration {
 /// <p>Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AllowedStatistics {
+pub struct AllowedStatistics  {
     /// <p>One or more column statistics to allow for columns that contain detected entities.</p>
     #[doc(hidden)]
     pub statistics: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl AllowedStatistics {
     /// <p>One or more column statistics to allow for columns that contain detected entities.</p>
-    pub fn statistics(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn statistics(&self) -> std::option::Option<& [std::string::String]> {
         self.statistics.as_deref()
     }
 }
 /// See [`AllowedStatistics`](crate::model::AllowedStatistics).
 pub mod allowed_statistics {
-
+    
     /// A builder for [`AllowedStatistics`](crate::model::AllowedStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2914,25 +2735,24 @@ pub mod allowed_statistics {
         /// <p>One or more column statistics to allow for columns that contain detected entities.</p>
         pub fn statistics(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.statistics.unwrap_or_default();
-            v.push(input.into());
-            self.statistics = Some(v);
-            self
+                            v.push(input.into());
+                            self.statistics = Some(v);
+                            self
         }
         /// <p>One or more column statistics to allow for columns that contain detected entities.</p>
-        pub fn set_statistics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.statistics = input;
-            self
+        pub fn set_statistics(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.statistics = input; self
         }
         /// Consumes the builder and constructs a [`AllowedStatistics`](crate::model::AllowedStatistics).
         pub fn build(self) -> crate::model::AllowedStatistics {
             crate::model::AllowedStatistics {
-                statistics: self.statistics,
+                statistics: self.statistics
+                ,
             }
         }
     }
+    
+    
 }
 impl AllowedStatistics {
     /// Creates a new builder-style object to manufacture [`AllowedStatistics`](crate::model::AllowedStatistics).
@@ -2944,7 +2764,7 @@ impl AllowedStatistics {
 /// <p>Configuration for column evaluations for a profile job. ColumnStatisticsConfiguration can be used to select evaluations and override parameters of evaluations for particular columns. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ColumnStatisticsConfiguration {
+pub struct ColumnStatisticsConfiguration  {
     /// <p>List of column selectors. Selectors can be used to select columns from the dataset. When selectors are undefined, configuration will be applied to all supported columns. </p>
     #[doc(hidden)]
     pub selectors: std::option::Option<std::vec::Vec<crate::model::ColumnSelector>>,
@@ -2954,17 +2774,17 @@ pub struct ColumnStatisticsConfiguration {
 }
 impl ColumnStatisticsConfiguration {
     /// <p>List of column selectors. Selectors can be used to select columns from the dataset. When selectors are undefined, configuration will be applied to all supported columns. </p>
-    pub fn selectors(&self) -> std::option::Option<&[crate::model::ColumnSelector]> {
+    pub fn selectors(&self) -> std::option::Option<& [crate::model::ColumnSelector]> {
         self.selectors.as_deref()
     }
     /// <p>Configuration for evaluations. Statistics can be used to select evaluations and override parameters of evaluations. </p>
-    pub fn statistics(&self) -> std::option::Option<&crate::model::StatisticsConfiguration> {
+    pub fn statistics(&self) -> std::option::Option<& crate::model::StatisticsConfiguration> {
         self.statistics.as_ref()
     }
 }
 /// See [`ColumnStatisticsConfiguration`](crate::model::ColumnStatisticsConfiguration).
 pub mod column_statistics_configuration {
-
+    
     /// A builder for [`ColumnStatisticsConfiguration`](crate::model::ColumnStatisticsConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2979,17 +2799,13 @@ pub mod column_statistics_configuration {
         /// <p>List of column selectors. Selectors can be used to select columns from the dataset. When selectors are undefined, configuration will be applied to all supported columns. </p>
         pub fn selectors(mut self, input: crate::model::ColumnSelector) -> Self {
             let mut v = self.selectors.unwrap_or_default();
-            v.push(input);
-            self.selectors = Some(v);
-            self
+                            v.push(input);
+                            self.selectors = Some(v);
+                            self
         }
         /// <p>List of column selectors. Selectors can be used to select columns from the dataset. When selectors are undefined, configuration will be applied to all supported columns. </p>
-        pub fn set_selectors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ColumnSelector>>,
-        ) -> Self {
-            self.selectors = input;
-            self
+        pub fn set_selectors(mut self, input: std::option::Option<std::vec::Vec<crate::model::ColumnSelector>>) -> Self {
+            self.selectors = input; self
         }
         /// <p>Configuration for evaluations. Statistics can be used to select evaluations and override parameters of evaluations. </p>
         pub fn statistics(mut self, input: crate::model::StatisticsConfiguration) -> Self {
@@ -2997,21 +2813,21 @@ pub mod column_statistics_configuration {
             self
         }
         /// <p>Configuration for evaluations. Statistics can be used to select evaluations and override parameters of evaluations. </p>
-        pub fn set_statistics(
-            mut self,
-            input: std::option::Option<crate::model::StatisticsConfiguration>,
-        ) -> Self {
-            self.statistics = input;
-            self
+        pub fn set_statistics(mut self, input: std::option::Option<crate::model::StatisticsConfiguration>) -> Self {
+            self.statistics = input; self
         }
         /// Consumes the builder and constructs a [`ColumnStatisticsConfiguration`](crate::model::ColumnStatisticsConfiguration).
         pub fn build(self) -> crate::model::ColumnStatisticsConfiguration {
             crate::model::ColumnStatisticsConfiguration {
-                selectors: self.selectors,
-                statistics: self.statistics,
+                selectors: self.selectors
+                ,
+                statistics: self.statistics
+                ,
             }
         }
     }
+    
+    
 }
 impl ColumnStatisticsConfiguration {
     /// Creates a new builder-style object to manufacture [`ColumnStatisticsConfiguration`](crate::model::ColumnStatisticsConfiguration).
@@ -3023,7 +2839,7 @@ impl ColumnStatisticsConfiguration {
 /// <p>Configuration of evaluations for a profile job. This configuration can be used to select evaluations and override the parameters of selected evaluations. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StatisticsConfiguration {
+pub struct StatisticsConfiguration  {
     /// <p>List of included evaluations. When the list is undefined, all supported evaluations will be included.</p>
     #[doc(hidden)]
     pub included_statistics: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3033,17 +2849,17 @@ pub struct StatisticsConfiguration {
 }
 impl StatisticsConfiguration {
     /// <p>List of included evaluations. When the list is undefined, all supported evaluations will be included.</p>
-    pub fn included_statistics(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn included_statistics(&self) -> std::option::Option<& [std::string::String]> {
         self.included_statistics.as_deref()
     }
     /// <p>List of overrides for evaluations.</p>
-    pub fn overrides(&self) -> std::option::Option<&[crate::model::StatisticOverride]> {
+    pub fn overrides(&self) -> std::option::Option<& [crate::model::StatisticOverride]> {
         self.overrides.as_deref()
     }
 }
 /// See [`StatisticsConfiguration`](crate::model::StatisticsConfiguration).
 pub mod statistics_configuration {
-
+    
     /// A builder for [`StatisticsConfiguration`](crate::model::StatisticsConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3058,17 +2874,13 @@ pub mod statistics_configuration {
         /// <p>List of included evaluations. When the list is undefined, all supported evaluations will be included.</p>
         pub fn included_statistics(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.included_statistics.unwrap_or_default();
-            v.push(input.into());
-            self.included_statistics = Some(v);
-            self
+                            v.push(input.into());
+                            self.included_statistics = Some(v);
+                            self
         }
         /// <p>List of included evaluations. When the list is undefined, all supported evaluations will be included.</p>
-        pub fn set_included_statistics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.included_statistics = input;
-            self
+        pub fn set_included_statistics(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.included_statistics = input; self
         }
         /// Appends an item to `overrides`.
         ///
@@ -3077,26 +2889,26 @@ pub mod statistics_configuration {
         /// <p>List of overrides for evaluations.</p>
         pub fn overrides(mut self, input: crate::model::StatisticOverride) -> Self {
             let mut v = self.overrides.unwrap_or_default();
-            v.push(input);
-            self.overrides = Some(v);
-            self
+                            v.push(input);
+                            self.overrides = Some(v);
+                            self
         }
         /// <p>List of overrides for evaluations.</p>
-        pub fn set_overrides(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StatisticOverride>>,
-        ) -> Self {
-            self.overrides = input;
-            self
+        pub fn set_overrides(mut self, input: std::option::Option<std::vec::Vec<crate::model::StatisticOverride>>) -> Self {
+            self.overrides = input; self
         }
         /// Consumes the builder and constructs a [`StatisticsConfiguration`](crate::model::StatisticsConfiguration).
         pub fn build(self) -> crate::model::StatisticsConfiguration {
             crate::model::StatisticsConfiguration {
-                included_statistics: self.included_statistics,
-                overrides: self.overrides,
+                included_statistics: self.included_statistics
+                ,
+                overrides: self.overrides
+                ,
             }
         }
     }
+    
+    
 }
 impl StatisticsConfiguration {
     /// Creates a new builder-style object to manufacture [`StatisticsConfiguration`](crate::model::StatisticsConfiguration).
@@ -3108,38 +2920,32 @@ impl StatisticsConfiguration {
 /// <p>Override of a particular evaluation for a profile job. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StatisticOverride {
+pub struct StatisticOverride  {
     /// <p>The name of an evaluation</p>
     #[doc(hidden)]
     pub statistic: std::option::Option<std::string::String>,
     /// <p>A map that includes overrides of an evaluation’s parameters.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StatisticOverride {
     /// <p>The name of an evaluation</p>
-    pub fn statistic(&self) -> std::option::Option<&str> {
+    pub fn statistic(&self) -> std::option::Option<& str> {
         self.statistic.as_deref()
     }
     /// <p>A map that includes overrides of an evaluation’s parameters.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
 }
 /// See [`StatisticOverride`](crate::model::StatisticOverride).
 pub mod statistic_override {
-
+    
     /// A builder for [`StatisticOverride`](crate::model::StatisticOverride).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) statistic: std::option::Option<std::string::String>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of an evaluation</p>
@@ -3149,42 +2955,35 @@ pub mod statistic_override {
         }
         /// <p>The name of an evaluation</p>
         pub fn set_statistic(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.statistic = input;
-            self
+            self.statistic = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>A map that includes overrides of an evaluation’s parameters.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>A map that includes overrides of an evaluation’s parameters.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`StatisticOverride`](crate::model::StatisticOverride).
         pub fn build(self) -> crate::model::StatisticOverride {
             crate::model::StatisticOverride {
-                statistic: self.statistic,
-                parameters: self.parameters,
+                statistic: self.statistic
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl StatisticOverride {
     /// Creates a new builder-style object to manufacture [`StatisticOverride`](crate::model::StatisticOverride).
@@ -3196,7 +2995,7 @@ impl StatisticOverride {
 /// <p>Represents a set of options that define how DataBrew selects files for a given Amazon S3 path in a dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PathOptions {
+pub struct PathOptions  {
     /// <p>If provided, this structure defines a date range for matching Amazon S3 objects based on their LastModifiedDate attribute in Amazon S3.</p>
     #[doc(hidden)]
     pub last_modified_date_condition: std::option::Option<crate::model::FilterExpression>,
@@ -3205,59 +3004,41 @@ pub struct PathOptions {
     pub files_limit: std::option::Option<crate::model::FilesLimit>,
     /// <p>A structure that maps names of parameters used in the Amazon S3 path of a dataset to their definitions.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::DatasetParameter>,
-    >,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::DatasetParameter>>,
 }
 impl PathOptions {
     /// <p>If provided, this structure defines a date range for matching Amazon S3 objects based on their LastModifiedDate attribute in Amazon S3.</p>
-    pub fn last_modified_date_condition(
-        &self,
-    ) -> std::option::Option<&crate::model::FilterExpression> {
+    pub fn last_modified_date_condition(&self) -> std::option::Option<& crate::model::FilterExpression> {
         self.last_modified_date_condition.as_ref()
     }
     /// <p>If provided, this structure imposes a limit on a number of files that should be selected.</p>
-    pub fn files_limit(&self) -> std::option::Option<&crate::model::FilesLimit> {
+    pub fn files_limit(&self) -> std::option::Option<& crate::model::FilesLimit> {
         self.files_limit.as_ref()
     }
     /// <p>A structure that maps names of parameters used in the Amazon S3 path of a dataset to their definitions.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::DatasetParameter>,
-    > {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::DatasetParameter>> {
         self.parameters.as_ref()
     }
 }
 /// See [`PathOptions`](crate::model::PathOptions).
 pub mod path_options {
-
+    
     /// A builder for [`PathOptions`](crate::model::PathOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_modified_date_condition:
-            std::option::Option<crate::model::FilterExpression>,
+        pub(crate) last_modified_date_condition: std::option::Option<crate::model::FilterExpression>,
         pub(crate) files_limit: std::option::Option<crate::model::FilesLimit>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::DatasetParameter>,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::DatasetParameter>>,
     }
     impl Builder {
         /// <p>If provided, this structure defines a date range for matching Amazon S3 objects based on their LastModifiedDate attribute in Amazon S3.</p>
-        pub fn last_modified_date_condition(
-            mut self,
-            input: crate::model::FilterExpression,
-        ) -> Self {
+        pub fn last_modified_date_condition(mut self, input: crate::model::FilterExpression) -> Self {
             self.last_modified_date_condition = Some(input);
             self
         }
         /// <p>If provided, this structure defines a date range for matching Amazon S3 objects based on their LastModifiedDate attribute in Amazon S3.</p>
-        pub fn set_last_modified_date_condition(
-            mut self,
-            input: std::option::Option<crate::model::FilterExpression>,
-        ) -> Self {
-            self.last_modified_date_condition = input;
-            self
+        pub fn set_last_modified_date_condition(mut self, input: std::option::Option<crate::model::FilterExpression>) -> Self {
+            self.last_modified_date_condition = input; self
         }
         /// <p>If provided, this structure imposes a limit on a number of files that should be selected.</p>
         pub fn files_limit(mut self, input: crate::model::FilesLimit) -> Self {
@@ -3265,47 +3046,38 @@ pub mod path_options {
             self
         }
         /// <p>If provided, this structure imposes a limit on a number of files that should be selected.</p>
-        pub fn set_files_limit(
-            mut self,
-            input: std::option::Option<crate::model::FilesLimit>,
-        ) -> Self {
-            self.files_limit = input;
-            self
+        pub fn set_files_limit(mut self, input: std::option::Option<crate::model::FilesLimit>) -> Self {
+            self.files_limit = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>A structure that maps names of parameters used in the Amazon S3 path of a dataset to their definitions.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::DatasetParameter,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: crate::model::DatasetParameter) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>A structure that maps names of parameters used in the Amazon S3 path of a dataset to their definitions.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::DatasetParameter>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::DatasetParameter>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`PathOptions`](crate::model::PathOptions).
         pub fn build(self) -> crate::model::PathOptions {
             crate::model::PathOptions {
-                last_modified_date_condition: self.last_modified_date_condition,
-                files_limit: self.files_limit,
-                parameters: self.parameters,
+                last_modified_date_condition: self.last_modified_date_condition
+                ,
+                files_limit: self.files_limit
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl PathOptions {
     /// Creates a new builder-style object to manufacture [`PathOptions`](crate::model::PathOptions).
@@ -3317,7 +3089,7 @@ impl PathOptions {
 /// <p>Represents a dataset parameter that defines type and conditions for a parameter in the Amazon S3 path of the dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetParameter {
+pub struct DatasetParameter  {
     /// <p>The name of the parameter that is used in the dataset's Amazon S3 path.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3336,15 +3108,15 @@ pub struct DatasetParameter {
 }
 impl DatasetParameter {
     /// <p>The name of the parameter that is used in the dataset's Amazon S3 path.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the dataset parameter, can be one of a 'String', 'Number' or 'Datetime'.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ParameterType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ParameterType> {
         self.r#type.as_ref()
     }
     /// <p>Additional parameter options such as a format and a timezone. Required for datetime parameters.</p>
-    pub fn datetime_options(&self) -> std::option::Option<&crate::model::DatetimeOptions> {
+    pub fn datetime_options(&self) -> std::option::Option<& crate::model::DatetimeOptions> {
         self.datetime_options.as_ref()
     }
     /// <p>Optional boolean value that defines whether the captured value of this parameter should be used to create a new column in a dataset.</p>
@@ -3352,13 +3124,13 @@ impl DatasetParameter {
         self.create_column
     }
     /// <p>The optional filter expression structure to apply additional matching criteria to the parameter.</p>
-    pub fn filter(&self) -> std::option::Option<&crate::model::FilterExpression> {
+    pub fn filter(&self) -> std::option::Option<& crate::model::FilterExpression> {
         self.filter.as_ref()
     }
 }
 /// See [`DatasetParameter`](crate::model::DatasetParameter).
 pub mod dataset_parameter {
-
+    
     /// A builder for [`DatasetParameter`](crate::model::DatasetParameter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3376,8 +3148,7 @@ pub mod dataset_parameter {
         }
         /// <p>The name of the parameter that is used in the dataset's Amazon S3 path.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of the dataset parameter, can be one of a 'String', 'Number' or 'Datetime'.</p>
         pub fn r#type(mut self, input: crate::model::ParameterType) -> Self {
@@ -3386,8 +3157,7 @@ pub mod dataset_parameter {
         }
         /// <p>The type of the dataset parameter, can be one of a 'String', 'Number' or 'Datetime'.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ParameterType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>Additional parameter options such as a format and a timezone. Required for datetime parameters.</p>
         pub fn datetime_options(mut self, input: crate::model::DatetimeOptions) -> Self {
@@ -3395,12 +3165,8 @@ pub mod dataset_parameter {
             self
         }
         /// <p>Additional parameter options such as a format and a timezone. Required for datetime parameters.</p>
-        pub fn set_datetime_options(
-            mut self,
-            input: std::option::Option<crate::model::DatetimeOptions>,
-        ) -> Self {
-            self.datetime_options = input;
-            self
+        pub fn set_datetime_options(mut self, input: std::option::Option<crate::model::DatetimeOptions>) -> Self {
+            self.datetime_options = input; self
         }
         /// <p>Optional boolean value that defines whether the captured value of this parameter should be used to create a new column in a dataset.</p>
         pub fn create_column(mut self, input: bool) -> Self {
@@ -3409,8 +3175,7 @@ pub mod dataset_parameter {
         }
         /// <p>Optional boolean value that defines whether the captured value of this parameter should be used to create a new column in a dataset.</p>
         pub fn set_create_column(mut self, input: std::option::Option<bool>) -> Self {
-            self.create_column = input;
-            self
+            self.create_column = input; self
         }
         /// <p>The optional filter expression structure to apply additional matching criteria to the parameter.</p>
         pub fn filter(mut self, input: crate::model::FilterExpression) -> Self {
@@ -3418,24 +3183,28 @@ pub mod dataset_parameter {
             self
         }
         /// <p>The optional filter expression structure to apply additional matching criteria to the parameter.</p>
-        pub fn set_filter(
-            mut self,
-            input: std::option::Option<crate::model::FilterExpression>,
-        ) -> Self {
-            self.filter = input;
-            self
+        pub fn set_filter(mut self, input: std::option::Option<crate::model::FilterExpression>) -> Self {
+            self.filter = input; self
         }
         /// Consumes the builder and constructs a [`DatasetParameter`](crate::model::DatasetParameter).
         pub fn build(self) -> crate::model::DatasetParameter {
             crate::model::DatasetParameter {
-                name: self.name,
-                r#type: self.r#type,
-                datetime_options: self.datetime_options,
-                create_column: self.create_column.unwrap_or_default(),
-                filter: self.filter,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                datetime_options: self.datetime_options
+                ,
+                create_column: self.create_column
+                    .unwrap_or_default()
+                ,
+                filter: self.filter
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasetParameter {
     /// Creates a new builder-style object to manufacture [`DatasetParameter`](crate::model::DatasetParameter).
@@ -3447,38 +3216,32 @@ impl DatasetParameter {
 /// <p>Represents a structure for defining parameter conditions. Supported conditions are described here: <a href="https://docs.aws.amazon.com/databrew/latest/dg/datasets.multiple-files.html#conditions.for.dynamic.datasets">Supported conditions for dynamic datasets</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilterExpression {
+pub struct FilterExpression  {
     /// <p>The expression which includes condition names followed by substitution variables, possibly grouped and combined with other conditions. For example, "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
     #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
     /// <p>The map of substitution variable names to their values used in this filter expression.</p>
     #[doc(hidden)]
-    pub values_map:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub values_map: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl FilterExpression {
     /// <p>The expression which includes condition names followed by substitution variables, possibly grouped and combined with other conditions. For example, "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>The map of substitution variable names to their values used in this filter expression.</p>
-    pub fn values_map(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn values_map(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.values_map.as_ref()
     }
 }
 /// See [`FilterExpression`](crate::model::FilterExpression).
 pub mod filter_expression {
-
+    
     /// A builder for [`FilterExpression`](crate::model::FilterExpression).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) expression: std::option::Option<std::string::String>,
-        pub(crate) values_map: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) values_map: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The expression which includes condition names followed by substitution variables, possibly grouped and combined with other conditions. For example, "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
@@ -3488,42 +3251,35 @@ pub mod filter_expression {
         }
         /// <p>The expression which includes condition names followed by substitution variables, possibly grouped and combined with other conditions. For example, "(starts_with :prefix1 or starts_with :prefix2) and (ends_with :suffix1 or ends_with :suffix2)". Substitution variables should start with ':' symbol.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.expression = input;
-            self
+            self.expression = input; self
         }
         /// Adds a key-value pair to `values_map`.
         ///
         /// To override the contents of this collection use [`set_values_map`](Self::set_values_map).
         ///
         /// <p>The map of substitution variable names to their values used in this filter expression.</p>
-        pub fn values_map(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn values_map(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.values_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.values_map = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.values_map = Some(hash_map);
+                            self
         }
         /// <p>The map of substitution variable names to their values used in this filter expression.</p>
-        pub fn set_values_map(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.values_map = input;
-            self
+        pub fn set_values_map(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.values_map = input; self
         }
         /// Consumes the builder and constructs a [`FilterExpression`](crate::model::FilterExpression).
         pub fn build(self) -> crate::model::FilterExpression {
             crate::model::FilterExpression {
-                expression: self.expression,
-                values_map: self.values_map,
+                expression: self.expression
+                ,
+                values_map: self.values_map
+                ,
             }
         }
     }
+    
+    
 }
 impl FilterExpression {
     /// Creates a new builder-style object to manufacture [`FilterExpression`](crate::model::FilterExpression).
@@ -3535,7 +3291,7 @@ impl FilterExpression {
 /// <p>Represents additional options for correct interpretation of datetime parameters used in the Amazon S3 path of a dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatetimeOptions {
+pub struct DatetimeOptions  {
     /// <p>Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should use only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should be escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
     #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
@@ -3548,21 +3304,21 @@ pub struct DatetimeOptions {
 }
 impl DatetimeOptions {
     /// <p>Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should use only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should be escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
-    pub fn format(&self) -> std::option::Option<&str> {
+    pub fn format(&self) -> std::option::Option<& str> {
         self.format.as_deref()
     }
     /// <p>Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.</p>
-    pub fn timezone_offset(&self) -> std::option::Option<&str> {
+    pub fn timezone_offset(&self) -> std::option::Option<& str> {
         self.timezone_offset.as_deref()
     }
     /// <p>Optional value for a non-US locale code, needed for correct interpretation of some date formats.</p>
-    pub fn locale_code(&self) -> std::option::Option<&str> {
+    pub fn locale_code(&self) -> std::option::Option<& str> {
         self.locale_code.as_deref()
     }
 }
 /// See [`DatetimeOptions`](crate::model::DatetimeOptions).
 pub mod datetime_options {
-
+    
     /// A builder for [`DatetimeOptions`](crate::model::DatetimeOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3578,8 +3334,7 @@ pub mod datetime_options {
         }
         /// <p>Required option, that defines the datetime format used for a date parameter in the Amazon S3 path. Should use only supported datetime specifiers and separation characters, all literal a-z or A-Z characters should be escaped with single quotes. E.g. "MM.dd.yyyy-'at'-HH:mm".</p>
         pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.format = input;
-            self
+            self.format = input; self
         }
         /// <p>Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.</p>
         pub fn timezone_offset(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3587,12 +3342,8 @@ pub mod datetime_options {
             self
         }
         /// <p>Optional value for a timezone offset of the datetime parameter value in the Amazon S3 path. Shouldn't be used if Format for this parameter includes timezone fields. If no offset specified, UTC is assumed.</p>
-        pub fn set_timezone_offset(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.timezone_offset = input;
-            self
+        pub fn set_timezone_offset(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.timezone_offset = input; self
         }
         /// <p>Optional value for a non-US locale code, needed for correct interpretation of some date formats.</p>
         pub fn locale_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3601,18 +3352,22 @@ pub mod datetime_options {
         }
         /// <p>Optional value for a non-US locale code, needed for correct interpretation of some date formats.</p>
         pub fn set_locale_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.locale_code = input;
-            self
+            self.locale_code = input; self
         }
         /// Consumes the builder and constructs a [`DatetimeOptions`](crate::model::DatetimeOptions).
         pub fn build(self) -> crate::model::DatetimeOptions {
             crate::model::DatetimeOptions {
-                format: self.format,
-                timezone_offset: self.timezone_offset,
-                locale_code: self.locale_code,
+                format: self.format
+                ,
+                timezone_offset: self.timezone_offset
+                ,
+                locale_code: self.locale_code
+                ,
             }
         }
     }
+    
+    
 }
 impl DatetimeOptions {
     /// Creates a new builder-style object to manufacture [`DatetimeOptions`](crate::model::DatetimeOptions).
@@ -3627,9 +3382,9 @@ impl DatetimeOptions {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let parametertype = unimplemented!();
 /// match parametertype {
@@ -3652,22 +3407,14 @@ impl DatetimeOptions {
 /// Specifically, when `parametertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ParameterType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ParameterType {
     #[allow(missing_docs)] // documentation missing in model
     Datetime,
@@ -3676,7 +3423,7 @@ pub enum ParameterType {
     #[allow(missing_docs)] // documentation missing in model
     String,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ParameterType {
     fn from(s: &str) -> Self {
@@ -3684,17 +3431,17 @@ impl std::convert::From<&str> for ParameterType {
             "Datetime" => ParameterType::Datetime,
             "Number" => ParameterType::Number,
             "String" => ParameterType::String,
-            other => ParameterType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ParameterType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ParameterType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ParameterType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ParameterType::from(s))
+                }
+            }
 impl ParameterType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3702,12 +3449,14 @@ impl ParameterType {
             ParameterType::Datetime => "Datetime",
             ParameterType::Number => "Number",
             ParameterType::String => "String",
-            ParameterType::Unknown(value) => value.as_str(),
+            ParameterType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Datetime", "Number", "String"]
+        &[
+            "Datetime", "Number", "String"
+        ]
     }
 }
 impl AsRef<str> for ParameterType {
@@ -3719,7 +3468,7 @@ impl AsRef<str> for ParameterType {
 /// <p>Represents a limit imposed on number of Amazon S3 files that should be selected for a dataset from a connected Amazon S3 path.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilesLimit {
+pub struct FilesLimit  {
     /// <p>The number of Amazon S3 files to select.</p>
     #[doc(hidden)]
     pub max_files: i32,
@@ -3736,17 +3485,17 @@ impl FilesLimit {
         self.max_files
     }
     /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a sorting criteria. Currently it's the only allowed value.</p>
-    pub fn ordered_by(&self) -> std::option::Option<&crate::model::OrderedBy> {
+    pub fn ordered_by(&self) -> std::option::Option<& crate::model::OrderedBy> {
         self.ordered_by.as_ref()
     }
     /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent files are selected first. Another possible value is ASCENDING.</p>
-    pub fn order(&self) -> std::option::Option<&crate::model::Order> {
+    pub fn order(&self) -> std::option::Option<& crate::model::Order> {
         self.order.as_ref()
     }
 }
 /// See [`FilesLimit`](crate::model::FilesLimit).
 pub mod files_limit {
-
+    
     /// A builder for [`FilesLimit`](crate::model::FilesLimit).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3762,8 +3511,7 @@ pub mod files_limit {
         }
         /// <p>The number of Amazon S3 files to select.</p>
         pub fn set_max_files(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_files = input;
-            self
+            self.max_files = input; self
         }
         /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a sorting criteria. Currently it's the only allowed value.</p>
         pub fn ordered_by(mut self, input: crate::model::OrderedBy) -> Self {
@@ -3771,12 +3519,8 @@ pub mod files_limit {
             self
         }
         /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses LAST_MODIFIED_DATE as a sorting criteria. Currently it's the only allowed value.</p>
-        pub fn set_ordered_by(
-            mut self,
-            input: std::option::Option<crate::model::OrderedBy>,
-        ) -> Self {
-            self.ordered_by = input;
-            self
+        pub fn set_ordered_by(mut self, input: std::option::Option<crate::model::OrderedBy>) -> Self {
+            self.ordered_by = input; self
         }
         /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent files are selected first. Another possible value is ASCENDING.</p>
         pub fn order(mut self, input: crate::model::Order) -> Self {
@@ -3785,18 +3529,23 @@ pub mod files_limit {
         }
         /// <p>A criteria to use for Amazon S3 files sorting before their selection. By default uses DESCENDING order, i.e. most recent files are selected first. Another possible value is ASCENDING.</p>
         pub fn set_order(mut self, input: std::option::Option<crate::model::Order>) -> Self {
-            self.order = input;
-            self
+            self.order = input; self
         }
         /// Consumes the builder and constructs a [`FilesLimit`](crate::model::FilesLimit).
         pub fn build(self) -> crate::model::FilesLimit {
             crate::model::FilesLimit {
-                max_files: self.max_files.unwrap_or_default(),
-                ordered_by: self.ordered_by,
-                order: self.order,
+                max_files: self.max_files
+                    .unwrap_or_default()
+                ,
+                ordered_by: self.ordered_by
+                ,
+                order: self.order
+                ,
             }
         }
     }
+    
+    
 }
 impl FilesLimit {
     /// Creates a new builder-style object to manufacture [`FilesLimit`](crate::model::FilesLimit).
@@ -3811,9 +3560,9 @@ impl FilesLimit {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let order = unimplemented!();
 /// match order {
@@ -3835,58 +3584,52 @@ impl FilesLimit {
 /// Specifically, when `order` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Order::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Order {
     #[allow(missing_docs)] // documentation missing in model
     Ascending,
     #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Order {
     fn from(s: &str) -> Self {
         match s {
             "ASCENDING" => Order::Ascending,
             "DESCENDING" => Order::Descending,
-            other => Order::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Order::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Order {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Order::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Order::from(s))
+                }
+            }
 impl Order {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Order::Ascending => "ASCENDING",
             Order::Descending => "DESCENDING",
-            Order::Unknown(value) => value.as_str(),
+            Order::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASCENDING", "DESCENDING"]
+        &[
+            "ASCENDING", "DESCENDING"
+        ]
     }
 }
 impl AsRef<str> for Order {
@@ -3901,9 +3644,9 @@ impl AsRef<str> for Order {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let orderedby = unimplemented!();
 /// match orderedby {
@@ -3924,54 +3667,48 @@ impl AsRef<str> for Order {
 /// Specifically, when `orderedby` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OrderedBy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OrderedBy {
     #[allow(missing_docs)] // documentation missing in model
     LastModifiedDate,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrderedBy {
     fn from(s: &str) -> Self {
         match s {
             "LAST_MODIFIED_DATE" => OrderedBy::LastModifiedDate,
-            other => OrderedBy::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OrderedBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OrderedBy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OrderedBy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OrderedBy::from(s))
+                }
+            }
 impl OrderedBy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrderedBy::LastModifiedDate => "LAST_MODIFIED_DATE",
-            OrderedBy::Unknown(value) => value.as_str(),
+            OrderedBy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LAST_MODIFIED_DATE"]
+        &[
+            "LAST_MODIFIED_DATE"
+        ]
     }
 }
 impl AsRef<str> for OrderedBy {
@@ -3983,14 +3720,13 @@ impl AsRef<str> for OrderedBy {
 /// <p>Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Input {
+pub struct Input  {
     /// <p>The Amazon S3 location where the data is stored.</p>
     #[doc(hidden)]
     pub s3_input_definition: std::option::Option<crate::model::S3Location>,
     /// <p>The Glue Data Catalog parameters for the data.</p>
     #[doc(hidden)]
-    pub data_catalog_input_definition:
-        std::option::Option<crate::model::DataCatalogInputDefinition>,
+    pub data_catalog_input_definition: std::option::Option<crate::model::DataCatalogInputDefinition>,
     /// <p>Connection information for dataset input files stored in a database.</p>
     #[doc(hidden)]
     pub database_input_definition: std::option::Option<crate::model::DatabaseInputDefinition>,
@@ -4000,37 +3736,31 @@ pub struct Input {
 }
 impl Input {
     /// <p>The Amazon S3 location where the data is stored.</p>
-    pub fn s3_input_definition(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn s3_input_definition(&self) -> std::option::Option<& crate::model::S3Location> {
         self.s3_input_definition.as_ref()
     }
     /// <p>The Glue Data Catalog parameters for the data.</p>
-    pub fn data_catalog_input_definition(
-        &self,
-    ) -> std::option::Option<&crate::model::DataCatalogInputDefinition> {
+    pub fn data_catalog_input_definition(&self) -> std::option::Option<& crate::model::DataCatalogInputDefinition> {
         self.data_catalog_input_definition.as_ref()
     }
     /// <p>Connection information for dataset input files stored in a database.</p>
-    pub fn database_input_definition(
-        &self,
-    ) -> std::option::Option<&crate::model::DatabaseInputDefinition> {
+    pub fn database_input_definition(&self) -> std::option::Option<& crate::model::DatabaseInputDefinition> {
         self.database_input_definition.as_ref()
     }
     /// <p>Contains additional resource information needed for specific datasets.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::model::Metadata> {
+    pub fn metadata(&self) -> std::option::Option<& crate::model::Metadata> {
         self.metadata.as_ref()
     }
 }
 /// See [`Input`](crate::model::Input).
 pub mod input {
-
+    
     /// A builder for [`Input`](crate::model::Input).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) s3_input_definition: std::option::Option<crate::model::S3Location>,
-        pub(crate) data_catalog_input_definition:
-            std::option::Option<crate::model::DataCatalogInputDefinition>,
-        pub(crate) database_input_definition:
-            std::option::Option<crate::model::DatabaseInputDefinition>,
+        pub(crate) data_catalog_input_definition: std::option::Option<crate::model::DataCatalogInputDefinition>,
+        pub(crate) database_input_definition: std::option::Option<crate::model::DatabaseInputDefinition>,
         pub(crate) metadata: std::option::Option<crate::model::Metadata>,
     }
     impl Builder {
@@ -4040,44 +3770,26 @@ pub mod input {
             self
         }
         /// <p>The Amazon S3 location where the data is stored.</p>
-        pub fn set_s3_input_definition(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.s3_input_definition = input;
-            self
+        pub fn set_s3_input_definition(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.s3_input_definition = input; self
         }
         /// <p>The Glue Data Catalog parameters for the data.</p>
-        pub fn data_catalog_input_definition(
-            mut self,
-            input: crate::model::DataCatalogInputDefinition,
-        ) -> Self {
+        pub fn data_catalog_input_definition(mut self, input: crate::model::DataCatalogInputDefinition) -> Self {
             self.data_catalog_input_definition = Some(input);
             self
         }
         /// <p>The Glue Data Catalog parameters for the data.</p>
-        pub fn set_data_catalog_input_definition(
-            mut self,
-            input: std::option::Option<crate::model::DataCatalogInputDefinition>,
-        ) -> Self {
-            self.data_catalog_input_definition = input;
-            self
+        pub fn set_data_catalog_input_definition(mut self, input: std::option::Option<crate::model::DataCatalogInputDefinition>) -> Self {
+            self.data_catalog_input_definition = input; self
         }
         /// <p>Connection information for dataset input files stored in a database.</p>
-        pub fn database_input_definition(
-            mut self,
-            input: crate::model::DatabaseInputDefinition,
-        ) -> Self {
+        pub fn database_input_definition(mut self, input: crate::model::DatabaseInputDefinition) -> Self {
             self.database_input_definition = Some(input);
             self
         }
         /// <p>Connection information for dataset input files stored in a database.</p>
-        pub fn set_database_input_definition(
-            mut self,
-            input: std::option::Option<crate::model::DatabaseInputDefinition>,
-        ) -> Self {
-            self.database_input_definition = input;
-            self
+        pub fn set_database_input_definition(mut self, input: std::option::Option<crate::model::DatabaseInputDefinition>) -> Self {
+            self.database_input_definition = input; self
         }
         /// <p>Contains additional resource information needed for specific datasets.</p>
         pub fn metadata(mut self, input: crate::model::Metadata) -> Self {
@@ -4086,19 +3798,24 @@ pub mod input {
         }
         /// <p>Contains additional resource information needed for specific datasets.</p>
         pub fn set_metadata(mut self, input: std::option::Option<crate::model::Metadata>) -> Self {
-            self.metadata = input;
-            self
+            self.metadata = input; self
         }
         /// Consumes the builder and constructs a [`Input`](crate::model::Input).
         pub fn build(self) -> crate::model::Input {
             crate::model::Input {
-                s3_input_definition: self.s3_input_definition,
-                data_catalog_input_definition: self.data_catalog_input_definition,
-                database_input_definition: self.database_input_definition,
-                metadata: self.metadata,
+                s3_input_definition: self.s3_input_definition
+                ,
+                data_catalog_input_definition: self.data_catalog_input_definition
+                ,
+                database_input_definition: self.database_input_definition
+                ,
+                metadata: self.metadata
+                ,
             }
         }
     }
+    
+    
 }
 impl Input {
     /// Creates a new builder-style object to manufacture [`Input`](crate::model::Input).
@@ -4110,20 +3827,20 @@ impl Input {
 /// <p>Contains additional resource information needed for specific datasets.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Metadata {
+pub struct Metadata  {
     /// <p>The Amazon Resource Name (ARN) associated with the dataset. Currently, DataBrew only supports ARNs from Amazon AppFlow.</p>
     #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
 }
 impl Metadata {
     /// <p>The Amazon Resource Name (ARN) associated with the dataset. Currently, DataBrew only supports ARNs from Amazon AppFlow.</p>
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> std::option::Option<& str> {
         self.source_arn.as_deref()
     }
 }
 /// See [`Metadata`](crate::model::Metadata).
 pub mod metadata {
-
+    
     /// A builder for [`Metadata`](crate::model::Metadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4137,16 +3854,18 @@ pub mod metadata {
         }
         /// <p>The Amazon Resource Name (ARN) associated with the dataset. Currently, DataBrew only supports ARNs from Amazon AppFlow.</p>
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_arn = input;
-            self
+            self.source_arn = input; self
         }
         /// Consumes the builder and constructs a [`Metadata`](crate::model::Metadata).
         pub fn build(self) -> crate::model::Metadata {
             crate::model::Metadata {
-                source_arn: self.source_arn,
+                source_arn: self.source_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Metadata {
     /// Creates a new builder-style object to manufacture [`Metadata`](crate::model::Metadata).
@@ -4158,7 +3877,7 @@ impl Metadata {
 /// <p>Connection information for dataset input files stored in a database.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatabaseInputDefinition {
+pub struct DatabaseInputDefinition  {
     /// <p>The Glue Connection that stores the connection information for the target database.</p>
     #[doc(hidden)]
     pub glue_connection_name: std::option::Option<std::string::String>,
@@ -4174,25 +3893,25 @@ pub struct DatabaseInputDefinition {
 }
 impl DatabaseInputDefinition {
     /// <p>The Glue Connection that stores the connection information for the target database.</p>
-    pub fn glue_connection_name(&self) -> std::option::Option<&str> {
+    pub fn glue_connection_name(&self) -> std::option::Option<& str> {
         self.glue_connection_name.as_deref()
     }
     /// <p>The table within the target database.</p>
-    pub fn database_table_name(&self) -> std::option::Option<&str> {
+    pub fn database_table_name(&self) -> std::option::Option<& str> {
         self.database_table_name.as_deref()
     }
     /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
-    pub fn temp_directory(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn temp_directory(&self) -> std::option::Option<& crate::model::S3Location> {
         self.temp_directory.as_ref()
     }
     /// <p>Custom SQL to run against the provided Glue connection. This SQL will be used as the input for DataBrew projects and jobs.</p>
-    pub fn query_string(&self) -> std::option::Option<&str> {
+    pub fn query_string(&self) -> std::option::Option<& str> {
         self.query_string.as_deref()
     }
 }
 /// See [`DatabaseInputDefinition`](crate::model::DatabaseInputDefinition).
 pub mod database_input_definition {
-
+    
     /// A builder for [`DatabaseInputDefinition`](crate::model::DatabaseInputDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4208,12 +3927,8 @@ pub mod database_input_definition {
             self
         }
         /// <p>The Glue Connection that stores the connection information for the target database.</p>
-        pub fn set_glue_connection_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.glue_connection_name = input;
-            self
+        pub fn set_glue_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.glue_connection_name = input; self
         }
         /// <p>The table within the target database.</p>
         pub fn database_table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4221,12 +3936,8 @@ pub mod database_input_definition {
             self
         }
         /// <p>The table within the target database.</p>
-        pub fn set_database_table_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_table_name = input;
-            self
+        pub fn set_database_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_table_name = input; self
         }
         /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
         pub fn temp_directory(mut self, input: crate::model::S3Location) -> Self {
@@ -4234,12 +3945,8 @@ pub mod database_input_definition {
             self
         }
         /// <p>Represents an Amazon S3 location (bucket name, bucket owner, and object key) where DataBrew can read input data, or write output from a job.</p>
-        pub fn set_temp_directory(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.temp_directory = input;
-            self
+        pub fn set_temp_directory(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.temp_directory = input; self
         }
         /// <p>Custom SQL to run against the provided Glue connection. This SQL will be used as the input for DataBrew projects and jobs.</p>
         pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4248,19 +3955,24 @@ pub mod database_input_definition {
         }
         /// <p>Custom SQL to run against the provided Glue connection. This SQL will be used as the input for DataBrew projects and jobs.</p>
         pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.query_string = input;
-            self
+            self.query_string = input; self
         }
         /// Consumes the builder and constructs a [`DatabaseInputDefinition`](crate::model::DatabaseInputDefinition).
         pub fn build(self) -> crate::model::DatabaseInputDefinition {
             crate::model::DatabaseInputDefinition {
-                glue_connection_name: self.glue_connection_name,
-                database_table_name: self.database_table_name,
-                temp_directory: self.temp_directory,
-                query_string: self.query_string,
+                glue_connection_name: self.glue_connection_name
+                ,
+                database_table_name: self.database_table_name
+                ,
+                temp_directory: self.temp_directory
+                ,
+                query_string: self.query_string
+                ,
             }
         }
     }
+    
+    
 }
 impl DatabaseInputDefinition {
     /// Creates a new builder-style object to manufacture [`DatabaseInputDefinition`](crate::model::DatabaseInputDefinition).
@@ -4272,7 +3984,7 @@ impl DatabaseInputDefinition {
 /// <p>Represents how metadata stored in the Glue Data Catalog is defined in a DataBrew dataset. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataCatalogInputDefinition {
+pub struct DataCatalogInputDefinition  {
     /// <p>The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -4288,25 +4000,25 @@ pub struct DataCatalogInputDefinition {
 }
 impl DataCatalogInputDefinition {
     /// <p>The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data.</p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> std::option::Option<& str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of a database in the Data Catalog.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> std::option::Option<& str> {
         self.database_name.as_deref()
     }
     /// <p>The name of a database table in the Data Catalog. This table corresponds to a DataBrew dataset.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>Represents an Amazon location where DataBrew can store intermediate results.</p>
-    pub fn temp_directory(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn temp_directory(&self) -> std::option::Option<& crate::model::S3Location> {
         self.temp_directory.as_ref()
     }
 }
 /// See [`DataCatalogInputDefinition`](crate::model::DataCatalogInputDefinition).
 pub mod data_catalog_input_definition {
-
+    
     /// A builder for [`DataCatalogInputDefinition`](crate::model::DataCatalogInputDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4323,8 +4035,7 @@ pub mod data_catalog_input_definition {
         }
         /// <p>The unique identifier of the Amazon Web Services account that holds the Data Catalog that stores the data.</p>
         pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.catalog_id = input;
-            self
+            self.catalog_id = input; self
         }
         /// <p>The name of a database in the Data Catalog.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4332,12 +4043,8 @@ pub mod data_catalog_input_definition {
             self
         }
         /// <p>The name of a database in the Data Catalog.</p>
-        pub fn set_database_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.database_name = input;
-            self
+        pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.database_name = input; self
         }
         /// <p>The name of a database table in the Data Catalog. This table corresponds to a DataBrew dataset.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4346,8 +4053,7 @@ pub mod data_catalog_input_definition {
         }
         /// <p>The name of a database table in the Data Catalog. This table corresponds to a DataBrew dataset.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// <p>Represents an Amazon location where DataBrew can store intermediate results.</p>
         pub fn temp_directory(mut self, input: crate::model::S3Location) -> Self {
@@ -4355,23 +4061,25 @@ pub mod data_catalog_input_definition {
             self
         }
         /// <p>Represents an Amazon location where DataBrew can store intermediate results.</p>
-        pub fn set_temp_directory(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.temp_directory = input;
-            self
+        pub fn set_temp_directory(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.temp_directory = input; self
         }
         /// Consumes the builder and constructs a [`DataCatalogInputDefinition`](crate::model::DataCatalogInputDefinition).
         pub fn build(self) -> crate::model::DataCatalogInputDefinition {
             crate::model::DataCatalogInputDefinition {
-                catalog_id: self.catalog_id,
-                database_name: self.database_name,
-                table_name: self.table_name,
-                temp_directory: self.temp_directory,
+                catalog_id: self.catalog_id
+                ,
+                database_name: self.database_name
+                ,
+                table_name: self.table_name
+                ,
+                temp_directory: self.temp_directory
+                ,
             }
         }
     }
+    
+    
 }
 impl DataCatalogInputDefinition {
     /// Creates a new builder-style object to manufacture [`DataCatalogInputDefinition`](crate::model::DataCatalogInputDefinition).
@@ -4383,7 +4091,7 @@ impl DataCatalogInputDefinition {
 /// <p>Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FormatOptions {
+pub struct FormatOptions  {
     /// <p>Options that define how JSON input is to be interpreted by DataBrew.</p>
     #[doc(hidden)]
     pub json: std::option::Option<crate::model::JsonOptions>,
@@ -4396,21 +4104,21 @@ pub struct FormatOptions {
 }
 impl FormatOptions {
     /// <p>Options that define how JSON input is to be interpreted by DataBrew.</p>
-    pub fn json(&self) -> std::option::Option<&crate::model::JsonOptions> {
+    pub fn json(&self) -> std::option::Option<& crate::model::JsonOptions> {
         self.json.as_ref()
     }
     /// <p>Options that define how Excel input is to be interpreted by DataBrew.</p>
-    pub fn excel(&self) -> std::option::Option<&crate::model::ExcelOptions> {
+    pub fn excel(&self) -> std::option::Option<& crate::model::ExcelOptions> {
         self.excel.as_ref()
     }
     /// <p>Options that define how CSV input is to be interpreted by DataBrew.</p>
-    pub fn csv(&self) -> std::option::Option<&crate::model::CsvOptions> {
+    pub fn csv(&self) -> std::option::Option<& crate::model::CsvOptions> {
         self.csv.as_ref()
     }
 }
 /// See [`FormatOptions`](crate::model::FormatOptions).
 pub mod format_options {
-
+    
     /// A builder for [`FormatOptions`](crate::model::FormatOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4426,8 +4134,7 @@ pub mod format_options {
         }
         /// <p>Options that define how JSON input is to be interpreted by DataBrew.</p>
         pub fn set_json(mut self, input: std::option::Option<crate::model::JsonOptions>) -> Self {
-            self.json = input;
-            self
+            self.json = input; self
         }
         /// <p>Options that define how Excel input is to be interpreted by DataBrew.</p>
         pub fn excel(mut self, input: crate::model::ExcelOptions) -> Self {
@@ -4436,8 +4143,7 @@ pub mod format_options {
         }
         /// <p>Options that define how Excel input is to be interpreted by DataBrew.</p>
         pub fn set_excel(mut self, input: std::option::Option<crate::model::ExcelOptions>) -> Self {
-            self.excel = input;
-            self
+            self.excel = input; self
         }
         /// <p>Options that define how CSV input is to be interpreted by DataBrew.</p>
         pub fn csv(mut self, input: crate::model::CsvOptions) -> Self {
@@ -4446,18 +4152,22 @@ pub mod format_options {
         }
         /// <p>Options that define how CSV input is to be interpreted by DataBrew.</p>
         pub fn set_csv(mut self, input: std::option::Option<crate::model::CsvOptions>) -> Self {
-            self.csv = input;
-            self
+            self.csv = input; self
         }
         /// Consumes the builder and constructs a [`FormatOptions`](crate::model::FormatOptions).
         pub fn build(self) -> crate::model::FormatOptions {
             crate::model::FormatOptions {
-                json: self.json,
-                excel: self.excel,
-                csv: self.csv,
+                json: self.json
+                ,
+                excel: self.excel
+                ,
+                csv: self.csv
+                ,
             }
         }
     }
+    
+    
 }
 impl FormatOptions {
     /// Creates a new builder-style object to manufacture [`FormatOptions`](crate::model::FormatOptions).
@@ -4469,7 +4179,7 @@ impl FormatOptions {
 /// <p>Represents a set of options that define how DataBrew will read a comma-separated value (CSV) file when creating a dataset from that file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CsvOptions {
+pub struct CsvOptions  {
     /// <p>A single character that specifies the delimiter being used in the CSV file.</p>
     #[doc(hidden)]
     pub delimiter: std::option::Option<std::string::String>,
@@ -4479,7 +4189,7 @@ pub struct CsvOptions {
 }
 impl CsvOptions {
     /// <p>A single character that specifies the delimiter being used in the CSV file.</p>
-    pub fn delimiter(&self) -> std::option::Option<&str> {
+    pub fn delimiter(&self) -> std::option::Option<& str> {
         self.delimiter.as_deref()
     }
     /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
@@ -4489,7 +4199,7 @@ impl CsvOptions {
 }
 /// See [`CsvOptions`](crate::model::CsvOptions).
 pub mod csv_options {
-
+    
     /// A builder for [`CsvOptions`](crate::model::CsvOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4504,8 +4214,7 @@ pub mod csv_options {
         }
         /// <p>A single character that specifies the delimiter being used in the CSV file.</p>
         pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.delimiter = input;
-            self
+            self.delimiter = input; self
         }
         /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
         pub fn header_row(mut self, input: bool) -> Self {
@@ -4514,17 +4223,20 @@ pub mod csv_options {
         }
         /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
         pub fn set_header_row(mut self, input: std::option::Option<bool>) -> Self {
-            self.header_row = input;
-            self
+            self.header_row = input; self
         }
         /// Consumes the builder and constructs a [`CsvOptions`](crate::model::CsvOptions).
         pub fn build(self) -> crate::model::CsvOptions {
             crate::model::CsvOptions {
-                delimiter: self.delimiter,
-                header_row: self.header_row,
+                delimiter: self.delimiter
+                ,
+                header_row: self.header_row
+                ,
             }
         }
     }
+    
+    
 }
 impl CsvOptions {
     /// Creates a new builder-style object to manufacture [`CsvOptions`](crate::model::CsvOptions).
@@ -4536,7 +4248,7 @@ impl CsvOptions {
 /// <p>Represents a set of options that define how DataBrew will interpret a Microsoft Excel file when creating a dataset from that file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExcelOptions {
+pub struct ExcelOptions  {
     /// <p>One or more named sheets in the Excel file that will be included in the dataset.</p>
     #[doc(hidden)]
     pub sheet_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4549,11 +4261,11 @@ pub struct ExcelOptions {
 }
 impl ExcelOptions {
     /// <p>One or more named sheets in the Excel file that will be included in the dataset.</p>
-    pub fn sheet_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn sheet_names(&self) -> std::option::Option<& [std::string::String]> {
         self.sheet_names.as_deref()
     }
     /// <p>One or more sheet numbers in the Excel file that will be included in the dataset.</p>
-    pub fn sheet_indexes(&self) -> std::option::Option<&[i32]> {
+    pub fn sheet_indexes(&self) -> std::option::Option<& [i32]> {
         self.sheet_indexes.as_deref()
     }
     /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
@@ -4563,7 +4275,7 @@ impl ExcelOptions {
 }
 /// See [`ExcelOptions`](crate::model::ExcelOptions).
 pub mod excel_options {
-
+    
     /// A builder for [`ExcelOptions`](crate::model::ExcelOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4579,17 +4291,13 @@ pub mod excel_options {
         /// <p>One or more named sheets in the Excel file that will be included in the dataset.</p>
         pub fn sheet_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.sheet_names.unwrap_or_default();
-            v.push(input.into());
-            self.sheet_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.sheet_names = Some(v);
+                            self
         }
         /// <p>One or more named sheets in the Excel file that will be included in the dataset.</p>
-        pub fn set_sheet_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.sheet_names = input;
-            self
+        pub fn set_sheet_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.sheet_names = input; self
         }
         /// Appends an item to `sheet_indexes`.
         ///
@@ -4598,14 +4306,13 @@ pub mod excel_options {
         /// <p>One or more sheet numbers in the Excel file that will be included in the dataset.</p>
         pub fn sheet_indexes(mut self, input: i32) -> Self {
             let mut v = self.sheet_indexes.unwrap_or_default();
-            v.push(input);
-            self.sheet_indexes = Some(v);
-            self
+                            v.push(input);
+                            self.sheet_indexes = Some(v);
+                            self
         }
         /// <p>One or more sheet numbers in the Excel file that will be included in the dataset.</p>
         pub fn set_sheet_indexes(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
-            self.sheet_indexes = input;
-            self
+            self.sheet_indexes = input; self
         }
         /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
         pub fn header_row(mut self, input: bool) -> Self {
@@ -4614,18 +4321,22 @@ pub mod excel_options {
         }
         /// <p>A variable that specifies whether the first row in the file is parsed as the header. If this value is false, column names are auto-generated.</p>
         pub fn set_header_row(mut self, input: std::option::Option<bool>) -> Self {
-            self.header_row = input;
-            self
+            self.header_row = input; self
         }
         /// Consumes the builder and constructs a [`ExcelOptions`](crate::model::ExcelOptions).
         pub fn build(self) -> crate::model::ExcelOptions {
             crate::model::ExcelOptions {
-                sheet_names: self.sheet_names,
-                sheet_indexes: self.sheet_indexes,
-                header_row: self.header_row,
+                sheet_names: self.sheet_names
+                ,
+                sheet_indexes: self.sheet_indexes
+                ,
+                header_row: self.header_row
+                ,
             }
         }
     }
+    
+    
 }
 impl ExcelOptions {
     /// Creates a new builder-style object to manufacture [`ExcelOptions`](crate::model::ExcelOptions).
@@ -4637,7 +4348,7 @@ impl ExcelOptions {
 /// <p>Represents the JSON-specific options that define how input is to be interpreted by Glue DataBrew.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JsonOptions {
+pub struct JsonOptions  {
     /// <p>A value that specifies whether JSON input contains embedded new line characters.</p>
     #[doc(hidden)]
     pub multi_line: bool,
@@ -4650,7 +4361,7 @@ impl JsonOptions {
 }
 /// See [`JsonOptions`](crate::model::JsonOptions).
 pub mod json_options {
-
+    
     /// A builder for [`JsonOptions`](crate::model::JsonOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4664,16 +4375,19 @@ pub mod json_options {
         }
         /// <p>A value that specifies whether JSON input contains embedded new line characters.</p>
         pub fn set_multi_line(mut self, input: std::option::Option<bool>) -> Self {
-            self.multi_line = input;
-            self
+            self.multi_line = input; self
         }
         /// Consumes the builder and constructs a [`JsonOptions`](crate::model::JsonOptions).
         pub fn build(self) -> crate::model::JsonOptions {
             crate::model::JsonOptions {
-                multi_line: self.multi_line.unwrap_or_default(),
+                multi_line: self.multi_line
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl JsonOptions {
     /// Creates a new builder-style object to manufacture [`JsonOptions`](crate::model::JsonOptions).
@@ -4688,9 +4402,9 @@ impl JsonOptions {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let inputformat = unimplemented!();
 /// match inputformat {
@@ -4715,22 +4429,14 @@ impl JsonOptions {
 /// Specifically, when `inputformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InputFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InputFormat {
     #[allow(missing_docs)] // documentation missing in model
     Csv,
@@ -4743,7 +4449,7 @@ pub enum InputFormat {
     #[allow(missing_docs)] // documentation missing in model
     Parquet,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InputFormat {
     fn from(s: &str) -> Self {
@@ -4753,17 +4459,17 @@ impl std::convert::From<&str> for InputFormat {
             "JSON" => InputFormat::Json,
             "ORC" => InputFormat::Orc,
             "PARQUET" => InputFormat::Parquet,
-            other => InputFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => InputFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InputFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InputFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InputFormat::from(s))
+                }
+            }
 impl InputFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4773,12 +4479,14 @@ impl InputFormat {
             InputFormat::Json => "JSON",
             InputFormat::Orc => "ORC",
             InputFormat::Parquet => "PARQUET",
-            InputFormat::Unknown(value) => value.as_str(),
+            InputFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CSV", "EXCEL", "JSON", "ORC", "PARQUET"]
+        &[
+            "CSV", "EXCEL", "JSON", "ORC", "PARQUET"
+        ]
     }
 }
 impl AsRef<str> for InputFormat {
@@ -4790,7 +4498,7 @@ impl AsRef<str> for InputFormat {
 /// <p>Represents the data being transformed during an action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ViewFrame {
+pub struct ViewFrame  {
     /// <p>The starting index for the range of columns to return in the view frame.</p>
     #[doc(hidden)]
     pub start_column_index: std::option::Option<i32>,
@@ -4820,7 +4528,7 @@ impl ViewFrame {
         self.column_range
     }
     /// <p>A list of columns to hide in the view frame.</p>
-    pub fn hidden_columns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn hidden_columns(&self) -> std::option::Option<& [std::string::String]> {
         self.hidden_columns.as_deref()
     }
     /// <p>The starting index for the range of rows to return in the view frame.</p>
@@ -4832,13 +4540,13 @@ impl ViewFrame {
         self.row_range
     }
     /// <p>Controls if analytics computation is enabled or disabled. Enabled by default.</p>
-    pub fn analytics(&self) -> std::option::Option<&crate::model::AnalyticsMode> {
+    pub fn analytics(&self) -> std::option::Option<& crate::model::AnalyticsMode> {
         self.analytics.as_ref()
     }
 }
 /// See [`ViewFrame`](crate::model::ViewFrame).
 pub mod view_frame {
-
+    
     /// A builder for [`ViewFrame`](crate::model::ViewFrame).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4857,8 +4565,7 @@ pub mod view_frame {
         }
         /// <p>The starting index for the range of columns to return in the view frame.</p>
         pub fn set_start_column_index(mut self, input: std::option::Option<i32>) -> Self {
-            self.start_column_index = input;
-            self
+            self.start_column_index = input; self
         }
         /// <p>The number of columns to include in the view frame, beginning with the <code>StartColumnIndex</code> value and ignoring any columns in the <code>HiddenColumns</code> list.</p>
         pub fn column_range(mut self, input: i32) -> Self {
@@ -4867,8 +4574,7 @@ pub mod view_frame {
         }
         /// <p>The number of columns to include in the view frame, beginning with the <code>StartColumnIndex</code> value and ignoring any columns in the <code>HiddenColumns</code> list.</p>
         pub fn set_column_range(mut self, input: std::option::Option<i32>) -> Self {
-            self.column_range = input;
-            self
+            self.column_range = input; self
         }
         /// Appends an item to `hidden_columns`.
         ///
@@ -4877,17 +4583,13 @@ pub mod view_frame {
         /// <p>A list of columns to hide in the view frame.</p>
         pub fn hidden_columns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.hidden_columns.unwrap_or_default();
-            v.push(input.into());
-            self.hidden_columns = Some(v);
-            self
+                            v.push(input.into());
+                            self.hidden_columns = Some(v);
+                            self
         }
         /// <p>A list of columns to hide in the view frame.</p>
-        pub fn set_hidden_columns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.hidden_columns = input;
-            self
+        pub fn set_hidden_columns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.hidden_columns = input; self
         }
         /// <p>The starting index for the range of rows to return in the view frame.</p>
         pub fn start_row_index(mut self, input: i32) -> Self {
@@ -4896,8 +4598,7 @@ pub mod view_frame {
         }
         /// <p>The starting index for the range of rows to return in the view frame.</p>
         pub fn set_start_row_index(mut self, input: std::option::Option<i32>) -> Self {
-            self.start_row_index = input;
-            self
+            self.start_row_index = input; self
         }
         /// <p>The number of rows to include in the view frame, beginning with the <code>StartRowIndex</code> value.</p>
         pub fn row_range(mut self, input: i32) -> Self {
@@ -4906,8 +4607,7 @@ pub mod view_frame {
         }
         /// <p>The number of rows to include in the view frame, beginning with the <code>StartRowIndex</code> value.</p>
         pub fn set_row_range(mut self, input: std::option::Option<i32>) -> Self {
-            self.row_range = input;
-            self
+            self.row_range = input; self
         }
         /// <p>Controls if analytics computation is enabled or disabled. Enabled by default.</p>
         pub fn analytics(mut self, input: crate::model::AnalyticsMode) -> Self {
@@ -4915,25 +4615,29 @@ pub mod view_frame {
             self
         }
         /// <p>Controls if analytics computation is enabled or disabled. Enabled by default.</p>
-        pub fn set_analytics(
-            mut self,
-            input: std::option::Option<crate::model::AnalyticsMode>,
-        ) -> Self {
-            self.analytics = input;
-            self
+        pub fn set_analytics(mut self, input: std::option::Option<crate::model::AnalyticsMode>) -> Self {
+            self.analytics = input; self
         }
         /// Consumes the builder and constructs a [`ViewFrame`](crate::model::ViewFrame).
         pub fn build(self) -> crate::model::ViewFrame {
             crate::model::ViewFrame {
-                start_column_index: self.start_column_index,
-                column_range: self.column_range,
-                hidden_columns: self.hidden_columns,
-                start_row_index: self.start_row_index,
-                row_range: self.row_range,
-                analytics: self.analytics,
+                start_column_index: self.start_column_index
+                ,
+                column_range: self.column_range
+                ,
+                hidden_columns: self.hidden_columns
+                ,
+                start_row_index: self.start_row_index
+                ,
+                row_range: self.row_range
+                ,
+                analytics: self.analytics
+                ,
             }
         }
     }
+    
+    
 }
 impl ViewFrame {
     /// Creates a new builder-style object to manufacture [`ViewFrame`](crate::model::ViewFrame).
@@ -4948,9 +4652,9 @@ impl ViewFrame {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let analyticsmode = unimplemented!();
 /// match analyticsmode {
@@ -4972,58 +4676,52 @@ impl ViewFrame {
 /// Specifically, when `analyticsmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AnalyticsMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AnalyticsMode {
     #[allow(missing_docs)] // documentation missing in model
     Disable,
     #[allow(missing_docs)] // documentation missing in model
     Enable,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AnalyticsMode {
     fn from(s: &str) -> Self {
         match s {
             "DISABLE" => AnalyticsMode::Disable,
             "ENABLE" => AnalyticsMode::Enable,
-            other => AnalyticsMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AnalyticsMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AnalyticsMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AnalyticsMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AnalyticsMode::from(s))
+                }
+            }
 impl AnalyticsMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AnalyticsMode::Disable => "DISABLE",
             AnalyticsMode::Enable => "ENABLE",
-            AnalyticsMode::Unknown(value) => value.as_str(),
+            AnalyticsMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLE", "ENABLE"]
+        &[
+            "DISABLE", "ENABLE"
+        ]
     }
 }
 impl AsRef<str> for AnalyticsMode {
@@ -5035,7 +4733,7 @@ impl AsRef<str> for AnalyticsMode {
 /// <p>Represents one or more dates and times when a job is to run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Schedule {
+pub struct Schedule  {
     /// <p>The ID of the Amazon Web Services account that owns the schedule.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5062,60 +4760,56 @@ pub struct Schedule {
     pub cron_expression: std::option::Option<std::string::String>,
     /// <p>Metadata tags that have been applied to the schedule.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name of the schedule.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl Schedule {
     /// <p>The ID of the Amazon Web Services account that owns the schedule.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who created the schedule.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The date and time that the schedule was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>A list of jobs to be run, according to the schedule.</p>
-    pub fn job_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn job_names(&self) -> std::option::Option<& [std::string::String]> {
         self.job_names.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the schedule.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> std::option::Option<& str> {
         self.last_modified_by.as_deref()
     }
     /// <p>The date and time when the schedule was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The dates and times when the job is to run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
-    pub fn cron_expression(&self) -> std::option::Option<&str> {
+    pub fn cron_expression(&self) -> std::option::Option<& str> {
         self.cron_expression.as_deref()
     }
     /// <p>Metadata tags that have been applied to the schedule.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The name of the schedule.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`Schedule`](crate::model::Schedule).
 pub mod schedule {
-
+    
     /// A builder for [`Schedule`](crate::model::Schedule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5127,9 +4821,7 @@ pub mod schedule {
         pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) cron_expression: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5140,8 +4832,7 @@ pub mod schedule {
         }
         /// <p>The ID of the Amazon Web Services account that owns the schedule.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who created the schedule.</p>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5150,8 +4841,7 @@ pub mod schedule {
         }
         /// <p>The Amazon Resource Name (ARN) of the user who created the schedule.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_by = input;
-            self
+            self.created_by = input; self
         }
         /// <p>The date and time that the schedule was created.</p>
         pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5159,12 +4849,8 @@ pub mod schedule {
             self
         }
         /// <p>The date and time that the schedule was created.</p>
-        pub fn set_create_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_date = input;
-            self
+        pub fn set_create_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_date = input; self
         }
         /// Appends an item to `job_names`.
         ///
@@ -5173,17 +4859,13 @@ pub mod schedule {
         /// <p>A list of jobs to be run, according to the schedule.</p>
         pub fn job_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.job_names.unwrap_or_default();
-            v.push(input.into());
-            self.job_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.job_names = Some(v);
+                            self
         }
         /// <p>A list of jobs to be run, according to the schedule.</p>
-        pub fn set_job_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.job_names = input;
-            self
+        pub fn set_job_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.job_names = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who last modified the schedule.</p>
         pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5191,12 +4873,8 @@ pub mod schedule {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who last modified the schedule.</p>
-        pub fn set_last_modified_by(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_by = input;
-            self
+        pub fn set_last_modified_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_by = input; self
         }
         /// <p>The date and time when the schedule was last modified.</p>
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5204,12 +4882,8 @@ pub mod schedule {
             self
         }
         /// <p>The date and time when the schedule was last modified.</p>
-        pub fn set_last_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_date = input;
-            self
+        pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_date = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5218,8 +4892,7 @@ pub mod schedule {
         }
         /// <p>The Amazon Resource Name (ARN) of the schedule.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The dates and times when the job is to run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
         pub fn cron_expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5227,37 +4900,23 @@ pub mod schedule {
             self
         }
         /// <p>The dates and times when the job is to run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
-        pub fn set_cron_expression(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cron_expression = input;
-            self
+        pub fn set_cron_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cron_expression = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata tags that have been applied to the schedule.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Metadata tags that have been applied to the schedule.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The name of the schedule.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5266,25 +4925,36 @@ pub mod schedule {
         }
         /// <p>The name of the schedule.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`Schedule`](crate::model::Schedule).
         pub fn build(self) -> crate::model::Schedule {
             crate::model::Schedule {
-                account_id: self.account_id,
-                created_by: self.created_by,
-                create_date: self.create_date,
-                job_names: self.job_names,
-                last_modified_by: self.last_modified_by,
-                last_modified_date: self.last_modified_date,
-                resource_arn: self.resource_arn,
-                cron_expression: self.cron_expression,
-                tags: self.tags,
-                name: self.name,
+                account_id: self.account_id
+                ,
+                created_by: self.created_by
+                ,
+                create_date: self.create_date
+                ,
+                job_names: self.job_names
+                ,
+                last_modified_by: self.last_modified_by
+                ,
+                last_modified_date: self.last_modified_date
+                ,
+                resource_arn: self.resource_arn
+                ,
+                cron_expression: self.cron_expression
+                ,
+                tags: self.tags
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl Schedule {
     /// Creates a new builder-style object to manufacture [`Schedule`](crate::model::Schedule).
@@ -5296,7 +4966,7 @@ impl Schedule {
 /// <p>Contains metadata about the ruleset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RulesetItem {
+pub struct RulesetItem  {
     /// <p>The ID of the Amazon Web Services account that owns the ruleset.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5326,43 +4996,42 @@ pub struct RulesetItem {
     pub rule_count: i32,
     /// <p>Metadata tags that have been applied to the ruleset.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
     #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
 }
 impl RulesetItem {
     /// <p>The ID of the Amazon Web Services account that owns the ruleset.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who created the ruleset.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The date and time that the ruleset was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The description of the ruleset.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the ruleset.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> std::option::Option<& str> {
         self.last_modified_by.as_deref()
     }
     /// <p>The modification date and time of the ruleset.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The name of the ruleset.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the ruleset.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The number of rules that are defined in the ruleset.</p>
@@ -5370,20 +5039,17 @@ impl RulesetItem {
         self.rule_count
     }
     /// <p>Metadata tags that have been applied to the ruleset.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> std::option::Option<& str> {
         self.target_arn.as_deref()
     }
 }
 /// See [`RulesetItem`](crate::model::RulesetItem).
 pub mod ruleset_item {
-
+    
     /// A builder for [`RulesetItem`](crate::model::RulesetItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5396,9 +5062,7 @@ pub mod ruleset_item {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) rule_count: std::option::Option<i32>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) target_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5409,8 +5073,7 @@ pub mod ruleset_item {
         }
         /// <p>The ID of the Amazon Web Services account that owns the ruleset.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who created the ruleset.</p>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5419,8 +5082,7 @@ pub mod ruleset_item {
         }
         /// <p>The Amazon Resource Name (ARN) of the user who created the ruleset.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_by = input;
-            self
+            self.created_by = input; self
         }
         /// <p>The date and time that the ruleset was created.</p>
         pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5428,12 +5090,8 @@ pub mod ruleset_item {
             self
         }
         /// <p>The date and time that the ruleset was created.</p>
-        pub fn set_create_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_date = input;
-            self
+        pub fn set_create_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_date = input; self
         }
         /// <p>The description of the ruleset.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5442,8 +5100,7 @@ pub mod ruleset_item {
         }
         /// <p>The description of the ruleset.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who last modified the ruleset.</p>
         pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5451,12 +5108,8 @@ pub mod ruleset_item {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who last modified the ruleset.</p>
-        pub fn set_last_modified_by(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_by = input;
-            self
+        pub fn set_last_modified_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_by = input; self
         }
         /// <p>The modification date and time of the ruleset.</p>
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5464,12 +5117,8 @@ pub mod ruleset_item {
             self
         }
         /// <p>The modification date and time of the ruleset.</p>
-        pub fn set_last_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_date = input;
-            self
+        pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_date = input; self
         }
         /// <p>The name of the ruleset.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5478,8 +5127,7 @@ pub mod ruleset_item {
         }
         /// <p>The name of the ruleset.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the ruleset.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5488,8 +5136,7 @@ pub mod ruleset_item {
         }
         /// <p>The Amazon Resource Name (ARN) for the ruleset.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The number of rules that are defined in the ruleset.</p>
         pub fn rule_count(mut self, input: i32) -> Self {
@@ -5498,33 +5145,22 @@ pub mod ruleset_item {
         }
         /// <p>The number of rules that are defined in the ruleset.</p>
         pub fn set_rule_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.rule_count = input;
-            self
+            self.rule_count = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata tags that have been applied to the ruleset.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Metadata tags that have been applied to the ruleset.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5533,26 +5169,39 @@ pub mod ruleset_item {
         }
         /// <p>The Amazon Resource Name (ARN) of a resource (dataset) that the ruleset is associated with.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target_arn = input;
-            self
+            self.target_arn = input; self
         }
         /// Consumes the builder and constructs a [`RulesetItem`](crate::model::RulesetItem).
         pub fn build(self) -> crate::model::RulesetItem {
             crate::model::RulesetItem {
-                account_id: self.account_id,
-                created_by: self.created_by,
-                create_date: self.create_date,
-                description: self.description,
-                last_modified_by: self.last_modified_by,
-                last_modified_date: self.last_modified_date,
-                name: self.name,
-                resource_arn: self.resource_arn,
-                rule_count: self.rule_count.unwrap_or_default(),
-                tags: self.tags,
-                target_arn: self.target_arn,
+                account_id: self.account_id
+                ,
+                created_by: self.created_by
+                ,
+                create_date: self.create_date
+                ,
+                description: self.description
+                ,
+                last_modified_by: self.last_modified_by
+                ,
+                last_modified_date: self.last_modified_date
+                ,
+                name: self.name
+                ,
+                resource_arn: self.resource_arn
+                ,
+                rule_count: self.rule_count
+                    .unwrap_or_default()
+                ,
+                tags: self.tags
+                ,
+                target_arn: self.target_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl RulesetItem {
     /// Creates a new builder-style object to manufacture [`RulesetItem`](crate::model::RulesetItem).
@@ -5564,7 +5213,7 @@ impl RulesetItem {
 /// <p>Represents one or more actions to be performed on a DataBrew dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Recipe {
+pub struct Recipe  {
     /// <p>The Amazon Resource Name (ARN) of the user who created the recipe.</p>
     #[doc(hidden)]
     pub created_by: std::option::Option<std::string::String>,
@@ -5600,82 +5249,78 @@ pub struct Recipe {
     pub steps: std::option::Option<std::vec::Vec<crate::model::RecipeStep>>,
     /// <p>Metadata tags that have been applied to the recipe.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The identifier for the version for the recipe. Must be one of the following:</p>
-    /// <ul>
-    /// <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li>
-    /// <li> <p> <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p> </li>
-    /// <li> <p> <code>LATEST_PUBLISHED</code> - the most recent published version.</p> </li>
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The identifier for the version for the recipe. Must be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> 
+    /// <li> <p> <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p> </li> 
+    /// <li> <p> <code>LATEST_PUBLISHED</code> - the most recent published version.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub recipe_version: std::option::Option<std::string::String>,
 }
 impl Recipe {
     /// <p>The Amazon Resource Name (ARN) of the user who created the recipe.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The date and time that the recipe was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the recipe.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> std::option::Option<& str> {
         self.last_modified_by.as_deref()
     }
     /// <p>The last modification date and time of the recipe.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The name of the project that the recipe is associated with.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who published the recipe.</p>
-    pub fn published_by(&self) -> std::option::Option<&str> {
+    pub fn published_by(&self) -> std::option::Option<& str> {
         self.published_by.as_deref()
     }
     /// <p>The date and time when the recipe was published.</p>
-    pub fn published_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn published_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.published_date.as_ref()
     }
     /// <p>The description of the recipe.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique name for the recipe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the recipe.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>A list of steps that are defined by the recipe.</p>
-    pub fn steps(&self) -> std::option::Option<&[crate::model::RecipeStep]> {
+    pub fn steps(&self) -> std::option::Option<& [crate::model::RecipeStep]> {
         self.steps.as_deref()
     }
     /// <p>Metadata tags that have been applied to the recipe.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The identifier for the version for the recipe. Must be one of the following:</p>
-    /// <ul>
-    /// <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li>
-    /// <li> <p> <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p> </li>
-    /// <li> <p> <code>LATEST_PUBLISHED</code> - the most recent published version.</p> </li>
+    /// <p>The identifier for the version for the recipe. Must be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> 
+    /// <li> <p> <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p> </li> 
+    /// <li> <p> <code>LATEST_PUBLISHED</code> - the most recent published version.</p> </li> 
     /// </ul>
-    pub fn recipe_version(&self) -> std::option::Option<&str> {
+    pub fn recipe_version(&self) -> std::option::Option<& str> {
         self.recipe_version.as_deref()
     }
 }
 /// See [`Recipe`](crate::model::Recipe).
 pub mod recipe {
-
+    
     /// A builder for [`Recipe`](crate::model::Recipe).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5690,9 +5335,7 @@ pub mod recipe {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) steps: std::option::Option<std::vec::Vec<crate::model::RecipeStep>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) recipe_version: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5703,8 +5346,7 @@ pub mod recipe {
         }
         /// <p>The Amazon Resource Name (ARN) of the user who created the recipe.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_by = input;
-            self
+            self.created_by = input; self
         }
         /// <p>The date and time that the recipe was created.</p>
         pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5712,12 +5354,8 @@ pub mod recipe {
             self
         }
         /// <p>The date and time that the recipe was created.</p>
-        pub fn set_create_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_date = input;
-            self
+        pub fn set_create_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_date = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who last modified the recipe.</p>
         pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5725,12 +5363,8 @@ pub mod recipe {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who last modified the recipe.</p>
-        pub fn set_last_modified_by(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_by = input;
-            self
+        pub fn set_last_modified_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_by = input; self
         }
         /// <p>The last modification date and time of the recipe.</p>
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5738,12 +5372,8 @@ pub mod recipe {
             self
         }
         /// <p>The last modification date and time of the recipe.</p>
-        pub fn set_last_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_date = input;
-            self
+        pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_date = input; self
         }
         /// <p>The name of the project that the recipe is associated with.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5752,8 +5382,7 @@ pub mod recipe {
         }
         /// <p>The name of the project that the recipe is associated with.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_name = input;
-            self
+            self.project_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who published the recipe.</p>
         pub fn published_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5762,8 +5391,7 @@ pub mod recipe {
         }
         /// <p>The Amazon Resource Name (ARN) of the user who published the recipe.</p>
         pub fn set_published_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.published_by = input;
-            self
+            self.published_by = input; self
         }
         /// <p>The date and time when the recipe was published.</p>
         pub fn published_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5771,12 +5399,8 @@ pub mod recipe {
             self
         }
         /// <p>The date and time when the recipe was published.</p>
-        pub fn set_published_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.published_date = input;
-            self
+        pub fn set_published_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.published_date = input; self
         }
         /// <p>The description of the recipe.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5785,8 +5409,7 @@ pub mod recipe {
         }
         /// <p>The description of the recipe.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The unique name for the recipe.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5795,8 +5418,7 @@ pub mod recipe {
         }
         /// <p>The unique name for the recipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the recipe.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5805,8 +5427,7 @@ pub mod recipe {
         }
         /// <p>The Amazon Resource Name (ARN) for the recipe.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `steps`.
         ///
@@ -5815,85 +5436,82 @@ pub mod recipe {
         /// <p>A list of steps that are defined by the recipe.</p>
         pub fn steps(mut self, input: crate::model::RecipeStep) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input);
-            self.steps = Some(v);
-            self
+                            v.push(input);
+                            self.steps = Some(v);
+                            self
         }
         /// <p>A list of steps that are defined by the recipe.</p>
-        pub fn set_steps(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RecipeStep>>,
-        ) -> Self {
-            self.steps = input;
-            self
+        pub fn set_steps(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecipeStep>>) -> Self {
+            self.steps = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata tags that have been applied to the recipe.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Metadata tags that have been applied to the recipe.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
-        /// <p>The identifier for the version for the recipe. Must be one of the following:</p>
-        /// <ul>
-        /// <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li>
-        /// <li> <p> <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p> </li>
-        /// <li> <p> <code>LATEST_PUBLISHED</code> - the most recent published version.</p> </li>
+        /// <p>The identifier for the version for the recipe. Must be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> 
+        /// <li> <p> <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p> </li> 
+        /// <li> <p> <code>LATEST_PUBLISHED</code> - the most recent published version.</p> </li> 
         /// </ul>
         pub fn recipe_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.recipe_version = Some(input.into());
             self
         }
-        /// <p>The identifier for the version for the recipe. Must be one of the following:</p>
-        /// <ul>
-        /// <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li>
-        /// <li> <p> <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p> </li>
-        /// <li> <p> <code>LATEST_PUBLISHED</code> - the most recent published version.</p> </li>
+        /// <p>The identifier for the version for the recipe. Must be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0" isn't a valid version.</p> </li> 
+        /// <li> <p> <code>LATEST_WORKING</code> - the most recent valid version being developed in a DataBrew project.</p> </li> 
+        /// <li> <p> <code>LATEST_PUBLISHED</code> - the most recent published version.</p> </li> 
         /// </ul>
-        pub fn set_recipe_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recipe_version = input;
-            self
+        pub fn set_recipe_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recipe_version = input; self
         }
         /// Consumes the builder and constructs a [`Recipe`](crate::model::Recipe).
         pub fn build(self) -> crate::model::Recipe {
             crate::model::Recipe {
-                created_by: self.created_by,
-                create_date: self.create_date,
-                last_modified_by: self.last_modified_by,
-                last_modified_date: self.last_modified_date,
-                project_name: self.project_name,
-                published_by: self.published_by,
-                published_date: self.published_date,
-                description: self.description,
-                name: self.name,
-                resource_arn: self.resource_arn,
-                steps: self.steps,
-                tags: self.tags,
-                recipe_version: self.recipe_version,
+                created_by: self.created_by
+                ,
+                create_date: self.create_date
+                ,
+                last_modified_by: self.last_modified_by
+                ,
+                last_modified_date: self.last_modified_date
+                ,
+                project_name: self.project_name
+                ,
+                published_by: self.published_by
+                ,
+                published_date: self.published_date
+                ,
+                description: self.description
+                ,
+                name: self.name
+                ,
+                resource_arn: self.resource_arn
+                ,
+                steps: self.steps
+                ,
+                tags: self.tags
+                ,
+                recipe_version: self.recipe_version
+                ,
             }
         }
     }
+    
+    
 }
 impl Recipe {
     /// Creates a new builder-style object to manufacture [`Recipe`](crate::model::Recipe).
@@ -5905,7 +5523,7 @@ impl Recipe {
 /// <p>Represents all of the attributes of a DataBrew project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Project {
+pub struct Project  {
     /// <p>The ID of the Amazon Web Services account that owns the project.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -5938,8 +5556,7 @@ pub struct Project {
     pub sample: std::option::Option<crate::model::Sample>,
     /// <p>Metadata tags that have been applied to the project.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the role that will be assumed for this project.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -5952,68 +5569,65 @@ pub struct Project {
 }
 impl Project {
     /// <p>The ID of the Amazon Web Services account that owns the project.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The date and time that the project was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who crated the project.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The dataset that the project is to act upon.</p>
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The last modification date and time for the project.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> std::option::Option<& str> {
         self.last_modified_by.as_deref()
     }
     /// <p>The unique name of a project.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of a recipe that will be developed during a project session.</p>
-    pub fn recipe_name(&self) -> std::option::Option<&str> {
+    pub fn recipe_name(&self) -> std::option::Option<& str> {
         self.recipe_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the project.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The sample size and sampling type to apply to the data. If this parameter isn't specified, then the sample consists of the first 500 rows from the dataset.</p>
-    pub fn sample(&self) -> std::option::Option<&crate::model::Sample> {
+    pub fn sample(&self) -> std::option::Option<& crate::model::Sample> {
         self.sample.as_ref()
     }
     /// <p>Metadata tags that have been applied to the project.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role that will be assumed for this project.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user that opened the project for use.</p>
-    pub fn opened_by(&self) -> std::option::Option<&str> {
+    pub fn opened_by(&self) -> std::option::Option<& str> {
         self.opened_by.as_deref()
     }
     /// <p>The date and time when the project was opened.</p>
-    pub fn open_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn open_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.open_date.as_ref()
     }
 }
 /// See [`Project`](crate::model::Project).
 pub mod project {
-
+    
     /// A builder for [`Project`](crate::model::Project).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6027,9 +5641,7 @@ pub mod project {
         pub(crate) recipe_name: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) sample: std::option::Option<crate::model::Sample>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) opened_by: std::option::Option<std::string::String>,
         pub(crate) open_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -6042,8 +5654,7 @@ pub mod project {
         }
         /// <p>The ID of the Amazon Web Services account that owns the project.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The date and time that the project was created.</p>
         pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6051,12 +5662,8 @@ pub mod project {
             self
         }
         /// <p>The date and time that the project was created.</p>
-        pub fn set_create_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_date = input;
-            self
+        pub fn set_create_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_date = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who crated the project.</p>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6065,8 +5672,7 @@ pub mod project {
         }
         /// <p>The Amazon Resource Name (ARN) of the user who crated the project.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_by = input;
-            self
+            self.created_by = input; self
         }
         /// <p>The dataset that the project is to act upon.</p>
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6075,8 +5681,7 @@ pub mod project {
         }
         /// <p>The dataset that the project is to act upon.</p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input;
-            self
+            self.dataset_name = input; self
         }
         /// <p>The last modification date and time for the project.</p>
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6084,12 +5689,8 @@ pub mod project {
             self
         }
         /// <p>The last modification date and time for the project.</p>
-        pub fn set_last_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_date = input;
-            self
+        pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_date = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
         pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6097,12 +5698,8 @@ pub mod project {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who last modified the project.</p>
-        pub fn set_last_modified_by(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_by = input;
-            self
+        pub fn set_last_modified_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_by = input; self
         }
         /// <p>The unique name of a project.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6111,8 +5708,7 @@ pub mod project {
         }
         /// <p>The unique name of a project.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The name of a recipe that will be developed during a project session.</p>
         pub fn recipe_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6121,8 +5717,7 @@ pub mod project {
         }
         /// <p>The name of a recipe that will be developed during a project session.</p>
         pub fn set_recipe_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.recipe_name = input;
-            self
+            self.recipe_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the project.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6131,8 +5726,7 @@ pub mod project {
         }
         /// <p>The Amazon Resource Name (ARN) for the project.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The sample size and sampling type to apply to the data. If this parameter isn't specified, then the sample consists of the first 500 rows from the dataset.</p>
         pub fn sample(mut self, input: crate::model::Sample) -> Self {
@@ -6141,33 +5735,22 @@ pub mod project {
         }
         /// <p>The sample size and sampling type to apply to the data. If this parameter isn't specified, then the sample consists of the first 500 rows from the dataset.</p>
         pub fn set_sample(mut self, input: std::option::Option<crate::model::Sample>) -> Self {
-            self.sample = input;
-            self
+            self.sample = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata tags that have been applied to the project.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Metadata tags that have been applied to the project.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the role that will be assumed for this project.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6176,8 +5759,7 @@ pub mod project {
         }
         /// <p>The Amazon Resource Name (ARN) of the role that will be assumed for this project.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user that opened the project for use.</p>
         pub fn opened_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6186,8 +5768,7 @@ pub mod project {
         }
         /// <p>The Amazon Resource Name (ARN) of the user that opened the project for use.</p>
         pub fn set_opened_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.opened_by = input;
-            self
+            self.opened_by = input; self
         }
         /// <p>The date and time when the project was opened.</p>
         pub fn open_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6195,33 +5776,45 @@ pub mod project {
             self
         }
         /// <p>The date and time when the project was opened.</p>
-        pub fn set_open_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.open_date = input;
-            self
+        pub fn set_open_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.open_date = input; self
         }
         /// Consumes the builder and constructs a [`Project`](crate::model::Project).
         pub fn build(self) -> crate::model::Project {
             crate::model::Project {
-                account_id: self.account_id,
-                create_date: self.create_date,
-                created_by: self.created_by,
-                dataset_name: self.dataset_name,
-                last_modified_date: self.last_modified_date,
-                last_modified_by: self.last_modified_by,
-                name: self.name,
-                recipe_name: self.recipe_name,
-                resource_arn: self.resource_arn,
-                sample: self.sample,
-                tags: self.tags,
-                role_arn: self.role_arn,
-                opened_by: self.opened_by,
-                open_date: self.open_date,
+                account_id: self.account_id
+                ,
+                create_date: self.create_date
+                ,
+                created_by: self.created_by
+                ,
+                dataset_name: self.dataset_name
+                ,
+                last_modified_date: self.last_modified_date
+                ,
+                last_modified_by: self.last_modified_by
+                ,
+                name: self.name
+                ,
+                recipe_name: self.recipe_name
+                ,
+                resource_arn: self.resource_arn
+                ,
+                sample: self.sample
+                ,
+                tags: self.tags
+                ,
+                role_arn: self.role_arn
+                ,
+                opened_by: self.opened_by
+                ,
+                open_date: self.open_date
+                ,
             }
         }
     }
+    
+    
 }
 impl Project {
     /// Creates a new builder-style object to manufacture [`Project`](crate::model::Project).
@@ -6233,7 +5826,7 @@ impl Project {
 /// <p>Represents all of the attributes of a DataBrew job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Job {
+pub struct Job  {
     /// <p>The ID of the Amazon Web Services account that owns the job.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -6249,20 +5842,20 @@ pub struct Job {
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting data written by DataBrew jobs</a> </p>
     #[doc(hidden)]
     pub encryption_key_arn: std::option::Option<std::string::String>,
-    /// <p>The encryption mode for the job, which can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// <p>The encryption mode for the job, which can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li> 
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub encryption_mode: std::option::Option<crate::model::EncryptionMode>,
     /// <p>The unique name of the job.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The job type of the job, which must be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p> </li>
-    /// <li> <p> <code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p> </li>
+    /// <p>The job type of the job, which must be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p> </li> 
+    /// <li> <p> <code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::JobType>,
@@ -6307,67 +5900,65 @@ pub struct Job {
     pub timeout: i32,
     /// <p>Metadata tags that have been applied to the job.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default value is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.</p>
     #[doc(hidden)]
     pub job_sample: std::option::Option<crate::model::JobSample>,
     /// <p>List of validation configurations that are applied to the profile job.</p>
     #[doc(hidden)]
-    pub validation_configurations:
-        std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
+    pub validation_configurations: std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
 }
 impl Job {
     /// <p>The ID of the Amazon Web Services account that owns the job.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The date and time that the job was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>A dataset that the job is to process.</p>
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting data written by DataBrew jobs</a> </p>
-    pub fn encryption_key_arn(&self) -> std::option::Option<&str> {
+    pub fn encryption_key_arn(&self) -> std::option::Option<& str> {
         self.encryption_key_arn.as_deref()
     }
-    /// <p>The encryption mode for the job, which can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+    /// <p>The encryption mode for the job, which can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li> 
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li> 
     /// </ul>
-    pub fn encryption_mode(&self) -> std::option::Option<&crate::model::EncryptionMode> {
+    pub fn encryption_mode(&self) -> std::option::Option<& crate::model::EncryptionMode> {
         self.encryption_mode.as_ref()
     }
     /// <p>The unique name of the job.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The job type of the job, which must be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p> </li>
-    /// <li> <p> <code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p> </li>
+    /// <p>The job type of the job, which must be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p> </li> 
+    /// <li> <p> <code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::JobType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::JobType> {
         self.r#type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> std::option::Option<& str> {
         self.last_modified_by.as_deref()
     }
     /// <p>The modification date and time of the job.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The current status of Amazon CloudWatch logging for the job.</p>
-    pub fn log_subscription(&self) -> std::option::Option<&crate::model::LogSubscription> {
+    pub fn log_subscription(&self) -> std::option::Option<& crate::model::LogSubscription> {
         self.log_subscription.as_ref()
     }
     /// <p>The maximum number of nodes that can be consumed when the job processes data.</p>
@@ -6379,31 +5970,31 @@ impl Job {
         self.max_retries
     }
     /// <p>One or more artifacts that represent output from running the job.</p>
-    pub fn outputs(&self) -> std::option::Option<&[crate::model::Output]> {
+    pub fn outputs(&self) -> std::option::Option<& [crate::model::Output]> {
         self.outputs.as_deref()
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn data_catalog_outputs(&self) -> std::option::Option<&[crate::model::DataCatalogOutput]> {
+    pub fn data_catalog_outputs(&self) -> std::option::Option<& [crate::model::DataCatalogOutput]> {
         self.data_catalog_outputs.as_deref()
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
-    pub fn database_outputs(&self) -> std::option::Option<&[crate::model::DatabaseOutput]> {
+    pub fn database_outputs(&self) -> std::option::Option<& [crate::model::DatabaseOutput]> {
         self.database_outputs.as_deref()
     }
     /// <p>The name of the project that the job is associated with.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>A set of steps that the job runs.</p>
-    pub fn recipe_reference(&self) -> std::option::Option<&crate::model::RecipeReference> {
+    pub fn recipe_reference(&self) -> std::option::Option<& crate::model::RecipeReference> {
         self.recipe_reference.as_ref()
     }
     /// <p>The unique Amazon Resource Name (ARN) for the job.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
@@ -6411,26 +6002,21 @@ impl Job {
         self.timeout
     }
     /// <p>Metadata tags that have been applied to the job.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default value is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.</p>
-    pub fn job_sample(&self) -> std::option::Option<&crate::model::JobSample> {
+    pub fn job_sample(&self) -> std::option::Option<& crate::model::JobSample> {
         self.job_sample.as_ref()
     }
     /// <p>List of validation configurations that are applied to the profile job.</p>
-    pub fn validation_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::ValidationConfiguration]> {
+    pub fn validation_configurations(&self) -> std::option::Option<& [crate::model::ValidationConfiguration]> {
         self.validation_configurations.as_deref()
     }
 }
 /// See [`Job`](crate::model::Job).
 pub mod job {
-
+    
     /// A builder for [`Job`](crate::model::Job).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6448,21 +6034,16 @@ pub mod job {
         pub(crate) max_capacity: std::option::Option<i32>,
         pub(crate) max_retries: std::option::Option<i32>,
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
-        pub(crate) data_catalog_outputs:
-            std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
-        pub(crate) database_outputs:
-            std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
+        pub(crate) data_catalog_outputs: std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
+        pub(crate) database_outputs: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
         pub(crate) project_name: std::option::Option<std::string::String>,
         pub(crate) recipe_reference: std::option::Option<crate::model::RecipeReference>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) timeout: std::option::Option<i32>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) job_sample: std::option::Option<crate::model::JobSample>,
-        pub(crate) validation_configurations:
-            std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
+        pub(crate) validation_configurations: std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the job.</p>
@@ -6472,8 +6053,7 @@ pub mod job {
         }
         /// <p>The ID of the Amazon Web Services account that owns the job.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6482,8 +6062,7 @@ pub mod job {
         }
         /// <p>The Amazon Resource Name (ARN) of the user who created the job.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_by = input;
-            self
+            self.created_by = input; self
         }
         /// <p>The date and time that the job was created.</p>
         pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6491,12 +6070,8 @@ pub mod job {
             self
         }
         /// <p>The date and time that the job was created.</p>
-        pub fn set_create_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_date = input;
-            self
+        pub fn set_create_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_date = input; self
         }
         /// <p>A dataset that the job is to process.</p>
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6505,8 +6080,7 @@ pub mod job {
         }
         /// <p>A dataset that the job is to process.</p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input;
-            self
+            self.dataset_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting data written by DataBrew jobs</a> </p>
         pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6514,33 +6088,25 @@ pub mod job {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job output. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting data written by DataBrew jobs</a> </p>
-        pub fn set_encryption_key_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_key_arn = input;
-            self
+        pub fn set_encryption_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_key_arn = input; self
         }
-        /// <p>The encryption mode for the job, which can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
-        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+        /// <p>The encryption mode for the job, which can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li> 
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li> 
         /// </ul>
         pub fn encryption_mode(mut self, input: crate::model::EncryptionMode) -> Self {
             self.encryption_mode = Some(input);
             self
         }
-        /// <p>The encryption mode for the job, which can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
-        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
+        /// <p>The encryption mode for the job, which can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li> 
+        /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li> 
         /// </ul>
-        pub fn set_encryption_mode(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionMode>,
-        ) -> Self {
-            self.encryption_mode = input;
-            self
+        pub fn set_encryption_mode(mut self, input: std::option::Option<crate::model::EncryptionMode>) -> Self {
+            self.encryption_mode = input; self
         }
         /// <p>The unique name of the job.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6549,26 +6115,24 @@ pub mod job {
         }
         /// <p>The unique name of the job.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The job type of the job, which must be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p> </li>
-        /// <li> <p> <code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p> </li>
+        /// <p>The job type of the job, which must be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p> </li> 
+        /// <li> <p> <code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: crate::model::JobType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The job type of the job, which must be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p> </li>
-        /// <li> <p> <code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p> </li>
+        /// <p>The job type of the job, which must be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types, data distribution, and more.</p> </li> 
+        /// <li> <p> <code>RECIPE</code> - A job to apply one or more transformations to a dataset.</p> </li> 
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
         pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6576,12 +6140,8 @@ pub mod job {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who last modified the job.</p>
-        pub fn set_last_modified_by(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_by = input;
-            self
+        pub fn set_last_modified_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_by = input; self
         }
         /// <p>The modification date and time of the job.</p>
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6589,12 +6149,8 @@ pub mod job {
             self
         }
         /// <p>The modification date and time of the job.</p>
-        pub fn set_last_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_date = input;
-            self
+        pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_date = input; self
         }
         /// <p>The current status of Amazon CloudWatch logging for the job.</p>
         pub fn log_subscription(mut self, input: crate::model::LogSubscription) -> Self {
@@ -6602,12 +6158,8 @@ pub mod job {
             self
         }
         /// <p>The current status of Amazon CloudWatch logging for the job.</p>
-        pub fn set_log_subscription(
-            mut self,
-            input: std::option::Option<crate::model::LogSubscription>,
-        ) -> Self {
-            self.log_subscription = input;
-            self
+        pub fn set_log_subscription(mut self, input: std::option::Option<crate::model::LogSubscription>) -> Self {
+            self.log_subscription = input; self
         }
         /// <p>The maximum number of nodes that can be consumed when the job processes data.</p>
         pub fn max_capacity(mut self, input: i32) -> Self {
@@ -6616,8 +6168,7 @@ pub mod job {
         }
         /// <p>The maximum number of nodes that can be consumed when the job processes data.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_capacity = input;
-            self
+            self.max_capacity = input; self
         }
         /// <p>The maximum number of times to retry the job after a job run fails.</p>
         pub fn max_retries(mut self, input: i32) -> Self {
@@ -6626,8 +6177,7 @@ pub mod job {
         }
         /// <p>The maximum number of times to retry the job after a job run fails.</p>
         pub fn set_max_retries(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_retries = input;
-            self
+            self.max_retries = input; self
         }
         /// Appends an item to `outputs`.
         ///
@@ -6636,17 +6186,13 @@ pub mod job {
         /// <p>One or more artifacts that represent output from running the job.</p>
         pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input);
-            self.outputs = Some(v);
-            self
+                            v.push(input);
+                            self.outputs = Some(v);
+                            self
         }
         /// <p>One or more artifacts that represent output from running the job.</p>
-        pub fn set_outputs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Output>>,
-        ) -> Self {
-            self.outputs = input;
-            self
+        pub fn set_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::model::Output>>) -> Self {
+            self.outputs = input; self
         }
         /// Appends an item to `data_catalog_outputs`.
         ///
@@ -6655,17 +6201,13 @@ pub mod job {
         /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
         pub fn data_catalog_outputs(mut self, input: crate::model::DataCatalogOutput) -> Self {
             let mut v = self.data_catalog_outputs.unwrap_or_default();
-            v.push(input);
-            self.data_catalog_outputs = Some(v);
-            self
+                            v.push(input);
+                            self.data_catalog_outputs = Some(v);
+                            self
         }
         /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-        pub fn set_data_catalog_outputs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
-        ) -> Self {
-            self.data_catalog_outputs = input;
-            self
+        pub fn set_data_catalog_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>) -> Self {
+            self.data_catalog_outputs = input; self
         }
         /// Appends an item to `database_outputs`.
         ///
@@ -6674,17 +6216,13 @@ pub mod job {
         /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
         pub fn database_outputs(mut self, input: crate::model::DatabaseOutput) -> Self {
             let mut v = self.database_outputs.unwrap_or_default();
-            v.push(input);
-            self.database_outputs = Some(v);
-            self
+                            v.push(input);
+                            self.database_outputs = Some(v);
+                            self
         }
         /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
-        pub fn set_database_outputs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
-        ) -> Self {
-            self.database_outputs = input;
-            self
+        pub fn set_database_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>) -> Self {
+            self.database_outputs = input; self
         }
         /// <p>The name of the project that the job is associated with.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6693,8 +6231,7 @@ pub mod job {
         }
         /// <p>The name of the project that the job is associated with.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_name = input;
-            self
+            self.project_name = input; self
         }
         /// <p>A set of steps that the job runs.</p>
         pub fn recipe_reference(mut self, input: crate::model::RecipeReference) -> Self {
@@ -6702,12 +6239,8 @@ pub mod job {
             self
         }
         /// <p>A set of steps that the job runs.</p>
-        pub fn set_recipe_reference(
-            mut self,
-            input: std::option::Option<crate::model::RecipeReference>,
-        ) -> Self {
-            self.recipe_reference = input;
-            self
+        pub fn set_recipe_reference(mut self, input: std::option::Option<crate::model::RecipeReference>) -> Self {
+            self.recipe_reference = input; self
         }
         /// <p>The unique Amazon Resource Name (ARN) for the job.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6716,8 +6249,7 @@ pub mod job {
         }
         /// <p>The unique Amazon Resource Name (ARN) for the job.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6726,8 +6258,7 @@ pub mod job {
         }
         /// <p>The Amazon Resource Name (ARN) of the role to be assumed for this job.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn timeout(mut self, input: i32) -> Self {
@@ -6736,33 +6267,22 @@ pub mod job {
         }
         /// <p>The job's timeout in minutes. A job that attempts to run longer than this timeout period ends with a status of <code>TIMEOUT</code>.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout = input;
-            self
+            self.timeout = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata tags that have been applied to the job.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Metadata tags that have been applied to the job.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default value is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.</p>
         pub fn job_sample(mut self, input: crate::model::JobSample) -> Self {
@@ -6770,65 +6290,83 @@ pub mod job {
             self
         }
         /// <p>A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default value is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.</p>
-        pub fn set_job_sample(
-            mut self,
-            input: std::option::Option<crate::model::JobSample>,
-        ) -> Self {
-            self.job_sample = input;
-            self
+        pub fn set_job_sample(mut self, input: std::option::Option<crate::model::JobSample>) -> Self {
+            self.job_sample = input; self
         }
         /// Appends an item to `validation_configurations`.
         ///
         /// To override the contents of this collection use [`set_validation_configurations`](Self::set_validation_configurations).
         ///
         /// <p>List of validation configurations that are applied to the profile job.</p>
-        pub fn validation_configurations(
-            mut self,
-            input: crate::model::ValidationConfiguration,
-        ) -> Self {
+        pub fn validation_configurations(mut self, input: crate::model::ValidationConfiguration) -> Self {
             let mut v = self.validation_configurations.unwrap_or_default();
-            v.push(input);
-            self.validation_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.validation_configurations = Some(v);
+                            self
         }
         /// <p>List of validation configurations that are applied to the profile job.</p>
-        pub fn set_validation_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
-        ) -> Self {
-            self.validation_configurations = input;
-            self
+        pub fn set_validation_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>) -> Self {
+            self.validation_configurations = input; self
         }
         /// Consumes the builder and constructs a [`Job`](crate::model::Job).
         pub fn build(self) -> crate::model::Job {
             crate::model::Job {
-                account_id: self.account_id,
-                created_by: self.created_by,
-                create_date: self.create_date,
-                dataset_name: self.dataset_name,
-                encryption_key_arn: self.encryption_key_arn,
-                encryption_mode: self.encryption_mode,
-                name: self.name,
-                r#type: self.r#type,
-                last_modified_by: self.last_modified_by,
-                last_modified_date: self.last_modified_date,
-                log_subscription: self.log_subscription,
-                max_capacity: self.max_capacity.unwrap_or_default(),
-                max_retries: self.max_retries.unwrap_or_default(),
-                outputs: self.outputs,
-                data_catalog_outputs: self.data_catalog_outputs,
-                database_outputs: self.database_outputs,
-                project_name: self.project_name,
-                recipe_reference: self.recipe_reference,
-                resource_arn: self.resource_arn,
-                role_arn: self.role_arn,
-                timeout: self.timeout.unwrap_or_default(),
-                tags: self.tags,
-                job_sample: self.job_sample,
-                validation_configurations: self.validation_configurations,
+                account_id: self.account_id
+                ,
+                created_by: self.created_by
+                ,
+                create_date: self.create_date
+                ,
+                dataset_name: self.dataset_name
+                ,
+                encryption_key_arn: self.encryption_key_arn
+                ,
+                encryption_mode: self.encryption_mode
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                last_modified_by: self.last_modified_by
+                ,
+                last_modified_date: self.last_modified_date
+                ,
+                log_subscription: self.log_subscription
+                ,
+                max_capacity: self.max_capacity
+                    .unwrap_or_default()
+                ,
+                max_retries: self.max_retries
+                    .unwrap_or_default()
+                ,
+                outputs: self.outputs
+                ,
+                data_catalog_outputs: self.data_catalog_outputs
+                ,
+                database_outputs: self.database_outputs
+                ,
+                project_name: self.project_name
+                ,
+                recipe_reference: self.recipe_reference
+                ,
+                resource_arn: self.resource_arn
+                ,
+                role_arn: self.role_arn
+                ,
+                timeout: self.timeout
+                    .unwrap_or_default()
+                ,
+                tags: self.tags
+                ,
+                job_sample: self.job_sample
+                ,
+                validation_configurations: self.validation_configurations
+                ,
             }
         }
     }
+    
+    
 }
 impl Job {
     /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
@@ -6840,7 +6378,7 @@ impl Job {
 /// <p>Represents the name and version of a DataBrew recipe.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecipeReference {
+pub struct RecipeReference  {
     /// <p>The name of the recipe.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -6850,17 +6388,17 @@ pub struct RecipeReference {
 }
 impl RecipeReference {
     /// <p>The name of the recipe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The identifier for the version for the recipe. </p>
-    pub fn recipe_version(&self) -> std::option::Option<&str> {
+    pub fn recipe_version(&self) -> std::option::Option<& str> {
         self.recipe_version.as_deref()
     }
 }
 /// See [`RecipeReference`](crate::model::RecipeReference).
 pub mod recipe_reference {
-
+    
     /// A builder for [`RecipeReference`](crate::model::RecipeReference).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6875,8 +6413,7 @@ pub mod recipe_reference {
         }
         /// <p>The name of the recipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The identifier for the version for the recipe. </p>
         pub fn recipe_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6884,21 +6421,21 @@ pub mod recipe_reference {
             self
         }
         /// <p>The identifier for the version for the recipe. </p>
-        pub fn set_recipe_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recipe_version = input;
-            self
+        pub fn set_recipe_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recipe_version = input; self
         }
         /// Consumes the builder and constructs a [`RecipeReference`](crate::model::RecipeReference).
         pub fn build(self) -> crate::model::RecipeReference {
             crate::model::RecipeReference {
-                name: self.name,
-                recipe_version: self.recipe_version,
+                name: self.name
+                ,
+                recipe_version: self.recipe_version
+                ,
             }
         }
     }
+    
+    
 }
 impl RecipeReference {
     /// Creates a new builder-style object to manufacture [`RecipeReference`](crate::model::RecipeReference).
@@ -6913,9 +6450,9 @@ impl RecipeReference {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let jobtype = unimplemented!();
 /// match jobtype {
@@ -6937,58 +6474,52 @@ impl RecipeReference {
 /// Specifically, when `jobtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobType {
     #[allow(missing_docs)] // documentation missing in model
     Profile,
     #[allow(missing_docs)] // documentation missing in model
     Recipe,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobType {
     fn from(s: &str) -> Self {
         match s {
             "PROFILE" => JobType::Profile,
             "RECIPE" => JobType::Recipe,
-            other => JobType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => JobType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JobType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobType::from(s))
+                }
+            }
 impl JobType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobType::Profile => "PROFILE",
             JobType::Recipe => "RECIPE",
-            JobType::Unknown(value) => value.as_str(),
+            JobType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PROFILE", "RECIPE"]
+        &[
+            "PROFILE", "RECIPE"
+        ]
     }
 }
 impl AsRef<str> for JobType {
@@ -7000,7 +6531,7 @@ impl AsRef<str> for JobType {
 /// <p>Represents one run of a DataBrew job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobRun {
+pub struct JobRun  {
     /// <p>The number of times that DataBrew has attempted to run the job.</p>
     #[doc(hidden)]
     pub attempt: i32,
@@ -7054,8 +6585,7 @@ pub struct JobRun {
     pub job_sample: std::option::Option<crate::model::JobSample>,
     /// <p>List of validation configurations that are applied to the profile job run.</p>
     #[doc(hidden)]
-    pub validation_configurations:
-        std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
+    pub validation_configurations: std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
 }
 impl JobRun {
     /// <p>The number of times that DataBrew has attempted to run the job.</p>
@@ -7063,15 +6593,15 @@ impl JobRun {
         self.attempt
     }
     /// <p>The date and time when the job completed processing.</p>
-    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completed_on(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completed_on.as_ref()
     }
     /// <p>The name of the dataset for the job to process.</p>
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> std::option::Option<& str> {
         self.dataset_name.as_deref()
     }
     /// <p>A message indicating an error (if any) that was encountered when the job ran.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The amount of time, in seconds, during which a job run consumed resources.</p>
@@ -7079,63 +6609,61 @@ impl JobRun {
         self.execution_time
     }
     /// <p>The name of the job being processed during this run.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The unique identifier of the job run.</p>
-    pub fn run_id(&self) -> std::option::Option<&str> {
+    pub fn run_id(&self) -> std::option::Option<& str> {
         self.run_id.as_deref()
     }
     /// <p>The current state of the job run entity itself.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::JobRunState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::JobRunState> {
         self.state.as_ref()
     }
     /// <p>The current status of Amazon CloudWatch logging for the job run.</p>
-    pub fn log_subscription(&self) -> std::option::Option<&crate::model::LogSubscription> {
+    pub fn log_subscription(&self) -> std::option::Option<& crate::model::LogSubscription> {
         self.log_subscription.as_ref()
     }
     /// <p>The name of an Amazon CloudWatch log group, where the job writes diagnostic messages when it runs.</p>
-    pub fn log_group_name(&self) -> std::option::Option<&str> {
+    pub fn log_group_name(&self) -> std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
     /// <p>One or more output artifacts from a job run.</p>
-    pub fn outputs(&self) -> std::option::Option<&[crate::model::Output]> {
+    pub fn outputs(&self) -> std::option::Option<& [crate::model::Output]> {
         self.outputs.as_deref()
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn data_catalog_outputs(&self) -> std::option::Option<&[crate::model::DataCatalogOutput]> {
+    pub fn data_catalog_outputs(&self) -> std::option::Option<& [crate::model::DataCatalogOutput]> {
         self.data_catalog_outputs.as_deref()
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
-    pub fn database_outputs(&self) -> std::option::Option<&[crate::model::DatabaseOutput]> {
+    pub fn database_outputs(&self) -> std::option::Option<& [crate::model::DatabaseOutput]> {
         self.database_outputs.as_deref()
     }
     /// <p>The set of steps processed by the job.</p>
-    pub fn recipe_reference(&self) -> std::option::Option<&crate::model::RecipeReference> {
+    pub fn recipe_reference(&self) -> std::option::Option<& crate::model::RecipeReference> {
         self.recipe_reference.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
-    pub fn started_by(&self) -> std::option::Option<&str> {
+    pub fn started_by(&self) -> std::option::Option<& str> {
         self.started_by.as_deref()
     }
     /// <p>The date and time when the job run began. </p>
-    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_on(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.started_on.as_ref()
     }
     /// <p>A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.</p>
-    pub fn job_sample(&self) -> std::option::Option<&crate::model::JobSample> {
+    pub fn job_sample(&self) -> std::option::Option<& crate::model::JobSample> {
         self.job_sample.as_ref()
     }
     /// <p>List of validation configurations that are applied to the profile job run.</p>
-    pub fn validation_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::ValidationConfiguration]> {
+    pub fn validation_configurations(&self) -> std::option::Option<& [crate::model::ValidationConfiguration]> {
         self.validation_configurations.as_deref()
     }
 }
 /// See [`JobRun`](crate::model::JobRun).
 pub mod job_run {
-
+    
     /// A builder for [`JobRun`](crate::model::JobRun).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7150,16 +6678,13 @@ pub mod job_run {
         pub(crate) log_subscription: std::option::Option<crate::model::LogSubscription>,
         pub(crate) log_group_name: std::option::Option<std::string::String>,
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
-        pub(crate) data_catalog_outputs:
-            std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
-        pub(crate) database_outputs:
-            std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
+        pub(crate) data_catalog_outputs: std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
+        pub(crate) database_outputs: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
         pub(crate) recipe_reference: std::option::Option<crate::model::RecipeReference>,
         pub(crate) started_by: std::option::Option<std::string::String>,
         pub(crate) started_on: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) job_sample: std::option::Option<crate::model::JobSample>,
-        pub(crate) validation_configurations:
-            std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
+        pub(crate) validation_configurations: std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
     }
     impl Builder {
         /// <p>The number of times that DataBrew has attempted to run the job.</p>
@@ -7169,8 +6694,7 @@ pub mod job_run {
         }
         /// <p>The number of times that DataBrew has attempted to run the job.</p>
         pub fn set_attempt(mut self, input: std::option::Option<i32>) -> Self {
-            self.attempt = input;
-            self
+            self.attempt = input; self
         }
         /// <p>The date and time when the job completed processing.</p>
         pub fn completed_on(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7178,12 +6702,8 @@ pub mod job_run {
             self
         }
         /// <p>The date and time when the job completed processing.</p>
-        pub fn set_completed_on(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.completed_on = input;
-            self
+        pub fn set_completed_on(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.completed_on = input; self
         }
         /// <p>The name of the dataset for the job to process.</p>
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7192,8 +6712,7 @@ pub mod job_run {
         }
         /// <p>The name of the dataset for the job to process.</p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dataset_name = input;
-            self
+            self.dataset_name = input; self
         }
         /// <p>A message indicating an error (if any) that was encountered when the job ran.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7201,12 +6720,8 @@ pub mod job_run {
             self
         }
         /// <p>A message indicating an error (if any) that was encountered when the job ran.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// <p>The amount of time, in seconds, during which a job run consumed resources.</p>
         pub fn execution_time(mut self, input: i32) -> Self {
@@ -7215,8 +6730,7 @@ pub mod job_run {
         }
         /// <p>The amount of time, in seconds, during which a job run consumed resources.</p>
         pub fn set_execution_time(mut self, input: std::option::Option<i32>) -> Self {
-            self.execution_time = input;
-            self
+            self.execution_time = input; self
         }
         /// <p>The name of the job being processed during this run.</p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7225,8 +6739,7 @@ pub mod job_run {
         }
         /// <p>The name of the job being processed during this run.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_name = input;
-            self
+            self.job_name = input; self
         }
         /// <p>The unique identifier of the job run.</p>
         pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7235,8 +6748,7 @@ pub mod job_run {
         }
         /// <p>The unique identifier of the job run.</p>
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.run_id = input;
-            self
+            self.run_id = input; self
         }
         /// <p>The current state of the job run entity itself.</p>
         pub fn state(mut self, input: crate::model::JobRunState) -> Self {
@@ -7245,8 +6757,7 @@ pub mod job_run {
         }
         /// <p>The current state of the job run entity itself.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::JobRunState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The current status of Amazon CloudWatch logging for the job run.</p>
         pub fn log_subscription(mut self, input: crate::model::LogSubscription) -> Self {
@@ -7254,12 +6765,8 @@ pub mod job_run {
             self
         }
         /// <p>The current status of Amazon CloudWatch logging for the job run.</p>
-        pub fn set_log_subscription(
-            mut self,
-            input: std::option::Option<crate::model::LogSubscription>,
-        ) -> Self {
-            self.log_subscription = input;
-            self
+        pub fn set_log_subscription(mut self, input: std::option::Option<crate::model::LogSubscription>) -> Self {
+            self.log_subscription = input; self
         }
         /// <p>The name of an Amazon CloudWatch log group, where the job writes diagnostic messages when it runs.</p>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7267,12 +6774,8 @@ pub mod job_run {
             self
         }
         /// <p>The name of an Amazon CloudWatch log group, where the job writes diagnostic messages when it runs.</p>
-        pub fn set_log_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_group_name = input;
-            self
+        pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_group_name = input; self
         }
         /// Appends an item to `outputs`.
         ///
@@ -7281,17 +6784,13 @@ pub mod job_run {
         /// <p>One or more output artifacts from a job run.</p>
         pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input);
-            self.outputs = Some(v);
-            self
+                            v.push(input);
+                            self.outputs = Some(v);
+                            self
         }
         /// <p>One or more output artifacts from a job run.</p>
-        pub fn set_outputs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Output>>,
-        ) -> Self {
-            self.outputs = input;
-            self
+        pub fn set_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::model::Output>>) -> Self {
+            self.outputs = input; self
         }
         /// Appends an item to `data_catalog_outputs`.
         ///
@@ -7300,17 +6799,13 @@ pub mod job_run {
         /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
         pub fn data_catalog_outputs(mut self, input: crate::model::DataCatalogOutput) -> Self {
             let mut v = self.data_catalog_outputs.unwrap_or_default();
-            v.push(input);
-            self.data_catalog_outputs = Some(v);
-            self
+                            v.push(input);
+                            self.data_catalog_outputs = Some(v);
+                            self
         }
         /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-        pub fn set_data_catalog_outputs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
-        ) -> Self {
-            self.data_catalog_outputs = input;
-            self
+        pub fn set_data_catalog_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>) -> Self {
+            self.data_catalog_outputs = input; self
         }
         /// Appends an item to `database_outputs`.
         ///
@@ -7319,17 +6814,13 @@ pub mod job_run {
         /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
         pub fn database_outputs(mut self, input: crate::model::DatabaseOutput) -> Self {
             let mut v = self.database_outputs.unwrap_or_default();
-            v.push(input);
-            self.database_outputs = Some(v);
-            self
+                            v.push(input);
+                            self.database_outputs = Some(v);
+                            self
         }
         /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
-        pub fn set_database_outputs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
-        ) -> Self {
-            self.database_outputs = input;
-            self
+        pub fn set_database_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>) -> Self {
+            self.database_outputs = input; self
         }
         /// <p>The set of steps processed by the job.</p>
         pub fn recipe_reference(mut self, input: crate::model::RecipeReference) -> Self {
@@ -7337,12 +6828,8 @@ pub mod job_run {
             self
         }
         /// <p>The set of steps processed by the job.</p>
-        pub fn set_recipe_reference(
-            mut self,
-            input: std::option::Option<crate::model::RecipeReference>,
-        ) -> Self {
-            self.recipe_reference = input;
-            self
+        pub fn set_recipe_reference(mut self, input: std::option::Option<crate::model::RecipeReference>) -> Self {
+            self.recipe_reference = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
         pub fn started_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7351,8 +6838,7 @@ pub mod job_run {
         }
         /// <p>The Amazon Resource Name (ARN) of the user who initiated the job run. </p>
         pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.started_by = input;
-            self
+            self.started_by = input; self
         }
         /// <p>The date and time when the job run began. </p>
         pub fn started_on(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7360,12 +6846,8 @@ pub mod job_run {
             self
         }
         /// <p>The date and time when the job run began. </p>
-        pub fn set_started_on(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.started_on = input;
-            self
+        pub fn set_started_on(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.started_on = input; self
         }
         /// <p>A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.</p>
         pub fn job_sample(mut self, input: crate::model::JobSample) -> Self {
@@ -7373,59 +6855,70 @@ pub mod job_run {
             self
         }
         /// <p>A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If a <code>JobSample</code> value isn't provided, the default is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.</p>
-        pub fn set_job_sample(
-            mut self,
-            input: std::option::Option<crate::model::JobSample>,
-        ) -> Self {
-            self.job_sample = input;
-            self
+        pub fn set_job_sample(mut self, input: std::option::Option<crate::model::JobSample>) -> Self {
+            self.job_sample = input; self
         }
         /// Appends an item to `validation_configurations`.
         ///
         /// To override the contents of this collection use [`set_validation_configurations`](Self::set_validation_configurations).
         ///
         /// <p>List of validation configurations that are applied to the profile job run.</p>
-        pub fn validation_configurations(
-            mut self,
-            input: crate::model::ValidationConfiguration,
-        ) -> Self {
+        pub fn validation_configurations(mut self, input: crate::model::ValidationConfiguration) -> Self {
             let mut v = self.validation_configurations.unwrap_or_default();
-            v.push(input);
-            self.validation_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.validation_configurations = Some(v);
+                            self
         }
         /// <p>List of validation configurations that are applied to the profile job run.</p>
-        pub fn set_validation_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>,
-        ) -> Self {
-            self.validation_configurations = input;
-            self
+        pub fn set_validation_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::ValidationConfiguration>>) -> Self {
+            self.validation_configurations = input; self
         }
         /// Consumes the builder and constructs a [`JobRun`](crate::model::JobRun).
         pub fn build(self) -> crate::model::JobRun {
             crate::model::JobRun {
-                attempt: self.attempt.unwrap_or_default(),
-                completed_on: self.completed_on,
-                dataset_name: self.dataset_name,
-                error_message: self.error_message,
-                execution_time: self.execution_time.unwrap_or_default(),
-                job_name: self.job_name,
-                run_id: self.run_id,
-                state: self.state,
-                log_subscription: self.log_subscription,
-                log_group_name: self.log_group_name,
-                outputs: self.outputs,
-                data_catalog_outputs: self.data_catalog_outputs,
-                database_outputs: self.database_outputs,
-                recipe_reference: self.recipe_reference,
-                started_by: self.started_by,
-                started_on: self.started_on,
-                job_sample: self.job_sample,
-                validation_configurations: self.validation_configurations,
+                attempt: self.attempt
+                    .unwrap_or_default()
+                ,
+                completed_on: self.completed_on
+                ,
+                dataset_name: self.dataset_name
+                ,
+                error_message: self.error_message
+                ,
+                execution_time: self.execution_time
+                    .unwrap_or_default()
+                ,
+                job_name: self.job_name
+                ,
+                run_id: self.run_id
+                ,
+                state: self.state
+                ,
+                log_subscription: self.log_subscription
+                ,
+                log_group_name: self.log_group_name
+                ,
+                outputs: self.outputs
+                ,
+                data_catalog_outputs: self.data_catalog_outputs
+                ,
+                database_outputs: self.database_outputs
+                ,
+                recipe_reference: self.recipe_reference
+                ,
+                started_by: self.started_by
+                ,
+                started_on: self.started_on
+                ,
+                job_sample: self.job_sample
+                ,
+                validation_configurations: self.validation_configurations
+                ,
             }
         }
     }
+    
+    
 }
 impl JobRun {
     /// Creates a new builder-style object to manufacture [`JobRun`](crate::model::JobRun).
@@ -7440,9 +6933,9 @@ impl JobRun {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let jobrunstate = unimplemented!();
 /// match jobrunstate {
@@ -7469,22 +6962,14 @@ impl JobRun {
 /// Specifically, when `jobrunstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobRunState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobRunState {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -7501,7 +6986,7 @@ pub enum JobRunState {
     #[allow(missing_docs)] // documentation missing in model
     Timeout,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobRunState {
     fn from(s: &str) -> Self {
@@ -7513,17 +6998,17 @@ impl std::convert::From<&str> for JobRunState {
             "STOPPING" => JobRunState::Stopping,
             "SUCCEEDED" => JobRunState::Succeeded,
             "TIMEOUT" => JobRunState::Timeout,
-            other => JobRunState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => JobRunState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JobRunState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobRunState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobRunState::from(s))
+                }
+            }
 impl JobRunState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7535,19 +7020,13 @@ impl JobRunState {
             JobRunState::Stopping => "STOPPING",
             JobRunState::Succeeded => "SUCCEEDED",
             JobRunState::Timeout => "TIMEOUT",
-            JobRunState::Unknown(value) => value.as_str(),
+            JobRunState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "FAILED",
-            "RUNNING",
-            "STARTING",
-            "STOPPED",
-            "STOPPING",
-            "SUCCEEDED",
-            "TIMEOUT",
+            "FAILED", "RUNNING", "STARTING", "STOPPED", "STOPPING", "SUCCEEDED", "TIMEOUT"
         ]
     }
 }
@@ -7560,7 +7039,7 @@ impl AsRef<str> for JobRunState {
 /// <p>Represents a dataset that can be processed by DataBrew.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Dataset {
+pub struct Dataset  {
     /// <p>The ID of the Amazon Web Services account that owns the dataset.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -7596,72 +7075,68 @@ pub struct Dataset {
     pub path_options: std::option::Option<crate::model::PathOptions>,
     /// <p>Metadata tags that have been applied to the dataset.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The unique Amazon Resource Name (ARN) for the dataset.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl Dataset {
     /// <p>The ID of the Amazon Web Services account that owns the dataset.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who created the dataset.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p>The date and time that the dataset was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The unique name of the dataset.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
-    pub fn format(&self) -> std::option::Option<&crate::model::InputFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::model::InputFormat> {
         self.format.as_ref()
     }
     /// <p>A set of options that define how DataBrew interprets the data in the dataset.</p>
-    pub fn format_options(&self) -> std::option::Option<&crate::model::FormatOptions> {
+    pub fn format_options(&self) -> std::option::Option<& crate::model::FormatOptions> {
         self.format_options.as_ref()
     }
     /// <p>Information on how DataBrew can find the dataset, in either the Glue Data Catalog or Amazon S3.</p>
-    pub fn input(&self) -> std::option::Option<&crate::model::Input> {
+    pub fn input(&self) -> std::option::Option<& crate::model::Input> {
         self.input.as_ref()
     }
     /// <p>The last modification date and time of the dataset.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last modified the dataset.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> std::option::Option<& str> {
         self.last_modified_by.as_deref()
     }
     /// <p>The location of the data for the dataset, either Amazon S3 or the Glue Data Catalog.</p>
-    pub fn source(&self) -> std::option::Option<&crate::model::Source> {
+    pub fn source(&self) -> std::option::Option<& crate::model::Source> {
         self.source.as_ref()
     }
     /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
-    pub fn path_options(&self) -> std::option::Option<&crate::model::PathOptions> {
+    pub fn path_options(&self) -> std::option::Option<& crate::model::PathOptions> {
         self.path_options.as_ref()
     }
     /// <p>Metadata tags that have been applied to the dataset.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The unique Amazon Resource Name (ARN) for the dataset.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 /// See [`Dataset`](crate::model::Dataset).
 pub mod dataset {
-
+    
     /// A builder for [`Dataset`](crate::model::Dataset).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7676,9 +7151,7 @@ pub mod dataset {
         pub(crate) last_modified_by: std::option::Option<std::string::String>,
         pub(crate) source: std::option::Option<crate::model::Source>,
         pub(crate) path_options: std::option::Option<crate::model::PathOptions>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7689,8 +7162,7 @@ pub mod dataset {
         }
         /// <p>The ID of the Amazon Web Services account that owns the dataset.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who created the dataset.</p>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7699,8 +7171,7 @@ pub mod dataset {
         }
         /// <p>The Amazon Resource Name (ARN) of the user who created the dataset.</p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_by = input;
-            self
+            self.created_by = input; self
         }
         /// <p>The date and time that the dataset was created.</p>
         pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7708,12 +7179,8 @@ pub mod dataset {
             self
         }
         /// <p>The date and time that the dataset was created.</p>
-        pub fn set_create_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_date = input;
-            self
+        pub fn set_create_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_date = input; self
         }
         /// <p>The unique name of the dataset.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7722,8 +7189,7 @@ pub mod dataset {
         }
         /// <p>The unique name of the dataset.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
         pub fn format(mut self, input: crate::model::InputFormat) -> Self {
@@ -7732,8 +7198,7 @@ pub mod dataset {
         }
         /// <p>The file format of a dataset that is created from an Amazon S3 file or folder.</p>
         pub fn set_format(mut self, input: std::option::Option<crate::model::InputFormat>) -> Self {
-            self.format = input;
-            self
+            self.format = input; self
         }
         /// <p>A set of options that define how DataBrew interprets the data in the dataset.</p>
         pub fn format_options(mut self, input: crate::model::FormatOptions) -> Self {
@@ -7741,12 +7206,8 @@ pub mod dataset {
             self
         }
         /// <p>A set of options that define how DataBrew interprets the data in the dataset.</p>
-        pub fn set_format_options(
-            mut self,
-            input: std::option::Option<crate::model::FormatOptions>,
-        ) -> Self {
-            self.format_options = input;
-            self
+        pub fn set_format_options(mut self, input: std::option::Option<crate::model::FormatOptions>) -> Self {
+            self.format_options = input; self
         }
         /// <p>Information on how DataBrew can find the dataset, in either the Glue Data Catalog or Amazon S3.</p>
         pub fn input(mut self, input: crate::model::Input) -> Self {
@@ -7755,8 +7216,7 @@ pub mod dataset {
         }
         /// <p>Information on how DataBrew can find the dataset, in either the Glue Data Catalog or Amazon S3.</p>
         pub fn set_input(mut self, input: std::option::Option<crate::model::Input>) -> Self {
-            self.input = input;
-            self
+            self.input = input; self
         }
         /// <p>The last modification date and time of the dataset.</p>
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7764,12 +7224,8 @@ pub mod dataset {
             self
         }
         /// <p>The last modification date and time of the dataset.</p>
-        pub fn set_last_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_date = input;
-            self
+        pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_date = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who last modified the dataset.</p>
         pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7777,12 +7233,8 @@ pub mod dataset {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user who last modified the dataset.</p>
-        pub fn set_last_modified_by(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_by = input;
-            self
+        pub fn set_last_modified_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_by = input; self
         }
         /// <p>The location of the data for the dataset, either Amazon S3 or the Glue Data Catalog.</p>
         pub fn source(mut self, input: crate::model::Source) -> Self {
@@ -7791,8 +7243,7 @@ pub mod dataset {
         }
         /// <p>The location of the data for the dataset, either Amazon S3 or the Glue Data Catalog.</p>
         pub fn set_source(mut self, input: std::option::Option<crate::model::Source>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
         pub fn path_options(mut self, input: crate::model::PathOptions) -> Self {
@@ -7800,37 +7251,23 @@ pub mod dataset {
             self
         }
         /// <p>A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.</p>
-        pub fn set_path_options(
-            mut self,
-            input: std::option::Option<crate::model::PathOptions>,
-        ) -> Self {
-            self.path_options = input;
-            self
+        pub fn set_path_options(mut self, input: std::option::Option<crate::model::PathOptions>) -> Self {
+            self.path_options = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata tags that have been applied to the dataset.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Metadata tags that have been applied to the dataset.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The unique Amazon Resource Name (ARN) for the dataset.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7839,28 +7276,42 @@ pub mod dataset {
         }
         /// <p>The unique Amazon Resource Name (ARN) for the dataset.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`Dataset`](crate::model::Dataset).
         pub fn build(self) -> crate::model::Dataset {
             crate::model::Dataset {
-                account_id: self.account_id,
-                created_by: self.created_by,
-                create_date: self.create_date,
-                name: self.name,
-                format: self.format,
-                format_options: self.format_options,
-                input: self.input,
-                last_modified_date: self.last_modified_date,
-                last_modified_by: self.last_modified_by,
-                source: self.source,
-                path_options: self.path_options,
-                tags: self.tags,
-                resource_arn: self.resource_arn,
+                account_id: self.account_id
+                ,
+                created_by: self.created_by
+                ,
+                create_date: self.create_date
+                ,
+                name: self.name
+                ,
+                format: self.format
+                ,
+                format_options: self.format_options
+                ,
+                input: self.input
+                ,
+                last_modified_date: self.last_modified_date
+                ,
+                last_modified_by: self.last_modified_by
+                ,
+                source: self.source
+                ,
+                path_options: self.path_options
+                ,
+                tags: self.tags
+                ,
+                resource_arn: self.resource_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl Dataset {
     /// Creates a new builder-style object to manufacture [`Dataset`](crate::model::Dataset).
@@ -7875,9 +7326,9 @@ impl Dataset {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let source = unimplemented!();
 /// match source {
@@ -7900,22 +7351,14 @@ impl Dataset {
 /// Specifically, when `source` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Source::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Source {
     #[allow(missing_docs)] // documentation missing in model
     Datacatalog,
@@ -7924,7 +7367,7 @@ pub enum Source {
     #[allow(missing_docs)] // documentation missing in model
     S3,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Source {
     fn from(s: &str) -> Self {
@@ -7932,17 +7375,17 @@ impl std::convert::From<&str> for Source {
             "DATA-CATALOG" => Source::Datacatalog,
             "DATABASE" => Source::Database,
             "S3" => Source::S3,
-            other => Source::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Source::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Source {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Source::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Source::from(s))
+                }
+            }
 impl Source {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7950,12 +7393,14 @@ impl Source {
             Source::Datacatalog => "DATA-CATALOG",
             Source::Database => "DATABASE",
             Source::S3 => "S3",
-            Source::Unknown(value) => value.as_str(),
+            Source::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DATA-CATALOG", "DATABASE", "S3"]
+        &[
+            "DATA-CATALOG", "DATABASE", "S3"
+        ]
     }
 }
 impl AsRef<str> for Source {
@@ -7970,9 +7415,9 @@ impl AsRef<str> for Source {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sessionstatus = unimplemented!();
 /// match sessionstatus {
@@ -8002,22 +7447,14 @@ impl AsRef<str> for Source {
 /// Specifically, when `sessionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SessionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SessionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Assigned,
@@ -8040,7 +7477,7 @@ pub enum SessionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SessionStatus {
     fn from(s: &str) -> Self {
@@ -8055,17 +7492,17 @@ impl std::convert::From<&str> for SessionStatus {
             "TERMINATED" => SessionStatus::Terminated,
             "TERMINATING" => SessionStatus::Terminating,
             "UPDATING" => SessionStatus::Updating,
-            other => SessionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SessionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SessionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SessionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SessionStatus::from(s))
+                }
+            }
 impl SessionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8080,22 +7517,13 @@ impl SessionStatus {
             SessionStatus::Terminated => "TERMINATED",
             SessionStatus::Terminating => "TERMINATING",
             SessionStatus::Updating => "UPDATING",
-            SessionStatus::Unknown(value) => value.as_str(),
+            SessionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ASSIGNED",
-            "FAILED",
-            "INITIALIZING",
-            "PROVISIONING",
-            "READY",
-            "RECYCLING",
-            "ROTATING",
-            "TERMINATED",
-            "TERMINATING",
-            "UPDATING",
+            "ASSIGNED", "FAILED", "INITIALIZING", "PROVISIONING", "READY", "RECYCLING", "ROTATING", "TERMINATED", "TERMINATING", "UPDATING"
         ]
     }
 }
@@ -8108,7 +7536,7 @@ impl AsRef<str> for SessionStatus {
 /// <p>Represents any errors encountered when attempting to delete multiple recipe versions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecipeVersionErrorDetail {
+pub struct RecipeVersionErrorDetail  {
     /// <p>The HTTP status code for the error.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
@@ -8121,21 +7549,21 @@ pub struct RecipeVersionErrorDetail {
 }
 impl RecipeVersionErrorDetail {
     /// <p>The HTTP status code for the error.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The text of the error message.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The identifier for the recipe version associated with this error.</p>
-    pub fn recipe_version(&self) -> std::option::Option<&str> {
+    pub fn recipe_version(&self) -> std::option::Option<& str> {
         self.recipe_version.as_deref()
     }
 }
 /// See [`RecipeVersionErrorDetail`](crate::model::RecipeVersionErrorDetail).
 pub mod recipe_version_error_detail {
-
+    
     /// A builder for [`RecipeVersionErrorDetail`](crate::model::RecipeVersionErrorDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8151,8 +7579,7 @@ pub mod recipe_version_error_detail {
         }
         /// <p>The HTTP status code for the error.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// <p>The text of the error message.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8160,12 +7587,8 @@ pub mod recipe_version_error_detail {
             self
         }
         /// <p>The text of the error message.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// <p>The identifier for the recipe version associated with this error.</p>
         pub fn recipe_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8173,22 +7596,23 @@ pub mod recipe_version_error_detail {
             self
         }
         /// <p>The identifier for the recipe version associated with this error.</p>
-        pub fn set_recipe_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recipe_version = input;
-            self
+        pub fn set_recipe_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recipe_version = input; self
         }
         /// Consumes the builder and constructs a [`RecipeVersionErrorDetail`](crate::model::RecipeVersionErrorDetail).
         pub fn build(self) -> crate::model::RecipeVersionErrorDetail {
             crate::model::RecipeVersionErrorDetail {
-                error_code: self.error_code,
-                error_message: self.error_message,
-                recipe_version: self.recipe_version,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
+                recipe_version: self.recipe_version
+                ,
             }
         }
     }
+    
+    
 }
 impl RecipeVersionErrorDetail {
     /// Creates a new builder-style object to manufacture [`RecipeVersionErrorDetail`](crate::model::RecipeVersionErrorDetail).
@@ -8196,3 +7620,4 @@ impl RecipeVersionErrorDetail {
         crate::model::recipe_version_error_detail::Builder::default()
     }
 }
+

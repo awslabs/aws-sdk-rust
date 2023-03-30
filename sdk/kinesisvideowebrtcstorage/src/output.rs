@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JoinStorageSessionOutput {}
+pub struct JoinStorageSessionOutput  {
+}
 /// See [`JoinStorageSessionOutput`](crate::output::JoinStorageSessionOutput).
 pub mod join_storage_session_output {
-
+    
     /// A builder for [`JoinStorageSessionOutput`](crate::output::JoinStorageSessionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`JoinStorageSessionOutput`](crate::output::JoinStorageSessionOutput).
         pub fn build(self) -> crate::output::JoinStorageSessionOutput {
-            crate::output::JoinStorageSessionOutput {}
+            crate::output::JoinStorageSessionOutput {
+            }
         }
     }
+    
+    
 }
 impl JoinStorageSessionOutput {
     /// Creates a new builder-style object to manufacture [`JoinStorageSessionOutput`](crate::output::JoinStorageSessionOutput).
@@ -22,3 +27,4 @@ impl JoinStorageSessionOutput {
         crate::output::join_storage_session_output::Builder::default()
     }
 }
+

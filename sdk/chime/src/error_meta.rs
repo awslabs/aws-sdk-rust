@@ -25,15 +25,15 @@ pub enum Error {
     UnauthorizedClientException(crate::error::UnauthorizedClientException),
     /// <p>The request was well-formed but was unable to be followed due to semantic errors.</p>
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    /// 
+    Unhandled(crate::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49,30 +49,14 @@ impl std::fmt::Display for Error {
             Error::ThrottledClientException(inner) => inner.fmt(f),
             Error::UnauthorizedClientException(inner) => inner.fmt(f),
             Error::UnprocessableEntityException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::AssociatePhoneNumbersWithVoiceConnectorError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::AssociatePhoneNumbersWithVoiceConnectorError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociatePhoneNumbersWithVoiceConnectorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::AssociatePhoneNumbersWithVoiceConnectorError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -92,26 +76,10 @@ impl From<crate::error::AssociatePhoneNumbersWithVoiceConnectorError> for Error 
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -131,18 +99,10 @@ impl From<crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError> for E
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociatePhoneNumberWithUserError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::AssociatePhoneNumberWithUserError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociatePhoneNumberWithUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::AssociatePhoneNumberWithUserError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -150,56 +110,22 @@ where
 impl From<crate::error::AssociatePhoneNumberWithUserError> for Error {
     fn from(err: crate::error::AssociatePhoneNumberWithUserError) -> Self {
         match err.kind {
-            crate::error::AssociatePhoneNumberWithUserErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::AssociatePhoneNumberWithUserErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::AssociatePhoneNumberWithUserErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::AssociatePhoneNumberWithUserErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::AssociatePhoneNumberWithUserErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::AssociatePhoneNumberWithUserErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::AssociatePhoneNumberWithUserErrorKind::ThrottledClientException(
-                inner,
-            ) => Error::ThrottledClientException(inner),
-            crate::error::AssociatePhoneNumberWithUserErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::AssociatePhoneNumberWithUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::AssociatePhoneNumberWithUserErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::AssociatePhoneNumberWithUserErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::AssociatePhoneNumberWithUserErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::AssociatePhoneNumberWithUserErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::AssociatePhoneNumberWithUserErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::AssociatePhoneNumberWithUserErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::AssociatePhoneNumberWithUserErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::AssociatePhoneNumberWithUserErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::AssociatePhoneNumberWithUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::AssociateSigninDelegateGroupsWithAccountError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::AssociateSigninDelegateGroupsWithAccountError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::AssociateSigninDelegateGroupsWithAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::AssociateSigninDelegateGroupsWithAccountError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -218,17 +144,10 @@ impl From<crate::error::AssociateSigninDelegateGroupsWithAccountError> for Error
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchCreateAttendeeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchCreateAttendeeError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchCreateAttendeeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::BatchCreateAttendeeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -236,48 +155,22 @@ where
 impl From<crate::error::BatchCreateAttendeeError> for Error {
     fn from(err: crate::error::BatchCreateAttendeeError) -> Self {
         match err.kind {
-            crate::error::BatchCreateAttendeeErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::BatchCreateAttendeeErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::BatchCreateAttendeeErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::BatchCreateAttendeeErrorKind::ResourceLimitExceededException(inner) => {
-                Error::ResourceLimitExceededException(inner)
-            }
-            crate::error::BatchCreateAttendeeErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::BatchCreateAttendeeErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::BatchCreateAttendeeErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::BatchCreateAttendeeErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::BatchCreateAttendeeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::BatchCreateAttendeeErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::BatchCreateAttendeeErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::BatchCreateAttendeeErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::BatchCreateAttendeeErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::BatchCreateAttendeeErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::BatchCreateAttendeeErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::BatchCreateAttendeeErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::BatchCreateAttendeeErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::BatchCreateAttendeeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchCreateChannelMembershipError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchCreateChannelMembershipError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchCreateChannelMembershipError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::BatchCreateChannelMembershipError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -285,42 +178,20 @@ where
 impl From<crate::error::BatchCreateChannelMembershipError> for Error {
     fn from(err: crate::error::BatchCreateChannelMembershipError) -> Self {
         match err.kind {
-            crate::error::BatchCreateChannelMembershipErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::BatchCreateChannelMembershipErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::BatchCreateChannelMembershipErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::BatchCreateChannelMembershipErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::BatchCreateChannelMembershipErrorKind::ThrottledClientException(
-                inner,
-            ) => Error::ThrottledClientException(inner),
-            crate::error::BatchCreateChannelMembershipErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::BatchCreateChannelMembershipErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::BatchCreateChannelMembershipErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::BatchCreateChannelMembershipErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::BatchCreateChannelMembershipErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::BatchCreateChannelMembershipErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::BatchCreateChannelMembershipErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::BatchCreateChannelMembershipErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::BatchCreateChannelMembershipErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchCreateRoomMembershipError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchCreateRoomMembershipError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchCreateRoomMembershipError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::BatchCreateRoomMembershipError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -328,45 +199,21 @@ where
 impl From<crate::error::BatchCreateRoomMembershipError> for Error {
     fn from(err: crate::error::BatchCreateRoomMembershipError) -> Self {
         match err.kind {
-            crate::error::BatchCreateRoomMembershipErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::BatchCreateRoomMembershipErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::BatchCreateRoomMembershipErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::BatchCreateRoomMembershipErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::BatchCreateRoomMembershipErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::BatchCreateRoomMembershipErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::BatchCreateRoomMembershipErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::BatchCreateRoomMembershipErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::BatchCreateRoomMembershipErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::BatchCreateRoomMembershipErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::BatchCreateRoomMembershipErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::BatchCreateRoomMembershipErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::BatchCreateRoomMembershipErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::BatchCreateRoomMembershipErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::BatchCreateRoomMembershipErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::BatchCreateRoomMembershipErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchDeletePhoneNumberError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchDeletePhoneNumberError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchDeletePhoneNumberError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::BatchDeletePhoneNumberError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -374,44 +221,21 @@ where
 impl From<crate::error::BatchDeletePhoneNumberError> for Error {
     fn from(err: crate::error::BatchDeletePhoneNumberError) -> Self {
         match err.kind {
-            crate::error::BatchDeletePhoneNumberErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::BatchDeletePhoneNumberErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::BatchDeletePhoneNumberErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::BatchDeletePhoneNumberErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::BatchDeletePhoneNumberErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::BatchDeletePhoneNumberErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::BatchDeletePhoneNumberErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::BatchDeletePhoneNumberErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::BatchDeletePhoneNumberErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::BatchDeletePhoneNumberErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::BatchDeletePhoneNumberErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::BatchDeletePhoneNumberErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::BatchDeletePhoneNumberErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::BatchDeletePhoneNumberErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::BatchDeletePhoneNumberErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::BatchDeletePhoneNumberErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchSuspendUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchSuspendUserError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchSuspendUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::BatchSuspendUserError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -419,44 +243,21 @@ where
 impl From<crate::error::BatchSuspendUserError> for Error {
     fn from(err: crate::error::BatchSuspendUserError) -> Self {
         match err.kind {
-            crate::error::BatchSuspendUserErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::BatchSuspendUserErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::BatchSuspendUserErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::BatchSuspendUserErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::BatchSuspendUserErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::BatchSuspendUserErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::BatchSuspendUserErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::BatchSuspendUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::BatchSuspendUserErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::BatchSuspendUserErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::BatchSuspendUserErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::BatchSuspendUserErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::BatchSuspendUserErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::BatchSuspendUserErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::BatchSuspendUserErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::BatchSuspendUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchUnsuspendUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchUnsuspendUserError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchUnsuspendUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::BatchUnsuspendUserError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -464,45 +265,21 @@ where
 impl From<crate::error::BatchUnsuspendUserError> for Error {
     fn from(err: crate::error::BatchUnsuspendUserError) -> Self {
         match err.kind {
-            crate::error::BatchUnsuspendUserErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::BatchUnsuspendUserErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::BatchUnsuspendUserErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::BatchUnsuspendUserErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::BatchUnsuspendUserErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::BatchUnsuspendUserErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::BatchUnsuspendUserErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::BatchUnsuspendUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::BatchUnsuspendUserErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::BatchUnsuspendUserErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::BatchUnsuspendUserErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::BatchUnsuspendUserErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::BatchUnsuspendUserErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::BatchUnsuspendUserErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::BatchUnsuspendUserErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::BatchUnsuspendUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchUpdatePhoneNumberError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::BatchUpdatePhoneNumberError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchUpdatePhoneNumberError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::BatchUpdatePhoneNumberError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -510,42 +287,21 @@ where
 impl From<crate::error::BatchUpdatePhoneNumberError> for Error {
     fn from(err: crate::error::BatchUpdatePhoneNumberError) -> Self {
         match err.kind {
-            crate::error::BatchUpdatePhoneNumberErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::BatchUpdatePhoneNumberErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::BatchUpdatePhoneNumberErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::BatchUpdatePhoneNumberErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::BatchUpdatePhoneNumberErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::BatchUpdatePhoneNumberErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::BatchUpdatePhoneNumberErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::BatchUpdatePhoneNumberErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::BatchUpdatePhoneNumberErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::BatchUpdatePhoneNumberErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::BatchUpdatePhoneNumberErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::BatchUpdatePhoneNumberErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::BatchUpdatePhoneNumberErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::BatchUpdatePhoneNumberErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::BatchUpdatePhoneNumberErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::BatchUpdatePhoneNumberErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchUpdateUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::BatchUpdateUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::BatchUpdateUserError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -553,42 +309,21 @@ where
 impl From<crate::error::BatchUpdateUserError> for Error {
     fn from(err: crate::error::BatchUpdateUserError) -> Self {
         match err.kind {
-            crate::error::BatchUpdateUserErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::BatchUpdateUserErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::BatchUpdateUserErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::BatchUpdateUserErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::BatchUpdateUserErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::BatchUpdateUserErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::BatchUpdateUserErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::BatchUpdateUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::BatchUpdateUserErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::BatchUpdateUserErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::BatchUpdateUserErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::BatchUpdateUserErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::BatchUpdateUserErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::BatchUpdateUserErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::BatchUpdateUserErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::BatchUpdateUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAccountError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateAccountError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -596,44 +331,21 @@ where
 impl From<crate::error::CreateAccountError> for Error {
     fn from(err: crate::error::CreateAccountError) -> Self {
         match err.kind {
-            crate::error::CreateAccountErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateAccountErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateAccountErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateAccountErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateAccountErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateAccountErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateAccountErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::CreateAccountErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateAccountErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateAccountErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateAccountErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::CreateAccountErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateAccountErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateAccountErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateAccountErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAppInstanceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateAppInstanceError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAppInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateAppInstanceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -641,48 +353,22 @@ where
 impl From<crate::error::CreateAppInstanceError> for Error {
     fn from(err: crate::error::CreateAppInstanceError) -> Self {
         match err.kind {
-            crate::error::CreateAppInstanceErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateAppInstanceErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateAppInstanceErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateAppInstanceErrorKind::ResourceLimitExceededException(inner) => {
-                Error::ResourceLimitExceededException(inner)
-            }
-            crate::error::CreateAppInstanceErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateAppInstanceErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateAppInstanceErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateAppInstanceErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::CreateAppInstanceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateAppInstanceErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateAppInstanceErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateAppInstanceErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateAppInstanceErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreateAppInstanceErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateAppInstanceErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateAppInstanceErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateAppInstanceErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateAppInstanceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAppInstanceAdminError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateAppInstanceAdminError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAppInstanceAdminError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateAppInstanceAdminError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -690,48 +376,22 @@ where
 impl From<crate::error::CreateAppInstanceAdminError> for Error {
     fn from(err: crate::error::CreateAppInstanceAdminError) -> Self {
         match err.kind {
-            crate::error::CreateAppInstanceAdminErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateAppInstanceAdminErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateAppInstanceAdminErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateAppInstanceAdminErrorKind::ResourceLimitExceededException(
-                inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::error::CreateAppInstanceAdminErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateAppInstanceAdminErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateAppInstanceAdminErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateAppInstanceAdminErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::CreateAppInstanceAdminErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateAppInstanceAdminErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateAppInstanceAdminErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateAppInstanceAdminErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateAppInstanceAdminErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreateAppInstanceAdminErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateAppInstanceAdminErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateAppInstanceAdminErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateAppInstanceAdminErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateAppInstanceAdminErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAppInstanceUserError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateAppInstanceUserError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAppInstanceUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateAppInstanceUserError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -739,45 +399,22 @@ where
 impl From<crate::error::CreateAppInstanceUserError> for Error {
     fn from(err: crate::error::CreateAppInstanceUserError) -> Self {
         match err.kind {
-            crate::error::CreateAppInstanceUserErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateAppInstanceUserErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateAppInstanceUserErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateAppInstanceUserErrorKind::ResourceLimitExceededException(inner) => {
-                Error::ResourceLimitExceededException(inner)
-            }
-            crate::error::CreateAppInstanceUserErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateAppInstanceUserErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateAppInstanceUserErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateAppInstanceUserErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::CreateAppInstanceUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateAppInstanceUserErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateAppInstanceUserErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateAppInstanceUserErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateAppInstanceUserErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreateAppInstanceUserErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateAppInstanceUserErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateAppInstanceUserErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateAppInstanceUserErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateAppInstanceUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAttendeeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAttendeeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateAttendeeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -785,45 +422,22 @@ where
 impl From<crate::error::CreateAttendeeError> for Error {
     fn from(err: crate::error::CreateAttendeeError) -> Self {
         match err.kind {
-            crate::error::CreateAttendeeErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateAttendeeErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateAttendeeErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateAttendeeErrorKind::ResourceLimitExceededException(inner) => {
-                Error::ResourceLimitExceededException(inner)
-            }
-            crate::error::CreateAttendeeErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateAttendeeErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateAttendeeErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateAttendeeErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::CreateAttendeeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateAttendeeErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateAttendeeErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateAttendeeErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::CreateAttendeeErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreateAttendeeErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateAttendeeErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateAttendeeErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateAttendeeErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateAttendeeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBotError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateBotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateBotError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -831,45 +445,22 @@ where
 impl From<crate::error::CreateBotError> for Error {
     fn from(err: crate::error::CreateBotError) -> Self {
         match err.kind {
-            crate::error::CreateBotErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateBotErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateBotErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateBotErrorKind::ResourceLimitExceededException(inner) => {
-                Error::ResourceLimitExceededException(inner)
-            }
-            crate::error::CreateBotErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateBotErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateBotErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateBotErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::CreateBotErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateBotErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateBotErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateBotErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::CreateBotErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreateBotErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateBotErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateBotErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateBotErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateBotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateChannelError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateChannelError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -877,47 +468,22 @@ where
 impl From<crate::error::CreateChannelError> for Error {
     fn from(err: crate::error::CreateChannelError) -> Self {
         match err.kind {
-            crate::error::CreateChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateChannelErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateChannelErrorKind::ResourceLimitExceededException(inner) => {
-                Error::ResourceLimitExceededException(inner)
-            }
-            crate::error::CreateChannelErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateChannelErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateChannelErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateChannelErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::CreateChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateChannelErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateChannelErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateChannelErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateChannelErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreateChannelErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateChannelErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateChannelErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateChannelErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateChannelErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateChannelBanError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateChannelBanError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateChannelBanError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateChannelBanError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -925,48 +491,22 @@ where
 impl From<crate::error::CreateChannelBanError> for Error {
     fn from(err: crate::error::CreateChannelBanError) -> Self {
         match err.kind {
-            crate::error::CreateChannelBanErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateChannelBanErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateChannelBanErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateChannelBanErrorKind::ResourceLimitExceededException(inner) => {
-                Error::ResourceLimitExceededException(inner)
-            }
-            crate::error::CreateChannelBanErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateChannelBanErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateChannelBanErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateChannelBanErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::CreateChannelBanErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateChannelBanErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateChannelBanErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateChannelBanErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateChannelBanErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreateChannelBanErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateChannelBanErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateChannelBanErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateChannelBanErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateChannelBanErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateChannelMembershipError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateChannelMembershipError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateChannelMembershipError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateChannelMembershipError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -974,48 +514,22 @@ where
 impl From<crate::error::CreateChannelMembershipError> for Error {
     fn from(err: crate::error::CreateChannelMembershipError) -> Self {
         match err.kind {
-            crate::error::CreateChannelMembershipErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateChannelMembershipErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateChannelMembershipErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateChannelMembershipErrorKind::ResourceLimitExceededException(
-                inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::error::CreateChannelMembershipErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateChannelMembershipErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateChannelMembershipErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateChannelMembershipErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::CreateChannelMembershipErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateChannelMembershipErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateChannelMembershipErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateChannelMembershipErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateChannelMembershipErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreateChannelMembershipErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateChannelMembershipErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateChannelMembershipErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateChannelMembershipErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateChannelMembershipErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateChannelModeratorError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateChannelModeratorError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateChannelModeratorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateChannelModeratorError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1023,48 +537,22 @@ where
 impl From<crate::error::CreateChannelModeratorError> for Error {
     fn from(err: crate::error::CreateChannelModeratorError) -> Self {
         match err.kind {
-            crate::error::CreateChannelModeratorErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateChannelModeratorErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateChannelModeratorErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateChannelModeratorErrorKind::ResourceLimitExceededException(
-                inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::error::CreateChannelModeratorErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateChannelModeratorErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateChannelModeratorErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateChannelModeratorErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::CreateChannelModeratorErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateChannelModeratorErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateChannelModeratorErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateChannelModeratorErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateChannelModeratorErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreateChannelModeratorErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateChannelModeratorErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateChannelModeratorErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateChannelModeratorErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateChannelModeratorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMediaCapturePipelineError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateMediaCapturePipelineError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMediaCapturePipelineError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateMediaCapturePipelineError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1072,42 +560,21 @@ where
 impl From<crate::error::CreateMediaCapturePipelineError> for Error {
     fn from(err: crate::error::CreateMediaCapturePipelineError) -> Self {
         match err.kind {
-            crate::error::CreateMediaCapturePipelineErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateMediaCapturePipelineErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateMediaCapturePipelineErrorKind::ResourceLimitExceededException(
-                inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::error::CreateMediaCapturePipelineErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateMediaCapturePipelineErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::CreateMediaCapturePipelineErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateMediaCapturePipelineErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::CreateMediaCapturePipelineErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateMediaCapturePipelineErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateMediaCapturePipelineErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateMediaCapturePipelineErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreateMediaCapturePipelineErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateMediaCapturePipelineErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateMediaCapturePipelineErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateMediaCapturePipelineErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateMediaCapturePipelineErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMeetingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMeetingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateMeetingError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1115,45 +582,21 @@ where
 impl From<crate::error::CreateMeetingError> for Error {
     fn from(err: crate::error::CreateMeetingError) -> Self {
         match err.kind {
-            crate::error::CreateMeetingErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateMeetingErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateMeetingErrorKind::ResourceLimitExceededException(inner) => {
-                Error::ResourceLimitExceededException(inner)
-            }
-            crate::error::CreateMeetingErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateMeetingErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateMeetingErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateMeetingErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::CreateMeetingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateMeetingErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateMeetingErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateMeetingErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreateMeetingErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateMeetingErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateMeetingErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateMeetingErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateMeetingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMeetingDialOutError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateMeetingDialOutError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMeetingDialOutError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateMeetingDialOutError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1161,48 +604,22 @@ where
 impl From<crate::error::CreateMeetingDialOutError> for Error {
     fn from(err: crate::error::CreateMeetingDialOutError) -> Self {
         match err.kind {
-            crate::error::CreateMeetingDialOutErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateMeetingDialOutErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateMeetingDialOutErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateMeetingDialOutErrorKind::ResourceLimitExceededException(inner) => {
-                Error::ResourceLimitExceededException(inner)
-            }
-            crate::error::CreateMeetingDialOutErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateMeetingDialOutErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateMeetingDialOutErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateMeetingDialOutErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::CreateMeetingDialOutErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateMeetingDialOutErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateMeetingDialOutErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateMeetingDialOutErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateMeetingDialOutErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreateMeetingDialOutErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateMeetingDialOutErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateMeetingDialOutErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateMeetingDialOutErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateMeetingDialOutErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMeetingWithAttendeesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateMeetingWithAttendeesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateMeetingWithAttendeesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateMeetingWithAttendeesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1210,45 +627,21 @@ where
 impl From<crate::error::CreateMeetingWithAttendeesError> for Error {
     fn from(err: crate::error::CreateMeetingWithAttendeesError) -> Self {
         match err.kind {
-            crate::error::CreateMeetingWithAttendeesErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateMeetingWithAttendeesErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateMeetingWithAttendeesErrorKind::ResourceLimitExceededException(
-                inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::error::CreateMeetingWithAttendeesErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateMeetingWithAttendeesErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::CreateMeetingWithAttendeesErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateMeetingWithAttendeesErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::CreateMeetingWithAttendeesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateMeetingWithAttendeesErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateMeetingWithAttendeesErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateMeetingWithAttendeesErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreateMeetingWithAttendeesErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateMeetingWithAttendeesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateMeetingWithAttendeesErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateMeetingWithAttendeesErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateMeetingWithAttendeesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePhoneNumberOrderError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreatePhoneNumberOrderError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePhoneNumberOrderError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreatePhoneNumberOrderError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1256,47 +649,22 @@ where
 impl From<crate::error::CreatePhoneNumberOrderError> for Error {
     fn from(err: crate::error::CreatePhoneNumberOrderError) -> Self {
         match err.kind {
-            crate::error::CreatePhoneNumberOrderErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreatePhoneNumberOrderErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreatePhoneNumberOrderErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreatePhoneNumberOrderErrorKind::ResourceLimitExceededException(
-                inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::error::CreatePhoneNumberOrderErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreatePhoneNumberOrderErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreatePhoneNumberOrderErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreatePhoneNumberOrderErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::CreatePhoneNumberOrderErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreatePhoneNumberOrderErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreatePhoneNumberOrderErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreatePhoneNumberOrderErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreatePhoneNumberOrderErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreatePhoneNumberOrderErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreatePhoneNumberOrderErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreatePhoneNumberOrderErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreatePhoneNumberOrderErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreatePhoneNumberOrderErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateProxySessionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateProxySessionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateProxySessionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateProxySessionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1304,42 +672,21 @@ where
 impl From<crate::error::CreateProxySessionError> for Error {
     fn from(err: crate::error::CreateProxySessionError) -> Self {
         match err.kind {
-            crate::error::CreateProxySessionErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateProxySessionErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateProxySessionErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateProxySessionErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateProxySessionErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateProxySessionErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateProxySessionErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::CreateProxySessionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateProxySessionErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateProxySessionErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateProxySessionErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::CreateProxySessionErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateProxySessionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateProxySessionErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateProxySessionErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateProxySessionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRoomError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRoomError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateRoomError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1347,48 +694,22 @@ where
 impl From<crate::error::CreateRoomError> for Error {
     fn from(err: crate::error::CreateRoomError) -> Self {
         match err.kind {
-            crate::error::CreateRoomErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateRoomErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateRoomErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateRoomErrorKind::ResourceLimitExceededException(inner) => {
-                Error::ResourceLimitExceededException(inner)
-            }
-            crate::error::CreateRoomErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateRoomErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateRoomErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateRoomErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::CreateRoomErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateRoomErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateRoomErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateRoomErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::CreateRoomErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreateRoomErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateRoomErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateRoomErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateRoomErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateRoomErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRoomMembershipError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateRoomMembershipError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateRoomMembershipError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateRoomMembershipError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1396,51 +717,23 @@ where
 impl From<crate::error::CreateRoomMembershipError> for Error {
     fn from(err: crate::error::CreateRoomMembershipError) -> Self {
         match err.kind {
-            crate::error::CreateRoomMembershipErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateRoomMembershipErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateRoomMembershipErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateRoomMembershipErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateRoomMembershipErrorKind::ResourceLimitExceededException(inner) => {
-                Error::ResourceLimitExceededException(inner)
-            }
-            crate::error::CreateRoomMembershipErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateRoomMembershipErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateRoomMembershipErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateRoomMembershipErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::CreateRoomMembershipErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateRoomMembershipErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateRoomMembershipErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateRoomMembershipErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateRoomMembershipErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::CreateRoomMembershipErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreateRoomMembershipErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateRoomMembershipErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateRoomMembershipErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateRoomMembershipErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateRoomMembershipErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSipMediaApplicationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateSipMediaApplicationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSipMediaApplicationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateSipMediaApplicationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1448,51 +741,23 @@ where
 impl From<crate::error::CreateSipMediaApplicationError> for Error {
     fn from(err: crate::error::CreateSipMediaApplicationError) -> Self {
         match err.kind {
-            crate::error::CreateSipMediaApplicationErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateSipMediaApplicationErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateSipMediaApplicationErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateSipMediaApplicationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateSipMediaApplicationErrorKind::ResourceLimitExceededException(
-                inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::error::CreateSipMediaApplicationErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateSipMediaApplicationErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::CreateSipMediaApplicationErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateSipMediaApplicationErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::CreateSipMediaApplicationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateSipMediaApplicationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateSipMediaApplicationErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateSipMediaApplicationErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateSipMediaApplicationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateSipMediaApplicationErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreateSipMediaApplicationErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateSipMediaApplicationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateSipMediaApplicationErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateSipMediaApplicationErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateSipMediaApplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSipMediaApplicationCallError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateSipMediaApplicationCallError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSipMediaApplicationCallError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateSipMediaApplicationCallError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1512,15 +777,10 @@ impl From<crate::error::CreateSipMediaApplicationCallError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSipRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateSipRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateSipRuleError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1528,48 +788,23 @@ where
 impl From<crate::error::CreateSipRuleError> for Error {
     fn from(err: crate::error::CreateSipRuleError) -> Self {
         match err.kind {
-            crate::error::CreateSipRuleErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateSipRuleErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateSipRuleErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateSipRuleErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateSipRuleErrorKind::ResourceLimitExceededException(inner) => {
-                Error::ResourceLimitExceededException(inner)
-            }
-            crate::error::CreateSipRuleErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateSipRuleErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateSipRuleErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateSipRuleErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::CreateSipRuleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateSipRuleErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateSipRuleErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateSipRuleErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateSipRuleErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateSipRuleErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreateSipRuleErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateSipRuleErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateSipRuleErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateSipRuleErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateSipRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateUserError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1577,48 +812,22 @@ where
 impl From<crate::error::CreateUserError> for Error {
     fn from(err: crate::error::CreateUserError) -> Self {
         match err.kind {
-            crate::error::CreateUserErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateUserErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::CreateUserErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateUserErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateUserErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateUserErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateUserErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateUserErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::CreateUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateUserErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateUserErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::CreateUserErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateUserErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::CreateUserErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateUserErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateUserErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateUserErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVoiceConnectorError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateVoiceConnectorError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVoiceConnectorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateVoiceConnectorError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1626,48 +835,22 @@ where
 impl From<crate::error::CreateVoiceConnectorError> for Error {
     fn from(err: crate::error::CreateVoiceConnectorError) -> Self {
         match err.kind {
-            crate::error::CreateVoiceConnectorErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateVoiceConnectorErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateVoiceConnectorErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateVoiceConnectorErrorKind::ResourceLimitExceededException(inner) => {
-                Error::ResourceLimitExceededException(inner)
-            }
-            crate::error::CreateVoiceConnectorErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateVoiceConnectorErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateVoiceConnectorErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateVoiceConnectorErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::CreateVoiceConnectorErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateVoiceConnectorErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateVoiceConnectorErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateVoiceConnectorErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateVoiceConnectorErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreateVoiceConnectorErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateVoiceConnectorErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateVoiceConnectorErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateVoiceConnectorErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateVoiceConnectorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVoiceConnectorGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateVoiceConnectorGroupError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateVoiceConnectorGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateVoiceConnectorGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1675,45 +858,22 @@ where
 impl From<crate::error::CreateVoiceConnectorGroupError> for Error {
     fn from(err: crate::error::CreateVoiceConnectorGroupError) -> Self {
         match err.kind {
-            crate::error::CreateVoiceConnectorGroupErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::CreateVoiceConnectorGroupErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::CreateVoiceConnectorGroupErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateVoiceConnectorGroupErrorKind::ResourceLimitExceededException(
-                inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::error::CreateVoiceConnectorGroupErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::CreateVoiceConnectorGroupErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::CreateVoiceConnectorGroupErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::CreateVoiceConnectorGroupErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::CreateVoiceConnectorGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateVoiceConnectorGroupErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateVoiceConnectorGroupErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::CreateVoiceConnectorGroupErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateVoiceConnectorGroupErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::CreateVoiceConnectorGroupErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::CreateVoiceConnectorGroupErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateVoiceConnectorGroupErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::CreateVoiceConnectorGroupErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::CreateVoiceConnectorGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAccountError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAccountError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1721,47 +881,22 @@ where
 impl From<crate::error::DeleteAccountError> for Error {
     fn from(err: crate::error::DeleteAccountError) -> Self {
         match err.kind {
-            crate::error::DeleteAccountErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteAccountErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteAccountErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteAccountErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteAccountErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteAccountErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteAccountErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DeleteAccountErrorKind::UnprocessableEntityException(inner) => {
-                Error::UnprocessableEntityException(inner)
-            }
-            crate::error::DeleteAccountErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteAccountErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteAccountErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteAccountErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteAccountErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteAccountErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteAccountErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteAccountErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteAccountErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+            crate::error::DeleteAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAppInstanceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteAppInstanceError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAppInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAppInstanceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1769,42 +904,20 @@ where
 impl From<crate::error::DeleteAppInstanceError> for Error {
     fn from(err: crate::error::DeleteAppInstanceError) -> Self {
         match err.kind {
-            crate::error::DeleteAppInstanceErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteAppInstanceErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteAppInstanceErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteAppInstanceErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteAppInstanceErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteAppInstanceErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DeleteAppInstanceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteAppInstanceErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteAppInstanceErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteAppInstanceErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteAppInstanceErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteAppInstanceErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteAppInstanceErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteAppInstanceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAppInstanceAdminError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteAppInstanceAdminError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAppInstanceAdminError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAppInstanceAdminError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1812,53 +925,21 @@ where
 impl From<crate::error::DeleteAppInstanceAdminError> for Error {
     fn from(err: crate::error::DeleteAppInstanceAdminError) -> Self {
         match err.kind {
-            crate::error::DeleteAppInstanceAdminErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteAppInstanceAdminErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::DeleteAppInstanceAdminErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteAppInstanceAdminErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteAppInstanceAdminErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteAppInstanceAdminErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteAppInstanceAdminErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DeleteAppInstanceAdminErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteAppInstanceAdminErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteAppInstanceAdminErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DeleteAppInstanceAdminErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteAppInstanceAdminErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteAppInstanceAdminErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteAppInstanceAdminErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteAppInstanceAdminErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteAppInstanceAdminErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::DeleteAppInstanceStreamingConfigurationsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteAppInstanceStreamingConfigurationsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAppInstanceStreamingConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAppInstanceStreamingConfigurationsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1877,18 +958,10 @@ impl From<crate::error::DeleteAppInstanceStreamingConfigurationsError> for Error
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAppInstanceUserError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteAppInstanceUserError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAppInstanceUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAppInstanceUserError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1896,39 +969,20 @@ where
 impl From<crate::error::DeleteAppInstanceUserError> for Error {
     fn from(err: crate::error::DeleteAppInstanceUserError) -> Self {
         match err.kind {
-            crate::error::DeleteAppInstanceUserErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteAppInstanceUserErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteAppInstanceUserErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteAppInstanceUserErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteAppInstanceUserErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteAppInstanceUserErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DeleteAppInstanceUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteAppInstanceUserErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteAppInstanceUserErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteAppInstanceUserErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteAppInstanceUserErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteAppInstanceUserErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteAppInstanceUserErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteAppInstanceUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAttendeeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAttendeeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAttendeeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1936,42 +990,21 @@ where
 impl From<crate::error::DeleteAttendeeError> for Error {
     fn from(err: crate::error::DeleteAttendeeError) -> Self {
         match err.kind {
-            crate::error::DeleteAttendeeErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteAttendeeErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteAttendeeErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteAttendeeErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteAttendeeErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteAttendeeErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteAttendeeErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DeleteAttendeeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteAttendeeErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteAttendeeErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteAttendeeErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteAttendeeErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteAttendeeErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteAttendeeErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteAttendeeErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteAttendeeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteChannelError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteChannelError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1979,41 +1012,20 @@ where
 impl From<crate::error::DeleteChannelError> for Error {
     fn from(err: crate::error::DeleteChannelError) -> Self {
         match err.kind {
-            crate::error::DeleteChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteChannelErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteChannelErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteChannelErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteChannelErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DeleteChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteChannelErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteChannelErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteChannelErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteChannelErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteChannelErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteChannelErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteChannelErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteChannelBanError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteChannelBanError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteChannelBanError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteChannelBanError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2021,42 +1033,20 @@ where
 impl From<crate::error::DeleteChannelBanError> for Error {
     fn from(err: crate::error::DeleteChannelBanError) -> Self {
         match err.kind {
-            crate::error::DeleteChannelBanErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteChannelBanErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteChannelBanErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteChannelBanErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteChannelBanErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteChannelBanErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DeleteChannelBanErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteChannelBanErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteChannelBanErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteChannelBanErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteChannelBanErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteChannelBanErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteChannelBanErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteChannelBanErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteChannelMembershipError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteChannelMembershipError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteChannelMembershipError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteChannelMembershipError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2064,45 +1054,21 @@ where
 impl From<crate::error::DeleteChannelMembershipError> for Error {
     fn from(err: crate::error::DeleteChannelMembershipError) -> Self {
         match err.kind {
-            crate::error::DeleteChannelMembershipErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteChannelMembershipErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::DeleteChannelMembershipErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteChannelMembershipErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteChannelMembershipErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteChannelMembershipErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteChannelMembershipErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DeleteChannelMembershipErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteChannelMembershipErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteChannelMembershipErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DeleteChannelMembershipErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteChannelMembershipErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteChannelMembershipErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteChannelMembershipErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteChannelMembershipErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteChannelMembershipErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteChannelMessageError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteChannelMessageError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteChannelMessageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteChannelMessageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2110,42 +1076,20 @@ where
 impl From<crate::error::DeleteChannelMessageError> for Error {
     fn from(err: crate::error::DeleteChannelMessageError) -> Self {
         match err.kind {
-            crate::error::DeleteChannelMessageErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteChannelMessageErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteChannelMessageErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteChannelMessageErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteChannelMessageErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteChannelMessageErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DeleteChannelMessageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteChannelMessageErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteChannelMessageErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteChannelMessageErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteChannelMessageErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteChannelMessageErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteChannelMessageErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteChannelMessageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteChannelModeratorError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteChannelModeratorError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteChannelModeratorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteChannelModeratorError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2153,42 +1097,20 @@ where
 impl From<crate::error::DeleteChannelModeratorError> for Error {
     fn from(err: crate::error::DeleteChannelModeratorError) -> Self {
         match err.kind {
-            crate::error::DeleteChannelModeratorErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteChannelModeratorErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteChannelModeratorErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteChannelModeratorErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteChannelModeratorErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteChannelModeratorErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DeleteChannelModeratorErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteChannelModeratorErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteChannelModeratorErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteChannelModeratorErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteChannelModeratorErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteChannelModeratorErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteChannelModeratorErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteChannelModeratorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteEventsConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteEventsConfigurationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteEventsConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteEventsConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2196,42 +1118,20 @@ where
 impl From<crate::error::DeleteEventsConfigurationError> for Error {
     fn from(err: crate::error::DeleteEventsConfigurationError) -> Self {
         match err.kind {
-            crate::error::DeleteEventsConfigurationErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteEventsConfigurationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteEventsConfigurationErrorKind::ResourceLimitExceededException(
-                inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::error::DeleteEventsConfigurationErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteEventsConfigurationErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteEventsConfigurationErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::DeleteEventsConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteEventsConfigurationErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteEventsConfigurationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteEventsConfigurationErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::DeleteEventsConfigurationErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteEventsConfigurationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteEventsConfigurationErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteEventsConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMediaCapturePipelineError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteMediaCapturePipelineError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMediaCapturePipelineError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteMediaCapturePipelineError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2239,42 +1139,21 @@ where
 impl From<crate::error::DeleteMediaCapturePipelineError> for Error {
     fn from(err: crate::error::DeleteMediaCapturePipelineError) -> Self {
         match err.kind {
-            crate::error::DeleteMediaCapturePipelineErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteMediaCapturePipelineErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteMediaCapturePipelineErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteMediaCapturePipelineErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteMediaCapturePipelineErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteMediaCapturePipelineErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteMediaCapturePipelineErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::DeleteMediaCapturePipelineErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteMediaCapturePipelineErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteMediaCapturePipelineErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteMediaCapturePipelineErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteMediaCapturePipelineErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteMediaCapturePipelineErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteMediaCapturePipelineErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteMediaCapturePipelineErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteMediaCapturePipelineErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMeetingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteMeetingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteMeetingError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2282,44 +1161,21 @@ where
 impl From<crate::error::DeleteMeetingError> for Error {
     fn from(err: crate::error::DeleteMeetingError) -> Self {
         match err.kind {
-            crate::error::DeleteMeetingErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteMeetingErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteMeetingErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteMeetingErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteMeetingErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteMeetingErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteMeetingErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DeleteMeetingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteMeetingErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteMeetingErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteMeetingErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteMeetingErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteMeetingErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteMeetingErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteMeetingErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteMeetingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePhoneNumberError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeletePhoneNumberError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePhoneNumberError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeletePhoneNumberError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2327,44 +1183,21 @@ where
 impl From<crate::error::DeletePhoneNumberError> for Error {
     fn from(err: crate::error::DeletePhoneNumberError) -> Self {
         match err.kind {
-            crate::error::DeletePhoneNumberErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeletePhoneNumberErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeletePhoneNumberErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeletePhoneNumberErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeletePhoneNumberErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeletePhoneNumberErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeletePhoneNumberErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DeletePhoneNumberErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeletePhoneNumberErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeletePhoneNumberErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeletePhoneNumberErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeletePhoneNumberErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeletePhoneNumberErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeletePhoneNumberErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeletePhoneNumberErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeletePhoneNumberErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteProxySessionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteProxySessionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteProxySessionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteProxySessionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2372,42 +1205,21 @@ where
 impl From<crate::error::DeleteProxySessionError> for Error {
     fn from(err: crate::error::DeleteProxySessionError) -> Self {
         match err.kind {
-            crate::error::DeleteProxySessionErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteProxySessionErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteProxySessionErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteProxySessionErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteProxySessionErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteProxySessionErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteProxySessionErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DeleteProxySessionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteProxySessionErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteProxySessionErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteProxySessionErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteProxySessionErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteProxySessionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteProxySessionErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteProxySessionErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteProxySessionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRoomError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRoomError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteRoomError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2415,45 +1227,21 @@ where
 impl From<crate::error::DeleteRoomError> for Error {
     fn from(err: crate::error::DeleteRoomError) -> Self {
         match err.kind {
-            crate::error::DeleteRoomErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteRoomErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteRoomErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteRoomErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteRoomErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteRoomErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteRoomErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DeleteRoomErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteRoomErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteRoomErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteRoomErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteRoomErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteRoomErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteRoomErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteRoomErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteRoomErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRoomMembershipError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteRoomMembershipError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteRoomMembershipError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteRoomMembershipError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2461,45 +1249,21 @@ where
 impl From<crate::error::DeleteRoomMembershipError> for Error {
     fn from(err: crate::error::DeleteRoomMembershipError) -> Self {
         match err.kind {
-            crate::error::DeleteRoomMembershipErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteRoomMembershipErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteRoomMembershipErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteRoomMembershipErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteRoomMembershipErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteRoomMembershipErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteRoomMembershipErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DeleteRoomMembershipErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteRoomMembershipErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteRoomMembershipErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteRoomMembershipErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteRoomMembershipErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteRoomMembershipErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteRoomMembershipErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteRoomMembershipErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteRoomMembershipErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSipMediaApplicationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteSipMediaApplicationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSipMediaApplicationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteSipMediaApplicationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2507,45 +1271,22 @@ where
 impl From<crate::error::DeleteSipMediaApplicationError> for Error {
     fn from(err: crate::error::DeleteSipMediaApplicationError) -> Self {
         match err.kind {
-            crate::error::DeleteSipMediaApplicationErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteSipMediaApplicationErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::DeleteSipMediaApplicationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteSipMediaApplicationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteSipMediaApplicationErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteSipMediaApplicationErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteSipMediaApplicationErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteSipMediaApplicationErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::DeleteSipMediaApplicationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteSipMediaApplicationErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteSipMediaApplicationErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DeleteSipMediaApplicationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteSipMediaApplicationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteSipMediaApplicationErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteSipMediaApplicationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteSipMediaApplicationErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteSipMediaApplicationErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteSipMediaApplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSipRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteSipRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteSipRuleError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2553,48 +1294,22 @@ where
 impl From<crate::error::DeleteSipRuleError> for Error {
     fn from(err: crate::error::DeleteSipRuleError) -> Self {
         match err.kind {
-            crate::error::DeleteSipRuleErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteSipRuleErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::DeleteSipRuleErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteSipRuleErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteSipRuleErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteSipRuleErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteSipRuleErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteSipRuleErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DeleteSipRuleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteSipRuleErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteSipRuleErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DeleteSipRuleErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteSipRuleErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteSipRuleErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteSipRuleErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteSipRuleErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteSipRuleErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteSipRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2602,56 +1317,22 @@ where
 impl From<crate::error::DeleteVoiceConnectorError> for Error {
     fn from(err: crate::error::DeleteVoiceConnectorError) -> Self {
         match err.kind {
-            crate::error::DeleteVoiceConnectorErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteVoiceConnectorErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::DeleteVoiceConnectorErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteVoiceConnectorErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteVoiceConnectorErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteVoiceConnectorErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteVoiceConnectorErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteVoiceConnectorErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DeleteVoiceConnectorErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteVoiceConnectorErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteVoiceConnectorErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DeleteVoiceConnectorErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteVoiceConnectorErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteVoiceConnectorErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteVoiceConnectorErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteVoiceConnectorErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteVoiceConnectorErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteVoiceConnectorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2670,18 +1351,10 @@ impl From<crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError> 
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorGroupError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2689,52 +1362,22 @@ where
 impl From<crate::error::DeleteVoiceConnectorGroupError> for Error {
     fn from(err: crate::error::DeleteVoiceConnectorGroupError) -> Self {
         match err.kind {
-            crate::error::DeleteVoiceConnectorGroupErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteVoiceConnectorGroupErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::DeleteVoiceConnectorGroupErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteVoiceConnectorGroupErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteVoiceConnectorGroupErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteVoiceConnectorGroupErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteVoiceConnectorGroupErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteVoiceConnectorGroupErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::DeleteVoiceConnectorGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteVoiceConnectorGroupErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteVoiceConnectorGroupErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::DeleteVoiceConnectorGroupErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteVoiceConnectorGroupErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteVoiceConnectorGroupErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteVoiceConnectorGroupErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteVoiceConnectorGroupErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteVoiceConnectorGroupErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteVoiceConnectorGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorOriginationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteVoiceConnectorOriginationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorOriginationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorOriginationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2742,45 +1385,21 @@ where
 impl From<crate::error::DeleteVoiceConnectorOriginationError> for Error {
     fn from(err: crate::error::DeleteVoiceConnectorOriginationError) -> Self {
         match err.kind {
-            crate::error::DeleteVoiceConnectorOriginationErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteVoiceConnectorOriginationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteVoiceConnectorOriginationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteVoiceConnectorOriginationErrorKind::ServiceFailureException(
-                inner,
-            ) => Error::ServiceFailureException(inner),
-            crate::error::DeleteVoiceConnectorOriginationErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteVoiceConnectorOriginationErrorKind::ThrottledClientException(
-                inner,
-            ) => Error::ThrottledClientException(inner),
-            crate::error::DeleteVoiceConnectorOriginationErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::DeleteVoiceConnectorOriginationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteVoiceConnectorOriginationErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteVoiceConnectorOriginationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteVoiceConnectorOriginationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteVoiceConnectorOriginationErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteVoiceConnectorOriginationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteVoiceConnectorOriginationErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteVoiceConnectorOriginationErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteVoiceConnectorOriginationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorProxyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorProxyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorProxyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorProxyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2788,53 +1407,21 @@ where
 impl From<crate::error::DeleteVoiceConnectorProxyError> for Error {
     fn from(err: crate::error::DeleteVoiceConnectorProxyError) -> Self {
         match err.kind {
-            crate::error::DeleteVoiceConnectorProxyErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteVoiceConnectorProxyErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteVoiceConnectorProxyErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteVoiceConnectorProxyErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DeleteVoiceConnectorProxyErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteVoiceConnectorProxyErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DeleteVoiceConnectorProxyErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::DeleteVoiceConnectorProxyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteVoiceConnectorProxyErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteVoiceConnectorProxyErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteVoiceConnectorProxyErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteVoiceConnectorProxyErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteVoiceConnectorProxyErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteVoiceConnectorProxyErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteVoiceConnectorProxyErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteVoiceConnectorProxyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::DeleteVoiceConnectorStreamingConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteVoiceConnectorStreamingConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorStreamingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorStreamingConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2853,22 +1440,10 @@ impl From<crate::error::DeleteVoiceConnectorStreamingConfigurationError> for Err
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorTerminationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteVoiceConnectorTerminationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorTerminationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorTerminationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2876,53 +1451,21 @@ where
 impl From<crate::error::DeleteVoiceConnectorTerminationError> for Error {
     fn from(err: crate::error::DeleteVoiceConnectorTerminationError) -> Self {
         match err.kind {
-            crate::error::DeleteVoiceConnectorTerminationErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DeleteVoiceConnectorTerminationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteVoiceConnectorTerminationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteVoiceConnectorTerminationErrorKind::ServiceFailureException(
-                inner,
-            ) => Error::ServiceFailureException(inner),
-            crate::error::DeleteVoiceConnectorTerminationErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::DeleteVoiceConnectorTerminationErrorKind::ThrottledClientException(
-                inner,
-            ) => Error::ThrottledClientException(inner),
-            crate::error::DeleteVoiceConnectorTerminationErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::DeleteVoiceConnectorTerminationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteVoiceConnectorTerminationErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DeleteVoiceConnectorTerminationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteVoiceConnectorTerminationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteVoiceConnectorTerminationErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DeleteVoiceConnectorTerminationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteVoiceConnectorTerminationErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DeleteVoiceConnectorTerminationErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DeleteVoiceConnectorTerminationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::DeleteVoiceConnectorTerminationCredentialsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DeleteVoiceConnectorTerminationCredentialsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorTerminationCredentialsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteVoiceConnectorTerminationCredentialsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2941,17 +1484,10 @@ impl From<crate::error::DeleteVoiceConnectorTerminationCredentialsError> for Err
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAppInstanceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeAppInstanceError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAppInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeAppInstanceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -2959,42 +1495,20 @@ where
 impl From<crate::error::DescribeAppInstanceError> for Error {
     fn from(err: crate::error::DescribeAppInstanceError) -> Self {
         match err.kind {
-            crate::error::DescribeAppInstanceErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DescribeAppInstanceErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DescribeAppInstanceErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DescribeAppInstanceErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DescribeAppInstanceErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DescribeAppInstanceErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DescribeAppInstanceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeAppInstanceErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DescribeAppInstanceErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DescribeAppInstanceErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DescribeAppInstanceErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DescribeAppInstanceErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DescribeAppInstanceErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DescribeAppInstanceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAppInstanceAdminError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeAppInstanceAdminError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAppInstanceAdminError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeAppInstanceAdminError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3002,42 +1516,20 @@ where
 impl From<crate::error::DescribeAppInstanceAdminError> for Error {
     fn from(err: crate::error::DescribeAppInstanceAdminError) -> Self {
         match err.kind {
-            crate::error::DescribeAppInstanceAdminErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DescribeAppInstanceAdminErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DescribeAppInstanceAdminErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DescribeAppInstanceAdminErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DescribeAppInstanceAdminErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DescribeAppInstanceAdminErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DescribeAppInstanceAdminErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeAppInstanceAdminErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DescribeAppInstanceAdminErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DescribeAppInstanceAdminErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DescribeAppInstanceAdminErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DescribeAppInstanceAdminErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DescribeAppInstanceAdminErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DescribeAppInstanceAdminErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAppInstanceUserError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeAppInstanceUserError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAppInstanceUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeAppInstanceUserError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3045,39 +1537,20 @@ where
 impl From<crate::error::DescribeAppInstanceUserError> for Error {
     fn from(err: crate::error::DescribeAppInstanceUserError) -> Self {
         match err.kind {
-            crate::error::DescribeAppInstanceUserErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DescribeAppInstanceUserErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DescribeAppInstanceUserErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DescribeAppInstanceUserErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DescribeAppInstanceUserErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DescribeAppInstanceUserErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DescribeAppInstanceUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeAppInstanceUserErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DescribeAppInstanceUserErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DescribeAppInstanceUserErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DescribeAppInstanceUserErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DescribeAppInstanceUserErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DescribeAppInstanceUserErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DescribeAppInstanceUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeChannelError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeChannelError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3085,41 +1558,20 @@ where
 impl From<crate::error::DescribeChannelError> for Error {
     fn from(err: crate::error::DescribeChannelError) -> Self {
         match err.kind {
-            crate::error::DescribeChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DescribeChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DescribeChannelErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DescribeChannelErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DescribeChannelErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DescribeChannelErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DescribeChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeChannelErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DescribeChannelErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DescribeChannelErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DescribeChannelErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DescribeChannelErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DescribeChannelErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DescribeChannelErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeChannelBanError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeChannelBanError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeChannelBanError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeChannelBanError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3127,45 +1579,21 @@ where
 impl From<crate::error::DescribeChannelBanError> for Error {
     fn from(err: crate::error::DescribeChannelBanError) -> Self {
         match err.kind {
-            crate::error::DescribeChannelBanErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DescribeChannelBanErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DescribeChannelBanErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeChannelBanErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DescribeChannelBanErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DescribeChannelBanErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DescribeChannelBanErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DescribeChannelBanErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeChannelBanErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DescribeChannelBanErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DescribeChannelBanErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeChannelBanErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DescribeChannelBanErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DescribeChannelBanErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DescribeChannelBanErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DescribeChannelBanErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeChannelMembershipError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeChannelMembershipError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeChannelMembershipError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeChannelMembershipError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3173,53 +1601,21 @@ where
 impl From<crate::error::DescribeChannelMembershipError> for Error {
     fn from(err: crate::error::DescribeChannelMembershipError) -> Self {
         match err.kind {
-            crate::error::DescribeChannelMembershipErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DescribeChannelMembershipErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DescribeChannelMembershipErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeChannelMembershipErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DescribeChannelMembershipErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::DescribeChannelMembershipErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DescribeChannelMembershipErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::DescribeChannelMembershipErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeChannelMembershipErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DescribeChannelMembershipErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DescribeChannelMembershipErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeChannelMembershipErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DescribeChannelMembershipErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DescribeChannelMembershipErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DescribeChannelMembershipErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DescribeChannelMembershipErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::DescribeChannelMembershipForAppInstanceUserError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeChannelMembershipForAppInstanceUserError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeChannelMembershipForAppInstanceUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeChannelMembershipForAppInstanceUserError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3237,26 +1633,10 @@ impl From<crate::error::DescribeChannelMembershipForAppInstanceUserError> for Er
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::DescribeChannelModeratedByAppInstanceUserError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribeChannelModeratedByAppInstanceUserError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeChannelModeratedByAppInstanceUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeChannelModeratedByAppInstanceUserError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3274,18 +1654,10 @@ impl From<crate::error::DescribeChannelModeratedByAppInstanceUserError> for Erro
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeChannelModeratorError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeChannelModeratorError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeChannelModeratorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeChannelModeratorError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3293,49 +1665,21 @@ where
 impl From<crate::error::DescribeChannelModeratorError> for Error {
     fn from(err: crate::error::DescribeChannelModeratorError) -> Self {
         match err.kind {
-            crate::error::DescribeChannelModeratorErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DescribeChannelModeratorErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DescribeChannelModeratorErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeChannelModeratorErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::DescribeChannelModeratorErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DescribeChannelModeratorErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::DescribeChannelModeratorErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::DescribeChannelModeratorErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeChannelModeratorErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DescribeChannelModeratorErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DescribeChannelModeratorErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeChannelModeratorErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DescribeChannelModeratorErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DescribeChannelModeratorErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DescribeChannelModeratorErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DescribeChannelModeratorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DisassociatePhoneNumberFromUserError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DisassociatePhoneNumberFromUserError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociatePhoneNumberFromUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DisassociatePhoneNumberFromUserError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3343,53 +1687,21 @@ where
 impl From<crate::error::DisassociatePhoneNumberFromUserError> for Error {
     fn from(err: crate::error::DisassociatePhoneNumberFromUserError) -> Self {
         match err.kind {
-            crate::error::DisassociatePhoneNumberFromUserErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::DisassociatePhoneNumberFromUserErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DisassociatePhoneNumberFromUserErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DisassociatePhoneNumberFromUserErrorKind::ServiceFailureException(
-                inner,
-            ) => Error::ServiceFailureException(inner),
-            crate::error::DisassociatePhoneNumberFromUserErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::DisassociatePhoneNumberFromUserErrorKind::ThrottledClientException(
-                inner,
-            ) => Error::ThrottledClientException(inner),
-            crate::error::DisassociatePhoneNumberFromUserErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::DisassociatePhoneNumberFromUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DisassociatePhoneNumberFromUserErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::DisassociatePhoneNumberFromUserErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DisassociatePhoneNumberFromUserErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DisassociatePhoneNumberFromUserErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::DisassociatePhoneNumberFromUserErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DisassociatePhoneNumberFromUserErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::DisassociatePhoneNumberFromUserErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::DisassociatePhoneNumberFromUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::DisassociatePhoneNumbersFromVoiceConnectorError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DisassociatePhoneNumbersFromVoiceConnectorError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociatePhoneNumbersFromVoiceConnectorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DisassociatePhoneNumbersFromVoiceConnectorError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3408,26 +1720,10 @@ impl From<crate::error::DisassociatePhoneNumbersFromVoiceConnectorError> for Err
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3446,26 +1742,10 @@ impl From<crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError> fo
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::DisassociateSigninDelegateGroupsFromAccountError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DisassociateSigninDelegateGroupsFromAccountError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DisassociateSigninDelegateGroupsFromAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DisassociateSigninDelegateGroupsFromAccountError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3484,15 +1764,10 @@ impl From<crate::error::DisassociateSigninDelegateGroupsFromAccountError> for Er
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAccountError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAccountError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3500,44 +1775,21 @@ where
 impl From<crate::error::GetAccountError> for Error {
     fn from(err: crate::error::GetAccountError) -> Self {
         match err.kind {
-            crate::error::GetAccountErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetAccountErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetAccountErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetAccountErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetAccountErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetAccountErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetAccountErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetAccountErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetAccountErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetAccountErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetAccountErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetAccountErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetAccountErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetAccountErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetAccountErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAccountSettingsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetAccountSettingsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAccountSettingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAccountSettingsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3545,49 +1797,21 @@ where
 impl From<crate::error::GetAccountSettingsError> for Error {
     fn from(err: crate::error::GetAccountSettingsError) -> Self {
         match err.kind {
-            crate::error::GetAccountSettingsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetAccountSettingsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetAccountSettingsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetAccountSettingsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetAccountSettingsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetAccountSettingsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetAccountSettingsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetAccountSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetAccountSettingsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetAccountSettingsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetAccountSettingsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetAccountSettingsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetAccountSettingsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetAccountSettingsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetAccountSettingsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetAccountSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::GetAppInstanceRetentionSettingsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetAppInstanceRetentionSettingsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAppInstanceRetentionSettingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAppInstanceRetentionSettingsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3595,53 +1819,21 @@ where
 impl From<crate::error::GetAppInstanceRetentionSettingsError> for Error {
     fn from(err: crate::error::GetAppInstanceRetentionSettingsError) -> Self {
         match err.kind {
-            crate::error::GetAppInstanceRetentionSettingsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetAppInstanceRetentionSettingsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetAppInstanceRetentionSettingsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetAppInstanceRetentionSettingsErrorKind::ServiceFailureException(
-                inner,
-            ) => Error::ServiceFailureException(inner),
-            crate::error::GetAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::GetAppInstanceRetentionSettingsErrorKind::ThrottledClientException(
-                inner,
-            ) => Error::ThrottledClientException(inner),
-            crate::error::GetAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::GetAppInstanceRetentionSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetAppInstanceRetentionSettingsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetAppInstanceRetentionSettingsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetAppInstanceRetentionSettingsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetAppInstanceRetentionSettingsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetAppInstanceRetentionSettingsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetAppInstanceRetentionSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::GetAppInstanceStreamingConfigurationsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetAppInstanceStreamingConfigurationsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAppInstanceStreamingConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAppInstanceStreamingConfigurationsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3660,15 +1852,10 @@ impl From<crate::error::GetAppInstanceStreamingConfigurationsError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAttendeeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetAttendeeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetAttendeeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3676,42 +1863,21 @@ where
 impl From<crate::error::GetAttendeeError> for Error {
     fn from(err: crate::error::GetAttendeeError) -> Self {
         match err.kind {
-            crate::error::GetAttendeeErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetAttendeeErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetAttendeeErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetAttendeeErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetAttendeeErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetAttendeeErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetAttendeeErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetAttendeeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetAttendeeErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetAttendeeErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetAttendeeErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetAttendeeErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetAttendeeErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetAttendeeErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetAttendeeErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetAttendeeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBotError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetBotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetBotError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3719,44 +1885,21 @@ where
 impl From<crate::error::GetBotError> for Error {
     fn from(err: crate::error::GetBotError) -> Self {
         match err.kind {
-            crate::error::GetBotErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetBotErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetBotErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetBotErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetBotErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetBotErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetBotErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetBotErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetBotErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetBotErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetBotErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetBotErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetBotErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetBotErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetBotErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetBotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetChannelMessageError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetChannelMessageError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetChannelMessageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetChannelMessageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3764,45 +1907,21 @@ where
 impl From<crate::error::GetChannelMessageError> for Error {
     fn from(err: crate::error::GetChannelMessageError) -> Self {
         match err.kind {
-            crate::error::GetChannelMessageErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetChannelMessageErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetChannelMessageErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetChannelMessageErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetChannelMessageErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetChannelMessageErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetChannelMessageErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetChannelMessageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetChannelMessageErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetChannelMessageErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetChannelMessageErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetChannelMessageErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetChannelMessageErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetChannelMessageErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetChannelMessageErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetChannelMessageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEventsConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetEventsConfigurationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetEventsConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetEventsConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3810,44 +1929,21 @@ where
 impl From<crate::error::GetEventsConfigurationError> for Error {
     fn from(err: crate::error::GetEventsConfigurationError) -> Self {
         match err.kind {
-            crate::error::GetEventsConfigurationErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetEventsConfigurationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetEventsConfigurationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetEventsConfigurationErrorKind::ResourceLimitExceededException(
-                inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::error::GetEventsConfigurationErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetEventsConfigurationErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetEventsConfigurationErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetEventsConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetEventsConfigurationErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetEventsConfigurationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetEventsConfigurationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetEventsConfigurationErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::GetEventsConfigurationErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetEventsConfigurationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetEventsConfigurationErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetEventsConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetGlobalSettingsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetGlobalSettingsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetGlobalSettingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetGlobalSettingsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3855,42 +1951,20 @@ where
 impl From<crate::error::GetGlobalSettingsError> for Error {
     fn from(err: crate::error::GetGlobalSettingsError) -> Self {
         match err.kind {
-            crate::error::GetGlobalSettingsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetGlobalSettingsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetGlobalSettingsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetGlobalSettingsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetGlobalSettingsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetGlobalSettingsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetGlobalSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetGlobalSettingsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetGlobalSettingsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetGlobalSettingsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetGlobalSettingsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetGlobalSettingsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetGlobalSettingsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetGlobalSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMediaCapturePipelineError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetMediaCapturePipelineError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMediaCapturePipelineError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetMediaCapturePipelineError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3898,42 +1972,21 @@ where
 impl From<crate::error::GetMediaCapturePipelineError> for Error {
     fn from(err: crate::error::GetMediaCapturePipelineError) -> Self {
         match err.kind {
-            crate::error::GetMediaCapturePipelineErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetMediaCapturePipelineErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetMediaCapturePipelineErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetMediaCapturePipelineErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetMediaCapturePipelineErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetMediaCapturePipelineErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetMediaCapturePipelineErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetMediaCapturePipelineErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetMediaCapturePipelineErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetMediaCapturePipelineErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetMediaCapturePipelineErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetMediaCapturePipelineErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetMediaCapturePipelineErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetMediaCapturePipelineErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetMediaCapturePipelineErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetMediaCapturePipelineErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMeetingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMeetingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetMeetingError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3941,45 +1994,21 @@ where
 impl From<crate::error::GetMeetingError> for Error {
     fn from(err: crate::error::GetMeetingError) -> Self {
         match err.kind {
-            crate::error::GetMeetingErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetMeetingErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetMeetingErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetMeetingErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetMeetingErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetMeetingErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetMeetingErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetMeetingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetMeetingErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetMeetingErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetMeetingErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetMeetingErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetMeetingErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetMeetingErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetMeetingErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetMeetingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMessagingSessionEndpointError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetMessagingSessionEndpointError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetMessagingSessionEndpointError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetMessagingSessionEndpointError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -3987,36 +2016,19 @@ where
 impl From<crate::error::GetMessagingSessionEndpointError> for Error {
     fn from(err: crate::error::GetMessagingSessionEndpointError) -> Self {
         match err.kind {
-            crate::error::GetMessagingSessionEndpointErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetMessagingSessionEndpointErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetMessagingSessionEndpointErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::GetMessagingSessionEndpointErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetMessagingSessionEndpointErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::GetMessagingSessionEndpointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetMessagingSessionEndpointErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetMessagingSessionEndpointErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetMessagingSessionEndpointErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetMessagingSessionEndpointErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetMessagingSessionEndpointErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetMessagingSessionEndpointErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPhoneNumberError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPhoneNumberError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetPhoneNumberError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4024,44 +2036,21 @@ where
 impl From<crate::error::GetPhoneNumberError> for Error {
     fn from(err: crate::error::GetPhoneNumberError) -> Self {
         match err.kind {
-            crate::error::GetPhoneNumberErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetPhoneNumberErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetPhoneNumberErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetPhoneNumberErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetPhoneNumberErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetPhoneNumberErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetPhoneNumberErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetPhoneNumberErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetPhoneNumberErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetPhoneNumberErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetPhoneNumberErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetPhoneNumberErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetPhoneNumberErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetPhoneNumberErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetPhoneNumberErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetPhoneNumberErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPhoneNumberOrderError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetPhoneNumberOrderError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPhoneNumberOrderError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetPhoneNumberOrderError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4069,45 +2058,21 @@ where
 impl From<crate::error::GetPhoneNumberOrderError> for Error {
     fn from(err: crate::error::GetPhoneNumberOrderError) -> Self {
         match err.kind {
-            crate::error::GetPhoneNumberOrderErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetPhoneNumberOrderErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetPhoneNumberOrderErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetPhoneNumberOrderErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetPhoneNumberOrderErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetPhoneNumberOrderErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetPhoneNumberOrderErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetPhoneNumberOrderErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetPhoneNumberOrderErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetPhoneNumberOrderErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetPhoneNumberOrderErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetPhoneNumberOrderErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetPhoneNumberOrderErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetPhoneNumberOrderErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetPhoneNumberOrderErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetPhoneNumberOrderErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPhoneNumberSettingsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetPhoneNumberSettingsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetPhoneNumberSettingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetPhoneNumberSettingsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4115,39 +2080,20 @@ where
 impl From<crate::error::GetPhoneNumberSettingsError> for Error {
     fn from(err: crate::error::GetPhoneNumberSettingsError) -> Self {
         match err.kind {
-            crate::error::GetPhoneNumberSettingsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetPhoneNumberSettingsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetPhoneNumberSettingsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetPhoneNumberSettingsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetPhoneNumberSettingsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetPhoneNumberSettingsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetPhoneNumberSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetPhoneNumberSettingsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetPhoneNumberSettingsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetPhoneNumberSettingsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetPhoneNumberSettingsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetPhoneNumberSettingsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetPhoneNumberSettingsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetPhoneNumberSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetProxySessionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetProxySessionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetProxySessionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4155,45 +2101,21 @@ where
 impl From<crate::error::GetProxySessionError> for Error {
     fn from(err: crate::error::GetProxySessionError) -> Self {
         match err.kind {
-            crate::error::GetProxySessionErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetProxySessionErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetProxySessionErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetProxySessionErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetProxySessionErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetProxySessionErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetProxySessionErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetProxySessionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetProxySessionErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetProxySessionErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetProxySessionErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetProxySessionErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetProxySessionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetProxySessionErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetProxySessionErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetProxySessionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRetentionSettingsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetRetentionSettingsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRetentionSettingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRetentionSettingsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4201,42 +2123,21 @@ where
 impl From<crate::error::GetRetentionSettingsError> for Error {
     fn from(err: crate::error::GetRetentionSettingsError) -> Self {
         match err.kind {
-            crate::error::GetRetentionSettingsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetRetentionSettingsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetRetentionSettingsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetRetentionSettingsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetRetentionSettingsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetRetentionSettingsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetRetentionSettingsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetRetentionSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetRetentionSettingsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetRetentionSettingsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetRetentionSettingsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetRetentionSettingsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetRetentionSettingsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetRetentionSettingsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetRetentionSettingsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetRetentionSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRoomError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetRoomError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetRoomError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4244,45 +2145,21 @@ where
 impl From<crate::error::GetRoomError> for Error {
     fn from(err: crate::error::GetRoomError) -> Self {
         match err.kind {
-            crate::error::GetRoomErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetRoomErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetRoomErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetRoomErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetRoomErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetRoomErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetRoomErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetRoomErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetRoomErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetRoomErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetRoomErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetRoomErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetRoomErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetRoomErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetRoomErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetRoomErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSipMediaApplicationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetSipMediaApplicationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSipMediaApplicationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSipMediaApplicationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4290,53 +2167,21 @@ where
 impl From<crate::error::GetSipMediaApplicationError> for Error {
     fn from(err: crate::error::GetSipMediaApplicationError) -> Self {
         match err.kind {
-            crate::error::GetSipMediaApplicationErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetSipMediaApplicationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetSipMediaApplicationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetSipMediaApplicationErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetSipMediaApplicationErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetSipMediaApplicationErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetSipMediaApplicationErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetSipMediaApplicationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetSipMediaApplicationErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetSipMediaApplicationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetSipMediaApplicationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetSipMediaApplicationErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetSipMediaApplicationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetSipMediaApplicationErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetSipMediaApplicationErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetSipMediaApplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::GetSipMediaApplicationLoggingConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetSipMediaApplicationLoggingConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSipMediaApplicationLoggingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSipMediaApplicationLoggingConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4355,15 +2200,10 @@ impl From<crate::error::GetSipMediaApplicationLoggingConfigurationError> for Err
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSipRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetSipRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetSipRuleError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4371,42 +2211,21 @@ where
 impl From<crate::error::GetSipRuleError> for Error {
     fn from(err: crate::error::GetSipRuleError) -> Self {
         match err.kind {
-            crate::error::GetSipRuleErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetSipRuleErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetSipRuleErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetSipRuleErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetSipRuleErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetSipRuleErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetSipRuleErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetSipRuleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetSipRuleErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetSipRuleErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetSipRuleErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetSipRuleErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetSipRuleErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetSipRuleErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetSipRuleErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetSipRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetUserError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4414,42 +2233,21 @@ where
 impl From<crate::error::GetUserError> for Error {
     fn from(err: crate::error::GetUserError) -> Self {
         match err.kind {
-            crate::error::GetUserErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetUserErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetUserErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetUserErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetUserErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetUserErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetUserErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetUserErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetUserErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetUserErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetUserErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetUserErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetUserErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetUserErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetUserSettingsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetUserSettingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::GetUserSettingsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4457,44 +2255,21 @@ where
 impl From<crate::error::GetUserSettingsError> for Error {
     fn from(err: crate::error::GetUserSettingsError) -> Self {
         match err.kind {
-            crate::error::GetUserSettingsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetUserSettingsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetUserSettingsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetUserSettingsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetUserSettingsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetUserSettingsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetUserSettingsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetUserSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetUserSettingsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetUserSettingsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetUserSettingsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetUserSettingsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetUserSettingsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetUserSettingsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetUserSettingsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetUserSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4502,53 +2277,21 @@ where
 impl From<crate::error::GetVoiceConnectorError> for Error {
     fn from(err: crate::error::GetVoiceConnectorError) -> Self {
         match err.kind {
-            crate::error::GetVoiceConnectorErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetVoiceConnectorErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetVoiceConnectorErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetVoiceConnectorErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetVoiceConnectorErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetVoiceConnectorErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetVoiceConnectorErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetVoiceConnectorErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetVoiceConnectorErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetVoiceConnectorErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetVoiceConnectorErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetVoiceConnectorErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetVoiceConnectorErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetVoiceConnectorErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetVoiceConnectorErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetVoiceConnectorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::GetVoiceConnectorEmergencyCallingConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetVoiceConnectorEmergencyCallingConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorEmergencyCallingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorEmergencyCallingConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4567,18 +2310,10 @@ impl From<crate::error::GetVoiceConnectorEmergencyCallingConfigurationError> for
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorGroupError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4586,53 +2321,21 @@ where
 impl From<crate::error::GetVoiceConnectorGroupError> for Error {
     fn from(err: crate::error::GetVoiceConnectorGroupError) -> Self {
         match err.kind {
-            crate::error::GetVoiceConnectorGroupErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetVoiceConnectorGroupErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetVoiceConnectorGroupErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetVoiceConnectorGroupErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetVoiceConnectorGroupErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetVoiceConnectorGroupErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetVoiceConnectorGroupErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetVoiceConnectorGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetVoiceConnectorGroupErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetVoiceConnectorGroupErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetVoiceConnectorGroupErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetVoiceConnectorGroupErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetVoiceConnectorGroupErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetVoiceConnectorGroupErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetVoiceConnectorGroupErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetVoiceConnectorGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::GetVoiceConnectorLoggingConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetVoiceConnectorLoggingConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorLoggingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorLoggingConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4651,18 +2354,10 @@ impl From<crate::error::GetVoiceConnectorLoggingConfigurationError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorOriginationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorOriginationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorOriginationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorOriginationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4670,45 +2365,21 @@ where
 impl From<crate::error::GetVoiceConnectorOriginationError> for Error {
     fn from(err: crate::error::GetVoiceConnectorOriginationError) -> Self {
         match err.kind {
-            crate::error::GetVoiceConnectorOriginationErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetVoiceConnectorOriginationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetVoiceConnectorOriginationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetVoiceConnectorOriginationErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetVoiceConnectorOriginationErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::GetVoiceConnectorOriginationErrorKind::ThrottledClientException(
-                inner,
-            ) => Error::ThrottledClientException(inner),
-            crate::error::GetVoiceConnectorOriginationErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::GetVoiceConnectorOriginationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetVoiceConnectorOriginationErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetVoiceConnectorOriginationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetVoiceConnectorOriginationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetVoiceConnectorOriginationErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetVoiceConnectorOriginationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetVoiceConnectorOriginationErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetVoiceConnectorOriginationErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetVoiceConnectorOriginationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorProxyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorProxyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorProxyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorProxyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4716,53 +2387,21 @@ where
 impl From<crate::error::GetVoiceConnectorProxyError> for Error {
     fn from(err: crate::error::GetVoiceConnectorProxyError) -> Self {
         match err.kind {
-            crate::error::GetVoiceConnectorProxyErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetVoiceConnectorProxyErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetVoiceConnectorProxyErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetVoiceConnectorProxyErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetVoiceConnectorProxyErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::GetVoiceConnectorProxyErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::GetVoiceConnectorProxyErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::GetVoiceConnectorProxyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetVoiceConnectorProxyErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetVoiceConnectorProxyErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetVoiceConnectorProxyErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetVoiceConnectorProxyErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetVoiceConnectorProxyErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetVoiceConnectorProxyErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetVoiceConnectorProxyErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetVoiceConnectorProxyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::GetVoiceConnectorStreamingConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetVoiceConnectorStreamingConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorStreamingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorStreamingConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4781,18 +2420,10 @@ impl From<crate::error::GetVoiceConnectorStreamingConfigurationError> for Error 
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorTerminationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorTerminationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorTerminationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorTerminationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4800,50 +2431,21 @@ where
 impl From<crate::error::GetVoiceConnectorTerminationError> for Error {
     fn from(err: crate::error::GetVoiceConnectorTerminationError) -> Self {
         match err.kind {
-            crate::error::GetVoiceConnectorTerminationErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::GetVoiceConnectorTerminationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::GetVoiceConnectorTerminationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetVoiceConnectorTerminationErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::GetVoiceConnectorTerminationErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::GetVoiceConnectorTerminationErrorKind::ThrottledClientException(
-                inner,
-            ) => Error::ThrottledClientException(inner),
-            crate::error::GetVoiceConnectorTerminationErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::GetVoiceConnectorTerminationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetVoiceConnectorTerminationErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::GetVoiceConnectorTerminationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::GetVoiceConnectorTerminationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetVoiceConnectorTerminationErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::GetVoiceConnectorTerminationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::GetVoiceConnectorTerminationErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::GetVoiceConnectorTerminationErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::GetVoiceConnectorTerminationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorTerminationHealthError, R>,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::GetVoiceConnectorTerminationHealthError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorTerminationHealthError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::GetVoiceConnectorTerminationHealthError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4862,15 +2464,10 @@ impl From<crate::error::GetVoiceConnectorTerminationHealthError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::InviteUsersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::InviteUsersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::InviteUsersError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4878,42 +2475,21 @@ where
 impl From<crate::error::InviteUsersError> for Error {
     fn from(err: crate::error::InviteUsersError) -> Self {
         match err.kind {
-            crate::error::InviteUsersErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::InviteUsersErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::InviteUsersErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::InviteUsersErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::InviteUsersErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::InviteUsersErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::InviteUsersErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::InviteUsersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::InviteUsersErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::InviteUsersErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::InviteUsersErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::InviteUsersErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::InviteUsersErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::InviteUsersErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::InviteUsersErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::InviteUsersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAccountsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAccountsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAccountsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4921,45 +2497,21 @@ where
 impl From<crate::error::ListAccountsError> for Error {
     fn from(err: crate::error::ListAccountsError) -> Self {
         match err.kind {
-            crate::error::ListAccountsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListAccountsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListAccountsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListAccountsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListAccountsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListAccountsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListAccountsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListAccountsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListAccountsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListAccountsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListAccountsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ListAccountsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListAccountsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListAccountsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListAccountsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListAccountsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAppInstanceAdminsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListAppInstanceAdminsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAppInstanceAdminsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAppInstanceAdminsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -4967,41 +2519,20 @@ where
 impl From<crate::error::ListAppInstanceAdminsError> for Error {
     fn from(err: crate::error::ListAppInstanceAdminsError) -> Self {
         match err.kind {
-            crate::error::ListAppInstanceAdminsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListAppInstanceAdminsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListAppInstanceAdminsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListAppInstanceAdminsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListAppInstanceAdminsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListAppInstanceAdminsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListAppInstanceAdminsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListAppInstanceAdminsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListAppInstanceAdminsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListAppInstanceAdminsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListAppInstanceAdminsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListAppInstanceAdminsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListAppInstanceAdminsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListAppInstanceAdminsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAppInstancesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListAppInstancesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAppInstancesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAppInstancesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5009,42 +2540,20 @@ where
 impl From<crate::error::ListAppInstancesError> for Error {
     fn from(err: crate::error::ListAppInstancesError) -> Self {
         match err.kind {
-            crate::error::ListAppInstancesErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListAppInstancesErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListAppInstancesErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListAppInstancesErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListAppInstancesErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListAppInstancesErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListAppInstancesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListAppInstancesErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListAppInstancesErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListAppInstancesErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListAppInstancesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListAppInstancesErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListAppInstancesErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListAppInstancesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAppInstanceUsersError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListAppInstanceUsersError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAppInstanceUsersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAppInstanceUsersError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5052,39 +2561,20 @@ where
 impl From<crate::error::ListAppInstanceUsersError> for Error {
     fn from(err: crate::error::ListAppInstanceUsersError) -> Self {
         match err.kind {
-            crate::error::ListAppInstanceUsersErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListAppInstanceUsersErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListAppInstanceUsersErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListAppInstanceUsersErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListAppInstanceUsersErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListAppInstanceUsersErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListAppInstanceUsersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListAppInstanceUsersErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListAppInstanceUsersErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListAppInstanceUsersErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListAppInstanceUsersErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListAppInstanceUsersErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListAppInstanceUsersErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListAppInstanceUsersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAttendeesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAttendeesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAttendeesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5092,44 +2582,21 @@ where
 impl From<crate::error::ListAttendeesError> for Error {
     fn from(err: crate::error::ListAttendeesError) -> Self {
         match err.kind {
-            crate::error::ListAttendeesErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListAttendeesErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListAttendeesErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListAttendeesErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListAttendeesErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListAttendeesErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListAttendeesErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListAttendeesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListAttendeesErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListAttendeesErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListAttendeesErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ListAttendeesErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListAttendeesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListAttendeesErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListAttendeesErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListAttendeesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAttendeeTagsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListAttendeeTagsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAttendeeTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAttendeeTagsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5137,42 +2604,21 @@ where
 impl From<crate::error::ListAttendeeTagsError> for Error {
     fn from(err: crate::error::ListAttendeeTagsError) -> Self {
         match err.kind {
-            crate::error::ListAttendeeTagsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListAttendeeTagsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListAttendeeTagsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListAttendeeTagsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListAttendeeTagsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListAttendeeTagsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListAttendeeTagsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListAttendeeTagsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListAttendeeTagsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListAttendeeTagsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListAttendeeTagsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ListAttendeeTagsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListAttendeeTagsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListAttendeeTagsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListAttendeeTagsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListAttendeeTagsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListBotsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListBotsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListBotsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5180,42 +2626,21 @@ where
 impl From<crate::error::ListBotsError> for Error {
     fn from(err: crate::error::ListBotsError) -> Self {
         match err.kind {
-            crate::error::ListBotsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListBotsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListBotsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListBotsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListBotsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListBotsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListBotsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListBotsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListBotsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListBotsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListBotsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ListBotsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListBotsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListBotsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListBotsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListBotsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListChannelBansError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListChannelBansError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListChannelBansError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5223,42 +2648,20 @@ where
 impl From<crate::error::ListChannelBansError> for Error {
     fn from(err: crate::error::ListChannelBansError) -> Self {
         match err.kind {
-            crate::error::ListChannelBansErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListChannelBansErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListChannelBansErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListChannelBansErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListChannelBansErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListChannelBansErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListChannelBansErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListChannelBansErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListChannelBansErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListChannelBansErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListChannelBansErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListChannelBansErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListChannelBansErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListChannelBansErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListChannelMembershipsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListChannelMembershipsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListChannelMembershipsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListChannelMembershipsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5266,50 +2669,20 @@ where
 impl From<crate::error::ListChannelMembershipsError> for Error {
     fn from(err: crate::error::ListChannelMembershipsError) -> Self {
         match err.kind {
-            crate::error::ListChannelMembershipsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListChannelMembershipsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListChannelMembershipsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListChannelMembershipsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListChannelMembershipsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListChannelMembershipsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListChannelMembershipsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListChannelMembershipsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListChannelMembershipsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListChannelMembershipsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListChannelMembershipsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListChannelMembershipsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListChannelMembershipsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListChannelMembershipsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::ListChannelMembershipsForAppInstanceUserError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListChannelMembershipsForAppInstanceUserError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListChannelMembershipsForAppInstanceUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListChannelMembershipsForAppInstanceUserError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5327,17 +2700,10 @@ impl From<crate::error::ListChannelMembershipsForAppInstanceUserError> for Error
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListChannelMessagesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListChannelMessagesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListChannelMessagesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListChannelMessagesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5345,42 +2711,20 @@ where
 impl From<crate::error::ListChannelMessagesError> for Error {
     fn from(err: crate::error::ListChannelMessagesError) -> Self {
         match err.kind {
-            crate::error::ListChannelMessagesErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListChannelMessagesErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListChannelMessagesErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListChannelMessagesErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListChannelMessagesErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListChannelMessagesErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListChannelMessagesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListChannelMessagesErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListChannelMessagesErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListChannelMessagesErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListChannelMessagesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListChannelMessagesErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListChannelMessagesErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListChannelMessagesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListChannelModeratorsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListChannelModeratorsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListChannelModeratorsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListChannelModeratorsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5388,39 +2732,20 @@ where
 impl From<crate::error::ListChannelModeratorsError> for Error {
     fn from(err: crate::error::ListChannelModeratorsError) -> Self {
         match err.kind {
-            crate::error::ListChannelModeratorsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListChannelModeratorsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListChannelModeratorsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListChannelModeratorsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListChannelModeratorsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListChannelModeratorsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListChannelModeratorsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListChannelModeratorsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListChannelModeratorsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListChannelModeratorsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListChannelModeratorsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListChannelModeratorsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListChannelModeratorsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListChannelModeratorsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListChannelsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListChannelsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListChannelsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5428,50 +2753,20 @@ where
 impl From<crate::error::ListChannelsError> for Error {
     fn from(err: crate::error::ListChannelsError) -> Self {
         match err.kind {
-            crate::error::ListChannelsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListChannelsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListChannelsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListChannelsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListChannelsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListChannelsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListChannelsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListChannelsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListChannelsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListChannelsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListChannelsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListChannelsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListChannelsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListChannelsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::ListChannelsModeratedByAppInstanceUserError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListChannelsModeratedByAppInstanceUserError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListChannelsModeratedByAppInstanceUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListChannelsModeratedByAppInstanceUserError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5489,18 +2784,10 @@ impl From<crate::error::ListChannelsModeratedByAppInstanceUserError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMediaCapturePipelinesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListMediaCapturePipelinesError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMediaCapturePipelinesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListMediaCapturePipelinesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5508,39 +2795,20 @@ where
 impl From<crate::error::ListMediaCapturePipelinesError> for Error {
     fn from(err: crate::error::ListMediaCapturePipelinesError) -> Self {
         match err.kind {
-            crate::error::ListMediaCapturePipelinesErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListMediaCapturePipelinesErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListMediaCapturePipelinesErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListMediaCapturePipelinesErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::ListMediaCapturePipelinesErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListMediaCapturePipelinesErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::ListMediaCapturePipelinesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListMediaCapturePipelinesErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListMediaCapturePipelinesErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListMediaCapturePipelinesErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListMediaCapturePipelinesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListMediaCapturePipelinesErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListMediaCapturePipelinesErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListMediaCapturePipelinesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMeetingsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMeetingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListMeetingsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5548,39 +2816,20 @@ where
 impl From<crate::error::ListMeetingsError> for Error {
     fn from(err: crate::error::ListMeetingsError) -> Self {
         match err.kind {
-            crate::error::ListMeetingsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListMeetingsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListMeetingsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListMeetingsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListMeetingsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListMeetingsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListMeetingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListMeetingsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListMeetingsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListMeetingsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListMeetingsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListMeetingsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListMeetingsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListMeetingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMeetingTagsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListMeetingTagsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListMeetingTagsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5588,45 +2837,21 @@ where
 impl From<crate::error::ListMeetingTagsError> for Error {
     fn from(err: crate::error::ListMeetingTagsError) -> Self {
         match err.kind {
-            crate::error::ListMeetingTagsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListMeetingTagsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListMeetingTagsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListMeetingTagsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListMeetingTagsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListMeetingTagsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListMeetingTagsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListMeetingTagsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListMeetingTagsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListMeetingTagsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListMeetingTagsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ListMeetingTagsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListMeetingTagsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListMeetingTagsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListMeetingTagsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListMeetingTagsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPhoneNumberOrdersError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListPhoneNumberOrdersError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPhoneNumberOrdersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPhoneNumberOrdersError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5634,41 +2859,20 @@ where
 impl From<crate::error::ListPhoneNumberOrdersError> for Error {
     fn from(err: crate::error::ListPhoneNumberOrdersError) -> Self {
         match err.kind {
-            crate::error::ListPhoneNumberOrdersErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListPhoneNumberOrdersErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListPhoneNumberOrdersErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListPhoneNumberOrdersErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListPhoneNumberOrdersErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListPhoneNumberOrdersErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListPhoneNumberOrdersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListPhoneNumberOrdersErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListPhoneNumberOrdersErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListPhoneNumberOrdersErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListPhoneNumberOrdersErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListPhoneNumberOrdersErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListPhoneNumberOrdersErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListPhoneNumberOrdersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPhoneNumbersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListPhoneNumbersError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPhoneNumbersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPhoneNumbersError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5676,44 +2880,21 @@ where
 impl From<crate::error::ListPhoneNumbersError> for Error {
     fn from(err: crate::error::ListPhoneNumbersError) -> Self {
         match err.kind {
-            crate::error::ListPhoneNumbersErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListPhoneNumbersErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListPhoneNumbersErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListPhoneNumbersErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListPhoneNumbersErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListPhoneNumbersErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListPhoneNumbersErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListPhoneNumbersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListPhoneNumbersErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListPhoneNumbersErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListPhoneNumbersErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ListPhoneNumbersErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListPhoneNumbersErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListPhoneNumbersErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListPhoneNumbersErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListPhoneNumbersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListProxySessionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListProxySessionsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListProxySessionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListProxySessionsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5721,44 +2902,21 @@ where
 impl From<crate::error::ListProxySessionsError> for Error {
     fn from(err: crate::error::ListProxySessionsError) -> Self {
         match err.kind {
-            crate::error::ListProxySessionsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListProxySessionsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListProxySessionsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListProxySessionsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListProxySessionsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListProxySessionsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListProxySessionsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListProxySessionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListProxySessionsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListProxySessionsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListProxySessionsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ListProxySessionsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListProxySessionsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListProxySessionsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListProxySessionsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListProxySessionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRoomMembershipsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListRoomMembershipsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRoomMembershipsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListRoomMembershipsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5766,42 +2924,21 @@ where
 impl From<crate::error::ListRoomMembershipsError> for Error {
     fn from(err: crate::error::ListRoomMembershipsError) -> Self {
         match err.kind {
-            crate::error::ListRoomMembershipsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListRoomMembershipsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListRoomMembershipsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListRoomMembershipsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListRoomMembershipsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListRoomMembershipsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListRoomMembershipsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListRoomMembershipsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListRoomMembershipsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListRoomMembershipsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListRoomMembershipsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ListRoomMembershipsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListRoomMembershipsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListRoomMembershipsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListRoomMembershipsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListRoomMembershipsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRoomsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListRoomsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListRoomsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5809,45 +2946,21 @@ where
 impl From<crate::error::ListRoomsError> for Error {
     fn from(err: crate::error::ListRoomsError) -> Self {
         match err.kind {
-            crate::error::ListRoomsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListRoomsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListRoomsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListRoomsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListRoomsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListRoomsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListRoomsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListRoomsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListRoomsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListRoomsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListRoomsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ListRoomsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListRoomsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListRoomsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListRoomsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListRoomsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSipMediaApplicationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListSipMediaApplicationsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSipMediaApplicationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSipMediaApplicationsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5855,39 +2968,20 @@ where
 impl From<crate::error::ListSipMediaApplicationsError> for Error {
     fn from(err: crate::error::ListSipMediaApplicationsError) -> Self {
         match err.kind {
-            crate::error::ListSipMediaApplicationsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListSipMediaApplicationsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListSipMediaApplicationsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListSipMediaApplicationsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListSipMediaApplicationsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListSipMediaApplicationsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListSipMediaApplicationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListSipMediaApplicationsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListSipMediaApplicationsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListSipMediaApplicationsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListSipMediaApplicationsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListSipMediaApplicationsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListSipMediaApplicationsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListSipMediaApplicationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSipRulesError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSipRulesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSipRulesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5895,46 +2989,20 @@ where
 impl From<crate::error::ListSipRulesError> for Error {
     fn from(err: crate::error::ListSipRulesError) -> Self {
         match err.kind {
-            crate::error::ListSipRulesErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListSipRulesErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListSipRulesErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListSipRulesErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListSipRulesErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListSipRulesErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListSipRulesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListSipRulesErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListSipRulesErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListSipRulesErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListSipRulesErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListSipRulesErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListSipRulesErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListSipRulesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::ListSupportedPhoneNumberCountriesError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListSupportedPhoneNumberCountriesError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListSupportedPhoneNumberCountriesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListSupportedPhoneNumberCountriesError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5953,17 +3021,10 @@ impl From<crate::error::ListSupportedPhoneNumberCountriesError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -5971,39 +3032,20 @@ where
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
         match err.kind {
-            crate::error::ListTagsForResourceErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListTagsForResourceErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListTagsForResourceErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ListTagsForResourceErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListTagsForResourceErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListTagsForResourceErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListUsersError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListUsersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListUsersError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6011,45 +3053,21 @@ where
 impl From<crate::error::ListUsersError> for Error {
     fn from(err: crate::error::ListUsersError) -> Self {
         match err.kind {
-            crate::error::ListUsersErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListUsersErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListUsersErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListUsersErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListUsersErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListUsersErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListUsersErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListUsersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListUsersErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListUsersErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListUsersErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ListUsersErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListUsersErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListUsersErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListUsersErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListUsersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListVoiceConnectorGroupsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListVoiceConnectorGroupsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListVoiceConnectorGroupsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListVoiceConnectorGroupsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6057,41 +3075,20 @@ where
 impl From<crate::error::ListVoiceConnectorGroupsError> for Error {
     fn from(err: crate::error::ListVoiceConnectorGroupsError) -> Self {
         match err.kind {
-            crate::error::ListVoiceConnectorGroupsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListVoiceConnectorGroupsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListVoiceConnectorGroupsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListVoiceConnectorGroupsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListVoiceConnectorGroupsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListVoiceConnectorGroupsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListVoiceConnectorGroupsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListVoiceConnectorGroupsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListVoiceConnectorGroupsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListVoiceConnectorGroupsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListVoiceConnectorGroupsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListVoiceConnectorGroupsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListVoiceConnectorGroupsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListVoiceConnectorGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListVoiceConnectorsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListVoiceConnectorsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListVoiceConnectorsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListVoiceConnectorsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6099,50 +3096,20 @@ where
 impl From<crate::error::ListVoiceConnectorsError> for Error {
     fn from(err: crate::error::ListVoiceConnectorsError) -> Self {
         match err.kind {
-            crate::error::ListVoiceConnectorsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ListVoiceConnectorsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListVoiceConnectorsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ListVoiceConnectorsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListVoiceConnectorsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ListVoiceConnectorsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ListVoiceConnectorsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListVoiceConnectorsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ListVoiceConnectorsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListVoiceConnectorsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ListVoiceConnectorsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListVoiceConnectorsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ListVoiceConnectorsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ListVoiceConnectorsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::ListVoiceConnectorTerminationCredentialsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::ListVoiceConnectorTerminationCredentialsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListVoiceConnectorTerminationCredentialsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListVoiceConnectorTerminationCredentialsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6161,15 +3128,10 @@ impl From<crate::error::ListVoiceConnectorTerminationCredentialsError> for Error
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::LogoutUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::LogoutUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::LogoutUserError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6177,49 +3139,21 @@ where
 impl From<crate::error::LogoutUserError> for Error {
     fn from(err: crate::error::LogoutUserError) -> Self {
         match err.kind {
-            crate::error::LogoutUserErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::LogoutUserErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::LogoutUserErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::LogoutUserErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::LogoutUserErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::LogoutUserErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::LogoutUserErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::LogoutUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::LogoutUserErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::LogoutUserErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::LogoutUserErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::LogoutUserErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::LogoutUserErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::LogoutUserErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::LogoutUserErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::LogoutUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::PutAppInstanceRetentionSettingsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::PutAppInstanceRetentionSettingsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutAppInstanceRetentionSettingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutAppInstanceRetentionSettingsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6227,56 +3161,22 @@ where
 impl From<crate::error::PutAppInstanceRetentionSettingsError> for Error {
     fn from(err: crate::error::PutAppInstanceRetentionSettingsError) -> Self {
         match err.kind {
-            crate::error::PutAppInstanceRetentionSettingsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::PutAppInstanceRetentionSettingsErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::PutAppInstanceRetentionSettingsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::PutAppInstanceRetentionSettingsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::PutAppInstanceRetentionSettingsErrorKind::ServiceFailureException(
-                inner,
-            ) => Error::ServiceFailureException(inner),
-            crate::error::PutAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::PutAppInstanceRetentionSettingsErrorKind::ThrottledClientException(
-                inner,
-            ) => Error::ThrottledClientException(inner),
-            crate::error::PutAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::PutAppInstanceRetentionSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutAppInstanceRetentionSettingsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::PutAppInstanceRetentionSettingsErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::PutAppInstanceRetentionSettingsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::PutAppInstanceRetentionSettingsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::PutAppInstanceRetentionSettingsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::PutAppInstanceRetentionSettingsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::PutAppInstanceRetentionSettingsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::PutAppInstanceRetentionSettingsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::PutAppInstanceRetentionSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::PutAppInstanceStreamingConfigurationsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::PutAppInstanceStreamingConfigurationsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutAppInstanceStreamingConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutAppInstanceStreamingConfigurationsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6295,18 +3195,10 @@ impl From<crate::error::PutAppInstanceStreamingConfigurationsError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutEventsConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutEventsConfigurationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutEventsConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutEventsConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6314,45 +3206,21 @@ where
 impl From<crate::error::PutEventsConfigurationError> for Error {
     fn from(err: crate::error::PutEventsConfigurationError) -> Self {
         match err.kind {
-            crate::error::PutEventsConfigurationErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::PutEventsConfigurationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::PutEventsConfigurationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::PutEventsConfigurationErrorKind::ResourceLimitExceededException(
-                inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::error::PutEventsConfigurationErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::PutEventsConfigurationErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::PutEventsConfigurationErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::PutEventsConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutEventsConfigurationErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::PutEventsConfigurationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::PutEventsConfigurationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::PutEventsConfigurationErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::PutEventsConfigurationErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::PutEventsConfigurationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::PutEventsConfigurationErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::PutEventsConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutRetentionSettingsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutRetentionSettingsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutRetentionSettingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutRetentionSettingsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6360,56 +3228,22 @@ where
 impl From<crate::error::PutRetentionSettingsError> for Error {
     fn from(err: crate::error::PutRetentionSettingsError) -> Self {
         match err.kind {
-            crate::error::PutRetentionSettingsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::PutRetentionSettingsErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::PutRetentionSettingsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::PutRetentionSettingsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::PutRetentionSettingsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::PutRetentionSettingsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::PutRetentionSettingsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::PutRetentionSettingsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::PutRetentionSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutRetentionSettingsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::PutRetentionSettingsErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::PutRetentionSettingsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::PutRetentionSettingsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::PutRetentionSettingsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::PutRetentionSettingsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::PutRetentionSettingsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::PutRetentionSettingsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::PutRetentionSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::PutSipMediaApplicationLoggingConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::PutSipMediaApplicationLoggingConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutSipMediaApplicationLoggingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutSipMediaApplicationLoggingConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6428,26 +3262,10 @@ impl From<crate::error::PutSipMediaApplicationLoggingConfigurationError> for Err
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::PutVoiceConnectorEmergencyCallingConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::PutVoiceConnectorEmergencyCallingConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutVoiceConnectorEmergencyCallingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutVoiceConnectorEmergencyCallingConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6466,26 +3284,10 @@ impl From<crate::error::PutVoiceConnectorEmergencyCallingConfigurationError> for
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::PutVoiceConnectorLoggingConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::PutVoiceConnectorLoggingConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutVoiceConnectorLoggingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutVoiceConnectorLoggingConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6504,18 +3306,10 @@ impl From<crate::error::PutVoiceConnectorLoggingConfigurationError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutVoiceConnectorOriginationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutVoiceConnectorOriginationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutVoiceConnectorOriginationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutVoiceConnectorOriginationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6523,45 +3317,21 @@ where
 impl From<crate::error::PutVoiceConnectorOriginationError> for Error {
     fn from(err: crate::error::PutVoiceConnectorOriginationError) -> Self {
         match err.kind {
-            crate::error::PutVoiceConnectorOriginationErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::PutVoiceConnectorOriginationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::PutVoiceConnectorOriginationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::PutVoiceConnectorOriginationErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::PutVoiceConnectorOriginationErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::PutVoiceConnectorOriginationErrorKind::ThrottledClientException(
-                inner,
-            ) => Error::ThrottledClientException(inner),
-            crate::error::PutVoiceConnectorOriginationErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::PutVoiceConnectorOriginationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutVoiceConnectorOriginationErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::PutVoiceConnectorOriginationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::PutVoiceConnectorOriginationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::PutVoiceConnectorOriginationErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::PutVoiceConnectorOriginationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::PutVoiceConnectorOriginationErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::PutVoiceConnectorOriginationErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::PutVoiceConnectorOriginationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutVoiceConnectorProxyError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutVoiceConnectorProxyError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutVoiceConnectorProxyError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutVoiceConnectorProxyError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6569,56 +3339,22 @@ where
 impl From<crate::error::PutVoiceConnectorProxyError> for Error {
     fn from(err: crate::error::PutVoiceConnectorProxyError) -> Self {
         match err.kind {
-            crate::error::PutVoiceConnectorProxyErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::PutVoiceConnectorProxyErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::PutVoiceConnectorProxyErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::PutVoiceConnectorProxyErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::PutVoiceConnectorProxyErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::PutVoiceConnectorProxyErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::PutVoiceConnectorProxyErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::PutVoiceConnectorProxyErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::PutVoiceConnectorProxyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutVoiceConnectorProxyErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::PutVoiceConnectorProxyErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::PutVoiceConnectorProxyErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::PutVoiceConnectorProxyErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::PutVoiceConnectorProxyErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::PutVoiceConnectorProxyErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::PutVoiceConnectorProxyErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::PutVoiceConnectorProxyErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::PutVoiceConnectorProxyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::PutVoiceConnectorStreamingConfigurationError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::PutVoiceConnectorStreamingConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutVoiceConnectorStreamingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutVoiceConnectorStreamingConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6637,18 +3373,10 @@ impl From<crate::error::PutVoiceConnectorStreamingConfigurationError> for Error 
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutVoiceConnectorTerminationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::PutVoiceConnectorTerminationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutVoiceConnectorTerminationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutVoiceConnectorTerminationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6656,56 +3384,22 @@ where
 impl From<crate::error::PutVoiceConnectorTerminationError> for Error {
     fn from(err: crate::error::PutVoiceConnectorTerminationError) -> Self {
         match err.kind {
-            crate::error::PutVoiceConnectorTerminationErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::PutVoiceConnectorTerminationErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::PutVoiceConnectorTerminationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::PutVoiceConnectorTerminationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::PutVoiceConnectorTerminationErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::PutVoiceConnectorTerminationErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::PutVoiceConnectorTerminationErrorKind::ThrottledClientException(
-                inner,
-            ) => Error::ThrottledClientException(inner),
-            crate::error::PutVoiceConnectorTerminationErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::PutVoiceConnectorTerminationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutVoiceConnectorTerminationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::PutVoiceConnectorTerminationErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::PutVoiceConnectorTerminationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::PutVoiceConnectorTerminationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::PutVoiceConnectorTerminationErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::PutVoiceConnectorTerminationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::PutVoiceConnectorTerminationErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::PutVoiceConnectorTerminationErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::PutVoiceConnectorTerminationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<
-        aws_smithy_http::result::SdkError<
-            crate::error::PutVoiceConnectorTerminationCredentialsError,
-            R,
-        >,
-    > for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::PutVoiceConnectorTerminationCredentialsError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::PutVoiceConnectorTerminationCredentialsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::PutVoiceConnectorTerminationCredentialsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6724,18 +3418,10 @@ impl From<crate::error::PutVoiceConnectorTerminationCredentialsError> for Error 
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RedactChannelMessageError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RedactChannelMessageError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RedactChannelMessageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::RedactChannelMessageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6743,42 +3429,20 @@ where
 impl From<crate::error::RedactChannelMessageError> for Error {
     fn from(err: crate::error::RedactChannelMessageError) -> Self {
         match err.kind {
-            crate::error::RedactChannelMessageErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::RedactChannelMessageErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::RedactChannelMessageErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::RedactChannelMessageErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::RedactChannelMessageErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::RedactChannelMessageErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::RedactChannelMessageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::RedactChannelMessageErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::RedactChannelMessageErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::RedactChannelMessageErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::RedactChannelMessageErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::RedactChannelMessageErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::RedactChannelMessageErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::RedactChannelMessageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RedactConversationMessageError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RedactConversationMessageError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RedactConversationMessageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::RedactConversationMessageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6786,44 +3450,21 @@ where
 impl From<crate::error::RedactConversationMessageError> for Error {
     fn from(err: crate::error::RedactConversationMessageError) -> Self {
         match err.kind {
-            crate::error::RedactConversationMessageErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::RedactConversationMessageErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::RedactConversationMessageErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::RedactConversationMessageErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::RedactConversationMessageErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::RedactConversationMessageErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::RedactConversationMessageErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::RedactConversationMessageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::RedactConversationMessageErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::RedactConversationMessageErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::RedactConversationMessageErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::RedactConversationMessageErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::RedactConversationMessageErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::RedactConversationMessageErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::RedactConversationMessageErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::RedactConversationMessageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RedactRoomMessageError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RedactRoomMessageError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RedactRoomMessageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::RedactRoomMessageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6831,45 +3472,21 @@ where
 impl From<crate::error::RedactRoomMessageError> for Error {
     fn from(err: crate::error::RedactRoomMessageError) -> Self {
         match err.kind {
-            crate::error::RedactRoomMessageErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::RedactRoomMessageErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::RedactRoomMessageErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::RedactRoomMessageErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::RedactRoomMessageErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::RedactRoomMessageErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::RedactRoomMessageErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::RedactRoomMessageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::RedactRoomMessageErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::RedactRoomMessageErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::RedactRoomMessageErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::RedactRoomMessageErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::RedactRoomMessageErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::RedactRoomMessageErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::RedactRoomMessageErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::RedactRoomMessageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegenerateSecurityTokenError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RegenerateSecurityTokenError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RegenerateSecurityTokenError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::RegenerateSecurityTokenError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6877,44 +3494,21 @@ where
 impl From<crate::error::RegenerateSecurityTokenError> for Error {
     fn from(err: crate::error::RegenerateSecurityTokenError) -> Self {
         match err.kind {
-            crate::error::RegenerateSecurityTokenErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::RegenerateSecurityTokenErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::RegenerateSecurityTokenErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::RegenerateSecurityTokenErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::RegenerateSecurityTokenErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::RegenerateSecurityTokenErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::RegenerateSecurityTokenErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::RegenerateSecurityTokenErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::RegenerateSecurityTokenErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::RegenerateSecurityTokenErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::RegenerateSecurityTokenErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::RegenerateSecurityTokenErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::RegenerateSecurityTokenErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::RegenerateSecurityTokenErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::RegenerateSecurityTokenErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::RegenerateSecurityTokenErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ResetPersonalPINError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ResetPersonalPINError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ResetPersonalPINError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ResetPersonalPINError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6922,44 +3516,21 @@ where
 impl From<crate::error::ResetPersonalPINError> for Error {
     fn from(err: crate::error::ResetPersonalPINError) -> Self {
         match err.kind {
-            crate::error::ResetPersonalPINErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ResetPersonalPINErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ResetPersonalPINErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ResetPersonalPINErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ResetPersonalPINErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ResetPersonalPINErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ResetPersonalPINErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ResetPersonalPINErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ResetPersonalPINErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ResetPersonalPINErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ResetPersonalPINErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ResetPersonalPINErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ResetPersonalPINErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ResetPersonalPINErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ResetPersonalPINErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ResetPersonalPINErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::RestorePhoneNumberError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::RestorePhoneNumberError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::RestorePhoneNumberError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::RestorePhoneNumberError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -6967,48 +3538,22 @@ where
 impl From<crate::error::RestorePhoneNumberError> for Error {
     fn from(err: crate::error::RestorePhoneNumberError) -> Self {
         match err.kind {
-            crate::error::RestorePhoneNumberErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::RestorePhoneNumberErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::RestorePhoneNumberErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::RestorePhoneNumberErrorKind::ResourceLimitExceededException(inner) => {
-                Error::ResourceLimitExceededException(inner)
-            }
-            crate::error::RestorePhoneNumberErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::RestorePhoneNumberErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::RestorePhoneNumberErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::RestorePhoneNumberErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::RestorePhoneNumberErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::RestorePhoneNumberErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::RestorePhoneNumberErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::RestorePhoneNumberErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::RestorePhoneNumberErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::RestorePhoneNumberErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::RestorePhoneNumberErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::RestorePhoneNumberErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::RestorePhoneNumberErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::RestorePhoneNumberErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchAvailablePhoneNumbersError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SearchAvailablePhoneNumbersError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::SearchAvailablePhoneNumbersError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::SearchAvailablePhoneNumbersError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7016,44 +3561,21 @@ where
 impl From<crate::error::SearchAvailablePhoneNumbersError> for Error {
     fn from(err: crate::error::SearchAvailablePhoneNumbersError) -> Self {
         match err.kind {
-            crate::error::SearchAvailablePhoneNumbersErrorKind::AccessDeniedException(inner) => {
-                Error::AccessDeniedException(inner)
-            }
-            crate::error::SearchAvailablePhoneNumbersErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::SearchAvailablePhoneNumbersErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::SearchAvailablePhoneNumbersErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::SearchAvailablePhoneNumbersErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::SearchAvailablePhoneNumbersErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::SearchAvailablePhoneNumbersErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::SearchAvailablePhoneNumbersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::SearchAvailablePhoneNumbersErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::SearchAvailablePhoneNumbersErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::SearchAvailablePhoneNumbersErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::SearchAvailablePhoneNumbersErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::SearchAvailablePhoneNumbersErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::SearchAvailablePhoneNumbersErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::SearchAvailablePhoneNumbersErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::SearchAvailablePhoneNumbersErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendChannelMessageError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::SendChannelMessageError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::SendChannelMessageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::SendChannelMessageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7061,45 +3583,21 @@ where
 impl From<crate::error::SendChannelMessageError> for Error {
     fn from(err: crate::error::SendChannelMessageError) -> Self {
         match err.kind {
-            crate::error::SendChannelMessageErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::SendChannelMessageErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::SendChannelMessageErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::SendChannelMessageErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::SendChannelMessageErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::SendChannelMessageErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::SendChannelMessageErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::SendChannelMessageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::SendChannelMessageErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::SendChannelMessageErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::SendChannelMessageErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::SendChannelMessageErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::SendChannelMessageErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::SendChannelMessageErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::SendChannelMessageErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::SendChannelMessageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartMeetingTranscriptionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartMeetingTranscriptionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartMeetingTranscriptionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartMeetingTranscriptionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7107,51 +3605,23 @@ where
 impl From<crate::error::StartMeetingTranscriptionError> for Error {
     fn from(err: crate::error::StartMeetingTranscriptionError) -> Self {
         match err.kind {
-            crate::error::StartMeetingTranscriptionErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::StartMeetingTranscriptionErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::StartMeetingTranscriptionErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::StartMeetingTranscriptionErrorKind::ResourceLimitExceededException(
-                inner,
-            ) => Error::ResourceLimitExceededException(inner),
-            crate::error::StartMeetingTranscriptionErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::StartMeetingTranscriptionErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::StartMeetingTranscriptionErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::StartMeetingTranscriptionErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::StartMeetingTranscriptionErrorKind::UnprocessableEntityException(
-                inner,
-            ) => Error::UnprocessableEntityException(inner),
-            crate::error::StartMeetingTranscriptionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartMeetingTranscriptionErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::StartMeetingTranscriptionErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::StartMeetingTranscriptionErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::StartMeetingTranscriptionErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::StartMeetingTranscriptionErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::StartMeetingTranscriptionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::StartMeetingTranscriptionErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::StartMeetingTranscriptionErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::StartMeetingTranscriptionErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+            crate::error::StartMeetingTranscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopMeetingTranscriptionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StopMeetingTranscriptionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StopMeetingTranscriptionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StopMeetingTranscriptionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7159,45 +3629,22 @@ where
 impl From<crate::error::StopMeetingTranscriptionError> for Error {
     fn from(err: crate::error::StopMeetingTranscriptionError) -> Self {
         match err.kind {
-            crate::error::StopMeetingTranscriptionErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::StopMeetingTranscriptionErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::StopMeetingTranscriptionErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::StopMeetingTranscriptionErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::StopMeetingTranscriptionErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::StopMeetingTranscriptionErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::StopMeetingTranscriptionErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::StopMeetingTranscriptionErrorKind::UnprocessableEntityException(
-                inner,
-            ) => Error::UnprocessableEntityException(inner),
-            crate::error::StopMeetingTranscriptionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StopMeetingTranscriptionErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::StopMeetingTranscriptionErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::StopMeetingTranscriptionErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::StopMeetingTranscriptionErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::StopMeetingTranscriptionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::StopMeetingTranscriptionErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::StopMeetingTranscriptionErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::StopMeetingTranscriptionErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+            crate::error::StopMeetingTranscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagAttendeeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagAttendeeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagAttendeeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7205,45 +3652,22 @@ where
 impl From<crate::error::TagAttendeeError> for Error {
     fn from(err: crate::error::TagAttendeeError) -> Self {
         match err.kind {
-            crate::error::TagAttendeeErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::TagAttendeeErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::TagAttendeeErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::TagAttendeeErrorKind::ResourceLimitExceededException(inner) => {
-                Error::ResourceLimitExceededException(inner)
-            }
-            crate::error::TagAttendeeErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::TagAttendeeErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::TagAttendeeErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::TagAttendeeErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::TagAttendeeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagAttendeeErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::TagAttendeeErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::TagAttendeeErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::TagAttendeeErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::TagAttendeeErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::TagAttendeeErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::TagAttendeeErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::TagAttendeeErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::TagAttendeeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagMeetingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagMeetingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagMeetingError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7251,45 +3675,22 @@ where
 impl From<crate::error::TagMeetingError> for Error {
     fn from(err: crate::error::TagMeetingError) -> Self {
         match err.kind {
-            crate::error::TagMeetingErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::TagMeetingErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::TagMeetingErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::TagMeetingErrorKind::ResourceLimitExceededException(inner) => {
-                Error::ResourceLimitExceededException(inner)
-            }
-            crate::error::TagMeetingErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::TagMeetingErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::TagMeetingErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::TagMeetingErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::TagMeetingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagMeetingErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::TagMeetingErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::TagMeetingErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::TagMeetingErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::TagMeetingErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::TagMeetingErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::TagMeetingErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::TagMeetingErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::TagMeetingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7297,39 +3698,20 @@ where
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
         match err.kind {
-            crate::error::TagResourceErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::TagResourceErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::TagResourceErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::TagResourceErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::TagResourceErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::TagResourceErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::TagResourceErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::TagResourceErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::TagResourceErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::TagResourceErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::TagResourceErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagAttendeeError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagAttendeeError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagAttendeeError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7337,42 +3719,21 @@ where
 impl From<crate::error::UntagAttendeeError> for Error {
     fn from(err: crate::error::UntagAttendeeError) -> Self {
         match err.kind {
-            crate::error::UntagAttendeeErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UntagAttendeeErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UntagAttendeeErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UntagAttendeeErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UntagAttendeeErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UntagAttendeeErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UntagAttendeeErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UntagAttendeeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagAttendeeErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UntagAttendeeErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UntagAttendeeErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UntagAttendeeErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UntagAttendeeErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UntagAttendeeErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UntagAttendeeErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UntagAttendeeErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagMeetingError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagMeetingError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagMeetingError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7380,42 +3741,21 @@ where
 impl From<crate::error::UntagMeetingError> for Error {
     fn from(err: crate::error::UntagMeetingError) -> Self {
         match err.kind {
-            crate::error::UntagMeetingErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UntagMeetingErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UntagMeetingErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UntagMeetingErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UntagMeetingErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UntagMeetingErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UntagMeetingErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UntagMeetingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagMeetingErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UntagMeetingErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UntagMeetingErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UntagMeetingErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UntagMeetingErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UntagMeetingErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UntagMeetingErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UntagMeetingErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7423,39 +3763,20 @@ where
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
         match err.kind {
-            crate::error::UntagResourceErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UntagResourceErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UntagResourceErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UntagResourceErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UntagResourceErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UntagResourceErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UntagResourceErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UntagResourceErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UntagResourceErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAccountError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAccountError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateAccountError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7463,45 +3784,21 @@ where
 impl From<crate::error::UpdateAccountError> for Error {
     fn from(err: crate::error::UpdateAccountError) -> Self {
         match err.kind {
-            crate::error::UpdateAccountErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateAccountErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateAccountErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateAccountErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UpdateAccountErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateAccountErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UpdateAccountErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UpdateAccountErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateAccountErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UpdateAccountErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdateAccountErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateAccountErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UpdateAccountErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateAccountErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UpdateAccountErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UpdateAccountErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAccountSettingsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateAccountSettingsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAccountSettingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateAccountSettingsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7509,47 +3806,22 @@ where
 impl From<crate::error::UpdateAccountSettingsError> for Error {
     fn from(err: crate::error::UpdateAccountSettingsError) -> Self {
         match err.kind {
-            crate::error::UpdateAccountSettingsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateAccountSettingsErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateAccountSettingsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateAccountSettingsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateAccountSettingsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UpdateAccountSettingsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateAccountSettingsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UpdateAccountSettingsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UpdateAccountSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateAccountSettingsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UpdateAccountSettingsErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateAccountSettingsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdateAccountSettingsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateAccountSettingsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UpdateAccountSettingsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateAccountSettingsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UpdateAccountSettingsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UpdateAccountSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAppInstanceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateAppInstanceError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAppInstanceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateAppInstanceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7557,45 +3829,21 @@ where
 impl From<crate::error::UpdateAppInstanceError> for Error {
     fn from(err: crate::error::UpdateAppInstanceError) -> Self {
         match err.kind {
-            crate::error::UpdateAppInstanceErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateAppInstanceErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateAppInstanceErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateAppInstanceErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UpdateAppInstanceErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateAppInstanceErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UpdateAppInstanceErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UpdateAppInstanceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateAppInstanceErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UpdateAppInstanceErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateAppInstanceErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdateAppInstanceErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UpdateAppInstanceErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateAppInstanceErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UpdateAppInstanceErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UpdateAppInstanceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAppInstanceUserError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateAppInstanceUserError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAppInstanceUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateAppInstanceUserError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7603,42 +3851,21 @@ where
 impl From<crate::error::UpdateAppInstanceUserError> for Error {
     fn from(err: crate::error::UpdateAppInstanceUserError) -> Self {
         match err.kind {
-            crate::error::UpdateAppInstanceUserErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateAppInstanceUserErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateAppInstanceUserErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateAppInstanceUserErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UpdateAppInstanceUserErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateAppInstanceUserErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UpdateAppInstanceUserErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UpdateAppInstanceUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateAppInstanceUserErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UpdateAppInstanceUserErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateAppInstanceUserErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdateAppInstanceUserErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UpdateAppInstanceUserErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateAppInstanceUserErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UpdateAppInstanceUserErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UpdateAppInstanceUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateBotError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateBotError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateBotError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7646,42 +3873,21 @@ where
 impl From<crate::error::UpdateBotError> for Error {
     fn from(err: crate::error::UpdateBotError) -> Self {
         match err.kind {
-            crate::error::UpdateBotErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateBotErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateBotErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateBotErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UpdateBotErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateBotErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UpdateBotErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UpdateBotErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateBotErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UpdateBotErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdateBotErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateBotErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UpdateBotErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateBotErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UpdateBotErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UpdateBotErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateChannelError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateChannelError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateChannelError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7689,45 +3895,21 @@ where
 impl From<crate::error::UpdateChannelError> for Error {
     fn from(err: crate::error::UpdateChannelError) -> Self {
         match err.kind {
-            crate::error::UpdateChannelErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateChannelErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateChannelErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateChannelErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UpdateChannelErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateChannelErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UpdateChannelErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UpdateChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateChannelErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UpdateChannelErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateChannelErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdateChannelErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UpdateChannelErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateChannelErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UpdateChannelErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UpdateChannelErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateChannelMessageError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateChannelMessageError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateChannelMessageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateChannelMessageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7735,45 +3917,21 @@ where
 impl From<crate::error::UpdateChannelMessageError> for Error {
     fn from(err: crate::error::UpdateChannelMessageError) -> Self {
         match err.kind {
-            crate::error::UpdateChannelMessageErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateChannelMessageErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateChannelMessageErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateChannelMessageErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UpdateChannelMessageErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateChannelMessageErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UpdateChannelMessageErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UpdateChannelMessageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateChannelMessageErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UpdateChannelMessageErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateChannelMessageErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdateChannelMessageErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UpdateChannelMessageErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateChannelMessageErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UpdateChannelMessageErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UpdateChannelMessageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateChannelReadMarkerError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateChannelReadMarkerError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateChannelReadMarkerError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateChannelReadMarkerError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7781,45 +3939,21 @@ where
 impl From<crate::error::UpdateChannelReadMarkerError> for Error {
     fn from(err: crate::error::UpdateChannelReadMarkerError) -> Self {
         match err.kind {
-            crate::error::UpdateChannelReadMarkerErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateChannelReadMarkerErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateChannelReadMarkerErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateChannelReadMarkerErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UpdateChannelReadMarkerErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateChannelReadMarkerErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UpdateChannelReadMarkerErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UpdateChannelReadMarkerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateChannelReadMarkerErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UpdateChannelReadMarkerErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateChannelReadMarkerErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdateChannelReadMarkerErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UpdateChannelReadMarkerErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateChannelReadMarkerErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UpdateChannelReadMarkerErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UpdateChannelReadMarkerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateGlobalSettingsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateGlobalSettingsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateGlobalSettingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateGlobalSettingsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7827,41 +3961,20 @@ where
 impl From<crate::error::UpdateGlobalSettingsError> for Error {
     fn from(err: crate::error::UpdateGlobalSettingsError) -> Self {
         match err.kind {
-            crate::error::UpdateGlobalSettingsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateGlobalSettingsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateGlobalSettingsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UpdateGlobalSettingsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateGlobalSettingsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UpdateGlobalSettingsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UpdateGlobalSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateGlobalSettingsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UpdateGlobalSettingsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdateGlobalSettingsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UpdateGlobalSettingsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateGlobalSettingsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UpdateGlobalSettingsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UpdateGlobalSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdatePhoneNumberError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdatePhoneNumberError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdatePhoneNumberError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdatePhoneNumberError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7869,48 +3982,22 @@ where
 impl From<crate::error::UpdatePhoneNumberError> for Error {
     fn from(err: crate::error::UpdatePhoneNumberError) -> Self {
         match err.kind {
-            crate::error::UpdatePhoneNumberErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdatePhoneNumberErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdatePhoneNumberErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdatePhoneNumberErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdatePhoneNumberErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UpdatePhoneNumberErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdatePhoneNumberErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UpdatePhoneNumberErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UpdatePhoneNumberErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdatePhoneNumberErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UpdatePhoneNumberErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdatePhoneNumberErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdatePhoneNumberErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdatePhoneNumberErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UpdatePhoneNumberErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdatePhoneNumberErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UpdatePhoneNumberErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UpdatePhoneNumberErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdatePhoneNumberSettingsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdatePhoneNumberSettingsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdatePhoneNumberSettingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdatePhoneNumberSettingsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7918,41 +4005,20 @@ where
 impl From<crate::error::UpdatePhoneNumberSettingsError> for Error {
     fn from(err: crate::error::UpdatePhoneNumberSettingsError) -> Self {
         match err.kind {
-            crate::error::UpdatePhoneNumberSettingsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdatePhoneNumberSettingsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdatePhoneNumberSettingsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UpdatePhoneNumberSettingsErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::UpdatePhoneNumberSettingsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UpdatePhoneNumberSettingsErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::UpdatePhoneNumberSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdatePhoneNumberSettingsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UpdatePhoneNumberSettingsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdatePhoneNumberSettingsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UpdatePhoneNumberSettingsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdatePhoneNumberSettingsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UpdatePhoneNumberSettingsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UpdatePhoneNumberSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateProxySessionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateProxySessionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateProxySessionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateProxySessionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -7960,42 +4026,21 @@ where
 impl From<crate::error::UpdateProxySessionError> for Error {
     fn from(err: crate::error::UpdateProxySessionError) -> Self {
         match err.kind {
-            crate::error::UpdateProxySessionErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateProxySessionErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateProxySessionErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateProxySessionErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UpdateProxySessionErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateProxySessionErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UpdateProxySessionErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UpdateProxySessionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateProxySessionErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UpdateProxySessionErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdateProxySessionErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateProxySessionErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UpdateProxySessionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateProxySessionErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UpdateProxySessionErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UpdateProxySessionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRoomError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRoomError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateRoomError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -8003,45 +4048,21 @@ where
 impl From<crate::error::UpdateRoomError> for Error {
     fn from(err: crate::error::UpdateRoomError) -> Self {
         match err.kind {
-            crate::error::UpdateRoomErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateRoomErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateRoomErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateRoomErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UpdateRoomErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateRoomErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UpdateRoomErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UpdateRoomErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateRoomErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UpdateRoomErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdateRoomErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateRoomErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UpdateRoomErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateRoomErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UpdateRoomErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UpdateRoomErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRoomMembershipError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateRoomMembershipError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateRoomMembershipError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateRoomMembershipError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -8049,45 +4070,21 @@ where
 impl From<crate::error::UpdateRoomMembershipError> for Error {
     fn from(err: crate::error::UpdateRoomMembershipError) -> Self {
         match err.kind {
-            crate::error::UpdateRoomMembershipErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateRoomMembershipErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateRoomMembershipErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateRoomMembershipErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UpdateRoomMembershipErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateRoomMembershipErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UpdateRoomMembershipErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UpdateRoomMembershipErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateRoomMembershipErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UpdateRoomMembershipErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdateRoomMembershipErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateRoomMembershipErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UpdateRoomMembershipErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateRoomMembershipErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UpdateRoomMembershipErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UpdateRoomMembershipErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSipMediaApplicationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateSipMediaApplicationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSipMediaApplicationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateSipMediaApplicationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -8095,48 +4092,22 @@ where
 impl From<crate::error::UpdateSipMediaApplicationError> for Error {
     fn from(err: crate::error::UpdateSipMediaApplicationError) -> Self {
         match err.kind {
-            crate::error::UpdateSipMediaApplicationErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateSipMediaApplicationErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateSipMediaApplicationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateSipMediaApplicationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateSipMediaApplicationErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UpdateSipMediaApplicationErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::UpdateSipMediaApplicationErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UpdateSipMediaApplicationErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::UpdateSipMediaApplicationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateSipMediaApplicationErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UpdateSipMediaApplicationErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateSipMediaApplicationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdateSipMediaApplicationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateSipMediaApplicationErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UpdateSipMediaApplicationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateSipMediaApplicationErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UpdateSipMediaApplicationErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UpdateSipMediaApplicationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSipMediaApplicationCallError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateSipMediaApplicationCallError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSipMediaApplicationCallError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateSipMediaApplicationCallError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -8156,15 +4127,10 @@ impl From<crate::error::UpdateSipMediaApplicationCallError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSipRuleError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateSipRuleError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateSipRuleError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -8172,48 +4138,23 @@ where
 impl From<crate::error::UpdateSipRuleError> for Error {
     fn from(err: crate::error::UpdateSipRuleError) -> Self {
         match err.kind {
-            crate::error::UpdateSipRuleErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateSipRuleErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateSipRuleErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateSipRuleErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateSipRuleErrorKind::ResourceLimitExceededException(inner) => {
-                Error::ResourceLimitExceededException(inner)
-            }
-            crate::error::UpdateSipRuleErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UpdateSipRuleErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateSipRuleErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UpdateSipRuleErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UpdateSipRuleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateSipRuleErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UpdateSipRuleErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateSipRuleErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdateSipRuleErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateSipRuleErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+            crate::error::UpdateSipRuleErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UpdateSipRuleErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateSipRuleErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UpdateSipRuleErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UpdateSipRuleErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateUserError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateUserError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateUserError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -8221,44 +4162,21 @@ where
 impl From<crate::error::UpdateUserError> for Error {
     fn from(err: crate::error::UpdateUserError) -> Self {
         match err.kind {
-            crate::error::UpdateUserErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateUserErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateUserErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateUserErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UpdateUserErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateUserErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UpdateUserErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UpdateUserErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateUserErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UpdateUserErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdateUserErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateUserErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UpdateUserErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateUserErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UpdateUserErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UpdateUserErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateUserSettingsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateUserSettingsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateUserSettingsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateUserSettingsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -8266,45 +4184,21 @@ where
 impl From<crate::error::UpdateUserSettingsError> for Error {
     fn from(err: crate::error::UpdateUserSettingsError) -> Self {
         match err.kind {
-            crate::error::UpdateUserSettingsErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateUserSettingsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateUserSettingsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateUserSettingsErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UpdateUserSettingsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateUserSettingsErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UpdateUserSettingsErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UpdateUserSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateUserSettingsErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UpdateUserSettingsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdateUserSettingsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateUserSettingsErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UpdateUserSettingsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateUserSettingsErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UpdateUserSettingsErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UpdateUserSettingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateVoiceConnectorError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateVoiceConnectorError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateVoiceConnectorError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateVoiceConnectorError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -8312,45 +4206,21 @@ where
 impl From<crate::error::UpdateVoiceConnectorError> for Error {
     fn from(err: crate::error::UpdateVoiceConnectorError) -> Self {
         match err.kind {
-            crate::error::UpdateVoiceConnectorErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateVoiceConnectorErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateVoiceConnectorErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateVoiceConnectorErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UpdateVoiceConnectorErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdateVoiceConnectorErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UpdateVoiceConnectorErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::UpdateVoiceConnectorErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateVoiceConnectorErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UpdateVoiceConnectorErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdateVoiceConnectorErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateVoiceConnectorErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UpdateVoiceConnectorErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateVoiceConnectorErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UpdateVoiceConnectorErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UpdateVoiceConnectorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateVoiceConnectorGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateVoiceConnectorGroupError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateVoiceConnectorGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateVoiceConnectorGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -8358,47 +4228,22 @@ where
 impl From<crate::error::UpdateVoiceConnectorGroupError> for Error {
     fn from(err: crate::error::UpdateVoiceConnectorGroupError) -> Self {
         match err.kind {
-            crate::error::UpdateVoiceConnectorGroupErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::UpdateVoiceConnectorGroupErrorKind::ConflictException(inner) => {
-                Error::ConflictException(inner)
-            }
-            crate::error::UpdateVoiceConnectorGroupErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdateVoiceConnectorGroupErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdateVoiceConnectorGroupErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::UpdateVoiceConnectorGroupErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::UpdateVoiceConnectorGroupErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::UpdateVoiceConnectorGroupErrorKind::UnauthorizedClientException(
-                inner,
-            ) => Error::UnauthorizedClientException(inner),
-            crate::error::UpdateVoiceConnectorGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateVoiceConnectorGroupErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::UpdateVoiceConnectorGroupErrorKind::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateVoiceConnectorGroupErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdateVoiceConnectorGroupErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdateVoiceConnectorGroupErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::UpdateVoiceConnectorGroupErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdateVoiceConnectorGroupErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::UpdateVoiceConnectorGroupErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::UpdateVoiceConnectorGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ValidateE911AddressError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ValidateE911AddressError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ValidateE911AddressError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ValidateE911AddressError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -8406,31 +4251,16 @@ where
 impl From<crate::error::ValidateE911AddressError> for Error {
     fn from(err: crate::error::ValidateE911AddressError) -> Self {
         match err.kind {
-            crate::error::ValidateE911AddressErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::ValidateE911AddressErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ValidateE911AddressErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ValidateE911AddressErrorKind::ServiceFailureException(inner) => {
-                Error::ServiceFailureException(inner)
-            }
-            crate::error::ValidateE911AddressErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ValidateE911AddressErrorKind::ThrottledClientException(inner) => {
-                Error::ThrottledClientException(inner)
-            }
-            crate::error::ValidateE911AddressErrorKind::UnauthorizedClientException(inner) => {
-                Error::UnauthorizedClientException(inner)
-            }
-            crate::error::ValidateE911AddressErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ValidateE911AddressErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::ValidateE911AddressErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ValidateE911AddressErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ValidateE911AddressErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::error::ValidateE911AddressErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ValidateE911AddressErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+            crate::error::ValidateE911AddressErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+            crate::error::ValidateE911AddressErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
 impl std::error::Error for Error {}
+

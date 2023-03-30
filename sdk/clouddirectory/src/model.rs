@@ -3,7 +3,7 @@
 /// <p>A typed link facet attribute update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TypedLinkFacetAttributeUpdate {
+pub struct TypedLinkFacetAttributeUpdate  {
     /// <p>The attribute to update.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::TypedLinkAttributeDefinition>,
@@ -13,17 +13,17 @@ pub struct TypedLinkFacetAttributeUpdate {
 }
 impl TypedLinkFacetAttributeUpdate {
     /// <p>The attribute to update.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::model::TypedLinkAttributeDefinition> {
+    pub fn attribute(&self) -> std::option::Option<& crate::model::TypedLinkAttributeDefinition> {
         self.attribute.as_ref()
     }
     /// <p>The action to perform when updating the attribute.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::UpdateActionType> {
+    pub fn action(&self) -> std::option::Option<& crate::model::UpdateActionType> {
         self.action.as_ref()
     }
 }
 /// See [`TypedLinkFacetAttributeUpdate`](crate::model::TypedLinkFacetAttributeUpdate).
 pub mod typed_link_facet_attribute_update {
-
+    
     /// A builder for [`TypedLinkFacetAttributeUpdate`](crate::model::TypedLinkFacetAttributeUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -37,12 +37,8 @@ pub mod typed_link_facet_attribute_update {
             self
         }
         /// <p>The attribute to update.</p>
-        pub fn set_attribute(
-            mut self,
-            input: std::option::Option<crate::model::TypedLinkAttributeDefinition>,
-        ) -> Self {
-            self.attribute = input;
-            self
+        pub fn set_attribute(mut self, input: std::option::Option<crate::model::TypedLinkAttributeDefinition>) -> Self {
+            self.attribute = input; self
         }
         /// <p>The action to perform when updating the attribute.</p>
         pub fn action(mut self, input: crate::model::UpdateActionType) -> Self {
@@ -50,21 +46,21 @@ pub mod typed_link_facet_attribute_update {
             self
         }
         /// <p>The action to perform when updating the attribute.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::UpdateActionType>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::UpdateActionType>) -> Self {
+            self.action = input; self
         }
         /// Consumes the builder and constructs a [`TypedLinkFacetAttributeUpdate`](crate::model::TypedLinkFacetAttributeUpdate).
         pub fn build(self) -> crate::model::TypedLinkFacetAttributeUpdate {
             crate::model::TypedLinkFacetAttributeUpdate {
-                attribute: self.attribute,
-                action: self.action,
+                attribute: self.attribute
+                ,
+                action: self.action
+                ,
             }
         }
     }
+    
+    
 }
 impl TypedLinkFacetAttributeUpdate {
     /// Creates a new builder-style object to manufacture [`TypedLinkFacetAttributeUpdate`](crate::model::TypedLinkFacetAttributeUpdate).
@@ -79,9 +75,9 @@ impl TypedLinkFacetAttributeUpdate {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let updateactiontype = unimplemented!();
 /// match updateactiontype {
@@ -103,58 +99,52 @@ impl TypedLinkFacetAttributeUpdate {
 /// Specifically, when `updateactiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UpdateActionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UpdateActionType {
     #[allow(missing_docs)] // documentation missing in model
     CreateOrUpdate,
     #[allow(missing_docs)] // documentation missing in model
     Delete,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UpdateActionType {
     fn from(s: &str) -> Self {
         match s {
             "CREATE_OR_UPDATE" => UpdateActionType::CreateOrUpdate,
             "DELETE" => UpdateActionType::Delete,
-            other => UpdateActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UpdateActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UpdateActionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UpdateActionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UpdateActionType::from(s))
+                }
+            }
 impl UpdateActionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UpdateActionType::CreateOrUpdate => "CREATE_OR_UPDATE",
             UpdateActionType::Delete => "DELETE",
-            UpdateActionType::Unknown(value) => value.as_str(),
+            UpdateActionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATE_OR_UPDATE", "DELETE"]
+        &[
+            "CREATE_OR_UPDATE", "DELETE"
+        ]
     }
 }
 impl AsRef<str> for UpdateActionType {
@@ -166,7 +156,7 @@ impl AsRef<str> for UpdateActionType {
 /// <p>A typed link attribute definition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TypedLinkAttributeDefinition {
+pub struct TypedLinkAttributeDefinition  {
     /// <p>The unique name of the typed link attribute.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -181,23 +171,22 @@ pub struct TypedLinkAttributeDefinition {
     pub is_immutable: bool,
     /// <p>Validation rules that are attached to the attribute definition.</p>
     #[doc(hidden)]
-    pub rules:
-        std::option::Option<std::collections::HashMap<std::string::String, crate::model::Rule>>,
+    pub rules: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Rule>>,
     /// <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
     #[doc(hidden)]
     pub required_behavior: std::option::Option<crate::model::RequiredAttributeBehavior>,
 }
 impl TypedLinkAttributeDefinition {
     /// <p>The unique name of the typed link attribute.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the attribute.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::FacetAttributeType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::FacetAttributeType> {
         self.r#type.as_ref()
     }
     /// <p>The default value of the attribute (if configured).</p>
-    pub fn default_value(&self) -> std::option::Option<&crate::model::TypedAttributeValue> {
+    pub fn default_value(&self) -> std::option::Option<& crate::model::TypedAttributeValue> {
         self.default_value.as_ref()
     }
     /// <p>Whether the attribute is mutable or not.</p>
@@ -205,22 +194,17 @@ impl TypedLinkAttributeDefinition {
         self.is_immutable
     }
     /// <p>Validation rules that are attached to the attribute definition.</p>
-    pub fn rules(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Rule>>
-    {
+    pub fn rules(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::Rule>> {
         self.rules.as_ref()
     }
     /// <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
-    pub fn required_behavior(
-        &self,
-    ) -> std::option::Option<&crate::model::RequiredAttributeBehavior> {
+    pub fn required_behavior(&self) -> std::option::Option<& crate::model::RequiredAttributeBehavior> {
         self.required_behavior.as_ref()
     }
 }
 /// See [`TypedLinkAttributeDefinition`](crate::model::TypedLinkAttributeDefinition).
 pub mod typed_link_attribute_definition {
-
+    
     /// A builder for [`TypedLinkAttributeDefinition`](crate::model::TypedLinkAttributeDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -228,8 +212,7 @@ pub mod typed_link_attribute_definition {
         pub(crate) r#type: std::option::Option<crate::model::FacetAttributeType>,
         pub(crate) default_value: std::option::Option<crate::model::TypedAttributeValue>,
         pub(crate) is_immutable: std::option::Option<bool>,
-        pub(crate) rules:
-            std::option::Option<std::collections::HashMap<std::string::String, crate::model::Rule>>,
+        pub(crate) rules: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Rule>>,
         pub(crate) required_behavior: std::option::Option<crate::model::RequiredAttributeBehavior>,
     }
     impl Builder {
@@ -240,8 +223,7 @@ pub mod typed_link_attribute_definition {
         }
         /// <p>The unique name of the typed link attribute.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of the attribute.</p>
         pub fn r#type(mut self, input: crate::model::FacetAttributeType) -> Self {
@@ -249,12 +231,8 @@ pub mod typed_link_attribute_definition {
             self
         }
         /// <p>The type of the attribute.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::FacetAttributeType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::FacetAttributeType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The default value of the attribute (if configured).</p>
         pub fn default_value(mut self, input: crate::model::TypedAttributeValue) -> Self {
@@ -262,12 +240,8 @@ pub mod typed_link_attribute_definition {
             self
         }
         /// <p>The default value of the attribute (if configured).</p>
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<crate::model::TypedAttributeValue>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<crate::model::TypedAttributeValue>) -> Self {
+            self.default_value = input; self
         }
         /// <p>Whether the attribute is mutable or not.</p>
         pub fn is_immutable(mut self, input: bool) -> Self {
@@ -276,8 +250,7 @@ pub mod typed_link_attribute_definition {
         }
         /// <p>Whether the attribute is mutable or not.</p>
         pub fn set_is_immutable(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_immutable = input;
-            self
+            self.is_immutable = input; self
         }
         /// Adds a key-value pair to `rules`.
         ///
@@ -286,19 +259,13 @@ pub mod typed_link_attribute_definition {
         /// <p>Validation rules that are attached to the attribute definition.</p>
         pub fn rules(mut self, k: impl Into<std::string::String>, v: crate::model::Rule) -> Self {
             let mut hash_map = self.rules.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.rules = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.rules = Some(hash_map);
+                            self
         }
         /// <p>Validation rules that are attached to the attribute definition.</p>
-        pub fn set_rules(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::Rule>,
-            >,
-        ) -> Self {
-            self.rules = input;
-            self
+        pub fn set_rules(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Rule>>) -> Self {
+            self.rules = input; self
         }
         /// <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
         pub fn required_behavior(mut self, input: crate::model::RequiredAttributeBehavior) -> Self {
@@ -306,25 +273,30 @@ pub mod typed_link_attribute_definition {
             self
         }
         /// <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
-        pub fn set_required_behavior(
-            mut self,
-            input: std::option::Option<crate::model::RequiredAttributeBehavior>,
-        ) -> Self {
-            self.required_behavior = input;
-            self
+        pub fn set_required_behavior(mut self, input: std::option::Option<crate::model::RequiredAttributeBehavior>) -> Self {
+            self.required_behavior = input; self
         }
         /// Consumes the builder and constructs a [`TypedLinkAttributeDefinition`](crate::model::TypedLinkAttributeDefinition).
         pub fn build(self) -> crate::model::TypedLinkAttributeDefinition {
             crate::model::TypedLinkAttributeDefinition {
-                name: self.name,
-                r#type: self.r#type,
-                default_value: self.default_value,
-                is_immutable: self.is_immutable.unwrap_or_default(),
-                rules: self.rules,
-                required_behavior: self.required_behavior,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                default_value: self.default_value
+                ,
+                is_immutable: self.is_immutable
+                    .unwrap_or_default()
+                ,
+                rules: self.rules
+                ,
+                required_behavior: self.required_behavior
+                ,
             }
         }
     }
+    
+    
 }
 impl TypedLinkAttributeDefinition {
     /// Creates a new builder-style object to manufacture [`TypedLinkAttributeDefinition`](crate::model::TypedLinkAttributeDefinition).
@@ -339,9 +311,9 @@ impl TypedLinkAttributeDefinition {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let requiredattributebehavior = unimplemented!();
 /// match requiredattributebehavior {
@@ -363,60 +335,52 @@ impl TypedLinkAttributeDefinition {
 /// Specifically, when `requiredattributebehavior` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RequiredAttributeBehavior::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RequiredAttributeBehavior {
     #[allow(missing_docs)] // documentation missing in model
     NotRequired,
     #[allow(missing_docs)] // documentation missing in model
     RequiredAlways,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RequiredAttributeBehavior {
     fn from(s: &str) -> Self {
         match s {
             "NOT_REQUIRED" => RequiredAttributeBehavior::NotRequired,
             "REQUIRED_ALWAYS" => RequiredAttributeBehavior::RequiredAlways,
-            other => RequiredAttributeBehavior::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => RequiredAttributeBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RequiredAttributeBehavior {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RequiredAttributeBehavior::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RequiredAttributeBehavior::from(s))
+                }
+            }
 impl RequiredAttributeBehavior {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RequiredAttributeBehavior::NotRequired => "NOT_REQUIRED",
             RequiredAttributeBehavior::RequiredAlways => "REQUIRED_ALWAYS",
-            RequiredAttributeBehavior::Unknown(value) => value.as_str(),
+            RequiredAttributeBehavior::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NOT_REQUIRED", "REQUIRED_ALWAYS"]
+        &[
+            "NOT_REQUIRED", "REQUIRED_ALWAYS"
+        ]
     }
 }
 impl AsRef<str> for RequiredAttributeBehavior {
@@ -428,38 +392,32 @@ impl AsRef<str> for RequiredAttributeBehavior {
 /// <p>Contains an Amazon Resource Name (ARN) and parameters that are associated with the rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Rule {
+pub struct Rule  {
     /// <p>The type of attribute validation rule.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::RuleType>,
     /// <p>The minimum and maximum parameters that are associated with the rule.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Rule {
     /// <p>The type of attribute validation rule.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::RuleType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::RuleType> {
         self.r#type.as_ref()
     }
     /// <p>The minimum and maximum parameters that are associated with the rule.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
 }
 /// See [`Rule`](crate::model::Rule).
 pub mod rule {
-
+    
     /// A builder for [`Rule`](crate::model::Rule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::RuleType>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The type of attribute validation rule.</p>
@@ -469,42 +427,35 @@ pub mod rule {
         }
         /// <p>The type of attribute validation rule.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RuleType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The minimum and maximum parameters that are associated with the rule.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>The minimum and maximum parameters that are associated with the rule.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`Rule`](crate::model::Rule).
         pub fn build(self) -> crate::model::Rule {
             crate::model::Rule {
-                r#type: self.r#type,
-                parameters: self.parameters,
+                r#type: self.r#type
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl Rule {
     /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
@@ -519,9 +470,9 @@ impl Rule {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ruletype = unimplemented!();
 /// match ruletype {
@@ -545,22 +496,14 @@ impl Rule {
 /// Specifically, when `ruletype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RuleType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RuleType {
     #[allow(missing_docs)] // documentation missing in model
     BinaryLength,
@@ -571,7 +514,7 @@ pub enum RuleType {
     #[allow(missing_docs)] // documentation missing in model
     StringLength,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RuleType {
     fn from(s: &str) -> Self {
@@ -580,17 +523,17 @@ impl std::convert::From<&str> for RuleType {
             "NUMBER_COMPARISON" => RuleType::NumberComparison,
             "STRING_FROM_SET" => RuleType::StringFromSet,
             "STRING_LENGTH" => RuleType::StringLength,
-            other => RuleType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RuleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RuleType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RuleType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RuleType::from(s))
+                }
+            }
 impl RuleType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -599,16 +542,13 @@ impl RuleType {
             RuleType::NumberComparison => "NUMBER_COMPARISON",
             RuleType::StringFromSet => "STRING_FROM_SET",
             RuleType::StringLength => "STRING_LENGTH",
-            RuleType::Unknown(value) => value.as_str(),
+            RuleType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BINARY_LENGTH",
-            "NUMBER_COMPARISON",
-            "STRING_FROM_SET",
-            "STRING_LENGTH",
+            "BINARY_LENGTH", "NUMBER_COMPARISON", "STRING_FROM_SET", "STRING_LENGTH"
         ]
     }
 }
@@ -646,11 +586,7 @@ impl TypedAttributeValue {
     /// Tries to convert the enum instance into [`BinaryValue`](crate::model::TypedAttributeValue::BinaryValue), extracting the inner [`Blob`](aws_smithy_types::Blob).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_binary_value(&self) -> std::result::Result<&aws_smithy_types::Blob, &Self> {
-        if let TypedAttributeValue::BinaryValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let TypedAttributeValue::BinaryValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`BinaryValue`](crate::model::TypedAttributeValue::BinaryValue).
     pub fn is_binary_value(&self) -> bool {
@@ -659,11 +595,7 @@ impl TypedAttributeValue {
     /// Tries to convert the enum instance into [`BooleanValue`](crate::model::TypedAttributeValue::BooleanValue), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
-        if let TypedAttributeValue::BooleanValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let TypedAttributeValue::BooleanValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`BooleanValue`](crate::model::TypedAttributeValue::BooleanValue).
     pub fn is_boolean_value(&self) -> bool {
@@ -672,11 +604,7 @@ impl TypedAttributeValue {
     /// Tries to convert the enum instance into [`DatetimeValue`](crate::model::TypedAttributeValue::DatetimeValue), extracting the inner [`DateTime`](aws_smithy_types::DateTime).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_datetime_value(&self) -> std::result::Result<&aws_smithy_types::DateTime, &Self> {
-        if let TypedAttributeValue::DatetimeValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let TypedAttributeValue::DatetimeValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`DatetimeValue`](crate::model::TypedAttributeValue::DatetimeValue).
     pub fn is_datetime_value(&self) -> bool {
@@ -685,11 +613,7 @@ impl TypedAttributeValue {
     /// Tries to convert the enum instance into [`NumberValue`](crate::model::TypedAttributeValue::NumberValue), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_number_value(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let TypedAttributeValue::NumberValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let TypedAttributeValue::NumberValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`NumberValue`](crate::model::TypedAttributeValue::NumberValue).
     pub fn is_number_value(&self) -> bool {
@@ -698,11 +622,7 @@ impl TypedAttributeValue {
     /// Tries to convert the enum instance into [`StringValue`](crate::model::TypedAttributeValue::StringValue), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let TypedAttributeValue::StringValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let TypedAttributeValue::StringValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`StringValue`](crate::model::TypedAttributeValue::StringValue).
     pub fn is_string_value(&self) -> bool {
@@ -720,9 +640,9 @@ impl TypedAttributeValue {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let facetattributetype = unimplemented!();
 /// match facetattributetype {
@@ -748,22 +668,14 @@ impl TypedAttributeValue {
 /// Specifically, when `facetattributetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FacetAttributeType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FacetAttributeType {
     #[allow(missing_docs)] // documentation missing in model
     Binary,
@@ -778,7 +690,7 @@ pub enum FacetAttributeType {
     #[allow(missing_docs)] // documentation missing in model
     Variant,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FacetAttributeType {
     fn from(s: &str) -> Self {
@@ -789,19 +701,17 @@ impl std::convert::From<&str> for FacetAttributeType {
             "NUMBER" => FacetAttributeType::Number,
             "STRING" => FacetAttributeType::String,
             "VARIANT" => FacetAttributeType::Variant,
-            other => {
-                FacetAttributeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FacetAttributeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FacetAttributeType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FacetAttributeType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FacetAttributeType::from(s))
+                }
+            }
 impl FacetAttributeType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -812,13 +722,13 @@ impl FacetAttributeType {
             FacetAttributeType::Number => "NUMBER",
             FacetAttributeType::String => "STRING",
             FacetAttributeType::Variant => "VARIANT",
-            FacetAttributeType::Unknown(value) => value.as_str(),
+            FacetAttributeType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BINARY", "BOOLEAN", "DATETIME", "NUMBER", "STRING", "VARIANT",
+            "BINARY", "BOOLEAN", "DATETIME", "NUMBER", "STRING", "VARIANT"
         ]
     }
 }
@@ -831,7 +741,7 @@ impl AsRef<str> for FacetAttributeType {
 /// <p>Structure that contains attribute update information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObjectAttributeUpdate {
+pub struct ObjectAttributeUpdate  {
     /// <p>The key of the attribute being updated.</p>
     #[doc(hidden)]
     pub object_attribute_key: std::option::Option<crate::model::AttributeKey>,
@@ -841,25 +751,22 @@ pub struct ObjectAttributeUpdate {
 }
 impl ObjectAttributeUpdate {
     /// <p>The key of the attribute being updated.</p>
-    pub fn object_attribute_key(&self) -> std::option::Option<&crate::model::AttributeKey> {
+    pub fn object_attribute_key(&self) -> std::option::Option<& crate::model::AttributeKey> {
         self.object_attribute_key.as_ref()
     }
     /// <p>The action to perform as part of the attribute update.</p>
-    pub fn object_attribute_action(
-        &self,
-    ) -> std::option::Option<&crate::model::ObjectAttributeAction> {
+    pub fn object_attribute_action(&self) -> std::option::Option<& crate::model::ObjectAttributeAction> {
         self.object_attribute_action.as_ref()
     }
 }
 /// See [`ObjectAttributeUpdate`](crate::model::ObjectAttributeUpdate).
 pub mod object_attribute_update {
-
+    
     /// A builder for [`ObjectAttributeUpdate`](crate::model::ObjectAttributeUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_attribute_key: std::option::Option<crate::model::AttributeKey>,
-        pub(crate) object_attribute_action:
-            std::option::Option<crate::model::ObjectAttributeAction>,
+        pub(crate) object_attribute_action: std::option::Option<crate::model::ObjectAttributeAction>,
     }
     impl Builder {
         /// <p>The key of the attribute being updated.</p>
@@ -868,37 +775,30 @@ pub mod object_attribute_update {
             self
         }
         /// <p>The key of the attribute being updated.</p>
-        pub fn set_object_attribute_key(
-            mut self,
-            input: std::option::Option<crate::model::AttributeKey>,
-        ) -> Self {
-            self.object_attribute_key = input;
-            self
+        pub fn set_object_attribute_key(mut self, input: std::option::Option<crate::model::AttributeKey>) -> Self {
+            self.object_attribute_key = input; self
         }
         /// <p>The action to perform as part of the attribute update.</p>
-        pub fn object_attribute_action(
-            mut self,
-            input: crate::model::ObjectAttributeAction,
-        ) -> Self {
+        pub fn object_attribute_action(mut self, input: crate::model::ObjectAttributeAction) -> Self {
             self.object_attribute_action = Some(input);
             self
         }
         /// <p>The action to perform as part of the attribute update.</p>
-        pub fn set_object_attribute_action(
-            mut self,
-            input: std::option::Option<crate::model::ObjectAttributeAction>,
-        ) -> Self {
-            self.object_attribute_action = input;
-            self
+        pub fn set_object_attribute_action(mut self, input: std::option::Option<crate::model::ObjectAttributeAction>) -> Self {
+            self.object_attribute_action = input; self
         }
         /// Consumes the builder and constructs a [`ObjectAttributeUpdate`](crate::model::ObjectAttributeUpdate).
         pub fn build(self) -> crate::model::ObjectAttributeUpdate {
             crate::model::ObjectAttributeUpdate {
-                object_attribute_key: self.object_attribute_key,
-                object_attribute_action: self.object_attribute_action,
+                object_attribute_key: self.object_attribute_key
+                ,
+                object_attribute_action: self.object_attribute_action
+                ,
             }
         }
     }
+    
+    
 }
 impl ObjectAttributeUpdate {
     /// Creates a new builder-style object to manufacture [`ObjectAttributeUpdate`](crate::model::ObjectAttributeUpdate).
@@ -910,7 +810,7 @@ impl ObjectAttributeUpdate {
 /// <p>The action to take on the object attribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObjectAttributeAction {
+pub struct ObjectAttributeAction  {
     /// <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
     #[doc(hidden)]
     pub object_attribute_action_type: std::option::Option<crate::model::UpdateActionType>,
@@ -920,70 +820,54 @@ pub struct ObjectAttributeAction {
 }
 impl ObjectAttributeAction {
     /// <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
-    pub fn object_attribute_action_type(
-        &self,
-    ) -> std::option::Option<&crate::model::UpdateActionType> {
+    pub fn object_attribute_action_type(&self) -> std::option::Option<& crate::model::UpdateActionType> {
         self.object_attribute_action_type.as_ref()
     }
     /// <p>The value that you want to update to.</p>
-    pub fn object_attribute_update_value(
-        &self,
-    ) -> std::option::Option<&crate::model::TypedAttributeValue> {
+    pub fn object_attribute_update_value(&self) -> std::option::Option<& crate::model::TypedAttributeValue> {
         self.object_attribute_update_value.as_ref()
     }
 }
 /// See [`ObjectAttributeAction`](crate::model::ObjectAttributeAction).
 pub mod object_attribute_action {
-
+    
     /// A builder for [`ObjectAttributeAction`](crate::model::ObjectAttributeAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) object_attribute_action_type:
-            std::option::Option<crate::model::UpdateActionType>,
-        pub(crate) object_attribute_update_value:
-            std::option::Option<crate::model::TypedAttributeValue>,
+        pub(crate) object_attribute_action_type: std::option::Option<crate::model::UpdateActionType>,
+        pub(crate) object_attribute_update_value: std::option::Option<crate::model::TypedAttributeValue>,
     }
     impl Builder {
         /// <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
-        pub fn object_attribute_action_type(
-            mut self,
-            input: crate::model::UpdateActionType,
-        ) -> Self {
+        pub fn object_attribute_action_type(mut self, input: crate::model::UpdateActionType) -> Self {
             self.object_attribute_action_type = Some(input);
             self
         }
         /// <p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>
-        pub fn set_object_attribute_action_type(
-            mut self,
-            input: std::option::Option<crate::model::UpdateActionType>,
-        ) -> Self {
-            self.object_attribute_action_type = input;
-            self
+        pub fn set_object_attribute_action_type(mut self, input: std::option::Option<crate::model::UpdateActionType>) -> Self {
+            self.object_attribute_action_type = input; self
         }
         /// <p>The value that you want to update to.</p>
-        pub fn object_attribute_update_value(
-            mut self,
-            input: crate::model::TypedAttributeValue,
-        ) -> Self {
+        pub fn object_attribute_update_value(mut self, input: crate::model::TypedAttributeValue) -> Self {
             self.object_attribute_update_value = Some(input);
             self
         }
         /// <p>The value that you want to update to.</p>
-        pub fn set_object_attribute_update_value(
-            mut self,
-            input: std::option::Option<crate::model::TypedAttributeValue>,
-        ) -> Self {
-            self.object_attribute_update_value = input;
-            self
+        pub fn set_object_attribute_update_value(mut self, input: std::option::Option<crate::model::TypedAttributeValue>) -> Self {
+            self.object_attribute_update_value = input; self
         }
         /// Consumes the builder and constructs a [`ObjectAttributeAction`](crate::model::ObjectAttributeAction).
         pub fn build(self) -> crate::model::ObjectAttributeAction {
             crate::model::ObjectAttributeAction {
-                object_attribute_action_type: self.object_attribute_action_type,
-                object_attribute_update_value: self.object_attribute_update_value,
+                object_attribute_action_type: self.object_attribute_action_type
+                ,
+                object_attribute_update_value: self.object_attribute_update_value
+                ,
             }
         }
     }
+    
+    
 }
 impl ObjectAttributeAction {
     /// Creates a new builder-style object to manufacture [`ObjectAttributeAction`](crate::model::ObjectAttributeAction).
@@ -995,7 +879,7 @@ impl ObjectAttributeAction {
 /// <p>A unique identifier for an attribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeKey {
+pub struct AttributeKey  {
     /// <p>The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.</p>
     #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
@@ -1008,21 +892,21 @@ pub struct AttributeKey {
 }
 impl AttributeKey {
     /// <p>The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The name of the facet that the attribute exists within.</p>
-    pub fn facet_name(&self) -> std::option::Option<&str> {
+    pub fn facet_name(&self) -> std::option::Option<& str> {
         self.facet_name.as_deref()
     }
     /// <p>The name of the attribute.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`AttributeKey`](crate::model::AttributeKey).
 pub mod attribute_key {
-
+    
     /// A builder for [`AttributeKey`](crate::model::AttributeKey).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1038,8 +922,7 @@ pub mod attribute_key {
         }
         /// <p>The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_arn = input;
-            self
+            self.schema_arn = input; self
         }
         /// <p>The name of the facet that the attribute exists within.</p>
         pub fn facet_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1048,8 +931,7 @@ pub mod attribute_key {
         }
         /// <p>The name of the facet that the attribute exists within.</p>
         pub fn set_facet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.facet_name = input;
-            self
+            self.facet_name = input; self
         }
         /// <p>The name of the attribute.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1058,18 +940,22 @@ pub mod attribute_key {
         }
         /// <p>The name of the attribute.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`AttributeKey`](crate::model::AttributeKey).
         pub fn build(self) -> crate::model::AttributeKey {
             crate::model::AttributeKey {
-                schema_arn: self.schema_arn,
-                facet_name: self.facet_name,
-                name: self.name,
+                schema_arn: self.schema_arn
+                ,
+                facet_name: self.facet_name
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl AttributeKey {
     /// Creates a new builder-style object to manufacture [`AttributeKey`](crate::model::AttributeKey).
@@ -1081,63 +967,65 @@ impl AttributeKey {
 /// <p>The reference that identifies an object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObjectReference {
-    /// <p>A path selector supports easy selection of an object by the parent/child links leading to it from the directory root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/) and link names are separated by slashes. For more information about paths, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html">Access Objects</a>. You can identify an object in one of the following ways:</p>
-    /// <ul>
-    /// <li> <p> <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory. When creating objects, the system will provide you with the identifier of the created object. An object’s identifier is immutable and no two objects will ever share the same object identifier. To identify an object with ObjectIdentifier, the ObjectIdentifier must be wrapped in double quotes. </p> </li>
-    /// <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li>
-    /// <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li>
+pub struct ObjectReference  {
+    /// <p>A path selector supports easy selection of an object by the parent/child links leading to it from the directory root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/) and link names are separated by slashes. For more information about paths, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html">Access Objects</a>. You can identify an object in one of the following ways:</p> 
+    /// <ul> 
+    /// <li> <p> <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory. When creating objects, the system will provide you with the identifier of the created object. An object’s identifier is immutable and no two objects will ever share the same object identifier. To identify an object with ObjectIdentifier, the ObjectIdentifier must be wrapped in double quotes. </p> </li> 
+    /// <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li> 
+    /// <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub selector: std::option::Option<std::string::String>,
 }
 impl ObjectReference {
-    /// <p>A path selector supports easy selection of an object by the parent/child links leading to it from the directory root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/) and link names are separated by slashes. For more information about paths, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html">Access Objects</a>. You can identify an object in one of the following ways:</p>
-    /// <ul>
-    /// <li> <p> <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory. When creating objects, the system will provide you with the identifier of the created object. An object’s identifier is immutable and no two objects will ever share the same object identifier. To identify an object with ObjectIdentifier, the ObjectIdentifier must be wrapped in double quotes. </p> </li>
-    /// <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li>
-    /// <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li>
+    /// <p>A path selector supports easy selection of an object by the parent/child links leading to it from the directory root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/) and link names are separated by slashes. For more information about paths, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html">Access Objects</a>. You can identify an object in one of the following ways:</p> 
+    /// <ul> 
+    /// <li> <p> <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory. When creating objects, the system will provide you with the identifier of the created object. An object’s identifier is immutable and no two objects will ever share the same object identifier. To identify an object with ObjectIdentifier, the ObjectIdentifier must be wrapped in double quotes. </p> </li> 
+    /// <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li> 
+    /// <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li> 
     /// </ul>
-    pub fn selector(&self) -> std::option::Option<&str> {
+    pub fn selector(&self) -> std::option::Option<& str> {
         self.selector.as_deref()
     }
 }
 /// See [`ObjectReference`](crate::model::ObjectReference).
 pub mod object_reference {
-
+    
     /// A builder for [`ObjectReference`](crate::model::ObjectReference).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) selector: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A path selector supports easy selection of an object by the parent/child links leading to it from the directory root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/) and link names are separated by slashes. For more information about paths, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html">Access Objects</a>. You can identify an object in one of the following ways:</p>
-        /// <ul>
-        /// <li> <p> <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory. When creating objects, the system will provide you with the identifier of the created object. An object’s identifier is immutable and no two objects will ever share the same object identifier. To identify an object with ObjectIdentifier, the ObjectIdentifier must be wrapped in double quotes. </p> </li>
-        /// <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li>
-        /// <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li>
+        /// <p>A path selector supports easy selection of an object by the parent/child links leading to it from the directory root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/) and link names are separated by slashes. For more information about paths, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html">Access Objects</a>. You can identify an object in one of the following ways:</p> 
+        /// <ul> 
+        /// <li> <p> <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory. When creating objects, the system will provide you with the identifier of the created object. An object’s identifier is immutable and no two objects will ever share the same object identifier. To identify an object with ObjectIdentifier, the ObjectIdentifier must be wrapped in double quotes. </p> </li> 
+        /// <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li> 
+        /// <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li> 
         /// </ul>
         pub fn selector(mut self, input: impl Into<std::string::String>) -> Self {
             self.selector = Some(input.into());
             self
         }
-        /// <p>A path selector supports easy selection of an object by the parent/child links leading to it from the directory root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/) and link names are separated by slashes. For more information about paths, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html">Access Objects</a>. You can identify an object in one of the following ways:</p>
-        /// <ul>
-        /// <li> <p> <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory. When creating objects, the system will provide you with the identifier of the created object. An object’s identifier is immutable and no two objects will ever share the same object identifier. To identify an object with ObjectIdentifier, the ObjectIdentifier must be wrapped in double quotes. </p> </li>
-        /// <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li>
-        /// <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li>
+        /// <p>A path selector supports easy selection of an object by the parent/child links leading to it from the directory root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/) and link names are separated by slashes. For more information about paths, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_access_objects.html">Access Objects</a>. You can identify an object in one of the following ways:</p> 
+        /// <ul> 
+        /// <li> <p> <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory. When creating objects, the system will provide you with the identifier of the created object. An object’s identifier is immutable and no two objects will ever share the same object identifier. To identify an object with ObjectIdentifier, the ObjectIdentifier must be wrapped in double quotes. </p> </li> 
+        /// <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li> 
+        /// <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li> 
         /// </ul>
         pub fn set_selector(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.selector = input;
-            self
+            self.selector = input; self
         }
         /// Consumes the builder and constructs a [`ObjectReference`](crate::model::ObjectReference).
         pub fn build(self) -> crate::model::ObjectReference {
             crate::model::ObjectReference {
-                selector: self.selector,
+                selector: self.selector
+                ,
             }
         }
     }
+    
+    
 }
 impl ObjectReference {
     /// Creates a new builder-style object to manufacture [`ObjectReference`](crate::model::ObjectReference).
@@ -1149,7 +1037,7 @@ impl ObjectReference {
 /// <p>Structure that contains attribute update information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LinkAttributeUpdate {
+pub struct LinkAttributeUpdate  {
     /// <p>The key of the attribute being updated.</p>
     #[doc(hidden)]
     pub attribute_key: std::option::Option<crate::model::AttributeKey>,
@@ -1159,17 +1047,17 @@ pub struct LinkAttributeUpdate {
 }
 impl LinkAttributeUpdate {
     /// <p>The key of the attribute being updated.</p>
-    pub fn attribute_key(&self) -> std::option::Option<&crate::model::AttributeKey> {
+    pub fn attribute_key(&self) -> std::option::Option<& crate::model::AttributeKey> {
         self.attribute_key.as_ref()
     }
     /// <p>The action to perform as part of the attribute update.</p>
-    pub fn attribute_action(&self) -> std::option::Option<&crate::model::LinkAttributeAction> {
+    pub fn attribute_action(&self) -> std::option::Option<& crate::model::LinkAttributeAction> {
         self.attribute_action.as_ref()
     }
 }
 /// See [`LinkAttributeUpdate`](crate::model::LinkAttributeUpdate).
 pub mod link_attribute_update {
-
+    
     /// A builder for [`LinkAttributeUpdate`](crate::model::LinkAttributeUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1183,12 +1071,8 @@ pub mod link_attribute_update {
             self
         }
         /// <p>The key of the attribute being updated.</p>
-        pub fn set_attribute_key(
-            mut self,
-            input: std::option::Option<crate::model::AttributeKey>,
-        ) -> Self {
-            self.attribute_key = input;
-            self
+        pub fn set_attribute_key(mut self, input: std::option::Option<crate::model::AttributeKey>) -> Self {
+            self.attribute_key = input; self
         }
         /// <p>The action to perform as part of the attribute update.</p>
         pub fn attribute_action(mut self, input: crate::model::LinkAttributeAction) -> Self {
@@ -1196,21 +1080,21 @@ pub mod link_attribute_update {
             self
         }
         /// <p>The action to perform as part of the attribute update.</p>
-        pub fn set_attribute_action(
-            mut self,
-            input: std::option::Option<crate::model::LinkAttributeAction>,
-        ) -> Self {
-            self.attribute_action = input;
-            self
+        pub fn set_attribute_action(mut self, input: std::option::Option<crate::model::LinkAttributeAction>) -> Self {
+            self.attribute_action = input; self
         }
         /// Consumes the builder and constructs a [`LinkAttributeUpdate`](crate::model::LinkAttributeUpdate).
         pub fn build(self) -> crate::model::LinkAttributeUpdate {
             crate::model::LinkAttributeUpdate {
-                attribute_key: self.attribute_key,
-                attribute_action: self.attribute_action,
+                attribute_key: self.attribute_key
+                ,
+                attribute_action: self.attribute_action
+                ,
             }
         }
     }
+    
+    
 }
 impl LinkAttributeUpdate {
     /// Creates a new builder-style object to manufacture [`LinkAttributeUpdate`](crate::model::LinkAttributeUpdate).
@@ -1222,7 +1106,7 @@ impl LinkAttributeUpdate {
 /// <p>The action to take on a typed link attribute value. Updates are only supported for attributes which don’t contribute to link identity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LinkAttributeAction {
+pub struct LinkAttributeAction  {
     /// <p>A type that can be either <code>UPDATE_OR_CREATE</code> or <code>DELETE</code>.</p>
     #[doc(hidden)]
     pub attribute_action_type: std::option::Option<crate::model::UpdateActionType>,
@@ -1232,19 +1116,17 @@ pub struct LinkAttributeAction {
 }
 impl LinkAttributeAction {
     /// <p>A type that can be either <code>UPDATE_OR_CREATE</code> or <code>DELETE</code>.</p>
-    pub fn attribute_action_type(&self) -> std::option::Option<&crate::model::UpdateActionType> {
+    pub fn attribute_action_type(&self) -> std::option::Option<& crate::model::UpdateActionType> {
         self.attribute_action_type.as_ref()
     }
     /// <p>The value that you want to update to.</p>
-    pub fn attribute_update_value(
-        &self,
-    ) -> std::option::Option<&crate::model::TypedAttributeValue> {
+    pub fn attribute_update_value(&self) -> std::option::Option<& crate::model::TypedAttributeValue> {
         self.attribute_update_value.as_ref()
     }
 }
 /// See [`LinkAttributeAction`](crate::model::LinkAttributeAction).
 pub mod link_attribute_action {
-
+    
     /// A builder for [`LinkAttributeAction`](crate::model::LinkAttributeAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1258,12 +1140,8 @@ pub mod link_attribute_action {
             self
         }
         /// <p>A type that can be either <code>UPDATE_OR_CREATE</code> or <code>DELETE</code>.</p>
-        pub fn set_attribute_action_type(
-            mut self,
-            input: std::option::Option<crate::model::UpdateActionType>,
-        ) -> Self {
-            self.attribute_action_type = input;
-            self
+        pub fn set_attribute_action_type(mut self, input: std::option::Option<crate::model::UpdateActionType>) -> Self {
+            self.attribute_action_type = input; self
         }
         /// <p>The value that you want to update to.</p>
         pub fn attribute_update_value(mut self, input: crate::model::TypedAttributeValue) -> Self {
@@ -1271,21 +1149,21 @@ pub mod link_attribute_action {
             self
         }
         /// <p>The value that you want to update to.</p>
-        pub fn set_attribute_update_value(
-            mut self,
-            input: std::option::Option<crate::model::TypedAttributeValue>,
-        ) -> Self {
-            self.attribute_update_value = input;
-            self
+        pub fn set_attribute_update_value(mut self, input: std::option::Option<crate::model::TypedAttributeValue>) -> Self {
+            self.attribute_update_value = input; self
         }
         /// Consumes the builder and constructs a [`LinkAttributeAction`](crate::model::LinkAttributeAction).
         pub fn build(self) -> crate::model::LinkAttributeAction {
             crate::model::LinkAttributeAction {
-                attribute_action_type: self.attribute_action_type,
-                attribute_update_value: self.attribute_update_value,
+                attribute_action_type: self.attribute_action_type
+                ,
+                attribute_update_value: self.attribute_update_value
+                ,
             }
         }
     }
+    
+    
 }
 impl LinkAttributeAction {
     /// Creates a new builder-style object to manufacture [`LinkAttributeAction`](crate::model::LinkAttributeAction).
@@ -1297,7 +1175,7 @@ impl LinkAttributeAction {
 /// <p>Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <code>AttachTypedLink</code> API returns a typed link specifier while the <code>DetachTypedLink</code> API accepts one as input. Similarly, the <code>ListIncomingTypedLinks</code> and <code>ListOutgoingTypedLinks</code> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TypedLinkSpecifier {
+pub struct TypedLinkSpecifier  {
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
     #[doc(hidden)]
     pub typed_link_facet: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
@@ -1309,59 +1187,46 @@ pub struct TypedLinkSpecifier {
     pub target_object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>Identifies the attribute value to update.</p>
     #[doc(hidden)]
-    pub identity_attribute_values:
-        std::option::Option<std::vec::Vec<crate::model::AttributeNameAndValue>>,
+    pub identity_attribute_values: std::option::Option<std::vec::Vec<crate::model::AttributeNameAndValue>>,
 }
 impl TypedLinkSpecifier {
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
-    pub fn typed_link_facet(
-        &self,
-    ) -> std::option::Option<&crate::model::TypedLinkSchemaAndFacetName> {
+    pub fn typed_link_facet(&self) -> std::option::Option<& crate::model::TypedLinkSchemaAndFacetName> {
         self.typed_link_facet.as_ref()
     }
     /// <p>Identifies the source object that the typed link will attach to.</p>
-    pub fn source_object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn source_object_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.source_object_reference.as_ref()
     }
     /// <p>Identifies the target object that the typed link will attach to.</p>
-    pub fn target_object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn target_object_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.target_object_reference.as_ref()
     }
     /// <p>Identifies the attribute value to update.</p>
-    pub fn identity_attribute_values(
-        &self,
-    ) -> std::option::Option<&[crate::model::AttributeNameAndValue]> {
+    pub fn identity_attribute_values(&self) -> std::option::Option<& [crate::model::AttributeNameAndValue]> {
         self.identity_attribute_values.as_deref()
     }
 }
 /// See [`TypedLinkSpecifier`](crate::model::TypedLinkSpecifier).
 pub mod typed_link_specifier {
-
+    
     /// A builder for [`TypedLinkSpecifier`](crate::model::TypedLinkSpecifier).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_facet: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
         pub(crate) source_object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) target_object_reference: std::option::Option<crate::model::ObjectReference>,
-        pub(crate) identity_attribute_values:
-            std::option::Option<std::vec::Vec<crate::model::AttributeNameAndValue>>,
+        pub(crate) identity_attribute_values: std::option::Option<std::vec::Vec<crate::model::AttributeNameAndValue>>,
     }
     impl Builder {
         /// <p>Identifies the typed link facet that is associated with the typed link.</p>
-        pub fn typed_link_facet(
-            mut self,
-            input: crate::model::TypedLinkSchemaAndFacetName,
-        ) -> Self {
+        pub fn typed_link_facet(mut self, input: crate::model::TypedLinkSchemaAndFacetName) -> Self {
             self.typed_link_facet = Some(input);
             self
         }
         /// <p>Identifies the typed link facet that is associated with the typed link.</p>
-        pub fn set_typed_link_facet(
-            mut self,
-            input: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
-        ) -> Self {
-            self.typed_link_facet = input;
-            self
+        pub fn set_typed_link_facet(mut self, input: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>) -> Self {
+            self.typed_link_facet = input; self
         }
         /// <p>Identifies the source object that the typed link will attach to.</p>
         pub fn source_object_reference(mut self, input: crate::model::ObjectReference) -> Self {
@@ -1369,12 +1234,8 @@ pub mod typed_link_specifier {
             self
         }
         /// <p>Identifies the source object that the typed link will attach to.</p>
-        pub fn set_source_object_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.source_object_reference = input;
-            self
+        pub fn set_source_object_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.source_object_reference = input; self
         }
         /// <p>Identifies the target object that the typed link will attach to.</p>
         pub fn target_object_reference(mut self, input: crate::model::ObjectReference) -> Self {
@@ -1382,45 +1243,40 @@ pub mod typed_link_specifier {
             self
         }
         /// <p>Identifies the target object that the typed link will attach to.</p>
-        pub fn set_target_object_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.target_object_reference = input;
-            self
+        pub fn set_target_object_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.target_object_reference = input; self
         }
         /// Appends an item to `identity_attribute_values`.
         ///
         /// To override the contents of this collection use [`set_identity_attribute_values`](Self::set_identity_attribute_values).
         ///
         /// <p>Identifies the attribute value to update.</p>
-        pub fn identity_attribute_values(
-            mut self,
-            input: crate::model::AttributeNameAndValue,
-        ) -> Self {
+        pub fn identity_attribute_values(mut self, input: crate::model::AttributeNameAndValue) -> Self {
             let mut v = self.identity_attribute_values.unwrap_or_default();
-            v.push(input);
-            self.identity_attribute_values = Some(v);
-            self
+                            v.push(input);
+                            self.identity_attribute_values = Some(v);
+                            self
         }
         /// <p>Identifies the attribute value to update.</p>
-        pub fn set_identity_attribute_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttributeNameAndValue>>,
-        ) -> Self {
-            self.identity_attribute_values = input;
-            self
+        pub fn set_identity_attribute_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttributeNameAndValue>>) -> Self {
+            self.identity_attribute_values = input; self
         }
         /// Consumes the builder and constructs a [`TypedLinkSpecifier`](crate::model::TypedLinkSpecifier).
         pub fn build(self) -> crate::model::TypedLinkSpecifier {
             crate::model::TypedLinkSpecifier {
-                typed_link_facet: self.typed_link_facet,
-                source_object_reference: self.source_object_reference,
-                target_object_reference: self.target_object_reference,
-                identity_attribute_values: self.identity_attribute_values,
+                typed_link_facet: self.typed_link_facet
+                ,
+                source_object_reference: self.source_object_reference
+                ,
+                target_object_reference: self.target_object_reference
+                ,
+                identity_attribute_values: self.identity_attribute_values
+                ,
             }
         }
     }
+    
+    
 }
 impl TypedLinkSpecifier {
     /// Creates a new builder-style object to manufacture [`TypedLinkSpecifier`](crate::model::TypedLinkSpecifier).
@@ -1432,7 +1288,7 @@ impl TypedLinkSpecifier {
 /// <p>Identifies the attribute name and value for a typed link.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeNameAndValue {
+pub struct AttributeNameAndValue  {
     /// <p>The attribute name of the typed link.</p>
     #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
@@ -1442,17 +1298,17 @@ pub struct AttributeNameAndValue {
 }
 impl AttributeNameAndValue {
     /// <p>The attribute name of the typed link.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
     /// <p>The value for the typed link.</p>
-    pub fn value(&self) -> std::option::Option<&crate::model::TypedAttributeValue> {
+    pub fn value(&self) -> std::option::Option<& crate::model::TypedAttributeValue> {
         self.value.as_ref()
     }
 }
 /// See [`AttributeNameAndValue`](crate::model::AttributeNameAndValue).
 pub mod attribute_name_and_value {
-
+    
     /// A builder for [`AttributeNameAndValue`](crate::model::AttributeNameAndValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1466,12 +1322,8 @@ pub mod attribute_name_and_value {
             self
         }
         /// <p>The attribute name of the typed link.</p>
-        pub fn set_attribute_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attribute_name = input;
-            self
+        pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attribute_name = input; self
         }
         /// <p>The value for the typed link.</p>
         pub fn value(mut self, input: crate::model::TypedAttributeValue) -> Self {
@@ -1479,21 +1331,21 @@ pub mod attribute_name_and_value {
             self
         }
         /// <p>The value for the typed link.</p>
-        pub fn set_value(
-            mut self,
-            input: std::option::Option<crate::model::TypedAttributeValue>,
-        ) -> Self {
-            self.value = input;
-            self
+        pub fn set_value(mut self, input: std::option::Option<crate::model::TypedAttributeValue>) -> Self {
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`AttributeNameAndValue`](crate::model::AttributeNameAndValue).
         pub fn build(self) -> crate::model::AttributeNameAndValue {
             crate::model::AttributeNameAndValue {
-                attribute_name: self.attribute_name,
-                value: self.value,
+                attribute_name: self.attribute_name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl AttributeNameAndValue {
     /// Creates a new builder-style object to manufacture [`AttributeNameAndValue`](crate::model::AttributeNameAndValue).
@@ -1505,7 +1357,7 @@ impl AttributeNameAndValue {
 /// <p>Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TypedLinkSchemaAndFacetName {
+pub struct TypedLinkSchemaAndFacetName  {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
@@ -1515,17 +1367,17 @@ pub struct TypedLinkSchemaAndFacetName {
 }
 impl TypedLinkSchemaAndFacetName {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The unique name of the typed link facet.</p>
-    pub fn typed_link_name(&self) -> std::option::Option<&str> {
+    pub fn typed_link_name(&self) -> std::option::Option<& str> {
         self.typed_link_name.as_deref()
     }
 }
 /// See [`TypedLinkSchemaAndFacetName`](crate::model::TypedLinkSchemaAndFacetName).
 pub mod typed_link_schema_and_facet_name {
-
+    
     /// A builder for [`TypedLinkSchemaAndFacetName`](crate::model::TypedLinkSchemaAndFacetName).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1540,8 +1392,7 @@ pub mod typed_link_schema_and_facet_name {
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_arn = input;
-            self
+            self.schema_arn = input; self
         }
         /// <p>The unique name of the typed link facet.</p>
         pub fn typed_link_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1549,21 +1400,21 @@ pub mod typed_link_schema_and_facet_name {
             self
         }
         /// <p>The unique name of the typed link facet.</p>
-        pub fn set_typed_link_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.typed_link_name = input;
-            self
+        pub fn set_typed_link_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.typed_link_name = input; self
         }
         /// Consumes the builder and constructs a [`TypedLinkSchemaAndFacetName`](crate::model::TypedLinkSchemaAndFacetName).
         pub fn build(self) -> crate::model::TypedLinkSchemaAndFacetName {
             crate::model::TypedLinkSchemaAndFacetName {
-                schema_arn: self.schema_arn,
-                typed_link_name: self.typed_link_name,
+                schema_arn: self.schema_arn
+                ,
+                typed_link_name: self.typed_link_name
+                ,
             }
         }
     }
+    
+    
 }
 impl TypedLinkSchemaAndFacetName {
     /// Creates a new builder-style object to manufacture [`TypedLinkSchemaAndFacetName`](crate::model::TypedLinkSchemaAndFacetName).
@@ -1578,9 +1429,9 @@ impl TypedLinkSchemaAndFacetName {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let objecttype = unimplemented!();
 /// match objecttype {
@@ -1604,22 +1455,14 @@ impl TypedLinkSchemaAndFacetName {
 /// Specifically, when `objecttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ObjectType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ObjectType {
     #[allow(missing_docs)] // documentation missing in model
     Index,
@@ -1630,7 +1473,7 @@ pub enum ObjectType {
     #[allow(missing_docs)] // documentation missing in model
     Policy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ObjectType {
     fn from(s: &str) -> Self {
@@ -1639,17 +1482,17 @@ impl std::convert::From<&str> for ObjectType {
             "LEAF_NODE" => ObjectType::LeafNode,
             "NODE" => ObjectType::Node,
             "POLICY" => ObjectType::Policy,
-            other => ObjectType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ObjectType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ObjectType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ObjectType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ObjectType::from(s))
+                }
+            }
 impl ObjectType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1658,12 +1501,14 @@ impl ObjectType {
             ObjectType::LeafNode => "LEAF_NODE",
             ObjectType::Node => "NODE",
             ObjectType::Policy => "POLICY",
-            ObjectType::Unknown(value) => value.as_str(),
+            ObjectType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INDEX", "LEAF_NODE", "NODE", "POLICY"]
+        &[
+            "INDEX", "LEAF_NODE", "NODE", "POLICY"
+        ]
     }
 }
 impl AsRef<str> for ObjectType {
@@ -1675,7 +1520,7 @@ impl AsRef<str> for ObjectType {
 /// <p>A structure that contains information used to update an attribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FacetAttributeUpdate {
+pub struct FacetAttributeUpdate  {
     /// <p>The attribute to update.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::model::FacetAttribute>,
@@ -1685,17 +1530,17 @@ pub struct FacetAttributeUpdate {
 }
 impl FacetAttributeUpdate {
     /// <p>The attribute to update.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::model::FacetAttribute> {
+    pub fn attribute(&self) -> std::option::Option<& crate::model::FacetAttribute> {
         self.attribute.as_ref()
     }
     /// <p>The action to perform when updating the attribute.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::UpdateActionType> {
+    pub fn action(&self) -> std::option::Option<& crate::model::UpdateActionType> {
         self.action.as_ref()
     }
 }
 /// See [`FacetAttributeUpdate`](crate::model::FacetAttributeUpdate).
 pub mod facet_attribute_update {
-
+    
     /// A builder for [`FacetAttributeUpdate`](crate::model::FacetAttributeUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1709,12 +1554,8 @@ pub mod facet_attribute_update {
             self
         }
         /// <p>The attribute to update.</p>
-        pub fn set_attribute(
-            mut self,
-            input: std::option::Option<crate::model::FacetAttribute>,
-        ) -> Self {
-            self.attribute = input;
-            self
+        pub fn set_attribute(mut self, input: std::option::Option<crate::model::FacetAttribute>) -> Self {
+            self.attribute = input; self
         }
         /// <p>The action to perform when updating the attribute.</p>
         pub fn action(mut self, input: crate::model::UpdateActionType) -> Self {
@@ -1722,21 +1563,21 @@ pub mod facet_attribute_update {
             self
         }
         /// <p>The action to perform when updating the attribute.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::UpdateActionType>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::UpdateActionType>) -> Self {
+            self.action = input; self
         }
         /// Consumes the builder and constructs a [`FacetAttributeUpdate`](crate::model::FacetAttributeUpdate).
         pub fn build(self) -> crate::model::FacetAttributeUpdate {
             crate::model::FacetAttributeUpdate {
-                attribute: self.attribute,
-                action: self.action,
+                attribute: self.attribute
+                ,
+                action: self.action
+                ,
             }
         }
     }
+    
+    
 }
 impl FacetAttributeUpdate {
     /// Creates a new builder-style object to manufacture [`FacetAttributeUpdate`](crate::model::FacetAttributeUpdate).
@@ -1748,7 +1589,7 @@ impl FacetAttributeUpdate {
 /// <p>An attribute that is associated with the <code>Facet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FacetAttribute {
+pub struct FacetAttribute  {
     /// <p>The name of the facet attribute.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1764,37 +1605,30 @@ pub struct FacetAttribute {
 }
 impl FacetAttribute {
     /// <p>The name of the facet attribute.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A facet attribute consists of either a definition or a reference. This structure contains the attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
-    pub fn attribute_definition(
-        &self,
-    ) -> std::option::Option<&crate::model::FacetAttributeDefinition> {
+    pub fn attribute_definition(&self) -> std::option::Option<& crate::model::FacetAttributeDefinition> {
         self.attribute_definition.as_ref()
     }
     /// <p>An attribute reference that is associated with the attribute. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
-    pub fn attribute_reference(
-        &self,
-    ) -> std::option::Option<&crate::model::FacetAttributeReference> {
+    pub fn attribute_reference(&self) -> std::option::Option<& crate::model::FacetAttributeReference> {
         self.attribute_reference.as_ref()
     }
     /// <p>The required behavior of the <code>FacetAttribute</code>.</p>
-    pub fn required_behavior(
-        &self,
-    ) -> std::option::Option<&crate::model::RequiredAttributeBehavior> {
+    pub fn required_behavior(&self) -> std::option::Option<& crate::model::RequiredAttributeBehavior> {
         self.required_behavior.as_ref()
     }
 }
 /// See [`FacetAttribute`](crate::model::FacetAttribute).
 pub mod facet_attribute {
-
+    
     /// A builder for [`FacetAttribute`](crate::model::FacetAttribute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) attribute_definition:
-            std::option::Option<crate::model::FacetAttributeDefinition>,
+        pub(crate) attribute_definition: std::option::Option<crate::model::FacetAttributeDefinition>,
         pub(crate) attribute_reference: std::option::Option<crate::model::FacetAttributeReference>,
         pub(crate) required_behavior: std::option::Option<crate::model::RequiredAttributeBehavior>,
     }
@@ -1806,24 +1640,16 @@ pub mod facet_attribute {
         }
         /// <p>The name of the facet attribute.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A facet attribute consists of either a definition or a reference. This structure contains the attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
-        pub fn attribute_definition(
-            mut self,
-            input: crate::model::FacetAttributeDefinition,
-        ) -> Self {
+        pub fn attribute_definition(mut self, input: crate::model::FacetAttributeDefinition) -> Self {
             self.attribute_definition = Some(input);
             self
         }
         /// <p>A facet attribute consists of either a definition or a reference. This structure contains the attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
-        pub fn set_attribute_definition(
-            mut self,
-            input: std::option::Option<crate::model::FacetAttributeDefinition>,
-        ) -> Self {
-            self.attribute_definition = input;
-            self
+        pub fn set_attribute_definition(mut self, input: std::option::Option<crate::model::FacetAttributeDefinition>) -> Self {
+            self.attribute_definition = input; self
         }
         /// <p>An attribute reference that is associated with the attribute. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
         pub fn attribute_reference(mut self, input: crate::model::FacetAttributeReference) -> Self {
@@ -1831,12 +1657,8 @@ pub mod facet_attribute {
             self
         }
         /// <p>An attribute reference that is associated with the attribute. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
-        pub fn set_attribute_reference(
-            mut self,
-            input: std::option::Option<crate::model::FacetAttributeReference>,
-        ) -> Self {
-            self.attribute_reference = input;
-            self
+        pub fn set_attribute_reference(mut self, input: std::option::Option<crate::model::FacetAttributeReference>) -> Self {
+            self.attribute_reference = input; self
         }
         /// <p>The required behavior of the <code>FacetAttribute</code>.</p>
         pub fn required_behavior(mut self, input: crate::model::RequiredAttributeBehavior) -> Self {
@@ -1844,23 +1666,25 @@ pub mod facet_attribute {
             self
         }
         /// <p>The required behavior of the <code>FacetAttribute</code>.</p>
-        pub fn set_required_behavior(
-            mut self,
-            input: std::option::Option<crate::model::RequiredAttributeBehavior>,
-        ) -> Self {
-            self.required_behavior = input;
-            self
+        pub fn set_required_behavior(mut self, input: std::option::Option<crate::model::RequiredAttributeBehavior>) -> Self {
+            self.required_behavior = input; self
         }
         /// Consumes the builder and constructs a [`FacetAttribute`](crate::model::FacetAttribute).
         pub fn build(self) -> crate::model::FacetAttribute {
             crate::model::FacetAttribute {
-                name: self.name,
-                attribute_definition: self.attribute_definition,
-                attribute_reference: self.attribute_reference,
-                required_behavior: self.required_behavior,
+                name: self.name
+                ,
+                attribute_definition: self.attribute_definition
+                ,
+                attribute_reference: self.attribute_reference
+                ,
+                required_behavior: self.required_behavior
+                ,
             }
         }
     }
+    
+    
 }
 impl FacetAttribute {
     /// Creates a new builder-style object to manufacture [`FacetAttribute`](crate::model::FacetAttribute).
@@ -1872,7 +1696,7 @@ impl FacetAttribute {
 /// <p>The facet attribute reference that specifies the attribute definition that contains the attribute facet name and attribute name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FacetAttributeReference {
+pub struct FacetAttributeReference  {
     /// <p>The target facet name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     #[doc(hidden)]
     pub target_facet_name: std::option::Option<std::string::String>,
@@ -1882,17 +1706,17 @@ pub struct FacetAttributeReference {
 }
 impl FacetAttributeReference {
     /// <p>The target facet name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
-    pub fn target_facet_name(&self) -> std::option::Option<&str> {
+    pub fn target_facet_name(&self) -> std::option::Option<& str> {
         self.target_facet_name.as_deref()
     }
     /// <p>The target attribute name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
-    pub fn target_attribute_name(&self) -> std::option::Option<&str> {
+    pub fn target_attribute_name(&self) -> std::option::Option<& str> {
         self.target_attribute_name.as_deref()
     }
 }
 /// See [`FacetAttributeReference`](crate::model::FacetAttributeReference).
 pub mod facet_attribute_reference {
-
+    
     /// A builder for [`FacetAttributeReference`](crate::model::FacetAttributeReference).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1906,12 +1730,8 @@ pub mod facet_attribute_reference {
             self
         }
         /// <p>The target facet name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
-        pub fn set_target_facet_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_facet_name = input;
-            self
+        pub fn set_target_facet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_facet_name = input; self
         }
         /// <p>The target attribute name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
         pub fn target_attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1919,21 +1739,21 @@ pub mod facet_attribute_reference {
             self
         }
         /// <p>The target attribute name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
-        pub fn set_target_attribute_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_attribute_name = input;
-            self
+        pub fn set_target_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_attribute_name = input; self
         }
         /// Consumes the builder and constructs a [`FacetAttributeReference`](crate::model::FacetAttributeReference).
         pub fn build(self) -> crate::model::FacetAttributeReference {
             crate::model::FacetAttributeReference {
-                target_facet_name: self.target_facet_name,
-                target_attribute_name: self.target_attribute_name,
+                target_facet_name: self.target_facet_name
+                ,
+                target_attribute_name: self.target_attribute_name
+                ,
             }
         }
     }
+    
+    
 }
 impl FacetAttributeReference {
     /// Creates a new builder-style object to manufacture [`FacetAttributeReference`](crate::model::FacetAttributeReference).
@@ -1945,7 +1765,7 @@ impl FacetAttributeReference {
 /// <p>A facet attribute definition. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FacetAttributeDefinition {
+pub struct FacetAttributeDefinition  {
     /// <p>The type of the attribute.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::FacetAttributeType>,
@@ -1957,16 +1777,15 @@ pub struct FacetAttributeDefinition {
     pub is_immutable: bool,
     /// <p>Validation rules attached to the attribute definition.</p>
     #[doc(hidden)]
-    pub rules:
-        std::option::Option<std::collections::HashMap<std::string::String, crate::model::Rule>>,
+    pub rules: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Rule>>,
 }
 impl FacetAttributeDefinition {
     /// <p>The type of the attribute.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::FacetAttributeType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::FacetAttributeType> {
         self.r#type.as_ref()
     }
     /// <p>The default value of the attribute (if configured).</p>
-    pub fn default_value(&self) -> std::option::Option<&crate::model::TypedAttributeValue> {
+    pub fn default_value(&self) -> std::option::Option<& crate::model::TypedAttributeValue> {
         self.default_value.as_ref()
     }
     /// <p>Whether the attribute is mutable or not.</p>
@@ -1974,24 +1793,20 @@ impl FacetAttributeDefinition {
         self.is_immutable
     }
     /// <p>Validation rules attached to the attribute definition.</p>
-    pub fn rules(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Rule>>
-    {
+    pub fn rules(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::Rule>> {
         self.rules.as_ref()
     }
 }
 /// See [`FacetAttributeDefinition`](crate::model::FacetAttributeDefinition).
 pub mod facet_attribute_definition {
-
+    
     /// A builder for [`FacetAttributeDefinition`](crate::model::FacetAttributeDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::FacetAttributeType>,
         pub(crate) default_value: std::option::Option<crate::model::TypedAttributeValue>,
         pub(crate) is_immutable: std::option::Option<bool>,
-        pub(crate) rules:
-            std::option::Option<std::collections::HashMap<std::string::String, crate::model::Rule>>,
+        pub(crate) rules: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Rule>>,
     }
     impl Builder {
         /// <p>The type of the attribute.</p>
@@ -2000,12 +1815,8 @@ pub mod facet_attribute_definition {
             self
         }
         /// <p>The type of the attribute.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::FacetAttributeType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::FacetAttributeType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The default value of the attribute (if configured).</p>
         pub fn default_value(mut self, input: crate::model::TypedAttributeValue) -> Self {
@@ -2013,12 +1824,8 @@ pub mod facet_attribute_definition {
             self
         }
         /// <p>The default value of the attribute (if configured).</p>
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<crate::model::TypedAttributeValue>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<crate::model::TypedAttributeValue>) -> Self {
+            self.default_value = input; self
         }
         /// <p>Whether the attribute is mutable or not.</p>
         pub fn is_immutable(mut self, input: bool) -> Self {
@@ -2027,8 +1834,7 @@ pub mod facet_attribute_definition {
         }
         /// <p>Whether the attribute is mutable or not.</p>
         pub fn set_is_immutable(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_immutable = input;
-            self
+            self.is_immutable = input; self
         }
         /// Adds a key-value pair to `rules`.
         ///
@@ -2037,30 +1843,31 @@ pub mod facet_attribute_definition {
         /// <p>Validation rules attached to the attribute definition.</p>
         pub fn rules(mut self, k: impl Into<std::string::String>, v: crate::model::Rule) -> Self {
             let mut hash_map = self.rules.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.rules = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.rules = Some(hash_map);
+                            self
         }
         /// <p>Validation rules attached to the attribute definition.</p>
-        pub fn set_rules(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::Rule>,
-            >,
-        ) -> Self {
-            self.rules = input;
-            self
+        pub fn set_rules(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Rule>>) -> Self {
+            self.rules = input; self
         }
         /// Consumes the builder and constructs a [`FacetAttributeDefinition`](crate::model::FacetAttributeDefinition).
         pub fn build(self) -> crate::model::FacetAttributeDefinition {
             crate::model::FacetAttributeDefinition {
-                r#type: self.r#type,
-                default_value: self.default_value,
-                is_immutable: self.is_immutable.unwrap_or_default(),
-                rules: self.rules,
+                r#type: self.r#type
+                ,
+                default_value: self.default_value
+                ,
+                is_immutable: self.is_immutable
+                    .unwrap_or_default()
+                ,
+                rules: self.rules
+                ,
             }
         }
     }
+    
+    
 }
 impl FacetAttributeDefinition {
     /// Creates a new builder-style object to manufacture [`FacetAttributeDefinition`](crate::model::FacetAttributeDefinition).
@@ -2072,7 +1879,7 @@ impl FacetAttributeDefinition {
 /// <p>The tag structure that contains a tag key and value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key that is associated with the tag.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -2082,17 +1889,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key that is associated with the tag.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value that is associated with the tag.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2107,8 +1914,7 @@ pub mod tag {
         }
         /// <p>The key that is associated with the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value that is associated with the tag.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2117,17 +1923,20 @@ pub mod tag {
         }
         /// <p>The value that is associated with the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -2139,7 +1948,7 @@ impl Tag {
 /// <p>A facet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SchemaFacet {
+pub struct SchemaFacet  {
     /// <p>The ARN of the schema that contains the facet with no minor component. See <code>arns</code> and <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place Schema Upgrade</a> for a description of when to provide minor versions. If this value is set, FacetName must also be set.</p>
     #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
@@ -2149,17 +1958,17 @@ pub struct SchemaFacet {
 }
 impl SchemaFacet {
     /// <p>The ARN of the schema that contains the facet with no minor component. See <code>arns</code> and <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place Schema Upgrade</a> for a description of when to provide minor versions. If this value is set, FacetName must also be set.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> std::option::Option<& str> {
         self.schema_arn.as_deref()
     }
     /// <p>The name of the facet. If this value is set, SchemaArn must also be set.</p>
-    pub fn facet_name(&self) -> std::option::Option<&str> {
+    pub fn facet_name(&self) -> std::option::Option<& str> {
         self.facet_name.as_deref()
     }
 }
 /// See [`SchemaFacet`](crate::model::SchemaFacet).
 pub mod schema_facet {
-
+    
     /// A builder for [`SchemaFacet`](crate::model::SchemaFacet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2174,8 +1983,7 @@ pub mod schema_facet {
         }
         /// <p>The ARN of the schema that contains the facet with no minor component. See <code>arns</code> and <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place Schema Upgrade</a> for a description of when to provide minor versions. If this value is set, FacetName must also be set.</p>
         pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema_arn = input;
-            self
+            self.schema_arn = input; self
         }
         /// <p>The name of the facet. If this value is set, SchemaArn must also be set.</p>
         pub fn facet_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2184,17 +1992,20 @@ pub mod schema_facet {
         }
         /// <p>The name of the facet. If this value is set, SchemaArn must also be set.</p>
         pub fn set_facet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.facet_name = input;
-            self
+            self.facet_name = input; self
         }
         /// Consumes the builder and constructs a [`SchemaFacet`](crate::model::SchemaFacet).
         pub fn build(self) -> crate::model::SchemaFacet {
             crate::model::SchemaFacet {
-                schema_arn: self.schema_arn,
-                facet_name: self.facet_name,
+                schema_arn: self.schema_arn
+                ,
+                facet_name: self.facet_name
+                ,
             }
         }
     }
+    
+    
 }
 impl SchemaFacet {
     /// Creates a new builder-style object to manufacture [`SchemaFacet`](crate::model::SchemaFacet).
@@ -2206,7 +2017,7 @@ impl SchemaFacet {
 /// <p>Used when a regular object exists in a <code>Directory</code> and you want to find all of the policies that are associated with that object and the parent to that object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicyToPath {
+pub struct PolicyToPath  {
     /// <p>The path that is referenced from the root.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
@@ -2216,17 +2027,17 @@ pub struct PolicyToPath {
 }
 impl PolicyToPath {
     /// <p>The path that is referenced from the root.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>List of policy objects.</p>
-    pub fn policies(&self) -> std::option::Option<&[crate::model::PolicyAttachment]> {
+    pub fn policies(&self) -> std::option::Option<& [crate::model::PolicyAttachment]> {
         self.policies.as_deref()
     }
 }
 /// See [`PolicyToPath`](crate::model::PolicyToPath).
 pub mod policy_to_path {
-
+    
     /// A builder for [`PolicyToPath`](crate::model::PolicyToPath).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2241,8 +2052,7 @@ pub mod policy_to_path {
         }
         /// <p>The path that is referenced from the root.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// Appends an item to `policies`.
         ///
@@ -2251,26 +2061,26 @@ pub mod policy_to_path {
         /// <p>List of policy objects.</p>
         pub fn policies(mut self, input: crate::model::PolicyAttachment) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input);
-            self.policies = Some(v);
-            self
+                            v.push(input);
+                            self.policies = Some(v);
+                            self
         }
         /// <p>List of policy objects.</p>
-        pub fn set_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PolicyAttachment>>,
-        ) -> Self {
-            self.policies = input;
-            self
+        pub fn set_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicyAttachment>>) -> Self {
+            self.policies = input; self
         }
         /// Consumes the builder and constructs a [`PolicyToPath`](crate::model::PolicyToPath).
         pub fn build(self) -> crate::model::PolicyToPath {
             crate::model::PolicyToPath {
-                path: self.path,
-                policies: self.policies,
+                path: self.path
+                ,
+                policies: self.policies
+                ,
             }
         }
     }
+    
+    
 }
 impl PolicyToPath {
     /// Creates a new builder-style object to manufacture [`PolicyToPath`](crate::model::PolicyToPath).
@@ -2282,7 +2092,7 @@ impl PolicyToPath {
 /// <p>Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code> to which it is attached. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicyAttachment {
+pub struct PolicyAttachment  {
     /// <p>The ID of <code>PolicyAttachment</code>.</p>
     #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
@@ -2295,21 +2105,21 @@ pub struct PolicyAttachment {
 }
 impl PolicyAttachment {
     /// <p>The ID of <code>PolicyAttachment</code>.</p>
-    pub fn policy_id(&self) -> std::option::Option<&str> {
+    pub fn policy_id(&self) -> std::option::Option<& str> {
         self.policy_id.as_deref()
     }
     /// <p>The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.</p>
-    pub fn object_identifier(&self) -> std::option::Option<&str> {
+    pub fn object_identifier(&self) -> std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
     /// <p>The type of policy that can be associated with <code>PolicyAttachment</code>.</p>
-    pub fn policy_type(&self) -> std::option::Option<&str> {
+    pub fn policy_type(&self) -> std::option::Option<& str> {
         self.policy_type.as_deref()
     }
 }
 /// See [`PolicyAttachment`](crate::model::PolicyAttachment).
 pub mod policy_attachment {
-
+    
     /// A builder for [`PolicyAttachment`](crate::model::PolicyAttachment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2325,8 +2135,7 @@ pub mod policy_attachment {
         }
         /// <p>The ID of <code>PolicyAttachment</code>.</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_id = input;
-            self
+            self.policy_id = input; self
         }
         /// <p>The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.</p>
         pub fn object_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2334,12 +2143,8 @@ pub mod policy_attachment {
             self
         }
         /// <p>The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.</p>
-        pub fn set_object_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_identifier = input;
-            self
+        pub fn set_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_identifier = input; self
         }
         /// <p>The type of policy that can be associated with <code>PolicyAttachment</code>.</p>
         pub fn policy_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2348,18 +2153,22 @@ pub mod policy_attachment {
         }
         /// <p>The type of policy that can be associated with <code>PolicyAttachment</code>.</p>
         pub fn set_policy_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_type = input;
-            self
+            self.policy_type = input; self
         }
         /// Consumes the builder and constructs a [`PolicyAttachment`](crate::model::PolicyAttachment).
         pub fn build(self) -> crate::model::PolicyAttachment {
             crate::model::PolicyAttachment {
-                policy_id: self.policy_id,
-                object_identifier: self.object_identifier,
-                policy_type: self.policy_type,
+                policy_id: self.policy_id
+                ,
+                object_identifier: self.object_identifier
+                ,
+                policy_type: self.policy_type
+                ,
             }
         }
     }
+    
+    
 }
 impl PolicyAttachment {
     /// Creates a new builder-style object to manufacture [`PolicyAttachment`](crate::model::PolicyAttachment).
@@ -2374,9 +2183,9 @@ impl PolicyAttachment {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let consistencylevel = unimplemented!();
 /// match consistencylevel {
@@ -2398,58 +2207,52 @@ impl PolicyAttachment {
 /// Specifically, when `consistencylevel` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConsistencyLevel::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConsistencyLevel {
     #[allow(missing_docs)] // documentation missing in model
     Eventual,
     #[allow(missing_docs)] // documentation missing in model
     Serializable,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConsistencyLevel {
     fn from(s: &str) -> Self {
         match s {
             "EVENTUAL" => ConsistencyLevel::Eventual,
             "SERIALIZABLE" => ConsistencyLevel::Serializable,
-            other => ConsistencyLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ConsistencyLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConsistencyLevel {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConsistencyLevel::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConsistencyLevel::from(s))
+                }
+            }
 impl ConsistencyLevel {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConsistencyLevel::Eventual => "EVENTUAL",
             ConsistencyLevel::Serializable => "SERIALIZABLE",
-            ConsistencyLevel::Unknown(value) => value.as_str(),
+            ConsistencyLevel::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EVENTUAL", "SERIALIZABLE"]
+        &[
+            "EVENTUAL", "SERIALIZABLE"
+        ]
     }
 }
 impl AsRef<str> for ConsistencyLevel {
@@ -2461,7 +2264,7 @@ impl AsRef<str> for ConsistencyLevel {
 /// <p>Identifies the range of attributes that are used by a specified filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TypedLinkAttributeRange {
+pub struct TypedLinkAttributeRange  {
     /// <p>The unique name of the typed link attribute.</p>
     #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
@@ -2471,17 +2274,17 @@ pub struct TypedLinkAttributeRange {
 }
 impl TypedLinkAttributeRange {
     /// <p>The unique name of the typed link attribute.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
     /// <p>The range of attribute values that are being selected.</p>
-    pub fn range(&self) -> std::option::Option<&crate::model::TypedAttributeValueRange> {
+    pub fn range(&self) -> std::option::Option<& crate::model::TypedAttributeValueRange> {
         self.range.as_ref()
     }
 }
 /// See [`TypedLinkAttributeRange`](crate::model::TypedLinkAttributeRange).
 pub mod typed_link_attribute_range {
-
+    
     /// A builder for [`TypedLinkAttributeRange`](crate::model::TypedLinkAttributeRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2495,12 +2298,8 @@ pub mod typed_link_attribute_range {
             self
         }
         /// <p>The unique name of the typed link attribute.</p>
-        pub fn set_attribute_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attribute_name = input;
-            self
+        pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attribute_name = input; self
         }
         /// <p>The range of attribute values that are being selected.</p>
         pub fn range(mut self, input: crate::model::TypedAttributeValueRange) -> Self {
@@ -2508,21 +2307,21 @@ pub mod typed_link_attribute_range {
             self
         }
         /// <p>The range of attribute values that are being selected.</p>
-        pub fn set_range(
-            mut self,
-            input: std::option::Option<crate::model::TypedAttributeValueRange>,
-        ) -> Self {
-            self.range = input;
-            self
+        pub fn set_range(mut self, input: std::option::Option<crate::model::TypedAttributeValueRange>) -> Self {
+            self.range = input; self
         }
         /// Consumes the builder and constructs a [`TypedLinkAttributeRange`](crate::model::TypedLinkAttributeRange).
         pub fn build(self) -> crate::model::TypedLinkAttributeRange {
             crate::model::TypedLinkAttributeRange {
-                attribute_name: self.attribute_name,
-                range: self.range,
+                attribute_name: self.attribute_name
+                ,
+                range: self.range
+                ,
             }
         }
     }
+    
+    
 }
 impl TypedLinkAttributeRange {
     /// Creates a new builder-style object to manufacture [`TypedLinkAttributeRange`](crate::model::TypedLinkAttributeRange).
@@ -2534,7 +2333,7 @@ impl TypedLinkAttributeRange {
 /// <p>A range of attribute values. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_range_filters.html">Range Filters</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TypedAttributeValueRange {
+pub struct TypedAttributeValueRange  {
     /// <p>The inclusive or exclusive range start.</p>
     #[doc(hidden)]
     pub start_mode: std::option::Option<crate::model::RangeMode>,
@@ -2550,25 +2349,25 @@ pub struct TypedAttributeValueRange {
 }
 impl TypedAttributeValueRange {
     /// <p>The inclusive or exclusive range start.</p>
-    pub fn start_mode(&self) -> std::option::Option<&crate::model::RangeMode> {
+    pub fn start_mode(&self) -> std::option::Option<& crate::model::RangeMode> {
         self.start_mode.as_ref()
     }
     /// <p>The value to start the range at.</p>
-    pub fn start_value(&self) -> std::option::Option<&crate::model::TypedAttributeValue> {
+    pub fn start_value(&self) -> std::option::Option<& crate::model::TypedAttributeValue> {
         self.start_value.as_ref()
     }
     /// <p>The inclusive or exclusive range end.</p>
-    pub fn end_mode(&self) -> std::option::Option<&crate::model::RangeMode> {
+    pub fn end_mode(&self) -> std::option::Option<& crate::model::RangeMode> {
         self.end_mode.as_ref()
     }
     /// <p>The attribute value to terminate the range at.</p>
-    pub fn end_value(&self) -> std::option::Option<&crate::model::TypedAttributeValue> {
+    pub fn end_value(&self) -> std::option::Option<& crate::model::TypedAttributeValue> {
         self.end_value.as_ref()
     }
 }
 /// See [`TypedAttributeValueRange`](crate::model::TypedAttributeValueRange).
 pub mod typed_attribute_value_range {
-
+    
     /// A builder for [`TypedAttributeValueRange`](crate::model::TypedAttributeValueRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2584,12 +2383,8 @@ pub mod typed_attribute_value_range {
             self
         }
         /// <p>The inclusive or exclusive range start.</p>
-        pub fn set_start_mode(
-            mut self,
-            input: std::option::Option<crate::model::RangeMode>,
-        ) -> Self {
-            self.start_mode = input;
-            self
+        pub fn set_start_mode(mut self, input: std::option::Option<crate::model::RangeMode>) -> Self {
+            self.start_mode = input; self
         }
         /// <p>The value to start the range at.</p>
         pub fn start_value(mut self, input: crate::model::TypedAttributeValue) -> Self {
@@ -2597,12 +2392,8 @@ pub mod typed_attribute_value_range {
             self
         }
         /// <p>The value to start the range at.</p>
-        pub fn set_start_value(
-            mut self,
-            input: std::option::Option<crate::model::TypedAttributeValue>,
-        ) -> Self {
-            self.start_value = input;
-            self
+        pub fn set_start_value(mut self, input: std::option::Option<crate::model::TypedAttributeValue>) -> Self {
+            self.start_value = input; self
         }
         /// <p>The inclusive or exclusive range end.</p>
         pub fn end_mode(mut self, input: crate::model::RangeMode) -> Self {
@@ -2611,8 +2402,7 @@ pub mod typed_attribute_value_range {
         }
         /// <p>The inclusive or exclusive range end.</p>
         pub fn set_end_mode(mut self, input: std::option::Option<crate::model::RangeMode>) -> Self {
-            self.end_mode = input;
-            self
+            self.end_mode = input; self
         }
         /// <p>The attribute value to terminate the range at.</p>
         pub fn end_value(mut self, input: crate::model::TypedAttributeValue) -> Self {
@@ -2620,23 +2410,25 @@ pub mod typed_attribute_value_range {
             self
         }
         /// <p>The attribute value to terminate the range at.</p>
-        pub fn set_end_value(
-            mut self,
-            input: std::option::Option<crate::model::TypedAttributeValue>,
-        ) -> Self {
-            self.end_value = input;
-            self
+        pub fn set_end_value(mut self, input: std::option::Option<crate::model::TypedAttributeValue>) -> Self {
+            self.end_value = input; self
         }
         /// Consumes the builder and constructs a [`TypedAttributeValueRange`](crate::model::TypedAttributeValueRange).
         pub fn build(self) -> crate::model::TypedAttributeValueRange {
             crate::model::TypedAttributeValueRange {
-                start_mode: self.start_mode,
-                start_value: self.start_value,
-                end_mode: self.end_mode,
-                end_value: self.end_value,
+                start_mode: self.start_mode
+                ,
+                start_value: self.start_value
+                ,
+                end_mode: self.end_mode
+                ,
+                end_value: self.end_value
+                ,
             }
         }
     }
+    
+    
 }
 impl TypedAttributeValueRange {
     /// Creates a new builder-style object to manufacture [`TypedAttributeValueRange`](crate::model::TypedAttributeValueRange).
@@ -2651,9 +2443,9 @@ impl TypedAttributeValueRange {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let rangemode = unimplemented!();
 /// match rangemode {
@@ -2678,22 +2470,14 @@ impl TypedAttributeValueRange {
 /// Specifically, when `rangemode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RangeMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RangeMode {
     #[allow(missing_docs)] // documentation missing in model
     Exclusive,
@@ -2706,7 +2490,7 @@ pub enum RangeMode {
     #[allow(missing_docs)] // documentation missing in model
     LastBeforeMissingValues,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RangeMode {
     fn from(s: &str) -> Self {
@@ -2716,17 +2500,17 @@ impl std::convert::From<&str> for RangeMode {
             "INCLUSIVE" => RangeMode::Inclusive,
             "LAST" => RangeMode::Last,
             "LAST_BEFORE_MISSING_VALUES" => RangeMode::LastBeforeMissingValues,
-            other => RangeMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RangeMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RangeMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RangeMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RangeMode::from(s))
+                }
+            }
 impl RangeMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2736,17 +2520,13 @@ impl RangeMode {
             RangeMode::Inclusive => "INCLUSIVE",
             RangeMode::Last => "LAST",
             RangeMode::LastBeforeMissingValues => "LAST_BEFORE_MISSING_VALUES",
-            RangeMode::Unknown(value) => value.as_str(),
+            RangeMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "EXCLUSIVE",
-            "FIRST",
-            "INCLUSIVE",
-            "LAST",
-            "LAST_BEFORE_MISSING_VALUES",
+            "EXCLUSIVE", "FIRST", "INCLUSIVE", "LAST", "LAST_BEFORE_MISSING_VALUES"
         ]
     }
 }
@@ -2759,7 +2539,7 @@ impl AsRef<str> for RangeMode {
 /// <p>A pair of ObjectIdentifier and LinkName.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObjectIdentifierAndLinkNameTuple {
+pub struct ObjectIdentifierAndLinkNameTuple  {
     /// <p>The ID that is associated with the object.</p>
     #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
@@ -2769,17 +2549,17 @@ pub struct ObjectIdentifierAndLinkNameTuple {
 }
 impl ObjectIdentifierAndLinkNameTuple {
     /// <p>The ID that is associated with the object.</p>
-    pub fn object_identifier(&self) -> std::option::Option<&str> {
+    pub fn object_identifier(&self) -> std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
     /// <p>The name of the link between the parent and the child object.</p>
-    pub fn link_name(&self) -> std::option::Option<&str> {
+    pub fn link_name(&self) -> std::option::Option<& str> {
         self.link_name.as_deref()
     }
 }
 /// See [`ObjectIdentifierAndLinkNameTuple`](crate::model::ObjectIdentifierAndLinkNameTuple).
 pub mod object_identifier_and_link_name_tuple {
-
+    
     /// A builder for [`ObjectIdentifierAndLinkNameTuple`](crate::model::ObjectIdentifierAndLinkNameTuple).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2793,12 +2573,8 @@ pub mod object_identifier_and_link_name_tuple {
             self
         }
         /// <p>The ID that is associated with the object.</p>
-        pub fn set_object_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_identifier = input;
-            self
+        pub fn set_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_identifier = input; self
         }
         /// <p>The name of the link between the parent and the child object.</p>
         pub fn link_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2807,17 +2583,20 @@ pub mod object_identifier_and_link_name_tuple {
         }
         /// <p>The name of the link between the parent and the child object.</p>
         pub fn set_link_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.link_name = input;
-            self
+            self.link_name = input; self
         }
         /// Consumes the builder and constructs a [`ObjectIdentifierAndLinkNameTuple`](crate::model::ObjectIdentifierAndLinkNameTuple).
         pub fn build(self) -> crate::model::ObjectIdentifierAndLinkNameTuple {
             crate::model::ObjectIdentifierAndLinkNameTuple {
-                object_identifier: self.object_identifier,
-                link_name: self.link_name,
+                object_identifier: self.object_identifier
+                ,
+                link_name: self.link_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ObjectIdentifierAndLinkNameTuple {
     /// Creates a new builder-style object to manufacture [`ObjectIdentifierAndLinkNameTuple`](crate::model::ObjectIdentifierAndLinkNameTuple).
@@ -2829,7 +2608,7 @@ impl ObjectIdentifierAndLinkNameTuple {
 /// <p>Returns the path to the <code>ObjectIdentifiers</code> that is associated with the directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PathToObjectIdentifiers {
+pub struct PathToObjectIdentifiers  {
     /// <p>The path that is used to identify the object starting from directory root.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
@@ -2839,17 +2618,17 @@ pub struct PathToObjectIdentifiers {
 }
 impl PathToObjectIdentifiers {
     /// <p>The path that is used to identify the object starting from directory root.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>
-    pub fn object_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn object_identifiers(&self) -> std::option::Option<& [std::string::String]> {
         self.object_identifiers.as_deref()
     }
 }
 /// See [`PathToObjectIdentifiers`](crate::model::PathToObjectIdentifiers).
 pub mod path_to_object_identifiers {
-
+    
     /// A builder for [`PathToObjectIdentifiers`](crate::model::PathToObjectIdentifiers).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2864,8 +2643,7 @@ pub mod path_to_object_identifiers {
         }
         /// <p>The path that is used to identify the object starting from directory root.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// Appends an item to `object_identifiers`.
         ///
@@ -2874,26 +2652,26 @@ pub mod path_to_object_identifiers {
         /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>
         pub fn object_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.object_identifiers.unwrap_or_default();
-            v.push(input.into());
-            self.object_identifiers = Some(v);
-            self
+                            v.push(input.into());
+                            self.object_identifiers = Some(v);
+                            self
         }
         /// <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the object in the request.</p>
-        pub fn set_object_identifiers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.object_identifiers = input;
-            self
+        pub fn set_object_identifiers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.object_identifiers = input; self
         }
         /// Consumes the builder and constructs a [`PathToObjectIdentifiers`](crate::model::PathToObjectIdentifiers).
         pub fn build(self) -> crate::model::PathToObjectIdentifiers {
             crate::model::PathToObjectIdentifiers {
-                path: self.path,
-                object_identifiers: self.object_identifiers,
+                path: self.path
+                ,
+                object_identifiers: self.object_identifiers
+                ,
             }
         }
     }
+    
+    
 }
 impl PathToObjectIdentifiers {
     /// Creates a new builder-style object to manufacture [`PathToObjectIdentifiers`](crate::model::PathToObjectIdentifiers).
@@ -2905,7 +2683,7 @@ impl PathToObjectIdentifiers {
 /// <p>The combination of an attribute key and an attribute value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeKeyAndValue {
+pub struct AttributeKeyAndValue  {
     /// <p>The key of the attribute.</p>
     #[doc(hidden)]
     pub key: std::option::Option<crate::model::AttributeKey>,
@@ -2915,17 +2693,17 @@ pub struct AttributeKeyAndValue {
 }
 impl AttributeKeyAndValue {
     /// <p>The key of the attribute.</p>
-    pub fn key(&self) -> std::option::Option<&crate::model::AttributeKey> {
+    pub fn key(&self) -> std::option::Option<& crate::model::AttributeKey> {
         self.key.as_ref()
     }
     /// <p>The value of the attribute.</p>
-    pub fn value(&self) -> std::option::Option<&crate::model::TypedAttributeValue> {
+    pub fn value(&self) -> std::option::Option<& crate::model::TypedAttributeValue> {
         self.value.as_ref()
     }
 }
 /// See [`AttributeKeyAndValue`](crate::model::AttributeKeyAndValue).
 pub mod attribute_key_and_value {
-
+    
     /// A builder for [`AttributeKeyAndValue`](crate::model::AttributeKeyAndValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2940,8 +2718,7 @@ pub mod attribute_key_and_value {
         }
         /// <p>The key of the attribute.</p>
         pub fn set_key(mut self, input: std::option::Option<crate::model::AttributeKey>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value of the attribute.</p>
         pub fn value(mut self, input: crate::model::TypedAttributeValue) -> Self {
@@ -2949,21 +2726,21 @@ pub mod attribute_key_and_value {
             self
         }
         /// <p>The value of the attribute.</p>
-        pub fn set_value(
-            mut self,
-            input: std::option::Option<crate::model::TypedAttributeValue>,
-        ) -> Self {
-            self.value = input;
-            self
+        pub fn set_value(mut self, input: std::option::Option<crate::model::TypedAttributeValue>) -> Self {
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`AttributeKeyAndValue`](crate::model::AttributeKeyAndValue).
         pub fn build(self) -> crate::model::AttributeKeyAndValue {
             crate::model::AttributeKeyAndValue {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl AttributeKeyAndValue {
     /// Creates a new builder-style object to manufacture [`AttributeKeyAndValue`](crate::model::AttributeKeyAndValue).
@@ -2975,7 +2752,7 @@ impl AttributeKeyAndValue {
 /// <p>Represents an index and an attached object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IndexAttachment {
+pub struct IndexAttachment  {
     /// <p>The indexed attribute values.</p>
     #[doc(hidden)]
     pub indexed_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
@@ -2985,22 +2762,21 @@ pub struct IndexAttachment {
 }
 impl IndexAttachment {
     /// <p>The indexed attribute values.</p>
-    pub fn indexed_attributes(&self) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
+    pub fn indexed_attributes(&self) -> std::option::Option<& [crate::model::AttributeKeyAndValue]> {
         self.indexed_attributes.as_deref()
     }
     /// <p>In response to <code>ListIndex</code>, the <code>ObjectIdentifier</code> of the object attached to the index. In response to <code>ListAttachedIndices</code>, the <code>ObjectIdentifier</code> of the index attached to the object. This field will always contain the <code>ObjectIdentifier</code> of the object on the opposite side of the attachment specified in the query.</p>
-    pub fn object_identifier(&self) -> std::option::Option<&str> {
+    pub fn object_identifier(&self) -> std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
 }
 /// See [`IndexAttachment`](crate::model::IndexAttachment).
 pub mod index_attachment {
-
+    
     /// A builder for [`IndexAttachment`](crate::model::IndexAttachment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) indexed_attributes:
-            std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
+        pub(crate) indexed_attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
         pub(crate) object_identifier: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3011,17 +2787,13 @@ pub mod index_attachment {
         /// <p>The indexed attribute values.</p>
         pub fn indexed_attributes(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
             let mut v = self.indexed_attributes.unwrap_or_default();
-            v.push(input);
-            self.indexed_attributes = Some(v);
-            self
+                            v.push(input);
+                            self.indexed_attributes = Some(v);
+                            self
         }
         /// <p>The indexed attribute values.</p>
-        pub fn set_indexed_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
-        ) -> Self {
-            self.indexed_attributes = input;
-            self
+        pub fn set_indexed_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>) -> Self {
+            self.indexed_attributes = input; self
         }
         /// <p>In response to <code>ListIndex</code>, the <code>ObjectIdentifier</code> of the object attached to the index. In response to <code>ListAttachedIndices</code>, the <code>ObjectIdentifier</code> of the index attached to the object. This field will always contain the <code>ObjectIdentifier</code> of the object on the opposite side of the attachment specified in the query.</p>
         pub fn object_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3029,21 +2801,21 @@ pub mod index_attachment {
             self
         }
         /// <p>In response to <code>ListIndex</code>, the <code>ObjectIdentifier</code> of the object attached to the index. In response to <code>ListAttachedIndices</code>, the <code>ObjectIdentifier</code> of the index attached to the object. This field will always contain the <code>ObjectIdentifier</code> of the object on the opposite side of the attachment specified in the query.</p>
-        pub fn set_object_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_identifier = input;
-            self
+        pub fn set_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_identifier = input; self
         }
         /// Consumes the builder and constructs a [`IndexAttachment`](crate::model::IndexAttachment).
         pub fn build(self) -> crate::model::IndexAttachment {
             crate::model::IndexAttachment {
-                indexed_attributes: self.indexed_attributes,
-                object_identifier: self.object_identifier,
+                indexed_attributes: self.indexed_attributes
+                ,
+                object_identifier: self.object_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl IndexAttachment {
     /// Creates a new builder-style object to manufacture [`IndexAttachment`](crate::model::IndexAttachment).
@@ -3055,7 +2827,7 @@ impl IndexAttachment {
 /// <p>A range of attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObjectAttributeRange {
+pub struct ObjectAttributeRange  {
     /// <p>The key of the attribute that the attribute range covers.</p>
     #[doc(hidden)]
     pub attribute_key: std::option::Option<crate::model::AttributeKey>,
@@ -3065,17 +2837,17 @@ pub struct ObjectAttributeRange {
 }
 impl ObjectAttributeRange {
     /// <p>The key of the attribute that the attribute range covers.</p>
-    pub fn attribute_key(&self) -> std::option::Option<&crate::model::AttributeKey> {
+    pub fn attribute_key(&self) -> std::option::Option<& crate::model::AttributeKey> {
         self.attribute_key.as_ref()
     }
     /// <p>The range of attribute values being selected.</p>
-    pub fn range(&self) -> std::option::Option<&crate::model::TypedAttributeValueRange> {
+    pub fn range(&self) -> std::option::Option<& crate::model::TypedAttributeValueRange> {
         self.range.as_ref()
     }
 }
 /// See [`ObjectAttributeRange`](crate::model::ObjectAttributeRange).
 pub mod object_attribute_range {
-
+    
     /// A builder for [`ObjectAttributeRange`](crate::model::ObjectAttributeRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3089,12 +2861,8 @@ pub mod object_attribute_range {
             self
         }
         /// <p>The key of the attribute that the attribute range covers.</p>
-        pub fn set_attribute_key(
-            mut self,
-            input: std::option::Option<crate::model::AttributeKey>,
-        ) -> Self {
-            self.attribute_key = input;
-            self
+        pub fn set_attribute_key(mut self, input: std::option::Option<crate::model::AttributeKey>) -> Self {
+            self.attribute_key = input; self
         }
         /// <p>The range of attribute values being selected.</p>
         pub fn range(mut self, input: crate::model::TypedAttributeValueRange) -> Self {
@@ -3102,21 +2870,21 @@ pub mod object_attribute_range {
             self
         }
         /// <p>The range of attribute values being selected.</p>
-        pub fn set_range(
-            mut self,
-            input: std::option::Option<crate::model::TypedAttributeValueRange>,
-        ) -> Self {
-            self.range = input;
-            self
+        pub fn set_range(mut self, input: std::option::Option<crate::model::TypedAttributeValueRange>) -> Self {
+            self.range = input; self
         }
         /// Consumes the builder and constructs a [`ObjectAttributeRange`](crate::model::ObjectAttributeRange).
         pub fn build(self) -> crate::model::ObjectAttributeRange {
             crate::model::ObjectAttributeRange {
-                attribute_key: self.attribute_key,
-                range: self.range,
+                attribute_key: self.attribute_key
+                ,
+                range: self.range
+                ,
             }
         }
     }
+    
+    
 }
 impl ObjectAttributeRange {
     /// Creates a new builder-style object to manufacture [`ObjectAttributeRange`](crate::model::ObjectAttributeRange).
@@ -3128,7 +2896,7 @@ impl ObjectAttributeRange {
 /// <p>Directory structure that includes the directory name and directory ARN.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Directory {
+pub struct Directory  {
     /// <p>The name of the directory.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3144,25 +2912,25 @@ pub struct Directory {
 }
 impl Directory {
     /// <p>The name of the directory.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the directory. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(&self) -> std::option::Option<&str> {
+    pub fn directory_arn(&self) -> std::option::Option<& str> {
         self.directory_arn.as_deref()
     }
     /// <p>The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::DirectoryState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::DirectoryState> {
         self.state.as_ref()
     }
     /// <p>The date and time when the directory was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
 /// See [`Directory`](crate::model::Directory).
 pub mod directory {
-
+    
     /// A builder for [`Directory`](crate::model::Directory).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3179,8 +2947,7 @@ pub mod directory {
         }
         /// <p>The name of the directory.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the directory. For more information, see <code>arns</code>.</p>
         pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3188,12 +2955,8 @@ pub mod directory {
             self
         }
         /// <p>The Amazon Resource Name (ARN) that is associated with the directory. For more information, see <code>arns</code>.</p>
-        pub fn set_directory_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.directory_arn = input;
-            self
+        pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.directory_arn = input; self
         }
         /// <p>The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.</p>
         pub fn state(mut self, input: crate::model::DirectoryState) -> Self {
@@ -3201,12 +2964,8 @@ pub mod directory {
             self
         }
         /// <p>The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::DirectoryState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::DirectoryState>) -> Self {
+            self.state = input; self
         }
         /// <p>The date and time when the directory was created.</p>
         pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3214,23 +2973,25 @@ pub mod directory {
             self
         }
         /// <p>The date and time when the directory was created.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_date_time = input; self
         }
         /// Consumes the builder and constructs a [`Directory`](crate::model::Directory).
         pub fn build(self) -> crate::model::Directory {
             crate::model::Directory {
-                name: self.name,
-                directory_arn: self.directory_arn,
-                state: self.state,
-                creation_date_time: self.creation_date_time,
+                name: self.name
+                ,
+                directory_arn: self.directory_arn
+                ,
+                state: self.state
+                ,
+                creation_date_time: self.creation_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Directory {
     /// Creates a new builder-style object to manufacture [`Directory`](crate::model::Directory).
@@ -3245,9 +3006,9 @@ impl Directory {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let directorystate = unimplemented!();
 /// match directorystate {
@@ -3270,22 +3031,14 @@ impl Directory {
 /// Specifically, when `directorystate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DirectoryState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DirectoryState {
     #[allow(missing_docs)] // documentation missing in model
     Deleted,
@@ -3294,7 +3047,7 @@ pub enum DirectoryState {
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DirectoryState {
     fn from(s: &str) -> Self {
@@ -3302,17 +3055,17 @@ impl std::convert::From<&str> for DirectoryState {
             "DELETED" => DirectoryState::Deleted,
             "DISABLED" => DirectoryState::Disabled,
             "ENABLED" => DirectoryState::Enabled,
-            other => DirectoryState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DirectoryState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DirectoryState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DirectoryState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DirectoryState::from(s))
+                }
+            }
 impl DirectoryState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3320,12 +3073,14 @@ impl DirectoryState {
             DirectoryState::Deleted => "DELETED",
             DirectoryState::Disabled => "DISABLED",
             DirectoryState::Enabled => "ENABLED",
-            DirectoryState::Unknown(value) => value.as_str(),
+            DirectoryState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DELETED", "DISABLED", "ENABLED"]
+        &[
+            "DELETED", "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for DirectoryState {
@@ -3337,7 +3092,7 @@ impl AsRef<str> for DirectoryState {
 /// <p>A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <code> <code>Rule</code>s</code>, and <code>ObjectTypes</code>. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_whatarefacets.html">Facets</a> for more information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Facet {
+pub struct Facet  {
     /// <p>The name of the <code>Facet</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3350,21 +3105,21 @@ pub struct Facet {
 }
 impl Facet {
     /// <p>The name of the <code>Facet</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
-    pub fn object_type(&self) -> std::option::Option<&crate::model::ObjectType> {
+    pub fn object_type(&self) -> std::option::Option<& crate::model::ObjectType> {
         self.object_type.as_ref()
     }
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
-    pub fn facet_style(&self) -> std::option::Option<&crate::model::FacetStyle> {
+    pub fn facet_style(&self) -> std::option::Option<& crate::model::FacetStyle> {
         self.facet_style.as_ref()
     }
 }
 /// See [`Facet`](crate::model::Facet).
 pub mod facet {
-
+    
     /// A builder for [`Facet`](crate::model::Facet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3380,8 +3135,7 @@ pub mod facet {
         }
         /// <p>The name of the <code>Facet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
         pub fn object_type(mut self, input: crate::model::ObjectType) -> Self {
@@ -3389,12 +3143,8 @@ pub mod facet {
             self
         }
         /// <p>The object type that is associated with the facet. See <code>CreateFacetRequest$ObjectType</code> for more details.</p>
-        pub fn set_object_type(
-            mut self,
-            input: std::option::Option<crate::model::ObjectType>,
-        ) -> Self {
-            self.object_type = input;
-            self
+        pub fn set_object_type(mut self, input: std::option::Option<crate::model::ObjectType>) -> Self {
+            self.object_type = input; self
         }
         /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
         pub fn facet_style(mut self, input: crate::model::FacetStyle) -> Self {
@@ -3402,22 +3152,23 @@ pub mod facet {
             self
         }
         /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
-        pub fn set_facet_style(
-            mut self,
-            input: std::option::Option<crate::model::FacetStyle>,
-        ) -> Self {
-            self.facet_style = input;
-            self
+        pub fn set_facet_style(mut self, input: std::option::Option<crate::model::FacetStyle>) -> Self {
+            self.facet_style = input; self
         }
         /// Consumes the builder and constructs a [`Facet`](crate::model::Facet).
         pub fn build(self) -> crate::model::Facet {
             crate::model::Facet {
-                name: self.name,
-                object_type: self.object_type,
-                facet_style: self.facet_style,
+                name: self.name
+                ,
+                object_type: self.object_type
+                ,
+                facet_style: self.facet_style
+                ,
             }
         }
     }
+    
+    
 }
 impl Facet {
     /// Creates a new builder-style object to manufacture [`Facet`](crate::model::Facet).
@@ -3432,9 +3183,9 @@ impl Facet {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let facetstyle = unimplemented!();
 /// match facetstyle {
@@ -3456,58 +3207,52 @@ impl Facet {
 /// Specifically, when `facetstyle` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FacetStyle::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FacetStyle {
     #[allow(missing_docs)] // documentation missing in model
     Dynamic,
     #[allow(missing_docs)] // documentation missing in model
     Static,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FacetStyle {
     fn from(s: &str) -> Self {
         match s {
             "DYNAMIC" => FacetStyle::Dynamic,
             "STATIC" => FacetStyle::Static,
-            other => FacetStyle::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FacetStyle::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FacetStyle {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FacetStyle::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FacetStyle::from(s))
+                }
+            }
 impl FacetStyle {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FacetStyle::Dynamic => "DYNAMIC",
             FacetStyle::Static => "STATIC",
-            FacetStyle::Unknown(value) => value.as_str(),
+            FacetStyle::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DYNAMIC", "STATIC"]
+        &[
+            "DYNAMIC", "STATIC"
+        ]
     }
 }
 impl AsRef<str> for FacetStyle {
@@ -3519,7 +3264,7 @@ impl AsRef<str> for FacetStyle {
 /// <p>Defines the typed links structure and its attributes. To create a typed link facet, use the <code>CreateTypedLinkFacet</code> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TypedLinkFacet {
+pub struct TypedLinkFacet  {
     /// <p>The unique name of the typed link facet.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3532,29 +3277,27 @@ pub struct TypedLinkFacet {
 }
 impl TypedLinkFacet {
     /// <p>The unique name of the typed link facet.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data values that are related to the link itself, and not to one of the two objects being linked. Identity attributes also serve to distinguish the link from others of the same type between the same objects.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::TypedLinkAttributeDefinition]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::TypedLinkAttributeDefinition]> {
         self.attributes.as_deref()
     }
     /// <p>The set of attributes that distinguish links made from this facet from each other, in the order of significance. Listing typed links can filter on the values of these attributes. See <code>ListOutgoingTypedLinks</code> and <code>ListIncomingTypedLinks</code> for details.</p>
-    pub fn identity_attribute_order(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn identity_attribute_order(&self) -> std::option::Option<& [std::string::String]> {
         self.identity_attribute_order.as_deref()
     }
 }
 /// See [`TypedLinkFacet`](crate::model::TypedLinkFacet).
 pub mod typed_link_facet {
-
+    
     /// A builder for [`TypedLinkFacet`](crate::model::TypedLinkFacet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) attributes:
-            std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeDefinition>>,
-        pub(crate) identity_attribute_order:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeDefinition>>,
+        pub(crate) identity_attribute_order: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The unique name of the typed link facet.</p>
@@ -3564,8 +3307,7 @@ pub mod typed_link_facet {
         }
         /// <p>The unique name of the typed link facet.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `attributes`.
         ///
@@ -3574,17 +3316,13 @@ pub mod typed_link_facet {
         /// <p>A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data values that are related to the link itself, and not to one of the two objects being linked. Identity attributes also serve to distinguish the link from others of the same type between the same objects.</p>
         pub fn attributes(mut self, input: crate::model::TypedLinkAttributeDefinition) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>A set of key-value pairs associated with the typed link. Typed link attributes are used when you have data values that are related to the link itself, and not to one of the two objects being linked. Identity attributes also serve to distinguish the link from others of the same type between the same objects.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeDefinition>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeDefinition>>) -> Self {
+            self.attributes = input; self
         }
         /// Appends an item to `identity_attribute_order`.
         ///
@@ -3593,27 +3331,28 @@ pub mod typed_link_facet {
         /// <p>The set of attributes that distinguish links made from this facet from each other, in the order of significance. Listing typed links can filter on the values of these attributes. See <code>ListOutgoingTypedLinks</code> and <code>ListIncomingTypedLinks</code> for details.</p>
         pub fn identity_attribute_order(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.identity_attribute_order.unwrap_or_default();
-            v.push(input.into());
-            self.identity_attribute_order = Some(v);
-            self
+                            v.push(input.into());
+                            self.identity_attribute_order = Some(v);
+                            self
         }
         /// <p>The set of attributes that distinguish links made from this facet from each other, in the order of significance. Listing typed links can filter on the values of these attributes. See <code>ListOutgoingTypedLinks</code> and <code>ListIncomingTypedLinks</code> for details.</p>
-        pub fn set_identity_attribute_order(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.identity_attribute_order = input;
-            self
+        pub fn set_identity_attribute_order(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.identity_attribute_order = input; self
         }
         /// Consumes the builder and constructs a [`TypedLinkFacet`](crate::model::TypedLinkFacet).
         pub fn build(self) -> crate::model::TypedLinkFacet {
             crate::model::TypedLinkFacet {
-                name: self.name,
-                attributes: self.attributes,
-                identity_attribute_order: self.identity_attribute_order,
+                name: self.name
+                ,
+                attributes: self.attributes
+                ,
+                identity_attribute_order: self.identity_attribute_order
+                ,
             }
         }
     }
+    
+    
 }
 impl TypedLinkFacet {
     /// Creates a new builder-style object to manufacture [`TypedLinkFacet`](crate::model::TypedLinkFacet).
@@ -3628,9 +3367,9 @@ impl TypedLinkFacet {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let batchwriteexceptiontype = unimplemented!();
 /// match batchwriteexceptiontype {
@@ -3668,22 +3407,14 @@ impl TypedLinkFacet {
 /// Specifically, when `batchwriteexceptiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BatchWriteExceptionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BatchWriteExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     AccessDeniedException,
@@ -3722,7 +3453,7 @@ pub enum BatchWriteExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     ValidationException,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BatchWriteExceptionType {
     fn from(s: &str) -> Self {
@@ -3730,42 +3461,32 @@ impl std::convert::From<&str> for BatchWriteExceptionType {
             "AccessDeniedException" => BatchWriteExceptionType::AccessDeniedException,
             "DirectoryNotEnabledException" => BatchWriteExceptionType::DirectoryNotEnabledException,
             "FacetValidationException" => BatchWriteExceptionType::FacetValidationException,
-            "IndexedAttributeMissingException" => {
-                BatchWriteExceptionType::IndexedAttributeMissingException
-            }
+            "IndexedAttributeMissingException" => BatchWriteExceptionType::IndexedAttributeMissingException,
             "InternalServiceException" => BatchWriteExceptionType::InternalServiceException,
             "InvalidArnException" => BatchWriteExceptionType::InvalidArnException,
             "InvalidAttachmentException" => BatchWriteExceptionType::InvalidAttachmentException,
             "LimitExceededException" => BatchWriteExceptionType::LimitExceededException,
-            "LinkNameAlreadyInUseException" => {
-                BatchWriteExceptionType::LinkNameAlreadyInUseException
-            }
+            "LinkNameAlreadyInUseException" => BatchWriteExceptionType::LinkNameAlreadyInUseException,
             "NotIndexException" => BatchWriteExceptionType::NotIndexException,
             "NotNodeException" => BatchWriteExceptionType::NotNodeException,
             "NotPolicyException" => BatchWriteExceptionType::NotPolicyException,
-            "ObjectAlreadyDetachedException" => {
-                BatchWriteExceptionType::ObjectAlreadyDetachedException
-            }
+            "ObjectAlreadyDetachedException" => BatchWriteExceptionType::ObjectAlreadyDetachedException,
             "ObjectNotDetachedException" => BatchWriteExceptionType::ObjectNotDetachedException,
             "ResourceNotFoundException" => BatchWriteExceptionType::ResourceNotFoundException,
             "StillContainsLinksException" => BatchWriteExceptionType::StillContainsLinksException,
-            "UnsupportedIndexTypeException" => {
-                BatchWriteExceptionType::UnsupportedIndexTypeException
-            }
+            "UnsupportedIndexTypeException" => BatchWriteExceptionType::UnsupportedIndexTypeException,
             "ValidationException" => BatchWriteExceptionType::ValidationException,
-            other => BatchWriteExceptionType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BatchWriteExceptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BatchWriteExceptionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BatchWriteExceptionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BatchWriteExceptionType::from(s))
+                }
+            }
 impl BatchWriteExceptionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3773,53 +3494,28 @@ impl BatchWriteExceptionType {
             BatchWriteExceptionType::AccessDeniedException => "AccessDeniedException",
             BatchWriteExceptionType::DirectoryNotEnabledException => "DirectoryNotEnabledException",
             BatchWriteExceptionType::FacetValidationException => "FacetValidationException",
-            BatchWriteExceptionType::IndexedAttributeMissingException => {
-                "IndexedAttributeMissingException"
-            }
+            BatchWriteExceptionType::IndexedAttributeMissingException => "IndexedAttributeMissingException",
             BatchWriteExceptionType::InternalServiceException => "InternalServiceException",
             BatchWriteExceptionType::InvalidArnException => "InvalidArnException",
             BatchWriteExceptionType::InvalidAttachmentException => "InvalidAttachmentException",
             BatchWriteExceptionType::LimitExceededException => "LimitExceededException",
-            BatchWriteExceptionType::LinkNameAlreadyInUseException => {
-                "LinkNameAlreadyInUseException"
-            }
+            BatchWriteExceptionType::LinkNameAlreadyInUseException => "LinkNameAlreadyInUseException",
             BatchWriteExceptionType::NotIndexException => "NotIndexException",
             BatchWriteExceptionType::NotNodeException => "NotNodeException",
             BatchWriteExceptionType::NotPolicyException => "NotPolicyException",
-            BatchWriteExceptionType::ObjectAlreadyDetachedException => {
-                "ObjectAlreadyDetachedException"
-            }
+            BatchWriteExceptionType::ObjectAlreadyDetachedException => "ObjectAlreadyDetachedException",
             BatchWriteExceptionType::ObjectNotDetachedException => "ObjectNotDetachedException",
             BatchWriteExceptionType::ResourceNotFoundException => "ResourceNotFoundException",
             BatchWriteExceptionType::StillContainsLinksException => "StillContainsLinksException",
-            BatchWriteExceptionType::UnsupportedIndexTypeException => {
-                "UnsupportedIndexTypeException"
-            }
+            BatchWriteExceptionType::UnsupportedIndexTypeException => "UnsupportedIndexTypeException",
             BatchWriteExceptionType::ValidationException => "ValidationException",
-            BatchWriteExceptionType::Unknown(value) => value.as_str(),
+            BatchWriteExceptionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AccessDeniedException",
-            "DirectoryNotEnabledException",
-            "FacetValidationException",
-            "IndexedAttributeMissingException",
-            "InternalServiceException",
-            "InvalidArnException",
-            "InvalidAttachmentException",
-            "LimitExceededException",
-            "LinkNameAlreadyInUseException",
-            "NotIndexException",
-            "NotNodeException",
-            "NotPolicyException",
-            "ObjectAlreadyDetachedException",
-            "ObjectNotDetachedException",
-            "ResourceNotFoundException",
-            "StillContainsLinksException",
-            "UnsupportedIndexTypeException",
-            "ValidationException",
+            "AccessDeniedException", "DirectoryNotEnabledException", "FacetValidationException", "IndexedAttributeMissingException", "InternalServiceException", "InvalidArnException", "InvalidAttachmentException", "LimitExceededException", "LinkNameAlreadyInUseException", "NotIndexException", "NotNodeException", "NotPolicyException", "ObjectAlreadyDetachedException", "ObjectNotDetachedException", "ResourceNotFoundException", "StillContainsLinksException", "UnsupportedIndexTypeException", "ValidationException"
         ]
     }
 }
@@ -3832,7 +3528,7 @@ impl AsRef<str> for BatchWriteExceptionType {
 /// <p>Represents the output of a <code>BatchWrite</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchWriteOperationResponse {
+pub struct BatchWriteOperationResponse  {
     /// <p>Creates an object in a <code>Directory</code>.</p>
     #[doc(hidden)]
     pub create_object: std::option::Option<crate::model::BatchCreateObjectResponse>,
@@ -3844,8 +3540,7 @@ pub struct BatchWriteOperationResponse {
     pub detach_object: std::option::Option<crate::model::BatchDetachObjectResponse>,
     /// <p>Updates a given object’s attributes.</p>
     #[doc(hidden)]
-    pub update_object_attributes:
-        std::option::Option<crate::model::BatchUpdateObjectAttributesResponse>,
+    pub update_object_attributes: std::option::Option<crate::model::BatchUpdateObjectAttributesResponse>,
     /// <p>Deletes an object in a <code>Directory</code>.</p>
     #[doc(hidden)]
     pub delete_object: std::option::Option<crate::model::BatchDeleteObjectResponse>,
@@ -3854,8 +3549,7 @@ pub struct BatchWriteOperationResponse {
     pub add_facet_to_object: std::option::Option<crate::model::BatchAddFacetToObjectResponse>,
     /// <p>The result of a batch remove facet from object operation.</p>
     #[doc(hidden)]
-    pub remove_facet_from_object:
-        std::option::Option<crate::model::BatchRemoveFacetFromObjectResponse>,
+    pub remove_facet_from_object: std::option::Option<crate::model::BatchRemoveFacetFromObjectResponse>,
     /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached policies.</p>
     #[doc(hidden)]
     pub attach_policy: std::option::Option<crate::model::BatchAttachPolicyResponse>,
@@ -3879,115 +3573,91 @@ pub struct BatchWriteOperationResponse {
     pub detach_typed_link: std::option::Option<crate::model::BatchDetachTypedLinkResponse>,
     /// <p>Represents the output of a <code>BatchWrite</code> response operation.</p>
     #[doc(hidden)]
-    pub update_link_attributes:
-        std::option::Option<crate::model::BatchUpdateLinkAttributesResponse>,
+    pub update_link_attributes: std::option::Option<crate::model::BatchUpdateLinkAttributesResponse>,
 }
 impl BatchWriteOperationResponse {
     /// <p>Creates an object in a <code>Directory</code>.</p>
-    pub fn create_object(&self) -> std::option::Option<&crate::model::BatchCreateObjectResponse> {
+    pub fn create_object(&self) -> std::option::Option<& crate::model::BatchCreateObjectResponse> {
         self.create_object.as_ref()
     }
     /// <p>Attaches an object to a <code>Directory</code>.</p>
-    pub fn attach_object(&self) -> std::option::Option<&crate::model::BatchAttachObjectResponse> {
+    pub fn attach_object(&self) -> std::option::Option<& crate::model::BatchAttachObjectResponse> {
         self.attach_object.as_ref()
     }
     /// <p>Detaches an object from a <code>Directory</code>.</p>
-    pub fn detach_object(&self) -> std::option::Option<&crate::model::BatchDetachObjectResponse> {
+    pub fn detach_object(&self) -> std::option::Option<& crate::model::BatchDetachObjectResponse> {
         self.detach_object.as_ref()
     }
     /// <p>Updates a given object’s attributes.</p>
-    pub fn update_object_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchUpdateObjectAttributesResponse> {
+    pub fn update_object_attributes(&self) -> std::option::Option<& crate::model::BatchUpdateObjectAttributesResponse> {
         self.update_object_attributes.as_ref()
     }
     /// <p>Deletes an object in a <code>Directory</code>.</p>
-    pub fn delete_object(&self) -> std::option::Option<&crate::model::BatchDeleteObjectResponse> {
+    pub fn delete_object(&self) -> std::option::Option<& crate::model::BatchDeleteObjectResponse> {
         self.delete_object.as_ref()
     }
     /// <p>The result of an add facet to object batch operation.</p>
-    pub fn add_facet_to_object(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchAddFacetToObjectResponse> {
+    pub fn add_facet_to_object(&self) -> std::option::Option<& crate::model::BatchAddFacetToObjectResponse> {
         self.add_facet_to_object.as_ref()
     }
     /// <p>The result of a batch remove facet from object operation.</p>
-    pub fn remove_facet_from_object(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchRemoveFacetFromObjectResponse> {
+    pub fn remove_facet_from_object(&self) -> std::option::Option<& crate::model::BatchRemoveFacetFromObjectResponse> {
         self.remove_facet_from_object.as_ref()
     }
     /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached policies.</p>
-    pub fn attach_policy(&self) -> std::option::Option<&crate::model::BatchAttachPolicyResponse> {
+    pub fn attach_policy(&self) -> std::option::Option<& crate::model::BatchAttachPolicyResponse> {
         self.attach_policy.as_ref()
     }
     /// <p>Detaches a policy from a <code>Directory</code>.</p>
-    pub fn detach_policy(&self) -> std::option::Option<&crate::model::BatchDetachPolicyResponse> {
+    pub fn detach_policy(&self) -> std::option::Option<& crate::model::BatchDetachPolicyResponse> {
         self.detach_policy.as_ref()
     }
     /// <p>Creates an index object. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and search</a> for more information.</p>
-    pub fn create_index(&self) -> std::option::Option<&crate::model::BatchCreateIndexResponse> {
+    pub fn create_index(&self) -> std::option::Option<& crate::model::BatchCreateIndexResponse> {
         self.create_index.as_ref()
     }
     /// <p>Attaches the specified object to the specified index.</p>
-    pub fn attach_to_index(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchAttachToIndexResponse> {
+    pub fn attach_to_index(&self) -> std::option::Option<& crate::model::BatchAttachToIndexResponse> {
         self.attach_to_index.as_ref()
     }
     /// <p>Detaches the specified object from the specified index.</p>
-    pub fn detach_from_index(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchDetachFromIndexResponse> {
+    pub fn detach_from_index(&self) -> std::option::Option<& crate::model::BatchDetachFromIndexResponse> {
         self.detach_from_index.as_ref()
     }
     /// <p>Attaches a typed link to a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn attach_typed_link(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchAttachTypedLinkResponse> {
+    pub fn attach_typed_link(&self) -> std::option::Option<& crate::model::BatchAttachTypedLinkResponse> {
         self.attach_typed_link.as_ref()
     }
     /// <p>Detaches a typed link from a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn detach_typed_link(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchDetachTypedLinkResponse> {
+    pub fn detach_typed_link(&self) -> std::option::Option<& crate::model::BatchDetachTypedLinkResponse> {
         self.detach_typed_link.as_ref()
     }
     /// <p>Represents the output of a <code>BatchWrite</code> response operation.</p>
-    pub fn update_link_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchUpdateLinkAttributesResponse> {
+    pub fn update_link_attributes(&self) -> std::option::Option<& crate::model::BatchUpdateLinkAttributesResponse> {
         self.update_link_attributes.as_ref()
     }
 }
 /// See [`BatchWriteOperationResponse`](crate::model::BatchWriteOperationResponse).
 pub mod batch_write_operation_response {
-
+    
     /// A builder for [`BatchWriteOperationResponse`](crate::model::BatchWriteOperationResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_object: std::option::Option<crate::model::BatchCreateObjectResponse>,
         pub(crate) attach_object: std::option::Option<crate::model::BatchAttachObjectResponse>,
         pub(crate) detach_object: std::option::Option<crate::model::BatchDetachObjectResponse>,
-        pub(crate) update_object_attributes:
-            std::option::Option<crate::model::BatchUpdateObjectAttributesResponse>,
+        pub(crate) update_object_attributes: std::option::Option<crate::model::BatchUpdateObjectAttributesResponse>,
         pub(crate) delete_object: std::option::Option<crate::model::BatchDeleteObjectResponse>,
-        pub(crate) add_facet_to_object:
-            std::option::Option<crate::model::BatchAddFacetToObjectResponse>,
-        pub(crate) remove_facet_from_object:
-            std::option::Option<crate::model::BatchRemoveFacetFromObjectResponse>,
+        pub(crate) add_facet_to_object: std::option::Option<crate::model::BatchAddFacetToObjectResponse>,
+        pub(crate) remove_facet_from_object: std::option::Option<crate::model::BatchRemoveFacetFromObjectResponse>,
         pub(crate) attach_policy: std::option::Option<crate::model::BatchAttachPolicyResponse>,
         pub(crate) detach_policy: std::option::Option<crate::model::BatchDetachPolicyResponse>,
         pub(crate) create_index: std::option::Option<crate::model::BatchCreateIndexResponse>,
         pub(crate) attach_to_index: std::option::Option<crate::model::BatchAttachToIndexResponse>,
-        pub(crate) detach_from_index:
-            std::option::Option<crate::model::BatchDetachFromIndexResponse>,
-        pub(crate) attach_typed_link:
-            std::option::Option<crate::model::BatchAttachTypedLinkResponse>,
-        pub(crate) detach_typed_link:
-            std::option::Option<crate::model::BatchDetachTypedLinkResponse>,
-        pub(crate) update_link_attributes:
-            std::option::Option<crate::model::BatchUpdateLinkAttributesResponse>,
+        pub(crate) detach_from_index: std::option::Option<crate::model::BatchDetachFromIndexResponse>,
+        pub(crate) attach_typed_link: std::option::Option<crate::model::BatchAttachTypedLinkResponse>,
+        pub(crate) detach_typed_link: std::option::Option<crate::model::BatchDetachTypedLinkResponse>,
+        pub(crate) update_link_attributes: std::option::Option<crate::model::BatchUpdateLinkAttributesResponse>,
     }
     impl Builder {
         /// <p>Creates an object in a <code>Directory</code>.</p>
@@ -3996,12 +3666,8 @@ pub mod batch_write_operation_response {
             self
         }
         /// <p>Creates an object in a <code>Directory</code>.</p>
-        pub fn set_create_object(
-            mut self,
-            input: std::option::Option<crate::model::BatchCreateObjectResponse>,
-        ) -> Self {
-            self.create_object = input;
-            self
+        pub fn set_create_object(mut self, input: std::option::Option<crate::model::BatchCreateObjectResponse>) -> Self {
+            self.create_object = input; self
         }
         /// <p>Attaches an object to a <code>Directory</code>.</p>
         pub fn attach_object(mut self, input: crate::model::BatchAttachObjectResponse) -> Self {
@@ -4009,12 +3675,8 @@ pub mod batch_write_operation_response {
             self
         }
         /// <p>Attaches an object to a <code>Directory</code>.</p>
-        pub fn set_attach_object(
-            mut self,
-            input: std::option::Option<crate::model::BatchAttachObjectResponse>,
-        ) -> Self {
-            self.attach_object = input;
-            self
+        pub fn set_attach_object(mut self, input: std::option::Option<crate::model::BatchAttachObjectResponse>) -> Self {
+            self.attach_object = input; self
         }
         /// <p>Detaches an object from a <code>Directory</code>.</p>
         pub fn detach_object(mut self, input: crate::model::BatchDetachObjectResponse) -> Self {
@@ -4022,28 +3684,17 @@ pub mod batch_write_operation_response {
             self
         }
         /// <p>Detaches an object from a <code>Directory</code>.</p>
-        pub fn set_detach_object(
-            mut self,
-            input: std::option::Option<crate::model::BatchDetachObjectResponse>,
-        ) -> Self {
-            self.detach_object = input;
-            self
+        pub fn set_detach_object(mut self, input: std::option::Option<crate::model::BatchDetachObjectResponse>) -> Self {
+            self.detach_object = input; self
         }
         /// <p>Updates a given object’s attributes.</p>
-        pub fn update_object_attributes(
-            mut self,
-            input: crate::model::BatchUpdateObjectAttributesResponse,
-        ) -> Self {
+        pub fn update_object_attributes(mut self, input: crate::model::BatchUpdateObjectAttributesResponse) -> Self {
             self.update_object_attributes = Some(input);
             self
         }
         /// <p>Updates a given object’s attributes.</p>
-        pub fn set_update_object_attributes(
-            mut self,
-            input: std::option::Option<crate::model::BatchUpdateObjectAttributesResponse>,
-        ) -> Self {
-            self.update_object_attributes = input;
-            self
+        pub fn set_update_object_attributes(mut self, input: std::option::Option<crate::model::BatchUpdateObjectAttributesResponse>) -> Self {
+            self.update_object_attributes = input; self
         }
         /// <p>Deletes an object in a <code>Directory</code>.</p>
         pub fn delete_object(mut self, input: crate::model::BatchDeleteObjectResponse) -> Self {
@@ -4051,44 +3702,26 @@ pub mod batch_write_operation_response {
             self
         }
         /// <p>Deletes an object in a <code>Directory</code>.</p>
-        pub fn set_delete_object(
-            mut self,
-            input: std::option::Option<crate::model::BatchDeleteObjectResponse>,
-        ) -> Self {
-            self.delete_object = input;
-            self
+        pub fn set_delete_object(mut self, input: std::option::Option<crate::model::BatchDeleteObjectResponse>) -> Self {
+            self.delete_object = input; self
         }
         /// <p>The result of an add facet to object batch operation.</p>
-        pub fn add_facet_to_object(
-            mut self,
-            input: crate::model::BatchAddFacetToObjectResponse,
-        ) -> Self {
+        pub fn add_facet_to_object(mut self, input: crate::model::BatchAddFacetToObjectResponse) -> Self {
             self.add_facet_to_object = Some(input);
             self
         }
         /// <p>The result of an add facet to object batch operation.</p>
-        pub fn set_add_facet_to_object(
-            mut self,
-            input: std::option::Option<crate::model::BatchAddFacetToObjectResponse>,
-        ) -> Self {
-            self.add_facet_to_object = input;
-            self
+        pub fn set_add_facet_to_object(mut self, input: std::option::Option<crate::model::BatchAddFacetToObjectResponse>) -> Self {
+            self.add_facet_to_object = input; self
         }
         /// <p>The result of a batch remove facet from object operation.</p>
-        pub fn remove_facet_from_object(
-            mut self,
-            input: crate::model::BatchRemoveFacetFromObjectResponse,
-        ) -> Self {
+        pub fn remove_facet_from_object(mut self, input: crate::model::BatchRemoveFacetFromObjectResponse) -> Self {
             self.remove_facet_from_object = Some(input);
             self
         }
         /// <p>The result of a batch remove facet from object operation.</p>
-        pub fn set_remove_facet_from_object(
-            mut self,
-            input: std::option::Option<crate::model::BatchRemoveFacetFromObjectResponse>,
-        ) -> Self {
-            self.remove_facet_from_object = input;
-            self
+        pub fn set_remove_facet_from_object(mut self, input: std::option::Option<crate::model::BatchRemoveFacetFromObjectResponse>) -> Self {
+            self.remove_facet_from_object = input; self
         }
         /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached policies.</p>
         pub fn attach_policy(mut self, input: crate::model::BatchAttachPolicyResponse) -> Self {
@@ -4096,12 +3729,8 @@ pub mod batch_write_operation_response {
             self
         }
         /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached policies.</p>
-        pub fn set_attach_policy(
-            mut self,
-            input: std::option::Option<crate::model::BatchAttachPolicyResponse>,
-        ) -> Self {
-            self.attach_policy = input;
-            self
+        pub fn set_attach_policy(mut self, input: std::option::Option<crate::model::BatchAttachPolicyResponse>) -> Self {
+            self.attach_policy = input; self
         }
         /// <p>Detaches a policy from a <code>Directory</code>.</p>
         pub fn detach_policy(mut self, input: crate::model::BatchDetachPolicyResponse) -> Self {
@@ -4109,12 +3738,8 @@ pub mod batch_write_operation_response {
             self
         }
         /// <p>Detaches a policy from a <code>Directory</code>.</p>
-        pub fn set_detach_policy(
-            mut self,
-            input: std::option::Option<crate::model::BatchDetachPolicyResponse>,
-        ) -> Self {
-            self.detach_policy = input;
-            self
+        pub fn set_detach_policy(mut self, input: std::option::Option<crate::model::BatchDetachPolicyResponse>) -> Self {
+            self.detach_policy = input; self
         }
         /// <p>Creates an index object. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and search</a> for more information.</p>
         pub fn create_index(mut self, input: crate::model::BatchCreateIndexResponse) -> Self {
@@ -4122,12 +3747,8 @@ pub mod batch_write_operation_response {
             self
         }
         /// <p>Creates an index object. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and search</a> for more information.</p>
-        pub fn set_create_index(
-            mut self,
-            input: std::option::Option<crate::model::BatchCreateIndexResponse>,
-        ) -> Self {
-            self.create_index = input;
-            self
+        pub fn set_create_index(mut self, input: std::option::Option<crate::model::BatchCreateIndexResponse>) -> Self {
+            self.create_index = input; self
         }
         /// <p>Attaches the specified object to the specified index.</p>
         pub fn attach_to_index(mut self, input: crate::model::BatchAttachToIndexResponse) -> Self {
@@ -4135,98 +3756,83 @@ pub mod batch_write_operation_response {
             self
         }
         /// <p>Attaches the specified object to the specified index.</p>
-        pub fn set_attach_to_index(
-            mut self,
-            input: std::option::Option<crate::model::BatchAttachToIndexResponse>,
-        ) -> Self {
-            self.attach_to_index = input;
-            self
+        pub fn set_attach_to_index(mut self, input: std::option::Option<crate::model::BatchAttachToIndexResponse>) -> Self {
+            self.attach_to_index = input; self
         }
         /// <p>Detaches the specified object from the specified index.</p>
-        pub fn detach_from_index(
-            mut self,
-            input: crate::model::BatchDetachFromIndexResponse,
-        ) -> Self {
+        pub fn detach_from_index(mut self, input: crate::model::BatchDetachFromIndexResponse) -> Self {
             self.detach_from_index = Some(input);
             self
         }
         /// <p>Detaches the specified object from the specified index.</p>
-        pub fn set_detach_from_index(
-            mut self,
-            input: std::option::Option<crate::model::BatchDetachFromIndexResponse>,
-        ) -> Self {
-            self.detach_from_index = input;
-            self
+        pub fn set_detach_from_index(mut self, input: std::option::Option<crate::model::BatchDetachFromIndexResponse>) -> Self {
+            self.detach_from_index = input; self
         }
         /// <p>Attaches a typed link to a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn attach_typed_link(
-            mut self,
-            input: crate::model::BatchAttachTypedLinkResponse,
-        ) -> Self {
+        pub fn attach_typed_link(mut self, input: crate::model::BatchAttachTypedLinkResponse) -> Self {
             self.attach_typed_link = Some(input);
             self
         }
         /// <p>Attaches a typed link to a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn set_attach_typed_link(
-            mut self,
-            input: std::option::Option<crate::model::BatchAttachTypedLinkResponse>,
-        ) -> Self {
-            self.attach_typed_link = input;
-            self
+        pub fn set_attach_typed_link(mut self, input: std::option::Option<crate::model::BatchAttachTypedLinkResponse>) -> Self {
+            self.attach_typed_link = input; self
         }
         /// <p>Detaches a typed link from a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn detach_typed_link(
-            mut self,
-            input: crate::model::BatchDetachTypedLinkResponse,
-        ) -> Self {
+        pub fn detach_typed_link(mut self, input: crate::model::BatchDetachTypedLinkResponse) -> Self {
             self.detach_typed_link = Some(input);
             self
         }
         /// <p>Detaches a typed link from a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn set_detach_typed_link(
-            mut self,
-            input: std::option::Option<crate::model::BatchDetachTypedLinkResponse>,
-        ) -> Self {
-            self.detach_typed_link = input;
-            self
+        pub fn set_detach_typed_link(mut self, input: std::option::Option<crate::model::BatchDetachTypedLinkResponse>) -> Self {
+            self.detach_typed_link = input; self
         }
         /// <p>Represents the output of a <code>BatchWrite</code> response operation.</p>
-        pub fn update_link_attributes(
-            mut self,
-            input: crate::model::BatchUpdateLinkAttributesResponse,
-        ) -> Self {
+        pub fn update_link_attributes(mut self, input: crate::model::BatchUpdateLinkAttributesResponse) -> Self {
             self.update_link_attributes = Some(input);
             self
         }
         /// <p>Represents the output of a <code>BatchWrite</code> response operation.</p>
-        pub fn set_update_link_attributes(
-            mut self,
-            input: std::option::Option<crate::model::BatchUpdateLinkAttributesResponse>,
-        ) -> Self {
-            self.update_link_attributes = input;
-            self
+        pub fn set_update_link_attributes(mut self, input: std::option::Option<crate::model::BatchUpdateLinkAttributesResponse>) -> Self {
+            self.update_link_attributes = input; self
         }
         /// Consumes the builder and constructs a [`BatchWriteOperationResponse`](crate::model::BatchWriteOperationResponse).
         pub fn build(self) -> crate::model::BatchWriteOperationResponse {
             crate::model::BatchWriteOperationResponse {
-                create_object: self.create_object,
-                attach_object: self.attach_object,
-                detach_object: self.detach_object,
-                update_object_attributes: self.update_object_attributes,
-                delete_object: self.delete_object,
-                add_facet_to_object: self.add_facet_to_object,
-                remove_facet_from_object: self.remove_facet_from_object,
-                attach_policy: self.attach_policy,
-                detach_policy: self.detach_policy,
-                create_index: self.create_index,
-                attach_to_index: self.attach_to_index,
-                detach_from_index: self.detach_from_index,
-                attach_typed_link: self.attach_typed_link,
-                detach_typed_link: self.detach_typed_link,
-                update_link_attributes: self.update_link_attributes,
+                create_object: self.create_object
+                ,
+                attach_object: self.attach_object
+                ,
+                detach_object: self.detach_object
+                ,
+                update_object_attributes: self.update_object_attributes
+                ,
+                delete_object: self.delete_object
+                ,
+                add_facet_to_object: self.add_facet_to_object
+                ,
+                remove_facet_from_object: self.remove_facet_from_object
+                ,
+                attach_policy: self.attach_policy
+                ,
+                detach_policy: self.detach_policy
+                ,
+                create_index: self.create_index
+                ,
+                attach_to_index: self.attach_to_index
+                ,
+                detach_from_index: self.detach_from_index
+                ,
+                attach_typed_link: self.attach_typed_link
+                ,
+                detach_typed_link: self.detach_typed_link
+                ,
+                update_link_attributes: self.update_link_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchWriteOperationResponse {
     /// Creates a new builder-style object to manufacture [`BatchWriteOperationResponse`](crate::model::BatchWriteOperationResponse).
@@ -4238,19 +3844,24 @@ impl BatchWriteOperationResponse {
 /// <p>Represents the output of a <code>UpdateLinkAttributes</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdateLinkAttributesResponse {}
+pub struct BatchUpdateLinkAttributesResponse  {
+}
 /// See [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse).
 pub mod batch_update_link_attributes_response {
-
+    
     /// A builder for [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse).
         pub fn build(self) -> crate::model::BatchUpdateLinkAttributesResponse {
-            crate::model::BatchUpdateLinkAttributesResponse {}
+            crate::model::BatchUpdateLinkAttributesResponse {
+            }
         }
     }
+    
+    
 }
 impl BatchUpdateLinkAttributesResponse {
     /// Creates a new builder-style object to manufacture [`BatchUpdateLinkAttributesResponse`](crate::model::BatchUpdateLinkAttributesResponse).
@@ -4262,19 +3873,24 @@ impl BatchUpdateLinkAttributesResponse {
 /// <p>Represents the output of a <code>DetachTypedLink</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDetachTypedLinkResponse {}
+pub struct BatchDetachTypedLinkResponse  {
+}
 /// See [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse).
 pub mod batch_detach_typed_link_response {
-
+    
     /// A builder for [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse).
         pub fn build(self) -> crate::model::BatchDetachTypedLinkResponse {
-            crate::model::BatchDetachTypedLinkResponse {}
+            crate::model::BatchDetachTypedLinkResponse {
+            }
         }
     }
+    
+    
 }
 impl BatchDetachTypedLinkResponse {
     /// Creates a new builder-style object to manufacture [`BatchDetachTypedLinkResponse`](crate::model::BatchDetachTypedLinkResponse).
@@ -4286,20 +3902,20 @@ impl BatchDetachTypedLinkResponse {
 /// <p>Represents the output of a <code>AttachTypedLink</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAttachTypedLinkResponse {
+pub struct BatchAttachTypedLinkResponse  {
     /// <p>Returns a typed link specifier as output.</p>
     #[doc(hidden)]
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
 }
 impl BatchAttachTypedLinkResponse {
     /// <p>Returns a typed link specifier as output.</p>
-    pub fn typed_link_specifier(&self) -> std::option::Option<&crate::model::TypedLinkSpecifier> {
+    pub fn typed_link_specifier(&self) -> std::option::Option<& crate::model::TypedLinkSpecifier> {
         self.typed_link_specifier.as_ref()
     }
 }
 /// See [`BatchAttachTypedLinkResponse`](crate::model::BatchAttachTypedLinkResponse).
 pub mod batch_attach_typed_link_response {
-
+    
     /// A builder for [`BatchAttachTypedLinkResponse`](crate::model::BatchAttachTypedLinkResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4312,20 +3928,19 @@ pub mod batch_attach_typed_link_response {
             self
         }
         /// <p>Returns a typed link specifier as output.</p>
-        pub fn set_typed_link_specifier(
-            mut self,
-            input: std::option::Option<crate::model::TypedLinkSpecifier>,
-        ) -> Self {
-            self.typed_link_specifier = input;
-            self
+        pub fn set_typed_link_specifier(mut self, input: std::option::Option<crate::model::TypedLinkSpecifier>) -> Self {
+            self.typed_link_specifier = input; self
         }
         /// Consumes the builder and constructs a [`BatchAttachTypedLinkResponse`](crate::model::BatchAttachTypedLinkResponse).
         pub fn build(self) -> crate::model::BatchAttachTypedLinkResponse {
             crate::model::BatchAttachTypedLinkResponse {
-                typed_link_specifier: self.typed_link_specifier,
+                typed_link_specifier: self.typed_link_specifier
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchAttachTypedLinkResponse {
     /// Creates a new builder-style object to manufacture [`BatchAttachTypedLinkResponse`](crate::model::BatchAttachTypedLinkResponse).
@@ -4337,20 +3952,20 @@ impl BatchAttachTypedLinkResponse {
 /// <p>Represents the output of a <code>DetachFromIndex</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDetachFromIndexResponse {
+pub struct BatchDetachFromIndexResponse  {
     /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
     #[doc(hidden)]
     pub detached_object_identifier: std::option::Option<std::string::String>,
 }
 impl BatchDetachFromIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
-    pub fn detached_object_identifier(&self) -> std::option::Option<&str> {
+    pub fn detached_object_identifier(&self) -> std::option::Option<& str> {
         self.detached_object_identifier.as_deref()
     }
 }
 /// See [`BatchDetachFromIndexResponse`](crate::model::BatchDetachFromIndexResponse).
 pub mod batch_detach_from_index_response {
-
+    
     /// A builder for [`BatchDetachFromIndexResponse`](crate::model::BatchDetachFromIndexResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4363,20 +3978,19 @@ pub mod batch_detach_from_index_response {
             self
         }
         /// <p>The <code>ObjectIdentifier</code> of the object that was detached from the index.</p>
-        pub fn set_detached_object_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detached_object_identifier = input;
-            self
+        pub fn set_detached_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detached_object_identifier = input; self
         }
         /// Consumes the builder and constructs a [`BatchDetachFromIndexResponse`](crate::model::BatchDetachFromIndexResponse).
         pub fn build(self) -> crate::model::BatchDetachFromIndexResponse {
             crate::model::BatchDetachFromIndexResponse {
-                detached_object_identifier: self.detached_object_identifier,
+                detached_object_identifier: self.detached_object_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDetachFromIndexResponse {
     /// Creates a new builder-style object to manufacture [`BatchDetachFromIndexResponse`](crate::model::BatchDetachFromIndexResponse).
@@ -4388,20 +4002,20 @@ impl BatchDetachFromIndexResponse {
 /// <p>Represents the output of a <code>AttachToIndex</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAttachToIndexResponse {
+pub struct BatchAttachToIndexResponse  {
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
     #[doc(hidden)]
     pub attached_object_identifier: std::option::Option<std::string::String>,
 }
 impl BatchAttachToIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
-    pub fn attached_object_identifier(&self) -> std::option::Option<&str> {
+    pub fn attached_object_identifier(&self) -> std::option::Option<& str> {
         self.attached_object_identifier.as_deref()
     }
 }
 /// See [`BatchAttachToIndexResponse`](crate::model::BatchAttachToIndexResponse).
 pub mod batch_attach_to_index_response {
-
+    
     /// A builder for [`BatchAttachToIndexResponse`](crate::model::BatchAttachToIndexResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4414,20 +4028,19 @@ pub mod batch_attach_to_index_response {
             self
         }
         /// <p>The <code>ObjectIdentifier</code> of the object that was attached to the index.</p>
-        pub fn set_attached_object_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attached_object_identifier = input;
-            self
+        pub fn set_attached_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attached_object_identifier = input; self
         }
         /// Consumes the builder and constructs a [`BatchAttachToIndexResponse`](crate::model::BatchAttachToIndexResponse).
         pub fn build(self) -> crate::model::BatchAttachToIndexResponse {
             crate::model::BatchAttachToIndexResponse {
-                attached_object_identifier: self.attached_object_identifier,
+                attached_object_identifier: self.attached_object_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchAttachToIndexResponse {
     /// Creates a new builder-style object to manufacture [`BatchAttachToIndexResponse`](crate::model::BatchAttachToIndexResponse).
@@ -4439,20 +4052,20 @@ impl BatchAttachToIndexResponse {
 /// <p>Represents the output of a <code>CreateIndex</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchCreateIndexResponse {
+pub struct BatchCreateIndexResponse  {
     /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
     #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
 }
 impl BatchCreateIndexResponse {
     /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
-    pub fn object_identifier(&self) -> std::option::Option<&str> {
+    pub fn object_identifier(&self) -> std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
 }
 /// See [`BatchCreateIndexResponse`](crate::model::BatchCreateIndexResponse).
 pub mod batch_create_index_response {
-
+    
     /// A builder for [`BatchCreateIndexResponse`](crate::model::BatchCreateIndexResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4465,20 +4078,19 @@ pub mod batch_create_index_response {
             self
         }
         /// <p>The <code>ObjectIdentifier</code> of the index created by this operation.</p>
-        pub fn set_object_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_identifier = input;
-            self
+        pub fn set_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_identifier = input; self
         }
         /// Consumes the builder and constructs a [`BatchCreateIndexResponse`](crate::model::BatchCreateIndexResponse).
         pub fn build(self) -> crate::model::BatchCreateIndexResponse {
             crate::model::BatchCreateIndexResponse {
-                object_identifier: self.object_identifier,
+                object_identifier: self.object_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchCreateIndexResponse {
     /// Creates a new builder-style object to manufacture [`BatchCreateIndexResponse`](crate::model::BatchCreateIndexResponse).
@@ -4490,19 +4102,24 @@ impl BatchCreateIndexResponse {
 /// <p>Represents the output of a <code>DetachPolicy</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDetachPolicyResponse {}
+pub struct BatchDetachPolicyResponse  {
+}
 /// See [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse).
 pub mod batch_detach_policy_response {
-
+    
     /// A builder for [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse).
         pub fn build(self) -> crate::model::BatchDetachPolicyResponse {
-            crate::model::BatchDetachPolicyResponse {}
+            crate::model::BatchDetachPolicyResponse {
+            }
         }
     }
+    
+    
 }
 impl BatchDetachPolicyResponse {
     /// Creates a new builder-style object to manufacture [`BatchDetachPolicyResponse`](crate::model::BatchDetachPolicyResponse).
@@ -4514,19 +4131,24 @@ impl BatchDetachPolicyResponse {
 /// <p>Represents the output of an <code>AttachPolicy</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAttachPolicyResponse {}
+pub struct BatchAttachPolicyResponse  {
+}
 /// See [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse).
 pub mod batch_attach_policy_response {
-
+    
     /// A builder for [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse).
         pub fn build(self) -> crate::model::BatchAttachPolicyResponse {
-            crate::model::BatchAttachPolicyResponse {}
+            crate::model::BatchAttachPolicyResponse {
+            }
         }
     }
+    
+    
 }
 impl BatchAttachPolicyResponse {
     /// Creates a new builder-style object to manufacture [`BatchAttachPolicyResponse`](crate::model::BatchAttachPolicyResponse).
@@ -4538,19 +4160,24 @@ impl BatchAttachPolicyResponse {
 /// <p>An empty result that represents success.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchRemoveFacetFromObjectResponse {}
+pub struct BatchRemoveFacetFromObjectResponse  {
+}
 /// See [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse).
 pub mod batch_remove_facet_from_object_response {
-
+    
     /// A builder for [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse).
         pub fn build(self) -> crate::model::BatchRemoveFacetFromObjectResponse {
-            crate::model::BatchRemoveFacetFromObjectResponse {}
+            crate::model::BatchRemoveFacetFromObjectResponse {
+            }
         }
     }
+    
+    
 }
 impl BatchRemoveFacetFromObjectResponse {
     /// Creates a new builder-style object to manufacture [`BatchRemoveFacetFromObjectResponse`](crate::model::BatchRemoveFacetFromObjectResponse).
@@ -4562,19 +4189,24 @@ impl BatchRemoveFacetFromObjectResponse {
 /// <p>The result of a batch add facet to object operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAddFacetToObjectResponse {}
+pub struct BatchAddFacetToObjectResponse  {
+}
 /// See [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse).
 pub mod batch_add_facet_to_object_response {
-
+    
     /// A builder for [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse).
         pub fn build(self) -> crate::model::BatchAddFacetToObjectResponse {
-            crate::model::BatchAddFacetToObjectResponse {}
+            crate::model::BatchAddFacetToObjectResponse {
+            }
         }
     }
+    
+    
 }
 impl BatchAddFacetToObjectResponse {
     /// Creates a new builder-style object to manufacture [`BatchAddFacetToObjectResponse`](crate::model::BatchAddFacetToObjectResponse).
@@ -4586,19 +4218,24 @@ impl BatchAddFacetToObjectResponse {
 /// <p>Represents the output of a <code>DeleteObject</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteObjectResponse {}
+pub struct BatchDeleteObjectResponse  {
+}
 /// See [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse).
 pub mod batch_delete_object_response {
-
+    
     /// A builder for [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse).
         pub fn build(self) -> crate::model::BatchDeleteObjectResponse {
-            crate::model::BatchDeleteObjectResponse {}
+            crate::model::BatchDeleteObjectResponse {
+            }
         }
     }
+    
+    
 }
 impl BatchDeleteObjectResponse {
     /// Creates a new builder-style object to manufacture [`BatchDeleteObjectResponse`](crate::model::BatchDeleteObjectResponse).
@@ -4610,20 +4247,20 @@ impl BatchDeleteObjectResponse {
 /// <p>Represents the output of a <code>BatchUpdate</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdateObjectAttributesResponse {
+pub struct BatchUpdateObjectAttributesResponse  {
     /// <p>ID that is associated with the object.</p>
     #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
 }
 impl BatchUpdateObjectAttributesResponse {
     /// <p>ID that is associated with the object.</p>
-    pub fn object_identifier(&self) -> std::option::Option<&str> {
+    pub fn object_identifier(&self) -> std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
 }
 /// See [`BatchUpdateObjectAttributesResponse`](crate::model::BatchUpdateObjectAttributesResponse).
 pub mod batch_update_object_attributes_response {
-
+    
     /// A builder for [`BatchUpdateObjectAttributesResponse`](crate::model::BatchUpdateObjectAttributesResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4636,20 +4273,19 @@ pub mod batch_update_object_attributes_response {
             self
         }
         /// <p>ID that is associated with the object.</p>
-        pub fn set_object_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_identifier = input;
-            self
+        pub fn set_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_identifier = input; self
         }
         /// Consumes the builder and constructs a [`BatchUpdateObjectAttributesResponse`](crate::model::BatchUpdateObjectAttributesResponse).
         pub fn build(self) -> crate::model::BatchUpdateObjectAttributesResponse {
             crate::model::BatchUpdateObjectAttributesResponse {
-                object_identifier: self.object_identifier,
+                object_identifier: self.object_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchUpdateObjectAttributesResponse {
     /// Creates a new builder-style object to manufacture [`BatchUpdateObjectAttributesResponse`](crate::model::BatchUpdateObjectAttributesResponse).
@@ -4661,20 +4297,20 @@ impl BatchUpdateObjectAttributesResponse {
 /// <p>Represents the output of a <code>DetachObject</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDetachObjectResponse {
+pub struct BatchDetachObjectResponse  {
     /// <p>The <code>ObjectIdentifier</code> of the detached object.</p>
     #[doc(hidden)]
     pub detached_object_identifier: std::option::Option<std::string::String>,
 }
 impl BatchDetachObjectResponse {
     /// <p>The <code>ObjectIdentifier</code> of the detached object.</p>
-    pub fn detached_object_identifier(&self) -> std::option::Option<&str> {
+    pub fn detached_object_identifier(&self) -> std::option::Option<& str> {
         self.detached_object_identifier.as_deref()
     }
 }
 /// See [`BatchDetachObjectResponse`](crate::model::BatchDetachObjectResponse).
 pub mod batch_detach_object_response {
-
+    
     /// A builder for [`BatchDetachObjectResponse`](crate::model::BatchDetachObjectResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4687,20 +4323,19 @@ pub mod batch_detach_object_response {
             self
         }
         /// <p>The <code>ObjectIdentifier</code> of the detached object.</p>
-        pub fn set_detached_object_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detached_object_identifier = input;
-            self
+        pub fn set_detached_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detached_object_identifier = input; self
         }
         /// Consumes the builder and constructs a [`BatchDetachObjectResponse`](crate::model::BatchDetachObjectResponse).
         pub fn build(self) -> crate::model::BatchDetachObjectResponse {
             crate::model::BatchDetachObjectResponse {
-                detached_object_identifier: self.detached_object_identifier,
+                detached_object_identifier: self.detached_object_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDetachObjectResponse {
     /// Creates a new builder-style object to manufacture [`BatchDetachObjectResponse`](crate::model::BatchDetachObjectResponse).
@@ -4712,20 +4347,20 @@ impl BatchDetachObjectResponse {
 /// <p>Represents the output batch <code>AttachObject</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAttachObjectResponse {
+pub struct BatchAttachObjectResponse  {
     /// <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
     #[doc(hidden)]
     pub attached_object_identifier: std::option::Option<std::string::String>,
 }
 impl BatchAttachObjectResponse {
     /// <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
-    pub fn attached_object_identifier(&self) -> std::option::Option<&str> {
+    pub fn attached_object_identifier(&self) -> std::option::Option<& str> {
         self.attached_object_identifier.as_deref()
     }
 }
 /// See [`BatchAttachObjectResponse`](crate::model::BatchAttachObjectResponse).
 pub mod batch_attach_object_response {
-
+    
     /// A builder for [`BatchAttachObjectResponse`](crate::model::BatchAttachObjectResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4738,20 +4373,19 @@ pub mod batch_attach_object_response {
             self
         }
         /// <p>The <code>ObjectIdentifier</code> of the object that has been attached.</p>
-        pub fn set_attached_object_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attached_object_identifier = input;
-            self
+        pub fn set_attached_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attached_object_identifier = input; self
         }
         /// Consumes the builder and constructs a [`BatchAttachObjectResponse`](crate::model::BatchAttachObjectResponse).
         pub fn build(self) -> crate::model::BatchAttachObjectResponse {
             crate::model::BatchAttachObjectResponse {
-                attached_object_identifier: self.attached_object_identifier,
+                attached_object_identifier: self.attached_object_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchAttachObjectResponse {
     /// Creates a new builder-style object to manufacture [`BatchAttachObjectResponse`](crate::model::BatchAttachObjectResponse).
@@ -4763,20 +4397,20 @@ impl BatchAttachObjectResponse {
 /// <p>Represents the output of a <code>CreateObject</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchCreateObjectResponse {
+pub struct BatchCreateObjectResponse  {
     /// <p>The ID that is associated with the object.</p>
     #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
 }
 impl BatchCreateObjectResponse {
     /// <p>The ID that is associated with the object.</p>
-    pub fn object_identifier(&self) -> std::option::Option<&str> {
+    pub fn object_identifier(&self) -> std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
 }
 /// See [`BatchCreateObjectResponse`](crate::model::BatchCreateObjectResponse).
 pub mod batch_create_object_response {
-
+    
     /// A builder for [`BatchCreateObjectResponse`](crate::model::BatchCreateObjectResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4789,20 +4423,19 @@ pub mod batch_create_object_response {
             self
         }
         /// <p>The ID that is associated with the object.</p>
-        pub fn set_object_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_identifier = input;
-            self
+        pub fn set_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_identifier = input; self
         }
         /// Consumes the builder and constructs a [`BatchCreateObjectResponse`](crate::model::BatchCreateObjectResponse).
         pub fn build(self) -> crate::model::BatchCreateObjectResponse {
             crate::model::BatchCreateObjectResponse {
-                object_identifier: self.object_identifier,
+                object_identifier: self.object_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchCreateObjectResponse {
     /// Creates a new builder-style object to manufacture [`BatchCreateObjectResponse`](crate::model::BatchCreateObjectResponse).
@@ -4814,7 +4447,7 @@ impl BatchCreateObjectResponse {
 /// <p>Represents the output of a <code>BatchWrite</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchWriteOperation {
+pub struct BatchWriteOperation  {
     /// <p>Creates an object.</p>
     #[doc(hidden)]
     pub create_object: std::option::Option<crate::model::BatchCreateObject>,
@@ -4863,87 +4496,79 @@ pub struct BatchWriteOperation {
 }
 impl BatchWriteOperation {
     /// <p>Creates an object.</p>
-    pub fn create_object(&self) -> std::option::Option<&crate::model::BatchCreateObject> {
+    pub fn create_object(&self) -> std::option::Option<& crate::model::BatchCreateObject> {
         self.create_object.as_ref()
     }
     /// <p>Attaches an object to a <code>Directory</code>.</p>
-    pub fn attach_object(&self) -> std::option::Option<&crate::model::BatchAttachObject> {
+    pub fn attach_object(&self) -> std::option::Option<& crate::model::BatchAttachObject> {
         self.attach_object.as_ref()
     }
     /// <p>Detaches an object from a <code>Directory</code>.</p>
-    pub fn detach_object(&self) -> std::option::Option<&crate::model::BatchDetachObject> {
+    pub fn detach_object(&self) -> std::option::Option<& crate::model::BatchDetachObject> {
         self.detach_object.as_ref()
     }
     /// <p>Updates a given object's attributes.</p>
-    pub fn update_object_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchUpdateObjectAttributes> {
+    pub fn update_object_attributes(&self) -> std::option::Option<& crate::model::BatchUpdateObjectAttributes> {
         self.update_object_attributes.as_ref()
     }
     /// <p>Deletes an object in a <code>Directory</code>.</p>
-    pub fn delete_object(&self) -> std::option::Option<&crate::model::BatchDeleteObject> {
+    pub fn delete_object(&self) -> std::option::Option<& crate::model::BatchDeleteObject> {
         self.delete_object.as_ref()
     }
     /// <p>A batch operation that adds a facet to an object.</p>
-    pub fn add_facet_to_object(&self) -> std::option::Option<&crate::model::BatchAddFacetToObject> {
+    pub fn add_facet_to_object(&self) -> std::option::Option<& crate::model::BatchAddFacetToObject> {
         self.add_facet_to_object.as_ref()
     }
     /// <p>A batch operation that removes a facet from an object.</p>
-    pub fn remove_facet_from_object(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchRemoveFacetFromObject> {
+    pub fn remove_facet_from_object(&self) -> std::option::Option<& crate::model::BatchRemoveFacetFromObject> {
         self.remove_facet_from_object.as_ref()
     }
     /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached policies.</p>
-    pub fn attach_policy(&self) -> std::option::Option<&crate::model::BatchAttachPolicy> {
+    pub fn attach_policy(&self) -> std::option::Option<& crate::model::BatchAttachPolicy> {
         self.attach_policy.as_ref()
     }
     /// <p>Detaches a policy from a <code>Directory</code>.</p>
-    pub fn detach_policy(&self) -> std::option::Option<&crate::model::BatchDetachPolicy> {
+    pub fn detach_policy(&self) -> std::option::Option<& crate::model::BatchDetachPolicy> {
         self.detach_policy.as_ref()
     }
     /// <p>Creates an index object. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and search</a> for more information.</p>
-    pub fn create_index(&self) -> std::option::Option<&crate::model::BatchCreateIndex> {
+    pub fn create_index(&self) -> std::option::Option<& crate::model::BatchCreateIndex> {
         self.create_index.as_ref()
     }
     /// <p>Attaches the specified object to the specified index.</p>
-    pub fn attach_to_index(&self) -> std::option::Option<&crate::model::BatchAttachToIndex> {
+    pub fn attach_to_index(&self) -> std::option::Option<& crate::model::BatchAttachToIndex> {
         self.attach_to_index.as_ref()
     }
     /// <p>Detaches the specified object from the specified index.</p>
-    pub fn detach_from_index(&self) -> std::option::Option<&crate::model::BatchDetachFromIndex> {
+    pub fn detach_from_index(&self) -> std::option::Option<& crate::model::BatchDetachFromIndex> {
         self.detach_from_index.as_ref()
     }
     /// <p>Attaches a typed link to a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn attach_typed_link(&self) -> std::option::Option<&crate::model::BatchAttachTypedLink> {
+    pub fn attach_typed_link(&self) -> std::option::Option<& crate::model::BatchAttachTypedLink> {
         self.attach_typed_link.as_ref()
     }
     /// <p>Detaches a typed link from a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn detach_typed_link(&self) -> std::option::Option<&crate::model::BatchDetachTypedLink> {
+    pub fn detach_typed_link(&self) -> std::option::Option<& crate::model::BatchDetachTypedLink> {
         self.detach_typed_link.as_ref()
     }
     /// <p>Updates a given object's attributes.</p>
-    pub fn update_link_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchUpdateLinkAttributes> {
+    pub fn update_link_attributes(&self) -> std::option::Option<& crate::model::BatchUpdateLinkAttributes> {
         self.update_link_attributes.as_ref()
     }
 }
 /// See [`BatchWriteOperation`](crate::model::BatchWriteOperation).
 pub mod batch_write_operation {
-
+    
     /// A builder for [`BatchWriteOperation`](crate::model::BatchWriteOperation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) create_object: std::option::Option<crate::model::BatchCreateObject>,
         pub(crate) attach_object: std::option::Option<crate::model::BatchAttachObject>,
         pub(crate) detach_object: std::option::Option<crate::model::BatchDetachObject>,
-        pub(crate) update_object_attributes:
-            std::option::Option<crate::model::BatchUpdateObjectAttributes>,
+        pub(crate) update_object_attributes: std::option::Option<crate::model::BatchUpdateObjectAttributes>,
         pub(crate) delete_object: std::option::Option<crate::model::BatchDeleteObject>,
         pub(crate) add_facet_to_object: std::option::Option<crate::model::BatchAddFacetToObject>,
-        pub(crate) remove_facet_from_object:
-            std::option::Option<crate::model::BatchRemoveFacetFromObject>,
+        pub(crate) remove_facet_from_object: std::option::Option<crate::model::BatchRemoveFacetFromObject>,
         pub(crate) attach_policy: std::option::Option<crate::model::BatchAttachPolicy>,
         pub(crate) detach_policy: std::option::Option<crate::model::BatchDetachPolicy>,
         pub(crate) create_index: std::option::Option<crate::model::BatchCreateIndex>,
@@ -4951,8 +4576,7 @@ pub mod batch_write_operation {
         pub(crate) detach_from_index: std::option::Option<crate::model::BatchDetachFromIndex>,
         pub(crate) attach_typed_link: std::option::Option<crate::model::BatchAttachTypedLink>,
         pub(crate) detach_typed_link: std::option::Option<crate::model::BatchDetachTypedLink>,
-        pub(crate) update_link_attributes:
-            std::option::Option<crate::model::BatchUpdateLinkAttributes>,
+        pub(crate) update_link_attributes: std::option::Option<crate::model::BatchUpdateLinkAttributes>,
     }
     impl Builder {
         /// <p>Creates an object.</p>
@@ -4961,12 +4585,8 @@ pub mod batch_write_operation {
             self
         }
         /// <p>Creates an object.</p>
-        pub fn set_create_object(
-            mut self,
-            input: std::option::Option<crate::model::BatchCreateObject>,
-        ) -> Self {
-            self.create_object = input;
-            self
+        pub fn set_create_object(mut self, input: std::option::Option<crate::model::BatchCreateObject>) -> Self {
+            self.create_object = input; self
         }
         /// <p>Attaches an object to a <code>Directory</code>.</p>
         pub fn attach_object(mut self, input: crate::model::BatchAttachObject) -> Self {
@@ -4974,12 +4594,8 @@ pub mod batch_write_operation {
             self
         }
         /// <p>Attaches an object to a <code>Directory</code>.</p>
-        pub fn set_attach_object(
-            mut self,
-            input: std::option::Option<crate::model::BatchAttachObject>,
-        ) -> Self {
-            self.attach_object = input;
-            self
+        pub fn set_attach_object(mut self, input: std::option::Option<crate::model::BatchAttachObject>) -> Self {
+            self.attach_object = input; self
         }
         /// <p>Detaches an object from a <code>Directory</code>.</p>
         pub fn detach_object(mut self, input: crate::model::BatchDetachObject) -> Self {
@@ -4987,28 +4603,17 @@ pub mod batch_write_operation {
             self
         }
         /// <p>Detaches an object from a <code>Directory</code>.</p>
-        pub fn set_detach_object(
-            mut self,
-            input: std::option::Option<crate::model::BatchDetachObject>,
-        ) -> Self {
-            self.detach_object = input;
-            self
+        pub fn set_detach_object(mut self, input: std::option::Option<crate::model::BatchDetachObject>) -> Self {
+            self.detach_object = input; self
         }
         /// <p>Updates a given object's attributes.</p>
-        pub fn update_object_attributes(
-            mut self,
-            input: crate::model::BatchUpdateObjectAttributes,
-        ) -> Self {
+        pub fn update_object_attributes(mut self, input: crate::model::BatchUpdateObjectAttributes) -> Self {
             self.update_object_attributes = Some(input);
             self
         }
         /// <p>Updates a given object's attributes.</p>
-        pub fn set_update_object_attributes(
-            mut self,
-            input: std::option::Option<crate::model::BatchUpdateObjectAttributes>,
-        ) -> Self {
-            self.update_object_attributes = input;
-            self
+        pub fn set_update_object_attributes(mut self, input: std::option::Option<crate::model::BatchUpdateObjectAttributes>) -> Self {
+            self.update_object_attributes = input; self
         }
         /// <p>Deletes an object in a <code>Directory</code>.</p>
         pub fn delete_object(mut self, input: crate::model::BatchDeleteObject) -> Self {
@@ -5016,12 +4621,8 @@ pub mod batch_write_operation {
             self
         }
         /// <p>Deletes an object in a <code>Directory</code>.</p>
-        pub fn set_delete_object(
-            mut self,
-            input: std::option::Option<crate::model::BatchDeleteObject>,
-        ) -> Self {
-            self.delete_object = input;
-            self
+        pub fn set_delete_object(mut self, input: std::option::Option<crate::model::BatchDeleteObject>) -> Self {
+            self.delete_object = input; self
         }
         /// <p>A batch operation that adds a facet to an object.</p>
         pub fn add_facet_to_object(mut self, input: crate::model::BatchAddFacetToObject) -> Self {
@@ -5029,28 +4630,17 @@ pub mod batch_write_operation {
             self
         }
         /// <p>A batch operation that adds a facet to an object.</p>
-        pub fn set_add_facet_to_object(
-            mut self,
-            input: std::option::Option<crate::model::BatchAddFacetToObject>,
-        ) -> Self {
-            self.add_facet_to_object = input;
-            self
+        pub fn set_add_facet_to_object(mut self, input: std::option::Option<crate::model::BatchAddFacetToObject>) -> Self {
+            self.add_facet_to_object = input; self
         }
         /// <p>A batch operation that removes a facet from an object.</p>
-        pub fn remove_facet_from_object(
-            mut self,
-            input: crate::model::BatchRemoveFacetFromObject,
-        ) -> Self {
+        pub fn remove_facet_from_object(mut self, input: crate::model::BatchRemoveFacetFromObject) -> Self {
             self.remove_facet_from_object = Some(input);
             self
         }
         /// <p>A batch operation that removes a facet from an object.</p>
-        pub fn set_remove_facet_from_object(
-            mut self,
-            input: std::option::Option<crate::model::BatchRemoveFacetFromObject>,
-        ) -> Self {
-            self.remove_facet_from_object = input;
-            self
+        pub fn set_remove_facet_from_object(mut self, input: std::option::Option<crate::model::BatchRemoveFacetFromObject>) -> Self {
+            self.remove_facet_from_object = input; self
         }
         /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached policies.</p>
         pub fn attach_policy(mut self, input: crate::model::BatchAttachPolicy) -> Self {
@@ -5058,12 +4648,8 @@ pub mod batch_write_operation {
             self
         }
         /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached policies.</p>
-        pub fn set_attach_policy(
-            mut self,
-            input: std::option::Option<crate::model::BatchAttachPolicy>,
-        ) -> Self {
-            self.attach_policy = input;
-            self
+        pub fn set_attach_policy(mut self, input: std::option::Option<crate::model::BatchAttachPolicy>) -> Self {
+            self.attach_policy = input; self
         }
         /// <p>Detaches a policy from a <code>Directory</code>.</p>
         pub fn detach_policy(mut self, input: crate::model::BatchDetachPolicy) -> Self {
@@ -5071,12 +4657,8 @@ pub mod batch_write_operation {
             self
         }
         /// <p>Detaches a policy from a <code>Directory</code>.</p>
-        pub fn set_detach_policy(
-            mut self,
-            input: std::option::Option<crate::model::BatchDetachPolicy>,
-        ) -> Self {
-            self.detach_policy = input;
-            self
+        pub fn set_detach_policy(mut self, input: std::option::Option<crate::model::BatchDetachPolicy>) -> Self {
+            self.detach_policy = input; self
         }
         /// <p>Creates an index object. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and search</a> for more information.</p>
         pub fn create_index(mut self, input: crate::model::BatchCreateIndex) -> Self {
@@ -5084,12 +4666,8 @@ pub mod batch_write_operation {
             self
         }
         /// <p>Creates an index object. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.htm">Indexing and search</a> for more information.</p>
-        pub fn set_create_index(
-            mut self,
-            input: std::option::Option<crate::model::BatchCreateIndex>,
-        ) -> Self {
-            self.create_index = input;
-            self
+        pub fn set_create_index(mut self, input: std::option::Option<crate::model::BatchCreateIndex>) -> Self {
+            self.create_index = input; self
         }
         /// <p>Attaches the specified object to the specified index.</p>
         pub fn attach_to_index(mut self, input: crate::model::BatchAttachToIndex) -> Self {
@@ -5097,12 +4675,8 @@ pub mod batch_write_operation {
             self
         }
         /// <p>Attaches the specified object to the specified index.</p>
-        pub fn set_attach_to_index(
-            mut self,
-            input: std::option::Option<crate::model::BatchAttachToIndex>,
-        ) -> Self {
-            self.attach_to_index = input;
-            self
+        pub fn set_attach_to_index(mut self, input: std::option::Option<crate::model::BatchAttachToIndex>) -> Self {
+            self.attach_to_index = input; self
         }
         /// <p>Detaches the specified object from the specified index.</p>
         pub fn detach_from_index(mut self, input: crate::model::BatchDetachFromIndex) -> Self {
@@ -5110,12 +4684,8 @@ pub mod batch_write_operation {
             self
         }
         /// <p>Detaches the specified object from the specified index.</p>
-        pub fn set_detach_from_index(
-            mut self,
-            input: std::option::Option<crate::model::BatchDetachFromIndex>,
-        ) -> Self {
-            self.detach_from_index = input;
-            self
+        pub fn set_detach_from_index(mut self, input: std::option::Option<crate::model::BatchDetachFromIndex>) -> Self {
+            self.detach_from_index = input; self
         }
         /// <p>Attaches a typed link to a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
         pub fn attach_typed_link(mut self, input: crate::model::BatchAttachTypedLink) -> Self {
@@ -5123,12 +4693,8 @@ pub mod batch_write_operation {
             self
         }
         /// <p>Attaches a typed link to a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn set_attach_typed_link(
-            mut self,
-            input: std::option::Option<crate::model::BatchAttachTypedLink>,
-        ) -> Self {
-            self.attach_typed_link = input;
-            self
+        pub fn set_attach_typed_link(mut self, input: std::option::Option<crate::model::BatchAttachTypedLink>) -> Self {
+            self.attach_typed_link = input; self
         }
         /// <p>Detaches a typed link from a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
         pub fn detach_typed_link(mut self, input: crate::model::BatchDetachTypedLink) -> Self {
@@ -5136,50 +4702,56 @@ pub mod batch_write_operation {
             self
         }
         /// <p>Detaches a typed link from a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn set_detach_typed_link(
-            mut self,
-            input: std::option::Option<crate::model::BatchDetachTypedLink>,
-        ) -> Self {
-            self.detach_typed_link = input;
-            self
+        pub fn set_detach_typed_link(mut self, input: std::option::Option<crate::model::BatchDetachTypedLink>) -> Self {
+            self.detach_typed_link = input; self
         }
         /// <p>Updates a given object's attributes.</p>
-        pub fn update_link_attributes(
-            mut self,
-            input: crate::model::BatchUpdateLinkAttributes,
-        ) -> Self {
+        pub fn update_link_attributes(mut self, input: crate::model::BatchUpdateLinkAttributes) -> Self {
             self.update_link_attributes = Some(input);
             self
         }
         /// <p>Updates a given object's attributes.</p>
-        pub fn set_update_link_attributes(
-            mut self,
-            input: std::option::Option<crate::model::BatchUpdateLinkAttributes>,
-        ) -> Self {
-            self.update_link_attributes = input;
-            self
+        pub fn set_update_link_attributes(mut self, input: std::option::Option<crate::model::BatchUpdateLinkAttributes>) -> Self {
+            self.update_link_attributes = input; self
         }
         /// Consumes the builder and constructs a [`BatchWriteOperation`](crate::model::BatchWriteOperation).
         pub fn build(self) -> crate::model::BatchWriteOperation {
             crate::model::BatchWriteOperation {
-                create_object: self.create_object,
-                attach_object: self.attach_object,
-                detach_object: self.detach_object,
-                update_object_attributes: self.update_object_attributes,
-                delete_object: self.delete_object,
-                add_facet_to_object: self.add_facet_to_object,
-                remove_facet_from_object: self.remove_facet_from_object,
-                attach_policy: self.attach_policy,
-                detach_policy: self.detach_policy,
-                create_index: self.create_index,
-                attach_to_index: self.attach_to_index,
-                detach_from_index: self.detach_from_index,
-                attach_typed_link: self.attach_typed_link,
-                detach_typed_link: self.detach_typed_link,
-                update_link_attributes: self.update_link_attributes,
+                create_object: self.create_object
+                ,
+                attach_object: self.attach_object
+                ,
+                detach_object: self.detach_object
+                ,
+                update_object_attributes: self.update_object_attributes
+                ,
+                delete_object: self.delete_object
+                ,
+                add_facet_to_object: self.add_facet_to_object
+                ,
+                remove_facet_from_object: self.remove_facet_from_object
+                ,
+                attach_policy: self.attach_policy
+                ,
+                detach_policy: self.detach_policy
+                ,
+                create_index: self.create_index
+                ,
+                attach_to_index: self.attach_to_index
+                ,
+                detach_from_index: self.detach_from_index
+                ,
+                attach_typed_link: self.attach_typed_link
+                ,
+                detach_typed_link: self.detach_typed_link
+                ,
+                update_link_attributes: self.update_link_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchWriteOperation {
     /// Creates a new builder-style object to manufacture [`BatchWriteOperation`](crate::model::BatchWriteOperation).
@@ -5191,7 +4763,7 @@ impl BatchWriteOperation {
 /// <p>Updates a given typed link’s attributes inside a <code>BatchRead</code> operation. Attributes to be updated must not contribute to the typed link’s identity, as defined by its <code>IdentityAttributeOrder</code>. For more information, see <code>UpdateLinkAttributes</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdateLinkAttributes {
+pub struct BatchUpdateLinkAttributes  {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     #[doc(hidden)]
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
@@ -5201,23 +4773,22 @@ pub struct BatchUpdateLinkAttributes {
 }
 impl BatchUpdateLinkAttributes {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
-    pub fn typed_link_specifier(&self) -> std::option::Option<&crate::model::TypedLinkSpecifier> {
+    pub fn typed_link_specifier(&self) -> std::option::Option<& crate::model::TypedLinkSpecifier> {
         self.typed_link_specifier.as_ref()
     }
     /// <p>The attributes update structure.</p>
-    pub fn attribute_updates(&self) -> std::option::Option<&[crate::model::LinkAttributeUpdate]> {
+    pub fn attribute_updates(&self) -> std::option::Option<& [crate::model::LinkAttributeUpdate]> {
         self.attribute_updates.as_deref()
     }
 }
 /// See [`BatchUpdateLinkAttributes`](crate::model::BatchUpdateLinkAttributes).
 pub mod batch_update_link_attributes {
-
+    
     /// A builder for [`BatchUpdateLinkAttributes`](crate::model::BatchUpdateLinkAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
-        pub(crate) attribute_updates:
-            std::option::Option<std::vec::Vec<crate::model::LinkAttributeUpdate>>,
+        pub(crate) attribute_updates: std::option::Option<std::vec::Vec<crate::model::LinkAttributeUpdate>>,
     }
     impl Builder {
         /// <p>Allows a typed link specifier to be accepted as input.</p>
@@ -5226,12 +4797,8 @@ pub mod batch_update_link_attributes {
             self
         }
         /// <p>Allows a typed link specifier to be accepted as input.</p>
-        pub fn set_typed_link_specifier(
-            mut self,
-            input: std::option::Option<crate::model::TypedLinkSpecifier>,
-        ) -> Self {
-            self.typed_link_specifier = input;
-            self
+        pub fn set_typed_link_specifier(mut self, input: std::option::Option<crate::model::TypedLinkSpecifier>) -> Self {
+            self.typed_link_specifier = input; self
         }
         /// Appends an item to `attribute_updates`.
         ///
@@ -5240,26 +4807,26 @@ pub mod batch_update_link_attributes {
         /// <p>The attributes update structure.</p>
         pub fn attribute_updates(mut self, input: crate::model::LinkAttributeUpdate) -> Self {
             let mut v = self.attribute_updates.unwrap_or_default();
-            v.push(input);
-            self.attribute_updates = Some(v);
-            self
+                            v.push(input);
+                            self.attribute_updates = Some(v);
+                            self
         }
         /// <p>The attributes update structure.</p>
-        pub fn set_attribute_updates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LinkAttributeUpdate>>,
-        ) -> Self {
-            self.attribute_updates = input;
-            self
+        pub fn set_attribute_updates(mut self, input: std::option::Option<std::vec::Vec<crate::model::LinkAttributeUpdate>>) -> Self {
+            self.attribute_updates = input; self
         }
         /// Consumes the builder and constructs a [`BatchUpdateLinkAttributes`](crate::model::BatchUpdateLinkAttributes).
         pub fn build(self) -> crate::model::BatchUpdateLinkAttributes {
             crate::model::BatchUpdateLinkAttributes {
-                typed_link_specifier: self.typed_link_specifier,
-                attribute_updates: self.attribute_updates,
+                typed_link_specifier: self.typed_link_specifier
+                ,
+                attribute_updates: self.attribute_updates
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchUpdateLinkAttributes {
     /// Creates a new builder-style object to manufacture [`BatchUpdateLinkAttributes`](crate::model::BatchUpdateLinkAttributes).
@@ -5271,20 +4838,20 @@ impl BatchUpdateLinkAttributes {
 /// <p>Detaches a typed link from a specified source and target object inside a <code>BatchRead</code> operation. For more information, see <code>DetachTypedLink</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDetachTypedLink {
+pub struct BatchDetachTypedLink  {
     /// <p>Used to accept a typed link specifier as input.</p>
     #[doc(hidden)]
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
 }
 impl BatchDetachTypedLink {
     /// <p>Used to accept a typed link specifier as input.</p>
-    pub fn typed_link_specifier(&self) -> std::option::Option<&crate::model::TypedLinkSpecifier> {
+    pub fn typed_link_specifier(&self) -> std::option::Option<& crate::model::TypedLinkSpecifier> {
         self.typed_link_specifier.as_ref()
     }
 }
 /// See [`BatchDetachTypedLink`](crate::model::BatchDetachTypedLink).
 pub mod batch_detach_typed_link {
-
+    
     /// A builder for [`BatchDetachTypedLink`](crate::model::BatchDetachTypedLink).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5297,20 +4864,19 @@ pub mod batch_detach_typed_link {
             self
         }
         /// <p>Used to accept a typed link specifier as input.</p>
-        pub fn set_typed_link_specifier(
-            mut self,
-            input: std::option::Option<crate::model::TypedLinkSpecifier>,
-        ) -> Self {
-            self.typed_link_specifier = input;
-            self
+        pub fn set_typed_link_specifier(mut self, input: std::option::Option<crate::model::TypedLinkSpecifier>) -> Self {
+            self.typed_link_specifier = input; self
         }
         /// Consumes the builder and constructs a [`BatchDetachTypedLink`](crate::model::BatchDetachTypedLink).
         pub fn build(self) -> crate::model::BatchDetachTypedLink {
             crate::model::BatchDetachTypedLink {
-                typed_link_specifier: self.typed_link_specifier,
+                typed_link_specifier: self.typed_link_specifier
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDetachTypedLink {
     /// Creates a new builder-style object to manufacture [`BatchDetachTypedLink`](crate::model::BatchDetachTypedLink).
@@ -5322,7 +4888,7 @@ impl BatchDetachTypedLink {
 /// <p>Attaches a typed link to a specified source and target object inside a <code>BatchRead</code> operation. For more information, see <code>AttachTypedLink</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAttachTypedLink {
+pub struct BatchAttachTypedLink  {
     /// <p>Identifies the source object that the typed link will attach to.</p>
     #[doc(hidden)]
     pub source_object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5338,35 +4904,32 @@ pub struct BatchAttachTypedLink {
 }
 impl BatchAttachTypedLink {
     /// <p>Identifies the source object that the typed link will attach to.</p>
-    pub fn source_object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn source_object_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.source_object_reference.as_ref()
     }
     /// <p>Identifies the target object that the typed link will attach to.</p>
-    pub fn target_object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn target_object_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.target_object_reference.as_ref()
     }
     /// <p>Identifies the typed link facet that is associated with the typed link.</p>
-    pub fn typed_link_facet(
-        &self,
-    ) -> std::option::Option<&crate::model::TypedLinkSchemaAndFacetName> {
+    pub fn typed_link_facet(&self) -> std::option::Option<& crate::model::TypedLinkSchemaAndFacetName> {
         self.typed_link_facet.as_ref()
     }
     /// <p>A set of attributes that are associated with the typed link.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::AttributeNameAndValue]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::AttributeNameAndValue]> {
         self.attributes.as_deref()
     }
 }
 /// See [`BatchAttachTypedLink`](crate::model::BatchAttachTypedLink).
 pub mod batch_attach_typed_link {
-
+    
     /// A builder for [`BatchAttachTypedLink`](crate::model::BatchAttachTypedLink).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) target_object_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) typed_link_facet: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
-        pub(crate) attributes:
-            std::option::Option<std::vec::Vec<crate::model::AttributeNameAndValue>>,
+        pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::AttributeNameAndValue>>,
     }
     impl Builder {
         /// <p>Identifies the source object that the typed link will attach to.</p>
@@ -5375,12 +4938,8 @@ pub mod batch_attach_typed_link {
             self
         }
         /// <p>Identifies the source object that the typed link will attach to.</p>
-        pub fn set_source_object_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.source_object_reference = input;
-            self
+        pub fn set_source_object_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.source_object_reference = input; self
         }
         /// <p>Identifies the target object that the typed link will attach to.</p>
         pub fn target_object_reference(mut self, input: crate::model::ObjectReference) -> Self {
@@ -5388,28 +4947,17 @@ pub mod batch_attach_typed_link {
             self
         }
         /// <p>Identifies the target object that the typed link will attach to.</p>
-        pub fn set_target_object_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.target_object_reference = input;
-            self
+        pub fn set_target_object_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.target_object_reference = input; self
         }
         /// <p>Identifies the typed link facet that is associated with the typed link.</p>
-        pub fn typed_link_facet(
-            mut self,
-            input: crate::model::TypedLinkSchemaAndFacetName,
-        ) -> Self {
+        pub fn typed_link_facet(mut self, input: crate::model::TypedLinkSchemaAndFacetName) -> Self {
             self.typed_link_facet = Some(input);
             self
         }
         /// <p>Identifies the typed link facet that is associated with the typed link.</p>
-        pub fn set_typed_link_facet(
-            mut self,
-            input: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
-        ) -> Self {
-            self.typed_link_facet = input;
-            self
+        pub fn set_typed_link_facet(mut self, input: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>) -> Self {
+            self.typed_link_facet = input; self
         }
         /// Appends an item to `attributes`.
         ///
@@ -5418,28 +4966,30 @@ pub mod batch_attach_typed_link {
         /// <p>A set of attributes that are associated with the typed link.</p>
         pub fn attributes(mut self, input: crate::model::AttributeNameAndValue) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>A set of attributes that are associated with the typed link.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttributeNameAndValue>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttributeNameAndValue>>) -> Self {
+            self.attributes = input; self
         }
         /// Consumes the builder and constructs a [`BatchAttachTypedLink`](crate::model::BatchAttachTypedLink).
         pub fn build(self) -> crate::model::BatchAttachTypedLink {
             crate::model::BatchAttachTypedLink {
-                source_object_reference: self.source_object_reference,
-                target_object_reference: self.target_object_reference,
-                typed_link_facet: self.typed_link_facet,
-                attributes: self.attributes,
+                source_object_reference: self.source_object_reference
+                ,
+                target_object_reference: self.target_object_reference
+                ,
+                typed_link_facet: self.typed_link_facet
+                ,
+                attributes: self.attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchAttachTypedLink {
     /// Creates a new builder-style object to manufacture [`BatchAttachTypedLink`](crate::model::BatchAttachTypedLink).
@@ -5451,7 +5001,7 @@ impl BatchAttachTypedLink {
 /// <p>Detaches the specified object from the specified index inside a <code>BatchRead</code> operation. For more information, see <code>DetachFromIndex</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDetachFromIndex {
+pub struct BatchDetachFromIndex  {
     /// <p>A reference to the index object.</p>
     #[doc(hidden)]
     pub index_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5461,17 +5011,17 @@ pub struct BatchDetachFromIndex {
 }
 impl BatchDetachFromIndex {
     /// <p>A reference to the index object.</p>
-    pub fn index_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn index_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.index_reference.as_ref()
     }
     /// <p>A reference to the object being detached from the index.</p>
-    pub fn target_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn target_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.target_reference.as_ref()
     }
 }
 /// See [`BatchDetachFromIndex`](crate::model::BatchDetachFromIndex).
 pub mod batch_detach_from_index {
-
+    
     /// A builder for [`BatchDetachFromIndex`](crate::model::BatchDetachFromIndex).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5485,12 +5035,8 @@ pub mod batch_detach_from_index {
             self
         }
         /// <p>A reference to the index object.</p>
-        pub fn set_index_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.index_reference = input;
-            self
+        pub fn set_index_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.index_reference = input; self
         }
         /// <p>A reference to the object being detached from the index.</p>
         pub fn target_reference(mut self, input: crate::model::ObjectReference) -> Self {
@@ -5498,21 +5044,21 @@ pub mod batch_detach_from_index {
             self
         }
         /// <p>A reference to the object being detached from the index.</p>
-        pub fn set_target_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.target_reference = input;
-            self
+        pub fn set_target_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.target_reference = input; self
         }
         /// Consumes the builder and constructs a [`BatchDetachFromIndex`](crate::model::BatchDetachFromIndex).
         pub fn build(self) -> crate::model::BatchDetachFromIndex {
             crate::model::BatchDetachFromIndex {
-                index_reference: self.index_reference,
-                target_reference: self.target_reference,
+                index_reference: self.index_reference
+                ,
+                target_reference: self.target_reference
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDetachFromIndex {
     /// Creates a new builder-style object to manufacture [`BatchDetachFromIndex`](crate::model::BatchDetachFromIndex).
@@ -5524,7 +5070,7 @@ impl BatchDetachFromIndex {
 /// <p>Attaches the specified object to the specified index inside a <code>BatchRead</code> operation. For more information, see <code>AttachToIndex</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAttachToIndex {
+pub struct BatchAttachToIndex  {
     /// <p>A reference to the index that you are attaching the object to.</p>
     #[doc(hidden)]
     pub index_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5534,17 +5080,17 @@ pub struct BatchAttachToIndex {
 }
 impl BatchAttachToIndex {
     /// <p>A reference to the index that you are attaching the object to.</p>
-    pub fn index_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn index_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.index_reference.as_ref()
     }
     /// <p>A reference to the object that you are attaching to the index.</p>
-    pub fn target_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn target_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.target_reference.as_ref()
     }
 }
 /// See [`BatchAttachToIndex`](crate::model::BatchAttachToIndex).
 pub mod batch_attach_to_index {
-
+    
     /// A builder for [`BatchAttachToIndex`](crate::model::BatchAttachToIndex).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5558,12 +5104,8 @@ pub mod batch_attach_to_index {
             self
         }
         /// <p>A reference to the index that you are attaching the object to.</p>
-        pub fn set_index_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.index_reference = input;
-            self
+        pub fn set_index_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.index_reference = input; self
         }
         /// <p>A reference to the object that you are attaching to the index.</p>
         pub fn target_reference(mut self, input: crate::model::ObjectReference) -> Self {
@@ -5571,21 +5113,21 @@ pub mod batch_attach_to_index {
             self
         }
         /// <p>A reference to the object that you are attaching to the index.</p>
-        pub fn set_target_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.target_reference = input;
-            self
+        pub fn set_target_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.target_reference = input; self
         }
         /// Consumes the builder and constructs a [`BatchAttachToIndex`](crate::model::BatchAttachToIndex).
         pub fn build(self) -> crate::model::BatchAttachToIndex {
             crate::model::BatchAttachToIndex {
-                index_reference: self.index_reference,
-                target_reference: self.target_reference,
+                index_reference: self.index_reference
+                ,
+                target_reference: self.target_reference
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchAttachToIndex {
     /// Creates a new builder-style object to manufacture [`BatchAttachToIndex`](crate::model::BatchAttachToIndex).
@@ -5597,11 +5139,10 @@ impl BatchAttachToIndex {
 /// <p>Creates an index object inside of a <code>BatchRead</code> operation. For more information, see <code>CreateIndex</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchCreateIndex {
+pub struct BatchCreateIndex  {
     /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
     #[doc(hidden)]
-    pub ordered_indexed_attribute_list:
-        std::option::Option<std::vec::Vec<crate::model::AttributeKey>>,
+    pub ordered_indexed_attribute_list: std::option::Option<std::vec::Vec<crate::model::AttributeKey>>,
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
     #[doc(hidden)]
     pub is_unique: bool,
@@ -5617,9 +5158,7 @@ pub struct BatchCreateIndex {
 }
 impl BatchCreateIndex {
     /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
-    pub fn ordered_indexed_attribute_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::AttributeKey]> {
+    pub fn ordered_indexed_attribute_list(&self) -> std::option::Option<& [crate::model::AttributeKey]> {
         self.ordered_indexed_attribute_list.as_deref()
     }
     /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
@@ -5627,26 +5166,25 @@ impl BatchCreateIndex {
         self.is_unique
     }
     /// <p>A reference to the parent object that contains the index object.</p>
-    pub fn parent_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn parent_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.parent_reference.as_ref()
     }
     /// <p>The name of the link between the parent object and the index object.</p>
-    pub fn link_name(&self) -> std::option::Option<&str> {
+    pub fn link_name(&self) -> std::option::Option<& str> {
         self.link_name.as_deref()
     }
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
-    pub fn batch_reference_name(&self) -> std::option::Option<&str> {
+    pub fn batch_reference_name(&self) -> std::option::Option<& str> {
         self.batch_reference_name.as_deref()
     }
 }
 /// See [`BatchCreateIndex`](crate::model::BatchCreateIndex).
 pub mod batch_create_index {
-
+    
     /// A builder for [`BatchCreateIndex`](crate::model::BatchCreateIndex).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) ordered_indexed_attribute_list:
-            std::option::Option<std::vec::Vec<crate::model::AttributeKey>>,
+        pub(crate) ordered_indexed_attribute_list: std::option::Option<std::vec::Vec<crate::model::AttributeKey>>,
         pub(crate) is_unique: std::option::Option<bool>,
         pub(crate) parent_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) link_name: std::option::Option<std::string::String>,
@@ -5660,17 +5198,13 @@ pub mod batch_create_index {
         /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
         pub fn ordered_indexed_attribute_list(mut self, input: crate::model::AttributeKey) -> Self {
             let mut v = self.ordered_indexed_attribute_list.unwrap_or_default();
-            v.push(input);
-            self.ordered_indexed_attribute_list = Some(v);
-            self
+                            v.push(input);
+                            self.ordered_indexed_attribute_list = Some(v);
+                            self
         }
         /// <p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>
-        pub fn set_ordered_indexed_attribute_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttributeKey>>,
-        ) -> Self {
-            self.ordered_indexed_attribute_list = input;
-            self
+        pub fn set_ordered_indexed_attribute_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttributeKey>>) -> Self {
+            self.ordered_indexed_attribute_list = input; self
         }
         /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
         pub fn is_unique(mut self, input: bool) -> Self {
@@ -5679,8 +5213,7 @@ pub mod batch_create_index {
         }
         /// <p>Indicates whether the attribute that is being indexed has unique values or not.</p>
         pub fn set_is_unique(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_unique = input;
-            self
+            self.is_unique = input; self
         }
         /// <p>A reference to the parent object that contains the index object.</p>
         pub fn parent_reference(mut self, input: crate::model::ObjectReference) -> Self {
@@ -5688,12 +5221,8 @@ pub mod batch_create_index {
             self
         }
         /// <p>A reference to the parent object that contains the index object.</p>
-        pub fn set_parent_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.parent_reference = input;
-            self
+        pub fn set_parent_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.parent_reference = input; self
         }
         /// <p>The name of the link between the parent object and the index object.</p>
         pub fn link_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5702,8 +5231,7 @@ pub mod batch_create_index {
         }
         /// <p>The name of the link between the parent object and the index object.</p>
         pub fn set_link_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.link_name = input;
-            self
+            self.link_name = input; self
         }
         /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
         pub fn batch_reference_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5711,24 +5239,28 @@ pub mod batch_create_index {
             self
         }
         /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
-        pub fn set_batch_reference_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.batch_reference_name = input;
-            self
+        pub fn set_batch_reference_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.batch_reference_name = input; self
         }
         /// Consumes the builder and constructs a [`BatchCreateIndex`](crate::model::BatchCreateIndex).
         pub fn build(self) -> crate::model::BatchCreateIndex {
             crate::model::BatchCreateIndex {
-                ordered_indexed_attribute_list: self.ordered_indexed_attribute_list,
-                is_unique: self.is_unique.unwrap_or_default(),
-                parent_reference: self.parent_reference,
-                link_name: self.link_name,
-                batch_reference_name: self.batch_reference_name,
+                ordered_indexed_attribute_list: self.ordered_indexed_attribute_list
+                ,
+                is_unique: self.is_unique
+                    .unwrap_or_default()
+                ,
+                parent_reference: self.parent_reference
+                ,
+                link_name: self.link_name
+                ,
+                batch_reference_name: self.batch_reference_name
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchCreateIndex {
     /// Creates a new builder-style object to manufacture [`BatchCreateIndex`](crate::model::BatchCreateIndex).
@@ -5740,7 +5272,7 @@ impl BatchCreateIndex {
 /// <p>Detaches the specified policy from the specified directory inside a <code>BatchWrite</code> operation. For more information, see <code>DetachPolicy</code> and <code>BatchWriteRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDetachPolicy {
+pub struct BatchDetachPolicy  {
     /// <p>Reference that identifies the policy object.</p>
     #[doc(hidden)]
     pub policy_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5750,17 +5282,17 @@ pub struct BatchDetachPolicy {
 }
 impl BatchDetachPolicy {
     /// <p>Reference that identifies the policy object.</p>
-    pub fn policy_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn policy_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.policy_reference.as_ref()
     }
     /// <p>Reference that identifies the object whose policy object will be detached.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
 }
 /// See [`BatchDetachPolicy`](crate::model::BatchDetachPolicy).
 pub mod batch_detach_policy {
-
+    
     /// A builder for [`BatchDetachPolicy`](crate::model::BatchDetachPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5774,12 +5306,8 @@ pub mod batch_detach_policy {
             self
         }
         /// <p>Reference that identifies the policy object.</p>
-        pub fn set_policy_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.policy_reference = input;
-            self
+        pub fn set_policy_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.policy_reference = input; self
         }
         /// <p>Reference that identifies the object whose policy object will be detached.</p>
         pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
@@ -5787,21 +5315,21 @@ pub mod batch_detach_policy {
             self
         }
         /// <p>Reference that identifies the object whose policy object will be detached.</p>
-        pub fn set_object_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.object_reference = input;
-            self
+        pub fn set_object_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.object_reference = input; self
         }
         /// Consumes the builder and constructs a [`BatchDetachPolicy`](crate::model::BatchDetachPolicy).
         pub fn build(self) -> crate::model::BatchDetachPolicy {
             crate::model::BatchDetachPolicy {
-                policy_reference: self.policy_reference,
-                object_reference: self.object_reference,
+                policy_reference: self.policy_reference
+                ,
+                object_reference: self.object_reference
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDetachPolicy {
     /// Creates a new builder-style object to manufacture [`BatchDetachPolicy`](crate::model::BatchDetachPolicy).
@@ -5813,7 +5341,7 @@ impl BatchDetachPolicy {
 /// <p>Attaches a policy object to a regular object inside a <code>BatchRead</code> operation.&nbsp;For more information, see <code>AttachPolicy</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAttachPolicy {
+pub struct BatchAttachPolicy  {
     /// <p>The reference that is associated with the policy object.</p>
     #[doc(hidden)]
     pub policy_reference: std::option::Option<crate::model::ObjectReference>,
@@ -5823,17 +5351,17 @@ pub struct BatchAttachPolicy {
 }
 impl BatchAttachPolicy {
     /// <p>The reference that is associated with the policy object.</p>
-    pub fn policy_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn policy_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.policy_reference.as_ref()
     }
     /// <p>The reference that identifies the object to which the policy will be attached.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
 }
 /// See [`BatchAttachPolicy`](crate::model::BatchAttachPolicy).
 pub mod batch_attach_policy {
-
+    
     /// A builder for [`BatchAttachPolicy`](crate::model::BatchAttachPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5847,12 +5375,8 @@ pub mod batch_attach_policy {
             self
         }
         /// <p>The reference that is associated with the policy object.</p>
-        pub fn set_policy_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.policy_reference = input;
-            self
+        pub fn set_policy_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.policy_reference = input; self
         }
         /// <p>The reference that identifies the object to which the policy will be attached.</p>
         pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
@@ -5860,21 +5384,21 @@ pub mod batch_attach_policy {
             self
         }
         /// <p>The reference that identifies the object to which the policy will be attached.</p>
-        pub fn set_object_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.object_reference = input;
-            self
+        pub fn set_object_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.object_reference = input; self
         }
         /// Consumes the builder and constructs a [`BatchAttachPolicy`](crate::model::BatchAttachPolicy).
         pub fn build(self) -> crate::model::BatchAttachPolicy {
             crate::model::BatchAttachPolicy {
-                policy_reference: self.policy_reference,
-                object_reference: self.object_reference,
+                policy_reference: self.policy_reference
+                ,
+                object_reference: self.object_reference
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchAttachPolicy {
     /// Creates a new builder-style object to manufacture [`BatchAttachPolicy`](crate::model::BatchAttachPolicy).
@@ -5886,7 +5410,7 @@ impl BatchAttachPolicy {
 /// <p>A batch operation to remove a facet from an object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchRemoveFacetFromObject {
+pub struct BatchRemoveFacetFromObject  {
     /// <p>The facet to remove from the object.</p>
     #[doc(hidden)]
     pub schema_facet: std::option::Option<crate::model::SchemaFacet>,
@@ -5896,17 +5420,17 @@ pub struct BatchRemoveFacetFromObject {
 }
 impl BatchRemoveFacetFromObject {
     /// <p>The facet to remove from the object.</p>
-    pub fn schema_facet(&self) -> std::option::Option<&crate::model::SchemaFacet> {
+    pub fn schema_facet(&self) -> std::option::Option<& crate::model::SchemaFacet> {
         self.schema_facet.as_ref()
     }
     /// <p>A reference to the object whose facet will be removed.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
 }
 /// See [`BatchRemoveFacetFromObject`](crate::model::BatchRemoveFacetFromObject).
 pub mod batch_remove_facet_from_object {
-
+    
     /// A builder for [`BatchRemoveFacetFromObject`](crate::model::BatchRemoveFacetFromObject).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5920,12 +5444,8 @@ pub mod batch_remove_facet_from_object {
             self
         }
         /// <p>The facet to remove from the object.</p>
-        pub fn set_schema_facet(
-            mut self,
-            input: std::option::Option<crate::model::SchemaFacet>,
-        ) -> Self {
-            self.schema_facet = input;
-            self
+        pub fn set_schema_facet(mut self, input: std::option::Option<crate::model::SchemaFacet>) -> Self {
+            self.schema_facet = input; self
         }
         /// <p>A reference to the object whose facet will be removed.</p>
         pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
@@ -5933,21 +5453,21 @@ pub mod batch_remove_facet_from_object {
             self
         }
         /// <p>A reference to the object whose facet will be removed.</p>
-        pub fn set_object_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.object_reference = input;
-            self
+        pub fn set_object_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.object_reference = input; self
         }
         /// Consumes the builder and constructs a [`BatchRemoveFacetFromObject`](crate::model::BatchRemoveFacetFromObject).
         pub fn build(self) -> crate::model::BatchRemoveFacetFromObject {
             crate::model::BatchRemoveFacetFromObject {
-                schema_facet: self.schema_facet,
-                object_reference: self.object_reference,
+                schema_facet: self.schema_facet
+                ,
+                object_reference: self.object_reference
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchRemoveFacetFromObject {
     /// Creates a new builder-style object to manufacture [`BatchRemoveFacetFromObject`](crate::model::BatchRemoveFacetFromObject).
@@ -5959,43 +5479,39 @@ impl BatchRemoveFacetFromObject {
 /// <p>Represents the output of a batch add facet to object operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAddFacetToObject {
+pub struct BatchAddFacetToObject  {
     /// <p>Represents the facet being added to the object.</p>
     #[doc(hidden)]
     pub schema_facet: std::option::Option<crate::model::SchemaFacet>,
     /// <p>The attributes to set on the object.</p>
     #[doc(hidden)]
-    pub object_attribute_list:
-        std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
+    pub object_attribute_list: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
     /// <p>A reference to the object being mutated.</p>
     #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl BatchAddFacetToObject {
     /// <p>Represents the facet being added to the object.</p>
-    pub fn schema_facet(&self) -> std::option::Option<&crate::model::SchemaFacet> {
+    pub fn schema_facet(&self) -> std::option::Option<& crate::model::SchemaFacet> {
         self.schema_facet.as_ref()
     }
     /// <p>The attributes to set on the object.</p>
-    pub fn object_attribute_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
+    pub fn object_attribute_list(&self) -> std::option::Option<& [crate::model::AttributeKeyAndValue]> {
         self.object_attribute_list.as_deref()
     }
     /// <p>A reference to the object being mutated.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
 }
 /// See [`BatchAddFacetToObject`](crate::model::BatchAddFacetToObject).
 pub mod batch_add_facet_to_object {
-
+    
     /// A builder for [`BatchAddFacetToObject`](crate::model::BatchAddFacetToObject).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_facet: std::option::Option<crate::model::SchemaFacet>,
-        pub(crate) object_attribute_list:
-            std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
+        pub(crate) object_attribute_list: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
     }
     impl Builder {
@@ -6005,12 +5521,8 @@ pub mod batch_add_facet_to_object {
             self
         }
         /// <p>Represents the facet being added to the object.</p>
-        pub fn set_schema_facet(
-            mut self,
-            input: std::option::Option<crate::model::SchemaFacet>,
-        ) -> Self {
-            self.schema_facet = input;
-            self
+        pub fn set_schema_facet(mut self, input: std::option::Option<crate::model::SchemaFacet>) -> Self {
+            self.schema_facet = input; self
         }
         /// Appends an item to `object_attribute_list`.
         ///
@@ -6019,17 +5531,13 @@ pub mod batch_add_facet_to_object {
         /// <p>The attributes to set on the object.</p>
         pub fn object_attribute_list(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
             let mut v = self.object_attribute_list.unwrap_or_default();
-            v.push(input);
-            self.object_attribute_list = Some(v);
-            self
+                            v.push(input);
+                            self.object_attribute_list = Some(v);
+                            self
         }
         /// <p>The attributes to set on the object.</p>
-        pub fn set_object_attribute_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
-        ) -> Self {
-            self.object_attribute_list = input;
-            self
+        pub fn set_object_attribute_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>) -> Self {
+            self.object_attribute_list = input; self
         }
         /// <p>A reference to the object being mutated.</p>
         pub fn object_reference(mut self, input: crate::model::ObjectReference) -> Self {
@@ -6037,22 +5545,23 @@ pub mod batch_add_facet_to_object {
             self
         }
         /// <p>A reference to the object being mutated.</p>
-        pub fn set_object_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.object_reference = input;
-            self
+        pub fn set_object_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.object_reference = input; self
         }
         /// Consumes the builder and constructs a [`BatchAddFacetToObject`](crate::model::BatchAddFacetToObject).
         pub fn build(self) -> crate::model::BatchAddFacetToObject {
             crate::model::BatchAddFacetToObject {
-                schema_facet: self.schema_facet,
-                object_attribute_list: self.object_attribute_list,
-                object_reference: self.object_reference,
+                schema_facet: self.schema_facet
+                ,
+                object_attribute_list: self.object_attribute_list
+                ,
+                object_reference: self.object_reference
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchAddFacetToObject {
     /// Creates a new builder-style object to manufacture [`BatchAddFacetToObject`](crate::model::BatchAddFacetToObject).
@@ -6064,20 +5573,20 @@ impl BatchAddFacetToObject {
 /// <p>Represents the output of a <code>DeleteObject</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteObject {
+pub struct BatchDeleteObject  {
     /// <p>The reference that identifies the object.</p>
     #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl BatchDeleteObject {
     /// <p>The reference that identifies the object.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
 }
 /// See [`BatchDeleteObject`](crate::model::BatchDeleteObject).
 pub mod batch_delete_object {
-
+    
     /// A builder for [`BatchDeleteObject`](crate::model::BatchDeleteObject).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6090,20 +5599,19 @@ pub mod batch_delete_object {
             self
         }
         /// <p>The reference that identifies the object.</p>
-        pub fn set_object_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.object_reference = input;
-            self
+        pub fn set_object_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.object_reference = input; self
         }
         /// Consumes the builder and constructs a [`BatchDeleteObject`](crate::model::BatchDeleteObject).
         pub fn build(self) -> crate::model::BatchDeleteObject {
             crate::model::BatchDeleteObject {
-                object_reference: self.object_reference,
+                object_reference: self.object_reference
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDeleteObject {
     /// Creates a new builder-style object to manufacture [`BatchDeleteObject`](crate::model::BatchDeleteObject).
@@ -6115,7 +5623,7 @@ impl BatchDeleteObject {
 /// <p>Represents the output of a <code>BatchUpdate</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdateObjectAttributes {
+pub struct BatchUpdateObjectAttributes  {
     /// <p>Reference that identifies the object.</p>
     #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -6125,23 +5633,22 @@ pub struct BatchUpdateObjectAttributes {
 }
 impl BatchUpdateObjectAttributes {
     /// <p>Reference that identifies the object.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>Attributes update structure.</p>
-    pub fn attribute_updates(&self) -> std::option::Option<&[crate::model::ObjectAttributeUpdate]> {
+    pub fn attribute_updates(&self) -> std::option::Option<& [crate::model::ObjectAttributeUpdate]> {
         self.attribute_updates.as_deref()
     }
 }
 /// See [`BatchUpdateObjectAttributes`](crate::model::BatchUpdateObjectAttributes).
 pub mod batch_update_object_attributes {
-
+    
     /// A builder for [`BatchUpdateObjectAttributes`](crate::model::BatchUpdateObjectAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
-        pub(crate) attribute_updates:
-            std::option::Option<std::vec::Vec<crate::model::ObjectAttributeUpdate>>,
+        pub(crate) attribute_updates: std::option::Option<std::vec::Vec<crate::model::ObjectAttributeUpdate>>,
     }
     impl Builder {
         /// <p>Reference that identifies the object.</p>
@@ -6150,12 +5657,8 @@ pub mod batch_update_object_attributes {
             self
         }
         /// <p>Reference that identifies the object.</p>
-        pub fn set_object_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.object_reference = input;
-            self
+        pub fn set_object_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.object_reference = input; self
         }
         /// Appends an item to `attribute_updates`.
         ///
@@ -6164,26 +5667,26 @@ pub mod batch_update_object_attributes {
         /// <p>Attributes update structure.</p>
         pub fn attribute_updates(mut self, input: crate::model::ObjectAttributeUpdate) -> Self {
             let mut v = self.attribute_updates.unwrap_or_default();
-            v.push(input);
-            self.attribute_updates = Some(v);
-            self
+                            v.push(input);
+                            self.attribute_updates = Some(v);
+                            self
         }
         /// <p>Attributes update structure.</p>
-        pub fn set_attribute_updates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ObjectAttributeUpdate>>,
-        ) -> Self {
-            self.attribute_updates = input;
-            self
+        pub fn set_attribute_updates(mut self, input: std::option::Option<std::vec::Vec<crate::model::ObjectAttributeUpdate>>) -> Self {
+            self.attribute_updates = input; self
         }
         /// Consumes the builder and constructs a [`BatchUpdateObjectAttributes`](crate::model::BatchUpdateObjectAttributes).
         pub fn build(self) -> crate::model::BatchUpdateObjectAttributes {
             crate::model::BatchUpdateObjectAttributes {
-                object_reference: self.object_reference,
-                attribute_updates: self.attribute_updates,
+                object_reference: self.object_reference
+                ,
+                attribute_updates: self.attribute_updates
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchUpdateObjectAttributes {
     /// Creates a new builder-style object to manufacture [`BatchUpdateObjectAttributes`](crate::model::BatchUpdateObjectAttributes).
@@ -6195,7 +5698,7 @@ impl BatchUpdateObjectAttributes {
 /// <p>Represents the output of a <code>DetachObject</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDetachObject {
+pub struct BatchDetachObject  {
     /// <p>Parent reference from which the object with the specified link name is detached.</p>
     #[doc(hidden)]
     pub parent_reference: std::option::Option<crate::model::ObjectReference>,
@@ -6208,21 +5711,21 @@ pub struct BatchDetachObject {
 }
 impl BatchDetachObject {
     /// <p>Parent reference from which the object with the specified link name is detached.</p>
-    pub fn parent_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn parent_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.parent_reference.as_ref()
     }
     /// <p>The name of the link.</p>
-    pub fn link_name(&self) -> std::option::Option<&str> {
+    pub fn link_name(&self) -> std::option::Option<& str> {
         self.link_name.as_deref()
     }
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
-    pub fn batch_reference_name(&self) -> std::option::Option<&str> {
+    pub fn batch_reference_name(&self) -> std::option::Option<& str> {
         self.batch_reference_name.as_deref()
     }
 }
 /// See [`BatchDetachObject`](crate::model::BatchDetachObject).
 pub mod batch_detach_object {
-
+    
     /// A builder for [`BatchDetachObject`](crate::model::BatchDetachObject).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6237,12 +5740,8 @@ pub mod batch_detach_object {
             self
         }
         /// <p>Parent reference from which the object with the specified link name is detached.</p>
-        pub fn set_parent_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.parent_reference = input;
-            self
+        pub fn set_parent_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.parent_reference = input; self
         }
         /// <p>The name of the link.</p>
         pub fn link_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6251,8 +5750,7 @@ pub mod batch_detach_object {
         }
         /// <p>The name of the link.</p>
         pub fn set_link_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.link_name = input;
-            self
+            self.link_name = input; self
         }
         /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
         pub fn batch_reference_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6260,22 +5758,23 @@ pub mod batch_detach_object {
             self
         }
         /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
-        pub fn set_batch_reference_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.batch_reference_name = input;
-            self
+        pub fn set_batch_reference_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.batch_reference_name = input; self
         }
         /// Consumes the builder and constructs a [`BatchDetachObject`](crate::model::BatchDetachObject).
         pub fn build(self) -> crate::model::BatchDetachObject {
             crate::model::BatchDetachObject {
-                parent_reference: self.parent_reference,
-                link_name: self.link_name,
-                batch_reference_name: self.batch_reference_name,
+                parent_reference: self.parent_reference
+                ,
+                link_name: self.link_name
+                ,
+                batch_reference_name: self.batch_reference_name
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDetachObject {
     /// Creates a new builder-style object to manufacture [`BatchDetachObject`](crate::model::BatchDetachObject).
@@ -6287,7 +5786,7 @@ impl BatchDetachObject {
 /// <p>Represents the output of an <code>AttachObject</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAttachObject {
+pub struct BatchAttachObject  {
     /// <p>The parent object reference.</p>
     #[doc(hidden)]
     pub parent_reference: std::option::Option<crate::model::ObjectReference>,
@@ -6300,21 +5799,21 @@ pub struct BatchAttachObject {
 }
 impl BatchAttachObject {
     /// <p>The parent object reference.</p>
-    pub fn parent_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn parent_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.parent_reference.as_ref()
     }
     /// <p>The child object reference that is to be attached to the object.</p>
-    pub fn child_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn child_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.child_reference.as_ref()
     }
     /// <p>The name of the link.</p>
-    pub fn link_name(&self) -> std::option::Option<&str> {
+    pub fn link_name(&self) -> std::option::Option<& str> {
         self.link_name.as_deref()
     }
 }
 /// See [`BatchAttachObject`](crate::model::BatchAttachObject).
 pub mod batch_attach_object {
-
+    
     /// A builder for [`BatchAttachObject`](crate::model::BatchAttachObject).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6329,12 +5828,8 @@ pub mod batch_attach_object {
             self
         }
         /// <p>The parent object reference.</p>
-        pub fn set_parent_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.parent_reference = input;
-            self
+        pub fn set_parent_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.parent_reference = input; self
         }
         /// <p>The child object reference that is to be attached to the object.</p>
         pub fn child_reference(mut self, input: crate::model::ObjectReference) -> Self {
@@ -6342,12 +5837,8 @@ pub mod batch_attach_object {
             self
         }
         /// <p>The child object reference that is to be attached to the object.</p>
-        pub fn set_child_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.child_reference = input;
-            self
+        pub fn set_child_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.child_reference = input; self
         }
         /// <p>The name of the link.</p>
         pub fn link_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6356,18 +5847,22 @@ pub mod batch_attach_object {
         }
         /// <p>The name of the link.</p>
         pub fn set_link_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.link_name = input;
-            self
+            self.link_name = input; self
         }
         /// Consumes the builder and constructs a [`BatchAttachObject`](crate::model::BatchAttachObject).
         pub fn build(self) -> crate::model::BatchAttachObject {
             crate::model::BatchAttachObject {
-                parent_reference: self.parent_reference,
-                child_reference: self.child_reference,
-                link_name: self.link_name,
+                parent_reference: self.parent_reference
+                ,
+                child_reference: self.child_reference
+                ,
+                link_name: self.link_name
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchAttachObject {
     /// Creates a new builder-style object to manufacture [`BatchAttachObject`](crate::model::BatchAttachObject).
@@ -6379,14 +5874,13 @@ impl BatchAttachObject {
 /// <p>Represents the output of a <code>CreateObject</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchCreateObject {
+pub struct BatchCreateObject  {
     /// <p>A list of <code>FacetArns</code> that will be associated with the object. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
     pub schema_facet: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
     /// <p>An attribute map, which contains an attribute ARN as the key and attribute value as the map value.</p>
     #[doc(hidden)]
-    pub object_attribute_list:
-        std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
+    pub object_attribute_list: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
     /// <p>If specified, the parent reference to which this object will be attached.</p>
     #[doc(hidden)]
     pub parent_reference: std::option::Option<crate::model::ObjectReference>,
@@ -6399,37 +5893,34 @@ pub struct BatchCreateObject {
 }
 impl BatchCreateObject {
     /// <p>A list of <code>FacetArns</code> that will be associated with the object. For more information, see <code>arns</code>.</p>
-    pub fn schema_facet(&self) -> std::option::Option<&[crate::model::SchemaFacet]> {
+    pub fn schema_facet(&self) -> std::option::Option<& [crate::model::SchemaFacet]> {
         self.schema_facet.as_deref()
     }
     /// <p>An attribute map, which contains an attribute ARN as the key and attribute value as the map value.</p>
-    pub fn object_attribute_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
+    pub fn object_attribute_list(&self) -> std::option::Option<& [crate::model::AttributeKeyAndValue]> {
         self.object_attribute_list.as_deref()
     }
     /// <p>If specified, the parent reference to which this object will be attached.</p>
-    pub fn parent_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn parent_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.parent_reference.as_ref()
     }
     /// <p>The name of the link.</p>
-    pub fn link_name(&self) -> std::option::Option<&str> {
+    pub fn link_name(&self) -> std::option::Option<& str> {
         self.link_name.as_deref()
     }
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
-    pub fn batch_reference_name(&self) -> std::option::Option<&str> {
+    pub fn batch_reference_name(&self) -> std::option::Option<& str> {
         self.batch_reference_name.as_deref()
     }
 }
 /// See [`BatchCreateObject`](crate::model::BatchCreateObject).
 pub mod batch_create_object {
-
+    
     /// A builder for [`BatchCreateObject`](crate::model::BatchCreateObject).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) schema_facet: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
-        pub(crate) object_attribute_list:
-            std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
+        pub(crate) object_attribute_list: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
         pub(crate) parent_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) link_name: std::option::Option<std::string::String>,
         pub(crate) batch_reference_name: std::option::Option<std::string::String>,
@@ -6442,17 +5933,13 @@ pub mod batch_create_object {
         /// <p>A list of <code>FacetArns</code> that will be associated with the object. For more information, see <code>arns</code>.</p>
         pub fn schema_facet(mut self, input: crate::model::SchemaFacet) -> Self {
             let mut v = self.schema_facet.unwrap_or_default();
-            v.push(input);
-            self.schema_facet = Some(v);
-            self
+                            v.push(input);
+                            self.schema_facet = Some(v);
+                            self
         }
         /// <p>A list of <code>FacetArns</code> that will be associated with the object. For more information, see <code>arns</code>.</p>
-        pub fn set_schema_facet(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
-        ) -> Self {
-            self.schema_facet = input;
-            self
+        pub fn set_schema_facet(mut self, input: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>) -> Self {
+            self.schema_facet = input; self
         }
         /// Appends an item to `object_attribute_list`.
         ///
@@ -6461,17 +5948,13 @@ pub mod batch_create_object {
         /// <p>An attribute map, which contains an attribute ARN as the key and attribute value as the map value.</p>
         pub fn object_attribute_list(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
             let mut v = self.object_attribute_list.unwrap_or_default();
-            v.push(input);
-            self.object_attribute_list = Some(v);
-            self
+                            v.push(input);
+                            self.object_attribute_list = Some(v);
+                            self
         }
         /// <p>An attribute map, which contains an attribute ARN as the key and attribute value as the map value.</p>
-        pub fn set_object_attribute_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
-        ) -> Self {
-            self.object_attribute_list = input;
-            self
+        pub fn set_object_attribute_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>) -> Self {
+            self.object_attribute_list = input; self
         }
         /// <p>If specified, the parent reference to which this object will be attached.</p>
         pub fn parent_reference(mut self, input: crate::model::ObjectReference) -> Self {
@@ -6479,12 +5962,8 @@ pub mod batch_create_object {
             self
         }
         /// <p>If specified, the parent reference to which this object will be attached.</p>
-        pub fn set_parent_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.parent_reference = input;
-            self
+        pub fn set_parent_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.parent_reference = input; self
         }
         /// <p>The name of the link.</p>
         pub fn link_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6493,8 +5972,7 @@ pub mod batch_create_object {
         }
         /// <p>The name of the link.</p>
         pub fn set_link_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.link_name = input;
-            self
+            self.link_name = input; self
         }
         /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
         pub fn batch_reference_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6502,24 +5980,27 @@ pub mod batch_create_object {
             self
         }
         /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
-        pub fn set_batch_reference_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.batch_reference_name = input;
-            self
+        pub fn set_batch_reference_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.batch_reference_name = input; self
         }
         /// Consumes the builder and constructs a [`BatchCreateObject`](crate::model::BatchCreateObject).
         pub fn build(self) -> crate::model::BatchCreateObject {
             crate::model::BatchCreateObject {
-                schema_facet: self.schema_facet,
-                object_attribute_list: self.object_attribute_list,
-                parent_reference: self.parent_reference,
-                link_name: self.link_name,
-                batch_reference_name: self.batch_reference_name,
+                schema_facet: self.schema_facet
+                ,
+                object_attribute_list: self.object_attribute_list
+                ,
+                parent_reference: self.parent_reference
+                ,
+                link_name: self.link_name
+                ,
+                batch_reference_name: self.batch_reference_name
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchCreateObject {
     /// Creates a new builder-style object to manufacture [`BatchCreateObject`](crate::model::BatchCreateObject).
@@ -6531,7 +6012,7 @@ impl BatchCreateObject {
 /// <p>Represents the output of a <code>BatchRead</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchReadOperationResponse {
+pub struct BatchReadOperationResponse  {
     /// <p>Identifies which operation in a batch has succeeded.</p>
     #[doc(hidden)]
     pub successful_response: std::option::Option<crate::model::BatchReadSuccessfulResponse>,
@@ -6541,42 +6022,32 @@ pub struct BatchReadOperationResponse {
 }
 impl BatchReadOperationResponse {
     /// <p>Identifies which operation in a batch has succeeded.</p>
-    pub fn successful_response(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchReadSuccessfulResponse> {
+    pub fn successful_response(&self) -> std::option::Option<& crate::model::BatchReadSuccessfulResponse> {
         self.successful_response.as_ref()
     }
     /// <p>Identifies which operation in a batch has failed.</p>
-    pub fn exception_response(&self) -> std::option::Option<&crate::model::BatchReadException> {
+    pub fn exception_response(&self) -> std::option::Option<& crate::model::BatchReadException> {
         self.exception_response.as_ref()
     }
 }
 /// See [`BatchReadOperationResponse`](crate::model::BatchReadOperationResponse).
 pub mod batch_read_operation_response {
-
+    
     /// A builder for [`BatchReadOperationResponse`](crate::model::BatchReadOperationResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) successful_response:
-            std::option::Option<crate::model::BatchReadSuccessfulResponse>,
+        pub(crate) successful_response: std::option::Option<crate::model::BatchReadSuccessfulResponse>,
         pub(crate) exception_response: std::option::Option<crate::model::BatchReadException>,
     }
     impl Builder {
         /// <p>Identifies which operation in a batch has succeeded.</p>
-        pub fn successful_response(
-            mut self,
-            input: crate::model::BatchReadSuccessfulResponse,
-        ) -> Self {
+        pub fn successful_response(mut self, input: crate::model::BatchReadSuccessfulResponse) -> Self {
             self.successful_response = Some(input);
             self
         }
         /// <p>Identifies which operation in a batch has succeeded.</p>
-        pub fn set_successful_response(
-            mut self,
-            input: std::option::Option<crate::model::BatchReadSuccessfulResponse>,
-        ) -> Self {
-            self.successful_response = input;
-            self
+        pub fn set_successful_response(mut self, input: std::option::Option<crate::model::BatchReadSuccessfulResponse>) -> Self {
+            self.successful_response = input; self
         }
         /// <p>Identifies which operation in a batch has failed.</p>
         pub fn exception_response(mut self, input: crate::model::BatchReadException) -> Self {
@@ -6584,21 +6055,21 @@ pub mod batch_read_operation_response {
             self
         }
         /// <p>Identifies which operation in a batch has failed.</p>
-        pub fn set_exception_response(
-            mut self,
-            input: std::option::Option<crate::model::BatchReadException>,
-        ) -> Self {
-            self.exception_response = input;
-            self
+        pub fn set_exception_response(mut self, input: std::option::Option<crate::model::BatchReadException>) -> Self {
+            self.exception_response = input; self
         }
         /// Consumes the builder and constructs a [`BatchReadOperationResponse`](crate::model::BatchReadOperationResponse).
         pub fn build(self) -> crate::model::BatchReadOperationResponse {
             crate::model::BatchReadOperationResponse {
-                successful_response: self.successful_response,
-                exception_response: self.exception_response,
+                successful_response: self.successful_response
+                ,
+                exception_response: self.exception_response
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchReadOperationResponse {
     /// Creates a new builder-style object to manufacture [`BatchReadOperationResponse`](crate::model::BatchReadOperationResponse).
@@ -6610,7 +6081,7 @@ impl BatchReadOperationResponse {
 /// <p>The batch read exception structure, which contains the exception type and message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchReadException {
+pub struct BatchReadException  {
     /// <p>A type of exception, such as <code>InvalidArnException</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::BatchReadExceptionType>,
@@ -6620,17 +6091,17 @@ pub struct BatchReadException {
 }
 impl BatchReadException {
     /// <p>A type of exception, such as <code>InvalidArnException</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::BatchReadExceptionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::BatchReadExceptionType> {
         self.r#type.as_ref()
     }
     /// <p>An exception message that is associated with the failure.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`BatchReadException`](crate::model::BatchReadException).
 pub mod batch_read_exception {
-
+    
     /// A builder for [`BatchReadException`](crate::model::BatchReadException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6644,12 +6115,8 @@ pub mod batch_read_exception {
             self
         }
         /// <p>A type of exception, such as <code>InvalidArnException</code>.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::BatchReadExceptionType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::BatchReadExceptionType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>An exception message that is associated with the failure.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6658,17 +6125,20 @@ pub mod batch_read_exception {
         }
         /// <p>An exception message that is associated with the failure.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`BatchReadException`](crate::model::BatchReadException).
         pub fn build(self) -> crate::model::BatchReadException {
             crate::model::BatchReadException {
-                r#type: self.r#type,
-                message: self.message,
+                r#type: self.r#type
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchReadException {
     /// Creates a new builder-style object to manufacture [`BatchReadException`](crate::model::BatchReadException).
@@ -6683,9 +6153,9 @@ impl BatchReadException {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let batchreadexceptiontype = unimplemented!();
 /// match batchreadexceptiontype {
@@ -6718,22 +6188,14 @@ impl BatchReadException {
 /// Specifically, when `batchreadexceptiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BatchReadExceptionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BatchReadExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     AccessDeniedException,
@@ -6762,15 +6224,13 @@ pub enum BatchReadExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     ValidationException,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BatchReadExceptionType {
     fn from(s: &str) -> Self {
         match s {
             "AccessDeniedException" => BatchReadExceptionType::AccessDeniedException,
-            "CannotListParentOfRootException" => {
-                BatchReadExceptionType::CannotListParentOfRootException
-            }
+            "CannotListParentOfRootException" => BatchReadExceptionType::CannotListParentOfRootException,
             "DirectoryNotEnabledException" => BatchReadExceptionType::DirectoryNotEnabledException,
             "FacetValidationException" => BatchReadExceptionType::FacetValidationException,
             "InternalServiceException" => BatchReadExceptionType::InternalServiceException,
@@ -6782,27 +6242,23 @@ impl std::convert::From<&str> for BatchReadExceptionType {
             "NotPolicyException" => BatchReadExceptionType::NotPolicyException,
             "ResourceNotFoundException" => BatchReadExceptionType::ResourceNotFoundException,
             "ValidationException" => BatchReadExceptionType::ValidationException,
-            other => {
-                BatchReadExceptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => BatchReadExceptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BatchReadExceptionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BatchReadExceptionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BatchReadExceptionType::from(s))
+                }
+            }
 impl BatchReadExceptionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BatchReadExceptionType::AccessDeniedException => "AccessDeniedException",
-            BatchReadExceptionType::CannotListParentOfRootException => {
-                "CannotListParentOfRootException"
-            }
+            BatchReadExceptionType::CannotListParentOfRootException => "CannotListParentOfRootException",
             BatchReadExceptionType::DirectoryNotEnabledException => "DirectoryNotEnabledException",
             BatchReadExceptionType::FacetValidationException => "FacetValidationException",
             BatchReadExceptionType::InternalServiceException => "InternalServiceException",
@@ -6814,25 +6270,13 @@ impl BatchReadExceptionType {
             BatchReadExceptionType::NotPolicyException => "NotPolicyException",
             BatchReadExceptionType::ResourceNotFoundException => "ResourceNotFoundException",
             BatchReadExceptionType::ValidationException => "ValidationException",
-            BatchReadExceptionType::Unknown(value) => value.as_str(),
+            BatchReadExceptionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AccessDeniedException",
-            "CannotListParentOfRootException",
-            "DirectoryNotEnabledException",
-            "FacetValidationException",
-            "InternalServiceException",
-            "InvalidArnException",
-            "InvalidNextTokenException",
-            "LimitExceededException",
-            "NotIndexException",
-            "NotNodeException",
-            "NotPolicyException",
-            "ResourceNotFoundException",
-            "ValidationException",
+            "AccessDeniedException", "CannotListParentOfRootException", "DirectoryNotEnabledException", "FacetValidationException", "InternalServiceException", "InvalidArnException", "InvalidNextTokenException", "LimitExceededException", "NotIndexException", "NotNodeException", "NotPolicyException", "ResourceNotFoundException", "ValidationException"
         ]
     }
 }
@@ -6845,18 +6289,16 @@ impl AsRef<str> for BatchReadExceptionType {
 /// <p>Represents the output of a <code>BatchRead</code> success response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchReadSuccessfulResponse {
+pub struct BatchReadSuccessfulResponse  {
     /// <p>Lists all attributes that are associated with an object.</p>
     #[doc(hidden)]
-    pub list_object_attributes:
-        std::option::Option<crate::model::BatchListObjectAttributesResponse>,
+    pub list_object_attributes: std::option::Option<crate::model::BatchListObjectAttributesResponse>,
     /// <p>Returns a paginated list of child objects that are associated with a given object.</p>
     #[doc(hidden)]
     pub list_object_children: std::option::Option<crate::model::BatchListObjectChildrenResponse>,
     /// <p>Retrieves metadata about an object.</p>
     #[doc(hidden)]
-    pub get_object_information:
-        std::option::Option<crate::model::BatchGetObjectInformationResponse>,
+    pub get_object_information: std::option::Option<crate::model::BatchGetObjectInformationResponse>,
     /// <p>Retrieves attributes within a facet that are associated with an object.</p>
     #[doc(hidden)]
     pub get_object_attributes: std::option::Option<crate::model::BatchGetObjectAttributesResponse>,
@@ -6865,15 +6307,13 @@ pub struct BatchReadSuccessfulResponse {
     pub list_attached_indices: std::option::Option<crate::model::BatchListAttachedIndicesResponse>,
     /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
     #[doc(hidden)]
-    pub list_object_parent_paths:
-        std::option::Option<crate::model::BatchListObjectParentPathsResponse>,
+    pub list_object_parent_paths: std::option::Option<crate::model::BatchListObjectParentPathsResponse>,
     /// <p>Returns policies attached to an object in pagination fashion.</p>
     #[doc(hidden)]
     pub list_object_policies: std::option::Option<crate::model::BatchListObjectPoliciesResponse>,
     /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>
     #[doc(hidden)]
-    pub list_policy_attachments:
-        std::option::Option<crate::model::BatchListPolicyAttachmentsResponse>,
+    pub list_policy_attachments: std::option::Option<crate::model::BatchListPolicyAttachmentsResponse>,
     /// <p>Lists all policies from the root of the <code>Directory</code> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
     #[doc(hidden)]
     pub lookup_policy: std::option::Option<crate::model::BatchLookupPolicyResponse>,
@@ -6882,12 +6322,10 @@ pub struct BatchReadSuccessfulResponse {
     pub list_index: std::option::Option<crate::model::BatchListIndexResponse>,
     /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     #[doc(hidden)]
-    pub list_outgoing_typed_links:
-        std::option::Option<crate::model::BatchListOutgoingTypedLinksResponse>,
+    pub list_outgoing_typed_links: std::option::Option<crate::model::BatchListOutgoingTypedLinksResponse>,
     /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     #[doc(hidden)]
-    pub list_incoming_typed_links:
-        std::option::Option<crate::model::BatchListIncomingTypedLinksResponse>,
+    pub list_incoming_typed_links: std::option::Option<crate::model::BatchListIncomingTypedLinksResponse>,
     /// <p>The list of attributes to retrieve from the typed link.</p>
     #[doc(hidden)]
     pub get_link_attributes: std::option::Option<crate::model::BatchGetLinkAttributesResponse>,
@@ -6897,247 +6335,155 @@ pub struct BatchReadSuccessfulResponse {
 }
 impl BatchReadSuccessfulResponse {
     /// <p>Lists all attributes that are associated with an object.</p>
-    pub fn list_object_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchListObjectAttributesResponse> {
+    pub fn list_object_attributes(&self) -> std::option::Option<& crate::model::BatchListObjectAttributesResponse> {
         self.list_object_attributes.as_ref()
     }
     /// <p>Returns a paginated list of child objects that are associated with a given object.</p>
-    pub fn list_object_children(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchListObjectChildrenResponse> {
+    pub fn list_object_children(&self) -> std::option::Option<& crate::model::BatchListObjectChildrenResponse> {
         self.list_object_children.as_ref()
     }
     /// <p>Retrieves metadata about an object.</p>
-    pub fn get_object_information(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchGetObjectInformationResponse> {
+    pub fn get_object_information(&self) -> std::option::Option<& crate::model::BatchGetObjectInformationResponse> {
         self.get_object_information.as_ref()
     }
     /// <p>Retrieves attributes within a facet that are associated with an object.</p>
-    pub fn get_object_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchGetObjectAttributesResponse> {
+    pub fn get_object_attributes(&self) -> std::option::Option<& crate::model::BatchGetObjectAttributesResponse> {
         self.get_object_attributes.as_ref()
     }
     /// <p>Lists indices attached to an object.</p>
-    pub fn list_attached_indices(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchListAttachedIndicesResponse> {
+    pub fn list_attached_indices(&self) -> std::option::Option<& crate::model::BatchListAttachedIndicesResponse> {
         self.list_attached_indices.as_ref()
     }
     /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
-    pub fn list_object_parent_paths(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchListObjectParentPathsResponse> {
+    pub fn list_object_parent_paths(&self) -> std::option::Option<& crate::model::BatchListObjectParentPathsResponse> {
         self.list_object_parent_paths.as_ref()
     }
     /// <p>Returns policies attached to an object in pagination fashion.</p>
-    pub fn list_object_policies(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchListObjectPoliciesResponse> {
+    pub fn list_object_policies(&self) -> std::option::Option<& crate::model::BatchListObjectPoliciesResponse> {
         self.list_object_policies.as_ref()
     }
     /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>
-    pub fn list_policy_attachments(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchListPolicyAttachmentsResponse> {
+    pub fn list_policy_attachments(&self) -> std::option::Option<& crate::model::BatchListPolicyAttachmentsResponse> {
         self.list_policy_attachments.as_ref()
     }
     /// <p>Lists all policies from the root of the <code>Directory</code> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-    pub fn lookup_policy(&self) -> std::option::Option<&crate::model::BatchLookupPolicyResponse> {
+    pub fn lookup_policy(&self) -> std::option::Option<& crate::model::BatchLookupPolicyResponse> {
         self.lookup_policy.as_ref()
     }
     /// <p>Lists objects attached to the specified index.</p>
-    pub fn list_index(&self) -> std::option::Option<&crate::model::BatchListIndexResponse> {
+    pub fn list_index(&self) -> std::option::Option<& crate::model::BatchListIndexResponse> {
         self.list_index.as_ref()
     }
     /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn list_outgoing_typed_links(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchListOutgoingTypedLinksResponse> {
+    pub fn list_outgoing_typed_links(&self) -> std::option::Option<& crate::model::BatchListOutgoingTypedLinksResponse> {
         self.list_outgoing_typed_links.as_ref()
     }
     /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn list_incoming_typed_links(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchListIncomingTypedLinksResponse> {
+    pub fn list_incoming_typed_links(&self) -> std::option::Option<& crate::model::BatchListIncomingTypedLinksResponse> {
         self.list_incoming_typed_links.as_ref()
     }
     /// <p>The list of attributes to retrieve from the typed link.</p>
-    pub fn get_link_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchGetLinkAttributesResponse> {
+    pub fn get_link_attributes(&self) -> std::option::Option<& crate::model::BatchGetLinkAttributesResponse> {
         self.get_link_attributes.as_ref()
     }
     /// <p>The list of parent objects to retrieve.</p>
-    pub fn list_object_parents(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchListObjectParentsResponse> {
+    pub fn list_object_parents(&self) -> std::option::Option<& crate::model::BatchListObjectParentsResponse> {
         self.list_object_parents.as_ref()
     }
 }
 /// See [`BatchReadSuccessfulResponse`](crate::model::BatchReadSuccessfulResponse).
 pub mod batch_read_successful_response {
-
+    
     /// A builder for [`BatchReadSuccessfulResponse`](crate::model::BatchReadSuccessfulResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) list_object_attributes:
-            std::option::Option<crate::model::BatchListObjectAttributesResponse>,
-        pub(crate) list_object_children:
-            std::option::Option<crate::model::BatchListObjectChildrenResponse>,
-        pub(crate) get_object_information:
-            std::option::Option<crate::model::BatchGetObjectInformationResponse>,
-        pub(crate) get_object_attributes:
-            std::option::Option<crate::model::BatchGetObjectAttributesResponse>,
-        pub(crate) list_attached_indices:
-            std::option::Option<crate::model::BatchListAttachedIndicesResponse>,
-        pub(crate) list_object_parent_paths:
-            std::option::Option<crate::model::BatchListObjectParentPathsResponse>,
-        pub(crate) list_object_policies:
-            std::option::Option<crate::model::BatchListObjectPoliciesResponse>,
-        pub(crate) list_policy_attachments:
-            std::option::Option<crate::model::BatchListPolicyAttachmentsResponse>,
+        pub(crate) list_object_attributes: std::option::Option<crate::model::BatchListObjectAttributesResponse>,
+        pub(crate) list_object_children: std::option::Option<crate::model::BatchListObjectChildrenResponse>,
+        pub(crate) get_object_information: std::option::Option<crate::model::BatchGetObjectInformationResponse>,
+        pub(crate) get_object_attributes: std::option::Option<crate::model::BatchGetObjectAttributesResponse>,
+        pub(crate) list_attached_indices: std::option::Option<crate::model::BatchListAttachedIndicesResponse>,
+        pub(crate) list_object_parent_paths: std::option::Option<crate::model::BatchListObjectParentPathsResponse>,
+        pub(crate) list_object_policies: std::option::Option<crate::model::BatchListObjectPoliciesResponse>,
+        pub(crate) list_policy_attachments: std::option::Option<crate::model::BatchListPolicyAttachmentsResponse>,
         pub(crate) lookup_policy: std::option::Option<crate::model::BatchLookupPolicyResponse>,
         pub(crate) list_index: std::option::Option<crate::model::BatchListIndexResponse>,
-        pub(crate) list_outgoing_typed_links:
-            std::option::Option<crate::model::BatchListOutgoingTypedLinksResponse>,
-        pub(crate) list_incoming_typed_links:
-            std::option::Option<crate::model::BatchListIncomingTypedLinksResponse>,
-        pub(crate) get_link_attributes:
-            std::option::Option<crate::model::BatchGetLinkAttributesResponse>,
-        pub(crate) list_object_parents:
-            std::option::Option<crate::model::BatchListObjectParentsResponse>,
+        pub(crate) list_outgoing_typed_links: std::option::Option<crate::model::BatchListOutgoingTypedLinksResponse>,
+        pub(crate) list_incoming_typed_links: std::option::Option<crate::model::BatchListIncomingTypedLinksResponse>,
+        pub(crate) get_link_attributes: std::option::Option<crate::model::BatchGetLinkAttributesResponse>,
+        pub(crate) list_object_parents: std::option::Option<crate::model::BatchListObjectParentsResponse>,
     }
     impl Builder {
         /// <p>Lists all attributes that are associated with an object.</p>
-        pub fn list_object_attributes(
-            mut self,
-            input: crate::model::BatchListObjectAttributesResponse,
-        ) -> Self {
+        pub fn list_object_attributes(mut self, input: crate::model::BatchListObjectAttributesResponse) -> Self {
             self.list_object_attributes = Some(input);
             self
         }
         /// <p>Lists all attributes that are associated with an object.</p>
-        pub fn set_list_object_attributes(
-            mut self,
-            input: std::option::Option<crate::model::BatchListObjectAttributesResponse>,
-        ) -> Self {
-            self.list_object_attributes = input;
-            self
+        pub fn set_list_object_attributes(mut self, input: std::option::Option<crate::model::BatchListObjectAttributesResponse>) -> Self {
+            self.list_object_attributes = input; self
         }
         /// <p>Returns a paginated list of child objects that are associated with a given object.</p>
-        pub fn list_object_children(
-            mut self,
-            input: crate::model::BatchListObjectChildrenResponse,
-        ) -> Self {
+        pub fn list_object_children(mut self, input: crate::model::BatchListObjectChildrenResponse) -> Self {
             self.list_object_children = Some(input);
             self
         }
         /// <p>Returns a paginated list of child objects that are associated with a given object.</p>
-        pub fn set_list_object_children(
-            mut self,
-            input: std::option::Option<crate::model::BatchListObjectChildrenResponse>,
-        ) -> Self {
-            self.list_object_children = input;
-            self
+        pub fn set_list_object_children(mut self, input: std::option::Option<crate::model::BatchListObjectChildrenResponse>) -> Self {
+            self.list_object_children = input; self
         }
         /// <p>Retrieves metadata about an object.</p>
-        pub fn get_object_information(
-            mut self,
-            input: crate::model::BatchGetObjectInformationResponse,
-        ) -> Self {
+        pub fn get_object_information(mut self, input: crate::model::BatchGetObjectInformationResponse) -> Self {
             self.get_object_information = Some(input);
             self
         }
         /// <p>Retrieves metadata about an object.</p>
-        pub fn set_get_object_information(
-            mut self,
-            input: std::option::Option<crate::model::BatchGetObjectInformationResponse>,
-        ) -> Self {
-            self.get_object_information = input;
-            self
+        pub fn set_get_object_information(mut self, input: std::option::Option<crate::model::BatchGetObjectInformationResponse>) -> Self {
+            self.get_object_information = input; self
         }
         /// <p>Retrieves attributes within a facet that are associated with an object.</p>
-        pub fn get_object_attributes(
-            mut self,
-            input: crate::model::BatchGetObjectAttributesResponse,
-        ) -> Self {
+        pub fn get_object_attributes(mut self, input: crate::model::BatchGetObjectAttributesResponse) -> Self {
             self.get_object_attributes = Some(input);
             self
         }
         /// <p>Retrieves attributes within a facet that are associated with an object.</p>
-        pub fn set_get_object_attributes(
-            mut self,
-            input: std::option::Option<crate::model::BatchGetObjectAttributesResponse>,
-        ) -> Self {
-            self.get_object_attributes = input;
-            self
+        pub fn set_get_object_attributes(mut self, input: std::option::Option<crate::model::BatchGetObjectAttributesResponse>) -> Self {
+            self.get_object_attributes = input; self
         }
         /// <p>Lists indices attached to an object.</p>
-        pub fn list_attached_indices(
-            mut self,
-            input: crate::model::BatchListAttachedIndicesResponse,
-        ) -> Self {
+        pub fn list_attached_indices(mut self, input: crate::model::BatchListAttachedIndicesResponse) -> Self {
             self.list_attached_indices = Some(input);
             self
         }
         /// <p>Lists indices attached to an object.</p>
-        pub fn set_list_attached_indices(
-            mut self,
-            input: std::option::Option<crate::model::BatchListAttachedIndicesResponse>,
-        ) -> Self {
-            self.list_attached_indices = input;
-            self
+        pub fn set_list_attached_indices(mut self, input: std::option::Option<crate::model::BatchListAttachedIndicesResponse>) -> Self {
+            self.list_attached_indices = input; self
         }
         /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
-        pub fn list_object_parent_paths(
-            mut self,
-            input: crate::model::BatchListObjectParentPathsResponse,
-        ) -> Self {
+        pub fn list_object_parent_paths(mut self, input: crate::model::BatchListObjectParentPathsResponse) -> Self {
             self.list_object_parent_paths = Some(input);
             self
         }
         /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
-        pub fn set_list_object_parent_paths(
-            mut self,
-            input: std::option::Option<crate::model::BatchListObjectParentPathsResponse>,
-        ) -> Self {
-            self.list_object_parent_paths = input;
-            self
+        pub fn set_list_object_parent_paths(mut self, input: std::option::Option<crate::model::BatchListObjectParentPathsResponse>) -> Self {
+            self.list_object_parent_paths = input; self
         }
         /// <p>Returns policies attached to an object in pagination fashion.</p>
-        pub fn list_object_policies(
-            mut self,
-            input: crate::model::BatchListObjectPoliciesResponse,
-        ) -> Self {
+        pub fn list_object_policies(mut self, input: crate::model::BatchListObjectPoliciesResponse) -> Self {
             self.list_object_policies = Some(input);
             self
         }
         /// <p>Returns policies attached to an object in pagination fashion.</p>
-        pub fn set_list_object_policies(
-            mut self,
-            input: std::option::Option<crate::model::BatchListObjectPoliciesResponse>,
-        ) -> Self {
-            self.list_object_policies = input;
-            self
+        pub fn set_list_object_policies(mut self, input: std::option::Option<crate::model::BatchListObjectPoliciesResponse>) -> Self {
+            self.list_object_policies = input; self
         }
         /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>
-        pub fn list_policy_attachments(
-            mut self,
-            input: crate::model::BatchListPolicyAttachmentsResponse,
-        ) -> Self {
+        pub fn list_policy_attachments(mut self, input: crate::model::BatchListPolicyAttachmentsResponse) -> Self {
             self.list_policy_attachments = Some(input);
             self
         }
         /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>
-        pub fn set_list_policy_attachments(
-            mut self,
-            input: std::option::Option<crate::model::BatchListPolicyAttachmentsResponse>,
-        ) -> Self {
-            self.list_policy_attachments = input;
-            self
+        pub fn set_list_policy_attachments(mut self, input: std::option::Option<crate::model::BatchListPolicyAttachmentsResponse>) -> Self {
+            self.list_policy_attachments = input; self
         }
         /// <p>Lists all policies from the root of the <code>Directory</code> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
         pub fn lookup_policy(mut self, input: crate::model::BatchLookupPolicyResponse) -> Self {
@@ -7145,12 +6491,8 @@ pub mod batch_read_successful_response {
             self
         }
         /// <p>Lists all policies from the root of the <code>Directory</code> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-        pub fn set_lookup_policy(
-            mut self,
-            input: std::option::Option<crate::model::BatchLookupPolicyResponse>,
-        ) -> Self {
-            self.lookup_policy = input;
-            self
+        pub fn set_lookup_policy(mut self, input: std::option::Option<crate::model::BatchLookupPolicyResponse>) -> Self {
+            self.lookup_policy = input; self
         }
         /// <p>Lists objects attached to the specified index.</p>
         pub fn list_index(mut self, input: crate::model::BatchListIndexResponse) -> Self {
@@ -7158,97 +6500,81 @@ pub mod batch_read_successful_response {
             self
         }
         /// <p>Lists objects attached to the specified index.</p>
-        pub fn set_list_index(
-            mut self,
-            input: std::option::Option<crate::model::BatchListIndexResponse>,
-        ) -> Self {
-            self.list_index = input;
-            self
+        pub fn set_list_index(mut self, input: std::option::Option<crate::model::BatchListIndexResponse>) -> Self {
+            self.list_index = input; self
         }
         /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn list_outgoing_typed_links(
-            mut self,
-            input: crate::model::BatchListOutgoingTypedLinksResponse,
-        ) -> Self {
+        pub fn list_outgoing_typed_links(mut self, input: crate::model::BatchListOutgoingTypedLinksResponse) -> Self {
             self.list_outgoing_typed_links = Some(input);
             self
         }
         /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn set_list_outgoing_typed_links(
-            mut self,
-            input: std::option::Option<crate::model::BatchListOutgoingTypedLinksResponse>,
-        ) -> Self {
-            self.list_outgoing_typed_links = input;
-            self
+        pub fn set_list_outgoing_typed_links(mut self, input: std::option::Option<crate::model::BatchListOutgoingTypedLinksResponse>) -> Self {
+            self.list_outgoing_typed_links = input; self
         }
         /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn list_incoming_typed_links(
-            mut self,
-            input: crate::model::BatchListIncomingTypedLinksResponse,
-        ) -> Self {
+        pub fn list_incoming_typed_links(mut self, input: crate::model::BatchListIncomingTypedLinksResponse) -> Self {
             self.list_incoming_typed_links = Some(input);
             self
         }
         /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn set_list_incoming_typed_links(
-            mut self,
-            input: std::option::Option<crate::model::BatchListIncomingTypedLinksResponse>,
-        ) -> Self {
-            self.list_incoming_typed_links = input;
-            self
+        pub fn set_list_incoming_typed_links(mut self, input: std::option::Option<crate::model::BatchListIncomingTypedLinksResponse>) -> Self {
+            self.list_incoming_typed_links = input; self
         }
         /// <p>The list of attributes to retrieve from the typed link.</p>
-        pub fn get_link_attributes(
-            mut self,
-            input: crate::model::BatchGetLinkAttributesResponse,
-        ) -> Self {
+        pub fn get_link_attributes(mut self, input: crate::model::BatchGetLinkAttributesResponse) -> Self {
             self.get_link_attributes = Some(input);
             self
         }
         /// <p>The list of attributes to retrieve from the typed link.</p>
-        pub fn set_get_link_attributes(
-            mut self,
-            input: std::option::Option<crate::model::BatchGetLinkAttributesResponse>,
-        ) -> Self {
-            self.get_link_attributes = input;
-            self
+        pub fn set_get_link_attributes(mut self, input: std::option::Option<crate::model::BatchGetLinkAttributesResponse>) -> Self {
+            self.get_link_attributes = input; self
         }
         /// <p>The list of parent objects to retrieve.</p>
-        pub fn list_object_parents(
-            mut self,
-            input: crate::model::BatchListObjectParentsResponse,
-        ) -> Self {
+        pub fn list_object_parents(mut self, input: crate::model::BatchListObjectParentsResponse) -> Self {
             self.list_object_parents = Some(input);
             self
         }
         /// <p>The list of parent objects to retrieve.</p>
-        pub fn set_list_object_parents(
-            mut self,
-            input: std::option::Option<crate::model::BatchListObjectParentsResponse>,
-        ) -> Self {
-            self.list_object_parents = input;
-            self
+        pub fn set_list_object_parents(mut self, input: std::option::Option<crate::model::BatchListObjectParentsResponse>) -> Self {
+            self.list_object_parents = input; self
         }
         /// Consumes the builder and constructs a [`BatchReadSuccessfulResponse`](crate::model::BatchReadSuccessfulResponse).
         pub fn build(self) -> crate::model::BatchReadSuccessfulResponse {
             crate::model::BatchReadSuccessfulResponse {
-                list_object_attributes: self.list_object_attributes,
-                list_object_children: self.list_object_children,
-                get_object_information: self.get_object_information,
-                get_object_attributes: self.get_object_attributes,
-                list_attached_indices: self.list_attached_indices,
-                list_object_parent_paths: self.list_object_parent_paths,
-                list_object_policies: self.list_object_policies,
-                list_policy_attachments: self.list_policy_attachments,
-                lookup_policy: self.lookup_policy,
-                list_index: self.list_index,
-                list_outgoing_typed_links: self.list_outgoing_typed_links,
-                list_incoming_typed_links: self.list_incoming_typed_links,
-                get_link_attributes: self.get_link_attributes,
-                list_object_parents: self.list_object_parents,
+                list_object_attributes: self.list_object_attributes
+                ,
+                list_object_children: self.list_object_children
+                ,
+                get_object_information: self.get_object_information
+                ,
+                get_object_attributes: self.get_object_attributes
+                ,
+                list_attached_indices: self.list_attached_indices
+                ,
+                list_object_parent_paths: self.list_object_parent_paths
+                ,
+                list_object_policies: self.list_object_policies
+                ,
+                list_policy_attachments: self.list_policy_attachments
+                ,
+                lookup_policy: self.lookup_policy
+                ,
+                list_index: self.list_index
+                ,
+                list_outgoing_typed_links: self.list_outgoing_typed_links
+                ,
+                list_incoming_typed_links: self.list_incoming_typed_links
+                ,
+                get_link_attributes: self.get_link_attributes
+                ,
+                list_object_parents: self.list_object_parents
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchReadSuccessfulResponse {
     /// Creates a new builder-style object to manufacture [`BatchReadSuccessfulResponse`](crate::model::BatchReadSuccessfulResponse).
@@ -7260,35 +6586,31 @@ impl BatchReadSuccessfulResponse {
 /// <p>Represents the output of a <code>ListObjectParents</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListObjectParentsResponse {
+pub struct BatchListObjectParentsResponse  {
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
     #[doc(hidden)]
-    pub parent_links:
-        std::option::Option<std::vec::Vec<crate::model::ObjectIdentifierAndLinkNameTuple>>,
+    pub parent_links: std::option::Option<std::vec::Vec<crate::model::ObjectIdentifierAndLinkNameTuple>>,
     /// <p>The pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchListObjectParentsResponse {
     /// <p>Returns a list of parent reference and LinkName Tuples.</p>
-    pub fn parent_links(
-        &self,
-    ) -> std::option::Option<&[crate::model::ObjectIdentifierAndLinkNameTuple]> {
+    pub fn parent_links(&self) -> std::option::Option<& [crate::model::ObjectIdentifierAndLinkNameTuple]> {
         self.parent_links.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`BatchListObjectParentsResponse`](crate::model::BatchListObjectParentsResponse).
 pub mod batch_list_object_parents_response {
-
+    
     /// A builder for [`BatchListObjectParentsResponse`](crate::model::BatchListObjectParentsResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) parent_links:
-            std::option::Option<std::vec::Vec<crate::model::ObjectIdentifierAndLinkNameTuple>>,
+        pub(crate) parent_links: std::option::Option<std::vec::Vec<crate::model::ObjectIdentifierAndLinkNameTuple>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7297,24 +6619,15 @@ pub mod batch_list_object_parents_response {
         /// To override the contents of this collection use [`set_parent_links`](Self::set_parent_links).
         ///
         /// <p>Returns a list of parent reference and LinkName Tuples.</p>
-        pub fn parent_links(
-            mut self,
-            input: crate::model::ObjectIdentifierAndLinkNameTuple,
-        ) -> Self {
+        pub fn parent_links(mut self, input: crate::model::ObjectIdentifierAndLinkNameTuple) -> Self {
             let mut v = self.parent_links.unwrap_or_default();
-            v.push(input);
-            self.parent_links = Some(v);
-            self
+                            v.push(input);
+                            self.parent_links = Some(v);
+                            self
         }
         /// <p>Returns a list of parent reference and LinkName Tuples.</p>
-        pub fn set_parent_links(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ObjectIdentifierAndLinkNameTuple>,
-            >,
-        ) -> Self {
-            self.parent_links = input;
-            self
+        pub fn set_parent_links(mut self, input: std::option::Option<std::vec::Vec<crate::model::ObjectIdentifierAndLinkNameTuple>>) -> Self {
+            self.parent_links = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7323,17 +6636,20 @@ pub mod batch_list_object_parents_response {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`BatchListObjectParentsResponse`](crate::model::BatchListObjectParentsResponse).
         pub fn build(self) -> crate::model::BatchListObjectParentsResponse {
             crate::model::BatchListObjectParentsResponse {
-                parent_links: self.parent_links,
-                next_token: self.next_token,
+                parent_links: self.parent_links
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchListObjectParentsResponse {
     /// Creates a new builder-style object to manufacture [`BatchListObjectParentsResponse`](crate::model::BatchListObjectParentsResponse).
@@ -7345,25 +6661,24 @@ impl BatchListObjectParentsResponse {
 /// <p>Represents the output of a <code>GetLinkAttributes</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetLinkAttributesResponse {
+pub struct BatchGetLinkAttributesResponse  {
     /// <p>The attributes that are associated with the typed link.</p>
     #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
 }
 impl BatchGetLinkAttributesResponse {
     /// <p>The attributes that are associated with the typed link.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::AttributeKeyAndValue]> {
         self.attributes.as_deref()
     }
 }
 /// See [`BatchGetLinkAttributesResponse`](crate::model::BatchGetLinkAttributesResponse).
 pub mod batch_get_link_attributes_response {
-
+    
     /// A builder for [`BatchGetLinkAttributesResponse`](crate::model::BatchGetLinkAttributesResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attributes:
-            std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
+        pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
     }
     impl Builder {
         /// Appends an item to `attributes`.
@@ -7373,25 +6688,24 @@ pub mod batch_get_link_attributes_response {
         /// <p>The attributes that are associated with the typed link.</p>
         pub fn attributes(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>The attributes that are associated with the typed link.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>) -> Self {
+            self.attributes = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetLinkAttributesResponse`](crate::model::BatchGetLinkAttributesResponse).
         pub fn build(self) -> crate::model::BatchGetLinkAttributesResponse {
             crate::model::BatchGetLinkAttributesResponse {
-                attributes: self.attributes,
+                attributes: self.attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetLinkAttributesResponse {
     /// Creates a new builder-style object to manufacture [`BatchGetLinkAttributesResponse`](crate::model::BatchGetLinkAttributesResponse).
@@ -7403,7 +6717,7 @@ impl BatchGetLinkAttributesResponse {
 /// <p>Represents the output of a <code>ListIncomingTypedLinks</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListIncomingTypedLinksResponse {
+pub struct BatchListIncomingTypedLinksResponse  {
     /// <p>Returns one or more typed link specifiers as output.</p>
     #[doc(hidden)]
     pub link_specifiers: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
@@ -7413,22 +6727,21 @@ pub struct BatchListIncomingTypedLinksResponse {
 }
 impl BatchListIncomingTypedLinksResponse {
     /// <p>Returns one or more typed link specifiers as output.</p>
-    pub fn link_specifiers(&self) -> std::option::Option<&[crate::model::TypedLinkSpecifier]> {
+    pub fn link_specifiers(&self) -> std::option::Option<& [crate::model::TypedLinkSpecifier]> {
         self.link_specifiers.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`BatchListIncomingTypedLinksResponse`](crate::model::BatchListIncomingTypedLinksResponse).
 pub mod batch_list_incoming_typed_links_response {
-
+    
     /// A builder for [`BatchListIncomingTypedLinksResponse`](crate::model::BatchListIncomingTypedLinksResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) link_specifiers:
-            std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
+        pub(crate) link_specifiers: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7439,17 +6752,13 @@ pub mod batch_list_incoming_typed_links_response {
         /// <p>Returns one or more typed link specifiers as output.</p>
         pub fn link_specifiers(mut self, input: crate::model::TypedLinkSpecifier) -> Self {
             let mut v = self.link_specifiers.unwrap_or_default();
-            v.push(input);
-            self.link_specifiers = Some(v);
-            self
+                            v.push(input);
+                            self.link_specifiers = Some(v);
+                            self
         }
         /// <p>Returns one or more typed link specifiers as output.</p>
-        pub fn set_link_specifiers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
-        ) -> Self {
-            self.link_specifiers = input;
-            self
+        pub fn set_link_specifiers(mut self, input: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>) -> Self {
+            self.link_specifiers = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7458,17 +6767,20 @@ pub mod batch_list_incoming_typed_links_response {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`BatchListIncomingTypedLinksResponse`](crate::model::BatchListIncomingTypedLinksResponse).
         pub fn build(self) -> crate::model::BatchListIncomingTypedLinksResponse {
             crate::model::BatchListIncomingTypedLinksResponse {
-                link_specifiers: self.link_specifiers,
-                next_token: self.next_token,
+                link_specifiers: self.link_specifiers
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchListIncomingTypedLinksResponse {
     /// Creates a new builder-style object to manufacture [`BatchListIncomingTypedLinksResponse`](crate::model::BatchListIncomingTypedLinksResponse).
@@ -7480,7 +6792,7 @@ impl BatchListIncomingTypedLinksResponse {
 /// <p>Represents the output of a <code>ListOutgoingTypedLinks</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListOutgoingTypedLinksResponse {
+pub struct BatchListOutgoingTypedLinksResponse  {
     /// <p>Returns a typed link specifier as output.</p>
     #[doc(hidden)]
     pub typed_link_specifiers: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
@@ -7490,24 +6802,21 @@ pub struct BatchListOutgoingTypedLinksResponse {
 }
 impl BatchListOutgoingTypedLinksResponse {
     /// <p>Returns a typed link specifier as output.</p>
-    pub fn typed_link_specifiers(
-        &self,
-    ) -> std::option::Option<&[crate::model::TypedLinkSpecifier]> {
+    pub fn typed_link_specifiers(&self) -> std::option::Option<& [crate::model::TypedLinkSpecifier]> {
         self.typed_link_specifiers.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`BatchListOutgoingTypedLinksResponse`](crate::model::BatchListOutgoingTypedLinksResponse).
 pub mod batch_list_outgoing_typed_links_response {
-
+    
     /// A builder for [`BatchListOutgoingTypedLinksResponse`](crate::model::BatchListOutgoingTypedLinksResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) typed_link_specifiers:
-            std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
+        pub(crate) typed_link_specifiers: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7518,17 +6827,13 @@ pub mod batch_list_outgoing_typed_links_response {
         /// <p>Returns a typed link specifier as output.</p>
         pub fn typed_link_specifiers(mut self, input: crate::model::TypedLinkSpecifier) -> Self {
             let mut v = self.typed_link_specifiers.unwrap_or_default();
-            v.push(input);
-            self.typed_link_specifiers = Some(v);
-            self
+                            v.push(input);
+                            self.typed_link_specifiers = Some(v);
+                            self
         }
         /// <p>Returns a typed link specifier as output.</p>
-        pub fn set_typed_link_specifiers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>,
-        ) -> Self {
-            self.typed_link_specifiers = input;
-            self
+        pub fn set_typed_link_specifiers(mut self, input: std::option::Option<std::vec::Vec<crate::model::TypedLinkSpecifier>>) -> Self {
+            self.typed_link_specifiers = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7537,17 +6842,20 @@ pub mod batch_list_outgoing_typed_links_response {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`BatchListOutgoingTypedLinksResponse`](crate::model::BatchListOutgoingTypedLinksResponse).
         pub fn build(self) -> crate::model::BatchListOutgoingTypedLinksResponse {
             crate::model::BatchListOutgoingTypedLinksResponse {
-                typed_link_specifiers: self.typed_link_specifiers,
-                next_token: self.next_token,
+                typed_link_specifiers: self.typed_link_specifiers
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchListOutgoingTypedLinksResponse {
     /// Creates a new builder-style object to manufacture [`BatchListOutgoingTypedLinksResponse`](crate::model::BatchListOutgoingTypedLinksResponse).
@@ -7559,7 +6867,7 @@ impl BatchListOutgoingTypedLinksResponse {
 /// <p>Represents the output of a <code>ListIndex</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListIndexResponse {
+pub struct BatchListIndexResponse  {
     /// <p>The objects and indexed values attached to the index.</p>
     #[doc(hidden)]
     pub index_attachments: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
@@ -7569,22 +6877,21 @@ pub struct BatchListIndexResponse {
 }
 impl BatchListIndexResponse {
     /// <p>The objects and indexed values attached to the index.</p>
-    pub fn index_attachments(&self) -> std::option::Option<&[crate::model::IndexAttachment]> {
+    pub fn index_attachments(&self) -> std::option::Option<& [crate::model::IndexAttachment]> {
         self.index_attachments.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`BatchListIndexResponse`](crate::model::BatchListIndexResponse).
 pub mod batch_list_index_response {
-
+    
     /// A builder for [`BatchListIndexResponse`](crate::model::BatchListIndexResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) index_attachments:
-            std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
+        pub(crate) index_attachments: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7595,17 +6902,13 @@ pub mod batch_list_index_response {
         /// <p>The objects and indexed values attached to the index.</p>
         pub fn index_attachments(mut self, input: crate::model::IndexAttachment) -> Self {
             let mut v = self.index_attachments.unwrap_or_default();
-            v.push(input);
-            self.index_attachments = Some(v);
-            self
+                            v.push(input);
+                            self.index_attachments = Some(v);
+                            self
         }
         /// <p>The objects and indexed values attached to the index.</p>
-        pub fn set_index_attachments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
-        ) -> Self {
-            self.index_attachments = input;
-            self
+        pub fn set_index_attachments(mut self, input: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>) -> Self {
+            self.index_attachments = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7614,17 +6917,20 @@ pub mod batch_list_index_response {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`BatchListIndexResponse`](crate::model::BatchListIndexResponse).
         pub fn build(self) -> crate::model::BatchListIndexResponse {
             crate::model::BatchListIndexResponse {
-                index_attachments: self.index_attachments,
-                next_token: self.next_token,
+                index_attachments: self.index_attachments
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchListIndexResponse {
     /// Creates a new builder-style object to manufacture [`BatchListIndexResponse`](crate::model::BatchListIndexResponse).
@@ -7636,7 +6942,7 @@ impl BatchListIndexResponse {
 /// <p>Represents the output of a <code>LookupPolicy</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchLookupPolicyResponse {
+pub struct BatchLookupPolicyResponse  {
     /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
     #[doc(hidden)]
     pub policy_to_path_list: std::option::Option<std::vec::Vec<crate::model::PolicyToPath>>,
@@ -7646,22 +6952,21 @@ pub struct BatchLookupPolicyResponse {
 }
 impl BatchLookupPolicyResponse {
     /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-    pub fn policy_to_path_list(&self) -> std::option::Option<&[crate::model::PolicyToPath]> {
+    pub fn policy_to_path_list(&self) -> std::option::Option<& [crate::model::PolicyToPath]> {
         self.policy_to_path_list.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`BatchLookupPolicyResponse`](crate::model::BatchLookupPolicyResponse).
 pub mod batch_lookup_policy_response {
-
+    
     /// A builder for [`BatchLookupPolicyResponse`](crate::model::BatchLookupPolicyResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) policy_to_path_list:
-            std::option::Option<std::vec::Vec<crate::model::PolicyToPath>>,
+        pub(crate) policy_to_path_list: std::option::Option<std::vec::Vec<crate::model::PolicyToPath>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7672,17 +6977,13 @@ pub mod batch_lookup_policy_response {
         /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
         pub fn policy_to_path_list(mut self, input: crate::model::PolicyToPath) -> Self {
             let mut v = self.policy_to_path_list.unwrap_or_default();
-            v.push(input);
-            self.policy_to_path_list = Some(v);
-            self
+                            v.push(input);
+                            self.policy_to_path_list = Some(v);
+                            self
         }
         /// <p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-        pub fn set_policy_to_path_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PolicyToPath>>,
-        ) -> Self {
-            self.policy_to_path_list = input;
-            self
+        pub fn set_policy_to_path_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicyToPath>>) -> Self {
+            self.policy_to_path_list = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7691,17 +6992,20 @@ pub mod batch_lookup_policy_response {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`BatchLookupPolicyResponse`](crate::model::BatchLookupPolicyResponse).
         pub fn build(self) -> crate::model::BatchLookupPolicyResponse {
             crate::model::BatchLookupPolicyResponse {
-                policy_to_path_list: self.policy_to_path_list,
-                next_token: self.next_token,
+                policy_to_path_list: self.policy_to_path_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchLookupPolicyResponse {
     /// Creates a new builder-style object to manufacture [`BatchLookupPolicyResponse`](crate::model::BatchLookupPolicyResponse).
@@ -7713,7 +7017,7 @@ impl BatchLookupPolicyResponse {
 /// <p>Represents the output of a <code>ListPolicyAttachments</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListPolicyAttachmentsResponse {
+pub struct BatchListPolicyAttachmentsResponse  {
     /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
     #[doc(hidden)]
     pub object_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7723,17 +7027,17 @@ pub struct BatchListPolicyAttachmentsResponse {
 }
 impl BatchListPolicyAttachmentsResponse {
     /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
-    pub fn object_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn object_identifiers(&self) -> std::option::Option<& [std::string::String]> {
         self.object_identifiers.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`BatchListPolicyAttachmentsResponse`](crate::model::BatchListPolicyAttachmentsResponse).
 pub mod batch_list_policy_attachments_response {
-
+    
     /// A builder for [`BatchListPolicyAttachmentsResponse`](crate::model::BatchListPolicyAttachmentsResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7748,17 +7052,13 @@ pub mod batch_list_policy_attachments_response {
         /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
         pub fn object_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.object_identifiers.unwrap_or_default();
-            v.push(input.into());
-            self.object_identifiers = Some(v);
-            self
+                            v.push(input.into());
+                            self.object_identifiers = Some(v);
+                            self
         }
         /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
-        pub fn set_object_identifiers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.object_identifiers = input;
-            self
+        pub fn set_object_identifiers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.object_identifiers = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7767,17 +7067,20 @@ pub mod batch_list_policy_attachments_response {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`BatchListPolicyAttachmentsResponse`](crate::model::BatchListPolicyAttachmentsResponse).
         pub fn build(self) -> crate::model::BatchListPolicyAttachmentsResponse {
             crate::model::BatchListPolicyAttachmentsResponse {
-                object_identifiers: self.object_identifiers,
-                next_token: self.next_token,
+                object_identifiers: self.object_identifiers
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchListPolicyAttachmentsResponse {
     /// Creates a new builder-style object to manufacture [`BatchListPolicyAttachmentsResponse`](crate::model::BatchListPolicyAttachmentsResponse).
@@ -7789,7 +7092,7 @@ impl BatchListPolicyAttachmentsResponse {
 /// <p>Represents the output of a <code>ListObjectPolicies</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListObjectPoliciesResponse {
+pub struct BatchListObjectPoliciesResponse  {
     /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
     #[doc(hidden)]
     pub attached_policy_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7799,17 +7102,17 @@ pub struct BatchListObjectPoliciesResponse {
 }
 impl BatchListObjectPoliciesResponse {
     /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
-    pub fn attached_policy_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn attached_policy_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.attached_policy_ids.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`BatchListObjectPoliciesResponse`](crate::model::BatchListObjectPoliciesResponse).
 pub mod batch_list_object_policies_response {
-
+    
     /// A builder for [`BatchListObjectPoliciesResponse`](crate::model::BatchListObjectPoliciesResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7824,17 +7127,13 @@ pub mod batch_list_object_policies_response {
         /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
         pub fn attached_policy_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attached_policy_ids.unwrap_or_default();
-            v.push(input.into());
-            self.attached_policy_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.attached_policy_ids = Some(v);
+                            self
         }
         /// <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>
-        pub fn set_attached_policy_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.attached_policy_ids = input;
-            self
+        pub fn set_attached_policy_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.attached_policy_ids = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7843,17 +7142,20 @@ pub mod batch_list_object_policies_response {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`BatchListObjectPoliciesResponse`](crate::model::BatchListObjectPoliciesResponse).
         pub fn build(self) -> crate::model::BatchListObjectPoliciesResponse {
             crate::model::BatchListObjectPoliciesResponse {
-                attached_policy_ids: self.attached_policy_ids,
-                next_token: self.next_token,
+                attached_policy_ids: self.attached_policy_ids
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchListObjectPoliciesResponse {
     /// Creates a new builder-style object to manufacture [`BatchListObjectPoliciesResponse`](crate::model::BatchListObjectPoliciesResponse).
@@ -7865,35 +7167,31 @@ impl BatchListObjectPoliciesResponse {
 /// <p>Represents the output of a <code>ListObjectParentPaths</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListObjectParentPathsResponse {
+pub struct BatchListObjectParentPathsResponse  {
     /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
     #[doc(hidden)]
-    pub path_to_object_identifiers_list:
-        std::option::Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>,
+    pub path_to_object_identifiers_list: std::option::Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>,
     /// <p>The pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchListObjectParentPathsResponse {
     /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
-    pub fn path_to_object_identifiers_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::PathToObjectIdentifiers]> {
+    pub fn path_to_object_identifiers_list(&self) -> std::option::Option<& [crate::model::PathToObjectIdentifiers]> {
         self.path_to_object_identifiers_list.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`BatchListObjectParentPathsResponse`](crate::model::BatchListObjectParentPathsResponse).
 pub mod batch_list_object_parent_paths_response {
-
+    
     /// A builder for [`BatchListObjectParentPathsResponse`](crate::model::BatchListObjectParentPathsResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) path_to_object_identifiers_list:
-            std::option::Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>,
+        pub(crate) path_to_object_identifiers_list: std::option::Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7902,22 +7200,15 @@ pub mod batch_list_object_parent_paths_response {
         /// To override the contents of this collection use [`set_path_to_object_identifiers_list`](Self::set_path_to_object_identifiers_list).
         ///
         /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
-        pub fn path_to_object_identifiers_list(
-            mut self,
-            input: crate::model::PathToObjectIdentifiers,
-        ) -> Self {
+        pub fn path_to_object_identifiers_list(mut self, input: crate::model::PathToObjectIdentifiers) -> Self {
             let mut v = self.path_to_object_identifiers_list.unwrap_or_default();
-            v.push(input);
-            self.path_to_object_identifiers_list = Some(v);
-            self
+                            v.push(input);
+                            self.path_to_object_identifiers_list = Some(v);
+                            self
         }
         /// <p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>
-        pub fn set_path_to_object_identifiers_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>,
-        ) -> Self {
-            self.path_to_object_identifiers_list = input;
-            self
+        pub fn set_path_to_object_identifiers_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::PathToObjectIdentifiers>>) -> Self {
+            self.path_to_object_identifiers_list = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7926,17 +7217,20 @@ pub mod batch_list_object_parent_paths_response {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`BatchListObjectParentPathsResponse`](crate::model::BatchListObjectParentPathsResponse).
         pub fn build(self) -> crate::model::BatchListObjectParentPathsResponse {
             crate::model::BatchListObjectParentPathsResponse {
-                path_to_object_identifiers_list: self.path_to_object_identifiers_list,
-                next_token: self.next_token,
+                path_to_object_identifiers_list: self.path_to_object_identifiers_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchListObjectParentPathsResponse {
     /// Creates a new builder-style object to manufacture [`BatchListObjectParentPathsResponse`](crate::model::BatchListObjectParentPathsResponse).
@@ -7948,7 +7242,7 @@ impl BatchListObjectParentPathsResponse {
 /// <p>Represents the output of a <code>ListAttachedIndices</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListAttachedIndicesResponse {
+pub struct BatchListAttachedIndicesResponse  {
     /// <p>The indices attached to the specified object.</p>
     #[doc(hidden)]
     pub index_attachments: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
@@ -7958,22 +7252,21 @@ pub struct BatchListAttachedIndicesResponse {
 }
 impl BatchListAttachedIndicesResponse {
     /// <p>The indices attached to the specified object.</p>
-    pub fn index_attachments(&self) -> std::option::Option<&[crate::model::IndexAttachment]> {
+    pub fn index_attachments(&self) -> std::option::Option<& [crate::model::IndexAttachment]> {
         self.index_attachments.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`BatchListAttachedIndicesResponse`](crate::model::BatchListAttachedIndicesResponse).
 pub mod batch_list_attached_indices_response {
-
+    
     /// A builder for [`BatchListAttachedIndicesResponse`](crate::model::BatchListAttachedIndicesResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) index_attachments:
-            std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
+        pub(crate) index_attachments: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7984,17 +7277,13 @@ pub mod batch_list_attached_indices_response {
         /// <p>The indices attached to the specified object.</p>
         pub fn index_attachments(mut self, input: crate::model::IndexAttachment) -> Self {
             let mut v = self.index_attachments.unwrap_or_default();
-            v.push(input);
-            self.index_attachments = Some(v);
-            self
+                            v.push(input);
+                            self.index_attachments = Some(v);
+                            self
         }
         /// <p>The indices attached to the specified object.</p>
-        pub fn set_index_attachments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>,
-        ) -> Self {
-            self.index_attachments = input;
-            self
+        pub fn set_index_attachments(mut self, input: std::option::Option<std::vec::Vec<crate::model::IndexAttachment>>) -> Self {
+            self.index_attachments = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8003,17 +7292,20 @@ pub mod batch_list_attached_indices_response {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`BatchListAttachedIndicesResponse`](crate::model::BatchListAttachedIndicesResponse).
         pub fn build(self) -> crate::model::BatchListAttachedIndicesResponse {
             crate::model::BatchListAttachedIndicesResponse {
-                index_attachments: self.index_attachments,
-                next_token: self.next_token,
+                index_attachments: self.index_attachments
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchListAttachedIndicesResponse {
     /// Creates a new builder-style object to manufacture [`BatchListAttachedIndicesResponse`](crate::model::BatchListAttachedIndicesResponse).
@@ -8025,25 +7317,24 @@ impl BatchListAttachedIndicesResponse {
 /// <p>Represents the output of a <code>GetObjectAttributes</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetObjectAttributesResponse {
+pub struct BatchGetObjectAttributesResponse  {
     /// <p>The attribute values that are associated with an object.</p>
     #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
 }
 impl BatchGetObjectAttributesResponse {
     /// <p>The attribute values that are associated with an object.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::AttributeKeyAndValue]> {
         self.attributes.as_deref()
     }
 }
 /// See [`BatchGetObjectAttributesResponse`](crate::model::BatchGetObjectAttributesResponse).
 pub mod batch_get_object_attributes_response {
-
+    
     /// A builder for [`BatchGetObjectAttributesResponse`](crate::model::BatchGetObjectAttributesResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attributes:
-            std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
+        pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
     }
     impl Builder {
         /// Appends an item to `attributes`.
@@ -8053,25 +7344,24 @@ pub mod batch_get_object_attributes_response {
         /// <p>The attribute values that are associated with an object.</p>
         pub fn attributes(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>The attribute values that are associated with an object.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>) -> Self {
+            self.attributes = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetObjectAttributesResponse`](crate::model::BatchGetObjectAttributesResponse).
         pub fn build(self) -> crate::model::BatchGetObjectAttributesResponse {
             crate::model::BatchGetObjectAttributesResponse {
-                attributes: self.attributes,
+                attributes: self.attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetObjectAttributesResponse {
     /// Creates a new builder-style object to manufacture [`BatchGetObjectAttributesResponse`](crate::model::BatchGetObjectAttributesResponse).
@@ -8083,7 +7373,7 @@ impl BatchGetObjectAttributesResponse {
 /// <p>Represents the output of a <code>GetObjectInformation</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetObjectInformationResponse {
+pub struct BatchGetObjectInformationResponse  {
     /// <p>The facets attached to the specified object.</p>
     #[doc(hidden)]
     pub schema_facets: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
@@ -8093,17 +7383,17 @@ pub struct BatchGetObjectInformationResponse {
 }
 impl BatchGetObjectInformationResponse {
     /// <p>The facets attached to the specified object.</p>
-    pub fn schema_facets(&self) -> std::option::Option<&[crate::model::SchemaFacet]> {
+    pub fn schema_facets(&self) -> std::option::Option<& [crate::model::SchemaFacet]> {
         self.schema_facets.as_deref()
     }
     /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
-    pub fn object_identifier(&self) -> std::option::Option<&str> {
+    pub fn object_identifier(&self) -> std::option::Option<& str> {
         self.object_identifier.as_deref()
     }
 }
 /// See [`BatchGetObjectInformationResponse`](crate::model::BatchGetObjectInformationResponse).
 pub mod batch_get_object_information_response {
-
+    
     /// A builder for [`BatchGetObjectInformationResponse`](crate::model::BatchGetObjectInformationResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8118,17 +7408,13 @@ pub mod batch_get_object_information_response {
         /// <p>The facets attached to the specified object.</p>
         pub fn schema_facets(mut self, input: crate::model::SchemaFacet) -> Self {
             let mut v = self.schema_facets.unwrap_or_default();
-            v.push(input);
-            self.schema_facets = Some(v);
-            self
+                            v.push(input);
+                            self.schema_facets = Some(v);
+                            self
         }
         /// <p>The facets attached to the specified object.</p>
-        pub fn set_schema_facets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>,
-        ) -> Self {
-            self.schema_facets = input;
-            self
+        pub fn set_schema_facets(mut self, input: std::option::Option<std::vec::Vec<crate::model::SchemaFacet>>) -> Self {
+            self.schema_facets = input; self
         }
         /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
         pub fn object_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8136,21 +7422,21 @@ pub mod batch_get_object_information_response {
             self
         }
         /// <p>The <code>ObjectIdentifier</code> of the specified object.</p>
-        pub fn set_object_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.object_identifier = input;
-            self
+        pub fn set_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.object_identifier = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetObjectInformationResponse`](crate::model::BatchGetObjectInformationResponse).
         pub fn build(self) -> crate::model::BatchGetObjectInformationResponse {
             crate::model::BatchGetObjectInformationResponse {
-                schema_facets: self.schema_facets,
-                object_identifier: self.object_identifier,
+                schema_facets: self.schema_facets
+                ,
+                object_identifier: self.object_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetObjectInformationResponse {
     /// Creates a new builder-style object to manufacture [`BatchGetObjectInformationResponse`](crate::model::BatchGetObjectInformationResponse).
@@ -8162,37 +7448,31 @@ impl BatchGetObjectInformationResponse {
 /// <p>Represents the output of a <code>ListObjectChildren</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListObjectChildrenResponse {
+pub struct BatchListObjectChildrenResponse  {
     /// <p>The children structure, which is a map with the key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
     #[doc(hidden)]
-    pub children:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub children: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl BatchListObjectChildrenResponse {
     /// <p>The children structure, which is a map with the key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
-    pub fn children(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn children(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.children.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`BatchListObjectChildrenResponse`](crate::model::BatchListObjectChildrenResponse).
 pub mod batch_list_object_children_response {
-
+    
     /// A builder for [`BatchListObjectChildrenResponse`](crate::model::BatchListObjectChildrenResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) children: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) children: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -8201,25 +7481,15 @@ pub mod batch_list_object_children_response {
         /// To override the contents of this collection use [`set_children`](Self::set_children).
         ///
         /// <p>The children structure, which is a map with the key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
-        pub fn children(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn children(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.children.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.children = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.children = Some(hash_map);
+                            self
         }
         /// <p>The children structure, which is a map with the key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>
-        pub fn set_children(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.children = input;
-            self
+        pub fn set_children(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.children = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8228,17 +7498,20 @@ pub mod batch_list_object_children_response {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`BatchListObjectChildrenResponse`](crate::model::BatchListObjectChildrenResponse).
         pub fn build(self) -> crate::model::BatchListObjectChildrenResponse {
             crate::model::BatchListObjectChildrenResponse {
-                children: self.children,
-                next_token: self.next_token,
+                children: self.children
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchListObjectChildrenResponse {
     /// Creates a new builder-style object to manufacture [`BatchListObjectChildrenResponse`](crate::model::BatchListObjectChildrenResponse).
@@ -8250,7 +7523,7 @@ impl BatchListObjectChildrenResponse {
 /// <p>Represents the output of a <code>ListObjectAttributes</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListObjectAttributesResponse {
+pub struct BatchListObjectAttributesResponse  {
     /// <p>The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.</p>
     #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
@@ -8260,22 +7533,21 @@ pub struct BatchListObjectAttributesResponse {
 }
 impl BatchListObjectAttributesResponse {
     /// <p>The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::AttributeKeyAndValue]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::AttributeKeyAndValue]> {
         self.attributes.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`BatchListObjectAttributesResponse`](crate::model::BatchListObjectAttributesResponse).
 pub mod batch_list_object_attributes_response {
-
+    
     /// A builder for [`BatchListObjectAttributesResponse`](crate::model::BatchListObjectAttributesResponse).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attributes:
-            std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
+        pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -8286,17 +7558,13 @@ pub mod batch_list_object_attributes_response {
         /// <p>The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.</p>
         pub fn attributes(mut self, input: crate::model::AttributeKeyAndValue) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttributeKeyAndValue>>) -> Self {
+            self.attributes = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8305,17 +7573,20 @@ pub mod batch_list_object_attributes_response {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`BatchListObjectAttributesResponse`](crate::model::BatchListObjectAttributesResponse).
         pub fn build(self) -> crate::model::BatchListObjectAttributesResponse {
             crate::model::BatchListObjectAttributesResponse {
-                attributes: self.attributes,
-                next_token: self.next_token,
+                attributes: self.attributes
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchListObjectAttributesResponse {
     /// Creates a new builder-style object to manufacture [`BatchListObjectAttributesResponse`](crate::model::BatchListObjectAttributesResponse).
@@ -8327,7 +7598,7 @@ impl BatchListObjectAttributesResponse {
 /// <p>Represents the output of a <code>BatchRead</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchReadOperation {
+pub struct BatchReadOperation  {
     /// <p>Lists all attributes that are associated with an object.</p>
     #[doc(hidden)]
     pub list_object_attributes: std::option::Option<crate::model::BatchListObjectAttributes>,
@@ -8373,211 +7644,137 @@ pub struct BatchReadOperation {
 }
 impl BatchReadOperation {
     /// <p>Lists all attributes that are associated with an object.</p>
-    pub fn list_object_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchListObjectAttributes> {
+    pub fn list_object_attributes(&self) -> std::option::Option<& crate::model::BatchListObjectAttributes> {
         self.list_object_attributes.as_ref()
     }
     /// <p>Returns a paginated list of child objects that are associated with a given object.</p>
-    pub fn list_object_children(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchListObjectChildren> {
+    pub fn list_object_children(&self) -> std::option::Option<& crate::model::BatchListObjectChildren> {
         self.list_object_children.as_ref()
     }
     /// <p>Lists indices attached to an object.</p>
-    pub fn list_attached_indices(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchListAttachedIndices> {
+    pub fn list_attached_indices(&self) -> std::option::Option<& crate::model::BatchListAttachedIndices> {
         self.list_attached_indices.as_ref()
     }
     /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
-    pub fn list_object_parent_paths(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchListObjectParentPaths> {
+    pub fn list_object_parent_paths(&self) -> std::option::Option<& crate::model::BatchListObjectParentPaths> {
         self.list_object_parent_paths.as_ref()
     }
     /// <p>Retrieves metadata about an object.</p>
-    pub fn get_object_information(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchGetObjectInformation> {
+    pub fn get_object_information(&self) -> std::option::Option<& crate::model::BatchGetObjectInformation> {
         self.get_object_information.as_ref()
     }
     /// <p>Retrieves attributes within a facet that are associated with an object.</p>
-    pub fn get_object_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchGetObjectAttributes> {
+    pub fn get_object_attributes(&self) -> std::option::Option<& crate::model::BatchGetObjectAttributes> {
         self.get_object_attributes.as_ref()
     }
     /// <p>Lists parent objects that are associated with a given object in pagination fashion.</p>
-    pub fn list_object_parents(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchListObjectParents> {
+    pub fn list_object_parents(&self) -> std::option::Option<& crate::model::BatchListObjectParents> {
         self.list_object_parents.as_ref()
     }
     /// <p>Returns policies attached to an object in pagination fashion.</p>
-    pub fn list_object_policies(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchListObjectPolicies> {
+    pub fn list_object_policies(&self) -> std::option::Option<& crate::model::BatchListObjectPolicies> {
         self.list_object_policies.as_ref()
     }
     /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>
-    pub fn list_policy_attachments(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchListPolicyAttachments> {
+    pub fn list_policy_attachments(&self) -> std::option::Option<& crate::model::BatchListPolicyAttachments> {
         self.list_policy_attachments.as_ref()
     }
     /// <p>Lists all policies from the root of the <code>Directory</code> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-    pub fn lookup_policy(&self) -> std::option::Option<&crate::model::BatchLookupPolicy> {
+    pub fn lookup_policy(&self) -> std::option::Option<& crate::model::BatchLookupPolicy> {
         self.lookup_policy.as_ref()
     }
     /// <p>Lists objects attached to the specified index.</p>
-    pub fn list_index(&self) -> std::option::Option<&crate::model::BatchListIndex> {
+    pub fn list_index(&self) -> std::option::Option<& crate::model::BatchListIndex> {
         self.list_index.as_ref()
     }
     /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn list_outgoing_typed_links(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchListOutgoingTypedLinks> {
+    pub fn list_outgoing_typed_links(&self) -> std::option::Option<& crate::model::BatchListOutgoingTypedLinks> {
         self.list_outgoing_typed_links.as_ref()
     }
     /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn list_incoming_typed_links(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchListIncomingTypedLinks> {
+    pub fn list_incoming_typed_links(&self) -> std::option::Option<& crate::model::BatchListIncomingTypedLinks> {
         self.list_incoming_typed_links.as_ref()
     }
     /// <p>Retrieves attributes that are associated with a typed link.</p>
-    pub fn get_link_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchGetLinkAttributes> {
+    pub fn get_link_attributes(&self) -> std::option::Option<& crate::model::BatchGetLinkAttributes> {
         self.get_link_attributes.as_ref()
     }
 }
 /// See [`BatchReadOperation`](crate::model::BatchReadOperation).
 pub mod batch_read_operation {
-
+    
     /// A builder for [`BatchReadOperation`](crate::model::BatchReadOperation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) list_object_attributes:
-            std::option::Option<crate::model::BatchListObjectAttributes>,
+        pub(crate) list_object_attributes: std::option::Option<crate::model::BatchListObjectAttributes>,
         pub(crate) list_object_children: std::option::Option<crate::model::BatchListObjectChildren>,
-        pub(crate) list_attached_indices:
-            std::option::Option<crate::model::BatchListAttachedIndices>,
-        pub(crate) list_object_parent_paths:
-            std::option::Option<crate::model::BatchListObjectParentPaths>,
-        pub(crate) get_object_information:
-            std::option::Option<crate::model::BatchGetObjectInformation>,
-        pub(crate) get_object_attributes:
-            std::option::Option<crate::model::BatchGetObjectAttributes>,
+        pub(crate) list_attached_indices: std::option::Option<crate::model::BatchListAttachedIndices>,
+        pub(crate) list_object_parent_paths: std::option::Option<crate::model::BatchListObjectParentPaths>,
+        pub(crate) get_object_information: std::option::Option<crate::model::BatchGetObjectInformation>,
+        pub(crate) get_object_attributes: std::option::Option<crate::model::BatchGetObjectAttributes>,
         pub(crate) list_object_parents: std::option::Option<crate::model::BatchListObjectParents>,
         pub(crate) list_object_policies: std::option::Option<crate::model::BatchListObjectPolicies>,
-        pub(crate) list_policy_attachments:
-            std::option::Option<crate::model::BatchListPolicyAttachments>,
+        pub(crate) list_policy_attachments: std::option::Option<crate::model::BatchListPolicyAttachments>,
         pub(crate) lookup_policy: std::option::Option<crate::model::BatchLookupPolicy>,
         pub(crate) list_index: std::option::Option<crate::model::BatchListIndex>,
-        pub(crate) list_outgoing_typed_links:
-            std::option::Option<crate::model::BatchListOutgoingTypedLinks>,
-        pub(crate) list_incoming_typed_links:
-            std::option::Option<crate::model::BatchListIncomingTypedLinks>,
+        pub(crate) list_outgoing_typed_links: std::option::Option<crate::model::BatchListOutgoingTypedLinks>,
+        pub(crate) list_incoming_typed_links: std::option::Option<crate::model::BatchListIncomingTypedLinks>,
         pub(crate) get_link_attributes: std::option::Option<crate::model::BatchGetLinkAttributes>,
     }
     impl Builder {
         /// <p>Lists all attributes that are associated with an object.</p>
-        pub fn list_object_attributes(
-            mut self,
-            input: crate::model::BatchListObjectAttributes,
-        ) -> Self {
+        pub fn list_object_attributes(mut self, input: crate::model::BatchListObjectAttributes) -> Self {
             self.list_object_attributes = Some(input);
             self
         }
         /// <p>Lists all attributes that are associated with an object.</p>
-        pub fn set_list_object_attributes(
-            mut self,
-            input: std::option::Option<crate::model::BatchListObjectAttributes>,
-        ) -> Self {
-            self.list_object_attributes = input;
-            self
+        pub fn set_list_object_attributes(mut self, input: std::option::Option<crate::model::BatchListObjectAttributes>) -> Self {
+            self.list_object_attributes = input; self
         }
         /// <p>Returns a paginated list of child objects that are associated with a given object.</p>
-        pub fn list_object_children(
-            mut self,
-            input: crate::model::BatchListObjectChildren,
-        ) -> Self {
+        pub fn list_object_children(mut self, input: crate::model::BatchListObjectChildren) -> Self {
             self.list_object_children = Some(input);
             self
         }
         /// <p>Returns a paginated list of child objects that are associated with a given object.</p>
-        pub fn set_list_object_children(
-            mut self,
-            input: std::option::Option<crate::model::BatchListObjectChildren>,
-        ) -> Self {
-            self.list_object_children = input;
-            self
+        pub fn set_list_object_children(mut self, input: std::option::Option<crate::model::BatchListObjectChildren>) -> Self {
+            self.list_object_children = input; self
         }
         /// <p>Lists indices attached to an object.</p>
-        pub fn list_attached_indices(
-            mut self,
-            input: crate::model::BatchListAttachedIndices,
-        ) -> Self {
+        pub fn list_attached_indices(mut self, input: crate::model::BatchListAttachedIndices) -> Self {
             self.list_attached_indices = Some(input);
             self
         }
         /// <p>Lists indices attached to an object.</p>
-        pub fn set_list_attached_indices(
-            mut self,
-            input: std::option::Option<crate::model::BatchListAttachedIndices>,
-        ) -> Self {
-            self.list_attached_indices = input;
-            self
+        pub fn set_list_attached_indices(mut self, input: std::option::Option<crate::model::BatchListAttachedIndices>) -> Self {
+            self.list_attached_indices = input; self
         }
         /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
-        pub fn list_object_parent_paths(
-            mut self,
-            input: crate::model::BatchListObjectParentPaths,
-        ) -> Self {
+        pub fn list_object_parent_paths(mut self, input: crate::model::BatchListObjectParentPaths) -> Self {
             self.list_object_parent_paths = Some(input);
             self
         }
         /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
-        pub fn set_list_object_parent_paths(
-            mut self,
-            input: std::option::Option<crate::model::BatchListObjectParentPaths>,
-        ) -> Self {
-            self.list_object_parent_paths = input;
-            self
+        pub fn set_list_object_parent_paths(mut self, input: std::option::Option<crate::model::BatchListObjectParentPaths>) -> Self {
+            self.list_object_parent_paths = input; self
         }
         /// <p>Retrieves metadata about an object.</p>
-        pub fn get_object_information(
-            mut self,
-            input: crate::model::BatchGetObjectInformation,
-        ) -> Self {
+        pub fn get_object_information(mut self, input: crate::model::BatchGetObjectInformation) -> Self {
             self.get_object_information = Some(input);
             self
         }
         /// <p>Retrieves metadata about an object.</p>
-        pub fn set_get_object_information(
-            mut self,
-            input: std::option::Option<crate::model::BatchGetObjectInformation>,
-        ) -> Self {
-            self.get_object_information = input;
-            self
+        pub fn set_get_object_information(mut self, input: std::option::Option<crate::model::BatchGetObjectInformation>) -> Self {
+            self.get_object_information = input; self
         }
         /// <p>Retrieves attributes within a facet that are associated with an object.</p>
-        pub fn get_object_attributes(
-            mut self,
-            input: crate::model::BatchGetObjectAttributes,
-        ) -> Self {
+        pub fn get_object_attributes(mut self, input: crate::model::BatchGetObjectAttributes) -> Self {
             self.get_object_attributes = Some(input);
             self
         }
         /// <p>Retrieves attributes within a facet that are associated with an object.</p>
-        pub fn set_get_object_attributes(
-            mut self,
-            input: std::option::Option<crate::model::BatchGetObjectAttributes>,
-        ) -> Self {
-            self.get_object_attributes = input;
-            self
+        pub fn set_get_object_attributes(mut self, input: std::option::Option<crate::model::BatchGetObjectAttributes>) -> Self {
+            self.get_object_attributes = input; self
         }
         /// <p>Lists parent objects that are associated with a given object in pagination fashion.</p>
         pub fn list_object_parents(mut self, input: crate::model::BatchListObjectParents) -> Self {
@@ -8585,44 +7782,26 @@ pub mod batch_read_operation {
             self
         }
         /// <p>Lists parent objects that are associated with a given object in pagination fashion.</p>
-        pub fn set_list_object_parents(
-            mut self,
-            input: std::option::Option<crate::model::BatchListObjectParents>,
-        ) -> Self {
-            self.list_object_parents = input;
-            self
+        pub fn set_list_object_parents(mut self, input: std::option::Option<crate::model::BatchListObjectParents>) -> Self {
+            self.list_object_parents = input; self
         }
         /// <p>Returns policies attached to an object in pagination fashion.</p>
-        pub fn list_object_policies(
-            mut self,
-            input: crate::model::BatchListObjectPolicies,
-        ) -> Self {
+        pub fn list_object_policies(mut self, input: crate::model::BatchListObjectPolicies) -> Self {
             self.list_object_policies = Some(input);
             self
         }
         /// <p>Returns policies attached to an object in pagination fashion.</p>
-        pub fn set_list_object_policies(
-            mut self,
-            input: std::option::Option<crate::model::BatchListObjectPolicies>,
-        ) -> Self {
-            self.list_object_policies = input;
-            self
+        pub fn set_list_object_policies(mut self, input: std::option::Option<crate::model::BatchListObjectPolicies>) -> Self {
+            self.list_object_policies = input; self
         }
         /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>
-        pub fn list_policy_attachments(
-            mut self,
-            input: crate::model::BatchListPolicyAttachments,
-        ) -> Self {
+        pub fn list_policy_attachments(mut self, input: crate::model::BatchListPolicyAttachments) -> Self {
             self.list_policy_attachments = Some(input);
             self
         }
         /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>
-        pub fn set_list_policy_attachments(
-            mut self,
-            input: std::option::Option<crate::model::BatchListPolicyAttachments>,
-        ) -> Self {
-            self.list_policy_attachments = input;
-            self
+        pub fn set_list_policy_attachments(mut self, input: std::option::Option<crate::model::BatchListPolicyAttachments>) -> Self {
+            self.list_policy_attachments = input; self
         }
         /// <p>Lists all policies from the root of the <code>Directory</code> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
         pub fn lookup_policy(mut self, input: crate::model::BatchLookupPolicy) -> Self {
@@ -8630,12 +7809,8 @@ pub mod batch_read_operation {
             self
         }
         /// <p>Lists all policies from the root of the <code>Directory</code> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
-        pub fn set_lookup_policy(
-            mut self,
-            input: std::option::Option<crate::model::BatchLookupPolicy>,
-        ) -> Self {
-            self.lookup_policy = input;
-            self
+        pub fn set_lookup_policy(mut self, input: std::option::Option<crate::model::BatchLookupPolicy>) -> Self {
+            self.lookup_policy = input; self
         }
         /// <p>Lists objects attached to the specified index.</p>
         pub fn list_index(mut self, input: crate::model::BatchListIndex) -> Self {
@@ -8643,44 +7818,26 @@ pub mod batch_read_operation {
             self
         }
         /// <p>Lists objects attached to the specified index.</p>
-        pub fn set_list_index(
-            mut self,
-            input: std::option::Option<crate::model::BatchListIndex>,
-        ) -> Self {
-            self.list_index = input;
-            self
+        pub fn set_list_index(mut self, input: std::option::Option<crate::model::BatchListIndex>) -> Self {
+            self.list_index = input; self
         }
         /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn list_outgoing_typed_links(
-            mut self,
-            input: crate::model::BatchListOutgoingTypedLinks,
-        ) -> Self {
+        pub fn list_outgoing_typed_links(mut self, input: crate::model::BatchListOutgoingTypedLinks) -> Self {
             self.list_outgoing_typed_links = Some(input);
             self
         }
         /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn set_list_outgoing_typed_links(
-            mut self,
-            input: std::option::Option<crate::model::BatchListOutgoingTypedLinks>,
-        ) -> Self {
-            self.list_outgoing_typed_links = input;
-            self
+        pub fn set_list_outgoing_typed_links(mut self, input: std::option::Option<crate::model::BatchListOutgoingTypedLinks>) -> Self {
+            self.list_outgoing_typed_links = input; self
         }
         /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn list_incoming_typed_links(
-            mut self,
-            input: crate::model::BatchListIncomingTypedLinks,
-        ) -> Self {
+        pub fn list_incoming_typed_links(mut self, input: crate::model::BatchListIncomingTypedLinks) -> Self {
             self.list_incoming_typed_links = Some(input);
             self
         }
         /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-        pub fn set_list_incoming_typed_links(
-            mut self,
-            input: std::option::Option<crate::model::BatchListIncomingTypedLinks>,
-        ) -> Self {
-            self.list_incoming_typed_links = input;
-            self
+        pub fn set_list_incoming_typed_links(mut self, input: std::option::Option<crate::model::BatchListIncomingTypedLinks>) -> Self {
+            self.list_incoming_typed_links = input; self
         }
         /// <p>Retrieves attributes that are associated with a typed link.</p>
         pub fn get_link_attributes(mut self, input: crate::model::BatchGetLinkAttributes) -> Self {
@@ -8688,33 +7845,45 @@ pub mod batch_read_operation {
             self
         }
         /// <p>Retrieves attributes that are associated with a typed link.</p>
-        pub fn set_get_link_attributes(
-            mut self,
-            input: std::option::Option<crate::model::BatchGetLinkAttributes>,
-        ) -> Self {
-            self.get_link_attributes = input;
-            self
+        pub fn set_get_link_attributes(mut self, input: std::option::Option<crate::model::BatchGetLinkAttributes>) -> Self {
+            self.get_link_attributes = input; self
         }
         /// Consumes the builder and constructs a [`BatchReadOperation`](crate::model::BatchReadOperation).
         pub fn build(self) -> crate::model::BatchReadOperation {
             crate::model::BatchReadOperation {
-                list_object_attributes: self.list_object_attributes,
-                list_object_children: self.list_object_children,
-                list_attached_indices: self.list_attached_indices,
-                list_object_parent_paths: self.list_object_parent_paths,
-                get_object_information: self.get_object_information,
-                get_object_attributes: self.get_object_attributes,
-                list_object_parents: self.list_object_parents,
-                list_object_policies: self.list_object_policies,
-                list_policy_attachments: self.list_policy_attachments,
-                lookup_policy: self.lookup_policy,
-                list_index: self.list_index,
-                list_outgoing_typed_links: self.list_outgoing_typed_links,
-                list_incoming_typed_links: self.list_incoming_typed_links,
-                get_link_attributes: self.get_link_attributes,
+                list_object_attributes: self.list_object_attributes
+                ,
+                list_object_children: self.list_object_children
+                ,
+                list_attached_indices: self.list_attached_indices
+                ,
+                list_object_parent_paths: self.list_object_parent_paths
+                ,
+                get_object_information: self.get_object_information
+                ,
+                get_object_attributes: self.get_object_attributes
+                ,
+                list_object_parents: self.list_object_parents
+                ,
+                list_object_policies: self.list_object_policies
+                ,
+                list_policy_attachments: self.list_policy_attachments
+                ,
+                lookup_policy: self.lookup_policy
+                ,
+                list_index: self.list_index
+                ,
+                list_outgoing_typed_links: self.list_outgoing_typed_links
+                ,
+                list_incoming_typed_links: self.list_incoming_typed_links
+                ,
+                get_link_attributes: self.get_link_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchReadOperation {
     /// Creates a new builder-style object to manufacture [`BatchReadOperation`](crate::model::BatchReadOperation).
@@ -8726,7 +7895,7 @@ impl BatchReadOperation {
 /// <p>Retrieves attributes that are associated with a typed link inside a <code>BatchRead</code> operation. For more information, see <code>GetLinkAttributes</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetLinkAttributes {
+pub struct BatchGetLinkAttributes  {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     #[doc(hidden)]
     pub typed_link_specifier: std::option::Option<crate::model::TypedLinkSpecifier>,
@@ -8736,17 +7905,17 @@ pub struct BatchGetLinkAttributes {
 }
 impl BatchGetLinkAttributes {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
-    pub fn typed_link_specifier(&self) -> std::option::Option<&crate::model::TypedLinkSpecifier> {
+    pub fn typed_link_specifier(&self) -> std::option::Option<& crate::model::TypedLinkSpecifier> {
         self.typed_link_specifier.as_ref()
     }
     /// <p>A list of attribute names whose values will be retrieved.</p>
-    pub fn attribute_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn attribute_names(&self) -> std::option::Option<& [std::string::String]> {
         self.attribute_names.as_deref()
     }
 }
 /// See [`BatchGetLinkAttributes`](crate::model::BatchGetLinkAttributes).
 pub mod batch_get_link_attributes {
-
+    
     /// A builder for [`BatchGetLinkAttributes`](crate::model::BatchGetLinkAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8760,12 +7929,8 @@ pub mod batch_get_link_attributes {
             self
         }
         /// <p>Allows a typed link specifier to be accepted as input.</p>
-        pub fn set_typed_link_specifier(
-            mut self,
-            input: std::option::Option<crate::model::TypedLinkSpecifier>,
-        ) -> Self {
-            self.typed_link_specifier = input;
-            self
+        pub fn set_typed_link_specifier(mut self, input: std::option::Option<crate::model::TypedLinkSpecifier>) -> Self {
+            self.typed_link_specifier = input; self
         }
         /// Appends an item to `attribute_names`.
         ///
@@ -8774,26 +7939,26 @@ pub mod batch_get_link_attributes {
         /// <p>A list of attribute names whose values will be retrieved.</p>
         pub fn attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attribute_names.unwrap_or_default();
-            v.push(input.into());
-            self.attribute_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.attribute_names = Some(v);
+                            self
         }
         /// <p>A list of attribute names whose values will be retrieved.</p>
-        pub fn set_attribute_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.attribute_names = input;
-            self
+        pub fn set_attribute_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.attribute_names = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetLinkAttributes`](crate::model::BatchGetLinkAttributes).
         pub fn build(self) -> crate::model::BatchGetLinkAttributes {
             crate::model::BatchGetLinkAttributes {
-                typed_link_specifier: self.typed_link_specifier,
-                attribute_names: self.attribute_names,
+                typed_link_specifier: self.typed_link_specifier
+                ,
+                attribute_names: self.attribute_names
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetLinkAttributes {
     /// Creates a new builder-style object to manufacture [`BatchGetLinkAttributes`](crate::model::BatchGetLinkAttributes).
@@ -8805,14 +7970,13 @@ impl BatchGetLinkAttributes {
 /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object inside a <code>BatchRead</code> operation. For more information, see <code>ListIncomingTypedLinks</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListIncomingTypedLinks {
+pub struct BatchListIncomingTypedLinks  {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
     #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
     #[doc(hidden)]
-    pub filter_attribute_ranges:
-        std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
+    pub filter_attribute_ranges: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
     /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
     #[doc(hidden)]
     pub filter_typed_link: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
@@ -8825,23 +7989,19 @@ pub struct BatchListIncomingTypedLinks {
 }
 impl BatchListIncomingTypedLinks {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
-    pub fn filter_attribute_ranges(
-        &self,
-    ) -> std::option::Option<&[crate::model::TypedLinkAttributeRange]> {
+    pub fn filter_attribute_ranges(&self) -> std::option::Option<& [crate::model::TypedLinkAttributeRange]> {
         self.filter_attribute_ranges.as_deref()
     }
     /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
-    pub fn filter_typed_link(
-        &self,
-    ) -> std::option::Option<&crate::model::TypedLinkSchemaAndFacetName> {
+    pub fn filter_typed_link(&self) -> std::option::Option<& crate::model::TypedLinkSchemaAndFacetName> {
         self.filter_typed_link.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to retrieve.</p>
@@ -8851,15 +8011,13 @@ impl BatchListIncomingTypedLinks {
 }
 /// See [`BatchListIncomingTypedLinks`](crate::model::BatchListIncomingTypedLinks).
 pub mod batch_list_incoming_typed_links {
-
+    
     /// A builder for [`BatchListIncomingTypedLinks`](crate::model::BatchListIncomingTypedLinks).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
-        pub(crate) filter_attribute_ranges:
-            std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
-        pub(crate) filter_typed_link:
-            std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
+        pub(crate) filter_attribute_ranges: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
+        pub(crate) filter_typed_link: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
     }
@@ -8870,50 +8028,32 @@ pub mod batch_list_incoming_typed_links {
             self
         }
         /// <p>The reference that identifies the object whose attributes will be listed.</p>
-        pub fn set_object_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.object_reference = input;
-            self
+        pub fn set_object_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.object_reference = input; self
         }
         /// Appends an item to `filter_attribute_ranges`.
         ///
         /// To override the contents of this collection use [`set_filter_attribute_ranges`](Self::set_filter_attribute_ranges).
         ///
         /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
-        pub fn filter_attribute_ranges(
-            mut self,
-            input: crate::model::TypedLinkAttributeRange,
-        ) -> Self {
+        pub fn filter_attribute_ranges(mut self, input: crate::model::TypedLinkAttributeRange) -> Self {
             let mut v = self.filter_attribute_ranges.unwrap_or_default();
-            v.push(input);
-            self.filter_attribute_ranges = Some(v);
-            self
+                            v.push(input);
+                            self.filter_attribute_ranges = Some(v);
+                            self
         }
         /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
-        pub fn set_filter_attribute_ranges(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
-        ) -> Self {
-            self.filter_attribute_ranges = input;
-            self
+        pub fn set_filter_attribute_ranges(mut self, input: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>) -> Self {
+            self.filter_attribute_ranges = input; self
         }
         /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
-        pub fn filter_typed_link(
-            mut self,
-            input: crate::model::TypedLinkSchemaAndFacetName,
-        ) -> Self {
+        pub fn filter_typed_link(mut self, input: crate::model::TypedLinkSchemaAndFacetName) -> Self {
             self.filter_typed_link = Some(input);
             self
         }
         /// <p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>
-        pub fn set_filter_typed_link(
-            mut self,
-            input: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
-        ) -> Self {
-            self.filter_typed_link = input;
-            self
+        pub fn set_filter_typed_link(mut self, input: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>) -> Self {
+            self.filter_typed_link = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8922,8 +8062,7 @@ pub mod batch_list_incoming_typed_links {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to retrieve.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -8932,20 +8071,26 @@ pub mod batch_list_incoming_typed_links {
         }
         /// <p>The maximum number of results to retrieve.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`BatchListIncomingTypedLinks`](crate::model::BatchListIncomingTypedLinks).
         pub fn build(self) -> crate::model::BatchListIncomingTypedLinks {
             crate::model::BatchListIncomingTypedLinks {
-                object_reference: self.object_reference,
-                filter_attribute_ranges: self.filter_attribute_ranges,
-                filter_typed_link: self.filter_typed_link,
-                next_token: self.next_token,
-                max_results: self.max_results,
+                object_reference: self.object_reference
+                ,
+                filter_attribute_ranges: self.filter_attribute_ranges
+                ,
+                filter_typed_link: self.filter_typed_link
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchListIncomingTypedLinks {
     /// Creates a new builder-style object to manufacture [`BatchListIncomingTypedLinks`](crate::model::BatchListIncomingTypedLinks).
@@ -8957,14 +8102,13 @@ impl BatchListIncomingTypedLinks {
 /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object inside a <code>BatchRead</code> operation. For more information, see <code>ListOutgoingTypedLinks</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListOutgoingTypedLinks {
+pub struct BatchListOutgoingTypedLinks  {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
     #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
     /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
     #[doc(hidden)]
-    pub filter_attribute_ranges:
-        std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
+    pub filter_attribute_ranges: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
     /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
     #[doc(hidden)]
     pub filter_typed_link: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
@@ -8977,23 +8121,19 @@ pub struct BatchListOutgoingTypedLinks {
 }
 impl BatchListOutgoingTypedLinks {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
-    pub fn filter_attribute_ranges(
-        &self,
-    ) -> std::option::Option<&[crate::model::TypedLinkAttributeRange]> {
+    pub fn filter_attribute_ranges(&self) -> std::option::Option<& [crate::model::TypedLinkAttributeRange]> {
         self.filter_attribute_ranges.as_deref()
     }
     /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
-    pub fn filter_typed_link(
-        &self,
-    ) -> std::option::Option<&crate::model::TypedLinkSchemaAndFacetName> {
+    pub fn filter_typed_link(&self) -> std::option::Option<& crate::model::TypedLinkSchemaAndFacetName> {
         self.filter_typed_link.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to retrieve.</p>
@@ -9003,15 +8143,13 @@ impl BatchListOutgoingTypedLinks {
 }
 /// See [`BatchListOutgoingTypedLinks`](crate::model::BatchListOutgoingTypedLinks).
 pub mod batch_list_outgoing_typed_links {
-
+    
     /// A builder for [`BatchListOutgoingTypedLinks`](crate::model::BatchListOutgoingTypedLinks).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) object_reference: std::option::Option<crate::model::ObjectReference>,
-        pub(crate) filter_attribute_ranges:
-            std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
-        pub(crate) filter_typed_link:
-            std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
+        pub(crate) filter_attribute_ranges: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
+        pub(crate) filter_typed_link: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
     }
@@ -9022,50 +8160,32 @@ pub mod batch_list_outgoing_typed_links {
             self
         }
         /// <p>The reference that identifies the object whose attributes will be listed.</p>
-        pub fn set_object_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.object_reference = input;
-            self
+        pub fn set_object_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.object_reference = input; self
         }
         /// Appends an item to `filter_attribute_ranges`.
         ///
         /// To override the contents of this collection use [`set_filter_attribute_ranges`](Self::set_filter_attribute_ranges).
         ///
         /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
-        pub fn filter_attribute_ranges(
-            mut self,
-            input: crate::model::TypedLinkAttributeRange,
-        ) -> Self {
+        pub fn filter_attribute_ranges(mut self, input: crate::model::TypedLinkAttributeRange) -> Self {
             let mut v = self.filter_attribute_ranges.unwrap_or_default();
-            v.push(input);
-            self.filter_attribute_ranges = Some(v);
-            self
+                            v.push(input);
+                            self.filter_attribute_ranges = Some(v);
+                            self
         }
         /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
-        pub fn set_filter_attribute_ranges(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>,
-        ) -> Self {
-            self.filter_attribute_ranges = input;
-            self
+        pub fn set_filter_attribute_ranges(mut self, input: std::option::Option<std::vec::Vec<crate::model::TypedLinkAttributeRange>>) -> Self {
+            self.filter_attribute_ranges = input; self
         }
         /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
-        pub fn filter_typed_link(
-            mut self,
-            input: crate::model::TypedLinkSchemaAndFacetName,
-        ) -> Self {
+        pub fn filter_typed_link(mut self, input: crate::model::TypedLinkSchemaAndFacetName) -> Self {
             self.filter_typed_link = Some(input);
             self
         }
         /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
-        pub fn set_filter_typed_link(
-            mut self,
-            input: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>,
-        ) -> Self {
-            self.filter_typed_link = input;
-            self
+        pub fn set_filter_typed_link(mut self, input: std::option::Option<crate::model::TypedLinkSchemaAndFacetName>) -> Self {
+            self.filter_typed_link = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9074,8 +8194,7 @@ pub mod batch_list_outgoing_typed_links {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to retrieve.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -9084,20 +8203,26 @@ pub mod batch_list_outgoing_typed_links {
         }
         /// <p>The maximum number of results to retrieve.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`BatchListOutgoingTypedLinks`](crate::model::BatchListOutgoingTypedLinks).
         pub fn build(self) -> crate::model::BatchListOutgoingTypedLinks {
             crate::model::BatchListOutgoingTypedLinks {
-                object_reference: self.object_reference,
-                filter_attribute_ranges: self.filter_attribute_ranges,
-                filter_typed_link: self.filter_typed_link,
-                next_token: self.next_token,
-                max_results: self.max_results,
+                object_reference: self.object_reference
+                ,
+                filter_attribute_ranges: self.filter_attribute_ranges
+                ,
+                filter_typed_link: self.filter_typed_link
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchListOutgoingTypedLinks {
     /// Creates a new builder-style object to manufacture [`BatchListOutgoingTypedLinks`](crate::model::BatchListOutgoingTypedLinks).
@@ -9109,11 +8234,10 @@ impl BatchListOutgoingTypedLinks {
 /// <p>Lists objects attached to the specified index inside a <code>BatchRead</code> operation. For more information, see <code>ListIndex</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListIndex {
+pub struct BatchListIndex  {
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
     #[doc(hidden)]
-    pub ranges_on_indexed_values:
-        std::option::Option<std::vec::Vec<crate::model::ObjectAttributeRange>>,
+    pub ranges_on_indexed_values: std::option::Option<std::vec::Vec<crate::model::ObjectAttributeRange>>,
     /// <p>The reference to the index to list.</p>
     #[doc(hidden)]
     pub index_reference: std::option::Option<crate::model::ObjectReference>,
@@ -9126,13 +8250,11 @@ pub struct BatchListIndex {
 }
 impl BatchListIndex {
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
-    pub fn ranges_on_indexed_values(
-        &self,
-    ) -> std::option::Option<&[crate::model::ObjectAttributeRange]> {
+    pub fn ranges_on_indexed_values(&self) -> std::option::Option<& [crate::model::ObjectAttributeRange]> {
         self.ranges_on_indexed_values.as_deref()
     }
     /// <p>The reference to the index to list.</p>
-    pub fn index_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn index_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.index_reference.as_ref()
     }
     /// <p>The maximum number of results to retrieve.</p>
@@ -9140,18 +8262,17 @@ impl BatchListIndex {
         self.max_results
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`BatchListIndex`](crate::model::BatchListIndex).
 pub mod batch_list_index {
-
+    
     /// A builder for [`BatchListIndex`](crate::model::BatchListIndex).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) ranges_on_indexed_values:
-            std::option::Option<std::vec::Vec<crate::model::ObjectAttributeRange>>,
+        pub(crate) ranges_on_indexed_values: std::option::Option<std::vec::Vec<crate::model::ObjectAttributeRange>>,
         pub(crate) index_reference: std::option::Option<crate::model::ObjectReference>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -9162,22 +8283,15 @@ pub mod batch_list_index {
         /// To override the contents of this collection use [`set_ranges_on_indexed_values`](Self::set_ranges_on_indexed_values).
         ///
         /// <p>Specifies the ranges of indexed values that you want to query.</p>
-        pub fn ranges_on_indexed_values(
-            mut self,
-            input: crate::model::ObjectAttributeRange,
-        ) -> Self {
+        pub fn ranges_on_indexed_values(mut self, input: crate::model::ObjectAttributeRange) -> Self {
             let mut v = self.ranges_on_indexed_values.unwrap_or_default();
-            v.push(input);
-            self.ranges_on_indexed_values = Some(v);
-            self
+                            v.push(input);
+                            self.ranges_on_indexed_values = Some(v);
+                            self
         }
         /// <p>Specifies the ranges of indexed values that you want to query.</p>
-        pub fn set_ranges_on_indexed_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ObjectAttributeRange>>,
-        ) -> Self {
-            self.ranges_on_indexed_values = input;
-            self
+        pub fn set_ranges_on_indexed_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::ObjectAttributeRange>>) -> Self {
+            self.ranges_on_indexed_values = input; self
         }
         /// <p>The reference to the index to list.</p>
         pub fn index_reference(mut self, input: crate::model::ObjectReference) -> Self {
@@ -9185,12 +8299,8 @@ pub mod batch_list_index {
             self
         }
         /// <p>The reference to the index to list.</p>
-        pub fn set_index_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.index_reference = input;
-            self
+        pub fn set_index_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.index_reference = input; self
         }
         /// <p>The maximum number of results to retrieve.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -9199,8 +8309,7 @@ pub mod batch_list_index {
         }
         /// <p>The maximum number of results to retrieve.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9209,19 +8318,24 @@ pub mod batch_list_index {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`BatchListIndex`](crate::model::BatchListIndex).
         pub fn build(self) -> crate::model::BatchListIndex {
             crate::model::BatchListIndex {
-                ranges_on_indexed_values: self.ranges_on_indexed_values,
-                index_reference: self.index_reference,
-                max_results: self.max_results,
-                next_token: self.next_token,
+                ranges_on_indexed_values: self.ranges_on_indexed_values
+                ,
+                index_reference: self.index_reference
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchListIndex {
     /// Creates a new builder-style object to manufacture [`BatchListIndex`](crate::model::BatchListIndex).
@@ -9233,7 +8347,7 @@ impl BatchListIndex {
 /// <p>Lists all policies from the root of the Directory to the object specified inside a <code>BatchRead</code> operation. For more information, see <code>LookupPolicy</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchLookupPolicy {
+pub struct BatchLookupPolicy  {
     /// <p>Reference that identifies the object whose policies will be looked up.</p>
     #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -9246,11 +8360,11 @@ pub struct BatchLookupPolicy {
 }
 impl BatchLookupPolicy {
     /// <p>Reference that identifies the object whose policies will be looked up.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to retrieve.</p>
@@ -9260,7 +8374,7 @@ impl BatchLookupPolicy {
 }
 /// See [`BatchLookupPolicy`](crate::model::BatchLookupPolicy).
 pub mod batch_lookup_policy {
-
+    
     /// A builder for [`BatchLookupPolicy`](crate::model::BatchLookupPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9275,12 +8389,8 @@ pub mod batch_lookup_policy {
             self
         }
         /// <p>Reference that identifies the object whose policies will be looked up.</p>
-        pub fn set_object_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.object_reference = input;
-            self
+        pub fn set_object_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.object_reference = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9289,8 +8399,7 @@ pub mod batch_lookup_policy {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to retrieve.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -9299,18 +8408,22 @@ pub mod batch_lookup_policy {
         }
         /// <p>The maximum number of results to retrieve.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`BatchLookupPolicy`](crate::model::BatchLookupPolicy).
         pub fn build(self) -> crate::model::BatchLookupPolicy {
             crate::model::BatchLookupPolicy {
-                object_reference: self.object_reference,
-                next_token: self.next_token,
-                max_results: self.max_results,
+                object_reference: self.object_reference
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchLookupPolicy {
     /// Creates a new builder-style object to manufacture [`BatchLookupPolicy`](crate::model::BatchLookupPolicy).
@@ -9322,7 +8435,7 @@ impl BatchLookupPolicy {
 /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached inside a <code>BatchRead</code> operation. For more information, see <code>ListPolicyAttachments</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListPolicyAttachments {
+pub struct BatchListPolicyAttachments  {
     /// <p>The reference that identifies the policy object.</p>
     #[doc(hidden)]
     pub policy_reference: std::option::Option<crate::model::ObjectReference>,
@@ -9335,11 +8448,11 @@ pub struct BatchListPolicyAttachments {
 }
 impl BatchListPolicyAttachments {
     /// <p>The reference that identifies the policy object.</p>
-    pub fn policy_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn policy_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.policy_reference.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to retrieve.</p>
@@ -9349,7 +8462,7 @@ impl BatchListPolicyAttachments {
 }
 /// See [`BatchListPolicyAttachments`](crate::model::BatchListPolicyAttachments).
 pub mod batch_list_policy_attachments {
-
+    
     /// A builder for [`BatchListPolicyAttachments`](crate::model::BatchListPolicyAttachments).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9364,12 +8477,8 @@ pub mod batch_list_policy_attachments {
             self
         }
         /// <p>The reference that identifies the policy object.</p>
-        pub fn set_policy_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.policy_reference = input;
-            self
+        pub fn set_policy_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.policy_reference = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9378,8 +8487,7 @@ pub mod batch_list_policy_attachments {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to retrieve.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -9388,18 +8496,22 @@ pub mod batch_list_policy_attachments {
         }
         /// <p>The maximum number of results to retrieve.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`BatchListPolicyAttachments`](crate::model::BatchListPolicyAttachments).
         pub fn build(self) -> crate::model::BatchListPolicyAttachments {
             crate::model::BatchListPolicyAttachments {
-                policy_reference: self.policy_reference,
-                next_token: self.next_token,
-                max_results: self.max_results,
+                policy_reference: self.policy_reference
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchListPolicyAttachments {
     /// Creates a new builder-style object to manufacture [`BatchListPolicyAttachments`](crate::model::BatchListPolicyAttachments).
@@ -9411,7 +8523,7 @@ impl BatchListPolicyAttachments {
 /// <p>Returns policies attached to an object in pagination fashion inside a <code>BatchRead</code> operation. For more information, see <code>ListObjectPolicies</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListObjectPolicies {
+pub struct BatchListObjectPolicies  {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
     #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -9424,11 +8536,11 @@ pub struct BatchListObjectPolicies {
 }
 impl BatchListObjectPolicies {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to retrieve.</p>
@@ -9438,7 +8550,7 @@ impl BatchListObjectPolicies {
 }
 /// See [`BatchListObjectPolicies`](crate::model::BatchListObjectPolicies).
 pub mod batch_list_object_policies {
-
+    
     /// A builder for [`BatchListObjectPolicies`](crate::model::BatchListObjectPolicies).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9453,12 +8565,8 @@ pub mod batch_list_object_policies {
             self
         }
         /// <p>The reference that identifies the object whose attributes will be listed.</p>
-        pub fn set_object_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.object_reference = input;
-            self
+        pub fn set_object_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.object_reference = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9467,8 +8575,7 @@ pub mod batch_list_object_policies {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to retrieve.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -9477,18 +8584,22 @@ pub mod batch_list_object_policies {
         }
         /// <p>The maximum number of results to retrieve.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`BatchListObjectPolicies`](crate::model::BatchListObjectPolicies).
         pub fn build(self) -> crate::model::BatchListObjectPolicies {
             crate::model::BatchListObjectPolicies {
-                object_reference: self.object_reference,
-                next_token: self.next_token,
-                max_results: self.max_results,
+                object_reference: self.object_reference
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchListObjectPolicies {
     /// Creates a new builder-style object to manufacture [`BatchListObjectPolicies`](crate::model::BatchListObjectPolicies).
@@ -9500,7 +8611,7 @@ impl BatchListObjectPolicies {
 /// <p>Lists parent objects that are associated with a given object in pagination fashion.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListObjectParents {
+pub struct BatchListObjectParents  {
     /// <p>The reference that identifies an object.</p>
     #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -9513,11 +8624,11 @@ pub struct BatchListObjectParents {
 }
 impl BatchListObjectParents {
     /// <p>The reference that identifies an object.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
@@ -9527,7 +8638,7 @@ impl BatchListObjectParents {
 }
 /// See [`BatchListObjectParents`](crate::model::BatchListObjectParents).
 pub mod batch_list_object_parents {
-
+    
     /// A builder for [`BatchListObjectParents`](crate::model::BatchListObjectParents).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9542,12 +8653,8 @@ pub mod batch_list_object_parents {
             self
         }
         /// <p>The reference that identifies an object.</p>
-        pub fn set_object_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.object_reference = input;
-            self
+        pub fn set_object_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.object_reference = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9556,8 +8663,7 @@ pub mod batch_list_object_parents {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -9566,18 +8672,22 @@ pub mod batch_list_object_parents {
         }
         /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`BatchListObjectParents`](crate::model::BatchListObjectParents).
         pub fn build(self) -> crate::model::BatchListObjectParents {
             crate::model::BatchListObjectParents {
-                object_reference: self.object_reference,
-                next_token: self.next_token,
-                max_results: self.max_results,
+                object_reference: self.object_reference
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchListObjectParents {
     /// Creates a new builder-style object to manufacture [`BatchListObjectParents`](crate::model::BatchListObjectParents).
@@ -9589,7 +8699,7 @@ impl BatchListObjectParents {
 /// <p>Retrieves attributes within a facet that are associated with an object inside an <code>BatchRead</code> operation. For more information, see <code>GetObjectAttributes</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetObjectAttributes {
+pub struct BatchGetObjectAttributes  {
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
     #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -9602,21 +8712,21 @@ pub struct BatchGetObjectAttributes {
 }
 impl BatchGetObjectAttributes {
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
-    pub fn schema_facet(&self) -> std::option::Option<&crate::model::SchemaFacet> {
+    pub fn schema_facet(&self) -> std::option::Option<& crate::model::SchemaFacet> {
         self.schema_facet.as_ref()
     }
     /// <p>List of attribute names whose values will be retrieved.</p>
-    pub fn attribute_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn attribute_names(&self) -> std::option::Option<& [std::string::String]> {
         self.attribute_names.as_deref()
     }
 }
 /// See [`BatchGetObjectAttributes`](crate::model::BatchGetObjectAttributes).
 pub mod batch_get_object_attributes {
-
+    
     /// A builder for [`BatchGetObjectAttributes`](crate::model::BatchGetObjectAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9631,12 +8741,8 @@ pub mod batch_get_object_attributes {
             self
         }
         /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
-        pub fn set_object_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.object_reference = input;
-            self
+        pub fn set_object_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.object_reference = input; self
         }
         /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
         pub fn schema_facet(mut self, input: crate::model::SchemaFacet) -> Self {
@@ -9644,12 +8750,8 @@ pub mod batch_get_object_attributes {
             self
         }
         /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
-        pub fn set_schema_facet(
-            mut self,
-            input: std::option::Option<crate::model::SchemaFacet>,
-        ) -> Self {
-            self.schema_facet = input;
-            self
+        pub fn set_schema_facet(mut self, input: std::option::Option<crate::model::SchemaFacet>) -> Self {
+            self.schema_facet = input; self
         }
         /// Appends an item to `attribute_names`.
         ///
@@ -9658,27 +8760,28 @@ pub mod batch_get_object_attributes {
         /// <p>List of attribute names whose values will be retrieved.</p>
         pub fn attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attribute_names.unwrap_or_default();
-            v.push(input.into());
-            self.attribute_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.attribute_names = Some(v);
+                            self
         }
         /// <p>List of attribute names whose values will be retrieved.</p>
-        pub fn set_attribute_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.attribute_names = input;
-            self
+        pub fn set_attribute_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.attribute_names = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetObjectAttributes`](crate::model::BatchGetObjectAttributes).
         pub fn build(self) -> crate::model::BatchGetObjectAttributes {
             crate::model::BatchGetObjectAttributes {
-                object_reference: self.object_reference,
-                schema_facet: self.schema_facet,
-                attribute_names: self.attribute_names,
+                object_reference: self.object_reference
+                ,
+                schema_facet: self.schema_facet
+                ,
+                attribute_names: self.attribute_names
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetObjectAttributes {
     /// Creates a new builder-style object to manufacture [`BatchGetObjectAttributes`](crate::model::BatchGetObjectAttributes).
@@ -9690,20 +8793,20 @@ impl BatchGetObjectAttributes {
 /// <p>Retrieves metadata about an object inside a <code>BatchRead</code> operation. For more information, see <code>GetObjectInformation</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetObjectInformation {
+pub struct BatchGetObjectInformation  {
     /// <p>A reference to the object.</p>
     #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
 }
 impl BatchGetObjectInformation {
     /// <p>A reference to the object.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
 }
 /// See [`BatchGetObjectInformation`](crate::model::BatchGetObjectInformation).
 pub mod batch_get_object_information {
-
+    
     /// A builder for [`BatchGetObjectInformation`](crate::model::BatchGetObjectInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9716,20 +8819,19 @@ pub mod batch_get_object_information {
             self
         }
         /// <p>A reference to the object.</p>
-        pub fn set_object_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.object_reference = input;
-            self
+        pub fn set_object_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.object_reference = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetObjectInformation`](crate::model::BatchGetObjectInformation).
         pub fn build(self) -> crate::model::BatchGetObjectInformation {
             crate::model::BatchGetObjectInformation {
-                object_reference: self.object_reference,
+                object_reference: self.object_reference
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetObjectInformation {
     /// Creates a new builder-style object to manufacture [`BatchGetObjectInformation`](crate::model::BatchGetObjectInformation).
@@ -9741,7 +8843,7 @@ impl BatchGetObjectInformation {
 /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects inside a <code>BatchRead</code> operation. For more information, see <code>ListObjectParentPaths</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListObjectParentPaths {
+pub struct BatchListObjectParentPaths  {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
     #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -9754,11 +8856,11 @@ pub struct BatchListObjectParentPaths {
 }
 impl BatchListObjectParentPaths {
     /// <p>The reference that identifies the object whose attributes will be listed.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to retrieve.</p>
@@ -9768,7 +8870,7 @@ impl BatchListObjectParentPaths {
 }
 /// See [`BatchListObjectParentPaths`](crate::model::BatchListObjectParentPaths).
 pub mod batch_list_object_parent_paths {
-
+    
     /// A builder for [`BatchListObjectParentPaths`](crate::model::BatchListObjectParentPaths).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9783,12 +8885,8 @@ pub mod batch_list_object_parent_paths {
             self
         }
         /// <p>The reference that identifies the object whose attributes will be listed.</p>
-        pub fn set_object_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.object_reference = input;
-            self
+        pub fn set_object_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.object_reference = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9797,8 +8895,7 @@ pub mod batch_list_object_parent_paths {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to retrieve.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -9807,18 +8904,22 @@ pub mod batch_list_object_parent_paths {
         }
         /// <p>The maximum number of results to retrieve.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`BatchListObjectParentPaths`](crate::model::BatchListObjectParentPaths).
         pub fn build(self) -> crate::model::BatchListObjectParentPaths {
             crate::model::BatchListObjectParentPaths {
-                object_reference: self.object_reference,
-                next_token: self.next_token,
-                max_results: self.max_results,
+                object_reference: self.object_reference
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchListObjectParentPaths {
     /// Creates a new builder-style object to manufacture [`BatchListObjectParentPaths`](crate::model::BatchListObjectParentPaths).
@@ -9830,7 +8931,7 @@ impl BatchListObjectParentPaths {
 /// <p>Lists indices attached to an object inside a <code>BatchRead</code> operation. For more information, see <code>ListAttachedIndices</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListAttachedIndices {
+pub struct BatchListAttachedIndices  {
     /// <p>A reference to the object that has indices attached.</p>
     #[doc(hidden)]
     pub target_reference: std::option::Option<crate::model::ObjectReference>,
@@ -9843,11 +8944,11 @@ pub struct BatchListAttachedIndices {
 }
 impl BatchListAttachedIndices {
     /// <p>A reference to the object that has indices attached.</p>
-    pub fn target_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn target_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.target_reference.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to retrieve.</p>
@@ -9857,7 +8958,7 @@ impl BatchListAttachedIndices {
 }
 /// See [`BatchListAttachedIndices`](crate::model::BatchListAttachedIndices).
 pub mod batch_list_attached_indices {
-
+    
     /// A builder for [`BatchListAttachedIndices`](crate::model::BatchListAttachedIndices).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9872,12 +8973,8 @@ pub mod batch_list_attached_indices {
             self
         }
         /// <p>A reference to the object that has indices attached.</p>
-        pub fn set_target_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.target_reference = input;
-            self
+        pub fn set_target_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.target_reference = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9886,8 +8983,7 @@ pub mod batch_list_attached_indices {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to retrieve.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -9896,18 +8992,22 @@ pub mod batch_list_attached_indices {
         }
         /// <p>The maximum number of results to retrieve.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`BatchListAttachedIndices`](crate::model::BatchListAttachedIndices).
         pub fn build(self) -> crate::model::BatchListAttachedIndices {
             crate::model::BatchListAttachedIndices {
-                target_reference: self.target_reference,
-                next_token: self.next_token,
-                max_results: self.max_results,
+                target_reference: self.target_reference
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchListAttachedIndices {
     /// Creates a new builder-style object to manufacture [`BatchListAttachedIndices`](crate::model::BatchListAttachedIndices).
@@ -9919,7 +9019,7 @@ impl BatchListAttachedIndices {
 /// <p>Represents the output of a <code>ListObjectChildren</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListObjectChildren {
+pub struct BatchListObjectChildren  {
     /// <p>Reference of the object for which child objects are being listed.</p>
     #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -9932,11 +9032,11 @@ pub struct BatchListObjectChildren {
 }
 impl BatchListObjectChildren {
     /// <p>Reference of the object for which child objects are being listed.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of items to be retrieved in a single call. This is an approximate number.</p>
@@ -9946,7 +9046,7 @@ impl BatchListObjectChildren {
 }
 /// See [`BatchListObjectChildren`](crate::model::BatchListObjectChildren).
 pub mod batch_list_object_children {
-
+    
     /// A builder for [`BatchListObjectChildren`](crate::model::BatchListObjectChildren).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9961,12 +9061,8 @@ pub mod batch_list_object_children {
             self
         }
         /// <p>Reference of the object for which child objects are being listed.</p>
-        pub fn set_object_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.object_reference = input;
-            self
+        pub fn set_object_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.object_reference = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9975,8 +9071,7 @@ pub mod batch_list_object_children {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>Maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -9985,18 +9080,22 @@ pub mod batch_list_object_children {
         }
         /// <p>Maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`BatchListObjectChildren`](crate::model::BatchListObjectChildren).
         pub fn build(self) -> crate::model::BatchListObjectChildren {
             crate::model::BatchListObjectChildren {
-                object_reference: self.object_reference,
-                next_token: self.next_token,
-                max_results: self.max_results,
+                object_reference: self.object_reference
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchListObjectChildren {
     /// Creates a new builder-style object to manufacture [`BatchListObjectChildren`](crate::model::BatchListObjectChildren).
@@ -10008,7 +9107,7 @@ impl BatchListObjectChildren {
 /// <p>Represents the output of a <code>ListObjectAttributes</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListObjectAttributes {
+pub struct BatchListObjectAttributes  {
     /// <p>Reference of the object whose attributes need to be listed.</p>
     #[doc(hidden)]
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
@@ -10024,11 +9123,11 @@ pub struct BatchListObjectAttributes {
 }
 impl BatchListObjectAttributes {
     /// <p>Reference of the object whose attributes need to be listed.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::model::ObjectReference> {
+    pub fn object_reference(&self) -> std::option::Option<& crate::model::ObjectReference> {
         self.object_reference.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
@@ -10036,13 +9135,13 @@ impl BatchListObjectAttributes {
         self.max_results
     }
     /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
-    pub fn facet_filter(&self) -> std::option::Option<&crate::model::SchemaFacet> {
+    pub fn facet_filter(&self) -> std::option::Option<& crate::model::SchemaFacet> {
         self.facet_filter.as_ref()
     }
 }
 /// See [`BatchListObjectAttributes`](crate::model::BatchListObjectAttributes).
 pub mod batch_list_object_attributes {
-
+    
     /// A builder for [`BatchListObjectAttributes`](crate::model::BatchListObjectAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10058,12 +9157,8 @@ pub mod batch_list_object_attributes {
             self
         }
         /// <p>Reference of the object whose attributes need to be listed.</p>
-        pub fn set_object_reference(
-            mut self,
-            input: std::option::Option<crate::model::ObjectReference>,
-        ) -> Self {
-            self.object_reference = input;
-            self
+        pub fn set_object_reference(mut self, input: std::option::Option<crate::model::ObjectReference>) -> Self {
+            self.object_reference = input; self
         }
         /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10072,8 +9167,7 @@ pub mod batch_list_object_attributes {
         }
         /// <p>The pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -10082,8 +9176,7 @@ pub mod batch_list_object_attributes {
         }
         /// <p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
         pub fn facet_filter(mut self, input: crate::model::SchemaFacet) -> Self {
@@ -10091,23 +9184,25 @@ pub mod batch_list_object_attributes {
             self
         }
         /// <p>Used to filter the list of object attributes that are associated with a certain facet.</p>
-        pub fn set_facet_filter(
-            mut self,
-            input: std::option::Option<crate::model::SchemaFacet>,
-        ) -> Self {
-            self.facet_filter = input;
-            self
+        pub fn set_facet_filter(mut self, input: std::option::Option<crate::model::SchemaFacet>) -> Self {
+            self.facet_filter = input; self
         }
         /// Consumes the builder and constructs a [`BatchListObjectAttributes`](crate::model::BatchListObjectAttributes).
         pub fn build(self) -> crate::model::BatchListObjectAttributes {
             crate::model::BatchListObjectAttributes {
-                object_reference: self.object_reference,
-                next_token: self.next_token,
-                max_results: self.max_results,
-                facet_filter: self.facet_filter,
+                object_reference: self.object_reference
+                ,
+                next_token: self.next_token
+                ,
+                max_results: self.max_results
+                ,
+                facet_filter: self.facet_filter
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchListObjectAttributes {
     /// Creates a new builder-style object to manufacture [`BatchListObjectAttributes`](crate::model::BatchListObjectAttributes).
@@ -10115,3 +9210,4 @@ impl BatchListObjectAttributes {
         crate::model::batch_list_object_attributes::Builder::default()
     }
 }
+

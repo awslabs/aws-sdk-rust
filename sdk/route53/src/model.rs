@@ -3,7 +3,7 @@
 /// <p>A complex type that contains settings for the new traffic policy instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrafficPolicyInstance {
+pub struct TrafficPolicyInstance  {
     /// <p>The ID that Amazon Route 53 assigned to the new traffic policy instance.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,26 +16,26 @@ pub struct TrafficPolicyInstance {
     /// <p>The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified hosted zone.</p>
     #[doc(hidden)]
     pub ttl: std::option::Option<i64>,
-    /// <p>The value of <code>State</code> is one of the following values:</p>
-    /// <dl>
+    /// <p>The value of <code>State</code> is one of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// Applied
-    /// </dt>
-    /// <dd>
-    /// <p>Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Route 53 edge locations.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Route 53 edge locations.</p> 
+    /// </dd> 
     /// <dt>
     /// Creating
-    /// </dt>
-    /// <dd>
-    /// <p>Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that the <code>CreateTrafficPolicyInstance</code> request completed successfully.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that the <code>CreateTrafficPolicyInstance</code> request completed successfully.</p> 
+    /// </dd> 
     /// <dt>
     /// Failed
-    /// </dt>
-    /// <dd>
-    /// <p>Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
@@ -54,51 +54,51 @@ pub struct TrafficPolicyInstance {
 }
 impl TrafficPolicyInstance {
     /// <p>The ID that Amazon Route 53 assigned to the new traffic policy instance.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the hosted zone that Amazon Route 53 created resource record sets in.</p>
-    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> std::option::Option<& str> {
         self.hosted_zone_id.as_deref()
     }
     /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified hosted zone.</p>
     pub fn ttl(&self) -> std::option::Option<i64> {
         self.ttl
     }
-    /// <p>The value of <code>State</code> is one of the following values:</p>
-    /// <dl>
+    /// <p>The value of <code>State</code> is one of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// Applied
-    /// </dt>
-    /// <dd>
-    /// <p>Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Route 53 edge locations.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Route 53 edge locations.</p> 
+    /// </dd> 
     /// <dt>
     /// Creating
-    /// </dt>
-    /// <dd>
-    /// <p>Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that the <code>CreateTrafficPolicyInstance</code> request completed successfully.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that the <code>CreateTrafficPolicyInstance</code> request completed successfully.</p> 
+    /// </dd> 
     /// <dt>
     /// Failed
-    /// </dt>
-    /// <dd>
-    /// <p>Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>If <code>State</code> is <code>Failed</code>, an explanation of the reason for the failure. If <code>State</code> is another value, <code>Message</code> is empty.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
-    pub fn traffic_policy_id(&self) -> std::option::Option<&str> {
+    pub fn traffic_policy_id(&self) -> std::option::Option<& str> {
         self.traffic_policy_id.as_deref()
     }
     /// <p>The version of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
@@ -106,13 +106,13 @@ impl TrafficPolicyInstance {
         self.traffic_policy_version
     }
     /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance. </p>
-    pub fn traffic_policy_type(&self) -> std::option::Option<&crate::model::RrType> {
+    pub fn traffic_policy_type(&self) -> std::option::Option<& crate::model::RrType> {
         self.traffic_policy_type.as_ref()
     }
 }
 /// See [`TrafficPolicyInstance`](crate::model::TrafficPolicyInstance).
 pub mod traffic_policy_instance {
-
+    
     /// A builder for [`TrafficPolicyInstance`](crate::model::TrafficPolicyInstance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -134,8 +134,7 @@ pub mod traffic_policy_instance {
         }
         /// <p>The ID that Amazon Route 53 assigned to the new traffic policy instance.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ID of the hosted zone that Amazon Route 53 created resource record sets in.</p>
         pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,12 +142,8 @@ pub mod traffic_policy_instance {
             self
         }
         /// <p>The ID of the hosted zone that Amazon Route 53 created resource record sets in.</p>
-        pub fn set_hosted_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hosted_zone_id = input;
-            self
+        pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hosted_zone_id = input; self
         }
         /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,8 +152,7 @@ pub mod traffic_policy_instance {
         }
         /// <p>The DNS name, such as www.example.com, for which Amazon Route 53 responds to queries by using the resource record sets that are associated with this traffic policy instance. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified hosted zone.</p>
         pub fn ttl(mut self, input: i64) -> Self {
@@ -167,58 +161,56 @@ pub mod traffic_policy_instance {
         }
         /// <p>The TTL that Amazon Route 53 assigned to all of the resource record sets that it created in the specified hosted zone.</p>
         pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
-            self.ttl = input;
-            self
+            self.ttl = input; self
         }
-        /// <p>The value of <code>State</code> is one of the following values:</p>
-        /// <dl>
+        /// <p>The value of <code>State</code> is one of the following values:</p> 
+        /// <dl> 
         /// <dt>
         /// Applied
-        /// </dt>
-        /// <dd>
-        /// <p>Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Route 53 edge locations.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Route 53 edge locations.</p> 
+        /// </dd> 
         /// <dt>
         /// Creating
-        /// </dt>
-        /// <dd>
-        /// <p>Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that the <code>CreateTrafficPolicyInstance</code> request completed successfully.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that the <code>CreateTrafficPolicyInstance</code> request completed successfully.</p> 
+        /// </dd> 
         /// <dt>
         /// Failed
-        /// </dt>
-        /// <dd>
-        /// <p>Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.</p> 
+        /// </dd> 
         /// </dl>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
             self.state = Some(input.into());
             self
         }
-        /// <p>The value of <code>State</code> is one of the following values:</p>
-        /// <dl>
+        /// <p>The value of <code>State</code> is one of the following values:</p> 
+        /// <dl> 
         /// <dt>
         /// Applied
-        /// </dt>
-        /// <dd>
-        /// <p>Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Route 53 edge locations.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Amazon Route 53 has finished creating resource record sets, and changes have propagated to all Route 53 edge locations.</p> 
+        /// </dd> 
         /// <dt>
         /// Creating
-        /// </dt>
-        /// <dd>
-        /// <p>Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that the <code>CreateTrafficPolicyInstance</code> request completed successfully.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code> to confirm that the <code>CreateTrafficPolicyInstance</code> request completed successfully.</p> 
+        /// </dd> 
         /// <dt>
         /// Failed
-        /// </dt>
-        /// <dd>
-        /// <p>Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Route 53 wasn't able to create or update the resource record sets. When the value of <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation of what caused the request to fail.</p> 
+        /// </dd> 
         /// </dl>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>If <code>State</code> is <code>Failed</code>, an explanation of the reason for the failure. If <code>State</code> is another value, <code>Message</code> is empty.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -227,8 +219,7 @@ pub mod traffic_policy_instance {
         }
         /// <p>If <code>State</code> is <code>Failed</code>, an explanation of the reason for the failure. If <code>State</code> is another value, <code>Message</code> is empty.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
         pub fn traffic_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -236,12 +227,8 @@ pub mod traffic_policy_instance {
             self
         }
         /// <p>The ID of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
-        pub fn set_traffic_policy_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.traffic_policy_id = input;
-            self
+        pub fn set_traffic_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.traffic_policy_id = input; self
         }
         /// <p>The version of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
         pub fn traffic_policy_version(mut self, input: i32) -> Self {
@@ -250,8 +237,7 @@ pub mod traffic_policy_instance {
         }
         /// <p>The version of the traffic policy that Amazon Route 53 used to create resource record sets in the specified hosted zone.</p>
         pub fn set_traffic_policy_version(mut self, input: std::option::Option<i32>) -> Self {
-            self.traffic_policy_version = input;
-            self
+            self.traffic_policy_version = input; self
         }
         /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance. </p>
         pub fn traffic_policy_type(mut self, input: crate::model::RrType) -> Self {
@@ -259,28 +245,35 @@ pub mod traffic_policy_instance {
             self
         }
         /// <p>The DNS type that Amazon Route 53 assigned to all of the resource record sets that it created for this traffic policy instance. </p>
-        pub fn set_traffic_policy_type(
-            mut self,
-            input: std::option::Option<crate::model::RrType>,
-        ) -> Self {
-            self.traffic_policy_type = input;
-            self
+        pub fn set_traffic_policy_type(mut self, input: std::option::Option<crate::model::RrType>) -> Self {
+            self.traffic_policy_type = input; self
         }
         /// Consumes the builder and constructs a [`TrafficPolicyInstance`](crate::model::TrafficPolicyInstance).
         pub fn build(self) -> crate::model::TrafficPolicyInstance {
             crate::model::TrafficPolicyInstance {
-                id: self.id,
-                hosted_zone_id: self.hosted_zone_id,
-                name: self.name,
-                ttl: self.ttl,
-                state: self.state,
-                message: self.message,
-                traffic_policy_id: self.traffic_policy_id,
-                traffic_policy_version: self.traffic_policy_version,
-                traffic_policy_type: self.traffic_policy_type,
+                id: self.id
+                ,
+                hosted_zone_id: self.hosted_zone_id
+                ,
+                name: self.name
+                ,
+                ttl: self.ttl
+                ,
+                state: self.state
+                ,
+                message: self.message
+                ,
+                traffic_policy_id: self.traffic_policy_id
+                ,
+                traffic_policy_version: self.traffic_policy_version
+                ,
+                traffic_policy_type: self.traffic_policy_type
+                ,
             }
         }
     }
+    
+    
 }
 impl TrafficPolicyInstance {
     /// Creates a new builder-style object to manufacture [`TrafficPolicyInstance`](crate::model::TrafficPolicyInstance).
@@ -295,9 +288,9 @@ impl TrafficPolicyInstance {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let rrtype = unimplemented!();
 /// match rrtype {
@@ -330,22 +323,14 @@ impl TrafficPolicyInstance {
 /// Specifically, when `rrtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RrType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RrType {
     #[allow(missing_docs)] // documentation missing in model
     A,
@@ -374,7 +359,7 @@ pub enum RrType {
     #[allow(missing_docs)] // documentation missing in model
     Txt,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RrType {
     fn from(s: &str) -> Self {
@@ -392,17 +377,17 @@ impl std::convert::From<&str> for RrType {
             "SPF" => RrType::Spf,
             "SRV" => RrType::Srv,
             "TXT" => RrType::Txt,
-            other => RrType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RrType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RrType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RrType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RrType::from(s))
+                }
+            }
 impl RrType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -420,14 +405,13 @@ impl RrType {
             RrType::Spf => "SPF",
             RrType::Srv => "SRV",
             RrType::Txt => "TXT",
-            RrType::Unknown(value) => value.as_str(),
+            RrType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "A", "AAAA", "CAA", "CNAME", "DS", "MX", "NAPTR", "NS", "PTR", "SOA", "SPF", "SRV",
-            "TXT",
+            "A", "AAAA", "CAA", "CNAME", "DS", "MX", "NAPTR", "NS", "PTR", "SOA", "SPF", "SRV", "TXT"
         ]
     }
 }
@@ -440,7 +424,7 @@ impl AsRef<str> for RrType {
 /// <p>A complex type that contains settings for a traffic policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrafficPolicy {
+pub struct TrafficPolicy  {
     /// <p>The ID that Amazon Route 53 assigned to a traffic policy when you created it.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -462,7 +446,7 @@ pub struct TrafficPolicy {
 }
 impl TrafficPolicy {
     /// <p>The ID that Amazon Route 53 assigned to a traffic policy when you created it.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value of <code>Version</code> is always 1.</p>
@@ -470,25 +454,25 @@ impl TrafficPolicy {
         self.version
     }
     /// <p>The name that you specified when you created the traffic policy.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::RrType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::RrType> {
         self.r#type.as_ref()
     }
     /// <p>The definition of a traffic policy in JSON format. You specify the JSON document to use for a new traffic policy in the <code>CreateTrafficPolicy</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
-    pub fn document(&self) -> std::option::Option<&str> {
+    pub fn document(&self) -> std::option::Option<& str> {
         self.document.as_deref()
     }
     /// <p>The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> std::option::Option<& str> {
         self.comment.as_deref()
     }
 }
 /// See [`TrafficPolicy`](crate::model::TrafficPolicy).
 pub mod traffic_policy {
-
+    
     /// A builder for [`TrafficPolicy`](crate::model::TrafficPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -507,8 +491,7 @@ pub mod traffic_policy {
         }
         /// <p>The ID that Amazon Route 53 assigned to a traffic policy when you created it.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value of <code>Version</code> is always 1.</p>
         pub fn version(mut self, input: i32) -> Self {
@@ -517,8 +500,7 @@ pub mod traffic_policy {
         }
         /// <p>The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic policy, the value of <code>Version</code> is always 1.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The name that you specified when you created the traffic policy.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -527,8 +509,7 @@ pub mod traffic_policy {
         }
         /// <p>The name that you specified when you created the traffic policy.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
         pub fn r#type(mut self, input: crate::model::RrType) -> Self {
@@ -537,8 +518,7 @@ pub mod traffic_policy {
         }
         /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RrType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The definition of a traffic policy in JSON format. You specify the JSON document to use for a new traffic policy in the <code>CreateTrafficPolicy</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
         pub fn document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -547,8 +527,7 @@ pub mod traffic_policy {
         }
         /// <p>The definition of a traffic policy in JSON format. You specify the JSON document to use for a new traffic policy in the <code>CreateTrafficPolicy</code> request. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
         pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.document = input;
-            self
+            self.document = input; self
         }
         /// <p>The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.</p>
         pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -557,21 +536,28 @@ pub mod traffic_policy {
         }
         /// <p>The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.comment = input;
-            self
+            self.comment = input; self
         }
         /// Consumes the builder and constructs a [`TrafficPolicy`](crate::model::TrafficPolicy).
         pub fn build(self) -> crate::model::TrafficPolicy {
             crate::model::TrafficPolicy {
-                id: self.id,
-                version: self.version,
-                name: self.name,
-                r#type: self.r#type,
-                document: self.document,
-                comment: self.comment,
+                id: self.id
+                ,
+                version: self.version
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                document: self.document
+                ,
+                comment: self.comment
+                ,
             }
         }
     }
+    
+    
 }
 impl TrafficPolicy {
     /// Creates a new builder-style object to manufacture [`TrafficPolicy`](crate::model::TrafficPolicy).
@@ -583,11 +569,11 @@ impl TrafficPolicy {
 /// <p>A complex type that contains general information about the hosted zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HostedZone {
+pub struct HostedZone  {
     /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar.</p>
+    /// <p>The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar.</p> 
     /// <p>For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -606,20 +592,20 @@ pub struct HostedZone {
 }
 impl HostedZone {
     /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
-    /// <p>The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar.</p>
+    /// <p>The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar.</p> 
     /// <p>For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value that you specified for <code>CallerReference</code> when you created the hosted zone.</p>
-    pub fn caller_reference(&self) -> std::option::Option<&str> {
+    pub fn caller_reference(&self) -> std::option::Option<& str> {
         self.caller_reference.as_deref()
     }
     /// <p>A complex type that includes the <code>Comment</code> and <code>PrivateZone</code> elements. If you omitted the <code>HostedZoneConfig</code> and <code>Comment</code> elements from the request, the <code>Config</code> and <code>Comment</code> elements don't appear in the response.</p>
-    pub fn config(&self) -> std::option::Option<&crate::model::HostedZoneConfig> {
+    pub fn config(&self) -> std::option::Option<& crate::model::HostedZoneConfig> {
         self.config.as_ref()
     }
     /// <p>The number of resource record sets in the hosted zone.</p>
@@ -627,13 +613,13 @@ impl HostedZone {
         self.resource_record_set_count
     }
     /// <p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created by another service, you can't edit or delete it using Route 53. </p>
-    pub fn linked_service(&self) -> std::option::Option<&crate::model::LinkedService> {
+    pub fn linked_service(&self) -> std::option::Option<& crate::model::LinkedService> {
         self.linked_service.as_ref()
     }
 }
 /// See [`HostedZone`](crate::model::HostedZone).
 pub mod hosted_zone {
-
+    
     /// A builder for [`HostedZone`](crate::model::HostedZone).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -652,20 +638,18 @@ pub mod hosted_zone {
         }
         /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
-        /// <p>The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar.</p>
+        /// <p>The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar.</p> 
         /// <p>For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar.</p>
+        /// <p>The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar.</p> 
         /// <p>For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The value that you specified for <code>CallerReference</code> when you created the hosted zone.</p>
         pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
@@ -673,12 +657,8 @@ pub mod hosted_zone {
             self
         }
         /// <p>The value that you specified for <code>CallerReference</code> when you created the hosted zone.</p>
-        pub fn set_caller_reference(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.caller_reference = input;
-            self
+        pub fn set_caller_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.caller_reference = input; self
         }
         /// <p>A complex type that includes the <code>Comment</code> and <code>PrivateZone</code> elements. If you omitted the <code>HostedZoneConfig</code> and <code>Comment</code> elements from the request, the <code>Config</code> and <code>Comment</code> elements don't appear in the response.</p>
         pub fn config(mut self, input: crate::model::HostedZoneConfig) -> Self {
@@ -686,12 +666,8 @@ pub mod hosted_zone {
             self
         }
         /// <p>A complex type that includes the <code>Comment</code> and <code>PrivateZone</code> elements. If you omitted the <code>HostedZoneConfig</code> and <code>Comment</code> elements from the request, the <code>Config</code> and <code>Comment</code> elements don't appear in the response.</p>
-        pub fn set_config(
-            mut self,
-            input: std::option::Option<crate::model::HostedZoneConfig>,
-        ) -> Self {
-            self.config = input;
-            self
+        pub fn set_config(mut self, input: std::option::Option<crate::model::HostedZoneConfig>) -> Self {
+            self.config = input; self
         }
         /// <p>The number of resource record sets in the hosted zone.</p>
         pub fn resource_record_set_count(mut self, input: i64) -> Self {
@@ -700,8 +676,7 @@ pub mod hosted_zone {
         }
         /// <p>The number of resource record sets in the hosted zone.</p>
         pub fn set_resource_record_set_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.resource_record_set_count = input;
-            self
+            self.resource_record_set_count = input; self
         }
         /// <p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created by another service, you can't edit or delete it using Route 53. </p>
         pub fn linked_service(mut self, input: crate::model::LinkedService) -> Self {
@@ -709,25 +684,29 @@ pub mod hosted_zone {
             self
         }
         /// <p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created by another service, you can't edit or delete it using Route 53. </p>
-        pub fn set_linked_service(
-            mut self,
-            input: std::option::Option<crate::model::LinkedService>,
-        ) -> Self {
-            self.linked_service = input;
-            self
+        pub fn set_linked_service(mut self, input: std::option::Option<crate::model::LinkedService>) -> Self {
+            self.linked_service = input; self
         }
         /// Consumes the builder and constructs a [`HostedZone`](crate::model::HostedZone).
         pub fn build(self) -> crate::model::HostedZone {
             crate::model::HostedZone {
-                id: self.id,
-                name: self.name,
-                caller_reference: self.caller_reference,
-                config: self.config,
-                resource_record_set_count: self.resource_record_set_count,
-                linked_service: self.linked_service,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                caller_reference: self.caller_reference
+                ,
+                config: self.config
+                ,
+                resource_record_set_count: self.resource_record_set_count
+                ,
+                linked_service: self.linked_service
+                ,
             }
         }
     }
+    
+    
 }
 impl HostedZone {
     /// Creates a new builder-style object to manufacture [`HostedZone`](crate::model::HostedZone).
@@ -739,7 +718,7 @@ impl HostedZone {
 /// <p>If a health check or hosted zone was created by another service, <code>LinkedService</code> is a complex type that describes the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LinkedService {
+pub struct LinkedService  {
     /// <p>If the health check or hosted zone was created by another service, the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. </p>
     #[doc(hidden)]
     pub service_principal: std::option::Option<std::string::String>,
@@ -749,17 +728,17 @@ pub struct LinkedService {
 }
 impl LinkedService {
     /// <p>If the health check or hosted zone was created by another service, the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. </p>
-    pub fn service_principal(&self) -> std::option::Option<&str> {
+    pub fn service_principal(&self) -> std::option::Option<& str> {
         self.service_principal.as_deref()
     }
     /// <p>If the health check or hosted zone was created by another service, an optional description that can be provided by the other service. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`LinkedService`](crate::model::LinkedService).
 pub mod linked_service {
-
+    
     /// A builder for [`LinkedService`](crate::model::LinkedService).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -773,12 +752,8 @@ pub mod linked_service {
             self
         }
         /// <p>If the health check or hosted zone was created by another service, the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. </p>
-        pub fn set_service_principal(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_principal = input;
-            self
+        pub fn set_service_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_principal = input; self
         }
         /// <p>If the health check or hosted zone was created by another service, an optional description that can be provided by the other service. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -787,17 +762,20 @@ pub mod linked_service {
         }
         /// <p>If the health check or hosted zone was created by another service, an optional description that can be provided by the other service. When a resource is created by another service, you can't edit or delete it using Amazon Route 53. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`LinkedService`](crate::model::LinkedService).
         pub fn build(self) -> crate::model::LinkedService {
             crate::model::LinkedService {
-                service_principal: self.service_principal,
-                description: self.description,
+                service_principal: self.service_principal
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl LinkedService {
     /// Creates a new builder-style object to manufacture [`LinkedService`](crate::model::LinkedService).
@@ -809,7 +787,7 @@ impl LinkedService {
 /// <p>A complex type that contains an optional comment about your hosted zone. If you don't want to specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HostedZoneConfig {
+pub struct HostedZoneConfig  {
     /// <p>Any comments that you want to include about the hosted zone.</p>
     #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
@@ -819,7 +797,7 @@ pub struct HostedZoneConfig {
 }
 impl HostedZoneConfig {
     /// <p>Any comments that you want to include about the hosted zone.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>A value that indicates whether this is a private hosted zone.</p>
@@ -829,7 +807,7 @@ impl HostedZoneConfig {
 }
 /// See [`HostedZoneConfig`](crate::model::HostedZoneConfig).
 pub mod hosted_zone_config {
-
+    
     /// A builder for [`HostedZoneConfig`](crate::model::HostedZoneConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -844,8 +822,7 @@ pub mod hosted_zone_config {
         }
         /// <p>Any comments that you want to include about the hosted zone.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.comment = input;
-            self
+            self.comment = input; self
         }
         /// <p>A value that indicates whether this is a private hosted zone.</p>
         pub fn private_zone(mut self, input: bool) -> Self {
@@ -854,17 +831,21 @@ pub mod hosted_zone_config {
         }
         /// <p>A value that indicates whether this is a private hosted zone.</p>
         pub fn set_private_zone(mut self, input: std::option::Option<bool>) -> Self {
-            self.private_zone = input;
-            self
+            self.private_zone = input; self
         }
         /// Consumes the builder and constructs a [`HostedZoneConfig`](crate::model::HostedZoneConfig).
         pub fn build(self) -> crate::model::HostedZoneConfig {
             crate::model::HostedZoneConfig {
-                comment: self.comment,
-                private_zone: self.private_zone.unwrap_or_default(),
+                comment: self.comment
+                ,
+                private_zone: self.private_zone
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl HostedZoneConfig {
     /// Creates a new builder-style object to manufacture [`HostedZoneConfig`](crate::model::HostedZoneConfig).
@@ -876,7 +857,7 @@ impl HostedZoneConfig {
 /// <p>A complex type that contains information about one health check that is associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HealthCheck {
+pub struct HealthCheck  {
     /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -894,24 +875,23 @@ pub struct HealthCheck {
     pub health_check_version: std::option::Option<i64>,
     /// <p>A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.</p>
     #[doc(hidden)]
-    pub cloud_watch_alarm_configuration:
-        std::option::Option<crate::model::CloudWatchAlarmConfiguration>,
+    pub cloud_watch_alarm_configuration: std::option::Option<crate::model::CloudWatchAlarmConfiguration>,
 }
 impl HealthCheck {
     /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>A unique string that you specified when you created the health check.</p>
-    pub fn caller_reference(&self) -> std::option::Option<&str> {
+    pub fn caller_reference(&self) -> std::option::Option<& str> {
         self.caller_reference.as_deref()
     }
     /// <p>If the health check was created by another service, the service that created the health check. When a health check is created by another service, you can't edit or delete it using Amazon Route 53. </p>
-    pub fn linked_service(&self) -> std::option::Option<&crate::model::LinkedService> {
+    pub fn linked_service(&self) -> std::option::Option<& crate::model::LinkedService> {
         self.linked_service.as_ref()
     }
     /// <p>A complex type that contains detailed information about one health check.</p>
-    pub fn health_check_config(&self) -> std::option::Option<&crate::model::HealthCheckConfig> {
+    pub fn health_check_config(&self) -> std::option::Option<& crate::model::HealthCheckConfig> {
         self.health_check_config.as_ref()
     }
     /// <p>The version of the health check. You can optionally pass this value in a call to <code>UpdateHealthCheck</code> to prevent overwriting another change to the health check.</p>
@@ -919,15 +899,13 @@ impl HealthCheck {
         self.health_check_version
     }
     /// <p>A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.</p>
-    pub fn cloud_watch_alarm_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchAlarmConfiguration> {
+    pub fn cloud_watch_alarm_configuration(&self) -> std::option::Option<& crate::model::CloudWatchAlarmConfiguration> {
         self.cloud_watch_alarm_configuration.as_ref()
     }
 }
 /// See [`HealthCheck`](crate::model::HealthCheck).
 pub mod health_check {
-
+    
     /// A builder for [`HealthCheck`](crate::model::HealthCheck).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -936,8 +914,7 @@ pub mod health_check {
         pub(crate) linked_service: std::option::Option<crate::model::LinkedService>,
         pub(crate) health_check_config: std::option::Option<crate::model::HealthCheckConfig>,
         pub(crate) health_check_version: std::option::Option<i64>,
-        pub(crate) cloud_watch_alarm_configuration:
-            std::option::Option<crate::model::CloudWatchAlarmConfiguration>,
+        pub(crate) cloud_watch_alarm_configuration: std::option::Option<crate::model::CloudWatchAlarmConfiguration>,
     }
     impl Builder {
         /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long. </p>
@@ -947,8 +924,7 @@ pub mod health_check {
         }
         /// <p>The identifier that Amazon Route 53 assigned to the health check when you created it. When you add or update a resource record set, you use this value to specify which health check to use. The value can be up to 64 characters long. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>A unique string that you specified when you created the health check.</p>
         pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
@@ -956,12 +932,8 @@ pub mod health_check {
             self
         }
         /// <p>A unique string that you specified when you created the health check.</p>
-        pub fn set_caller_reference(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.caller_reference = input;
-            self
+        pub fn set_caller_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.caller_reference = input; self
         }
         /// <p>If the health check was created by another service, the service that created the health check. When a health check is created by another service, you can't edit or delete it using Amazon Route 53. </p>
         pub fn linked_service(mut self, input: crate::model::LinkedService) -> Self {
@@ -969,12 +941,8 @@ pub mod health_check {
             self
         }
         /// <p>If the health check was created by another service, the service that created the health check. When a health check is created by another service, you can't edit or delete it using Amazon Route 53. </p>
-        pub fn set_linked_service(
-            mut self,
-            input: std::option::Option<crate::model::LinkedService>,
-        ) -> Self {
-            self.linked_service = input;
-            self
+        pub fn set_linked_service(mut self, input: std::option::Option<crate::model::LinkedService>) -> Self {
+            self.linked_service = input; self
         }
         /// <p>A complex type that contains detailed information about one health check.</p>
         pub fn health_check_config(mut self, input: crate::model::HealthCheckConfig) -> Self {
@@ -982,12 +950,8 @@ pub mod health_check {
             self
         }
         /// <p>A complex type that contains detailed information about one health check.</p>
-        pub fn set_health_check_config(
-            mut self,
-            input: std::option::Option<crate::model::HealthCheckConfig>,
-        ) -> Self {
-            self.health_check_config = input;
-            self
+        pub fn set_health_check_config(mut self, input: std::option::Option<crate::model::HealthCheckConfig>) -> Self {
+            self.health_check_config = input; self
         }
         /// <p>The version of the health check. You can optionally pass this value in a call to <code>UpdateHealthCheck</code> to prevent overwriting another change to the health check.</p>
         pub fn health_check_version(mut self, input: i64) -> Self {
@@ -996,37 +960,37 @@ pub mod health_check {
         }
         /// <p>The version of the health check. You can optionally pass this value in a call to <code>UpdateHealthCheck</code> to prevent overwriting another change to the health check.</p>
         pub fn set_health_check_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.health_check_version = input;
-            self
+            self.health_check_version = input; self
         }
         /// <p>A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.</p>
-        pub fn cloud_watch_alarm_configuration(
-            mut self,
-            input: crate::model::CloudWatchAlarmConfiguration,
-        ) -> Self {
+        pub fn cloud_watch_alarm_configuration(mut self, input: crate::model::CloudWatchAlarmConfiguration) -> Self {
             self.cloud_watch_alarm_configuration = Some(input);
             self
         }
         /// <p>A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.</p>
-        pub fn set_cloud_watch_alarm_configuration(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchAlarmConfiguration>,
-        ) -> Self {
-            self.cloud_watch_alarm_configuration = input;
-            self
+        pub fn set_cloud_watch_alarm_configuration(mut self, input: std::option::Option<crate::model::CloudWatchAlarmConfiguration>) -> Self {
+            self.cloud_watch_alarm_configuration = input; self
         }
         /// Consumes the builder and constructs a [`HealthCheck`](crate::model::HealthCheck).
         pub fn build(self) -> crate::model::HealthCheck {
             crate::model::HealthCheck {
-                id: self.id,
-                caller_reference: self.caller_reference,
-                linked_service: self.linked_service,
-                health_check_config: self.health_check_config,
-                health_check_version: self.health_check_version,
-                cloud_watch_alarm_configuration: self.cloud_watch_alarm_configuration,
+                id: self.id
+                ,
+                caller_reference: self.caller_reference
+                ,
+                linked_service: self.linked_service
+                ,
+                health_check_config: self.health_check_config
+                ,
+                health_check_version: self.health_check_version
+                ,
+                cloud_watch_alarm_configuration: self.cloud_watch_alarm_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl HealthCheck {
     /// Creates a new builder-style object to manufacture [`HealthCheck`](crate::model::HealthCheck).
@@ -1038,7 +1002,7 @@ impl HealthCheck {
 /// <p>A complex type that contains information about the CloudWatch alarm that Amazon Route 53 is monitoring for this health check.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchAlarmConfiguration {
+pub struct CloudWatchAlarmConfiguration  {
     /// <p>For the metric that the CloudWatch alarm is associated with, the number of periods that the metric is compared to the threshold.</p>
     #[doc(hidden)]
     pub evaluation_periods: std::option::Option<i32>,
@@ -1074,7 +1038,7 @@ impl CloudWatchAlarmConfiguration {
         self.threshold
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the arithmetic operation that is used for the comparison.</p>
-    pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> std::option::Option<& crate::model::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the duration of one evaluation period in seconds.</p>
@@ -1082,25 +1046,25 @@ impl CloudWatchAlarmConfiguration {
         self.period
     }
     /// <p>The name of the CloudWatch metric that the alarm is associated with.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The namespace of the metric that the alarm is associated with. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the statistic that is applied to the metric.</p>
-    pub fn statistic(&self) -> std::option::Option<&crate::model::Statistic> {
+    pub fn statistic(&self) -> std::option::Option<& crate::model::Statistic> {
         self.statistic.as_ref()
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, a complex type that contains information about the dimensions for the metric. For information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-    pub fn dimensions(&self) -> std::option::Option<&[crate::model::Dimension]> {
+    pub fn dimensions(&self) -> std::option::Option<& [crate::model::Dimension]> {
         self.dimensions.as_deref()
     }
 }
 /// See [`CloudWatchAlarmConfiguration`](crate::model::CloudWatchAlarmConfiguration).
 pub mod cloud_watch_alarm_configuration {
-
+    
     /// A builder for [`CloudWatchAlarmConfiguration`](crate::model::CloudWatchAlarmConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1121,8 +1085,7 @@ pub mod cloud_watch_alarm_configuration {
         }
         /// <p>For the metric that the CloudWatch alarm is associated with, the number of periods that the metric is compared to the threshold.</p>
         pub fn set_evaluation_periods(mut self, input: std::option::Option<i32>) -> Self {
-            self.evaluation_periods = input;
-            self
+            self.evaluation_periods = input; self
         }
         /// <p>For the metric that the CloudWatch alarm is associated with, the value the metric is compared with.</p>
         pub fn threshold(mut self, input: f64) -> Self {
@@ -1131,8 +1094,7 @@ pub mod cloud_watch_alarm_configuration {
         }
         /// <p>For the metric that the CloudWatch alarm is associated with, the value the metric is compared with.</p>
         pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
-            self.threshold = input;
-            self
+            self.threshold = input; self
         }
         /// <p>For the metric that the CloudWatch alarm is associated with, the arithmetic operation that is used for the comparison.</p>
         pub fn comparison_operator(mut self, input: crate::model::ComparisonOperator) -> Self {
@@ -1140,12 +1102,8 @@ pub mod cloud_watch_alarm_configuration {
             self
         }
         /// <p>For the metric that the CloudWatch alarm is associated with, the arithmetic operation that is used for the comparison.</p>
-        pub fn set_comparison_operator(
-            mut self,
-            input: std::option::Option<crate::model::ComparisonOperator>,
-        ) -> Self {
-            self.comparison_operator = input;
-            self
+        pub fn set_comparison_operator(mut self, input: std::option::Option<crate::model::ComparisonOperator>) -> Self {
+            self.comparison_operator = input; self
         }
         /// <p>For the metric that the CloudWatch alarm is associated with, the duration of one evaluation period in seconds.</p>
         pub fn period(mut self, input: i32) -> Self {
@@ -1154,8 +1112,7 @@ pub mod cloud_watch_alarm_configuration {
         }
         /// <p>For the metric that the CloudWatch alarm is associated with, the duration of one evaluation period in seconds.</p>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
-            self.period = input;
-            self
+            self.period = input; self
         }
         /// <p>The name of the CloudWatch metric that the alarm is associated with.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1164,8 +1121,7 @@ pub mod cloud_watch_alarm_configuration {
         }
         /// <p>The name of the CloudWatch metric that the alarm is associated with.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// <p>The namespace of the metric that the alarm is associated with. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1174,8 +1130,7 @@ pub mod cloud_watch_alarm_configuration {
         }
         /// <p>The namespace of the metric that the alarm is associated with. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>For the metric that the CloudWatch alarm is associated with, the statistic that is applied to the metric.</p>
         pub fn statistic(mut self, input: crate::model::Statistic) -> Self {
@@ -1183,12 +1138,8 @@ pub mod cloud_watch_alarm_configuration {
             self
         }
         /// <p>For the metric that the CloudWatch alarm is associated with, the statistic that is applied to the metric.</p>
-        pub fn set_statistic(
-            mut self,
-            input: std::option::Option<crate::model::Statistic>,
-        ) -> Self {
-            self.statistic = input;
-            self
+        pub fn set_statistic(mut self, input: std::option::Option<crate::model::Statistic>) -> Self {
+            self.statistic = input; self
         }
         /// Appends an item to `dimensions`.
         ///
@@ -1197,32 +1148,38 @@ pub mod cloud_watch_alarm_configuration {
         /// <p>For the metric that the CloudWatch alarm is associated with, a complex type that contains information about the dimensions for the metric. For information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
         pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input);
-            self.dimensions = Some(v);
-            self
+                            v.push(input);
+                            self.dimensions = Some(v);
+                            self
         }
         /// <p>For the metric that the CloudWatch alarm is associated with, a complex type that contains information about the dimensions for the metric. For information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-        pub fn set_dimensions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
-        ) -> Self {
-            self.dimensions = input;
-            self
+        pub fn set_dimensions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Dimension>>) -> Self {
+            self.dimensions = input; self
         }
         /// Consumes the builder and constructs a [`CloudWatchAlarmConfiguration`](crate::model::CloudWatchAlarmConfiguration).
         pub fn build(self) -> crate::model::CloudWatchAlarmConfiguration {
             crate::model::CloudWatchAlarmConfiguration {
-                evaluation_periods: self.evaluation_periods,
-                threshold: self.threshold,
-                comparison_operator: self.comparison_operator,
-                period: self.period,
-                metric_name: self.metric_name,
-                namespace: self.namespace,
-                statistic: self.statistic,
-                dimensions: self.dimensions,
+                evaluation_periods: self.evaluation_periods
+                ,
+                threshold: self.threshold
+                ,
+                comparison_operator: self.comparison_operator
+                ,
+                period: self.period
+                ,
+                metric_name: self.metric_name
+                ,
+                namespace: self.namespace
+                ,
+                statistic: self.statistic
+                ,
+                dimensions: self.dimensions
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudWatchAlarmConfiguration {
     /// Creates a new builder-style object to manufacture [`CloudWatchAlarmConfiguration`](crate::model::CloudWatchAlarmConfiguration).
@@ -1234,7 +1191,7 @@ impl CloudWatchAlarmConfiguration {
 /// <p>For the metric that the CloudWatch alarm is associated with, a complex type that contains information about one dimension.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Dimension {
+pub struct Dimension  {
     /// <p>For the metric that the CloudWatch alarm is associated with, the name of one dimension.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1244,17 +1201,17 @@ pub struct Dimension {
 }
 impl Dimension {
     /// <p>For the metric that the CloudWatch alarm is associated with, the name of one dimension.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>For the metric that the CloudWatch alarm is associated with, the value of one dimension.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Dimension`](crate::model::Dimension).
 pub mod dimension {
-
+    
     /// A builder for [`Dimension`](crate::model::Dimension).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1269,8 +1226,7 @@ pub mod dimension {
         }
         /// <p>For the metric that the CloudWatch alarm is associated with, the name of one dimension.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>For the metric that the CloudWatch alarm is associated with, the value of one dimension.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1279,17 +1235,20 @@ pub mod dimension {
         }
         /// <p>For the metric that the CloudWatch alarm is associated with, the value of one dimension.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Dimension`](crate::model::Dimension).
         pub fn build(self) -> crate::model::Dimension {
             crate::model::Dimension {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Dimension {
     /// Creates a new builder-style object to manufacture [`Dimension`](crate::model::Dimension).
@@ -1304,9 +1263,9 @@ impl Dimension {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let statistic = unimplemented!();
 /// match statistic {
@@ -1331,22 +1290,14 @@ impl Dimension {
 /// Specifically, when `statistic` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Statistic::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Statistic {
     #[allow(missing_docs)] // documentation missing in model
     Average,
@@ -1359,7 +1310,7 @@ pub enum Statistic {
     #[allow(missing_docs)] // documentation missing in model
     Sum,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Statistic {
     fn from(s: &str) -> Self {
@@ -1369,17 +1320,17 @@ impl std::convert::From<&str> for Statistic {
             "Minimum" => Statistic::Minimum,
             "SampleCount" => Statistic::SampleCount,
             "Sum" => Statistic::Sum,
-            other => Statistic::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Statistic::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Statistic {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Statistic::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Statistic::from(s))
+                }
+            }
 impl Statistic {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1389,12 +1340,14 @@ impl Statistic {
             Statistic::Minimum => "Minimum",
             Statistic::SampleCount => "SampleCount",
             Statistic::Sum => "Sum",
-            Statistic::Unknown(value) => value.as_str(),
+            Statistic::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
+        &[
+            "Average", "Maximum", "Minimum", "SampleCount", "Sum"
+        ]
     }
 }
 impl AsRef<str> for Statistic {
@@ -1409,9 +1362,9 @@ impl AsRef<str> for Statistic {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let comparisonoperator = unimplemented!();
 /// match comparisonoperator {
@@ -1435,22 +1388,14 @@ impl AsRef<str> for Statistic {
 /// Specifically, when `comparisonoperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ComparisonOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ComparisonOperator {
     #[allow(missing_docs)] // documentation missing in model
     GreaterThanOrEqualToThreshold,
@@ -1461,7 +1406,7 @@ pub enum ComparisonOperator {
     #[allow(missing_docs)] // documentation missing in model
     LessThanThreshold,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComparisonOperator {
     fn from(s: &str) -> Self {
@@ -1470,19 +1415,17 @@ impl std::convert::From<&str> for ComparisonOperator {
             "GreaterThanThreshold" => ComparisonOperator::GreaterThanThreshold,
             "LessThanOrEqualToThreshold" => ComparisonOperator::LessThanOrEqualToThreshold,
             "LessThanThreshold" => ComparisonOperator::LessThanThreshold,
-            other => {
-                ComparisonOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ComparisonOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ComparisonOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComparisonOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ComparisonOperator::from(s))
+                }
+            }
 impl ComparisonOperator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1491,16 +1434,13 @@ impl ComparisonOperator {
             ComparisonOperator::GreaterThanThreshold => "GreaterThanThreshold",
             ComparisonOperator::LessThanOrEqualToThreshold => "LessThanOrEqualToThreshold",
             ComparisonOperator::LessThanThreshold => "LessThanThreshold",
-            ComparisonOperator::Unknown(value) => value.as_str(),
+            ComparisonOperator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "GreaterThanOrEqualToThreshold",
-            "GreaterThanThreshold",
-            "LessThanOrEqualToThreshold",
-            "LessThanThreshold",
+            "GreaterThanOrEqualToThreshold", "GreaterThanThreshold", "LessThanOrEqualToThreshold", "LessThanThreshold"
         ]
     }
 }
@@ -1513,230 +1453,229 @@ impl AsRef<str> for ComparisonOperator {
 /// <p>A complex type that contains information about the health check.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HealthCheckConfig {
-    /// <p>The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If you don't specify a value for <code>IPAddress</code>, Route 53 sends a DNS request to resolve the domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in <code>RequestInterval</code>. Using an IP address returned by DNS, Route 53 then checks the health of the endpoint.</p>
-    /// <p>Use one of the following formats for the value of <code>IPAddress</code>: </p>
-    /// <ul>
-    /// <li> <p> <b>IPv4 address</b>: four values between 0 and 255, separated by periods (.), for example, <code>192.0.2.44</code>.</p> </li>
-    /// <li> <p> <b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.</p> </li>
-    /// </ul>
-    /// <p>If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance will never change.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>. </p>
-    /// <p>Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create health checks, see the following documents:</p>
-    /// <ul>
-    /// <li> <p> <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a> </p> </li>
-    /// <li> <p> <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a> </p> </li>
-    /// <li> <p> <a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a> </p> </li>
-    /// </ul>
+pub struct HealthCheckConfig  {
+    /// <p>The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If you don't specify a value for <code>IPAddress</code>, Route 53 sends a DNS request to resolve the domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in <code>RequestInterval</code>. Using an IP address returned by DNS, Route 53 then checks the health of the endpoint.</p> 
+    /// <p>Use one of the following formats for the value of <code>IPAddress</code>: </p> 
+    /// <ul> 
+    /// <li> <p> <b>IPv4 address</b>: four values between 0 and 255, separated by periods (.), for example, <code>192.0.2.44</code>.</p> </li> 
+    /// <li> <p> <b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.</p> </li> 
+    /// </ul> 
+    /// <p>If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance will never change.</p> 
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>. </p> 
+    /// <p>Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create health checks, see the following documents:</p> 
+    /// <ul> 
+    /// <li> <p> <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a> </p> </li> 
+    /// <li> <p> <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a> </p> </li> 
+    /// <li> <p> <a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a> </p> </li> 
+    /// </ul> 
     /// <p>When the value of <code>Type</code> is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit <code>IPAddress</code>.</p>
     #[doc(hidden)]
     pub ip_address: std::option::Option<std::string::String>,
-    /// <p>The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p> <note>
-    /// <p>Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.</p>
+    /// <p>The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p> <note> 
+    /// <p>Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub port: std::option::Option<i32>,
-    /// <p>The type of health check that you want to create, which indicates how Amazon Route 53 determines whether an endpoint is healthy.</p> <important>
-    /// <p>You can't change the value of <code>Type</code> after you create a health check.</p>
-    /// </important>
-    /// <p>You can create the following types of health checks:</p>
-    /// <ul>
-    /// <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTP request and waits for an HTTP status code of 200 or greater and less than 400.</p> </li>
-    /// <li> <p> <b>HTTPS</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTPS request and waits for an HTTP status code of 200 or greater and less than 400.</p> <important>
-    /// <p>If you specify <code>HTTPS</code> for the value of <code>Type</code>, the endpoint must support TLS v1.0 or later.</p>
-    /// </important> </li>
-    /// <li> <p> <b>HTTP_STR_MATCH</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTP request and searches the first 5,120 bytes of the response body for the string that you specify in <code>SearchString</code>.</p> </li>
-    /// <li> <p> <b>HTTPS_STR_MATCH</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an <code>HTTPS</code> request and searches the first 5,120 bytes of the response body for the string that you specify in <code>SearchString</code>.</p> </li>
-    /// <li> <p> <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> </li>
-    /// <li> <p> <b>CLOUDWATCH_METRIC</b>: The health check is associated with a CloudWatch alarm. If the state of the alarm is <code>OK</code>, the health check is considered healthy. If the state is <code>ALARM</code>, the health check is considered unhealthy. If CloudWatch doesn't have sufficient data to determine whether the state is <code>OK</code> or <code>ALARM</code>, the health check status depends on the setting for <code>InsufficientDataHealthStatus</code>: <code>Healthy</code>, <code>Unhealthy</code>, or <code>LastKnownStatus</code>. </p> </li>
-    /// <li> <p> <b>CALCULATED</b>: For health checks that monitor the status of other health checks, Route 53 adds up the number of health checks that Route 53 health checkers consider to be healthy and compares that number with the value of <code>HealthThreshold</code>. </p> </li>
-    /// <li> <p> <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller routing control. If the routing control state is <code>ON</code>, the health check is considered healthy. If the state is <code>OFF</code>, the health check is considered unhealthy. </p> </li>
-    /// </ul>
+    /// <p>The type of health check that you want to create, which indicates how Amazon Route 53 determines whether an endpoint is healthy.</p> <important> 
+    /// <p>You can't change the value of <code>Type</code> after you create a health check.</p> 
+    /// </important> 
+    /// <p>You can create the following types of health checks:</p> 
+    /// <ul> 
+    /// <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTP request and waits for an HTTP status code of 200 or greater and less than 400.</p> </li> 
+    /// <li> <p> <b>HTTPS</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTPS request and waits for an HTTP status code of 200 or greater and less than 400.</p> <important> 
+    /// <p>If you specify <code>HTTPS</code> for the value of <code>Type</code>, the endpoint must support TLS v1.0 or later.</p> 
+    /// </important> </li> 
+    /// <li> <p> <b>HTTP_STR_MATCH</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTP request and searches the first 5,120 bytes of the response body for the string that you specify in <code>SearchString</code>.</p> </li> 
+    /// <li> <p> <b>HTTPS_STR_MATCH</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an <code>HTTPS</code> request and searches the first 5,120 bytes of the response body for the string that you specify in <code>SearchString</code>.</p> </li> 
+    /// <li> <p> <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> </li> 
+    /// <li> <p> <b>CLOUDWATCH_METRIC</b>: The health check is associated with a CloudWatch alarm. If the state of the alarm is <code>OK</code>, the health check is considered healthy. If the state is <code>ALARM</code>, the health check is considered unhealthy. If CloudWatch doesn't have sufficient data to determine whether the state is <code>OK</code> or <code>ALARM</code>, the health check status depends on the setting for <code>InsufficientDataHealthStatus</code>: <code>Healthy</code>, <code>Unhealthy</code>, or <code>LastKnownStatus</code>. </p> </li> 
+    /// <li> <p> <b>CALCULATED</b>: For health checks that monitor the status of other health checks, Route 53 adds up the number of health checks that Route 53 health checkers consider to be healthy and compares that number with the value of <code>HealthThreshold</code>. </p> </li> 
+    /// <li> <p> <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller routing control. If the routing control state is <code>ON</code>, the health check is considered healthy. If the state is <code>OFF</code>, the health check is considered unhealthy. </p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::HealthCheckType>,
     /// <p>The path, if any, that you want Amazon Route 53 to request when performing health checks. The path can be any value for which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, for example, the file /docs/route53-health-check.html. You can also include query string parameters, for example, <code>/welcome.html?language=jp&amp;login=y</code>. </p>
     #[doc(hidden)]
     pub resource_path: std::option::Option<std::string::String>,
-    /// <p>Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.</p>
-    /// <p> <b>If you specify a value for</b> <code>IPAddress</code>:</p>
-    /// <p>Amazon Route 53 sends health check requests to the specified IPv4 or IPv6 address and passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header for all health checks except TCP health checks. This is typically the fully qualified DNS name of the endpoint on which you want Route 53 to perform health checks.</p>
-    /// <p>When Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code> header:</p>
-    /// <ul>
-    /// <li> <p>If you specify a value of <code>80</code> for <code>Port</code> and <code>HTTP</code> or <code>HTTP_STR_MATCH</code> for <code>Type</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> to the endpoint in the Host header. </p> </li>
-    /// <li> <p>If you specify a value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>Host</code> header.</p> </li>
-    /// <li> <p>If you specify another value for <code>Port</code> and any value except <code>TCP</code> for <code>Type</code>, Route 53 passes <code>FullyQualifiedDomainName:Port</code> to the endpoint in the <code>Host</code> header.</p> </li>
-    /// </ul>
-    /// <p>If you don't specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes the value of <code>IPAddress</code> in the <code>Host</code> header in each of the preceding cases.</p>
-    /// <p> <b>If you don't specify a value for</b> <code>IPAddress</code>:</p>
-    /// <p>Route 53 sends a DNS request to the domain that you specify for <code>FullyQualifiedDomainName</code> at the interval that you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS returns, Route 53 then checks the health of the endpoint.</p> <note>
-    /// <p>If you don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to send health checks to the endpoint. If there's no resource record set with a type of A for the name that you specify for <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS resolution failed" error.</p>
-    /// </note>
-    /// <p>If you want to check the health of weighted, latency, or failover resource record sets and you choose to specify the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a separate health check for each endpoint. For example, create a health check for each HTTP server that is serving content for www.example.com. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as us-east-2-www.example.com), not the name of the resource record sets (www.example.com).</p> <important>
-    /// <p>In this configuration, if you create a health check for which the value of <code>FullyQualifiedDomainName</code> matches the name of the resource record sets and you then associate the health check with those resource record sets, health check results will be unpredictable.</p>
-    /// </important>
+    /// <p>Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.</p> 
+    /// <p> <b>If you specify a value for</b> <code>IPAddress</code>:</p> 
+    /// <p>Amazon Route 53 sends health check requests to the specified IPv4 or IPv6 address and passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header for all health checks except TCP health checks. This is typically the fully qualified DNS name of the endpoint on which you want Route 53 to perform health checks.</p> 
+    /// <p>When Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code> header:</p> 
+    /// <ul> 
+    /// <li> <p>If you specify a value of <code>80</code> for <code>Port</code> and <code>HTTP</code> or <code>HTTP_STR_MATCH</code> for <code>Type</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> to the endpoint in the Host header. </p> </li> 
+    /// <li> <p>If you specify a value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>Host</code> header.</p> </li> 
+    /// <li> <p>If you specify another value for <code>Port</code> and any value except <code>TCP</code> for <code>Type</code>, Route 53 passes <code>FullyQualifiedDomainName:Port</code> to the endpoint in the <code>Host</code> header.</p> </li> 
+    /// </ul> 
+    /// <p>If you don't specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes the value of <code>IPAddress</code> in the <code>Host</code> header in each of the preceding cases.</p> 
+    /// <p> <b>If you don't specify a value for</b> <code>IPAddress</code>:</p> 
+    /// <p>Route 53 sends a DNS request to the domain that you specify for <code>FullyQualifiedDomainName</code> at the interval that you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS returns, Route 53 then checks the health of the endpoint.</p> <note> 
+    /// <p>If you don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to send health checks to the endpoint. If there's no resource record set with a type of A for the name that you specify for <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS resolution failed" error.</p> 
+    /// </note> 
+    /// <p>If you want to check the health of weighted, latency, or failover resource record sets and you choose to specify the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a separate health check for each endpoint. For example, create a health check for each HTTP server that is serving content for www.example.com. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as us-east-2-www.example.com), not the name of the resource record sets (www.example.com).</p> <important> 
+    /// <p>In this configuration, if you create a health check for which the value of <code>FullyQualifiedDomainName</code> matches the name of the resource record sets and you then associate the health check with those resource record sets, health check results will be unpredictable.</p> 
+    /// </important> 
     /// <p>In addition, if the value that you specify for <code>Type</code> is <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it does when you specify a value for <code>IPAddress</code>. If the value of <code>Type</code> is <code>TCP</code>, Route 53 doesn't pass a <code>Host</code> header.</p>
     #[doc(hidden)]
     pub fully_qualified_domain_name: std::option::Option<std::string::String>,
-    /// <p>If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Route 53 considers the resource healthy.</p>
+    /// <p>If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Route 53 considers the resource healthy.</p> 
     /// <p>Route 53 considers case when searching for <code>SearchString</code> in the response body. </p>
     #[doc(hidden)]
     pub search_string: std::option::Option<std::string::String>,
-    /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Route 53 health checker makes requests at this interval.</p> <important>
-    /// <p>You can't change the value of <code>RequestInterval</code> after you create a health check.</p>
-    /// </important>
+    /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Route 53 health checker makes requests at this interval.</p> <important> 
+    /// <p>You can't change the value of <code>RequestInterval</code> after you create a health check.</p> 
+    /// </important> 
     /// <p>If you don't specify a value for <code>RequestInterval</code>, the default value is <code>30</code> seconds.</p>
     #[doc(hidden)]
     pub request_interval: std::option::Option<i32>,
-    /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
     /// <p>If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
     #[doc(hidden)]
     pub failure_threshold: std::option::Option<i32>,
-    /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p> <important>
-    /// <p>You can't change the value of <code>MeasureLatency</code> after you create a health check.</p>
+    /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p> <important> 
+    /// <p>You can't change the value of <code>MeasureLatency</code> after you create a health check.</p> 
     /// </important>
     #[doc(hidden)]
     pub measure_latency: std::option::Option<bool>,
     /// <p>Specify whether you want Amazon Route 53 to invert the status of a health check, for example, to consider a health check unhealthy when it otherwise would be considered healthy.</p>
     #[doc(hidden)]
     pub inverted: std::option::Option<bool>,
-    /// <p>Stops Route 53 from performing health checks. When you disable a health check, here's what happens:</p>
-    /// <ul>
-    /// <li> <p> <b>Health checks that check the health of endpoints:</b> Route 53 stops submitting requests to your application, server, or other resource.</p> </li>
-    /// <li> <p> <b>Calculated health checks:</b> Route 53 stops aggregating the status of the referenced health checks.</p> </li>
-    /// <li> <p> <b>Health checks that monitor CloudWatch alarms:</b> Route 53 stops monitoring the corresponding CloudWatch metrics.</p> </li>
-    /// </ul>
-    /// <p>After you disable a health check, Route 53 considers the status of the health check to always be healthy. If you configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If you want to stop routing traffic to a resource, change the value of <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted">Inverted</a>. </p>
+    /// <p>Stops Route 53 from performing health checks. When you disable a health check, here's what happens:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Health checks that check the health of endpoints:</b> Route 53 stops submitting requests to your application, server, or other resource.</p> </li> 
+    /// <li> <p> <b>Calculated health checks:</b> Route 53 stops aggregating the status of the referenced health checks.</p> </li> 
+    /// <li> <p> <b>Health checks that monitor CloudWatch alarms:</b> Route 53 stops monitoring the corresponding CloudWatch metrics.</p> </li> 
+    /// </ul> 
+    /// <p>After you disable a health check, Route 53 considers the status of the health check to always be healthy. If you configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If you want to stop routing traffic to a resource, change the value of <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted">Inverted</a>. </p> 
     /// <p>Charges for a health check still apply when the health check is disabled. For more information, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
     #[doc(hidden)]
     pub disabled: std::option::Option<bool>,
-    /// <p>The number of child health checks that are associated with a <code>CALCULATED</code> health check that Amazon Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To specify the child health checks that you want to associate with a <code>CALCULATED</code> health check, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks">ChildHealthChecks</a> element.</p>
-    /// <p>Note the following:</p>
-    /// <ul>
-    /// <li> <p>If you specify a number greater than the number of child health checks, Route 53 always considers this health check to be unhealthy.</p> </li>
-    /// <li> <p>If you specify <code>0</code>, Route 53 always considers this health check to be healthy.</p> </li>
+    /// <p>The number of child health checks that are associated with a <code>CALCULATED</code> health check that Amazon Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To specify the child health checks that you want to associate with a <code>CALCULATED</code> health check, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks">ChildHealthChecks</a> element.</p> 
+    /// <p>Note the following:</p> 
+    /// <ul> 
+    /// <li> <p>If you specify a number greater than the number of child health checks, Route 53 always considers this health check to be unhealthy.</p> </li> 
+    /// <li> <p>If you specify <code>0</code>, Route 53 always considers this health check to be healthy.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub health_threshold: std::option::Option<i32>,
     /// <p>(CALCULATED Health Checks Only) A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a <code>CALCULATED</code> health check.</p>
     #[doc(hidden)]
     pub child_health_checks: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code> message during TLS negotiation. This allows the endpoint to respond to <code>HTTPS</code> health check requests with the applicable SSL/TLS certificate.</p>
-    /// <p>Some endpoints require that <code>HTTPS</code> requests include the host name in the <code>client_hello</code> message. If you don't enable SNI, the status of the health check will be <code>SSL alert handshake_failure</code>. A health check can also have that status for other reasons. If SNI is enabled and you're still getting the error, check the SSL/TLS configuration on your endpoint and confirm that your certificate is valid.</p>
+    /// <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code> message during TLS negotiation. This allows the endpoint to respond to <code>HTTPS</code> health check requests with the applicable SSL/TLS certificate.</p> 
+    /// <p>Some endpoints require that <code>HTTPS</code> requests include the host name in the <code>client_hello</code> message. If you don't enable SNI, the status of the health check will be <code>SSL alert handshake_failure</code>. A health check can also have that status for other reasons. If SNI is enabled and you're still getting the error, check the SSL/TLS configuration on your endpoint and confirm that your certificate is valid.</p> 
     /// <p>The SSL/TLS certificate on your endpoint includes a domain name in the <code>Common Name</code> field and possibly several more in the <code>Subject Alternative Names</code> field. One of the domain names in the certificate should match the value that you specify for <code>FullyQualifiedDomainName</code>. If the endpoint responds to the <code>client_hello</code> message with a certificate that does not include the domain name that you specified in <code>FullyQualifiedDomainName</code>, a health checker will retry the handshake. In the second attempt, the health checker will omit <code>FullyQualifiedDomainName</code> from the <code>client_hello</code> message.</p>
     #[doc(hidden)]
     pub enable_sni: std::option::Option<bool>,
-    /// <p>A complex type that contains one <code>Region</code> element for each region from which you want Amazon Route 53 health checkers to check the specified endpoint.</p>
-    /// <p>If you don't specify any regions, Route 53 health checkers automatically performs checks from all of the regions that are listed under <b>Valid Values</b>.</p>
+    /// <p>A complex type that contains one <code>Region</code> element for each region from which you want Amazon Route 53 health checkers to check the specified endpoint.</p> 
+    /// <p>If you don't specify any regions, Route 53 health checkers automatically performs checks from all of the regions that are listed under <b>Valid Values</b>.</p> 
     /// <p>If you update a health check to remove a region that has been performing health checks, Route 53 will briefly continue to perform checks from that region to ensure that some health checkers are always checking the endpoint (for example, if you replace three regions with four different regions). </p>
     #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<crate::model::HealthCheckRegion>>,
     /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.</p>
     #[doc(hidden)]
     pub alarm_identifier: std::option::Option<crate::model::AlarmIdentifier>,
-    /// <p>When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want Amazon Route 53 to assign to the health check:</p>
-    /// <ul>
-    /// <li> <p> <code>Healthy</code>: Route 53 considers the health check to be healthy.</p> </li>
-    /// <li> <p> <code>Unhealthy</code>: Route 53 considers the health check to be unhealthy.</p> </li>
-    /// <li> <p> <code>LastKnownStatus</code>: Route 53 uses the status of the health check from the last time that CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the default status for the health check is healthy.</p> </li>
+    /// <p>When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want Amazon Route 53 to assign to the health check:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Healthy</code>: Route 53 considers the health check to be healthy.</p> </li> 
+    /// <li> <p> <code>Unhealthy</code>: Route 53 considers the health check to be unhealthy.</p> </li> 
+    /// <li> <p> <code>LastKnownStatus</code>: Route 53 uses the status of the health check from the last time that CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the default status for the health check is healthy.</p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub insufficient_data_health_status:
-        std::option::Option<crate::model::InsufficientDataHealthStatus>,
-    /// <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control.</p>
+    pub insufficient_data_health_status: std::option::Option<crate::model::InsufficientDataHealthStatus>,
+    /// <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control.</p> 
     /// <p>For more information about Route 53 Application Recovery Controller, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route 53 Application Recovery Controller Developer Guide.</a>.</p>
     #[doc(hidden)]
     pub routing_control_arn: std::option::Option<std::string::String>,
 }
 impl HealthCheckConfig {
-    /// <p>The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If you don't specify a value for <code>IPAddress</code>, Route 53 sends a DNS request to resolve the domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in <code>RequestInterval</code>. Using an IP address returned by DNS, Route 53 then checks the health of the endpoint.</p>
-    /// <p>Use one of the following formats for the value of <code>IPAddress</code>: </p>
-    /// <ul>
-    /// <li> <p> <b>IPv4 address</b>: four values between 0 and 255, separated by periods (.), for example, <code>192.0.2.44</code>.</p> </li>
-    /// <li> <p> <b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.</p> </li>
-    /// </ul>
-    /// <p>If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance will never change.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>. </p>
-    /// <p>Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create health checks, see the following documents:</p>
-    /// <ul>
-    /// <li> <p> <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a> </p> </li>
-    /// <li> <p> <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a> </p> </li>
-    /// <li> <p> <a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a> </p> </li>
-    /// </ul>
+    /// <p>The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If you don't specify a value for <code>IPAddress</code>, Route 53 sends a DNS request to resolve the domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in <code>RequestInterval</code>. Using an IP address returned by DNS, Route 53 then checks the health of the endpoint.</p> 
+    /// <p>Use one of the following formats for the value of <code>IPAddress</code>: </p> 
+    /// <ul> 
+    /// <li> <p> <b>IPv4 address</b>: four values between 0 and 255, separated by periods (.), for example, <code>192.0.2.44</code>.</p> </li> 
+    /// <li> <p> <b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.</p> </li> 
+    /// </ul> 
+    /// <p>If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance will never change.</p> 
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>. </p> 
+    /// <p>Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create health checks, see the following documents:</p> 
+    /// <ul> 
+    /// <li> <p> <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a> </p> </li> 
+    /// <li> <p> <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a> </p> </li> 
+    /// <li> <p> <a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a> </p> </li> 
+    /// </ul> 
     /// <p>When the value of <code>Type</code> is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit <code>IPAddress</code>.</p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
+    pub fn ip_address(&self) -> std::option::Option<& str> {
         self.ip_address.as_deref()
     }
-    /// <p>The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p> <note>
-    /// <p>Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.</p>
+    /// <p>The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p> <note> 
+    /// <p>Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.</p> 
     /// </note>
     pub fn port(&self) -> std::option::Option<i32> {
         self.port
     }
-    /// <p>The type of health check that you want to create, which indicates how Amazon Route 53 determines whether an endpoint is healthy.</p> <important>
-    /// <p>You can't change the value of <code>Type</code> after you create a health check.</p>
-    /// </important>
-    /// <p>You can create the following types of health checks:</p>
-    /// <ul>
-    /// <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTP request and waits for an HTTP status code of 200 or greater and less than 400.</p> </li>
-    /// <li> <p> <b>HTTPS</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTPS request and waits for an HTTP status code of 200 or greater and less than 400.</p> <important>
-    /// <p>If you specify <code>HTTPS</code> for the value of <code>Type</code>, the endpoint must support TLS v1.0 or later.</p>
-    /// </important> </li>
-    /// <li> <p> <b>HTTP_STR_MATCH</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTP request and searches the first 5,120 bytes of the response body for the string that you specify in <code>SearchString</code>.</p> </li>
-    /// <li> <p> <b>HTTPS_STR_MATCH</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an <code>HTTPS</code> request and searches the first 5,120 bytes of the response body for the string that you specify in <code>SearchString</code>.</p> </li>
-    /// <li> <p> <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> </li>
-    /// <li> <p> <b>CLOUDWATCH_METRIC</b>: The health check is associated with a CloudWatch alarm. If the state of the alarm is <code>OK</code>, the health check is considered healthy. If the state is <code>ALARM</code>, the health check is considered unhealthy. If CloudWatch doesn't have sufficient data to determine whether the state is <code>OK</code> or <code>ALARM</code>, the health check status depends on the setting for <code>InsufficientDataHealthStatus</code>: <code>Healthy</code>, <code>Unhealthy</code>, or <code>LastKnownStatus</code>. </p> </li>
-    /// <li> <p> <b>CALCULATED</b>: For health checks that monitor the status of other health checks, Route 53 adds up the number of health checks that Route 53 health checkers consider to be healthy and compares that number with the value of <code>HealthThreshold</code>. </p> </li>
-    /// <li> <p> <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller routing control. If the routing control state is <code>ON</code>, the health check is considered healthy. If the state is <code>OFF</code>, the health check is considered unhealthy. </p> </li>
-    /// </ul>
+    /// <p>The type of health check that you want to create, which indicates how Amazon Route 53 determines whether an endpoint is healthy.</p> <important> 
+    /// <p>You can't change the value of <code>Type</code> after you create a health check.</p> 
+    /// </important> 
+    /// <p>You can create the following types of health checks:</p> 
+    /// <ul> 
+    /// <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTP request and waits for an HTTP status code of 200 or greater and less than 400.</p> </li> 
+    /// <li> <p> <b>HTTPS</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTPS request and waits for an HTTP status code of 200 or greater and less than 400.</p> <important> 
+    /// <p>If you specify <code>HTTPS</code> for the value of <code>Type</code>, the endpoint must support TLS v1.0 or later.</p> 
+    /// </important> </li> 
+    /// <li> <p> <b>HTTP_STR_MATCH</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTP request and searches the first 5,120 bytes of the response body for the string that you specify in <code>SearchString</code>.</p> </li> 
+    /// <li> <p> <b>HTTPS_STR_MATCH</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an <code>HTTPS</code> request and searches the first 5,120 bytes of the response body for the string that you specify in <code>SearchString</code>.</p> </li> 
+    /// <li> <p> <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> </li> 
+    /// <li> <p> <b>CLOUDWATCH_METRIC</b>: The health check is associated with a CloudWatch alarm. If the state of the alarm is <code>OK</code>, the health check is considered healthy. If the state is <code>ALARM</code>, the health check is considered unhealthy. If CloudWatch doesn't have sufficient data to determine whether the state is <code>OK</code> or <code>ALARM</code>, the health check status depends on the setting for <code>InsufficientDataHealthStatus</code>: <code>Healthy</code>, <code>Unhealthy</code>, or <code>LastKnownStatus</code>. </p> </li> 
+    /// <li> <p> <b>CALCULATED</b>: For health checks that monitor the status of other health checks, Route 53 adds up the number of health checks that Route 53 health checkers consider to be healthy and compares that number with the value of <code>HealthThreshold</code>. </p> </li> 
+    /// <li> <p> <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller routing control. If the routing control state is <code>ON</code>, the health check is considered healthy. If the state is <code>OFF</code>, the health check is considered unhealthy. </p> </li> 
+    /// </ul> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::HealthCheckType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::HealthCheckType> {
         self.r#type.as_ref()
     }
     /// <p>The path, if any, that you want Amazon Route 53 to request when performing health checks. The path can be any value for which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, for example, the file /docs/route53-health-check.html. You can also include query string parameters, for example, <code>/welcome.html?language=jp&amp;login=y</code>. </p>
-    pub fn resource_path(&self) -> std::option::Option<&str> {
+    pub fn resource_path(&self) -> std::option::Option<& str> {
         self.resource_path.as_deref()
     }
-    /// <p>Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.</p>
-    /// <p> <b>If you specify a value for</b> <code>IPAddress</code>:</p>
-    /// <p>Amazon Route 53 sends health check requests to the specified IPv4 or IPv6 address and passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header for all health checks except TCP health checks. This is typically the fully qualified DNS name of the endpoint on which you want Route 53 to perform health checks.</p>
-    /// <p>When Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code> header:</p>
-    /// <ul>
-    /// <li> <p>If you specify a value of <code>80</code> for <code>Port</code> and <code>HTTP</code> or <code>HTTP_STR_MATCH</code> for <code>Type</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> to the endpoint in the Host header. </p> </li>
-    /// <li> <p>If you specify a value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>Host</code> header.</p> </li>
-    /// <li> <p>If you specify another value for <code>Port</code> and any value except <code>TCP</code> for <code>Type</code>, Route 53 passes <code>FullyQualifiedDomainName:Port</code> to the endpoint in the <code>Host</code> header.</p> </li>
-    /// </ul>
-    /// <p>If you don't specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes the value of <code>IPAddress</code> in the <code>Host</code> header in each of the preceding cases.</p>
-    /// <p> <b>If you don't specify a value for</b> <code>IPAddress</code>:</p>
-    /// <p>Route 53 sends a DNS request to the domain that you specify for <code>FullyQualifiedDomainName</code> at the interval that you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS returns, Route 53 then checks the health of the endpoint.</p> <note>
-    /// <p>If you don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to send health checks to the endpoint. If there's no resource record set with a type of A for the name that you specify for <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS resolution failed" error.</p>
-    /// </note>
-    /// <p>If you want to check the health of weighted, latency, or failover resource record sets and you choose to specify the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a separate health check for each endpoint. For example, create a health check for each HTTP server that is serving content for www.example.com. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as us-east-2-www.example.com), not the name of the resource record sets (www.example.com).</p> <important>
-    /// <p>In this configuration, if you create a health check for which the value of <code>FullyQualifiedDomainName</code> matches the name of the resource record sets and you then associate the health check with those resource record sets, health check results will be unpredictable.</p>
-    /// </important>
+    /// <p>Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.</p> 
+    /// <p> <b>If you specify a value for</b> <code>IPAddress</code>:</p> 
+    /// <p>Amazon Route 53 sends health check requests to the specified IPv4 or IPv6 address and passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header for all health checks except TCP health checks. This is typically the fully qualified DNS name of the endpoint on which you want Route 53 to perform health checks.</p> 
+    /// <p>When Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code> header:</p> 
+    /// <ul> 
+    /// <li> <p>If you specify a value of <code>80</code> for <code>Port</code> and <code>HTTP</code> or <code>HTTP_STR_MATCH</code> for <code>Type</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> to the endpoint in the Host header. </p> </li> 
+    /// <li> <p>If you specify a value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>Host</code> header.</p> </li> 
+    /// <li> <p>If you specify another value for <code>Port</code> and any value except <code>TCP</code> for <code>Type</code>, Route 53 passes <code>FullyQualifiedDomainName:Port</code> to the endpoint in the <code>Host</code> header.</p> </li> 
+    /// </ul> 
+    /// <p>If you don't specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes the value of <code>IPAddress</code> in the <code>Host</code> header in each of the preceding cases.</p> 
+    /// <p> <b>If you don't specify a value for</b> <code>IPAddress</code>:</p> 
+    /// <p>Route 53 sends a DNS request to the domain that you specify for <code>FullyQualifiedDomainName</code> at the interval that you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS returns, Route 53 then checks the health of the endpoint.</p> <note> 
+    /// <p>If you don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to send health checks to the endpoint. If there's no resource record set with a type of A for the name that you specify for <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS resolution failed" error.</p> 
+    /// </note> 
+    /// <p>If you want to check the health of weighted, latency, or failover resource record sets and you choose to specify the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a separate health check for each endpoint. For example, create a health check for each HTTP server that is serving content for www.example.com. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as us-east-2-www.example.com), not the name of the resource record sets (www.example.com).</p> <important> 
+    /// <p>In this configuration, if you create a health check for which the value of <code>FullyQualifiedDomainName</code> matches the name of the resource record sets and you then associate the health check with those resource record sets, health check results will be unpredictable.</p> 
+    /// </important> 
     /// <p>In addition, if the value that you specify for <code>Type</code> is <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it does when you specify a value for <code>IPAddress</code>. If the value of <code>Type</code> is <code>TCP</code>, Route 53 doesn't pass a <code>Host</code> header.</p>
-    pub fn fully_qualified_domain_name(&self) -> std::option::Option<&str> {
+    pub fn fully_qualified_domain_name(&self) -> std::option::Option<& str> {
         self.fully_qualified_domain_name.as_deref()
     }
-    /// <p>If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Route 53 considers the resource healthy.</p>
+    /// <p>If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Route 53 considers the resource healthy.</p> 
     /// <p>Route 53 considers case when searching for <code>SearchString</code> in the response body. </p>
-    pub fn search_string(&self) -> std::option::Option<&str> {
+    pub fn search_string(&self) -> std::option::Option<& str> {
         self.search_string.as_deref()
     }
-    /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Route 53 health checker makes requests at this interval.</p> <important>
-    /// <p>You can't change the value of <code>RequestInterval</code> after you create a health check.</p>
-    /// </important>
+    /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Route 53 health checker makes requests at this interval.</p> <important> 
+    /// <p>You can't change the value of <code>RequestInterval</code> after you create a health check.</p> 
+    /// </important> 
     /// <p>If you don't specify a value for <code>RequestInterval</code>, the default value is <code>30</code> seconds.</p>
     pub fn request_interval(&self) -> std::option::Option<i32> {
         self.request_interval
     }
-    /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
     /// <p>If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
     pub fn failure_threshold(&self) -> std::option::Option<i32> {
         self.failure_threshold
     }
-    /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p> <important>
-    /// <p>You can't change the value of <code>MeasureLatency</code> after you create a health check.</p>
+    /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p> <important> 
+    /// <p>You can't change the value of <code>MeasureLatency</code> after you create a health check.</p> 
     /// </important>
     pub fn measure_latency(&self) -> std::option::Option<bool> {
         self.measure_latency
@@ -1745,66 +1684,64 @@ impl HealthCheckConfig {
     pub fn inverted(&self) -> std::option::Option<bool> {
         self.inverted
     }
-    /// <p>Stops Route 53 from performing health checks. When you disable a health check, here's what happens:</p>
-    /// <ul>
-    /// <li> <p> <b>Health checks that check the health of endpoints:</b> Route 53 stops submitting requests to your application, server, or other resource.</p> </li>
-    /// <li> <p> <b>Calculated health checks:</b> Route 53 stops aggregating the status of the referenced health checks.</p> </li>
-    /// <li> <p> <b>Health checks that monitor CloudWatch alarms:</b> Route 53 stops monitoring the corresponding CloudWatch metrics.</p> </li>
-    /// </ul>
-    /// <p>After you disable a health check, Route 53 considers the status of the health check to always be healthy. If you configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If you want to stop routing traffic to a resource, change the value of <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted">Inverted</a>. </p>
+    /// <p>Stops Route 53 from performing health checks. When you disable a health check, here's what happens:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Health checks that check the health of endpoints:</b> Route 53 stops submitting requests to your application, server, or other resource.</p> </li> 
+    /// <li> <p> <b>Calculated health checks:</b> Route 53 stops aggregating the status of the referenced health checks.</p> </li> 
+    /// <li> <p> <b>Health checks that monitor CloudWatch alarms:</b> Route 53 stops monitoring the corresponding CloudWatch metrics.</p> </li> 
+    /// </ul> 
+    /// <p>After you disable a health check, Route 53 considers the status of the health check to always be healthy. If you configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If you want to stop routing traffic to a resource, change the value of <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted">Inverted</a>. </p> 
     /// <p>Charges for a health check still apply when the health check is disabled. For more information, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
     pub fn disabled(&self) -> std::option::Option<bool> {
         self.disabled
     }
-    /// <p>The number of child health checks that are associated with a <code>CALCULATED</code> health check that Amazon Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To specify the child health checks that you want to associate with a <code>CALCULATED</code> health check, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks">ChildHealthChecks</a> element.</p>
-    /// <p>Note the following:</p>
-    /// <ul>
-    /// <li> <p>If you specify a number greater than the number of child health checks, Route 53 always considers this health check to be unhealthy.</p> </li>
-    /// <li> <p>If you specify <code>0</code>, Route 53 always considers this health check to be healthy.</p> </li>
+    /// <p>The number of child health checks that are associated with a <code>CALCULATED</code> health check that Amazon Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To specify the child health checks that you want to associate with a <code>CALCULATED</code> health check, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks">ChildHealthChecks</a> element.</p> 
+    /// <p>Note the following:</p> 
+    /// <ul> 
+    /// <li> <p>If you specify a number greater than the number of child health checks, Route 53 always considers this health check to be unhealthy.</p> </li> 
+    /// <li> <p>If you specify <code>0</code>, Route 53 always considers this health check to be healthy.</p> </li> 
     /// </ul>
     pub fn health_threshold(&self) -> std::option::Option<i32> {
         self.health_threshold
     }
     /// <p>(CALCULATED Health Checks Only) A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a <code>CALCULATED</code> health check.</p>
-    pub fn child_health_checks(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn child_health_checks(&self) -> std::option::Option<& [std::string::String]> {
         self.child_health_checks.as_deref()
     }
-    /// <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code> message during TLS negotiation. This allows the endpoint to respond to <code>HTTPS</code> health check requests with the applicable SSL/TLS certificate.</p>
-    /// <p>Some endpoints require that <code>HTTPS</code> requests include the host name in the <code>client_hello</code> message. If you don't enable SNI, the status of the health check will be <code>SSL alert handshake_failure</code>. A health check can also have that status for other reasons. If SNI is enabled and you're still getting the error, check the SSL/TLS configuration on your endpoint and confirm that your certificate is valid.</p>
+    /// <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code> message during TLS negotiation. This allows the endpoint to respond to <code>HTTPS</code> health check requests with the applicable SSL/TLS certificate.</p> 
+    /// <p>Some endpoints require that <code>HTTPS</code> requests include the host name in the <code>client_hello</code> message. If you don't enable SNI, the status of the health check will be <code>SSL alert handshake_failure</code>. A health check can also have that status for other reasons. If SNI is enabled and you're still getting the error, check the SSL/TLS configuration on your endpoint and confirm that your certificate is valid.</p> 
     /// <p>The SSL/TLS certificate on your endpoint includes a domain name in the <code>Common Name</code> field and possibly several more in the <code>Subject Alternative Names</code> field. One of the domain names in the certificate should match the value that you specify for <code>FullyQualifiedDomainName</code>. If the endpoint responds to the <code>client_hello</code> message with a certificate that does not include the domain name that you specified in <code>FullyQualifiedDomainName</code>, a health checker will retry the handshake. In the second attempt, the health checker will omit <code>FullyQualifiedDomainName</code> from the <code>client_hello</code> message.</p>
     pub fn enable_sni(&self) -> std::option::Option<bool> {
         self.enable_sni
     }
-    /// <p>A complex type that contains one <code>Region</code> element for each region from which you want Amazon Route 53 health checkers to check the specified endpoint.</p>
-    /// <p>If you don't specify any regions, Route 53 health checkers automatically performs checks from all of the regions that are listed under <b>Valid Values</b>.</p>
+    /// <p>A complex type that contains one <code>Region</code> element for each region from which you want Amazon Route 53 health checkers to check the specified endpoint.</p> 
+    /// <p>If you don't specify any regions, Route 53 health checkers automatically performs checks from all of the regions that are listed under <b>Valid Values</b>.</p> 
     /// <p>If you update a health check to remove a region that has been performing health checks, Route 53 will briefly continue to perform checks from that region to ensure that some health checkers are always checking the endpoint (for example, if you replace three regions with four different regions). </p>
-    pub fn regions(&self) -> std::option::Option<&[crate::model::HealthCheckRegion]> {
+    pub fn regions(&self) -> std::option::Option<& [crate::model::HealthCheckRegion]> {
         self.regions.as_deref()
     }
     /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.</p>
-    pub fn alarm_identifier(&self) -> std::option::Option<&crate::model::AlarmIdentifier> {
+    pub fn alarm_identifier(&self) -> std::option::Option<& crate::model::AlarmIdentifier> {
         self.alarm_identifier.as_ref()
     }
-    /// <p>When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want Amazon Route 53 to assign to the health check:</p>
-    /// <ul>
-    /// <li> <p> <code>Healthy</code>: Route 53 considers the health check to be healthy.</p> </li>
-    /// <li> <p> <code>Unhealthy</code>: Route 53 considers the health check to be unhealthy.</p> </li>
-    /// <li> <p> <code>LastKnownStatus</code>: Route 53 uses the status of the health check from the last time that CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the default status for the health check is healthy.</p> </li>
+    /// <p>When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want Amazon Route 53 to assign to the health check:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Healthy</code>: Route 53 considers the health check to be healthy.</p> </li> 
+    /// <li> <p> <code>Unhealthy</code>: Route 53 considers the health check to be unhealthy.</p> </li> 
+    /// <li> <p> <code>LastKnownStatus</code>: Route 53 uses the status of the health check from the last time that CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the default status for the health check is healthy.</p> </li> 
     /// </ul>
-    pub fn insufficient_data_health_status(
-        &self,
-    ) -> std::option::Option<&crate::model::InsufficientDataHealthStatus> {
+    pub fn insufficient_data_health_status(&self) -> std::option::Option<& crate::model::InsufficientDataHealthStatus> {
         self.insufficient_data_health_status.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control.</p> 
     /// <p>For more information about Route 53 Application Recovery Controller, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route 53 Application Recovery Controller Developer Guide.</a>.</p>
-    pub fn routing_control_arn(&self) -> std::option::Option<&str> {
+    pub fn routing_control_arn(&self) -> std::option::Option<& str> {
         self.routing_control_arn.as_deref()
     }
 }
 /// See [`HealthCheckConfig`](crate::model::HealthCheckConfig).
 pub mod health_check_config {
-
+    
     /// A builder for [`HealthCheckConfig`](crate::model::HealthCheckConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1824,107 +1761,100 @@ pub mod health_check_config {
         pub(crate) enable_sni: std::option::Option<bool>,
         pub(crate) regions: std::option::Option<std::vec::Vec<crate::model::HealthCheckRegion>>,
         pub(crate) alarm_identifier: std::option::Option<crate::model::AlarmIdentifier>,
-        pub(crate) insufficient_data_health_status:
-            std::option::Option<crate::model::InsufficientDataHealthStatus>,
+        pub(crate) insufficient_data_health_status: std::option::Option<crate::model::InsufficientDataHealthStatus>,
         pub(crate) routing_control_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If you don't specify a value for <code>IPAddress</code>, Route 53 sends a DNS request to resolve the domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in <code>RequestInterval</code>. Using an IP address returned by DNS, Route 53 then checks the health of the endpoint.</p>
-        /// <p>Use one of the following formats for the value of <code>IPAddress</code>: </p>
-        /// <ul>
-        /// <li> <p> <b>IPv4 address</b>: four values between 0 and 255, separated by periods (.), for example, <code>192.0.2.44</code>.</p> </li>
-        /// <li> <p> <b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.</p> </li>
-        /// </ul>
-        /// <p>If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance will never change.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>. </p>
-        /// <p>Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create health checks, see the following documents:</p>
-        /// <ul>
-        /// <li> <p> <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a> </p> </li>
-        /// <li> <p> <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a> </p> </li>
-        /// <li> <p> <a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a> </p> </li>
-        /// </ul>
+        /// <p>The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If you don't specify a value for <code>IPAddress</code>, Route 53 sends a DNS request to resolve the domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in <code>RequestInterval</code>. Using an IP address returned by DNS, Route 53 then checks the health of the endpoint.</p> 
+        /// <p>Use one of the following formats for the value of <code>IPAddress</code>: </p> 
+        /// <ul> 
+        /// <li> <p> <b>IPv4 address</b>: four values between 0 and 255, separated by periods (.), for example, <code>192.0.2.44</code>.</p> </li> 
+        /// <li> <p> <b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.</p> </li> 
+        /// </ul> 
+        /// <p>If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance will never change.</p> 
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>. </p> 
+        /// <p>Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create health checks, see the following documents:</p> 
+        /// <ul> 
+        /// <li> <p> <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a> </p> </li> 
+        /// <li> <p> <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a> </p> </li> 
+        /// <li> <p> <a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a> </p> </li> 
+        /// </ul> 
         /// <p>When the value of <code>Type</code> is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit <code>IPAddress</code>.</p>
         pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.ip_address = Some(input.into());
             self
         }
-        /// <p>The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If you don't specify a value for <code>IPAddress</code>, Route 53 sends a DNS request to resolve the domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in <code>RequestInterval</code>. Using an IP address returned by DNS, Route 53 then checks the health of the endpoint.</p>
-        /// <p>Use one of the following formats for the value of <code>IPAddress</code>: </p>
-        /// <ul>
-        /// <li> <p> <b>IPv4 address</b>: four values between 0 and 255, separated by periods (.), for example, <code>192.0.2.44</code>.</p> </li>
-        /// <li> <p> <b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.</p> </li>
-        /// </ul>
-        /// <p>If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance will never change.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>. </p>
-        /// <p>Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create health checks, see the following documents:</p>
-        /// <ul>
-        /// <li> <p> <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a> </p> </li>
-        /// <li> <p> <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a> </p> </li>
-        /// <li> <p> <a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a> </p> </li>
-        /// </ul>
+        /// <p>The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If you don't specify a value for <code>IPAddress</code>, Route 53 sends a DNS request to resolve the domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in <code>RequestInterval</code>. Using an IP address returned by DNS, Route 53 then checks the health of the endpoint.</p> 
+        /// <p>Use one of the following formats for the value of <code>IPAddress</code>: </p> 
+        /// <ul> 
+        /// <li> <p> <b>IPv4 address</b>: four values between 0 and 255, separated by periods (.), for example, <code>192.0.2.44</code>.</p> </li> 
+        /// <li> <p> <b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.</p> </li> 
+        /// </ul> 
+        /// <p>If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance will never change.</p> 
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>. </p> 
+        /// <p>Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create health checks, see the following documents:</p> 
+        /// <ul> 
+        /// <li> <p> <a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a> </p> </li> 
+        /// <li> <p> <a href="https://tools.ietf.org/html/rfc6598">RFC 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a> </p> </li> 
+        /// <li> <p> <a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a> </p> </li> 
+        /// </ul> 
         /// <p>When the value of <code>Type</code> is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit <code>IPAddress</code>.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ip_address = input;
-            self
+            self.ip_address = input; self
         }
-        /// <p>The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p> <note>
-        /// <p>Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.</p>
+        /// <p>The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p> <note> 
+        /// <p>Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.</p> 
         /// </note>
         pub fn port(mut self, input: i32) -> Self {
             self.port = Some(input);
             self
         }
-        /// <p>The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p> <note>
-        /// <p>Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.</p>
+        /// <p>The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p> <note> 
+        /// <p>Don't specify a value for <code>Port</code> when you specify a value for <code>Type</code> of <code>CLOUDWATCH_METRIC</code> or <code>CALCULATED</code>.</p> 
         /// </note>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
-        /// <p>The type of health check that you want to create, which indicates how Amazon Route 53 determines whether an endpoint is healthy.</p> <important>
-        /// <p>You can't change the value of <code>Type</code> after you create a health check.</p>
-        /// </important>
-        /// <p>You can create the following types of health checks:</p>
-        /// <ul>
-        /// <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTP request and waits for an HTTP status code of 200 or greater and less than 400.</p> </li>
-        /// <li> <p> <b>HTTPS</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTPS request and waits for an HTTP status code of 200 or greater and less than 400.</p> <important>
-        /// <p>If you specify <code>HTTPS</code> for the value of <code>Type</code>, the endpoint must support TLS v1.0 or later.</p>
-        /// </important> </li>
-        /// <li> <p> <b>HTTP_STR_MATCH</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTP request and searches the first 5,120 bytes of the response body for the string that you specify in <code>SearchString</code>.</p> </li>
-        /// <li> <p> <b>HTTPS_STR_MATCH</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an <code>HTTPS</code> request and searches the first 5,120 bytes of the response body for the string that you specify in <code>SearchString</code>.</p> </li>
-        /// <li> <p> <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> </li>
-        /// <li> <p> <b>CLOUDWATCH_METRIC</b>: The health check is associated with a CloudWatch alarm. If the state of the alarm is <code>OK</code>, the health check is considered healthy. If the state is <code>ALARM</code>, the health check is considered unhealthy. If CloudWatch doesn't have sufficient data to determine whether the state is <code>OK</code> or <code>ALARM</code>, the health check status depends on the setting for <code>InsufficientDataHealthStatus</code>: <code>Healthy</code>, <code>Unhealthy</code>, or <code>LastKnownStatus</code>. </p> </li>
-        /// <li> <p> <b>CALCULATED</b>: For health checks that monitor the status of other health checks, Route 53 adds up the number of health checks that Route 53 health checkers consider to be healthy and compares that number with the value of <code>HealthThreshold</code>. </p> </li>
-        /// <li> <p> <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller routing control. If the routing control state is <code>ON</code>, the health check is considered healthy. If the state is <code>OFF</code>, the health check is considered unhealthy. </p> </li>
-        /// </ul>
+        /// <p>The type of health check that you want to create, which indicates how Amazon Route 53 determines whether an endpoint is healthy.</p> <important> 
+        /// <p>You can't change the value of <code>Type</code> after you create a health check.</p> 
+        /// </important> 
+        /// <p>You can create the following types of health checks:</p> 
+        /// <ul> 
+        /// <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTP request and waits for an HTTP status code of 200 or greater and less than 400.</p> </li> 
+        /// <li> <p> <b>HTTPS</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTPS request and waits for an HTTP status code of 200 or greater and less than 400.</p> <important> 
+        /// <p>If you specify <code>HTTPS</code> for the value of <code>Type</code>, the endpoint must support TLS v1.0 or later.</p> 
+        /// </important> </li> 
+        /// <li> <p> <b>HTTP_STR_MATCH</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTP request and searches the first 5,120 bytes of the response body for the string that you specify in <code>SearchString</code>.</p> </li> 
+        /// <li> <p> <b>HTTPS_STR_MATCH</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an <code>HTTPS</code> request and searches the first 5,120 bytes of the response body for the string that you specify in <code>SearchString</code>.</p> </li> 
+        /// <li> <p> <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> </li> 
+        /// <li> <p> <b>CLOUDWATCH_METRIC</b>: The health check is associated with a CloudWatch alarm. If the state of the alarm is <code>OK</code>, the health check is considered healthy. If the state is <code>ALARM</code>, the health check is considered unhealthy. If CloudWatch doesn't have sufficient data to determine whether the state is <code>OK</code> or <code>ALARM</code>, the health check status depends on the setting for <code>InsufficientDataHealthStatus</code>: <code>Healthy</code>, <code>Unhealthy</code>, or <code>LastKnownStatus</code>. </p> </li> 
+        /// <li> <p> <b>CALCULATED</b>: For health checks that monitor the status of other health checks, Route 53 adds up the number of health checks that Route 53 health checkers consider to be healthy and compares that number with the value of <code>HealthThreshold</code>. </p> </li> 
+        /// <li> <p> <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller routing control. If the routing control state is <code>ON</code>, the health check is considered healthy. If the state is <code>OFF</code>, the health check is considered unhealthy. </p> </li> 
+        /// </ul> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         pub fn r#type(mut self, input: crate::model::HealthCheckType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of health check that you want to create, which indicates how Amazon Route 53 determines whether an endpoint is healthy.</p> <important>
-        /// <p>You can't change the value of <code>Type</code> after you create a health check.</p>
-        /// </important>
-        /// <p>You can create the following types of health checks:</p>
-        /// <ul>
-        /// <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTP request and waits for an HTTP status code of 200 or greater and less than 400.</p> </li>
-        /// <li> <p> <b>HTTPS</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTPS request and waits for an HTTP status code of 200 or greater and less than 400.</p> <important>
-        /// <p>If you specify <code>HTTPS</code> for the value of <code>Type</code>, the endpoint must support TLS v1.0 or later.</p>
-        /// </important> </li>
-        /// <li> <p> <b>HTTP_STR_MATCH</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTP request and searches the first 5,120 bytes of the response body for the string that you specify in <code>SearchString</code>.</p> </li>
-        /// <li> <p> <b>HTTPS_STR_MATCH</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an <code>HTTPS</code> request and searches the first 5,120 bytes of the response body for the string that you specify in <code>SearchString</code>.</p> </li>
-        /// <li> <p> <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> </li>
-        /// <li> <p> <b>CLOUDWATCH_METRIC</b>: The health check is associated with a CloudWatch alarm. If the state of the alarm is <code>OK</code>, the health check is considered healthy. If the state is <code>ALARM</code>, the health check is considered unhealthy. If CloudWatch doesn't have sufficient data to determine whether the state is <code>OK</code> or <code>ALARM</code>, the health check status depends on the setting for <code>InsufficientDataHealthStatus</code>: <code>Healthy</code>, <code>Unhealthy</code>, or <code>LastKnownStatus</code>. </p> </li>
-        /// <li> <p> <b>CALCULATED</b>: For health checks that monitor the status of other health checks, Route 53 adds up the number of health checks that Route 53 health checkers consider to be healthy and compares that number with the value of <code>HealthThreshold</code>. </p> </li>
-        /// <li> <p> <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller routing control. If the routing control state is <code>ON</code>, the health check is considered healthy. If the state is <code>OFF</code>, the health check is considered unhealthy. </p> </li>
-        /// </ul>
+        /// <p>The type of health check that you want to create, which indicates how Amazon Route 53 determines whether an endpoint is healthy.</p> <important> 
+        /// <p>You can't change the value of <code>Type</code> after you create a health check.</p> 
+        /// </important> 
+        /// <p>You can create the following types of health checks:</p> 
+        /// <ul> 
+        /// <li> <p> <b>HTTP</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTP request and waits for an HTTP status code of 200 or greater and less than 400.</p> </li> 
+        /// <li> <p> <b>HTTPS</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTPS request and waits for an HTTP status code of 200 or greater and less than 400.</p> <important> 
+        /// <p>If you specify <code>HTTPS</code> for the value of <code>Type</code>, the endpoint must support TLS v1.0 or later.</p> 
+        /// </important> </li> 
+        /// <li> <p> <b>HTTP_STR_MATCH</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an HTTP request and searches the first 5,120 bytes of the response body for the string that you specify in <code>SearchString</code>.</p> </li> 
+        /// <li> <p> <b>HTTPS_STR_MATCH</b>: Route 53 tries to establish a TCP connection. If successful, Route 53 submits an <code>HTTPS</code> request and searches the first 5,120 bytes of the response body for the string that you specify in <code>SearchString</code>.</p> </li> 
+        /// <li> <p> <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> </li> 
+        /// <li> <p> <b>CLOUDWATCH_METRIC</b>: The health check is associated with a CloudWatch alarm. If the state of the alarm is <code>OK</code>, the health check is considered healthy. If the state is <code>ALARM</code>, the health check is considered unhealthy. If CloudWatch doesn't have sufficient data to determine whether the state is <code>OK</code> or <code>ALARM</code>, the health check status depends on the setting for <code>InsufficientDataHealthStatus</code>: <code>Healthy</code>, <code>Unhealthy</code>, or <code>LastKnownStatus</code>. </p> </li> 
+        /// <li> <p> <b>CALCULATED</b>: For health checks that monitor the status of other health checks, Route 53 adds up the number of health checks that Route 53 health checkers consider to be healthy and compares that number with the value of <code>HealthThreshold</code>. </p> </li> 
+        /// <li> <p> <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53 Application Recovery Controller routing control. If the routing control state is <code>ON</code>, the health check is considered healthy. If the state is <code>OFF</code>, the health check is considered unhealthy. </p> </li> 
+        /// </ul> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::HealthCheckType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::HealthCheckType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The path, if any, that you want Amazon Route 53 to request when performing health checks. The path can be any value for which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, for example, the file /docs/route53-health-check.html. You can also include query string parameters, for example, <code>/welcome.html?language=jp&amp;login=y</code>. </p>
         pub fn resource_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1932,119 +1862,101 @@ pub mod health_check_config {
             self
         }
         /// <p>The path, if any, that you want Amazon Route 53 to request when performing health checks. The path can be any value for which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, for example, the file /docs/route53-health-check.html. You can also include query string parameters, for example, <code>/welcome.html?language=jp&amp;login=y</code>. </p>
-        pub fn set_resource_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_path = input;
-            self
+        pub fn set_resource_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_path = input; self
         }
-        /// <p>Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.</p>
-        /// <p> <b>If you specify a value for</b> <code>IPAddress</code>:</p>
-        /// <p>Amazon Route 53 sends health check requests to the specified IPv4 or IPv6 address and passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header for all health checks except TCP health checks. This is typically the fully qualified DNS name of the endpoint on which you want Route 53 to perform health checks.</p>
-        /// <p>When Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code> header:</p>
-        /// <ul>
-        /// <li> <p>If you specify a value of <code>80</code> for <code>Port</code> and <code>HTTP</code> or <code>HTTP_STR_MATCH</code> for <code>Type</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> to the endpoint in the Host header. </p> </li>
-        /// <li> <p>If you specify a value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>Host</code> header.</p> </li>
-        /// <li> <p>If you specify another value for <code>Port</code> and any value except <code>TCP</code> for <code>Type</code>, Route 53 passes <code>FullyQualifiedDomainName:Port</code> to the endpoint in the <code>Host</code> header.</p> </li>
-        /// </ul>
-        /// <p>If you don't specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes the value of <code>IPAddress</code> in the <code>Host</code> header in each of the preceding cases.</p>
-        /// <p> <b>If you don't specify a value for</b> <code>IPAddress</code>:</p>
-        /// <p>Route 53 sends a DNS request to the domain that you specify for <code>FullyQualifiedDomainName</code> at the interval that you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS returns, Route 53 then checks the health of the endpoint.</p> <note>
-        /// <p>If you don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to send health checks to the endpoint. If there's no resource record set with a type of A for the name that you specify for <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS resolution failed" error.</p>
-        /// </note>
-        /// <p>If you want to check the health of weighted, latency, or failover resource record sets and you choose to specify the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a separate health check for each endpoint. For example, create a health check for each HTTP server that is serving content for www.example.com. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as us-east-2-www.example.com), not the name of the resource record sets (www.example.com).</p> <important>
-        /// <p>In this configuration, if you create a health check for which the value of <code>FullyQualifiedDomainName</code> matches the name of the resource record sets and you then associate the health check with those resource record sets, health check results will be unpredictable.</p>
-        /// </important>
+        /// <p>Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.</p> 
+        /// <p> <b>If you specify a value for</b> <code>IPAddress</code>:</p> 
+        /// <p>Amazon Route 53 sends health check requests to the specified IPv4 or IPv6 address and passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header for all health checks except TCP health checks. This is typically the fully qualified DNS name of the endpoint on which you want Route 53 to perform health checks.</p> 
+        /// <p>When Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code> header:</p> 
+        /// <ul> 
+        /// <li> <p>If you specify a value of <code>80</code> for <code>Port</code> and <code>HTTP</code> or <code>HTTP_STR_MATCH</code> for <code>Type</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> to the endpoint in the Host header. </p> </li> 
+        /// <li> <p>If you specify a value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>Host</code> header.</p> </li> 
+        /// <li> <p>If you specify another value for <code>Port</code> and any value except <code>TCP</code> for <code>Type</code>, Route 53 passes <code>FullyQualifiedDomainName:Port</code> to the endpoint in the <code>Host</code> header.</p> </li> 
+        /// </ul> 
+        /// <p>If you don't specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes the value of <code>IPAddress</code> in the <code>Host</code> header in each of the preceding cases.</p> 
+        /// <p> <b>If you don't specify a value for</b> <code>IPAddress</code>:</p> 
+        /// <p>Route 53 sends a DNS request to the domain that you specify for <code>FullyQualifiedDomainName</code> at the interval that you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS returns, Route 53 then checks the health of the endpoint.</p> <note> 
+        /// <p>If you don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to send health checks to the endpoint. If there's no resource record set with a type of A for the name that you specify for <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS resolution failed" error.</p> 
+        /// </note> 
+        /// <p>If you want to check the health of weighted, latency, or failover resource record sets and you choose to specify the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a separate health check for each endpoint. For example, create a health check for each HTTP server that is serving content for www.example.com. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as us-east-2-www.example.com), not the name of the resource record sets (www.example.com).</p> <important> 
+        /// <p>In this configuration, if you create a health check for which the value of <code>FullyQualifiedDomainName</code> matches the name of the resource record sets and you then associate the health check with those resource record sets, health check results will be unpredictable.</p> 
+        /// </important> 
         /// <p>In addition, if the value that you specify for <code>Type</code> is <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it does when you specify a value for <code>IPAddress</code>. If the value of <code>Type</code> is <code>TCP</code>, Route 53 doesn't pass a <code>Host</code> header.</p>
-        pub fn fully_qualified_domain_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn fully_qualified_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.fully_qualified_domain_name = Some(input.into());
             self
         }
-        /// <p>Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.</p>
-        /// <p> <b>If you specify a value for</b> <code>IPAddress</code>:</p>
-        /// <p>Amazon Route 53 sends health check requests to the specified IPv4 or IPv6 address and passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header for all health checks except TCP health checks. This is typically the fully qualified DNS name of the endpoint on which you want Route 53 to perform health checks.</p>
-        /// <p>When Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code> header:</p>
-        /// <ul>
-        /// <li> <p>If you specify a value of <code>80</code> for <code>Port</code> and <code>HTTP</code> or <code>HTTP_STR_MATCH</code> for <code>Type</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> to the endpoint in the Host header. </p> </li>
-        /// <li> <p>If you specify a value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>Host</code> header.</p> </li>
-        /// <li> <p>If you specify another value for <code>Port</code> and any value except <code>TCP</code> for <code>Type</code>, Route 53 passes <code>FullyQualifiedDomainName:Port</code> to the endpoint in the <code>Host</code> header.</p> </li>
-        /// </ul>
-        /// <p>If you don't specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes the value of <code>IPAddress</code> in the <code>Host</code> header in each of the preceding cases.</p>
-        /// <p> <b>If you don't specify a value for</b> <code>IPAddress</code>:</p>
-        /// <p>Route 53 sends a DNS request to the domain that you specify for <code>FullyQualifiedDomainName</code> at the interval that you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS returns, Route 53 then checks the health of the endpoint.</p> <note>
-        /// <p>If you don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to send health checks to the endpoint. If there's no resource record set with a type of A for the name that you specify for <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS resolution failed" error.</p>
-        /// </note>
-        /// <p>If you want to check the health of weighted, latency, or failover resource record sets and you choose to specify the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a separate health check for each endpoint. For example, create a health check for each HTTP server that is serving content for www.example.com. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as us-east-2-www.example.com), not the name of the resource record sets (www.example.com).</p> <important>
-        /// <p>In this configuration, if you create a health check for which the value of <code>FullyQualifiedDomainName</code> matches the name of the resource record sets and you then associate the health check with those resource record sets, health check results will be unpredictable.</p>
-        /// </important>
+        /// <p>Amazon Route 53 behavior depends on whether you specify a value for <code>IPAddress</code>.</p> 
+        /// <p> <b>If you specify a value for</b> <code>IPAddress</code>:</p> 
+        /// <p>Amazon Route 53 sends health check requests to the specified IPv4 or IPv6 address and passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header for all health checks except TCP health checks. This is typically the fully qualified DNS name of the endpoint on which you want Route 53 to perform health checks.</p> 
+        /// <p>When Route 53 checks the health of an endpoint, here is how it constructs the <code>Host</code> header:</p> 
+        /// <ul> 
+        /// <li> <p>If you specify a value of <code>80</code> for <code>Port</code> and <code>HTTP</code> or <code>HTTP_STR_MATCH</code> for <code>Type</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> to the endpoint in the Host header. </p> </li> 
+        /// <li> <p>If you specify a value of <code>443</code> for <code>Port</code> and <code>HTTPS</code> or <code>HTTPS_STR_MATCH</code> for <code>Type</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>Host</code> header.</p> </li> 
+        /// <li> <p>If you specify another value for <code>Port</code> and any value except <code>TCP</code> for <code>Type</code>, Route 53 passes <code>FullyQualifiedDomainName:Port</code> to the endpoint in the <code>Host</code> header.</p> </li> 
+        /// </ul> 
+        /// <p>If you don't specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes the value of <code>IPAddress</code> in the <code>Host</code> header in each of the preceding cases.</p> 
+        /// <p> <b>If you don't specify a value for</b> <code>IPAddress</code>:</p> 
+        /// <p>Route 53 sends a DNS request to the domain that you specify for <code>FullyQualifiedDomainName</code> at the interval that you specify for <code>RequestInterval</code>. Using an IPv4 address that DNS returns, Route 53 then checks the health of the endpoint.</p> <note> 
+        /// <p>If you don't specify a value for <code>IPAddress</code>, Route 53 uses only IPv4 to send health checks to the endpoint. If there's no resource record set with a type of A for the name that you specify for <code>FullyQualifiedDomainName</code>, the health check fails with a "DNS resolution failed" error.</p> 
+        /// </note> 
+        /// <p>If you want to check the health of weighted, latency, or failover resource record sets and you choose to specify the endpoint only by <code>FullyQualifiedDomainName</code>, we recommend that you create a separate health check for each endpoint. For example, create a health check for each HTTP server that is serving content for www.example.com. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as us-east-2-www.example.com), not the name of the resource record sets (www.example.com).</p> <important> 
+        /// <p>In this configuration, if you create a health check for which the value of <code>FullyQualifiedDomainName</code> matches the name of the resource record sets and you then associate the health check with those resource record sets, health check results will be unpredictable.</p> 
+        /// </important> 
         /// <p>In addition, if the value that you specify for <code>Type</code> is <code>HTTP</code>, <code>HTTPS</code>, <code>HTTP_STR_MATCH</code>, or <code>HTTPS_STR_MATCH</code>, Route 53 passes the value of <code>FullyQualifiedDomainName</code> in the <code>Host</code> header, as it does when you specify a value for <code>IPAddress</code>. If the value of <code>Type</code> is <code>TCP</code>, Route 53 doesn't pass a <code>Host</code> header.</p>
-        pub fn set_fully_qualified_domain_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.fully_qualified_domain_name = input;
-            self
+        pub fn set_fully_qualified_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fully_qualified_domain_name = input; self
         }
-        /// <p>If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Route 53 considers the resource healthy.</p>
+        /// <p>If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Route 53 considers the resource healthy.</p> 
         /// <p>Route 53 considers case when searching for <code>SearchString</code> in the response body. </p>
         pub fn search_string(mut self, input: impl Into<std::string::String>) -> Self {
             self.search_string = Some(input.into());
             self
         }
-        /// <p>If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Route 53 considers the resource healthy.</p>
+        /// <p>If the value of Type is <code>HTTP_STR_MATCH</code> or <code>HTTPS_STR_MATCH</code>, the string that you want Amazon Route 53 to search for in the response body from the specified resource. If the string appears in the response body, Route 53 considers the resource healthy.</p> 
         /// <p>Route 53 considers case when searching for <code>SearchString</code> in the response body. </p>
-        pub fn set_search_string(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.search_string = input;
-            self
+        pub fn set_search_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.search_string = input; self
         }
-        /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Route 53 health checker makes requests at this interval.</p> <important>
-        /// <p>You can't change the value of <code>RequestInterval</code> after you create a health check.</p>
-        /// </important>
+        /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Route 53 health checker makes requests at this interval.</p> <important> 
+        /// <p>You can't change the value of <code>RequestInterval</code> after you create a health check.</p> 
+        /// </important> 
         /// <p>If you don't specify a value for <code>RequestInterval</code>, the default value is <code>30</code> seconds.</p>
         pub fn request_interval(mut self, input: i32) -> Self {
             self.request_interval = Some(input);
             self
         }
-        /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Route 53 health checker makes requests at this interval.</p> <important>
-        /// <p>You can't change the value of <code>RequestInterval</code> after you create a health check.</p>
-        /// </important>
+        /// <p>The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health check request. Each Route 53 health checker makes requests at this interval.</p> <important> 
+        /// <p>You can't change the value of <code>RequestInterval</code> after you create a health check.</p> 
+        /// </important> 
         /// <p>If you don't specify a value for <code>RequestInterval</code>, the default value is <code>30</code> seconds.</p>
         pub fn set_request_interval(mut self, input: std::option::Option<i32>) -> Self {
-            self.request_interval = input;
-            self
+            self.request_interval = input; self
         }
-        /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
         /// <p>If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
         pub fn failure_threshold(mut self, input: i32) -> Self {
             self.failure_threshold = Some(input);
             self
         }
-        /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
         /// <p>If you don't specify a value for <code>FailureThreshold</code>, the default value is three health checks.</p>
         pub fn set_failure_threshold(mut self, input: std::option::Option<i32>) -> Self {
-            self.failure_threshold = input;
-            self
+            self.failure_threshold = input; self
         }
-        /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p> <important>
-        /// <p>You can't change the value of <code>MeasureLatency</code> after you create a health check.</p>
+        /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p> <important> 
+        /// <p>You can't change the value of <code>MeasureLatency</code> after you create a health check.</p> 
         /// </important>
         pub fn measure_latency(mut self, input: bool) -> Self {
             self.measure_latency = Some(input);
             self
         }
-        /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p> <important>
-        /// <p>You can't change the value of <code>MeasureLatency</code> after you create a health check.</p>
+        /// <p>Specify whether you want Amazon Route 53 to measure the latency between health checkers in multiple Amazon Web Services regions and your endpoint, and to display CloudWatch latency graphs on the <b>Health Checks</b> page in the Route 53 console.</p> <important> 
+        /// <p>You can't change the value of <code>MeasureLatency</code> after you create a health check.</p> 
         /// </important>
         pub fn set_measure_latency(mut self, input: std::option::Option<bool>) -> Self {
-            self.measure_latency = input;
-            self
+            self.measure_latency = input; self
         }
         /// <p>Specify whether you want Amazon Route 53 to invert the status of a health check, for example, to consider a health check unhealthy when it otherwise would be considered healthy.</p>
         pub fn inverted(mut self, input: bool) -> Self {
@@ -2053,52 +1965,49 @@ pub mod health_check_config {
         }
         /// <p>Specify whether you want Amazon Route 53 to invert the status of a health check, for example, to consider a health check unhealthy when it otherwise would be considered healthy.</p>
         pub fn set_inverted(mut self, input: std::option::Option<bool>) -> Self {
-            self.inverted = input;
-            self
+            self.inverted = input; self
         }
-        /// <p>Stops Route 53 from performing health checks. When you disable a health check, here's what happens:</p>
-        /// <ul>
-        /// <li> <p> <b>Health checks that check the health of endpoints:</b> Route 53 stops submitting requests to your application, server, or other resource.</p> </li>
-        /// <li> <p> <b>Calculated health checks:</b> Route 53 stops aggregating the status of the referenced health checks.</p> </li>
-        /// <li> <p> <b>Health checks that monitor CloudWatch alarms:</b> Route 53 stops monitoring the corresponding CloudWatch metrics.</p> </li>
-        /// </ul>
-        /// <p>After you disable a health check, Route 53 considers the status of the health check to always be healthy. If you configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If you want to stop routing traffic to a resource, change the value of <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted">Inverted</a>. </p>
+        /// <p>Stops Route 53 from performing health checks. When you disable a health check, here's what happens:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Health checks that check the health of endpoints:</b> Route 53 stops submitting requests to your application, server, or other resource.</p> </li> 
+        /// <li> <p> <b>Calculated health checks:</b> Route 53 stops aggregating the status of the referenced health checks.</p> </li> 
+        /// <li> <p> <b>Health checks that monitor CloudWatch alarms:</b> Route 53 stops monitoring the corresponding CloudWatch metrics.</p> </li> 
+        /// </ul> 
+        /// <p>After you disable a health check, Route 53 considers the status of the health check to always be healthy. If you configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If you want to stop routing traffic to a resource, change the value of <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted">Inverted</a>. </p> 
         /// <p>Charges for a health check still apply when the health check is disabled. For more information, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
         pub fn disabled(mut self, input: bool) -> Self {
             self.disabled = Some(input);
             self
         }
-        /// <p>Stops Route 53 from performing health checks. When you disable a health check, here's what happens:</p>
-        /// <ul>
-        /// <li> <p> <b>Health checks that check the health of endpoints:</b> Route 53 stops submitting requests to your application, server, or other resource.</p> </li>
-        /// <li> <p> <b>Calculated health checks:</b> Route 53 stops aggregating the status of the referenced health checks.</p> </li>
-        /// <li> <p> <b>Health checks that monitor CloudWatch alarms:</b> Route 53 stops monitoring the corresponding CloudWatch metrics.</p> </li>
-        /// </ul>
-        /// <p>After you disable a health check, Route 53 considers the status of the health check to always be healthy. If you configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If you want to stop routing traffic to a resource, change the value of <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted">Inverted</a>. </p>
+        /// <p>Stops Route 53 from performing health checks. When you disable a health check, here's what happens:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Health checks that check the health of endpoints:</b> Route 53 stops submitting requests to your application, server, or other resource.</p> </li> 
+        /// <li> <p> <b>Calculated health checks:</b> Route 53 stops aggregating the status of the referenced health checks.</p> </li> 
+        /// <li> <p> <b>Health checks that monitor CloudWatch alarms:</b> Route 53 stops monitoring the corresponding CloudWatch metrics.</p> </li> 
+        /// </ul> 
+        /// <p>After you disable a health check, Route 53 considers the status of the health check to always be healthy. If you configured DNS failover, Route 53 continues to route traffic to the corresponding resources. If you want to stop routing traffic to a resource, change the value of <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-Inverted">Inverted</a>. </p> 
         /// <p>Charges for a health check still apply when the health check is disabled. For more information, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
         pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.disabled = input;
-            self
+            self.disabled = input; self
         }
-        /// <p>The number of child health checks that are associated with a <code>CALCULATED</code> health check that Amazon Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To specify the child health checks that you want to associate with a <code>CALCULATED</code> health check, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks">ChildHealthChecks</a> element.</p>
-        /// <p>Note the following:</p>
-        /// <ul>
-        /// <li> <p>If you specify a number greater than the number of child health checks, Route 53 always considers this health check to be unhealthy.</p> </li>
-        /// <li> <p>If you specify <code>0</code>, Route 53 always considers this health check to be healthy.</p> </li>
+        /// <p>The number of child health checks that are associated with a <code>CALCULATED</code> health check that Amazon Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To specify the child health checks that you want to associate with a <code>CALCULATED</code> health check, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks">ChildHealthChecks</a> element.</p> 
+        /// <p>Note the following:</p> 
+        /// <ul> 
+        /// <li> <p>If you specify a number greater than the number of child health checks, Route 53 always considers this health check to be unhealthy.</p> </li> 
+        /// <li> <p>If you specify <code>0</code>, Route 53 always considers this health check to be healthy.</p> </li> 
         /// </ul>
         pub fn health_threshold(mut self, input: i32) -> Self {
             self.health_threshold = Some(input);
             self
         }
-        /// <p>The number of child health checks that are associated with a <code>CALCULATED</code> health check that Amazon Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To specify the child health checks that you want to associate with a <code>CALCULATED</code> health check, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks">ChildHealthChecks</a> element.</p>
-        /// <p>Note the following:</p>
-        /// <ul>
-        /// <li> <p>If you specify a number greater than the number of child health checks, Route 53 always considers this health check to be unhealthy.</p> </li>
-        /// <li> <p>If you specify <code>0</code>, Route 53 always considers this health check to be healthy.</p> </li>
+        /// <p>The number of child health checks that are associated with a <code>CALCULATED</code> health check that Amazon Route 53 must consider healthy for the <code>CALCULATED</code> health check to be considered healthy. To specify the child health checks that you want to associate with a <code>CALCULATED</code> health check, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-ChildHealthChecks">ChildHealthChecks</a> element.</p> 
+        /// <p>Note the following:</p> 
+        /// <ul> 
+        /// <li> <p>If you specify a number greater than the number of child health checks, Route 53 always considers this health check to be unhealthy.</p> </li> 
+        /// <li> <p>If you specify <code>0</code>, Route 53 always considers this health check to be healthy.</p> </li> 
         /// </ul>
         pub fn set_health_threshold(mut self, input: std::option::Option<i32>) -> Self {
-            self.health_threshold = input;
-            self
+            self.health_threshold = input; self
         }
         /// Appends an item to `child_health_checks`.
         ///
@@ -2107,54 +2016,45 @@ pub mod health_check_config {
         /// <p>(CALCULATED Health Checks Only) A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a <code>CALCULATED</code> health check.</p>
         pub fn child_health_checks(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.child_health_checks.unwrap_or_default();
-            v.push(input.into());
-            self.child_health_checks = Some(v);
-            self
+                            v.push(input.into());
+                            self.child_health_checks = Some(v);
+                            self
         }
         /// <p>(CALCULATED Health Checks Only) A complex type that contains one <code>ChildHealthCheck</code> element for each health check that you want to associate with a <code>CALCULATED</code> health check.</p>
-        pub fn set_child_health_checks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.child_health_checks = input;
-            self
+        pub fn set_child_health_checks(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.child_health_checks = input; self
         }
-        /// <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code> message during TLS negotiation. This allows the endpoint to respond to <code>HTTPS</code> health check requests with the applicable SSL/TLS certificate.</p>
-        /// <p>Some endpoints require that <code>HTTPS</code> requests include the host name in the <code>client_hello</code> message. If you don't enable SNI, the status of the health check will be <code>SSL alert handshake_failure</code>. A health check can also have that status for other reasons. If SNI is enabled and you're still getting the error, check the SSL/TLS configuration on your endpoint and confirm that your certificate is valid.</p>
+        /// <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code> message during TLS negotiation. This allows the endpoint to respond to <code>HTTPS</code> health check requests with the applicable SSL/TLS certificate.</p> 
+        /// <p>Some endpoints require that <code>HTTPS</code> requests include the host name in the <code>client_hello</code> message. If you don't enable SNI, the status of the health check will be <code>SSL alert handshake_failure</code>. A health check can also have that status for other reasons. If SNI is enabled and you're still getting the error, check the SSL/TLS configuration on your endpoint and confirm that your certificate is valid.</p> 
         /// <p>The SSL/TLS certificate on your endpoint includes a domain name in the <code>Common Name</code> field and possibly several more in the <code>Subject Alternative Names</code> field. One of the domain names in the certificate should match the value that you specify for <code>FullyQualifiedDomainName</code>. If the endpoint responds to the <code>client_hello</code> message with a certificate that does not include the domain name that you specified in <code>FullyQualifiedDomainName</code>, a health checker will retry the handshake. In the second attempt, the health checker will omit <code>FullyQualifiedDomainName</code> from the <code>client_hello</code> message.</p>
         pub fn enable_sni(mut self, input: bool) -> Self {
             self.enable_sni = Some(input);
             self
         }
-        /// <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code> message during TLS negotiation. This allows the endpoint to respond to <code>HTTPS</code> health check requests with the applicable SSL/TLS certificate.</p>
-        /// <p>Some endpoints require that <code>HTTPS</code> requests include the host name in the <code>client_hello</code> message. If you don't enable SNI, the status of the health check will be <code>SSL alert handshake_failure</code>. A health check can also have that status for other reasons. If SNI is enabled and you're still getting the error, check the SSL/TLS configuration on your endpoint and confirm that your certificate is valid.</p>
+        /// <p>Specify whether you want Amazon Route 53 to send the value of <code>FullyQualifiedDomainName</code> to the endpoint in the <code>client_hello</code> message during TLS negotiation. This allows the endpoint to respond to <code>HTTPS</code> health check requests with the applicable SSL/TLS certificate.</p> 
+        /// <p>Some endpoints require that <code>HTTPS</code> requests include the host name in the <code>client_hello</code> message. If you don't enable SNI, the status of the health check will be <code>SSL alert handshake_failure</code>. A health check can also have that status for other reasons. If SNI is enabled and you're still getting the error, check the SSL/TLS configuration on your endpoint and confirm that your certificate is valid.</p> 
         /// <p>The SSL/TLS certificate on your endpoint includes a domain name in the <code>Common Name</code> field and possibly several more in the <code>Subject Alternative Names</code> field. One of the domain names in the certificate should match the value that you specify for <code>FullyQualifiedDomainName</code>. If the endpoint responds to the <code>client_hello</code> message with a certificate that does not include the domain name that you specified in <code>FullyQualifiedDomainName</code>, a health checker will retry the handshake. In the second attempt, the health checker will omit <code>FullyQualifiedDomainName</code> from the <code>client_hello</code> message.</p>
         pub fn set_enable_sni(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_sni = input;
-            self
+            self.enable_sni = input; self
         }
         /// Appends an item to `regions`.
         ///
         /// To override the contents of this collection use [`set_regions`](Self::set_regions).
         ///
-        /// <p>A complex type that contains one <code>Region</code> element for each region from which you want Amazon Route 53 health checkers to check the specified endpoint.</p>
-        /// <p>If you don't specify any regions, Route 53 health checkers automatically performs checks from all of the regions that are listed under <b>Valid Values</b>.</p>
+        /// <p>A complex type that contains one <code>Region</code> element for each region from which you want Amazon Route 53 health checkers to check the specified endpoint.</p> 
+        /// <p>If you don't specify any regions, Route 53 health checkers automatically performs checks from all of the regions that are listed under <b>Valid Values</b>.</p> 
         /// <p>If you update a health check to remove a region that has been performing health checks, Route 53 will briefly continue to perform checks from that region to ensure that some health checkers are always checking the endpoint (for example, if you replace three regions with four different regions). </p>
         pub fn regions(mut self, input: crate::model::HealthCheckRegion) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(input);
-            self.regions = Some(v);
-            self
+                            v.push(input);
+                            self.regions = Some(v);
+                            self
         }
-        /// <p>A complex type that contains one <code>Region</code> element for each region from which you want Amazon Route 53 health checkers to check the specified endpoint.</p>
-        /// <p>If you don't specify any regions, Route 53 health checkers automatically performs checks from all of the regions that are listed under <b>Valid Values</b>.</p>
+        /// <p>A complex type that contains one <code>Region</code> element for each region from which you want Amazon Route 53 health checkers to check the specified endpoint.</p> 
+        /// <p>If you don't specify any regions, Route 53 health checkers automatically performs checks from all of the regions that are listed under <b>Valid Values</b>.</p> 
         /// <p>If you update a health check to remove a region that has been performing health checks, Route 53 will briefly continue to perform checks from that region to ensure that some health checkers are always checking the endpoint (for example, if you replace three regions with four different regions). </p>
-        pub fn set_regions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HealthCheckRegion>>,
-        ) -> Self {
-            self.regions = input;
-            self
+        pub fn set_regions(mut self, input: std::option::Option<std::vec::Vec<crate::model::HealthCheckRegion>>) -> Self {
+            self.regions = input; self
         }
         /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.</p>
         pub fn alarm_identifier(mut self, input: crate::model::AlarmIdentifier) -> Self {
@@ -2162,78 +2062,83 @@ pub mod health_check_config {
             self
         }
         /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.</p>
-        pub fn set_alarm_identifier(
-            mut self,
-            input: std::option::Option<crate::model::AlarmIdentifier>,
-        ) -> Self {
-            self.alarm_identifier = input;
-            self
+        pub fn set_alarm_identifier(mut self, input: std::option::Option<crate::model::AlarmIdentifier>) -> Self {
+            self.alarm_identifier = input; self
         }
-        /// <p>When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want Amazon Route 53 to assign to the health check:</p>
-        /// <ul>
-        /// <li> <p> <code>Healthy</code>: Route 53 considers the health check to be healthy.</p> </li>
-        /// <li> <p> <code>Unhealthy</code>: Route 53 considers the health check to be unhealthy.</p> </li>
-        /// <li> <p> <code>LastKnownStatus</code>: Route 53 uses the status of the health check from the last time that CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the default status for the health check is healthy.</p> </li>
+        /// <p>When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want Amazon Route 53 to assign to the health check:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Healthy</code>: Route 53 considers the health check to be healthy.</p> </li> 
+        /// <li> <p> <code>Unhealthy</code>: Route 53 considers the health check to be unhealthy.</p> </li> 
+        /// <li> <p> <code>LastKnownStatus</code>: Route 53 uses the status of the health check from the last time that CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the default status for the health check is healthy.</p> </li> 
         /// </ul>
-        pub fn insufficient_data_health_status(
-            mut self,
-            input: crate::model::InsufficientDataHealthStatus,
-        ) -> Self {
+        pub fn insufficient_data_health_status(mut self, input: crate::model::InsufficientDataHealthStatus) -> Self {
             self.insufficient_data_health_status = Some(input);
             self
         }
-        /// <p>When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want Amazon Route 53 to assign to the health check:</p>
-        /// <ul>
-        /// <li> <p> <code>Healthy</code>: Route 53 considers the health check to be healthy.</p> </li>
-        /// <li> <p> <code>Unhealthy</code>: Route 53 considers the health check to be unhealthy.</p> </li>
-        /// <li> <p> <code>LastKnownStatus</code>: Route 53 uses the status of the health check from the last time that CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the default status for the health check is healthy.</p> </li>
+        /// <p>When CloudWatch has insufficient data about the metric to determine the alarm state, the status that you want Amazon Route 53 to assign to the health check:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Healthy</code>: Route 53 considers the health check to be healthy.</p> </li> 
+        /// <li> <p> <code>Unhealthy</code>: Route 53 considers the health check to be unhealthy.</p> </li> 
+        /// <li> <p> <code>LastKnownStatus</code>: Route 53 uses the status of the health check from the last time that CloudWatch had sufficient data to determine the alarm state. For new health checks that have no last known status, the default status for the health check is healthy.</p> </li> 
         /// </ul>
-        pub fn set_insufficient_data_health_status(
-            mut self,
-            input: std::option::Option<crate::model::InsufficientDataHealthStatus>,
-        ) -> Self {
-            self.insufficient_data_health_status = input;
-            self
+        pub fn set_insufficient_data_health_status(mut self, input: std::option::Option<crate::model::InsufficientDataHealthStatus>) -> Self {
+            self.insufficient_data_health_status = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control.</p>
+        /// <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control.</p> 
         /// <p>For more information about Route 53 Application Recovery Controller, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route 53 Application Recovery Controller Developer Guide.</a>.</p>
         pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.routing_control_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control.</p>
+        /// <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control.</p> 
         /// <p>For more information about Route 53 Application Recovery Controller, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route 53 Application Recovery Controller Developer Guide.</a>.</p>
-        pub fn set_routing_control_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.routing_control_arn = input;
-            self
+        pub fn set_routing_control_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.routing_control_arn = input; self
         }
         /// Consumes the builder and constructs a [`HealthCheckConfig`](crate::model::HealthCheckConfig).
         pub fn build(self) -> crate::model::HealthCheckConfig {
             crate::model::HealthCheckConfig {
-                ip_address: self.ip_address,
-                port: self.port,
-                r#type: self.r#type,
-                resource_path: self.resource_path,
-                fully_qualified_domain_name: self.fully_qualified_domain_name,
-                search_string: self.search_string,
-                request_interval: self.request_interval,
-                failure_threshold: self.failure_threshold,
-                measure_latency: self.measure_latency,
-                inverted: self.inverted,
-                disabled: self.disabled,
-                health_threshold: self.health_threshold,
-                child_health_checks: self.child_health_checks,
-                enable_sni: self.enable_sni,
-                regions: self.regions,
-                alarm_identifier: self.alarm_identifier,
-                insufficient_data_health_status: self.insufficient_data_health_status,
-                routing_control_arn: self.routing_control_arn,
+                ip_address: self.ip_address
+                ,
+                port: self.port
+                ,
+                r#type: self.r#type
+                ,
+                resource_path: self.resource_path
+                ,
+                fully_qualified_domain_name: self.fully_qualified_domain_name
+                ,
+                search_string: self.search_string
+                ,
+                request_interval: self.request_interval
+                ,
+                failure_threshold: self.failure_threshold
+                ,
+                measure_latency: self.measure_latency
+                ,
+                inverted: self.inverted
+                ,
+                disabled: self.disabled
+                ,
+                health_threshold: self.health_threshold
+                ,
+                child_health_checks: self.child_health_checks
+                ,
+                enable_sni: self.enable_sni
+                ,
+                regions: self.regions
+                ,
+                alarm_identifier: self.alarm_identifier
+                ,
+                insufficient_data_health_status: self.insufficient_data_health_status
+                ,
+                routing_control_arn: self.routing_control_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl HealthCheckConfig {
     /// Creates a new builder-style object to manufacture [`HealthCheckConfig`](crate::model::HealthCheckConfig).
@@ -2248,9 +2153,9 @@ impl HealthCheckConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let insufficientdatahealthstatus = unimplemented!();
 /// match insufficientdatahealthstatus {
@@ -2273,22 +2178,14 @@ impl HealthCheckConfig {
 /// Specifically, when `insufficientdatahealthstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InsufficientDataHealthStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InsufficientDataHealthStatus {
     #[allow(missing_docs)] // documentation missing in model
     Healthy,
@@ -2297,7 +2194,7 @@ pub enum InsufficientDataHealthStatus {
     #[allow(missing_docs)] // documentation missing in model
     Unhealthy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InsufficientDataHealthStatus {
     fn from(s: &str) -> Self {
@@ -2305,19 +2202,17 @@ impl std::convert::From<&str> for InsufficientDataHealthStatus {
             "Healthy" => InsufficientDataHealthStatus::Healthy,
             "LastKnownStatus" => InsufficientDataHealthStatus::LastKnownStatus,
             "Unhealthy" => InsufficientDataHealthStatus::Unhealthy,
-            other => InsufficientDataHealthStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InsufficientDataHealthStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InsufficientDataHealthStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InsufficientDataHealthStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InsufficientDataHealthStatus::from(s))
+                }
+            }
 impl InsufficientDataHealthStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2325,12 +2220,14 @@ impl InsufficientDataHealthStatus {
             InsufficientDataHealthStatus::Healthy => "Healthy",
             InsufficientDataHealthStatus::LastKnownStatus => "LastKnownStatus",
             InsufficientDataHealthStatus::Unhealthy => "Unhealthy",
-            InsufficientDataHealthStatus::Unknown(value) => value.as_str(),
+            InsufficientDataHealthStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Healthy", "LastKnownStatus", "Unhealthy"]
+        &[
+            "Healthy", "LastKnownStatus", "Unhealthy"
+        ]
     }
 }
 impl AsRef<str> for InsufficientDataHealthStatus {
@@ -2342,41 +2239,41 @@ impl AsRef<str> for InsufficientDataHealthStatus {
 /// <p>A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlarmIdentifier {
-    /// <p>For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is healthy, the region that the alarm was created in.</p>
+pub struct AlarmIdentifier  {
+    /// <p>For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is healthy, the region that the alarm was created in.</p> 
     /// <p>For the current list of CloudWatch regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/cw_region.html">Amazon CloudWatch endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
     pub region: std::option::Option<crate::model::CloudWatchRegion>,
-    /// <p>The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this health check is healthy.</p> <note>
-    /// <p>Route 53 supports CloudWatch alarms with the following features:</p>
-    /// <ul>
-    /// <li> <p>Standard-resolution metrics. High-resolution metrics aren't supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li>
-    /// <li> <p>Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended statistics aren't supported.</p> </li>
-    /// </ul>
+    /// <p>The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this health check is healthy.</p> <note> 
+    /// <p>Route 53 supports CloudWatch alarms with the following features:</p> 
+    /// <ul> 
+    /// <li> <p>Standard-resolution metrics. High-resolution metrics aren't supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> 
+    /// <li> <p>Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended statistics aren't supported.</p> </li> 
+    /// </ul> 
     /// </note>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl AlarmIdentifier {
-    /// <p>For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is healthy, the region that the alarm was created in.</p>
+    /// <p>For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is healthy, the region that the alarm was created in.</p> 
     /// <p>For the current list of CloudWatch regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/cw_region.html">Amazon CloudWatch endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn region(&self) -> std::option::Option<&crate::model::CloudWatchRegion> {
+    pub fn region(&self) -> std::option::Option<& crate::model::CloudWatchRegion> {
         self.region.as_ref()
     }
-    /// <p>The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this health check is healthy.</p> <note>
-    /// <p>Route 53 supports CloudWatch alarms with the following features:</p>
-    /// <ul>
-    /// <li> <p>Standard-resolution metrics. High-resolution metrics aren't supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li>
-    /// <li> <p>Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended statistics aren't supported.</p> </li>
-    /// </ul>
+    /// <p>The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this health check is healthy.</p> <note> 
+    /// <p>Route 53 supports CloudWatch alarms with the following features:</p> 
+    /// <ul> 
+    /// <li> <p>Standard-resolution metrics. High-resolution metrics aren't supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> 
+    /// <li> <p>Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended statistics aren't supported.</p> </li> 
+    /// </ul> 
     /// </note>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`AlarmIdentifier`](crate::model::AlarmIdentifier).
 pub mod alarm_identifier {
-
+    
     /// A builder for [`AlarmIdentifier`](crate::model::AlarmIdentifier).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2384,51 +2281,50 @@ pub mod alarm_identifier {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is healthy, the region that the alarm was created in.</p>
+        /// <p>For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is healthy, the region that the alarm was created in.</p> 
         /// <p>For the current list of CloudWatch regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/cw_region.html">Amazon CloudWatch endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn region(mut self, input: crate::model::CloudWatchRegion) -> Self {
             self.region = Some(input);
             self
         }
-        /// <p>For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is healthy, the region that the alarm was created in.</p>
+        /// <p>For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is healthy, the region that the alarm was created in.</p> 
         /// <p>For the current list of CloudWatch regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/cw_region.html">Amazon CloudWatch endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn set_region(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchRegion>,
-        ) -> Self {
-            self.region = input;
-            self
+        pub fn set_region(mut self, input: std::option::Option<crate::model::CloudWatchRegion>) -> Self {
+            self.region = input; self
         }
-        /// <p>The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this health check is healthy.</p> <note>
-        /// <p>Route 53 supports CloudWatch alarms with the following features:</p>
-        /// <ul>
-        /// <li> <p>Standard-resolution metrics. High-resolution metrics aren't supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li>
-        /// <li> <p>Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended statistics aren't supported.</p> </li>
-        /// </ul>
+        /// <p>The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this health check is healthy.</p> <note> 
+        /// <p>Route 53 supports CloudWatch alarms with the following features:</p> 
+        /// <ul> 
+        /// <li> <p>Standard-resolution metrics. High-resolution metrics aren't supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> 
+        /// <li> <p>Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended statistics aren't supported.</p> </li> 
+        /// </ul> 
         /// </note>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this health check is healthy.</p> <note>
-        /// <p>Route 53 supports CloudWatch alarms with the following features:</p>
-        /// <ul>
-        /// <li> <p>Standard-resolution metrics. High-resolution metrics aren't supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li>
-        /// <li> <p>Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended statistics aren't supported.</p> </li>
-        /// </ul>
+        /// <p>The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether this health check is healthy.</p> <note> 
+        /// <p>Route 53 supports CloudWatch alarms with the following features:</p> 
+        /// <ul> 
+        /// <li> <p>Standard-resolution metrics. High-resolution metrics aren't supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> 
+        /// <li> <p>Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended statistics aren't supported.</p> </li> 
+        /// </ul> 
         /// </note>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`AlarmIdentifier`](crate::model::AlarmIdentifier).
         pub fn build(self) -> crate::model::AlarmIdentifier {
             crate::model::AlarmIdentifier {
-                region: self.region,
-                name: self.name,
+                region: self.region
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl AlarmIdentifier {
     /// Creates a new builder-style object to manufacture [`AlarmIdentifier`](crate::model::AlarmIdentifier).
@@ -2443,9 +2339,9 @@ impl AlarmIdentifier {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let cloudwatchregion = unimplemented!();
 /// match cloudwatchregion {
@@ -2499,22 +2395,14 @@ impl AlarmIdentifier {
 /// Specifically, when `cloudwatchregion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CloudWatchRegion::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CloudWatchRegion {
     #[allow(missing_docs)] // documentation missing in model
     AfSouth1,
@@ -2585,7 +2473,7 @@ pub enum CloudWatchRegion {
     #[allow(missing_docs)] // documentation missing in model
     UsWest2,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CloudWatchRegion {
     fn from(s: &str) -> Self {
@@ -2624,17 +2512,17 @@ impl std::convert::From<&str> for CloudWatchRegion {
             "us-isob-east-1" => CloudWatchRegion::UsIsobEast1,
             "us-west-1" => CloudWatchRegion::UsWest1,
             "us-west-2" => CloudWatchRegion::UsWest2,
-            other => CloudWatchRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => CloudWatchRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CloudWatchRegion {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CloudWatchRegion::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CloudWatchRegion::from(s))
+                }
+            }
 impl CloudWatchRegion {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2673,46 +2561,13 @@ impl CloudWatchRegion {
             CloudWatchRegion::UsIsobEast1 => "us-isob-east-1",
             CloudWatchRegion::UsWest1 => "us-west-1",
             CloudWatchRegion::UsWest2 => "us-west-2",
-            CloudWatchRegion::Unknown(value) => value.as_str(),
+            CloudWatchRegion::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "af-south-1",
-            "ap-east-1",
-            "ap-northeast-1",
-            "ap-northeast-2",
-            "ap-northeast-3",
-            "ap-south-1",
-            "ap-south-2",
-            "ap-southeast-1",
-            "ap-southeast-2",
-            "ap-southeast-3",
-            "ap-southeast-4",
-            "ca-central-1",
-            "cn-north-1",
-            "cn-northwest-1",
-            "eu-central-1",
-            "eu-central-2",
-            "eu-north-1",
-            "eu-south-1",
-            "eu-south-2",
-            "eu-west-1",
-            "eu-west-2",
-            "eu-west-3",
-            "me-central-1",
-            "me-south-1",
-            "sa-east-1",
-            "us-east-1",
-            "us-east-2",
-            "us-gov-east-1",
-            "us-gov-west-1",
-            "us-iso-east-1",
-            "us-iso-west-1",
-            "us-isob-east-1",
-            "us-west-1",
-            "us-west-2",
+            "af-south-1", "ap-east-1", "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-south-1", "ap-south-2", "ap-southeast-1", "ap-southeast-2", "ap-southeast-3", "ap-southeast-4", "ca-central-1", "cn-north-1", "cn-northwest-1", "eu-central-1", "eu-central-2", "eu-north-1", "eu-south-1", "eu-south-2", "eu-west-1", "eu-west-2", "eu-west-3", "me-central-1", "me-south-1", "sa-east-1", "us-east-1", "us-east-2", "us-gov-east-1", "us-gov-west-1", "us-iso-east-1", "us-iso-west-1", "us-isob-east-1", "us-west-1", "us-west-2"
         ]
     }
 }
@@ -2728,9 +2583,9 @@ impl AsRef<str> for CloudWatchRegion {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let healthcheckregion = unimplemented!();
 /// match healthcheckregion {
@@ -2758,22 +2613,14 @@ impl AsRef<str> for CloudWatchRegion {
 /// Specifically, when `healthcheckregion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HealthCheckRegion::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HealthCheckRegion {
     #[allow(missing_docs)] // documentation missing in model
     ApNortheast1,
@@ -2792,7 +2639,7 @@ pub enum HealthCheckRegion {
     #[allow(missing_docs)] // documentation missing in model
     UsWest2,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HealthCheckRegion {
     fn from(s: &str) -> Self {
@@ -2805,19 +2652,17 @@ impl std::convert::From<&str> for HealthCheckRegion {
             "us-east-1" => HealthCheckRegion::UsEast1,
             "us-west-1" => HealthCheckRegion::UsWest1,
             "us-west-2" => HealthCheckRegion::UsWest2,
-            other => {
-                HealthCheckRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => HealthCheckRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HealthCheckRegion {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HealthCheckRegion::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HealthCheckRegion::from(s))
+                }
+            }
 impl HealthCheckRegion {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2830,20 +2675,13 @@ impl HealthCheckRegion {
             HealthCheckRegion::UsEast1 => "us-east-1",
             HealthCheckRegion::UsWest1 => "us-west-1",
             HealthCheckRegion::UsWest2 => "us-west-2",
-            HealthCheckRegion::Unknown(value) => value.as_str(),
+            HealthCheckRegion::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ap-northeast-1",
-            "ap-southeast-1",
-            "ap-southeast-2",
-            "eu-west-1",
-            "sa-east-1",
-            "us-east-1",
-            "us-west-1",
-            "us-west-2",
+            "ap-northeast-1", "ap-southeast-1", "ap-southeast-2", "eu-west-1", "sa-east-1", "us-east-1", "us-west-1", "us-west-2"
         ]
     }
 }
@@ -2859,9 +2697,9 @@ impl AsRef<str> for HealthCheckRegion {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let healthchecktype = unimplemented!();
 /// match healthchecktype {
@@ -2889,22 +2727,14 @@ impl AsRef<str> for HealthCheckRegion {
 /// Specifically, when `healthchecktype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HealthCheckType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HealthCheckType {
     #[allow(missing_docs)] // documentation missing in model
     Calculated,
@@ -2923,7 +2753,7 @@ pub enum HealthCheckType {
     #[allow(missing_docs)] // documentation missing in model
     Tcp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HealthCheckType {
     fn from(s: &str) -> Self {
@@ -2936,17 +2766,17 @@ impl std::convert::From<&str> for HealthCheckType {
             "HTTP_STR_MATCH" => HealthCheckType::HttpStrMatch,
             "RECOVERY_CONTROL" => HealthCheckType::RecoveryControl,
             "TCP" => HealthCheckType::Tcp,
-            other => HealthCheckType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => HealthCheckType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HealthCheckType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HealthCheckType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HealthCheckType::from(s))
+                }
+            }
 impl HealthCheckType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2959,20 +2789,13 @@ impl HealthCheckType {
             HealthCheckType::HttpStrMatch => "HTTP_STR_MATCH",
             HealthCheckType::RecoveryControl => "RECOVERY_CONTROL",
             HealthCheckType::Tcp => "TCP",
-            HealthCheckType::Unknown(value) => value.as_str(),
+            HealthCheckType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CALCULATED",
-            "CLOUDWATCH_METRIC",
-            "HTTP",
-            "HTTPS",
-            "HTTPS_STR_MATCH",
-            "HTTP_STR_MATCH",
-            "RECOVERY_CONTROL",
-            "TCP",
+            "CALCULATED", "CLOUDWATCH_METRIC", "HTTP", "HTTPS", "HTTPS_STR_MATCH", "HTTP_STR_MATCH", "RECOVERY_CONTROL", "TCP"
         ]
     }
 }
@@ -2988,9 +2811,9 @@ impl AsRef<str> for HealthCheckType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resettableelementname = unimplemented!();
 /// match resettableelementname {
@@ -3014,22 +2837,14 @@ impl AsRef<str> for HealthCheckType {
 /// Specifically, when `resettableelementname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResettableElementName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResettableElementName {
     #[allow(missing_docs)] // documentation missing in model
     ChildHealthChecks,
@@ -3040,7 +2855,7 @@ pub enum ResettableElementName {
     #[allow(missing_docs)] // documentation missing in model
     ResourcePath,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResettableElementName {
     fn from(s: &str) -> Self {
@@ -3049,19 +2864,17 @@ impl std::convert::From<&str> for ResettableElementName {
             "FullyQualifiedDomainName" => ResettableElementName::FullyQualifiedDomainName,
             "Regions" => ResettableElementName::Regions,
             "ResourcePath" => ResettableElementName::ResourcePath,
-            other => {
-                ResettableElementName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ResettableElementName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResettableElementName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResettableElementName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResettableElementName::from(s))
+                }
+            }
 impl ResettableElementName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3070,16 +2883,13 @@ impl ResettableElementName {
             ResettableElementName::FullyQualifiedDomainName => "FullyQualifiedDomainName",
             ResettableElementName::Regions => "Regions",
             ResettableElementName::ResourcePath => "ResourcePath",
-            ResettableElementName::Unknown(value) => value.as_str(),
+            ResettableElementName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ChildHealthChecks",
-            "FullyQualifiedDomainName",
-            "Regions",
-            "ResourcePath",
+            "ChildHealthChecks", "FullyQualifiedDomainName", "Regions", "ResourcePath"
         ]
     }
 }
@@ -3089,11 +2899,11 @@ impl AsRef<str> for ResettableElementName {
     }
 }
 
-/// <p>(Private hosted zones only) A complex type that contains information about an Amazon VPC.</p>
+/// <p>(Private hosted zones only) A complex type that contains information about an Amazon VPC.</p> 
 /// <p>If you associate a private hosted zone with an Amazon VPC when you make a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a> request, the following parameters are also required.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Vpc {
+pub struct Vpc  {
     /// <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
     #[doc(hidden)]
     pub vpc_region: std::option::Option<crate::model::VpcRegion>,
@@ -3103,17 +2913,17 @@ pub struct Vpc {
 }
 impl Vpc {
     /// <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
-    pub fn vpc_region(&self) -> std::option::Option<&crate::model::VpcRegion> {
+    pub fn vpc_region(&self) -> std::option::Option<& crate::model::VpcRegion> {
         self.vpc_region.as_ref()
     }
     /// <p>(Private hosted zones only) The ID of an Amazon VPC. </p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
 /// See [`Vpc`](crate::model::Vpc).
 pub mod vpc {
-
+    
     /// A builder for [`Vpc`](crate::model::Vpc).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3127,12 +2937,8 @@ pub mod vpc {
             self
         }
         /// <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
-        pub fn set_vpc_region(
-            mut self,
-            input: std::option::Option<crate::model::VpcRegion>,
-        ) -> Self {
-            self.vpc_region = input;
-            self
+        pub fn set_vpc_region(mut self, input: std::option::Option<crate::model::VpcRegion>) -> Self {
+            self.vpc_region = input; self
         }
         /// <p>(Private hosted zones only) The ID of an Amazon VPC. </p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3141,17 +2947,20 @@ pub mod vpc {
         }
         /// <p>(Private hosted zones only) The ID of an Amazon VPC. </p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// Consumes the builder and constructs a [`Vpc`](crate::model::Vpc).
         pub fn build(self) -> crate::model::Vpc {
             crate::model::Vpc {
-                vpc_region: self.vpc_region,
-                vpc_id: self.vpc_id,
+                vpc_region: self.vpc_region
+                ,
+                vpc_id: self.vpc_id
+                ,
             }
         }
     }
+    
+    
 }
 impl Vpc {
     /// Creates a new builder-style object to manufacture [`Vpc`](crate::model::Vpc).
@@ -3166,9 +2975,9 @@ impl Vpc {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let vpcregion = unimplemented!();
 /// match vpcregion {
@@ -3221,22 +3030,14 @@ impl Vpc {
 /// Specifically, when `vpcregion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VpcRegion::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VpcRegion {
     #[allow(missing_docs)] // documentation missing in model
     AfSouth1,
@@ -3305,7 +3106,7 @@ pub enum VpcRegion {
     #[allow(missing_docs)] // documentation missing in model
     UsWest2,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VpcRegion {
     fn from(s: &str) -> Self {
@@ -3343,17 +3144,17 @@ impl std::convert::From<&str> for VpcRegion {
             "us-isob-east-1" => VpcRegion::UsIsobEast1,
             "us-west-1" => VpcRegion::UsWest1,
             "us-west-2" => VpcRegion::UsWest2,
-            other => VpcRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => VpcRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VpcRegion {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VpcRegion::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VpcRegion::from(s))
+                }
+            }
 impl VpcRegion {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3391,45 +3192,13 @@ impl VpcRegion {
             VpcRegion::UsIsobEast1 => "us-isob-east-1",
             VpcRegion::UsWest1 => "us-west-1",
             VpcRegion::UsWest2 => "us-west-2",
-            VpcRegion::Unknown(value) => value.as_str(),
+            VpcRegion::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "af-south-1",
-            "ap-east-1",
-            "ap-northeast-1",
-            "ap-northeast-2",
-            "ap-northeast-3",
-            "ap-south-1",
-            "ap-south-2",
-            "ap-southeast-1",
-            "ap-southeast-2",
-            "ap-southeast-3",
-            "ap-southeast-4",
-            "ca-central-1",
-            "cn-north-1",
-            "eu-central-1",
-            "eu-central-2",
-            "eu-north-1",
-            "eu-south-1",
-            "eu-south-2",
-            "eu-west-1",
-            "eu-west-2",
-            "eu-west-3",
-            "me-central-1",
-            "me-south-1",
-            "sa-east-1",
-            "us-east-1",
-            "us-east-2",
-            "us-gov-east-1",
-            "us-gov-west-1",
-            "us-iso-east-1",
-            "us-iso-west-1",
-            "us-isob-east-1",
-            "us-west-1",
-            "us-west-2",
+            "af-south-1", "ap-east-1", "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-south-1", "ap-south-2", "ap-southeast-1", "ap-southeast-2", "ap-southeast-3", "ap-southeast-4", "ca-central-1", "cn-north-1", "eu-central-1", "eu-central-2", "eu-north-1", "eu-south-1", "eu-south-2", "eu-west-1", "eu-west-2", "eu-west-3", "me-central-1", "me-south-1", "sa-east-1", "us-east-1", "us-east-2", "us-gov-east-1", "us-gov-west-1", "us-iso-east-1", "us-iso-west-1", "us-isob-east-1", "us-west-1", "us-west-2"
         ]
     }
 }
@@ -3442,7 +3211,7 @@ impl AsRef<str> for VpcRegion {
 /// <p>A complex type that contains information about the latest version of one traffic policy that is associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrafficPolicySummary {
+pub struct TrafficPolicySummary  {
     /// <p>The ID that Amazon Route 53 assigned to the traffic policy when you created it.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3461,15 +3230,15 @@ pub struct TrafficPolicySummary {
 }
 impl TrafficPolicySummary {
     /// <p>The ID that Amazon Route 53 assigned to the traffic policy when you created it.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name that you specified for the traffic policy when you created it.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::RrType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::RrType> {
         self.r#type.as_ref()
     }
     /// <p>The version number of the latest version of the traffic policy.</p>
@@ -3483,7 +3252,7 @@ impl TrafficPolicySummary {
 }
 /// See [`TrafficPolicySummary`](crate::model::TrafficPolicySummary).
 pub mod traffic_policy_summary {
-
+    
     /// A builder for [`TrafficPolicySummary`](crate::model::TrafficPolicySummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3501,8 +3270,7 @@ pub mod traffic_policy_summary {
         }
         /// <p>The ID that Amazon Route 53 assigned to the traffic policy when you created it.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name that you specified for the traffic policy when you created it.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3511,8 +3279,7 @@ pub mod traffic_policy_summary {
         }
         /// <p>The name that you specified for the traffic policy when you created it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
         pub fn r#type(mut self, input: crate::model::RrType) -> Self {
@@ -3521,8 +3288,7 @@ pub mod traffic_policy_summary {
         }
         /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RrType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The version number of the latest version of the traffic policy.</p>
         pub fn latest_version(mut self, input: i32) -> Self {
@@ -3531,8 +3297,7 @@ pub mod traffic_policy_summary {
         }
         /// <p>The version number of the latest version of the traffic policy.</p>
         pub fn set_latest_version(mut self, input: std::option::Option<i32>) -> Self {
-            self.latest_version = input;
-            self
+            self.latest_version = input; self
         }
         /// <p>The number of traffic policies that are associated with the current Amazon Web Services account.</p>
         pub fn traffic_policy_count(mut self, input: i32) -> Self {
@@ -3541,20 +3306,26 @@ pub mod traffic_policy_summary {
         }
         /// <p>The number of traffic policies that are associated with the current Amazon Web Services account.</p>
         pub fn set_traffic_policy_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.traffic_policy_count = input;
-            self
+            self.traffic_policy_count = input; self
         }
         /// Consumes the builder and constructs a [`TrafficPolicySummary`](crate::model::TrafficPolicySummary).
         pub fn build(self) -> crate::model::TrafficPolicySummary {
             crate::model::TrafficPolicySummary {
-                id: self.id,
-                name: self.name,
-                r#type: self.r#type,
-                latest_version: self.latest_version,
-                traffic_policy_count: self.traffic_policy_count,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                latest_version: self.latest_version
+                ,
+                traffic_policy_count: self.traffic_policy_count
+                ,
             }
         }
     }
+    
+    
 }
 impl TrafficPolicySummary {
     /// Creates a new builder-style object to manufacture [`TrafficPolicySummary`](crate::model::TrafficPolicySummary).
@@ -3566,11 +3337,11 @@ impl TrafficPolicySummary {
 /// <p>A complex type containing a resource and its associated tags.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceTagSet {
-    /// <p>The type of the resource.</p>
-    /// <ul>
-    /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
-    /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
+pub struct ResourceTagSet  {
+    /// <p>The type of the resource.</p> 
+    /// <ul> 
+    /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li> 
+    /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::model::TagResourceType>,
@@ -3582,26 +3353,26 @@ pub struct ResourceTagSet {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ResourceTagSet {
-    /// <p>The type of the resource.</p>
-    /// <ul>
-    /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
-    /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
+    /// <p>The type of the resource.</p> 
+    /// <ul> 
+    /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li> 
+    /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li> 
     /// </ul>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::TagResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::TagResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The ID for the specified resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The tags associated with the specified resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ResourceTagSet`](crate::model::ResourceTagSet).
 pub mod resource_tag_set {
-
+    
     /// A builder for [`ResourceTagSet`](crate::model::ResourceTagSet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3610,26 +3381,22 @@ pub mod resource_tag_set {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The type of the resource.</p>
-        /// <ul>
-        /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
-        /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
+        /// <p>The type of the resource.</p> 
+        /// <ul> 
+        /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li> 
+        /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li> 
         /// </ul>
         pub fn resource_type(mut self, input: crate::model::TagResourceType) -> Self {
             self.resource_type = Some(input);
             self
         }
-        /// <p>The type of the resource.</p>
-        /// <ul>
-        /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li>
-        /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li>
+        /// <p>The type of the resource.</p> 
+        /// <ul> 
+        /// <li> <p>The resource type for health checks is <code>healthcheck</code>.</p> </li> 
+        /// <li> <p>The resource type for hosted zones is <code>hostedzone</code>.</p> </li> 
         /// </ul>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::TagResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::TagResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>The ID for the specified resource.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3638,8 +3405,7 @@ pub mod resource_tag_set {
         }
         /// <p>The ID for the specified resource.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -3648,27 +3414,28 @@ pub mod resource_tag_set {
         /// <p>The tags associated with the specified resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags associated with the specified resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ResourceTagSet`](crate::model::ResourceTagSet).
         pub fn build(self) -> crate::model::ResourceTagSet {
             crate::model::ResourceTagSet {
-                resource_type: self.resource_type,
-                resource_id: self.resource_id,
-                tags: self.tags,
+                resource_type: self.resource_type
+                ,
+                resource_id: self.resource_id
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceTagSet {
     /// Creates a new builder-style object to manufacture [`ResourceTagSet`](crate::model::ResourceTagSet).
@@ -3680,47 +3447,47 @@ impl ResourceTagSet {
 /// <p>A complex type that contains information about a tag that you want to add or edit for the specified health check or hosted zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
-    /// <p>The value of <code>Key</code> depends on the operation that you want to perform:</p>
-    /// <ul>
-    /// <li> <p> <b>Add a tag to a health check or hosted zone</b>: <code>Key</code> is the name that you want to give the new tag.</p> </li>
-    /// <li> <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to change the <code>Value</code> for.</p> </li>
-    /// <li> <p> <b> Delete a key</b>: <code>Key</code> is the name of the tag you want to remove.</p> </li>
-    /// <li> <p> <b>Give a name to a health check</b>: Edit the default <code>Name</code> tag. In the Amazon Route 53 console, the list of your health checks includes a <b>Name</b> column that lets you see the name that you've given to each health check.</p> </li>
+pub struct Tag  {
+    /// <p>The value of <code>Key</code> depends on the operation that you want to perform:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Add a tag to a health check or hosted zone</b>: <code>Key</code> is the name that you want to give the new tag.</p> </li> 
+    /// <li> <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to change the <code>Value</code> for.</p> </li> 
+    /// <li> <p> <b> Delete a key</b>: <code>Key</code> is the name of the tag you want to remove.</p> </li> 
+    /// <li> <p> <b>Give a name to a health check</b>: Edit the default <code>Name</code> tag. In the Amazon Route 53 console, the list of your health checks includes a <b>Name</b> column that lets you see the name that you've given to each health check.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
-    /// <p>The value of <code>Value</code> depends on the operation that you want to perform:</p>
-    /// <ul>
-    /// <li> <p> <b>Add a tag to a health check or hosted zone</b>: <code>Value</code> is the value that you want to give the new tag.</p> </li>
-    /// <li> <p> <b>Edit a tag</b>: <code>Value</code> is the new value that you want to assign the tag.</p> </li>
+    /// <p>The value of <code>Value</code> depends on the operation that you want to perform:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Add a tag to a health check or hosted zone</b>: <code>Value</code> is the value that you want to give the new tag.</p> </li> 
+    /// <li> <p> <b>Edit a tag</b>: <code>Value</code> is the new value that you want to assign the tag.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>The value of <code>Key</code> depends on the operation that you want to perform:</p>
-    /// <ul>
-    /// <li> <p> <b>Add a tag to a health check or hosted zone</b>: <code>Key</code> is the name that you want to give the new tag.</p> </li>
-    /// <li> <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to change the <code>Value</code> for.</p> </li>
-    /// <li> <p> <b> Delete a key</b>: <code>Key</code> is the name of the tag you want to remove.</p> </li>
-    /// <li> <p> <b>Give a name to a health check</b>: Edit the default <code>Name</code> tag. In the Amazon Route 53 console, the list of your health checks includes a <b>Name</b> column that lets you see the name that you've given to each health check.</p> </li>
+    /// <p>The value of <code>Key</code> depends on the operation that you want to perform:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Add a tag to a health check or hosted zone</b>: <code>Key</code> is the name that you want to give the new tag.</p> </li> 
+    /// <li> <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to change the <code>Value</code> for.</p> </li> 
+    /// <li> <p> <b> Delete a key</b>: <code>Key</code> is the name of the tag you want to remove.</p> </li> 
+    /// <li> <p> <b>Give a name to a health check</b>: Edit the default <code>Name</code> tag. In the Amazon Route 53 console, the list of your health checks includes a <b>Name</b> column that lets you see the name that you've given to each health check.</p> </li> 
     /// </ul>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
-    /// <p>The value of <code>Value</code> depends on the operation that you want to perform:</p>
-    /// <ul>
-    /// <li> <p> <b>Add a tag to a health check or hosted zone</b>: <code>Value</code> is the value that you want to give the new tag.</p> </li>
-    /// <li> <p> <b>Edit a tag</b>: <code>Value</code> is the new value that you want to assign the tag.</p> </li>
+    /// <p>The value of <code>Value</code> depends on the operation that you want to perform:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Add a tag to a health check or hosted zone</b>: <code>Value</code> is the value that you want to give the new tag.</p> </li> 
+    /// <li> <p> <b>Edit a tag</b>: <code>Value</code> is the new value that you want to assign the tag.</p> </li> 
     /// </ul>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3728,54 +3495,56 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The value of <code>Key</code> depends on the operation that you want to perform:</p>
-        /// <ul>
-        /// <li> <p> <b>Add a tag to a health check or hosted zone</b>: <code>Key</code> is the name that you want to give the new tag.</p> </li>
-        /// <li> <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to change the <code>Value</code> for.</p> </li>
-        /// <li> <p> <b> Delete a key</b>: <code>Key</code> is the name of the tag you want to remove.</p> </li>
-        /// <li> <p> <b>Give a name to a health check</b>: Edit the default <code>Name</code> tag. In the Amazon Route 53 console, the list of your health checks includes a <b>Name</b> column that lets you see the name that you've given to each health check.</p> </li>
+        /// <p>The value of <code>Key</code> depends on the operation that you want to perform:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Add a tag to a health check or hosted zone</b>: <code>Key</code> is the name that you want to give the new tag.</p> </li> 
+        /// <li> <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to change the <code>Value</code> for.</p> </li> 
+        /// <li> <p> <b> Delete a key</b>: <code>Key</code> is the name of the tag you want to remove.</p> </li> 
+        /// <li> <p> <b>Give a name to a health check</b>: Edit the default <code>Name</code> tag. In the Amazon Route 53 console, the list of your health checks includes a <b>Name</b> column that lets you see the name that you've given to each health check.</p> </li> 
         /// </ul>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The value of <code>Key</code> depends on the operation that you want to perform:</p>
-        /// <ul>
-        /// <li> <p> <b>Add a tag to a health check or hosted zone</b>: <code>Key</code> is the name that you want to give the new tag.</p> </li>
-        /// <li> <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to change the <code>Value</code> for.</p> </li>
-        /// <li> <p> <b> Delete a key</b>: <code>Key</code> is the name of the tag you want to remove.</p> </li>
-        /// <li> <p> <b>Give a name to a health check</b>: Edit the default <code>Name</code> tag. In the Amazon Route 53 console, the list of your health checks includes a <b>Name</b> column that lets you see the name that you've given to each health check.</p> </li>
+        /// <p>The value of <code>Key</code> depends on the operation that you want to perform:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Add a tag to a health check or hosted zone</b>: <code>Key</code> is the name that you want to give the new tag.</p> </li> 
+        /// <li> <p> <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to change the <code>Value</code> for.</p> </li> 
+        /// <li> <p> <b> Delete a key</b>: <code>Key</code> is the name of the tag you want to remove.</p> </li> 
+        /// <li> <p> <b>Give a name to a health check</b>: Edit the default <code>Name</code> tag. In the Amazon Route 53 console, the list of your health checks includes a <b>Name</b> column that lets you see the name that you've given to each health check.</p> </li> 
         /// </ul>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
-        /// <p>The value of <code>Value</code> depends on the operation that you want to perform:</p>
-        /// <ul>
-        /// <li> <p> <b>Add a tag to a health check or hosted zone</b>: <code>Value</code> is the value that you want to give the new tag.</p> </li>
-        /// <li> <p> <b>Edit a tag</b>: <code>Value</code> is the new value that you want to assign the tag.</p> </li>
+        /// <p>The value of <code>Value</code> depends on the operation that you want to perform:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Add a tag to a health check or hosted zone</b>: <code>Value</code> is the value that you want to give the new tag.</p> </li> 
+        /// <li> <p> <b>Edit a tag</b>: <code>Value</code> is the new value that you want to assign the tag.</p> </li> 
         /// </ul>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The value of <code>Value</code> depends on the operation that you want to perform:</p>
-        /// <ul>
-        /// <li> <p> <b>Add a tag to a health check or hosted zone</b>: <code>Value</code> is the value that you want to give the new tag.</p> </li>
-        /// <li> <p> <b>Edit a tag</b>: <code>Value</code> is the new value that you want to assign the tag.</p> </li>
+        /// <p>The value of <code>Value</code> depends on the operation that you want to perform:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Add a tag to a health check or hosted zone</b>: <code>Value</code> is the value that you want to give the new tag.</p> </li> 
+        /// <li> <p> <b>Edit a tag</b>: <code>Value</code> is the new value that you want to assign the tag.</p> </li> 
         /// </ul>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -3790,9 +3559,9 @@ impl Tag {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let tagresourcetype = unimplemented!();
 /// match tagresourcetype {
@@ -3814,58 +3583,52 @@ impl Tag {
 /// Specifically, when `tagresourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TagResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TagResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Healthcheck,
     #[allow(missing_docs)] // documentation missing in model
     Hostedzone,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TagResourceType {
     fn from(s: &str) -> Self {
         match s {
             "healthcheck" => TagResourceType::Healthcheck,
             "hostedzone" => TagResourceType::Hostedzone,
-            other => TagResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TagResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TagResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TagResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TagResourceType::from(s))
+                }
+            }
 impl TagResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TagResourceType::Healthcheck => "healthcheck",
             TagResourceType::Hostedzone => "hostedzone",
-            TagResourceType::Unknown(value) => value.as_str(),
+            TagResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["healthcheck", "hostedzone"]
+        &[
+            "healthcheck", "hostedzone"
+        ]
     }
 }
 impl AsRef<str> for TagResourceType {
@@ -3877,7 +3640,7 @@ impl AsRef<str> for TagResourceType {
 /// <p>A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code> and the <code>ID</code> for the delegation set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DelegationSet {
+pub struct DelegationSet  {
     /// <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3890,21 +3653,21 @@ pub struct DelegationSet {
 }
 impl DelegationSet {
     /// <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The value that you specified for <code>CallerReference</code> when you created the reusable delegation set.</p>
-    pub fn caller_reference(&self) -> std::option::Option<&str> {
+    pub fn caller_reference(&self) -> std::option::Option<& str> {
         self.caller_reference.as_deref()
     }
     /// <p>A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</p>
-    pub fn name_servers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn name_servers(&self) -> std::option::Option<& [std::string::String]> {
         self.name_servers.as_deref()
     }
 }
 /// See [`DelegationSet`](crate::model::DelegationSet).
 pub mod delegation_set {
-
+    
     /// A builder for [`DelegationSet`](crate::model::DelegationSet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3920,8 +3683,7 @@ pub mod delegation_set {
         }
         /// <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The value that you specified for <code>CallerReference</code> when you created the reusable delegation set.</p>
         pub fn caller_reference(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3929,12 +3691,8 @@ pub mod delegation_set {
             self
         }
         /// <p>The value that you specified for <code>CallerReference</code> when you created the reusable delegation set.</p>
-        pub fn set_caller_reference(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.caller_reference = input;
-            self
+        pub fn set_caller_reference(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.caller_reference = input; self
         }
         /// Appends an item to `name_servers`.
         ///
@@ -3943,27 +3701,28 @@ pub mod delegation_set {
         /// <p>A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</p>
         pub fn name_servers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.name_servers.unwrap_or_default();
-            v.push(input.into());
-            self.name_servers = Some(v);
-            self
+                            v.push(input.into());
+                            self.name_servers = Some(v);
+                            self
         }
         /// <p>A complex type that contains a list of the authoritative name servers for a hosted zone or for a reusable delegation set.</p>
-        pub fn set_name_servers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.name_servers = input;
-            self
+        pub fn set_name_servers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.name_servers = input; self
         }
         /// Consumes the builder and constructs a [`DelegationSet`](crate::model::DelegationSet).
         pub fn build(self) -> crate::model::DelegationSet {
             crate::model::DelegationSet {
-                id: self.id,
-                caller_reference: self.caller_reference,
-                name_servers: self.name_servers,
+                id: self.id
+                ,
+                caller_reference: self.caller_reference
+                ,
+                name_servers: self.name_servers
+                ,
             }
         }
     }
+    
+    
 }
 impl DelegationSet {
     /// Creates a new builder-style object to manufacture [`DelegationSet`](crate::model::DelegationSet).
@@ -3975,379 +3734,379 @@ impl DelegationSet {
 /// <p>Information about the resource record set to create or delete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceRecordSet {
-    /// <p>For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.</p>
-    /// <p> <b>ChangeResourceRecordSets Only</b> </p>
-    /// <p>Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include a trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you specify is fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a trailing dot) and <code>www.example.com.</code> (with a trailing dot) as identical.</p>
-    /// <p>For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// <p>You can use the asterisk (*) wildcard to replace the leftmost label in a domain name, for example, <code>*.example.com</code>. Note the following:</p>
-    /// <ul>
-    /// <li> <p>The * must replace the entire label. For example, you can't specify <code>*prod.example.com</code> or <code>prod*.example.com</code>.</p> </li>
-    /// <li> <p>The * can't replace any of the middle labels, for example, marketing.*.example.com.</p> </li>
-    /// <li> <p>If you include * in any position other than the leftmost label in a domain name, DNS treats it as an * character (ASCII 42), not as a wildcard.</p> <important>
-    /// <p>You can't use the * wildcard for resource records sets that have a type of NS.</p>
-    /// </important> </li>
-    /// </ul>
+pub struct ResourceRecordSet  {
+    /// <p>For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.</p> 
+    /// <p> <b>ChangeResourceRecordSets Only</b> </p> 
+    /// <p>Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include a trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you specify is fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a trailing dot) and <code>www.example.com.</code> (with a trailing dot) as identical.</p> 
+    /// <p>For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
+    /// <p>You can use the asterisk (*) wildcard to replace the leftmost label in a domain name, for example, <code>*.example.com</code>. Note the following:</p> 
+    /// <ul> 
+    /// <li> <p>The * must replace the entire label. For example, you can't specify <code>*prod.example.com</code> or <code>prod*.example.com</code>.</p> </li> 
+    /// <li> <p>The * can't replace any of the middle labels, for example, marketing.*.example.com.</p> </li> 
+    /// <li> <p>If you include * in any position other than the leftmost label in a domain name, DNS treats it as an * character (ASCII 42), not as a wildcard.</p> <important> 
+    /// <p>You can't use the * wildcard for resource records sets that have a type of NS.</p> 
+    /// </important> </li> 
+    /// </ul> 
     /// <p>You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The DNS record type. For information about different record types and how data is encoded for them, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
-    /// <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the resource record sets in the group.</p>
-    /// <p>Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <note>
-    /// <p>SPF records were formerly used to verify the identity of the sender of email messages. However, we no longer recommend that you create resource record sets for which the value of <code>Type</code> is <code>SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email, Version 1</i>, has been updated to say, "...[I]ts existence and mechanism defined in [RFC4408] have led to some interoperability issues. Accordingly, its use is no longer appropriate for SPF version 1; implementations are not to use it." In RFC 7208, see section 14.1, <a href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record Type</a>.</p>
-    /// </note>
-    /// <p>Values for alias resource record sets:</p>
-    /// <ul>
-    /// <li> <p> <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code> </p> </li>
-    /// <li> <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled for the distribution, create two resource record sets to route traffic to your distribution, one with a value of <code>A</code> and one with a value of <code>AAAA</code>. </p> </li>
-    /// <li> <p> <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code> </p> </li>
-    /// <li> <p> <b>ELB load balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li>
-    /// <li> <p> <b>Amazon S3 buckets:</b> <code>A</code> </p> </li>
-    /// <li> <p> <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code> </p> </li>
-    /// <li> <p> <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.</p> <note>
-    /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p>
-    /// </note> </li>
+    /// <p>The DNS record type. For information about different record types and how data is encoded for them, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
+    /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> 
+    /// <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the resource record sets in the group.</p> 
+    /// <p>Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <note> 
+    /// <p>SPF records were formerly used to verify the identity of the sender of email messages. However, we no longer recommend that you create resource record sets for which the value of <code>Type</code> is <code>SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email, Version 1</i>, has been updated to say, "...[I]ts existence and mechanism defined in [RFC4408] have led to some interoperability issues. Accordingly, its use is no longer appropriate for SPF version 1; implementations are not to use it." In RFC 7208, see section 14.1, <a href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record Type</a>.</p> 
+    /// </note> 
+    /// <p>Values for alias resource record sets:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code> </p> </li> 
+    /// <li> <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled for the distribution, create two resource record sets to route traffic to your distribution, one with a value of <code>A</code> and one with a value of <code>AAAA</code>. </p> </li> 
+    /// <li> <p> <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code> </p> </li> 
+    /// <li> <p> <b>ELB load balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li> 
+    /// <li> <p> <b>Amazon S3 buckets:</b> <code>A</code> </p> </li> 
+    /// <li> <p> <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code> </p> </li> 
+    /// <li> <p> <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.</p> <note> 
+    /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p> 
+    /// </note> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::RrType>,
-    /// <p> <i>Resource record sets that have a routing policy other than simple:</i> An identifier that differentiates among multiple resource record sets that have the same combination of name and type, such as multiple weighted resource record sets named acme.example.com that have a type of A. In a group of resource record sets that have the same name and type, the value of <code>SetIdentifier</code> must be unique for each resource record set. </p>
+    /// <p> <i>Resource record sets that have a routing policy other than simple:</i> An identifier that differentiates among multiple resource record sets that have the same combination of name and type, such as multiple weighted resource record sets named acme.example.com that have a type of A. In a group of resource record sets that have the same name and type, the value of <code>SetIdentifier</code> must be unique for each resource record set. </p> 
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     #[doc(hidden)]
     pub set_identifier: std::option::Option<std::string::String>,
-    /// <p> <i>Weighted resource record sets only:</i> Among resource record sets that have the same combination of DNS name and type, a value that determines the proportion of DNS queries that Amazon Route 53 responds to using the current resource record set. Route 53 calculates the sum of the weights for the resource record sets that have the same combination of DNS name and type. Route 53 then responds to queries based on the ratio of a resource's weight to the total. Note the following:</p>
-    /// <ul>
-    /// <li> <p>You must specify a value for the <code>Weight</code> element for every weighted resource record set.</p> </li>
-    /// <li> <p>You can only specify one <code>ResourceRecord</code> per weighted resource record set.</p> </li>
-    /// <li> <p>You can't create latency, failover, or geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as weighted resource record sets.</p> </li>
-    /// <li> <p>You can create a maximum of 100 weighted resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p> </li>
-    /// <li> <p>For weighted (but not weighted alias) resource record sets, if you set <code>Weight</code> to <code>0</code> for a resource record set, Route 53 never responds to queries with the applicable value for that resource record set. However, if you set <code>Weight</code> to <code>0</code> for all resource record sets that have the same combination of DNS name and type, traffic is routed to all resources with equal probability.</p> <p>The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks with weighted resource record sets. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li>
+    /// <p> <i>Weighted resource record sets only:</i> Among resource record sets that have the same combination of DNS name and type, a value that determines the proportion of DNS queries that Amazon Route 53 responds to using the current resource record set. Route 53 calculates the sum of the weights for the resource record sets that have the same combination of DNS name and type. Route 53 then responds to queries based on the ratio of a resource's weight to the total. Note the following:</p> 
+    /// <ul> 
+    /// <li> <p>You must specify a value for the <code>Weight</code> element for every weighted resource record set.</p> </li> 
+    /// <li> <p>You can only specify one <code>ResourceRecord</code> per weighted resource record set.</p> </li> 
+    /// <li> <p>You can't create latency, failover, or geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as weighted resource record sets.</p> </li> 
+    /// <li> <p>You can create a maximum of 100 weighted resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p> </li> 
+    /// <li> <p>For weighted (but not weighted alias) resource record sets, if you set <code>Weight</code> to <code>0</code> for a resource record set, Route 53 never responds to queries with the applicable value for that resource record set. However, if you set <code>Weight</code> to <code>0</code> for all resource record sets that have the same combination of DNS name and type, traffic is routed to all resources with equal probability.</p> <p>The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks with weighted resource record sets. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub weight: std::option::Option<i64>,
-    /// <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.</p>
-    /// <p>When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected resource record set.</p>
-    /// <p>Note the following:</p>
-    /// <ul>
-    /// <li> <p>You can only specify one <code>ResourceRecord</code> per latency resource record set.</p> </li>
-    /// <li> <p>You can only create one latency resource record set for each Amazon EC2 Region.</p> </li>
-    /// <li> <p>You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will choose the region with the best latency from among the regions that you create latency resource record sets for.</p> </li>
-    /// <li> <p>You can't create non-latency resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as latency resource record sets.</p> </li>
+    /// <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.</p> 
+    /// <p>When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected resource record set.</p> 
+    /// <p>Note the following:</p> 
+    /// <ul> 
+    /// <li> <p>You can only specify one <code>ResourceRecord</code> per latency resource record set.</p> </li> 
+    /// <li> <p>You can only create one latency resource record set for each Amazon EC2 Region.</p> </li> 
+    /// <li> <p>You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will choose the region with the best latency from among the regions that you create latency resource record sets for.</p> </li> 
+    /// <li> <p>You can't create non-latency resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as latency resource record sets.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub region: std::option::Option<crate::model::ResourceRecordSetRegion>,
-    /// <p> <i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p> <note>
-    /// <p>Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed, it's not supported.</p>
-    /// </note>
-    /// <p>If you create separate resource record sets for overlapping geographic regions (for example, one resource record set for a continent and one for a country on the same continent), priority goes to the smallest geographic region. This allows you to route most queries for a continent to one resource and to route queries for a country on that continent to a different resource.</p>
-    /// <p>You can't create two geolocation resource record sets that specify the same geographic location.</p>
-    /// <p>The value <code>*</code> in the <code>CountryCode</code> element matches all geographic locations that aren't specified in other geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p> <important>
-    /// <p>Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will receive some DNS queries from locations that it can't identify. We recommend that you create a resource record set for which the value of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to the resource that you specify in this record: queries that come from locations for which you haven't created geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those locations.</p>
-    /// </important>
+    /// <p> <i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p> <note> 
+    /// <p>Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed, it's not supported.</p> 
+    /// </note> 
+    /// <p>If you create separate resource record sets for overlapping geographic regions (for example, one resource record set for a continent and one for a country on the same continent), priority goes to the smallest geographic region. This allows you to route most queries for a continent to one resource and to route queries for a country on that continent to a different resource.</p> 
+    /// <p>You can't create two geolocation resource record sets that specify the same geographic location.</p> 
+    /// <p>The value <code>*</code> in the <code>CountryCode</code> element matches all geographic locations that aren't specified in other geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p> <important> 
+    /// <p>Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will receive some DNS queries from locations that it can't identify. We recommend that you create a resource record set for which the value of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to the resource that you specify in this record: queries that come from locations for which you haven't created geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those locations.</p> 
+    /// </important> 
     /// <p>You can't create non-geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as geolocation resource record sets.</p>
     #[doc(hidden)]
     pub geo_location: std::option::Option<crate::model::GeoLocation>,
-    /// <p> <i>Failover resource record sets only:</i> To configure failover, you add the <code>Failover</code> element to two resource record sets. For one resource record set, you specify <code>PRIMARY</code> as the value for <code>Failover</code>; for the other resource record set, you specify <code>SECONDARY</code>. In addition, you include the <code>HealthCheckId</code> element and specify the health check that you want Amazon Route 53 to perform for each resource record set.</p>
-    /// <p>Except where noted, the following failover behaviors assume that you have included the <code>HealthCheckId</code> element in both resource record sets:</p>
-    /// <ul>
-    /// <li> <p>When the primary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from the primary resource record set regardless of the health of the secondary resource record set.</p> </li>
-    /// <li> <p>When the primary resource record set is unhealthy and the secondary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from the secondary resource record set.</p> </li>
-    /// <li> <p>When the secondary resource record set is unhealthy, Route 53 responds to DNS queries with the applicable value from the primary resource record set regardless of the health of the primary resource record set.</p> </li>
-    /// <li> <p>If you omit the <code>HealthCheckId</code> element for the secondary resource record set, and if the primary resource record set is unhealthy, Route 53 always responds to DNS queries with the applicable value from the secondary resource record set. This is true regardless of the health of the associated endpoint.</p> </li>
-    /// </ul>
-    /// <p>You can't create non-failover resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as failover resource record sets.</p>
-    /// <p>For failover alias resource record sets, you must also include the <code>EvaluateTargetHealth</code> element and set the value to true.</p>
-    /// <p>For more information about configuring failover for Route 53, see the following topics in the <i>Amazon Route 53 Developer Guide</i>: </p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and DNS Failover</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> </p> </li>
+    /// <p> <i>Failover resource record sets only:</i> To configure failover, you add the <code>Failover</code> element to two resource record sets. For one resource record set, you specify <code>PRIMARY</code> as the value for <code>Failover</code>; for the other resource record set, you specify <code>SECONDARY</code>. In addition, you include the <code>HealthCheckId</code> element and specify the health check that you want Amazon Route 53 to perform for each resource record set.</p> 
+    /// <p>Except where noted, the following failover behaviors assume that you have included the <code>HealthCheckId</code> element in both resource record sets:</p> 
+    /// <ul> 
+    /// <li> <p>When the primary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from the primary resource record set regardless of the health of the secondary resource record set.</p> </li> 
+    /// <li> <p>When the primary resource record set is unhealthy and the secondary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from the secondary resource record set.</p> </li> 
+    /// <li> <p>When the secondary resource record set is unhealthy, Route 53 responds to DNS queries with the applicable value from the primary resource record set regardless of the health of the primary resource record set.</p> </li> 
+    /// <li> <p>If you omit the <code>HealthCheckId</code> element for the secondary resource record set, and if the primary resource record set is unhealthy, Route 53 always responds to DNS queries with the applicable value from the secondary resource record set. This is true regardless of the health of the associated endpoint.</p> </li> 
+    /// </ul> 
+    /// <p>You can't create non-failover resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as failover resource record sets.</p> 
+    /// <p>For failover alias resource record sets, you must also include the <code>EvaluateTargetHealth</code> element and set the value to true.</p> 
+    /// <p>For more information about configuring failover for Route 53, see the following topics in the <i>Amazon Route 53 Developer Guide</i>: </p> 
+    /// <ul> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and DNS Failover</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub failover: std::option::Option<crate::model::ResourceRecordSetFailover>,
-    /// <p> <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple resources, such as web servers, create one multivalue answer record for each resource and specify <code>true</code> for <code>MultiValueAnswer</code>. Note the following:</p>
-    /// <ul>
-    /// <li> <p>If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to DNS queries with the corresponding IP address only when the health check is healthy.</p> </li>
-    /// <li> <p>If you don't associate a health check with a multivalue answer record, Route 53 always considers the record to be healthy.</p> </li>
-    /// <li> <p>Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy records, Route 53 responds to all DNS queries with all the healthy records.</p> </li>
-    /// <li> <p>If you have more than eight healthy records, Route 53 responds to different DNS resolvers with different combinations of healthy records.</p> </li>
-    /// <li> <p>When all records are unhealthy, Route 53 responds to DNS queries with up to eight unhealthy records.</p> </li>
-    /// <li> <p>If a resource becomes unavailable after a resolver caches a response, client software typically tries another of the IP addresses in the response.</p> </li>
-    /// </ul>
+    /// <p> <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple resources, such as web servers, create one multivalue answer record for each resource and specify <code>true</code> for <code>MultiValueAnswer</code>. Note the following:</p> 
+    /// <ul> 
+    /// <li> <p>If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to DNS queries with the corresponding IP address only when the health check is healthy.</p> </li> 
+    /// <li> <p>If you don't associate a health check with a multivalue answer record, Route 53 always considers the record to be healthy.</p> </li> 
+    /// <li> <p>Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy records, Route 53 responds to all DNS queries with all the healthy records.</p> </li> 
+    /// <li> <p>If you have more than eight healthy records, Route 53 responds to different DNS resolvers with different combinations of healthy records.</p> </li> 
+    /// <li> <p>When all records are unhealthy, Route 53 responds to DNS queries with up to eight unhealthy records.</p> </li> 
+    /// <li> <p>If a resource becomes unavailable after a resolver caches a response, client software typically tries another of the IP addresses in the response.</p> </li> 
+    /// </ul> 
     /// <p>You can't create multivalue answer alias records.</p>
     #[doc(hidden)]
     pub multi_value_answer: std::option::Option<bool>,
-    /// <p>The resource record cache time to live (TTL), in seconds. Note the following:</p>
-    /// <ul>
-    /// <li> <p>If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of <code>TTL</code> for the alias target. </p> </li>
-    /// <li> <p>If you're associating this resource record set with a health check (if you're adding a <code>HealthCheckId</code> element), we recommend that you specify a <code>TTL</code> of 60 seconds or less so clients respond quickly to changes in health status.</p> </li>
-    /// <li> <p>All of the resource record sets in a group of weighted resource record sets must have the same value for <code>TTL</code>.</p> </li>
-    /// <li> <p>If a group of weighted resource record sets includes one or more weighted alias resource record sets for which the alias target is an ELB load balancer, we recommend that you specify a <code>TTL</code> of 60 seconds for all of the non-alias weighted resource record sets that have the same name and type. Values other than 60 seconds (the TTL for load balancers) will change the effect of the values that you specify for <code>Weight</code>.</p> </li>
+    /// <p>The resource record cache time to live (TTL), in seconds. Note the following:</p> 
+    /// <ul> 
+    /// <li> <p>If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of <code>TTL</code> for the alias target. </p> </li> 
+    /// <li> <p>If you're associating this resource record set with a health check (if you're adding a <code>HealthCheckId</code> element), we recommend that you specify a <code>TTL</code> of 60 seconds or less so clients respond quickly to changes in health status.</p> </li> 
+    /// <li> <p>All of the resource record sets in a group of weighted resource record sets must have the same value for <code>TTL</code>.</p> </li> 
+    /// <li> <p>If a group of weighted resource record sets includes one or more weighted alias resource record sets for which the alias target is an ELB load balancer, we recommend that you specify a <code>TTL</code> of 60 seconds for all of the non-alias weighted resource record sets that have the same name and type. Values other than 60 seconds (the TTL for load balancers) will change the effect of the values that you specify for <code>Weight</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub ttl: std::option::Option<i64>,
-    /// <p>Information about the resource records to act upon.</p> <note>
-    /// <p>If you're creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
+    /// <p>Information about the resource records to act upon.</p> <note> 
+    /// <p>If you're creating an alias resource record set, omit <code>ResourceRecords</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub resource_records: std::option::Option<std::vec::Vec<crate::model::ResourceRecord>>,
-    /// <p> <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to. </p>
-    /// <p>If you're creating resource records sets for a private hosted zone, note the following:</p>
-    /// <ul>
-    /// <li> <p>You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> </li>
-    /// <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li>
+    /// <p> <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to. </p> 
+    /// <p>If you're creating resource records sets for a private hosted zone, note the following:</p> 
+    /// <ul> 
+    /// <li> <p>You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> </li> 
+    /// <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub alias_target: std::option::Option<crate::model::AliasTarget>,
-    /// <p>If you want Amazon Route 53 to return this resource record set in response to a DNS query only when the status of a health check is healthy, include the <code>HealthCheckId</code> element and specify the ID of the applicable health check.</p>
-    /// <p>Route 53 determines whether a resource record set is healthy based on one of the following:</p>
-    /// <ul>
-    /// <li> <p>By periodically sending a request to the endpoint that is specified in the health check</p> </li>
-    /// <li> <p>By aggregating the status of a specified group of health checks (calculated health checks)</p> </li>
-    /// <li> <p>By determining the current state of a CloudWatch alarm (CloudWatch metric health checks)</p> </li>
-    /// </ul> <important>
-    /// <p>Route 53 doesn't check the health of the endpoint that is specified in the resource record set, for example, the endpoint specified by the IP address in the <code>Value</code> element. When you add a <code>HealthCheckId</code> element to a resource record set, Route 53 checks the health of the endpoint that you specified in the health check. </p>
-    /// </important>
-    /// <p>For more information, see the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and DNS Failover</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> </p> </li>
-    /// </ul>
-    /// <p> <b>When to Specify HealthCheckId</b> </p>
-    /// <p>Specifying a value for <code>HealthCheckId</code> is useful only when Route 53 is choosing between two or more resource record sets to respond to a DNS query, and you want Route 53 to base the choice in part on the status of a health check. Configuring health checks makes sense only in the following configurations:</p>
-    /// <ul>
-    /// <li> <p> <b>Non-alias resource record sets</b>: You're checking the health of a group of non-alias resource record sets that have the same routing policy, name, and type (such as multiple weighted records named www.example.com with a type of A) and you specify health check IDs for all the resource record sets. </p> <p>If the health check status for a resource record set is healthy, Route 53 includes the record among the records that it responds to DNS queries with.</p> <p>If the health check status for a resource record set is unhealthy, Route 53 stops responding to DNS queries using the value for that resource record set.</p> <p>If the health check status for all resource record sets in the group is unhealthy, Route 53 considers all resource record sets in the group healthy and responds to DNS queries accordingly. </p> </li>
-    /// <li> <p> <b>Alias resource record sets</b>: You specify the following settings:</p>
-    /// <ul>
-    /// <li> <p>You set <code>EvaluateTargetHealth</code> to true for an alias resource record set in a group of resource record sets that have the same routing policy, name, and type (such as multiple weighted records named www.example.com with a type of A). </p> </li>
-    /// <li> <p>You configure the alias resource record set to route traffic to a non-alias resource record set in the same hosted zone.</p> </li>
-    /// <li> <p>You specify a health check ID for the non-alias resource record set. </p> </li>
-    /// </ul> <p>If the health check status is healthy, Route 53 considers the alias resource record set to be healthy and includes the alias record among the records that it responds to DNS queries with.</p> <p>If the health check status is unhealthy, Route 53 stops responding to DNS queries using the alias resource record set.</p> <note>
-    /// <p>The alias resource record set can also route traffic to a <i>group</i> of non-alias resource record sets that have the same routing policy, name, and type. In that configuration, associate health checks with all of the resource record sets in the group of non-alias resource record sets.</p>
-    /// </note> </li>
-    /// </ul>
-    /// <p> <b>Geolocation Routing</b> </p>
-    /// <p>For geolocation resource record sets, if an endpoint is unhealthy, Route 53 looks for a resource record set for the larger, associated geographic region. For example, suppose you have resource record sets for a state in the United States, for the entire United States, for North America, and a resource record set that has <code>*</code> for <code>CountryCode</code> is <code>*</code>, which applies to all locations. If the endpoint for the state resource record set is unhealthy, Route 53 checks for healthy resource record sets in the following order until it finds a resource record set for which the endpoint is healthy:</p>
-    /// <ul>
-    /// <li> <p>The United States</p> </li>
-    /// <li> <p>North America</p> </li>
-    /// <li> <p>The default resource record set</p> </li>
-    /// </ul>
-    /// <p> <b>Specifying the Health Check Endpoint by Domain Name</b> </p>
-    /// <p>If your health checks specify the endpoint only by domain name, we recommend that you create a separate health check for each endpoint. For example, create a health check for each <code>HTTP</code> server that is serving content for <code>www.example.com</code>. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as <code>us-east-2-www.example.com</code>), not the name of the resource record sets (<code>www.example.com</code>).</p> <important>
-    /// <p>Health check results will be unpredictable if you do the following:</p>
-    /// <ul>
-    /// <li> <p>Create a health check that has the same value for <code>FullyQualifiedDomainName</code> as the name of a resource record set.</p> </li>
-    /// <li> <p>Associate that health check with the resource record set.</p> </li>
-    /// </ul>
+    /// <p>If you want Amazon Route 53 to return this resource record set in response to a DNS query only when the status of a health check is healthy, include the <code>HealthCheckId</code> element and specify the ID of the applicable health check.</p> 
+    /// <p>Route 53 determines whether a resource record set is healthy based on one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>By periodically sending a request to the endpoint that is specified in the health check</p> </li> 
+    /// <li> <p>By aggregating the status of a specified group of health checks (calculated health checks)</p> </li> 
+    /// <li> <p>By determining the current state of a CloudWatch alarm (CloudWatch metric health checks)</p> </li> 
+    /// </ul> <important> 
+    /// <p>Route 53 doesn't check the health of the endpoint that is specified in the resource record set, for example, the endpoint specified by the IP address in the <code>Value</code> element. When you add a <code>HealthCheckId</code> element to a resource record set, Route 53 checks the health of the endpoint that you specified in the health check. </p> 
+    /// </important> 
+    /// <p>For more information, see the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p> 
+    /// <ul> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and DNS Failover</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> </p> </li> 
+    /// </ul> 
+    /// <p> <b>When to Specify HealthCheckId</b> </p> 
+    /// <p>Specifying a value for <code>HealthCheckId</code> is useful only when Route 53 is choosing between two or more resource record sets to respond to a DNS query, and you want Route 53 to base the choice in part on the status of a health check. Configuring health checks makes sense only in the following configurations:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Non-alias resource record sets</b>: You're checking the health of a group of non-alias resource record sets that have the same routing policy, name, and type (such as multiple weighted records named www.example.com with a type of A) and you specify health check IDs for all the resource record sets. </p> <p>If the health check status for a resource record set is healthy, Route 53 includes the record among the records that it responds to DNS queries with.</p> <p>If the health check status for a resource record set is unhealthy, Route 53 stops responding to DNS queries using the value for that resource record set.</p> <p>If the health check status for all resource record sets in the group is unhealthy, Route 53 considers all resource record sets in the group healthy and responds to DNS queries accordingly. </p> </li> 
+    /// <li> <p> <b>Alias resource record sets</b>: You specify the following settings:</p> 
+    /// <ul> 
+    /// <li> <p>You set <code>EvaluateTargetHealth</code> to true for an alias resource record set in a group of resource record sets that have the same routing policy, name, and type (such as multiple weighted records named www.example.com with a type of A). </p> </li> 
+    /// <li> <p>You configure the alias resource record set to route traffic to a non-alias resource record set in the same hosted zone.</p> </li> 
+    /// <li> <p>You specify a health check ID for the non-alias resource record set. </p> </li> 
+    /// </ul> <p>If the health check status is healthy, Route 53 considers the alias resource record set to be healthy and includes the alias record among the records that it responds to DNS queries with.</p> <p>If the health check status is unhealthy, Route 53 stops responding to DNS queries using the alias resource record set.</p> <note> 
+    /// <p>The alias resource record set can also route traffic to a <i>group</i> of non-alias resource record sets that have the same routing policy, name, and type. In that configuration, associate health checks with all of the resource record sets in the group of non-alias resource record sets.</p> 
+    /// </note> </li> 
+    /// </ul> 
+    /// <p> <b>Geolocation Routing</b> </p> 
+    /// <p>For geolocation resource record sets, if an endpoint is unhealthy, Route 53 looks for a resource record set for the larger, associated geographic region. For example, suppose you have resource record sets for a state in the United States, for the entire United States, for North America, and a resource record set that has <code>*</code> for <code>CountryCode</code> is <code>*</code>, which applies to all locations. If the endpoint for the state resource record set is unhealthy, Route 53 checks for healthy resource record sets in the following order until it finds a resource record set for which the endpoint is healthy:</p> 
+    /// <ul> 
+    /// <li> <p>The United States</p> </li> 
+    /// <li> <p>North America</p> </li> 
+    /// <li> <p>The default resource record set</p> </li> 
+    /// </ul> 
+    /// <p> <b>Specifying the Health Check Endpoint by Domain Name</b> </p> 
+    /// <p>If your health checks specify the endpoint only by domain name, we recommend that you create a separate health check for each endpoint. For example, create a health check for each <code>HTTP</code> server that is serving content for <code>www.example.com</code>. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as <code>us-east-2-www.example.com</code>), not the name of the resource record sets (<code>www.example.com</code>).</p> <important> 
+    /// <p>Health check results will be unpredictable if you do the following:</p> 
+    /// <ul> 
+    /// <li> <p>Create a health check that has the same value for <code>FullyQualifiedDomainName</code> as the name of a resource record set.</p> </li> 
+    /// <li> <p>Associate that health check with the resource record set.</p> </li> 
+    /// </ul> 
     /// </important>
     #[doc(hidden)]
     pub health_check_id: std::option::Option<std::string::String>,
-    /// <p>When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Route 53 created this resource record set for.</p> <important>
-    /// <p>To delete the resource record set that is associated with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p>
+    /// <p>When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Route 53 created this resource record set for.</p> <important> 
+    /// <p>To delete the resource record set that is associated with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p> 
     /// </important>
     #[doc(hidden)]
     pub traffic_policy_instance_id: std::option::Option<std::string::String>,
-    /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p>
+    /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p> 
     /// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
     #[doc(hidden)]
     pub cidr_routing_config: std::option::Option<crate::model::CidrRoutingConfig>,
 }
 impl ResourceRecordSet {
-    /// <p>For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.</p>
-    /// <p> <b>ChangeResourceRecordSets Only</b> </p>
-    /// <p>Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include a trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you specify is fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a trailing dot) and <code>www.example.com.</code> (with a trailing dot) as identical.</p>
-    /// <p>For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// <p>You can use the asterisk (*) wildcard to replace the leftmost label in a domain name, for example, <code>*.example.com</code>. Note the following:</p>
-    /// <ul>
-    /// <li> <p>The * must replace the entire label. For example, you can't specify <code>*prod.example.com</code> or <code>prod*.example.com</code>.</p> </li>
-    /// <li> <p>The * can't replace any of the middle labels, for example, marketing.*.example.com.</p> </li>
-    /// <li> <p>If you include * in any position other than the leftmost label in a domain name, DNS treats it as an * character (ASCII 42), not as a wildcard.</p> <important>
-    /// <p>You can't use the * wildcard for resource records sets that have a type of NS.</p>
-    /// </important> </li>
-    /// </ul>
+    /// <p>For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.</p> 
+    /// <p> <b>ChangeResourceRecordSets Only</b> </p> 
+    /// <p>Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include a trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you specify is fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a trailing dot) and <code>www.example.com.</code> (with a trailing dot) as identical.</p> 
+    /// <p>For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
+    /// <p>You can use the asterisk (*) wildcard to replace the leftmost label in a domain name, for example, <code>*.example.com</code>. Note the following:</p> 
+    /// <ul> 
+    /// <li> <p>The * must replace the entire label. For example, you can't specify <code>*prod.example.com</code> or <code>prod*.example.com</code>.</p> </li> 
+    /// <li> <p>The * can't replace any of the middle labels, for example, marketing.*.example.com.</p> </li> 
+    /// <li> <p>If you include * in any position other than the leftmost label in a domain name, DNS treats it as an * character (ASCII 42), not as a wildcard.</p> <important> 
+    /// <p>You can't use the * wildcard for resource records sets that have a type of NS.</p> 
+    /// </important> </li> 
+    /// </ul> 
     /// <p>You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The DNS record type. For information about different record types and how data is encoded for them, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
-    /// <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the resource record sets in the group.</p>
-    /// <p>Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <note>
-    /// <p>SPF records were formerly used to verify the identity of the sender of email messages. However, we no longer recommend that you create resource record sets for which the value of <code>Type</code> is <code>SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email, Version 1</i>, has been updated to say, "...[I]ts existence and mechanism defined in [RFC4408] have led to some interoperability issues. Accordingly, its use is no longer appropriate for SPF version 1; implementations are not to use it." In RFC 7208, see section 14.1, <a href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record Type</a>.</p>
-    /// </note>
-    /// <p>Values for alias resource record sets:</p>
-    /// <ul>
-    /// <li> <p> <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code> </p> </li>
-    /// <li> <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled for the distribution, create two resource record sets to route traffic to your distribution, one with a value of <code>A</code> and one with a value of <code>AAAA</code>. </p> </li>
-    /// <li> <p> <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code> </p> </li>
-    /// <li> <p> <b>ELB load balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li>
-    /// <li> <p> <b>Amazon S3 buckets:</b> <code>A</code> </p> </li>
-    /// <li> <p> <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code> </p> </li>
-    /// <li> <p> <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.</p> <note>
-    /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p>
-    /// </note> </li>
+    /// <p>The DNS record type. For information about different record types and how data is encoded for them, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
+    /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> 
+    /// <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the resource record sets in the group.</p> 
+    /// <p>Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <note> 
+    /// <p>SPF records were formerly used to verify the identity of the sender of email messages. However, we no longer recommend that you create resource record sets for which the value of <code>Type</code> is <code>SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email, Version 1</i>, has been updated to say, "...[I]ts existence and mechanism defined in [RFC4408] have led to some interoperability issues. Accordingly, its use is no longer appropriate for SPF version 1; implementations are not to use it." In RFC 7208, see section 14.1, <a href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record Type</a>.</p> 
+    /// </note> 
+    /// <p>Values for alias resource record sets:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code> </p> </li> 
+    /// <li> <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled for the distribution, create two resource record sets to route traffic to your distribution, one with a value of <code>A</code> and one with a value of <code>AAAA</code>. </p> </li> 
+    /// <li> <p> <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code> </p> </li> 
+    /// <li> <p> <b>ELB load balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li> 
+    /// <li> <p> <b>Amazon S3 buckets:</b> <code>A</code> </p> </li> 
+    /// <li> <p> <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code> </p> </li> 
+    /// <li> <p> <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.</p> <note> 
+    /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p> 
+    /// </note> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::RrType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::RrType> {
         self.r#type.as_ref()
     }
-    /// <p> <i>Resource record sets that have a routing policy other than simple:</i> An identifier that differentiates among multiple resource record sets that have the same combination of name and type, such as multiple weighted resource record sets named acme.example.com that have a type of A. In a group of resource record sets that have the same name and type, the value of <code>SetIdentifier</code> must be unique for each resource record set. </p>
+    /// <p> <i>Resource record sets that have a routing policy other than simple:</i> An identifier that differentiates among multiple resource record sets that have the same combination of name and type, such as multiple weighted resource record sets named acme.example.com that have a type of A. In a group of resource record sets that have the same name and type, the value of <code>SetIdentifier</code> must be unique for each resource record set. </p> 
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    pub fn set_identifier(&self) -> std::option::Option<&str> {
+    pub fn set_identifier(&self) -> std::option::Option<& str> {
         self.set_identifier.as_deref()
     }
-    /// <p> <i>Weighted resource record sets only:</i> Among resource record sets that have the same combination of DNS name and type, a value that determines the proportion of DNS queries that Amazon Route 53 responds to using the current resource record set. Route 53 calculates the sum of the weights for the resource record sets that have the same combination of DNS name and type. Route 53 then responds to queries based on the ratio of a resource's weight to the total. Note the following:</p>
-    /// <ul>
-    /// <li> <p>You must specify a value for the <code>Weight</code> element for every weighted resource record set.</p> </li>
-    /// <li> <p>You can only specify one <code>ResourceRecord</code> per weighted resource record set.</p> </li>
-    /// <li> <p>You can't create latency, failover, or geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as weighted resource record sets.</p> </li>
-    /// <li> <p>You can create a maximum of 100 weighted resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p> </li>
-    /// <li> <p>For weighted (but not weighted alias) resource record sets, if you set <code>Weight</code> to <code>0</code> for a resource record set, Route 53 never responds to queries with the applicable value for that resource record set. However, if you set <code>Weight</code> to <code>0</code> for all resource record sets that have the same combination of DNS name and type, traffic is routed to all resources with equal probability.</p> <p>The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks with weighted resource record sets. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li>
+    /// <p> <i>Weighted resource record sets only:</i> Among resource record sets that have the same combination of DNS name and type, a value that determines the proportion of DNS queries that Amazon Route 53 responds to using the current resource record set. Route 53 calculates the sum of the weights for the resource record sets that have the same combination of DNS name and type. Route 53 then responds to queries based on the ratio of a resource's weight to the total. Note the following:</p> 
+    /// <ul> 
+    /// <li> <p>You must specify a value for the <code>Weight</code> element for every weighted resource record set.</p> </li> 
+    /// <li> <p>You can only specify one <code>ResourceRecord</code> per weighted resource record set.</p> </li> 
+    /// <li> <p>You can't create latency, failover, or geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as weighted resource record sets.</p> </li> 
+    /// <li> <p>You can create a maximum of 100 weighted resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p> </li> 
+    /// <li> <p>For weighted (but not weighted alias) resource record sets, if you set <code>Weight</code> to <code>0</code> for a resource record set, Route 53 never responds to queries with the applicable value for that resource record set. However, if you set <code>Weight</code> to <code>0</code> for all resource record sets that have the same combination of DNS name and type, traffic is routed to all resources with equal probability.</p> <p>The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks with weighted resource record sets. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li> 
     /// </ul>
     pub fn weight(&self) -> std::option::Option<i64> {
         self.weight
     }
-    /// <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.</p>
-    /// <p>When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected resource record set.</p>
-    /// <p>Note the following:</p>
-    /// <ul>
-    /// <li> <p>You can only specify one <code>ResourceRecord</code> per latency resource record set.</p> </li>
-    /// <li> <p>You can only create one latency resource record set for each Amazon EC2 Region.</p> </li>
-    /// <li> <p>You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will choose the region with the best latency from among the regions that you create latency resource record sets for.</p> </li>
-    /// <li> <p>You can't create non-latency resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as latency resource record sets.</p> </li>
+    /// <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.</p> 
+    /// <p>When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected resource record set.</p> 
+    /// <p>Note the following:</p> 
+    /// <ul> 
+    /// <li> <p>You can only specify one <code>ResourceRecord</code> per latency resource record set.</p> </li> 
+    /// <li> <p>You can only create one latency resource record set for each Amazon EC2 Region.</p> </li> 
+    /// <li> <p>You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will choose the region with the best latency from among the regions that you create latency resource record sets for.</p> </li> 
+    /// <li> <p>You can't create non-latency resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as latency resource record sets.</p> </li> 
     /// </ul>
-    pub fn region(&self) -> std::option::Option<&crate::model::ResourceRecordSetRegion> {
+    pub fn region(&self) -> std::option::Option<& crate::model::ResourceRecordSetRegion> {
         self.region.as_ref()
     }
-    /// <p> <i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p> <note>
-    /// <p>Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed, it's not supported.</p>
-    /// </note>
-    /// <p>If you create separate resource record sets for overlapping geographic regions (for example, one resource record set for a continent and one for a country on the same continent), priority goes to the smallest geographic region. This allows you to route most queries for a continent to one resource and to route queries for a country on that continent to a different resource.</p>
-    /// <p>You can't create two geolocation resource record sets that specify the same geographic location.</p>
-    /// <p>The value <code>*</code> in the <code>CountryCode</code> element matches all geographic locations that aren't specified in other geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p> <important>
-    /// <p>Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will receive some DNS queries from locations that it can't identify. We recommend that you create a resource record set for which the value of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to the resource that you specify in this record: queries that come from locations for which you haven't created geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those locations.</p>
-    /// </important>
+    /// <p> <i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p> <note> 
+    /// <p>Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed, it's not supported.</p> 
+    /// </note> 
+    /// <p>If you create separate resource record sets for overlapping geographic regions (for example, one resource record set for a continent and one for a country on the same continent), priority goes to the smallest geographic region. This allows you to route most queries for a continent to one resource and to route queries for a country on that continent to a different resource.</p> 
+    /// <p>You can't create two geolocation resource record sets that specify the same geographic location.</p> 
+    /// <p>The value <code>*</code> in the <code>CountryCode</code> element matches all geographic locations that aren't specified in other geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p> <important> 
+    /// <p>Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will receive some DNS queries from locations that it can't identify. We recommend that you create a resource record set for which the value of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to the resource that you specify in this record: queries that come from locations for which you haven't created geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those locations.</p> 
+    /// </important> 
     /// <p>You can't create non-geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as geolocation resource record sets.</p>
-    pub fn geo_location(&self) -> std::option::Option<&crate::model::GeoLocation> {
+    pub fn geo_location(&self) -> std::option::Option<& crate::model::GeoLocation> {
         self.geo_location.as_ref()
     }
-    /// <p> <i>Failover resource record sets only:</i> To configure failover, you add the <code>Failover</code> element to two resource record sets. For one resource record set, you specify <code>PRIMARY</code> as the value for <code>Failover</code>; for the other resource record set, you specify <code>SECONDARY</code>. In addition, you include the <code>HealthCheckId</code> element and specify the health check that you want Amazon Route 53 to perform for each resource record set.</p>
-    /// <p>Except where noted, the following failover behaviors assume that you have included the <code>HealthCheckId</code> element in both resource record sets:</p>
-    /// <ul>
-    /// <li> <p>When the primary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from the primary resource record set regardless of the health of the secondary resource record set.</p> </li>
-    /// <li> <p>When the primary resource record set is unhealthy and the secondary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from the secondary resource record set.</p> </li>
-    /// <li> <p>When the secondary resource record set is unhealthy, Route 53 responds to DNS queries with the applicable value from the primary resource record set regardless of the health of the primary resource record set.</p> </li>
-    /// <li> <p>If you omit the <code>HealthCheckId</code> element for the secondary resource record set, and if the primary resource record set is unhealthy, Route 53 always responds to DNS queries with the applicable value from the secondary resource record set. This is true regardless of the health of the associated endpoint.</p> </li>
+    /// <p> <i>Failover resource record sets only:</i> To configure failover, you add the <code>Failover</code> element to two resource record sets. For one resource record set, you specify <code>PRIMARY</code> as the value for <code>Failover</code>; for the other resource record set, you specify <code>SECONDARY</code>. In addition, you include the <code>HealthCheckId</code> element and specify the health check that you want Amazon Route 53 to perform for each resource record set.</p> 
+    /// <p>Except where noted, the following failover behaviors assume that you have included the <code>HealthCheckId</code> element in both resource record sets:</p> 
+    /// <ul> 
+    /// <li> <p>When the primary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from the primary resource record set regardless of the health of the secondary resource record set.</p> </li> 
+    /// <li> <p>When the primary resource record set is unhealthy and the secondary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from the secondary resource record set.</p> </li> 
+    /// <li> <p>When the secondary resource record set is unhealthy, Route 53 responds to DNS queries with the applicable value from the primary resource record set regardless of the health of the primary resource record set.</p> </li> 
+    /// <li> <p>If you omit the <code>HealthCheckId</code> element for the secondary resource record set, and if the primary resource record set is unhealthy, Route 53 always responds to DNS queries with the applicable value from the secondary resource record set. This is true regardless of the health of the associated endpoint.</p> </li> 
+    /// </ul> 
+    /// <p>You can't create non-failover resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as failover resource record sets.</p> 
+    /// <p>For failover alias resource record sets, you must also include the <code>EvaluateTargetHealth</code> element and set the value to true.</p> 
+    /// <p>For more information about configuring failover for Route 53, see the following topics in the <i>Amazon Route 53 Developer Guide</i>: </p> 
+    /// <ul> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and DNS Failover</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> </p> </li> 
     /// </ul>
-    /// <p>You can't create non-failover resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as failover resource record sets.</p>
-    /// <p>For failover alias resource record sets, you must also include the <code>EvaluateTargetHealth</code> element and set the value to true.</p>
-    /// <p>For more information about configuring failover for Route 53, see the following topics in the <i>Amazon Route 53 Developer Guide</i>: </p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and DNS Failover</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> </p> </li>
-    /// </ul>
-    pub fn failover(&self) -> std::option::Option<&crate::model::ResourceRecordSetFailover> {
+    pub fn failover(&self) -> std::option::Option<& crate::model::ResourceRecordSetFailover> {
         self.failover.as_ref()
     }
-    /// <p> <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple resources, such as web servers, create one multivalue answer record for each resource and specify <code>true</code> for <code>MultiValueAnswer</code>. Note the following:</p>
-    /// <ul>
-    /// <li> <p>If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to DNS queries with the corresponding IP address only when the health check is healthy.</p> </li>
-    /// <li> <p>If you don't associate a health check with a multivalue answer record, Route 53 always considers the record to be healthy.</p> </li>
-    /// <li> <p>Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy records, Route 53 responds to all DNS queries with all the healthy records.</p> </li>
-    /// <li> <p>If you have more than eight healthy records, Route 53 responds to different DNS resolvers with different combinations of healthy records.</p> </li>
-    /// <li> <p>When all records are unhealthy, Route 53 responds to DNS queries with up to eight unhealthy records.</p> </li>
-    /// <li> <p>If a resource becomes unavailable after a resolver caches a response, client software typically tries another of the IP addresses in the response.</p> </li>
-    /// </ul>
+    /// <p> <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple resources, such as web servers, create one multivalue answer record for each resource and specify <code>true</code> for <code>MultiValueAnswer</code>. Note the following:</p> 
+    /// <ul> 
+    /// <li> <p>If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to DNS queries with the corresponding IP address only when the health check is healthy.</p> </li> 
+    /// <li> <p>If you don't associate a health check with a multivalue answer record, Route 53 always considers the record to be healthy.</p> </li> 
+    /// <li> <p>Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy records, Route 53 responds to all DNS queries with all the healthy records.</p> </li> 
+    /// <li> <p>If you have more than eight healthy records, Route 53 responds to different DNS resolvers with different combinations of healthy records.</p> </li> 
+    /// <li> <p>When all records are unhealthy, Route 53 responds to DNS queries with up to eight unhealthy records.</p> </li> 
+    /// <li> <p>If a resource becomes unavailable after a resolver caches a response, client software typically tries another of the IP addresses in the response.</p> </li> 
+    /// </ul> 
     /// <p>You can't create multivalue answer alias records.</p>
     pub fn multi_value_answer(&self) -> std::option::Option<bool> {
         self.multi_value_answer
     }
-    /// <p>The resource record cache time to live (TTL), in seconds. Note the following:</p>
-    /// <ul>
-    /// <li> <p>If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of <code>TTL</code> for the alias target. </p> </li>
-    /// <li> <p>If you're associating this resource record set with a health check (if you're adding a <code>HealthCheckId</code> element), we recommend that you specify a <code>TTL</code> of 60 seconds or less so clients respond quickly to changes in health status.</p> </li>
-    /// <li> <p>All of the resource record sets in a group of weighted resource record sets must have the same value for <code>TTL</code>.</p> </li>
-    /// <li> <p>If a group of weighted resource record sets includes one or more weighted alias resource record sets for which the alias target is an ELB load balancer, we recommend that you specify a <code>TTL</code> of 60 seconds for all of the non-alias weighted resource record sets that have the same name and type. Values other than 60 seconds (the TTL for load balancers) will change the effect of the values that you specify for <code>Weight</code>.</p> </li>
+    /// <p>The resource record cache time to live (TTL), in seconds. Note the following:</p> 
+    /// <ul> 
+    /// <li> <p>If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of <code>TTL</code> for the alias target. </p> </li> 
+    /// <li> <p>If you're associating this resource record set with a health check (if you're adding a <code>HealthCheckId</code> element), we recommend that you specify a <code>TTL</code> of 60 seconds or less so clients respond quickly to changes in health status.</p> </li> 
+    /// <li> <p>All of the resource record sets in a group of weighted resource record sets must have the same value for <code>TTL</code>.</p> </li> 
+    /// <li> <p>If a group of weighted resource record sets includes one or more weighted alias resource record sets for which the alias target is an ELB load balancer, we recommend that you specify a <code>TTL</code> of 60 seconds for all of the non-alias weighted resource record sets that have the same name and type. Values other than 60 seconds (the TTL for load balancers) will change the effect of the values that you specify for <code>Weight</code>.</p> </li> 
     /// </ul>
     pub fn ttl(&self) -> std::option::Option<i64> {
         self.ttl
     }
-    /// <p>Information about the resource records to act upon.</p> <note>
-    /// <p>If you're creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
+    /// <p>Information about the resource records to act upon.</p> <note> 
+    /// <p>If you're creating an alias resource record set, omit <code>ResourceRecords</code>.</p> 
     /// </note>
-    pub fn resource_records(&self) -> std::option::Option<&[crate::model::ResourceRecord]> {
+    pub fn resource_records(&self) -> std::option::Option<& [crate::model::ResourceRecord]> {
         self.resource_records.as_deref()
     }
-    /// <p> <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to. </p>
-    /// <p>If you're creating resource records sets for a private hosted zone, note the following:</p>
-    /// <ul>
-    /// <li> <p>You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> </li>
-    /// <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li>
+    /// <p> <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to. </p> 
+    /// <p>If you're creating resource records sets for a private hosted zone, note the following:</p> 
+    /// <ul> 
+    /// <li> <p>You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> </li> 
+    /// <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li> 
     /// </ul>
-    pub fn alias_target(&self) -> std::option::Option<&crate::model::AliasTarget> {
+    pub fn alias_target(&self) -> std::option::Option<& crate::model::AliasTarget> {
         self.alias_target.as_ref()
     }
-    /// <p>If you want Amazon Route 53 to return this resource record set in response to a DNS query only when the status of a health check is healthy, include the <code>HealthCheckId</code> element and specify the ID of the applicable health check.</p>
-    /// <p>Route 53 determines whether a resource record set is healthy based on one of the following:</p>
-    /// <ul>
-    /// <li> <p>By periodically sending a request to the endpoint that is specified in the health check</p> </li>
-    /// <li> <p>By aggregating the status of a specified group of health checks (calculated health checks)</p> </li>
-    /// <li> <p>By determining the current state of a CloudWatch alarm (CloudWatch metric health checks)</p> </li>
-    /// </ul> <important>
-    /// <p>Route 53 doesn't check the health of the endpoint that is specified in the resource record set, for example, the endpoint specified by the IP address in the <code>Value</code> element. When you add a <code>HealthCheckId</code> element to a resource record set, Route 53 checks the health of the endpoint that you specified in the health check. </p>
+    /// <p>If you want Amazon Route 53 to return this resource record set in response to a DNS query only when the status of a health check is healthy, include the <code>HealthCheckId</code> element and specify the ID of the applicable health check.</p> 
+    /// <p>Route 53 determines whether a resource record set is healthy based on one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>By periodically sending a request to the endpoint that is specified in the health check</p> </li> 
+    /// <li> <p>By aggregating the status of a specified group of health checks (calculated health checks)</p> </li> 
+    /// <li> <p>By determining the current state of a CloudWatch alarm (CloudWatch metric health checks)</p> </li> 
+    /// </ul> <important> 
+    /// <p>Route 53 doesn't check the health of the endpoint that is specified in the resource record set, for example, the endpoint specified by the IP address in the <code>Value</code> element. When you add a <code>HealthCheckId</code> element to a resource record set, Route 53 checks the health of the endpoint that you specified in the health check. </p> 
+    /// </important> 
+    /// <p>For more information, see the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p> 
+    /// <ul> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and DNS Failover</a> </p> </li> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> </p> </li> 
+    /// </ul> 
+    /// <p> <b>When to Specify HealthCheckId</b> </p> 
+    /// <p>Specifying a value for <code>HealthCheckId</code> is useful only when Route 53 is choosing between two or more resource record sets to respond to a DNS query, and you want Route 53 to base the choice in part on the status of a health check. Configuring health checks makes sense only in the following configurations:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Non-alias resource record sets</b>: You're checking the health of a group of non-alias resource record sets that have the same routing policy, name, and type (such as multiple weighted records named www.example.com with a type of A) and you specify health check IDs for all the resource record sets. </p> <p>If the health check status for a resource record set is healthy, Route 53 includes the record among the records that it responds to DNS queries with.</p> <p>If the health check status for a resource record set is unhealthy, Route 53 stops responding to DNS queries using the value for that resource record set.</p> <p>If the health check status for all resource record sets in the group is unhealthy, Route 53 considers all resource record sets in the group healthy and responds to DNS queries accordingly. </p> </li> 
+    /// <li> <p> <b>Alias resource record sets</b>: You specify the following settings:</p> 
+    /// <ul> 
+    /// <li> <p>You set <code>EvaluateTargetHealth</code> to true for an alias resource record set in a group of resource record sets that have the same routing policy, name, and type (such as multiple weighted records named www.example.com with a type of A). </p> </li> 
+    /// <li> <p>You configure the alias resource record set to route traffic to a non-alias resource record set in the same hosted zone.</p> </li> 
+    /// <li> <p>You specify a health check ID for the non-alias resource record set. </p> </li> 
+    /// </ul> <p>If the health check status is healthy, Route 53 considers the alias resource record set to be healthy and includes the alias record among the records that it responds to DNS queries with.</p> <p>If the health check status is unhealthy, Route 53 stops responding to DNS queries using the alias resource record set.</p> <note> 
+    /// <p>The alias resource record set can also route traffic to a <i>group</i> of non-alias resource record sets that have the same routing policy, name, and type. In that configuration, associate health checks with all of the resource record sets in the group of non-alias resource record sets.</p> 
+    /// </note> </li> 
+    /// </ul> 
+    /// <p> <b>Geolocation Routing</b> </p> 
+    /// <p>For geolocation resource record sets, if an endpoint is unhealthy, Route 53 looks for a resource record set for the larger, associated geographic region. For example, suppose you have resource record sets for a state in the United States, for the entire United States, for North America, and a resource record set that has <code>*</code> for <code>CountryCode</code> is <code>*</code>, which applies to all locations. If the endpoint for the state resource record set is unhealthy, Route 53 checks for healthy resource record sets in the following order until it finds a resource record set for which the endpoint is healthy:</p> 
+    /// <ul> 
+    /// <li> <p>The United States</p> </li> 
+    /// <li> <p>North America</p> </li> 
+    /// <li> <p>The default resource record set</p> </li> 
+    /// </ul> 
+    /// <p> <b>Specifying the Health Check Endpoint by Domain Name</b> </p> 
+    /// <p>If your health checks specify the endpoint only by domain name, we recommend that you create a separate health check for each endpoint. For example, create a health check for each <code>HTTP</code> server that is serving content for <code>www.example.com</code>. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as <code>us-east-2-www.example.com</code>), not the name of the resource record sets (<code>www.example.com</code>).</p> <important> 
+    /// <p>Health check results will be unpredictable if you do the following:</p> 
+    /// <ul> 
+    /// <li> <p>Create a health check that has the same value for <code>FullyQualifiedDomainName</code> as the name of a resource record set.</p> </li> 
+    /// <li> <p>Associate that health check with the resource record set.</p> </li> 
+    /// </ul> 
     /// </important>
-    /// <p>For more information, see the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and DNS Failover</a> </p> </li>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> </p> </li>
-    /// </ul>
-    /// <p> <b>When to Specify HealthCheckId</b> </p>
-    /// <p>Specifying a value for <code>HealthCheckId</code> is useful only when Route 53 is choosing between two or more resource record sets to respond to a DNS query, and you want Route 53 to base the choice in part on the status of a health check. Configuring health checks makes sense only in the following configurations:</p>
-    /// <ul>
-    /// <li> <p> <b>Non-alias resource record sets</b>: You're checking the health of a group of non-alias resource record sets that have the same routing policy, name, and type (such as multiple weighted records named www.example.com with a type of A) and you specify health check IDs for all the resource record sets. </p> <p>If the health check status for a resource record set is healthy, Route 53 includes the record among the records that it responds to DNS queries with.</p> <p>If the health check status for a resource record set is unhealthy, Route 53 stops responding to DNS queries using the value for that resource record set.</p> <p>If the health check status for all resource record sets in the group is unhealthy, Route 53 considers all resource record sets in the group healthy and responds to DNS queries accordingly. </p> </li>
-    /// <li> <p> <b>Alias resource record sets</b>: You specify the following settings:</p>
-    /// <ul>
-    /// <li> <p>You set <code>EvaluateTargetHealth</code> to true for an alias resource record set in a group of resource record sets that have the same routing policy, name, and type (such as multiple weighted records named www.example.com with a type of A). </p> </li>
-    /// <li> <p>You configure the alias resource record set to route traffic to a non-alias resource record set in the same hosted zone.</p> </li>
-    /// <li> <p>You specify a health check ID for the non-alias resource record set. </p> </li>
-    /// </ul> <p>If the health check status is healthy, Route 53 considers the alias resource record set to be healthy and includes the alias record among the records that it responds to DNS queries with.</p> <p>If the health check status is unhealthy, Route 53 stops responding to DNS queries using the alias resource record set.</p> <note>
-    /// <p>The alias resource record set can also route traffic to a <i>group</i> of non-alias resource record sets that have the same routing policy, name, and type. In that configuration, associate health checks with all of the resource record sets in the group of non-alias resource record sets.</p>
-    /// </note> </li>
-    /// </ul>
-    /// <p> <b>Geolocation Routing</b> </p>
-    /// <p>For geolocation resource record sets, if an endpoint is unhealthy, Route 53 looks for a resource record set for the larger, associated geographic region. For example, suppose you have resource record sets for a state in the United States, for the entire United States, for North America, and a resource record set that has <code>*</code> for <code>CountryCode</code> is <code>*</code>, which applies to all locations. If the endpoint for the state resource record set is unhealthy, Route 53 checks for healthy resource record sets in the following order until it finds a resource record set for which the endpoint is healthy:</p>
-    /// <ul>
-    /// <li> <p>The United States</p> </li>
-    /// <li> <p>North America</p> </li>
-    /// <li> <p>The default resource record set</p> </li>
-    /// </ul>
-    /// <p> <b>Specifying the Health Check Endpoint by Domain Name</b> </p>
-    /// <p>If your health checks specify the endpoint only by domain name, we recommend that you create a separate health check for each endpoint. For example, create a health check for each <code>HTTP</code> server that is serving content for <code>www.example.com</code>. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as <code>us-east-2-www.example.com</code>), not the name of the resource record sets (<code>www.example.com</code>).</p> <important>
-    /// <p>Health check results will be unpredictable if you do the following:</p>
-    /// <ul>
-    /// <li> <p>Create a health check that has the same value for <code>FullyQualifiedDomainName</code> as the name of a resource record set.</p> </li>
-    /// <li> <p>Associate that health check with the resource record set.</p> </li>
-    /// </ul>
-    /// </important>
-    pub fn health_check_id(&self) -> std::option::Option<&str> {
+    pub fn health_check_id(&self) -> std::option::Option<& str> {
         self.health_check_id.as_deref()
     }
-    /// <p>When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Route 53 created this resource record set for.</p> <important>
-    /// <p>To delete the resource record set that is associated with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p>
+    /// <p>When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Route 53 created this resource record set for.</p> <important> 
+    /// <p>To delete the resource record set that is associated with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p> 
     /// </important>
-    pub fn traffic_policy_instance_id(&self) -> std::option::Option<&str> {
+    pub fn traffic_policy_instance_id(&self) -> std::option::Option<& str> {
         self.traffic_policy_instance_id.as_deref()
     }
-    /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p>
+    /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p> 
     /// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
-    pub fn cidr_routing_config(&self) -> std::option::Option<&crate::model::CidrRoutingConfig> {
+    pub fn cidr_routing_config(&self) -> std::option::Option<& crate::model::CidrRoutingConfig> {
         self.cidr_routing_config.as_ref()
     }
 }
 /// See [`ResourceRecordSet`](crate::model::ResourceRecordSet).
 pub mod resource_record_set {
-
+    
     /// A builder for [`ResourceRecordSet`](crate::model::ResourceRecordSet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4360,475 +4119,449 @@ pub mod resource_record_set {
         pub(crate) failover: std::option::Option<crate::model::ResourceRecordSetFailover>,
         pub(crate) multi_value_answer: std::option::Option<bool>,
         pub(crate) ttl: std::option::Option<i64>,
-        pub(crate) resource_records:
-            std::option::Option<std::vec::Vec<crate::model::ResourceRecord>>,
+        pub(crate) resource_records: std::option::Option<std::vec::Vec<crate::model::ResourceRecord>>,
         pub(crate) alias_target: std::option::Option<crate::model::AliasTarget>,
         pub(crate) health_check_id: std::option::Option<std::string::String>,
         pub(crate) traffic_policy_instance_id: std::option::Option<std::string::String>,
         pub(crate) cidr_routing_config: std::option::Option<crate::model::CidrRoutingConfig>,
     }
     impl Builder {
-        /// <p>For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.</p>
-        /// <p> <b>ChangeResourceRecordSets Only</b> </p>
-        /// <p>Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include a trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you specify is fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a trailing dot) and <code>www.example.com.</code> (with a trailing dot) as identical.</p>
-        /// <p>For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-        /// <p>You can use the asterisk (*) wildcard to replace the leftmost label in a domain name, for example, <code>*.example.com</code>. Note the following:</p>
-        /// <ul>
-        /// <li> <p>The * must replace the entire label. For example, you can't specify <code>*prod.example.com</code> or <code>prod*.example.com</code>.</p> </li>
-        /// <li> <p>The * can't replace any of the middle labels, for example, marketing.*.example.com.</p> </li>
-        /// <li> <p>If you include * in any position other than the leftmost label in a domain name, DNS treats it as an * character (ASCII 42), not as a wildcard.</p> <important>
-        /// <p>You can't use the * wildcard for resource records sets that have a type of NS.</p>
-        /// </important> </li>
-        /// </ul>
+        /// <p>For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.</p> 
+        /// <p> <b>ChangeResourceRecordSets Only</b> </p> 
+        /// <p>Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include a trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you specify is fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a trailing dot) and <code>www.example.com.</code> (with a trailing dot) as identical.</p> 
+        /// <p>For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
+        /// <p>You can use the asterisk (*) wildcard to replace the leftmost label in a domain name, for example, <code>*.example.com</code>. Note the following:</p> 
+        /// <ul> 
+        /// <li> <p>The * must replace the entire label. For example, you can't specify <code>*prod.example.com</code> or <code>prod*.example.com</code>.</p> </li> 
+        /// <li> <p>The * can't replace any of the middle labels, for example, marketing.*.example.com.</p> </li> 
+        /// <li> <p>If you include * in any position other than the leftmost label in a domain name, DNS treats it as an * character (ASCII 42), not as a wildcard.</p> <important> 
+        /// <p>You can't use the * wildcard for resource records sets that have a type of NS.</p> 
+        /// </important> </li> 
+        /// </ul> 
         /// <p>You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.</p>
-        /// <p> <b>ChangeResourceRecordSets Only</b> </p>
-        /// <p>Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include a trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you specify is fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a trailing dot) and <code>www.example.com.</code> (with a trailing dot) as identical.</p>
-        /// <p>For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-        /// <p>You can use the asterisk (*) wildcard to replace the leftmost label in a domain name, for example, <code>*.example.com</code>. Note the following:</p>
-        /// <ul>
-        /// <li> <p>The * must replace the entire label. For example, you can't specify <code>*prod.example.com</code> or <code>prod*.example.com</code>.</p> </li>
-        /// <li> <p>The * can't replace any of the middle labels, for example, marketing.*.example.com.</p> </li>
-        /// <li> <p>If you include * in any position other than the leftmost label in a domain name, DNS treats it as an * character (ASCII 42), not as a wildcard.</p> <important>
-        /// <p>You can't use the * wildcard for resource records sets that have a type of NS.</p>
-        /// </important> </li>
-        /// </ul>
+        /// <p>For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.</p> 
+        /// <p> <b>ChangeResourceRecordSets Only</b> </p> 
+        /// <p>Enter a fully qualified domain name, for example, <code>www.example.com</code>. You can optionally include a trailing dot. If you omit the trailing dot, Amazon Route 53 assumes that the domain name that you specify is fully qualified. This means that Route 53 treats <code>www.example.com</code> (without a trailing dot) and <code>www.example.com.</code> (with a trailing dot) as identical.</p> 
+        /// <p>For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
+        /// <p>You can use the asterisk (*) wildcard to replace the leftmost label in a domain name, for example, <code>*.example.com</code>. Note the following:</p> 
+        /// <ul> 
+        /// <li> <p>The * must replace the entire label. For example, you can't specify <code>*prod.example.com</code> or <code>prod*.example.com</code>.</p> </li> 
+        /// <li> <p>The * can't replace any of the middle labels, for example, marketing.*.example.com.</p> </li> 
+        /// <li> <p>If you include * in any position other than the leftmost label in a domain name, DNS treats it as an * character (ASCII 42), not as a wildcard.</p> <important> 
+        /// <p>You can't use the * wildcard for resource records sets that have a type of NS.</p> 
+        /// </important> </li> 
+        /// </ul> 
         /// <p>You can use the * wildcard as the leftmost label in a domain name, for example, <code>*.example.com</code>. You can't use an * for one of the middle labels, for example, <code>marketing.*.example.com</code>. In addition, the * must replace the entire label; for example, you can't specify <code>prod*.example.com</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The DNS record type. For information about different record types and how data is encoded for them, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-        /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
-        /// <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the resource record sets in the group.</p>
-        /// <p>Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <note>
-        /// <p>SPF records were formerly used to verify the identity of the sender of email messages. However, we no longer recommend that you create resource record sets for which the value of <code>Type</code> is <code>SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email, Version 1</i>, has been updated to say, "...[I]ts existence and mechanism defined in [RFC4408] have led to some interoperability issues. Accordingly, its use is no longer appropriate for SPF version 1; implementations are not to use it." In RFC 7208, see section 14.1, <a href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record Type</a>.</p>
-        /// </note>
-        /// <p>Values for alias resource record sets:</p>
-        /// <ul>
-        /// <li> <p> <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code> </p> </li>
-        /// <li> <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled for the distribution, create two resource record sets to route traffic to your distribution, one with a value of <code>A</code> and one with a value of <code>AAAA</code>. </p> </li>
-        /// <li> <p> <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code> </p> </li>
-        /// <li> <p> <b>ELB load balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li>
-        /// <li> <p> <b>Amazon S3 buckets:</b> <code>A</code> </p> </li>
-        /// <li> <p> <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code> </p> </li>
-        /// <li> <p> <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.</p> <note>
-        /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p>
-        /// </note> </li>
+        /// <p>The DNS record type. For information about different record types and how data is encoded for them, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
+        /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> 
+        /// <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the resource record sets in the group.</p> 
+        /// <p>Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <note> 
+        /// <p>SPF records were formerly used to verify the identity of the sender of email messages. However, we no longer recommend that you create resource record sets for which the value of <code>Type</code> is <code>SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email, Version 1</i>, has been updated to say, "...[I]ts existence and mechanism defined in [RFC4408] have led to some interoperability issues. Accordingly, its use is no longer appropriate for SPF version 1; implementations are not to use it." In RFC 7208, see section 14.1, <a href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record Type</a>.</p> 
+        /// </note> 
+        /// <p>Values for alias resource record sets:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code> </p> </li> 
+        /// <li> <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled for the distribution, create two resource record sets to route traffic to your distribution, one with a value of <code>A</code> and one with a value of <code>AAAA</code>. </p> </li> 
+        /// <li> <p> <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code> </p> </li> 
+        /// <li> <p> <b>ELB load balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li> 
+        /// <li> <p> <b>Amazon S3 buckets:</b> <code>A</code> </p> </li> 
+        /// <li> <p> <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code> </p> </li> 
+        /// <li> <p> <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.</p> <note> 
+        /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p> 
+        /// </note> </li> 
         /// </ul>
         pub fn r#type(mut self, input: crate::model::RrType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The DNS record type. For information about different record types and how data is encoded for them, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-        /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p>
-        /// <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the resource record sets in the group.</p>
-        /// <p>Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <note>
-        /// <p>SPF records were formerly used to verify the identity of the sender of email messages. However, we no longer recommend that you create resource record sets for which the value of <code>Type</code> is <code>SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email, Version 1</i>, has been updated to say, "...[I]ts existence and mechanism defined in [RFC4408] have led to some interoperability issues. Accordingly, its use is no longer appropriate for SPF version 1; implementations are not to use it." In RFC 7208, see section 14.1, <a href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record Type</a>.</p>
-        /// </note>
-        /// <p>Values for alias resource record sets:</p>
-        /// <ul>
-        /// <li> <p> <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code> </p> </li>
-        /// <li> <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled for the distribution, create two resource record sets to route traffic to your distribution, one with a value of <code>A</code> and one with a value of <code>AAAA</code>. </p> </li>
-        /// <li> <p> <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code> </p> </li>
-        /// <li> <p> <b>ELB load balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li>
-        /// <li> <p> <b>Amazon S3 buckets:</b> <code>A</code> </p> </li>
-        /// <li> <p> <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code> </p> </li>
-        /// <li> <p> <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.</p> <note>
-        /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p>
-        /// </note> </li>
+        /// <p>The DNS record type. For information about different record types and how data is encoded for them, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
+        /// <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>DS</code> |<code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> 
+        /// <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code>. When creating a group of weighted, latency, geolocation, or failover resource record sets, specify the same value for all of the resource record sets in the group.</p> 
+        /// <p>Valid values for multivalue answer resource record sets: <code>A</code> | <code>AAAA</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <note> 
+        /// <p>SPF records were formerly used to verify the identity of the sender of email messages. However, we no longer recommend that you create resource record sets for which the value of <code>Type</code> is <code>SPF</code>. RFC 7208, <i>Sender Policy Framework (SPF) for Authorizing Use of Domains in Email, Version 1</i>, has been updated to say, "...[I]ts existence and mechanism defined in [RFC4408] have led to some interoperability issues. Accordingly, its use is no longer appropriate for SPF version 1; implementations are not to use it." In RFC 7208, see section 14.1, <a href="http://tools.ietf.org/html/rfc7208#section-14.1">The SPF DNS Record Type</a>.</p> 
+        /// </note> 
+        /// <p>Values for alias resource record sets:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Amazon API Gateway custom regional APIs and edge-optimized APIs:</b> <code>A</code> </p> </li> 
+        /// <li> <p> <b>CloudFront distributions:</b> <code>A</code> </p> <p>If IPv6 is enabled for the distribution, create two resource record sets to route traffic to your distribution, one with a value of <code>A</code> and one with a value of <code>AAAA</code>. </p> </li> 
+        /// <li> <p> <b>Amazon API Gateway environment that has a regionalized subdomain</b>: <code>A</code> </p> </li> 
+        /// <li> <p> <b>ELB load balancers:</b> <code>A</code> | <code>AAAA</code> </p> </li> 
+        /// <li> <p> <b>Amazon S3 buckets:</b> <code>A</code> </p> </li> 
+        /// <li> <p> <b>Amazon Virtual Private Cloud interface VPC endpoints</b> <code>A</code> </p> </li> 
+        /// <li> <p> <b>Another resource record set in this hosted zone:</b> Specify the type of the resource record set that you're creating the alias for. All values are supported except <code>NS</code> and <code>SOA</code>.</p> <note> 
+        /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't route traffic to a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p> 
+        /// </note> </li> 
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RrType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
-        /// <p> <i>Resource record sets that have a routing policy other than simple:</i> An identifier that differentiates among multiple resource record sets that have the same combination of name and type, such as multiple weighted resource record sets named acme.example.com that have a type of A. In a group of resource record sets that have the same name and type, the value of <code>SetIdentifier</code> must be unique for each resource record set. </p>
+        /// <p> <i>Resource record sets that have a routing policy other than simple:</i> An identifier that differentiates among multiple resource record sets that have the same combination of name and type, such as multiple weighted resource record sets named acme.example.com that have a type of A. In a group of resource record sets that have the same name and type, the value of <code>SetIdentifier</code> must be unique for each resource record set. </p> 
         /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         pub fn set_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.set_identifier = Some(input.into());
             self
         }
-        /// <p> <i>Resource record sets that have a routing policy other than simple:</i> An identifier that differentiates among multiple resource record sets that have the same combination of name and type, such as multiple weighted resource record sets named acme.example.com that have a type of A. In a group of resource record sets that have the same name and type, the value of <code>SetIdentifier</code> must be unique for each resource record set. </p>
+        /// <p> <i>Resource record sets that have a routing policy other than simple:</i> An identifier that differentiates among multiple resource record sets that have the same combination of name and type, such as multiple weighted resource record sets named acme.example.com that have a type of A. In a group of resource record sets that have the same name and type, the value of <code>SetIdentifier</code> must be unique for each resource record set. </p> 
         /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-        pub fn set_set_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.set_identifier = input;
-            self
+        pub fn set_set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.set_identifier = input; self
         }
-        /// <p> <i>Weighted resource record sets only:</i> Among resource record sets that have the same combination of DNS name and type, a value that determines the proportion of DNS queries that Amazon Route 53 responds to using the current resource record set. Route 53 calculates the sum of the weights for the resource record sets that have the same combination of DNS name and type. Route 53 then responds to queries based on the ratio of a resource's weight to the total. Note the following:</p>
-        /// <ul>
-        /// <li> <p>You must specify a value for the <code>Weight</code> element for every weighted resource record set.</p> </li>
-        /// <li> <p>You can only specify one <code>ResourceRecord</code> per weighted resource record set.</p> </li>
-        /// <li> <p>You can't create latency, failover, or geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as weighted resource record sets.</p> </li>
-        /// <li> <p>You can create a maximum of 100 weighted resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p> </li>
-        /// <li> <p>For weighted (but not weighted alias) resource record sets, if you set <code>Weight</code> to <code>0</code> for a resource record set, Route 53 never responds to queries with the applicable value for that resource record set. However, if you set <code>Weight</code> to <code>0</code> for all resource record sets that have the same combination of DNS name and type, traffic is routed to all resources with equal probability.</p> <p>The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks with weighted resource record sets. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li>
+        /// <p> <i>Weighted resource record sets only:</i> Among resource record sets that have the same combination of DNS name and type, a value that determines the proportion of DNS queries that Amazon Route 53 responds to using the current resource record set. Route 53 calculates the sum of the weights for the resource record sets that have the same combination of DNS name and type. Route 53 then responds to queries based on the ratio of a resource's weight to the total. Note the following:</p> 
+        /// <ul> 
+        /// <li> <p>You must specify a value for the <code>Weight</code> element for every weighted resource record set.</p> </li> 
+        /// <li> <p>You can only specify one <code>ResourceRecord</code> per weighted resource record set.</p> </li> 
+        /// <li> <p>You can't create latency, failover, or geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as weighted resource record sets.</p> </li> 
+        /// <li> <p>You can create a maximum of 100 weighted resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p> </li> 
+        /// <li> <p>For weighted (but not weighted alias) resource record sets, if you set <code>Weight</code> to <code>0</code> for a resource record set, Route 53 never responds to queries with the applicable value for that resource record set. However, if you set <code>Weight</code> to <code>0</code> for all resource record sets that have the same combination of DNS name and type, traffic is routed to all resources with equal probability.</p> <p>The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks with weighted resource record sets. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li> 
         /// </ul>
         pub fn weight(mut self, input: i64) -> Self {
             self.weight = Some(input);
             self
         }
-        /// <p> <i>Weighted resource record sets only:</i> Among resource record sets that have the same combination of DNS name and type, a value that determines the proportion of DNS queries that Amazon Route 53 responds to using the current resource record set. Route 53 calculates the sum of the weights for the resource record sets that have the same combination of DNS name and type. Route 53 then responds to queries based on the ratio of a resource's weight to the total. Note the following:</p>
-        /// <ul>
-        /// <li> <p>You must specify a value for the <code>Weight</code> element for every weighted resource record set.</p> </li>
-        /// <li> <p>You can only specify one <code>ResourceRecord</code> per weighted resource record set.</p> </li>
-        /// <li> <p>You can't create latency, failover, or geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as weighted resource record sets.</p> </li>
-        /// <li> <p>You can create a maximum of 100 weighted resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p> </li>
-        /// <li> <p>For weighted (but not weighted alias) resource record sets, if you set <code>Weight</code> to <code>0</code> for a resource record set, Route 53 never responds to queries with the applicable value for that resource record set. However, if you set <code>Weight</code> to <code>0</code> for all resource record sets that have the same combination of DNS name and type, traffic is routed to all resources with equal probability.</p> <p>The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks with weighted resource record sets. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li>
+        /// <p> <i>Weighted resource record sets only:</i> Among resource record sets that have the same combination of DNS name and type, a value that determines the proportion of DNS queries that Amazon Route 53 responds to using the current resource record set. Route 53 calculates the sum of the weights for the resource record sets that have the same combination of DNS name and type. Route 53 then responds to queries based on the ratio of a resource's weight to the total. Note the following:</p> 
+        /// <ul> 
+        /// <li> <p>You must specify a value for the <code>Weight</code> element for every weighted resource record set.</p> </li> 
+        /// <li> <p>You can only specify one <code>ResourceRecord</code> per weighted resource record set.</p> </li> 
+        /// <li> <p>You can't create latency, failover, or geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as weighted resource record sets.</p> </li> 
+        /// <li> <p>You can create a maximum of 100 weighted resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p> </li> 
+        /// <li> <p>For weighted (but not weighted alias) resource record sets, if you set <code>Weight</code> to <code>0</code> for a resource record set, Route 53 never responds to queries with the applicable value for that resource record set. However, if you set <code>Weight</code> to <code>0</code> for all resource record sets that have the same combination of DNS name and type, traffic is routed to all resources with equal probability.</p> <p>The effect of setting <code>Weight</code> to <code>0</code> is different when you associate health checks with weighted resource record sets. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html">Options for Configuring Route 53 Active-Active and Active-Passive Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li> 
         /// </ul>
         pub fn set_weight(mut self, input: std::option::Option<i64>) -> Self {
-            self.weight = input;
-            self
+            self.weight = input; self
         }
-        /// <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.</p>
-        /// <p>When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected resource record set.</p>
-        /// <p>Note the following:</p>
-        /// <ul>
-        /// <li> <p>You can only specify one <code>ResourceRecord</code> per latency resource record set.</p> </li>
-        /// <li> <p>You can only create one latency resource record set for each Amazon EC2 Region.</p> </li>
-        /// <li> <p>You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will choose the region with the best latency from among the regions that you create latency resource record sets for.</p> </li>
-        /// <li> <p>You can't create non-latency resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as latency resource record sets.</p> </li>
+        /// <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.</p> 
+        /// <p>When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected resource record set.</p> 
+        /// <p>Note the following:</p> 
+        /// <ul> 
+        /// <li> <p>You can only specify one <code>ResourceRecord</code> per latency resource record set.</p> </li> 
+        /// <li> <p>You can only create one latency resource record set for each Amazon EC2 Region.</p> </li> 
+        /// <li> <p>You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will choose the region with the best latency from among the regions that you create latency resource record sets for.</p> </li> 
+        /// <li> <p>You can't create non-latency resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as latency resource record sets.</p> </li> 
         /// </ul>
         pub fn region(mut self, input: crate::model::ResourceRecordSetRegion) -> Self {
             self.region = Some(input);
             self
         }
-        /// <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.</p>
-        /// <p>When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected resource record set.</p>
-        /// <p>Note the following:</p>
-        /// <ul>
-        /// <li> <p>You can only specify one <code>ResourceRecord</code> per latency resource record set.</p> </li>
-        /// <li> <p>You can only create one latency resource record set for each Amazon EC2 Region.</p> </li>
-        /// <li> <p>You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will choose the region with the best latency from among the regions that you create latency resource record sets for.</p> </li>
-        /// <li> <p>You can't create non-latency resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as latency resource record sets.</p> </li>
+        /// <p> <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.</p> 
+        /// <p>When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user and the associated Amazon EC2 Region. Route 53 then returns the value that is associated with the selected resource record set.</p> 
+        /// <p>Note the following:</p> 
+        /// <ul> 
+        /// <li> <p>You can only specify one <code>ResourceRecord</code> per latency resource record set.</p> </li> 
+        /// <li> <p>You can only create one latency resource record set for each Amazon EC2 Region.</p> </li> 
+        /// <li> <p>You aren't required to create latency resource record sets for all Amazon EC2 Regions. Route 53 will choose the region with the best latency from among the regions that you create latency resource record sets for.</p> </li> 
+        /// <li> <p>You can't create non-latency resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as latency resource record sets.</p> </li> 
         /// </ul>
-        pub fn set_region(
-            mut self,
-            input: std::option::Option<crate::model::ResourceRecordSetRegion>,
-        ) -> Self {
-            self.region = input;
-            self
+        pub fn set_region(mut self, input: std::option::Option<crate::model::ResourceRecordSetRegion>) -> Self {
+            self.region = input; self
         }
-        /// <p> <i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p> <note>
-        /// <p>Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed, it's not supported.</p>
-        /// </note>
-        /// <p>If you create separate resource record sets for overlapping geographic regions (for example, one resource record set for a continent and one for a country on the same continent), priority goes to the smallest geographic region. This allows you to route most queries for a continent to one resource and to route queries for a country on that continent to a different resource.</p>
-        /// <p>You can't create two geolocation resource record sets that specify the same geographic location.</p>
-        /// <p>The value <code>*</code> in the <code>CountryCode</code> element matches all geographic locations that aren't specified in other geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p> <important>
-        /// <p>Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will receive some DNS queries from locations that it can't identify. We recommend that you create a resource record set for which the value of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to the resource that you specify in this record: queries that come from locations for which you haven't created geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those locations.</p>
-        /// </important>
+        /// <p> <i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p> <note> 
+        /// <p>Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed, it's not supported.</p> 
+        /// </note> 
+        /// <p>If you create separate resource record sets for overlapping geographic regions (for example, one resource record set for a continent and one for a country on the same continent), priority goes to the smallest geographic region. This allows you to route most queries for a continent to one resource and to route queries for a country on that continent to a different resource.</p> 
+        /// <p>You can't create two geolocation resource record sets that specify the same geographic location.</p> 
+        /// <p>The value <code>*</code> in the <code>CountryCode</code> element matches all geographic locations that aren't specified in other geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p> <important> 
+        /// <p>Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will receive some DNS queries from locations that it can't identify. We recommend that you create a resource record set for which the value of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to the resource that you specify in this record: queries that come from locations for which you haven't created geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those locations.</p> 
+        /// </important> 
         /// <p>You can't create non-geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as geolocation resource record sets.</p>
         pub fn geo_location(mut self, input: crate::model::GeoLocation) -> Self {
             self.geo_location = Some(input);
             self
         }
-        /// <p> <i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p> <note>
-        /// <p>Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed, it's not supported.</p>
-        /// </note>
-        /// <p>If you create separate resource record sets for overlapping geographic regions (for example, one resource record set for a continent and one for a country on the same continent), priority goes to the smallest geographic region. This allows you to route most queries for a continent to one resource and to route queries for a country on that continent to a different resource.</p>
-        /// <p>You can't create two geolocation resource record sets that specify the same geographic location.</p>
-        /// <p>The value <code>*</code> in the <code>CountryCode</code> element matches all geographic locations that aren't specified in other geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p> <important>
-        /// <p>Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will receive some DNS queries from locations that it can't identify. We recommend that you create a resource record set for which the value of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to the resource that you specify in this record: queries that come from locations for which you haven't created geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those locations.</p>
-        /// </important>
+        /// <p> <i>Geolocation resource record sets only:</i> A complex type that lets you control how Amazon Route 53 responds to DNS queries based on the geographic origin of the query. For example, if you want all queries from Africa to be routed to a web server with an IP address of <code>192.0.2.111</code>, create a resource record set with a <code>Type</code> of <code>A</code> and a <code>ContinentCode</code> of <code>AF</code>.</p> <note> 
+        /// <p>Although creating geolocation and geolocation alias resource record sets in a private hosted zone is allowed, it's not supported.</p> 
+        /// </note> 
+        /// <p>If you create separate resource record sets for overlapping geographic regions (for example, one resource record set for a continent and one for a country on the same continent), priority goes to the smallest geographic region. This allows you to route most queries for a continent to one resource and to route queries for a country on that continent to a different resource.</p> 
+        /// <p>You can't create two geolocation resource record sets that specify the same geographic location.</p> 
+        /// <p>The value <code>*</code> in the <code>CountryCode</code> element matches all geographic locations that aren't specified in other geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements.</p> <important> 
+        /// <p>Geolocation works by mapping IP addresses to locations. However, some IP addresses aren't mapped to geographic locations, so even if you create geolocation resource record sets that cover all seven continents, Route 53 will receive some DNS queries from locations that it can't identify. We recommend that you create a resource record set for which the value of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to the resource that you specify in this record: queries that come from locations for which you haven't created geolocation resource record sets and queries from IP addresses that aren't mapped to a location. If you don't create a <code>*</code> resource record set, Route 53 returns a "no answer" response for queries from those locations.</p> 
+        /// </important> 
         /// <p>You can't create non-geolocation resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as geolocation resource record sets.</p>
-        pub fn set_geo_location(
-            mut self,
-            input: std::option::Option<crate::model::GeoLocation>,
-        ) -> Self {
-            self.geo_location = input;
-            self
+        pub fn set_geo_location(mut self, input: std::option::Option<crate::model::GeoLocation>) -> Self {
+            self.geo_location = input; self
         }
-        /// <p> <i>Failover resource record sets only:</i> To configure failover, you add the <code>Failover</code> element to two resource record sets. For one resource record set, you specify <code>PRIMARY</code> as the value for <code>Failover</code>; for the other resource record set, you specify <code>SECONDARY</code>. In addition, you include the <code>HealthCheckId</code> element and specify the health check that you want Amazon Route 53 to perform for each resource record set.</p>
-        /// <p>Except where noted, the following failover behaviors assume that you have included the <code>HealthCheckId</code> element in both resource record sets:</p>
-        /// <ul>
-        /// <li> <p>When the primary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from the primary resource record set regardless of the health of the secondary resource record set.</p> </li>
-        /// <li> <p>When the primary resource record set is unhealthy and the secondary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from the secondary resource record set.</p> </li>
-        /// <li> <p>When the secondary resource record set is unhealthy, Route 53 responds to DNS queries with the applicable value from the primary resource record set regardless of the health of the primary resource record set.</p> </li>
-        /// <li> <p>If you omit the <code>HealthCheckId</code> element for the secondary resource record set, and if the primary resource record set is unhealthy, Route 53 always responds to DNS queries with the applicable value from the secondary resource record set. This is true regardless of the health of the associated endpoint.</p> </li>
-        /// </ul>
-        /// <p>You can't create non-failover resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as failover resource record sets.</p>
-        /// <p>For failover alias resource record sets, you must also include the <code>EvaluateTargetHealth</code> element and set the value to true.</p>
-        /// <p>For more information about configuring failover for Route 53, see the following topics in the <i>Amazon Route 53 Developer Guide</i>: </p>
-        /// <ul>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and DNS Failover</a> </p> </li>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> </p> </li>
+        /// <p> <i>Failover resource record sets only:</i> To configure failover, you add the <code>Failover</code> element to two resource record sets. For one resource record set, you specify <code>PRIMARY</code> as the value for <code>Failover</code>; for the other resource record set, you specify <code>SECONDARY</code>. In addition, you include the <code>HealthCheckId</code> element and specify the health check that you want Amazon Route 53 to perform for each resource record set.</p> 
+        /// <p>Except where noted, the following failover behaviors assume that you have included the <code>HealthCheckId</code> element in both resource record sets:</p> 
+        /// <ul> 
+        /// <li> <p>When the primary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from the primary resource record set regardless of the health of the secondary resource record set.</p> </li> 
+        /// <li> <p>When the primary resource record set is unhealthy and the secondary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from the secondary resource record set.</p> </li> 
+        /// <li> <p>When the secondary resource record set is unhealthy, Route 53 responds to DNS queries with the applicable value from the primary resource record set regardless of the health of the primary resource record set.</p> </li> 
+        /// <li> <p>If you omit the <code>HealthCheckId</code> element for the secondary resource record set, and if the primary resource record set is unhealthy, Route 53 always responds to DNS queries with the applicable value from the secondary resource record set. This is true regardless of the health of the associated endpoint.</p> </li> 
+        /// </ul> 
+        /// <p>You can't create non-failover resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as failover resource record sets.</p> 
+        /// <p>For failover alias resource record sets, you must also include the <code>EvaluateTargetHealth</code> element and set the value to true.</p> 
+        /// <p>For more information about configuring failover for Route 53, see the following topics in the <i>Amazon Route 53 Developer Guide</i>: </p> 
+        /// <ul> 
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and DNS Failover</a> </p> </li> 
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> </p> </li> 
         /// </ul>
         pub fn failover(mut self, input: crate::model::ResourceRecordSetFailover) -> Self {
             self.failover = Some(input);
             self
         }
-        /// <p> <i>Failover resource record sets only:</i> To configure failover, you add the <code>Failover</code> element to two resource record sets. For one resource record set, you specify <code>PRIMARY</code> as the value for <code>Failover</code>; for the other resource record set, you specify <code>SECONDARY</code>. In addition, you include the <code>HealthCheckId</code> element and specify the health check that you want Amazon Route 53 to perform for each resource record set.</p>
-        /// <p>Except where noted, the following failover behaviors assume that you have included the <code>HealthCheckId</code> element in both resource record sets:</p>
-        /// <ul>
-        /// <li> <p>When the primary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from the primary resource record set regardless of the health of the secondary resource record set.</p> </li>
-        /// <li> <p>When the primary resource record set is unhealthy and the secondary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from the secondary resource record set.</p> </li>
-        /// <li> <p>When the secondary resource record set is unhealthy, Route 53 responds to DNS queries with the applicable value from the primary resource record set regardless of the health of the primary resource record set.</p> </li>
-        /// <li> <p>If you omit the <code>HealthCheckId</code> element for the secondary resource record set, and if the primary resource record set is unhealthy, Route 53 always responds to DNS queries with the applicable value from the secondary resource record set. This is true regardless of the health of the associated endpoint.</p> </li>
+        /// <p> <i>Failover resource record sets only:</i> To configure failover, you add the <code>Failover</code> element to two resource record sets. For one resource record set, you specify <code>PRIMARY</code> as the value for <code>Failover</code>; for the other resource record set, you specify <code>SECONDARY</code>. In addition, you include the <code>HealthCheckId</code> element and specify the health check that you want Amazon Route 53 to perform for each resource record set.</p> 
+        /// <p>Except where noted, the following failover behaviors assume that you have included the <code>HealthCheckId</code> element in both resource record sets:</p> 
+        /// <ul> 
+        /// <li> <p>When the primary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from the primary resource record set regardless of the health of the secondary resource record set.</p> </li> 
+        /// <li> <p>When the primary resource record set is unhealthy and the secondary resource record set is healthy, Route 53 responds to DNS queries with the applicable value from the secondary resource record set.</p> </li> 
+        /// <li> <p>When the secondary resource record set is unhealthy, Route 53 responds to DNS queries with the applicable value from the primary resource record set regardless of the health of the primary resource record set.</p> </li> 
+        /// <li> <p>If you omit the <code>HealthCheckId</code> element for the secondary resource record set, and if the primary resource record set is unhealthy, Route 53 always responds to DNS queries with the applicable value from the secondary resource record set. This is true regardless of the health of the associated endpoint.</p> </li> 
+        /// </ul> 
+        /// <p>You can't create non-failover resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as failover resource record sets.</p> 
+        /// <p>For failover alias resource record sets, you must also include the <code>EvaluateTargetHealth</code> element and set the value to true.</p> 
+        /// <p>For more information about configuring failover for Route 53, see the following topics in the <i>Amazon Route 53 Developer Guide</i>: </p> 
+        /// <ul> 
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and DNS Failover</a> </p> </li> 
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> </p> </li> 
         /// </ul>
-        /// <p>You can't create non-failover resource record sets that have the same values for the <code>Name</code> and <code>Type</code> elements as failover resource record sets.</p>
-        /// <p>For failover alias resource record sets, you must also include the <code>EvaluateTargetHealth</code> element and set the value to true.</p>
-        /// <p>For more information about configuring failover for Route 53, see the following topics in the <i>Amazon Route 53 Developer Guide</i>: </p>
-        /// <ul>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and DNS Failover</a> </p> </li>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> </p> </li>
-        /// </ul>
-        pub fn set_failover(
-            mut self,
-            input: std::option::Option<crate::model::ResourceRecordSetFailover>,
-        ) -> Self {
-            self.failover = input;
-            self
+        pub fn set_failover(mut self, input: std::option::Option<crate::model::ResourceRecordSetFailover>) -> Self {
+            self.failover = input; self
         }
-        /// <p> <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple resources, such as web servers, create one multivalue answer record for each resource and specify <code>true</code> for <code>MultiValueAnswer</code>. Note the following:</p>
-        /// <ul>
-        /// <li> <p>If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to DNS queries with the corresponding IP address only when the health check is healthy.</p> </li>
-        /// <li> <p>If you don't associate a health check with a multivalue answer record, Route 53 always considers the record to be healthy.</p> </li>
-        /// <li> <p>Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy records, Route 53 responds to all DNS queries with all the healthy records.</p> </li>
-        /// <li> <p>If you have more than eight healthy records, Route 53 responds to different DNS resolvers with different combinations of healthy records.</p> </li>
-        /// <li> <p>When all records are unhealthy, Route 53 responds to DNS queries with up to eight unhealthy records.</p> </li>
-        /// <li> <p>If a resource becomes unavailable after a resolver caches a response, client software typically tries another of the IP addresses in the response.</p> </li>
-        /// </ul>
+        /// <p> <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple resources, such as web servers, create one multivalue answer record for each resource and specify <code>true</code> for <code>MultiValueAnswer</code>. Note the following:</p> 
+        /// <ul> 
+        /// <li> <p>If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to DNS queries with the corresponding IP address only when the health check is healthy.</p> </li> 
+        /// <li> <p>If you don't associate a health check with a multivalue answer record, Route 53 always considers the record to be healthy.</p> </li> 
+        /// <li> <p>Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy records, Route 53 responds to all DNS queries with all the healthy records.</p> </li> 
+        /// <li> <p>If you have more than eight healthy records, Route 53 responds to different DNS resolvers with different combinations of healthy records.</p> </li> 
+        /// <li> <p>When all records are unhealthy, Route 53 responds to DNS queries with up to eight unhealthy records.</p> </li> 
+        /// <li> <p>If a resource becomes unavailable after a resolver caches a response, client software typically tries another of the IP addresses in the response.</p> </li> 
+        /// </ul> 
         /// <p>You can't create multivalue answer alias records.</p>
         pub fn multi_value_answer(mut self, input: bool) -> Self {
             self.multi_value_answer = Some(input);
             self
         }
-        /// <p> <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple resources, such as web servers, create one multivalue answer record for each resource and specify <code>true</code> for <code>MultiValueAnswer</code>. Note the following:</p>
-        /// <ul>
-        /// <li> <p>If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to DNS queries with the corresponding IP address only when the health check is healthy.</p> </li>
-        /// <li> <p>If you don't associate a health check with a multivalue answer record, Route 53 always considers the record to be healthy.</p> </li>
-        /// <li> <p>Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy records, Route 53 responds to all DNS queries with all the healthy records.</p> </li>
-        /// <li> <p>If you have more than eight healthy records, Route 53 responds to different DNS resolvers with different combinations of healthy records.</p> </li>
-        /// <li> <p>When all records are unhealthy, Route 53 responds to DNS queries with up to eight unhealthy records.</p> </li>
-        /// <li> <p>If a resource becomes unavailable after a resolver caches a response, client software typically tries another of the IP addresses in the response.</p> </li>
-        /// </ul>
+        /// <p> <i>Multivalue answer resource record sets only</i>: To route traffic approximately randomly to multiple resources, such as web servers, create one multivalue answer record for each resource and specify <code>true</code> for <code>MultiValueAnswer</code>. Note the following:</p> 
+        /// <ul> 
+        /// <li> <p>If you associate a health check with a multivalue answer resource record set, Amazon Route 53 responds to DNS queries with the corresponding IP address only when the health check is healthy.</p> </li> 
+        /// <li> <p>If you don't associate a health check with a multivalue answer record, Route 53 always considers the record to be healthy.</p> </li> 
+        /// <li> <p>Route 53 responds to DNS queries with up to eight healthy records; if you have eight or fewer healthy records, Route 53 responds to all DNS queries with all the healthy records.</p> </li> 
+        /// <li> <p>If you have more than eight healthy records, Route 53 responds to different DNS resolvers with different combinations of healthy records.</p> </li> 
+        /// <li> <p>When all records are unhealthy, Route 53 responds to DNS queries with up to eight unhealthy records.</p> </li> 
+        /// <li> <p>If a resource becomes unavailable after a resolver caches a response, client software typically tries another of the IP addresses in the response.</p> </li> 
+        /// </ul> 
         /// <p>You can't create multivalue answer alias records.</p>
         pub fn set_multi_value_answer(mut self, input: std::option::Option<bool>) -> Self {
-            self.multi_value_answer = input;
-            self
+            self.multi_value_answer = input; self
         }
-        /// <p>The resource record cache time to live (TTL), in seconds. Note the following:</p>
-        /// <ul>
-        /// <li> <p>If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of <code>TTL</code> for the alias target. </p> </li>
-        /// <li> <p>If you're associating this resource record set with a health check (if you're adding a <code>HealthCheckId</code> element), we recommend that you specify a <code>TTL</code> of 60 seconds or less so clients respond quickly to changes in health status.</p> </li>
-        /// <li> <p>All of the resource record sets in a group of weighted resource record sets must have the same value for <code>TTL</code>.</p> </li>
-        /// <li> <p>If a group of weighted resource record sets includes one or more weighted alias resource record sets for which the alias target is an ELB load balancer, we recommend that you specify a <code>TTL</code> of 60 seconds for all of the non-alias weighted resource record sets that have the same name and type. Values other than 60 seconds (the TTL for load balancers) will change the effect of the values that you specify for <code>Weight</code>.</p> </li>
+        /// <p>The resource record cache time to live (TTL), in seconds. Note the following:</p> 
+        /// <ul> 
+        /// <li> <p>If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of <code>TTL</code> for the alias target. </p> </li> 
+        /// <li> <p>If you're associating this resource record set with a health check (if you're adding a <code>HealthCheckId</code> element), we recommend that you specify a <code>TTL</code> of 60 seconds or less so clients respond quickly to changes in health status.</p> </li> 
+        /// <li> <p>All of the resource record sets in a group of weighted resource record sets must have the same value for <code>TTL</code>.</p> </li> 
+        /// <li> <p>If a group of weighted resource record sets includes one or more weighted alias resource record sets for which the alias target is an ELB load balancer, we recommend that you specify a <code>TTL</code> of 60 seconds for all of the non-alias weighted resource record sets that have the same name and type. Values other than 60 seconds (the TTL for load balancers) will change the effect of the values that you specify for <code>Weight</code>.</p> </li> 
         /// </ul>
         pub fn ttl(mut self, input: i64) -> Self {
             self.ttl = Some(input);
             self
         }
-        /// <p>The resource record cache time to live (TTL), in seconds. Note the following:</p>
-        /// <ul>
-        /// <li> <p>If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of <code>TTL</code> for the alias target. </p> </li>
-        /// <li> <p>If you're associating this resource record set with a health check (if you're adding a <code>HealthCheckId</code> element), we recommend that you specify a <code>TTL</code> of 60 seconds or less so clients respond quickly to changes in health status.</p> </li>
-        /// <li> <p>All of the resource record sets in a group of weighted resource record sets must have the same value for <code>TTL</code>.</p> </li>
-        /// <li> <p>If a group of weighted resource record sets includes one or more weighted alias resource record sets for which the alias target is an ELB load balancer, we recommend that you specify a <code>TTL</code> of 60 seconds for all of the non-alias weighted resource record sets that have the same name and type. Values other than 60 seconds (the TTL for load balancers) will change the effect of the values that you specify for <code>Weight</code>.</p> </li>
+        /// <p>The resource record cache time to live (TTL), in seconds. Note the following:</p> 
+        /// <ul> 
+        /// <li> <p>If you're creating or updating an alias resource record set, omit <code>TTL</code>. Amazon Route 53 uses the value of <code>TTL</code> for the alias target. </p> </li> 
+        /// <li> <p>If you're associating this resource record set with a health check (if you're adding a <code>HealthCheckId</code> element), we recommend that you specify a <code>TTL</code> of 60 seconds or less so clients respond quickly to changes in health status.</p> </li> 
+        /// <li> <p>All of the resource record sets in a group of weighted resource record sets must have the same value for <code>TTL</code>.</p> </li> 
+        /// <li> <p>If a group of weighted resource record sets includes one or more weighted alias resource record sets for which the alias target is an ELB load balancer, we recommend that you specify a <code>TTL</code> of 60 seconds for all of the non-alias weighted resource record sets that have the same name and type. Values other than 60 seconds (the TTL for load balancers) will change the effect of the values that you specify for <code>Weight</code>.</p> </li> 
         /// </ul>
         pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
-            self.ttl = input;
-            self
+            self.ttl = input; self
         }
         /// Appends an item to `resource_records`.
         ///
         /// To override the contents of this collection use [`set_resource_records`](Self::set_resource_records).
         ///
-        /// <p>Information about the resource records to act upon.</p> <note>
-        /// <p>If you're creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
+        /// <p>Information about the resource records to act upon.</p> <note> 
+        /// <p>If you're creating an alias resource record set, omit <code>ResourceRecords</code>.</p> 
         /// </note>
         pub fn resource_records(mut self, input: crate::model::ResourceRecord) -> Self {
             let mut v = self.resource_records.unwrap_or_default();
-            v.push(input);
-            self.resource_records = Some(v);
-            self
+                            v.push(input);
+                            self.resource_records = Some(v);
+                            self
         }
-        /// <p>Information about the resource records to act upon.</p> <note>
-        /// <p>If you're creating an alias resource record set, omit <code>ResourceRecords</code>.</p>
+        /// <p>Information about the resource records to act upon.</p> <note> 
+        /// <p>If you're creating an alias resource record set, omit <code>ResourceRecords</code>.</p> 
         /// </note>
-        pub fn set_resource_records(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceRecord>>,
-        ) -> Self {
-            self.resource_records = input;
-            self
+        pub fn set_resource_records(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceRecord>>) -> Self {
+            self.resource_records = input; self
         }
-        /// <p> <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to. </p>
-        /// <p>If you're creating resource records sets for a private hosted zone, note the following:</p>
-        /// <ul>
-        /// <li> <p>You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> </li>
-        /// <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li>
+        /// <p> <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to. </p> 
+        /// <p>If you're creating resource records sets for a private hosted zone, note the following:</p> 
+        /// <ul> 
+        /// <li> <p>You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> </li> 
+        /// <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li> 
         /// </ul>
         pub fn alias_target(mut self, input: crate::model::AliasTarget) -> Self {
             self.alias_target = Some(input);
             self
         }
-        /// <p> <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to. </p>
-        /// <p>If you're creating resource records sets for a private hosted zone, note the following:</p>
-        /// <ul>
-        /// <li> <p>You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> </li>
-        /// <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li>
+        /// <p> <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to. </p> 
+        /// <p>If you're creating resource records sets for a private hosted zone, note the following:</p> 
+        /// <ul> 
+        /// <li> <p>You can't create an alias resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> </li> 
+        /// <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> </li> 
         /// </ul>
-        pub fn set_alias_target(
-            mut self,
-            input: std::option::Option<crate::model::AliasTarget>,
-        ) -> Self {
-            self.alias_target = input;
-            self
+        pub fn set_alias_target(mut self, input: std::option::Option<crate::model::AliasTarget>) -> Self {
+            self.alias_target = input; self
         }
-        /// <p>If you want Amazon Route 53 to return this resource record set in response to a DNS query only when the status of a health check is healthy, include the <code>HealthCheckId</code> element and specify the ID of the applicable health check.</p>
-        /// <p>Route 53 determines whether a resource record set is healthy based on one of the following:</p>
-        /// <ul>
-        /// <li> <p>By periodically sending a request to the endpoint that is specified in the health check</p> </li>
-        /// <li> <p>By aggregating the status of a specified group of health checks (calculated health checks)</p> </li>
-        /// <li> <p>By determining the current state of a CloudWatch alarm (CloudWatch metric health checks)</p> </li>
-        /// </ul> <important>
-        /// <p>Route 53 doesn't check the health of the endpoint that is specified in the resource record set, for example, the endpoint specified by the IP address in the <code>Value</code> element. When you add a <code>HealthCheckId</code> element to a resource record set, Route 53 checks the health of the endpoint that you specified in the health check. </p>
-        /// </important>
-        /// <p>For more information, see the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p>
-        /// <ul>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> </p> </li>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and DNS Failover</a> </p> </li>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> </p> </li>
-        /// </ul>
-        /// <p> <b>When to Specify HealthCheckId</b> </p>
-        /// <p>Specifying a value for <code>HealthCheckId</code> is useful only when Route 53 is choosing between two or more resource record sets to respond to a DNS query, and you want Route 53 to base the choice in part on the status of a health check. Configuring health checks makes sense only in the following configurations:</p>
-        /// <ul>
-        /// <li> <p> <b>Non-alias resource record sets</b>: You're checking the health of a group of non-alias resource record sets that have the same routing policy, name, and type (such as multiple weighted records named www.example.com with a type of A) and you specify health check IDs for all the resource record sets. </p> <p>If the health check status for a resource record set is healthy, Route 53 includes the record among the records that it responds to DNS queries with.</p> <p>If the health check status for a resource record set is unhealthy, Route 53 stops responding to DNS queries using the value for that resource record set.</p> <p>If the health check status for all resource record sets in the group is unhealthy, Route 53 considers all resource record sets in the group healthy and responds to DNS queries accordingly. </p> </li>
-        /// <li> <p> <b>Alias resource record sets</b>: You specify the following settings:</p>
-        /// <ul>
-        /// <li> <p>You set <code>EvaluateTargetHealth</code> to true for an alias resource record set in a group of resource record sets that have the same routing policy, name, and type (such as multiple weighted records named www.example.com with a type of A). </p> </li>
-        /// <li> <p>You configure the alias resource record set to route traffic to a non-alias resource record set in the same hosted zone.</p> </li>
-        /// <li> <p>You specify a health check ID for the non-alias resource record set. </p> </li>
-        /// </ul> <p>If the health check status is healthy, Route 53 considers the alias resource record set to be healthy and includes the alias record among the records that it responds to DNS queries with.</p> <p>If the health check status is unhealthy, Route 53 stops responding to DNS queries using the alias resource record set.</p> <note>
-        /// <p>The alias resource record set can also route traffic to a <i>group</i> of non-alias resource record sets that have the same routing policy, name, and type. In that configuration, associate health checks with all of the resource record sets in the group of non-alias resource record sets.</p>
-        /// </note> </li>
-        /// </ul>
-        /// <p> <b>Geolocation Routing</b> </p>
-        /// <p>For geolocation resource record sets, if an endpoint is unhealthy, Route 53 looks for a resource record set for the larger, associated geographic region. For example, suppose you have resource record sets for a state in the United States, for the entire United States, for North America, and a resource record set that has <code>*</code> for <code>CountryCode</code> is <code>*</code>, which applies to all locations. If the endpoint for the state resource record set is unhealthy, Route 53 checks for healthy resource record sets in the following order until it finds a resource record set for which the endpoint is healthy:</p>
-        /// <ul>
-        /// <li> <p>The United States</p> </li>
-        /// <li> <p>North America</p> </li>
-        /// <li> <p>The default resource record set</p> </li>
-        /// </ul>
-        /// <p> <b>Specifying the Health Check Endpoint by Domain Name</b> </p>
-        /// <p>If your health checks specify the endpoint only by domain name, we recommend that you create a separate health check for each endpoint. For example, create a health check for each <code>HTTP</code> server that is serving content for <code>www.example.com</code>. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as <code>us-east-2-www.example.com</code>), not the name of the resource record sets (<code>www.example.com</code>).</p> <important>
-        /// <p>Health check results will be unpredictable if you do the following:</p>
-        /// <ul>
-        /// <li> <p>Create a health check that has the same value for <code>FullyQualifiedDomainName</code> as the name of a resource record set.</p> </li>
-        /// <li> <p>Associate that health check with the resource record set.</p> </li>
-        /// </ul>
+        /// <p>If you want Amazon Route 53 to return this resource record set in response to a DNS query only when the status of a health check is healthy, include the <code>HealthCheckId</code> element and specify the ID of the applicable health check.</p> 
+        /// <p>Route 53 determines whether a resource record set is healthy based on one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>By periodically sending a request to the endpoint that is specified in the health check</p> </li> 
+        /// <li> <p>By aggregating the status of a specified group of health checks (calculated health checks)</p> </li> 
+        /// <li> <p>By determining the current state of a CloudWatch alarm (CloudWatch metric health checks)</p> </li> 
+        /// </ul> <important> 
+        /// <p>Route 53 doesn't check the health of the endpoint that is specified in the resource record set, for example, the endpoint specified by the IP address in the <code>Value</code> element. When you add a <code>HealthCheckId</code> element to a resource record set, Route 53 checks the health of the endpoint that you specified in the health check. </p> 
+        /// </important> 
+        /// <p>For more information, see the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p> 
+        /// <ul> 
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> </p> </li> 
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and DNS Failover</a> </p> </li> 
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> </p> </li> 
+        /// </ul> 
+        /// <p> <b>When to Specify HealthCheckId</b> </p> 
+        /// <p>Specifying a value for <code>HealthCheckId</code> is useful only when Route 53 is choosing between two or more resource record sets to respond to a DNS query, and you want Route 53 to base the choice in part on the status of a health check. Configuring health checks makes sense only in the following configurations:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Non-alias resource record sets</b>: You're checking the health of a group of non-alias resource record sets that have the same routing policy, name, and type (such as multiple weighted records named www.example.com with a type of A) and you specify health check IDs for all the resource record sets. </p> <p>If the health check status for a resource record set is healthy, Route 53 includes the record among the records that it responds to DNS queries with.</p> <p>If the health check status for a resource record set is unhealthy, Route 53 stops responding to DNS queries using the value for that resource record set.</p> <p>If the health check status for all resource record sets in the group is unhealthy, Route 53 considers all resource record sets in the group healthy and responds to DNS queries accordingly. </p> </li> 
+        /// <li> <p> <b>Alias resource record sets</b>: You specify the following settings:</p> 
+        /// <ul> 
+        /// <li> <p>You set <code>EvaluateTargetHealth</code> to true for an alias resource record set in a group of resource record sets that have the same routing policy, name, and type (such as multiple weighted records named www.example.com with a type of A). </p> </li> 
+        /// <li> <p>You configure the alias resource record set to route traffic to a non-alias resource record set in the same hosted zone.</p> </li> 
+        /// <li> <p>You specify a health check ID for the non-alias resource record set. </p> </li> 
+        /// </ul> <p>If the health check status is healthy, Route 53 considers the alias resource record set to be healthy and includes the alias record among the records that it responds to DNS queries with.</p> <p>If the health check status is unhealthy, Route 53 stops responding to DNS queries using the alias resource record set.</p> <note> 
+        /// <p>The alias resource record set can also route traffic to a <i>group</i> of non-alias resource record sets that have the same routing policy, name, and type. In that configuration, associate health checks with all of the resource record sets in the group of non-alias resource record sets.</p> 
+        /// </note> </li> 
+        /// </ul> 
+        /// <p> <b>Geolocation Routing</b> </p> 
+        /// <p>For geolocation resource record sets, if an endpoint is unhealthy, Route 53 looks for a resource record set for the larger, associated geographic region. For example, suppose you have resource record sets for a state in the United States, for the entire United States, for North America, and a resource record set that has <code>*</code> for <code>CountryCode</code> is <code>*</code>, which applies to all locations. If the endpoint for the state resource record set is unhealthy, Route 53 checks for healthy resource record sets in the following order until it finds a resource record set for which the endpoint is healthy:</p> 
+        /// <ul> 
+        /// <li> <p>The United States</p> </li> 
+        /// <li> <p>North America</p> </li> 
+        /// <li> <p>The default resource record set</p> </li> 
+        /// </ul> 
+        /// <p> <b>Specifying the Health Check Endpoint by Domain Name</b> </p> 
+        /// <p>If your health checks specify the endpoint only by domain name, we recommend that you create a separate health check for each endpoint. For example, create a health check for each <code>HTTP</code> server that is serving content for <code>www.example.com</code>. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as <code>us-east-2-www.example.com</code>), not the name of the resource record sets (<code>www.example.com</code>).</p> <important> 
+        /// <p>Health check results will be unpredictable if you do the following:</p> 
+        /// <ul> 
+        /// <li> <p>Create a health check that has the same value for <code>FullyQualifiedDomainName</code> as the name of a resource record set.</p> </li> 
+        /// <li> <p>Associate that health check with the resource record set.</p> </li> 
+        /// </ul> 
         /// </important>
         pub fn health_check_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.health_check_id = Some(input.into());
             self
         }
-        /// <p>If you want Amazon Route 53 to return this resource record set in response to a DNS query only when the status of a health check is healthy, include the <code>HealthCheckId</code> element and specify the ID of the applicable health check.</p>
-        /// <p>Route 53 determines whether a resource record set is healthy based on one of the following:</p>
-        /// <ul>
-        /// <li> <p>By periodically sending a request to the endpoint that is specified in the health check</p> </li>
-        /// <li> <p>By aggregating the status of a specified group of health checks (calculated health checks)</p> </li>
-        /// <li> <p>By determining the current state of a CloudWatch alarm (CloudWatch metric health checks)</p> </li>
-        /// </ul> <important>
-        /// <p>Route 53 doesn't check the health of the endpoint that is specified in the resource record set, for example, the endpoint specified by the IP address in the <code>Value</code> element. When you add a <code>HealthCheckId</code> element to a resource record set, Route 53 checks the health of the endpoint that you specified in the health check. </p>
+        /// <p>If you want Amazon Route 53 to return this resource record set in response to a DNS query only when the status of a health check is healthy, include the <code>HealthCheckId</code> element and specify the ID of the applicable health check.</p> 
+        /// <p>Route 53 determines whether a resource record set is healthy based on one of the following:</p> 
+        /// <ul> 
+        /// <li> <p>By periodically sending a request to the endpoint that is specified in the health check</p> </li> 
+        /// <li> <p>By aggregating the status of a specified group of health checks (calculated health checks)</p> </li> 
+        /// <li> <p>By determining the current state of a CloudWatch alarm (CloudWatch metric health checks)</p> </li> 
+        /// </ul> <important> 
+        /// <p>Route 53 doesn't check the health of the endpoint that is specified in the resource record set, for example, the endpoint specified by the IP address in the <code>Value</code> element. When you add a <code>HealthCheckId</code> element to a resource record set, Route 53 checks the health of the endpoint that you specified in the health check. </p> 
+        /// </important> 
+        /// <p>For more information, see the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p> 
+        /// <ul> 
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> </p> </li> 
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and DNS Failover</a> </p> </li> 
+        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> </p> </li> 
+        /// </ul> 
+        /// <p> <b>When to Specify HealthCheckId</b> </p> 
+        /// <p>Specifying a value for <code>HealthCheckId</code> is useful only when Route 53 is choosing between two or more resource record sets to respond to a DNS query, and you want Route 53 to base the choice in part on the status of a health check. Configuring health checks makes sense only in the following configurations:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Non-alias resource record sets</b>: You're checking the health of a group of non-alias resource record sets that have the same routing policy, name, and type (such as multiple weighted records named www.example.com with a type of A) and you specify health check IDs for all the resource record sets. </p> <p>If the health check status for a resource record set is healthy, Route 53 includes the record among the records that it responds to DNS queries with.</p> <p>If the health check status for a resource record set is unhealthy, Route 53 stops responding to DNS queries using the value for that resource record set.</p> <p>If the health check status for all resource record sets in the group is unhealthy, Route 53 considers all resource record sets in the group healthy and responds to DNS queries accordingly. </p> </li> 
+        /// <li> <p> <b>Alias resource record sets</b>: You specify the following settings:</p> 
+        /// <ul> 
+        /// <li> <p>You set <code>EvaluateTargetHealth</code> to true for an alias resource record set in a group of resource record sets that have the same routing policy, name, and type (such as multiple weighted records named www.example.com with a type of A). </p> </li> 
+        /// <li> <p>You configure the alias resource record set to route traffic to a non-alias resource record set in the same hosted zone.</p> </li> 
+        /// <li> <p>You specify a health check ID for the non-alias resource record set. </p> </li> 
+        /// </ul> <p>If the health check status is healthy, Route 53 considers the alias resource record set to be healthy and includes the alias record among the records that it responds to DNS queries with.</p> <p>If the health check status is unhealthy, Route 53 stops responding to DNS queries using the alias resource record set.</p> <note> 
+        /// <p>The alias resource record set can also route traffic to a <i>group</i> of non-alias resource record sets that have the same routing policy, name, and type. In that configuration, associate health checks with all of the resource record sets in the group of non-alias resource record sets.</p> 
+        /// </note> </li> 
+        /// </ul> 
+        /// <p> <b>Geolocation Routing</b> </p> 
+        /// <p>For geolocation resource record sets, if an endpoint is unhealthy, Route 53 looks for a resource record set for the larger, associated geographic region. For example, suppose you have resource record sets for a state in the United States, for the entire United States, for North America, and a resource record set that has <code>*</code> for <code>CountryCode</code> is <code>*</code>, which applies to all locations. If the endpoint for the state resource record set is unhealthy, Route 53 checks for healthy resource record sets in the following order until it finds a resource record set for which the endpoint is healthy:</p> 
+        /// <ul> 
+        /// <li> <p>The United States</p> </li> 
+        /// <li> <p>North America</p> </li> 
+        /// <li> <p>The default resource record set</p> </li> 
+        /// </ul> 
+        /// <p> <b>Specifying the Health Check Endpoint by Domain Name</b> </p> 
+        /// <p>If your health checks specify the endpoint only by domain name, we recommend that you create a separate health check for each endpoint. For example, create a health check for each <code>HTTP</code> server that is serving content for <code>www.example.com</code>. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as <code>us-east-2-www.example.com</code>), not the name of the resource record sets (<code>www.example.com</code>).</p> <important> 
+        /// <p>Health check results will be unpredictable if you do the following:</p> 
+        /// <ul> 
+        /// <li> <p>Create a health check that has the same value for <code>FullyQualifiedDomainName</code> as the name of a resource record set.</p> </li> 
+        /// <li> <p>Associate that health check with the resource record set.</p> </li> 
+        /// </ul> 
         /// </important>
-        /// <p>For more information, see the following topics in the <i>Amazon Route 53 Developer Guide</i>:</p>
-        /// <ul>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How Amazon Route 53 Determines Whether an Endpoint Is Healthy</a> </p> </li>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Route 53 Health Checks and DNS Failover</a> </p> </li>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a> </p> </li>
-        /// </ul>
-        /// <p> <b>When to Specify HealthCheckId</b> </p>
-        /// <p>Specifying a value for <code>HealthCheckId</code> is useful only when Route 53 is choosing between two or more resource record sets to respond to a DNS query, and you want Route 53 to base the choice in part on the status of a health check. Configuring health checks makes sense only in the following configurations:</p>
-        /// <ul>
-        /// <li> <p> <b>Non-alias resource record sets</b>: You're checking the health of a group of non-alias resource record sets that have the same routing policy, name, and type (such as multiple weighted records named www.example.com with a type of A) and you specify health check IDs for all the resource record sets. </p> <p>If the health check status for a resource record set is healthy, Route 53 includes the record among the records that it responds to DNS queries with.</p> <p>If the health check status for a resource record set is unhealthy, Route 53 stops responding to DNS queries using the value for that resource record set.</p> <p>If the health check status for all resource record sets in the group is unhealthy, Route 53 considers all resource record sets in the group healthy and responds to DNS queries accordingly. </p> </li>
-        /// <li> <p> <b>Alias resource record sets</b>: You specify the following settings:</p>
-        /// <ul>
-        /// <li> <p>You set <code>EvaluateTargetHealth</code> to true for an alias resource record set in a group of resource record sets that have the same routing policy, name, and type (such as multiple weighted records named www.example.com with a type of A). </p> </li>
-        /// <li> <p>You configure the alias resource record set to route traffic to a non-alias resource record set in the same hosted zone.</p> </li>
-        /// <li> <p>You specify a health check ID for the non-alias resource record set. </p> </li>
-        /// </ul> <p>If the health check status is healthy, Route 53 considers the alias resource record set to be healthy and includes the alias record among the records that it responds to DNS queries with.</p> <p>If the health check status is unhealthy, Route 53 stops responding to DNS queries using the alias resource record set.</p> <note>
-        /// <p>The alias resource record set can also route traffic to a <i>group</i> of non-alias resource record sets that have the same routing policy, name, and type. In that configuration, associate health checks with all of the resource record sets in the group of non-alias resource record sets.</p>
-        /// </note> </li>
-        /// </ul>
-        /// <p> <b>Geolocation Routing</b> </p>
-        /// <p>For geolocation resource record sets, if an endpoint is unhealthy, Route 53 looks for a resource record set for the larger, associated geographic region. For example, suppose you have resource record sets for a state in the United States, for the entire United States, for North America, and a resource record set that has <code>*</code> for <code>CountryCode</code> is <code>*</code>, which applies to all locations. If the endpoint for the state resource record set is unhealthy, Route 53 checks for healthy resource record sets in the following order until it finds a resource record set for which the endpoint is healthy:</p>
-        /// <ul>
-        /// <li> <p>The United States</p> </li>
-        /// <li> <p>North America</p> </li>
-        /// <li> <p>The default resource record set</p> </li>
-        /// </ul>
-        /// <p> <b>Specifying the Health Check Endpoint by Domain Name</b> </p>
-        /// <p>If your health checks specify the endpoint only by domain name, we recommend that you create a separate health check for each endpoint. For example, create a health check for each <code>HTTP</code> server that is serving content for <code>www.example.com</code>. For the value of <code>FullyQualifiedDomainName</code>, specify the domain name of the server (such as <code>us-east-2-www.example.com</code>), not the name of the resource record sets (<code>www.example.com</code>).</p> <important>
-        /// <p>Health check results will be unpredictable if you do the following:</p>
-        /// <ul>
-        /// <li> <p>Create a health check that has the same value for <code>FullyQualifiedDomainName</code> as the name of a resource record set.</p> </li>
-        /// <li> <p>Associate that health check with the resource record set.</p> </li>
-        /// </ul>
-        /// </important>
-        pub fn set_health_check_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.health_check_id = input;
-            self
+        pub fn set_health_check_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.health_check_id = input; self
         }
-        /// <p>When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Route 53 created this resource record set for.</p> <important>
-        /// <p>To delete the resource record set that is associated with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p>
+        /// <p>When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Route 53 created this resource record set for.</p> <important> 
+        /// <p>To delete the resource record set that is associated with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p> 
         /// </important>
         pub fn traffic_policy_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.traffic_policy_instance_id = Some(input.into());
             self
         }
-        /// <p>When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Route 53 created this resource record set for.</p> <important>
-        /// <p>To delete the resource record set that is associated with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p>
+        /// <p>When you create a traffic policy instance, Amazon Route 53 automatically creates a resource record set. <code>TrafficPolicyInstanceId</code> is the ID of the traffic policy instance that Route 53 created this resource record set for.</p> <important> 
+        /// <p>To delete the resource record set that is associated with a traffic policy instance, use <code>DeleteTrafficPolicyInstance</code>. Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p> 
         /// </important>
-        pub fn set_traffic_policy_instance_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.traffic_policy_instance_id = input;
-            self
+        pub fn set_traffic_policy_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.traffic_policy_instance_id = input; self
         }
-        /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p>
+        /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p> 
         /// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
         pub fn cidr_routing_config(mut self, input: crate::model::CidrRoutingConfig) -> Self {
             self.cidr_routing_config = Some(input);
             self
         }
-        /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p>
+        /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p> 
         /// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
-        pub fn set_cidr_routing_config(
-            mut self,
-            input: std::option::Option<crate::model::CidrRoutingConfig>,
-        ) -> Self {
-            self.cidr_routing_config = input;
-            self
+        pub fn set_cidr_routing_config(mut self, input: std::option::Option<crate::model::CidrRoutingConfig>) -> Self {
+            self.cidr_routing_config = input; self
         }
         /// Consumes the builder and constructs a [`ResourceRecordSet`](crate::model::ResourceRecordSet).
         pub fn build(self) -> crate::model::ResourceRecordSet {
             crate::model::ResourceRecordSet {
-                name: self.name,
-                r#type: self.r#type,
-                set_identifier: self.set_identifier,
-                weight: self.weight,
-                region: self.region,
-                geo_location: self.geo_location,
-                failover: self.failover,
-                multi_value_answer: self.multi_value_answer,
-                ttl: self.ttl,
-                resource_records: self.resource_records,
-                alias_target: self.alias_target,
-                health_check_id: self.health_check_id,
-                traffic_policy_instance_id: self.traffic_policy_instance_id,
-                cidr_routing_config: self.cidr_routing_config,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                set_identifier: self.set_identifier
+                ,
+                weight: self.weight
+                ,
+                region: self.region
+                ,
+                geo_location: self.geo_location
+                ,
+                failover: self.failover
+                ,
+                multi_value_answer: self.multi_value_answer
+                ,
+                ttl: self.ttl
+                ,
+                resource_records: self.resource_records
+                ,
+                alias_target: self.alias_target
+                ,
+                health_check_id: self.health_check_id
+                ,
+                traffic_policy_instance_id: self.traffic_policy_instance_id
+                ,
+                cidr_routing_config: self.cidr_routing_config
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceRecordSet {
     /// Creates a new builder-style object to manufacture [`ResourceRecordSet`](crate::model::ResourceRecordSet).
@@ -4837,11 +4570,11 @@ impl ResourceRecordSet {
     }
 }
 
-/// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p>
+/// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p> 
 /// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CidrRoutingConfig {
+pub struct CidrRoutingConfig  {
     /// <p>The CIDR collection ID.</p>
     #[doc(hidden)]
     pub collection_id: std::option::Option<std::string::String>,
@@ -4851,17 +4584,17 @@ pub struct CidrRoutingConfig {
 }
 impl CidrRoutingConfig {
     /// <p>The CIDR collection ID.</p>
-    pub fn collection_id(&self) -> std::option::Option<&str> {
+    pub fn collection_id(&self) -> std::option::Option<& str> {
         self.collection_id.as_deref()
     }
     /// <p>The CIDR collection location name.</p>
-    pub fn location_name(&self) -> std::option::Option<&str> {
+    pub fn location_name(&self) -> std::option::Option<& str> {
         self.location_name.as_deref()
     }
 }
 /// See [`CidrRoutingConfig`](crate::model::CidrRoutingConfig).
 pub mod cidr_routing_config {
-
+    
     /// A builder for [`CidrRoutingConfig`](crate::model::CidrRoutingConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4875,12 +4608,8 @@ pub mod cidr_routing_config {
             self
         }
         /// <p>The CIDR collection ID.</p>
-        pub fn set_collection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.collection_id = input;
-            self
+        pub fn set_collection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.collection_id = input; self
         }
         /// <p>The CIDR collection location name.</p>
         pub fn location_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4888,21 +4617,21 @@ pub mod cidr_routing_config {
             self
         }
         /// <p>The CIDR collection location name.</p>
-        pub fn set_location_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.location_name = input;
-            self
+        pub fn set_location_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location_name = input; self
         }
         /// Consumes the builder and constructs a [`CidrRoutingConfig`](crate::model::CidrRoutingConfig).
         pub fn build(self) -> crate::model::CidrRoutingConfig {
             crate::model::CidrRoutingConfig {
-                collection_id: self.collection_id,
-                location_name: self.location_name,
+                collection_id: self.collection_id
+                ,
+                location_name: self.location_name
+                ,
             }
         }
     }
+    
+    
 }
 impl CidrRoutingConfig {
     /// Creates a new builder-style object to manufacture [`CidrRoutingConfig`](crate::model::CidrRoutingConfig).
@@ -4911,437 +4640,437 @@ impl CidrRoutingConfig {
     }
 }
 
-/// <p> <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.</p>
-/// <p>When creating resource record sets for a private hosted zone, note the following:</p>
-/// <ul>
-/// <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a>.</p> </li>
+/// <p> <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to.</p> 
+/// <p>When creating resource record sets for a private hosted zone, note the following:</p> 
+/// <ul> 
+/// <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a>.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AliasTarget {
-    /// <p> <i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:</p>
-    /// <dl>
+pub struct AliasTarget  {
+    /// <p> <i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:</p> 
+    /// <dl> 
     /// <dt>
     /// Amazon API Gateway custom regional APIs and edge-optimized APIs
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
-    /// <ul>
-    /// <li> <p>For regional APIs, specify the value of <code>regionalHostedZoneId</code>.</p> </li>
-    /// <li> <p>For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.</p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p> 
+    /// <ul> 
+    /// <li> <p>For regional APIs, specify the value of <code>regionalHostedZoneId</code>.</p> </li> 
+    /// <li> <p>For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.</p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// Amazon Virtual Private Cloud interface VPC endpoint
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code> using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code> using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p> 
+    /// </dd> 
     /// <dt>
     /// CloudFront distribution
-    /// </dt>
-    /// <dd>
-    /// <p>Specify <code>Z2FDTNDATAQYW2</code>.</p> <note>
-    /// <p>Alias resource record sets for CloudFront can't be created in a private zone.</p>
-    /// </note>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify <code>Z2FDTNDATAQYW2</code>.</p> <note> 
+    /// <p>Alias resource record sets for CloudFront can't be created in a private zone.</p> 
+    /// </note> 
+    /// </dd> 
     /// <dt>
     /// Elastic Beanstalk environment
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the hosted zone ID for the region that you created the environment in. The environment must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General Reference</i>.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the hosted zone ID for the region that you created the environment in. The environment must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General Reference</i>.</p> 
+    /// </dd> 
     /// <dt>
     /// ELB load balancer
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the value of the hosted zone ID for the load balancer. Use the following methods to get the hosted zone ID:</p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that you created your load balancer in. Note that there are separate columns for Application and Classic Load Balancers and for Network Load Balancers.</p> </li>
-    /// <li> <p> <b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li>
-    /// <li> <p> <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more information, see the applicable guide:</p>
-    /// <ul>
-    /// <li> <p>Classic Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li>
-    /// <li> <p>Application and Network Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the applicable guide:</p>
-    /// <ul>
-    /// <li> <p>Classic Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li>
-    /// <li> <p>Application and Network Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p> </li>
-    /// </ul> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the value of the hosted zone ID for the load balancer. Use the following methods to get the hosted zone ID:</p> 
+    /// <ul> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that you created your load balancer in. Note that there are separate columns for Application and Classic Load Balancers and for Network Load Balancers.</p> </li> 
+    /// <li> <p> <b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li> 
+    /// <li> <p> <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more information, see the applicable guide:</p> 
+    /// <ul> 
+    /// <li> <p>Classic Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> 
+    /// <li> <p>Application and Network Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the applicable guide:</p> 
+    /// <ul> 
+    /// <li> <p>Classic Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> 
+    /// <li> <p>Application and Network Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// Global Accelerator accelerator
-    /// </dt>
-    /// <dd>
-    /// <p>Specify <code>Z2BJ6XQ5FK7U4H</code>.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify <code>Z2BJ6XQ5FK7U4H</code>.</p> 
+    /// </dd> 
     /// <dt>
     /// An Amazon S3 bucket configured as a static website
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the hosted zone ID for the region that you created the bucket in. For more information about valid values, see the table <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the hosted zone ID for the region that you created the bucket in. For more information about valid values, see the table <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p> 
+    /// </dd> 
     /// <dt>
     /// Another Route 53 resource record set in your hosted zone
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource record set in a different hosted zone.)</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource record set in a different hosted zone.)</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
-    /// <p> <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route queries:</p>
-    /// <dl>
+    /// <p> <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route queries:</p> 
+    /// <dl> 
     /// <dt>
     /// Amazon API Gateway custom regional APIs and edge-optimized APIs
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the applicable domain name for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
-    /// <ul>
-    /// <li> <p>For regional APIs, specify the value of <code>regionalDomainName</code>.</p> </li>
-    /// <li> <p>For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.</p> </li>
-    /// </ul> <note>
-    /// <p>The name of the record that you're creating must match a custom domain name for your API, such as <code>api.example.com</code>.</p>
-    /// </note>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the applicable domain name for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p> 
+    /// <ul> 
+    /// <li> <p>For regional APIs, specify the value of <code>regionalDomainName</code>.</p> </li> 
+    /// <li> <p>For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.</p> </li> 
+    /// </ul> <note> 
+    /// <p>The name of the record that you're creating must match a custom domain name for your API, such as <code>api.example.com</code>.</p> 
+    /// </note> 
+    /// </dd> 
     /// <dt>
     /// Amazon Virtual Private Cloud interface VPC endpoint
-    /// </dt>
-    /// <dd>
-    /// <p>Enter the API endpoint for the interface endpoint, such as <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>. For edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can get the value of <code>DnsName</code> using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Enter the API endpoint for the interface endpoint, such as <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>. For edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can get the value of <code>DnsName</code> using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p> 
+    /// </dd> 
     /// <dt>
     /// CloudFront distribution
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the domain name that CloudFront assigned when you created your distribution.</p>
-    /// <p>Your CloudFront distribution must include an alternate domain name that matches the name of the resource record set. For example, if the name of the resource record set is <i>acme.example.com</i>, your CloudFront distribution must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    /// <p>You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> <note>
-    /// <p>For failover alias records, you can't specify a CloudFront distribution for both the primary and secondary records. A distribution must include an alternate domain name that matches the name of the record. However, the primary and secondary records have the same name, and you can't include the same alternate domain name in more than one distribution. </p>
-    /// </note>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the domain name that CloudFront assigned when you created your distribution.</p> 
+    /// <p>Your CloudFront distribution must include an alternate domain name that matches the name of the resource record set. For example, if the name of the resource record set is <i>acme.example.com</i>, your CloudFront distribution must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> 
+    /// <p>You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> <note> 
+    /// <p>For failover alias records, you can't specify a CloudFront distribution for both the primary and secondary records. A distribution must include an alternate domain name that matches the name of the record. However, the primary and secondary records have the same name, and you can't include the same alternate domain name in more than one distribution. </p> 
+    /// </note> 
+    /// </dd> 
     /// <dt>
     /// Elastic Beanstalk environment
-    /// </dt>
-    /// <dd>
-    /// <p>If the domain name for your Elastic Beanstalk environment includes the region that you deployed the environment in, you can create an alias record that routes traffic to the environment. For example, the domain name <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a regionalized domain name. </p> <important>
-    /// <p>For environments that were created before early 2016, the domain name doesn't include the region. To route traffic to these environments, you must create a CNAME record instead of an alias record. Note that you can't create a CNAME record for the root domain name. For example, if your domain name is example.com, you can create a record that routes traffic for acme.example.com to your Elastic Beanstalk environment, but you can't create a record that routes traffic for example.com to your Elastic Beanstalk environment.</p>
-    /// </important>
-    /// <p>For Elastic Beanstalk environments that have regionalized subdomains, specify the <code>CNAME</code> attribute for the environment. You can use the following methods to get the value of the CNAME attribute:</p>
-    /// <ul>
-    /// <li> <p> <i>Amazon Web Services Management Console</i>: For information about how to get the value by using the console, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p> </li>
-    /// <li> <p> <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.</p> </li>
-    /// <li> <p> <i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the <i>CLI Command Reference</i>.</p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>If the domain name for your Elastic Beanstalk environment includes the region that you deployed the environment in, you can create an alias record that routes traffic to the environment. For example, the domain name <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a regionalized domain name. </p> <important> 
+    /// <p>For environments that were created before early 2016, the domain name doesn't include the region. To route traffic to these environments, you must create a CNAME record instead of an alias record. Note that you can't create a CNAME record for the root domain name. For example, if your domain name is example.com, you can create a record that routes traffic for acme.example.com to your Elastic Beanstalk environment, but you can't create a record that routes traffic for example.com to your Elastic Beanstalk environment.</p> 
+    /// </important> 
+    /// <p>For Elastic Beanstalk environments that have regionalized subdomains, specify the <code>CNAME</code> attribute for the environment. You can use the following methods to get the value of the CNAME attribute:</p> 
+    /// <ul> 
+    /// <li> <p> <i>Amazon Web Services Management Console</i>: For information about how to get the value by using the console, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p> </li> 
+    /// <li> <p> <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.</p> </li> 
+    /// <li> <p> <i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the <i>CLI Command Reference</i>.</p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// ELB load balancer
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Amazon Web Services Management Console, the ELB API, or the CLI. </p>
-    /// <ul>
-    /// <li> <p> <b>Amazon Web Services Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. </p> <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.</p> </li>
-    /// <li> <p> <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
-    /// <ul>
-    /// <li> <p>Classic Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </p> </li>
-    /// <li> <p>Application and Network Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </p> </li>
-    /// </ul> </li>
-    /// <li> <p> <b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
-    /// <ul>
-    /// <li> <p>Classic Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </p> </li>
-    /// <li> <p>Application and Network Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> </p> </li>
-    /// </ul> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Amazon Web Services Management Console, the ELB API, or the CLI. </p> 
+    /// <ul> 
+    /// <li> <p> <b>Amazon Web Services Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. </p> <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.</p> </li> 
+    /// <li> <p> <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p> 
+    /// <ul> 
+    /// <li> <p>Classic Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </p> </li> 
+    /// <li> <p>Application and Network Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p> 
+    /// <ul> 
+    /// <li> <p>Classic Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </p> </li> 
+    /// <li> <p>Application and Network Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> </p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// Global Accelerator accelerator
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the DNS name for your accelerator:</p>
-    /// <ul>
-    /// <li> <p> <b>Global Accelerator API:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html">DescribeAccelerator</a>.</p> </li>
-    /// <li> <p> <b>CLI:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the DNS name for your accelerator:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Global Accelerator API:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html">DescribeAccelerator</a>.</p> </li> 
+    /// <li> <p> <b>CLI:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// Amazon S3 bucket that is configured as a static website
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example, <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3 buckets for websites, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i> </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example, <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3 buckets for websites, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i> </p> 
+    /// </dd> 
     /// <dt>
     /// Another Route 53 resource record set
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</p> <note>
-    /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't specify the domain name for a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record that you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p>
-    /// </note>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</p> <note> 
+    /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't specify the domain name for a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record that you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p> 
+    /// </note> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub dns_name: std::option::Option<std::string::String>,
-    /// <p> <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p>
-    /// <p>Note the following:</p>
-    /// <dl>
+    /// <p> <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p> 
+    /// <p>Note the following:</p> 
+    /// <dl> 
     /// <dt>
     /// CloudFront distributions
-    /// </dt>
-    /// <dd>
-    /// <p>You can't set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a CloudFront distribution.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>You can't set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a CloudFront distribution.</p> 
+    /// </dd> 
     /// <dt>
     /// Elastic Beanstalk environments that have regionalized subdomains
-    /// </dt>
-    /// <dd>
-    /// <p>If you specify an Elastic Beanstalk environment in <code>DNSName</code> and the environment contains an ELB load balancer, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. (An environment automatically contains an ELB load balancer if it includes more than one Amazon EC2 instance.) If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no Amazon EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other available resources that are healthy, if any. </p>
-    /// <p>If the environment contains a single Amazon EC2 instance, there are no special requirements.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>If you specify an Elastic Beanstalk environment in <code>DNSName</code> and the environment contains an ELB load balancer, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. (An environment automatically contains an ELB load balancer if it includes more than one Amazon EC2 instance.) If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no Amazon EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other available resources that are healthy, if any. </p> 
+    /// <p>If the environment contains a single Amazon EC2 instance, there are no special requirements.</p> 
+    /// </dd> 
     /// <dt>
     /// ELB load balancers
-    /// </dt>
-    /// <dd>
-    /// <p>Health checking behavior depends on the type of load balancer:</p>
-    /// <ul>
-    /// <li> <p> <b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in <code>DNSName</code>, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other resources.</p> </li>
-    /// <li> <p> <b>Application and Network Load Balancers</b>: If you specify an ELB Application or Network Load Balancer and you set <code>EvaluateTargetHealth</code> to <code>true</code>, Route 53 routes queries to the load balancer based on the health of the target groups that are associated with the load balancer:</p>
-    /// <ul>
-    /// <li> <p>For an Application or Network Load Balancer to be considered healthy, every target group that contains targets must contain at least one healthy target. If any target group contains only unhealthy targets, the load balancer is considered unhealthy, and Route 53 routes queries to other resources.</p> </li>
-    /// <li> <p>A target group that has no registered targets is considered unhealthy.</p> </li>
-    /// </ul> </li>
-    /// </ul> <note>
-    /// <p>When you create a load balancer, you configure settings for Elastic Load Balancing health checks; they're not Route 53 health checks, but they perform a similar function. Do not create Route 53 health checks for the EC2 instances that you register with an ELB load balancer. </p>
-    /// </note>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Health checking behavior depends on the type of load balancer:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in <code>DNSName</code>, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other resources.</p> </li> 
+    /// <li> <p> <b>Application and Network Load Balancers</b>: If you specify an ELB Application or Network Load Balancer and you set <code>EvaluateTargetHealth</code> to <code>true</code>, Route 53 routes queries to the load balancer based on the health of the target groups that are associated with the load balancer:</p> 
+    /// <ul> 
+    /// <li> <p>For an Application or Network Load Balancer to be considered healthy, every target group that contains targets must contain at least one healthy target. If any target group contains only unhealthy targets, the load balancer is considered unhealthy, and Route 53 routes queries to other resources.</p> </li> 
+    /// <li> <p>A target group that has no registered targets is considered unhealthy.</p> </li> 
+    /// </ul> </li> 
+    /// </ul> <note> 
+    /// <p>When you create a load balancer, you configure settings for Elastic Load Balancing health checks; they're not Route 53 health checks, but they perform a similar function. Do not create Route 53 health checks for the EC2 instances that you register with an ELB load balancer. </p> 
+    /// </note> 
+    /// </dd> 
     /// <dt>
     /// S3 buckets
-    /// </dt>
-    /// <dd>
-    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an S3 bucket.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an S3 bucket.</p> 
+    /// </dd> 
     /// <dt>
     /// Other records in the same hosted zone
-    /// </dt>
-    /// <dd>
-    /// <p>If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a group of weighted records) but is not another alias record, we recommend that you associate a health check with all of the records in the alias target. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// </dd>
-    /// </dl>
+    /// </dt> 
+    /// <dd> 
+    /// <p>If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a group of weighted records) but is not another alias record, we recommend that you associate a health check with all of the records in the alias target. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
+    /// </dd> 
+    /// </dl> 
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     #[doc(hidden)]
     pub evaluate_target_health: bool,
 }
 impl AliasTarget {
-    /// <p> <i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:</p>
-    /// <dl>
+    /// <p> <i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:</p> 
+    /// <dl> 
     /// <dt>
     /// Amazon API Gateway custom regional APIs and edge-optimized APIs
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
-    /// <ul>
-    /// <li> <p>For regional APIs, specify the value of <code>regionalHostedZoneId</code>.</p> </li>
-    /// <li> <p>For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.</p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p> 
+    /// <ul> 
+    /// <li> <p>For regional APIs, specify the value of <code>regionalHostedZoneId</code>.</p> </li> 
+    /// <li> <p>For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.</p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// Amazon Virtual Private Cloud interface VPC endpoint
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code> using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code> using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p> 
+    /// </dd> 
     /// <dt>
     /// CloudFront distribution
-    /// </dt>
-    /// <dd>
-    /// <p>Specify <code>Z2FDTNDATAQYW2</code>.</p> <note>
-    /// <p>Alias resource record sets for CloudFront can't be created in a private zone.</p>
-    /// </note>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify <code>Z2FDTNDATAQYW2</code>.</p> <note> 
+    /// <p>Alias resource record sets for CloudFront can't be created in a private zone.</p> 
+    /// </note> 
+    /// </dd> 
     /// <dt>
     /// Elastic Beanstalk environment
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the hosted zone ID for the region that you created the environment in. The environment must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General Reference</i>.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the hosted zone ID for the region that you created the environment in. The environment must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General Reference</i>.</p> 
+    /// </dd> 
     /// <dt>
     /// ELB load balancer
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the value of the hosted zone ID for the load balancer. Use the following methods to get the hosted zone ID:</p>
-    /// <ul>
-    /// <li> <p> <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that you created your load balancer in. Note that there are separate columns for Application and Classic Load Balancers and for Network Load Balancers.</p> </li>
-    /// <li> <p> <b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li>
-    /// <li> <p> <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more information, see the applicable guide:</p>
-    /// <ul>
-    /// <li> <p>Classic Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li>
-    /// <li> <p>Application and Network Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the applicable guide:</p>
-    /// <ul>
-    /// <li> <p>Classic Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li>
-    /// <li> <p>Application and Network Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p> </li>
-    /// </ul> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the value of the hosted zone ID for the load balancer. Use the following methods to get the hosted zone ID:</p> 
+    /// <ul> 
+    /// <li> <p> <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that you created your load balancer in. Note that there are separate columns for Application and Classic Load Balancers and for Network Load Balancers.</p> </li> 
+    /// <li> <p> <b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li> 
+    /// <li> <p> <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more information, see the applicable guide:</p> 
+    /// <ul> 
+    /// <li> <p>Classic Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> 
+    /// <li> <p>Application and Network Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the applicable guide:</p> 
+    /// <ul> 
+    /// <li> <p>Classic Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> 
+    /// <li> <p>Application and Network Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// Global Accelerator accelerator
-    /// </dt>
-    /// <dd>
-    /// <p>Specify <code>Z2BJ6XQ5FK7U4H</code>.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify <code>Z2BJ6XQ5FK7U4H</code>.</p> 
+    /// </dd> 
     /// <dt>
     /// An Amazon S3 bucket configured as a static website
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the hosted zone ID for the region that you created the bucket in. For more information about valid values, see the table <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the hosted zone ID for the region that you created the bucket in. For more information about valid values, see the table <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p> 
+    /// </dd> 
     /// <dt>
     /// Another Route 53 resource record set in your hosted zone
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource record set in a different hosted zone.)</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource record set in a different hosted zone.)</p> 
+    /// </dd> 
     /// </dl>
-    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> std::option::Option<& str> {
         self.hosted_zone_id.as_deref()
     }
-    /// <p> <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route queries:</p>
-    /// <dl>
+    /// <p> <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route queries:</p> 
+    /// <dl> 
     /// <dt>
     /// Amazon API Gateway custom regional APIs and edge-optimized APIs
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the applicable domain name for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
-    /// <ul>
-    /// <li> <p>For regional APIs, specify the value of <code>regionalDomainName</code>.</p> </li>
-    /// <li> <p>For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.</p> </li>
-    /// </ul> <note>
-    /// <p>The name of the record that you're creating must match a custom domain name for your API, such as <code>api.example.com</code>.</p>
-    /// </note>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the applicable domain name for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p> 
+    /// <ul> 
+    /// <li> <p>For regional APIs, specify the value of <code>regionalDomainName</code>.</p> </li> 
+    /// <li> <p>For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.</p> </li> 
+    /// </ul> <note> 
+    /// <p>The name of the record that you're creating must match a custom domain name for your API, such as <code>api.example.com</code>.</p> 
+    /// </note> 
+    /// </dd> 
     /// <dt>
     /// Amazon Virtual Private Cloud interface VPC endpoint
-    /// </dt>
-    /// <dd>
-    /// <p>Enter the API endpoint for the interface endpoint, such as <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>. For edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can get the value of <code>DnsName</code> using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Enter the API endpoint for the interface endpoint, such as <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>. For edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can get the value of <code>DnsName</code> using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p> 
+    /// </dd> 
     /// <dt>
     /// CloudFront distribution
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the domain name that CloudFront assigned when you created your distribution.</p>
-    /// <p>Your CloudFront distribution must include an alternate domain name that matches the name of the resource record set. For example, if the name of the resource record set is <i>acme.example.com</i>, your CloudFront distribution must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    /// <p>You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> <note>
-    /// <p>For failover alias records, you can't specify a CloudFront distribution for both the primary and secondary records. A distribution must include an alternate domain name that matches the name of the record. However, the primary and secondary records have the same name, and you can't include the same alternate domain name in more than one distribution. </p>
-    /// </note>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the domain name that CloudFront assigned when you created your distribution.</p> 
+    /// <p>Your CloudFront distribution must include an alternate domain name that matches the name of the resource record set. For example, if the name of the resource record set is <i>acme.example.com</i>, your CloudFront distribution must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> 
+    /// <p>You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> <note> 
+    /// <p>For failover alias records, you can't specify a CloudFront distribution for both the primary and secondary records. A distribution must include an alternate domain name that matches the name of the record. However, the primary and secondary records have the same name, and you can't include the same alternate domain name in more than one distribution. </p> 
+    /// </note> 
+    /// </dd> 
     /// <dt>
     /// Elastic Beanstalk environment
-    /// </dt>
-    /// <dd>
-    /// <p>If the domain name for your Elastic Beanstalk environment includes the region that you deployed the environment in, you can create an alias record that routes traffic to the environment. For example, the domain name <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a regionalized domain name. </p> <important>
-    /// <p>For environments that were created before early 2016, the domain name doesn't include the region. To route traffic to these environments, you must create a CNAME record instead of an alias record. Note that you can't create a CNAME record for the root domain name. For example, if your domain name is example.com, you can create a record that routes traffic for acme.example.com to your Elastic Beanstalk environment, but you can't create a record that routes traffic for example.com to your Elastic Beanstalk environment.</p>
-    /// </important>
-    /// <p>For Elastic Beanstalk environments that have regionalized subdomains, specify the <code>CNAME</code> attribute for the environment. You can use the following methods to get the value of the CNAME attribute:</p>
-    /// <ul>
-    /// <li> <p> <i>Amazon Web Services Management Console</i>: For information about how to get the value by using the console, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p> </li>
-    /// <li> <p> <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.</p> </li>
-    /// <li> <p> <i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the <i>CLI Command Reference</i>.</p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>If the domain name for your Elastic Beanstalk environment includes the region that you deployed the environment in, you can create an alias record that routes traffic to the environment. For example, the domain name <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a regionalized domain name. </p> <important> 
+    /// <p>For environments that were created before early 2016, the domain name doesn't include the region. To route traffic to these environments, you must create a CNAME record instead of an alias record. Note that you can't create a CNAME record for the root domain name. For example, if your domain name is example.com, you can create a record that routes traffic for acme.example.com to your Elastic Beanstalk environment, but you can't create a record that routes traffic for example.com to your Elastic Beanstalk environment.</p> 
+    /// </important> 
+    /// <p>For Elastic Beanstalk environments that have regionalized subdomains, specify the <code>CNAME</code> attribute for the environment. You can use the following methods to get the value of the CNAME attribute:</p> 
+    /// <ul> 
+    /// <li> <p> <i>Amazon Web Services Management Console</i>: For information about how to get the value by using the console, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p> </li> 
+    /// <li> <p> <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.</p> </li> 
+    /// <li> <p> <i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the <i>CLI Command Reference</i>.</p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// ELB load balancer
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Amazon Web Services Management Console, the ELB API, or the CLI. </p>
-    /// <ul>
-    /// <li> <p> <b>Amazon Web Services Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. </p> <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.</p> </li>
-    /// <li> <p> <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
-    /// <ul>
-    /// <li> <p>Classic Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </p> </li>
-    /// <li> <p>Application and Network Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </p> </li>
-    /// </ul> </li>
-    /// <li> <p> <b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
-    /// <ul>
-    /// <li> <p>Classic Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </p> </li>
-    /// <li> <p>Application and Network Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> </p> </li>
-    /// </ul> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Amazon Web Services Management Console, the ELB API, or the CLI. </p> 
+    /// <ul> 
+    /// <li> <p> <b>Amazon Web Services Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. </p> <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.</p> </li> 
+    /// <li> <p> <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p> 
+    /// <ul> 
+    /// <li> <p>Classic Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </p> </li> 
+    /// <li> <p>Application and Network Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p> 
+    /// <ul> 
+    /// <li> <p>Classic Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </p> </li> 
+    /// <li> <p>Application and Network Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> </p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// Global Accelerator accelerator
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the DNS name for your accelerator:</p>
-    /// <ul>
-    /// <li> <p> <b>Global Accelerator API:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html">DescribeAccelerator</a>.</p> </li>
-    /// <li> <p> <b>CLI:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the DNS name for your accelerator:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Global Accelerator API:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html">DescribeAccelerator</a>.</p> </li> 
+    /// <li> <p> <b>CLI:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// Amazon S3 bucket that is configured as a static website
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example, <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3 buckets for websites, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i> </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example, <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3 buckets for websites, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i> </p> 
+    /// </dd> 
     /// <dt>
     /// Another Route 53 resource record set
-    /// </dt>
-    /// <dd>
-    /// <p>Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</p> <note>
-    /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't specify the domain name for a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record that you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p>
-    /// </note>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</p> <note> 
+    /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't specify the domain name for a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record that you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p> 
+    /// </note> 
+    /// </dd> 
     /// </dl>
-    pub fn dns_name(&self) -> std::option::Option<&str> {
+    pub fn dns_name(&self) -> std::option::Option<& str> {
         self.dns_name.as_deref()
     }
-    /// <p> <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p>
-    /// <p>Note the following:</p>
-    /// <dl>
+    /// <p> <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p> 
+    /// <p>Note the following:</p> 
+    /// <dl> 
     /// <dt>
     /// CloudFront distributions
-    /// </dt>
-    /// <dd>
-    /// <p>You can't set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a CloudFront distribution.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>You can't set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a CloudFront distribution.</p> 
+    /// </dd> 
     /// <dt>
     /// Elastic Beanstalk environments that have regionalized subdomains
-    /// </dt>
-    /// <dd>
-    /// <p>If you specify an Elastic Beanstalk environment in <code>DNSName</code> and the environment contains an ELB load balancer, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. (An environment automatically contains an ELB load balancer if it includes more than one Amazon EC2 instance.) If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no Amazon EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other available resources that are healthy, if any. </p>
-    /// <p>If the environment contains a single Amazon EC2 instance, there are no special requirements.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>If you specify an Elastic Beanstalk environment in <code>DNSName</code> and the environment contains an ELB load balancer, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. (An environment automatically contains an ELB load balancer if it includes more than one Amazon EC2 instance.) If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no Amazon EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other available resources that are healthy, if any. </p> 
+    /// <p>If the environment contains a single Amazon EC2 instance, there are no special requirements.</p> 
+    /// </dd> 
     /// <dt>
     /// ELB load balancers
-    /// </dt>
-    /// <dd>
-    /// <p>Health checking behavior depends on the type of load balancer:</p>
-    /// <ul>
-    /// <li> <p> <b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in <code>DNSName</code>, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other resources.</p> </li>
-    /// <li> <p> <b>Application and Network Load Balancers</b>: If you specify an ELB Application or Network Load Balancer and you set <code>EvaluateTargetHealth</code> to <code>true</code>, Route 53 routes queries to the load balancer based on the health of the target groups that are associated with the load balancer:</p>
-    /// <ul>
-    /// <li> <p>For an Application or Network Load Balancer to be considered healthy, every target group that contains targets must contain at least one healthy target. If any target group contains only unhealthy targets, the load balancer is considered unhealthy, and Route 53 routes queries to other resources.</p> </li>
-    /// <li> <p>A target group that has no registered targets is considered unhealthy.</p> </li>
-    /// </ul> </li>
-    /// </ul> <note>
-    /// <p>When you create a load balancer, you configure settings for Elastic Load Balancing health checks; they're not Route 53 health checks, but they perform a similar function. Do not create Route 53 health checks for the EC2 instances that you register with an ELB load balancer. </p>
-    /// </note>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Health checking behavior depends on the type of load balancer:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in <code>DNSName</code>, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other resources.</p> </li> 
+    /// <li> <p> <b>Application and Network Load Balancers</b>: If you specify an ELB Application or Network Load Balancer and you set <code>EvaluateTargetHealth</code> to <code>true</code>, Route 53 routes queries to the load balancer based on the health of the target groups that are associated with the load balancer:</p> 
+    /// <ul> 
+    /// <li> <p>For an Application or Network Load Balancer to be considered healthy, every target group that contains targets must contain at least one healthy target. If any target group contains only unhealthy targets, the load balancer is considered unhealthy, and Route 53 routes queries to other resources.</p> </li> 
+    /// <li> <p>A target group that has no registered targets is considered unhealthy.</p> </li> 
+    /// </ul> </li> 
+    /// </ul> <note> 
+    /// <p>When you create a load balancer, you configure settings for Elastic Load Balancing health checks; they're not Route 53 health checks, but they perform a similar function. Do not create Route 53 health checks for the EC2 instances that you register with an ELB load balancer. </p> 
+    /// </note> 
+    /// </dd> 
     /// <dt>
     /// S3 buckets
-    /// </dt>
-    /// <dd>
-    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an S3 bucket.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an S3 bucket.</p> 
+    /// </dd> 
     /// <dt>
     /// Other records in the same hosted zone
-    /// </dt>
-    /// <dd>
-    /// <p>If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a group of weighted records) but is not another alias record, we recommend that you associate a health check with all of the records in the alias target. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// </dd>
-    /// </dl>
+    /// </dt> 
+    /// <dd> 
+    /// <p>If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a group of weighted records) but is not another alias record, we recommend that you associate a health check with all of the records in the alias target. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
+    /// </dd> 
+    /// </dl> 
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     pub fn evaluate_target_health(&self) -> bool {
         self.evaluate_target_health
@@ -5349,7 +5078,7 @@ impl AliasTarget {
 }
 /// See [`AliasTarget`](crate::model::AliasTarget).
 pub mod alias_target {
-
+    
     /// A builder for [`AliasTarget`](crate::model::AliasTarget).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5358,452 +5087,452 @@ pub mod alias_target {
         pub(crate) evaluate_target_health: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p> <i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:</p>
-        /// <dl>
+        /// <p> <i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:</p> 
+        /// <dl> 
         /// <dt>
         /// Amazon API Gateway custom regional APIs and edge-optimized APIs
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
-        /// <ul>
-        /// <li> <p>For regional APIs, specify the value of <code>regionalHostedZoneId</code>.</p> </li>
-        /// <li> <p>For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.</p> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p> 
+        /// <ul> 
+        /// <li> <p>For regional APIs, specify the value of <code>regionalHostedZoneId</code>.</p> </li> 
+        /// <li> <p>For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.</p> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// Amazon Virtual Private Cloud interface VPC endpoint
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code> using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code> using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p> 
+        /// </dd> 
         /// <dt>
         /// CloudFront distribution
-        /// </dt>
-        /// <dd>
-        /// <p>Specify <code>Z2FDTNDATAQYW2</code>.</p> <note>
-        /// <p>Alias resource record sets for CloudFront can't be created in a private zone.</p>
-        /// </note>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify <code>Z2FDTNDATAQYW2</code>.</p> <note> 
+        /// <p>Alias resource record sets for CloudFront can't be created in a private zone.</p> 
+        /// </note> 
+        /// </dd> 
         /// <dt>
         /// Elastic Beanstalk environment
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the hosted zone ID for the region that you created the environment in. The environment must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General Reference</i>.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the hosted zone ID for the region that you created the environment in. The environment must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General Reference</i>.</p> 
+        /// </dd> 
         /// <dt>
         /// ELB load balancer
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the value of the hosted zone ID for the load balancer. Use the following methods to get the hosted zone ID:</p>
-        /// <ul>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that you created your load balancer in. Note that there are separate columns for Application and Classic Load Balancers and for Network Load Balancers.</p> </li>
-        /// <li> <p> <b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li>
-        /// <li> <p> <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more information, see the applicable guide:</p>
-        /// <ul>
-        /// <li> <p>Classic Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li>
-        /// <li> <p>Application and Network Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p> </li>
-        /// </ul> </li>
-        /// <li> <p> <b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the applicable guide:</p>
-        /// <ul>
-        /// <li> <p>Classic Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li>
-        /// <li> <p>Application and Network Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p> </li>
-        /// </ul> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the value of the hosted zone ID for the load balancer. Use the following methods to get the hosted zone ID:</p> 
+        /// <ul> 
+        /// <li> <p> <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that you created your load balancer in. Note that there are separate columns for Application and Classic Load Balancers and for Network Load Balancers.</p> </li> 
+        /// <li> <p> <b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li> 
+        /// <li> <p> <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more information, see the applicable guide:</p> 
+        /// <ul> 
+        /// <li> <p>Classic Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> 
+        /// <li> <p>Application and Network Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the applicable guide:</p> 
+        /// <ul> 
+        /// <li> <p>Classic Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> 
+        /// <li> <p>Application and Network Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> 
+        /// </ul> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// Global Accelerator accelerator
-        /// </dt>
-        /// <dd>
-        /// <p>Specify <code>Z2BJ6XQ5FK7U4H</code>.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify <code>Z2BJ6XQ5FK7U4H</code>.</p> 
+        /// </dd> 
         /// <dt>
         /// An Amazon S3 bucket configured as a static website
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the hosted zone ID for the region that you created the bucket in. For more information about valid values, see the table <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the hosted zone ID for the region that you created the bucket in. For more information about valid values, see the table <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p> 
+        /// </dd> 
         /// <dt>
         /// Another Route 53 resource record set in your hosted zone
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource record set in a different hosted zone.)</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource record set in a different hosted zone.)</p> 
+        /// </dd> 
         /// </dl>
         pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.hosted_zone_id = Some(input.into());
             self
         }
-        /// <p> <i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:</p>
-        /// <dl>
+        /// <p> <i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:</p> 
+        /// <dl> 
         /// <dt>
         /// Amazon API Gateway custom regional APIs and edge-optimized APIs
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
-        /// <ul>
-        /// <li> <p>For regional APIs, specify the value of <code>regionalHostedZoneId</code>.</p> </li>
-        /// <li> <p>For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.</p> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the hosted zone ID for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p> 
+        /// <ul> 
+        /// <li> <p>For regional APIs, specify the value of <code>regionalHostedZoneId</code>.</p> </li> 
+        /// <li> <p>For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.</p> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// Amazon Virtual Private Cloud interface VPC endpoint
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code> using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code> using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p> 
+        /// </dd> 
         /// <dt>
         /// CloudFront distribution
-        /// </dt>
-        /// <dd>
-        /// <p>Specify <code>Z2FDTNDATAQYW2</code>.</p> <note>
-        /// <p>Alias resource record sets for CloudFront can't be created in a private zone.</p>
-        /// </note>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify <code>Z2FDTNDATAQYW2</code>.</p> <note> 
+        /// <p>Alias resource record sets for CloudFront can't be created in a private zone.</p> 
+        /// </note> 
+        /// </dd> 
         /// <dt>
         /// Elastic Beanstalk environment
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the hosted zone ID for the region that you created the environment in. The environment must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General Reference</i>.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the hosted zone ID for the region that you created the environment in. The environment must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General Reference</i>.</p> 
+        /// </dd> 
         /// <dt>
         /// ELB load balancer
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the value of the hosted zone ID for the load balancer. Use the following methods to get the hosted zone ID:</p>
-        /// <ul>
-        /// <li> <p> <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that you created your load balancer in. Note that there are separate columns for Application and Classic Load Balancers and for Network Load Balancers.</p> </li>
-        /// <li> <p> <b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li>
-        /// <li> <p> <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more information, see the applicable guide:</p>
-        /// <ul>
-        /// <li> <p>Classic Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li>
-        /// <li> <p>Application and Network Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p> </li>
-        /// </ul> </li>
-        /// <li> <p> <b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the applicable guide:</p>
-        /// <ul>
-        /// <li> <p>Classic Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li>
-        /// <li> <p>Application and Network Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p> </li>
-        /// </ul> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the value of the hosted zone ID for the load balancer. Use the following methods to get the hosted zone ID:</p> 
+        /// <ul> 
+        /// <li> <p> <a href="https://docs.aws.amazon.com/general/latest/gr/elb.html">Elastic Load Balancing endpoints and quotas</a> topic in the <i>Amazon Web Services General Reference</i>: Use the value that corresponds with the region that you created your load balancer in. Note that there are separate columns for Application and Classic Load Balancers and for Network Load Balancers.</p> </li> 
+        /// <li> <p> <b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the <b>Hosted zone</b> field on the <b>Description</b> tab.</p> </li> 
+        /// <li> <p> <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the applicable value. For more information, see the applicable guide:</p> 
+        /// <ul> 
+        /// <li> <p>Classic Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> 
+        /// <li> <p>Application and Network Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value. For more information, see the applicable guide:</p> 
+        /// <ul> 
+        /// <li> <p>Classic Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneNameId</code>.</p> </li> 
+        /// <li> <p>Application and Network Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> to get the value of <code>CanonicalHostedZoneId</code>.</p> </li> 
+        /// </ul> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// Global Accelerator accelerator
-        /// </dt>
-        /// <dd>
-        /// <p>Specify <code>Z2BJ6XQ5FK7U4H</code>.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify <code>Z2BJ6XQ5FK7U4H</code>.</p> 
+        /// </dd> 
         /// <dt>
         /// An Amazon S3 bucket configured as a static website
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the hosted zone ID for the region that you created the bucket in. For more information about valid values, see the table <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the hosted zone ID for the region that you created the bucket in. For more information about valid values, see the table <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>.</p> 
+        /// </dd> 
         /// <dt>
         /// Another Route 53 resource record set in your hosted zone
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource record set in a different hosted zone.)</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource record set in a different hosted zone.)</p> 
+        /// </dd> 
         /// </dl>
-        pub fn set_hosted_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hosted_zone_id = input;
-            self
+        pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hosted_zone_id = input; self
         }
-        /// <p> <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route queries:</p>
-        /// <dl>
+        /// <p> <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route queries:</p> 
+        /// <dl> 
         /// <dt>
         /// Amazon API Gateway custom regional APIs and edge-optimized APIs
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the applicable domain name for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
-        /// <ul>
-        /// <li> <p>For regional APIs, specify the value of <code>regionalDomainName</code>.</p> </li>
-        /// <li> <p>For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.</p> </li>
-        /// </ul> <note>
-        /// <p>The name of the record that you're creating must match a custom domain name for your API, such as <code>api.example.com</code>.</p>
-        /// </note>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the applicable domain name for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p> 
+        /// <ul> 
+        /// <li> <p>For regional APIs, specify the value of <code>regionalDomainName</code>.</p> </li> 
+        /// <li> <p>For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.</p> </li> 
+        /// </ul> <note> 
+        /// <p>The name of the record that you're creating must match a custom domain name for your API, such as <code>api.example.com</code>.</p> 
+        /// </note> 
+        /// </dd> 
         /// <dt>
         /// Amazon Virtual Private Cloud interface VPC endpoint
-        /// </dt>
-        /// <dd>
-        /// <p>Enter the API endpoint for the interface endpoint, such as <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>. For edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can get the value of <code>DnsName</code> using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Enter the API endpoint for the interface endpoint, such as <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>. For edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can get the value of <code>DnsName</code> using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p> 
+        /// </dd> 
         /// <dt>
         /// CloudFront distribution
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the domain name that CloudFront assigned when you created your distribution.</p>
-        /// <p>Your CloudFront distribution must include an alternate domain name that matches the name of the resource record set. For example, if the name of the resource record set is <i>acme.example.com</i>, your CloudFront distribution must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-        /// <p>You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> <note>
-        /// <p>For failover alias records, you can't specify a CloudFront distribution for both the primary and secondary records. A distribution must include an alternate domain name that matches the name of the record. However, the primary and secondary records have the same name, and you can't include the same alternate domain name in more than one distribution. </p>
-        /// </note>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the domain name that CloudFront assigned when you created your distribution.</p> 
+        /// <p>Your CloudFront distribution must include an alternate domain name that matches the name of the resource record set. For example, if the name of the resource record set is <i>acme.example.com</i>, your CloudFront distribution must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> 
+        /// <p>You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> <note> 
+        /// <p>For failover alias records, you can't specify a CloudFront distribution for both the primary and secondary records. A distribution must include an alternate domain name that matches the name of the record. However, the primary and secondary records have the same name, and you can't include the same alternate domain name in more than one distribution. </p> 
+        /// </note> 
+        /// </dd> 
         /// <dt>
         /// Elastic Beanstalk environment
-        /// </dt>
-        /// <dd>
-        /// <p>If the domain name for your Elastic Beanstalk environment includes the region that you deployed the environment in, you can create an alias record that routes traffic to the environment. For example, the domain name <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a regionalized domain name. </p> <important>
-        /// <p>For environments that were created before early 2016, the domain name doesn't include the region. To route traffic to these environments, you must create a CNAME record instead of an alias record. Note that you can't create a CNAME record for the root domain name. For example, if your domain name is example.com, you can create a record that routes traffic for acme.example.com to your Elastic Beanstalk environment, but you can't create a record that routes traffic for example.com to your Elastic Beanstalk environment.</p>
-        /// </important>
-        /// <p>For Elastic Beanstalk environments that have regionalized subdomains, specify the <code>CNAME</code> attribute for the environment. You can use the following methods to get the value of the CNAME attribute:</p>
-        /// <ul>
-        /// <li> <p> <i>Amazon Web Services Management Console</i>: For information about how to get the value by using the console, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p> </li>
-        /// <li> <p> <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.</p> </li>
-        /// <li> <p> <i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the <i>CLI Command Reference</i>.</p> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>If the domain name for your Elastic Beanstalk environment includes the region that you deployed the environment in, you can create an alias record that routes traffic to the environment. For example, the domain name <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a regionalized domain name. </p> <important> 
+        /// <p>For environments that were created before early 2016, the domain name doesn't include the region. To route traffic to these environments, you must create a CNAME record instead of an alias record. Note that you can't create a CNAME record for the root domain name. For example, if your domain name is example.com, you can create a record that routes traffic for acme.example.com to your Elastic Beanstalk environment, but you can't create a record that routes traffic for example.com to your Elastic Beanstalk environment.</p> 
+        /// </important> 
+        /// <p>For Elastic Beanstalk environments that have regionalized subdomains, specify the <code>CNAME</code> attribute for the environment. You can use the following methods to get the value of the CNAME attribute:</p> 
+        /// <ul> 
+        /// <li> <p> <i>Amazon Web Services Management Console</i>: For information about how to get the value by using the console, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p> </li> 
+        /// <li> <p> <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.</p> </li> 
+        /// <li> <p> <i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the <i>CLI Command Reference</i>.</p> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// ELB load balancer
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Amazon Web Services Management Console, the ELB API, or the CLI. </p>
-        /// <ul>
-        /// <li> <p> <b>Amazon Web Services Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. </p> <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.</p> </li>
-        /// <li> <p> <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
-        /// <ul>
-        /// <li> <p>Classic Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </p> </li>
-        /// <li> <p>Application and Network Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </p> </li>
-        /// </ul> </li>
-        /// <li> <p> <b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
-        /// <ul>
-        /// <li> <p>Classic Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </p> </li>
-        /// <li> <p>Application and Network Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> </p> </li>
-        /// </ul> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Amazon Web Services Management Console, the ELB API, or the CLI. </p> 
+        /// <ul> 
+        /// <li> <p> <b>Amazon Web Services Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. </p> <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.</p> </li> 
+        /// <li> <p> <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p> 
+        /// <ul> 
+        /// <li> <p>Classic Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </p> </li> 
+        /// <li> <p>Application and Network Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p> 
+        /// <ul> 
+        /// <li> <p>Classic Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </p> </li> 
+        /// <li> <p>Application and Network Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> </p> </li> 
+        /// </ul> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// Global Accelerator accelerator
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the DNS name for your accelerator:</p>
-        /// <ul>
-        /// <li> <p> <b>Global Accelerator API:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html">DescribeAccelerator</a>.</p> </li>
-        /// <li> <p> <b>CLI:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the DNS name for your accelerator:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Global Accelerator API:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html">DescribeAccelerator</a>.</p> </li> 
+        /// <li> <p> <b>CLI:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// Amazon S3 bucket that is configured as a static website
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example, <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3 buckets for websites, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i> </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example, <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3 buckets for websites, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i> </p> 
+        /// </dd> 
         /// <dt>
         /// Another Route 53 resource record set
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</p> <note>
-        /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't specify the domain name for a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record that you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p>
-        /// </note>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</p> <note> 
+        /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't specify the domain name for a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record that you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p> 
+        /// </note> 
+        /// </dd> 
         /// </dl>
         pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dns_name = Some(input.into());
             self
         }
-        /// <p> <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route queries:</p>
-        /// <dl>
+        /// <p> <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route queries:</p> 
+        /// <dl> 
         /// <dt>
         /// Amazon API Gateway custom regional APIs and edge-optimized APIs
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the applicable domain name for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p>
-        /// <ul>
-        /// <li> <p>For regional APIs, specify the value of <code>regionalDomainName</code>.</p> </li>
-        /// <li> <p>For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.</p> </li>
-        /// </ul> <note>
-        /// <p>The name of the record that you're creating must match a custom domain name for your API, such as <code>api.example.com</code>.</p>
-        /// </note>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the applicable domain name for your API. You can get the applicable value using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-domain-names.html">get-domain-names</a>:</p> 
+        /// <ul> 
+        /// <li> <p>For regional APIs, specify the value of <code>regionalDomainName</code>.</p> </li> 
+        /// <li> <p>For edge-optimized APIs, specify the value of <code>distributionDomainName</code>. This is the name of the associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.</p> </li> 
+        /// </ul> <note> 
+        /// <p>The name of the record that you're creating must match a custom domain name for your API, such as <code>api.example.com</code>.</p> 
+        /// </note> 
+        /// </dd> 
         /// <dt>
         /// Amazon Virtual Private Cloud interface VPC endpoint
-        /// </dt>
-        /// <dd>
-        /// <p>Enter the API endpoint for the interface endpoint, such as <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>. For edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can get the value of <code>DnsName</code> using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Enter the API endpoint for the interface endpoint, such as <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>. For edge-optimized APIs, this is the domain name for the corresponding CloudFront distribution. You can get the value of <code>DnsName</code> using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.</p> 
+        /// </dd> 
         /// <dt>
         /// CloudFront distribution
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the domain name that CloudFront assigned when you created your distribution.</p>
-        /// <p>Your CloudFront distribution must include an alternate domain name that matches the name of the resource record set. For example, if the name of the resource record set is <i>acme.example.com</i>, your CloudFront distribution must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-        /// <p>You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> <note>
-        /// <p>For failover alias records, you can't specify a CloudFront distribution for both the primary and secondary records. A distribution must include an alternate domain name that matches the name of the record. However, the primary and secondary records have the same name, and you can't include the same alternate domain name in more than one distribution. </p>
-        /// </note>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the domain name that CloudFront assigned when you created your distribution.</p> 
+        /// <p>Your CloudFront distribution must include an alternate domain name that matches the name of the resource record set. For example, if the name of the resource record set is <i>acme.example.com</i>, your CloudFront distribution must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p> 
+        /// <p>You can't create a resource record set in a private hosted zone to route traffic to a CloudFront distribution.</p> <note> 
+        /// <p>For failover alias records, you can't specify a CloudFront distribution for both the primary and secondary records. A distribution must include an alternate domain name that matches the name of the record. However, the primary and secondary records have the same name, and you can't include the same alternate domain name in more than one distribution. </p> 
+        /// </note> 
+        /// </dd> 
         /// <dt>
         /// Elastic Beanstalk environment
-        /// </dt>
-        /// <dd>
-        /// <p>If the domain name for your Elastic Beanstalk environment includes the region that you deployed the environment in, you can create an alias record that routes traffic to the environment. For example, the domain name <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a regionalized domain name. </p> <important>
-        /// <p>For environments that were created before early 2016, the domain name doesn't include the region. To route traffic to these environments, you must create a CNAME record instead of an alias record. Note that you can't create a CNAME record for the root domain name. For example, if your domain name is example.com, you can create a record that routes traffic for acme.example.com to your Elastic Beanstalk environment, but you can't create a record that routes traffic for example.com to your Elastic Beanstalk environment.</p>
-        /// </important>
-        /// <p>For Elastic Beanstalk environments that have regionalized subdomains, specify the <code>CNAME</code> attribute for the environment. You can use the following methods to get the value of the CNAME attribute:</p>
-        /// <ul>
-        /// <li> <p> <i>Amazon Web Services Management Console</i>: For information about how to get the value by using the console, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p> </li>
-        /// <li> <p> <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.</p> </li>
-        /// <li> <p> <i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the <i>CLI Command Reference</i>.</p> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>If the domain name for your Elastic Beanstalk environment includes the region that you deployed the environment in, you can create an alias record that routes traffic to the environment. For example, the domain name <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code> is a regionalized domain name. </p> <important> 
+        /// <p>For environments that were created before early 2016, the domain name doesn't include the region. To route traffic to these environments, you must create a CNAME record instead of an alias record. Note that you can't create a CNAME record for the root domain name. For example, if your domain name is example.com, you can create a record that routes traffic for acme.example.com to your Elastic Beanstalk environment, but you can't create a record that routes traffic for example.com to your Elastic Beanstalk environment.</p> 
+        /// </important> 
+        /// <p>For Elastic Beanstalk environments that have regionalized subdomains, specify the <code>CNAME</code> attribute for the environment. You can use the following methods to get the value of the CNAME attribute:</p> 
+        /// <ul> 
+        /// <li> <p> <i>Amazon Web Services Management Console</i>: For information about how to get the value by using the console, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p> </li> 
+        /// <li> <p> <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a> in the <i>Elastic Beanstalk API Reference</i>.</p> </li> 
+        /// <li> <p> <i>CLI</i>: Use the <code>describe-environments</code> command to get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the <i>CLI Command Reference</i>.</p> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// ELB load balancer
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Amazon Web Services Management Console, the ELB API, or the CLI. </p>
-        /// <ul>
-        /// <li> <p> <b>Amazon Web Services Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. </p> <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.</p> </li>
-        /// <li> <p> <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
-        /// <ul>
-        /// <li> <p>Classic Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </p> </li>
-        /// <li> <p>Application and Network Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </p> </li>
-        /// </ul> </li>
-        /// <li> <p> <b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p>
-        /// <ul>
-        /// <li> <p>Classic Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </p> </li>
-        /// <li> <p>Application and Network Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> </p> </li>
-        /// </ul> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Amazon Web Services Management Console, the ELB API, or the CLI. </p> 
+        /// <ul> 
+        /// <li> <p> <b>Amazon Web Services Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS name</b> field. </p> <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>. If you're routing traffic to another type of load balancer, get the value that applies to the record type, A or AAAA.</p> </li> 
+        /// <li> <p> <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p> 
+        /// <ul> 
+        /// <li> <p>Classic Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </p> </li> 
+        /// <li> <p>Application and Network Load Balancers: <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>. For more information, see the applicable guide:</p> 
+        /// <ul> 
+        /// <li> <p>Classic Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </p> </li> 
+        /// <li> <p>Application and Network Load Balancers: <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a> </p> </li> 
+        /// </ul> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// Global Accelerator accelerator
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the DNS name for your accelerator:</p>
-        /// <ul>
-        /// <li> <p> <b>Global Accelerator API:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html">DescribeAccelerator</a>.</p> </li>
-        /// <li> <p> <b>CLI:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the DNS name for your accelerator:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Global Accelerator API:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html">DescribeAccelerator</a>.</p> </li> 
+        /// <li> <p> <b>CLI:</b> To get the DNS name, use <a href="https://docs.aws.amazon.com/cli/latest/reference/globalaccelerator/describe-accelerator.html">describe-accelerator</a>.</p> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// Amazon S3 bucket that is configured as a static website
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example, <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3 buckets for websites, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i> </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the domain name of the Amazon S3 website endpoint that you created the bucket in, for example, <code>s3-website.us-east-2.amazonaws.com</code>. For more information about valid values, see the table <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon S3 Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3 buckets for websites, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting Started with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i> </p> 
+        /// </dd> 
         /// <dt>
         /// Another Route 53 resource record set
-        /// </dt>
-        /// <dd>
-        /// <p>Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</p> <note>
-        /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't specify the domain name for a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record that you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p>
-        /// </note>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone.</p> <note> 
+        /// <p>If you're creating an alias record that has the same name as the hosted zone (known as the zone apex), you can't specify the domain name for a record for which the value of <code>Type</code> is <code>CNAME</code>. This is because the alias record must have the same type as the record that you're routing traffic to, and creating a CNAME record for the zone apex isn't supported even for an alias record.</p> 
+        /// </note> 
+        /// </dd> 
         /// </dl>
         pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.dns_name = input;
-            self
+            self.dns_name = input; self
         }
-        /// <p> <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p>
-        /// <p>Note the following:</p>
-        /// <dl>
+        /// <p> <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p> 
+        /// <p>Note the following:</p> 
+        /// <dl> 
         /// <dt>
         /// CloudFront distributions
-        /// </dt>
-        /// <dd>
-        /// <p>You can't set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a CloudFront distribution.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>You can't set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a CloudFront distribution.</p> 
+        /// </dd> 
         /// <dt>
         /// Elastic Beanstalk environments that have regionalized subdomains
-        /// </dt>
-        /// <dd>
-        /// <p>If you specify an Elastic Beanstalk environment in <code>DNSName</code> and the environment contains an ELB load balancer, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. (An environment automatically contains an ELB load balancer if it includes more than one Amazon EC2 instance.) If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no Amazon EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other available resources that are healthy, if any. </p>
-        /// <p>If the environment contains a single Amazon EC2 instance, there are no special requirements.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>If you specify an Elastic Beanstalk environment in <code>DNSName</code> and the environment contains an ELB load balancer, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. (An environment automatically contains an ELB load balancer if it includes more than one Amazon EC2 instance.) If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no Amazon EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other available resources that are healthy, if any. </p> 
+        /// <p>If the environment contains a single Amazon EC2 instance, there are no special requirements.</p> 
+        /// </dd> 
         /// <dt>
         /// ELB load balancers
-        /// </dt>
-        /// <dd>
-        /// <p>Health checking behavior depends on the type of load balancer:</p>
-        /// <ul>
-        /// <li> <p> <b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in <code>DNSName</code>, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other resources.</p> </li>
-        /// <li> <p> <b>Application and Network Load Balancers</b>: If you specify an ELB Application or Network Load Balancer and you set <code>EvaluateTargetHealth</code> to <code>true</code>, Route 53 routes queries to the load balancer based on the health of the target groups that are associated with the load balancer:</p>
-        /// <ul>
-        /// <li> <p>For an Application or Network Load Balancer to be considered healthy, every target group that contains targets must contain at least one healthy target. If any target group contains only unhealthy targets, the load balancer is considered unhealthy, and Route 53 routes queries to other resources.</p> </li>
-        /// <li> <p>A target group that has no registered targets is considered unhealthy.</p> </li>
-        /// </ul> </li>
-        /// </ul> <note>
-        /// <p>When you create a load balancer, you configure settings for Elastic Load Balancing health checks; they're not Route 53 health checks, but they perform a similar function. Do not create Route 53 health checks for the EC2 instances that you register with an ELB load balancer. </p>
-        /// </note>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Health checking behavior depends on the type of load balancer:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in <code>DNSName</code>, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other resources.</p> </li> 
+        /// <li> <p> <b>Application and Network Load Balancers</b>: If you specify an ELB Application or Network Load Balancer and you set <code>EvaluateTargetHealth</code> to <code>true</code>, Route 53 routes queries to the load balancer based on the health of the target groups that are associated with the load balancer:</p> 
+        /// <ul> 
+        /// <li> <p>For an Application or Network Load Balancer to be considered healthy, every target group that contains targets must contain at least one healthy target. If any target group contains only unhealthy targets, the load balancer is considered unhealthy, and Route 53 routes queries to other resources.</p> </li> 
+        /// <li> <p>A target group that has no registered targets is considered unhealthy.</p> </li> 
+        /// </ul> </li> 
+        /// </ul> <note> 
+        /// <p>When you create a load balancer, you configure settings for Elastic Load Balancing health checks; they're not Route 53 health checks, but they perform a similar function. Do not create Route 53 health checks for the EC2 instances that you register with an ELB load balancer. </p> 
+        /// </note> 
+        /// </dd> 
         /// <dt>
         /// S3 buckets
-        /// </dt>
-        /// <dd>
-        /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an S3 bucket.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an S3 bucket.</p> 
+        /// </dd> 
         /// <dt>
         /// Other records in the same hosted zone
-        /// </dt>
-        /// <dd>
-        /// <p>If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a group of weighted records) but is not another alias record, we recommend that you associate a health check with all of the records in the alias target. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-        /// </dd>
-        /// </dl>
+        /// </dt> 
+        /// <dd> 
+        /// <p>If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a group of weighted records) but is not another alias record, we recommend that you associate a health check with all of the records in the alias target. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
+        /// </dd> 
+        /// </dl> 
         /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         pub fn evaluate_target_health(mut self, input: bool) -> Self {
             self.evaluate_target_health = Some(input);
             self
         }
-        /// <p> <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p>
-        /// <p>Note the following:</p>
-        /// <dl>
+        /// <p> <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p> 
+        /// <p>Note the following:</p> 
+        /// <dl> 
         /// <dt>
         /// CloudFront distributions
-        /// </dt>
-        /// <dd>
-        /// <p>You can't set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a CloudFront distribution.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>You can't set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is a CloudFront distribution.</p> 
+        /// </dd> 
         /// <dt>
         /// Elastic Beanstalk environments that have regionalized subdomains
-        /// </dt>
-        /// <dd>
-        /// <p>If you specify an Elastic Beanstalk environment in <code>DNSName</code> and the environment contains an ELB load balancer, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. (An environment automatically contains an ELB load balancer if it includes more than one Amazon EC2 instance.) If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no Amazon EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other available resources that are healthy, if any. </p>
-        /// <p>If the environment contains a single Amazon EC2 instance, there are no special requirements.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>If you specify an Elastic Beanstalk environment in <code>DNSName</code> and the environment contains an ELB load balancer, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. (An environment automatically contains an ELB load balancer if it includes more than one Amazon EC2 instance.) If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no Amazon EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other available resources that are healthy, if any. </p> 
+        /// <p>If the environment contains a single Amazon EC2 instance, there are no special requirements.</p> 
+        /// </dd> 
         /// <dt>
         /// ELB load balancers
-        /// </dt>
-        /// <dd>
-        /// <p>Health checking behavior depends on the type of load balancer:</p>
-        /// <ul>
-        /// <li> <p> <b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in <code>DNSName</code>, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other resources.</p> </li>
-        /// <li> <p> <b>Application and Network Load Balancers</b>: If you specify an ELB Application or Network Load Balancer and you set <code>EvaluateTargetHealth</code> to <code>true</code>, Route 53 routes queries to the load balancer based on the health of the target groups that are associated with the load balancer:</p>
-        /// <ul>
-        /// <li> <p>For an Application or Network Load Balancer to be considered healthy, every target group that contains targets must contain at least one healthy target. If any target group contains only unhealthy targets, the load balancer is considered unhealthy, and Route 53 routes queries to other resources.</p> </li>
-        /// <li> <p>A target group that has no registered targets is considered unhealthy.</p> </li>
-        /// </ul> </li>
-        /// </ul> <note>
-        /// <p>When you create a load balancer, you configure settings for Elastic Load Balancing health checks; they're not Route 53 health checks, but they perform a similar function. Do not create Route 53 health checks for the EC2 instances that you register with an ELB load balancer. </p>
-        /// </note>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Health checking behavior depends on the type of load balancer:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in <code>DNSName</code>, Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered with the load balancer. If you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other resources.</p> </li> 
+        /// <li> <p> <b>Application and Network Load Balancers</b>: If you specify an ELB Application or Network Load Balancer and you set <code>EvaluateTargetHealth</code> to <code>true</code>, Route 53 routes queries to the load balancer based on the health of the target groups that are associated with the load balancer:</p> 
+        /// <ul> 
+        /// <li> <p>For an Application or Network Load Balancer to be considered healthy, every target group that contains targets must contain at least one healthy target. If any target group contains only unhealthy targets, the load balancer is considered unhealthy, and Route 53 routes queries to other resources.</p> </li> 
+        /// <li> <p>A target group that has no registered targets is considered unhealthy.</p> </li> 
+        /// </ul> </li> 
+        /// </ul> <note> 
+        /// <p>When you create a load balancer, you configure settings for Elastic Load Balancing health checks; they're not Route 53 health checks, but they perform a similar function. Do not create Route 53 health checks for the EC2 instances that you register with an ELB load balancer. </p> 
+        /// </note> 
+        /// </dd> 
         /// <dt>
         /// S3 buckets
-        /// </dt>
-        /// <dd>
-        /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an S3 bucket.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>There are no special requirements for setting <code>EvaluateTargetHealth</code> to <code>true</code> when the alias target is an S3 bucket.</p> 
+        /// </dd> 
         /// <dt>
         /// Other records in the same hosted zone
-        /// </dt>
-        /// <dd>
-        /// <p>If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a group of weighted records) but is not another alias record, we recommend that you associate a health check with all of the records in the alias target. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-        /// </dd>
-        /// </dl>
+        /// </dt> 
+        /// <dd> 
+        /// <p>If the Amazon Web Services resource that you specify in <code>DNSName</code> is a record or a group of records (for example, a group of weighted records) but is not another alias record, we recommend that you associate a health check with all of the records in the alias target. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
+        /// </dd> 
+        /// </dl> 
         /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         pub fn set_evaluate_target_health(mut self, input: std::option::Option<bool>) -> Self {
-            self.evaluate_target_health = input;
-            self
+            self.evaluate_target_health = input; self
         }
         /// Consumes the builder and constructs a [`AliasTarget`](crate::model::AliasTarget).
         pub fn build(self) -> crate::model::AliasTarget {
             crate::model::AliasTarget {
-                hosted_zone_id: self.hosted_zone_id,
-                dns_name: self.dns_name,
-                evaluate_target_health: self.evaluate_target_health.unwrap_or_default(),
+                hosted_zone_id: self.hosted_zone_id
+                ,
+                dns_name: self.dns_name
+                ,
+                evaluate_target_health: self.evaluate_target_health
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl AliasTarget {
     /// Creates a new builder-style object to manufacture [`AliasTarget`](crate::model::AliasTarget).
@@ -5812,58 +5541,62 @@ impl AliasTarget {
     }
 }
 
-/// <p>Information specific to the resource record.</p> <note>
-/// <p>If you're creating an alias resource record set, omit <code>ResourceRecord</code>.</p>
+/// <p>Information specific to the resource record.</p> <note> 
+/// <p>If you're creating an alias resource record set, omit <code>ResourceRecord</code>.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceRecord {
-    /// <p>The current or new DNS record value, not to exceed 4,000 characters. In the case of a <code>DELETE</code> action, if the current value does not match the actual value, an error is returned. For descriptions about how to format <code>Value</code> for different record types, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// <p>You can specify more than one value for all record types except <code>CNAME</code> and <code>SOA</code>. </p> <note>
-    /// <p>If you're creating an alias resource record set, omit <code>Value</code>.</p>
+pub struct ResourceRecord  {
+    /// <p>The current or new DNS record value, not to exceed 4,000 characters. In the case of a <code>DELETE</code> action, if the current value does not match the actual value, an error is returned. For descriptions about how to format <code>Value</code> for different record types, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
+    /// <p>You can specify more than one value for all record types except <code>CNAME</code> and <code>SOA</code>. </p> <note> 
+    /// <p>If you're creating an alias resource record set, omit <code>Value</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl ResourceRecord {
-    /// <p>The current or new DNS record value, not to exceed 4,000 characters. In the case of a <code>DELETE</code> action, if the current value does not match the actual value, an error is returned. For descriptions about how to format <code>Value</code> for different record types, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    /// <p>You can specify more than one value for all record types except <code>CNAME</code> and <code>SOA</code>. </p> <note>
-    /// <p>If you're creating an alias resource record set, omit <code>Value</code>.</p>
+    /// <p>The current or new DNS record value, not to exceed 4,000 characters. In the case of a <code>DELETE</code> action, if the current value does not match the actual value, an error is returned. For descriptions about how to format <code>Value</code> for different record types, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
+    /// <p>You can specify more than one value for all record types except <code>CNAME</code> and <code>SOA</code>. </p> <note> 
+    /// <p>If you're creating an alias resource record set, omit <code>Value</code>.</p> 
     /// </note>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`ResourceRecord`](crate::model::ResourceRecord).
 pub mod resource_record {
-
+    
     /// A builder for [`ResourceRecord`](crate::model::ResourceRecord).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The current or new DNS record value, not to exceed 4,000 characters. In the case of a <code>DELETE</code> action, if the current value does not match the actual value, an error is returned. For descriptions about how to format <code>Value</code> for different record types, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-        /// <p>You can specify more than one value for all record types except <code>CNAME</code> and <code>SOA</code>. </p> <note>
-        /// <p>If you're creating an alias resource record set, omit <code>Value</code>.</p>
+        /// <p>The current or new DNS record value, not to exceed 4,000 characters. In the case of a <code>DELETE</code> action, if the current value does not match the actual value, an error is returned. For descriptions about how to format <code>Value</code> for different record types, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
+        /// <p>You can specify more than one value for all record types except <code>CNAME</code> and <code>SOA</code>. </p> <note> 
+        /// <p>If you're creating an alias resource record set, omit <code>Value</code>.</p> 
         /// </note>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The current or new DNS record value, not to exceed 4,000 characters. In the case of a <code>DELETE</code> action, if the current value does not match the actual value, an error is returned. For descriptions about how to format <code>Value</code> for different record types, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-        /// <p>You can specify more than one value for all record types except <code>CNAME</code> and <code>SOA</code>. </p> <note>
-        /// <p>If you're creating an alias resource record set, omit <code>Value</code>.</p>
+        /// <p>The current or new DNS record value, not to exceed 4,000 characters. In the case of a <code>DELETE</code> action, if the current value does not match the actual value, an error is returned. For descriptions about how to format <code>Value</code> for different record types, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html">Supported DNS Resource Record Types</a> in the <i>Amazon Route 53 Developer Guide</i>.</p> 
+        /// <p>You can specify more than one value for all record types except <code>CNAME</code> and <code>SOA</code>. </p> <note> 
+        /// <p>If you're creating an alias resource record set, omit <code>Value</code>.</p> 
         /// </note>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`ResourceRecord`](crate::model::ResourceRecord).
         pub fn build(self) -> crate::model::ResourceRecord {
-            crate::model::ResourceRecord { value: self.value }
+            crate::model::ResourceRecord {
+                value: self.value
+                ,
+            }
         }
     }
+    
+    
 }
 impl ResourceRecord {
     /// Creates a new builder-style object to manufacture [`ResourceRecord`](crate::model::ResourceRecord).
@@ -5878,9 +5611,9 @@ impl ResourceRecord {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcerecordsetfailover = unimplemented!();
 /// match resourcerecordsetfailover {
@@ -5902,60 +5635,52 @@ impl ResourceRecord {
 /// Specifically, when `resourcerecordsetfailover` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceRecordSetFailover::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceRecordSetFailover {
     #[allow(missing_docs)] // documentation missing in model
     Primary,
     #[allow(missing_docs)] // documentation missing in model
     Secondary,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceRecordSetFailover {
     fn from(s: &str) -> Self {
         match s {
             "PRIMARY" => ResourceRecordSetFailover::Primary,
             "SECONDARY" => ResourceRecordSetFailover::Secondary,
-            other => ResourceRecordSetFailover::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ResourceRecordSetFailover::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceRecordSetFailover {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceRecordSetFailover::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceRecordSetFailover::from(s))
+                }
+            }
 impl ResourceRecordSetFailover {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceRecordSetFailover::Primary => "PRIMARY",
             ResourceRecordSetFailover::Secondary => "SECONDARY",
-            ResourceRecordSetFailover::Unknown(value) => value.as_str(),
+            ResourceRecordSetFailover::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRIMARY", "SECONDARY"]
+        &[
+            "PRIMARY", "SECONDARY"
+        ]
     }
 }
 impl AsRef<str> for ResourceRecordSetFailover {
@@ -5967,60 +5692,60 @@ impl AsRef<str> for ResourceRecordSetFailover {
 /// <p>A complex type that contains information about a geographic location.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeoLocation {
-    /// <p>The two-letter code for the continent.</p>
-    /// <p>Amazon Route 53 supports the following continent codes:</p>
-    /// <ul>
-    /// <li> <p> <b>AF</b>: Africa</p> </li>
-    /// <li> <p> <b>AN</b>: Antarctica</p> </li>
-    /// <li> <p> <b>AS</b>: Asia</p> </li>
-    /// <li> <p> <b>EU</b>: Europe</p> </li>
-    /// <li> <p> <b>OC</b>: Oceania</p> </li>
-    /// <li> <p> <b>NA</b>: North America</p> </li>
-    /// <li> <p> <b>SA</b>: South America</p> </li>
-    /// </ul>
+pub struct GeoLocation  {
+    /// <p>The two-letter code for the continent.</p> 
+    /// <p>Amazon Route 53 supports the following continent codes:</p> 
+    /// <ul> 
+    /// <li> <p> <b>AF</b>: Africa</p> </li> 
+    /// <li> <p> <b>AN</b>: Antarctica</p> </li> 
+    /// <li> <p> <b>AS</b>: Asia</p> </li> 
+    /// <li> <p> <b>EU</b>: Europe</p> </li> 
+    /// <li> <p> <b>OC</b>: Oceania</p> </li> 
+    /// <li> <p> <b>NA</b>: North America</p> </li> 
+    /// <li> <p> <b>SA</b>: South America</p> </li> 
+    /// </ul> 
     /// <p>Constraint: Specifying <code>ContinentCode</code> with either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
     #[doc(hidden)]
     pub continent_code: std::option::Option<std::string::String>,
-    /// <p>For geolocation resource record sets, the two-letter code for a country.</p>
+    /// <p>For geolocation resource record sets, the two-letter code for a country.</p> 
     /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
     #[doc(hidden)]
     pub country_code: std::option::Option<std::string::String>,
-    /// <p>For geolocation resource record sets, the two-letter code for a state of the United States. Route 53 doesn't support any other values for <code>SubdivisionCode</code>. For a list of state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. </p>
+    /// <p>For geolocation resource record sets, the two-letter code for a state of the United States. Route 53 doesn't support any other values for <code>SubdivisionCode</code>. For a list of state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. </p> 
     /// <p>If you specify <code>subdivisioncode</code>, you must also specify <code>US</code> for <code>CountryCode</code>. </p>
     #[doc(hidden)]
     pub subdivision_code: std::option::Option<std::string::String>,
 }
 impl GeoLocation {
-    /// <p>The two-letter code for the continent.</p>
-    /// <p>Amazon Route 53 supports the following continent codes:</p>
-    /// <ul>
-    /// <li> <p> <b>AF</b>: Africa</p> </li>
-    /// <li> <p> <b>AN</b>: Antarctica</p> </li>
-    /// <li> <p> <b>AS</b>: Asia</p> </li>
-    /// <li> <p> <b>EU</b>: Europe</p> </li>
-    /// <li> <p> <b>OC</b>: Oceania</p> </li>
-    /// <li> <p> <b>NA</b>: North America</p> </li>
-    /// <li> <p> <b>SA</b>: South America</p> </li>
-    /// </ul>
+    /// <p>The two-letter code for the continent.</p> 
+    /// <p>Amazon Route 53 supports the following continent codes:</p> 
+    /// <ul> 
+    /// <li> <p> <b>AF</b>: Africa</p> </li> 
+    /// <li> <p> <b>AN</b>: Antarctica</p> </li> 
+    /// <li> <p> <b>AS</b>: Asia</p> </li> 
+    /// <li> <p> <b>EU</b>: Europe</p> </li> 
+    /// <li> <p> <b>OC</b>: Oceania</p> </li> 
+    /// <li> <p> <b>NA</b>: North America</p> </li> 
+    /// <li> <p> <b>SA</b>: South America</p> </li> 
+    /// </ul> 
     /// <p>Constraint: Specifying <code>ContinentCode</code> with either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
-    pub fn continent_code(&self) -> std::option::Option<&str> {
+    pub fn continent_code(&self) -> std::option::Option<& str> {
         self.continent_code.as_deref()
     }
-    /// <p>For geolocation resource record sets, the two-letter code for a country.</p>
+    /// <p>For geolocation resource record sets, the two-letter code for a country.</p> 
     /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
-    pub fn country_code(&self) -> std::option::Option<&str> {
+    pub fn country_code(&self) -> std::option::Option<& str> {
         self.country_code.as_deref()
     }
-    /// <p>For geolocation resource record sets, the two-letter code for a state of the United States. Route 53 doesn't support any other values for <code>SubdivisionCode</code>. For a list of state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. </p>
+    /// <p>For geolocation resource record sets, the two-letter code for a state of the United States. Route 53 doesn't support any other values for <code>SubdivisionCode</code>. For a list of state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. </p> 
     /// <p>If you specify <code>subdivisioncode</code>, you must also specify <code>US</code> for <code>CountryCode</code>. </p>
-    pub fn subdivision_code(&self) -> std::option::Option<&str> {
+    pub fn subdivision_code(&self) -> std::option::Option<& str> {
         self.subdivision_code.as_deref()
     }
 }
 /// See [`GeoLocation`](crate::model::GeoLocation).
 pub mod geo_location {
-
+    
     /// A builder for [`GeoLocation`](crate::model::GeoLocation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6029,77 +5754,73 @@ pub mod geo_location {
         pub(crate) subdivision_code: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The two-letter code for the continent.</p>
-        /// <p>Amazon Route 53 supports the following continent codes:</p>
-        /// <ul>
-        /// <li> <p> <b>AF</b>: Africa</p> </li>
-        /// <li> <p> <b>AN</b>: Antarctica</p> </li>
-        /// <li> <p> <b>AS</b>: Asia</p> </li>
-        /// <li> <p> <b>EU</b>: Europe</p> </li>
-        /// <li> <p> <b>OC</b>: Oceania</p> </li>
-        /// <li> <p> <b>NA</b>: North America</p> </li>
-        /// <li> <p> <b>SA</b>: South America</p> </li>
-        /// </ul>
+        /// <p>The two-letter code for the continent.</p> 
+        /// <p>Amazon Route 53 supports the following continent codes:</p> 
+        /// <ul> 
+        /// <li> <p> <b>AF</b>: Africa</p> </li> 
+        /// <li> <p> <b>AN</b>: Antarctica</p> </li> 
+        /// <li> <p> <b>AS</b>: Asia</p> </li> 
+        /// <li> <p> <b>EU</b>: Europe</p> </li> 
+        /// <li> <p> <b>OC</b>: Oceania</p> </li> 
+        /// <li> <p> <b>NA</b>: North America</p> </li> 
+        /// <li> <p> <b>SA</b>: South America</p> </li> 
+        /// </ul> 
         /// <p>Constraint: Specifying <code>ContinentCode</code> with either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
         pub fn continent_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.continent_code = Some(input.into());
             self
         }
-        /// <p>The two-letter code for the continent.</p>
-        /// <p>Amazon Route 53 supports the following continent codes:</p>
-        /// <ul>
-        /// <li> <p> <b>AF</b>: Africa</p> </li>
-        /// <li> <p> <b>AN</b>: Antarctica</p> </li>
-        /// <li> <p> <b>AS</b>: Asia</p> </li>
-        /// <li> <p> <b>EU</b>: Europe</p> </li>
-        /// <li> <p> <b>OC</b>: Oceania</p> </li>
-        /// <li> <p> <b>NA</b>: North America</p> </li>
-        /// <li> <p> <b>SA</b>: South America</p> </li>
-        /// </ul>
+        /// <p>The two-letter code for the continent.</p> 
+        /// <p>Amazon Route 53 supports the following continent codes:</p> 
+        /// <ul> 
+        /// <li> <p> <b>AF</b>: Africa</p> </li> 
+        /// <li> <p> <b>AN</b>: Antarctica</p> </li> 
+        /// <li> <p> <b>AS</b>: Asia</p> </li> 
+        /// <li> <p> <b>EU</b>: Europe</p> </li> 
+        /// <li> <p> <b>OC</b>: Oceania</p> </li> 
+        /// <li> <p> <b>NA</b>: North America</p> </li> 
+        /// <li> <p> <b>SA</b>: South America</p> </li> 
+        /// </ul> 
         /// <p>Constraint: Specifying <code>ContinentCode</code> with either <code>CountryCode</code> or <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.</p>
-        pub fn set_continent_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.continent_code = input;
-            self
+        pub fn set_continent_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.continent_code = input; self
         }
-        /// <p>For geolocation resource record sets, the two-letter code for a country.</p>
+        /// <p>For geolocation resource record sets, the two-letter code for a country.</p> 
         /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
         pub fn country_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.country_code = Some(input.into());
             self
         }
-        /// <p>For geolocation resource record sets, the two-letter code for a country.</p>
+        /// <p>For geolocation resource record sets, the two-letter code for a country.</p> 
         /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
         pub fn set_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.country_code = input;
-            self
+            self.country_code = input; self
         }
-        /// <p>For geolocation resource record sets, the two-letter code for a state of the United States. Route 53 doesn't support any other values for <code>SubdivisionCode</code>. For a list of state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. </p>
+        /// <p>For geolocation resource record sets, the two-letter code for a state of the United States. Route 53 doesn't support any other values for <code>SubdivisionCode</code>. For a list of state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. </p> 
         /// <p>If you specify <code>subdivisioncode</code>, you must also specify <code>US</code> for <code>CountryCode</code>. </p>
         pub fn subdivision_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.subdivision_code = Some(input.into());
             self
         }
-        /// <p>For geolocation resource record sets, the two-letter code for a state of the United States. Route 53 doesn't support any other values for <code>SubdivisionCode</code>. For a list of state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. </p>
+        /// <p>For geolocation resource record sets, the two-letter code for a state of the United States. Route 53 doesn't support any other values for <code>SubdivisionCode</code>. For a list of state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. </p> 
         /// <p>If you specify <code>subdivisioncode</code>, you must also specify <code>US</code> for <code>CountryCode</code>. </p>
-        pub fn set_subdivision_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subdivision_code = input;
-            self
+        pub fn set_subdivision_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subdivision_code = input; self
         }
         /// Consumes the builder and constructs a [`GeoLocation`](crate::model::GeoLocation).
         pub fn build(self) -> crate::model::GeoLocation {
             crate::model::GeoLocation {
-                continent_code: self.continent_code,
-                country_code: self.country_code,
-                subdivision_code: self.subdivision_code,
+                continent_code: self.continent_code
+                ,
+                country_code: self.country_code
+                ,
+                subdivision_code: self.subdivision_code
+                ,
             }
         }
     }
+    
+    
 }
 impl GeoLocation {
     /// Creates a new builder-style object to manufacture [`GeoLocation`](crate::model::GeoLocation).
@@ -6114,9 +5835,9 @@ impl GeoLocation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcerecordsetregion = unimplemented!();
 /// match resourcerecordsetregion {
@@ -6165,22 +5886,14 @@ impl GeoLocation {
 /// Specifically, when `resourcerecordsetregion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceRecordSetRegion::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceRecordSetRegion {
     #[allow(missing_docs)] // documentation missing in model
     AfSouth1,
@@ -6241,7 +5954,7 @@ pub enum ResourceRecordSetRegion {
     #[allow(missing_docs)] // documentation missing in model
     UsWest2,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceRecordSetRegion {
     fn from(s: &str) -> Self {
@@ -6275,19 +5988,17 @@ impl std::convert::From<&str> for ResourceRecordSetRegion {
             "us-east-2" => ResourceRecordSetRegion::UsEast2,
             "us-west-1" => ResourceRecordSetRegion::UsWest1,
             "us-west-2" => ResourceRecordSetRegion::UsWest2,
-            other => ResourceRecordSetRegion::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ResourceRecordSetRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceRecordSetRegion {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceRecordSetRegion::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceRecordSetRegion::from(s))
+                }
+            }
 impl ResourceRecordSetRegion {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6321,41 +6032,13 @@ impl ResourceRecordSetRegion {
             ResourceRecordSetRegion::UsEast2 => "us-east-2",
             ResourceRecordSetRegion::UsWest1 => "us-west-1",
             ResourceRecordSetRegion::UsWest2 => "us-west-2",
-            ResourceRecordSetRegion::Unknown(value) => value.as_str(),
+            ResourceRecordSetRegion::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "af-south-1",
-            "ap-east-1",
-            "ap-northeast-1",
-            "ap-northeast-2",
-            "ap-northeast-3",
-            "ap-south-1",
-            "ap-south-2",
-            "ap-southeast-1",
-            "ap-southeast-2",
-            "ap-southeast-3",
-            "ap-southeast-4",
-            "ca-central-1",
-            "cn-north-1",
-            "cn-northwest-1",
-            "eu-central-1",
-            "eu-central-2",
-            "eu-north-1",
-            "eu-south-1",
-            "eu-south-2",
-            "eu-west-1",
-            "eu-west-2",
-            "eu-west-3",
-            "me-central-1",
-            "me-south-1",
-            "sa-east-1",
-            "us-east-1",
-            "us-east-2",
-            "us-west-1",
-            "us-west-2",
+            "af-south-1", "ap-east-1", "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-south-1", "ap-south-2", "ap-southeast-1", "ap-southeast-2", "ap-southeast-3", "ap-southeast-4", "ca-central-1", "cn-north-1", "cn-northwest-1", "eu-central-1", "eu-central-2", "eu-north-1", "eu-south-1", "eu-south-2", "eu-west-1", "eu-west-2", "eu-west-3", "me-central-1", "me-south-1", "sa-east-1", "us-east-1", "us-east-2", "us-west-1", "us-west-2"
         ]
     }
 }
@@ -6368,7 +6051,7 @@ impl AsRef<str> for ResourceRecordSetRegion {
 /// <p>A complex type that contains information about a configuration for DNS query logging.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryLoggingConfig {
+pub struct QueryLoggingConfig  {
     /// <p>The ID for a configuration for DNS query logging.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -6381,21 +6064,21 @@ pub struct QueryLoggingConfig {
 }
 impl QueryLoggingConfig {
     /// <p>The ID for a configuration for DNS query logging.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
-    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> std::option::Option<& str> {
         self.hosted_zone_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group that Amazon Route 53 is publishing logs to.</p>
-    pub fn cloud_watch_logs_log_group_arn(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_logs_log_group_arn(&self) -> std::option::Option<& str> {
         self.cloud_watch_logs_log_group_arn.as_deref()
     }
 }
 /// See [`QueryLoggingConfig`](crate::model::QueryLoggingConfig).
 pub mod query_logging_config {
-
+    
     /// A builder for [`QueryLoggingConfig`](crate::model::QueryLoggingConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6411,8 +6094,7 @@ pub mod query_logging_config {
         }
         /// <p>The ID for a configuration for DNS query logging.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
         pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6420,38 +6102,32 @@ pub mod query_logging_config {
             self
         }
         /// <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
-        pub fn set_hosted_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hosted_zone_id = input;
-            self
+        pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hosted_zone_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group that Amazon Route 53 is publishing logs to.</p>
-        pub fn cloud_watch_logs_log_group_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn cloud_watch_logs_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cloud_watch_logs_log_group_arn = Some(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group that Amazon Route 53 is publishing logs to.</p>
-        pub fn set_cloud_watch_logs_log_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cloud_watch_logs_log_group_arn = input;
-            self
+        pub fn set_cloud_watch_logs_log_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cloud_watch_logs_log_group_arn = input; self
         }
         /// Consumes the builder and constructs a [`QueryLoggingConfig`](crate::model::QueryLoggingConfig).
         pub fn build(self) -> crate::model::QueryLoggingConfig {
             crate::model::QueryLoggingConfig {
-                id: self.id,
-                hosted_zone_id: self.hosted_zone_id,
-                cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn,
+                id: self.id
+                ,
+                hosted_zone_id: self.hosted_zone_id
+                ,
+                cloud_watch_logs_log_group_arn: self.cloud_watch_logs_log_group_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl QueryLoggingConfig {
     /// Creates a new builder-style object to manufacture [`QueryLoggingConfig`](crate::model::QueryLoggingConfig).
@@ -6463,7 +6139,7 @@ impl QueryLoggingConfig {
 /// <p>In the response to a <code>ListHostedZonesByVPC</code> request, the <code>HostedZoneSummaries</code> element contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with. Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HostedZoneSummary {
+pub struct HostedZoneSummary  {
     /// <p>The Route 53 hosted zone ID of a private hosted zone that the specified VPC is associated with.</p>
     #[doc(hidden)]
     pub hosted_zone_id: std::option::Option<std::string::String>,
@@ -6476,21 +6152,21 @@ pub struct HostedZoneSummary {
 }
 impl HostedZoneSummary {
     /// <p>The Route 53 hosted zone ID of a private hosted zone that the specified VPC is associated with.</p>
-    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> std::option::Option<& str> {
         self.hosted_zone_id.as_deref()
     }
     /// <p>The name of the private hosted zone, such as <code>example.com</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an Amazon Web Services account or an Amazon Web Services service.</p>
-    pub fn owner(&self) -> std::option::Option<&crate::model::HostedZoneOwner> {
+    pub fn owner(&self) -> std::option::Option<& crate::model::HostedZoneOwner> {
         self.owner.as_ref()
     }
 }
 /// See [`HostedZoneSummary`](crate::model::HostedZoneSummary).
 pub mod hosted_zone_summary {
-
+    
     /// A builder for [`HostedZoneSummary`](crate::model::HostedZoneSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6505,12 +6181,8 @@ pub mod hosted_zone_summary {
             self
         }
         /// <p>The Route 53 hosted zone ID of a private hosted zone that the specified VPC is associated with.</p>
-        pub fn set_hosted_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.hosted_zone_id = input;
-            self
+        pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.hosted_zone_id = input; self
         }
         /// <p>The name of the private hosted zone, such as <code>example.com</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6519,8 +6191,7 @@ pub mod hosted_zone_summary {
         }
         /// <p>The name of the private hosted zone, such as <code>example.com</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an Amazon Web Services account or an Amazon Web Services service.</p>
         pub fn owner(mut self, input: crate::model::HostedZoneOwner) -> Self {
@@ -6528,22 +6199,23 @@ pub mod hosted_zone_summary {
             self
         }
         /// <p>The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an Amazon Web Services account or an Amazon Web Services service.</p>
-        pub fn set_owner(
-            mut self,
-            input: std::option::Option<crate::model::HostedZoneOwner>,
-        ) -> Self {
-            self.owner = input;
-            self
+        pub fn set_owner(mut self, input: std::option::Option<crate::model::HostedZoneOwner>) -> Self {
+            self.owner = input; self
         }
         /// Consumes the builder and constructs a [`HostedZoneSummary`](crate::model::HostedZoneSummary).
         pub fn build(self) -> crate::model::HostedZoneSummary {
             crate::model::HostedZoneSummary {
-                hosted_zone_id: self.hosted_zone_id,
-                name: self.name,
-                owner: self.owner,
+                hosted_zone_id: self.hosted_zone_id
+                ,
+                name: self.name
+                ,
+                owner: self.owner
+                ,
             }
         }
     }
+    
+    
 }
 impl HostedZoneSummary {
     /// Creates a new builder-style object to manufacture [`HostedZoneSummary`](crate::model::HostedZoneSummary).
@@ -6555,7 +6227,7 @@ impl HostedZoneSummary {
 /// <p>A complex type that identifies a hosted zone that a specified Amazon VPC is associated with and the owner of the hosted zone. If there is a value for <code>OwningAccount</code>, there is no value for <code>OwningService</code>, and vice versa. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HostedZoneOwner {
+pub struct HostedZoneOwner  {
     /// <p>If the hosted zone was created by an Amazon Web Services account, or was created by an Amazon Web Services service that creates hosted zones using the current account, <code>OwningAccount</code> contains the account ID of that account. For example, when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted zone using the current Amazon Web Services account. </p>
     #[doc(hidden)]
     pub owning_account: std::option::Option<std::string::String>,
@@ -6565,17 +6237,17 @@ pub struct HostedZoneOwner {
 }
 impl HostedZoneOwner {
     /// <p>If the hosted zone was created by an Amazon Web Services account, or was created by an Amazon Web Services service that creates hosted zones using the current account, <code>OwningAccount</code> contains the account ID of that account. For example, when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted zone using the current Amazon Web Services account. </p>
-    pub fn owning_account(&self) -> std::option::Option<&str> {
+    pub fn owning_account(&self) -> std::option::Option<& str> {
         self.owning_account.as_deref()
     }
     /// <p>If an Amazon Web Services service uses its own account to create a hosted zone and associate the specified VPC with that hosted zone, <code>OwningService</code> contains an abbreviation that identifies the service. For example, if Amazon Elastic File System (Amazon EFS) created a hosted zone and associated a VPC with the hosted zone, the value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.</p>
-    pub fn owning_service(&self) -> std::option::Option<&str> {
+    pub fn owning_service(&self) -> std::option::Option<& str> {
         self.owning_service.as_deref()
     }
 }
 /// See [`HostedZoneOwner`](crate::model::HostedZoneOwner).
 pub mod hosted_zone_owner {
-
+    
     /// A builder for [`HostedZoneOwner`](crate::model::HostedZoneOwner).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6589,12 +6261,8 @@ pub mod hosted_zone_owner {
             self
         }
         /// <p>If the hosted zone was created by an Amazon Web Services account, or was created by an Amazon Web Services service that creates hosted zones using the current account, <code>OwningAccount</code> contains the account ID of that account. For example, when you use Cloud Map to create a hosted zone, Cloud Map creates the hosted zone using the current Amazon Web Services account. </p>
-        pub fn set_owning_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owning_account = input;
-            self
+        pub fn set_owning_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owning_account = input; self
         }
         /// <p>If an Amazon Web Services service uses its own account to create a hosted zone and associate the specified VPC with that hosted zone, <code>OwningService</code> contains an abbreviation that identifies the service. For example, if Amazon Elastic File System (Amazon EFS) created a hosted zone and associated a VPC with the hosted zone, the value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.</p>
         pub fn owning_service(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6602,21 +6270,21 @@ pub mod hosted_zone_owner {
             self
         }
         /// <p>If an Amazon Web Services service uses its own account to create a hosted zone and associate the specified VPC with that hosted zone, <code>OwningService</code> contains an abbreviation that identifies the service. For example, if Amazon Elastic File System (Amazon EFS) created a hosted zone and associated a VPC with the hosted zone, the value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.</p>
-        pub fn set_owning_service(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owning_service = input;
-            self
+        pub fn set_owning_service(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owning_service = input; self
         }
         /// Consumes the builder and constructs a [`HostedZoneOwner`](crate::model::HostedZoneOwner).
         pub fn build(self) -> crate::model::HostedZoneOwner {
             crate::model::HostedZoneOwner {
-                owning_account: self.owning_account,
-                owning_service: self.owning_service,
+                owning_account: self.owning_account
+                ,
+                owning_service: self.owning_service
+                ,
             }
         }
     }
+    
+    
 }
 impl HostedZoneOwner {
     /// Creates a new builder-style object to manufacture [`HostedZoneOwner`](crate::model::HostedZoneOwner).
@@ -6628,7 +6296,7 @@ impl HostedZoneOwner {
 /// <p>A complex type that contains the codes and full continent, country, and subdivision names for the specified <code>geolocation</code> code.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeoLocationDetails {
+pub struct GeoLocationDetails  {
     /// <p>The two-letter code for the continent.</p>
     #[doc(hidden)]
     pub continent_code: std::option::Option<std::string::String>,
@@ -6650,33 +6318,33 @@ pub struct GeoLocationDetails {
 }
 impl GeoLocationDetails {
     /// <p>The two-letter code for the continent.</p>
-    pub fn continent_code(&self) -> std::option::Option<&str> {
+    pub fn continent_code(&self) -> std::option::Option<& str> {
         self.continent_code.as_deref()
     }
     /// <p>The full name of the continent.</p>
-    pub fn continent_name(&self) -> std::option::Option<&str> {
+    pub fn continent_name(&self) -> std::option::Option<& str> {
         self.continent_name.as_deref()
     }
     /// <p>The two-letter code for the country.</p>
-    pub fn country_code(&self) -> std::option::Option<&str> {
+    pub fn country_code(&self) -> std::option::Option<& str> {
         self.country_code.as_deref()
     }
     /// <p>The name of the country.</p>
-    pub fn country_name(&self) -> std::option::Option<&str> {
+    pub fn country_name(&self) -> std::option::Option<& str> {
         self.country_name.as_deref()
     }
     /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
-    pub fn subdivision_code(&self) -> std::option::Option<&str> {
+    pub fn subdivision_code(&self) -> std::option::Option<& str> {
         self.subdivision_code.as_deref()
     }
     /// <p>The full name of the subdivision. Route 53 currently supports only states in the United States.</p>
-    pub fn subdivision_name(&self) -> std::option::Option<&str> {
+    pub fn subdivision_name(&self) -> std::option::Option<& str> {
         self.subdivision_name.as_deref()
     }
 }
 /// See [`GeoLocationDetails`](crate::model::GeoLocationDetails).
 pub mod geo_location_details {
-
+    
     /// A builder for [`GeoLocationDetails`](crate::model::GeoLocationDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6694,12 +6362,8 @@ pub mod geo_location_details {
             self
         }
         /// <p>The two-letter code for the continent.</p>
-        pub fn set_continent_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.continent_code = input;
-            self
+        pub fn set_continent_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.continent_code = input; self
         }
         /// <p>The full name of the continent.</p>
         pub fn continent_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6707,12 +6371,8 @@ pub mod geo_location_details {
             self
         }
         /// <p>The full name of the continent.</p>
-        pub fn set_continent_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.continent_name = input;
-            self
+        pub fn set_continent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.continent_name = input; self
         }
         /// <p>The two-letter code for the country.</p>
         pub fn country_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6721,8 +6381,7 @@ pub mod geo_location_details {
         }
         /// <p>The two-letter code for the country.</p>
         pub fn set_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.country_code = input;
-            self
+            self.country_code = input; self
         }
         /// <p>The name of the country.</p>
         pub fn country_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6731,8 +6390,7 @@ pub mod geo_location_details {
         }
         /// <p>The name of the country.</p>
         pub fn set_country_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.country_name = input;
-            self
+            self.country_name = input; self
         }
         /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
         pub fn subdivision_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6740,12 +6398,8 @@ pub mod geo_location_details {
             self
         }
         /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
-        pub fn set_subdivision_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subdivision_code = input;
-            self
+        pub fn set_subdivision_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subdivision_code = input; self
         }
         /// <p>The full name of the subdivision. Route 53 currently supports only states in the United States.</p>
         pub fn subdivision_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6753,25 +6407,29 @@ pub mod geo_location_details {
             self
         }
         /// <p>The full name of the subdivision. Route 53 currently supports only states in the United States.</p>
-        pub fn set_subdivision_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subdivision_name = input;
-            self
+        pub fn set_subdivision_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subdivision_name = input; self
         }
         /// Consumes the builder and constructs a [`GeoLocationDetails`](crate::model::GeoLocationDetails).
         pub fn build(self) -> crate::model::GeoLocationDetails {
             crate::model::GeoLocationDetails {
-                continent_code: self.continent_code,
-                continent_name: self.continent_name,
-                country_code: self.country_code,
-                country_name: self.country_name,
-                subdivision_code: self.subdivision_code,
-                subdivision_name: self.subdivision_name,
+                continent_code: self.continent_code
+                ,
+                continent_name: self.continent_name
+                ,
+                country_code: self.country_code
+                ,
+                country_name: self.country_name
+                ,
+                subdivision_code: self.subdivision_code
+                ,
+                subdivision_name: self.subdivision_name
+                ,
             }
         }
     }
+    
+    
 }
 impl GeoLocationDetails {
     /// Creates a new builder-style object to manufacture [`GeoLocationDetails`](crate::model::GeoLocationDetails).
@@ -6783,20 +6441,20 @@ impl GeoLocationDetails {
 /// <p>A complex type that contains information about the CIDR location.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LocationSummary {
+pub struct LocationSummary  {
     /// <p>A string that specifies a location name.</p>
     #[doc(hidden)]
     pub location_name: std::option::Option<std::string::String>,
 }
 impl LocationSummary {
     /// <p>A string that specifies a location name.</p>
-    pub fn location_name(&self) -> std::option::Option<&str> {
+    pub fn location_name(&self) -> std::option::Option<& str> {
         self.location_name.as_deref()
     }
 }
 /// See [`LocationSummary`](crate::model::LocationSummary).
 pub mod location_summary {
-
+    
     /// A builder for [`LocationSummary`](crate::model::LocationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6809,20 +6467,19 @@ pub mod location_summary {
             self
         }
         /// <p>A string that specifies a location name.</p>
-        pub fn set_location_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.location_name = input;
-            self
+        pub fn set_location_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location_name = input; self
         }
         /// Consumes the builder and constructs a [`LocationSummary`](crate::model::LocationSummary).
         pub fn build(self) -> crate::model::LocationSummary {
             crate::model::LocationSummary {
-                location_name: self.location_name,
+                location_name: self.location_name
+                ,
             }
         }
     }
+    
+    
 }
 impl LocationSummary {
     /// Creates a new builder-style object to manufacture [`LocationSummary`](crate::model::LocationSummary).
@@ -6834,7 +6491,7 @@ impl LocationSummary {
 /// <p>A complex type that is an entry in an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CidrCollection.html">CidrCollection</a> array.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CollectionSummary {
+pub struct CollectionSummary  {
     /// <p>The ARN of the collection summary. Can be used to reference the collection in IAM policy or cross-account.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6850,15 +6507,15 @@ pub struct CollectionSummary {
 }
 impl CollectionSummary {
     /// <p>The ARN of the collection summary. Can be used to reference the collection in IAM policy or cross-account.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Unique ID for the CIDR collection.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of a CIDR collection.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
@@ -6868,7 +6525,7 @@ impl CollectionSummary {
 }
 /// See [`CollectionSummary`](crate::model::CollectionSummary).
 pub mod collection_summary {
-
+    
     /// A builder for [`CollectionSummary`](crate::model::CollectionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6885,8 +6542,7 @@ pub mod collection_summary {
         }
         /// <p>The ARN of the collection summary. Can be used to reference the collection in IAM policy or cross-account.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Unique ID for the CIDR collection.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6895,8 +6551,7 @@ pub mod collection_summary {
         }
         /// <p>Unique ID for the CIDR collection.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of a CIDR collection.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6905,8 +6560,7 @@ pub mod collection_summary {
         }
         /// <p>The name of a CIDR collection.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
         pub fn version(mut self, input: i64) -> Self {
@@ -6915,19 +6569,24 @@ pub mod collection_summary {
         }
         /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`CollectionSummary`](crate::model::CollectionSummary).
         pub fn build(self) -> crate::model::CollectionSummary {
             crate::model::CollectionSummary {
-                arn: self.arn,
-                id: self.id,
-                name: self.name,
-                version: self.version,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl CollectionSummary {
     /// Creates a new builder-style object to manufacture [`CollectionSummary`](crate::model::CollectionSummary).
@@ -6939,7 +6598,7 @@ impl CollectionSummary {
 /// <p>A complex type that lists the CIDR blocks.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CidrBlockSummary {
+pub struct CidrBlockSummary  {
     /// <p>Value for the CIDR block.</p>
     #[doc(hidden)]
     pub cidr_block: std::option::Option<std::string::String>,
@@ -6949,17 +6608,17 @@ pub struct CidrBlockSummary {
 }
 impl CidrBlockSummary {
     /// <p>Value for the CIDR block.</p>
-    pub fn cidr_block(&self) -> std::option::Option<&str> {
+    pub fn cidr_block(&self) -> std::option::Option<& str> {
         self.cidr_block.as_deref()
     }
     /// <p>The location name of the CIDR block.</p>
-    pub fn location_name(&self) -> std::option::Option<&str> {
+    pub fn location_name(&self) -> std::option::Option<& str> {
         self.location_name.as_deref()
     }
 }
 /// See [`CidrBlockSummary`](crate::model::CidrBlockSummary).
 pub mod cidr_block_summary {
-
+    
     /// A builder for [`CidrBlockSummary`](crate::model::CidrBlockSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6974,8 +6633,7 @@ pub mod cidr_block_summary {
         }
         /// <p>Value for the CIDR block.</p>
         pub fn set_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cidr_block = input;
-            self
+            self.cidr_block = input; self
         }
         /// <p>The location name of the CIDR block.</p>
         pub fn location_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6983,21 +6641,21 @@ pub mod cidr_block_summary {
             self
         }
         /// <p>The location name of the CIDR block.</p>
-        pub fn set_location_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.location_name = input;
-            self
+        pub fn set_location_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location_name = input; self
         }
         /// Consumes the builder and constructs a [`CidrBlockSummary`](crate::model::CidrBlockSummary).
         pub fn build(self) -> crate::model::CidrBlockSummary {
             crate::model::CidrBlockSummary {
-                cidr_block: self.cidr_block,
-                location_name: self.location_name,
+                cidr_block: self.cidr_block
+                ,
+                location_name: self.location_name
+                ,
             }
         }
     }
+    
+    
 }
 impl CidrBlockSummary {
     /// Creates a new builder-style object to manufacture [`CidrBlockSummary`](crate::model::CidrBlockSummary).
@@ -7009,7 +6667,7 @@ impl CidrBlockSummary {
 /// <p>A complex type that contains the type of limit that you specified in the request and the current value for that limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReusableDelegationSetLimit {
+pub struct ReusableDelegationSetLimit  {
     /// <p>The limit that you requested: <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>, the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ReusableDelegationSetLimitType>,
@@ -7019,7 +6677,7 @@ pub struct ReusableDelegationSetLimit {
 }
 impl ReusableDelegationSetLimit {
     /// <p>The limit that you requested: <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>, the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ReusableDelegationSetLimitType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ReusableDelegationSetLimitType> {
         self.r#type.as_ref()
     }
     /// <p>The current value for the <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> limit.</p>
@@ -7029,7 +6687,7 @@ impl ReusableDelegationSetLimit {
 }
 /// See [`ReusableDelegationSetLimit`](crate::model::ReusableDelegationSetLimit).
 pub mod reusable_delegation_set_limit {
-
+    
     /// A builder for [`ReusableDelegationSetLimit`](crate::model::ReusableDelegationSetLimit).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7043,12 +6701,8 @@ pub mod reusable_delegation_set_limit {
             self
         }
         /// <p>The limit that you requested: <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>, the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::ReusableDelegationSetLimitType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ReusableDelegationSetLimitType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The current value for the <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> limit.</p>
         pub fn value(mut self, input: i64) -> Self {
@@ -7057,17 +6711,21 @@ pub mod reusable_delegation_set_limit {
         }
         /// <p>The current value for the <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> limit.</p>
         pub fn set_value(mut self, input: std::option::Option<i64>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`ReusableDelegationSetLimit`](crate::model::ReusableDelegationSetLimit).
         pub fn build(self) -> crate::model::ReusableDelegationSetLimit {
             crate::model::ReusableDelegationSetLimit {
-                r#type: self.r#type,
-                value: self.value.unwrap_or_default(),
+                r#type: self.r#type
+                ,
+                value: self.value
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ReusableDelegationSetLimit {
     /// Creates a new builder-style object to manufacture [`ReusableDelegationSetLimit`](crate::model::ReusableDelegationSetLimit).
@@ -7082,9 +6740,9 @@ impl ReusableDelegationSetLimit {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let reusabledelegationsetlimittype = unimplemented!();
 /// match reusabledelegationsetlimittype {
@@ -7105,60 +6763,48 @@ impl ReusableDelegationSetLimit {
 /// Specifically, when `reusabledelegationsetlimittype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReusableDelegationSetLimitType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReusableDelegationSetLimitType {
     #[allow(missing_docs)] // documentation missing in model
     MaxZonesByReusableDelegationSet,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReusableDelegationSetLimitType {
     fn from(s: &str) -> Self {
         match s {
-            "MAX_ZONES_BY_REUSABLE_DELEGATION_SET" => {
-                ReusableDelegationSetLimitType::MaxZonesByReusableDelegationSet
-            }
-            other => ReusableDelegationSetLimitType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "MAX_ZONES_BY_REUSABLE_DELEGATION_SET" => ReusableDelegationSetLimitType::MaxZonesByReusableDelegationSet,
+            other => ReusableDelegationSetLimitType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReusableDelegationSetLimitType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReusableDelegationSetLimitType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReusableDelegationSetLimitType::from(s))
+                }
+            }
 impl ReusableDelegationSetLimitType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ReusableDelegationSetLimitType::MaxZonesByReusableDelegationSet => {
-                "MAX_ZONES_BY_REUSABLE_DELEGATION_SET"
-            }
-            ReusableDelegationSetLimitType::Unknown(value) => value.as_str(),
+            ReusableDelegationSetLimitType::MaxZonesByReusableDelegationSet => "MAX_ZONES_BY_REUSABLE_DELEGATION_SET",
+            ReusableDelegationSetLimitType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MAX_ZONES_BY_REUSABLE_DELEGATION_SET"]
+        &[
+            "MAX_ZONES_BY_REUSABLE_DELEGATION_SET"
+        ]
     }
 }
 impl AsRef<str> for ReusableDelegationSetLimitType {
@@ -7170,11 +6816,11 @@ impl AsRef<str> for ReusableDelegationSetLimitType {
 /// <p>A complex type that contains the type of limit that you specified in the request and the current value for that limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HostedZoneLimit {
-    /// <p>The limit that you requested. Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li>
-    /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li>
+pub struct HostedZoneLimit  {
+    /// <p>The limit that you requested. Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li> 
+    /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::HostedZoneLimitType>,
@@ -7183,12 +6829,12 @@ pub struct HostedZoneLimit {
     pub value: i64,
 }
 impl HostedZoneLimit {
-    /// <p>The limit that you requested. Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li>
-    /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li>
+    /// <p>The limit that you requested. Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li> 
+    /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::HostedZoneLimitType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::HostedZoneLimitType> {
         self.r#type.as_ref()
     }
     /// <p>The current value for the limit that is specified by <code>Type</code>.</p>
@@ -7198,7 +6844,7 @@ impl HostedZoneLimit {
 }
 /// See [`HostedZoneLimit`](crate::model::HostedZoneLimit).
 pub mod hosted_zone_limit {
-
+    
     /// A builder for [`HostedZoneLimit`](crate::model::HostedZoneLimit).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7206,26 +6852,22 @@ pub mod hosted_zone_limit {
         pub(crate) value: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The limit that you requested. Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li>
-        /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li>
+        /// <p>The limit that you requested. Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li> 
+        /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: crate::model::HostedZoneLimitType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The limit that you requested. Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li>
-        /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li>
+        /// <p>The limit that you requested. Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can create in the specified hosted zone.</p> </li> 
+        /// <li> <p> <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you can associate with the specified private hosted zone.</p> </li> 
         /// </ul>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::HostedZoneLimitType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::HostedZoneLimitType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The current value for the limit that is specified by <code>Type</code>.</p>
         pub fn value(mut self, input: i64) -> Self {
@@ -7234,17 +6876,21 @@ pub mod hosted_zone_limit {
         }
         /// <p>The current value for the limit that is specified by <code>Type</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<i64>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`HostedZoneLimit`](crate::model::HostedZoneLimit).
         pub fn build(self) -> crate::model::HostedZoneLimit {
             crate::model::HostedZoneLimit {
-                r#type: self.r#type,
-                value: self.value.unwrap_or_default(),
+                r#type: self.r#type
+                ,
+                value: self.value
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl HostedZoneLimit {
     /// Creates a new builder-style object to manufacture [`HostedZoneLimit`](crate::model::HostedZoneLimit).
@@ -7259,9 +6905,9 @@ impl HostedZoneLimit {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let hostedzonelimittype = unimplemented!();
 /// match hostedzonelimittype {
@@ -7283,60 +6929,52 @@ impl HostedZoneLimit {
 /// Specifically, when `hostedzonelimittype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HostedZoneLimitType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HostedZoneLimitType {
     #[allow(missing_docs)] // documentation missing in model
     MaxRrsetsByZone,
     #[allow(missing_docs)] // documentation missing in model
     MaxVpcsAssociatedByZone,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HostedZoneLimitType {
     fn from(s: &str) -> Self {
         match s {
             "MAX_RRSETS_BY_ZONE" => HostedZoneLimitType::MaxRrsetsByZone,
             "MAX_VPCS_ASSOCIATED_BY_ZONE" => HostedZoneLimitType::MaxVpcsAssociatedByZone,
-            other => {
-                HostedZoneLimitType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => HostedZoneLimitType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HostedZoneLimitType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HostedZoneLimitType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HostedZoneLimitType::from(s))
+                }
+            }
 impl HostedZoneLimitType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HostedZoneLimitType::MaxRrsetsByZone => "MAX_RRSETS_BY_ZONE",
             HostedZoneLimitType::MaxVpcsAssociatedByZone => "MAX_VPCS_ASSOCIATED_BY_ZONE",
-            HostedZoneLimitType::Unknown(value) => value.as_str(),
+            HostedZoneLimitType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MAX_RRSETS_BY_ZONE", "MAX_VPCS_ASSOCIATED_BY_ZONE"]
+        &[
+            "MAX_RRSETS_BY_ZONE", "MAX_VPCS_ASSOCIATED_BY_ZONE"
+        ]
     }
 }
 impl AsRef<str> for HostedZoneLimitType {
@@ -7348,7 +6986,7 @@ impl AsRef<str> for HostedZoneLimitType {
 /// <p>A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HealthCheckObservation {
+pub struct HealthCheckObservation  {
     /// <p>The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.</p>
     #[doc(hidden)]
     pub region: std::option::Option<crate::model::HealthCheckRegion>,
@@ -7361,21 +6999,21 @@ pub struct HealthCheckObservation {
 }
 impl HealthCheckObservation {
     /// <p>The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.</p>
-    pub fn region(&self) -> std::option::Option<&crate::model::HealthCheckRegion> {
+    pub fn region(&self) -> std::option::Option<& crate::model::HealthCheckRegion> {
         self.region.as_ref()
     }
     /// <p>The IP address of the Amazon Route 53 health checker that provided the failure reason in <code>StatusReport</code>.</p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
+    pub fn ip_address(&self) -> std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker and the time of the failed health check.</p>
-    pub fn status_report(&self) -> std::option::Option<&crate::model::StatusReport> {
+    pub fn status_report(&self) -> std::option::Option<& crate::model::StatusReport> {
         self.status_report.as_ref()
     }
 }
 /// See [`HealthCheckObservation`](crate::model::HealthCheckObservation).
 pub mod health_check_observation {
-
+    
     /// A builder for [`HealthCheckObservation`](crate::model::HealthCheckObservation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7390,12 +7028,8 @@ pub mod health_check_observation {
             self
         }
         /// <p>The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.</p>
-        pub fn set_region(
-            mut self,
-            input: std::option::Option<crate::model::HealthCheckRegion>,
-        ) -> Self {
-            self.region = input;
-            self
+        pub fn set_region(mut self, input: std::option::Option<crate::model::HealthCheckRegion>) -> Self {
+            self.region = input; self
         }
         /// <p>The IP address of the Amazon Route 53 health checker that provided the failure reason in <code>StatusReport</code>.</p>
         pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7404,8 +7038,7 @@ pub mod health_check_observation {
         }
         /// <p>The IP address of the Amazon Route 53 health checker that provided the failure reason in <code>StatusReport</code>.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ip_address = input;
-            self
+            self.ip_address = input; self
         }
         /// <p>A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker and the time of the failed health check.</p>
         pub fn status_report(mut self, input: crate::model::StatusReport) -> Self {
@@ -7413,22 +7046,23 @@ pub mod health_check_observation {
             self
         }
         /// <p>A complex type that contains the last failure reason as reported by one Amazon Route 53 health checker and the time of the failed health check.</p>
-        pub fn set_status_report(
-            mut self,
-            input: std::option::Option<crate::model::StatusReport>,
-        ) -> Self {
-            self.status_report = input;
-            self
+        pub fn set_status_report(mut self, input: std::option::Option<crate::model::StatusReport>) -> Self {
+            self.status_report = input; self
         }
         /// Consumes the builder and constructs a [`HealthCheckObservation`](crate::model::HealthCheckObservation).
         pub fn build(self) -> crate::model::HealthCheckObservation {
             crate::model::HealthCheckObservation {
-                region: self.region,
-                ip_address: self.ip_address,
-                status_report: self.status_report,
+                region: self.region
+                ,
+                ip_address: self.ip_address
+                ,
+                status_report: self.status_report
+                ,
             }
         }
     }
+    
+    
 }
 impl HealthCheckObservation {
     /// Creates a new builder-style object to manufacture [`HealthCheckObservation`](crate::model::HealthCheckObservation).
@@ -7440,7 +7074,7 @@ impl HealthCheckObservation {
 /// <p>A complex type that contains the status that one Amazon Route 53 health checker reports and the time of the health check.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StatusReport {
+pub struct StatusReport  {
     /// <p>A description of the status of the health check endpoint as reported by one of the Amazon Route 53 health checkers.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -7450,17 +7084,17 @@ pub struct StatusReport {
 }
 impl StatusReport {
     /// <p>A description of the status of the health check endpoint as reported by one of the Amazon Route 53 health checkers.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The date and time that the health checker performed the health check in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
-    pub fn checked_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn checked_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.checked_time.as_ref()
     }
 }
 /// See [`StatusReport`](crate::model::StatusReport).
 pub mod status_report {
-
+    
     /// A builder for [`StatusReport`](crate::model::StatusReport).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7475,8 +7109,7 @@ pub mod status_report {
         }
         /// <p>A description of the status of the health check endpoint as reported by one of the Amazon Route 53 health checkers.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The date and time that the health checker performed the health check in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
         pub fn checked_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7484,21 +7117,21 @@ pub mod status_report {
             self
         }
         /// <p>The date and time that the health checker performed the health check in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
-        pub fn set_checked_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.checked_time = input;
-            self
+        pub fn set_checked_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.checked_time = input; self
         }
         /// Consumes the builder and constructs a [`StatusReport`](crate::model::StatusReport).
         pub fn build(self) -> crate::model::StatusReport {
             crate::model::StatusReport {
-                status: self.status,
-                checked_time: self.checked_time,
+                status: self.status
+                ,
+                checked_time: self.checked_time
+                ,
             }
         }
     }
+    
+    
 }
 impl StatusReport {
     /// Creates a new builder-style object to manufacture [`StatusReport`](crate::model::StatusReport).
@@ -7510,47 +7143,47 @@ impl StatusReport {
 /// <p>A key-signing key (KSK) is a complex type that represents a public/private key pair. The private key is used to generate a digital signature for the zone signing key (ZSK). The public key is stored in the DNS and is used to authenticate the ZSK. A KSK is always associated with a hosted zone; it cannot exist by itself.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KeySigningKey {
+pub struct KeySigningKey  {
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon resource name (ARN) used to identify the customer managed key in Key Management Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.</p>
-    /// <p>You must configure the customer managed key as follows:</p>
-    /// <dl>
+    /// <p>The Amazon resource name (ARN) used to identify the customer managed key in Key Management Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.</p> 
+    /// <p>You must configure the customer managed key as follows:</p> 
+    /// <dl> 
     /// <dt>
     /// Status
-    /// </dt>
-    /// <dd>
-    /// <p>Enabled</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Enabled</p> 
+    /// </dd> 
     /// <dt>
     /// Key spec
-    /// </dt>
-    /// <dd>
-    /// <p>ECC_NIST_P256</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>ECC_NIST_P256</p> 
+    /// </dd> 
     /// <dt>
     /// Key usage
-    /// </dt>
-    /// <dd>
-    /// <p>Sign and verify</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Sign and verify</p> 
+    /// </dd> 
     /// <dt>
     /// Key policy
-    /// </dt>
-    /// <dd>
-    /// <p>The key policy must give permission for the following actions:</p>
-    /// <ul>
-    /// <li> <p>DescribeKey</p> </li>
-    /// <li> <p>GetPublicKey</p> </li>
-    /// <li> <p>Sign</p> </li>
-    /// </ul>
-    /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p>
-    /// <ul>
-    /// <li> <p> <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li>
-    /// </ul>
-    /// </dd>
-    /// </dl>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The key policy must give permission for the following actions:</p> 
+    /// <ul> 
+    /// <li> <p>DescribeKey</p> </li> 
+    /// <li> <p>GetPublicKey</p> </li> 
+    /// <li> <p>Sign</p> </li> 
+    /// </ul> 
+    /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li> 
+    /// </ul> 
+    /// </dd> 
+    /// </dl> 
     /// <p>For more information about working with the customer managed key in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.</p>
     #[doc(hidden)]
     pub kms_arn: std::option::Option<std::string::String>,
@@ -7584,39 +7217,39 @@ pub struct KeySigningKey {
     /// <p>A string that represents a DNSKEY record.</p>
     #[doc(hidden)]
     pub dnskey_record: std::option::Option<std::string::String>,
-    /// <p>A string that represents the current key-signing key (KSK) status.</p>
-    /// <p>Status can have one of the following values:</p>
-    /// <dl>
+    /// <p>A string that represents the current key-signing key (KSK) status.</p> 
+    /// <p>Status can have one of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// ACTIVE
-    /// </dt>
-    /// <dd>
-    /// <p>The KSK is being used for signing.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The KSK is being used for signing.</p> 
+    /// </dd> 
     /// <dt>
     /// INACTIVE
-    /// </dt>
-    /// <dd>
-    /// <p>The KSK is not being used for signing.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The KSK is not being used for signing.</p> 
+    /// </dd> 
     /// <dt>
     /// DELETING
-    /// </dt>
-    /// <dd>
-    /// <p>The KSK is in the process of being deleted.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The KSK is in the process of being deleted.</p> 
+    /// </dd> 
     /// <dt>
     /// ACTION_NEEDED
-    /// </dt>
-    /// <dd>
-    /// <p>There is a problem with the KSK that requires you to take action to resolve. For example, the customer managed key might have been deleted, or the permissions for the customer managed key might have been changed.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>There is a problem with the KSK that requires you to take action to resolve. For example, the customer managed key might have been deleted, or the permissions for the customer managed key might have been changed.</p> 
+    /// </dd> 
     /// <dt>
     /// INTERNAL_FAILURE
-    /// </dt>
-    /// <dd>
-    /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including actions that involve this KSK, you must correct the problem. For example, you may need to activate or deactivate the KSK.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including actions that involve this KSK, you must correct the problem. For example, you may need to activate or deactivate the KSK.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -7632,48 +7265,48 @@ pub struct KeySigningKey {
 }
 impl KeySigningKey {
     /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon resource name (ARN) used to identify the customer managed key in Key Management Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.</p>
-    /// <p>You must configure the customer managed key as follows:</p>
-    /// <dl>
+    /// <p>The Amazon resource name (ARN) used to identify the customer managed key in Key Management Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.</p> 
+    /// <p>You must configure the customer managed key as follows:</p> 
+    /// <dl> 
     /// <dt>
     /// Status
-    /// </dt>
-    /// <dd>
-    /// <p>Enabled</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Enabled</p> 
+    /// </dd> 
     /// <dt>
     /// Key spec
-    /// </dt>
-    /// <dd>
-    /// <p>ECC_NIST_P256</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>ECC_NIST_P256</p> 
+    /// </dd> 
     /// <dt>
     /// Key usage
-    /// </dt>
-    /// <dd>
-    /// <p>Sign and verify</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Sign and verify</p> 
+    /// </dd> 
     /// <dt>
     /// Key policy
-    /// </dt>
-    /// <dd>
-    /// <p>The key policy must give permission for the following actions:</p>
-    /// <ul>
-    /// <li> <p>DescribeKey</p> </li>
-    /// <li> <p>GetPublicKey</p> </li>
-    /// <li> <p>Sign</p> </li>
-    /// </ul>
-    /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p>
-    /// <ul>
-    /// <li> <p> <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li>
-    /// </ul>
-    /// </dd>
-    /// </dl>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The key policy must give permission for the following actions:</p> 
+    /// <ul> 
+    /// <li> <p>DescribeKey</p> </li> 
+    /// <li> <p>GetPublicKey</p> </li> 
+    /// <li> <p>Sign</p> </li> 
+    /// </ul> 
+    /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li> 
+    /// </ul> 
+    /// </dd> 
+    /// </dl> 
     /// <p>For more information about working with the customer managed key in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.</p>
-    pub fn kms_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_arn(&self) -> std::option::Option<& str> {
         self.kms_arn.as_deref()
     }
     /// <p>An integer that specifies how the key is used. For key-signing key (KSK), this value is always 257.</p>
@@ -7681,7 +7314,7 @@ impl KeySigningKey {
         self.flag
     }
     /// <p>A string used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>. </p>
-    pub fn signing_algorithm_mnemonic(&self) -> std::option::Option<&str> {
+    pub fn signing_algorithm_mnemonic(&self) -> std::option::Option<& str> {
         self.signing_algorithm_mnemonic.as_deref()
     }
     /// <p>An integer used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>. </p>
@@ -7689,7 +7322,7 @@ impl KeySigningKey {
         self.signing_algorithm_type
     }
     /// <p>A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>. </p>
-    pub fn digest_algorithm_mnemonic(&self) -> std::option::Option<&str> {
+    pub fn digest_algorithm_mnemonic(&self) -> std::option::Option<& str> {
         self.digest_algorithm_mnemonic.as_deref()
     }
     /// <p>An integer used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>.</p>
@@ -7701,74 +7334,74 @@ impl KeySigningKey {
         self.key_tag
     }
     /// <p>A cryptographic digest of a DNSKEY resource record (RR). DNSKEY records are used to publish the public key that resolvers can use to verify DNSSEC signatures that are used to secure certain kinds of information provided by the DNS system.</p>
-    pub fn digest_value(&self) -> std::option::Option<&str> {
+    pub fn digest_value(&self) -> std::option::Option<& str> {
         self.digest_value.as_deref()
     }
     /// <p>The public key, represented as a Base64 encoding, as required by <a href="https://tools.ietf.org/rfc/rfc4034.txt"> RFC-4034 Page 5</a>.</p>
-    pub fn public_key(&self) -> std::option::Option<&str> {
+    pub fn public_key(&self) -> std::option::Option<& str> {
         self.public_key.as_deref()
     }
     /// <p>A string that represents a delegation signer (DS) record.</p>
-    pub fn ds_record(&self) -> std::option::Option<&str> {
+    pub fn ds_record(&self) -> std::option::Option<& str> {
         self.ds_record.as_deref()
     }
     /// <p>A string that represents a DNSKEY record.</p>
-    pub fn dnskey_record(&self) -> std::option::Option<&str> {
+    pub fn dnskey_record(&self) -> std::option::Option<& str> {
         self.dnskey_record.as_deref()
     }
-    /// <p>A string that represents the current key-signing key (KSK) status.</p>
-    /// <p>Status can have one of the following values:</p>
-    /// <dl>
+    /// <p>A string that represents the current key-signing key (KSK) status.</p> 
+    /// <p>Status can have one of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// ACTIVE
-    /// </dt>
-    /// <dd>
-    /// <p>The KSK is being used for signing.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The KSK is being used for signing.</p> 
+    /// </dd> 
     /// <dt>
     /// INACTIVE
-    /// </dt>
-    /// <dd>
-    /// <p>The KSK is not being used for signing.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The KSK is not being used for signing.</p> 
+    /// </dd> 
     /// <dt>
     /// DELETING
-    /// </dt>
-    /// <dd>
-    /// <p>The KSK is in the process of being deleted.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The KSK is in the process of being deleted.</p> 
+    /// </dd> 
     /// <dt>
     /// ACTION_NEEDED
-    /// </dt>
-    /// <dd>
-    /// <p>There is a problem with the KSK that requires you to take action to resolve. For example, the customer managed key might have been deleted, or the permissions for the customer managed key might have been changed.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>There is a problem with the KSK that requires you to take action to resolve. For example, the customer managed key might have been deleted, or the permissions for the customer managed key might have been changed.</p> 
+    /// </dd> 
     /// <dt>
     /// INTERNAL_FAILURE
-    /// </dt>
-    /// <dd>
-    /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including actions that involve this KSK, you must correct the problem. For example, you may need to activate or deactivate the KSK.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including actions that involve this KSK, you must correct the problem. For example, you may need to activate or deactivate the KSK.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The status message provided for the following key-signing key (KSK) statuses: <code>ACTION_NEEDED</code> or <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps that you can take to correct the issue.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The date when the key-signing key (KSK) was created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The last time that the key-signing key (KSK) was changed.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
 /// See [`KeySigningKey`](crate::model::KeySigningKey).
 pub mod key_signing_key {
-
+    
     /// A builder for [`KeySigningKey`](crate::model::KeySigningKey).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7797,92 +7430,90 @@ pub mod key_signing_key {
         }
         /// <p>A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The Amazon resource name (ARN) used to identify the customer managed key in Key Management Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.</p>
-        /// <p>You must configure the customer managed key as follows:</p>
-        /// <dl>
+        /// <p>The Amazon resource name (ARN) used to identify the customer managed key in Key Management Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.</p> 
+        /// <p>You must configure the customer managed key as follows:</p> 
+        /// <dl> 
         /// <dt>
         /// Status
-        /// </dt>
-        /// <dd>
-        /// <p>Enabled</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Enabled</p> 
+        /// </dd> 
         /// <dt>
         /// Key spec
-        /// </dt>
-        /// <dd>
-        /// <p>ECC_NIST_P256</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>ECC_NIST_P256</p> 
+        /// </dd> 
         /// <dt>
         /// Key usage
-        /// </dt>
-        /// <dd>
-        /// <p>Sign and verify</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Sign and verify</p> 
+        /// </dd> 
         /// <dt>
         /// Key policy
-        /// </dt>
-        /// <dd>
-        /// <p>The key policy must give permission for the following actions:</p>
-        /// <ul>
-        /// <li> <p>DescribeKey</p> </li>
-        /// <li> <p>GetPublicKey</p> </li>
-        /// <li> <p>Sign</p> </li>
-        /// </ul>
-        /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p>
-        /// <ul>
-        /// <li> <p> <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li>
-        /// </ul>
-        /// </dd>
-        /// </dl>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The key policy must give permission for the following actions:</p> 
+        /// <ul> 
+        /// <li> <p>DescribeKey</p> </li> 
+        /// <li> <p>GetPublicKey</p> </li> 
+        /// <li> <p>Sign</p> </li> 
+        /// </ul> 
+        /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li> 
+        /// </ul> 
+        /// </dd> 
+        /// </dl> 
         /// <p>For more information about working with the customer managed key in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.</p>
         pub fn kms_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon resource name (ARN) used to identify the customer managed key in Key Management Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.</p>
-        /// <p>You must configure the customer managed key as follows:</p>
-        /// <dl>
+        /// <p>The Amazon resource name (ARN) used to identify the customer managed key in Key Management Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK) in a single hosted zone.</p> 
+        /// <p>You must configure the customer managed key as follows:</p> 
+        /// <dl> 
         /// <dt>
         /// Status
-        /// </dt>
-        /// <dd>
-        /// <p>Enabled</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Enabled</p> 
+        /// </dd> 
         /// <dt>
         /// Key spec
-        /// </dt>
-        /// <dd>
-        /// <p>ECC_NIST_P256</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>ECC_NIST_P256</p> 
+        /// </dd> 
         /// <dt>
         /// Key usage
-        /// </dt>
-        /// <dd>
-        /// <p>Sign and verify</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Sign and verify</p> 
+        /// </dd> 
         /// <dt>
         /// Key policy
-        /// </dt>
-        /// <dd>
-        /// <p>The key policy must give permission for the following actions:</p>
-        /// <ul>
-        /// <li> <p>DescribeKey</p> </li>
-        /// <li> <p>GetPublicKey</p> </li>
-        /// <li> <p>Sign</p> </li>
-        /// </ul>
-        /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p>
-        /// <ul>
-        /// <li> <p> <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li>
-        /// </ul>
-        /// </dd>
-        /// </dl>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The key policy must give permission for the following actions:</p> 
+        /// <ul> 
+        /// <li> <p>DescribeKey</p> </li> 
+        /// <li> <p>GetPublicKey</p> </li> 
+        /// <li> <p>Sign</p> </li> 
+        /// </ul> 
+        /// <p>The key policy must also include the Amazon Route 53 service in the principal for your account. Specify the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>"Service": "dnssec-route53.amazonaws.com"</code> </p> </li> 
+        /// </ul> 
+        /// </dd> 
+        /// </dl> 
         /// <p>For more information about working with the customer managed key in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key Management Service concepts</a>.</p>
         pub fn set_kms_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_arn = input;
-            self
+            self.kms_arn = input; self
         }
         /// <p>An integer that specifies how the key is used. For key-signing key (KSK), this value is always 257.</p>
         pub fn flag(mut self, input: i32) -> Self {
@@ -7891,8 +7522,7 @@ pub mod key_signing_key {
         }
         /// <p>An integer that specifies how the key is used. For key-signing key (KSK), this value is always 257.</p>
         pub fn set_flag(mut self, input: std::option::Option<i32>) -> Self {
-            self.flag = input;
-            self
+            self.flag = input; self
         }
         /// <p>A string used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>. </p>
         pub fn signing_algorithm_mnemonic(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7900,12 +7530,8 @@ pub mod key_signing_key {
             self
         }
         /// <p>A string used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>. </p>
-        pub fn set_signing_algorithm_mnemonic(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.signing_algorithm_mnemonic = input;
-            self
+        pub fn set_signing_algorithm_mnemonic(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.signing_algorithm_mnemonic = input; self
         }
         /// <p>An integer used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>. </p>
         pub fn signing_algorithm_type(mut self, input: i32) -> Self {
@@ -7914,8 +7540,7 @@ pub mod key_signing_key {
         }
         /// <p>An integer used to represent the signing algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>. </p>
         pub fn set_signing_algorithm_type(mut self, input: std::option::Option<i32>) -> Self {
-            self.signing_algorithm_type = input;
-            self
+            self.signing_algorithm_type = input; self
         }
         /// <p>A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>. </p>
         pub fn digest_algorithm_mnemonic(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7923,12 +7548,8 @@ pub mod key_signing_key {
             self
         }
         /// <p>A string used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>. </p>
-        pub fn set_digest_algorithm_mnemonic(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.digest_algorithm_mnemonic = input;
-            self
+        pub fn set_digest_algorithm_mnemonic(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.digest_algorithm_mnemonic = input; self
         }
         /// <p>An integer used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>.</p>
         pub fn digest_algorithm_type(mut self, input: i32) -> Self {
@@ -7937,8 +7558,7 @@ pub mod key_signing_key {
         }
         /// <p>An integer used to represent the delegation signer digest algorithm. This value must follow the guidelines provided by <a href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>.</p>
         pub fn set_digest_algorithm_type(mut self, input: std::option::Option<i32>) -> Self {
-            self.digest_algorithm_type = input;
-            self
+            self.digest_algorithm_type = input; self
         }
         /// <p>An integer used to identify the DNSSEC record for the domain name. The process used to calculate the value is described in <a href="https://tools.ietf.org/rfc/rfc4034.txt">RFC-4034 Appendix B</a>.</p>
         pub fn key_tag(mut self, input: i32) -> Self {
@@ -7947,8 +7567,7 @@ pub mod key_signing_key {
         }
         /// <p>An integer used to identify the DNSSEC record for the domain name. The process used to calculate the value is described in <a href="https://tools.ietf.org/rfc/rfc4034.txt">RFC-4034 Appendix B</a>.</p>
         pub fn set_key_tag(mut self, input: std::option::Option<i32>) -> Self {
-            self.key_tag = input;
-            self
+            self.key_tag = input; self
         }
         /// <p>A cryptographic digest of a DNSKEY resource record (RR). DNSKEY records are used to publish the public key that resolvers can use to verify DNSSEC signatures that are used to secure certain kinds of information provided by the DNS system.</p>
         pub fn digest_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7957,8 +7576,7 @@ pub mod key_signing_key {
         }
         /// <p>A cryptographic digest of a DNSKEY resource record (RR). DNSKEY records are used to publish the public key that resolvers can use to verify DNSSEC signatures that are used to secure certain kinds of information provided by the DNS system.</p>
         pub fn set_digest_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.digest_value = input;
-            self
+            self.digest_value = input; self
         }
         /// <p>The public key, represented as a Base64 encoding, as required by <a href="https://tools.ietf.org/rfc/rfc4034.txt"> RFC-4034 Page 5</a>.</p>
         pub fn public_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7967,8 +7585,7 @@ pub mod key_signing_key {
         }
         /// <p>The public key, represented as a Base64 encoding, as required by <a href="https://tools.ietf.org/rfc/rfc4034.txt"> RFC-4034 Page 5</a>.</p>
         pub fn set_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.public_key = input;
-            self
+            self.public_key = input; self
         }
         /// <p>A string that represents a delegation signer (DS) record.</p>
         pub fn ds_record(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7977,8 +7594,7 @@ pub mod key_signing_key {
         }
         /// <p>A string that represents a delegation signer (DS) record.</p>
         pub fn set_ds_record(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ds_record = input;
-            self
+            self.ds_record = input; self
         }
         /// <p>A string that represents a DNSKEY record.</p>
         pub fn dnskey_record(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7986,88 +7602,83 @@ pub mod key_signing_key {
             self
         }
         /// <p>A string that represents a DNSKEY record.</p>
-        pub fn set_dnskey_record(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dnskey_record = input;
-            self
+        pub fn set_dnskey_record(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dnskey_record = input; self
         }
-        /// <p>A string that represents the current key-signing key (KSK) status.</p>
-        /// <p>Status can have one of the following values:</p>
-        /// <dl>
+        /// <p>A string that represents the current key-signing key (KSK) status.</p> 
+        /// <p>Status can have one of the following values:</p> 
+        /// <dl> 
         /// <dt>
         /// ACTIVE
-        /// </dt>
-        /// <dd>
-        /// <p>The KSK is being used for signing.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The KSK is being used for signing.</p> 
+        /// </dd> 
         /// <dt>
         /// INACTIVE
-        /// </dt>
-        /// <dd>
-        /// <p>The KSK is not being used for signing.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The KSK is not being used for signing.</p> 
+        /// </dd> 
         /// <dt>
         /// DELETING
-        /// </dt>
-        /// <dd>
-        /// <p>The KSK is in the process of being deleted.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The KSK is in the process of being deleted.</p> 
+        /// </dd> 
         /// <dt>
         /// ACTION_NEEDED
-        /// </dt>
-        /// <dd>
-        /// <p>There is a problem with the KSK that requires you to take action to resolve. For example, the customer managed key might have been deleted, or the permissions for the customer managed key might have been changed.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>There is a problem with the KSK that requires you to take action to resolve. For example, the customer managed key might have been deleted, or the permissions for the customer managed key might have been changed.</p> 
+        /// </dd> 
         /// <dt>
         /// INTERNAL_FAILURE
-        /// </dt>
-        /// <dd>
-        /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including actions that involve this KSK, you must correct the problem. For example, you may need to activate or deactivate the KSK.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including actions that involve this KSK, you must correct the problem. For example, you may need to activate or deactivate the KSK.</p> 
+        /// </dd> 
         /// </dl>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>A string that represents the current key-signing key (KSK) status.</p>
-        /// <p>Status can have one of the following values:</p>
-        /// <dl>
+        /// <p>A string that represents the current key-signing key (KSK) status.</p> 
+        /// <p>Status can have one of the following values:</p> 
+        /// <dl> 
         /// <dt>
         /// ACTIVE
-        /// </dt>
-        /// <dd>
-        /// <p>The KSK is being used for signing.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The KSK is being used for signing.</p> 
+        /// </dd> 
         /// <dt>
         /// INACTIVE
-        /// </dt>
-        /// <dd>
-        /// <p>The KSK is not being used for signing.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The KSK is not being used for signing.</p> 
+        /// </dd> 
         /// <dt>
         /// DELETING
-        /// </dt>
-        /// <dd>
-        /// <p>The KSK is in the process of being deleted.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The KSK is in the process of being deleted.</p> 
+        /// </dd> 
         /// <dt>
         /// ACTION_NEEDED
-        /// </dt>
-        /// <dd>
-        /// <p>There is a problem with the KSK that requires you to take action to resolve. For example, the customer managed key might have been deleted, or the permissions for the customer managed key might have been changed.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>There is a problem with the KSK that requires you to take action to resolve. For example, the customer managed key might have been deleted, or the permissions for the customer managed key might have been changed.</p> 
+        /// </dd> 
         /// <dt>
         /// INTERNAL_FAILURE
-        /// </dt>
-        /// <dd>
-        /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including actions that involve this KSK, you must correct the problem. For example, you may need to activate or deactivate the KSK.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including actions that involve this KSK, you must correct the problem. For example, you may need to activate or deactivate the KSK.</p> 
+        /// </dd> 
         /// </dl>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The status message provided for the following key-signing key (KSK) statuses: <code>ACTION_NEEDED</code> or <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps that you can take to correct the issue.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8075,12 +7686,8 @@ pub mod key_signing_key {
             self
         }
         /// <p>The status message provided for the following key-signing key (KSK) statuses: <code>ACTION_NEEDED</code> or <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps that you can take to correct the issue.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The date when the key-signing key (KSK) was created.</p>
         pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8088,12 +7695,8 @@ pub mod key_signing_key {
             self
         }
         /// <p>The date when the key-signing key (KSK) was created.</p>
-        pub fn set_created_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_date = input;
-            self
+        pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_date = input; self
         }
         /// <p>The last time that the key-signing key (KSK) was changed.</p>
         pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8101,35 +7704,53 @@ pub mod key_signing_key {
             self
         }
         /// <p>The last time that the key-signing key (KSK) was changed.</p>
-        pub fn set_last_modified_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_date = input;
-            self
+        pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_date = input; self
         }
         /// Consumes the builder and constructs a [`KeySigningKey`](crate::model::KeySigningKey).
         pub fn build(self) -> crate::model::KeySigningKey {
             crate::model::KeySigningKey {
-                name: self.name,
-                kms_arn: self.kms_arn,
-                flag: self.flag.unwrap_or_default(),
-                signing_algorithm_mnemonic: self.signing_algorithm_mnemonic,
-                signing_algorithm_type: self.signing_algorithm_type.unwrap_or_default(),
-                digest_algorithm_mnemonic: self.digest_algorithm_mnemonic,
-                digest_algorithm_type: self.digest_algorithm_type.unwrap_or_default(),
-                key_tag: self.key_tag.unwrap_or_default(),
-                digest_value: self.digest_value,
-                public_key: self.public_key,
-                ds_record: self.ds_record,
-                dnskey_record: self.dnskey_record,
-                status: self.status,
-                status_message: self.status_message,
-                created_date: self.created_date,
-                last_modified_date: self.last_modified_date,
+                name: self.name
+                ,
+                kms_arn: self.kms_arn
+                ,
+                flag: self.flag
+                    .unwrap_or_default()
+                ,
+                signing_algorithm_mnemonic: self.signing_algorithm_mnemonic
+                ,
+                signing_algorithm_type: self.signing_algorithm_type
+                    .unwrap_or_default()
+                ,
+                digest_algorithm_mnemonic: self.digest_algorithm_mnemonic
+                ,
+                digest_algorithm_type: self.digest_algorithm_type
+                    .unwrap_or_default()
+                ,
+                key_tag: self.key_tag
+                    .unwrap_or_default()
+                ,
+                digest_value: self.digest_value
+                ,
+                public_key: self.public_key
+                ,
+                ds_record: self.ds_record
+                ,
+                dnskey_record: self.dnskey_record
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                created_date: self.created_date
+                ,
+                last_modified_date: self.last_modified_date
+                ,
             }
         }
     }
+    
+    
 }
 impl KeySigningKey {
     /// Creates a new builder-style object to manufacture [`KeySigningKey`](crate::model::KeySigningKey).
@@ -8141,40 +7762,40 @@ impl KeySigningKey {
 /// <p>A string repesenting the status of DNSSEC signing.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DnssecStatus {
-    /// <p>A string that represents the current hosted zone signing status.</p>
-    /// <p>Status can have one of the following values:</p>
-    /// <dl>
+pub struct DnssecStatus  {
+    /// <p>A string that represents the current hosted zone signing status.</p> 
+    /// <p>Status can have one of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// SIGNING
-    /// </dt>
-    /// <dd>
-    /// <p>DNSSEC signing is enabled for the hosted zone.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>DNSSEC signing is enabled for the hosted zone.</p> 
+    /// </dd> 
     /// <dt>
     /// NOT_SIGNING
-    /// </dt>
-    /// <dd>
-    /// <p>DNSSEC signing is not enabled for the hosted zone.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>DNSSEC signing is not enabled for the hosted zone.</p> 
+    /// </dd> 
     /// <dt>
     /// DELETING
-    /// </dt>
-    /// <dd>
-    /// <p>DNSSEC signing is in the process of being removed for the hosted zone.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>DNSSEC signing is in the process of being removed for the hosted zone.</p> 
+    /// </dd> 
     /// <dt>
     /// ACTION_NEEDED
-    /// </dt>
-    /// <dd>
-    /// <p>There is a problem with signing in the hosted zone that requires you to take action to resolve. For example, the customer managed key might have been deleted, or the permissions for the customer managed key might have been changed.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>There is a problem with signing in the hosted zone that requires you to take action to resolve. For example, the customer managed key might have been deleted, or the permissions for the customer managed key might have been changed.</p> 
+    /// </dd> 
     /// <dt>
     /// INTERNAL_FAILURE
-    /// </dt>
-    /// <dd>
-    /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including with key-signing keys (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for the hosted zone.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including with key-signing keys (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for the hosted zone.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub serve_signature: std::option::Option<std::string::String>,
@@ -8183,51 +7804,51 @@ pub struct DnssecStatus {
     pub status_message: std::option::Option<std::string::String>,
 }
 impl DnssecStatus {
-    /// <p>A string that represents the current hosted zone signing status.</p>
-    /// <p>Status can have one of the following values:</p>
-    /// <dl>
+    /// <p>A string that represents the current hosted zone signing status.</p> 
+    /// <p>Status can have one of the following values:</p> 
+    /// <dl> 
     /// <dt>
     /// SIGNING
-    /// </dt>
-    /// <dd>
-    /// <p>DNSSEC signing is enabled for the hosted zone.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>DNSSEC signing is enabled for the hosted zone.</p> 
+    /// </dd> 
     /// <dt>
     /// NOT_SIGNING
-    /// </dt>
-    /// <dd>
-    /// <p>DNSSEC signing is not enabled for the hosted zone.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>DNSSEC signing is not enabled for the hosted zone.</p> 
+    /// </dd> 
     /// <dt>
     /// DELETING
-    /// </dt>
-    /// <dd>
-    /// <p>DNSSEC signing is in the process of being removed for the hosted zone.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>DNSSEC signing is in the process of being removed for the hosted zone.</p> 
+    /// </dd> 
     /// <dt>
     /// ACTION_NEEDED
-    /// </dt>
-    /// <dd>
-    /// <p>There is a problem with signing in the hosted zone that requires you to take action to resolve. For example, the customer managed key might have been deleted, or the permissions for the customer managed key might have been changed.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>There is a problem with signing in the hosted zone that requires you to take action to resolve. For example, the customer managed key might have been deleted, or the permissions for the customer managed key might have been changed.</p> 
+    /// </dd> 
     /// <dt>
     /// INTERNAL_FAILURE
-    /// </dt>
-    /// <dd>
-    /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including with key-signing keys (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for the hosted zone.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including with key-signing keys (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for the hosted zone.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn serve_signature(&self) -> std::option::Option<&str> {
+    pub fn serve_signature(&self) -> std::option::Option<& str> {
         self.serve_signature.as_deref()
     }
     /// <p>The status message provided for the following DNSSEC signing status: <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps that you can take to correct the issue.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
 }
 /// See [`DnssecStatus`](crate::model::DnssecStatus).
 pub mod dnssec_status {
-
+    
     /// A builder for [`DnssecStatus`](crate::model::DnssecStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8235,84 +7856,80 @@ pub mod dnssec_status {
         pub(crate) status_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A string that represents the current hosted zone signing status.</p>
-        /// <p>Status can have one of the following values:</p>
-        /// <dl>
+        /// <p>A string that represents the current hosted zone signing status.</p> 
+        /// <p>Status can have one of the following values:</p> 
+        /// <dl> 
         /// <dt>
         /// SIGNING
-        /// </dt>
-        /// <dd>
-        /// <p>DNSSEC signing is enabled for the hosted zone.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>DNSSEC signing is enabled for the hosted zone.</p> 
+        /// </dd> 
         /// <dt>
         /// NOT_SIGNING
-        /// </dt>
-        /// <dd>
-        /// <p>DNSSEC signing is not enabled for the hosted zone.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>DNSSEC signing is not enabled for the hosted zone.</p> 
+        /// </dd> 
         /// <dt>
         /// DELETING
-        /// </dt>
-        /// <dd>
-        /// <p>DNSSEC signing is in the process of being removed for the hosted zone.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>DNSSEC signing is in the process of being removed for the hosted zone.</p> 
+        /// </dd> 
         /// <dt>
         /// ACTION_NEEDED
-        /// </dt>
-        /// <dd>
-        /// <p>There is a problem with signing in the hosted zone that requires you to take action to resolve. For example, the customer managed key might have been deleted, or the permissions for the customer managed key might have been changed.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>There is a problem with signing in the hosted zone that requires you to take action to resolve. For example, the customer managed key might have been deleted, or the permissions for the customer managed key might have been changed.</p> 
+        /// </dd> 
         /// <dt>
         /// INTERNAL_FAILURE
-        /// </dt>
-        /// <dd>
-        /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including with key-signing keys (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for the hosted zone.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including with key-signing keys (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for the hosted zone.</p> 
+        /// </dd> 
         /// </dl>
         pub fn serve_signature(mut self, input: impl Into<std::string::String>) -> Self {
             self.serve_signature = Some(input.into());
             self
         }
-        /// <p>A string that represents the current hosted zone signing status.</p>
-        /// <p>Status can have one of the following values:</p>
-        /// <dl>
+        /// <p>A string that represents the current hosted zone signing status.</p> 
+        /// <p>Status can have one of the following values:</p> 
+        /// <dl> 
         /// <dt>
         /// SIGNING
-        /// </dt>
-        /// <dd>
-        /// <p>DNSSEC signing is enabled for the hosted zone.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>DNSSEC signing is enabled for the hosted zone.</p> 
+        /// </dd> 
         /// <dt>
         /// NOT_SIGNING
-        /// </dt>
-        /// <dd>
-        /// <p>DNSSEC signing is not enabled for the hosted zone.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>DNSSEC signing is not enabled for the hosted zone.</p> 
+        /// </dd> 
         /// <dt>
         /// DELETING
-        /// </dt>
-        /// <dd>
-        /// <p>DNSSEC signing is in the process of being removed for the hosted zone.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>DNSSEC signing is in the process of being removed for the hosted zone.</p> 
+        /// </dd> 
         /// <dt>
         /// ACTION_NEEDED
-        /// </dt>
-        /// <dd>
-        /// <p>There is a problem with signing in the hosted zone that requires you to take action to resolve. For example, the customer managed key might have been deleted, or the permissions for the customer managed key might have been changed.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>There is a problem with signing in the hosted zone that requires you to take action to resolve. For example, the customer managed key might have been deleted, or the permissions for the customer managed key might have been changed.</p> 
+        /// </dd> 
         /// <dt>
         /// INTERNAL_FAILURE
-        /// </dt>
-        /// <dd>
-        /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including with key-signing keys (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for the hosted zone.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>There was an error during a request. Before you can continue to work with DNSSEC signing, including with key-signing keys (KSKs), you must correct the problem by enabling or disabling DNSSEC signing for the hosted zone.</p> 
+        /// </dd> 
         /// </dl>
-        pub fn set_serve_signature(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.serve_signature = input;
-            self
+        pub fn set_serve_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.serve_signature = input; self
         }
         /// <p>The status message provided for the following DNSSEC signing status: <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps that you can take to correct the issue.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8320,21 +7937,21 @@ pub mod dnssec_status {
             self
         }
         /// <p>The status message provided for the following DNSSEC signing status: <code>INTERNAL_FAILURE</code>. The status message includes information about what the problem might be and steps that you can take to correct the issue.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// Consumes the builder and constructs a [`DnssecStatus`](crate::model::DnssecStatus).
         pub fn build(self) -> crate::model::DnssecStatus {
             crate::model::DnssecStatus {
-                serve_signature: self.serve_signature,
-                status_message: self.status_message,
+                serve_signature: self.serve_signature
+                ,
+                status_message: self.status_message
+                ,
             }
         }
     }
+    
+    
 }
 impl DnssecStatus {
     /// Creates a new builder-style object to manufacture [`DnssecStatus`](crate::model::DnssecStatus).
@@ -8346,7 +7963,7 @@ impl DnssecStatus {
 /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChangeInfo {
+pub struct ChangeInfo  {
     /// <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -8362,25 +7979,25 @@ pub struct ChangeInfo {
 }
 impl ChangeInfo {
     /// <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The current state of the request. <code>PENDING</code> indicates that this request has not yet been applied to all Amazon Route 53 DNS servers.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ChangeStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ChangeStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
-    pub fn submitted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn submitted_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.submitted_at.as_ref()
     }
     /// <p>A comment you can provide.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> std::option::Option<& str> {
         self.comment.as_deref()
     }
 }
 /// See [`ChangeInfo`](crate::model::ChangeInfo).
 pub mod change_info {
-
+    
     /// A builder for [`ChangeInfo`](crate::model::ChangeInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8397,8 +8014,7 @@ pub mod change_info {
         }
         /// <p>This element contains an ID that you use when performing a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a> action to get detailed information about the change.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The current state of the request. <code>PENDING</code> indicates that this request has not yet been applied to all Amazon Route 53 DNS servers.</p>
         pub fn status(mut self, input: crate::model::ChangeStatus) -> Self {
@@ -8406,12 +8022,8 @@ pub mod change_info {
             self
         }
         /// <p>The current state of the request. <code>PENDING</code> indicates that this request has not yet been applied to all Amazon Route 53 DNS servers.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ChangeStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ChangeStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
         pub fn submitted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8419,12 +8031,8 @@ pub mod change_info {
             self
         }
         /// <p>The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.</p>
-        pub fn set_submitted_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.submitted_at = input;
-            self
+        pub fn set_submitted_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.submitted_at = input; self
         }
         /// <p>A comment you can provide.</p>
         pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8433,19 +8041,24 @@ pub mod change_info {
         }
         /// <p>A comment you can provide.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.comment = input;
-            self
+            self.comment = input; self
         }
         /// Consumes the builder and constructs a [`ChangeInfo`](crate::model::ChangeInfo).
         pub fn build(self) -> crate::model::ChangeInfo {
             crate::model::ChangeInfo {
-                id: self.id,
-                status: self.status,
-                submitted_at: self.submitted_at,
-                comment: self.comment,
+                id: self.id
+                ,
+                status: self.status
+                ,
+                submitted_at: self.submitted_at
+                ,
+                comment: self.comment
+                ,
             }
         }
     }
+    
+    
 }
 impl ChangeInfo {
     /// Creates a new builder-style object to manufacture [`ChangeInfo`](crate::model::ChangeInfo).
@@ -8460,9 +8073,9 @@ impl ChangeInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let changestatus = unimplemented!();
 /// match changestatus {
@@ -8484,58 +8097,52 @@ impl ChangeInfo {
 /// Specifically, when `changestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChangeStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChangeStatus {
     #[allow(missing_docs)] // documentation missing in model
     Insync,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChangeStatus {
     fn from(s: &str) -> Self {
         match s {
             "INSYNC" => ChangeStatus::Insync,
             "PENDING" => ChangeStatus::Pending,
-            other => ChangeStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ChangeStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ChangeStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChangeStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChangeStatus::from(s))
+                }
+            }
 impl ChangeStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChangeStatus::Insync => "INSYNC",
             ChangeStatus::Pending => "PENDING",
-            ChangeStatus::Unknown(value) => value.as_str(),
+            ChangeStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INSYNC", "PENDING"]
+        &[
+            "INSYNC", "PENDING"
+        ]
     }
 }
 impl AsRef<str> for ChangeStatus {
@@ -8547,14 +8154,14 @@ impl AsRef<str> for ChangeStatus {
 /// <p>A complex type that contains the type of limit that you specified in the request and the current value for that limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountLimit {
-    /// <p>The limit that you requested. Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p> </li>
-    /// <li> <p> <b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p> </li>
-    /// <li> <p> <b>MAX_REUSABLE_DELEGATION_SETS_BY_OWNER</b>: The maximum number of reusable delegation sets that you can create using the current account.</p> </li>
-    /// <li> <p> <b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p> </li>
-    /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li>
+pub struct AccountLimit  {
+    /// <p>The limit that you requested. Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p> </li> 
+    /// <li> <p> <b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p> </li> 
+    /// <li> <p> <b>MAX_REUSABLE_DELEGATION_SETS_BY_OWNER</b>: The maximum number of reusable delegation sets that you can create using the current account.</p> </li> 
+    /// <li> <p> <b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p> </li> 
+    /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::AccountLimitType>,
@@ -8563,15 +8170,15 @@ pub struct AccountLimit {
     pub value: i64,
 }
 impl AccountLimit {
-    /// <p>The limit that you requested. Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p> </li>
-    /// <li> <p> <b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p> </li>
-    /// <li> <p> <b>MAX_REUSABLE_DELEGATION_SETS_BY_OWNER</b>: The maximum number of reusable delegation sets that you can create using the current account.</p> </li>
-    /// <li> <p> <b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p> </li>
-    /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li>
+    /// <p>The limit that you requested. Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p> </li> 
+    /// <li> <p> <b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p> </li> 
+    /// <li> <p> <b>MAX_REUSABLE_DELEGATION_SETS_BY_OWNER</b>: The maximum number of reusable delegation sets that you can create using the current account.</p> </li> 
+    /// <li> <p> <b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p> </li> 
+    /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::AccountLimitType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::AccountLimitType> {
         self.r#type.as_ref()
     }
     /// <p>The current value for the limit that is specified by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
@@ -8581,7 +8188,7 @@ impl AccountLimit {
 }
 /// See [`AccountLimit`](crate::model::AccountLimit).
 pub mod account_limit {
-
+    
     /// A builder for [`AccountLimit`](crate::model::AccountLimit).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8589,32 +8196,28 @@ pub mod account_limit {
         pub(crate) value: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The limit that you requested. Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p> </li>
-        /// <li> <p> <b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p> </li>
-        /// <li> <p> <b>MAX_REUSABLE_DELEGATION_SETS_BY_OWNER</b>: The maximum number of reusable delegation sets that you can create using the current account.</p> </li>
-        /// <li> <p> <b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p> </li>
-        /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li>
+        /// <p>The limit that you requested. Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p> </li> 
+        /// <li> <p> <b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p> </li> 
+        /// <li> <p> <b>MAX_REUSABLE_DELEGATION_SETS_BY_OWNER</b>: The maximum number of reusable delegation sets that you can create using the current account.</p> </li> 
+        /// <li> <p> <b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p> </li> 
+        /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: crate::model::AccountLimitType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The limit that you requested. Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p> </li>
-        /// <li> <p> <b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p> </li>
-        /// <li> <p> <b>MAX_REUSABLE_DELEGATION_SETS_BY_OWNER</b>: The maximum number of reusable delegation sets that you can create using the current account.</p> </li>
-        /// <li> <p> <b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p> </li>
-        /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li>
+        /// <p>The limit that you requested. Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p> </li> 
+        /// <li> <p> <b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p> </li> 
+        /// <li> <p> <b>MAX_REUSABLE_DELEGATION_SETS_BY_OWNER</b>: The maximum number of reusable delegation sets that you can create using the current account.</p> </li> 
+        /// <li> <p> <b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p> </li> 
+        /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li> 
         /// </ul>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::AccountLimitType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::AccountLimitType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The current value for the limit that is specified by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
         pub fn value(mut self, input: i64) -> Self {
@@ -8623,17 +8226,21 @@ pub mod account_limit {
         }
         /// <p>The current value for the limit that is specified by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
         pub fn set_value(mut self, input: std::option::Option<i64>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`AccountLimit`](crate::model::AccountLimit).
         pub fn build(self) -> crate::model::AccountLimit {
             crate::model::AccountLimit {
-                r#type: self.r#type,
-                value: self.value.unwrap_or_default(),
+                r#type: self.r#type
+                ,
+                value: self.value
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl AccountLimit {
     /// Creates a new builder-style object to manufacture [`AccountLimit`](crate::model::AccountLimit).
@@ -8648,9 +8255,9 @@ impl AccountLimit {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accountlimittype = unimplemented!();
 /// match accountlimittype {
@@ -8675,22 +8282,14 @@ impl AccountLimit {
 /// Specifically, when `accountlimittype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccountLimitType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccountLimitType {
     #[allow(missing_docs)] // documentation missing in model
     MaxHealthChecksByOwner,
@@ -8703,55 +8302,43 @@ pub enum AccountLimitType {
     #[allow(missing_docs)] // documentation missing in model
     MaxTrafficPolicyInstancesByOwner,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccountLimitType {
     fn from(s: &str) -> Self {
         match s {
             "MAX_HEALTH_CHECKS_BY_OWNER" => AccountLimitType::MaxHealthChecksByOwner,
             "MAX_HOSTED_ZONES_BY_OWNER" => AccountLimitType::MaxHostedZonesByOwner,
-            "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER" => {
-                AccountLimitType::MaxReusableDelegationSetsByOwner
-            }
+            "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER" => AccountLimitType::MaxReusableDelegationSetsByOwner,
             "MAX_TRAFFIC_POLICIES_BY_OWNER" => AccountLimitType::MaxTrafficPoliciesByOwner,
-            "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER" => {
-                AccountLimitType::MaxTrafficPolicyInstancesByOwner
-            }
-            other => AccountLimitType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER" => AccountLimitType::MaxTrafficPolicyInstancesByOwner,
+            other => AccountLimitType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccountLimitType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccountLimitType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccountLimitType::from(s))
+                }
+            }
 impl AccountLimitType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccountLimitType::MaxHealthChecksByOwner => "MAX_HEALTH_CHECKS_BY_OWNER",
             AccountLimitType::MaxHostedZonesByOwner => "MAX_HOSTED_ZONES_BY_OWNER",
-            AccountLimitType::MaxReusableDelegationSetsByOwner => {
-                "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER"
-            }
+            AccountLimitType::MaxReusableDelegationSetsByOwner => "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER",
             AccountLimitType::MaxTrafficPoliciesByOwner => "MAX_TRAFFIC_POLICIES_BY_OWNER",
-            AccountLimitType::MaxTrafficPolicyInstancesByOwner => {
-                "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER"
-            }
-            AccountLimitType::Unknown(value) => value.as_str(),
+            AccountLimitType::MaxTrafficPolicyInstancesByOwner => "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER",
+            AccountLimitType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "MAX_HEALTH_CHECKS_BY_OWNER",
-            "MAX_HOSTED_ZONES_BY_OWNER",
-            "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER",
-            "MAX_TRAFFIC_POLICIES_BY_OWNER",
-            "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER",
+            "MAX_HEALTH_CHECKS_BY_OWNER", "MAX_HOSTED_ZONES_BY_OWNER", "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER", "MAX_TRAFFIC_POLICIES_BY_OWNER", "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER"
         ]
     }
 }
@@ -8764,7 +8351,7 @@ impl AsRef<str> for AccountLimitType {
 /// <p>A complex type that identifies a CIDR collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CidrCollection {
+pub struct CidrCollection  {
     /// <p>The ARN of the collection. Can be used to reference the collection in IAM policy or in another Amazon Web Services account.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -8780,15 +8367,15 @@ pub struct CidrCollection {
 }
 impl CidrCollection {
     /// <p>The ARN of the collection. Can be used to reference the collection in IAM policy or in another Amazon Web Services account.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The unique ID of the CIDR collection.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of a CIDR collection.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
@@ -8798,7 +8385,7 @@ impl CidrCollection {
 }
 /// See [`CidrCollection`](crate::model::CidrCollection).
 pub mod cidr_collection {
-
+    
     /// A builder for [`CidrCollection`](crate::model::CidrCollection).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8815,8 +8402,7 @@ pub mod cidr_collection {
         }
         /// <p>The ARN of the collection. Can be used to reference the collection in IAM policy or in another Amazon Web Services account.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The unique ID of the CIDR collection.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8825,8 +8411,7 @@ pub mod cidr_collection {
         }
         /// <p>The unique ID of the CIDR collection.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of a CIDR collection.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8835,8 +8420,7 @@ pub mod cidr_collection {
         }
         /// <p>The name of a CIDR collection.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
         pub fn version(mut self, input: i64) -> Self {
@@ -8845,19 +8429,24 @@ pub mod cidr_collection {
         }
         /// <p>A sequential counter that Route&nbsp;53 sets to 1 when you create a CIDR collection and increments by 1 each time you update settings for the CIDR collection.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`CidrCollection`](crate::model::CidrCollection).
         pub fn build(self) -> crate::model::CidrCollection {
             crate::model::CidrCollection {
-                arn: self.arn,
-                id: self.id,
-                name: self.name,
-                version: self.version,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl CidrCollection {
     /// Creates a new builder-style object to manufacture [`CidrCollection`](crate::model::CidrCollection).
@@ -8869,7 +8458,7 @@ impl CidrCollection {
 /// <p>The information for a change request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChangeBatch {
+pub struct ChangeBatch  {
     /// <p> <i>Optional:</i> Any comments you want to include about a change batch request.</p>
     #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
@@ -8879,17 +8468,17 @@ pub struct ChangeBatch {
 }
 impl ChangeBatch {
     /// <p> <i>Optional:</i> Any comments you want to include about a change batch request.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>Information about the changes to make to the record sets.</p>
-    pub fn changes(&self) -> std::option::Option<&[crate::model::Change]> {
+    pub fn changes(&self) -> std::option::Option<& [crate::model::Change]> {
         self.changes.as_deref()
     }
 }
 /// See [`ChangeBatch`](crate::model::ChangeBatch).
 pub mod change_batch {
-
+    
     /// A builder for [`ChangeBatch`](crate::model::ChangeBatch).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8904,8 +8493,7 @@ pub mod change_batch {
         }
         /// <p> <i>Optional:</i> Any comments you want to include about a change batch request.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.comment = input;
-            self
+            self.comment = input; self
         }
         /// Appends an item to `changes`.
         ///
@@ -8914,26 +8502,26 @@ pub mod change_batch {
         /// <p>Information about the changes to make to the record sets.</p>
         pub fn changes(mut self, input: crate::model::Change) -> Self {
             let mut v = self.changes.unwrap_or_default();
-            v.push(input);
-            self.changes = Some(v);
-            self
+                            v.push(input);
+                            self.changes = Some(v);
+                            self
         }
         /// <p>Information about the changes to make to the record sets.</p>
-        pub fn set_changes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Change>>,
-        ) -> Self {
-            self.changes = input;
-            self
+        pub fn set_changes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Change>>) -> Self {
+            self.changes = input; self
         }
         /// Consumes the builder and constructs a [`ChangeBatch`](crate::model::ChangeBatch).
         pub fn build(self) -> crate::model::ChangeBatch {
             crate::model::ChangeBatch {
-                comment: self.comment,
-                changes: self.changes,
+                comment: self.comment
+                ,
+                changes: self.changes
+                ,
             }
         }
     }
+    
+    
 }
 impl ChangeBatch {
     /// Creates a new builder-style object to manufacture [`ChangeBatch`](crate::model::ChangeBatch).
@@ -8945,14 +8533,14 @@ impl ChangeBatch {
 /// <p>The information for each resource record set that you want to change.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Change {
-    /// <p>The action to perform:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATE</code>: Creates a resource record set that has the specified values.</p> </li>
-    /// <li> <p> <code>DELETE</code>: Deletes a existing resource record set.</p> <important>
-    /// <p>To delete the resource record set that is associated with a traffic policy instance, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html">DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p>
-    /// </important> </li>
-    /// <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record set does exist, Route 53 updates it with the values in the request.</p> </li>
+pub struct Change  {
+    /// <p>The action to perform:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATE</code>: Creates a resource record set that has the specified values.</p> </li> 
+    /// <li> <p> <code>DELETE</code>: Deletes a existing resource record set.</p> <important> 
+    /// <p>To delete the resource record set that is associated with a traffic policy instance, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html">DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p> 
+    /// </important> </li> 
+    /// <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record set does exist, Route 53 updates it with the values in the request.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::ChangeAction>,
@@ -8961,25 +8549,25 @@ pub struct Change {
     pub resource_record_set: std::option::Option<crate::model::ResourceRecordSet>,
 }
 impl Change {
-    /// <p>The action to perform:</p>
-    /// <ul>
-    /// <li> <p> <code>CREATE</code>: Creates a resource record set that has the specified values.</p> </li>
-    /// <li> <p> <code>DELETE</code>: Deletes a existing resource record set.</p> <important>
-    /// <p>To delete the resource record set that is associated with a traffic policy instance, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html">DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p>
-    /// </important> </li>
-    /// <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record set does exist, Route 53 updates it with the values in the request.</p> </li>
+    /// <p>The action to perform:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CREATE</code>: Creates a resource record set that has the specified values.</p> </li> 
+    /// <li> <p> <code>DELETE</code>: Deletes a existing resource record set.</p> <important> 
+    /// <p>To delete the resource record set that is associated with a traffic policy instance, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html">DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p> 
+    /// </important> </li> 
+    /// <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record set does exist, Route 53 updates it with the values in the request.</p> </li> 
     /// </ul>
-    pub fn action(&self) -> std::option::Option<&crate::model::ChangeAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::ChangeAction> {
         self.action.as_ref()
     }
     /// <p>Information about the resource record set to create, delete, or update.</p>
-    pub fn resource_record_set(&self) -> std::option::Option<&crate::model::ResourceRecordSet> {
+    pub fn resource_record_set(&self) -> std::option::Option<& crate::model::ResourceRecordSet> {
         self.resource_record_set.as_ref()
     }
 }
 /// See [`Change`](crate::model::Change).
 pub mod change {
-
+    
     /// A builder for [`Change`](crate::model::Change).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8987,32 +8575,28 @@ pub mod change {
         pub(crate) resource_record_set: std::option::Option<crate::model::ResourceRecordSet>,
     }
     impl Builder {
-        /// <p>The action to perform:</p>
-        /// <ul>
-        /// <li> <p> <code>CREATE</code>: Creates a resource record set that has the specified values.</p> </li>
-        /// <li> <p> <code>DELETE</code>: Deletes a existing resource record set.</p> <important>
-        /// <p>To delete the resource record set that is associated with a traffic policy instance, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html">DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p>
-        /// </important> </li>
-        /// <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record set does exist, Route 53 updates it with the values in the request.</p> </li>
+        /// <p>The action to perform:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATE</code>: Creates a resource record set that has the specified values.</p> </li> 
+        /// <li> <p> <code>DELETE</code>: Deletes a existing resource record set.</p> <important> 
+        /// <p>To delete the resource record set that is associated with a traffic policy instance, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html">DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p> 
+        /// </important> </li> 
+        /// <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record set does exist, Route 53 updates it with the values in the request.</p> </li> 
         /// </ul>
         pub fn action(mut self, input: crate::model::ChangeAction) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p>The action to perform:</p>
-        /// <ul>
-        /// <li> <p> <code>CREATE</code>: Creates a resource record set that has the specified values.</p> </li>
-        /// <li> <p> <code>DELETE</code>: Deletes a existing resource record set.</p> <important>
-        /// <p>To delete the resource record set that is associated with a traffic policy instance, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html">DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p>
-        /// </important> </li>
-        /// <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record set does exist, Route 53 updates it with the values in the request.</p> </li>
+        /// <p>The action to perform:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CREATE</code>: Creates a resource record set that has the specified values.</p> </li> 
+        /// <li> <p> <code>DELETE</code>: Deletes a existing resource record set.</p> <important> 
+        /// <p>To delete the resource record set that is associated with a traffic policy instance, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html">DeleteTrafficPolicyInstance</a>. Amazon Route 53 will delete the resource record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't automatically delete the traffic policy instance, and you'll continue to be charged for it even though it's no longer in use. </p> 
+        /// </important> </li> 
+        /// <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record set does exist, Route 53 updates it with the values in the request.</p> </li> 
         /// </ul>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::ChangeAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::ChangeAction>) -> Self {
+            self.action = input; self
         }
         /// <p>Information about the resource record set to create, delete, or update.</p>
         pub fn resource_record_set(mut self, input: crate::model::ResourceRecordSet) -> Self {
@@ -9020,21 +8604,21 @@ pub mod change {
             self
         }
         /// <p>Information about the resource record set to create, delete, or update.</p>
-        pub fn set_resource_record_set(
-            mut self,
-            input: std::option::Option<crate::model::ResourceRecordSet>,
-        ) -> Self {
-            self.resource_record_set = input;
-            self
+        pub fn set_resource_record_set(mut self, input: std::option::Option<crate::model::ResourceRecordSet>) -> Self {
+            self.resource_record_set = input; self
         }
         /// Consumes the builder and constructs a [`Change`](crate::model::Change).
         pub fn build(self) -> crate::model::Change {
             crate::model::Change {
-                action: self.action,
-                resource_record_set: self.resource_record_set,
+                action: self.action
+                ,
+                resource_record_set: self.resource_record_set
+                ,
             }
         }
     }
+    
+    
 }
 impl Change {
     /// Creates a new builder-style object to manufacture [`Change`](crate::model::Change).
@@ -9049,9 +8633,9 @@ impl Change {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let changeaction = unimplemented!();
 /// match changeaction {
@@ -9074,22 +8658,14 @@ impl Change {
 /// Specifically, when `changeaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChangeAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChangeAction {
     #[allow(missing_docs)] // documentation missing in model
     Create,
@@ -9098,7 +8674,7 @@ pub enum ChangeAction {
     #[allow(missing_docs)] // documentation missing in model
     Upsert,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChangeAction {
     fn from(s: &str) -> Self {
@@ -9106,17 +8682,17 @@ impl std::convert::From<&str> for ChangeAction {
             "CREATE" => ChangeAction::Create,
             "DELETE" => ChangeAction::Delete,
             "UPSERT" => ChangeAction::Upsert,
-            other => ChangeAction::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ChangeAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ChangeAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChangeAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChangeAction::from(s))
+                }
+            }
 impl ChangeAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9124,12 +8700,14 @@ impl ChangeAction {
             ChangeAction::Create => "CREATE",
             ChangeAction::Delete => "DELETE",
             ChangeAction::Upsert => "UPSERT",
-            ChangeAction::Unknown(value) => value.as_str(),
+            ChangeAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATE", "DELETE", "UPSERT"]
+        &[
+            "CREATE", "DELETE", "UPSERT"
+        ]
     }
 }
 impl AsRef<str> for ChangeAction {
@@ -9141,7 +8719,7 @@ impl AsRef<str> for ChangeAction {
 /// <p>A complex type that contains information about the CIDR collection change.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CidrCollectionChange {
+pub struct CidrCollectionChange  {
     /// <p>Name of the location that is associated with the CIDR collection.</p>
     #[doc(hidden)]
     pub location_name: std::option::Option<std::string::String>,
@@ -9154,21 +8732,21 @@ pub struct CidrCollectionChange {
 }
 impl CidrCollectionChange {
     /// <p>Name of the location that is associated with the CIDR collection.</p>
-    pub fn location_name(&self) -> std::option::Option<&str> {
+    pub fn location_name(&self) -> std::option::Option<& str> {
         self.location_name.as_deref()
     }
     /// <p>CIDR collection change action. </p>
-    pub fn action(&self) -> std::option::Option<&crate::model::CidrCollectionChangeAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::CidrCollectionChangeAction> {
         self.action.as_ref()
     }
     /// <p>List of CIDR blocks.</p>
-    pub fn cidr_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cidr_list(&self) -> std::option::Option<& [std::string::String]> {
         self.cidr_list.as_deref()
     }
 }
 /// See [`CidrCollectionChange`](crate::model::CidrCollectionChange).
 pub mod cidr_collection_change {
-
+    
     /// A builder for [`CidrCollectionChange`](crate::model::CidrCollectionChange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9183,12 +8761,8 @@ pub mod cidr_collection_change {
             self
         }
         /// <p>Name of the location that is associated with the CIDR collection.</p>
-        pub fn set_location_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.location_name = input;
-            self
+        pub fn set_location_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.location_name = input; self
         }
         /// <p>CIDR collection change action. </p>
         pub fn action(mut self, input: crate::model::CidrCollectionChangeAction) -> Self {
@@ -9196,12 +8770,8 @@ pub mod cidr_collection_change {
             self
         }
         /// <p>CIDR collection change action. </p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::CidrCollectionChangeAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::CidrCollectionChangeAction>) -> Self {
+            self.action = input; self
         }
         /// Appends an item to `cidr_list`.
         ///
@@ -9210,27 +8780,28 @@ pub mod cidr_collection_change {
         /// <p>List of CIDR blocks.</p>
         pub fn cidr_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cidr_list.unwrap_or_default();
-            v.push(input.into());
-            self.cidr_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.cidr_list = Some(v);
+                            self
         }
         /// <p>List of CIDR blocks.</p>
-        pub fn set_cidr_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.cidr_list = input;
-            self
+        pub fn set_cidr_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.cidr_list = input; self
         }
         /// Consumes the builder and constructs a [`CidrCollectionChange`](crate::model::CidrCollectionChange).
         pub fn build(self) -> crate::model::CidrCollectionChange {
             crate::model::CidrCollectionChange {
-                location_name: self.location_name,
-                action: self.action,
-                cidr_list: self.cidr_list,
+                location_name: self.location_name
+                ,
+                action: self.action
+                ,
+                cidr_list: self.cidr_list
+                ,
             }
         }
     }
+    
+    
 }
 impl CidrCollectionChange {
     /// Creates a new builder-style object to manufacture [`CidrCollectionChange`](crate::model::CidrCollectionChange).
@@ -9245,9 +8816,9 @@ impl CidrCollectionChange {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let cidrcollectionchangeaction = unimplemented!();
 /// match cidrcollectionchangeaction {
@@ -9269,60 +8840,52 @@ impl CidrCollectionChange {
 /// Specifically, when `cidrcollectionchangeaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CidrCollectionChangeAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CidrCollectionChangeAction {
     #[allow(missing_docs)] // documentation missing in model
     DeleteIfExists,
     #[allow(missing_docs)] // documentation missing in model
     Put,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CidrCollectionChangeAction {
     fn from(s: &str) -> Self {
         match s {
             "DELETE_IF_EXISTS" => CidrCollectionChangeAction::DeleteIfExists,
             "PUT" => CidrCollectionChangeAction::Put,
-            other => CidrCollectionChangeAction::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => CidrCollectionChangeAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CidrCollectionChangeAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CidrCollectionChangeAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CidrCollectionChangeAction::from(s))
+                }
+            }
 impl CidrCollectionChangeAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CidrCollectionChangeAction::DeleteIfExists => "DELETE_IF_EXISTS",
             CidrCollectionChangeAction::Put => "PUT",
-            CidrCollectionChangeAction::Unknown(value) => value.as_str(),
+            CidrCollectionChangeAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DELETE_IF_EXISTS", "PUT"]
+        &[
+            "DELETE_IF_EXISTS", "PUT"
+        ]
     }
 }
 impl AsRef<str> for CidrCollectionChangeAction {
@@ -9330,3 +8893,4 @@ impl AsRef<str> for CidrCollectionChangeAction {
         self.as_str()
     }
 }
+

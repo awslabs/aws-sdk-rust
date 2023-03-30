@@ -3,8 +3,8 @@
 /// <p>An object that defines the event destination. Specifically, it defines which services receive events from emails sent using the configuration set that the event destination is associated with. Also defines the types of events that are sent to the event destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventDestinationDefinition {
-    /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p>
+pub struct EventDestinationDefinition  {
+    /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p> 
     /// <p>If <code>false</code>, the event destination is disabled. When the event destination is disabled, events aren't sent to the specified destinations.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -25,64 +25,56 @@ pub struct EventDestinationDefinition {
     pub pinpoint_destination: std::option::Option<crate::model::PinpointDestination>,
 }
 impl EventDestinationDefinition {
-    /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p>
+    /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p> 
     /// <p>If <code>false</code>, the event destination is disabled. When the event destination is disabled, events aren't sent to the specified destinations.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>An array that specifies which events Amazon Pinpoint should send to the destinations in this <code>EventDestinationDefinition</code>.</p>
-    pub fn matching_event_types(&self) -> std::option::Option<&[crate::model::EventType]> {
+    pub fn matching_event_types(&self) -> std::option::Option<& [crate::model::EventType]> {
         self.matching_event_types.as_deref()
     }
     /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
-    pub fn kinesis_firehose_destination(
-        &self,
-    ) -> std::option::Option<&crate::model::KinesisFirehoseDestination> {
+    pub fn kinesis_firehose_destination(&self) -> std::option::Option<& crate::model::KinesisFirehoseDestination> {
         self.kinesis_firehose_destination.as_ref()
     }
     /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.</p>
-    pub fn cloud_watch_destination(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchDestination> {
+    pub fn cloud_watch_destination(&self) -> std::option::Option<& crate::model::CloudWatchDestination> {
         self.cloud_watch_destination.as_ref()
     }
     /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
-    pub fn sns_destination(&self) -> std::option::Option<&crate::model::SnsDestination> {
+    pub fn sns_destination(&self) -> std::option::Option<& crate::model::SnsDestination> {
         self.sns_destination.as_ref()
     }
     /// <p>An object that defines a Amazon Pinpoint destination for email events. You can use Amazon Pinpoint events to create attributes in Amazon Pinpoint projects. You can use these attributes to create segments for your campaigns.</p>
-    pub fn pinpoint_destination(&self) -> std::option::Option<&crate::model::PinpointDestination> {
+    pub fn pinpoint_destination(&self) -> std::option::Option<& crate::model::PinpointDestination> {
         self.pinpoint_destination.as_ref()
     }
 }
 /// See [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
 pub mod event_destination_definition {
-
+    
     /// A builder for [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enabled: std::option::Option<bool>,
-        pub(crate) matching_event_types:
-            std::option::Option<std::vec::Vec<crate::model::EventType>>,
-        pub(crate) kinesis_firehose_destination:
-            std::option::Option<crate::model::KinesisFirehoseDestination>,
-        pub(crate) cloud_watch_destination:
-            std::option::Option<crate::model::CloudWatchDestination>,
+        pub(crate) matching_event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
+        pub(crate) kinesis_firehose_destination: std::option::Option<crate::model::KinesisFirehoseDestination>,
+        pub(crate) cloud_watch_destination: std::option::Option<crate::model::CloudWatchDestination>,
         pub(crate) sns_destination: std::option::Option<crate::model::SnsDestination>,
         pub(crate) pinpoint_destination: std::option::Option<crate::model::PinpointDestination>,
     }
     impl Builder {
-        /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p>
+        /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p> 
         /// <p>If <code>false</code>, the event destination is disabled. When the event destination is disabled, events aren't sent to the specified destinations.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p>
+        /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p> 
         /// <p>If <code>false</code>, the event destination is disabled. When the event destination is disabled, events aren't sent to the specified destinations.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Appends an item to `matching_event_types`.
         ///
@@ -91,49 +83,31 @@ pub mod event_destination_definition {
         /// <p>An array that specifies which events Amazon Pinpoint should send to the destinations in this <code>EventDestinationDefinition</code>.</p>
         pub fn matching_event_types(mut self, input: crate::model::EventType) -> Self {
             let mut v = self.matching_event_types.unwrap_or_default();
-            v.push(input);
-            self.matching_event_types = Some(v);
-            self
+                            v.push(input);
+                            self.matching_event_types = Some(v);
+                            self
         }
         /// <p>An array that specifies which events Amazon Pinpoint should send to the destinations in this <code>EventDestinationDefinition</code>.</p>
-        pub fn set_matching_event_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventType>>,
-        ) -> Self {
-            self.matching_event_types = input;
-            self
+        pub fn set_matching_event_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventType>>) -> Self {
+            self.matching_event_types = input; self
         }
         /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
-        pub fn kinesis_firehose_destination(
-            mut self,
-            input: crate::model::KinesisFirehoseDestination,
-        ) -> Self {
+        pub fn kinesis_firehose_destination(mut self, input: crate::model::KinesisFirehoseDestination) -> Self {
             self.kinesis_firehose_destination = Some(input);
             self
         }
         /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
-        pub fn set_kinesis_firehose_destination(
-            mut self,
-            input: std::option::Option<crate::model::KinesisFirehoseDestination>,
-        ) -> Self {
-            self.kinesis_firehose_destination = input;
-            self
+        pub fn set_kinesis_firehose_destination(mut self, input: std::option::Option<crate::model::KinesisFirehoseDestination>) -> Self {
+            self.kinesis_firehose_destination = input; self
         }
         /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.</p>
-        pub fn cloud_watch_destination(
-            mut self,
-            input: crate::model::CloudWatchDestination,
-        ) -> Self {
+        pub fn cloud_watch_destination(mut self, input: crate::model::CloudWatchDestination) -> Self {
             self.cloud_watch_destination = Some(input);
             self
         }
         /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.</p>
-        pub fn set_cloud_watch_destination(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchDestination>,
-        ) -> Self {
-            self.cloud_watch_destination = input;
-            self
+        pub fn set_cloud_watch_destination(mut self, input: std::option::Option<crate::model::CloudWatchDestination>) -> Self {
+            self.cloud_watch_destination = input; self
         }
         /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
         pub fn sns_destination(mut self, input: crate::model::SnsDestination) -> Self {
@@ -141,12 +115,8 @@ pub mod event_destination_definition {
             self
         }
         /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
-        pub fn set_sns_destination(
-            mut self,
-            input: std::option::Option<crate::model::SnsDestination>,
-        ) -> Self {
-            self.sns_destination = input;
-            self
+        pub fn set_sns_destination(mut self, input: std::option::Option<crate::model::SnsDestination>) -> Self {
+            self.sns_destination = input; self
         }
         /// <p>An object that defines a Amazon Pinpoint destination for email events. You can use Amazon Pinpoint events to create attributes in Amazon Pinpoint projects. You can use these attributes to create segments for your campaigns.</p>
         pub fn pinpoint_destination(mut self, input: crate::model::PinpointDestination) -> Self {
@@ -154,25 +124,30 @@ pub mod event_destination_definition {
             self
         }
         /// <p>An object that defines a Amazon Pinpoint destination for email events. You can use Amazon Pinpoint events to create attributes in Amazon Pinpoint projects. You can use these attributes to create segments for your campaigns.</p>
-        pub fn set_pinpoint_destination(
-            mut self,
-            input: std::option::Option<crate::model::PinpointDestination>,
-        ) -> Self {
-            self.pinpoint_destination = input;
-            self
+        pub fn set_pinpoint_destination(mut self, input: std::option::Option<crate::model::PinpointDestination>) -> Self {
+            self.pinpoint_destination = input; self
         }
         /// Consumes the builder and constructs a [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
         pub fn build(self) -> crate::model::EventDestinationDefinition {
             crate::model::EventDestinationDefinition {
-                enabled: self.enabled.unwrap_or_default(),
-                matching_event_types: self.matching_event_types,
-                kinesis_firehose_destination: self.kinesis_firehose_destination,
-                cloud_watch_destination: self.cloud_watch_destination,
-                sns_destination: self.sns_destination,
-                pinpoint_destination: self.pinpoint_destination,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                matching_event_types: self.matching_event_types
+                ,
+                kinesis_firehose_destination: self.kinesis_firehose_destination
+                ,
+                cloud_watch_destination: self.cloud_watch_destination
+                ,
+                sns_destination: self.sns_destination
+                ,
+                pinpoint_destination: self.pinpoint_destination
+                ,
             }
         }
     }
+    
+    
 }
 impl EventDestinationDefinition {
     /// Creates a new builder-style object to manufacture [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
@@ -184,20 +159,20 @@ impl EventDestinationDefinition {
 /// <p>An object that defines a Amazon Pinpoint destination for email events. You can use Amazon Pinpoint events to create attributes in Amazon Pinpoint projects. You can use these attributes to create segments for your campaigns.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PinpointDestination {
+pub struct PinpointDestination  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email events to.</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
 }
 impl PinpointDestination {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email events to.</p>
-    pub fn application_arn(&self) -> std::option::Option<&str> {
+    pub fn application_arn(&self) -> std::option::Option<& str> {
         self.application_arn.as_deref()
     }
 }
 /// See [`PinpointDestination`](crate::model::PinpointDestination).
 pub mod pinpoint_destination {
-
+    
     /// A builder for [`PinpointDestination`](crate::model::PinpointDestination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -210,20 +185,19 @@ pub mod pinpoint_destination {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Pinpoint project that you want to send email events to.</p>
-        pub fn set_application_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_arn = input;
-            self
+        pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_arn = input; self
         }
         /// Consumes the builder and constructs a [`PinpointDestination`](crate::model::PinpointDestination).
         pub fn build(self) -> crate::model::PinpointDestination {
             crate::model::PinpointDestination {
-                application_arn: self.application_arn,
+                application_arn: self.application_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl PinpointDestination {
     /// Creates a new builder-style object to manufacture [`PinpointDestination`](crate::model::PinpointDestination).
@@ -235,20 +209,20 @@ impl PinpointDestination {
 /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnsDestination {
+pub struct SnsDestination  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish email events to. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
     #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl SnsDestination {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish email events to. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
-    pub fn topic_arn(&self) -> std::option::Option<&str> {
+    pub fn topic_arn(&self) -> std::option::Option<& str> {
         self.topic_arn.as_deref()
     }
 }
 /// See [`SnsDestination`](crate::model::SnsDestination).
 pub mod sns_destination {
-
+    
     /// A builder for [`SnsDestination`](crate::model::SnsDestination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -262,16 +236,18 @@ pub mod sns_destination {
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish email events to. For more information about Amazon SNS topics, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS Developer Guide</a>.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = input;
-            self
+            self.topic_arn = input; self
         }
         /// Consumes the builder and constructs a [`SnsDestination`](crate::model::SnsDestination).
         pub fn build(self) -> crate::model::SnsDestination {
             crate::model::SnsDestination {
-                topic_arn: self.topic_arn,
+                topic_arn: self.topic_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl SnsDestination {
     /// Creates a new builder-style object to manufacture [`SnsDestination`](crate::model::SnsDestination).
@@ -283,28 +259,24 @@ impl SnsDestination {
 /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchDestination {
+pub struct CloudWatchDestination  {
     /// <p>An array of objects that define the dimensions to use when you send email events to Amazon CloudWatch.</p>
     #[doc(hidden)]
-    pub dimension_configurations:
-        std::option::Option<std::vec::Vec<crate::model::CloudWatchDimensionConfiguration>>,
+    pub dimension_configurations: std::option::Option<std::vec::Vec<crate::model::CloudWatchDimensionConfiguration>>,
 }
 impl CloudWatchDestination {
     /// <p>An array of objects that define the dimensions to use when you send email events to Amazon CloudWatch.</p>
-    pub fn dimension_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::CloudWatchDimensionConfiguration]> {
+    pub fn dimension_configurations(&self) -> std::option::Option<& [crate::model::CloudWatchDimensionConfiguration]> {
         self.dimension_configurations.as_deref()
     }
 }
 /// See [`CloudWatchDestination`](crate::model::CloudWatchDestination).
 pub mod cloud_watch_destination {
-
+    
     /// A builder for [`CloudWatchDestination`](crate::model::CloudWatchDestination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) dimension_configurations:
-            std::option::Option<std::vec::Vec<crate::model::CloudWatchDimensionConfiguration>>,
+        pub(crate) dimension_configurations: std::option::Option<std::vec::Vec<crate::model::CloudWatchDimensionConfiguration>>,
     }
     impl Builder {
         /// Appends an item to `dimension_configurations`.
@@ -312,32 +284,26 @@ pub mod cloud_watch_destination {
         /// To override the contents of this collection use [`set_dimension_configurations`](Self::set_dimension_configurations).
         ///
         /// <p>An array of objects that define the dimensions to use when you send email events to Amazon CloudWatch.</p>
-        pub fn dimension_configurations(
-            mut self,
-            input: crate::model::CloudWatchDimensionConfiguration,
-        ) -> Self {
+        pub fn dimension_configurations(mut self, input: crate::model::CloudWatchDimensionConfiguration) -> Self {
             let mut v = self.dimension_configurations.unwrap_or_default();
-            v.push(input);
-            self.dimension_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.dimension_configurations = Some(v);
+                            self
         }
         /// <p>An array of objects that define the dimensions to use when you send email events to Amazon CloudWatch.</p>
-        pub fn set_dimension_configurations(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::CloudWatchDimensionConfiguration>,
-            >,
-        ) -> Self {
-            self.dimension_configurations = input;
-            self
+        pub fn set_dimension_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::CloudWatchDimensionConfiguration>>) -> Self {
+            self.dimension_configurations = input; self
         }
         /// Consumes the builder and constructs a [`CloudWatchDestination`](crate::model::CloudWatchDestination).
         pub fn build(self) -> crate::model::CloudWatchDestination {
             crate::model::CloudWatchDestination {
-                dimension_configurations: self.dimension_configurations,
+                dimension_configurations: self.dimension_configurations
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudWatchDestination {
     /// Creates a new builder-style object to manufacture [`CloudWatchDestination`](crate::model::CloudWatchDestination).
@@ -349,52 +315,50 @@ impl CloudWatchDestination {
 /// <p>An object that defines the dimension configuration to use when you send Amazon Pinpoint email events to Amazon CloudWatch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchDimensionConfiguration {
-    /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name has to meet the following criteria:</p>
-    /// <ul>
-    /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-    /// <li> <p>It can contain no more than 256 characters.</p> </li>
+pub struct CloudWatchDimensionConfiguration  {
+    /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name has to meet the following criteria:</p> 
+    /// <ul> 
+    /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li> 
+    /// <li> <p>It can contain no more than 256 characters.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub dimension_name: std::option::Option<std::string::String>,
     /// <p>The location where Amazon Pinpoint finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon Pinpoint to use the message tags that you specify using an X-SES-MESSAGE-TAGS header or a parameter to the SendEmail/SendRawEmail API, choose <code>messageTag</code>. If you want Amazon Pinpoint to use your own email headers, choose <code>emailHeader</code>. If you want Amazon Pinpoint to use link tags, choose <code>linkTags</code>.</p>
     #[doc(hidden)]
     pub dimension_value_source: std::option::Option<crate::model::DimensionValueSource>,
-    /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email. This value has to meet the following criteria:</p>
-    /// <ul>
-    /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-    /// <li> <p>It can contain no more than 256 characters.</p> </li>
+    /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email. This value has to meet the following criteria:</p> 
+    /// <ul> 
+    /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li> 
+    /// <li> <p>It can contain no more than 256 characters.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub default_dimension_value: std::option::Option<std::string::String>,
 }
 impl CloudWatchDimensionConfiguration {
-    /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name has to meet the following criteria:</p>
-    /// <ul>
-    /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-    /// <li> <p>It can contain no more than 256 characters.</p> </li>
+    /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name has to meet the following criteria:</p> 
+    /// <ul> 
+    /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li> 
+    /// <li> <p>It can contain no more than 256 characters.</p> </li> 
     /// </ul>
-    pub fn dimension_name(&self) -> std::option::Option<&str> {
+    pub fn dimension_name(&self) -> std::option::Option<& str> {
         self.dimension_name.as_deref()
     }
     /// <p>The location where Amazon Pinpoint finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon Pinpoint to use the message tags that you specify using an X-SES-MESSAGE-TAGS header or a parameter to the SendEmail/SendRawEmail API, choose <code>messageTag</code>. If you want Amazon Pinpoint to use your own email headers, choose <code>emailHeader</code>. If you want Amazon Pinpoint to use link tags, choose <code>linkTags</code>.</p>
-    pub fn dimension_value_source(
-        &self,
-    ) -> std::option::Option<&crate::model::DimensionValueSource> {
+    pub fn dimension_value_source(&self) -> std::option::Option<& crate::model::DimensionValueSource> {
         self.dimension_value_source.as_ref()
     }
-    /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email. This value has to meet the following criteria:</p>
-    /// <ul>
-    /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-    /// <li> <p>It can contain no more than 256 characters.</p> </li>
+    /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email. This value has to meet the following criteria:</p> 
+    /// <ul> 
+    /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li> 
+    /// <li> <p>It can contain no more than 256 characters.</p> </li> 
     /// </ul>
-    pub fn default_dimension_value(&self) -> std::option::Option<&str> {
+    pub fn default_dimension_value(&self) -> std::option::Option<& str> {
         self.default_dimension_value.as_deref()
     }
 }
 /// See [`CloudWatchDimensionConfiguration`](crate::model::CloudWatchDimensionConfiguration).
 pub mod cloud_watch_dimension_configuration {
-
+    
     /// A builder for [`CloudWatchDimensionConfiguration`](crate::model::CloudWatchDimensionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -403,26 +367,22 @@ pub mod cloud_watch_dimension_configuration {
         pub(crate) default_dimension_value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name has to meet the following criteria:</p>
-        /// <ul>
-        /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-        /// <li> <p>It can contain no more than 256 characters.</p> </li>
+        /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name has to meet the following criteria:</p> 
+        /// <ul> 
+        /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li> 
+        /// <li> <p>It can contain no more than 256 characters.</p> </li> 
         /// </ul>
         pub fn dimension_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dimension_name = Some(input.into());
             self
         }
-        /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name has to meet the following criteria:</p>
-        /// <ul>
-        /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-        /// <li> <p>It can contain no more than 256 characters.</p> </li>
+        /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name has to meet the following criteria:</p> 
+        /// <ul> 
+        /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li> 
+        /// <li> <p>It can contain no more than 256 characters.</p> </li> 
         /// </ul>
-        pub fn set_dimension_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dimension_name = input;
-            self
+        pub fn set_dimension_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dimension_name = input; self
         }
         /// <p>The location where Amazon Pinpoint finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon Pinpoint to use the message tags that you specify using an X-SES-MESSAGE-TAGS header or a parameter to the SendEmail/SendRawEmail API, choose <code>messageTag</code>. If you want Amazon Pinpoint to use your own email headers, choose <code>emailHeader</code>. If you want Amazon Pinpoint to use link tags, choose <code>linkTags</code>.</p>
         pub fn dimension_value_source(mut self, input: crate::model::DimensionValueSource) -> Self {
@@ -430,43 +390,40 @@ pub mod cloud_watch_dimension_configuration {
             self
         }
         /// <p>The location where Amazon Pinpoint finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon Pinpoint to use the message tags that you specify using an X-SES-MESSAGE-TAGS header or a parameter to the SendEmail/SendRawEmail API, choose <code>messageTag</code>. If you want Amazon Pinpoint to use your own email headers, choose <code>emailHeader</code>. If you want Amazon Pinpoint to use link tags, choose <code>linkTags</code>.</p>
-        pub fn set_dimension_value_source(
-            mut self,
-            input: std::option::Option<crate::model::DimensionValueSource>,
-        ) -> Self {
-            self.dimension_value_source = input;
-            self
+        pub fn set_dimension_value_source(mut self, input: std::option::Option<crate::model::DimensionValueSource>) -> Self {
+            self.dimension_value_source = input; self
         }
-        /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email. This value has to meet the following criteria:</p>
-        /// <ul>
-        /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-        /// <li> <p>It can contain no more than 256 characters.</p> </li>
+        /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email. This value has to meet the following criteria:</p> 
+        /// <ul> 
+        /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li> 
+        /// <li> <p>It can contain no more than 256 characters.</p> </li> 
         /// </ul>
         pub fn default_dimension_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_dimension_value = Some(input.into());
             self
         }
-        /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email. This value has to meet the following criteria:</p>
-        /// <ul>
-        /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
-        /// <li> <p>It can contain no more than 256 characters.</p> </li>
+        /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email. This value has to meet the following criteria:</p> 
+        /// <ul> 
+        /// <li> <p>It can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li> 
+        /// <li> <p>It can contain no more than 256 characters.</p> </li> 
         /// </ul>
-        pub fn set_default_dimension_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_dimension_value = input;
-            self
+        pub fn set_default_dimension_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_dimension_value = input; self
         }
         /// Consumes the builder and constructs a [`CloudWatchDimensionConfiguration`](crate::model::CloudWatchDimensionConfiguration).
         pub fn build(self) -> crate::model::CloudWatchDimensionConfiguration {
             crate::model::CloudWatchDimensionConfiguration {
-                dimension_name: self.dimension_name,
-                dimension_value_source: self.dimension_value_source,
-                default_dimension_value: self.default_dimension_value,
+                dimension_name: self.dimension_name
+                ,
+                dimension_value_source: self.dimension_value_source
+                ,
+                default_dimension_value: self.default_dimension_value
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudWatchDimensionConfiguration {
     /// Creates a new builder-style object to manufacture [`CloudWatchDimensionConfiguration`](crate::model::CloudWatchDimensionConfiguration).
@@ -481,9 +438,9 @@ impl CloudWatchDimensionConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dimensionvaluesource = unimplemented!();
 /// match dimensionvaluesource {
@@ -506,7 +463,7 @@ impl CloudWatchDimensionConfiguration {
 /// Specifically, when `dimensionvaluesource` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DimensionValueSource::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -517,15 +474,7 @@ impl CloudWatchDimensionConfiguration {
 /// want Amazon Pinpoint to use your own email headers, choose <code>emailHeader</code>. If you want
 /// Amazon Pinpoint to use link tags, choose <code>linkTags</code>.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DimensionValueSource {
     #[allow(missing_docs)] // documentation missing in model
     EmailHeader,
@@ -534,7 +483,7 @@ pub enum DimensionValueSource {
     #[allow(missing_docs)] // documentation missing in model
     MessageTag,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DimensionValueSource {
     fn from(s: &str) -> Self {
@@ -542,19 +491,17 @@ impl std::convert::From<&str> for DimensionValueSource {
             "EMAIL_HEADER" => DimensionValueSource::EmailHeader,
             "LINK_TAG" => DimensionValueSource::LinkTag,
             "MESSAGE_TAG" => DimensionValueSource::MessageTag,
-            other => {
-                DimensionValueSource::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DimensionValueSource::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DimensionValueSource {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DimensionValueSource::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DimensionValueSource::from(s))
+                }
+            }
 impl DimensionValueSource {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -562,12 +509,14 @@ impl DimensionValueSource {
             DimensionValueSource::EmailHeader => "EMAIL_HEADER",
             DimensionValueSource::LinkTag => "LINK_TAG",
             DimensionValueSource::MessageTag => "MESSAGE_TAG",
-            DimensionValueSource::Unknown(value) => value.as_str(),
+            DimensionValueSource::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EMAIL_HEADER", "LINK_TAG", "MESSAGE_TAG"]
+        &[
+            "EMAIL_HEADER", "LINK_TAG", "MESSAGE_TAG"
+        ]
     }
 }
 impl AsRef<str> for DimensionValueSource {
@@ -579,7 +528,7 @@ impl AsRef<str> for DimensionValueSource {
 /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KinesisFirehoseDestination {
+pub struct KinesisFirehoseDestination  {
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Pinpoint uses when sending email events to the Amazon Kinesis Data Firehose stream.</p>
     #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
@@ -589,17 +538,17 @@ pub struct KinesisFirehoseDestination {
 }
 impl KinesisFirehoseDestination {
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Pinpoint uses when sending email events to the Amazon Kinesis Data Firehose stream.</p>
-    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that Amazon Pinpoint sends email events to.</p>
-    pub fn delivery_stream_arn(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_arn(&self) -> std::option::Option<& str> {
         self.delivery_stream_arn.as_deref()
     }
 }
 /// See [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
 pub mod kinesis_firehose_destination {
-
+    
     /// A builder for [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -614,8 +563,7 @@ pub mod kinesis_firehose_destination {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Pinpoint uses when sending email events to the Amazon Kinesis Data Firehose stream.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_role_arn = input;
-            self
+            self.iam_role_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that Amazon Pinpoint sends email events to.</p>
         pub fn delivery_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -623,21 +571,21 @@ pub mod kinesis_firehose_destination {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose stream that Amazon Pinpoint sends email events to.</p>
-        pub fn set_delivery_stream_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.delivery_stream_arn = input;
-            self
+        pub fn set_delivery_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delivery_stream_arn = input; self
         }
         /// Consumes the builder and constructs a [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
         pub fn build(self) -> crate::model::KinesisFirehoseDestination {
             crate::model::KinesisFirehoseDestination {
-                iam_role_arn: self.iam_role_arn,
-                delivery_stream_arn: self.delivery_stream_arn,
+                iam_role_arn: self.iam_role_arn
+                ,
+                delivery_stream_arn: self.delivery_stream_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl KinesisFirehoseDestination {
     /// Creates a new builder-style object to manufacture [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
@@ -652,9 +600,9 @@ impl KinesisFirehoseDestination {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let eventtype = unimplemented!();
 /// match eventtype {
@@ -682,7 +630,7 @@ impl KinesisFirehoseDestination {
 /// Specifically, when `eventtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EventType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -690,15 +638,7 @@ impl KinesisFirehoseDestination {
 /// <p>An email sending event type. For example, email sends, opens, and bounces are all
 /// email events.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
     Bounce,
@@ -717,7 +657,7 @@ pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
     Send,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EventType {
     fn from(s: &str) -> Self {
@@ -730,17 +670,17 @@ impl std::convert::From<&str> for EventType {
             "REJECT" => EventType::Reject,
             "RENDERING_FAILURE" => EventType::RenderingFailure,
             "SEND" => EventType::Send,
-            other => EventType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EventType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EventType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EventType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EventType::from(s))
+                }
+            }
 impl EventType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -753,20 +693,13 @@ impl EventType {
             EventType::Reject => "REJECT",
             EventType::RenderingFailure => "RENDERING_FAILURE",
             EventType::Send => "SEND",
-            EventType::Unknown(value) => value.as_str(),
+            EventType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BOUNCE",
-            "CLICK",
-            "COMPLAINT",
-            "DELIVERY",
-            "OPEN",
-            "REJECT",
-            "RENDERING_FAILURE",
-            "SEND",
+            "BOUNCE", "CLICK", "COMPLAINT", "DELIVERY", "OPEN", "REJECT", "RENDERING_FAILURE", "SEND"
         ]
     }
 }
@@ -776,17 +709,17 @@ impl AsRef<str> for EventType {
     }
 }
 
-/// <p>An object that defines the tags that are associated with a resource. A&nbsp;<i>tag</i>&nbsp;is a label that you optionally define and associate with a resource in Amazon Pinpoint. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags.</p>
-/// <p>Each tag consists of a required&nbsp;<i>tag key</i>&nbsp;and an associated&nbsp;<i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags:</p>
-/// <ul>
-/// <li> <p>Tag keys and values are case sensitive.</p> </li>
-/// <li> <p>For each associated resource, each tag key must be unique and it can have only one value.</p> </li>
-/// <li> <p>The&nbsp;<code>aws:</code>&nbsp;prefix is reserved for use by AWS; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix. Tags that use this prefix don’t count against the limit of 50 tags per resource.</p> </li>
-/// <li> <p>You can associate tags with public or shared resources, but the tags are available only for your AWS account, not any other accounts that share the resource. In addition, the tags are available only for resources that are located in the specified AWS Region for your AWS account.</p> </li>
+/// <p>An object that defines the tags that are associated with a resource. A&nbsp;<i>tag</i>&nbsp;is a label that you optionally define and associate with a resource in Amazon Pinpoint. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags.</p> 
+/// <p>Each tag consists of a required&nbsp;<i>tag key</i>&nbsp;and an associated&nbsp;<i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags:</p> 
+/// <ul> 
+/// <li> <p>Tag keys and values are case sensitive.</p> </li> 
+/// <li> <p>For each associated resource, each tag key must be unique and it can have only one value.</p> </li> 
+/// <li> <p>The&nbsp;<code>aws:</code>&nbsp;prefix is reserved for use by AWS; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix. Tags that use this prefix don’t count against the limit of 50 tags per resource.</p> </li> 
+/// <li> <p>You can associate tags with public or shared resources, but the tags are available only for your AWS account, not any other accounts that share the resource. In addition, the tags are available only for resources that are located in the specified AWS Region for your AWS account.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is 128 characters. The minimum length is 1 character.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -796,17 +729,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is 128 characters. The minimum length is 1 character.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag value is 256 characters. The minimum length is 0 characters. If you don’t want a resource to have a specific tag value, don’t specify a value for this&nbsp;parameter. Amazon Pinpoint will set the value to an empty string.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -821,8 +754,7 @@ pub mod tag {
         }
         /// <p>One part of a key-value pair that defines a tag. The maximum length of a tag key is 128 characters. The minimum length is 1 character.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag value is 256 characters. The minimum length is 0 characters. If you don’t want a resource to have a specific tag value, don’t specify a value for this&nbsp;parameter. Amazon Pinpoint will set the value to an empty string.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -831,17 +763,20 @@ pub mod tag {
         }
         /// <p>The optional part of a key-value pair that defines a tag. The maximum length of a tag value is 256 characters. The minimum length is 0 characters. If you don’t want a resource to have a specific tag value, don’t specify a value for this&nbsp;parameter. Amazon Pinpoint will set the value to an empty string.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -853,43 +788,43 @@ impl Tag {
 /// <p>Contains the name and value of a tag that you apply to an email. You can use message tags when you publish email sending events. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MessageTag {
-    /// <p>The name of the message tag. The message tag name has to meet the following criteria:</p>
-    /// <ul>
-    /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
-    /// <li> <p>It can contain no more than 256 characters.</p> </li>
+pub struct MessageTag  {
+    /// <p>The name of the message tag. The message tag name has to meet the following criteria:</p> 
+    /// <ul> 
+    /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li> 
+    /// <li> <p>It can contain no more than 256 characters.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The value of the message tag. The message tag value has to meet the following criteria:</p>
-    /// <ul>
-    /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
-    /// <li> <p>It can contain no more than 256 characters.</p> </li>
+    /// <p>The value of the message tag. The message tag value has to meet the following criteria:</p> 
+    /// <ul> 
+    /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li> 
+    /// <li> <p>It can contain no more than 256 characters.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl MessageTag {
-    /// <p>The name of the message tag. The message tag name has to meet the following criteria:</p>
-    /// <ul>
-    /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
-    /// <li> <p>It can contain no more than 256 characters.</p> </li>
+    /// <p>The name of the message tag. The message tag name has to meet the following criteria:</p> 
+    /// <ul> 
+    /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li> 
+    /// <li> <p>It can contain no more than 256 characters.</p> </li> 
     /// </ul>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The value of the message tag. The message tag value has to meet the following criteria:</p>
-    /// <ul>
-    /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
-    /// <li> <p>It can contain no more than 256 characters.</p> </li>
+    /// <p>The value of the message tag. The message tag value has to meet the following criteria:</p> 
+    /// <ul> 
+    /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li> 
+    /// <li> <p>It can contain no more than 256 characters.</p> </li> 
     /// </ul>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`MessageTag`](crate::model::MessageTag).
 pub mod message_tag {
-
+    
     /// A builder for [`MessageTag`](crate::model::MessageTag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -897,50 +832,52 @@ pub mod message_tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the message tag. The message tag name has to meet the following criteria:</p>
-        /// <ul>
-        /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
-        /// <li> <p>It can contain no more than 256 characters.</p> </li>
+        /// <p>The name of the message tag. The message tag name has to meet the following criteria:</p> 
+        /// <ul> 
+        /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li> 
+        /// <li> <p>It can contain no more than 256 characters.</p> </li> 
         /// </ul>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the message tag. The message tag name has to meet the following criteria:</p>
-        /// <ul>
-        /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
-        /// <li> <p>It can contain no more than 256 characters.</p> </li>
+        /// <p>The name of the message tag. The message tag name has to meet the following criteria:</p> 
+        /// <ul> 
+        /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li> 
+        /// <li> <p>It can contain no more than 256 characters.</p> </li> 
         /// </ul>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The value of the message tag. The message tag value has to meet the following criteria:</p>
-        /// <ul>
-        /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
-        /// <li> <p>It can contain no more than 256 characters.</p> </li>
+        /// <p>The value of the message tag. The message tag value has to meet the following criteria:</p> 
+        /// <ul> 
+        /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li> 
+        /// <li> <p>It can contain no more than 256 characters.</p> </li> 
         /// </ul>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The value of the message tag. The message tag value has to meet the following criteria:</p>
-        /// <ul>
-        /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li>
-        /// <li> <p>It can contain no more than 256 characters.</p> </li>
+        /// <p>The value of the message tag. The message tag value has to meet the following criteria:</p> 
+        /// <ul> 
+        /// <li> <p>It can only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes (-).</p> </li> 
+        /// <li> <p>It can contain no more than 256 characters.</p> </li> 
         /// </ul>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`MessageTag`](crate::model::MessageTag).
         pub fn build(self) -> crate::model::MessageTag {
             crate::model::MessageTag {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl MessageTag {
     /// Creates a new builder-style object to manufacture [`MessageTag`](crate::model::MessageTag).
@@ -952,19 +889,19 @@ impl MessageTag {
 /// <p>An object that defines the entire content of the email, including the message headers and the body content. You can create a simple email message, in which you specify the subject and the text and HTML versions of the message body. You can also create raw messages, in which you specify a complete MIME-formatted message. Raw messages can include attachments and custom headers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EmailContent {
+pub struct EmailContent  {
     /// <p>The simple email message. The message consists of a subject and a message body.</p>
     #[doc(hidden)]
     pub simple: std::option::Option<crate::model::Message>,
-    /// <p>The raw email message. The message has to meet the following criteria:</p>
-    /// <ul>
-    /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li>
-    /// <li> <p>All of the required header fields must be present in the message.</p> </li>
-    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
-    /// <li> <p>If you include attachments, they must be in a file format that Amazon Pinpoint supports. </p> </li>
-    /// <li> <p>The entire message must be Base64 encoded.</p> </li>
-    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
-    /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
+    /// <p>The raw email message. The message has to meet the following criteria:</p> 
+    /// <ul> 
+    /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li> 
+    /// <li> <p>All of the required header fields must be present in the message.</p> </li> 
+    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li> 
+    /// <li> <p>If you include attachments, they must be in a file format that Amazon Pinpoint supports. </p> </li> 
+    /// <li> <p>The entire message must be Base64 encoded.</p> </li> 
+    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li> 
+    /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub raw: std::option::Option<crate::model::RawMessage>,
@@ -974,30 +911,30 @@ pub struct EmailContent {
 }
 impl EmailContent {
     /// <p>The simple email message. The message consists of a subject and a message body.</p>
-    pub fn simple(&self) -> std::option::Option<&crate::model::Message> {
+    pub fn simple(&self) -> std::option::Option<& crate::model::Message> {
         self.simple.as_ref()
     }
-    /// <p>The raw email message. The message has to meet the following criteria:</p>
-    /// <ul>
-    /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li>
-    /// <li> <p>All of the required header fields must be present in the message.</p> </li>
-    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
-    /// <li> <p>If you include attachments, they must be in a file format that Amazon Pinpoint supports. </p> </li>
-    /// <li> <p>The entire message must be Base64 encoded.</p> </li>
-    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
-    /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
+    /// <p>The raw email message. The message has to meet the following criteria:</p> 
+    /// <ul> 
+    /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li> 
+    /// <li> <p>All of the required header fields must be present in the message.</p> </li> 
+    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li> 
+    /// <li> <p>If you include attachments, they must be in a file format that Amazon Pinpoint supports. </p> </li> 
+    /// <li> <p>The entire message must be Base64 encoded.</p> </li> 
+    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li> 
+    /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> 
     /// </ul>
-    pub fn raw(&self) -> std::option::Option<&crate::model::RawMessage> {
+    pub fn raw(&self) -> std::option::Option<& crate::model::RawMessage> {
         self.raw.as_ref()
     }
     /// <p>The template to use for the email message.</p>
-    pub fn template(&self) -> std::option::Option<&crate::model::Template> {
+    pub fn template(&self) -> std::option::Option<& crate::model::Template> {
         self.template.as_ref()
     }
 }
 /// See [`EmailContent`](crate::model::EmailContent).
 pub mod email_content {
-
+    
     /// A builder for [`EmailContent`](crate::model::EmailContent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1013,36 +950,34 @@ pub mod email_content {
         }
         /// <p>The simple email message. The message consists of a subject and a message body.</p>
         pub fn set_simple(mut self, input: std::option::Option<crate::model::Message>) -> Self {
-            self.simple = input;
-            self
+            self.simple = input; self
         }
-        /// <p>The raw email message. The message has to meet the following criteria:</p>
-        /// <ul>
-        /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li>
-        /// <li> <p>All of the required header fields must be present in the message.</p> </li>
-        /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
-        /// <li> <p>If you include attachments, they must be in a file format that Amazon Pinpoint supports. </p> </li>
-        /// <li> <p>The entire message must be Base64 encoded.</p> </li>
-        /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
-        /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
+        /// <p>The raw email message. The message has to meet the following criteria:</p> 
+        /// <ul> 
+        /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li> 
+        /// <li> <p>All of the required header fields must be present in the message.</p> </li> 
+        /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li> 
+        /// <li> <p>If you include attachments, they must be in a file format that Amazon Pinpoint supports. </p> </li> 
+        /// <li> <p>The entire message must be Base64 encoded.</p> </li> 
+        /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li> 
+        /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> 
         /// </ul>
         pub fn raw(mut self, input: crate::model::RawMessage) -> Self {
             self.raw = Some(input);
             self
         }
-        /// <p>The raw email message. The message has to meet the following criteria:</p>
-        /// <ul>
-        /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li>
-        /// <li> <p>All of the required header fields must be present in the message.</p> </li>
-        /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
-        /// <li> <p>If you include attachments, they must be in a file format that Amazon Pinpoint supports. </p> </li>
-        /// <li> <p>The entire message must be Base64 encoded.</p> </li>
-        /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
-        /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
+        /// <p>The raw email message. The message has to meet the following criteria:</p> 
+        /// <ul> 
+        /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li> 
+        /// <li> <p>All of the required header fields must be present in the message.</p> </li> 
+        /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li> 
+        /// <li> <p>If you include attachments, they must be in a file format that Amazon Pinpoint supports. </p> </li> 
+        /// <li> <p>The entire message must be Base64 encoded.</p> </li> 
+        /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li> 
+        /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> 
         /// </ul>
         pub fn set_raw(mut self, input: std::option::Option<crate::model::RawMessage>) -> Self {
-            self.raw = input;
-            self
+            self.raw = input; self
         }
         /// <p>The template to use for the email message.</p>
         pub fn template(mut self, input: crate::model::Template) -> Self {
@@ -1051,18 +986,22 @@ pub mod email_content {
         }
         /// <p>The template to use for the email message.</p>
         pub fn set_template(mut self, input: std::option::Option<crate::model::Template>) -> Self {
-            self.template = input;
-            self
+            self.template = input; self
         }
         /// Consumes the builder and constructs a [`EmailContent`](crate::model::EmailContent).
         pub fn build(self) -> crate::model::EmailContent {
             crate::model::EmailContent {
-                simple: self.simple,
-                raw: self.raw,
-                template: self.template,
+                simple: self.simple
+                ,
+                raw: self.raw
+                ,
+                template: self.template
+                ,
             }
         }
     }
+    
+    
 }
 impl EmailContent {
     /// Creates a new builder-style object to manufacture [`EmailContent`](crate::model::EmailContent).
@@ -1074,7 +1013,7 @@ impl EmailContent {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Template {
+pub struct Template  {
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
     #[doc(hidden)]
     pub template_arn: std::option::Option<std::string::String>,
@@ -1084,17 +1023,17 @@ pub struct Template {
 }
 impl Template {
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    pub fn template_arn(&self) -> std::option::Option<&str> {
+    pub fn template_arn(&self) -> std::option::Option<& str> {
         self.template_arn.as_deref()
     }
     /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
-    pub fn template_data(&self) -> std::option::Option<&str> {
+    pub fn template_data(&self) -> std::option::Option<& str> {
         self.template_data.as_deref()
     }
 }
 /// See [`Template`](crate::model::Template).
 pub mod template {
-
+    
     /// A builder for [`Template`](crate::model::Template).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1109,8 +1048,7 @@ pub mod template {
         }
         /// <p>The Amazon Resource Name (ARN) of the template.</p>
         pub fn set_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_arn = input;
-            self
+            self.template_arn = input; self
         }
         /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
         pub fn template_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1118,21 +1056,21 @@ pub mod template {
             self
         }
         /// <p>An object that defines the values to use for message variables in the template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the value to use for that variable.</p>
-        pub fn set_template_data(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.template_data = input;
-            self
+        pub fn set_template_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.template_data = input; self
         }
         /// Consumes the builder and constructs a [`Template`](crate::model::Template).
         pub fn build(self) -> crate::model::Template {
             crate::model::Template {
-                template_arn: self.template_arn,
-                template_data: self.template_data,
+                template_arn: self.template_arn
+                ,
+                template_data: self.template_data
+                ,
             }
         }
     }
+    
+    
 }
 impl Template {
     /// Creates a new builder-style object to manufacture [`Template`](crate::model::Template).
@@ -1144,77 +1082,81 @@ impl Template {
 /// <p>The raw email message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RawMessage {
-    /// <p>The raw email message. The message has to meet the following criteria:</p>
-    /// <ul>
-    /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li>
-    /// <li> <p>All of the required header fields must be present in the message.</p> </li>
-    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
-    /// <li> <p>Attachments must be in a file format that Amazon Pinpoint supports. </p> </li>
-    /// <li> <p>The entire message must be Base64 encoded.</p> </li>
-    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
-    /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
+pub struct RawMessage  {
+    /// <p>The raw email message. The message has to meet the following criteria:</p> 
+    /// <ul> 
+    /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li> 
+    /// <li> <p>All of the required header fields must be present in the message.</p> </li> 
+    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li> 
+    /// <li> <p>Attachments must be in a file format that Amazon Pinpoint supports. </p> </li> 
+    /// <li> <p>The entire message must be Base64 encoded.</p> </li> 
+    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li> 
+    /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub data: std::option::Option<aws_smithy_types::Blob>,
 }
 impl RawMessage {
-    /// <p>The raw email message. The message has to meet the following criteria:</p>
-    /// <ul>
-    /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li>
-    /// <li> <p>All of the required header fields must be present in the message.</p> </li>
-    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
-    /// <li> <p>Attachments must be in a file format that Amazon Pinpoint supports. </p> </li>
-    /// <li> <p>The entire message must be Base64 encoded.</p> </li>
-    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
-    /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
+    /// <p>The raw email message. The message has to meet the following criteria:</p> 
+    /// <ul> 
+    /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li> 
+    /// <li> <p>All of the required header fields must be present in the message.</p> </li> 
+    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li> 
+    /// <li> <p>Attachments must be in a file format that Amazon Pinpoint supports. </p> </li> 
+    /// <li> <p>The entire message must be Base64 encoded.</p> </li> 
+    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li> 
+    /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> 
     /// </ul>
-    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn data(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.data.as_ref()
     }
 }
 /// See [`RawMessage`](crate::model::RawMessage).
 pub mod raw_message {
-
+    
     /// A builder for [`RawMessage`](crate::model::RawMessage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
-        /// <p>The raw email message. The message has to meet the following criteria:</p>
-        /// <ul>
-        /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li>
-        /// <li> <p>All of the required header fields must be present in the message.</p> </li>
-        /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
-        /// <li> <p>Attachments must be in a file format that Amazon Pinpoint supports. </p> </li>
-        /// <li> <p>The entire message must be Base64 encoded.</p> </li>
-        /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
-        /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
+        /// <p>The raw email message. The message has to meet the following criteria:</p> 
+        /// <ul> 
+        /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li> 
+        /// <li> <p>All of the required header fields must be present in the message.</p> </li> 
+        /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li> 
+        /// <li> <p>Attachments must be in a file format that Amazon Pinpoint supports. </p> </li> 
+        /// <li> <p>The entire message must be Base64 encoded.</p> </li> 
+        /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li> 
+        /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> 
         /// </ul>
         pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
             self.data = Some(input);
             self
         }
-        /// <p>The raw email message. The message has to meet the following criteria:</p>
-        /// <ul>
-        /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li>
-        /// <li> <p>All of the required header fields must be present in the message.</p> </li>
-        /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
-        /// <li> <p>Attachments must be in a file format that Amazon Pinpoint supports. </p> </li>
-        /// <li> <p>The entire message must be Base64 encoded.</p> </li>
-        /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
-        /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
+        /// <p>The raw email message. The message has to meet the following criteria:</p> 
+        /// <ul> 
+        /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li> 
+        /// <li> <p>All of the required header fields must be present in the message.</p> </li> 
+        /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li> 
+        /// <li> <p>Attachments must be in a file format that Amazon Pinpoint supports. </p> </li> 
+        /// <li> <p>The entire message must be Base64 encoded.</p> </li> 
+        /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li> 
+        /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> 
         /// </ul>
         pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.data = input;
-            self
+            self.data = input; self
         }
         /// Consumes the builder and constructs a [`RawMessage`](crate::model::RawMessage).
         pub fn build(self) -> crate::model::RawMessage {
-            crate::model::RawMessage { data: self.data }
+            crate::model::RawMessage {
+                data: self.data
+                ,
+            }
         }
     }
+    
+    
 }
 impl RawMessage {
     /// Creates a new builder-style object to manufacture [`RawMessage`](crate::model::RawMessage).
@@ -1226,7 +1168,7 @@ impl RawMessage {
 /// <p>Represents the email message that you're sending. The <code>Message</code> object consists of a subject line and a message body.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Message {
+pub struct Message  {
     /// <p>The subject line of the email. The subject line can only contain 7-bit ASCII characters. However, you can specify non-ASCII characters in the subject line by using encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.</p>
     #[doc(hidden)]
     pub subject: std::option::Option<crate::model::Content>,
@@ -1236,17 +1178,17 @@ pub struct Message {
 }
 impl Message {
     /// <p>The subject line of the email. The subject line can only contain 7-bit ASCII characters. However, you can specify non-ASCII characters in the subject line by using encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.</p>
-    pub fn subject(&self) -> std::option::Option<&crate::model::Content> {
+    pub fn subject(&self) -> std::option::Option<& crate::model::Content> {
         self.subject.as_ref()
     }
     /// <p>The body of the message. You can specify an HTML version of the message, a text-only version of the message, or both.</p>
-    pub fn body(&self) -> std::option::Option<&crate::model::Body> {
+    pub fn body(&self) -> std::option::Option<& crate::model::Body> {
         self.body.as_ref()
     }
 }
 /// See [`Message`](crate::model::Message).
 pub mod message {
-
+    
     /// A builder for [`Message`](crate::model::Message).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1261,8 +1203,7 @@ pub mod message {
         }
         /// <p>The subject line of the email. The subject line can only contain 7-bit ASCII characters. However, you can specify non-ASCII characters in the subject line by using encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>.</p>
         pub fn set_subject(mut self, input: std::option::Option<crate::model::Content>) -> Self {
-            self.subject = input;
-            self
+            self.subject = input; self
         }
         /// <p>The body of the message. You can specify an HTML version of the message, a text-only version of the message, or both.</p>
         pub fn body(mut self, input: crate::model::Body) -> Self {
@@ -1271,17 +1212,20 @@ pub mod message {
         }
         /// <p>The body of the message. You can specify an HTML version of the message, a text-only version of the message, or both.</p>
         pub fn set_body(mut self, input: std::option::Option<crate::model::Body>) -> Self {
-            self.body = input;
-            self
+            self.body = input; self
         }
         /// Consumes the builder and constructs a [`Message`](crate::model::Message).
         pub fn build(self) -> crate::model::Message {
             crate::model::Message {
-                subject: self.subject,
-                body: self.body,
+                subject: self.subject
+                ,
+                body: self.body
+                ,
             }
         }
     }
+    
+    
 }
 impl Message {
     /// Creates a new builder-style object to manufacture [`Message`](crate::model::Message).
@@ -1293,7 +1237,7 @@ impl Message {
 /// <p>Represents the body of the email message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Body {
+pub struct Body  {
     /// <p>An object that represents the version of the message that is displayed in email clients that don't support HTML, or clients where the recipient has disabled HTML rendering.</p>
     #[doc(hidden)]
     pub text: std::option::Option<crate::model::Content>,
@@ -1303,17 +1247,17 @@ pub struct Body {
 }
 impl Body {
     /// <p>An object that represents the version of the message that is displayed in email clients that don't support HTML, or clients where the recipient has disabled HTML rendering.</p>
-    pub fn text(&self) -> std::option::Option<&crate::model::Content> {
+    pub fn text(&self) -> std::option::Option<& crate::model::Content> {
         self.text.as_ref()
     }
     /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more. </p>
-    pub fn html(&self) -> std::option::Option<&crate::model::Content> {
+    pub fn html(&self) -> std::option::Option<& crate::model::Content> {
         self.html.as_ref()
     }
 }
 /// See [`Body`](crate::model::Body).
 pub mod body {
-
+    
     /// A builder for [`Body`](crate::model::Body).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1328,8 +1272,7 @@ pub mod body {
         }
         /// <p>An object that represents the version of the message that is displayed in email clients that don't support HTML, or clients where the recipient has disabled HTML rendering.</p>
         pub fn set_text(mut self, input: std::option::Option<crate::model::Content>) -> Self {
-            self.text = input;
-            self
+            self.text = input; self
         }
         /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more. </p>
         pub fn html(mut self, input: crate::model::Content) -> Self {
@@ -1338,17 +1281,20 @@ pub mod body {
         }
         /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more. </p>
         pub fn set_html(mut self, input: std::option::Option<crate::model::Content>) -> Self {
-            self.html = input;
-            self
+            self.html = input; self
         }
         /// Consumes the builder and constructs a [`Body`](crate::model::Body).
         pub fn build(self) -> crate::model::Body {
             crate::model::Body {
-                text: self.text,
-                html: self.html,
+                text: self.text
+                ,
+                html: self.html
+                ,
             }
         }
     }
+    
+    
 }
 impl Body {
     /// Creates a new builder-style object to manufacture [`Body`](crate::model::Body).
@@ -1360,7 +1306,7 @@ impl Body {
 /// <p>An object that represents the content of the email, and optionally a character set specification.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Content {
+pub struct Content  {
     /// <p>The content of the message itself.</p>
     #[doc(hidden)]
     pub data: std::option::Option<std::string::String>,
@@ -1370,17 +1316,17 @@ pub struct Content {
 }
 impl Content {
     /// <p>The content of the message itself.</p>
-    pub fn data(&self) -> std::option::Option<&str> {
+    pub fn data(&self) -> std::option::Option<& str> {
         self.data.as_deref()
     }
     /// <p>The character set for the content. Because of the constraints of the SMTP protocol, Amazon Pinpoint uses 7-bit ASCII by default. If the text includes characters outside of the ASCII range, you have to specify a character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.</p>
-    pub fn charset(&self) -> std::option::Option<&str> {
+    pub fn charset(&self) -> std::option::Option<& str> {
         self.charset.as_deref()
     }
 }
 /// See [`Content`](crate::model::Content).
 pub mod content {
-
+    
     /// A builder for [`Content`](crate::model::Content).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1395,8 +1341,7 @@ pub mod content {
         }
         /// <p>The content of the message itself.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data = input;
-            self
+            self.data = input; self
         }
         /// <p>The character set for the content. Because of the constraints of the SMTP protocol, Amazon Pinpoint uses 7-bit ASCII by default. If the text includes characters outside of the ASCII range, you have to specify a character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.</p>
         pub fn charset(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1405,17 +1350,20 @@ pub mod content {
         }
         /// <p>The character set for the content. Because of the constraints of the SMTP protocol, Amazon Pinpoint uses 7-bit ASCII by default. If the text includes characters outside of the ASCII range, you have to specify a character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.</p>
         pub fn set_charset(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.charset = input;
-            self
+            self.charset = input; self
         }
         /// Consumes the builder and constructs a [`Content`](crate::model::Content).
         pub fn build(self) -> crate::model::Content {
             crate::model::Content {
-                data: self.data,
-                charset: self.charset,
+                data: self.data
+                ,
+                charset: self.charset
+                ,
             }
         }
     }
+    
+    
 }
 impl Content {
     /// Creates a new builder-style object to manufacture [`Content`](crate::model::Content).
@@ -1427,7 +1375,7 @@ impl Content {
 /// <p>An object that describes the recipients for an email.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Destination {
+pub struct Destination  {
     /// <p>An array that contains the email addresses of the "To" recipients for the email.</p>
     #[doc(hidden)]
     pub to_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1440,21 +1388,21 @@ pub struct Destination {
 }
 impl Destination {
     /// <p>An array that contains the email addresses of the "To" recipients for the email.</p>
-    pub fn to_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn to_addresses(&self) -> std::option::Option<& [std::string::String]> {
         self.to_addresses.as_deref()
     }
     /// <p>An array that contains the email addresses of the "CC" (carbon copy) recipients for the email.</p>
-    pub fn cc_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cc_addresses(&self) -> std::option::Option<& [std::string::String]> {
         self.cc_addresses.as_deref()
     }
     /// <p>An array that contains the email addresses of the "BCC" (blind carbon copy) recipients for the email.</p>
-    pub fn bcc_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn bcc_addresses(&self) -> std::option::Option<& [std::string::String]> {
         self.bcc_addresses.as_deref()
     }
 }
 /// See [`Destination`](crate::model::Destination).
 pub mod destination {
-
+    
     /// A builder for [`Destination`](crate::model::Destination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1470,17 +1418,13 @@ pub mod destination {
         /// <p>An array that contains the email addresses of the "To" recipients for the email.</p>
         pub fn to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.to_addresses.unwrap_or_default();
-            v.push(input.into());
-            self.to_addresses = Some(v);
-            self
+                            v.push(input.into());
+                            self.to_addresses = Some(v);
+                            self
         }
         /// <p>An array that contains the email addresses of the "To" recipients for the email.</p>
-        pub fn set_to_addresses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.to_addresses = input;
-            self
+        pub fn set_to_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.to_addresses = input; self
         }
         /// Appends an item to `cc_addresses`.
         ///
@@ -1489,17 +1433,13 @@ pub mod destination {
         /// <p>An array that contains the email addresses of the "CC" (carbon copy) recipients for the email.</p>
         pub fn cc_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cc_addresses.unwrap_or_default();
-            v.push(input.into());
-            self.cc_addresses = Some(v);
-            self
+                            v.push(input.into());
+                            self.cc_addresses = Some(v);
+                            self
         }
         /// <p>An array that contains the email addresses of the "CC" (carbon copy) recipients for the email.</p>
-        pub fn set_cc_addresses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.cc_addresses = input;
-            self
+        pub fn set_cc_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.cc_addresses = input; self
         }
         /// Appends an item to `bcc_addresses`.
         ///
@@ -1508,27 +1448,28 @@ pub mod destination {
         /// <p>An array that contains the email addresses of the "BCC" (blind carbon copy) recipients for the email.</p>
         pub fn bcc_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.bcc_addresses.unwrap_or_default();
-            v.push(input.into());
-            self.bcc_addresses = Some(v);
-            self
+                            v.push(input.into());
+                            self.bcc_addresses = Some(v);
+                            self
         }
         /// <p>An array that contains the email addresses of the "BCC" (blind carbon copy) recipients for the email.</p>
-        pub fn set_bcc_addresses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.bcc_addresses = input;
-            self
+        pub fn set_bcc_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.bcc_addresses = input; self
         }
         /// Consumes the builder and constructs a [`Destination`](crate::model::Destination).
         pub fn build(self) -> crate::model::Destination {
             crate::model::Destination {
-                to_addresses: self.to_addresses,
-                cc_addresses: self.cc_addresses,
-                bcc_addresses: self.bcc_addresses,
+                to_addresses: self.to_addresses
+                ,
+                cc_addresses: self.cc_addresses
+                ,
+                bcc_addresses: self.bcc_addresses
+                ,
             }
         }
     }
+    
+    
 }
 impl Destination {
     /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
@@ -1543,9 +1484,9 @@ impl Destination {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let behavioronmxfailure = unimplemented!();
 /// match behavioronmxfailure {
@@ -1567,7 +1508,7 @@ impl Destination {
 /// Specifically, when `behavioronmxfailure` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BehaviorOnMxFailure::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -1581,53 +1522,45 @@ impl Destination {
 /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code>
 /// states.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BehaviorOnMxFailure {
     #[allow(missing_docs)] // documentation missing in model
     RejectMessage,
     #[allow(missing_docs)] // documentation missing in model
     UseDefaultValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BehaviorOnMxFailure {
     fn from(s: &str) -> Self {
         match s {
             "REJECT_MESSAGE" => BehaviorOnMxFailure::RejectMessage,
             "USE_DEFAULT_VALUE" => BehaviorOnMxFailure::UseDefaultValue,
-            other => {
-                BehaviorOnMxFailure::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => BehaviorOnMxFailure::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BehaviorOnMxFailure {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BehaviorOnMxFailure::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BehaviorOnMxFailure::from(s))
+                }
+            }
 impl BehaviorOnMxFailure {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BehaviorOnMxFailure::RejectMessage => "REJECT_MESSAGE",
             BehaviorOnMxFailure::UseDefaultValue => "USE_DEFAULT_VALUE",
-            BehaviorOnMxFailure::Unknown(value) => value.as_str(),
+            BehaviorOnMxFailure::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["REJECT_MESSAGE", "USE_DEFAULT_VALUE"]
+        &[
+            "REJECT_MESSAGE", "USE_DEFAULT_VALUE"
+        ]
     }
 }
 impl AsRef<str> for BehaviorOnMxFailure {
@@ -1639,7 +1572,7 @@ impl AsRef<str> for BehaviorOnMxFailure {
 /// <p>An object that contains information about the Deliverability dashboard subscription for a verified domain that you use to send email and currently has an active Deliverability dashboard subscription. If a Deliverability dashboard subscription is active for a domain, you gain access to reputation, inbox placement, and other metrics for the domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainDeliverabilityTrackingOption {
+pub struct DomainDeliverabilityTrackingOption  {
     /// <p>A verified domain that’s associated with your AWS account and currently has an active Deliverability dashboard subscription.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -1648,35 +1581,31 @@ pub struct DomainDeliverabilityTrackingOption {
     pub subscription_start_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that contains information about the inbox placement data settings for the domain.</p>
     #[doc(hidden)]
-    pub inbox_placement_tracking_option:
-        std::option::Option<crate::model::InboxPlacementTrackingOption>,
+    pub inbox_placement_tracking_option: std::option::Option<crate::model::InboxPlacementTrackingOption>,
 }
 impl DomainDeliverabilityTrackingOption {
     /// <p>A verified domain that’s associated with your AWS account and currently has an active Deliverability dashboard subscription.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the domain.</p>
-    pub fn subscription_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn subscription_start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.subscription_start_date.as_ref()
     }
     /// <p>An object that contains information about the inbox placement data settings for the domain.</p>
-    pub fn inbox_placement_tracking_option(
-        &self,
-    ) -> std::option::Option<&crate::model::InboxPlacementTrackingOption> {
+    pub fn inbox_placement_tracking_option(&self) -> std::option::Option<& crate::model::InboxPlacementTrackingOption> {
         self.inbox_placement_tracking_option.as_ref()
     }
 }
 /// See [`DomainDeliverabilityTrackingOption`](crate::model::DomainDeliverabilityTrackingOption).
 pub mod domain_deliverability_tracking_option {
-
+    
     /// A builder for [`DomainDeliverabilityTrackingOption`](crate::model::DomainDeliverabilityTrackingOption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain: std::option::Option<std::string::String>,
         pub(crate) subscription_start_date: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) inbox_placement_tracking_option:
-            std::option::Option<crate::model::InboxPlacementTrackingOption>,
+        pub(crate) inbox_placement_tracking_option: std::option::Option<crate::model::InboxPlacementTrackingOption>,
     }
     impl Builder {
         /// <p>A verified domain that’s associated with your AWS account and currently has an active Deliverability dashboard subscription.</p>
@@ -1686,8 +1615,7 @@ pub mod domain_deliverability_tracking_option {
         }
         /// <p>A verified domain that’s associated with your AWS account and currently has an active Deliverability dashboard subscription.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the domain.</p>
         pub fn subscription_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1695,38 +1623,32 @@ pub mod domain_deliverability_tracking_option {
             self
         }
         /// <p>The date, in Unix time format, when you enabled the Deliverability dashboard for the domain.</p>
-        pub fn set_subscription_start_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.subscription_start_date = input;
-            self
+        pub fn set_subscription_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.subscription_start_date = input; self
         }
         /// <p>An object that contains information about the inbox placement data settings for the domain.</p>
-        pub fn inbox_placement_tracking_option(
-            mut self,
-            input: crate::model::InboxPlacementTrackingOption,
-        ) -> Self {
+        pub fn inbox_placement_tracking_option(mut self, input: crate::model::InboxPlacementTrackingOption) -> Self {
             self.inbox_placement_tracking_option = Some(input);
             self
         }
         /// <p>An object that contains information about the inbox placement data settings for the domain.</p>
-        pub fn set_inbox_placement_tracking_option(
-            mut self,
-            input: std::option::Option<crate::model::InboxPlacementTrackingOption>,
-        ) -> Self {
-            self.inbox_placement_tracking_option = input;
-            self
+        pub fn set_inbox_placement_tracking_option(mut self, input: std::option::Option<crate::model::InboxPlacementTrackingOption>) -> Self {
+            self.inbox_placement_tracking_option = input; self
         }
         /// Consumes the builder and constructs a [`DomainDeliverabilityTrackingOption`](crate::model::DomainDeliverabilityTrackingOption).
         pub fn build(self) -> crate::model::DomainDeliverabilityTrackingOption {
             crate::model::DomainDeliverabilityTrackingOption {
-                domain: self.domain,
-                subscription_start_date: self.subscription_start_date,
-                inbox_placement_tracking_option: self.inbox_placement_tracking_option,
+                domain: self.domain
+                ,
+                subscription_start_date: self.subscription_start_date
+                ,
+                inbox_placement_tracking_option: self.inbox_placement_tracking_option
+                ,
             }
         }
     }
+    
+    
 }
 impl DomainDeliverabilityTrackingOption {
     /// Creates a new builder-style object to manufacture [`DomainDeliverabilityTrackingOption`](crate::model::DomainDeliverabilityTrackingOption).
@@ -1738,7 +1660,7 @@ impl DomainDeliverabilityTrackingOption {
 /// <p>An object that contains information about the inbox placement data settings for a verified domain that’s associated with your AWS account. This data is available only if you enabled the Deliverability dashboard for the domain (<code>PutDeliverabilityDashboardOption</code> operation).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InboxPlacementTrackingOption {
+pub struct InboxPlacementTrackingOption  {
     /// <p>Specifies whether inbox placement data is being tracked for the domain.</p>
     #[doc(hidden)]
     pub global: bool,
@@ -1752,13 +1674,13 @@ impl InboxPlacementTrackingOption {
         self.global
     }
     /// <p>An array of strings, one for each major email provider that the inbox placement data applies to.</p>
-    pub fn tracked_isps(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tracked_isps(&self) -> std::option::Option<& [std::string::String]> {
         self.tracked_isps.as_deref()
     }
 }
 /// See [`InboxPlacementTrackingOption`](crate::model::InboxPlacementTrackingOption).
 pub mod inbox_placement_tracking_option {
-
+    
     /// A builder for [`InboxPlacementTrackingOption`](crate::model::InboxPlacementTrackingOption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1773,8 +1695,7 @@ pub mod inbox_placement_tracking_option {
         }
         /// <p>Specifies whether inbox placement data is being tracked for the domain.</p>
         pub fn set_global(mut self, input: std::option::Option<bool>) -> Self {
-            self.global = input;
-            self
+            self.global = input; self
         }
         /// Appends an item to `tracked_isps`.
         ///
@@ -1783,26 +1704,27 @@ pub mod inbox_placement_tracking_option {
         /// <p>An array of strings, one for each major email provider that the inbox placement data applies to.</p>
         pub fn tracked_isps(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tracked_isps.unwrap_or_default();
-            v.push(input.into());
-            self.tracked_isps = Some(v);
-            self
+                            v.push(input.into());
+                            self.tracked_isps = Some(v);
+                            self
         }
         /// <p>An array of strings, one for each major email provider that the inbox placement data applies to.</p>
-        pub fn set_tracked_isps(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tracked_isps = input;
-            self
+        pub fn set_tracked_isps(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tracked_isps = input; self
         }
         /// Consumes the builder and constructs a [`InboxPlacementTrackingOption`](crate::model::InboxPlacementTrackingOption).
         pub fn build(self) -> crate::model::InboxPlacementTrackingOption {
             crate::model::InboxPlacementTrackingOption {
-                global: self.global.unwrap_or_default(),
-                tracked_isps: self.tracked_isps,
+                global: self.global
+                    .unwrap_or_default()
+                ,
+                tracked_isps: self.tracked_isps
+                ,
             }
         }
     }
+    
+    
 }
 impl InboxPlacementTrackingOption {
     /// Creates a new builder-style object to manufacture [`InboxPlacementTrackingOption`](crate::model::InboxPlacementTrackingOption).
@@ -1817,9 +1739,9 @@ impl InboxPlacementTrackingOption {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let tlspolicy = unimplemented!();
 /// match tlspolicy {
@@ -1841,7 +1763,7 @@ impl InboxPlacementTrackingOption {
 /// Specifically, when `tlspolicy` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TlsPolicy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -1851,51 +1773,45 @@ impl InboxPlacementTrackingOption {
 /// delivered if a TLS connection can be established. If the value is <code>Optional</code>,
 /// messages can be delivered in plain text if a TLS connection can't be established.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TlsPolicy {
     #[allow(missing_docs)] // documentation missing in model
     Optional,
     #[allow(missing_docs)] // documentation missing in model
     Require,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TlsPolicy {
     fn from(s: &str) -> Self {
         match s {
             "OPTIONAL" => TlsPolicy::Optional,
             "REQUIRE" => TlsPolicy::Require,
-            other => TlsPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TlsPolicy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TlsPolicy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TlsPolicy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TlsPolicy::from(s))
+                }
+            }
 impl TlsPolicy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TlsPolicy::Optional => "OPTIONAL",
             TlsPolicy::Require => "REQUIRE",
-            TlsPolicy::Unknown(value) => value.as_str(),
+            TlsPolicy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OPTIONAL", "REQUIRE"]
+        &[
+            "OPTIONAL", "REQUIRE"
+        ]
     }
 }
 impl AsRef<str> for TlsPolicy {
@@ -1907,38 +1823,38 @@ impl AsRef<str> for TlsPolicy {
 /// <p>Information about an email identity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdentityInfo {
-    /// <p>The email identity type. The identity type can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li>
-    /// <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li>
-    /// <li> <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p> </li>
+pub struct IdentityInfo  {
+    /// <p>The email identity type. The identity type can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li> 
+    /// <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> 
+    /// <li> <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>The address or domain of the identity.</p>
     #[doc(hidden)]
     pub identity_name: std::option::Option<std::string::String>,
-    /// <p>Indicates whether or not you can send email from the identity.</p>
+    /// <p>Indicates whether or not you can send email from the identity.</p> 
     /// <p>In Amazon Pinpoint, an identity is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon Pinpoint to send email from that identity.</p>
     #[doc(hidden)]
     pub sending_enabled: bool,
 }
 impl IdentityInfo {
-    /// <p>The email identity type. The identity type can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li>
-    /// <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li>
-    /// <li> <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p> </li>
+    /// <p>The email identity type. The identity type can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li> 
+    /// <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> 
+    /// <li> <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p> </li> 
     /// </ul>
-    pub fn identity_type(&self) -> std::option::Option<&crate::model::IdentityType> {
+    pub fn identity_type(&self) -> std::option::Option<& crate::model::IdentityType> {
         self.identity_type.as_ref()
     }
     /// <p>The address or domain of the identity.</p>
-    pub fn identity_name(&self) -> std::option::Option<&str> {
+    pub fn identity_name(&self) -> std::option::Option<& str> {
         self.identity_name.as_deref()
     }
-    /// <p>Indicates whether or not you can send email from the identity.</p>
+    /// <p>Indicates whether or not you can send email from the identity.</p> 
     /// <p>In Amazon Pinpoint, an identity is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon Pinpoint to send email from that identity.</p>
     pub fn sending_enabled(&self) -> bool {
         self.sending_enabled
@@ -1946,7 +1862,7 @@ impl IdentityInfo {
 }
 /// See [`IdentityInfo`](crate::model::IdentityInfo).
 pub mod identity_info {
-
+    
     /// A builder for [`IdentityInfo`](crate::model::IdentityInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1955,28 +1871,24 @@ pub mod identity_info {
         pub(crate) sending_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The email identity type. The identity type can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li>
-        /// <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li>
-        /// <li> <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p> </li>
+        /// <p>The email identity type. The identity type can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li> 
+        /// <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> 
+        /// <li> <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p> </li> 
         /// </ul>
         pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
             self.identity_type = Some(input);
             self
         }
-        /// <p>The email identity type. The identity type can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li>
-        /// <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li>
-        /// <li> <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p> </li>
+        /// <p>The email identity type. The identity type can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p> </li> 
+        /// <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> 
+        /// <li> <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.</p> </li> 
         /// </ul>
-        pub fn set_identity_type(
-            mut self,
-            input: std::option::Option<crate::model::IdentityType>,
-        ) -> Self {
-            self.identity_type = input;
-            self
+        pub fn set_identity_type(mut self, input: std::option::Option<crate::model::IdentityType>) -> Self {
+            self.identity_type = input; self
         }
         /// <p>The address or domain of the identity.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1984,34 +1896,35 @@ pub mod identity_info {
             self
         }
         /// <p>The address or domain of the identity.</p>
-        pub fn set_identity_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.identity_name = input;
-            self
+        pub fn set_identity_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.identity_name = input; self
         }
-        /// <p>Indicates whether or not you can send email from the identity.</p>
+        /// <p>Indicates whether or not you can send email from the identity.</p> 
         /// <p>In Amazon Pinpoint, an identity is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon Pinpoint to send email from that identity.</p>
         pub fn sending_enabled(mut self, input: bool) -> Self {
             self.sending_enabled = Some(input);
             self
         }
-        /// <p>Indicates whether or not you can send email from the identity.</p>
+        /// <p>Indicates whether or not you can send email from the identity.</p> 
         /// <p>In Amazon Pinpoint, an identity is an email address or domain that you send email from. Before you can send email from an identity, you have to demostrate that you own the identity, and that you authorize Amazon Pinpoint to send email from that identity.</p>
         pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.sending_enabled = input;
-            self
+            self.sending_enabled = input; self
         }
         /// Consumes the builder and constructs a [`IdentityInfo`](crate::model::IdentityInfo).
         pub fn build(self) -> crate::model::IdentityInfo {
             crate::model::IdentityInfo {
-                identity_type: self.identity_type,
-                identity_name: self.identity_name,
-                sending_enabled: self.sending_enabled.unwrap_or_default(),
+                identity_type: self.identity_type
+                ,
+                identity_name: self.identity_name
+                ,
+                sending_enabled: self.sending_enabled
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl IdentityInfo {
     /// Creates a new builder-style object to manufacture [`IdentityInfo`](crate::model::IdentityInfo).
@@ -2026,9 +1939,9 @@ impl IdentityInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let identitytype = unimplemented!();
 /// match identitytype {
@@ -2051,7 +1964,7 @@ impl IdentityInfo {
 /// Specifically, when `identitytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IdentityType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -2068,15 +1981,7 @@ impl IdentityInfo {
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IdentityType {
     #[allow(missing_docs)] // documentation missing in model
     Domain,
@@ -2085,7 +1990,7 @@ pub enum IdentityType {
     #[allow(missing_docs)] // documentation missing in model
     ManagedDomain,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IdentityType {
     fn from(s: &str) -> Self {
@@ -2093,17 +1998,17 @@ impl std::convert::From<&str> for IdentityType {
             "DOMAIN" => IdentityType::Domain,
             "EMAIL_ADDRESS" => IdentityType::EmailAddress,
             "MANAGED_DOMAIN" => IdentityType::ManagedDomain,
-            other => IdentityType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => IdentityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for IdentityType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IdentityType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IdentityType::from(s))
+                }
+            }
 impl IdentityType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2111,12 +2016,14 @@ impl IdentityType {
             IdentityType::Domain => "DOMAIN",
             IdentityType::EmailAddress => "EMAIL_ADDRESS",
             IdentityType::ManagedDomain => "MANAGED_DOMAIN",
-            IdentityType::Unknown(value) => value.as_str(),
+            IdentityType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DOMAIN", "EMAIL_ADDRESS", "MANAGED_DOMAIN"]
+        &[
+            "DOMAIN", "EMAIL_ADDRESS", "MANAGED_DOMAIN"
+        ]
     }
 }
 impl AsRef<str> for IdentityType {
@@ -2128,7 +2035,7 @@ impl AsRef<str> for IdentityType {
 /// <p>An object that contains the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainDeliverabilityCampaign {
+pub struct DomainDeliverabilityCampaign  {
     /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this identifier to a campaign. This value is not the same as the campaign identifier that Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub campaign_id: std::option::Option<std::string::String>,
@@ -2174,31 +2081,31 @@ pub struct DomainDeliverabilityCampaign {
 }
 impl DomainDeliverabilityCampaign {
     /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this identifier to a campaign. This value is not the same as the campaign identifier that Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the Amazon Pinpoint console.</p>
-    pub fn campaign_id(&self) -> std::option::Option<&str> {
+    pub fn campaign_id(&self) -> std::option::Option<& str> {
         self.campaign_id.as_deref()
     }
     /// <p>The URL of an image that contains a snapshot of the email message that was sent.</p>
-    pub fn image_url(&self) -> std::option::Option<&str> {
+    pub fn image_url(&self) -> std::option::Option<& str> {
         self.image_url.as_deref()
     }
     /// <p>The subject line, or title, of the email message.</p>
-    pub fn subject(&self) -> std::option::Option<&str> {
+    pub fn subject(&self) -> std::option::Option<& str> {
         self.subject.as_deref()
     }
     /// <p>The verified email address that the email message was sent from.</p>
-    pub fn from_address(&self) -> std::option::Option<&str> {
+    pub fn from_address(&self) -> std::option::Option<& str> {
         self.from_address.as_deref()
     }
     /// <p>The IP addresses that were used to send the email message.</p>
-    pub fn sending_ips(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn sending_ips(&self) -> std::option::Option<& [std::string::String]> {
         self.sending_ips.as_deref()
     }
     /// <p>The first time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
-    pub fn first_seen_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn first_seen_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.first_seen_date_time.as_ref()
     }
     /// <p>The last time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
-    pub fn last_seen_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_seen_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_seen_date_time.as_ref()
     }
     /// <p>The number of email messages that were delivered to recipients’ inboxes.</p>
@@ -2226,13 +2133,13 @@ impl DomainDeliverabilityCampaign {
         self.projected_volume
     }
     /// <p>The major email providers who handled the email message.</p>
-    pub fn esps(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn esps(&self) -> std::option::Option<& [std::string::String]> {
         self.esps.as_deref()
     }
 }
 /// See [`DomainDeliverabilityCampaign`](crate::model::DomainDeliverabilityCampaign).
 pub mod domain_deliverability_campaign {
-
+    
     /// A builder for [`DomainDeliverabilityCampaign`](crate::model::DomainDeliverabilityCampaign).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2259,8 +2166,7 @@ pub mod domain_deliverability_campaign {
         }
         /// <p>The unique identifier for the campaign. Amazon Pinpoint automatically generates and assigns this identifier to a campaign. This value is not the same as the campaign identifier that Amazon Pinpoint assigns to campaigns that you create and manage by using the Amazon Pinpoint API or the Amazon Pinpoint console.</p>
         pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.campaign_id = input;
-            self
+            self.campaign_id = input; self
         }
         /// <p>The URL of an image that contains a snapshot of the email message that was sent.</p>
         pub fn image_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2269,8 +2175,7 @@ pub mod domain_deliverability_campaign {
         }
         /// <p>The URL of an image that contains a snapshot of the email message that was sent.</p>
         pub fn set_image_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image_url = input;
-            self
+            self.image_url = input; self
         }
         /// <p>The subject line, or title, of the email message.</p>
         pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2279,8 +2184,7 @@ pub mod domain_deliverability_campaign {
         }
         /// <p>The subject line, or title, of the email message.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subject = input;
-            self
+            self.subject = input; self
         }
         /// <p>The verified email address that the email message was sent from.</p>
         pub fn from_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2289,8 +2193,7 @@ pub mod domain_deliverability_campaign {
         }
         /// <p>The verified email address that the email message was sent from.</p>
         pub fn set_from_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.from_address = input;
-            self
+            self.from_address = input; self
         }
         /// Appends an item to `sending_ips`.
         ///
@@ -2299,17 +2202,13 @@ pub mod domain_deliverability_campaign {
         /// <p>The IP addresses that were used to send the email message.</p>
         pub fn sending_ips(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.sending_ips.unwrap_or_default();
-            v.push(input.into());
-            self.sending_ips = Some(v);
-            self
+                            v.push(input.into());
+                            self.sending_ips = Some(v);
+                            self
         }
         /// <p>The IP addresses that were used to send the email message.</p>
-        pub fn set_sending_ips(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.sending_ips = input;
-            self
+        pub fn set_sending_ips(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.sending_ips = input; self
         }
         /// <p>The first time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
         pub fn first_seen_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2317,12 +2216,8 @@ pub mod domain_deliverability_campaign {
             self
         }
         /// <p>The first time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
-        pub fn set_first_seen_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.first_seen_date_time = input;
-            self
+        pub fn set_first_seen_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.first_seen_date_time = input; self
         }
         /// <p>The last time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
         pub fn last_seen_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2330,12 +2225,8 @@ pub mod domain_deliverability_campaign {
             self
         }
         /// <p>The last time, in Unix time format, when the email message was delivered to any recipient's inbox. This value can help you determine how long it took for a campaign to deliver an email message.</p>
-        pub fn set_last_seen_date_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_seen_date_time = input;
-            self
+        pub fn set_last_seen_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_seen_date_time = input; self
         }
         /// <p>The number of email messages that were delivered to recipients’ inboxes.</p>
         pub fn inbox_count(mut self, input: i64) -> Self {
@@ -2344,8 +2235,7 @@ pub mod domain_deliverability_campaign {
         }
         /// <p>The number of email messages that were delivered to recipients’ inboxes.</p>
         pub fn set_inbox_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.inbox_count = input;
-            self
+            self.inbox_count = input; self
         }
         /// <p>The number of email messages that were delivered to recipients' spam or junk mail folders.</p>
         pub fn spam_count(mut self, input: i64) -> Self {
@@ -2354,8 +2244,7 @@ pub mod domain_deliverability_campaign {
         }
         /// <p>The number of email messages that were delivered to recipients' spam or junk mail folders.</p>
         pub fn set_spam_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.spam_count = input;
-            self
+            self.spam_count = input; self
         }
         /// <p>The percentage of email messages that were opened by recipients. Due to technical limitations, this value only includes recipients who opened the message by using an email client that supports images.</p>
         pub fn read_rate(mut self, input: f64) -> Self {
@@ -2364,8 +2253,7 @@ pub mod domain_deliverability_campaign {
         }
         /// <p>The percentage of email messages that were opened by recipients. Due to technical limitations, this value only includes recipients who opened the message by using an email client that supports images.</p>
         pub fn set_read_rate(mut self, input: std::option::Option<f64>) -> Self {
-            self.read_rate = input;
-            self
+            self.read_rate = input; self
         }
         /// <p>The percentage of email messages that were deleted by recipients, without being opened first. Due to technical limitations, this value only includes recipients who opened the message by using an email client that supports images.</p>
         pub fn delete_rate(mut self, input: f64) -> Self {
@@ -2374,8 +2262,7 @@ pub mod domain_deliverability_campaign {
         }
         /// <p>The percentage of email messages that were deleted by recipients, without being opened first. Due to technical limitations, this value only includes recipients who opened the message by using an email client that supports images.</p>
         pub fn set_delete_rate(mut self, input: std::option::Option<f64>) -> Self {
-            self.delete_rate = input;
-            self
+            self.delete_rate = input; self
         }
         /// <p>The percentage of email messages that were opened and then deleted by recipients. Due to technical limitations, this value only includes recipients who opened the message by using an email client that supports images.</p>
         pub fn read_delete_rate(mut self, input: f64) -> Self {
@@ -2384,8 +2271,7 @@ pub mod domain_deliverability_campaign {
         }
         /// <p>The percentage of email messages that were opened and then deleted by recipients. Due to technical limitations, this value only includes recipients who opened the message by using an email client that supports images.</p>
         pub fn set_read_delete_rate(mut self, input: std::option::Option<f64>) -> Self {
-            self.read_delete_rate = input;
-            self
+            self.read_delete_rate = input; self
         }
         /// <p>The projected number of recipients that the email message was sent to.</p>
         pub fn projected_volume(mut self, input: i64) -> Self {
@@ -2394,8 +2280,7 @@ pub mod domain_deliverability_campaign {
         }
         /// <p>The projected number of recipients that the email message was sent to.</p>
         pub fn set_projected_volume(mut self, input: std::option::Option<i64>) -> Self {
-            self.projected_volume = input;
-            self
+            self.projected_volume = input; self
         }
         /// Appends an item to `esps`.
         ///
@@ -2404,38 +2289,50 @@ pub mod domain_deliverability_campaign {
         /// <p>The major email providers who handled the email message.</p>
         pub fn esps(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.esps.unwrap_or_default();
-            v.push(input.into());
-            self.esps = Some(v);
-            self
+                            v.push(input.into());
+                            self.esps = Some(v);
+                            self
         }
         /// <p>The major email providers who handled the email message.</p>
-        pub fn set_esps(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.esps = input;
-            self
+        pub fn set_esps(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.esps = input; self
         }
         /// Consumes the builder and constructs a [`DomainDeliverabilityCampaign`](crate::model::DomainDeliverabilityCampaign).
         pub fn build(self) -> crate::model::DomainDeliverabilityCampaign {
             crate::model::DomainDeliverabilityCampaign {
-                campaign_id: self.campaign_id,
-                image_url: self.image_url,
-                subject: self.subject,
-                from_address: self.from_address,
-                sending_ips: self.sending_ips,
-                first_seen_date_time: self.first_seen_date_time,
-                last_seen_date_time: self.last_seen_date_time,
-                inbox_count: self.inbox_count,
-                spam_count: self.spam_count,
-                read_rate: self.read_rate,
-                delete_rate: self.delete_rate,
-                read_delete_rate: self.read_delete_rate,
-                projected_volume: self.projected_volume,
-                esps: self.esps,
+                campaign_id: self.campaign_id
+                ,
+                image_url: self.image_url
+                ,
+                subject: self.subject
+                ,
+                from_address: self.from_address
+                ,
+                sending_ips: self.sending_ips
+                ,
+                first_seen_date_time: self.first_seen_date_time
+                ,
+                last_seen_date_time: self.last_seen_date_time
+                ,
+                inbox_count: self.inbox_count
+                ,
+                spam_count: self.spam_count
+                ,
+                read_rate: self.read_rate
+                ,
+                delete_rate: self.delete_rate
+                ,
+                read_delete_rate: self.read_delete_rate
+                ,
+                projected_volume: self.projected_volume
+                ,
+                esps: self.esps
+                ,
             }
         }
     }
+    
+    
 }
 impl DomainDeliverabilityCampaign {
     /// Creates a new builder-style object to manufacture [`DomainDeliverabilityCampaign`](crate::model::DomainDeliverabilityCampaign).
@@ -2447,7 +2344,7 @@ impl DomainDeliverabilityCampaign {
 /// <p>An object that contains metadata related to a predictive inbox placement test.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeliverabilityTestReport {
+pub struct DeliverabilityTestReport  {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
     #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
@@ -2469,35 +2366,33 @@ pub struct DeliverabilityTestReport {
 }
 impl DeliverabilityTestReport {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
-    pub fn report_id(&self) -> std::option::Option<&str> {
+    pub fn report_id(&self) -> std::option::Option<& str> {
         self.report_id.as_deref()
     }
     /// <p>A name that helps you identify a predictive inbox placement test report.</p>
-    pub fn report_name(&self) -> std::option::Option<&str> {
+    pub fn report_name(&self) -> std::option::Option<& str> {
         self.report_name.as_deref()
     }
     /// <p>The subject line for an email that you submitted in a predictive inbox placement test.</p>
-    pub fn subject(&self) -> std::option::Option<&str> {
+    pub fn subject(&self) -> std::option::Option<& str> {
         self.subject.as_deref()
     }
     /// <p>The sender address that you specified for the predictive inbox placement test.</p>
-    pub fn from_email_address(&self) -> std::option::Option<&str> {
+    pub fn from_email_address(&self) -> std::option::Option<& str> {
         self.from_email_address.as_deref()
     }
     /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
-    pub fn deliverability_test_status(
-        &self,
-    ) -> std::option::Option<&crate::model::DeliverabilityTestStatus> {
+    pub fn deliverability_test_status(&self) -> std::option::Option<& crate::model::DeliverabilityTestStatus> {
         self.deliverability_test_status.as_ref()
     }
 }
 /// See [`DeliverabilityTestReport`](crate::model::DeliverabilityTestReport).
 pub mod deliverability_test_report {
-
+    
     /// A builder for [`DeliverabilityTestReport`](crate::model::DeliverabilityTestReport).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2506,8 +2401,7 @@ pub mod deliverability_test_report {
         pub(crate) subject: std::option::Option<std::string::String>,
         pub(crate) from_email_address: std::option::Option<std::string::String>,
         pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) deliverability_test_status:
-            std::option::Option<crate::model::DeliverabilityTestStatus>,
+        pub(crate) deliverability_test_status: std::option::Option<crate::model::DeliverabilityTestStatus>,
     }
     impl Builder {
         /// <p>A unique string that identifies the predictive inbox placement test.</p>
@@ -2517,8 +2411,7 @@ pub mod deliverability_test_report {
         }
         /// <p>A unique string that identifies the predictive inbox placement test.</p>
         pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.report_id = input;
-            self
+            self.report_id = input; self
         }
         /// <p>A name that helps you identify a predictive inbox placement test report.</p>
         pub fn report_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2527,8 +2420,7 @@ pub mod deliverability_test_report {
         }
         /// <p>A name that helps you identify a predictive inbox placement test report.</p>
         pub fn set_report_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.report_name = input;
-            self
+            self.report_name = input; self
         }
         /// <p>The subject line for an email that you submitted in a predictive inbox placement test.</p>
         pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2537,8 +2429,7 @@ pub mod deliverability_test_report {
         }
         /// <p>The subject line for an email that you submitted in a predictive inbox placement test.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subject = input;
-            self
+            self.subject = input; self
         }
         /// <p>The sender address that you specified for the predictive inbox placement test.</p>
         pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2546,12 +2437,8 @@ pub mod deliverability_test_report {
             self
         }
         /// <p>The sender address that you specified for the predictive inbox placement test.</p>
-        pub fn set_from_email_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.from_email_address = input;
-            self
+        pub fn set_from_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.from_email_address = input; self
         }
         /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
         pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2559,41 +2446,38 @@ pub mod deliverability_test_report {
             self
         }
         /// <p>The date and time when the predictive inbox placement test was created, in Unix time format.</p>
-        pub fn set_create_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.create_date = input;
-            self
+        pub fn set_create_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.create_date = input; self
         }
         /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
-        pub fn deliverability_test_status(
-            mut self,
-            input: crate::model::DeliverabilityTestStatus,
-        ) -> Self {
+        pub fn deliverability_test_status(mut self, input: crate::model::DeliverabilityTestStatus) -> Self {
             self.deliverability_test_status = Some(input);
             self
         }
         /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
-        pub fn set_deliverability_test_status(
-            mut self,
-            input: std::option::Option<crate::model::DeliverabilityTestStatus>,
-        ) -> Self {
-            self.deliverability_test_status = input;
-            self
+        pub fn set_deliverability_test_status(mut self, input: std::option::Option<crate::model::DeliverabilityTestStatus>) -> Self {
+            self.deliverability_test_status = input; self
         }
         /// Consumes the builder and constructs a [`DeliverabilityTestReport`](crate::model::DeliverabilityTestReport).
         pub fn build(self) -> crate::model::DeliverabilityTestReport {
             crate::model::DeliverabilityTestReport {
-                report_id: self.report_id,
-                report_name: self.report_name,
-                subject: self.subject,
-                from_email_address: self.from_email_address,
-                create_date: self.create_date,
-                deliverability_test_status: self.deliverability_test_status,
+                report_id: self.report_id
+                ,
+                report_name: self.report_name
+                ,
+                subject: self.subject
+                ,
+                from_email_address: self.from_email_address
+                ,
+                create_date: self.create_date
+                ,
+                deliverability_test_status: self.deliverability_test_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeliverabilityTestReport {
     /// Creates a new builder-style object to manufacture [`DeliverabilityTestReport`](crate::model::DeliverabilityTestReport).
@@ -2608,9 +2492,9 @@ impl DeliverabilityTestReport {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deliverabilityteststatus = unimplemented!();
 /// match deliverabilityteststatus {
@@ -2632,7 +2516,7 @@ impl DeliverabilityTestReport {
 /// Specifically, when `deliverabilityteststatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeliverabilityTestStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -2643,53 +2527,45 @@ impl DeliverabilityTestReport {
 /// <code>GetDeliverabilityTestReport</code> operation to view the results of the
 /// test.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeliverabilityTestStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeliverabilityTestStatus {
     fn from(s: &str) -> Self {
         match s {
             "COMPLETED" => DeliverabilityTestStatus::Completed,
             "IN_PROGRESS" => DeliverabilityTestStatus::InProgress,
-            other => DeliverabilityTestStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DeliverabilityTestStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeliverabilityTestStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeliverabilityTestStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeliverabilityTestStatus::from(s))
+                }
+            }
 impl DeliverabilityTestStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeliverabilityTestStatus::Completed => "COMPLETED",
             DeliverabilityTestStatus::InProgress => "IN_PROGRESS",
-            DeliverabilityTestStatus::Unknown(value) => value.as_str(),
+            DeliverabilityTestStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "IN_PROGRESS"]
+        &[
+            "COMPLETED", "IN_PROGRESS"
+        ]
     }
 }
 impl AsRef<str> for DeliverabilityTestStatus {
@@ -2701,52 +2577,48 @@ impl AsRef<str> for DeliverabilityTestStatus {
 /// <p>A list of attributes that are associated with a MAIL FROM domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MailFromAttributes {
+pub struct MailFromAttributes  {
     /// <p>The name of a domain that an email identity uses as a custom MAIL FROM domain.</p>
     #[doc(hidden)]
     pub mail_from_domain: std::option::Option<std::string::String>,
-    /// <p>The status of the MAIL FROM domain. This status can have the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't started searching for the MX record yet.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – Amazon Pinpoint detected the required MX record for the MAIL FROM domain.</p> </li>
-    /// <li> <p> <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record no longer exists.</p> </li>
-    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.</p> </li>
+    /// <p>The status of the MAIL FROM domain. This status can have the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't started searching for the MX record yet.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – Amazon Pinpoint detected the required MX record for the MAIL FROM domain.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record no longer exists.</p> </li> 
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub mail_from_domain_status: std::option::Option<crate::model::MailFromDomainStatus>,
-    /// <p>The action that Amazon Pinpoint to takes if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+    /// <p>The action that Amazon Pinpoint to takes if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p> 
     /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
     #[doc(hidden)]
     pub behavior_on_mx_failure: std::option::Option<crate::model::BehaviorOnMxFailure>,
 }
 impl MailFromAttributes {
     /// <p>The name of a domain that an email identity uses as a custom MAIL FROM domain.</p>
-    pub fn mail_from_domain(&self) -> std::option::Option<&str> {
+    pub fn mail_from_domain(&self) -> std::option::Option<& str> {
         self.mail_from_domain.as_deref()
     }
-    /// <p>The status of the MAIL FROM domain. This status can have the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't started searching for the MX record yet.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – Amazon Pinpoint detected the required MX record for the MAIL FROM domain.</p> </li>
-    /// <li> <p> <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record no longer exists.</p> </li>
-    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.</p> </li>
+    /// <p>The status of the MAIL FROM domain. This status can have the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't started searching for the MX record yet.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – Amazon Pinpoint detected the required MX record for the MAIL FROM domain.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record no longer exists.</p> </li> 
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.</p> </li> 
     /// </ul>
-    pub fn mail_from_domain_status(
-        &self,
-    ) -> std::option::Option<&crate::model::MailFromDomainStatus> {
+    pub fn mail_from_domain_status(&self) -> std::option::Option<& crate::model::MailFromDomainStatus> {
         self.mail_from_domain_status.as_ref()
     }
-    /// <p>The action that Amazon Pinpoint to takes if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+    /// <p>The action that Amazon Pinpoint to takes if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p> 
     /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
-    pub fn behavior_on_mx_failure(
-        &self,
-    ) -> std::option::Option<&crate::model::BehaviorOnMxFailure> {
+    pub fn behavior_on_mx_failure(&self) -> std::option::Option<& crate::model::BehaviorOnMxFailure> {
         self.behavior_on_mx_failure.as_ref()
     }
 }
 /// See [`MailFromAttributes`](crate::model::MailFromAttributes).
 pub mod mail_from_attributes {
-
+    
     /// A builder for [`MailFromAttributes`](crate::model::MailFromAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2761,65 +2633,55 @@ pub mod mail_from_attributes {
             self
         }
         /// <p>The name of a domain that an email identity uses as a custom MAIL FROM domain.</p>
-        pub fn set_mail_from_domain(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.mail_from_domain = input;
-            self
+        pub fn set_mail_from_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mail_from_domain = input; self
         }
-        /// <p>The status of the MAIL FROM domain. This status can have the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't started searching for the MX record yet.</p> </li>
-        /// <li> <p> <code>SUCCESS</code> – Amazon Pinpoint detected the required MX record for the MAIL FROM domain.</p> </li>
-        /// <li> <p> <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record no longer exists.</p> </li>
-        /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.</p> </li>
+        /// <p>The status of the MAIL FROM domain. This status can have the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't started searching for the MX record yet.</p> </li> 
+        /// <li> <p> <code>SUCCESS</code> – Amazon Pinpoint detected the required MX record for the MAIL FROM domain.</p> </li> 
+        /// <li> <p> <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record no longer exists.</p> </li> 
+        /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.</p> </li> 
         /// </ul>
-        pub fn mail_from_domain_status(
-            mut self,
-            input: crate::model::MailFromDomainStatus,
-        ) -> Self {
+        pub fn mail_from_domain_status(mut self, input: crate::model::MailFromDomainStatus) -> Self {
             self.mail_from_domain_status = Some(input);
             self
         }
-        /// <p>The status of the MAIL FROM domain. This status can have the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't started searching for the MX record yet.</p> </li>
-        /// <li> <p> <code>SUCCESS</code> – Amazon Pinpoint detected the required MX record for the MAIL FROM domain.</p> </li>
-        /// <li> <p> <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record no longer exists.</p> </li>
-        /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.</p> </li>
+        /// <p>The status of the MAIL FROM domain. This status can have the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't started searching for the MX record yet.</p> </li> 
+        /// <li> <p> <code>SUCCESS</code> – Amazon Pinpoint detected the required MX record for the MAIL FROM domain.</p> </li> 
+        /// <li> <p> <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record no longer exists.</p> </li> 
+        /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.</p> </li> 
         /// </ul>
-        pub fn set_mail_from_domain_status(
-            mut self,
-            input: std::option::Option<crate::model::MailFromDomainStatus>,
-        ) -> Self {
-            self.mail_from_domain_status = input;
-            self
+        pub fn set_mail_from_domain_status(mut self, input: std::option::Option<crate::model::MailFromDomainStatus>) -> Self {
+            self.mail_from_domain_status = input; self
         }
-        /// <p>The action that Amazon Pinpoint to takes if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+        /// <p>The action that Amazon Pinpoint to takes if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p> 
         /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
         pub fn behavior_on_mx_failure(mut self, input: crate::model::BehaviorOnMxFailure) -> Self {
             self.behavior_on_mx_failure = Some(input);
             self
         }
-        /// <p>The action that Amazon Pinpoint to takes if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
+        /// <p>The action that Amazon Pinpoint to takes if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p> 
         /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
-        pub fn set_behavior_on_mx_failure(
-            mut self,
-            input: std::option::Option<crate::model::BehaviorOnMxFailure>,
-        ) -> Self {
-            self.behavior_on_mx_failure = input;
-            self
+        pub fn set_behavior_on_mx_failure(mut self, input: std::option::Option<crate::model::BehaviorOnMxFailure>) -> Self {
+            self.behavior_on_mx_failure = input; self
         }
         /// Consumes the builder and constructs a [`MailFromAttributes`](crate::model::MailFromAttributes).
         pub fn build(self) -> crate::model::MailFromAttributes {
             crate::model::MailFromAttributes {
-                mail_from_domain: self.mail_from_domain,
-                mail_from_domain_status: self.mail_from_domain_status,
-                behavior_on_mx_failure: self.behavior_on_mx_failure,
+                mail_from_domain: self.mail_from_domain
+                ,
+                mail_from_domain_status: self.mail_from_domain_status
+                ,
+                behavior_on_mx_failure: self.behavior_on_mx_failure
+                ,
             }
         }
     }
+    
+    
 }
 impl MailFromAttributes {
     /// Creates a new builder-style object to manufacture [`MailFromAttributes`](crate::model::MailFromAttributes).
@@ -2834,9 +2696,9 @@ impl MailFromAttributes {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mailfromdomainstatus = unimplemented!();
 /// match mailfromdomainstatus {
@@ -2860,7 +2722,7 @@ impl MailFromAttributes {
 /// Specifically, when `mailfromdomainstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MailFromDomainStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -2889,15 +2751,7 @@ impl MailFromAttributes {
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MailFromDomainStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -2908,7 +2762,7 @@ pub enum MailFromDomainStatus {
     #[allow(missing_docs)] // documentation missing in model
     TemporaryFailure,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MailFromDomainStatus {
     fn from(s: &str) -> Self {
@@ -2917,19 +2771,17 @@ impl std::convert::From<&str> for MailFromDomainStatus {
             "PENDING" => MailFromDomainStatus::Pending,
             "SUCCESS" => MailFromDomainStatus::Success,
             "TEMPORARY_FAILURE" => MailFromDomainStatus::TemporaryFailure,
-            other => {
-                MailFromDomainStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => MailFromDomainStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MailFromDomainStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MailFromDomainStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MailFromDomainStatus::from(s))
+                }
+            }
 impl MailFromDomainStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2938,12 +2790,14 @@ impl MailFromDomainStatus {
             MailFromDomainStatus::Pending => "PENDING",
             MailFromDomainStatus::Success => "SUCCESS",
             MailFromDomainStatus::TemporaryFailure => "TEMPORARY_FAILURE",
-            MailFromDomainStatus::Unknown(value) => value.as_str(),
+            MailFromDomainStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "PENDING", "SUCCESS", "TEMPORARY_FAILURE"]
+        &[
+            "FAILED", "PENDING", "SUCCESS", "TEMPORARY_FAILURE"
+        ]
     }
 }
 impl AsRef<str> for MailFromDomainStatus {
@@ -2955,17 +2809,17 @@ impl AsRef<str> for MailFromDomainStatus {
 /// <p>An object that contains information about the DKIM configuration for an email identity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DkimAttributes {
+pub struct DkimAttributes  {
     /// <p>If the value is <code>true</code>, then the messages that Amazon Pinpoint sends from the identity are DKIM-signed. If the value is <code>false</code>, then the messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.</p>
     #[doc(hidden)]
     pub signing_enabled: bool,
-    /// <p>Describes whether or not Amazon Pinpoint has successfully located the DKIM records in the DNS records for the domain. The status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't yet located the DKIM records in the DNS configuration for the domain, but will continue to attempt to locate them.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – Amazon Pinpoint located the DKIM records in the DNS configuration for the domain and determined that they're correct. Amazon Pinpoint can now send DKIM-signed email from the identity.</p> </li>
-    /// <li> <p> <code>FAILED</code> – Amazon Pinpoint was unable to locate the DKIM records in the DNS settings for the domain, and won't continue to search for them.</p> </li>
-    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the DKIM status for the domain.</p> </li>
-    /// <li> <p> <code>NOT_STARTED</code> – Amazon Pinpoint hasn't yet started searching for the DKIM records in the DKIM records for the domain.</p> </li>
+    /// <p>Describes whether or not Amazon Pinpoint has successfully located the DKIM records in the DNS records for the domain. The status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't yet located the DKIM records in the DNS configuration for the domain, but will continue to attempt to locate them.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – Amazon Pinpoint located the DKIM records in the DNS configuration for the domain and determined that they're correct. Amazon Pinpoint can now send DKIM-signed email from the identity.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – Amazon Pinpoint was unable to locate the DKIM records in the DNS settings for the domain, and won't continue to search for them.</p> </li> 
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the DKIM status for the domain.</p> </li> 
+    /// <li> <p> <code>NOT_STARTED</code> – Amazon Pinpoint hasn't yet started searching for the DKIM records in the DKIM records for the domain.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::DkimStatus>,
@@ -2978,25 +2832,25 @@ impl DkimAttributes {
     pub fn signing_enabled(&self) -> bool {
         self.signing_enabled
     }
-    /// <p>Describes whether or not Amazon Pinpoint has successfully located the DKIM records in the DNS records for the domain. The status can be one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't yet located the DKIM records in the DNS configuration for the domain, but will continue to attempt to locate them.</p> </li>
-    /// <li> <p> <code>SUCCESS</code> – Amazon Pinpoint located the DKIM records in the DNS configuration for the domain and determined that they're correct. Amazon Pinpoint can now send DKIM-signed email from the identity.</p> </li>
-    /// <li> <p> <code>FAILED</code> – Amazon Pinpoint was unable to locate the DKIM records in the DNS settings for the domain, and won't continue to search for them.</p> </li>
-    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the DKIM status for the domain.</p> </li>
-    /// <li> <p> <code>NOT_STARTED</code> – Amazon Pinpoint hasn't yet started searching for the DKIM records in the DKIM records for the domain.</p> </li>
+    /// <p>Describes whether or not Amazon Pinpoint has successfully located the DKIM records in the DNS records for the domain. The status can be one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't yet located the DKIM records in the DNS configuration for the domain, but will continue to attempt to locate them.</p> </li> 
+    /// <li> <p> <code>SUCCESS</code> – Amazon Pinpoint located the DKIM records in the DNS configuration for the domain and determined that they're correct. Amazon Pinpoint can now send DKIM-signed email from the identity.</p> </li> 
+    /// <li> <p> <code>FAILED</code> – Amazon Pinpoint was unable to locate the DKIM records in the DNS settings for the domain, and won't continue to search for them.</p> </li> 
+    /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the DKIM status for the domain.</p> </li> 
+    /// <li> <p> <code>NOT_STARTED</code> – Amazon Pinpoint hasn't yet started searching for the DKIM records in the DKIM records for the domain.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::DkimStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DkimStatus> {
         self.status.as_ref()
     }
     /// <p>A set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon Pinpoint detects these records in the DNS configuration for your domain, the DKIM authentication process is complete. Amazon Pinpoint usually detects these records within about 72 hours of adding them to the DNS configuration for your domain.</p>
-    pub fn tokens(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tokens(&self) -> std::option::Option<& [std::string::String]> {
         self.tokens.as_deref()
     }
 }
 /// See [`DkimAttributes`](crate::model::DkimAttributes).
 pub mod dkim_attributes {
-
+    
     /// A builder for [`DkimAttributes`](crate::model::DkimAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3012,32 +2866,30 @@ pub mod dkim_attributes {
         }
         /// <p>If the value is <code>true</code>, then the messages that Amazon Pinpoint sends from the identity are DKIM-signed. If the value is <code>false</code>, then the messages that Amazon Pinpoint sends from the identity aren't DKIM-signed.</p>
         pub fn set_signing_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.signing_enabled = input;
-            self
+            self.signing_enabled = input; self
         }
-        /// <p>Describes whether or not Amazon Pinpoint has successfully located the DKIM records in the DNS records for the domain. The status can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't yet located the DKIM records in the DNS configuration for the domain, but will continue to attempt to locate them.</p> </li>
-        /// <li> <p> <code>SUCCESS</code> – Amazon Pinpoint located the DKIM records in the DNS configuration for the domain and determined that they're correct. Amazon Pinpoint can now send DKIM-signed email from the identity.</p> </li>
-        /// <li> <p> <code>FAILED</code> – Amazon Pinpoint was unable to locate the DKIM records in the DNS settings for the domain, and won't continue to search for them.</p> </li>
-        /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the DKIM status for the domain.</p> </li>
-        /// <li> <p> <code>NOT_STARTED</code> – Amazon Pinpoint hasn't yet started searching for the DKIM records in the DKIM records for the domain.</p> </li>
+        /// <p>Describes whether or not Amazon Pinpoint has successfully located the DKIM records in the DNS records for the domain. The status can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't yet located the DKIM records in the DNS configuration for the domain, but will continue to attempt to locate them.</p> </li> 
+        /// <li> <p> <code>SUCCESS</code> – Amazon Pinpoint located the DKIM records in the DNS configuration for the domain and determined that they're correct. Amazon Pinpoint can now send DKIM-signed email from the identity.</p> </li> 
+        /// <li> <p> <code>FAILED</code> – Amazon Pinpoint was unable to locate the DKIM records in the DNS settings for the domain, and won't continue to search for them.</p> </li> 
+        /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the DKIM status for the domain.</p> </li> 
+        /// <li> <p> <code>NOT_STARTED</code> – Amazon Pinpoint hasn't yet started searching for the DKIM records in the DKIM records for the domain.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::DkimStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>Describes whether or not Amazon Pinpoint has successfully located the DKIM records in the DNS records for the domain. The status can be one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't yet located the DKIM records in the DNS configuration for the domain, but will continue to attempt to locate them.</p> </li>
-        /// <li> <p> <code>SUCCESS</code> – Amazon Pinpoint located the DKIM records in the DNS configuration for the domain and determined that they're correct. Amazon Pinpoint can now send DKIM-signed email from the identity.</p> </li>
-        /// <li> <p> <code>FAILED</code> – Amazon Pinpoint was unable to locate the DKIM records in the DNS settings for the domain, and won't continue to search for them.</p> </li>
-        /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the DKIM status for the domain.</p> </li>
-        /// <li> <p> <code>NOT_STARTED</code> – Amazon Pinpoint hasn't yet started searching for the DKIM records in the DKIM records for the domain.</p> </li>
+        /// <p>Describes whether or not Amazon Pinpoint has successfully located the DKIM records in the DNS records for the domain. The status can be one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING</code> – Amazon Pinpoint hasn't yet located the DKIM records in the DNS configuration for the domain, but will continue to attempt to locate them.</p> </li> 
+        /// <li> <p> <code>SUCCESS</code> – Amazon Pinpoint located the DKIM records in the DNS configuration for the domain and determined that they're correct. Amazon Pinpoint can now send DKIM-signed email from the identity.</p> </li> 
+        /// <li> <p> <code>FAILED</code> – Amazon Pinpoint was unable to locate the DKIM records in the DNS settings for the domain, and won't continue to search for them.</p> </li> 
+        /// <li> <p> <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the DKIM status for the domain.</p> </li> 
+        /// <li> <p> <code>NOT_STARTED</code> – Amazon Pinpoint hasn't yet started searching for the DKIM records in the DKIM records for the domain.</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::DkimStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Appends an item to `tokens`.
         ///
@@ -3046,27 +2898,29 @@ pub mod dkim_attributes {
         /// <p>A set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon Pinpoint detects these records in the DNS configuration for your domain, the DKIM authentication process is complete. Amazon Pinpoint usually detects these records within about 72 hours of adding them to the DNS configuration for your domain.</p>
         pub fn tokens(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tokens.unwrap_or_default();
-            v.push(input.into());
-            self.tokens = Some(v);
-            self
+                            v.push(input.into());
+                            self.tokens = Some(v);
+                            self
         }
         /// <p>A set of unique strings that you use to create a set of CNAME records that you add to the DNS configuration for your domain. When Amazon Pinpoint detects these records in the DNS configuration for your domain, the DKIM authentication process is complete. Amazon Pinpoint usually detects these records within about 72 hours of adding them to the DNS configuration for your domain.</p>
-        pub fn set_tokens(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tokens = input;
-            self
+        pub fn set_tokens(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tokens = input; self
         }
         /// Consumes the builder and constructs a [`DkimAttributes`](crate::model::DkimAttributes).
         pub fn build(self) -> crate::model::DkimAttributes {
             crate::model::DkimAttributes {
-                signing_enabled: self.signing_enabled.unwrap_or_default(),
-                status: self.status,
-                tokens: self.tokens,
+                signing_enabled: self.signing_enabled
+                    .unwrap_or_default()
+                ,
+                status: self.status
+                ,
+                tokens: self.tokens
+                ,
             }
         }
     }
+    
+    
 }
 impl DkimAttributes {
     /// Creates a new builder-style object to manufacture [`DkimAttributes`](crate::model::DkimAttributes).
@@ -3081,9 +2935,9 @@ impl DkimAttributes {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dkimstatus = unimplemented!();
 /// match dkimstatus {
@@ -3108,7 +2962,7 @@ impl DkimAttributes {
 /// Specifically, when `dkimstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DkimStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -3145,15 +2999,7 @@ impl DkimAttributes {
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DkimStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -3166,7 +3012,7 @@ pub enum DkimStatus {
     #[allow(missing_docs)] // documentation missing in model
     TemporaryFailure,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DkimStatus {
     fn from(s: &str) -> Self {
@@ -3176,17 +3022,17 @@ impl std::convert::From<&str> for DkimStatus {
             "PENDING" => DkimStatus::Pending,
             "SUCCESS" => DkimStatus::Success,
             "TEMPORARY_FAILURE" => DkimStatus::TemporaryFailure,
-            other => DkimStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DkimStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DkimStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DkimStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DkimStatus::from(s))
+                }
+            }
 impl DkimStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3196,17 +3042,13 @@ impl DkimStatus {
             DkimStatus::Pending => "PENDING",
             DkimStatus::Success => "SUCCESS",
             DkimStatus::TemporaryFailure => "TEMPORARY_FAILURE",
-            DkimStatus::Unknown(value) => value.as_str(),
+            DkimStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "FAILED",
-            "NOT_STARTED",
-            "PENDING",
-            "SUCCESS",
-            "TEMPORARY_FAILURE",
+            "FAILED", "NOT_STARTED", "PENDING", "SUCCESS", "TEMPORARY_FAILURE"
         ]
     }
 }
@@ -3219,7 +3061,7 @@ impl AsRef<str> for DkimStatus {
 /// <p>An object that contains information about the volume of email sent on each day of the analysis period.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DailyVolume {
+pub struct DailyVolume  {
     /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
     #[doc(hidden)]
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -3232,30 +3074,27 @@ pub struct DailyVolume {
 }
 impl DailyVolume {
     /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>An object that contains inbox placement metrics for a specific day in the analysis period.</p>
-    pub fn volume_statistics(&self) -> std::option::Option<&crate::model::VolumeStatistics> {
+    pub fn volume_statistics(&self) -> std::option::Option<& crate::model::VolumeStatistics> {
         self.volume_statistics.as_ref()
     }
     /// <p>An object that contains inbox placement metrics for a specified day in the analysis period, broken out by the recipient's email provider.</p>
-    pub fn domain_isp_placements(
-        &self,
-    ) -> std::option::Option<&[crate::model::DomainIspPlacement]> {
+    pub fn domain_isp_placements(&self) -> std::option::Option<& [crate::model::DomainIspPlacement]> {
         self.domain_isp_placements.as_deref()
     }
 }
 /// See [`DailyVolume`](crate::model::DailyVolume).
 pub mod daily_volume {
-
+    
     /// A builder for [`DailyVolume`](crate::model::DailyVolume).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) volume_statistics: std::option::Option<crate::model::VolumeStatistics>,
-        pub(crate) domain_isp_placements:
-            std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
+        pub(crate) domain_isp_placements: std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
     }
     impl Builder {
         /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
@@ -3264,12 +3103,8 @@ pub mod daily_volume {
             self
         }
         /// <p>The date that the DailyVolume metrics apply to, in Unix time.</p>
-        pub fn set_start_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_date = input;
-            self
+        pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_date = input; self
         }
         /// <p>An object that contains inbox placement metrics for a specific day in the analysis period.</p>
         pub fn volume_statistics(mut self, input: crate::model::VolumeStatistics) -> Self {
@@ -3277,12 +3112,8 @@ pub mod daily_volume {
             self
         }
         /// <p>An object that contains inbox placement metrics for a specific day in the analysis period.</p>
-        pub fn set_volume_statistics(
-            mut self,
-            input: std::option::Option<crate::model::VolumeStatistics>,
-        ) -> Self {
-            self.volume_statistics = input;
-            self
+        pub fn set_volume_statistics(mut self, input: std::option::Option<crate::model::VolumeStatistics>) -> Self {
+            self.volume_statistics = input; self
         }
         /// Appends an item to `domain_isp_placements`.
         ///
@@ -3291,27 +3122,28 @@ pub mod daily_volume {
         /// <p>An object that contains inbox placement metrics for a specified day in the analysis period, broken out by the recipient's email provider.</p>
         pub fn domain_isp_placements(mut self, input: crate::model::DomainIspPlacement) -> Self {
             let mut v = self.domain_isp_placements.unwrap_or_default();
-            v.push(input);
-            self.domain_isp_placements = Some(v);
-            self
+                            v.push(input);
+                            self.domain_isp_placements = Some(v);
+                            self
         }
         /// <p>An object that contains inbox placement metrics for a specified day in the analysis period, broken out by the recipient's email provider.</p>
-        pub fn set_domain_isp_placements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
-        ) -> Self {
-            self.domain_isp_placements = input;
-            self
+        pub fn set_domain_isp_placements(mut self, input: std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>) -> Self {
+            self.domain_isp_placements = input; self
         }
         /// Consumes the builder and constructs a [`DailyVolume`](crate::model::DailyVolume).
         pub fn build(self) -> crate::model::DailyVolume {
             crate::model::DailyVolume {
-                start_date: self.start_date,
-                volume_statistics: self.volume_statistics,
-                domain_isp_placements: self.domain_isp_placements,
+                start_date: self.start_date
+                ,
+                volume_statistics: self.volume_statistics
+                ,
+                domain_isp_placements: self.domain_isp_placements
+                ,
             }
         }
     }
+    
+    
 }
 impl DailyVolume {
     /// Creates a new builder-style object to manufacture [`DailyVolume`](crate::model::DailyVolume).
@@ -3323,7 +3155,7 @@ impl DailyVolume {
 /// <p>An object that contains inbox placement data for email sent from one of your email domains to a specific email provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainIspPlacement {
+pub struct DomainIspPlacement  {
     /// <p>The name of the email provider that the inbox placement data applies to.</p>
     #[doc(hidden)]
     pub isp_name: std::option::Option<std::string::String>,
@@ -3342,7 +3174,7 @@ pub struct DomainIspPlacement {
 }
 impl DomainIspPlacement {
     /// <p>The name of the email provider that the inbox placement data applies to.</p>
-    pub fn isp_name(&self) -> std::option::Option<&str> {
+    pub fn isp_name(&self) -> std::option::Option<& str> {
         self.isp_name.as_deref()
     }
     /// <p>The total number of messages that were sent from the selected domain to the specified email provider that arrived in recipients' inboxes.</p>
@@ -3364,7 +3196,7 @@ impl DomainIspPlacement {
 }
 /// See [`DomainIspPlacement`](crate::model::DomainIspPlacement).
 pub mod domain_isp_placement {
-
+    
     /// A builder for [`DomainIspPlacement`](crate::model::DomainIspPlacement).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3382,8 +3214,7 @@ pub mod domain_isp_placement {
         }
         /// <p>The name of the email provider that the inbox placement data applies to.</p>
         pub fn set_isp_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.isp_name = input;
-            self
+            self.isp_name = input; self
         }
         /// <p>The total number of messages that were sent from the selected domain to the specified email provider that arrived in recipients' inboxes.</p>
         pub fn inbox_raw_count(mut self, input: i64) -> Self {
@@ -3392,8 +3223,7 @@ pub mod domain_isp_placement {
         }
         /// <p>The total number of messages that were sent from the selected domain to the specified email provider that arrived in recipients' inboxes.</p>
         pub fn set_inbox_raw_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.inbox_raw_count = input;
-            self
+            self.inbox_raw_count = input; self
         }
         /// <p>The total number of messages that were sent from the selected domain to the specified email provider that arrived in recipients' spam or junk mail folders.</p>
         pub fn spam_raw_count(mut self, input: i64) -> Self {
@@ -3402,8 +3232,7 @@ pub mod domain_isp_placement {
         }
         /// <p>The total number of messages that were sent from the selected domain to the specified email provider that arrived in recipients' spam or junk mail folders.</p>
         pub fn set_spam_raw_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.spam_raw_count = input;
-            self
+            self.spam_raw_count = input; self
         }
         /// <p>The percentage of messages that were sent from the selected domain to the specified email provider that arrived in recipients' inboxes.</p>
         pub fn inbox_percentage(mut self, input: f64) -> Self {
@@ -3412,8 +3241,7 @@ pub mod domain_isp_placement {
         }
         /// <p>The percentage of messages that were sent from the selected domain to the specified email provider that arrived in recipients' inboxes.</p>
         pub fn set_inbox_percentage(mut self, input: std::option::Option<f64>) -> Self {
-            self.inbox_percentage = input;
-            self
+            self.inbox_percentage = input; self
         }
         /// <p>The percentage of messages that were sent from the selected domain to the specified email provider that arrived in recipients' spam or junk mail folders.</p>
         pub fn spam_percentage(mut self, input: f64) -> Self {
@@ -3422,20 +3250,26 @@ pub mod domain_isp_placement {
         }
         /// <p>The percentage of messages that were sent from the selected domain to the specified email provider that arrived in recipients' spam or junk mail folders.</p>
         pub fn set_spam_percentage(mut self, input: std::option::Option<f64>) -> Self {
-            self.spam_percentage = input;
-            self
+            self.spam_percentage = input; self
         }
         /// Consumes the builder and constructs a [`DomainIspPlacement`](crate::model::DomainIspPlacement).
         pub fn build(self) -> crate::model::DomainIspPlacement {
             crate::model::DomainIspPlacement {
-                isp_name: self.isp_name,
-                inbox_raw_count: self.inbox_raw_count,
-                spam_raw_count: self.spam_raw_count,
-                inbox_percentage: self.inbox_percentage,
-                spam_percentage: self.spam_percentage,
+                isp_name: self.isp_name
+                ,
+                inbox_raw_count: self.inbox_raw_count
+                ,
+                spam_raw_count: self.spam_raw_count
+                ,
+                inbox_percentage: self.inbox_percentage
+                ,
+                spam_percentage: self.spam_percentage
+                ,
             }
         }
     }
+    
+    
 }
 impl DomainIspPlacement {
     /// Creates a new builder-style object to manufacture [`DomainIspPlacement`](crate::model::DomainIspPlacement).
@@ -3447,7 +3281,7 @@ impl DomainIspPlacement {
 /// <p>An object that contains information about the amount of email that was delivered to recipients.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VolumeStatistics {
+pub struct VolumeStatistics  {
     /// <p>The total number of emails that arrived in recipients' inboxes.</p>
     #[doc(hidden)]
     pub inbox_raw_count: std::option::Option<i64>,
@@ -3481,7 +3315,7 @@ impl VolumeStatistics {
 }
 /// See [`VolumeStatistics`](crate::model::VolumeStatistics).
 pub mod volume_statistics {
-
+    
     /// A builder for [`VolumeStatistics`](crate::model::VolumeStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3498,8 +3332,7 @@ pub mod volume_statistics {
         }
         /// <p>The total number of emails that arrived in recipients' inboxes.</p>
         pub fn set_inbox_raw_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.inbox_raw_count = input;
-            self
+            self.inbox_raw_count = input; self
         }
         /// <p>The total number of emails that arrived in recipients' spam or junk mail folders.</p>
         pub fn spam_raw_count(mut self, input: i64) -> Self {
@@ -3508,8 +3341,7 @@ pub mod volume_statistics {
         }
         /// <p>The total number of emails that arrived in recipients' spam or junk mail folders.</p>
         pub fn set_spam_raw_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.spam_raw_count = input;
-            self
+            self.spam_raw_count = input; self
         }
         /// <p>An estimate of the percentage of emails sent from the current domain that will arrive in recipients' inboxes.</p>
         pub fn projected_inbox(mut self, input: i64) -> Self {
@@ -3518,8 +3350,7 @@ pub mod volume_statistics {
         }
         /// <p>An estimate of the percentage of emails sent from the current domain that will arrive in recipients' inboxes.</p>
         pub fn set_projected_inbox(mut self, input: std::option::Option<i64>) -> Self {
-            self.projected_inbox = input;
-            self
+            self.projected_inbox = input; self
         }
         /// <p>An estimate of the percentage of emails sent from the current domain that will arrive in recipients' spam or junk mail folders.</p>
         pub fn projected_spam(mut self, input: i64) -> Self {
@@ -3528,19 +3359,24 @@ pub mod volume_statistics {
         }
         /// <p>An estimate of the percentage of emails sent from the current domain that will arrive in recipients' spam or junk mail folders.</p>
         pub fn set_projected_spam(mut self, input: std::option::Option<i64>) -> Self {
-            self.projected_spam = input;
-            self
+            self.projected_spam = input; self
         }
         /// Consumes the builder and constructs a [`VolumeStatistics`](crate::model::VolumeStatistics).
         pub fn build(self) -> crate::model::VolumeStatistics {
             crate::model::VolumeStatistics {
-                inbox_raw_count: self.inbox_raw_count,
-                spam_raw_count: self.spam_raw_count,
-                projected_inbox: self.projected_inbox,
-                projected_spam: self.projected_spam,
+                inbox_raw_count: self.inbox_raw_count
+                ,
+                spam_raw_count: self.spam_raw_count
+                ,
+                projected_inbox: self.projected_inbox
+                ,
+                projected_spam: self.projected_spam
+                ,
             }
         }
     }
+    
+    
 }
 impl VolumeStatistics {
     /// Creates a new builder-style object to manufacture [`VolumeStatistics`](crate::model::VolumeStatistics).
@@ -3552,7 +3388,7 @@ impl VolumeStatistics {
 /// <p>An object that contains information about email that was sent from the selected domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OverallVolume {
+pub struct OverallVolume  {
     /// <p>An object that contains information about the numbers of messages that arrived in recipients' inboxes and junk mail folders.</p>
     #[doc(hidden)]
     pub volume_statistics: std::option::Option<crate::model::VolumeStatistics>,
@@ -3565,7 +3401,7 @@ pub struct OverallVolume {
 }
 impl OverallVolume {
     /// <p>An object that contains information about the numbers of messages that arrived in recipients' inboxes and junk mail folders.</p>
-    pub fn volume_statistics(&self) -> std::option::Option<&crate::model::VolumeStatistics> {
+    pub fn volume_statistics(&self) -> std::option::Option<& crate::model::VolumeStatistics> {
         self.volume_statistics.as_ref()
     }
     /// <p>The percentage of emails that were sent from the domain that were read by their recipients.</p>
@@ -3573,22 +3409,19 @@ impl OverallVolume {
         self.read_rate_percent
     }
     /// <p>An object that contains inbox and junk mail placement metrics for individual email providers.</p>
-    pub fn domain_isp_placements(
-        &self,
-    ) -> std::option::Option<&[crate::model::DomainIspPlacement]> {
+    pub fn domain_isp_placements(&self) -> std::option::Option<& [crate::model::DomainIspPlacement]> {
         self.domain_isp_placements.as_deref()
     }
 }
 /// See [`OverallVolume`](crate::model::OverallVolume).
 pub mod overall_volume {
-
+    
     /// A builder for [`OverallVolume`](crate::model::OverallVolume).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) volume_statistics: std::option::Option<crate::model::VolumeStatistics>,
         pub(crate) read_rate_percent: std::option::Option<f64>,
-        pub(crate) domain_isp_placements:
-            std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
+        pub(crate) domain_isp_placements: std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
     }
     impl Builder {
         /// <p>An object that contains information about the numbers of messages that arrived in recipients' inboxes and junk mail folders.</p>
@@ -3597,12 +3430,8 @@ pub mod overall_volume {
             self
         }
         /// <p>An object that contains information about the numbers of messages that arrived in recipients' inboxes and junk mail folders.</p>
-        pub fn set_volume_statistics(
-            mut self,
-            input: std::option::Option<crate::model::VolumeStatistics>,
-        ) -> Self {
-            self.volume_statistics = input;
-            self
+        pub fn set_volume_statistics(mut self, input: std::option::Option<crate::model::VolumeStatistics>) -> Self {
+            self.volume_statistics = input; self
         }
         /// <p>The percentage of emails that were sent from the domain that were read by their recipients.</p>
         pub fn read_rate_percent(mut self, input: f64) -> Self {
@@ -3611,8 +3440,7 @@ pub mod overall_volume {
         }
         /// <p>The percentage of emails that were sent from the domain that were read by their recipients.</p>
         pub fn set_read_rate_percent(mut self, input: std::option::Option<f64>) -> Self {
-            self.read_rate_percent = input;
-            self
+            self.read_rate_percent = input; self
         }
         /// Appends an item to `domain_isp_placements`.
         ///
@@ -3621,27 +3449,28 @@ pub mod overall_volume {
         /// <p>An object that contains inbox and junk mail placement metrics for individual email providers.</p>
         pub fn domain_isp_placements(mut self, input: crate::model::DomainIspPlacement) -> Self {
             let mut v = self.domain_isp_placements.unwrap_or_default();
-            v.push(input);
-            self.domain_isp_placements = Some(v);
-            self
+                            v.push(input);
+                            self.domain_isp_placements = Some(v);
+                            self
         }
         /// <p>An object that contains inbox and junk mail placement metrics for individual email providers.</p>
-        pub fn set_domain_isp_placements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>,
-        ) -> Self {
-            self.domain_isp_placements = input;
-            self
+        pub fn set_domain_isp_placements(mut self, input: std::option::Option<std::vec::Vec<crate::model::DomainIspPlacement>>) -> Self {
+            self.domain_isp_placements = input; self
         }
         /// Consumes the builder and constructs a [`OverallVolume`](crate::model::OverallVolume).
         pub fn build(self) -> crate::model::OverallVolume {
             crate::model::OverallVolume {
-                volume_statistics: self.volume_statistics,
-                read_rate_percent: self.read_rate_percent,
-                domain_isp_placements: self.domain_isp_placements,
+                volume_statistics: self.volume_statistics
+                ,
+                read_rate_percent: self.read_rate_percent
+                ,
+                domain_isp_placements: self.domain_isp_placements
+                ,
             }
         }
     }
+    
+    
 }
 impl OverallVolume {
     /// Creates a new builder-style object to manufacture [`OverallVolume`](crate::model::OverallVolume).
@@ -3653,7 +3482,7 @@ impl OverallVolume {
 /// <p>An object that describes how email sent during the predictive inbox placement test was handled by a certain email provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IspPlacement {
+pub struct IspPlacement  {
     /// <p>The name of the email provider that the inbox placement data applies to.</p>
     #[doc(hidden)]
     pub isp_name: std::option::Option<std::string::String>,
@@ -3663,17 +3492,17 @@ pub struct IspPlacement {
 }
 impl IspPlacement {
     /// <p>The name of the email provider that the inbox placement data applies to.</p>
-    pub fn isp_name(&self) -> std::option::Option<&str> {
+    pub fn isp_name(&self) -> std::option::Option<& str> {
         self.isp_name.as_deref()
     }
     /// <p>An object that contains inbox placement metrics for a specific email provider.</p>
-    pub fn placement_statistics(&self) -> std::option::Option<&crate::model::PlacementStatistics> {
+    pub fn placement_statistics(&self) -> std::option::Option<& crate::model::PlacementStatistics> {
         self.placement_statistics.as_ref()
     }
 }
 /// See [`IspPlacement`](crate::model::IspPlacement).
 pub mod isp_placement {
-
+    
     /// A builder for [`IspPlacement`](crate::model::IspPlacement).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3688,8 +3517,7 @@ pub mod isp_placement {
         }
         /// <p>The name of the email provider that the inbox placement data applies to.</p>
         pub fn set_isp_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.isp_name = input;
-            self
+            self.isp_name = input; self
         }
         /// <p>An object that contains inbox placement metrics for a specific email provider.</p>
         pub fn placement_statistics(mut self, input: crate::model::PlacementStatistics) -> Self {
@@ -3697,21 +3525,21 @@ pub mod isp_placement {
             self
         }
         /// <p>An object that contains inbox placement metrics for a specific email provider.</p>
-        pub fn set_placement_statistics(
-            mut self,
-            input: std::option::Option<crate::model::PlacementStatistics>,
-        ) -> Self {
-            self.placement_statistics = input;
-            self
+        pub fn set_placement_statistics(mut self, input: std::option::Option<crate::model::PlacementStatistics>) -> Self {
+            self.placement_statistics = input; self
         }
         /// Consumes the builder and constructs a [`IspPlacement`](crate::model::IspPlacement).
         pub fn build(self) -> crate::model::IspPlacement {
             crate::model::IspPlacement {
-                isp_name: self.isp_name,
-                placement_statistics: self.placement_statistics,
+                isp_name: self.isp_name
+                ,
+                placement_statistics: self.placement_statistics
+                ,
             }
         }
     }
+    
+    
 }
 impl IspPlacement {
     /// Creates a new builder-style object to manufacture [`IspPlacement`](crate::model::IspPlacement).
@@ -3723,7 +3551,7 @@ impl IspPlacement {
 /// <p>An object that contains inbox placement data for an email provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlacementStatistics {
+pub struct PlacementStatistics  {
     /// <p>The percentage of emails that arrived in recipients' inboxes during the predictive inbox placement test.</p>
     #[doc(hidden)]
     pub inbox_percentage: std::option::Option<f64>,
@@ -3764,7 +3592,7 @@ impl PlacementStatistics {
 }
 /// See [`PlacementStatistics`](crate::model::PlacementStatistics).
 pub mod placement_statistics {
-
+    
     /// A builder for [`PlacementStatistics`](crate::model::PlacementStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3782,8 +3610,7 @@ pub mod placement_statistics {
         }
         /// <p>The percentage of emails that arrived in recipients' inboxes during the predictive inbox placement test.</p>
         pub fn set_inbox_percentage(mut self, input: std::option::Option<f64>) -> Self {
-            self.inbox_percentage = input;
-            self
+            self.inbox_percentage = input; self
         }
         /// <p>The percentage of emails that arrived in recipients' spam or junk mail folders during the predictive inbox placement test.</p>
         pub fn spam_percentage(mut self, input: f64) -> Self {
@@ -3792,8 +3619,7 @@ pub mod placement_statistics {
         }
         /// <p>The percentage of emails that arrived in recipients' spam or junk mail folders during the predictive inbox placement test.</p>
         pub fn set_spam_percentage(mut self, input: std::option::Option<f64>) -> Self {
-            self.spam_percentage = input;
-            self
+            self.spam_percentage = input; self
         }
         /// <p>The percentage of emails that didn't arrive in recipients' inboxes at all during the predictive inbox placement test.</p>
         pub fn missing_percentage(mut self, input: f64) -> Self {
@@ -3802,8 +3628,7 @@ pub mod placement_statistics {
         }
         /// <p>The percentage of emails that didn't arrive in recipients' inboxes at all during the predictive inbox placement test.</p>
         pub fn set_missing_percentage(mut self, input: std::option::Option<f64>) -> Self {
-            self.missing_percentage = input;
-            self
+            self.missing_percentage = input; self
         }
         /// <p>The percentage of emails that were authenticated by using Sender Policy Framework (SPF) during the predictive inbox placement test.</p>
         pub fn spf_percentage(mut self, input: f64) -> Self {
@@ -3812,8 +3637,7 @@ pub mod placement_statistics {
         }
         /// <p>The percentage of emails that were authenticated by using Sender Policy Framework (SPF) during the predictive inbox placement test.</p>
         pub fn set_spf_percentage(mut self, input: std::option::Option<f64>) -> Self {
-            self.spf_percentage = input;
-            self
+            self.spf_percentage = input; self
         }
         /// <p>The percentage of emails that were authenticated by using DomainKeys Identified Mail (DKIM) during the predictive inbox placement test.</p>
         pub fn dkim_percentage(mut self, input: f64) -> Self {
@@ -3822,20 +3646,26 @@ pub mod placement_statistics {
         }
         /// <p>The percentage of emails that were authenticated by using DomainKeys Identified Mail (DKIM) during the predictive inbox placement test.</p>
         pub fn set_dkim_percentage(mut self, input: std::option::Option<f64>) -> Self {
-            self.dkim_percentage = input;
-            self
+            self.dkim_percentage = input; self
         }
         /// Consumes the builder and constructs a [`PlacementStatistics`](crate::model::PlacementStatistics).
         pub fn build(self) -> crate::model::PlacementStatistics {
             crate::model::PlacementStatistics {
-                inbox_percentage: self.inbox_percentage,
-                spam_percentage: self.spam_percentage,
-                missing_percentage: self.missing_percentage,
-                spf_percentage: self.spf_percentage,
-                dkim_percentage: self.dkim_percentage,
+                inbox_percentage: self.inbox_percentage
+                ,
+                spam_percentage: self.spam_percentage
+                ,
+                missing_percentage: self.missing_percentage
+                ,
+                spf_percentage: self.spf_percentage
+                ,
+                dkim_percentage: self.dkim_percentage
+                ,
             }
         }
     }
+    
+    
 }
 impl PlacementStatistics {
     /// Creates a new builder-style object to manufacture [`PlacementStatistics`](crate::model::PlacementStatistics).
@@ -3850,9 +3680,9 @@ impl PlacementStatistics {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deliverabilitydashboardaccountstatus = unimplemented!();
 /// match deliverabilitydashboardaccountstatus {
@@ -3875,7 +3705,7 @@ impl PlacementStatistics {
 /// Specifically, when `deliverabilitydashboardaccountstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeliverabilityDashboardAccountStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -3884,15 +3714,7 @@ impl PlacementStatistics {
 /// <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end
 /// of the current calendar month.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeliverabilityDashboardAccountStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -3901,7 +3723,7 @@ pub enum DeliverabilityDashboardAccountStatus {
     #[allow(missing_docs)] // documentation missing in model
     PendingExpiration,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeliverabilityDashboardAccountStatus {
     fn from(s: &str) -> Self {
@@ -3909,19 +3731,17 @@ impl std::convert::From<&str> for DeliverabilityDashboardAccountStatus {
             "ACTIVE" => DeliverabilityDashboardAccountStatus::Active,
             "DISABLED" => DeliverabilityDashboardAccountStatus::Disabled,
             "PENDING_EXPIRATION" => DeliverabilityDashboardAccountStatus::PendingExpiration,
-            other => DeliverabilityDashboardAccountStatus::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => DeliverabilityDashboardAccountStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeliverabilityDashboardAccountStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeliverabilityDashboardAccountStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeliverabilityDashboardAccountStatus::from(s))
+                }
+            }
 impl DeliverabilityDashboardAccountStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3929,12 +3749,14 @@ impl DeliverabilityDashboardAccountStatus {
             DeliverabilityDashboardAccountStatus::Active => "ACTIVE",
             DeliverabilityDashboardAccountStatus::Disabled => "DISABLED",
             DeliverabilityDashboardAccountStatus::PendingExpiration => "PENDING_EXPIRATION",
-            DeliverabilityDashboardAccountStatus::Unknown(value) => value.as_str(),
+            DeliverabilityDashboardAccountStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DISABLED", "PENDING_EXPIRATION"]
+        &[
+            "ACTIVE", "DISABLED", "PENDING_EXPIRATION"
+        ]
     }
 }
 impl AsRef<str> for DeliverabilityDashboardAccountStatus {
@@ -3943,18 +3765,18 @@ impl AsRef<str> for DeliverabilityDashboardAccountStatus {
     }
 }
 
-/// <p>Contains information about a dedicated IP address that is associated with your Amazon Pinpoint account.</p>
+/// <p>Contains information about a dedicated IP address that is associated with your Amazon Pinpoint account.</p> 
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DedicatedIp {
+pub struct DedicatedIp  {
     /// <p>An IP address that is reserved for use by your Amazon Pinpoint account.</p>
     #[doc(hidden)]
     pub ip: std::option::Option<std::string::String>,
-    /// <p>The warm-up status of a dedicated IP address. The status can have one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li>
-    /// <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p> </li>
+    /// <p>The warm-up status of a dedicated IP address. The status can have one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li> 
+    /// <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub warmup_status: std::option::Option<crate::model::WarmupStatus>,
@@ -3967,15 +3789,15 @@ pub struct DedicatedIp {
 }
 impl DedicatedIp {
     /// <p>An IP address that is reserved for use by your Amazon Pinpoint account.</p>
-    pub fn ip(&self) -> std::option::Option<&str> {
+    pub fn ip(&self) -> std::option::Option<& str> {
         self.ip.as_deref()
     }
-    /// <p>The warm-up status of a dedicated IP address. The status can have one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li>
-    /// <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p> </li>
+    /// <p>The warm-up status of a dedicated IP address. The status can have one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li> 
+    /// <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p> </li> 
     /// </ul>
-    pub fn warmup_status(&self) -> std::option::Option<&crate::model::WarmupStatus> {
+    pub fn warmup_status(&self) -> std::option::Option<& crate::model::WarmupStatus> {
         self.warmup_status.as_ref()
     }
     /// <p>Indicates how complete the dedicated IP warm-up process is. When this value equals 1, the address has completed the warm-up process and is ready for use.</p>
@@ -3983,13 +3805,13 @@ impl DedicatedIp {
         self.warmup_percentage
     }
     /// <p>The name of the dedicated IP pool that the IP address is associated with.</p>
-    pub fn pool_name(&self) -> std::option::Option<&str> {
+    pub fn pool_name(&self) -> std::option::Option<& str> {
         self.pool_name.as_deref()
     }
 }
 /// See [`DedicatedIp`](crate::model::DedicatedIp).
 pub mod dedicated_ip {
-
+    
     /// A builder for [`DedicatedIp`](crate::model::DedicatedIp).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4006,29 +3828,24 @@ pub mod dedicated_ip {
         }
         /// <p>An IP address that is reserved for use by your Amazon Pinpoint account.</p>
         pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ip = input;
-            self
+            self.ip = input; self
         }
-        /// <p>The warm-up status of a dedicated IP address. The status can have one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li>
-        /// <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p> </li>
+        /// <p>The warm-up status of a dedicated IP address. The status can have one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li> 
+        /// <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p> </li> 
         /// </ul>
         pub fn warmup_status(mut self, input: crate::model::WarmupStatus) -> Self {
             self.warmup_status = Some(input);
             self
         }
-        /// <p>The warm-up status of a dedicated IP address. The status can have one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li>
-        /// <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p> </li>
+        /// <p>The warm-up status of a dedicated IP address. The status can have one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>IN_PROGRESS</code> – The IP address isn't ready to use because the dedicated IP warm-up process is ongoing.</p> </li> 
+        /// <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete, and the IP address is ready to use.</p> </li> 
         /// </ul>
-        pub fn set_warmup_status(
-            mut self,
-            input: std::option::Option<crate::model::WarmupStatus>,
-        ) -> Self {
-            self.warmup_status = input;
-            self
+        pub fn set_warmup_status(mut self, input: std::option::Option<crate::model::WarmupStatus>) -> Self {
+            self.warmup_status = input; self
         }
         /// <p>Indicates how complete the dedicated IP warm-up process is. When this value equals 1, the address has completed the warm-up process and is ready for use.</p>
         pub fn warmup_percentage(mut self, input: i32) -> Self {
@@ -4037,8 +3854,7 @@ pub mod dedicated_ip {
         }
         /// <p>Indicates how complete the dedicated IP warm-up process is. When this value equals 1, the address has completed the warm-up process and is ready for use.</p>
         pub fn set_warmup_percentage(mut self, input: std::option::Option<i32>) -> Self {
-            self.warmup_percentage = input;
-            self
+            self.warmup_percentage = input; self
         }
         /// <p>The name of the dedicated IP pool that the IP address is associated with.</p>
         pub fn pool_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4047,19 +3863,24 @@ pub mod dedicated_ip {
         }
         /// <p>The name of the dedicated IP pool that the IP address is associated with.</p>
         pub fn set_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_name = input;
-            self
+            self.pool_name = input; self
         }
         /// Consumes the builder and constructs a [`DedicatedIp`](crate::model::DedicatedIp).
         pub fn build(self) -> crate::model::DedicatedIp {
             crate::model::DedicatedIp {
-                ip: self.ip,
-                warmup_status: self.warmup_status,
-                warmup_percentage: self.warmup_percentage,
-                pool_name: self.pool_name,
+                ip: self.ip
+                ,
+                warmup_status: self.warmup_status
+                ,
+                warmup_percentage: self.warmup_percentage
+                ,
+                pool_name: self.pool_name
+                ,
             }
         }
     }
+    
+    
 }
 impl DedicatedIp {
     /// Creates a new builder-style object to manufacture [`DedicatedIp`](crate::model::DedicatedIp).
@@ -4074,9 +3895,9 @@ impl DedicatedIp {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let warmupstatus = unimplemented!();
 /// match warmupstatus {
@@ -4098,58 +3919,52 @@ impl DedicatedIp {
 /// Specifically, when `warmupstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WarmupStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The warmup status of a dedicated IP.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WarmupStatus {
     #[allow(missing_docs)] // documentation missing in model
     Done,
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WarmupStatus {
     fn from(s: &str) -> Self {
         match s {
             "DONE" => WarmupStatus::Done,
             "IN_PROGRESS" => WarmupStatus::InProgress,
-            other => WarmupStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => WarmupStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WarmupStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WarmupStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WarmupStatus::from(s))
+                }
+            }
 impl WarmupStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WarmupStatus::Done => "DONE",
             WarmupStatus::InProgress => "IN_PROGRESS",
-            WarmupStatus::Unknown(value) => value.as_str(),
+            WarmupStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DONE", "IN_PROGRESS"]
+        &[
+            "DONE", "IN_PROGRESS"
+        ]
     }
 }
 impl AsRef<str> for WarmupStatus {
@@ -4161,11 +3976,11 @@ impl AsRef<str> for WarmupStatus {
 /// <p>In Amazon Pinpoint, <i>events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventDestination {
+pub struct EventDestination  {
     /// <p>A name that identifies the event destination.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p>
+    /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p> 
     /// <p>If <code>false</code>, the event destination is disabled. When the event destination is disabled, events aren't sent to the specified destinations.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -4187,53 +4002,46 @@ pub struct EventDestination {
 }
 impl EventDestination {
     /// <p>A name that identifies the event destination.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p>
+    /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p> 
     /// <p>If <code>false</code>, the event destination is disabled. When the event destination is disabled, events aren't sent to the specified destinations.</p>
     pub fn enabled(&self) -> bool {
         self.enabled
     }
     /// <p>The types of events that Amazon Pinpoint sends to the specified event destinations.</p>
-    pub fn matching_event_types(&self) -> std::option::Option<&[crate::model::EventType]> {
+    pub fn matching_event_types(&self) -> std::option::Option<& [crate::model::EventType]> {
         self.matching_event_types.as_deref()
     }
     /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
-    pub fn kinesis_firehose_destination(
-        &self,
-    ) -> std::option::Option<&crate::model::KinesisFirehoseDestination> {
+    pub fn kinesis_firehose_destination(&self) -> std::option::Option<& crate::model::KinesisFirehoseDestination> {
         self.kinesis_firehose_destination.as_ref()
     }
     /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.</p>
-    pub fn cloud_watch_destination(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchDestination> {
+    pub fn cloud_watch_destination(&self) -> std::option::Option<& crate::model::CloudWatchDestination> {
         self.cloud_watch_destination.as_ref()
     }
     /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
-    pub fn sns_destination(&self) -> std::option::Option<&crate::model::SnsDestination> {
+    pub fn sns_destination(&self) -> std::option::Option<& crate::model::SnsDestination> {
         self.sns_destination.as_ref()
     }
     /// <p>An object that defines a Amazon Pinpoint destination for email events. You can use Amazon Pinpoint events to create attributes in Amazon Pinpoint projects. You can use these attributes to create segments for your campaigns.</p>
-    pub fn pinpoint_destination(&self) -> std::option::Option<&crate::model::PinpointDestination> {
+    pub fn pinpoint_destination(&self) -> std::option::Option<& crate::model::PinpointDestination> {
         self.pinpoint_destination.as_ref()
     }
 }
 /// See [`EventDestination`](crate::model::EventDestination).
 pub mod event_destination {
-
+    
     /// A builder for [`EventDestination`](crate::model::EventDestination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
-        pub(crate) matching_event_types:
-            std::option::Option<std::vec::Vec<crate::model::EventType>>,
-        pub(crate) kinesis_firehose_destination:
-            std::option::Option<crate::model::KinesisFirehoseDestination>,
-        pub(crate) cloud_watch_destination:
-            std::option::Option<crate::model::CloudWatchDestination>,
+        pub(crate) matching_event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
+        pub(crate) kinesis_firehose_destination: std::option::Option<crate::model::KinesisFirehoseDestination>,
+        pub(crate) cloud_watch_destination: std::option::Option<crate::model::CloudWatchDestination>,
         pub(crate) sns_destination: std::option::Option<crate::model::SnsDestination>,
         pub(crate) pinpoint_destination: std::option::Option<crate::model::PinpointDestination>,
     }
@@ -4245,20 +4053,18 @@ pub mod event_destination {
         }
         /// <p>A name that identifies the event destination.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p>
+        /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p> 
         /// <p>If <code>false</code>, the event destination is disabled. When the event destination is disabled, events aren't sent to the specified destinations.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
-        /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p>
+        /// <p>If <code>true</code>, the event destination is enabled. When the event destination is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.</p> 
         /// <p>If <code>false</code>, the event destination is disabled. When the event destination is disabled, events aren't sent to the specified destinations.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// Appends an item to `matching_event_types`.
         ///
@@ -4267,49 +4073,31 @@ pub mod event_destination {
         /// <p>The types of events that Amazon Pinpoint sends to the specified event destinations.</p>
         pub fn matching_event_types(mut self, input: crate::model::EventType) -> Self {
             let mut v = self.matching_event_types.unwrap_or_default();
-            v.push(input);
-            self.matching_event_types = Some(v);
-            self
+                            v.push(input);
+                            self.matching_event_types = Some(v);
+                            self
         }
         /// <p>The types of events that Amazon Pinpoint sends to the specified event destinations.</p>
-        pub fn set_matching_event_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventType>>,
-        ) -> Self {
-            self.matching_event_types = input;
-            self
+        pub fn set_matching_event_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventType>>) -> Self {
+            self.matching_event_types = input; self
         }
         /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
-        pub fn kinesis_firehose_destination(
-            mut self,
-            input: crate::model::KinesisFirehoseDestination,
-        ) -> Self {
+        pub fn kinesis_firehose_destination(mut self, input: crate::model::KinesisFirehoseDestination) -> Self {
             self.kinesis_firehose_destination = Some(input);
             self
         }
         /// <p>An object that defines an Amazon Kinesis Data Firehose destination for email events. You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.</p>
-        pub fn set_kinesis_firehose_destination(
-            mut self,
-            input: std::option::Option<crate::model::KinesisFirehoseDestination>,
-        ) -> Self {
-            self.kinesis_firehose_destination = input;
-            self
+        pub fn set_kinesis_firehose_destination(mut self, input: std::option::Option<crate::model::KinesisFirehoseDestination>) -> Self {
+            self.kinesis_firehose_destination = input; self
         }
         /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.</p>
-        pub fn cloud_watch_destination(
-            mut self,
-            input: crate::model::CloudWatchDestination,
-        ) -> Self {
+        pub fn cloud_watch_destination(mut self, input: crate::model::CloudWatchDestination) -> Self {
             self.cloud_watch_destination = Some(input);
             self
         }
         /// <p>An object that defines an Amazon CloudWatch destination for email events. You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.</p>
-        pub fn set_cloud_watch_destination(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchDestination>,
-        ) -> Self {
-            self.cloud_watch_destination = input;
-            self
+        pub fn set_cloud_watch_destination(mut self, input: std::option::Option<crate::model::CloudWatchDestination>) -> Self {
+            self.cloud_watch_destination = input; self
         }
         /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
         pub fn sns_destination(mut self, input: crate::model::SnsDestination) -> Self {
@@ -4317,12 +4105,8 @@ pub mod event_destination {
             self
         }
         /// <p>An object that defines an Amazon SNS destination for email events. You can use Amazon SNS to send notification when certain email events occur.</p>
-        pub fn set_sns_destination(
-            mut self,
-            input: std::option::Option<crate::model::SnsDestination>,
-        ) -> Self {
-            self.sns_destination = input;
-            self
+        pub fn set_sns_destination(mut self, input: std::option::Option<crate::model::SnsDestination>) -> Self {
+            self.sns_destination = input; self
         }
         /// <p>An object that defines a Amazon Pinpoint destination for email events. You can use Amazon Pinpoint events to create attributes in Amazon Pinpoint projects. You can use these attributes to create segments for your campaigns.</p>
         pub fn pinpoint_destination(mut self, input: crate::model::PinpointDestination) -> Self {
@@ -4330,26 +4114,32 @@ pub mod event_destination {
             self
         }
         /// <p>An object that defines a Amazon Pinpoint destination for email events. You can use Amazon Pinpoint events to create attributes in Amazon Pinpoint projects. You can use these attributes to create segments for your campaigns.</p>
-        pub fn set_pinpoint_destination(
-            mut self,
-            input: std::option::Option<crate::model::PinpointDestination>,
-        ) -> Self {
-            self.pinpoint_destination = input;
-            self
+        pub fn set_pinpoint_destination(mut self, input: std::option::Option<crate::model::PinpointDestination>) -> Self {
+            self.pinpoint_destination = input; self
         }
         /// Consumes the builder and constructs a [`EventDestination`](crate::model::EventDestination).
         pub fn build(self) -> crate::model::EventDestination {
             crate::model::EventDestination {
-                name: self.name,
-                enabled: self.enabled.unwrap_or_default(),
-                matching_event_types: self.matching_event_types,
-                kinesis_firehose_destination: self.kinesis_firehose_destination,
-                cloud_watch_destination: self.cloud_watch_destination,
-                sns_destination: self.sns_destination,
-                pinpoint_destination: self.pinpoint_destination,
+                name: self.name
+                ,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                matching_event_types: self.matching_event_types
+                ,
+                kinesis_firehose_destination: self.kinesis_firehose_destination
+                ,
+                cloud_watch_destination: self.cloud_watch_destination
+                ,
+                sns_destination: self.sns_destination
+                ,
+                pinpoint_destination: self.pinpoint_destination
+                ,
             }
         }
     }
+    
+    
 }
 impl EventDestination {
     /// Creates a new builder-style object to manufacture [`EventDestination`](crate::model::EventDestination).
@@ -4361,7 +4151,7 @@ impl EventDestination {
 /// <p>Used to enable or disable email sending for messages that use this configuration set in the current AWS Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendingOptions {
+pub struct SendingOptions  {
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
     #[doc(hidden)]
     pub sending_enabled: bool,
@@ -4374,7 +4164,7 @@ impl SendingOptions {
 }
 /// See [`SendingOptions`](crate::model::SendingOptions).
 pub mod sending_options {
-
+    
     /// A builder for [`SendingOptions`](crate::model::SendingOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4388,16 +4178,19 @@ pub mod sending_options {
         }
         /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
         pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.sending_enabled = input;
-            self
+            self.sending_enabled = input; self
         }
         /// Consumes the builder and constructs a [`SendingOptions`](crate::model::SendingOptions).
         pub fn build(self) -> crate::model::SendingOptions {
             crate::model::SendingOptions {
-                sending_enabled: self.sending_enabled.unwrap_or_default(),
+                sending_enabled: self.sending_enabled
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl SendingOptions {
     /// Creates a new builder-style object to manufacture [`SendingOptions`](crate::model::SendingOptions).
@@ -4409,7 +4202,7 @@ impl SendingOptions {
 /// <p>Enable or disable collection of reputation metrics for emails that you send using this configuration set in the current AWS Region. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReputationOptions {
+pub struct ReputationOptions  {
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
     #[doc(hidden)]
     pub reputation_metrics_enabled: bool,
@@ -4423,13 +4216,13 @@ impl ReputationOptions {
         self.reputation_metrics_enabled
     }
     /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh start. When your account is given a fresh start, your reputation metrics are calculated starting from the date of the fresh start.</p>
-    pub fn last_fresh_start(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_fresh_start(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_fresh_start.as_ref()
     }
 }
 /// See [`ReputationOptions`](crate::model::ReputationOptions).
 pub mod reputation_options {
-
+    
     /// A builder for [`ReputationOptions`](crate::model::ReputationOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4444,8 +4237,7 @@ pub mod reputation_options {
         }
         /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
         pub fn set_reputation_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.reputation_metrics_enabled = input;
-            self
+            self.reputation_metrics_enabled = input; self
         }
         /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh start. When your account is given a fresh start, your reputation metrics are calculated starting from the date of the fresh start.</p>
         pub fn last_fresh_start(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4453,21 +4245,22 @@ pub mod reputation_options {
             self
         }
         /// <p>The date and time (in Unix time) when the reputation metrics were last given a fresh start. When your account is given a fresh start, your reputation metrics are calculated starting from the date of the fresh start.</p>
-        pub fn set_last_fresh_start(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_fresh_start = input;
-            self
+        pub fn set_last_fresh_start(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_fresh_start = input; self
         }
         /// Consumes the builder and constructs a [`ReputationOptions`](crate::model::ReputationOptions).
         pub fn build(self) -> crate::model::ReputationOptions {
             crate::model::ReputationOptions {
-                reputation_metrics_enabled: self.reputation_metrics_enabled.unwrap_or_default(),
-                last_fresh_start: self.last_fresh_start,
+                reputation_metrics_enabled: self.reputation_metrics_enabled
+                    .unwrap_or_default()
+                ,
+                last_fresh_start: self.last_fresh_start
+                ,
             }
         }
     }
+    
+    
 }
 impl ReputationOptions {
     /// Creates a new builder-style object to manufacture [`ReputationOptions`](crate::model::ReputationOptions).
@@ -4479,7 +4272,7 @@ impl ReputationOptions {
 /// <p>Used to associate a configuration set with a dedicated IP pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeliveryOptions {
+pub struct DeliveryOptions  {
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
     #[doc(hidden)]
     pub tls_policy: std::option::Option<crate::model::TlsPolicy>,
@@ -4489,17 +4282,17 @@ pub struct DeliveryOptions {
 }
 impl DeliveryOptions {
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
-    pub fn tls_policy(&self) -> std::option::Option<&crate::model::TlsPolicy> {
+    pub fn tls_policy(&self) -> std::option::Option<& crate::model::TlsPolicy> {
         self.tls_policy.as_ref()
     }
     /// <p>The name of the dedicated IP pool that you want to associate with the configuration set.</p>
-    pub fn sending_pool_name(&self) -> std::option::Option<&str> {
+    pub fn sending_pool_name(&self) -> std::option::Option<& str> {
         self.sending_pool_name.as_deref()
     }
 }
 /// See [`DeliveryOptions`](crate::model::DeliveryOptions).
 pub mod delivery_options {
-
+    
     /// A builder for [`DeliveryOptions`](crate::model::DeliveryOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4513,12 +4306,8 @@ pub mod delivery_options {
             self
         }
         /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
-        pub fn set_tls_policy(
-            mut self,
-            input: std::option::Option<crate::model::TlsPolicy>,
-        ) -> Self {
-            self.tls_policy = input;
-            self
+        pub fn set_tls_policy(mut self, input: std::option::Option<crate::model::TlsPolicy>) -> Self {
+            self.tls_policy = input; self
         }
         /// <p>The name of the dedicated IP pool that you want to associate with the configuration set.</p>
         pub fn sending_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4526,21 +4315,21 @@ pub mod delivery_options {
             self
         }
         /// <p>The name of the dedicated IP pool that you want to associate with the configuration set.</p>
-        pub fn set_sending_pool_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sending_pool_name = input;
-            self
+        pub fn set_sending_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sending_pool_name = input; self
         }
         /// Consumes the builder and constructs a [`DeliveryOptions`](crate::model::DeliveryOptions).
         pub fn build(self) -> crate::model::DeliveryOptions {
             crate::model::DeliveryOptions {
-                tls_policy: self.tls_policy,
-                sending_pool_name: self.sending_pool_name,
+                tls_policy: self.tls_policy
+                ,
+                sending_pool_name: self.sending_pool_name
+                ,
             }
         }
     }
+    
+    
 }
 impl DeliveryOptions {
     /// Creates a new builder-style object to manufacture [`DeliveryOptions`](crate::model::DeliveryOptions).
@@ -4549,24 +4338,24 @@ impl DeliveryOptions {
     }
 }
 
-/// <p>An object that defines the tracking options for a configuration set. When you use Amazon Pinpoint to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them.</p>
+/// <p>An object that defines the tracking options for a configuration set. When you use Amazon Pinpoint to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them.</p> 
 /// <p>These images and links include references to a domain operated by AWS. You can optionally configure Amazon Pinpoint to use a domain that you operate for these images and links.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrackingOptions {
+pub struct TrackingOptions  {
     /// <p>The domain that you want to use for tracking open and click events.</p>
     #[doc(hidden)]
     pub custom_redirect_domain: std::option::Option<std::string::String>,
 }
 impl TrackingOptions {
     /// <p>The domain that you want to use for tracking open and click events.</p>
-    pub fn custom_redirect_domain(&self) -> std::option::Option<&str> {
+    pub fn custom_redirect_domain(&self) -> std::option::Option<& str> {
         self.custom_redirect_domain.as_deref()
     }
 }
 /// See [`TrackingOptions`](crate::model::TrackingOptions).
 pub mod tracking_options {
-
+    
     /// A builder for [`TrackingOptions`](crate::model::TrackingOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4579,20 +4368,19 @@ pub mod tracking_options {
             self
         }
         /// <p>The domain that you want to use for tracking open and click events.</p>
-        pub fn set_custom_redirect_domain(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_redirect_domain = input;
-            self
+        pub fn set_custom_redirect_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_redirect_domain = input; self
         }
         /// Consumes the builder and constructs a [`TrackingOptions`](crate::model::TrackingOptions).
         pub fn build(self) -> crate::model::TrackingOptions {
             crate::model::TrackingOptions {
-                custom_redirect_domain: self.custom_redirect_domain,
+                custom_redirect_domain: self.custom_redirect_domain
+                ,
             }
         }
     }
+    
+    
 }
 impl TrackingOptions {
     /// Creates a new builder-style object to manufacture [`TrackingOptions`](crate::model::TrackingOptions).
@@ -4604,7 +4392,7 @@ impl TrackingOptions {
 /// <p>An object that contains information about a blacklisting event that impacts one of the dedicated IP addresses that is associated with your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BlacklistEntry {
+pub struct BlacklistEntry  {
     /// <p>The name of the blacklist that the IP address appears on.</p>
     #[doc(hidden)]
     pub rbl_name: std::option::Option<std::string::String>,
@@ -4617,21 +4405,21 @@ pub struct BlacklistEntry {
 }
 impl BlacklistEntry {
     /// <p>The name of the blacklist that the IP address appears on.</p>
-    pub fn rbl_name(&self) -> std::option::Option<&str> {
+    pub fn rbl_name(&self) -> std::option::Option<& str> {
         self.rbl_name.as_deref()
     }
     /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
-    pub fn listing_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn listing_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.listing_time.as_ref()
     }
     /// <p>Additional information about the blacklisting event, as provided by the blacklist maintainer.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`BlacklistEntry`](crate::model::BlacklistEntry).
 pub mod blacklist_entry {
-
+    
     /// A builder for [`BlacklistEntry`](crate::model::BlacklistEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4647,8 +4435,7 @@ pub mod blacklist_entry {
         }
         /// <p>The name of the blacklist that the IP address appears on.</p>
         pub fn set_rbl_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rbl_name = input;
-            self
+            self.rbl_name = input; self
         }
         /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
         pub fn listing_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4656,12 +4443,8 @@ pub mod blacklist_entry {
             self
         }
         /// <p>The time when the blacklisting event occurred, shown in Unix time format.</p>
-        pub fn set_listing_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.listing_time = input;
-            self
+        pub fn set_listing_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.listing_time = input; self
         }
         /// <p>Additional information about the blacklisting event, as provided by the blacklist maintainer.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4670,18 +4453,22 @@ pub mod blacklist_entry {
         }
         /// <p>Additional information about the blacklisting event, as provided by the blacklist maintainer.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`BlacklistEntry`](crate::model::BlacklistEntry).
         pub fn build(self) -> crate::model::BlacklistEntry {
             crate::model::BlacklistEntry {
-                rbl_name: self.rbl_name,
-                listing_time: self.listing_time,
-                description: self.description,
+                rbl_name: self.rbl_name
+                ,
+                listing_time: self.listing_time
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl BlacklistEntry {
     /// Creates a new builder-style object to manufacture [`BlacklistEntry`](crate::model::BlacklistEntry).
@@ -4693,7 +4480,7 @@ impl BlacklistEntry {
 /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon Pinpoint account in the current AWS Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendQuota {
+pub struct SendQuota  {
     /// <p>The maximum number of emails that you can send in the current AWS Region over a 24-hour period. This value is also called your <i>sending quota</i>.</p>
     #[doc(hidden)]
     pub max24_hour_send: f64,
@@ -4720,7 +4507,7 @@ impl SendQuota {
 }
 /// See [`SendQuota`](crate::model::SendQuota).
 pub mod send_quota {
-
+    
     /// A builder for [`SendQuota`](crate::model::SendQuota).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4736,8 +4523,7 @@ pub mod send_quota {
         }
         /// <p>The maximum number of emails that you can send in the current AWS Region over a 24-hour period. This value is also called your <i>sending quota</i>.</p>
         pub fn set_max24_hour_send(mut self, input: std::option::Option<f64>) -> Self {
-            self.max24_hour_send = input;
-            self
+            self.max24_hour_send = input; self
         }
         /// <p>The maximum number of emails that you can send per second in the current AWS Region. This value is also called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.</p>
         pub fn max_send_rate(mut self, input: f64) -> Self {
@@ -4746,8 +4532,7 @@ pub mod send_quota {
         }
         /// <p>The maximum number of emails that you can send per second in the current AWS Region. This value is also called your <i>maximum sending rate</i> or your <i>maximum TPS (transactions per second) rate</i>.</p>
         pub fn set_max_send_rate(mut self, input: std::option::Option<f64>) -> Self {
-            self.max_send_rate = input;
-            self
+            self.max_send_rate = input; self
         }
         /// <p>The number of emails sent from your Amazon Pinpoint account in the current AWS Region over the past 24 hours.</p>
         pub fn sent_last24_hours(mut self, input: f64) -> Self {
@@ -4756,18 +4541,25 @@ pub mod send_quota {
         }
         /// <p>The number of emails sent from your Amazon Pinpoint account in the current AWS Region over the past 24 hours.</p>
         pub fn set_sent_last24_hours(mut self, input: std::option::Option<f64>) -> Self {
-            self.sent_last24_hours = input;
-            self
+            self.sent_last24_hours = input; self
         }
         /// Consumes the builder and constructs a [`SendQuota`](crate::model::SendQuota).
         pub fn build(self) -> crate::model::SendQuota {
             crate::model::SendQuota {
-                max24_hour_send: self.max24_hour_send.unwrap_or_default(),
-                max_send_rate: self.max_send_rate.unwrap_or_default(),
-                sent_last24_hours: self.sent_last24_hours.unwrap_or_default(),
+                max24_hour_send: self.max24_hour_send
+                    .unwrap_or_default()
+                ,
+                max_send_rate: self.max_send_rate
+                    .unwrap_or_default()
+                ,
+                sent_last24_hours: self.sent_last24_hours
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl SendQuota {
     /// Creates a new builder-style object to manufacture [`SendQuota`](crate::model::SendQuota).
@@ -4775,3 +4567,4 @@ impl SendQuota {
         crate::model::send_quota::Builder::default()
     }
 }
+

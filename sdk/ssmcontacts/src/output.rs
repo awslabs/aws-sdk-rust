@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateContactChannelOutput {}
+pub struct UpdateContactChannelOutput  {
+}
 /// See [`UpdateContactChannelOutput`](crate::output::UpdateContactChannelOutput).
 pub mod update_contact_channel_output {
-
+    
     /// A builder for [`UpdateContactChannelOutput`](crate::output::UpdateContactChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateContactChannelOutput`](crate::output::UpdateContactChannelOutput).
         pub fn build(self) -> crate::output::UpdateContactChannelOutput {
-            crate::output::UpdateContactChannelOutput {}
+            crate::output::UpdateContactChannelOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateContactChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateContactChannelOutput`](crate::output::UpdateContactChannelOutput).
@@ -26,19 +31,24 @@ impl UpdateContactChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateContactOutput {}
+pub struct UpdateContactOutput  {
+}
 /// See [`UpdateContactOutput`](crate::output::UpdateContactOutput).
 pub mod update_contact_output {
-
+    
     /// A builder for [`UpdateContactOutput`](crate::output::UpdateContactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateContactOutput`](crate::output::UpdateContactOutput).
         pub fn build(self) -> crate::output::UpdateContactOutput {
-            crate::output::UpdateContactOutput {}
+            crate::output::UpdateContactOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateContactOutput {
     /// Creates a new builder-style object to manufacture [`UpdateContactOutput`](crate::output::UpdateContactOutput).
@@ -50,19 +60,24 @@ impl UpdateContactOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -74,19 +89,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -98,19 +118,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopEngagementOutput {}
+pub struct StopEngagementOutput  {
+}
 /// See [`StopEngagementOutput`](crate::output::StopEngagementOutput).
 pub mod stop_engagement_output {
-
+    
     /// A builder for [`StopEngagementOutput`](crate::output::StopEngagementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopEngagementOutput`](crate::output::StopEngagementOutput).
         pub fn build(self) -> crate::output::StopEngagementOutput {
-            crate::output::StopEngagementOutput {}
+            crate::output::StopEngagementOutput {
+            }
         }
     }
+    
+    
 }
 impl StopEngagementOutput {
     /// Creates a new builder-style object to manufacture [`StopEngagementOutput`](crate::output::StopEngagementOutput).
@@ -122,20 +147,20 @@ impl StopEngagementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartEngagementOutput {
+pub struct StartEngagementOutput  {
     /// <p>The ARN of the engagement.</p>
     #[doc(hidden)]
     pub engagement_arn: std::option::Option<std::string::String>,
 }
 impl StartEngagementOutput {
     /// <p>The ARN of the engagement.</p>
-    pub fn engagement_arn(&self) -> std::option::Option<&str> {
+    pub fn engagement_arn(&self) -> std::option::Option<& str> {
         self.engagement_arn.as_deref()
     }
 }
 /// See [`StartEngagementOutput`](crate::output::StartEngagementOutput).
 pub mod start_engagement_output {
-
+    
     /// A builder for [`StartEngagementOutput`](crate::output::StartEngagementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -148,20 +173,19 @@ pub mod start_engagement_output {
             self
         }
         /// <p>The ARN of the engagement.</p>
-        pub fn set_engagement_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.engagement_arn = input;
-            self
+        pub fn set_engagement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engagement_arn = input; self
         }
         /// Consumes the builder and constructs a [`StartEngagementOutput`](crate::output::StartEngagementOutput).
         pub fn build(self) -> crate::output::StartEngagementOutput {
             crate::output::StartEngagementOutput {
-                engagement_arn: self.engagement_arn,
+                engagement_arn: self.engagement_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl StartEngagementOutput {
     /// Creates a new builder-style object to manufacture [`StartEngagementOutput`](crate::output::StartEngagementOutput).
@@ -173,19 +197,24 @@ impl StartEngagementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendActivationCodeOutput {}
+pub struct SendActivationCodeOutput  {
+}
 /// See [`SendActivationCodeOutput`](crate::output::SendActivationCodeOutput).
 pub mod send_activation_code_output {
-
+    
     /// A builder for [`SendActivationCodeOutput`](crate::output::SendActivationCodeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SendActivationCodeOutput`](crate::output::SendActivationCodeOutput).
         pub fn build(self) -> crate::output::SendActivationCodeOutput {
-            crate::output::SendActivationCodeOutput {}
+            crate::output::SendActivationCodeOutput {
+            }
         }
     }
+    
+    
 }
 impl SendActivationCodeOutput {
     /// Creates a new builder-style object to manufacture [`SendActivationCodeOutput`](crate::output::SendActivationCodeOutput).
@@ -197,19 +226,24 @@ impl SendActivationCodeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutContactPolicyOutput {}
+pub struct PutContactPolicyOutput  {
+}
 /// See [`PutContactPolicyOutput`](crate::output::PutContactPolicyOutput).
 pub mod put_contact_policy_output {
-
+    
     /// A builder for [`PutContactPolicyOutput`](crate::output::PutContactPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutContactPolicyOutput`](crate::output::PutContactPolicyOutput).
         pub fn build(self) -> crate::output::PutContactPolicyOutput {
-            crate::output::PutContactPolicyOutput {}
+            crate::output::PutContactPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl PutContactPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutContactPolicyOutput`](crate::output::PutContactPolicyOutput).
@@ -221,20 +255,20 @@ impl PutContactPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags related to the contact or escalation plan.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags related to the contact or escalation plan.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -248,23 +282,24 @@ pub mod list_tags_for_resource_output {
         /// <p>The tags related to the contact or escalation plan.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags related to the contact or escalation plan.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -276,7 +311,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPagesByEngagementOutput {
+pub struct ListPagesByEngagementOutput  {
     /// <p>The pagination token to continue to the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -286,17 +321,17 @@ pub struct ListPagesByEngagementOutput {
 }
 impl ListPagesByEngagementOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of engagements to contact channels.</p>
-    pub fn pages(&self) -> std::option::Option<&[crate::model::Page]> {
+    pub fn pages(&self) -> std::option::Option<& [crate::model::Page]> {
         self.pages.as_deref()
     }
 }
 /// See [`ListPagesByEngagementOutput`](crate::output::ListPagesByEngagementOutput).
 pub mod list_pages_by_engagement_output {
-
+    
     /// A builder for [`ListPagesByEngagementOutput`](crate::output::ListPagesByEngagementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -311,8 +346,7 @@ pub mod list_pages_by_engagement_output {
         }
         /// <p>The pagination token to continue to the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `pages`.
         ///
@@ -321,26 +355,26 @@ pub mod list_pages_by_engagement_output {
         /// <p>The list of engagements to contact channels.</p>
         pub fn pages(mut self, input: crate::model::Page) -> Self {
             let mut v = self.pages.unwrap_or_default();
-            v.push(input);
-            self.pages = Some(v);
-            self
+                            v.push(input);
+                            self.pages = Some(v);
+                            self
         }
         /// <p>The list of engagements to contact channels.</p>
-        pub fn set_pages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Page>>,
-        ) -> Self {
-            self.pages = input;
-            self
+        pub fn set_pages(mut self, input: std::option::Option<std::vec::Vec<crate::model::Page>>) -> Self {
+            self.pages = input; self
         }
         /// Consumes the builder and constructs a [`ListPagesByEngagementOutput`](crate::output::ListPagesByEngagementOutput).
         pub fn build(self) -> crate::output::ListPagesByEngagementOutput {
             crate::output::ListPagesByEngagementOutput {
-                next_token: self.next_token,
-                pages: self.pages,
+                next_token: self.next_token
+                ,
+                pages: self.pages
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPagesByEngagementOutput {
     /// Creates a new builder-style object to manufacture [`ListPagesByEngagementOutput`](crate::output::ListPagesByEngagementOutput).
@@ -352,7 +386,7 @@ impl ListPagesByEngagementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPagesByContactOutput {
+pub struct ListPagesByContactOutput  {
     /// <p>The pagination token to continue to the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -362,17 +396,17 @@ pub struct ListPagesByContactOutput {
 }
 impl ListPagesByContactOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of engagements to a contact's contact channel.</p>
-    pub fn pages(&self) -> std::option::Option<&[crate::model::Page]> {
+    pub fn pages(&self) -> std::option::Option<& [crate::model::Page]> {
         self.pages.as_deref()
     }
 }
 /// See [`ListPagesByContactOutput`](crate::output::ListPagesByContactOutput).
 pub mod list_pages_by_contact_output {
-
+    
     /// A builder for [`ListPagesByContactOutput`](crate::output::ListPagesByContactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -387,8 +421,7 @@ pub mod list_pages_by_contact_output {
         }
         /// <p>The pagination token to continue to the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `pages`.
         ///
@@ -397,26 +430,26 @@ pub mod list_pages_by_contact_output {
         /// <p>The list of engagements to a contact's contact channel.</p>
         pub fn pages(mut self, input: crate::model::Page) -> Self {
             let mut v = self.pages.unwrap_or_default();
-            v.push(input);
-            self.pages = Some(v);
-            self
+                            v.push(input);
+                            self.pages = Some(v);
+                            self
         }
         /// <p>The list of engagements to a contact's contact channel.</p>
-        pub fn set_pages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Page>>,
-        ) -> Self {
-            self.pages = input;
-            self
+        pub fn set_pages(mut self, input: std::option::Option<std::vec::Vec<crate::model::Page>>) -> Self {
+            self.pages = input; self
         }
         /// Consumes the builder and constructs a [`ListPagesByContactOutput`](crate::output::ListPagesByContactOutput).
         pub fn build(self) -> crate::output::ListPagesByContactOutput {
             crate::output::ListPagesByContactOutput {
-                next_token: self.next_token,
-                pages: self.pages,
+                next_token: self.next_token
+                ,
+                pages: self.pages
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPagesByContactOutput {
     /// Creates a new builder-style object to manufacture [`ListPagesByContactOutput`](crate::output::ListPagesByContactOutput).
@@ -428,7 +461,7 @@ impl ListPagesByContactOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPageReceiptsOutput {
+pub struct ListPageReceiptsOutput  {
     /// <p>The pagination token to continue to the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -438,17 +471,17 @@ pub struct ListPageReceiptsOutput {
 }
 impl ListPageReceiptsOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of each acknowledgement.</p>
-    pub fn receipts(&self) -> std::option::Option<&[crate::model::Receipt]> {
+    pub fn receipts(&self) -> std::option::Option<& [crate::model::Receipt]> {
         self.receipts.as_deref()
     }
 }
 /// See [`ListPageReceiptsOutput`](crate::output::ListPageReceiptsOutput).
 pub mod list_page_receipts_output {
-
+    
     /// A builder for [`ListPageReceiptsOutput`](crate::output::ListPageReceiptsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -463,8 +496,7 @@ pub mod list_page_receipts_output {
         }
         /// <p>The pagination token to continue to the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `receipts`.
         ///
@@ -473,26 +505,26 @@ pub mod list_page_receipts_output {
         /// <p>A list of each acknowledgement.</p>
         pub fn receipts(mut self, input: crate::model::Receipt) -> Self {
             let mut v = self.receipts.unwrap_or_default();
-            v.push(input);
-            self.receipts = Some(v);
-            self
+                            v.push(input);
+                            self.receipts = Some(v);
+                            self
         }
         /// <p>A list of each acknowledgement.</p>
-        pub fn set_receipts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Receipt>>,
-        ) -> Self {
-            self.receipts = input;
-            self
+        pub fn set_receipts(mut self, input: std::option::Option<std::vec::Vec<crate::model::Receipt>>) -> Self {
+            self.receipts = input; self
         }
         /// Consumes the builder and constructs a [`ListPageReceiptsOutput`](crate::output::ListPageReceiptsOutput).
         pub fn build(self) -> crate::output::ListPageReceiptsOutput {
             crate::output::ListPageReceiptsOutput {
-                next_token: self.next_token,
-                receipts: self.receipts,
+                next_token: self.next_token
+                ,
+                receipts: self.receipts
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPageReceiptsOutput {
     /// Creates a new builder-style object to manufacture [`ListPageReceiptsOutput`](crate::output::ListPageReceiptsOutput).
@@ -504,7 +536,7 @@ impl ListPageReceiptsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEngagementsOutput {
+pub struct ListEngagementsOutput  {
     /// <p>The pagination token to continue to the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -514,17 +546,17 @@ pub struct ListEngagementsOutput {
 }
 impl ListEngagementsOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of each engagement that occurred during the specified time range of an incident.</p>
-    pub fn engagements(&self) -> std::option::Option<&[crate::model::Engagement]> {
+    pub fn engagements(&self) -> std::option::Option<& [crate::model::Engagement]> {
         self.engagements.as_deref()
     }
 }
 /// See [`ListEngagementsOutput`](crate::output::ListEngagementsOutput).
 pub mod list_engagements_output {
-
+    
     /// A builder for [`ListEngagementsOutput`](crate::output::ListEngagementsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -539,8 +571,7 @@ pub mod list_engagements_output {
         }
         /// <p>The pagination token to continue to the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `engagements`.
         ///
@@ -549,26 +580,26 @@ pub mod list_engagements_output {
         /// <p>A list of each engagement that occurred during the specified time range of an incident.</p>
         pub fn engagements(mut self, input: crate::model::Engagement) -> Self {
             let mut v = self.engagements.unwrap_or_default();
-            v.push(input);
-            self.engagements = Some(v);
-            self
+                            v.push(input);
+                            self.engagements = Some(v);
+                            self
         }
         /// <p>A list of each engagement that occurred during the specified time range of an incident.</p>
-        pub fn set_engagements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Engagement>>,
-        ) -> Self {
-            self.engagements = input;
-            self
+        pub fn set_engagements(mut self, input: std::option::Option<std::vec::Vec<crate::model::Engagement>>) -> Self {
+            self.engagements = input; self
         }
         /// Consumes the builder and constructs a [`ListEngagementsOutput`](crate::output::ListEngagementsOutput).
         pub fn build(self) -> crate::output::ListEngagementsOutput {
             crate::output::ListEngagementsOutput {
-                next_token: self.next_token,
-                engagements: self.engagements,
+                next_token: self.next_token
+                ,
+                engagements: self.engagements
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEngagementsOutput {
     /// Creates a new builder-style object to manufacture [`ListEngagementsOutput`](crate::output::ListEngagementsOutput).
@@ -580,7 +611,7 @@ impl ListEngagementsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContactsOutput {
+pub struct ListContactsOutput  {
     /// <p>The pagination token to continue to the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -590,17 +621,17 @@ pub struct ListContactsOutput {
 }
 impl ListContactsOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of the contacts and escalation plans in your Incident Manager account.</p>
-    pub fn contacts(&self) -> std::option::Option<&[crate::model::Contact]> {
+    pub fn contacts(&self) -> std::option::Option<& [crate::model::Contact]> {
         self.contacts.as_deref()
     }
 }
 /// See [`ListContactsOutput`](crate::output::ListContactsOutput).
 pub mod list_contacts_output {
-
+    
     /// A builder for [`ListContactsOutput`](crate::output::ListContactsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -615,8 +646,7 @@ pub mod list_contacts_output {
         }
         /// <p>The pagination token to continue to the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `contacts`.
         ///
@@ -625,26 +655,26 @@ pub mod list_contacts_output {
         /// <p>A list of the contacts and escalation plans in your Incident Manager account.</p>
         pub fn contacts(mut self, input: crate::model::Contact) -> Self {
             let mut v = self.contacts.unwrap_or_default();
-            v.push(input);
-            self.contacts = Some(v);
-            self
+                            v.push(input);
+                            self.contacts = Some(v);
+                            self
         }
         /// <p>A list of the contacts and escalation plans in your Incident Manager account.</p>
-        pub fn set_contacts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Contact>>,
-        ) -> Self {
-            self.contacts = input;
-            self
+        pub fn set_contacts(mut self, input: std::option::Option<std::vec::Vec<crate::model::Contact>>) -> Self {
+            self.contacts = input; self
         }
         /// Consumes the builder and constructs a [`ListContactsOutput`](crate::output::ListContactsOutput).
         pub fn build(self) -> crate::output::ListContactsOutput {
             crate::output::ListContactsOutput {
-                next_token: self.next_token,
-                contacts: self.contacts,
+                next_token: self.next_token
+                ,
+                contacts: self.contacts
+                ,
             }
         }
     }
+    
+    
 }
 impl ListContactsOutput {
     /// Creates a new builder-style object to manufacture [`ListContactsOutput`](crate::output::ListContactsOutput).
@@ -656,7 +686,7 @@ impl ListContactsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContactChannelsOutput {
+pub struct ListContactChannelsOutput  {
     /// <p>The pagination token to continue to the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -666,23 +696,22 @@ pub struct ListContactChannelsOutput {
 }
 impl ListContactChannelsOutput {
     /// <p>The pagination token to continue to the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of contact channels related to the specified contact.</p>
-    pub fn contact_channels(&self) -> std::option::Option<&[crate::model::ContactChannel]> {
+    pub fn contact_channels(&self) -> std::option::Option<& [crate::model::ContactChannel]> {
         self.contact_channels.as_deref()
     }
 }
 /// See [`ListContactChannelsOutput`](crate::output::ListContactChannelsOutput).
 pub mod list_contact_channels_output {
-
+    
     /// A builder for [`ListContactChannelsOutput`](crate::output::ListContactChannelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) contact_channels:
-            std::option::Option<std::vec::Vec<crate::model::ContactChannel>>,
+        pub(crate) contact_channels: std::option::Option<std::vec::Vec<crate::model::ContactChannel>>,
     }
     impl Builder {
         /// <p>The pagination token to continue to the next page of results.</p>
@@ -692,8 +721,7 @@ pub mod list_contact_channels_output {
         }
         /// <p>The pagination token to continue to the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `contact_channels`.
         ///
@@ -702,26 +730,26 @@ pub mod list_contact_channels_output {
         /// <p>A list of contact channels related to the specified contact.</p>
         pub fn contact_channels(mut self, input: crate::model::ContactChannel) -> Self {
             let mut v = self.contact_channels.unwrap_or_default();
-            v.push(input);
-            self.contact_channels = Some(v);
-            self
+                            v.push(input);
+                            self.contact_channels = Some(v);
+                            self
         }
         /// <p>A list of contact channels related to the specified contact.</p>
-        pub fn set_contact_channels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ContactChannel>>,
-        ) -> Self {
-            self.contact_channels = input;
-            self
+        pub fn set_contact_channels(mut self, input: std::option::Option<std::vec::Vec<crate::model::ContactChannel>>) -> Self {
+            self.contact_channels = input; self
         }
         /// Consumes the builder and constructs a [`ListContactChannelsOutput`](crate::output::ListContactChannelsOutput).
         pub fn build(self) -> crate::output::ListContactChannelsOutput {
             crate::output::ListContactChannelsOutput {
-                next_token: self.next_token,
-                contact_channels: self.contact_channels,
+                next_token: self.next_token
+                ,
+                contact_channels: self.contact_channels
+                ,
             }
         }
     }
+    
+    
 }
 impl ListContactChannelsOutput {
     /// Creates a new builder-style object to manufacture [`ListContactChannelsOutput`](crate::output::ListContactChannelsOutput).
@@ -733,7 +761,7 @@ impl ListContactChannelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContactPolicyOutput {
+pub struct GetContactPolicyOutput  {
     /// <p>The ARN of the contact or escalation plan.</p>
     #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
@@ -743,17 +771,17 @@ pub struct GetContactPolicyOutput {
 }
 impl GetContactPolicyOutput {
     /// <p>The ARN of the contact or escalation plan.</p>
-    pub fn contact_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_arn(&self) -> std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
     /// <p>Details about the resource policy attached to the contact or escalation plan.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`GetContactPolicyOutput`](crate::output::GetContactPolicyOutput).
 pub mod get_contact_policy_output {
-
+    
     /// A builder for [`GetContactPolicyOutput`](crate::output::GetContactPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -768,8 +796,7 @@ pub mod get_contact_policy_output {
         }
         /// <p>The ARN of the contact or escalation plan.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.contact_arn = input;
-            self
+            self.contact_arn = input; self
         }
         /// <p>Details about the resource policy attached to the contact or escalation plan.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -778,17 +805,20 @@ pub mod get_contact_policy_output {
         }
         /// <p>Details about the resource policy attached to the contact or escalation plan.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`GetContactPolicyOutput`](crate::output::GetContactPolicyOutput).
         pub fn build(self) -> crate::output::GetContactPolicyOutput {
             crate::output::GetContactPolicyOutput {
-                contact_arn: self.contact_arn,
-                policy: self.policy,
+                contact_arn: self.contact_arn
+                ,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetContactPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetContactPolicyOutput`](crate::output::GetContactPolicyOutput).
@@ -800,7 +830,7 @@ impl GetContactPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContactChannelOutput {
+pub struct GetContactChannelOutput  {
     /// <p>The ARN of the contact that the channel belongs to.</p>
     #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
@@ -822,33 +852,33 @@ pub struct GetContactChannelOutput {
 }
 impl GetContactChannelOutput {
     /// <p>The ARN of the contact that the channel belongs to.</p>
-    pub fn contact_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_arn(&self) -> std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
     /// <p>The ARN of the contact channel.</p>
-    pub fn contact_channel_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_channel_arn(&self) -> std::option::Option<& str> {
         self.contact_channel_arn.as_deref()
     }
     /// <p>The name of the contact channel</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or <code>EMAIL</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ChannelType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ChannelType> {
         self.r#type.as_ref()
     }
     /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
-    pub fn delivery_address(&self) -> std::option::Option<&crate::model::ContactChannelAddress> {
+    pub fn delivery_address(&self) -> std::option::Option<& crate::model::ContactChannelAddress> {
         self.delivery_address.as_ref()
     }
     /// <p>A Boolean value indicating if the contact channel has been activated or not.</p>
-    pub fn activation_status(&self) -> std::option::Option<&crate::model::ActivationStatus> {
+    pub fn activation_status(&self) -> std::option::Option<& crate::model::ActivationStatus> {
         self.activation_status.as_ref()
     }
 }
 /// See [`GetContactChannelOutput`](crate::output::GetContactChannelOutput).
 pub mod get_contact_channel_output {
-
+    
     /// A builder for [`GetContactChannelOutput`](crate::output::GetContactChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -867,8 +897,7 @@ pub mod get_contact_channel_output {
         }
         /// <p>The ARN of the contact that the channel belongs to.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.contact_arn = input;
-            self
+            self.contact_arn = input; self
         }
         /// <p>The ARN of the contact channel.</p>
         pub fn contact_channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -876,12 +905,8 @@ pub mod get_contact_channel_output {
             self
         }
         /// <p>The ARN of the contact channel.</p>
-        pub fn set_contact_channel_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.contact_channel_arn = input;
-            self
+        pub fn set_contact_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.contact_channel_arn = input; self
         }
         /// <p>The name of the contact channel</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -890,8 +915,7 @@ pub mod get_contact_channel_output {
         }
         /// <p>The name of the contact channel</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or <code>EMAIL</code>.</p>
         pub fn r#type(mut self, input: crate::model::ChannelType) -> Self {
@@ -900,8 +924,7 @@ pub mod get_contact_channel_output {
         }
         /// <p>The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or <code>EMAIL</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
         pub fn delivery_address(mut self, input: crate::model::ContactChannelAddress) -> Self {
@@ -909,12 +932,8 @@ pub mod get_contact_channel_output {
             self
         }
         /// <p>The details that Incident Manager uses when trying to engage the contact channel. </p>
-        pub fn set_delivery_address(
-            mut self,
-            input: std::option::Option<crate::model::ContactChannelAddress>,
-        ) -> Self {
-            self.delivery_address = input;
-            self
+        pub fn set_delivery_address(mut self, input: std::option::Option<crate::model::ContactChannelAddress>) -> Self {
+            self.delivery_address = input; self
         }
         /// <p>A Boolean value indicating if the contact channel has been activated or not.</p>
         pub fn activation_status(mut self, input: crate::model::ActivationStatus) -> Self {
@@ -922,25 +941,29 @@ pub mod get_contact_channel_output {
             self
         }
         /// <p>A Boolean value indicating if the contact channel has been activated or not.</p>
-        pub fn set_activation_status(
-            mut self,
-            input: std::option::Option<crate::model::ActivationStatus>,
-        ) -> Self {
-            self.activation_status = input;
-            self
+        pub fn set_activation_status(mut self, input: std::option::Option<crate::model::ActivationStatus>) -> Self {
+            self.activation_status = input; self
         }
         /// Consumes the builder and constructs a [`GetContactChannelOutput`](crate::output::GetContactChannelOutput).
         pub fn build(self) -> crate::output::GetContactChannelOutput {
             crate::output::GetContactChannelOutput {
-                contact_arn: self.contact_arn,
-                contact_channel_arn: self.contact_channel_arn,
-                name: self.name,
-                r#type: self.r#type,
-                delivery_address: self.delivery_address,
-                activation_status: self.activation_status,
+                contact_arn: self.contact_arn
+                ,
+                contact_channel_arn: self.contact_channel_arn
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                delivery_address: self.delivery_address
+                ,
+                activation_status: self.activation_status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetContactChannelOutput {
     /// Creates a new builder-style object to manufacture [`GetContactChannelOutput`](crate::output::GetContactChannelOutput).
@@ -952,7 +975,7 @@ impl GetContactChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContactOutput {
+pub struct GetContactOutput  {
     /// <p>The ARN of the contact or escalation plan.</p>
     #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
@@ -971,29 +994,29 @@ pub struct GetContactOutput {
 }
 impl GetContactOutput {
     /// <p>The ARN of the contact or escalation plan.</p>
-    pub fn contact_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_arn(&self) -> std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
     /// <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>The full name of the contact or escalation plan.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ContactType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ContactType> {
         self.r#type.as_ref()
     }
     /// <p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>
-    pub fn plan(&self) -> std::option::Option<&crate::model::Plan> {
+    pub fn plan(&self) -> std::option::Option<& crate::model::Plan> {
         self.plan.as_ref()
     }
 }
 /// See [`GetContactOutput`](crate::output::GetContactOutput).
 pub mod get_contact_output {
-
+    
     /// A builder for [`GetContactOutput`](crate::output::GetContactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1011,8 +1034,7 @@ pub mod get_contact_output {
         }
         /// <p>The ARN of the contact or escalation plan.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.contact_arn = input;
-            self
+            self.contact_arn = input; self
         }
         /// <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1021,8 +1043,7 @@ pub mod get_contact_output {
         }
         /// <p>The alias of the contact or escalation plan. The alias is unique and identifiable.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// <p>The full name of the contact or escalation plan.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1031,8 +1052,7 @@ pub mod get_contact_output {
         }
         /// <p>The full name of the contact or escalation plan.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>. </p>
         pub fn r#type(mut self, input: crate::model::ContactType) -> Self {
@@ -1041,8 +1061,7 @@ pub mod get_contact_output {
         }
         /// <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ContactType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>
         pub fn plan(mut self, input: crate::model::Plan) -> Self {
@@ -1051,20 +1070,26 @@ pub mod get_contact_output {
         }
         /// <p>Details about the specific timing or stages and targets of the escalation plan or engagement plan.</p>
         pub fn set_plan(mut self, input: std::option::Option<crate::model::Plan>) -> Self {
-            self.plan = input;
-            self
+            self.plan = input; self
         }
         /// Consumes the builder and constructs a [`GetContactOutput`](crate::output::GetContactOutput).
         pub fn build(self) -> crate::output::GetContactOutput {
             crate::output::GetContactOutput {
-                contact_arn: self.contact_arn,
-                alias: self.alias,
-                display_name: self.display_name,
-                r#type: self.r#type,
-                plan: self.plan,
+                contact_arn: self.contact_arn
+                ,
+                alias: self.alias
+                ,
+                display_name: self.display_name
+                ,
+                r#type: self.r#type
+                ,
+                plan: self.plan
+                ,
             }
         }
     }
+    
+    
 }
 impl GetContactOutput {
     /// Creates a new builder-style object to manufacture [`GetContactOutput`](crate::output::GetContactOutput).
@@ -1076,7 +1101,7 @@ impl GetContactOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePageOutput {
+pub struct DescribePageOutput  {
     /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
     #[doc(hidden)]
     pub page_arn: std::option::Option<std::string::String>,
@@ -1116,57 +1141,57 @@ pub struct DescribePageOutput {
 }
 impl DescribePageOutput {
     /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
-    pub fn page_arn(&self) -> std::option::Option<&str> {
+    pub fn page_arn(&self) -> std::option::Option<& str> {
         self.page_arn.as_deref()
     }
     /// <p>The ARN of the engagement that engaged the contact channel.</p>
-    pub fn engagement_arn(&self) -> std::option::Option<&str> {
+    pub fn engagement_arn(&self) -> std::option::Option<& str> {
         self.engagement_arn.as_deref()
     }
     /// <p>The ARN of the contact that was engaged.</p>
-    pub fn contact_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_arn(&self) -> std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
     /// <p>The user that started the engagement.</p>
-    pub fn sender(&self) -> std::option::Option<&str> {
+    pub fn sender(&self) -> std::option::Option<& str> {
         self.sender.as_deref()
     }
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    pub fn subject(&self) -> std::option::Option<&str> {
+    pub fn subject(&self) -> std::option::Option<& str> {
         self.subject.as_deref()
     }
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn public_subject(&self) -> std::option::Option<&str> {
+    pub fn public_subject(&self) -> std::option::Option<& str> {
         self.public_subject.as_deref()
     }
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn public_content(&self) -> std::option::Option<&str> {
+    pub fn public_content(&self) -> std::option::Option<& str> {
         self.public_content.as_deref()
     }
     /// <p>The ARN of the incident that engaged the contact channel.</p>
-    pub fn incident_id(&self) -> std::option::Option<&str> {
+    pub fn incident_id(&self) -> std::option::Option<& str> {
         self.incident_id.as_deref()
     }
     /// <p>The time the engagement was sent to the contact channel.</p>
-    pub fn sent_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn sent_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.sent_time.as_ref()
     }
     /// <p>The time that the contact channel acknowledged the engagement.</p>
-    pub fn read_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn read_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.read_time.as_ref()
     }
     /// <p>The time that the contact channel received the engagement.</p>
-    pub fn delivery_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn delivery_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.delivery_time.as_ref()
     }
 }
 /// See [`DescribePageOutput`](crate::output::DescribePageOutput).
 pub mod describe_page_output {
-
+    
     /// A builder for [`DescribePageOutput`](crate::output::DescribePageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1191,8 +1216,7 @@ pub mod describe_page_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
         pub fn set_page_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.page_arn = input;
-            self
+            self.page_arn = input; self
         }
         /// <p>The ARN of the engagement that engaged the contact channel.</p>
         pub fn engagement_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1200,12 +1224,8 @@ pub mod describe_page_output {
             self
         }
         /// <p>The ARN of the engagement that engaged the contact channel.</p>
-        pub fn set_engagement_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.engagement_arn = input;
-            self
+        pub fn set_engagement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engagement_arn = input; self
         }
         /// <p>The ARN of the contact that was engaged.</p>
         pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1214,8 +1234,7 @@ pub mod describe_page_output {
         }
         /// <p>The ARN of the contact that was engaged.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.contact_arn = input;
-            self
+            self.contact_arn = input; self
         }
         /// <p>The user that started the engagement.</p>
         pub fn sender(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1224,8 +1243,7 @@ pub mod describe_page_output {
         }
         /// <p>The user that started the engagement.</p>
         pub fn set_sender(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sender = input;
-            self
+            self.sender = input; self
         }
         /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
         pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1234,8 +1252,7 @@ pub mod describe_page_output {
         }
         /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subject = input;
-            self
+            self.subject = input; self
         }
         /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1244,8 +1261,7 @@ pub mod describe_page_output {
         }
         /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
         /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn public_subject(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1253,12 +1269,8 @@ pub mod describe_page_output {
             self
         }
         /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-        pub fn set_public_subject(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.public_subject = input;
-            self
+        pub fn set_public_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.public_subject = input; self
         }
         /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn public_content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1266,12 +1278,8 @@ pub mod describe_page_output {
             self
         }
         /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-        pub fn set_public_content(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.public_content = input;
-            self
+        pub fn set_public_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.public_content = input; self
         }
         /// <p>The ARN of the incident that engaged the contact channel.</p>
         pub fn incident_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1280,8 +1288,7 @@ pub mod describe_page_output {
         }
         /// <p>The ARN of the incident that engaged the contact channel.</p>
         pub fn set_incident_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.incident_id = input;
-            self
+            self.incident_id = input; self
         }
         /// <p>The time the engagement was sent to the contact channel.</p>
         pub fn sent_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1289,12 +1296,8 @@ pub mod describe_page_output {
             self
         }
         /// <p>The time the engagement was sent to the contact channel.</p>
-        pub fn set_sent_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.sent_time = input;
-            self
+        pub fn set_sent_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.sent_time = input; self
         }
         /// <p>The time that the contact channel acknowledged the engagement.</p>
         pub fn read_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1302,12 +1305,8 @@ pub mod describe_page_output {
             self
         }
         /// <p>The time that the contact channel acknowledged the engagement.</p>
-        pub fn set_read_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.read_time = input;
-            self
+        pub fn set_read_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.read_time = input; self
         }
         /// <p>The time that the contact channel received the engagement.</p>
         pub fn delivery_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1315,31 +1314,41 @@ pub mod describe_page_output {
             self
         }
         /// <p>The time that the contact channel received the engagement.</p>
-        pub fn set_delivery_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.delivery_time = input;
-            self
+        pub fn set_delivery_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.delivery_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribePageOutput`](crate::output::DescribePageOutput).
         pub fn build(self) -> crate::output::DescribePageOutput {
             crate::output::DescribePageOutput {
-                page_arn: self.page_arn,
-                engagement_arn: self.engagement_arn,
-                contact_arn: self.contact_arn,
-                sender: self.sender,
-                subject: self.subject,
-                content: self.content,
-                public_subject: self.public_subject,
-                public_content: self.public_content,
-                incident_id: self.incident_id,
-                sent_time: self.sent_time,
-                read_time: self.read_time,
-                delivery_time: self.delivery_time,
+                page_arn: self.page_arn
+                ,
+                engagement_arn: self.engagement_arn
+                ,
+                contact_arn: self.contact_arn
+                ,
+                sender: self.sender
+                ,
+                subject: self.subject
+                ,
+                content: self.content
+                ,
+                public_subject: self.public_subject
+                ,
+                public_content: self.public_content
+                ,
+                incident_id: self.incident_id
+                ,
+                sent_time: self.sent_time
+                ,
+                read_time: self.read_time
+                ,
+                delivery_time: self.delivery_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePageOutput {
     /// Creates a new builder-style object to manufacture [`DescribePageOutput`](crate::output::DescribePageOutput).
@@ -1351,7 +1360,7 @@ impl DescribePageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEngagementOutput {
+pub struct DescribeEngagementOutput  {
     /// <p>The ARN of the escalation plan or contacts involved in the engagement.</p>
     #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
@@ -1385,49 +1394,49 @@ pub struct DescribeEngagementOutput {
 }
 impl DescribeEngagementOutput {
     /// <p>The ARN of the escalation plan or contacts involved in the engagement.</p>
-    pub fn contact_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_arn(&self) -> std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
     /// <p>The ARN of the engagement.</p>
-    pub fn engagement_arn(&self) -> std::option::Option<&str> {
+    pub fn engagement_arn(&self) -> std::option::Option<& str> {
         self.engagement_arn.as_deref()
     }
     /// <p>The user that started the engagement.</p>
-    pub fn sender(&self) -> std::option::Option<&str> {
+    pub fn sender(&self) -> std::option::Option<& str> {
         self.sender.as_deref()
     }
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    pub fn subject(&self) -> std::option::Option<&str> {
+    pub fn subject(&self) -> std::option::Option<& str> {
         self.subject.as_deref()
     }
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn public_subject(&self) -> std::option::Option<&str> {
+    pub fn public_subject(&self) -> std::option::Option<& str> {
         self.public_subject.as_deref()
     }
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn public_content(&self) -> std::option::Option<&str> {
+    pub fn public_content(&self) -> std::option::Option<& str> {
         self.public_content.as_deref()
     }
     /// <p>The ARN of the incident in which the engagement occurred.</p>
-    pub fn incident_id(&self) -> std::option::Option<&str> {
+    pub fn incident_id(&self) -> std::option::Option<& str> {
         self.incident_id.as_deref()
     }
     /// <p>The time that the engagement started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time that the engagement ended.</p>
-    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stop_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
 }
 /// See [`DescribeEngagementOutput`](crate::output::DescribeEngagementOutput).
 pub mod describe_engagement_output {
-
+    
     /// A builder for [`DescribeEngagementOutput`](crate::output::DescribeEngagementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1450,8 +1459,7 @@ pub mod describe_engagement_output {
         }
         /// <p>The ARN of the escalation plan or contacts involved in the engagement.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.contact_arn = input;
-            self
+            self.contact_arn = input; self
         }
         /// <p>The ARN of the engagement.</p>
         pub fn engagement_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1459,12 +1467,8 @@ pub mod describe_engagement_output {
             self
         }
         /// <p>The ARN of the engagement.</p>
-        pub fn set_engagement_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.engagement_arn = input;
-            self
+        pub fn set_engagement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.engagement_arn = input; self
         }
         /// <p>The user that started the engagement.</p>
         pub fn sender(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1473,8 +1477,7 @@ pub mod describe_engagement_output {
         }
         /// <p>The user that started the engagement.</p>
         pub fn set_sender(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sender = input;
-            self
+            self.sender = input; self
         }
         /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
         pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1483,8 +1486,7 @@ pub mod describe_engagement_output {
         }
         /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subject = input;
-            self
+            self.subject = input; self
         }
         /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1493,8 +1495,7 @@ pub mod describe_engagement_output {
         }
         /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
         /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn public_subject(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1502,12 +1503,8 @@ pub mod describe_engagement_output {
             self
         }
         /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-        pub fn set_public_subject(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.public_subject = input;
-            self
+        pub fn set_public_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.public_subject = input; self
         }
         /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
         pub fn public_content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1515,12 +1512,8 @@ pub mod describe_engagement_output {
             self
         }
         /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-        pub fn set_public_content(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.public_content = input;
-            self
+        pub fn set_public_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.public_content = input; self
         }
         /// <p>The ARN of the incident in which the engagement occurred.</p>
         pub fn incident_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1529,8 +1522,7 @@ pub mod describe_engagement_output {
         }
         /// <p>The ARN of the incident in which the engagement occurred.</p>
         pub fn set_incident_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.incident_id = input;
-            self
+            self.incident_id = input; self
         }
         /// <p>The time that the engagement started.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1538,12 +1530,8 @@ pub mod describe_engagement_output {
             self
         }
         /// <p>The time that the engagement started.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The time that the engagement ended.</p>
         pub fn stop_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1551,29 +1539,37 @@ pub mod describe_engagement_output {
             self
         }
         /// <p>The time that the engagement ended.</p>
-        pub fn set_stop_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.stop_time = input;
-            self
+        pub fn set_stop_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.stop_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEngagementOutput`](crate::output::DescribeEngagementOutput).
         pub fn build(self) -> crate::output::DescribeEngagementOutput {
             crate::output::DescribeEngagementOutput {
-                contact_arn: self.contact_arn,
-                engagement_arn: self.engagement_arn,
-                sender: self.sender,
-                subject: self.subject,
-                content: self.content,
-                public_subject: self.public_subject,
-                public_content: self.public_content,
-                incident_id: self.incident_id,
-                start_time: self.start_time,
-                stop_time: self.stop_time,
+                contact_arn: self.contact_arn
+                ,
+                engagement_arn: self.engagement_arn
+                ,
+                sender: self.sender
+                ,
+                subject: self.subject
+                ,
+                content: self.content
+                ,
+                public_subject: self.public_subject
+                ,
+                public_content: self.public_content
+                ,
+                incident_id: self.incident_id
+                ,
+                start_time: self.start_time
+                ,
+                stop_time: self.stop_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEngagementOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEngagementOutput`](crate::output::DescribeEngagementOutput).
@@ -1585,19 +1581,24 @@ impl DescribeEngagementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteContactChannelOutput {}
+pub struct DeleteContactChannelOutput  {
+}
 /// See [`DeleteContactChannelOutput`](crate::output::DeleteContactChannelOutput).
 pub mod delete_contact_channel_output {
-
+    
     /// A builder for [`DeleteContactChannelOutput`](crate::output::DeleteContactChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteContactChannelOutput`](crate::output::DeleteContactChannelOutput).
         pub fn build(self) -> crate::output::DeleteContactChannelOutput {
-            crate::output::DeleteContactChannelOutput {}
+            crate::output::DeleteContactChannelOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteContactChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteContactChannelOutput`](crate::output::DeleteContactChannelOutput).
@@ -1609,19 +1610,24 @@ impl DeleteContactChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteContactOutput {}
+pub struct DeleteContactOutput  {
+}
 /// See [`DeleteContactOutput`](crate::output::DeleteContactOutput).
 pub mod delete_contact_output {
-
+    
     /// A builder for [`DeleteContactOutput`](crate::output::DeleteContactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteContactOutput`](crate::output::DeleteContactOutput).
         pub fn build(self) -> crate::output::DeleteContactOutput {
-            crate::output::DeleteContactOutput {}
+            crate::output::DeleteContactOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteContactOutput {
     /// Creates a new builder-style object to manufacture [`DeleteContactOutput`](crate::output::DeleteContactOutput).
@@ -1633,19 +1639,24 @@ impl DeleteContactOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeactivateContactChannelOutput {}
+pub struct DeactivateContactChannelOutput  {
+}
 /// See [`DeactivateContactChannelOutput`](crate::output::DeactivateContactChannelOutput).
 pub mod deactivate_contact_channel_output {
-
+    
     /// A builder for [`DeactivateContactChannelOutput`](crate::output::DeactivateContactChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeactivateContactChannelOutput`](crate::output::DeactivateContactChannelOutput).
         pub fn build(self) -> crate::output::DeactivateContactChannelOutput {
-            crate::output::DeactivateContactChannelOutput {}
+            crate::output::DeactivateContactChannelOutput {
+            }
         }
     }
+    
+    
 }
 impl DeactivateContactChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeactivateContactChannelOutput`](crate::output::DeactivateContactChannelOutput).
@@ -1657,20 +1668,20 @@ impl DeactivateContactChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateContactChannelOutput {
+pub struct CreateContactChannelOutput  {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
     #[doc(hidden)]
     pub contact_channel_arn: std::option::Option<std::string::String>,
 }
 impl CreateContactChannelOutput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-    pub fn contact_channel_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_channel_arn(&self) -> std::option::Option<& str> {
         self.contact_channel_arn.as_deref()
     }
 }
 /// See [`CreateContactChannelOutput`](crate::output::CreateContactChannelOutput).
 pub mod create_contact_channel_output {
-
+    
     /// A builder for [`CreateContactChannelOutput`](crate::output::CreateContactChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1683,20 +1694,19 @@ pub mod create_contact_channel_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
-        pub fn set_contact_channel_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.contact_channel_arn = input;
-            self
+        pub fn set_contact_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.contact_channel_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateContactChannelOutput`](crate::output::CreateContactChannelOutput).
         pub fn build(self) -> crate::output::CreateContactChannelOutput {
             crate::output::CreateContactChannelOutput {
-                contact_channel_arn: self.contact_channel_arn,
+                contact_channel_arn: self.contact_channel_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateContactChannelOutput {
     /// Creates a new builder-style object to manufacture [`CreateContactChannelOutput`](crate::output::CreateContactChannelOutput).
@@ -1708,20 +1718,20 @@ impl CreateContactChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateContactOutput {
+pub struct CreateContactOutput  {
     /// <p>The Amazon Resource Name (ARN) of the created contact or escalation plan.</p>
     #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
 }
 impl CreateContactOutput {
     /// <p>The Amazon Resource Name (ARN) of the created contact or escalation plan.</p>
-    pub fn contact_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_arn(&self) -> std::option::Option<& str> {
         self.contact_arn.as_deref()
     }
 }
 /// See [`CreateContactOutput`](crate::output::CreateContactOutput).
 pub mod create_contact_output {
-
+    
     /// A builder for [`CreateContactOutput`](crate::output::CreateContactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1735,16 +1745,18 @@ pub mod create_contact_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the created contact or escalation plan.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.contact_arn = input;
-            self
+            self.contact_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateContactOutput`](crate::output::CreateContactOutput).
         pub fn build(self) -> crate::output::CreateContactOutput {
             crate::output::CreateContactOutput {
-                contact_arn: self.contact_arn,
+                contact_arn: self.contact_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateContactOutput {
     /// Creates a new builder-style object to manufacture [`CreateContactOutput`](crate::output::CreateContactOutput).
@@ -1756,19 +1768,24 @@ impl CreateContactOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivateContactChannelOutput {}
+pub struct ActivateContactChannelOutput  {
+}
 /// See [`ActivateContactChannelOutput`](crate::output::ActivateContactChannelOutput).
 pub mod activate_contact_channel_output {
-
+    
     /// A builder for [`ActivateContactChannelOutput`](crate::output::ActivateContactChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ActivateContactChannelOutput`](crate::output::ActivateContactChannelOutput).
         pub fn build(self) -> crate::output::ActivateContactChannelOutput {
-            crate::output::ActivateContactChannelOutput {}
+            crate::output::ActivateContactChannelOutput {
+            }
         }
     }
+    
+    
 }
 impl ActivateContactChannelOutput {
     /// Creates a new builder-style object to manufacture [`ActivateContactChannelOutput`](crate::output::ActivateContactChannelOutput).
@@ -1780,19 +1797,24 @@ impl ActivateContactChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptPageOutput {}
+pub struct AcceptPageOutput  {
+}
 /// See [`AcceptPageOutput`](crate::output::AcceptPageOutput).
 pub mod accept_page_output {
-
+    
     /// A builder for [`AcceptPageOutput`](crate::output::AcceptPageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AcceptPageOutput`](crate::output::AcceptPageOutput).
         pub fn build(self) -> crate::output::AcceptPageOutput {
-            crate::output::AcceptPageOutput {}
+            crate::output::AcceptPageOutput {
+            }
         }
     }
+    
+    
 }
 impl AcceptPageOutput {
     /// Creates a new builder-style object to manufacture [`AcceptPageOutput`](crate::output::AcceptPageOutput).
@@ -1800,3 +1822,4 @@ impl AcceptPageOutput {
         crate::output::accept_page_output::Builder::default()
     }
 }
+

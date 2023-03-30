@@ -3,7 +3,7 @@
 /// <p>A <a href="https://docs.aws.amazon.com/xray/latest/api/API_SamplingRule.html">SamplingRule</a> and its metadata.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SamplingRuleRecord {
+pub struct SamplingRuleRecord  {
     /// <p>The sampling rule.</p>
     #[doc(hidden)]
     pub sampling_rule: std::option::Option<crate::model::SamplingRule>,
@@ -16,21 +16,21 @@ pub struct SamplingRuleRecord {
 }
 impl SamplingRuleRecord {
     /// <p>The sampling rule.</p>
-    pub fn sampling_rule(&self) -> std::option::Option<&crate::model::SamplingRule> {
+    pub fn sampling_rule(&self) -> std::option::Option<& crate::model::SamplingRule> {
         self.sampling_rule.as_ref()
     }
     /// <p>When the rule was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>When the rule was last modified.</p>
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
 }
 /// See [`SamplingRuleRecord`](crate::model::SamplingRuleRecord).
 pub mod sampling_rule_record {
-
+    
     /// A builder for [`SamplingRuleRecord`](crate::model::SamplingRuleRecord).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -45,12 +45,8 @@ pub mod sampling_rule_record {
             self
         }
         /// <p>The sampling rule.</p>
-        pub fn set_sampling_rule(
-            mut self,
-            input: std::option::Option<crate::model::SamplingRule>,
-        ) -> Self {
-            self.sampling_rule = input;
-            self
+        pub fn set_sampling_rule(mut self, input: std::option::Option<crate::model::SamplingRule>) -> Self {
+            self.sampling_rule = input; self
         }
         /// <p>When the rule was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -58,12 +54,8 @@ pub mod sampling_rule_record {
             self
         }
         /// <p>When the rule was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>When the rule was last modified.</p>
         pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -71,22 +63,23 @@ pub mod sampling_rule_record {
             self
         }
         /// <p>When the rule was last modified.</p>
-        pub fn set_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.modified_at = input;
-            self
+        pub fn set_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.modified_at = input; self
         }
         /// Consumes the builder and constructs a [`SamplingRuleRecord`](crate::model::SamplingRuleRecord).
         pub fn build(self) -> crate::model::SamplingRuleRecord {
             crate::model::SamplingRuleRecord {
-                sampling_rule: self.sampling_rule,
-                created_at: self.created_at,
-                modified_at: self.modified_at,
+                sampling_rule: self.sampling_rule
+                ,
+                created_at: self.created_at
+                ,
+                modified_at: self.modified_at
+                ,
             }
         }
     }
+    
+    
 }
 impl SamplingRuleRecord {
     /// Creates a new builder-style object to manufacture [`SamplingRuleRecord`](crate::model::SamplingRuleRecord).
@@ -98,7 +91,7 @@ impl SamplingRuleRecord {
 /// <p>A sampling rule that services use to decide whether to instrument a request. Rule fields can match properties of the service, or properties of a request. The service can ignore rules that don't match its properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SamplingRule {
+pub struct SamplingRule  {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
@@ -137,20 +130,19 @@ pub struct SamplingRule {
     pub version: i32,
     /// <p>Matches attributes derived from the request.</p>
     #[doc(hidden)]
-    pub attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl SamplingRule {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
-    pub fn rule_name(&self) -> std::option::Option<&str> {
+    pub fn rule_name(&self) -> std::option::Option<& str> {
         self.rule_name.as_deref()
     }
     /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
-    pub fn rule_arn(&self) -> std::option::Option<&str> {
+    pub fn rule_arn(&self) -> std::option::Option<& str> {
         self.rule_arn.as_deref()
     }
     /// <p>Matches the ARN of the Amazon Web Services resource on which the service runs.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The priority of the sampling rule.</p>
@@ -166,23 +158,23 @@ impl SamplingRule {
         self.reservoir_size
     }
     /// <p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>
-    pub fn service_type(&self) -> std::option::Option<&str> {
+    pub fn service_type(&self) -> std::option::Option<& str> {
         self.service_type.as_deref()
     }
     /// <p>Matches the hostname from a request URL.</p>
-    pub fn host(&self) -> std::option::Option<&str> {
+    pub fn host(&self) -> std::option::Option<& str> {
         self.host.as_deref()
     }
     /// <p>Matches the HTTP method of a request.</p>
-    pub fn http_method(&self) -> std::option::Option<&str> {
+    pub fn http_method(&self) -> std::option::Option<& str> {
         self.http_method.as_deref()
     }
     /// <p>Matches the path from a request URL.</p>
-    pub fn url_path(&self) -> std::option::Option<&str> {
+    pub fn url_path(&self) -> std::option::Option<& str> {
         self.url_path.as_deref()
     }
     /// <p>The version of the sampling rule format (<code>1</code>).</p>
@@ -190,16 +182,13 @@ impl SamplingRule {
         self.version
     }
     /// <p>Matches attributes derived from the request.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.attributes.as_ref()
     }
 }
 /// See [`SamplingRule`](crate::model::SamplingRule).
 pub mod sampling_rule {
-
+    
     /// A builder for [`SamplingRule`](crate::model::SamplingRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -215,9 +204,7 @@ pub mod sampling_rule {
         pub(crate) http_method: std::option::Option<std::string::String>,
         pub(crate) url_path: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<i32>,
-        pub(crate) attributes: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
@@ -227,8 +214,7 @@ pub mod sampling_rule {
         }
         /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
         pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_name = input;
-            self
+            self.rule_name = input; self
         }
         /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
         pub fn rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -237,8 +223,7 @@ pub mod sampling_rule {
         }
         /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
         pub fn set_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_arn = input;
-            self
+            self.rule_arn = input; self
         }
         /// <p>Matches the ARN of the Amazon Web Services resource on which the service runs.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -247,8 +232,7 @@ pub mod sampling_rule {
         }
         /// <p>Matches the ARN of the Amazon Web Services resource on which the service runs.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The priority of the sampling rule.</p>
         pub fn priority(mut self, input: i32) -> Self {
@@ -257,8 +241,7 @@ pub mod sampling_rule {
         }
         /// <p>The priority of the sampling rule.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-            self.priority = input;
-            self
+            self.priority = input; self
         }
         /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
         pub fn fixed_rate(mut self, input: f64) -> Self {
@@ -267,8 +250,7 @@ pub mod sampling_rule {
         }
         /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
         pub fn set_fixed_rate(mut self, input: std::option::Option<f64>) -> Self {
-            self.fixed_rate = input;
-            self
+            self.fixed_rate = input; self
         }
         /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
         pub fn reservoir_size(mut self, input: i32) -> Self {
@@ -277,8 +259,7 @@ pub mod sampling_rule {
         }
         /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
         pub fn set_reservoir_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.reservoir_size = input;
-            self
+            self.reservoir_size = input; self
         }
         /// <p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -287,8 +268,7 @@ pub mod sampling_rule {
         }
         /// <p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_name = input;
-            self
+            self.service_name = input; self
         }
         /// <p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>
         pub fn service_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -297,8 +277,7 @@ pub mod sampling_rule {
         }
         /// <p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>
         pub fn set_service_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_type = input;
-            self
+            self.service_type = input; self
         }
         /// <p>Matches the hostname from a request URL.</p>
         pub fn host(mut self, input: impl Into<std::string::String>) -> Self {
@@ -307,8 +286,7 @@ pub mod sampling_rule {
         }
         /// <p>Matches the hostname from a request URL.</p>
         pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.host = input;
-            self
+            self.host = input; self
         }
         /// <p>Matches the HTTP method of a request.</p>
         pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
@@ -317,8 +295,7 @@ pub mod sampling_rule {
         }
         /// <p>Matches the HTTP method of a request.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.http_method = input;
-            self
+            self.http_method = input; self
         }
         /// <p>Matches the path from a request URL.</p>
         pub fn url_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -327,8 +304,7 @@ pub mod sampling_rule {
         }
         /// <p>Matches the path from a request URL.</p>
         pub fn set_url_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url_path = input;
-            self
+            self.url_path = input; self
         }
         /// <p>The version of the sampling rule format (<code>1</code>).</p>
         pub fn version(mut self, input: i32) -> Self {
@@ -337,53 +313,61 @@ pub mod sampling_rule {
         }
         /// <p>The version of the sampling rule format (<code>1</code>).</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Adds a key-value pair to `attributes`.
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>Matches attributes derived from the request.</p>
-        pub fn attributes(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.attributes = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.attributes = Some(hash_map);
+                            self
         }
         /// <p>Matches attributes derived from the request.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.attributes = input; self
         }
         /// Consumes the builder and constructs a [`SamplingRule`](crate::model::SamplingRule).
         pub fn build(self) -> crate::model::SamplingRule {
             crate::model::SamplingRule {
-                rule_name: self.rule_name,
-                rule_arn: self.rule_arn,
-                resource_arn: self.resource_arn,
-                priority: self.priority.unwrap_or_default(),
-                fixed_rate: self.fixed_rate.unwrap_or_default(),
-                reservoir_size: self.reservoir_size.unwrap_or_default(),
-                service_name: self.service_name,
-                service_type: self.service_type,
-                host: self.host,
-                http_method: self.http_method,
-                url_path: self.url_path,
-                version: self.version.unwrap_or_default(),
-                attributes: self.attributes,
+                rule_name: self.rule_name
+                ,
+                rule_arn: self.rule_arn
+                ,
+                resource_arn: self.resource_arn
+                ,
+                priority: self.priority
+                    .unwrap_or_default()
+                ,
+                fixed_rate: self.fixed_rate
+                    .unwrap_or_default()
+                ,
+                reservoir_size: self.reservoir_size
+                    .unwrap_or_default()
+                ,
+                service_name: self.service_name
+                ,
+                service_type: self.service_type
+                ,
+                host: self.host
+                ,
+                http_method: self.http_method
+                ,
+                url_path: self.url_path
+                ,
+                version: self.version
+                    .unwrap_or_default()
+                ,
+                attributes: self.attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl SamplingRule {
     /// Creates a new builder-style object to manufacture [`SamplingRule`](crate::model::SamplingRule).
@@ -395,7 +379,7 @@ impl SamplingRule {
 /// <p>A document specifying changes to a sampling rule's configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SamplingRuleUpdate {
+pub struct SamplingRuleUpdate  {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
     #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
@@ -431,20 +415,19 @@ pub struct SamplingRuleUpdate {
     pub url_path: std::option::Option<std::string::String>,
     /// <p>Matches attributes derived from the request.</p>
     #[doc(hidden)]
-    pub attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl SamplingRuleUpdate {
     /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
-    pub fn rule_name(&self) -> std::option::Option<&str> {
+    pub fn rule_name(&self) -> std::option::Option<& str> {
         self.rule_name.as_deref()
     }
     /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
-    pub fn rule_arn(&self) -> std::option::Option<&str> {
+    pub fn rule_arn(&self) -> std::option::Option<& str> {
         self.rule_arn.as_deref()
     }
     /// <p>Matches the ARN of the Amazon Web Services resource on which the service runs.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The priority of the sampling rule.</p>
@@ -460,36 +443,33 @@ impl SamplingRuleUpdate {
         self.reservoir_size
     }
     /// <p>Matches the hostname from a request URL.</p>
-    pub fn host(&self) -> std::option::Option<&str> {
+    pub fn host(&self) -> std::option::Option<& str> {
         self.host.as_deref()
     }
     /// <p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>
-    pub fn service_type(&self) -> std::option::Option<&str> {
+    pub fn service_type(&self) -> std::option::Option<& str> {
         self.service_type.as_deref()
     }
     /// <p>Matches the HTTP method of a request.</p>
-    pub fn http_method(&self) -> std::option::Option<&str> {
+    pub fn http_method(&self) -> std::option::Option<& str> {
         self.http_method.as_deref()
     }
     /// <p>Matches the path from a request URL.</p>
-    pub fn url_path(&self) -> std::option::Option<&str> {
+    pub fn url_path(&self) -> std::option::Option<& str> {
         self.url_path.as_deref()
     }
     /// <p>Matches attributes derived from the request.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.attributes.as_ref()
     }
 }
 /// See [`SamplingRuleUpdate`](crate::model::SamplingRuleUpdate).
 pub mod sampling_rule_update {
-
+    
     /// A builder for [`SamplingRuleUpdate`](crate::model::SamplingRuleUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -504,9 +484,7 @@ pub mod sampling_rule_update {
         pub(crate) service_type: std::option::Option<std::string::String>,
         pub(crate) http_method: std::option::Option<std::string::String>,
         pub(crate) url_path: std::option::Option<std::string::String>,
-        pub(crate) attributes: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
@@ -516,8 +494,7 @@ pub mod sampling_rule_update {
         }
         /// <p>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
         pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_name = input;
-            self
+            self.rule_name = input; self
         }
         /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
         pub fn rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -526,8 +503,7 @@ pub mod sampling_rule_update {
         }
         /// <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</p>
         pub fn set_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_arn = input;
-            self
+            self.rule_arn = input; self
         }
         /// <p>Matches the ARN of the Amazon Web Services resource on which the service runs.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -536,8 +512,7 @@ pub mod sampling_rule_update {
         }
         /// <p>Matches the ARN of the Amazon Web Services resource on which the service runs.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The priority of the sampling rule.</p>
         pub fn priority(mut self, input: i32) -> Self {
@@ -546,8 +521,7 @@ pub mod sampling_rule_update {
         }
         /// <p>The priority of the sampling rule.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-            self.priority = input;
-            self
+            self.priority = input; self
         }
         /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
         pub fn fixed_rate(mut self, input: f64) -> Self {
@@ -556,8 +530,7 @@ pub mod sampling_rule_update {
         }
         /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
         pub fn set_fixed_rate(mut self, input: std::option::Option<f64>) -> Self {
-            self.fixed_rate = input;
-            self
+            self.fixed_rate = input; self
         }
         /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
         pub fn reservoir_size(mut self, input: i32) -> Self {
@@ -566,8 +539,7 @@ pub mod sampling_rule_update {
         }
         /// <p>A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.</p>
         pub fn set_reservoir_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.reservoir_size = input;
-            self
+            self.reservoir_size = input; self
         }
         /// <p>Matches the hostname from a request URL.</p>
         pub fn host(mut self, input: impl Into<std::string::String>) -> Self {
@@ -576,8 +548,7 @@ pub mod sampling_rule_update {
         }
         /// <p>Matches the hostname from a request URL.</p>
         pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.host = input;
-            self
+            self.host = input; self
         }
         /// <p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -586,8 +557,7 @@ pub mod sampling_rule_update {
         }
         /// <p>Matches the <code>name</code> that the service uses to identify itself in segments.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_name = input;
-            self
+            self.service_name = input; self
         }
         /// <p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>
         pub fn service_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -596,8 +566,7 @@ pub mod sampling_rule_update {
         }
         /// <p>Matches the <code>origin</code> that the service uses to identify its type in segments.</p>
         pub fn set_service_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_type = input;
-            self
+            self.service_type = input; self
         }
         /// <p>Matches the HTTP method of a request.</p>
         pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
@@ -606,8 +575,7 @@ pub mod sampling_rule_update {
         }
         /// <p>Matches the HTTP method of a request.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.http_method = input;
-            self
+            self.http_method = input; self
         }
         /// <p>Matches the path from a request URL.</p>
         pub fn url_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -616,52 +584,55 @@ pub mod sampling_rule_update {
         }
         /// <p>Matches the path from a request URL.</p>
         pub fn set_url_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url_path = input;
-            self
+            self.url_path = input; self
         }
         /// Adds a key-value pair to `attributes`.
         ///
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>Matches attributes derived from the request.</p>
-        pub fn attributes(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.attributes = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.attributes = Some(hash_map);
+                            self
         }
         /// <p>Matches attributes derived from the request.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.attributes = input; self
         }
         /// Consumes the builder and constructs a [`SamplingRuleUpdate`](crate::model::SamplingRuleUpdate).
         pub fn build(self) -> crate::model::SamplingRuleUpdate {
             crate::model::SamplingRuleUpdate {
-                rule_name: self.rule_name,
-                rule_arn: self.rule_arn,
-                resource_arn: self.resource_arn,
-                priority: self.priority,
-                fixed_rate: self.fixed_rate,
-                reservoir_size: self.reservoir_size,
-                host: self.host,
-                service_name: self.service_name,
-                service_type: self.service_type,
-                http_method: self.http_method,
-                url_path: self.url_path,
-                attributes: self.attributes,
+                rule_name: self.rule_name
+                ,
+                rule_arn: self.rule_arn
+                ,
+                resource_arn: self.resource_arn
+                ,
+                priority: self.priority
+                ,
+                fixed_rate: self.fixed_rate
+                ,
+                reservoir_size: self.reservoir_size
+                ,
+                host: self.host
+                ,
+                service_name: self.service_name
+                ,
+                service_type: self.service_type
+                ,
+                http_method: self.http_method
+                ,
+                url_path: self.url_path
+                ,
+                attributes: self.attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl SamplingRuleUpdate {
     /// Creates a new builder-style object to manufacture [`SamplingRuleUpdate`](crate::model::SamplingRuleUpdate).
@@ -673,7 +644,7 @@ impl SamplingRuleUpdate {
 /// <p>Details and metadata for a group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Group {
+pub struct Group  {
     /// <p>The unique case-sensitive name of the group.</p>
     #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
@@ -683,41 +654,39 @@ pub struct Group {
     /// <p>The filter expression defining the parameters to include traces.</p>
     #[doc(hidden)]
     pub filter_expression: std::option::Option<std::string::String>,
-    /// <p>The structure containing configurations related to insights.</p>
-    /// <ul>
-    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
-    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li>
+    /// <p>The structure containing configurations related to insights.</p> 
+    /// <ul> 
+    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li> 
+    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub insights_configuration: std::option::Option<crate::model::InsightsConfiguration>,
 }
 impl Group {
     /// <p>The unique case-sensitive name of the group.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the group generated based on the GroupName.</p>
-    pub fn group_arn(&self) -> std::option::Option<&str> {
+    pub fn group_arn(&self) -> std::option::Option<& str> {
         self.group_arn.as_deref()
     }
     /// <p>The filter expression defining the parameters to include traces.</p>
-    pub fn filter_expression(&self) -> std::option::Option<&str> {
+    pub fn filter_expression(&self) -> std::option::Option<& str> {
         self.filter_expression.as_deref()
     }
-    /// <p>The structure containing configurations related to insights.</p>
-    /// <ul>
-    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
-    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li>
+    /// <p>The structure containing configurations related to insights.</p> 
+    /// <ul> 
+    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li> 
+    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li> 
     /// </ul>
-    pub fn insights_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::InsightsConfiguration> {
+    pub fn insights_configuration(&self) -> std::option::Option<& crate::model::InsightsConfiguration> {
         self.insights_configuration.as_ref()
     }
 }
 /// See [`Group`](crate::model::Group).
 pub mod group {
-
+    
     /// A builder for [`Group`](crate::model::Group).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -734,8 +703,7 @@ pub mod group {
         }
         /// <p>The unique case-sensitive name of the group.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_name = input;
-            self
+            self.group_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the group generated based on the GroupName.</p>
         pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -744,8 +712,7 @@ pub mod group {
         }
         /// <p>The Amazon Resource Name (ARN) of the group generated based on the GroupName.</p>
         pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_arn = input;
-            self
+            self.group_arn = input; self
         }
         /// <p>The filter expression defining the parameters to include traces.</p>
         pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -753,47 +720,42 @@ pub mod group {
             self
         }
         /// <p>The filter expression defining the parameters to include traces.</p>
-        pub fn set_filter_expression(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.filter_expression = input;
-            self
+        pub fn set_filter_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.filter_expression = input; self
         }
-        /// <p>The structure containing configurations related to insights.</p>
-        /// <ul>
-        /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
-        /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li>
+        /// <p>The structure containing configurations related to insights.</p> 
+        /// <ul> 
+        /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li> 
+        /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li> 
         /// </ul>
-        pub fn insights_configuration(
-            mut self,
-            input: crate::model::InsightsConfiguration,
-        ) -> Self {
+        pub fn insights_configuration(mut self, input: crate::model::InsightsConfiguration) -> Self {
             self.insights_configuration = Some(input);
             self
         }
-        /// <p>The structure containing configurations related to insights.</p>
-        /// <ul>
-        /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
-        /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li>
+        /// <p>The structure containing configurations related to insights.</p> 
+        /// <ul> 
+        /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li> 
+        /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications through Amazon EventBridge for the group.</p> </li> 
         /// </ul>
-        pub fn set_insights_configuration(
-            mut self,
-            input: std::option::Option<crate::model::InsightsConfiguration>,
-        ) -> Self {
-            self.insights_configuration = input;
-            self
+        pub fn set_insights_configuration(mut self, input: std::option::Option<crate::model::InsightsConfiguration>) -> Self {
+            self.insights_configuration = input; self
         }
         /// Consumes the builder and constructs a [`Group`](crate::model::Group).
         pub fn build(self) -> crate::model::Group {
             crate::model::Group {
-                group_name: self.group_name,
-                group_arn: self.group_arn,
-                filter_expression: self.filter_expression,
-                insights_configuration: self.insights_configuration,
+                group_name: self.group_name
+                ,
+                group_arn: self.group_arn
+                ,
+                filter_expression: self.filter_expression
+                ,
+                insights_configuration: self.insights_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl Group {
     /// Creates a new builder-style object to manufacture [`Group`](crate::model::Group).
@@ -805,7 +767,7 @@ impl Group {
 /// <p>The structure containing configurations related to insights.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InsightsConfiguration {
+pub struct InsightsConfiguration  {
     /// <p>Set the InsightsEnabled value to true to enable insights or false to disable insights.</p>
     #[doc(hidden)]
     pub insights_enabled: std::option::Option<bool>,
@@ -825,7 +787,7 @@ impl InsightsConfiguration {
 }
 /// See [`InsightsConfiguration`](crate::model::InsightsConfiguration).
 pub mod insights_configuration {
-
+    
     /// A builder for [`InsightsConfiguration`](crate::model::InsightsConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -840,8 +802,7 @@ pub mod insights_configuration {
         }
         /// <p>Set the InsightsEnabled value to true to enable insights or false to disable insights.</p>
         pub fn set_insights_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.insights_enabled = input;
-            self
+            self.insights_enabled = input; self
         }
         /// <p>Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
         pub fn notifications_enabled(mut self, input: bool) -> Self {
@@ -850,17 +811,20 @@ pub mod insights_configuration {
         }
         /// <p>Set the NotificationsEnabled value to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p>
         pub fn set_notifications_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.notifications_enabled = input;
-            self
+            self.notifications_enabled = input; self
         }
         /// Consumes the builder and constructs a [`InsightsConfiguration`](crate::model::InsightsConfiguration).
         pub fn build(self) -> crate::model::InsightsConfiguration {
             crate::model::InsightsConfiguration {
-                insights_enabled: self.insights_enabled,
-                notifications_enabled: self.notifications_enabled,
+                insights_enabled: self.insights_enabled
+                ,
+                notifications_enabled: self.notifications_enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl InsightsConfiguration {
     /// Creates a new builder-style object to manufacture [`InsightsConfiguration`](crate::model::InsightsConfiguration).
@@ -869,16 +833,16 @@ impl InsightsConfiguration {
     }
 }
 
-/// <p>A map that contains tag keys and tag values to attach to an Amazon Web Services X-Ray group or sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-/// <p>The following restrictions apply to tags:</p>
-/// <ul>
-/// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li>
-/// <li> <p>Tag keys and values are case sensitive.</p> </li>
-/// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You cannot edit or delete system tags.</p> </li>
+/// <p>A map that contains tag keys and tag values to attach to an Amazon Web Services X-Ray group or sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p> 
+/// <p>The following restrictions apply to tags:</p> 
+/// <ul> 
+/// <li> <p>Maximum number of user-applied tags per resource: 50</p> </li> 
+/// <li> <p>Tag keys and values are case sensitive.</p> </li> 
+/// <li> <p>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services use. You cannot edit or delete system tags.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The key can be a maximum of 128 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -888,17 +852,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The key can be a maximum of 128 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be a maximum of 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -913,8 +877,7 @@ pub mod tag {
         }
         /// <p>A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The key can be a maximum of 128 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be a maximum of 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -923,17 +886,20 @@ pub mod tag {
         }
         /// <p>An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be a maximum of 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code> </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -945,7 +911,7 @@ impl Tag {
 /// <p>Information about a segment that failed processing.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnprocessedTraceSegment {
+pub struct UnprocessedTraceSegment  {
     /// <p>The segment's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -958,21 +924,21 @@ pub struct UnprocessedTraceSegment {
 }
 impl UnprocessedTraceSegment {
     /// <p>The segment's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The error that caused processing to fail.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`UnprocessedTraceSegment`](crate::model::UnprocessedTraceSegment).
 pub mod unprocessed_trace_segment {
-
+    
     /// A builder for [`UnprocessedTraceSegment`](crate::model::UnprocessedTraceSegment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -988,8 +954,7 @@ pub mod unprocessed_trace_segment {
         }
         /// <p>The segment's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The error that caused processing to fail.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -998,8 +963,7 @@ pub mod unprocessed_trace_segment {
         }
         /// <p>The error that caused processing to fail.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// <p>The error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1008,18 +972,22 @@ pub mod unprocessed_trace_segment {
         }
         /// <p>The error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UnprocessedTraceSegment`](crate::model::UnprocessedTraceSegment).
         pub fn build(self) -> crate::model::UnprocessedTraceSegment {
             crate::model::UnprocessedTraceSegment {
-                id: self.id,
-                error_code: self.error_code,
-                message: self.message,
+                id: self.id
+                ,
+                error_code: self.error_code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UnprocessedTraceSegment {
     /// Creates a new builder-style object to manufacture [`UnprocessedTraceSegment`](crate::model::UnprocessedTraceSegment).
@@ -1031,7 +999,7 @@ impl UnprocessedTraceSegment {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TelemetryRecord {
+pub struct TelemetryRecord  {
     /// <p></p>
     #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -1053,7 +1021,7 @@ pub struct TelemetryRecord {
 }
 impl TelemetryRecord {
     /// <p></p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p></p>
@@ -1073,15 +1041,13 @@ impl TelemetryRecord {
         self.segments_rejected_count
     }
     /// <p></p>
-    pub fn backend_connection_errors(
-        &self,
-    ) -> std::option::Option<&crate::model::BackendConnectionErrors> {
+    pub fn backend_connection_errors(&self) -> std::option::Option<& crate::model::BackendConnectionErrors> {
         self.backend_connection_errors.as_ref()
     }
 }
 /// See [`TelemetryRecord`](crate::model::TelemetryRecord).
 pub mod telemetry_record {
-
+    
     /// A builder for [`TelemetryRecord`](crate::model::TelemetryRecord).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1090,8 +1056,7 @@ pub mod telemetry_record {
         pub(crate) segments_sent_count: std::option::Option<i32>,
         pub(crate) segments_spillover_count: std::option::Option<i32>,
         pub(crate) segments_rejected_count: std::option::Option<i32>,
-        pub(crate) backend_connection_errors:
-            std::option::Option<crate::model::BackendConnectionErrors>,
+        pub(crate) backend_connection_errors: std::option::Option<crate::model::BackendConnectionErrors>,
     }
     impl Builder {
         /// <p></p>
@@ -1100,12 +1065,8 @@ pub mod telemetry_record {
             self
         }
         /// <p></p>
-        pub fn set_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.timestamp = input;
-            self
+        pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.timestamp = input; self
         }
         /// <p></p>
         pub fn segments_received_count(mut self, input: i32) -> Self {
@@ -1114,8 +1075,7 @@ pub mod telemetry_record {
         }
         /// <p></p>
         pub fn set_segments_received_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.segments_received_count = input;
-            self
+            self.segments_received_count = input; self
         }
         /// <p></p>
         pub fn segments_sent_count(mut self, input: i32) -> Self {
@@ -1124,8 +1084,7 @@ pub mod telemetry_record {
         }
         /// <p></p>
         pub fn set_segments_sent_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.segments_sent_count = input;
-            self
+            self.segments_sent_count = input; self
         }
         /// <p></p>
         pub fn segments_spillover_count(mut self, input: i32) -> Self {
@@ -1134,8 +1093,7 @@ pub mod telemetry_record {
         }
         /// <p></p>
         pub fn set_segments_spillover_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.segments_spillover_count = input;
-            self
+            self.segments_spillover_count = input; self
         }
         /// <p></p>
         pub fn segments_rejected_count(mut self, input: i32) -> Self {
@@ -1144,37 +1102,37 @@ pub mod telemetry_record {
         }
         /// <p></p>
         pub fn set_segments_rejected_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.segments_rejected_count = input;
-            self
+            self.segments_rejected_count = input; self
         }
         /// <p></p>
-        pub fn backend_connection_errors(
-            mut self,
-            input: crate::model::BackendConnectionErrors,
-        ) -> Self {
+        pub fn backend_connection_errors(mut self, input: crate::model::BackendConnectionErrors) -> Self {
             self.backend_connection_errors = Some(input);
             self
         }
         /// <p></p>
-        pub fn set_backend_connection_errors(
-            mut self,
-            input: std::option::Option<crate::model::BackendConnectionErrors>,
-        ) -> Self {
-            self.backend_connection_errors = input;
-            self
+        pub fn set_backend_connection_errors(mut self, input: std::option::Option<crate::model::BackendConnectionErrors>) -> Self {
+            self.backend_connection_errors = input; self
         }
         /// Consumes the builder and constructs a [`TelemetryRecord`](crate::model::TelemetryRecord).
         pub fn build(self) -> crate::model::TelemetryRecord {
             crate::model::TelemetryRecord {
-                timestamp: self.timestamp,
-                segments_received_count: self.segments_received_count,
-                segments_sent_count: self.segments_sent_count,
-                segments_spillover_count: self.segments_spillover_count,
-                segments_rejected_count: self.segments_rejected_count,
-                backend_connection_errors: self.backend_connection_errors,
+                timestamp: self.timestamp
+                ,
+                segments_received_count: self.segments_received_count
+                ,
+                segments_sent_count: self.segments_sent_count
+                ,
+                segments_spillover_count: self.segments_spillover_count
+                ,
+                segments_rejected_count: self.segments_rejected_count
+                ,
+                backend_connection_errors: self.backend_connection_errors
+                ,
             }
         }
     }
+    
+    
 }
 impl TelemetryRecord {
     /// Creates a new builder-style object to manufacture [`TelemetryRecord`](crate::model::TelemetryRecord).
@@ -1186,7 +1144,7 @@ impl TelemetryRecord {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackendConnectionErrors {
+pub struct BackendConnectionErrors  {
     /// <p></p>
     #[doc(hidden)]
     pub timeout_count: std::option::Option<i32>,
@@ -1234,7 +1192,7 @@ impl BackendConnectionErrors {
 }
 /// See [`BackendConnectionErrors`](crate::model::BackendConnectionErrors).
 pub mod backend_connection_errors {
-
+    
     /// A builder for [`BackendConnectionErrors`](crate::model::BackendConnectionErrors).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1253,8 +1211,7 @@ pub mod backend_connection_errors {
         }
         /// <p></p>
         pub fn set_timeout_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout_count = input;
-            self
+            self.timeout_count = input; self
         }
         /// <p></p>
         pub fn connection_refused_count(mut self, input: i32) -> Self {
@@ -1263,8 +1220,7 @@ pub mod backend_connection_errors {
         }
         /// <p></p>
         pub fn set_connection_refused_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.connection_refused_count = input;
-            self
+            self.connection_refused_count = input; self
         }
         /// <p></p>
         pub fn http_code4_xx_count(mut self, input: i32) -> Self {
@@ -1273,8 +1229,7 @@ pub mod backend_connection_errors {
         }
         /// <p></p>
         pub fn set_http_code4_xx_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.http_code4_xx_count = input;
-            self
+            self.http_code4_xx_count = input; self
         }
         /// <p></p>
         pub fn http_code5_xx_count(mut self, input: i32) -> Self {
@@ -1283,8 +1238,7 @@ pub mod backend_connection_errors {
         }
         /// <p></p>
         pub fn set_http_code5_xx_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.http_code5_xx_count = input;
-            self
+            self.http_code5_xx_count = input; self
         }
         /// <p></p>
         pub fn unknown_host_count(mut self, input: i32) -> Self {
@@ -1293,8 +1247,7 @@ pub mod backend_connection_errors {
         }
         /// <p></p>
         pub fn set_unknown_host_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.unknown_host_count = input;
-            self
+            self.unknown_host_count = input; self
         }
         /// <p></p>
         pub fn other_count(mut self, input: i32) -> Self {
@@ -1303,21 +1256,28 @@ pub mod backend_connection_errors {
         }
         /// <p></p>
         pub fn set_other_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.other_count = input;
-            self
+            self.other_count = input; self
         }
         /// Consumes the builder and constructs a [`BackendConnectionErrors`](crate::model::BackendConnectionErrors).
         pub fn build(self) -> crate::model::BackendConnectionErrors {
             crate::model::BackendConnectionErrors {
-                timeout_count: self.timeout_count,
-                connection_refused_count: self.connection_refused_count,
-                http_code4_xx_count: self.http_code4_xx_count,
-                http_code5_xx_count: self.http_code5_xx_count,
-                unknown_host_count: self.unknown_host_count,
-                other_count: self.other_count,
+                timeout_count: self.timeout_count
+                ,
+                connection_refused_count: self.connection_refused_count
+                ,
+                http_code4_xx_count: self.http_code4_xx_count
+                ,
+                http_code5_xx_count: self.http_code5_xx_count
+                ,
+                unknown_host_count: self.unknown_host_count
+                ,
+                other_count: self.other_count
+                ,
             }
         }
     }
+    
+    
 }
 impl BackendConnectionErrors {
     /// Creates a new builder-style object to manufacture [`BackendConnectionErrors`](crate::model::BackendConnectionErrors).
@@ -1329,7 +1289,7 @@ impl BackendConnectionErrors {
 /// <p>A resource policy grants one or more Amazon Web Services services and accounts permissions to access X-Ray. Each resource policy is associated with a specific Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourcePolicy {
+pub struct ResourcePolicy  {
     /// <p>The name of the resource policy. Must be unique within a specific Amazon Web Services account.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
@@ -1345,25 +1305,25 @@ pub struct ResourcePolicy {
 }
 impl ResourcePolicy {
     /// <p>The name of the resource policy. Must be unique within a specific Amazon Web Services account.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The resource policy document, which can be up to 5kb in size.</p>
-    pub fn policy_document(&self) -> std::option::Option<&str> {
+    pub fn policy_document(&self) -> std::option::Option<& str> {
         self.policy_document.as_deref()
     }
     /// <p>Returns the current policy revision id for this policy name.</p>
-    pub fn policy_revision_id(&self) -> std::option::Option<&str> {
+    pub fn policy_revision_id(&self) -> std::option::Option<& str> {
         self.policy_revision_id.as_deref()
     }
     /// <p>When the policy was last updated, in Unix time seconds.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
 /// See [`ResourcePolicy`](crate::model::ResourcePolicy).
 pub mod resource_policy {
-
+    
     /// A builder for [`ResourcePolicy`](crate::model::ResourcePolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1380,8 +1340,7 @@ pub mod resource_policy {
         }
         /// <p>The name of the resource policy. Must be unique within a specific Amazon Web Services account.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = input;
-            self
+            self.policy_name = input; self
         }
         /// <p>The resource policy document, which can be up to 5kb in size.</p>
         pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1389,12 +1348,8 @@ pub mod resource_policy {
             self
         }
         /// <p>The resource policy document, which can be up to 5kb in size.</p>
-        pub fn set_policy_document(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.policy_document = input;
-            self
+        pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_document = input; self
         }
         /// <p>Returns the current policy revision id for this policy name.</p>
         pub fn policy_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1402,12 +1357,8 @@ pub mod resource_policy {
             self
         }
         /// <p>Returns the current policy revision id for this policy name.</p>
-        pub fn set_policy_revision_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.policy_revision_id = input;
-            self
+        pub fn set_policy_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_revision_id = input; self
         }
         /// <p>When the policy was last updated, in Unix time seconds.</p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1415,23 +1366,25 @@ pub mod resource_policy {
             self
         }
         /// <p>When the policy was last updated, in Unix time seconds.</p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// Consumes the builder and constructs a [`ResourcePolicy`](crate::model::ResourcePolicy).
         pub fn build(self) -> crate::model::ResourcePolicy {
             crate::model::ResourcePolicy {
-                policy_name: self.policy_name,
-                policy_document: self.policy_document,
-                policy_revision_id: self.policy_revision_id,
-                last_updated_time: self.last_updated_time,
+                policy_name: self.policy_name
+                ,
+                policy_document: self.policy_document
+                ,
+                policy_revision_id: self.policy_revision_id
+                ,
+                last_updated_time: self.last_updated_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourcePolicy {
     /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
@@ -1443,7 +1396,7 @@ impl ResourcePolicy {
 /// <p>A configuration document that specifies encryption configuration settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EncryptionConfig {
+pub struct EncryptionConfig  {
     /// <p>The ID of the KMS key used for encryption, if applicable.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
@@ -1456,21 +1409,21 @@ pub struct EncryptionConfig {
 }
 impl EncryptionConfig {
     /// <p>The ID of the KMS key used for encryption, if applicable.</p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> std::option::Option<& str> {
         self.key_id.as_deref()
     }
     /// <p>The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a combination of the new and old settings.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::EncryptionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::EncryptionStatus> {
         self.status.as_ref()
     }
     /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for default encryption.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::EncryptionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::EncryptionType> {
         self.r#type.as_ref()
     }
 }
 /// See [`EncryptionConfig`](crate::model::EncryptionConfig).
 pub mod encryption_config {
-
+    
     /// A builder for [`EncryptionConfig`](crate::model::EncryptionConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1486,8 +1439,7 @@ pub mod encryption_config {
         }
         /// <p>The ID of the KMS key used for encryption, if applicable.</p>
         pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key_id = input;
-            self
+            self.key_id = input; self
         }
         /// <p>The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a combination of the new and old settings.</p>
         pub fn status(mut self, input: crate::model::EncryptionStatus) -> Self {
@@ -1495,12 +1447,8 @@ pub mod encryption_config {
             self
         }
         /// <p>The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt data with a combination of the new and old settings.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::EncryptionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for default encryption.</p>
         pub fn r#type(mut self, input: crate::model::EncryptionType) -> Self {
@@ -1508,22 +1456,23 @@ pub mod encryption_config {
             self
         }
         /// <p>The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set to <code>NONE</code> for default encryption.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::EncryptionType>) -> Self {
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`EncryptionConfig`](crate::model::EncryptionConfig).
         pub fn build(self) -> crate::model::EncryptionConfig {
             crate::model::EncryptionConfig {
-                key_id: self.key_id,
-                status: self.status,
-                r#type: self.r#type,
+                key_id: self.key_id
+                ,
+                status: self.status
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl EncryptionConfig {
     /// Creates a new builder-style object to manufacture [`EncryptionConfig`](crate::model::EncryptionConfig).
@@ -1538,9 +1487,9 @@ impl EncryptionConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let encryptiontype = unimplemented!();
 /// match encryptiontype {
@@ -1562,58 +1511,52 @@ impl EncryptionConfig {
 /// Specifically, when `encryptiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EncryptionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EncryptionType {
     #[allow(missing_docs)] // documentation missing in model
     Kms,
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionType {
     fn from(s: &str) -> Self {
         match s {
             "KMS" => EncryptionType::Kms,
             "NONE" => EncryptionType::None,
-            other => EncryptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EncryptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EncryptionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EncryptionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EncryptionType::from(s))
+                }
+            }
 impl EncryptionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncryptionType::Kms => "KMS",
             EncryptionType::None => "NONE",
-            EncryptionType::Unknown(value) => value.as_str(),
+            EncryptionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["KMS", "NONE"]
+        &[
+            "KMS", "NONE"
+        ]
     }
 }
 impl AsRef<str> for EncryptionType {
@@ -1628,9 +1571,9 @@ impl AsRef<str> for EncryptionType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let encryptionstatus = unimplemented!();
 /// match encryptionstatus {
@@ -1652,58 +1595,52 @@ impl AsRef<str> for EncryptionType {
 /// Specifically, when `encryptionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EncryptionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EncryptionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => EncryptionStatus::Active,
             "UPDATING" => EncryptionStatus::Updating,
-            other => EncryptionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EncryptionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EncryptionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EncryptionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EncryptionStatus::from(s))
+                }
+            }
 impl EncryptionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncryptionStatus::Active => "ACTIVE",
             EncryptionStatus::Updating => "UPDATING",
-            EncryptionStatus::Unknown(value) => value.as_str(),
+            EncryptionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "UPDATING"]
+        &[
+            "ACTIVE", "UPDATING"
+        ]
     }
 }
 impl AsRef<str> for EncryptionStatus {
@@ -1715,7 +1652,7 @@ impl AsRef<str> for EncryptionStatus {
 /// <p>Metadata generated from the segment documents in a trace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TraceSummary {
+pub struct TraceSummary  {
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1742,12 +1679,7 @@ pub struct TraceSummary {
     pub http: std::option::Option<crate::model::Http>,
     /// <p>Annotations from the trace's segment documents.</p>
     #[doc(hidden)]
-    pub annotations: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::ValueWithServiceIds>,
-        >,
-    >,
+    pub annotations: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ValueWithServiceIds>>>,
     /// <p>Users from the trace's segment documents.</p>
     #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::model::TraceUser>>,
@@ -1762,8 +1694,7 @@ pub struct TraceSummary {
     pub instance_ids: std::option::Option<std::vec::Vec<crate::model::InstanceIdDetail>>,
     /// <p>A list of Availability Zones for any zone corresponding to the trace segments.</p>
     #[doc(hidden)]
-    pub availability_zones:
-        std::option::Option<std::vec::Vec<crate::model::AvailabilityZoneDetail>>,
+    pub availability_zones: std::option::Option<std::vec::Vec<crate::model::AvailabilityZoneDetail>>,
     /// <p>The root of a trace.</p>
     #[doc(hidden)]
     pub entry_point: std::option::Option<crate::model::ServiceId>,
@@ -1775,8 +1706,7 @@ pub struct TraceSummary {
     pub error_root_causes: std::option::Option<std::vec::Vec<crate::model::ErrorRootCause>>,
     /// <p>A collection of ResponseTimeRootCause structures corresponding to the trace segments.</p>
     #[doc(hidden)]
-    pub response_time_root_causes:
-        std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCause>>,
+    pub response_time_root_causes: std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCause>>,
     /// <p>The revision number of a trace.</p>
     #[doc(hidden)]
     pub revision: i32,
@@ -1786,7 +1716,7 @@ pub struct TraceSummary {
 }
 impl TraceSummary {
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
@@ -1814,58 +1744,47 @@ impl TraceSummary {
         self.is_partial
     }
     /// <p>Information about the HTTP request served by the trace.</p>
-    pub fn http(&self) -> std::option::Option<&crate::model::Http> {
+    pub fn http(&self) -> std::option::Option<& crate::model::Http> {
         self.http.as_ref()
     }
     /// <p>Annotations from the trace's segment documents.</p>
-    pub fn annotations(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::ValueWithServiceIds>,
-        >,
-    > {
+    pub fn annotations(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ValueWithServiceIds>>> {
         self.annotations.as_ref()
     }
     /// <p>Users from the trace's segment documents.</p>
-    pub fn users(&self) -> std::option::Option<&[crate::model::TraceUser]> {
+    pub fn users(&self) -> std::option::Option<& [crate::model::TraceUser]> {
         self.users.as_deref()
     }
     /// <p>Service IDs from the trace's segment documents.</p>
-    pub fn service_ids(&self) -> std::option::Option<&[crate::model::ServiceId]> {
+    pub fn service_ids(&self) -> std::option::Option<& [crate::model::ServiceId]> {
         self.service_ids.as_deref()
     }
     /// <p>A list of resource ARNs for any resource corresponding to the trace segments.</p>
-    pub fn resource_ar_ns(&self) -> std::option::Option<&[crate::model::ResourceArnDetail]> {
+    pub fn resource_ar_ns(&self) -> std::option::Option<& [crate::model::ResourceArnDetail]> {
         self.resource_ar_ns.as_deref()
     }
     /// <p>A list of EC2 instance IDs for any instance corresponding to the trace segments.</p>
-    pub fn instance_ids(&self) -> std::option::Option<&[crate::model::InstanceIdDetail]> {
+    pub fn instance_ids(&self) -> std::option::Option<& [crate::model::InstanceIdDetail]> {
         self.instance_ids.as_deref()
     }
     /// <p>A list of Availability Zones for any zone corresponding to the trace segments.</p>
-    pub fn availability_zones(
-        &self,
-    ) -> std::option::Option<&[crate::model::AvailabilityZoneDetail]> {
+    pub fn availability_zones(&self) -> std::option::Option<& [crate::model::AvailabilityZoneDetail]> {
         self.availability_zones.as_deref()
     }
     /// <p>The root of a trace.</p>
-    pub fn entry_point(&self) -> std::option::Option<&crate::model::ServiceId> {
+    pub fn entry_point(&self) -> std::option::Option<& crate::model::ServiceId> {
         self.entry_point.as_ref()
     }
     /// <p>A collection of FaultRootCause structures corresponding to the trace segments.</p>
-    pub fn fault_root_causes(&self) -> std::option::Option<&[crate::model::FaultRootCause]> {
+    pub fn fault_root_causes(&self) -> std::option::Option<& [crate::model::FaultRootCause]> {
         self.fault_root_causes.as_deref()
     }
     /// <p>A collection of ErrorRootCause structures corresponding to the trace segments.</p>
-    pub fn error_root_causes(&self) -> std::option::Option<&[crate::model::ErrorRootCause]> {
+    pub fn error_root_causes(&self) -> std::option::Option<& [crate::model::ErrorRootCause]> {
         self.error_root_causes.as_deref()
     }
     /// <p>A collection of ResponseTimeRootCause structures corresponding to the trace segments.</p>
-    pub fn response_time_root_causes(
-        &self,
-    ) -> std::option::Option<&[crate::model::ResponseTimeRootCause]> {
+    pub fn response_time_root_causes(&self) -> std::option::Option<& [crate::model::ResponseTimeRootCause]> {
         self.response_time_root_causes.as_deref()
     }
     /// <p>The revision number of a trace.</p>
@@ -1873,13 +1792,13 @@ impl TraceSummary {
         self.revision
     }
     /// <p>The matched time stamp of a defined event.</p>
-    pub fn matched_event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn matched_event_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.matched_event_time.as_ref()
     }
 }
 /// See [`TraceSummary`](crate::model::TraceSummary).
 pub mod trace_summary {
-
+    
     /// A builder for [`TraceSummary`](crate::model::TraceSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1891,26 +1810,16 @@ pub mod trace_summary {
         pub(crate) has_throttle: std::option::Option<bool>,
         pub(crate) is_partial: std::option::Option<bool>,
         pub(crate) http: std::option::Option<crate::model::Http>,
-        pub(crate) annotations: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::model::ValueWithServiceIds>,
-            >,
-        >,
+        pub(crate) annotations: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ValueWithServiceIds>>>,
         pub(crate) users: std::option::Option<std::vec::Vec<crate::model::TraceUser>>,
         pub(crate) service_ids: std::option::Option<std::vec::Vec<crate::model::ServiceId>>,
-        pub(crate) resource_ar_ns:
-            std::option::Option<std::vec::Vec<crate::model::ResourceArnDetail>>,
+        pub(crate) resource_ar_ns: std::option::Option<std::vec::Vec<crate::model::ResourceArnDetail>>,
         pub(crate) instance_ids: std::option::Option<std::vec::Vec<crate::model::InstanceIdDetail>>,
-        pub(crate) availability_zones:
-            std::option::Option<std::vec::Vec<crate::model::AvailabilityZoneDetail>>,
+        pub(crate) availability_zones: std::option::Option<std::vec::Vec<crate::model::AvailabilityZoneDetail>>,
         pub(crate) entry_point: std::option::Option<crate::model::ServiceId>,
-        pub(crate) fault_root_causes:
-            std::option::Option<std::vec::Vec<crate::model::FaultRootCause>>,
-        pub(crate) error_root_causes:
-            std::option::Option<std::vec::Vec<crate::model::ErrorRootCause>>,
-        pub(crate) response_time_root_causes:
-            std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCause>>,
+        pub(crate) fault_root_causes: std::option::Option<std::vec::Vec<crate::model::FaultRootCause>>,
+        pub(crate) error_root_causes: std::option::Option<std::vec::Vec<crate::model::ErrorRootCause>>,
+        pub(crate) response_time_root_causes: std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCause>>,
         pub(crate) revision: std::option::Option<i32>,
         pub(crate) matched_event_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -1922,8 +1831,7 @@ pub mod trace_summary {
         }
         /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
         pub fn duration(mut self, input: f64) -> Self {
@@ -1932,8 +1840,7 @@ pub mod trace_summary {
         }
         /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
         pub fn set_duration(mut self, input: std::option::Option<f64>) -> Self {
-            self.duration = input;
-            self
+            self.duration = input; self
         }
         /// <p>The length of time in seconds between the start and end times of the root segment. If the service performs work asynchronously, the response time measures the time before the response is sent to the user, while the duration measures the amount of time before the last traced activity completes.</p>
         pub fn response_time(mut self, input: f64) -> Self {
@@ -1942,8 +1849,7 @@ pub mod trace_summary {
         }
         /// <p>The length of time in seconds between the start and end times of the root segment. If the service performs work asynchronously, the response time measures the time before the response is sent to the user, while the duration measures the amount of time before the last traced activity completes.</p>
         pub fn set_response_time(mut self, input: std::option::Option<f64>) -> Self {
-            self.response_time = input;
-            self
+            self.response_time = input; self
         }
         /// <p>The root segment document has a 500 series error.</p>
         pub fn has_fault(mut self, input: bool) -> Self {
@@ -1952,8 +1858,7 @@ pub mod trace_summary {
         }
         /// <p>The root segment document has a 500 series error.</p>
         pub fn set_has_fault(mut self, input: std::option::Option<bool>) -> Self {
-            self.has_fault = input;
-            self
+            self.has_fault = input; self
         }
         /// <p>The root segment document has a 400 series error.</p>
         pub fn has_error(mut self, input: bool) -> Self {
@@ -1962,8 +1867,7 @@ pub mod trace_summary {
         }
         /// <p>The root segment document has a 400 series error.</p>
         pub fn set_has_error(mut self, input: std::option::Option<bool>) -> Self {
-            self.has_error = input;
-            self
+            self.has_error = input; self
         }
         /// <p>One or more of the segment documents has a 429 throttling error.</p>
         pub fn has_throttle(mut self, input: bool) -> Self {
@@ -1972,8 +1876,7 @@ pub mod trace_summary {
         }
         /// <p>One or more of the segment documents has a 429 throttling error.</p>
         pub fn set_has_throttle(mut self, input: std::option::Option<bool>) -> Self {
-            self.has_throttle = input;
-            self
+            self.has_throttle = input; self
         }
         /// <p>One or more of the segment documents is in progress.</p>
         pub fn is_partial(mut self, input: bool) -> Self {
@@ -1982,8 +1885,7 @@ pub mod trace_summary {
         }
         /// <p>One or more of the segment documents is in progress.</p>
         pub fn set_is_partial(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_partial = input;
-            self
+            self.is_partial = input; self
         }
         /// <p>Information about the HTTP request served by the trace.</p>
         pub fn http(mut self, input: crate::model::Http) -> Self {
@@ -1992,36 +1894,22 @@ pub mod trace_summary {
         }
         /// <p>Information about the HTTP request served by the trace.</p>
         pub fn set_http(mut self, input: std::option::Option<crate::model::Http>) -> Self {
-            self.http = input;
-            self
+            self.http = input; self
         }
         /// Adds a key-value pair to `annotations`.
         ///
         /// To override the contents of this collection use [`set_annotations`](Self::set_annotations).
         ///
         /// <p>Annotations from the trace's segment documents.</p>
-        pub fn annotations(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<crate::model::ValueWithServiceIds>,
-        ) -> Self {
+        pub fn annotations(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<crate::model::ValueWithServiceIds>) -> Self {
             let mut hash_map = self.annotations.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.annotations = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.annotations = Some(hash_map);
+                            self
         }
         /// <p>Annotations from the trace's segment documents.</p>
-        pub fn set_annotations(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::vec::Vec<crate::model::ValueWithServiceIds>,
-                >,
-            >,
-        ) -> Self {
-            self.annotations = input;
-            self
+        pub fn set_annotations(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ValueWithServiceIds>>>) -> Self {
+            self.annotations = input; self
         }
         /// Appends an item to `users`.
         ///
@@ -2030,17 +1918,13 @@ pub mod trace_summary {
         /// <p>Users from the trace's segment documents.</p>
         pub fn users(mut self, input: crate::model::TraceUser) -> Self {
             let mut v = self.users.unwrap_or_default();
-            v.push(input);
-            self.users = Some(v);
-            self
+                            v.push(input);
+                            self.users = Some(v);
+                            self
         }
         /// <p>Users from the trace's segment documents.</p>
-        pub fn set_users(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TraceUser>>,
-        ) -> Self {
-            self.users = input;
-            self
+        pub fn set_users(mut self, input: std::option::Option<std::vec::Vec<crate::model::TraceUser>>) -> Self {
+            self.users = input; self
         }
         /// Appends an item to `service_ids`.
         ///
@@ -2049,17 +1933,13 @@ pub mod trace_summary {
         /// <p>Service IDs from the trace's segment documents.</p>
         pub fn service_ids(mut self, input: crate::model::ServiceId) -> Self {
             let mut v = self.service_ids.unwrap_or_default();
-            v.push(input);
-            self.service_ids = Some(v);
-            self
+                            v.push(input);
+                            self.service_ids = Some(v);
+                            self
         }
         /// <p>Service IDs from the trace's segment documents.</p>
-        pub fn set_service_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ServiceId>>,
-        ) -> Self {
-            self.service_ids = input;
-            self
+        pub fn set_service_ids(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServiceId>>) -> Self {
+            self.service_ids = input; self
         }
         /// Appends an item to `resource_ar_ns`.
         ///
@@ -2068,17 +1948,13 @@ pub mod trace_summary {
         /// <p>A list of resource ARNs for any resource corresponding to the trace segments.</p>
         pub fn resource_ar_ns(mut self, input: crate::model::ResourceArnDetail) -> Self {
             let mut v = self.resource_ar_ns.unwrap_or_default();
-            v.push(input);
-            self.resource_ar_ns = Some(v);
-            self
+                            v.push(input);
+                            self.resource_ar_ns = Some(v);
+                            self
         }
         /// <p>A list of resource ARNs for any resource corresponding to the trace segments.</p>
-        pub fn set_resource_ar_ns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceArnDetail>>,
-        ) -> Self {
-            self.resource_ar_ns = input;
-            self
+        pub fn set_resource_ar_ns(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceArnDetail>>) -> Self {
+            self.resource_ar_ns = input; self
         }
         /// Appends an item to `instance_ids`.
         ///
@@ -2087,17 +1963,13 @@ pub mod trace_summary {
         /// <p>A list of EC2 instance IDs for any instance corresponding to the trace segments.</p>
         pub fn instance_ids(mut self, input: crate::model::InstanceIdDetail) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
-            v.push(input);
-            self.instance_ids = Some(v);
-            self
+                            v.push(input);
+                            self.instance_ids = Some(v);
+                            self
         }
         /// <p>A list of EC2 instance IDs for any instance corresponding to the trace segments.</p>
-        pub fn set_instance_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceIdDetail>>,
-        ) -> Self {
-            self.instance_ids = input;
-            self
+        pub fn set_instance_ids(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceIdDetail>>) -> Self {
+            self.instance_ids = input; self
         }
         /// Appends an item to `availability_zones`.
         ///
@@ -2106,17 +1978,13 @@ pub mod trace_summary {
         /// <p>A list of Availability Zones for any zone corresponding to the trace segments.</p>
         pub fn availability_zones(mut self, input: crate::model::AvailabilityZoneDetail) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
-            v.push(input);
-            self.availability_zones = Some(v);
-            self
+                            v.push(input);
+                            self.availability_zones = Some(v);
+                            self
         }
         /// <p>A list of Availability Zones for any zone corresponding to the trace segments.</p>
-        pub fn set_availability_zones(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AvailabilityZoneDetail>>,
-        ) -> Self {
-            self.availability_zones = input;
-            self
+        pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<crate::model::AvailabilityZoneDetail>>) -> Self {
+            self.availability_zones = input; self
         }
         /// <p>The root of a trace.</p>
         pub fn entry_point(mut self, input: crate::model::ServiceId) -> Self {
@@ -2124,12 +1992,8 @@ pub mod trace_summary {
             self
         }
         /// <p>The root of a trace.</p>
-        pub fn set_entry_point(
-            mut self,
-            input: std::option::Option<crate::model::ServiceId>,
-        ) -> Self {
-            self.entry_point = input;
-            self
+        pub fn set_entry_point(mut self, input: std::option::Option<crate::model::ServiceId>) -> Self {
+            self.entry_point = input; self
         }
         /// Appends an item to `fault_root_causes`.
         ///
@@ -2138,17 +2002,13 @@ pub mod trace_summary {
         /// <p>A collection of FaultRootCause structures corresponding to the trace segments.</p>
         pub fn fault_root_causes(mut self, input: crate::model::FaultRootCause) -> Self {
             let mut v = self.fault_root_causes.unwrap_or_default();
-            v.push(input);
-            self.fault_root_causes = Some(v);
-            self
+                            v.push(input);
+                            self.fault_root_causes = Some(v);
+                            self
         }
         /// <p>A collection of FaultRootCause structures corresponding to the trace segments.</p>
-        pub fn set_fault_root_causes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FaultRootCause>>,
-        ) -> Self {
-            self.fault_root_causes = input;
-            self
+        pub fn set_fault_root_causes(mut self, input: std::option::Option<std::vec::Vec<crate::model::FaultRootCause>>) -> Self {
+            self.fault_root_causes = input; self
         }
         /// Appends an item to `error_root_causes`.
         ///
@@ -2157,39 +2017,28 @@ pub mod trace_summary {
         /// <p>A collection of ErrorRootCause structures corresponding to the trace segments.</p>
         pub fn error_root_causes(mut self, input: crate::model::ErrorRootCause) -> Self {
             let mut v = self.error_root_causes.unwrap_or_default();
-            v.push(input);
-            self.error_root_causes = Some(v);
-            self
+                            v.push(input);
+                            self.error_root_causes = Some(v);
+                            self
         }
         /// <p>A collection of ErrorRootCause structures corresponding to the trace segments.</p>
-        pub fn set_error_root_causes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ErrorRootCause>>,
-        ) -> Self {
-            self.error_root_causes = input;
-            self
+        pub fn set_error_root_causes(mut self, input: std::option::Option<std::vec::Vec<crate::model::ErrorRootCause>>) -> Self {
+            self.error_root_causes = input; self
         }
         /// Appends an item to `response_time_root_causes`.
         ///
         /// To override the contents of this collection use [`set_response_time_root_causes`](Self::set_response_time_root_causes).
         ///
         /// <p>A collection of ResponseTimeRootCause structures corresponding to the trace segments.</p>
-        pub fn response_time_root_causes(
-            mut self,
-            input: crate::model::ResponseTimeRootCause,
-        ) -> Self {
+        pub fn response_time_root_causes(mut self, input: crate::model::ResponseTimeRootCause) -> Self {
             let mut v = self.response_time_root_causes.unwrap_or_default();
-            v.push(input);
-            self.response_time_root_causes = Some(v);
-            self
+                            v.push(input);
+                            self.response_time_root_causes = Some(v);
+                            self
         }
         /// <p>A collection of ResponseTimeRootCause structures corresponding to the trace segments.</p>
-        pub fn set_response_time_root_causes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCause>>,
-        ) -> Self {
-            self.response_time_root_causes = input;
-            self
+        pub fn set_response_time_root_causes(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCause>>) -> Self {
+            self.response_time_root_causes = input; self
         }
         /// <p>The revision number of a trace.</p>
         pub fn revision(mut self, input: i32) -> Self {
@@ -2198,8 +2047,7 @@ pub mod trace_summary {
         }
         /// <p>The revision number of a trace.</p>
         pub fn set_revision(mut self, input: std::option::Option<i32>) -> Self {
-            self.revision = input;
-            self
+            self.revision = input; self
         }
         /// <p>The matched time stamp of a defined event.</p>
         pub fn matched_event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2207,39 +2055,58 @@ pub mod trace_summary {
             self
         }
         /// <p>The matched time stamp of a defined event.</p>
-        pub fn set_matched_event_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.matched_event_time = input;
-            self
+        pub fn set_matched_event_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.matched_event_time = input; self
         }
         /// Consumes the builder and constructs a [`TraceSummary`](crate::model::TraceSummary).
         pub fn build(self) -> crate::model::TraceSummary {
             crate::model::TraceSummary {
-                id: self.id,
-                duration: self.duration,
-                response_time: self.response_time,
-                has_fault: self.has_fault,
-                has_error: self.has_error,
-                has_throttle: self.has_throttle,
-                is_partial: self.is_partial,
-                http: self.http,
-                annotations: self.annotations,
-                users: self.users,
-                service_ids: self.service_ids,
-                resource_ar_ns: self.resource_ar_ns,
-                instance_ids: self.instance_ids,
-                availability_zones: self.availability_zones,
-                entry_point: self.entry_point,
-                fault_root_causes: self.fault_root_causes,
-                error_root_causes: self.error_root_causes,
-                response_time_root_causes: self.response_time_root_causes,
-                revision: self.revision.unwrap_or_default(),
-                matched_event_time: self.matched_event_time,
+                id: self.id
+                ,
+                duration: self.duration
+                ,
+                response_time: self.response_time
+                ,
+                has_fault: self.has_fault
+                ,
+                has_error: self.has_error
+                ,
+                has_throttle: self.has_throttle
+                ,
+                is_partial: self.is_partial
+                ,
+                http: self.http
+                ,
+                annotations: self.annotations
+                ,
+                users: self.users
+                ,
+                service_ids: self.service_ids
+                ,
+                resource_ar_ns: self.resource_ar_ns
+                ,
+                instance_ids: self.instance_ids
+                ,
+                availability_zones: self.availability_zones
+                ,
+                entry_point: self.entry_point
+                ,
+                fault_root_causes: self.fault_root_causes
+                ,
+                error_root_causes: self.error_root_causes
+                ,
+                response_time_root_causes: self.response_time_root_causes
+                ,
+                revision: self.revision
+                    .unwrap_or_default()
+                ,
+                matched_event_time: self.matched_event_time
+                ,
             }
         }
     }
+    
+    
 }
 impl TraceSummary {
     /// Creates a new builder-style object to manufacture [`TraceSummary`](crate::model::TraceSummary).
@@ -2251,7 +2118,7 @@ impl TraceSummary {
 /// <p>The root cause information for a response time warning.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResponseTimeRootCause {
+pub struct ResponseTimeRootCause  {
     /// <p>A list of corresponding services. A service identifies a segment and contains a name, account ID, type, and inferred flag.</p>
     #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCauseService>>,
@@ -2261,7 +2128,7 @@ pub struct ResponseTimeRootCause {
 }
 impl ResponseTimeRootCause {
     /// <p>A list of corresponding services. A service identifies a segment and contains a name, account ID, type, and inferred flag.</p>
-    pub fn services(&self) -> std::option::Option<&[crate::model::ResponseTimeRootCauseService]> {
+    pub fn services(&self) -> std::option::Option<& [crate::model::ResponseTimeRootCauseService]> {
         self.services.as_deref()
     }
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
@@ -2271,12 +2138,11 @@ impl ResponseTimeRootCause {
 }
 /// See [`ResponseTimeRootCause`](crate::model::ResponseTimeRootCause).
 pub mod response_time_root_cause {
-
+    
     /// A builder for [`ResponseTimeRootCause`](crate::model::ResponseTimeRootCause).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) services:
-            std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCauseService>>,
+        pub(crate) services: std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCauseService>>,
         pub(crate) client_impacting: std::option::Option<bool>,
     }
     impl Builder {
@@ -2287,17 +2153,13 @@ pub mod response_time_root_cause {
         /// <p>A list of corresponding services. A service identifies a segment and contains a name, account ID, type, and inferred flag.</p>
         pub fn services(mut self, input: crate::model::ResponseTimeRootCauseService) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input);
-            self.services = Some(v);
-            self
+                            v.push(input);
+                            self.services = Some(v);
+                            self
         }
         /// <p>A list of corresponding services. A service identifies a segment and contains a name, account ID, type, and inferred flag.</p>
-        pub fn set_services(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCauseService>>,
-        ) -> Self {
-            self.services = input;
-            self
+        pub fn set_services(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCauseService>>) -> Self {
+            self.services = input; self
         }
         /// <p>A flag that denotes that the root cause impacts the trace client.</p>
         pub fn client_impacting(mut self, input: bool) -> Self {
@@ -2306,17 +2168,20 @@ pub mod response_time_root_cause {
         }
         /// <p>A flag that denotes that the root cause impacts the trace client.</p>
         pub fn set_client_impacting(mut self, input: std::option::Option<bool>) -> Self {
-            self.client_impacting = input;
-            self
+            self.client_impacting = input; self
         }
         /// Consumes the builder and constructs a [`ResponseTimeRootCause`](crate::model::ResponseTimeRootCause).
         pub fn build(self) -> crate::model::ResponseTimeRootCause {
             crate::model::ResponseTimeRootCause {
-                services: self.services,
-                client_impacting: self.client_impacting,
+                services: self.services
+                ,
+                client_impacting: self.client_impacting
+                ,
             }
         }
     }
+    
+    
 }
 impl ResponseTimeRootCause {
     /// Creates a new builder-style object to manufacture [`ResponseTimeRootCause`](crate::model::ResponseTimeRootCause).
@@ -2328,7 +2193,7 @@ impl ResponseTimeRootCause {
 /// <p>A collection of fields identifying the service in a response time warning.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResponseTimeRootCauseService {
+pub struct ResponseTimeRootCauseService  {
     /// <p>The service name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2350,23 +2215,23 @@ pub struct ResponseTimeRootCauseService {
 }
 impl ResponseTimeRootCauseService {
     /// <p>The service name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A collection of associated service names.</p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
         self.names.as_deref()
     }
     /// <p>The type associated to the service.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The account ID associated to the service.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The path of root cause entities found on the service. </p>
-    pub fn entity_path(&self) -> std::option::Option<&[crate::model::ResponseTimeRootCauseEntity]> {
+    pub fn entity_path(&self) -> std::option::Option<& [crate::model::ResponseTimeRootCauseEntity]> {
         self.entity_path.as_deref()
     }
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
@@ -2376,7 +2241,7 @@ impl ResponseTimeRootCauseService {
 }
 /// See [`ResponseTimeRootCauseService`](crate::model::ResponseTimeRootCauseService).
 pub mod response_time_root_cause_service {
-
+    
     /// A builder for [`ResponseTimeRootCauseService`](crate::model::ResponseTimeRootCauseService).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2384,8 +2249,7 @@ pub mod response_time_root_cause_service {
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
-        pub(crate) entity_path:
-            std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCauseEntity>>,
+        pub(crate) entity_path: std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCauseEntity>>,
         pub(crate) inferred: std::option::Option<bool>,
     }
     impl Builder {
@@ -2396,8 +2260,7 @@ pub mod response_time_root_cause_service {
         }
         /// <p>The service name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `names`.
         ///
@@ -2406,17 +2269,13 @@ pub mod response_time_root_cause_service {
         /// <p>A collection of associated service names.</p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
-            v.push(input.into());
-            self.names = Some(v);
-            self
+                            v.push(input.into());
+                            self.names = Some(v);
+                            self
         }
         /// <p>A collection of associated service names.</p>
-        pub fn set_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.names = input;
-            self
+        pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.names = input; self
         }
         /// <p>The type associated to the service.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2425,8 +2284,7 @@ pub mod response_time_root_cause_service {
         }
         /// <p>The type associated to the service.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The account ID associated to the service.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2435,8 +2293,7 @@ pub mod response_time_root_cause_service {
         }
         /// <p>The account ID associated to the service.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// Appends an item to `entity_path`.
         ///
@@ -2445,17 +2302,13 @@ pub mod response_time_root_cause_service {
         /// <p>The path of root cause entities found on the service. </p>
         pub fn entity_path(mut self, input: crate::model::ResponseTimeRootCauseEntity) -> Self {
             let mut v = self.entity_path.unwrap_or_default();
-            v.push(input);
-            self.entity_path = Some(v);
-            self
+                            v.push(input);
+                            self.entity_path = Some(v);
+                            self
         }
         /// <p>The path of root cause entities found on the service. </p>
-        pub fn set_entity_path(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCauseEntity>>,
-        ) -> Self {
-            self.entity_path = input;
-            self
+        pub fn set_entity_path(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResponseTimeRootCauseEntity>>) -> Self {
+            self.entity_path = input; self
         }
         /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
         pub fn inferred(mut self, input: bool) -> Self {
@@ -2464,21 +2317,28 @@ pub mod response_time_root_cause_service {
         }
         /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
         pub fn set_inferred(mut self, input: std::option::Option<bool>) -> Self {
-            self.inferred = input;
-            self
+            self.inferred = input; self
         }
         /// Consumes the builder and constructs a [`ResponseTimeRootCauseService`](crate::model::ResponseTimeRootCauseService).
         pub fn build(self) -> crate::model::ResponseTimeRootCauseService {
             crate::model::ResponseTimeRootCauseService {
-                name: self.name,
-                names: self.names,
-                r#type: self.r#type,
-                account_id: self.account_id,
-                entity_path: self.entity_path,
-                inferred: self.inferred,
+                name: self.name
+                ,
+                names: self.names
+                ,
+                r#type: self.r#type
+                ,
+                account_id: self.account_id
+                ,
+                entity_path: self.entity_path
+                ,
+                inferred: self.inferred
+                ,
             }
         }
     }
+    
+    
 }
 impl ResponseTimeRootCauseService {
     /// Creates a new builder-style object to manufacture [`ResponseTimeRootCauseService`](crate::model::ResponseTimeRootCauseService).
@@ -2490,7 +2350,7 @@ impl ResponseTimeRootCauseService {
 /// <p>A collection of segments and corresponding subsegments associated to a response time warning.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResponseTimeRootCauseEntity {
+pub struct ResponseTimeRootCauseEntity  {
     /// <p>The name of the entity.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2503,7 +2363,7 @@ pub struct ResponseTimeRootCauseEntity {
 }
 impl ResponseTimeRootCauseEntity {
     /// <p>The name of the entity.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type and messages of the exceptions.</p>
@@ -2517,7 +2377,7 @@ impl ResponseTimeRootCauseEntity {
 }
 /// See [`ResponseTimeRootCauseEntity`](crate::model::ResponseTimeRootCauseEntity).
 pub mod response_time_root_cause_entity {
-
+    
     /// A builder for [`ResponseTimeRootCauseEntity`](crate::model::ResponseTimeRootCauseEntity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2533,8 +2393,7 @@ pub mod response_time_root_cause_entity {
         }
         /// <p>The name of the entity.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type and messages of the exceptions.</p>
         pub fn coverage(mut self, input: f64) -> Self {
@@ -2543,8 +2402,7 @@ pub mod response_time_root_cause_entity {
         }
         /// <p>The type and messages of the exceptions.</p>
         pub fn set_coverage(mut self, input: std::option::Option<f64>) -> Self {
-            self.coverage = input;
-            self
+            self.coverage = input; self
         }
         /// <p>A flag that denotes a remote subsegment.</p>
         pub fn remote(mut self, input: bool) -> Self {
@@ -2553,18 +2411,22 @@ pub mod response_time_root_cause_entity {
         }
         /// <p>A flag that denotes a remote subsegment.</p>
         pub fn set_remote(mut self, input: std::option::Option<bool>) -> Self {
-            self.remote = input;
-            self
+            self.remote = input; self
         }
         /// Consumes the builder and constructs a [`ResponseTimeRootCauseEntity`](crate::model::ResponseTimeRootCauseEntity).
         pub fn build(self) -> crate::model::ResponseTimeRootCauseEntity {
             crate::model::ResponseTimeRootCauseEntity {
-                name: self.name,
-                coverage: self.coverage,
-                remote: self.remote,
+                name: self.name
+                ,
+                coverage: self.coverage
+                ,
+                remote: self.remote
+                ,
             }
         }
     }
+    
+    
 }
 impl ResponseTimeRootCauseEntity {
     /// Creates a new builder-style object to manufacture [`ResponseTimeRootCauseEntity`](crate::model::ResponseTimeRootCauseEntity).
@@ -2576,7 +2438,7 @@ impl ResponseTimeRootCauseEntity {
 /// <p>The root cause of a trace summary error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ErrorRootCause {
+pub struct ErrorRootCause  {
     /// <p>A list of services corresponding to an error. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
     #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::ErrorRootCauseService>>,
@@ -2586,7 +2448,7 @@ pub struct ErrorRootCause {
 }
 impl ErrorRootCause {
     /// <p>A list of services corresponding to an error. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
-    pub fn services(&self) -> std::option::Option<&[crate::model::ErrorRootCauseService]> {
+    pub fn services(&self) -> std::option::Option<& [crate::model::ErrorRootCauseService]> {
         self.services.as_deref()
     }
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
@@ -2596,12 +2458,11 @@ impl ErrorRootCause {
 }
 /// See [`ErrorRootCause`](crate::model::ErrorRootCause).
 pub mod error_root_cause {
-
+    
     /// A builder for [`ErrorRootCause`](crate::model::ErrorRootCause).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) services:
-            std::option::Option<std::vec::Vec<crate::model::ErrorRootCauseService>>,
+        pub(crate) services: std::option::Option<std::vec::Vec<crate::model::ErrorRootCauseService>>,
         pub(crate) client_impacting: std::option::Option<bool>,
     }
     impl Builder {
@@ -2612,17 +2473,13 @@ pub mod error_root_cause {
         /// <p>A list of services corresponding to an error. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
         pub fn services(mut self, input: crate::model::ErrorRootCauseService) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input);
-            self.services = Some(v);
-            self
+                            v.push(input);
+                            self.services = Some(v);
+                            self
         }
         /// <p>A list of services corresponding to an error. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
-        pub fn set_services(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ErrorRootCauseService>>,
-        ) -> Self {
-            self.services = input;
-            self
+        pub fn set_services(mut self, input: std::option::Option<std::vec::Vec<crate::model::ErrorRootCauseService>>) -> Self {
+            self.services = input; self
         }
         /// <p>A flag that denotes that the root cause impacts the trace client.</p>
         pub fn client_impacting(mut self, input: bool) -> Self {
@@ -2631,17 +2488,20 @@ pub mod error_root_cause {
         }
         /// <p>A flag that denotes that the root cause impacts the trace client.</p>
         pub fn set_client_impacting(mut self, input: std::option::Option<bool>) -> Self {
-            self.client_impacting = input;
-            self
+            self.client_impacting = input; self
         }
         /// Consumes the builder and constructs a [`ErrorRootCause`](crate::model::ErrorRootCause).
         pub fn build(self) -> crate::model::ErrorRootCause {
             crate::model::ErrorRootCause {
-                services: self.services,
-                client_impacting: self.client_impacting,
+                services: self.services
+                ,
+                client_impacting: self.client_impacting
+                ,
             }
         }
     }
+    
+    
 }
 impl ErrorRootCause {
     /// Creates a new builder-style object to manufacture [`ErrorRootCause`](crate::model::ErrorRootCause).
@@ -2653,7 +2513,7 @@ impl ErrorRootCause {
 /// <p>A collection of fields identifying the services in a trace summary error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ErrorRootCauseService {
+pub struct ErrorRootCauseService  {
     /// <p>The service name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2675,23 +2535,23 @@ pub struct ErrorRootCauseService {
 }
 impl ErrorRootCauseService {
     /// <p>The service name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A collection of associated service names.</p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
         self.names.as_deref()
     }
     /// <p>The type associated to the service.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The account ID associated to the service.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The path of root cause entities found on the service. </p>
-    pub fn entity_path(&self) -> std::option::Option<&[crate::model::ErrorRootCauseEntity]> {
+    pub fn entity_path(&self) -> std::option::Option<& [crate::model::ErrorRootCauseEntity]> {
         self.entity_path.as_deref()
     }
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
@@ -2701,7 +2561,7 @@ impl ErrorRootCauseService {
 }
 /// See [`ErrorRootCauseService`](crate::model::ErrorRootCauseService).
 pub mod error_root_cause_service {
-
+    
     /// A builder for [`ErrorRootCauseService`](crate::model::ErrorRootCauseService).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2709,8 +2569,7 @@ pub mod error_root_cause_service {
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
-        pub(crate) entity_path:
-            std::option::Option<std::vec::Vec<crate::model::ErrorRootCauseEntity>>,
+        pub(crate) entity_path: std::option::Option<std::vec::Vec<crate::model::ErrorRootCauseEntity>>,
         pub(crate) inferred: std::option::Option<bool>,
     }
     impl Builder {
@@ -2721,8 +2580,7 @@ pub mod error_root_cause_service {
         }
         /// <p>The service name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `names`.
         ///
@@ -2731,17 +2589,13 @@ pub mod error_root_cause_service {
         /// <p>A collection of associated service names.</p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
-            v.push(input.into());
-            self.names = Some(v);
-            self
+                            v.push(input.into());
+                            self.names = Some(v);
+                            self
         }
         /// <p>A collection of associated service names.</p>
-        pub fn set_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.names = input;
-            self
+        pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.names = input; self
         }
         /// <p>The type associated to the service.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2750,8 +2604,7 @@ pub mod error_root_cause_service {
         }
         /// <p>The type associated to the service.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The account ID associated to the service.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2760,8 +2613,7 @@ pub mod error_root_cause_service {
         }
         /// <p>The account ID associated to the service.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// Appends an item to `entity_path`.
         ///
@@ -2770,17 +2622,13 @@ pub mod error_root_cause_service {
         /// <p>The path of root cause entities found on the service. </p>
         pub fn entity_path(mut self, input: crate::model::ErrorRootCauseEntity) -> Self {
             let mut v = self.entity_path.unwrap_or_default();
-            v.push(input);
-            self.entity_path = Some(v);
-            self
+                            v.push(input);
+                            self.entity_path = Some(v);
+                            self
         }
         /// <p>The path of root cause entities found on the service. </p>
-        pub fn set_entity_path(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ErrorRootCauseEntity>>,
-        ) -> Self {
-            self.entity_path = input;
-            self
+        pub fn set_entity_path(mut self, input: std::option::Option<std::vec::Vec<crate::model::ErrorRootCauseEntity>>) -> Self {
+            self.entity_path = input; self
         }
         /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
         pub fn inferred(mut self, input: bool) -> Self {
@@ -2789,21 +2637,28 @@ pub mod error_root_cause_service {
         }
         /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
         pub fn set_inferred(mut self, input: std::option::Option<bool>) -> Self {
-            self.inferred = input;
-            self
+            self.inferred = input; self
         }
         /// Consumes the builder and constructs a [`ErrorRootCauseService`](crate::model::ErrorRootCauseService).
         pub fn build(self) -> crate::model::ErrorRootCauseService {
             crate::model::ErrorRootCauseService {
-                name: self.name,
-                names: self.names,
-                r#type: self.r#type,
-                account_id: self.account_id,
-                entity_path: self.entity_path,
-                inferred: self.inferred,
+                name: self.name
+                ,
+                names: self.names
+                ,
+                r#type: self.r#type
+                ,
+                account_id: self.account_id
+                ,
+                entity_path: self.entity_path
+                ,
+                inferred: self.inferred
+                ,
             }
         }
     }
+    
+    
 }
 impl ErrorRootCauseService {
     /// Creates a new builder-style object to manufacture [`ErrorRootCauseService`](crate::model::ErrorRootCauseService).
@@ -2815,7 +2670,7 @@ impl ErrorRootCauseService {
 /// <p>A collection of segments and corresponding subsegments associated to a trace summary error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ErrorRootCauseEntity {
+pub struct ErrorRootCauseEntity  {
     /// <p>The name of the entity.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2828,11 +2683,11 @@ pub struct ErrorRootCauseEntity {
 }
 impl ErrorRootCauseEntity {
     /// <p>The name of the entity.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The types and messages of the exceptions.</p>
-    pub fn exceptions(&self) -> std::option::Option<&[crate::model::RootCauseException]> {
+    pub fn exceptions(&self) -> std::option::Option<& [crate::model::RootCauseException]> {
         self.exceptions.as_deref()
     }
     /// <p>A flag that denotes a remote subsegment.</p>
@@ -2842,7 +2697,7 @@ impl ErrorRootCauseEntity {
 }
 /// See [`ErrorRootCauseEntity`](crate::model::ErrorRootCauseEntity).
 pub mod error_root_cause_entity {
-
+    
     /// A builder for [`ErrorRootCauseEntity`](crate::model::ErrorRootCauseEntity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2858,8 +2713,7 @@ pub mod error_root_cause_entity {
         }
         /// <p>The name of the entity.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `exceptions`.
         ///
@@ -2868,17 +2722,13 @@ pub mod error_root_cause_entity {
         /// <p>The types and messages of the exceptions.</p>
         pub fn exceptions(mut self, input: crate::model::RootCauseException) -> Self {
             let mut v = self.exceptions.unwrap_or_default();
-            v.push(input);
-            self.exceptions = Some(v);
-            self
+                            v.push(input);
+                            self.exceptions = Some(v);
+                            self
         }
         /// <p>The types and messages of the exceptions.</p>
-        pub fn set_exceptions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RootCauseException>>,
-        ) -> Self {
-            self.exceptions = input;
-            self
+        pub fn set_exceptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::RootCauseException>>) -> Self {
+            self.exceptions = input; self
         }
         /// <p>A flag that denotes a remote subsegment.</p>
         pub fn remote(mut self, input: bool) -> Self {
@@ -2887,18 +2737,22 @@ pub mod error_root_cause_entity {
         }
         /// <p>A flag that denotes a remote subsegment.</p>
         pub fn set_remote(mut self, input: std::option::Option<bool>) -> Self {
-            self.remote = input;
-            self
+            self.remote = input; self
         }
         /// Consumes the builder and constructs a [`ErrorRootCauseEntity`](crate::model::ErrorRootCauseEntity).
         pub fn build(self) -> crate::model::ErrorRootCauseEntity {
             crate::model::ErrorRootCauseEntity {
-                name: self.name,
-                exceptions: self.exceptions,
-                remote: self.remote,
+                name: self.name
+                ,
+                exceptions: self.exceptions
+                ,
+                remote: self.remote
+                ,
             }
         }
     }
+    
+    
 }
 impl ErrorRootCauseEntity {
     /// Creates a new builder-style object to manufacture [`ErrorRootCauseEntity`](crate::model::ErrorRootCauseEntity).
@@ -2910,7 +2764,7 @@ impl ErrorRootCauseEntity {
 /// <p>The exception associated with a root cause.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RootCauseException {
+pub struct RootCauseException  {
     /// <p>The name of the exception.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2920,17 +2774,17 @@ pub struct RootCauseException {
 }
 impl RootCauseException {
     /// <p>The name of the exception.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The message of the exception.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`RootCauseException`](crate::model::RootCauseException).
 pub mod root_cause_exception {
-
+    
     /// A builder for [`RootCauseException`](crate::model::RootCauseException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2945,8 +2799,7 @@ pub mod root_cause_exception {
         }
         /// <p>The name of the exception.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The message of the exception.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2955,17 +2808,20 @@ pub mod root_cause_exception {
         }
         /// <p>The message of the exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`RootCauseException`](crate::model::RootCauseException).
         pub fn build(self) -> crate::model::RootCauseException {
             crate::model::RootCauseException {
-                name: self.name,
-                message: self.message,
+                name: self.name
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl RootCauseException {
     /// Creates a new builder-style object to manufacture [`RootCauseException`](crate::model::RootCauseException).
@@ -2977,7 +2833,7 @@ impl RootCauseException {
 /// <p>The root cause information for a trace summary fault.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FaultRootCause {
+pub struct FaultRootCause  {
     /// <p>A list of corresponding services. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
     #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::FaultRootCauseService>>,
@@ -2987,7 +2843,7 @@ pub struct FaultRootCause {
 }
 impl FaultRootCause {
     /// <p>A list of corresponding services. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
-    pub fn services(&self) -> std::option::Option<&[crate::model::FaultRootCauseService]> {
+    pub fn services(&self) -> std::option::Option<& [crate::model::FaultRootCauseService]> {
         self.services.as_deref()
     }
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
@@ -2997,12 +2853,11 @@ impl FaultRootCause {
 }
 /// See [`FaultRootCause`](crate::model::FaultRootCause).
 pub mod fault_root_cause {
-
+    
     /// A builder for [`FaultRootCause`](crate::model::FaultRootCause).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) services:
-            std::option::Option<std::vec::Vec<crate::model::FaultRootCauseService>>,
+        pub(crate) services: std::option::Option<std::vec::Vec<crate::model::FaultRootCauseService>>,
         pub(crate) client_impacting: std::option::Option<bool>,
     }
     impl Builder {
@@ -3013,17 +2868,13 @@ pub mod fault_root_cause {
         /// <p>A list of corresponding services. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
         pub fn services(mut self, input: crate::model::FaultRootCauseService) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input);
-            self.services = Some(v);
-            self
+                            v.push(input);
+                            self.services = Some(v);
+                            self
         }
         /// <p>A list of corresponding services. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
-        pub fn set_services(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FaultRootCauseService>>,
-        ) -> Self {
-            self.services = input;
-            self
+        pub fn set_services(mut self, input: std::option::Option<std::vec::Vec<crate::model::FaultRootCauseService>>) -> Self {
+            self.services = input; self
         }
         /// <p>A flag that denotes that the root cause impacts the trace client.</p>
         pub fn client_impacting(mut self, input: bool) -> Self {
@@ -3032,17 +2883,20 @@ pub mod fault_root_cause {
         }
         /// <p>A flag that denotes that the root cause impacts the trace client.</p>
         pub fn set_client_impacting(mut self, input: std::option::Option<bool>) -> Self {
-            self.client_impacting = input;
-            self
+            self.client_impacting = input; self
         }
         /// Consumes the builder and constructs a [`FaultRootCause`](crate::model::FaultRootCause).
         pub fn build(self) -> crate::model::FaultRootCause {
             crate::model::FaultRootCause {
-                services: self.services,
-                client_impacting: self.client_impacting,
+                services: self.services
+                ,
+                client_impacting: self.client_impacting
+                ,
             }
         }
     }
+    
+    
 }
 impl FaultRootCause {
     /// Creates a new builder-style object to manufacture [`FaultRootCause`](crate::model::FaultRootCause).
@@ -3054,7 +2908,7 @@ impl FaultRootCause {
 /// <p>A collection of fields identifying the services in a trace summary fault.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FaultRootCauseService {
+pub struct FaultRootCauseService  {
     /// <p>The service name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3076,23 +2930,23 @@ pub struct FaultRootCauseService {
 }
 impl FaultRootCauseService {
     /// <p>The service name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A collection of associated service names.</p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
         self.names.as_deref()
     }
     /// <p>The type associated to the service.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The account ID associated to the service.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The path of root cause entities found on the service. </p>
-    pub fn entity_path(&self) -> std::option::Option<&[crate::model::FaultRootCauseEntity]> {
+    pub fn entity_path(&self) -> std::option::Option<& [crate::model::FaultRootCauseEntity]> {
         self.entity_path.as_deref()
     }
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
@@ -3102,7 +2956,7 @@ impl FaultRootCauseService {
 }
 /// See [`FaultRootCauseService`](crate::model::FaultRootCauseService).
 pub mod fault_root_cause_service {
-
+    
     /// A builder for [`FaultRootCauseService`](crate::model::FaultRootCauseService).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3110,8 +2964,7 @@ pub mod fault_root_cause_service {
         pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) r#type: std::option::Option<std::string::String>,
         pub(crate) account_id: std::option::Option<std::string::String>,
-        pub(crate) entity_path:
-            std::option::Option<std::vec::Vec<crate::model::FaultRootCauseEntity>>,
+        pub(crate) entity_path: std::option::Option<std::vec::Vec<crate::model::FaultRootCauseEntity>>,
         pub(crate) inferred: std::option::Option<bool>,
     }
     impl Builder {
@@ -3122,8 +2975,7 @@ pub mod fault_root_cause_service {
         }
         /// <p>The service name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `names`.
         ///
@@ -3132,17 +2984,13 @@ pub mod fault_root_cause_service {
         /// <p>A collection of associated service names.</p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
-            v.push(input.into());
-            self.names = Some(v);
-            self
+                            v.push(input.into());
+                            self.names = Some(v);
+                            self
         }
         /// <p>A collection of associated service names.</p>
-        pub fn set_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.names = input;
-            self
+        pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.names = input; self
         }
         /// <p>The type associated to the service.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3151,8 +2999,7 @@ pub mod fault_root_cause_service {
         }
         /// <p>The type associated to the service.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The account ID associated to the service.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3161,8 +3008,7 @@ pub mod fault_root_cause_service {
         }
         /// <p>The account ID associated to the service.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// Appends an item to `entity_path`.
         ///
@@ -3171,17 +3017,13 @@ pub mod fault_root_cause_service {
         /// <p>The path of root cause entities found on the service. </p>
         pub fn entity_path(mut self, input: crate::model::FaultRootCauseEntity) -> Self {
             let mut v = self.entity_path.unwrap_or_default();
-            v.push(input);
-            self.entity_path = Some(v);
-            self
+                            v.push(input);
+                            self.entity_path = Some(v);
+                            self
         }
         /// <p>The path of root cause entities found on the service. </p>
-        pub fn set_entity_path(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FaultRootCauseEntity>>,
-        ) -> Self {
-            self.entity_path = input;
-            self
+        pub fn set_entity_path(mut self, input: std::option::Option<std::vec::Vec<crate::model::FaultRootCauseEntity>>) -> Self {
+            self.entity_path = input; self
         }
         /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
         pub fn inferred(mut self, input: bool) -> Self {
@@ -3190,21 +3032,28 @@ pub mod fault_root_cause_service {
         }
         /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
         pub fn set_inferred(mut self, input: std::option::Option<bool>) -> Self {
-            self.inferred = input;
-            self
+            self.inferred = input; self
         }
         /// Consumes the builder and constructs a [`FaultRootCauseService`](crate::model::FaultRootCauseService).
         pub fn build(self) -> crate::model::FaultRootCauseService {
             crate::model::FaultRootCauseService {
-                name: self.name,
-                names: self.names,
-                r#type: self.r#type,
-                account_id: self.account_id,
-                entity_path: self.entity_path,
-                inferred: self.inferred,
+                name: self.name
+                ,
+                names: self.names
+                ,
+                r#type: self.r#type
+                ,
+                account_id: self.account_id
+                ,
+                entity_path: self.entity_path
+                ,
+                inferred: self.inferred
+                ,
             }
         }
     }
+    
+    
 }
 impl FaultRootCauseService {
     /// Creates a new builder-style object to manufacture [`FaultRootCauseService`](crate::model::FaultRootCauseService).
@@ -3216,7 +3065,7 @@ impl FaultRootCauseService {
 /// <p>A collection of segments and corresponding subsegments associated to a trace summary fault error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FaultRootCauseEntity {
+pub struct FaultRootCauseEntity  {
     /// <p>The name of the entity.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3229,11 +3078,11 @@ pub struct FaultRootCauseEntity {
 }
 impl FaultRootCauseEntity {
     /// <p>The name of the entity.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The types and messages of the exceptions.</p>
-    pub fn exceptions(&self) -> std::option::Option<&[crate::model::RootCauseException]> {
+    pub fn exceptions(&self) -> std::option::Option<& [crate::model::RootCauseException]> {
         self.exceptions.as_deref()
     }
     /// <p>A flag that denotes a remote subsegment.</p>
@@ -3243,7 +3092,7 @@ impl FaultRootCauseEntity {
 }
 /// See [`FaultRootCauseEntity`](crate::model::FaultRootCauseEntity).
 pub mod fault_root_cause_entity {
-
+    
     /// A builder for [`FaultRootCauseEntity`](crate::model::FaultRootCauseEntity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3259,8 +3108,7 @@ pub mod fault_root_cause_entity {
         }
         /// <p>The name of the entity.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `exceptions`.
         ///
@@ -3269,17 +3117,13 @@ pub mod fault_root_cause_entity {
         /// <p>The types and messages of the exceptions.</p>
         pub fn exceptions(mut self, input: crate::model::RootCauseException) -> Self {
             let mut v = self.exceptions.unwrap_or_default();
-            v.push(input);
-            self.exceptions = Some(v);
-            self
+                            v.push(input);
+                            self.exceptions = Some(v);
+                            self
         }
         /// <p>The types and messages of the exceptions.</p>
-        pub fn set_exceptions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RootCauseException>>,
-        ) -> Self {
-            self.exceptions = input;
-            self
+        pub fn set_exceptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::RootCauseException>>) -> Self {
+            self.exceptions = input; self
         }
         /// <p>A flag that denotes a remote subsegment.</p>
         pub fn remote(mut self, input: bool) -> Self {
@@ -3288,18 +3132,22 @@ pub mod fault_root_cause_entity {
         }
         /// <p>A flag that denotes a remote subsegment.</p>
         pub fn set_remote(mut self, input: std::option::Option<bool>) -> Self {
-            self.remote = input;
-            self
+            self.remote = input; self
         }
         /// Consumes the builder and constructs a [`FaultRootCauseEntity`](crate::model::FaultRootCauseEntity).
         pub fn build(self) -> crate::model::FaultRootCauseEntity {
             crate::model::FaultRootCauseEntity {
-                name: self.name,
-                exceptions: self.exceptions,
-                remote: self.remote,
+                name: self.name
+                ,
+                exceptions: self.exceptions
+                ,
+                remote: self.remote
+                ,
             }
         }
     }
+    
+    
 }
 impl FaultRootCauseEntity {
     /// Creates a new builder-style object to manufacture [`FaultRootCauseEntity`](crate::model::FaultRootCauseEntity).
@@ -3311,7 +3159,7 @@ impl FaultRootCauseEntity {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceId {
+pub struct ServiceId  {
     /// <p></p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3327,25 +3175,25 @@ pub struct ServiceId {
 }
 impl ServiceId {
     /// <p></p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p></p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
         self.names.as_deref()
     }
     /// <p></p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p></p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
 /// See [`ServiceId`](crate::model::ServiceId).
 pub mod service_id {
-
+    
     /// A builder for [`ServiceId`](crate::model::ServiceId).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3362,8 +3210,7 @@ pub mod service_id {
         }
         /// <p></p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `names`.
         ///
@@ -3372,17 +3219,13 @@ pub mod service_id {
         /// <p></p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
-            v.push(input.into());
-            self.names = Some(v);
-            self
+                            v.push(input.into());
+                            self.names = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.names = input;
-            self
+        pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.names = input; self
         }
         /// <p></p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3391,8 +3234,7 @@ pub mod service_id {
         }
         /// <p></p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p></p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3401,19 +3243,24 @@ pub mod service_id {
         }
         /// <p></p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`ServiceId`](crate::model::ServiceId).
         pub fn build(self) -> crate::model::ServiceId {
             crate::model::ServiceId {
-                name: self.name,
-                names: self.names,
-                account_id: self.account_id,
-                r#type: self.r#type,
+                name: self.name
+                ,
+                names: self.names
+                ,
+                account_id: self.account_id
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceId {
     /// Creates a new builder-style object to manufacture [`ServiceId`](crate::model::ServiceId).
@@ -3425,20 +3272,20 @@ impl ServiceId {
 /// <p>A list of Availability Zones corresponding to the segments in a trace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AvailabilityZoneDetail {
+pub struct AvailabilityZoneDetail  {
     /// <p>The name of a corresponding Availability Zone.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl AvailabilityZoneDetail {
     /// <p>The name of a corresponding Availability Zone.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`AvailabilityZoneDetail`](crate::model::AvailabilityZoneDetail).
 pub mod availability_zone_detail {
-
+    
     /// A builder for [`AvailabilityZoneDetail`](crate::model::AvailabilityZoneDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3452,14 +3299,18 @@ pub mod availability_zone_detail {
         }
         /// <p>The name of a corresponding Availability Zone.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`AvailabilityZoneDetail`](crate::model::AvailabilityZoneDetail).
         pub fn build(self) -> crate::model::AvailabilityZoneDetail {
-            crate::model::AvailabilityZoneDetail { name: self.name }
+            crate::model::AvailabilityZoneDetail {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl AvailabilityZoneDetail {
     /// Creates a new builder-style object to manufacture [`AvailabilityZoneDetail`](crate::model::AvailabilityZoneDetail).
@@ -3471,20 +3322,20 @@ impl AvailabilityZoneDetail {
 /// <p>A list of EC2 instance IDs corresponding to the segments in a trace. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceIdDetail {
+pub struct InstanceIdDetail  {
     /// <p>The ID of a corresponding EC2 instance.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl InstanceIdDetail {
     /// <p>The ID of a corresponding EC2 instance.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`InstanceIdDetail`](crate::model::InstanceIdDetail).
 pub mod instance_id_detail {
-
+    
     /// A builder for [`InstanceIdDetail`](crate::model::InstanceIdDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3498,14 +3349,18 @@ pub mod instance_id_detail {
         }
         /// <p>The ID of a corresponding EC2 instance.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`InstanceIdDetail`](crate::model::InstanceIdDetail).
         pub fn build(self) -> crate::model::InstanceIdDetail {
-            crate::model::InstanceIdDetail { id: self.id }
+            crate::model::InstanceIdDetail {
+                id: self.id
+                ,
+            }
         }
     }
+    
+    
 }
 impl InstanceIdDetail {
     /// Creates a new builder-style object to manufacture [`InstanceIdDetail`](crate::model::InstanceIdDetail).
@@ -3517,20 +3372,20 @@ impl InstanceIdDetail {
 /// <p>A list of resources ARNs corresponding to the segments in a trace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceArnDetail {
+pub struct ResourceArnDetail  {
     /// <p>The ARN of a corresponding resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl ResourceArnDetail {
     /// <p>The ARN of a corresponding resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`ResourceArnDetail`](crate::model::ResourceArnDetail).
 pub mod resource_arn_detail {
-
+    
     /// A builder for [`ResourceArnDetail`](crate::model::ResourceArnDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3544,14 +3399,18 @@ pub mod resource_arn_detail {
         }
         /// <p>The ARN of a corresponding resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`ResourceArnDetail`](crate::model::ResourceArnDetail).
         pub fn build(self) -> crate::model::ResourceArnDetail {
-            crate::model::ResourceArnDetail { arn: self.arn }
+            crate::model::ResourceArnDetail {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl ResourceArnDetail {
     /// Creates a new builder-style object to manufacture [`ResourceArnDetail`](crate::model::ResourceArnDetail).
@@ -3563,7 +3422,7 @@ impl ResourceArnDetail {
 /// <p>Information about a user recorded in segment documents.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TraceUser {
+pub struct TraceUser  {
     /// <p>The user's name.</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
@@ -3573,17 +3432,17 @@ pub struct TraceUser {
 }
 impl TraceUser {
     /// <p>The user's name.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>Services that the user's request hit.</p>
-    pub fn service_ids(&self) -> std::option::Option<&[crate::model::ServiceId]> {
+    pub fn service_ids(&self) -> std::option::Option<& [crate::model::ServiceId]> {
         self.service_ids.as_deref()
     }
 }
 /// See [`TraceUser`](crate::model::TraceUser).
 pub mod trace_user {
-
+    
     /// A builder for [`TraceUser`](crate::model::TraceUser).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3598,8 +3457,7 @@ pub mod trace_user {
         }
         /// <p>The user's name.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_name = input;
-            self
+            self.user_name = input; self
         }
         /// Appends an item to `service_ids`.
         ///
@@ -3608,26 +3466,26 @@ pub mod trace_user {
         /// <p>Services that the user's request hit.</p>
         pub fn service_ids(mut self, input: crate::model::ServiceId) -> Self {
             let mut v = self.service_ids.unwrap_or_default();
-            v.push(input);
-            self.service_ids = Some(v);
-            self
+                            v.push(input);
+                            self.service_ids = Some(v);
+                            self
         }
         /// <p>Services that the user's request hit.</p>
-        pub fn set_service_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ServiceId>>,
-        ) -> Self {
-            self.service_ids = input;
-            self
+        pub fn set_service_ids(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServiceId>>) -> Self {
+            self.service_ids = input; self
         }
         /// Consumes the builder and constructs a [`TraceUser`](crate::model::TraceUser).
         pub fn build(self) -> crate::model::TraceUser {
             crate::model::TraceUser {
-                user_name: self.user_name,
-                service_ids: self.service_ids,
+                user_name: self.user_name
+                ,
+                service_ids: self.service_ids
+                ,
             }
         }
     }
+    
+    
 }
 impl TraceUser {
     /// Creates a new builder-style object to manufacture [`TraceUser`](crate::model::TraceUser).
@@ -3639,7 +3497,7 @@ impl TraceUser {
 /// <p>Information about a segment annotation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValueWithServiceIds {
+pub struct ValueWithServiceIds  {
     /// <p>Values of the annotation.</p>
     #[doc(hidden)]
     pub annotation_value: std::option::Option<crate::model::AnnotationValue>,
@@ -3649,17 +3507,17 @@ pub struct ValueWithServiceIds {
 }
 impl ValueWithServiceIds {
     /// <p>Values of the annotation.</p>
-    pub fn annotation_value(&self) -> std::option::Option<&crate::model::AnnotationValue> {
+    pub fn annotation_value(&self) -> std::option::Option<& crate::model::AnnotationValue> {
         self.annotation_value.as_ref()
     }
     /// <p>Services to which the annotation applies.</p>
-    pub fn service_ids(&self) -> std::option::Option<&[crate::model::ServiceId]> {
+    pub fn service_ids(&self) -> std::option::Option<& [crate::model::ServiceId]> {
         self.service_ids.as_deref()
     }
 }
 /// See [`ValueWithServiceIds`](crate::model::ValueWithServiceIds).
 pub mod value_with_service_ids {
-
+    
     /// A builder for [`ValueWithServiceIds`](crate::model::ValueWithServiceIds).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3673,12 +3531,8 @@ pub mod value_with_service_ids {
             self
         }
         /// <p>Values of the annotation.</p>
-        pub fn set_annotation_value(
-            mut self,
-            input: std::option::Option<crate::model::AnnotationValue>,
-        ) -> Self {
-            self.annotation_value = input;
-            self
+        pub fn set_annotation_value(mut self, input: std::option::Option<crate::model::AnnotationValue>) -> Self {
+            self.annotation_value = input; self
         }
         /// Appends an item to `service_ids`.
         ///
@@ -3687,26 +3541,26 @@ pub mod value_with_service_ids {
         /// <p>Services to which the annotation applies.</p>
         pub fn service_ids(mut self, input: crate::model::ServiceId) -> Self {
             let mut v = self.service_ids.unwrap_or_default();
-            v.push(input);
-            self.service_ids = Some(v);
-            self
+                            v.push(input);
+                            self.service_ids = Some(v);
+                            self
         }
         /// <p>Services to which the annotation applies.</p>
-        pub fn set_service_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ServiceId>>,
-        ) -> Self {
-            self.service_ids = input;
-            self
+        pub fn set_service_ids(mut self, input: std::option::Option<std::vec::Vec<crate::model::ServiceId>>) -> Self {
+            self.service_ids = input; self
         }
         /// Consumes the builder and constructs a [`ValueWithServiceIds`](crate::model::ValueWithServiceIds).
         pub fn build(self) -> crate::model::ValueWithServiceIds {
             crate::model::ValueWithServiceIds {
-                annotation_value: self.annotation_value,
-                service_ids: self.service_ids,
+                annotation_value: self.annotation_value
+                ,
+                service_ids: self.service_ids
+                ,
             }
         }
     }
+    
+    
 }
 impl ValueWithServiceIds {
     /// Creates a new builder-style object to manufacture [`ValueWithServiceIds`](crate::model::ValueWithServiceIds).
@@ -3739,11 +3593,7 @@ impl AnnotationValue {
     /// Tries to convert the enum instance into [`BooleanValue`](crate::model::AnnotationValue::BooleanValue), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
-        if let AnnotationValue::BooleanValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let AnnotationValue::BooleanValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`BooleanValue`](crate::model::AnnotationValue::BooleanValue).
     pub fn is_boolean_value(&self) -> bool {
@@ -3752,11 +3602,7 @@ impl AnnotationValue {
     /// Tries to convert the enum instance into [`NumberValue`](crate::model::AnnotationValue::NumberValue), extracting the inner [`f64`](f64).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_number_value(&self) -> std::result::Result<&f64, &Self> {
-        if let AnnotationValue::NumberValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let AnnotationValue::NumberValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`NumberValue`](crate::model::AnnotationValue::NumberValue).
     pub fn is_number_value(&self) -> bool {
@@ -3765,11 +3611,7 @@ impl AnnotationValue {
     /// Tries to convert the enum instance into [`StringValue`](crate::model::AnnotationValue::StringValue), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let AnnotationValue::StringValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let AnnotationValue::StringValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`StringValue`](crate::model::AnnotationValue::StringValue).
     pub fn is_string_value(&self) -> bool {
@@ -3784,7 +3626,7 @@ impl AnnotationValue {
 /// <p>Information about an HTTP request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Http {
+pub struct Http  {
     /// <p>The request URL.</p>
     #[doc(hidden)]
     pub http_url: std::option::Option<std::string::String>,
@@ -3803,7 +3645,7 @@ pub struct Http {
 }
 impl Http {
     /// <p>The request URL.</p>
-    pub fn http_url(&self) -> std::option::Option<&str> {
+    pub fn http_url(&self) -> std::option::Option<& str> {
         self.http_url.as_deref()
     }
     /// <p>The response status.</p>
@@ -3811,21 +3653,21 @@ impl Http {
         self.http_status
     }
     /// <p>The request method.</p>
-    pub fn http_method(&self) -> std::option::Option<&str> {
+    pub fn http_method(&self) -> std::option::Option<& str> {
         self.http_method.as_deref()
     }
     /// <p>The request's user agent string.</p>
-    pub fn user_agent(&self) -> std::option::Option<&str> {
+    pub fn user_agent(&self) -> std::option::Option<& str> {
         self.user_agent.as_deref()
     }
     /// <p>The IP address of the requestor.</p>
-    pub fn client_ip(&self) -> std::option::Option<&str> {
+    pub fn client_ip(&self) -> std::option::Option<& str> {
         self.client_ip.as_deref()
     }
 }
 /// See [`Http`](crate::model::Http).
 pub mod http {
-
+    
     /// A builder for [`Http`](crate::model::Http).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3843,8 +3685,7 @@ pub mod http {
         }
         /// <p>The request URL.</p>
         pub fn set_http_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.http_url = input;
-            self
+            self.http_url = input; self
         }
         /// <p>The response status.</p>
         pub fn http_status(mut self, input: i32) -> Self {
@@ -3853,8 +3694,7 @@ pub mod http {
         }
         /// <p>The response status.</p>
         pub fn set_http_status(mut self, input: std::option::Option<i32>) -> Self {
-            self.http_status = input;
-            self
+            self.http_status = input; self
         }
         /// <p>The request method.</p>
         pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3863,8 +3703,7 @@ pub mod http {
         }
         /// <p>The request method.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.http_method = input;
-            self
+            self.http_method = input; self
         }
         /// <p>The request's user agent string.</p>
         pub fn user_agent(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3873,8 +3712,7 @@ pub mod http {
         }
         /// <p>The request's user agent string.</p>
         pub fn set_user_agent(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_agent = input;
-            self
+            self.user_agent = input; self
         }
         /// <p>The IP address of the requestor.</p>
         pub fn client_ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3883,20 +3721,26 @@ pub mod http {
         }
         /// <p>The IP address of the requestor.</p>
         pub fn set_client_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_ip = input;
-            self
+            self.client_ip = input; self
         }
         /// Consumes the builder and constructs a [`Http`](crate::model::Http).
         pub fn build(self) -> crate::model::Http {
             crate::model::Http {
-                http_url: self.http_url,
-                http_status: self.http_status,
-                http_method: self.http_method,
-                user_agent: self.user_agent,
-                client_ip: self.client_ip,
+                http_url: self.http_url
+                ,
+                http_status: self.http_status
+                ,
+                http_method: self.http_method
+                ,
+                user_agent: self.user_agent
+                ,
+                client_ip: self.client_ip
+                ,
             }
         }
     }
+    
+    
 }
 impl Http {
     /// Creates a new builder-style object to manufacture [`Http`](crate::model::Http).
@@ -3908,7 +3752,7 @@ impl Http {
 /// <p>The name and value of a sampling rule to apply to a trace summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SamplingStrategy {
+pub struct SamplingStrategy  {
     /// <p>The name of a sampling rule.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::SamplingStrategyName>,
@@ -3918,7 +3762,7 @@ pub struct SamplingStrategy {
 }
 impl SamplingStrategy {
     /// <p>The name of a sampling rule.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::SamplingStrategyName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::SamplingStrategyName> {
         self.name.as_ref()
     }
     /// <p>The value of a sampling rule.</p>
@@ -3928,7 +3772,7 @@ impl SamplingStrategy {
 }
 /// See [`SamplingStrategy`](crate::model::SamplingStrategy).
 pub mod sampling_strategy {
-
+    
     /// A builder for [`SamplingStrategy`](crate::model::SamplingStrategy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3942,12 +3786,8 @@ pub mod sampling_strategy {
             self
         }
         /// <p>The name of a sampling rule.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::SamplingStrategyName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::SamplingStrategyName>) -> Self {
+            self.name = input; self
         }
         /// <p>The value of a sampling rule.</p>
         pub fn value(mut self, input: f64) -> Self {
@@ -3956,17 +3796,20 @@ pub mod sampling_strategy {
         }
         /// <p>The value of a sampling rule.</p>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`SamplingStrategy`](crate::model::SamplingStrategy).
         pub fn build(self) -> crate::model::SamplingStrategy {
             crate::model::SamplingStrategy {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl SamplingStrategy {
     /// Creates a new builder-style object to manufacture [`SamplingStrategy`](crate::model::SamplingStrategy).
@@ -3981,9 +3824,9 @@ impl SamplingStrategy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let samplingstrategyname = unimplemented!();
 /// match samplingstrategyname {
@@ -4005,60 +3848,52 @@ impl SamplingStrategy {
 /// Specifically, when `samplingstrategyname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SamplingStrategyName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SamplingStrategyName {
     #[allow(missing_docs)] // documentation missing in model
     FixedRate,
     #[allow(missing_docs)] // documentation missing in model
     PartialScan,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SamplingStrategyName {
     fn from(s: &str) -> Self {
         match s {
             "FixedRate" => SamplingStrategyName::FixedRate,
             "PartialScan" => SamplingStrategyName::PartialScan,
-            other => {
-                SamplingStrategyName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SamplingStrategyName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SamplingStrategyName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SamplingStrategyName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SamplingStrategyName::from(s))
+                }
+            }
 impl SamplingStrategyName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SamplingStrategyName::FixedRate => "FixedRate",
             SamplingStrategyName::PartialScan => "PartialScan",
-            SamplingStrategyName::Unknown(value) => value.as_str(),
+            SamplingStrategyName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FixedRate", "PartialScan"]
+        &[
+            "FixedRate", "PartialScan"
+        ]
     }
 }
 impl AsRef<str> for SamplingStrategyName {
@@ -4073,9 +3908,9 @@ impl AsRef<str> for SamplingStrategyName {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let timerangetype = unimplemented!();
 /// match timerangetype {
@@ -4097,58 +3932,52 @@ impl AsRef<str> for SamplingStrategyName {
 /// Specifically, when `timerangetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TimeRangeType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TimeRangeType {
     #[allow(missing_docs)] // documentation missing in model
     Event,
     #[allow(missing_docs)] // documentation missing in model
     TraceId,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TimeRangeType {
     fn from(s: &str) -> Self {
         match s {
             "Event" => TimeRangeType::Event,
             "TraceId" => TimeRangeType::TraceId,
-            other => TimeRangeType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TimeRangeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TimeRangeType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TimeRangeType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TimeRangeType::from(s))
+                }
+            }
 impl TimeRangeType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TimeRangeType::Event => "Event",
             TimeRangeType::TraceId => "TraceId",
-            TimeRangeType::Unknown(value) => value.as_str(),
+            TimeRangeType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Event", "TraceId"]
+        &[
+            "Event", "TraceId"
+        ]
     }
 }
 impl AsRef<str> for TimeRangeType {
@@ -4160,7 +3989,7 @@ impl AsRef<str> for TimeRangeType {
 /// <p>Information about an application that processed requests, users that made requests, or downstream services, resources, and applications that an application used.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Service {
+pub struct Service  {
     /// <p>Identifier for the service. Unique within the service map.</p>
     #[doc(hidden)]
     pub reference_id: std::option::Option<i32>,
@@ -4176,12 +4005,12 @@ pub struct Service {
     /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The type of service.</p>
-    /// <ul>
-    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p> </li>
-    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p> </li>
-    /// <li> <p> <code>client</code> - Represents the clients that sent requests to a root service.</p> </li>
-    /// <li> <p> <code>remote</code> - A downstream service of indeterminate type.</p> </li>
+    /// <p>The type of service.</p> 
+    /// <ul> 
+    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p> </li> 
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p> </li> 
+    /// <li> <p> <code>client</code> - Represents the clients that sent requests to a root service.</p> </li> 
+    /// <li> <p> <code>remote</code> - A downstream service of indeterminate type.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -4213,11 +4042,11 @@ impl Service {
         self.reference_id
     }
     /// <p>The canonical name of the service.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A list of names for the service, including the canonical name.</p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
         self.names.as_deref()
     }
     /// <p>Indicates that the service was the first service to process a request.</p>
@@ -4225,51 +4054,51 @@ impl Service {
         self.root
     }
     /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
-    /// <p>The type of service.</p>
-    /// <ul>
-    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p> </li>
-    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p> </li>
-    /// <li> <p> <code>client</code> - Represents the clients that sent requests to a root service.</p> </li>
-    /// <li> <p> <code>remote</code> - A downstream service of indeterminate type.</p> </li>
+    /// <p>The type of service.</p> 
+    /// <ul> 
+    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p> </li> 
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p> </li> 
+    /// <li> <p> <code>client</code> - Represents the clients that sent requests to a root service.</p> </li> 
+    /// <li> <p> <code>remote</code> - A downstream service of indeterminate type.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The service's state.</p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>The start time of the first segment that the service generated.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the last segment that the service generated.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Connections to downstream services.</p>
-    pub fn edges(&self) -> std::option::Option<&[crate::model::Edge]> {
+    pub fn edges(&self) -> std::option::Option<& [crate::model::Edge]> {
         self.edges.as_deref()
     }
     /// <p>Aggregated statistics for the service.</p>
-    pub fn summary_statistics(&self) -> std::option::Option<&crate::model::ServiceStatistics> {
+    pub fn summary_statistics(&self) -> std::option::Option<& crate::model::ServiceStatistics> {
         self.summary_statistics.as_ref()
     }
     /// <p>A histogram that maps the spread of service durations.</p>
-    pub fn duration_histogram(&self) -> std::option::Option<&[crate::model::HistogramEntry]> {
+    pub fn duration_histogram(&self) -> std::option::Option<& [crate::model::HistogramEntry]> {
         self.duration_histogram.as_deref()
     }
     /// <p>A histogram that maps the spread of service response times.</p>
-    pub fn response_time_histogram(&self) -> std::option::Option<&[crate::model::HistogramEntry]> {
+    pub fn response_time_histogram(&self) -> std::option::Option<& [crate::model::HistogramEntry]> {
         self.response_time_histogram.as_deref()
     }
 }
 /// See [`Service`](crate::model::Service).
 pub mod service {
-
+    
     /// A builder for [`Service`](crate::model::Service).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4284,10 +4113,8 @@ pub mod service {
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) edges: std::option::Option<std::vec::Vec<crate::model::Edge>>,
         pub(crate) summary_statistics: std::option::Option<crate::model::ServiceStatistics>,
-        pub(crate) duration_histogram:
-            std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
-        pub(crate) response_time_histogram:
-            std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
+        pub(crate) duration_histogram: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
+        pub(crate) response_time_histogram: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
     }
     impl Builder {
         /// <p>Identifier for the service. Unique within the service map.</p>
@@ -4297,8 +4124,7 @@ pub mod service {
         }
         /// <p>Identifier for the service. Unique within the service map.</p>
         pub fn set_reference_id(mut self, input: std::option::Option<i32>) -> Self {
-            self.reference_id = input;
-            self
+            self.reference_id = input; self
         }
         /// <p>The canonical name of the service.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4307,8 +4133,7 @@ pub mod service {
         }
         /// <p>The canonical name of the service.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `names`.
         ///
@@ -4317,17 +4142,13 @@ pub mod service {
         /// <p>A list of names for the service, including the canonical name.</p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
-            v.push(input.into());
-            self.names = Some(v);
-            self
+                            v.push(input.into());
+                            self.names = Some(v);
+                            self
         }
         /// <p>A list of names for the service, including the canonical name.</p>
-        pub fn set_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.names = input;
-            self
+        pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.names = input; self
         }
         /// <p>Indicates that the service was the first service to process a request.</p>
         pub fn root(mut self, input: bool) -> Self {
@@ -4336,8 +4157,7 @@ pub mod service {
         }
         /// <p>Indicates that the service was the first service to process a request.</p>
         pub fn set_root(mut self, input: std::option::Option<bool>) -> Self {
-            self.root = input;
-            self
+            self.root = input; self
         }
         /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4346,30 +4166,28 @@ pub mod service {
         }
         /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
-        /// <p>The type of service.</p>
-        /// <ul>
-        /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p> </li>
-        /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p> </li>
-        /// <li> <p> <code>client</code> - Represents the clients that sent requests to a root service.</p> </li>
-        /// <li> <p> <code>remote</code> - A downstream service of indeterminate type.</p> </li>
+        /// <p>The type of service.</p> 
+        /// <ul> 
+        /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p> </li> 
+        /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p> </li> 
+        /// <li> <p> <code>client</code> - Represents the clients that sent requests to a root service.</p> </li> 
+        /// <li> <p> <code>remote</code> - A downstream service of indeterminate type.</p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of service.</p>
-        /// <ul>
-        /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p> </li>
-        /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p> </li>
-        /// <li> <p> <code>client</code> - Represents the clients that sent requests to a root service.</p> </li>
-        /// <li> <p> <code>remote</code> - A downstream service of indeterminate type.</p> </li>
+        /// <p>The type of service.</p> 
+        /// <ul> 
+        /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an Amazon DynamoDB table that the application used.</p> </li> 
+        /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target a specific table.</p> </li> 
+        /// <li> <p> <code>client</code> - Represents the clients that sent requests to a root service.</p> </li> 
+        /// <li> <p> <code>remote</code> - A downstream service of indeterminate type.</p> </li> 
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The service's state.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4378,8 +4196,7 @@ pub mod service {
         }
         /// <p>The service's state.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The start time of the first segment that the service generated.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4387,12 +4204,8 @@ pub mod service {
             self
         }
         /// <p>The start time of the first segment that the service generated.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The end time of the last segment that the service generated.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4400,12 +4213,8 @@ pub mod service {
             self
         }
         /// <p>The end time of the last segment that the service generated.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// Appends an item to `edges`.
         ///
@@ -4414,17 +4223,13 @@ pub mod service {
         /// <p>Connections to downstream services.</p>
         pub fn edges(mut self, input: crate::model::Edge) -> Self {
             let mut v = self.edges.unwrap_or_default();
-            v.push(input);
-            self.edges = Some(v);
-            self
+                            v.push(input);
+                            self.edges = Some(v);
+                            self
         }
         /// <p>Connections to downstream services.</p>
-        pub fn set_edges(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Edge>>,
-        ) -> Self {
-            self.edges = input;
-            self
+        pub fn set_edges(mut self, input: std::option::Option<std::vec::Vec<crate::model::Edge>>) -> Self {
+            self.edges = input; self
         }
         /// <p>Aggregated statistics for the service.</p>
         pub fn summary_statistics(mut self, input: crate::model::ServiceStatistics) -> Self {
@@ -4432,12 +4237,8 @@ pub mod service {
             self
         }
         /// <p>Aggregated statistics for the service.</p>
-        pub fn set_summary_statistics(
-            mut self,
-            input: std::option::Option<crate::model::ServiceStatistics>,
-        ) -> Self {
-            self.summary_statistics = input;
-            self
+        pub fn set_summary_statistics(mut self, input: std::option::Option<crate::model::ServiceStatistics>) -> Self {
+            self.summary_statistics = input; self
         }
         /// Appends an item to `duration_histogram`.
         ///
@@ -4446,17 +4247,13 @@ pub mod service {
         /// <p>A histogram that maps the spread of service durations.</p>
         pub fn duration_histogram(mut self, input: crate::model::HistogramEntry) -> Self {
             let mut v = self.duration_histogram.unwrap_or_default();
-            v.push(input);
-            self.duration_histogram = Some(v);
-            self
+                            v.push(input);
+                            self.duration_histogram = Some(v);
+                            self
         }
         /// <p>A histogram that maps the spread of service durations.</p>
-        pub fn set_duration_histogram(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
-        ) -> Self {
-            self.duration_histogram = input;
-            self
+        pub fn set_duration_histogram(mut self, input: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>) -> Self {
+            self.duration_histogram = input; self
         }
         /// Appends an item to `response_time_histogram`.
         ///
@@ -4465,37 +4262,48 @@ pub mod service {
         /// <p>A histogram that maps the spread of service response times.</p>
         pub fn response_time_histogram(mut self, input: crate::model::HistogramEntry) -> Self {
             let mut v = self.response_time_histogram.unwrap_or_default();
-            v.push(input);
-            self.response_time_histogram = Some(v);
-            self
+                            v.push(input);
+                            self.response_time_histogram = Some(v);
+                            self
         }
         /// <p>A histogram that maps the spread of service response times.</p>
-        pub fn set_response_time_histogram(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
-        ) -> Self {
-            self.response_time_histogram = input;
-            self
+        pub fn set_response_time_histogram(mut self, input: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>) -> Self {
+            self.response_time_histogram = input; self
         }
         /// Consumes the builder and constructs a [`Service`](crate::model::Service).
         pub fn build(self) -> crate::model::Service {
             crate::model::Service {
-                reference_id: self.reference_id,
-                name: self.name,
-                names: self.names,
-                root: self.root,
-                account_id: self.account_id,
-                r#type: self.r#type,
-                state: self.state,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                edges: self.edges,
-                summary_statistics: self.summary_statistics,
-                duration_histogram: self.duration_histogram,
-                response_time_histogram: self.response_time_histogram,
+                reference_id: self.reference_id
+                ,
+                name: self.name
+                ,
+                names: self.names
+                ,
+                root: self.root
+                ,
+                account_id: self.account_id
+                ,
+                r#type: self.r#type
+                ,
+                state: self.state
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                edges: self.edges
+                ,
+                summary_statistics: self.summary_statistics
+                ,
+                duration_histogram: self.duration_histogram
+                ,
+                response_time_histogram: self.response_time_histogram
+                ,
             }
         }
     }
+    
+    
 }
 impl Service {
     /// Creates a new builder-style object to manufacture [`Service`](crate::model::Service).
@@ -4507,7 +4315,7 @@ impl Service {
 /// <p>An entry in a histogram for a statistic. A histogram maps the range of observed values on the X axis, and the prevalence of each value on the Y axis.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HistogramEntry {
+pub struct HistogramEntry  {
     /// <p>The value of the entry.</p>
     #[doc(hidden)]
     pub value: f64,
@@ -4527,7 +4335,7 @@ impl HistogramEntry {
 }
 /// See [`HistogramEntry`](crate::model::HistogramEntry).
 pub mod histogram_entry {
-
+    
     /// A builder for [`HistogramEntry`](crate::model::HistogramEntry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4542,8 +4350,7 @@ pub mod histogram_entry {
         }
         /// <p>The value of the entry.</p>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>The prevalence of the entry.</p>
         pub fn count(mut self, input: i32) -> Self {
@@ -4552,17 +4359,22 @@ pub mod histogram_entry {
         }
         /// <p>The prevalence of the entry.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.count = input;
-            self
+            self.count = input; self
         }
         /// Consumes the builder and constructs a [`HistogramEntry`](crate::model::HistogramEntry).
         pub fn build(self) -> crate::model::HistogramEntry {
             crate::model::HistogramEntry {
-                value: self.value.unwrap_or_default(),
-                count: self.count.unwrap_or_default(),
+                value: self.value
+                    .unwrap_or_default()
+                ,
+                count: self.count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl HistogramEntry {
     /// Creates a new builder-style object to manufacture [`HistogramEntry`](crate::model::HistogramEntry).
@@ -4574,7 +4386,7 @@ impl HistogramEntry {
 /// <p>Response statistics for a service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceStatistics {
+pub struct ServiceStatistics  {
     /// <p>The number of requests that completed with a 2xx Success status code.</p>
     #[doc(hidden)]
     pub ok_count: std::option::Option<i64>,
@@ -4597,11 +4409,11 @@ impl ServiceStatistics {
         self.ok_count
     }
     /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
-    pub fn error_statistics(&self) -> std::option::Option<&crate::model::ErrorStatistics> {
+    pub fn error_statistics(&self) -> std::option::Option<& crate::model::ErrorStatistics> {
         self.error_statistics.as_ref()
     }
     /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
-    pub fn fault_statistics(&self) -> std::option::Option<&crate::model::FaultStatistics> {
+    pub fn fault_statistics(&self) -> std::option::Option<& crate::model::FaultStatistics> {
         self.fault_statistics.as_ref()
     }
     /// <p>The total number of completed requests.</p>
@@ -4615,7 +4427,7 @@ impl ServiceStatistics {
 }
 /// See [`ServiceStatistics`](crate::model::ServiceStatistics).
 pub mod service_statistics {
-
+    
     /// A builder for [`ServiceStatistics`](crate::model::ServiceStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4633,8 +4445,7 @@ pub mod service_statistics {
         }
         /// <p>The number of requests that completed with a 2xx Success status code.</p>
         pub fn set_ok_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.ok_count = input;
-            self
+            self.ok_count = input; self
         }
         /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
         pub fn error_statistics(mut self, input: crate::model::ErrorStatistics) -> Self {
@@ -4642,12 +4453,8 @@ pub mod service_statistics {
             self
         }
         /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
-        pub fn set_error_statistics(
-            mut self,
-            input: std::option::Option<crate::model::ErrorStatistics>,
-        ) -> Self {
-            self.error_statistics = input;
-            self
+        pub fn set_error_statistics(mut self, input: std::option::Option<crate::model::ErrorStatistics>) -> Self {
+            self.error_statistics = input; self
         }
         /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
         pub fn fault_statistics(mut self, input: crate::model::FaultStatistics) -> Self {
@@ -4655,12 +4462,8 @@ pub mod service_statistics {
             self
         }
         /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
-        pub fn set_fault_statistics(
-            mut self,
-            input: std::option::Option<crate::model::FaultStatistics>,
-        ) -> Self {
-            self.fault_statistics = input;
-            self
+        pub fn set_fault_statistics(mut self, input: std::option::Option<crate::model::FaultStatistics>) -> Self {
+            self.fault_statistics = input; self
         }
         /// <p>The total number of completed requests.</p>
         pub fn total_count(mut self, input: i64) -> Self {
@@ -4669,8 +4472,7 @@ pub mod service_statistics {
         }
         /// <p>The total number of completed requests.</p>
         pub fn set_total_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_count = input;
-            self
+            self.total_count = input; self
         }
         /// <p>The aggregate response time of completed requests.</p>
         pub fn total_response_time(mut self, input: f64) -> Self {
@@ -4679,20 +4481,26 @@ pub mod service_statistics {
         }
         /// <p>The aggregate response time of completed requests.</p>
         pub fn set_total_response_time(mut self, input: std::option::Option<f64>) -> Self {
-            self.total_response_time = input;
-            self
+            self.total_response_time = input; self
         }
         /// Consumes the builder and constructs a [`ServiceStatistics`](crate::model::ServiceStatistics).
         pub fn build(self) -> crate::model::ServiceStatistics {
             crate::model::ServiceStatistics {
-                ok_count: self.ok_count,
-                error_statistics: self.error_statistics,
-                fault_statistics: self.fault_statistics,
-                total_count: self.total_count,
-                total_response_time: self.total_response_time,
+                ok_count: self.ok_count
+                ,
+                error_statistics: self.error_statistics
+                ,
+                fault_statistics: self.fault_statistics
+                ,
+                total_count: self.total_count
+                ,
+                total_response_time: self.total_response_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceStatistics {
     /// Creates a new builder-style object to manufacture [`ServiceStatistics`](crate::model::ServiceStatistics).
@@ -4704,7 +4512,7 @@ impl ServiceStatistics {
 /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FaultStatistics {
+pub struct FaultStatistics  {
     /// <p>The number of requests that failed with untracked 5xx Server Error status codes.</p>
     #[doc(hidden)]
     pub other_count: std::option::Option<i64>,
@@ -4724,7 +4532,7 @@ impl FaultStatistics {
 }
 /// See [`FaultStatistics`](crate::model::FaultStatistics).
 pub mod fault_statistics {
-
+    
     /// A builder for [`FaultStatistics`](crate::model::FaultStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4739,8 +4547,7 @@ pub mod fault_statistics {
         }
         /// <p>The number of requests that failed with untracked 5xx Server Error status codes.</p>
         pub fn set_other_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.other_count = input;
-            self
+            self.other_count = input; self
         }
         /// <p>The total number of requests that failed with a 5xx Server Error status code.</p>
         pub fn total_count(mut self, input: i64) -> Self {
@@ -4749,17 +4556,20 @@ pub mod fault_statistics {
         }
         /// <p>The total number of requests that failed with a 5xx Server Error status code.</p>
         pub fn set_total_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_count = input;
-            self
+            self.total_count = input; self
         }
         /// Consumes the builder and constructs a [`FaultStatistics`](crate::model::FaultStatistics).
         pub fn build(self) -> crate::model::FaultStatistics {
             crate::model::FaultStatistics {
-                other_count: self.other_count,
-                total_count: self.total_count,
+                other_count: self.other_count
+                ,
+                total_count: self.total_count
+                ,
             }
         }
     }
+    
+    
 }
 impl FaultStatistics {
     /// Creates a new builder-style object to manufacture [`FaultStatistics`](crate::model::FaultStatistics).
@@ -4771,7 +4581,7 @@ impl FaultStatistics {
 /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ErrorStatistics {
+pub struct ErrorStatistics  {
     /// <p>The number of requests that failed with a 419 throttling status code.</p>
     #[doc(hidden)]
     pub throttle_count: std::option::Option<i64>,
@@ -4798,7 +4608,7 @@ impl ErrorStatistics {
 }
 /// See [`ErrorStatistics`](crate::model::ErrorStatistics).
 pub mod error_statistics {
-
+    
     /// A builder for [`ErrorStatistics`](crate::model::ErrorStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4814,8 +4624,7 @@ pub mod error_statistics {
         }
         /// <p>The number of requests that failed with a 419 throttling status code.</p>
         pub fn set_throttle_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.throttle_count = input;
-            self
+            self.throttle_count = input; self
         }
         /// <p>The number of requests that failed with untracked 4xx Client Error status codes.</p>
         pub fn other_count(mut self, input: i64) -> Self {
@@ -4824,8 +4633,7 @@ pub mod error_statistics {
         }
         /// <p>The number of requests that failed with untracked 4xx Client Error status codes.</p>
         pub fn set_other_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.other_count = input;
-            self
+            self.other_count = input; self
         }
         /// <p>The total number of requests that failed with a 4xx Client Error status code.</p>
         pub fn total_count(mut self, input: i64) -> Self {
@@ -4834,18 +4642,22 @@ pub mod error_statistics {
         }
         /// <p>The total number of requests that failed with a 4xx Client Error status code.</p>
         pub fn set_total_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_count = input;
-            self
+            self.total_count = input; self
         }
         /// Consumes the builder and constructs a [`ErrorStatistics`](crate::model::ErrorStatistics).
         pub fn build(self) -> crate::model::ErrorStatistics {
             crate::model::ErrorStatistics {
-                throttle_count: self.throttle_count,
-                other_count: self.other_count,
-                total_count: self.total_count,
+                throttle_count: self.throttle_count
+                ,
+                other_count: self.other_count
+                ,
+                total_count: self.total_count
+                ,
             }
         }
     }
+    
+    
 }
 impl ErrorStatistics {
     /// Creates a new builder-style object to manufacture [`ErrorStatistics`](crate::model::ErrorStatistics).
@@ -4857,7 +4669,7 @@ impl ErrorStatistics {
 /// <p>Information about a connection between two services. An edge can be a synchronous connection, such as typical call between client and service, or an asynchronous link, such as a Lambda function which retrieves an event from an SNS queue.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Edge {
+pub struct Edge  {
     /// <p>Identifier of the edge. Unique within a service map.</p>
     #[doc(hidden)]
     pub reference_id: std::option::Option<i32>,
@@ -4881,8 +4693,7 @@ pub struct Edge {
     pub edge_type: std::option::Option<std::string::String>,
     /// <p>A histogram that maps the spread of event age when received by consumers. Age is calculated each time an event is received. Only populated when <i>EdgeType</i> is <code>link</code>.</p>
     #[doc(hidden)]
-    pub received_event_age_histogram:
-        std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
+    pub received_event_age_histogram: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
 }
 impl Edge {
     /// <p>Identifier of the edge. Unique within a service map.</p>
@@ -4890,39 +4701,37 @@ impl Edge {
         self.reference_id
     }
     /// <p>The start time of the first segment on the edge.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the last segment on the edge.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Response statistics for segments on the edge.</p>
-    pub fn summary_statistics(&self) -> std::option::Option<&crate::model::EdgeStatistics> {
+    pub fn summary_statistics(&self) -> std::option::Option<& crate::model::EdgeStatistics> {
         self.summary_statistics.as_ref()
     }
     /// <p>A histogram that maps the spread of client response times on an edge. Only populated for synchronous edges.</p>
-    pub fn response_time_histogram(&self) -> std::option::Option<&[crate::model::HistogramEntry]> {
+    pub fn response_time_histogram(&self) -> std::option::Option<& [crate::model::HistogramEntry]> {
         self.response_time_histogram.as_deref()
     }
     /// <p>Aliases for the edge.</p>
-    pub fn aliases(&self) -> std::option::Option<&[crate::model::Alias]> {
+    pub fn aliases(&self) -> std::option::Option<& [crate::model::Alias]> {
         self.aliases.as_deref()
     }
     /// <p>Describes an asynchronous connection, with a value of <code>link</code>.</p>
-    pub fn edge_type(&self) -> std::option::Option<&str> {
+    pub fn edge_type(&self) -> std::option::Option<& str> {
         self.edge_type.as_deref()
     }
     /// <p>A histogram that maps the spread of event age when received by consumers. Age is calculated each time an event is received. Only populated when <i>EdgeType</i> is <code>link</code>.</p>
-    pub fn received_event_age_histogram(
-        &self,
-    ) -> std::option::Option<&[crate::model::HistogramEntry]> {
+    pub fn received_event_age_histogram(&self) -> std::option::Option<& [crate::model::HistogramEntry]> {
         self.received_event_age_histogram.as_deref()
     }
 }
 /// See [`Edge`](crate::model::Edge).
 pub mod edge {
-
+    
     /// A builder for [`Edge`](crate::model::Edge).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4930,12 +4739,10 @@ pub mod edge {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) summary_statistics: std::option::Option<crate::model::EdgeStatistics>,
-        pub(crate) response_time_histogram:
-            std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
+        pub(crate) response_time_histogram: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
         pub(crate) aliases: std::option::Option<std::vec::Vec<crate::model::Alias>>,
         pub(crate) edge_type: std::option::Option<std::string::String>,
-        pub(crate) received_event_age_histogram:
-            std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
+        pub(crate) received_event_age_histogram: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
     }
     impl Builder {
         /// <p>Identifier of the edge. Unique within a service map.</p>
@@ -4945,8 +4752,7 @@ pub mod edge {
         }
         /// <p>Identifier of the edge. Unique within a service map.</p>
         pub fn set_reference_id(mut self, input: std::option::Option<i32>) -> Self {
-            self.reference_id = input;
-            self
+            self.reference_id = input; self
         }
         /// <p>The start time of the first segment on the edge.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4954,12 +4760,8 @@ pub mod edge {
             self
         }
         /// <p>The start time of the first segment on the edge.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The end time of the last segment on the edge.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4967,12 +4769,8 @@ pub mod edge {
             self
         }
         /// <p>The end time of the last segment on the edge.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>Response statistics for segments on the edge.</p>
         pub fn summary_statistics(mut self, input: crate::model::EdgeStatistics) -> Self {
@@ -4980,12 +4778,8 @@ pub mod edge {
             self
         }
         /// <p>Response statistics for segments on the edge.</p>
-        pub fn set_summary_statistics(
-            mut self,
-            input: std::option::Option<crate::model::EdgeStatistics>,
-        ) -> Self {
-            self.summary_statistics = input;
-            self
+        pub fn set_summary_statistics(mut self, input: std::option::Option<crate::model::EdgeStatistics>) -> Self {
+            self.summary_statistics = input; self
         }
         /// Appends an item to `response_time_histogram`.
         ///
@@ -4994,17 +4788,13 @@ pub mod edge {
         /// <p>A histogram that maps the spread of client response times on an edge. Only populated for synchronous edges.</p>
         pub fn response_time_histogram(mut self, input: crate::model::HistogramEntry) -> Self {
             let mut v = self.response_time_histogram.unwrap_or_default();
-            v.push(input);
-            self.response_time_histogram = Some(v);
-            self
+                            v.push(input);
+                            self.response_time_histogram = Some(v);
+                            self
         }
         /// <p>A histogram that maps the spread of client response times on an edge. Only populated for synchronous edges.</p>
-        pub fn set_response_time_histogram(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
-        ) -> Self {
-            self.response_time_histogram = input;
-            self
+        pub fn set_response_time_histogram(mut self, input: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>) -> Self {
+            self.response_time_histogram = input; self
         }
         /// Appends an item to `aliases`.
         ///
@@ -5013,17 +4803,13 @@ pub mod edge {
         /// <p>Aliases for the edge.</p>
         pub fn aliases(mut self, input: crate::model::Alias) -> Self {
             let mut v = self.aliases.unwrap_or_default();
-            v.push(input);
-            self.aliases = Some(v);
-            self
+                            v.push(input);
+                            self.aliases = Some(v);
+                            self
         }
         /// <p>Aliases for the edge.</p>
-        pub fn set_aliases(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Alias>>,
-        ) -> Self {
-            self.aliases = input;
-            self
+        pub fn set_aliases(mut self, input: std::option::Option<std::vec::Vec<crate::model::Alias>>) -> Self {
+            self.aliases = input; self
         }
         /// <p>Describes an asynchronous connection, with a value of <code>link</code>.</p>
         pub fn edge_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5032,8 +4818,7 @@ pub mod edge {
         }
         /// <p>Describes an asynchronous connection, with a value of <code>link</code>.</p>
         pub fn set_edge_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.edge_type = input;
-            self
+            self.edge_type = input; self
         }
         /// Appends an item to `received_event_age_histogram`.
         ///
@@ -5042,32 +4827,38 @@ pub mod edge {
         /// <p>A histogram that maps the spread of event age when received by consumers. Age is calculated each time an event is received. Only populated when <i>EdgeType</i> is <code>link</code>.</p>
         pub fn received_event_age_histogram(mut self, input: crate::model::HistogramEntry) -> Self {
             let mut v = self.received_event_age_histogram.unwrap_or_default();
-            v.push(input);
-            self.received_event_age_histogram = Some(v);
-            self
+                            v.push(input);
+                            self.received_event_age_histogram = Some(v);
+                            self
         }
         /// <p>A histogram that maps the spread of event age when received by consumers. Age is calculated each time an event is received. Only populated when <i>EdgeType</i> is <code>link</code>.</p>
-        pub fn set_received_event_age_histogram(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
-        ) -> Self {
-            self.received_event_age_histogram = input;
-            self
+        pub fn set_received_event_age_histogram(mut self, input: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>) -> Self {
+            self.received_event_age_histogram = input; self
         }
         /// Consumes the builder and constructs a [`Edge`](crate::model::Edge).
         pub fn build(self) -> crate::model::Edge {
             crate::model::Edge {
-                reference_id: self.reference_id,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                summary_statistics: self.summary_statistics,
-                response_time_histogram: self.response_time_histogram,
-                aliases: self.aliases,
-                edge_type: self.edge_type,
-                received_event_age_histogram: self.received_event_age_histogram,
+                reference_id: self.reference_id
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                summary_statistics: self.summary_statistics
+                ,
+                response_time_histogram: self.response_time_histogram
+                ,
+                aliases: self.aliases
+                ,
+                edge_type: self.edge_type
+                ,
+                received_event_age_histogram: self.received_event_age_histogram
+                ,
             }
         }
     }
+    
+    
 }
 impl Edge {
     /// Creates a new builder-style object to manufacture [`Edge`](crate::model::Edge).
@@ -5079,7 +4870,7 @@ impl Edge {
 /// <p>An alias for an edge.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Alias {
+pub struct Alias  {
     /// <p>The canonical name of the alias.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -5092,21 +4883,21 @@ pub struct Alias {
 }
 impl Alias {
     /// <p>The canonical name of the alias.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A list of names for the alias, including the canonical name.</p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
         self.names.as_deref()
     }
     /// <p>The type of the alias.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
 /// See [`Alias`](crate::model::Alias).
 pub mod alias {
-
+    
     /// A builder for [`Alias`](crate::model::Alias).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5122,8 +4913,7 @@ pub mod alias {
         }
         /// <p>The canonical name of the alias.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `names`.
         ///
@@ -5132,17 +4922,13 @@ pub mod alias {
         /// <p>A list of names for the alias, including the canonical name.</p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
-            v.push(input.into());
-            self.names = Some(v);
-            self
+                            v.push(input.into());
+                            self.names = Some(v);
+                            self
         }
         /// <p>A list of names for the alias, including the canonical name.</p>
-        pub fn set_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.names = input;
-            self
+        pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.names = input; self
         }
         /// <p>The type of the alias.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5151,18 +4937,22 @@ pub mod alias {
         }
         /// <p>The type of the alias.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`Alias`](crate::model::Alias).
         pub fn build(self) -> crate::model::Alias {
             crate::model::Alias {
-                name: self.name,
-                names: self.names,
-                r#type: self.r#type,
+                name: self.name
+                ,
+                names: self.names
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl Alias {
     /// Creates a new builder-style object to manufacture [`Alias`](crate::model::Alias).
@@ -5174,7 +4964,7 @@ impl Alias {
 /// <p>Response statistics for an edge.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EdgeStatistics {
+pub struct EdgeStatistics  {
     /// <p>The number of requests that completed with a 2xx Success status code.</p>
     #[doc(hidden)]
     pub ok_count: std::option::Option<i64>,
@@ -5197,11 +4987,11 @@ impl EdgeStatistics {
         self.ok_count
     }
     /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
-    pub fn error_statistics(&self) -> std::option::Option<&crate::model::ErrorStatistics> {
+    pub fn error_statistics(&self) -> std::option::Option<& crate::model::ErrorStatistics> {
         self.error_statistics.as_ref()
     }
     /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
-    pub fn fault_statistics(&self) -> std::option::Option<&crate::model::FaultStatistics> {
+    pub fn fault_statistics(&self) -> std::option::Option<& crate::model::FaultStatistics> {
         self.fault_statistics.as_ref()
     }
     /// <p>The total number of completed requests.</p>
@@ -5215,7 +5005,7 @@ impl EdgeStatistics {
 }
 /// See [`EdgeStatistics`](crate::model::EdgeStatistics).
 pub mod edge_statistics {
-
+    
     /// A builder for [`EdgeStatistics`](crate::model::EdgeStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5233,8 +5023,7 @@ pub mod edge_statistics {
         }
         /// <p>The number of requests that completed with a 2xx Success status code.</p>
         pub fn set_ok_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.ok_count = input;
-            self
+            self.ok_count = input; self
         }
         /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
         pub fn error_statistics(mut self, input: crate::model::ErrorStatistics) -> Self {
@@ -5242,12 +5031,8 @@ pub mod edge_statistics {
             self
         }
         /// <p>Information about requests that failed with a 4xx Client Error status code.</p>
-        pub fn set_error_statistics(
-            mut self,
-            input: std::option::Option<crate::model::ErrorStatistics>,
-        ) -> Self {
-            self.error_statistics = input;
-            self
+        pub fn set_error_statistics(mut self, input: std::option::Option<crate::model::ErrorStatistics>) -> Self {
+            self.error_statistics = input; self
         }
         /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
         pub fn fault_statistics(mut self, input: crate::model::FaultStatistics) -> Self {
@@ -5255,12 +5040,8 @@ pub mod edge_statistics {
             self
         }
         /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
-        pub fn set_fault_statistics(
-            mut self,
-            input: std::option::Option<crate::model::FaultStatistics>,
-        ) -> Self {
-            self.fault_statistics = input;
-            self
+        pub fn set_fault_statistics(mut self, input: std::option::Option<crate::model::FaultStatistics>) -> Self {
+            self.fault_statistics = input; self
         }
         /// <p>The total number of completed requests.</p>
         pub fn total_count(mut self, input: i64) -> Self {
@@ -5269,8 +5050,7 @@ pub mod edge_statistics {
         }
         /// <p>The total number of completed requests.</p>
         pub fn set_total_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_count = input;
-            self
+            self.total_count = input; self
         }
         /// <p>The aggregate response time of completed requests.</p>
         pub fn total_response_time(mut self, input: f64) -> Self {
@@ -5279,20 +5059,26 @@ pub mod edge_statistics {
         }
         /// <p>The aggregate response time of completed requests.</p>
         pub fn set_total_response_time(mut self, input: std::option::Option<f64>) -> Self {
-            self.total_response_time = input;
-            self
+            self.total_response_time = input; self
         }
         /// Consumes the builder and constructs a [`EdgeStatistics`](crate::model::EdgeStatistics).
         pub fn build(self) -> crate::model::EdgeStatistics {
             crate::model::EdgeStatistics {
-                ok_count: self.ok_count,
-                error_statistics: self.error_statistics,
-                fault_statistics: self.fault_statistics,
-                total_count: self.total_count,
-                total_response_time: self.total_response_time,
+                ok_count: self.ok_count
+                ,
+                error_statistics: self.error_statistics
+                ,
+                fault_statistics: self.fault_statistics
+                ,
+                total_count: self.total_count
+                ,
+                total_response_time: self.total_response_time
+                ,
             }
         }
     }
+    
+    
 }
 impl EdgeStatistics {
     /// Creates a new builder-style object to manufacture [`EdgeStatistics`](crate::model::EdgeStatistics).
@@ -5304,7 +5090,7 @@ impl EdgeStatistics {
 /// <p>A list of TimeSeriesStatistic structures.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimeSeriesServiceStatistics {
+pub struct TimeSeriesServiceStatistics  {
     /// <p>Timestamp of the window for which statistics are aggregated.</p>
     #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -5323,43 +5109,37 @@ pub struct TimeSeriesServiceStatistics {
 }
 impl TimeSeriesServiceStatistics {
     /// <p>Timestamp of the window for which statistics are aggregated.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>Response statistics for an edge.</p>
-    pub fn edge_summary_statistics(&self) -> std::option::Option<&crate::model::EdgeStatistics> {
+    pub fn edge_summary_statistics(&self) -> std::option::Option<& crate::model::EdgeStatistics> {
         self.edge_summary_statistics.as_ref()
     }
     /// <p>Response statistics for a service.</p>
-    pub fn service_summary_statistics(
-        &self,
-    ) -> std::option::Option<&crate::model::ServiceStatistics> {
+    pub fn service_summary_statistics(&self) -> std::option::Option<& crate::model::ServiceStatistics> {
         self.service_summary_statistics.as_ref()
     }
     /// <p>The forecasted high and low fault count values.</p>
-    pub fn service_forecast_statistics(
-        &self,
-    ) -> std::option::Option<&crate::model::ForecastStatistics> {
+    pub fn service_forecast_statistics(&self) -> std::option::Option<& crate::model::ForecastStatistics> {
         self.service_forecast_statistics.as_ref()
     }
     /// <p>The response time histogram for the selected entities.</p>
-    pub fn response_time_histogram(&self) -> std::option::Option<&[crate::model::HistogramEntry]> {
+    pub fn response_time_histogram(&self) -> std::option::Option<& [crate::model::HistogramEntry]> {
         self.response_time_histogram.as_deref()
     }
 }
 /// See [`TimeSeriesServiceStatistics`](crate::model::TimeSeriesServiceStatistics).
 pub mod time_series_service_statistics {
-
+    
     /// A builder for [`TimeSeriesServiceStatistics`](crate::model::TimeSeriesServiceStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) edge_summary_statistics: std::option::Option<crate::model::EdgeStatistics>,
         pub(crate) service_summary_statistics: std::option::Option<crate::model::ServiceStatistics>,
-        pub(crate) service_forecast_statistics:
-            std::option::Option<crate::model::ForecastStatistics>,
-        pub(crate) response_time_histogram:
-            std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
+        pub(crate) service_forecast_statistics: std::option::Option<crate::model::ForecastStatistics>,
+        pub(crate) response_time_histogram: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
     }
     impl Builder {
         /// <p>Timestamp of the window for which statistics are aggregated.</p>
@@ -5368,12 +5148,8 @@ pub mod time_series_service_statistics {
             self
         }
         /// <p>Timestamp of the window for which statistics are aggregated.</p>
-        pub fn set_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.timestamp = input;
-            self
+        pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.timestamp = input; self
         }
         /// <p>Response statistics for an edge.</p>
         pub fn edge_summary_statistics(mut self, input: crate::model::EdgeStatistics) -> Self {
@@ -5381,44 +5157,26 @@ pub mod time_series_service_statistics {
             self
         }
         /// <p>Response statistics for an edge.</p>
-        pub fn set_edge_summary_statistics(
-            mut self,
-            input: std::option::Option<crate::model::EdgeStatistics>,
-        ) -> Self {
-            self.edge_summary_statistics = input;
-            self
+        pub fn set_edge_summary_statistics(mut self, input: std::option::Option<crate::model::EdgeStatistics>) -> Self {
+            self.edge_summary_statistics = input; self
         }
         /// <p>Response statistics for a service.</p>
-        pub fn service_summary_statistics(
-            mut self,
-            input: crate::model::ServiceStatistics,
-        ) -> Self {
+        pub fn service_summary_statistics(mut self, input: crate::model::ServiceStatistics) -> Self {
             self.service_summary_statistics = Some(input);
             self
         }
         /// <p>Response statistics for a service.</p>
-        pub fn set_service_summary_statistics(
-            mut self,
-            input: std::option::Option<crate::model::ServiceStatistics>,
-        ) -> Self {
-            self.service_summary_statistics = input;
-            self
+        pub fn set_service_summary_statistics(mut self, input: std::option::Option<crate::model::ServiceStatistics>) -> Self {
+            self.service_summary_statistics = input; self
         }
         /// <p>The forecasted high and low fault count values.</p>
-        pub fn service_forecast_statistics(
-            mut self,
-            input: crate::model::ForecastStatistics,
-        ) -> Self {
+        pub fn service_forecast_statistics(mut self, input: crate::model::ForecastStatistics) -> Self {
             self.service_forecast_statistics = Some(input);
             self
         }
         /// <p>The forecasted high and low fault count values.</p>
-        pub fn set_service_forecast_statistics(
-            mut self,
-            input: std::option::Option<crate::model::ForecastStatistics>,
-        ) -> Self {
-            self.service_forecast_statistics = input;
-            self
+        pub fn set_service_forecast_statistics(mut self, input: std::option::Option<crate::model::ForecastStatistics>) -> Self {
+            self.service_forecast_statistics = input; self
         }
         /// Appends an item to `response_time_histogram`.
         ///
@@ -5427,29 +5185,32 @@ pub mod time_series_service_statistics {
         /// <p>The response time histogram for the selected entities.</p>
         pub fn response_time_histogram(mut self, input: crate::model::HistogramEntry) -> Self {
             let mut v = self.response_time_histogram.unwrap_or_default();
-            v.push(input);
-            self.response_time_histogram = Some(v);
-            self
+                            v.push(input);
+                            self.response_time_histogram = Some(v);
+                            self
         }
         /// <p>The response time histogram for the selected entities.</p>
-        pub fn set_response_time_histogram(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>,
-        ) -> Self {
-            self.response_time_histogram = input;
-            self
+        pub fn set_response_time_histogram(mut self, input: std::option::Option<std::vec::Vec<crate::model::HistogramEntry>>) -> Self {
+            self.response_time_histogram = input; self
         }
         /// Consumes the builder and constructs a [`TimeSeriesServiceStatistics`](crate::model::TimeSeriesServiceStatistics).
         pub fn build(self) -> crate::model::TimeSeriesServiceStatistics {
             crate::model::TimeSeriesServiceStatistics {
-                timestamp: self.timestamp,
-                edge_summary_statistics: self.edge_summary_statistics,
-                service_summary_statistics: self.service_summary_statistics,
-                service_forecast_statistics: self.service_forecast_statistics,
-                response_time_histogram: self.response_time_histogram,
+                timestamp: self.timestamp
+                ,
+                edge_summary_statistics: self.edge_summary_statistics
+                ,
+                service_summary_statistics: self.service_summary_statistics
+                ,
+                service_forecast_statistics: self.service_forecast_statistics
+                ,
+                response_time_histogram: self.response_time_histogram
+                ,
             }
         }
     }
+    
+    
 }
 impl TimeSeriesServiceStatistics {
     /// Creates a new builder-style object to manufacture [`TimeSeriesServiceStatistics`](crate::model::TimeSeriesServiceStatistics).
@@ -5461,7 +5222,7 @@ impl TimeSeriesServiceStatistics {
 /// <p>The predicted high and low fault count. This is used to determine if a service has become anomalous and if an insight should be created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ForecastStatistics {
+pub struct ForecastStatistics  {
     /// <p>The upper limit of fault counts for a service.</p>
     #[doc(hidden)]
     pub fault_count_high: std::option::Option<i64>,
@@ -5481,7 +5242,7 @@ impl ForecastStatistics {
 }
 /// See [`ForecastStatistics`](crate::model::ForecastStatistics).
 pub mod forecast_statistics {
-
+    
     /// A builder for [`ForecastStatistics`](crate::model::ForecastStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5496,8 +5257,7 @@ pub mod forecast_statistics {
         }
         /// <p>The upper limit of fault counts for a service.</p>
         pub fn set_fault_count_high(mut self, input: std::option::Option<i64>) -> Self {
-            self.fault_count_high = input;
-            self
+            self.fault_count_high = input; self
         }
         /// <p>The lower limit of fault counts for a service.</p>
         pub fn fault_count_low(mut self, input: i64) -> Self {
@@ -5506,17 +5266,20 @@ pub mod forecast_statistics {
         }
         /// <p>The lower limit of fault counts for a service.</p>
         pub fn set_fault_count_low(mut self, input: std::option::Option<i64>) -> Self {
-            self.fault_count_low = input;
-            self
+            self.fault_count_low = input; self
         }
         /// Consumes the builder and constructs a [`ForecastStatistics`](crate::model::ForecastStatistics).
         pub fn build(self) -> crate::model::ForecastStatistics {
             crate::model::ForecastStatistics {
-                fault_count_high: self.fault_count_high,
-                fault_count_low: self.fault_count_low,
+                fault_count_high: self.fault_count_high
+                ,
+                fault_count_low: self.fault_count_low
+                ,
             }
         }
     }
+    
+    
 }
 impl ForecastStatistics {
     /// Creates a new builder-style object to manufacture [`ForecastStatistics`](crate::model::ForecastStatistics).
@@ -5528,7 +5291,7 @@ impl ForecastStatistics {
 /// <p>Sampling statistics from a call to <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a> that X-Ray could not process.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnprocessedStatistics {
+pub struct UnprocessedStatistics  {
     /// <p>The name of the sampling rule.</p>
     #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
@@ -5541,21 +5304,21 @@ pub struct UnprocessedStatistics {
 }
 impl UnprocessedStatistics {
     /// <p>The name of the sampling rule.</p>
-    pub fn rule_name(&self) -> std::option::Option<&str> {
+    pub fn rule_name(&self) -> std::option::Option<& str> {
         self.rule_name.as_deref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`UnprocessedStatistics`](crate::model::UnprocessedStatistics).
 pub mod unprocessed_statistics {
-
+    
     /// A builder for [`UnprocessedStatistics`](crate::model::UnprocessedStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5571,8 +5334,7 @@ pub mod unprocessed_statistics {
         }
         /// <p>The name of the sampling rule.</p>
         pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_name = input;
-            self
+            self.rule_name = input; self
         }
         /// <p>The error code.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5581,8 +5343,7 @@ pub mod unprocessed_statistics {
         }
         /// <p>The error code.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// <p>The error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5591,18 +5352,22 @@ pub mod unprocessed_statistics {
         }
         /// <p>The error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UnprocessedStatistics`](crate::model::UnprocessedStatistics).
         pub fn build(self) -> crate::model::UnprocessedStatistics {
             crate::model::UnprocessedStatistics {
-                rule_name: self.rule_name,
-                error_code: self.error_code,
-                message: self.message,
+                rule_name: self.rule_name
+                ,
+                error_code: self.error_code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UnprocessedStatistics {
     /// Creates a new builder-style object to manufacture [`UnprocessedStatistics`](crate::model::UnprocessedStatistics).
@@ -5614,7 +5379,7 @@ impl UnprocessedStatistics {
 /// <p>Temporary changes to a sampling rule configuration. To meet the global sampling target for a rule, X-Ray calculates a new reservoir for each service based on the recent sampling results of all services that called <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SamplingTargetDocument {
+pub struct SamplingTargetDocument  {
     /// <p>The name of the sampling rule.</p>
     #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
@@ -5633,7 +5398,7 @@ pub struct SamplingTargetDocument {
 }
 impl SamplingTargetDocument {
     /// <p>The name of the sampling rule.</p>
-    pub fn rule_name(&self) -> std::option::Option<&str> {
+    pub fn rule_name(&self) -> std::option::Option<& str> {
         self.rule_name.as_deref()
     }
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
@@ -5645,7 +5410,7 @@ impl SamplingTargetDocument {
         self.reservoir_quota
     }
     /// <p>When the reservoir quota expires.</p>
-    pub fn reservoir_quota_ttl(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn reservoir_quota_ttl(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.reservoir_quota_ttl.as_ref()
     }
     /// <p>The number of seconds for the service to wait before getting sampling targets again.</p>
@@ -5655,7 +5420,7 @@ impl SamplingTargetDocument {
 }
 /// See [`SamplingTargetDocument`](crate::model::SamplingTargetDocument).
 pub mod sampling_target_document {
-
+    
     /// A builder for [`SamplingTargetDocument`](crate::model::SamplingTargetDocument).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5673,8 +5438,7 @@ pub mod sampling_target_document {
         }
         /// <p>The name of the sampling rule.</p>
         pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_name = input;
-            self
+            self.rule_name = input; self
         }
         /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
         pub fn fixed_rate(mut self, input: f64) -> Self {
@@ -5683,8 +5447,7 @@ pub mod sampling_target_document {
         }
         /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
         pub fn set_fixed_rate(mut self, input: std::option::Option<f64>) -> Self {
-            self.fixed_rate = input;
-            self
+            self.fixed_rate = input; self
         }
         /// <p>The number of requests per second that X-Ray allocated for this service.</p>
         pub fn reservoir_quota(mut self, input: i32) -> Self {
@@ -5693,8 +5456,7 @@ pub mod sampling_target_document {
         }
         /// <p>The number of requests per second that X-Ray allocated for this service.</p>
         pub fn set_reservoir_quota(mut self, input: std::option::Option<i32>) -> Self {
-            self.reservoir_quota = input;
-            self
+            self.reservoir_quota = input; self
         }
         /// <p>When the reservoir quota expires.</p>
         pub fn reservoir_quota_ttl(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5702,12 +5464,8 @@ pub mod sampling_target_document {
             self
         }
         /// <p>When the reservoir quota expires.</p>
-        pub fn set_reservoir_quota_ttl(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.reservoir_quota_ttl = input;
-            self
+        pub fn set_reservoir_quota_ttl(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.reservoir_quota_ttl = input; self
         }
         /// <p>The number of seconds for the service to wait before getting sampling targets again.</p>
         pub fn interval(mut self, input: i32) -> Self {
@@ -5716,20 +5474,27 @@ pub mod sampling_target_document {
         }
         /// <p>The number of seconds for the service to wait before getting sampling targets again.</p>
         pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
-            self.interval = input;
-            self
+            self.interval = input; self
         }
         /// Consumes the builder and constructs a [`SamplingTargetDocument`](crate::model::SamplingTargetDocument).
         pub fn build(self) -> crate::model::SamplingTargetDocument {
             crate::model::SamplingTargetDocument {
-                rule_name: self.rule_name,
-                fixed_rate: self.fixed_rate.unwrap_or_default(),
-                reservoir_quota: self.reservoir_quota,
-                reservoir_quota_ttl: self.reservoir_quota_ttl,
-                interval: self.interval,
+                rule_name: self.rule_name
+                ,
+                fixed_rate: self.fixed_rate
+                    .unwrap_or_default()
+                ,
+                reservoir_quota: self.reservoir_quota
+                ,
+                reservoir_quota_ttl: self.reservoir_quota_ttl
+                ,
+                interval: self.interval
+                ,
             }
         }
     }
+    
+    
 }
 impl SamplingTargetDocument {
     /// Creates a new builder-style object to manufacture [`SamplingTargetDocument`](crate::model::SamplingTargetDocument).
@@ -5741,7 +5506,7 @@ impl SamplingTargetDocument {
 /// <p>Request sampling results for a single rule from a service. Results are for the last 10 seconds unless the service has been assigned a longer reporting interval after a previous call to <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SamplingStatisticsDocument {
+pub struct SamplingStatisticsDocument  {
     /// <p>The name of the sampling rule.</p>
     #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
@@ -5763,15 +5528,15 @@ pub struct SamplingStatisticsDocument {
 }
 impl SamplingStatisticsDocument {
     /// <p>The name of the sampling rule.</p>
-    pub fn rule_name(&self) -> std::option::Option<&str> {
+    pub fn rule_name(&self) -> std::option::Option<& str> {
         self.rule_name.as_deref()
     }
     /// <p>A unique identifier for the service in hexadecimal.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>The current time.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The number of requests that matched the rule.</p>
@@ -5789,7 +5554,7 @@ impl SamplingStatisticsDocument {
 }
 /// See [`SamplingStatisticsDocument`](crate::model::SamplingStatisticsDocument).
 pub mod sampling_statistics_document {
-
+    
     /// A builder for [`SamplingStatisticsDocument`](crate::model::SamplingStatisticsDocument).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5808,8 +5573,7 @@ pub mod sampling_statistics_document {
         }
         /// <p>The name of the sampling rule.</p>
         pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_name = input;
-            self
+            self.rule_name = input; self
         }
         /// <p>A unique identifier for the service in hexadecimal.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5818,8 +5582,7 @@ pub mod sampling_statistics_document {
         }
         /// <p>A unique identifier for the service in hexadecimal.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_id = input;
-            self
+            self.client_id = input; self
         }
         /// <p>The current time.</p>
         pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5827,12 +5590,8 @@ pub mod sampling_statistics_document {
             self
         }
         /// <p>The current time.</p>
-        pub fn set_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.timestamp = input;
-            self
+        pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.timestamp = input; self
         }
         /// <p>The number of requests that matched the rule.</p>
         pub fn request_count(mut self, input: i32) -> Self {
@@ -5841,8 +5600,7 @@ pub mod sampling_statistics_document {
         }
         /// <p>The number of requests that matched the rule.</p>
         pub fn set_request_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.request_count = input;
-            self
+            self.request_count = input; self
         }
         /// <p>The number of requests recorded.</p>
         pub fn sampled_count(mut self, input: i32) -> Self {
@@ -5851,8 +5609,7 @@ pub mod sampling_statistics_document {
         }
         /// <p>The number of requests recorded.</p>
         pub fn set_sampled_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.sampled_count = input;
-            self
+            self.sampled_count = input; self
         }
         /// <p>The number of requests recorded with borrowed reservoir quota.</p>
         pub fn borrow_count(mut self, input: i32) -> Self {
@@ -5861,21 +5618,31 @@ pub mod sampling_statistics_document {
         }
         /// <p>The number of requests recorded with borrowed reservoir quota.</p>
         pub fn set_borrow_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.borrow_count = input;
-            self
+            self.borrow_count = input; self
         }
         /// Consumes the builder and constructs a [`SamplingStatisticsDocument`](crate::model::SamplingStatisticsDocument).
         pub fn build(self) -> crate::model::SamplingStatisticsDocument {
             crate::model::SamplingStatisticsDocument {
-                rule_name: self.rule_name,
-                client_id: self.client_id,
-                timestamp: self.timestamp,
-                request_count: self.request_count.unwrap_or_default(),
-                sampled_count: self.sampled_count.unwrap_or_default(),
-                borrow_count: self.borrow_count.unwrap_or_default(),
+                rule_name: self.rule_name
+                ,
+                client_id: self.client_id
+                ,
+                timestamp: self.timestamp
+                ,
+                request_count: self.request_count
+                    .unwrap_or_default()
+                ,
+                sampled_count: self.sampled_count
+                    .unwrap_or_default()
+                ,
+                borrow_count: self.borrow_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl SamplingStatisticsDocument {
     /// Creates a new builder-style object to manufacture [`SamplingStatisticsDocument`](crate::model::SamplingStatisticsDocument).
@@ -5887,7 +5654,7 @@ impl SamplingStatisticsDocument {
 /// <p>Aggregated request sampling data for a sampling rule across all services for a 10-second window.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SamplingStatisticSummary {
+pub struct SamplingStatisticSummary  {
     /// <p>The name of the sampling rule.</p>
     #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
@@ -5906,11 +5673,11 @@ pub struct SamplingStatisticSummary {
 }
 impl SamplingStatisticSummary {
     /// <p>The name of the sampling rule.</p>
-    pub fn rule_name(&self) -> std::option::Option<&str> {
+    pub fn rule_name(&self) -> std::option::Option<& str> {
         self.rule_name.as_deref()
     }
     /// <p>The start time of the reporting window.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The number of requests that matched the rule.</p>
@@ -5928,7 +5695,7 @@ impl SamplingStatisticSummary {
 }
 /// See [`SamplingStatisticSummary`](crate::model::SamplingStatisticSummary).
 pub mod sampling_statistic_summary {
-
+    
     /// A builder for [`SamplingStatisticSummary`](crate::model::SamplingStatisticSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5946,8 +5713,7 @@ pub mod sampling_statistic_summary {
         }
         /// <p>The name of the sampling rule.</p>
         pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_name = input;
-            self
+            self.rule_name = input; self
         }
         /// <p>The start time of the reporting window.</p>
         pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5955,12 +5721,8 @@ pub mod sampling_statistic_summary {
             self
         }
         /// <p>The start time of the reporting window.</p>
-        pub fn set_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.timestamp = input;
-            self
+        pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.timestamp = input; self
         }
         /// <p>The number of requests that matched the rule.</p>
         pub fn request_count(mut self, input: i32) -> Self {
@@ -5969,8 +5731,7 @@ pub mod sampling_statistic_summary {
         }
         /// <p>The number of requests that matched the rule.</p>
         pub fn set_request_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.request_count = input;
-            self
+            self.request_count = input; self
         }
         /// <p>The number of requests recorded with borrowed reservoir quota.</p>
         pub fn borrow_count(mut self, input: i32) -> Self {
@@ -5979,8 +5740,7 @@ pub mod sampling_statistic_summary {
         }
         /// <p>The number of requests recorded with borrowed reservoir quota.</p>
         pub fn set_borrow_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.borrow_count = input;
-            self
+            self.borrow_count = input; self
         }
         /// <p>The number of requests recorded.</p>
         pub fn sampled_count(mut self, input: i32) -> Self {
@@ -5989,20 +5749,29 @@ pub mod sampling_statistic_summary {
         }
         /// <p>The number of requests recorded.</p>
         pub fn set_sampled_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.sampled_count = input;
-            self
+            self.sampled_count = input; self
         }
         /// Consumes the builder and constructs a [`SamplingStatisticSummary`](crate::model::SamplingStatisticSummary).
         pub fn build(self) -> crate::model::SamplingStatisticSummary {
             crate::model::SamplingStatisticSummary {
-                rule_name: self.rule_name,
-                timestamp: self.timestamp,
-                request_count: self.request_count.unwrap_or_default(),
-                borrow_count: self.borrow_count.unwrap_or_default(),
-                sampled_count: self.sampled_count.unwrap_or_default(),
+                rule_name: self.rule_name
+                ,
+                timestamp: self.timestamp
+                ,
+                request_count: self.request_count
+                    .unwrap_or_default()
+                ,
+                borrow_count: self.borrow_count
+                    .unwrap_or_default()
+                ,
+                sampled_count: self.sampled_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl SamplingStatisticSummary {
     /// Creates a new builder-style object to manufacture [`SamplingStatisticSummary`](crate::model::SamplingStatisticSummary).
@@ -6014,7 +5783,7 @@ impl SamplingStatisticSummary {
 /// <p>Information that describes an insight.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InsightSummary {
+pub struct InsightSummary  {
     /// <p>The insights unique identifier. </p>
     #[doc(hidden)]
     pub insight_id: std::option::Option<std::string::String>,
@@ -6044,12 +5813,10 @@ pub struct InsightSummary {
     pub summary: std::option::Option<std::string::String>,
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
     #[doc(hidden)]
-    pub client_request_impact_statistics:
-        std::option::Option<crate::model::RequestImpactStatistics>,
+    pub client_request_impact_statistics: std::option::Option<crate::model::RequestImpactStatistics>,
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
     #[doc(hidden)]
-    pub root_cause_service_request_impact_statistics:
-        std::option::Option<crate::model::RequestImpactStatistics>,
+    pub root_cause_service_request_impact_statistics: std::option::Option<crate::model::RequestImpactStatistics>,
     /// <p>The service within the insight that is most impacted by the incident.</p>
     #[doc(hidden)]
     pub top_anomalous_services: std::option::Option<std::vec::Vec<crate::model::AnomalousService>>,
@@ -6059,65 +5826,61 @@ pub struct InsightSummary {
 }
 impl InsightSummary {
     /// <p>The insights unique identifier. </p>
-    pub fn insight_id(&self) -> std::option::Option<&str> {
+    pub fn insight_id(&self) -> std::option::Option<& str> {
         self.insight_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
-    pub fn group_arn(&self) -> std::option::Option<&str> {
+    pub fn group_arn(&self) -> std::option::Option<& str> {
         self.group_arn.as_deref()
     }
     /// <p>The name of the group that the insight belongs to.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p></p>
-    pub fn root_cause_service_id(&self) -> std::option::Option<&crate::model::ServiceId> {
+    pub fn root_cause_service_id(&self) -> std::option::Option<& crate::model::ServiceId> {
         self.root_cause_service_id.as_ref()
     }
     /// <p> Categories The categories that label and describe the type of insight.</p>
-    pub fn categories(&self) -> std::option::Option<&[crate::model::InsightCategory]> {
+    pub fn categories(&self) -> std::option::Option<& [crate::model::InsightCategory]> {
         self.categories.as_deref()
     }
     /// <p>The current state of the insight.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::InsightState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::InsightState> {
         self.state.as_ref()
     }
     /// <p>The time, in Unix seconds, at which the insight began.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time, in Unix seconds, at which the insight ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>A brief description of the insight.</p>
-    pub fn summary(&self) -> std::option::Option<&str> {
+    pub fn summary(&self) -> std::option::Option<& str> {
         self.summary.as_deref()
     }
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
-    pub fn client_request_impact_statistics(
-        &self,
-    ) -> std::option::Option<&crate::model::RequestImpactStatistics> {
+    pub fn client_request_impact_statistics(&self) -> std::option::Option<& crate::model::RequestImpactStatistics> {
         self.client_request_impact_statistics.as_ref()
     }
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
-    pub fn root_cause_service_request_impact_statistics(
-        &self,
-    ) -> std::option::Option<&crate::model::RequestImpactStatistics> {
+    pub fn root_cause_service_request_impact_statistics(&self) -> std::option::Option<& crate::model::RequestImpactStatistics> {
         self.root_cause_service_request_impact_statistics.as_ref()
     }
     /// <p>The service within the insight that is most impacted by the incident.</p>
-    pub fn top_anomalous_services(&self) -> std::option::Option<&[crate::model::AnomalousService]> {
+    pub fn top_anomalous_services(&self) -> std::option::Option<& [crate::model::AnomalousService]> {
         self.top_anomalous_services.as_deref()
     }
     /// <p>The time, in Unix seconds, that the insight was last updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
 }
 /// See [`InsightSummary`](crate::model::InsightSummary).
 pub mod insight_summary {
-
+    
     /// A builder for [`InsightSummary`](crate::model::InsightSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6130,12 +5893,9 @@ pub mod insight_summary {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) summary: std::option::Option<std::string::String>,
-        pub(crate) client_request_impact_statistics:
-            std::option::Option<crate::model::RequestImpactStatistics>,
-        pub(crate) root_cause_service_request_impact_statistics:
-            std::option::Option<crate::model::RequestImpactStatistics>,
-        pub(crate) top_anomalous_services:
-            std::option::Option<std::vec::Vec<crate::model::AnomalousService>>,
+        pub(crate) client_request_impact_statistics: std::option::Option<crate::model::RequestImpactStatistics>,
+        pub(crate) root_cause_service_request_impact_statistics: std::option::Option<crate::model::RequestImpactStatistics>,
+        pub(crate) top_anomalous_services: std::option::Option<std::vec::Vec<crate::model::AnomalousService>>,
         pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
@@ -6146,8 +5906,7 @@ pub mod insight_summary {
         }
         /// <p>The insights unique identifier. </p>
         pub fn set_insight_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.insight_id = input;
-            self
+            self.insight_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
         pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6156,8 +5915,7 @@ pub mod insight_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
         pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_arn = input;
-            self
+            self.group_arn = input; self
         }
         /// <p>The name of the group that the insight belongs to.</p>
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6166,8 +5924,7 @@ pub mod insight_summary {
         }
         /// <p>The name of the group that the insight belongs to.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_name = input;
-            self
+            self.group_name = input; self
         }
         /// <p></p>
         pub fn root_cause_service_id(mut self, input: crate::model::ServiceId) -> Self {
@@ -6175,12 +5932,8 @@ pub mod insight_summary {
             self
         }
         /// <p></p>
-        pub fn set_root_cause_service_id(
-            mut self,
-            input: std::option::Option<crate::model::ServiceId>,
-        ) -> Self {
-            self.root_cause_service_id = input;
-            self
+        pub fn set_root_cause_service_id(mut self, input: std::option::Option<crate::model::ServiceId>) -> Self {
+            self.root_cause_service_id = input; self
         }
         /// Appends an item to `categories`.
         ///
@@ -6189,17 +5942,13 @@ pub mod insight_summary {
         /// <p> Categories The categories that label and describe the type of insight.</p>
         pub fn categories(mut self, input: crate::model::InsightCategory) -> Self {
             let mut v = self.categories.unwrap_or_default();
-            v.push(input);
-            self.categories = Some(v);
-            self
+                            v.push(input);
+                            self.categories = Some(v);
+                            self
         }
         /// <p> Categories The categories that label and describe the type of insight.</p>
-        pub fn set_categories(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InsightCategory>>,
-        ) -> Self {
-            self.categories = input;
-            self
+        pub fn set_categories(mut self, input: std::option::Option<std::vec::Vec<crate::model::InsightCategory>>) -> Self {
+            self.categories = input; self
         }
         /// <p>The current state of the insight.</p>
         pub fn state(mut self, input: crate::model::InsightState) -> Self {
@@ -6208,8 +5957,7 @@ pub mod insight_summary {
         }
         /// <p>The current state of the insight.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::InsightState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The time, in Unix seconds, at which the insight began.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6217,12 +5965,8 @@ pub mod insight_summary {
             self
         }
         /// <p>The time, in Unix seconds, at which the insight began.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The time, in Unix seconds, at which the insight ended.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6230,12 +5974,8 @@ pub mod insight_summary {
             self
         }
         /// <p>The time, in Unix seconds, at which the insight ended.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>A brief description of the insight.</p>
         pub fn summary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6244,40 +5984,25 @@ pub mod insight_summary {
         }
         /// <p>A brief description of the insight.</p>
         pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.summary = input;
-            self
+            self.summary = input; self
         }
         /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
-        pub fn client_request_impact_statistics(
-            mut self,
-            input: crate::model::RequestImpactStatistics,
-        ) -> Self {
+        pub fn client_request_impact_statistics(mut self, input: crate::model::RequestImpactStatistics) -> Self {
             self.client_request_impact_statistics = Some(input);
             self
         }
         /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
-        pub fn set_client_request_impact_statistics(
-            mut self,
-            input: std::option::Option<crate::model::RequestImpactStatistics>,
-        ) -> Self {
-            self.client_request_impact_statistics = input;
-            self
+        pub fn set_client_request_impact_statistics(mut self, input: std::option::Option<crate::model::RequestImpactStatistics>) -> Self {
+            self.client_request_impact_statistics = input; self
         }
         /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
-        pub fn root_cause_service_request_impact_statistics(
-            mut self,
-            input: crate::model::RequestImpactStatistics,
-        ) -> Self {
+        pub fn root_cause_service_request_impact_statistics(mut self, input: crate::model::RequestImpactStatistics) -> Self {
             self.root_cause_service_request_impact_statistics = Some(input);
             self
         }
         /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay. </p>
-        pub fn set_root_cause_service_request_impact_statistics(
-            mut self,
-            input: std::option::Option<crate::model::RequestImpactStatistics>,
-        ) -> Self {
-            self.root_cause_service_request_impact_statistics = input;
-            self
+        pub fn set_root_cause_service_request_impact_statistics(mut self, input: std::option::Option<crate::model::RequestImpactStatistics>) -> Self {
+            self.root_cause_service_request_impact_statistics = input; self
         }
         /// Appends an item to `top_anomalous_services`.
         ///
@@ -6286,17 +6011,13 @@ pub mod insight_summary {
         /// <p>The service within the insight that is most impacted by the incident.</p>
         pub fn top_anomalous_services(mut self, input: crate::model::AnomalousService) -> Self {
             let mut v = self.top_anomalous_services.unwrap_or_default();
-            v.push(input);
-            self.top_anomalous_services = Some(v);
-            self
+                            v.push(input);
+                            self.top_anomalous_services = Some(v);
+                            self
         }
         /// <p>The service within the insight that is most impacted by the incident.</p>
-        pub fn set_top_anomalous_services(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnomalousService>>,
-        ) -> Self {
-            self.top_anomalous_services = input;
-            self
+        pub fn set_top_anomalous_services(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnomalousService>>) -> Self {
+            self.top_anomalous_services = input; self
         }
         /// <p>The time, in Unix seconds, that the insight was last updated.</p>
         pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6304,33 +6025,43 @@ pub mod insight_summary {
             self
         }
         /// <p>The time, in Unix seconds, that the insight was last updated.</p>
-        pub fn set_last_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_time = input;
-            self
+        pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_time = input; self
         }
         /// Consumes the builder and constructs a [`InsightSummary`](crate::model::InsightSummary).
         pub fn build(self) -> crate::model::InsightSummary {
             crate::model::InsightSummary {
-                insight_id: self.insight_id,
-                group_arn: self.group_arn,
-                group_name: self.group_name,
-                root_cause_service_id: self.root_cause_service_id,
-                categories: self.categories,
-                state: self.state,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                summary: self.summary,
-                client_request_impact_statistics: self.client_request_impact_statistics,
-                root_cause_service_request_impact_statistics: self
-                    .root_cause_service_request_impact_statistics,
-                top_anomalous_services: self.top_anomalous_services,
-                last_update_time: self.last_update_time,
+                insight_id: self.insight_id
+                ,
+                group_arn: self.group_arn
+                ,
+                group_name: self.group_name
+                ,
+                root_cause_service_id: self.root_cause_service_id
+                ,
+                categories: self.categories
+                ,
+                state: self.state
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                summary: self.summary
+                ,
+                client_request_impact_statistics: self.client_request_impact_statistics
+                ,
+                root_cause_service_request_impact_statistics: self.root_cause_service_request_impact_statistics
+                ,
+                top_anomalous_services: self.top_anomalous_services
+                ,
+                last_update_time: self.last_update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl InsightSummary {
     /// Creates a new builder-style object to manufacture [`InsightSummary`](crate::model::InsightSummary).
@@ -6342,20 +6073,20 @@ impl InsightSummary {
 /// <p>The service within the service graph that has anomalously high fault rates. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnomalousService {
+pub struct AnomalousService  {
     /// <p></p>
     #[doc(hidden)]
     pub service_id: std::option::Option<crate::model::ServiceId>,
 }
 impl AnomalousService {
     /// <p></p>
-    pub fn service_id(&self) -> std::option::Option<&crate::model::ServiceId> {
+    pub fn service_id(&self) -> std::option::Option<& crate::model::ServiceId> {
         self.service_id.as_ref()
     }
 }
 /// See [`AnomalousService`](crate::model::AnomalousService).
 pub mod anomalous_service {
-
+    
     /// A builder for [`AnomalousService`](crate::model::AnomalousService).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6368,20 +6099,19 @@ pub mod anomalous_service {
             self
         }
         /// <p></p>
-        pub fn set_service_id(
-            mut self,
-            input: std::option::Option<crate::model::ServiceId>,
-        ) -> Self {
-            self.service_id = input;
-            self
+        pub fn set_service_id(mut self, input: std::option::Option<crate::model::ServiceId>) -> Self {
+            self.service_id = input; self
         }
         /// Consumes the builder and constructs a [`AnomalousService`](crate::model::AnomalousService).
         pub fn build(self) -> crate::model::AnomalousService {
             crate::model::AnomalousService {
-                service_id: self.service_id,
+                service_id: self.service_id
+                ,
             }
         }
     }
+    
+    
 }
 impl AnomalousService {
     /// Creates a new builder-style object to manufacture [`AnomalousService`](crate::model::AnomalousService).
@@ -6393,7 +6123,7 @@ impl AnomalousService {
 /// <p>Statistics that describe how the incident has impacted a service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestImpactStatistics {
+pub struct RequestImpactStatistics  {
     /// <p>The number of requests that have resulted in a fault,</p>
     #[doc(hidden)]
     pub fault_count: std::option::Option<i64>,
@@ -6420,7 +6150,7 @@ impl RequestImpactStatistics {
 }
 /// See [`RequestImpactStatistics`](crate::model::RequestImpactStatistics).
 pub mod request_impact_statistics {
-
+    
     /// A builder for [`RequestImpactStatistics`](crate::model::RequestImpactStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6436,8 +6166,7 @@ pub mod request_impact_statistics {
         }
         /// <p>The number of requests that have resulted in a fault,</p>
         pub fn set_fault_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.fault_count = input;
-            self
+            self.fault_count = input; self
         }
         /// <p>The number of successful requests.</p>
         pub fn ok_count(mut self, input: i64) -> Self {
@@ -6446,8 +6175,7 @@ pub mod request_impact_statistics {
         }
         /// <p>The number of successful requests.</p>
         pub fn set_ok_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.ok_count = input;
-            self
+            self.ok_count = input; self
         }
         /// <p>The total number of requests to the service.</p>
         pub fn total_count(mut self, input: i64) -> Self {
@@ -6456,18 +6184,22 @@ pub mod request_impact_statistics {
         }
         /// <p>The total number of requests to the service.</p>
         pub fn set_total_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_count = input;
-            self
+            self.total_count = input; self
         }
         /// Consumes the builder and constructs a [`RequestImpactStatistics`](crate::model::RequestImpactStatistics).
         pub fn build(self) -> crate::model::RequestImpactStatistics {
             crate::model::RequestImpactStatistics {
-                fault_count: self.fault_count,
-                ok_count: self.ok_count,
-                total_count: self.total_count,
+                fault_count: self.fault_count
+                ,
+                ok_count: self.ok_count
+                ,
+                total_count: self.total_count
+                ,
             }
         }
     }
+    
+    
 }
 impl RequestImpactStatistics {
     /// Creates a new builder-style object to manufacture [`RequestImpactStatistics`](crate::model::RequestImpactStatistics).
@@ -6482,9 +6214,9 @@ impl RequestImpactStatistics {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let insightstate = unimplemented!();
 /// match insightstate {
@@ -6506,58 +6238,52 @@ impl RequestImpactStatistics {
 /// Specifically, when `insightstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InsightState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InsightState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Closed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InsightState {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => InsightState::Active,
             "CLOSED" => InsightState::Closed,
-            other => InsightState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => InsightState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InsightState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InsightState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InsightState::from(s))
+                }
+            }
 impl InsightState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InsightState::Active => "ACTIVE",
             InsightState::Closed => "CLOSED",
-            InsightState::Unknown(value) => value.as_str(),
+            InsightState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CLOSED"]
+        &[
+            "ACTIVE", "CLOSED"
+        ]
     }
 }
 impl AsRef<str> for InsightState {
@@ -6572,9 +6298,9 @@ impl AsRef<str> for InsightState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let insightcategory = unimplemented!();
 /// match insightcategory {
@@ -6595,54 +6321,48 @@ impl AsRef<str> for InsightState {
 /// Specifically, when `insightcategory` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InsightCategory::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InsightCategory {
     #[allow(missing_docs)] // documentation missing in model
     Fault,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InsightCategory {
     fn from(s: &str) -> Self {
         match s {
             "FAULT" => InsightCategory::Fault,
-            other => InsightCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => InsightCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InsightCategory {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InsightCategory::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InsightCategory::from(s))
+                }
+            }
 impl InsightCategory {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InsightCategory::Fault => "FAULT",
-            InsightCategory::Unknown(value) => value.as_str(),
+            InsightCategory::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAULT"]
+        &[
+            "FAULT"
+        ]
     }
 }
 impl AsRef<str> for InsightCategory {
@@ -6654,16 +6374,16 @@ impl AsRef<str> for InsightCategory {
 /// <p>Information about an application that processed requests, users that made requests, or downstream services, resources, and applications that an application used. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InsightImpactGraphService {
+pub struct InsightImpactGraphService  {
     /// <p>Identifier for the service. Unique within the service map.</p>
     #[doc(hidden)]
     pub reference_id: std::option::Option<i32>,
-    /// <p>Identifier for the service. Unique within the service map.</p>
-    /// <ul>
-    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li>
-    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
-    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
-    /// <li> <p>remote - A downstream service of indeterminate type.</p> </li>
+    /// <p>Identifier for the service. Unique within the service map.</p> 
+    /// <ul> 
+    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li> 
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li> 
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li> 
+    /// <li> <p>remote - A downstream service of indeterminate type.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -6685,36 +6405,36 @@ impl InsightImpactGraphService {
     pub fn reference_id(&self) -> std::option::Option<i32> {
         self.reference_id
     }
-    /// <p>Identifier for the service. Unique within the service map.</p>
-    /// <ul>
-    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li>
-    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
-    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
-    /// <li> <p>remote - A downstream service of indeterminate type.</p> </li>
+    /// <p>Identifier for the service. Unique within the service map.</p> 
+    /// <ul> 
+    /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li> 
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li> 
+    /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li> 
+    /// <li> <p>remote - A downstream service of indeterminate type.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The canonical name of the service.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A list of names for the service, including the canonical name.</p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
         self.names.as_deref()
     }
     /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>Connections to downstream services.</p>
-    pub fn edges(&self) -> std::option::Option<&[crate::model::InsightImpactGraphEdge]> {
+    pub fn edges(&self) -> std::option::Option<& [crate::model::InsightImpactGraphEdge]> {
         self.edges.as_deref()
     }
 }
 /// See [`InsightImpactGraphService`](crate::model::InsightImpactGraphService).
 pub mod insight_impact_graph_service {
-
+    
     /// A builder for [`InsightImpactGraphService`](crate::model::InsightImpactGraphService).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6733,30 +6453,28 @@ pub mod insight_impact_graph_service {
         }
         /// <p>Identifier for the service. Unique within the service map.</p>
         pub fn set_reference_id(mut self, input: std::option::Option<i32>) -> Self {
-            self.reference_id = input;
-            self
+            self.reference_id = input; self
         }
-        /// <p>Identifier for the service. Unique within the service map.</p>
-        /// <ul>
-        /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li>
-        /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
-        /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
-        /// <li> <p>remote - A downstream service of indeterminate type.</p> </li>
+        /// <p>Identifier for the service. Unique within the service map.</p> 
+        /// <ul> 
+        /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li> 
+        /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li> 
+        /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li> 
+        /// <li> <p>remote - A downstream service of indeterminate type.</p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>Identifier for the service. Unique within the service map.</p>
-        /// <ul>
-        /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li>
-        /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
-        /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li>
-        /// <li> <p>remote - A downstream service of indeterminate type.</p> </li>
+        /// <p>Identifier for the service. Unique within the service map.</p> 
+        /// <ul> 
+        /// <li> <p>Amazon Web Services Resource - The type of an Amazon Web Services resource. For example, AWS::EC2::Instance for an application running on Amazon EC2 or AWS::DynamoDB::Table for an Amazon DynamoDB table that the application used. </p> </li> 
+        /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li> 
+        /// <li> <p>Amazon Web Services Service - The type of an Amazon Web Services service. For example, AWS::DynamoDB for downstream calls to Amazon DynamoDB that didn't target a specific table. </p> </li> 
+        /// <li> <p>remote - A downstream service of indeterminate type.</p> </li> 
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The canonical name of the service.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6765,8 +6483,7 @@ pub mod insight_impact_graph_service {
         }
         /// <p>The canonical name of the service.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `names`.
         ///
@@ -6775,17 +6492,13 @@ pub mod insight_impact_graph_service {
         /// <p>A list of names for the service, including the canonical name.</p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
-            v.push(input.into());
-            self.names = Some(v);
-            self
+                            v.push(input.into());
+                            self.names = Some(v);
+                            self
         }
         /// <p>A list of names for the service, including the canonical name.</p>
-        pub fn set_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.names = input;
-            self
+        pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.names = input; self
         }
         /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6794,8 +6507,7 @@ pub mod insight_impact_graph_service {
         }
         /// <p>Identifier of the Amazon Web Services account in which the service runs.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// Appends an item to `edges`.
         ///
@@ -6804,30 +6516,34 @@ pub mod insight_impact_graph_service {
         /// <p>Connections to downstream services.</p>
         pub fn edges(mut self, input: crate::model::InsightImpactGraphEdge) -> Self {
             let mut v = self.edges.unwrap_or_default();
-            v.push(input);
-            self.edges = Some(v);
-            self
+                            v.push(input);
+                            self.edges = Some(v);
+                            self
         }
         /// <p>Connections to downstream services.</p>
-        pub fn set_edges(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InsightImpactGraphEdge>>,
-        ) -> Self {
-            self.edges = input;
-            self
+        pub fn set_edges(mut self, input: std::option::Option<std::vec::Vec<crate::model::InsightImpactGraphEdge>>) -> Self {
+            self.edges = input; self
         }
         /// Consumes the builder and constructs a [`InsightImpactGraphService`](crate::model::InsightImpactGraphService).
         pub fn build(self) -> crate::model::InsightImpactGraphService {
             crate::model::InsightImpactGraphService {
-                reference_id: self.reference_id,
-                r#type: self.r#type,
-                name: self.name,
-                names: self.names,
-                account_id: self.account_id,
-                edges: self.edges,
+                reference_id: self.reference_id
+                ,
+                r#type: self.r#type
+                ,
+                name: self.name
+                ,
+                names: self.names
+                ,
+                account_id: self.account_id
+                ,
+                edges: self.edges
+                ,
             }
         }
     }
+    
+    
 }
 impl InsightImpactGraphService {
     /// Creates a new builder-style object to manufacture [`InsightImpactGraphService`](crate::model::InsightImpactGraphService).
@@ -6839,7 +6555,7 @@ impl InsightImpactGraphService {
 /// <p>The connection between two service in an insight impact graph.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InsightImpactGraphEdge {
+pub struct InsightImpactGraphEdge  {
     /// <p>Identifier of the edge. Unique within a service map.</p>
     #[doc(hidden)]
     pub reference_id: std::option::Option<i32>,
@@ -6852,7 +6568,7 @@ impl InsightImpactGraphEdge {
 }
 /// See [`InsightImpactGraphEdge`](crate::model::InsightImpactGraphEdge).
 pub mod insight_impact_graph_edge {
-
+    
     /// A builder for [`InsightImpactGraphEdge`](crate::model::InsightImpactGraphEdge).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6866,16 +6582,18 @@ pub mod insight_impact_graph_edge {
         }
         /// <p>Identifier of the edge. Unique within a service map.</p>
         pub fn set_reference_id(mut self, input: std::option::Option<i32>) -> Self {
-            self.reference_id = input;
-            self
+            self.reference_id = input; self
         }
         /// Consumes the builder and constructs a [`InsightImpactGraphEdge`](crate::model::InsightImpactGraphEdge).
         pub fn build(self) -> crate::model::InsightImpactGraphEdge {
             crate::model::InsightImpactGraphEdge {
-                reference_id: self.reference_id,
+                reference_id: self.reference_id
+                ,
             }
         }
     }
+    
+    
 }
 impl InsightImpactGraphEdge {
     /// Creates a new builder-style object to manufacture [`InsightImpactGraphEdge`](crate::model::InsightImpactGraphEdge).
@@ -6887,7 +6605,7 @@ impl InsightImpactGraphEdge {
 /// <p>X-Ray reevaluates insights periodically until they are resolved, and records each intermediate state in an event. You can review incident events in the Impact Timeline on the Inspect page in the X-Ray console.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InsightEvent {
+pub struct InsightEvent  {
     /// <p>A brief description of the event.</p>
     #[doc(hidden)]
     pub summary: std::option::Option<std::string::String>,
@@ -6896,56 +6614,47 @@ pub struct InsightEvent {
     pub event_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     #[doc(hidden)]
-    pub client_request_impact_statistics:
-        std::option::Option<crate::model::RequestImpactStatistics>,
+    pub client_request_impact_statistics: std::option::Option<crate::model::RequestImpactStatistics>,
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     #[doc(hidden)]
-    pub root_cause_service_request_impact_statistics:
-        std::option::Option<crate::model::RequestImpactStatistics>,
+    pub root_cause_service_request_impact_statistics: std::option::Option<crate::model::RequestImpactStatistics>,
     /// <p>The service during the event that is most impacted by the incident.</p>
     #[doc(hidden)]
     pub top_anomalous_services: std::option::Option<std::vec::Vec<crate::model::AnomalousService>>,
 }
 impl InsightEvent {
     /// <p>A brief description of the event.</p>
-    pub fn summary(&self) -> std::option::Option<&str> {
+    pub fn summary(&self) -> std::option::Option<& str> {
         self.summary.as_deref()
     }
     /// <p>The time, in Unix seconds, at which the event was recorded.</p>
-    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
-    pub fn client_request_impact_statistics(
-        &self,
-    ) -> std::option::Option<&crate::model::RequestImpactStatistics> {
+    pub fn client_request_impact_statistics(&self) -> std::option::Option<& crate::model::RequestImpactStatistics> {
         self.client_request_impact_statistics.as_ref()
     }
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
-    pub fn root_cause_service_request_impact_statistics(
-        &self,
-    ) -> std::option::Option<&crate::model::RequestImpactStatistics> {
+    pub fn root_cause_service_request_impact_statistics(&self) -> std::option::Option<& crate::model::RequestImpactStatistics> {
         self.root_cause_service_request_impact_statistics.as_ref()
     }
     /// <p>The service during the event that is most impacted by the incident.</p>
-    pub fn top_anomalous_services(&self) -> std::option::Option<&[crate::model::AnomalousService]> {
+    pub fn top_anomalous_services(&self) -> std::option::Option<& [crate::model::AnomalousService]> {
         self.top_anomalous_services.as_deref()
     }
 }
 /// See [`InsightEvent`](crate::model::InsightEvent).
 pub mod insight_event {
-
+    
     /// A builder for [`InsightEvent`](crate::model::InsightEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) summary: std::option::Option<std::string::String>,
         pub(crate) event_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) client_request_impact_statistics:
-            std::option::Option<crate::model::RequestImpactStatistics>,
-        pub(crate) root_cause_service_request_impact_statistics:
-            std::option::Option<crate::model::RequestImpactStatistics>,
-        pub(crate) top_anomalous_services:
-            std::option::Option<std::vec::Vec<crate::model::AnomalousService>>,
+        pub(crate) client_request_impact_statistics: std::option::Option<crate::model::RequestImpactStatistics>,
+        pub(crate) root_cause_service_request_impact_statistics: std::option::Option<crate::model::RequestImpactStatistics>,
+        pub(crate) top_anomalous_services: std::option::Option<std::vec::Vec<crate::model::AnomalousService>>,
     }
     impl Builder {
         /// <p>A brief description of the event.</p>
@@ -6955,8 +6664,7 @@ pub mod insight_event {
         }
         /// <p>A brief description of the event.</p>
         pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.summary = input;
-            self
+            self.summary = input; self
         }
         /// <p>The time, in Unix seconds, at which the event was recorded.</p>
         pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6964,44 +6672,26 @@ pub mod insight_event {
             self
         }
         /// <p>The time, in Unix seconds, at which the event was recorded.</p>
-        pub fn set_event_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.event_time = input;
-            self
+        pub fn set_event_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.event_time = input; self
         }
         /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
-        pub fn client_request_impact_statistics(
-            mut self,
-            input: crate::model::RequestImpactStatistics,
-        ) -> Self {
+        pub fn client_request_impact_statistics(mut self, input: crate::model::RequestImpactStatistics) -> Self {
             self.client_request_impact_statistics = Some(input);
             self
         }
         /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
-        pub fn set_client_request_impact_statistics(
-            mut self,
-            input: std::option::Option<crate::model::RequestImpactStatistics>,
-        ) -> Self {
-            self.client_request_impact_statistics = input;
-            self
+        pub fn set_client_request_impact_statistics(mut self, input: std::option::Option<crate::model::RequestImpactStatistics>) -> Self {
+            self.client_request_impact_statistics = input; self
         }
         /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
-        pub fn root_cause_service_request_impact_statistics(
-            mut self,
-            input: crate::model::RequestImpactStatistics,
-        ) -> Self {
+        pub fn root_cause_service_request_impact_statistics(mut self, input: crate::model::RequestImpactStatistics) -> Self {
             self.root_cause_service_request_impact_statistics = Some(input);
             self
         }
         /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
-        pub fn set_root_cause_service_request_impact_statistics(
-            mut self,
-            input: std::option::Option<crate::model::RequestImpactStatistics>,
-        ) -> Self {
-            self.root_cause_service_request_impact_statistics = input;
-            self
+        pub fn set_root_cause_service_request_impact_statistics(mut self, input: std::option::Option<crate::model::RequestImpactStatistics>) -> Self {
+            self.root_cause_service_request_impact_statistics = input; self
         }
         /// Appends an item to `top_anomalous_services`.
         ///
@@ -7010,30 +6700,32 @@ pub mod insight_event {
         /// <p>The service during the event that is most impacted by the incident.</p>
         pub fn top_anomalous_services(mut self, input: crate::model::AnomalousService) -> Self {
             let mut v = self.top_anomalous_services.unwrap_or_default();
-            v.push(input);
-            self.top_anomalous_services = Some(v);
-            self
+                            v.push(input);
+                            self.top_anomalous_services = Some(v);
+                            self
         }
         /// <p>The service during the event that is most impacted by the incident.</p>
-        pub fn set_top_anomalous_services(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnomalousService>>,
-        ) -> Self {
-            self.top_anomalous_services = input;
-            self
+        pub fn set_top_anomalous_services(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnomalousService>>) -> Self {
+            self.top_anomalous_services = input; self
         }
         /// Consumes the builder and constructs a [`InsightEvent`](crate::model::InsightEvent).
         pub fn build(self) -> crate::model::InsightEvent {
             crate::model::InsightEvent {
-                summary: self.summary,
-                event_time: self.event_time,
-                client_request_impact_statistics: self.client_request_impact_statistics,
-                root_cause_service_request_impact_statistics: self
-                    .root_cause_service_request_impact_statistics,
-                top_anomalous_services: self.top_anomalous_services,
+                summary: self.summary
+                ,
+                event_time: self.event_time
+                ,
+                client_request_impact_statistics: self.client_request_impact_statistics
+                ,
+                root_cause_service_request_impact_statistics: self.root_cause_service_request_impact_statistics
+                ,
+                top_anomalous_services: self.top_anomalous_services
+                ,
             }
         }
     }
+    
+    
 }
 impl InsightEvent {
     /// Creates a new builder-style object to manufacture [`InsightEvent`](crate::model::InsightEvent).
@@ -7045,7 +6737,7 @@ impl InsightEvent {
 /// <p>When fault rates go outside of the expected range, X-Ray creates an insight. Insights tracks emergent issues within your applications.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Insight {
+pub struct Insight  {
     /// <p>The insights unique identifier. </p>
     #[doc(hidden)]
     pub insight_id: std::option::Option<std::string::String>,
@@ -7075,73 +6767,67 @@ pub struct Insight {
     pub summary: std::option::Option<std::string::String>,
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     #[doc(hidden)]
-    pub client_request_impact_statistics:
-        std::option::Option<crate::model::RequestImpactStatistics>,
+    pub client_request_impact_statistics: std::option::Option<crate::model::RequestImpactStatistics>,
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     #[doc(hidden)]
-    pub root_cause_service_request_impact_statistics:
-        std::option::Option<crate::model::RequestImpactStatistics>,
+    pub root_cause_service_request_impact_statistics: std::option::Option<crate::model::RequestImpactStatistics>,
     /// <p>The service within the insight that is most impacted by the incident.</p>
     #[doc(hidden)]
     pub top_anomalous_services: std::option::Option<std::vec::Vec<crate::model::AnomalousService>>,
 }
 impl Insight {
     /// <p>The insights unique identifier. </p>
-    pub fn insight_id(&self) -> std::option::Option<&str> {
+    pub fn insight_id(&self) -> std::option::Option<& str> {
         self.insight_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
-    pub fn group_arn(&self) -> std::option::Option<&str> {
+    pub fn group_arn(&self) -> std::option::Option<& str> {
         self.group_arn.as_deref()
     }
     /// <p>The name of the group that the insight belongs to.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p></p>
-    pub fn root_cause_service_id(&self) -> std::option::Option<&crate::model::ServiceId> {
+    pub fn root_cause_service_id(&self) -> std::option::Option<& crate::model::ServiceId> {
         self.root_cause_service_id.as_ref()
     }
     /// <p>The categories that label and describe the type of insight.</p>
-    pub fn categories(&self) -> std::option::Option<&[crate::model::InsightCategory]> {
+    pub fn categories(&self) -> std::option::Option<& [crate::model::InsightCategory]> {
         self.categories.as_deref()
     }
     /// <p>The current state of the insight.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::InsightState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::InsightState> {
         self.state.as_ref()
     }
     /// <p>The time, in Unix seconds, at which the insight began.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time, in Unix seconds, at which the insight ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>A brief description of the insight.</p>
-    pub fn summary(&self) -> std::option::Option<&str> {
+    pub fn summary(&self) -> std::option::Option<& str> {
         self.summary.as_deref()
     }
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
-    pub fn client_request_impact_statistics(
-        &self,
-    ) -> std::option::Option<&crate::model::RequestImpactStatistics> {
+    pub fn client_request_impact_statistics(&self) -> std::option::Option<& crate::model::RequestImpactStatistics> {
         self.client_request_impact_statistics.as_ref()
     }
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
-    pub fn root_cause_service_request_impact_statistics(
-        &self,
-    ) -> std::option::Option<&crate::model::RequestImpactStatistics> {
+    pub fn root_cause_service_request_impact_statistics(&self) -> std::option::Option<& crate::model::RequestImpactStatistics> {
         self.root_cause_service_request_impact_statistics.as_ref()
     }
     /// <p>The service within the insight that is most impacted by the incident.</p>
-    pub fn top_anomalous_services(&self) -> std::option::Option<&[crate::model::AnomalousService]> {
+    pub fn top_anomalous_services(&self) -> std::option::Option<& [crate::model::AnomalousService]> {
         self.top_anomalous_services.as_deref()
     }
 }
 /// See [`Insight`](crate::model::Insight).
 pub mod insight {
-
+    
     /// A builder for [`Insight`](crate::model::Insight).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7154,12 +6840,9 @@ pub mod insight {
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) summary: std::option::Option<std::string::String>,
-        pub(crate) client_request_impact_statistics:
-            std::option::Option<crate::model::RequestImpactStatistics>,
-        pub(crate) root_cause_service_request_impact_statistics:
-            std::option::Option<crate::model::RequestImpactStatistics>,
-        pub(crate) top_anomalous_services:
-            std::option::Option<std::vec::Vec<crate::model::AnomalousService>>,
+        pub(crate) client_request_impact_statistics: std::option::Option<crate::model::RequestImpactStatistics>,
+        pub(crate) root_cause_service_request_impact_statistics: std::option::Option<crate::model::RequestImpactStatistics>,
+        pub(crate) top_anomalous_services: std::option::Option<std::vec::Vec<crate::model::AnomalousService>>,
     }
     impl Builder {
         /// <p>The insights unique identifier. </p>
@@ -7169,8 +6852,7 @@ pub mod insight {
         }
         /// <p>The insights unique identifier. </p>
         pub fn set_insight_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.insight_id = input;
-            self
+            self.insight_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
         pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7179,8 +6861,7 @@ pub mod insight {
         }
         /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
         pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_arn = input;
-            self
+            self.group_arn = input; self
         }
         /// <p>The name of the group that the insight belongs to.</p>
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7189,8 +6870,7 @@ pub mod insight {
         }
         /// <p>The name of the group that the insight belongs to.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_name = input;
-            self
+            self.group_name = input; self
         }
         /// <p></p>
         pub fn root_cause_service_id(mut self, input: crate::model::ServiceId) -> Self {
@@ -7198,12 +6878,8 @@ pub mod insight {
             self
         }
         /// <p></p>
-        pub fn set_root_cause_service_id(
-            mut self,
-            input: std::option::Option<crate::model::ServiceId>,
-        ) -> Self {
-            self.root_cause_service_id = input;
-            self
+        pub fn set_root_cause_service_id(mut self, input: std::option::Option<crate::model::ServiceId>) -> Self {
+            self.root_cause_service_id = input; self
         }
         /// Appends an item to `categories`.
         ///
@@ -7212,17 +6888,13 @@ pub mod insight {
         /// <p>The categories that label and describe the type of insight.</p>
         pub fn categories(mut self, input: crate::model::InsightCategory) -> Self {
             let mut v = self.categories.unwrap_or_default();
-            v.push(input);
-            self.categories = Some(v);
-            self
+                            v.push(input);
+                            self.categories = Some(v);
+                            self
         }
         /// <p>The categories that label and describe the type of insight.</p>
-        pub fn set_categories(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InsightCategory>>,
-        ) -> Self {
-            self.categories = input;
-            self
+        pub fn set_categories(mut self, input: std::option::Option<std::vec::Vec<crate::model::InsightCategory>>) -> Self {
+            self.categories = input; self
         }
         /// <p>The current state of the insight.</p>
         pub fn state(mut self, input: crate::model::InsightState) -> Self {
@@ -7231,8 +6903,7 @@ pub mod insight {
         }
         /// <p>The current state of the insight.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::InsightState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The time, in Unix seconds, at which the insight began.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7240,12 +6911,8 @@ pub mod insight {
             self
         }
         /// <p>The time, in Unix seconds, at which the insight began.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The time, in Unix seconds, at which the insight ended.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7253,12 +6920,8 @@ pub mod insight {
             self
         }
         /// <p>The time, in Unix seconds, at which the insight ended.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>A brief description of the insight.</p>
         pub fn summary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7267,40 +6930,25 @@ pub mod insight {
         }
         /// <p>A brief description of the insight.</p>
         pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.summary = input;
-            self
+            self.summary = input; self
         }
         /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
-        pub fn client_request_impact_statistics(
-            mut self,
-            input: crate::model::RequestImpactStatistics,
-        ) -> Self {
+        pub fn client_request_impact_statistics(mut self, input: crate::model::RequestImpactStatistics) -> Self {
             self.client_request_impact_statistics = Some(input);
             self
         }
         /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
-        pub fn set_client_request_impact_statistics(
-            mut self,
-            input: std::option::Option<crate::model::RequestImpactStatistics>,
-        ) -> Self {
-            self.client_request_impact_statistics = input;
-            self
+        pub fn set_client_request_impact_statistics(mut self, input: std::option::Option<crate::model::RequestImpactStatistics>) -> Self {
+            self.client_request_impact_statistics = input; self
         }
         /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
-        pub fn root_cause_service_request_impact_statistics(
-            mut self,
-            input: crate::model::RequestImpactStatistics,
-        ) -> Self {
+        pub fn root_cause_service_request_impact_statistics(mut self, input: crate::model::RequestImpactStatistics) -> Self {
             self.root_cause_service_request_impact_statistics = Some(input);
             self
         }
         /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
-        pub fn set_root_cause_service_request_impact_statistics(
-            mut self,
-            input: std::option::Option<crate::model::RequestImpactStatistics>,
-        ) -> Self {
-            self.root_cause_service_request_impact_statistics = input;
-            self
+        pub fn set_root_cause_service_request_impact_statistics(mut self, input: std::option::Option<crate::model::RequestImpactStatistics>) -> Self {
+            self.root_cause_service_request_impact_statistics = input; self
         }
         /// Appends an item to `top_anomalous_services`.
         ///
@@ -7309,37 +6957,46 @@ pub mod insight {
         /// <p>The service within the insight that is most impacted by the incident.</p>
         pub fn top_anomalous_services(mut self, input: crate::model::AnomalousService) -> Self {
             let mut v = self.top_anomalous_services.unwrap_or_default();
-            v.push(input);
-            self.top_anomalous_services = Some(v);
-            self
+                            v.push(input);
+                            self.top_anomalous_services = Some(v);
+                            self
         }
         /// <p>The service within the insight that is most impacted by the incident.</p>
-        pub fn set_top_anomalous_services(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnomalousService>>,
-        ) -> Self {
-            self.top_anomalous_services = input;
-            self
+        pub fn set_top_anomalous_services(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnomalousService>>) -> Self {
+            self.top_anomalous_services = input; self
         }
         /// Consumes the builder and constructs a [`Insight`](crate::model::Insight).
         pub fn build(self) -> crate::model::Insight {
             crate::model::Insight {
-                insight_id: self.insight_id,
-                group_arn: self.group_arn,
-                group_name: self.group_name,
-                root_cause_service_id: self.root_cause_service_id,
-                categories: self.categories,
-                state: self.state,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                summary: self.summary,
-                client_request_impact_statistics: self.client_request_impact_statistics,
-                root_cause_service_request_impact_statistics: self
-                    .root_cause_service_request_impact_statistics,
-                top_anomalous_services: self.top_anomalous_services,
+                insight_id: self.insight_id
+                ,
+                group_arn: self.group_arn
+                ,
+                group_name: self.group_name
+                ,
+                root_cause_service_id: self.root_cause_service_id
+                ,
+                categories: self.categories
+                ,
+                state: self.state
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                summary: self.summary
+                ,
+                client_request_impact_statistics: self.client_request_impact_statistics
+                ,
+                root_cause_service_request_impact_statistics: self.root_cause_service_request_impact_statistics
+                ,
+                top_anomalous_services: self.top_anomalous_services
+                ,
             }
         }
     }
+    
+    
 }
 impl Insight {
     /// Creates a new builder-style object to manufacture [`Insight`](crate::model::Insight).
@@ -7351,7 +7008,7 @@ impl Insight {
 /// <p>Details for a group without metadata.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupSummary {
+pub struct GroupSummary  {
     /// <p>The unique case-sensitive name of the group.</p>
     #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
@@ -7361,41 +7018,39 @@ pub struct GroupSummary {
     /// <p>The filter expression defining the parameters to include traces.</p>
     #[doc(hidden)]
     pub filter_expression: std::option::Option<std::string::String>,
-    /// <p>The structure containing configurations related to insights.</p>
-    /// <ul>
-    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
-    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
+    /// <p>The structure containing configurations related to insights.</p> 
+    /// <ul> 
+    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li> 
+    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub insights_configuration: std::option::Option<crate::model::InsightsConfiguration>,
 }
 impl GroupSummary {
     /// <p>The unique case-sensitive name of the group.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The ARN of the group generated based on the GroupName.</p>
-    pub fn group_arn(&self) -> std::option::Option<&str> {
+    pub fn group_arn(&self) -> std::option::Option<& str> {
         self.group_arn.as_deref()
     }
     /// <p>The filter expression defining the parameters to include traces.</p>
-    pub fn filter_expression(&self) -> std::option::Option<&str> {
+    pub fn filter_expression(&self) -> std::option::Option<& str> {
         self.filter_expression.as_deref()
     }
-    /// <p>The structure containing configurations related to insights.</p>
-    /// <ul>
-    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
-    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
+    /// <p>The structure containing configurations related to insights.</p> 
+    /// <ul> 
+    /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li> 
+    /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li> 
     /// </ul>
-    pub fn insights_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::InsightsConfiguration> {
+    pub fn insights_configuration(&self) -> std::option::Option<& crate::model::InsightsConfiguration> {
         self.insights_configuration.as_ref()
     }
 }
 /// See [`GroupSummary`](crate::model::GroupSummary).
 pub mod group_summary {
-
+    
     /// A builder for [`GroupSummary`](crate::model::GroupSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7412,8 +7067,7 @@ pub mod group_summary {
         }
         /// <p>The unique case-sensitive name of the group.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_name = input;
-            self
+            self.group_name = input; self
         }
         /// <p>The ARN of the group generated based on the GroupName.</p>
         pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7422,8 +7076,7 @@ pub mod group_summary {
         }
         /// <p>The ARN of the group generated based on the GroupName.</p>
         pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_arn = input;
-            self
+            self.group_arn = input; self
         }
         /// <p>The filter expression defining the parameters to include traces.</p>
         pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7431,47 +7084,42 @@ pub mod group_summary {
             self
         }
         /// <p>The filter expression defining the parameters to include traces.</p>
-        pub fn set_filter_expression(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.filter_expression = input;
-            self
+        pub fn set_filter_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.filter_expression = input; self
         }
-        /// <p>The structure containing configurations related to insights.</p>
-        /// <ul>
-        /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
-        /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
+        /// <p>The structure containing configurations related to insights.</p> 
+        /// <ul> 
+        /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li> 
+        /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li> 
         /// </ul>
-        pub fn insights_configuration(
-            mut self,
-            input: crate::model::InsightsConfiguration,
-        ) -> Self {
+        pub fn insights_configuration(mut self, input: crate::model::InsightsConfiguration) -> Self {
             self.insights_configuration = Some(input);
             self
         }
-        /// <p>The structure containing configurations related to insights.</p>
-        /// <ul>
-        /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li>
-        /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li>
+        /// <p>The structure containing configurations related to insights.</p> 
+        /// <ul> 
+        /// <li> <p>The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.</p> </li> 
+        /// <li> <p>The NotificationsEnabled boolean can be set to true to enable insights notifications. Notifications can only be enabled on a group with InsightsEnabled set to true.</p> </li> 
         /// </ul>
-        pub fn set_insights_configuration(
-            mut self,
-            input: std::option::Option<crate::model::InsightsConfiguration>,
-        ) -> Self {
-            self.insights_configuration = input;
-            self
+        pub fn set_insights_configuration(mut self, input: std::option::Option<crate::model::InsightsConfiguration>) -> Self {
+            self.insights_configuration = input; self
         }
         /// Consumes the builder and constructs a [`GroupSummary`](crate::model::GroupSummary).
         pub fn build(self) -> crate::model::GroupSummary {
             crate::model::GroupSummary {
-                group_name: self.group_name,
-                group_arn: self.group_arn,
-                filter_expression: self.filter_expression,
-                insights_configuration: self.insights_configuration,
+                group_name: self.group_name
+                ,
+                group_arn: self.group_arn
+                ,
+                filter_expression: self.filter_expression
+                ,
+                insights_configuration: self.insights_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl GroupSummary {
     /// Creates a new builder-style object to manufacture [`GroupSummary`](crate::model::GroupSummary).
@@ -7483,7 +7131,7 @@ impl GroupSummary {
 /// <p>A collection of segment documents with matching trace IDs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Trace {
+pub struct Trace  {
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -7499,7 +7147,7 @@ pub struct Trace {
 }
 impl Trace {
     /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
@@ -7511,13 +7159,13 @@ impl Trace {
         self.limit_exceeded
     }
     /// <p>Segment documents for the segments and subsegments that comprise the trace.</p>
-    pub fn segments(&self) -> std::option::Option<&[crate::model::Segment]> {
+    pub fn segments(&self) -> std::option::Option<& [crate::model::Segment]> {
         self.segments.as_deref()
     }
 }
 /// See [`Trace`](crate::model::Trace).
 pub mod trace {
-
+    
     /// A builder for [`Trace`](crate::model::Trace).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7534,8 +7182,7 @@ pub mod trace {
         }
         /// <p>The unique identifier for the request that generated the trace's segments and subsegments.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
         pub fn duration(mut self, input: f64) -> Self {
@@ -7544,8 +7191,7 @@ pub mod trace {
         }
         /// <p>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</p>
         pub fn set_duration(mut self, input: std::option::Option<f64>) -> Self {
-            self.duration = input;
-            self
+            self.duration = input; self
         }
         /// <p>LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For more information about this limit and other X-Ray limits and quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
         pub fn limit_exceeded(mut self, input: bool) -> Self {
@@ -7554,8 +7200,7 @@ pub mod trace {
         }
         /// <p>LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For more information about this limit and other X-Ray limits and quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and quotas</a>.</p>
         pub fn set_limit_exceeded(mut self, input: std::option::Option<bool>) -> Self {
-            self.limit_exceeded = input;
-            self
+            self.limit_exceeded = input; self
         }
         /// Appends an item to `segments`.
         ///
@@ -7564,28 +7209,30 @@ pub mod trace {
         /// <p>Segment documents for the segments and subsegments that comprise the trace.</p>
         pub fn segments(mut self, input: crate::model::Segment) -> Self {
             let mut v = self.segments.unwrap_or_default();
-            v.push(input);
-            self.segments = Some(v);
-            self
+                            v.push(input);
+                            self.segments = Some(v);
+                            self
         }
         /// <p>Segment documents for the segments and subsegments that comprise the trace.</p>
-        pub fn set_segments(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Segment>>,
-        ) -> Self {
-            self.segments = input;
-            self
+        pub fn set_segments(mut self, input: std::option::Option<std::vec::Vec<crate::model::Segment>>) -> Self {
+            self.segments = input; self
         }
         /// Consumes the builder and constructs a [`Trace`](crate::model::Trace).
         pub fn build(self) -> crate::model::Trace {
             crate::model::Trace {
-                id: self.id,
-                duration: self.duration,
-                limit_exceeded: self.limit_exceeded,
-                segments: self.segments,
+                id: self.id
+                ,
+                duration: self.duration
+                ,
+                limit_exceeded: self.limit_exceeded
+                ,
+                segments: self.segments
+                ,
             }
         }
     }
+    
+    
 }
 impl Trace {
     /// Creates a new builder-style object to manufacture [`Trace`](crate::model::Trace).
@@ -7594,11 +7241,11 @@ impl Trace {
     }
 }
 
-/// <p>A segment from a trace that has been ingested by the X-Ray service. The segment can be compiled from documents uploaded with <a href="https://docs.aws.amazon.com/xray/latest/api/API_PutTraceSegments.html">PutTraceSegments</a>, or an <code>inferred</code> segment for a downstream service, generated from a subsegment sent by the service that called it.</p>
+/// <p>A segment from a trace that has been ingested by the X-Ray service. The segment can be compiled from documents uploaded with <a href="https://docs.aws.amazon.com/xray/latest/api/API_PutTraceSegments.html">PutTraceSegments</a>, or an <code>inferred</code> segment for a downstream service, generated from a subsegment sent by the service that called it.</p> 
 /// <p>For the full segment document schema, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">Amazon Web Services X-Ray Segment Documents</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Segment {
+pub struct Segment  {
     /// <p>The segment's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -7608,17 +7255,17 @@ pub struct Segment {
 }
 impl Segment {
     /// <p>The segment's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The segment document.</p>
-    pub fn document(&self) -> std::option::Option<&str> {
+    pub fn document(&self) -> std::option::Option<& str> {
         self.document.as_deref()
     }
 }
 /// See [`Segment`](crate::model::Segment).
 pub mod segment {
-
+    
     /// A builder for [`Segment`](crate::model::Segment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7633,8 +7280,7 @@ pub mod segment {
         }
         /// <p>The segment's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The segment document.</p>
         pub fn document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7643,17 +7289,20 @@ pub mod segment {
         }
         /// <p>The segment document.</p>
         pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.document = input;
-            self
+            self.document = input; self
         }
         /// Consumes the builder and constructs a [`Segment`](crate::model::Segment).
         pub fn build(self) -> crate::model::Segment {
             crate::model::Segment {
-                id: self.id,
-                document: self.document,
+                id: self.id
+                ,
+                document: self.document
+                ,
             }
         }
     }
+    
+    
 }
 impl Segment {
     /// Creates a new builder-style object to manufacture [`Segment`](crate::model::Segment).
@@ -7661,3 +7310,4 @@ impl Segment {
         crate::model::segment::Builder::default()
     }
 }
+

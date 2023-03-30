@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEventIntegrationOutput {}
+pub struct UpdateEventIntegrationOutput  {
+}
 /// See [`UpdateEventIntegrationOutput`](crate::output::UpdateEventIntegrationOutput).
 pub mod update_event_integration_output {
-
+    
     /// A builder for [`UpdateEventIntegrationOutput`](crate::output::UpdateEventIntegrationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateEventIntegrationOutput`](crate::output::UpdateEventIntegrationOutput).
         pub fn build(self) -> crate::output::UpdateEventIntegrationOutput {
-            crate::output::UpdateEventIntegrationOutput {}
+            crate::output::UpdateEventIntegrationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateEventIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEventIntegrationOutput`](crate::output::UpdateEventIntegrationOutput).
@@ -26,19 +31,24 @@ impl UpdateEventIntegrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDataIntegrationOutput {}
+pub struct UpdateDataIntegrationOutput  {
+}
 /// See [`UpdateDataIntegrationOutput`](crate::output::UpdateDataIntegrationOutput).
 pub mod update_data_integration_output {
-
+    
     /// A builder for [`UpdateDataIntegrationOutput`](crate::output::UpdateDataIntegrationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDataIntegrationOutput`](crate::output::UpdateDataIntegrationOutput).
         pub fn build(self) -> crate::output::UpdateDataIntegrationOutput {
-            crate::output::UpdateDataIntegrationOutput {}
+            crate::output::UpdateDataIntegrationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateDataIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDataIntegrationOutput`](crate::output::UpdateDataIntegrationOutput).
@@ -50,19 +60,24 @@ impl UpdateDataIntegrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -74,19 +89,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -98,30 +118,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>Information about the tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Information about the tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -129,31 +143,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Information about the tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Information about the tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -165,7 +174,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEventIntegrationsOutput {
+pub struct ListEventIntegrationsOutput  {
     /// <p>The event integrations.</p>
     #[doc(hidden)]
     pub event_integrations: std::option::Option<std::vec::Vec<crate::model::EventIntegration>>,
@@ -175,22 +184,21 @@ pub struct ListEventIntegrationsOutput {
 }
 impl ListEventIntegrationsOutput {
     /// <p>The event integrations.</p>
-    pub fn event_integrations(&self) -> std::option::Option<&[crate::model::EventIntegration]> {
+    pub fn event_integrations(&self) -> std::option::Option<& [crate::model::EventIntegration]> {
         self.event_integrations.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEventIntegrationsOutput`](crate::output::ListEventIntegrationsOutput).
 pub mod list_event_integrations_output {
-
+    
     /// A builder for [`ListEventIntegrationsOutput`](crate::output::ListEventIntegrationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) event_integrations:
-            std::option::Option<std::vec::Vec<crate::model::EventIntegration>>,
+        pub(crate) event_integrations: std::option::Option<std::vec::Vec<crate::model::EventIntegration>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -201,17 +209,13 @@ pub mod list_event_integrations_output {
         /// <p>The event integrations.</p>
         pub fn event_integrations(mut self, input: crate::model::EventIntegration) -> Self {
             let mut v = self.event_integrations.unwrap_or_default();
-            v.push(input);
-            self.event_integrations = Some(v);
-            self
+                            v.push(input);
+                            self.event_integrations = Some(v);
+                            self
         }
         /// <p>The event integrations.</p>
-        pub fn set_event_integrations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventIntegration>>,
-        ) -> Self {
-            self.event_integrations = input;
-            self
+        pub fn set_event_integrations(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventIntegration>>) -> Self {
+            self.event_integrations = input; self
         }
         /// <p>If there are additional results, this is the token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -220,17 +224,20 @@ pub mod list_event_integrations_output {
         }
         /// <p>If there are additional results, this is the token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEventIntegrationsOutput`](crate::output::ListEventIntegrationsOutput).
         pub fn build(self) -> crate::output::ListEventIntegrationsOutput {
             crate::output::ListEventIntegrationsOutput {
-                event_integrations: self.event_integrations,
-                next_token: self.next_token,
+                event_integrations: self.event_integrations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEventIntegrationsOutput {
     /// Creates a new builder-style object to manufacture [`ListEventIntegrationsOutput`](crate::output::ListEventIntegrationsOutput).
@@ -242,35 +249,31 @@ impl ListEventIntegrationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEventIntegrationAssociationsOutput {
+pub struct ListEventIntegrationAssociationsOutput  {
     /// <p>The event integration associations.</p>
     #[doc(hidden)]
-    pub event_integration_associations:
-        std::option::Option<std::vec::Vec<crate::model::EventIntegrationAssociation>>,
+    pub event_integration_associations: std::option::Option<std::vec::Vec<crate::model::EventIntegrationAssociation>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEventIntegrationAssociationsOutput {
     /// <p>The event integration associations.</p>
-    pub fn event_integration_associations(
-        &self,
-    ) -> std::option::Option<&[crate::model::EventIntegrationAssociation]> {
+    pub fn event_integration_associations(&self) -> std::option::Option<& [crate::model::EventIntegrationAssociation]> {
         self.event_integration_associations.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEventIntegrationAssociationsOutput`](crate::output::ListEventIntegrationAssociationsOutput).
 pub mod list_event_integration_associations_output {
-
+    
     /// A builder for [`ListEventIntegrationAssociationsOutput`](crate::output::ListEventIntegrationAssociationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) event_integration_associations:
-            std::option::Option<std::vec::Vec<crate::model::EventIntegrationAssociation>>,
+        pub(crate) event_integration_associations: std::option::Option<std::vec::Vec<crate::model::EventIntegrationAssociation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -279,22 +282,15 @@ pub mod list_event_integration_associations_output {
         /// To override the contents of this collection use [`set_event_integration_associations`](Self::set_event_integration_associations).
         ///
         /// <p>The event integration associations.</p>
-        pub fn event_integration_associations(
-            mut self,
-            input: crate::model::EventIntegrationAssociation,
-        ) -> Self {
+        pub fn event_integration_associations(mut self, input: crate::model::EventIntegrationAssociation) -> Self {
             let mut v = self.event_integration_associations.unwrap_or_default();
-            v.push(input);
-            self.event_integration_associations = Some(v);
-            self
+                            v.push(input);
+                            self.event_integration_associations = Some(v);
+                            self
         }
         /// <p>The event integration associations.</p>
-        pub fn set_event_integration_associations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventIntegrationAssociation>>,
-        ) -> Self {
-            self.event_integration_associations = input;
-            self
+        pub fn set_event_integration_associations(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventIntegrationAssociation>>) -> Self {
+            self.event_integration_associations = input; self
         }
         /// <p>If there are additional results, this is the token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -303,17 +299,20 @@ pub mod list_event_integration_associations_output {
         }
         /// <p>If there are additional results, this is the token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEventIntegrationAssociationsOutput`](crate::output::ListEventIntegrationAssociationsOutput).
         pub fn build(self) -> crate::output::ListEventIntegrationAssociationsOutput {
             crate::output::ListEventIntegrationAssociationsOutput {
-                event_integration_associations: self.event_integration_associations,
-                next_token: self.next_token,
+                event_integration_associations: self.event_integration_associations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEventIntegrationAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListEventIntegrationAssociationsOutput`](crate::output::ListEventIntegrationAssociationsOutput).
@@ -325,7 +324,7 @@ impl ListEventIntegrationAssociationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDataIntegrationsOutput {
+pub struct ListDataIntegrationsOutput  {
     /// <p>The DataIntegrations associated with this account.</p>
     #[doc(hidden)]
     pub data_integrations: std::option::Option<std::vec::Vec<crate::model::DataIntegrationSummary>>,
@@ -335,24 +334,21 @@ pub struct ListDataIntegrationsOutput {
 }
 impl ListDataIntegrationsOutput {
     /// <p>The DataIntegrations associated with this account.</p>
-    pub fn data_integrations(
-        &self,
-    ) -> std::option::Option<&[crate::model::DataIntegrationSummary]> {
+    pub fn data_integrations(&self) -> std::option::Option<& [crate::model::DataIntegrationSummary]> {
         self.data_integrations.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDataIntegrationsOutput`](crate::output::ListDataIntegrationsOutput).
 pub mod list_data_integrations_output {
-
+    
     /// A builder for [`ListDataIntegrationsOutput`](crate::output::ListDataIntegrationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) data_integrations:
-            std::option::Option<std::vec::Vec<crate::model::DataIntegrationSummary>>,
+        pub(crate) data_integrations: std::option::Option<std::vec::Vec<crate::model::DataIntegrationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -363,17 +359,13 @@ pub mod list_data_integrations_output {
         /// <p>The DataIntegrations associated with this account.</p>
         pub fn data_integrations(mut self, input: crate::model::DataIntegrationSummary) -> Self {
             let mut v = self.data_integrations.unwrap_or_default();
-            v.push(input);
-            self.data_integrations = Some(v);
-            self
+                            v.push(input);
+                            self.data_integrations = Some(v);
+                            self
         }
         /// <p>The DataIntegrations associated with this account.</p>
-        pub fn set_data_integrations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataIntegrationSummary>>,
-        ) -> Self {
-            self.data_integrations = input;
-            self
+        pub fn set_data_integrations(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataIntegrationSummary>>) -> Self {
+            self.data_integrations = input; self
         }
         /// <p>If there are additional results, this is the token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -382,17 +374,20 @@ pub mod list_data_integrations_output {
         }
         /// <p>If there are additional results, this is the token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDataIntegrationsOutput`](crate::output::ListDataIntegrationsOutput).
         pub fn build(self) -> crate::output::ListDataIntegrationsOutput {
             crate::output::ListDataIntegrationsOutput {
-                data_integrations: self.data_integrations,
-                next_token: self.next_token,
+                data_integrations: self.data_integrations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDataIntegrationsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataIntegrationsOutput`](crate::output::ListDataIntegrationsOutput).
@@ -404,35 +399,31 @@ impl ListDataIntegrationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDataIntegrationAssociationsOutput {
+pub struct ListDataIntegrationAssociationsOutput  {
     /// <p>The Amazon Resource Name (ARN) and unique ID of the DataIntegration association.</p>
     #[doc(hidden)]
-    pub data_integration_associations:
-        std::option::Option<std::vec::Vec<crate::model::DataIntegrationAssociationSummary>>,
+    pub data_integration_associations: std::option::Option<std::vec::Vec<crate::model::DataIntegrationAssociationSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDataIntegrationAssociationsOutput {
     /// <p>The Amazon Resource Name (ARN) and unique ID of the DataIntegration association.</p>
-    pub fn data_integration_associations(
-        &self,
-    ) -> std::option::Option<&[crate::model::DataIntegrationAssociationSummary]> {
+    pub fn data_integration_associations(&self) -> std::option::Option<& [crate::model::DataIntegrationAssociationSummary]> {
         self.data_integration_associations.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDataIntegrationAssociationsOutput`](crate::output::ListDataIntegrationAssociationsOutput).
 pub mod list_data_integration_associations_output {
-
+    
     /// A builder for [`ListDataIntegrationAssociationsOutput`](crate::output::ListDataIntegrationAssociationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) data_integration_associations:
-            std::option::Option<std::vec::Vec<crate::model::DataIntegrationAssociationSummary>>,
+        pub(crate) data_integration_associations: std::option::Option<std::vec::Vec<crate::model::DataIntegrationAssociationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -441,24 +432,15 @@ pub mod list_data_integration_associations_output {
         /// To override the contents of this collection use [`set_data_integration_associations`](Self::set_data_integration_associations).
         ///
         /// <p>The Amazon Resource Name (ARN) and unique ID of the DataIntegration association.</p>
-        pub fn data_integration_associations(
-            mut self,
-            input: crate::model::DataIntegrationAssociationSummary,
-        ) -> Self {
+        pub fn data_integration_associations(mut self, input: crate::model::DataIntegrationAssociationSummary) -> Self {
             let mut v = self.data_integration_associations.unwrap_or_default();
-            v.push(input);
-            self.data_integration_associations = Some(v);
-            self
+                            v.push(input);
+                            self.data_integration_associations = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Name (ARN) and unique ID of the DataIntegration association.</p>
-        pub fn set_data_integration_associations(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::DataIntegrationAssociationSummary>,
-            >,
-        ) -> Self {
-            self.data_integration_associations = input;
-            self
+        pub fn set_data_integration_associations(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataIntegrationAssociationSummary>>) -> Self {
+            self.data_integration_associations = input; self
         }
         /// <p>If there are additional results, this is the token for the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -467,17 +449,20 @@ pub mod list_data_integration_associations_output {
         }
         /// <p>If there are additional results, this is the token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDataIntegrationAssociationsOutput`](crate::output::ListDataIntegrationAssociationsOutput).
         pub fn build(self) -> crate::output::ListDataIntegrationAssociationsOutput {
             crate::output::ListDataIntegrationAssociationsOutput {
-                data_integration_associations: self.data_integration_associations,
-                next_token: self.next_token,
+                data_integration_associations: self.data_integration_associations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDataIntegrationAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataIntegrationAssociationsOutput`](crate::output::ListDataIntegrationAssociationsOutput).
@@ -489,7 +474,7 @@ impl ListDataIntegrationAssociationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEventIntegrationOutput {
+pub struct GetEventIntegrationOutput  {
     /// <p>The name of the event integration. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -507,41 +492,37 @@ pub struct GetEventIntegrationOutput {
     pub event_filter: std::option::Option<crate::model::EventFilter>,
     /// <p>One or more tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetEventIntegrationOutput {
     /// <p>The name of the event integration. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the event integration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the event integration.</p>
-    pub fn event_integration_arn(&self) -> std::option::Option<&str> {
+    pub fn event_integration_arn(&self) -> std::option::Option<& str> {
         self.event_integration_arn.as_deref()
     }
     /// <p>The EventBridge bus.</p>
-    pub fn event_bridge_bus(&self) -> std::option::Option<&str> {
+    pub fn event_bridge_bus(&self) -> std::option::Option<& str> {
         self.event_bridge_bus.as_deref()
     }
     /// <p>The event filter.</p>
-    pub fn event_filter(&self) -> std::option::Option<&crate::model::EventFilter> {
+    pub fn event_filter(&self) -> std::option::Option<& crate::model::EventFilter> {
         self.event_filter.as_ref()
     }
     /// <p>One or more tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetEventIntegrationOutput`](crate::output::GetEventIntegrationOutput).
 pub mod get_event_integration_output {
-
+    
     /// A builder for [`GetEventIntegrationOutput`](crate::output::GetEventIntegrationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -550,9 +531,7 @@ pub mod get_event_integration_output {
         pub(crate) event_integration_arn: std::option::Option<std::string::String>,
         pub(crate) event_bridge_bus: std::option::Option<std::string::String>,
         pub(crate) event_filter: std::option::Option<crate::model::EventFilter>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the event integration. </p>
@@ -562,8 +541,7 @@ pub mod get_event_integration_output {
         }
         /// <p>The name of the event integration. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the event integration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -572,8 +550,7 @@ pub mod get_event_integration_output {
         }
         /// <p>The description of the event integration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the event integration.</p>
         pub fn event_integration_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -581,12 +558,8 @@ pub mod get_event_integration_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the event integration.</p>
-        pub fn set_event_integration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_integration_arn = input;
-            self
+        pub fn set_event_integration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_integration_arn = input; self
         }
         /// <p>The EventBridge bus.</p>
         pub fn event_bridge_bus(mut self, input: impl Into<std::string::String>) -> Self {
@@ -594,12 +567,8 @@ pub mod get_event_integration_output {
             self
         }
         /// <p>The EventBridge bus.</p>
-        pub fn set_event_bridge_bus(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_bridge_bus = input;
-            self
+        pub fn set_event_bridge_bus(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_bridge_bus = input; self
         }
         /// <p>The event filter.</p>
         pub fn event_filter(mut self, input: crate::model::EventFilter) -> Self {
@@ -607,50 +576,44 @@ pub mod get_event_integration_output {
             self
         }
         /// <p>The event filter.</p>
-        pub fn set_event_filter(
-            mut self,
-            input: std::option::Option<crate::model::EventFilter>,
-        ) -> Self {
-            self.event_filter = input;
-            self
+        pub fn set_event_filter(mut self, input: std::option::Option<crate::model::EventFilter>) -> Self {
+            self.event_filter = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>One or more tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetEventIntegrationOutput`](crate::output::GetEventIntegrationOutput).
         pub fn build(self) -> crate::output::GetEventIntegrationOutput {
             crate::output::GetEventIntegrationOutput {
-                name: self.name,
-                description: self.description,
-                event_integration_arn: self.event_integration_arn,
-                event_bridge_bus: self.event_bridge_bus,
-                event_filter: self.event_filter,
-                tags: self.tags,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                event_integration_arn: self.event_integration_arn
+                ,
+                event_bridge_bus: self.event_bridge_bus
+                ,
+                event_filter: self.event_filter
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetEventIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`GetEventIntegrationOutput`](crate::output::GetEventIntegrationOutput).
@@ -662,7 +625,7 @@ impl GetEventIntegrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDataIntegrationOutput {
+pub struct GetDataIntegrationOutput  {
     /// <p>The Amazon Resource Name (ARN) for the DataIntegration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -686,51 +649,45 @@ pub struct GetDataIntegrationOutput {
     pub schedule_configuration: std::option::Option<crate::model::ScheduleConfiguration>,
     /// <p>One or more tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetDataIntegrationOutput {
     /// <p>The Amazon Resource Name (ARN) for the DataIntegration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A unique identifier.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the DataIntegration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The KMS key for the DataIntegration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The KMS key for the DataIntegration.</p>
-    pub fn kms_key(&self) -> std::option::Option<&str> {
+    pub fn kms_key(&self) -> std::option::Option<& str> {
         self.kms_key.as_deref()
     }
     /// <p>The URI of the data source.</p>
-    pub fn source_uri(&self) -> std::option::Option<&str> {
+    pub fn source_uri(&self) -> std::option::Option<& str> {
         self.source_uri.as_deref()
     }
     /// <p>The name of the data and how often it should be pulled from the source.</p>
-    pub fn schedule_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ScheduleConfiguration> {
+    pub fn schedule_configuration(&self) -> std::option::Option<& crate::model::ScheduleConfiguration> {
         self.schedule_configuration.as_ref()
     }
     /// <p>One or more tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetDataIntegrationOutput`](crate::output::GetDataIntegrationOutput).
 pub mod get_data_integration_output {
-
+    
     /// A builder for [`GetDataIntegrationOutput`](crate::output::GetDataIntegrationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -741,9 +698,7 @@ pub mod get_data_integration_output {
         pub(crate) kms_key: std::option::Option<std::string::String>,
         pub(crate) source_uri: std::option::Option<std::string::String>,
         pub(crate) schedule_configuration: std::option::Option<crate::model::ScheduleConfiguration>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the DataIntegration.</p>
@@ -753,8 +708,7 @@ pub mod get_data_integration_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the DataIntegration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>A unique identifier.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -763,8 +717,7 @@ pub mod get_data_integration_output {
         }
         /// <p>A unique identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the DataIntegration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -773,8 +726,7 @@ pub mod get_data_integration_output {
         }
         /// <p>The name of the DataIntegration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The KMS key for the DataIntegration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -783,8 +735,7 @@ pub mod get_data_integration_output {
         }
         /// <p>The KMS key for the DataIntegration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The KMS key for the DataIntegration.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -793,8 +744,7 @@ pub mod get_data_integration_output {
         }
         /// <p>The KMS key for the DataIntegration.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key = input;
-            self
+            self.kms_key = input; self
         }
         /// <p>The URI of the data source.</p>
         pub fn source_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -803,64 +753,56 @@ pub mod get_data_integration_output {
         }
         /// <p>The URI of the data source.</p>
         pub fn set_source_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_uri = input;
-            self
+            self.source_uri = input; self
         }
         /// <p>The name of the data and how often it should be pulled from the source.</p>
-        pub fn schedule_configuration(
-            mut self,
-            input: crate::model::ScheduleConfiguration,
-        ) -> Self {
+        pub fn schedule_configuration(mut self, input: crate::model::ScheduleConfiguration) -> Self {
             self.schedule_configuration = Some(input);
             self
         }
         /// <p>The name of the data and how often it should be pulled from the source.</p>
-        pub fn set_schedule_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ScheduleConfiguration>,
-        ) -> Self {
-            self.schedule_configuration = input;
-            self
+        pub fn set_schedule_configuration(mut self, input: std::option::Option<crate::model::ScheduleConfiguration>) -> Self {
+            self.schedule_configuration = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>One or more tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetDataIntegrationOutput`](crate::output::GetDataIntegrationOutput).
         pub fn build(self) -> crate::output::GetDataIntegrationOutput {
             crate::output::GetDataIntegrationOutput {
-                arn: self.arn,
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                kms_key: self.kms_key,
-                source_uri: self.source_uri,
-                schedule_configuration: self.schedule_configuration,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                kms_key: self.kms_key
+                ,
+                source_uri: self.source_uri
+                ,
+                schedule_configuration: self.schedule_configuration
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDataIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`GetDataIntegrationOutput`](crate::output::GetDataIntegrationOutput).
@@ -872,19 +814,24 @@ impl GetDataIntegrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEventIntegrationOutput {}
+pub struct DeleteEventIntegrationOutput  {
+}
 /// See [`DeleteEventIntegrationOutput`](crate::output::DeleteEventIntegrationOutput).
 pub mod delete_event_integration_output {
-
+    
     /// A builder for [`DeleteEventIntegrationOutput`](crate::output::DeleteEventIntegrationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEventIntegrationOutput`](crate::output::DeleteEventIntegrationOutput).
         pub fn build(self) -> crate::output::DeleteEventIntegrationOutput {
-            crate::output::DeleteEventIntegrationOutput {}
+            crate::output::DeleteEventIntegrationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteEventIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEventIntegrationOutput`](crate::output::DeleteEventIntegrationOutput).
@@ -896,19 +843,24 @@ impl DeleteEventIntegrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDataIntegrationOutput {}
+pub struct DeleteDataIntegrationOutput  {
+}
 /// See [`DeleteDataIntegrationOutput`](crate::output::DeleteDataIntegrationOutput).
 pub mod delete_data_integration_output {
-
+    
     /// A builder for [`DeleteDataIntegrationOutput`](crate::output::DeleteDataIntegrationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDataIntegrationOutput`](crate::output::DeleteDataIntegrationOutput).
         pub fn build(self) -> crate::output::DeleteDataIntegrationOutput {
-            crate::output::DeleteDataIntegrationOutput {}
+            crate::output::DeleteDataIntegrationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDataIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDataIntegrationOutput`](crate::output::DeleteDataIntegrationOutput).
@@ -920,20 +872,20 @@ impl DeleteDataIntegrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEventIntegrationOutput {
+pub struct CreateEventIntegrationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the event integration. </p>
     #[doc(hidden)]
     pub event_integration_arn: std::option::Option<std::string::String>,
 }
 impl CreateEventIntegrationOutput {
     /// <p>The Amazon Resource Name (ARN) of the event integration. </p>
-    pub fn event_integration_arn(&self) -> std::option::Option<&str> {
+    pub fn event_integration_arn(&self) -> std::option::Option<& str> {
         self.event_integration_arn.as_deref()
     }
 }
 /// See [`CreateEventIntegrationOutput`](crate::output::CreateEventIntegrationOutput).
 pub mod create_event_integration_output {
-
+    
     /// A builder for [`CreateEventIntegrationOutput`](crate::output::CreateEventIntegrationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -946,20 +898,19 @@ pub mod create_event_integration_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the event integration. </p>
-        pub fn set_event_integration_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_integration_arn = input;
-            self
+        pub fn set_event_integration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_integration_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateEventIntegrationOutput`](crate::output::CreateEventIntegrationOutput).
         pub fn build(self) -> crate::output::CreateEventIntegrationOutput {
             crate::output::CreateEventIntegrationOutput {
-                event_integration_arn: self.event_integration_arn,
+                event_integration_arn: self.event_integration_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateEventIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`CreateEventIntegrationOutput`](crate::output::CreateEventIntegrationOutput).
@@ -971,7 +922,7 @@ impl CreateEventIntegrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDataIntegrationOutput {
+pub struct CreateDataIntegrationOutput  {
     /// <p>The Amazon Resource Name (ARN)</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -995,58 +946,52 @@ pub struct CreateDataIntegrationOutput {
     pub schedule_configuration: std::option::Option<crate::model::ScheduleConfiguration>,
     /// <p>One or more tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl CreateDataIntegrationOutput {
     /// <p>The Amazon Resource Name (ARN)</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>A unique identifier.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the DataIntegration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the DataIntegration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The KMS key for the DataIntegration.</p>
-    pub fn kms_key(&self) -> std::option::Option<&str> {
+    pub fn kms_key(&self) -> std::option::Option<& str> {
         self.kms_key.as_deref()
     }
     /// <p>The URI of the data source.</p>
-    pub fn source_uri(&self) -> std::option::Option<&str> {
+    pub fn source_uri(&self) -> std::option::Option<& str> {
         self.source_uri.as_deref()
     }
     /// <p>The name of the data and how often it should be pulled from the source.</p>
-    pub fn schedule_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ScheduleConfiguration> {
+    pub fn schedule_configuration(&self) -> std::option::Option<& crate::model::ScheduleConfiguration> {
         self.schedule_configuration.as_ref()
     }
     /// <p>One or more tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 /// See [`CreateDataIntegrationOutput`](crate::output::CreateDataIntegrationOutput).
 pub mod create_data_integration_output {
-
+    
     /// A builder for [`CreateDataIntegrationOutput`](crate::output::CreateDataIntegrationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1057,9 +1002,7 @@ pub mod create_data_integration_output {
         pub(crate) kms_key: std::option::Option<std::string::String>,
         pub(crate) source_uri: std::option::Option<std::string::String>,
         pub(crate) schedule_configuration: std::option::Option<crate::model::ScheduleConfiguration>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1070,8 +1013,7 @@ pub mod create_data_integration_output {
         }
         /// <p>The Amazon Resource Name (ARN)</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>A unique identifier.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1080,8 +1022,7 @@ pub mod create_data_integration_output {
         }
         /// <p>A unique identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the DataIntegration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1090,8 +1031,7 @@ pub mod create_data_integration_output {
         }
         /// <p>The name of the DataIntegration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the DataIntegration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1100,8 +1040,7 @@ pub mod create_data_integration_output {
         }
         /// <p>A description of the DataIntegration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The KMS key for the DataIntegration.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1110,8 +1049,7 @@ pub mod create_data_integration_output {
         }
         /// <p>The KMS key for the DataIntegration.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key = input;
-            self
+            self.kms_key = input; self
         }
         /// <p>The URI of the data source.</p>
         pub fn source_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1120,49 +1058,31 @@ pub mod create_data_integration_output {
         }
         /// <p>The URI of the data source.</p>
         pub fn set_source_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_uri = input;
-            self
+            self.source_uri = input; self
         }
         /// <p>The name of the data and how often it should be pulled from the source.</p>
-        pub fn schedule_configuration(
-            mut self,
-            input: crate::model::ScheduleConfiguration,
-        ) -> Self {
+        pub fn schedule_configuration(mut self, input: crate::model::ScheduleConfiguration) -> Self {
             self.schedule_configuration = Some(input);
             self
         }
         /// <p>The name of the data and how often it should be pulled from the source.</p>
-        pub fn set_schedule_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ScheduleConfiguration>,
-        ) -> Self {
-            self.schedule_configuration = input;
-            self
+        pub fn set_schedule_configuration(mut self, input: std::option::Option<crate::model::ScheduleConfiguration>) -> Self {
+            self.schedule_configuration = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>One or more tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1171,24 +1091,34 @@ pub mod create_data_integration_output {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`CreateDataIntegrationOutput`](crate::output::CreateDataIntegrationOutput).
         pub fn build(self) -> crate::output::CreateDataIntegrationOutput {
             crate::output::CreateDataIntegrationOutput {
-                arn: self.arn,
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                kms_key: self.kms_key,
-                source_uri: self.source_uri,
-                schedule_configuration: self.schedule_configuration,
-                tags: self.tags,
-                client_token: self.client_token,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                kms_key: self.kms_key
+                ,
+                source_uri: self.source_uri
+                ,
+                schedule_configuration: self.schedule_configuration
+                ,
+                tags: self.tags
+                ,
+                client_token: self.client_token
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDataIntegrationOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataIntegrationOutput`](crate::output::CreateDataIntegrationOutput).
@@ -1196,3 +1126,4 @@ impl CreateDataIntegrationOutput {
         crate::output::create_data_integration_output::Builder::default()
     }
 }
+

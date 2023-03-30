@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let errorcode = unimplemented!();
 /// match errorcode {
@@ -44,22 +44,14 @@
 /// Specifically, when `errorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -94,7 +86,7 @@ pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     VoiceConnectorGroupAssociationsExist,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ErrorCode {
     fn from(s: &str) -> Self {
@@ -114,20 +106,18 @@ impl std::convert::From<&str> for ErrorCode {
             "Throttling" => ErrorCode::Throttling,
             "Unauthorized" => ErrorCode::Unauthorized,
             "Unprocessable" => ErrorCode::Unprocessable,
-            "VoiceConnectorGroupAssociationsExist" => {
-                ErrorCode::VoiceConnectorGroupAssociationsExist
-            }
-            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            "VoiceConnectorGroupAssociationsExist" => ErrorCode::VoiceConnectorGroupAssociationsExist,
+            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ErrorCode::from(s))
+                }
+            }
 impl ErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -147,31 +137,14 @@ impl ErrorCode {
             ErrorCode::Throttling => "Throttling",
             ErrorCode::Unauthorized => "Unauthorized",
             ErrorCode::Unprocessable => "Unprocessable",
-            ErrorCode::VoiceConnectorGroupAssociationsExist => {
-                "VoiceConnectorGroupAssociationsExist"
-            }
-            ErrorCode::Unknown(value) => value.as_str(),
+            ErrorCode::VoiceConnectorGroupAssociationsExist => "VoiceConnectorGroupAssociationsExist",
+            ErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AccessDenied",
-            "BadRequest",
-            "Conflict",
-            "Forbidden",
-            "Gone",
-            "NotFound",
-            "PhoneNumberAssociationsExist",
-            "PreconditionFailed",
-            "ResourceLimitExceeded",
-            "ServiceFailure",
-            "ServiceUnavailable",
-            "Throttled",
-            "Throttling",
-            "Unauthorized",
-            "Unprocessable",
-            "VoiceConnectorGroupAssociationsExist",
+            "AccessDenied", "BadRequest", "Conflict", "Forbidden", "Gone", "NotFound", "PhoneNumberAssociationsExist", "PreconditionFailed", "ResourceLimitExceeded", "ServiceFailure", "ServiceUnavailable", "Throttled", "Throttling", "Unauthorized", "Unprocessable", "VoiceConnectorGroupAssociationsExist"
         ]
     }
 }
@@ -184,7 +157,7 @@ impl AsRef<str> for ErrorCode {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CandidateAddress {
+pub struct CandidateAddress  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub street_info: std::option::Option<std::string::String>,
@@ -209,35 +182,35 @@ pub struct CandidateAddress {
 }
 impl CandidateAddress {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn street_info(&self) -> std::option::Option<&str> {
+    pub fn street_info(&self) -> std::option::Option<& str> {
         self.street_info.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn street_number(&self) -> std::option::Option<&str> {
+    pub fn street_number(&self) -> std::option::Option<& str> {
         self.street_number.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn city(&self) -> std::option::Option<&str> {
+    pub fn city(&self) -> std::option::Option<& str> {
         self.city.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn postal_code(&self) -> std::option::Option<&str> {
+    pub fn postal_code(&self) -> std::option::Option<& str> {
         self.postal_code.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn postal_code_plus4(&self) -> std::option::Option<&str> {
+    pub fn postal_code_plus4(&self) -> std::option::Option<& str> {
         self.postal_code_plus4.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn country(&self) -> std::option::Option<&str> {
+    pub fn country(&self) -> std::option::Option<& str> {
         self.country.as_deref()
     }
 }
-impl std::fmt::Debug for CandidateAddress {
+impl  std::fmt::Debug for CandidateAddress  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CandidateAddress");
         formatter.field("street_info", &"*** Sensitive Data Redacted ***");
@@ -252,7 +225,7 @@ impl std::fmt::Debug for CandidateAddress {
 }
 /// See [`CandidateAddress`](crate::model::CandidateAddress).
 pub mod candidate_address {
-
+    
     /// A builder for [`CandidateAddress`](crate::model::CandidateAddress).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -272,8 +245,7 @@ pub mod candidate_address {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_street_info(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.street_info = input;
-            self
+            self.street_info = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn street_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -281,12 +253,8 @@ pub mod candidate_address {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_street_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.street_number = input;
-            self
+        pub fn set_street_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.street_number = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn city(mut self, input: impl Into<std::string::String>) -> Self {
@@ -295,8 +263,7 @@ pub mod candidate_address {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.city = input;
-            self
+            self.city = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -305,8 +272,7 @@ pub mod candidate_address {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn postal_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -315,8 +281,7 @@ pub mod candidate_address {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_postal_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.postal_code = input;
-            self
+            self.postal_code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn postal_code_plus4(mut self, input: impl Into<std::string::String>) -> Self {
@@ -324,12 +289,8 @@ pub mod candidate_address {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_postal_code_plus4(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.postal_code_plus4 = input;
-            self
+        pub fn set_postal_code_plus4(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.postal_code_plus4 = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
@@ -338,19 +299,25 @@ pub mod candidate_address {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.country = input;
-            self
+            self.country = input; self
         }
         /// Consumes the builder and constructs a [`CandidateAddress`](crate::model::CandidateAddress).
         pub fn build(self) -> crate::model::CandidateAddress {
             crate::model::CandidateAddress {
-                street_info: self.street_info,
-                street_number: self.street_number,
-                city: self.city,
-                state: self.state,
-                postal_code: self.postal_code,
-                postal_code_plus4: self.postal_code_plus4,
-                country: self.country,
+                street_info: self.street_info
+                ,
+                street_number: self.street_number
+                ,
+                city: self.city
+                ,
+                state: self.state
+                ,
+                postal_code: self.postal_code
+                ,
+                postal_code_plus4: self.postal_code_plus4
+                ,
+                country: self.country
+                ,
             }
         }
     }
@@ -367,6 +334,8 @@ pub mod candidate_address {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CandidateAddress {
     /// Creates a new builder-style object to manufacture [`CandidateAddress`](crate::model::CandidateAddress).
@@ -378,7 +347,7 @@ impl CandidateAddress {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Address {
+pub struct Address  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub street_name: std::option::Option<std::string::String>,
@@ -412,47 +381,47 @@ pub struct Address {
 }
 impl Address {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn street_name(&self) -> std::option::Option<&str> {
+    pub fn street_name(&self) -> std::option::Option<& str> {
         self.street_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn street_suffix(&self) -> std::option::Option<&str> {
+    pub fn street_suffix(&self) -> std::option::Option<& str> {
         self.street_suffix.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn post_directional(&self) -> std::option::Option<&str> {
+    pub fn post_directional(&self) -> std::option::Option<& str> {
         self.post_directional.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn pre_directional(&self) -> std::option::Option<&str> {
+    pub fn pre_directional(&self) -> std::option::Option<& str> {
         self.pre_directional.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn street_number(&self) -> std::option::Option<&str> {
+    pub fn street_number(&self) -> std::option::Option<& str> {
         self.street_number.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn city(&self) -> std::option::Option<&str> {
+    pub fn city(&self) -> std::option::Option<& str> {
         self.city.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn postal_code(&self) -> std::option::Option<&str> {
+    pub fn postal_code(&self) -> std::option::Option<& str> {
         self.postal_code.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn postal_code_plus4(&self) -> std::option::Option<&str> {
+    pub fn postal_code_plus4(&self) -> std::option::Option<& str> {
         self.postal_code_plus4.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn country(&self) -> std::option::Option<&str> {
+    pub fn country(&self) -> std::option::Option<& str> {
         self.country.as_deref()
     }
 }
-impl std::fmt::Debug for Address {
+impl  std::fmt::Debug for Address  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Address");
         formatter.field("street_name", &"*** Sensitive Data Redacted ***");
@@ -470,7 +439,7 @@ impl std::fmt::Debug for Address {
 }
 /// See [`Address`](crate::model::Address).
 pub mod address {
-
+    
     /// A builder for [`Address`](crate::model::Address).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -493,8 +462,7 @@ pub mod address {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_street_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.street_name = input;
-            self
+            self.street_name = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn street_suffix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -502,12 +470,8 @@ pub mod address {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_street_suffix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.street_suffix = input;
-            self
+        pub fn set_street_suffix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.street_suffix = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn post_directional(mut self, input: impl Into<std::string::String>) -> Self {
@@ -515,12 +479,8 @@ pub mod address {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_post_directional(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.post_directional = input;
-            self
+        pub fn set_post_directional(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.post_directional = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn pre_directional(mut self, input: impl Into<std::string::String>) -> Self {
@@ -528,12 +488,8 @@ pub mod address {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_pre_directional(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pre_directional = input;
-            self
+        pub fn set_pre_directional(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pre_directional = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn street_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -541,12 +497,8 @@ pub mod address {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_street_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.street_number = input;
-            self
+        pub fn set_street_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.street_number = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn city(mut self, input: impl Into<std::string::String>) -> Self {
@@ -555,8 +507,7 @@ pub mod address {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.city = input;
-            self
+            self.city = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -565,8 +516,7 @@ pub mod address {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn postal_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -575,8 +525,7 @@ pub mod address {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_postal_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.postal_code = input;
-            self
+            self.postal_code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn postal_code_plus4(mut self, input: impl Into<std::string::String>) -> Self {
@@ -584,12 +533,8 @@ pub mod address {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_postal_code_plus4(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.postal_code_plus4 = input;
-            self
+        pub fn set_postal_code_plus4(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.postal_code_plus4 = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
@@ -598,22 +543,31 @@ pub mod address {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.country = input;
-            self
+            self.country = input; self
         }
         /// Consumes the builder and constructs a [`Address`](crate::model::Address).
         pub fn build(self) -> crate::model::Address {
             crate::model::Address {
-                street_name: self.street_name,
-                street_suffix: self.street_suffix,
-                post_directional: self.post_directional,
-                pre_directional: self.pre_directional,
-                street_number: self.street_number,
-                city: self.city,
-                state: self.state,
-                postal_code: self.postal_code,
-                postal_code_plus4: self.postal_code_plus4,
-                country: self.country,
+                street_name: self.street_name
+                ,
+                street_suffix: self.street_suffix
+                ,
+                post_directional: self.post_directional
+                ,
+                pre_directional: self.pre_directional
+                ,
+                street_number: self.street_number
+                ,
+                city: self.city
+                ,
+                state: self.state
+                ,
+                postal_code: self.postal_code
+                ,
+                postal_code_plus4: self.postal_code_plus4
+                ,
+                country: self.country
+                ,
             }
         }
     }
@@ -633,6 +587,8 @@ pub mod address {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Address {
     /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
@@ -644,7 +600,7 @@ impl Address {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VoiceConnectorGroup {
+pub struct VoiceConnectorGroup  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector_group_id: std::option::Option<std::string::String>,
@@ -666,42 +622,39 @@ pub struct VoiceConnectorGroup {
 }
 impl VoiceConnectorGroup {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn voice_connector_group_id(&self) -> std::option::Option<&str> {
+    pub fn voice_connector_group_id(&self) -> std::option::Option<& str> {
         self.voice_connector_group_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn voice_connector_items(
-        &self,
-    ) -> std::option::Option<&[crate::model::VoiceConnectorItem]> {
+    pub fn voice_connector_items(&self) -> std::option::Option<& [crate::model::VoiceConnectorItem]> {
         self.voice_connector_items.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn voice_connector_group_arn(&self) -> std::option::Option<&str> {
+    pub fn voice_connector_group_arn(&self) -> std::option::Option<& str> {
         self.voice_connector_group_arn.as_deref()
     }
 }
 /// See [`VoiceConnectorGroup`](crate::model::VoiceConnectorGroup).
 pub mod voice_connector_group {
-
+    
     /// A builder for [`VoiceConnectorGroup`](crate::model::VoiceConnectorGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) voice_connector_group_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) voice_connector_items:
-            std::option::Option<std::vec::Vec<crate::model::VoiceConnectorItem>>,
+        pub(crate) voice_connector_items: std::option::Option<std::vec::Vec<crate::model::VoiceConnectorItem>>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) voice_connector_group_arn: std::option::Option<std::string::String>,
@@ -713,12 +666,8 @@ pub mod voice_connector_group {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_voice_connector_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.voice_connector_group_id = input;
-            self
+        pub fn set_voice_connector_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.voice_connector_group_id = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -727,8 +676,7 @@ pub mod voice_connector_group {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `voice_connector_items`.
         ///
@@ -736,17 +684,13 @@ pub mod voice_connector_group {
         ///
         pub fn voice_connector_items(mut self, input: crate::model::VoiceConnectorItem) -> Self {
             let mut v = self.voice_connector_items.unwrap_or_default();
-            v.push(input);
-            self.voice_connector_items = Some(v);
-            self
+                            v.push(input);
+                            self.voice_connector_items = Some(v);
+                            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_voice_connector_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VoiceConnectorItem>>,
-        ) -> Self {
-            self.voice_connector_items = input;
-            self
+        pub fn set_voice_connector_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::VoiceConnectorItem>>) -> Self {
+            self.voice_connector_items = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -754,12 +698,8 @@ pub mod voice_connector_group {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -767,12 +707,8 @@ pub mod voice_connector_group {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_updated_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_timestamp = input;
-            self
+        pub fn set_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_timestamp = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn voice_connector_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -780,25 +716,29 @@ pub mod voice_connector_group {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_voice_connector_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.voice_connector_group_arn = input;
-            self
+        pub fn set_voice_connector_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.voice_connector_group_arn = input; self
         }
         /// Consumes the builder and constructs a [`VoiceConnectorGroup`](crate::model::VoiceConnectorGroup).
         pub fn build(self) -> crate::model::VoiceConnectorGroup {
             crate::model::VoiceConnectorGroup {
-                voice_connector_group_id: self.voice_connector_group_id,
-                name: self.name,
-                voice_connector_items: self.voice_connector_items,
-                created_timestamp: self.created_timestamp,
-                updated_timestamp: self.updated_timestamp,
-                voice_connector_group_arn: self.voice_connector_group_arn,
+                voice_connector_group_id: self.voice_connector_group_id
+                ,
+                name: self.name
+                ,
+                voice_connector_items: self.voice_connector_items
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                updated_timestamp: self.updated_timestamp
+                ,
+                voice_connector_group_arn: self.voice_connector_group_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl VoiceConnectorGroup {
     /// Creates a new builder-style object to manufacture [`VoiceConnectorGroup`](crate::model::VoiceConnectorGroup).
@@ -810,7 +750,7 @@ impl VoiceConnectorGroup {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VoiceConnectorItem {
+pub struct VoiceConnectorItem  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
@@ -820,7 +760,7 @@ pub struct VoiceConnectorItem {
 }
 impl VoiceConnectorItem {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -830,7 +770,7 @@ impl VoiceConnectorItem {
 }
 /// See [`VoiceConnectorItem`](crate::model::VoiceConnectorItem).
 pub mod voice_connector_item {
-
+    
     /// A builder for [`VoiceConnectorItem`](crate::model::VoiceConnectorItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -844,12 +784,8 @@ pub mod voice_connector_item {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_voice_connector_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.voice_connector_id = input;
-            self
+        pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.voice_connector_id = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn priority(mut self, input: i32) -> Self {
@@ -858,17 +794,20 @@ pub mod voice_connector_item {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-            self.priority = input;
-            self
+            self.priority = input; self
         }
         /// Consumes the builder and constructs a [`VoiceConnectorItem`](crate::model::VoiceConnectorItem).
         pub fn build(self) -> crate::model::VoiceConnectorItem {
             crate::model::VoiceConnectorItem {
-                voice_connector_id: self.voice_connector_id,
-                priority: self.priority,
+                voice_connector_id: self.voice_connector_id
+                ,
+                priority: self.priority
+                ,
             }
         }
     }
+    
+    
 }
 impl VoiceConnectorItem {
     /// Creates a new builder-style object to manufacture [`VoiceConnectorItem`](crate::model::VoiceConnectorItem).
@@ -880,7 +819,7 @@ impl VoiceConnectorItem {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VoiceConnector {
+pub struct VoiceConnector  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
@@ -908,19 +847,19 @@ pub struct VoiceConnector {
 }
 impl VoiceConnector {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn aws_region(&self) -> std::option::Option<&crate::model::VoiceConnectorAwsRegion> {
+    pub fn aws_region(&self) -> std::option::Option<& crate::model::VoiceConnectorAwsRegion> {
         self.aws_region.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn outbound_host_name(&self) -> std::option::Option<&str> {
+    pub fn outbound_host_name(&self) -> std::option::Option<& str> {
         self.outbound_host_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -928,21 +867,21 @@ impl VoiceConnector {
         self.require_encryption
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn voice_connector_arn(&self) -> std::option::Option<&str> {
+    pub fn voice_connector_arn(&self) -> std::option::Option<& str> {
         self.voice_connector_arn.as_deref()
     }
 }
 /// See [`VoiceConnector`](crate::model::VoiceConnector).
 pub mod voice_connector {
-
+    
     /// A builder for [`VoiceConnector`](crate::model::VoiceConnector).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -962,12 +901,8 @@ pub mod voice_connector {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_voice_connector_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.voice_connector_id = input;
-            self
+        pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.voice_connector_id = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn aws_region(mut self, input: crate::model::VoiceConnectorAwsRegion) -> Self {
@@ -975,12 +910,8 @@ pub mod voice_connector {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_aws_region(
-            mut self,
-            input: std::option::Option<crate::model::VoiceConnectorAwsRegion>,
-        ) -> Self {
-            self.aws_region = input;
-            self
+        pub fn set_aws_region(mut self, input: std::option::Option<crate::model::VoiceConnectorAwsRegion>) -> Self {
+            self.aws_region = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -989,8 +920,7 @@ pub mod voice_connector {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn outbound_host_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -998,12 +928,8 @@ pub mod voice_connector {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_outbound_host_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.outbound_host_name = input;
-            self
+        pub fn set_outbound_host_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.outbound_host_name = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn require_encryption(mut self, input: bool) -> Self {
@@ -1012,8 +938,7 @@ pub mod voice_connector {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_require_encryption(mut self, input: std::option::Option<bool>) -> Self {
-            self.require_encryption = input;
-            self
+            self.require_encryption = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1021,12 +946,8 @@ pub mod voice_connector {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1034,12 +955,8 @@ pub mod voice_connector {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_updated_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_timestamp = input;
-            self
+        pub fn set_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_timestamp = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn voice_connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1047,27 +964,33 @@ pub mod voice_connector {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_voice_connector_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.voice_connector_arn = input;
-            self
+        pub fn set_voice_connector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.voice_connector_arn = input; self
         }
         /// Consumes the builder and constructs a [`VoiceConnector`](crate::model::VoiceConnector).
         pub fn build(self) -> crate::model::VoiceConnector {
             crate::model::VoiceConnector {
-                voice_connector_id: self.voice_connector_id,
-                aws_region: self.aws_region,
-                name: self.name,
-                outbound_host_name: self.outbound_host_name,
-                require_encryption: self.require_encryption,
-                created_timestamp: self.created_timestamp,
-                updated_timestamp: self.updated_timestamp,
-                voice_connector_arn: self.voice_connector_arn,
+                voice_connector_id: self.voice_connector_id
+                ,
+                aws_region: self.aws_region
+                ,
+                name: self.name
+                ,
+                outbound_host_name: self.outbound_host_name
+                ,
+                require_encryption: self.require_encryption
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                updated_timestamp: self.updated_timestamp
+                ,
+                voice_connector_arn: self.voice_connector_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl VoiceConnector {
     /// Creates a new builder-style object to manufacture [`VoiceConnector`](crate::model::VoiceConnector).
@@ -1082,9 +1005,9 @@ impl VoiceConnector {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let voiceconnectorawsregion = unimplemented!();
 /// match voiceconnectorawsregion {
@@ -1114,22 +1037,14 @@ impl VoiceConnector {
 /// Specifically, when `voiceconnectorawsregion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VoiceConnectorAwsRegion::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VoiceConnectorAwsRegion {
     #[allow(missing_docs)] // documentation missing in model
     ApNortheast1,
@@ -1152,7 +1067,7 @@ pub enum VoiceConnectorAwsRegion {
     #[allow(missing_docs)] // documentation missing in model
     UsWest2,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VoiceConnectorAwsRegion {
     fn from(s: &str) -> Self {
@@ -1167,19 +1082,17 @@ impl std::convert::From<&str> for VoiceConnectorAwsRegion {
             "eu-west-2" => VoiceConnectorAwsRegion::EuWest2,
             "us-east-1" => VoiceConnectorAwsRegion::UsEast1,
             "us-west-2" => VoiceConnectorAwsRegion::UsWest2,
-            other => VoiceConnectorAwsRegion::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => VoiceConnectorAwsRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VoiceConnectorAwsRegion {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VoiceConnectorAwsRegion::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VoiceConnectorAwsRegion::from(s))
+                }
+            }
 impl VoiceConnectorAwsRegion {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1194,22 +1107,13 @@ impl VoiceConnectorAwsRegion {
             VoiceConnectorAwsRegion::EuWest2 => "eu-west-2",
             VoiceConnectorAwsRegion::UsEast1 => "us-east-1",
             VoiceConnectorAwsRegion::UsWest2 => "us-west-2",
-            VoiceConnectorAwsRegion::Unknown(value) => value.as_str(),
+            VoiceConnectorAwsRegion::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ap-northeast-1",
-            "ap-northeast-2",
-            "ap-southeast-1",
-            "ap-southeast-2",
-            "ca-central-1",
-            "eu-central-1",
-            "eu-west-1",
-            "eu-west-2",
-            "us-east-1",
-            "us-west-2",
+            "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "ca-central-1", "eu-central-1", "eu-west-1", "eu-west-2", "us-east-1", "us-west-2"
         ]
     }
 }
@@ -1222,7 +1126,7 @@ impl AsRef<str> for VoiceConnectorAwsRegion {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SipRule {
+pub struct SipRule  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub sip_rule_id: std::option::Option<std::string::String>,
@@ -1240,8 +1144,7 @@ pub struct SipRule {
     pub trigger_value: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub target_applications:
-        std::option::Option<std::vec::Vec<crate::model::SipRuleTargetApplication>>,
+    pub target_applications: std::option::Option<std::vec::Vec<crate::model::SipRuleTargetApplication>>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -1251,11 +1154,11 @@ pub struct SipRule {
 }
 impl SipRule {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn sip_rule_id(&self) -> std::option::Option<&str> {
+    pub fn sip_rule_id(&self) -> std::option::Option<& str> {
         self.sip_rule_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -1263,31 +1166,29 @@ impl SipRule {
         self.disabled
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn trigger_type(&self) -> std::option::Option<&crate::model::SipRuleTriggerType> {
+    pub fn trigger_type(&self) -> std::option::Option<& crate::model::SipRuleTriggerType> {
         self.trigger_type.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn trigger_value(&self) -> std::option::Option<&str> {
+    pub fn trigger_value(&self) -> std::option::Option<& str> {
         self.trigger_value.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn target_applications(
-        &self,
-    ) -> std::option::Option<&[crate::model::SipRuleTargetApplication]> {
+    pub fn target_applications(&self) -> std::option::Option<& [crate::model::SipRuleTargetApplication]> {
         self.target_applications.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
 }
 /// See [`SipRule`](crate::model::SipRule).
 pub mod sip_rule {
-
+    
     /// A builder for [`SipRule`](crate::model::SipRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1296,8 +1197,7 @@ pub mod sip_rule {
         pub(crate) disabled: std::option::Option<bool>,
         pub(crate) trigger_type: std::option::Option<crate::model::SipRuleTriggerType>,
         pub(crate) trigger_value: std::option::Option<std::string::String>,
-        pub(crate) target_applications:
-            std::option::Option<std::vec::Vec<crate::model::SipRuleTargetApplication>>,
+        pub(crate) target_applications: std::option::Option<std::vec::Vec<crate::model::SipRuleTargetApplication>>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -1309,8 +1209,7 @@ pub mod sip_rule {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_sip_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sip_rule_id = input;
-            self
+            self.sip_rule_id = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1319,8 +1218,7 @@ pub mod sip_rule {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn disabled(mut self, input: bool) -> Self {
@@ -1329,8 +1227,7 @@ pub mod sip_rule {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.disabled = input;
-            self
+            self.disabled = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn trigger_type(mut self, input: crate::model::SipRuleTriggerType) -> Self {
@@ -1338,12 +1235,8 @@ pub mod sip_rule {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_trigger_type(
-            mut self,
-            input: std::option::Option<crate::model::SipRuleTriggerType>,
-        ) -> Self {
-            self.trigger_type = input;
-            self
+        pub fn set_trigger_type(mut self, input: std::option::Option<crate::model::SipRuleTriggerType>) -> Self {
+            self.trigger_type = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn trigger_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1351,33 +1244,22 @@ pub mod sip_rule {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_trigger_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.trigger_value = input;
-            self
+        pub fn set_trigger_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.trigger_value = input; self
         }
         /// Appends an item to `target_applications`.
         ///
         /// To override the contents of this collection use [`set_target_applications`](Self::set_target_applications).
         ///
-        pub fn target_applications(
-            mut self,
-            input: crate::model::SipRuleTargetApplication,
-        ) -> Self {
+        pub fn target_applications(mut self, input: crate::model::SipRuleTargetApplication) -> Self {
             let mut v = self.target_applications.unwrap_or_default();
-            v.push(input);
-            self.target_applications = Some(v);
-            self
+                            v.push(input);
+                            self.target_applications = Some(v);
+                            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_target_applications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SipRuleTargetApplication>>,
-        ) -> Self {
-            self.target_applications = input;
-            self
+        pub fn set_target_applications(mut self, input: std::option::Option<std::vec::Vec<crate::model::SipRuleTargetApplication>>) -> Self {
+            self.target_applications = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1385,12 +1267,8 @@ pub mod sip_rule {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1398,27 +1276,33 @@ pub mod sip_rule {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_updated_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_timestamp = input;
-            self
+        pub fn set_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`SipRule`](crate::model::SipRule).
         pub fn build(self) -> crate::model::SipRule {
             crate::model::SipRule {
-                sip_rule_id: self.sip_rule_id,
-                name: self.name,
-                disabled: self.disabled,
-                trigger_type: self.trigger_type,
-                trigger_value: self.trigger_value,
-                target_applications: self.target_applications,
-                created_timestamp: self.created_timestamp,
-                updated_timestamp: self.updated_timestamp,
+                sip_rule_id: self.sip_rule_id
+                ,
+                name: self.name
+                ,
+                disabled: self.disabled
+                ,
+                trigger_type: self.trigger_type
+                ,
+                trigger_value: self.trigger_value
+                ,
+                target_applications: self.target_applications
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                updated_timestamp: self.updated_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl SipRule {
     /// Creates a new builder-style object to manufacture [`SipRule`](crate::model::SipRule).
@@ -1430,7 +1314,7 @@ impl SipRule {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SipRuleTargetApplication {
+pub struct SipRuleTargetApplication  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub sip_media_application_id: std::option::Option<std::string::String>,
@@ -1443,7 +1327,7 @@ pub struct SipRuleTargetApplication {
 }
 impl SipRuleTargetApplication {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
+    pub fn sip_media_application_id(&self) -> std::option::Option<& str> {
         self.sip_media_application_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -1451,13 +1335,13 @@ impl SipRuleTargetApplication {
         self.priority
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn aws_region(&self) -> std::option::Option<&str> {
+    pub fn aws_region(&self) -> std::option::Option<& str> {
         self.aws_region.as_deref()
     }
 }
 /// See [`SipRuleTargetApplication`](crate::model::SipRuleTargetApplication).
 pub mod sip_rule_target_application {
-
+    
     /// A builder for [`SipRuleTargetApplication`](crate::model::SipRuleTargetApplication).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1472,12 +1356,8 @@ pub mod sip_rule_target_application {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_sip_media_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sip_media_application_id = input;
-            self
+        pub fn set_sip_media_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sip_media_application_id = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn priority(mut self, input: i32) -> Self {
@@ -1486,8 +1366,7 @@ pub mod sip_rule_target_application {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-            self.priority = input;
-            self
+            self.priority = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1496,18 +1375,22 @@ pub mod sip_rule_target_application {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_region = input;
-            self
+            self.aws_region = input; self
         }
         /// Consumes the builder and constructs a [`SipRuleTargetApplication`](crate::model::SipRuleTargetApplication).
         pub fn build(self) -> crate::model::SipRuleTargetApplication {
             crate::model::SipRuleTargetApplication {
-                sip_media_application_id: self.sip_media_application_id,
-                priority: self.priority,
-                aws_region: self.aws_region,
+                sip_media_application_id: self.sip_media_application_id
+                ,
+                priority: self.priority
+                ,
+                aws_region: self.aws_region
+                ,
             }
         }
     }
+    
+    
 }
 impl SipRuleTargetApplication {
     /// Creates a new builder-style object to manufacture [`SipRuleTargetApplication`](crate::model::SipRuleTargetApplication).
@@ -1522,9 +1405,9 @@ impl SipRuleTargetApplication {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sipruletriggertype = unimplemented!();
 /// match sipruletriggertype {
@@ -1546,60 +1429,52 @@ impl SipRuleTargetApplication {
 /// Specifically, when `sipruletriggertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SipRuleTriggerType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SipRuleTriggerType {
     #[allow(missing_docs)] // documentation missing in model
     RequestUriHostname,
     #[allow(missing_docs)] // documentation missing in model
     ToPhoneNumber,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SipRuleTriggerType {
     fn from(s: &str) -> Self {
         match s {
             "RequestUriHostname" => SipRuleTriggerType::RequestUriHostname,
             "ToPhoneNumber" => SipRuleTriggerType::ToPhoneNumber,
-            other => {
-                SipRuleTriggerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SipRuleTriggerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SipRuleTriggerType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SipRuleTriggerType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SipRuleTriggerType::from(s))
+                }
+            }
 impl SipRuleTriggerType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SipRuleTriggerType::RequestUriHostname => "RequestUriHostname",
             SipRuleTriggerType::ToPhoneNumber => "ToPhoneNumber",
-            SipRuleTriggerType::Unknown(value) => value.as_str(),
+            SipRuleTriggerType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RequestUriHostname", "ToPhoneNumber"]
+        &[
+            "RequestUriHostname", "ToPhoneNumber"
+        ]
     }
 }
 impl AsRef<str> for SipRuleTriggerType {
@@ -1611,20 +1486,20 @@ impl AsRef<str> for SipRuleTriggerType {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SipMediaApplicationCall {
+pub struct SipMediaApplicationCall  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
 }
 impl SipMediaApplicationCall {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn transaction_id(&self) -> std::option::Option<&str> {
+    pub fn transaction_id(&self) -> std::option::Option<& str> {
         self.transaction_id.as_deref()
     }
 }
 /// See [`SipMediaApplicationCall`](crate::model::SipMediaApplicationCall).
 pub mod sip_media_application_call {
-
+    
     /// A builder for [`SipMediaApplicationCall`](crate::model::SipMediaApplicationCall).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1637,20 +1512,19 @@ pub mod sip_media_application_call {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_transaction_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.transaction_id = input;
-            self
+        pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.transaction_id = input; self
         }
         /// Consumes the builder and constructs a [`SipMediaApplicationCall`](crate::model::SipMediaApplicationCall).
         pub fn build(self) -> crate::model::SipMediaApplicationCall {
             crate::model::SipMediaApplicationCall {
-                transaction_id: self.transaction_id,
+                transaction_id: self.transaction_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SipMediaApplicationCall {
     /// Creates a new builder-style object to manufacture [`SipMediaApplicationCall`](crate::model::SipMediaApplicationCall).
@@ -1662,7 +1536,7 @@ impl SipMediaApplicationCall {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SipMediaApplication {
+pub struct SipMediaApplication  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub sip_media_application_id: std::option::Option<std::string::String>,
@@ -1684,41 +1558,40 @@ pub struct SipMediaApplication {
 }
 impl SipMediaApplication {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
+    pub fn sip_media_application_id(&self) -> std::option::Option<& str> {
         self.sip_media_application_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn aws_region(&self) -> std::option::Option<&str> {
+    pub fn aws_region(&self) -> std::option::Option<& str> {
         self.aws_region.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn endpoints(&self) -> std::option::Option<&[crate::model::SipMediaApplicationEndpoint]> {
+    pub fn endpoints(&self) -> std::option::Option<& [crate::model::SipMediaApplicationEndpoint]> {
         self.endpoints.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
 }
 /// See [`SipMediaApplication`](crate::model::SipMediaApplication).
 pub mod sip_media_application {
-
+    
     /// A builder for [`SipMediaApplication`](crate::model::SipMediaApplication).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sip_media_application_id: std::option::Option<std::string::String>,
         pub(crate) aws_region: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) endpoints:
-            std::option::Option<std::vec::Vec<crate::model::SipMediaApplicationEndpoint>>,
+        pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::model::SipMediaApplicationEndpoint>>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -1729,12 +1602,8 @@ pub mod sip_media_application {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_sip_media_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sip_media_application_id = input;
-            self
+        pub fn set_sip_media_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sip_media_application_id = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1743,8 +1612,7 @@ pub mod sip_media_application {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.aws_region = input;
-            self
+            self.aws_region = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1753,8 +1621,7 @@ pub mod sip_media_application {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `endpoints`.
         ///
@@ -1762,17 +1629,13 @@ pub mod sip_media_application {
         ///
         pub fn endpoints(mut self, input: crate::model::SipMediaApplicationEndpoint) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
-            v.push(input);
-            self.endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.endpoints = Some(v);
+                            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SipMediaApplicationEndpoint>>,
-        ) -> Self {
-            self.endpoints = input;
-            self
+        pub fn set_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::SipMediaApplicationEndpoint>>) -> Self {
+            self.endpoints = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1780,12 +1643,8 @@ pub mod sip_media_application {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1793,25 +1652,29 @@ pub mod sip_media_application {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_updated_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_timestamp = input;
-            self
+        pub fn set_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`SipMediaApplication`](crate::model::SipMediaApplication).
         pub fn build(self) -> crate::model::SipMediaApplication {
             crate::model::SipMediaApplication {
-                sip_media_application_id: self.sip_media_application_id,
-                aws_region: self.aws_region,
-                name: self.name,
-                endpoints: self.endpoints,
-                created_timestamp: self.created_timestamp,
-                updated_timestamp: self.updated_timestamp,
+                sip_media_application_id: self.sip_media_application_id
+                ,
+                aws_region: self.aws_region
+                ,
+                name: self.name
+                ,
+                endpoints: self.endpoints
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                updated_timestamp: self.updated_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl SipMediaApplication {
     /// Creates a new builder-style object to manufacture [`SipMediaApplication`](crate::model::SipMediaApplication).
@@ -1823,18 +1686,18 @@ impl SipMediaApplication {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SipMediaApplicationEndpoint {
+pub struct SipMediaApplicationEndpoint  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub lambda_arn: std::option::Option<std::string::String>,
 }
 impl SipMediaApplicationEndpoint {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+    pub fn lambda_arn(&self) -> std::option::Option<& str> {
         self.lambda_arn.as_deref()
     }
 }
-impl std::fmt::Debug for SipMediaApplicationEndpoint {
+impl  std::fmt::Debug for SipMediaApplicationEndpoint  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SipMediaApplicationEndpoint");
         formatter.field("lambda_arn", &"*** Sensitive Data Redacted ***");
@@ -1843,7 +1706,7 @@ impl std::fmt::Debug for SipMediaApplicationEndpoint {
 }
 /// See [`SipMediaApplicationEndpoint`](crate::model::SipMediaApplicationEndpoint).
 pub mod sip_media_application_endpoint {
-
+    
     /// A builder for [`SipMediaApplicationEndpoint`](crate::model::SipMediaApplicationEndpoint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1857,13 +1720,13 @@ pub mod sip_media_application_endpoint {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lambda_arn = input;
-            self
+            self.lambda_arn = input; self
         }
         /// Consumes the builder and constructs a [`SipMediaApplicationEndpoint`](crate::model::SipMediaApplicationEndpoint).
         pub fn build(self) -> crate::model::SipMediaApplicationEndpoint {
             crate::model::SipMediaApplicationEndpoint {
-                lambda_arn: self.lambda_arn,
+                lambda_arn: self.lambda_arn
+                ,
             }
         }
     }
@@ -1874,6 +1737,8 @@ pub mod sip_media_application_endpoint {
             formatter.finish()
         }
     }
+    
+    
 }
 impl SipMediaApplicationEndpoint {
     /// Creates a new builder-style object to manufacture [`SipMediaApplicationEndpoint`](crate::model::SipMediaApplicationEndpoint).
@@ -1885,7 +1750,7 @@ impl SipMediaApplicationEndpoint {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProxySession {
+pub struct ProxySession  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
@@ -1928,19 +1793,19 @@ pub struct ProxySession {
 }
 impl ProxySession {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
         self.voice_connector_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn proxy_session_id(&self) -> std::option::Option<&str> {
+    pub fn proxy_session_id(&self) -> std::option::Option<& str> {
         self.proxy_session_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn status(&self) -> std::option::Option<&crate::model::ProxySessionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ProxySessionStatus> {
         self.status.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -1948,43 +1813,41 @@ impl ProxySession {
         self.expiry_minutes
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn capabilities(&self) -> std::option::Option<&[crate::model::Capability]> {
+    pub fn capabilities(&self) -> std::option::Option<& [crate::model::Capability]> {
         self.capabilities.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn ended_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn ended_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.ended_timestamp.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn participants(&self) -> std::option::Option<&[crate::model::Participant]> {
+    pub fn participants(&self) -> std::option::Option<& [crate::model::Participant]> {
         self.participants.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn number_selection_behavior(
-        &self,
-    ) -> std::option::Option<&crate::model::NumberSelectionBehavior> {
+    pub fn number_selection_behavior(&self) -> std::option::Option<& crate::model::NumberSelectionBehavior> {
         self.number_selection_behavior.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn geo_match_level(&self) -> std::option::Option<&crate::model::GeoMatchLevel> {
+    pub fn geo_match_level(&self) -> std::option::Option<& crate::model::GeoMatchLevel> {
         self.geo_match_level.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn geo_match_params(&self) -> std::option::Option<&crate::model::GeoMatchParams> {
+    pub fn geo_match_params(&self) -> std::option::Option<& crate::model::GeoMatchParams> {
         self.geo_match_params.as_ref()
     }
 }
 /// See [`ProxySession`](crate::model::ProxySession).
 pub mod proxy_session {
-
+    
     /// A builder for [`ProxySession`](crate::model::ProxySession).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1998,8 +1861,7 @@ pub mod proxy_session {
         pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) ended_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) participants: std::option::Option<std::vec::Vec<crate::model::Participant>>,
-        pub(crate) number_selection_behavior:
-            std::option::Option<crate::model::NumberSelectionBehavior>,
+        pub(crate) number_selection_behavior: std::option::Option<crate::model::NumberSelectionBehavior>,
         pub(crate) geo_match_level: std::option::Option<crate::model::GeoMatchLevel>,
         pub(crate) geo_match_params: std::option::Option<crate::model::GeoMatchParams>,
     }
@@ -2010,12 +1872,8 @@ pub mod proxy_session {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_voice_connector_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.voice_connector_id = input;
-            self
+        pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.voice_connector_id = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn proxy_session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2023,12 +1881,8 @@ pub mod proxy_session {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_proxy_session_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.proxy_session_id = input;
-            self
+        pub fn set_proxy_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.proxy_session_id = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2037,8 +1891,7 @@ pub mod proxy_session {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn status(mut self, input: crate::model::ProxySessionStatus) -> Self {
@@ -2046,12 +1899,8 @@ pub mod proxy_session {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ProxySessionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ProxySessionStatus>) -> Self {
+            self.status = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn expiry_minutes(mut self, input: i32) -> Self {
@@ -2060,8 +1909,7 @@ pub mod proxy_session {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_expiry_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.expiry_minutes = input;
-            self
+            self.expiry_minutes = input; self
         }
         /// Appends an item to `capabilities`.
         ///
@@ -2069,17 +1917,13 @@ pub mod proxy_session {
         ///
         pub fn capabilities(mut self, input: crate::model::Capability) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
-            v.push(input);
-            self.capabilities = Some(v);
-            self
+                            v.push(input);
+                            self.capabilities = Some(v);
+                            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_capabilities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
-        ) -> Self {
-            self.capabilities = input;
-            self
+        pub fn set_capabilities(mut self, input: std::option::Option<std::vec::Vec<crate::model::Capability>>) -> Self {
+            self.capabilities = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2087,12 +1931,8 @@ pub mod proxy_session {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2100,12 +1940,8 @@ pub mod proxy_session {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_updated_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_timestamp = input;
-            self
+        pub fn set_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_timestamp = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn ended_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2113,12 +1949,8 @@ pub mod proxy_session {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_ended_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.ended_timestamp = input;
-            self
+        pub fn set_ended_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.ended_timestamp = input; self
         }
         /// Appends an item to `participants`.
         ///
@@ -2126,33 +1958,22 @@ pub mod proxy_session {
         ///
         pub fn participants(mut self, input: crate::model::Participant) -> Self {
             let mut v = self.participants.unwrap_or_default();
-            v.push(input);
-            self.participants = Some(v);
-            self
+                            v.push(input);
+                            self.participants = Some(v);
+                            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_participants(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Participant>>,
-        ) -> Self {
-            self.participants = input;
-            self
+        pub fn set_participants(mut self, input: std::option::Option<std::vec::Vec<crate::model::Participant>>) -> Self {
+            self.participants = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn number_selection_behavior(
-            mut self,
-            input: crate::model::NumberSelectionBehavior,
-        ) -> Self {
+        pub fn number_selection_behavior(mut self, input: crate::model::NumberSelectionBehavior) -> Self {
             self.number_selection_behavior = Some(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_number_selection_behavior(
-            mut self,
-            input: std::option::Option<crate::model::NumberSelectionBehavior>,
-        ) -> Self {
-            self.number_selection_behavior = input;
-            self
+        pub fn set_number_selection_behavior(mut self, input: std::option::Option<crate::model::NumberSelectionBehavior>) -> Self {
+            self.number_selection_behavior = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn geo_match_level(mut self, input: crate::model::GeoMatchLevel) -> Self {
@@ -2160,12 +1981,8 @@ pub mod proxy_session {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_geo_match_level(
-            mut self,
-            input: std::option::Option<crate::model::GeoMatchLevel>,
-        ) -> Self {
-            self.geo_match_level = input;
-            self
+        pub fn set_geo_match_level(mut self, input: std::option::Option<crate::model::GeoMatchLevel>) -> Self {
+            self.geo_match_level = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn geo_match_params(mut self, input: crate::model::GeoMatchParams) -> Self {
@@ -2173,32 +1990,43 @@ pub mod proxy_session {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_geo_match_params(
-            mut self,
-            input: std::option::Option<crate::model::GeoMatchParams>,
-        ) -> Self {
-            self.geo_match_params = input;
-            self
+        pub fn set_geo_match_params(mut self, input: std::option::Option<crate::model::GeoMatchParams>) -> Self {
+            self.geo_match_params = input; self
         }
         /// Consumes the builder and constructs a [`ProxySession`](crate::model::ProxySession).
         pub fn build(self) -> crate::model::ProxySession {
             crate::model::ProxySession {
-                voice_connector_id: self.voice_connector_id,
-                proxy_session_id: self.proxy_session_id,
-                name: self.name,
-                status: self.status,
-                expiry_minutes: self.expiry_minutes,
-                capabilities: self.capabilities,
-                created_timestamp: self.created_timestamp,
-                updated_timestamp: self.updated_timestamp,
-                ended_timestamp: self.ended_timestamp,
-                participants: self.participants,
-                number_selection_behavior: self.number_selection_behavior,
-                geo_match_level: self.geo_match_level,
-                geo_match_params: self.geo_match_params,
+                voice_connector_id: self.voice_connector_id
+                ,
+                proxy_session_id: self.proxy_session_id
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                expiry_minutes: self.expiry_minutes
+                ,
+                capabilities: self.capabilities
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                updated_timestamp: self.updated_timestamp
+                ,
+                ended_timestamp: self.ended_timestamp
+                ,
+                participants: self.participants
+                ,
+                number_selection_behavior: self.number_selection_behavior
+                ,
+                geo_match_level: self.geo_match_level
+                ,
+                geo_match_params: self.geo_match_params
+                ,
             }
         }
     }
+    
+    
 }
 impl ProxySession {
     /// Creates a new builder-style object to manufacture [`ProxySession`](crate::model::ProxySession).
@@ -2210,7 +2038,7 @@ impl ProxySession {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeoMatchParams {
+pub struct GeoMatchParams  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub country: std::option::Option<std::string::String>,
@@ -2220,17 +2048,17 @@ pub struct GeoMatchParams {
 }
 impl GeoMatchParams {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn country(&self) -> std::option::Option<&str> {
+    pub fn country(&self) -> std::option::Option<& str> {
         self.country.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn area_code(&self) -> std::option::Option<&str> {
+    pub fn area_code(&self) -> std::option::Option<& str> {
         self.area_code.as_deref()
     }
 }
 /// See [`GeoMatchParams`](crate::model::GeoMatchParams).
 pub mod geo_match_params {
-
+    
     /// A builder for [`GeoMatchParams`](crate::model::GeoMatchParams).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2245,8 +2073,7 @@ pub mod geo_match_params {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.country = input;
-            self
+            self.country = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn area_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2255,17 +2082,20 @@ pub mod geo_match_params {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_area_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.area_code = input;
-            self
+            self.area_code = input; self
         }
         /// Consumes the builder and constructs a [`GeoMatchParams`](crate::model::GeoMatchParams).
         pub fn build(self) -> crate::model::GeoMatchParams {
             crate::model::GeoMatchParams {
-                country: self.country,
-                area_code: self.area_code,
+                country: self.country
+                ,
+                area_code: self.area_code
+                ,
             }
         }
     }
+    
+    
 }
 impl GeoMatchParams {
     /// Creates a new builder-style object to manufacture [`GeoMatchParams`](crate::model::GeoMatchParams).
@@ -2280,9 +2110,9 @@ impl GeoMatchParams {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let geomatchlevel = unimplemented!();
 /// match geomatchlevel {
@@ -2304,58 +2134,52 @@ impl GeoMatchParams {
 /// Specifically, when `geomatchlevel` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GeoMatchLevel::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum GeoMatchLevel {
     #[allow(missing_docs)] // documentation missing in model
     AreaCode,
     #[allow(missing_docs)] // documentation missing in model
     Country,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GeoMatchLevel {
     fn from(s: &str) -> Self {
         match s {
             "AreaCode" => GeoMatchLevel::AreaCode,
             "Country" => GeoMatchLevel::Country,
-            other => GeoMatchLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => GeoMatchLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for GeoMatchLevel {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GeoMatchLevel::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(GeoMatchLevel::from(s))
+                }
+            }
 impl GeoMatchLevel {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GeoMatchLevel::AreaCode => "AreaCode",
             GeoMatchLevel::Country => "Country",
-            GeoMatchLevel::Unknown(value) => value.as_str(),
+            GeoMatchLevel::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AreaCode", "Country"]
+        &[
+            "AreaCode", "Country"
+        ]
     }
 }
 impl AsRef<str> for GeoMatchLevel {
@@ -2370,9 +2194,9 @@ impl AsRef<str> for GeoMatchLevel {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let numberselectionbehavior = unimplemented!();
 /// match numberselectionbehavior {
@@ -2394,60 +2218,52 @@ impl AsRef<str> for GeoMatchLevel {
 /// Specifically, when `numberselectionbehavior` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NumberSelectionBehavior::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NumberSelectionBehavior {
     #[allow(missing_docs)] // documentation missing in model
     AvoidSticky,
     #[allow(missing_docs)] // documentation missing in model
     PreferSticky,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NumberSelectionBehavior {
     fn from(s: &str) -> Self {
         match s {
             "AvoidSticky" => NumberSelectionBehavior::AvoidSticky,
             "PreferSticky" => NumberSelectionBehavior::PreferSticky,
-            other => NumberSelectionBehavior::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => NumberSelectionBehavior::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NumberSelectionBehavior {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NumberSelectionBehavior::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NumberSelectionBehavior::from(s))
+                }
+            }
 impl NumberSelectionBehavior {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NumberSelectionBehavior::AvoidSticky => "AvoidSticky",
             NumberSelectionBehavior::PreferSticky => "PreferSticky",
-            NumberSelectionBehavior::Unknown(value) => value.as_str(),
+            NumberSelectionBehavior::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AvoidSticky", "PreferSticky"]
+        &[
+            "AvoidSticky", "PreferSticky"
+        ]
     }
 }
 impl AsRef<str> for NumberSelectionBehavior {
@@ -2459,7 +2275,7 @@ impl AsRef<str> for NumberSelectionBehavior {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Participant {
+pub struct Participant  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
@@ -2469,15 +2285,15 @@ pub struct Participant {
 }
 impl Participant {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn proxy_phone_number(&self) -> std::option::Option<&str> {
+    pub fn proxy_phone_number(&self) -> std::option::Option<& str> {
         self.proxy_phone_number.as_deref()
     }
 }
-impl std::fmt::Debug for Participant {
+impl  std::fmt::Debug for Participant  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Participant");
         formatter.field("phone_number", &"*** Sensitive Data Redacted ***");
@@ -2487,7 +2303,7 @@ impl std::fmt::Debug for Participant {
 }
 /// See [`Participant`](crate::model::Participant).
 pub mod participant {
-
+    
     /// A builder for [`Participant`](crate::model::Participant).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2502,8 +2318,7 @@ pub mod participant {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.phone_number = input;
-            self
+            self.phone_number = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn proxy_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2511,18 +2326,16 @@ pub mod participant {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_proxy_phone_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.proxy_phone_number = input;
-            self
+        pub fn set_proxy_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.proxy_phone_number = input; self
         }
         /// Consumes the builder and constructs a [`Participant`](crate::model::Participant).
         pub fn build(self) -> crate::model::Participant {
             crate::model::Participant {
-                phone_number: self.phone_number,
-                proxy_phone_number: self.proxy_phone_number,
+                phone_number: self.phone_number
+                ,
+                proxy_phone_number: self.proxy_phone_number
+                ,
             }
         }
     }
@@ -2534,6 +2347,8 @@ pub mod participant {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Participant {
     /// Creates a new builder-style object to manufacture [`Participant`](crate::model::Participant).
@@ -2548,9 +2363,9 @@ impl Participant {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let capability = unimplemented!();
 /// match capability {
@@ -2572,58 +2387,52 @@ impl Participant {
 /// Specifically, when `capability` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Capability::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Capability {
     #[allow(missing_docs)] // documentation missing in model
     Sms,
     #[allow(missing_docs)] // documentation missing in model
     Voice,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Capability {
     fn from(s: &str) -> Self {
         match s {
             "SMS" => Capability::Sms,
             "Voice" => Capability::Voice,
-            other => Capability::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Capability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Capability {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Capability::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Capability::from(s))
+                }
+            }
 impl Capability {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Capability::Sms => "SMS",
             Capability::Voice => "Voice",
-            Capability::Unknown(value) => value.as_str(),
+            Capability::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SMS", "Voice"]
+        &[
+            "SMS", "Voice"
+        ]
     }
 }
 impl AsRef<str> for Capability {
@@ -2638,9 +2447,9 @@ impl AsRef<str> for Capability {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let proxysessionstatus = unimplemented!();
 /// match proxysessionstatus {
@@ -2663,22 +2472,14 @@ impl AsRef<str> for Capability {
 /// Specifically, when `proxysessionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProxySessionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ProxySessionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Closed,
@@ -2687,7 +2488,7 @@ pub enum ProxySessionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Open,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ProxySessionStatus {
     fn from(s: &str) -> Self {
@@ -2695,19 +2496,17 @@ impl std::convert::From<&str> for ProxySessionStatus {
             "Closed" => ProxySessionStatus::Closed,
             "InProgress" => ProxySessionStatus::InProgress,
             "Open" => ProxySessionStatus::Open,
-            other => {
-                ProxySessionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ProxySessionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ProxySessionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProxySessionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ProxySessionStatus::from(s))
+                }
+            }
 impl ProxySessionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2715,12 +2514,14 @@ impl ProxySessionStatus {
             ProxySessionStatus::Closed => "Closed",
             ProxySessionStatus::InProgress => "InProgress",
             ProxySessionStatus::Open => "Open",
-            ProxySessionStatus::Unknown(value) => value.as_str(),
+            ProxySessionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Closed", "InProgress", "Open"]
+        &[
+            "Closed", "InProgress", "Open"
+        ]
     }
 }
 impl AsRef<str> for ProxySessionStatus {
@@ -2732,7 +2533,7 @@ impl AsRef<str> for ProxySessionStatus {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PhoneNumber {
+pub struct PhoneNumber  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
@@ -2778,63 +2579,63 @@ pub struct PhoneNumber {
 }
 impl PhoneNumber {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn e164_phone_number(&self) -> std::option::Option<&str> {
+    pub fn e164_phone_number(&self) -> std::option::Option<& str> {
         self.e164_phone_number.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn country(&self) -> std::option::Option<&str> {
+    pub fn country(&self) -> std::option::Option<& str> {
         self.country.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PhoneNumberType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::PhoneNumberType> {
         self.r#type.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn product_type(&self) -> std::option::Option<&crate::model::PhoneNumberProductType> {
+    pub fn product_type(&self) -> std::option::Option<& crate::model::PhoneNumberProductType> {
         self.product_type.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn status(&self) -> std::option::Option<&crate::model::PhoneNumberStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::PhoneNumberStatus> {
         self.status.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn capabilities(&self) -> std::option::Option<&crate::model::PhoneNumberCapabilities> {
+    pub fn capabilities(&self) -> std::option::Option<& crate::model::PhoneNumberCapabilities> {
         self.capabilities.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn associations(&self) -> std::option::Option<&[crate::model::PhoneNumberAssociation]> {
+    pub fn associations(&self) -> std::option::Option<& [crate::model::PhoneNumberAssociation]> {
         self.associations.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn calling_name(&self) -> std::option::Option<&str> {
+    pub fn calling_name(&self) -> std::option::Option<& str> {
         self.calling_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn calling_name_status(&self) -> std::option::Option<&crate::model::CallingNameStatus> {
+    pub fn calling_name_status(&self) -> std::option::Option<& crate::model::CallingNameStatus> {
         self.calling_name_status.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn deletion_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn deletion_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.deletion_timestamp.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn order_id(&self) -> std::option::Option<&str> {
+    pub fn order_id(&self) -> std::option::Option<& str> {
         self.order_id.as_deref()
     }
 }
-impl std::fmt::Debug for PhoneNumber {
+impl  std::fmt::Debug for PhoneNumber  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PhoneNumber");
         formatter.field("phone_number_id", &"*** Sensitive Data Redacted ***");
@@ -2856,7 +2657,7 @@ impl std::fmt::Debug for PhoneNumber {
 }
 /// See [`PhoneNumber`](crate::model::PhoneNumber).
 pub mod phone_number {
-
+    
     /// A builder for [`PhoneNumber`](crate::model::PhoneNumber).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2867,8 +2668,7 @@ pub mod phone_number {
         pub(crate) product_type: std::option::Option<crate::model::PhoneNumberProductType>,
         pub(crate) status: std::option::Option<crate::model::PhoneNumberStatus>,
         pub(crate) capabilities: std::option::Option<crate::model::PhoneNumberCapabilities>,
-        pub(crate) associations:
-            std::option::Option<std::vec::Vec<crate::model::PhoneNumberAssociation>>,
+        pub(crate) associations: std::option::Option<std::vec::Vec<crate::model::PhoneNumberAssociation>>,
         pub(crate) calling_name: std::option::Option<std::string::String>,
         pub(crate) calling_name_status: std::option::Option<crate::model::CallingNameStatus>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -2883,12 +2683,8 @@ pub mod phone_number {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_phone_number_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.phone_number_id = input;
-            self
+        pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number_id = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn e164_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2896,12 +2692,8 @@ pub mod phone_number {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_e164_phone_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.e164_phone_number = input;
-            self
+        pub fn set_e164_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e164_phone_number = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2910,8 +2702,7 @@ pub mod phone_number {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.country = input;
-            self
+            self.country = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn r#type(mut self, input: crate::model::PhoneNumberType) -> Self {
@@ -2919,12 +2710,8 @@ pub mod phone_number {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::PhoneNumberType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::PhoneNumberType>) -> Self {
+            self.r#type = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn product_type(mut self, input: crate::model::PhoneNumberProductType) -> Self {
@@ -2932,12 +2719,8 @@ pub mod phone_number {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_product_type(
-            mut self,
-            input: std::option::Option<crate::model::PhoneNumberProductType>,
-        ) -> Self {
-            self.product_type = input;
-            self
+        pub fn set_product_type(mut self, input: std::option::Option<crate::model::PhoneNumberProductType>) -> Self {
+            self.product_type = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn status(mut self, input: crate::model::PhoneNumberStatus) -> Self {
@@ -2945,12 +2728,8 @@ pub mod phone_number {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::PhoneNumberStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::PhoneNumberStatus>) -> Self {
+            self.status = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn capabilities(mut self, input: crate::model::PhoneNumberCapabilities) -> Self {
@@ -2958,12 +2737,8 @@ pub mod phone_number {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_capabilities(
-            mut self,
-            input: std::option::Option<crate::model::PhoneNumberCapabilities>,
-        ) -> Self {
-            self.capabilities = input;
-            self
+        pub fn set_capabilities(mut self, input: std::option::Option<crate::model::PhoneNumberCapabilities>) -> Self {
+            self.capabilities = input; self
         }
         /// Appends an item to `associations`.
         ///
@@ -2971,17 +2746,13 @@ pub mod phone_number {
         ///
         pub fn associations(mut self, input: crate::model::PhoneNumberAssociation) -> Self {
             let mut v = self.associations.unwrap_or_default();
-            v.push(input);
-            self.associations = Some(v);
-            self
+                            v.push(input);
+                            self.associations = Some(v);
+                            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_associations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberAssociation>>,
-        ) -> Self {
-            self.associations = input;
-            self
+        pub fn set_associations(mut self, input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberAssociation>>) -> Self {
+            self.associations = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn calling_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2990,8 +2761,7 @@ pub mod phone_number {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_calling_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.calling_name = input;
-            self
+            self.calling_name = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn calling_name_status(mut self, input: crate::model::CallingNameStatus) -> Self {
@@ -2999,12 +2769,8 @@ pub mod phone_number {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_calling_name_status(
-            mut self,
-            input: std::option::Option<crate::model::CallingNameStatus>,
-        ) -> Self {
-            self.calling_name_status = input;
-            self
+        pub fn set_calling_name_status(mut self, input: std::option::Option<crate::model::CallingNameStatus>) -> Self {
+            self.calling_name_status = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3012,12 +2778,8 @@ pub mod phone_number {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3025,12 +2787,8 @@ pub mod phone_number {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_updated_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_timestamp = input;
-            self
+        pub fn set_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_timestamp = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn deletion_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3038,12 +2796,8 @@ pub mod phone_number {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_deletion_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.deletion_timestamp = input;
-            self
+        pub fn set_deletion_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.deletion_timestamp = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn order_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3052,26 +2806,39 @@ pub mod phone_number {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_order_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.order_id = input;
-            self
+            self.order_id = input; self
         }
         /// Consumes the builder and constructs a [`PhoneNumber`](crate::model::PhoneNumber).
         pub fn build(self) -> crate::model::PhoneNumber {
             crate::model::PhoneNumber {
-                phone_number_id: self.phone_number_id,
-                e164_phone_number: self.e164_phone_number,
-                country: self.country,
-                r#type: self.r#type,
-                product_type: self.product_type,
-                status: self.status,
-                capabilities: self.capabilities,
-                associations: self.associations,
-                calling_name: self.calling_name,
-                calling_name_status: self.calling_name_status,
-                created_timestamp: self.created_timestamp,
-                updated_timestamp: self.updated_timestamp,
-                deletion_timestamp: self.deletion_timestamp,
-                order_id: self.order_id,
+                phone_number_id: self.phone_number_id
+                ,
+                e164_phone_number: self.e164_phone_number
+                ,
+                country: self.country
+                ,
+                r#type: self.r#type
+                ,
+                product_type: self.product_type
+                ,
+                status: self.status
+                ,
+                capabilities: self.capabilities
+                ,
+                associations: self.associations
+                ,
+                calling_name: self.calling_name
+                ,
+                calling_name_status: self.calling_name_status
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                updated_timestamp: self.updated_timestamp
+                ,
+                deletion_timestamp: self.deletion_timestamp
+                ,
+                order_id: self.order_id
+                ,
             }
         }
     }
@@ -3095,6 +2862,8 @@ pub mod phone_number {
             formatter.finish()
         }
     }
+    
+    
 }
 impl PhoneNumber {
     /// Creates a new builder-style object to manufacture [`PhoneNumber`](crate::model::PhoneNumber).
@@ -3109,9 +2878,9 @@ impl PhoneNumber {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let callingnamestatus = unimplemented!();
 /// match callingnamestatus {
@@ -3135,22 +2904,14 @@ impl PhoneNumber {
 /// Specifically, when `callingnamestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CallingNameStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CallingNameStatus {
     #[allow(missing_docs)] // documentation missing in model
     Unassigned,
@@ -3161,7 +2922,7 @@ pub enum CallingNameStatus {
     #[allow(missing_docs)] // documentation missing in model
     UpdateSucceeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CallingNameStatus {
     fn from(s: &str) -> Self {
@@ -3170,19 +2931,17 @@ impl std::convert::From<&str> for CallingNameStatus {
             "UpdateFailed" => CallingNameStatus::UpdateFailed,
             "UpdateInProgress" => CallingNameStatus::UpdateInProgress,
             "UpdateSucceeded" => CallingNameStatus::UpdateSucceeded,
-            other => {
-                CallingNameStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CallingNameStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CallingNameStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CallingNameStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CallingNameStatus::from(s))
+                }
+            }
 impl CallingNameStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3191,16 +2950,13 @@ impl CallingNameStatus {
             CallingNameStatus::UpdateFailed => "UpdateFailed",
             CallingNameStatus::UpdateInProgress => "UpdateInProgress",
             CallingNameStatus::UpdateSucceeded => "UpdateSucceeded",
-            CallingNameStatus::Unknown(value) => value.as_str(),
+            CallingNameStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Unassigned",
-            "UpdateFailed",
-            "UpdateInProgress",
-            "UpdateSucceeded",
+            "Unassigned", "UpdateFailed", "UpdateInProgress", "UpdateSucceeded"
         ]
     }
 }
@@ -3213,7 +2969,7 @@ impl AsRef<str> for CallingNameStatus {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PhoneNumberAssociation {
+pub struct PhoneNumberAssociation  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
@@ -3226,21 +2982,21 @@ pub struct PhoneNumberAssociation {
 }
 impl PhoneNumberAssociation {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn name(&self) -> std::option::Option<&crate::model::PhoneNumberAssociationName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::PhoneNumberAssociationName> {
         self.name.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn associated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn associated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.associated_timestamp.as_ref()
     }
 }
 /// See [`PhoneNumberAssociation`](crate::model::PhoneNumberAssociation).
 pub mod phone_number_association {
-
+    
     /// A builder for [`PhoneNumberAssociation`](crate::model::PhoneNumberAssociation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3256,8 +3012,7 @@ pub mod phone_number_association {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn name(mut self, input: crate::model::PhoneNumberAssociationName) -> Self {
@@ -3265,12 +3020,8 @@ pub mod phone_number_association {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::PhoneNumberAssociationName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::PhoneNumberAssociationName>) -> Self {
+            self.name = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn associated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3278,22 +3029,23 @@ pub mod phone_number_association {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_associated_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.associated_timestamp = input;
-            self
+        pub fn set_associated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.associated_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`PhoneNumberAssociation`](crate::model::PhoneNumberAssociation).
         pub fn build(self) -> crate::model::PhoneNumberAssociation {
             crate::model::PhoneNumberAssociation {
-                value: self.value,
-                name: self.name,
-                associated_timestamp: self.associated_timestamp,
+                value: self.value
+                ,
+                name: self.name
+                ,
+                associated_timestamp: self.associated_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl PhoneNumberAssociation {
     /// Creates a new builder-style object to manufacture [`PhoneNumberAssociation`](crate::model::PhoneNumberAssociation).
@@ -3308,9 +3060,9 @@ impl PhoneNumberAssociation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let phonenumberassociationname = unimplemented!();
 /// match phonenumberassociationname {
@@ -3333,22 +3085,14 @@ impl PhoneNumberAssociation {
 /// Specifically, when `phonenumberassociationname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PhoneNumberAssociationName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PhoneNumberAssociationName {
     #[allow(missing_docs)] // documentation missing in model
     SipRuleId,
@@ -3357,7 +3101,7 @@ pub enum PhoneNumberAssociationName {
     #[allow(missing_docs)] // documentation missing in model
     VoiceConnectorId,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PhoneNumberAssociationName {
     fn from(s: &str) -> Self {
@@ -3365,19 +3109,17 @@ impl std::convert::From<&str> for PhoneNumberAssociationName {
             "SipRuleId" => PhoneNumberAssociationName::SipRuleId,
             "VoiceConnectorGroupId" => PhoneNumberAssociationName::VoiceConnectorGroupId,
             "VoiceConnectorId" => PhoneNumberAssociationName::VoiceConnectorId,
-            other => PhoneNumberAssociationName::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PhoneNumberAssociationName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PhoneNumberAssociationName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PhoneNumberAssociationName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PhoneNumberAssociationName::from(s))
+                }
+            }
 impl PhoneNumberAssociationName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3385,12 +3127,14 @@ impl PhoneNumberAssociationName {
             PhoneNumberAssociationName::SipRuleId => "SipRuleId",
             PhoneNumberAssociationName::VoiceConnectorGroupId => "VoiceConnectorGroupId",
             PhoneNumberAssociationName::VoiceConnectorId => "VoiceConnectorId",
-            PhoneNumberAssociationName::Unknown(value) => value.as_str(),
+            PhoneNumberAssociationName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SipRuleId", "VoiceConnectorGroupId", "VoiceConnectorId"]
+        &[
+            "SipRuleId", "VoiceConnectorGroupId", "VoiceConnectorId"
+        ]
     }
 }
 impl AsRef<str> for PhoneNumberAssociationName {
@@ -3402,7 +3146,7 @@ impl AsRef<str> for PhoneNumberAssociationName {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PhoneNumberCapabilities {
+pub struct PhoneNumberCapabilities  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub inbound_call: std::option::Option<bool>,
@@ -3450,7 +3194,7 @@ impl PhoneNumberCapabilities {
 }
 /// See [`PhoneNumberCapabilities`](crate::model::PhoneNumberCapabilities).
 pub mod phone_number_capabilities {
-
+    
     /// A builder for [`PhoneNumberCapabilities`](crate::model::PhoneNumberCapabilities).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3469,8 +3213,7 @@ pub mod phone_number_capabilities {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_inbound_call(mut self, input: std::option::Option<bool>) -> Self {
-            self.inbound_call = input;
-            self
+            self.inbound_call = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn outbound_call(mut self, input: bool) -> Self {
@@ -3479,8 +3222,7 @@ pub mod phone_number_capabilities {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_outbound_call(mut self, input: std::option::Option<bool>) -> Self {
-            self.outbound_call = input;
-            self
+            self.outbound_call = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn inbound_sms(mut self, input: bool) -> Self {
@@ -3489,8 +3231,7 @@ pub mod phone_number_capabilities {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_inbound_sms(mut self, input: std::option::Option<bool>) -> Self {
-            self.inbound_sms = input;
-            self
+            self.inbound_sms = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn outbound_sms(mut self, input: bool) -> Self {
@@ -3499,8 +3240,7 @@ pub mod phone_number_capabilities {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_outbound_sms(mut self, input: std::option::Option<bool>) -> Self {
-            self.outbound_sms = input;
-            self
+            self.outbound_sms = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn inbound_mms(mut self, input: bool) -> Self {
@@ -3509,8 +3249,7 @@ pub mod phone_number_capabilities {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_inbound_mms(mut self, input: std::option::Option<bool>) -> Self {
-            self.inbound_mms = input;
-            self
+            self.inbound_mms = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn outbound_mms(mut self, input: bool) -> Self {
@@ -3519,21 +3258,28 @@ pub mod phone_number_capabilities {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_outbound_mms(mut self, input: std::option::Option<bool>) -> Self {
-            self.outbound_mms = input;
-            self
+            self.outbound_mms = input; self
         }
         /// Consumes the builder and constructs a [`PhoneNumberCapabilities`](crate::model::PhoneNumberCapabilities).
         pub fn build(self) -> crate::model::PhoneNumberCapabilities {
             crate::model::PhoneNumberCapabilities {
-                inbound_call: self.inbound_call,
-                outbound_call: self.outbound_call,
-                inbound_sms: self.inbound_sms,
-                outbound_sms: self.outbound_sms,
-                inbound_mms: self.inbound_mms,
-                outbound_mms: self.outbound_mms,
+                inbound_call: self.inbound_call
+                ,
+                outbound_call: self.outbound_call
+                ,
+                inbound_sms: self.inbound_sms
+                ,
+                outbound_sms: self.outbound_sms
+                ,
+                inbound_mms: self.inbound_mms
+                ,
+                outbound_mms: self.outbound_mms
+                ,
             }
         }
     }
+    
+    
 }
 impl PhoneNumberCapabilities {
     /// Creates a new builder-style object to manufacture [`PhoneNumberCapabilities`](crate::model::PhoneNumberCapabilities).
@@ -3548,9 +3294,9 @@ impl PhoneNumberCapabilities {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let phonenumberstatus = unimplemented!();
 /// match phonenumberstatus {
@@ -3581,22 +3327,14 @@ impl PhoneNumberCapabilities {
 /// Specifically, when `phonenumberstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PhoneNumberStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PhoneNumberStatus {
     #[allow(missing_docs)] // documentation missing in model
     AcquireFailed,
@@ -3621,7 +3359,7 @@ pub enum PhoneNumberStatus {
     #[allow(missing_docs)] // documentation missing in model
     Unassigned,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PhoneNumberStatus {
     fn from(s: &str) -> Self {
@@ -3637,19 +3375,17 @@ impl std::convert::From<&str> for PhoneNumberStatus {
             "ReleaseFailed" => PhoneNumberStatus::ReleaseFailed,
             "ReleaseInProgress" => PhoneNumberStatus::ReleaseInProgress,
             "Unassigned" => PhoneNumberStatus::Unassigned,
-            other => {
-                PhoneNumberStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PhoneNumberStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PhoneNumberStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PhoneNumberStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PhoneNumberStatus::from(s))
+                }
+            }
 impl PhoneNumberStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3665,23 +3401,13 @@ impl PhoneNumberStatus {
             PhoneNumberStatus::ReleaseFailed => "ReleaseFailed",
             PhoneNumberStatus::ReleaseInProgress => "ReleaseInProgress",
             PhoneNumberStatus::Unassigned => "Unassigned",
-            PhoneNumberStatus::Unknown(value) => value.as_str(),
+            PhoneNumberStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AcquireFailed",
-            "AcquireInProgress",
-            "Assigned",
-            "Cancelled",
-            "DeleteFailed",
-            "DeleteInProgress",
-            "PortinCancelRequested",
-            "PortinInProgress",
-            "ReleaseFailed",
-            "ReleaseInProgress",
-            "Unassigned",
+            "AcquireFailed", "AcquireInProgress", "Assigned", "Cancelled", "DeleteFailed", "DeleteInProgress", "PortinCancelRequested", "PortinInProgress", "ReleaseFailed", "ReleaseInProgress", "Unassigned"
         ]
     }
 }
@@ -3697,9 +3423,9 @@ impl AsRef<str> for PhoneNumberStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let phonenumberproducttype = unimplemented!();
 /// match phonenumberproducttype {
@@ -3721,60 +3447,52 @@ impl AsRef<str> for PhoneNumberStatus {
 /// Specifically, when `phonenumberproducttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PhoneNumberProductType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PhoneNumberProductType {
     #[allow(missing_docs)] // documentation missing in model
     SipMediaApplicationDialIn,
     #[allow(missing_docs)] // documentation missing in model
     VoiceConnector,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PhoneNumberProductType {
     fn from(s: &str) -> Self {
         match s {
             "SipMediaApplicationDialIn" => PhoneNumberProductType::SipMediaApplicationDialIn,
             "VoiceConnector" => PhoneNumberProductType::VoiceConnector,
-            other => {
-                PhoneNumberProductType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PhoneNumberProductType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PhoneNumberProductType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PhoneNumberProductType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PhoneNumberProductType::from(s))
+                }
+            }
 impl PhoneNumberProductType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PhoneNumberProductType::SipMediaApplicationDialIn => "SipMediaApplicationDialIn",
             PhoneNumberProductType::VoiceConnector => "VoiceConnector",
-            PhoneNumberProductType::Unknown(value) => value.as_str(),
+            PhoneNumberProductType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SipMediaApplicationDialIn", "VoiceConnector"]
+        &[
+            "SipMediaApplicationDialIn", "VoiceConnector"
+        ]
     }
 }
 impl AsRef<str> for PhoneNumberProductType {
@@ -3789,9 +3507,9 @@ impl AsRef<str> for PhoneNumberProductType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let phonenumbertype = unimplemented!();
 /// match phonenumbertype {
@@ -3813,58 +3531,52 @@ impl AsRef<str> for PhoneNumberProductType {
 /// Specifically, when `phonenumbertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PhoneNumberType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PhoneNumberType {
     #[allow(missing_docs)] // documentation missing in model
     Local,
     #[allow(missing_docs)] // documentation missing in model
     TollFree,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PhoneNumberType {
     fn from(s: &str) -> Self {
         match s {
             "Local" => PhoneNumberType::Local,
             "TollFree" => PhoneNumberType::TollFree,
-            other => PhoneNumberType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PhoneNumberType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PhoneNumberType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PhoneNumberType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PhoneNumberType::from(s))
+                }
+            }
 impl PhoneNumberType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PhoneNumberType::Local => "Local",
             PhoneNumberType::TollFree => "TollFree",
-            PhoneNumberType::Unknown(value) => value.as_str(),
+            PhoneNumberType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Local", "TollFree"]
+        &[
+            "Local", "TollFree"
+        ]
     }
 }
 impl AsRef<str> for PhoneNumberType {
@@ -3876,20 +3588,20 @@ impl AsRef<str> for PhoneNumberType {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VoiceConnectorSettings {
+pub struct VoiceConnectorSettings  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub cdr_bucket: std::option::Option<std::string::String>,
 }
 impl VoiceConnectorSettings {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn cdr_bucket(&self) -> std::option::Option<&str> {
+    pub fn cdr_bucket(&self) -> std::option::Option<& str> {
         self.cdr_bucket.as_deref()
     }
 }
 /// See [`VoiceConnectorSettings`](crate::model::VoiceConnectorSettings).
 pub mod voice_connector_settings {
-
+    
     /// A builder for [`VoiceConnectorSettings`](crate::model::VoiceConnectorSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3903,16 +3615,18 @@ pub mod voice_connector_settings {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_cdr_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cdr_bucket = input;
-            self
+            self.cdr_bucket = input; self
         }
         /// Consumes the builder and constructs a [`VoiceConnectorSettings`](crate::model::VoiceConnectorSettings).
         pub fn build(self) -> crate::model::VoiceConnectorSettings {
             crate::model::VoiceConnectorSettings {
-                cdr_bucket: self.cdr_bucket,
+                cdr_bucket: self.cdr_bucket
+                ,
             }
         }
     }
+    
+    
 }
 impl VoiceConnectorSettings {
     /// Creates a new builder-style object to manufacture [`VoiceConnectorSettings`](crate::model::VoiceConnectorSettings).
@@ -3924,7 +3638,7 @@ impl VoiceConnectorSettings {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Credential {
+pub struct Credential  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
@@ -3934,15 +3648,15 @@ pub struct Credential {
 }
 impl Credential {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> std::option::Option<& str> {
         self.username.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> std::option::Option<& str> {
         self.password.as_deref()
     }
 }
-impl std::fmt::Debug for Credential {
+impl  std::fmt::Debug for Credential  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Credential");
         formatter.field("username", &"*** Sensitive Data Redacted ***");
@@ -3952,7 +3666,7 @@ impl std::fmt::Debug for Credential {
 }
 /// See [`Credential`](crate::model::Credential).
 pub mod credential {
-
+    
     /// A builder for [`Credential`](crate::model::Credential).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3967,8 +3681,7 @@ pub mod credential {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.username = input;
-            self
+            self.username = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3977,14 +3690,15 @@ pub mod credential {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.password = input;
-            self
+            self.password = input; self
         }
         /// Consumes the builder and constructs a [`Credential`](crate::model::Credential).
         pub fn build(self) -> crate::model::Credential {
             crate::model::Credential {
-                username: self.username,
-                password: self.password,
+                username: self.username
+                ,
+                password: self.password
+                ,
             }
         }
     }
@@ -3996,6 +3710,8 @@ pub mod credential {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Credential {
     /// Creates a new builder-style object to manufacture [`Credential`](crate::model::Credential).
@@ -4007,7 +3723,7 @@ impl Credential {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Termination {
+pub struct Termination  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub cps_limit: std::option::Option<i32>,
@@ -4030,15 +3746,15 @@ impl Termination {
         self.cps_limit
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn default_phone_number(&self) -> std::option::Option<&str> {
+    pub fn default_phone_number(&self) -> std::option::Option<& str> {
         self.default_phone_number.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn calling_regions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn calling_regions(&self) -> std::option::Option<& [std::string::String]> {
         self.calling_regions.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn cidr_allowed_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cidr_allowed_list(&self) -> std::option::Option<& [std::string::String]> {
         self.cidr_allowed_list.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -4046,7 +3762,7 @@ impl Termination {
         self.disabled
     }
 }
-impl std::fmt::Debug for Termination {
+impl  std::fmt::Debug for Termination  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Termination");
         formatter.field("cps_limit", &self.cps_limit);
@@ -4059,7 +3775,7 @@ impl std::fmt::Debug for Termination {
 }
 /// See [`Termination`](crate::model::Termination).
 pub mod termination {
-
+    
     /// A builder for [`Termination`](crate::model::Termination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4077,8 +3793,7 @@ pub mod termination {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_cps_limit(mut self, input: std::option::Option<i32>) -> Self {
-            self.cps_limit = input;
-            self
+            self.cps_limit = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn default_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4086,12 +3801,8 @@ pub mod termination {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_default_phone_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_phone_number = input;
-            self
+        pub fn set_default_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_phone_number = input; self
         }
         /// Appends an item to `calling_regions`.
         ///
@@ -4099,17 +3810,13 @@ pub mod termination {
         ///
         pub fn calling_regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.calling_regions.unwrap_or_default();
-            v.push(input.into());
-            self.calling_regions = Some(v);
-            self
+                            v.push(input.into());
+                            self.calling_regions = Some(v);
+                            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_calling_regions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.calling_regions = input;
-            self
+        pub fn set_calling_regions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.calling_regions = input; self
         }
         /// Appends an item to `cidr_allowed_list`.
         ///
@@ -4117,17 +3824,13 @@ pub mod termination {
         ///
         pub fn cidr_allowed_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cidr_allowed_list.unwrap_or_default();
-            v.push(input.into());
-            self.cidr_allowed_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.cidr_allowed_list = Some(v);
+                            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_cidr_allowed_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.cidr_allowed_list = input;
-            self
+        pub fn set_cidr_allowed_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.cidr_allowed_list = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn disabled(mut self, input: bool) -> Self {
@@ -4136,17 +3839,21 @@ pub mod termination {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.disabled = input;
-            self
+            self.disabled = input; self
         }
         /// Consumes the builder and constructs a [`Termination`](crate::model::Termination).
         pub fn build(self) -> crate::model::Termination {
             crate::model::Termination {
-                cps_limit: self.cps_limit,
-                default_phone_number: self.default_phone_number,
-                calling_regions: self.calling_regions,
-                cidr_allowed_list: self.cidr_allowed_list,
-                disabled: self.disabled,
+                cps_limit: self.cps_limit
+                ,
+                default_phone_number: self.default_phone_number
+                ,
+                calling_regions: self.calling_regions
+                ,
+                cidr_allowed_list: self.cidr_allowed_list
+                ,
+                disabled: self.disabled
+                ,
             }
         }
     }
@@ -4161,6 +3868,8 @@ pub mod termination {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Termination {
     /// Creates a new builder-style object to manufacture [`Termination`](crate::model::Termination).
@@ -4172,7 +3881,7 @@ impl Termination {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamingConfiguration {
+pub struct StreamingConfiguration  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub data_retention_in_hours: std::option::Option<i32>,
@@ -4181,8 +3890,7 @@ pub struct StreamingConfiguration {
     pub disabled: std::option::Option<bool>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub streaming_notification_targets:
-        std::option::Option<std::vec::Vec<crate::model::StreamingNotificationTarget>>,
+    pub streaming_notification_targets: std::option::Option<std::vec::Vec<crate::model::StreamingNotificationTarget>>,
 }
 impl StreamingConfiguration {
     #[allow(missing_docs)] // documentation missing in model
@@ -4194,22 +3902,19 @@ impl StreamingConfiguration {
         self.disabled
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn streaming_notification_targets(
-        &self,
-    ) -> std::option::Option<&[crate::model::StreamingNotificationTarget]> {
+    pub fn streaming_notification_targets(&self) -> std::option::Option<& [crate::model::StreamingNotificationTarget]> {
         self.streaming_notification_targets.as_deref()
     }
 }
 /// See [`StreamingConfiguration`](crate::model::StreamingConfiguration).
 pub mod streaming_configuration {
-
+    
     /// A builder for [`StreamingConfiguration`](crate::model::StreamingConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) data_retention_in_hours: std::option::Option<i32>,
         pub(crate) disabled: std::option::Option<bool>,
-        pub(crate) streaming_notification_targets:
-            std::option::Option<std::vec::Vec<crate::model::StreamingNotificationTarget>>,
+        pub(crate) streaming_notification_targets: std::option::Option<std::vec::Vec<crate::model::StreamingNotificationTarget>>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -4219,8 +3924,7 @@ pub mod streaming_configuration {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_data_retention_in_hours(mut self, input: std::option::Option<i32>) -> Self {
-            self.data_retention_in_hours = input;
-            self
+            self.data_retention_in_hours = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn disabled(mut self, input: bool) -> Self {
@@ -4229,39 +3933,36 @@ pub mod streaming_configuration {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.disabled = input;
-            self
+            self.disabled = input; self
         }
         /// Appends an item to `streaming_notification_targets`.
         ///
         /// To override the contents of this collection use [`set_streaming_notification_targets`](Self::set_streaming_notification_targets).
         ///
-        pub fn streaming_notification_targets(
-            mut self,
-            input: crate::model::StreamingNotificationTarget,
-        ) -> Self {
+        pub fn streaming_notification_targets(mut self, input: crate::model::StreamingNotificationTarget) -> Self {
             let mut v = self.streaming_notification_targets.unwrap_or_default();
-            v.push(input);
-            self.streaming_notification_targets = Some(v);
-            self
+                            v.push(input);
+                            self.streaming_notification_targets = Some(v);
+                            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_streaming_notification_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StreamingNotificationTarget>>,
-        ) -> Self {
-            self.streaming_notification_targets = input;
-            self
+        pub fn set_streaming_notification_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::StreamingNotificationTarget>>) -> Self {
+            self.streaming_notification_targets = input; self
         }
         /// Consumes the builder and constructs a [`StreamingConfiguration`](crate::model::StreamingConfiguration).
         pub fn build(self) -> crate::model::StreamingConfiguration {
             crate::model::StreamingConfiguration {
-                data_retention_in_hours: self.data_retention_in_hours,
-                disabled: self.disabled,
-                streaming_notification_targets: self.streaming_notification_targets,
+                data_retention_in_hours: self.data_retention_in_hours
+                ,
+                disabled: self.disabled
+                ,
+                streaming_notification_targets: self.streaming_notification_targets
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamingConfiguration {
     /// Creates a new builder-style object to manufacture [`StreamingConfiguration`](crate::model::StreamingConfiguration).
@@ -4273,20 +3974,20 @@ impl StreamingConfiguration {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamingNotificationTarget {
+pub struct StreamingNotificationTarget  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub notification_target: std::option::Option<crate::model::NotificationTarget>,
 }
 impl StreamingNotificationTarget {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn notification_target(&self) -> std::option::Option<&crate::model::NotificationTarget> {
+    pub fn notification_target(&self) -> std::option::Option<& crate::model::NotificationTarget> {
         self.notification_target.as_ref()
     }
 }
 /// See [`StreamingNotificationTarget`](crate::model::StreamingNotificationTarget).
 pub mod streaming_notification_target {
-
+    
     /// A builder for [`StreamingNotificationTarget`](crate::model::StreamingNotificationTarget).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4299,20 +4000,19 @@ pub mod streaming_notification_target {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_notification_target(
-            mut self,
-            input: std::option::Option<crate::model::NotificationTarget>,
-        ) -> Self {
-            self.notification_target = input;
-            self
+        pub fn set_notification_target(mut self, input: std::option::Option<crate::model::NotificationTarget>) -> Self {
+            self.notification_target = input; self
         }
         /// Consumes the builder and constructs a [`StreamingNotificationTarget`](crate::model::StreamingNotificationTarget).
         pub fn build(self) -> crate::model::StreamingNotificationTarget {
             crate::model::StreamingNotificationTarget {
-                notification_target: self.notification_target,
+                notification_target: self.notification_target
+                ,
             }
         }
     }
+    
+    
 }
 impl StreamingNotificationTarget {
     /// Creates a new builder-style object to manufacture [`StreamingNotificationTarget`](crate::model::StreamingNotificationTarget).
@@ -4327,9 +4027,9 @@ impl StreamingNotificationTarget {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let notificationtarget = unimplemented!();
 /// match notificationtarget {
@@ -4352,22 +4052,14 @@ impl StreamingNotificationTarget {
 /// Specifically, when `notificationtarget` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NotificationTarget::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NotificationTarget {
     #[allow(missing_docs)] // documentation missing in model
     EventBridge,
@@ -4376,7 +4068,7 @@ pub enum NotificationTarget {
     #[allow(missing_docs)] // documentation missing in model
     Sqs,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NotificationTarget {
     fn from(s: &str) -> Self {
@@ -4384,19 +4076,17 @@ impl std::convert::From<&str> for NotificationTarget {
             "EventBridge" => NotificationTarget::EventBridge,
             "SNS" => NotificationTarget::Sns,
             "SQS" => NotificationTarget::Sqs,
-            other => {
-                NotificationTarget::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => NotificationTarget::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NotificationTarget {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NotificationTarget::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NotificationTarget::from(s))
+                }
+            }
 impl NotificationTarget {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4404,12 +4094,14 @@ impl NotificationTarget {
             NotificationTarget::EventBridge => "EventBridge",
             NotificationTarget::Sns => "SNS",
             NotificationTarget::Sqs => "SQS",
-            NotificationTarget::Unknown(value) => value.as_str(),
+            NotificationTarget::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EventBridge", "SNS", "SQS"]
+        &[
+            "EventBridge", "SNS", "SQS"
+        ]
     }
 }
 impl AsRef<str> for NotificationTarget {
@@ -4421,7 +4113,7 @@ impl AsRef<str> for NotificationTarget {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Proxy {
+pub struct Proxy  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub default_session_expiry_minutes: std::option::Option<i32>,
@@ -4445,21 +4137,18 @@ impl Proxy {
         self.disabled
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn fall_back_phone_number(&self) -> std::option::Option<&str> {
+    pub fn fall_back_phone_number(&self) -> std::option::Option<& str> {
         self.fall_back_phone_number.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn phone_number_countries(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn phone_number_countries(&self) -> std::option::Option<& [std::string::String]> {
         self.phone_number_countries.as_deref()
     }
 }
-impl std::fmt::Debug for Proxy {
+impl  std::fmt::Debug for Proxy  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Proxy");
-        formatter.field(
-            "default_session_expiry_minutes",
-            &self.default_session_expiry_minutes,
-        );
+        formatter.field("default_session_expiry_minutes", &self.default_session_expiry_minutes);
         formatter.field("disabled", &self.disabled);
         formatter.field("fall_back_phone_number", &"*** Sensitive Data Redacted ***");
         formatter.field("phone_number_countries", &self.phone_number_countries);
@@ -4468,7 +4157,7 @@ impl std::fmt::Debug for Proxy {
 }
 /// See [`Proxy`](crate::model::Proxy).
 pub mod proxy {
-
+    
     /// A builder for [`Proxy`](crate::model::Proxy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4484,12 +4173,8 @@ pub mod proxy {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_default_session_expiry_minutes(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.default_session_expiry_minutes = input;
-            self
+        pub fn set_default_session_expiry_minutes(mut self, input: std::option::Option<i32>) -> Self {
+            self.default_session_expiry_minutes = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn disabled(mut self, input: bool) -> Self {
@@ -4498,8 +4183,7 @@ pub mod proxy {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.disabled = input;
-            self
+            self.disabled = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn fall_back_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4507,12 +4191,8 @@ pub mod proxy {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_fall_back_phone_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.fall_back_phone_number = input;
-            self
+        pub fn set_fall_back_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fall_back_phone_number = input; self
         }
         /// Appends an item to `phone_number_countries`.
         ///
@@ -4520,41 +4200,40 @@ pub mod proxy {
         ///
         pub fn phone_number_countries(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.phone_number_countries.unwrap_or_default();
-            v.push(input.into());
-            self.phone_number_countries = Some(v);
-            self
+                            v.push(input.into());
+                            self.phone_number_countries = Some(v);
+                            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_phone_number_countries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.phone_number_countries = input;
-            self
+        pub fn set_phone_number_countries(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.phone_number_countries = input; self
         }
         /// Consumes the builder and constructs a [`Proxy`](crate::model::Proxy).
         pub fn build(self) -> crate::model::Proxy {
             crate::model::Proxy {
-                default_session_expiry_minutes: self.default_session_expiry_minutes,
-                disabled: self.disabled,
-                fall_back_phone_number: self.fall_back_phone_number,
-                phone_number_countries: self.phone_number_countries,
+                default_session_expiry_minutes: self.default_session_expiry_minutes
+                ,
+                disabled: self.disabled
+                ,
+                fall_back_phone_number: self.fall_back_phone_number
+                ,
+                phone_number_countries: self.phone_number_countries
+                ,
             }
         }
     }
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field(
-                "default_session_expiry_minutes",
-                &self.default_session_expiry_minutes,
-            );
+            formatter.field("default_session_expiry_minutes", &self.default_session_expiry_minutes);
             formatter.field("disabled", &self.disabled);
             formatter.field("fall_back_phone_number", &"*** Sensitive Data Redacted ***");
             formatter.field("phone_number_countries", &self.phone_number_countries);
             formatter.finish()
         }
     }
+    
+    
 }
 impl Proxy {
     /// Creates a new builder-style object to manufacture [`Proxy`](crate::model::Proxy).
@@ -4566,7 +4245,7 @@ impl Proxy {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Origination {
+pub struct Origination  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub routes: std::option::Option<std::vec::Vec<crate::model::OriginationRoute>>,
@@ -4576,7 +4255,7 @@ pub struct Origination {
 }
 impl Origination {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn routes(&self) -> std::option::Option<&[crate::model::OriginationRoute]> {
+    pub fn routes(&self) -> std::option::Option<& [crate::model::OriginationRoute]> {
         self.routes.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -4586,7 +4265,7 @@ impl Origination {
 }
 /// See [`Origination`](crate::model::Origination).
 pub mod origination {
-
+    
     /// A builder for [`Origination`](crate::model::Origination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4600,17 +4279,13 @@ pub mod origination {
         ///
         pub fn routes(mut self, input: crate::model::OriginationRoute) -> Self {
             let mut v = self.routes.unwrap_or_default();
-            v.push(input);
-            self.routes = Some(v);
-            self
+                            v.push(input);
+                            self.routes = Some(v);
+                            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_routes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OriginationRoute>>,
-        ) -> Self {
-            self.routes = input;
-            self
+        pub fn set_routes(mut self, input: std::option::Option<std::vec::Vec<crate::model::OriginationRoute>>) -> Self {
+            self.routes = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn disabled(mut self, input: bool) -> Self {
@@ -4619,17 +4294,20 @@ pub mod origination {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.disabled = input;
-            self
+            self.disabled = input; self
         }
         /// Consumes the builder and constructs a [`Origination`](crate::model::Origination).
         pub fn build(self) -> crate::model::Origination {
             crate::model::Origination {
-                routes: self.routes,
-                disabled: self.disabled,
+                routes: self.routes
+                ,
+                disabled: self.disabled
+                ,
             }
         }
     }
+    
+    
 }
 impl Origination {
     /// Creates a new builder-style object to manufacture [`Origination`](crate::model::Origination).
@@ -4641,7 +4319,7 @@ impl Origination {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OriginationRoute {
+pub struct OriginationRoute  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
@@ -4660,7 +4338,7 @@ pub struct OriginationRoute {
 }
 impl OriginationRoute {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn host(&self) -> std::option::Option<&str> {
+    pub fn host(&self) -> std::option::Option<& str> {
         self.host.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -4668,7 +4346,7 @@ impl OriginationRoute {
         self.port
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn protocol(&self) -> std::option::Option<&crate::model::OriginationRouteProtocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::model::OriginationRouteProtocol> {
         self.protocol.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -4682,7 +4360,7 @@ impl OriginationRoute {
 }
 /// See [`OriginationRoute`](crate::model::OriginationRoute).
 pub mod origination_route {
-
+    
     /// A builder for [`OriginationRoute`](crate::model::OriginationRoute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4700,8 +4378,7 @@ pub mod origination_route {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.host = input;
-            self
+            self.host = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn port(mut self, input: i32) -> Self {
@@ -4710,8 +4387,7 @@ pub mod origination_route {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn protocol(mut self, input: crate::model::OriginationRouteProtocol) -> Self {
@@ -4719,12 +4395,8 @@ pub mod origination_route {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_protocol(
-            mut self,
-            input: std::option::Option<crate::model::OriginationRouteProtocol>,
-        ) -> Self {
-            self.protocol = input;
-            self
+        pub fn set_protocol(mut self, input: std::option::Option<crate::model::OriginationRouteProtocol>) -> Self {
+            self.protocol = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn priority(mut self, input: i32) -> Self {
@@ -4733,8 +4405,7 @@ pub mod origination_route {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-            self.priority = input;
-            self
+            self.priority = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn weight(mut self, input: i32) -> Self {
@@ -4743,20 +4414,26 @@ pub mod origination_route {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
-            self.weight = input;
-            self
+            self.weight = input; self
         }
         /// Consumes the builder and constructs a [`OriginationRoute`](crate::model::OriginationRoute).
         pub fn build(self) -> crate::model::OriginationRoute {
             crate::model::OriginationRoute {
-                host: self.host,
-                port: self.port,
-                protocol: self.protocol,
-                priority: self.priority,
-                weight: self.weight,
+                host: self.host
+                ,
+                port: self.port
+                ,
+                protocol: self.protocol
+                ,
+                priority: self.priority
+                ,
+                weight: self.weight
+                ,
             }
         }
     }
+    
+    
 }
 impl OriginationRoute {
     /// Creates a new builder-style object to manufacture [`OriginationRoute`](crate::model::OriginationRoute).
@@ -4771,9 +4448,9 @@ impl OriginationRoute {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let originationrouteprotocol = unimplemented!();
 /// match originationrouteprotocol {
@@ -4795,60 +4472,52 @@ impl OriginationRoute {
 /// Specifically, when `originationrouteprotocol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OriginationRouteProtocol::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OriginationRouteProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Tcp,
     #[allow(missing_docs)] // documentation missing in model
     Udp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OriginationRouteProtocol {
     fn from(s: &str) -> Self {
         match s {
             "TCP" => OriginationRouteProtocol::Tcp,
             "UDP" => OriginationRouteProtocol::Udp,
-            other => OriginationRouteProtocol::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => OriginationRouteProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OriginationRouteProtocol {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OriginationRouteProtocol::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OriginationRouteProtocol::from(s))
+                }
+            }
 impl OriginationRouteProtocol {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OriginationRouteProtocol::Tcp => "TCP",
             OriginationRouteProtocol::Udp => "UDP",
-            OriginationRouteProtocol::Unknown(value) => value.as_str(),
+            OriginationRouteProtocol::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TCP", "UDP"]
+        &[
+            "TCP", "UDP"
+        ]
     }
 }
 impl AsRef<str> for OriginationRouteProtocol {
@@ -4860,7 +4529,7 @@ impl AsRef<str> for OriginationRouteProtocol {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoggingConfiguration {
+pub struct LoggingConfiguration  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub enable_sip_logs: std::option::Option<bool>,
@@ -4873,7 +4542,7 @@ impl LoggingConfiguration {
 }
 /// See [`LoggingConfiguration`](crate::model::LoggingConfiguration).
 pub mod logging_configuration {
-
+    
     /// A builder for [`LoggingConfiguration`](crate::model::LoggingConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4887,16 +4556,18 @@ pub mod logging_configuration {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_enable_sip_logs(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_sip_logs = input;
-            self
+            self.enable_sip_logs = input; self
         }
         /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::model::LoggingConfiguration).
         pub fn build(self) -> crate::model::LoggingConfiguration {
             crate::model::LoggingConfiguration {
-                enable_sip_logs: self.enable_sip_logs,
+                enable_sip_logs: self.enable_sip_logs
+                ,
             }
         }
     }
+    
+    
 }
 impl LoggingConfiguration {
     /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
@@ -4908,25 +4579,24 @@ impl LoggingConfiguration {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EmergencyCallingConfiguration {
+pub struct EmergencyCallingConfiguration  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub dnis: std::option::Option<std::vec::Vec<crate::model::DnisEmergencyCallingConfiguration>>,
 }
 impl EmergencyCallingConfiguration {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn dnis(&self) -> std::option::Option<&[crate::model::DnisEmergencyCallingConfiguration]> {
+    pub fn dnis(&self) -> std::option::Option<& [crate::model::DnisEmergencyCallingConfiguration]> {
         self.dnis.as_deref()
     }
 }
 /// See [`EmergencyCallingConfiguration`](crate::model::EmergencyCallingConfiguration).
 pub mod emergency_calling_configuration {
-
+    
     /// A builder for [`EmergencyCallingConfiguration`](crate::model::EmergencyCallingConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) dnis:
-            std::option::Option<std::vec::Vec<crate::model::DnisEmergencyCallingConfiguration>>,
+        pub(crate) dnis: std::option::Option<std::vec::Vec<crate::model::DnisEmergencyCallingConfiguration>>,
     }
     impl Builder {
         /// Appends an item to `dnis`.
@@ -4935,25 +4605,24 @@ pub mod emergency_calling_configuration {
         ///
         pub fn dnis(mut self, input: crate::model::DnisEmergencyCallingConfiguration) -> Self {
             let mut v = self.dnis.unwrap_or_default();
-            v.push(input);
-            self.dnis = Some(v);
-            self
+                            v.push(input);
+                            self.dnis = Some(v);
+                            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_dnis(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::DnisEmergencyCallingConfiguration>,
-            >,
-        ) -> Self {
-            self.dnis = input;
-            self
+        pub fn set_dnis(mut self, input: std::option::Option<std::vec::Vec<crate::model::DnisEmergencyCallingConfiguration>>) -> Self {
+            self.dnis = input; self
         }
         /// Consumes the builder and constructs a [`EmergencyCallingConfiguration`](crate::model::EmergencyCallingConfiguration).
         pub fn build(self) -> crate::model::EmergencyCallingConfiguration {
-            crate::model::EmergencyCallingConfiguration { dnis: self.dnis }
+            crate::model::EmergencyCallingConfiguration {
+                dnis: self.dnis
+                ,
+            }
         }
     }
+    
+    
 }
 impl EmergencyCallingConfiguration {
     /// Creates a new builder-style object to manufacture [`EmergencyCallingConfiguration`](crate::model::EmergencyCallingConfiguration).
@@ -4965,7 +4634,7 @@ impl EmergencyCallingConfiguration {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DnisEmergencyCallingConfiguration {
+pub struct DnisEmergencyCallingConfiguration  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub emergency_phone_number: std::option::Option<std::string::String>,
@@ -4978,19 +4647,19 @@ pub struct DnisEmergencyCallingConfiguration {
 }
 impl DnisEmergencyCallingConfiguration {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn emergency_phone_number(&self) -> std::option::Option<&str> {
+    pub fn emergency_phone_number(&self) -> std::option::Option<& str> {
         self.emergency_phone_number.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn test_phone_number(&self) -> std::option::Option<&str> {
+    pub fn test_phone_number(&self) -> std::option::Option<& str> {
         self.test_phone_number.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn calling_country(&self) -> std::option::Option<&str> {
+    pub fn calling_country(&self) -> std::option::Option<& str> {
         self.calling_country.as_deref()
     }
 }
-impl std::fmt::Debug for DnisEmergencyCallingConfiguration {
+impl  std::fmt::Debug for DnisEmergencyCallingConfiguration  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DnisEmergencyCallingConfiguration");
         formatter.field("emergency_phone_number", &"*** Sensitive Data Redacted ***");
@@ -5001,7 +4670,7 @@ impl std::fmt::Debug for DnisEmergencyCallingConfiguration {
 }
 /// See [`DnisEmergencyCallingConfiguration`](crate::model::DnisEmergencyCallingConfiguration).
 pub mod dnis_emergency_calling_configuration {
-
+    
     /// A builder for [`DnisEmergencyCallingConfiguration`](crate::model::DnisEmergencyCallingConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -5016,12 +4685,8 @@ pub mod dnis_emergency_calling_configuration {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_emergency_phone_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.emergency_phone_number = input;
-            self
+        pub fn set_emergency_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.emergency_phone_number = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn test_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5029,12 +4694,8 @@ pub mod dnis_emergency_calling_configuration {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_test_phone_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.test_phone_number = input;
-            self
+        pub fn set_test_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.test_phone_number = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn calling_country(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5042,19 +4703,18 @@ pub mod dnis_emergency_calling_configuration {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_calling_country(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.calling_country = input;
-            self
+        pub fn set_calling_country(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.calling_country = input; self
         }
         /// Consumes the builder and constructs a [`DnisEmergencyCallingConfiguration`](crate::model::DnisEmergencyCallingConfiguration).
         pub fn build(self) -> crate::model::DnisEmergencyCallingConfiguration {
             crate::model::DnisEmergencyCallingConfiguration {
-                emergency_phone_number: self.emergency_phone_number,
-                test_phone_number: self.test_phone_number,
-                calling_country: self.calling_country,
+                emergency_phone_number: self.emergency_phone_number
+                ,
+                test_phone_number: self.test_phone_number
+                ,
+                calling_country: self.calling_country
+                ,
             }
         }
     }
@@ -5067,6 +4727,8 @@ pub mod dnis_emergency_calling_configuration {
             formatter.finish()
         }
     }
+    
+    
 }
 impl DnisEmergencyCallingConfiguration {
     /// Creates a new builder-style object to manufacture [`DnisEmergencyCallingConfiguration`](crate::model::DnisEmergencyCallingConfiguration).
@@ -5078,7 +4740,7 @@ impl DnisEmergencyCallingConfiguration {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SipMediaApplicationLoggingConfiguration {
+pub struct SipMediaApplicationLoggingConfiguration  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub enable_sip_media_application_message_logs: std::option::Option<bool>,
@@ -5091,7 +4753,7 @@ impl SipMediaApplicationLoggingConfiguration {
 }
 /// See [`SipMediaApplicationLoggingConfiguration`](crate::model::SipMediaApplicationLoggingConfiguration).
 pub mod sip_media_application_logging_configuration {
-
+    
     /// A builder for [`SipMediaApplicationLoggingConfiguration`](crate::model::SipMediaApplicationLoggingConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5104,21 +4766,19 @@ pub mod sip_media_application_logging_configuration {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_enable_sip_media_application_message_logs(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.enable_sip_media_application_message_logs = input;
-            self
+        pub fn set_enable_sip_media_application_message_logs(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_sip_media_application_message_logs = input; self
         }
         /// Consumes the builder and constructs a [`SipMediaApplicationLoggingConfiguration`](crate::model::SipMediaApplicationLoggingConfiguration).
         pub fn build(self) -> crate::model::SipMediaApplicationLoggingConfiguration {
             crate::model::SipMediaApplicationLoggingConfiguration {
-                enable_sip_media_application_message_logs: self
-                    .enable_sip_media_application_message_logs,
+                enable_sip_media_application_message_logs: self.enable_sip_media_application_message_logs
+                ,
             }
         }
     }
+    
+    
 }
 impl SipMediaApplicationLoggingConfiguration {
     /// Creates a new builder-style object to manufacture [`SipMediaApplicationLoggingConfiguration`](crate::model::SipMediaApplicationLoggingConfiguration).
@@ -5130,7 +4790,7 @@ impl SipMediaApplicationLoggingConfiguration {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SipMediaApplicationAlexaSkillConfiguration {
+pub struct SipMediaApplicationAlexaSkillConfiguration  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub alexa_skill_status: std::option::Option<crate::model::AlexaSkillStatus>,
@@ -5140,17 +4800,17 @@ pub struct SipMediaApplicationAlexaSkillConfiguration {
 }
 impl SipMediaApplicationAlexaSkillConfiguration {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn alexa_skill_status(&self) -> std::option::Option<&crate::model::AlexaSkillStatus> {
+    pub fn alexa_skill_status(&self) -> std::option::Option<& crate::model::AlexaSkillStatus> {
         self.alexa_skill_status.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn alexa_skill_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn alexa_skill_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.alexa_skill_ids.as_deref()
     }
 }
 /// See [`SipMediaApplicationAlexaSkillConfiguration`](crate::model::SipMediaApplicationAlexaSkillConfiguration).
 pub mod sip_media_application_alexa_skill_configuration {
-
+    
     /// A builder for [`SipMediaApplicationAlexaSkillConfiguration`](crate::model::SipMediaApplicationAlexaSkillConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5164,12 +4824,8 @@ pub mod sip_media_application_alexa_skill_configuration {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_alexa_skill_status(
-            mut self,
-            input: std::option::Option<crate::model::AlexaSkillStatus>,
-        ) -> Self {
-            self.alexa_skill_status = input;
-            self
+        pub fn set_alexa_skill_status(mut self, input: std::option::Option<crate::model::AlexaSkillStatus>) -> Self {
+            self.alexa_skill_status = input; self
         }
         /// Appends an item to `alexa_skill_ids`.
         ///
@@ -5177,26 +4833,26 @@ pub mod sip_media_application_alexa_skill_configuration {
         ///
         pub fn alexa_skill_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.alexa_skill_ids.unwrap_or_default();
-            v.push(input.into());
-            self.alexa_skill_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.alexa_skill_ids = Some(v);
+                            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_alexa_skill_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.alexa_skill_ids = input;
-            self
+        pub fn set_alexa_skill_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.alexa_skill_ids = input; self
         }
         /// Consumes the builder and constructs a [`SipMediaApplicationAlexaSkillConfiguration`](crate::model::SipMediaApplicationAlexaSkillConfiguration).
         pub fn build(self) -> crate::model::SipMediaApplicationAlexaSkillConfiguration {
             crate::model::SipMediaApplicationAlexaSkillConfiguration {
-                alexa_skill_status: self.alexa_skill_status,
-                alexa_skill_ids: self.alexa_skill_ids,
+                alexa_skill_status: self.alexa_skill_status
+                ,
+                alexa_skill_ids: self.alexa_skill_ids
+                ,
             }
         }
     }
+    
+    
 }
 impl SipMediaApplicationAlexaSkillConfiguration {
     /// Creates a new builder-style object to manufacture [`SipMediaApplicationAlexaSkillConfiguration`](crate::model::SipMediaApplicationAlexaSkillConfiguration).
@@ -5211,9 +4867,9 @@ impl SipMediaApplicationAlexaSkillConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let alexaskillstatus = unimplemented!();
 /// match alexaskillstatus {
@@ -5235,58 +4891,52 @@ impl SipMediaApplicationAlexaSkillConfiguration {
 /// Specifically, when `alexaskillstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AlexaSkillStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AlexaSkillStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AlexaSkillStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => AlexaSkillStatus::Active,
             "INACTIVE" => AlexaSkillStatus::Inactive,
-            other => AlexaSkillStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AlexaSkillStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AlexaSkillStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AlexaSkillStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AlexaSkillStatus::from(s))
+                }
+            }
 impl AlexaSkillStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AlexaSkillStatus::Active => "ACTIVE",
             AlexaSkillStatus::Inactive => "INACTIVE",
-            AlexaSkillStatus::Unknown(value) => value.as_str(),
+            AlexaSkillStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "INACTIVE"]
+        &[
+            "ACTIVE", "INACTIVE"
+        ]
     }
 }
 impl AsRef<str> for AlexaSkillStatus {
@@ -5298,36 +4948,32 @@ impl AsRef<str> for AlexaSkillStatus {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PhoneNumberCountry {
+pub struct PhoneNumberCountry  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub country_code: std::option::Option<std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub supported_phone_number_types:
-        std::option::Option<std::vec::Vec<crate::model::PhoneNumberType>>,
+    pub supported_phone_number_types: std::option::Option<std::vec::Vec<crate::model::PhoneNumberType>>,
 }
 impl PhoneNumberCountry {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn country_code(&self) -> std::option::Option<&str> {
+    pub fn country_code(&self) -> std::option::Option<& str> {
         self.country_code.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn supported_phone_number_types(
-        &self,
-    ) -> std::option::Option<&[crate::model::PhoneNumberType]> {
+    pub fn supported_phone_number_types(&self) -> std::option::Option<& [crate::model::PhoneNumberType]> {
         self.supported_phone_number_types.as_deref()
     }
 }
 /// See [`PhoneNumberCountry`](crate::model::PhoneNumberCountry).
 pub mod phone_number_country {
-
+    
     /// A builder for [`PhoneNumberCountry`](crate::model::PhoneNumberCountry).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) country_code: std::option::Option<std::string::String>,
-        pub(crate) supported_phone_number_types:
-            std::option::Option<std::vec::Vec<crate::model::PhoneNumberType>>,
+        pub(crate) supported_phone_number_types: std::option::Option<std::vec::Vec<crate::model::PhoneNumberType>>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -5337,38 +4983,34 @@ pub mod phone_number_country {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.country_code = input;
-            self
+            self.country_code = input; self
         }
         /// Appends an item to `supported_phone_number_types`.
         ///
         /// To override the contents of this collection use [`set_supported_phone_number_types`](Self::set_supported_phone_number_types).
         ///
-        pub fn supported_phone_number_types(
-            mut self,
-            input: crate::model::PhoneNumberType,
-        ) -> Self {
+        pub fn supported_phone_number_types(mut self, input: crate::model::PhoneNumberType) -> Self {
             let mut v = self.supported_phone_number_types.unwrap_or_default();
-            v.push(input);
-            self.supported_phone_number_types = Some(v);
-            self
+                            v.push(input);
+                            self.supported_phone_number_types = Some(v);
+                            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_supported_phone_number_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberType>>,
-        ) -> Self {
-            self.supported_phone_number_types = input;
-            self
+        pub fn set_supported_phone_number_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberType>>) -> Self {
+            self.supported_phone_number_types = input; self
         }
         /// Consumes the builder and constructs a [`PhoneNumberCountry`](crate::model::PhoneNumberCountry).
         pub fn build(self) -> crate::model::PhoneNumberCountry {
             crate::model::PhoneNumberCountry {
-                country_code: self.country_code,
-                supported_phone_number_types: self.supported_phone_number_types,
+                country_code: self.country_code
+                ,
+                supported_phone_number_types: self.supported_phone_number_types
+                ,
             }
         }
     }
+    
+    
 }
 impl PhoneNumberCountry {
     /// Creates a new builder-style object to manufacture [`PhoneNumberCountry`](crate::model::PhoneNumberCountry).
@@ -5380,7 +5022,7 @@ impl PhoneNumberCountry {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PhoneNumberOrder {
+pub struct PhoneNumberOrder  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number_order_id: std::option::Option<std::string::String>,
@@ -5405,39 +5047,37 @@ pub struct PhoneNumberOrder {
 }
 impl PhoneNumberOrder {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn phone_number_order_id(&self) -> std::option::Option<&str> {
+    pub fn phone_number_order_id(&self) -> std::option::Option<& str> {
         self.phone_number_order_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn product_type(&self) -> std::option::Option<&crate::model::PhoneNumberProductType> {
+    pub fn product_type(&self) -> std::option::Option<& crate::model::PhoneNumberProductType> {
         self.product_type.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn status(&self) -> std::option::Option<&crate::model::PhoneNumberOrderStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::PhoneNumberOrderStatus> {
         self.status.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn order_type(&self) -> std::option::Option<&crate::model::PhoneNumberOrderType> {
+    pub fn order_type(&self) -> std::option::Option<& crate::model::PhoneNumberOrderType> {
         self.order_type.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn ordered_phone_numbers(
-        &self,
-    ) -> std::option::Option<&[crate::model::OrderedPhoneNumber]> {
+    pub fn ordered_phone_numbers(&self) -> std::option::Option<& [crate::model::OrderedPhoneNumber]> {
         self.ordered_phone_numbers.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
 }
 /// See [`PhoneNumberOrder`](crate::model::PhoneNumberOrder).
 pub mod phone_number_order {
-
+    
     /// A builder for [`PhoneNumberOrder`](crate::model::PhoneNumberOrder).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5445,8 +5085,7 @@ pub mod phone_number_order {
         pub(crate) product_type: std::option::Option<crate::model::PhoneNumberProductType>,
         pub(crate) status: std::option::Option<crate::model::PhoneNumberOrderStatus>,
         pub(crate) order_type: std::option::Option<crate::model::PhoneNumberOrderType>,
-        pub(crate) ordered_phone_numbers:
-            std::option::Option<std::vec::Vec<crate::model::OrderedPhoneNumber>>,
+        pub(crate) ordered_phone_numbers: std::option::Option<std::vec::Vec<crate::model::OrderedPhoneNumber>>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -5457,12 +5096,8 @@ pub mod phone_number_order {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_phone_number_order_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.phone_number_order_id = input;
-            self
+        pub fn set_phone_number_order_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number_order_id = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn product_type(mut self, input: crate::model::PhoneNumberProductType) -> Self {
@@ -5470,12 +5105,8 @@ pub mod phone_number_order {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_product_type(
-            mut self,
-            input: std::option::Option<crate::model::PhoneNumberProductType>,
-        ) -> Self {
-            self.product_type = input;
-            self
+        pub fn set_product_type(mut self, input: std::option::Option<crate::model::PhoneNumberProductType>) -> Self {
+            self.product_type = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn status(mut self, input: crate::model::PhoneNumberOrderStatus) -> Self {
@@ -5483,12 +5114,8 @@ pub mod phone_number_order {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::PhoneNumberOrderStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::PhoneNumberOrderStatus>) -> Self {
+            self.status = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn order_type(mut self, input: crate::model::PhoneNumberOrderType) -> Self {
@@ -5496,12 +5123,8 @@ pub mod phone_number_order {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_order_type(
-            mut self,
-            input: std::option::Option<crate::model::PhoneNumberOrderType>,
-        ) -> Self {
-            self.order_type = input;
-            self
+        pub fn set_order_type(mut self, input: std::option::Option<crate::model::PhoneNumberOrderType>) -> Self {
+            self.order_type = input; self
         }
         /// Appends an item to `ordered_phone_numbers`.
         ///
@@ -5509,17 +5132,13 @@ pub mod phone_number_order {
         ///
         pub fn ordered_phone_numbers(mut self, input: crate::model::OrderedPhoneNumber) -> Self {
             let mut v = self.ordered_phone_numbers.unwrap_or_default();
-            v.push(input);
-            self.ordered_phone_numbers = Some(v);
-            self
+                            v.push(input);
+                            self.ordered_phone_numbers = Some(v);
+                            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_ordered_phone_numbers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OrderedPhoneNumber>>,
-        ) -> Self {
-            self.ordered_phone_numbers = input;
-            self
+        pub fn set_ordered_phone_numbers(mut self, input: std::option::Option<std::vec::Vec<crate::model::OrderedPhoneNumber>>) -> Self {
+            self.ordered_phone_numbers = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5527,12 +5146,8 @@ pub mod phone_number_order {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5540,26 +5155,31 @@ pub mod phone_number_order {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_updated_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_timestamp = input;
-            self
+        pub fn set_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`PhoneNumberOrder`](crate::model::PhoneNumberOrder).
         pub fn build(self) -> crate::model::PhoneNumberOrder {
             crate::model::PhoneNumberOrder {
-                phone_number_order_id: self.phone_number_order_id,
-                product_type: self.product_type,
-                status: self.status,
-                order_type: self.order_type,
-                ordered_phone_numbers: self.ordered_phone_numbers,
-                created_timestamp: self.created_timestamp,
-                updated_timestamp: self.updated_timestamp,
+                phone_number_order_id: self.phone_number_order_id
+                ,
+                product_type: self.product_type
+                ,
+                status: self.status
+                ,
+                order_type: self.order_type
+                ,
+                ordered_phone_numbers: self.ordered_phone_numbers
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                updated_timestamp: self.updated_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl PhoneNumberOrder {
     /// Creates a new builder-style object to manufacture [`PhoneNumberOrder`](crate::model::PhoneNumberOrder).
@@ -5571,7 +5191,7 @@ impl PhoneNumberOrder {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct OrderedPhoneNumber {
+pub struct OrderedPhoneNumber  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub e164_phone_number: std::option::Option<std::string::String>,
@@ -5581,15 +5201,15 @@ pub struct OrderedPhoneNumber {
 }
 impl OrderedPhoneNumber {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn e164_phone_number(&self) -> std::option::Option<&str> {
+    pub fn e164_phone_number(&self) -> std::option::Option<& str> {
         self.e164_phone_number.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn status(&self) -> std::option::Option<&crate::model::OrderedPhoneNumberStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::OrderedPhoneNumberStatus> {
         self.status.as_ref()
     }
 }
-impl std::fmt::Debug for OrderedPhoneNumber {
+impl  std::fmt::Debug for OrderedPhoneNumber  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OrderedPhoneNumber");
         formatter.field("e164_phone_number", &"*** Sensitive Data Redacted ***");
@@ -5599,7 +5219,7 @@ impl std::fmt::Debug for OrderedPhoneNumber {
 }
 /// See [`OrderedPhoneNumber`](crate::model::OrderedPhoneNumber).
 pub mod ordered_phone_number {
-
+    
     /// A builder for [`OrderedPhoneNumber`](crate::model::OrderedPhoneNumber).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -5613,12 +5233,8 @@ pub mod ordered_phone_number {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_e164_phone_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.e164_phone_number = input;
-            self
+        pub fn set_e164_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.e164_phone_number = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn status(mut self, input: crate::model::OrderedPhoneNumberStatus) -> Self {
@@ -5626,18 +5242,16 @@ pub mod ordered_phone_number {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::OrderedPhoneNumberStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::OrderedPhoneNumberStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`OrderedPhoneNumber`](crate::model::OrderedPhoneNumber).
         pub fn build(self) -> crate::model::OrderedPhoneNumber {
             crate::model::OrderedPhoneNumber {
-                e164_phone_number: self.e164_phone_number,
-                status: self.status,
+                e164_phone_number: self.e164_phone_number
+                ,
+                status: self.status
+                ,
             }
         }
     }
@@ -5649,6 +5263,8 @@ pub mod ordered_phone_number {
             formatter.finish()
         }
     }
+    
+    
 }
 impl OrderedPhoneNumber {
     /// Creates a new builder-style object to manufacture [`OrderedPhoneNumber`](crate::model::OrderedPhoneNumber).
@@ -5663,9 +5279,9 @@ impl OrderedPhoneNumber {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let orderedphonenumberstatus = unimplemented!();
 /// match orderedphonenumberstatus {
@@ -5688,22 +5304,14 @@ impl OrderedPhoneNumber {
 /// Specifically, when `orderedphonenumberstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OrderedPhoneNumberStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OrderedPhoneNumberStatus {
     #[allow(missing_docs)] // documentation missing in model
     Acquired,
@@ -5712,7 +5320,7 @@ pub enum OrderedPhoneNumberStatus {
     #[allow(missing_docs)] // documentation missing in model
     Processing,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrderedPhoneNumberStatus {
     fn from(s: &str) -> Self {
@@ -5720,19 +5328,17 @@ impl std::convert::From<&str> for OrderedPhoneNumberStatus {
             "Acquired" => OrderedPhoneNumberStatus::Acquired,
             "Failed" => OrderedPhoneNumberStatus::Failed,
             "Processing" => OrderedPhoneNumberStatus::Processing,
-            other => OrderedPhoneNumberStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => OrderedPhoneNumberStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OrderedPhoneNumberStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OrderedPhoneNumberStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OrderedPhoneNumberStatus::from(s))
+                }
+            }
 impl OrderedPhoneNumberStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5740,12 +5346,14 @@ impl OrderedPhoneNumberStatus {
             OrderedPhoneNumberStatus::Acquired => "Acquired",
             OrderedPhoneNumberStatus::Failed => "Failed",
             OrderedPhoneNumberStatus::Processing => "Processing",
-            OrderedPhoneNumberStatus::Unknown(value) => value.as_str(),
+            OrderedPhoneNumberStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Acquired", "Failed", "Processing"]
+        &[
+            "Acquired", "Failed", "Processing"
+        ]
     }
 }
 impl AsRef<str> for OrderedPhoneNumberStatus {
@@ -5760,9 +5368,9 @@ impl AsRef<str> for OrderedPhoneNumberStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let phonenumberordertype = unimplemented!();
 /// match phonenumberordertype {
@@ -5784,60 +5392,52 @@ impl AsRef<str> for OrderedPhoneNumberStatus {
 /// Specifically, when `phonenumberordertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PhoneNumberOrderType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PhoneNumberOrderType {
     #[allow(missing_docs)] // documentation missing in model
     New,
     #[allow(missing_docs)] // documentation missing in model
     Porting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PhoneNumberOrderType {
     fn from(s: &str) -> Self {
         match s {
             "New" => PhoneNumberOrderType::New,
             "Porting" => PhoneNumberOrderType::Porting,
-            other => {
-                PhoneNumberOrderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PhoneNumberOrderType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PhoneNumberOrderType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PhoneNumberOrderType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PhoneNumberOrderType::from(s))
+                }
+            }
 impl PhoneNumberOrderType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PhoneNumberOrderType::New => "New",
             PhoneNumberOrderType::Porting => "Porting",
-            PhoneNumberOrderType::Unknown(value) => value.as_str(),
+            PhoneNumberOrderType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["New", "Porting"]
+        &[
+            "New", "Porting"
+        ]
     }
 }
 impl AsRef<str> for PhoneNumberOrderType {
@@ -5852,9 +5452,9 @@ impl AsRef<str> for PhoneNumberOrderType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let phonenumberorderstatus = unimplemented!();
 /// match phonenumberorderstatus {
@@ -5885,22 +5485,14 @@ impl AsRef<str> for PhoneNumberOrderType {
 /// Specifically, when `phonenumberorderstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PhoneNumberOrderStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PhoneNumberOrderStatus {
     #[allow(missing_docs)] // documentation missing in model
     CancelRequested,
@@ -5925,7 +5517,7 @@ pub enum PhoneNumberOrderStatus {
     #[allow(missing_docs)] // documentation missing in model
     Successful,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PhoneNumberOrderStatus {
     fn from(s: &str) -> Self {
@@ -5941,19 +5533,17 @@ impl std::convert::From<&str> for PhoneNumberOrderStatus {
             "Processing" => PhoneNumberOrderStatus::Processing,
             "Submitted" => PhoneNumberOrderStatus::Submitted,
             "Successful" => PhoneNumberOrderStatus::Successful,
-            other => {
-                PhoneNumberOrderStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PhoneNumberOrderStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PhoneNumberOrderStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PhoneNumberOrderStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PhoneNumberOrderStatus::from(s))
+                }
+            }
 impl PhoneNumberOrderStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5969,23 +5559,13 @@ impl PhoneNumberOrderStatus {
             PhoneNumberOrderStatus::Processing => "Processing",
             PhoneNumberOrderStatus::Submitted => "Submitted",
             PhoneNumberOrderStatus::Successful => "Successful",
-            PhoneNumberOrderStatus::Unknown(value) => value.as_str(),
+            PhoneNumberOrderStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CancelRequested",
-            "Cancelled",
-            "ChangeRequested",
-            "Exception",
-            "FOC",
-            "Failed",
-            "Partial",
-            "PendingDocuments",
-            "Processing",
-            "Submitted",
-            "Successful",
+            "CancelRequested", "Cancelled", "ChangeRequested", "Exception", "FOC", "Failed", "Partial", "PendingDocuments", "Processing", "Submitted", "Successful"
         ]
     }
 }
@@ -5998,7 +5578,7 @@ impl AsRef<str> for PhoneNumberOrderStatus {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TerminationHealth {
+pub struct TerminationHealth  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -6008,17 +5588,17 @@ pub struct TerminationHealth {
 }
 impl TerminationHealth {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> std::option::Option<& str> {
         self.source.as_deref()
     }
 }
 /// See [`TerminationHealth`](crate::model::TerminationHealth).
 pub mod termination_health {
-
+    
     /// A builder for [`TerminationHealth`](crate::model::TerminationHealth).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6032,12 +5612,8 @@ pub mod termination_health {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.timestamp = input;
-            self
+        pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.timestamp = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6046,17 +5622,20 @@ pub mod termination_health {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// Consumes the builder and constructs a [`TerminationHealth`](crate::model::TerminationHealth).
         pub fn build(self) -> crate::model::TerminationHealth {
             crate::model::TerminationHealth {
-                timestamp: self.timestamp,
-                source: self.source,
+                timestamp: self.timestamp
+                ,
+                source: self.source
+                ,
             }
         }
     }
+    
+    
 }
 impl TerminationHealth {
     /// Creates a new builder-style object to manufacture [`TerminationHealth`](crate::model::TerminationHealth).
@@ -6068,7 +5647,7 @@ impl TerminationHealth {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PhoneNumberError {
+pub struct PhoneNumberError  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
@@ -6081,19 +5660,19 @@ pub struct PhoneNumberError {
 }
 impl PhoneNumberError {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn error_code(&self) -> std::option::Option<&crate::model::ErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::ErrorCode> {
         self.error_code.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
-impl std::fmt::Debug for PhoneNumberError {
+impl  std::fmt::Debug for PhoneNumberError  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PhoneNumberError");
         formatter.field("phone_number_id", &"*** Sensitive Data Redacted ***");
@@ -6104,7 +5683,7 @@ impl std::fmt::Debug for PhoneNumberError {
 }
 /// See [`PhoneNumberError`](crate::model::PhoneNumberError).
 pub mod phone_number_error {
-
+    
     /// A builder for [`PhoneNumberError`](crate::model::PhoneNumberError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -6119,12 +5698,8 @@ pub mod phone_number_error {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_phone_number_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.phone_number_id = input;
-            self
+        pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number_id = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn error_code(mut self, input: crate::model::ErrorCode) -> Self {
@@ -6132,12 +5707,8 @@ pub mod phone_number_error {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::ErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
+            self.error_code = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6145,19 +5716,18 @@ pub mod phone_number_error {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`PhoneNumberError`](crate::model::PhoneNumberError).
         pub fn build(self) -> crate::model::PhoneNumberError {
             crate::model::PhoneNumberError {
-                phone_number_id: self.phone_number_id,
-                error_code: self.error_code,
-                error_message: self.error_message,
+                phone_number_id: self.phone_number_id
+                ,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
@@ -6170,6 +5740,8 @@ pub mod phone_number_error {
             formatter.finish()
         }
     }
+    
+    
 }
 impl PhoneNumberError {
     /// Creates a new builder-style object to manufacture [`PhoneNumberError`](crate::model::PhoneNumberError).
@@ -6181,7 +5753,7 @@ impl PhoneNumberError {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdatePhoneNumberRequestItem {
+pub struct UpdatePhoneNumberRequestItem  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
@@ -6194,19 +5766,19 @@ pub struct UpdatePhoneNumberRequestItem {
 }
 impl UpdatePhoneNumberRequestItem {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn product_type(&self) -> std::option::Option<&crate::model::PhoneNumberProductType> {
+    pub fn product_type(&self) -> std::option::Option<& crate::model::PhoneNumberProductType> {
         self.product_type.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn calling_name(&self) -> std::option::Option<&str> {
+    pub fn calling_name(&self) -> std::option::Option<& str> {
         self.calling_name.as_deref()
     }
 }
-impl std::fmt::Debug for UpdatePhoneNumberRequestItem {
+impl  std::fmt::Debug for UpdatePhoneNumberRequestItem  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePhoneNumberRequestItem");
         formatter.field("phone_number_id", &"*** Sensitive Data Redacted ***");
@@ -6217,7 +5789,7 @@ impl std::fmt::Debug for UpdatePhoneNumberRequestItem {
 }
 /// See [`UpdatePhoneNumberRequestItem`](crate::model::UpdatePhoneNumberRequestItem).
 pub mod update_phone_number_request_item {
-
+    
     /// A builder for [`UpdatePhoneNumberRequestItem`](crate::model::UpdatePhoneNumberRequestItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -6232,12 +5804,8 @@ pub mod update_phone_number_request_item {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_phone_number_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.phone_number_id = input;
-            self
+        pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number_id = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn product_type(mut self, input: crate::model::PhoneNumberProductType) -> Self {
@@ -6245,12 +5813,8 @@ pub mod update_phone_number_request_item {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_product_type(
-            mut self,
-            input: std::option::Option<crate::model::PhoneNumberProductType>,
-        ) -> Self {
-            self.product_type = input;
-            self
+        pub fn set_product_type(mut self, input: std::option::Option<crate::model::PhoneNumberProductType>) -> Self {
+            self.product_type = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn calling_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6259,15 +5823,17 @@ pub mod update_phone_number_request_item {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_calling_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.calling_name = input;
-            self
+            self.calling_name = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePhoneNumberRequestItem`](crate::model::UpdatePhoneNumberRequestItem).
         pub fn build(self) -> crate::model::UpdatePhoneNumberRequestItem {
             crate::model::UpdatePhoneNumberRequestItem {
-                phone_number_id: self.phone_number_id,
-                product_type: self.product_type,
-                calling_name: self.calling_name,
+                phone_number_id: self.phone_number_id
+                ,
+                product_type: self.product_type
+                ,
+                calling_name: self.calling_name
+                ,
             }
         }
     }
@@ -6280,6 +5846,8 @@ pub mod update_phone_number_request_item {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdatePhoneNumberRequestItem {
     /// Creates a new builder-style object to manufacture [`UpdatePhoneNumberRequestItem`](crate::model::UpdatePhoneNumberRequestItem).
@@ -6287,3 +5855,4 @@ impl UpdatePhoneNumberRequestItem {
         crate::model::update_phone_number_request_item::Builder::default()
     }
 }
+

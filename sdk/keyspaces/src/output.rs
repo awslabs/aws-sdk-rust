@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTableOutput {
+pub struct UpdateTableOutput  {
     /// <p>The Amazon Resource Name (ARN) of the modified table.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl UpdateTableOutput {
     /// <p>The Amazon Resource Name (ARN) of the modified table.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 /// See [`UpdateTableOutput`](crate::output::UpdateTableOutput).
 pub mod update_table_output {
-
+    
     /// A builder for [`UpdateTableOutput`](crate::output::UpdateTableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,16 +29,18 @@ pub mod update_table_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the modified table.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateTableOutput`](crate::output::UpdateTableOutput).
         pub fn build(self) -> crate::output::UpdateTableOutput {
             crate::output::UpdateTableOutput {
-                resource_arn: self.resource_arn,
+                resource_arn: self.resource_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateTableOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTableOutput`](crate::output::UpdateTableOutput).
@@ -50,19 +52,24 @@ impl UpdateTableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -74,19 +81,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -98,20 +110,20 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreTableOutput {
+pub struct RestoreTableOutput  {
     /// <p>The Amazon Resource Name (ARN) of the restored table.</p>
     #[doc(hidden)]
     pub restored_table_arn: std::option::Option<std::string::String>,
 }
 impl RestoreTableOutput {
     /// <p>The Amazon Resource Name (ARN) of the restored table.</p>
-    pub fn restored_table_arn(&self) -> std::option::Option<&str> {
+    pub fn restored_table_arn(&self) -> std::option::Option<& str> {
         self.restored_table_arn.as_deref()
     }
 }
 /// See [`RestoreTableOutput`](crate::output::RestoreTableOutput).
 pub mod restore_table_output {
-
+    
     /// A builder for [`RestoreTableOutput`](crate::output::RestoreTableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -124,20 +136,19 @@ pub mod restore_table_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the restored table.</p>
-        pub fn set_restored_table_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.restored_table_arn = input;
-            self
+        pub fn set_restored_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.restored_table_arn = input; self
         }
         /// Consumes the builder and constructs a [`RestoreTableOutput`](crate::output::RestoreTableOutput).
         pub fn build(self) -> crate::output::RestoreTableOutput {
             crate::output::RestoreTableOutput {
-                restored_table_arn: self.restored_table_arn,
+                restored_table_arn: self.restored_table_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl RestoreTableOutput {
     /// Creates a new builder-style object to manufacture [`RestoreTableOutput`](crate::output::RestoreTableOutput).
@@ -149,7 +160,7 @@ impl RestoreTableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -159,17 +170,17 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -184,8 +195,7 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -194,26 +204,26 @@ pub mod list_tags_for_resource_output {
         /// <p>A list of tags.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                next_token: self.next_token,
-                tags: self.tags,
+                next_token: self.next_token
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -225,7 +235,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTablesOutput {
+pub struct ListTablesOutput  {
     /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -235,17 +245,17 @@ pub struct ListTablesOutput {
 }
 impl ListTablesOutput {
     /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of tables.</p>
-    pub fn tables(&self) -> std::option::Option<&[crate::model::TableSummary]> {
+    pub fn tables(&self) -> std::option::Option<& [crate::model::TableSummary]> {
         self.tables.as_deref()
     }
 }
 /// See [`ListTablesOutput`](crate::output::ListTablesOutput).
 pub mod list_tables_output {
-
+    
     /// A builder for [`ListTablesOutput`](crate::output::ListTablesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -260,8 +270,7 @@ pub mod list_tables_output {
         }
         /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `tables`.
         ///
@@ -270,26 +279,26 @@ pub mod list_tables_output {
         /// <p>A list of tables.</p>
         pub fn tables(mut self, input: crate::model::TableSummary) -> Self {
             let mut v = self.tables.unwrap_or_default();
-            v.push(input);
-            self.tables = Some(v);
-            self
+                            v.push(input);
+                            self.tables = Some(v);
+                            self
         }
         /// <p>A list of tables.</p>
-        pub fn set_tables(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TableSummary>>,
-        ) -> Self {
-            self.tables = input;
-            self
+        pub fn set_tables(mut self, input: std::option::Option<std::vec::Vec<crate::model::TableSummary>>) -> Self {
+            self.tables = input; self
         }
         /// Consumes the builder and constructs a [`ListTablesOutput`](crate::output::ListTablesOutput).
         pub fn build(self) -> crate::output::ListTablesOutput {
             crate::output::ListTablesOutput {
-                next_token: self.next_token,
-                tables: self.tables,
+                next_token: self.next_token
+                ,
+                tables: self.tables
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTablesOutput {
     /// Creates a new builder-style object to manufacture [`ListTablesOutput`](crate::output::ListTablesOutput).
@@ -301,7 +310,7 @@ impl ListTablesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListKeyspacesOutput {
+pub struct ListKeyspacesOutput  {
     /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -311,17 +320,17 @@ pub struct ListKeyspacesOutput {
 }
 impl ListKeyspacesOutput {
     /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of keyspaces.</p>
-    pub fn keyspaces(&self) -> std::option::Option<&[crate::model::KeyspaceSummary]> {
+    pub fn keyspaces(&self) -> std::option::Option<& [crate::model::KeyspaceSummary]> {
         self.keyspaces.as_deref()
     }
 }
 /// See [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput).
 pub mod list_keyspaces_output {
-
+    
     /// A builder for [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -336,8 +345,7 @@ pub mod list_keyspaces_output {
         }
         /// <p>A token to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `keyspaces`.
         ///
@@ -346,26 +354,26 @@ pub mod list_keyspaces_output {
         /// <p>A list of keyspaces.</p>
         pub fn keyspaces(mut self, input: crate::model::KeyspaceSummary) -> Self {
             let mut v = self.keyspaces.unwrap_or_default();
-            v.push(input);
-            self.keyspaces = Some(v);
-            self
+                            v.push(input);
+                            self.keyspaces = Some(v);
+                            self
         }
         /// <p>A list of keyspaces.</p>
-        pub fn set_keyspaces(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::KeyspaceSummary>>,
-        ) -> Self {
-            self.keyspaces = input;
-            self
+        pub fn set_keyspaces(mut self, input: std::option::Option<std::vec::Vec<crate::model::KeyspaceSummary>>) -> Self {
+            self.keyspaces = input; self
         }
         /// Consumes the builder and constructs a [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput).
         pub fn build(self) -> crate::output::ListKeyspacesOutput {
             crate::output::ListKeyspacesOutput {
-                next_token: self.next_token,
-                keyspaces: self.keyspaces,
+                next_token: self.next_token
+                ,
+                keyspaces: self.keyspaces
+                ,
             }
         }
     }
+    
+    
 }
 impl ListKeyspacesOutput {
     /// Creates a new builder-style object to manufacture [`ListKeyspacesOutput`](crate::output::ListKeyspacesOutput).
@@ -377,7 +385,7 @@ impl ListKeyspacesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTableOutput {
+pub struct GetTableOutput  {
     /// <p>The name of the keyspace that the specified table is stored in.</p>
     #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
@@ -396,8 +404,8 @@ pub struct GetTableOutput {
     /// <p>The schema definition of the specified table.</p>
     #[doc(hidden)]
     pub schema_definition: std::option::Option<crate::model::SchemaDefinition>,
-    /// <p>The read/write throughput capacity mode for a table. The options are:</p>
-    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p>
+    /// <p>The read/write throughput capacity mode for a table. The options are:</p> 
+    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p> 
     /// <p>• <code>throughputMode:PROVISIONED</code> </p>
     #[doc(hidden)]
     pub capacity_specification: std::option::Option<crate::model::CapacitySpecificationSummary>,
@@ -419,51 +427,45 @@ pub struct GetTableOutput {
 }
 impl GetTableOutput {
     /// <p>The name of the keyspace that the specified table is stored in.</p>
-    pub fn keyspace_name(&self) -> std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> std::option::Option<& str> {
         self.keyspace_name.as_deref()
     }
     /// <p>The name of the specified table.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the specified table.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The creation timestamp of the specified table.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The current status of the specified table.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::TableStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::TableStatus> {
         self.status.as_ref()
     }
     /// <p>The schema definition of the specified table.</p>
-    pub fn schema_definition(&self) -> std::option::Option<&crate::model::SchemaDefinition> {
+    pub fn schema_definition(&self) -> std::option::Option<& crate::model::SchemaDefinition> {
         self.schema_definition.as_ref()
     }
-    /// <p>The read/write throughput capacity mode for a table. The options are:</p>
-    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p>
+    /// <p>The read/write throughput capacity mode for a table. The options are:</p> 
+    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p> 
     /// <p>• <code>throughputMode:PROVISIONED</code> </p>
-    pub fn capacity_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::CapacitySpecificationSummary> {
+    pub fn capacity_specification(&self) -> std::option::Option<& crate::model::CapacitySpecificationSummary> {
         self.capacity_specification.as_ref()
     }
     /// <p>The encryption settings of the specified table.</p>
-    pub fn encryption_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::EncryptionSpecification> {
+    pub fn encryption_specification(&self) -> std::option::Option<& crate::model::EncryptionSpecification> {
         self.encryption_specification.as_ref()
     }
     /// <p>The point-in-time recovery status of the specified table.</p>
-    pub fn point_in_time_recovery(
-        &self,
-    ) -> std::option::Option<&crate::model::PointInTimeRecoverySummary> {
+    pub fn point_in_time_recovery(&self) -> std::option::Option<& crate::model::PointInTimeRecoverySummary> {
         self.point_in_time_recovery.as_ref()
     }
     /// <p>The custom Time to Live settings of the specified table.</p>
-    pub fn ttl(&self) -> std::option::Option<&crate::model::TimeToLive> {
+    pub fn ttl(&self) -> std::option::Option<& crate::model::TimeToLive> {
         self.ttl.as_ref()
     }
     /// <p>The default Time to Live settings of the specified table.</p>
@@ -471,13 +473,13 @@ impl GetTableOutput {
         self.default_time_to_live
     }
     /// <p>The the description of the specified table.</p>
-    pub fn comment(&self) -> std::option::Option<&crate::model::Comment> {
+    pub fn comment(&self) -> std::option::Option<& crate::model::Comment> {
         self.comment.as_ref()
     }
 }
 /// See [`GetTableOutput`](crate::output::GetTableOutput).
 pub mod get_table_output {
-
+    
     /// A builder for [`GetTableOutput`](crate::output::GetTableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -487,12 +489,9 @@ pub mod get_table_output {
         pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::TableStatus>,
         pub(crate) schema_definition: std::option::Option<crate::model::SchemaDefinition>,
-        pub(crate) capacity_specification:
-            std::option::Option<crate::model::CapacitySpecificationSummary>,
-        pub(crate) encryption_specification:
-            std::option::Option<crate::model::EncryptionSpecification>,
-        pub(crate) point_in_time_recovery:
-            std::option::Option<crate::model::PointInTimeRecoverySummary>,
+        pub(crate) capacity_specification: std::option::Option<crate::model::CapacitySpecificationSummary>,
+        pub(crate) encryption_specification: std::option::Option<crate::model::EncryptionSpecification>,
+        pub(crate) point_in_time_recovery: std::option::Option<crate::model::PointInTimeRecoverySummary>,
         pub(crate) ttl: std::option::Option<crate::model::TimeToLive>,
         pub(crate) default_time_to_live: std::option::Option<i32>,
         pub(crate) comment: std::option::Option<crate::model::Comment>,
@@ -504,12 +503,8 @@ pub mod get_table_output {
             self
         }
         /// <p>The name of the keyspace that the specified table is stored in.</p>
-        pub fn set_keyspace_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.keyspace_name = input;
-            self
+        pub fn set_keyspace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.keyspace_name = input; self
         }
         /// <p>The name of the specified table.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -518,8 +513,7 @@ pub mod get_table_output {
         }
         /// <p>The name of the specified table.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the specified table.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -528,8 +522,7 @@ pub mod get_table_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the specified table.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The creation timestamp of the specified table.</p>
         pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -537,12 +530,8 @@ pub mod get_table_output {
             self
         }
         /// <p>The creation timestamp of the specified table.</p>
-        pub fn set_creation_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_timestamp = input;
-            self
+        pub fn set_creation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_timestamp = input; self
         }
         /// <p>The current status of the specified table.</p>
         pub fn status(mut self, input: crate::model::TableStatus) -> Self {
@@ -551,8 +540,7 @@ pub mod get_table_output {
         }
         /// <p>The current status of the specified table.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::TableStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The schema definition of the specified table.</p>
         pub fn schema_definition(mut self, input: crate::model::SchemaDefinition) -> Self {
@@ -560,64 +548,39 @@ pub mod get_table_output {
             self
         }
         /// <p>The schema definition of the specified table.</p>
-        pub fn set_schema_definition(
-            mut self,
-            input: std::option::Option<crate::model::SchemaDefinition>,
-        ) -> Self {
-            self.schema_definition = input;
-            self
+        pub fn set_schema_definition(mut self, input: std::option::Option<crate::model::SchemaDefinition>) -> Self {
+            self.schema_definition = input; self
         }
-        /// <p>The read/write throughput capacity mode for a table. The options are:</p>
-        /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p>
+        /// <p>The read/write throughput capacity mode for a table. The options are:</p> 
+        /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p> 
         /// <p>• <code>throughputMode:PROVISIONED</code> </p>
-        pub fn capacity_specification(
-            mut self,
-            input: crate::model::CapacitySpecificationSummary,
-        ) -> Self {
+        pub fn capacity_specification(mut self, input: crate::model::CapacitySpecificationSummary) -> Self {
             self.capacity_specification = Some(input);
             self
         }
-        /// <p>The read/write throughput capacity mode for a table. The options are:</p>
-        /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p>
+        /// <p>The read/write throughput capacity mode for a table. The options are:</p> 
+        /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p> 
         /// <p>• <code>throughputMode:PROVISIONED</code> </p>
-        pub fn set_capacity_specification(
-            mut self,
-            input: std::option::Option<crate::model::CapacitySpecificationSummary>,
-        ) -> Self {
-            self.capacity_specification = input;
-            self
+        pub fn set_capacity_specification(mut self, input: std::option::Option<crate::model::CapacitySpecificationSummary>) -> Self {
+            self.capacity_specification = input; self
         }
         /// <p>The encryption settings of the specified table.</p>
-        pub fn encryption_specification(
-            mut self,
-            input: crate::model::EncryptionSpecification,
-        ) -> Self {
+        pub fn encryption_specification(mut self, input: crate::model::EncryptionSpecification) -> Self {
             self.encryption_specification = Some(input);
             self
         }
         /// <p>The encryption settings of the specified table.</p>
-        pub fn set_encryption_specification(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionSpecification>,
-        ) -> Self {
-            self.encryption_specification = input;
-            self
+        pub fn set_encryption_specification(mut self, input: std::option::Option<crate::model::EncryptionSpecification>) -> Self {
+            self.encryption_specification = input; self
         }
         /// <p>The point-in-time recovery status of the specified table.</p>
-        pub fn point_in_time_recovery(
-            mut self,
-            input: crate::model::PointInTimeRecoverySummary,
-        ) -> Self {
+        pub fn point_in_time_recovery(mut self, input: crate::model::PointInTimeRecoverySummary) -> Self {
             self.point_in_time_recovery = Some(input);
             self
         }
         /// <p>The point-in-time recovery status of the specified table.</p>
-        pub fn set_point_in_time_recovery(
-            mut self,
-            input: std::option::Option<crate::model::PointInTimeRecoverySummary>,
-        ) -> Self {
-            self.point_in_time_recovery = input;
-            self
+        pub fn set_point_in_time_recovery(mut self, input: std::option::Option<crate::model::PointInTimeRecoverySummary>) -> Self {
+            self.point_in_time_recovery = input; self
         }
         /// <p>The custom Time to Live settings of the specified table.</p>
         pub fn ttl(mut self, input: crate::model::TimeToLive) -> Self {
@@ -626,8 +589,7 @@ pub mod get_table_output {
         }
         /// <p>The custom Time to Live settings of the specified table.</p>
         pub fn set_ttl(mut self, input: std::option::Option<crate::model::TimeToLive>) -> Self {
-            self.ttl = input;
-            self
+            self.ttl = input; self
         }
         /// <p>The default Time to Live settings of the specified table.</p>
         pub fn default_time_to_live(mut self, input: i32) -> Self {
@@ -636,8 +598,7 @@ pub mod get_table_output {
         }
         /// <p>The default Time to Live settings of the specified table.</p>
         pub fn set_default_time_to_live(mut self, input: std::option::Option<i32>) -> Self {
-            self.default_time_to_live = input;
-            self
+            self.default_time_to_live = input; self
         }
         /// <p>The the description of the specified table.</p>
         pub fn comment(mut self, input: crate::model::Comment) -> Self {
@@ -646,27 +607,40 @@ pub mod get_table_output {
         }
         /// <p>The the description of the specified table.</p>
         pub fn set_comment(mut self, input: std::option::Option<crate::model::Comment>) -> Self {
-            self.comment = input;
-            self
+            self.comment = input; self
         }
         /// Consumes the builder and constructs a [`GetTableOutput`](crate::output::GetTableOutput).
         pub fn build(self) -> crate::output::GetTableOutput {
             crate::output::GetTableOutput {
-                keyspace_name: self.keyspace_name,
-                table_name: self.table_name,
-                resource_arn: self.resource_arn,
-                creation_timestamp: self.creation_timestamp,
-                status: self.status,
-                schema_definition: self.schema_definition,
-                capacity_specification: self.capacity_specification,
-                encryption_specification: self.encryption_specification,
-                point_in_time_recovery: self.point_in_time_recovery,
-                ttl: self.ttl,
-                default_time_to_live: self.default_time_to_live,
-                comment: self.comment,
+                keyspace_name: self.keyspace_name
+                ,
+                table_name: self.table_name
+                ,
+                resource_arn: self.resource_arn
+                ,
+                creation_timestamp: self.creation_timestamp
+                ,
+                status: self.status
+                ,
+                schema_definition: self.schema_definition
+                ,
+                capacity_specification: self.capacity_specification
+                ,
+                encryption_specification: self.encryption_specification
+                ,
+                point_in_time_recovery: self.point_in_time_recovery
+                ,
+                ttl: self.ttl
+                ,
+                default_time_to_live: self.default_time_to_live
+                ,
+                comment: self.comment
+                ,
             }
         }
     }
+    
+    
 }
 impl GetTableOutput {
     /// Creates a new builder-style object to manufacture [`GetTableOutput`](crate::output::GetTableOutput).
@@ -678,7 +652,7 @@ impl GetTableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetKeyspaceOutput {
+pub struct GetKeyspaceOutput  {
     /// <p>The name of the keyspace.</p>
     #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
@@ -688,17 +662,17 @@ pub struct GetKeyspaceOutput {
 }
 impl GetKeyspaceOutput {
     /// <p>The name of the keyspace.</p>
-    pub fn keyspace_name(&self) -> std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> std::option::Option<& str> {
         self.keyspace_name.as_deref()
     }
     /// <p>The ARN of the keyspace.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 /// See [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput).
 pub mod get_keyspace_output {
-
+    
     /// A builder for [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -712,12 +686,8 @@ pub mod get_keyspace_output {
             self
         }
         /// <p>The name of the keyspace.</p>
-        pub fn set_keyspace_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.keyspace_name = input;
-            self
+        pub fn set_keyspace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.keyspace_name = input; self
         }
         /// <p>The ARN of the keyspace.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -726,17 +696,20 @@ pub mod get_keyspace_output {
         }
         /// <p>The ARN of the keyspace.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput).
         pub fn build(self) -> crate::output::GetKeyspaceOutput {
             crate::output::GetKeyspaceOutput {
-                keyspace_name: self.keyspace_name,
-                resource_arn: self.resource_arn,
+                keyspace_name: self.keyspace_name
+                ,
+                resource_arn: self.resource_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GetKeyspaceOutput {
     /// Creates a new builder-style object to manufacture [`GetKeyspaceOutput`](crate::output::GetKeyspaceOutput).
@@ -748,19 +721,24 @@ impl GetKeyspaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTableOutput {}
+pub struct DeleteTableOutput  {
+}
 /// See [`DeleteTableOutput`](crate::output::DeleteTableOutput).
 pub mod delete_table_output {
-
+    
     /// A builder for [`DeleteTableOutput`](crate::output::DeleteTableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteTableOutput`](crate::output::DeleteTableOutput).
         pub fn build(self) -> crate::output::DeleteTableOutput {
-            crate::output::DeleteTableOutput {}
+            crate::output::DeleteTableOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteTableOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTableOutput`](crate::output::DeleteTableOutput).
@@ -772,19 +750,24 @@ impl DeleteTableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteKeyspaceOutput {}
+pub struct DeleteKeyspaceOutput  {
+}
 /// See [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput).
 pub mod delete_keyspace_output {
-
+    
     /// A builder for [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput).
         pub fn build(self) -> crate::output::DeleteKeyspaceOutput {
-            crate::output::DeleteKeyspaceOutput {}
+            crate::output::DeleteKeyspaceOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteKeyspaceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteKeyspaceOutput`](crate::output::DeleteKeyspaceOutput).
@@ -796,20 +779,20 @@ impl DeleteKeyspaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTableOutput {
+pub struct CreateTableOutput  {
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl CreateTableOutput {
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 /// See [`CreateTableOutput`](crate::output::CreateTableOutput).
 pub mod create_table_output {
-
+    
     /// A builder for [`CreateTableOutput`](crate::output::CreateTableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -823,16 +806,18 @@ pub mod create_table_output {
         }
         /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateTableOutput`](crate::output::CreateTableOutput).
         pub fn build(self) -> crate::output::CreateTableOutput {
             crate::output::CreateTableOutput {
-                resource_arn: self.resource_arn,
+                resource_arn: self.resource_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateTableOutput {
     /// Creates a new builder-style object to manufacture [`CreateTableOutput`](crate::output::CreateTableOutput).
@@ -844,20 +829,20 @@ impl CreateTableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateKeyspaceOutput {
+pub struct CreateKeyspaceOutput  {
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl CreateKeyspaceOutput {
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
 /// See [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput).
 pub mod create_keyspace_output {
-
+    
     /// A builder for [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -871,16 +856,18 @@ pub mod create_keyspace_output {
         }
         /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput).
         pub fn build(self) -> crate::output::CreateKeyspaceOutput {
             crate::output::CreateKeyspaceOutput {
-                resource_arn: self.resource_arn,
+                resource_arn: self.resource_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateKeyspaceOutput {
     /// Creates a new builder-style object to manufacture [`CreateKeyspaceOutput`](crate::output::CreateKeyspaceOutput).
@@ -888,3 +875,4 @@ impl CreateKeyspaceOutput {
         crate::output::create_keyspace_output::Builder::default()
     }
 }
+

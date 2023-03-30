@@ -3,20 +3,20 @@
 /// <p>Options that apply when the app starts. These optiAons override default behavior.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LaunchOverrides {
+pub struct LaunchOverrides  {
     /// <p>App launch commands and command line parameters that override the launch command configured in the simulation schema.</p>
     #[doc(hidden)]
     pub launch_commands: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl LaunchOverrides {
     /// <p>App launch commands and command line parameters that override the launch command configured in the simulation schema.</p>
-    pub fn launch_commands(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn launch_commands(&self) -> std::option::Option<& [std::string::String]> {
         self.launch_commands.as_deref()
     }
 }
 /// See [`LaunchOverrides`](crate::model::LaunchOverrides).
 pub mod launch_overrides {
-
+    
     /// A builder for [`LaunchOverrides`](crate::model::LaunchOverrides).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -30,25 +30,24 @@ pub mod launch_overrides {
         /// <p>App launch commands and command line parameters that override the launch command configured in the simulation schema.</p>
         pub fn launch_commands(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.launch_commands.unwrap_or_default();
-            v.push(input.into());
-            self.launch_commands = Some(v);
-            self
+                            v.push(input.into());
+                            self.launch_commands = Some(v);
+                            self
         }
         /// <p>App launch commands and command line parameters that override the launch command configured in the simulation schema.</p>
-        pub fn set_launch_commands(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.launch_commands = input;
-            self
+        pub fn set_launch_commands(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.launch_commands = input; self
         }
         /// Consumes the builder and constructs a [`LaunchOverrides`](crate::model::LaunchOverrides).
         pub fn build(self) -> crate::model::LaunchOverrides {
             crate::model::LaunchOverrides {
-                launch_commands: self.launch_commands,
+                launch_commands: self.launch_commands
+                ,
             }
         }
     }
+    
+    
 }
 impl LaunchOverrides {
     /// Creates a new builder-style object to manufacture [`LaunchOverrides`](crate::model::LaunchOverrides).
@@ -60,7 +59,7 @@ impl LaunchOverrides {
 /// <p>A collection of metadata about an app.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimulationAppMetadata {
+pub struct SimulationAppMetadata  {
     /// <p>The name of the app.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -79,29 +78,29 @@ pub struct SimulationAppMetadata {
 }
 impl SimulationAppMetadata {
     /// <p>The name of the app.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the simulation of the app.</p>
-    pub fn simulation(&self) -> std::option::Option<&str> {
+    pub fn simulation(&self) -> std::option::Option<& str> {
         self.simulation.as_deref()
     }
     /// <p>The domain of the app. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> std::option::Option<& str> {
         self.domain.as_deref()
     }
     /// <p>The current status of the app.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::SimulationAppStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::SimulationAppStatus> {
         self.status.as_ref()
     }
     /// <p>The desired status of the app.</p>
-    pub fn target_status(&self) -> std::option::Option<&crate::model::SimulationAppTargetStatus> {
+    pub fn target_status(&self) -> std::option::Option<& crate::model::SimulationAppTargetStatus> {
         self.target_status.as_ref()
     }
 }
 /// See [`SimulationAppMetadata`](crate::model::SimulationAppMetadata).
 pub mod simulation_app_metadata {
-
+    
     /// A builder for [`SimulationAppMetadata`](crate::model::SimulationAppMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -119,8 +118,7 @@ pub mod simulation_app_metadata {
         }
         /// <p>The name of the app.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The name of the simulation of the app.</p>
         pub fn simulation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,8 +127,7 @@ pub mod simulation_app_metadata {
         }
         /// <p>The name of the simulation of the app.</p>
         pub fn set_simulation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.simulation = input;
-            self
+            self.simulation = input; self
         }
         /// <p>The domain of the app. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
         pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,8 +136,7 @@ pub mod simulation_app_metadata {
         }
         /// <p>The domain of the app. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain = input;
-            self
+            self.domain = input; self
         }
         /// <p>The current status of the app.</p>
         pub fn status(mut self, input: crate::model::SimulationAppStatus) -> Self {
@@ -148,12 +144,8 @@ pub mod simulation_app_metadata {
             self
         }
         /// <p>The current status of the app.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::SimulationAppStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::SimulationAppStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The desired status of the app.</p>
         pub fn target_status(mut self, input: crate::model::SimulationAppTargetStatus) -> Self {
@@ -161,24 +153,27 @@ pub mod simulation_app_metadata {
             self
         }
         /// <p>The desired status of the app.</p>
-        pub fn set_target_status(
-            mut self,
-            input: std::option::Option<crate::model::SimulationAppTargetStatus>,
-        ) -> Self {
-            self.target_status = input;
-            self
+        pub fn set_target_status(mut self, input: std::option::Option<crate::model::SimulationAppTargetStatus>) -> Self {
+            self.target_status = input; self
         }
         /// Consumes the builder and constructs a [`SimulationAppMetadata`](crate::model::SimulationAppMetadata).
         pub fn build(self) -> crate::model::SimulationAppMetadata {
             crate::model::SimulationAppMetadata {
-                name: self.name,
-                simulation: self.simulation,
-                domain: self.domain,
-                status: self.status,
-                target_status: self.target_status,
+                name: self.name
+                ,
+                simulation: self.simulation
+                ,
+                domain: self.domain
+                ,
+                status: self.status
+                ,
+                target_status: self.target_status
+                ,
             }
         }
     }
+    
+    
 }
 impl SimulationAppMetadata {
     /// Creates a new builder-style object to manufacture [`SimulationAppMetadata`](crate::model::SimulationAppMetadata).
@@ -193,9 +188,9 @@ impl SimulationAppMetadata {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let simulationapptargetstatus = unimplemented!();
 /// match simulationapptargetstatus {
@@ -218,22 +213,14 @@ impl SimulationAppMetadata {
 /// Specifically, when `simulationapptargetstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SimulationAppTargetStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `SimulationAppTargetStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SimulationAppTargetStatus {
     #[allow(missing_docs)] // documentation missing in model
     Started,
@@ -242,7 +229,7 @@ pub enum SimulationAppTargetStatus {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SimulationAppTargetStatus {
     fn from(s: &str) -> Self {
@@ -250,19 +237,17 @@ impl std::convert::From<&str> for SimulationAppTargetStatus {
             "STARTED" => SimulationAppTargetStatus::Started,
             "STOPPED" => SimulationAppTargetStatus::Stopped,
             "UNKNOWN" => SimulationAppTargetStatus::UnknownValue,
-            other => SimulationAppTargetStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SimulationAppTargetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SimulationAppTargetStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SimulationAppTargetStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SimulationAppTargetStatus::from(s))
+                }
+            }
 impl SimulationAppTargetStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -270,12 +255,14 @@ impl SimulationAppTargetStatus {
             SimulationAppTargetStatus::Started => "STARTED",
             SimulationAppTargetStatus::Stopped => "STOPPED",
             SimulationAppTargetStatus::UnknownValue => "UNKNOWN",
-            SimulationAppTargetStatus::Unknown(value) => value.as_str(),
+            SimulationAppTargetStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["STARTED", "STOPPED", "UNKNOWN"]
+        &[
+            "STARTED", "STOPPED", "UNKNOWN"
+        ]
     }
 }
 impl AsRef<str> for SimulationAppTargetStatus {
@@ -290,9 +277,9 @@ impl AsRef<str> for SimulationAppTargetStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let simulationappstatus = unimplemented!();
 /// match simulationappstatus {
@@ -318,22 +305,14 @@ impl AsRef<str> for SimulationAppTargetStatus {
 /// Specifically, when `simulationappstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SimulationAppStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `SimulationAppStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SimulationAppStatus {
     #[allow(missing_docs)] // documentation missing in model
     Error,
@@ -348,7 +327,7 @@ pub enum SimulationAppStatus {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SimulationAppStatus {
     fn from(s: &str) -> Self {
@@ -359,19 +338,17 @@ impl std::convert::From<&str> for SimulationAppStatus {
             "STOPPED" => SimulationAppStatus::Stopped,
             "STOPPING" => SimulationAppStatus::Stopping,
             "UNKNOWN" => SimulationAppStatus::UnknownValue,
-            other => {
-                SimulationAppStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SimulationAppStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SimulationAppStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SimulationAppStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SimulationAppStatus::from(s))
+                }
+            }
 impl SimulationAppStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -382,13 +359,13 @@ impl SimulationAppStatus {
             SimulationAppStatus::Stopped => "STOPPED",
             SimulationAppStatus::Stopping => "STOPPING",
             SimulationAppStatus::UnknownValue => "UNKNOWN",
-            SimulationAppStatus::Unknown(value) => value.as_str(),
+            SimulationAppStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ERROR", "STARTED", "STARTING", "STOPPED", "STOPPING", "UNKNOWN",
+            "ERROR", "STARTED", "STARTING", "STOPPED", "STOPPING", "UNKNOWN"
         ]
     }
 }
@@ -401,36 +378,32 @@ impl AsRef<str> for SimulationAppStatus {
 /// <p>Information about the network endpoint that you can use to connect to your custom or service app.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimulationAppEndpointInfo {
+pub struct SimulationAppEndpointInfo  {
     /// <p>The IP address of the app. SimSpace Weaver dynamically assigns this IP address when the app starts.</p>
     #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
     /// <p>The inbound TCP/UDP port numbers of the app. The combination of an IP address and a port number form a network endpoint.</p>
     #[doc(hidden)]
-    pub ingress_port_mappings:
-        std::option::Option<std::vec::Vec<crate::model::SimulationAppPortMapping>>,
+    pub ingress_port_mappings: std::option::Option<std::vec::Vec<crate::model::SimulationAppPortMapping>>,
 }
 impl SimulationAppEndpointInfo {
     /// <p>The IP address of the app. SimSpace Weaver dynamically assigns this IP address when the app starts.</p>
-    pub fn address(&self) -> std::option::Option<&str> {
+    pub fn address(&self) -> std::option::Option<& str> {
         self.address.as_deref()
     }
     /// <p>The inbound TCP/UDP port numbers of the app. The combination of an IP address and a port number form a network endpoint.</p>
-    pub fn ingress_port_mappings(
-        &self,
-    ) -> std::option::Option<&[crate::model::SimulationAppPortMapping]> {
+    pub fn ingress_port_mappings(&self) -> std::option::Option<& [crate::model::SimulationAppPortMapping]> {
         self.ingress_port_mappings.as_deref()
     }
 }
 /// See [`SimulationAppEndpointInfo`](crate::model::SimulationAppEndpointInfo).
 pub mod simulation_app_endpoint_info {
-
+    
     /// A builder for [`SimulationAppEndpointInfo`](crate::model::SimulationAppEndpointInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) address: std::option::Option<std::string::String>,
-        pub(crate) ingress_port_mappings:
-            std::option::Option<std::vec::Vec<crate::model::SimulationAppPortMapping>>,
+        pub(crate) ingress_port_mappings: std::option::Option<std::vec::Vec<crate::model::SimulationAppPortMapping>>,
     }
     impl Builder {
         /// <p>The IP address of the app. SimSpace Weaver dynamically assigns this IP address when the app starts.</p>
@@ -440,39 +413,35 @@ pub mod simulation_app_endpoint_info {
         }
         /// <p>The IP address of the app. SimSpace Weaver dynamically assigns this IP address when the app starts.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.address = input;
-            self
+            self.address = input; self
         }
         /// Appends an item to `ingress_port_mappings`.
         ///
         /// To override the contents of this collection use [`set_ingress_port_mappings`](Self::set_ingress_port_mappings).
         ///
         /// <p>The inbound TCP/UDP port numbers of the app. The combination of an IP address and a port number form a network endpoint.</p>
-        pub fn ingress_port_mappings(
-            mut self,
-            input: crate::model::SimulationAppPortMapping,
-        ) -> Self {
+        pub fn ingress_port_mappings(mut self, input: crate::model::SimulationAppPortMapping) -> Self {
             let mut v = self.ingress_port_mappings.unwrap_or_default();
-            v.push(input);
-            self.ingress_port_mappings = Some(v);
-            self
+                            v.push(input);
+                            self.ingress_port_mappings = Some(v);
+                            self
         }
         /// <p>The inbound TCP/UDP port numbers of the app. The combination of an IP address and a port number form a network endpoint.</p>
-        pub fn set_ingress_port_mappings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SimulationAppPortMapping>>,
-        ) -> Self {
-            self.ingress_port_mappings = input;
-            self
+        pub fn set_ingress_port_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::model::SimulationAppPortMapping>>) -> Self {
+            self.ingress_port_mappings = input; self
         }
         /// Consumes the builder and constructs a [`SimulationAppEndpointInfo`](crate::model::SimulationAppEndpointInfo).
         pub fn build(self) -> crate::model::SimulationAppEndpointInfo {
             crate::model::SimulationAppEndpointInfo {
-                address: self.address,
-                ingress_port_mappings: self.ingress_port_mappings,
+                address: self.address
+                ,
+                ingress_port_mappings: self.ingress_port_mappings
+                ,
             }
         }
     }
+    
+    
 }
 impl SimulationAppEndpointInfo {
     /// Creates a new builder-style object to manufacture [`SimulationAppEndpointInfo`](crate::model::SimulationAppEndpointInfo).
@@ -484,7 +453,7 @@ impl SimulationAppEndpointInfo {
 /// <p>A collection of TCP/UDP ports for a custom or service app.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimulationAppPortMapping {
+pub struct SimulationAppPortMapping  {
     /// <p>The TCP/UDP port number of the app, declared in the simulation schema. SimSpace Weaver maps the <code>Declared</code> port to the <code>Actual</code> port. The source code for the app should bind to the <code>Declared</code> port.</p>
     #[doc(hidden)]
     pub declared: std::option::Option<i32>,
@@ -504,7 +473,7 @@ impl SimulationAppPortMapping {
 }
 /// See [`SimulationAppPortMapping`](crate::model::SimulationAppPortMapping).
 pub mod simulation_app_port_mapping {
-
+    
     /// A builder for [`SimulationAppPortMapping`](crate::model::SimulationAppPortMapping).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -519,8 +488,7 @@ pub mod simulation_app_port_mapping {
         }
         /// <p>The TCP/UDP port number of the app, declared in the simulation schema. SimSpace Weaver maps the <code>Declared</code> port to the <code>Actual</code> port. The source code for the app should bind to the <code>Declared</code> port.</p>
         pub fn set_declared(mut self, input: std::option::Option<i32>) -> Self {
-            self.declared = input;
-            self
+            self.declared = input; self
         }
         /// <p>The TCP/UDP port number of the running app. SimSpace Weaver dynamically assigns this port number when the app starts. SimSpace Weaver maps the <code>Declared</code> port to the <code>Actual</code> port. Clients connect to the app using the app's IP address and the <code>Actual</code> port number.</p>
         pub fn actual(mut self, input: i32) -> Self {
@@ -529,17 +497,20 @@ pub mod simulation_app_port_mapping {
         }
         /// <p>The TCP/UDP port number of the running app. SimSpace Weaver dynamically assigns this port number when the app starts. SimSpace Weaver maps the <code>Declared</code> port to the <code>Actual</code> port. Clients connect to the app using the app's IP address and the <code>Actual</code> port number.</p>
         pub fn set_actual(mut self, input: std::option::Option<i32>) -> Self {
-            self.actual = input;
-            self
+            self.actual = input; self
         }
         /// Consumes the builder and constructs a [`SimulationAppPortMapping`](crate::model::SimulationAppPortMapping).
         pub fn build(self) -> crate::model::SimulationAppPortMapping {
             crate::model::SimulationAppPortMapping {
-                declared: self.declared,
-                actual: self.actual,
+                declared: self.declared
+                ,
+                actual: self.actual
+                ,
             }
         }
     }
+    
+    
 }
 impl SimulationAppPortMapping {
     /// Creates a new builder-style object to manufacture [`SimulationAppPortMapping`](crate::model::SimulationAppPortMapping).
@@ -551,7 +522,7 @@ impl SimulationAppPortMapping {
 /// <p>A collection of data about the simulation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimulationMetadata {
+pub struct SimulationMetadata  {
     /// <p>The name of the simulation.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -570,29 +541,29 @@ pub struct SimulationMetadata {
 }
 impl SimulationMetadata {
     /// <p>The name of the simulation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The current status of the simulation.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::SimulationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::SimulationStatus> {
         self.status.as_ref()
     }
     /// <p>The desired status of the simulation.</p>
-    pub fn target_status(&self) -> std::option::Option<&crate::model::SimulationTargetStatus> {
+    pub fn target_status(&self) -> std::option::Option<& crate::model::SimulationTargetStatus> {
         self.target_status.as_ref()
     }
 }
 /// See [`SimulationMetadata`](crate::model::SimulationMetadata).
 pub mod simulation_metadata {
-
+    
     /// A builder for [`SimulationMetadata`](crate::model::SimulationMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -610,8 +581,7 @@ pub mod simulation_metadata {
         }
         /// <p>The name of the simulation.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -620,8 +590,7 @@ pub mod simulation_metadata {
         }
         /// <p>The Amazon Resource Name (ARN) of the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -629,12 +598,8 @@ pub mod simulation_metadata {
             self
         }
         /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The current status of the simulation.</p>
         pub fn status(mut self, input: crate::model::SimulationStatus) -> Self {
@@ -642,12 +607,8 @@ pub mod simulation_metadata {
             self
         }
         /// <p>The current status of the simulation.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::SimulationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::SimulationStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The desired status of the simulation.</p>
         pub fn target_status(mut self, input: crate::model::SimulationTargetStatus) -> Self {
@@ -655,24 +616,27 @@ pub mod simulation_metadata {
             self
         }
         /// <p>The desired status of the simulation.</p>
-        pub fn set_target_status(
-            mut self,
-            input: std::option::Option<crate::model::SimulationTargetStatus>,
-        ) -> Self {
-            self.target_status = input;
-            self
+        pub fn set_target_status(mut self, input: std::option::Option<crate::model::SimulationTargetStatus>) -> Self {
+            self.target_status = input; self
         }
         /// Consumes the builder and constructs a [`SimulationMetadata`](crate::model::SimulationMetadata).
         pub fn build(self) -> crate::model::SimulationMetadata {
             crate::model::SimulationMetadata {
-                name: self.name,
-                arn: self.arn,
-                creation_time: self.creation_time,
-                status: self.status,
-                target_status: self.target_status,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                creation_time: self.creation_time
+                ,
+                status: self.status
+                ,
+                target_status: self.target_status
+                ,
             }
         }
     }
+    
+    
 }
 impl SimulationMetadata {
     /// Creates a new builder-style object to manufacture [`SimulationMetadata`](crate::model::SimulationMetadata).
@@ -687,9 +651,9 @@ impl SimulationMetadata {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let simulationtargetstatus = unimplemented!();
 /// match simulationtargetstatus {
@@ -713,22 +677,14 @@ impl SimulationMetadata {
 /// Specifically, when `simulationtargetstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SimulationTargetStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `SimulationTargetStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SimulationTargetStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleted,
@@ -739,7 +695,7 @@ pub enum SimulationTargetStatus {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SimulationTargetStatus {
     fn from(s: &str) -> Self {
@@ -748,19 +704,17 @@ impl std::convert::From<&str> for SimulationTargetStatus {
             "STARTED" => SimulationTargetStatus::Started,
             "STOPPED" => SimulationTargetStatus::Stopped,
             "UNKNOWN" => SimulationTargetStatus::UnknownValue,
-            other => {
-                SimulationTargetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SimulationTargetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SimulationTargetStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SimulationTargetStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SimulationTargetStatus::from(s))
+                }
+            }
 impl SimulationTargetStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -769,12 +723,14 @@ impl SimulationTargetStatus {
             SimulationTargetStatus::Started => "STARTED",
             SimulationTargetStatus::Stopped => "STOPPED",
             SimulationTargetStatus::UnknownValue => "UNKNOWN",
-            SimulationTargetStatus::Unknown(value) => value.as_str(),
+            SimulationTargetStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DELETED", "STARTED", "STOPPED", "UNKNOWN"]
+        &[
+            "DELETED", "STARTED", "STOPPED", "UNKNOWN"
+        ]
     }
 }
 impl AsRef<str> for SimulationTargetStatus {
@@ -789,9 +745,9 @@ impl AsRef<str> for SimulationTargetStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let simulationstatus = unimplemented!();
 /// match simulationstatus {
@@ -819,22 +775,14 @@ impl AsRef<str> for SimulationTargetStatus {
 /// Specifically, when `simulationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SimulationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `SimulationStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SimulationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleted,
@@ -853,7 +801,7 @@ pub enum SimulationStatus {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SimulationStatus {
     fn from(s: &str) -> Self {
@@ -866,17 +814,17 @@ impl std::convert::From<&str> for SimulationStatus {
             "STOPPED" => SimulationStatus::Stopped,
             "STOPPING" => SimulationStatus::Stopping,
             "UNKNOWN" => SimulationStatus::UnknownValue,
-            other => SimulationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SimulationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SimulationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SimulationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SimulationStatus::from(s))
+                }
+            }
 impl SimulationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -889,14 +837,13 @@ impl SimulationStatus {
             SimulationStatus::Stopped => "STOPPED",
             SimulationStatus::Stopping => "STOPPING",
             SimulationStatus::UnknownValue => "UNKNOWN",
-            SimulationStatus::Unknown(value) => value.as_str(),
+            SimulationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DELETED", "DELETING", "FAILED", "STARTED", "STARTING", "STOPPED", "STOPPING",
-            "UNKNOWN",
+            "DELETED", "DELETING", "FAILED", "STARTED", "STARTING", "STOPPED", "STOPPING", "UNKNOWN"
         ]
     }
 }
@@ -909,7 +856,7 @@ impl AsRef<str> for SimulationStatus {
 /// <p>A location in Amazon Simple Storage Service (Amazon S3) where SimSpace Weaver stores simulation data, such as your app zip files and schema file. For more information about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>The name of an Amazon S3 bucket. For more information about buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating, configuring, and working with Amazon S3 buckets</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
@@ -919,17 +866,17 @@ pub struct S3Location {
 }
 impl S3Location {
     /// <p>The name of an Amazon S3 bucket. For more information about buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating, configuring, and working with Amazon S3 buckets</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The key name of an object in Amazon S3. For more information about Amazon S3 objects and object keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/uploading-downloading-objects.html">Uploading, downloading, and working with objects in Amazon S3</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
-    pub fn object_key(&self) -> std::option::Option<&str> {
+    pub fn object_key(&self) -> std::option::Option<& str> {
         self.object_key.as_deref()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
-
+    
     /// A builder for [`S3Location`](crate::model::S3Location).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -944,8 +891,7 @@ pub mod s3_location {
         }
         /// <p>The name of an Amazon S3 bucket. For more information about buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating, configuring, and working with Amazon S3 buckets</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_name = input;
-            self
+            self.bucket_name = input; self
         }
         /// <p>The key name of an object in Amazon S3. For more information about Amazon S3 objects and object keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/uploading-downloading-objects.html">Uploading, downloading, and working with objects in Amazon S3</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
         pub fn object_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -954,17 +900,20 @@ pub mod s3_location {
         }
         /// <p>The key name of an object in Amazon S3. For more information about Amazon S3 objects and object keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/uploading-downloading-objects.html">Uploading, downloading, and working with objects in Amazon S3</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
         pub fn set_object_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.object_key = input;
-            self
+            self.object_key = input; self
         }
         /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location).
         pub fn build(self) -> crate::model::S3Location {
             crate::model::S3Location {
-                bucket_name: self.bucket_name,
-                object_key: self.object_key,
+                bucket_name: self.bucket_name
+                ,
+                object_key: self.object_key
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Location {
     /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
@@ -976,31 +925,31 @@ impl S3Location {
 /// <p>A collection of additional state information, such as domain and clock configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LiveSimulationState {
+pub struct LiveSimulationState  {
     /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
     #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<crate::model::Domain>>,
-    /// <p>A list of simulation clocks.</p> <note>
-    /// <p>At this time, a simulation has only one clock.</p>
+    /// <p>A list of simulation clocks.</p> <note> 
+    /// <p>At this time, a simulation has only one clock.</p> 
     /// </note>
     #[doc(hidden)]
     pub clocks: std::option::Option<std::vec::Vec<crate::model::SimulationClock>>,
 }
 impl LiveSimulationState {
     /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
-    pub fn domains(&self) -> std::option::Option<&[crate::model::Domain]> {
+    pub fn domains(&self) -> std::option::Option<& [crate::model::Domain]> {
         self.domains.as_deref()
     }
-    /// <p>A list of simulation clocks.</p> <note>
-    /// <p>At this time, a simulation has only one clock.</p>
+    /// <p>A list of simulation clocks.</p> <note> 
+    /// <p>At this time, a simulation has only one clock.</p> 
     /// </note>
-    pub fn clocks(&self) -> std::option::Option<&[crate::model::SimulationClock]> {
+    pub fn clocks(&self) -> std::option::Option<& [crate::model::SimulationClock]> {
         self.clocks.as_deref()
     }
 }
 /// See [`LiveSimulationState`](crate::model::LiveSimulationState).
 pub mod live_simulation_state {
-
+    
     /// A builder for [`LiveSimulationState`](crate::model::LiveSimulationState).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1015,49 +964,45 @@ pub mod live_simulation_state {
         /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
         pub fn domains(mut self, input: crate::model::Domain) -> Self {
             let mut v = self.domains.unwrap_or_default();
-            v.push(input);
-            self.domains = Some(v);
-            self
+                            v.push(input);
+                            self.domains = Some(v);
+                            self
         }
         /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
-        pub fn set_domains(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Domain>>,
-        ) -> Self {
-            self.domains = input;
-            self
+        pub fn set_domains(mut self, input: std::option::Option<std::vec::Vec<crate::model::Domain>>) -> Self {
+            self.domains = input; self
         }
         /// Appends an item to `clocks`.
         ///
         /// To override the contents of this collection use [`set_clocks`](Self::set_clocks).
         ///
-        /// <p>A list of simulation clocks.</p> <note>
-        /// <p>At this time, a simulation has only one clock.</p>
+        /// <p>A list of simulation clocks.</p> <note> 
+        /// <p>At this time, a simulation has only one clock.</p> 
         /// </note>
         pub fn clocks(mut self, input: crate::model::SimulationClock) -> Self {
             let mut v = self.clocks.unwrap_or_default();
-            v.push(input);
-            self.clocks = Some(v);
-            self
+                            v.push(input);
+                            self.clocks = Some(v);
+                            self
         }
-        /// <p>A list of simulation clocks.</p> <note>
-        /// <p>At this time, a simulation has only one clock.</p>
+        /// <p>A list of simulation clocks.</p> <note> 
+        /// <p>At this time, a simulation has only one clock.</p> 
         /// </note>
-        pub fn set_clocks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SimulationClock>>,
-        ) -> Self {
-            self.clocks = input;
-            self
+        pub fn set_clocks(mut self, input: std::option::Option<std::vec::Vec<crate::model::SimulationClock>>) -> Self {
+            self.clocks = input; self
         }
         /// Consumes the builder and constructs a [`LiveSimulationState`](crate::model::LiveSimulationState).
         pub fn build(self) -> crate::model::LiveSimulationState {
             crate::model::LiveSimulationState {
-                domains: self.domains,
-                clocks: self.clocks,
+                domains: self.domains
+                ,
+                clocks: self.clocks
+                ,
             }
         }
     }
+    
+    
 }
 impl LiveSimulationState {
     /// Creates a new builder-style object to manufacture [`LiveSimulationState`](crate::model::LiveSimulationState).
@@ -1069,7 +1014,7 @@ impl LiveSimulationState {
 /// <p>Status information about the simulation clock.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimulationClock {
+pub struct SimulationClock  {
     /// <p>The current status of the simulation clock.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ClockStatus>,
@@ -1079,17 +1024,17 @@ pub struct SimulationClock {
 }
 impl SimulationClock {
     /// <p>The current status of the simulation clock.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ClockStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ClockStatus> {
         self.status.as_ref()
     }
     /// <p>The desired status of the simulation clock.</p>
-    pub fn target_status(&self) -> std::option::Option<&crate::model::ClockTargetStatus> {
+    pub fn target_status(&self) -> std::option::Option<& crate::model::ClockTargetStatus> {
         self.target_status.as_ref()
     }
 }
 /// See [`SimulationClock`](crate::model::SimulationClock).
 pub mod simulation_clock {
-
+    
     /// A builder for [`SimulationClock`](crate::model::SimulationClock).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1104,8 +1049,7 @@ pub mod simulation_clock {
         }
         /// <p>The current status of the simulation clock.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::ClockStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The desired status of the simulation clock.</p>
         pub fn target_status(mut self, input: crate::model::ClockTargetStatus) -> Self {
@@ -1113,21 +1057,21 @@ pub mod simulation_clock {
             self
         }
         /// <p>The desired status of the simulation clock.</p>
-        pub fn set_target_status(
-            mut self,
-            input: std::option::Option<crate::model::ClockTargetStatus>,
-        ) -> Self {
-            self.target_status = input;
-            self
+        pub fn set_target_status(mut self, input: std::option::Option<crate::model::ClockTargetStatus>) -> Self {
+            self.target_status = input; self
         }
         /// Consumes the builder and constructs a [`SimulationClock`](crate::model::SimulationClock).
         pub fn build(self) -> crate::model::SimulationClock {
             crate::model::SimulationClock {
-                status: self.status,
-                target_status: self.target_status,
+                status: self.status
+                ,
+                target_status: self.target_status
+                ,
             }
         }
     }
+    
+    
 }
 impl SimulationClock {
     /// Creates a new builder-style object to manufacture [`SimulationClock`](crate::model::SimulationClock).
@@ -1142,9 +1086,9 @@ impl SimulationClock {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let clocktargetstatus = unimplemented!();
 /// match clocktargetstatus {
@@ -1167,22 +1111,14 @@ impl SimulationClock {
 /// Specifically, when `clocktargetstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ClockTargetStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `ClockTargetStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ClockTargetStatus {
     #[allow(missing_docs)] // documentation missing in model
     Started,
@@ -1191,7 +1127,7 @@ pub enum ClockTargetStatus {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ClockTargetStatus {
     fn from(s: &str) -> Self {
@@ -1199,19 +1135,17 @@ impl std::convert::From<&str> for ClockTargetStatus {
             "STARTED" => ClockTargetStatus::Started,
             "STOPPED" => ClockTargetStatus::Stopped,
             "UNKNOWN" => ClockTargetStatus::UnknownValue,
-            other => {
-                ClockTargetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ClockTargetStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ClockTargetStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ClockTargetStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ClockTargetStatus::from(s))
+                }
+            }
 impl ClockTargetStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1219,12 +1153,14 @@ impl ClockTargetStatus {
             ClockTargetStatus::Started => "STARTED",
             ClockTargetStatus::Stopped => "STOPPED",
             ClockTargetStatus::UnknownValue => "UNKNOWN",
-            ClockTargetStatus::Unknown(value) => value.as_str(),
+            ClockTargetStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["STARTED", "STOPPED", "UNKNOWN"]
+        &[
+            "STARTED", "STOPPED", "UNKNOWN"
+        ]
     }
 }
 impl AsRef<str> for ClockTargetStatus {
@@ -1239,9 +1175,9 @@ impl AsRef<str> for ClockTargetStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let clockstatus = unimplemented!();
 /// match clockstatus {
@@ -1266,22 +1202,14 @@ impl AsRef<str> for ClockTargetStatus {
 /// Specifically, when `clockstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ClockStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `ClockStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ClockStatus {
     #[allow(missing_docs)] // documentation missing in model
     Started,
@@ -1294,7 +1222,7 @@ pub enum ClockStatus {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ClockStatus {
     fn from(s: &str) -> Self {
@@ -1304,17 +1232,17 @@ impl std::convert::From<&str> for ClockStatus {
             "STOPPED" => ClockStatus::Stopped,
             "STOPPING" => ClockStatus::Stopping,
             "UNKNOWN" => ClockStatus::UnknownValue,
-            other => ClockStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ClockStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ClockStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ClockStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ClockStatus::from(s))
+                }
+            }
 impl ClockStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1324,12 +1252,14 @@ impl ClockStatus {
             ClockStatus::Stopped => "STOPPED",
             ClockStatus::Stopping => "STOPPING",
             ClockStatus::UnknownValue => "UNKNOWN",
-            ClockStatus::Unknown(value) => value.as_str(),
+            ClockStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["STARTED", "STARTING", "STOPPED", "STOPPING", "UNKNOWN"]
+        &[
+            "STARTED", "STARTING", "STOPPED", "STOPPING", "UNKNOWN"
+        ]
     }
 }
 impl AsRef<str> for ClockStatus {
@@ -1338,47 +1268,47 @@ impl AsRef<str> for ClockStatus {
     }
 }
 
-/// <p>A collection of app instances that run the same executable app code and have the same launch options and commands.</p>
+/// <p>A collection of app instances that run the same executable app code and have the same launch options and commands.</p> 
 /// <p>For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Domain {
+pub struct Domain  {
     /// <p>The name of the domain.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of lifecycle management for apps in the domain. This value indicates whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).</p>
-    /// <p class="title"> <b>Lifecycle types</b> </p>
-    /// <ul>
-    /// <li> <p> <code>PerWorker</code> – Managed: SimSpace Weaver starts 1 app on each worker</p> </li>
-    /// <li> <p> <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for each spatial partition</p> </li>
-    /// <li> <p> <code>ByRequest</code> – Unmanaged: You use the <b>StartApp</b> API to start the apps and use the <b>StopApp</b> API to stop the apps.</p> </li>
-    /// </ul> <note>
-    /// <p>The lifecycle types will change when the service is released for general availability (GA).</p>
+    /// <p>The type of lifecycle management for apps in the domain. This value indicates whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).</p> 
+    /// <p class="title"> <b>Lifecycle types</b> </p> 
+    /// <ul> 
+    /// <li> <p> <code>PerWorker</code> – Managed: SimSpace Weaver starts 1 app on each worker</p> </li> 
+    /// <li> <p> <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for each spatial partition</p> </li> 
+    /// <li> <p> <code>ByRequest</code> – Unmanaged: You use the <b>StartApp</b> API to start the apps and use the <b>StopApp</b> API to stop the apps.</p> </li> 
+    /// </ul> <note> 
+    /// <p>The lifecycle types will change when the service is released for general availability (GA).</p> 
     /// </note>
     #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::model::LifecycleManagementStrategy>,
 }
 impl Domain {
     /// <p>The name of the domain.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The type of lifecycle management for apps in the domain. This value indicates whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).</p>
-    /// <p class="title"> <b>Lifecycle types</b> </p>
-    /// <ul>
-    /// <li> <p> <code>PerWorker</code> – Managed: SimSpace Weaver starts 1 app on each worker</p> </li>
-    /// <li> <p> <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for each spatial partition</p> </li>
-    /// <li> <p> <code>ByRequest</code> – Unmanaged: You use the <b>StartApp</b> API to start the apps and use the <b>StopApp</b> API to stop the apps.</p> </li>
-    /// </ul> <note>
-    /// <p>The lifecycle types will change when the service is released for general availability (GA).</p>
+    /// <p>The type of lifecycle management for apps in the domain. This value indicates whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).</p> 
+    /// <p class="title"> <b>Lifecycle types</b> </p> 
+    /// <ul> 
+    /// <li> <p> <code>PerWorker</code> – Managed: SimSpace Weaver starts 1 app on each worker</p> </li> 
+    /// <li> <p> <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for each spatial partition</p> </li> 
+    /// <li> <p> <code>ByRequest</code> – Unmanaged: You use the <b>StartApp</b> API to start the apps and use the <b>StopApp</b> API to stop the apps.</p> </li> 
+    /// </ul> <note> 
+    /// <p>The lifecycle types will change when the service is released for general availability (GA).</p> 
     /// </note>
-    pub fn lifecycle(&self) -> std::option::Option<&crate::model::LifecycleManagementStrategy> {
+    pub fn lifecycle(&self) -> std::option::Option<& crate::model::LifecycleManagementStrategy> {
         self.lifecycle.as_ref()
     }
 }
 /// See [`Domain`](crate::model::Domain).
 pub mod domain {
-
+    
     /// A builder for [`Domain`](crate::model::Domain).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1393,46 +1323,45 @@ pub mod domain {
         }
         /// <p>The name of the domain.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The type of lifecycle management for apps in the domain. This value indicates whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).</p>
-        /// <p class="title"> <b>Lifecycle types</b> </p>
-        /// <ul>
-        /// <li> <p> <code>PerWorker</code> – Managed: SimSpace Weaver starts 1 app on each worker</p> </li>
-        /// <li> <p> <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for each spatial partition</p> </li>
-        /// <li> <p> <code>ByRequest</code> – Unmanaged: You use the <b>StartApp</b> API to start the apps and use the <b>StopApp</b> API to stop the apps.</p> </li>
-        /// </ul> <note>
-        /// <p>The lifecycle types will change when the service is released for general availability (GA).</p>
+        /// <p>The type of lifecycle management for apps in the domain. This value indicates whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).</p> 
+        /// <p class="title"> <b>Lifecycle types</b> </p> 
+        /// <ul> 
+        /// <li> <p> <code>PerWorker</code> – Managed: SimSpace Weaver starts 1 app on each worker</p> </li> 
+        /// <li> <p> <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for each spatial partition</p> </li> 
+        /// <li> <p> <code>ByRequest</code> – Unmanaged: You use the <b>StartApp</b> API to start the apps and use the <b>StopApp</b> API to stop the apps.</p> </li> 
+        /// </ul> <note> 
+        /// <p>The lifecycle types will change when the service is released for general availability (GA).</p> 
         /// </note>
         pub fn lifecycle(mut self, input: crate::model::LifecycleManagementStrategy) -> Self {
             self.lifecycle = Some(input);
             self
         }
-        /// <p>The type of lifecycle management for apps in the domain. This value indicates whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).</p>
-        /// <p class="title"> <b>Lifecycle types</b> </p>
-        /// <ul>
-        /// <li> <p> <code>PerWorker</code> – Managed: SimSpace Weaver starts 1 app on each worker</p> </li>
-        /// <li> <p> <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for each spatial partition</p> </li>
-        /// <li> <p> <code>ByRequest</code> – Unmanaged: You use the <b>StartApp</b> API to start the apps and use the <b>StopApp</b> API to stop the apps.</p> </li>
-        /// </ul> <note>
-        /// <p>The lifecycle types will change when the service is released for general availability (GA).</p>
+        /// <p>The type of lifecycle management for apps in the domain. This value indicates whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).</p> 
+        /// <p class="title"> <b>Lifecycle types</b> </p> 
+        /// <ul> 
+        /// <li> <p> <code>PerWorker</code> – Managed: SimSpace Weaver starts 1 app on each worker</p> </li> 
+        /// <li> <p> <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for each spatial partition</p> </li> 
+        /// <li> <p> <code>ByRequest</code> – Unmanaged: You use the <b>StartApp</b> API to start the apps and use the <b>StopApp</b> API to stop the apps.</p> </li> 
+        /// </ul> <note> 
+        /// <p>The lifecycle types will change when the service is released for general availability (GA).</p> 
         /// </note>
-        pub fn set_lifecycle(
-            mut self,
-            input: std::option::Option<crate::model::LifecycleManagementStrategy>,
-        ) -> Self {
-            self.lifecycle = input;
-            self
+        pub fn set_lifecycle(mut self, input: std::option::Option<crate::model::LifecycleManagementStrategy>) -> Self {
+            self.lifecycle = input; self
         }
         /// Consumes the builder and constructs a [`Domain`](crate::model::Domain).
         pub fn build(self) -> crate::model::Domain {
             crate::model::Domain {
-                name: self.name,
-                lifecycle: self.lifecycle,
+                name: self.name
+                ,
+                lifecycle: self.lifecycle
+                ,
             }
         }
     }
+    
+    
 }
 impl Domain {
     /// Creates a new builder-style object to manufacture [`Domain`](crate::model::Domain).
@@ -1447,9 +1376,9 @@ impl Domain {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let lifecyclemanagementstrategy = unimplemented!();
 /// match lifecyclemanagementstrategy {
@@ -1473,22 +1402,14 @@ impl Domain {
 /// Specifically, when `lifecyclemanagementstrategy` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LifecycleManagementStrategy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `LifecycleManagementStrategy::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LifecycleManagementStrategy {
     #[allow(missing_docs)] // documentation missing in model
     ByRequest,
@@ -1499,7 +1420,7 @@ pub enum LifecycleManagementStrategy {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LifecycleManagementStrategy {
     fn from(s: &str) -> Self {
@@ -1508,19 +1429,17 @@ impl std::convert::From<&str> for LifecycleManagementStrategy {
             "BySpatialSubdivision" => LifecycleManagementStrategy::BySpatialSubdivision,
             "PerWorker" => LifecycleManagementStrategy::PerWorker,
             "Unknown" => LifecycleManagementStrategy::UnknownValue,
-            other => LifecycleManagementStrategy::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => LifecycleManagementStrategy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LifecycleManagementStrategy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LifecycleManagementStrategy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LifecycleManagementStrategy::from(s))
+                }
+            }
 impl LifecycleManagementStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1529,12 +1448,14 @@ impl LifecycleManagementStrategy {
             LifecycleManagementStrategy::BySpatialSubdivision => "BySpatialSubdivision",
             LifecycleManagementStrategy::PerWorker => "PerWorker",
             LifecycleManagementStrategy::UnknownValue => "Unknown",
-            LifecycleManagementStrategy::Unknown(value) => value.as_str(),
+            LifecycleManagementStrategy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ByRequest", "BySpatialSubdivision", "PerWorker", "Unknown"]
+        &[
+            "ByRequest", "BySpatialSubdivision", "PerWorker", "Unknown"
+        ]
     }
 }
 impl AsRef<str> for LifecycleManagementStrategy {
@@ -1546,20 +1467,20 @@ impl AsRef<str> for LifecycleManagementStrategy {
 /// <p>The logging configuration for a simulation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoggingConfiguration {
+pub struct LoggingConfiguration  {
     /// <p>A list of the locations where SimSpace Weaver sends simulation log data.</p>
     #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::LogDestination>>,
 }
 impl LoggingConfiguration {
     /// <p>A list of the locations where SimSpace Weaver sends simulation log data.</p>
-    pub fn destinations(&self) -> std::option::Option<&[crate::model::LogDestination]> {
+    pub fn destinations(&self) -> std::option::Option<& [crate::model::LogDestination]> {
         self.destinations.as_deref()
     }
 }
 /// See [`LoggingConfiguration`](crate::model::LoggingConfiguration).
 pub mod logging_configuration {
-
+    
     /// A builder for [`LoggingConfiguration`](crate::model::LoggingConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1573,25 +1494,24 @@ pub mod logging_configuration {
         /// <p>A list of the locations where SimSpace Weaver sends simulation log data.</p>
         pub fn destinations(mut self, input: crate::model::LogDestination) -> Self {
             let mut v = self.destinations.unwrap_or_default();
-            v.push(input);
-            self.destinations = Some(v);
-            self
+                            v.push(input);
+                            self.destinations = Some(v);
+                            self
         }
         /// <p>A list of the locations where SimSpace Weaver sends simulation log data.</p>
-        pub fn set_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LogDestination>>,
-        ) -> Self {
-            self.destinations = input;
-            self
+        pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::LogDestination>>) -> Self {
+            self.destinations = input; self
         }
         /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::model::LoggingConfiguration).
         pub fn build(self) -> crate::model::LoggingConfiguration {
             crate::model::LoggingConfiguration {
-                destinations: self.destinations,
+                destinations: self.destinations
+                ,
             }
         }
     }
+    
+    
 }
 impl LoggingConfiguration {
     /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
@@ -1603,52 +1523,45 @@ impl LoggingConfiguration {
 /// <p>The location where SimSpace Weaver sends simulation log data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogDestination {
+pub struct LogDestination  {
     /// <p>An Amazon CloudWatch Logs log group that stores simulation log data. For more information about log groups, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with log groups and log streams</a> in the <i>Amazon CloudWatch Logs User Guide</i>.</p>
     #[doc(hidden)]
     pub cloud_watch_logs_log_group: std::option::Option<crate::model::CloudWatchLogsLogGroup>,
 }
 impl LogDestination {
     /// <p>An Amazon CloudWatch Logs log group that stores simulation log data. For more information about log groups, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with log groups and log streams</a> in the <i>Amazon CloudWatch Logs User Guide</i>.</p>
-    pub fn cloud_watch_logs_log_group(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchLogsLogGroup> {
+    pub fn cloud_watch_logs_log_group(&self) -> std::option::Option<& crate::model::CloudWatchLogsLogGroup> {
         self.cloud_watch_logs_log_group.as_ref()
     }
 }
 /// See [`LogDestination`](crate::model::LogDestination).
 pub mod log_destination {
-
+    
     /// A builder for [`LogDestination`](crate::model::LogDestination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) cloud_watch_logs_log_group:
-            std::option::Option<crate::model::CloudWatchLogsLogGroup>,
+        pub(crate) cloud_watch_logs_log_group: std::option::Option<crate::model::CloudWatchLogsLogGroup>,
     }
     impl Builder {
         /// <p>An Amazon CloudWatch Logs log group that stores simulation log data. For more information about log groups, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with log groups and log streams</a> in the <i>Amazon CloudWatch Logs User Guide</i>.</p>
-        pub fn cloud_watch_logs_log_group(
-            mut self,
-            input: crate::model::CloudWatchLogsLogGroup,
-        ) -> Self {
+        pub fn cloud_watch_logs_log_group(mut self, input: crate::model::CloudWatchLogsLogGroup) -> Self {
             self.cloud_watch_logs_log_group = Some(input);
             self
         }
         /// <p>An Amazon CloudWatch Logs log group that stores simulation log data. For more information about log groups, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with log groups and log streams</a> in the <i>Amazon CloudWatch Logs User Guide</i>.</p>
-        pub fn set_cloud_watch_logs_log_group(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchLogsLogGroup>,
-        ) -> Self {
-            self.cloud_watch_logs_log_group = input;
-            self
+        pub fn set_cloud_watch_logs_log_group(mut self, input: std::option::Option<crate::model::CloudWatchLogsLogGroup>) -> Self {
+            self.cloud_watch_logs_log_group = input; self
         }
         /// Consumes the builder and constructs a [`LogDestination`](crate::model::LogDestination).
         pub fn build(self) -> crate::model::LogDestination {
             crate::model::LogDestination {
-                cloud_watch_logs_log_group: self.cloud_watch_logs_log_group,
+                cloud_watch_logs_log_group: self.cloud_watch_logs_log_group
+                ,
             }
         }
     }
+    
+    
 }
 impl LogDestination {
     /// Creates a new builder-style object to manufacture [`LogDestination`](crate::model::LogDestination).
@@ -1660,20 +1573,20 @@ impl LogDestination {
 /// <p>The Amazon CloudWatch Logs log group for the simulation. For more information about log groups, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with log groups and log streams</a> in the <i>Amazon CloudWatch Logs User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchLogsLogGroup {
+pub struct CloudWatchLogsLogGroup  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log group for the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. For more information about log groups, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with log groups and log streams</a> in the <i>Amazon CloudWatch Logs User Guide</i>.</p>
     #[doc(hidden)]
     pub log_group_arn: std::option::Option<std::string::String>,
 }
 impl CloudWatchLogsLogGroup {
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log group for the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. For more information about log groups, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with log groups and log streams</a> in the <i>Amazon CloudWatch Logs User Guide</i>.</p>
-    pub fn log_group_arn(&self) -> std::option::Option<&str> {
+    pub fn log_group_arn(&self) -> std::option::Option<& str> {
         self.log_group_arn.as_deref()
     }
 }
 /// See [`CloudWatchLogsLogGroup`](crate::model::CloudWatchLogsLogGroup).
 pub mod cloud_watch_logs_log_group {
-
+    
     /// A builder for [`CloudWatchLogsLogGroup`](crate::model::CloudWatchLogsLogGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1686,20 +1599,19 @@ pub mod cloud_watch_logs_log_group {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch Logs log group for the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>. For more information about log groups, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with log groups and log streams</a> in the <i>Amazon CloudWatch Logs User Guide</i>.</p>
-        pub fn set_log_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_group_arn = input;
-            self
+        pub fn set_log_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_group_arn = input; self
         }
         /// Consumes the builder and constructs a [`CloudWatchLogsLogGroup`](crate::model::CloudWatchLogsLogGroup).
         pub fn build(self) -> crate::model::CloudWatchLogsLogGroup {
             crate::model::CloudWatchLogsLogGroup {
-                log_group_arn: self.log_group_arn,
+                log_group_arn: self.log_group_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudWatchLogsLogGroup {
     /// Creates a new builder-style object to manufacture [`CloudWatchLogsLogGroup`](crate::model::CloudWatchLogsLogGroup).
@@ -1707,3 +1619,4 @@ impl CloudWatchLogsLogGroup {
         crate::model::cloud_watch_logs_log_group::Builder::default()
     }
 }
+

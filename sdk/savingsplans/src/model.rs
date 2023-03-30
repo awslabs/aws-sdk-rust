@@ -3,7 +3,7 @@
 /// <p>Information about a Savings Plan offering.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlanOffering {
+pub struct SavingsPlanOffering  {
     /// <p>The ID of the offering.</p>
     #[doc(hidden)]
     pub offering_id: std::option::Option<std::string::String>,
@@ -40,23 +40,23 @@ pub struct SavingsPlanOffering {
 }
 impl SavingsPlanOffering {
     /// <p>The ID of the offering.</p>
-    pub fn offering_id(&self) -> std::option::Option<&str> {
+    pub fn offering_id(&self) -> std::option::Option<& str> {
         self.offering_id.as_deref()
     }
     /// <p>The product type.</p>
-    pub fn product_types(&self) -> std::option::Option<&[crate::model::SavingsPlanProductType]> {
+    pub fn product_types(&self) -> std::option::Option<& [crate::model::SavingsPlanProductType]> {
         self.product_types.as_deref()
     }
     /// <p>The plan type.</p>
-    pub fn plan_type(&self) -> std::option::Option<&crate::model::SavingsPlanType> {
+    pub fn plan_type(&self) -> std::option::Option<& crate::model::SavingsPlanType> {
         self.plan_type.as_ref()
     }
     /// <p>The description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The payment option.</p>
-    pub fn payment_option(&self) -> std::option::Option<&crate::model::SavingsPlanPaymentOption> {
+    pub fn payment_option(&self) -> std::option::Option<& crate::model::SavingsPlanPaymentOption> {
         self.payment_option.as_ref()
     }
     /// <p>The duration, in seconds.</p>
@@ -64,35 +64,34 @@ impl SavingsPlanOffering {
         self.duration_seconds
     }
     /// <p>The currency.</p>
-    pub fn currency(&self) -> std::option::Option<&crate::model::CurrencyCode> {
+    pub fn currency(&self) -> std::option::Option<& crate::model::CurrencyCode> {
         self.currency.as_ref()
     }
     /// <p>The service.</p>
-    pub fn service_code(&self) -> std::option::Option<&str> {
+    pub fn service_code(&self) -> std::option::Option<& str> {
         self.service_code.as_deref()
     }
     /// <p>The usage details of the line item in the billing report.</p>
-    pub fn usage_type(&self) -> std::option::Option<&str> {
+    pub fn usage_type(&self) -> std::option::Option<& str> {
         self.usage_type.as_deref()
     }
     /// <p>The specific AWS operation for the line item in the billing report.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The properties.</p>
-    pub fn properties(&self) -> std::option::Option<&[crate::model::SavingsPlanOfferingProperty]> {
+    pub fn properties(&self) -> std::option::Option<& [crate::model::SavingsPlanOfferingProperty]> {
         self.properties.as_deref()
     }
 }
 /// See [`SavingsPlanOffering`](crate::model::SavingsPlanOffering).
 pub mod savings_plan_offering {
-
+    
     /// A builder for [`SavingsPlanOffering`](crate::model::SavingsPlanOffering).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) offering_id: std::option::Option<std::string::String>,
-        pub(crate) product_types:
-            std::option::Option<std::vec::Vec<crate::model::SavingsPlanProductType>>,
+        pub(crate) product_types: std::option::Option<std::vec::Vec<crate::model::SavingsPlanProductType>>,
         pub(crate) plan_type: std::option::Option<crate::model::SavingsPlanType>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) payment_option: std::option::Option<crate::model::SavingsPlanPaymentOption>,
@@ -101,8 +100,7 @@ pub mod savings_plan_offering {
         pub(crate) service_code: std::option::Option<std::string::String>,
         pub(crate) usage_type: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<std::string::String>,
-        pub(crate) properties:
-            std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingProperty>>,
+        pub(crate) properties: std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingProperty>>,
     }
     impl Builder {
         /// <p>The ID of the offering.</p>
@@ -112,8 +110,7 @@ pub mod savings_plan_offering {
         }
         /// <p>The ID of the offering.</p>
         pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.offering_id = input;
-            self
+            self.offering_id = input; self
         }
         /// Appends an item to `product_types`.
         ///
@@ -122,17 +119,13 @@ pub mod savings_plan_offering {
         /// <p>The product type.</p>
         pub fn product_types(mut self, input: crate::model::SavingsPlanProductType) -> Self {
             let mut v = self.product_types.unwrap_or_default();
-            v.push(input);
-            self.product_types = Some(v);
-            self
+                            v.push(input);
+                            self.product_types = Some(v);
+                            self
         }
         /// <p>The product type.</p>
-        pub fn set_product_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanProductType>>,
-        ) -> Self {
-            self.product_types = input;
-            self
+        pub fn set_product_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanProductType>>) -> Self {
+            self.product_types = input; self
         }
         /// <p>The plan type.</p>
         pub fn plan_type(mut self, input: crate::model::SavingsPlanType) -> Self {
@@ -140,12 +133,8 @@ pub mod savings_plan_offering {
             self
         }
         /// <p>The plan type.</p>
-        pub fn set_plan_type(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlanType>,
-        ) -> Self {
-            self.plan_type = input;
-            self
+        pub fn set_plan_type(mut self, input: std::option::Option<crate::model::SavingsPlanType>) -> Self {
+            self.plan_type = input; self
         }
         /// <p>The description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -154,8 +143,7 @@ pub mod savings_plan_offering {
         }
         /// <p>The description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The payment option.</p>
         pub fn payment_option(mut self, input: crate::model::SavingsPlanPaymentOption) -> Self {
@@ -163,12 +151,8 @@ pub mod savings_plan_offering {
             self
         }
         /// <p>The payment option.</p>
-        pub fn set_payment_option(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlanPaymentOption>,
-        ) -> Self {
-            self.payment_option = input;
-            self
+        pub fn set_payment_option(mut self, input: std::option::Option<crate::model::SavingsPlanPaymentOption>) -> Self {
+            self.payment_option = input; self
         }
         /// <p>The duration, in seconds.</p>
         pub fn duration_seconds(mut self, input: i64) -> Self {
@@ -177,8 +161,7 @@ pub mod savings_plan_offering {
         }
         /// <p>The duration, in seconds.</p>
         pub fn set_duration_seconds(mut self, input: std::option::Option<i64>) -> Self {
-            self.duration_seconds = input;
-            self
+            self.duration_seconds = input; self
         }
         /// <p>The currency.</p>
         pub fn currency(mut self, input: crate::model::CurrencyCode) -> Self {
@@ -186,12 +169,8 @@ pub mod savings_plan_offering {
             self
         }
         /// <p>The currency.</p>
-        pub fn set_currency(
-            mut self,
-            input: std::option::Option<crate::model::CurrencyCode>,
-        ) -> Self {
-            self.currency = input;
-            self
+        pub fn set_currency(mut self, input: std::option::Option<crate::model::CurrencyCode>) -> Self {
+            self.currency = input; self
         }
         /// <p>The service.</p>
         pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -200,8 +179,7 @@ pub mod savings_plan_offering {
         }
         /// <p>The service.</p>
         pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_code = input;
-            self
+            self.service_code = input; self
         }
         /// <p>The usage details of the line item in the billing report.</p>
         pub fn usage_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -210,8 +188,7 @@ pub mod savings_plan_offering {
         }
         /// <p>The usage details of the line item in the billing report.</p>
         pub fn set_usage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.usage_type = input;
-            self
+            self.usage_type = input; self
         }
         /// <p>The specific AWS operation for the line item in the billing report.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -220,8 +197,7 @@ pub mod savings_plan_offering {
         }
         /// <p>The specific AWS operation for the line item in the billing report.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// Appends an item to `properties`.
         ///
@@ -230,35 +206,45 @@ pub mod savings_plan_offering {
         /// <p>The properties.</p>
         pub fn properties(mut self, input: crate::model::SavingsPlanOfferingProperty) -> Self {
             let mut v = self.properties.unwrap_or_default();
-            v.push(input);
-            self.properties = Some(v);
-            self
+                            v.push(input);
+                            self.properties = Some(v);
+                            self
         }
         /// <p>The properties.</p>
-        pub fn set_properties(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingProperty>>,
-        ) -> Self {
-            self.properties = input;
-            self
+        pub fn set_properties(mut self, input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingProperty>>) -> Self {
+            self.properties = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlanOffering`](crate::model::SavingsPlanOffering).
         pub fn build(self) -> crate::model::SavingsPlanOffering {
             crate::model::SavingsPlanOffering {
-                offering_id: self.offering_id,
-                product_types: self.product_types,
-                plan_type: self.plan_type,
-                description: self.description,
-                payment_option: self.payment_option,
-                duration_seconds: self.duration_seconds.unwrap_or_default(),
-                currency: self.currency,
-                service_code: self.service_code,
-                usage_type: self.usage_type,
-                operation: self.operation,
-                properties: self.properties,
+                offering_id: self.offering_id
+                ,
+                product_types: self.product_types
+                ,
+                plan_type: self.plan_type
+                ,
+                description: self.description
+                ,
+                payment_option: self.payment_option
+                ,
+                duration_seconds: self.duration_seconds
+                    .unwrap_or_default()
+                ,
+                currency: self.currency
+                ,
+                service_code: self.service_code
+                ,
+                usage_type: self.usage_type
+                ,
+                operation: self.operation
+                ,
+                properties: self.properties
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlanOffering {
     /// Creates a new builder-style object to manufacture [`SavingsPlanOffering`](crate::model::SavingsPlanOffering).
@@ -270,7 +256,7 @@ impl SavingsPlanOffering {
 /// <p>Information about a property.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlanOfferingProperty {
+pub struct SavingsPlanOfferingProperty  {
     /// <p>The property name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::SavingsPlanOfferingPropertyKey>,
@@ -280,17 +266,17 @@ pub struct SavingsPlanOfferingProperty {
 }
 impl SavingsPlanOfferingProperty {
     /// <p>The property name.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::SavingsPlanOfferingPropertyKey> {
+    pub fn name(&self) -> std::option::Option<& crate::model::SavingsPlanOfferingPropertyKey> {
         self.name.as_ref()
     }
     /// <p>The property value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`SavingsPlanOfferingProperty`](crate::model::SavingsPlanOfferingProperty).
 pub mod savings_plan_offering_property {
-
+    
     /// A builder for [`SavingsPlanOfferingProperty`](crate::model::SavingsPlanOfferingProperty).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -304,12 +290,8 @@ pub mod savings_plan_offering_property {
             self
         }
         /// <p>The property name.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlanOfferingPropertyKey>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::SavingsPlanOfferingPropertyKey>) -> Self {
+            self.name = input; self
         }
         /// <p>The property value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -318,17 +300,20 @@ pub mod savings_plan_offering_property {
         }
         /// <p>The property value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlanOfferingProperty`](crate::model::SavingsPlanOfferingProperty).
         pub fn build(self) -> crate::model::SavingsPlanOfferingProperty {
             crate::model::SavingsPlanOfferingProperty {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlanOfferingProperty {
     /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingProperty`](crate::model::SavingsPlanOfferingProperty).
@@ -343,9 +328,9 @@ impl SavingsPlanOfferingProperty {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let savingsplanofferingpropertykey = unimplemented!();
 /// match savingsplanofferingpropertykey {
@@ -367,60 +352,52 @@ impl SavingsPlanOfferingProperty {
 /// Specifically, when `savingsplanofferingpropertykey` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SavingsPlanOfferingPropertyKey::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SavingsPlanOfferingPropertyKey {
     #[allow(missing_docs)] // documentation missing in model
     InstanceFamily,
     #[allow(missing_docs)] // documentation missing in model
     Region,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanOfferingPropertyKey {
     fn from(s: &str) -> Self {
         match s {
             "instanceFamily" => SavingsPlanOfferingPropertyKey::InstanceFamily,
             "region" => SavingsPlanOfferingPropertyKey::Region,
-            other => SavingsPlanOfferingPropertyKey::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SavingsPlanOfferingPropertyKey::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SavingsPlanOfferingPropertyKey {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SavingsPlanOfferingPropertyKey::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SavingsPlanOfferingPropertyKey::from(s))
+                }
+            }
 impl SavingsPlanOfferingPropertyKey {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SavingsPlanOfferingPropertyKey::InstanceFamily => "instanceFamily",
             SavingsPlanOfferingPropertyKey::Region => "region",
-            SavingsPlanOfferingPropertyKey::Unknown(value) => value.as_str(),
+            SavingsPlanOfferingPropertyKey::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["instanceFamily", "region"]
+        &[
+            "instanceFamily", "region"
+        ]
     }
 }
 impl AsRef<str> for SavingsPlanOfferingPropertyKey {
@@ -435,9 +412,9 @@ impl AsRef<str> for SavingsPlanOfferingPropertyKey {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let currencycode = unimplemented!();
 /// match currencycode {
@@ -459,58 +436,52 @@ impl AsRef<str> for SavingsPlanOfferingPropertyKey {
 /// Specifically, when `currencycode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CurrencyCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CurrencyCode {
     #[allow(missing_docs)] // documentation missing in model
     Cny,
     #[allow(missing_docs)] // documentation missing in model
     Usd,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CurrencyCode {
     fn from(s: &str) -> Self {
         match s {
             "CNY" => CurrencyCode::Cny,
             "USD" => CurrencyCode::Usd,
-            other => CurrencyCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => CurrencyCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CurrencyCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CurrencyCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CurrencyCode::from(s))
+                }
+            }
 impl CurrencyCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CurrencyCode::Cny => "CNY",
             CurrencyCode::Usd => "USD",
-            CurrencyCode::Unknown(value) => value.as_str(),
+            CurrencyCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CNY", "USD"]
+        &[
+            "CNY", "USD"
+        ]
     }
 }
 impl AsRef<str> for CurrencyCode {
@@ -525,9 +496,9 @@ impl AsRef<str> for CurrencyCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let savingsplanpaymentoption = unimplemented!();
 /// match savingsplanpaymentoption {
@@ -550,22 +521,14 @@ impl AsRef<str> for CurrencyCode {
 /// Specifically, when `savingsplanpaymentoption` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SavingsPlanPaymentOption::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SavingsPlanPaymentOption {
     #[allow(missing_docs)] // documentation missing in model
     AllUpfront,
@@ -574,7 +537,7 @@ pub enum SavingsPlanPaymentOption {
     #[allow(missing_docs)] // documentation missing in model
     PartialUpfront,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanPaymentOption {
     fn from(s: &str) -> Self {
@@ -582,19 +545,17 @@ impl std::convert::From<&str> for SavingsPlanPaymentOption {
             "All Upfront" => SavingsPlanPaymentOption::AllUpfront,
             "No Upfront" => SavingsPlanPaymentOption::NoUpfront,
             "Partial Upfront" => SavingsPlanPaymentOption::PartialUpfront,
-            other => SavingsPlanPaymentOption::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SavingsPlanPaymentOption::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SavingsPlanPaymentOption {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SavingsPlanPaymentOption::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SavingsPlanPaymentOption::from(s))
+                }
+            }
 impl SavingsPlanPaymentOption {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -602,12 +563,14 @@ impl SavingsPlanPaymentOption {
             SavingsPlanPaymentOption::AllUpfront => "All Upfront",
             SavingsPlanPaymentOption::NoUpfront => "No Upfront",
             SavingsPlanPaymentOption::PartialUpfront => "Partial Upfront",
-            SavingsPlanPaymentOption::Unknown(value) => value.as_str(),
+            SavingsPlanPaymentOption::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["All Upfront", "No Upfront", "Partial Upfront"]
+        &[
+            "All Upfront", "No Upfront", "Partial Upfront"
+        ]
     }
 }
 impl AsRef<str> for SavingsPlanPaymentOption {
@@ -622,9 +585,9 @@ impl AsRef<str> for SavingsPlanPaymentOption {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let savingsplantype = unimplemented!();
 /// match savingsplantype {
@@ -647,22 +610,14 @@ impl AsRef<str> for SavingsPlanPaymentOption {
 /// Specifically, when `savingsplantype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SavingsPlanType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SavingsPlanType {
     #[allow(missing_docs)] // documentation missing in model
     Compute,
@@ -671,7 +626,7 @@ pub enum SavingsPlanType {
     #[allow(missing_docs)] // documentation missing in model
     Sagemaker,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanType {
     fn from(s: &str) -> Self {
@@ -679,17 +634,17 @@ impl std::convert::From<&str> for SavingsPlanType {
             "Compute" => SavingsPlanType::Compute,
             "EC2Instance" => SavingsPlanType::Ec2Instance,
             "SageMaker" => SavingsPlanType::Sagemaker,
-            other => SavingsPlanType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SavingsPlanType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SavingsPlanType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SavingsPlanType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SavingsPlanType::from(s))
+                }
+            }
 impl SavingsPlanType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -697,12 +652,14 @@ impl SavingsPlanType {
             SavingsPlanType::Compute => "Compute",
             SavingsPlanType::Ec2Instance => "EC2Instance",
             SavingsPlanType::Sagemaker => "SageMaker",
-            SavingsPlanType::Unknown(value) => value.as_str(),
+            SavingsPlanType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Compute", "EC2Instance", "SageMaker"]
+        &[
+            "Compute", "EC2Instance", "SageMaker"
+        ]
     }
 }
 impl AsRef<str> for SavingsPlanType {
@@ -717,9 +674,9 @@ impl AsRef<str> for SavingsPlanType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let savingsplanproducttype = unimplemented!();
 /// match savingsplanproducttype {
@@ -743,22 +700,14 @@ impl AsRef<str> for SavingsPlanType {
 /// Specifically, when `savingsplanproducttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SavingsPlanProductType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SavingsPlanProductType {
     #[allow(missing_docs)] // documentation missing in model
     Ec2,
@@ -769,7 +718,7 @@ pub enum SavingsPlanProductType {
     #[allow(missing_docs)] // documentation missing in model
     Sagemaker,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanProductType {
     fn from(s: &str) -> Self {
@@ -778,19 +727,17 @@ impl std::convert::From<&str> for SavingsPlanProductType {
             "Fargate" => SavingsPlanProductType::Fargate,
             "Lambda" => SavingsPlanProductType::Lambda,
             "SageMaker" => SavingsPlanProductType::Sagemaker,
-            other => {
-                SavingsPlanProductType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SavingsPlanProductType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SavingsPlanProductType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SavingsPlanProductType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SavingsPlanProductType::from(s))
+                }
+            }
 impl SavingsPlanProductType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -799,12 +746,14 @@ impl SavingsPlanProductType {
             SavingsPlanProductType::Fargate => "Fargate",
             SavingsPlanProductType::Lambda => "Lambda",
             SavingsPlanProductType::Sagemaker => "SageMaker",
-            SavingsPlanProductType::Unknown(value) => value.as_str(),
+            SavingsPlanProductType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EC2", "Fargate", "Lambda", "SageMaker"]
+        &[
+            "EC2", "Fargate", "Lambda", "SageMaker"
+        ]
     }
 }
 impl AsRef<str> for SavingsPlanProductType {
@@ -816,7 +765,7 @@ impl AsRef<str> for SavingsPlanProductType {
 /// <p>Information about a filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlanOfferingFilterElement {
+pub struct SavingsPlanOfferingFilterElement  {
     /// <p>The filter name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::SavingsPlanOfferingFilterAttribute>,
@@ -826,17 +775,17 @@ pub struct SavingsPlanOfferingFilterElement {
 }
 impl SavingsPlanOfferingFilterElement {
     /// <p>The filter name.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::SavingsPlanOfferingFilterAttribute> {
+    pub fn name(&self) -> std::option::Option<& crate::model::SavingsPlanOfferingFilterAttribute> {
         self.name.as_ref()
     }
     /// <p>The filter values.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`SavingsPlanOfferingFilterElement`](crate::model::SavingsPlanOfferingFilterElement).
 pub mod savings_plan_offering_filter_element {
-
+    
     /// A builder for [`SavingsPlanOfferingFilterElement`](crate::model::SavingsPlanOfferingFilterElement).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -850,12 +799,8 @@ pub mod savings_plan_offering_filter_element {
             self
         }
         /// <p>The filter name.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlanOfferingFilterAttribute>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::SavingsPlanOfferingFilterAttribute>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -864,26 +809,26 @@ pub mod savings_plan_offering_filter_element {
         /// <p>The filter values.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The filter values.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlanOfferingFilterElement`](crate::model::SavingsPlanOfferingFilterElement).
         pub fn build(self) -> crate::model::SavingsPlanOfferingFilterElement {
             crate::model::SavingsPlanOfferingFilterElement {
-                name: self.name,
-                values: self.values,
+                name: self.name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlanOfferingFilterElement {
     /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingFilterElement`](crate::model::SavingsPlanOfferingFilterElement).
@@ -898,9 +843,9 @@ impl SavingsPlanOfferingFilterElement {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let savingsplanofferingfilterattribute = unimplemented!();
 /// match savingsplanofferingfilterattribute {
@@ -922,60 +867,52 @@ impl SavingsPlanOfferingFilterElement {
 /// Specifically, when `savingsplanofferingfilterattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SavingsPlanOfferingFilterAttribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SavingsPlanOfferingFilterAttribute {
     #[allow(missing_docs)] // documentation missing in model
     InstanceFamily,
     #[allow(missing_docs)] // documentation missing in model
     Region,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanOfferingFilterAttribute {
     fn from(s: &str) -> Self {
         match s {
             "instanceFamily" => SavingsPlanOfferingFilterAttribute::InstanceFamily,
             "region" => SavingsPlanOfferingFilterAttribute::Region,
-            other => SavingsPlanOfferingFilterAttribute::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => SavingsPlanOfferingFilterAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SavingsPlanOfferingFilterAttribute {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SavingsPlanOfferingFilterAttribute::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SavingsPlanOfferingFilterAttribute::from(s))
+                }
+            }
 impl SavingsPlanOfferingFilterAttribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SavingsPlanOfferingFilterAttribute::InstanceFamily => "instanceFamily",
             SavingsPlanOfferingFilterAttribute::Region => "region",
-            SavingsPlanOfferingFilterAttribute::Unknown(value) => value.as_str(),
+            SavingsPlanOfferingFilterAttribute::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["instanceFamily", "region"]
+        &[
+            "instanceFamily", "region"
+        ]
     }
 }
 impl AsRef<str> for SavingsPlanOfferingFilterAttribute {
@@ -987,7 +924,7 @@ impl AsRef<str> for SavingsPlanOfferingFilterAttribute {
 /// <p>Information about a Savings Plan offering rate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlanOfferingRate {
+pub struct SavingsPlanOfferingRate  {
     /// <p>The Savings Plan offering.</p>
     #[doc(hidden)]
     pub savings_plan_offering: std::option::Option<crate::model::ParentSavingsPlanOffering>,
@@ -1011,80 +948,66 @@ pub struct SavingsPlanOfferingRate {
     pub operation: std::option::Option<std::string::String>,
     /// <p>The properties.</p>
     #[doc(hidden)]
-    pub properties:
-        std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingRateProperty>>,
+    pub properties: std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingRateProperty>>,
 }
 impl SavingsPlanOfferingRate {
     /// <p>The Savings Plan offering.</p>
-    pub fn savings_plan_offering(
-        &self,
-    ) -> std::option::Option<&crate::model::ParentSavingsPlanOffering> {
+    pub fn savings_plan_offering(&self) -> std::option::Option<& crate::model::ParentSavingsPlanOffering> {
         self.savings_plan_offering.as_ref()
     }
     /// <p>The Savings Plan rate.</p>
-    pub fn rate(&self) -> std::option::Option<&str> {
+    pub fn rate(&self) -> std::option::Option<& str> {
         self.rate.as_deref()
     }
     /// <p>The unit.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::model::SavingsPlanRateUnit> {
+    pub fn unit(&self) -> std::option::Option<& crate::model::SavingsPlanRateUnit> {
         self.unit.as_ref()
     }
     /// <p>The product type.</p>
-    pub fn product_type(&self) -> std::option::Option<&crate::model::SavingsPlanProductType> {
+    pub fn product_type(&self) -> std::option::Option<& crate::model::SavingsPlanProductType> {
         self.product_type.as_ref()
     }
     /// <p>The service.</p>
-    pub fn service_code(&self) -> std::option::Option<&crate::model::SavingsPlanRateServiceCode> {
+    pub fn service_code(&self) -> std::option::Option<& crate::model::SavingsPlanRateServiceCode> {
         self.service_code.as_ref()
     }
     /// <p>The usage details of the line item in the billing report.</p>
-    pub fn usage_type(&self) -> std::option::Option<&str> {
+    pub fn usage_type(&self) -> std::option::Option<& str> {
         self.usage_type.as_deref()
     }
     /// <p>The specific AWS operation for the line item in the billing report.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The properties.</p>
-    pub fn properties(
-        &self,
-    ) -> std::option::Option<&[crate::model::SavingsPlanOfferingRateProperty]> {
+    pub fn properties(&self) -> std::option::Option<& [crate::model::SavingsPlanOfferingRateProperty]> {
         self.properties.as_deref()
     }
 }
 /// See [`SavingsPlanOfferingRate`](crate::model::SavingsPlanOfferingRate).
 pub mod savings_plan_offering_rate {
-
+    
     /// A builder for [`SavingsPlanOfferingRate`](crate::model::SavingsPlanOfferingRate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) savings_plan_offering:
-            std::option::Option<crate::model::ParentSavingsPlanOffering>,
+        pub(crate) savings_plan_offering: std::option::Option<crate::model::ParentSavingsPlanOffering>,
         pub(crate) rate: std::option::Option<std::string::String>,
         pub(crate) unit: std::option::Option<crate::model::SavingsPlanRateUnit>,
         pub(crate) product_type: std::option::Option<crate::model::SavingsPlanProductType>,
         pub(crate) service_code: std::option::Option<crate::model::SavingsPlanRateServiceCode>,
         pub(crate) usage_type: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<std::string::String>,
-        pub(crate) properties:
-            std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingRateProperty>>,
+        pub(crate) properties: std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingRateProperty>>,
     }
     impl Builder {
         /// <p>The Savings Plan offering.</p>
-        pub fn savings_plan_offering(
-            mut self,
-            input: crate::model::ParentSavingsPlanOffering,
-        ) -> Self {
+        pub fn savings_plan_offering(mut self, input: crate::model::ParentSavingsPlanOffering) -> Self {
             self.savings_plan_offering = Some(input);
             self
         }
         /// <p>The Savings Plan offering.</p>
-        pub fn set_savings_plan_offering(
-            mut self,
-            input: std::option::Option<crate::model::ParentSavingsPlanOffering>,
-        ) -> Self {
-            self.savings_plan_offering = input;
-            self
+        pub fn set_savings_plan_offering(mut self, input: std::option::Option<crate::model::ParentSavingsPlanOffering>) -> Self {
+            self.savings_plan_offering = input; self
         }
         /// <p>The Savings Plan rate.</p>
         pub fn rate(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1093,8 +1016,7 @@ pub mod savings_plan_offering_rate {
         }
         /// <p>The Savings Plan rate.</p>
         pub fn set_rate(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rate = input;
-            self
+            self.rate = input; self
         }
         /// <p>The unit.</p>
         pub fn unit(mut self, input: crate::model::SavingsPlanRateUnit) -> Self {
@@ -1102,12 +1024,8 @@ pub mod savings_plan_offering_rate {
             self
         }
         /// <p>The unit.</p>
-        pub fn set_unit(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlanRateUnit>,
-        ) -> Self {
-            self.unit = input;
-            self
+        pub fn set_unit(mut self, input: std::option::Option<crate::model::SavingsPlanRateUnit>) -> Self {
+            self.unit = input; self
         }
         /// <p>The product type.</p>
         pub fn product_type(mut self, input: crate::model::SavingsPlanProductType) -> Self {
@@ -1115,12 +1033,8 @@ pub mod savings_plan_offering_rate {
             self
         }
         /// <p>The product type.</p>
-        pub fn set_product_type(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlanProductType>,
-        ) -> Self {
-            self.product_type = input;
-            self
+        pub fn set_product_type(mut self, input: std::option::Option<crate::model::SavingsPlanProductType>) -> Self {
+            self.product_type = input; self
         }
         /// <p>The service.</p>
         pub fn service_code(mut self, input: crate::model::SavingsPlanRateServiceCode) -> Self {
@@ -1128,12 +1042,8 @@ pub mod savings_plan_offering_rate {
             self
         }
         /// <p>The service.</p>
-        pub fn set_service_code(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlanRateServiceCode>,
-        ) -> Self {
-            self.service_code = input;
-            self
+        pub fn set_service_code(mut self, input: std::option::Option<crate::model::SavingsPlanRateServiceCode>) -> Self {
+            self.service_code = input; self
         }
         /// <p>The usage details of the line item in the billing report.</p>
         pub fn usage_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1142,8 +1052,7 @@ pub mod savings_plan_offering_rate {
         }
         /// <p>The usage details of the line item in the billing report.</p>
         pub fn set_usage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.usage_type = input;
-            self
+            self.usage_type = input; self
         }
         /// <p>The specific AWS operation for the line item in the billing report.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1152,8 +1061,7 @@ pub mod savings_plan_offering_rate {
         }
         /// <p>The specific AWS operation for the line item in the billing report.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// Appends an item to `properties`.
         ///
@@ -1162,34 +1070,38 @@ pub mod savings_plan_offering_rate {
         /// <p>The properties.</p>
         pub fn properties(mut self, input: crate::model::SavingsPlanOfferingRateProperty) -> Self {
             let mut v = self.properties.unwrap_or_default();
-            v.push(input);
-            self.properties = Some(v);
-            self
+                            v.push(input);
+                            self.properties = Some(v);
+                            self
         }
         /// <p>The properties.</p>
-        pub fn set_properties(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::SavingsPlanOfferingRateProperty>,
-            >,
-        ) -> Self {
-            self.properties = input;
-            self
+        pub fn set_properties(mut self, input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanOfferingRateProperty>>) -> Self {
+            self.properties = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlanOfferingRate`](crate::model::SavingsPlanOfferingRate).
         pub fn build(self) -> crate::model::SavingsPlanOfferingRate {
             crate::model::SavingsPlanOfferingRate {
-                savings_plan_offering: self.savings_plan_offering,
-                rate: self.rate,
-                unit: self.unit,
-                product_type: self.product_type,
-                service_code: self.service_code,
-                usage_type: self.usage_type,
-                operation: self.operation,
-                properties: self.properties,
+                savings_plan_offering: self.savings_plan_offering
+                ,
+                rate: self.rate
+                ,
+                unit: self.unit
+                ,
+                product_type: self.product_type
+                ,
+                service_code: self.service_code
+                ,
+                usage_type: self.usage_type
+                ,
+                operation: self.operation
+                ,
+                properties: self.properties
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlanOfferingRate {
     /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingRate`](crate::model::SavingsPlanOfferingRate).
@@ -1201,7 +1113,7 @@ impl SavingsPlanOfferingRate {
 /// <p>Information about a property.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlanOfferingRateProperty {
+pub struct SavingsPlanOfferingRateProperty  {
     /// <p>The property name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1211,17 +1123,17 @@ pub struct SavingsPlanOfferingRateProperty {
 }
 impl SavingsPlanOfferingRateProperty {
     /// <p>The property name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The property value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`SavingsPlanOfferingRateProperty`](crate::model::SavingsPlanOfferingRateProperty).
 pub mod savings_plan_offering_rate_property {
-
+    
     /// A builder for [`SavingsPlanOfferingRateProperty`](crate::model::SavingsPlanOfferingRateProperty).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1236,8 +1148,7 @@ pub mod savings_plan_offering_rate_property {
         }
         /// <p>The property name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The property value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1246,17 +1157,20 @@ pub mod savings_plan_offering_rate_property {
         }
         /// <p>The property value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlanOfferingRateProperty`](crate::model::SavingsPlanOfferingRateProperty).
         pub fn build(self) -> crate::model::SavingsPlanOfferingRateProperty {
             crate::model::SavingsPlanOfferingRateProperty {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlanOfferingRateProperty {
     /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingRateProperty`](crate::model::SavingsPlanOfferingRateProperty).
@@ -1271,9 +1185,9 @@ impl SavingsPlanOfferingRateProperty {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let savingsplanrateservicecode = unimplemented!();
 /// match savingsplanrateservicecode {
@@ -1298,22 +1212,14 @@ impl SavingsPlanOfferingRateProperty {
 /// Specifically, when `savingsplanrateservicecode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SavingsPlanRateServiceCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SavingsPlanRateServiceCode {
     #[allow(missing_docs)] // documentation missing in model
     Lambda,
@@ -1326,7 +1232,7 @@ pub enum SavingsPlanRateServiceCode {
     #[allow(missing_docs)] // documentation missing in model
     Sagemaker,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanRateServiceCode {
     fn from(s: &str) -> Self {
@@ -1336,19 +1242,17 @@ impl std::convert::From<&str> for SavingsPlanRateServiceCode {
             "AmazonECS" => SavingsPlanRateServiceCode::Fargate,
             "AmazonEKS" => SavingsPlanRateServiceCode::FargateEks,
             "AmazonSageMaker" => SavingsPlanRateServiceCode::Sagemaker,
-            other => SavingsPlanRateServiceCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SavingsPlanRateServiceCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SavingsPlanRateServiceCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SavingsPlanRateServiceCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SavingsPlanRateServiceCode::from(s))
+                }
+            }
 impl SavingsPlanRateServiceCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1358,17 +1262,13 @@ impl SavingsPlanRateServiceCode {
             SavingsPlanRateServiceCode::Fargate => "AmazonECS",
             SavingsPlanRateServiceCode::FargateEks => "AmazonEKS",
             SavingsPlanRateServiceCode::Sagemaker => "AmazonSageMaker",
-            SavingsPlanRateServiceCode::Unknown(value) => value.as_str(),
+            SavingsPlanRateServiceCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AWSLambda",
-            "AmazonEC2",
-            "AmazonECS",
-            "AmazonEKS",
-            "AmazonSageMaker",
+            "AWSLambda", "AmazonEC2", "AmazonECS", "AmazonEKS", "AmazonSageMaker"
         ]
     }
 }
@@ -1384,9 +1284,9 @@ impl AsRef<str> for SavingsPlanRateServiceCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let savingsplanrateunit = unimplemented!();
 /// match savingsplanrateunit {
@@ -1409,22 +1309,14 @@ impl AsRef<str> for SavingsPlanRateServiceCode {
 /// Specifically, when `savingsplanrateunit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SavingsPlanRateUnit::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SavingsPlanRateUnit {
     #[allow(missing_docs)] // documentation missing in model
     Hours,
@@ -1433,7 +1325,7 @@ pub enum SavingsPlanRateUnit {
     #[allow(missing_docs)] // documentation missing in model
     Request,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanRateUnit {
     fn from(s: &str) -> Self {
@@ -1441,19 +1333,17 @@ impl std::convert::From<&str> for SavingsPlanRateUnit {
             "Hrs" => SavingsPlanRateUnit::Hours,
             "Lambda-GB-Second" => SavingsPlanRateUnit::LambdaGbSecond,
             "Request" => SavingsPlanRateUnit::Request,
-            other => {
-                SavingsPlanRateUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SavingsPlanRateUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SavingsPlanRateUnit {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SavingsPlanRateUnit::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SavingsPlanRateUnit::from(s))
+                }
+            }
 impl SavingsPlanRateUnit {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1461,12 +1351,14 @@ impl SavingsPlanRateUnit {
             SavingsPlanRateUnit::Hours => "Hrs",
             SavingsPlanRateUnit::LambdaGbSecond => "Lambda-GB-Second",
             SavingsPlanRateUnit::Request => "Request",
-            SavingsPlanRateUnit::Unknown(value) => value.as_str(),
+            SavingsPlanRateUnit::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Hrs", "Lambda-GB-Second", "Request"]
+        &[
+            "Hrs", "Lambda-GB-Second", "Request"
+        ]
     }
 }
 impl AsRef<str> for SavingsPlanRateUnit {
@@ -1478,7 +1370,7 @@ impl AsRef<str> for SavingsPlanRateUnit {
 /// <p>Information about a Savings Plan offering.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParentSavingsPlanOffering {
+pub struct ParentSavingsPlanOffering  {
     /// <p>The ID of the offering.</p>
     #[doc(hidden)]
     pub offering_id: std::option::Option<std::string::String>,
@@ -1500,15 +1392,15 @@ pub struct ParentSavingsPlanOffering {
 }
 impl ParentSavingsPlanOffering {
     /// <p>The ID of the offering.</p>
-    pub fn offering_id(&self) -> std::option::Option<&str> {
+    pub fn offering_id(&self) -> std::option::Option<& str> {
         self.offering_id.as_deref()
     }
     /// <p>The payment option.</p>
-    pub fn payment_option(&self) -> std::option::Option<&crate::model::SavingsPlanPaymentOption> {
+    pub fn payment_option(&self) -> std::option::Option<& crate::model::SavingsPlanPaymentOption> {
         self.payment_option.as_ref()
     }
     /// <p>The plan type.</p>
-    pub fn plan_type(&self) -> std::option::Option<&crate::model::SavingsPlanType> {
+    pub fn plan_type(&self) -> std::option::Option<& crate::model::SavingsPlanType> {
         self.plan_type.as_ref()
     }
     /// <p>The duration, in seconds.</p>
@@ -1516,17 +1408,17 @@ impl ParentSavingsPlanOffering {
         self.duration_seconds
     }
     /// <p>The currency.</p>
-    pub fn currency(&self) -> std::option::Option<&crate::model::CurrencyCode> {
+    pub fn currency(&self) -> std::option::Option<& crate::model::CurrencyCode> {
         self.currency.as_ref()
     }
     /// <p>The description.</p>
-    pub fn plan_description(&self) -> std::option::Option<&str> {
+    pub fn plan_description(&self) -> std::option::Option<& str> {
         self.plan_description.as_deref()
     }
 }
 /// See [`ParentSavingsPlanOffering`](crate::model::ParentSavingsPlanOffering).
 pub mod parent_savings_plan_offering {
-
+    
     /// A builder for [`ParentSavingsPlanOffering`](crate::model::ParentSavingsPlanOffering).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1545,8 +1437,7 @@ pub mod parent_savings_plan_offering {
         }
         /// <p>The ID of the offering.</p>
         pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.offering_id = input;
-            self
+            self.offering_id = input; self
         }
         /// <p>The payment option.</p>
         pub fn payment_option(mut self, input: crate::model::SavingsPlanPaymentOption) -> Self {
@@ -1554,12 +1445,8 @@ pub mod parent_savings_plan_offering {
             self
         }
         /// <p>The payment option.</p>
-        pub fn set_payment_option(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlanPaymentOption>,
-        ) -> Self {
-            self.payment_option = input;
-            self
+        pub fn set_payment_option(mut self, input: std::option::Option<crate::model::SavingsPlanPaymentOption>) -> Self {
+            self.payment_option = input; self
         }
         /// <p>The plan type.</p>
         pub fn plan_type(mut self, input: crate::model::SavingsPlanType) -> Self {
@@ -1567,12 +1454,8 @@ pub mod parent_savings_plan_offering {
             self
         }
         /// <p>The plan type.</p>
-        pub fn set_plan_type(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlanType>,
-        ) -> Self {
-            self.plan_type = input;
-            self
+        pub fn set_plan_type(mut self, input: std::option::Option<crate::model::SavingsPlanType>) -> Self {
+            self.plan_type = input; self
         }
         /// <p>The duration, in seconds.</p>
         pub fn duration_seconds(mut self, input: i64) -> Self {
@@ -1581,8 +1464,7 @@ pub mod parent_savings_plan_offering {
         }
         /// <p>The duration, in seconds.</p>
         pub fn set_duration_seconds(mut self, input: std::option::Option<i64>) -> Self {
-            self.duration_seconds = input;
-            self
+            self.duration_seconds = input; self
         }
         /// <p>The currency.</p>
         pub fn currency(mut self, input: crate::model::CurrencyCode) -> Self {
@@ -1590,12 +1472,8 @@ pub mod parent_savings_plan_offering {
             self
         }
         /// <p>The currency.</p>
-        pub fn set_currency(
-            mut self,
-            input: std::option::Option<crate::model::CurrencyCode>,
-        ) -> Self {
-            self.currency = input;
-            self
+        pub fn set_currency(mut self, input: std::option::Option<crate::model::CurrencyCode>) -> Self {
+            self.currency = input; self
         }
         /// <p>The description.</p>
         pub fn plan_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1603,25 +1481,30 @@ pub mod parent_savings_plan_offering {
             self
         }
         /// <p>The description.</p>
-        pub fn set_plan_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.plan_description = input;
-            self
+        pub fn set_plan_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.plan_description = input; self
         }
         /// Consumes the builder and constructs a [`ParentSavingsPlanOffering`](crate::model::ParentSavingsPlanOffering).
         pub fn build(self) -> crate::model::ParentSavingsPlanOffering {
             crate::model::ParentSavingsPlanOffering {
-                offering_id: self.offering_id,
-                payment_option: self.payment_option,
-                plan_type: self.plan_type,
-                duration_seconds: self.duration_seconds.unwrap_or_default(),
-                currency: self.currency,
-                plan_description: self.plan_description,
+                offering_id: self.offering_id
+                ,
+                payment_option: self.payment_option
+                ,
+                plan_type: self.plan_type
+                ,
+                duration_seconds: self.duration_seconds
+                    .unwrap_or_default()
+                ,
+                currency: self.currency
+                ,
+                plan_description: self.plan_description
+                ,
             }
         }
     }
+    
+    
 }
 impl ParentSavingsPlanOffering {
     /// Creates a new builder-style object to manufacture [`ParentSavingsPlanOffering`](crate::model::ParentSavingsPlanOffering).
@@ -1633,7 +1516,7 @@ impl ParentSavingsPlanOffering {
 /// <p>Information about a filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlanOfferingRateFilterElement {
+pub struct SavingsPlanOfferingRateFilterElement  {
     /// <p>The filter name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::SavingsPlanRateFilterAttribute>,
@@ -1643,17 +1526,17 @@ pub struct SavingsPlanOfferingRateFilterElement {
 }
 impl SavingsPlanOfferingRateFilterElement {
     /// <p>The filter name.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::SavingsPlanRateFilterAttribute> {
+    pub fn name(&self) -> std::option::Option<& crate::model::SavingsPlanRateFilterAttribute> {
         self.name.as_ref()
     }
     /// <p>The filter values.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`SavingsPlanOfferingRateFilterElement`](crate::model::SavingsPlanOfferingRateFilterElement).
 pub mod savings_plan_offering_rate_filter_element {
-
+    
     /// A builder for [`SavingsPlanOfferingRateFilterElement`](crate::model::SavingsPlanOfferingRateFilterElement).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1667,12 +1550,8 @@ pub mod savings_plan_offering_rate_filter_element {
             self
         }
         /// <p>The filter name.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlanRateFilterAttribute>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::SavingsPlanRateFilterAttribute>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -1681,26 +1560,26 @@ pub mod savings_plan_offering_rate_filter_element {
         /// <p>The filter values.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The filter values.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlanOfferingRateFilterElement`](crate::model::SavingsPlanOfferingRateFilterElement).
         pub fn build(self) -> crate::model::SavingsPlanOfferingRateFilterElement {
             crate::model::SavingsPlanOfferingRateFilterElement {
-                name: self.name,
-                values: self.values,
+                name: self.name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlanOfferingRateFilterElement {
     /// Creates a new builder-style object to manufacture [`SavingsPlanOfferingRateFilterElement`](crate::model::SavingsPlanOfferingRateFilterElement).
@@ -1715,9 +1594,9 @@ impl SavingsPlanOfferingRateFilterElement {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let savingsplanratefilterattribute = unimplemented!();
 /// match savingsplanratefilterattribute {
@@ -1743,22 +1622,14 @@ impl SavingsPlanOfferingRateFilterElement {
 /// Specifically, when `savingsplanratefilterattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SavingsPlanRateFilterAttribute::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SavingsPlanRateFilterAttribute {
     #[allow(missing_docs)] // documentation missing in model
     InstanceFamily,
@@ -1773,7 +1644,7 @@ pub enum SavingsPlanRateFilterAttribute {
     #[allow(missing_docs)] // documentation missing in model
     Tenancy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanRateFilterAttribute {
     fn from(s: &str) -> Self {
@@ -1784,19 +1655,17 @@ impl std::convert::From<&str> for SavingsPlanRateFilterAttribute {
             "productId" => SavingsPlanRateFilterAttribute::ProductId,
             "region" => SavingsPlanRateFilterAttribute::Region,
             "tenancy" => SavingsPlanRateFilterAttribute::Tenancy,
-            other => SavingsPlanRateFilterAttribute::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SavingsPlanRateFilterAttribute::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SavingsPlanRateFilterAttribute {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SavingsPlanRateFilterAttribute::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SavingsPlanRateFilterAttribute::from(s))
+                }
+            }
 impl SavingsPlanRateFilterAttribute {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1807,18 +1676,13 @@ impl SavingsPlanRateFilterAttribute {
             SavingsPlanRateFilterAttribute::ProductId => "productId",
             SavingsPlanRateFilterAttribute::Region => "region",
             SavingsPlanRateFilterAttribute::Tenancy => "tenancy",
-            SavingsPlanRateFilterAttribute::Unknown(value) => value.as_str(),
+            SavingsPlanRateFilterAttribute::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "instanceFamily",
-            "instanceType",
-            "productDescription",
-            "productId",
-            "region",
-            "tenancy",
+            "instanceFamily", "instanceType", "productDescription", "productId", "region", "tenancy"
         ]
     }
 }
@@ -1831,7 +1695,7 @@ impl AsRef<str> for SavingsPlanRateFilterAttribute {
 /// <p>Information about a Savings Plan.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlan {
+pub struct SavingsPlan  {
     /// <p>The ID of the offering.</p>
     #[doc(hidden)]
     pub offering_id: std::option::Option<std::string::String>,
@@ -1885,72 +1749,71 @@ pub struct SavingsPlan {
     pub term_duration_in_seconds: i64,
     /// <p>One or more tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl SavingsPlan {
     /// <p>The ID of the offering.</p>
-    pub fn offering_id(&self) -> std::option::Option<&str> {
+    pub fn offering_id(&self) -> std::option::Option<& str> {
         self.offering_id.as_deref()
     }
     /// <p>The ID of the Savings Plan.</p>
-    pub fn savings_plan_id(&self) -> std::option::Option<&str> {
+    pub fn savings_plan_id(&self) -> std::option::Option<& str> {
         self.savings_plan_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Savings Plan.</p>
-    pub fn savings_plan_arn(&self) -> std::option::Option<&str> {
+    pub fn savings_plan_arn(&self) -> std::option::Option<& str> {
         self.savings_plan_arn.as_deref()
     }
     /// <p>The description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The start time.</p>
-    pub fn start(&self) -> std::option::Option<&str> {
+    pub fn start(&self) -> std::option::Option<& str> {
         self.start.as_deref()
     }
     /// <p>The end time.</p>
-    pub fn end(&self) -> std::option::Option<&str> {
+    pub fn end(&self) -> std::option::Option<& str> {
         self.end.as_deref()
     }
     /// <p>The state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::SavingsPlanState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::SavingsPlanState> {
         self.state.as_ref()
     }
     /// <p>The AWS Region.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The EC2 instance family.</p>
-    pub fn ec2_instance_family(&self) -> std::option::Option<&str> {
+    pub fn ec2_instance_family(&self) -> std::option::Option<& str> {
         self.ec2_instance_family.as_deref()
     }
     /// <p>The plan type.</p>
-    pub fn savings_plan_type(&self) -> std::option::Option<&crate::model::SavingsPlanType> {
+    pub fn savings_plan_type(&self) -> std::option::Option<& crate::model::SavingsPlanType> {
         self.savings_plan_type.as_ref()
     }
     /// <p>The payment option.</p>
-    pub fn payment_option(&self) -> std::option::Option<&crate::model::SavingsPlanPaymentOption> {
+    pub fn payment_option(&self) -> std::option::Option<& crate::model::SavingsPlanPaymentOption> {
         self.payment_option.as_ref()
     }
     /// <p>The product types.</p>
-    pub fn product_types(&self) -> std::option::Option<&[crate::model::SavingsPlanProductType]> {
+    pub fn product_types(&self) -> std::option::Option<& [crate::model::SavingsPlanProductType]> {
         self.product_types.as_deref()
     }
     /// <p>The currency.</p>
-    pub fn currency(&self) -> std::option::Option<&crate::model::CurrencyCode> {
+    pub fn currency(&self) -> std::option::Option<& crate::model::CurrencyCode> {
         self.currency.as_ref()
     }
     /// <p>The hourly commitment, in USD.</p>
-    pub fn commitment(&self) -> std::option::Option<&str> {
+    pub fn commitment(&self) -> std::option::Option<& str> {
         self.commitment.as_deref()
     }
     /// <p>The up-front payment amount.</p>
-    pub fn upfront_payment_amount(&self) -> std::option::Option<&str> {
+    pub fn upfront_payment_amount(&self) -> std::option::Option<& str> {
         self.upfront_payment_amount.as_deref()
     }
     /// <p>The recurring payment amount.</p>
-    pub fn recurring_payment_amount(&self) -> std::option::Option<&str> {
+    pub fn recurring_payment_amount(&self) -> std::option::Option<& str> {
         self.recurring_payment_amount.as_deref()
     }
     /// <p>The duration of the term, in seconds.</p>
@@ -1958,16 +1821,13 @@ impl SavingsPlan {
         self.term_duration_in_seconds
     }
     /// <p>One or more tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`SavingsPlan`](crate::model::SavingsPlan).
 pub mod savings_plan {
-
+    
     /// A builder for [`SavingsPlan`](crate::model::SavingsPlan).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1982,16 +1842,13 @@ pub mod savings_plan {
         pub(crate) ec2_instance_family: std::option::Option<std::string::String>,
         pub(crate) savings_plan_type: std::option::Option<crate::model::SavingsPlanType>,
         pub(crate) payment_option: std::option::Option<crate::model::SavingsPlanPaymentOption>,
-        pub(crate) product_types:
-            std::option::Option<std::vec::Vec<crate::model::SavingsPlanProductType>>,
+        pub(crate) product_types: std::option::Option<std::vec::Vec<crate::model::SavingsPlanProductType>>,
         pub(crate) currency: std::option::Option<crate::model::CurrencyCode>,
         pub(crate) commitment: std::option::Option<std::string::String>,
         pub(crate) upfront_payment_amount: std::option::Option<std::string::String>,
         pub(crate) recurring_payment_amount: std::option::Option<std::string::String>,
         pub(crate) term_duration_in_seconds: std::option::Option<i64>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The ID of the offering.</p>
@@ -2001,8 +1858,7 @@ pub mod savings_plan {
         }
         /// <p>The ID of the offering.</p>
         pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.offering_id = input;
-            self
+            self.offering_id = input; self
         }
         /// <p>The ID of the Savings Plan.</p>
         pub fn savings_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2010,12 +1866,8 @@ pub mod savings_plan {
             self
         }
         /// <p>The ID of the Savings Plan.</p>
-        pub fn set_savings_plan_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.savings_plan_id = input;
-            self
+        pub fn set_savings_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.savings_plan_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Savings Plan.</p>
         pub fn savings_plan_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2023,12 +1875,8 @@ pub mod savings_plan {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Savings Plan.</p>
-        pub fn set_savings_plan_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.savings_plan_arn = input;
-            self
+        pub fn set_savings_plan_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.savings_plan_arn = input; self
         }
         /// <p>The description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2037,8 +1885,7 @@ pub mod savings_plan {
         }
         /// <p>The description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The start time.</p>
         pub fn start(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2047,8 +1894,7 @@ pub mod savings_plan {
         }
         /// <p>The start time.</p>
         pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start = input;
-            self
+            self.start = input; self
         }
         /// <p>The end time.</p>
         pub fn end(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2057,8 +1903,7 @@ pub mod savings_plan {
         }
         /// <p>The end time.</p>
         pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end = input;
-            self
+            self.end = input; self
         }
         /// <p>The state.</p>
         pub fn state(mut self, input: crate::model::SavingsPlanState) -> Self {
@@ -2066,12 +1911,8 @@ pub mod savings_plan {
             self
         }
         /// <p>The state.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlanState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::SavingsPlanState>) -> Self {
+            self.state = input; self
         }
         /// <p>The AWS Region.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2080,8 +1921,7 @@ pub mod savings_plan {
         }
         /// <p>The AWS Region.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The EC2 instance family.</p>
         pub fn ec2_instance_family(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2089,12 +1929,8 @@ pub mod savings_plan {
             self
         }
         /// <p>The EC2 instance family.</p>
-        pub fn set_ec2_instance_family(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ec2_instance_family = input;
-            self
+        pub fn set_ec2_instance_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ec2_instance_family = input; self
         }
         /// <p>The plan type.</p>
         pub fn savings_plan_type(mut self, input: crate::model::SavingsPlanType) -> Self {
@@ -2102,12 +1938,8 @@ pub mod savings_plan {
             self
         }
         /// <p>The plan type.</p>
-        pub fn set_savings_plan_type(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlanType>,
-        ) -> Self {
-            self.savings_plan_type = input;
-            self
+        pub fn set_savings_plan_type(mut self, input: std::option::Option<crate::model::SavingsPlanType>) -> Self {
+            self.savings_plan_type = input; self
         }
         /// <p>The payment option.</p>
         pub fn payment_option(mut self, input: crate::model::SavingsPlanPaymentOption) -> Self {
@@ -2115,12 +1947,8 @@ pub mod savings_plan {
             self
         }
         /// <p>The payment option.</p>
-        pub fn set_payment_option(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlanPaymentOption>,
-        ) -> Self {
-            self.payment_option = input;
-            self
+        pub fn set_payment_option(mut self, input: std::option::Option<crate::model::SavingsPlanPaymentOption>) -> Self {
+            self.payment_option = input; self
         }
         /// Appends an item to `product_types`.
         ///
@@ -2129,17 +1957,13 @@ pub mod savings_plan {
         /// <p>The product types.</p>
         pub fn product_types(mut self, input: crate::model::SavingsPlanProductType) -> Self {
             let mut v = self.product_types.unwrap_or_default();
-            v.push(input);
-            self.product_types = Some(v);
-            self
+                            v.push(input);
+                            self.product_types = Some(v);
+                            self
         }
         /// <p>The product types.</p>
-        pub fn set_product_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanProductType>>,
-        ) -> Self {
-            self.product_types = input;
-            self
+        pub fn set_product_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanProductType>>) -> Self {
+            self.product_types = input; self
         }
         /// <p>The currency.</p>
         pub fn currency(mut self, input: crate::model::CurrencyCode) -> Self {
@@ -2147,12 +1971,8 @@ pub mod savings_plan {
             self
         }
         /// <p>The currency.</p>
-        pub fn set_currency(
-            mut self,
-            input: std::option::Option<crate::model::CurrencyCode>,
-        ) -> Self {
-            self.currency = input;
-            self
+        pub fn set_currency(mut self, input: std::option::Option<crate::model::CurrencyCode>) -> Self {
+            self.currency = input; self
         }
         /// <p>The hourly commitment, in USD.</p>
         pub fn commitment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2161,8 +1981,7 @@ pub mod savings_plan {
         }
         /// <p>The hourly commitment, in USD.</p>
         pub fn set_commitment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.commitment = input;
-            self
+            self.commitment = input; self
         }
         /// <p>The up-front payment amount.</p>
         pub fn upfront_payment_amount(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2170,12 +1989,8 @@ pub mod savings_plan {
             self
         }
         /// <p>The up-front payment amount.</p>
-        pub fn set_upfront_payment_amount(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.upfront_payment_amount = input;
-            self
+        pub fn set_upfront_payment_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.upfront_payment_amount = input; self
         }
         /// <p>The recurring payment amount.</p>
         pub fn recurring_payment_amount(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2183,12 +1998,8 @@ pub mod savings_plan {
             self
         }
         /// <p>The recurring payment amount.</p>
-        pub fn set_recurring_payment_amount(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recurring_payment_amount = input;
-            self
+        pub fn set_recurring_payment_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recurring_payment_amount = input; self
         }
         /// <p>The duration of the term, in seconds.</p>
         pub fn term_duration_in_seconds(mut self, input: i64) -> Self {
@@ -2197,58 +2008,68 @@ pub mod savings_plan {
         }
         /// <p>The duration of the term, in seconds.</p>
         pub fn set_term_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-            self.term_duration_in_seconds = input;
-            self
+            self.term_duration_in_seconds = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>One or more tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlan`](crate::model::SavingsPlan).
         pub fn build(self) -> crate::model::SavingsPlan {
             crate::model::SavingsPlan {
-                offering_id: self.offering_id,
-                savings_plan_id: self.savings_plan_id,
-                savings_plan_arn: self.savings_plan_arn,
-                description: self.description,
-                start: self.start,
-                end: self.end,
-                state: self.state,
-                region: self.region,
-                ec2_instance_family: self.ec2_instance_family,
-                savings_plan_type: self.savings_plan_type,
-                payment_option: self.payment_option,
-                product_types: self.product_types,
-                currency: self.currency,
-                commitment: self.commitment,
-                upfront_payment_amount: self.upfront_payment_amount,
-                recurring_payment_amount: self.recurring_payment_amount,
-                term_duration_in_seconds: self.term_duration_in_seconds.unwrap_or_default(),
-                tags: self.tags,
+                offering_id: self.offering_id
+                ,
+                savings_plan_id: self.savings_plan_id
+                ,
+                savings_plan_arn: self.savings_plan_arn
+                ,
+                description: self.description
+                ,
+                start: self.start
+                ,
+                end: self.end
+                ,
+                state: self.state
+                ,
+                region: self.region
+                ,
+                ec2_instance_family: self.ec2_instance_family
+                ,
+                savings_plan_type: self.savings_plan_type
+                ,
+                payment_option: self.payment_option
+                ,
+                product_types: self.product_types
+                ,
+                currency: self.currency
+                ,
+                commitment: self.commitment
+                ,
+                upfront_payment_amount: self.upfront_payment_amount
+                ,
+                recurring_payment_amount: self.recurring_payment_amount
+                ,
+                term_duration_in_seconds: self.term_duration_in_seconds
+                    .unwrap_or_default()
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlan {
     /// Creates a new builder-style object to manufacture [`SavingsPlan`](crate::model::SavingsPlan).
@@ -2263,9 +2084,9 @@ impl SavingsPlan {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let savingsplanstate = unimplemented!();
 /// match savingsplanstate {
@@ -2291,22 +2112,14 @@ impl SavingsPlan {
 /// Specifically, when `savingsplanstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SavingsPlanState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SavingsPlanState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -2321,7 +2134,7 @@ pub enum SavingsPlanState {
     #[allow(missing_docs)] // documentation missing in model
     Retired,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanState {
     fn from(s: &str) -> Self {
@@ -2332,17 +2145,17 @@ impl std::convert::From<&str> for SavingsPlanState {
             "queued" => SavingsPlanState::Queued,
             "queued-deleted" => SavingsPlanState::QueuedDeleted,
             "retired" => SavingsPlanState::Retired,
-            other => SavingsPlanState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SavingsPlanState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SavingsPlanState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SavingsPlanState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SavingsPlanState::from(s))
+                }
+            }
 impl SavingsPlanState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2353,18 +2166,13 @@ impl SavingsPlanState {
             SavingsPlanState::Queued => "queued",
             SavingsPlanState::QueuedDeleted => "queued-deleted",
             SavingsPlanState::Retired => "retired",
-            SavingsPlanState::Unknown(value) => value.as_str(),
+            SavingsPlanState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "active",
-            "payment-failed",
-            "payment-pending",
-            "queued",
-            "queued-deleted",
-            "retired",
+            "active", "payment-failed", "payment-pending", "queued", "queued-deleted", "retired"
         ]
     }
 }
@@ -2377,7 +2185,7 @@ impl AsRef<str> for SavingsPlanState {
 /// <p>Information about a filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlanFilter {
+pub struct SavingsPlanFilter  {
     /// <p>The filter name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::SavingsPlansFilterName>,
@@ -2387,17 +2195,17 @@ pub struct SavingsPlanFilter {
 }
 impl SavingsPlanFilter {
     /// <p>The filter name.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::SavingsPlansFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::SavingsPlansFilterName> {
         self.name.as_ref()
     }
     /// <p>The filter value.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`SavingsPlanFilter`](crate::model::SavingsPlanFilter).
 pub mod savings_plan_filter {
-
+    
     /// A builder for [`SavingsPlanFilter`](crate::model::SavingsPlanFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2411,12 +2219,8 @@ pub mod savings_plan_filter {
             self
         }
         /// <p>The filter name.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlansFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::SavingsPlansFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -2425,26 +2229,26 @@ pub mod savings_plan_filter {
         /// <p>The filter value.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The filter value.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlanFilter`](crate::model::SavingsPlanFilter).
         pub fn build(self) -> crate::model::SavingsPlanFilter {
             crate::model::SavingsPlanFilter {
-                name: self.name,
-                values: self.values,
+                name: self.name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlanFilter {
     /// Creates a new builder-style object to manufacture [`SavingsPlanFilter`](crate::model::SavingsPlanFilter).
@@ -2459,9 +2263,9 @@ impl SavingsPlanFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let savingsplansfiltername = unimplemented!();
 /// match savingsplansfiltername {
@@ -2490,22 +2294,14 @@ impl SavingsPlanFilter {
 /// Specifically, when `savingsplansfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SavingsPlansFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SavingsPlansFilterName {
     #[allow(missing_docs)] // documentation missing in model
     Commitment,
@@ -2526,7 +2322,7 @@ pub enum SavingsPlansFilterName {
     #[allow(missing_docs)] // documentation missing in model
     Upfront,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlansFilterName {
     fn from(s: &str) -> Self {
@@ -2540,19 +2336,17 @@ impl std::convert::From<&str> for SavingsPlansFilterName {
             "start" => SavingsPlansFilterName::Start,
             "term" => SavingsPlansFilterName::Term,
             "upfront" => SavingsPlansFilterName::Upfront,
-            other => {
-                SavingsPlansFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => SavingsPlansFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SavingsPlansFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SavingsPlansFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SavingsPlansFilterName::from(s))
+                }
+            }
 impl SavingsPlansFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2566,21 +2360,13 @@ impl SavingsPlansFilterName {
             SavingsPlansFilterName::Start => "start",
             SavingsPlansFilterName::Term => "term",
             SavingsPlansFilterName::Upfront => "upfront",
-            SavingsPlansFilterName::Unknown(value) => value.as_str(),
+            SavingsPlansFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "commitment",
-            "ec2-instance-family",
-            "end",
-            "payment-option",
-            "region",
-            "savings-plan-type",
-            "start",
-            "term",
-            "upfront",
+            "commitment", "ec2-instance-family", "end", "payment-option", "region", "savings-plan-type", "start", "term", "upfront"
         ]
     }
 }
@@ -2593,7 +2379,7 @@ impl AsRef<str> for SavingsPlansFilterName {
 /// <p>Information about a Savings Plan rate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlanRate {
+pub struct SavingsPlanRate  {
     /// <p>The rate.</p>
     #[doc(hidden)]
     pub rate: std::option::Option<std::string::String>,
@@ -2621,41 +2407,41 @@ pub struct SavingsPlanRate {
 }
 impl SavingsPlanRate {
     /// <p>The rate.</p>
-    pub fn rate(&self) -> std::option::Option<&str> {
+    pub fn rate(&self) -> std::option::Option<& str> {
         self.rate.as_deref()
     }
     /// <p>The currency.</p>
-    pub fn currency(&self) -> std::option::Option<&crate::model::CurrencyCode> {
+    pub fn currency(&self) -> std::option::Option<& crate::model::CurrencyCode> {
         self.currency.as_ref()
     }
     /// <p>The unit.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::model::SavingsPlanRateUnit> {
+    pub fn unit(&self) -> std::option::Option<& crate::model::SavingsPlanRateUnit> {
         self.unit.as_ref()
     }
     /// <p>The product type.</p>
-    pub fn product_type(&self) -> std::option::Option<&crate::model::SavingsPlanProductType> {
+    pub fn product_type(&self) -> std::option::Option<& crate::model::SavingsPlanProductType> {
         self.product_type.as_ref()
     }
     /// <p>The service.</p>
-    pub fn service_code(&self) -> std::option::Option<&crate::model::SavingsPlanRateServiceCode> {
+    pub fn service_code(&self) -> std::option::Option<& crate::model::SavingsPlanRateServiceCode> {
         self.service_code.as_ref()
     }
     /// <p>The usage details of the line item in the billing report.</p>
-    pub fn usage_type(&self) -> std::option::Option<&str> {
+    pub fn usage_type(&self) -> std::option::Option<& str> {
         self.usage_type.as_deref()
     }
     /// <p>The specific AWS operation for the line item in the billing report.</p>
-    pub fn operation(&self) -> std::option::Option<&str> {
+    pub fn operation(&self) -> std::option::Option<& str> {
         self.operation.as_deref()
     }
     /// <p>The properties.</p>
-    pub fn properties(&self) -> std::option::Option<&[crate::model::SavingsPlanRateProperty]> {
+    pub fn properties(&self) -> std::option::Option<& [crate::model::SavingsPlanRateProperty]> {
         self.properties.as_deref()
     }
 }
 /// See [`SavingsPlanRate`](crate::model::SavingsPlanRate).
 pub mod savings_plan_rate {
-
+    
     /// A builder for [`SavingsPlanRate`](crate::model::SavingsPlanRate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2666,8 +2452,7 @@ pub mod savings_plan_rate {
         pub(crate) service_code: std::option::Option<crate::model::SavingsPlanRateServiceCode>,
         pub(crate) usage_type: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<std::string::String>,
-        pub(crate) properties:
-            std::option::Option<std::vec::Vec<crate::model::SavingsPlanRateProperty>>,
+        pub(crate) properties: std::option::Option<std::vec::Vec<crate::model::SavingsPlanRateProperty>>,
     }
     impl Builder {
         /// <p>The rate.</p>
@@ -2677,8 +2462,7 @@ pub mod savings_plan_rate {
         }
         /// <p>The rate.</p>
         pub fn set_rate(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rate = input;
-            self
+            self.rate = input; self
         }
         /// <p>The currency.</p>
         pub fn currency(mut self, input: crate::model::CurrencyCode) -> Self {
@@ -2686,12 +2470,8 @@ pub mod savings_plan_rate {
             self
         }
         /// <p>The currency.</p>
-        pub fn set_currency(
-            mut self,
-            input: std::option::Option<crate::model::CurrencyCode>,
-        ) -> Self {
-            self.currency = input;
-            self
+        pub fn set_currency(mut self, input: std::option::Option<crate::model::CurrencyCode>) -> Self {
+            self.currency = input; self
         }
         /// <p>The unit.</p>
         pub fn unit(mut self, input: crate::model::SavingsPlanRateUnit) -> Self {
@@ -2699,12 +2479,8 @@ pub mod savings_plan_rate {
             self
         }
         /// <p>The unit.</p>
-        pub fn set_unit(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlanRateUnit>,
-        ) -> Self {
-            self.unit = input;
-            self
+        pub fn set_unit(mut self, input: std::option::Option<crate::model::SavingsPlanRateUnit>) -> Self {
+            self.unit = input; self
         }
         /// <p>The product type.</p>
         pub fn product_type(mut self, input: crate::model::SavingsPlanProductType) -> Self {
@@ -2712,12 +2488,8 @@ pub mod savings_plan_rate {
             self
         }
         /// <p>The product type.</p>
-        pub fn set_product_type(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlanProductType>,
-        ) -> Self {
-            self.product_type = input;
-            self
+        pub fn set_product_type(mut self, input: std::option::Option<crate::model::SavingsPlanProductType>) -> Self {
+            self.product_type = input; self
         }
         /// <p>The service.</p>
         pub fn service_code(mut self, input: crate::model::SavingsPlanRateServiceCode) -> Self {
@@ -2725,12 +2497,8 @@ pub mod savings_plan_rate {
             self
         }
         /// <p>The service.</p>
-        pub fn set_service_code(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlanRateServiceCode>,
-        ) -> Self {
-            self.service_code = input;
-            self
+        pub fn set_service_code(mut self, input: std::option::Option<crate::model::SavingsPlanRateServiceCode>) -> Self {
+            self.service_code = input; self
         }
         /// <p>The usage details of the line item in the billing report.</p>
         pub fn usage_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2739,8 +2507,7 @@ pub mod savings_plan_rate {
         }
         /// <p>The usage details of the line item in the billing report.</p>
         pub fn set_usage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.usage_type = input;
-            self
+            self.usage_type = input; self
         }
         /// <p>The specific AWS operation for the line item in the billing report.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2749,8 +2516,7 @@ pub mod savings_plan_rate {
         }
         /// <p>The specific AWS operation for the line item in the billing report.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation = input;
-            self
+            self.operation = input; self
         }
         /// Appends an item to `properties`.
         ///
@@ -2759,32 +2525,38 @@ pub mod savings_plan_rate {
         /// <p>The properties.</p>
         pub fn properties(mut self, input: crate::model::SavingsPlanRateProperty) -> Self {
             let mut v = self.properties.unwrap_or_default();
-            v.push(input);
-            self.properties = Some(v);
-            self
+                            v.push(input);
+                            self.properties = Some(v);
+                            self
         }
         /// <p>The properties.</p>
-        pub fn set_properties(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanRateProperty>>,
-        ) -> Self {
-            self.properties = input;
-            self
+        pub fn set_properties(mut self, input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanRateProperty>>) -> Self {
+            self.properties = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlanRate`](crate::model::SavingsPlanRate).
         pub fn build(self) -> crate::model::SavingsPlanRate {
             crate::model::SavingsPlanRate {
-                rate: self.rate,
-                currency: self.currency,
-                unit: self.unit,
-                product_type: self.product_type,
-                service_code: self.service_code,
-                usage_type: self.usage_type,
-                operation: self.operation,
-                properties: self.properties,
+                rate: self.rate
+                ,
+                currency: self.currency
+                ,
+                unit: self.unit
+                ,
+                product_type: self.product_type
+                ,
+                service_code: self.service_code
+                ,
+                usage_type: self.usage_type
+                ,
+                operation: self.operation
+                ,
+                properties: self.properties
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlanRate {
     /// Creates a new builder-style object to manufacture [`SavingsPlanRate`](crate::model::SavingsPlanRate).
@@ -2796,7 +2568,7 @@ impl SavingsPlanRate {
 /// <p>Information about a property.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlanRateProperty {
+pub struct SavingsPlanRateProperty  {
     /// <p>The property name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::SavingsPlanRatePropertyKey>,
@@ -2806,17 +2578,17 @@ pub struct SavingsPlanRateProperty {
 }
 impl SavingsPlanRateProperty {
     /// <p>The property name.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::SavingsPlanRatePropertyKey> {
+    pub fn name(&self) -> std::option::Option<& crate::model::SavingsPlanRatePropertyKey> {
         self.name.as_ref()
     }
     /// <p>The property value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`SavingsPlanRateProperty`](crate::model::SavingsPlanRateProperty).
 pub mod savings_plan_rate_property {
-
+    
     /// A builder for [`SavingsPlanRateProperty`](crate::model::SavingsPlanRateProperty).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2830,12 +2602,8 @@ pub mod savings_plan_rate_property {
             self
         }
         /// <p>The property name.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlanRatePropertyKey>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::SavingsPlanRatePropertyKey>) -> Self {
+            self.name = input; self
         }
         /// <p>The property value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2844,17 +2612,20 @@ pub mod savings_plan_rate_property {
         }
         /// <p>The property value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlanRateProperty`](crate::model::SavingsPlanRateProperty).
         pub fn build(self) -> crate::model::SavingsPlanRateProperty {
             crate::model::SavingsPlanRateProperty {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlanRateProperty {
     /// Creates a new builder-style object to manufacture [`SavingsPlanRateProperty`](crate::model::SavingsPlanRateProperty).
@@ -2869,9 +2640,9 @@ impl SavingsPlanRateProperty {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let savingsplanratepropertykey = unimplemented!();
 /// match savingsplanratepropertykey {
@@ -2896,22 +2667,14 @@ impl SavingsPlanRateProperty {
 /// Specifically, when `savingsplanratepropertykey` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SavingsPlanRatePropertyKey::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SavingsPlanRatePropertyKey {
     #[allow(missing_docs)] // documentation missing in model
     InstanceFamily,
@@ -2924,7 +2687,7 @@ pub enum SavingsPlanRatePropertyKey {
     #[allow(missing_docs)] // documentation missing in model
     Tenancy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanRatePropertyKey {
     fn from(s: &str) -> Self {
@@ -2934,19 +2697,17 @@ impl std::convert::From<&str> for SavingsPlanRatePropertyKey {
             "productDescription" => SavingsPlanRatePropertyKey::ProductDescription,
             "region" => SavingsPlanRatePropertyKey::Region,
             "tenancy" => SavingsPlanRatePropertyKey::Tenancy,
-            other => SavingsPlanRatePropertyKey::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SavingsPlanRatePropertyKey::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SavingsPlanRatePropertyKey {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SavingsPlanRatePropertyKey::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SavingsPlanRatePropertyKey::from(s))
+                }
+            }
 impl SavingsPlanRatePropertyKey {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2956,17 +2717,13 @@ impl SavingsPlanRatePropertyKey {
             SavingsPlanRatePropertyKey::ProductDescription => "productDescription",
             SavingsPlanRatePropertyKey::Region => "region",
             SavingsPlanRatePropertyKey::Tenancy => "tenancy",
-            SavingsPlanRatePropertyKey::Unknown(value) => value.as_str(),
+            SavingsPlanRatePropertyKey::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "instanceFamily",
-            "instanceType",
-            "productDescription",
-            "region",
-            "tenancy",
+            "instanceFamily", "instanceType", "productDescription", "region", "tenancy"
         ]
     }
 }
@@ -2979,7 +2736,7 @@ impl AsRef<str> for SavingsPlanRatePropertyKey {
 /// <p>Information about a filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SavingsPlanRateFilter {
+pub struct SavingsPlanRateFilter  {
     /// <p>The filter name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::SavingsPlanRateFilterName>,
@@ -2989,17 +2746,17 @@ pub struct SavingsPlanRateFilter {
 }
 impl SavingsPlanRateFilter {
     /// <p>The filter name.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::SavingsPlanRateFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::SavingsPlanRateFilterName> {
         self.name.as_ref()
     }
     /// <p>The filter values.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`SavingsPlanRateFilter`](crate::model::SavingsPlanRateFilter).
 pub mod savings_plan_rate_filter {
-
+    
     /// A builder for [`SavingsPlanRateFilter`](crate::model::SavingsPlanRateFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3013,12 +2770,8 @@ pub mod savings_plan_rate_filter {
             self
         }
         /// <p>The filter name.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::SavingsPlanRateFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::SavingsPlanRateFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -3027,26 +2780,26 @@ pub mod savings_plan_rate_filter {
         /// <p>The filter values.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p>The filter values.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`SavingsPlanRateFilter`](crate::model::SavingsPlanRateFilter).
         pub fn build(self) -> crate::model::SavingsPlanRateFilter {
             crate::model::SavingsPlanRateFilter {
-                name: self.name,
-                values: self.values,
+                name: self.name
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl SavingsPlanRateFilter {
     /// Creates a new builder-style object to manufacture [`SavingsPlanRateFilter`](crate::model::SavingsPlanRateFilter).
@@ -3061,9 +2814,9 @@ impl SavingsPlanRateFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let savingsplanratefiltername = unimplemented!();
 /// match savingsplanratefiltername {
@@ -3091,22 +2844,14 @@ impl SavingsPlanRateFilter {
 /// Specifically, when `savingsplanratefiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SavingsPlanRateFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SavingsPlanRateFilterName {
     #[allow(missing_docs)] // documentation missing in model
     InstanceType,
@@ -3125,7 +2870,7 @@ pub enum SavingsPlanRateFilterName {
     #[allow(missing_docs)] // documentation missing in model
     UsageType,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SavingsPlanRateFilterName {
     fn from(s: &str) -> Self {
@@ -3138,19 +2883,17 @@ impl std::convert::From<&str> for SavingsPlanRateFilterName {
             "serviceCode" => SavingsPlanRateFilterName::ServiceCode,
             "tenancy" => SavingsPlanRateFilterName::Tenancy,
             "usageType" => SavingsPlanRateFilterName::UsageType,
-            other => SavingsPlanRateFilterName::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SavingsPlanRateFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SavingsPlanRateFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SavingsPlanRateFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SavingsPlanRateFilterName::from(s))
+                }
+            }
 impl SavingsPlanRateFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3163,20 +2906,13 @@ impl SavingsPlanRateFilterName {
             SavingsPlanRateFilterName::ServiceCode => "serviceCode",
             SavingsPlanRateFilterName::Tenancy => "tenancy",
             SavingsPlanRateFilterName::UsageType => "usageType",
-            SavingsPlanRateFilterName::Unknown(value) => value.as_str(),
+            SavingsPlanRateFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "instanceType",
-            "operation",
-            "productDescription",
-            "productType",
-            "region",
-            "serviceCode",
-            "tenancy",
-            "usageType",
+            "instanceType", "operation", "productDescription", "productType", "region", "serviceCode", "tenancy", "usageType"
         ]
     }
 }
@@ -3185,3 +2921,4 @@ impl AsRef<str> for SavingsPlanRateFilterName {
         self.as_str()
     }
 }
+

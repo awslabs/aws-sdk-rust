@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let nosuchentityerrorcode = unimplemented!();
 /// match nosuchentityerrorcode {
@@ -36,22 +36,14 @@
 /// Specifically, when `nosuchentityerrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NoSuchEntityErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NoSuchEntityErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AssessmentRunDoesNotExist,
@@ -70,66 +62,49 @@ pub enum NoSuchEntityErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     SnsTopicDoesNotExist,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NoSuchEntityErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "ASSESSMENT_RUN_DOES_NOT_EXIST" => NoSuchEntityErrorCode::AssessmentRunDoesNotExist,
-            "ASSESSMENT_TARGET_DOES_NOT_EXIST" => {
-                NoSuchEntityErrorCode::AssessmentTargetDoesNotExist
-            }
-            "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST" => {
-                NoSuchEntityErrorCode::AssessmentTemplateDoesNotExist
-            }
+            "ASSESSMENT_TARGET_DOES_NOT_EXIST" => NoSuchEntityErrorCode::AssessmentTargetDoesNotExist,
+            "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST" => NoSuchEntityErrorCode::AssessmentTemplateDoesNotExist,
             "FINDING_DOES_NOT_EXIST" => NoSuchEntityErrorCode::FindingDoesNotExist,
             "IAM_ROLE_DOES_NOT_EXIST" => NoSuchEntityErrorCode::IamRoleDoesNotExist,
             "RESOURCE_GROUP_DOES_NOT_EXIST" => NoSuchEntityErrorCode::ResourceGroupDoesNotExist,
             "RULES_PACKAGE_DOES_NOT_EXIST" => NoSuchEntityErrorCode::RulesPackageDoesNotExist,
             "SNS_TOPIC_DOES_NOT_EXIST" => NoSuchEntityErrorCode::SnsTopicDoesNotExist,
-            other => {
-                NoSuchEntityErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => NoSuchEntityErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NoSuchEntityErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NoSuchEntityErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NoSuchEntityErrorCode::from(s))
+                }
+            }
 impl NoSuchEntityErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NoSuchEntityErrorCode::AssessmentRunDoesNotExist => "ASSESSMENT_RUN_DOES_NOT_EXIST",
-            NoSuchEntityErrorCode::AssessmentTargetDoesNotExist => {
-                "ASSESSMENT_TARGET_DOES_NOT_EXIST"
-            }
-            NoSuchEntityErrorCode::AssessmentTemplateDoesNotExist => {
-                "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST"
-            }
+            NoSuchEntityErrorCode::AssessmentTargetDoesNotExist => "ASSESSMENT_TARGET_DOES_NOT_EXIST",
+            NoSuchEntityErrorCode::AssessmentTemplateDoesNotExist => "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST",
             NoSuchEntityErrorCode::FindingDoesNotExist => "FINDING_DOES_NOT_EXIST",
             NoSuchEntityErrorCode::IamRoleDoesNotExist => "IAM_ROLE_DOES_NOT_EXIST",
             NoSuchEntityErrorCode::ResourceGroupDoesNotExist => "RESOURCE_GROUP_DOES_NOT_EXIST",
             NoSuchEntityErrorCode::RulesPackageDoesNotExist => "RULES_PACKAGE_DOES_NOT_EXIST",
             NoSuchEntityErrorCode::SnsTopicDoesNotExist => "SNS_TOPIC_DOES_NOT_EXIST",
-            NoSuchEntityErrorCode::Unknown(value) => value.as_str(),
+            NoSuchEntityErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ASSESSMENT_RUN_DOES_NOT_EXIST",
-            "ASSESSMENT_TARGET_DOES_NOT_EXIST",
-            "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST",
-            "FINDING_DOES_NOT_EXIST",
-            "IAM_ROLE_DOES_NOT_EXIST",
-            "RESOURCE_GROUP_DOES_NOT_EXIST",
-            "RULES_PACKAGE_DOES_NOT_EXIST",
-            "SNS_TOPIC_DOES_NOT_EXIST",
+            "ASSESSMENT_RUN_DOES_NOT_EXIST", "ASSESSMENT_TARGET_DOES_NOT_EXIST", "ASSESSMENT_TEMPLATE_DOES_NOT_EXIST", "FINDING_DOES_NOT_EXIST", "IAM_ROLE_DOES_NOT_EXIST", "RESOURCE_GROUP_DOES_NOT_EXIST", "RULES_PACKAGE_DOES_NOT_EXIST", "SNS_TOPIC_DOES_NOT_EXIST"
         ]
     }
 }
@@ -145,9 +120,9 @@ impl AsRef<str> for NoSuchEntityErrorCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let invalidinputerrorcode = unimplemented!();
 /// match invalidinputerrorcode {
@@ -221,22 +196,14 @@ impl AsRef<str> for NoSuchEntityErrorCode {
 /// Specifically, when `invalidinputerrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InvalidInputErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InvalidInputErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AssessmentTargetNameAlreadyTaken,
@@ -347,52 +314,28 @@ pub enum InvalidInputErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     InvalidUserAttributeValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InvalidInputErrorCode {
     fn from(s: &str) -> Self {
         match s {
-            "ASSESSMENT_TARGET_NAME_ALREADY_TAKEN" => {
-                InvalidInputErrorCode::AssessmentTargetNameAlreadyTaken
-            }
-            "ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN" => {
-                InvalidInputErrorCode::AssessmentTemplateNameAlreadyTaken
-            }
+            "ASSESSMENT_TARGET_NAME_ALREADY_TAKEN" => InvalidInputErrorCode::AssessmentTargetNameAlreadyTaken,
+            "ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN" => InvalidInputErrorCode::AssessmentTemplateNameAlreadyTaken,
             "INVALID_AGENT_ID" => InvalidInputErrorCode::InvalidAgentId,
             "INVALID_ASSESSMENT_RUN_ARN" => InvalidInputErrorCode::InvalidAssessmentRunArn,
-            "INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE" => {
-                InvalidInputErrorCode::InvalidAssessmentRunCompletionTimeRange
-            }
-            "INVALID_ASSESSMENT_RUN_DURATION_RANGE" => {
-                InvalidInputErrorCode::InvalidAssessmentRunDurationRange
-            }
-            "INVALID_ASSESSMENT_RUN_START_TIME_RANGE" => {
-                InvalidInputErrorCode::InvalidAssessmentRunStartTimeRange
-            }
+            "INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE" => InvalidInputErrorCode::InvalidAssessmentRunCompletionTimeRange,
+            "INVALID_ASSESSMENT_RUN_DURATION_RANGE" => InvalidInputErrorCode::InvalidAssessmentRunDurationRange,
+            "INVALID_ASSESSMENT_RUN_START_TIME_RANGE" => InvalidInputErrorCode::InvalidAssessmentRunStartTimeRange,
             "INVALID_ASSESSMENT_RUN_STATE" => InvalidInputErrorCode::InvalidAssessmentRunState,
-            "INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE" => {
-                InvalidInputErrorCode::InvalidAssessmentRunStateChangeTimeRange
-            }
+            "INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE" => InvalidInputErrorCode::InvalidAssessmentRunStateChangeTimeRange,
             "INVALID_ASSESSMENT_TARGET_ARN" => InvalidInputErrorCode::InvalidAssessmentTargetArn,
             "INVALID_ASSESSMENT_TARGET_NAME" => InvalidInputErrorCode::InvalidAssessmentTargetName,
-            "INVALID_ASSESSMENT_TARGET_NAME_PATTERN" => {
-                InvalidInputErrorCode::InvalidAssessmentTargetNamePattern
-            }
-            "INVALID_ASSESSMENT_TEMPLATE_ARN" => {
-                InvalidInputErrorCode::InvalidAssessmentTemplateArn
-            }
-            "INVALID_ASSESSMENT_TEMPLATE_DURATION" => {
-                InvalidInputErrorCode::InvalidAssessmentTemplateDuration
-            }
-            "INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE" => {
-                InvalidInputErrorCode::InvalidAssessmentTemplateDurationRange
-            }
-            "INVALID_ASSESSMENT_TEMPLATE_NAME" => {
-                InvalidInputErrorCode::InvalidAssessmentTemplateName
-            }
-            "INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN" => {
-                InvalidInputErrorCode::InvalidAssessmentTemplateNamePattern
-            }
+            "INVALID_ASSESSMENT_TARGET_NAME_PATTERN" => InvalidInputErrorCode::InvalidAssessmentTargetNamePattern,
+            "INVALID_ASSESSMENT_TEMPLATE_ARN" => InvalidInputErrorCode::InvalidAssessmentTemplateArn,
+            "INVALID_ASSESSMENT_TEMPLATE_DURATION" => InvalidInputErrorCode::InvalidAssessmentTemplateDuration,
+            "INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE" => InvalidInputErrorCode::InvalidAssessmentTemplateDurationRange,
+            "INVALID_ASSESSMENT_TEMPLATE_NAME" => InvalidInputErrorCode::InvalidAssessmentTemplateName,
+            "INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN" => InvalidInputErrorCode::InvalidAssessmentTemplateNamePattern,
             "INVALID_ATTRIBUTE" => InvalidInputErrorCode::InvalidAttribute,
             "INVALID_AUTO_SCALING_GROUP" => InvalidInputErrorCode::InvalidAutoScalingGroup,
             "INVALID_EVENT" => InvalidInputErrorCode::InvalidEvent,
@@ -401,45 +344,25 @@ impl std::convert::From<&str> for InvalidInputErrorCode {
             "INVALID_LOCALE" => InvalidInputErrorCode::InvalidLocale,
             "INVALID_MAX_RESULTS" => InvalidInputErrorCode::InvalidMaxResults,
             "INVALID_NUMBER_OF_AGENT_IDS" => InvalidInputErrorCode::InvalidNumberOfAgentIds,
-            "INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS" => {
-                InvalidInputErrorCode::InvalidNumberOfAssessmentRunArns
-            }
-            "INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES" => {
-                InvalidInputErrorCode::InvalidNumberOfAssessmentRunStates
-            }
-            "INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS" => {
-                InvalidInputErrorCode::InvalidNumberOfAssessmentTargetArns
-            }
-            "INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS" => {
-                InvalidInputErrorCode::InvalidNumberOfAssessmentTemplateArns
-            }
+            "INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS" => InvalidInputErrorCode::InvalidNumberOfAssessmentRunArns,
+            "INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES" => InvalidInputErrorCode::InvalidNumberOfAssessmentRunStates,
+            "INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS" => InvalidInputErrorCode::InvalidNumberOfAssessmentTargetArns,
+            "INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS" => InvalidInputErrorCode::InvalidNumberOfAssessmentTemplateArns,
             "INVALID_NUMBER_OF_ATTRIBUTES" => InvalidInputErrorCode::InvalidNumberOfAttributes,
-            "INVALID_NUMBER_OF_AUTO_SCALING_GROUPS" => {
-                InvalidInputErrorCode::InvalidNumberOfAutoScalingGroups
-            }
+            "INVALID_NUMBER_OF_AUTO_SCALING_GROUPS" => InvalidInputErrorCode::InvalidNumberOfAutoScalingGroups,
             "INVALID_NUMBER_OF_FINDING_ARNS" => InvalidInputErrorCode::InvalidNumberOfFindingArns,
-            "INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS" => {
-                InvalidInputErrorCode::InvalidNumberOfResourceGroupArns
-            }
-            "INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS" => {
-                InvalidInputErrorCode::InvalidNumberOfResourceGroupTags
-            }
-            "INVALID_NUMBER_OF_RULES_PACKAGE_ARNS" => {
-                InvalidInputErrorCode::InvalidNumberOfRulesPackageArns
-            }
+            "INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS" => InvalidInputErrorCode::InvalidNumberOfResourceGroupArns,
+            "INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS" => InvalidInputErrorCode::InvalidNumberOfResourceGroupTags,
+            "INVALID_NUMBER_OF_RULES_PACKAGE_ARNS" => InvalidInputErrorCode::InvalidNumberOfRulesPackageArns,
             "INVALID_NUMBER_OF_RULE_NAMES" => InvalidInputErrorCode::InvalidNumberOfRuleNames,
             "INVALID_NUMBER_OF_SEVERITIES" => InvalidInputErrorCode::InvalidNumberOfSeverities,
             "INVALID_NUMBER_OF_TAGS" => InvalidInputErrorCode::InvalidNumberOfTags,
-            "INVALID_NUMBER_OF_USER_ATTRIBUTES" => {
-                InvalidInputErrorCode::InvalidNumberOfUserAttributes
-            }
+            "INVALID_NUMBER_OF_USER_ATTRIBUTES" => InvalidInputErrorCode::InvalidNumberOfUserAttributes,
             "INVALID_PAGINATION_TOKEN" => InvalidInputErrorCode::InvalidPaginationToken,
             "INVALID_RESOURCE_ARN" => InvalidInputErrorCode::InvalidResourceArn,
             "INVALID_RESOURCE_GROUP_ARN" => InvalidInputErrorCode::InvalidResourceGroupArn,
             "INVALID_RESOURCE_GROUP_TAG_KEY" => InvalidInputErrorCode::InvalidResourceGroupTagKey,
-            "INVALID_RESOURCE_GROUP_TAG_VALUE" => {
-                InvalidInputErrorCode::InvalidResourceGroupTagValue
-            }
+            "INVALID_RESOURCE_GROUP_TAG_VALUE" => InvalidInputErrorCode::InvalidResourceGroupTagValue,
             "INVALID_RULES_PACKAGE_ARN" => InvalidInputErrorCode::InvalidRulesPackageArn,
             "INVALID_RULE_NAME" => InvalidInputErrorCode::InvalidRuleName,
             "INVALID_SEVERITY" => InvalidInputErrorCode::InvalidSeverity,
@@ -450,64 +373,38 @@ impl std::convert::From<&str> for InvalidInputErrorCode {
             "INVALID_USER_ATTRIBUTE" => InvalidInputErrorCode::InvalidUserAttribute,
             "INVALID_USER_ATTRIBUTE_KEY" => InvalidInputErrorCode::InvalidUserAttributeKey,
             "INVALID_USER_ATTRIBUTE_VALUE" => InvalidInputErrorCode::InvalidUserAttributeValue,
-            other => {
-                InvalidInputErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => InvalidInputErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InvalidInputErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InvalidInputErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InvalidInputErrorCode::from(s))
+                }
+            }
 impl InvalidInputErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            InvalidInputErrorCode::AssessmentTargetNameAlreadyTaken => {
-                "ASSESSMENT_TARGET_NAME_ALREADY_TAKEN"
-            }
-            InvalidInputErrorCode::AssessmentTemplateNameAlreadyTaken => {
-                "ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN"
-            }
+            InvalidInputErrorCode::AssessmentTargetNameAlreadyTaken => "ASSESSMENT_TARGET_NAME_ALREADY_TAKEN",
+            InvalidInputErrorCode::AssessmentTemplateNameAlreadyTaken => "ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN",
             InvalidInputErrorCode::InvalidAgentId => "INVALID_AGENT_ID",
             InvalidInputErrorCode::InvalidAssessmentRunArn => "INVALID_ASSESSMENT_RUN_ARN",
-            InvalidInputErrorCode::InvalidAssessmentRunCompletionTimeRange => {
-                "INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE"
-            }
-            InvalidInputErrorCode::InvalidAssessmentRunDurationRange => {
-                "INVALID_ASSESSMENT_RUN_DURATION_RANGE"
-            }
-            InvalidInputErrorCode::InvalidAssessmentRunStartTimeRange => {
-                "INVALID_ASSESSMENT_RUN_START_TIME_RANGE"
-            }
+            InvalidInputErrorCode::InvalidAssessmentRunCompletionTimeRange => "INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE",
+            InvalidInputErrorCode::InvalidAssessmentRunDurationRange => "INVALID_ASSESSMENT_RUN_DURATION_RANGE",
+            InvalidInputErrorCode::InvalidAssessmentRunStartTimeRange => "INVALID_ASSESSMENT_RUN_START_TIME_RANGE",
             InvalidInputErrorCode::InvalidAssessmentRunState => "INVALID_ASSESSMENT_RUN_STATE",
-            InvalidInputErrorCode::InvalidAssessmentRunStateChangeTimeRange => {
-                "INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE"
-            }
+            InvalidInputErrorCode::InvalidAssessmentRunStateChangeTimeRange => "INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE",
             InvalidInputErrorCode::InvalidAssessmentTargetArn => "INVALID_ASSESSMENT_TARGET_ARN",
             InvalidInputErrorCode::InvalidAssessmentTargetName => "INVALID_ASSESSMENT_TARGET_NAME",
-            InvalidInputErrorCode::InvalidAssessmentTargetNamePattern => {
-                "INVALID_ASSESSMENT_TARGET_NAME_PATTERN"
-            }
-            InvalidInputErrorCode::InvalidAssessmentTemplateArn => {
-                "INVALID_ASSESSMENT_TEMPLATE_ARN"
-            }
-            InvalidInputErrorCode::InvalidAssessmentTemplateDuration => {
-                "INVALID_ASSESSMENT_TEMPLATE_DURATION"
-            }
-            InvalidInputErrorCode::InvalidAssessmentTemplateDurationRange => {
-                "INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE"
-            }
-            InvalidInputErrorCode::InvalidAssessmentTemplateName => {
-                "INVALID_ASSESSMENT_TEMPLATE_NAME"
-            }
-            InvalidInputErrorCode::InvalidAssessmentTemplateNamePattern => {
-                "INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN"
-            }
+            InvalidInputErrorCode::InvalidAssessmentTargetNamePattern => "INVALID_ASSESSMENT_TARGET_NAME_PATTERN",
+            InvalidInputErrorCode::InvalidAssessmentTemplateArn => "INVALID_ASSESSMENT_TEMPLATE_ARN",
+            InvalidInputErrorCode::InvalidAssessmentTemplateDuration => "INVALID_ASSESSMENT_TEMPLATE_DURATION",
+            InvalidInputErrorCode::InvalidAssessmentTemplateDurationRange => "INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE",
+            InvalidInputErrorCode::InvalidAssessmentTemplateName => "INVALID_ASSESSMENT_TEMPLATE_NAME",
+            InvalidInputErrorCode::InvalidAssessmentTemplateNamePattern => "INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN",
             InvalidInputErrorCode::InvalidAttribute => "INVALID_ATTRIBUTE",
             InvalidInputErrorCode::InvalidAutoScalingGroup => "INVALID_AUTO_SCALING_GROUP",
             InvalidInputErrorCode::InvalidEvent => "INVALID_EVENT",
@@ -516,45 +413,25 @@ impl InvalidInputErrorCode {
             InvalidInputErrorCode::InvalidLocale => "INVALID_LOCALE",
             InvalidInputErrorCode::InvalidMaxResults => "INVALID_MAX_RESULTS",
             InvalidInputErrorCode::InvalidNumberOfAgentIds => "INVALID_NUMBER_OF_AGENT_IDS",
-            InvalidInputErrorCode::InvalidNumberOfAssessmentRunArns => {
-                "INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS"
-            }
-            InvalidInputErrorCode::InvalidNumberOfAssessmentRunStates => {
-                "INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES"
-            }
-            InvalidInputErrorCode::InvalidNumberOfAssessmentTargetArns => {
-                "INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS"
-            }
-            InvalidInputErrorCode::InvalidNumberOfAssessmentTemplateArns => {
-                "INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS"
-            }
+            InvalidInputErrorCode::InvalidNumberOfAssessmentRunArns => "INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS",
+            InvalidInputErrorCode::InvalidNumberOfAssessmentRunStates => "INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES",
+            InvalidInputErrorCode::InvalidNumberOfAssessmentTargetArns => "INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS",
+            InvalidInputErrorCode::InvalidNumberOfAssessmentTemplateArns => "INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS",
             InvalidInputErrorCode::InvalidNumberOfAttributes => "INVALID_NUMBER_OF_ATTRIBUTES",
-            InvalidInputErrorCode::InvalidNumberOfAutoScalingGroups => {
-                "INVALID_NUMBER_OF_AUTO_SCALING_GROUPS"
-            }
+            InvalidInputErrorCode::InvalidNumberOfAutoScalingGroups => "INVALID_NUMBER_OF_AUTO_SCALING_GROUPS",
             InvalidInputErrorCode::InvalidNumberOfFindingArns => "INVALID_NUMBER_OF_FINDING_ARNS",
-            InvalidInputErrorCode::InvalidNumberOfResourceGroupArns => {
-                "INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS"
-            }
-            InvalidInputErrorCode::InvalidNumberOfResourceGroupTags => {
-                "INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS"
-            }
-            InvalidInputErrorCode::InvalidNumberOfRulesPackageArns => {
-                "INVALID_NUMBER_OF_RULES_PACKAGE_ARNS"
-            }
+            InvalidInputErrorCode::InvalidNumberOfResourceGroupArns => "INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS",
+            InvalidInputErrorCode::InvalidNumberOfResourceGroupTags => "INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS",
+            InvalidInputErrorCode::InvalidNumberOfRulesPackageArns => "INVALID_NUMBER_OF_RULES_PACKAGE_ARNS",
             InvalidInputErrorCode::InvalidNumberOfRuleNames => "INVALID_NUMBER_OF_RULE_NAMES",
             InvalidInputErrorCode::InvalidNumberOfSeverities => "INVALID_NUMBER_OF_SEVERITIES",
             InvalidInputErrorCode::InvalidNumberOfTags => "INVALID_NUMBER_OF_TAGS",
-            InvalidInputErrorCode::InvalidNumberOfUserAttributes => {
-                "INVALID_NUMBER_OF_USER_ATTRIBUTES"
-            }
+            InvalidInputErrorCode::InvalidNumberOfUserAttributes => "INVALID_NUMBER_OF_USER_ATTRIBUTES",
             InvalidInputErrorCode::InvalidPaginationToken => "INVALID_PAGINATION_TOKEN",
             InvalidInputErrorCode::InvalidResourceArn => "INVALID_RESOURCE_ARN",
             InvalidInputErrorCode::InvalidResourceGroupArn => "INVALID_RESOURCE_GROUP_ARN",
             InvalidInputErrorCode::InvalidResourceGroupTagKey => "INVALID_RESOURCE_GROUP_TAG_KEY",
-            InvalidInputErrorCode::InvalidResourceGroupTagValue => {
-                "INVALID_RESOURCE_GROUP_TAG_VALUE"
-            }
+            InvalidInputErrorCode::InvalidResourceGroupTagValue => "INVALID_RESOURCE_GROUP_TAG_VALUE",
             InvalidInputErrorCode::InvalidRulesPackageArn => "INVALID_RULES_PACKAGE_ARN",
             InvalidInputErrorCode::InvalidRuleName => "INVALID_RULE_NAME",
             InvalidInputErrorCode::InvalidSeverity => "INVALID_SEVERITY",
@@ -565,66 +442,13 @@ impl InvalidInputErrorCode {
             InvalidInputErrorCode::InvalidUserAttribute => "INVALID_USER_ATTRIBUTE",
             InvalidInputErrorCode::InvalidUserAttributeKey => "INVALID_USER_ATTRIBUTE_KEY",
             InvalidInputErrorCode::InvalidUserAttributeValue => "INVALID_USER_ATTRIBUTE_VALUE",
-            InvalidInputErrorCode::Unknown(value) => value.as_str(),
+            InvalidInputErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ASSESSMENT_TARGET_NAME_ALREADY_TAKEN",
-            "ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN",
-            "INVALID_AGENT_ID",
-            "INVALID_ASSESSMENT_RUN_ARN",
-            "INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE",
-            "INVALID_ASSESSMENT_RUN_DURATION_RANGE",
-            "INVALID_ASSESSMENT_RUN_START_TIME_RANGE",
-            "INVALID_ASSESSMENT_RUN_STATE",
-            "INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE",
-            "INVALID_ASSESSMENT_TARGET_ARN",
-            "INVALID_ASSESSMENT_TARGET_NAME",
-            "INVALID_ASSESSMENT_TARGET_NAME_PATTERN",
-            "INVALID_ASSESSMENT_TEMPLATE_ARN",
-            "INVALID_ASSESSMENT_TEMPLATE_DURATION",
-            "INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE",
-            "INVALID_ASSESSMENT_TEMPLATE_NAME",
-            "INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN",
-            "INVALID_ATTRIBUTE",
-            "INVALID_AUTO_SCALING_GROUP",
-            "INVALID_EVENT",
-            "INVALID_FINDING_ARN",
-            "INVALID_IAM_ROLE_ARN",
-            "INVALID_LOCALE",
-            "INVALID_MAX_RESULTS",
-            "INVALID_NUMBER_OF_AGENT_IDS",
-            "INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS",
-            "INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES",
-            "INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS",
-            "INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS",
-            "INVALID_NUMBER_OF_ATTRIBUTES",
-            "INVALID_NUMBER_OF_AUTO_SCALING_GROUPS",
-            "INVALID_NUMBER_OF_FINDING_ARNS",
-            "INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS",
-            "INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS",
-            "INVALID_NUMBER_OF_RULES_PACKAGE_ARNS",
-            "INVALID_NUMBER_OF_RULE_NAMES",
-            "INVALID_NUMBER_OF_SEVERITIES",
-            "INVALID_NUMBER_OF_TAGS",
-            "INVALID_NUMBER_OF_USER_ATTRIBUTES",
-            "INVALID_PAGINATION_TOKEN",
-            "INVALID_RESOURCE_ARN",
-            "INVALID_RESOURCE_GROUP_ARN",
-            "INVALID_RESOURCE_GROUP_TAG_KEY",
-            "INVALID_RESOURCE_GROUP_TAG_VALUE",
-            "INVALID_RULES_PACKAGE_ARN",
-            "INVALID_RULE_NAME",
-            "INVALID_SEVERITY",
-            "INVALID_SNS_TOPIC_ARN",
-            "INVALID_TAG",
-            "INVALID_TAG_KEY",
-            "INVALID_TAG_VALUE",
-            "INVALID_USER_ATTRIBUTE",
-            "INVALID_USER_ATTRIBUTE_KEY",
-            "INVALID_USER_ATTRIBUTE_VALUE",
+            "ASSESSMENT_TARGET_NAME_ALREADY_TAKEN", "ASSESSMENT_TEMPLATE_NAME_ALREADY_TAKEN", "INVALID_AGENT_ID", "INVALID_ASSESSMENT_RUN_ARN", "INVALID_ASSESSMENT_RUN_COMPLETION_TIME_RANGE", "INVALID_ASSESSMENT_RUN_DURATION_RANGE", "INVALID_ASSESSMENT_RUN_START_TIME_RANGE", "INVALID_ASSESSMENT_RUN_STATE", "INVALID_ASSESSMENT_RUN_STATE_CHANGE_TIME_RANGE", "INVALID_ASSESSMENT_TARGET_ARN", "INVALID_ASSESSMENT_TARGET_NAME", "INVALID_ASSESSMENT_TARGET_NAME_PATTERN", "INVALID_ASSESSMENT_TEMPLATE_ARN", "INVALID_ASSESSMENT_TEMPLATE_DURATION", "INVALID_ASSESSMENT_TEMPLATE_DURATION_RANGE", "INVALID_ASSESSMENT_TEMPLATE_NAME", "INVALID_ASSESSMENT_TEMPLATE_NAME_PATTERN", "INVALID_ATTRIBUTE", "INVALID_AUTO_SCALING_GROUP", "INVALID_EVENT", "INVALID_FINDING_ARN", "INVALID_IAM_ROLE_ARN", "INVALID_LOCALE", "INVALID_MAX_RESULTS", "INVALID_NUMBER_OF_AGENT_IDS", "INVALID_NUMBER_OF_ASSESSMENT_RUN_ARNS", "INVALID_NUMBER_OF_ASSESSMENT_RUN_STATES", "INVALID_NUMBER_OF_ASSESSMENT_TARGET_ARNS", "INVALID_NUMBER_OF_ASSESSMENT_TEMPLATE_ARNS", "INVALID_NUMBER_OF_ATTRIBUTES", "INVALID_NUMBER_OF_AUTO_SCALING_GROUPS", "INVALID_NUMBER_OF_FINDING_ARNS", "INVALID_NUMBER_OF_RESOURCE_GROUP_ARNS", "INVALID_NUMBER_OF_RESOURCE_GROUP_TAGS", "INVALID_NUMBER_OF_RULES_PACKAGE_ARNS", "INVALID_NUMBER_OF_RULE_NAMES", "INVALID_NUMBER_OF_SEVERITIES", "INVALID_NUMBER_OF_TAGS", "INVALID_NUMBER_OF_USER_ATTRIBUTES", "INVALID_PAGINATION_TOKEN", "INVALID_RESOURCE_ARN", "INVALID_RESOURCE_GROUP_ARN", "INVALID_RESOURCE_GROUP_TAG_KEY", "INVALID_RESOURCE_GROUP_TAG_VALUE", "INVALID_RULES_PACKAGE_ARN", "INVALID_RULE_NAME", "INVALID_SEVERITY", "INVALID_SNS_TOPIC_ARN", "INVALID_TAG", "INVALID_TAG_KEY", "INVALID_TAG_VALUE", "INVALID_USER_ATTRIBUTE", "INVALID_USER_ATTRIBUTE_KEY", "INVALID_USER_ATTRIBUTE_VALUE"
         ]
     }
 }
@@ -640,9 +464,9 @@ impl AsRef<str> for InvalidInputErrorCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accessdeniederrorcode = unimplemented!();
 /// match accessdeniederrorcode {
@@ -670,22 +494,14 @@ impl AsRef<str> for InvalidInputErrorCode {
 /// Specifically, when `accessdeniederrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccessDeniedErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccessDeniedErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDeniedToAssessmentRun,
@@ -704,66 +520,49 @@ pub enum AccessDeniedErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDeniedToSnsTopic,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccessDeniedErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "ACCESS_DENIED_TO_ASSESSMENT_RUN" => AccessDeniedErrorCode::AccessDeniedToAssessmentRun,
-            "ACCESS_DENIED_TO_ASSESSMENT_TARGET" => {
-                AccessDeniedErrorCode::AccessDeniedToAssessmentTarget
-            }
-            "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE" => {
-                AccessDeniedErrorCode::AccessDeniedToAssessmentTemplate
-            }
+            "ACCESS_DENIED_TO_ASSESSMENT_TARGET" => AccessDeniedErrorCode::AccessDeniedToAssessmentTarget,
+            "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE" => AccessDeniedErrorCode::AccessDeniedToAssessmentTemplate,
             "ACCESS_DENIED_TO_FINDING" => AccessDeniedErrorCode::AccessDeniedToFinding,
             "ACCESS_DENIED_TO_IAM_ROLE" => AccessDeniedErrorCode::AccessDeniedToIamRole,
             "ACCESS_DENIED_TO_RESOURCE_GROUP" => AccessDeniedErrorCode::AccessDeniedToResourceGroup,
             "ACCESS_DENIED_TO_RULES_PACKAGE" => AccessDeniedErrorCode::AccessDeniedToRulesPackage,
             "ACCESS_DENIED_TO_SNS_TOPIC" => AccessDeniedErrorCode::AccessDeniedToSnsTopic,
-            other => {
-                AccessDeniedErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AccessDeniedErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccessDeniedErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccessDeniedErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccessDeniedErrorCode::from(s))
+                }
+            }
 impl AccessDeniedErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccessDeniedErrorCode::AccessDeniedToAssessmentRun => "ACCESS_DENIED_TO_ASSESSMENT_RUN",
-            AccessDeniedErrorCode::AccessDeniedToAssessmentTarget => {
-                "ACCESS_DENIED_TO_ASSESSMENT_TARGET"
-            }
-            AccessDeniedErrorCode::AccessDeniedToAssessmentTemplate => {
-                "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE"
-            }
+            AccessDeniedErrorCode::AccessDeniedToAssessmentTarget => "ACCESS_DENIED_TO_ASSESSMENT_TARGET",
+            AccessDeniedErrorCode::AccessDeniedToAssessmentTemplate => "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE",
             AccessDeniedErrorCode::AccessDeniedToFinding => "ACCESS_DENIED_TO_FINDING",
             AccessDeniedErrorCode::AccessDeniedToIamRole => "ACCESS_DENIED_TO_IAM_ROLE",
             AccessDeniedErrorCode::AccessDeniedToResourceGroup => "ACCESS_DENIED_TO_RESOURCE_GROUP",
             AccessDeniedErrorCode::AccessDeniedToRulesPackage => "ACCESS_DENIED_TO_RULES_PACKAGE",
             AccessDeniedErrorCode::AccessDeniedToSnsTopic => "ACCESS_DENIED_TO_SNS_TOPIC",
-            AccessDeniedErrorCode::Unknown(value) => value.as_str(),
+            AccessDeniedErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACCESS_DENIED_TO_ASSESSMENT_RUN",
-            "ACCESS_DENIED_TO_ASSESSMENT_TARGET",
-            "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE",
-            "ACCESS_DENIED_TO_FINDING",
-            "ACCESS_DENIED_TO_IAM_ROLE",
-            "ACCESS_DENIED_TO_RESOURCE_GROUP",
-            "ACCESS_DENIED_TO_RULES_PACKAGE",
-            "ACCESS_DENIED_TO_SNS_TOPIC",
+            "ACCESS_DENIED_TO_ASSESSMENT_RUN", "ACCESS_DENIED_TO_ASSESSMENT_TARGET", "ACCESS_DENIED_TO_ASSESSMENT_TEMPLATE", "ACCESS_DENIED_TO_FINDING", "ACCESS_DENIED_TO_IAM_ROLE", "ACCESS_DENIED_TO_RESOURCE_GROUP", "ACCESS_DENIED_TO_RULES_PACKAGE", "ACCESS_DENIED_TO_SNS_TOPIC"
         ]
     }
 }
@@ -779,9 +578,9 @@ impl AsRef<str> for AccessDeniedErrorCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let inspectorevent = unimplemented!();
 /// match inspectorevent {
@@ -806,22 +605,14 @@ impl AsRef<str> for AccessDeniedErrorCode {
 /// Specifically, when `inspectorevent` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InspectorEvent::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InspectorEvent {
     #[allow(missing_docs)] // documentation missing in model
     AssessmentRunCompleted,
@@ -834,7 +625,7 @@ pub enum InspectorEvent {
     #[allow(missing_docs)] // documentation missing in model
     Other,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InspectorEvent {
     fn from(s: &str) -> Self {
@@ -844,17 +635,17 @@ impl std::convert::From<&str> for InspectorEvent {
             "ASSESSMENT_RUN_STATE_CHANGED" => InspectorEvent::AssessmentRunStateChanged,
             "FINDING_REPORTED" => InspectorEvent::FindingReported,
             "OTHER" => InspectorEvent::Other,
-            other => InspectorEvent::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => InspectorEvent::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InspectorEvent {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InspectorEvent::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InspectorEvent::from(s))
+                }
+            }
 impl InspectorEvent {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -864,17 +655,13 @@ impl InspectorEvent {
             InspectorEvent::AssessmentRunStateChanged => "ASSESSMENT_RUN_STATE_CHANGED",
             InspectorEvent::FindingReported => "FINDING_REPORTED",
             InspectorEvent::Other => "OTHER",
-            InspectorEvent::Unknown(value) => value.as_str(),
+            InspectorEvent::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ASSESSMENT_RUN_COMPLETED",
-            "ASSESSMENT_RUN_STARTED",
-            "ASSESSMENT_RUN_STATE_CHANGED",
-            "FINDING_REPORTED",
-            "OTHER",
+            "ASSESSMENT_RUN_COMPLETED", "ASSESSMENT_RUN_STARTED", "ASSESSMENT_RUN_STATE_CHANGED", "FINDING_REPORTED", "OTHER"
         ]
     }
 }
@@ -890,9 +677,9 @@ impl AsRef<str> for InspectorEvent {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let limitexceedederrorcode = unimplemented!();
 /// match limitexceedederrorcode {
@@ -917,22 +704,14 @@ impl AsRef<str> for InspectorEvent {
 /// Specifically, when `limitexceedederrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LimitExceededErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LimitExceededErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AssessmentRunLimitExceeded,
@@ -945,61 +724,43 @@ pub enum LimitExceededErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     ResourceGroupLimitExceeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LimitExceededErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "ASSESSMENT_RUN_LIMIT_EXCEEDED" => LimitExceededErrorCode::AssessmentRunLimitExceeded,
-            "ASSESSMENT_TARGET_LIMIT_EXCEEDED" => {
-                LimitExceededErrorCode::AssessmentTargetLimitExceeded
-            }
-            "ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED" => {
-                LimitExceededErrorCode::AssessmentTemplateLimitExceeded
-            }
-            "EVENT_SUBSCRIPTION_LIMIT_EXCEEDED" => {
-                LimitExceededErrorCode::EventSubscriptionLimitExceeded
-            }
+            "ASSESSMENT_TARGET_LIMIT_EXCEEDED" => LimitExceededErrorCode::AssessmentTargetLimitExceeded,
+            "ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED" => LimitExceededErrorCode::AssessmentTemplateLimitExceeded,
+            "EVENT_SUBSCRIPTION_LIMIT_EXCEEDED" => LimitExceededErrorCode::EventSubscriptionLimitExceeded,
             "RESOURCE_GROUP_LIMIT_EXCEEDED" => LimitExceededErrorCode::ResourceGroupLimitExceeded,
-            other => {
-                LimitExceededErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => LimitExceededErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LimitExceededErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LimitExceededErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LimitExceededErrorCode::from(s))
+                }
+            }
 impl LimitExceededErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LimitExceededErrorCode::AssessmentRunLimitExceeded => "ASSESSMENT_RUN_LIMIT_EXCEEDED",
-            LimitExceededErrorCode::AssessmentTargetLimitExceeded => {
-                "ASSESSMENT_TARGET_LIMIT_EXCEEDED"
-            }
-            LimitExceededErrorCode::AssessmentTemplateLimitExceeded => {
-                "ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED"
-            }
-            LimitExceededErrorCode::EventSubscriptionLimitExceeded => {
-                "EVENT_SUBSCRIPTION_LIMIT_EXCEEDED"
-            }
+            LimitExceededErrorCode::AssessmentTargetLimitExceeded => "ASSESSMENT_TARGET_LIMIT_EXCEEDED",
+            LimitExceededErrorCode::AssessmentTemplateLimitExceeded => "ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED",
+            LimitExceededErrorCode::EventSubscriptionLimitExceeded => "EVENT_SUBSCRIPTION_LIMIT_EXCEEDED",
             LimitExceededErrorCode::ResourceGroupLimitExceeded => "RESOURCE_GROUP_LIMIT_EXCEEDED",
-            LimitExceededErrorCode::Unknown(value) => value.as_str(),
+            LimitExceededErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ASSESSMENT_RUN_LIMIT_EXCEEDED",
-            "ASSESSMENT_TARGET_LIMIT_EXCEEDED",
-            "ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED",
-            "EVENT_SUBSCRIPTION_LIMIT_EXCEEDED",
-            "RESOURCE_GROUP_LIMIT_EXCEEDED",
+            "ASSESSMENT_RUN_LIMIT_EXCEEDED", "ASSESSMENT_TARGET_LIMIT_EXCEEDED", "ASSESSMENT_TEMPLATE_LIMIT_EXCEEDED", "EVENT_SUBSCRIPTION_LIMIT_EXCEEDED", "RESOURCE_GROUP_LIMIT_EXCEEDED"
         ]
     }
 }
@@ -1015,9 +776,9 @@ impl AsRef<str> for LimitExceededErrorCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let stopaction = unimplemented!();
 /// match stopaction {
@@ -1039,58 +800,52 @@ impl AsRef<str> for LimitExceededErrorCode {
 /// Specifically, when `stopaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StopAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StopAction {
     #[allow(missing_docs)] // documentation missing in model
     SkipEvaluation,
     #[allow(missing_docs)] // documentation missing in model
     StartEvaluation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StopAction {
     fn from(s: &str) -> Self {
         match s {
             "SKIP_EVALUATION" => StopAction::SkipEvaluation,
             "START_EVALUATION" => StopAction::StartEvaluation,
-            other => StopAction::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StopAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StopAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StopAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StopAction::from(s))
+                }
+            }
 impl StopAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StopAction::SkipEvaluation => "SKIP_EVALUATION",
             StopAction::StartEvaluation => "START_EVALUATION",
-            StopAction::Unknown(value) => value.as_str(),
+            StopAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SKIP_EVALUATION", "START_EVALUATION"]
+        &[
+            "SKIP_EVALUATION", "START_EVALUATION"
+        ]
     }
 }
 impl AsRef<str> for StopAction {
@@ -1105,9 +860,9 @@ impl AsRef<str> for StopAction {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let invalidcrossaccountroleerrorcode = unimplemented!();
 /// match invalidcrossaccountroleerrorcode {
@@ -1129,70 +884,51 @@ impl AsRef<str> for StopAction {
 /// Specifically, when `invalidcrossaccountroleerrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InvalidCrossAccountRoleErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InvalidCrossAccountRoleErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     RoleDoesNotExistOrInvalidTrustRelationship,
     #[allow(missing_docs)] // documentation missing in model
     RoleDoesNotHaveCorrectPolicy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InvalidCrossAccountRoleErrorCode {
     fn from(s: &str) -> Self {
         match s {
-            "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP" => {
-                InvalidCrossAccountRoleErrorCode::RoleDoesNotExistOrInvalidTrustRelationship
-            }
-            "ROLE_DOES_NOT_HAVE_CORRECT_POLICY" => {
-                InvalidCrossAccountRoleErrorCode::RoleDoesNotHaveCorrectPolicy
-            }
-            other => InvalidCrossAccountRoleErrorCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP" => InvalidCrossAccountRoleErrorCode::RoleDoesNotExistOrInvalidTrustRelationship,
+            "ROLE_DOES_NOT_HAVE_CORRECT_POLICY" => InvalidCrossAccountRoleErrorCode::RoleDoesNotHaveCorrectPolicy,
+            other => InvalidCrossAccountRoleErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InvalidCrossAccountRoleErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InvalidCrossAccountRoleErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InvalidCrossAccountRoleErrorCode::from(s))
+                }
+            }
 impl InvalidCrossAccountRoleErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            InvalidCrossAccountRoleErrorCode::RoleDoesNotExistOrInvalidTrustRelationship => {
-                "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP"
-            }
-            InvalidCrossAccountRoleErrorCode::RoleDoesNotHaveCorrectPolicy => {
-                "ROLE_DOES_NOT_HAVE_CORRECT_POLICY"
-            }
-            InvalidCrossAccountRoleErrorCode::Unknown(value) => value.as_str(),
+            InvalidCrossAccountRoleErrorCode::RoleDoesNotExistOrInvalidTrustRelationship => "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP",
+            InvalidCrossAccountRoleErrorCode::RoleDoesNotHaveCorrectPolicy => "ROLE_DOES_NOT_HAVE_CORRECT_POLICY",
+            InvalidCrossAccountRoleErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP",
-            "ROLE_DOES_NOT_HAVE_CORRECT_POLICY",
+            "ROLE_DOES_NOT_EXIST_OR_INVALID_TRUST_RELATIONSHIP", "ROLE_DOES_NOT_HAVE_CORRECT_POLICY"
         ]
     }
 }
@@ -1205,7 +941,7 @@ impl AsRef<str> for InvalidCrossAccountRoleErrorCode {
 /// <p>Used in the exception error that is thrown if you start an assessment run for an assessment target that includes an EC2 instance that is already participating in another started assessment run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AgentAlreadyRunningAssessment {
+pub struct AgentAlreadyRunningAssessment  {
     /// <p>ID of the agent that is running on an EC2 instance that is already participating in another started assessment run.</p>
     #[doc(hidden)]
     pub agent_id: std::option::Option<std::string::String>,
@@ -1215,17 +951,17 @@ pub struct AgentAlreadyRunningAssessment {
 }
 impl AgentAlreadyRunningAssessment {
     /// <p>ID of the agent that is running on an EC2 instance that is already participating in another started assessment run.</p>
-    pub fn agent_id(&self) -> std::option::Option<&str> {
+    pub fn agent_id(&self) -> std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// <p>The ARN of the assessment run that has already been started.</p>
-    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
+    pub fn assessment_run_arn(&self) -> std::option::Option<& str> {
         self.assessment_run_arn.as_deref()
     }
 }
 /// See [`AgentAlreadyRunningAssessment`](crate::model::AgentAlreadyRunningAssessment).
 pub mod agent_already_running_assessment {
-
+    
     /// A builder for [`AgentAlreadyRunningAssessment`](crate::model::AgentAlreadyRunningAssessment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1240,8 +976,7 @@ pub mod agent_already_running_assessment {
         }
         /// <p>ID of the agent that is running on an EC2 instance that is already participating in another started assessment run.</p>
         pub fn set_agent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.agent_id = input;
-            self
+            self.agent_id = input; self
         }
         /// <p>The ARN of the assessment run that has already been started.</p>
         pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1249,21 +984,21 @@ pub mod agent_already_running_assessment {
             self
         }
         /// <p>The ARN of the assessment run that has already been started.</p>
-        pub fn set_assessment_run_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assessment_run_arn = input;
-            self
+        pub fn set_assessment_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assessment_run_arn = input; self
         }
         /// Consumes the builder and constructs a [`AgentAlreadyRunningAssessment`](crate::model::AgentAlreadyRunningAssessment).
         pub fn build(self) -> crate::model::AgentAlreadyRunningAssessment {
             crate::model::AgentAlreadyRunningAssessment {
-                agent_id: self.agent_id,
-                assessment_run_arn: self.assessment_run_arn,
+                agent_id: self.agent_id
+                ,
+                assessment_run_arn: self.assessment_run_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl AgentAlreadyRunningAssessment {
     /// Creates a new builder-style object to manufacture [`AgentAlreadyRunningAssessment`](crate::model::AgentAlreadyRunningAssessment).
@@ -1275,7 +1010,7 @@ impl AgentAlreadyRunningAssessment {
 /// <p>A key and value pair. This data type is used as a request parameter in the <code>SetTagsForResource</code> action and a response element in the <code>ListTagsForResource</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>A tag key.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -1285,17 +1020,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>A tag key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>A value assigned to a tag key.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1310,8 +1045,7 @@ pub mod tag {
         }
         /// <p>A tag key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>A value assigned to a tag key.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1320,17 +1054,20 @@ pub mod tag {
         }
         /// <p>A value assigned to a tag key.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -1342,7 +1079,7 @@ impl Tag {
 /// <p>Includes details about the failed items.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailedItemDetails {
+pub struct FailedItemDetails  {
     /// <p>The status code of a failed item.</p>
     #[doc(hidden)]
     pub failure_code: std::option::Option<crate::model::FailedItemErrorCode>,
@@ -1352,7 +1089,7 @@ pub struct FailedItemDetails {
 }
 impl FailedItemDetails {
     /// <p>The status code of a failed item.</p>
-    pub fn failure_code(&self) -> std::option::Option<&crate::model::FailedItemErrorCode> {
+    pub fn failure_code(&self) -> std::option::Option<& crate::model::FailedItemErrorCode> {
         self.failure_code.as_ref()
     }
     /// <p>Indicates whether you can immediately retry a request for this item for a specified resource.</p>
@@ -1362,7 +1099,7 @@ impl FailedItemDetails {
 }
 /// See [`FailedItemDetails`](crate::model::FailedItemDetails).
 pub mod failed_item_details {
-
+    
     /// A builder for [`FailedItemDetails`](crate::model::FailedItemDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1376,12 +1113,8 @@ pub mod failed_item_details {
             self
         }
         /// <p>The status code of a failed item.</p>
-        pub fn set_failure_code(
-            mut self,
-            input: std::option::Option<crate::model::FailedItemErrorCode>,
-        ) -> Self {
-            self.failure_code = input;
-            self
+        pub fn set_failure_code(mut self, input: std::option::Option<crate::model::FailedItemErrorCode>) -> Self {
+            self.failure_code = input; self
         }
         /// <p>Indicates whether you can immediately retry a request for this item for a specified resource.</p>
         pub fn retryable(mut self, input: bool) -> Self {
@@ -1390,17 +1123,20 @@ pub mod failed_item_details {
         }
         /// <p>Indicates whether you can immediately retry a request for this item for a specified resource.</p>
         pub fn set_retryable(mut self, input: std::option::Option<bool>) -> Self {
-            self.retryable = input;
-            self
+            self.retryable = input; self
         }
         /// Consumes the builder and constructs a [`FailedItemDetails`](crate::model::FailedItemDetails).
         pub fn build(self) -> crate::model::FailedItemDetails {
             crate::model::FailedItemDetails {
-                failure_code: self.failure_code,
-                retryable: self.retryable,
+                failure_code: self.failure_code
+                ,
+                retryable: self.retryable
+                ,
             }
         }
     }
+    
+    
 }
 impl FailedItemDetails {
     /// Creates a new builder-style object to manufacture [`FailedItemDetails`](crate::model::FailedItemDetails).
@@ -1415,9 +1151,9 @@ impl FailedItemDetails {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let faileditemerrorcode = unimplemented!();
 /// match faileditemerrorcode {
@@ -1443,22 +1179,14 @@ impl FailedItemDetails {
 /// Specifically, when `faileditemerrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FailedItemErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FailedItemErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -1473,7 +1201,7 @@ pub enum FailedItemErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     LimitExceeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FailedItemErrorCode {
     fn from(s: &str) -> Self {
@@ -1484,19 +1212,17 @@ impl std::convert::From<&str> for FailedItemErrorCode {
             "INVALID_ARN" => FailedItemErrorCode::InvalidArn,
             "ITEM_DOES_NOT_EXIST" => FailedItemErrorCode::ItemDoesNotExist,
             "LIMIT_EXCEEDED" => FailedItemErrorCode::LimitExceeded,
-            other => {
-                FailedItemErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FailedItemErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FailedItemErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FailedItemErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FailedItemErrorCode::from(s))
+                }
+            }
 impl FailedItemErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1507,18 +1233,13 @@ impl FailedItemErrorCode {
             FailedItemErrorCode::InvalidArn => "INVALID_ARN",
             FailedItemErrorCode::ItemDoesNotExist => "ITEM_DOES_NOT_EXIST",
             FailedItemErrorCode::LimitExceeded => "LIMIT_EXCEEDED",
-            FailedItemErrorCode::Unknown(value) => value.as_str(),
+            FailedItemErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACCESS_DENIED",
-            "DUPLICATE_ARN",
-            "INTERNAL_ERROR",
-            "INVALID_ARN",
-            "ITEM_DOES_NOT_EXIST",
-            "LIMIT_EXCEEDED",
+            "ACCESS_DENIED", "DUPLICATE_ARN", "INTERNAL_ERROR", "INVALID_ARN", "ITEM_DOES_NOT_EXIST", "LIMIT_EXCEEDED"
         ]
     }
 }
@@ -1531,7 +1252,7 @@ impl AsRef<str> for FailedItemErrorCode {
 /// <p>Used as a response element in the <code>PreviewAgents</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AgentPreview {
+pub struct AgentPreview  {
     /// <p>The hostname of the EC2 instance on which the Amazon Inspector Agent is installed.</p>
     #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
@@ -1559,41 +1280,41 @@ pub struct AgentPreview {
 }
 impl AgentPreview {
     /// <p>The hostname of the EC2 instance on which the Amazon Inspector Agent is installed.</p>
-    pub fn hostname(&self) -> std::option::Option<&str> {
+    pub fn hostname(&self) -> std::option::Option<& str> {
         self.hostname.as_deref()
     }
     /// <p>The ID of the EC2 instance where the agent is installed.</p>
-    pub fn agent_id(&self) -> std::option::Option<&str> {
+    pub fn agent_id(&self) -> std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
-    pub fn auto_scaling_group(&self) -> std::option::Option<&str> {
+    pub fn auto_scaling_group(&self) -> std::option::Option<& str> {
         self.auto_scaling_group.as_deref()
     }
     /// <p>The health status of the Amazon Inspector Agent.</p>
-    pub fn agent_health(&self) -> std::option::Option<&crate::model::AgentHealth> {
+    pub fn agent_health(&self) -> std::option::Option<& crate::model::AgentHealth> {
         self.agent_health.as_ref()
     }
     /// <p>The version of the Amazon Inspector Agent.</p>
-    pub fn agent_version(&self) -> std::option::Option<&str> {
+    pub fn agent_version(&self) -> std::option::Option<& str> {
         self.agent_version.as_deref()
     }
     /// <p>The operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
-    pub fn operating_system(&self) -> std::option::Option<&str> {
+    pub fn operating_system(&self) -> std::option::Option<& str> {
         self.operating_system.as_deref()
     }
     /// <p>The kernel version of the operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
-    pub fn kernel_version(&self) -> std::option::Option<&str> {
+    pub fn kernel_version(&self) -> std::option::Option<& str> {
         self.kernel_version.as_deref()
     }
     /// <p>The IP address of the EC2 instance on which the Amazon Inspector Agent is installed.</p>
-    pub fn ipv4_address(&self) -> std::option::Option<&str> {
+    pub fn ipv4_address(&self) -> std::option::Option<& str> {
         self.ipv4_address.as_deref()
     }
 }
 /// See [`AgentPreview`](crate::model::AgentPreview).
 pub mod agent_preview {
-
+    
     /// A builder for [`AgentPreview`](crate::model::AgentPreview).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1614,8 +1335,7 @@ pub mod agent_preview {
         }
         /// <p>The hostname of the EC2 instance on which the Amazon Inspector Agent is installed.</p>
         pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hostname = input;
-            self
+            self.hostname = input; self
         }
         /// <p>The ID of the EC2 instance where the agent is installed.</p>
         pub fn agent_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1624,8 +1344,7 @@ pub mod agent_preview {
         }
         /// <p>The ID of the EC2 instance where the agent is installed.</p>
         pub fn set_agent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.agent_id = input;
-            self
+            self.agent_id = input; self
         }
         /// <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
         pub fn auto_scaling_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1633,12 +1352,8 @@ pub mod agent_preview {
             self
         }
         /// <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
-        pub fn set_auto_scaling_group(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.auto_scaling_group = input;
-            self
+        pub fn set_auto_scaling_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.auto_scaling_group = input; self
         }
         /// <p>The health status of the Amazon Inspector Agent.</p>
         pub fn agent_health(mut self, input: crate::model::AgentHealth) -> Self {
@@ -1646,12 +1361,8 @@ pub mod agent_preview {
             self
         }
         /// <p>The health status of the Amazon Inspector Agent.</p>
-        pub fn set_agent_health(
-            mut self,
-            input: std::option::Option<crate::model::AgentHealth>,
-        ) -> Self {
-            self.agent_health = input;
-            self
+        pub fn set_agent_health(mut self, input: std::option::Option<crate::model::AgentHealth>) -> Self {
+            self.agent_health = input; self
         }
         /// <p>The version of the Amazon Inspector Agent.</p>
         pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1659,12 +1370,8 @@ pub mod agent_preview {
             self
         }
         /// <p>The version of the Amazon Inspector Agent.</p>
-        pub fn set_agent_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.agent_version = input;
-            self
+        pub fn set_agent_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.agent_version = input; self
         }
         /// <p>The operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
         pub fn operating_system(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1672,12 +1379,8 @@ pub mod agent_preview {
             self
         }
         /// <p>The operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
-        pub fn set_operating_system(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.operating_system = input;
-            self
+        pub fn set_operating_system(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operating_system = input; self
         }
         /// <p>The kernel version of the operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
         pub fn kernel_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1685,12 +1388,8 @@ pub mod agent_preview {
             self
         }
         /// <p>The kernel version of the operating system running on the EC2 instance on which the Amazon Inspector Agent is installed.</p>
-        pub fn set_kernel_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.kernel_version = input;
-            self
+        pub fn set_kernel_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kernel_version = input; self
         }
         /// <p>The IP address of the EC2 instance on which the Amazon Inspector Agent is installed.</p>
         pub fn ipv4_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1699,23 +1398,32 @@ pub mod agent_preview {
         }
         /// <p>The IP address of the EC2 instance on which the Amazon Inspector Agent is installed.</p>
         pub fn set_ipv4_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ipv4_address = input;
-            self
+            self.ipv4_address = input; self
         }
         /// Consumes the builder and constructs a [`AgentPreview`](crate::model::AgentPreview).
         pub fn build(self) -> crate::model::AgentPreview {
             crate::model::AgentPreview {
-                hostname: self.hostname,
-                agent_id: self.agent_id,
-                auto_scaling_group: self.auto_scaling_group,
-                agent_health: self.agent_health,
-                agent_version: self.agent_version,
-                operating_system: self.operating_system,
-                kernel_version: self.kernel_version,
-                ipv4_address: self.ipv4_address,
+                hostname: self.hostname
+                ,
+                agent_id: self.agent_id
+                ,
+                auto_scaling_group: self.auto_scaling_group
+                ,
+                agent_health: self.agent_health
+                ,
+                agent_version: self.agent_version
+                ,
+                operating_system: self.operating_system
+                ,
+                kernel_version: self.kernel_version
+                ,
+                ipv4_address: self.ipv4_address
+                ,
             }
         }
     }
+    
+    
 }
 impl AgentPreview {
     /// Creates a new builder-style object to manufacture [`AgentPreview`](crate::model::AgentPreview).
@@ -1730,9 +1438,9 @@ impl AgentPreview {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let agenthealth = unimplemented!();
 /// match agenthealth {
@@ -1755,22 +1463,14 @@ impl AgentPreview {
 /// Specifically, when `agenthealth` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AgentHealth::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `AgentHealth::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AgentHealth {
     #[allow(missing_docs)] // documentation missing in model
     Healthy,
@@ -1779,7 +1479,7 @@ pub enum AgentHealth {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AgentHealth {
     fn from(s: &str) -> Self {
@@ -1787,17 +1487,17 @@ impl std::convert::From<&str> for AgentHealth {
             "HEALTHY" => AgentHealth::Healthy,
             "UNHEALTHY" => AgentHealth::Unhealthy,
             "UNKNOWN" => AgentHealth::UnknownValue,
-            other => AgentHealth::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AgentHealth::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AgentHealth {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AgentHealth::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AgentHealth::from(s))
+                }
+            }
 impl AgentHealth {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1805,12 +1505,14 @@ impl AgentHealth {
             AgentHealth::Healthy => "HEALTHY",
             AgentHealth::Unhealthy => "UNHEALTHY",
             AgentHealth::UnknownValue => "UNKNOWN",
-            AgentHealth::Unknown(value) => value.as_str(),
+            AgentHealth::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HEALTHY", "UNHEALTHY", "UNKNOWN"]
+        &[
+            "HEALTHY", "UNHEALTHY", "UNKNOWN"
+        ]
     }
 }
 impl AsRef<str> for AgentHealth {
@@ -1822,7 +1524,7 @@ impl AsRef<str> for AgentHealth {
 /// <p>This data type is used as a request parameter in the <code>ListFindings</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FindingFilter {
+pub struct FindingFilter  {
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>agentId</b> property of the <code>Finding</code> data type.</p>
     #[doc(hidden)]
     pub agent_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1850,41 +1552,41 @@ pub struct FindingFilter {
 }
 impl FindingFilter {
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>agentId</b> property of the <code>Finding</code> data type.</p>
-    pub fn agent_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn agent_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.agent_ids.as_deref()
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>autoScalingGroup</b> property of the <code>Finding</code> data type.</p>
-    pub fn auto_scaling_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn auto_scaling_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.auto_scaling_groups.as_deref()
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>ruleName</b> property of the <code>Finding</code> data type.</p>
-    pub fn rule_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn rule_names(&self) -> std::option::Option<& [std::string::String]> {
         self.rule_names.as_deref()
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>severity</b> property of the <code>Finding</code> data type.</p>
-    pub fn severities(&self) -> std::option::Option<&[crate::model::Severity]> {
+    pub fn severities(&self) -> std::option::Option<& [crate::model::Severity]> {
         self.severities.as_deref()
     }
     /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>rulesPackageArn</b> property of the <code>Finding</code> data type.</p>
-    pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn rules_package_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.rules_package_arns.as_deref()
     }
     /// <p>For a record to match a filter, the list of values that are specified for this data type property must be contained in the list of values of the <b>attributes</b> property of the <code>Finding</code> data type.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::Attribute]> {
         self.attributes.as_deref()
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>userAttributes</b> property of the <code>Finding</code> data type.</p>
-    pub fn user_attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+    pub fn user_attributes(&self) -> std::option::Option<& [crate::model::Attribute]> {
         self.user_attributes.as_deref()
     }
     /// <p>The time range during which the finding is generated.</p>
-    pub fn creation_time_range(&self) -> std::option::Option<&crate::model::TimestampRange> {
+    pub fn creation_time_range(&self) -> std::option::Option<& crate::model::TimestampRange> {
         self.creation_time_range.as_ref()
     }
 }
 /// See [`FindingFilter`](crate::model::FindingFilter).
 pub mod finding_filter {
-
+    
     /// A builder for [`FindingFilter`](crate::model::FindingFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1905,17 +1607,13 @@ pub mod finding_filter {
         /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>agentId</b> property of the <code>Finding</code> data type.</p>
         pub fn agent_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.agent_ids.unwrap_or_default();
-            v.push(input.into());
-            self.agent_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.agent_ids = Some(v);
+                            self
         }
         /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>agentId</b> property of the <code>Finding</code> data type.</p>
-        pub fn set_agent_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.agent_ids = input;
-            self
+        pub fn set_agent_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.agent_ids = input; self
         }
         /// Appends an item to `auto_scaling_groups`.
         ///
@@ -1924,17 +1622,13 @@ pub mod finding_filter {
         /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>autoScalingGroup</b> property of the <code>Finding</code> data type.</p>
         pub fn auto_scaling_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.auto_scaling_groups.unwrap_or_default();
-            v.push(input.into());
-            self.auto_scaling_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.auto_scaling_groups = Some(v);
+                            self
         }
         /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>autoScalingGroup</b> property of the <code>Finding</code> data type.</p>
-        pub fn set_auto_scaling_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.auto_scaling_groups = input;
-            self
+        pub fn set_auto_scaling_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.auto_scaling_groups = input; self
         }
         /// Appends an item to `rule_names`.
         ///
@@ -1943,17 +1637,13 @@ pub mod finding_filter {
         /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>ruleName</b> property of the <code>Finding</code> data type.</p>
         pub fn rule_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rule_names.unwrap_or_default();
-            v.push(input.into());
-            self.rule_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.rule_names = Some(v);
+                            self
         }
         /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>ruleName</b> property of the <code>Finding</code> data type.</p>
-        pub fn set_rule_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.rule_names = input;
-            self
+        pub fn set_rule_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.rule_names = input; self
         }
         /// Appends an item to `severities`.
         ///
@@ -1962,17 +1652,13 @@ pub mod finding_filter {
         /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>severity</b> property of the <code>Finding</code> data type.</p>
         pub fn severities(mut self, input: crate::model::Severity) -> Self {
             let mut v = self.severities.unwrap_or_default();
-            v.push(input);
-            self.severities = Some(v);
-            self
+                            v.push(input);
+                            self.severities = Some(v);
+                            self
         }
         /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>severity</b> property of the <code>Finding</code> data type.</p>
-        pub fn set_severities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Severity>>,
-        ) -> Self {
-            self.severities = input;
-            self
+        pub fn set_severities(mut self, input: std::option::Option<std::vec::Vec<crate::model::Severity>>) -> Self {
+            self.severities = input; self
         }
         /// Appends an item to `rules_package_arns`.
         ///
@@ -1981,17 +1667,13 @@ pub mod finding_filter {
         /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>rulesPackageArn</b> property of the <code>Finding</code> data type.</p>
         pub fn rules_package_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rules_package_arns.unwrap_or_default();
-            v.push(input.into());
-            self.rules_package_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.rules_package_arns = Some(v);
+                            self
         }
         /// <p>For a record to match a filter, one of the values that is specified for this data type property must be the exact match of the value of the <b>rulesPackageArn</b> property of the <code>Finding</code> data type.</p>
-        pub fn set_rules_package_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.rules_package_arns = input;
-            self
+        pub fn set_rules_package_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.rules_package_arns = input; self
         }
         /// Appends an item to `attributes`.
         ///
@@ -2000,17 +1682,13 @@ pub mod finding_filter {
         /// <p>For a record to match a filter, the list of values that are specified for this data type property must be contained in the list of values of the <b>attributes</b> property of the <code>Finding</code> data type.</p>
         pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>For a record to match a filter, the list of values that are specified for this data type property must be contained in the list of values of the <b>attributes</b> property of the <code>Finding</code> data type.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Attribute>>) -> Self {
+            self.attributes = input; self
         }
         /// Appends an item to `user_attributes`.
         ///
@@ -2019,17 +1697,13 @@ pub mod finding_filter {
         /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>userAttributes</b> property of the <code>Finding</code> data type.</p>
         pub fn user_attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
-            v.push(input);
-            self.user_attributes = Some(v);
-            self
+                            v.push(input);
+                            self.user_attributes = Some(v);
+                            self
         }
         /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>userAttributes</b> property of the <code>Finding</code> data type.</p>
-        pub fn set_user_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
-        ) -> Self {
-            self.user_attributes = input;
-            self
+        pub fn set_user_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Attribute>>) -> Self {
+            self.user_attributes = input; self
         }
         /// <p>The time range during which the finding is generated.</p>
         pub fn creation_time_range(mut self, input: crate::model::TimestampRange) -> Self {
@@ -2037,27 +1711,33 @@ pub mod finding_filter {
             self
         }
         /// <p>The time range during which the finding is generated.</p>
-        pub fn set_creation_time_range(
-            mut self,
-            input: std::option::Option<crate::model::TimestampRange>,
-        ) -> Self {
-            self.creation_time_range = input;
-            self
+        pub fn set_creation_time_range(mut self, input: std::option::Option<crate::model::TimestampRange>) -> Self {
+            self.creation_time_range = input; self
         }
         /// Consumes the builder and constructs a [`FindingFilter`](crate::model::FindingFilter).
         pub fn build(self) -> crate::model::FindingFilter {
             crate::model::FindingFilter {
-                agent_ids: self.agent_ids,
-                auto_scaling_groups: self.auto_scaling_groups,
-                rule_names: self.rule_names,
-                severities: self.severities,
-                rules_package_arns: self.rules_package_arns,
-                attributes: self.attributes,
-                user_attributes: self.user_attributes,
-                creation_time_range: self.creation_time_range,
+                agent_ids: self.agent_ids
+                ,
+                auto_scaling_groups: self.auto_scaling_groups
+                ,
+                rule_names: self.rule_names
+                ,
+                severities: self.severities
+                ,
+                rules_package_arns: self.rules_package_arns
+                ,
+                attributes: self.attributes
+                ,
+                user_attributes: self.user_attributes
+                ,
+                creation_time_range: self.creation_time_range
+                ,
             }
         }
     }
+    
+    
 }
 impl FindingFilter {
     /// Creates a new builder-style object to manufacture [`FindingFilter`](crate::model::FindingFilter).
@@ -2069,7 +1749,7 @@ impl FindingFilter {
 /// <p>This data type is used in the <code>AssessmentRunFilter</code> data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimestampRange {
+pub struct TimestampRange  {
     /// <p>The minimum value of the timestamp range.</p>
     #[doc(hidden)]
     pub begin_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -2079,17 +1759,17 @@ pub struct TimestampRange {
 }
 impl TimestampRange {
     /// <p>The minimum value of the timestamp range.</p>
-    pub fn begin_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn begin_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.begin_date.as_ref()
     }
     /// <p>The maximum value of the timestamp range.</p>
-    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
 }
 /// See [`TimestampRange`](crate::model::TimestampRange).
 pub mod timestamp_range {
-
+    
     /// A builder for [`TimestampRange`](crate::model::TimestampRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2103,12 +1783,8 @@ pub mod timestamp_range {
             self
         }
         /// <p>The minimum value of the timestamp range.</p>
-        pub fn set_begin_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.begin_date = input;
-            self
+        pub fn set_begin_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.begin_date = input; self
         }
         /// <p>The maximum value of the timestamp range.</p>
         pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2116,21 +1792,21 @@ pub mod timestamp_range {
             self
         }
         /// <p>The maximum value of the timestamp range.</p>
-        pub fn set_end_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_date = input;
-            self
+        pub fn set_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_date = input; self
         }
         /// Consumes the builder and constructs a [`TimestampRange`](crate::model::TimestampRange).
         pub fn build(self) -> crate::model::TimestampRange {
             crate::model::TimestampRange {
-                begin_date: self.begin_date,
-                end_date: self.end_date,
+                begin_date: self.begin_date
+                ,
+                end_date: self.end_date
+                ,
             }
         }
     }
+    
+    
 }
 impl TimestampRange {
     /// Creates a new builder-style object to manufacture [`TimestampRange`](crate::model::TimestampRange).
@@ -2142,7 +1818,7 @@ impl TimestampRange {
 /// <p>This data type is used as a request parameter in the <code>AddAttributesToFindings</code> and <code>CreateAssessmentTemplate</code> actions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Attribute {
+pub struct Attribute  {
     /// <p>The attribute key.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -2152,17 +1828,17 @@ pub struct Attribute {
 }
 impl Attribute {
     /// <p>The attribute key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value assigned to the attribute key.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Attribute`](crate::model::Attribute).
 pub mod attribute {
-
+    
     /// A builder for [`Attribute`](crate::model::Attribute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2177,8 +1853,7 @@ pub mod attribute {
         }
         /// <p>The attribute key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value assigned to the attribute key.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2187,17 +1862,20 @@ pub mod attribute {
         }
         /// <p>The value assigned to the attribute key.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Attribute`](crate::model::Attribute).
         pub fn build(self) -> crate::model::Attribute {
             crate::model::Attribute {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Attribute {
     /// Creates a new builder-style object to manufacture [`Attribute`](crate::model::Attribute).
@@ -2212,9 +1890,9 @@ impl Attribute {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let severity = unimplemented!();
 /// match severity {
@@ -2239,22 +1917,14 @@ impl Attribute {
 /// Specifically, when `severity` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Severity::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Severity {
     #[allow(missing_docs)] // documentation missing in model
     High,
@@ -2267,7 +1937,7 @@ pub enum Severity {
     #[allow(missing_docs)] // documentation missing in model
     Undefined,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Severity {
     fn from(s: &str) -> Self {
@@ -2277,17 +1947,17 @@ impl std::convert::From<&str> for Severity {
             "Low" => Severity::Low,
             "Medium" => Severity::Medium,
             "Undefined" => Severity::Undefined,
-            other => Severity::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Severity::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Severity {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Severity::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Severity::from(s))
+                }
+            }
 impl Severity {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2297,12 +1967,14 @@ impl Severity {
             Severity::Low => "Low",
             Severity::Medium => "Medium",
             Severity::Undefined => "Undefined",
-            Severity::Unknown(value) => value.as_str(),
+            Severity::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["High", "Informational", "Low", "Medium", "Undefined"]
+        &[
+            "High", "Informational", "Low", "Medium", "Undefined"
+        ]
     }
 }
 impl AsRef<str> for Severity {
@@ -2314,7 +1986,7 @@ impl AsRef<str> for Severity {
 /// <p>This data type is used as a response element in the <code>ListEventSubscriptions</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Subscription {
+pub struct Subscription  {
     /// <p>The ARN of the assessment template that is used during the event for which the SNS notification is sent.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -2327,28 +1999,27 @@ pub struct Subscription {
 }
 impl Subscription {
     /// <p>The ARN of the assessment template that is used during the event for which the SNS notification is sent.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The ARN of the Amazon Simple Notification Service (SNS) topic to which the SNS notifications are sent.</p>
-    pub fn topic_arn(&self) -> std::option::Option<&str> {
+    pub fn topic_arn(&self) -> std::option::Option<& str> {
         self.topic_arn.as_deref()
     }
     /// <p>The list of existing event subscriptions.</p>
-    pub fn event_subscriptions(&self) -> std::option::Option<&[crate::model::EventSubscription]> {
+    pub fn event_subscriptions(&self) -> std::option::Option<& [crate::model::EventSubscription]> {
         self.event_subscriptions.as_deref()
     }
 }
 /// See [`Subscription`](crate::model::Subscription).
 pub mod subscription {
-
+    
     /// A builder for [`Subscription`](crate::model::Subscription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) topic_arn: std::option::Option<std::string::String>,
-        pub(crate) event_subscriptions:
-            std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
+        pub(crate) event_subscriptions: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
     }
     impl Builder {
         /// <p>The ARN of the assessment template that is used during the event for which the SNS notification is sent.</p>
@@ -2358,8 +2029,7 @@ pub mod subscription {
         }
         /// <p>The ARN of the assessment template that is used during the event for which the SNS notification is sent.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The ARN of the Amazon Simple Notification Service (SNS) topic to which the SNS notifications are sent.</p>
         pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2368,8 +2038,7 @@ pub mod subscription {
         }
         /// <p>The ARN of the Amazon Simple Notification Service (SNS) topic to which the SNS notifications are sent.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = input;
-            self
+            self.topic_arn = input; self
         }
         /// Appends an item to `event_subscriptions`.
         ///
@@ -2378,27 +2047,28 @@ pub mod subscription {
         /// <p>The list of existing event subscriptions.</p>
         pub fn event_subscriptions(mut self, input: crate::model::EventSubscription) -> Self {
             let mut v = self.event_subscriptions.unwrap_or_default();
-            v.push(input);
-            self.event_subscriptions = Some(v);
-            self
+                            v.push(input);
+                            self.event_subscriptions = Some(v);
+                            self
         }
         /// <p>The list of existing event subscriptions.</p>
-        pub fn set_event_subscriptions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>,
-        ) -> Self {
-            self.event_subscriptions = input;
-            self
+        pub fn set_event_subscriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventSubscription>>) -> Self {
+            self.event_subscriptions = input; self
         }
         /// Consumes the builder and constructs a [`Subscription`](crate::model::Subscription).
         pub fn build(self) -> crate::model::Subscription {
             crate::model::Subscription {
-                resource_arn: self.resource_arn,
-                topic_arn: self.topic_arn,
-                event_subscriptions: self.event_subscriptions,
+                resource_arn: self.resource_arn
+                ,
+                topic_arn: self.topic_arn
+                ,
+                event_subscriptions: self.event_subscriptions
+                ,
             }
         }
     }
+    
+    
 }
 impl Subscription {
     /// Creates a new builder-style object to manufacture [`Subscription`](crate::model::Subscription).
@@ -2410,7 +2080,7 @@ impl Subscription {
 /// <p>This data type is used in the <code>Subscription</code> data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventSubscription {
+pub struct EventSubscription  {
     /// <p>The event for which Amazon Simple Notification Service (SNS) notifications are sent.</p>
     #[doc(hidden)]
     pub event: std::option::Option<crate::model::InspectorEvent>,
@@ -2420,17 +2090,17 @@ pub struct EventSubscription {
 }
 impl EventSubscription {
     /// <p>The event for which Amazon Simple Notification Service (SNS) notifications are sent.</p>
-    pub fn event(&self) -> std::option::Option<&crate::model::InspectorEvent> {
+    pub fn event(&self) -> std::option::Option<& crate::model::InspectorEvent> {
         self.event.as_ref()
     }
     /// <p>The time at which <code>SubscribeToEvent</code> is called.</p>
-    pub fn subscribed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn subscribed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.subscribed_at.as_ref()
     }
 }
 /// See [`EventSubscription`](crate::model::EventSubscription).
 pub mod event_subscription {
-
+    
     /// A builder for [`EventSubscription`](crate::model::EventSubscription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2444,12 +2114,8 @@ pub mod event_subscription {
             self
         }
         /// <p>The event for which Amazon Simple Notification Service (SNS) notifications are sent.</p>
-        pub fn set_event(
-            mut self,
-            input: std::option::Option<crate::model::InspectorEvent>,
-        ) -> Self {
-            self.event = input;
-            self
+        pub fn set_event(mut self, input: std::option::Option<crate::model::InspectorEvent>) -> Self {
+            self.event = input; self
         }
         /// <p>The time at which <code>SubscribeToEvent</code> is called.</p>
         pub fn subscribed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2457,21 +2123,21 @@ pub mod event_subscription {
             self
         }
         /// <p>The time at which <code>SubscribeToEvent</code> is called.</p>
-        pub fn set_subscribed_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.subscribed_at = input;
-            self
+        pub fn set_subscribed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.subscribed_at = input; self
         }
         /// Consumes the builder and constructs a [`EventSubscription`](crate::model::EventSubscription).
         pub fn build(self) -> crate::model::EventSubscription {
             crate::model::EventSubscription {
-                event: self.event,
-                subscribed_at: self.subscribed_at,
+                event: self.event
+                ,
+                subscribed_at: self.subscribed_at
+                ,
             }
         }
     }
+    
+    
 }
 impl EventSubscription {
     /// Creates a new builder-style object to manufacture [`EventSubscription`](crate::model::EventSubscription).
@@ -2483,7 +2149,7 @@ impl EventSubscription {
 /// <p>Used as the request parameter in the <code>ListAssessmentTemplates</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssessmentTemplateFilter {
+pub struct AssessmentTemplateFilter  {
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTemplateName</b> property of the <code>AssessmentTemplate</code> data type.</p>
     #[doc(hidden)]
     pub name_pattern: std::option::Option<std::string::String>,
@@ -2496,21 +2162,21 @@ pub struct AssessmentTemplateFilter {
 }
 impl AssessmentTemplateFilter {
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTemplateName</b> property of the <code>AssessmentTemplate</code> data type.</p>
-    pub fn name_pattern(&self) -> std::option::Option<&str> {
+    pub fn name_pattern(&self) -> std::option::Option<& str> {
         self.name_pattern.as_deref()
     }
     /// <p>For a record to match a filter, the value specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>durationInSeconds</b> property of the <code>AssessmentTemplate</code> data type.</p>
-    pub fn duration_range(&self) -> std::option::Option<&crate::model::DurationRange> {
+    pub fn duration_range(&self) -> std::option::Option<& crate::model::DurationRange> {
         self.duration_range.as_ref()
     }
     /// <p>For a record to match a filter, the values that are specified for this data type property must be contained in the list of values of the <b>rulesPackageArns</b> property of the <code>AssessmentTemplate</code> data type.</p>
-    pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn rules_package_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.rules_package_arns.as_deref()
     }
 }
 /// See [`AssessmentTemplateFilter`](crate::model::AssessmentTemplateFilter).
 pub mod assessment_template_filter {
-
+    
     /// A builder for [`AssessmentTemplateFilter`](crate::model::AssessmentTemplateFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2526,8 +2192,7 @@ pub mod assessment_template_filter {
         }
         /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTemplateName</b> property of the <code>AssessmentTemplate</code> data type.</p>
         pub fn set_name_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name_pattern = input;
-            self
+            self.name_pattern = input; self
         }
         /// <p>For a record to match a filter, the value specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>durationInSeconds</b> property of the <code>AssessmentTemplate</code> data type.</p>
         pub fn duration_range(mut self, input: crate::model::DurationRange) -> Self {
@@ -2535,12 +2200,8 @@ pub mod assessment_template_filter {
             self
         }
         /// <p>For a record to match a filter, the value specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>durationInSeconds</b> property of the <code>AssessmentTemplate</code> data type.</p>
-        pub fn set_duration_range(
-            mut self,
-            input: std::option::Option<crate::model::DurationRange>,
-        ) -> Self {
-            self.duration_range = input;
-            self
+        pub fn set_duration_range(mut self, input: std::option::Option<crate::model::DurationRange>) -> Self {
+            self.duration_range = input; self
         }
         /// Appends an item to `rules_package_arns`.
         ///
@@ -2549,27 +2210,28 @@ pub mod assessment_template_filter {
         /// <p>For a record to match a filter, the values that are specified for this data type property must be contained in the list of values of the <b>rulesPackageArns</b> property of the <code>AssessmentTemplate</code> data type.</p>
         pub fn rules_package_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rules_package_arns.unwrap_or_default();
-            v.push(input.into());
-            self.rules_package_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.rules_package_arns = Some(v);
+                            self
         }
         /// <p>For a record to match a filter, the values that are specified for this data type property must be contained in the list of values of the <b>rulesPackageArns</b> property of the <code>AssessmentTemplate</code> data type.</p>
-        pub fn set_rules_package_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.rules_package_arns = input;
-            self
+        pub fn set_rules_package_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.rules_package_arns = input; self
         }
         /// Consumes the builder and constructs a [`AssessmentTemplateFilter`](crate::model::AssessmentTemplateFilter).
         pub fn build(self) -> crate::model::AssessmentTemplateFilter {
             crate::model::AssessmentTemplateFilter {
-                name_pattern: self.name_pattern,
-                duration_range: self.duration_range,
-                rules_package_arns: self.rules_package_arns,
+                name_pattern: self.name_pattern
+                ,
+                duration_range: self.duration_range
+                ,
+                rules_package_arns: self.rules_package_arns
+                ,
             }
         }
     }
+    
+    
 }
 impl AssessmentTemplateFilter {
     /// Creates a new builder-style object to manufacture [`AssessmentTemplateFilter`](crate::model::AssessmentTemplateFilter).
@@ -2581,7 +2243,7 @@ impl AssessmentTemplateFilter {
 /// <p>This data type is used in the <code>AssessmentTemplateFilter</code> data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DurationRange {
+pub struct DurationRange  {
     /// <p>The minimum value of the duration range. Must be greater than zero.</p>
     #[doc(hidden)]
     pub min_seconds: i32,
@@ -2601,7 +2263,7 @@ impl DurationRange {
 }
 /// See [`DurationRange`](crate::model::DurationRange).
 pub mod duration_range {
-
+    
     /// A builder for [`DurationRange`](crate::model::DurationRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2616,8 +2278,7 @@ pub mod duration_range {
         }
         /// <p>The minimum value of the duration range. Must be greater than zero.</p>
         pub fn set_min_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.min_seconds = input;
-            self
+            self.min_seconds = input; self
         }
         /// <p>The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).</p>
         pub fn max_seconds(mut self, input: i32) -> Self {
@@ -2626,17 +2287,22 @@ pub mod duration_range {
         }
         /// <p>The maximum value of the duration range. Must be less than or equal to 604800 seconds (1 week).</p>
         pub fn set_max_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_seconds = input;
-            self
+            self.max_seconds = input; self
         }
         /// Consumes the builder and constructs a [`DurationRange`](crate::model::DurationRange).
         pub fn build(self) -> crate::model::DurationRange {
             crate::model::DurationRange {
-                min_seconds: self.min_seconds.unwrap_or_default(),
-                max_seconds: self.max_seconds.unwrap_or_default(),
+                min_seconds: self.min_seconds
+                    .unwrap_or_default()
+                ,
+                max_seconds: self.max_seconds
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DurationRange {
     /// Creates a new builder-style object to manufacture [`DurationRange`](crate::model::DurationRange).
@@ -2648,20 +2314,20 @@ impl DurationRange {
 /// <p>Used as the request parameter in the <code>ListAssessmentTargets</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssessmentTargetFilter {
+pub struct AssessmentTargetFilter  {
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTargetName</b> property of the <code>AssessmentTarget</code> data type.</p>
     #[doc(hidden)]
     pub assessment_target_name_pattern: std::option::Option<std::string::String>,
 }
 impl AssessmentTargetFilter {
     /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTargetName</b> property of the <code>AssessmentTarget</code> data type.</p>
-    pub fn assessment_target_name_pattern(&self) -> std::option::Option<&str> {
+    pub fn assessment_target_name_pattern(&self) -> std::option::Option<& str> {
         self.assessment_target_name_pattern.as_deref()
     }
 }
 /// See [`AssessmentTargetFilter`](crate::model::AssessmentTargetFilter).
 pub mod assessment_target_filter {
-
+    
     /// A builder for [`AssessmentTargetFilter`](crate::model::AssessmentTargetFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2669,28 +2335,24 @@ pub mod assessment_target_filter {
     }
     impl Builder {
         /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTargetName</b> property of the <code>AssessmentTarget</code> data type.</p>
-        pub fn assessment_target_name_pattern(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn assessment_target_name_pattern(mut self, input: impl Into<std::string::String>) -> Self {
             self.assessment_target_name_pattern = Some(input.into());
             self
         }
         /// <p>For a record to match a filter, an explicit value or a string that contains a wildcard that is specified for this data type property must match the value of the <b>assessmentTargetName</b> property of the <code>AssessmentTarget</code> data type.</p>
-        pub fn set_assessment_target_name_pattern(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assessment_target_name_pattern = input;
-            self
+        pub fn set_assessment_target_name_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assessment_target_name_pattern = input; self
         }
         /// Consumes the builder and constructs a [`AssessmentTargetFilter`](crate::model::AssessmentTargetFilter).
         pub fn build(self) -> crate::model::AssessmentTargetFilter {
             crate::model::AssessmentTargetFilter {
-                assessment_target_name_pattern: self.assessment_target_name_pattern,
+                assessment_target_name_pattern: self.assessment_target_name_pattern
+                ,
             }
         }
     }
+    
+    
 }
 impl AssessmentTargetFilter {
     /// Creates a new builder-style object to manufacture [`AssessmentTargetFilter`](crate::model::AssessmentTargetFilter).
@@ -2702,7 +2364,7 @@ impl AssessmentTargetFilter {
 /// <p>Used as the request parameter in the <code>ListAssessmentRuns</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssessmentRunFilter {
+pub struct AssessmentRunFilter  {
     /// <p>For a record to match a filter, an explicit value or a string containing a wildcard that is specified for this data type property must match the value of the <b>assessmentRunName</b> property of the <code>AssessmentRun</code> data type.</p>
     #[doc(hidden)]
     pub name_pattern: std::option::Option<std::string::String>,
@@ -2727,37 +2389,37 @@ pub struct AssessmentRunFilter {
 }
 impl AssessmentRunFilter {
     /// <p>For a record to match a filter, an explicit value or a string containing a wildcard that is specified for this data type property must match the value of the <b>assessmentRunName</b> property of the <code>AssessmentRun</code> data type.</p>
-    pub fn name_pattern(&self) -> std::option::Option<&str> {
+    pub fn name_pattern(&self) -> std::option::Option<& str> {
         self.name_pattern.as_deref()
     }
     /// <p>For a record to match a filter, one of the values specified for this data type property must be the exact match of the value of the <b>assessmentRunState</b> property of the <code>AssessmentRun</code> data type.</p>
-    pub fn states(&self) -> std::option::Option<&[crate::model::AssessmentRunState]> {
+    pub fn states(&self) -> std::option::Option<& [crate::model::AssessmentRunState]> {
         self.states.as_deref()
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>durationInSeconds</b> property of the <code>AssessmentRun</code> data type.</p>
-    pub fn duration_range(&self) -> std::option::Option<&crate::model::DurationRange> {
+    pub fn duration_range(&self) -> std::option::Option<& crate::model::DurationRange> {
         self.duration_range.as_ref()
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>rulesPackages</b> property of the <code>AssessmentRun</code> data type.</p>
-    pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn rules_package_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.rules_package_arns.as_deref()
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>startTime</b> property of the <code>AssessmentRun</code> data type.</p>
-    pub fn start_time_range(&self) -> std::option::Option<&crate::model::TimestampRange> {
+    pub fn start_time_range(&self) -> std::option::Option<& crate::model::TimestampRange> {
         self.start_time_range.as_ref()
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>completedAt</b> property of the <code>AssessmentRun</code> data type.</p>
-    pub fn completion_time_range(&self) -> std::option::Option<&crate::model::TimestampRange> {
+    pub fn completion_time_range(&self) -> std::option::Option<& crate::model::TimestampRange> {
         self.completion_time_range.as_ref()
     }
     /// <p>For a record to match a filter, the value that is specified for this data type property must match the <b>stateChangedAt</b> property of the <code>AssessmentRun</code> data type.</p>
-    pub fn state_change_time_range(&self) -> std::option::Option<&crate::model::TimestampRange> {
+    pub fn state_change_time_range(&self) -> std::option::Option<& crate::model::TimestampRange> {
         self.state_change_time_range.as_ref()
     }
 }
 /// See [`AssessmentRunFilter`](crate::model::AssessmentRunFilter).
 pub mod assessment_run_filter {
-
+    
     /// A builder for [`AssessmentRunFilter`](crate::model::AssessmentRunFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2777,8 +2439,7 @@ pub mod assessment_run_filter {
         }
         /// <p>For a record to match a filter, an explicit value or a string containing a wildcard that is specified for this data type property must match the value of the <b>assessmentRunName</b> property of the <code>AssessmentRun</code> data type.</p>
         pub fn set_name_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name_pattern = input;
-            self
+            self.name_pattern = input; self
         }
         /// Appends an item to `states`.
         ///
@@ -2787,17 +2448,13 @@ pub mod assessment_run_filter {
         /// <p>For a record to match a filter, one of the values specified for this data type property must be the exact match of the value of the <b>assessmentRunState</b> property of the <code>AssessmentRun</code> data type.</p>
         pub fn states(mut self, input: crate::model::AssessmentRunState) -> Self {
             let mut v = self.states.unwrap_or_default();
-            v.push(input);
-            self.states = Some(v);
-            self
+                            v.push(input);
+                            self.states = Some(v);
+                            self
         }
         /// <p>For a record to match a filter, one of the values specified for this data type property must be the exact match of the value of the <b>assessmentRunState</b> property of the <code>AssessmentRun</code> data type.</p>
-        pub fn set_states(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssessmentRunState>>,
-        ) -> Self {
-            self.states = input;
-            self
+        pub fn set_states(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssessmentRunState>>) -> Self {
+            self.states = input; self
         }
         /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>durationInSeconds</b> property of the <code>AssessmentRun</code> data type.</p>
         pub fn duration_range(mut self, input: crate::model::DurationRange) -> Self {
@@ -2805,12 +2462,8 @@ pub mod assessment_run_filter {
             self
         }
         /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>durationInSeconds</b> property of the <code>AssessmentRun</code> data type.</p>
-        pub fn set_duration_range(
-            mut self,
-            input: std::option::Option<crate::model::DurationRange>,
-        ) -> Self {
-            self.duration_range = input;
-            self
+        pub fn set_duration_range(mut self, input: std::option::Option<crate::model::DurationRange>) -> Self {
+            self.duration_range = input; self
         }
         /// Appends an item to `rules_package_arns`.
         ///
@@ -2819,17 +2472,13 @@ pub mod assessment_run_filter {
         /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>rulesPackages</b> property of the <code>AssessmentRun</code> data type.</p>
         pub fn rules_package_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rules_package_arns.unwrap_or_default();
-            v.push(input.into());
-            self.rules_package_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.rules_package_arns = Some(v);
+                            self
         }
         /// <p>For a record to match a filter, the value that is specified for this data type property must be contained in the list of values of the <b>rulesPackages</b> property of the <code>AssessmentRun</code> data type.</p>
-        pub fn set_rules_package_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.rules_package_arns = input;
-            self
+        pub fn set_rules_package_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.rules_package_arns = input; self
         }
         /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>startTime</b> property of the <code>AssessmentRun</code> data type.</p>
         pub fn start_time_range(mut self, input: crate::model::TimestampRange) -> Self {
@@ -2837,12 +2486,8 @@ pub mod assessment_run_filter {
             self
         }
         /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>startTime</b> property of the <code>AssessmentRun</code> data type.</p>
-        pub fn set_start_time_range(
-            mut self,
-            input: std::option::Option<crate::model::TimestampRange>,
-        ) -> Self {
-            self.start_time_range = input;
-            self
+        pub fn set_start_time_range(mut self, input: std::option::Option<crate::model::TimestampRange>) -> Self {
+            self.start_time_range = input; self
         }
         /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>completedAt</b> property of the <code>AssessmentRun</code> data type.</p>
         pub fn completion_time_range(mut self, input: crate::model::TimestampRange) -> Self {
@@ -2850,12 +2495,8 @@ pub mod assessment_run_filter {
             self
         }
         /// <p>For a record to match a filter, the value that is specified for this data type property must inclusively match any value between the specified minimum and maximum values of the <b>completedAt</b> property of the <code>AssessmentRun</code> data type.</p>
-        pub fn set_completion_time_range(
-            mut self,
-            input: std::option::Option<crate::model::TimestampRange>,
-        ) -> Self {
-            self.completion_time_range = input;
-            self
+        pub fn set_completion_time_range(mut self, input: std::option::Option<crate::model::TimestampRange>) -> Self {
+            self.completion_time_range = input; self
         }
         /// <p>For a record to match a filter, the value that is specified for this data type property must match the <b>stateChangedAt</b> property of the <code>AssessmentRun</code> data type.</p>
         pub fn state_change_time_range(mut self, input: crate::model::TimestampRange) -> Self {
@@ -2863,26 +2504,31 @@ pub mod assessment_run_filter {
             self
         }
         /// <p>For a record to match a filter, the value that is specified for this data type property must match the <b>stateChangedAt</b> property of the <code>AssessmentRun</code> data type.</p>
-        pub fn set_state_change_time_range(
-            mut self,
-            input: std::option::Option<crate::model::TimestampRange>,
-        ) -> Self {
-            self.state_change_time_range = input;
-            self
+        pub fn set_state_change_time_range(mut self, input: std::option::Option<crate::model::TimestampRange>) -> Self {
+            self.state_change_time_range = input; self
         }
         /// Consumes the builder and constructs a [`AssessmentRunFilter`](crate::model::AssessmentRunFilter).
         pub fn build(self) -> crate::model::AssessmentRunFilter {
             crate::model::AssessmentRunFilter {
-                name_pattern: self.name_pattern,
-                states: self.states,
-                duration_range: self.duration_range,
-                rules_package_arns: self.rules_package_arns,
-                start_time_range: self.start_time_range,
-                completion_time_range: self.completion_time_range,
-                state_change_time_range: self.state_change_time_range,
+                name_pattern: self.name_pattern
+                ,
+                states: self.states
+                ,
+                duration_range: self.duration_range
+                ,
+                rules_package_arns: self.rules_package_arns
+                ,
+                start_time_range: self.start_time_range
+                ,
+                completion_time_range: self.completion_time_range
+                ,
+                state_change_time_range: self.state_change_time_range
+                ,
             }
         }
     }
+    
+    
 }
 impl AssessmentRunFilter {
     /// Creates a new builder-style object to manufacture [`AssessmentRunFilter`](crate::model::AssessmentRunFilter).
@@ -2897,9 +2543,9 @@ impl AssessmentRunFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let assessmentrunstate = unimplemented!();
 /// match assessmentrunstate {
@@ -2932,22 +2578,14 @@ impl AssessmentRunFilter {
 /// Specifically, when `assessmentrunstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AssessmentRunState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AssessmentRunState {
     #[allow(missing_docs)] // documentation missing in model
     Canceled,
@@ -2976,7 +2614,7 @@ pub enum AssessmentRunState {
     #[allow(missing_docs)] // documentation missing in model
     StopDataCollectionPending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssessmentRunState {
     fn from(s: &str) -> Self {
@@ -2990,25 +2628,21 @@ impl std::convert::From<&str> for AssessmentRunState {
             "ERROR" => AssessmentRunState::Error,
             "EVALUATING_RULES" => AssessmentRunState::EvaluatingRules,
             "FAILED" => AssessmentRunState::Failed,
-            "START_DATA_COLLECTION_IN_PROGRESS" => {
-                AssessmentRunState::StartDataCollectionInProgress
-            }
+            "START_DATA_COLLECTION_IN_PROGRESS" => AssessmentRunState::StartDataCollectionInProgress,
             "START_DATA_COLLECTION_PENDING" => AssessmentRunState::StartDataCollectionPending,
             "START_EVALUATING_RULES_PENDING" => AssessmentRunState::StartEvaluatingRulesPending,
             "STOP_DATA_COLLECTION_PENDING" => AssessmentRunState::StopDataCollectionPending,
-            other => {
-                AssessmentRunState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AssessmentRunState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AssessmentRunState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssessmentRunState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AssessmentRunState::from(s))
+                }
+            }
 impl AssessmentRunState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3022,31 +2656,17 @@ impl AssessmentRunState {
             AssessmentRunState::Error => "ERROR",
             AssessmentRunState::EvaluatingRules => "EVALUATING_RULES",
             AssessmentRunState::Failed => "FAILED",
-            AssessmentRunState::StartDataCollectionInProgress => {
-                "START_DATA_COLLECTION_IN_PROGRESS"
-            }
+            AssessmentRunState::StartDataCollectionInProgress => "START_DATA_COLLECTION_IN_PROGRESS",
             AssessmentRunState::StartDataCollectionPending => "START_DATA_COLLECTION_PENDING",
             AssessmentRunState::StartEvaluatingRulesPending => "START_EVALUATING_RULES_PENDING",
             AssessmentRunState::StopDataCollectionPending => "STOP_DATA_COLLECTION_PENDING",
-            AssessmentRunState::Unknown(value) => value.as_str(),
+            AssessmentRunState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CANCELED",
-            "COLLECTING_DATA",
-            "COMPLETED",
-            "COMPLETED_WITH_ERRORS",
-            "CREATED",
-            "DATA_COLLECTED",
-            "ERROR",
-            "EVALUATING_RULES",
-            "FAILED",
-            "START_DATA_COLLECTION_IN_PROGRESS",
-            "START_DATA_COLLECTION_PENDING",
-            "START_EVALUATING_RULES_PENDING",
-            "STOP_DATA_COLLECTION_PENDING",
+            "CANCELED", "COLLECTING_DATA", "COMPLETED", "COMPLETED_WITH_ERRORS", "CREATED", "DATA_COLLECTED", "ERROR", "EVALUATING_RULES", "FAILED", "START_DATA_COLLECTION_IN_PROGRESS", "START_DATA_COLLECTION_PENDING", "START_EVALUATING_RULES_PENDING", "STOP_DATA_COLLECTION_PENDING"
         ]
     }
 }
@@ -3059,7 +2679,7 @@ impl AsRef<str> for AssessmentRunState {
 /// <p>Contains information about an Amazon Inspector agent. This data type is used as a response element in the <code>ListAssessmentRunAgents</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssessmentRunAgent {
+pub struct AssessmentRunAgent  {
     /// <p>The AWS account of the EC2 instance where the agent is installed.</p>
     #[doc(hidden)]
     pub agent_id: std::option::Option<std::string::String>,
@@ -3084,37 +2704,37 @@ pub struct AssessmentRunAgent {
 }
 impl AssessmentRunAgent {
     /// <p>The AWS account of the EC2 instance where the agent is installed.</p>
-    pub fn agent_id(&self) -> std::option::Option<&str> {
+    pub fn agent_id(&self) -> std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// <p>The ARN of the assessment run that is associated with the agent.</p>
-    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
+    pub fn assessment_run_arn(&self) -> std::option::Option<& str> {
         self.assessment_run_arn.as_deref()
     }
     /// <p>The current health state of the agent.</p>
-    pub fn agent_health(&self) -> std::option::Option<&crate::model::AgentHealth> {
+    pub fn agent_health(&self) -> std::option::Option<& crate::model::AgentHealth> {
         self.agent_health.as_ref()
     }
     /// <p>The detailed health state of the agent.</p>
-    pub fn agent_health_code(&self) -> std::option::Option<&crate::model::AgentHealthCode> {
+    pub fn agent_health_code(&self) -> std::option::Option<& crate::model::AgentHealthCode> {
         self.agent_health_code.as_ref()
     }
     /// <p>The description for the agent health code.</p>
-    pub fn agent_health_details(&self) -> std::option::Option<&str> {
+    pub fn agent_health_details(&self) -> std::option::Option<& str> {
         self.agent_health_details.as_deref()
     }
     /// <p>The Auto Scaling group of the EC2 instance that is specified by the agent ID.</p>
-    pub fn auto_scaling_group(&self) -> std::option::Option<&str> {
+    pub fn auto_scaling_group(&self) -> std::option::Option<& str> {
         self.auto_scaling_group.as_deref()
     }
     /// <p>The Amazon Inspector application data metrics that are collected by the agent.</p>
-    pub fn telemetry_metadata(&self) -> std::option::Option<&[crate::model::TelemetryMetadata]> {
+    pub fn telemetry_metadata(&self) -> std::option::Option<& [crate::model::TelemetryMetadata]> {
         self.telemetry_metadata.as_deref()
     }
 }
 /// See [`AssessmentRunAgent`](crate::model::AssessmentRunAgent).
 pub mod assessment_run_agent {
-
+    
     /// A builder for [`AssessmentRunAgent`](crate::model::AssessmentRunAgent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3124,8 +2744,7 @@ pub mod assessment_run_agent {
         pub(crate) agent_health_code: std::option::Option<crate::model::AgentHealthCode>,
         pub(crate) agent_health_details: std::option::Option<std::string::String>,
         pub(crate) auto_scaling_group: std::option::Option<std::string::String>,
-        pub(crate) telemetry_metadata:
-            std::option::Option<std::vec::Vec<crate::model::TelemetryMetadata>>,
+        pub(crate) telemetry_metadata: std::option::Option<std::vec::Vec<crate::model::TelemetryMetadata>>,
     }
     impl Builder {
         /// <p>The AWS account of the EC2 instance where the agent is installed.</p>
@@ -3135,8 +2754,7 @@ pub mod assessment_run_agent {
         }
         /// <p>The AWS account of the EC2 instance where the agent is installed.</p>
         pub fn set_agent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.agent_id = input;
-            self
+            self.agent_id = input; self
         }
         /// <p>The ARN of the assessment run that is associated with the agent.</p>
         pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3144,12 +2762,8 @@ pub mod assessment_run_agent {
             self
         }
         /// <p>The ARN of the assessment run that is associated with the agent.</p>
-        pub fn set_assessment_run_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assessment_run_arn = input;
-            self
+        pub fn set_assessment_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assessment_run_arn = input; self
         }
         /// <p>The current health state of the agent.</p>
         pub fn agent_health(mut self, input: crate::model::AgentHealth) -> Self {
@@ -3157,12 +2771,8 @@ pub mod assessment_run_agent {
             self
         }
         /// <p>The current health state of the agent.</p>
-        pub fn set_agent_health(
-            mut self,
-            input: std::option::Option<crate::model::AgentHealth>,
-        ) -> Self {
-            self.agent_health = input;
-            self
+        pub fn set_agent_health(mut self, input: std::option::Option<crate::model::AgentHealth>) -> Self {
+            self.agent_health = input; self
         }
         /// <p>The detailed health state of the agent.</p>
         pub fn agent_health_code(mut self, input: crate::model::AgentHealthCode) -> Self {
@@ -3170,12 +2780,8 @@ pub mod assessment_run_agent {
             self
         }
         /// <p>The detailed health state of the agent.</p>
-        pub fn set_agent_health_code(
-            mut self,
-            input: std::option::Option<crate::model::AgentHealthCode>,
-        ) -> Self {
-            self.agent_health_code = input;
-            self
+        pub fn set_agent_health_code(mut self, input: std::option::Option<crate::model::AgentHealthCode>) -> Self {
+            self.agent_health_code = input; self
         }
         /// <p>The description for the agent health code.</p>
         pub fn agent_health_details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3183,12 +2789,8 @@ pub mod assessment_run_agent {
             self
         }
         /// <p>The description for the agent health code.</p>
-        pub fn set_agent_health_details(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.agent_health_details = input;
-            self
+        pub fn set_agent_health_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.agent_health_details = input; self
         }
         /// <p>The Auto Scaling group of the EC2 instance that is specified by the agent ID.</p>
         pub fn auto_scaling_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3196,12 +2798,8 @@ pub mod assessment_run_agent {
             self
         }
         /// <p>The Auto Scaling group of the EC2 instance that is specified by the agent ID.</p>
-        pub fn set_auto_scaling_group(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.auto_scaling_group = input;
-            self
+        pub fn set_auto_scaling_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.auto_scaling_group = input; self
         }
         /// Appends an item to `telemetry_metadata`.
         ///
@@ -3210,31 +2808,36 @@ pub mod assessment_run_agent {
         /// <p>The Amazon Inspector application data metrics that are collected by the agent.</p>
         pub fn telemetry_metadata(mut self, input: crate::model::TelemetryMetadata) -> Self {
             let mut v = self.telemetry_metadata.unwrap_or_default();
-            v.push(input);
-            self.telemetry_metadata = Some(v);
-            self
+                            v.push(input);
+                            self.telemetry_metadata = Some(v);
+                            self
         }
         /// <p>The Amazon Inspector application data metrics that are collected by the agent.</p>
-        pub fn set_telemetry_metadata(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TelemetryMetadata>>,
-        ) -> Self {
-            self.telemetry_metadata = input;
-            self
+        pub fn set_telemetry_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::model::TelemetryMetadata>>) -> Self {
+            self.telemetry_metadata = input; self
         }
         /// Consumes the builder and constructs a [`AssessmentRunAgent`](crate::model::AssessmentRunAgent).
         pub fn build(self) -> crate::model::AssessmentRunAgent {
             crate::model::AssessmentRunAgent {
-                agent_id: self.agent_id,
-                assessment_run_arn: self.assessment_run_arn,
-                agent_health: self.agent_health,
-                agent_health_code: self.agent_health_code,
-                agent_health_details: self.agent_health_details,
-                auto_scaling_group: self.auto_scaling_group,
-                telemetry_metadata: self.telemetry_metadata,
+                agent_id: self.agent_id
+                ,
+                assessment_run_arn: self.assessment_run_arn
+                ,
+                agent_health: self.agent_health
+                ,
+                agent_health_code: self.agent_health_code
+                ,
+                agent_health_details: self.agent_health_details
+                ,
+                auto_scaling_group: self.auto_scaling_group
+                ,
+                telemetry_metadata: self.telemetry_metadata
+                ,
             }
         }
     }
+    
+    
 }
 impl AssessmentRunAgent {
     /// Creates a new builder-style object to manufacture [`AssessmentRunAgent`](crate::model::AssessmentRunAgent).
@@ -3246,7 +2849,7 @@ impl AssessmentRunAgent {
 /// <p>The metadata about the Amazon Inspector application data metrics collected by the agent. This data type is used as the response element in the <code>GetTelemetryMetadata</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TelemetryMetadata {
+pub struct TelemetryMetadata  {
     /// <p>A specific type of behavioral data that is collected by the agent.</p>
     #[doc(hidden)]
     pub message_type: std::option::Option<std::string::String>,
@@ -3259,7 +2862,7 @@ pub struct TelemetryMetadata {
 }
 impl TelemetryMetadata {
     /// <p>A specific type of behavioral data that is collected by the agent.</p>
-    pub fn message_type(&self) -> std::option::Option<&str> {
+    pub fn message_type(&self) -> std::option::Option<& str> {
         self.message_type.as_deref()
     }
     /// <p>The count of messages that the agent sends to the Amazon Inspector service.</p>
@@ -3273,7 +2876,7 @@ impl TelemetryMetadata {
 }
 /// See [`TelemetryMetadata`](crate::model::TelemetryMetadata).
 pub mod telemetry_metadata {
-
+    
     /// A builder for [`TelemetryMetadata`](crate::model::TelemetryMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3289,8 +2892,7 @@ pub mod telemetry_metadata {
         }
         /// <p>A specific type of behavioral data that is collected by the agent.</p>
         pub fn set_message_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message_type = input;
-            self
+            self.message_type = input; self
         }
         /// <p>The count of messages that the agent sends to the Amazon Inspector service.</p>
         pub fn count(mut self, input: i64) -> Self {
@@ -3299,8 +2901,7 @@ pub mod telemetry_metadata {
         }
         /// <p>The count of messages that the agent sends to the Amazon Inspector service.</p>
         pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
-            self.count = input;
-            self
+            self.count = input; self
         }
         /// <p>The data size of messages that the agent sends to the Amazon Inspector service.</p>
         pub fn data_size(mut self, input: i64) -> Self {
@@ -3309,18 +2910,22 @@ pub mod telemetry_metadata {
         }
         /// <p>The data size of messages that the agent sends to the Amazon Inspector service.</p>
         pub fn set_data_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.data_size = input;
-            self
+            self.data_size = input; self
         }
         /// Consumes the builder and constructs a [`TelemetryMetadata`](crate::model::TelemetryMetadata).
         pub fn build(self) -> crate::model::TelemetryMetadata {
             crate::model::TelemetryMetadata {
-                message_type: self.message_type,
-                count: self.count,
-                data_size: self.data_size,
+                message_type: self.message_type
+                ,
+                count: self.count
+                ,
+                data_size: self.data_size
+                ,
             }
         }
     }
+    
+    
 }
 impl TelemetryMetadata {
     /// Creates a new builder-style object to manufacture [`TelemetryMetadata`](crate::model::TelemetryMetadata).
@@ -3335,9 +2940,9 @@ impl TelemetryMetadata {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let agenthealthcode = unimplemented!();
 /// match agenthealthcode {
@@ -3363,22 +2968,14 @@ impl TelemetryMetadata {
 /// Specifically, when `agenthealthcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AgentHealthCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `AgentHealthCode::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AgentHealthCode {
     #[allow(missing_docs)] // documentation missing in model
     Idle,
@@ -3393,7 +2990,7 @@ pub enum AgentHealthCode {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AgentHealthCode {
     fn from(s: &str) -> Self {
@@ -3404,17 +3001,17 @@ impl std::convert::From<&str> for AgentHealthCode {
             "THROTTLED" => AgentHealthCode::Throttled,
             "UNHEALTHY" => AgentHealthCode::Unhealthy,
             "UNKNOWN" => AgentHealthCode::UnknownValue,
-            other => AgentHealthCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AgentHealthCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AgentHealthCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AgentHealthCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AgentHealthCode::from(s))
+                }
+            }
 impl AgentHealthCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3425,18 +3022,13 @@ impl AgentHealthCode {
             AgentHealthCode::Throttled => "THROTTLED",
             AgentHealthCode::Unhealthy => "UNHEALTHY",
             AgentHealthCode::UnknownValue => "UNKNOWN",
-            AgentHealthCode::Unknown(value) => value.as_str(),
+            AgentHealthCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "IDLE",
-            "RUNNING",
-            "SHUTDOWN",
-            "THROTTLED",
-            "UNHEALTHY",
-            "UNKNOWN",
+            "IDLE", "RUNNING", "SHUTDOWN", "THROTTLED", "UNHEALTHY", "UNKNOWN"
         ]
     }
 }
@@ -3449,7 +3041,7 @@ impl AsRef<str> for AgentHealthCode {
 /// <p>Contains information about an Amazon Inspector agent. This data type is used as a request parameter in the <code>ListAssessmentRunAgents</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AgentFilter {
+pub struct AgentFilter  {
     /// <p>The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.</p>
     #[doc(hidden)]
     pub agent_healths: std::option::Option<std::vec::Vec<crate::model::AgentHealth>>,
@@ -3459,23 +3051,22 @@ pub struct AgentFilter {
 }
 impl AgentFilter {
     /// <p>The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.</p>
-    pub fn agent_healths(&self) -> std::option::Option<&[crate::model::AgentHealth]> {
+    pub fn agent_healths(&self) -> std::option::Option<& [crate::model::AgentHealth]> {
         self.agent_healths.as_deref()
     }
     /// <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>. </p>
-    pub fn agent_health_codes(&self) -> std::option::Option<&[crate::model::AgentHealthCode]> {
+    pub fn agent_health_codes(&self) -> std::option::Option<& [crate::model::AgentHealthCode]> {
         self.agent_health_codes.as_deref()
     }
 }
 /// See [`AgentFilter`](crate::model::AgentFilter).
 pub mod agent_filter {
-
+    
     /// A builder for [`AgentFilter`](crate::model::AgentFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) agent_healths: std::option::Option<std::vec::Vec<crate::model::AgentHealth>>,
-        pub(crate) agent_health_codes:
-            std::option::Option<std::vec::Vec<crate::model::AgentHealthCode>>,
+        pub(crate) agent_health_codes: std::option::Option<std::vec::Vec<crate::model::AgentHealthCode>>,
     }
     impl Builder {
         /// Appends an item to `agent_healths`.
@@ -3485,17 +3076,13 @@ pub mod agent_filter {
         /// <p>The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.</p>
         pub fn agent_healths(mut self, input: crate::model::AgentHealth) -> Self {
             let mut v = self.agent_healths.unwrap_or_default();
-            v.push(input);
-            self.agent_healths = Some(v);
-            self
+                            v.push(input);
+                            self.agent_healths = Some(v);
+                            self
         }
         /// <p>The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.</p>
-        pub fn set_agent_healths(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AgentHealth>>,
-        ) -> Self {
-            self.agent_healths = input;
-            self
+        pub fn set_agent_healths(mut self, input: std::option::Option<std::vec::Vec<crate::model::AgentHealth>>) -> Self {
+            self.agent_healths = input; self
         }
         /// Appends an item to `agent_health_codes`.
         ///
@@ -3504,26 +3091,26 @@ pub mod agent_filter {
         /// <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>. </p>
         pub fn agent_health_codes(mut self, input: crate::model::AgentHealthCode) -> Self {
             let mut v = self.agent_health_codes.unwrap_or_default();
-            v.push(input);
-            self.agent_health_codes = Some(v);
-            self
+                            v.push(input);
+                            self.agent_health_codes = Some(v);
+                            self
         }
         /// <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>. </p>
-        pub fn set_agent_health_codes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AgentHealthCode>>,
-        ) -> Self {
-            self.agent_health_codes = input;
-            self
+        pub fn set_agent_health_codes(mut self, input: std::option::Option<std::vec::Vec<crate::model::AgentHealthCode>>) -> Self {
+            self.agent_health_codes = input; self
         }
         /// Consumes the builder and constructs a [`AgentFilter`](crate::model::AgentFilter).
         pub fn build(self) -> crate::model::AgentFilter {
             crate::model::AgentFilter {
-                agent_healths: self.agent_healths,
-                agent_health_codes: self.agent_health_codes,
+                agent_healths: self.agent_healths
+                ,
+                agent_health_codes: self.agent_health_codes
+                ,
             }
         }
     }
+    
+    
 }
 impl AgentFilter {
     /// Creates a new builder-style object to manufacture [`AgentFilter`](crate::model::AgentFilter).
@@ -3535,7 +3122,7 @@ impl AgentFilter {
 /// <p>Contains information about what is excluded from an assessment run given the current state of the assessment template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExclusionPreview {
+pub struct ExclusionPreview  {
     /// <p>The name of the exclusion preview.</p>
     #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
@@ -3554,29 +3141,29 @@ pub struct ExclusionPreview {
 }
 impl ExclusionPreview {
     /// <p>The name of the exclusion preview.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The description of the exclusion preview.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The recommendation for the exclusion preview.</p>
-    pub fn recommendation(&self) -> std::option::Option<&str> {
+    pub fn recommendation(&self) -> std::option::Option<& str> {
         self.recommendation.as_deref()
     }
     /// <p>The AWS resources for which the exclusion preview pertains.</p>
-    pub fn scopes(&self) -> std::option::Option<&[crate::model::Scope]> {
+    pub fn scopes(&self) -> std::option::Option<& [crate::model::Scope]> {
         self.scopes.as_deref()
     }
     /// <p>The system-defined attributes for the exclusion preview.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::Attribute]> {
         self.attributes.as_deref()
     }
 }
 /// See [`ExclusionPreview`](crate::model::ExclusionPreview).
 pub mod exclusion_preview {
-
+    
     /// A builder for [`ExclusionPreview`](crate::model::ExclusionPreview).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3594,8 +3181,7 @@ pub mod exclusion_preview {
         }
         /// <p>The name of the exclusion preview.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.title = input;
-            self
+            self.title = input; self
         }
         /// <p>The description of the exclusion preview.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3604,8 +3190,7 @@ pub mod exclusion_preview {
         }
         /// <p>The description of the exclusion preview.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The recommendation for the exclusion preview.</p>
         pub fn recommendation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3613,12 +3198,8 @@ pub mod exclusion_preview {
             self
         }
         /// <p>The recommendation for the exclusion preview.</p>
-        pub fn set_recommendation(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommendation = input;
-            self
+        pub fn set_recommendation(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommendation = input; self
         }
         /// Appends an item to `scopes`.
         ///
@@ -3627,17 +3208,13 @@ pub mod exclusion_preview {
         /// <p>The AWS resources for which the exclusion preview pertains.</p>
         pub fn scopes(mut self, input: crate::model::Scope) -> Self {
             let mut v = self.scopes.unwrap_or_default();
-            v.push(input);
-            self.scopes = Some(v);
-            self
+                            v.push(input);
+                            self.scopes = Some(v);
+                            self
         }
         /// <p>The AWS resources for which the exclusion preview pertains.</p>
-        pub fn set_scopes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Scope>>,
-        ) -> Self {
-            self.scopes = input;
-            self
+        pub fn set_scopes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Scope>>) -> Self {
+            self.scopes = input; self
         }
         /// Appends an item to `attributes`.
         ///
@@ -3646,29 +3223,32 @@ pub mod exclusion_preview {
         /// <p>The system-defined attributes for the exclusion preview.</p>
         pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>The system-defined attributes for the exclusion preview.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Attribute>>) -> Self {
+            self.attributes = input; self
         }
         /// Consumes the builder and constructs a [`ExclusionPreview`](crate::model::ExclusionPreview).
         pub fn build(self) -> crate::model::ExclusionPreview {
             crate::model::ExclusionPreview {
-                title: self.title,
-                description: self.description,
-                recommendation: self.recommendation,
-                scopes: self.scopes,
-                attributes: self.attributes,
+                title: self.title
+                ,
+                description: self.description
+                ,
+                recommendation: self.recommendation
+                ,
+                scopes: self.scopes
+                ,
+                attributes: self.attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl ExclusionPreview {
     /// Creates a new builder-style object to manufacture [`ExclusionPreview`](crate::model::ExclusionPreview).
@@ -3680,7 +3260,7 @@ impl ExclusionPreview {
 /// <p>This data type contains key-value pairs that identify various Amazon resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Scope {
+pub struct Scope  {
     /// <p>The type of the scope.</p>
     #[doc(hidden)]
     pub key: std::option::Option<crate::model::ScopeType>,
@@ -3690,17 +3270,17 @@ pub struct Scope {
 }
 impl Scope {
     /// <p>The type of the scope.</p>
-    pub fn key(&self) -> std::option::Option<&crate::model::ScopeType> {
+    pub fn key(&self) -> std::option::Option<& crate::model::ScopeType> {
         self.key.as_ref()
     }
     /// <p>The resource identifier for the specified scope type.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Scope`](crate::model::Scope).
 pub mod scope {
-
+    
     /// A builder for [`Scope`](crate::model::Scope).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3715,8 +3295,7 @@ pub mod scope {
         }
         /// <p>The type of the scope.</p>
         pub fn set_key(mut self, input: std::option::Option<crate::model::ScopeType>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The resource identifier for the specified scope type.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3725,17 +3304,20 @@ pub mod scope {
         }
         /// <p>The resource identifier for the specified scope type.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Scope`](crate::model::Scope).
         pub fn build(self) -> crate::model::Scope {
             crate::model::Scope {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Scope {
     /// Creates a new builder-style object to manufacture [`Scope`](crate::model::Scope).
@@ -3750,9 +3332,9 @@ impl Scope {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let scopetype = unimplemented!();
 /// match scopetype {
@@ -3774,58 +3356,52 @@ impl Scope {
 /// Specifically, when `scopetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ScopeType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ScopeType {
     #[allow(missing_docs)] // documentation missing in model
     InstanceId,
     #[allow(missing_docs)] // documentation missing in model
     RulesPackageArn,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ScopeType {
     fn from(s: &str) -> Self {
         match s {
             "INSTANCE_ID" => ScopeType::InstanceId,
             "RULES_PACKAGE_ARN" => ScopeType::RulesPackageArn,
-            other => ScopeType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ScopeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ScopeType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScopeType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ScopeType::from(s))
+                }
+            }
 impl ScopeType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScopeType::InstanceId => "INSTANCE_ID",
             ScopeType::RulesPackageArn => "RULES_PACKAGE_ARN",
-            ScopeType::Unknown(value) => value.as_str(),
+            ScopeType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INSTANCE_ID", "RULES_PACKAGE_ARN"]
+        &[
+            "INSTANCE_ID", "RULES_PACKAGE_ARN"
+        ]
     }
 }
 impl AsRef<str> for ScopeType {
@@ -3840,9 +3416,9 @@ impl AsRef<str> for ScopeType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let previewstatus = unimplemented!();
 /// match previewstatus {
@@ -3864,58 +3440,52 @@ impl AsRef<str> for ScopeType {
 /// Specifically, when `previewstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PreviewStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PreviewStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
     #[allow(missing_docs)] // documentation missing in model
     WorkInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PreviewStatus {
     fn from(s: &str) -> Self {
         match s {
             "COMPLETED" => PreviewStatus::Completed,
             "WORK_IN_PROGRESS" => PreviewStatus::WorkInProgress,
-            other => PreviewStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PreviewStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PreviewStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PreviewStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PreviewStatus::from(s))
+                }
+            }
 impl PreviewStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PreviewStatus::Completed => "COMPLETED",
             PreviewStatus::WorkInProgress => "WORK_IN_PROGRESS",
-            PreviewStatus::Unknown(value) => value.as_str(),
+            PreviewStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "WORK_IN_PROGRESS"]
+        &[
+            "COMPLETED", "WORK_IN_PROGRESS"
+        ]
     }
 }
 impl AsRef<str> for PreviewStatus {
@@ -3930,9 +3500,9 @@ impl AsRef<str> for PreviewStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let locale = unimplemented!();
 /// match locale {
@@ -3953,54 +3523,48 @@ impl AsRef<str> for PreviewStatus {
 /// Specifically, when `locale` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Locale::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Locale {
     #[allow(missing_docs)] // documentation missing in model
     EnUs,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Locale {
     fn from(s: &str) -> Self {
         match s {
             "EN_US" => Locale::EnUs,
-            other => Locale::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Locale::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Locale {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Locale::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Locale::from(s))
+                }
+            }
 impl Locale {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Locale::EnUs => "EN_US",
-            Locale::Unknown(value) => value.as_str(),
+            Locale::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EN_US"]
+        &[
+            "EN_US"
+        ]
     }
 }
 impl AsRef<str> for Locale {
@@ -4015,9 +3579,9 @@ impl AsRef<str> for Locale {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let reportstatus = unimplemented!();
 /// match reportstatus {
@@ -4040,22 +3604,14 @@ impl AsRef<str> for Locale {
 /// Specifically, when `reportstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReportStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReportStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -4064,7 +3620,7 @@ pub enum ReportStatus {
     #[allow(missing_docs)] // documentation missing in model
     WorkInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReportStatus {
     fn from(s: &str) -> Self {
@@ -4072,17 +3628,17 @@ impl std::convert::From<&str> for ReportStatus {
             "COMPLETED" => ReportStatus::Completed,
             "FAILED" => ReportStatus::Failed,
             "WORK_IN_PROGRESS" => ReportStatus::WorkInProgress,
-            other => ReportStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ReportStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReportStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReportStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReportStatus::from(s))
+                }
+            }
 impl ReportStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4090,12 +3646,14 @@ impl ReportStatus {
             ReportStatus::Completed => "COMPLETED",
             ReportStatus::Failed => "FAILED",
             ReportStatus::WorkInProgress => "WORK_IN_PROGRESS",
-            ReportStatus::Unknown(value) => value.as_str(),
+            ReportStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "FAILED", "WORK_IN_PROGRESS"]
+        &[
+            "COMPLETED", "FAILED", "WORK_IN_PROGRESS"
+        ]
     }
 }
 impl AsRef<str> for ReportStatus {
@@ -4110,9 +3668,9 @@ impl AsRef<str> for ReportStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let reporttype = unimplemented!();
 /// match reporttype {
@@ -4134,58 +3692,52 @@ impl AsRef<str> for ReportStatus {
 /// Specifically, when `reporttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReportType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReportType {
     #[allow(missing_docs)] // documentation missing in model
     Finding,
     #[allow(missing_docs)] // documentation missing in model
     Full,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReportType {
     fn from(s: &str) -> Self {
         match s {
             "FINDING" => ReportType::Finding,
             "FULL" => ReportType::Full,
-            other => ReportType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ReportType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReportType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReportType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReportType::from(s))
+                }
+            }
 impl ReportType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportType::Finding => "FINDING",
             ReportType::Full => "FULL",
-            ReportType::Unknown(value) => value.as_str(),
+            ReportType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FINDING", "FULL"]
+        &[
+            "FINDING", "FULL"
+        ]
     }
 }
 impl AsRef<str> for ReportType {
@@ -4200,9 +3752,9 @@ impl AsRef<str> for ReportType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let reportfileformat = unimplemented!();
 /// match reportfileformat {
@@ -4224,58 +3776,52 @@ impl AsRef<str> for ReportType {
 /// Specifically, when `reportfileformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReportFileFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReportFileFormat {
     #[allow(missing_docs)] // documentation missing in model
     Html,
     #[allow(missing_docs)] // documentation missing in model
     Pdf,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReportFileFormat {
     fn from(s: &str) -> Self {
         match s {
             "HTML" => ReportFileFormat::Html,
             "PDF" => ReportFileFormat::Pdf,
-            other => ReportFileFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ReportFileFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReportFileFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReportFileFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReportFileFormat::from(s))
+                }
+            }
 impl ReportFileFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportFileFormat::Html => "HTML",
             ReportFileFormat::Pdf => "PDF",
-            ReportFileFormat::Unknown(value) => value.as_str(),
+            ReportFileFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HTML", "PDF"]
+        &[
+            "HTML", "PDF"
+        ]
     }
 }
 impl AsRef<str> for ReportFileFormat {
@@ -4287,7 +3833,7 @@ impl AsRef<str> for ReportFileFormat {
 /// <p>Contains information about an Amazon Inspector rules package. This data type is used as the response element in the <code>DescribeRulesPackages</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RulesPackage {
+pub struct RulesPackage  {
     /// <p>The ARN of the rules package.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4306,29 +3852,29 @@ pub struct RulesPackage {
 }
 impl RulesPackage {
     /// <p>The ARN of the rules package.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the rules package.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version ID of the rules package.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The provider of the rules package.</p>
-    pub fn provider(&self) -> std::option::Option<&str> {
+    pub fn provider(&self) -> std::option::Option<& str> {
         self.provider.as_deref()
     }
     /// <p>The description of the rules package.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`RulesPackage`](crate::model::RulesPackage).
 pub mod rules_package {
-
+    
     /// A builder for [`RulesPackage`](crate::model::RulesPackage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4346,8 +3892,7 @@ pub mod rules_package {
         }
         /// <p>The ARN of the rules package.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the rules package.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4356,8 +3901,7 @@ pub mod rules_package {
         }
         /// <p>The name of the rules package.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The version ID of the rules package.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4366,8 +3910,7 @@ pub mod rules_package {
         }
         /// <p>The version ID of the rules package.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The provider of the rules package.</p>
         pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4376,8 +3919,7 @@ pub mod rules_package {
         }
         /// <p>The provider of the rules package.</p>
         pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.provider = input;
-            self
+            self.provider = input; self
         }
         /// <p>The description of the rules package.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4386,20 +3928,26 @@ pub mod rules_package {
         }
         /// <p>The description of the rules package.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`RulesPackage`](crate::model::RulesPackage).
         pub fn build(self) -> crate::model::RulesPackage {
             crate::model::RulesPackage {
-                arn: self.arn,
-                name: self.name,
-                version: self.version,
-                provider: self.provider,
-                description: self.description,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                version: self.version
+                ,
+                provider: self.provider
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl RulesPackage {
     /// Creates a new builder-style object to manufacture [`RulesPackage`](crate::model::RulesPackage).
@@ -4411,7 +3959,7 @@ impl RulesPackage {
 /// <p>Contains information about a resource group. The resource group defines a set of tags that, when queried, identify the AWS resources that make up the assessment target. This data type is used as the response element in the <code>DescribeResourceGroups</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceGroup {
+pub struct ResourceGroup  {
     /// <p>The ARN of the resource group.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4424,21 +3972,21 @@ pub struct ResourceGroup {
 }
 impl ResourceGroup {
     /// <p>The ARN of the resource group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The tags (key and value pairs) of the resource group. This data type property is used in the <code>CreateResourceGroup</code> action.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::ResourceGroupTag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::ResourceGroupTag]> {
         self.tags.as_deref()
     }
     /// <p>The time at which resource group is created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 /// See [`ResourceGroup`](crate::model::ResourceGroup).
 pub mod resource_group {
-
+    
     /// A builder for [`ResourceGroup`](crate::model::ResourceGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4454,8 +4002,7 @@ pub mod resource_group {
         }
         /// <p>The ARN of the resource group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -4464,17 +4011,13 @@ pub mod resource_group {
         /// <p>The tags (key and value pairs) of the resource group. This data type property is used in the <code>CreateResourceGroup</code> action.</p>
         pub fn tags(mut self, input: crate::model::ResourceGroupTag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags (key and value pairs) of the resource group. This data type property is used in the <code>CreateResourceGroup</code> action.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ResourceGroupTag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::ResourceGroupTag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The time at which resource group is created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4482,22 +4025,23 @@ pub mod resource_group {
             self
         }
         /// <p>The time at which resource group is created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`ResourceGroup`](crate::model::ResourceGroup).
         pub fn build(self) -> crate::model::ResourceGroup {
             crate::model::ResourceGroup {
-                arn: self.arn,
-                tags: self.tags,
-                created_at: self.created_at,
+                arn: self.arn
+                ,
+                tags: self.tags
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceGroup {
     /// Creates a new builder-style object to manufacture [`ResourceGroup`](crate::model::ResourceGroup).
@@ -4509,7 +4053,7 @@ impl ResourceGroup {
 /// <p>This data type is used as one of the elements of the <code>ResourceGroup</code> data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceGroupTag {
+pub struct ResourceGroupTag  {
     /// <p>A tag key.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -4519,17 +4063,17 @@ pub struct ResourceGroupTag {
 }
 impl ResourceGroupTag {
     /// <p>A tag key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value assigned to a tag key.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`ResourceGroupTag`](crate::model::ResourceGroupTag).
 pub mod resource_group_tag {
-
+    
     /// A builder for [`ResourceGroupTag`](crate::model::ResourceGroupTag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4544,8 +4088,7 @@ pub mod resource_group_tag {
         }
         /// <p>A tag key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value assigned to a tag key.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4554,17 +4097,20 @@ pub mod resource_group_tag {
         }
         /// <p>The value assigned to a tag key.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`ResourceGroupTag`](crate::model::ResourceGroupTag).
         pub fn build(self) -> crate::model::ResourceGroupTag {
             crate::model::ResourceGroupTag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceGroupTag {
     /// Creates a new builder-style object to manufacture [`ResourceGroupTag`](crate::model::ResourceGroupTag).
@@ -4576,7 +4122,7 @@ impl ResourceGroupTag {
 /// <p>Contains information about an Amazon Inspector finding. This data type is used as the response element in the <code>DescribeFindings</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Finding {
+pub struct Finding  {
     /// <p>The ARN that specifies the finding.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -4634,7 +4180,7 @@ pub struct Finding {
 }
 impl Finding {
     /// <p>The ARN that specifies the finding.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The schema version of this data type.</p>
@@ -4642,41 +4188,39 @@ impl Finding {
         self.schema_version
     }
     /// <p>The data element is set to "Inspector".</p>
-    pub fn service(&self) -> std::option::Option<&str> {
+    pub fn service(&self) -> std::option::Option<& str> {
         self.service.as_deref()
     }
     /// <p>This data type is used in the <code>Finding</code> data type.</p>
-    pub fn service_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::InspectorServiceAttributes> {
+    pub fn service_attributes(&self) -> std::option::Option<& crate::model::InspectorServiceAttributes> {
         self.service_attributes.as_ref()
     }
     /// <p>The type of the host from which the finding is generated.</p>
-    pub fn asset_type(&self) -> std::option::Option<&crate::model::AssetType> {
+    pub fn asset_type(&self) -> std::option::Option<& crate::model::AssetType> {
         self.asset_type.as_ref()
     }
     /// <p>A collection of attributes of the host from which the finding is generated.</p>
-    pub fn asset_attributes(&self) -> std::option::Option<&crate::model::AssetAttributes> {
+    pub fn asset_attributes(&self) -> std::option::Option<& crate::model::AssetAttributes> {
         self.asset_attributes.as_ref()
     }
     /// <p>The ID of the finding.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the finding.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The description of the finding.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The recommendation for the finding.</p>
-    pub fn recommendation(&self) -> std::option::Option<&str> {
+    pub fn recommendation(&self) -> std::option::Option<& str> {
         self.recommendation.as_deref()
     }
     /// <p>The finding severity. Values can be set to High, Medium, Low, and Informational.</p>
-    pub fn severity(&self) -> std::option::Option<&crate::model::Severity> {
+    pub fn severity(&self) -> std::option::Option<& crate::model::Severity> {
         self.severity.as_ref()
     }
     /// <p>The numeric value of the finding severity.</p>
@@ -4692,33 +4236,32 @@ impl Finding {
         self.indicator_of_compromise
     }
     /// <p>The system-defined attributes for the finding.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::Attribute]> {
         self.attributes.as_deref()
     }
     /// <p>The user-defined attributes that are assigned to the finding.</p>
-    pub fn user_attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+    pub fn user_attributes(&self) -> std::option::Option<& [crate::model::Attribute]> {
         self.user_attributes.as_deref()
     }
     /// <p>The time when the finding was generated.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when <code>AddAttributesToFindings</code> is called.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`Finding`](crate::model::Finding).
 pub mod finding {
-
+    
     /// A builder for [`Finding`](crate::model::Finding).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) schema_version: std::option::Option<i32>,
         pub(crate) service: std::option::Option<std::string::String>,
-        pub(crate) service_attributes:
-            std::option::Option<crate::model::InspectorServiceAttributes>,
+        pub(crate) service_attributes: std::option::Option<crate::model::InspectorServiceAttributes>,
         pub(crate) asset_type: std::option::Option<crate::model::AssetType>,
         pub(crate) asset_attributes: std::option::Option<crate::model::AssetAttributes>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -4742,8 +4285,7 @@ pub mod finding {
         }
         /// <p>The ARN that specifies the finding.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The schema version of this data type.</p>
         pub fn schema_version(mut self, input: i32) -> Self {
@@ -4752,8 +4294,7 @@ pub mod finding {
         }
         /// <p>The schema version of this data type.</p>
         pub fn set_schema_version(mut self, input: std::option::Option<i32>) -> Self {
-            self.schema_version = input;
-            self
+            self.schema_version = input; self
         }
         /// <p>The data element is set to "Inspector".</p>
         pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4762,24 +4303,16 @@ pub mod finding {
         }
         /// <p>The data element is set to "Inspector".</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service = input;
-            self
+            self.service = input; self
         }
         /// <p>This data type is used in the <code>Finding</code> data type.</p>
-        pub fn service_attributes(
-            mut self,
-            input: crate::model::InspectorServiceAttributes,
-        ) -> Self {
+        pub fn service_attributes(mut self, input: crate::model::InspectorServiceAttributes) -> Self {
             self.service_attributes = Some(input);
             self
         }
         /// <p>This data type is used in the <code>Finding</code> data type.</p>
-        pub fn set_service_attributes(
-            mut self,
-            input: std::option::Option<crate::model::InspectorServiceAttributes>,
-        ) -> Self {
-            self.service_attributes = input;
-            self
+        pub fn set_service_attributes(mut self, input: std::option::Option<crate::model::InspectorServiceAttributes>) -> Self {
+            self.service_attributes = input; self
         }
         /// <p>The type of the host from which the finding is generated.</p>
         pub fn asset_type(mut self, input: crate::model::AssetType) -> Self {
@@ -4787,12 +4320,8 @@ pub mod finding {
             self
         }
         /// <p>The type of the host from which the finding is generated.</p>
-        pub fn set_asset_type(
-            mut self,
-            input: std::option::Option<crate::model::AssetType>,
-        ) -> Self {
-            self.asset_type = input;
-            self
+        pub fn set_asset_type(mut self, input: std::option::Option<crate::model::AssetType>) -> Self {
+            self.asset_type = input; self
         }
         /// <p>A collection of attributes of the host from which the finding is generated.</p>
         pub fn asset_attributes(mut self, input: crate::model::AssetAttributes) -> Self {
@@ -4800,12 +4329,8 @@ pub mod finding {
             self
         }
         /// <p>A collection of attributes of the host from which the finding is generated.</p>
-        pub fn set_asset_attributes(
-            mut self,
-            input: std::option::Option<crate::model::AssetAttributes>,
-        ) -> Self {
-            self.asset_attributes = input;
-            self
+        pub fn set_asset_attributes(mut self, input: std::option::Option<crate::model::AssetAttributes>) -> Self {
+            self.asset_attributes = input; self
         }
         /// <p>The ID of the finding.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4814,8 +4339,7 @@ pub mod finding {
         }
         /// <p>The ID of the finding.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the finding.</p>
         pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4824,8 +4348,7 @@ pub mod finding {
         }
         /// <p>The name of the finding.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.title = input;
-            self
+            self.title = input; self
         }
         /// <p>The description of the finding.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4834,8 +4357,7 @@ pub mod finding {
         }
         /// <p>The description of the finding.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The recommendation for the finding.</p>
         pub fn recommendation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4843,12 +4365,8 @@ pub mod finding {
             self
         }
         /// <p>The recommendation for the finding.</p>
-        pub fn set_recommendation(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommendation = input;
-            self
+        pub fn set_recommendation(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommendation = input; self
         }
         /// <p>The finding severity. Values can be set to High, Medium, Low, and Informational.</p>
         pub fn severity(mut self, input: crate::model::Severity) -> Self {
@@ -4857,8 +4375,7 @@ pub mod finding {
         }
         /// <p>The finding severity. Values can be set to High, Medium, Low, and Informational.</p>
         pub fn set_severity(mut self, input: std::option::Option<crate::model::Severity>) -> Self {
-            self.severity = input;
-            self
+            self.severity = input; self
         }
         /// <p>The numeric value of the finding severity.</p>
         pub fn numeric_severity(mut self, input: f64) -> Self {
@@ -4867,8 +4384,7 @@ pub mod finding {
         }
         /// <p>The numeric value of the finding severity.</p>
         pub fn set_numeric_severity(mut self, input: std::option::Option<f64>) -> Self {
-            self.numeric_severity = input;
-            self
+            self.numeric_severity = input; self
         }
         /// <p>This data element is currently not used.</p>
         pub fn confidence(mut self, input: i32) -> Self {
@@ -4877,8 +4393,7 @@ pub mod finding {
         }
         /// <p>This data element is currently not used.</p>
         pub fn set_confidence(mut self, input: std::option::Option<i32>) -> Self {
-            self.confidence = input;
-            self
+            self.confidence = input; self
         }
         /// <p>This data element is currently not used.</p>
         pub fn indicator_of_compromise(mut self, input: bool) -> Self {
@@ -4887,8 +4402,7 @@ pub mod finding {
         }
         /// <p>This data element is currently not used.</p>
         pub fn set_indicator_of_compromise(mut self, input: std::option::Option<bool>) -> Self {
-            self.indicator_of_compromise = input;
-            self
+            self.indicator_of_compromise = input; self
         }
         /// Appends an item to `attributes`.
         ///
@@ -4897,17 +4411,13 @@ pub mod finding {
         /// <p>The system-defined attributes for the finding.</p>
         pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>The system-defined attributes for the finding.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Attribute>>) -> Self {
+            self.attributes = input; self
         }
         /// Appends an item to `user_attributes`.
         ///
@@ -4916,17 +4426,13 @@ pub mod finding {
         /// <p>The user-defined attributes that are assigned to the finding.</p>
         pub fn user_attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.user_attributes.unwrap_or_default();
-            v.push(input);
-            self.user_attributes = Some(v);
-            self
+                            v.push(input);
+                            self.user_attributes = Some(v);
+                            self
         }
         /// <p>The user-defined attributes that are assigned to the finding.</p>
-        pub fn set_user_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
-        ) -> Self {
-            self.user_attributes = input;
-            self
+        pub fn set_user_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Attribute>>) -> Self {
+            self.user_attributes = input; self
         }
         /// <p>The time when the finding was generated.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4934,12 +4440,8 @@ pub mod finding {
             self
         }
         /// <p>The time when the finding was generated.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time when <code>AddAttributesToFindings</code> is called.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4947,37 +4449,56 @@ pub mod finding {
             self
         }
         /// <p>The time when <code>AddAttributesToFindings</code> is called.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`Finding`](crate::model::Finding).
         pub fn build(self) -> crate::model::Finding {
             crate::model::Finding {
-                arn: self.arn,
-                schema_version: self.schema_version.unwrap_or_default(),
-                service: self.service,
-                service_attributes: self.service_attributes,
-                asset_type: self.asset_type,
-                asset_attributes: self.asset_attributes,
-                id: self.id,
-                title: self.title,
-                description: self.description,
-                recommendation: self.recommendation,
-                severity: self.severity,
-                numeric_severity: self.numeric_severity.unwrap_or_default(),
-                confidence: self.confidence.unwrap_or_default(),
-                indicator_of_compromise: self.indicator_of_compromise,
-                attributes: self.attributes,
-                user_attributes: self.user_attributes,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
+                arn: self.arn
+                ,
+                schema_version: self.schema_version
+                    .unwrap_or_default()
+                ,
+                service: self.service
+                ,
+                service_attributes: self.service_attributes
+                ,
+                asset_type: self.asset_type
+                ,
+                asset_attributes: self.asset_attributes
+                ,
+                id: self.id
+                ,
+                title: self.title
+                ,
+                description: self.description
+                ,
+                recommendation: self.recommendation
+                ,
+                severity: self.severity
+                ,
+                numeric_severity: self.numeric_severity
+                    .unwrap_or_default()
+                ,
+                confidence: self.confidence
+                    .unwrap_or_default()
+                ,
+                indicator_of_compromise: self.indicator_of_compromise
+                ,
+                attributes: self.attributes
+                ,
+                user_attributes: self.user_attributes
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl Finding {
     /// Creates a new builder-style object to manufacture [`Finding`](crate::model::Finding).
@@ -4989,7 +4510,7 @@ impl Finding {
 /// <p>A collection of attributes of the host from which the finding is generated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetAttributes {
+pub struct AssetAttributes  {
     /// <p>The schema version of this data type.</p>
     #[doc(hidden)]
     pub schema_version: i32,
@@ -5021,37 +4542,37 @@ impl AssetAttributes {
         self.schema_version
     }
     /// <p>The ID of the agent that is installed on the EC2 instance where the finding is generated.</p>
-    pub fn agent_id(&self) -> std::option::Option<&str> {
+    pub fn agent_id(&self) -> std::option::Option<& str> {
         self.agent_id.as_deref()
     }
     /// <p>The Auto Scaling group of the EC2 instance where the finding is generated.</p>
-    pub fn auto_scaling_group(&self) -> std::option::Option<&str> {
+    pub fn auto_scaling_group(&self) -> std::option::Option<& str> {
         self.auto_scaling_group.as_deref()
     }
     /// <p>The ID of the Amazon Machine Image (AMI) that is installed on the EC2 instance where the finding is generated.</p>
-    pub fn ami_id(&self) -> std::option::Option<&str> {
+    pub fn ami_id(&self) -> std::option::Option<& str> {
         self.ami_id.as_deref()
     }
     /// <p>The hostname of the EC2 instance where the finding is generated.</p>
-    pub fn hostname(&self) -> std::option::Option<&str> {
+    pub fn hostname(&self) -> std::option::Option<& str> {
         self.hostname.as_deref()
     }
     /// <p>The list of IP v4 addresses of the EC2 instance where the finding is generated.</p>
-    pub fn ipv4_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ipv4_addresses(&self) -> std::option::Option<& [std::string::String]> {
         self.ipv4_addresses.as_deref()
     }
     /// <p>The tags related to the EC2 instance where the finding is generated.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>An array of the network interfaces interacting with the EC2 instance where the finding is generated.</p>
-    pub fn network_interfaces(&self) -> std::option::Option<&[crate::model::NetworkInterface]> {
+    pub fn network_interfaces(&self) -> std::option::Option<& [crate::model::NetworkInterface]> {
         self.network_interfaces.as_deref()
     }
 }
 /// See [`AssetAttributes`](crate::model::AssetAttributes).
 pub mod asset_attributes {
-
+    
     /// A builder for [`AssetAttributes`](crate::model::AssetAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5062,8 +4583,7 @@ pub mod asset_attributes {
         pub(crate) hostname: std::option::Option<std::string::String>,
         pub(crate) ipv4_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        pub(crate) network_interfaces:
-            std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
+        pub(crate) network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
     }
     impl Builder {
         /// <p>The schema version of this data type.</p>
@@ -5073,8 +4593,7 @@ pub mod asset_attributes {
         }
         /// <p>The schema version of this data type.</p>
         pub fn set_schema_version(mut self, input: std::option::Option<i32>) -> Self {
-            self.schema_version = input;
-            self
+            self.schema_version = input; self
         }
         /// <p>The ID of the agent that is installed on the EC2 instance where the finding is generated.</p>
         pub fn agent_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5083,8 +4602,7 @@ pub mod asset_attributes {
         }
         /// <p>The ID of the agent that is installed on the EC2 instance where the finding is generated.</p>
         pub fn set_agent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.agent_id = input;
-            self
+            self.agent_id = input; self
         }
         /// <p>The Auto Scaling group of the EC2 instance where the finding is generated.</p>
         pub fn auto_scaling_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5092,12 +4610,8 @@ pub mod asset_attributes {
             self
         }
         /// <p>The Auto Scaling group of the EC2 instance where the finding is generated.</p>
-        pub fn set_auto_scaling_group(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.auto_scaling_group = input;
-            self
+        pub fn set_auto_scaling_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.auto_scaling_group = input; self
         }
         /// <p>The ID of the Amazon Machine Image (AMI) that is installed on the EC2 instance where the finding is generated.</p>
         pub fn ami_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5106,8 +4620,7 @@ pub mod asset_attributes {
         }
         /// <p>The ID of the Amazon Machine Image (AMI) that is installed on the EC2 instance where the finding is generated.</p>
         pub fn set_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ami_id = input;
-            self
+            self.ami_id = input; self
         }
         /// <p>The hostname of the EC2 instance where the finding is generated.</p>
         pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5116,8 +4629,7 @@ pub mod asset_attributes {
         }
         /// <p>The hostname of the EC2 instance where the finding is generated.</p>
         pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hostname = input;
-            self
+            self.hostname = input; self
         }
         /// Appends an item to `ipv4_addresses`.
         ///
@@ -5126,17 +4638,13 @@ pub mod asset_attributes {
         /// <p>The list of IP v4 addresses of the EC2 instance where the finding is generated.</p>
         pub fn ipv4_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ipv4_addresses.unwrap_or_default();
-            v.push(input.into());
-            self.ipv4_addresses = Some(v);
-            self
+                            v.push(input.into());
+                            self.ipv4_addresses = Some(v);
+                            self
         }
         /// <p>The list of IP v4 addresses of the EC2 instance where the finding is generated.</p>
-        pub fn set_ipv4_addresses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.ipv4_addresses = input;
-            self
+        pub fn set_ipv4_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.ipv4_addresses = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -5145,17 +4653,13 @@ pub mod asset_attributes {
         /// <p>The tags related to the EC2 instance where the finding is generated.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags related to the EC2 instance where the finding is generated.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Appends an item to `network_interfaces`.
         ///
@@ -5164,32 +4668,39 @@ pub mod asset_attributes {
         /// <p>An array of the network interfaces interacting with the EC2 instance where the finding is generated.</p>
         pub fn network_interfaces(mut self, input: crate::model::NetworkInterface) -> Self {
             let mut v = self.network_interfaces.unwrap_or_default();
-            v.push(input);
-            self.network_interfaces = Some(v);
-            self
+                            v.push(input);
+                            self.network_interfaces = Some(v);
+                            self
         }
         /// <p>An array of the network interfaces interacting with the EC2 instance where the finding is generated.</p>
-        pub fn set_network_interfaces(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
-        ) -> Self {
-            self.network_interfaces = input;
-            self
+        pub fn set_network_interfaces(mut self, input: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>) -> Self {
+            self.network_interfaces = input; self
         }
         /// Consumes the builder and constructs a [`AssetAttributes`](crate::model::AssetAttributes).
         pub fn build(self) -> crate::model::AssetAttributes {
             crate::model::AssetAttributes {
-                schema_version: self.schema_version.unwrap_or_default(),
-                agent_id: self.agent_id,
-                auto_scaling_group: self.auto_scaling_group,
-                ami_id: self.ami_id,
-                hostname: self.hostname,
-                ipv4_addresses: self.ipv4_addresses,
-                tags: self.tags,
-                network_interfaces: self.network_interfaces,
+                schema_version: self.schema_version
+                    .unwrap_or_default()
+                ,
+                agent_id: self.agent_id
+                ,
+                auto_scaling_group: self.auto_scaling_group
+                ,
+                ami_id: self.ami_id
+                ,
+                hostname: self.hostname
+                ,
+                ipv4_addresses: self.ipv4_addresses
+                ,
+                tags: self.tags
+                ,
+                network_interfaces: self.network_interfaces
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetAttributes {
     /// Creates a new builder-style object to manufacture [`AssetAttributes`](crate::model::AssetAttributes).
@@ -5201,7 +4712,7 @@ impl AssetAttributes {
 /// <p>Contains information about the network interfaces interacting with an EC2 instance. This data type is used as one of the elements of the <code>AssetAttributes</code> data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkInterface {
+pub struct NetworkInterface  {
     /// <p>The ID of the network interface.</p>
     #[doc(hidden)]
     pub network_interface_id: std::option::Option<std::string::String>,
@@ -5235,49 +4746,49 @@ pub struct NetworkInterface {
 }
 impl NetworkInterface {
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> std::option::Option<& str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The ID of a subnet associated with the network interface.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> std::option::Option<& str> {
         self.subnet_id.as_deref()
     }
     /// <p>The ID of a VPC associated with the network interface.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
     /// <p>The name of a private DNS associated with the network interface.</p>
-    pub fn private_dns_name(&self) -> std::option::Option<&str> {
+    pub fn private_dns_name(&self) -> std::option::Option<& str> {
         self.private_dns_name.as_deref()
     }
     /// <p>The private IP address associated with the network interface.</p>
-    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> std::option::Option<& str> {
         self.private_ip_address.as_deref()
     }
     /// <p>A list of the private IP addresses associated with the network interface. Includes the privateDnsName and privateIpAddress.</p>
-    pub fn private_ip_addresses(&self) -> std::option::Option<&[crate::model::PrivateIp]> {
+    pub fn private_ip_addresses(&self) -> std::option::Option<& [crate::model::PrivateIp]> {
         self.private_ip_addresses.as_deref()
     }
     /// <p>The name of a public DNS associated with the network interface.</p>
-    pub fn public_dns_name(&self) -> std::option::Option<&str> {
+    pub fn public_dns_name(&self) -> std::option::Option<& str> {
         self.public_dns_name.as_deref()
     }
     /// <p>The public IP address from which the network interface is reachable.</p>
-    pub fn public_ip(&self) -> std::option::Option<&str> {
+    pub fn public_ip(&self) -> std::option::Option<& str> {
         self.public_ip.as_deref()
     }
     /// <p>The IP addresses associated with the network interface.</p>
-    pub fn ipv6_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ipv6_addresses(&self) -> std::option::Option<& [std::string::String]> {
         self.ipv6_addresses.as_deref()
     }
     /// <p>A list of the security groups associated with the network interface. Includes the groupId and groupName.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[crate::model::SecurityGroup]> {
+    pub fn security_groups(&self) -> std::option::Option<& [crate::model::SecurityGroup]> {
         self.security_groups.as_deref()
     }
 }
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
 pub mod network_interface {
-
+    
     /// A builder for [`NetworkInterface`](crate::model::NetworkInterface).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5286,8 +4797,7 @@ pub mod network_interface {
         pub(crate) vpc_id: std::option::Option<std::string::String>,
         pub(crate) private_dns_name: std::option::Option<std::string::String>,
         pub(crate) private_ip_address: std::option::Option<std::string::String>,
-        pub(crate) private_ip_addresses:
-            std::option::Option<std::vec::Vec<crate::model::PrivateIp>>,
+        pub(crate) private_ip_addresses: std::option::Option<std::vec::Vec<crate::model::PrivateIp>>,
         pub(crate) public_dns_name: std::option::Option<std::string::String>,
         pub(crate) public_ip: std::option::Option<std::string::String>,
         pub(crate) ipv6_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5300,12 +4810,8 @@ pub mod network_interface {
             self
         }
         /// <p>The ID of the network interface.</p>
-        pub fn set_network_interface_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_interface_id = input;
-            self
+        pub fn set_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_interface_id = input; self
         }
         /// <p>The ID of a subnet associated with the network interface.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5314,8 +4820,7 @@ pub mod network_interface {
         }
         /// <p>The ID of a subnet associated with the network interface.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.subnet_id = input;
-            self
+            self.subnet_id = input; self
         }
         /// <p>The ID of a VPC associated with the network interface.</p>
         pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5324,8 +4829,7 @@ pub mod network_interface {
         }
         /// <p>The ID of a VPC associated with the network interface.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// <p>The name of a private DNS associated with the network interface.</p>
         pub fn private_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5333,12 +4837,8 @@ pub mod network_interface {
             self
         }
         /// <p>The name of a private DNS associated with the network interface.</p>
-        pub fn set_private_dns_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.private_dns_name = input;
-            self
+        pub fn set_private_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.private_dns_name = input; self
         }
         /// <p>The private IP address associated with the network interface.</p>
         pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5346,12 +4846,8 @@ pub mod network_interface {
             self
         }
         /// <p>The private IP address associated with the network interface.</p>
-        pub fn set_private_ip_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.private_ip_address = input;
-            self
+        pub fn set_private_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.private_ip_address = input; self
         }
         /// Appends an item to `private_ip_addresses`.
         ///
@@ -5360,17 +4856,13 @@ pub mod network_interface {
         /// <p>A list of the private IP addresses associated with the network interface. Includes the privateDnsName and privateIpAddress.</p>
         pub fn private_ip_addresses(mut self, input: crate::model::PrivateIp) -> Self {
             let mut v = self.private_ip_addresses.unwrap_or_default();
-            v.push(input);
-            self.private_ip_addresses = Some(v);
-            self
+                            v.push(input);
+                            self.private_ip_addresses = Some(v);
+                            self
         }
         /// <p>A list of the private IP addresses associated with the network interface. Includes the privateDnsName and privateIpAddress.</p>
-        pub fn set_private_ip_addresses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PrivateIp>>,
-        ) -> Self {
-            self.private_ip_addresses = input;
-            self
+        pub fn set_private_ip_addresses(mut self, input: std::option::Option<std::vec::Vec<crate::model::PrivateIp>>) -> Self {
+            self.private_ip_addresses = input; self
         }
         /// <p>The name of a public DNS associated with the network interface.</p>
         pub fn public_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5378,12 +4870,8 @@ pub mod network_interface {
             self
         }
         /// <p>The name of a public DNS associated with the network interface.</p>
-        pub fn set_public_dns_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.public_dns_name = input;
-            self
+        pub fn set_public_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.public_dns_name = input; self
         }
         /// <p>The public IP address from which the network interface is reachable.</p>
         pub fn public_ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5392,8 +4880,7 @@ pub mod network_interface {
         }
         /// <p>The public IP address from which the network interface is reachable.</p>
         pub fn set_public_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.public_ip = input;
-            self
+            self.public_ip = input; self
         }
         /// Appends an item to `ipv6_addresses`.
         ///
@@ -5402,17 +4889,13 @@ pub mod network_interface {
         /// <p>The IP addresses associated with the network interface.</p>
         pub fn ipv6_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ipv6_addresses.unwrap_or_default();
-            v.push(input.into());
-            self.ipv6_addresses = Some(v);
-            self
+                            v.push(input.into());
+                            self.ipv6_addresses = Some(v);
+                            self
         }
         /// <p>The IP addresses associated with the network interface.</p>
-        pub fn set_ipv6_addresses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.ipv6_addresses = input;
-            self
+        pub fn set_ipv6_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.ipv6_addresses = input; self
         }
         /// Appends an item to `security_groups`.
         ///
@@ -5421,34 +4904,42 @@ pub mod network_interface {
         /// <p>A list of the security groups associated with the network interface. Includes the groupId and groupName.</p>
         pub fn security_groups(mut self, input: crate::model::SecurityGroup) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input);
-            self.security_groups = Some(v);
-            self
+                            v.push(input);
+                            self.security_groups = Some(v);
+                            self
         }
         /// <p>A list of the security groups associated with the network interface. Includes the groupId and groupName.</p>
-        pub fn set_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SecurityGroup>>,
-        ) -> Self {
-            self.security_groups = input;
-            self
+        pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::SecurityGroup>>) -> Self {
+            self.security_groups = input; self
         }
         /// Consumes the builder and constructs a [`NetworkInterface`](crate::model::NetworkInterface).
         pub fn build(self) -> crate::model::NetworkInterface {
             crate::model::NetworkInterface {
-                network_interface_id: self.network_interface_id,
-                subnet_id: self.subnet_id,
-                vpc_id: self.vpc_id,
-                private_dns_name: self.private_dns_name,
-                private_ip_address: self.private_ip_address,
-                private_ip_addresses: self.private_ip_addresses,
-                public_dns_name: self.public_dns_name,
-                public_ip: self.public_ip,
-                ipv6_addresses: self.ipv6_addresses,
-                security_groups: self.security_groups,
+                network_interface_id: self.network_interface_id
+                ,
+                subnet_id: self.subnet_id
+                ,
+                vpc_id: self.vpc_id
+                ,
+                private_dns_name: self.private_dns_name
+                ,
+                private_ip_address: self.private_ip_address
+                ,
+                private_ip_addresses: self.private_ip_addresses
+                ,
+                public_dns_name: self.public_dns_name
+                ,
+                public_ip: self.public_ip
+                ,
+                ipv6_addresses: self.ipv6_addresses
+                ,
+                security_groups: self.security_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkInterface {
     /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
@@ -5460,7 +4951,7 @@ impl NetworkInterface {
 /// <p>Contains information about a security group associated with a network interface. This data type is used as one of the elements of the <code>NetworkInterface</code> data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SecurityGroup {
+pub struct SecurityGroup  {
     /// <p>The name of the security group.</p>
     #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
@@ -5470,17 +4961,17 @@ pub struct SecurityGroup {
 }
 impl SecurityGroup {
     /// <p>The name of the security group.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The ID of the security group.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
 }
 /// See [`SecurityGroup`](crate::model::SecurityGroup).
 pub mod security_group {
-
+    
     /// A builder for [`SecurityGroup`](crate::model::SecurityGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5495,8 +4986,7 @@ pub mod security_group {
         }
         /// <p>The name of the security group.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_name = input;
-            self
+            self.group_name = input; self
         }
         /// <p>The ID of the security group.</p>
         pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5505,17 +4995,20 @@ pub mod security_group {
         }
         /// <p>The ID of the security group.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_id = input;
-            self
+            self.group_id = input; self
         }
         /// Consumes the builder and constructs a [`SecurityGroup`](crate::model::SecurityGroup).
         pub fn build(self) -> crate::model::SecurityGroup {
             crate::model::SecurityGroup {
-                group_name: self.group_name,
-                group_id: self.group_id,
+                group_name: self.group_name
+                ,
+                group_id: self.group_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SecurityGroup {
     /// Creates a new builder-style object to manufacture [`SecurityGroup`](crate::model::SecurityGroup).
@@ -5527,7 +5020,7 @@ impl SecurityGroup {
 /// <p>Contains information about a private IP address associated with a network interface. This data type is used as a response element in the <code>DescribeFindings</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PrivateIp {
+pub struct PrivateIp  {
     /// <p>The DNS name of the private IP address.</p>
     #[doc(hidden)]
     pub private_dns_name: std::option::Option<std::string::String>,
@@ -5537,17 +5030,17 @@ pub struct PrivateIp {
 }
 impl PrivateIp {
     /// <p>The DNS name of the private IP address.</p>
-    pub fn private_dns_name(&self) -> std::option::Option<&str> {
+    pub fn private_dns_name(&self) -> std::option::Option<& str> {
         self.private_dns_name.as_deref()
     }
     /// <p>The full IP address of the network inteface.</p>
-    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> std::option::Option<& str> {
         self.private_ip_address.as_deref()
     }
 }
 /// See [`PrivateIp`](crate::model::PrivateIp).
 pub mod private_ip {
-
+    
     /// A builder for [`PrivateIp`](crate::model::PrivateIp).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5561,12 +5054,8 @@ pub mod private_ip {
             self
         }
         /// <p>The DNS name of the private IP address.</p>
-        pub fn set_private_dns_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.private_dns_name = input;
-            self
+        pub fn set_private_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.private_dns_name = input; self
         }
         /// <p>The full IP address of the network inteface.</p>
         pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5574,21 +5063,21 @@ pub mod private_ip {
             self
         }
         /// <p>The full IP address of the network inteface.</p>
-        pub fn set_private_ip_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.private_ip_address = input;
-            self
+        pub fn set_private_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.private_ip_address = input; self
         }
         /// Consumes the builder and constructs a [`PrivateIp`](crate::model::PrivateIp).
         pub fn build(self) -> crate::model::PrivateIp {
             crate::model::PrivateIp {
-                private_dns_name: self.private_dns_name,
-                private_ip_address: self.private_ip_address,
+                private_dns_name: self.private_dns_name
+                ,
+                private_ip_address: self.private_ip_address
+                ,
             }
         }
     }
+    
+    
 }
 impl PrivateIp {
     /// Creates a new builder-style object to manufacture [`PrivateIp`](crate::model::PrivateIp).
@@ -5603,9 +5092,9 @@ impl PrivateIp {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let assettype = unimplemented!();
 /// match assettype {
@@ -5626,54 +5115,48 @@ impl PrivateIp {
 /// Specifically, when `assettype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AssetType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AssetType {
     #[allow(missing_docs)] // documentation missing in model
     Ec2Instance,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssetType {
     fn from(s: &str) -> Self {
         match s {
             "ec2-instance" => AssetType::Ec2Instance,
-            other => AssetType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AssetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AssetType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssetType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AssetType::from(s))
+                }
+            }
 impl AssetType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AssetType::Ec2Instance => "ec2-instance",
-            AssetType::Unknown(value) => value.as_str(),
+            AssetType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ec2-instance"]
+        &[
+            "ec2-instance"
+        ]
     }
 }
 impl AsRef<str> for AssetType {
@@ -5685,7 +5168,7 @@ impl AsRef<str> for AssetType {
 /// <p>This data type is used in the <code>Finding</code> data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InspectorServiceAttributes {
+pub struct InspectorServiceAttributes  {
     /// <p>The schema version of this data type.</p>
     #[doc(hidden)]
     pub schema_version: i32,
@@ -5702,17 +5185,17 @@ impl InspectorServiceAttributes {
         self.schema_version
     }
     /// <p>The ARN of the assessment run during which the finding is generated.</p>
-    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
+    pub fn assessment_run_arn(&self) -> std::option::Option<& str> {
         self.assessment_run_arn.as_deref()
     }
     /// <p>The ARN of the rules package that is used to generate the finding.</p>
-    pub fn rules_package_arn(&self) -> std::option::Option<&str> {
+    pub fn rules_package_arn(&self) -> std::option::Option<& str> {
         self.rules_package_arn.as_deref()
     }
 }
 /// See [`InspectorServiceAttributes`](crate::model::InspectorServiceAttributes).
 pub mod inspector_service_attributes {
-
+    
     /// A builder for [`InspectorServiceAttributes`](crate::model::InspectorServiceAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5728,8 +5211,7 @@ pub mod inspector_service_attributes {
         }
         /// <p>The schema version of this data type.</p>
         pub fn set_schema_version(mut self, input: std::option::Option<i32>) -> Self {
-            self.schema_version = input;
-            self
+            self.schema_version = input; self
         }
         /// <p>The ARN of the assessment run during which the finding is generated.</p>
         pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5737,12 +5219,8 @@ pub mod inspector_service_attributes {
             self
         }
         /// <p>The ARN of the assessment run during which the finding is generated.</p>
-        pub fn set_assessment_run_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assessment_run_arn = input;
-            self
+        pub fn set_assessment_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assessment_run_arn = input; self
         }
         /// <p>The ARN of the rules package that is used to generate the finding.</p>
         pub fn rules_package_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5750,22 +5228,24 @@ pub mod inspector_service_attributes {
             self
         }
         /// <p>The ARN of the rules package that is used to generate the finding.</p>
-        pub fn set_rules_package_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rules_package_arn = input;
-            self
+        pub fn set_rules_package_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rules_package_arn = input; self
         }
         /// Consumes the builder and constructs a [`InspectorServiceAttributes`](crate::model::InspectorServiceAttributes).
         pub fn build(self) -> crate::model::InspectorServiceAttributes {
             crate::model::InspectorServiceAttributes {
-                schema_version: self.schema_version.unwrap_or_default(),
-                assessment_run_arn: self.assessment_run_arn,
-                rules_package_arn: self.rules_package_arn,
+                schema_version: self.schema_version
+                    .unwrap_or_default()
+                ,
+                assessment_run_arn: self.assessment_run_arn
+                ,
+                rules_package_arn: self.rules_package_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl InspectorServiceAttributes {
     /// Creates a new builder-style object to manufacture [`InspectorServiceAttributes`](crate::model::InspectorServiceAttributes).
@@ -5777,7 +5257,7 @@ impl InspectorServiceAttributes {
 /// <p>Contains information about what was excluded from an assessment run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Exclusion {
+pub struct Exclusion  {
     /// <p>The ARN that specifies the exclusion.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5799,33 +5279,33 @@ pub struct Exclusion {
 }
 impl Exclusion {
     /// <p>The ARN that specifies the exclusion.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the exclusion.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> std::option::Option<& str> {
         self.title.as_deref()
     }
     /// <p>The description of the exclusion.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The recommendation for the exclusion.</p>
-    pub fn recommendation(&self) -> std::option::Option<&str> {
+    pub fn recommendation(&self) -> std::option::Option<& str> {
         self.recommendation.as_deref()
     }
     /// <p>The AWS resources for which the exclusion pertains.</p>
-    pub fn scopes(&self) -> std::option::Option<&[crate::model::Scope]> {
+    pub fn scopes(&self) -> std::option::Option<& [crate::model::Scope]> {
         self.scopes.as_deref()
     }
     /// <p>The system-defined attributes for the exclusion.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::Attribute]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::Attribute]> {
         self.attributes.as_deref()
     }
 }
 /// See [`Exclusion`](crate::model::Exclusion).
 pub mod exclusion {
-
+    
     /// A builder for [`Exclusion`](crate::model::Exclusion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5844,8 +5324,7 @@ pub mod exclusion {
         }
         /// <p>The ARN that specifies the exclusion.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the exclusion.</p>
         pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5854,8 +5333,7 @@ pub mod exclusion {
         }
         /// <p>The name of the exclusion.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.title = input;
-            self
+            self.title = input; self
         }
         /// <p>The description of the exclusion.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5864,8 +5342,7 @@ pub mod exclusion {
         }
         /// <p>The description of the exclusion.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The recommendation for the exclusion.</p>
         pub fn recommendation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5873,12 +5350,8 @@ pub mod exclusion {
             self
         }
         /// <p>The recommendation for the exclusion.</p>
-        pub fn set_recommendation(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommendation = input;
-            self
+        pub fn set_recommendation(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommendation = input; self
         }
         /// Appends an item to `scopes`.
         ///
@@ -5887,17 +5360,13 @@ pub mod exclusion {
         /// <p>The AWS resources for which the exclusion pertains.</p>
         pub fn scopes(mut self, input: crate::model::Scope) -> Self {
             let mut v = self.scopes.unwrap_or_default();
-            v.push(input);
-            self.scopes = Some(v);
-            self
+                            v.push(input);
+                            self.scopes = Some(v);
+                            self
         }
         /// <p>The AWS resources for which the exclusion pertains.</p>
-        pub fn set_scopes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Scope>>,
-        ) -> Self {
-            self.scopes = input;
-            self
+        pub fn set_scopes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Scope>>) -> Self {
+            self.scopes = input; self
         }
         /// Appends an item to `attributes`.
         ///
@@ -5906,30 +5375,34 @@ pub mod exclusion {
         /// <p>The system-defined attributes for the exclusion.</p>
         pub fn attributes(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>The system-defined attributes for the exclusion.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Attribute>>) -> Self {
+            self.attributes = input; self
         }
         /// Consumes the builder and constructs a [`Exclusion`](crate::model::Exclusion).
         pub fn build(self) -> crate::model::Exclusion {
             crate::model::Exclusion {
-                arn: self.arn,
-                title: self.title,
-                description: self.description,
-                recommendation: self.recommendation,
-                scopes: self.scopes,
-                attributes: self.attributes,
+                arn: self.arn
+                ,
+                title: self.title
+                ,
+                description: self.description
+                ,
+                recommendation: self.recommendation
+                ,
+                scopes: self.scopes
+                ,
+                attributes: self.attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl Exclusion {
     /// Creates a new builder-style object to manufacture [`Exclusion`](crate::model::Exclusion).
@@ -5941,7 +5414,7 @@ impl Exclusion {
 /// <p>Contains information about an Amazon Inspector assessment template. This data type is used as the response element in the <code>DescribeAssessmentTemplates</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssessmentTemplate {
+pub struct AssessmentTemplate  {
     /// <p>The ARN of the assessment template.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -5972,15 +5445,15 @@ pub struct AssessmentTemplate {
 }
 impl AssessmentTemplate {
     /// <p>The ARN of the assessment template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the assessment template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the assessment target that corresponds to this assessment template.</p>
-    pub fn assessment_target_arn(&self) -> std::option::Option<&str> {
+    pub fn assessment_target_arn(&self) -> std::option::Option<& str> {
         self.assessment_target_arn.as_deref()
     }
     /// <p>The duration in seconds specified for this assessment template. The default value is 3600 seconds (one hour). The maximum value is 86400 seconds (one day).</p>
@@ -5988,15 +5461,15 @@ impl AssessmentTemplate {
         self.duration_in_seconds
     }
     /// <p>The rules packages that are specified for this assessment template.</p>
-    pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn rules_package_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.rules_package_arns.as_deref()
     }
     /// <p>The user-defined attributes that are assigned to every generated finding from the assessment run that uses this assessment template.</p>
-    pub fn user_attributes_for_findings(&self) -> std::option::Option<&[crate::model::Attribute]> {
+    pub fn user_attributes_for_findings(&self) -> std::option::Option<& [crate::model::Attribute]> {
         self.user_attributes_for_findings.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This value exists only when the value of assessmentRunCount is greaterpa than zero.</p>
-    pub fn last_assessment_run_arn(&self) -> std::option::Option<&str> {
+    pub fn last_assessment_run_arn(&self) -> std::option::Option<& str> {
         self.last_assessment_run_arn.as_deref()
     }
     /// <p>The number of existing assessment runs associated with this assessment template. This value can be zero or a positive integer.</p>
@@ -6004,13 +5477,13 @@ impl AssessmentTemplate {
         self.assessment_run_count
     }
     /// <p>The time at which the assessment template is created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 /// See [`AssessmentTemplate`](crate::model::AssessmentTemplate).
 pub mod assessment_template {
-
+    
     /// A builder for [`AssessmentTemplate`](crate::model::AssessmentTemplate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6019,8 +5492,7 @@ pub mod assessment_template {
         pub(crate) assessment_target_arn: std::option::Option<std::string::String>,
         pub(crate) duration_in_seconds: std::option::Option<i32>,
         pub(crate) rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) user_attributes_for_findings:
-            std::option::Option<std::vec::Vec<crate::model::Attribute>>,
+        pub(crate) user_attributes_for_findings: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
         pub(crate) last_assessment_run_arn: std::option::Option<std::string::String>,
         pub(crate) assessment_run_count: std::option::Option<i32>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -6033,8 +5505,7 @@ pub mod assessment_template {
         }
         /// <p>The ARN of the assessment template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the assessment template.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6043,8 +5514,7 @@ pub mod assessment_template {
         }
         /// <p>The name of the assessment template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ARN of the assessment target that corresponds to this assessment template.</p>
         pub fn assessment_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6052,12 +5522,8 @@ pub mod assessment_template {
             self
         }
         /// <p>The ARN of the assessment target that corresponds to this assessment template.</p>
-        pub fn set_assessment_target_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assessment_target_arn = input;
-            self
+        pub fn set_assessment_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assessment_target_arn = input; self
         }
         /// <p>The duration in seconds specified for this assessment template. The default value is 3600 seconds (one hour). The maximum value is 86400 seconds (one day).</p>
         pub fn duration_in_seconds(mut self, input: i32) -> Self {
@@ -6066,8 +5532,7 @@ pub mod assessment_template {
         }
         /// <p>The duration in seconds specified for this assessment template. The default value is 3600 seconds (one hour). The maximum value is 86400 seconds (one day).</p>
         pub fn set_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration_in_seconds = input;
-            self
+            self.duration_in_seconds = input; self
         }
         /// Appends an item to `rules_package_arns`.
         ///
@@ -6076,17 +5541,13 @@ pub mod assessment_template {
         /// <p>The rules packages that are specified for this assessment template.</p>
         pub fn rules_package_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rules_package_arns.unwrap_or_default();
-            v.push(input.into());
-            self.rules_package_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.rules_package_arns = Some(v);
+                            self
         }
         /// <p>The rules packages that are specified for this assessment template.</p>
-        pub fn set_rules_package_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.rules_package_arns = input;
-            self
+        pub fn set_rules_package_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.rules_package_arns = input; self
         }
         /// Appends an item to `user_attributes_for_findings`.
         ///
@@ -6095,17 +5556,13 @@ pub mod assessment_template {
         /// <p>The user-defined attributes that are assigned to every generated finding from the assessment run that uses this assessment template.</p>
         pub fn user_attributes_for_findings(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.user_attributes_for_findings.unwrap_or_default();
-            v.push(input);
-            self.user_attributes_for_findings = Some(v);
-            self
+                            v.push(input);
+                            self.user_attributes_for_findings = Some(v);
+                            self
         }
         /// <p>The user-defined attributes that are assigned to every generated finding from the assessment run that uses this assessment template.</p>
-        pub fn set_user_attributes_for_findings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
-        ) -> Self {
-            self.user_attributes_for_findings = input;
-            self
+        pub fn set_user_attributes_for_findings(mut self, input: std::option::Option<std::vec::Vec<crate::model::Attribute>>) -> Self {
+            self.user_attributes_for_findings = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This value exists only when the value of assessmentRunCount is greaterpa than zero.</p>
         pub fn last_assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6113,12 +5570,8 @@ pub mod assessment_template {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This value exists only when the value of assessmentRunCount is greaterpa than zero.</p>
-        pub fn set_last_assessment_run_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_assessment_run_arn = input;
-            self
+        pub fn set_last_assessment_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_assessment_run_arn = input; self
         }
         /// <p>The number of existing assessment runs associated with this assessment template. This value can be zero or a positive integer.</p>
         pub fn assessment_run_count(mut self, input: i32) -> Self {
@@ -6127,8 +5580,7 @@ pub mod assessment_template {
         }
         /// <p>The number of existing assessment runs associated with this assessment template. This value can be zero or a positive integer.</p>
         pub fn set_assessment_run_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.assessment_run_count = input;
-            self
+            self.assessment_run_count = input; self
         }
         /// <p>The time at which the assessment template is created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6136,28 +5588,36 @@ pub mod assessment_template {
             self
         }
         /// <p>The time at which the assessment template is created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`AssessmentTemplate`](crate::model::AssessmentTemplate).
         pub fn build(self) -> crate::model::AssessmentTemplate {
             crate::model::AssessmentTemplate {
-                arn: self.arn,
-                name: self.name,
-                assessment_target_arn: self.assessment_target_arn,
-                duration_in_seconds: self.duration_in_seconds.unwrap_or_default(),
-                rules_package_arns: self.rules_package_arns,
-                user_attributes_for_findings: self.user_attributes_for_findings,
-                last_assessment_run_arn: self.last_assessment_run_arn,
-                assessment_run_count: self.assessment_run_count,
-                created_at: self.created_at,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                assessment_target_arn: self.assessment_target_arn
+                ,
+                duration_in_seconds: self.duration_in_seconds
+                    .unwrap_or_default()
+                ,
+                rules_package_arns: self.rules_package_arns
+                ,
+                user_attributes_for_findings: self.user_attributes_for_findings
+                ,
+                last_assessment_run_arn: self.last_assessment_run_arn
+                ,
+                assessment_run_count: self.assessment_run_count
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl AssessmentTemplate {
     /// Creates a new builder-style object to manufacture [`AssessmentTemplate`](crate::model::AssessmentTemplate).
@@ -6169,7 +5629,7 @@ impl AssessmentTemplate {
 /// <p>Contains information about an Amazon Inspector application. This data type is used as the response element in the <code>DescribeAssessmentTargets</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssessmentTarget {
+pub struct AssessmentTarget  {
     /// <p>The ARN that specifies the Amazon Inspector assessment target.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6188,29 +5648,29 @@ pub struct AssessmentTarget {
 }
 impl AssessmentTarget {
     /// <p>The ARN that specifies the Amazon Inspector assessment target.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the Amazon Inspector assessment target.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN that specifies the resource group that is associated with the assessment target.</p>
-    pub fn resource_group_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_group_arn(&self) -> std::option::Option<& str> {
         self.resource_group_arn.as_deref()
     }
     /// <p>The time at which the assessment target is created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time at which <code>UpdateAssessmentTarget</code> is called.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`AssessmentTarget`](crate::model::AssessmentTarget).
 pub mod assessment_target {
-
+    
     /// A builder for [`AssessmentTarget`](crate::model::AssessmentTarget).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6228,8 +5688,7 @@ pub mod assessment_target {
         }
         /// <p>The ARN that specifies the Amazon Inspector assessment target.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the Amazon Inspector assessment target.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6238,8 +5697,7 @@ pub mod assessment_target {
         }
         /// <p>The name of the Amazon Inspector assessment target.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ARN that specifies the resource group that is associated with the assessment target.</p>
         pub fn resource_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6247,12 +5705,8 @@ pub mod assessment_target {
             self
         }
         /// <p>The ARN that specifies the resource group that is associated with the assessment target.</p>
-        pub fn set_resource_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_group_arn = input;
-            self
+        pub fn set_resource_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_group_arn = input; self
         }
         /// <p>The time at which the assessment target is created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6260,12 +5714,8 @@ pub mod assessment_target {
             self
         }
         /// <p>The time at which the assessment target is created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time at which <code>UpdateAssessmentTarget</code> is called.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6273,24 +5723,27 @@ pub mod assessment_target {
             self
         }
         /// <p>The time at which <code>UpdateAssessmentTarget</code> is called.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`AssessmentTarget`](crate::model::AssessmentTarget).
         pub fn build(self) -> crate::model::AssessmentTarget {
             crate::model::AssessmentTarget {
-                arn: self.arn,
-                name: self.name,
-                resource_group_arn: self.resource_group_arn,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                resource_group_arn: self.resource_group_arn
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl AssessmentTarget {
     /// Creates a new builder-style object to manufacture [`AssessmentTarget`](crate::model::AssessmentTarget).
@@ -6299,11 +5752,11 @@ impl AssessmentTarget {
     }
 }
 
-/// <p>A snapshot of an Amazon Inspector assessment run that contains the findings of the assessment run .</p>
+/// <p>A snapshot of an Amazon Inspector assessment run that contains the findings of the assessment run .</p> 
 /// <p>Used as the response element in the <code>DescribeAssessmentRuns</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssessmentRun {
+pub struct AssessmentRun  {
     /// <p>The ARN of the assessment run.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -6352,19 +5805,19 @@ pub struct AssessmentRun {
 }
 impl AssessmentRun {
     /// <p>The ARN of the assessment run.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The auto-generated name for the assessment run.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the assessment template that is associated with the assessment run.</p>
-    pub fn assessment_template_arn(&self) -> std::option::Option<&str> {
+    pub fn assessment_template_arn(&self) -> std::option::Option<& str> {
         self.assessment_template_arn.as_deref()
     }
     /// <p>The state of the assessment run.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::AssessmentRunState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::AssessmentRunState> {
         self.state.as_ref()
     }
     /// <p>The duration of the assessment run.</p>
@@ -6372,27 +5825,27 @@ impl AssessmentRun {
         self.duration_in_seconds
     }
     /// <p>The rules packages selected for the assessment run.</p>
-    pub fn rules_package_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn rules_package_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.rules_package_arns.as_deref()
     }
     /// <p>The user-defined attributes that are assigned to every generated finding.</p>
-    pub fn user_attributes_for_findings(&self) -> std::option::Option<&[crate::model::Attribute]> {
+    pub fn user_attributes_for_findings(&self) -> std::option::Option<& [crate::model::Attribute]> {
         self.user_attributes_for_findings.as_deref()
     }
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The assessment run completion time that corresponds to the rules packages evaluation completion time or failure.</p>
-    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
     /// <p>The last time when the assessment run's state changed.</p>
-    pub fn state_changed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn state_changed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.state_changed_at.as_ref()
     }
     /// <p>A Boolean value (true or false) that specifies whether the process of collecting data from the agents is completed.</p>
@@ -6400,23 +5853,21 @@ impl AssessmentRun {
         self.data_collected
     }
     /// <p>A list of the assessment run state changes.</p>
-    pub fn state_changes(&self) -> std::option::Option<&[crate::model::AssessmentRunStateChange]> {
+    pub fn state_changes(&self) -> std::option::Option<& [crate::model::AssessmentRunStateChange]> {
         self.state_changes.as_deref()
     }
     /// <p>A list of notifications for the event subscriptions. A notification about a particular generated finding is added to this list only once.</p>
-    pub fn notifications(&self) -> std::option::Option<&[crate::model::AssessmentRunNotification]> {
+    pub fn notifications(&self) -> std::option::Option<& [crate::model::AssessmentRunNotification]> {
         self.notifications.as_deref()
     }
     /// <p>Provides a total count of generated findings per severity.</p>
-    pub fn finding_counts(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<crate::model::Severity, i32>> {
+    pub fn finding_counts(&self) -> std::option::Option<& std::collections::HashMap<crate::model::Severity, i32>> {
         self.finding_counts.as_ref()
     }
 }
 /// See [`AssessmentRun`](crate::model::AssessmentRun).
 pub mod assessment_run {
-
+    
     /// A builder for [`AssessmentRun`](crate::model::AssessmentRun).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6426,19 +5877,15 @@ pub mod assessment_run {
         pub(crate) state: std::option::Option<crate::model::AssessmentRunState>,
         pub(crate) duration_in_seconds: std::option::Option<i32>,
         pub(crate) rules_package_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) user_attributes_for_findings:
-            std::option::Option<std::vec::Vec<crate::model::Attribute>>,
+        pub(crate) user_attributes_for_findings: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) completed_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) state_changed_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) data_collected: std::option::Option<bool>,
-        pub(crate) state_changes:
-            std::option::Option<std::vec::Vec<crate::model::AssessmentRunStateChange>>,
-        pub(crate) notifications:
-            std::option::Option<std::vec::Vec<crate::model::AssessmentRunNotification>>,
-        pub(crate) finding_counts:
-            std::option::Option<std::collections::HashMap<crate::model::Severity, i32>>,
+        pub(crate) state_changes: std::option::Option<std::vec::Vec<crate::model::AssessmentRunStateChange>>,
+        pub(crate) notifications: std::option::Option<std::vec::Vec<crate::model::AssessmentRunNotification>>,
+        pub(crate) finding_counts: std::option::Option<std::collections::HashMap<crate::model::Severity, i32>>,
     }
     impl Builder {
         /// <p>The ARN of the assessment run.</p>
@@ -6448,8 +5895,7 @@ pub mod assessment_run {
         }
         /// <p>The ARN of the assessment run.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The auto-generated name for the assessment run.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6458,8 +5904,7 @@ pub mod assessment_run {
         }
         /// <p>The auto-generated name for the assessment run.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ARN of the assessment template that is associated with the assessment run.</p>
         pub fn assessment_template_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6467,12 +5912,8 @@ pub mod assessment_run {
             self
         }
         /// <p>The ARN of the assessment template that is associated with the assessment run.</p>
-        pub fn set_assessment_template_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.assessment_template_arn = input;
-            self
+        pub fn set_assessment_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.assessment_template_arn = input; self
         }
         /// <p>The state of the assessment run.</p>
         pub fn state(mut self, input: crate::model::AssessmentRunState) -> Self {
@@ -6480,12 +5921,8 @@ pub mod assessment_run {
             self
         }
         /// <p>The state of the assessment run.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::AssessmentRunState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::AssessmentRunState>) -> Self {
+            self.state = input; self
         }
         /// <p>The duration of the assessment run.</p>
         pub fn duration_in_seconds(mut self, input: i32) -> Self {
@@ -6494,8 +5931,7 @@ pub mod assessment_run {
         }
         /// <p>The duration of the assessment run.</p>
         pub fn set_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.duration_in_seconds = input;
-            self
+            self.duration_in_seconds = input; self
         }
         /// Appends an item to `rules_package_arns`.
         ///
@@ -6504,17 +5940,13 @@ pub mod assessment_run {
         /// <p>The rules packages selected for the assessment run.</p>
         pub fn rules_package_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rules_package_arns.unwrap_or_default();
-            v.push(input.into());
-            self.rules_package_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.rules_package_arns = Some(v);
+                            self
         }
         /// <p>The rules packages selected for the assessment run.</p>
-        pub fn set_rules_package_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.rules_package_arns = input;
-            self
+        pub fn set_rules_package_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.rules_package_arns = input; self
         }
         /// Appends an item to `user_attributes_for_findings`.
         ///
@@ -6523,17 +5955,13 @@ pub mod assessment_run {
         /// <p>The user-defined attributes that are assigned to every generated finding.</p>
         pub fn user_attributes_for_findings(mut self, input: crate::model::Attribute) -> Self {
             let mut v = self.user_attributes_for_findings.unwrap_or_default();
-            v.push(input);
-            self.user_attributes_for_findings = Some(v);
-            self
+                            v.push(input);
+                            self.user_attributes_for_findings = Some(v);
+                            self
         }
         /// <p>The user-defined attributes that are assigned to every generated finding.</p>
-        pub fn set_user_attributes_for_findings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
-        ) -> Self {
-            self.user_attributes_for_findings = input;
-            self
+        pub fn set_user_attributes_for_findings(mut self, input: std::option::Option<std::vec::Vec<crate::model::Attribute>>) -> Self {
+            self.user_attributes_for_findings = input; self
         }
         /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6541,12 +5969,8 @@ pub mod assessment_run {
             self
         }
         /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
         pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6554,12 +5978,8 @@ pub mod assessment_run {
             self
         }
         /// <p>The time when <code>StartAssessmentRun</code> was called.</p>
-        pub fn set_started_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.started_at = input;
-            self
+        pub fn set_started_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.started_at = input; self
         }
         /// <p>The assessment run completion time that corresponds to the rules packages evaluation completion time or failure.</p>
         pub fn completed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6567,12 +5987,8 @@ pub mod assessment_run {
             self
         }
         /// <p>The assessment run completion time that corresponds to the rules packages evaluation completion time or failure.</p>
-        pub fn set_completed_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.completed_at = input;
-            self
+        pub fn set_completed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.completed_at = input; self
         }
         /// <p>The last time when the assessment run's state changed.</p>
         pub fn state_changed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6580,12 +5996,8 @@ pub mod assessment_run {
             self
         }
         /// <p>The last time when the assessment run's state changed.</p>
-        pub fn set_state_changed_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.state_changed_at = input;
-            self
+        pub fn set_state_changed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.state_changed_at = input; self
         }
         /// <p>A Boolean value (true or false) that specifies whether the process of collecting data from the agents is completed.</p>
         pub fn data_collected(mut self, input: bool) -> Self {
@@ -6594,8 +6006,7 @@ pub mod assessment_run {
         }
         /// <p>A Boolean value (true or false) that specifies whether the process of collecting data from the agents is completed.</p>
         pub fn set_data_collected(mut self, input: std::option::Option<bool>) -> Self {
-            self.data_collected = input;
-            self
+            self.data_collected = input; self
         }
         /// Appends an item to `state_changes`.
         ///
@@ -6604,17 +6015,13 @@ pub mod assessment_run {
         /// <p>A list of the assessment run state changes.</p>
         pub fn state_changes(mut self, input: crate::model::AssessmentRunStateChange) -> Self {
             let mut v = self.state_changes.unwrap_or_default();
-            v.push(input);
-            self.state_changes = Some(v);
-            self
+                            v.push(input);
+                            self.state_changes = Some(v);
+                            self
         }
         /// <p>A list of the assessment run state changes.</p>
-        pub fn set_state_changes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssessmentRunStateChange>>,
-        ) -> Self {
-            self.state_changes = input;
-            self
+        pub fn set_state_changes(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssessmentRunStateChange>>) -> Self {
+            self.state_changes = input; self
         }
         /// Appends an item to `notifications`.
         ///
@@ -6623,17 +6030,13 @@ pub mod assessment_run {
         /// <p>A list of notifications for the event subscriptions. A notification about a particular generated finding is added to this list only once.</p>
         pub fn notifications(mut self, input: crate::model::AssessmentRunNotification) -> Self {
             let mut v = self.notifications.unwrap_or_default();
-            v.push(input);
-            self.notifications = Some(v);
-            self
+                            v.push(input);
+                            self.notifications = Some(v);
+                            self
         }
         /// <p>A list of notifications for the event subscriptions. A notification about a particular generated finding is added to this list only once.</p>
-        pub fn set_notifications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssessmentRunNotification>>,
-        ) -> Self {
-            self.notifications = input;
-            self
+        pub fn set_notifications(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssessmentRunNotification>>) -> Self {
+            self.notifications = input; self
         }
         /// Adds a key-value pair to `finding_counts`.
         ///
@@ -6642,39 +6045,53 @@ pub mod assessment_run {
         /// <p>Provides a total count of generated findings per severity.</p>
         pub fn finding_counts(mut self, k: crate::model::Severity, v: i32) -> Self {
             let mut hash_map = self.finding_counts.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.finding_counts = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.finding_counts = Some(hash_map);
+                            self
         }
         /// <p>Provides a total count of generated findings per severity.</p>
-        pub fn set_finding_counts(
-            mut self,
-            input: std::option::Option<std::collections::HashMap<crate::model::Severity, i32>>,
-        ) -> Self {
-            self.finding_counts = input;
-            self
+        pub fn set_finding_counts(mut self, input: std::option::Option<std::collections::HashMap<crate::model::Severity, i32>>) -> Self {
+            self.finding_counts = input; self
         }
         /// Consumes the builder and constructs a [`AssessmentRun`](crate::model::AssessmentRun).
         pub fn build(self) -> crate::model::AssessmentRun {
             crate::model::AssessmentRun {
-                arn: self.arn,
-                name: self.name,
-                assessment_template_arn: self.assessment_template_arn,
-                state: self.state,
-                duration_in_seconds: self.duration_in_seconds.unwrap_or_default(),
-                rules_package_arns: self.rules_package_arns,
-                user_attributes_for_findings: self.user_attributes_for_findings,
-                created_at: self.created_at,
-                started_at: self.started_at,
-                completed_at: self.completed_at,
-                state_changed_at: self.state_changed_at,
-                data_collected: self.data_collected,
-                state_changes: self.state_changes,
-                notifications: self.notifications,
-                finding_counts: self.finding_counts,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                assessment_template_arn: self.assessment_template_arn
+                ,
+                state: self.state
+                ,
+                duration_in_seconds: self.duration_in_seconds
+                    .unwrap_or_default()
+                ,
+                rules_package_arns: self.rules_package_arns
+                ,
+                user_attributes_for_findings: self.user_attributes_for_findings
+                ,
+                created_at: self.created_at
+                ,
+                started_at: self.started_at
+                ,
+                completed_at: self.completed_at
+                ,
+                state_changed_at: self.state_changed_at
+                ,
+                data_collected: self.data_collected
+                ,
+                state_changes: self.state_changes
+                ,
+                notifications: self.notifications
+                ,
+                finding_counts: self.finding_counts
+                ,
             }
         }
     }
+    
+    
 }
 impl AssessmentRun {
     /// Creates a new builder-style object to manufacture [`AssessmentRun`](crate::model::AssessmentRun).
@@ -6686,7 +6103,7 @@ impl AssessmentRun {
 /// <p>Used as one of the elements of the <code>AssessmentRun</code> data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssessmentRunNotification {
+pub struct AssessmentRunNotification  {
     /// <p>The date of the notification.</p>
     #[doc(hidden)]
     pub date: std::option::Option<aws_smithy_types::DateTime>,
@@ -6704,20 +6121,19 @@ pub struct AssessmentRunNotification {
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The status code of the SNS notification.</p>
     #[doc(hidden)]
-    pub sns_publish_status_code:
-        std::option::Option<crate::model::AssessmentRunNotificationSnsStatusCode>,
+    pub sns_publish_status_code: std::option::Option<crate::model::AssessmentRunNotificationSnsStatusCode>,
 }
 impl AssessmentRunNotification {
     /// <p>The date of the notification.</p>
-    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>The event for which a notification is sent.</p>
-    pub fn event(&self) -> std::option::Option<&crate::model::InspectorEvent> {
+    pub fn event(&self) -> std::option::Option<& crate::model::InspectorEvent> {
         self.event.as_ref()
     }
     /// <p>The message included in the notification.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The Boolean value that specifies whether the notification represents an error.</p>
@@ -6725,19 +6141,17 @@ impl AssessmentRunNotification {
         self.error
     }
     /// <p>The SNS topic to which the SNS notification is sent.</p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The status code of the SNS notification.</p>
-    pub fn sns_publish_status_code(
-        &self,
-    ) -> std::option::Option<&crate::model::AssessmentRunNotificationSnsStatusCode> {
+    pub fn sns_publish_status_code(&self) -> std::option::Option<& crate::model::AssessmentRunNotificationSnsStatusCode> {
         self.sns_publish_status_code.as_ref()
     }
 }
 /// See [`AssessmentRunNotification`](crate::model::AssessmentRunNotification).
 pub mod assessment_run_notification {
-
+    
     /// A builder for [`AssessmentRunNotification`](crate::model::AssessmentRunNotification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6746,8 +6160,7 @@ pub mod assessment_run_notification {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<bool>,
         pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
-        pub(crate) sns_publish_status_code:
-            std::option::Option<crate::model::AssessmentRunNotificationSnsStatusCode>,
+        pub(crate) sns_publish_status_code: std::option::Option<crate::model::AssessmentRunNotificationSnsStatusCode>,
     }
     impl Builder {
         /// <p>The date of the notification.</p>
@@ -6757,8 +6170,7 @@ pub mod assessment_run_notification {
         }
         /// <p>The date of the notification.</p>
         pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-            self.date = input;
-            self
+            self.date = input; self
         }
         /// <p>The event for which a notification is sent.</p>
         pub fn event(mut self, input: crate::model::InspectorEvent) -> Self {
@@ -6766,12 +6178,8 @@ pub mod assessment_run_notification {
             self
         }
         /// <p>The event for which a notification is sent.</p>
-        pub fn set_event(
-            mut self,
-            input: std::option::Option<crate::model::InspectorEvent>,
-        ) -> Self {
-            self.event = input;
-            self
+        pub fn set_event(mut self, input: std::option::Option<crate::model::InspectorEvent>) -> Self {
+            self.event = input; self
         }
         /// <p>The message included in the notification.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6780,8 +6188,7 @@ pub mod assessment_run_notification {
         }
         /// <p>The message included in the notification.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The Boolean value that specifies whether the notification represents an error.</p>
         pub fn error(mut self, input: bool) -> Self {
@@ -6790,8 +6197,7 @@ pub mod assessment_run_notification {
         }
         /// <p>The Boolean value that specifies whether the notification represents an error.</p>
         pub fn set_error(mut self, input: std::option::Option<bool>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// <p>The SNS topic to which the SNS notification is sent.</p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6799,41 +6205,38 @@ pub mod assessment_run_notification {
             self
         }
         /// <p>The SNS topic to which the SNS notification is sent.</p>
-        pub fn set_sns_topic_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sns_topic_arn = input;
-            self
+        pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sns_topic_arn = input; self
         }
         /// <p>The status code of the SNS notification.</p>
-        pub fn sns_publish_status_code(
-            mut self,
-            input: crate::model::AssessmentRunNotificationSnsStatusCode,
-        ) -> Self {
+        pub fn sns_publish_status_code(mut self, input: crate::model::AssessmentRunNotificationSnsStatusCode) -> Self {
             self.sns_publish_status_code = Some(input);
             self
         }
         /// <p>The status code of the SNS notification.</p>
-        pub fn set_sns_publish_status_code(
-            mut self,
-            input: std::option::Option<crate::model::AssessmentRunNotificationSnsStatusCode>,
-        ) -> Self {
-            self.sns_publish_status_code = input;
-            self
+        pub fn set_sns_publish_status_code(mut self, input: std::option::Option<crate::model::AssessmentRunNotificationSnsStatusCode>) -> Self {
+            self.sns_publish_status_code = input; self
         }
         /// Consumes the builder and constructs a [`AssessmentRunNotification`](crate::model::AssessmentRunNotification).
         pub fn build(self) -> crate::model::AssessmentRunNotification {
             crate::model::AssessmentRunNotification {
-                date: self.date,
-                event: self.event,
-                message: self.message,
-                error: self.error,
-                sns_topic_arn: self.sns_topic_arn,
-                sns_publish_status_code: self.sns_publish_status_code,
+                date: self.date
+                ,
+                event: self.event
+                ,
+                message: self.message
+                ,
+                error: self.error
+                ,
+                sns_topic_arn: self.sns_topic_arn
+                ,
+                sns_publish_status_code: self.sns_publish_status_code
+                ,
             }
         }
     }
+    
+    
 }
 impl AssessmentRunNotification {
     /// Creates a new builder-style object to manufacture [`AssessmentRunNotification`](crate::model::AssessmentRunNotification).
@@ -6848,9 +6251,9 @@ impl AssessmentRunNotification {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let assessmentrunnotificationsnsstatuscode = unimplemented!();
 /// match assessmentrunnotificationsnsstatuscode {
@@ -6874,22 +6277,14 @@ impl AssessmentRunNotification {
 /// Specifically, when `assessmentrunnotificationsnsstatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AssessmentRunNotificationSnsStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AssessmentRunNotificationSnsStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -6900,7 +6295,7 @@ pub enum AssessmentRunNotificationSnsStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     TopicDoesNotExist,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssessmentRunNotificationSnsStatusCode {
     fn from(s: &str) -> Self {
@@ -6909,19 +6304,17 @@ impl std::convert::From<&str> for AssessmentRunNotificationSnsStatusCode {
             "INTERNAL_ERROR" => AssessmentRunNotificationSnsStatusCode::InternalError,
             "SUCCESS" => AssessmentRunNotificationSnsStatusCode::Success,
             "TOPIC_DOES_NOT_EXIST" => AssessmentRunNotificationSnsStatusCode::TopicDoesNotExist,
-            other => AssessmentRunNotificationSnsStatusCode::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => AssessmentRunNotificationSnsStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AssessmentRunNotificationSnsStatusCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssessmentRunNotificationSnsStatusCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AssessmentRunNotificationSnsStatusCode::from(s))
+                }
+            }
 impl AssessmentRunNotificationSnsStatusCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6930,16 +6323,13 @@ impl AssessmentRunNotificationSnsStatusCode {
             AssessmentRunNotificationSnsStatusCode::InternalError => "INTERNAL_ERROR",
             AssessmentRunNotificationSnsStatusCode::Success => "SUCCESS",
             AssessmentRunNotificationSnsStatusCode::TopicDoesNotExist => "TOPIC_DOES_NOT_EXIST",
-            AssessmentRunNotificationSnsStatusCode::Unknown(value) => value.as_str(),
+            AssessmentRunNotificationSnsStatusCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACCESS_DENIED",
-            "INTERNAL_ERROR",
-            "SUCCESS",
-            "TOPIC_DOES_NOT_EXIST",
+            "ACCESS_DENIED", "INTERNAL_ERROR", "SUCCESS", "TOPIC_DOES_NOT_EXIST"
         ]
     }
 }
@@ -6952,7 +6342,7 @@ impl AsRef<str> for AssessmentRunNotificationSnsStatusCode {
 /// <p>Used as one of the elements of the <code>AssessmentRun</code> data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssessmentRunStateChange {
+pub struct AssessmentRunStateChange  {
     /// <p>The last time the assessment run state changed.</p>
     #[doc(hidden)]
     pub state_changed_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -6962,17 +6352,17 @@ pub struct AssessmentRunStateChange {
 }
 impl AssessmentRunStateChange {
     /// <p>The last time the assessment run state changed.</p>
-    pub fn state_changed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn state_changed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.state_changed_at.as_ref()
     }
     /// <p>The assessment run state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::AssessmentRunState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::AssessmentRunState> {
         self.state.as_ref()
     }
 }
 /// See [`AssessmentRunStateChange`](crate::model::AssessmentRunStateChange).
 pub mod assessment_run_state_change {
-
+    
     /// A builder for [`AssessmentRunStateChange`](crate::model::AssessmentRunStateChange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6986,12 +6376,8 @@ pub mod assessment_run_state_change {
             self
         }
         /// <p>The last time the assessment run state changed.</p>
-        pub fn set_state_changed_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.state_changed_at = input;
-            self
+        pub fn set_state_changed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.state_changed_at = input; self
         }
         /// <p>The assessment run state.</p>
         pub fn state(mut self, input: crate::model::AssessmentRunState) -> Self {
@@ -6999,21 +6385,21 @@ pub mod assessment_run_state_change {
             self
         }
         /// <p>The assessment run state.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::AssessmentRunState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::AssessmentRunState>) -> Self {
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`AssessmentRunStateChange`](crate::model::AssessmentRunStateChange).
         pub fn build(self) -> crate::model::AssessmentRunStateChange {
             crate::model::AssessmentRunStateChange {
-                state_changed_at: self.state_changed_at,
-                state: self.state,
+                state_changed_at: self.state_changed_at
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl AssessmentRunStateChange {
     /// Creates a new builder-style object to manufacture [`AssessmentRunStateChange`](crate::model::AssessmentRunStateChange).
@@ -7021,3 +6407,4 @@ impl AssessmentRunStateChange {
         crate::model::assessment_run_state_change::Builder::default()
     }
 }
+

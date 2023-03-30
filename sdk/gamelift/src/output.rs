@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidateMatchmakingRuleSetOutput {
+pub struct ValidateMatchmakingRuleSetOutput  {
     /// <p>A response indicating whether the rule set is valid.</p>
     #[doc(hidden)]
     pub valid: std::option::Option<bool>,
@@ -15,7 +15,7 @@ impl ValidateMatchmakingRuleSetOutput {
 }
 /// See [`ValidateMatchmakingRuleSetOutput`](crate::output::ValidateMatchmakingRuleSetOutput).
 pub mod validate_matchmaking_rule_set_output {
-
+    
     /// A builder for [`ValidateMatchmakingRuleSetOutput`](crate::output::ValidateMatchmakingRuleSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,14 +29,18 @@ pub mod validate_matchmaking_rule_set_output {
         }
         /// <p>A response indicating whether the rule set is valid.</p>
         pub fn set_valid(mut self, input: std::option::Option<bool>) -> Self {
-            self.valid = input;
-            self
+            self.valid = input; self
         }
         /// Consumes the builder and constructs a [`ValidateMatchmakingRuleSetOutput`](crate::output::ValidateMatchmakingRuleSetOutput).
         pub fn build(self) -> crate::output::ValidateMatchmakingRuleSetOutput {
-            crate::output::ValidateMatchmakingRuleSetOutput { valid: self.valid }
+            crate::output::ValidateMatchmakingRuleSetOutput {
+                valid: self.valid
+                ,
+            }
         }
     }
+    
+    
 }
 impl ValidateMatchmakingRuleSetOutput {
     /// Creates a new builder-style object to manufacture [`ValidateMatchmakingRuleSetOutput`](crate::output::ValidateMatchmakingRuleSetOutput).
@@ -48,20 +52,20 @@ impl ValidateMatchmakingRuleSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateScriptOutput {
+pub struct UpdateScriptOutput  {
     /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
     #[doc(hidden)]
     pub script: std::option::Option<crate::model::Script>,
 }
 impl UpdateScriptOutput {
     /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
-    pub fn script(&self) -> std::option::Option<&crate::model::Script> {
+    pub fn script(&self) -> std::option::Option<& crate::model::Script> {
         self.script.as_ref()
     }
 }
 /// See [`UpdateScriptOutput`](crate::output::UpdateScriptOutput).
 pub mod update_script_output {
-
+    
     /// A builder for [`UpdateScriptOutput`](crate::output::UpdateScriptOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -75,16 +79,18 @@ pub mod update_script_output {
         }
         /// <p>The newly created script record with a unique script ID. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
         pub fn set_script(mut self, input: std::option::Option<crate::model::Script>) -> Self {
-            self.script = input;
-            self
+            self.script = input; self
         }
         /// Consumes the builder and constructs a [`UpdateScriptOutput`](crate::output::UpdateScriptOutput).
         pub fn build(self) -> crate::output::UpdateScriptOutput {
             crate::output::UpdateScriptOutput {
-                script: self.script,
+                script: self.script
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateScriptOutput {
     /// Creates a new builder-style object to manufacture [`UpdateScriptOutput`](crate::output::UpdateScriptOutput).
@@ -96,22 +102,20 @@ impl UpdateScriptOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRuntimeConfigurationOutput {
+pub struct UpdateRuntimeConfigurationOutput  {
     /// <p>The runtime configuration currently in use by all instances in the fleet. If the update was successful, all property changes are shown. </p>
     #[doc(hidden)]
     pub runtime_configuration: std::option::Option<crate::model::RuntimeConfiguration>,
 }
 impl UpdateRuntimeConfigurationOutput {
     /// <p>The runtime configuration currently in use by all instances in the fleet. If the update was successful, all property changes are shown. </p>
-    pub fn runtime_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::RuntimeConfiguration> {
+    pub fn runtime_configuration(&self) -> std::option::Option<& crate::model::RuntimeConfiguration> {
         self.runtime_configuration.as_ref()
     }
 }
 /// See [`UpdateRuntimeConfigurationOutput`](crate::output::UpdateRuntimeConfigurationOutput).
 pub mod update_runtime_configuration_output {
-
+    
     /// A builder for [`UpdateRuntimeConfigurationOutput`](crate::output::UpdateRuntimeConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -124,20 +128,19 @@ pub mod update_runtime_configuration_output {
             self
         }
         /// <p>The runtime configuration currently in use by all instances in the fleet. If the update was successful, all property changes are shown. </p>
-        pub fn set_runtime_configuration(
-            mut self,
-            input: std::option::Option<crate::model::RuntimeConfiguration>,
-        ) -> Self {
-            self.runtime_configuration = input;
-            self
+        pub fn set_runtime_configuration(mut self, input: std::option::Option<crate::model::RuntimeConfiguration>) -> Self {
+            self.runtime_configuration = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRuntimeConfigurationOutput`](crate::output::UpdateRuntimeConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateRuntimeConfigurationOutput {
             crate::output::UpdateRuntimeConfigurationOutput {
-                runtime_configuration: self.runtime_configuration,
+                runtime_configuration: self.runtime_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateRuntimeConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRuntimeConfigurationOutput`](crate::output::UpdateRuntimeConfigurationOutput).
@@ -149,20 +152,20 @@ impl UpdateRuntimeConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMatchmakingConfigurationOutput {
+pub struct UpdateMatchmakingConfigurationOutput  {
     /// <p>The updated matchmaking configuration.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::MatchmakingConfiguration>,
 }
 impl UpdateMatchmakingConfigurationOutput {
     /// <p>The updated matchmaking configuration.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::model::MatchmakingConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::model::MatchmakingConfiguration> {
         self.configuration.as_ref()
     }
 }
 /// See [`UpdateMatchmakingConfigurationOutput`](crate::output::UpdateMatchmakingConfigurationOutput).
 pub mod update_matchmaking_configuration_output {
-
+    
     /// A builder for [`UpdateMatchmakingConfigurationOutput`](crate::output::UpdateMatchmakingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -175,20 +178,19 @@ pub mod update_matchmaking_configuration_output {
             self
         }
         /// <p>The updated matchmaking configuration.</p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<crate::model::MatchmakingConfiguration>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<crate::model::MatchmakingConfiguration>) -> Self {
+            self.configuration = input; self
         }
         /// Consumes the builder and constructs a [`UpdateMatchmakingConfigurationOutput`](crate::output::UpdateMatchmakingConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateMatchmakingConfigurationOutput {
             crate::output::UpdateMatchmakingConfigurationOutput {
-                configuration: self.configuration,
+                configuration: self.configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateMatchmakingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMatchmakingConfigurationOutput`](crate::output::UpdateMatchmakingConfigurationOutput).
@@ -200,20 +202,20 @@ impl UpdateMatchmakingConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGameSessionQueueOutput {
+pub struct UpdateGameSessionQueueOutput  {
     /// <p>An object that describes the newly updated game session queue.</p>
     #[doc(hidden)]
     pub game_session_queue: std::option::Option<crate::model::GameSessionQueue>,
 }
 impl UpdateGameSessionQueueOutput {
     /// <p>An object that describes the newly updated game session queue.</p>
-    pub fn game_session_queue(&self) -> std::option::Option<&crate::model::GameSessionQueue> {
+    pub fn game_session_queue(&self) -> std::option::Option<& crate::model::GameSessionQueue> {
         self.game_session_queue.as_ref()
     }
 }
 /// See [`UpdateGameSessionQueueOutput`](crate::output::UpdateGameSessionQueueOutput).
 pub mod update_game_session_queue_output {
-
+    
     /// A builder for [`UpdateGameSessionQueueOutput`](crate::output::UpdateGameSessionQueueOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -226,20 +228,19 @@ pub mod update_game_session_queue_output {
             self
         }
         /// <p>An object that describes the newly updated game session queue.</p>
-        pub fn set_game_session_queue(
-            mut self,
-            input: std::option::Option<crate::model::GameSessionQueue>,
-        ) -> Self {
-            self.game_session_queue = input;
-            self
+        pub fn set_game_session_queue(mut self, input: std::option::Option<crate::model::GameSessionQueue>) -> Self {
+            self.game_session_queue = input; self
         }
         /// Consumes the builder and constructs a [`UpdateGameSessionQueueOutput`](crate::output::UpdateGameSessionQueueOutput).
         pub fn build(self) -> crate::output::UpdateGameSessionQueueOutput {
             crate::output::UpdateGameSessionQueueOutput {
-                game_session_queue: self.game_session_queue,
+                game_session_queue: self.game_session_queue
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateGameSessionQueueOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGameSessionQueueOutput`](crate::output::UpdateGameSessionQueueOutput).
@@ -251,20 +252,20 @@ impl UpdateGameSessionQueueOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGameSessionOutput {
+pub struct UpdateGameSessionOutput  {
     /// <p>The updated game session properties.</p>
     #[doc(hidden)]
     pub game_session: std::option::Option<crate::model::GameSession>,
 }
 impl UpdateGameSessionOutput {
     /// <p>The updated game session properties.</p>
-    pub fn game_session(&self) -> std::option::Option<&crate::model::GameSession> {
+    pub fn game_session(&self) -> std::option::Option<& crate::model::GameSession> {
         self.game_session.as_ref()
     }
 }
 /// See [`UpdateGameSessionOutput`](crate::output::UpdateGameSessionOutput).
 pub mod update_game_session_output {
-
+    
     /// A builder for [`UpdateGameSessionOutput`](crate::output::UpdateGameSessionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -277,20 +278,19 @@ pub mod update_game_session_output {
             self
         }
         /// <p>The updated game session properties.</p>
-        pub fn set_game_session(
-            mut self,
-            input: std::option::Option<crate::model::GameSession>,
-        ) -> Self {
-            self.game_session = input;
-            self
+        pub fn set_game_session(mut self, input: std::option::Option<crate::model::GameSession>) -> Self {
+            self.game_session = input; self
         }
         /// Consumes the builder and constructs a [`UpdateGameSessionOutput`](crate::output::UpdateGameSessionOutput).
         pub fn build(self) -> crate::output::UpdateGameSessionOutput {
             crate::output::UpdateGameSessionOutput {
-                game_session: self.game_session,
+                game_session: self.game_session
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateGameSessionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGameSessionOutput`](crate::output::UpdateGameSessionOutput).
@@ -302,20 +302,20 @@ impl UpdateGameSessionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGameServerGroupOutput {
+pub struct UpdateGameServerGroupOutput  {
     /// <p>An object that describes the game server group resource with updated properties. </p>
     #[doc(hidden)]
     pub game_server_group: std::option::Option<crate::model::GameServerGroup>,
 }
 impl UpdateGameServerGroupOutput {
     /// <p>An object that describes the game server group resource with updated properties. </p>
-    pub fn game_server_group(&self) -> std::option::Option<&crate::model::GameServerGroup> {
+    pub fn game_server_group(&self) -> std::option::Option<& crate::model::GameServerGroup> {
         self.game_server_group.as_ref()
     }
 }
 /// See [`UpdateGameServerGroupOutput`](crate::output::UpdateGameServerGroupOutput).
 pub mod update_game_server_group_output {
-
+    
     /// A builder for [`UpdateGameServerGroupOutput`](crate::output::UpdateGameServerGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -328,20 +328,19 @@ pub mod update_game_server_group_output {
             self
         }
         /// <p>An object that describes the game server group resource with updated properties. </p>
-        pub fn set_game_server_group(
-            mut self,
-            input: std::option::Option<crate::model::GameServerGroup>,
-        ) -> Self {
-            self.game_server_group = input;
-            self
+        pub fn set_game_server_group(mut self, input: std::option::Option<crate::model::GameServerGroup>) -> Self {
+            self.game_server_group = input; self
         }
         /// Consumes the builder and constructs a [`UpdateGameServerGroupOutput`](crate::output::UpdateGameServerGroupOutput).
         pub fn build(self) -> crate::output::UpdateGameServerGroupOutput {
             crate::output::UpdateGameServerGroupOutput {
-                game_server_group: self.game_server_group,
+                game_server_group: self.game_server_group
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateGameServerGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGameServerGroupOutput`](crate::output::UpdateGameServerGroupOutput).
@@ -353,20 +352,20 @@ impl UpdateGameServerGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGameServerOutput {
+pub struct UpdateGameServerOutput  {
     /// <p>Object that describes the newly updated game server.</p>
     #[doc(hidden)]
     pub game_server: std::option::Option<crate::model::GameServer>,
 }
 impl UpdateGameServerOutput {
     /// <p>Object that describes the newly updated game server.</p>
-    pub fn game_server(&self) -> std::option::Option<&crate::model::GameServer> {
+    pub fn game_server(&self) -> std::option::Option<& crate::model::GameServer> {
         self.game_server.as_ref()
     }
 }
 /// See [`UpdateGameServerOutput`](crate::output::UpdateGameServerOutput).
 pub mod update_game_server_output {
-
+    
     /// A builder for [`UpdateGameServerOutput`](crate::output::UpdateGameServerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -379,20 +378,19 @@ pub mod update_game_server_output {
             self
         }
         /// <p>Object that describes the newly updated game server.</p>
-        pub fn set_game_server(
-            mut self,
-            input: std::option::Option<crate::model::GameServer>,
-        ) -> Self {
-            self.game_server = input;
-            self
+        pub fn set_game_server(mut self, input: std::option::Option<crate::model::GameServer>) -> Self {
+            self.game_server = input; self
         }
         /// Consumes the builder and constructs a [`UpdateGameServerOutput`](crate::output::UpdateGameServerOutput).
         pub fn build(self) -> crate::output::UpdateGameServerOutput {
             crate::output::UpdateGameServerOutput {
-                game_server: self.game_server,
+                game_server: self.game_server
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateGameServerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGameServerOutput`](crate::output::UpdateGameServerOutput).
@@ -404,7 +402,7 @@ impl UpdateGameServerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFleetPortSettingsOutput {
+pub struct UpdateFleetPortSettingsOutput  {
     /// <p>A unique identifier for the fleet that was updated.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -417,20 +415,20 @@ pub struct UpdateFleetPortSettingsOutput {
 }
 impl UpdateFleetPortSettingsOutput {
     /// <p>A unique identifier for the fleet that was updated.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
 }
 /// See [`UpdateFleetPortSettingsOutput`](crate::output::UpdateFleetPortSettingsOutput).
 pub mod update_fleet_port_settings_output {
-
+    
     /// A builder for [`UpdateFleetPortSettingsOutput`](crate::output::UpdateFleetPortSettingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -445,8 +443,7 @@ pub mod update_fleet_port_settings_output {
         }
         /// <p>A unique identifier for the fleet that was updated.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_id = input;
-            self
+            self.fleet_id = input; self
         }
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
         /// <region>
@@ -461,17 +458,20 @@ pub mod update_fleet_port_settings_output {
         /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
         /// </region></code>.</p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_arn = input;
-            self
+            self.fleet_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFleetPortSettingsOutput`](crate::output::UpdateFleetPortSettingsOutput).
         pub fn build(self) -> crate::output::UpdateFleetPortSettingsOutput {
             crate::output::UpdateFleetPortSettingsOutput {
-                fleet_id: self.fleet_id,
-                fleet_arn: self.fleet_arn,
+                fleet_id: self.fleet_id
+                ,
+                fleet_arn: self.fleet_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFleetPortSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFleetPortSettingsOutput`](crate::output::UpdateFleetPortSettingsOutput).
@@ -483,7 +483,7 @@ impl UpdateFleetPortSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFleetCapacityOutput {
+pub struct UpdateFleetCapacityOutput  {
     /// <p>A unique identifier for the fleet that was updated.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -499,24 +499,24 @@ pub struct UpdateFleetCapacityOutput {
 }
 impl UpdateFleetCapacityOutput {
     /// <p>A unique identifier for the fleet that was updated.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>. </p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The remote location being updated, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
 }
 /// See [`UpdateFleetCapacityOutput`](crate::output::UpdateFleetCapacityOutput).
 pub mod update_fleet_capacity_output {
-
+    
     /// A builder for [`UpdateFleetCapacityOutput`](crate::output::UpdateFleetCapacityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -532,8 +532,7 @@ pub mod update_fleet_capacity_output {
         }
         /// <p>A unique identifier for the fleet that was updated.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_id = input;
-            self
+            self.fleet_id = input; self
         }
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
         /// <region>
@@ -548,8 +547,7 @@ pub mod update_fleet_capacity_output {
         /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
         /// </region></code>. </p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_arn = input;
-            self
+            self.fleet_arn = input; self
         }
         /// <p>The remote location being updated, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -558,18 +556,22 @@ pub mod update_fleet_capacity_output {
         }
         /// <p>The remote location being updated, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFleetCapacityOutput`](crate::output::UpdateFleetCapacityOutput).
         pub fn build(self) -> crate::output::UpdateFleetCapacityOutput {
             crate::output::UpdateFleetCapacityOutput {
-                fleet_id: self.fleet_id,
-                fleet_arn: self.fleet_arn,
-                location: self.location,
+                fleet_id: self.fleet_id
+                ,
+                fleet_arn: self.fleet_arn
+                ,
+                location: self.location
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFleetCapacityOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFleetCapacityOutput`](crate::output::UpdateFleetCapacityOutput).
@@ -581,7 +583,7 @@ impl UpdateFleetCapacityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFleetAttributesOutput {
+pub struct UpdateFleetAttributesOutput  {
     /// <p>A unique identifier for the fleet that was updated.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -594,20 +596,20 @@ pub struct UpdateFleetAttributesOutput {
 }
 impl UpdateFleetAttributesOutput {
     /// <p>A unique identifier for the fleet that was updated.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
 }
 /// See [`UpdateFleetAttributesOutput`](crate::output::UpdateFleetAttributesOutput).
 pub mod update_fleet_attributes_output {
-
+    
     /// A builder for [`UpdateFleetAttributesOutput`](crate::output::UpdateFleetAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -622,8 +624,7 @@ pub mod update_fleet_attributes_output {
         }
         /// <p>A unique identifier for the fleet that was updated.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_id = input;
-            self
+            self.fleet_id = input; self
         }
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
         /// <region>
@@ -638,17 +639,20 @@ pub mod update_fleet_attributes_output {
         /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
         /// </region></code>.</p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_arn = input;
-            self
+            self.fleet_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFleetAttributesOutput`](crate::output::UpdateFleetAttributesOutput).
         pub fn build(self) -> crate::output::UpdateFleetAttributesOutput {
             crate::output::UpdateFleetAttributesOutput {
-                fleet_id: self.fleet_id,
-                fleet_arn: self.fleet_arn,
+                fleet_id: self.fleet_id
+                ,
+                fleet_arn: self.fleet_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFleetAttributesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFleetAttributesOutput`](crate::output::UpdateFleetAttributesOutput).
@@ -660,7 +664,7 @@ impl UpdateFleetAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBuildOutput {
+pub struct UpdateBuildOutput  {
     /// <p>The updated build resource.</p>
     ///
     /// _Note: This member has been renamed from `build`._
@@ -671,13 +675,13 @@ impl UpdateBuildOutput {
     /// <p>The updated build resource.</p>
     ///
     /// _Note: This member has been renamed from `build`._
-    pub fn build_value(&self) -> std::option::Option<&crate::model::Build> {
+    pub fn build_value(&self) -> std::option::Option<& crate::model::Build> {
         self.build_value.as_ref()
     }
 }
 /// See [`UpdateBuildOutput`](crate::output::UpdateBuildOutput).
 pub mod update_build_output {
-
+    
     /// A builder for [`UpdateBuildOutput`](crate::output::UpdateBuildOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -691,16 +695,18 @@ pub mod update_build_output {
         }
         /// <p>The updated build resource.</p>
         pub fn set_build(mut self, input: std::option::Option<crate::model::Build>) -> Self {
-            self.build_value = input;
-            self
+            self.build_value = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBuildOutput`](crate::output::UpdateBuildOutput).
         pub fn build(self) -> crate::output::UpdateBuildOutput {
             crate::output::UpdateBuildOutput {
-                build_value: self.build_value,
+                build_value: self.build_value
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBuildOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBuildOutput`](crate::output::UpdateBuildOutput).
@@ -712,20 +718,20 @@ impl UpdateBuildOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAliasOutput {
+pub struct UpdateAliasOutput  {
     /// <p>The updated alias resource.</p>
     #[doc(hidden)]
     pub alias: std::option::Option<crate::model::Alias>,
 }
 impl UpdateAliasOutput {
     /// <p>The updated alias resource.</p>
-    pub fn alias(&self) -> std::option::Option<&crate::model::Alias> {
+    pub fn alias(&self) -> std::option::Option<& crate::model::Alias> {
         self.alias.as_ref()
     }
 }
 /// See [`UpdateAliasOutput`](crate::output::UpdateAliasOutput).
 pub mod update_alias_output {
-
+    
     /// A builder for [`UpdateAliasOutput`](crate::output::UpdateAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -739,14 +745,18 @@ pub mod update_alias_output {
         }
         /// <p>The updated alias resource.</p>
         pub fn set_alias(mut self, input: std::option::Option<crate::model::Alias>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAliasOutput`](crate::output::UpdateAliasOutput).
         pub fn build(self) -> crate::output::UpdateAliasOutput {
-            crate::output::UpdateAliasOutput { alias: self.alias }
+            crate::output::UpdateAliasOutput {
+                alias: self.alias
+                ,
+            }
         }
     }
+    
+    
 }
 impl UpdateAliasOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAliasOutput`](crate::output::UpdateAliasOutput).
@@ -758,19 +768,24 @@ impl UpdateAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -782,19 +797,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -806,20 +826,20 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SuspendGameServerGroupOutput {
+pub struct SuspendGameServerGroupOutput  {
     /// <p>An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated to reflect the suspended activity.</p>
     #[doc(hidden)]
     pub game_server_group: std::option::Option<crate::model::GameServerGroup>,
 }
 impl SuspendGameServerGroupOutput {
     /// <p>An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated to reflect the suspended activity.</p>
-    pub fn game_server_group(&self) -> std::option::Option<&crate::model::GameServerGroup> {
+    pub fn game_server_group(&self) -> std::option::Option<& crate::model::GameServerGroup> {
         self.game_server_group.as_ref()
     }
 }
 /// See [`SuspendGameServerGroupOutput`](crate::output::SuspendGameServerGroupOutput).
 pub mod suspend_game_server_group_output {
-
+    
     /// A builder for [`SuspendGameServerGroupOutput`](crate::output::SuspendGameServerGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -832,20 +852,19 @@ pub mod suspend_game_server_group_output {
             self
         }
         /// <p>An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated to reflect the suspended activity.</p>
-        pub fn set_game_server_group(
-            mut self,
-            input: std::option::Option<crate::model::GameServerGroup>,
-        ) -> Self {
-            self.game_server_group = input;
-            self
+        pub fn set_game_server_group(mut self, input: std::option::Option<crate::model::GameServerGroup>) -> Self {
+            self.game_server_group = input; self
         }
         /// Consumes the builder and constructs a [`SuspendGameServerGroupOutput`](crate::output::SuspendGameServerGroupOutput).
         pub fn build(self) -> crate::output::SuspendGameServerGroupOutput {
             crate::output::SuspendGameServerGroupOutput {
-                game_server_group: self.game_server_group,
+                game_server_group: self.game_server_group
+                ,
             }
         }
     }
+    
+    
 }
 impl SuspendGameServerGroupOutput {
     /// Creates a new builder-style object to manufacture [`SuspendGameServerGroupOutput`](crate::output::SuspendGameServerGroupOutput).
@@ -857,19 +876,24 @@ impl SuspendGameServerGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopMatchmakingOutput {}
+pub struct StopMatchmakingOutput  {
+}
 /// See [`StopMatchmakingOutput`](crate::output::StopMatchmakingOutput).
 pub mod stop_matchmaking_output {
-
+    
     /// A builder for [`StopMatchmakingOutput`](crate::output::StopMatchmakingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopMatchmakingOutput`](crate::output::StopMatchmakingOutput).
         pub fn build(self) -> crate::output::StopMatchmakingOutput {
-            crate::output::StopMatchmakingOutput {}
+            crate::output::StopMatchmakingOutput {
+            }
         }
     }
+    
+    
 }
 impl StopMatchmakingOutput {
     /// Creates a new builder-style object to manufacture [`StopMatchmakingOutput`](crate::output::StopMatchmakingOutput).
@@ -881,22 +905,20 @@ impl StopMatchmakingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopGameSessionPlacementOutput {
+pub struct StopGameSessionPlacementOutput  {
     /// <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp. </p>
     #[doc(hidden)]
     pub game_session_placement: std::option::Option<crate::model::GameSessionPlacement>,
 }
 impl StopGameSessionPlacementOutput {
     /// <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp. </p>
-    pub fn game_session_placement(
-        &self,
-    ) -> std::option::Option<&crate::model::GameSessionPlacement> {
+    pub fn game_session_placement(&self) -> std::option::Option<& crate::model::GameSessionPlacement> {
         self.game_session_placement.as_ref()
     }
 }
 /// See [`StopGameSessionPlacementOutput`](crate::output::StopGameSessionPlacementOutput).
 pub mod stop_game_session_placement_output {
-
+    
     /// A builder for [`StopGameSessionPlacementOutput`](crate::output::StopGameSessionPlacementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -909,20 +931,19 @@ pub mod stop_game_session_placement_output {
             self
         }
         /// <p>Object that describes the canceled game session placement, with <code>CANCELLED</code> status and an end time stamp. </p>
-        pub fn set_game_session_placement(
-            mut self,
-            input: std::option::Option<crate::model::GameSessionPlacement>,
-        ) -> Self {
-            self.game_session_placement = input;
-            self
+        pub fn set_game_session_placement(mut self, input: std::option::Option<crate::model::GameSessionPlacement>) -> Self {
+            self.game_session_placement = input; self
         }
         /// Consumes the builder and constructs a [`StopGameSessionPlacementOutput`](crate::output::StopGameSessionPlacementOutput).
         pub fn build(self) -> crate::output::StopGameSessionPlacementOutput {
             crate::output::StopGameSessionPlacementOutput {
-                game_session_placement: self.game_session_placement,
+                game_session_placement: self.game_session_placement
+                ,
             }
         }
     }
+    
+    
 }
 impl StopGameSessionPlacementOutput {
     /// Creates a new builder-style object to manufacture [`StopGameSessionPlacementOutput`](crate::output::StopGameSessionPlacementOutput).
@@ -934,7 +955,7 @@ impl StopGameSessionPlacementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopFleetActionsOutput {
+pub struct StopFleetActionsOutput  {
     /// <p>A unique identifier for the fleet to stop actions on.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -947,20 +968,20 @@ pub struct StopFleetActionsOutput {
 }
 impl StopFleetActionsOutput {
     /// <p>A unique identifier for the fleet to stop actions on.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
 }
 /// See [`StopFleetActionsOutput`](crate::output::StopFleetActionsOutput).
 pub mod stop_fleet_actions_output {
-
+    
     /// A builder for [`StopFleetActionsOutput`](crate::output::StopFleetActionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -975,8 +996,7 @@ pub mod stop_fleet_actions_output {
         }
         /// <p>A unique identifier for the fleet to stop actions on.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_id = input;
-            self
+            self.fleet_id = input; self
         }
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
         /// <region>
@@ -991,17 +1011,20 @@ pub mod stop_fleet_actions_output {
         /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
         /// </region></code>.</p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_arn = input;
-            self
+            self.fleet_arn = input; self
         }
         /// Consumes the builder and constructs a [`StopFleetActionsOutput`](crate::output::StopFleetActionsOutput).
         pub fn build(self) -> crate::output::StopFleetActionsOutput {
             crate::output::StopFleetActionsOutput {
-                fleet_id: self.fleet_id,
-                fleet_arn: self.fleet_arn,
+                fleet_id: self.fleet_id
+                ,
+                fleet_arn: self.fleet_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl StopFleetActionsOutput {
     /// Creates a new builder-style object to manufacture [`StopFleetActionsOutput`](crate::output::StopFleetActionsOutput).
@@ -1013,20 +1036,20 @@ impl StopFleetActionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartMatchmakingOutput {
+pub struct StartMatchmakingOutput  {
     /// <p>Ticket representing the matchmaking request. This object include the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
     #[doc(hidden)]
     pub matchmaking_ticket: std::option::Option<crate::model::MatchmakingTicket>,
 }
 impl StartMatchmakingOutput {
     /// <p>Ticket representing the matchmaking request. This object include the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
-    pub fn matchmaking_ticket(&self) -> std::option::Option<&crate::model::MatchmakingTicket> {
+    pub fn matchmaking_ticket(&self) -> std::option::Option<& crate::model::MatchmakingTicket> {
         self.matchmaking_ticket.as_ref()
     }
 }
 /// See [`StartMatchmakingOutput`](crate::output::StartMatchmakingOutput).
 pub mod start_matchmaking_output {
-
+    
     /// A builder for [`StartMatchmakingOutput`](crate::output::StartMatchmakingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1039,20 +1062,19 @@ pub mod start_matchmaking_output {
             self
         }
         /// <p>Ticket representing the matchmaking request. This object include the information included in the request, ticket status, and match results as generated during the matchmaking process.</p>
-        pub fn set_matchmaking_ticket(
-            mut self,
-            input: std::option::Option<crate::model::MatchmakingTicket>,
-        ) -> Self {
-            self.matchmaking_ticket = input;
-            self
+        pub fn set_matchmaking_ticket(mut self, input: std::option::Option<crate::model::MatchmakingTicket>) -> Self {
+            self.matchmaking_ticket = input; self
         }
         /// Consumes the builder and constructs a [`StartMatchmakingOutput`](crate::output::StartMatchmakingOutput).
         pub fn build(self) -> crate::output::StartMatchmakingOutput {
             crate::output::StartMatchmakingOutput {
-                matchmaking_ticket: self.matchmaking_ticket,
+                matchmaking_ticket: self.matchmaking_ticket
+                ,
             }
         }
     }
+    
+    
 }
 impl StartMatchmakingOutput {
     /// Creates a new builder-style object to manufacture [`StartMatchmakingOutput`](crate::output::StartMatchmakingOutput).
@@ -1064,20 +1086,20 @@ impl StartMatchmakingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartMatchBackfillOutput {
+pub struct StartMatchBackfillOutput  {
     /// <p>Ticket representing the backfill matchmaking request. This object includes the information in the request, ticket status, and match results as generated during the matchmaking process.</p>
     #[doc(hidden)]
     pub matchmaking_ticket: std::option::Option<crate::model::MatchmakingTicket>,
 }
 impl StartMatchBackfillOutput {
     /// <p>Ticket representing the backfill matchmaking request. This object includes the information in the request, ticket status, and match results as generated during the matchmaking process.</p>
-    pub fn matchmaking_ticket(&self) -> std::option::Option<&crate::model::MatchmakingTicket> {
+    pub fn matchmaking_ticket(&self) -> std::option::Option<& crate::model::MatchmakingTicket> {
         self.matchmaking_ticket.as_ref()
     }
 }
 /// See [`StartMatchBackfillOutput`](crate::output::StartMatchBackfillOutput).
 pub mod start_match_backfill_output {
-
+    
     /// A builder for [`StartMatchBackfillOutput`](crate::output::StartMatchBackfillOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1090,20 +1112,19 @@ pub mod start_match_backfill_output {
             self
         }
         /// <p>Ticket representing the backfill matchmaking request. This object includes the information in the request, ticket status, and match results as generated during the matchmaking process.</p>
-        pub fn set_matchmaking_ticket(
-            mut self,
-            input: std::option::Option<crate::model::MatchmakingTicket>,
-        ) -> Self {
-            self.matchmaking_ticket = input;
-            self
+        pub fn set_matchmaking_ticket(mut self, input: std::option::Option<crate::model::MatchmakingTicket>) -> Self {
+            self.matchmaking_ticket = input; self
         }
         /// Consumes the builder and constructs a [`StartMatchBackfillOutput`](crate::output::StartMatchBackfillOutput).
         pub fn build(self) -> crate::output::StartMatchBackfillOutput {
             crate::output::StartMatchBackfillOutput {
-                matchmaking_ticket: self.matchmaking_ticket,
+                matchmaking_ticket: self.matchmaking_ticket
+                ,
             }
         }
     }
+    
+    
 }
 impl StartMatchBackfillOutput {
     /// Creates a new builder-style object to manufacture [`StartMatchBackfillOutput`](crate::output::StartMatchBackfillOutput).
@@ -1115,22 +1136,20 @@ impl StartMatchBackfillOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartGameSessionPlacementOutput {
+pub struct StartGameSessionPlacementOutput  {
     /// <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status. </p>
     #[doc(hidden)]
     pub game_session_placement: std::option::Option<crate::model::GameSessionPlacement>,
 }
 impl StartGameSessionPlacementOutput {
     /// <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status. </p>
-    pub fn game_session_placement(
-        &self,
-    ) -> std::option::Option<&crate::model::GameSessionPlacement> {
+    pub fn game_session_placement(&self) -> std::option::Option<& crate::model::GameSessionPlacement> {
         self.game_session_placement.as_ref()
     }
 }
 /// See [`StartGameSessionPlacementOutput`](crate::output::StartGameSessionPlacementOutput).
 pub mod start_game_session_placement_output {
-
+    
     /// A builder for [`StartGameSessionPlacementOutput`](crate::output::StartGameSessionPlacementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1143,20 +1162,19 @@ pub mod start_game_session_placement_output {
             self
         }
         /// <p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status. </p>
-        pub fn set_game_session_placement(
-            mut self,
-            input: std::option::Option<crate::model::GameSessionPlacement>,
-        ) -> Self {
-            self.game_session_placement = input;
-            self
+        pub fn set_game_session_placement(mut self, input: std::option::Option<crate::model::GameSessionPlacement>) -> Self {
+            self.game_session_placement = input; self
         }
         /// Consumes the builder and constructs a [`StartGameSessionPlacementOutput`](crate::output::StartGameSessionPlacementOutput).
         pub fn build(self) -> crate::output::StartGameSessionPlacementOutput {
             crate::output::StartGameSessionPlacementOutput {
-                game_session_placement: self.game_session_placement,
+                game_session_placement: self.game_session_placement
+                ,
             }
         }
     }
+    
+    
 }
 impl StartGameSessionPlacementOutput {
     /// Creates a new builder-style object to manufacture [`StartGameSessionPlacementOutput`](crate::output::StartGameSessionPlacementOutput).
@@ -1168,7 +1186,7 @@ impl StartGameSessionPlacementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartFleetActionsOutput {
+pub struct StartFleetActionsOutput  {
     /// <p>A unique identifier for the fleet to restart actions on.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -1181,20 +1199,20 @@ pub struct StartFleetActionsOutput {
 }
 impl StartFleetActionsOutput {
     /// <p>A unique identifier for the fleet to restart actions on.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
 }
 /// See [`StartFleetActionsOutput`](crate::output::StartFleetActionsOutput).
 pub mod start_fleet_actions_output {
-
+    
     /// A builder for [`StartFleetActionsOutput`](crate::output::StartFleetActionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1209,8 +1227,7 @@ pub mod start_fleet_actions_output {
         }
         /// <p>A unique identifier for the fleet to restart actions on.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_id = input;
-            self
+            self.fleet_id = input; self
         }
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
         /// <region>
@@ -1225,17 +1242,20 @@ pub mod start_fleet_actions_output {
         /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
         /// </region></code>.</p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_arn = input;
-            self
+            self.fleet_arn = input; self
         }
         /// Consumes the builder and constructs a [`StartFleetActionsOutput`](crate::output::StartFleetActionsOutput).
         pub fn build(self) -> crate::output::StartFleetActionsOutput {
             crate::output::StartFleetActionsOutput {
-                fleet_id: self.fleet_id,
-                fleet_arn: self.fleet_arn,
+                fleet_id: self.fleet_id
+                ,
+                fleet_arn: self.fleet_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl StartFleetActionsOutput {
     /// Creates a new builder-style object to manufacture [`StartFleetActionsOutput`](crate::output::StartFleetActionsOutput).
@@ -1247,7 +1267,7 @@ impl StartFleetActionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchGameSessionsOutput {
+pub struct SearchGameSessionsOutput  {
     /// <p>A collection of objects containing game session properties for each session that matches the request.</p>
     #[doc(hidden)]
     pub game_sessions: std::option::Option<std::vec::Vec<crate::model::GameSession>>,
@@ -1257,17 +1277,17 @@ pub struct SearchGameSessionsOutput {
 }
 impl SearchGameSessionsOutput {
     /// <p>A collection of objects containing game session properties for each session that matches the request.</p>
-    pub fn game_sessions(&self) -> std::option::Option<&[crate::model::GameSession]> {
+    pub fn game_sessions(&self) -> std::option::Option<& [crate::model::GameSession]> {
         self.game_sessions.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`SearchGameSessionsOutput`](crate::output::SearchGameSessionsOutput).
 pub mod search_game_sessions_output {
-
+    
     /// A builder for [`SearchGameSessionsOutput`](crate::output::SearchGameSessionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1282,17 +1302,13 @@ pub mod search_game_sessions_output {
         /// <p>A collection of objects containing game session properties for each session that matches the request.</p>
         pub fn game_sessions(mut self, input: crate::model::GameSession) -> Self {
             let mut v = self.game_sessions.unwrap_or_default();
-            v.push(input);
-            self.game_sessions = Some(v);
-            self
+                            v.push(input);
+                            self.game_sessions = Some(v);
+                            self
         }
         /// <p>A collection of objects containing game session properties for each session that matches the request.</p>
-        pub fn set_game_sessions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GameSession>>,
-        ) -> Self {
-            self.game_sessions = input;
-            self
+        pub fn set_game_sessions(mut self, input: std::option::Option<std::vec::Vec<crate::model::GameSession>>) -> Self {
+            self.game_sessions = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1301,17 +1317,20 @@ pub mod search_game_sessions_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`SearchGameSessionsOutput`](crate::output::SearchGameSessionsOutput).
         pub fn build(self) -> crate::output::SearchGameSessionsOutput {
             crate::output::SearchGameSessionsOutput {
-                game_sessions: self.game_sessions,
-                next_token: self.next_token,
+                game_sessions: self.game_sessions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchGameSessionsOutput {
     /// Creates a new builder-style object to manufacture [`SearchGameSessionsOutput`](crate::output::SearchGameSessionsOutput).
@@ -1323,20 +1342,20 @@ impl SearchGameSessionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResumeGameServerGroupOutput {
+pub struct ResumeGameServerGroupOutput  {
     /// <p>An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated to reflect the resumed activity.</p>
     #[doc(hidden)]
     pub game_server_group: std::option::Option<crate::model::GameServerGroup>,
 }
 impl ResumeGameServerGroupOutput {
     /// <p>An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated to reflect the resumed activity.</p>
-    pub fn game_server_group(&self) -> std::option::Option<&crate::model::GameServerGroup> {
+    pub fn game_server_group(&self) -> std::option::Option<& crate::model::GameServerGroup> {
         self.game_server_group.as_ref()
     }
 }
 /// See [`ResumeGameServerGroupOutput`](crate::output::ResumeGameServerGroupOutput).
 pub mod resume_game_server_group_output {
-
+    
     /// A builder for [`ResumeGameServerGroupOutput`](crate::output::ResumeGameServerGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1349,20 +1368,19 @@ pub mod resume_game_server_group_output {
             self
         }
         /// <p>An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated to reflect the resumed activity.</p>
-        pub fn set_game_server_group(
-            mut self,
-            input: std::option::Option<crate::model::GameServerGroup>,
-        ) -> Self {
-            self.game_server_group = input;
-            self
+        pub fn set_game_server_group(mut self, input: std::option::Option<crate::model::GameServerGroup>) -> Self {
+            self.game_server_group = input; self
         }
         /// Consumes the builder and constructs a [`ResumeGameServerGroupOutput`](crate::output::ResumeGameServerGroupOutput).
         pub fn build(self) -> crate::output::ResumeGameServerGroupOutput {
             crate::output::ResumeGameServerGroupOutput {
-                game_server_group: self.game_server_group,
+                game_server_group: self.game_server_group
+                ,
             }
         }
     }
+    
+    
 }
 impl ResumeGameServerGroupOutput {
     /// Creates a new builder-style object to manufacture [`ResumeGameServerGroupOutput`](crate::output::ResumeGameServerGroupOutput).
@@ -1374,7 +1392,7 @@ impl ResumeGameServerGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResolveAliasOutput {
+pub struct ResolveAliasOutput  {
     /// <p>The fleet identifier that the alias is pointing to.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -1384,17 +1402,17 @@ pub struct ResolveAliasOutput {
 }
 impl ResolveAliasOutput {
     /// <p>The fleet identifier that the alias is pointing to.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource that this alias points to. </p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
 }
 /// See [`ResolveAliasOutput`](crate::output::ResolveAliasOutput).
 pub mod resolve_alias_output {
-
+    
     /// A builder for [`ResolveAliasOutput`](crate::output::ResolveAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1409,8 +1427,7 @@ pub mod resolve_alias_output {
         }
         /// <p>The fleet identifier that the alias is pointing to.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_id = input;
-            self
+            self.fleet_id = input; self
         }
         /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource that this alias points to. </p>
         pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1419,17 +1436,20 @@ pub mod resolve_alias_output {
         }
         /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet resource that this alias points to. </p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_arn = input;
-            self
+            self.fleet_arn = input; self
         }
         /// Consumes the builder and constructs a [`ResolveAliasOutput`](crate::output::ResolveAliasOutput).
         pub fn build(self) -> crate::output::ResolveAliasOutput {
             crate::output::ResolveAliasOutput {
-                fleet_id: self.fleet_id,
-                fleet_arn: self.fleet_arn,
+                fleet_id: self.fleet_id
+                ,
+                fleet_arn: self.fleet_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ResolveAliasOutput {
     /// Creates a new builder-style object to manufacture [`ResolveAliasOutput`](crate::output::ResolveAliasOutput).
@@ -1441,7 +1461,7 @@ impl ResolveAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RequestUploadCredentialsOutput {
+pub struct RequestUploadCredentialsOutput  {
     /// <p>Amazon Web Services credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
     #[doc(hidden)]
     pub upload_credentials: std::option::Option<crate::model::AwsCredentials>,
@@ -1451,15 +1471,15 @@ pub struct RequestUploadCredentialsOutput {
 }
 impl RequestUploadCredentialsOutput {
     /// <p>Amazon Web Services credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
-    pub fn upload_credentials(&self) -> std::option::Option<&crate::model::AwsCredentials> {
+    pub fn upload_credentials(&self) -> std::option::Option<& crate::model::AwsCredentials> {
         self.upload_credentials.as_ref()
     }
     /// <p>Amazon S3 path and key, identifying where the game build files are stored.</p>
-    pub fn storage_location(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn storage_location(&self) -> std::option::Option<& crate::model::S3Location> {
         self.storage_location.as_ref()
     }
 }
-impl std::fmt::Debug for RequestUploadCredentialsOutput {
+impl  std::fmt::Debug for RequestUploadCredentialsOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RequestUploadCredentialsOutput");
         formatter.field("upload_credentials", &"*** Sensitive Data Redacted ***");
@@ -1469,7 +1489,7 @@ impl std::fmt::Debug for RequestUploadCredentialsOutput {
 }
 /// See [`RequestUploadCredentialsOutput`](crate::output::RequestUploadCredentialsOutput).
 pub mod request_upload_credentials_output {
-
+    
     /// A builder for [`RequestUploadCredentialsOutput`](crate::output::RequestUploadCredentialsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1483,12 +1503,8 @@ pub mod request_upload_credentials_output {
             self
         }
         /// <p>Amazon Web Services credentials required when uploading a game build to the storage location. These credentials have a limited lifespan and are valid only for the build they were issued for.</p>
-        pub fn set_upload_credentials(
-            mut self,
-            input: std::option::Option<crate::model::AwsCredentials>,
-        ) -> Self {
-            self.upload_credentials = input;
-            self
+        pub fn set_upload_credentials(mut self, input: std::option::Option<crate::model::AwsCredentials>) -> Self {
+            self.upload_credentials = input; self
         }
         /// <p>Amazon S3 path and key, identifying where the game build files are stored.</p>
         pub fn storage_location(mut self, input: crate::model::S3Location) -> Self {
@@ -1496,18 +1512,16 @@ pub mod request_upload_credentials_output {
             self
         }
         /// <p>Amazon S3 path and key, identifying where the game build files are stored.</p>
-        pub fn set_storage_location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.storage_location = input;
-            self
+        pub fn set_storage_location(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.storage_location = input; self
         }
         /// Consumes the builder and constructs a [`RequestUploadCredentialsOutput`](crate::output::RequestUploadCredentialsOutput).
         pub fn build(self) -> crate::output::RequestUploadCredentialsOutput {
             crate::output::RequestUploadCredentialsOutput {
-                upload_credentials: self.upload_credentials,
-                storage_location: self.storage_location,
+                upload_credentials: self.upload_credentials
+                ,
+                storage_location: self.storage_location
+                ,
             }
         }
     }
@@ -1519,6 +1533,8 @@ pub mod request_upload_credentials_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl RequestUploadCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`RequestUploadCredentialsOutput`](crate::output::RequestUploadCredentialsOutput).
@@ -1530,20 +1546,20 @@ impl RequestUploadCredentialsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterGameServerOutput {
+pub struct RegisterGameServerOutput  {
     /// <p>Object that describes the newly registered game server.</p>
     #[doc(hidden)]
     pub game_server: std::option::Option<crate::model::GameServer>,
 }
 impl RegisterGameServerOutput {
     /// <p>Object that describes the newly registered game server.</p>
-    pub fn game_server(&self) -> std::option::Option<&crate::model::GameServer> {
+    pub fn game_server(&self) -> std::option::Option<& crate::model::GameServer> {
         self.game_server.as_ref()
     }
 }
 /// See [`RegisterGameServerOutput`](crate::output::RegisterGameServerOutput).
 pub mod register_game_server_output {
-
+    
     /// A builder for [`RegisterGameServerOutput`](crate::output::RegisterGameServerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1556,20 +1572,19 @@ pub mod register_game_server_output {
             self
         }
         /// <p>Object that describes the newly registered game server.</p>
-        pub fn set_game_server(
-            mut self,
-            input: std::option::Option<crate::model::GameServer>,
-        ) -> Self {
-            self.game_server = input;
-            self
+        pub fn set_game_server(mut self, input: std::option::Option<crate::model::GameServer>) -> Self {
+            self.game_server = input; self
         }
         /// Consumes the builder and constructs a [`RegisterGameServerOutput`](crate::output::RegisterGameServerOutput).
         pub fn build(self) -> crate::output::RegisterGameServerOutput {
             crate::output::RegisterGameServerOutput {
-                game_server: self.game_server,
+                game_server: self.game_server
+                ,
             }
         }
     }
+    
+    
 }
 impl RegisterGameServerOutput {
     /// Creates a new builder-style object to manufacture [`RegisterGameServerOutput`](crate::output::RegisterGameServerOutput).
@@ -1581,20 +1596,20 @@ impl RegisterGameServerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterComputeOutput {
+pub struct RegisterComputeOutput  {
     /// <p>The details of the compute resource you registered to the specified fleet.</p>
     #[doc(hidden)]
     pub compute: std::option::Option<crate::model::Compute>,
 }
 impl RegisterComputeOutput {
     /// <p>The details of the compute resource you registered to the specified fleet.</p>
-    pub fn compute(&self) -> std::option::Option<&crate::model::Compute> {
+    pub fn compute(&self) -> std::option::Option<& crate::model::Compute> {
         self.compute.as_ref()
     }
 }
 /// See [`RegisterComputeOutput`](crate::output::RegisterComputeOutput).
 pub mod register_compute_output {
-
+    
     /// A builder for [`RegisterComputeOutput`](crate::output::RegisterComputeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1608,16 +1623,18 @@ pub mod register_compute_output {
         }
         /// <p>The details of the compute resource you registered to the specified fleet.</p>
         pub fn set_compute(mut self, input: std::option::Option<crate::model::Compute>) -> Self {
-            self.compute = input;
-            self
+            self.compute = input; self
         }
         /// Consumes the builder and constructs a [`RegisterComputeOutput`](crate::output::RegisterComputeOutput).
         pub fn build(self) -> crate::output::RegisterComputeOutput {
             crate::output::RegisterComputeOutput {
-                compute: self.compute,
+                compute: self.compute
+                ,
             }
         }
     }
+    
+    
 }
 impl RegisterComputeOutput {
     /// Creates a new builder-style object to manufacture [`RegisterComputeOutput`](crate::output::RegisterComputeOutput).
@@ -1629,20 +1646,20 @@ impl RegisterComputeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutScalingPolicyOutput {
+pub struct PutScalingPolicyOutput  {
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl PutScalingPolicyOutput {
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput).
 pub mod put_scaling_policy_output {
-
+    
     /// A builder for [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1656,14 +1673,18 @@ pub mod put_scaling_policy_output {
         }
         /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput).
         pub fn build(self) -> crate::output::PutScalingPolicyOutput {
-            crate::output::PutScalingPolicyOutput { name: self.name }
+            crate::output::PutScalingPolicyOutput {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl PutScalingPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutScalingPolicyOutput`](crate::output::PutScalingPolicyOutput).
@@ -1675,20 +1696,20 @@ impl PutScalingPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The collection of tags that have been assigned to the specified resource. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The collection of tags that have been assigned to the specified resource. </p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1702,23 +1723,24 @@ pub mod list_tags_for_resource_output {
         /// <p>The collection of tags that have been assigned to the specified resource. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The collection of tags that have been assigned to the specified resource. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1730,7 +1752,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListScriptsOutput {
+pub struct ListScriptsOutput  {
     /// <p>A set of properties describing the requested script.</p>
     #[doc(hidden)]
     pub scripts: std::option::Option<std::vec::Vec<crate::model::Script>>,
@@ -1740,17 +1762,17 @@ pub struct ListScriptsOutput {
 }
 impl ListScriptsOutput {
     /// <p>A set of properties describing the requested script.</p>
-    pub fn scripts(&self) -> std::option::Option<&[crate::model::Script]> {
+    pub fn scripts(&self) -> std::option::Option<& [crate::model::Script]> {
         self.scripts.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListScriptsOutput`](crate::output::ListScriptsOutput).
 pub mod list_scripts_output {
-
+    
     /// A builder for [`ListScriptsOutput`](crate::output::ListScriptsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1765,17 +1787,13 @@ pub mod list_scripts_output {
         /// <p>A set of properties describing the requested script.</p>
         pub fn scripts(mut self, input: crate::model::Script) -> Self {
             let mut v = self.scripts.unwrap_or_default();
-            v.push(input);
-            self.scripts = Some(v);
-            self
+                            v.push(input);
+                            self.scripts = Some(v);
+                            self
         }
         /// <p>A set of properties describing the requested script.</p>
-        pub fn set_scripts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Script>>,
-        ) -> Self {
-            self.scripts = input;
-            self
+        pub fn set_scripts(mut self, input: std::option::Option<std::vec::Vec<crate::model::Script>>) -> Self {
+            self.scripts = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1784,17 +1802,20 @@ pub mod list_scripts_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListScriptsOutput`](crate::output::ListScriptsOutput).
         pub fn build(self) -> crate::output::ListScriptsOutput {
             crate::output::ListScriptsOutput {
-                scripts: self.scripts,
-                next_token: self.next_token,
+                scripts: self.scripts
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListScriptsOutput {
     /// Creates a new builder-style object to manufacture [`ListScriptsOutput`](crate::output::ListScriptsOutput).
@@ -1806,7 +1827,7 @@ impl ListScriptsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLocationsOutput {
+pub struct ListLocationsOutput  {
     /// <p>A collection of locations.</p>
     #[doc(hidden)]
     pub locations: std::option::Option<std::vec::Vec<crate::model::LocationModel>>,
@@ -1816,17 +1837,17 @@ pub struct ListLocationsOutput {
 }
 impl ListLocationsOutput {
     /// <p>A collection of locations.</p>
-    pub fn locations(&self) -> std::option::Option<&[crate::model::LocationModel]> {
+    pub fn locations(&self) -> std::option::Option<& [crate::model::LocationModel]> {
         self.locations.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListLocationsOutput`](crate::output::ListLocationsOutput).
 pub mod list_locations_output {
-
+    
     /// A builder for [`ListLocationsOutput`](crate::output::ListLocationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1841,17 +1862,13 @@ pub mod list_locations_output {
         /// <p>A collection of locations.</p>
         pub fn locations(mut self, input: crate::model::LocationModel) -> Self {
             let mut v = self.locations.unwrap_or_default();
-            v.push(input);
-            self.locations = Some(v);
-            self
+                            v.push(input);
+                            self.locations = Some(v);
+                            self
         }
         /// <p>A collection of locations.</p>
-        pub fn set_locations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LocationModel>>,
-        ) -> Self {
-            self.locations = input;
-            self
+        pub fn set_locations(mut self, input: std::option::Option<std::vec::Vec<crate::model::LocationModel>>) -> Self {
+            self.locations = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1860,17 +1877,20 @@ pub mod list_locations_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListLocationsOutput`](crate::output::ListLocationsOutput).
         pub fn build(self) -> crate::output::ListLocationsOutput {
             crate::output::ListLocationsOutput {
-                locations: self.locations,
-                next_token: self.next_token,
+                locations: self.locations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLocationsOutput {
     /// Creates a new builder-style object to manufacture [`ListLocationsOutput`](crate::output::ListLocationsOutput).
@@ -1882,7 +1902,7 @@ impl ListLocationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGameServersOutput {
+pub struct ListGameServersOutput  {
     /// <p>A collection of game server objects that match the request.</p>
     #[doc(hidden)]
     pub game_servers: std::option::Option<std::vec::Vec<crate::model::GameServer>>,
@@ -1892,17 +1912,17 @@ pub struct ListGameServersOutput {
 }
 impl ListGameServersOutput {
     /// <p>A collection of game server objects that match the request.</p>
-    pub fn game_servers(&self) -> std::option::Option<&[crate::model::GameServer]> {
+    pub fn game_servers(&self) -> std::option::Option<& [crate::model::GameServer]> {
         self.game_servers.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListGameServersOutput`](crate::output::ListGameServersOutput).
 pub mod list_game_servers_output {
-
+    
     /// A builder for [`ListGameServersOutput`](crate::output::ListGameServersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1917,17 +1937,13 @@ pub mod list_game_servers_output {
         /// <p>A collection of game server objects that match the request.</p>
         pub fn game_servers(mut self, input: crate::model::GameServer) -> Self {
             let mut v = self.game_servers.unwrap_or_default();
-            v.push(input);
-            self.game_servers = Some(v);
-            self
+                            v.push(input);
+                            self.game_servers = Some(v);
+                            self
         }
         /// <p>A collection of game server objects that match the request.</p>
-        pub fn set_game_servers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GameServer>>,
-        ) -> Self {
-            self.game_servers = input;
-            self
+        pub fn set_game_servers(mut self, input: std::option::Option<std::vec::Vec<crate::model::GameServer>>) -> Self {
+            self.game_servers = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1936,17 +1952,20 @@ pub mod list_game_servers_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListGameServersOutput`](crate::output::ListGameServersOutput).
         pub fn build(self) -> crate::output::ListGameServersOutput {
             crate::output::ListGameServersOutput {
-                game_servers: self.game_servers,
-                next_token: self.next_token,
+                game_servers: self.game_servers
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGameServersOutput {
     /// Creates a new builder-style object to manufacture [`ListGameServersOutput`](crate::output::ListGameServersOutput).
@@ -1958,7 +1977,7 @@ impl ListGameServersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGameServerGroupsOutput {
+pub struct ListGameServerGroupsOutput  {
     /// <p>The game server groups' game server groups.</p>
     #[doc(hidden)]
     pub game_server_groups: std::option::Option<std::vec::Vec<crate::model::GameServerGroup>>,
@@ -1968,22 +1987,21 @@ pub struct ListGameServerGroupsOutput {
 }
 impl ListGameServerGroupsOutput {
     /// <p>The game server groups' game server groups.</p>
-    pub fn game_server_groups(&self) -> std::option::Option<&[crate::model::GameServerGroup]> {
+    pub fn game_server_groups(&self) -> std::option::Option<& [crate::model::GameServerGroup]> {
         self.game_server_groups.as_deref()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListGameServerGroupsOutput`](crate::output::ListGameServerGroupsOutput).
 pub mod list_game_server_groups_output {
-
+    
     /// A builder for [`ListGameServerGroupsOutput`](crate::output::ListGameServerGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) game_server_groups:
-            std::option::Option<std::vec::Vec<crate::model::GameServerGroup>>,
+        pub(crate) game_server_groups: std::option::Option<std::vec::Vec<crate::model::GameServerGroup>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1994,17 +2012,13 @@ pub mod list_game_server_groups_output {
         /// <p>The game server groups' game server groups.</p>
         pub fn game_server_groups(mut self, input: crate::model::GameServerGroup) -> Self {
             let mut v = self.game_server_groups.unwrap_or_default();
-            v.push(input);
-            self.game_server_groups = Some(v);
-            self
+                            v.push(input);
+                            self.game_server_groups = Some(v);
+                            self
         }
         /// <p>The game server groups' game server groups.</p>
-        pub fn set_game_server_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GameServerGroup>>,
-        ) -> Self {
-            self.game_server_groups = input;
-            self
+        pub fn set_game_server_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::GameServerGroup>>) -> Self {
+            self.game_server_groups = input; self
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2013,17 +2027,20 @@ pub mod list_game_server_groups_output {
         }
         /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListGameServerGroupsOutput`](crate::output::ListGameServerGroupsOutput).
         pub fn build(self) -> crate::output::ListGameServerGroupsOutput {
             crate::output::ListGameServerGroupsOutput {
-                game_server_groups: self.game_server_groups,
-                next_token: self.next_token,
+                game_server_groups: self.game_server_groups
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGameServerGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListGameServerGroupsOutput`](crate::output::ListGameServerGroupsOutput).
@@ -2035,7 +2052,7 @@ impl ListGameServerGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFleetsOutput {
+pub struct ListFleetsOutput  {
     /// <p>A set of fleet IDs that match the list request.</p>
     #[doc(hidden)]
     pub fleet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2045,17 +2062,17 @@ pub struct ListFleetsOutput {
 }
 impl ListFleetsOutput {
     /// <p>A set of fleet IDs that match the list request.</p>
-    pub fn fleet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn fleet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.fleet_ids.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFleetsOutput`](crate::output::ListFleetsOutput).
 pub mod list_fleets_output {
-
+    
     /// A builder for [`ListFleetsOutput`](crate::output::ListFleetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2070,17 +2087,13 @@ pub mod list_fleets_output {
         /// <p>A set of fleet IDs that match the list request.</p>
         pub fn fleet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.fleet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.fleet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.fleet_ids = Some(v);
+                            self
         }
         /// <p>A set of fleet IDs that match the list request.</p>
-        pub fn set_fleet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.fleet_ids = input;
-            self
+        pub fn set_fleet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.fleet_ids = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2089,17 +2102,20 @@ pub mod list_fleets_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFleetsOutput`](crate::output::ListFleetsOutput).
         pub fn build(self) -> crate::output::ListFleetsOutput {
             crate::output::ListFleetsOutput {
-                fleet_ids: self.fleet_ids,
-                next_token: self.next_token,
+                fleet_ids: self.fleet_ids
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFleetsOutput {
     /// Creates a new builder-style object to manufacture [`ListFleetsOutput`](crate::output::ListFleetsOutput).
@@ -2111,7 +2127,7 @@ impl ListFleetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListComputeOutput {
+pub struct ListComputeOutput  {
     /// <p>A list of compute resources registered to the fleet you specified.</p>
     #[doc(hidden)]
     pub compute_list: std::option::Option<std::vec::Vec<crate::model::Compute>>,
@@ -2121,17 +2137,17 @@ pub struct ListComputeOutput {
 }
 impl ListComputeOutput {
     /// <p>A list of compute resources registered to the fleet you specified.</p>
-    pub fn compute_list(&self) -> std::option::Option<&[crate::model::Compute]> {
+    pub fn compute_list(&self) -> std::option::Option<& [crate::model::Compute]> {
         self.compute_list.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListComputeOutput`](crate::output::ListComputeOutput).
 pub mod list_compute_output {
-
+    
     /// A builder for [`ListComputeOutput`](crate::output::ListComputeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2146,17 +2162,13 @@ pub mod list_compute_output {
         /// <p>A list of compute resources registered to the fleet you specified.</p>
         pub fn compute_list(mut self, input: crate::model::Compute) -> Self {
             let mut v = self.compute_list.unwrap_or_default();
-            v.push(input);
-            self.compute_list = Some(v);
-            self
+                            v.push(input);
+                            self.compute_list = Some(v);
+                            self
         }
         /// <p>A list of compute resources registered to the fleet you specified.</p>
-        pub fn set_compute_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Compute>>,
-        ) -> Self {
-            self.compute_list = input;
-            self
+        pub fn set_compute_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Compute>>) -> Self {
+            self.compute_list = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2165,17 +2177,20 @@ pub mod list_compute_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListComputeOutput`](crate::output::ListComputeOutput).
         pub fn build(self) -> crate::output::ListComputeOutput {
             crate::output::ListComputeOutput {
-                compute_list: self.compute_list,
-                next_token: self.next_token,
+                compute_list: self.compute_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListComputeOutput {
     /// Creates a new builder-style object to manufacture [`ListComputeOutput`](crate::output::ListComputeOutput).
@@ -2187,7 +2202,7 @@ impl ListComputeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBuildsOutput {
+pub struct ListBuildsOutput  {
     /// <p>A collection of build resources that match the request.</p>
     #[doc(hidden)]
     pub builds: std::option::Option<std::vec::Vec<crate::model::Build>>,
@@ -2197,17 +2212,17 @@ pub struct ListBuildsOutput {
 }
 impl ListBuildsOutput {
     /// <p>A collection of build resources that match the request.</p>
-    pub fn builds(&self) -> std::option::Option<&[crate::model::Build]> {
+    pub fn builds(&self) -> std::option::Option<& [crate::model::Build]> {
         self.builds.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListBuildsOutput`](crate::output::ListBuildsOutput).
 pub mod list_builds_output {
-
+    
     /// A builder for [`ListBuildsOutput`](crate::output::ListBuildsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2222,17 +2237,13 @@ pub mod list_builds_output {
         /// <p>A collection of build resources that match the request.</p>
         pub fn builds(mut self, input: crate::model::Build) -> Self {
             let mut v = self.builds.unwrap_or_default();
-            v.push(input);
-            self.builds = Some(v);
-            self
+                            v.push(input);
+                            self.builds = Some(v);
+                            self
         }
         /// <p>A collection of build resources that match the request.</p>
-        pub fn set_builds(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Build>>,
-        ) -> Self {
-            self.builds = input;
-            self
+        pub fn set_builds(mut self, input: std::option::Option<std::vec::Vec<crate::model::Build>>) -> Self {
+            self.builds = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2241,17 +2252,20 @@ pub mod list_builds_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListBuildsOutput`](crate::output::ListBuildsOutput).
         pub fn build(self) -> crate::output::ListBuildsOutput {
             crate::output::ListBuildsOutput {
-                builds: self.builds,
-                next_token: self.next_token,
+                builds: self.builds
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListBuildsOutput {
     /// Creates a new builder-style object to manufacture [`ListBuildsOutput`](crate::output::ListBuildsOutput).
@@ -2263,7 +2277,7 @@ impl ListBuildsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAliasesOutput {
+pub struct ListAliasesOutput  {
     /// <p>A collection of alias resources that match the request parameters.</p>
     #[doc(hidden)]
     pub aliases: std::option::Option<std::vec::Vec<crate::model::Alias>>,
@@ -2273,17 +2287,17 @@ pub struct ListAliasesOutput {
 }
 impl ListAliasesOutput {
     /// <p>A collection of alias resources that match the request parameters.</p>
-    pub fn aliases(&self) -> std::option::Option<&[crate::model::Alias]> {
+    pub fn aliases(&self) -> std::option::Option<& [crate::model::Alias]> {
         self.aliases.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAliasesOutput`](crate::output::ListAliasesOutput).
 pub mod list_aliases_output {
-
+    
     /// A builder for [`ListAliasesOutput`](crate::output::ListAliasesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2298,17 +2312,13 @@ pub mod list_aliases_output {
         /// <p>A collection of alias resources that match the request parameters.</p>
         pub fn aliases(mut self, input: crate::model::Alias) -> Self {
             let mut v = self.aliases.unwrap_or_default();
-            v.push(input);
-            self.aliases = Some(v);
-            self
+                            v.push(input);
+                            self.aliases = Some(v);
+                            self
         }
         /// <p>A collection of alias resources that match the request parameters.</p>
-        pub fn set_aliases(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Alias>>,
-        ) -> Self {
-            self.aliases = input;
-            self
+        pub fn set_aliases(mut self, input: std::option::Option<std::vec::Vec<crate::model::Alias>>) -> Self {
+            self.aliases = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2317,17 +2327,20 @@ pub mod list_aliases_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAliasesOutput`](crate::output::ListAliasesOutput).
         pub fn build(self) -> crate::output::ListAliasesOutput {
             crate::output::ListAliasesOutput {
-                aliases: self.aliases,
-                next_token: self.next_token,
+                aliases: self.aliases
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAliasesOutput {
     /// Creates a new builder-style object to manufacture [`ListAliasesOutput`](crate::output::ListAliasesOutput).
@@ -2339,20 +2352,20 @@ impl ListAliasesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInstanceAccessOutput {
+pub struct GetInstanceAccessOutput  {
     /// <p>The connection information for a fleet instance, including IP address and access credentials.</p>
     #[doc(hidden)]
     pub instance_access: std::option::Option<crate::model::InstanceAccess>,
 }
 impl GetInstanceAccessOutput {
     /// <p>The connection information for a fleet instance, including IP address and access credentials.</p>
-    pub fn instance_access(&self) -> std::option::Option<&crate::model::InstanceAccess> {
+    pub fn instance_access(&self) -> std::option::Option<& crate::model::InstanceAccess> {
         self.instance_access.as_ref()
     }
 }
 /// See [`GetInstanceAccessOutput`](crate::output::GetInstanceAccessOutput).
 pub mod get_instance_access_output {
-
+    
     /// A builder for [`GetInstanceAccessOutput`](crate::output::GetInstanceAccessOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2365,20 +2378,19 @@ pub mod get_instance_access_output {
             self
         }
         /// <p>The connection information for a fleet instance, including IP address and access credentials.</p>
-        pub fn set_instance_access(
-            mut self,
-            input: std::option::Option<crate::model::InstanceAccess>,
-        ) -> Self {
-            self.instance_access = input;
-            self
+        pub fn set_instance_access(mut self, input: std::option::Option<crate::model::InstanceAccess>) -> Self {
+            self.instance_access = input; self
         }
         /// Consumes the builder and constructs a [`GetInstanceAccessOutput`](crate::output::GetInstanceAccessOutput).
         pub fn build(self) -> crate::output::GetInstanceAccessOutput {
             crate::output::GetInstanceAccessOutput {
-                instance_access: self.instance_access,
+                instance_access: self.instance_access
+                ,
             }
         }
     }
+    
+    
 }
 impl GetInstanceAccessOutput {
     /// Creates a new builder-style object to manufacture [`GetInstanceAccessOutput`](crate::output::GetInstanceAccessOutput).
@@ -2390,20 +2402,20 @@ impl GetInstanceAccessOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGameSessionLogUrlOutput {
+pub struct GetGameSessionLogUrlOutput  {
     /// <p>Location of the requested game session logs, available for download. This URL is valid for 15 minutes, after which S3 will reject any download request using this URL. You can request a new URL any time within the 14-day period that the logs are retained.</p>
     #[doc(hidden)]
     pub pre_signed_url: std::option::Option<std::string::String>,
 }
 impl GetGameSessionLogUrlOutput {
     /// <p>Location of the requested game session logs, available for download. This URL is valid for 15 minutes, after which S3 will reject any download request using this URL. You can request a new URL any time within the 14-day period that the logs are retained.</p>
-    pub fn pre_signed_url(&self) -> std::option::Option<&str> {
+    pub fn pre_signed_url(&self) -> std::option::Option<& str> {
         self.pre_signed_url.as_deref()
     }
 }
 /// See [`GetGameSessionLogUrlOutput`](crate::output::GetGameSessionLogUrlOutput).
 pub mod get_game_session_log_url_output {
-
+    
     /// A builder for [`GetGameSessionLogUrlOutput`](crate::output::GetGameSessionLogUrlOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2416,20 +2428,19 @@ pub mod get_game_session_log_url_output {
             self
         }
         /// <p>Location of the requested game session logs, available for download. This URL is valid for 15 minutes, after which S3 will reject any download request using this URL. You can request a new URL any time within the 14-day period that the logs are retained.</p>
-        pub fn set_pre_signed_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pre_signed_url = input;
-            self
+        pub fn set_pre_signed_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pre_signed_url = input; self
         }
         /// Consumes the builder and constructs a [`GetGameSessionLogUrlOutput`](crate::output::GetGameSessionLogUrlOutput).
         pub fn build(self) -> crate::output::GetGameSessionLogUrlOutput {
             crate::output::GetGameSessionLogUrlOutput {
-                pre_signed_url: self.pre_signed_url,
+                pre_signed_url: self.pre_signed_url
+                ,
             }
         }
     }
+    
+    
 }
 impl GetGameSessionLogUrlOutput {
     /// Creates a new builder-style object to manufacture [`GetGameSessionLogUrlOutput`](crate::output::GetGameSessionLogUrlOutput).
@@ -2441,7 +2452,7 @@ impl GetGameSessionLogUrlOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetComputeAuthTokenOutput {
+pub struct GetComputeAuthTokenOutput  {
     /// <p>A unique identifier for the fleet that the compute is registered to.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -2469,39 +2480,39 @@ pub struct GetComputeAuthTokenOutput {
 }
 impl GetComputeAuthTokenOutput {
     /// <p>A unique identifier for the fleet that the compute is registered to.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The name of the compute resource you are requesting the authorization token for.</p>
-    pub fn compute_name(&self) -> std::option::Option<&str> {
+    pub fn compute_name(&self) -> std::option::Option<& str> {
         self.compute_name.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code> </p>
-    pub fn compute_arn(&self) -> std::option::Option<&str> {
+    pub fn compute_arn(&self) -> std::option::Option<& str> {
         self.compute_arn.as_deref()
     }
     /// <p>The authorization token that your game server uses to authenticate with GameLift.</p>
-    pub fn auth_token(&self) -> std::option::Option<&str> {
+    pub fn auth_token(&self) -> std::option::Option<& str> {
         self.auth_token.as_deref()
     }
     /// <p>The amount of time until the authorization token is no longer valid. To continue using the compute resource for game server hosting, renew the authorization token by using this operation again.</p>
-    pub fn expiration_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiration_timestamp.as_ref()
     }
 }
 /// See [`GetComputeAuthTokenOutput`](crate::output::GetComputeAuthTokenOutput).
 pub mod get_compute_auth_token_output {
-
+    
     /// A builder for [`GetComputeAuthTokenOutput`](crate::output::GetComputeAuthTokenOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2520,8 +2531,7 @@ pub mod get_compute_auth_token_output {
         }
         /// <p>A unique identifier for the fleet that the compute is registered to.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_id = input;
-            self
+            self.fleet_id = input; self
         }
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
         /// <region>
@@ -2536,8 +2546,7 @@ pub mod get_compute_auth_token_output {
         /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
         /// </region></code>.</p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_arn = input;
-            self
+            self.fleet_arn = input; self
         }
         /// <p>The name of the compute resource you are requesting the authorization token for.</p>
         pub fn compute_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2546,8 +2555,7 @@ pub mod get_compute_auth_token_output {
         }
         /// <p>The name of the compute resource you are requesting the authorization token for.</p>
         pub fn set_compute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.compute_name = input;
-            self
+            self.compute_name = input; self
         }
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
         /// <region>
@@ -2562,8 +2570,7 @@ pub mod get_compute_auth_token_output {
         /// ::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
         /// </region></code> </p>
         pub fn set_compute_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.compute_arn = input;
-            self
+            self.compute_arn = input; self
         }
         /// <p>The authorization token that your game server uses to authenticate with GameLift.</p>
         pub fn auth_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2572,8 +2579,7 @@ pub mod get_compute_auth_token_output {
         }
         /// <p>The authorization token that your game server uses to authenticate with GameLift.</p>
         pub fn set_auth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.auth_token = input;
-            self
+            self.auth_token = input; self
         }
         /// <p>The amount of time until the authorization token is no longer valid. To continue using the compute resource for game server hosting, renew the authorization token by using this operation again.</p>
         pub fn expiration_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2581,25 +2587,29 @@ pub mod get_compute_auth_token_output {
             self
         }
         /// <p>The amount of time until the authorization token is no longer valid. To continue using the compute resource for game server hosting, renew the authorization token by using this operation again.</p>
-        pub fn set_expiration_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.expiration_timestamp = input;
-            self
+        pub fn set_expiration_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.expiration_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`GetComputeAuthTokenOutput`](crate::output::GetComputeAuthTokenOutput).
         pub fn build(self) -> crate::output::GetComputeAuthTokenOutput {
             crate::output::GetComputeAuthTokenOutput {
-                fleet_id: self.fleet_id,
-                fleet_arn: self.fleet_arn,
-                compute_name: self.compute_name,
-                compute_arn: self.compute_arn,
-                auth_token: self.auth_token,
-                expiration_timestamp: self.expiration_timestamp,
+                fleet_id: self.fleet_id
+                ,
+                fleet_arn: self.fleet_arn
+                ,
+                compute_name: self.compute_name
+                ,
+                compute_arn: self.compute_arn
+                ,
+                auth_token: self.auth_token
+                ,
+                expiration_timestamp: self.expiration_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl GetComputeAuthTokenOutput {
     /// Creates a new builder-style object to manufacture [`GetComputeAuthTokenOutput`](crate::output::GetComputeAuthTokenOutput).
@@ -2611,7 +2621,7 @@ impl GetComputeAuthTokenOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetComputeAccessOutput {
+pub struct GetComputeAccessOutput  {
     /// <p>The fleet ID of compute resource.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -2636,33 +2646,33 @@ pub struct GetComputeAccessOutput {
 }
 impl GetComputeAccessOutput {
     /// <p>The fleet ID of compute resource.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The name of the compute resource you requested credentials for.</p>
-    pub fn compute_name(&self) -> std::option::Option<&str> {
+    pub fn compute_name(&self) -> std::option::Option<& str> {
         self.compute_name.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn compute_arn(&self) -> std::option::Option<&str> {
+    pub fn compute_arn(&self) -> std::option::Option<& str> {
         self.compute_arn.as_deref()
     }
     /// <p>The access credentials for the compute resource.</p>
-    pub fn credentials(&self) -> std::option::Option<&crate::model::AwsCredentials> {
+    pub fn credentials(&self) -> std::option::Option<& crate::model::AwsCredentials> {
         self.credentials.as_ref()
     }
 }
-impl std::fmt::Debug for GetComputeAccessOutput {
+impl  std::fmt::Debug for GetComputeAccessOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetComputeAccessOutput");
         formatter.field("fleet_id", &self.fleet_id);
@@ -2675,7 +2685,7 @@ impl std::fmt::Debug for GetComputeAccessOutput {
 }
 /// See [`GetComputeAccessOutput`](crate::output::GetComputeAccessOutput).
 pub mod get_compute_access_output {
-
+    
     /// A builder for [`GetComputeAccessOutput`](crate::output::GetComputeAccessOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2693,8 +2703,7 @@ pub mod get_compute_access_output {
         }
         /// <p>The fleet ID of compute resource.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_id = input;
-            self
+            self.fleet_id = input; self
         }
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
         /// <region>
@@ -2709,8 +2718,7 @@ pub mod get_compute_access_output {
         /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
         /// </region></code>.</p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_arn = input;
-            self
+            self.fleet_arn = input; self
         }
         /// <p>The name of the compute resource you requested credentials for.</p>
         pub fn compute_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2719,8 +2727,7 @@ pub mod get_compute_access_output {
         }
         /// <p>The name of the compute resource you requested credentials for.</p>
         pub fn set_compute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.compute_name = input;
-            self
+            self.compute_name = input; self
         }
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
         /// <region>
@@ -2735,8 +2742,7 @@ pub mod get_compute_access_output {
         /// ::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
         /// </region></code>.</p>
         pub fn set_compute_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.compute_arn = input;
-            self
+            self.compute_arn = input; self
         }
         /// <p>The access credentials for the compute resource.</p>
         pub fn credentials(mut self, input: crate::model::AwsCredentials) -> Self {
@@ -2744,21 +2750,22 @@ pub mod get_compute_access_output {
             self
         }
         /// <p>The access credentials for the compute resource.</p>
-        pub fn set_credentials(
-            mut self,
-            input: std::option::Option<crate::model::AwsCredentials>,
-        ) -> Self {
-            self.credentials = input;
-            self
+        pub fn set_credentials(mut self, input: std::option::Option<crate::model::AwsCredentials>) -> Self {
+            self.credentials = input; self
         }
         /// Consumes the builder and constructs a [`GetComputeAccessOutput`](crate::output::GetComputeAccessOutput).
         pub fn build(self) -> crate::output::GetComputeAccessOutput {
             crate::output::GetComputeAccessOutput {
-                fleet_id: self.fleet_id,
-                fleet_arn: self.fleet_arn,
-                compute_name: self.compute_name,
-                compute_arn: self.compute_arn,
-                credentials: self.credentials,
+                fleet_id: self.fleet_id
+                ,
+                fleet_arn: self.fleet_arn
+                ,
+                compute_name: self.compute_name
+                ,
+                compute_arn: self.compute_arn
+                ,
+                credentials: self.credentials
+                ,
             }
         }
     }
@@ -2773,6 +2780,8 @@ pub mod get_compute_access_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetComputeAccessOutput {
     /// Creates a new builder-style object to manufacture [`GetComputeAccessOutput`](crate::output::GetComputeAccessOutput).
@@ -2784,28 +2793,24 @@ impl GetComputeAccessOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVpcPeeringConnectionsOutput {
+pub struct DescribeVpcPeeringConnectionsOutput  {
     /// <p>A collection of VPC peering connection records that match the request.</p>
     #[doc(hidden)]
-    pub vpc_peering_connections:
-        std::option::Option<std::vec::Vec<crate::model::VpcPeeringConnection>>,
+    pub vpc_peering_connections: std::option::Option<std::vec::Vec<crate::model::VpcPeeringConnection>>,
 }
 impl DescribeVpcPeeringConnectionsOutput {
     /// <p>A collection of VPC peering connection records that match the request.</p>
-    pub fn vpc_peering_connections(
-        &self,
-    ) -> std::option::Option<&[crate::model::VpcPeeringConnection]> {
+    pub fn vpc_peering_connections(&self) -> std::option::Option<& [crate::model::VpcPeeringConnection]> {
         self.vpc_peering_connections.as_deref()
     }
 }
 /// See [`DescribeVpcPeeringConnectionsOutput`](crate::output::DescribeVpcPeeringConnectionsOutput).
 pub mod describe_vpc_peering_connections_output {
-
+    
     /// A builder for [`DescribeVpcPeeringConnectionsOutput`](crate::output::DescribeVpcPeeringConnectionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) vpc_peering_connections:
-            std::option::Option<std::vec::Vec<crate::model::VpcPeeringConnection>>,
+        pub(crate) vpc_peering_connections: std::option::Option<std::vec::Vec<crate::model::VpcPeeringConnection>>,
     }
     impl Builder {
         /// Appends an item to `vpc_peering_connections`.
@@ -2813,30 +2818,26 @@ pub mod describe_vpc_peering_connections_output {
         /// To override the contents of this collection use [`set_vpc_peering_connections`](Self::set_vpc_peering_connections).
         ///
         /// <p>A collection of VPC peering connection records that match the request.</p>
-        pub fn vpc_peering_connections(
-            mut self,
-            input: crate::model::VpcPeeringConnection,
-        ) -> Self {
+        pub fn vpc_peering_connections(mut self, input: crate::model::VpcPeeringConnection) -> Self {
             let mut v = self.vpc_peering_connections.unwrap_or_default();
-            v.push(input);
-            self.vpc_peering_connections = Some(v);
-            self
+                            v.push(input);
+                            self.vpc_peering_connections = Some(v);
+                            self
         }
         /// <p>A collection of VPC peering connection records that match the request.</p>
-        pub fn set_vpc_peering_connections(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VpcPeeringConnection>>,
-        ) -> Self {
-            self.vpc_peering_connections = input;
-            self
+        pub fn set_vpc_peering_connections(mut self, input: std::option::Option<std::vec::Vec<crate::model::VpcPeeringConnection>>) -> Self {
+            self.vpc_peering_connections = input; self
         }
         /// Consumes the builder and constructs a [`DescribeVpcPeeringConnectionsOutput`](crate::output::DescribeVpcPeeringConnectionsOutput).
         pub fn build(self) -> crate::output::DescribeVpcPeeringConnectionsOutput {
             crate::output::DescribeVpcPeeringConnectionsOutput {
-                vpc_peering_connections: self.vpc_peering_connections,
+                vpc_peering_connections: self.vpc_peering_connections
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeVpcPeeringConnectionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcPeeringConnectionsOutput`](crate::output::DescribeVpcPeeringConnectionsOutput).
@@ -2848,28 +2849,24 @@ impl DescribeVpcPeeringConnectionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVpcPeeringAuthorizationsOutput {
+pub struct DescribeVpcPeeringAuthorizationsOutput  {
     /// <p>A collection of objects that describe all valid VPC peering operations for the current Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub vpc_peering_authorizations:
-        std::option::Option<std::vec::Vec<crate::model::VpcPeeringAuthorization>>,
+    pub vpc_peering_authorizations: std::option::Option<std::vec::Vec<crate::model::VpcPeeringAuthorization>>,
 }
 impl DescribeVpcPeeringAuthorizationsOutput {
     /// <p>A collection of objects that describe all valid VPC peering operations for the current Amazon Web Services account.</p>
-    pub fn vpc_peering_authorizations(
-        &self,
-    ) -> std::option::Option<&[crate::model::VpcPeeringAuthorization]> {
+    pub fn vpc_peering_authorizations(&self) -> std::option::Option<& [crate::model::VpcPeeringAuthorization]> {
         self.vpc_peering_authorizations.as_deref()
     }
 }
 /// See [`DescribeVpcPeeringAuthorizationsOutput`](crate::output::DescribeVpcPeeringAuthorizationsOutput).
 pub mod describe_vpc_peering_authorizations_output {
-
+    
     /// A builder for [`DescribeVpcPeeringAuthorizationsOutput`](crate::output::DescribeVpcPeeringAuthorizationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) vpc_peering_authorizations:
-            std::option::Option<std::vec::Vec<crate::model::VpcPeeringAuthorization>>,
+        pub(crate) vpc_peering_authorizations: std::option::Option<std::vec::Vec<crate::model::VpcPeeringAuthorization>>,
     }
     impl Builder {
         /// Appends an item to `vpc_peering_authorizations`.
@@ -2877,30 +2874,26 @@ pub mod describe_vpc_peering_authorizations_output {
         /// To override the contents of this collection use [`set_vpc_peering_authorizations`](Self::set_vpc_peering_authorizations).
         ///
         /// <p>A collection of objects that describe all valid VPC peering operations for the current Amazon Web Services account.</p>
-        pub fn vpc_peering_authorizations(
-            mut self,
-            input: crate::model::VpcPeeringAuthorization,
-        ) -> Self {
+        pub fn vpc_peering_authorizations(mut self, input: crate::model::VpcPeeringAuthorization) -> Self {
             let mut v = self.vpc_peering_authorizations.unwrap_or_default();
-            v.push(input);
-            self.vpc_peering_authorizations = Some(v);
-            self
+                            v.push(input);
+                            self.vpc_peering_authorizations = Some(v);
+                            self
         }
         /// <p>A collection of objects that describe all valid VPC peering operations for the current Amazon Web Services account.</p>
-        pub fn set_vpc_peering_authorizations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VpcPeeringAuthorization>>,
-        ) -> Self {
-            self.vpc_peering_authorizations = input;
-            self
+        pub fn set_vpc_peering_authorizations(mut self, input: std::option::Option<std::vec::Vec<crate::model::VpcPeeringAuthorization>>) -> Self {
+            self.vpc_peering_authorizations = input; self
         }
         /// Consumes the builder and constructs a [`DescribeVpcPeeringAuthorizationsOutput`](crate::output::DescribeVpcPeeringAuthorizationsOutput).
         pub fn build(self) -> crate::output::DescribeVpcPeeringAuthorizationsOutput {
             crate::output::DescribeVpcPeeringAuthorizationsOutput {
-                vpc_peering_authorizations: self.vpc_peering_authorizations,
+                vpc_peering_authorizations: self.vpc_peering_authorizations
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeVpcPeeringAuthorizationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcPeeringAuthorizationsOutput`](crate::output::DescribeVpcPeeringAuthorizationsOutput).
@@ -2912,20 +2905,20 @@ impl DescribeVpcPeeringAuthorizationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeScriptOutput {
+pub struct DescribeScriptOutput  {
     /// <p>A set of properties describing the requested script.</p>
     #[doc(hidden)]
     pub script: std::option::Option<crate::model::Script>,
 }
 impl DescribeScriptOutput {
     /// <p>A set of properties describing the requested script.</p>
-    pub fn script(&self) -> std::option::Option<&crate::model::Script> {
+    pub fn script(&self) -> std::option::Option<& crate::model::Script> {
         self.script.as_ref()
     }
 }
 /// See [`DescribeScriptOutput`](crate::output::DescribeScriptOutput).
 pub mod describe_script_output {
-
+    
     /// A builder for [`DescribeScriptOutput`](crate::output::DescribeScriptOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2939,16 +2932,18 @@ pub mod describe_script_output {
         }
         /// <p>A set of properties describing the requested script.</p>
         pub fn set_script(mut self, input: std::option::Option<crate::model::Script>) -> Self {
-            self.script = input;
-            self
+            self.script = input; self
         }
         /// Consumes the builder and constructs a [`DescribeScriptOutput`](crate::output::DescribeScriptOutput).
         pub fn build(self) -> crate::output::DescribeScriptOutput {
             crate::output::DescribeScriptOutput {
-                script: self.script,
+                script: self.script
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeScriptOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScriptOutput`](crate::output::DescribeScriptOutput).
@@ -2960,7 +2955,7 @@ impl DescribeScriptOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeScalingPoliciesOutput {
+pub struct DescribeScalingPoliciesOutput  {
     /// <p>A collection of objects containing the scaling policies matching the request.</p>
     #[doc(hidden)]
     pub scaling_policies: std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>,
@@ -2970,22 +2965,21 @@ pub struct DescribeScalingPoliciesOutput {
 }
 impl DescribeScalingPoliciesOutput {
     /// <p>A collection of objects containing the scaling policies matching the request.</p>
-    pub fn scaling_policies(&self) -> std::option::Option<&[crate::model::ScalingPolicy]> {
+    pub fn scaling_policies(&self) -> std::option::Option<& [crate::model::ScalingPolicy]> {
         self.scaling_policies.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeScalingPoliciesOutput`](crate::output::DescribeScalingPoliciesOutput).
 pub mod describe_scaling_policies_output {
-
+    
     /// A builder for [`DescribeScalingPoliciesOutput`](crate::output::DescribeScalingPoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) scaling_policies:
-            std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>,
+        pub(crate) scaling_policies: std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2996,17 +2990,13 @@ pub mod describe_scaling_policies_output {
         /// <p>A collection of objects containing the scaling policies matching the request.</p>
         pub fn scaling_policies(mut self, input: crate::model::ScalingPolicy) -> Self {
             let mut v = self.scaling_policies.unwrap_or_default();
-            v.push(input);
-            self.scaling_policies = Some(v);
-            self
+                            v.push(input);
+                            self.scaling_policies = Some(v);
+                            self
         }
         /// <p>A collection of objects containing the scaling policies matching the request.</p>
-        pub fn set_scaling_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>,
-        ) -> Self {
-            self.scaling_policies = input;
-            self
+        pub fn set_scaling_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>) -> Self {
+            self.scaling_policies = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3015,17 +3005,20 @@ pub mod describe_scaling_policies_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeScalingPoliciesOutput`](crate::output::DescribeScalingPoliciesOutput).
         pub fn build(self) -> crate::output::DescribeScalingPoliciesOutput {
             crate::output::DescribeScalingPoliciesOutput {
-                scaling_policies: self.scaling_policies,
-                next_token: self.next_token,
+                scaling_policies: self.scaling_policies
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeScalingPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeScalingPoliciesOutput`](crate::output::DescribeScalingPoliciesOutput).
@@ -3037,22 +3030,20 @@ impl DescribeScalingPoliciesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRuntimeConfigurationOutput {
+pub struct DescribeRuntimeConfigurationOutput  {
     /// <p>Instructions that describe how server processes should be launched and maintained on each instance in the fleet.</p>
     #[doc(hidden)]
     pub runtime_configuration: std::option::Option<crate::model::RuntimeConfiguration>,
 }
 impl DescribeRuntimeConfigurationOutput {
     /// <p>Instructions that describe how server processes should be launched and maintained on each instance in the fleet.</p>
-    pub fn runtime_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::RuntimeConfiguration> {
+    pub fn runtime_configuration(&self) -> std::option::Option<& crate::model::RuntimeConfiguration> {
         self.runtime_configuration.as_ref()
     }
 }
 /// See [`DescribeRuntimeConfigurationOutput`](crate::output::DescribeRuntimeConfigurationOutput).
 pub mod describe_runtime_configuration_output {
-
+    
     /// A builder for [`DescribeRuntimeConfigurationOutput`](crate::output::DescribeRuntimeConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3065,20 +3056,19 @@ pub mod describe_runtime_configuration_output {
             self
         }
         /// <p>Instructions that describe how server processes should be launched and maintained on each instance in the fleet.</p>
-        pub fn set_runtime_configuration(
-            mut self,
-            input: std::option::Option<crate::model::RuntimeConfiguration>,
-        ) -> Self {
-            self.runtime_configuration = input;
-            self
+        pub fn set_runtime_configuration(mut self, input: std::option::Option<crate::model::RuntimeConfiguration>) -> Self {
+            self.runtime_configuration = input; self
         }
         /// Consumes the builder and constructs a [`DescribeRuntimeConfigurationOutput`](crate::output::DescribeRuntimeConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeRuntimeConfigurationOutput {
             crate::output::DescribeRuntimeConfigurationOutput {
-                runtime_configuration: self.runtime_configuration,
+                runtime_configuration: self.runtime_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeRuntimeConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRuntimeConfigurationOutput`](crate::output::DescribeRuntimeConfigurationOutput).
@@ -3090,7 +3080,7 @@ impl DescribeRuntimeConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePlayerSessionsOutput {
+pub struct DescribePlayerSessionsOutput  {
     /// <p>A collection of objects containing properties for each player session that matches the request.</p>
     #[doc(hidden)]
     pub player_sessions: std::option::Option<std::vec::Vec<crate::model::PlayerSession>>,
@@ -3100,17 +3090,17 @@ pub struct DescribePlayerSessionsOutput {
 }
 impl DescribePlayerSessionsOutput {
     /// <p>A collection of objects containing properties for each player session that matches the request.</p>
-    pub fn player_sessions(&self) -> std::option::Option<&[crate::model::PlayerSession]> {
+    pub fn player_sessions(&self) -> std::option::Option<& [crate::model::PlayerSession]> {
         self.player_sessions.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribePlayerSessionsOutput`](crate::output::DescribePlayerSessionsOutput).
 pub mod describe_player_sessions_output {
-
+    
     /// A builder for [`DescribePlayerSessionsOutput`](crate::output::DescribePlayerSessionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3125,17 +3115,13 @@ pub mod describe_player_sessions_output {
         /// <p>A collection of objects containing properties for each player session that matches the request.</p>
         pub fn player_sessions(mut self, input: crate::model::PlayerSession) -> Self {
             let mut v = self.player_sessions.unwrap_or_default();
-            v.push(input);
-            self.player_sessions = Some(v);
-            self
+                            v.push(input);
+                            self.player_sessions = Some(v);
+                            self
         }
         /// <p>A collection of objects containing properties for each player session that matches the request.</p>
-        pub fn set_player_sessions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PlayerSession>>,
-        ) -> Self {
-            self.player_sessions = input;
-            self
+        pub fn set_player_sessions(mut self, input: std::option::Option<std::vec::Vec<crate::model::PlayerSession>>) -> Self {
+            self.player_sessions = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3144,17 +3130,20 @@ pub mod describe_player_sessions_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribePlayerSessionsOutput`](crate::output::DescribePlayerSessionsOutput).
         pub fn build(self) -> crate::output::DescribePlayerSessionsOutput {
             crate::output::DescribePlayerSessionsOutput {
-                player_sessions: self.player_sessions,
-                next_token: self.next_token,
+                player_sessions: self.player_sessions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePlayerSessionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribePlayerSessionsOutput`](crate::output::DescribePlayerSessionsOutput).
@@ -3166,7 +3155,7 @@ impl DescribePlayerSessionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMatchmakingRuleSetsOutput {
+pub struct DescribeMatchmakingRuleSetsOutput  {
     /// <p>A collection of requested matchmaking rule set objects. </p>
     #[doc(hidden)]
     pub rule_sets: std::option::Option<std::vec::Vec<crate::model::MatchmakingRuleSet>>,
@@ -3176,17 +3165,17 @@ pub struct DescribeMatchmakingRuleSetsOutput {
 }
 impl DescribeMatchmakingRuleSetsOutput {
     /// <p>A collection of requested matchmaking rule set objects. </p>
-    pub fn rule_sets(&self) -> std::option::Option<&[crate::model::MatchmakingRuleSet]> {
+    pub fn rule_sets(&self) -> std::option::Option<& [crate::model::MatchmakingRuleSet]> {
         self.rule_sets.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeMatchmakingRuleSetsOutput`](crate::output::DescribeMatchmakingRuleSetsOutput).
 pub mod describe_matchmaking_rule_sets_output {
-
+    
     /// A builder for [`DescribeMatchmakingRuleSetsOutput`](crate::output::DescribeMatchmakingRuleSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3201,17 +3190,13 @@ pub mod describe_matchmaking_rule_sets_output {
         /// <p>A collection of requested matchmaking rule set objects. </p>
         pub fn rule_sets(mut self, input: crate::model::MatchmakingRuleSet) -> Self {
             let mut v = self.rule_sets.unwrap_or_default();
-            v.push(input);
-            self.rule_sets = Some(v);
-            self
+                            v.push(input);
+                            self.rule_sets = Some(v);
+                            self
         }
         /// <p>A collection of requested matchmaking rule set objects. </p>
-        pub fn set_rule_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MatchmakingRuleSet>>,
-        ) -> Self {
-            self.rule_sets = input;
-            self
+        pub fn set_rule_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::MatchmakingRuleSet>>) -> Self {
+            self.rule_sets = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3220,17 +3205,20 @@ pub mod describe_matchmaking_rule_sets_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMatchmakingRuleSetsOutput`](crate::output::DescribeMatchmakingRuleSetsOutput).
         pub fn build(self) -> crate::output::DescribeMatchmakingRuleSetsOutput {
             crate::output::DescribeMatchmakingRuleSetsOutput {
-                rule_sets: self.rule_sets,
-                next_token: self.next_token,
+                rule_sets: self.rule_sets
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMatchmakingRuleSetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMatchmakingRuleSetsOutput`](crate::output::DescribeMatchmakingRuleSetsOutput).
@@ -3242,7 +3230,7 @@ impl DescribeMatchmakingRuleSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMatchmakingConfigurationsOutput {
+pub struct DescribeMatchmakingConfigurationsOutput  {
     /// <p>A collection of requested matchmaking configurations.</p>
     #[doc(hidden)]
     pub configurations: std::option::Option<std::vec::Vec<crate::model::MatchmakingConfiguration>>,
@@ -3252,22 +3240,21 @@ pub struct DescribeMatchmakingConfigurationsOutput {
 }
 impl DescribeMatchmakingConfigurationsOutput {
     /// <p>A collection of requested matchmaking configurations.</p>
-    pub fn configurations(&self) -> std::option::Option<&[crate::model::MatchmakingConfiguration]> {
+    pub fn configurations(&self) -> std::option::Option<& [crate::model::MatchmakingConfiguration]> {
         self.configurations.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeMatchmakingConfigurationsOutput`](crate::output::DescribeMatchmakingConfigurationsOutput).
 pub mod describe_matchmaking_configurations_output {
-
+    
     /// A builder for [`DescribeMatchmakingConfigurationsOutput`](crate::output::DescribeMatchmakingConfigurationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) configurations:
-            std::option::Option<std::vec::Vec<crate::model::MatchmakingConfiguration>>,
+        pub(crate) configurations: std::option::Option<std::vec::Vec<crate::model::MatchmakingConfiguration>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3278,17 +3265,13 @@ pub mod describe_matchmaking_configurations_output {
         /// <p>A collection of requested matchmaking configurations.</p>
         pub fn configurations(mut self, input: crate::model::MatchmakingConfiguration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input);
-            self.configurations = Some(v);
-            self
+                            v.push(input);
+                            self.configurations = Some(v);
+                            self
         }
         /// <p>A collection of requested matchmaking configurations.</p>
-        pub fn set_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MatchmakingConfiguration>>,
-        ) -> Self {
-            self.configurations = input;
-            self
+        pub fn set_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::MatchmakingConfiguration>>) -> Self {
+            self.configurations = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3297,17 +3280,20 @@ pub mod describe_matchmaking_configurations_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMatchmakingConfigurationsOutput`](crate::output::DescribeMatchmakingConfigurationsOutput).
         pub fn build(self) -> crate::output::DescribeMatchmakingConfigurationsOutput {
             crate::output::DescribeMatchmakingConfigurationsOutput {
-                configurations: self.configurations,
-                next_token: self.next_token,
+                configurations: self.configurations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMatchmakingConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMatchmakingConfigurationsOutput`](crate::output::DescribeMatchmakingConfigurationsOutput).
@@ -3319,20 +3305,20 @@ impl DescribeMatchmakingConfigurationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMatchmakingOutput {
+pub struct DescribeMatchmakingOutput  {
     /// <p>A collection of existing matchmaking ticket objects matching the request.</p>
     #[doc(hidden)]
     pub ticket_list: std::option::Option<std::vec::Vec<crate::model::MatchmakingTicket>>,
 }
 impl DescribeMatchmakingOutput {
     /// <p>A collection of existing matchmaking ticket objects matching the request.</p>
-    pub fn ticket_list(&self) -> std::option::Option<&[crate::model::MatchmakingTicket]> {
+    pub fn ticket_list(&self) -> std::option::Option<& [crate::model::MatchmakingTicket]> {
         self.ticket_list.as_deref()
     }
 }
 /// See [`DescribeMatchmakingOutput`](crate::output::DescribeMatchmakingOutput).
 pub mod describe_matchmaking_output {
-
+    
     /// A builder for [`DescribeMatchmakingOutput`](crate::output::DescribeMatchmakingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3346,25 +3332,24 @@ pub mod describe_matchmaking_output {
         /// <p>A collection of existing matchmaking ticket objects matching the request.</p>
         pub fn ticket_list(mut self, input: crate::model::MatchmakingTicket) -> Self {
             let mut v = self.ticket_list.unwrap_or_default();
-            v.push(input);
-            self.ticket_list = Some(v);
-            self
+                            v.push(input);
+                            self.ticket_list = Some(v);
+                            self
         }
         /// <p>A collection of existing matchmaking ticket objects matching the request.</p>
-        pub fn set_ticket_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MatchmakingTicket>>,
-        ) -> Self {
-            self.ticket_list = input;
-            self
+        pub fn set_ticket_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::MatchmakingTicket>>) -> Self {
+            self.ticket_list = input; self
         }
         /// Consumes the builder and constructs a [`DescribeMatchmakingOutput`](crate::output::DescribeMatchmakingOutput).
         pub fn build(self) -> crate::output::DescribeMatchmakingOutput {
             crate::output::DescribeMatchmakingOutput {
-                ticket_list: self.ticket_list,
+                ticket_list: self.ticket_list
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeMatchmakingOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMatchmakingOutput`](crate::output::DescribeMatchmakingOutput).
@@ -3376,7 +3361,7 @@ impl DescribeMatchmakingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstancesOutput {
+pub struct DescribeInstancesOutput  {
     /// <p>A collection of objects containing properties for each instance returned.</p>
     #[doc(hidden)]
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
@@ -3386,17 +3371,17 @@ pub struct DescribeInstancesOutput {
 }
 impl DescribeInstancesOutput {
     /// <p>A collection of objects containing properties for each instance returned.</p>
-    pub fn instances(&self) -> std::option::Option<&[crate::model::Instance]> {
+    pub fn instances(&self) -> std::option::Option<& [crate::model::Instance]> {
         self.instances.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeInstancesOutput`](crate::output::DescribeInstancesOutput).
 pub mod describe_instances_output {
-
+    
     /// A builder for [`DescribeInstancesOutput`](crate::output::DescribeInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3411,17 +3396,13 @@ pub mod describe_instances_output {
         /// <p>A collection of objects containing properties for each instance returned.</p>
         pub fn instances(mut self, input: crate::model::Instance) -> Self {
             let mut v = self.instances.unwrap_or_default();
-            v.push(input);
-            self.instances = Some(v);
-            self
+                            v.push(input);
+                            self.instances = Some(v);
+                            self
         }
         /// <p>A collection of objects containing properties for each instance returned.</p>
-        pub fn set_instances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Instance>>,
-        ) -> Self {
-            self.instances = input;
-            self
+        pub fn set_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::Instance>>) -> Self {
+            self.instances = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3430,17 +3411,20 @@ pub mod describe_instances_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInstancesOutput`](crate::output::DescribeInstancesOutput).
         pub fn build(self) -> crate::output::DescribeInstancesOutput {
             crate::output::DescribeInstancesOutput {
-                instances: self.instances,
-                next_token: self.next_token,
+                instances: self.instances
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstancesOutput`](crate::output::DescribeInstancesOutput).
@@ -3452,7 +3436,7 @@ impl DescribeInstancesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGameSessionsOutput {
+pub struct DescribeGameSessionsOutput  {
     /// <p>A collection of properties for each game session that matches the request.</p>
     #[doc(hidden)]
     pub game_sessions: std::option::Option<std::vec::Vec<crate::model::GameSession>>,
@@ -3462,17 +3446,17 @@ pub struct DescribeGameSessionsOutput {
 }
 impl DescribeGameSessionsOutput {
     /// <p>A collection of properties for each game session that matches the request.</p>
-    pub fn game_sessions(&self) -> std::option::Option<&[crate::model::GameSession]> {
+    pub fn game_sessions(&self) -> std::option::Option<& [crate::model::GameSession]> {
         self.game_sessions.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeGameSessionsOutput`](crate::output::DescribeGameSessionsOutput).
 pub mod describe_game_sessions_output {
-
+    
     /// A builder for [`DescribeGameSessionsOutput`](crate::output::DescribeGameSessionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3487,17 +3471,13 @@ pub mod describe_game_sessions_output {
         /// <p>A collection of properties for each game session that matches the request.</p>
         pub fn game_sessions(mut self, input: crate::model::GameSession) -> Self {
             let mut v = self.game_sessions.unwrap_or_default();
-            v.push(input);
-            self.game_sessions = Some(v);
-            self
+                            v.push(input);
+                            self.game_sessions = Some(v);
+                            self
         }
         /// <p>A collection of properties for each game session that matches the request.</p>
-        pub fn set_game_sessions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GameSession>>,
-        ) -> Self {
-            self.game_sessions = input;
-            self
+        pub fn set_game_sessions(mut self, input: std::option::Option<std::vec::Vec<crate::model::GameSession>>) -> Self {
+            self.game_sessions = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3506,17 +3486,20 @@ pub mod describe_game_sessions_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeGameSessionsOutput`](crate::output::DescribeGameSessionsOutput).
         pub fn build(self) -> crate::output::DescribeGameSessionsOutput {
             crate::output::DescribeGameSessionsOutput {
-                game_sessions: self.game_sessions,
-                next_token: self.next_token,
+                game_sessions: self.game_sessions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeGameSessionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGameSessionsOutput`](crate::output::DescribeGameSessionsOutput).
@@ -3528,7 +3511,7 @@ impl DescribeGameSessionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGameSessionQueuesOutput {
+pub struct DescribeGameSessionQueuesOutput  {
     /// <p>A collection of objects that describe the requested game session queues.</p>
     #[doc(hidden)]
     pub game_session_queues: std::option::Option<std::vec::Vec<crate::model::GameSessionQueue>>,
@@ -3538,22 +3521,21 @@ pub struct DescribeGameSessionQueuesOutput {
 }
 impl DescribeGameSessionQueuesOutput {
     /// <p>A collection of objects that describe the requested game session queues.</p>
-    pub fn game_session_queues(&self) -> std::option::Option<&[crate::model::GameSessionQueue]> {
+    pub fn game_session_queues(&self) -> std::option::Option<& [crate::model::GameSessionQueue]> {
         self.game_session_queues.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeGameSessionQueuesOutput`](crate::output::DescribeGameSessionQueuesOutput).
 pub mod describe_game_session_queues_output {
-
+    
     /// A builder for [`DescribeGameSessionQueuesOutput`](crate::output::DescribeGameSessionQueuesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) game_session_queues:
-            std::option::Option<std::vec::Vec<crate::model::GameSessionQueue>>,
+        pub(crate) game_session_queues: std::option::Option<std::vec::Vec<crate::model::GameSessionQueue>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3564,17 +3546,13 @@ pub mod describe_game_session_queues_output {
         /// <p>A collection of objects that describe the requested game session queues.</p>
         pub fn game_session_queues(mut self, input: crate::model::GameSessionQueue) -> Self {
             let mut v = self.game_session_queues.unwrap_or_default();
-            v.push(input);
-            self.game_session_queues = Some(v);
-            self
+                            v.push(input);
+                            self.game_session_queues = Some(v);
+                            self
         }
         /// <p>A collection of objects that describe the requested game session queues.</p>
-        pub fn set_game_session_queues(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GameSessionQueue>>,
-        ) -> Self {
-            self.game_session_queues = input;
-            self
+        pub fn set_game_session_queues(mut self, input: std::option::Option<std::vec::Vec<crate::model::GameSessionQueue>>) -> Self {
+            self.game_session_queues = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3583,17 +3561,20 @@ pub mod describe_game_session_queues_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeGameSessionQueuesOutput`](crate::output::DescribeGameSessionQueuesOutput).
         pub fn build(self) -> crate::output::DescribeGameSessionQueuesOutput {
             crate::output::DescribeGameSessionQueuesOutput {
-                game_session_queues: self.game_session_queues,
-                next_token: self.next_token,
+                game_session_queues: self.game_session_queues
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeGameSessionQueuesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGameSessionQueuesOutput`](crate::output::DescribeGameSessionQueuesOutput).
@@ -3605,22 +3586,20 @@ impl DescribeGameSessionQueuesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGameSessionPlacementOutput {
+pub struct DescribeGameSessionPlacementOutput  {
     /// <p>Object that describes the requested game session placement.</p>
     #[doc(hidden)]
     pub game_session_placement: std::option::Option<crate::model::GameSessionPlacement>,
 }
 impl DescribeGameSessionPlacementOutput {
     /// <p>Object that describes the requested game session placement.</p>
-    pub fn game_session_placement(
-        &self,
-    ) -> std::option::Option<&crate::model::GameSessionPlacement> {
+    pub fn game_session_placement(&self) -> std::option::Option<& crate::model::GameSessionPlacement> {
         self.game_session_placement.as_ref()
     }
 }
 /// See [`DescribeGameSessionPlacementOutput`](crate::output::DescribeGameSessionPlacementOutput).
 pub mod describe_game_session_placement_output {
-
+    
     /// A builder for [`DescribeGameSessionPlacementOutput`](crate::output::DescribeGameSessionPlacementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3633,20 +3612,19 @@ pub mod describe_game_session_placement_output {
             self
         }
         /// <p>Object that describes the requested game session placement.</p>
-        pub fn set_game_session_placement(
-            mut self,
-            input: std::option::Option<crate::model::GameSessionPlacement>,
-        ) -> Self {
-            self.game_session_placement = input;
-            self
+        pub fn set_game_session_placement(mut self, input: std::option::Option<crate::model::GameSessionPlacement>) -> Self {
+            self.game_session_placement = input; self
         }
         /// Consumes the builder and constructs a [`DescribeGameSessionPlacementOutput`](crate::output::DescribeGameSessionPlacementOutput).
         pub fn build(self) -> crate::output::DescribeGameSessionPlacementOutput {
             crate::output::DescribeGameSessionPlacementOutput {
-                game_session_placement: self.game_session_placement,
+                game_session_placement: self.game_session_placement
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeGameSessionPlacementOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGameSessionPlacementOutput`](crate::output::DescribeGameSessionPlacementOutput).
@@ -3658,7 +3636,7 @@ impl DescribeGameSessionPlacementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGameSessionDetailsOutput {
+pub struct DescribeGameSessionDetailsOutput  {
     /// <p>A collection of properties for each game session that matches the request.</p>
     #[doc(hidden)]
     pub game_session_details: std::option::Option<std::vec::Vec<crate::model::GameSessionDetail>>,
@@ -3668,22 +3646,21 @@ pub struct DescribeGameSessionDetailsOutput {
 }
 impl DescribeGameSessionDetailsOutput {
     /// <p>A collection of properties for each game session that matches the request.</p>
-    pub fn game_session_details(&self) -> std::option::Option<&[crate::model::GameSessionDetail]> {
+    pub fn game_session_details(&self) -> std::option::Option<& [crate::model::GameSessionDetail]> {
         self.game_session_details.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeGameSessionDetailsOutput`](crate::output::DescribeGameSessionDetailsOutput).
 pub mod describe_game_session_details_output {
-
+    
     /// A builder for [`DescribeGameSessionDetailsOutput`](crate::output::DescribeGameSessionDetailsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) game_session_details:
-            std::option::Option<std::vec::Vec<crate::model::GameSessionDetail>>,
+        pub(crate) game_session_details: std::option::Option<std::vec::Vec<crate::model::GameSessionDetail>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3694,17 +3671,13 @@ pub mod describe_game_session_details_output {
         /// <p>A collection of properties for each game session that matches the request.</p>
         pub fn game_session_details(mut self, input: crate::model::GameSessionDetail) -> Self {
             let mut v = self.game_session_details.unwrap_or_default();
-            v.push(input);
-            self.game_session_details = Some(v);
-            self
+                            v.push(input);
+                            self.game_session_details = Some(v);
+                            self
         }
         /// <p>A collection of properties for each game session that matches the request.</p>
-        pub fn set_game_session_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GameSessionDetail>>,
-        ) -> Self {
-            self.game_session_details = input;
-            self
+        pub fn set_game_session_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::GameSessionDetail>>) -> Self {
+            self.game_session_details = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3713,17 +3686,20 @@ pub mod describe_game_session_details_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeGameSessionDetailsOutput`](crate::output::DescribeGameSessionDetailsOutput).
         pub fn build(self) -> crate::output::DescribeGameSessionDetailsOutput {
             crate::output::DescribeGameSessionDetailsOutput {
-                game_session_details: self.game_session_details,
-                next_token: self.next_token,
+                game_session_details: self.game_session_details
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeGameSessionDetailsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGameSessionDetailsOutput`](crate::output::DescribeGameSessionDetailsOutput).
@@ -3735,7 +3711,7 @@ impl DescribeGameSessionDetailsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGameServerInstancesOutput {
+pub struct DescribeGameServerInstancesOutput  {
     /// <p>The collection of requested game server instances.</p>
     #[doc(hidden)]
     pub game_server_instances: std::option::Option<std::vec::Vec<crate::model::GameServerInstance>>,
@@ -3745,24 +3721,21 @@ pub struct DescribeGameServerInstancesOutput {
 }
 impl DescribeGameServerInstancesOutput {
     /// <p>The collection of requested game server instances.</p>
-    pub fn game_server_instances(
-        &self,
-    ) -> std::option::Option<&[crate::model::GameServerInstance]> {
+    pub fn game_server_instances(&self) -> std::option::Option<& [crate::model::GameServerInstance]> {
         self.game_server_instances.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeGameServerInstancesOutput`](crate::output::DescribeGameServerInstancesOutput).
 pub mod describe_game_server_instances_output {
-
+    
     /// A builder for [`DescribeGameServerInstancesOutput`](crate::output::DescribeGameServerInstancesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) game_server_instances:
-            std::option::Option<std::vec::Vec<crate::model::GameServerInstance>>,
+        pub(crate) game_server_instances: std::option::Option<std::vec::Vec<crate::model::GameServerInstance>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3773,17 +3746,13 @@ pub mod describe_game_server_instances_output {
         /// <p>The collection of requested game server instances.</p>
         pub fn game_server_instances(mut self, input: crate::model::GameServerInstance) -> Self {
             let mut v = self.game_server_instances.unwrap_or_default();
-            v.push(input);
-            self.game_server_instances = Some(v);
-            self
+                            v.push(input);
+                            self.game_server_instances = Some(v);
+                            self
         }
         /// <p>The collection of requested game server instances.</p>
-        pub fn set_game_server_instances(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GameServerInstance>>,
-        ) -> Self {
-            self.game_server_instances = input;
-            self
+        pub fn set_game_server_instances(mut self, input: std::option::Option<std::vec::Vec<crate::model::GameServerInstance>>) -> Self {
+            self.game_server_instances = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3792,17 +3761,20 @@ pub mod describe_game_server_instances_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeGameServerInstancesOutput`](crate::output::DescribeGameServerInstancesOutput).
         pub fn build(self) -> crate::output::DescribeGameServerInstancesOutput {
             crate::output::DescribeGameServerInstancesOutput {
-                game_server_instances: self.game_server_instances,
-                next_token: self.next_token,
+                game_server_instances: self.game_server_instances
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeGameServerInstancesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGameServerInstancesOutput`](crate::output::DescribeGameServerInstancesOutput).
@@ -3814,20 +3786,20 @@ impl DescribeGameServerInstancesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGameServerGroupOutput {
+pub struct DescribeGameServerGroupOutput  {
     /// <p>An object with the property settings for the requested game server group resource. </p>
     #[doc(hidden)]
     pub game_server_group: std::option::Option<crate::model::GameServerGroup>,
 }
 impl DescribeGameServerGroupOutput {
     /// <p>An object with the property settings for the requested game server group resource. </p>
-    pub fn game_server_group(&self) -> std::option::Option<&crate::model::GameServerGroup> {
+    pub fn game_server_group(&self) -> std::option::Option<& crate::model::GameServerGroup> {
         self.game_server_group.as_ref()
     }
 }
 /// See [`DescribeGameServerGroupOutput`](crate::output::DescribeGameServerGroupOutput).
 pub mod describe_game_server_group_output {
-
+    
     /// A builder for [`DescribeGameServerGroupOutput`](crate::output::DescribeGameServerGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3840,20 +3812,19 @@ pub mod describe_game_server_group_output {
             self
         }
         /// <p>An object with the property settings for the requested game server group resource. </p>
-        pub fn set_game_server_group(
-            mut self,
-            input: std::option::Option<crate::model::GameServerGroup>,
-        ) -> Self {
-            self.game_server_group = input;
-            self
+        pub fn set_game_server_group(mut self, input: std::option::Option<crate::model::GameServerGroup>) -> Self {
+            self.game_server_group = input; self
         }
         /// Consumes the builder and constructs a [`DescribeGameServerGroupOutput`](crate::output::DescribeGameServerGroupOutput).
         pub fn build(self) -> crate::output::DescribeGameServerGroupOutput {
             crate::output::DescribeGameServerGroupOutput {
-                game_server_group: self.game_server_group,
+                game_server_group: self.game_server_group
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeGameServerGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGameServerGroupOutput`](crate::output::DescribeGameServerGroupOutput).
@@ -3865,20 +3836,20 @@ impl DescribeGameServerGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGameServerOutput {
+pub struct DescribeGameServerOutput  {
     /// <p>Object that describes the requested game server.</p>
     #[doc(hidden)]
     pub game_server: std::option::Option<crate::model::GameServer>,
 }
 impl DescribeGameServerOutput {
     /// <p>Object that describes the requested game server.</p>
-    pub fn game_server(&self) -> std::option::Option<&crate::model::GameServer> {
+    pub fn game_server(&self) -> std::option::Option<& crate::model::GameServer> {
         self.game_server.as_ref()
     }
 }
 /// See [`DescribeGameServerOutput`](crate::output::DescribeGameServerOutput).
 pub mod describe_game_server_output {
-
+    
     /// A builder for [`DescribeGameServerOutput`](crate::output::DescribeGameServerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3891,20 +3862,19 @@ pub mod describe_game_server_output {
             self
         }
         /// <p>Object that describes the requested game server.</p>
-        pub fn set_game_server(
-            mut self,
-            input: std::option::Option<crate::model::GameServer>,
-        ) -> Self {
-            self.game_server = input;
-            self
+        pub fn set_game_server(mut self, input: std::option::Option<crate::model::GameServer>) -> Self {
+            self.game_server = input; self
         }
         /// Consumes the builder and constructs a [`DescribeGameServerOutput`](crate::output::DescribeGameServerOutput).
         pub fn build(self) -> crate::output::DescribeGameServerOutput {
             crate::output::DescribeGameServerOutput {
-                game_server: self.game_server,
+                game_server: self.game_server
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeGameServerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeGameServerOutput`](crate::output::DescribeGameServerOutput).
@@ -3916,7 +3886,7 @@ impl DescribeGameServerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetUtilizationOutput {
+pub struct DescribeFleetUtilizationOutput  {
     /// <p>A collection of objects containing utilization information for each requested fleet ID. Utilization objects are returned only for fleets that currently exist.</p>
     #[doc(hidden)]
     pub fleet_utilization: std::option::Option<std::vec::Vec<crate::model::FleetUtilization>>,
@@ -3926,22 +3896,21 @@ pub struct DescribeFleetUtilizationOutput {
 }
 impl DescribeFleetUtilizationOutput {
     /// <p>A collection of objects containing utilization information for each requested fleet ID. Utilization objects are returned only for fleets that currently exist.</p>
-    pub fn fleet_utilization(&self) -> std::option::Option<&[crate::model::FleetUtilization]> {
+    pub fn fleet_utilization(&self) -> std::option::Option<& [crate::model::FleetUtilization]> {
         self.fleet_utilization.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeFleetUtilizationOutput`](crate::output::DescribeFleetUtilizationOutput).
 pub mod describe_fleet_utilization_output {
-
+    
     /// A builder for [`DescribeFleetUtilizationOutput`](crate::output::DescribeFleetUtilizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) fleet_utilization:
-            std::option::Option<std::vec::Vec<crate::model::FleetUtilization>>,
+        pub(crate) fleet_utilization: std::option::Option<std::vec::Vec<crate::model::FleetUtilization>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3952,17 +3921,13 @@ pub mod describe_fleet_utilization_output {
         /// <p>A collection of objects containing utilization information for each requested fleet ID. Utilization objects are returned only for fleets that currently exist.</p>
         pub fn fleet_utilization(mut self, input: crate::model::FleetUtilization) -> Self {
             let mut v = self.fleet_utilization.unwrap_or_default();
-            v.push(input);
-            self.fleet_utilization = Some(v);
-            self
+                            v.push(input);
+                            self.fleet_utilization = Some(v);
+                            self
         }
         /// <p>A collection of objects containing utilization information for each requested fleet ID. Utilization objects are returned only for fleets that currently exist.</p>
-        pub fn set_fleet_utilization(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FleetUtilization>>,
-        ) -> Self {
-            self.fleet_utilization = input;
-            self
+        pub fn set_fleet_utilization(mut self, input: std::option::Option<std::vec::Vec<crate::model::FleetUtilization>>) -> Self {
+            self.fleet_utilization = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3971,17 +3936,20 @@ pub mod describe_fleet_utilization_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFleetUtilizationOutput`](crate::output::DescribeFleetUtilizationOutput).
         pub fn build(self) -> crate::output::DescribeFleetUtilizationOutput {
             crate::output::DescribeFleetUtilizationOutput {
-                fleet_utilization: self.fleet_utilization,
-                next_token: self.next_token,
+                fleet_utilization: self.fleet_utilization
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFleetUtilizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetUtilizationOutput`](crate::output::DescribeFleetUtilizationOutput).
@@ -3993,7 +3961,7 @@ impl DescribeFleetUtilizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetPortSettingsOutput {
+pub struct DescribeFleetPortSettingsOutput  {
     /// <p>A unique identifier for the fleet that was requested. </p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -4015,39 +3983,38 @@ pub struct DescribeFleetPortSettingsOutput {
 }
 impl DescribeFleetPortSettingsOutput {
     /// <p>A unique identifier for the fleet that was requested. </p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The port settings for the requested fleet ID.</p>
-    pub fn inbound_permissions(&self) -> std::option::Option<&[crate::model::IpPermission]> {
+    pub fn inbound_permissions(&self) -> std::option::Option<& [crate::model::IpPermission]> {
         self.inbound_permissions.as_deref()
     }
     /// <p>The current status of updates to the fleet's port settings in the requested fleet location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
-    pub fn update_status(&self) -> std::option::Option<&crate::model::LocationUpdateStatus> {
+    pub fn update_status(&self) -> std::option::Option<& crate::model::LocationUpdateStatus> {
         self.update_status.as_ref()
     }
     /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
 }
 /// See [`DescribeFleetPortSettingsOutput`](crate::output::DescribeFleetPortSettingsOutput).
 pub mod describe_fleet_port_settings_output {
-
+    
     /// A builder for [`DescribeFleetPortSettingsOutput`](crate::output::DescribeFleetPortSettingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
-        pub(crate) inbound_permissions:
-            std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
+        pub(crate) inbound_permissions: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
         pub(crate) update_status: std::option::Option<crate::model::LocationUpdateStatus>,
         pub(crate) location: std::option::Option<std::string::String>,
     }
@@ -4059,8 +4026,7 @@ pub mod describe_fleet_port_settings_output {
         }
         /// <p>A unique identifier for the fleet that was requested. </p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_id = input;
-            self
+            self.fleet_id = input; self
         }
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
         /// <region>
@@ -4075,8 +4041,7 @@ pub mod describe_fleet_port_settings_output {
         /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
         /// </region></code>.</p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_arn = input;
-            self
+            self.fleet_arn = input; self
         }
         /// Appends an item to `inbound_permissions`.
         ///
@@ -4085,17 +4050,13 @@ pub mod describe_fleet_port_settings_output {
         /// <p>The port settings for the requested fleet ID.</p>
         pub fn inbound_permissions(mut self, input: crate::model::IpPermission) -> Self {
             let mut v = self.inbound_permissions.unwrap_or_default();
-            v.push(input);
-            self.inbound_permissions = Some(v);
-            self
+                            v.push(input);
+                            self.inbound_permissions = Some(v);
+                            self
         }
         /// <p>The port settings for the requested fleet ID.</p>
-        pub fn set_inbound_permissions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
-        ) -> Self {
-            self.inbound_permissions = input;
-            self
+        pub fn set_inbound_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::model::IpPermission>>) -> Self {
+            self.inbound_permissions = input; self
         }
         /// <p>The current status of updates to the fleet's port settings in the requested fleet location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
         pub fn update_status(mut self, input: crate::model::LocationUpdateStatus) -> Self {
@@ -4103,12 +4064,8 @@ pub mod describe_fleet_port_settings_output {
             self
         }
         /// <p>The current status of updates to the fleet's port settings in the requested fleet location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
-        pub fn set_update_status(
-            mut self,
-            input: std::option::Option<crate::model::LocationUpdateStatus>,
-        ) -> Self {
-            self.update_status = input;
-            self
+        pub fn set_update_status(mut self, input: std::option::Option<crate::model::LocationUpdateStatus>) -> Self {
+            self.update_status = input; self
         }
         /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4117,20 +4074,26 @@ pub mod describe_fleet_port_settings_output {
         }
         /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFleetPortSettingsOutput`](crate::output::DescribeFleetPortSettingsOutput).
         pub fn build(self) -> crate::output::DescribeFleetPortSettingsOutput {
             crate::output::DescribeFleetPortSettingsOutput {
-                fleet_id: self.fleet_id,
-                fleet_arn: self.fleet_arn,
-                inbound_permissions: self.inbound_permissions,
-                update_status: self.update_status,
-                location: self.location,
+                fleet_id: self.fleet_id
+                ,
+                fleet_arn: self.fleet_arn
+                ,
+                inbound_permissions: self.inbound_permissions
+                ,
+                update_status: self.update_status
+                ,
+                location: self.location
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFleetPortSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetPortSettingsOutput`](crate::output::DescribeFleetPortSettingsOutput).
@@ -4142,20 +4105,20 @@ impl DescribeFleetPortSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetLocationUtilizationOutput {
+pub struct DescribeFleetLocationUtilizationOutput  {
     /// <p>Utilization information for the requested fleet location. Utilization objects are returned only for fleets and locations that currently exist.</p>
     #[doc(hidden)]
     pub fleet_utilization: std::option::Option<crate::model::FleetUtilization>,
 }
 impl DescribeFleetLocationUtilizationOutput {
     /// <p>Utilization information for the requested fleet location. Utilization objects are returned only for fleets and locations that currently exist.</p>
-    pub fn fleet_utilization(&self) -> std::option::Option<&crate::model::FleetUtilization> {
+    pub fn fleet_utilization(&self) -> std::option::Option<& crate::model::FleetUtilization> {
         self.fleet_utilization.as_ref()
     }
 }
 /// See [`DescribeFleetLocationUtilizationOutput`](crate::output::DescribeFleetLocationUtilizationOutput).
 pub mod describe_fleet_location_utilization_output {
-
+    
     /// A builder for [`DescribeFleetLocationUtilizationOutput`](crate::output::DescribeFleetLocationUtilizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4168,20 +4131,19 @@ pub mod describe_fleet_location_utilization_output {
             self
         }
         /// <p>Utilization information for the requested fleet location. Utilization objects are returned only for fleets and locations that currently exist.</p>
-        pub fn set_fleet_utilization(
-            mut self,
-            input: std::option::Option<crate::model::FleetUtilization>,
-        ) -> Self {
-            self.fleet_utilization = input;
-            self
+        pub fn set_fleet_utilization(mut self, input: std::option::Option<crate::model::FleetUtilization>) -> Self {
+            self.fleet_utilization = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFleetLocationUtilizationOutput`](crate::output::DescribeFleetLocationUtilizationOutput).
         pub fn build(self) -> crate::output::DescribeFleetLocationUtilizationOutput {
             crate::output::DescribeFleetLocationUtilizationOutput {
-                fleet_utilization: self.fleet_utilization,
+                fleet_utilization: self.fleet_utilization
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFleetLocationUtilizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetLocationUtilizationOutput`](crate::output::DescribeFleetLocationUtilizationOutput).
@@ -4193,20 +4155,20 @@ impl DescribeFleetLocationUtilizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetLocationCapacityOutput {
+pub struct DescribeFleetLocationCapacityOutput  {
     /// <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist.</p>
     #[doc(hidden)]
     pub fleet_capacity: std::option::Option<crate::model::FleetCapacity>,
 }
 impl DescribeFleetLocationCapacityOutput {
     /// <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist.</p>
-    pub fn fleet_capacity(&self) -> std::option::Option<&crate::model::FleetCapacity> {
+    pub fn fleet_capacity(&self) -> std::option::Option<& crate::model::FleetCapacity> {
         self.fleet_capacity.as_ref()
     }
 }
 /// See [`DescribeFleetLocationCapacityOutput`](crate::output::DescribeFleetLocationCapacityOutput).
 pub mod describe_fleet_location_capacity_output {
-
+    
     /// A builder for [`DescribeFleetLocationCapacityOutput`](crate::output::DescribeFleetLocationCapacityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4219,20 +4181,19 @@ pub mod describe_fleet_location_capacity_output {
             self
         }
         /// <p>Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and locations that currently exist.</p>
-        pub fn set_fleet_capacity(
-            mut self,
-            input: std::option::Option<crate::model::FleetCapacity>,
-        ) -> Self {
-            self.fleet_capacity = input;
-            self
+        pub fn set_fleet_capacity(mut self, input: std::option::Option<crate::model::FleetCapacity>) -> Self {
+            self.fleet_capacity = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFleetLocationCapacityOutput`](crate::output::DescribeFleetLocationCapacityOutput).
         pub fn build(self) -> crate::output::DescribeFleetLocationCapacityOutput {
             crate::output::DescribeFleetLocationCapacityOutput {
-                fleet_capacity: self.fleet_capacity,
+                fleet_capacity: self.fleet_capacity
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFleetLocationCapacityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetLocationCapacityOutput`](crate::output::DescribeFleetLocationCapacityOutput).
@@ -4244,7 +4205,7 @@ impl DescribeFleetLocationCapacityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetLocationAttributesOutput {
+pub struct DescribeFleetLocationAttributesOutput  {
     /// <p>A unique identifier for the fleet that location attributes were requested for.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -4263,35 +4224,34 @@ pub struct DescribeFleetLocationAttributesOutput {
 }
 impl DescribeFleetLocationAttributesOutput {
     /// <p>A unique identifier for the fleet that location attributes were requested for.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p> Location-specific information on the requested fleet's remote locations.</p>
-    pub fn location_attributes(&self) -> std::option::Option<&[crate::model::LocationAttributes]> {
+    pub fn location_attributes(&self) -> std::option::Option<& [crate::model::LocationAttributes]> {
         self.location_attributes.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeFleetLocationAttributesOutput`](crate::output::DescribeFleetLocationAttributesOutput).
 pub mod describe_fleet_location_attributes_output {
-
+    
     /// A builder for [`DescribeFleetLocationAttributesOutput`](crate::output::DescribeFleetLocationAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) fleet_id: std::option::Option<std::string::String>,
         pub(crate) fleet_arn: std::option::Option<std::string::String>,
-        pub(crate) location_attributes:
-            std::option::Option<std::vec::Vec<crate::model::LocationAttributes>>,
+        pub(crate) location_attributes: std::option::Option<std::vec::Vec<crate::model::LocationAttributes>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4302,8 +4262,7 @@ pub mod describe_fleet_location_attributes_output {
         }
         /// <p>A unique identifier for the fleet that location attributes were requested for.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_id = input;
-            self
+            self.fleet_id = input; self
         }
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
         /// <region>
@@ -4318,8 +4277,7 @@ pub mod describe_fleet_location_attributes_output {
         /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
         /// </region></code>.</p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_arn = input;
-            self
+            self.fleet_arn = input; self
         }
         /// Appends an item to `location_attributes`.
         ///
@@ -4328,17 +4286,13 @@ pub mod describe_fleet_location_attributes_output {
         /// <p> Location-specific information on the requested fleet's remote locations.</p>
         pub fn location_attributes(mut self, input: crate::model::LocationAttributes) -> Self {
             let mut v = self.location_attributes.unwrap_or_default();
-            v.push(input);
-            self.location_attributes = Some(v);
-            self
+                            v.push(input);
+                            self.location_attributes = Some(v);
+                            self
         }
         /// <p> Location-specific information on the requested fleet's remote locations.</p>
-        pub fn set_location_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LocationAttributes>>,
-        ) -> Self {
-            self.location_attributes = input;
-            self
+        pub fn set_location_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::LocationAttributes>>) -> Self {
+            self.location_attributes = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4347,19 +4301,24 @@ pub mod describe_fleet_location_attributes_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFleetLocationAttributesOutput`](crate::output::DescribeFleetLocationAttributesOutput).
         pub fn build(self) -> crate::output::DescribeFleetLocationAttributesOutput {
             crate::output::DescribeFleetLocationAttributesOutput {
-                fleet_id: self.fleet_id,
-                fleet_arn: self.fleet_arn,
-                location_attributes: self.location_attributes,
-                next_token: self.next_token,
+                fleet_id: self.fleet_id
+                ,
+                fleet_arn: self.fleet_arn
+                ,
+                location_attributes: self.location_attributes
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFleetLocationAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetLocationAttributesOutput`](crate::output::DescribeFleetLocationAttributesOutput).
@@ -4371,7 +4330,7 @@ impl DescribeFleetLocationAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetEventsOutput {
+pub struct DescribeFleetEventsOutput  {
     /// <p>A collection of objects containing event log entries for the specified fleet.</p>
     #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -4381,17 +4340,17 @@ pub struct DescribeFleetEventsOutput {
 }
 impl DescribeFleetEventsOutput {
     /// <p>A collection of objects containing event log entries for the specified fleet.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::model::Event]> {
+    pub fn events(&self) -> std::option::Option<& [crate::model::Event]> {
         self.events.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeFleetEventsOutput`](crate::output::DescribeFleetEventsOutput).
 pub mod describe_fleet_events_output {
-
+    
     /// A builder for [`DescribeFleetEventsOutput`](crate::output::DescribeFleetEventsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4406,17 +4365,13 @@ pub mod describe_fleet_events_output {
         /// <p>A collection of objects containing event log entries for the specified fleet.</p>
         pub fn events(mut self, input: crate::model::Event) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input);
-            self.events = Some(v);
-            self
+                            v.push(input);
+                            self.events = Some(v);
+                            self
         }
         /// <p>A collection of objects containing event log entries for the specified fleet.</p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Event>>,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::Event>>) -> Self {
+            self.events = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4425,17 +4380,20 @@ pub mod describe_fleet_events_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFleetEventsOutput`](crate::output::DescribeFleetEventsOutput).
         pub fn build(self) -> crate::output::DescribeFleetEventsOutput {
             crate::output::DescribeFleetEventsOutput {
-                events: self.events,
-                next_token: self.next_token,
+                events: self.events
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFleetEventsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetEventsOutput`](crate::output::DescribeFleetEventsOutput).
@@ -4447,7 +4405,7 @@ impl DescribeFleetEventsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetCapacityOutput {
+pub struct DescribeFleetCapacityOutput  {
     /// <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist.</p>
     #[doc(hidden)]
     pub fleet_capacity: std::option::Option<std::vec::Vec<crate::model::FleetCapacity>>,
@@ -4457,17 +4415,17 @@ pub struct DescribeFleetCapacityOutput {
 }
 impl DescribeFleetCapacityOutput {
     /// <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist.</p>
-    pub fn fleet_capacity(&self) -> std::option::Option<&[crate::model::FleetCapacity]> {
+    pub fn fleet_capacity(&self) -> std::option::Option<& [crate::model::FleetCapacity]> {
         self.fleet_capacity.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeFleetCapacityOutput`](crate::output::DescribeFleetCapacityOutput).
 pub mod describe_fleet_capacity_output {
-
+    
     /// A builder for [`DescribeFleetCapacityOutput`](crate::output::DescribeFleetCapacityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4482,17 +4440,13 @@ pub mod describe_fleet_capacity_output {
         /// <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist.</p>
         pub fn fleet_capacity(mut self, input: crate::model::FleetCapacity) -> Self {
             let mut v = self.fleet_capacity.unwrap_or_default();
-            v.push(input);
-            self.fleet_capacity = Some(v);
-            self
+                            v.push(input);
+                            self.fleet_capacity = Some(v);
+                            self
         }
         /// <p>A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are returned only for fleets that currently exist.</p>
-        pub fn set_fleet_capacity(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FleetCapacity>>,
-        ) -> Self {
-            self.fleet_capacity = input;
-            self
+        pub fn set_fleet_capacity(mut self, input: std::option::Option<std::vec::Vec<crate::model::FleetCapacity>>) -> Self {
+            self.fleet_capacity = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4501,17 +4455,20 @@ pub mod describe_fleet_capacity_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFleetCapacityOutput`](crate::output::DescribeFleetCapacityOutput).
         pub fn build(self) -> crate::output::DescribeFleetCapacityOutput {
             crate::output::DescribeFleetCapacityOutput {
-                fleet_capacity: self.fleet_capacity,
-                next_token: self.next_token,
+                fleet_capacity: self.fleet_capacity
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFleetCapacityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetCapacityOutput`](crate::output::DescribeFleetCapacityOutput).
@@ -4523,7 +4480,7 @@ impl DescribeFleetCapacityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetAttributesOutput {
+pub struct DescribeFleetAttributesOutput  {
     /// <p>A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are returned only for fleets that currently exist.</p>
     #[doc(hidden)]
     pub fleet_attributes: std::option::Option<std::vec::Vec<crate::model::FleetAttributes>>,
@@ -4533,22 +4490,21 @@ pub struct DescribeFleetAttributesOutput {
 }
 impl DescribeFleetAttributesOutput {
     /// <p>A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are returned only for fleets that currently exist.</p>
-    pub fn fleet_attributes(&self) -> std::option::Option<&[crate::model::FleetAttributes]> {
+    pub fn fleet_attributes(&self) -> std::option::Option<& [crate::model::FleetAttributes]> {
         self.fleet_attributes.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeFleetAttributesOutput`](crate::output::DescribeFleetAttributesOutput).
 pub mod describe_fleet_attributes_output {
-
+    
     /// A builder for [`DescribeFleetAttributesOutput`](crate::output::DescribeFleetAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) fleet_attributes:
-            std::option::Option<std::vec::Vec<crate::model::FleetAttributes>>,
+        pub(crate) fleet_attributes: std::option::Option<std::vec::Vec<crate::model::FleetAttributes>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4559,17 +4515,13 @@ pub mod describe_fleet_attributes_output {
         /// <p>A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are returned only for fleets that currently exist.</p>
         pub fn fleet_attributes(mut self, input: crate::model::FleetAttributes) -> Self {
             let mut v = self.fleet_attributes.unwrap_or_default();
-            v.push(input);
-            self.fleet_attributes = Some(v);
-            self
+                            v.push(input);
+                            self.fleet_attributes = Some(v);
+                            self
         }
         /// <p>A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are returned only for fleets that currently exist.</p>
-        pub fn set_fleet_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FleetAttributes>>,
-        ) -> Self {
-            self.fleet_attributes = input;
-            self
+        pub fn set_fleet_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::FleetAttributes>>) -> Self {
+            self.fleet_attributes = input; self
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4578,17 +4530,20 @@ pub mod describe_fleet_attributes_output {
         }
         /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFleetAttributesOutput`](crate::output::DescribeFleetAttributesOutput).
         pub fn build(self) -> crate::output::DescribeFleetAttributesOutput {
             crate::output::DescribeFleetAttributesOutput {
-                fleet_attributes: self.fleet_attributes,
-                next_token: self.next_token,
+                fleet_attributes: self.fleet_attributes
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFleetAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAttributesOutput`](crate::output::DescribeFleetAttributesOutput).
@@ -4600,25 +4555,24 @@ impl DescribeFleetAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEc2InstanceLimitsOutput {
+pub struct DescribeEc2InstanceLimitsOutput  {
     /// <p>The maximum number of instances for the specified instance type.</p>
     #[doc(hidden)]
     pub ec2_instance_limits: std::option::Option<std::vec::Vec<crate::model::Ec2InstanceLimit>>,
 }
 impl DescribeEc2InstanceLimitsOutput {
     /// <p>The maximum number of instances for the specified instance type.</p>
-    pub fn ec2_instance_limits(&self) -> std::option::Option<&[crate::model::Ec2InstanceLimit]> {
+    pub fn ec2_instance_limits(&self) -> std::option::Option<& [crate::model::Ec2InstanceLimit]> {
         self.ec2_instance_limits.as_deref()
     }
 }
 /// See [`DescribeEc2InstanceLimitsOutput`](crate::output::DescribeEc2InstanceLimitsOutput).
 pub mod describe_ec2_instance_limits_output {
-
+    
     /// A builder for [`DescribeEc2InstanceLimitsOutput`](crate::output::DescribeEc2InstanceLimitsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) ec2_instance_limits:
-            std::option::Option<std::vec::Vec<crate::model::Ec2InstanceLimit>>,
+        pub(crate) ec2_instance_limits: std::option::Option<std::vec::Vec<crate::model::Ec2InstanceLimit>>,
     }
     impl Builder {
         /// Appends an item to `ec2_instance_limits`.
@@ -4628,25 +4582,24 @@ pub mod describe_ec2_instance_limits_output {
         /// <p>The maximum number of instances for the specified instance type.</p>
         pub fn ec2_instance_limits(mut self, input: crate::model::Ec2InstanceLimit) -> Self {
             let mut v = self.ec2_instance_limits.unwrap_or_default();
-            v.push(input);
-            self.ec2_instance_limits = Some(v);
-            self
+                            v.push(input);
+                            self.ec2_instance_limits = Some(v);
+                            self
         }
         /// <p>The maximum number of instances for the specified instance type.</p>
-        pub fn set_ec2_instance_limits(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Ec2InstanceLimit>>,
-        ) -> Self {
-            self.ec2_instance_limits = input;
-            self
+        pub fn set_ec2_instance_limits(mut self, input: std::option::Option<std::vec::Vec<crate::model::Ec2InstanceLimit>>) -> Self {
+            self.ec2_instance_limits = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEc2InstanceLimitsOutput`](crate::output::DescribeEc2InstanceLimitsOutput).
         pub fn build(self) -> crate::output::DescribeEc2InstanceLimitsOutput {
             crate::output::DescribeEc2InstanceLimitsOutput {
-                ec2_instance_limits: self.ec2_instance_limits,
+                ec2_instance_limits: self.ec2_instance_limits
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEc2InstanceLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEc2InstanceLimitsOutput`](crate::output::DescribeEc2InstanceLimitsOutput).
@@ -4658,20 +4611,20 @@ impl DescribeEc2InstanceLimitsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeComputeOutput {
+pub struct DescribeComputeOutput  {
     /// <p>The details of the compute resource you registered to the specified fleet.</p>
     #[doc(hidden)]
     pub compute: std::option::Option<crate::model::Compute>,
 }
 impl DescribeComputeOutput {
     /// <p>The details of the compute resource you registered to the specified fleet.</p>
-    pub fn compute(&self) -> std::option::Option<&crate::model::Compute> {
+    pub fn compute(&self) -> std::option::Option<& crate::model::Compute> {
         self.compute.as_ref()
     }
 }
 /// See [`DescribeComputeOutput`](crate::output::DescribeComputeOutput).
 pub mod describe_compute_output {
-
+    
     /// A builder for [`DescribeComputeOutput`](crate::output::DescribeComputeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4685,16 +4638,18 @@ pub mod describe_compute_output {
         }
         /// <p>The details of the compute resource you registered to the specified fleet.</p>
         pub fn set_compute(mut self, input: std::option::Option<crate::model::Compute>) -> Self {
-            self.compute = input;
-            self
+            self.compute = input; self
         }
         /// Consumes the builder and constructs a [`DescribeComputeOutput`](crate::output::DescribeComputeOutput).
         pub fn build(self) -> crate::output::DescribeComputeOutput {
             crate::output::DescribeComputeOutput {
-                compute: self.compute,
+                compute: self.compute
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeComputeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeComputeOutput`](crate::output::DescribeComputeOutput).
@@ -4706,7 +4661,7 @@ impl DescribeComputeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBuildOutput {
+pub struct DescribeBuildOutput  {
     /// <p>Set of properties describing the requested build.</p>
     ///
     /// _Note: This member has been renamed from `build`._
@@ -4717,13 +4672,13 @@ impl DescribeBuildOutput {
     /// <p>Set of properties describing the requested build.</p>
     ///
     /// _Note: This member has been renamed from `build`._
-    pub fn build_value(&self) -> std::option::Option<&crate::model::Build> {
+    pub fn build_value(&self) -> std::option::Option<& crate::model::Build> {
         self.build_value.as_ref()
     }
 }
 /// See [`DescribeBuildOutput`](crate::output::DescribeBuildOutput).
 pub mod describe_build_output {
-
+    
     /// A builder for [`DescribeBuildOutput`](crate::output::DescribeBuildOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4737,16 +4692,18 @@ pub mod describe_build_output {
         }
         /// <p>Set of properties describing the requested build.</p>
         pub fn set_build(mut self, input: std::option::Option<crate::model::Build>) -> Self {
-            self.build_value = input;
-            self
+            self.build_value = input; self
         }
         /// Consumes the builder and constructs a [`DescribeBuildOutput`](crate::output::DescribeBuildOutput).
         pub fn build(self) -> crate::output::DescribeBuildOutput {
             crate::output::DescribeBuildOutput {
-                build_value: self.build_value,
+                build_value: self.build_value
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeBuildOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBuildOutput`](crate::output::DescribeBuildOutput).
@@ -4758,20 +4715,20 @@ impl DescribeBuildOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAliasOutput {
+pub struct DescribeAliasOutput  {
     /// <p>The requested alias resource.</p>
     #[doc(hidden)]
     pub alias: std::option::Option<crate::model::Alias>,
 }
 impl DescribeAliasOutput {
     /// <p>The requested alias resource.</p>
-    pub fn alias(&self) -> std::option::Option<&crate::model::Alias> {
+    pub fn alias(&self) -> std::option::Option<& crate::model::Alias> {
         self.alias.as_ref()
     }
 }
 /// See [`DescribeAliasOutput`](crate::output::DescribeAliasOutput).
 pub mod describe_alias_output {
-
+    
     /// A builder for [`DescribeAliasOutput`](crate::output::DescribeAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4785,14 +4742,18 @@ pub mod describe_alias_output {
         }
         /// <p>The requested alias resource.</p>
         pub fn set_alias(mut self, input: std::option::Option<crate::model::Alias>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAliasOutput`](crate::output::DescribeAliasOutput).
         pub fn build(self) -> crate::output::DescribeAliasOutput {
-            crate::output::DescribeAliasOutput { alias: self.alias }
+            crate::output::DescribeAliasOutput {
+                alias: self.alias
+                ,
+            }
         }
     }
+    
+    
 }
 impl DescribeAliasOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAliasOutput`](crate::output::DescribeAliasOutput).
@@ -4804,19 +4765,24 @@ impl DescribeAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterGameServerOutput {}
+pub struct DeregisterGameServerOutput  {
+}
 /// See [`DeregisterGameServerOutput`](crate::output::DeregisterGameServerOutput).
 pub mod deregister_game_server_output {
-
+    
     /// A builder for [`DeregisterGameServerOutput`](crate::output::DeregisterGameServerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterGameServerOutput`](crate::output::DeregisterGameServerOutput).
         pub fn build(self) -> crate::output::DeregisterGameServerOutput {
-            crate::output::DeregisterGameServerOutput {}
+            crate::output::DeregisterGameServerOutput {
+            }
         }
     }
+    
+    
 }
 impl DeregisterGameServerOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterGameServerOutput`](crate::output::DeregisterGameServerOutput).
@@ -4828,19 +4794,24 @@ impl DeregisterGameServerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterComputeOutput {}
+pub struct DeregisterComputeOutput  {
+}
 /// See [`DeregisterComputeOutput`](crate::output::DeregisterComputeOutput).
 pub mod deregister_compute_output {
-
+    
     /// A builder for [`DeregisterComputeOutput`](crate::output::DeregisterComputeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterComputeOutput`](crate::output::DeregisterComputeOutput).
         pub fn build(self) -> crate::output::DeregisterComputeOutput {
-            crate::output::DeregisterComputeOutput {}
+            crate::output::DeregisterComputeOutput {
+            }
         }
     }
+    
+    
 }
 impl DeregisterComputeOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterComputeOutput`](crate::output::DeregisterComputeOutput).
@@ -4852,19 +4823,24 @@ impl DeregisterComputeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVpcPeeringConnectionOutput {}
+pub struct DeleteVpcPeeringConnectionOutput  {
+}
 /// See [`DeleteVpcPeeringConnectionOutput`](crate::output::DeleteVpcPeeringConnectionOutput).
 pub mod delete_vpc_peering_connection_output {
-
+    
     /// A builder for [`DeleteVpcPeeringConnectionOutput`](crate::output::DeleteVpcPeeringConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVpcPeeringConnectionOutput`](crate::output::DeleteVpcPeeringConnectionOutput).
         pub fn build(self) -> crate::output::DeleteVpcPeeringConnectionOutput {
-            crate::output::DeleteVpcPeeringConnectionOutput {}
+            crate::output::DeleteVpcPeeringConnectionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteVpcPeeringConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcPeeringConnectionOutput`](crate::output::DeleteVpcPeeringConnectionOutput).
@@ -4876,19 +4852,24 @@ impl DeleteVpcPeeringConnectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVpcPeeringAuthorizationOutput {}
+pub struct DeleteVpcPeeringAuthorizationOutput  {
+}
 /// See [`DeleteVpcPeeringAuthorizationOutput`](crate::output::DeleteVpcPeeringAuthorizationOutput).
 pub mod delete_vpc_peering_authorization_output {
-
+    
     /// A builder for [`DeleteVpcPeeringAuthorizationOutput`](crate::output::DeleteVpcPeeringAuthorizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVpcPeeringAuthorizationOutput`](crate::output::DeleteVpcPeeringAuthorizationOutput).
         pub fn build(self) -> crate::output::DeleteVpcPeeringAuthorizationOutput {
-            crate::output::DeleteVpcPeeringAuthorizationOutput {}
+            crate::output::DeleteVpcPeeringAuthorizationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteVpcPeeringAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcPeeringAuthorizationOutput`](crate::output::DeleteVpcPeeringAuthorizationOutput).
@@ -4900,19 +4881,24 @@ impl DeleteVpcPeeringAuthorizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteScriptOutput {}
+pub struct DeleteScriptOutput  {
+}
 /// See [`DeleteScriptOutput`](crate::output::DeleteScriptOutput).
 pub mod delete_script_output {
-
+    
     /// A builder for [`DeleteScriptOutput`](crate::output::DeleteScriptOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteScriptOutput`](crate::output::DeleteScriptOutput).
         pub fn build(self) -> crate::output::DeleteScriptOutput {
-            crate::output::DeleteScriptOutput {}
+            crate::output::DeleteScriptOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteScriptOutput {
     /// Creates a new builder-style object to manufacture [`DeleteScriptOutput`](crate::output::DeleteScriptOutput).
@@ -4924,19 +4910,24 @@ impl DeleteScriptOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteScalingPolicyOutput {}
+pub struct DeleteScalingPolicyOutput  {
+}
 /// See [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput).
 pub mod delete_scaling_policy_output {
-
+    
     /// A builder for [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput).
         pub fn build(self) -> crate::output::DeleteScalingPolicyOutput {
-            crate::output::DeleteScalingPolicyOutput {}
+            crate::output::DeleteScalingPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteScalingPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteScalingPolicyOutput`](crate::output::DeleteScalingPolicyOutput).
@@ -4948,19 +4939,24 @@ impl DeleteScalingPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMatchmakingRuleSetOutput {}
+pub struct DeleteMatchmakingRuleSetOutput  {
+}
 /// See [`DeleteMatchmakingRuleSetOutput`](crate::output::DeleteMatchmakingRuleSetOutput).
 pub mod delete_matchmaking_rule_set_output {
-
+    
     /// A builder for [`DeleteMatchmakingRuleSetOutput`](crate::output::DeleteMatchmakingRuleSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMatchmakingRuleSetOutput`](crate::output::DeleteMatchmakingRuleSetOutput).
         pub fn build(self) -> crate::output::DeleteMatchmakingRuleSetOutput {
-            crate::output::DeleteMatchmakingRuleSetOutput {}
+            crate::output::DeleteMatchmakingRuleSetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteMatchmakingRuleSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMatchmakingRuleSetOutput`](crate::output::DeleteMatchmakingRuleSetOutput).
@@ -4972,19 +4968,24 @@ impl DeleteMatchmakingRuleSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMatchmakingConfigurationOutput {}
+pub struct DeleteMatchmakingConfigurationOutput  {
+}
 /// See [`DeleteMatchmakingConfigurationOutput`](crate::output::DeleteMatchmakingConfigurationOutput).
 pub mod delete_matchmaking_configuration_output {
-
+    
     /// A builder for [`DeleteMatchmakingConfigurationOutput`](crate::output::DeleteMatchmakingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteMatchmakingConfigurationOutput`](crate::output::DeleteMatchmakingConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteMatchmakingConfigurationOutput {
-            crate::output::DeleteMatchmakingConfigurationOutput {}
+            crate::output::DeleteMatchmakingConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteMatchmakingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMatchmakingConfigurationOutput`](crate::output::DeleteMatchmakingConfigurationOutput).
@@ -4996,19 +4997,24 @@ impl DeleteMatchmakingConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLocationOutput {}
+pub struct DeleteLocationOutput  {
+}
 /// See [`DeleteLocationOutput`](crate::output::DeleteLocationOutput).
 pub mod delete_location_output {
-
+    
     /// A builder for [`DeleteLocationOutput`](crate::output::DeleteLocationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLocationOutput`](crate::output::DeleteLocationOutput).
         pub fn build(self) -> crate::output::DeleteLocationOutput {
-            crate::output::DeleteLocationOutput {}
+            crate::output::DeleteLocationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLocationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLocationOutput`](crate::output::DeleteLocationOutput).
@@ -5020,19 +5026,24 @@ impl DeleteLocationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGameSessionQueueOutput {}
+pub struct DeleteGameSessionQueueOutput  {
+}
 /// See [`DeleteGameSessionQueueOutput`](crate::output::DeleteGameSessionQueueOutput).
 pub mod delete_game_session_queue_output {
-
+    
     /// A builder for [`DeleteGameSessionQueueOutput`](crate::output::DeleteGameSessionQueueOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteGameSessionQueueOutput`](crate::output::DeleteGameSessionQueueOutput).
         pub fn build(self) -> crate::output::DeleteGameSessionQueueOutput {
-            crate::output::DeleteGameSessionQueueOutput {}
+            crate::output::DeleteGameSessionQueueOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteGameSessionQueueOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGameSessionQueueOutput`](crate::output::DeleteGameSessionQueueOutput).
@@ -5044,20 +5055,20 @@ impl DeleteGameSessionQueueOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGameServerGroupOutput {
+pub struct DeleteGameServerGroupOutput  {
     /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>. </p>
     #[doc(hidden)]
     pub game_server_group: std::option::Option<crate::model::GameServerGroup>,
 }
 impl DeleteGameServerGroupOutput {
     /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>. </p>
-    pub fn game_server_group(&self) -> std::option::Option<&crate::model::GameServerGroup> {
+    pub fn game_server_group(&self) -> std::option::Option<& crate::model::GameServerGroup> {
         self.game_server_group.as_ref()
     }
 }
 /// See [`DeleteGameServerGroupOutput`](crate::output::DeleteGameServerGroupOutput).
 pub mod delete_game_server_group_output {
-
+    
     /// A builder for [`DeleteGameServerGroupOutput`](crate::output::DeleteGameServerGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5070,20 +5081,19 @@ pub mod delete_game_server_group_output {
             self
         }
         /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>. </p>
-        pub fn set_game_server_group(
-            mut self,
-            input: std::option::Option<crate::model::GameServerGroup>,
-        ) -> Self {
-            self.game_server_group = input;
-            self
+        pub fn set_game_server_group(mut self, input: std::option::Option<crate::model::GameServerGroup>) -> Self {
+            self.game_server_group = input; self
         }
         /// Consumes the builder and constructs a [`DeleteGameServerGroupOutput`](crate::output::DeleteGameServerGroupOutput).
         pub fn build(self) -> crate::output::DeleteGameServerGroupOutput {
             crate::output::DeleteGameServerGroupOutput {
-                game_server_group: self.game_server_group,
+                game_server_group: self.game_server_group
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteGameServerGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGameServerGroupOutput`](crate::output::DeleteGameServerGroupOutput).
@@ -5095,7 +5105,7 @@ impl DeleteGameServerGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFleetLocationsOutput {
+pub struct DeleteFleetLocationsOutput  {
     /// <p>A unique identifier for the fleet that location attributes are being deleted for.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -5111,24 +5121,24 @@ pub struct DeleteFleetLocationsOutput {
 }
 impl DeleteFleetLocationsOutput {
     /// <p>A unique identifier for the fleet that location attributes are being deleted for.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The remote locations that are being deleted, with each location status set to <code>DELETING</code>.</p>
-    pub fn location_states(&self) -> std::option::Option<&[crate::model::LocationState]> {
+    pub fn location_states(&self) -> std::option::Option<& [crate::model::LocationState]> {
         self.location_states.as_deref()
     }
 }
 /// See [`DeleteFleetLocationsOutput`](crate::output::DeleteFleetLocationsOutput).
 pub mod delete_fleet_locations_output {
-
+    
     /// A builder for [`DeleteFleetLocationsOutput`](crate::output::DeleteFleetLocationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5144,8 +5154,7 @@ pub mod delete_fleet_locations_output {
         }
         /// <p>A unique identifier for the fleet that location attributes are being deleted for.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_id = input;
-            self
+            self.fleet_id = input; self
         }
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
         /// <region>
@@ -5160,8 +5169,7 @@ pub mod delete_fleet_locations_output {
         /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
         /// </region></code>.</p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_arn = input;
-            self
+            self.fleet_arn = input; self
         }
         /// Appends an item to `location_states`.
         ///
@@ -5170,27 +5178,28 @@ pub mod delete_fleet_locations_output {
         /// <p>The remote locations that are being deleted, with each location status set to <code>DELETING</code>.</p>
         pub fn location_states(mut self, input: crate::model::LocationState) -> Self {
             let mut v = self.location_states.unwrap_or_default();
-            v.push(input);
-            self.location_states = Some(v);
-            self
+                            v.push(input);
+                            self.location_states = Some(v);
+                            self
         }
         /// <p>The remote locations that are being deleted, with each location status set to <code>DELETING</code>.</p>
-        pub fn set_location_states(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LocationState>>,
-        ) -> Self {
-            self.location_states = input;
-            self
+        pub fn set_location_states(mut self, input: std::option::Option<std::vec::Vec<crate::model::LocationState>>) -> Self {
+            self.location_states = input; self
         }
         /// Consumes the builder and constructs a [`DeleteFleetLocationsOutput`](crate::output::DeleteFleetLocationsOutput).
         pub fn build(self) -> crate::output::DeleteFleetLocationsOutput {
             crate::output::DeleteFleetLocationsOutput {
-                fleet_id: self.fleet_id,
-                fleet_arn: self.fleet_arn,
-                location_states: self.location_states,
+                fleet_id: self.fleet_id
+                ,
+                fleet_arn: self.fleet_arn
+                ,
+                location_states: self.location_states
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteFleetLocationsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFleetLocationsOutput`](crate::output::DeleteFleetLocationsOutput).
@@ -5202,19 +5211,24 @@ impl DeleteFleetLocationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFleetOutput {}
+pub struct DeleteFleetOutput  {
+}
 /// See [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
 pub mod delete_fleet_output {
-
+    
     /// A builder for [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
         pub fn build(self) -> crate::output::DeleteFleetOutput {
-            crate::output::DeleteFleetOutput {}
+            crate::output::DeleteFleetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteFleetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFleetOutput`](crate::output::DeleteFleetOutput).
@@ -5226,19 +5240,24 @@ impl DeleteFleetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBuildOutput {}
+pub struct DeleteBuildOutput  {
+}
 /// See [`DeleteBuildOutput`](crate::output::DeleteBuildOutput).
 pub mod delete_build_output {
-
+    
     /// A builder for [`DeleteBuildOutput`](crate::output::DeleteBuildOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBuildOutput`](crate::output::DeleteBuildOutput).
         pub fn build(self) -> crate::output::DeleteBuildOutput {
-            crate::output::DeleteBuildOutput {}
+            crate::output::DeleteBuildOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteBuildOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBuildOutput`](crate::output::DeleteBuildOutput).
@@ -5250,19 +5269,24 @@ impl DeleteBuildOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAliasOutput {}
+pub struct DeleteAliasOutput  {
+}
 /// See [`DeleteAliasOutput`](crate::output::DeleteAliasOutput).
 pub mod delete_alias_output {
-
+    
     /// A builder for [`DeleteAliasOutput`](crate::output::DeleteAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAliasOutput`](crate::output::DeleteAliasOutput).
         pub fn build(self) -> crate::output::DeleteAliasOutput {
-            crate::output::DeleteAliasOutput {}
+            crate::output::DeleteAliasOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAliasOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAliasOutput`](crate::output::DeleteAliasOutput).
@@ -5274,19 +5298,24 @@ impl DeleteAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVpcPeeringConnectionOutput {}
+pub struct CreateVpcPeeringConnectionOutput  {
+}
 /// See [`CreateVpcPeeringConnectionOutput`](crate::output::CreateVpcPeeringConnectionOutput).
 pub mod create_vpc_peering_connection_output {
-
+    
     /// A builder for [`CreateVpcPeeringConnectionOutput`](crate::output::CreateVpcPeeringConnectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateVpcPeeringConnectionOutput`](crate::output::CreateVpcPeeringConnectionOutput).
         pub fn build(self) -> crate::output::CreateVpcPeeringConnectionOutput {
-            crate::output::CreateVpcPeeringConnectionOutput {}
+            crate::output::CreateVpcPeeringConnectionOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateVpcPeeringConnectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateVpcPeeringConnectionOutput`](crate::output::CreateVpcPeeringConnectionOutput).
@@ -5298,52 +5327,45 @@ impl CreateVpcPeeringConnectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVpcPeeringAuthorizationOutput {
+pub struct CreateVpcPeeringAuthorizationOutput  {
     /// <p>Details on the requested VPC peering authorization, including expiration.</p>
     #[doc(hidden)]
     pub vpc_peering_authorization: std::option::Option<crate::model::VpcPeeringAuthorization>,
 }
 impl CreateVpcPeeringAuthorizationOutput {
     /// <p>Details on the requested VPC peering authorization, including expiration.</p>
-    pub fn vpc_peering_authorization(
-        &self,
-    ) -> std::option::Option<&crate::model::VpcPeeringAuthorization> {
+    pub fn vpc_peering_authorization(&self) -> std::option::Option<& crate::model::VpcPeeringAuthorization> {
         self.vpc_peering_authorization.as_ref()
     }
 }
 /// See [`CreateVpcPeeringAuthorizationOutput`](crate::output::CreateVpcPeeringAuthorizationOutput).
 pub mod create_vpc_peering_authorization_output {
-
+    
     /// A builder for [`CreateVpcPeeringAuthorizationOutput`](crate::output::CreateVpcPeeringAuthorizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) vpc_peering_authorization:
-            std::option::Option<crate::model::VpcPeeringAuthorization>,
+        pub(crate) vpc_peering_authorization: std::option::Option<crate::model::VpcPeeringAuthorization>,
     }
     impl Builder {
         /// <p>Details on the requested VPC peering authorization, including expiration.</p>
-        pub fn vpc_peering_authorization(
-            mut self,
-            input: crate::model::VpcPeeringAuthorization,
-        ) -> Self {
+        pub fn vpc_peering_authorization(mut self, input: crate::model::VpcPeeringAuthorization) -> Self {
             self.vpc_peering_authorization = Some(input);
             self
         }
         /// <p>Details on the requested VPC peering authorization, including expiration.</p>
-        pub fn set_vpc_peering_authorization(
-            mut self,
-            input: std::option::Option<crate::model::VpcPeeringAuthorization>,
-        ) -> Self {
-            self.vpc_peering_authorization = input;
-            self
+        pub fn set_vpc_peering_authorization(mut self, input: std::option::Option<crate::model::VpcPeeringAuthorization>) -> Self {
+            self.vpc_peering_authorization = input; self
         }
         /// Consumes the builder and constructs a [`CreateVpcPeeringAuthorizationOutput`](crate::output::CreateVpcPeeringAuthorizationOutput).
         pub fn build(self) -> crate::output::CreateVpcPeeringAuthorizationOutput {
             crate::output::CreateVpcPeeringAuthorizationOutput {
-                vpc_peering_authorization: self.vpc_peering_authorization,
+                vpc_peering_authorization: self.vpc_peering_authorization
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateVpcPeeringAuthorizationOutput {
     /// Creates a new builder-style object to manufacture [`CreateVpcPeeringAuthorizationOutput`](crate::output::CreateVpcPeeringAuthorizationOutput).
@@ -5355,20 +5377,20 @@ impl CreateVpcPeeringAuthorizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateScriptOutput {
+pub struct CreateScriptOutput  {
     /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
     #[doc(hidden)]
     pub script: std::option::Option<crate::model::Script>,
 }
 impl CreateScriptOutput {
     /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
-    pub fn script(&self) -> std::option::Option<&crate::model::Script> {
+    pub fn script(&self) -> std::option::Option<& crate::model::Script> {
         self.script.as_ref()
     }
 }
 /// See [`CreateScriptOutput`](crate::output::CreateScriptOutput).
 pub mod create_script_output {
-
+    
     /// A builder for [`CreateScriptOutput`](crate::output::CreateScriptOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5382,16 +5404,18 @@ pub mod create_script_output {
         }
         /// <p>The newly created script record with a unique script ID and ARN. The new script's storage location reflects an Amazon S3 location: (1) If the script was uploaded from an S3 bucket under your account, the storage location reflects the information that was provided in the <i>CreateScript</i> request; (2) If the script file was uploaded from a local zip file, the storage location reflects an S3 location controls by the Amazon GameLift service.</p>
         pub fn set_script(mut self, input: std::option::Option<crate::model::Script>) -> Self {
-            self.script = input;
-            self
+            self.script = input; self
         }
         /// Consumes the builder and constructs a [`CreateScriptOutput`](crate::output::CreateScriptOutput).
         pub fn build(self) -> crate::output::CreateScriptOutput {
             crate::output::CreateScriptOutput {
-                script: self.script,
+                script: self.script
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateScriptOutput {
     /// Creates a new builder-style object to manufacture [`CreateScriptOutput`](crate::output::CreateScriptOutput).
@@ -5403,20 +5427,20 @@ impl CreateScriptOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePlayerSessionsOutput {
+pub struct CreatePlayerSessionsOutput  {
     /// <p>A collection of player session objects created for the added players.</p>
     #[doc(hidden)]
     pub player_sessions: std::option::Option<std::vec::Vec<crate::model::PlayerSession>>,
 }
 impl CreatePlayerSessionsOutput {
     /// <p>A collection of player session objects created for the added players.</p>
-    pub fn player_sessions(&self) -> std::option::Option<&[crate::model::PlayerSession]> {
+    pub fn player_sessions(&self) -> std::option::Option<& [crate::model::PlayerSession]> {
         self.player_sessions.as_deref()
     }
 }
 /// See [`CreatePlayerSessionsOutput`](crate::output::CreatePlayerSessionsOutput).
 pub mod create_player_sessions_output {
-
+    
     /// A builder for [`CreatePlayerSessionsOutput`](crate::output::CreatePlayerSessionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5430,25 +5454,24 @@ pub mod create_player_sessions_output {
         /// <p>A collection of player session objects created for the added players.</p>
         pub fn player_sessions(mut self, input: crate::model::PlayerSession) -> Self {
             let mut v = self.player_sessions.unwrap_or_default();
-            v.push(input);
-            self.player_sessions = Some(v);
-            self
+                            v.push(input);
+                            self.player_sessions = Some(v);
+                            self
         }
         /// <p>A collection of player session objects created for the added players.</p>
-        pub fn set_player_sessions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PlayerSession>>,
-        ) -> Self {
-            self.player_sessions = input;
-            self
+        pub fn set_player_sessions(mut self, input: std::option::Option<std::vec::Vec<crate::model::PlayerSession>>) -> Self {
+            self.player_sessions = input; self
         }
         /// Consumes the builder and constructs a [`CreatePlayerSessionsOutput`](crate::output::CreatePlayerSessionsOutput).
         pub fn build(self) -> crate::output::CreatePlayerSessionsOutput {
             crate::output::CreatePlayerSessionsOutput {
-                player_sessions: self.player_sessions,
+                player_sessions: self.player_sessions
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePlayerSessionsOutput {
     /// Creates a new builder-style object to manufacture [`CreatePlayerSessionsOutput`](crate::output::CreatePlayerSessionsOutput).
@@ -5460,20 +5483,20 @@ impl CreatePlayerSessionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePlayerSessionOutput {
+pub struct CreatePlayerSessionOutput  {
     /// <p>Object that describes the newly created player session record.</p>
     #[doc(hidden)]
     pub player_session: std::option::Option<crate::model::PlayerSession>,
 }
 impl CreatePlayerSessionOutput {
     /// <p>Object that describes the newly created player session record.</p>
-    pub fn player_session(&self) -> std::option::Option<&crate::model::PlayerSession> {
+    pub fn player_session(&self) -> std::option::Option<& crate::model::PlayerSession> {
         self.player_session.as_ref()
     }
 }
 /// See [`CreatePlayerSessionOutput`](crate::output::CreatePlayerSessionOutput).
 pub mod create_player_session_output {
-
+    
     /// A builder for [`CreatePlayerSessionOutput`](crate::output::CreatePlayerSessionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5486,20 +5509,19 @@ pub mod create_player_session_output {
             self
         }
         /// <p>Object that describes the newly created player session record.</p>
-        pub fn set_player_session(
-            mut self,
-            input: std::option::Option<crate::model::PlayerSession>,
-        ) -> Self {
-            self.player_session = input;
-            self
+        pub fn set_player_session(mut self, input: std::option::Option<crate::model::PlayerSession>) -> Self {
+            self.player_session = input; self
         }
         /// Consumes the builder and constructs a [`CreatePlayerSessionOutput`](crate::output::CreatePlayerSessionOutput).
         pub fn build(self) -> crate::output::CreatePlayerSessionOutput {
             crate::output::CreatePlayerSessionOutput {
-                player_session: self.player_session,
+                player_session: self.player_session
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePlayerSessionOutput {
     /// Creates a new builder-style object to manufacture [`CreatePlayerSessionOutput`](crate::output::CreatePlayerSessionOutput).
@@ -5511,20 +5533,20 @@ impl CreatePlayerSessionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMatchmakingRuleSetOutput {
+pub struct CreateMatchmakingRuleSetOutput  {
     /// <p>The newly created matchmaking rule set.</p>
     #[doc(hidden)]
     pub rule_set: std::option::Option<crate::model::MatchmakingRuleSet>,
 }
 impl CreateMatchmakingRuleSetOutput {
     /// <p>The newly created matchmaking rule set.</p>
-    pub fn rule_set(&self) -> std::option::Option<&crate::model::MatchmakingRuleSet> {
+    pub fn rule_set(&self) -> std::option::Option<& crate::model::MatchmakingRuleSet> {
         self.rule_set.as_ref()
     }
 }
 /// See [`CreateMatchmakingRuleSetOutput`](crate::output::CreateMatchmakingRuleSetOutput).
 pub mod create_matchmaking_rule_set_output {
-
+    
     /// A builder for [`CreateMatchmakingRuleSetOutput`](crate::output::CreateMatchmakingRuleSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5537,20 +5559,19 @@ pub mod create_matchmaking_rule_set_output {
             self
         }
         /// <p>The newly created matchmaking rule set.</p>
-        pub fn set_rule_set(
-            mut self,
-            input: std::option::Option<crate::model::MatchmakingRuleSet>,
-        ) -> Self {
-            self.rule_set = input;
-            self
+        pub fn set_rule_set(mut self, input: std::option::Option<crate::model::MatchmakingRuleSet>) -> Self {
+            self.rule_set = input; self
         }
         /// Consumes the builder and constructs a [`CreateMatchmakingRuleSetOutput`](crate::output::CreateMatchmakingRuleSetOutput).
         pub fn build(self) -> crate::output::CreateMatchmakingRuleSetOutput {
             crate::output::CreateMatchmakingRuleSetOutput {
-                rule_set: self.rule_set,
+                rule_set: self.rule_set
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateMatchmakingRuleSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateMatchmakingRuleSetOutput`](crate::output::CreateMatchmakingRuleSetOutput).
@@ -5562,20 +5583,20 @@ impl CreateMatchmakingRuleSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMatchmakingConfigurationOutput {
+pub struct CreateMatchmakingConfigurationOutput  {
     /// <p>Object that describes the newly created matchmaking configuration.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::MatchmakingConfiguration>,
 }
 impl CreateMatchmakingConfigurationOutput {
     /// <p>Object that describes the newly created matchmaking configuration.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::model::MatchmakingConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::model::MatchmakingConfiguration> {
         self.configuration.as_ref()
     }
 }
 /// See [`CreateMatchmakingConfigurationOutput`](crate::output::CreateMatchmakingConfigurationOutput).
 pub mod create_matchmaking_configuration_output {
-
+    
     /// A builder for [`CreateMatchmakingConfigurationOutput`](crate::output::CreateMatchmakingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5588,20 +5609,19 @@ pub mod create_matchmaking_configuration_output {
             self
         }
         /// <p>Object that describes the newly created matchmaking configuration.</p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<crate::model::MatchmakingConfiguration>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<crate::model::MatchmakingConfiguration>) -> Self {
+            self.configuration = input; self
         }
         /// Consumes the builder and constructs a [`CreateMatchmakingConfigurationOutput`](crate::output::CreateMatchmakingConfigurationOutput).
         pub fn build(self) -> crate::output::CreateMatchmakingConfigurationOutput {
             crate::output::CreateMatchmakingConfigurationOutput {
-                configuration: self.configuration,
+                configuration: self.configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateMatchmakingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateMatchmakingConfigurationOutput`](crate::output::CreateMatchmakingConfigurationOutput).
@@ -5613,20 +5633,20 @@ impl CreateMatchmakingConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLocationOutput {
+pub struct CreateLocationOutput  {
     /// <p>The details of the custom location you created.</p>
     #[doc(hidden)]
     pub location: std::option::Option<crate::model::LocationModel>,
 }
 impl CreateLocationOutput {
     /// <p>The details of the custom location you created.</p>
-    pub fn location(&self) -> std::option::Option<&crate::model::LocationModel> {
+    pub fn location(&self) -> std::option::Option<& crate::model::LocationModel> {
         self.location.as_ref()
     }
 }
 /// See [`CreateLocationOutput`](crate::output::CreateLocationOutput).
 pub mod create_location_output {
-
+    
     /// A builder for [`CreateLocationOutput`](crate::output::CreateLocationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5639,20 +5659,19 @@ pub mod create_location_output {
             self
         }
         /// <p>The details of the custom location you created.</p>
-        pub fn set_location(
-            mut self,
-            input: std::option::Option<crate::model::LocationModel>,
-        ) -> Self {
-            self.location = input;
-            self
+        pub fn set_location(mut self, input: std::option::Option<crate::model::LocationModel>) -> Self {
+            self.location = input; self
         }
         /// Consumes the builder and constructs a [`CreateLocationOutput`](crate::output::CreateLocationOutput).
         pub fn build(self) -> crate::output::CreateLocationOutput {
             crate::output::CreateLocationOutput {
-                location: self.location,
+                location: self.location
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateLocationOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocationOutput`](crate::output::CreateLocationOutput).
@@ -5664,20 +5683,20 @@ impl CreateLocationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGameSessionQueueOutput {
+pub struct CreateGameSessionQueueOutput  {
     /// <p>An object that describes the newly created game session queue.</p>
     #[doc(hidden)]
     pub game_session_queue: std::option::Option<crate::model::GameSessionQueue>,
 }
 impl CreateGameSessionQueueOutput {
     /// <p>An object that describes the newly created game session queue.</p>
-    pub fn game_session_queue(&self) -> std::option::Option<&crate::model::GameSessionQueue> {
+    pub fn game_session_queue(&self) -> std::option::Option<& crate::model::GameSessionQueue> {
         self.game_session_queue.as_ref()
     }
 }
 /// See [`CreateGameSessionQueueOutput`](crate::output::CreateGameSessionQueueOutput).
 pub mod create_game_session_queue_output {
-
+    
     /// A builder for [`CreateGameSessionQueueOutput`](crate::output::CreateGameSessionQueueOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5690,20 +5709,19 @@ pub mod create_game_session_queue_output {
             self
         }
         /// <p>An object that describes the newly created game session queue.</p>
-        pub fn set_game_session_queue(
-            mut self,
-            input: std::option::Option<crate::model::GameSessionQueue>,
-        ) -> Self {
-            self.game_session_queue = input;
-            self
+        pub fn set_game_session_queue(mut self, input: std::option::Option<crate::model::GameSessionQueue>) -> Self {
+            self.game_session_queue = input; self
         }
         /// Consumes the builder and constructs a [`CreateGameSessionQueueOutput`](crate::output::CreateGameSessionQueueOutput).
         pub fn build(self) -> crate::output::CreateGameSessionQueueOutput {
             crate::output::CreateGameSessionQueueOutput {
-                game_session_queue: self.game_session_queue,
+                game_session_queue: self.game_session_queue
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateGameSessionQueueOutput {
     /// Creates a new builder-style object to manufacture [`CreateGameSessionQueueOutput`](crate::output::CreateGameSessionQueueOutput).
@@ -5715,20 +5733,20 @@ impl CreateGameSessionQueueOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGameSessionOutput {
+pub struct CreateGameSessionOutput  {
     /// <p>Object that describes the newly created game session record.</p>
     #[doc(hidden)]
     pub game_session: std::option::Option<crate::model::GameSession>,
 }
 impl CreateGameSessionOutput {
     /// <p>Object that describes the newly created game session record.</p>
-    pub fn game_session(&self) -> std::option::Option<&crate::model::GameSession> {
+    pub fn game_session(&self) -> std::option::Option<& crate::model::GameSession> {
         self.game_session.as_ref()
     }
 }
 /// See [`CreateGameSessionOutput`](crate::output::CreateGameSessionOutput).
 pub mod create_game_session_output {
-
+    
     /// A builder for [`CreateGameSessionOutput`](crate::output::CreateGameSessionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5741,20 +5759,19 @@ pub mod create_game_session_output {
             self
         }
         /// <p>Object that describes the newly created game session record.</p>
-        pub fn set_game_session(
-            mut self,
-            input: std::option::Option<crate::model::GameSession>,
-        ) -> Self {
-            self.game_session = input;
-            self
+        pub fn set_game_session(mut self, input: std::option::Option<crate::model::GameSession>) -> Self {
+            self.game_session = input; self
         }
         /// Consumes the builder and constructs a [`CreateGameSessionOutput`](crate::output::CreateGameSessionOutput).
         pub fn build(self) -> crate::output::CreateGameSessionOutput {
             crate::output::CreateGameSessionOutput {
-                game_session: self.game_session,
+                game_session: self.game_session
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateGameSessionOutput {
     /// Creates a new builder-style object to manufacture [`CreateGameSessionOutput`](crate::output::CreateGameSessionOutput).
@@ -5766,20 +5783,20 @@ impl CreateGameSessionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGameServerGroupOutput {
+pub struct CreateGameServerGroupOutput  {
     /// <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
     #[doc(hidden)]
     pub game_server_group: std::option::Option<crate::model::GameServerGroup>,
 }
 impl CreateGameServerGroupOutput {
     /// <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
-    pub fn game_server_group(&self) -> std::option::Option<&crate::model::GameServerGroup> {
+    pub fn game_server_group(&self) -> std::option::Option<& crate::model::GameServerGroup> {
         self.game_server_group.as_ref()
     }
 }
 /// See [`CreateGameServerGroupOutput`](crate::output::CreateGameServerGroupOutput).
 pub mod create_game_server_group_output {
-
+    
     /// A builder for [`CreateGameServerGroupOutput`](crate::output::CreateGameServerGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5792,20 +5809,19 @@ pub mod create_game_server_group_output {
             self
         }
         /// <p>The newly created game server group object, including the new ARN value for the GameLift FleetIQ game server group and the object's status. The Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet been created. This value is added once the game server group status reaches <code>ACTIVE</code>. </p>
-        pub fn set_game_server_group(
-            mut self,
-            input: std::option::Option<crate::model::GameServerGroup>,
-        ) -> Self {
-            self.game_server_group = input;
-            self
+        pub fn set_game_server_group(mut self, input: std::option::Option<crate::model::GameServerGroup>) -> Self {
+            self.game_server_group = input; self
         }
         /// Consumes the builder and constructs a [`CreateGameServerGroupOutput`](crate::output::CreateGameServerGroupOutput).
         pub fn build(self) -> crate::output::CreateGameServerGroupOutput {
             crate::output::CreateGameServerGroupOutput {
-                game_server_group: self.game_server_group,
+                game_server_group: self.game_server_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateGameServerGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateGameServerGroupOutput`](crate::output::CreateGameServerGroupOutput).
@@ -5817,7 +5833,7 @@ impl CreateGameServerGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFleetLocationsOutput {
+pub struct CreateFleetLocationsOutput  {
     /// <p>A unique identifier for the fleet that was updated with new locations.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -5833,24 +5849,24 @@ pub struct CreateFleetLocationsOutput {
 }
 impl CreateFleetLocationsOutput {
     /// <p>A unique identifier for the fleet that was updated with new locations.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> std::option::Option<& str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>. </p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> std::option::Option<& str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The remote locations that are being added to the fleet, and the life-cycle status of each location. For new locations, the status is set to <code>NEW</code>. During location creation, GameLift updates each location's status as instances are deployed there and prepared for game hosting. This list does not include the fleet home Region or any remote locations that were already added to the fleet.</p>
-    pub fn location_states(&self) -> std::option::Option<&[crate::model::LocationState]> {
+    pub fn location_states(&self) -> std::option::Option<& [crate::model::LocationState]> {
         self.location_states.as_deref()
     }
 }
 /// See [`CreateFleetLocationsOutput`](crate::output::CreateFleetLocationsOutput).
 pub mod create_fleet_locations_output {
-
+    
     /// A builder for [`CreateFleetLocationsOutput`](crate::output::CreateFleetLocationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5866,8 +5882,7 @@ pub mod create_fleet_locations_output {
         }
         /// <p>A unique identifier for the fleet that was updated with new locations.</p>
         pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_id = input;
-            self
+            self.fleet_id = input; self
         }
         /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
         /// <region>
@@ -5882,8 +5897,7 @@ pub mod create_fleet_locations_output {
         /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
         /// </region></code>. </p>
         pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fleet_arn = input;
-            self
+            self.fleet_arn = input; self
         }
         /// Appends an item to `location_states`.
         ///
@@ -5892,27 +5906,28 @@ pub mod create_fleet_locations_output {
         /// <p>The remote locations that are being added to the fleet, and the life-cycle status of each location. For new locations, the status is set to <code>NEW</code>. During location creation, GameLift updates each location's status as instances are deployed there and prepared for game hosting. This list does not include the fleet home Region or any remote locations that were already added to the fleet.</p>
         pub fn location_states(mut self, input: crate::model::LocationState) -> Self {
             let mut v = self.location_states.unwrap_or_default();
-            v.push(input);
-            self.location_states = Some(v);
-            self
+                            v.push(input);
+                            self.location_states = Some(v);
+                            self
         }
         /// <p>The remote locations that are being added to the fleet, and the life-cycle status of each location. For new locations, the status is set to <code>NEW</code>. During location creation, GameLift updates each location's status as instances are deployed there and prepared for game hosting. This list does not include the fleet home Region or any remote locations that were already added to the fleet.</p>
-        pub fn set_location_states(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LocationState>>,
-        ) -> Self {
-            self.location_states = input;
-            self
+        pub fn set_location_states(mut self, input: std::option::Option<std::vec::Vec<crate::model::LocationState>>) -> Self {
+            self.location_states = input; self
         }
         /// Consumes the builder and constructs a [`CreateFleetLocationsOutput`](crate::output::CreateFleetLocationsOutput).
         pub fn build(self) -> crate::output::CreateFleetLocationsOutput {
             crate::output::CreateFleetLocationsOutput {
-                fleet_id: self.fleet_id,
-                fleet_arn: self.fleet_arn,
-                location_states: self.location_states,
+                fleet_id: self.fleet_id
+                ,
+                fleet_arn: self.fleet_arn
+                ,
+                location_states: self.location_states
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFleetLocationsOutput {
     /// Creates a new builder-style object to manufacture [`CreateFleetLocationsOutput`](crate::output::CreateFleetLocationsOutput).
@@ -5924,7 +5939,7 @@ impl CreateFleetLocationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFleetOutput {
+pub struct CreateFleetOutput  {
     /// <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation. </p>
     #[doc(hidden)]
     pub fleet_attributes: std::option::Option<crate::model::FleetAttributes>,
@@ -5934,17 +5949,17 @@ pub struct CreateFleetOutput {
 }
 impl CreateFleetOutput {
     /// <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation. </p>
-    pub fn fleet_attributes(&self) -> std::option::Option<&crate::model::FleetAttributes> {
+    pub fn fleet_attributes(&self) -> std::option::Option<& crate::model::FleetAttributes> {
         self.fleet_attributes.as_ref()
     }
     /// <p>The fleet's locations and life-cycle status of each location. For new fleets, the status of all locations is set to <code>NEW</code>. During fleet creation, GameLift updates each location status as instances are deployed there and prepared for game hosting. This list includes an entry for the fleet's home Region. For fleets with no remote locations, only one entry, representing the home Region, is returned.</p>
-    pub fn location_states(&self) -> std::option::Option<&[crate::model::LocationState]> {
+    pub fn location_states(&self) -> std::option::Option<& [crate::model::LocationState]> {
         self.location_states.as_deref()
     }
 }
 /// See [`CreateFleetOutput`](crate::output::CreateFleetOutput).
 pub mod create_fleet_output {
-
+    
     /// A builder for [`CreateFleetOutput`](crate::output::CreateFleetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5958,12 +5973,8 @@ pub mod create_fleet_output {
             self
         }
         /// <p>The properties for the new fleet, including the current status. All fleets are placed in <code>NEW</code> status on creation. </p>
-        pub fn set_fleet_attributes(
-            mut self,
-            input: std::option::Option<crate::model::FleetAttributes>,
-        ) -> Self {
-            self.fleet_attributes = input;
-            self
+        pub fn set_fleet_attributes(mut self, input: std::option::Option<crate::model::FleetAttributes>) -> Self {
+            self.fleet_attributes = input; self
         }
         /// Appends an item to `location_states`.
         ///
@@ -5972,26 +5983,26 @@ pub mod create_fleet_output {
         /// <p>The fleet's locations and life-cycle status of each location. For new fleets, the status of all locations is set to <code>NEW</code>. During fleet creation, GameLift updates each location status as instances are deployed there and prepared for game hosting. This list includes an entry for the fleet's home Region. For fleets with no remote locations, only one entry, representing the home Region, is returned.</p>
         pub fn location_states(mut self, input: crate::model::LocationState) -> Self {
             let mut v = self.location_states.unwrap_or_default();
-            v.push(input);
-            self.location_states = Some(v);
-            self
+                            v.push(input);
+                            self.location_states = Some(v);
+                            self
         }
         /// <p>The fleet's locations and life-cycle status of each location. For new fleets, the status of all locations is set to <code>NEW</code>. During fleet creation, GameLift updates each location status as instances are deployed there and prepared for game hosting. This list includes an entry for the fleet's home Region. For fleets with no remote locations, only one entry, representing the home Region, is returned.</p>
-        pub fn set_location_states(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LocationState>>,
-        ) -> Self {
-            self.location_states = input;
-            self
+        pub fn set_location_states(mut self, input: std::option::Option<std::vec::Vec<crate::model::LocationState>>) -> Self {
+            self.location_states = input; self
         }
         /// Consumes the builder and constructs a [`CreateFleetOutput`](crate::output::CreateFleetOutput).
         pub fn build(self) -> crate::output::CreateFleetOutput {
             crate::output::CreateFleetOutput {
-                fleet_attributes: self.fleet_attributes,
-                location_states: self.location_states,
+                fleet_attributes: self.fleet_attributes
+                ,
+                location_states: self.location_states
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFleetOutput {
     /// Creates a new builder-style object to manufacture [`CreateFleetOutput`](crate::output::CreateFleetOutput).
@@ -6003,7 +6014,7 @@ impl CreateFleetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateBuildOutput {
+pub struct CreateBuildOutput  {
     /// <p>The newly created build resource, including a unique build IDs and status. </p>
     ///
     /// _Note: This member has been renamed from `build`._
@@ -6020,19 +6031,19 @@ impl CreateBuildOutput {
     /// <p>The newly created build resource, including a unique build IDs and status. </p>
     ///
     /// _Note: This member has been renamed from `build`._
-    pub fn build_value(&self) -> std::option::Option<&crate::model::Build> {
+    pub fn build_value(&self) -> std::option::Option<& crate::model::Build> {
         self.build_value.as_ref()
     }
     /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>. </p>
-    pub fn upload_credentials(&self) -> std::option::Option<&crate::model::AwsCredentials> {
+    pub fn upload_credentials(&self) -> std::option::Option<& crate::model::AwsCredentials> {
         self.upload_credentials.as_ref()
     }
     /// <p>Amazon S3 location for your game build file, including bucket name and key.</p>
-    pub fn storage_location(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn storage_location(&self) -> std::option::Option<& crate::model::S3Location> {
         self.storage_location.as_ref()
     }
 }
-impl std::fmt::Debug for CreateBuildOutput {
+impl  std::fmt::Debug for CreateBuildOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBuildOutput");
         formatter.field("build_value", &self.build_value);
@@ -6043,7 +6054,7 @@ impl std::fmt::Debug for CreateBuildOutput {
 }
 /// See [`CreateBuildOutput`](crate::output::CreateBuildOutput).
 pub mod create_build_output {
-
+    
     /// A builder for [`CreateBuildOutput`](crate::output::CreateBuildOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -6059,8 +6070,7 @@ pub mod create_build_output {
         }
         /// <p>The newly created build resource, including a unique build IDs and status. </p>
         pub fn set_build(mut self, input: std::option::Option<crate::model::Build>) -> Self {
-            self.build_value = input;
-            self
+            self.build_value = input; self
         }
         /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>. </p>
         pub fn upload_credentials(mut self, input: crate::model::AwsCredentials) -> Self {
@@ -6068,12 +6078,8 @@ pub mod create_build_output {
             self
         }
         /// <p>This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>. </p>
-        pub fn set_upload_credentials(
-            mut self,
-            input: std::option::Option<crate::model::AwsCredentials>,
-        ) -> Self {
-            self.upload_credentials = input;
-            self
+        pub fn set_upload_credentials(mut self, input: std::option::Option<crate::model::AwsCredentials>) -> Self {
+            self.upload_credentials = input; self
         }
         /// <p>Amazon S3 location for your game build file, including bucket name and key.</p>
         pub fn storage_location(mut self, input: crate::model::S3Location) -> Self {
@@ -6081,19 +6087,18 @@ pub mod create_build_output {
             self
         }
         /// <p>Amazon S3 location for your game build file, including bucket name and key.</p>
-        pub fn set_storage_location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.storage_location = input;
-            self
+        pub fn set_storage_location(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.storage_location = input; self
         }
         /// Consumes the builder and constructs a [`CreateBuildOutput`](crate::output::CreateBuildOutput).
         pub fn build(self) -> crate::output::CreateBuildOutput {
             crate::output::CreateBuildOutput {
-                build_value: self.build_value,
-                upload_credentials: self.upload_credentials,
-                storage_location: self.storage_location,
+                build_value: self.build_value
+                ,
+                upload_credentials: self.upload_credentials
+                ,
+                storage_location: self.storage_location
+                ,
             }
         }
     }
@@ -6106,6 +6111,8 @@ pub mod create_build_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreateBuildOutput {
     /// Creates a new builder-style object to manufacture [`CreateBuildOutput`](crate::output::CreateBuildOutput).
@@ -6117,20 +6124,20 @@ impl CreateBuildOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAliasOutput {
+pub struct CreateAliasOutput  {
     /// <p>The newly created alias resource.</p>
     #[doc(hidden)]
     pub alias: std::option::Option<crate::model::Alias>,
 }
 impl CreateAliasOutput {
     /// <p>The newly created alias resource.</p>
-    pub fn alias(&self) -> std::option::Option<&crate::model::Alias> {
+    pub fn alias(&self) -> std::option::Option<& crate::model::Alias> {
         self.alias.as_ref()
     }
 }
 /// See [`CreateAliasOutput`](crate::output::CreateAliasOutput).
 pub mod create_alias_output {
-
+    
     /// A builder for [`CreateAliasOutput`](crate::output::CreateAliasOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6144,14 +6151,18 @@ pub mod create_alias_output {
         }
         /// <p>The newly created alias resource.</p>
         pub fn set_alias(mut self, input: std::option::Option<crate::model::Alias>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// Consumes the builder and constructs a [`CreateAliasOutput`](crate::output::CreateAliasOutput).
         pub fn build(self) -> crate::output::CreateAliasOutput {
-            crate::output::CreateAliasOutput { alias: self.alias }
+            crate::output::CreateAliasOutput {
+                alias: self.alias
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateAliasOutput {
     /// Creates a new builder-style object to manufacture [`CreateAliasOutput`](crate::output::CreateAliasOutput).
@@ -6163,20 +6174,20 @@ impl CreateAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClaimGameServerOutput {
+pub struct ClaimGameServerOutput  {
     /// <p>Object that describes the newly claimed game server.</p>
     #[doc(hidden)]
     pub game_server: std::option::Option<crate::model::GameServer>,
 }
 impl ClaimGameServerOutput {
     /// <p>Object that describes the newly claimed game server.</p>
-    pub fn game_server(&self) -> std::option::Option<&crate::model::GameServer> {
+    pub fn game_server(&self) -> std::option::Option<& crate::model::GameServer> {
         self.game_server.as_ref()
     }
 }
 /// See [`ClaimGameServerOutput`](crate::output::ClaimGameServerOutput).
 pub mod claim_game_server_output {
-
+    
     /// A builder for [`ClaimGameServerOutput`](crate::output::ClaimGameServerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6189,20 +6200,19 @@ pub mod claim_game_server_output {
             self
         }
         /// <p>Object that describes the newly claimed game server.</p>
-        pub fn set_game_server(
-            mut self,
-            input: std::option::Option<crate::model::GameServer>,
-        ) -> Self {
-            self.game_server = input;
-            self
+        pub fn set_game_server(mut self, input: std::option::Option<crate::model::GameServer>) -> Self {
+            self.game_server = input; self
         }
         /// Consumes the builder and constructs a [`ClaimGameServerOutput`](crate::output::ClaimGameServerOutput).
         pub fn build(self) -> crate::output::ClaimGameServerOutput {
             crate::output::ClaimGameServerOutput {
-                game_server: self.game_server,
+                game_server: self.game_server
+                ,
             }
         }
     }
+    
+    
 }
 impl ClaimGameServerOutput {
     /// Creates a new builder-style object to manufacture [`ClaimGameServerOutput`](crate::output::ClaimGameServerOutput).
@@ -6214,19 +6224,24 @@ impl ClaimGameServerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptMatchOutput {}
+pub struct AcceptMatchOutput  {
+}
 /// See [`AcceptMatchOutput`](crate::output::AcceptMatchOutput).
 pub mod accept_match_output {
-
+    
     /// A builder for [`AcceptMatchOutput`](crate::output::AcceptMatchOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AcceptMatchOutput`](crate::output::AcceptMatchOutput).
         pub fn build(self) -> crate::output::AcceptMatchOutput {
-            crate::output::AcceptMatchOutput {}
+            crate::output::AcceptMatchOutput {
+            }
         }
     }
+    
+    
 }
 impl AcceptMatchOutput {
     /// Creates a new builder-style object to manufacture [`AcceptMatchOutput`](crate::output::AcceptMatchOutput).
@@ -6234,3 +6249,4 @@ impl AcceptMatchOutput {
         crate::output::accept_match_output::Builder::default()
     }
 }
+

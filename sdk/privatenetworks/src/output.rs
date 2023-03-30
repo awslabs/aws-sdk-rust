@@ -2,29 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateNetworkSitePlanOutput {
+pub struct UpdateNetworkSitePlanOutput  {
     /// <p>Information about the network site.</p>
     #[doc(hidden)]
     pub network_site: std::option::Option<crate::model::NetworkSite>,
     /// <p> The network site tags. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateNetworkSitePlanOutput {
     /// <p>Information about the network site.</p>
-    pub fn network_site(&self) -> std::option::Option<&crate::model::NetworkSite> {
+    pub fn network_site(&self) -> std::option::Option<& crate::model::NetworkSite> {
         self.network_site.as_ref()
     }
     /// <p> The network site tags. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateNetworkSitePlanOutput {
+impl  std::fmt::Debug for UpdateNetworkSitePlanOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateNetworkSitePlanOutput");
         formatter.field("network_site", &self.network_site);
@@ -34,14 +30,12 @@ impl std::fmt::Debug for UpdateNetworkSitePlanOutput {
 }
 /// See [`UpdateNetworkSitePlanOutput`](crate::output::UpdateNetworkSitePlanOutput).
 pub mod update_network_site_plan_output {
-
+    
     /// A builder for [`UpdateNetworkSitePlanOutput`](crate::output::UpdateNetworkSitePlanOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Information about the network site.</p>
@@ -50,43 +44,31 @@ pub mod update_network_site_plan_output {
             self
         }
         /// <p>Information about the network site.</p>
-        pub fn set_network_site(
-            mut self,
-            input: std::option::Option<crate::model::NetworkSite>,
-        ) -> Self {
-            self.network_site = input;
-            self
+        pub fn set_network_site(mut self, input: std::option::Option<crate::model::NetworkSite>) -> Self {
+            self.network_site = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The network site tags. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The network site tags. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UpdateNetworkSitePlanOutput`](crate::output::UpdateNetworkSitePlanOutput).
         pub fn build(self) -> crate::output::UpdateNetworkSitePlanOutput {
             crate::output::UpdateNetworkSitePlanOutput {
-                network_site: self.network_site,
-                tags: self.tags,
+                network_site: self.network_site
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -98,6 +80,8 @@ pub mod update_network_site_plan_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdateNetworkSitePlanOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNetworkSitePlanOutput`](crate::output::UpdateNetworkSitePlanOutput).
@@ -109,29 +93,25 @@ impl UpdateNetworkSitePlanOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateNetworkSiteOutput {
+pub struct UpdateNetworkSiteOutput  {
     /// <p>Information about the network site.</p>
     #[doc(hidden)]
     pub network_site: std::option::Option<crate::model::NetworkSite>,
     /// <p> The network site tags. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateNetworkSiteOutput {
     /// <p>Information about the network site.</p>
-    pub fn network_site(&self) -> std::option::Option<&crate::model::NetworkSite> {
+    pub fn network_site(&self) -> std::option::Option<& crate::model::NetworkSite> {
         self.network_site.as_ref()
     }
     /// <p> The network site tags. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateNetworkSiteOutput {
+impl  std::fmt::Debug for UpdateNetworkSiteOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateNetworkSiteOutput");
         formatter.field("network_site", &self.network_site);
@@ -141,14 +121,12 @@ impl std::fmt::Debug for UpdateNetworkSiteOutput {
 }
 /// See [`UpdateNetworkSiteOutput`](crate::output::UpdateNetworkSiteOutput).
 pub mod update_network_site_output {
-
+    
     /// A builder for [`UpdateNetworkSiteOutput`](crate::output::UpdateNetworkSiteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Information about the network site.</p>
@@ -157,43 +135,31 @@ pub mod update_network_site_output {
             self
         }
         /// <p>Information about the network site.</p>
-        pub fn set_network_site(
-            mut self,
-            input: std::option::Option<crate::model::NetworkSite>,
-        ) -> Self {
-            self.network_site = input;
-            self
+        pub fn set_network_site(mut self, input: std::option::Option<crate::model::NetworkSite>) -> Self {
+            self.network_site = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The network site tags. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The network site tags. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UpdateNetworkSiteOutput`](crate::output::UpdateNetworkSiteOutput).
         pub fn build(self) -> crate::output::UpdateNetworkSiteOutput {
             crate::output::UpdateNetworkSiteOutput {
-                network_site: self.network_site,
-                tags: self.tags,
+                network_site: self.network_site
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -205,6 +171,8 @@ pub mod update_network_site_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdateNetworkSiteOutput {
     /// Creates a new builder-style object to manufacture [`UpdateNetworkSiteOutput`](crate::output::UpdateNetworkSiteOutput).
@@ -216,19 +184,24 @@ impl UpdateNetworkSiteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -240,19 +213,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -264,20 +242,20 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PingOutput {
+pub struct PingOutput  {
     /// <p>Information about the health of the service.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
 }
 impl PingOutput {
     /// <p>Information about the health of the service.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`PingOutput`](crate::output::PingOutput).
 pub mod ping_output {
-
+    
     /// A builder for [`PingOutput`](crate::output::PingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -291,16 +269,18 @@ pub mod ping_output {
         }
         /// <p>Information about the health of the service.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`PingOutput`](crate::output::PingOutput).
         pub fn build(self) -> crate::output::PingOutput {
             crate::output::PingOutput {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl PingOutput {
     /// Creates a new builder-style object to manufacture [`PingOutput`](crate::output::PingOutput).
@@ -312,22 +292,18 @@ impl PingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The resource tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The resource tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ListTagsForResourceOutput {
+impl  std::fmt::Debug for ListTagsForResourceOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
@@ -336,13 +312,11 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -350,29 +324,22 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The resource tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The resource tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
     impl std::fmt::Debug for Builder {
@@ -382,6 +349,8 @@ pub mod list_tags_for_resource_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -393,7 +362,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOrdersOutput {
+pub struct ListOrdersOutput  {
     /// <p>Information about the orders.</p>
     #[doc(hidden)]
     pub orders: std::option::Option<std::vec::Vec<crate::model::Order>>,
@@ -403,17 +372,17 @@ pub struct ListOrdersOutput {
 }
 impl ListOrdersOutput {
     /// <p>Information about the orders.</p>
-    pub fn orders(&self) -> std::option::Option<&[crate::model::Order]> {
+    pub fn orders(&self) -> std::option::Option<& [crate::model::Order]> {
         self.orders.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListOrdersOutput`](crate::output::ListOrdersOutput).
 pub mod list_orders_output {
-
+    
     /// A builder for [`ListOrdersOutput`](crate::output::ListOrdersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -428,17 +397,13 @@ pub mod list_orders_output {
         /// <p>Information about the orders.</p>
         pub fn orders(mut self, input: crate::model::Order) -> Self {
             let mut v = self.orders.unwrap_or_default();
-            v.push(input);
-            self.orders = Some(v);
-            self
+                            v.push(input);
+                            self.orders = Some(v);
+                            self
         }
         /// <p>Information about the orders.</p>
-        pub fn set_orders(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Order>>,
-        ) -> Self {
-            self.orders = input;
-            self
+        pub fn set_orders(mut self, input: std::option::Option<std::vec::Vec<crate::model::Order>>) -> Self {
+            self.orders = input; self
         }
         /// <p>The token for the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -447,17 +412,20 @@ pub mod list_orders_output {
         }
         /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListOrdersOutput`](crate::output::ListOrdersOutput).
         pub fn build(self) -> crate::output::ListOrdersOutput {
             crate::output::ListOrdersOutput {
-                orders: self.orders,
-                next_token: self.next_token,
+                orders: self.orders
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListOrdersOutput {
     /// Creates a new builder-style object to manufacture [`ListOrdersOutput`](crate::output::ListOrdersOutput).
@@ -469,7 +437,7 @@ impl ListOrdersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListNetworkSitesOutput {
+pub struct ListNetworkSitesOutput  {
     /// <p>Information about the network sites.</p>
     #[doc(hidden)]
     pub network_sites: std::option::Option<std::vec::Vec<crate::model::NetworkSite>>,
@@ -479,17 +447,17 @@ pub struct ListNetworkSitesOutput {
 }
 impl ListNetworkSitesOutput {
     /// <p>Information about the network sites.</p>
-    pub fn network_sites(&self) -> std::option::Option<&[crate::model::NetworkSite]> {
+    pub fn network_sites(&self) -> std::option::Option<& [crate::model::NetworkSite]> {
         self.network_sites.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListNetworkSitesOutput`](crate::output::ListNetworkSitesOutput).
 pub mod list_network_sites_output {
-
+    
     /// A builder for [`ListNetworkSitesOutput`](crate::output::ListNetworkSitesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -504,17 +472,13 @@ pub mod list_network_sites_output {
         /// <p>Information about the network sites.</p>
         pub fn network_sites(mut self, input: crate::model::NetworkSite) -> Self {
             let mut v = self.network_sites.unwrap_or_default();
-            v.push(input);
-            self.network_sites = Some(v);
-            self
+                            v.push(input);
+                            self.network_sites = Some(v);
+                            self
         }
         /// <p>Information about the network sites.</p>
-        pub fn set_network_sites(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NetworkSite>>,
-        ) -> Self {
-            self.network_sites = input;
-            self
+        pub fn set_network_sites(mut self, input: std::option::Option<std::vec::Vec<crate::model::NetworkSite>>) -> Self {
+            self.network_sites = input; self
         }
         /// <p>The token for the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -523,17 +487,20 @@ pub mod list_network_sites_output {
         }
         /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListNetworkSitesOutput`](crate::output::ListNetworkSitesOutput).
         pub fn build(self) -> crate::output::ListNetworkSitesOutput {
             crate::output::ListNetworkSitesOutput {
-                network_sites: self.network_sites,
-                next_token: self.next_token,
+                network_sites: self.network_sites
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListNetworkSitesOutput {
     /// Creates a new builder-style object to manufacture [`ListNetworkSitesOutput`](crate::output::ListNetworkSitesOutput).
@@ -545,7 +512,7 @@ impl ListNetworkSitesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListNetworksOutput {
+pub struct ListNetworksOutput  {
     /// <p>The networks.</p>
     #[doc(hidden)]
     pub networks: std::option::Option<std::vec::Vec<crate::model::Network>>,
@@ -555,17 +522,17 @@ pub struct ListNetworksOutput {
 }
 impl ListNetworksOutput {
     /// <p>The networks.</p>
-    pub fn networks(&self) -> std::option::Option<&[crate::model::Network]> {
+    pub fn networks(&self) -> std::option::Option<& [crate::model::Network]> {
         self.networks.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListNetworksOutput`](crate::output::ListNetworksOutput).
 pub mod list_networks_output {
-
+    
     /// A builder for [`ListNetworksOutput`](crate::output::ListNetworksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -580,17 +547,13 @@ pub mod list_networks_output {
         /// <p>The networks.</p>
         pub fn networks(mut self, input: crate::model::Network) -> Self {
             let mut v = self.networks.unwrap_or_default();
-            v.push(input);
-            self.networks = Some(v);
-            self
+                            v.push(input);
+                            self.networks = Some(v);
+                            self
         }
         /// <p>The networks.</p>
-        pub fn set_networks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Network>>,
-        ) -> Self {
-            self.networks = input;
-            self
+        pub fn set_networks(mut self, input: std::option::Option<std::vec::Vec<crate::model::Network>>) -> Self {
+            self.networks = input; self
         }
         /// <p>The token for the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -599,17 +562,20 @@ pub mod list_networks_output {
         }
         /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListNetworksOutput`](crate::output::ListNetworksOutput).
         pub fn build(self) -> crate::output::ListNetworksOutput {
             crate::output::ListNetworksOutput {
-                networks: self.networks,
-                next_token: self.next_token,
+                networks: self.networks
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListNetworksOutput {
     /// Creates a new builder-style object to manufacture [`ListNetworksOutput`](crate::output::ListNetworksOutput).
@@ -621,7 +587,7 @@ impl ListNetworksOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListNetworkResourcesOutput {
+pub struct ListNetworkResourcesOutput  {
     /// <p>Information about network resources.</p>
     #[doc(hidden)]
     pub network_resources: std::option::Option<std::vec::Vec<crate::model::NetworkResource>>,
@@ -631,22 +597,21 @@ pub struct ListNetworkResourcesOutput {
 }
 impl ListNetworkResourcesOutput {
     /// <p>Information about network resources.</p>
-    pub fn network_resources(&self) -> std::option::Option<&[crate::model::NetworkResource]> {
+    pub fn network_resources(&self) -> std::option::Option<& [crate::model::NetworkResource]> {
         self.network_resources.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListNetworkResourcesOutput`](crate::output::ListNetworkResourcesOutput).
 pub mod list_network_resources_output {
-
+    
     /// A builder for [`ListNetworkResourcesOutput`](crate::output::ListNetworkResourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) network_resources:
-            std::option::Option<std::vec::Vec<crate::model::NetworkResource>>,
+        pub(crate) network_resources: std::option::Option<std::vec::Vec<crate::model::NetworkResource>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -657,17 +622,13 @@ pub mod list_network_resources_output {
         /// <p>Information about network resources.</p>
         pub fn network_resources(mut self, input: crate::model::NetworkResource) -> Self {
             let mut v = self.network_resources.unwrap_or_default();
-            v.push(input);
-            self.network_resources = Some(v);
-            self
+                            v.push(input);
+                            self.network_resources = Some(v);
+                            self
         }
         /// <p>Information about network resources.</p>
-        pub fn set_network_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NetworkResource>>,
-        ) -> Self {
-            self.network_resources = input;
-            self
+        pub fn set_network_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::NetworkResource>>) -> Self {
+            self.network_resources = input; self
         }
         /// <p>The token for the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -676,17 +637,20 @@ pub mod list_network_resources_output {
         }
         /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListNetworkResourcesOutput`](crate::output::ListNetworkResourcesOutput).
         pub fn build(self) -> crate::output::ListNetworkResourcesOutput {
             crate::output::ListNetworkResourcesOutput {
-                network_resources: self.network_resources,
-                next_token: self.next_token,
+                network_resources: self.network_resources
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListNetworkResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListNetworkResourcesOutput`](crate::output::ListNetworkResourcesOutput).
@@ -698,7 +662,7 @@ impl ListNetworkResourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeviceIdentifiersOutput {
+pub struct ListDeviceIdentifiersOutput  {
     /// <p>Information about the device identifiers.</p>
     #[doc(hidden)]
     pub device_identifiers: std::option::Option<std::vec::Vec<crate::model::DeviceIdentifier>>,
@@ -708,22 +672,21 @@ pub struct ListDeviceIdentifiersOutput {
 }
 impl ListDeviceIdentifiersOutput {
     /// <p>Information about the device identifiers.</p>
-    pub fn device_identifiers(&self) -> std::option::Option<&[crate::model::DeviceIdentifier]> {
+    pub fn device_identifiers(&self) -> std::option::Option<& [crate::model::DeviceIdentifier]> {
         self.device_identifiers.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDeviceIdentifiersOutput`](crate::output::ListDeviceIdentifiersOutput).
 pub mod list_device_identifiers_output {
-
+    
     /// A builder for [`ListDeviceIdentifiersOutput`](crate::output::ListDeviceIdentifiersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) device_identifiers:
-            std::option::Option<std::vec::Vec<crate::model::DeviceIdentifier>>,
+        pub(crate) device_identifiers: std::option::Option<std::vec::Vec<crate::model::DeviceIdentifier>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -734,17 +697,13 @@ pub mod list_device_identifiers_output {
         /// <p>Information about the device identifiers.</p>
         pub fn device_identifiers(mut self, input: crate::model::DeviceIdentifier) -> Self {
             let mut v = self.device_identifiers.unwrap_or_default();
-            v.push(input);
-            self.device_identifiers = Some(v);
-            self
+                            v.push(input);
+                            self.device_identifiers = Some(v);
+                            self
         }
         /// <p>Information about the device identifiers.</p>
-        pub fn set_device_identifiers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeviceIdentifier>>,
-        ) -> Self {
-            self.device_identifiers = input;
-            self
+        pub fn set_device_identifiers(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeviceIdentifier>>) -> Self {
+            self.device_identifiers = input; self
         }
         /// <p>The token for the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -753,17 +712,20 @@ pub mod list_device_identifiers_output {
         }
         /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDeviceIdentifiersOutput`](crate::output::ListDeviceIdentifiersOutput).
         pub fn build(self) -> crate::output::ListDeviceIdentifiersOutput {
             crate::output::ListDeviceIdentifiersOutput {
-                device_identifiers: self.device_identifiers,
-                next_token: self.next_token,
+                device_identifiers: self.device_identifiers
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDeviceIdentifiersOutput {
     /// Creates a new builder-style object to manufacture [`ListDeviceIdentifiersOutput`](crate::output::ListDeviceIdentifiersOutput).
@@ -775,29 +737,25 @@ impl ListDeviceIdentifiersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetOrderOutput {
+pub struct GetOrderOutput  {
     /// <p>Information about the order.</p>
     #[doc(hidden)]
     pub order: std::option::Option<crate::model::Order>,
     /// <p> The order tags. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetOrderOutput {
     /// <p>Information about the order.</p>
-    pub fn order(&self) -> std::option::Option<&crate::model::Order> {
+    pub fn order(&self) -> std::option::Option<& crate::model::Order> {
         self.order.as_ref()
     }
     /// <p> The order tags. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for GetOrderOutput {
+impl  std::fmt::Debug for GetOrderOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetOrderOutput");
         formatter.field("order", &self.order);
@@ -807,14 +765,12 @@ impl std::fmt::Debug for GetOrderOutput {
 }
 /// See [`GetOrderOutput`](crate::output::GetOrderOutput).
 pub mod get_order_output {
-
+    
     /// A builder for [`GetOrderOutput`](crate::output::GetOrderOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) order: std::option::Option<crate::model::Order>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Information about the order.</p>
@@ -824,39 +780,30 @@ pub mod get_order_output {
         }
         /// <p>Information about the order.</p>
         pub fn set_order(mut self, input: std::option::Option<crate::model::Order>) -> Self {
-            self.order = input;
-            self
+            self.order = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The order tags. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The order tags. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetOrderOutput`](crate::output::GetOrderOutput).
         pub fn build(self) -> crate::output::GetOrderOutput {
             crate::output::GetOrderOutput {
-                order: self.order,
-                tags: self.tags,
+                order: self.order
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -868,6 +815,8 @@ pub mod get_order_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetOrderOutput {
     /// Creates a new builder-style object to manufacture [`GetOrderOutput`](crate::output::GetOrderOutput).
@@ -879,29 +828,25 @@ impl GetOrderOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetNetworkSiteOutput {
+pub struct GetNetworkSiteOutput  {
     /// <p>Information about the network site.</p>
     #[doc(hidden)]
     pub network_site: std::option::Option<crate::model::NetworkSite>,
     /// <p> The network site tags. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetNetworkSiteOutput {
     /// <p>Information about the network site.</p>
-    pub fn network_site(&self) -> std::option::Option<&crate::model::NetworkSite> {
+    pub fn network_site(&self) -> std::option::Option<& crate::model::NetworkSite> {
         self.network_site.as_ref()
     }
     /// <p> The network site tags. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for GetNetworkSiteOutput {
+impl  std::fmt::Debug for GetNetworkSiteOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetNetworkSiteOutput");
         formatter.field("network_site", &self.network_site);
@@ -911,14 +856,12 @@ impl std::fmt::Debug for GetNetworkSiteOutput {
 }
 /// See [`GetNetworkSiteOutput`](crate::output::GetNetworkSiteOutput).
 pub mod get_network_site_output {
-
+    
     /// A builder for [`GetNetworkSiteOutput`](crate::output::GetNetworkSiteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Information about the network site.</p>
@@ -927,43 +870,31 @@ pub mod get_network_site_output {
             self
         }
         /// <p>Information about the network site.</p>
-        pub fn set_network_site(
-            mut self,
-            input: std::option::Option<crate::model::NetworkSite>,
-        ) -> Self {
-            self.network_site = input;
-            self
+        pub fn set_network_site(mut self, input: std::option::Option<crate::model::NetworkSite>) -> Self {
+            self.network_site = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The network site tags. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The network site tags. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetNetworkSiteOutput`](crate::output::GetNetworkSiteOutput).
         pub fn build(self) -> crate::output::GetNetworkSiteOutput {
             crate::output::GetNetworkSiteOutput {
-                network_site: self.network_site,
-                tags: self.tags,
+                network_site: self.network_site
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -975,6 +906,8 @@ pub mod get_network_site_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetNetworkSiteOutput {
     /// Creates a new builder-style object to manufacture [`GetNetworkSiteOutput`](crate::output::GetNetworkSiteOutput).
@@ -986,29 +919,25 @@ impl GetNetworkSiteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetNetworkResourceOutput {
+pub struct GetNetworkResourceOutput  {
     /// <p>Information about the network resource.</p>
     #[doc(hidden)]
     pub network_resource: std::option::Option<crate::model::NetworkResource>,
     /// <p> The network resource tags. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetNetworkResourceOutput {
     /// <p>Information about the network resource.</p>
-    pub fn network_resource(&self) -> std::option::Option<&crate::model::NetworkResource> {
+    pub fn network_resource(&self) -> std::option::Option<& crate::model::NetworkResource> {
         self.network_resource.as_ref()
     }
     /// <p> The network resource tags. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for GetNetworkResourceOutput {
+impl  std::fmt::Debug for GetNetworkResourceOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetNetworkResourceOutput");
         formatter.field("network_resource", &self.network_resource);
@@ -1018,14 +947,12 @@ impl std::fmt::Debug for GetNetworkResourceOutput {
 }
 /// See [`GetNetworkResourceOutput`](crate::output::GetNetworkResourceOutput).
 pub mod get_network_resource_output {
-
+    
     /// A builder for [`GetNetworkResourceOutput`](crate::output::GetNetworkResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network_resource: std::option::Option<crate::model::NetworkResource>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Information about the network resource.</p>
@@ -1034,43 +961,31 @@ pub mod get_network_resource_output {
             self
         }
         /// <p>Information about the network resource.</p>
-        pub fn set_network_resource(
-            mut self,
-            input: std::option::Option<crate::model::NetworkResource>,
-        ) -> Self {
-            self.network_resource = input;
-            self
+        pub fn set_network_resource(mut self, input: std::option::Option<crate::model::NetworkResource>) -> Self {
+            self.network_resource = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The network resource tags. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The network resource tags. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetNetworkResourceOutput`](crate::output::GetNetworkResourceOutput).
         pub fn build(self) -> crate::output::GetNetworkResourceOutput {
             crate::output::GetNetworkResourceOutput {
-                network_resource: self.network_resource,
-                tags: self.tags,
+                network_resource: self.network_resource
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -1082,6 +997,8 @@ pub mod get_network_resource_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetNetworkResourceOutput {
     /// Creates a new builder-style object to manufacture [`GetNetworkResourceOutput`](crate::output::GetNetworkResourceOutput).
@@ -1093,29 +1010,25 @@ impl GetNetworkResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetNetworkOutput {
+pub struct GetNetworkOutput  {
     /// <p>Information about the network.</p>
     #[doc(hidden)]
     pub network: std::option::Option<crate::model::Network>,
     /// <p> The network tags. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetNetworkOutput {
     /// <p>Information about the network.</p>
-    pub fn network(&self) -> std::option::Option<&crate::model::Network> {
+    pub fn network(&self) -> std::option::Option<& crate::model::Network> {
         self.network.as_ref()
     }
     /// <p> The network tags. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for GetNetworkOutput {
+impl  std::fmt::Debug for GetNetworkOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetNetworkOutput");
         formatter.field("network", &self.network);
@@ -1125,14 +1038,12 @@ impl std::fmt::Debug for GetNetworkOutput {
 }
 /// See [`GetNetworkOutput`](crate::output::GetNetworkOutput).
 pub mod get_network_output {
-
+    
     /// A builder for [`GetNetworkOutput`](crate::output::GetNetworkOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network: std::option::Option<crate::model::Network>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Information about the network.</p>
@@ -1142,39 +1053,30 @@ pub mod get_network_output {
         }
         /// <p>Information about the network.</p>
         pub fn set_network(mut self, input: std::option::Option<crate::model::Network>) -> Self {
-            self.network = input;
-            self
+            self.network = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The network tags. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The network tags. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetNetworkOutput`](crate::output::GetNetworkOutput).
         pub fn build(self) -> crate::output::GetNetworkOutput {
             crate::output::GetNetworkOutput {
-                network: self.network,
-                tags: self.tags,
+                network: self.network
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -1186,6 +1088,8 @@ pub mod get_network_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetNetworkOutput {
     /// Creates a new builder-style object to manufacture [`GetNetworkOutput`](crate::output::GetNetworkOutput).
@@ -1197,29 +1101,25 @@ impl GetNetworkOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetDeviceIdentifierOutput {
+pub struct GetDeviceIdentifierOutput  {
     /// <p>Information about the device identifier.</p>
     #[doc(hidden)]
     pub device_identifier: std::option::Option<crate::model::DeviceIdentifier>,
     /// <p> The device identifier tags. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetDeviceIdentifierOutput {
     /// <p>Information about the device identifier.</p>
-    pub fn device_identifier(&self) -> std::option::Option<&crate::model::DeviceIdentifier> {
+    pub fn device_identifier(&self) -> std::option::Option<& crate::model::DeviceIdentifier> {
         self.device_identifier.as_ref()
     }
     /// <p> The device identifier tags. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for GetDeviceIdentifierOutput {
+impl  std::fmt::Debug for GetDeviceIdentifierOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetDeviceIdentifierOutput");
         formatter.field("device_identifier", &self.device_identifier);
@@ -1229,14 +1129,12 @@ impl std::fmt::Debug for GetDeviceIdentifierOutput {
 }
 /// See [`GetDeviceIdentifierOutput`](crate::output::GetDeviceIdentifierOutput).
 pub mod get_device_identifier_output {
-
+    
     /// A builder for [`GetDeviceIdentifierOutput`](crate::output::GetDeviceIdentifierOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) device_identifier: std::option::Option<crate::model::DeviceIdentifier>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Information about the device identifier.</p>
@@ -1245,43 +1143,31 @@ pub mod get_device_identifier_output {
             self
         }
         /// <p>Information about the device identifier.</p>
-        pub fn set_device_identifier(
-            mut self,
-            input: std::option::Option<crate::model::DeviceIdentifier>,
-        ) -> Self {
-            self.device_identifier = input;
-            self
+        pub fn set_device_identifier(mut self, input: std::option::Option<crate::model::DeviceIdentifier>) -> Self {
+            self.device_identifier = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The device identifier tags. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The device identifier tags. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetDeviceIdentifierOutput`](crate::output::GetDeviceIdentifierOutput).
         pub fn build(self) -> crate::output::GetDeviceIdentifierOutput {
             crate::output::GetDeviceIdentifierOutput {
-                device_identifier: self.device_identifier,
-                tags: self.tags,
+                device_identifier: self.device_identifier
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -1293,6 +1179,8 @@ pub mod get_device_identifier_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetDeviceIdentifierOutput {
     /// Creates a new builder-style object to manufacture [`GetDeviceIdentifierOutput`](crate::output::GetDeviceIdentifierOutput).
@@ -1304,20 +1192,20 @@ impl GetDeviceIdentifierOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNetworkSiteOutput {
+pub struct DeleteNetworkSiteOutput  {
     /// <p>Information about the network site.</p>
     #[doc(hidden)]
     pub network_site: std::option::Option<crate::model::NetworkSite>,
 }
 impl DeleteNetworkSiteOutput {
     /// <p>Information about the network site.</p>
-    pub fn network_site(&self) -> std::option::Option<&crate::model::NetworkSite> {
+    pub fn network_site(&self) -> std::option::Option<& crate::model::NetworkSite> {
         self.network_site.as_ref()
     }
 }
 /// See [`DeleteNetworkSiteOutput`](crate::output::DeleteNetworkSiteOutput).
 pub mod delete_network_site_output {
-
+    
     /// A builder for [`DeleteNetworkSiteOutput`](crate::output::DeleteNetworkSiteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1330,20 +1218,19 @@ pub mod delete_network_site_output {
             self
         }
         /// <p>Information about the network site.</p>
-        pub fn set_network_site(
-            mut self,
-            input: std::option::Option<crate::model::NetworkSite>,
-        ) -> Self {
-            self.network_site = input;
-            self
+        pub fn set_network_site(mut self, input: std::option::Option<crate::model::NetworkSite>) -> Self {
+            self.network_site = input; self
         }
         /// Consumes the builder and constructs a [`DeleteNetworkSiteOutput`](crate::output::DeleteNetworkSiteOutput).
         pub fn build(self) -> crate::output::DeleteNetworkSiteOutput {
             crate::output::DeleteNetworkSiteOutput {
-                network_site: self.network_site,
+                network_site: self.network_site
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteNetworkSiteOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkSiteOutput`](crate::output::DeleteNetworkSiteOutput).
@@ -1355,20 +1242,20 @@ impl DeleteNetworkSiteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNetworkOutput {
+pub struct DeleteNetworkOutput  {
     /// <p>Information about the network.</p>
     #[doc(hidden)]
     pub network: std::option::Option<crate::model::Network>,
 }
 impl DeleteNetworkOutput {
     /// <p>Information about the network.</p>
-    pub fn network(&self) -> std::option::Option<&crate::model::Network> {
+    pub fn network(&self) -> std::option::Option<& crate::model::Network> {
         self.network.as_ref()
     }
 }
 /// See [`DeleteNetworkOutput`](crate::output::DeleteNetworkOutput).
 pub mod delete_network_output {
-
+    
     /// A builder for [`DeleteNetworkOutput`](crate::output::DeleteNetworkOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1382,16 +1269,18 @@ pub mod delete_network_output {
         }
         /// <p>Information about the network.</p>
         pub fn set_network(mut self, input: std::option::Option<crate::model::Network>) -> Self {
-            self.network = input;
-            self
+            self.network = input; self
         }
         /// Consumes the builder and constructs a [`DeleteNetworkOutput`](crate::output::DeleteNetworkOutput).
         pub fn build(self) -> crate::output::DeleteNetworkOutput {
             crate::output::DeleteNetworkOutput {
-                network: self.network,
+                network: self.network
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteNetworkOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkOutput`](crate::output::DeleteNetworkOutput).
@@ -1403,20 +1292,20 @@ impl DeleteNetworkOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeactivateDeviceIdentifierOutput {
+pub struct DeactivateDeviceIdentifierOutput  {
     /// <p>Information about the device identifier.</p>
     #[doc(hidden)]
     pub device_identifier: std::option::Option<crate::model::DeviceIdentifier>,
 }
 impl DeactivateDeviceIdentifierOutput {
     /// <p>Information about the device identifier.</p>
-    pub fn device_identifier(&self) -> std::option::Option<&crate::model::DeviceIdentifier> {
+    pub fn device_identifier(&self) -> std::option::Option<& crate::model::DeviceIdentifier> {
         self.device_identifier.as_ref()
     }
 }
 /// See [`DeactivateDeviceIdentifierOutput`](crate::output::DeactivateDeviceIdentifierOutput).
 pub mod deactivate_device_identifier_output {
-
+    
     /// A builder for [`DeactivateDeviceIdentifierOutput`](crate::output::DeactivateDeviceIdentifierOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1429,20 +1318,19 @@ pub mod deactivate_device_identifier_output {
             self
         }
         /// <p>Information about the device identifier.</p>
-        pub fn set_device_identifier(
-            mut self,
-            input: std::option::Option<crate::model::DeviceIdentifier>,
-        ) -> Self {
-            self.device_identifier = input;
-            self
+        pub fn set_device_identifier(mut self, input: std::option::Option<crate::model::DeviceIdentifier>) -> Self {
+            self.device_identifier = input; self
         }
         /// Consumes the builder and constructs a [`DeactivateDeviceIdentifierOutput`](crate::output::DeactivateDeviceIdentifierOutput).
         pub fn build(self) -> crate::output::DeactivateDeviceIdentifierOutput {
             crate::output::DeactivateDeviceIdentifierOutput {
-                device_identifier: self.device_identifier,
+                device_identifier: self.device_identifier
+                ,
             }
         }
     }
+    
+    
 }
 impl DeactivateDeviceIdentifierOutput {
     /// Creates a new builder-style object to manufacture [`DeactivateDeviceIdentifierOutput`](crate::output::DeactivateDeviceIdentifierOutput).
@@ -1454,29 +1342,25 @@ impl DeactivateDeviceIdentifierOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateNetworkSiteOutput {
+pub struct CreateNetworkSiteOutput  {
     /// <p>Information about the network site.</p>
     #[doc(hidden)]
     pub network_site: std::option::Option<crate::model::NetworkSite>,
     /// <p> The network site tags. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateNetworkSiteOutput {
     /// <p>Information about the network site.</p>
-    pub fn network_site(&self) -> std::option::Option<&crate::model::NetworkSite> {
+    pub fn network_site(&self) -> std::option::Option<& crate::model::NetworkSite> {
         self.network_site.as_ref()
     }
     /// <p> The network site tags. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateNetworkSiteOutput {
+impl  std::fmt::Debug for CreateNetworkSiteOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNetworkSiteOutput");
         formatter.field("network_site", &self.network_site);
@@ -1486,14 +1370,12 @@ impl std::fmt::Debug for CreateNetworkSiteOutput {
 }
 /// See [`CreateNetworkSiteOutput`](crate::output::CreateNetworkSiteOutput).
 pub mod create_network_site_output {
-
+    
     /// A builder for [`CreateNetworkSiteOutput`](crate::output::CreateNetworkSiteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network_site: std::option::Option<crate::model::NetworkSite>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Information about the network site.</p>
@@ -1502,43 +1384,31 @@ pub mod create_network_site_output {
             self
         }
         /// <p>Information about the network site.</p>
-        pub fn set_network_site(
-            mut self,
-            input: std::option::Option<crate::model::NetworkSite>,
-        ) -> Self {
-            self.network_site = input;
-            self
+        pub fn set_network_site(mut self, input: std::option::Option<crate::model::NetworkSite>) -> Self {
+            self.network_site = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The network site tags. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The network site tags. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateNetworkSiteOutput`](crate::output::CreateNetworkSiteOutput).
         pub fn build(self) -> crate::output::CreateNetworkSiteOutput {
             crate::output::CreateNetworkSiteOutput {
-                network_site: self.network_site,
-                tags: self.tags,
+                network_site: self.network_site
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -1550,6 +1420,8 @@ pub mod create_network_site_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreateNetworkSiteOutput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkSiteOutput`](crate::output::CreateNetworkSiteOutput).
@@ -1561,29 +1433,25 @@ impl CreateNetworkSiteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateNetworkOutput {
+pub struct CreateNetworkOutput  {
     /// <p>Information about the network.</p>
     #[doc(hidden)]
     pub network: std::option::Option<crate::model::Network>,
     /// <p> The network tags. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateNetworkOutput {
     /// <p>Information about the network.</p>
-    pub fn network(&self) -> std::option::Option<&crate::model::Network> {
+    pub fn network(&self) -> std::option::Option<& crate::model::Network> {
         self.network.as_ref()
     }
     /// <p> The network tags. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for CreateNetworkOutput {
+impl  std::fmt::Debug for CreateNetworkOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateNetworkOutput");
         formatter.field("network", &self.network);
@@ -1593,14 +1461,12 @@ impl std::fmt::Debug for CreateNetworkOutput {
 }
 /// See [`CreateNetworkOutput`](crate::output::CreateNetworkOutput).
 pub mod create_network_output {
-
+    
     /// A builder for [`CreateNetworkOutput`](crate::output::CreateNetworkOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) network: std::option::Option<crate::model::Network>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Information about the network.</p>
@@ -1610,39 +1476,30 @@ pub mod create_network_output {
         }
         /// <p>Information about the network.</p>
         pub fn set_network(mut self, input: std::option::Option<crate::model::Network>) -> Self {
-            self.network = input;
-            self
+            self.network = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The network tags. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The network tags. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateNetworkOutput`](crate::output::CreateNetworkOutput).
         pub fn build(self) -> crate::output::CreateNetworkOutput {
             crate::output::CreateNetworkOutput {
-                network: self.network,
-                tags: self.tags,
+                network: self.network
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -1654,6 +1511,8 @@ pub mod create_network_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreateNetworkOutput {
     /// Creates a new builder-style object to manufacture [`CreateNetworkOutput`](crate::output::CreateNetworkOutput).
@@ -1665,20 +1524,20 @@ impl CreateNetworkOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigureAccessPointOutput {
+pub struct ConfigureAccessPointOutput  {
     /// <p>Information about the network resource.</p>
     #[doc(hidden)]
     pub access_point: std::option::Option<crate::model::NetworkResource>,
 }
 impl ConfigureAccessPointOutput {
     /// <p>Information about the network resource.</p>
-    pub fn access_point(&self) -> std::option::Option<&crate::model::NetworkResource> {
+    pub fn access_point(&self) -> std::option::Option<& crate::model::NetworkResource> {
         self.access_point.as_ref()
     }
 }
 /// See [`ConfigureAccessPointOutput`](crate::output::ConfigureAccessPointOutput).
 pub mod configure_access_point_output {
-
+    
     /// A builder for [`ConfigureAccessPointOutput`](crate::output::ConfigureAccessPointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1691,20 +1550,19 @@ pub mod configure_access_point_output {
             self
         }
         /// <p>Information about the network resource.</p>
-        pub fn set_access_point(
-            mut self,
-            input: std::option::Option<crate::model::NetworkResource>,
-        ) -> Self {
-            self.access_point = input;
-            self
+        pub fn set_access_point(mut self, input: std::option::Option<crate::model::NetworkResource>) -> Self {
+            self.access_point = input; self
         }
         /// Consumes the builder and constructs a [`ConfigureAccessPointOutput`](crate::output::ConfigureAccessPointOutput).
         pub fn build(self) -> crate::output::ConfigureAccessPointOutput {
             crate::output::ConfigureAccessPointOutput {
-                access_point: self.access_point,
+                access_point: self.access_point
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfigureAccessPointOutput {
     /// Creates a new builder-style object to manufacture [`ConfigureAccessPointOutput`](crate::output::ConfigureAccessPointOutput).
@@ -1716,20 +1574,20 @@ impl ConfigureAccessPointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivateNetworkSiteOutput {
+pub struct ActivateNetworkSiteOutput  {
     /// <p>Information about the network site.</p>
     #[doc(hidden)]
     pub network_site: std::option::Option<crate::model::NetworkSite>,
 }
 impl ActivateNetworkSiteOutput {
     /// <p>Information about the network site.</p>
-    pub fn network_site(&self) -> std::option::Option<&crate::model::NetworkSite> {
+    pub fn network_site(&self) -> std::option::Option<& crate::model::NetworkSite> {
         self.network_site.as_ref()
     }
 }
 /// See [`ActivateNetworkSiteOutput`](crate::output::ActivateNetworkSiteOutput).
 pub mod activate_network_site_output {
-
+    
     /// A builder for [`ActivateNetworkSiteOutput`](crate::output::ActivateNetworkSiteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1742,20 +1600,19 @@ pub mod activate_network_site_output {
             self
         }
         /// <p>Information about the network site.</p>
-        pub fn set_network_site(
-            mut self,
-            input: std::option::Option<crate::model::NetworkSite>,
-        ) -> Self {
-            self.network_site = input;
-            self
+        pub fn set_network_site(mut self, input: std::option::Option<crate::model::NetworkSite>) -> Self {
+            self.network_site = input; self
         }
         /// Consumes the builder and constructs a [`ActivateNetworkSiteOutput`](crate::output::ActivateNetworkSiteOutput).
         pub fn build(self) -> crate::output::ActivateNetworkSiteOutput {
             crate::output::ActivateNetworkSiteOutput {
-                network_site: self.network_site,
+                network_site: self.network_site
+                ,
             }
         }
     }
+    
+    
 }
 impl ActivateNetworkSiteOutput {
     /// Creates a new builder-style object to manufacture [`ActivateNetworkSiteOutput`](crate::output::ActivateNetworkSiteOutput).
@@ -1767,29 +1624,25 @@ impl ActivateNetworkSiteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ActivateDeviceIdentifierOutput {
+pub struct ActivateDeviceIdentifierOutput  {
     /// <p>Information about the device identifier.</p>
     #[doc(hidden)]
     pub device_identifier: std::option::Option<crate::model::DeviceIdentifier>,
     /// <p> The tags on the device identifier. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ActivateDeviceIdentifierOutput {
     /// <p>Information about the device identifier.</p>
-    pub fn device_identifier(&self) -> std::option::Option<&crate::model::DeviceIdentifier> {
+    pub fn device_identifier(&self) -> std::option::Option<& crate::model::DeviceIdentifier> {
         self.device_identifier.as_ref()
     }
     /// <p> The tags on the device identifier. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ActivateDeviceIdentifierOutput {
+impl  std::fmt::Debug for ActivateDeviceIdentifierOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ActivateDeviceIdentifierOutput");
         formatter.field("device_identifier", &self.device_identifier);
@@ -1799,14 +1652,12 @@ impl std::fmt::Debug for ActivateDeviceIdentifierOutput {
 }
 /// See [`ActivateDeviceIdentifierOutput`](crate::output::ActivateDeviceIdentifierOutput).
 pub mod activate_device_identifier_output {
-
+    
     /// A builder for [`ActivateDeviceIdentifierOutput`](crate::output::ActivateDeviceIdentifierOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) device_identifier: std::option::Option<crate::model::DeviceIdentifier>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Information about the device identifier.</p>
@@ -1815,43 +1666,31 @@ pub mod activate_device_identifier_output {
             self
         }
         /// <p>Information about the device identifier.</p>
-        pub fn set_device_identifier(
-            mut self,
-            input: std::option::Option<crate::model::DeviceIdentifier>,
-        ) -> Self {
-            self.device_identifier = input;
-            self
+        pub fn set_device_identifier(mut self, input: std::option::Option<crate::model::DeviceIdentifier>) -> Self {
+            self.device_identifier = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The tags on the device identifier. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The tags on the device identifier. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ActivateDeviceIdentifierOutput`](crate::output::ActivateDeviceIdentifierOutput).
         pub fn build(self) -> crate::output::ActivateDeviceIdentifierOutput {
             crate::output::ActivateDeviceIdentifierOutput {
-                device_identifier: self.device_identifier,
-                tags: self.tags,
+                device_identifier: self.device_identifier
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -1863,6 +1702,8 @@ pub mod activate_device_identifier_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ActivateDeviceIdentifierOutput {
     /// Creates a new builder-style object to manufacture [`ActivateDeviceIdentifierOutput`](crate::output::ActivateDeviceIdentifierOutput).
@@ -1874,20 +1715,20 @@ impl ActivateDeviceIdentifierOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcknowledgeOrderReceiptOutput {
+pub struct AcknowledgeOrderReceiptOutput  {
     /// <p>Information about the order.</p>
     #[doc(hidden)]
     pub order: std::option::Option<crate::model::Order>,
 }
 impl AcknowledgeOrderReceiptOutput {
     /// <p>Information about the order.</p>
-    pub fn order(&self) -> std::option::Option<&crate::model::Order> {
+    pub fn order(&self) -> std::option::Option<& crate::model::Order> {
         self.order.as_ref()
     }
 }
 /// See [`AcknowledgeOrderReceiptOutput`](crate::output::AcknowledgeOrderReceiptOutput).
 pub mod acknowledge_order_receipt_output {
-
+    
     /// A builder for [`AcknowledgeOrderReceiptOutput`](crate::output::AcknowledgeOrderReceiptOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1901,14 +1742,18 @@ pub mod acknowledge_order_receipt_output {
         }
         /// <p>Information about the order.</p>
         pub fn set_order(mut self, input: std::option::Option<crate::model::Order>) -> Self {
-            self.order = input;
-            self
+            self.order = input; self
         }
         /// Consumes the builder and constructs a [`AcknowledgeOrderReceiptOutput`](crate::output::AcknowledgeOrderReceiptOutput).
         pub fn build(self) -> crate::output::AcknowledgeOrderReceiptOutput {
-            crate::output::AcknowledgeOrderReceiptOutput { order: self.order }
+            crate::output::AcknowledgeOrderReceiptOutput {
+                order: self.order
+                ,
+            }
         }
     }
+    
+    
 }
 impl AcknowledgeOrderReceiptOutput {
     /// Creates a new builder-style object to manufacture [`AcknowledgeOrderReceiptOutput`](crate::output::AcknowledgeOrderReceiptOutput).
@@ -1916,3 +1761,4 @@ impl AcknowledgeOrderReceiptOutput {
         crate::output::acknowledge_order_receipt_output::Builder::default()
     }
 }
+

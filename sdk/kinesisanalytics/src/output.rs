@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApplicationOutput {}
+pub struct UpdateApplicationOutput  {
+}
 /// See [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
 pub mod update_application_output {
-
+    
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
         pub fn build(self) -> crate::output::UpdateApplicationOutput {
-            crate::output::UpdateApplicationOutput {}
+            crate::output::UpdateApplicationOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
@@ -26,19 +31,24 @@ impl UpdateApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -50,19 +60,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -74,19 +89,24 @@ impl TagResourceOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopApplicationOutput {}
+pub struct StopApplicationOutput  {
+}
 /// See [`StopApplicationOutput`](crate::output::StopApplicationOutput).
 pub mod stop_application_output {
-
+    
     /// A builder for [`StopApplicationOutput`](crate::output::StopApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopApplicationOutput`](crate::output::StopApplicationOutput).
         pub fn build(self) -> crate::output::StopApplicationOutput {
-            crate::output::StopApplicationOutput {}
+            crate::output::StopApplicationOutput {
+            }
         }
     }
+    
+    
 }
 impl StopApplicationOutput {
     /// Creates a new builder-style object to manufacture [`StopApplicationOutput`](crate::output::StopApplicationOutput).
@@ -98,19 +118,24 @@ impl StopApplicationOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartApplicationOutput {}
+pub struct StartApplicationOutput  {
+}
 /// See [`StartApplicationOutput`](crate::output::StartApplicationOutput).
 pub mod start_application_output {
-
+    
     /// A builder for [`StartApplicationOutput`](crate::output::StartApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StartApplicationOutput`](crate::output::StartApplicationOutput).
         pub fn build(self) -> crate::output::StartApplicationOutput {
-            crate::output::StartApplicationOutput {}
+            crate::output::StartApplicationOutput {
+            }
         }
     }
+    
+    
 }
 impl StartApplicationOutput {
     /// Creates a new builder-style object to manufacture [`StartApplicationOutput`](crate::output::StartApplicationOutput).
@@ -122,20 +147,20 @@ impl StartApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The key-value tags assigned to the application.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The key-value tags assigned to the application.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -149,23 +174,24 @@ pub mod list_tags_for_resource_output {
         /// <p>The key-value tags assigned to the application.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The key-value tags assigned to the application.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -177,7 +203,7 @@ impl ListTagsForResourceOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationsOutput {
+pub struct ListApplicationsOutput  {
     /// <p>List of <code>ApplicationSummary</code> objects. </p>
     #[doc(hidden)]
     pub application_summaries: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
@@ -187,9 +213,7 @@ pub struct ListApplicationsOutput {
 }
 impl ListApplicationsOutput {
     /// <p>List of <code>ApplicationSummary</code> objects. </p>
-    pub fn application_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::ApplicationSummary]> {
+    pub fn application_summaries(&self) -> std::option::Option<& [crate::model::ApplicationSummary]> {
         self.application_summaries.as_deref()
     }
     /// <p>Returns true if there are more applications to retrieve.</p>
@@ -199,12 +223,11 @@ impl ListApplicationsOutput {
 }
 /// See [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
 pub mod list_applications_output {
-
+    
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) application_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
+        pub(crate) application_summaries: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
         pub(crate) has_more_applications: std::option::Option<bool>,
     }
     impl Builder {
@@ -215,17 +238,13 @@ pub mod list_applications_output {
         /// <p>List of <code>ApplicationSummary</code> objects. </p>
         pub fn application_summaries(mut self, input: crate::model::ApplicationSummary) -> Self {
             let mut v = self.application_summaries.unwrap_or_default();
-            v.push(input);
-            self.application_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.application_summaries = Some(v);
+                            self
         }
         /// <p>List of <code>ApplicationSummary</code> objects. </p>
-        pub fn set_application_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
-        ) -> Self {
-            self.application_summaries = input;
-            self
+        pub fn set_application_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>) -> Self {
+            self.application_summaries = input; self
         }
         /// <p>Returns true if there are more applications to retrieve.</p>
         pub fn has_more_applications(mut self, input: bool) -> Self {
@@ -234,17 +253,20 @@ pub mod list_applications_output {
         }
         /// <p>Returns true if there are more applications to retrieve.</p>
         pub fn set_has_more_applications(mut self, input: std::option::Option<bool>) -> Self {
-            self.has_more_applications = input;
-            self
+            self.has_more_applications = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
         pub fn build(self) -> crate::output::ListApplicationsOutput {
             crate::output::ListApplicationsOutput {
-                application_summaries: self.application_summaries,
-                has_more_applications: self.has_more_applications,
+                application_summaries: self.application_summaries
+                ,
+                has_more_applications: self.has_more_applications
+                ,
             }
         }
     }
+    
+    
 }
 impl ListApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
@@ -256,14 +278,13 @@ impl ListApplicationsOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DiscoverInputSchemaOutput {
+pub struct DiscoverInputSchemaOutput  {
     /// <p>Schema inferred from the streaming source. It identifies the format of the data in the streaming source and how each data element maps to corresponding columns in the in-application stream that you can create.</p>
     #[doc(hidden)]
     pub input_schema: std::option::Option<crate::model::SourceSchema>,
     /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
     #[doc(hidden)]
-    pub parsed_input_records:
-        std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    pub parsed_input_records: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     /// <p>Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
     #[doc(hidden)]
     pub processed_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -273,33 +294,30 @@ pub struct DiscoverInputSchemaOutput {
 }
 impl DiscoverInputSchemaOutput {
     /// <p>Schema inferred from the streaming source. It identifies the format of the data in the streaming source and how each data element maps to corresponding columns in the in-application stream that you can create.</p>
-    pub fn input_schema(&self) -> std::option::Option<&crate::model::SourceSchema> {
+    pub fn input_schema(&self) -> std::option::Option<& crate::model::SourceSchema> {
         self.input_schema.as_ref()
     }
     /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
-    pub fn parsed_input_records(
-        &self,
-    ) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+    pub fn parsed_input_records(&self) -> std::option::Option<& [std::vec::Vec<std::string::String>]> {
         self.parsed_input_records.as_deref()
     }
     /// <p>Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
-    pub fn processed_input_records(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn processed_input_records(&self) -> std::option::Option<& [std::string::String]> {
         self.processed_input_records.as_deref()
     }
     /// <p>Raw stream data that was sampled to infer the schema.</p>
-    pub fn raw_input_records(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn raw_input_records(&self) -> std::option::Option<& [std::string::String]> {
         self.raw_input_records.as_deref()
     }
 }
 /// See [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput).
 pub mod discover_input_schema_output {
-
+    
     /// A builder for [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) input_schema: std::option::Option<crate::model::SourceSchema>,
-        pub(crate) parsed_input_records:
-            std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        pub(crate) parsed_input_records: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
         pub(crate) processed_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) raw_input_records: std::option::Option<std::vec::Vec<std::string::String>>,
     }
@@ -310,12 +328,8 @@ pub mod discover_input_schema_output {
             self
         }
         /// <p>Schema inferred from the streaming source. It identifies the format of the data in the streaming source and how each data element maps to corresponding columns in the in-application stream that you can create.</p>
-        pub fn set_input_schema(
-            mut self,
-            input: std::option::Option<crate::model::SourceSchema>,
-        ) -> Self {
-            self.input_schema = input;
-            self
+        pub fn set_input_schema(mut self, input: std::option::Option<crate::model::SourceSchema>) -> Self {
+            self.input_schema = input; self
         }
         /// Appends an item to `parsed_input_records`.
         ///
@@ -324,17 +338,13 @@ pub mod discover_input_schema_output {
         /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
         pub fn parsed_input_records(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             let mut v = self.parsed_input_records.unwrap_or_default();
-            v.push(input);
-            self.parsed_input_records = Some(v);
-            self
+                            v.push(input);
+                            self.parsed_input_records = Some(v);
+                            self
         }
         /// <p>An array of elements, where each element corresponds to a row in a stream record (a stream record can have more than one row).</p>
-        pub fn set_parsed_input_records(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
-        ) -> Self {
-            self.parsed_input_records = input;
-            self
+        pub fn set_parsed_input_records(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>) -> Self {
+            self.parsed_input_records = input; self
         }
         /// Appends an item to `processed_input_records`.
         ///
@@ -343,17 +353,13 @@ pub mod discover_input_schema_output {
         /// <p>Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
         pub fn processed_input_records(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.processed_input_records.unwrap_or_default();
-            v.push(input.into());
-            self.processed_input_records = Some(v);
-            self
+                            v.push(input.into());
+                            self.processed_input_records = Some(v);
+                            self
         }
         /// <p>Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code> parameter.</p>
-        pub fn set_processed_input_records(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.processed_input_records = input;
-            self
+        pub fn set_processed_input_records(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.processed_input_records = input; self
         }
         /// Appends an item to `raw_input_records`.
         ///
@@ -362,28 +368,30 @@ pub mod discover_input_schema_output {
         /// <p>Raw stream data that was sampled to infer the schema.</p>
         pub fn raw_input_records(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.raw_input_records.unwrap_or_default();
-            v.push(input.into());
-            self.raw_input_records = Some(v);
-            self
+                            v.push(input.into());
+                            self.raw_input_records = Some(v);
+                            self
         }
         /// <p>Raw stream data that was sampled to infer the schema.</p>
-        pub fn set_raw_input_records(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.raw_input_records = input;
-            self
+        pub fn set_raw_input_records(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.raw_input_records = input; self
         }
         /// Consumes the builder and constructs a [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput).
         pub fn build(self) -> crate::output::DiscoverInputSchemaOutput {
             crate::output::DiscoverInputSchemaOutput {
-                input_schema: self.input_schema,
-                parsed_input_records: self.parsed_input_records,
-                processed_input_records: self.processed_input_records,
-                raw_input_records: self.raw_input_records,
+                input_schema: self.input_schema
+                ,
+                parsed_input_records: self.parsed_input_records
+                ,
+                processed_input_records: self.processed_input_records
+                ,
+                raw_input_records: self.raw_input_records
+                ,
             }
         }
     }
+    
+    
 }
 impl DiscoverInputSchemaOutput {
     /// Creates a new builder-style object to manufacture [`DiscoverInputSchemaOutput`](crate::output::DiscoverInputSchemaOutput).
@@ -395,20 +403,20 @@ impl DiscoverInputSchemaOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApplicationOutput {
+pub struct DescribeApplicationOutput  {
     /// <p>Provides a description of the application, such as the application Amazon Resource Name (ARN), status, latest version, and input and output configuration details.</p>
     #[doc(hidden)]
     pub application_detail: std::option::Option<crate::model::ApplicationDetail>,
 }
 impl DescribeApplicationOutput {
     /// <p>Provides a description of the application, such as the application Amazon Resource Name (ARN), status, latest version, and input and output configuration details.</p>
-    pub fn application_detail(&self) -> std::option::Option<&crate::model::ApplicationDetail> {
+    pub fn application_detail(&self) -> std::option::Option<& crate::model::ApplicationDetail> {
         self.application_detail.as_ref()
     }
 }
 /// See [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
 pub mod describe_application_output {
-
+    
     /// A builder for [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -421,20 +429,19 @@ pub mod describe_application_output {
             self
         }
         /// <p>Provides a description of the application, such as the application Amazon Resource Name (ARN), status, latest version, and input and output configuration details.</p>
-        pub fn set_application_detail(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationDetail>,
-        ) -> Self {
-            self.application_detail = input;
-            self
+        pub fn set_application_detail(mut self, input: std::option::Option<crate::model::ApplicationDetail>) -> Self {
+            self.application_detail = input; self
         }
         /// Consumes the builder and constructs a [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
         pub fn build(self) -> crate::output::DescribeApplicationOutput {
             crate::output::DescribeApplicationOutput {
-                application_detail: self.application_detail,
+                application_detail: self.application_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationOutput`](crate::output::DescribeApplicationOutput).
@@ -446,19 +453,24 @@ impl DescribeApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationReferenceDataSourceOutput {}
+pub struct DeleteApplicationReferenceDataSourceOutput  {
+}
 /// See [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput).
 pub mod delete_application_reference_data_source_output {
-
+    
     /// A builder for [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput).
         pub fn build(self) -> crate::output::DeleteApplicationReferenceDataSourceOutput {
-            crate::output::DeleteApplicationReferenceDataSourceOutput {}
+            crate::output::DeleteApplicationReferenceDataSourceOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteApplicationReferenceDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationReferenceDataSourceOutput`](crate::output::DeleteApplicationReferenceDataSourceOutput).
@@ -470,19 +482,24 @@ impl DeleteApplicationReferenceDataSourceOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationOutputOutput {}
+pub struct DeleteApplicationOutputOutput  {
+}
 /// See [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput).
 pub mod delete_application_output_output {
-
+    
     /// A builder for [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput).
         pub fn build(self) -> crate::output::DeleteApplicationOutputOutput {
-            crate::output::DeleteApplicationOutputOutput {}
+            crate::output::DeleteApplicationOutputOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteApplicationOutputOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationOutputOutput`](crate::output::DeleteApplicationOutputOutput).
@@ -494,24 +511,28 @@ impl DeleteApplicationOutputOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationInputProcessingConfigurationOutput {}
+pub struct DeleteApplicationInputProcessingConfigurationOutput  {
+}
 /// See [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput).
 pub mod delete_application_input_processing_configuration_output {
-
+    
     /// A builder for [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteApplicationInputProcessingConfigurationOutput {
-            crate::output::DeleteApplicationInputProcessingConfigurationOutput {}
+            crate::output::DeleteApplicationInputProcessingConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteApplicationInputProcessingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationInputProcessingConfigurationOutput`](crate::output::DeleteApplicationInputProcessingConfigurationOutput).
-    pub fn builder(
-    ) -> crate::output::delete_application_input_processing_configuration_output::Builder {
+    pub fn builder() -> crate::output::delete_application_input_processing_configuration_output::Builder {
         crate::output::delete_application_input_processing_configuration_output::Builder::default()
     }
 }
@@ -519,24 +540,28 @@ impl DeleteApplicationInputProcessingConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationCloudWatchLoggingOptionOutput {}
+pub struct DeleteApplicationCloudWatchLoggingOptionOutput  {
+}
 /// See [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput).
 pub mod delete_application_cloud_watch_logging_option_output {
-
+    
     /// A builder for [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput).
         pub fn build(self) -> crate::output::DeleteApplicationCloudWatchLoggingOptionOutput {
-            crate::output::DeleteApplicationCloudWatchLoggingOptionOutput {}
+            crate::output::DeleteApplicationCloudWatchLoggingOptionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteApplicationCloudWatchLoggingOptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationCloudWatchLoggingOptionOutput`](crate::output::DeleteApplicationCloudWatchLoggingOptionOutput).
-    pub fn builder() -> crate::output::delete_application_cloud_watch_logging_option_output::Builder
-    {
+    pub fn builder() -> crate::output::delete_application_cloud_watch_logging_option_output::Builder {
         crate::output::delete_application_cloud_watch_logging_option_output::Builder::default()
     }
 }
@@ -544,19 +569,24 @@ impl DeleteApplicationCloudWatchLoggingOptionOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationOutput {}
+pub struct DeleteApplicationOutput  {
+}
 /// See [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
 pub mod delete_application_output {
-
+    
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
         pub fn build(self) -> crate::output::DeleteApplicationOutput {
-            crate::output::DeleteApplicationOutput {}
+            crate::output::DeleteApplicationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
@@ -568,20 +598,20 @@ impl DeleteApplicationOutput {
 /// <p>TBD</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateApplicationOutput {
+pub struct CreateApplicationOutput  {
     /// <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis Analytics returns a response with a summary of the application it created, including the application Amazon Resource Name (ARN), name, and status.</p>
     #[doc(hidden)]
     pub application_summary: std::option::Option<crate::model::ApplicationSummary>,
 }
 impl CreateApplicationOutput {
     /// <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis Analytics returns a response with a summary of the application it created, including the application Amazon Resource Name (ARN), name, and status.</p>
-    pub fn application_summary(&self) -> std::option::Option<&crate::model::ApplicationSummary> {
+    pub fn application_summary(&self) -> std::option::Option<& crate::model::ApplicationSummary> {
         self.application_summary.as_ref()
     }
 }
 /// See [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
 pub mod create_application_output {
-
+    
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -594,20 +624,19 @@ pub mod create_application_output {
             self
         }
         /// <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis Analytics returns a response with a summary of the application it created, including the application Amazon Resource Name (ARN), name, and status.</p>
-        pub fn set_application_summary(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationSummary>,
-        ) -> Self {
-            self.application_summary = input;
-            self
+        pub fn set_application_summary(mut self, input: std::option::Option<crate::model::ApplicationSummary>) -> Self {
+            self.application_summary = input; self
         }
         /// Consumes the builder and constructs a [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
         pub fn build(self) -> crate::output::CreateApplicationOutput {
             crate::output::CreateApplicationOutput {
-                application_summary: self.application_summary,
+                application_summary: self.application_summary
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
@@ -619,19 +648,24 @@ impl CreateApplicationOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddApplicationReferenceDataSourceOutput {}
+pub struct AddApplicationReferenceDataSourceOutput  {
+}
 /// See [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput).
 pub mod add_application_reference_data_source_output {
-
+    
     /// A builder for [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput).
         pub fn build(self) -> crate::output::AddApplicationReferenceDataSourceOutput {
-            crate::output::AddApplicationReferenceDataSourceOutput {}
+            crate::output::AddApplicationReferenceDataSourceOutput {
+            }
         }
     }
+    
+    
 }
 impl AddApplicationReferenceDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationReferenceDataSourceOutput`](crate::output::AddApplicationReferenceDataSourceOutput).
@@ -643,19 +677,24 @@ impl AddApplicationReferenceDataSourceOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddApplicationOutputOutput {}
+pub struct AddApplicationOutputOutput  {
+}
 /// See [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput).
 pub mod add_application_output_output {
-
+    
     /// A builder for [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput).
         pub fn build(self) -> crate::output::AddApplicationOutputOutput {
-            crate::output::AddApplicationOutputOutput {}
+            crate::output::AddApplicationOutputOutput {
+            }
         }
     }
+    
+    
 }
 impl AddApplicationOutputOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationOutputOutput`](crate::output::AddApplicationOutputOutput).
@@ -667,24 +706,28 @@ impl AddApplicationOutputOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddApplicationInputProcessingConfigurationOutput {}
+pub struct AddApplicationInputProcessingConfigurationOutput  {
+}
 /// See [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput).
 pub mod add_application_input_processing_configuration_output {
-
+    
     /// A builder for [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput).
         pub fn build(self) -> crate::output::AddApplicationInputProcessingConfigurationOutput {
-            crate::output::AddApplicationInputProcessingConfigurationOutput {}
+            crate::output::AddApplicationInputProcessingConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl AddApplicationInputProcessingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationInputProcessingConfigurationOutput`](crate::output::AddApplicationInputProcessingConfigurationOutput).
-    pub fn builder() -> crate::output::add_application_input_processing_configuration_output::Builder
-    {
+    pub fn builder() -> crate::output::add_application_input_processing_configuration_output::Builder {
         crate::output::add_application_input_processing_configuration_output::Builder::default()
     }
 }
@@ -692,19 +735,24 @@ impl AddApplicationInputProcessingConfigurationOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddApplicationInputOutput {}
+pub struct AddApplicationInputOutput  {
+}
 /// See [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput).
 pub mod add_application_input_output {
-
+    
     /// A builder for [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput).
         pub fn build(self) -> crate::output::AddApplicationInputOutput {
-            crate::output::AddApplicationInputOutput {}
+            crate::output::AddApplicationInputOutput {
+            }
         }
     }
+    
+    
 }
 impl AddApplicationInputOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationInputOutput`](crate::output::AddApplicationInputOutput).
@@ -716,19 +764,24 @@ impl AddApplicationInputOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddApplicationCloudWatchLoggingOptionOutput {}
+pub struct AddApplicationCloudWatchLoggingOptionOutput  {
+}
 /// See [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput).
 pub mod add_application_cloud_watch_logging_option_output {
-
+    
     /// A builder for [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput).
         pub fn build(self) -> crate::output::AddApplicationCloudWatchLoggingOptionOutput {
-            crate::output::AddApplicationCloudWatchLoggingOptionOutput {}
+            crate::output::AddApplicationCloudWatchLoggingOptionOutput {
+            }
         }
     }
+    
+    
 }
 impl AddApplicationCloudWatchLoggingOptionOutput {
     /// Creates a new builder-style object to manufacture [`AddApplicationCloudWatchLoggingOptionOutput`](crate::output::AddApplicationCloudWatchLoggingOptionOutput).
@@ -736,3 +789,4 @@ impl AddApplicationCloudWatchLoggingOptionOutput {
         crate::output::add_application_cloud_watch_logging_option_output::Builder::default()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>Error details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ErrorDetails {
+pub struct ErrorDetails  {
     /// <p>Error details message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -19,25 +19,25 @@ pub struct ErrorDetails {
 }
 impl ErrorDetails {
     /// <p>Error details message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>Error details code.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>Error details resourceId.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>Error details resourceType.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
 }
 /// See [`ErrorDetails`](crate::model::ErrorDetails).
 pub mod error_details {
-
+    
     /// A builder for [`ErrorDetails`](crate::model::ErrorDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -54,8 +54,7 @@ pub mod error_details {
         }
         /// <p>Error details message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>Error details code.</p>
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,8 +63,7 @@ pub mod error_details {
         }
         /// <p>Error details code.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// <p>Error details resourceId.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,8 +72,7 @@ pub mod error_details {
         }
         /// <p>Error details resourceId.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// <p>Error details resourceType.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,23 +80,25 @@ pub mod error_details {
             self
         }
         /// <p>Error details resourceType.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// Consumes the builder and constructs a [`ErrorDetails`](crate::model::ErrorDetails).
         pub fn build(self) -> crate::model::ErrorDetails {
             crate::model::ErrorDetails {
-                message: self.message,
-                code: self.code,
-                resource_id: self.resource_id,
-                resource_type: self.resource_type,
+                message: self.message
+                ,
+                code: self.code
+                ,
+                resource_id: self.resource_id
+                ,
+                resource_type: self.resource_type
+                ,
             }
         }
     }
+    
+    
 }
 impl ErrorDetails {
     /// Creates a new builder-style object to manufacture [`ErrorDetails`](crate::model::ErrorDetails).
@@ -111,7 +110,7 @@ impl ErrorDetails {
 /// <p>Wave aggregated status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WaveAggregatedStatus {
+pub struct WaveAggregatedStatus  {
     /// <p>Wave aggregated status last update dateTime.</p>
     #[doc(hidden)]
     pub last_update_date_time: std::option::Option<std::string::String>,
@@ -130,19 +129,19 @@ pub struct WaveAggregatedStatus {
 }
 impl WaveAggregatedStatus {
     /// <p>Wave aggregated status last update dateTime.</p>
-    pub fn last_update_date_time(&self) -> std::option::Option<&str> {
+    pub fn last_update_date_time(&self) -> std::option::Option<& str> {
         self.last_update_date_time.as_deref()
     }
     /// <p>DateTime marking when the first source server in the wave started replication.</p>
-    pub fn replication_started_date_time(&self) -> std::option::Option<&str> {
+    pub fn replication_started_date_time(&self) -> std::option::Option<& str> {
         self.replication_started_date_time.as_deref()
     }
     /// <p>Wave aggregated status health status.</p>
-    pub fn health_status(&self) -> std::option::Option<&crate::model::WaveHealthStatus> {
+    pub fn health_status(&self) -> std::option::Option<& crate::model::WaveHealthStatus> {
         self.health_status.as_ref()
     }
     /// <p>Wave aggregated status progress status.</p>
-    pub fn progress_status(&self) -> std::option::Option<&crate::model::WaveProgressStatus> {
+    pub fn progress_status(&self) -> std::option::Option<& crate::model::WaveProgressStatus> {
         self.progress_status.as_ref()
     }
     /// <p>Wave aggregated status total applications amount.</p>
@@ -152,7 +151,7 @@ impl WaveAggregatedStatus {
 }
 /// See [`WaveAggregatedStatus`](crate::model::WaveAggregatedStatus).
 pub mod wave_aggregated_status {
-
+    
     /// A builder for [`WaveAggregatedStatus`](crate::model::WaveAggregatedStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -169,28 +168,17 @@ pub mod wave_aggregated_status {
             self
         }
         /// <p>Wave aggregated status last update dateTime.</p>
-        pub fn set_last_update_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_update_date_time = input;
-            self
+        pub fn set_last_update_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_update_date_time = input; self
         }
         /// <p>DateTime marking when the first source server in the wave started replication.</p>
-        pub fn replication_started_date_time(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn replication_started_date_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.replication_started_date_time = Some(input.into());
             self
         }
         /// <p>DateTime marking when the first source server in the wave started replication.</p>
-        pub fn set_replication_started_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.replication_started_date_time = input;
-            self
+        pub fn set_replication_started_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.replication_started_date_time = input; self
         }
         /// <p>Wave aggregated status health status.</p>
         pub fn health_status(mut self, input: crate::model::WaveHealthStatus) -> Self {
@@ -198,12 +186,8 @@ pub mod wave_aggregated_status {
             self
         }
         /// <p>Wave aggregated status health status.</p>
-        pub fn set_health_status(
-            mut self,
-            input: std::option::Option<crate::model::WaveHealthStatus>,
-        ) -> Self {
-            self.health_status = input;
-            self
+        pub fn set_health_status(mut self, input: std::option::Option<crate::model::WaveHealthStatus>) -> Self {
+            self.health_status = input; self
         }
         /// <p>Wave aggregated status progress status.</p>
         pub fn progress_status(mut self, input: crate::model::WaveProgressStatus) -> Self {
@@ -211,12 +195,8 @@ pub mod wave_aggregated_status {
             self
         }
         /// <p>Wave aggregated status progress status.</p>
-        pub fn set_progress_status(
-            mut self,
-            input: std::option::Option<crate::model::WaveProgressStatus>,
-        ) -> Self {
-            self.progress_status = input;
-            self
+        pub fn set_progress_status(mut self, input: std::option::Option<crate::model::WaveProgressStatus>) -> Self {
+            self.progress_status = input; self
         }
         /// <p>Wave aggregated status total applications amount.</p>
         pub fn total_applications(mut self, input: i64) -> Self {
@@ -225,20 +205,27 @@ pub mod wave_aggregated_status {
         }
         /// <p>Wave aggregated status total applications amount.</p>
         pub fn set_total_applications(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_applications = input;
-            self
+            self.total_applications = input; self
         }
         /// Consumes the builder and constructs a [`WaveAggregatedStatus`](crate::model::WaveAggregatedStatus).
         pub fn build(self) -> crate::model::WaveAggregatedStatus {
             crate::model::WaveAggregatedStatus {
-                last_update_date_time: self.last_update_date_time,
-                replication_started_date_time: self.replication_started_date_time,
-                health_status: self.health_status,
-                progress_status: self.progress_status,
-                total_applications: self.total_applications.unwrap_or_default(),
+                last_update_date_time: self.last_update_date_time
+                ,
+                replication_started_date_time: self.replication_started_date_time
+                ,
+                health_status: self.health_status
+                ,
+                progress_status: self.progress_status
+                ,
+                total_applications: self.total_applications
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl WaveAggregatedStatus {
     /// Creates a new builder-style object to manufacture [`WaveAggregatedStatus`](crate::model::WaveAggregatedStatus).
@@ -253,9 +240,9 @@ impl WaveAggregatedStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let waveprogressstatus = unimplemented!();
 /// match waveprogressstatus {
@@ -278,22 +265,14 @@ impl WaveAggregatedStatus {
 /// Specifically, when `waveprogressstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WaveProgressStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WaveProgressStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -302,7 +281,7 @@ pub enum WaveProgressStatus {
     #[allow(missing_docs)] // documentation missing in model
     NotStarted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WaveProgressStatus {
     fn from(s: &str) -> Self {
@@ -310,19 +289,17 @@ impl std::convert::From<&str> for WaveProgressStatus {
             "COMPLETED" => WaveProgressStatus::Completed,
             "IN_PROGRESS" => WaveProgressStatus::InProgress,
             "NOT_STARTED" => WaveProgressStatus::NotStarted,
-            other => {
-                WaveProgressStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => WaveProgressStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WaveProgressStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WaveProgressStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WaveProgressStatus::from(s))
+                }
+            }
 impl WaveProgressStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -330,12 +307,14 @@ impl WaveProgressStatus {
             WaveProgressStatus::Completed => "COMPLETED",
             WaveProgressStatus::InProgress => "IN_PROGRESS",
             WaveProgressStatus::NotStarted => "NOT_STARTED",
-            WaveProgressStatus::Unknown(value) => value.as_str(),
+            WaveProgressStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "IN_PROGRESS", "NOT_STARTED"]
+        &[
+            "COMPLETED", "IN_PROGRESS", "NOT_STARTED"
+        ]
     }
 }
 impl AsRef<str> for WaveProgressStatus {
@@ -350,9 +329,9 @@ impl AsRef<str> for WaveProgressStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let wavehealthstatus = unimplemented!();
 /// match wavehealthstatus {
@@ -375,22 +354,14 @@ impl AsRef<str> for WaveProgressStatus {
 /// Specifically, when `wavehealthstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WaveHealthStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WaveHealthStatus {
     #[allow(missing_docs)] // documentation missing in model
     Error,
@@ -399,7 +370,7 @@ pub enum WaveHealthStatus {
     #[allow(missing_docs)] // documentation missing in model
     Lagging,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WaveHealthStatus {
     fn from(s: &str) -> Self {
@@ -407,17 +378,17 @@ impl std::convert::From<&str> for WaveHealthStatus {
             "ERROR" => WaveHealthStatus::Error,
             "HEALTHY" => WaveHealthStatus::Healthy,
             "LAGGING" => WaveHealthStatus::Lagging,
-            other => WaveHealthStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => WaveHealthStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WaveHealthStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WaveHealthStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WaveHealthStatus::from(s))
+                }
+            }
 impl WaveHealthStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -425,12 +396,14 @@ impl WaveHealthStatus {
             WaveHealthStatus::Error => "ERROR",
             WaveHealthStatus::Healthy => "HEALTHY",
             WaveHealthStatus::Lagging => "LAGGING",
-            WaveHealthStatus::Unknown(value) => value.as_str(),
+            WaveHealthStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ERROR", "HEALTHY", "LAGGING"]
+        &[
+            "ERROR", "HEALTHY", "LAGGING"
+        ]
     }
 }
 impl AsRef<str> for WaveHealthStatus {
@@ -442,7 +415,7 @@ impl AsRef<str> for WaveHealthStatus {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Wave {
+pub struct Wave  {
     /// <p>Wave ID.</p>
     #[doc(hidden)]
     pub wave_id: std::option::Option<std::string::String>,
@@ -469,24 +442,23 @@ pub struct Wave {
     pub last_modified_date_time: std::option::Option<std::string::String>,
     /// <p>Wave tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Wave {
     /// <p>Wave ID.</p>
-    pub fn wave_id(&self) -> std::option::Option<&str> {
+    pub fn wave_id(&self) -> std::option::Option<& str> {
         self.wave_id.as_deref()
     }
     /// <p>Wave ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Wave name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Wave description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Wave archival status.</p>
@@ -494,28 +466,23 @@ impl Wave {
         self.is_archived
     }
     /// <p>Wave aggregated status.</p>
-    pub fn wave_aggregated_status(
-        &self,
-    ) -> std::option::Option<&crate::model::WaveAggregatedStatus> {
+    pub fn wave_aggregated_status(&self) -> std::option::Option<& crate::model::WaveAggregatedStatus> {
         self.wave_aggregated_status.as_ref()
     }
     /// <p>Wave creation dateTime.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&str> {
+    pub fn creation_date_time(&self) -> std::option::Option<& str> {
         self.creation_date_time.as_deref()
     }
     /// <p>Wave last modified dateTime.</p>
-    pub fn last_modified_date_time(&self) -> std::option::Option<&str> {
+    pub fn last_modified_date_time(&self) -> std::option::Option<& str> {
         self.last_modified_date_time.as_deref()
     }
     /// <p>Wave tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for Wave {
+impl  std::fmt::Debug for Wave  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Wave");
         formatter.field("wave_id", &self.wave_id);
@@ -532,7 +499,7 @@ impl std::fmt::Debug for Wave {
 }
 /// See [`Wave`](crate::model::Wave).
 pub mod wave {
-
+    
     /// A builder for [`Wave`](crate::model::Wave).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -544,9 +511,7 @@ pub mod wave {
         pub(crate) wave_aggregated_status: std::option::Option<crate::model::WaveAggregatedStatus>,
         pub(crate) creation_date_time: std::option::Option<std::string::String>,
         pub(crate) last_modified_date_time: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Wave ID.</p>
@@ -556,8 +521,7 @@ pub mod wave {
         }
         /// <p>Wave ID.</p>
         pub fn set_wave_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.wave_id = input;
-            self
+            self.wave_id = input; self
         }
         /// <p>Wave ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -566,8 +530,7 @@ pub mod wave {
         }
         /// <p>Wave ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Wave name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -576,8 +539,7 @@ pub mod wave {
         }
         /// <p>Wave name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Wave description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -586,8 +548,7 @@ pub mod wave {
         }
         /// <p>Wave description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Wave archival status.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -596,8 +557,7 @@ pub mod wave {
         }
         /// <p>Wave archival status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// <p>Wave aggregated status.</p>
         pub fn wave_aggregated_status(mut self, input: crate::model::WaveAggregatedStatus) -> Self {
@@ -605,12 +565,8 @@ pub mod wave {
             self
         }
         /// <p>Wave aggregated status.</p>
-        pub fn set_wave_aggregated_status(
-            mut self,
-            input: std::option::Option<crate::model::WaveAggregatedStatus>,
-        ) -> Self {
-            self.wave_aggregated_status = input;
-            self
+        pub fn set_wave_aggregated_status(mut self, input: std::option::Option<crate::model::WaveAggregatedStatus>) -> Self {
+            self.wave_aggregated_status = input; self
         }
         /// <p>Wave creation dateTime.</p>
         pub fn creation_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -618,12 +574,8 @@ pub mod wave {
             self
         }
         /// <p>Wave creation dateTime.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>Wave last modified dateTime.</p>
         pub fn last_modified_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -631,50 +583,45 @@ pub mod wave {
             self
         }
         /// <p>Wave last modified dateTime.</p>
-        pub fn set_last_modified_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_date_time = input;
-            self
+        pub fn set_last_modified_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_date_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Wave tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Wave tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`Wave`](crate::model::Wave).
         pub fn build(self) -> crate::model::Wave {
             crate::model::Wave {
-                wave_id: self.wave_id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                is_archived: self.is_archived,
-                wave_aggregated_status: self.wave_aggregated_status,
-                creation_date_time: self.creation_date_time,
-                last_modified_date_time: self.last_modified_date_time,
-                tags: self.tags,
+                wave_id: self.wave_id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                is_archived: self.is_archived
+                ,
+                wave_aggregated_status: self.wave_aggregated_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_modified_date_time: self.last_modified_date_time
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -693,6 +640,8 @@ pub mod wave {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Wave {
     /// Creates a new builder-style object to manufacture [`Wave`](crate::model::Wave).
@@ -704,7 +653,7 @@ impl Wave {
 /// <p>Waves list filters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWavesRequestFilters {
+pub struct ListWavesRequestFilters  {
     /// <p>Filter waves list by wave ID.</p>
     #[doc(hidden)]
     pub wave_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -714,7 +663,7 @@ pub struct ListWavesRequestFilters {
 }
 impl ListWavesRequestFilters {
     /// <p>Filter waves list by wave ID.</p>
-    pub fn wave_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn wave_i_ds(&self) -> std::option::Option<& [std::string::String]> {
         self.wave_i_ds.as_deref()
     }
     /// <p>Filter waves list by archival status.</p>
@@ -724,7 +673,7 @@ impl ListWavesRequestFilters {
 }
 /// See [`ListWavesRequestFilters`](crate::model::ListWavesRequestFilters).
 pub mod list_waves_request_filters {
-
+    
     /// A builder for [`ListWavesRequestFilters`](crate::model::ListWavesRequestFilters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -739,17 +688,13 @@ pub mod list_waves_request_filters {
         /// <p>Filter waves list by wave ID.</p>
         pub fn wave_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.wave_i_ds.unwrap_or_default();
-            v.push(input.into());
-            self.wave_i_ds = Some(v);
-            self
+                            v.push(input.into());
+                            self.wave_i_ds = Some(v);
+                            self
         }
         /// <p>Filter waves list by wave ID.</p>
-        pub fn set_wave_i_ds(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.wave_i_ds = input;
-            self
+        pub fn set_wave_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.wave_i_ds = input; self
         }
         /// <p>Filter waves list by archival status.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -758,17 +703,20 @@ pub mod list_waves_request_filters {
         }
         /// <p>Filter waves list by archival status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// Consumes the builder and constructs a [`ListWavesRequestFilters`](crate::model::ListWavesRequestFilters).
         pub fn build(self) -> crate::model::ListWavesRequestFilters {
             crate::model::ListWavesRequestFilters {
-                wave_i_ds: self.wave_i_ds,
-                is_archived: self.is_archived,
+                wave_i_ds: self.wave_i_ds
+                ,
+                is_archived: self.is_archived
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWavesRequestFilters {
     /// Creates a new builder-style object to manufacture [`ListWavesRequestFilters`](crate::model::ListWavesRequestFilters).
@@ -780,7 +728,7 @@ impl ListWavesRequestFilters {
 /// <p>Validate exception field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>Validate exception field name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -790,17 +738,17 @@ pub struct ValidationExceptionField {
 }
 impl ValidationExceptionField {
     /// <p>Validate exception field name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Validate exception field message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
-
+    
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -815,8 +763,7 @@ pub mod validation_exception_field {
         }
         /// <p>Validate exception field name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Validate exception field message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -825,17 +772,20 @@ pub mod validation_exception_field {
         }
         /// <p>Validate exception field message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
-                name: self.name,
-                message: self.message,
+                name: self.name
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationExceptionField {
     /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -850,9 +800,9 @@ impl ValidationExceptionField {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -876,22 +826,14 @@ impl ValidationExceptionField {
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     CannotParse,
@@ -902,7 +844,7 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
@@ -911,19 +853,17 @@ impl std::convert::From<&str> for ValidationExceptionReason {
             "fieldValidationFailed" => ValidationExceptionReason::FieldValidationFailed,
             "other" => ValidationExceptionReason::Other,
             "unknownOperation" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationExceptionReason::from(s))
+                }
+            }
 impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -932,16 +872,13 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::FieldValidationFailed => "fieldValidationFailed",
             ValidationExceptionReason::Other => "other",
             ValidationExceptionReason::UnknownOperation => "unknownOperation",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
+            ValidationExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "cannotParse",
-            "fieldValidationFailed",
-            "other",
-            "unknownOperation",
+            "cannotParse", "fieldValidationFailed", "other", "unknownOperation"
         ]
     }
 }
@@ -954,7 +891,7 @@ impl AsRef<str> for ValidationExceptionReason {
 /// <p>vCenter client.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct VcenterClient {
+pub struct VcenterClient  {
     /// <p>ID of vCenter client.</p>
     #[doc(hidden)]
     pub vcenter_client_id: std::option::Option<std::string::String>,
@@ -975,54 +912,46 @@ pub struct VcenterClient {
     pub last_seen_datetime: std::option::Option<std::string::String>,
     /// <p>Tags for Source Server of vCenter client.</p>
     #[doc(hidden)]
-    pub source_server_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub source_server_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Tags for vCenter client.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl VcenterClient {
     /// <p>ID of vCenter client.</p>
-    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
+    pub fn vcenter_client_id(&self) -> std::option::Option<& str> {
         self.vcenter_client_id.as_deref()
     }
     /// <p>Arn of vCenter client.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Hostname of vCenter client .</p>
-    pub fn hostname(&self) -> std::option::Option<&str> {
+    pub fn hostname(&self) -> std::option::Option<& str> {
         self.hostname.as_deref()
     }
     /// <p>Vcenter UUID of vCenter client.</p>
-    pub fn vcenter_uuid(&self) -> std::option::Option<&str> {
+    pub fn vcenter_uuid(&self) -> std::option::Option<& str> {
         self.vcenter_uuid.as_deref()
     }
     /// <p>Datacenter name of vCenter client.</p>
-    pub fn datacenter_name(&self) -> std::option::Option<&str> {
+    pub fn datacenter_name(&self) -> std::option::Option<& str> {
         self.datacenter_name.as_deref()
     }
     /// <p>Last seen time of vCenter client.</p>
-    pub fn last_seen_datetime(&self) -> std::option::Option<&str> {
+    pub fn last_seen_datetime(&self) -> std::option::Option<& str> {
         self.last_seen_datetime.as_deref()
     }
     /// <p>Tags for Source Server of vCenter client.</p>
-    pub fn source_server_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn source_server_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.source_server_tags.as_ref()
     }
     /// <p>Tags for vCenter client.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for VcenterClient {
+impl  std::fmt::Debug for VcenterClient  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VcenterClient");
         formatter.field("vcenter_client_id", &self.vcenter_client_id);
@@ -1038,7 +967,7 @@ impl std::fmt::Debug for VcenterClient {
 }
 /// See [`VcenterClient`](crate::model::VcenterClient).
 pub mod vcenter_client {
-
+    
     /// A builder for [`VcenterClient`](crate::model::VcenterClient).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1048,12 +977,8 @@ pub mod vcenter_client {
         pub(crate) vcenter_uuid: std::option::Option<std::string::String>,
         pub(crate) datacenter_name: std::option::Option<std::string::String>,
         pub(crate) last_seen_datetime: std::option::Option<std::string::String>,
-        pub(crate) source_server_tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) source_server_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>ID of vCenter client.</p>
@@ -1062,12 +987,8 @@ pub mod vcenter_client {
             self
         }
         /// <p>ID of vCenter client.</p>
-        pub fn set_vcenter_client_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vcenter_client_id = input;
-            self
+        pub fn set_vcenter_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vcenter_client_id = input; self
         }
         /// <p>Arn of vCenter client.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1076,8 +997,7 @@ pub mod vcenter_client {
         }
         /// <p>Arn of vCenter client.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Hostname of vCenter client .</p>
         pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1086,8 +1006,7 @@ pub mod vcenter_client {
         }
         /// <p>Hostname of vCenter client .</p>
         pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hostname = input;
-            self
+            self.hostname = input; self
         }
         /// <p>Vcenter UUID of vCenter client.</p>
         pub fn vcenter_uuid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1096,8 +1015,7 @@ pub mod vcenter_client {
         }
         /// <p>Vcenter UUID of vCenter client.</p>
         pub fn set_vcenter_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vcenter_uuid = input;
-            self
+            self.vcenter_uuid = input; self
         }
         /// <p>Datacenter name of vCenter client.</p>
         pub fn datacenter_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1105,12 +1023,8 @@ pub mod vcenter_client {
             self
         }
         /// <p>Datacenter name of vCenter client.</p>
-        pub fn set_datacenter_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.datacenter_name = input;
-            self
+        pub fn set_datacenter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.datacenter_name = input; self
         }
         /// <p>Last seen time of vCenter client.</p>
         pub fn last_seen_datetime(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1118,74 +1032,58 @@ pub mod vcenter_client {
             self
         }
         /// <p>Last seen time of vCenter client.</p>
-        pub fn set_last_seen_datetime(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_seen_datetime = input;
-            self
+        pub fn set_last_seen_datetime(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_seen_datetime = input; self
         }
         /// Adds a key-value pair to `source_server_tags`.
         ///
         /// To override the contents of this collection use [`set_source_server_tags`](Self::set_source_server_tags).
         ///
         /// <p>Tags for Source Server of vCenter client.</p>
-        pub fn source_server_tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn source_server_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.source_server_tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.source_server_tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.source_server_tags = Some(hash_map);
+                            self
         }
         /// <p>Tags for Source Server of vCenter client.</p>
-        pub fn set_source_server_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.source_server_tags = input;
-            self
+        pub fn set_source_server_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.source_server_tags = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags for vCenter client.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags for vCenter client.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`VcenterClient`](crate::model::VcenterClient).
         pub fn build(self) -> crate::model::VcenterClient {
             crate::model::VcenterClient {
-                vcenter_client_id: self.vcenter_client_id,
-                arn: self.arn,
-                hostname: self.hostname,
-                vcenter_uuid: self.vcenter_uuid,
-                datacenter_name: self.datacenter_name,
-                last_seen_datetime: self.last_seen_datetime,
-                source_server_tags: self.source_server_tags,
-                tags: self.tags,
+                vcenter_client_id: self.vcenter_client_id
+                ,
+                arn: self.arn
+                ,
+                hostname: self.hostname
+                ,
+                vcenter_uuid: self.vcenter_uuid
+                ,
+                datacenter_name: self.datacenter_name
+                ,
+                last_seen_datetime: self.last_seen_datetime
+                ,
+                source_server_tags: self.source_server_tags
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -1203,6 +1101,8 @@ pub mod vcenter_client {
             formatter.finish()
         }
     }
+    
+    
 }
 impl VcenterClient {
     /// Creates a new builder-style object to manufacture [`VcenterClient`](crate::model::VcenterClient).
@@ -1217,9 +1117,9 @@ impl VcenterClient {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let replicationtype = unimplemented!();
 /// match replicationtype {
@@ -1241,58 +1141,52 @@ impl VcenterClient {
 /// Specifically, when `replicationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReplicationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReplicationType {
     #[allow(missing_docs)] // documentation missing in model
     AgentBased,
     #[allow(missing_docs)] // documentation missing in model
     SnapshotShipping,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReplicationType {
     fn from(s: &str) -> Self {
         match s {
             "AGENT_BASED" => ReplicationType::AgentBased,
             "SNAPSHOT_SHIPPING" => ReplicationType::SnapshotShipping,
-            other => ReplicationType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ReplicationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReplicationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReplicationType::from(s))
+                }
+            }
 impl ReplicationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReplicationType::AgentBased => "AGENT_BASED",
             ReplicationType::SnapshotShipping => "SNAPSHOT_SHIPPING",
-            ReplicationType::Unknown(value) => value.as_str(),
+            ReplicationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AGENT_BASED", "SNAPSHOT_SHIPPING"]
+        &[
+            "AGENT_BASED", "SNAPSHOT_SHIPPING"
+        ]
     }
 }
 impl AsRef<str> for ReplicationType {
@@ -1304,7 +1198,7 @@ impl AsRef<str> for ReplicationType {
 /// <p>Source server properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceProperties {
+pub struct SourceProperties  {
     /// <p>Source server last update date and time.</p>
     #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<std::string::String>,
@@ -1332,27 +1226,27 @@ pub struct SourceProperties {
 }
 impl SourceProperties {
     /// <p>Source server last update date and time.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&str> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<& str> {
         self.last_updated_date_time.as_deref()
     }
     /// <p>Source server recommended instance type.</p>
-    pub fn recommended_instance_type(&self) -> std::option::Option<&str> {
+    pub fn recommended_instance_type(&self) -> std::option::Option<& str> {
         self.recommended_instance_type.as_deref()
     }
     /// <p>Source server identification hints.</p>
-    pub fn identification_hints(&self) -> std::option::Option<&crate::model::IdentificationHints> {
+    pub fn identification_hints(&self) -> std::option::Option<& crate::model::IdentificationHints> {
         self.identification_hints.as_ref()
     }
     /// <p>Source server network interfaces.</p>
-    pub fn network_interfaces(&self) -> std::option::Option<&[crate::model::NetworkInterface]> {
+    pub fn network_interfaces(&self) -> std::option::Option<& [crate::model::NetworkInterface]> {
         self.network_interfaces.as_deref()
     }
     /// <p>Source Server disks.</p>
-    pub fn disks(&self) -> std::option::Option<&[crate::model::Disk]> {
+    pub fn disks(&self) -> std::option::Option<& [crate::model::Disk]> {
         self.disks.as_deref()
     }
     /// <p>Source Server CPUs.</p>
-    pub fn cpus(&self) -> std::option::Option<&[crate::model::Cpu]> {
+    pub fn cpus(&self) -> std::option::Option<& [crate::model::Cpu]> {
         self.cpus.as_deref()
     }
     /// <p>Source server RAM in bytes.</p>
@@ -1360,21 +1254,20 @@ impl SourceProperties {
         self.ram_bytes
     }
     /// <p>Source server OS.</p>
-    pub fn os(&self) -> std::option::Option<&crate::model::Os> {
+    pub fn os(&self) -> std::option::Option<& crate::model::Os> {
         self.os.as_ref()
     }
 }
 /// See [`SourceProperties`](crate::model::SourceProperties).
 pub mod source_properties {
-
+    
     /// A builder for [`SourceProperties`](crate::model::SourceProperties).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) last_updated_date_time: std::option::Option<std::string::String>,
         pub(crate) recommended_instance_type: std::option::Option<std::string::String>,
         pub(crate) identification_hints: std::option::Option<crate::model::IdentificationHints>,
-        pub(crate) network_interfaces:
-            std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
+        pub(crate) network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
         pub(crate) disks: std::option::Option<std::vec::Vec<crate::model::Disk>>,
         pub(crate) cpus: std::option::Option<std::vec::Vec<crate::model::Cpu>>,
         pub(crate) ram_bytes: std::option::Option<i64>,
@@ -1387,12 +1280,8 @@ pub mod source_properties {
             self
         }
         /// <p>Source server last update date and time.</p>
-        pub fn set_last_updated_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_date_time = input;
-            self
+        pub fn set_last_updated_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_date_time = input; self
         }
         /// <p>Source server recommended instance type.</p>
         pub fn recommended_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1400,12 +1289,8 @@ pub mod source_properties {
             self
         }
         /// <p>Source server recommended instance type.</p>
-        pub fn set_recommended_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommended_instance_type = input;
-            self
+        pub fn set_recommended_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommended_instance_type = input; self
         }
         /// <p>Source server identification hints.</p>
         pub fn identification_hints(mut self, input: crate::model::IdentificationHints) -> Self {
@@ -1413,12 +1298,8 @@ pub mod source_properties {
             self
         }
         /// <p>Source server identification hints.</p>
-        pub fn set_identification_hints(
-            mut self,
-            input: std::option::Option<crate::model::IdentificationHints>,
-        ) -> Self {
-            self.identification_hints = input;
-            self
+        pub fn set_identification_hints(mut self, input: std::option::Option<crate::model::IdentificationHints>) -> Self {
+            self.identification_hints = input; self
         }
         /// Appends an item to `network_interfaces`.
         ///
@@ -1427,17 +1308,13 @@ pub mod source_properties {
         /// <p>Source server network interfaces.</p>
         pub fn network_interfaces(mut self, input: crate::model::NetworkInterface) -> Self {
             let mut v = self.network_interfaces.unwrap_or_default();
-            v.push(input);
-            self.network_interfaces = Some(v);
-            self
+                            v.push(input);
+                            self.network_interfaces = Some(v);
+                            self
         }
         /// <p>Source server network interfaces.</p>
-        pub fn set_network_interfaces(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
-        ) -> Self {
-            self.network_interfaces = input;
-            self
+        pub fn set_network_interfaces(mut self, input: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>) -> Self {
+            self.network_interfaces = input; self
         }
         /// Appends an item to `disks`.
         ///
@@ -1446,17 +1323,13 @@ pub mod source_properties {
         /// <p>Source Server disks.</p>
         pub fn disks(mut self, input: crate::model::Disk) -> Self {
             let mut v = self.disks.unwrap_or_default();
-            v.push(input);
-            self.disks = Some(v);
-            self
+                            v.push(input);
+                            self.disks = Some(v);
+                            self
         }
         /// <p>Source Server disks.</p>
-        pub fn set_disks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Disk>>,
-        ) -> Self {
-            self.disks = input;
-            self
+        pub fn set_disks(mut self, input: std::option::Option<std::vec::Vec<crate::model::Disk>>) -> Self {
+            self.disks = input; self
         }
         /// Appends an item to `cpus`.
         ///
@@ -1465,17 +1338,13 @@ pub mod source_properties {
         /// <p>Source Server CPUs.</p>
         pub fn cpus(mut self, input: crate::model::Cpu) -> Self {
             let mut v = self.cpus.unwrap_or_default();
-            v.push(input);
-            self.cpus = Some(v);
-            self
+                            v.push(input);
+                            self.cpus = Some(v);
+                            self
         }
         /// <p>Source Server CPUs.</p>
-        pub fn set_cpus(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Cpu>>,
-        ) -> Self {
-            self.cpus = input;
-            self
+        pub fn set_cpus(mut self, input: std::option::Option<std::vec::Vec<crate::model::Cpu>>) -> Self {
+            self.cpus = input; self
         }
         /// <p>Source server RAM in bytes.</p>
         pub fn ram_bytes(mut self, input: i64) -> Self {
@@ -1484,8 +1353,7 @@ pub mod source_properties {
         }
         /// <p>Source server RAM in bytes.</p>
         pub fn set_ram_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.ram_bytes = input;
-            self
+            self.ram_bytes = input; self
         }
         /// <p>Source server OS.</p>
         pub fn os(mut self, input: crate::model::Os) -> Self {
@@ -1494,23 +1362,33 @@ pub mod source_properties {
         }
         /// <p>Source server OS.</p>
         pub fn set_os(mut self, input: std::option::Option<crate::model::Os>) -> Self {
-            self.os = input;
-            self
+            self.os = input; self
         }
         /// Consumes the builder and constructs a [`SourceProperties`](crate::model::SourceProperties).
         pub fn build(self) -> crate::model::SourceProperties {
             crate::model::SourceProperties {
-                last_updated_date_time: self.last_updated_date_time,
-                recommended_instance_type: self.recommended_instance_type,
-                identification_hints: self.identification_hints,
-                network_interfaces: self.network_interfaces,
-                disks: self.disks,
-                cpus: self.cpus,
-                ram_bytes: self.ram_bytes.unwrap_or_default(),
-                os: self.os,
+                last_updated_date_time: self.last_updated_date_time
+                ,
+                recommended_instance_type: self.recommended_instance_type
+                ,
+                identification_hints: self.identification_hints
+                ,
+                network_interfaces: self.network_interfaces
+                ,
+                disks: self.disks
+                ,
+                cpus: self.cpus
+                ,
+                ram_bytes: self.ram_bytes
+                    .unwrap_or_default()
+                ,
+                os: self.os
+                ,
             }
         }
     }
+    
+    
 }
 impl SourceProperties {
     /// Creates a new builder-style object to manufacture [`SourceProperties`](crate::model::SourceProperties).
@@ -1522,20 +1400,20 @@ impl SourceProperties {
 /// <p>Operating System.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Os {
+pub struct Os  {
     /// <p>OS full string.</p>
     #[doc(hidden)]
     pub full_string: std::option::Option<std::string::String>,
 }
 impl Os {
     /// <p>OS full string.</p>
-    pub fn full_string(&self) -> std::option::Option<&str> {
+    pub fn full_string(&self) -> std::option::Option<& str> {
         self.full_string.as_deref()
     }
 }
 /// See [`Os`](crate::model::Os).
 pub mod os {
-
+    
     /// A builder for [`Os`](crate::model::Os).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1549,16 +1427,18 @@ pub mod os {
         }
         /// <p>OS full string.</p>
         pub fn set_full_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.full_string = input;
-            self
+            self.full_string = input; self
         }
         /// Consumes the builder and constructs a [`Os`](crate::model::Os).
         pub fn build(self) -> crate::model::Os {
             crate::model::Os {
-                full_string: self.full_string,
+                full_string: self.full_string
+                ,
             }
         }
     }
+    
+    
 }
 impl Os {
     /// Creates a new builder-style object to manufacture [`Os`](crate::model::Os).
@@ -1570,7 +1450,7 @@ impl Os {
 /// <p>Source server CPU information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Cpu {
+pub struct Cpu  {
     /// <p>The number of CPU cores on the source server.</p>
     #[doc(hidden)]
     pub cores: i64,
@@ -1584,13 +1464,13 @@ impl Cpu {
         self.cores
     }
     /// <p>The source server's CPU model name.</p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> std::option::Option<& str> {
         self.model_name.as_deref()
     }
 }
 /// See [`Cpu`](crate::model::Cpu).
 pub mod cpu {
-
+    
     /// A builder for [`Cpu`](crate::model::Cpu).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1605,8 +1485,7 @@ pub mod cpu {
         }
         /// <p>The number of CPU cores on the source server.</p>
         pub fn set_cores(mut self, input: std::option::Option<i64>) -> Self {
-            self.cores = input;
-            self
+            self.cores = input; self
         }
         /// <p>The source server's CPU model name.</p>
         pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1615,17 +1494,21 @@ pub mod cpu {
         }
         /// <p>The source server's CPU model name.</p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_name = input;
-            self
+            self.model_name = input; self
         }
         /// Consumes the builder and constructs a [`Cpu`](crate::model::Cpu).
         pub fn build(self) -> crate::model::Cpu {
             crate::model::Cpu {
-                cores: self.cores.unwrap_or_default(),
-                model_name: self.model_name,
+                cores: self.cores
+                    .unwrap_or_default()
+                ,
+                model_name: self.model_name
+                ,
             }
         }
     }
+    
+    
 }
 impl Cpu {
     /// Creates a new builder-style object to manufacture [`Cpu`](crate::model::Cpu).
@@ -1637,7 +1520,7 @@ impl Cpu {
 /// <p>The disk identifier.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Disk {
+pub struct Disk  {
     /// <p>The disk or device name.</p>
     #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
@@ -1647,7 +1530,7 @@ pub struct Disk {
 }
 impl Disk {
     /// <p>The disk or device name.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>The amount of storage on the disk in bytes.</p>
@@ -1657,7 +1540,7 @@ impl Disk {
 }
 /// See [`Disk`](crate::model::Disk).
 pub mod disk {
-
+    
     /// A builder for [`Disk`](crate::model::Disk).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1672,8 +1555,7 @@ pub mod disk {
         }
         /// <p>The disk or device name.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_name = input;
-            self
+            self.device_name = input; self
         }
         /// <p>The amount of storage on the disk in bytes.</p>
         pub fn bytes(mut self, input: i64) -> Self {
@@ -1682,17 +1564,21 @@ pub mod disk {
         }
         /// <p>The amount of storage on the disk in bytes.</p>
         pub fn set_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.bytes = input;
-            self
+            self.bytes = input; self
         }
         /// Consumes the builder and constructs a [`Disk`](crate::model::Disk).
         pub fn build(self) -> crate::model::Disk {
             crate::model::Disk {
-                device_name: self.device_name,
-                bytes: self.bytes.unwrap_or_default(),
+                device_name: self.device_name
+                ,
+                bytes: self.bytes
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl Disk {
     /// Creates a new builder-style object to manufacture [`Disk`](crate::model::Disk).
@@ -1704,7 +1590,7 @@ impl Disk {
 /// <p>Network interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkInterface {
+pub struct NetworkInterface  {
     /// <p>Network interface Mac address.</p>
     #[doc(hidden)]
     pub mac_address: std::option::Option<std::string::String>,
@@ -1717,11 +1603,11 @@ pub struct NetworkInterface {
 }
 impl NetworkInterface {
     /// <p>Network interface Mac address.</p>
-    pub fn mac_address(&self) -> std::option::Option<&str> {
+    pub fn mac_address(&self) -> std::option::Option<& str> {
         self.mac_address.as_deref()
     }
     /// <p>Network interface IPs.</p>
-    pub fn ips(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ips(&self) -> std::option::Option<& [std::string::String]> {
         self.ips.as_deref()
     }
     /// <p>Network interface primary IP.</p>
@@ -1731,7 +1617,7 @@ impl NetworkInterface {
 }
 /// See [`NetworkInterface`](crate::model::NetworkInterface).
 pub mod network_interface {
-
+    
     /// A builder for [`NetworkInterface`](crate::model::NetworkInterface).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1747,8 +1633,7 @@ pub mod network_interface {
         }
         /// <p>Network interface Mac address.</p>
         pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mac_address = input;
-            self
+            self.mac_address = input; self
         }
         /// Appends an item to `ips`.
         ///
@@ -1757,17 +1642,13 @@ pub mod network_interface {
         /// <p>Network interface IPs.</p>
         pub fn ips(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ips.unwrap_or_default();
-            v.push(input.into());
-            self.ips = Some(v);
-            self
+                            v.push(input.into());
+                            self.ips = Some(v);
+                            self
         }
         /// <p>Network interface IPs.</p>
-        pub fn set_ips(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.ips = input;
-            self
+        pub fn set_ips(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.ips = input; self
         }
         /// <p>Network interface primary IP.</p>
         pub fn is_primary(mut self, input: bool) -> Self {
@@ -1776,18 +1657,22 @@ pub mod network_interface {
         }
         /// <p>Network interface primary IP.</p>
         pub fn set_is_primary(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_primary = input;
-            self
+            self.is_primary = input; self
         }
         /// Consumes the builder and constructs a [`NetworkInterface`](crate::model::NetworkInterface).
         pub fn build(self) -> crate::model::NetworkInterface {
             crate::model::NetworkInterface {
-                mac_address: self.mac_address,
-                ips: self.ips,
-                is_primary: self.is_primary,
+                mac_address: self.mac_address
+                ,
+                ips: self.ips
+                ,
+                is_primary: self.is_primary
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkInterface {
     /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface).
@@ -1799,7 +1684,7 @@ impl NetworkInterface {
 /// <p>Identification hints.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdentificationHints {
+pub struct IdentificationHints  {
     /// <p>FQDN address identification hint.</p>
     #[doc(hidden)]
     pub fqdn: std::option::Option<std::string::String>,
@@ -1818,29 +1703,29 @@ pub struct IdentificationHints {
 }
 impl IdentificationHints {
     /// <p>FQDN address identification hint.</p>
-    pub fn fqdn(&self) -> std::option::Option<&str> {
+    pub fn fqdn(&self) -> std::option::Option<& str> {
         self.fqdn.as_deref()
     }
     /// <p>Hostname identification hint.</p>
-    pub fn hostname(&self) -> std::option::Option<&str> {
+    pub fn hostname(&self) -> std::option::Option<& str> {
         self.hostname.as_deref()
     }
     /// <p>vmWare UUID identification hint.</p>
-    pub fn vm_ware_uuid(&self) -> std::option::Option<&str> {
+    pub fn vm_ware_uuid(&self) -> std::option::Option<& str> {
         self.vm_ware_uuid.as_deref()
     }
     /// <p>AWS Instance ID identification hint.</p>
-    pub fn aws_instance_id(&self) -> std::option::Option<&str> {
+    pub fn aws_instance_id(&self) -> std::option::Option<& str> {
         self.aws_instance_id.as_deref()
     }
     /// <p>vCenter VM path identification hint.</p>
-    pub fn vm_path(&self) -> std::option::Option<&str> {
+    pub fn vm_path(&self) -> std::option::Option<& str> {
         self.vm_path.as_deref()
     }
 }
 /// See [`IdentificationHints`](crate::model::IdentificationHints).
 pub mod identification_hints {
-
+    
     /// A builder for [`IdentificationHints`](crate::model::IdentificationHints).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1858,8 +1743,7 @@ pub mod identification_hints {
         }
         /// <p>FQDN address identification hint.</p>
         pub fn set_fqdn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fqdn = input;
-            self
+            self.fqdn = input; self
         }
         /// <p>Hostname identification hint.</p>
         pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1868,8 +1752,7 @@ pub mod identification_hints {
         }
         /// <p>Hostname identification hint.</p>
         pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hostname = input;
-            self
+            self.hostname = input; self
         }
         /// <p>vmWare UUID identification hint.</p>
         pub fn vm_ware_uuid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1878,8 +1761,7 @@ pub mod identification_hints {
         }
         /// <p>vmWare UUID identification hint.</p>
         pub fn set_vm_ware_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vm_ware_uuid = input;
-            self
+            self.vm_ware_uuid = input; self
         }
         /// <p>AWS Instance ID identification hint.</p>
         pub fn aws_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1887,12 +1769,8 @@ pub mod identification_hints {
             self
         }
         /// <p>AWS Instance ID identification hint.</p>
-        pub fn set_aws_instance_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_instance_id = input;
-            self
+        pub fn set_aws_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_instance_id = input; self
         }
         /// <p>vCenter VM path identification hint.</p>
         pub fn vm_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1901,20 +1779,26 @@ pub mod identification_hints {
         }
         /// <p>vCenter VM path identification hint.</p>
         pub fn set_vm_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vm_path = input;
-            self
+            self.vm_path = input; self
         }
         /// Consumes the builder and constructs a [`IdentificationHints`](crate::model::IdentificationHints).
         pub fn build(self) -> crate::model::IdentificationHints {
             crate::model::IdentificationHints {
-                fqdn: self.fqdn,
-                hostname: self.hostname,
-                vm_ware_uuid: self.vm_ware_uuid,
-                aws_instance_id: self.aws_instance_id,
-                vm_path: self.vm_path,
+                fqdn: self.fqdn
+                ,
+                hostname: self.hostname
+                ,
+                vm_ware_uuid: self.vm_ware_uuid
+                ,
+                aws_instance_id: self.aws_instance_id
+                ,
+                vm_path: self.vm_path
+                ,
             }
         }
     }
+    
+    
 }
 impl IdentificationHints {
     /// Creates a new builder-style object to manufacture [`IdentificationHints`](crate::model::IdentificationHints).
@@ -1926,7 +1810,7 @@ impl IdentificationHints {
 /// <p>Lifecycle.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifeCycle {
+pub struct LifeCycle  {
     /// <p>Lifecycle added to service data and time.</p>
     #[doc(hidden)]
     pub added_to_service_date_time: std::option::Option<std::string::String>,
@@ -1951,37 +1835,37 @@ pub struct LifeCycle {
 }
 impl LifeCycle {
     /// <p>Lifecycle added to service data and time.</p>
-    pub fn added_to_service_date_time(&self) -> std::option::Option<&str> {
+    pub fn added_to_service_date_time(&self) -> std::option::Option<& str> {
         self.added_to_service_date_time.as_deref()
     }
     /// <p>Lifecycle replication initiation date and time.</p>
-    pub fn first_byte_date_time(&self) -> std::option::Option<&str> {
+    pub fn first_byte_date_time(&self) -> std::option::Option<& str> {
         self.first_byte_date_time.as_deref()
     }
     /// <p>Lifecycle elapsed time and duration.</p>
-    pub fn elapsed_replication_duration(&self) -> std::option::Option<&str> {
+    pub fn elapsed_replication_duration(&self) -> std::option::Option<& str> {
         self.elapsed_replication_duration.as_deref()
     }
     /// <p>Lifecycle last seen date and time.</p>
-    pub fn last_seen_by_service_date_time(&self) -> std::option::Option<&str> {
+    pub fn last_seen_by_service_date_time(&self) -> std::option::Option<& str> {
         self.last_seen_by_service_date_time.as_deref()
     }
     /// <p>Lifecycle last Test.</p>
-    pub fn last_test(&self) -> std::option::Option<&crate::model::LifeCycleLastTest> {
+    pub fn last_test(&self) -> std::option::Option<& crate::model::LifeCycleLastTest> {
         self.last_test.as_ref()
     }
     /// <p>Lifecycle last Cutover.</p>
-    pub fn last_cutover(&self) -> std::option::Option<&crate::model::LifeCycleLastCutover> {
+    pub fn last_cutover(&self) -> std::option::Option<& crate::model::LifeCycleLastCutover> {
         self.last_cutover.as_ref()
     }
     /// <p>Lifecycle state.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::LifeCycleState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::LifeCycleState> {
         self.state.as_ref()
     }
 }
 /// See [`LifeCycle`](crate::model::LifeCycle).
 pub mod life_cycle {
-
+    
     /// A builder for [`LifeCycle`](crate::model::LifeCycle).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2000,12 +1884,8 @@ pub mod life_cycle {
             self
         }
         /// <p>Lifecycle added to service data and time.</p>
-        pub fn set_added_to_service_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.added_to_service_date_time = input;
-            self
+        pub fn set_added_to_service_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.added_to_service_date_time = input; self
         }
         /// <p>Lifecycle replication initiation date and time.</p>
         pub fn first_byte_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2013,44 +1893,26 @@ pub mod life_cycle {
             self
         }
         /// <p>Lifecycle replication initiation date and time.</p>
-        pub fn set_first_byte_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.first_byte_date_time = input;
-            self
+        pub fn set_first_byte_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.first_byte_date_time = input; self
         }
         /// <p>Lifecycle elapsed time and duration.</p>
-        pub fn elapsed_replication_duration(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn elapsed_replication_duration(mut self, input: impl Into<std::string::String>) -> Self {
             self.elapsed_replication_duration = Some(input.into());
             self
         }
         /// <p>Lifecycle elapsed time and duration.</p>
-        pub fn set_elapsed_replication_duration(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.elapsed_replication_duration = input;
-            self
+        pub fn set_elapsed_replication_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.elapsed_replication_duration = input; self
         }
         /// <p>Lifecycle last seen date and time.</p>
-        pub fn last_seen_by_service_date_time(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn last_seen_by_service_date_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_seen_by_service_date_time = Some(input.into());
             self
         }
         /// <p>Lifecycle last seen date and time.</p>
-        pub fn set_last_seen_by_service_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_seen_by_service_date_time = input;
-            self
+        pub fn set_last_seen_by_service_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_seen_by_service_date_time = input; self
         }
         /// <p>Lifecycle last Test.</p>
         pub fn last_test(mut self, input: crate::model::LifeCycleLastTest) -> Self {
@@ -2058,12 +1920,8 @@ pub mod life_cycle {
             self
         }
         /// <p>Lifecycle last Test.</p>
-        pub fn set_last_test(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycleLastTest>,
-        ) -> Self {
-            self.last_test = input;
-            self
+        pub fn set_last_test(mut self, input: std::option::Option<crate::model::LifeCycleLastTest>) -> Self {
+            self.last_test = input; self
         }
         /// <p>Lifecycle last Cutover.</p>
         pub fn last_cutover(mut self, input: crate::model::LifeCycleLastCutover) -> Self {
@@ -2071,12 +1929,8 @@ pub mod life_cycle {
             self
         }
         /// <p>Lifecycle last Cutover.</p>
-        pub fn set_last_cutover(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycleLastCutover>,
-        ) -> Self {
-            self.last_cutover = input;
-            self
+        pub fn set_last_cutover(mut self, input: std::option::Option<crate::model::LifeCycleLastCutover>) -> Self {
+            self.last_cutover = input; self
         }
         /// <p>Lifecycle state.</p>
         pub fn state(mut self, input: crate::model::LifeCycleState) -> Self {
@@ -2084,26 +1938,31 @@ pub mod life_cycle {
             self
         }
         /// <p>Lifecycle state.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycleState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::LifeCycleState>) -> Self {
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`LifeCycle`](crate::model::LifeCycle).
         pub fn build(self) -> crate::model::LifeCycle {
             crate::model::LifeCycle {
-                added_to_service_date_time: self.added_to_service_date_time,
-                first_byte_date_time: self.first_byte_date_time,
-                elapsed_replication_duration: self.elapsed_replication_duration,
-                last_seen_by_service_date_time: self.last_seen_by_service_date_time,
-                last_test: self.last_test,
-                last_cutover: self.last_cutover,
-                state: self.state,
+                added_to_service_date_time: self.added_to_service_date_time
+                ,
+                first_byte_date_time: self.first_byte_date_time
+                ,
+                elapsed_replication_duration: self.elapsed_replication_duration
+                ,
+                last_seen_by_service_date_time: self.last_seen_by_service_date_time
+                ,
+                last_test: self.last_test
+                ,
+                last_cutover: self.last_cutover
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl LifeCycle {
     /// Creates a new builder-style object to manufacture [`LifeCycle`](crate::model::LifeCycle).
@@ -2118,9 +1977,9 @@ impl LifeCycle {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let lifecyclestate = unimplemented!();
 /// match lifecyclestate {
@@ -2149,22 +2008,14 @@ impl LifeCycle {
 /// Specifically, when `lifecyclestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LifeCycleState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LifeCycleState {
     #[allow(missing_docs)] // documentation missing in model
     Cutover,
@@ -2185,7 +2036,7 @@ pub enum LifeCycleState {
     #[allow(missing_docs)] // documentation missing in model
     Testing,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LifeCycleState {
     fn from(s: &str) -> Self {
@@ -2199,17 +2050,17 @@ impl std::convert::From<&str> for LifeCycleState {
             "READY_FOR_TEST" => LifeCycleState::ReadyForTest,
             "STOPPED" => LifeCycleState::Stopped,
             "TESTING" => LifeCycleState::Testing,
-            other => LifeCycleState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LifeCycleState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LifeCycleState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LifeCycleState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LifeCycleState::from(s))
+                }
+            }
 impl LifeCycleState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2223,21 +2074,13 @@ impl LifeCycleState {
             LifeCycleState::ReadyForTest => "READY_FOR_TEST",
             LifeCycleState::Stopped => "STOPPED",
             LifeCycleState::Testing => "TESTING",
-            LifeCycleState::Unknown(value) => value.as_str(),
+            LifeCycleState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CUTOVER",
-            "CUTTING_OVER",
-            "DISCONNECTED",
-            "DISCOVERED",
-            "NOT_READY",
-            "READY_FOR_CUTOVER",
-            "READY_FOR_TEST",
-            "STOPPED",
-            "TESTING",
+            "CUTOVER", "CUTTING_OVER", "DISCONNECTED", "DISCOVERED", "NOT_READY", "READY_FOR_CUTOVER", "READY_FOR_TEST", "STOPPED", "TESTING"
         ]
     }
 }
@@ -2250,7 +2093,7 @@ impl AsRef<str> for LifeCycleState {
 /// <p>Lifecycle last Cutover .</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifeCycleLastCutover {
+pub struct LifeCycleLastCutover  {
     /// <p>Lifecycle last Cutover initiated.</p>
     #[doc(hidden)]
     pub initiated: std::option::Option<crate::model::LifeCycleLastCutoverInitiated>,
@@ -2263,21 +2106,21 @@ pub struct LifeCycleLastCutover {
 }
 impl LifeCycleLastCutover {
     /// <p>Lifecycle last Cutover initiated.</p>
-    pub fn initiated(&self) -> std::option::Option<&crate::model::LifeCycleLastCutoverInitiated> {
+    pub fn initiated(&self) -> std::option::Option<& crate::model::LifeCycleLastCutoverInitiated> {
         self.initiated.as_ref()
     }
     /// <p>Lifecycle last Cutover reverted.</p>
-    pub fn reverted(&self) -> std::option::Option<&crate::model::LifeCycleLastCutoverReverted> {
+    pub fn reverted(&self) -> std::option::Option<& crate::model::LifeCycleLastCutoverReverted> {
         self.reverted.as_ref()
     }
     /// <p>Lifecycle Cutover finalized date and time.</p>
-    pub fn finalized(&self) -> std::option::Option<&crate::model::LifeCycleLastCutoverFinalized> {
+    pub fn finalized(&self) -> std::option::Option<& crate::model::LifeCycleLastCutoverFinalized> {
         self.finalized.as_ref()
     }
 }
 /// See [`LifeCycleLastCutover`](crate::model::LifeCycleLastCutover).
 pub mod life_cycle_last_cutover {
-
+    
     /// A builder for [`LifeCycleLastCutover`](crate::model::LifeCycleLastCutover).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2292,12 +2135,8 @@ pub mod life_cycle_last_cutover {
             self
         }
         /// <p>Lifecycle last Cutover initiated.</p>
-        pub fn set_initiated(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycleLastCutoverInitiated>,
-        ) -> Self {
-            self.initiated = input;
-            self
+        pub fn set_initiated(mut self, input: std::option::Option<crate::model::LifeCycleLastCutoverInitiated>) -> Self {
+            self.initiated = input; self
         }
         /// <p>Lifecycle last Cutover reverted.</p>
         pub fn reverted(mut self, input: crate::model::LifeCycleLastCutoverReverted) -> Self {
@@ -2305,12 +2144,8 @@ pub mod life_cycle_last_cutover {
             self
         }
         /// <p>Lifecycle last Cutover reverted.</p>
-        pub fn set_reverted(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycleLastCutoverReverted>,
-        ) -> Self {
-            self.reverted = input;
-            self
+        pub fn set_reverted(mut self, input: std::option::Option<crate::model::LifeCycleLastCutoverReverted>) -> Self {
+            self.reverted = input; self
         }
         /// <p>Lifecycle Cutover finalized date and time.</p>
         pub fn finalized(mut self, input: crate::model::LifeCycleLastCutoverFinalized) -> Self {
@@ -2318,22 +2153,23 @@ pub mod life_cycle_last_cutover {
             self
         }
         /// <p>Lifecycle Cutover finalized date and time.</p>
-        pub fn set_finalized(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycleLastCutoverFinalized>,
-        ) -> Self {
-            self.finalized = input;
-            self
+        pub fn set_finalized(mut self, input: std::option::Option<crate::model::LifeCycleLastCutoverFinalized>) -> Self {
+            self.finalized = input; self
         }
         /// Consumes the builder and constructs a [`LifeCycleLastCutover`](crate::model::LifeCycleLastCutover).
         pub fn build(self) -> crate::model::LifeCycleLastCutover {
             crate::model::LifeCycleLastCutover {
-                initiated: self.initiated,
-                reverted: self.reverted,
-                finalized: self.finalized,
+                initiated: self.initiated
+                ,
+                reverted: self.reverted
+                ,
+                finalized: self.finalized
+                ,
             }
         }
     }
+    
+    
 }
 impl LifeCycleLastCutover {
     /// Creates a new builder-style object to manufacture [`LifeCycleLastCutover`](crate::model::LifeCycleLastCutover).
@@ -2345,20 +2181,20 @@ impl LifeCycleLastCutover {
 /// <p>Lifecycle Cutover finalized</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifeCycleLastCutoverFinalized {
+pub struct LifeCycleLastCutoverFinalized  {
     /// <p>Lifecycle Cutover finalized date and time.</p>
     #[doc(hidden)]
     pub api_call_date_time: std::option::Option<std::string::String>,
 }
 impl LifeCycleLastCutoverFinalized {
     /// <p>Lifecycle Cutover finalized date and time.</p>
-    pub fn api_call_date_time(&self) -> std::option::Option<&str> {
+    pub fn api_call_date_time(&self) -> std::option::Option<& str> {
         self.api_call_date_time.as_deref()
     }
 }
 /// See [`LifeCycleLastCutoverFinalized`](crate::model::LifeCycleLastCutoverFinalized).
 pub mod life_cycle_last_cutover_finalized {
-
+    
     /// A builder for [`LifeCycleLastCutoverFinalized`](crate::model::LifeCycleLastCutoverFinalized).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2371,20 +2207,19 @@ pub mod life_cycle_last_cutover_finalized {
             self
         }
         /// <p>Lifecycle Cutover finalized date and time.</p>
-        pub fn set_api_call_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.api_call_date_time = input;
-            self
+        pub fn set_api_call_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_call_date_time = input; self
         }
         /// Consumes the builder and constructs a [`LifeCycleLastCutoverFinalized`](crate::model::LifeCycleLastCutoverFinalized).
         pub fn build(self) -> crate::model::LifeCycleLastCutoverFinalized {
             crate::model::LifeCycleLastCutoverFinalized {
-                api_call_date_time: self.api_call_date_time,
+                api_call_date_time: self.api_call_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl LifeCycleLastCutoverFinalized {
     /// Creates a new builder-style object to manufacture [`LifeCycleLastCutoverFinalized`](crate::model::LifeCycleLastCutoverFinalized).
@@ -2396,20 +2231,20 @@ impl LifeCycleLastCutoverFinalized {
 /// <p>Lifecycle last Cutover reverted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifeCycleLastCutoverReverted {
+pub struct LifeCycleLastCutoverReverted  {
     /// <p>Lifecycle last Cutover reverted API call date time.</p>
     #[doc(hidden)]
     pub api_call_date_time: std::option::Option<std::string::String>,
 }
 impl LifeCycleLastCutoverReverted {
     /// <p>Lifecycle last Cutover reverted API call date time.</p>
-    pub fn api_call_date_time(&self) -> std::option::Option<&str> {
+    pub fn api_call_date_time(&self) -> std::option::Option<& str> {
         self.api_call_date_time.as_deref()
     }
 }
 /// See [`LifeCycleLastCutoverReverted`](crate::model::LifeCycleLastCutoverReverted).
 pub mod life_cycle_last_cutover_reverted {
-
+    
     /// A builder for [`LifeCycleLastCutoverReverted`](crate::model::LifeCycleLastCutoverReverted).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2422,20 +2257,19 @@ pub mod life_cycle_last_cutover_reverted {
             self
         }
         /// <p>Lifecycle last Cutover reverted API call date time.</p>
-        pub fn set_api_call_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.api_call_date_time = input;
-            self
+        pub fn set_api_call_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_call_date_time = input; self
         }
         /// Consumes the builder and constructs a [`LifeCycleLastCutoverReverted`](crate::model::LifeCycleLastCutoverReverted).
         pub fn build(self) -> crate::model::LifeCycleLastCutoverReverted {
             crate::model::LifeCycleLastCutoverReverted {
-                api_call_date_time: self.api_call_date_time,
+                api_call_date_time: self.api_call_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl LifeCycleLastCutoverReverted {
     /// Creates a new builder-style object to manufacture [`LifeCycleLastCutoverReverted`](crate::model::LifeCycleLastCutoverReverted).
@@ -2447,7 +2281,7 @@ impl LifeCycleLastCutoverReverted {
 /// <p>Lifecycle last Cutover initiated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifeCycleLastCutoverInitiated {
+pub struct LifeCycleLastCutoverInitiated  {
     /// <p></p>
     #[doc(hidden)]
     pub api_call_date_time: std::option::Option<std::string::String>,
@@ -2457,17 +2291,17 @@ pub struct LifeCycleLastCutoverInitiated {
 }
 impl LifeCycleLastCutoverInitiated {
     /// <p></p>
-    pub fn api_call_date_time(&self) -> std::option::Option<&str> {
+    pub fn api_call_date_time(&self) -> std::option::Option<& str> {
         self.api_call_date_time.as_deref()
     }
     /// <p>Lifecycle last Cutover initiated by Job ID.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`LifeCycleLastCutoverInitiated`](crate::model::LifeCycleLastCutoverInitiated).
 pub mod life_cycle_last_cutover_initiated {
-
+    
     /// A builder for [`LifeCycleLastCutoverInitiated`](crate::model::LifeCycleLastCutoverInitiated).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2481,12 +2315,8 @@ pub mod life_cycle_last_cutover_initiated {
             self
         }
         /// <p></p>
-        pub fn set_api_call_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.api_call_date_time = input;
-            self
+        pub fn set_api_call_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_call_date_time = input; self
         }
         /// <p>Lifecycle last Cutover initiated by Job ID.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2495,17 +2325,20 @@ pub mod life_cycle_last_cutover_initiated {
         }
         /// <p>Lifecycle last Cutover initiated by Job ID.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`LifeCycleLastCutoverInitiated`](crate::model::LifeCycleLastCutoverInitiated).
         pub fn build(self) -> crate::model::LifeCycleLastCutoverInitiated {
             crate::model::LifeCycleLastCutoverInitiated {
-                api_call_date_time: self.api_call_date_time,
-                job_id: self.job_id,
+                api_call_date_time: self.api_call_date_time
+                ,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl LifeCycleLastCutoverInitiated {
     /// Creates a new builder-style object to manufacture [`LifeCycleLastCutoverInitiated`](crate::model::LifeCycleLastCutoverInitiated).
@@ -2517,7 +2350,7 @@ impl LifeCycleLastCutoverInitiated {
 /// <p>Lifecycle last Test.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifeCycleLastTest {
+pub struct LifeCycleLastTest  {
     /// <p>Lifecycle last Test initiated.</p>
     #[doc(hidden)]
     pub initiated: std::option::Option<crate::model::LifeCycleLastTestInitiated>,
@@ -2530,21 +2363,21 @@ pub struct LifeCycleLastTest {
 }
 impl LifeCycleLastTest {
     /// <p>Lifecycle last Test initiated.</p>
-    pub fn initiated(&self) -> std::option::Option<&crate::model::LifeCycleLastTestInitiated> {
+    pub fn initiated(&self) -> std::option::Option<& crate::model::LifeCycleLastTestInitiated> {
         self.initiated.as_ref()
     }
     /// <p>Lifecycle last Test reverted.</p>
-    pub fn reverted(&self) -> std::option::Option<&crate::model::LifeCycleLastTestReverted> {
+    pub fn reverted(&self) -> std::option::Option<& crate::model::LifeCycleLastTestReverted> {
         self.reverted.as_ref()
     }
     /// <p>Lifecycle last Test finalized.</p>
-    pub fn finalized(&self) -> std::option::Option<&crate::model::LifeCycleLastTestFinalized> {
+    pub fn finalized(&self) -> std::option::Option<& crate::model::LifeCycleLastTestFinalized> {
         self.finalized.as_ref()
     }
 }
 /// See [`LifeCycleLastTest`](crate::model::LifeCycleLastTest).
 pub mod life_cycle_last_test {
-
+    
     /// A builder for [`LifeCycleLastTest`](crate::model::LifeCycleLastTest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2559,12 +2392,8 @@ pub mod life_cycle_last_test {
             self
         }
         /// <p>Lifecycle last Test initiated.</p>
-        pub fn set_initiated(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycleLastTestInitiated>,
-        ) -> Self {
-            self.initiated = input;
-            self
+        pub fn set_initiated(mut self, input: std::option::Option<crate::model::LifeCycleLastTestInitiated>) -> Self {
+            self.initiated = input; self
         }
         /// <p>Lifecycle last Test reverted.</p>
         pub fn reverted(mut self, input: crate::model::LifeCycleLastTestReverted) -> Self {
@@ -2572,12 +2401,8 @@ pub mod life_cycle_last_test {
             self
         }
         /// <p>Lifecycle last Test reverted.</p>
-        pub fn set_reverted(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycleLastTestReverted>,
-        ) -> Self {
-            self.reverted = input;
-            self
+        pub fn set_reverted(mut self, input: std::option::Option<crate::model::LifeCycleLastTestReverted>) -> Self {
+            self.reverted = input; self
         }
         /// <p>Lifecycle last Test finalized.</p>
         pub fn finalized(mut self, input: crate::model::LifeCycleLastTestFinalized) -> Self {
@@ -2585,22 +2410,23 @@ pub mod life_cycle_last_test {
             self
         }
         /// <p>Lifecycle last Test finalized.</p>
-        pub fn set_finalized(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycleLastTestFinalized>,
-        ) -> Self {
-            self.finalized = input;
-            self
+        pub fn set_finalized(mut self, input: std::option::Option<crate::model::LifeCycleLastTestFinalized>) -> Self {
+            self.finalized = input; self
         }
         /// Consumes the builder and constructs a [`LifeCycleLastTest`](crate::model::LifeCycleLastTest).
         pub fn build(self) -> crate::model::LifeCycleLastTest {
             crate::model::LifeCycleLastTest {
-                initiated: self.initiated,
-                reverted: self.reverted,
-                finalized: self.finalized,
+                initiated: self.initiated
+                ,
+                reverted: self.reverted
+                ,
+                finalized: self.finalized
+                ,
             }
         }
     }
+    
+    
 }
 impl LifeCycleLastTest {
     /// Creates a new builder-style object to manufacture [`LifeCycleLastTest`](crate::model::LifeCycleLastTest).
@@ -2612,20 +2438,20 @@ impl LifeCycleLastTest {
 /// <p>Lifecycle last Test finalized.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifeCycleLastTestFinalized {
+pub struct LifeCycleLastTestFinalized  {
     /// <p>Lifecycle Test failed API call date and time.</p>
     #[doc(hidden)]
     pub api_call_date_time: std::option::Option<std::string::String>,
 }
 impl LifeCycleLastTestFinalized {
     /// <p>Lifecycle Test failed API call date and time.</p>
-    pub fn api_call_date_time(&self) -> std::option::Option<&str> {
+    pub fn api_call_date_time(&self) -> std::option::Option<& str> {
         self.api_call_date_time.as_deref()
     }
 }
 /// See [`LifeCycleLastTestFinalized`](crate::model::LifeCycleLastTestFinalized).
 pub mod life_cycle_last_test_finalized {
-
+    
     /// A builder for [`LifeCycleLastTestFinalized`](crate::model::LifeCycleLastTestFinalized).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2638,20 +2464,19 @@ pub mod life_cycle_last_test_finalized {
             self
         }
         /// <p>Lifecycle Test failed API call date and time.</p>
-        pub fn set_api_call_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.api_call_date_time = input;
-            self
+        pub fn set_api_call_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_call_date_time = input; self
         }
         /// Consumes the builder and constructs a [`LifeCycleLastTestFinalized`](crate::model::LifeCycleLastTestFinalized).
         pub fn build(self) -> crate::model::LifeCycleLastTestFinalized {
             crate::model::LifeCycleLastTestFinalized {
-                api_call_date_time: self.api_call_date_time,
+                api_call_date_time: self.api_call_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl LifeCycleLastTestFinalized {
     /// Creates a new builder-style object to manufacture [`LifeCycleLastTestFinalized`](crate::model::LifeCycleLastTestFinalized).
@@ -2663,20 +2488,20 @@ impl LifeCycleLastTestFinalized {
 /// <p>Lifecycle last Test reverted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifeCycleLastTestReverted {
+pub struct LifeCycleLastTestReverted  {
     /// <p>Lifecycle last Test reverted API call date and time.</p>
     #[doc(hidden)]
     pub api_call_date_time: std::option::Option<std::string::String>,
 }
 impl LifeCycleLastTestReverted {
     /// <p>Lifecycle last Test reverted API call date and time.</p>
-    pub fn api_call_date_time(&self) -> std::option::Option<&str> {
+    pub fn api_call_date_time(&self) -> std::option::Option<& str> {
         self.api_call_date_time.as_deref()
     }
 }
 /// See [`LifeCycleLastTestReverted`](crate::model::LifeCycleLastTestReverted).
 pub mod life_cycle_last_test_reverted {
-
+    
     /// A builder for [`LifeCycleLastTestReverted`](crate::model::LifeCycleLastTestReverted).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2689,20 +2514,19 @@ pub mod life_cycle_last_test_reverted {
             self
         }
         /// <p>Lifecycle last Test reverted API call date and time.</p>
-        pub fn set_api_call_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.api_call_date_time = input;
-            self
+        pub fn set_api_call_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_call_date_time = input; self
         }
         /// Consumes the builder and constructs a [`LifeCycleLastTestReverted`](crate::model::LifeCycleLastTestReverted).
         pub fn build(self) -> crate::model::LifeCycleLastTestReverted {
             crate::model::LifeCycleLastTestReverted {
-                api_call_date_time: self.api_call_date_time,
+                api_call_date_time: self.api_call_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl LifeCycleLastTestReverted {
     /// Creates a new builder-style object to manufacture [`LifeCycleLastTestReverted`](crate::model::LifeCycleLastTestReverted).
@@ -2714,7 +2538,7 @@ impl LifeCycleLastTestReverted {
 /// <p>Lifecycle last Test initiated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifeCycleLastTestInitiated {
+pub struct LifeCycleLastTestInitiated  {
     /// <p>Lifecycle last Test initiated API call date and time.</p>
     #[doc(hidden)]
     pub api_call_date_time: std::option::Option<std::string::String>,
@@ -2724,17 +2548,17 @@ pub struct LifeCycleLastTestInitiated {
 }
 impl LifeCycleLastTestInitiated {
     /// <p>Lifecycle last Test initiated API call date and time.</p>
-    pub fn api_call_date_time(&self) -> std::option::Option<&str> {
+    pub fn api_call_date_time(&self) -> std::option::Option<& str> {
         self.api_call_date_time.as_deref()
     }
     /// <p>Lifecycle last Test initiated Job ID.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`LifeCycleLastTestInitiated`](crate::model::LifeCycleLastTestInitiated).
 pub mod life_cycle_last_test_initiated {
-
+    
     /// A builder for [`LifeCycleLastTestInitiated`](crate::model::LifeCycleLastTestInitiated).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2748,12 +2572,8 @@ pub mod life_cycle_last_test_initiated {
             self
         }
         /// <p>Lifecycle last Test initiated API call date and time.</p>
-        pub fn set_api_call_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.api_call_date_time = input;
-            self
+        pub fn set_api_call_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.api_call_date_time = input; self
         }
         /// <p>Lifecycle last Test initiated Job ID.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2762,17 +2582,20 @@ pub mod life_cycle_last_test_initiated {
         }
         /// <p>Lifecycle last Test initiated Job ID.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`LifeCycleLastTestInitiated`](crate::model::LifeCycleLastTestInitiated).
         pub fn build(self) -> crate::model::LifeCycleLastTestInitiated {
             crate::model::LifeCycleLastTestInitiated {
-                api_call_date_time: self.api_call_date_time,
-                job_id: self.job_id,
+                api_call_date_time: self.api_call_date_time
+                ,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl LifeCycleLastTestInitiated {
     /// Creates a new builder-style object to manufacture [`LifeCycleLastTestInitiated`](crate::model::LifeCycleLastTestInitiated).
@@ -2784,7 +2607,7 @@ impl LifeCycleLastTestInitiated {
 /// <p>Request data replication info.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataReplicationInfo {
+pub struct DataReplicationInfo  {
     /// <p>Request to query data replication lag duration.</p>
     #[doc(hidden)]
     pub lag_duration: std::option::Option<std::string::String>,
@@ -2793,8 +2616,7 @@ pub struct DataReplicationInfo {
     pub eta_date_time: std::option::Option<std::string::String>,
     /// <p>Request to query disks replicated.</p>
     #[doc(hidden)]
-    pub replicated_disks:
-        std::option::Option<std::vec::Vec<crate::model::DataReplicationInfoReplicatedDisk>>,
+    pub replicated_disks: std::option::Option<std::vec::Vec<crate::model::DataReplicationInfoReplicatedDisk>>,
     /// <p>Request to query the data replication state.</p>
     #[doc(hidden)]
     pub data_replication_state: std::option::Option<crate::model::DataReplicationState>,
@@ -2810,55 +2632,45 @@ pub struct DataReplicationInfo {
 }
 impl DataReplicationInfo {
     /// <p>Request to query data replication lag duration.</p>
-    pub fn lag_duration(&self) -> std::option::Option<&str> {
+    pub fn lag_duration(&self) -> std::option::Option<& str> {
         self.lag_duration.as_deref()
     }
     /// <p>Request to query the time when data replication will be complete.</p>
-    pub fn eta_date_time(&self) -> std::option::Option<&str> {
+    pub fn eta_date_time(&self) -> std::option::Option<& str> {
         self.eta_date_time.as_deref()
     }
     /// <p>Request to query disks replicated.</p>
-    pub fn replicated_disks(
-        &self,
-    ) -> std::option::Option<&[crate::model::DataReplicationInfoReplicatedDisk]> {
+    pub fn replicated_disks(&self) -> std::option::Option<& [crate::model::DataReplicationInfoReplicatedDisk]> {
         self.replicated_disks.as_deref()
     }
     /// <p>Request to query the data replication state.</p>
-    pub fn data_replication_state(
-        &self,
-    ) -> std::option::Option<&crate::model::DataReplicationState> {
+    pub fn data_replication_state(&self) -> std::option::Option<& crate::model::DataReplicationState> {
         self.data_replication_state.as_ref()
     }
     /// <p>Request to query whether data replication has been initiated.</p>
-    pub fn data_replication_initiation(
-        &self,
-    ) -> std::option::Option<&crate::model::DataReplicationInitiation> {
+    pub fn data_replication_initiation(&self) -> std::option::Option<& crate::model::DataReplicationInitiation> {
         self.data_replication_initiation.as_ref()
     }
     /// <p>Error in obtaining data replication info.</p>
-    pub fn data_replication_error(
-        &self,
-    ) -> std::option::Option<&crate::model::DataReplicationError> {
+    pub fn data_replication_error(&self) -> std::option::Option<& crate::model::DataReplicationError> {
         self.data_replication_error.as_ref()
     }
     /// <p>Request to query data replication last snapshot time.</p>
-    pub fn last_snapshot_date_time(&self) -> std::option::Option<&str> {
+    pub fn last_snapshot_date_time(&self) -> std::option::Option<& str> {
         self.last_snapshot_date_time.as_deref()
     }
 }
 /// See [`DataReplicationInfo`](crate::model::DataReplicationInfo).
 pub mod data_replication_info {
-
+    
     /// A builder for [`DataReplicationInfo`](crate::model::DataReplicationInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lag_duration: std::option::Option<std::string::String>,
         pub(crate) eta_date_time: std::option::Option<std::string::String>,
-        pub(crate) replicated_disks:
-            std::option::Option<std::vec::Vec<crate::model::DataReplicationInfoReplicatedDisk>>,
+        pub(crate) replicated_disks: std::option::Option<std::vec::Vec<crate::model::DataReplicationInfoReplicatedDisk>>,
         pub(crate) data_replication_state: std::option::Option<crate::model::DataReplicationState>,
-        pub(crate) data_replication_initiation:
-            std::option::Option<crate::model::DataReplicationInitiation>,
+        pub(crate) data_replication_initiation: std::option::Option<crate::model::DataReplicationInitiation>,
         pub(crate) data_replication_error: std::option::Option<crate::model::DataReplicationError>,
         pub(crate) last_snapshot_date_time: std::option::Option<std::string::String>,
     }
@@ -2870,8 +2682,7 @@ pub mod data_replication_info {
         }
         /// <p>Request to query data replication lag duration.</p>
         pub fn set_lag_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lag_duration = input;
-            self
+            self.lag_duration = input; self
         }
         /// <p>Request to query the time when data replication will be complete.</p>
         pub fn eta_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2879,36 +2690,23 @@ pub mod data_replication_info {
             self
         }
         /// <p>Request to query the time when data replication will be complete.</p>
-        pub fn set_eta_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.eta_date_time = input;
-            self
+        pub fn set_eta_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.eta_date_time = input; self
         }
         /// Appends an item to `replicated_disks`.
         ///
         /// To override the contents of this collection use [`set_replicated_disks`](Self::set_replicated_disks).
         ///
         /// <p>Request to query disks replicated.</p>
-        pub fn replicated_disks(
-            mut self,
-            input: crate::model::DataReplicationInfoReplicatedDisk,
-        ) -> Self {
+        pub fn replicated_disks(mut self, input: crate::model::DataReplicationInfoReplicatedDisk) -> Self {
             let mut v = self.replicated_disks.unwrap_or_default();
-            v.push(input);
-            self.replicated_disks = Some(v);
-            self
+                            v.push(input);
+                            self.replicated_disks = Some(v);
+                            self
         }
         /// <p>Request to query disks replicated.</p>
-        pub fn set_replicated_disks(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::DataReplicationInfoReplicatedDisk>,
-            >,
-        ) -> Self {
-            self.replicated_disks = input;
-            self
+        pub fn set_replicated_disks(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataReplicationInfoReplicatedDisk>>) -> Self {
+            self.replicated_disks = input; self
         }
         /// <p>Request to query the data replication state.</p>
         pub fn data_replication_state(mut self, input: crate::model::DataReplicationState) -> Self {
@@ -2916,28 +2714,17 @@ pub mod data_replication_info {
             self
         }
         /// <p>Request to query the data replication state.</p>
-        pub fn set_data_replication_state(
-            mut self,
-            input: std::option::Option<crate::model::DataReplicationState>,
-        ) -> Self {
-            self.data_replication_state = input;
-            self
+        pub fn set_data_replication_state(mut self, input: std::option::Option<crate::model::DataReplicationState>) -> Self {
+            self.data_replication_state = input; self
         }
         /// <p>Request to query whether data replication has been initiated.</p>
-        pub fn data_replication_initiation(
-            mut self,
-            input: crate::model::DataReplicationInitiation,
-        ) -> Self {
+        pub fn data_replication_initiation(mut self, input: crate::model::DataReplicationInitiation) -> Self {
             self.data_replication_initiation = Some(input);
             self
         }
         /// <p>Request to query whether data replication has been initiated.</p>
-        pub fn set_data_replication_initiation(
-            mut self,
-            input: std::option::Option<crate::model::DataReplicationInitiation>,
-        ) -> Self {
-            self.data_replication_initiation = input;
-            self
+        pub fn set_data_replication_initiation(mut self, input: std::option::Option<crate::model::DataReplicationInitiation>) -> Self {
+            self.data_replication_initiation = input; self
         }
         /// <p>Error in obtaining data replication info.</p>
         pub fn data_replication_error(mut self, input: crate::model::DataReplicationError) -> Self {
@@ -2945,12 +2732,8 @@ pub mod data_replication_info {
             self
         }
         /// <p>Error in obtaining data replication info.</p>
-        pub fn set_data_replication_error(
-            mut self,
-            input: std::option::Option<crate::model::DataReplicationError>,
-        ) -> Self {
-            self.data_replication_error = input;
-            self
+        pub fn set_data_replication_error(mut self, input: std::option::Option<crate::model::DataReplicationError>) -> Self {
+            self.data_replication_error = input; self
         }
         /// <p>Request to query data replication last snapshot time.</p>
         pub fn last_snapshot_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2958,26 +2741,31 @@ pub mod data_replication_info {
             self
         }
         /// <p>Request to query data replication last snapshot time.</p>
-        pub fn set_last_snapshot_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_snapshot_date_time = input;
-            self
+        pub fn set_last_snapshot_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_snapshot_date_time = input; self
         }
         /// Consumes the builder and constructs a [`DataReplicationInfo`](crate::model::DataReplicationInfo).
         pub fn build(self) -> crate::model::DataReplicationInfo {
             crate::model::DataReplicationInfo {
-                lag_duration: self.lag_duration,
-                eta_date_time: self.eta_date_time,
-                replicated_disks: self.replicated_disks,
-                data_replication_state: self.data_replication_state,
-                data_replication_initiation: self.data_replication_initiation,
-                data_replication_error: self.data_replication_error,
-                last_snapshot_date_time: self.last_snapshot_date_time,
+                lag_duration: self.lag_duration
+                ,
+                eta_date_time: self.eta_date_time
+                ,
+                replicated_disks: self.replicated_disks
+                ,
+                data_replication_state: self.data_replication_state
+                ,
+                data_replication_initiation: self.data_replication_initiation
+                ,
+                data_replication_error: self.data_replication_error
+                ,
+                last_snapshot_date_time: self.last_snapshot_date_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DataReplicationInfo {
     /// Creates a new builder-style object to manufacture [`DataReplicationInfo`](crate::model::DataReplicationInfo).
@@ -2989,7 +2777,7 @@ impl DataReplicationInfo {
 /// <p>Error in data replication.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataReplicationError {
+pub struct DataReplicationError  {
     /// <p>Error in data replication.</p>
     #[doc(hidden)]
     pub error: std::option::Option<crate::model::DataReplicationErrorString>,
@@ -2999,17 +2787,17 @@ pub struct DataReplicationError {
 }
 impl DataReplicationError {
     /// <p>Error in data replication.</p>
-    pub fn error(&self) -> std::option::Option<&crate::model::DataReplicationErrorString> {
+    pub fn error(&self) -> std::option::Option<& crate::model::DataReplicationErrorString> {
         self.error.as_ref()
     }
     /// <p>Error in data replication.</p>
-    pub fn raw_error(&self) -> std::option::Option<&str> {
+    pub fn raw_error(&self) -> std::option::Option<& str> {
         self.raw_error.as_deref()
     }
 }
 /// See [`DataReplicationError`](crate::model::DataReplicationError).
 pub mod data_replication_error {
-
+    
     /// A builder for [`DataReplicationError`](crate::model::DataReplicationError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3023,12 +2811,8 @@ pub mod data_replication_error {
             self
         }
         /// <p>Error in data replication.</p>
-        pub fn set_error(
-            mut self,
-            input: std::option::Option<crate::model::DataReplicationErrorString>,
-        ) -> Self {
-            self.error = input;
-            self
+        pub fn set_error(mut self, input: std::option::Option<crate::model::DataReplicationErrorString>) -> Self {
+            self.error = input; self
         }
         /// <p>Error in data replication.</p>
         pub fn raw_error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3037,17 +2821,20 @@ pub mod data_replication_error {
         }
         /// <p>Error in data replication.</p>
         pub fn set_raw_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.raw_error = input;
-            self
+            self.raw_error = input; self
         }
         /// Consumes the builder and constructs a [`DataReplicationError`](crate::model::DataReplicationError).
         pub fn build(self) -> crate::model::DataReplicationError {
             crate::model::DataReplicationError {
-                error: self.error,
-                raw_error: self.raw_error,
+                error: self.error
+                ,
+                raw_error: self.raw_error
+                ,
             }
         }
     }
+    
+    
 }
 impl DataReplicationError {
     /// Creates a new builder-style object to manufacture [`DataReplicationError`](crate::model::DataReplicationError).
@@ -3062,9 +2849,9 @@ impl DataReplicationError {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datareplicationerrorstring = unimplemented!();
 /// match datareplicationerrorstring {
@@ -3100,22 +2887,14 @@ impl DataReplicationError {
 /// Specifically, when `datareplicationerrorstring` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataReplicationErrorString::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DataReplicationErrorString {
     #[allow(missing_docs)] // documentation missing in model
     AgentNotSeen,
@@ -3150,126 +2929,65 @@ pub enum DataReplicationErrorString {
     #[allow(missing_docs)] // documentation missing in model
     UnsupportedVmConfiguration,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataReplicationErrorString {
     fn from(s: &str) -> Self {
         match s {
             "AGENT_NOT_SEEN" => DataReplicationErrorString::AgentNotSeen,
-            "FAILED_TO_ATTACH_STAGING_DISKS" => {
-                DataReplicationErrorString::FailedToAttachStagingDisks
-            }
-            "FAILED_TO_AUTHENTICATE_WITH_SERVICE" => {
-                DataReplicationErrorString::FailedToAuthenticateWithService
-            }
-            "FAILED_TO_BOOT_REPLICATION_SERVER" => {
-                DataReplicationErrorString::FailedToBootReplicationServer
-            }
-            "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER" => {
-                DataReplicationErrorString::FailedToConnectAgentToReplicationServer
-            }
-            "FAILED_TO_CREATE_SECURITY_GROUP" => {
-                DataReplicationErrorString::FailedToCreateSecurityGroup
-            }
-            "FAILED_TO_CREATE_STAGING_DISKS" => {
-                DataReplicationErrorString::FailedToCreateStagingDisks
-            }
-            "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE" => {
-                DataReplicationErrorString::FailedToDownloadReplicationSoftware
-            }
-            "FAILED_TO_LAUNCH_REPLICATION_SERVER" => {
-                DataReplicationErrorString::FailedToLaunchReplicationServer
-            }
-            "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT" => {
-                DataReplicationErrorString::FailedToPairReplicationServerWithAgent
-            }
-            "FAILED_TO_START_DATA_TRANSFER" => {
-                DataReplicationErrorString::FailedToStartDataTransfer
-            }
+            "FAILED_TO_ATTACH_STAGING_DISKS" => DataReplicationErrorString::FailedToAttachStagingDisks,
+            "FAILED_TO_AUTHENTICATE_WITH_SERVICE" => DataReplicationErrorString::FailedToAuthenticateWithService,
+            "FAILED_TO_BOOT_REPLICATION_SERVER" => DataReplicationErrorString::FailedToBootReplicationServer,
+            "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER" => DataReplicationErrorString::FailedToConnectAgentToReplicationServer,
+            "FAILED_TO_CREATE_SECURITY_GROUP" => DataReplicationErrorString::FailedToCreateSecurityGroup,
+            "FAILED_TO_CREATE_STAGING_DISKS" => DataReplicationErrorString::FailedToCreateStagingDisks,
+            "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE" => DataReplicationErrorString::FailedToDownloadReplicationSoftware,
+            "FAILED_TO_LAUNCH_REPLICATION_SERVER" => DataReplicationErrorString::FailedToLaunchReplicationServer,
+            "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT" => DataReplicationErrorString::FailedToPairReplicationServerWithAgent,
+            "FAILED_TO_START_DATA_TRANSFER" => DataReplicationErrorString::FailedToStartDataTransfer,
             "LAST_SNAPSHOT_JOB_FAILED" => DataReplicationErrorString::LastSnapshotJobFailed,
             "NOT_CONVERGING" => DataReplicationErrorString::NotConverging,
             "SNAPSHOTS_FAILURE" => DataReplicationErrorString::SnapshotsFailure,
             "UNSTABLE_NETWORK" => DataReplicationErrorString::UnstableNetwork,
-            "UNSUPPORTED_VM_CONFIGURATION" => {
-                DataReplicationErrorString::UnsupportedVmConfiguration
-            }
-            other => DataReplicationErrorString::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "UNSUPPORTED_VM_CONFIGURATION" => DataReplicationErrorString::UnsupportedVmConfiguration,
+            other => DataReplicationErrorString::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DataReplicationErrorString {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataReplicationErrorString::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DataReplicationErrorString::from(s))
+                }
+            }
 impl DataReplicationErrorString {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataReplicationErrorString::AgentNotSeen => "AGENT_NOT_SEEN",
-            DataReplicationErrorString::FailedToAttachStagingDisks => {
-                "FAILED_TO_ATTACH_STAGING_DISKS"
-            }
-            DataReplicationErrorString::FailedToAuthenticateWithService => {
-                "FAILED_TO_AUTHENTICATE_WITH_SERVICE"
-            }
-            DataReplicationErrorString::FailedToBootReplicationServer => {
-                "FAILED_TO_BOOT_REPLICATION_SERVER"
-            }
-            DataReplicationErrorString::FailedToConnectAgentToReplicationServer => {
-                "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER"
-            }
-            DataReplicationErrorString::FailedToCreateSecurityGroup => {
-                "FAILED_TO_CREATE_SECURITY_GROUP"
-            }
-            DataReplicationErrorString::FailedToCreateStagingDisks => {
-                "FAILED_TO_CREATE_STAGING_DISKS"
-            }
-            DataReplicationErrorString::FailedToDownloadReplicationSoftware => {
-                "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE"
-            }
-            DataReplicationErrorString::FailedToLaunchReplicationServer => {
-                "FAILED_TO_LAUNCH_REPLICATION_SERVER"
-            }
-            DataReplicationErrorString::FailedToPairReplicationServerWithAgent => {
-                "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT"
-            }
-            DataReplicationErrorString::FailedToStartDataTransfer => {
-                "FAILED_TO_START_DATA_TRANSFER"
-            }
+            DataReplicationErrorString::FailedToAttachStagingDisks => "FAILED_TO_ATTACH_STAGING_DISKS",
+            DataReplicationErrorString::FailedToAuthenticateWithService => "FAILED_TO_AUTHENTICATE_WITH_SERVICE",
+            DataReplicationErrorString::FailedToBootReplicationServer => "FAILED_TO_BOOT_REPLICATION_SERVER",
+            DataReplicationErrorString::FailedToConnectAgentToReplicationServer => "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER",
+            DataReplicationErrorString::FailedToCreateSecurityGroup => "FAILED_TO_CREATE_SECURITY_GROUP",
+            DataReplicationErrorString::FailedToCreateStagingDisks => "FAILED_TO_CREATE_STAGING_DISKS",
+            DataReplicationErrorString::FailedToDownloadReplicationSoftware => "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE",
+            DataReplicationErrorString::FailedToLaunchReplicationServer => "FAILED_TO_LAUNCH_REPLICATION_SERVER",
+            DataReplicationErrorString::FailedToPairReplicationServerWithAgent => "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT",
+            DataReplicationErrorString::FailedToStartDataTransfer => "FAILED_TO_START_DATA_TRANSFER",
             DataReplicationErrorString::LastSnapshotJobFailed => "LAST_SNAPSHOT_JOB_FAILED",
             DataReplicationErrorString::NotConverging => "NOT_CONVERGING",
             DataReplicationErrorString::SnapshotsFailure => "SNAPSHOTS_FAILURE",
             DataReplicationErrorString::UnstableNetwork => "UNSTABLE_NETWORK",
-            DataReplicationErrorString::UnsupportedVmConfiguration => {
-                "UNSUPPORTED_VM_CONFIGURATION"
-            }
-            DataReplicationErrorString::Unknown(value) => value.as_str(),
+            DataReplicationErrorString::UnsupportedVmConfiguration => "UNSUPPORTED_VM_CONFIGURATION",
+            DataReplicationErrorString::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AGENT_NOT_SEEN",
-            "FAILED_TO_ATTACH_STAGING_DISKS",
-            "FAILED_TO_AUTHENTICATE_WITH_SERVICE",
-            "FAILED_TO_BOOT_REPLICATION_SERVER",
-            "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER",
-            "FAILED_TO_CREATE_SECURITY_GROUP",
-            "FAILED_TO_CREATE_STAGING_DISKS",
-            "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE",
-            "FAILED_TO_LAUNCH_REPLICATION_SERVER",
-            "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT",
-            "FAILED_TO_START_DATA_TRANSFER",
-            "LAST_SNAPSHOT_JOB_FAILED",
-            "NOT_CONVERGING",
-            "SNAPSHOTS_FAILURE",
-            "UNSTABLE_NETWORK",
-            "UNSUPPORTED_VM_CONFIGURATION",
+            "AGENT_NOT_SEEN", "FAILED_TO_ATTACH_STAGING_DISKS", "FAILED_TO_AUTHENTICATE_WITH_SERVICE", "FAILED_TO_BOOT_REPLICATION_SERVER", "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER", "FAILED_TO_CREATE_SECURITY_GROUP", "FAILED_TO_CREATE_STAGING_DISKS", "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE", "FAILED_TO_LAUNCH_REPLICATION_SERVER", "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT", "FAILED_TO_START_DATA_TRANSFER", "LAST_SNAPSHOT_JOB_FAILED", "NOT_CONVERGING", "SNAPSHOTS_FAILURE", "UNSTABLE_NETWORK", "UNSUPPORTED_VM_CONFIGURATION"
         ]
     }
 }
@@ -3282,7 +3000,7 @@ impl AsRef<str> for DataReplicationErrorString {
 /// <p>Data replication initiation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataReplicationInitiation {
+pub struct DataReplicationInitiation  {
     /// <p>Request to query data initiation start date and time.</p>
     #[doc(hidden)]
     pub start_date_time: std::option::Option<std::string::String>,
@@ -3295,28 +3013,27 @@ pub struct DataReplicationInitiation {
 }
 impl DataReplicationInitiation {
     /// <p>Request to query data initiation start date and time.</p>
-    pub fn start_date_time(&self) -> std::option::Option<&str> {
+    pub fn start_date_time(&self) -> std::option::Option<& str> {
         self.start_date_time.as_deref()
     }
     /// <p>Request to query next data initiation date and time.</p>
-    pub fn next_attempt_date_time(&self) -> std::option::Option<&str> {
+    pub fn next_attempt_date_time(&self) -> std::option::Option<& str> {
         self.next_attempt_date_time.as_deref()
     }
     /// <p>Request to query data initiation steps.</p>
-    pub fn steps(&self) -> std::option::Option<&[crate::model::DataReplicationInitiationStep]> {
+    pub fn steps(&self) -> std::option::Option<& [crate::model::DataReplicationInitiationStep]> {
         self.steps.as_deref()
     }
 }
 /// See [`DataReplicationInitiation`](crate::model::DataReplicationInitiation).
 pub mod data_replication_initiation {
-
+    
     /// A builder for [`DataReplicationInitiation`](crate::model::DataReplicationInitiation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) start_date_time: std::option::Option<std::string::String>,
         pub(crate) next_attempt_date_time: std::option::Option<std::string::String>,
-        pub(crate) steps:
-            std::option::Option<std::vec::Vec<crate::model::DataReplicationInitiationStep>>,
+        pub(crate) steps: std::option::Option<std::vec::Vec<crate::model::DataReplicationInitiationStep>>,
     }
     impl Builder {
         /// <p>Request to query data initiation start date and time.</p>
@@ -3325,12 +3042,8 @@ pub mod data_replication_initiation {
             self
         }
         /// <p>Request to query data initiation start date and time.</p>
-        pub fn set_start_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.start_date_time = input;
-            self
+        pub fn set_start_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.start_date_time = input; self
         }
         /// <p>Request to query next data initiation date and time.</p>
         pub fn next_attempt_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3338,12 +3051,8 @@ pub mod data_replication_initiation {
             self
         }
         /// <p>Request to query next data initiation date and time.</p>
-        pub fn set_next_attempt_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_attempt_date_time = input;
-            self
+        pub fn set_next_attempt_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_attempt_date_time = input; self
         }
         /// Appends an item to `steps`.
         ///
@@ -3352,27 +3061,28 @@ pub mod data_replication_initiation {
         /// <p>Request to query data initiation steps.</p>
         pub fn steps(mut self, input: crate::model::DataReplicationInitiationStep) -> Self {
             let mut v = self.steps.unwrap_or_default();
-            v.push(input);
-            self.steps = Some(v);
-            self
+                            v.push(input);
+                            self.steps = Some(v);
+                            self
         }
         /// <p>Request to query data initiation steps.</p>
-        pub fn set_steps(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataReplicationInitiationStep>>,
-        ) -> Self {
-            self.steps = input;
-            self
+        pub fn set_steps(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataReplicationInitiationStep>>) -> Self {
+            self.steps = input; self
         }
         /// Consumes the builder and constructs a [`DataReplicationInitiation`](crate::model::DataReplicationInitiation).
         pub fn build(self) -> crate::model::DataReplicationInitiation {
             crate::model::DataReplicationInitiation {
-                start_date_time: self.start_date_time,
-                next_attempt_date_time: self.next_attempt_date_time,
-                steps: self.steps,
+                start_date_time: self.start_date_time
+                ,
+                next_attempt_date_time: self.next_attempt_date_time
+                ,
+                steps: self.steps
+                ,
             }
         }
     }
+    
+    
 }
 impl DataReplicationInitiation {
     /// Creates a new builder-style object to manufacture [`DataReplicationInitiation`](crate::model::DataReplicationInitiation).
@@ -3384,7 +3094,7 @@ impl DataReplicationInitiation {
 /// <p>Data replication initiation step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataReplicationInitiationStep {
+pub struct DataReplicationInitiationStep  {
     /// <p>Request to query data initiation step name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::DataReplicationInitiationStepName>,
@@ -3394,19 +3104,17 @@ pub struct DataReplicationInitiationStep {
 }
 impl DataReplicationInitiationStep {
     /// <p>Request to query data initiation step name.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::DataReplicationInitiationStepName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::DataReplicationInitiationStepName> {
         self.name.as_ref()
     }
     /// <p>Request to query data initiation status.</p>
-    pub fn status(
-        &self,
-    ) -> std::option::Option<&crate::model::DataReplicationInitiationStepStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DataReplicationInitiationStepStatus> {
         self.status.as_ref()
     }
 }
 /// See [`DataReplicationInitiationStep`](crate::model::DataReplicationInitiationStep).
 pub mod data_replication_initiation_step {
-
+    
     /// A builder for [`DataReplicationInitiationStep`](crate::model::DataReplicationInitiationStep).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3420,12 +3128,8 @@ pub mod data_replication_initiation_step {
             self
         }
         /// <p>Request to query data initiation step name.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::DataReplicationInitiationStepName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::DataReplicationInitiationStepName>) -> Self {
+            self.name = input; self
         }
         /// <p>Request to query data initiation status.</p>
         pub fn status(mut self, input: crate::model::DataReplicationInitiationStepStatus) -> Self {
@@ -3433,21 +3137,21 @@ pub mod data_replication_initiation_step {
             self
         }
         /// <p>Request to query data initiation status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DataReplicationInitiationStepStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DataReplicationInitiationStepStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DataReplicationInitiationStep`](crate::model::DataReplicationInitiationStep).
         pub fn build(self) -> crate::model::DataReplicationInitiationStep {
             crate::model::DataReplicationInitiationStep {
-                name: self.name,
-                status: self.status,
+                name: self.name
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DataReplicationInitiationStep {
     /// Creates a new builder-style object to manufacture [`DataReplicationInitiationStep`](crate::model::DataReplicationInitiationStep).
@@ -3462,9 +3166,9 @@ impl DataReplicationInitiationStep {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datareplicationinitiationstepstatus = unimplemented!();
 /// match datareplicationinitiationstepstatus {
@@ -3489,22 +3193,14 @@ impl DataReplicationInitiationStep {
 /// Specifically, when `datareplicationinitiationstepstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataReplicationInitiationStepStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DataReplicationInitiationStepStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -3517,7 +3213,7 @@ pub enum DataReplicationInitiationStepStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataReplicationInitiationStepStatus {
     fn from(s: &str) -> Self {
@@ -3527,19 +3223,17 @@ impl std::convert::From<&str> for DataReplicationInitiationStepStatus {
             "NOT_STARTED" => DataReplicationInitiationStepStatus::NotStarted,
             "SKIPPED" => DataReplicationInitiationStepStatus::Skipped,
             "SUCCEEDED" => DataReplicationInitiationStepStatus::Succeeded,
-            other => DataReplicationInitiationStepStatus::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => DataReplicationInitiationStepStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DataReplicationInitiationStepStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataReplicationInitiationStepStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DataReplicationInitiationStepStatus::from(s))
+                }
+            }
 impl DataReplicationInitiationStepStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3549,17 +3243,13 @@ impl DataReplicationInitiationStepStatus {
             DataReplicationInitiationStepStatus::NotStarted => "NOT_STARTED",
             DataReplicationInitiationStepStatus::Skipped => "SKIPPED",
             DataReplicationInitiationStepStatus::Succeeded => "SUCCEEDED",
-            DataReplicationInitiationStepStatus::Unknown(value) => value.as_str(),
+            DataReplicationInitiationStepStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "FAILED",
-            "IN_PROGRESS",
-            "NOT_STARTED",
-            "SKIPPED",
-            "SUCCEEDED",
+            "FAILED", "IN_PROGRESS", "NOT_STARTED", "SKIPPED", "SUCCEEDED"
         ]
     }
 }
@@ -3575,9 +3265,9 @@ impl AsRef<str> for DataReplicationInitiationStepStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datareplicationinitiationstepname = unimplemented!();
 /// match datareplicationinitiationstepname {
@@ -3608,22 +3298,14 @@ impl AsRef<str> for DataReplicationInitiationStepStatus {
 /// Specifically, when `datareplicationinitiationstepname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataReplicationInitiationStepName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DataReplicationInitiationStepName {
     #[allow(missing_docs)] // documentation missing in model
     AttachStagingDisks,
@@ -3648,87 +3330,55 @@ pub enum DataReplicationInitiationStepName {
     #[allow(missing_docs)] // documentation missing in model
     Wait,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataReplicationInitiationStepName {
     fn from(s: &str) -> Self {
         match s {
             "ATTACH_STAGING_DISKS" => DataReplicationInitiationStepName::AttachStagingDisks,
-            "AUTHENTICATE_WITH_SERVICE" => {
-                DataReplicationInitiationStepName::AuthenticateWithService
-            }
+            "AUTHENTICATE_WITH_SERVICE" => DataReplicationInitiationStepName::AuthenticateWithService,
             "BOOT_REPLICATION_SERVER" => DataReplicationInitiationStepName::BootReplicationServer,
-            "CONNECT_AGENT_TO_REPLICATION_SERVER" => {
-                DataReplicationInitiationStepName::ConnectAgentToReplicationServer
-            }
+            "CONNECT_AGENT_TO_REPLICATION_SERVER" => DataReplicationInitiationStepName::ConnectAgentToReplicationServer,
             "CREATE_SECURITY_GROUP" => DataReplicationInitiationStepName::CreateSecurityGroup,
             "CREATE_STAGING_DISKS" => DataReplicationInitiationStepName::CreateStagingDisks,
-            "DOWNLOAD_REPLICATION_SOFTWARE" => {
-                DataReplicationInitiationStepName::DownloadReplicationSoftware
-            }
-            "LAUNCH_REPLICATION_SERVER" => {
-                DataReplicationInitiationStepName::LaunchReplicationServer
-            }
-            "PAIR_REPLICATION_SERVER_WITH_AGENT" => {
-                DataReplicationInitiationStepName::PairReplicationServerWithAgent
-            }
+            "DOWNLOAD_REPLICATION_SOFTWARE" => DataReplicationInitiationStepName::DownloadReplicationSoftware,
+            "LAUNCH_REPLICATION_SERVER" => DataReplicationInitiationStepName::LaunchReplicationServer,
+            "PAIR_REPLICATION_SERVER_WITH_AGENT" => DataReplicationInitiationStepName::PairReplicationServerWithAgent,
             "START_DATA_TRANSFER" => DataReplicationInitiationStepName::StartDataTransfer,
             "WAIT" => DataReplicationInitiationStepName::Wait,
-            other => DataReplicationInitiationStepName::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DataReplicationInitiationStepName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DataReplicationInitiationStepName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataReplicationInitiationStepName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DataReplicationInitiationStepName::from(s))
+                }
+            }
 impl DataReplicationInitiationStepName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataReplicationInitiationStepName::AttachStagingDisks => "ATTACH_STAGING_DISKS",
-            DataReplicationInitiationStepName::AuthenticateWithService => {
-                "AUTHENTICATE_WITH_SERVICE"
-            }
+            DataReplicationInitiationStepName::AuthenticateWithService => "AUTHENTICATE_WITH_SERVICE",
             DataReplicationInitiationStepName::BootReplicationServer => "BOOT_REPLICATION_SERVER",
-            DataReplicationInitiationStepName::ConnectAgentToReplicationServer => {
-                "CONNECT_AGENT_TO_REPLICATION_SERVER"
-            }
+            DataReplicationInitiationStepName::ConnectAgentToReplicationServer => "CONNECT_AGENT_TO_REPLICATION_SERVER",
             DataReplicationInitiationStepName::CreateSecurityGroup => "CREATE_SECURITY_GROUP",
             DataReplicationInitiationStepName::CreateStagingDisks => "CREATE_STAGING_DISKS",
-            DataReplicationInitiationStepName::DownloadReplicationSoftware => {
-                "DOWNLOAD_REPLICATION_SOFTWARE"
-            }
-            DataReplicationInitiationStepName::LaunchReplicationServer => {
-                "LAUNCH_REPLICATION_SERVER"
-            }
-            DataReplicationInitiationStepName::PairReplicationServerWithAgent => {
-                "PAIR_REPLICATION_SERVER_WITH_AGENT"
-            }
+            DataReplicationInitiationStepName::DownloadReplicationSoftware => "DOWNLOAD_REPLICATION_SOFTWARE",
+            DataReplicationInitiationStepName::LaunchReplicationServer => "LAUNCH_REPLICATION_SERVER",
+            DataReplicationInitiationStepName::PairReplicationServerWithAgent => "PAIR_REPLICATION_SERVER_WITH_AGENT",
             DataReplicationInitiationStepName::StartDataTransfer => "START_DATA_TRANSFER",
             DataReplicationInitiationStepName::Wait => "WAIT",
-            DataReplicationInitiationStepName::Unknown(value) => value.as_str(),
+            DataReplicationInitiationStepName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ATTACH_STAGING_DISKS",
-            "AUTHENTICATE_WITH_SERVICE",
-            "BOOT_REPLICATION_SERVER",
-            "CONNECT_AGENT_TO_REPLICATION_SERVER",
-            "CREATE_SECURITY_GROUP",
-            "CREATE_STAGING_DISKS",
-            "DOWNLOAD_REPLICATION_SOFTWARE",
-            "LAUNCH_REPLICATION_SERVER",
-            "PAIR_REPLICATION_SERVER_WITH_AGENT",
-            "START_DATA_TRANSFER",
-            "WAIT",
+            "ATTACH_STAGING_DISKS", "AUTHENTICATE_WITH_SERVICE", "BOOT_REPLICATION_SERVER", "CONNECT_AGENT_TO_REPLICATION_SERVER", "CREATE_SECURITY_GROUP", "CREATE_STAGING_DISKS", "DOWNLOAD_REPLICATION_SOFTWARE", "LAUNCH_REPLICATION_SERVER", "PAIR_REPLICATION_SERVER_WITH_AGENT", "START_DATA_TRANSFER", "WAIT"
         ]
     }
 }
@@ -3744,9 +3394,9 @@ impl AsRef<str> for DataReplicationInitiationStepName {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datareplicationstate = unimplemented!();
 /// match datareplicationstate {
@@ -3778,22 +3428,14 @@ impl AsRef<str> for DataReplicationInitiationStepName {
 /// Specifically, when `datareplicationstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataReplicationState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DataReplicationState {
     #[allow(missing_docs)] // documentation missing in model
     Backlog,
@@ -3820,7 +3462,7 @@ pub enum DataReplicationState {
     #[allow(missing_docs)] // documentation missing in model
     Stopped,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataReplicationState {
     fn from(s: &str) -> Self {
@@ -3837,19 +3479,17 @@ impl std::convert::From<&str> for DataReplicationState {
             "SHIPPING_SNAPSHOT" => DataReplicationState::ShippingSnapshot,
             "STALLED" => DataReplicationState::Stalled,
             "STOPPED" => DataReplicationState::Stopped,
-            other => {
-                DataReplicationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DataReplicationState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DataReplicationState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataReplicationState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DataReplicationState::from(s))
+                }
+            }
 impl DataReplicationState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3866,24 +3506,13 @@ impl DataReplicationState {
             DataReplicationState::ShippingSnapshot => "SHIPPING_SNAPSHOT",
             DataReplicationState::Stalled => "STALLED",
             DataReplicationState::Stopped => "STOPPED",
-            DataReplicationState::Unknown(value) => value.as_str(),
+            DataReplicationState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BACKLOG",
-            "CONTINUOUS",
-            "CREATING_SNAPSHOT",
-            "DISCONNECTED",
-            "INITIAL_SYNC",
-            "INITIATING",
-            "PAUSED",
-            "PENDING_SNAPSHOT_SHIPPING",
-            "RESCAN",
-            "SHIPPING_SNAPSHOT",
-            "STALLED",
-            "STOPPED",
+            "BACKLOG", "CONTINUOUS", "CREATING_SNAPSHOT", "DISCONNECTED", "INITIAL_SYNC", "INITIATING", "PAUSED", "PENDING_SNAPSHOT_SHIPPING", "RESCAN", "SHIPPING_SNAPSHOT", "STALLED", "STOPPED"
         ]
     }
 }
@@ -3896,7 +3525,7 @@ impl AsRef<str> for DataReplicationState {
 /// <p>Request to query disks replicated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataReplicationInfoReplicatedDisk {
+pub struct DataReplicationInfoReplicatedDisk  {
     /// <p>Request to query device name.</p>
     #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
@@ -3915,7 +3544,7 @@ pub struct DataReplicationInfoReplicatedDisk {
 }
 impl DataReplicationInfoReplicatedDisk {
     /// <p>Request to query device name.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>Request to query total amount of data replicated in bytes.</p>
@@ -3937,7 +3566,7 @@ impl DataReplicationInfoReplicatedDisk {
 }
 /// See [`DataReplicationInfoReplicatedDisk`](crate::model::DataReplicationInfoReplicatedDisk).
 pub mod data_replication_info_replicated_disk {
-
+    
     /// A builder for [`DataReplicationInfoReplicatedDisk`](crate::model::DataReplicationInfoReplicatedDisk).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3955,8 +3584,7 @@ pub mod data_replication_info_replicated_disk {
         }
         /// <p>Request to query device name.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_name = input;
-            self
+            self.device_name = input; self
         }
         /// <p>Request to query total amount of data replicated in bytes.</p>
         pub fn total_storage_bytes(mut self, input: i64) -> Self {
@@ -3965,8 +3593,7 @@ pub mod data_replication_info_replicated_disk {
         }
         /// <p>Request to query total amount of data replicated in bytes.</p>
         pub fn set_total_storage_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_storage_bytes = input;
-            self
+            self.total_storage_bytes = input; self
         }
         /// <p>Request to query amount of data replicated in bytes.</p>
         pub fn replicated_storage_bytes(mut self, input: i64) -> Self {
@@ -3975,8 +3602,7 @@ pub mod data_replication_info_replicated_disk {
         }
         /// <p>Request to query amount of data replicated in bytes.</p>
         pub fn set_replicated_storage_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.replicated_storage_bytes = input;
-            self
+            self.replicated_storage_bytes = input; self
         }
         /// <p>Request to query amount of data rescanned in bytes.</p>
         pub fn rescanned_storage_bytes(mut self, input: i64) -> Self {
@@ -3985,8 +3611,7 @@ pub mod data_replication_info_replicated_disk {
         }
         /// <p>Request to query amount of data rescanned in bytes.</p>
         pub fn set_rescanned_storage_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.rescanned_storage_bytes = input;
-            self
+            self.rescanned_storage_bytes = input; self
         }
         /// <p>Request to query data replication backlog size in bytes.</p>
         pub fn backlogged_storage_bytes(mut self, input: i64) -> Self {
@@ -3995,20 +3620,30 @@ pub mod data_replication_info_replicated_disk {
         }
         /// <p>Request to query data replication backlog size in bytes.</p>
         pub fn set_backlogged_storage_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.backlogged_storage_bytes = input;
-            self
+            self.backlogged_storage_bytes = input; self
         }
         /// Consumes the builder and constructs a [`DataReplicationInfoReplicatedDisk`](crate::model::DataReplicationInfoReplicatedDisk).
         pub fn build(self) -> crate::model::DataReplicationInfoReplicatedDisk {
             crate::model::DataReplicationInfoReplicatedDisk {
-                device_name: self.device_name,
-                total_storage_bytes: self.total_storage_bytes.unwrap_or_default(),
-                replicated_storage_bytes: self.replicated_storage_bytes.unwrap_or_default(),
-                rescanned_storage_bytes: self.rescanned_storage_bytes.unwrap_or_default(),
-                backlogged_storage_bytes: self.backlogged_storage_bytes.unwrap_or_default(),
+                device_name: self.device_name
+                ,
+                total_storage_bytes: self.total_storage_bytes
+                    .unwrap_or_default()
+                ,
+                replicated_storage_bytes: self.replicated_storage_bytes
+                    .unwrap_or_default()
+                ,
+                rescanned_storage_bytes: self.rescanned_storage_bytes
+                    .unwrap_or_default()
+                ,
+                backlogged_storage_bytes: self.backlogged_storage_bytes
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DataReplicationInfoReplicatedDisk {
     /// Creates a new builder-style object to manufacture [`DataReplicationInfoReplicatedDisk`](crate::model::DataReplicationInfoReplicatedDisk).
@@ -4020,7 +3655,7 @@ impl DataReplicationInfoReplicatedDisk {
 /// <p>Launched instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LaunchedInstance {
+pub struct LaunchedInstance  {
     /// <p>Launched instance EC2 ID.</p>
     #[doc(hidden)]
     pub ec2_instance_id: std::option::Option<std::string::String>,
@@ -4033,21 +3668,21 @@ pub struct LaunchedInstance {
 }
 impl LaunchedInstance {
     /// <p>Launched instance EC2 ID.</p>
-    pub fn ec2_instance_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_instance_id(&self) -> std::option::Option<& str> {
         self.ec2_instance_id.as_deref()
     }
     /// <p>Launched instance Job ID.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>Launched instance first boot.</p>
-    pub fn first_boot(&self) -> std::option::Option<&crate::model::FirstBoot> {
+    pub fn first_boot(&self) -> std::option::Option<& crate::model::FirstBoot> {
         self.first_boot.as_ref()
     }
 }
 /// See [`LaunchedInstance`](crate::model::LaunchedInstance).
 pub mod launched_instance {
-
+    
     /// A builder for [`LaunchedInstance`](crate::model::LaunchedInstance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4062,12 +3697,8 @@ pub mod launched_instance {
             self
         }
         /// <p>Launched instance EC2 ID.</p>
-        pub fn set_ec2_instance_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ec2_instance_id = input;
-            self
+        pub fn set_ec2_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ec2_instance_id = input; self
         }
         /// <p>Launched instance Job ID.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4076,8 +3707,7 @@ pub mod launched_instance {
         }
         /// <p>Launched instance Job ID.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>Launched instance first boot.</p>
         pub fn first_boot(mut self, input: crate::model::FirstBoot) -> Self {
@@ -4085,22 +3715,23 @@ pub mod launched_instance {
             self
         }
         /// <p>Launched instance first boot.</p>
-        pub fn set_first_boot(
-            mut self,
-            input: std::option::Option<crate::model::FirstBoot>,
-        ) -> Self {
-            self.first_boot = input;
-            self
+        pub fn set_first_boot(mut self, input: std::option::Option<crate::model::FirstBoot>) -> Self {
+            self.first_boot = input; self
         }
         /// Consumes the builder and constructs a [`LaunchedInstance`](crate::model::LaunchedInstance).
         pub fn build(self) -> crate::model::LaunchedInstance {
             crate::model::LaunchedInstance {
-                ec2_instance_id: self.ec2_instance_id,
-                job_id: self.job_id,
-                first_boot: self.first_boot,
+                ec2_instance_id: self.ec2_instance_id
+                ,
+                job_id: self.job_id
+                ,
+                first_boot: self.first_boot
+                ,
             }
         }
     }
+    
+    
 }
 impl LaunchedInstance {
     /// Creates a new builder-style object to manufacture [`LaunchedInstance`](crate::model::LaunchedInstance).
@@ -4115,9 +3746,9 @@ impl LaunchedInstance {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let firstboot = unimplemented!();
 /// match firstboot {
@@ -4141,22 +3772,14 @@ impl LaunchedInstance {
 /// Specifically, when `firstboot` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FirstBoot::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `FirstBoot::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FirstBoot {
     #[allow(missing_docs)] // documentation missing in model
     Stopped,
@@ -4167,7 +3790,7 @@ pub enum FirstBoot {
     #[allow(missing_docs)] // documentation missing in model
     Waiting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FirstBoot {
     fn from(s: &str) -> Self {
@@ -4176,17 +3799,17 @@ impl std::convert::From<&str> for FirstBoot {
             "SUCCEEDED" => FirstBoot::Succeeded,
             "UNKNOWN" => FirstBoot::UnknownValue,
             "WAITING" => FirstBoot::Waiting,
-            other => FirstBoot::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FirstBoot::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FirstBoot {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FirstBoot::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FirstBoot::from(s))
+                }
+            }
 impl FirstBoot {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4195,12 +3818,14 @@ impl FirstBoot {
             FirstBoot::Succeeded => "SUCCEEDED",
             FirstBoot::UnknownValue => "UNKNOWN",
             FirstBoot::Waiting => "WAITING",
-            FirstBoot::Unknown(value) => value.as_str(),
+            FirstBoot::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["STOPPED", "SUCCEEDED", "UNKNOWN", "WAITING"]
+        &[
+            "STOPPED", "SUCCEEDED", "UNKNOWN", "WAITING"
+        ]
     }
 }
 impl AsRef<str> for FirstBoot {
@@ -4215,9 +3840,9 @@ impl AsRef<str> for FirstBoot {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let replicationconfigurationdataplanerouting = unimplemented!();
 /// match replicationconfigurationdataplanerouting {
@@ -4239,60 +3864,52 @@ impl AsRef<str> for FirstBoot {
 /// Specifically, when `replicationconfigurationdataplanerouting` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReplicationConfigurationDataPlaneRouting::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReplicationConfigurationDataPlaneRouting {
     #[allow(missing_docs)] // documentation missing in model
     PrivateIp,
     #[allow(missing_docs)] // documentation missing in model
     PublicIp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReplicationConfigurationDataPlaneRouting {
     fn from(s: &str) -> Self {
         match s {
             "PRIVATE_IP" => ReplicationConfigurationDataPlaneRouting::PrivateIp,
             "PUBLIC_IP" => ReplicationConfigurationDataPlaneRouting::PublicIp,
-            other => ReplicationConfigurationDataPlaneRouting::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ReplicationConfigurationDataPlaneRouting::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReplicationConfigurationDataPlaneRouting {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationConfigurationDataPlaneRouting::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReplicationConfigurationDataPlaneRouting::from(s))
+                }
+            }
 impl ReplicationConfigurationDataPlaneRouting {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReplicationConfigurationDataPlaneRouting::PrivateIp => "PRIVATE_IP",
             ReplicationConfigurationDataPlaneRouting::PublicIp => "PUBLIC_IP",
-            ReplicationConfigurationDataPlaneRouting::Unknown(value) => value.as_str(),
+            ReplicationConfigurationDataPlaneRouting::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRIVATE_IP", "PUBLIC_IP"]
+        &[
+            "PRIVATE_IP", "PUBLIC_IP"
+        ]
     }
 }
 impl AsRef<str> for ReplicationConfigurationDataPlaneRouting {
@@ -4307,9 +3924,9 @@ impl AsRef<str> for ReplicationConfigurationDataPlaneRouting {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let replicationconfigurationebsencryption = unimplemented!();
 /// match replicationconfigurationebsencryption {
@@ -4331,60 +3948,52 @@ impl AsRef<str> for ReplicationConfigurationDataPlaneRouting {
 /// Specifically, when `replicationconfigurationebsencryption` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReplicationConfigurationEbsEncryption::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReplicationConfigurationEbsEncryption {
     #[allow(missing_docs)] // documentation missing in model
     Custom,
     #[allow(missing_docs)] // documentation missing in model
     Default,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReplicationConfigurationEbsEncryption {
     fn from(s: &str) -> Self {
         match s {
             "CUSTOM" => ReplicationConfigurationEbsEncryption::Custom,
             "DEFAULT" => ReplicationConfigurationEbsEncryption::Default,
-            other => ReplicationConfigurationEbsEncryption::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ReplicationConfigurationEbsEncryption::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReplicationConfigurationEbsEncryption {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationConfigurationEbsEncryption::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReplicationConfigurationEbsEncryption::from(s))
+                }
+            }
 impl ReplicationConfigurationEbsEncryption {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReplicationConfigurationEbsEncryption::Custom => "CUSTOM",
             ReplicationConfigurationEbsEncryption::Default => "DEFAULT",
-            ReplicationConfigurationEbsEncryption::Unknown(value) => value.as_str(),
+            ReplicationConfigurationEbsEncryption::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUSTOM", "DEFAULT"]
+        &[
+            "CUSTOM", "DEFAULT"
+        ]
     }
 }
 impl AsRef<str> for ReplicationConfigurationEbsEncryption {
@@ -4396,7 +4005,7 @@ impl AsRef<str> for ReplicationConfigurationEbsEncryption {
 /// <p>Replication Configuration replicated disk.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplicationConfigurationReplicatedDisk {
+pub struct ReplicationConfigurationReplicatedDisk  {
     /// <p>Replication Configuration replicated disk device name.</p>
     #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
@@ -4405,8 +4014,7 @@ pub struct ReplicationConfigurationReplicatedDisk {
     pub is_boot_disk: std::option::Option<bool>,
     /// <p>Replication Configuration replicated disk staging disk type.</p>
     #[doc(hidden)]
-    pub staging_disk_type:
-        std::option::Option<crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType>,
+    pub staging_disk_type: std::option::Option<crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType>,
     /// <p>Replication Configuration replicated disk IOPs.</p>
     #[doc(hidden)]
     pub iops: i64,
@@ -4416,7 +4024,7 @@ pub struct ReplicationConfigurationReplicatedDisk {
 }
 impl ReplicationConfigurationReplicatedDisk {
     /// <p>Replication Configuration replicated disk device name.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>Replication Configuration replicated disk boot disk.</p>
@@ -4424,10 +4032,7 @@ impl ReplicationConfigurationReplicatedDisk {
         self.is_boot_disk
     }
     /// <p>Replication Configuration replicated disk staging disk type.</p>
-    pub fn staging_disk_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType>
-    {
+    pub fn staging_disk_type(&self) -> std::option::Option<& crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType> {
         self.staging_disk_type.as_ref()
     }
     /// <p>Replication Configuration replicated disk IOPs.</p>
@@ -4441,15 +4046,13 @@ impl ReplicationConfigurationReplicatedDisk {
 }
 /// See [`ReplicationConfigurationReplicatedDisk`](crate::model::ReplicationConfigurationReplicatedDisk).
 pub mod replication_configuration_replicated_disk {
-
+    
     /// A builder for [`ReplicationConfigurationReplicatedDisk`](crate::model::ReplicationConfigurationReplicatedDisk).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_name: std::option::Option<std::string::String>,
         pub(crate) is_boot_disk: std::option::Option<bool>,
-        pub(crate) staging_disk_type: std::option::Option<
-            crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType,
-        >,
+        pub(crate) staging_disk_type: std::option::Option<crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType>,
         pub(crate) iops: std::option::Option<i64>,
         pub(crate) throughput: std::option::Option<i64>,
     }
@@ -4461,8 +4064,7 @@ pub mod replication_configuration_replicated_disk {
         }
         /// <p>Replication Configuration replicated disk device name.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_name = input;
-            self
+            self.device_name = input; self
         }
         /// <p>Replication Configuration replicated disk boot disk.</p>
         pub fn is_boot_disk(mut self, input: bool) -> Self {
@@ -4471,26 +4073,16 @@ pub mod replication_configuration_replicated_disk {
         }
         /// <p>Replication Configuration replicated disk boot disk.</p>
         pub fn set_is_boot_disk(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_boot_disk = input;
-            self
+            self.is_boot_disk = input; self
         }
         /// <p>Replication Configuration replicated disk staging disk type.</p>
-        pub fn staging_disk_type(
-            mut self,
-            input: crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType,
-        ) -> Self {
+        pub fn staging_disk_type(mut self, input: crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType) -> Self {
             self.staging_disk_type = Some(input);
             self
         }
         /// <p>Replication Configuration replicated disk staging disk type.</p>
-        pub fn set_staging_disk_type(
-            mut self,
-            input: std::option::Option<
-                crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType,
-            >,
-        ) -> Self {
-            self.staging_disk_type = input;
-            self
+        pub fn set_staging_disk_type(mut self, input: std::option::Option<crate::model::ReplicationConfigurationReplicatedDiskStagingDiskType>) -> Self {
+            self.staging_disk_type = input; self
         }
         /// <p>Replication Configuration replicated disk IOPs.</p>
         pub fn iops(mut self, input: i64) -> Self {
@@ -4499,8 +4091,7 @@ pub mod replication_configuration_replicated_disk {
         }
         /// <p>Replication Configuration replicated disk IOPs.</p>
         pub fn set_iops(mut self, input: std::option::Option<i64>) -> Self {
-            self.iops = input;
-            self
+            self.iops = input; self
         }
         /// <p>Replication Configuration replicated disk throughput.</p>
         pub fn throughput(mut self, input: i64) -> Self {
@@ -4509,20 +4100,28 @@ pub mod replication_configuration_replicated_disk {
         }
         /// <p>Replication Configuration replicated disk throughput.</p>
         pub fn set_throughput(mut self, input: std::option::Option<i64>) -> Self {
-            self.throughput = input;
-            self
+            self.throughput = input; self
         }
         /// Consumes the builder and constructs a [`ReplicationConfigurationReplicatedDisk`](crate::model::ReplicationConfigurationReplicatedDisk).
         pub fn build(self) -> crate::model::ReplicationConfigurationReplicatedDisk {
             crate::model::ReplicationConfigurationReplicatedDisk {
-                device_name: self.device_name,
-                is_boot_disk: self.is_boot_disk,
-                staging_disk_type: self.staging_disk_type,
-                iops: self.iops.unwrap_or_default(),
-                throughput: self.throughput.unwrap_or_default(),
+                device_name: self.device_name
+                ,
+                is_boot_disk: self.is_boot_disk
+                ,
+                staging_disk_type: self.staging_disk_type
+                ,
+                iops: self.iops
+                    .unwrap_or_default()
+                ,
+                throughput: self.throughput
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ReplicationConfigurationReplicatedDisk {
     /// Creates a new builder-style object to manufacture [`ReplicationConfigurationReplicatedDisk`](crate::model::ReplicationConfigurationReplicatedDisk).
@@ -4537,9 +4136,9 @@ impl ReplicationConfigurationReplicatedDisk {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let replicationconfigurationreplicateddiskstagingdisktype = unimplemented!();
 /// match replicationconfigurationreplicateddiskstagingdisktype {
@@ -4567,22 +4166,14 @@ impl ReplicationConfigurationReplicatedDisk {
 /// Specifically, when `replicationconfigurationreplicateddiskstagingdisktype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReplicationConfigurationReplicatedDiskStagingDiskType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReplicationConfigurationReplicatedDiskStagingDiskType {
     #[allow(missing_docs)] // documentation missing in model
     Auto,
@@ -4601,7 +4192,7 @@ pub enum ReplicationConfigurationReplicatedDiskStagingDiskType {
     #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReplicationConfigurationReplicatedDiskStagingDiskType {
     fn from(s: &str) -> Self {
@@ -4614,21 +4205,17 @@ impl std::convert::From<&str> for ReplicationConfigurationReplicatedDiskStagingD
             "SC1" => ReplicationConfigurationReplicatedDiskStagingDiskType::Sc1,
             "ST1" => ReplicationConfigurationReplicatedDiskStagingDiskType::St1,
             "STANDARD" => ReplicationConfigurationReplicatedDiskStagingDiskType::Standard,
-            other => ReplicationConfigurationReplicatedDiskStagingDiskType::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ReplicationConfigurationReplicatedDiskStagingDiskType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReplicationConfigurationReplicatedDiskStagingDiskType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationConfigurationReplicatedDiskStagingDiskType::from(
-            s,
-        ))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReplicationConfigurationReplicatedDiskStagingDiskType::from(s))
+                }
+            }
 impl ReplicationConfigurationReplicatedDiskStagingDiskType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4641,12 +4228,14 @@ impl ReplicationConfigurationReplicatedDiskStagingDiskType {
             ReplicationConfigurationReplicatedDiskStagingDiskType::Sc1 => "SC1",
             ReplicationConfigurationReplicatedDiskStagingDiskType::St1 => "ST1",
             ReplicationConfigurationReplicatedDiskStagingDiskType::Standard => "STANDARD",
-            ReplicationConfigurationReplicatedDiskStagingDiskType::Unknown(value) => value.as_str(),
+            ReplicationConfigurationReplicatedDiskStagingDiskType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUTO", "GP2", "GP3", "IO1", "IO2", "SC1", "ST1", "STANDARD"]
+        &[
+            "AUTO", "GP2", "GP3", "IO1", "IO2", "SC1", "ST1", "STANDARD"
+        ]
     }
 }
 impl AsRef<str> for ReplicationConfigurationReplicatedDiskStagingDiskType {
@@ -4661,9 +4250,9 @@ impl AsRef<str> for ReplicationConfigurationReplicatedDiskStagingDiskType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let replicationconfigurationdefaultlargestagingdisktype = unimplemented!();
 /// match replicationconfigurationdefaultlargestagingdisktype {
@@ -4686,22 +4275,14 @@ impl AsRef<str> for ReplicationConfigurationReplicatedDiskStagingDiskType {
 /// Specifically, when `replicationconfigurationdefaultlargestagingdisktype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReplicationConfigurationDefaultLargeStagingDiskType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReplicationConfigurationDefaultLargeStagingDiskType {
     #[allow(missing_docs)] // documentation missing in model
     Gp2,
@@ -4710,7 +4291,7 @@ pub enum ReplicationConfigurationDefaultLargeStagingDiskType {
     #[allow(missing_docs)] // documentation missing in model
     St1,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReplicationConfigurationDefaultLargeStagingDiskType {
     fn from(s: &str) -> Self {
@@ -4718,19 +4299,17 @@ impl std::convert::From<&str> for ReplicationConfigurationDefaultLargeStagingDis
             "GP2" => ReplicationConfigurationDefaultLargeStagingDiskType::Gp2,
             "GP3" => ReplicationConfigurationDefaultLargeStagingDiskType::Gp3,
             "ST1" => ReplicationConfigurationDefaultLargeStagingDiskType::St1,
-            other => ReplicationConfigurationDefaultLargeStagingDiskType::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ReplicationConfigurationDefaultLargeStagingDiskType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReplicationConfigurationDefaultLargeStagingDiskType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationConfigurationDefaultLargeStagingDiskType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReplicationConfigurationDefaultLargeStagingDiskType::from(s))
+                }
+            }
 impl ReplicationConfigurationDefaultLargeStagingDiskType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4738,12 +4317,14 @@ impl ReplicationConfigurationDefaultLargeStagingDiskType {
             ReplicationConfigurationDefaultLargeStagingDiskType::Gp2 => "GP2",
             ReplicationConfigurationDefaultLargeStagingDiskType::Gp3 => "GP3",
             ReplicationConfigurationDefaultLargeStagingDiskType::St1 => "ST1",
-            ReplicationConfigurationDefaultLargeStagingDiskType::Unknown(value) => value.as_str(),
+            ReplicationConfigurationDefaultLargeStagingDiskType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GP2", "GP3", "ST1"]
+        &[
+            "GP2", "GP3", "ST1"
+        ]
     }
 }
 impl AsRef<str> for ReplicationConfigurationDefaultLargeStagingDiskType {
@@ -4755,7 +4336,7 @@ impl AsRef<str> for ReplicationConfigurationDefaultLargeStagingDiskType {
 /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PostLaunchActions {
+pub struct PostLaunchActions  {
     /// <p>Deployment type in which AWS Systems Manager Documents will be executed.</p>
     #[doc(hidden)]
     pub deployment: std::option::Option<crate::model::PostLaunchActionsDeploymentType>,
@@ -4774,31 +4355,29 @@ pub struct PostLaunchActions {
 }
 impl PostLaunchActions {
     /// <p>Deployment type in which AWS Systems Manager Documents will be executed.</p>
-    pub fn deployment(
-        &self,
-    ) -> std::option::Option<&crate::model::PostLaunchActionsDeploymentType> {
+    pub fn deployment(&self) -> std::option::Option<& crate::model::PostLaunchActionsDeploymentType> {
         self.deployment.as_ref()
     }
     /// <p>AWS Systems Manager Command's logs S3 log bucket.</p>
-    pub fn s3_log_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_log_bucket(&self) -> std::option::Option<& str> {
         self.s3_log_bucket.as_deref()
     }
     /// <p>AWS Systems Manager Command's logs S3 output key prefix.</p>
-    pub fn s3_output_key_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_output_key_prefix(&self) -> std::option::Option<& str> {
         self.s3_output_key_prefix.as_deref()
     }
     /// <p>AWS Systems Manager Command's CloudWatch log group name.</p>
-    pub fn cloud_watch_log_group_name(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_log_group_name(&self) -> std::option::Option<& str> {
         self.cloud_watch_log_group_name.as_deref()
     }
     /// <p>AWS Systems Manager Documents.</p>
-    pub fn ssm_documents(&self) -> std::option::Option<&[crate::model::SsmDocument]> {
+    pub fn ssm_documents(&self) -> std::option::Option<& [crate::model::SsmDocument]> {
         self.ssm_documents.as_deref()
     }
 }
 /// See [`PostLaunchActions`](crate::model::PostLaunchActions).
 pub mod post_launch_actions {
-
+    
     /// A builder for [`PostLaunchActions`](crate::model::PostLaunchActions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4815,12 +4394,8 @@ pub mod post_launch_actions {
             self
         }
         /// <p>Deployment type in which AWS Systems Manager Documents will be executed.</p>
-        pub fn set_deployment(
-            mut self,
-            input: std::option::Option<crate::model::PostLaunchActionsDeploymentType>,
-        ) -> Self {
-            self.deployment = input;
-            self
+        pub fn set_deployment(mut self, input: std::option::Option<crate::model::PostLaunchActionsDeploymentType>) -> Self {
+            self.deployment = input; self
         }
         /// <p>AWS Systems Manager Command's logs S3 log bucket.</p>
         pub fn s3_log_bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4828,12 +4403,8 @@ pub mod post_launch_actions {
             self
         }
         /// <p>AWS Systems Manager Command's logs S3 log bucket.</p>
-        pub fn set_s3_log_bucket(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_log_bucket = input;
-            self
+        pub fn set_s3_log_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_log_bucket = input; self
         }
         /// <p>AWS Systems Manager Command's logs S3 output key prefix.</p>
         pub fn s3_output_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4841,12 +4412,8 @@ pub mod post_launch_actions {
             self
         }
         /// <p>AWS Systems Manager Command's logs S3 output key prefix.</p>
-        pub fn set_s3_output_key_prefix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_output_key_prefix = input;
-            self
+        pub fn set_s3_output_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_output_key_prefix = input; self
         }
         /// <p>AWS Systems Manager Command's CloudWatch log group name.</p>
         pub fn cloud_watch_log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4854,12 +4421,8 @@ pub mod post_launch_actions {
             self
         }
         /// <p>AWS Systems Manager Command's CloudWatch log group name.</p>
-        pub fn set_cloud_watch_log_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cloud_watch_log_group_name = input;
-            self
+        pub fn set_cloud_watch_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cloud_watch_log_group_name = input; self
         }
         /// Appends an item to `ssm_documents`.
         ///
@@ -4868,29 +4431,32 @@ pub mod post_launch_actions {
         /// <p>AWS Systems Manager Documents.</p>
         pub fn ssm_documents(mut self, input: crate::model::SsmDocument) -> Self {
             let mut v = self.ssm_documents.unwrap_or_default();
-            v.push(input);
-            self.ssm_documents = Some(v);
-            self
+                            v.push(input);
+                            self.ssm_documents = Some(v);
+                            self
         }
         /// <p>AWS Systems Manager Documents.</p>
-        pub fn set_ssm_documents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SsmDocument>>,
-        ) -> Self {
-            self.ssm_documents = input;
-            self
+        pub fn set_ssm_documents(mut self, input: std::option::Option<std::vec::Vec<crate::model::SsmDocument>>) -> Self {
+            self.ssm_documents = input; self
         }
         /// Consumes the builder and constructs a [`PostLaunchActions`](crate::model::PostLaunchActions).
         pub fn build(self) -> crate::model::PostLaunchActions {
             crate::model::PostLaunchActions {
-                deployment: self.deployment,
-                s3_log_bucket: self.s3_log_bucket,
-                s3_output_key_prefix: self.s3_output_key_prefix,
-                cloud_watch_log_group_name: self.cloud_watch_log_group_name,
-                ssm_documents: self.ssm_documents,
+                deployment: self.deployment
+                ,
+                s3_log_bucket: self.s3_log_bucket
+                ,
+                s3_output_key_prefix: self.s3_output_key_prefix
+                ,
+                cloud_watch_log_group_name: self.cloud_watch_log_group_name
+                ,
+                ssm_documents: self.ssm_documents
+                ,
             }
         }
     }
+    
+    
 }
 impl PostLaunchActions {
     /// Creates a new builder-style object to manufacture [`PostLaunchActions`](crate::model::PostLaunchActions).
@@ -4902,7 +4468,7 @@ impl PostLaunchActions {
 /// <p>AWS Systems Manager Document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SsmDocument {
+pub struct SsmDocument  {
     /// <p>User-friendly name for the AWS Systems Manager Document.</p>
     #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
@@ -4917,20 +4483,15 @@ pub struct SsmDocument {
     pub must_succeed_for_cutover: std::option::Option<bool>,
     /// <p>AWS Systems Manager Document parameters.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-        >,
-    >,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::SsmParameterStoreParameter>>>,
 }
 impl SsmDocument {
     /// <p>User-friendly name for the AWS Systems Manager Document.</p>
-    pub fn action_name(&self) -> std::option::Option<&str> {
+    pub fn action_name(&self) -> std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>AWS Systems Manager Document name or full ARN.</p>
-    pub fn ssm_document_name(&self) -> std::option::Option<&str> {
+    pub fn ssm_document_name(&self) -> std::option::Option<& str> {
         self.ssm_document_name.as_deref()
     }
     /// <p>AWS Systems Manager Document timeout seconds.</p>
@@ -4942,20 +4503,13 @@ impl SsmDocument {
         self.must_succeed_for_cutover
     }
     /// <p>AWS Systems Manager Document parameters.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-        >,
-    > {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::SsmParameterStoreParameter>>> {
         self.parameters.as_ref()
     }
 }
 /// See [`SsmDocument`](crate::model::SsmDocument).
 pub mod ssm_document {
-
+    
     /// A builder for [`SsmDocument`](crate::model::SsmDocument).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4963,12 +4517,7 @@ pub mod ssm_document {
         pub(crate) ssm_document_name: std::option::Option<std::string::String>,
         pub(crate) timeout_seconds: std::option::Option<i32>,
         pub(crate) must_succeed_for_cutover: std::option::Option<bool>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-            >,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::SsmParameterStoreParameter>>>,
     }
     impl Builder {
         /// <p>User-friendly name for the AWS Systems Manager Document.</p>
@@ -4978,8 +4527,7 @@ pub mod ssm_document {
         }
         /// <p>User-friendly name for the AWS Systems Manager Document.</p>
         pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_name = input;
-            self
+            self.action_name = input; self
         }
         /// <p>AWS Systems Manager Document name or full ARN.</p>
         pub fn ssm_document_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4987,12 +4535,8 @@ pub mod ssm_document {
             self
         }
         /// <p>AWS Systems Manager Document name or full ARN.</p>
-        pub fn set_ssm_document_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ssm_document_name = input;
-            self
+        pub fn set_ssm_document_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ssm_document_name = input; self
         }
         /// <p>AWS Systems Manager Document timeout seconds.</p>
         pub fn timeout_seconds(mut self, input: i32) -> Self {
@@ -5001,8 +4545,7 @@ pub mod ssm_document {
         }
         /// <p>AWS Systems Manager Document timeout seconds.</p>
         pub fn set_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout_seconds = input;
-            self
+            self.timeout_seconds = input; self
         }
         /// <p>If true, Cutover will not be enabled if the document has failed.</p>
         pub fn must_succeed_for_cutover(mut self, input: bool) -> Self {
@@ -5011,48 +4554,42 @@ pub mod ssm_document {
         }
         /// <p>If true, Cutover will not be enabled if the document has failed.</p>
         pub fn set_must_succeed_for_cutover(mut self, input: std::option::Option<bool>) -> Self {
-            self.must_succeed_for_cutover = input;
-            self
+            self.must_succeed_for_cutover = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>AWS Systems Manager Document parameters.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<crate::model::SsmParameterStoreParameter>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>AWS Systems Manager Document parameters.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-                >,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::SsmParameterStoreParameter>>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`SsmDocument`](crate::model::SsmDocument).
         pub fn build(self) -> crate::model::SsmDocument {
             crate::model::SsmDocument {
-                action_name: self.action_name,
-                ssm_document_name: self.ssm_document_name,
-                timeout_seconds: self.timeout_seconds.unwrap_or_default(),
-                must_succeed_for_cutover: self.must_succeed_for_cutover,
-                parameters: self.parameters,
+                action_name: self.action_name
+                ,
+                ssm_document_name: self.ssm_document_name
+                ,
+                timeout_seconds: self.timeout_seconds
+                    .unwrap_or_default()
+                ,
+                must_succeed_for_cutover: self.must_succeed_for_cutover
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl SsmDocument {
     /// Creates a new builder-style object to manufacture [`SsmDocument`](crate::model::SsmDocument).
@@ -5064,7 +4601,7 @@ impl SsmDocument {
 /// <p>AWS Systems Manager Parameter Store parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SsmParameterStoreParameter {
+pub struct SsmParameterStoreParameter  {
     /// <p>AWS Systems Manager Parameter Store parameter type.</p>
     #[doc(hidden)]
     pub parameter_type: std::option::Option<crate::model::SsmParameterStoreParameterType>,
@@ -5074,42 +4611,32 @@ pub struct SsmParameterStoreParameter {
 }
 impl SsmParameterStoreParameter {
     /// <p>AWS Systems Manager Parameter Store parameter type.</p>
-    pub fn parameter_type(
-        &self,
-    ) -> std::option::Option<&crate::model::SsmParameterStoreParameterType> {
+    pub fn parameter_type(&self) -> std::option::Option<& crate::model::SsmParameterStoreParameterType> {
         self.parameter_type.as_ref()
     }
     /// <p>AWS Systems Manager Parameter Store parameter name.</p>
-    pub fn parameter_name(&self) -> std::option::Option<&str> {
+    pub fn parameter_name(&self) -> std::option::Option<& str> {
         self.parameter_name.as_deref()
     }
 }
 /// See [`SsmParameterStoreParameter`](crate::model::SsmParameterStoreParameter).
 pub mod ssm_parameter_store_parameter {
-
+    
     /// A builder for [`SsmParameterStoreParameter`](crate::model::SsmParameterStoreParameter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) parameter_type:
-            std::option::Option<crate::model::SsmParameterStoreParameterType>,
+        pub(crate) parameter_type: std::option::Option<crate::model::SsmParameterStoreParameterType>,
         pub(crate) parameter_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>AWS Systems Manager Parameter Store parameter type.</p>
-        pub fn parameter_type(
-            mut self,
-            input: crate::model::SsmParameterStoreParameterType,
-        ) -> Self {
+        pub fn parameter_type(mut self, input: crate::model::SsmParameterStoreParameterType) -> Self {
             self.parameter_type = Some(input);
             self
         }
         /// <p>AWS Systems Manager Parameter Store parameter type.</p>
-        pub fn set_parameter_type(
-            mut self,
-            input: std::option::Option<crate::model::SsmParameterStoreParameterType>,
-        ) -> Self {
-            self.parameter_type = input;
-            self
+        pub fn set_parameter_type(mut self, input: std::option::Option<crate::model::SsmParameterStoreParameterType>) -> Self {
+            self.parameter_type = input; self
         }
         /// <p>AWS Systems Manager Parameter Store parameter name.</p>
         pub fn parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5117,21 +4644,21 @@ pub mod ssm_parameter_store_parameter {
             self
         }
         /// <p>AWS Systems Manager Parameter Store parameter name.</p>
-        pub fn set_parameter_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parameter_name = input;
-            self
+        pub fn set_parameter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parameter_name = input; self
         }
         /// Consumes the builder and constructs a [`SsmParameterStoreParameter`](crate::model::SsmParameterStoreParameter).
         pub fn build(self) -> crate::model::SsmParameterStoreParameter {
             crate::model::SsmParameterStoreParameter {
-                parameter_type: self.parameter_type,
-                parameter_name: self.parameter_name,
+                parameter_type: self.parameter_type
+                ,
+                parameter_name: self.parameter_name
+                ,
             }
         }
     }
+    
+    
 }
 impl SsmParameterStoreParameter {
     /// Creates a new builder-style object to manufacture [`SsmParameterStoreParameter`](crate::model::SsmParameterStoreParameter).
@@ -5146,9 +4673,9 @@ impl SsmParameterStoreParameter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ssmparameterstoreparametertype = unimplemented!();
 /// match ssmparameterstoreparametertype {
@@ -5169,56 +4696,48 @@ impl SsmParameterStoreParameter {
 /// Specifically, when `ssmparameterstoreparametertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SsmParameterStoreParameterType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SsmParameterStoreParameterType {
     #[allow(missing_docs)] // documentation missing in model
     String,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SsmParameterStoreParameterType {
     fn from(s: &str) -> Self {
         match s {
             "STRING" => SsmParameterStoreParameterType::String,
-            other => SsmParameterStoreParameterType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SsmParameterStoreParameterType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SsmParameterStoreParameterType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SsmParameterStoreParameterType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SsmParameterStoreParameterType::from(s))
+                }
+            }
 impl SsmParameterStoreParameterType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SsmParameterStoreParameterType::String => "STRING",
-            SsmParameterStoreParameterType::Unknown(value) => value.as_str(),
+            SsmParameterStoreParameterType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["STRING"]
+        &[
+            "STRING"
+        ]
     }
 }
 impl AsRef<str> for SsmParameterStoreParameterType {
@@ -5233,9 +4752,9 @@ impl AsRef<str> for SsmParameterStoreParameterType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let postlaunchactionsdeploymenttype = unimplemented!();
 /// match postlaunchactionsdeploymenttype {
@@ -5258,22 +4777,14 @@ impl AsRef<str> for SsmParameterStoreParameterType {
 /// Specifically, when `postlaunchactionsdeploymenttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PostLaunchActionsDeploymentType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PostLaunchActionsDeploymentType {
     #[allow(missing_docs)] // documentation missing in model
     CutoverOnly,
@@ -5282,7 +4793,7 @@ pub enum PostLaunchActionsDeploymentType {
     #[allow(missing_docs)] // documentation missing in model
     TestOnly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PostLaunchActionsDeploymentType {
     fn from(s: &str) -> Self {
@@ -5290,19 +4801,17 @@ impl std::convert::From<&str> for PostLaunchActionsDeploymentType {
             "CUTOVER_ONLY" => PostLaunchActionsDeploymentType::CutoverOnly,
             "TEST_AND_CUTOVER" => PostLaunchActionsDeploymentType::TestAndCutover,
             "TEST_ONLY" => PostLaunchActionsDeploymentType::TestOnly,
-            other => PostLaunchActionsDeploymentType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PostLaunchActionsDeploymentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PostLaunchActionsDeploymentType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PostLaunchActionsDeploymentType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PostLaunchActionsDeploymentType::from(s))
+                }
+            }
 impl PostLaunchActionsDeploymentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5310,12 +4819,14 @@ impl PostLaunchActionsDeploymentType {
             PostLaunchActionsDeploymentType::CutoverOnly => "CUTOVER_ONLY",
             PostLaunchActionsDeploymentType::TestAndCutover => "TEST_AND_CUTOVER",
             PostLaunchActionsDeploymentType::TestOnly => "TEST_ONLY",
-            PostLaunchActionsDeploymentType::Unknown(value) => value.as_str(),
+            PostLaunchActionsDeploymentType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUTOVER_ONLY", "TEST_AND_CUTOVER", "TEST_ONLY"]
+        &[
+            "CUTOVER_ONLY", "TEST_AND_CUTOVER", "TEST_ONLY"
+        ]
     }
 }
 impl AsRef<str> for PostLaunchActionsDeploymentType {
@@ -5330,9 +4841,9 @@ impl AsRef<str> for PostLaunchActionsDeploymentType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let bootmode = unimplemented!();
 /// match bootmode {
@@ -5354,58 +4865,52 @@ impl AsRef<str> for PostLaunchActionsDeploymentType {
 /// Specifically, when `bootmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BootMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BootMode {
     #[allow(missing_docs)] // documentation missing in model
     LegacyBios,
     #[allow(missing_docs)] // documentation missing in model
     Uefi,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BootMode {
     fn from(s: &str) -> Self {
         match s {
             "LEGACY_BIOS" => BootMode::LegacyBios,
             "UEFI" => BootMode::Uefi,
-            other => BootMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => BootMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BootMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BootMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BootMode::from(s))
+                }
+            }
 impl BootMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BootMode::LegacyBios => "LEGACY_BIOS",
             BootMode::Uefi => "UEFI",
-            BootMode::Unknown(value) => value.as_str(),
+            BootMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LEGACY_BIOS", "UEFI"]
+        &[
+            "LEGACY_BIOS", "UEFI"
+        ]
     }
 }
 impl AsRef<str> for BootMode {
@@ -5417,7 +4922,7 @@ impl AsRef<str> for BootMode {
 /// <p>Configure Licensing.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Licensing {
+pub struct Licensing  {
     /// <p>Configure BYOL OS licensing.</p>
     #[doc(hidden)]
     pub os_byol: std::option::Option<bool>,
@@ -5430,7 +4935,7 @@ impl Licensing {
 }
 /// See [`Licensing`](crate::model::Licensing).
 pub mod licensing {
-
+    
     /// A builder for [`Licensing`](crate::model::Licensing).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5444,16 +4949,18 @@ pub mod licensing {
         }
         /// <p>Configure BYOL OS licensing.</p>
         pub fn set_os_byol(mut self, input: std::option::Option<bool>) -> Self {
-            self.os_byol = input;
-            self
+            self.os_byol = input; self
         }
         /// Consumes the builder and constructs a [`Licensing`](crate::model::Licensing).
         pub fn build(self) -> crate::model::Licensing {
             crate::model::Licensing {
-                os_byol: self.os_byol,
+                os_byol: self.os_byol
+                ,
             }
         }
     }
+    
+    
 }
 impl Licensing {
     /// Creates a new builder-style object to manufacture [`Licensing`](crate::model::Licensing).
@@ -5468,9 +4975,9 @@ impl Licensing {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let targetinstancetyperightsizingmethod = unimplemented!();
 /// match targetinstancetyperightsizingmethod {
@@ -5492,60 +4999,52 @@ impl Licensing {
 /// Specifically, when `targetinstancetyperightsizingmethod` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TargetInstanceTypeRightSizingMethod::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TargetInstanceTypeRightSizingMethod {
     #[allow(missing_docs)] // documentation missing in model
     Basic,
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TargetInstanceTypeRightSizingMethod {
     fn from(s: &str) -> Self {
         match s {
             "BASIC" => TargetInstanceTypeRightSizingMethod::Basic,
             "NONE" => TargetInstanceTypeRightSizingMethod::None,
-            other => TargetInstanceTypeRightSizingMethod::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => TargetInstanceTypeRightSizingMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TargetInstanceTypeRightSizingMethod {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetInstanceTypeRightSizingMethod::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TargetInstanceTypeRightSizingMethod::from(s))
+                }
+            }
 impl TargetInstanceTypeRightSizingMethod {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TargetInstanceTypeRightSizingMethod::Basic => "BASIC",
             TargetInstanceTypeRightSizingMethod::None => "NONE",
-            TargetInstanceTypeRightSizingMethod::Unknown(value) => value.as_str(),
+            TargetInstanceTypeRightSizingMethod::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BASIC", "NONE"]
+        &[
+            "BASIC", "NONE"
+        ]
     }
 }
 impl AsRef<str> for TargetInstanceTypeRightSizingMethod {
@@ -5560,9 +5059,9 @@ impl AsRef<str> for TargetInstanceTypeRightSizingMethod {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let launchdisposition = unimplemented!();
 /// match launchdisposition {
@@ -5584,60 +5083,52 @@ impl AsRef<str> for TargetInstanceTypeRightSizingMethod {
 /// Specifically, when `launchdisposition` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LaunchDisposition::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LaunchDisposition {
     #[allow(missing_docs)] // documentation missing in model
     Started,
     #[allow(missing_docs)] // documentation missing in model
     Stopped,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LaunchDisposition {
     fn from(s: &str) -> Self {
         match s {
             "STARTED" => LaunchDisposition::Started,
             "STOPPED" => LaunchDisposition::Stopped,
-            other => {
-                LaunchDisposition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => LaunchDisposition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LaunchDisposition {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LaunchDisposition::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LaunchDisposition::from(s))
+                }
+            }
 impl LaunchDisposition {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LaunchDisposition::Started => "STARTED",
             LaunchDisposition::Stopped => "STOPPED",
-            LaunchDisposition::Unknown(value) => value.as_str(),
+            LaunchDisposition::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["STARTED", "STOPPED"]
+        &[
+            "STARTED", "STOPPED"
+        ]
     }
 }
 impl AsRef<str> for LaunchDisposition {
@@ -5649,7 +5140,7 @@ impl AsRef<str> for LaunchDisposition {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceServerActionDocument {
+pub struct SourceServerActionDocument  {
     /// <p>Source server post migration custom action ID.</p>
     #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
@@ -5676,24 +5167,19 @@ pub struct SourceServerActionDocument {
     pub must_succeed_for_cutover: std::option::Option<bool>,
     /// <p>Source server post migration custom action parameters.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-        >,
-    >,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::SsmParameterStoreParameter>>>,
 }
 impl SourceServerActionDocument {
     /// <p>Source server post migration custom action ID.</p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>Source server post migration custom action name.</p>
-    pub fn action_name(&self) -> std::option::Option<&str> {
+    pub fn action_name(&self) -> std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>Source server post migration custom action document identifier.</p>
-    pub fn document_identifier(&self) -> std::option::Option<&str> {
+    pub fn document_identifier(&self) -> std::option::Option<& str> {
         self.document_identifier.as_deref()
     }
     /// <p>Source server post migration custom action order.</p>
@@ -5701,7 +5187,7 @@ impl SourceServerActionDocument {
         self.order
     }
     /// <p>Source server post migration custom action document version.</p>
-    pub fn document_version(&self) -> std::option::Option<&str> {
+    pub fn document_version(&self) -> std::option::Option<& str> {
         self.document_version.as_deref()
     }
     /// <p>Source server post migration custom action active status.</p>
@@ -5717,20 +5203,13 @@ impl SourceServerActionDocument {
         self.must_succeed_for_cutover
     }
     /// <p>Source server post migration custom action parameters.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-        >,
-    > {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::SsmParameterStoreParameter>>> {
         self.parameters.as_ref()
     }
 }
 /// See [`SourceServerActionDocument`](crate::model::SourceServerActionDocument).
 pub mod source_server_action_document {
-
+    
     /// A builder for [`SourceServerActionDocument`](crate::model::SourceServerActionDocument).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5742,12 +5221,7 @@ pub mod source_server_action_document {
         pub(crate) active: std::option::Option<bool>,
         pub(crate) timeout_seconds: std::option::Option<i32>,
         pub(crate) must_succeed_for_cutover: std::option::Option<bool>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-            >,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::SsmParameterStoreParameter>>>,
     }
     impl Builder {
         /// <p>Source server post migration custom action ID.</p>
@@ -5757,8 +5231,7 @@ pub mod source_server_action_document {
         }
         /// <p>Source server post migration custom action ID.</p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_id = input;
-            self
+            self.action_id = input; self
         }
         /// <p>Source server post migration custom action name.</p>
         pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5767,8 +5240,7 @@ pub mod source_server_action_document {
         }
         /// <p>Source server post migration custom action name.</p>
         pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_name = input;
-            self
+            self.action_name = input; self
         }
         /// <p>Source server post migration custom action document identifier.</p>
         pub fn document_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5776,12 +5248,8 @@ pub mod source_server_action_document {
             self
         }
         /// <p>Source server post migration custom action document identifier.</p>
-        pub fn set_document_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.document_identifier = input;
-            self
+        pub fn set_document_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document_identifier = input; self
         }
         /// <p>Source server post migration custom action order.</p>
         pub fn order(mut self, input: i32) -> Self {
@@ -5790,8 +5258,7 @@ pub mod source_server_action_document {
         }
         /// <p>Source server post migration custom action order.</p>
         pub fn set_order(mut self, input: std::option::Option<i32>) -> Self {
-            self.order = input;
-            self
+            self.order = input; self
         }
         /// <p>Source server post migration custom action document version.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5799,12 +5266,8 @@ pub mod source_server_action_document {
             self
         }
         /// <p>Source server post migration custom action document version.</p>
-        pub fn set_document_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.document_version = input;
-            self
+        pub fn set_document_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document_version = input; self
         }
         /// <p>Source server post migration custom action active status.</p>
         pub fn active(mut self, input: bool) -> Self {
@@ -5813,8 +5276,7 @@ pub mod source_server_action_document {
         }
         /// <p>Source server post migration custom action active status.</p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
-            self.active = input;
-            self
+            self.active = input; self
         }
         /// <p>Source server post migration custom action timeout in seconds.</p>
         pub fn timeout_seconds(mut self, input: i32) -> Self {
@@ -5823,8 +5285,7 @@ pub mod source_server_action_document {
         }
         /// <p>Source server post migration custom action timeout in seconds.</p>
         pub fn set_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout_seconds = input;
-            self
+            self.timeout_seconds = input; self
         }
         /// <p>Source server post migration custom action must succeed for cutover.</p>
         pub fn must_succeed_for_cutover(mut self, input: bool) -> Self {
@@ -5833,52 +5294,51 @@ pub mod source_server_action_document {
         }
         /// <p>Source server post migration custom action must succeed for cutover.</p>
         pub fn set_must_succeed_for_cutover(mut self, input: std::option::Option<bool>) -> Self {
-            self.must_succeed_for_cutover = input;
-            self
+            self.must_succeed_for_cutover = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>Source server post migration custom action parameters.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<crate::model::SsmParameterStoreParameter>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>Source server post migration custom action parameters.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-                >,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::SsmParameterStoreParameter>>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`SourceServerActionDocument`](crate::model::SourceServerActionDocument).
         pub fn build(self) -> crate::model::SourceServerActionDocument {
             crate::model::SourceServerActionDocument {
-                action_id: self.action_id,
-                action_name: self.action_name,
-                document_identifier: self.document_identifier,
-                order: self.order.unwrap_or_default(),
-                document_version: self.document_version,
-                active: self.active,
-                timeout_seconds: self.timeout_seconds.unwrap_or_default(),
-                must_succeed_for_cutover: self.must_succeed_for_cutover,
-                parameters: self.parameters,
+                action_id: self.action_id
+                ,
+                action_name: self.action_name
+                ,
+                document_identifier: self.document_identifier
+                ,
+                order: self.order
+                    .unwrap_or_default()
+                ,
+                document_version: self.document_version
+                ,
+                active: self.active
+                ,
+                timeout_seconds: self.timeout_seconds
+                    .unwrap_or_default()
+                ,
+                must_succeed_for_cutover: self.must_succeed_for_cutover
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl SourceServerActionDocument {
     /// Creates a new builder-style object to manufacture [`SourceServerActionDocument`](crate::model::SourceServerActionDocument).
@@ -5890,20 +5350,20 @@ impl SourceServerActionDocument {
 /// <p>Source server post migration custom action filters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceServerActionsRequestFilters {
+pub struct SourceServerActionsRequestFilters  {
     /// <p>Action IDs to filter source server post migration custom actions by.</p>
     #[doc(hidden)]
     pub action_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SourceServerActionsRequestFilters {
     /// <p>Action IDs to filter source server post migration custom actions by.</p>
-    pub fn action_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn action_i_ds(&self) -> std::option::Option<& [std::string::String]> {
         self.action_i_ds.as_deref()
     }
 }
 /// See [`SourceServerActionsRequestFilters`](crate::model::SourceServerActionsRequestFilters).
 pub mod source_server_actions_request_filters {
-
+    
     /// A builder for [`SourceServerActionsRequestFilters`](crate::model::SourceServerActionsRequestFilters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5917,25 +5377,24 @@ pub mod source_server_actions_request_filters {
         /// <p>Action IDs to filter source server post migration custom actions by.</p>
         pub fn action_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.action_i_ds.unwrap_or_default();
-            v.push(input.into());
-            self.action_i_ds = Some(v);
-            self
+                            v.push(input.into());
+                            self.action_i_ds = Some(v);
+                            self
         }
         /// <p>Action IDs to filter source server post migration custom actions by.</p>
-        pub fn set_action_i_ds(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.action_i_ds = input;
-            self
+        pub fn set_action_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.action_i_ds = input; self
         }
         /// Consumes the builder and constructs a [`SourceServerActionsRequestFilters`](crate::model::SourceServerActionsRequestFilters).
         pub fn build(self) -> crate::model::SourceServerActionsRequestFilters {
             crate::model::SourceServerActionsRequestFilters {
-                action_i_ds: self.action_i_ds,
+                action_i_ds: self.action_i_ds
+                ,
             }
         }
     }
+    
+    
 }
 impl SourceServerActionsRequestFilters {
     /// Creates a new builder-style object to manufacture [`SourceServerActionsRequestFilters`](crate::model::SourceServerActionsRequestFilters).
@@ -5947,59 +5406,49 @@ impl SourceServerActionsRequestFilters {
 /// <p>The request to change the source server migration lifecycle state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChangeServerLifeCycleStateSourceServerLifecycle {
+pub struct ChangeServerLifeCycleStateSourceServerLifecycle  {
     /// <p>The request to change the source server migration lifecycle state.</p>
     #[doc(hidden)]
-    pub state:
-        std::option::Option<crate::model::ChangeServerLifeCycleStateSourceServerLifecycleState>,
+    pub state: std::option::Option<crate::model::ChangeServerLifeCycleStateSourceServerLifecycleState>,
 }
 impl ChangeServerLifeCycleStateSourceServerLifecycle {
     /// <p>The request to change the source server migration lifecycle state.</p>
-    pub fn state(
-        &self,
-    ) -> std::option::Option<&crate::model::ChangeServerLifeCycleStateSourceServerLifecycleState>
-    {
+    pub fn state(&self) -> std::option::Option<& crate::model::ChangeServerLifeCycleStateSourceServerLifecycleState> {
         self.state.as_ref()
     }
 }
 /// See [`ChangeServerLifeCycleStateSourceServerLifecycle`](crate::model::ChangeServerLifeCycleStateSourceServerLifecycle).
 pub mod change_server_life_cycle_state_source_server_lifecycle {
-
+    
     /// A builder for [`ChangeServerLifeCycleStateSourceServerLifecycle`](crate::model::ChangeServerLifeCycleStateSourceServerLifecycle).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) state:
-            std::option::Option<crate::model::ChangeServerLifeCycleStateSourceServerLifecycleState>,
+        pub(crate) state: std::option::Option<crate::model::ChangeServerLifeCycleStateSourceServerLifecycleState>,
     }
     impl Builder {
         /// <p>The request to change the source server migration lifecycle state.</p>
-        pub fn state(
-            mut self,
-            input: crate::model::ChangeServerLifeCycleStateSourceServerLifecycleState,
-        ) -> Self {
+        pub fn state(mut self, input: crate::model::ChangeServerLifeCycleStateSourceServerLifecycleState) -> Self {
             self.state = Some(input);
             self
         }
         /// <p>The request to change the source server migration lifecycle state.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<
-                crate::model::ChangeServerLifeCycleStateSourceServerLifecycleState,
-            >,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ChangeServerLifeCycleStateSourceServerLifecycleState>) -> Self {
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`ChangeServerLifeCycleStateSourceServerLifecycle`](crate::model::ChangeServerLifeCycleStateSourceServerLifecycle).
         pub fn build(self) -> crate::model::ChangeServerLifeCycleStateSourceServerLifecycle {
-            crate::model::ChangeServerLifeCycleStateSourceServerLifecycle { state: self.state }
+            crate::model::ChangeServerLifeCycleStateSourceServerLifecycle {
+                state: self.state
+                ,
+            }
         }
     }
+    
+    
 }
 impl ChangeServerLifeCycleStateSourceServerLifecycle {
     /// Creates a new builder-style object to manufacture [`ChangeServerLifeCycleStateSourceServerLifecycle`](crate::model::ChangeServerLifeCycleStateSourceServerLifecycle).
-    pub fn builder() -> crate::model::change_server_life_cycle_state_source_server_lifecycle::Builder
-    {
+    pub fn builder() -> crate::model::change_server_life_cycle_state_source_server_lifecycle::Builder {
         crate::model::change_server_life_cycle_state_source_server_lifecycle::Builder::default()
     }
 }
@@ -6010,9 +5459,9 @@ impl ChangeServerLifeCycleStateSourceServerLifecycle {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let changeserverlifecyclestatesourceserverlifecyclestate = unimplemented!();
 /// match changeserverlifecyclestatesourceserverlifecyclestate {
@@ -6035,22 +5484,14 @@ impl ChangeServerLifeCycleStateSourceServerLifecycle {
 /// Specifically, when `changeserverlifecyclestatesourceserverlifecyclestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChangeServerLifeCycleStateSourceServerLifecycleState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChangeServerLifeCycleStateSourceServerLifecycleState {
     #[allow(missing_docs)] // documentation missing in model
     Cutover,
@@ -6059,46 +5500,40 @@ pub enum ChangeServerLifeCycleStateSourceServerLifecycleState {
     #[allow(missing_docs)] // documentation missing in model
     ReadyForTest,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChangeServerLifeCycleStateSourceServerLifecycleState {
     fn from(s: &str) -> Self {
         match s {
             "CUTOVER" => ChangeServerLifeCycleStateSourceServerLifecycleState::Cutover,
-            "READY_FOR_CUTOVER" => {
-                ChangeServerLifeCycleStateSourceServerLifecycleState::ReadyForCutover
-            }
+            "READY_FOR_CUTOVER" => ChangeServerLifeCycleStateSourceServerLifecycleState::ReadyForCutover,
             "READY_FOR_TEST" => ChangeServerLifeCycleStateSourceServerLifecycleState::ReadyForTest,
-            other => ChangeServerLifeCycleStateSourceServerLifecycleState::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => ChangeServerLifeCycleStateSourceServerLifecycleState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ChangeServerLifeCycleStateSourceServerLifecycleState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChangeServerLifeCycleStateSourceServerLifecycleState::from(
-            s,
-        ))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChangeServerLifeCycleStateSourceServerLifecycleState::from(s))
+                }
+            }
 impl ChangeServerLifeCycleStateSourceServerLifecycleState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChangeServerLifeCycleStateSourceServerLifecycleState::Cutover => "CUTOVER",
-            ChangeServerLifeCycleStateSourceServerLifecycleState::ReadyForCutover => {
-                "READY_FOR_CUTOVER"
-            }
+            ChangeServerLifeCycleStateSourceServerLifecycleState::ReadyForCutover => "READY_FOR_CUTOVER",
             ChangeServerLifeCycleStateSourceServerLifecycleState::ReadyForTest => "READY_FOR_TEST",
-            ChangeServerLifeCycleStateSourceServerLifecycleState::Unknown(value) => value.as_str(),
+            ChangeServerLifeCycleStateSourceServerLifecycleState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUTOVER", "READY_FOR_CUTOVER", "READY_FOR_TEST"]
+        &[
+            "CUTOVER", "READY_FOR_CUTOVER", "READY_FOR_TEST"
+        ]
     }
 }
 impl AsRef<str> for ChangeServerLifeCycleStateSourceServerLifecycleState {
@@ -6110,7 +5545,7 @@ impl AsRef<str> for ChangeServerLifeCycleStateSourceServerLifecycleState {
 /// <p>Job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Job {
+pub struct Job  {
     /// <p>Job ID.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -6134,57 +5569,50 @@ pub struct Job {
     pub status: std::option::Option<crate::model::JobStatus>,
     /// <p>Servers participating in a specific Job.</p>
     #[doc(hidden)]
-    pub participating_servers:
-        std::option::Option<std::vec::Vec<crate::model::ParticipatingServer>>,
+    pub participating_servers: std::option::Option<std::vec::Vec<crate::model::ParticipatingServer>>,
     /// <p>Tags associated with specific Job.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Job {
     /// <p>Job ID.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>the ARN of the specific Job.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Job type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::JobType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::JobType> {
         self.r#type.as_ref()
     }
     /// <p>Job initiated by field.</p>
-    pub fn initiated_by(&self) -> std::option::Option<&crate::model::InitiatedBy> {
+    pub fn initiated_by(&self) -> std::option::Option<& crate::model::InitiatedBy> {
         self.initiated_by.as_ref()
     }
     /// <p>Job creation time.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&str> {
+    pub fn creation_date_time(&self) -> std::option::Option<& str> {
         self.creation_date_time.as_deref()
     }
     /// <p>Job end time.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&str> {
+    pub fn end_date_time(&self) -> std::option::Option<& str> {
         self.end_date_time.as_deref()
     }
     /// <p>Job status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.status.as_ref()
     }
     /// <p>Servers participating in a specific Job.</p>
-    pub fn participating_servers(
-        &self,
-    ) -> std::option::Option<&[crate::model::ParticipatingServer]> {
+    pub fn participating_servers(&self) -> std::option::Option<& [crate::model::ParticipatingServer]> {
         self.participating_servers.as_deref()
     }
     /// <p>Tags associated with specific Job.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for Job {
+impl  std::fmt::Debug for Job  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Job");
         formatter.field("job_id", &self.job_id);
@@ -6201,7 +5629,7 @@ impl std::fmt::Debug for Job {
 }
 /// See [`Job`](crate::model::Job).
 pub mod job {
-
+    
     /// A builder for [`Job`](crate::model::Job).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -6212,11 +5640,8 @@ pub mod job {
         pub(crate) creation_date_time: std::option::Option<std::string::String>,
         pub(crate) end_date_time: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) participating_servers:
-            std::option::Option<std::vec::Vec<crate::model::ParticipatingServer>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) participating_servers: std::option::Option<std::vec::Vec<crate::model::ParticipatingServer>>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Job ID.</p>
@@ -6226,8 +5651,7 @@ pub mod job {
         }
         /// <p>Job ID.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>the ARN of the specific Job.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6236,8 +5660,7 @@ pub mod job {
         }
         /// <p>the ARN of the specific Job.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Job type.</p>
         pub fn r#type(mut self, input: crate::model::JobType) -> Self {
@@ -6246,8 +5669,7 @@ pub mod job {
         }
         /// <p>Job type.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>Job initiated by field.</p>
         pub fn initiated_by(mut self, input: crate::model::InitiatedBy) -> Self {
@@ -6255,12 +5677,8 @@ pub mod job {
             self
         }
         /// <p>Job initiated by field.</p>
-        pub fn set_initiated_by(
-            mut self,
-            input: std::option::Option<crate::model::InitiatedBy>,
-        ) -> Self {
-            self.initiated_by = input;
-            self
+        pub fn set_initiated_by(mut self, input: std::option::Option<crate::model::InitiatedBy>) -> Self {
+            self.initiated_by = input; self
         }
         /// <p>Job creation time.</p>
         pub fn creation_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6268,12 +5686,8 @@ pub mod job {
             self
         }
         /// <p>Job creation time.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>Job end time.</p>
         pub fn end_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6281,12 +5695,8 @@ pub mod job {
             self
         }
         /// <p>Job end time.</p>
-        pub fn set_end_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.end_date_time = input;
-            self
+        pub fn set_end_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.end_date_time = input; self
         }
         /// <p>Job status.</p>
         pub fn status(mut self, input: crate::model::JobStatus) -> Self {
@@ -6295,8 +5705,7 @@ pub mod job {
         }
         /// <p>Job status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Appends an item to `participating_servers`.
         ///
@@ -6305,55 +5714,50 @@ pub mod job {
         /// <p>Servers participating in a specific Job.</p>
         pub fn participating_servers(mut self, input: crate::model::ParticipatingServer) -> Self {
             let mut v = self.participating_servers.unwrap_or_default();
-            v.push(input);
-            self.participating_servers = Some(v);
-            self
+                            v.push(input);
+                            self.participating_servers = Some(v);
+                            self
         }
         /// <p>Servers participating in a specific Job.</p>
-        pub fn set_participating_servers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ParticipatingServer>>,
-        ) -> Self {
-            self.participating_servers = input;
-            self
+        pub fn set_participating_servers(mut self, input: std::option::Option<std::vec::Vec<crate::model::ParticipatingServer>>) -> Self {
+            self.participating_servers = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags associated with specific Job.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags associated with specific Job.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`Job`](crate::model::Job).
         pub fn build(self) -> crate::model::Job {
             crate::model::Job {
-                job_id: self.job_id,
-                arn: self.arn,
-                r#type: self.r#type,
-                initiated_by: self.initiated_by,
-                creation_date_time: self.creation_date_time,
-                end_date_time: self.end_date_time,
-                status: self.status,
-                participating_servers: self.participating_servers,
-                tags: self.tags,
+                job_id: self.job_id
+                ,
+                arn: self.arn
+                ,
+                r#type: self.r#type
+                ,
+                initiated_by: self.initiated_by
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                end_date_time: self.end_date_time
+                ,
+                status: self.status
+                ,
+                participating_servers: self.participating_servers
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -6372,6 +5776,8 @@ pub mod job {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Job {
     /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
@@ -6383,7 +5789,7 @@ impl Job {
 /// <p>Server participating in Job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParticipatingServer {
+pub struct ParticipatingServer  {
     /// <p>Participating server Source Server ID.</p>
     #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
@@ -6399,35 +5805,32 @@ pub struct ParticipatingServer {
 }
 impl ParticipatingServer {
     /// <p>Participating server Source Server ID.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
+    pub fn source_server_id(&self) -> std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Participating server launch status.</p>
-    pub fn launch_status(&self) -> std::option::Option<&crate::model::LaunchStatus> {
+    pub fn launch_status(&self) -> std::option::Option<& crate::model::LaunchStatus> {
         self.launch_status.as_ref()
     }
     /// <p>Participating server's launched ec2 instance ID.</p>
-    pub fn launched_ec2_instance_id(&self) -> std::option::Option<&str> {
+    pub fn launched_ec2_instance_id(&self) -> std::option::Option<& str> {
         self.launched_ec2_instance_id.as_deref()
     }
     /// <p>Participating server's Post Launch Actions Status.</p>
-    pub fn post_launch_actions_status(
-        &self,
-    ) -> std::option::Option<&crate::model::PostLaunchActionsStatus> {
+    pub fn post_launch_actions_status(&self) -> std::option::Option<& crate::model::PostLaunchActionsStatus> {
         self.post_launch_actions_status.as_ref()
     }
 }
 /// See [`ParticipatingServer`](crate::model::ParticipatingServer).
 pub mod participating_server {
-
+    
     /// A builder for [`ParticipatingServer`](crate::model::ParticipatingServer).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
         pub(crate) launch_status: std::option::Option<crate::model::LaunchStatus>,
         pub(crate) launched_ec2_instance_id: std::option::Option<std::string::String>,
-        pub(crate) post_launch_actions_status:
-            std::option::Option<crate::model::PostLaunchActionsStatus>,
+        pub(crate) post_launch_actions_status: std::option::Option<crate::model::PostLaunchActionsStatus>,
     }
     impl Builder {
         /// <p>Participating server Source Server ID.</p>
@@ -6436,12 +5839,8 @@ pub mod participating_server {
             self
         }
         /// <p>Participating server Source Server ID.</p>
-        pub fn set_source_server_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_server_id = input;
-            self
+        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_server_id = input; self
         }
         /// <p>Participating server launch status.</p>
         pub fn launch_status(mut self, input: crate::model::LaunchStatus) -> Self {
@@ -6449,12 +5848,8 @@ pub mod participating_server {
             self
         }
         /// <p>Participating server launch status.</p>
-        pub fn set_launch_status(
-            mut self,
-            input: std::option::Option<crate::model::LaunchStatus>,
-        ) -> Self {
-            self.launch_status = input;
-            self
+        pub fn set_launch_status(mut self, input: std::option::Option<crate::model::LaunchStatus>) -> Self {
+            self.launch_status = input; self
         }
         /// <p>Participating server's launched ec2 instance ID.</p>
         pub fn launched_ec2_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6462,39 +5857,34 @@ pub mod participating_server {
             self
         }
         /// <p>Participating server's launched ec2 instance ID.</p>
-        pub fn set_launched_ec2_instance_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.launched_ec2_instance_id = input;
-            self
+        pub fn set_launched_ec2_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.launched_ec2_instance_id = input; self
         }
         /// <p>Participating server's Post Launch Actions Status.</p>
-        pub fn post_launch_actions_status(
-            mut self,
-            input: crate::model::PostLaunchActionsStatus,
-        ) -> Self {
+        pub fn post_launch_actions_status(mut self, input: crate::model::PostLaunchActionsStatus) -> Self {
             self.post_launch_actions_status = Some(input);
             self
         }
         /// <p>Participating server's Post Launch Actions Status.</p>
-        pub fn set_post_launch_actions_status(
-            mut self,
-            input: std::option::Option<crate::model::PostLaunchActionsStatus>,
-        ) -> Self {
-            self.post_launch_actions_status = input;
-            self
+        pub fn set_post_launch_actions_status(mut self, input: std::option::Option<crate::model::PostLaunchActionsStatus>) -> Self {
+            self.post_launch_actions_status = input; self
         }
         /// Consumes the builder and constructs a [`ParticipatingServer`](crate::model::ParticipatingServer).
         pub fn build(self) -> crate::model::ParticipatingServer {
             crate::model::ParticipatingServer {
-                source_server_id: self.source_server_id,
-                launch_status: self.launch_status,
-                launched_ec2_instance_id: self.launched_ec2_instance_id,
-                post_launch_actions_status: self.post_launch_actions_status,
+                source_server_id: self.source_server_id
+                ,
+                launch_status: self.launch_status
+                ,
+                launched_ec2_instance_id: self.launched_ec2_instance_id
+                ,
+                post_launch_actions_status: self.post_launch_actions_status
+                ,
             }
         }
     }
+    
+    
 }
 impl ParticipatingServer {
     /// Creates a new builder-style object to manufacture [`ParticipatingServer`](crate::model::ParticipatingServer).
@@ -6506,88 +5896,70 @@ impl ParticipatingServer {
 /// <p>Status of the Post Launch Actions running on the Test or Cutover instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PostLaunchActionsStatus {
+pub struct PostLaunchActionsStatus  {
     /// <p>Time where the AWS Systems Manager was detected as running on the Test or Cutover instance.</p>
     #[doc(hidden)]
     pub ssm_agent_discovery_datetime: std::option::Option<std::string::String>,
     /// <p>List of Post Launch Action status.</p>
     #[doc(hidden)]
-    pub post_launch_actions_launch_status_list:
-        std::option::Option<std::vec::Vec<crate::model::JobPostLaunchActionsLaunchStatus>>,
+    pub post_launch_actions_launch_status_list: std::option::Option<std::vec::Vec<crate::model::JobPostLaunchActionsLaunchStatus>>,
 }
 impl PostLaunchActionsStatus {
     /// <p>Time where the AWS Systems Manager was detected as running on the Test or Cutover instance.</p>
-    pub fn ssm_agent_discovery_datetime(&self) -> std::option::Option<&str> {
+    pub fn ssm_agent_discovery_datetime(&self) -> std::option::Option<& str> {
         self.ssm_agent_discovery_datetime.as_deref()
     }
     /// <p>List of Post Launch Action status.</p>
-    pub fn post_launch_actions_launch_status_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::JobPostLaunchActionsLaunchStatus]> {
+    pub fn post_launch_actions_launch_status_list(&self) -> std::option::Option<& [crate::model::JobPostLaunchActionsLaunchStatus]> {
         self.post_launch_actions_launch_status_list.as_deref()
     }
 }
 /// See [`PostLaunchActionsStatus`](crate::model::PostLaunchActionsStatus).
 pub mod post_launch_actions_status {
-
+    
     /// A builder for [`PostLaunchActionsStatus`](crate::model::PostLaunchActionsStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ssm_agent_discovery_datetime: std::option::Option<std::string::String>,
-        pub(crate) post_launch_actions_launch_status_list:
-            std::option::Option<std::vec::Vec<crate::model::JobPostLaunchActionsLaunchStatus>>,
+        pub(crate) post_launch_actions_launch_status_list: std::option::Option<std::vec::Vec<crate::model::JobPostLaunchActionsLaunchStatus>>,
     }
     impl Builder {
         /// <p>Time where the AWS Systems Manager was detected as running on the Test or Cutover instance.</p>
-        pub fn ssm_agent_discovery_datetime(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn ssm_agent_discovery_datetime(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssm_agent_discovery_datetime = Some(input.into());
             self
         }
         /// <p>Time where the AWS Systems Manager was detected as running on the Test or Cutover instance.</p>
-        pub fn set_ssm_agent_discovery_datetime(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ssm_agent_discovery_datetime = input;
-            self
+        pub fn set_ssm_agent_discovery_datetime(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ssm_agent_discovery_datetime = input; self
         }
         /// Appends an item to `post_launch_actions_launch_status_list`.
         ///
         /// To override the contents of this collection use [`set_post_launch_actions_launch_status_list`](Self::set_post_launch_actions_launch_status_list).
         ///
         /// <p>List of Post Launch Action status.</p>
-        pub fn post_launch_actions_launch_status_list(
-            mut self,
-            input: crate::model::JobPostLaunchActionsLaunchStatus,
-        ) -> Self {
-            let mut v = self
-                .post_launch_actions_launch_status_list
-                .unwrap_or_default();
-            v.push(input);
-            self.post_launch_actions_launch_status_list = Some(v);
-            self
+        pub fn post_launch_actions_launch_status_list(mut self, input: crate::model::JobPostLaunchActionsLaunchStatus) -> Self {
+            let mut v = self.post_launch_actions_launch_status_list.unwrap_or_default();
+                            v.push(input);
+                            self.post_launch_actions_launch_status_list = Some(v);
+                            self
         }
         /// <p>List of Post Launch Action status.</p>
-        pub fn set_post_launch_actions_launch_status_list(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::JobPostLaunchActionsLaunchStatus>,
-            >,
-        ) -> Self {
-            self.post_launch_actions_launch_status_list = input;
-            self
+        pub fn set_post_launch_actions_launch_status_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::JobPostLaunchActionsLaunchStatus>>) -> Self {
+            self.post_launch_actions_launch_status_list = input; self
         }
         /// Consumes the builder and constructs a [`PostLaunchActionsStatus`](crate::model::PostLaunchActionsStatus).
         pub fn build(self) -> crate::model::PostLaunchActionsStatus {
             crate::model::PostLaunchActionsStatus {
-                ssm_agent_discovery_datetime: self.ssm_agent_discovery_datetime,
-                post_launch_actions_launch_status_list: self.post_launch_actions_launch_status_list,
+                ssm_agent_discovery_datetime: self.ssm_agent_discovery_datetime
+                ,
+                post_launch_actions_launch_status_list: self.post_launch_actions_launch_status_list
+                ,
             }
         }
     }
+    
+    
 }
 impl PostLaunchActionsStatus {
     /// Creates a new builder-style object to manufacture [`PostLaunchActionsStatus`](crate::model::PostLaunchActionsStatus).
@@ -6599,7 +5971,7 @@ impl PostLaunchActionsStatus {
 /// <p>Launch Status of the Job Post Launch Actions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobPostLaunchActionsLaunchStatus {
+pub struct JobPostLaunchActionsLaunchStatus  {
     /// <p>AWS Systems Manager's Document of the of the Job Post Launch Actions.</p>
     #[doc(hidden)]
     pub ssm_document: std::option::Option<crate::model::SsmDocument>,
@@ -6618,39 +5990,36 @@ pub struct JobPostLaunchActionsLaunchStatus {
 }
 impl JobPostLaunchActionsLaunchStatus {
     /// <p>AWS Systems Manager's Document of the of the Job Post Launch Actions.</p>
-    pub fn ssm_document(&self) -> std::option::Option<&crate::model::SsmDocument> {
+    pub fn ssm_document(&self) -> std::option::Option<& crate::model::SsmDocument> {
         self.ssm_document.as_ref()
     }
     /// <p>AWS Systems Manager Document type.</p>
-    pub fn ssm_document_type(&self) -> std::option::Option<&crate::model::SsmDocumentType> {
+    pub fn ssm_document_type(&self) -> std::option::Option<& crate::model::SsmDocumentType> {
         self.ssm_document_type.as_ref()
     }
     /// <p>AWS Systems Manager Document's execution ID of the of the Job Post Launch Actions.</p>
-    pub fn execution_id(&self) -> std::option::Option<&str> {
+    pub fn execution_id(&self) -> std::option::Option<& str> {
         self.execution_id.as_deref()
     }
     /// <p>AWS Systems Manager Document's execution status.</p>
-    pub fn execution_status(
-        &self,
-    ) -> std::option::Option<&crate::model::PostLaunchActionExecutionStatus> {
+    pub fn execution_status(&self) -> std::option::Option<& crate::model::PostLaunchActionExecutionStatus> {
         self.execution_status.as_ref()
     }
     /// <p>AWS Systems Manager Document's failure reason.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> std::option::Option<& str> {
         self.failure_reason.as_deref()
     }
 }
 /// See [`JobPostLaunchActionsLaunchStatus`](crate::model::JobPostLaunchActionsLaunchStatus).
 pub mod job_post_launch_actions_launch_status {
-
+    
     /// A builder for [`JobPostLaunchActionsLaunchStatus`](crate::model::JobPostLaunchActionsLaunchStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ssm_document: std::option::Option<crate::model::SsmDocument>,
         pub(crate) ssm_document_type: std::option::Option<crate::model::SsmDocumentType>,
         pub(crate) execution_id: std::option::Option<std::string::String>,
-        pub(crate) execution_status:
-            std::option::Option<crate::model::PostLaunchActionExecutionStatus>,
+        pub(crate) execution_status: std::option::Option<crate::model::PostLaunchActionExecutionStatus>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6660,12 +6029,8 @@ pub mod job_post_launch_actions_launch_status {
             self
         }
         /// <p>AWS Systems Manager's Document of the of the Job Post Launch Actions.</p>
-        pub fn set_ssm_document(
-            mut self,
-            input: std::option::Option<crate::model::SsmDocument>,
-        ) -> Self {
-            self.ssm_document = input;
-            self
+        pub fn set_ssm_document(mut self, input: std::option::Option<crate::model::SsmDocument>) -> Self {
+            self.ssm_document = input; self
         }
         /// <p>AWS Systems Manager Document type.</p>
         pub fn ssm_document_type(mut self, input: crate::model::SsmDocumentType) -> Self {
@@ -6673,12 +6038,8 @@ pub mod job_post_launch_actions_launch_status {
             self
         }
         /// <p>AWS Systems Manager Document type.</p>
-        pub fn set_ssm_document_type(
-            mut self,
-            input: std::option::Option<crate::model::SsmDocumentType>,
-        ) -> Self {
-            self.ssm_document_type = input;
-            self
+        pub fn set_ssm_document_type(mut self, input: std::option::Option<crate::model::SsmDocumentType>) -> Self {
+            self.ssm_document_type = input; self
         }
         /// <p>AWS Systems Manager Document's execution ID of the of the Job Post Launch Actions.</p>
         pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6687,24 +6048,16 @@ pub mod job_post_launch_actions_launch_status {
         }
         /// <p>AWS Systems Manager Document's execution ID of the of the Job Post Launch Actions.</p>
         pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.execution_id = input;
-            self
+            self.execution_id = input; self
         }
         /// <p>AWS Systems Manager Document's execution status.</p>
-        pub fn execution_status(
-            mut self,
-            input: crate::model::PostLaunchActionExecutionStatus,
-        ) -> Self {
+        pub fn execution_status(mut self, input: crate::model::PostLaunchActionExecutionStatus) -> Self {
             self.execution_status = Some(input);
             self
         }
         /// <p>AWS Systems Manager Document's execution status.</p>
-        pub fn set_execution_status(
-            mut self,
-            input: std::option::Option<crate::model::PostLaunchActionExecutionStatus>,
-        ) -> Self {
-            self.execution_status = input;
-            self
+        pub fn set_execution_status(mut self, input: std::option::Option<crate::model::PostLaunchActionExecutionStatus>) -> Self {
+            self.execution_status = input; self
         }
         /// <p>AWS Systems Manager Document's failure reason.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6712,24 +6065,27 @@ pub mod job_post_launch_actions_launch_status {
             self
         }
         /// <p>AWS Systems Manager Document's failure reason.</p>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_reason = input; self
         }
         /// Consumes the builder and constructs a [`JobPostLaunchActionsLaunchStatus`](crate::model::JobPostLaunchActionsLaunchStatus).
         pub fn build(self) -> crate::model::JobPostLaunchActionsLaunchStatus {
             crate::model::JobPostLaunchActionsLaunchStatus {
-                ssm_document: self.ssm_document,
-                ssm_document_type: self.ssm_document_type,
-                execution_id: self.execution_id,
-                execution_status: self.execution_status,
-                failure_reason: self.failure_reason,
+                ssm_document: self.ssm_document
+                ,
+                ssm_document_type: self.ssm_document_type
+                ,
+                execution_id: self.execution_id
+                ,
+                execution_status: self.execution_status
+                ,
+                failure_reason: self.failure_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl JobPostLaunchActionsLaunchStatus {
     /// Creates a new builder-style object to manufacture [`JobPostLaunchActionsLaunchStatus`](crate::model::JobPostLaunchActionsLaunchStatus).
@@ -6744,9 +6100,9 @@ impl JobPostLaunchActionsLaunchStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let postlaunchactionexecutionstatus = unimplemented!();
 /// match postlaunchactionexecutionstatus {
@@ -6769,22 +6125,14 @@ impl JobPostLaunchActionsLaunchStatus {
 /// Specifically, when `postlaunchactionexecutionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PostLaunchActionExecutionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PostLaunchActionExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -6793,7 +6141,7 @@ pub enum PostLaunchActionExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Success,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PostLaunchActionExecutionStatus {
     fn from(s: &str) -> Self {
@@ -6801,19 +6149,17 @@ impl std::convert::From<&str> for PostLaunchActionExecutionStatus {
             "FAILED" => PostLaunchActionExecutionStatus::Failed,
             "IN_PROGRESS" => PostLaunchActionExecutionStatus::InProgress,
             "SUCCESS" => PostLaunchActionExecutionStatus::Success,
-            other => PostLaunchActionExecutionStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PostLaunchActionExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PostLaunchActionExecutionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PostLaunchActionExecutionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PostLaunchActionExecutionStatus::from(s))
+                }
+            }
 impl PostLaunchActionExecutionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6821,12 +6167,14 @@ impl PostLaunchActionExecutionStatus {
             PostLaunchActionExecutionStatus::Failed => "FAILED",
             PostLaunchActionExecutionStatus::InProgress => "IN_PROGRESS",
             PostLaunchActionExecutionStatus::Success => "SUCCESS",
-            PostLaunchActionExecutionStatus::Unknown(value) => value.as_str(),
+            PostLaunchActionExecutionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "IN_PROGRESS", "SUCCESS"]
+        &[
+            "FAILED", "IN_PROGRESS", "SUCCESS"
+        ]
     }
 }
 impl AsRef<str> for PostLaunchActionExecutionStatus {
@@ -6841,9 +6189,9 @@ impl AsRef<str> for PostLaunchActionExecutionStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ssmdocumenttype = unimplemented!();
 /// match ssmdocumenttype {
@@ -6865,58 +6213,52 @@ impl AsRef<str> for PostLaunchActionExecutionStatus {
 /// Specifically, when `ssmdocumenttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SsmDocumentType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SsmDocumentType {
     #[allow(missing_docs)] // documentation missing in model
     Automation,
     #[allow(missing_docs)] // documentation missing in model
     Command,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SsmDocumentType {
     fn from(s: &str) -> Self {
         match s {
             "AUTOMATION" => SsmDocumentType::Automation,
             "COMMAND" => SsmDocumentType::Command,
-            other => SsmDocumentType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SsmDocumentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SsmDocumentType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SsmDocumentType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SsmDocumentType::from(s))
+                }
+            }
 impl SsmDocumentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SsmDocumentType::Automation => "AUTOMATION",
             SsmDocumentType::Command => "COMMAND",
-            SsmDocumentType::Unknown(value) => value.as_str(),
+            SsmDocumentType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUTOMATION", "COMMAND"]
+        &[
+            "AUTOMATION", "COMMAND"
+        ]
     }
 }
 impl AsRef<str> for SsmDocumentType {
@@ -6931,9 +6273,9 @@ impl AsRef<str> for SsmDocumentType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let launchstatus = unimplemented!();
 /// match launchstatus {
@@ -6958,22 +6300,14 @@ impl AsRef<str> for SsmDocumentType {
 /// Specifically, when `launchstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LaunchStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LaunchStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -6986,7 +6320,7 @@ pub enum LaunchStatus {
     #[allow(missing_docs)] // documentation missing in model
     Terminated,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LaunchStatus {
     fn from(s: &str) -> Self {
@@ -6996,17 +6330,17 @@ impl std::convert::From<&str> for LaunchStatus {
             "LAUNCHED" => LaunchStatus::Launched,
             "PENDING" => LaunchStatus::Pending,
             "TERMINATED" => LaunchStatus::Terminated,
-            other => LaunchStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LaunchStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LaunchStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LaunchStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LaunchStatus::from(s))
+                }
+            }
 impl LaunchStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7016,12 +6350,14 @@ impl LaunchStatus {
             LaunchStatus::Launched => "LAUNCHED",
             LaunchStatus::Pending => "PENDING",
             LaunchStatus::Terminated => "TERMINATED",
-            LaunchStatus::Unknown(value) => value.as_str(),
+            LaunchStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "IN_PROGRESS", "LAUNCHED", "PENDING", "TERMINATED"]
+        &[
+            "FAILED", "IN_PROGRESS", "LAUNCHED", "PENDING", "TERMINATED"
+        ]
     }
 }
 impl AsRef<str> for LaunchStatus {
@@ -7036,9 +6372,9 @@ impl AsRef<str> for LaunchStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let jobstatus = unimplemented!();
 /// match jobstatus {
@@ -7061,22 +6397,14 @@ impl AsRef<str> for LaunchStatus {
 /// Specifically, when `jobstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -7085,7 +6413,7 @@ pub enum JobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Started,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobStatus {
     fn from(s: &str) -> Self {
@@ -7093,17 +6421,17 @@ impl std::convert::From<&str> for JobStatus {
             "COMPLETED" => JobStatus::Completed,
             "PENDING" => JobStatus::Pending,
             "STARTED" => JobStatus::Started,
-            other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JobStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobStatus::from(s))
+                }
+            }
 impl JobStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7111,12 +6439,14 @@ impl JobStatus {
             JobStatus::Completed => "COMPLETED",
             JobStatus::Pending => "PENDING",
             JobStatus::Started => "STARTED",
-            JobStatus::Unknown(value) => value.as_str(),
+            JobStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "PENDING", "STARTED"]
+        &[
+            "COMPLETED", "PENDING", "STARTED"
+        ]
     }
 }
 impl AsRef<str> for JobStatus {
@@ -7131,9 +6461,9 @@ impl AsRef<str> for JobStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let initiatedby = unimplemented!();
 /// match initiatedby {
@@ -7157,22 +6487,14 @@ impl AsRef<str> for JobStatus {
 /// Specifically, when `initiatedby` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InitiatedBy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InitiatedBy {
     #[allow(missing_docs)] // documentation missing in model
     Diagnostic,
@@ -7183,7 +6505,7 @@ pub enum InitiatedBy {
     #[allow(missing_docs)] // documentation missing in model
     Terminate,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InitiatedBy {
     fn from(s: &str) -> Self {
@@ -7192,17 +6514,17 @@ impl std::convert::From<&str> for InitiatedBy {
             "START_CUTOVER" => InitiatedBy::StartCutover,
             "START_TEST" => InitiatedBy::StartTest,
             "TERMINATE" => InitiatedBy::Terminate,
-            other => InitiatedBy::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => InitiatedBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InitiatedBy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InitiatedBy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InitiatedBy::from(s))
+                }
+            }
 impl InitiatedBy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7211,12 +6533,14 @@ impl InitiatedBy {
             InitiatedBy::StartCutover => "START_CUTOVER",
             InitiatedBy::StartTest => "START_TEST",
             InitiatedBy::Terminate => "TERMINATE",
-            InitiatedBy::Unknown(value) => value.as_str(),
+            InitiatedBy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DIAGNOSTIC", "START_CUTOVER", "START_TEST", "TERMINATE"]
+        &[
+            "DIAGNOSTIC", "START_CUTOVER", "START_TEST", "TERMINATE"
+        ]
     }
 }
 impl AsRef<str> for InitiatedBy {
@@ -7231,9 +6555,9 @@ impl AsRef<str> for InitiatedBy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let jobtype = unimplemented!();
 /// match jobtype {
@@ -7255,58 +6579,52 @@ impl AsRef<str> for InitiatedBy {
 /// Specifically, when `jobtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobType {
     #[allow(missing_docs)] // documentation missing in model
     Launch,
     #[allow(missing_docs)] // documentation missing in model
     Terminate,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobType {
     fn from(s: &str) -> Self {
         match s {
             "LAUNCH" => JobType::Launch,
             "TERMINATE" => JobType::Terminate,
-            other => JobType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => JobType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JobType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobType::from(s))
+                }
+            }
 impl JobType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobType::Launch => "LAUNCH",
             JobType::Terminate => "TERMINATE",
-            JobType::Unknown(value) => value.as_str(),
+            JobType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LAUNCH", "TERMINATE"]
+        &[
+            "LAUNCH", "TERMINATE"
+        ]
     }
 }
 impl AsRef<str> for JobType {
@@ -7318,7 +6636,7 @@ impl AsRef<str> for JobType {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SourceServer {
+pub struct SourceServer  {
     /// <p>Source server ID.</p>
     #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
@@ -7330,8 +6648,7 @@ pub struct SourceServer {
     pub is_archived: std::option::Option<bool>,
     /// <p>Source server Tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Source server launched instance.</p>
     #[doc(hidden)]
     pub launched_instance: std::option::Option<crate::model::LaunchedInstance>,
@@ -7356,11 +6673,11 @@ pub struct SourceServer {
 }
 impl SourceServer {
     /// <p>Source server ID.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
+    pub fn source_server_id(&self) -> std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Source server ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Source server archived status.</p>
@@ -7368,42 +6685,39 @@ impl SourceServer {
         self.is_archived
     }
     /// <p>Source server Tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Source server launched instance.</p>
-    pub fn launched_instance(&self) -> std::option::Option<&crate::model::LaunchedInstance> {
+    pub fn launched_instance(&self) -> std::option::Option<& crate::model::LaunchedInstance> {
         self.launched_instance.as_ref()
     }
     /// <p>Source server data replication info.</p>
-    pub fn data_replication_info(&self) -> std::option::Option<&crate::model::DataReplicationInfo> {
+    pub fn data_replication_info(&self) -> std::option::Option<& crate::model::DataReplicationInfo> {
         self.data_replication_info.as_ref()
     }
     /// <p>Source server lifecycle state.</p>
-    pub fn life_cycle(&self) -> std::option::Option<&crate::model::LifeCycle> {
+    pub fn life_cycle(&self) -> std::option::Option<& crate::model::LifeCycle> {
         self.life_cycle.as_ref()
     }
     /// <p>Source server properties.</p>
-    pub fn source_properties(&self) -> std::option::Option<&crate::model::SourceProperties> {
+    pub fn source_properties(&self) -> std::option::Option<& crate::model::SourceProperties> {
         self.source_properties.as_ref()
     }
     /// <p>Source server replication type.</p>
-    pub fn replication_type(&self) -> std::option::Option<&crate::model::ReplicationType> {
+    pub fn replication_type(&self) -> std::option::Option<& crate::model::ReplicationType> {
         self.replication_type.as_ref()
     }
     /// <p>Source server vCenter client id.</p>
-    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
+    pub fn vcenter_client_id(&self) -> std::option::Option<& str> {
         self.vcenter_client_id.as_deref()
     }
     /// <p>Source server application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
 }
-impl std::fmt::Debug for SourceServer {
+impl  std::fmt::Debug for SourceServer  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SourceServer");
         formatter.field("source_server_id", &self.source_server_id);
@@ -7422,16 +6736,14 @@ impl std::fmt::Debug for SourceServer {
 }
 /// See [`SourceServer`](crate::model::SourceServer).
 pub mod source_server {
-
+    
     /// A builder for [`SourceServer`](crate::model::SourceServer).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) source_server_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) is_archived: std::option::Option<bool>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) launched_instance: std::option::Option<crate::model::LaunchedInstance>,
         pub(crate) data_replication_info: std::option::Option<crate::model::DataReplicationInfo>,
         pub(crate) life_cycle: std::option::Option<crate::model::LifeCycle>,
@@ -7447,12 +6759,8 @@ pub mod source_server {
             self
         }
         /// <p>Source server ID.</p>
-        pub fn set_source_server_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_server_id = input;
-            self
+        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_server_id = input; self
         }
         /// <p>Source server ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7461,8 +6769,7 @@ pub mod source_server {
         }
         /// <p>Source server ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Source server archived status.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -7471,33 +6778,22 @@ pub mod source_server {
         }
         /// <p>Source server archived status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Source server Tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Source server Tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Source server launched instance.</p>
         pub fn launched_instance(mut self, input: crate::model::LaunchedInstance) -> Self {
@@ -7505,12 +6801,8 @@ pub mod source_server {
             self
         }
         /// <p>Source server launched instance.</p>
-        pub fn set_launched_instance(
-            mut self,
-            input: std::option::Option<crate::model::LaunchedInstance>,
-        ) -> Self {
-            self.launched_instance = input;
-            self
+        pub fn set_launched_instance(mut self, input: std::option::Option<crate::model::LaunchedInstance>) -> Self {
+            self.launched_instance = input; self
         }
         /// <p>Source server data replication info.</p>
         pub fn data_replication_info(mut self, input: crate::model::DataReplicationInfo) -> Self {
@@ -7518,12 +6810,8 @@ pub mod source_server {
             self
         }
         /// <p>Source server data replication info.</p>
-        pub fn set_data_replication_info(
-            mut self,
-            input: std::option::Option<crate::model::DataReplicationInfo>,
-        ) -> Self {
-            self.data_replication_info = input;
-            self
+        pub fn set_data_replication_info(mut self, input: std::option::Option<crate::model::DataReplicationInfo>) -> Self {
+            self.data_replication_info = input; self
         }
         /// <p>Source server lifecycle state.</p>
         pub fn life_cycle(mut self, input: crate::model::LifeCycle) -> Self {
@@ -7531,12 +6819,8 @@ pub mod source_server {
             self
         }
         /// <p>Source server lifecycle state.</p>
-        pub fn set_life_cycle(
-            mut self,
-            input: std::option::Option<crate::model::LifeCycle>,
-        ) -> Self {
-            self.life_cycle = input;
-            self
+        pub fn set_life_cycle(mut self, input: std::option::Option<crate::model::LifeCycle>) -> Self {
+            self.life_cycle = input; self
         }
         /// <p>Source server properties.</p>
         pub fn source_properties(mut self, input: crate::model::SourceProperties) -> Self {
@@ -7544,12 +6828,8 @@ pub mod source_server {
             self
         }
         /// <p>Source server properties.</p>
-        pub fn set_source_properties(
-            mut self,
-            input: std::option::Option<crate::model::SourceProperties>,
-        ) -> Self {
-            self.source_properties = input;
-            self
+        pub fn set_source_properties(mut self, input: std::option::Option<crate::model::SourceProperties>) -> Self {
+            self.source_properties = input; self
         }
         /// <p>Source server replication type.</p>
         pub fn replication_type(mut self, input: crate::model::ReplicationType) -> Self {
@@ -7557,12 +6837,8 @@ pub mod source_server {
             self
         }
         /// <p>Source server replication type.</p>
-        pub fn set_replication_type(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationType>,
-        ) -> Self {
-            self.replication_type = input;
-            self
+        pub fn set_replication_type(mut self, input: std::option::Option<crate::model::ReplicationType>) -> Self {
+            self.replication_type = input; self
         }
         /// <p>Source server vCenter client id.</p>
         pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7570,12 +6846,8 @@ pub mod source_server {
             self
         }
         /// <p>Source server vCenter client id.</p>
-        pub fn set_vcenter_client_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vcenter_client_id = input;
-            self
+        pub fn set_vcenter_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vcenter_client_id = input; self
         }
         /// <p>Source server application ID.</p>
         pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7583,27 +6855,34 @@ pub mod source_server {
             self
         }
         /// <p>Source server application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// Consumes the builder and constructs a [`SourceServer`](crate::model::SourceServer).
         pub fn build(self) -> crate::model::SourceServer {
             crate::model::SourceServer {
-                source_server_id: self.source_server_id,
-                arn: self.arn,
-                is_archived: self.is_archived,
-                tags: self.tags,
-                launched_instance: self.launched_instance,
-                data_replication_info: self.data_replication_info,
-                life_cycle: self.life_cycle,
-                source_properties: self.source_properties,
-                replication_type: self.replication_type,
-                vcenter_client_id: self.vcenter_client_id,
-                application_id: self.application_id,
+                source_server_id: self.source_server_id
+                ,
+                arn: self.arn
+                ,
+                is_archived: self.is_archived
+                ,
+                tags: self.tags
+                ,
+                launched_instance: self.launched_instance
+                ,
+                data_replication_info: self.data_replication_info
+                ,
+                life_cycle: self.life_cycle
+                ,
+                source_properties: self.source_properties
+                ,
+                replication_type: self.replication_type
+                ,
+                vcenter_client_id: self.vcenter_client_id
+                ,
+                application_id: self.application_id
+                ,
             }
         }
     }
@@ -7624,6 +6903,8 @@ pub mod source_server {
             formatter.finish()
         }
     }
+    
+    
 }
 impl SourceServer {
     /// Creates a new builder-style object to manufacture [`SourceServer`](crate::model::SourceServer).
@@ -7635,7 +6916,7 @@ impl SourceServer {
 /// <p>Request to filter Source Servers list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSourceServersRequestFilters {
+pub struct DescribeSourceServersRequestFilters  {
     /// <p>Request to filter Source Servers list by Source Server ID.</p>
     #[doc(hidden)]
     pub source_server_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7654,7 +6935,7 @@ pub struct DescribeSourceServersRequestFilters {
 }
 impl DescribeSourceServersRequestFilters {
     /// <p>Request to filter Source Servers list by Source Server ID.</p>
-    pub fn source_server_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn source_server_i_ds(&self) -> std::option::Option<& [std::string::String]> {
         self.source_server_i_ds.as_deref()
     }
     /// <p>Request to filter Source Servers list by archived.</p>
@@ -7662,30 +6943,28 @@ impl DescribeSourceServersRequestFilters {
         self.is_archived
     }
     /// <p>Request to filter Source Servers list by replication type.</p>
-    pub fn replication_types(&self) -> std::option::Option<&[crate::model::ReplicationType]> {
+    pub fn replication_types(&self) -> std::option::Option<& [crate::model::ReplicationType]> {
         self.replication_types.as_deref()
     }
     /// <p>Request to filter Source Servers list by life cycle states.</p>
-    pub fn life_cycle_states(&self) -> std::option::Option<&[crate::model::LifeCycleState]> {
+    pub fn life_cycle_states(&self) -> std::option::Option<& [crate::model::LifeCycleState]> {
         self.life_cycle_states.as_deref()
     }
     /// <p>Request to filter Source Servers list by application IDs.</p>
-    pub fn application_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn application_i_ds(&self) -> std::option::Option<& [std::string::String]> {
         self.application_i_ds.as_deref()
     }
 }
 /// See [`DescribeSourceServersRequestFilters`](crate::model::DescribeSourceServersRequestFilters).
 pub mod describe_source_servers_request_filters {
-
+    
     /// A builder for [`DescribeSourceServersRequestFilters`](crate::model::DescribeSourceServersRequestFilters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) source_server_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) is_archived: std::option::Option<bool>,
-        pub(crate) replication_types:
-            std::option::Option<std::vec::Vec<crate::model::ReplicationType>>,
-        pub(crate) life_cycle_states:
-            std::option::Option<std::vec::Vec<crate::model::LifeCycleState>>,
+        pub(crate) replication_types: std::option::Option<std::vec::Vec<crate::model::ReplicationType>>,
+        pub(crate) life_cycle_states: std::option::Option<std::vec::Vec<crate::model::LifeCycleState>>,
         pub(crate) application_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
@@ -7696,17 +6975,13 @@ pub mod describe_source_servers_request_filters {
         /// <p>Request to filter Source Servers list by Source Server ID.</p>
         pub fn source_server_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.source_server_i_ds.unwrap_or_default();
-            v.push(input.into());
-            self.source_server_i_ds = Some(v);
-            self
+                            v.push(input.into());
+                            self.source_server_i_ds = Some(v);
+                            self
         }
         /// <p>Request to filter Source Servers list by Source Server ID.</p>
-        pub fn set_source_server_i_ds(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.source_server_i_ds = input;
-            self
+        pub fn set_source_server_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.source_server_i_ds = input; self
         }
         /// <p>Request to filter Source Servers list by archived.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -7715,8 +6990,7 @@ pub mod describe_source_servers_request_filters {
         }
         /// <p>Request to filter Source Servers list by archived.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// Appends an item to `replication_types`.
         ///
@@ -7725,17 +6999,13 @@ pub mod describe_source_servers_request_filters {
         /// <p>Request to filter Source Servers list by replication type.</p>
         pub fn replication_types(mut self, input: crate::model::ReplicationType) -> Self {
             let mut v = self.replication_types.unwrap_or_default();
-            v.push(input);
-            self.replication_types = Some(v);
-            self
+                            v.push(input);
+                            self.replication_types = Some(v);
+                            self
         }
         /// <p>Request to filter Source Servers list by replication type.</p>
-        pub fn set_replication_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReplicationType>>,
-        ) -> Self {
-            self.replication_types = input;
-            self
+        pub fn set_replication_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReplicationType>>) -> Self {
+            self.replication_types = input; self
         }
         /// Appends an item to `life_cycle_states`.
         ///
@@ -7744,17 +7014,13 @@ pub mod describe_source_servers_request_filters {
         /// <p>Request to filter Source Servers list by life cycle states.</p>
         pub fn life_cycle_states(mut self, input: crate::model::LifeCycleState) -> Self {
             let mut v = self.life_cycle_states.unwrap_or_default();
-            v.push(input);
-            self.life_cycle_states = Some(v);
-            self
+                            v.push(input);
+                            self.life_cycle_states = Some(v);
+                            self
         }
         /// <p>Request to filter Source Servers list by life cycle states.</p>
-        pub fn set_life_cycle_states(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LifeCycleState>>,
-        ) -> Self {
-            self.life_cycle_states = input;
-            self
+        pub fn set_life_cycle_states(mut self, input: std::option::Option<std::vec::Vec<crate::model::LifeCycleState>>) -> Self {
+            self.life_cycle_states = input; self
         }
         /// Appends an item to `application_i_ds`.
         ///
@@ -7763,29 +7029,32 @@ pub mod describe_source_servers_request_filters {
         /// <p>Request to filter Source Servers list by application IDs.</p>
         pub fn application_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.application_i_ds.unwrap_or_default();
-            v.push(input.into());
-            self.application_i_ds = Some(v);
-            self
+                            v.push(input.into());
+                            self.application_i_ds = Some(v);
+                            self
         }
         /// <p>Request to filter Source Servers list by application IDs.</p>
-        pub fn set_application_i_ds(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.application_i_ds = input;
-            self
+        pub fn set_application_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.application_i_ds = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSourceServersRequestFilters`](crate::model::DescribeSourceServersRequestFilters).
         pub fn build(self) -> crate::model::DescribeSourceServersRequestFilters {
             crate::model::DescribeSourceServersRequestFilters {
-                source_server_i_ds: self.source_server_i_ds,
-                is_archived: self.is_archived,
-                replication_types: self.replication_types,
-                life_cycle_states: self.life_cycle_states,
-                application_i_ds: self.application_i_ds,
+                source_server_i_ds: self.source_server_i_ds
+                ,
+                is_archived: self.is_archived
+                ,
+                replication_types: self.replication_types
+                ,
+                life_cycle_states: self.life_cycle_states
+                ,
+                application_i_ds: self.application_i_ds
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSourceServersRequestFilters {
     /// Creates a new builder-style object to manufacture [`DescribeSourceServersRequestFilters`](crate::model::DescribeSourceServersRequestFilters).
@@ -7797,7 +7066,7 @@ impl DescribeSourceServersRequestFilters {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ReplicationConfigurationTemplate {
+pub struct ReplicationConfigurationTemplate  {
     /// <p>Replication Configuration template ID.</p>
     #[doc(hidden)]
     pub replication_configuration_template_id: std::option::Option<std::string::String>,
@@ -7812,8 +7081,7 @@ pub struct ReplicationConfigurationTemplate {
     pub associate_default_security_group: std::option::Option<bool>,
     /// <p>Replication Configuration template server Security Groups IDs.</p>
     #[doc(hidden)]
-    pub replication_servers_security_groups_i_ds:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub replication_servers_security_groups_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Replication Configuration template server instance type.</p>
     #[doc(hidden)]
     pub replication_server_instance_type: std::option::Option<std::string::String>,
@@ -7822,8 +7090,7 @@ pub struct ReplicationConfigurationTemplate {
     pub use_dedicated_replication_server: std::option::Option<bool>,
     /// <p>Replication Configuration template use default large Staging Disk type.</p>
     #[doc(hidden)]
-    pub default_large_staging_disk_type:
-        std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
+    pub default_large_staging_disk_type: std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Replication Configuration template EBS encryption.</p>
     #[doc(hidden)]
     pub ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
@@ -7835,31 +7102,28 @@ pub struct ReplicationConfigurationTemplate {
     pub bandwidth_throttling: i64,
     /// <p>Replication Configuration template data plane routing.</p>
     #[doc(hidden)]
-    pub data_plane_routing:
-        std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
+    pub data_plane_routing: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Replication Configuration template create Public IP.</p>
     #[doc(hidden)]
     pub create_public_ip: std::option::Option<bool>,
     /// <p>Replication Configuration template Staging Area Tags.</p>
     #[doc(hidden)]
-    pub staging_area_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub staging_area_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Replication Configuration template Tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ReplicationConfigurationTemplate {
     /// <p>Replication Configuration template ID.</p>
-    pub fn replication_configuration_template_id(&self) -> std::option::Option<&str> {
+    pub fn replication_configuration_template_id(&self) -> std::option::Option<& str> {
         self.replication_configuration_template_id.as_deref()
     }
     /// <p>Replication Configuration template ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Replication Configuration template Staging Area subnet ID.</p>
-    pub fn staging_area_subnet_id(&self) -> std::option::Option<&str> {
+    pub fn staging_area_subnet_id(&self) -> std::option::Option<& str> {
         self.staging_area_subnet_id.as_deref()
     }
     /// <p>Replication Configuration template associate default Application Migration Service Security group.</p>
@@ -7867,13 +7131,11 @@ impl ReplicationConfigurationTemplate {
         self.associate_default_security_group
     }
     /// <p>Replication Configuration template server Security Groups IDs.</p>
-    pub fn replication_servers_security_groups_i_ds(
-        &self,
-    ) -> std::option::Option<&[std::string::String]> {
+    pub fn replication_servers_security_groups_i_ds(&self) -> std::option::Option<& [std::string::String]> {
         self.replication_servers_security_groups_i_ds.as_deref()
     }
     /// <p>Replication Configuration template server instance type.</p>
-    pub fn replication_server_instance_type(&self) -> std::option::Option<&str> {
+    pub fn replication_server_instance_type(&self) -> std::option::Option<& str> {
         self.replication_server_instance_type.as_deref()
     }
     /// <p>Replication Configuration template use Dedicated Replication Server.</p>
@@ -7881,20 +7143,15 @@ impl ReplicationConfigurationTemplate {
         self.use_dedicated_replication_server
     }
     /// <p>Replication Configuration template use default large Staging Disk type.</p>
-    pub fn default_large_staging_disk_type(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>
-    {
+    pub fn default_large_staging_disk_type(&self) -> std::option::Option<& crate::model::ReplicationConfigurationDefaultLargeStagingDiskType> {
         self.default_large_staging_disk_type.as_ref()
     }
     /// <p>Replication Configuration template EBS encryption.</p>
-    pub fn ebs_encryption(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationConfigurationEbsEncryption> {
+    pub fn ebs_encryption(&self) -> std::option::Option<& crate::model::ReplicationConfigurationEbsEncryption> {
         self.ebs_encryption.as_ref()
     }
     /// <p>Replication Configuration template EBS encryption key ARN.</p>
-    pub fn ebs_encryption_key_arn(&self) -> std::option::Option<&str> {
+    pub fn ebs_encryption_key_arn(&self) -> std::option::Option<& str> {
         self.ebs_encryption_key_arn.as_deref()
     }
     /// <p>Replication Configuration template bandwidth throttling.</p>
@@ -7902,9 +7159,7 @@ impl ReplicationConfigurationTemplate {
         self.bandwidth_throttling
     }
     /// <p>Replication Configuration template data plane routing.</p>
-    pub fn data_plane_routing(
-        &self,
-    ) -> std::option::Option<&crate::model::ReplicationConfigurationDataPlaneRouting> {
+    pub fn data_plane_routing(&self) -> std::option::Option<& crate::model::ReplicationConfigurationDataPlaneRouting> {
         self.data_plane_routing.as_ref()
     }
     /// <p>Replication Configuration template create Public IP.</p>
@@ -7912,49 +7167,25 @@ impl ReplicationConfigurationTemplate {
         self.create_public_ip
     }
     /// <p>Replication Configuration template Staging Area Tags.</p>
-    pub fn staging_area_tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn staging_area_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.staging_area_tags.as_ref()
     }
     /// <p>Replication Configuration template Tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
-impl std::fmt::Debug for ReplicationConfigurationTemplate {
+impl  std::fmt::Debug for ReplicationConfigurationTemplate  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicationConfigurationTemplate");
-        formatter.field(
-            "replication_configuration_template_id",
-            &self.replication_configuration_template_id,
-        );
+        formatter.field("replication_configuration_template_id", &self.replication_configuration_template_id);
         formatter.field("arn", &self.arn);
         formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
-        formatter.field(
-            "associate_default_security_group",
-            &self.associate_default_security_group,
-        );
-        formatter.field(
-            "replication_servers_security_groups_i_ds",
-            &self.replication_servers_security_groups_i_ds,
-        );
-        formatter.field(
-            "replication_server_instance_type",
-            &self.replication_server_instance_type,
-        );
-        formatter.field(
-            "use_dedicated_replication_server",
-            &self.use_dedicated_replication_server,
-        );
-        formatter.field(
-            "default_large_staging_disk_type",
-            &self.default_large_staging_disk_type,
-        );
+        formatter.field("associate_default_security_group", &self.associate_default_security_group);
+        formatter.field("replication_servers_security_groups_i_ds", &self.replication_servers_security_groups_i_ds);
+        formatter.field("replication_server_instance_type", &self.replication_server_instance_type);
+        formatter.field("use_dedicated_replication_server", &self.use_dedicated_replication_server);
+        formatter.field("default_large_staging_disk_type", &self.default_large_staging_disk_type);
         formatter.field("ebs_encryption", &self.ebs_encryption);
         formatter.field("ebs_encryption_key_arn", &self.ebs_encryption_key_arn);
         formatter.field("bandwidth_throttling", &self.bandwidth_throttling);
@@ -7967,7 +7198,7 @@ impl std::fmt::Debug for ReplicationConfigurationTemplate {
 }
 /// See [`ReplicationConfigurationTemplate`](crate::model::ReplicationConfigurationTemplate).
 pub mod replication_configuration_template {
-
+    
     /// A builder for [`ReplicationConfigurationTemplate`](crate::model::ReplicationConfigurationTemplate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -7975,42 +7206,27 @@ pub mod replication_configuration_template {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) staging_area_subnet_id: std::option::Option<std::string::String>,
         pub(crate) associate_default_security_group: std::option::Option<bool>,
-        pub(crate) replication_servers_security_groups_i_ds:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) replication_servers_security_groups_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) replication_server_instance_type: std::option::Option<std::string::String>,
         pub(crate) use_dedicated_replication_server: std::option::Option<bool>,
-        pub(crate) default_large_staging_disk_type:
-            std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
-        pub(crate) ebs_encryption:
-            std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
+        pub(crate) default_large_staging_disk_type: std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>,
+        pub(crate) ebs_encryption: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
         pub(crate) ebs_encryption_key_arn: std::option::Option<std::string::String>,
         pub(crate) bandwidth_throttling: std::option::Option<i64>,
-        pub(crate) data_plane_routing:
-            std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
+        pub(crate) data_plane_routing: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
         pub(crate) create_public_ip: std::option::Option<bool>,
-        pub(crate) staging_area_tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) staging_area_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Replication Configuration template ID.</p>
-        pub fn replication_configuration_template_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn replication_configuration_template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.replication_configuration_template_id = Some(input.into());
             self
         }
         /// <p>Replication Configuration template ID.</p>
-        pub fn set_replication_configuration_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.replication_configuration_template_id = input;
-            self
+        pub fn set_replication_configuration_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.replication_configuration_template_id = input; self
         }
         /// <p>Replication Configuration template ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8019,8 +7235,7 @@ pub mod replication_configuration_template {
         }
         /// <p>Replication Configuration template ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Replication Configuration template Staging Area subnet ID.</p>
         pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8028,12 +7243,8 @@ pub mod replication_configuration_template {
             self
         }
         /// <p>Replication Configuration template Staging Area subnet ID.</p>
-        pub fn set_staging_area_subnet_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.staging_area_subnet_id = input;
-            self
+        pub fn set_staging_area_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.staging_area_subnet_id = input; self
         }
         /// <p>Replication Configuration template associate default Application Migration Service Security group.</p>
         pub fn associate_default_security_group(mut self, input: bool) -> Self {
@@ -8041,52 +7252,32 @@ pub mod replication_configuration_template {
             self
         }
         /// <p>Replication Configuration template associate default Application Migration Service Security group.</p>
-        pub fn set_associate_default_security_group(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.associate_default_security_group = input;
-            self
+        pub fn set_associate_default_security_group(mut self, input: std::option::Option<bool>) -> Self {
+            self.associate_default_security_group = input; self
         }
         /// Appends an item to `replication_servers_security_groups_i_ds`.
         ///
         /// To override the contents of this collection use [`set_replication_servers_security_groups_i_ds`](Self::set_replication_servers_security_groups_i_ds).
         ///
         /// <p>Replication Configuration template server Security Groups IDs.</p>
-        pub fn replication_servers_security_groups_i_ds(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
-            let mut v = self
-                .replication_servers_security_groups_i_ds
-                .unwrap_or_default();
-            v.push(input.into());
-            self.replication_servers_security_groups_i_ds = Some(v);
-            self
+        pub fn replication_servers_security_groups_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.replication_servers_security_groups_i_ds.unwrap_or_default();
+                            v.push(input.into());
+                            self.replication_servers_security_groups_i_ds = Some(v);
+                            self
         }
         /// <p>Replication Configuration template server Security Groups IDs.</p>
-        pub fn set_replication_servers_security_groups_i_ds(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.replication_servers_security_groups_i_ds = input;
-            self
+        pub fn set_replication_servers_security_groups_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.replication_servers_security_groups_i_ds = input; self
         }
         /// <p>Replication Configuration template server instance type.</p>
-        pub fn replication_server_instance_type(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn replication_server_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.replication_server_instance_type = Some(input.into());
             self
         }
         /// <p>Replication Configuration template server instance type.</p>
-        pub fn set_replication_server_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.replication_server_instance_type = input;
-            self
+        pub fn set_replication_server_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.replication_server_instance_type = input; self
         }
         /// <p>Replication Configuration template use Dedicated Replication Server.</p>
         pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
@@ -8094,46 +7285,26 @@ pub mod replication_configuration_template {
             self
         }
         /// <p>Replication Configuration template use Dedicated Replication Server.</p>
-        pub fn set_use_dedicated_replication_server(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.use_dedicated_replication_server = input;
-            self
+        pub fn set_use_dedicated_replication_server(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_dedicated_replication_server = input; self
         }
         /// <p>Replication Configuration template use default large Staging Disk type.</p>
-        pub fn default_large_staging_disk_type(
-            mut self,
-            input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
-        ) -> Self {
+        pub fn default_large_staging_disk_type(mut self, input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType) -> Self {
             self.default_large_staging_disk_type = Some(input);
             self
         }
         /// <p>Replication Configuration template use default large Staging Disk type.</p>
-        pub fn set_default_large_staging_disk_type(
-            mut self,
-            input: std::option::Option<
-                crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
-            >,
-        ) -> Self {
-            self.default_large_staging_disk_type = input;
-            self
+        pub fn set_default_large_staging_disk_type(mut self, input: std::option::Option<crate::model::ReplicationConfigurationDefaultLargeStagingDiskType>) -> Self {
+            self.default_large_staging_disk_type = input; self
         }
         /// <p>Replication Configuration template EBS encryption.</p>
-        pub fn ebs_encryption(
-            mut self,
-            input: crate::model::ReplicationConfigurationEbsEncryption,
-        ) -> Self {
+        pub fn ebs_encryption(mut self, input: crate::model::ReplicationConfigurationEbsEncryption) -> Self {
             self.ebs_encryption = Some(input);
             self
         }
         /// <p>Replication Configuration template EBS encryption.</p>
-        pub fn set_ebs_encryption(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>,
-        ) -> Self {
-            self.ebs_encryption = input;
-            self
+        pub fn set_ebs_encryption(mut self, input: std::option::Option<crate::model::ReplicationConfigurationEbsEncryption>) -> Self {
+            self.ebs_encryption = input; self
         }
         /// <p>Replication Configuration template EBS encryption key ARN.</p>
         pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8141,12 +7312,8 @@ pub mod replication_configuration_template {
             self
         }
         /// <p>Replication Configuration template EBS encryption key ARN.</p>
-        pub fn set_ebs_encryption_key_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ebs_encryption_key_arn = input;
-            self
+        pub fn set_ebs_encryption_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ebs_encryption_key_arn = input; self
         }
         /// <p>Replication Configuration template bandwidth throttling.</p>
         pub fn bandwidth_throttling(mut self, input: i64) -> Self {
@@ -8155,24 +7322,16 @@ pub mod replication_configuration_template {
         }
         /// <p>Replication Configuration template bandwidth throttling.</p>
         pub fn set_bandwidth_throttling(mut self, input: std::option::Option<i64>) -> Self {
-            self.bandwidth_throttling = input;
-            self
+            self.bandwidth_throttling = input; self
         }
         /// <p>Replication Configuration template data plane routing.</p>
-        pub fn data_plane_routing(
-            mut self,
-            input: crate::model::ReplicationConfigurationDataPlaneRouting,
-        ) -> Self {
+        pub fn data_plane_routing(mut self, input: crate::model::ReplicationConfigurationDataPlaneRouting) -> Self {
             self.data_plane_routing = Some(input);
             self
         }
         /// <p>Replication Configuration template data plane routing.</p>
-        pub fn set_data_plane_routing(
-            mut self,
-            input: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>,
-        ) -> Self {
-            self.data_plane_routing = input;
-            self
+        pub fn set_data_plane_routing(mut self, input: std::option::Option<crate::model::ReplicationConfigurationDataPlaneRouting>) -> Self {
+            self.data_plane_routing = input; self
         }
         /// <p>Replication Configuration template create Public IP.</p>
         pub fn create_public_ip(mut self, input: bool) -> Self {
@@ -8181,110 +7340,86 @@ pub mod replication_configuration_template {
         }
         /// <p>Replication Configuration template create Public IP.</p>
         pub fn set_create_public_ip(mut self, input: std::option::Option<bool>) -> Self {
-            self.create_public_ip = input;
-            self
+            self.create_public_ip = input; self
         }
         /// Adds a key-value pair to `staging_area_tags`.
         ///
         /// To override the contents of this collection use [`set_staging_area_tags`](Self::set_staging_area_tags).
         ///
         /// <p>Replication Configuration template Staging Area Tags.</p>
-        pub fn staging_area_tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn staging_area_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.staging_area_tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.staging_area_tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.staging_area_tags = Some(hash_map);
+                            self
         }
         /// <p>Replication Configuration template Staging Area Tags.</p>
-        pub fn set_staging_area_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.staging_area_tags = input;
-            self
+        pub fn set_staging_area_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.staging_area_tags = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Replication Configuration template Tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Replication Configuration template Tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ReplicationConfigurationTemplate`](crate::model::ReplicationConfigurationTemplate).
         pub fn build(self) -> crate::model::ReplicationConfigurationTemplate {
             crate::model::ReplicationConfigurationTemplate {
-                replication_configuration_template_id: self.replication_configuration_template_id,
-                arn: self.arn,
-                staging_area_subnet_id: self.staging_area_subnet_id,
-                associate_default_security_group: self.associate_default_security_group,
-                replication_servers_security_groups_i_ds: self
-                    .replication_servers_security_groups_i_ds,
-                replication_server_instance_type: self.replication_server_instance_type,
-                use_dedicated_replication_server: self.use_dedicated_replication_server,
-                default_large_staging_disk_type: self.default_large_staging_disk_type,
-                ebs_encryption: self.ebs_encryption,
-                ebs_encryption_key_arn: self.ebs_encryption_key_arn,
-                bandwidth_throttling: self.bandwidth_throttling.unwrap_or_default(),
-                data_plane_routing: self.data_plane_routing,
-                create_public_ip: self.create_public_ip,
-                staging_area_tags: self.staging_area_tags,
-                tags: self.tags,
+                replication_configuration_template_id: self.replication_configuration_template_id
+                ,
+                arn: self.arn
+                ,
+                staging_area_subnet_id: self.staging_area_subnet_id
+                ,
+                associate_default_security_group: self.associate_default_security_group
+                ,
+                replication_servers_security_groups_i_ds: self.replication_servers_security_groups_i_ds
+                ,
+                replication_server_instance_type: self.replication_server_instance_type
+                ,
+                use_dedicated_replication_server: self.use_dedicated_replication_server
+                ,
+                default_large_staging_disk_type: self.default_large_staging_disk_type
+                ,
+                ebs_encryption: self.ebs_encryption
+                ,
+                ebs_encryption_key_arn: self.ebs_encryption_key_arn
+                ,
+                bandwidth_throttling: self.bandwidth_throttling
+                    .unwrap_or_default()
+                ,
+                data_plane_routing: self.data_plane_routing
+                ,
+                create_public_ip: self.create_public_ip
+                ,
+                staging_area_tags: self.staging_area_tags
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field(
-                "replication_configuration_template_id",
-                &self.replication_configuration_template_id,
-            );
+            formatter.field("replication_configuration_template_id", &self.replication_configuration_template_id);
             formatter.field("arn", &self.arn);
             formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
-            formatter.field(
-                "associate_default_security_group",
-                &self.associate_default_security_group,
-            );
-            formatter.field(
-                "replication_servers_security_groups_i_ds",
-                &self.replication_servers_security_groups_i_ds,
-            );
-            formatter.field(
-                "replication_server_instance_type",
-                &self.replication_server_instance_type,
-            );
-            formatter.field(
-                "use_dedicated_replication_server",
-                &self.use_dedicated_replication_server,
-            );
-            formatter.field(
-                "default_large_staging_disk_type",
-                &self.default_large_staging_disk_type,
-            );
+            formatter.field("associate_default_security_group", &self.associate_default_security_group);
+            formatter.field("replication_servers_security_groups_i_ds", &self.replication_servers_security_groups_i_ds);
+            formatter.field("replication_server_instance_type", &self.replication_server_instance_type);
+            formatter.field("use_dedicated_replication_server", &self.use_dedicated_replication_server);
+            formatter.field("default_large_staging_disk_type", &self.default_large_staging_disk_type);
             formatter.field("ebs_encryption", &self.ebs_encryption);
             formatter.field("ebs_encryption_key_arn", &self.ebs_encryption_key_arn);
             formatter.field("bandwidth_throttling", &self.bandwidth_throttling);
@@ -8295,6 +7430,8 @@ pub mod replication_configuration_template {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ReplicationConfigurationTemplate {
     /// Creates a new builder-style object to manufacture [`ReplicationConfigurationTemplate`](crate::model::ReplicationConfigurationTemplate).
@@ -8306,7 +7443,7 @@ impl ReplicationConfigurationTemplate {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TemplateActionDocument {
+pub struct TemplateActionDocument  {
     /// <p>Template post migration custom action ID.</p>
     #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
@@ -8333,27 +7470,22 @@ pub struct TemplateActionDocument {
     pub must_succeed_for_cutover: std::option::Option<bool>,
     /// <p>Template post migration custom action parameters.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-        >,
-    >,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::SsmParameterStoreParameter>>>,
     /// <p>Operating system eligible for this template post migration custom action.</p>
     #[doc(hidden)]
     pub operating_system: std::option::Option<std::string::String>,
 }
 impl TemplateActionDocument {
     /// <p>Template post migration custom action ID.</p>
-    pub fn action_id(&self) -> std::option::Option<&str> {
+    pub fn action_id(&self) -> std::option::Option<& str> {
         self.action_id.as_deref()
     }
     /// <p>Template post migration custom action name.</p>
-    pub fn action_name(&self) -> std::option::Option<&str> {
+    pub fn action_name(&self) -> std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>Template post migration custom action document identifier.</p>
-    pub fn document_identifier(&self) -> std::option::Option<&str> {
+    pub fn document_identifier(&self) -> std::option::Option<& str> {
         self.document_identifier.as_deref()
     }
     /// <p>Template post migration custom action order.</p>
@@ -8361,7 +7493,7 @@ impl TemplateActionDocument {
         self.order
     }
     /// <p>Template post migration custom action document version.</p>
-    pub fn document_version(&self) -> std::option::Option<&str> {
+    pub fn document_version(&self) -> std::option::Option<& str> {
         self.document_version.as_deref()
     }
     /// <p>Template post migration custom action active status.</p>
@@ -8377,24 +7509,17 @@ impl TemplateActionDocument {
         self.must_succeed_for_cutover
     }
     /// <p>Template post migration custom action parameters.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-        >,
-    > {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::SsmParameterStoreParameter>>> {
         self.parameters.as_ref()
     }
     /// <p>Operating system eligible for this template post migration custom action.</p>
-    pub fn operating_system(&self) -> std::option::Option<&str> {
+    pub fn operating_system(&self) -> std::option::Option<& str> {
         self.operating_system.as_deref()
     }
 }
 /// See [`TemplateActionDocument`](crate::model::TemplateActionDocument).
 pub mod template_action_document {
-
+    
     /// A builder for [`TemplateActionDocument`](crate::model::TemplateActionDocument).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8406,12 +7531,7 @@ pub mod template_action_document {
         pub(crate) active: std::option::Option<bool>,
         pub(crate) timeout_seconds: std::option::Option<i32>,
         pub(crate) must_succeed_for_cutover: std::option::Option<bool>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-            >,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::SsmParameterStoreParameter>>>,
         pub(crate) operating_system: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -8422,8 +7542,7 @@ pub mod template_action_document {
         }
         /// <p>Template post migration custom action ID.</p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_id = input;
-            self
+            self.action_id = input; self
         }
         /// <p>Template post migration custom action name.</p>
         pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8432,8 +7551,7 @@ pub mod template_action_document {
         }
         /// <p>Template post migration custom action name.</p>
         pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_name = input;
-            self
+            self.action_name = input; self
         }
         /// <p>Template post migration custom action document identifier.</p>
         pub fn document_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8441,12 +7559,8 @@ pub mod template_action_document {
             self
         }
         /// <p>Template post migration custom action document identifier.</p>
-        pub fn set_document_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.document_identifier = input;
-            self
+        pub fn set_document_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document_identifier = input; self
         }
         /// <p>Template post migration custom action order.</p>
         pub fn order(mut self, input: i32) -> Self {
@@ -8455,8 +7569,7 @@ pub mod template_action_document {
         }
         /// <p>Template post migration custom action order.</p>
         pub fn set_order(mut self, input: std::option::Option<i32>) -> Self {
-            self.order = input;
-            self
+            self.order = input; self
         }
         /// <p>Template post migration custom action document version.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8464,12 +7577,8 @@ pub mod template_action_document {
             self
         }
         /// <p>Template post migration custom action document version.</p>
-        pub fn set_document_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.document_version = input;
-            self
+        pub fn set_document_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document_version = input; self
         }
         /// <p>Template post migration custom action active status.</p>
         pub fn active(mut self, input: bool) -> Self {
@@ -8478,8 +7587,7 @@ pub mod template_action_document {
         }
         /// <p>Template post migration custom action active status.</p>
         pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
-            self.active = input;
-            self
+            self.active = input; self
         }
         /// <p>Template post migration custom action timeout in seconds.</p>
         pub fn timeout_seconds(mut self, input: i32) -> Self {
@@ -8488,8 +7596,7 @@ pub mod template_action_document {
         }
         /// <p>Template post migration custom action timeout in seconds.</p>
         pub fn set_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.timeout_seconds = input;
-            self
+            self.timeout_seconds = input; self
         }
         /// <p>Template post migration custom action must succeed for cutover.</p>
         pub fn must_succeed_for_cutover(mut self, input: bool) -> Self {
@@ -8498,36 +7605,22 @@ pub mod template_action_document {
         }
         /// <p>Template post migration custom action must succeed for cutover.</p>
         pub fn set_must_succeed_for_cutover(mut self, input: std::option::Option<bool>) -> Self {
-            self.must_succeed_for_cutover = input;
-            self
+            self.must_succeed_for_cutover = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>Template post migration custom action parameters.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<crate::model::SsmParameterStoreParameter>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>Template post migration custom action parameters.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::vec::Vec<crate::model::SsmParameterStoreParameter>,
-                >,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::SsmParameterStoreParameter>>>) -> Self {
+            self.parameters = input; self
         }
         /// <p>Operating system eligible for this template post migration custom action.</p>
         pub fn operating_system(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8535,29 +7628,39 @@ pub mod template_action_document {
             self
         }
         /// <p>Operating system eligible for this template post migration custom action.</p>
-        pub fn set_operating_system(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.operating_system = input;
-            self
+        pub fn set_operating_system(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operating_system = input; self
         }
         /// Consumes the builder and constructs a [`TemplateActionDocument`](crate::model::TemplateActionDocument).
         pub fn build(self) -> crate::model::TemplateActionDocument {
             crate::model::TemplateActionDocument {
-                action_id: self.action_id,
-                action_name: self.action_name,
-                document_identifier: self.document_identifier,
-                order: self.order.unwrap_or_default(),
-                document_version: self.document_version,
-                active: self.active,
-                timeout_seconds: self.timeout_seconds.unwrap_or_default(),
-                must_succeed_for_cutover: self.must_succeed_for_cutover,
-                parameters: self.parameters,
-                operating_system: self.operating_system,
+                action_id: self.action_id
+                ,
+                action_name: self.action_name
+                ,
+                document_identifier: self.document_identifier
+                ,
+                order: self.order
+                    .unwrap_or_default()
+                ,
+                document_version: self.document_version
+                ,
+                active: self.active
+                ,
+                timeout_seconds: self.timeout_seconds
+                    .unwrap_or_default()
+                ,
+                must_succeed_for_cutover: self.must_succeed_for_cutover
+                ,
+                parameters: self.parameters
+                ,
+                operating_system: self.operating_system
+                ,
             }
         }
     }
+    
+    
 }
 impl TemplateActionDocument {
     /// Creates a new builder-style object to manufacture [`TemplateActionDocument`](crate::model::TemplateActionDocument).
@@ -8569,20 +7672,20 @@ impl TemplateActionDocument {
 /// <p>Template post migration custom action filters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TemplateActionsRequestFilters {
+pub struct TemplateActionsRequestFilters  {
     /// <p>Action IDs to filter template post migration custom actions by.</p>
     #[doc(hidden)]
     pub action_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TemplateActionsRequestFilters {
     /// <p>Action IDs to filter template post migration custom actions by.</p>
-    pub fn action_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn action_i_ds(&self) -> std::option::Option<& [std::string::String]> {
         self.action_i_ds.as_deref()
     }
 }
 /// See [`TemplateActionsRequestFilters`](crate::model::TemplateActionsRequestFilters).
 pub mod template_actions_request_filters {
-
+    
     /// A builder for [`TemplateActionsRequestFilters`](crate::model::TemplateActionsRequestFilters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8596,25 +7699,24 @@ pub mod template_actions_request_filters {
         /// <p>Action IDs to filter template post migration custom actions by.</p>
         pub fn action_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.action_i_ds.unwrap_or_default();
-            v.push(input.into());
-            self.action_i_ds = Some(v);
-            self
+                            v.push(input.into());
+                            self.action_i_ds = Some(v);
+                            self
         }
         /// <p>Action IDs to filter template post migration custom actions by.</p>
-        pub fn set_action_i_ds(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.action_i_ds = input;
-            self
+        pub fn set_action_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.action_i_ds = input; self
         }
         /// Consumes the builder and constructs a [`TemplateActionsRequestFilters`](crate::model::TemplateActionsRequestFilters).
         pub fn build(self) -> crate::model::TemplateActionsRequestFilters {
             crate::model::TemplateActionsRequestFilters {
-                action_i_ds: self.action_i_ds,
+                action_i_ds: self.action_i_ds
+                ,
             }
         }
     }
+    
+    
 }
 impl TemplateActionsRequestFilters {
     /// Creates a new builder-style object to manufacture [`TemplateActionsRequestFilters`](crate::model::TemplateActionsRequestFilters).
@@ -8626,7 +7728,7 @@ impl TemplateActionsRequestFilters {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LaunchConfigurationTemplate {
+pub struct LaunchConfigurationTemplate  {
     /// <p>ID of the Launch Configuration Template.</p>
     #[doc(hidden)]
     pub launch_configuration_template_id: std::option::Option<std::string::String>,
@@ -8644,8 +7746,7 @@ pub struct LaunchConfigurationTemplate {
     pub map_auto_tagging_mpe_id: std::option::Option<std::string::String>,
     /// <p>Tags of the Launch Configuration Template.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>EC2 launch template ID.</p>
     #[doc(hidden)]
     pub ec2_launch_template_id: std::option::Option<std::string::String>,
@@ -8654,8 +7755,7 @@ pub struct LaunchConfigurationTemplate {
     pub launch_disposition: std::option::Option<crate::model::LaunchDisposition>,
     /// <p>Target instance type right-sizing method.</p>
     #[doc(hidden)]
-    pub target_instance_type_right_sizing_method:
-        std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
+    pub target_instance_type_right_sizing_method: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
     /// <p>Copy private Ip.</p>
     #[doc(hidden)]
     pub copy_private_ip: std::option::Option<bool>,
@@ -8683,15 +7783,15 @@ pub struct LaunchConfigurationTemplate {
 }
 impl LaunchConfigurationTemplate {
     /// <p>ID of the Launch Configuration Template.</p>
-    pub fn launch_configuration_template_id(&self) -> std::option::Option<&str> {
+    pub fn launch_configuration_template_id(&self) -> std::option::Option<& str> {
         self.launch_configuration_template_id.as_deref()
     }
     /// <p>ARN of the Launch Configuration Template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Post Launch Actions of the Launch Configuration Template.</p>
-    pub fn post_launch_actions(&self) -> std::option::Option<&crate::model::PostLaunchActions> {
+    pub fn post_launch_actions(&self) -> std::option::Option<& crate::model::PostLaunchActions> {
         self.post_launch_actions.as_ref()
     }
     /// <p>Enable map auto tagging.</p>
@@ -8699,28 +7799,23 @@ impl LaunchConfigurationTemplate {
         self.enable_map_auto_tagging
     }
     /// <p>Launch configuration template map auto tagging MPE ID.</p>
-    pub fn map_auto_tagging_mpe_id(&self) -> std::option::Option<&str> {
+    pub fn map_auto_tagging_mpe_id(&self) -> std::option::Option<& str> {
         self.map_auto_tagging_mpe_id.as_deref()
     }
     /// <p>Tags of the Launch Configuration Template.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>EC2 launch template ID.</p>
-    pub fn ec2_launch_template_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_launch_template_id(&self) -> std::option::Option<& str> {
         self.ec2_launch_template_id.as_deref()
     }
     /// <p>Launch disposition.</p>
-    pub fn launch_disposition(&self) -> std::option::Option<&crate::model::LaunchDisposition> {
+    pub fn launch_disposition(&self) -> std::option::Option<& crate::model::LaunchDisposition> {
         self.launch_disposition.as_ref()
     }
     /// <p>Target instance type right-sizing method.</p>
-    pub fn target_instance_type_right_sizing_method(
-        &self,
-    ) -> std::option::Option<&crate::model::TargetInstanceTypeRightSizingMethod> {
+    pub fn target_instance_type_right_sizing_method(&self) -> std::option::Option<& crate::model::TargetInstanceTypeRightSizingMethod> {
         self.target_instance_type_right_sizing_method.as_ref()
     }
     /// <p>Copy private Ip.</p>
@@ -8736,11 +7831,11 @@ impl LaunchConfigurationTemplate {
         self.copy_tags
     }
     /// <p>Configure Licensing.</p>
-    pub fn licensing(&self) -> std::option::Option<&crate::model::Licensing> {
+    pub fn licensing(&self) -> std::option::Option<& crate::model::Licensing> {
         self.licensing.as_ref()
     }
     /// <p>Launch configuration template boot mode.</p>
-    pub fn boot_mode(&self) -> std::option::Option<&crate::model::BootMode> {
+    pub fn boot_mode(&self) -> std::option::Option<& crate::model::BootMode> {
         self.boot_mode.as_ref()
     }
     /// <p>Small volume maximum size.</p>
@@ -8748,21 +7843,18 @@ impl LaunchConfigurationTemplate {
         self.small_volume_max_size
     }
     /// <p>Small volume config.</p>
-    pub fn small_volume_conf(&self) -> std::option::Option<&crate::model::LaunchTemplateDiskConf> {
+    pub fn small_volume_conf(&self) -> std::option::Option<& crate::model::LaunchTemplateDiskConf> {
         self.small_volume_conf.as_ref()
     }
     /// <p>Large volume config.</p>
-    pub fn large_volume_conf(&self) -> std::option::Option<&crate::model::LaunchTemplateDiskConf> {
+    pub fn large_volume_conf(&self) -> std::option::Option<& crate::model::LaunchTemplateDiskConf> {
         self.large_volume_conf.as_ref()
     }
 }
-impl std::fmt::Debug for LaunchConfigurationTemplate {
+impl  std::fmt::Debug for LaunchConfigurationTemplate  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LaunchConfigurationTemplate");
-        formatter.field(
-            "launch_configuration_template_id",
-            &self.launch_configuration_template_id,
-        );
+        formatter.field("launch_configuration_template_id", &self.launch_configuration_template_id);
         formatter.field("arn", &self.arn);
         formatter.field("post_launch_actions", &self.post_launch_actions);
         formatter.field("enable_map_auto_tagging", &self.enable_map_auto_tagging);
@@ -8770,15 +7862,9 @@ impl std::fmt::Debug for LaunchConfigurationTemplate {
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("ec2_launch_template_id", &self.ec2_launch_template_id);
         formatter.field("launch_disposition", &self.launch_disposition);
-        formatter.field(
-            "target_instance_type_right_sizing_method",
-            &self.target_instance_type_right_sizing_method,
-        );
+        formatter.field("target_instance_type_right_sizing_method", &self.target_instance_type_right_sizing_method);
         formatter.field("copy_private_ip", &self.copy_private_ip);
-        formatter.field(
-            "associate_public_ip_address",
-            &self.associate_public_ip_address,
-        );
+        formatter.field("associate_public_ip_address", &self.associate_public_ip_address);
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("licensing", &self.licensing);
         formatter.field("boot_mode", &self.boot_mode);
@@ -8790,7 +7876,7 @@ impl std::fmt::Debug for LaunchConfigurationTemplate {
 }
 /// See [`LaunchConfigurationTemplate`](crate::model::LaunchConfigurationTemplate).
 pub mod launch_configuration_template {
-
+    
     /// A builder for [`LaunchConfigurationTemplate`](crate::model::LaunchConfigurationTemplate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -8799,13 +7885,10 @@ pub mod launch_configuration_template {
         pub(crate) post_launch_actions: std::option::Option<crate::model::PostLaunchActions>,
         pub(crate) enable_map_auto_tagging: std::option::Option<bool>,
         pub(crate) map_auto_tagging_mpe_id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) ec2_launch_template_id: std::option::Option<std::string::String>,
         pub(crate) launch_disposition: std::option::Option<crate::model::LaunchDisposition>,
-        pub(crate) target_instance_type_right_sizing_method:
-            std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
+        pub(crate) target_instance_type_right_sizing_method: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
         pub(crate) copy_private_ip: std::option::Option<bool>,
         pub(crate) associate_public_ip_address: std::option::Option<bool>,
         pub(crate) copy_tags: std::option::Option<bool>,
@@ -8817,20 +7900,13 @@ pub mod launch_configuration_template {
     }
     impl Builder {
         /// <p>ID of the Launch Configuration Template.</p>
-        pub fn launch_configuration_template_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn launch_configuration_template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_configuration_template_id = Some(input.into());
             self
         }
         /// <p>ID of the Launch Configuration Template.</p>
-        pub fn set_launch_configuration_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.launch_configuration_template_id = input;
-            self
+        pub fn set_launch_configuration_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.launch_configuration_template_id = input; self
         }
         /// <p>ARN of the Launch Configuration Template.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8839,8 +7915,7 @@ pub mod launch_configuration_template {
         }
         /// <p>ARN of the Launch Configuration Template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Post Launch Actions of the Launch Configuration Template.</p>
         pub fn post_launch_actions(mut self, input: crate::model::PostLaunchActions) -> Self {
@@ -8848,12 +7923,8 @@ pub mod launch_configuration_template {
             self
         }
         /// <p>Post Launch Actions of the Launch Configuration Template.</p>
-        pub fn set_post_launch_actions(
-            mut self,
-            input: std::option::Option<crate::model::PostLaunchActions>,
-        ) -> Self {
-            self.post_launch_actions = input;
-            self
+        pub fn set_post_launch_actions(mut self, input: std::option::Option<crate::model::PostLaunchActions>) -> Self {
+            self.post_launch_actions = input; self
         }
         /// <p>Enable map auto tagging.</p>
         pub fn enable_map_auto_tagging(mut self, input: bool) -> Self {
@@ -8862,8 +7933,7 @@ pub mod launch_configuration_template {
         }
         /// <p>Enable map auto tagging.</p>
         pub fn set_enable_map_auto_tagging(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_map_auto_tagging = input;
-            self
+            self.enable_map_auto_tagging = input; self
         }
         /// <p>Launch configuration template map auto tagging MPE ID.</p>
         pub fn map_auto_tagging_mpe_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8871,37 +7941,23 @@ pub mod launch_configuration_template {
             self
         }
         /// <p>Launch configuration template map auto tagging MPE ID.</p>
-        pub fn set_map_auto_tagging_mpe_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.map_auto_tagging_mpe_id = input;
-            self
+        pub fn set_map_auto_tagging_mpe_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.map_auto_tagging_mpe_id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags of the Launch Configuration Template.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags of the Launch Configuration Template.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>EC2 launch template ID.</p>
         pub fn ec2_launch_template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8909,12 +7965,8 @@ pub mod launch_configuration_template {
             self
         }
         /// <p>EC2 launch template ID.</p>
-        pub fn set_ec2_launch_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ec2_launch_template_id = input;
-            self
+        pub fn set_ec2_launch_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ec2_launch_template_id = input; self
         }
         /// <p>Launch disposition.</p>
         pub fn launch_disposition(mut self, input: crate::model::LaunchDisposition) -> Self {
@@ -8922,28 +7974,17 @@ pub mod launch_configuration_template {
             self
         }
         /// <p>Launch disposition.</p>
-        pub fn set_launch_disposition(
-            mut self,
-            input: std::option::Option<crate::model::LaunchDisposition>,
-        ) -> Self {
-            self.launch_disposition = input;
-            self
+        pub fn set_launch_disposition(mut self, input: std::option::Option<crate::model::LaunchDisposition>) -> Self {
+            self.launch_disposition = input; self
         }
         /// <p>Target instance type right-sizing method.</p>
-        pub fn target_instance_type_right_sizing_method(
-            mut self,
-            input: crate::model::TargetInstanceTypeRightSizingMethod,
-        ) -> Self {
+        pub fn target_instance_type_right_sizing_method(mut self, input: crate::model::TargetInstanceTypeRightSizingMethod) -> Self {
             self.target_instance_type_right_sizing_method = Some(input);
             self
         }
         /// <p>Target instance type right-sizing method.</p>
-        pub fn set_target_instance_type_right_sizing_method(
-            mut self,
-            input: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>,
-        ) -> Self {
-            self.target_instance_type_right_sizing_method = input;
-            self
+        pub fn set_target_instance_type_right_sizing_method(mut self, input: std::option::Option<crate::model::TargetInstanceTypeRightSizingMethod>) -> Self {
+            self.target_instance_type_right_sizing_method = input; self
         }
         /// <p>Copy private Ip.</p>
         pub fn copy_private_ip(mut self, input: bool) -> Self {
@@ -8952,8 +7993,7 @@ pub mod launch_configuration_template {
         }
         /// <p>Copy private Ip.</p>
         pub fn set_copy_private_ip(mut self, input: std::option::Option<bool>) -> Self {
-            self.copy_private_ip = input;
-            self
+            self.copy_private_ip = input; self
         }
         /// <p>Associate public Ip address.</p>
         pub fn associate_public_ip_address(mut self, input: bool) -> Self {
@@ -8962,8 +8002,7 @@ pub mod launch_configuration_template {
         }
         /// <p>Associate public Ip address.</p>
         pub fn set_associate_public_ip_address(mut self, input: std::option::Option<bool>) -> Self {
-            self.associate_public_ip_address = input;
-            self
+            self.associate_public_ip_address = input; self
         }
         /// <p>Copy tags.</p>
         pub fn copy_tags(mut self, input: bool) -> Self {
@@ -8972,8 +8011,7 @@ pub mod launch_configuration_template {
         }
         /// <p>Copy tags.</p>
         pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
-            self.copy_tags = input;
-            self
+            self.copy_tags = input; self
         }
         /// <p>Configure Licensing.</p>
         pub fn licensing(mut self, input: crate::model::Licensing) -> Self {
@@ -8981,12 +8019,8 @@ pub mod launch_configuration_template {
             self
         }
         /// <p>Configure Licensing.</p>
-        pub fn set_licensing(
-            mut self,
-            input: std::option::Option<crate::model::Licensing>,
-        ) -> Self {
-            self.licensing = input;
-            self
+        pub fn set_licensing(mut self, input: std::option::Option<crate::model::Licensing>) -> Self {
+            self.licensing = input; self
         }
         /// <p>Launch configuration template boot mode.</p>
         pub fn boot_mode(mut self, input: crate::model::BootMode) -> Self {
@@ -8995,8 +8029,7 @@ pub mod launch_configuration_template {
         }
         /// <p>Launch configuration template boot mode.</p>
         pub fn set_boot_mode(mut self, input: std::option::Option<crate::model::BootMode>) -> Self {
-            self.boot_mode = input;
-            self
+            self.boot_mode = input; self
         }
         /// <p>Small volume maximum size.</p>
         pub fn small_volume_max_size(mut self, input: i64) -> Self {
@@ -9005,8 +8038,7 @@ pub mod launch_configuration_template {
         }
         /// <p>Small volume maximum size.</p>
         pub fn set_small_volume_max_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.small_volume_max_size = input;
-            self
+            self.small_volume_max_size = input; self
         }
         /// <p>Small volume config.</p>
         pub fn small_volume_conf(mut self, input: crate::model::LaunchTemplateDiskConf) -> Self {
@@ -9014,12 +8046,8 @@ pub mod launch_configuration_template {
             self
         }
         /// <p>Small volume config.</p>
-        pub fn set_small_volume_conf(
-            mut self,
-            input: std::option::Option<crate::model::LaunchTemplateDiskConf>,
-        ) -> Self {
-            self.small_volume_conf = input;
-            self
+        pub fn set_small_volume_conf(mut self, input: std::option::Option<crate::model::LaunchTemplateDiskConf>) -> Self {
+            self.small_volume_conf = input; self
         }
         /// <p>Large volume config.</p>
         pub fn large_volume_conf(mut self, input: crate::model::LaunchTemplateDiskConf) -> Self {
@@ -9027,44 +8055,54 @@ pub mod launch_configuration_template {
             self
         }
         /// <p>Large volume config.</p>
-        pub fn set_large_volume_conf(
-            mut self,
-            input: std::option::Option<crate::model::LaunchTemplateDiskConf>,
-        ) -> Self {
-            self.large_volume_conf = input;
-            self
+        pub fn set_large_volume_conf(mut self, input: std::option::Option<crate::model::LaunchTemplateDiskConf>) -> Self {
+            self.large_volume_conf = input; self
         }
         /// Consumes the builder and constructs a [`LaunchConfigurationTemplate`](crate::model::LaunchConfigurationTemplate).
         pub fn build(self) -> crate::model::LaunchConfigurationTemplate {
             crate::model::LaunchConfigurationTemplate {
-                launch_configuration_template_id: self.launch_configuration_template_id,
-                arn: self.arn,
-                post_launch_actions: self.post_launch_actions,
-                enable_map_auto_tagging: self.enable_map_auto_tagging,
-                map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id,
-                tags: self.tags,
-                ec2_launch_template_id: self.ec2_launch_template_id,
-                launch_disposition: self.launch_disposition,
-                target_instance_type_right_sizing_method: self
-                    .target_instance_type_right_sizing_method,
-                copy_private_ip: self.copy_private_ip,
-                associate_public_ip_address: self.associate_public_ip_address,
-                copy_tags: self.copy_tags,
-                licensing: self.licensing,
-                boot_mode: self.boot_mode,
-                small_volume_max_size: self.small_volume_max_size.unwrap_or_default(),
-                small_volume_conf: self.small_volume_conf,
-                large_volume_conf: self.large_volume_conf,
+                launch_configuration_template_id: self.launch_configuration_template_id
+                ,
+                arn: self.arn
+                ,
+                post_launch_actions: self.post_launch_actions
+                ,
+                enable_map_auto_tagging: self.enable_map_auto_tagging
+                ,
+                map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id
+                ,
+                tags: self.tags
+                ,
+                ec2_launch_template_id: self.ec2_launch_template_id
+                ,
+                launch_disposition: self.launch_disposition
+                ,
+                target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method
+                ,
+                copy_private_ip: self.copy_private_ip
+                ,
+                associate_public_ip_address: self.associate_public_ip_address
+                ,
+                copy_tags: self.copy_tags
+                ,
+                licensing: self.licensing
+                ,
+                boot_mode: self.boot_mode
+                ,
+                small_volume_max_size: self.small_volume_max_size
+                    .unwrap_or_default()
+                ,
+                small_volume_conf: self.small_volume_conf
+                ,
+                large_volume_conf: self.large_volume_conf
+                ,
             }
         }
     }
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
-            formatter.field(
-                "launch_configuration_template_id",
-                &self.launch_configuration_template_id,
-            );
+            formatter.field("launch_configuration_template_id", &self.launch_configuration_template_id);
             formatter.field("arn", &self.arn);
             formatter.field("post_launch_actions", &self.post_launch_actions);
             formatter.field("enable_map_auto_tagging", &self.enable_map_auto_tagging);
@@ -9072,15 +8110,9 @@ pub mod launch_configuration_template {
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
             formatter.field("ec2_launch_template_id", &self.ec2_launch_template_id);
             formatter.field("launch_disposition", &self.launch_disposition);
-            formatter.field(
-                "target_instance_type_right_sizing_method",
-                &self.target_instance_type_right_sizing_method,
-            );
+            formatter.field("target_instance_type_right_sizing_method", &self.target_instance_type_right_sizing_method);
             formatter.field("copy_private_ip", &self.copy_private_ip);
-            formatter.field(
-                "associate_public_ip_address",
-                &self.associate_public_ip_address,
-            );
+            formatter.field("associate_public_ip_address", &self.associate_public_ip_address);
             formatter.field("copy_tags", &self.copy_tags);
             formatter.field("licensing", &self.licensing);
             formatter.field("boot_mode", &self.boot_mode);
@@ -9090,6 +8122,8 @@ pub mod launch_configuration_template {
             formatter.finish()
         }
     }
+    
+    
 }
 impl LaunchConfigurationTemplate {
     /// Creates a new builder-style object to manufacture [`LaunchConfigurationTemplate`](crate::model::LaunchConfigurationTemplate).
@@ -9101,7 +8135,7 @@ impl LaunchConfigurationTemplate {
 /// <p>Launch template disk configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LaunchTemplateDiskConf {
+pub struct LaunchTemplateDiskConf  {
     /// <p>Launch template disk volume type configuration.</p>
     #[doc(hidden)]
     pub volume_type: std::option::Option<crate::model::VolumeType>,
@@ -9114,7 +8148,7 @@ pub struct LaunchTemplateDiskConf {
 }
 impl LaunchTemplateDiskConf {
     /// <p>Launch template disk volume type configuration.</p>
-    pub fn volume_type(&self) -> std::option::Option<&crate::model::VolumeType> {
+    pub fn volume_type(&self) -> std::option::Option<& crate::model::VolumeType> {
         self.volume_type.as_ref()
     }
     /// <p>Launch template disk iops configuration.</p>
@@ -9128,7 +8162,7 @@ impl LaunchTemplateDiskConf {
 }
 /// See [`LaunchTemplateDiskConf`](crate::model::LaunchTemplateDiskConf).
 pub mod launch_template_disk_conf {
-
+    
     /// A builder for [`LaunchTemplateDiskConf`](crate::model::LaunchTemplateDiskConf).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9143,12 +8177,8 @@ pub mod launch_template_disk_conf {
             self
         }
         /// <p>Launch template disk volume type configuration.</p>
-        pub fn set_volume_type(
-            mut self,
-            input: std::option::Option<crate::model::VolumeType>,
-        ) -> Self {
-            self.volume_type = input;
-            self
+        pub fn set_volume_type(mut self, input: std::option::Option<crate::model::VolumeType>) -> Self {
+            self.volume_type = input; self
         }
         /// <p>Launch template disk iops configuration.</p>
         pub fn iops(mut self, input: i64) -> Self {
@@ -9157,8 +8187,7 @@ pub mod launch_template_disk_conf {
         }
         /// <p>Launch template disk iops configuration.</p>
         pub fn set_iops(mut self, input: std::option::Option<i64>) -> Self {
-            self.iops = input;
-            self
+            self.iops = input; self
         }
         /// <p>Launch template disk throughput configuration.</p>
         pub fn throughput(mut self, input: i64) -> Self {
@@ -9167,18 +8196,24 @@ pub mod launch_template_disk_conf {
         }
         /// <p>Launch template disk throughput configuration.</p>
         pub fn set_throughput(mut self, input: std::option::Option<i64>) -> Self {
-            self.throughput = input;
-            self
+            self.throughput = input; self
         }
         /// Consumes the builder and constructs a [`LaunchTemplateDiskConf`](crate::model::LaunchTemplateDiskConf).
         pub fn build(self) -> crate::model::LaunchTemplateDiskConf {
             crate::model::LaunchTemplateDiskConf {
-                volume_type: self.volume_type,
-                iops: self.iops.unwrap_or_default(),
-                throughput: self.throughput.unwrap_or_default(),
+                volume_type: self.volume_type
+                ,
+                iops: self.iops
+                    .unwrap_or_default()
+                ,
+                throughput: self.throughput
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl LaunchTemplateDiskConf {
     /// Creates a new builder-style object to manufacture [`LaunchTemplateDiskConf`](crate::model::LaunchTemplateDiskConf).
@@ -9193,9 +8228,9 @@ impl LaunchTemplateDiskConf {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let volumetype = unimplemented!();
 /// match volumetype {
@@ -9222,22 +8257,14 @@ impl LaunchTemplateDiskConf {
 /// Specifically, when `volumetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VolumeType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VolumeType {
     #[allow(missing_docs)] // documentation missing in model
     Gp2,
@@ -9254,7 +8281,7 @@ pub enum VolumeType {
     #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VolumeType {
     fn from(s: &str) -> Self {
@@ -9266,17 +8293,17 @@ impl std::convert::From<&str> for VolumeType {
             "sc1" => VolumeType::Sc1,
             "st1" => VolumeType::St1,
             "standard" => VolumeType::Standard,
-            other => VolumeType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => VolumeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VolumeType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VolumeType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VolumeType::from(s))
+                }
+            }
 impl VolumeType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9288,12 +8315,14 @@ impl VolumeType {
             VolumeType::Sc1 => "sc1",
             VolumeType::St1 => "st1",
             VolumeType::Standard => "standard",
-            VolumeType::Unknown(value) => value.as_str(),
+            VolumeType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["gp2", "gp3", "io1", "io2", "sc1", "st1", "standard"]
+        &[
+            "gp2", "gp3", "io1", "io2", "sc1", "st1", "standard"
+        ]
     }
 }
 impl AsRef<str> for VolumeType {
@@ -9305,7 +8334,7 @@ impl AsRef<str> for VolumeType {
 /// <p>Job log.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobLog {
+pub struct JobLog  {
     /// <p>Job log event date and time.</p>
     #[doc(hidden)]
     pub log_date_time: std::option::Option<std::string::String>,
@@ -9318,21 +8347,21 @@ pub struct JobLog {
 }
 impl JobLog {
     /// <p>Job log event date and time.</p>
-    pub fn log_date_time(&self) -> std::option::Option<&str> {
+    pub fn log_date_time(&self) -> std::option::Option<& str> {
         self.log_date_time.as_deref()
     }
     /// <p>Job log event.</p>
-    pub fn event(&self) -> std::option::Option<&crate::model::JobLogEvent> {
+    pub fn event(&self) -> std::option::Option<& crate::model::JobLogEvent> {
         self.event.as_ref()
     }
     /// <p>Job event data</p>
-    pub fn event_data(&self) -> std::option::Option<&crate::model::JobLogEventData> {
+    pub fn event_data(&self) -> std::option::Option<& crate::model::JobLogEventData> {
         self.event_data.as_ref()
     }
 }
 /// See [`JobLog`](crate::model::JobLog).
 pub mod job_log {
-
+    
     /// A builder for [`JobLog`](crate::model::JobLog).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9347,12 +8376,8 @@ pub mod job_log {
             self
         }
         /// <p>Job log event date and time.</p>
-        pub fn set_log_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_date_time = input;
-            self
+        pub fn set_log_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_date_time = input; self
         }
         /// <p>Job log event.</p>
         pub fn event(mut self, input: crate::model::JobLogEvent) -> Self {
@@ -9361,8 +8386,7 @@ pub mod job_log {
         }
         /// <p>Job log event.</p>
         pub fn set_event(mut self, input: std::option::Option<crate::model::JobLogEvent>) -> Self {
-            self.event = input;
-            self
+            self.event = input; self
         }
         /// <p>Job event data</p>
         pub fn event_data(mut self, input: crate::model::JobLogEventData) -> Self {
@@ -9370,22 +8394,23 @@ pub mod job_log {
             self
         }
         /// <p>Job event data</p>
-        pub fn set_event_data(
-            mut self,
-            input: std::option::Option<crate::model::JobLogEventData>,
-        ) -> Self {
-            self.event_data = input;
-            self
+        pub fn set_event_data(mut self, input: std::option::Option<crate::model::JobLogEventData>) -> Self {
+            self.event_data = input; self
         }
         /// Consumes the builder and constructs a [`JobLog`](crate::model::JobLog).
         pub fn build(self) -> crate::model::JobLog {
             crate::model::JobLog {
-                log_date_time: self.log_date_time,
-                event: self.event,
-                event_data: self.event_data,
+                log_date_time: self.log_date_time
+                ,
+                event: self.event
+                ,
+                event_data: self.event_data
+                ,
             }
         }
     }
+    
+    
 }
 impl JobLog {
     /// Creates a new builder-style object to manufacture [`JobLog`](crate::model::JobLog).
@@ -9397,7 +8422,7 @@ impl JobLog {
 /// <p>Job log data</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobLogEventData {
+pub struct JobLogEventData  {
     /// <p>Job Event Source Server ID.</p>
     #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
@@ -9413,25 +8438,25 @@ pub struct JobLogEventData {
 }
 impl JobLogEventData {
     /// <p>Job Event Source Server ID.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
+    pub fn source_server_id(&self) -> std::option::Option<& str> {
         self.source_server_id.as_deref()
     }
     /// <p>Job Event conversion Server ID.</p>
-    pub fn conversion_server_id(&self) -> std::option::Option<&str> {
+    pub fn conversion_server_id(&self) -> std::option::Option<& str> {
         self.conversion_server_id.as_deref()
     }
     /// <p>Job Event Target instance ID.</p>
-    pub fn target_instance_id(&self) -> std::option::Option<&str> {
+    pub fn target_instance_id(&self) -> std::option::Option<& str> {
         self.target_instance_id.as_deref()
     }
     /// <p>Job error.</p>
-    pub fn raw_error(&self) -> std::option::Option<&str> {
+    pub fn raw_error(&self) -> std::option::Option<& str> {
         self.raw_error.as_deref()
     }
 }
 /// See [`JobLogEventData`](crate::model::JobLogEventData).
 pub mod job_log_event_data {
-
+    
     /// A builder for [`JobLogEventData`](crate::model::JobLogEventData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9447,12 +8472,8 @@ pub mod job_log_event_data {
             self
         }
         /// <p>Job Event Source Server ID.</p>
-        pub fn set_source_server_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_server_id = input;
-            self
+        pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_server_id = input; self
         }
         /// <p>Job Event conversion Server ID.</p>
         pub fn conversion_server_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9460,12 +8481,8 @@ pub mod job_log_event_data {
             self
         }
         /// <p>Job Event conversion Server ID.</p>
-        pub fn set_conversion_server_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.conversion_server_id = input;
-            self
+        pub fn set_conversion_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.conversion_server_id = input; self
         }
         /// <p>Job Event Target instance ID.</p>
         pub fn target_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9473,12 +8490,8 @@ pub mod job_log_event_data {
             self
         }
         /// <p>Job Event Target instance ID.</p>
-        pub fn set_target_instance_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_instance_id = input;
-            self
+        pub fn set_target_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_instance_id = input; self
         }
         /// <p>Job error.</p>
         pub fn raw_error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9487,19 +8500,24 @@ pub mod job_log_event_data {
         }
         /// <p>Job error.</p>
         pub fn set_raw_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.raw_error = input;
-            self
+            self.raw_error = input; self
         }
         /// Consumes the builder and constructs a [`JobLogEventData`](crate::model::JobLogEventData).
         pub fn build(self) -> crate::model::JobLogEventData {
             crate::model::JobLogEventData {
-                source_server_id: self.source_server_id,
-                conversion_server_id: self.conversion_server_id,
-                target_instance_id: self.target_instance_id,
-                raw_error: self.raw_error,
+                source_server_id: self.source_server_id
+                ,
+                conversion_server_id: self.conversion_server_id
+                ,
+                target_instance_id: self.target_instance_id
+                ,
+                raw_error: self.raw_error
+                ,
             }
         }
     }
+    
+    
 }
 impl JobLogEventData {
     /// Creates a new builder-style object to manufacture [`JobLogEventData`](crate::model::JobLogEventData).
@@ -9514,9 +8532,9 @@ impl JobLogEventData {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let joblogevent = unimplemented!();
 /// match joblogevent {
@@ -9552,22 +8570,14 @@ impl JobLogEventData {
 /// Specifically, when `joblogevent` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobLogEvent::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobLogEvent {
     #[allow(missing_docs)] // documentation missing in model
     CleanupEnd,
@@ -9602,7 +8612,7 @@ pub enum JobLogEvent {
     #[allow(missing_docs)] // documentation missing in model
     UsingPreviousSnapshot,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobLogEvent {
     fn from(s: &str) -> Self {
@@ -9623,17 +8633,17 @@ impl std::convert::From<&str> for JobLogEvent {
             "SNAPSHOT_FAIL" => JobLogEvent::SnapshotFail,
             "SNAPSHOT_START" => JobLogEvent::SnapshotStart,
             "USING_PREVIOUS_SNAPSHOT" => JobLogEvent::UsingPreviousSnapshot,
-            other => JobLogEvent::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => JobLogEvent::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JobLogEvent {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobLogEvent::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobLogEvent::from(s))
+                }
+            }
 impl JobLogEvent {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9654,28 +8664,13 @@ impl JobLogEvent {
             JobLogEvent::SnapshotFail => "SNAPSHOT_FAIL",
             JobLogEvent::SnapshotStart => "SNAPSHOT_START",
             JobLogEvent::UsingPreviousSnapshot => "USING_PREVIOUS_SNAPSHOT",
-            JobLogEvent::Unknown(value) => value.as_str(),
+            JobLogEvent::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CLEANUP_END",
-            "CLEANUP_FAIL",
-            "CLEANUP_START",
-            "CONVERSION_END",
-            "CONVERSION_FAIL",
-            "CONVERSION_START",
-            "JOB_CANCEL",
-            "JOB_END",
-            "JOB_START",
-            "LAUNCH_FAILED",
-            "LAUNCH_START",
-            "SERVER_SKIPPED",
-            "SNAPSHOT_END",
-            "SNAPSHOT_FAIL",
-            "SNAPSHOT_START",
-            "USING_PREVIOUS_SNAPSHOT",
+            "CLEANUP_END", "CLEANUP_FAIL", "CLEANUP_START", "CONVERSION_END", "CONVERSION_FAIL", "CONVERSION_START", "JOB_CANCEL", "JOB_END", "JOB_START", "LAUNCH_FAILED", "LAUNCH_START", "SERVER_SKIPPED", "SNAPSHOT_END", "SNAPSHOT_FAIL", "SNAPSHOT_START", "USING_PREVIOUS_SNAPSHOT"
         ]
     }
 }
@@ -9688,7 +8683,7 @@ impl AsRef<str> for JobLogEvent {
 /// <p>Request to describe Job log filters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeJobsRequestFilters {
+pub struct DescribeJobsRequestFilters  {
     /// <p>Request to describe Job log filters by job ID.</p>
     #[doc(hidden)]
     pub job_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9701,21 +8696,21 @@ pub struct DescribeJobsRequestFilters {
 }
 impl DescribeJobsRequestFilters {
     /// <p>Request to describe Job log filters by job ID.</p>
-    pub fn job_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn job_i_ds(&self) -> std::option::Option<& [std::string::String]> {
         self.job_i_ds.as_deref()
     }
     /// <p>Request to describe Job log filters by date.</p>
-    pub fn from_date(&self) -> std::option::Option<&str> {
+    pub fn from_date(&self) -> std::option::Option<& str> {
         self.from_date.as_deref()
     }
     /// <p>Request to describe job log items by last date.</p>
-    pub fn to_date(&self) -> std::option::Option<&str> {
+    pub fn to_date(&self) -> std::option::Option<& str> {
         self.to_date.as_deref()
     }
 }
 /// See [`DescribeJobsRequestFilters`](crate::model::DescribeJobsRequestFilters).
 pub mod describe_jobs_request_filters {
-
+    
     /// A builder for [`DescribeJobsRequestFilters`](crate::model::DescribeJobsRequestFilters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9731,17 +8726,13 @@ pub mod describe_jobs_request_filters {
         /// <p>Request to describe Job log filters by job ID.</p>
         pub fn job_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.job_i_ds.unwrap_or_default();
-            v.push(input.into());
-            self.job_i_ds = Some(v);
-            self
+                            v.push(input.into());
+                            self.job_i_ds = Some(v);
+                            self
         }
         /// <p>Request to describe Job log filters by job ID.</p>
-        pub fn set_job_i_ds(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.job_i_ds = input;
-            self
+        pub fn set_job_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.job_i_ds = input; self
         }
         /// <p>Request to describe Job log filters by date.</p>
         pub fn from_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9750,8 +8741,7 @@ pub mod describe_jobs_request_filters {
         }
         /// <p>Request to describe Job log filters by date.</p>
         pub fn set_from_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.from_date = input;
-            self
+            self.from_date = input; self
         }
         /// <p>Request to describe job log items by last date.</p>
         pub fn to_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9760,18 +8750,22 @@ pub mod describe_jobs_request_filters {
         }
         /// <p>Request to describe job log items by last date.</p>
         pub fn set_to_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.to_date = input;
-            self
+            self.to_date = input; self
         }
         /// Consumes the builder and constructs a [`DescribeJobsRequestFilters`](crate::model::DescribeJobsRequestFilters).
         pub fn build(self) -> crate::model::DescribeJobsRequestFilters {
             crate::model::DescribeJobsRequestFilters {
-                job_i_ds: self.job_i_ds,
-                from_date: self.from_date,
-                to_date: self.to_date,
+                job_i_ds: self.job_i_ds
+                ,
+                from_date: self.from_date
+                ,
+                to_date: self.to_date
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeJobsRequestFilters {
     /// Creates a new builder-style object to manufacture [`DescribeJobsRequestFilters`](crate::model::DescribeJobsRequestFilters).
@@ -9783,7 +8777,7 @@ impl DescribeJobsRequestFilters {
 /// <p>Application aggregated status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationAggregatedStatus {
+pub struct ApplicationAggregatedStatus  {
     /// <p>Application aggregated status last update dateTime.</p>
     #[doc(hidden)]
     pub last_update_date_time: std::option::Option<std::string::String>,
@@ -9799,15 +8793,15 @@ pub struct ApplicationAggregatedStatus {
 }
 impl ApplicationAggregatedStatus {
     /// <p>Application aggregated status last update dateTime.</p>
-    pub fn last_update_date_time(&self) -> std::option::Option<&str> {
+    pub fn last_update_date_time(&self) -> std::option::Option<& str> {
         self.last_update_date_time.as_deref()
     }
     /// <p>Application aggregated status health status.</p>
-    pub fn health_status(&self) -> std::option::Option<&crate::model::ApplicationHealthStatus> {
+    pub fn health_status(&self) -> std::option::Option<& crate::model::ApplicationHealthStatus> {
         self.health_status.as_ref()
     }
     /// <p>Application aggregated status progress status.</p>
-    pub fn progress_status(&self) -> std::option::Option<&crate::model::ApplicationProgressStatus> {
+    pub fn progress_status(&self) -> std::option::Option<& crate::model::ApplicationProgressStatus> {
         self.progress_status.as_ref()
     }
     /// <p>Application aggregated status total source servers amount.</p>
@@ -9817,7 +8811,7 @@ impl ApplicationAggregatedStatus {
 }
 /// See [`ApplicationAggregatedStatus`](crate::model::ApplicationAggregatedStatus).
 pub mod application_aggregated_status {
-
+    
     /// A builder for [`ApplicationAggregatedStatus`](crate::model::ApplicationAggregatedStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9833,12 +8827,8 @@ pub mod application_aggregated_status {
             self
         }
         /// <p>Application aggregated status last update dateTime.</p>
-        pub fn set_last_update_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_update_date_time = input;
-            self
+        pub fn set_last_update_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_update_date_time = input; self
         }
         /// <p>Application aggregated status health status.</p>
         pub fn health_status(mut self, input: crate::model::ApplicationHealthStatus) -> Self {
@@ -9846,12 +8836,8 @@ pub mod application_aggregated_status {
             self
         }
         /// <p>Application aggregated status health status.</p>
-        pub fn set_health_status(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationHealthStatus>,
-        ) -> Self {
-            self.health_status = input;
-            self
+        pub fn set_health_status(mut self, input: std::option::Option<crate::model::ApplicationHealthStatus>) -> Self {
+            self.health_status = input; self
         }
         /// <p>Application aggregated status progress status.</p>
         pub fn progress_status(mut self, input: crate::model::ApplicationProgressStatus) -> Self {
@@ -9859,12 +8845,8 @@ pub mod application_aggregated_status {
             self
         }
         /// <p>Application aggregated status progress status.</p>
-        pub fn set_progress_status(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationProgressStatus>,
-        ) -> Self {
-            self.progress_status = input;
-            self
+        pub fn set_progress_status(mut self, input: std::option::Option<crate::model::ApplicationProgressStatus>) -> Self {
+            self.progress_status = input; self
         }
         /// <p>Application aggregated status total source servers amount.</p>
         pub fn total_source_servers(mut self, input: i64) -> Self {
@@ -9873,19 +8855,25 @@ pub mod application_aggregated_status {
         }
         /// <p>Application aggregated status total source servers amount.</p>
         pub fn set_total_source_servers(mut self, input: std::option::Option<i64>) -> Self {
-            self.total_source_servers = input;
-            self
+            self.total_source_servers = input; self
         }
         /// Consumes the builder and constructs a [`ApplicationAggregatedStatus`](crate::model::ApplicationAggregatedStatus).
         pub fn build(self) -> crate::model::ApplicationAggregatedStatus {
             crate::model::ApplicationAggregatedStatus {
-                last_update_date_time: self.last_update_date_time,
-                health_status: self.health_status,
-                progress_status: self.progress_status,
-                total_source_servers: self.total_source_servers.unwrap_or_default(),
+                last_update_date_time: self.last_update_date_time
+                ,
+                health_status: self.health_status
+                ,
+                progress_status: self.progress_status
+                ,
+                total_source_servers: self.total_source_servers
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ApplicationAggregatedStatus {
     /// Creates a new builder-style object to manufacture [`ApplicationAggregatedStatus`](crate::model::ApplicationAggregatedStatus).
@@ -9900,9 +8888,9 @@ impl ApplicationAggregatedStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let applicationprogressstatus = unimplemented!();
 /// match applicationprogressstatus {
@@ -9925,22 +8913,14 @@ impl ApplicationAggregatedStatus {
 /// Specifically, when `applicationprogressstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ApplicationProgressStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ApplicationProgressStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -9949,7 +8929,7 @@ pub enum ApplicationProgressStatus {
     #[allow(missing_docs)] // documentation missing in model
     NotStarted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ApplicationProgressStatus {
     fn from(s: &str) -> Self {
@@ -9957,19 +8937,17 @@ impl std::convert::From<&str> for ApplicationProgressStatus {
             "COMPLETED" => ApplicationProgressStatus::Completed,
             "IN_PROGRESS" => ApplicationProgressStatus::InProgress,
             "NOT_STARTED" => ApplicationProgressStatus::NotStarted,
-            other => ApplicationProgressStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ApplicationProgressStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ApplicationProgressStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ApplicationProgressStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ApplicationProgressStatus::from(s))
+                }
+            }
 impl ApplicationProgressStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9977,12 +8955,14 @@ impl ApplicationProgressStatus {
             ApplicationProgressStatus::Completed => "COMPLETED",
             ApplicationProgressStatus::InProgress => "IN_PROGRESS",
             ApplicationProgressStatus::NotStarted => "NOT_STARTED",
-            ApplicationProgressStatus::Unknown(value) => value.as_str(),
+            ApplicationProgressStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "IN_PROGRESS", "NOT_STARTED"]
+        &[
+            "COMPLETED", "IN_PROGRESS", "NOT_STARTED"
+        ]
     }
 }
 impl AsRef<str> for ApplicationProgressStatus {
@@ -9997,9 +8977,9 @@ impl AsRef<str> for ApplicationProgressStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let applicationhealthstatus = unimplemented!();
 /// match applicationhealthstatus {
@@ -10022,22 +9002,14 @@ impl AsRef<str> for ApplicationProgressStatus {
 /// Specifically, when `applicationhealthstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ApplicationHealthStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ApplicationHealthStatus {
     #[allow(missing_docs)] // documentation missing in model
     Error,
@@ -10046,7 +9018,7 @@ pub enum ApplicationHealthStatus {
     #[allow(missing_docs)] // documentation missing in model
     Lagging,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ApplicationHealthStatus {
     fn from(s: &str) -> Self {
@@ -10054,19 +9026,17 @@ impl std::convert::From<&str> for ApplicationHealthStatus {
             "ERROR" => ApplicationHealthStatus::Error,
             "HEALTHY" => ApplicationHealthStatus::Healthy,
             "LAGGING" => ApplicationHealthStatus::Lagging,
-            other => ApplicationHealthStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ApplicationHealthStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ApplicationHealthStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ApplicationHealthStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ApplicationHealthStatus::from(s))
+                }
+            }
 impl ApplicationHealthStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -10074,12 +9044,14 @@ impl ApplicationHealthStatus {
             ApplicationHealthStatus::Error => "ERROR",
             ApplicationHealthStatus::Healthy => "HEALTHY",
             ApplicationHealthStatus::Lagging => "LAGGING",
-            ApplicationHealthStatus::Unknown(value) => value.as_str(),
+            ApplicationHealthStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ERROR", "HEALTHY", "LAGGING"]
+        &[
+            "ERROR", "HEALTHY", "LAGGING"
+        ]
     }
 }
 impl AsRef<str> for ApplicationHealthStatus {
@@ -10091,7 +9063,7 @@ impl AsRef<str> for ApplicationHealthStatus {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Application {
+pub struct Application  {
     /// <p>Application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -10109,8 +9081,7 @@ pub struct Application {
     pub is_archived: std::option::Option<bool>,
     /// <p>Application aggregated status.</p>
     #[doc(hidden)]
-    pub application_aggregated_status:
-        std::option::Option<crate::model::ApplicationAggregatedStatus>,
+    pub application_aggregated_status: std::option::Option<crate::model::ApplicationAggregatedStatus>,
     /// <p>Application creation dateTime.</p>
     #[doc(hidden)]
     pub creation_date_time: std::option::Option<std::string::String>,
@@ -10119,27 +9090,26 @@ pub struct Application {
     pub last_modified_date_time: std::option::Option<std::string::String>,
     /// <p>Application tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Application wave ID.</p>
     #[doc(hidden)]
     pub wave_id: std::option::Option<std::string::String>,
 }
 impl Application {
     /// <p>Application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>Application ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Application name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Application description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Application archival status.</p>
@@ -10147,32 +9117,27 @@ impl Application {
         self.is_archived
     }
     /// <p>Application aggregated status.</p>
-    pub fn application_aggregated_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ApplicationAggregatedStatus> {
+    pub fn application_aggregated_status(&self) -> std::option::Option<& crate::model::ApplicationAggregatedStatus> {
         self.application_aggregated_status.as_ref()
     }
     /// <p>Application creation dateTime.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&str> {
+    pub fn creation_date_time(&self) -> std::option::Option<& str> {
         self.creation_date_time.as_deref()
     }
     /// <p>Application last modified dateTime.</p>
-    pub fn last_modified_date_time(&self) -> std::option::Option<&str> {
+    pub fn last_modified_date_time(&self) -> std::option::Option<& str> {
         self.last_modified_date_time.as_deref()
     }
     /// <p>Application tags.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Application wave ID.</p>
-    pub fn wave_id(&self) -> std::option::Option<&str> {
+    pub fn wave_id(&self) -> std::option::Option<& str> {
         self.wave_id.as_deref()
     }
 }
-impl std::fmt::Debug for Application {
+impl  std::fmt::Debug for Application  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Application");
         formatter.field("application_id", &self.application_id);
@@ -10180,10 +9145,7 @@ impl std::fmt::Debug for Application {
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("is_archived", &self.is_archived);
-        formatter.field(
-            "application_aggregated_status",
-            &self.application_aggregated_status,
-        );
+        formatter.field("application_aggregated_status", &self.application_aggregated_status);
         formatter.field("creation_date_time", &self.creation_date_time);
         formatter.field("last_modified_date_time", &self.last_modified_date_time);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
@@ -10193,7 +9155,7 @@ impl std::fmt::Debug for Application {
 }
 /// See [`Application`](crate::model::Application).
 pub mod application {
-
+    
     /// A builder for [`Application`](crate::model::Application).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -10202,13 +9164,10 @@ pub mod application {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) is_archived: std::option::Option<bool>,
-        pub(crate) application_aggregated_status:
-            std::option::Option<crate::model::ApplicationAggregatedStatus>,
+        pub(crate) application_aggregated_status: std::option::Option<crate::model::ApplicationAggregatedStatus>,
         pub(crate) creation_date_time: std::option::Option<std::string::String>,
         pub(crate) last_modified_date_time: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) wave_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -10218,12 +9177,8 @@ pub mod application {
             self
         }
         /// <p>Application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>Application ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10232,8 +9187,7 @@ pub mod application {
         }
         /// <p>Application ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Application name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10242,8 +9196,7 @@ pub mod application {
         }
         /// <p>Application name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Application description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10252,8 +9205,7 @@ pub mod application {
         }
         /// <p>Application description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Application archival status.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -10262,24 +9214,16 @@ pub mod application {
         }
         /// <p>Application archival status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// <p>Application aggregated status.</p>
-        pub fn application_aggregated_status(
-            mut self,
-            input: crate::model::ApplicationAggregatedStatus,
-        ) -> Self {
+        pub fn application_aggregated_status(mut self, input: crate::model::ApplicationAggregatedStatus) -> Self {
             self.application_aggregated_status = Some(input);
             self
         }
         /// <p>Application aggregated status.</p>
-        pub fn set_application_aggregated_status(
-            mut self,
-            input: std::option::Option<crate::model::ApplicationAggregatedStatus>,
-        ) -> Self {
-            self.application_aggregated_status = input;
-            self
+        pub fn set_application_aggregated_status(mut self, input: std::option::Option<crate::model::ApplicationAggregatedStatus>) -> Self {
+            self.application_aggregated_status = input; self
         }
         /// <p>Application creation dateTime.</p>
         pub fn creation_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10287,12 +9231,8 @@ pub mod application {
             self
         }
         /// <p>Application creation dateTime.</p>
-        pub fn set_creation_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_date_time = input;
-            self
+        pub fn set_creation_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_date_time = input; self
         }
         /// <p>Application last modified dateTime.</p>
         pub fn last_modified_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10300,37 +9240,23 @@ pub mod application {
             self
         }
         /// <p>Application last modified dateTime.</p>
-        pub fn set_last_modified_date_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_date_time = input;
-            self
+        pub fn set_last_modified_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_date_time = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Application tags.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Application tags.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Application wave ID.</p>
         pub fn wave_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10339,22 +9265,31 @@ pub mod application {
         }
         /// <p>Application wave ID.</p>
         pub fn set_wave_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.wave_id = input;
-            self
+            self.wave_id = input; self
         }
         /// Consumes the builder and constructs a [`Application`](crate::model::Application).
         pub fn build(self) -> crate::model::Application {
             crate::model::Application {
-                application_id: self.application_id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                is_archived: self.is_archived,
-                application_aggregated_status: self.application_aggregated_status,
-                creation_date_time: self.creation_date_time,
-                last_modified_date_time: self.last_modified_date_time,
-                tags: self.tags,
-                wave_id: self.wave_id,
+                application_id: self.application_id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                is_archived: self.is_archived
+                ,
+                application_aggregated_status: self.application_aggregated_status
+                ,
+                creation_date_time: self.creation_date_time
+                ,
+                last_modified_date_time: self.last_modified_date_time
+                ,
+                tags: self.tags
+                ,
+                wave_id: self.wave_id
+                ,
             }
         }
     }
@@ -10366,10 +9301,7 @@ pub mod application {
             formatter.field("name", &self.name);
             formatter.field("description", &self.description);
             formatter.field("is_archived", &self.is_archived);
-            formatter.field(
-                "application_aggregated_status",
-                &self.application_aggregated_status,
-            );
+            formatter.field("application_aggregated_status", &self.application_aggregated_status);
             formatter.field("creation_date_time", &self.creation_date_time);
             formatter.field("last_modified_date_time", &self.last_modified_date_time);
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
@@ -10377,6 +9309,8 @@ pub mod application {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Application {
     /// Creates a new builder-style object to manufacture [`Application`](crate::model::Application).
@@ -10388,7 +9322,7 @@ impl Application {
 /// <p>Applications list filters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationsRequestFilters {
+pub struct ListApplicationsRequestFilters  {
     /// <p>Filter applications list by application ID.</p>
     #[doc(hidden)]
     pub application_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10401,7 +9335,7 @@ pub struct ListApplicationsRequestFilters {
 }
 impl ListApplicationsRequestFilters {
     /// <p>Filter applications list by application ID.</p>
-    pub fn application_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn application_i_ds(&self) -> std::option::Option<& [std::string::String]> {
         self.application_i_ds.as_deref()
     }
     /// <p>Filter applications list by archival status.</p>
@@ -10409,13 +9343,13 @@ impl ListApplicationsRequestFilters {
         self.is_archived
     }
     /// <p>Filter applications list by wave ID.</p>
-    pub fn wave_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn wave_i_ds(&self) -> std::option::Option<& [std::string::String]> {
         self.wave_i_ds.as_deref()
     }
 }
 /// See [`ListApplicationsRequestFilters`](crate::model::ListApplicationsRequestFilters).
 pub mod list_applications_request_filters {
-
+    
     /// A builder for [`ListApplicationsRequestFilters`](crate::model::ListApplicationsRequestFilters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10431,17 +9365,13 @@ pub mod list_applications_request_filters {
         /// <p>Filter applications list by application ID.</p>
         pub fn application_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.application_i_ds.unwrap_or_default();
-            v.push(input.into());
-            self.application_i_ds = Some(v);
-            self
+                            v.push(input.into());
+                            self.application_i_ds = Some(v);
+                            self
         }
         /// <p>Filter applications list by application ID.</p>
-        pub fn set_application_i_ds(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.application_i_ds = input;
-            self
+        pub fn set_application_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.application_i_ds = input; self
         }
         /// <p>Filter applications list by archival status.</p>
         pub fn is_archived(mut self, input: bool) -> Self {
@@ -10450,8 +9380,7 @@ pub mod list_applications_request_filters {
         }
         /// <p>Filter applications list by archival status.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_archived = input;
-            self
+            self.is_archived = input; self
         }
         /// Appends an item to `wave_i_ds`.
         ///
@@ -10460,27 +9389,28 @@ pub mod list_applications_request_filters {
         /// <p>Filter applications list by wave ID.</p>
         pub fn wave_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.wave_i_ds.unwrap_or_default();
-            v.push(input.into());
-            self.wave_i_ds = Some(v);
-            self
+                            v.push(input.into());
+                            self.wave_i_ds = Some(v);
+                            self
         }
         /// <p>Filter applications list by wave ID.</p>
-        pub fn set_wave_i_ds(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.wave_i_ds = input;
-            self
+        pub fn set_wave_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.wave_i_ds = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationsRequestFilters`](crate::model::ListApplicationsRequestFilters).
         pub fn build(self) -> crate::model::ListApplicationsRequestFilters {
             crate::model::ListApplicationsRequestFilters {
-                application_i_ds: self.application_i_ds,
-                is_archived: self.is_archived,
-                wave_i_ds: self.wave_i_ds,
+                application_i_ds: self.application_i_ds
+                ,
+                is_archived: self.is_archived
+                ,
+                wave_i_ds: self.wave_i_ds
+                ,
             }
         }
     }
+    
+    
 }
 impl ListApplicationsRequestFilters {
     /// Creates a new builder-style object to manufacture [`ListApplicationsRequestFilters`](crate::model::ListApplicationsRequestFilters).
@@ -10488,3 +9418,4 @@ impl ListApplicationsRequestFilters {
         crate::model::list_applications_request_filters::Builder::default()
     }
 }
+

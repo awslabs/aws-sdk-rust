@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UntagResourceError {
     /// Kind of error that occurred.
-    pub kind: UntagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UntagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -32,26 +32,40 @@ pub enum UntagResourceErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::CloudHsmAccessDeniedException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::CloudHsmInternalFailureException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::CloudHsmInvalidRequestException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::CloudHsmResourceNotFoundException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::CloudHsmServiceException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::CloudHsmTagException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::CloudHsmInternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::CloudHsmServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::CloudHsmTagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -65,80 +79,65 @@ impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
 }
 impl UntagResourceError {
     /// Creates a new `UntagResourceError`.
-    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::CloudHsmAccessDeniedException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::CloudHsmAccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::CloudHsmInternalFailureException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::CloudHsmInternalFailureException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::CloudHsmInvalidRequestException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::CloudHsmInvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::CloudHsmResourceNotFoundException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::CloudHsmResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::CloudHsmServiceException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::CloudHsmServiceException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::CloudHsmTagException`.
     pub fn is_cloud_hsm_tag_exception(&self) -> bool {
@@ -148,13 +147,27 @@ impl UntagResourceError {
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::CloudHsmAccessDeniedException(_inner) => Some(_inner),
-            UntagResourceErrorKind::CloudHsmInternalFailureException(_inner) => Some(_inner),
-            UntagResourceErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
-            UntagResourceErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            UntagResourceErrorKind::CloudHsmTagException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            UntagResourceErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::CloudHsmInternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::CloudHsmServiceException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::CloudHsmTagException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -162,22 +175,20 @@ impl std::error::Error for UntagResourceError {
 /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudHsmTagException {
+pub struct CloudHsmTagException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CloudHsmTagException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CloudHsmTagException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmTagException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -187,7 +198,7 @@ impl std::fmt::Display for CloudHsmTagException {
 impl std::error::Error for CloudHsmTagException {}
 /// See [`CloudHsmTagException`](crate::error::CloudHsmTagException).
 pub mod cloud_hsm_tag_exception {
-
+    
     /// A builder for [`CloudHsmTagException`](crate::error::CloudHsmTagException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -201,16 +212,18 @@ pub mod cloud_hsm_tag_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CloudHsmTagException`](crate::error::CloudHsmTagException).
         pub fn build(self) -> crate::error::CloudHsmTagException {
             crate::error::CloudHsmTagException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudHsmTagException {
     /// Creates a new builder-style object to manufacture [`CloudHsmTagException`](crate::error::CloudHsmTagException).
@@ -222,22 +235,20 @@ impl CloudHsmTagException {
 /// <p>The request was rejected because an error occurred.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudHsmServiceException {
+pub struct CloudHsmServiceException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CloudHsmServiceException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CloudHsmServiceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmServiceException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -247,7 +258,7 @@ impl std::fmt::Display for CloudHsmServiceException {
 impl std::error::Error for CloudHsmServiceException {}
 /// See [`CloudHsmServiceException`](crate::error::CloudHsmServiceException).
 pub mod cloud_hsm_service_exception {
-
+    
     /// A builder for [`CloudHsmServiceException`](crate::error::CloudHsmServiceException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -261,16 +272,18 @@ pub mod cloud_hsm_service_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CloudHsmServiceException`](crate::error::CloudHsmServiceException).
         pub fn build(self) -> crate::error::CloudHsmServiceException {
             crate::error::CloudHsmServiceException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudHsmServiceException {
     /// Creates a new builder-style object to manufacture [`CloudHsmServiceException`](crate::error::CloudHsmServiceException).
@@ -282,22 +295,20 @@ impl CloudHsmServiceException {
 /// <p>The request was rejected because it refers to a resource that cannot be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudHsmResourceNotFoundException {
+pub struct CloudHsmResourceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CloudHsmResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CloudHsmResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmResourceNotFoundException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -307,7 +318,7 @@ impl std::fmt::Display for CloudHsmResourceNotFoundException {
 impl std::error::Error for CloudHsmResourceNotFoundException {}
 /// See [`CloudHsmResourceNotFoundException`](crate::error::CloudHsmResourceNotFoundException).
 pub mod cloud_hsm_resource_not_found_exception {
-
+    
     /// A builder for [`CloudHsmResourceNotFoundException`](crate::error::CloudHsmResourceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -321,16 +332,18 @@ pub mod cloud_hsm_resource_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CloudHsmResourceNotFoundException`](crate::error::CloudHsmResourceNotFoundException).
         pub fn build(self) -> crate::error::CloudHsmResourceNotFoundException {
             crate::error::CloudHsmResourceNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudHsmResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`CloudHsmResourceNotFoundException`](crate::error::CloudHsmResourceNotFoundException).
@@ -342,22 +355,20 @@ impl CloudHsmResourceNotFoundException {
 /// <p>The request was rejected because it is not a valid request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudHsmInvalidRequestException {
+pub struct CloudHsmInvalidRequestException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CloudHsmInvalidRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CloudHsmInvalidRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmInvalidRequestException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -367,7 +378,7 @@ impl std::fmt::Display for CloudHsmInvalidRequestException {
 impl std::error::Error for CloudHsmInvalidRequestException {}
 /// See [`CloudHsmInvalidRequestException`](crate::error::CloudHsmInvalidRequestException).
 pub mod cloud_hsm_invalid_request_exception {
-
+    
     /// A builder for [`CloudHsmInvalidRequestException`](crate::error::CloudHsmInvalidRequestException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -381,16 +392,18 @@ pub mod cloud_hsm_invalid_request_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CloudHsmInvalidRequestException`](crate::error::CloudHsmInvalidRequestException).
         pub fn build(self) -> crate::error::CloudHsmInvalidRequestException {
             crate::error::CloudHsmInvalidRequestException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudHsmInvalidRequestException {
     /// Creates a new builder-style object to manufacture [`CloudHsmInvalidRequestException`](crate::error::CloudHsmInvalidRequestException).
@@ -402,22 +415,20 @@ impl CloudHsmInvalidRequestException {
 /// <p>The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudHsmInternalFailureException {
+pub struct CloudHsmInternalFailureException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CloudHsmInternalFailureException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CloudHsmInternalFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmInternalFailureException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -427,7 +438,7 @@ impl std::fmt::Display for CloudHsmInternalFailureException {
 impl std::error::Error for CloudHsmInternalFailureException {}
 /// See [`CloudHsmInternalFailureException`](crate::error::CloudHsmInternalFailureException).
 pub mod cloud_hsm_internal_failure_exception {
-
+    
     /// A builder for [`CloudHsmInternalFailureException`](crate::error::CloudHsmInternalFailureException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -441,16 +452,18 @@ pub mod cloud_hsm_internal_failure_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CloudHsmInternalFailureException`](crate::error::CloudHsmInternalFailureException).
         pub fn build(self) -> crate::error::CloudHsmInternalFailureException {
             crate::error::CloudHsmInternalFailureException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudHsmInternalFailureException {
     /// Creates a new builder-style object to manufacture [`CloudHsmInternalFailureException`](crate::error::CloudHsmInternalFailureException).
@@ -462,22 +475,20 @@ impl CloudHsmInternalFailureException {
 /// <p>The request was rejected because the requester does not have permission to perform the requested operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudHsmAccessDeniedException {
+pub struct CloudHsmAccessDeniedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CloudHsmAccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CloudHsmAccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmAccessDeniedException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -487,7 +498,7 @@ impl std::fmt::Display for CloudHsmAccessDeniedException {
 impl std::error::Error for CloudHsmAccessDeniedException {}
 /// See [`CloudHsmAccessDeniedException`](crate::error::CloudHsmAccessDeniedException).
 pub mod cloud_hsm_access_denied_exception {
-
+    
     /// A builder for [`CloudHsmAccessDeniedException`](crate::error::CloudHsmAccessDeniedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -501,16 +512,18 @@ pub mod cloud_hsm_access_denied_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CloudHsmAccessDeniedException`](crate::error::CloudHsmAccessDeniedException).
         pub fn build(self) -> crate::error::CloudHsmAccessDeniedException {
             crate::error::CloudHsmAccessDeniedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudHsmAccessDeniedException {
     /// Creates a new builder-style object to manufacture [`CloudHsmAccessDeniedException`](crate::error::CloudHsmAccessDeniedException).
@@ -524,15 +537,15 @@ impl CloudHsmAccessDeniedException {
 #[derive(std::fmt::Debug)]
 pub struct TagResourceError {
     /// Kind of error that occurred.
-    pub kind: TagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -552,26 +565,40 @@ pub enum TagResourceErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::CloudHsmAccessDeniedException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::CloudHsmInternalFailureException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::CloudHsmInvalidRequestException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::CloudHsmResourceNotFoundException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::CloudHsmServiceException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::CloudHsmTagException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::CloudHsmInternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::CloudHsmServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::CloudHsmTagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -585,80 +612,65 @@ impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
 }
 impl TagResourceError {
     /// Creates a new `TagResourceError`.
-    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TagResourceErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::CloudHsmAccessDeniedException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::CloudHsmAccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::CloudHsmInternalFailureException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::CloudHsmInternalFailureException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::CloudHsmInvalidRequestException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::CloudHsmInvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::CloudHsmResourceNotFoundException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::CloudHsmResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::CloudHsmServiceException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::CloudHsmServiceException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::CloudHsmTagException`.
     pub fn is_cloud_hsm_tag_exception(&self) -> bool {
@@ -668,13 +680,27 @@ impl TagResourceError {
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::CloudHsmAccessDeniedException(_inner) => Some(_inner),
-            TagResourceErrorKind::CloudHsmInternalFailureException(_inner) => Some(_inner),
-            TagResourceErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
-            TagResourceErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            TagResourceErrorKind::CloudHsmTagException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            TagResourceErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::CloudHsmInternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::CloudHsmServiceException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::CloudHsmTagException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -684,15 +710,15 @@ impl std::error::Error for TagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct RestoreBackupError {
     /// Kind of error that occurred.
-    pub kind: RestoreBackupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RestoreBackupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RestoreBackupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RestoreBackupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -710,25 +736,37 @@ pub enum RestoreBackupErrorKind {
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RestoreBackupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RestoreBackupErrorKind::CloudHsmAccessDeniedException(_inner) => _inner.fmt(f),
-            RestoreBackupErrorKind::CloudHsmInternalFailureException(_inner) => _inner.fmt(f),
-            RestoreBackupErrorKind::CloudHsmInvalidRequestException(_inner) => _inner.fmt(f),
-            RestoreBackupErrorKind::CloudHsmResourceNotFoundException(_inner) => _inner.fmt(f),
-            RestoreBackupErrorKind::CloudHsmServiceException(_inner) => _inner.fmt(f),
-            RestoreBackupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            RestoreBackupErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreBackupErrorKind::CloudHsmInternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreBackupErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreBackupErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreBackupErrorKind::CloudHsmServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RestoreBackupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -742,91 +780,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for RestoreBackupError {
 }
 impl RestoreBackupError {
     /// Creates a new `RestoreBackupError`.
-    pub fn new(kind: RestoreBackupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RestoreBackupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RestoreBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RestoreBackupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RestoreBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RestoreBackupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RestoreBackupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RestoreBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RestoreBackupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RestoreBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RestoreBackupErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestoreBackupErrorKind::CloudHsmAccessDeniedException(_)
-        )
+        matches!(&self.kind, RestoreBackupErrorKind::CloudHsmAccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `RestoreBackupErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestoreBackupErrorKind::CloudHsmInternalFailureException(_)
-        )
+        matches!(&self.kind, RestoreBackupErrorKind::CloudHsmInternalFailureException(_))
     }
     /// Returns `true` if the error kind is `RestoreBackupErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestoreBackupErrorKind::CloudHsmInvalidRequestException(_)
-        )
+        matches!(&self.kind, RestoreBackupErrorKind::CloudHsmInvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `RestoreBackupErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestoreBackupErrorKind::CloudHsmResourceNotFoundException(_)
-        )
+        matches!(&self.kind, RestoreBackupErrorKind::CloudHsmResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `RestoreBackupErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RestoreBackupErrorKind::CloudHsmServiceException(_)
-        )
+        matches!(&self.kind, RestoreBackupErrorKind::CloudHsmServiceException(_))
     }
 }
 impl std::error::Error for RestoreBackupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RestoreBackupErrorKind::CloudHsmAccessDeniedException(_inner) => Some(_inner),
-            RestoreBackupErrorKind::CloudHsmInternalFailureException(_inner) => Some(_inner),
-            RestoreBackupErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
-            RestoreBackupErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
-            RestoreBackupErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            RestoreBackupErrorKind::Unhandled(_inner) => Some(_inner),
+            RestoreBackupErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreBackupErrorKind::CloudHsmInternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreBackupErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreBackupErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreBackupErrorKind::CloudHsmServiceException(_inner) =>
+            Some(_inner)
+            ,
+            RestoreBackupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -836,15 +871,15 @@ impl std::error::Error for RestoreBackupError {
 #[derive(std::fmt::Debug)]
 pub struct ModifyClusterError {
     /// Kind of error that occurred.
-    pub kind: ModifyClusterErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ModifyClusterErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ModifyClusterError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ModifyClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -862,25 +897,37 @@ pub enum ModifyClusterErrorKind {
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyClusterErrorKind::CloudHsmAccessDeniedException(_inner) => _inner.fmt(f),
-            ModifyClusterErrorKind::CloudHsmInternalFailureException(_inner) => _inner.fmt(f),
-            ModifyClusterErrorKind::CloudHsmInvalidRequestException(_inner) => _inner.fmt(f),
-            ModifyClusterErrorKind::CloudHsmResourceNotFoundException(_inner) => _inner.fmt(f),
-            ModifyClusterErrorKind::CloudHsmServiceException(_inner) => _inner.fmt(f),
-            ModifyClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ModifyClusterErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyClusterErrorKind::CloudHsmInternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyClusterErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyClusterErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyClusterErrorKind::CloudHsmServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyClusterErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -894,91 +941,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for ModifyClusterError {
 }
 impl ModifyClusterError {
     /// Creates a new `ModifyClusterError`.
-    pub fn new(kind: ModifyClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ModifyClusterError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ModifyClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ModifyClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ModifyClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ModifyClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ModifyClusterError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ModifyClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ModifyClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ModifyClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ModifyClusterErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyClusterErrorKind::CloudHsmAccessDeniedException(_)
-        )
+        matches!(&self.kind, ModifyClusterErrorKind::CloudHsmAccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ModifyClusterErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyClusterErrorKind::CloudHsmInternalFailureException(_)
-        )
+        matches!(&self.kind, ModifyClusterErrorKind::CloudHsmInternalFailureException(_))
     }
     /// Returns `true` if the error kind is `ModifyClusterErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyClusterErrorKind::CloudHsmInvalidRequestException(_)
-        )
+        matches!(&self.kind, ModifyClusterErrorKind::CloudHsmInvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `ModifyClusterErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyClusterErrorKind::CloudHsmResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ModifyClusterErrorKind::CloudHsmResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ModifyClusterErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyClusterErrorKind::CloudHsmServiceException(_)
-        )
+        matches!(&self.kind, ModifyClusterErrorKind::CloudHsmServiceException(_))
     }
 }
 impl std::error::Error for ModifyClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyClusterErrorKind::CloudHsmAccessDeniedException(_inner) => Some(_inner),
-            ModifyClusterErrorKind::CloudHsmInternalFailureException(_inner) => Some(_inner),
-            ModifyClusterErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
-            ModifyClusterErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
-            ModifyClusterErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            ModifyClusterErrorKind::Unhandled(_inner) => Some(_inner),
+            ModifyClusterErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyClusterErrorKind::CloudHsmInternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyClusterErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyClusterErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyClusterErrorKind::CloudHsmServiceException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyClusterErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -988,15 +1032,15 @@ impl std::error::Error for ModifyClusterError {
 #[derive(std::fmt::Debug)]
 pub struct ModifyBackupAttributesError {
     /// Kind of error that occurred.
-    pub kind: ModifyBackupAttributesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ModifyBackupAttributesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ModifyBackupAttributesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ModifyBackupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1014,31 +1058,37 @@ pub enum ModifyBackupAttributesErrorKind {
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ModifyBackupAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ModifyBackupAttributesErrorKind::CloudHsmAccessDeniedException(_inner) => _inner.fmt(f),
-            ModifyBackupAttributesErrorKind::CloudHsmInternalFailureException(_inner) => {
+            ModifyBackupAttributesErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyBackupAttributesErrorKind::CloudHsmInternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyBackupAttributesErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyBackupAttributesErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyBackupAttributesErrorKind::CloudHsmServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ModifyBackupAttributesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ModifyBackupAttributesErrorKind::CloudHsmInvalidRequestException(_inner) => {
-                _inner.fmt(f)
-            }
-            ModifyBackupAttributesErrorKind::CloudHsmResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            ModifyBackupAttributesErrorKind::CloudHsmServiceException(_inner) => _inner.fmt(f),
-            ModifyBackupAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1052,101 +1102,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for ModifyBackupAttributesError {
 }
 impl ModifyBackupAttributesError {
     /// Creates a new `ModifyBackupAttributesError`.
-    pub fn new(kind: ModifyBackupAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ModifyBackupAttributesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ModifyBackupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ModifyBackupAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ModifyBackupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ModifyBackupAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ModifyBackupAttributesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ModifyBackupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ModifyBackupAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ModifyBackupAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ModifyBackupAttributesErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyBackupAttributesErrorKind::CloudHsmAccessDeniedException(_)
-        )
+        matches!(&self.kind, ModifyBackupAttributesErrorKind::CloudHsmAccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ModifyBackupAttributesErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyBackupAttributesErrorKind::CloudHsmInternalFailureException(_)
-        )
+        matches!(&self.kind, ModifyBackupAttributesErrorKind::CloudHsmInternalFailureException(_))
     }
     /// Returns `true` if the error kind is `ModifyBackupAttributesErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyBackupAttributesErrorKind::CloudHsmInvalidRequestException(_)
-        )
+        matches!(&self.kind, ModifyBackupAttributesErrorKind::CloudHsmInvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `ModifyBackupAttributesErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyBackupAttributesErrorKind::CloudHsmResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ModifyBackupAttributesErrorKind::CloudHsmResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ModifyBackupAttributesErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ModifyBackupAttributesErrorKind::CloudHsmServiceException(_)
-        )
+        matches!(&self.kind, ModifyBackupAttributesErrorKind::CloudHsmServiceException(_))
     }
 }
 impl std::error::Error for ModifyBackupAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ModifyBackupAttributesErrorKind::CloudHsmAccessDeniedException(_inner) => Some(_inner),
-            ModifyBackupAttributesErrorKind::CloudHsmInternalFailureException(_inner) => {
+            ModifyBackupAttributesErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyBackupAttributesErrorKind::CloudHsmInternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyBackupAttributesErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyBackupAttributesErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyBackupAttributesErrorKind::CloudHsmServiceException(_inner) =>
+            Some(_inner)
+            ,
+            ModifyBackupAttributesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ModifyBackupAttributesErrorKind::CloudHsmInvalidRequestException(_inner) => {
-                Some(_inner)
-            }
-            ModifyBackupAttributesErrorKind::CloudHsmResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            ModifyBackupAttributesErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            ModifyBackupAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1156,15 +1193,15 @@ impl std::error::Error for ModifyBackupAttributesError {
 #[derive(std::fmt::Debug)]
 pub struct ListTagsError {
     /// Kind of error that occurred.
-    pub kind: ListTagsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTagsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTagsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTagsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1184,26 +1221,40 @@ pub enum ListTagsErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsErrorKind::CloudHsmAccessDeniedException(_inner) => _inner.fmt(f),
-            ListTagsErrorKind::CloudHsmInternalFailureException(_inner) => _inner.fmt(f),
-            ListTagsErrorKind::CloudHsmInvalidRequestException(_inner) => _inner.fmt(f),
-            ListTagsErrorKind::CloudHsmResourceNotFoundException(_inner) => _inner.fmt(f),
-            ListTagsErrorKind::CloudHsmServiceException(_inner) => _inner.fmt(f),
-            ListTagsErrorKind::CloudHsmTagException(_inner) => _inner.fmt(f),
-            ListTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListTagsErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsErrorKind::CloudHsmInternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsErrorKind::CloudHsmServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsErrorKind::CloudHsmTagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1217,73 +1268,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTagsError {
 }
 impl ListTagsError {
     /// Creates a new `ListTagsError`.
-    pub fn new(kind: ListTagsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTagsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTagsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTagsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTagsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTagsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTagsErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsErrorKind::CloudHsmAccessDeniedException(_)
-        )
+        matches!(&self.kind, ListTagsErrorKind::CloudHsmAccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListTagsErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsErrorKind::CloudHsmInternalFailureException(_)
-        )
+        matches!(&self.kind, ListTagsErrorKind::CloudHsmInternalFailureException(_))
     }
     /// Returns `true` if the error kind is `ListTagsErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsErrorKind::CloudHsmInvalidRequestException(_)
-        )
+        matches!(&self.kind, ListTagsErrorKind::CloudHsmInvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `ListTagsErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsErrorKind::CloudHsmResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ListTagsErrorKind::CloudHsmResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListTagsErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
@@ -1297,13 +1336,27 @@ impl ListTagsError {
 impl std::error::Error for ListTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsErrorKind::CloudHsmAccessDeniedException(_inner) => Some(_inner),
-            ListTagsErrorKind::CloudHsmInternalFailureException(_inner) => Some(_inner),
-            ListTagsErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
-            ListTagsErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
-            ListTagsErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            ListTagsErrorKind::CloudHsmTagException(_inner) => Some(_inner),
-            ListTagsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTagsErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsErrorKind::CloudHsmInternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsErrorKind::CloudHsmServiceException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsErrorKind::CloudHsmTagException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1313,15 +1366,15 @@ impl std::error::Error for ListTagsError {
 #[derive(std::fmt::Debug)]
 pub struct InitializeClusterError {
     /// Kind of error that occurred.
-    pub kind: InitializeClusterErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: InitializeClusterErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for InitializeClusterError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: InitializeClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1339,25 +1392,37 @@ pub enum InitializeClusterErrorKind {
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for InitializeClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            InitializeClusterErrorKind::CloudHsmAccessDeniedException(_inner) => _inner.fmt(f),
-            InitializeClusterErrorKind::CloudHsmInternalFailureException(_inner) => _inner.fmt(f),
-            InitializeClusterErrorKind::CloudHsmInvalidRequestException(_inner) => _inner.fmt(f),
-            InitializeClusterErrorKind::CloudHsmResourceNotFoundException(_inner) => _inner.fmt(f),
-            InitializeClusterErrorKind::CloudHsmServiceException(_inner) => _inner.fmt(f),
-            InitializeClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            InitializeClusterErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            InitializeClusterErrorKind::CloudHsmInternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            InitializeClusterErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            InitializeClusterErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            InitializeClusterErrorKind::CloudHsmServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            InitializeClusterErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1371,91 +1436,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for InitializeClusterError {
 }
 impl InitializeClusterError {
     /// Creates a new `InitializeClusterError`.
-    pub fn new(kind: InitializeClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `InitializeClusterError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: InitializeClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `InitializeClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: InitializeClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: InitializeClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `InitializeClusterError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: InitializeClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `InitializeClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: InitializeClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `InitializeClusterErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            InitializeClusterErrorKind::CloudHsmAccessDeniedException(_)
-        )
+        matches!(&self.kind, InitializeClusterErrorKind::CloudHsmAccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `InitializeClusterErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            InitializeClusterErrorKind::CloudHsmInternalFailureException(_)
-        )
+        matches!(&self.kind, InitializeClusterErrorKind::CloudHsmInternalFailureException(_))
     }
     /// Returns `true` if the error kind is `InitializeClusterErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            InitializeClusterErrorKind::CloudHsmInvalidRequestException(_)
-        )
+        matches!(&self.kind, InitializeClusterErrorKind::CloudHsmInvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `InitializeClusterErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            InitializeClusterErrorKind::CloudHsmResourceNotFoundException(_)
-        )
+        matches!(&self.kind, InitializeClusterErrorKind::CloudHsmResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `InitializeClusterErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            InitializeClusterErrorKind::CloudHsmServiceException(_)
-        )
+        matches!(&self.kind, InitializeClusterErrorKind::CloudHsmServiceException(_))
     }
 }
 impl std::error::Error for InitializeClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            InitializeClusterErrorKind::CloudHsmAccessDeniedException(_inner) => Some(_inner),
-            InitializeClusterErrorKind::CloudHsmInternalFailureException(_inner) => Some(_inner),
-            InitializeClusterErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
-            InitializeClusterErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
-            InitializeClusterErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            InitializeClusterErrorKind::Unhandled(_inner) => Some(_inner),
+            InitializeClusterErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            InitializeClusterErrorKind::CloudHsmInternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            InitializeClusterErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            InitializeClusterErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            InitializeClusterErrorKind::CloudHsmServiceException(_inner) =>
+            Some(_inner)
+            ,
+            InitializeClusterErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1465,15 +1527,15 @@ impl std::error::Error for InitializeClusterError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeClustersError {
     /// Kind of error that occurred.
-    pub kind: DescribeClustersErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeClustersErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeClustersError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeClustersErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1491,25 +1553,37 @@ pub enum DescribeClustersErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeClustersError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeClustersErrorKind::CloudHsmAccessDeniedException(_inner) => _inner.fmt(f),
-            DescribeClustersErrorKind::CloudHsmInternalFailureException(_inner) => _inner.fmt(f),
-            DescribeClustersErrorKind::CloudHsmInvalidRequestException(_inner) => _inner.fmt(f),
-            DescribeClustersErrorKind::CloudHsmServiceException(_inner) => _inner.fmt(f),
-            DescribeClustersErrorKind::CloudHsmTagException(_inner) => _inner.fmt(f),
-            DescribeClustersErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeClustersErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeClustersErrorKind::CloudHsmInternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeClustersErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeClustersErrorKind::CloudHsmServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeClustersErrorKind::CloudHsmTagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeClustersErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1523,91 +1597,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeClustersError {
 }
 impl DescribeClustersError {
     /// Creates a new `DescribeClustersError`.
-    pub fn new(kind: DescribeClustersErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeClustersError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeClustersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeClustersError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeClustersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeClustersErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeClustersError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeClustersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeClustersError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeClustersErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeClustersErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeClustersErrorKind::CloudHsmAccessDeniedException(_)
-        )
+        matches!(&self.kind, DescribeClustersErrorKind::CloudHsmAccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DescribeClustersErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeClustersErrorKind::CloudHsmInternalFailureException(_)
-        )
+        matches!(&self.kind, DescribeClustersErrorKind::CloudHsmInternalFailureException(_))
     }
     /// Returns `true` if the error kind is `DescribeClustersErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeClustersErrorKind::CloudHsmInvalidRequestException(_)
-        )
+        matches!(&self.kind, DescribeClustersErrorKind::CloudHsmInvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `DescribeClustersErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeClustersErrorKind::CloudHsmServiceException(_)
-        )
+        matches!(&self.kind, DescribeClustersErrorKind::CloudHsmServiceException(_))
     }
     /// Returns `true` if the error kind is `DescribeClustersErrorKind::CloudHsmTagException`.
     pub fn is_cloud_hsm_tag_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeClustersErrorKind::CloudHsmTagException(_)
-        )
+        matches!(&self.kind, DescribeClustersErrorKind::CloudHsmTagException(_))
     }
 }
 impl std::error::Error for DescribeClustersError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeClustersErrorKind::CloudHsmAccessDeniedException(_inner) => Some(_inner),
-            DescribeClustersErrorKind::CloudHsmInternalFailureException(_inner) => Some(_inner),
-            DescribeClustersErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
-            DescribeClustersErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            DescribeClustersErrorKind::CloudHsmTagException(_inner) => Some(_inner),
-            DescribeClustersErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeClustersErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeClustersErrorKind::CloudHsmInternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeClustersErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeClustersErrorKind::CloudHsmServiceException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeClustersErrorKind::CloudHsmTagException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeClustersErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1617,15 +1688,15 @@ impl std::error::Error for DescribeClustersError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeBackupsError {
     /// Kind of error that occurred.
-    pub kind: DescribeBackupsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeBackupsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeBackupsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeBackupsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1645,26 +1716,40 @@ pub enum DescribeBackupsErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeBackupsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeBackupsErrorKind::CloudHsmAccessDeniedException(_inner) => _inner.fmt(f),
-            DescribeBackupsErrorKind::CloudHsmInternalFailureException(_inner) => _inner.fmt(f),
-            DescribeBackupsErrorKind::CloudHsmInvalidRequestException(_inner) => _inner.fmt(f),
-            DescribeBackupsErrorKind::CloudHsmResourceNotFoundException(_inner) => _inner.fmt(f),
-            DescribeBackupsErrorKind::CloudHsmServiceException(_inner) => _inner.fmt(f),
-            DescribeBackupsErrorKind::CloudHsmTagException(_inner) => _inner.fmt(f),
-            DescribeBackupsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeBackupsErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBackupsErrorKind::CloudHsmInternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBackupsErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBackupsErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBackupsErrorKind::CloudHsmServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBackupsErrorKind::CloudHsmTagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeBackupsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1678,99 +1763,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeBackupsError {
 }
 impl DescribeBackupsError {
     /// Creates a new `DescribeBackupsError`.
-    pub fn new(kind: DescribeBackupsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeBackupsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeBackupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeBackupsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeBackupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeBackupsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeBackupsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeBackupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeBackupsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeBackupsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeBackupsErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBackupsErrorKind::CloudHsmAccessDeniedException(_)
-        )
+        matches!(&self.kind, DescribeBackupsErrorKind::CloudHsmAccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DescribeBackupsErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBackupsErrorKind::CloudHsmInternalFailureException(_)
-        )
+        matches!(&self.kind, DescribeBackupsErrorKind::CloudHsmInternalFailureException(_))
     }
     /// Returns `true` if the error kind is `DescribeBackupsErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBackupsErrorKind::CloudHsmInvalidRequestException(_)
-        )
+        matches!(&self.kind, DescribeBackupsErrorKind::CloudHsmInvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `DescribeBackupsErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBackupsErrorKind::CloudHsmResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeBackupsErrorKind::CloudHsmResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeBackupsErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBackupsErrorKind::CloudHsmServiceException(_)
-        )
+        matches!(&self.kind, DescribeBackupsErrorKind::CloudHsmServiceException(_))
     }
     /// Returns `true` if the error kind is `DescribeBackupsErrorKind::CloudHsmTagException`.
     pub fn is_cloud_hsm_tag_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeBackupsErrorKind::CloudHsmTagException(_)
-        )
+        matches!(&self.kind, DescribeBackupsErrorKind::CloudHsmTagException(_))
     }
 }
 impl std::error::Error for DescribeBackupsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeBackupsErrorKind::CloudHsmAccessDeniedException(_inner) => Some(_inner),
-            DescribeBackupsErrorKind::CloudHsmInternalFailureException(_inner) => Some(_inner),
-            DescribeBackupsErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
-            DescribeBackupsErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
-            DescribeBackupsErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            DescribeBackupsErrorKind::CloudHsmTagException(_inner) => Some(_inner),
-            DescribeBackupsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeBackupsErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBackupsErrorKind::CloudHsmInternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBackupsErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBackupsErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBackupsErrorKind::CloudHsmServiceException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBackupsErrorKind::CloudHsmTagException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeBackupsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1780,15 +1861,15 @@ impl std::error::Error for DescribeBackupsError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteHsmError {
     /// Kind of error that occurred.
-    pub kind: DeleteHsmErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteHsmErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteHsmError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteHsmErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1806,25 +1887,37 @@ pub enum DeleteHsmErrorKind {
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteHsmError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteHsmErrorKind::CloudHsmAccessDeniedException(_inner) => _inner.fmt(f),
-            DeleteHsmErrorKind::CloudHsmInternalFailureException(_inner) => _inner.fmt(f),
-            DeleteHsmErrorKind::CloudHsmInvalidRequestException(_inner) => _inner.fmt(f),
-            DeleteHsmErrorKind::CloudHsmResourceNotFoundException(_inner) => _inner.fmt(f),
-            DeleteHsmErrorKind::CloudHsmServiceException(_inner) => _inner.fmt(f),
-            DeleteHsmErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteHsmErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteHsmErrorKind::CloudHsmInternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteHsmErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteHsmErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteHsmErrorKind::CloudHsmServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteHsmErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1838,73 +1931,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteHsmError {
 }
 impl DeleteHsmError {
     /// Creates a new `DeleteHsmError`.
-    pub fn new(kind: DeleteHsmErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteHsmError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteHsmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteHsmError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteHsmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteHsmErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteHsmError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteHsmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteHsmError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteHsmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteHsmErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteHsmErrorKind::CloudHsmAccessDeniedException(_)
-        )
+        matches!(&self.kind, DeleteHsmErrorKind::CloudHsmAccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeleteHsmErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteHsmErrorKind::CloudHsmInternalFailureException(_)
-        )
+        matches!(&self.kind, DeleteHsmErrorKind::CloudHsmInternalFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteHsmErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteHsmErrorKind::CloudHsmInvalidRequestException(_)
-        )
+        matches!(&self.kind, DeleteHsmErrorKind::CloudHsmInvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteHsmErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteHsmErrorKind::CloudHsmResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteHsmErrorKind::CloudHsmResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteHsmErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
@@ -1914,12 +1995,24 @@ impl DeleteHsmError {
 impl std::error::Error for DeleteHsmError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteHsmErrorKind::CloudHsmAccessDeniedException(_inner) => Some(_inner),
-            DeleteHsmErrorKind::CloudHsmInternalFailureException(_inner) => Some(_inner),
-            DeleteHsmErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
-            DeleteHsmErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
-            DeleteHsmErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            DeleteHsmErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteHsmErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteHsmErrorKind::CloudHsmInternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteHsmErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteHsmErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteHsmErrorKind::CloudHsmServiceException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteHsmErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1929,15 +2022,15 @@ impl std::error::Error for DeleteHsmError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteClusterError {
     /// Kind of error that occurred.
-    pub kind: DeleteClusterErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteClusterErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteClusterError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1957,26 +2050,40 @@ pub enum DeleteClusterErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteClusterErrorKind::CloudHsmAccessDeniedException(_inner) => _inner.fmt(f),
-            DeleteClusterErrorKind::CloudHsmInternalFailureException(_inner) => _inner.fmt(f),
-            DeleteClusterErrorKind::CloudHsmInvalidRequestException(_inner) => _inner.fmt(f),
-            DeleteClusterErrorKind::CloudHsmResourceNotFoundException(_inner) => _inner.fmt(f),
-            DeleteClusterErrorKind::CloudHsmServiceException(_inner) => _inner.fmt(f),
-            DeleteClusterErrorKind::CloudHsmTagException(_inner) => _inner.fmt(f),
-            DeleteClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteClusterErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteClusterErrorKind::CloudHsmInternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteClusterErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteClusterErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteClusterErrorKind::CloudHsmServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteClusterErrorKind::CloudHsmTagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteClusterErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1990,80 +2097,65 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteClusterError {
 }
 impl DeleteClusterError {
     /// Creates a new `DeleteClusterError`.
-    pub fn new(kind: DeleteClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteClusterError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteClusterError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteClusterErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteClusterErrorKind::CloudHsmAccessDeniedException(_)
-        )
+        matches!(&self.kind, DeleteClusterErrorKind::CloudHsmAccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeleteClusterErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteClusterErrorKind::CloudHsmInternalFailureException(_)
-        )
+        matches!(&self.kind, DeleteClusterErrorKind::CloudHsmInternalFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteClusterErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteClusterErrorKind::CloudHsmInvalidRequestException(_)
-        )
+        matches!(&self.kind, DeleteClusterErrorKind::CloudHsmInvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteClusterErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteClusterErrorKind::CloudHsmResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteClusterErrorKind::CloudHsmResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteClusterErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteClusterErrorKind::CloudHsmServiceException(_)
-        )
+        matches!(&self.kind, DeleteClusterErrorKind::CloudHsmServiceException(_))
     }
     /// Returns `true` if the error kind is `DeleteClusterErrorKind::CloudHsmTagException`.
     pub fn is_cloud_hsm_tag_exception(&self) -> bool {
@@ -2073,13 +2165,27 @@ impl DeleteClusterError {
 impl std::error::Error for DeleteClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteClusterErrorKind::CloudHsmAccessDeniedException(_inner) => Some(_inner),
-            DeleteClusterErrorKind::CloudHsmInternalFailureException(_inner) => Some(_inner),
-            DeleteClusterErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
-            DeleteClusterErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
-            DeleteClusterErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            DeleteClusterErrorKind::CloudHsmTagException(_inner) => Some(_inner),
-            DeleteClusterErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteClusterErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteClusterErrorKind::CloudHsmInternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteClusterErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteClusterErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteClusterErrorKind::CloudHsmServiceException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteClusterErrorKind::CloudHsmTagException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteClusterErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2089,15 +2195,15 @@ impl std::error::Error for DeleteClusterError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteBackupError {
     /// Kind of error that occurred.
-    pub kind: DeleteBackupErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteBackupErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteBackupError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteBackupErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2115,25 +2221,37 @@ pub enum DeleteBackupErrorKind {
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteBackupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteBackupErrorKind::CloudHsmAccessDeniedException(_inner) => _inner.fmt(f),
-            DeleteBackupErrorKind::CloudHsmInternalFailureException(_inner) => _inner.fmt(f),
-            DeleteBackupErrorKind::CloudHsmInvalidRequestException(_inner) => _inner.fmt(f),
-            DeleteBackupErrorKind::CloudHsmResourceNotFoundException(_inner) => _inner.fmt(f),
-            DeleteBackupErrorKind::CloudHsmServiceException(_inner) => _inner.fmt(f),
-            DeleteBackupErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteBackupErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBackupErrorKind::CloudHsmInternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBackupErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBackupErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBackupErrorKind::CloudHsmServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBackupErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2147,91 +2265,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteBackupError {
 }
 impl DeleteBackupError {
     /// Creates a new `DeleteBackupError`.
-    pub fn new(kind: DeleteBackupErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteBackupError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteBackupError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteBackupErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteBackupError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteBackupError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteBackupErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteBackupErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteBackupErrorKind::CloudHsmAccessDeniedException(_)
-        )
+        matches!(&self.kind, DeleteBackupErrorKind::CloudHsmAccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeleteBackupErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteBackupErrorKind::CloudHsmInternalFailureException(_)
-        )
+        matches!(&self.kind, DeleteBackupErrorKind::CloudHsmInternalFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteBackupErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteBackupErrorKind::CloudHsmInvalidRequestException(_)
-        )
+        matches!(&self.kind, DeleteBackupErrorKind::CloudHsmInvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteBackupErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteBackupErrorKind::CloudHsmResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteBackupErrorKind::CloudHsmResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteBackupErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteBackupErrorKind::CloudHsmServiceException(_)
-        )
+        matches!(&self.kind, DeleteBackupErrorKind::CloudHsmServiceException(_))
     }
 }
 impl std::error::Error for DeleteBackupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteBackupErrorKind::CloudHsmAccessDeniedException(_inner) => Some(_inner),
-            DeleteBackupErrorKind::CloudHsmInternalFailureException(_inner) => Some(_inner),
-            DeleteBackupErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
-            DeleteBackupErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
-            DeleteBackupErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            DeleteBackupErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteBackupErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBackupErrorKind::CloudHsmInternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBackupErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBackupErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBackupErrorKind::CloudHsmServiceException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBackupErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2241,15 +2356,15 @@ impl std::error::Error for DeleteBackupError {
 #[derive(std::fmt::Debug)]
 pub struct CreateHsmError {
     /// Kind of error that occurred.
-    pub kind: CreateHsmErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateHsmErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateHsmError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateHsmErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2267,25 +2382,37 @@ pub enum CreateHsmErrorKind {
     CloudHsmResourceNotFoundException(crate::error::CloudHsmResourceNotFoundException),
     /// <p>The request was rejected because an error occurred.</p>
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateHsmError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateHsmErrorKind::CloudHsmAccessDeniedException(_inner) => _inner.fmt(f),
-            CreateHsmErrorKind::CloudHsmInternalFailureException(_inner) => _inner.fmt(f),
-            CreateHsmErrorKind::CloudHsmInvalidRequestException(_inner) => _inner.fmt(f),
-            CreateHsmErrorKind::CloudHsmResourceNotFoundException(_inner) => _inner.fmt(f),
-            CreateHsmErrorKind::CloudHsmServiceException(_inner) => _inner.fmt(f),
-            CreateHsmErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateHsmErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateHsmErrorKind::CloudHsmInternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateHsmErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateHsmErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateHsmErrorKind::CloudHsmServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateHsmErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2299,73 +2426,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateHsmError {
 }
 impl CreateHsmError {
     /// Creates a new `CreateHsmError`.
-    pub fn new(kind: CreateHsmErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateHsmError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateHsmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateHsmError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateHsmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateHsmErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateHsmError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateHsmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateHsmError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateHsmErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateHsmErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateHsmErrorKind::CloudHsmAccessDeniedException(_)
-        )
+        matches!(&self.kind, CreateHsmErrorKind::CloudHsmAccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateHsmErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateHsmErrorKind::CloudHsmInternalFailureException(_)
-        )
+        matches!(&self.kind, CreateHsmErrorKind::CloudHsmInternalFailureException(_))
     }
     /// Returns `true` if the error kind is `CreateHsmErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateHsmErrorKind::CloudHsmInvalidRequestException(_)
-        )
+        matches!(&self.kind, CreateHsmErrorKind::CloudHsmInvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateHsmErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateHsmErrorKind::CloudHsmResourceNotFoundException(_)
-        )
+        matches!(&self.kind, CreateHsmErrorKind::CloudHsmResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateHsmErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
@@ -2375,12 +2490,24 @@ impl CreateHsmError {
 impl std::error::Error for CreateHsmError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateHsmErrorKind::CloudHsmAccessDeniedException(_inner) => Some(_inner),
-            CreateHsmErrorKind::CloudHsmInternalFailureException(_inner) => Some(_inner),
-            CreateHsmErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
-            CreateHsmErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
-            CreateHsmErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            CreateHsmErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateHsmErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateHsmErrorKind::CloudHsmInternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            CreateHsmErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateHsmErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateHsmErrorKind::CloudHsmServiceException(_inner) =>
+            Some(_inner)
+            ,
+            CreateHsmErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2390,15 +2517,15 @@ impl std::error::Error for CreateHsmError {
 #[derive(std::fmt::Debug)]
 pub struct CreateClusterError {
     /// Kind of error that occurred.
-    pub kind: CreateClusterErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateClusterErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateClusterError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateClusterErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2418,26 +2545,40 @@ pub enum CreateClusterErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateClusterErrorKind::CloudHsmAccessDeniedException(_inner) => _inner.fmt(f),
-            CreateClusterErrorKind::CloudHsmInternalFailureException(_inner) => _inner.fmt(f),
-            CreateClusterErrorKind::CloudHsmInvalidRequestException(_inner) => _inner.fmt(f),
-            CreateClusterErrorKind::CloudHsmResourceNotFoundException(_inner) => _inner.fmt(f),
-            CreateClusterErrorKind::CloudHsmServiceException(_inner) => _inner.fmt(f),
-            CreateClusterErrorKind::CloudHsmTagException(_inner) => _inner.fmt(f),
-            CreateClusterErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateClusterErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateClusterErrorKind::CloudHsmInternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateClusterErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateClusterErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateClusterErrorKind::CloudHsmServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateClusterErrorKind::CloudHsmTagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateClusterErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2451,80 +2592,65 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateClusterError {
 }
 impl CreateClusterError {
     /// Creates a new `CreateClusterError`.
-    pub fn new(kind: CreateClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateClusterError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateClusterErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateClusterError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateClusterError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateClusterErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateClusterErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateClusterErrorKind::CloudHsmAccessDeniedException(_)
-        )
+        matches!(&self.kind, CreateClusterErrorKind::CloudHsmAccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateClusterErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateClusterErrorKind::CloudHsmInternalFailureException(_)
-        )
+        matches!(&self.kind, CreateClusterErrorKind::CloudHsmInternalFailureException(_))
     }
     /// Returns `true` if the error kind is `CreateClusterErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateClusterErrorKind::CloudHsmInvalidRequestException(_)
-        )
+        matches!(&self.kind, CreateClusterErrorKind::CloudHsmInvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateClusterErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateClusterErrorKind::CloudHsmResourceNotFoundException(_)
-        )
+        matches!(&self.kind, CreateClusterErrorKind::CloudHsmResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateClusterErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateClusterErrorKind::CloudHsmServiceException(_)
-        )
+        matches!(&self.kind, CreateClusterErrorKind::CloudHsmServiceException(_))
     }
     /// Returns `true` if the error kind is `CreateClusterErrorKind::CloudHsmTagException`.
     pub fn is_cloud_hsm_tag_exception(&self) -> bool {
@@ -2534,13 +2660,27 @@ impl CreateClusterError {
 impl std::error::Error for CreateClusterError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateClusterErrorKind::CloudHsmAccessDeniedException(_inner) => Some(_inner),
-            CreateClusterErrorKind::CloudHsmInternalFailureException(_inner) => Some(_inner),
-            CreateClusterErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
-            CreateClusterErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
-            CreateClusterErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            CreateClusterErrorKind::CloudHsmTagException(_inner) => Some(_inner),
-            CreateClusterErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateClusterErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateClusterErrorKind::CloudHsmInternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            CreateClusterErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateClusterErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateClusterErrorKind::CloudHsmServiceException(_inner) =>
+            Some(_inner)
+            ,
+            CreateClusterErrorKind::CloudHsmTagException(_inner) =>
+            Some(_inner)
+            ,
+            CreateClusterErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2550,15 +2690,15 @@ impl std::error::Error for CreateClusterError {
 #[derive(std::fmt::Debug)]
 pub struct CopyBackupToRegionError {
     /// Kind of error that occurred.
-    pub kind: CopyBackupToRegionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CopyBackupToRegionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CopyBackupToRegionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CopyBackupToRegionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2578,26 +2718,40 @@ pub enum CopyBackupToRegionErrorKind {
     CloudHsmServiceException(crate::error::CloudHsmServiceException),
     /// <p>The request was rejected because of a tagging failure. Verify the tag conditions in all applicable policies, and then retry the request.</p>
     CloudHsmTagException(crate::error::CloudHsmTagException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CopyBackupToRegionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CopyBackupToRegionErrorKind::CloudHsmAccessDeniedException(_inner) => _inner.fmt(f),
-            CopyBackupToRegionErrorKind::CloudHsmInternalFailureException(_inner) => _inner.fmt(f),
-            CopyBackupToRegionErrorKind::CloudHsmInvalidRequestException(_inner) => _inner.fmt(f),
-            CopyBackupToRegionErrorKind::CloudHsmResourceNotFoundException(_inner) => _inner.fmt(f),
-            CopyBackupToRegionErrorKind::CloudHsmServiceException(_inner) => _inner.fmt(f),
-            CopyBackupToRegionErrorKind::CloudHsmTagException(_inner) => _inner.fmt(f),
-            CopyBackupToRegionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CopyBackupToRegionErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyBackupToRegionErrorKind::CloudHsmInternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyBackupToRegionErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyBackupToRegionErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyBackupToRegionErrorKind::CloudHsmServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyBackupToRegionErrorKind::CloudHsmTagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CopyBackupToRegionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2611,128 +2765,125 @@ impl aws_smithy_types::retry::ProvideErrorKind for CopyBackupToRegionError {
 }
 impl CopyBackupToRegionError {
     /// Creates a new `CopyBackupToRegionError`.
-    pub fn new(kind: CopyBackupToRegionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CopyBackupToRegionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CopyBackupToRegionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CopyBackupToRegionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CopyBackupToRegionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CopyBackupToRegionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CopyBackupToRegionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CopyBackupToRegionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CopyBackupToRegionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CopyBackupToRegionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CopyBackupToRegionErrorKind::CloudHsmAccessDeniedException`.
     pub fn is_cloud_hsm_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CopyBackupToRegionErrorKind::CloudHsmAccessDeniedException(_)
-        )
+        matches!(&self.kind, CopyBackupToRegionErrorKind::CloudHsmAccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CopyBackupToRegionErrorKind::CloudHsmInternalFailureException`.
     pub fn is_cloud_hsm_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CopyBackupToRegionErrorKind::CloudHsmInternalFailureException(_)
-        )
+        matches!(&self.kind, CopyBackupToRegionErrorKind::CloudHsmInternalFailureException(_))
     }
     /// Returns `true` if the error kind is `CopyBackupToRegionErrorKind::CloudHsmInvalidRequestException`.
     pub fn is_cloud_hsm_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CopyBackupToRegionErrorKind::CloudHsmInvalidRequestException(_)
-        )
+        matches!(&self.kind, CopyBackupToRegionErrorKind::CloudHsmInvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `CopyBackupToRegionErrorKind::CloudHsmResourceNotFoundException`.
     pub fn is_cloud_hsm_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CopyBackupToRegionErrorKind::CloudHsmResourceNotFoundException(_)
-        )
+        matches!(&self.kind, CopyBackupToRegionErrorKind::CloudHsmResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CopyBackupToRegionErrorKind::CloudHsmServiceException`.
     pub fn is_cloud_hsm_service_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CopyBackupToRegionErrorKind::CloudHsmServiceException(_)
-        )
+        matches!(&self.kind, CopyBackupToRegionErrorKind::CloudHsmServiceException(_))
     }
     /// Returns `true` if the error kind is `CopyBackupToRegionErrorKind::CloudHsmTagException`.
     pub fn is_cloud_hsm_tag_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CopyBackupToRegionErrorKind::CloudHsmTagException(_)
-        )
+        matches!(&self.kind, CopyBackupToRegionErrorKind::CloudHsmTagException(_))
     }
 }
 impl std::error::Error for CopyBackupToRegionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CopyBackupToRegionErrorKind::CloudHsmAccessDeniedException(_inner) => Some(_inner),
-            CopyBackupToRegionErrorKind::CloudHsmInternalFailureException(_inner) => Some(_inner),
-            CopyBackupToRegionErrorKind::CloudHsmInvalidRequestException(_inner) => Some(_inner),
-            CopyBackupToRegionErrorKind::CloudHsmResourceNotFoundException(_inner) => Some(_inner),
-            CopyBackupToRegionErrorKind::CloudHsmServiceException(_inner) => Some(_inner),
-            CopyBackupToRegionErrorKind::CloudHsmTagException(_inner) => Some(_inner),
-            CopyBackupToRegionErrorKind::Unhandled(_inner) => Some(_inner),
+            CopyBackupToRegionErrorKind::CloudHsmAccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CopyBackupToRegionErrorKind::CloudHsmInternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            CopyBackupToRegionErrorKind::CloudHsmInvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CopyBackupToRegionErrorKind::CloudHsmResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CopyBackupToRegionErrorKind::CloudHsmServiceException(_inner) =>
+            Some(_inner)
+            ,
+            CopyBackupToRegionErrorKind::CloudHsmTagException(_inner) =>
+            Some(_inner)
+            ,
+            CopyBackupToRegionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

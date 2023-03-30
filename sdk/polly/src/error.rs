@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct SynthesizeSpeechError {
     /// Kind of error that occurred.
-    pub kind: SynthesizeSpeechErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: SynthesizeSpeechErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for SynthesizeSpeechError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: SynthesizeSpeechErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -28,7 +28,7 @@ pub enum SynthesizeSpeechErrorKind {
     InvalidSsmlException(crate::error::InvalidSsmlException),
     /// <p>The language specified is not currently supported by Amazon Polly in this capacity.</p>
     LanguageNotSupportedException(crate::error::LanguageNotSupportedException),
-    /// <p>Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its name is misspelled or specifying a lexicon that is in a different region.</p>
+    /// <p>Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its name is misspelled or specifying a lexicon that is in a different region.</p> 
     /// <p>Verify that the lexicon exists, is in the region (see <code>ListLexicons</code>) and that you spelled its name is spelled correctly. Then try again.</p>
     LexiconNotFoundException(crate::error::LexiconNotFoundException),
     /// <p>Speech marks are not supported for the <code>OutputFormat</code> selected. Speech marks are only available for content in <code>json</code> format.</p>
@@ -36,36 +36,52 @@ pub enum SynthesizeSpeechErrorKind {
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>SSML speech marks are not supported for plain text-type input.</p>
-    SsmlMarksNotSupportedForTextTypeException(
-        crate::error::SsmlMarksNotSupportedForTextTypeException,
-    ),
+    SsmlMarksNotSupportedForTextTypeException(crate::error::SsmlMarksNotSupportedForTextTypeException),
     /// <p>The value of the "Text" parameter is longer than the accepted limits. For the <code>SynthesizeSpeech</code> API, the limit for input text is a maximum of 6000 characters total, of which no more than 3000 can be billed characters. For the <code>StartSpeechSynthesisTask</code> API, the maximum is 200,000 characters, of which no more than 100,000 can be billed characters. SSML tags are not counted as billed characters.</p>
     TextLengthExceededException(crate::error::TextLengthExceededException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SynthesizeSpeechError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SynthesizeSpeechErrorKind::EngineNotSupportedException(_inner) => _inner.fmt(f),
-            SynthesizeSpeechErrorKind::InvalidSampleRateException(_inner) => _inner.fmt(f),
-            SynthesizeSpeechErrorKind::InvalidSsmlException(_inner) => _inner.fmt(f),
-            SynthesizeSpeechErrorKind::LanguageNotSupportedException(_inner) => _inner.fmt(f),
-            SynthesizeSpeechErrorKind::LexiconNotFoundException(_inner) => _inner.fmt(f),
-            SynthesizeSpeechErrorKind::MarksNotSupportedForFormatException(_inner) => _inner.fmt(f),
-            SynthesizeSpeechErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeException(_inner) => {
+            SynthesizeSpeechErrorKind::EngineNotSupportedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SynthesizeSpeechErrorKind::InvalidSampleRateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SynthesizeSpeechErrorKind::InvalidSsmlException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SynthesizeSpeechErrorKind::LanguageNotSupportedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SynthesizeSpeechErrorKind::LexiconNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SynthesizeSpeechErrorKind::MarksNotSupportedForFormatException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SynthesizeSpeechErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SynthesizeSpeechErrorKind::TextLengthExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SynthesizeSpeechErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            SynthesizeSpeechErrorKind::TextLengthExceededException(_inner) => _inner.fmt(f),
-            SynthesizeSpeechErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -79,125 +95,116 @@ impl aws_smithy_types::retry::ProvideErrorKind for SynthesizeSpeechError {
 }
 impl SynthesizeSpeechError {
     /// Creates a new `SynthesizeSpeechError`.
-    pub fn new(kind: SynthesizeSpeechErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `SynthesizeSpeechError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: SynthesizeSpeechErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `SynthesizeSpeechError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: SynthesizeSpeechErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: SynthesizeSpeechErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `SynthesizeSpeechError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: SynthesizeSpeechErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `SynthesizeSpeechError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: SynthesizeSpeechErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `SynthesizeSpeechErrorKind::EngineNotSupportedException`.
     pub fn is_engine_not_supported_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SynthesizeSpeechErrorKind::EngineNotSupportedException(_)
-        )
+        matches!(&self.kind, SynthesizeSpeechErrorKind::EngineNotSupportedException(_))
     }
     /// Returns `true` if the error kind is `SynthesizeSpeechErrorKind::InvalidSampleRateException`.
     pub fn is_invalid_sample_rate_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SynthesizeSpeechErrorKind::InvalidSampleRateException(_)
-        )
+        matches!(&self.kind, SynthesizeSpeechErrorKind::InvalidSampleRateException(_))
     }
     /// Returns `true` if the error kind is `SynthesizeSpeechErrorKind::InvalidSsmlException`.
     pub fn is_invalid_ssml_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SynthesizeSpeechErrorKind::InvalidSsmlException(_)
-        )
+        matches!(&self.kind, SynthesizeSpeechErrorKind::InvalidSsmlException(_))
     }
     /// Returns `true` if the error kind is `SynthesizeSpeechErrorKind::LanguageNotSupportedException`.
     pub fn is_language_not_supported_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SynthesizeSpeechErrorKind::LanguageNotSupportedException(_)
-        )
+        matches!(&self.kind, SynthesizeSpeechErrorKind::LanguageNotSupportedException(_))
     }
     /// Returns `true` if the error kind is `SynthesizeSpeechErrorKind::LexiconNotFoundException`.
     pub fn is_lexicon_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SynthesizeSpeechErrorKind::LexiconNotFoundException(_)
-        )
+        matches!(&self.kind, SynthesizeSpeechErrorKind::LexiconNotFoundException(_))
     }
     /// Returns `true` if the error kind is `SynthesizeSpeechErrorKind::MarksNotSupportedForFormatException`.
     pub fn is_marks_not_supported_for_format_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SynthesizeSpeechErrorKind::MarksNotSupportedForFormatException(_)
-        )
+        matches!(&self.kind, SynthesizeSpeechErrorKind::MarksNotSupportedForFormatException(_))
     }
     /// Returns `true` if the error kind is `SynthesizeSpeechErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SynthesizeSpeechErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, SynthesizeSpeechErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeException`.
     pub fn is_ssml_marks_not_supported_for_text_type_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeException(_)
-        )
+        matches!(&self.kind, SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeException(_))
     }
     /// Returns `true` if the error kind is `SynthesizeSpeechErrorKind::TextLengthExceededException`.
     pub fn is_text_length_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SynthesizeSpeechErrorKind::TextLengthExceededException(_)
-        )
+        matches!(&self.kind, SynthesizeSpeechErrorKind::TextLengthExceededException(_))
     }
 }
 impl std::error::Error for SynthesizeSpeechError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SynthesizeSpeechErrorKind::EngineNotSupportedException(_inner) => Some(_inner),
-            SynthesizeSpeechErrorKind::InvalidSampleRateException(_inner) => Some(_inner),
-            SynthesizeSpeechErrorKind::InvalidSsmlException(_inner) => Some(_inner),
-            SynthesizeSpeechErrorKind::LanguageNotSupportedException(_inner) => Some(_inner),
-            SynthesizeSpeechErrorKind::LexiconNotFoundException(_inner) => Some(_inner),
-            SynthesizeSpeechErrorKind::MarksNotSupportedForFormatException(_inner) => Some(_inner),
-            SynthesizeSpeechErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeException(_inner) => {
+            SynthesizeSpeechErrorKind::EngineNotSupportedException(_inner) =>
+            Some(_inner)
+            ,
+            SynthesizeSpeechErrorKind::InvalidSampleRateException(_inner) =>
+            Some(_inner)
+            ,
+            SynthesizeSpeechErrorKind::InvalidSsmlException(_inner) =>
+            Some(_inner)
+            ,
+            SynthesizeSpeechErrorKind::LanguageNotSupportedException(_inner) =>
+            Some(_inner)
+            ,
+            SynthesizeSpeechErrorKind::LexiconNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            SynthesizeSpeechErrorKind::MarksNotSupportedForFormatException(_inner) =>
+            Some(_inner)
+            ,
+            SynthesizeSpeechErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            SynthesizeSpeechErrorKind::SsmlMarksNotSupportedForTextTypeException(_inner) =>
+            Some(_inner)
+            ,
+            SynthesizeSpeechErrorKind::TextLengthExceededException(_inner) =>
+            Some(_inner)
+            ,
+            SynthesizeSpeechErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            SynthesizeSpeechErrorKind::TextLengthExceededException(_inner) => Some(_inner),
-            SynthesizeSpeechErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -205,22 +212,20 @@ impl std::error::Error for SynthesizeSpeechError {
 /// <p>The value of the "Text" parameter is longer than the accepted limits. For the <code>SynthesizeSpeech</code> API, the limit for input text is a maximum of 6000 characters total, of which no more than 3000 can be billed characters. For the <code>StartSpeechSynthesisTask</code> API, the maximum is 200,000 characters, of which no more than 100,000 can be billed characters. SSML tags are not counted as billed characters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TextLengthExceededException {
+pub struct TextLengthExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TextLengthExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TextLengthExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TextLengthExceededException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -230,7 +235,7 @@ impl std::fmt::Display for TextLengthExceededException {
 impl std::error::Error for TextLengthExceededException {}
 /// See [`TextLengthExceededException`](crate::error::TextLengthExceededException).
 pub mod text_length_exceeded_exception {
-
+    
     /// A builder for [`TextLengthExceededException`](crate::error::TextLengthExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -244,16 +249,18 @@ pub mod text_length_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TextLengthExceededException`](crate::error::TextLengthExceededException).
         pub fn build(self) -> crate::error::TextLengthExceededException {
             crate::error::TextLengthExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TextLengthExceededException {
     /// Creates a new builder-style object to manufacture [`TextLengthExceededException`](crate::error::TextLengthExceededException).
@@ -265,22 +272,20 @@ impl TextLengthExceededException {
 /// <p>SSML speech marks are not supported for plain text-type input.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SsmlMarksNotSupportedForTextTypeException {
+pub struct SsmlMarksNotSupportedForTextTypeException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl SsmlMarksNotSupportedForTextTypeException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for SsmlMarksNotSupportedForTextTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SsmlMarksNotSupportedForTextTypeException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -290,7 +295,7 @@ impl std::fmt::Display for SsmlMarksNotSupportedForTextTypeException {
 impl std::error::Error for SsmlMarksNotSupportedForTextTypeException {}
 /// See [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException).
 pub mod ssml_marks_not_supported_for_text_type_exception {
-
+    
     /// A builder for [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -304,16 +309,18 @@ pub mod ssml_marks_not_supported_for_text_type_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException).
         pub fn build(self) -> crate::error::SsmlMarksNotSupportedForTextTypeException {
             crate::error::SsmlMarksNotSupportedForTextTypeException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl SsmlMarksNotSupportedForTextTypeException {
     /// Creates a new builder-style object to manufacture [`SsmlMarksNotSupportedForTextTypeException`](crate::error::SsmlMarksNotSupportedForTextTypeException).
@@ -325,22 +332,20 @@ impl SsmlMarksNotSupportedForTextTypeException {
 /// <p>An unknown condition has caused a service failure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceFailureException {
+pub struct ServiceFailureException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceFailureException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceFailureException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -350,7 +355,7 @@ impl std::fmt::Display for ServiceFailureException {
 impl std::error::Error for ServiceFailureException {}
 /// See [`ServiceFailureException`](crate::error::ServiceFailureException).
 pub mod service_failure_exception {
-
+    
     /// A builder for [`ServiceFailureException`](crate::error::ServiceFailureException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -364,16 +369,18 @@ pub mod service_failure_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServiceFailureException`](crate::error::ServiceFailureException).
         pub fn build(self) -> crate::error::ServiceFailureException {
             crate::error::ServiceFailureException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceFailureException {
     /// Creates a new builder-style object to manufacture [`ServiceFailureException`](crate::error::ServiceFailureException).
@@ -385,22 +392,20 @@ impl ServiceFailureException {
 /// <p>Speech marks are not supported for the <code>OutputFormat</code> selected. Speech marks are only available for content in <code>json</code> format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MarksNotSupportedForFormatException {
+pub struct MarksNotSupportedForFormatException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl MarksNotSupportedForFormatException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for MarksNotSupportedForFormatException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MarksNotSupportedForFormatException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -410,7 +415,7 @@ impl std::fmt::Display for MarksNotSupportedForFormatException {
 impl std::error::Error for MarksNotSupportedForFormatException {}
 /// See [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException).
 pub mod marks_not_supported_for_format_exception {
-
+    
     /// A builder for [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -424,16 +429,18 @@ pub mod marks_not_supported_for_format_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException).
         pub fn build(self) -> crate::error::MarksNotSupportedForFormatException {
             crate::error::MarksNotSupportedForFormatException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl MarksNotSupportedForFormatException {
     /// Creates a new builder-style object to manufacture [`MarksNotSupportedForFormatException`](crate::error::MarksNotSupportedForFormatException).
@@ -442,26 +449,24 @@ impl MarksNotSupportedForFormatException {
     }
 }
 
-/// <p>Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its name is misspelled or specifying a lexicon that is in a different region.</p>
+/// <p>Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its name is misspelled or specifying a lexicon that is in a different region.</p> 
 /// <p>Verify that the lexicon exists, is in the region (see <code>ListLexicons</code>) and that you spelled its name is spelled correctly. Then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LexiconNotFoundException {
+pub struct LexiconNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl LexiconNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for LexiconNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LexiconNotFoundException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -471,7 +476,7 @@ impl std::fmt::Display for LexiconNotFoundException {
 impl std::error::Error for LexiconNotFoundException {}
 /// See [`LexiconNotFoundException`](crate::error::LexiconNotFoundException).
 pub mod lexicon_not_found_exception {
-
+    
     /// A builder for [`LexiconNotFoundException`](crate::error::LexiconNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -485,16 +490,18 @@ pub mod lexicon_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`LexiconNotFoundException`](crate::error::LexiconNotFoundException).
         pub fn build(self) -> crate::error::LexiconNotFoundException {
             crate::error::LexiconNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl LexiconNotFoundException {
     /// Creates a new builder-style object to manufacture [`LexiconNotFoundException`](crate::error::LexiconNotFoundException).
@@ -506,22 +513,20 @@ impl LexiconNotFoundException {
 /// <p>The language specified is not currently supported by Amazon Polly in this capacity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LanguageNotSupportedException {
+pub struct LanguageNotSupportedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl LanguageNotSupportedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for LanguageNotSupportedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LanguageNotSupportedException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -531,7 +536,7 @@ impl std::fmt::Display for LanguageNotSupportedException {
 impl std::error::Error for LanguageNotSupportedException {}
 /// See [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException).
 pub mod language_not_supported_exception {
-
+    
     /// A builder for [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -545,16 +550,18 @@ pub mod language_not_supported_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException).
         pub fn build(self) -> crate::error::LanguageNotSupportedException {
             crate::error::LanguageNotSupportedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl LanguageNotSupportedException {
     /// Creates a new builder-style object to manufacture [`LanguageNotSupportedException`](crate::error::LanguageNotSupportedException).
@@ -566,22 +573,20 @@ impl LanguageNotSupportedException {
 /// <p>The SSML you provided is invalid. Verify the SSML syntax, spelling of tags and values, and then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidSsmlException {
+pub struct InvalidSsmlException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidSsmlException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidSsmlException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSsmlException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -591,7 +596,7 @@ impl std::fmt::Display for InvalidSsmlException {
 impl std::error::Error for InvalidSsmlException {}
 /// See [`InvalidSsmlException`](crate::error::InvalidSsmlException).
 pub mod invalid_ssml_exception {
-
+    
     /// A builder for [`InvalidSsmlException`](crate::error::InvalidSsmlException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -605,16 +610,18 @@ pub mod invalid_ssml_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidSsmlException`](crate::error::InvalidSsmlException).
         pub fn build(self) -> crate::error::InvalidSsmlException {
             crate::error::InvalidSsmlException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidSsmlException {
     /// Creates a new builder-style object to manufacture [`InvalidSsmlException`](crate::error::InvalidSsmlException).
@@ -626,22 +633,20 @@ impl InvalidSsmlException {
 /// <p>The specified sample rate is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidSampleRateException {
+pub struct InvalidSampleRateException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidSampleRateException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidSampleRateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSampleRateException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -651,7 +656,7 @@ impl std::fmt::Display for InvalidSampleRateException {
 impl std::error::Error for InvalidSampleRateException {}
 /// See [`InvalidSampleRateException`](crate::error::InvalidSampleRateException).
 pub mod invalid_sample_rate_exception {
-
+    
     /// A builder for [`InvalidSampleRateException`](crate::error::InvalidSampleRateException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -665,16 +670,18 @@ pub mod invalid_sample_rate_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidSampleRateException`](crate::error::InvalidSampleRateException).
         pub fn build(self) -> crate::error::InvalidSampleRateException {
             crate::error::InvalidSampleRateException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidSampleRateException {
     /// Creates a new builder-style object to manufacture [`InvalidSampleRateException`](crate::error::InvalidSampleRateException).
@@ -686,22 +693,20 @@ impl InvalidSampleRateException {
 /// <p>This engine is not compatible with the voice that you have designated. Choose a new voice that is compatible with the engine or change the engine and restart the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EngineNotSupportedException {
+pub struct EngineNotSupportedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl EngineNotSupportedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for EngineNotSupportedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EngineNotSupportedException")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -711,7 +716,7 @@ impl std::fmt::Display for EngineNotSupportedException {
 impl std::error::Error for EngineNotSupportedException {}
 /// See [`EngineNotSupportedException`](crate::error::EngineNotSupportedException).
 pub mod engine_not_supported_exception {
-
+    
     /// A builder for [`EngineNotSupportedException`](crate::error::EngineNotSupportedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -725,16 +730,18 @@ pub mod engine_not_supported_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`EngineNotSupportedException`](crate::error::EngineNotSupportedException).
         pub fn build(self) -> crate::error::EngineNotSupportedException {
             crate::error::EngineNotSupportedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl EngineNotSupportedException {
     /// Creates a new builder-style object to manufacture [`EngineNotSupportedException`](crate::error::EngineNotSupportedException).
@@ -748,17 +755,15 @@ impl EngineNotSupportedException {
 #[derive(std::fmt::Debug)]
 pub struct StartSpeechSynthesisTaskError {
     /// Kind of error that occurred.
-    pub kind: StartSpeechSynthesisTaskErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StartSpeechSynthesisTaskErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StartSpeechSynthesisTaskError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: StartSpeechSynthesisTaskErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: StartSpeechSynthesisTaskErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -780,7 +785,7 @@ pub enum StartSpeechSynthesisTaskErrorKind {
     InvalidSsmlException(crate::error::InvalidSsmlException),
     /// <p>The language specified is not currently supported by Amazon Polly in this capacity.</p>
     LanguageNotSupportedException(crate::error::LanguageNotSupportedException),
-    /// <p>Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its name is misspelled or specifying a lexicon that is in a different region.</p>
+    /// <p>Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its name is misspelled or specifying a lexicon that is in a different region.</p> 
     /// <p>Verify that the lexicon exists, is in the region (see <code>ListLexicons</code>) and that you spelled its name is spelled correctly. Then try again.</p>
     LexiconNotFoundException(crate::error::LexiconNotFoundException),
     /// <p>Speech marks are not supported for the <code>OutputFormat</code> selected. Speech marks are only available for content in <code>json</code> format.</p>
@@ -788,43 +793,61 @@ pub enum StartSpeechSynthesisTaskErrorKind {
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>SSML speech marks are not supported for plain text-type input.</p>
-    SsmlMarksNotSupportedForTextTypeException(
-        crate::error::SsmlMarksNotSupportedForTextTypeException,
-    ),
+    SsmlMarksNotSupportedForTextTypeException(crate::error::SsmlMarksNotSupportedForTextTypeException),
     /// <p>The value of the "Text" parameter is longer than the accepted limits. For the <code>SynthesizeSpeech</code> API, the limit for input text is a maximum of 6000 characters total, of which no more than 3000 can be billed characters. For the <code>StartSpeechSynthesisTask</code> API, the maximum is 200,000 characters, of which no more than 100,000 can be billed characters. SSML tags are not counted as billed characters.</p>
     TextLengthExceededException(crate::error::TextLengthExceededException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartSpeechSynthesisTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartSpeechSynthesisTaskErrorKind::EngineNotSupportedException(_inner) => _inner.fmt(f),
-            StartSpeechSynthesisTaskErrorKind::InvalidS3BucketException(_inner) => _inner.fmt(f),
-            StartSpeechSynthesisTaskErrorKind::InvalidS3KeyException(_inner) => _inner.fmt(f),
-            StartSpeechSynthesisTaskErrorKind::InvalidSampleRateException(_inner) => _inner.fmt(f),
-            StartSpeechSynthesisTaskErrorKind::InvalidSnsTopicArnException(_inner) => _inner.fmt(f),
-            StartSpeechSynthesisTaskErrorKind::InvalidSsmlException(_inner) => _inner.fmt(f),
-            StartSpeechSynthesisTaskErrorKind::LanguageNotSupportedException(_inner) => {
+            StartSpeechSynthesisTaskErrorKind::EngineNotSupportedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSpeechSynthesisTaskErrorKind::InvalidS3BucketException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSpeechSynthesisTaskErrorKind::InvalidS3KeyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSpeechSynthesisTaskErrorKind::InvalidSampleRateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSpeechSynthesisTaskErrorKind::InvalidSnsTopicArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSpeechSynthesisTaskErrorKind::InvalidSsmlException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSpeechSynthesisTaskErrorKind::LanguageNotSupportedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSpeechSynthesisTaskErrorKind::LexiconNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSpeechSynthesisTaskErrorKind::MarksNotSupportedForFormatException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSpeechSynthesisTaskErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSpeechSynthesisTaskErrorKind::TextLengthExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSpeechSynthesisTaskErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            StartSpeechSynthesisTaskErrorKind::LexiconNotFoundException(_inner) => _inner.fmt(f),
-            StartSpeechSynthesisTaskErrorKind::MarksNotSupportedForFormatException(_inner) => {
-                _inner.fmt(f)
-            }
-            StartSpeechSynthesisTaskErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeException(
-                _inner,
-            ) => _inner.fmt(f),
-            StartSpeechSynthesisTaskErrorKind::TextLengthExceededException(_inner) => _inner.fmt(f),
-            StartSpeechSynthesisTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -838,157 +861,137 @@ impl aws_smithy_types::retry::ProvideErrorKind for StartSpeechSynthesisTaskError
 }
 impl StartSpeechSynthesisTaskError {
     /// Creates a new `StartSpeechSynthesisTaskError`.
-    pub fn new(kind: StartSpeechSynthesisTaskErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StartSpeechSynthesisTaskError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StartSpeechSynthesisTaskErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StartSpeechSynthesisTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StartSpeechSynthesisTaskErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StartSpeechSynthesisTaskErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StartSpeechSynthesisTaskError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StartSpeechSynthesisTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StartSpeechSynthesisTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StartSpeechSynthesisTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::EngineNotSupportedException`.
     pub fn is_engine_not_supported_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSpeechSynthesisTaskErrorKind::EngineNotSupportedException(_)
-        )
+        matches!(&self.kind, StartSpeechSynthesisTaskErrorKind::EngineNotSupportedException(_))
     }
     /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::InvalidS3BucketException`.
     pub fn is_invalid_s3_bucket_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSpeechSynthesisTaskErrorKind::InvalidS3BucketException(_)
-        )
+        matches!(&self.kind, StartSpeechSynthesisTaskErrorKind::InvalidS3BucketException(_))
     }
     /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::InvalidS3KeyException`.
     pub fn is_invalid_s3_key_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSpeechSynthesisTaskErrorKind::InvalidS3KeyException(_)
-        )
+        matches!(&self.kind, StartSpeechSynthesisTaskErrorKind::InvalidS3KeyException(_))
     }
     /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::InvalidSampleRateException`.
     pub fn is_invalid_sample_rate_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSpeechSynthesisTaskErrorKind::InvalidSampleRateException(_)
-        )
+        matches!(&self.kind, StartSpeechSynthesisTaskErrorKind::InvalidSampleRateException(_))
     }
     /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::InvalidSnsTopicArnException`.
     pub fn is_invalid_sns_topic_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSpeechSynthesisTaskErrorKind::InvalidSnsTopicArnException(_)
-        )
+        matches!(&self.kind, StartSpeechSynthesisTaskErrorKind::InvalidSnsTopicArnException(_))
     }
     /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::InvalidSsmlException`.
     pub fn is_invalid_ssml_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSpeechSynthesisTaskErrorKind::InvalidSsmlException(_)
-        )
+        matches!(&self.kind, StartSpeechSynthesisTaskErrorKind::InvalidSsmlException(_))
     }
     /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::LanguageNotSupportedException`.
     pub fn is_language_not_supported_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSpeechSynthesisTaskErrorKind::LanguageNotSupportedException(_)
-        )
+        matches!(&self.kind, StartSpeechSynthesisTaskErrorKind::LanguageNotSupportedException(_))
     }
     /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::LexiconNotFoundException`.
     pub fn is_lexicon_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSpeechSynthesisTaskErrorKind::LexiconNotFoundException(_)
-        )
+        matches!(&self.kind, StartSpeechSynthesisTaskErrorKind::LexiconNotFoundException(_))
     }
     /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::MarksNotSupportedForFormatException`.
     pub fn is_marks_not_supported_for_format_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSpeechSynthesisTaskErrorKind::MarksNotSupportedForFormatException(_)
-        )
+        matches!(&self.kind, StartSpeechSynthesisTaskErrorKind::MarksNotSupportedForFormatException(_))
     }
     /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSpeechSynthesisTaskErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, StartSpeechSynthesisTaskErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeException`.
     pub fn is_ssml_marks_not_supported_for_text_type_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeException(_)
-        )
+        matches!(&self.kind, StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeException(_))
     }
     /// Returns `true` if the error kind is `StartSpeechSynthesisTaskErrorKind::TextLengthExceededException`.
     pub fn is_text_length_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSpeechSynthesisTaskErrorKind::TextLengthExceededException(_)
-        )
+        matches!(&self.kind, StartSpeechSynthesisTaskErrorKind::TextLengthExceededException(_))
     }
 }
 impl std::error::Error for StartSpeechSynthesisTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartSpeechSynthesisTaskErrorKind::EngineNotSupportedException(_inner) => Some(_inner),
-            StartSpeechSynthesisTaskErrorKind::InvalidS3BucketException(_inner) => Some(_inner),
-            StartSpeechSynthesisTaskErrorKind::InvalidS3KeyException(_inner) => Some(_inner),
-            StartSpeechSynthesisTaskErrorKind::InvalidSampleRateException(_inner) => Some(_inner),
-            StartSpeechSynthesisTaskErrorKind::InvalidSnsTopicArnException(_inner) => Some(_inner),
-            StartSpeechSynthesisTaskErrorKind::InvalidSsmlException(_inner) => Some(_inner),
-            StartSpeechSynthesisTaskErrorKind::LanguageNotSupportedException(_inner) => {
+            StartSpeechSynthesisTaskErrorKind::EngineNotSupportedException(_inner) =>
+            Some(_inner)
+            ,
+            StartSpeechSynthesisTaskErrorKind::InvalidS3BucketException(_inner) =>
+            Some(_inner)
+            ,
+            StartSpeechSynthesisTaskErrorKind::InvalidS3KeyException(_inner) =>
+            Some(_inner)
+            ,
+            StartSpeechSynthesisTaskErrorKind::InvalidSampleRateException(_inner) =>
+            Some(_inner)
+            ,
+            StartSpeechSynthesisTaskErrorKind::InvalidSnsTopicArnException(_inner) =>
+            Some(_inner)
+            ,
+            StartSpeechSynthesisTaskErrorKind::InvalidSsmlException(_inner) =>
+            Some(_inner)
+            ,
+            StartSpeechSynthesisTaskErrorKind::LanguageNotSupportedException(_inner) =>
+            Some(_inner)
+            ,
+            StartSpeechSynthesisTaskErrorKind::LexiconNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            StartSpeechSynthesisTaskErrorKind::MarksNotSupportedForFormatException(_inner) =>
+            Some(_inner)
+            ,
+            StartSpeechSynthesisTaskErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeException(_inner) =>
+            Some(_inner)
+            ,
+            StartSpeechSynthesisTaskErrorKind::TextLengthExceededException(_inner) =>
+            Some(_inner)
+            ,
+            StartSpeechSynthesisTaskErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            StartSpeechSynthesisTaskErrorKind::LexiconNotFoundException(_inner) => Some(_inner),
-            StartSpeechSynthesisTaskErrorKind::MarksNotSupportedForFormatException(_inner) => {
-                Some(_inner)
-            }
-            StartSpeechSynthesisTaskErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            StartSpeechSynthesisTaskErrorKind::SsmlMarksNotSupportedForTextTypeException(
-                _inner,
-            ) => Some(_inner),
-            StartSpeechSynthesisTaskErrorKind::TextLengthExceededException(_inner) => Some(_inner),
-            StartSpeechSynthesisTaskErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -996,22 +999,20 @@ impl std::error::Error for StartSpeechSynthesisTaskError {
 /// <p>The provided SNS topic ARN is invalid. Please provide a valid SNS topic ARN and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidSnsTopicArnException {
+pub struct InvalidSnsTopicArnException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidSnsTopicArnException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidSnsTopicArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSnsTopicArnException")?;
         if let Some(inner_10) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_10)?;
             }
         }
@@ -1021,7 +1022,7 @@ impl std::fmt::Display for InvalidSnsTopicArnException {
 impl std::error::Error for InvalidSnsTopicArnException {}
 /// See [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException).
 pub mod invalid_sns_topic_arn_exception {
-
+    
     /// A builder for [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1035,16 +1036,18 @@ pub mod invalid_sns_topic_arn_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException).
         pub fn build(self) -> crate::error::InvalidSnsTopicArnException {
             crate::error::InvalidSnsTopicArnException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidSnsTopicArnException {
     /// Creates a new builder-style object to manufacture [`InvalidSnsTopicArnException`](crate::error::InvalidSnsTopicArnException).
@@ -1056,22 +1059,20 @@ impl InvalidSnsTopicArnException {
 /// <p>The provided Amazon S3 key prefix is invalid. Please provide a valid S3 object key name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidS3KeyException {
+pub struct InvalidS3KeyException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidS3KeyException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidS3KeyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidS3KeyException")?;
         if let Some(inner_11) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_11)?;
             }
         }
@@ -1081,7 +1082,7 @@ impl std::fmt::Display for InvalidS3KeyException {
 impl std::error::Error for InvalidS3KeyException {}
 /// See [`InvalidS3KeyException`](crate::error::InvalidS3KeyException).
 pub mod invalid_s3_key_exception {
-
+    
     /// A builder for [`InvalidS3KeyException`](crate::error::InvalidS3KeyException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1095,16 +1096,18 @@ pub mod invalid_s3_key_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidS3KeyException`](crate::error::InvalidS3KeyException).
         pub fn build(self) -> crate::error::InvalidS3KeyException {
             crate::error::InvalidS3KeyException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidS3KeyException {
     /// Creates a new builder-style object to manufacture [`InvalidS3KeyException`](crate::error::InvalidS3KeyException).
@@ -1116,22 +1119,20 @@ impl InvalidS3KeyException {
 /// <p>The provided Amazon S3 bucket name is invalid. Please check your input with S3 bucket naming requirements and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidS3BucketException {
+pub struct InvalidS3BucketException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidS3BucketException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidS3BucketException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidS3BucketException")?;
         if let Some(inner_12) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_12)?;
             }
         }
@@ -1141,7 +1142,7 @@ impl std::fmt::Display for InvalidS3BucketException {
 impl std::error::Error for InvalidS3BucketException {}
 /// See [`InvalidS3BucketException`](crate::error::InvalidS3BucketException).
 pub mod invalid_s3_bucket_exception {
-
+    
     /// A builder for [`InvalidS3BucketException`](crate::error::InvalidS3BucketException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1155,16 +1156,18 @@ pub mod invalid_s3_bucket_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidS3BucketException`](crate::error::InvalidS3BucketException).
         pub fn build(self) -> crate::error::InvalidS3BucketException {
             crate::error::InvalidS3BucketException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidS3BucketException {
     /// Creates a new builder-style object to manufacture [`InvalidS3BucketException`](crate::error::InvalidS3BucketException).
@@ -1178,15 +1181,15 @@ impl InvalidS3BucketException {
 #[derive(std::fmt::Debug)]
 pub struct PutLexiconError {
     /// Kind of error that occurred.
-    pub kind: PutLexiconErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutLexiconErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutLexiconError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: PutLexiconErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1208,27 +1211,43 @@ pub enum PutLexiconErrorKind {
     UnsupportedPlsAlphabetException(crate::error::UnsupportedPlsAlphabetException),
     /// <p>The language specified in the lexicon is unsupported. For a list of supported languages, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon Attributes</a>.</p>
     UnsupportedPlsLanguageException(crate::error::UnsupportedPlsLanguageException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutLexiconError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutLexiconErrorKind::InvalidLexiconException(_inner) => _inner.fmt(f),
-            PutLexiconErrorKind::LexiconSizeExceededException(_inner) => _inner.fmt(f),
-            PutLexiconErrorKind::MaxLexemeLengthExceededException(_inner) => _inner.fmt(f),
-            PutLexiconErrorKind::MaxLexiconsNumberExceededException(_inner) => _inner.fmt(f),
-            PutLexiconErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            PutLexiconErrorKind::UnsupportedPlsAlphabetException(_inner) => _inner.fmt(f),
-            PutLexiconErrorKind::UnsupportedPlsLanguageException(_inner) => _inner.fmt(f),
-            PutLexiconErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            PutLexiconErrorKind::InvalidLexiconException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutLexiconErrorKind::LexiconSizeExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutLexiconErrorKind::MaxLexemeLengthExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutLexiconErrorKind::MaxLexiconsNumberExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutLexiconErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutLexiconErrorKind::UnsupportedPlsAlphabetException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutLexiconErrorKind::UnsupportedPlsLanguageException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutLexiconErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1242,70 +1261,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutLexiconError {
 }
 impl PutLexiconError {
     /// Creates a new `PutLexiconError`.
-    pub fn new(kind: PutLexiconErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutLexiconError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutLexiconErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutLexiconError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutLexiconErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutLexiconErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutLexiconError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutLexiconErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutLexiconError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutLexiconErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutLexiconErrorKind::InvalidLexiconException`.
     pub fn is_invalid_lexicon_exception(&self) -> bool {
         matches!(&self.kind, PutLexiconErrorKind::InvalidLexiconException(_))
     }
     /// Returns `true` if the error kind is `PutLexiconErrorKind::LexiconSizeExceededException`.
     pub fn is_lexicon_size_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutLexiconErrorKind::LexiconSizeExceededException(_)
-        )
+        matches!(&self.kind, PutLexiconErrorKind::LexiconSizeExceededException(_))
     }
     /// Returns `true` if the error kind is `PutLexiconErrorKind::MaxLexemeLengthExceededException`.
     pub fn is_max_lexeme_length_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutLexiconErrorKind::MaxLexemeLengthExceededException(_)
-        )
+        matches!(&self.kind, PutLexiconErrorKind::MaxLexemeLengthExceededException(_))
     }
     /// Returns `true` if the error kind is `PutLexiconErrorKind::MaxLexiconsNumberExceededException`.
     pub fn is_max_lexicons_number_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutLexiconErrorKind::MaxLexiconsNumberExceededException(_)
-        )
+        matches!(&self.kind, PutLexiconErrorKind::MaxLexiconsNumberExceededException(_))
     }
     /// Returns `true` if the error kind is `PutLexiconErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
@@ -1313,30 +1323,40 @@ impl PutLexiconError {
     }
     /// Returns `true` if the error kind is `PutLexiconErrorKind::UnsupportedPlsAlphabetException`.
     pub fn is_unsupported_pls_alphabet_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutLexiconErrorKind::UnsupportedPlsAlphabetException(_)
-        )
+        matches!(&self.kind, PutLexiconErrorKind::UnsupportedPlsAlphabetException(_))
     }
     /// Returns `true` if the error kind is `PutLexiconErrorKind::UnsupportedPlsLanguageException`.
     pub fn is_unsupported_pls_language_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutLexiconErrorKind::UnsupportedPlsLanguageException(_)
-        )
+        matches!(&self.kind, PutLexiconErrorKind::UnsupportedPlsLanguageException(_))
     }
 }
 impl std::error::Error for PutLexiconError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutLexiconErrorKind::InvalidLexiconException(_inner) => Some(_inner),
-            PutLexiconErrorKind::LexiconSizeExceededException(_inner) => Some(_inner),
-            PutLexiconErrorKind::MaxLexemeLengthExceededException(_inner) => Some(_inner),
-            PutLexiconErrorKind::MaxLexiconsNumberExceededException(_inner) => Some(_inner),
-            PutLexiconErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            PutLexiconErrorKind::UnsupportedPlsAlphabetException(_inner) => Some(_inner),
-            PutLexiconErrorKind::UnsupportedPlsLanguageException(_inner) => Some(_inner),
-            PutLexiconErrorKind::Unhandled(_inner) => Some(_inner),
+            PutLexiconErrorKind::InvalidLexiconException(_inner) =>
+            Some(_inner)
+            ,
+            PutLexiconErrorKind::LexiconSizeExceededException(_inner) =>
+            Some(_inner)
+            ,
+            PutLexiconErrorKind::MaxLexemeLengthExceededException(_inner) =>
+            Some(_inner)
+            ,
+            PutLexiconErrorKind::MaxLexiconsNumberExceededException(_inner) =>
+            Some(_inner)
+            ,
+            PutLexiconErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            PutLexiconErrorKind::UnsupportedPlsAlphabetException(_inner) =>
+            Some(_inner)
+            ,
+            PutLexiconErrorKind::UnsupportedPlsLanguageException(_inner) =>
+            Some(_inner)
+            ,
+            PutLexiconErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1344,22 +1364,20 @@ impl std::error::Error for PutLexiconError {
 /// <p>The language specified in the lexicon is unsupported. For a list of supported languages, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon Attributes</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsupportedPlsLanguageException {
+pub struct UnsupportedPlsLanguageException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnsupportedPlsLanguageException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UnsupportedPlsLanguageException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedPlsLanguageException")?;
         if let Some(inner_13) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_13)?;
             }
         }
@@ -1369,7 +1387,7 @@ impl std::fmt::Display for UnsupportedPlsLanguageException {
 impl std::error::Error for UnsupportedPlsLanguageException {}
 /// See [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException).
 pub mod unsupported_pls_language_exception {
-
+    
     /// A builder for [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1383,16 +1401,18 @@ pub mod unsupported_pls_language_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException).
         pub fn build(self) -> crate::error::UnsupportedPlsLanguageException {
             crate::error::UnsupportedPlsLanguageException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UnsupportedPlsLanguageException {
     /// Creates a new builder-style object to manufacture [`UnsupportedPlsLanguageException`](crate::error::UnsupportedPlsLanguageException).
@@ -1404,22 +1424,20 @@ impl UnsupportedPlsLanguageException {
 /// <p>The alphabet specified by the lexicon is not a supported alphabet. Valid values are <code>x-sampa</code> and <code>ipa</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsupportedPlsAlphabetException {
+pub struct UnsupportedPlsAlphabetException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnsupportedPlsAlphabetException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UnsupportedPlsAlphabetException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedPlsAlphabetException")?;
         if let Some(inner_14) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_14)?;
             }
         }
@@ -1429,7 +1447,7 @@ impl std::fmt::Display for UnsupportedPlsAlphabetException {
 impl std::error::Error for UnsupportedPlsAlphabetException {}
 /// See [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException).
 pub mod unsupported_pls_alphabet_exception {
-
+    
     /// A builder for [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1443,16 +1461,18 @@ pub mod unsupported_pls_alphabet_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException).
         pub fn build(self) -> crate::error::UnsupportedPlsAlphabetException {
             crate::error::UnsupportedPlsAlphabetException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UnsupportedPlsAlphabetException {
     /// Creates a new builder-style object to manufacture [`UnsupportedPlsAlphabetException`](crate::error::UnsupportedPlsAlphabetException).
@@ -1464,22 +1484,20 @@ impl UnsupportedPlsAlphabetException {
 /// <p>The maximum number of lexicons would be exceeded by this operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MaxLexiconsNumberExceededException {
+pub struct MaxLexiconsNumberExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl MaxLexiconsNumberExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for MaxLexiconsNumberExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaxLexiconsNumberExceededException")?;
         if let Some(inner_15) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_15)?;
             }
         }
@@ -1489,7 +1507,7 @@ impl std::fmt::Display for MaxLexiconsNumberExceededException {
 impl std::error::Error for MaxLexiconsNumberExceededException {}
 /// See [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException).
 pub mod max_lexicons_number_exceeded_exception {
-
+    
     /// A builder for [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1503,16 +1521,18 @@ pub mod max_lexicons_number_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException).
         pub fn build(self) -> crate::error::MaxLexiconsNumberExceededException {
             crate::error::MaxLexiconsNumberExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl MaxLexiconsNumberExceededException {
     /// Creates a new builder-style object to manufacture [`MaxLexiconsNumberExceededException`](crate::error::MaxLexiconsNumberExceededException).
@@ -1524,22 +1544,20 @@ impl MaxLexiconsNumberExceededException {
 /// <p>The maximum size of the lexeme would be exceeded by this operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MaxLexemeLengthExceededException {
+pub struct MaxLexemeLengthExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl MaxLexemeLengthExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for MaxLexemeLengthExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MaxLexemeLengthExceededException")?;
         if let Some(inner_16) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_16)?;
             }
         }
@@ -1549,7 +1567,7 @@ impl std::fmt::Display for MaxLexemeLengthExceededException {
 impl std::error::Error for MaxLexemeLengthExceededException {}
 /// See [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException).
 pub mod max_lexeme_length_exceeded_exception {
-
+    
     /// A builder for [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1563,16 +1581,18 @@ pub mod max_lexeme_length_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException).
         pub fn build(self) -> crate::error::MaxLexemeLengthExceededException {
             crate::error::MaxLexemeLengthExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl MaxLexemeLengthExceededException {
     /// Creates a new builder-style object to manufacture [`MaxLexemeLengthExceededException`](crate::error::MaxLexemeLengthExceededException).
@@ -1584,22 +1604,20 @@ impl MaxLexemeLengthExceededException {
 /// <p>The maximum size of the specified lexicon would be exceeded by this operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LexiconSizeExceededException {
+pub struct LexiconSizeExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl LexiconSizeExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for LexiconSizeExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LexiconSizeExceededException")?;
         if let Some(inner_17) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_17)?;
             }
         }
@@ -1609,7 +1627,7 @@ impl std::fmt::Display for LexiconSizeExceededException {
 impl std::error::Error for LexiconSizeExceededException {}
 /// See [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException).
 pub mod lexicon_size_exceeded_exception {
-
+    
     /// A builder for [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1623,16 +1641,18 @@ pub mod lexicon_size_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException).
         pub fn build(self) -> crate::error::LexiconSizeExceededException {
             crate::error::LexiconSizeExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl LexiconSizeExceededException {
     /// Creates a new builder-style object to manufacture [`LexiconSizeExceededException`](crate::error::LexiconSizeExceededException).
@@ -1644,22 +1664,20 @@ impl LexiconSizeExceededException {
 /// <p>Amazon Polly can't find the specified lexicon. Verify that the lexicon's name is spelled correctly, and then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidLexiconException {
+pub struct InvalidLexiconException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidLexiconException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidLexiconException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidLexiconException")?;
         if let Some(inner_18) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_18)?;
             }
         }
@@ -1669,7 +1687,7 @@ impl std::fmt::Display for InvalidLexiconException {
 impl std::error::Error for InvalidLexiconException {}
 /// See [`InvalidLexiconException`](crate::error::InvalidLexiconException).
 pub mod invalid_lexicon_exception {
-
+    
     /// A builder for [`InvalidLexiconException`](crate::error::InvalidLexiconException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1683,16 +1701,18 @@ pub mod invalid_lexicon_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidLexiconException`](crate::error::InvalidLexiconException).
         pub fn build(self) -> crate::error::InvalidLexiconException {
             crate::error::InvalidLexiconException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidLexiconException {
     /// Creates a new builder-style object to manufacture [`InvalidLexiconException`](crate::error::InvalidLexiconException).
@@ -1706,17 +1726,15 @@ impl InvalidLexiconException {
 #[derive(std::fmt::Debug)]
 pub struct ListSpeechSynthesisTasksError {
     /// Kind of error that occurred.
-    pub kind: ListSpeechSynthesisTasksErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListSpeechSynthesisTasksErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListSpeechSynthesisTasksError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListSpeechSynthesisTasksErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ListSpeechSynthesisTasksErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1728,22 +1746,28 @@ pub enum ListSpeechSynthesisTasksErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSpeechSynthesisTasksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListSpeechSynthesisTasksErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
-            ListSpeechSynthesisTasksErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            ListSpeechSynthesisTasksErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListSpeechSynthesisTasksErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSpeechSynthesisTasksErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSpeechSynthesisTasksErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1757,71 +1781,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListSpeechSynthesisTasksError
 }
 impl ListSpeechSynthesisTasksError {
     /// Creates a new `ListSpeechSynthesisTasksError`.
-    pub fn new(kind: ListSpeechSynthesisTasksErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListSpeechSynthesisTasksError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListSpeechSynthesisTasksErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListSpeechSynthesisTasksError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListSpeechSynthesisTasksErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListSpeechSynthesisTasksErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListSpeechSynthesisTasksError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListSpeechSynthesisTasksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListSpeechSynthesisTasksError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListSpeechSynthesisTasksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListSpeechSynthesisTasksErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSpeechSynthesisTasksErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, ListSpeechSynthesisTasksErrorKind::InvalidNextTokenException(_))
     }
     /// Returns `true` if the error kind is `ListSpeechSynthesisTasksErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSpeechSynthesisTasksErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ListSpeechSynthesisTasksErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for ListSpeechSynthesisTasksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListSpeechSynthesisTasksErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListSpeechSynthesisTasksErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            ListSpeechSynthesisTasksErrorKind::Unhandled(_inner) => Some(_inner),
+            ListSpeechSynthesisTasksErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListSpeechSynthesisTasksErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListSpeechSynthesisTasksErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1829,22 +1849,20 @@ impl std::error::Error for ListSpeechSynthesisTasksError {
 /// <p>The NextToken is invalid. Verify that it's spelled correctly, and then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidNextTokenException {
+pub struct InvalidNextTokenException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidNextTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidNextTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidNextTokenException")?;
         if let Some(inner_19) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_19)?;
             }
         }
@@ -1854,7 +1872,7 @@ impl std::fmt::Display for InvalidNextTokenException {
 impl std::error::Error for InvalidNextTokenException {}
 /// See [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
 pub mod invalid_next_token_exception {
-
+    
     /// A builder for [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1868,16 +1886,18 @@ pub mod invalid_next_token_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
         pub fn build(self) -> crate::error::InvalidNextTokenException {
             crate::error::InvalidNextTokenException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidNextTokenException {
     /// Creates a new builder-style object to manufacture [`InvalidNextTokenException`](crate::error::InvalidNextTokenException).
@@ -1891,15 +1911,15 @@ impl InvalidNextTokenException {
 #[derive(std::fmt::Debug)]
 pub struct ListLexiconsError {
     /// Kind of error that occurred.
-    pub kind: ListLexiconsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListLexiconsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListLexiconsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListLexiconsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1911,22 +1931,28 @@ pub enum ListLexiconsErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLexiconsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListLexiconsErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
-            ListLexiconsErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            ListLexiconsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListLexiconsErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLexiconsErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLexiconsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1940,67 +1966,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListLexiconsError {
 }
 impl ListLexiconsError {
     /// Creates a new `ListLexiconsError`.
-    pub fn new(kind: ListLexiconsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListLexiconsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListLexiconsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListLexiconsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListLexiconsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListLexiconsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListLexiconsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListLexiconsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListLexiconsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListLexiconsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListLexiconsErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLexiconsErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, ListLexiconsErrorKind::InvalidNextTokenException(_))
     }
     /// Returns `true` if the error kind is `ListLexiconsErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLexiconsErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, ListLexiconsErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for ListLexiconsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListLexiconsErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            ListLexiconsErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            ListLexiconsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListLexiconsErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ListLexiconsErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListLexiconsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2010,15 +2036,15 @@ impl std::error::Error for ListLexiconsError {
 #[derive(std::fmt::Debug)]
 pub struct GetSpeechSynthesisTaskError {
     /// Kind of error that occurred.
-    pub kind: GetSpeechSynthesisTaskErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetSpeechSynthesisTaskErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetSpeechSynthesisTaskError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetSpeechSynthesisTaskErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2032,25 +2058,31 @@ pub enum GetSpeechSynthesisTaskErrorKind {
     ServiceFailureException(crate::error::ServiceFailureException),
     /// <p>The Speech Synthesis task with requested Task ID cannot be found.</p>
     SynthesisTaskNotFoundException(crate::error::SynthesisTaskNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSpeechSynthesisTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSpeechSynthesisTaskErrorKind::InvalidTaskIdException(_inner) => _inner.fmt(f),
-            GetSpeechSynthesisTaskErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            GetSpeechSynthesisTaskErrorKind::SynthesisTaskNotFoundException(_inner) => {
+            GetSpeechSynthesisTaskErrorKind::InvalidTaskIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSpeechSynthesisTaskErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSpeechSynthesisTaskErrorKind::SynthesisTaskNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSpeechSynthesisTaskErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetSpeechSynthesisTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2064,79 +2096,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetSpeechSynthesisTaskError {
 }
 impl GetSpeechSynthesisTaskError {
     /// Creates a new `GetSpeechSynthesisTaskError`.
-    pub fn new(kind: GetSpeechSynthesisTaskErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetSpeechSynthesisTaskError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetSpeechSynthesisTaskErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetSpeechSynthesisTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetSpeechSynthesisTaskErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetSpeechSynthesisTaskErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetSpeechSynthesisTaskError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetSpeechSynthesisTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetSpeechSynthesisTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetSpeechSynthesisTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetSpeechSynthesisTaskErrorKind::InvalidTaskIdException`.
     pub fn is_invalid_task_id_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSpeechSynthesisTaskErrorKind::InvalidTaskIdException(_)
-        )
+        matches!(&self.kind, GetSpeechSynthesisTaskErrorKind::InvalidTaskIdException(_))
     }
     /// Returns `true` if the error kind is `GetSpeechSynthesisTaskErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSpeechSynthesisTaskErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, GetSpeechSynthesisTaskErrorKind::ServiceFailureException(_))
     }
     /// Returns `true` if the error kind is `GetSpeechSynthesisTaskErrorKind::SynthesisTaskNotFoundException`.
     pub fn is_synthesis_task_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSpeechSynthesisTaskErrorKind::SynthesisTaskNotFoundException(_)
-        )
+        matches!(&self.kind, GetSpeechSynthesisTaskErrorKind::SynthesisTaskNotFoundException(_))
     }
 }
 impl std::error::Error for GetSpeechSynthesisTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSpeechSynthesisTaskErrorKind::InvalidTaskIdException(_inner) => Some(_inner),
-            GetSpeechSynthesisTaskErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            GetSpeechSynthesisTaskErrorKind::SynthesisTaskNotFoundException(_inner) => Some(_inner),
-            GetSpeechSynthesisTaskErrorKind::Unhandled(_inner) => Some(_inner),
+            GetSpeechSynthesisTaskErrorKind::InvalidTaskIdException(_inner) =>
+            Some(_inner)
+            ,
+            GetSpeechSynthesisTaskErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetSpeechSynthesisTaskErrorKind::SynthesisTaskNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetSpeechSynthesisTaskErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2144,22 +2171,20 @@ impl std::error::Error for GetSpeechSynthesisTaskError {
 /// <p>The Speech Synthesis task with requested Task ID cannot be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SynthesisTaskNotFoundException {
+pub struct SynthesisTaskNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl SynthesisTaskNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for SynthesisTaskNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SynthesisTaskNotFoundException")?;
         if let Some(inner_20) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_20)?;
             }
         }
@@ -2169,7 +2194,7 @@ impl std::fmt::Display for SynthesisTaskNotFoundException {
 impl std::error::Error for SynthesisTaskNotFoundException {}
 /// See [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException).
 pub mod synthesis_task_not_found_exception {
-
+    
     /// A builder for [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2183,16 +2208,18 @@ pub mod synthesis_task_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException).
         pub fn build(self) -> crate::error::SynthesisTaskNotFoundException {
             crate::error::SynthesisTaskNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl SynthesisTaskNotFoundException {
     /// Creates a new builder-style object to manufacture [`SynthesisTaskNotFoundException`](crate::error::SynthesisTaskNotFoundException).
@@ -2204,22 +2231,20 @@ impl SynthesisTaskNotFoundException {
 /// <p>The provided Task ID is not valid. Please provide a valid Task ID and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidTaskIdException {
+pub struct InvalidTaskIdException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidTaskIdException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidTaskIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidTaskIdException")?;
         if let Some(inner_21) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_21)?;
             }
         }
@@ -2229,7 +2254,7 @@ impl std::fmt::Display for InvalidTaskIdException {
 impl std::error::Error for InvalidTaskIdException {}
 /// See [`InvalidTaskIdException`](crate::error::InvalidTaskIdException).
 pub mod invalid_task_id_exception {
-
+    
     /// A builder for [`InvalidTaskIdException`](crate::error::InvalidTaskIdException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2243,16 +2268,18 @@ pub mod invalid_task_id_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidTaskIdException`](crate::error::InvalidTaskIdException).
         pub fn build(self) -> crate::error::InvalidTaskIdException {
             crate::error::InvalidTaskIdException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidTaskIdException {
     /// Creates a new builder-style object to manufacture [`InvalidTaskIdException`](crate::error::InvalidTaskIdException).
@@ -2266,15 +2293,15 @@ impl InvalidTaskIdException {
 #[derive(std::fmt::Debug)]
 pub struct GetLexiconError {
     /// Kind of error that occurred.
-    pub kind: GetLexiconErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetLexiconErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetLexiconError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetLexiconErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2282,27 +2309,33 @@ impl aws_smithy_http::result::CreateUnhandledError for GetLexiconError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetLexiconErrorKind {
-    /// <p>Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its name is misspelled or specifying a lexicon that is in a different region.</p>
+    /// <p>Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its name is misspelled or specifying a lexicon that is in a different region.</p> 
     /// <p>Verify that the lexicon exists, is in the region (see <code>ListLexicons</code>) and that you spelled its name is spelled correctly. Then try again.</p>
     LexiconNotFoundException(crate::error::LexiconNotFoundException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLexiconError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetLexiconErrorKind::LexiconNotFoundException(_inner) => _inner.fmt(f),
-            GetLexiconErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            GetLexiconErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetLexiconErrorKind::LexiconNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLexiconErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLexiconErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2316,46 +2349,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetLexiconError {
 }
 impl GetLexiconError {
     /// Creates a new `GetLexiconError`.
-    pub fn new(kind: GetLexiconErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetLexiconError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetLexiconErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetLexiconError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetLexiconErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetLexiconErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetLexiconError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetLexiconErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetLexiconError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetLexiconErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetLexiconErrorKind::LexiconNotFoundException`.
     pub fn is_lexicon_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetLexiconErrorKind::LexiconNotFoundException(_))
@@ -2368,9 +2401,15 @@ impl GetLexiconError {
 impl std::error::Error for GetLexiconError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetLexiconErrorKind::LexiconNotFoundException(_inner) => Some(_inner),
-            GetLexiconErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            GetLexiconErrorKind::Unhandled(_inner) => Some(_inner),
+            GetLexiconErrorKind::LexiconNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetLexiconErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetLexiconErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2380,15 +2419,15 @@ impl std::error::Error for GetLexiconError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeVoicesError {
     /// Kind of error that occurred.
-    pub kind: DescribeVoicesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeVoicesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeVoicesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeVoicesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2400,22 +2439,28 @@ pub enum DescribeVoicesErrorKind {
     InvalidNextTokenException(crate::error::InvalidNextTokenException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeVoicesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeVoicesErrorKind::InvalidNextTokenException(_inner) => _inner.fmt(f),
-            DescribeVoicesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            DescribeVoicesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeVoicesErrorKind::InvalidNextTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVoicesErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVoicesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2429,67 +2474,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeVoicesError {
 }
 impl DescribeVoicesError {
     /// Creates a new `DescribeVoicesError`.
-    pub fn new(kind: DescribeVoicesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeVoicesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeVoicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeVoicesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeVoicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeVoicesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeVoicesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeVoicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeVoicesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeVoicesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeVoicesErrorKind::InvalidNextTokenException`.
     pub fn is_invalid_next_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVoicesErrorKind::InvalidNextTokenException(_)
-        )
+        matches!(&self.kind, DescribeVoicesErrorKind::InvalidNextTokenException(_))
     }
     /// Returns `true` if the error kind is `DescribeVoicesErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVoicesErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DescribeVoicesErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for DescribeVoicesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeVoicesErrorKind::InvalidNextTokenException(_inner) => Some(_inner),
-            DescribeVoicesErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            DescribeVoicesErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeVoicesErrorKind::InvalidNextTokenException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVoicesErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVoicesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2499,15 +2544,15 @@ impl std::error::Error for DescribeVoicesError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteLexiconError {
     /// Kind of error that occurred.
-    pub kind: DeleteLexiconErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteLexiconErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteLexiconError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteLexiconErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2515,27 +2560,33 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteLexiconError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteLexiconErrorKind {
-    /// <p>Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its name is misspelled or specifying a lexicon that is in a different region.</p>
+    /// <p>Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that is missing, its name is misspelled or specifying a lexicon that is in a different region.</p> 
     /// <p>Verify that the lexicon exists, is in the region (see <code>ListLexicons</code>) and that you spelled its name is spelled correctly. Then try again.</p>
     LexiconNotFoundException(crate::error::LexiconNotFoundException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::error::ServiceFailureException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLexiconError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteLexiconErrorKind::LexiconNotFoundException(_inner) => _inner.fmt(f),
-            DeleteLexiconErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
-            DeleteLexiconErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteLexiconErrorKind::LexiconNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLexiconErrorKind::ServiceFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLexiconErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2549,96 +2600,97 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteLexiconError {
 }
 impl DeleteLexiconError {
     /// Creates a new `DeleteLexiconError`.
-    pub fn new(kind: DeleteLexiconErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteLexiconError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteLexiconErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteLexiconError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteLexiconErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteLexiconErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteLexiconError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteLexiconErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteLexiconError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteLexiconErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteLexiconErrorKind::LexiconNotFoundException`.
     pub fn is_lexicon_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLexiconErrorKind::LexiconNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteLexiconErrorKind::LexiconNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteLexiconErrorKind::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLexiconErrorKind::ServiceFailureException(_)
-        )
+        matches!(&self.kind, DeleteLexiconErrorKind::ServiceFailureException(_))
     }
 }
 impl std::error::Error for DeleteLexiconError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteLexiconErrorKind::LexiconNotFoundException(_inner) => Some(_inner),
-            DeleteLexiconErrorKind::ServiceFailureException(_inner) => Some(_inner),
-            DeleteLexiconErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteLexiconErrorKind::LexiconNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLexiconErrorKind::ServiceFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLexiconErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

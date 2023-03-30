@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEndpointOutput {}
+pub struct UpdateEndpointOutput  {
+}
 /// See [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput).
 pub mod update_endpoint_output {
-
+    
     /// A builder for [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput).
         pub fn build(self) -> crate::output::UpdateEndpointOutput {
-            crate::output::UpdateEndpointOutput {}
+            crate::output::UpdateEndpointOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateEndpointOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEndpointOutput`](crate::output::UpdateEndpointOutput).
@@ -26,19 +31,24 @@ impl UpdateEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -50,19 +60,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -74,19 +89,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopTrainingEntityRecognizerOutput {}
+pub struct StopTrainingEntityRecognizerOutput  {
+}
 /// See [`StopTrainingEntityRecognizerOutput`](crate::output::StopTrainingEntityRecognizerOutput).
 pub mod stop_training_entity_recognizer_output {
-
+    
     /// A builder for [`StopTrainingEntityRecognizerOutput`](crate::output::StopTrainingEntityRecognizerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopTrainingEntityRecognizerOutput`](crate::output::StopTrainingEntityRecognizerOutput).
         pub fn build(self) -> crate::output::StopTrainingEntityRecognizerOutput {
-            crate::output::StopTrainingEntityRecognizerOutput {}
+            crate::output::StopTrainingEntityRecognizerOutput {
+            }
         }
     }
+    
+    
 }
 impl StopTrainingEntityRecognizerOutput {
     /// Creates a new builder-style object to manufacture [`StopTrainingEntityRecognizerOutput`](crate::output::StopTrainingEntityRecognizerOutput).
@@ -98,19 +118,24 @@ impl StopTrainingEntityRecognizerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopTrainingDocumentClassifierOutput {}
+pub struct StopTrainingDocumentClassifierOutput  {
+}
 /// See [`StopTrainingDocumentClassifierOutput`](crate::output::StopTrainingDocumentClassifierOutput).
 pub mod stop_training_document_classifier_output {
-
+    
     /// A builder for [`StopTrainingDocumentClassifierOutput`](crate::output::StopTrainingDocumentClassifierOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopTrainingDocumentClassifierOutput`](crate::output::StopTrainingDocumentClassifierOutput).
         pub fn build(self) -> crate::output::StopTrainingDocumentClassifierOutput {
-            crate::output::StopTrainingDocumentClassifierOutput {}
+            crate::output::StopTrainingDocumentClassifierOutput {
+            }
         }
     }
+    
+    
 }
 impl StopTrainingDocumentClassifierOutput {
     /// Creates a new builder-style object to manufacture [`StopTrainingDocumentClassifierOutput`](crate::output::StopTrainingDocumentClassifierOutput).
@@ -122,7 +147,7 @@ impl StopTrainingDocumentClassifierOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopTargetedSentimentDetectionJobOutput {
+pub struct StopTargetedSentimentDetectionJobOutput  {
     /// <p>The identifier of the targeted sentiment detection job to stop.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -132,17 +157,17 @@ pub struct StopTargetedSentimentDetectionJobOutput {
 }
 impl StopTargetedSentimentDetectionJobOutput {
     /// <p>The identifier of the targeted sentiment detection job to stop.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
 }
 /// See [`StopTargetedSentimentDetectionJobOutput`](crate::output::StopTargetedSentimentDetectionJobOutput).
 pub mod stop_targeted_sentiment_detection_job_output {
-
+    
     /// A builder for [`StopTargetedSentimentDetectionJobOutput`](crate::output::StopTargetedSentimentDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -157,8 +182,7 @@ pub mod stop_targeted_sentiment_detection_job_output {
         }
         /// <p>The identifier of the targeted sentiment detection job to stop.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -166,21 +190,21 @@ pub mod stop_targeted_sentiment_detection_job_output {
             self
         }
         /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// Consumes the builder and constructs a [`StopTargetedSentimentDetectionJobOutput`](crate::output::StopTargetedSentimentDetectionJobOutput).
         pub fn build(self) -> crate::output::StopTargetedSentimentDetectionJobOutput {
             crate::output::StopTargetedSentimentDetectionJobOutput {
-                job_id: self.job_id,
-                job_status: self.job_status,
+                job_id: self.job_id
+                ,
+                job_status: self.job_status
+                ,
             }
         }
     }
+    
+    
 }
 impl StopTargetedSentimentDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StopTargetedSentimentDetectionJobOutput`](crate::output::StopTargetedSentimentDetectionJobOutput).
@@ -192,7 +216,7 @@ impl StopTargetedSentimentDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopSentimentDetectionJobOutput {
+pub struct StopSentimentDetectionJobOutput  {
     /// <p>The identifier of the sentiment detection job to stop.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -202,17 +226,17 @@ pub struct StopSentimentDetectionJobOutput {
 }
 impl StopSentimentDetectionJobOutput {
     /// <p>The identifier of the sentiment detection job to stop.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
 }
 /// See [`StopSentimentDetectionJobOutput`](crate::output::StopSentimentDetectionJobOutput).
 pub mod stop_sentiment_detection_job_output {
-
+    
     /// A builder for [`StopSentimentDetectionJobOutput`](crate::output::StopSentimentDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -227,8 +251,7 @@ pub mod stop_sentiment_detection_job_output {
         }
         /// <p>The identifier of the sentiment detection job to stop.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -236,21 +259,21 @@ pub mod stop_sentiment_detection_job_output {
             self
         }
         /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// Consumes the builder and constructs a [`StopSentimentDetectionJobOutput`](crate::output::StopSentimentDetectionJobOutput).
         pub fn build(self) -> crate::output::StopSentimentDetectionJobOutput {
             crate::output::StopSentimentDetectionJobOutput {
-                job_id: self.job_id,
-                job_status: self.job_status,
+                job_id: self.job_id
+                ,
+                job_status: self.job_status
+                ,
             }
         }
     }
+    
+    
 }
 impl StopSentimentDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StopSentimentDetectionJobOutput`](crate::output::StopSentimentDetectionJobOutput).
@@ -262,7 +285,7 @@ impl StopSentimentDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopPiiEntitiesDetectionJobOutput {
+pub struct StopPiiEntitiesDetectionJobOutput  {
     /// <p>The identifier of the PII entities detection job to stop.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -272,17 +295,17 @@ pub struct StopPiiEntitiesDetectionJobOutput {
 }
 impl StopPiiEntitiesDetectionJobOutput {
     /// <p>The identifier of the PII entities detection job to stop.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The status of the PII entities detection job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
 }
 /// See [`StopPiiEntitiesDetectionJobOutput`](crate::output::StopPiiEntitiesDetectionJobOutput).
 pub mod stop_pii_entities_detection_job_output {
-
+    
     /// A builder for [`StopPiiEntitiesDetectionJobOutput`](crate::output::StopPiiEntitiesDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -297,8 +320,7 @@ pub mod stop_pii_entities_detection_job_output {
         }
         /// <p>The identifier of the PII entities detection job to stop.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The status of the PII entities detection job.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -306,21 +328,21 @@ pub mod stop_pii_entities_detection_job_output {
             self
         }
         /// <p>The status of the PII entities detection job.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// Consumes the builder and constructs a [`StopPiiEntitiesDetectionJobOutput`](crate::output::StopPiiEntitiesDetectionJobOutput).
         pub fn build(self) -> crate::output::StopPiiEntitiesDetectionJobOutput {
             crate::output::StopPiiEntitiesDetectionJobOutput {
-                job_id: self.job_id,
-                job_status: self.job_status,
+                job_id: self.job_id
+                ,
+                job_status: self.job_status
+                ,
             }
         }
     }
+    
+    
 }
 impl StopPiiEntitiesDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StopPiiEntitiesDetectionJobOutput`](crate::output::StopPiiEntitiesDetectionJobOutput).
@@ -332,7 +354,7 @@ impl StopPiiEntitiesDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopKeyPhrasesDetectionJobOutput {
+pub struct StopKeyPhrasesDetectionJobOutput  {
     /// <p>The identifier of the key phrases detection job to stop.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -342,17 +364,17 @@ pub struct StopKeyPhrasesDetectionJobOutput {
 }
 impl StopKeyPhrasesDetectionJobOutput {
     /// <p>The identifier of the key phrases detection job to stop.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopKeyPhrasesDetectionJob</code> operation.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
 }
 /// See [`StopKeyPhrasesDetectionJobOutput`](crate::output::StopKeyPhrasesDetectionJobOutput).
 pub mod stop_key_phrases_detection_job_output {
-
+    
     /// A builder for [`StopKeyPhrasesDetectionJobOutput`](crate::output::StopKeyPhrasesDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -367,8 +389,7 @@ pub mod stop_key_phrases_detection_job_output {
         }
         /// <p>The identifier of the key phrases detection job to stop.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopKeyPhrasesDetectionJob</code> operation.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -376,21 +397,21 @@ pub mod stop_key_phrases_detection_job_output {
             self
         }
         /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopKeyPhrasesDetectionJob</code> operation.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// Consumes the builder and constructs a [`StopKeyPhrasesDetectionJobOutput`](crate::output::StopKeyPhrasesDetectionJobOutput).
         pub fn build(self) -> crate::output::StopKeyPhrasesDetectionJobOutput {
             crate::output::StopKeyPhrasesDetectionJobOutput {
-                job_id: self.job_id,
-                job_status: self.job_status,
+                job_id: self.job_id
+                ,
+                job_status: self.job_status
+                ,
             }
         }
     }
+    
+    
 }
 impl StopKeyPhrasesDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StopKeyPhrasesDetectionJobOutput`](crate::output::StopKeyPhrasesDetectionJobOutput).
@@ -402,7 +423,7 @@ impl StopKeyPhrasesDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopEventsDetectionJobOutput {
+pub struct StopEventsDetectionJobOutput  {
     /// <p>The identifier of the events detection job to stop.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -412,17 +433,17 @@ pub struct StopEventsDetectionJobOutput {
 }
 impl StopEventsDetectionJobOutput {
     /// <p>The identifier of the events detection job to stop.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The status of the events detection job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
 }
 /// See [`StopEventsDetectionJobOutput`](crate::output::StopEventsDetectionJobOutput).
 pub mod stop_events_detection_job_output {
-
+    
     /// A builder for [`StopEventsDetectionJobOutput`](crate::output::StopEventsDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -437,8 +458,7 @@ pub mod stop_events_detection_job_output {
         }
         /// <p>The identifier of the events detection job to stop.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The status of the events detection job.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -446,21 +466,21 @@ pub mod stop_events_detection_job_output {
             self
         }
         /// <p>The status of the events detection job.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// Consumes the builder and constructs a [`StopEventsDetectionJobOutput`](crate::output::StopEventsDetectionJobOutput).
         pub fn build(self) -> crate::output::StopEventsDetectionJobOutput {
             crate::output::StopEventsDetectionJobOutput {
-                job_id: self.job_id,
-                job_status: self.job_status,
+                job_id: self.job_id
+                ,
+                job_status: self.job_status
+                ,
             }
         }
     }
+    
+    
 }
 impl StopEventsDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StopEventsDetectionJobOutput`](crate::output::StopEventsDetectionJobOutput).
@@ -472,7 +492,7 @@ impl StopEventsDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopEntitiesDetectionJobOutput {
+pub struct StopEntitiesDetectionJobOutput  {
     /// <p>The identifier of the entities detection job to stop.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -482,17 +502,17 @@ pub struct StopEntitiesDetectionJobOutput {
 }
 impl StopEntitiesDetectionJobOutput {
     /// <p>The identifier of the entities detection job to stop.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopEntitiesDetectionJob</code> operation.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
 }
 /// See [`StopEntitiesDetectionJobOutput`](crate::output::StopEntitiesDetectionJobOutput).
 pub mod stop_entities_detection_job_output {
-
+    
     /// A builder for [`StopEntitiesDetectionJobOutput`](crate::output::StopEntitiesDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -507,8 +527,7 @@ pub mod stop_entities_detection_job_output {
         }
         /// <p>The identifier of the entities detection job to stop.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopEntitiesDetectionJob</code> operation.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -516,21 +535,21 @@ pub mod stop_entities_detection_job_output {
             self
         }
         /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopEntitiesDetectionJob</code> operation.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// Consumes the builder and constructs a [`StopEntitiesDetectionJobOutput`](crate::output::StopEntitiesDetectionJobOutput).
         pub fn build(self) -> crate::output::StopEntitiesDetectionJobOutput {
             crate::output::StopEntitiesDetectionJobOutput {
-                job_id: self.job_id,
-                job_status: self.job_status,
+                job_id: self.job_id
+                ,
+                job_status: self.job_status
+                ,
             }
         }
     }
+    
+    
 }
 impl StopEntitiesDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StopEntitiesDetectionJobOutput`](crate::output::StopEntitiesDetectionJobOutput).
@@ -542,7 +561,7 @@ impl StopEntitiesDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopDominantLanguageDetectionJobOutput {
+pub struct StopDominantLanguageDetectionJobOutput  {
     /// <p>The identifier of the dominant language detection job to stop.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -552,17 +571,17 @@ pub struct StopDominantLanguageDetectionJobOutput {
 }
 impl StopDominantLanguageDetectionJobOutput {
     /// <p>The identifier of the dominant language detection job to stop.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopDominantLanguageDetectionJob</code> operation.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
 }
 /// See [`StopDominantLanguageDetectionJobOutput`](crate::output::StopDominantLanguageDetectionJobOutput).
 pub mod stop_dominant_language_detection_job_output {
-
+    
     /// A builder for [`StopDominantLanguageDetectionJobOutput`](crate::output::StopDominantLanguageDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -577,8 +596,7 @@ pub mod stop_dominant_language_detection_job_output {
         }
         /// <p>The identifier of the dominant language detection job to stop.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopDominantLanguageDetectionJob</code> operation.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -586,21 +604,21 @@ pub mod stop_dominant_language_detection_job_output {
             self
         }
         /// <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopDominantLanguageDetectionJob</code> operation.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// Consumes the builder and constructs a [`StopDominantLanguageDetectionJobOutput`](crate::output::StopDominantLanguageDetectionJobOutput).
         pub fn build(self) -> crate::output::StopDominantLanguageDetectionJobOutput {
             crate::output::StopDominantLanguageDetectionJobOutput {
-                job_id: self.job_id,
-                job_status: self.job_status,
+                job_id: self.job_id
+                ,
+                job_status: self.job_status
+                ,
             }
         }
     }
+    
+    
 }
 impl StopDominantLanguageDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StopDominantLanguageDetectionJobOutput`](crate::output::StopDominantLanguageDetectionJobOutput).
@@ -612,11 +630,11 @@ impl StopDominantLanguageDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartTopicsDetectionJobOutput {
+pub struct StartTopicsDetectionJobOutput  {
     /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the <code>DescribeTopicDetectionJob</code> operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -627,27 +645,27 @@ pub struct StartTopicsDetectionJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the job: </p>
-    /// <ul>
-    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTopicDetectionJob</code> operation.</p> </li>
+    /// <p>The status of the job: </p> 
+    /// <ul> 
+    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+    /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTopicDetectionJob</code> operation.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StartTopicsDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the <code>DescribeTopicDetectionJob</code> operation.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -658,26 +676,26 @@ impl StartTopicsDetectionJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
-    pub fn job_arn(&self) -> std::option::Option<&str> {
+    pub fn job_arn(&self) -> std::option::Option<& str> {
         self.job_arn.as_deref()
     }
-    /// <p>The status of the job: </p>
-    /// <ul>
-    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTopicDetectionJob</code> operation.</p> </li>
+    /// <p>The status of the job: </p> 
+    /// <ul> 
+    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+    /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTopicDetectionJob</code> operation.</p> </li> 
     /// </ul>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
 }
 /// See [`StartTopicsDetectionJobOutput`](crate::output::StartTopicsDetectionJobOutput).
 pub mod start_topics_detection_job_output {
-
+    
     /// A builder for [`StartTopicsDetectionJobOutput`](crate::output::StartTopicsDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -693,10 +711,9 @@ pub mod start_topics_detection_job_output {
         }
         /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the <code>DescribeTopicDetectionJob</code> operation.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
         /// <p> <code>arn:
         /// <partition>
         /// :comprehend:
@@ -707,14 +724,14 @@ pub mod start_topics_detection_job_output {
         /// <job-id></job-id>
         /// </account-id>
         /// </region>
-        /// </partition></code> </p>
-        /// <p>The following is an example job ARN:</p>
+        /// </partition></code> </p> 
+        /// <p>The following is an example job ARN:</p> 
         /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
         pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
         /// <p> <code>arn:
         /// <partition>
         /// :comprehend:
@@ -725,47 +742,47 @@ pub mod start_topics_detection_job_output {
         /// <job-id></job-id>
         /// </account-id>
         /// </region>
-        /// </partition></code> </p>
-        /// <p>The following is an example job ARN:</p>
+        /// </partition></code> </p> 
+        /// <p>The following is an example job ARN:</p> 
         /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_arn = input;
-            self
+            self.job_arn = input; self
         }
-        /// <p>The status of the job: </p>
-        /// <ul>
-        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-        /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTopicDetectionJob</code> operation.</p> </li>
+        /// <p>The status of the job: </p> 
+        /// <ul> 
+        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+        /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTopicDetectionJob</code> operation.</p> </li> 
         /// </ul>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.job_status = Some(input);
             self
         }
-        /// <p>The status of the job: </p>
-        /// <ul>
-        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-        /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTopicDetectionJob</code> operation.</p> </li>
+        /// <p>The status of the job: </p> 
+        /// <ul> 
+        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+        /// <li> <p>FAILED - The job did not complete. To get details, use the <code>DescribeTopicDetectionJob</code> operation.</p> </li> 
         /// </ul>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// Consumes the builder and constructs a [`StartTopicsDetectionJobOutput`](crate::output::StartTopicsDetectionJobOutput).
         pub fn build(self) -> crate::output::StartTopicsDetectionJobOutput {
             crate::output::StartTopicsDetectionJobOutput {
-                job_id: self.job_id,
-                job_arn: self.job_arn,
-                job_status: self.job_status,
+                job_id: self.job_id
+                ,
+                job_arn: self.job_arn
+                ,
+                job_status: self.job_status
+                ,
             }
         }
     }
+    
+    
 }
 impl StartTopicsDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartTopicsDetectionJobOutput`](crate::output::StartTopicsDetectionJobOutput).
@@ -777,11 +794,11 @@ impl StartTopicsDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartTargetedSentimentDetectionJobOutput {
+pub struct StartTargetedSentimentDetectionJobOutput  {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -792,27 +809,27 @@ pub struct StartTargetedSentimentDetectionJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:targeted-sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the job. </p>
-    /// <ul>
-    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+    /// <p>The status of the job. </p> 
+    /// <ul> 
+    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StartTargetedSentimentDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -823,26 +840,26 @@ impl StartTargetedSentimentDetectionJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:targeted-sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
-    pub fn job_arn(&self) -> std::option::Option<&str> {
+    pub fn job_arn(&self) -> std::option::Option<& str> {
         self.job_arn.as_deref()
     }
-    /// <p>The status of the job. </p>
-    /// <ul>
-    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+    /// <p>The status of the job. </p> 
+    /// <ul> 
+    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li> 
     /// </ul>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
 }
 /// See [`StartTargetedSentimentDetectionJobOutput`](crate::output::StartTargetedSentimentDetectionJobOutput).
 pub mod start_targeted_sentiment_detection_job_output {
-
+    
     /// A builder for [`StartTargetedSentimentDetectionJobOutput`](crate::output::StartTargetedSentimentDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -858,10 +875,9 @@ pub mod start_targeted_sentiment_detection_job_output {
         }
         /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
         /// <p> <code>arn:
         /// <partition>
         /// :comprehend:
@@ -872,14 +888,14 @@ pub mod start_targeted_sentiment_detection_job_output {
         /// <job-id></job-id>
         /// </account-id>
         /// </region>
-        /// </partition></code> </p>
-        /// <p>The following is an example job ARN:</p>
+        /// </partition></code> </p> 
+        /// <p>The following is an example job ARN:</p> 
         /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:targeted-sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
         pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p>The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
         /// <p> <code>arn:
         /// <partition>
         /// :comprehend:
@@ -890,47 +906,47 @@ pub mod start_targeted_sentiment_detection_job_output {
         /// <job-id></job-id>
         /// </account-id>
         /// </region>
-        /// </partition></code> </p>
-        /// <p>The following is an example job ARN:</p>
+        /// </partition></code> </p> 
+        /// <p>The following is an example job ARN:</p> 
         /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:targeted-sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_arn = input;
-            self
+            self.job_arn = input; self
         }
-        /// <p>The status of the job. </p>
-        /// <ul>
-        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+        /// <p>The status of the job. </p> 
+        /// <ul> 
+        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li> 
         /// </ul>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.job_status = Some(input);
             self
         }
-        /// <p>The status of the job. </p>
-        /// <ul>
-        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+        /// <p>The status of the job. </p> 
+        /// <ul> 
+        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li> 
         /// </ul>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// Consumes the builder and constructs a [`StartTargetedSentimentDetectionJobOutput`](crate::output::StartTargetedSentimentDetectionJobOutput).
         pub fn build(self) -> crate::output::StartTargetedSentimentDetectionJobOutput {
             crate::output::StartTargetedSentimentDetectionJobOutput {
-                job_id: self.job_id,
-                job_arn: self.job_arn,
-                job_status: self.job_status,
+                job_id: self.job_id
+                ,
+                job_arn: self.job_arn
+                ,
+                job_status: self.job_status
+                ,
             }
         }
     }
+    
+    
 }
 impl StartTargetedSentimentDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartTargetedSentimentDetectionJobOutput`](crate::output::StartTargetedSentimentDetectionJobOutput).
@@ -942,11 +958,11 @@ impl StartTargetedSentimentDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartSentimentDetectionJobOutput {
+pub struct StartSentimentDetectionJobOutput  {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -957,27 +973,27 @@ pub struct StartSentimentDetectionJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the job. </p>
-    /// <ul>
-    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+    /// <p>The status of the job. </p> 
+    /// <ul> 
+    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StartSentimentDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -988,26 +1004,26 @@ impl StartSentimentDetectionJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
-    pub fn job_arn(&self) -> std::option::Option<&str> {
+    pub fn job_arn(&self) -> std::option::Option<& str> {
         self.job_arn.as_deref()
     }
-    /// <p>The status of the job. </p>
-    /// <ul>
-    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+    /// <p>The status of the job. </p> 
+    /// <ul> 
+    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li> 
     /// </ul>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
 }
 /// See [`StartSentimentDetectionJobOutput`](crate::output::StartSentimentDetectionJobOutput).
 pub mod start_sentiment_detection_job_output {
-
+    
     /// A builder for [`StartSentimentDetectionJobOutput`](crate::output::StartSentimentDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1023,10 +1039,9 @@ pub mod start_sentiment_detection_job_output {
         }
         /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
         /// <p> <code>arn:
         /// <partition>
         /// :comprehend:
@@ -1037,14 +1052,14 @@ pub mod start_sentiment_detection_job_output {
         /// <job-id></job-id>
         /// </account-id>
         /// </region>
-        /// </partition></code> </p>
-        /// <p>The following is an example job ARN:</p>
+        /// </partition></code> </p> 
+        /// <p>The following is an example job ARN:</p> 
         /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
         pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
         /// <p> <code>arn:
         /// <partition>
         /// :comprehend:
@@ -1055,47 +1070,47 @@ pub mod start_sentiment_detection_job_output {
         /// <job-id></job-id>
         /// </account-id>
         /// </region>
-        /// </partition></code> </p>
-        /// <p>The following is an example job ARN:</p>
+        /// </partition></code> </p> 
+        /// <p>The following is an example job ARN:</p> 
         /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_arn = input;
-            self
+            self.job_arn = input; self
         }
-        /// <p>The status of the job. </p>
-        /// <ul>
-        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+        /// <p>The status of the job. </p> 
+        /// <ul> 
+        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li> 
         /// </ul>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.job_status = Some(input);
             self
         }
-        /// <p>The status of the job. </p>
-        /// <ul>
-        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+        /// <p>The status of the job. </p> 
+        /// <ul> 
+        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li> 
         /// </ul>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// Consumes the builder and constructs a [`StartSentimentDetectionJobOutput`](crate::output::StartSentimentDetectionJobOutput).
         pub fn build(self) -> crate::output::StartSentimentDetectionJobOutput {
             crate::output::StartSentimentDetectionJobOutput {
-                job_id: self.job_id,
-                job_arn: self.job_arn,
-                job_status: self.job_status,
+                job_id: self.job_id
+                ,
+                job_arn: self.job_arn
+                ,
+                job_status: self.job_status
+                ,
             }
         }
     }
+    
+    
 }
 impl StartSentimentDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartSentimentDetectionJobOutput`](crate::output::StartSentimentDetectionJobOutput).
@@ -1107,11 +1122,11 @@ impl StartSentimentDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartPiiEntitiesDetectionJobOutput {
+pub struct StartPiiEntitiesDetectionJobOutput  {
     /// <p>The identifier generated for the job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the PII entity detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the PII entity detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -1122,8 +1137,8 @@ pub struct StartPiiEntitiesDetectionJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:pii-entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
@@ -1133,10 +1148,10 @@ pub struct StartPiiEntitiesDetectionJobOutput {
 }
 impl StartPiiEntitiesDetectionJobOutput {
     /// <p>The identifier generated for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the PII entity detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the PII entity detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -1147,20 +1162,20 @@ impl StartPiiEntitiesDetectionJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:pii-entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
-    pub fn job_arn(&self) -> std::option::Option<&str> {
+    pub fn job_arn(&self) -> std::option::Option<& str> {
         self.job_arn.as_deref()
     }
     /// <p>The status of the job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
 }
 /// See [`StartPiiEntitiesDetectionJobOutput`](crate::output::StartPiiEntitiesDetectionJobOutput).
 pub mod start_pii_entities_detection_job_output {
-
+    
     /// A builder for [`StartPiiEntitiesDetectionJobOutput`](crate::output::StartPiiEntitiesDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1176,10 +1191,9 @@ pub mod start_pii_entities_detection_job_output {
         }
         /// <p>The identifier generated for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the PII entity detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p>The Amazon Resource Name (ARN) of the PII entity detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
         /// <p> <code>arn:
         /// <partition>
         /// :comprehend:
@@ -1190,14 +1204,14 @@ pub mod start_pii_entities_detection_job_output {
         /// <job-id></job-id>
         /// </account-id>
         /// </region>
-        /// </partition></code> </p>
-        /// <p>The following is an example job ARN:</p>
+        /// </partition></code> </p> 
+        /// <p>The following is an example job ARN:</p> 
         /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:pii-entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
         pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the PII entity detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p>The Amazon Resource Name (ARN) of the PII entity detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
         /// <p> <code>arn:
         /// <partition>
         /// :comprehend:
@@ -1208,12 +1222,11 @@ pub mod start_pii_entities_detection_job_output {
         /// <job-id></job-id>
         /// </account-id>
         /// </region>
-        /// </partition></code> </p>
-        /// <p>The following is an example job ARN:</p>
+        /// </partition></code> </p> 
+        /// <p>The following is an example job ARN:</p> 
         /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:pii-entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_arn = input;
-            self
+            self.job_arn = input; self
         }
         /// <p>The status of the job.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -1221,22 +1234,23 @@ pub mod start_pii_entities_detection_job_output {
             self
         }
         /// <p>The status of the job.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// Consumes the builder and constructs a [`StartPiiEntitiesDetectionJobOutput`](crate::output::StartPiiEntitiesDetectionJobOutput).
         pub fn build(self) -> crate::output::StartPiiEntitiesDetectionJobOutput {
             crate::output::StartPiiEntitiesDetectionJobOutput {
-                job_id: self.job_id,
-                job_arn: self.job_arn,
-                job_status: self.job_status,
+                job_id: self.job_id
+                ,
+                job_arn: self.job_arn
+                ,
+                job_status: self.job_status
+                ,
             }
         }
     }
+    
+    
 }
 impl StartPiiEntitiesDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartPiiEntitiesDetectionJobOutput`](crate::output::StartPiiEntitiesDetectionJobOutput).
@@ -1248,11 +1262,11 @@ impl StartPiiEntitiesDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartKeyPhrasesDetectionJobOutput {
+pub struct StartKeyPhrasesDetectionJobOutput  {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the key phrase detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the key phrase detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -1263,27 +1277,27 @@ pub struct StartKeyPhrasesDetectionJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:key-phrases-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the job. </p>
-    /// <ul>
-    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+    /// <p>The status of the job. </p> 
+    /// <ul> 
+    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StartKeyPhrasesDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the key phrase detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the key phrase detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -1294,26 +1308,26 @@ impl StartKeyPhrasesDetectionJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:key-phrases-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
-    pub fn job_arn(&self) -> std::option::Option<&str> {
+    pub fn job_arn(&self) -> std::option::Option<& str> {
         self.job_arn.as_deref()
     }
-    /// <p>The status of the job. </p>
-    /// <ul>
-    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+    /// <p>The status of the job. </p> 
+    /// <ul> 
+    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li> 
     /// </ul>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
 }
 /// See [`StartKeyPhrasesDetectionJobOutput`](crate::output::StartKeyPhrasesDetectionJobOutput).
 pub mod start_key_phrases_detection_job_output {
-
+    
     /// A builder for [`StartKeyPhrasesDetectionJobOutput`](crate::output::StartKeyPhrasesDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1329,10 +1343,9 @@ pub mod start_key_phrases_detection_job_output {
         }
         /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the key phrase detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p>The Amazon Resource Name (ARN) of the key phrase detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
         /// <p> <code>arn:
         /// <partition>
         /// :comprehend:
@@ -1343,14 +1356,14 @@ pub mod start_key_phrases_detection_job_output {
         /// <job-id></job-id>
         /// </account-id>
         /// </region>
-        /// </partition></code> </p>
-        /// <p>The following is an example job ARN:</p>
+        /// </partition></code> </p> 
+        /// <p>The following is an example job ARN:</p> 
         /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:key-phrases-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
         pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the key phrase detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p>The Amazon Resource Name (ARN) of the key phrase detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
         /// <p> <code>arn:
         /// <partition>
         /// :comprehend:
@@ -1361,47 +1374,47 @@ pub mod start_key_phrases_detection_job_output {
         /// <job-id></job-id>
         /// </account-id>
         /// </region>
-        /// </partition></code> </p>
-        /// <p>The following is an example job ARN:</p>
+        /// </partition></code> </p> 
+        /// <p>The following is an example job ARN:</p> 
         /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:key-phrases-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_arn = input;
-            self
+            self.job_arn = input; self
         }
-        /// <p>The status of the job. </p>
-        /// <ul>
-        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+        /// <p>The status of the job. </p> 
+        /// <ul> 
+        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li> 
         /// </ul>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.job_status = Some(input);
             self
         }
-        /// <p>The status of the job. </p>
-        /// <ul>
-        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+        /// <p>The status of the job. </p> 
+        /// <ul> 
+        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li> 
         /// </ul>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// Consumes the builder and constructs a [`StartKeyPhrasesDetectionJobOutput`](crate::output::StartKeyPhrasesDetectionJobOutput).
         pub fn build(self) -> crate::output::StartKeyPhrasesDetectionJobOutput {
             crate::output::StartKeyPhrasesDetectionJobOutput {
-                job_id: self.job_id,
-                job_arn: self.job_arn,
-                job_status: self.job_status,
+                job_id: self.job_id
+                ,
+                job_arn: self.job_arn
+                ,
+                job_status: self.job_status
+                ,
             }
         }
     }
+    
+    
 }
 impl StartKeyPhrasesDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartKeyPhrasesDetectionJobOutput`](crate::output::StartKeyPhrasesDetectionJobOutput).
@@ -1413,11 +1426,11 @@ impl StartKeyPhrasesDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartEventsDetectionJobOutput {
+pub struct StartEventsDetectionJobOutput  {
     /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -1428,8 +1441,8 @@ pub struct StartEventsDetectionJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
@@ -1439,10 +1452,10 @@ pub struct StartEventsDetectionJobOutput {
 }
 impl StartEventsDetectionJobOutput {
     /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -1453,20 +1466,20 @@ impl StartEventsDetectionJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
-    pub fn job_arn(&self) -> std::option::Option<&str> {
+    pub fn job_arn(&self) -> std::option::Option<& str> {
         self.job_arn.as_deref()
     }
     /// <p>The status of the events detection job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
 }
 /// See [`StartEventsDetectionJobOutput`](crate::output::StartEventsDetectionJobOutput).
 pub mod start_events_detection_job_output {
-
+    
     /// A builder for [`StartEventsDetectionJobOutput`](crate::output::StartEventsDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1482,10 +1495,9 @@ pub mod start_events_detection_job_output {
         }
         /// <p>An unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
         /// <p> <code>arn:
         /// <partition>
         /// :comprehend:
@@ -1496,14 +1508,14 @@ pub mod start_events_detection_job_output {
         /// <job-id></job-id>
         /// </account-id>
         /// </region>
-        /// </partition></code> </p>
-        /// <p>The following is an example job ARN:</p>
+        /// </partition></code> </p> 
+        /// <p>The following is an example job ARN:</p> 
         /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
         pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
         /// <p> <code>arn:
         /// <partition>
         /// :comprehend:
@@ -1514,12 +1526,11 @@ pub mod start_events_detection_job_output {
         /// <job-id></job-id>
         /// </account-id>
         /// </region>
-        /// </partition></code> </p>
-        /// <p>The following is an example job ARN:</p>
+        /// </partition></code> </p> 
+        /// <p>The following is an example job ARN:</p> 
         /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_arn = input;
-            self
+            self.job_arn = input; self
         }
         /// <p>The status of the events detection job.</p>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
@@ -1527,22 +1538,23 @@ pub mod start_events_detection_job_output {
             self
         }
         /// <p>The status of the events detection job.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// Consumes the builder and constructs a [`StartEventsDetectionJobOutput`](crate::output::StartEventsDetectionJobOutput).
         pub fn build(self) -> crate::output::StartEventsDetectionJobOutput {
             crate::output::StartEventsDetectionJobOutput {
-                job_id: self.job_id,
-                job_arn: self.job_arn,
-                job_status: self.job_status,
+                job_id: self.job_id
+                ,
+                job_arn: self.job_arn
+                ,
+                job_status: self.job_status
+                ,
             }
         }
     }
+    
+    
 }
 impl StartEventsDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartEventsDetectionJobOutput`](crate::output::StartEventsDetectionJobOutput).
@@ -1554,11 +1566,11 @@ impl StartEventsDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartEntitiesDetectionJobOutput {
+pub struct StartEntitiesDetectionJobOutput  {
     /// <p>The identifier generated for the job. To get the status of job, use this identifier with the operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -1569,29 +1581,29 @@ pub struct StartEntitiesDetectionJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the job. </p>
-    /// <ul>
-    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
-    /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li>
-    /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li>
+    /// <p>The status of the job. </p> 
+    /// <ul> 
+    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li> 
+    /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li> 
+    /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StartEntitiesDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of job, use this identifier with the operation.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -1602,28 +1614,28 @@ impl StartEntitiesDetectionJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
-    pub fn job_arn(&self) -> std::option::Option<&str> {
+    pub fn job_arn(&self) -> std::option::Option<& str> {
         self.job_arn.as_deref()
     }
-    /// <p>The status of the job. </p>
-    /// <ul>
-    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
-    /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li>
-    /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li>
+    /// <p>The status of the job. </p> 
+    /// <ul> 
+    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li> 
+    /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li> 
+    /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li> 
     /// </ul>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
 }
 /// See [`StartEntitiesDetectionJobOutput`](crate::output::StartEntitiesDetectionJobOutput).
 pub mod start_entities_detection_job_output {
-
+    
     /// A builder for [`StartEntitiesDetectionJobOutput`](crate::output::StartEntitiesDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1639,10 +1651,9 @@ pub mod start_entities_detection_job_output {
         }
         /// <p>The identifier generated for the job. To get the status of job, use this identifier with the operation.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
         /// <p> <code>arn:
         /// <partition>
         /// :comprehend:
@@ -1653,14 +1664,14 @@ pub mod start_entities_detection_job_output {
         /// <job-id></job-id>
         /// </account-id>
         /// </region>
-        /// </partition></code> </p>
-        /// <p>The following is an example job ARN:</p>
+        /// </partition></code> </p> 
+        /// <p>The following is an example job ARN:</p> 
         /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
         pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
         /// <p> <code>arn:
         /// <partition>
         /// :comprehend:
@@ -1671,51 +1682,51 @@ pub mod start_entities_detection_job_output {
         /// <job-id></job-id>
         /// </account-id>
         /// </region>
-        /// </partition></code> </p>
-        /// <p>The following is an example job ARN:</p>
+        /// </partition></code> </p> 
+        /// <p>The following is an example job ARN:</p> 
         /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_arn = input;
-            self
+            self.job_arn = input; self
         }
-        /// <p>The status of the job. </p>
-        /// <ul>
-        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
-        /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li>
-        /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li>
+        /// <p>The status of the job. </p> 
+        /// <ul> 
+        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li> 
+        /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li> 
+        /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li> 
         /// </ul>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.job_status = Some(input);
             self
         }
-        /// <p>The status of the job. </p>
-        /// <ul>
-        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
-        /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li>
-        /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li>
+        /// <p>The status of the job. </p> 
+        /// <ul> 
+        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li> 
+        /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li> 
+        /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li> 
         /// </ul>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// Consumes the builder and constructs a [`StartEntitiesDetectionJobOutput`](crate::output::StartEntitiesDetectionJobOutput).
         pub fn build(self) -> crate::output::StartEntitiesDetectionJobOutput {
             crate::output::StartEntitiesDetectionJobOutput {
-                job_id: self.job_id,
-                job_arn: self.job_arn,
-                job_status: self.job_status,
+                job_id: self.job_id
+                ,
+                job_arn: self.job_arn
+                ,
+                job_status: self.job_status
+                ,
             }
         }
     }
+    
+    
 }
 impl StartEntitiesDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartEntitiesDetectionJobOutput`](crate::output::StartEntitiesDetectionJobOutput).
@@ -1727,11 +1738,11 @@ impl StartEntitiesDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDominantLanguageDetectionJobOutput {
+pub struct StartDominantLanguageDetectionJobOutput  {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the dominant language detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the dominant language detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -1742,27 +1753,27 @@ pub struct StartDominantLanguageDetectionJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:dominant-language-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the job. </p>
-    /// <ul>
-    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+    /// <p>The status of the job. </p> 
+    /// <ul> 
+    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StartDominantLanguageDetectionJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the dominant language detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the dominant language detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -1773,26 +1784,26 @@ impl StartDominantLanguageDetectionJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:dominant-language-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
-    pub fn job_arn(&self) -> std::option::Option<&str> {
+    pub fn job_arn(&self) -> std::option::Option<& str> {
         self.job_arn.as_deref()
     }
-    /// <p>The status of the job. </p>
-    /// <ul>
-    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+    /// <p>The status of the job. </p> 
+    /// <ul> 
+    /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+    /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li> 
     /// </ul>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
 }
 /// See [`StartDominantLanguageDetectionJobOutput`](crate::output::StartDominantLanguageDetectionJobOutput).
 pub mod start_dominant_language_detection_job_output {
-
+    
     /// A builder for [`StartDominantLanguageDetectionJobOutput`](crate::output::StartDominantLanguageDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1808,10 +1819,9 @@ pub mod start_dominant_language_detection_job_output {
         }
         /// <p>The identifier generated for the job. To get the status of a job, use this identifier with the operation.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the dominant language detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p>The Amazon Resource Name (ARN) of the dominant language detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
         /// <p> <code>arn:
         /// <partition>
         /// :comprehend:
@@ -1822,14 +1832,14 @@ pub mod start_dominant_language_detection_job_output {
         /// <job-id></job-id>
         /// </account-id>
         /// </region>
-        /// </partition></code> </p>
-        /// <p>The following is an example job ARN:</p>
+        /// </partition></code> </p> 
+        /// <p>The following is an example job ARN:</p> 
         /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:dominant-language-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
         pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the dominant language detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p>The Amazon Resource Name (ARN) of the dominant language detection job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
         /// <p> <code>arn:
         /// <partition>
         /// :comprehend:
@@ -1840,47 +1850,47 @@ pub mod start_dominant_language_detection_job_output {
         /// <job-id></job-id>
         /// </account-id>
         /// </region>
-        /// </partition></code> </p>
-        /// <p>The following is an example job ARN:</p>
+        /// </partition></code> </p> 
+        /// <p>The following is an example job ARN:</p> 
         /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:dominant-language-detection-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_arn = input;
-            self
+            self.job_arn = input; self
         }
-        /// <p>The status of the job. </p>
-        /// <ul>
-        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+        /// <p>The status of the job. </p> 
+        /// <ul> 
+        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li> 
         /// </ul>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.job_status = Some(input);
             self
         }
-        /// <p>The status of the job. </p>
-        /// <ul>
-        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li>
-        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li>
+        /// <p>The status of the job. </p> 
+        /// <ul> 
+        /// <li> <p>SUBMITTED - The job has been received and is queued for processing.</p> </li> 
+        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+        /// <li> <p>FAILED - The job did not complete. To get details, use the operation.</p> </li> 
         /// </ul>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// Consumes the builder and constructs a [`StartDominantLanguageDetectionJobOutput`](crate::output::StartDominantLanguageDetectionJobOutput).
         pub fn build(self) -> crate::output::StartDominantLanguageDetectionJobOutput {
             crate::output::StartDominantLanguageDetectionJobOutput {
-                job_id: self.job_id,
-                job_arn: self.job_arn,
-                job_status: self.job_status,
+                job_id: self.job_id
+                ,
+                job_arn: self.job_arn
+                ,
+                job_status: self.job_status
+                ,
             }
         }
     }
+    
+    
 }
 impl StartDominantLanguageDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartDominantLanguageDetectionJobOutput`](crate::output::StartDominantLanguageDetectionJobOutput).
@@ -1892,11 +1902,11 @@ impl StartDominantLanguageDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDocumentClassificationJobOutput {
+pub struct StartDocumentClassificationJobOutput  {
     /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the operation.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -1907,29 +1917,29 @@ pub struct StartDocumentClassificationJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
-    /// <p>The status of the job:</p>
-    /// <ul>
-    /// <li> <p>SUBMITTED - The job has been received and queued for processing.</p> </li>
-    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. For details, use the operation.</p> </li>
-    /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li>
-    /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li>
+    /// <p>The status of the job:</p> 
+    /// <ul> 
+    /// <li> <p>SUBMITTED - The job has been received and queued for processing.</p> </li> 
+    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+    /// <li> <p>FAILED - The job did not complete. For details, use the operation.</p> </li> 
+    /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li> 
+    /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
 }
 impl StartDocumentClassificationJobOutput {
     /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the operation.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+    /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
     /// <p> <code>arn:
     /// <partition>
     /// :comprehend:
@@ -1940,28 +1950,28 @@ impl StartDocumentClassificationJobOutput {
     /// <job-id></job-id>
     /// </account-id>
     /// </region>
-    /// </partition></code> </p>
-    /// <p>The following is an example job ARN:</p>
+    /// </partition></code> </p> 
+    /// <p>The following is an example job ARN:</p> 
     /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
-    pub fn job_arn(&self) -> std::option::Option<&str> {
+    pub fn job_arn(&self) -> std::option::Option<& str> {
         self.job_arn.as_deref()
     }
-    /// <p>The status of the job:</p>
-    /// <ul>
-    /// <li> <p>SUBMITTED - The job has been received and queued for processing.</p> </li>
-    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-    /// <li> <p>FAILED - The job did not complete. For details, use the operation.</p> </li>
-    /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li>
-    /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li>
+    /// <p>The status of the job:</p> 
+    /// <ul> 
+    /// <li> <p>SUBMITTED - The job has been received and queued for processing.</p> </li> 
+    /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+    /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+    /// <li> <p>FAILED - The job did not complete. For details, use the operation.</p> </li> 
+    /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li> 
+    /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li> 
     /// </ul>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.job_status.as_ref()
     }
 }
 /// See [`StartDocumentClassificationJobOutput`](crate::output::StartDocumentClassificationJobOutput).
 pub mod start_document_classification_job_output {
-
+    
     /// A builder for [`StartDocumentClassificationJobOutput`](crate::output::StartDocumentClassificationJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1977,10 +1987,9 @@ pub mod start_document_classification_job_output {
         }
         /// <p>The identifier generated for the job. To get the status of the job, use this identifier with the operation.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
         /// <p> <code>arn:
         /// <partition>
         /// :comprehend:
@@ -1991,14 +2000,14 @@ pub mod start_document_classification_job_output {
         /// <job-id></job-id>
         /// </account-id>
         /// </region>
-        /// </partition></code> </p>
-        /// <p>The following is an example job ARN:</p>
+        /// </partition></code> </p> 
+        /// <p>The following is an example job ARN:</p> 
         /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
         pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+        /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully qualified identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p> 
         /// <p> <code>arn:
         /// <partition>
         /// :comprehend:
@@ -2009,51 +2018,51 @@ pub mod start_document_classification_job_output {
         /// <job-id></job-id>
         /// </account-id>
         /// </region>
-        /// </partition></code> </p>
-        /// <p>The following is an example job ARN:</p>
+        /// </partition></code> </p> 
+        /// <p>The following is an example job ARN:</p> 
         /// <p> <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code> </p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_arn = input;
-            self
+            self.job_arn = input; self
         }
-        /// <p>The status of the job:</p>
-        /// <ul>
-        /// <li> <p>SUBMITTED - The job has been received and queued for processing.</p> </li>
-        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-        /// <li> <p>FAILED - The job did not complete. For details, use the operation.</p> </li>
-        /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li>
-        /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li>
+        /// <p>The status of the job:</p> 
+        /// <ul> 
+        /// <li> <p>SUBMITTED - The job has been received and queued for processing.</p> </li> 
+        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+        /// <li> <p>FAILED - The job did not complete. For details, use the operation.</p> </li> 
+        /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li> 
+        /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li> 
         /// </ul>
         pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
             self.job_status = Some(input);
             self
         }
-        /// <p>The status of the job:</p>
-        /// <ul>
-        /// <li> <p>SUBMITTED - The job has been received and queued for processing.</p> </li>
-        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li>
-        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li>
-        /// <li> <p>FAILED - The job did not complete. For details, use the operation.</p> </li>
-        /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li>
-        /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li>
+        /// <p>The status of the job:</p> 
+        /// <ul> 
+        /// <li> <p>SUBMITTED - The job has been received and queued for processing.</p> </li> 
+        /// <li> <p>IN_PROGRESS - Amazon Comprehend is processing the job.</p> </li> 
+        /// <li> <p>COMPLETED - The job was successfully completed and the output is available.</p> </li> 
+        /// <li> <p>FAILED - The job did not complete. For details, use the operation.</p> </li> 
+        /// <li> <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job and is processing the request.</p> </li> 
+        /// <li> <p>STOPPED - The job was successfully stopped without completing.</p> </li> 
         /// </ul>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::JobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// Consumes the builder and constructs a [`StartDocumentClassificationJobOutput`](crate::output::StartDocumentClassificationJobOutput).
         pub fn build(self) -> crate::output::StartDocumentClassificationJobOutput {
             crate::output::StartDocumentClassificationJobOutput {
-                job_id: self.job_id,
-                job_arn: self.job_arn,
-                job_status: self.job_status,
+                job_id: self.job_id
+                ,
+                job_arn: self.job_arn
+                ,
+                job_status: self.job_status
+                ,
             }
         }
     }
+    
+    
 }
 impl StartDocumentClassificationJobOutput {
     /// Creates a new builder-style object to manufacture [`StartDocumentClassificationJobOutput`](crate::output::StartDocumentClassificationJobOutput).
@@ -2065,20 +2074,20 @@ impl StartDocumentClassificationJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutResourcePolicyOutput {
+pub struct PutResourcePolicyOutput  {
     /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
     #[doc(hidden)]
     pub policy_revision_id: std::option::Option<std::string::String>,
 }
 impl PutResourcePolicyOutput {
     /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
-    pub fn policy_revision_id(&self) -> std::option::Option<&str> {
+    pub fn policy_revision_id(&self) -> std::option::Option<& str> {
         self.policy_revision_id.as_deref()
     }
 }
 /// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
 pub mod put_resource_policy_output {
-
+    
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2091,20 +2100,19 @@ pub mod put_resource_policy_output {
             self
         }
         /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
-        pub fn set_policy_revision_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.policy_revision_id = input;
-            self
+        pub fn set_policy_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_revision_id = input; self
         }
         /// Consumes the builder and constructs a [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
         pub fn build(self) -> crate::output::PutResourcePolicyOutput {
             crate::output::PutResourcePolicyOutput {
-                policy_revision_id: self.policy_revision_id,
+                policy_revision_id: self.policy_revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl PutResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
@@ -2116,35 +2124,31 @@ impl PutResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTopicsDetectionJobsOutput {
+pub struct ListTopicsDetectionJobsOutput  {
     /// <p>A list containing the properties of each job that is returned.</p>
     #[doc(hidden)]
-    pub topics_detection_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::TopicsDetectionJobProperties>>,
+    pub topics_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::TopicsDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTopicsDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn topics_detection_job_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::TopicsDetectionJobProperties]> {
+    pub fn topics_detection_job_properties_list(&self) -> std::option::Option<& [crate::model::TopicsDetectionJobProperties]> {
         self.topics_detection_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTopicsDetectionJobsOutput`](crate::output::ListTopicsDetectionJobsOutput).
 pub mod list_topics_detection_jobs_output {
-
+    
     /// A builder for [`ListTopicsDetectionJobsOutput`](crate::output::ListTopicsDetectionJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) topics_detection_job_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::TopicsDetectionJobProperties>>,
+        pub(crate) topics_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::TopicsDetectionJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2153,24 +2157,15 @@ pub mod list_topics_detection_jobs_output {
         /// To override the contents of this collection use [`set_topics_detection_job_properties_list`](Self::set_topics_detection_job_properties_list).
         ///
         /// <p>A list containing the properties of each job that is returned.</p>
-        pub fn topics_detection_job_properties_list(
-            mut self,
-            input: crate::model::TopicsDetectionJobProperties,
-        ) -> Self {
-            let mut v = self
-                .topics_detection_job_properties_list
-                .unwrap_or_default();
-            v.push(input);
-            self.topics_detection_job_properties_list = Some(v);
-            self
+        pub fn topics_detection_job_properties_list(mut self, input: crate::model::TopicsDetectionJobProperties) -> Self {
+            let mut v = self.topics_detection_job_properties_list.unwrap_or_default();
+                            v.push(input);
+                            self.topics_detection_job_properties_list = Some(v);
+                            self
         }
         /// <p>A list containing the properties of each job that is returned.</p>
-        pub fn set_topics_detection_job_properties_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TopicsDetectionJobProperties>>,
-        ) -> Self {
-            self.topics_detection_job_properties_list = input;
-            self
+        pub fn set_topics_detection_job_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::TopicsDetectionJobProperties>>) -> Self {
+            self.topics_detection_job_properties_list = input; self
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2179,17 +2174,20 @@ pub mod list_topics_detection_jobs_output {
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTopicsDetectionJobsOutput`](crate::output::ListTopicsDetectionJobsOutput).
         pub fn build(self) -> crate::output::ListTopicsDetectionJobsOutput {
             crate::output::ListTopicsDetectionJobsOutput {
-                topics_detection_job_properties_list: self.topics_detection_job_properties_list,
-                next_token: self.next_token,
+                topics_detection_job_properties_list: self.topics_detection_job_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTopicsDetectionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListTopicsDetectionJobsOutput`](crate::output::ListTopicsDetectionJobsOutput).
@@ -2201,37 +2199,31 @@ impl ListTopicsDetectionJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTargetedSentimentDetectionJobsOutput {
+pub struct ListTargetedSentimentDetectionJobsOutput  {
     /// <p>A list containing the properties of each job that is returned.</p>
     #[doc(hidden)]
-    pub targeted_sentiment_detection_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::TargetedSentimentDetectionJobProperties>>,
+    pub targeted_sentiment_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::TargetedSentimentDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListTargetedSentimentDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn targeted_sentiment_detection_job_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::TargetedSentimentDetectionJobProperties]> {
-        self.targeted_sentiment_detection_job_properties_list
-            .as_deref()
+    pub fn targeted_sentiment_detection_job_properties_list(&self) -> std::option::Option<& [crate::model::TargetedSentimentDetectionJobProperties]> {
+        self.targeted_sentiment_detection_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTargetedSentimentDetectionJobsOutput`](crate::output::ListTargetedSentimentDetectionJobsOutput).
 pub mod list_targeted_sentiment_detection_jobs_output {
-
+    
     /// A builder for [`ListTargetedSentimentDetectionJobsOutput`](crate::output::ListTargetedSentimentDetectionJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) targeted_sentiment_detection_job_properties_list: std::option::Option<
-            std::vec::Vec<crate::model::TargetedSentimentDetectionJobProperties>,
-        >,
+        pub(crate) targeted_sentiment_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::TargetedSentimentDetectionJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2240,26 +2232,15 @@ pub mod list_targeted_sentiment_detection_jobs_output {
         /// To override the contents of this collection use [`set_targeted_sentiment_detection_job_properties_list`](Self::set_targeted_sentiment_detection_job_properties_list).
         ///
         /// <p>A list containing the properties of each job that is returned.</p>
-        pub fn targeted_sentiment_detection_job_properties_list(
-            mut self,
-            input: crate::model::TargetedSentimentDetectionJobProperties,
-        ) -> Self {
-            let mut v = self
-                .targeted_sentiment_detection_job_properties_list
-                .unwrap_or_default();
-            v.push(input);
-            self.targeted_sentiment_detection_job_properties_list = Some(v);
-            self
+        pub fn targeted_sentiment_detection_job_properties_list(mut self, input: crate::model::TargetedSentimentDetectionJobProperties) -> Self {
+            let mut v = self.targeted_sentiment_detection_job_properties_list.unwrap_or_default();
+                            v.push(input);
+                            self.targeted_sentiment_detection_job_properties_list = Some(v);
+                            self
         }
         /// <p>A list containing the properties of each job that is returned.</p>
-        pub fn set_targeted_sentiment_detection_job_properties_list(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::TargetedSentimentDetectionJobProperties>,
-            >,
-        ) -> Self {
-            self.targeted_sentiment_detection_job_properties_list = input;
-            self
+        pub fn set_targeted_sentiment_detection_job_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::TargetedSentimentDetectionJobProperties>>) -> Self {
+            self.targeted_sentiment_detection_job_properties_list = input; self
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2268,18 +2249,20 @@ pub mod list_targeted_sentiment_detection_jobs_output {
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTargetedSentimentDetectionJobsOutput`](crate::output::ListTargetedSentimentDetectionJobsOutput).
         pub fn build(self) -> crate::output::ListTargetedSentimentDetectionJobsOutput {
             crate::output::ListTargetedSentimentDetectionJobsOutput {
-                targeted_sentiment_detection_job_properties_list: self
-                    .targeted_sentiment_detection_job_properties_list,
-                next_token: self.next_token,
+                targeted_sentiment_detection_job_properties_list: self.targeted_sentiment_detection_job_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTargetedSentimentDetectionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListTargetedSentimentDetectionJobsOutput`](crate::output::ListTargetedSentimentDetectionJobsOutput).
@@ -2291,7 +2274,7 @@ impl ListTargetedSentimentDetectionJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -2301,17 +2284,17 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Tags associated with the Amazon Comprehend resource being queried. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2326,8 +2309,7 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the given Amazon Comprehend resource you are querying.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -2336,26 +2318,26 @@ pub mod list_tags_for_resource_output {
         /// <p>Tags associated with the Amazon Comprehend resource being queried. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Tags associated with the Amazon Comprehend resource being queried. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
+                resource_arn: self.resource_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -2367,35 +2349,31 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSentimentDetectionJobsOutput {
+pub struct ListSentimentDetectionJobsOutput  {
     /// <p>A list containing the properties of each job that is returned.</p>
     #[doc(hidden)]
-    pub sentiment_detection_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::SentimentDetectionJobProperties>>,
+    pub sentiment_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::SentimentDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListSentimentDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn sentiment_detection_job_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::SentimentDetectionJobProperties]> {
+    pub fn sentiment_detection_job_properties_list(&self) -> std::option::Option<& [crate::model::SentimentDetectionJobProperties]> {
         self.sentiment_detection_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSentimentDetectionJobsOutput`](crate::output::ListSentimentDetectionJobsOutput).
 pub mod list_sentiment_detection_jobs_output {
-
+    
     /// A builder for [`ListSentimentDetectionJobsOutput`](crate::output::ListSentimentDetectionJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) sentiment_detection_job_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::SentimentDetectionJobProperties>>,
+        pub(crate) sentiment_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::SentimentDetectionJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2404,26 +2382,15 @@ pub mod list_sentiment_detection_jobs_output {
         /// To override the contents of this collection use [`set_sentiment_detection_job_properties_list`](Self::set_sentiment_detection_job_properties_list).
         ///
         /// <p>A list containing the properties of each job that is returned.</p>
-        pub fn sentiment_detection_job_properties_list(
-            mut self,
-            input: crate::model::SentimentDetectionJobProperties,
-        ) -> Self {
-            let mut v = self
-                .sentiment_detection_job_properties_list
-                .unwrap_or_default();
-            v.push(input);
-            self.sentiment_detection_job_properties_list = Some(v);
-            self
+        pub fn sentiment_detection_job_properties_list(mut self, input: crate::model::SentimentDetectionJobProperties) -> Self {
+            let mut v = self.sentiment_detection_job_properties_list.unwrap_or_default();
+                            v.push(input);
+                            self.sentiment_detection_job_properties_list = Some(v);
+                            self
         }
         /// <p>A list containing the properties of each job that is returned.</p>
-        pub fn set_sentiment_detection_job_properties_list(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::SentimentDetectionJobProperties>,
-            >,
-        ) -> Self {
-            self.sentiment_detection_job_properties_list = input;
-            self
+        pub fn set_sentiment_detection_job_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::SentimentDetectionJobProperties>>) -> Self {
+            self.sentiment_detection_job_properties_list = input; self
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2432,18 +2399,20 @@ pub mod list_sentiment_detection_jobs_output {
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSentimentDetectionJobsOutput`](crate::output::ListSentimentDetectionJobsOutput).
         pub fn build(self) -> crate::output::ListSentimentDetectionJobsOutput {
             crate::output::ListSentimentDetectionJobsOutput {
-                sentiment_detection_job_properties_list: self
-                    .sentiment_detection_job_properties_list,
-                next_token: self.next_token,
+                sentiment_detection_job_properties_list: self.sentiment_detection_job_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSentimentDetectionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListSentimentDetectionJobsOutput`](crate::output::ListSentimentDetectionJobsOutput).
@@ -2455,35 +2424,31 @@ impl ListSentimentDetectionJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPiiEntitiesDetectionJobsOutput {
+pub struct ListPiiEntitiesDetectionJobsOutput  {
     /// <p>A list containing the properties of each job that is returned.</p>
     #[doc(hidden)]
-    pub pii_entities_detection_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::PiiEntitiesDetectionJobProperties>>,
+    pub pii_entities_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::PiiEntitiesDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPiiEntitiesDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn pii_entities_detection_job_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::PiiEntitiesDetectionJobProperties]> {
+    pub fn pii_entities_detection_job_properties_list(&self) -> std::option::Option<& [crate::model::PiiEntitiesDetectionJobProperties]> {
         self.pii_entities_detection_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPiiEntitiesDetectionJobsOutput`](crate::output::ListPiiEntitiesDetectionJobsOutput).
 pub mod list_pii_entities_detection_jobs_output {
-
+    
     /// A builder for [`ListPiiEntitiesDetectionJobsOutput`](crate::output::ListPiiEntitiesDetectionJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) pii_entities_detection_job_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::PiiEntitiesDetectionJobProperties>>,
+        pub(crate) pii_entities_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::PiiEntitiesDetectionJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2492,26 +2457,15 @@ pub mod list_pii_entities_detection_jobs_output {
         /// To override the contents of this collection use [`set_pii_entities_detection_job_properties_list`](Self::set_pii_entities_detection_job_properties_list).
         ///
         /// <p>A list containing the properties of each job that is returned.</p>
-        pub fn pii_entities_detection_job_properties_list(
-            mut self,
-            input: crate::model::PiiEntitiesDetectionJobProperties,
-        ) -> Self {
-            let mut v = self
-                .pii_entities_detection_job_properties_list
-                .unwrap_or_default();
-            v.push(input);
-            self.pii_entities_detection_job_properties_list = Some(v);
-            self
+        pub fn pii_entities_detection_job_properties_list(mut self, input: crate::model::PiiEntitiesDetectionJobProperties) -> Self {
+            let mut v = self.pii_entities_detection_job_properties_list.unwrap_or_default();
+                            v.push(input);
+                            self.pii_entities_detection_job_properties_list = Some(v);
+                            self
         }
         /// <p>A list containing the properties of each job that is returned.</p>
-        pub fn set_pii_entities_detection_job_properties_list(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::PiiEntitiesDetectionJobProperties>,
-            >,
-        ) -> Self {
-            self.pii_entities_detection_job_properties_list = input;
-            self
+        pub fn set_pii_entities_detection_job_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::PiiEntitiesDetectionJobProperties>>) -> Self {
+            self.pii_entities_detection_job_properties_list = input; self
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2520,18 +2474,20 @@ pub mod list_pii_entities_detection_jobs_output {
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPiiEntitiesDetectionJobsOutput`](crate::output::ListPiiEntitiesDetectionJobsOutput).
         pub fn build(self) -> crate::output::ListPiiEntitiesDetectionJobsOutput {
             crate::output::ListPiiEntitiesDetectionJobsOutput {
-                pii_entities_detection_job_properties_list: self
-                    .pii_entities_detection_job_properties_list,
-                next_token: self.next_token,
+                pii_entities_detection_job_properties_list: self.pii_entities_detection_job_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPiiEntitiesDetectionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListPiiEntitiesDetectionJobsOutput`](crate::output::ListPiiEntitiesDetectionJobsOutput).
@@ -2543,35 +2499,31 @@ impl ListPiiEntitiesDetectionJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListKeyPhrasesDetectionJobsOutput {
+pub struct ListKeyPhrasesDetectionJobsOutput  {
     /// <p>A list containing the properties of each job that is returned.</p>
     #[doc(hidden)]
-    pub key_phrases_detection_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::KeyPhrasesDetectionJobProperties>>,
+    pub key_phrases_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::KeyPhrasesDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListKeyPhrasesDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn key_phrases_detection_job_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::KeyPhrasesDetectionJobProperties]> {
+    pub fn key_phrases_detection_job_properties_list(&self) -> std::option::Option<& [crate::model::KeyPhrasesDetectionJobProperties]> {
         self.key_phrases_detection_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListKeyPhrasesDetectionJobsOutput`](crate::output::ListKeyPhrasesDetectionJobsOutput).
 pub mod list_key_phrases_detection_jobs_output {
-
+    
     /// A builder for [`ListKeyPhrasesDetectionJobsOutput`](crate::output::ListKeyPhrasesDetectionJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) key_phrases_detection_job_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::KeyPhrasesDetectionJobProperties>>,
+        pub(crate) key_phrases_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::KeyPhrasesDetectionJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2580,26 +2532,15 @@ pub mod list_key_phrases_detection_jobs_output {
         /// To override the contents of this collection use [`set_key_phrases_detection_job_properties_list`](Self::set_key_phrases_detection_job_properties_list).
         ///
         /// <p>A list containing the properties of each job that is returned.</p>
-        pub fn key_phrases_detection_job_properties_list(
-            mut self,
-            input: crate::model::KeyPhrasesDetectionJobProperties,
-        ) -> Self {
-            let mut v = self
-                .key_phrases_detection_job_properties_list
-                .unwrap_or_default();
-            v.push(input);
-            self.key_phrases_detection_job_properties_list = Some(v);
-            self
+        pub fn key_phrases_detection_job_properties_list(mut self, input: crate::model::KeyPhrasesDetectionJobProperties) -> Self {
+            let mut v = self.key_phrases_detection_job_properties_list.unwrap_or_default();
+                            v.push(input);
+                            self.key_phrases_detection_job_properties_list = Some(v);
+                            self
         }
         /// <p>A list containing the properties of each job that is returned.</p>
-        pub fn set_key_phrases_detection_job_properties_list(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::KeyPhrasesDetectionJobProperties>,
-            >,
-        ) -> Self {
-            self.key_phrases_detection_job_properties_list = input;
-            self
+        pub fn set_key_phrases_detection_job_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::KeyPhrasesDetectionJobProperties>>) -> Self {
+            self.key_phrases_detection_job_properties_list = input; self
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2608,18 +2549,20 @@ pub mod list_key_phrases_detection_jobs_output {
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListKeyPhrasesDetectionJobsOutput`](crate::output::ListKeyPhrasesDetectionJobsOutput).
         pub fn build(self) -> crate::output::ListKeyPhrasesDetectionJobsOutput {
             crate::output::ListKeyPhrasesDetectionJobsOutput {
-                key_phrases_detection_job_properties_list: self
-                    .key_phrases_detection_job_properties_list,
-                next_token: self.next_token,
+                key_phrases_detection_job_properties_list: self.key_phrases_detection_job_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListKeyPhrasesDetectionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListKeyPhrasesDetectionJobsOutput`](crate::output::ListKeyPhrasesDetectionJobsOutput).
@@ -2631,35 +2574,31 @@ impl ListKeyPhrasesDetectionJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEventsDetectionJobsOutput {
+pub struct ListEventsDetectionJobsOutput  {
     /// <p>A list containing the properties of each job that is returned.</p>
     #[doc(hidden)]
-    pub events_detection_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::EventsDetectionJobProperties>>,
+    pub events_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::EventsDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEventsDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn events_detection_job_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::EventsDetectionJobProperties]> {
+    pub fn events_detection_job_properties_list(&self) -> std::option::Option<& [crate::model::EventsDetectionJobProperties]> {
         self.events_detection_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEventsDetectionJobsOutput`](crate::output::ListEventsDetectionJobsOutput).
 pub mod list_events_detection_jobs_output {
-
+    
     /// A builder for [`ListEventsDetectionJobsOutput`](crate::output::ListEventsDetectionJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) events_detection_job_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::EventsDetectionJobProperties>>,
+        pub(crate) events_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::EventsDetectionJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2668,24 +2607,15 @@ pub mod list_events_detection_jobs_output {
         /// To override the contents of this collection use [`set_events_detection_job_properties_list`](Self::set_events_detection_job_properties_list).
         ///
         /// <p>A list containing the properties of each job that is returned.</p>
-        pub fn events_detection_job_properties_list(
-            mut self,
-            input: crate::model::EventsDetectionJobProperties,
-        ) -> Self {
-            let mut v = self
-                .events_detection_job_properties_list
-                .unwrap_or_default();
-            v.push(input);
-            self.events_detection_job_properties_list = Some(v);
-            self
+        pub fn events_detection_job_properties_list(mut self, input: crate::model::EventsDetectionJobProperties) -> Self {
+            let mut v = self.events_detection_job_properties_list.unwrap_or_default();
+                            v.push(input);
+                            self.events_detection_job_properties_list = Some(v);
+                            self
         }
         /// <p>A list containing the properties of each job that is returned.</p>
-        pub fn set_events_detection_job_properties_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventsDetectionJobProperties>>,
-        ) -> Self {
-            self.events_detection_job_properties_list = input;
-            self
+        pub fn set_events_detection_job_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventsDetectionJobProperties>>) -> Self {
+            self.events_detection_job_properties_list = input; self
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2694,17 +2624,20 @@ pub mod list_events_detection_jobs_output {
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEventsDetectionJobsOutput`](crate::output::ListEventsDetectionJobsOutput).
         pub fn build(self) -> crate::output::ListEventsDetectionJobsOutput {
             crate::output::ListEventsDetectionJobsOutput {
-                events_detection_job_properties_list: self.events_detection_job_properties_list,
-                next_token: self.next_token,
+                events_detection_job_properties_list: self.events_detection_job_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEventsDetectionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListEventsDetectionJobsOutput`](crate::output::ListEventsDetectionJobsOutput).
@@ -2716,35 +2649,31 @@ impl ListEventsDetectionJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEntityRecognizerSummariesOutput {
+pub struct ListEntityRecognizerSummariesOutput  {
     /// <p>The list entity recognizer summaries.</p>
     #[doc(hidden)]
-    pub entity_recognizer_summaries_list:
-        std::option::Option<std::vec::Vec<crate::model::EntityRecognizerSummary>>,
+    pub entity_recognizer_summaries_list: std::option::Option<std::vec::Vec<crate::model::EntityRecognizerSummary>>,
     /// <p>The list entity recognizer summaries.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEntityRecognizerSummariesOutput {
     /// <p>The list entity recognizer summaries.</p>
-    pub fn entity_recognizer_summaries_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::EntityRecognizerSummary]> {
+    pub fn entity_recognizer_summaries_list(&self) -> std::option::Option<& [crate::model::EntityRecognizerSummary]> {
         self.entity_recognizer_summaries_list.as_deref()
     }
     /// <p>The list entity recognizer summaries.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEntityRecognizerSummariesOutput`](crate::output::ListEntityRecognizerSummariesOutput).
 pub mod list_entity_recognizer_summaries_output {
-
+    
     /// A builder for [`ListEntityRecognizerSummariesOutput`](crate::output::ListEntityRecognizerSummariesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) entity_recognizer_summaries_list:
-            std::option::Option<std::vec::Vec<crate::model::EntityRecognizerSummary>>,
+        pub(crate) entity_recognizer_summaries_list: std::option::Option<std::vec::Vec<crate::model::EntityRecognizerSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2753,22 +2682,15 @@ pub mod list_entity_recognizer_summaries_output {
         /// To override the contents of this collection use [`set_entity_recognizer_summaries_list`](Self::set_entity_recognizer_summaries_list).
         ///
         /// <p>The list entity recognizer summaries.</p>
-        pub fn entity_recognizer_summaries_list(
-            mut self,
-            input: crate::model::EntityRecognizerSummary,
-        ) -> Self {
+        pub fn entity_recognizer_summaries_list(mut self, input: crate::model::EntityRecognizerSummary) -> Self {
             let mut v = self.entity_recognizer_summaries_list.unwrap_or_default();
-            v.push(input);
-            self.entity_recognizer_summaries_list = Some(v);
-            self
+                            v.push(input);
+                            self.entity_recognizer_summaries_list = Some(v);
+                            self
         }
         /// <p>The list entity recognizer summaries.</p>
-        pub fn set_entity_recognizer_summaries_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EntityRecognizerSummary>>,
-        ) -> Self {
-            self.entity_recognizer_summaries_list = input;
-            self
+        pub fn set_entity_recognizer_summaries_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::EntityRecognizerSummary>>) -> Self {
+            self.entity_recognizer_summaries_list = input; self
         }
         /// <p>The list entity recognizer summaries.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2777,17 +2699,20 @@ pub mod list_entity_recognizer_summaries_output {
         }
         /// <p>The list entity recognizer summaries.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEntityRecognizerSummariesOutput`](crate::output::ListEntityRecognizerSummariesOutput).
         pub fn build(self) -> crate::output::ListEntityRecognizerSummariesOutput {
             crate::output::ListEntityRecognizerSummariesOutput {
-                entity_recognizer_summaries_list: self.entity_recognizer_summaries_list,
-                next_token: self.next_token,
+                entity_recognizer_summaries_list: self.entity_recognizer_summaries_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEntityRecognizerSummariesOutput {
     /// Creates a new builder-style object to manufacture [`ListEntityRecognizerSummariesOutput`](crate::output::ListEntityRecognizerSummariesOutput).
@@ -2799,35 +2724,31 @@ impl ListEntityRecognizerSummariesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEntityRecognizersOutput {
+pub struct ListEntityRecognizersOutput  {
     /// <p>The list of properties of an entity recognizer.</p>
     #[doc(hidden)]
-    pub entity_recognizer_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::EntityRecognizerProperties>>,
+    pub entity_recognizer_properties_list: std::option::Option<std::vec::Vec<crate::model::EntityRecognizerProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEntityRecognizersOutput {
     /// <p>The list of properties of an entity recognizer.</p>
-    pub fn entity_recognizer_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::EntityRecognizerProperties]> {
+    pub fn entity_recognizer_properties_list(&self) -> std::option::Option<& [crate::model::EntityRecognizerProperties]> {
         self.entity_recognizer_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEntityRecognizersOutput`](crate::output::ListEntityRecognizersOutput).
 pub mod list_entity_recognizers_output {
-
+    
     /// A builder for [`ListEntityRecognizersOutput`](crate::output::ListEntityRecognizersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) entity_recognizer_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::EntityRecognizerProperties>>,
+        pub(crate) entity_recognizer_properties_list: std::option::Option<std::vec::Vec<crate::model::EntityRecognizerProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2836,22 +2757,15 @@ pub mod list_entity_recognizers_output {
         /// To override the contents of this collection use [`set_entity_recognizer_properties_list`](Self::set_entity_recognizer_properties_list).
         ///
         /// <p>The list of properties of an entity recognizer.</p>
-        pub fn entity_recognizer_properties_list(
-            mut self,
-            input: crate::model::EntityRecognizerProperties,
-        ) -> Self {
+        pub fn entity_recognizer_properties_list(mut self, input: crate::model::EntityRecognizerProperties) -> Self {
             let mut v = self.entity_recognizer_properties_list.unwrap_or_default();
-            v.push(input);
-            self.entity_recognizer_properties_list = Some(v);
-            self
+                            v.push(input);
+                            self.entity_recognizer_properties_list = Some(v);
+                            self
         }
         /// <p>The list of properties of an entity recognizer.</p>
-        pub fn set_entity_recognizer_properties_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EntityRecognizerProperties>>,
-        ) -> Self {
-            self.entity_recognizer_properties_list = input;
-            self
+        pub fn set_entity_recognizer_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::EntityRecognizerProperties>>) -> Self {
+            self.entity_recognizer_properties_list = input; self
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2860,17 +2774,20 @@ pub mod list_entity_recognizers_output {
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEntityRecognizersOutput`](crate::output::ListEntityRecognizersOutput).
         pub fn build(self) -> crate::output::ListEntityRecognizersOutput {
             crate::output::ListEntityRecognizersOutput {
-                entity_recognizer_properties_list: self.entity_recognizer_properties_list,
-                next_token: self.next_token,
+                entity_recognizer_properties_list: self.entity_recognizer_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEntityRecognizersOutput {
     /// Creates a new builder-style object to manufacture [`ListEntityRecognizersOutput`](crate::output::ListEntityRecognizersOutput).
@@ -2882,35 +2799,31 @@ impl ListEntityRecognizersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEntitiesDetectionJobsOutput {
+pub struct ListEntitiesDetectionJobsOutput  {
     /// <p>A list containing the properties of each job that is returned.</p>
     #[doc(hidden)]
-    pub entities_detection_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::EntitiesDetectionJobProperties>>,
+    pub entities_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::EntitiesDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEntitiesDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn entities_detection_job_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::EntitiesDetectionJobProperties]> {
+    pub fn entities_detection_job_properties_list(&self) -> std::option::Option<& [crate::model::EntitiesDetectionJobProperties]> {
         self.entities_detection_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEntitiesDetectionJobsOutput`](crate::output::ListEntitiesDetectionJobsOutput).
 pub mod list_entities_detection_jobs_output {
-
+    
     /// A builder for [`ListEntitiesDetectionJobsOutput`](crate::output::ListEntitiesDetectionJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) entities_detection_job_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::EntitiesDetectionJobProperties>>,
+        pub(crate) entities_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::EntitiesDetectionJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2919,24 +2832,15 @@ pub mod list_entities_detection_jobs_output {
         /// To override the contents of this collection use [`set_entities_detection_job_properties_list`](Self::set_entities_detection_job_properties_list).
         ///
         /// <p>A list containing the properties of each job that is returned.</p>
-        pub fn entities_detection_job_properties_list(
-            mut self,
-            input: crate::model::EntitiesDetectionJobProperties,
-        ) -> Self {
-            let mut v = self
-                .entities_detection_job_properties_list
-                .unwrap_or_default();
-            v.push(input);
-            self.entities_detection_job_properties_list = Some(v);
-            self
+        pub fn entities_detection_job_properties_list(mut self, input: crate::model::EntitiesDetectionJobProperties) -> Self {
+            let mut v = self.entities_detection_job_properties_list.unwrap_or_default();
+                            v.push(input);
+                            self.entities_detection_job_properties_list = Some(v);
+                            self
         }
         /// <p>A list containing the properties of each job that is returned.</p>
-        pub fn set_entities_detection_job_properties_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EntitiesDetectionJobProperties>>,
-        ) -> Self {
-            self.entities_detection_job_properties_list = input;
-            self
+        pub fn set_entities_detection_job_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::EntitiesDetectionJobProperties>>) -> Self {
+            self.entities_detection_job_properties_list = input; self
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2945,17 +2849,20 @@ pub mod list_entities_detection_jobs_output {
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEntitiesDetectionJobsOutput`](crate::output::ListEntitiesDetectionJobsOutput).
         pub fn build(self) -> crate::output::ListEntitiesDetectionJobsOutput {
             crate::output::ListEntitiesDetectionJobsOutput {
-                entities_detection_job_properties_list: self.entities_detection_job_properties_list,
-                next_token: self.next_token,
+                entities_detection_job_properties_list: self.entities_detection_job_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEntitiesDetectionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListEntitiesDetectionJobsOutput`](crate::output::ListEntitiesDetectionJobsOutput).
@@ -2967,35 +2874,31 @@ impl ListEntitiesDetectionJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEndpointsOutput {
+pub struct ListEndpointsOutput  {
     /// <p>Displays a list of endpoint properties being retrieved by the service in response to the request.</p>
     #[doc(hidden)]
-    pub endpoint_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::EndpointProperties>>,
+    pub endpoint_properties_list: std::option::Option<std::vec::Vec<crate::model::EndpointProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEndpointsOutput {
     /// <p>Displays a list of endpoint properties being retrieved by the service in response to the request.</p>
-    pub fn endpoint_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::EndpointProperties]> {
+    pub fn endpoint_properties_list(&self) -> std::option::Option<& [crate::model::EndpointProperties]> {
         self.endpoint_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
 pub mod list_endpoints_output {
-
+    
     /// A builder for [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) endpoint_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::EndpointProperties>>,
+        pub(crate) endpoint_properties_list: std::option::Option<std::vec::Vec<crate::model::EndpointProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3006,17 +2909,13 @@ pub mod list_endpoints_output {
         /// <p>Displays a list of endpoint properties being retrieved by the service in response to the request.</p>
         pub fn endpoint_properties_list(mut self, input: crate::model::EndpointProperties) -> Self {
             let mut v = self.endpoint_properties_list.unwrap_or_default();
-            v.push(input);
-            self.endpoint_properties_list = Some(v);
-            self
+                            v.push(input);
+                            self.endpoint_properties_list = Some(v);
+                            self
         }
         /// <p>Displays a list of endpoint properties being retrieved by the service in response to the request.</p>
-        pub fn set_endpoint_properties_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EndpointProperties>>,
-        ) -> Self {
-            self.endpoint_properties_list = input;
-            self
+        pub fn set_endpoint_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::EndpointProperties>>) -> Self {
+            self.endpoint_properties_list = input; self
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3025,17 +2924,20 @@ pub mod list_endpoints_output {
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
         pub fn build(self) -> crate::output::ListEndpointsOutput {
             crate::output::ListEndpointsOutput {
-                endpoint_properties_list: self.endpoint_properties_list,
-                next_token: self.next_token,
+                endpoint_properties_list: self.endpoint_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`ListEndpointsOutput`](crate::output::ListEndpointsOutput).
@@ -3047,37 +2949,31 @@ impl ListEndpointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDominantLanguageDetectionJobsOutput {
+pub struct ListDominantLanguageDetectionJobsOutput  {
     /// <p>A list containing the properties of each job that is returned.</p>
     #[doc(hidden)]
-    pub dominant_language_detection_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::DominantLanguageDetectionJobProperties>>,
+    pub dominant_language_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::DominantLanguageDetectionJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDominantLanguageDetectionJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
-    pub fn dominant_language_detection_job_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::DominantLanguageDetectionJobProperties]> {
-        self.dominant_language_detection_job_properties_list
-            .as_deref()
+    pub fn dominant_language_detection_job_properties_list(&self) -> std::option::Option<& [crate::model::DominantLanguageDetectionJobProperties]> {
+        self.dominant_language_detection_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDominantLanguageDetectionJobsOutput`](crate::output::ListDominantLanguageDetectionJobsOutput).
 pub mod list_dominant_language_detection_jobs_output {
-
+    
     /// A builder for [`ListDominantLanguageDetectionJobsOutput`](crate::output::ListDominantLanguageDetectionJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) dominant_language_detection_job_properties_list: std::option::Option<
-            std::vec::Vec<crate::model::DominantLanguageDetectionJobProperties>,
-        >,
+        pub(crate) dominant_language_detection_job_properties_list: std::option::Option<std::vec::Vec<crate::model::DominantLanguageDetectionJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3086,26 +2982,15 @@ pub mod list_dominant_language_detection_jobs_output {
         /// To override the contents of this collection use [`set_dominant_language_detection_job_properties_list`](Self::set_dominant_language_detection_job_properties_list).
         ///
         /// <p>A list containing the properties of each job that is returned.</p>
-        pub fn dominant_language_detection_job_properties_list(
-            mut self,
-            input: crate::model::DominantLanguageDetectionJobProperties,
-        ) -> Self {
-            let mut v = self
-                .dominant_language_detection_job_properties_list
-                .unwrap_or_default();
-            v.push(input);
-            self.dominant_language_detection_job_properties_list = Some(v);
-            self
+        pub fn dominant_language_detection_job_properties_list(mut self, input: crate::model::DominantLanguageDetectionJobProperties) -> Self {
+            let mut v = self.dominant_language_detection_job_properties_list.unwrap_or_default();
+                            v.push(input);
+                            self.dominant_language_detection_job_properties_list = Some(v);
+                            self
         }
         /// <p>A list containing the properties of each job that is returned.</p>
-        pub fn set_dominant_language_detection_job_properties_list(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::DominantLanguageDetectionJobProperties>,
-            >,
-        ) -> Self {
-            self.dominant_language_detection_job_properties_list = input;
-            self
+        pub fn set_dominant_language_detection_job_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DominantLanguageDetectionJobProperties>>) -> Self {
+            self.dominant_language_detection_job_properties_list = input; self
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3114,18 +2999,20 @@ pub mod list_dominant_language_detection_jobs_output {
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDominantLanguageDetectionJobsOutput`](crate::output::ListDominantLanguageDetectionJobsOutput).
         pub fn build(self) -> crate::output::ListDominantLanguageDetectionJobsOutput {
             crate::output::ListDominantLanguageDetectionJobsOutput {
-                dominant_language_detection_job_properties_list: self
-                    .dominant_language_detection_job_properties_list,
-                next_token: self.next_token,
+                dominant_language_detection_job_properties_list: self.dominant_language_detection_job_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDominantLanguageDetectionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListDominantLanguageDetectionJobsOutput`](crate::output::ListDominantLanguageDetectionJobsOutput).
@@ -3137,35 +3024,31 @@ impl ListDominantLanguageDetectionJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDocumentClassifierSummariesOutput {
+pub struct ListDocumentClassifierSummariesOutput  {
     /// <p>The list of summaries of document classifiers.</p>
     #[doc(hidden)]
-    pub document_classifier_summaries_list:
-        std::option::Option<std::vec::Vec<crate::model::DocumentClassifierSummary>>,
+    pub document_classifier_summaries_list: std::option::Option<std::vec::Vec<crate::model::DocumentClassifierSummary>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDocumentClassifierSummariesOutput {
     /// <p>The list of summaries of document classifiers.</p>
-    pub fn document_classifier_summaries_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::DocumentClassifierSummary]> {
+    pub fn document_classifier_summaries_list(&self) -> std::option::Option<& [crate::model::DocumentClassifierSummary]> {
         self.document_classifier_summaries_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDocumentClassifierSummariesOutput`](crate::output::ListDocumentClassifierSummariesOutput).
 pub mod list_document_classifier_summaries_output {
-
+    
     /// A builder for [`ListDocumentClassifierSummariesOutput`](crate::output::ListDocumentClassifierSummariesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) document_classifier_summaries_list:
-            std::option::Option<std::vec::Vec<crate::model::DocumentClassifierSummary>>,
+        pub(crate) document_classifier_summaries_list: std::option::Option<std::vec::Vec<crate::model::DocumentClassifierSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3174,22 +3057,15 @@ pub mod list_document_classifier_summaries_output {
         /// To override the contents of this collection use [`set_document_classifier_summaries_list`](Self::set_document_classifier_summaries_list).
         ///
         /// <p>The list of summaries of document classifiers.</p>
-        pub fn document_classifier_summaries_list(
-            mut self,
-            input: crate::model::DocumentClassifierSummary,
-        ) -> Self {
+        pub fn document_classifier_summaries_list(mut self, input: crate::model::DocumentClassifierSummary) -> Self {
             let mut v = self.document_classifier_summaries_list.unwrap_or_default();
-            v.push(input);
-            self.document_classifier_summaries_list = Some(v);
-            self
+                            v.push(input);
+                            self.document_classifier_summaries_list = Some(v);
+                            self
         }
         /// <p>The list of summaries of document classifiers.</p>
-        pub fn set_document_classifier_summaries_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DocumentClassifierSummary>>,
-        ) -> Self {
-            self.document_classifier_summaries_list = input;
-            self
+        pub fn set_document_classifier_summaries_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DocumentClassifierSummary>>) -> Self {
+            self.document_classifier_summaries_list = input; self
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3198,17 +3074,20 @@ pub mod list_document_classifier_summaries_output {
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDocumentClassifierSummariesOutput`](crate::output::ListDocumentClassifierSummariesOutput).
         pub fn build(self) -> crate::output::ListDocumentClassifierSummariesOutput {
             crate::output::ListDocumentClassifierSummariesOutput {
-                document_classifier_summaries_list: self.document_classifier_summaries_list,
-                next_token: self.next_token,
+                document_classifier_summaries_list: self.document_classifier_summaries_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDocumentClassifierSummariesOutput {
     /// Creates a new builder-style object to manufacture [`ListDocumentClassifierSummariesOutput`](crate::output::ListDocumentClassifierSummariesOutput).
@@ -3220,35 +3099,31 @@ impl ListDocumentClassifierSummariesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDocumentClassifiersOutput {
+pub struct ListDocumentClassifiersOutput  {
     /// <p>A list containing the properties of each job returned.</p>
     #[doc(hidden)]
-    pub document_classifier_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::DocumentClassifierProperties>>,
+    pub document_classifier_properties_list: std::option::Option<std::vec::Vec<crate::model::DocumentClassifierProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDocumentClassifiersOutput {
     /// <p>A list containing the properties of each job returned.</p>
-    pub fn document_classifier_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::DocumentClassifierProperties]> {
+    pub fn document_classifier_properties_list(&self) -> std::option::Option<& [crate::model::DocumentClassifierProperties]> {
         self.document_classifier_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDocumentClassifiersOutput`](crate::output::ListDocumentClassifiersOutput).
 pub mod list_document_classifiers_output {
-
+    
     /// A builder for [`ListDocumentClassifiersOutput`](crate::output::ListDocumentClassifiersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) document_classifier_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::DocumentClassifierProperties>>,
+        pub(crate) document_classifier_properties_list: std::option::Option<std::vec::Vec<crate::model::DocumentClassifierProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3257,22 +3132,15 @@ pub mod list_document_classifiers_output {
         /// To override the contents of this collection use [`set_document_classifier_properties_list`](Self::set_document_classifier_properties_list).
         ///
         /// <p>A list containing the properties of each job returned.</p>
-        pub fn document_classifier_properties_list(
-            mut self,
-            input: crate::model::DocumentClassifierProperties,
-        ) -> Self {
+        pub fn document_classifier_properties_list(mut self, input: crate::model::DocumentClassifierProperties) -> Self {
             let mut v = self.document_classifier_properties_list.unwrap_or_default();
-            v.push(input);
-            self.document_classifier_properties_list = Some(v);
-            self
+                            v.push(input);
+                            self.document_classifier_properties_list = Some(v);
+                            self
         }
         /// <p>A list containing the properties of each job returned.</p>
-        pub fn set_document_classifier_properties_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DocumentClassifierProperties>>,
-        ) -> Self {
-            self.document_classifier_properties_list = input;
-            self
+        pub fn set_document_classifier_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DocumentClassifierProperties>>) -> Self {
+            self.document_classifier_properties_list = input; self
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3281,17 +3149,20 @@ pub mod list_document_classifiers_output {
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDocumentClassifiersOutput`](crate::output::ListDocumentClassifiersOutput).
         pub fn build(self) -> crate::output::ListDocumentClassifiersOutput {
             crate::output::ListDocumentClassifiersOutput {
-                document_classifier_properties_list: self.document_classifier_properties_list,
-                next_token: self.next_token,
+                document_classifier_properties_list: self.document_classifier_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDocumentClassifiersOutput {
     /// Creates a new builder-style object to manufacture [`ListDocumentClassifiersOutput`](crate::output::ListDocumentClassifiersOutput).
@@ -3303,35 +3174,31 @@ impl ListDocumentClassifiersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDocumentClassificationJobsOutput {
+pub struct ListDocumentClassificationJobsOutput  {
     /// <p>A list containing the properties of each job returned.</p>
     #[doc(hidden)]
-    pub document_classification_job_properties_list:
-        std::option::Option<std::vec::Vec<crate::model::DocumentClassificationJobProperties>>,
+    pub document_classification_job_properties_list: std::option::Option<std::vec::Vec<crate::model::DocumentClassificationJobProperties>>,
     /// <p>Identifies the next page of results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDocumentClassificationJobsOutput {
     /// <p>A list containing the properties of each job returned.</p>
-    pub fn document_classification_job_properties_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::DocumentClassificationJobProperties]> {
+    pub fn document_classification_job_properties_list(&self) -> std::option::Option<& [crate::model::DocumentClassificationJobProperties]> {
         self.document_classification_job_properties_list.as_deref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDocumentClassificationJobsOutput`](crate::output::ListDocumentClassificationJobsOutput).
 pub mod list_document_classification_jobs_output {
-
+    
     /// A builder for [`ListDocumentClassificationJobsOutput`](crate::output::ListDocumentClassificationJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) document_classification_job_properties_list:
-            std::option::Option<std::vec::Vec<crate::model::DocumentClassificationJobProperties>>,
+        pub(crate) document_classification_job_properties_list: std::option::Option<std::vec::Vec<crate::model::DocumentClassificationJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3340,26 +3207,15 @@ pub mod list_document_classification_jobs_output {
         /// To override the contents of this collection use [`set_document_classification_job_properties_list`](Self::set_document_classification_job_properties_list).
         ///
         /// <p>A list containing the properties of each job returned.</p>
-        pub fn document_classification_job_properties_list(
-            mut self,
-            input: crate::model::DocumentClassificationJobProperties,
-        ) -> Self {
-            let mut v = self
-                .document_classification_job_properties_list
-                .unwrap_or_default();
-            v.push(input);
-            self.document_classification_job_properties_list = Some(v);
-            self
+        pub fn document_classification_job_properties_list(mut self, input: crate::model::DocumentClassificationJobProperties) -> Self {
+            let mut v = self.document_classification_job_properties_list.unwrap_or_default();
+                            v.push(input);
+                            self.document_classification_job_properties_list = Some(v);
+                            self
         }
         /// <p>A list containing the properties of each job returned.</p>
-        pub fn set_document_classification_job_properties_list(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::DocumentClassificationJobProperties>,
-            >,
-        ) -> Self {
-            self.document_classification_job_properties_list = input;
-            self
+        pub fn set_document_classification_job_properties_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DocumentClassificationJobProperties>>) -> Self {
+            self.document_classification_job_properties_list = input; self
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3368,18 +3224,20 @@ pub mod list_document_classification_jobs_output {
         }
         /// <p>Identifies the next page of results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDocumentClassificationJobsOutput`](crate::output::ListDocumentClassificationJobsOutput).
         pub fn build(self) -> crate::output::ListDocumentClassificationJobsOutput {
             crate::output::ListDocumentClassificationJobsOutput {
-                document_classification_job_properties_list: self
-                    .document_classification_job_properties_list,
-                next_token: self.next_token,
+                document_classification_job_properties_list: self.document_classification_job_properties_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDocumentClassificationJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListDocumentClassificationJobsOutput`](crate::output::ListDocumentClassificationJobsOutput).
@@ -3391,20 +3249,20 @@ impl ListDocumentClassificationJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportModelOutput {
+pub struct ImportModelOutput  {
     /// <p>The Amazon Resource Name (ARN) of the custom model being imported.</p>
     #[doc(hidden)]
     pub model_arn: std::option::Option<std::string::String>,
 }
 impl ImportModelOutput {
     /// <p>The Amazon Resource Name (ARN) of the custom model being imported.</p>
-    pub fn model_arn(&self) -> std::option::Option<&str> {
+    pub fn model_arn(&self) -> std::option::Option<& str> {
         self.model_arn.as_deref()
     }
 }
 /// See [`ImportModelOutput`](crate::output::ImportModelOutput).
 pub mod import_model_output {
-
+    
     /// A builder for [`ImportModelOutput`](crate::output::ImportModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3418,16 +3276,18 @@ pub mod import_model_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the custom model being imported.</p>
         pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_arn = input;
-            self
+            self.model_arn = input; self
         }
         /// Consumes the builder and constructs a [`ImportModelOutput`](crate::output::ImportModelOutput).
         pub fn build(self) -> crate::output::ImportModelOutput {
             crate::output::ImportModelOutput {
-                model_arn: self.model_arn,
+                model_arn: self.model_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportModelOutput {
     /// Creates a new builder-style object to manufacture [`ImportModelOutput`](crate::output::ImportModelOutput).
@@ -3439,18 +3299,18 @@ impl ImportModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DetectTargetedSentimentOutput {
+pub struct DetectTargetedSentimentOutput  {
     /// <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::TargetedSentimentEntity>>,
 }
 impl DetectTargetedSentimentOutput {
     /// <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
-    pub fn entities(&self) -> std::option::Option<&[crate::model::TargetedSentimentEntity]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::model::TargetedSentimentEntity]> {
         self.entities.as_deref()
     }
 }
-impl std::fmt::Debug for DetectTargetedSentimentOutput {
+impl  std::fmt::Debug for DetectTargetedSentimentOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectTargetedSentimentOutput");
         formatter.field("entities", &"*** Sensitive Data Redacted ***");
@@ -3459,12 +3319,11 @@ impl std::fmt::Debug for DetectTargetedSentimentOutput {
 }
 /// See [`DetectTargetedSentimentOutput`](crate::output::DetectTargetedSentimentOutput).
 pub mod detect_targeted_sentiment_output {
-
+    
     /// A builder for [`DetectTargetedSentimentOutput`](crate::output::DetectTargetedSentimentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
-        pub(crate) entities:
-            std::option::Option<std::vec::Vec<crate::model::TargetedSentimentEntity>>,
+        pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::TargetedSentimentEntity>>,
     }
     impl Builder {
         /// Appends an item to `entities`.
@@ -3474,22 +3333,19 @@ pub mod detect_targeted_sentiment_output {
         /// <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
         pub fn entities(mut self, input: crate::model::TargetedSentimentEntity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input);
-            self.entities = Some(v);
-            self
+                            v.push(input);
+                            self.entities = Some(v);
+                            self
         }
         /// <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>
-        pub fn set_entities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TargetedSentimentEntity>>,
-        ) -> Self {
-            self.entities = input;
-            self
+        pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::TargetedSentimentEntity>>) -> Self {
+            self.entities = input; self
         }
         /// Consumes the builder and constructs a [`DetectTargetedSentimentOutput`](crate::output::DetectTargetedSentimentOutput).
         pub fn build(self) -> crate::output::DetectTargetedSentimentOutput {
             crate::output::DetectTargetedSentimentOutput {
-                entities: self.entities,
+                entities: self.entities
+                ,
             }
         }
     }
@@ -3500,6 +3356,8 @@ pub mod detect_targeted_sentiment_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl DetectTargetedSentimentOutput {
     /// Creates a new builder-style object to manufacture [`DetectTargetedSentimentOutput`](crate::output::DetectTargetedSentimentOutput).
@@ -3511,18 +3369,18 @@ impl DetectTargetedSentimentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DetectSyntaxOutput {
+pub struct DetectSyntaxOutput  {
     /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
     #[doc(hidden)]
     pub syntax_tokens: std::option::Option<std::vec::Vec<crate::model::SyntaxToken>>,
 }
 impl DetectSyntaxOutput {
     /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
-    pub fn syntax_tokens(&self) -> std::option::Option<&[crate::model::SyntaxToken]> {
+    pub fn syntax_tokens(&self) -> std::option::Option<& [crate::model::SyntaxToken]> {
         self.syntax_tokens.as_deref()
     }
 }
-impl std::fmt::Debug for DetectSyntaxOutput {
+impl  std::fmt::Debug for DetectSyntaxOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectSyntaxOutput");
         formatter.field("syntax_tokens", &"*** Sensitive Data Redacted ***");
@@ -3531,7 +3389,7 @@ impl std::fmt::Debug for DetectSyntaxOutput {
 }
 /// See [`DetectSyntaxOutput`](crate::output::DetectSyntaxOutput).
 pub mod detect_syntax_output {
-
+    
     /// A builder for [`DetectSyntaxOutput`](crate::output::DetectSyntaxOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3545,22 +3403,19 @@ pub mod detect_syntax_output {
         /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
         pub fn syntax_tokens(mut self, input: crate::model::SyntaxToken) -> Self {
             let mut v = self.syntax_tokens.unwrap_or_default();
-            v.push(input);
-            self.syntax_tokens = Some(v);
-            self
+                            v.push(input);
+                            self.syntax_tokens = Some(v);
+                            self
         }
         /// <p>A collection of syntax tokens describing the text. For each token, the response provides the text, the token type, where the text begins and ends, and the level of confidence that Amazon Comprehend has that the token is correct. For a list of token types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
-        pub fn set_syntax_tokens(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SyntaxToken>>,
-        ) -> Self {
-            self.syntax_tokens = input;
-            self
+        pub fn set_syntax_tokens(mut self, input: std::option::Option<std::vec::Vec<crate::model::SyntaxToken>>) -> Self {
+            self.syntax_tokens = input; self
         }
         /// Consumes the builder and constructs a [`DetectSyntaxOutput`](crate::output::DetectSyntaxOutput).
         pub fn build(self) -> crate::output::DetectSyntaxOutput {
             crate::output::DetectSyntaxOutput {
-                syntax_tokens: self.syntax_tokens,
+                syntax_tokens: self.syntax_tokens
+                ,
             }
         }
     }
@@ -3571,6 +3426,8 @@ pub mod detect_syntax_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl DetectSyntaxOutput {
     /// Creates a new builder-style object to manufacture [`DetectSyntaxOutput`](crate::output::DetectSyntaxOutput).
@@ -3582,7 +3439,7 @@ impl DetectSyntaxOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DetectSentimentOutput {
+pub struct DetectSentimentOutput  {
     /// <p>The inferred sentiment that Amazon Comprehend has the highest level of confidence in.</p>
     #[doc(hidden)]
     pub sentiment: std::option::Option<crate::model::SentimentType>,
@@ -3592,15 +3449,15 @@ pub struct DetectSentimentOutput {
 }
 impl DetectSentimentOutput {
     /// <p>The inferred sentiment that Amazon Comprehend has the highest level of confidence in.</p>
-    pub fn sentiment(&self) -> std::option::Option<&crate::model::SentimentType> {
+    pub fn sentiment(&self) -> std::option::Option<& crate::model::SentimentType> {
         self.sentiment.as_ref()
     }
     /// <p>An object that lists the sentiments, and their corresponding confidence levels.</p>
-    pub fn sentiment_score(&self) -> std::option::Option<&crate::model::SentimentScore> {
+    pub fn sentiment_score(&self) -> std::option::Option<& crate::model::SentimentScore> {
         self.sentiment_score.as_ref()
     }
 }
-impl std::fmt::Debug for DetectSentimentOutput {
+impl  std::fmt::Debug for DetectSentimentOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectSentimentOutput");
         formatter.field("sentiment", &"*** Sensitive Data Redacted ***");
@@ -3610,7 +3467,7 @@ impl std::fmt::Debug for DetectSentimentOutput {
 }
 /// See [`DetectSentimentOutput`](crate::output::DetectSentimentOutput).
 pub mod detect_sentiment_output {
-
+    
     /// A builder for [`DetectSentimentOutput`](crate::output::DetectSentimentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3624,12 +3481,8 @@ pub mod detect_sentiment_output {
             self
         }
         /// <p>The inferred sentiment that Amazon Comprehend has the highest level of confidence in.</p>
-        pub fn set_sentiment(
-            mut self,
-            input: std::option::Option<crate::model::SentimentType>,
-        ) -> Self {
-            self.sentiment = input;
-            self
+        pub fn set_sentiment(mut self, input: std::option::Option<crate::model::SentimentType>) -> Self {
+            self.sentiment = input; self
         }
         /// <p>An object that lists the sentiments, and their corresponding confidence levels.</p>
         pub fn sentiment_score(mut self, input: crate::model::SentimentScore) -> Self {
@@ -3637,18 +3490,16 @@ pub mod detect_sentiment_output {
             self
         }
         /// <p>An object that lists the sentiments, and their corresponding confidence levels.</p>
-        pub fn set_sentiment_score(
-            mut self,
-            input: std::option::Option<crate::model::SentimentScore>,
-        ) -> Self {
-            self.sentiment_score = input;
-            self
+        pub fn set_sentiment_score(mut self, input: std::option::Option<crate::model::SentimentScore>) -> Self {
+            self.sentiment_score = input; self
         }
         /// Consumes the builder and constructs a [`DetectSentimentOutput`](crate::output::DetectSentimentOutput).
         pub fn build(self) -> crate::output::DetectSentimentOutput {
             crate::output::DetectSentimentOutput {
-                sentiment: self.sentiment,
-                sentiment_score: self.sentiment_score,
+                sentiment: self.sentiment
+                ,
+                sentiment_score: self.sentiment_score
+                ,
             }
         }
     }
@@ -3660,6 +3511,8 @@ pub mod detect_sentiment_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl DetectSentimentOutput {
     /// Creates a new builder-style object to manufacture [`DetectSentimentOutput`](crate::output::DetectSentimentOutput).
@@ -3671,20 +3524,20 @@ impl DetectSentimentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectPiiEntitiesOutput {
+pub struct DetectPiiEntitiesOutput  {
     /// <p>A collection of PII entities identified in the input text. For each entity, the response provides the entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::PiiEntity>>,
 }
 impl DetectPiiEntitiesOutput {
     /// <p>A collection of PII entities identified in the input text. For each entity, the response provides the entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
-    pub fn entities(&self) -> std::option::Option<&[crate::model::PiiEntity]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::model::PiiEntity]> {
         self.entities.as_deref()
     }
 }
 /// See [`DetectPiiEntitiesOutput`](crate::output::DetectPiiEntitiesOutput).
 pub mod detect_pii_entities_output {
-
+    
     /// A builder for [`DetectPiiEntitiesOutput`](crate::output::DetectPiiEntitiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3698,25 +3551,24 @@ pub mod detect_pii_entities_output {
         /// <p>A collection of PII entities identified in the input text. For each entity, the response provides the entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
         pub fn entities(mut self, input: crate::model::PiiEntity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input);
-            self.entities = Some(v);
-            self
+                            v.push(input);
+                            self.entities = Some(v);
+                            self
         }
         /// <p>A collection of PII entities identified in the input text. For each entity, the response provides the entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection.</p>
-        pub fn set_entities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PiiEntity>>,
-        ) -> Self {
-            self.entities = input;
-            self
+        pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::PiiEntity>>) -> Self {
+            self.entities = input; self
         }
         /// Consumes the builder and constructs a [`DetectPiiEntitiesOutput`](crate::output::DetectPiiEntitiesOutput).
         pub fn build(self) -> crate::output::DetectPiiEntitiesOutput {
             crate::output::DetectPiiEntitiesOutput {
-                entities: self.entities,
+                entities: self.entities
+                ,
             }
         }
     }
+    
+    
 }
 impl DetectPiiEntitiesOutput {
     /// Creates a new builder-style object to manufacture [`DetectPiiEntitiesOutput`](crate::output::DetectPiiEntitiesOutput).
@@ -3728,18 +3580,18 @@ impl DetectPiiEntitiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DetectKeyPhrasesOutput {
+pub struct DetectKeyPhrasesOutput  {
     /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection. </p>
     #[doc(hidden)]
     pub key_phrases: std::option::Option<std::vec::Vec<crate::model::KeyPhrase>>,
 }
 impl DetectKeyPhrasesOutput {
     /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection. </p>
-    pub fn key_phrases(&self) -> std::option::Option<&[crate::model::KeyPhrase]> {
+    pub fn key_phrases(&self) -> std::option::Option<& [crate::model::KeyPhrase]> {
         self.key_phrases.as_deref()
     }
 }
-impl std::fmt::Debug for DetectKeyPhrasesOutput {
+impl  std::fmt::Debug for DetectKeyPhrasesOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectKeyPhrasesOutput");
         formatter.field("key_phrases", &"*** Sensitive Data Redacted ***");
@@ -3748,7 +3600,7 @@ impl std::fmt::Debug for DetectKeyPhrasesOutput {
 }
 /// See [`DetectKeyPhrasesOutput`](crate::output::DetectKeyPhrasesOutput).
 pub mod detect_key_phrases_output {
-
+    
     /// A builder for [`DetectKeyPhrasesOutput`](crate::output::DetectKeyPhrasesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3762,22 +3614,19 @@ pub mod detect_key_phrases_output {
         /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection. </p>
         pub fn key_phrases(mut self, input: crate::model::KeyPhrase) -> Self {
             let mut v = self.key_phrases.unwrap_or_default();
-            v.push(input);
-            self.key_phrases = Some(v);
-            self
+                            v.push(input);
+                            self.key_phrases = Some(v);
+                            self
         }
         /// <p>A collection of key phrases that Amazon Comprehend identified in the input text. For each key phrase, the response provides the text of the key phrase, where the key phrase begins and ends, and the level of confidence that Amazon Comprehend has in the accuracy of the detection. </p>
-        pub fn set_key_phrases(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::KeyPhrase>>,
-        ) -> Self {
-            self.key_phrases = input;
-            self
+        pub fn set_key_phrases(mut self, input: std::option::Option<std::vec::Vec<crate::model::KeyPhrase>>) -> Self {
+            self.key_phrases = input; self
         }
         /// Consumes the builder and constructs a [`DetectKeyPhrasesOutput`](crate::output::DetectKeyPhrasesOutput).
         pub fn build(self) -> crate::output::DetectKeyPhrasesOutput {
             crate::output::DetectKeyPhrasesOutput {
-                key_phrases: self.key_phrases,
+                key_phrases: self.key_phrases
+                ,
             }
         }
     }
@@ -3788,6 +3637,8 @@ pub mod detect_key_phrases_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl DetectKeyPhrasesOutput {
     /// Creates a new builder-style object to manufacture [`DetectKeyPhrasesOutput`](crate::output::DetectKeyPhrasesOutput).
@@ -3799,8 +3650,8 @@ impl DetectKeyPhrasesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DetectEntitiesOutput {
-    /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>
+pub struct DetectEntitiesOutput  {
+    /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p> 
     /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
@@ -3810,8 +3661,8 @@ pub struct DetectEntitiesOutput {
     /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
     #[doc(hidden)]
     pub document_type: std::option::Option<std::vec::Vec<crate::model::DocumentTypeListItem>>,
-    /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p>
-    /// <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p>
+    /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p> 
+    /// <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p> 
     /// <p>The <code>Block</code> field is not present in the response for plain-text inputs.</p>
     #[doc(hidden)]
     pub blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
@@ -3820,31 +3671,31 @@ pub struct DetectEntitiesOutput {
     pub errors: std::option::Option<std::vec::Vec<crate::model::ErrorsListItem>>,
 }
 impl DetectEntitiesOutput {
-    /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>
+    /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p> 
     /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
-    pub fn entities(&self) -> std::option::Option<&[crate::model::Entity]> {
+    pub fn entities(&self) -> std::option::Option<& [crate::model::Entity]> {
         self.entities.as_deref()
     }
     /// <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
-    pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+    pub fn document_metadata(&self) -> std::option::Option<& crate::model::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
-    pub fn document_type(&self) -> std::option::Option<&[crate::model::DocumentTypeListItem]> {
+    pub fn document_type(&self) -> std::option::Option<& [crate::model::DocumentTypeListItem]> {
         self.document_type.as_deref()
     }
-    /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p>
-    /// <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p>
+    /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p> 
+    /// <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p> 
     /// <p>The <code>Block</code> field is not present in the response for plain-text inputs.</p>
-    pub fn blocks(&self) -> std::option::Option<&[crate::model::Block]> {
+    pub fn blocks(&self) -> std::option::Option<& [crate::model::Block]> {
         self.blocks.as_deref()
     }
     /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::ErrorsListItem]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::ErrorsListItem]> {
         self.errors.as_deref()
     }
 }
-impl std::fmt::Debug for DetectEntitiesOutput {
+impl  std::fmt::Debug for DetectEntitiesOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectEntitiesOutput");
         formatter.field("entities", &"*** Sensitive Data Redacted ***");
@@ -3857,14 +3708,13 @@ impl std::fmt::Debug for DetectEntitiesOutput {
 }
 /// See [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
 pub mod detect_entities_output {
-
+    
     /// A builder for [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) entities: std::option::Option<std::vec::Vec<crate::model::Entity>>,
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
-        pub(crate) document_type:
-            std::option::Option<std::vec::Vec<crate::model::DocumentTypeListItem>>,
+        pub(crate) document_type: std::option::Option<std::vec::Vec<crate::model::DocumentTypeListItem>>,
         pub(crate) blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::ErrorsListItem>>,
     }
@@ -3873,22 +3723,18 @@ pub mod detect_entities_output {
         ///
         /// To override the contents of this collection use [`set_entities`](Self::set_entities).
         ///
-        /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>
+        /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p> 
         /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
         pub fn entities(mut self, input: crate::model::Entity) -> Self {
             let mut v = self.entities.unwrap_or_default();
-            v.push(input);
-            self.entities = Some(v);
-            self
+                            v.push(input);
+                            self.entities = Some(v);
+                            self
         }
-        /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p>
+        /// <p>A collection of entities identified in the input text. For each entity, the response provides the entity text, entity type, where the entity text begins and ends, and the level of confidence that Amazon Comprehend has in the detection. </p> 
         /// <p>If your request uses a custom entity recognition model, Amazon Comprehend detects the entities that the model is trained to recognize. Otherwise, it detects the default entity types. For a list of default entity types, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
-        pub fn set_entities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Entity>>,
-        ) -> Self {
-            self.entities = input;
-            self
+        pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::model::Entity>>) -> Self {
+            self.entities = input; self
         }
         /// <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
         pub fn document_metadata(mut self, input: crate::model::DocumentMetadata) -> Self {
@@ -3896,12 +3742,8 @@ pub mod detect_entities_output {
             self
         }
         /// <p>Information about the document, discovered during text extraction. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
-        pub fn set_document_metadata(
-            mut self,
-            input: std::option::Option<crate::model::DocumentMetadata>,
-        ) -> Self {
-            self.document_metadata = input;
-            self
+        pub fn set_document_metadata(mut self, input: std::option::Option<crate::model::DocumentMetadata>) -> Self {
+            self.document_metadata = input; self
         }
         /// Appends an item to `document_type`.
         ///
@@ -3910,40 +3752,32 @@ pub mod detect_entities_output {
         /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
         pub fn document_type(mut self, input: crate::model::DocumentTypeListItem) -> Self {
             let mut v = self.document_type.unwrap_or_default();
-            v.push(input);
-            self.document_type = Some(v);
-            self
+                            v.push(input);
+                            self.document_type = Some(v);
+                            self
         }
         /// <p>The document type for each page in the input document. This field is present in the response only if your request used the <code>Byte</code> parameter. </p>
-        pub fn set_document_type(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DocumentTypeListItem>>,
-        ) -> Self {
-            self.document_type = input;
-            self
+        pub fn set_document_type(mut self, input: std::option::Option<std::vec::Vec<crate::model::DocumentTypeListItem>>) -> Self {
+            self.document_type = input; self
         }
         /// Appends an item to `blocks`.
         ///
         /// To override the contents of this collection use [`set_blocks`](Self::set_blocks).
         ///
-        /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p>
-        /// <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p>
+        /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p> 
+        /// <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p> 
         /// <p>The <code>Block</code> field is not present in the response for plain-text inputs.</p>
         pub fn blocks(mut self, input: crate::model::Block) -> Self {
             let mut v = self.blocks.unwrap_or_default();
-            v.push(input);
-            self.blocks = Some(v);
-            self
+                            v.push(input);
+                            self.blocks = Some(v);
+                            self
         }
-        /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p>
-        /// <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p>
+        /// <p>Information about each block of text in the input document. Blocks are nested. A page block contains a block for each line of text, which contains a block for each word. </p> 
+        /// <p>The <code>Block</code> content for a Word input document does not include a <code>Geometry</code> field.</p> 
         /// <p>The <code>Block</code> field is not present in the response for plain-text inputs.</p>
-        pub fn set_blocks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Block>>,
-        ) -> Self {
-            self.blocks = input;
-            self
+        pub fn set_blocks(mut self, input: std::option::Option<std::vec::Vec<crate::model::Block>>) -> Self {
+            self.blocks = input; self
         }
         /// Appends an item to `errors`.
         ///
@@ -3952,26 +3786,27 @@ pub mod detect_entities_output {
         /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
         pub fn errors(mut self, input: crate::model::ErrorsListItem) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ErrorsListItem>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::ErrorsListItem>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
         pub fn build(self) -> crate::output::DetectEntitiesOutput {
             crate::output::DetectEntitiesOutput {
-                entities: self.entities,
-                document_metadata: self.document_metadata,
-                document_type: self.document_type,
-                blocks: self.blocks,
-                errors: self.errors,
+                entities: self.entities
+                ,
+                document_metadata: self.document_metadata
+                ,
+                document_type: self.document_type
+                ,
+                blocks: self.blocks
+                ,
+                errors: self.errors
+                ,
             }
         }
     }
@@ -3986,6 +3821,8 @@ pub mod detect_entities_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl DetectEntitiesOutput {
     /// Creates a new builder-style object to manufacture [`DetectEntitiesOutput`](crate::output::DetectEntitiesOutput).
@@ -3997,18 +3834,18 @@ impl DetectEntitiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DetectDominantLanguageOutput {
+pub struct DetectDominantLanguageOutput  {
     /// <p>The languages that Amazon Comprehend detected in the input text. For each language, the response returns the RFC 5646 language code and the level of confidence that Amazon Comprehend has in the accuracy of its inference. For more information about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
     #[doc(hidden)]
     pub languages: std::option::Option<std::vec::Vec<crate::model::DominantLanguage>>,
 }
 impl DetectDominantLanguageOutput {
     /// <p>The languages that Amazon Comprehend detected in the input text. For each language, the response returns the RFC 5646 language code and the level of confidence that Amazon Comprehend has in the accuracy of its inference. For more information about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
-    pub fn languages(&self) -> std::option::Option<&[crate::model::DominantLanguage]> {
+    pub fn languages(&self) -> std::option::Option<& [crate::model::DominantLanguage]> {
         self.languages.as_deref()
     }
 }
-impl std::fmt::Debug for DetectDominantLanguageOutput {
+impl  std::fmt::Debug for DetectDominantLanguageOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectDominantLanguageOutput");
         formatter.field("languages", &"*** Sensitive Data Redacted ***");
@@ -4017,7 +3854,7 @@ impl std::fmt::Debug for DetectDominantLanguageOutput {
 }
 /// See [`DetectDominantLanguageOutput`](crate::output::DetectDominantLanguageOutput).
 pub mod detect_dominant_language_output {
-
+    
     /// A builder for [`DetectDominantLanguageOutput`](crate::output::DetectDominantLanguageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4031,22 +3868,19 @@ pub mod detect_dominant_language_output {
         /// <p>The languages that Amazon Comprehend detected in the input text. For each language, the response returns the RFC 5646 language code and the level of confidence that Amazon Comprehend has in the accuracy of its inference. For more information about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
         pub fn languages(mut self, input: crate::model::DominantLanguage) -> Self {
             let mut v = self.languages.unwrap_or_default();
-            v.push(input);
-            self.languages = Some(v);
-            self
+                            v.push(input);
+                            self.languages = Some(v);
+                            self
         }
         /// <p>The languages that Amazon Comprehend detected in the input text. For each language, the response returns the RFC 5646 language code and the level of confidence that Amazon Comprehend has in the accuracy of its inference. For more information about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
-        pub fn set_languages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DominantLanguage>>,
-        ) -> Self {
-            self.languages = input;
-            self
+        pub fn set_languages(mut self, input: std::option::Option<std::vec::Vec<crate::model::DominantLanguage>>) -> Self {
+            self.languages = input; self
         }
         /// Consumes the builder and constructs a [`DetectDominantLanguageOutput`](crate::output::DetectDominantLanguageOutput).
         pub fn build(self) -> crate::output::DetectDominantLanguageOutput {
             crate::output::DetectDominantLanguageOutput {
-                languages: self.languages,
+                languages: self.languages
+                ,
             }
         }
     }
@@ -4057,6 +3891,8 @@ pub mod detect_dominant_language_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl DetectDominantLanguageOutput {
     /// Creates a new builder-style object to manufacture [`DetectDominantLanguageOutput`](crate::output::DetectDominantLanguageOutput).
@@ -4068,53 +3904,45 @@ impl DetectDominantLanguageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTopicsDetectionJobOutput {
+pub struct DescribeTopicsDetectionJobOutput  {
     /// <p>The list of properties for the requested job.</p>
     #[doc(hidden)]
-    pub topics_detection_job_properties:
-        std::option::Option<crate::model::TopicsDetectionJobProperties>,
+    pub topics_detection_job_properties: std::option::Option<crate::model::TopicsDetectionJobProperties>,
 }
 impl DescribeTopicsDetectionJobOutput {
     /// <p>The list of properties for the requested job.</p>
-    pub fn topics_detection_job_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::TopicsDetectionJobProperties> {
+    pub fn topics_detection_job_properties(&self) -> std::option::Option<& crate::model::TopicsDetectionJobProperties> {
         self.topics_detection_job_properties.as_ref()
     }
 }
 /// See [`DescribeTopicsDetectionJobOutput`](crate::output::DescribeTopicsDetectionJobOutput).
 pub mod describe_topics_detection_job_output {
-
+    
     /// A builder for [`DescribeTopicsDetectionJobOutput`](crate::output::DescribeTopicsDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) topics_detection_job_properties:
-            std::option::Option<crate::model::TopicsDetectionJobProperties>,
+        pub(crate) topics_detection_job_properties: std::option::Option<crate::model::TopicsDetectionJobProperties>,
     }
     impl Builder {
         /// <p>The list of properties for the requested job.</p>
-        pub fn topics_detection_job_properties(
-            mut self,
-            input: crate::model::TopicsDetectionJobProperties,
-        ) -> Self {
+        pub fn topics_detection_job_properties(mut self, input: crate::model::TopicsDetectionJobProperties) -> Self {
             self.topics_detection_job_properties = Some(input);
             self
         }
         /// <p>The list of properties for the requested job.</p>
-        pub fn set_topics_detection_job_properties(
-            mut self,
-            input: std::option::Option<crate::model::TopicsDetectionJobProperties>,
-        ) -> Self {
-            self.topics_detection_job_properties = input;
-            self
+        pub fn set_topics_detection_job_properties(mut self, input: std::option::Option<crate::model::TopicsDetectionJobProperties>) -> Self {
+            self.topics_detection_job_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTopicsDetectionJobOutput`](crate::output::DescribeTopicsDetectionJobOutput).
         pub fn build(self) -> crate::output::DescribeTopicsDetectionJobOutput {
             crate::output::DescribeTopicsDetectionJobOutput {
-                topics_detection_job_properties: self.topics_detection_job_properties,
+                topics_detection_job_properties: self.topics_detection_job_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTopicsDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTopicsDetectionJobOutput`](crate::output::DescribeTopicsDetectionJobOutput).
@@ -4126,54 +3954,45 @@ impl DescribeTopicsDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTargetedSentimentDetectionJobOutput {
+pub struct DescribeTargetedSentimentDetectionJobOutput  {
     /// <p>An object that contains the properties associated with a targeted sentiment detection job.</p>
     #[doc(hidden)]
-    pub targeted_sentiment_detection_job_properties:
-        std::option::Option<crate::model::TargetedSentimentDetectionJobProperties>,
+    pub targeted_sentiment_detection_job_properties: std::option::Option<crate::model::TargetedSentimentDetectionJobProperties>,
 }
 impl DescribeTargetedSentimentDetectionJobOutput {
     /// <p>An object that contains the properties associated with a targeted sentiment detection job.</p>
-    pub fn targeted_sentiment_detection_job_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::TargetedSentimentDetectionJobProperties> {
+    pub fn targeted_sentiment_detection_job_properties(&self) -> std::option::Option<& crate::model::TargetedSentimentDetectionJobProperties> {
         self.targeted_sentiment_detection_job_properties.as_ref()
     }
 }
 /// See [`DescribeTargetedSentimentDetectionJobOutput`](crate::output::DescribeTargetedSentimentDetectionJobOutput).
 pub mod describe_targeted_sentiment_detection_job_output {
-
+    
     /// A builder for [`DescribeTargetedSentimentDetectionJobOutput`](crate::output::DescribeTargetedSentimentDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) targeted_sentiment_detection_job_properties:
-            std::option::Option<crate::model::TargetedSentimentDetectionJobProperties>,
+        pub(crate) targeted_sentiment_detection_job_properties: std::option::Option<crate::model::TargetedSentimentDetectionJobProperties>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with a targeted sentiment detection job.</p>
-        pub fn targeted_sentiment_detection_job_properties(
-            mut self,
-            input: crate::model::TargetedSentimentDetectionJobProperties,
-        ) -> Self {
+        pub fn targeted_sentiment_detection_job_properties(mut self, input: crate::model::TargetedSentimentDetectionJobProperties) -> Self {
             self.targeted_sentiment_detection_job_properties = Some(input);
             self
         }
         /// <p>An object that contains the properties associated with a targeted sentiment detection job.</p>
-        pub fn set_targeted_sentiment_detection_job_properties(
-            mut self,
-            input: std::option::Option<crate::model::TargetedSentimentDetectionJobProperties>,
-        ) -> Self {
-            self.targeted_sentiment_detection_job_properties = input;
-            self
+        pub fn set_targeted_sentiment_detection_job_properties(mut self, input: std::option::Option<crate::model::TargetedSentimentDetectionJobProperties>) -> Self {
+            self.targeted_sentiment_detection_job_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTargetedSentimentDetectionJobOutput`](crate::output::DescribeTargetedSentimentDetectionJobOutput).
         pub fn build(self) -> crate::output::DescribeTargetedSentimentDetectionJobOutput {
             crate::output::DescribeTargetedSentimentDetectionJobOutput {
-                targeted_sentiment_detection_job_properties: self
-                    .targeted_sentiment_detection_job_properties,
+                targeted_sentiment_detection_job_properties: self.targeted_sentiment_detection_job_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTargetedSentimentDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTargetedSentimentDetectionJobOutput`](crate::output::DescribeTargetedSentimentDetectionJobOutput).
@@ -4185,53 +4004,45 @@ impl DescribeTargetedSentimentDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSentimentDetectionJobOutput {
+pub struct DescribeSentimentDetectionJobOutput  {
     /// <p>An object that contains the properties associated with a sentiment detection job.</p>
     #[doc(hidden)]
-    pub sentiment_detection_job_properties:
-        std::option::Option<crate::model::SentimentDetectionJobProperties>,
+    pub sentiment_detection_job_properties: std::option::Option<crate::model::SentimentDetectionJobProperties>,
 }
 impl DescribeSentimentDetectionJobOutput {
     /// <p>An object that contains the properties associated with a sentiment detection job.</p>
-    pub fn sentiment_detection_job_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::SentimentDetectionJobProperties> {
+    pub fn sentiment_detection_job_properties(&self) -> std::option::Option<& crate::model::SentimentDetectionJobProperties> {
         self.sentiment_detection_job_properties.as_ref()
     }
 }
 /// See [`DescribeSentimentDetectionJobOutput`](crate::output::DescribeSentimentDetectionJobOutput).
 pub mod describe_sentiment_detection_job_output {
-
+    
     /// A builder for [`DescribeSentimentDetectionJobOutput`](crate::output::DescribeSentimentDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) sentiment_detection_job_properties:
-            std::option::Option<crate::model::SentimentDetectionJobProperties>,
+        pub(crate) sentiment_detection_job_properties: std::option::Option<crate::model::SentimentDetectionJobProperties>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with a sentiment detection job.</p>
-        pub fn sentiment_detection_job_properties(
-            mut self,
-            input: crate::model::SentimentDetectionJobProperties,
-        ) -> Self {
+        pub fn sentiment_detection_job_properties(mut self, input: crate::model::SentimentDetectionJobProperties) -> Self {
             self.sentiment_detection_job_properties = Some(input);
             self
         }
         /// <p>An object that contains the properties associated with a sentiment detection job.</p>
-        pub fn set_sentiment_detection_job_properties(
-            mut self,
-            input: std::option::Option<crate::model::SentimentDetectionJobProperties>,
-        ) -> Self {
-            self.sentiment_detection_job_properties = input;
-            self
+        pub fn set_sentiment_detection_job_properties(mut self, input: std::option::Option<crate::model::SentimentDetectionJobProperties>) -> Self {
+            self.sentiment_detection_job_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSentimentDetectionJobOutput`](crate::output::DescribeSentimentDetectionJobOutput).
         pub fn build(self) -> crate::output::DescribeSentimentDetectionJobOutput {
             crate::output::DescribeSentimentDetectionJobOutput {
-                sentiment_detection_job_properties: self.sentiment_detection_job_properties,
+                sentiment_detection_job_properties: self.sentiment_detection_job_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSentimentDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSentimentDetectionJobOutput`](crate::output::DescribeSentimentDetectionJobOutput).
@@ -4243,7 +4054,7 @@ impl DescribeSentimentDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeResourcePolicyOutput {
+pub struct DescribeResourcePolicyOutput  {
     /// <p>The JSON body of the resource-based policy.</p>
     #[doc(hidden)]
     pub resource_policy: std::option::Option<std::string::String>,
@@ -4259,25 +4070,25 @@ pub struct DescribeResourcePolicyOutput {
 }
 impl DescribeResourcePolicyOutput {
     /// <p>The JSON body of the resource-based policy.</p>
-    pub fn resource_policy(&self) -> std::option::Option<&str> {
+    pub fn resource_policy(&self) -> std::option::Option<& str> {
         self.resource_policy.as_deref()
     }
     /// <p>The time at which the policy was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time at which the policy was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
-    pub fn policy_revision_id(&self) -> std::option::Option<&str> {
+    pub fn policy_revision_id(&self) -> std::option::Option<& str> {
         self.policy_revision_id.as_deref()
     }
 }
 /// See [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
 pub mod describe_resource_policy_output {
-
+    
     /// A builder for [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4293,12 +4104,8 @@ pub mod describe_resource_policy_output {
             self
         }
         /// <p>The JSON body of the resource-based policy.</p>
-        pub fn set_resource_policy(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_policy = input;
-            self
+        pub fn set_resource_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_policy = input; self
         }
         /// <p>The time at which the policy was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4306,12 +4113,8 @@ pub mod describe_resource_policy_output {
             self
         }
         /// <p>The time at which the policy was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The time at which the policy was last modified.</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4319,12 +4122,8 @@ pub mod describe_resource_policy_output {
             self
         }
         /// <p>The time at which the policy was last modified.</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
         pub fn policy_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4332,23 +4131,25 @@ pub mod describe_resource_policy_output {
             self
         }
         /// <p>The revision ID of the policy. Each time you modify a policy, Amazon Comprehend assigns a new revision ID, and it deletes the prior version of the policy.</p>
-        pub fn set_policy_revision_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.policy_revision_id = input;
-            self
+        pub fn set_policy_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_revision_id = input; self
         }
         /// Consumes the builder and constructs a [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
         pub fn build(self) -> crate::output::DescribeResourcePolicyOutput {
             crate::output::DescribeResourcePolicyOutput {
-                resource_policy: self.resource_policy,
-                creation_time: self.creation_time,
-                last_modified_time: self.last_modified_time,
-                policy_revision_id: self.policy_revision_id,
+                resource_policy: self.resource_policy
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
+                policy_revision_id: self.policy_revision_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
@@ -4360,53 +4161,45 @@ impl DescribeResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePiiEntitiesDetectionJobOutput {
+pub struct DescribePiiEntitiesDetectionJobOutput  {
     /// <p>Provides information about a PII entities detection job.</p>
     #[doc(hidden)]
-    pub pii_entities_detection_job_properties:
-        std::option::Option<crate::model::PiiEntitiesDetectionJobProperties>,
+    pub pii_entities_detection_job_properties: std::option::Option<crate::model::PiiEntitiesDetectionJobProperties>,
 }
 impl DescribePiiEntitiesDetectionJobOutput {
     /// <p>Provides information about a PII entities detection job.</p>
-    pub fn pii_entities_detection_job_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::PiiEntitiesDetectionJobProperties> {
+    pub fn pii_entities_detection_job_properties(&self) -> std::option::Option<& crate::model::PiiEntitiesDetectionJobProperties> {
         self.pii_entities_detection_job_properties.as_ref()
     }
 }
 /// See [`DescribePiiEntitiesDetectionJobOutput`](crate::output::DescribePiiEntitiesDetectionJobOutput).
 pub mod describe_pii_entities_detection_job_output {
-
+    
     /// A builder for [`DescribePiiEntitiesDetectionJobOutput`](crate::output::DescribePiiEntitiesDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) pii_entities_detection_job_properties:
-            std::option::Option<crate::model::PiiEntitiesDetectionJobProperties>,
+        pub(crate) pii_entities_detection_job_properties: std::option::Option<crate::model::PiiEntitiesDetectionJobProperties>,
     }
     impl Builder {
         /// <p>Provides information about a PII entities detection job.</p>
-        pub fn pii_entities_detection_job_properties(
-            mut self,
-            input: crate::model::PiiEntitiesDetectionJobProperties,
-        ) -> Self {
+        pub fn pii_entities_detection_job_properties(mut self, input: crate::model::PiiEntitiesDetectionJobProperties) -> Self {
             self.pii_entities_detection_job_properties = Some(input);
             self
         }
         /// <p>Provides information about a PII entities detection job.</p>
-        pub fn set_pii_entities_detection_job_properties(
-            mut self,
-            input: std::option::Option<crate::model::PiiEntitiesDetectionJobProperties>,
-        ) -> Self {
-            self.pii_entities_detection_job_properties = input;
-            self
+        pub fn set_pii_entities_detection_job_properties(mut self, input: std::option::Option<crate::model::PiiEntitiesDetectionJobProperties>) -> Self {
+            self.pii_entities_detection_job_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribePiiEntitiesDetectionJobOutput`](crate::output::DescribePiiEntitiesDetectionJobOutput).
         pub fn build(self) -> crate::output::DescribePiiEntitiesDetectionJobOutput {
             crate::output::DescribePiiEntitiesDetectionJobOutput {
-                pii_entities_detection_job_properties: self.pii_entities_detection_job_properties,
+                pii_entities_detection_job_properties: self.pii_entities_detection_job_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePiiEntitiesDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribePiiEntitiesDetectionJobOutput`](crate::output::DescribePiiEntitiesDetectionJobOutput).
@@ -4418,53 +4211,45 @@ impl DescribePiiEntitiesDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeKeyPhrasesDetectionJobOutput {
+pub struct DescribeKeyPhrasesDetectionJobOutput  {
     /// <p>An object that contains the properties associated with a key phrases detection job. </p>
     #[doc(hidden)]
-    pub key_phrases_detection_job_properties:
-        std::option::Option<crate::model::KeyPhrasesDetectionJobProperties>,
+    pub key_phrases_detection_job_properties: std::option::Option<crate::model::KeyPhrasesDetectionJobProperties>,
 }
 impl DescribeKeyPhrasesDetectionJobOutput {
     /// <p>An object that contains the properties associated with a key phrases detection job. </p>
-    pub fn key_phrases_detection_job_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::KeyPhrasesDetectionJobProperties> {
+    pub fn key_phrases_detection_job_properties(&self) -> std::option::Option<& crate::model::KeyPhrasesDetectionJobProperties> {
         self.key_phrases_detection_job_properties.as_ref()
     }
 }
 /// See [`DescribeKeyPhrasesDetectionJobOutput`](crate::output::DescribeKeyPhrasesDetectionJobOutput).
 pub mod describe_key_phrases_detection_job_output {
-
+    
     /// A builder for [`DescribeKeyPhrasesDetectionJobOutput`](crate::output::DescribeKeyPhrasesDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) key_phrases_detection_job_properties:
-            std::option::Option<crate::model::KeyPhrasesDetectionJobProperties>,
+        pub(crate) key_phrases_detection_job_properties: std::option::Option<crate::model::KeyPhrasesDetectionJobProperties>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with a key phrases detection job. </p>
-        pub fn key_phrases_detection_job_properties(
-            mut self,
-            input: crate::model::KeyPhrasesDetectionJobProperties,
-        ) -> Self {
+        pub fn key_phrases_detection_job_properties(mut self, input: crate::model::KeyPhrasesDetectionJobProperties) -> Self {
             self.key_phrases_detection_job_properties = Some(input);
             self
         }
         /// <p>An object that contains the properties associated with a key phrases detection job. </p>
-        pub fn set_key_phrases_detection_job_properties(
-            mut self,
-            input: std::option::Option<crate::model::KeyPhrasesDetectionJobProperties>,
-        ) -> Self {
-            self.key_phrases_detection_job_properties = input;
-            self
+        pub fn set_key_phrases_detection_job_properties(mut self, input: std::option::Option<crate::model::KeyPhrasesDetectionJobProperties>) -> Self {
+            self.key_phrases_detection_job_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribeKeyPhrasesDetectionJobOutput`](crate::output::DescribeKeyPhrasesDetectionJobOutput).
         pub fn build(self) -> crate::output::DescribeKeyPhrasesDetectionJobOutput {
             crate::output::DescribeKeyPhrasesDetectionJobOutput {
-                key_phrases_detection_job_properties: self.key_phrases_detection_job_properties,
+                key_phrases_detection_job_properties: self.key_phrases_detection_job_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeKeyPhrasesDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeKeyPhrasesDetectionJobOutput`](crate::output::DescribeKeyPhrasesDetectionJobOutput).
@@ -4476,53 +4261,45 @@ impl DescribeKeyPhrasesDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventsDetectionJobOutput {
+pub struct DescribeEventsDetectionJobOutput  {
     /// <p>An object that contains the properties associated with an event detection job.</p>
     #[doc(hidden)]
-    pub events_detection_job_properties:
-        std::option::Option<crate::model::EventsDetectionJobProperties>,
+    pub events_detection_job_properties: std::option::Option<crate::model::EventsDetectionJobProperties>,
 }
 impl DescribeEventsDetectionJobOutput {
     /// <p>An object that contains the properties associated with an event detection job.</p>
-    pub fn events_detection_job_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::EventsDetectionJobProperties> {
+    pub fn events_detection_job_properties(&self) -> std::option::Option<& crate::model::EventsDetectionJobProperties> {
         self.events_detection_job_properties.as_ref()
     }
 }
 /// See [`DescribeEventsDetectionJobOutput`](crate::output::DescribeEventsDetectionJobOutput).
 pub mod describe_events_detection_job_output {
-
+    
     /// A builder for [`DescribeEventsDetectionJobOutput`](crate::output::DescribeEventsDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) events_detection_job_properties:
-            std::option::Option<crate::model::EventsDetectionJobProperties>,
+        pub(crate) events_detection_job_properties: std::option::Option<crate::model::EventsDetectionJobProperties>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with an event detection job.</p>
-        pub fn events_detection_job_properties(
-            mut self,
-            input: crate::model::EventsDetectionJobProperties,
-        ) -> Self {
+        pub fn events_detection_job_properties(mut self, input: crate::model::EventsDetectionJobProperties) -> Self {
             self.events_detection_job_properties = Some(input);
             self
         }
         /// <p>An object that contains the properties associated with an event detection job.</p>
-        pub fn set_events_detection_job_properties(
-            mut self,
-            input: std::option::Option<crate::model::EventsDetectionJobProperties>,
-        ) -> Self {
-            self.events_detection_job_properties = input;
-            self
+        pub fn set_events_detection_job_properties(mut self, input: std::option::Option<crate::model::EventsDetectionJobProperties>) -> Self {
+            self.events_detection_job_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEventsDetectionJobOutput`](crate::output::DescribeEventsDetectionJobOutput).
         pub fn build(self) -> crate::output::DescribeEventsDetectionJobOutput {
             crate::output::DescribeEventsDetectionJobOutput {
-                events_detection_job_properties: self.events_detection_job_properties,
+                events_detection_job_properties: self.events_detection_job_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEventsDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventsDetectionJobOutput`](crate::output::DescribeEventsDetectionJobOutput).
@@ -4534,52 +4311,45 @@ impl DescribeEventsDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEntityRecognizerOutput {
+pub struct DescribeEntityRecognizerOutput  {
     /// <p>Describes information associated with an entity recognizer.</p>
     #[doc(hidden)]
     pub entity_recognizer_properties: std::option::Option<crate::model::EntityRecognizerProperties>,
 }
 impl DescribeEntityRecognizerOutput {
     /// <p>Describes information associated with an entity recognizer.</p>
-    pub fn entity_recognizer_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::EntityRecognizerProperties> {
+    pub fn entity_recognizer_properties(&self) -> std::option::Option<& crate::model::EntityRecognizerProperties> {
         self.entity_recognizer_properties.as_ref()
     }
 }
 /// See [`DescribeEntityRecognizerOutput`](crate::output::DescribeEntityRecognizerOutput).
 pub mod describe_entity_recognizer_output {
-
+    
     /// A builder for [`DescribeEntityRecognizerOutput`](crate::output::DescribeEntityRecognizerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) entity_recognizer_properties:
-            std::option::Option<crate::model::EntityRecognizerProperties>,
+        pub(crate) entity_recognizer_properties: std::option::Option<crate::model::EntityRecognizerProperties>,
     }
     impl Builder {
         /// <p>Describes information associated with an entity recognizer.</p>
-        pub fn entity_recognizer_properties(
-            mut self,
-            input: crate::model::EntityRecognizerProperties,
-        ) -> Self {
+        pub fn entity_recognizer_properties(mut self, input: crate::model::EntityRecognizerProperties) -> Self {
             self.entity_recognizer_properties = Some(input);
             self
         }
         /// <p>Describes information associated with an entity recognizer.</p>
-        pub fn set_entity_recognizer_properties(
-            mut self,
-            input: std::option::Option<crate::model::EntityRecognizerProperties>,
-        ) -> Self {
-            self.entity_recognizer_properties = input;
-            self
+        pub fn set_entity_recognizer_properties(mut self, input: std::option::Option<crate::model::EntityRecognizerProperties>) -> Self {
+            self.entity_recognizer_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEntityRecognizerOutput`](crate::output::DescribeEntityRecognizerOutput).
         pub fn build(self) -> crate::output::DescribeEntityRecognizerOutput {
             crate::output::DescribeEntityRecognizerOutput {
-                entity_recognizer_properties: self.entity_recognizer_properties,
+                entity_recognizer_properties: self.entity_recognizer_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEntityRecognizerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEntityRecognizerOutput`](crate::output::DescribeEntityRecognizerOutput).
@@ -4591,53 +4361,45 @@ impl DescribeEntityRecognizerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEntitiesDetectionJobOutput {
+pub struct DescribeEntitiesDetectionJobOutput  {
     /// <p>An object that contains the properties associated with an entities detection job.</p>
     #[doc(hidden)]
-    pub entities_detection_job_properties:
-        std::option::Option<crate::model::EntitiesDetectionJobProperties>,
+    pub entities_detection_job_properties: std::option::Option<crate::model::EntitiesDetectionJobProperties>,
 }
 impl DescribeEntitiesDetectionJobOutput {
     /// <p>An object that contains the properties associated with an entities detection job.</p>
-    pub fn entities_detection_job_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::EntitiesDetectionJobProperties> {
+    pub fn entities_detection_job_properties(&self) -> std::option::Option<& crate::model::EntitiesDetectionJobProperties> {
         self.entities_detection_job_properties.as_ref()
     }
 }
 /// See [`DescribeEntitiesDetectionJobOutput`](crate::output::DescribeEntitiesDetectionJobOutput).
 pub mod describe_entities_detection_job_output {
-
+    
     /// A builder for [`DescribeEntitiesDetectionJobOutput`](crate::output::DescribeEntitiesDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) entities_detection_job_properties:
-            std::option::Option<crate::model::EntitiesDetectionJobProperties>,
+        pub(crate) entities_detection_job_properties: std::option::Option<crate::model::EntitiesDetectionJobProperties>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with an entities detection job.</p>
-        pub fn entities_detection_job_properties(
-            mut self,
-            input: crate::model::EntitiesDetectionJobProperties,
-        ) -> Self {
+        pub fn entities_detection_job_properties(mut self, input: crate::model::EntitiesDetectionJobProperties) -> Self {
             self.entities_detection_job_properties = Some(input);
             self
         }
         /// <p>An object that contains the properties associated with an entities detection job.</p>
-        pub fn set_entities_detection_job_properties(
-            mut self,
-            input: std::option::Option<crate::model::EntitiesDetectionJobProperties>,
-        ) -> Self {
-            self.entities_detection_job_properties = input;
-            self
+        pub fn set_entities_detection_job_properties(mut self, input: std::option::Option<crate::model::EntitiesDetectionJobProperties>) -> Self {
+            self.entities_detection_job_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEntitiesDetectionJobOutput`](crate::output::DescribeEntitiesDetectionJobOutput).
         pub fn build(self) -> crate::output::DescribeEntitiesDetectionJobOutput {
             crate::output::DescribeEntitiesDetectionJobOutput {
-                entities_detection_job_properties: self.entities_detection_job_properties,
+                entities_detection_job_properties: self.entities_detection_job_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEntitiesDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEntitiesDetectionJobOutput`](crate::output::DescribeEntitiesDetectionJobOutput).
@@ -4649,20 +4411,20 @@ impl DescribeEntitiesDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEndpointOutput {
+pub struct DescribeEndpointOutput  {
     /// <p>Describes information associated with the specific endpoint.</p>
     #[doc(hidden)]
     pub endpoint_properties: std::option::Option<crate::model::EndpointProperties>,
 }
 impl DescribeEndpointOutput {
     /// <p>Describes information associated with the specific endpoint.</p>
-    pub fn endpoint_properties(&self) -> std::option::Option<&crate::model::EndpointProperties> {
+    pub fn endpoint_properties(&self) -> std::option::Option<& crate::model::EndpointProperties> {
         self.endpoint_properties.as_ref()
     }
 }
 /// See [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput).
 pub mod describe_endpoint_output {
-
+    
     /// A builder for [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4675,20 +4437,19 @@ pub mod describe_endpoint_output {
             self
         }
         /// <p>Describes information associated with the specific endpoint.</p>
-        pub fn set_endpoint_properties(
-            mut self,
-            input: std::option::Option<crate::model::EndpointProperties>,
-        ) -> Self {
-            self.endpoint_properties = input;
-            self
+        pub fn set_endpoint_properties(mut self, input: std::option::Option<crate::model::EndpointProperties>) -> Self {
+            self.endpoint_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput).
         pub fn build(self) -> crate::output::DescribeEndpointOutput {
             crate::output::DescribeEndpointOutput {
-                endpoint_properties: self.endpoint_properties,
+                endpoint_properties: self.endpoint_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput).
@@ -4700,54 +4461,45 @@ impl DescribeEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDominantLanguageDetectionJobOutput {
+pub struct DescribeDominantLanguageDetectionJobOutput  {
     /// <p>An object that contains the properties associated with a dominant language detection job.</p>
     #[doc(hidden)]
-    pub dominant_language_detection_job_properties:
-        std::option::Option<crate::model::DominantLanguageDetectionJobProperties>,
+    pub dominant_language_detection_job_properties: std::option::Option<crate::model::DominantLanguageDetectionJobProperties>,
 }
 impl DescribeDominantLanguageDetectionJobOutput {
     /// <p>An object that contains the properties associated with a dominant language detection job.</p>
-    pub fn dominant_language_detection_job_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::DominantLanguageDetectionJobProperties> {
+    pub fn dominant_language_detection_job_properties(&self) -> std::option::Option<& crate::model::DominantLanguageDetectionJobProperties> {
         self.dominant_language_detection_job_properties.as_ref()
     }
 }
 /// See [`DescribeDominantLanguageDetectionJobOutput`](crate::output::DescribeDominantLanguageDetectionJobOutput).
 pub mod describe_dominant_language_detection_job_output {
-
+    
     /// A builder for [`DescribeDominantLanguageDetectionJobOutput`](crate::output::DescribeDominantLanguageDetectionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) dominant_language_detection_job_properties:
-            std::option::Option<crate::model::DominantLanguageDetectionJobProperties>,
+        pub(crate) dominant_language_detection_job_properties: std::option::Option<crate::model::DominantLanguageDetectionJobProperties>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with a dominant language detection job.</p>
-        pub fn dominant_language_detection_job_properties(
-            mut self,
-            input: crate::model::DominantLanguageDetectionJobProperties,
-        ) -> Self {
+        pub fn dominant_language_detection_job_properties(mut self, input: crate::model::DominantLanguageDetectionJobProperties) -> Self {
             self.dominant_language_detection_job_properties = Some(input);
             self
         }
         /// <p>An object that contains the properties associated with a dominant language detection job.</p>
-        pub fn set_dominant_language_detection_job_properties(
-            mut self,
-            input: std::option::Option<crate::model::DominantLanguageDetectionJobProperties>,
-        ) -> Self {
-            self.dominant_language_detection_job_properties = input;
-            self
+        pub fn set_dominant_language_detection_job_properties(mut self, input: std::option::Option<crate::model::DominantLanguageDetectionJobProperties>) -> Self {
+            self.dominant_language_detection_job_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDominantLanguageDetectionJobOutput`](crate::output::DescribeDominantLanguageDetectionJobOutput).
         pub fn build(self) -> crate::output::DescribeDominantLanguageDetectionJobOutput {
             crate::output::DescribeDominantLanguageDetectionJobOutput {
-                dominant_language_detection_job_properties: self
-                    .dominant_language_detection_job_properties,
+                dominant_language_detection_job_properties: self.dominant_language_detection_job_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDominantLanguageDetectionJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDominantLanguageDetectionJobOutput`](crate::output::DescribeDominantLanguageDetectionJobOutput).
@@ -4759,53 +4511,45 @@ impl DescribeDominantLanguageDetectionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDocumentClassifierOutput {
+pub struct DescribeDocumentClassifierOutput  {
     /// <p>An object that contains the properties associated with a document classifier.</p>
     #[doc(hidden)]
-    pub document_classifier_properties:
-        std::option::Option<crate::model::DocumentClassifierProperties>,
+    pub document_classifier_properties: std::option::Option<crate::model::DocumentClassifierProperties>,
 }
 impl DescribeDocumentClassifierOutput {
     /// <p>An object that contains the properties associated with a document classifier.</p>
-    pub fn document_classifier_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::DocumentClassifierProperties> {
+    pub fn document_classifier_properties(&self) -> std::option::Option<& crate::model::DocumentClassifierProperties> {
         self.document_classifier_properties.as_ref()
     }
 }
 /// See [`DescribeDocumentClassifierOutput`](crate::output::DescribeDocumentClassifierOutput).
 pub mod describe_document_classifier_output {
-
+    
     /// A builder for [`DescribeDocumentClassifierOutput`](crate::output::DescribeDocumentClassifierOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) document_classifier_properties:
-            std::option::Option<crate::model::DocumentClassifierProperties>,
+        pub(crate) document_classifier_properties: std::option::Option<crate::model::DocumentClassifierProperties>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with a document classifier.</p>
-        pub fn document_classifier_properties(
-            mut self,
-            input: crate::model::DocumentClassifierProperties,
-        ) -> Self {
+        pub fn document_classifier_properties(mut self, input: crate::model::DocumentClassifierProperties) -> Self {
             self.document_classifier_properties = Some(input);
             self
         }
         /// <p>An object that contains the properties associated with a document classifier.</p>
-        pub fn set_document_classifier_properties(
-            mut self,
-            input: std::option::Option<crate::model::DocumentClassifierProperties>,
-        ) -> Self {
-            self.document_classifier_properties = input;
-            self
+        pub fn set_document_classifier_properties(mut self, input: std::option::Option<crate::model::DocumentClassifierProperties>) -> Self {
+            self.document_classifier_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDocumentClassifierOutput`](crate::output::DescribeDocumentClassifierOutput).
         pub fn build(self) -> crate::output::DescribeDocumentClassifierOutput {
             crate::output::DescribeDocumentClassifierOutput {
-                document_classifier_properties: self.document_classifier_properties,
+                document_classifier_properties: self.document_classifier_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDocumentClassifierOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDocumentClassifierOutput`](crate::output::DescribeDocumentClassifierOutput).
@@ -4817,53 +4561,45 @@ impl DescribeDocumentClassifierOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDocumentClassificationJobOutput {
+pub struct DescribeDocumentClassificationJobOutput  {
     /// <p>An object that describes the properties associated with the document classification job.</p>
     #[doc(hidden)]
-    pub document_classification_job_properties:
-        std::option::Option<crate::model::DocumentClassificationJobProperties>,
+    pub document_classification_job_properties: std::option::Option<crate::model::DocumentClassificationJobProperties>,
 }
 impl DescribeDocumentClassificationJobOutput {
     /// <p>An object that describes the properties associated with the document classification job.</p>
-    pub fn document_classification_job_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::DocumentClassificationJobProperties> {
+    pub fn document_classification_job_properties(&self) -> std::option::Option<& crate::model::DocumentClassificationJobProperties> {
         self.document_classification_job_properties.as_ref()
     }
 }
 /// See [`DescribeDocumentClassificationJobOutput`](crate::output::DescribeDocumentClassificationJobOutput).
 pub mod describe_document_classification_job_output {
-
+    
     /// A builder for [`DescribeDocumentClassificationJobOutput`](crate::output::DescribeDocumentClassificationJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) document_classification_job_properties:
-            std::option::Option<crate::model::DocumentClassificationJobProperties>,
+        pub(crate) document_classification_job_properties: std::option::Option<crate::model::DocumentClassificationJobProperties>,
     }
     impl Builder {
         /// <p>An object that describes the properties associated with the document classification job.</p>
-        pub fn document_classification_job_properties(
-            mut self,
-            input: crate::model::DocumentClassificationJobProperties,
-        ) -> Self {
+        pub fn document_classification_job_properties(mut self, input: crate::model::DocumentClassificationJobProperties) -> Self {
             self.document_classification_job_properties = Some(input);
             self
         }
         /// <p>An object that describes the properties associated with the document classification job.</p>
-        pub fn set_document_classification_job_properties(
-            mut self,
-            input: std::option::Option<crate::model::DocumentClassificationJobProperties>,
-        ) -> Self {
-            self.document_classification_job_properties = input;
-            self
+        pub fn set_document_classification_job_properties(mut self, input: std::option::Option<crate::model::DocumentClassificationJobProperties>) -> Self {
+            self.document_classification_job_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDocumentClassificationJobOutput`](crate::output::DescribeDocumentClassificationJobOutput).
         pub fn build(self) -> crate::output::DescribeDocumentClassificationJobOutput {
             crate::output::DescribeDocumentClassificationJobOutput {
-                document_classification_job_properties: self.document_classification_job_properties,
+                document_classification_job_properties: self.document_classification_job_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDocumentClassificationJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDocumentClassificationJobOutput`](crate::output::DescribeDocumentClassificationJobOutput).
@@ -4875,19 +4611,24 @@ impl DescribeDocumentClassificationJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourcePolicyOutput {}
+pub struct DeleteResourcePolicyOutput  {
+}
 /// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
 pub mod delete_resource_policy_output {
-
+    
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
         pub fn build(self) -> crate::output::DeleteResourcePolicyOutput {
-            crate::output::DeleteResourcePolicyOutput {}
+            crate::output::DeleteResourcePolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
@@ -4899,19 +4640,24 @@ impl DeleteResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEntityRecognizerOutput {}
+pub struct DeleteEntityRecognizerOutput  {
+}
 /// See [`DeleteEntityRecognizerOutput`](crate::output::DeleteEntityRecognizerOutput).
 pub mod delete_entity_recognizer_output {
-
+    
     /// A builder for [`DeleteEntityRecognizerOutput`](crate::output::DeleteEntityRecognizerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEntityRecognizerOutput`](crate::output::DeleteEntityRecognizerOutput).
         pub fn build(self) -> crate::output::DeleteEntityRecognizerOutput {
-            crate::output::DeleteEntityRecognizerOutput {}
+            crate::output::DeleteEntityRecognizerOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteEntityRecognizerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEntityRecognizerOutput`](crate::output::DeleteEntityRecognizerOutput).
@@ -4923,19 +4669,24 @@ impl DeleteEntityRecognizerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEndpointOutput {}
+pub struct DeleteEndpointOutput  {
+}
 /// See [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
 pub mod delete_endpoint_output {
-
+    
     /// A builder for [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
         pub fn build(self) -> crate::output::DeleteEndpointOutput {
-            crate::output::DeleteEndpointOutput {}
+            crate::output::DeleteEndpointOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEndpointOutput`](crate::output::DeleteEndpointOutput).
@@ -4947,19 +4698,24 @@ impl DeleteEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDocumentClassifierOutput {}
+pub struct DeleteDocumentClassifierOutput  {
+}
 /// See [`DeleteDocumentClassifierOutput`](crate::output::DeleteDocumentClassifierOutput).
 pub mod delete_document_classifier_output {
-
+    
     /// A builder for [`DeleteDocumentClassifierOutput`](crate::output::DeleteDocumentClassifierOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDocumentClassifierOutput`](crate::output::DeleteDocumentClassifierOutput).
         pub fn build(self) -> crate::output::DeleteDocumentClassifierOutput {
-            crate::output::DeleteDocumentClassifierOutput {}
+            crate::output::DeleteDocumentClassifierOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDocumentClassifierOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDocumentClassifierOutput`](crate::output::DeleteDocumentClassifierOutput).
@@ -4971,20 +4727,20 @@ impl DeleteDocumentClassifierOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEntityRecognizerOutput {
+pub struct CreateEntityRecognizerOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
     #[doc(hidden)]
     pub entity_recognizer_arn: std::option::Option<std::string::String>,
 }
 impl CreateEntityRecognizerOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
-    pub fn entity_recognizer_arn(&self) -> std::option::Option<&str> {
+    pub fn entity_recognizer_arn(&self) -> std::option::Option<& str> {
         self.entity_recognizer_arn.as_deref()
     }
 }
 /// See [`CreateEntityRecognizerOutput`](crate::output::CreateEntityRecognizerOutput).
 pub mod create_entity_recognizer_output {
-
+    
     /// A builder for [`CreateEntityRecognizerOutput`](crate::output::CreateEntityRecognizerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4997,20 +4753,19 @@ pub mod create_entity_recognizer_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
-        pub fn set_entity_recognizer_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.entity_recognizer_arn = input;
-            self
+        pub fn set_entity_recognizer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entity_recognizer_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateEntityRecognizerOutput`](crate::output::CreateEntityRecognizerOutput).
         pub fn build(self) -> crate::output::CreateEntityRecognizerOutput {
             crate::output::CreateEntityRecognizerOutput {
-                entity_recognizer_arn: self.entity_recognizer_arn,
+                entity_recognizer_arn: self.entity_recognizer_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateEntityRecognizerOutput {
     /// Creates a new builder-style object to manufacture [`CreateEntityRecognizerOutput`](crate::output::CreateEntityRecognizerOutput).
@@ -5022,20 +4777,20 @@ impl CreateEntityRecognizerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEndpointOutput {
+pub struct CreateEndpointOutput  {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being created.</p>
     #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
 impl CreateEndpointOutput {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being created.</p>
-    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> std::option::Option<& str> {
         self.endpoint_arn.as_deref()
     }
 }
 /// See [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
 pub mod create_endpoint_output {
-
+    
     /// A builder for [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5049,16 +4804,18 @@ pub mod create_endpoint_output {
         }
         /// <p>The Amazon Resource Number (ARN) of the endpoint being created.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.endpoint_arn = input;
-            self
+            self.endpoint_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
         pub fn build(self) -> crate::output::CreateEndpointOutput {
             crate::output::CreateEndpointOutput {
-                endpoint_arn: self.endpoint_arn,
+                endpoint_arn: self.endpoint_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateEndpointOutput`](crate::output::CreateEndpointOutput).
@@ -5070,20 +4827,20 @@ impl CreateEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDocumentClassifierOutput {
+pub struct CreateDocumentClassifierOutput  {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
     #[doc(hidden)]
     pub document_classifier_arn: std::option::Option<std::string::String>,
 }
 impl CreateDocumentClassifierOutput {
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
-    pub fn document_classifier_arn(&self) -> std::option::Option<&str> {
+    pub fn document_classifier_arn(&self) -> std::option::Option<& str> {
         self.document_classifier_arn.as_deref()
     }
 }
 /// See [`CreateDocumentClassifierOutput`](crate::output::CreateDocumentClassifierOutput).
 pub mod create_document_classifier_output {
-
+    
     /// A builder for [`CreateDocumentClassifierOutput`](crate::output::CreateDocumentClassifierOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5096,20 +4853,19 @@ pub mod create_document_classifier_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
-        pub fn set_document_classifier_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.document_classifier_arn = input;
-            self
+        pub fn set_document_classifier_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.document_classifier_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateDocumentClassifierOutput`](crate::output::CreateDocumentClassifierOutput).
         pub fn build(self) -> crate::output::CreateDocumentClassifierOutput {
             crate::output::CreateDocumentClassifierOutput {
-                document_classifier_arn: self.document_classifier_arn,
+                document_classifier_arn: self.document_classifier_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDocumentClassifierOutput {
     /// Creates a new builder-style object to manufacture [`CreateDocumentClassifierOutput`](crate::output::CreateDocumentClassifierOutput).
@@ -5121,20 +4877,20 @@ impl CreateDocumentClassifierOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContainsPiiEntitiesOutput {
+pub struct ContainsPiiEntitiesOutput  {
     /// <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>
     #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<crate::model::EntityLabel>>,
 }
 impl ContainsPiiEntitiesOutput {
     /// <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>
-    pub fn labels(&self) -> std::option::Option<&[crate::model::EntityLabel]> {
+    pub fn labels(&self) -> std::option::Option<& [crate::model::EntityLabel]> {
         self.labels.as_deref()
     }
 }
 /// See [`ContainsPiiEntitiesOutput`](crate::output::ContainsPiiEntitiesOutput).
 pub mod contains_pii_entities_output {
-
+    
     /// A builder for [`ContainsPiiEntitiesOutput`](crate::output::ContainsPiiEntitiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5148,25 +4904,24 @@ pub mod contains_pii_entities_output {
         /// <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>
         pub fn labels(mut self, input: crate::model::EntityLabel) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(input);
-            self.labels = Some(v);
-            self
+                            v.push(input);
+                            self.labels = Some(v);
+                            self
         }
         /// <p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>
-        pub fn set_labels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EntityLabel>>,
-        ) -> Self {
-            self.labels = input;
-            self
+        pub fn set_labels(mut self, input: std::option::Option<std::vec::Vec<crate::model::EntityLabel>>) -> Self {
+            self.labels = input; self
         }
         /// Consumes the builder and constructs a [`ContainsPiiEntitiesOutput`](crate::output::ContainsPiiEntitiesOutput).
         pub fn build(self) -> crate::output::ContainsPiiEntitiesOutput {
             crate::output::ContainsPiiEntitiesOutput {
-                labels: self.labels,
+                labels: self.labels
+                ,
             }
         }
     }
+    
+    
 }
 impl ContainsPiiEntitiesOutput {
     /// Creates a new builder-style object to manufacture [`ContainsPiiEntitiesOutput`](crate::output::ContainsPiiEntitiesOutput).
@@ -5178,7 +4933,7 @@ impl ContainsPiiEntitiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ClassifyDocumentOutput {
+pub struct ClassifyDocumentOutput  {
     /// <p>The classes used by the document being analyzed. These are used for multi-class trained models. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
     #[doc(hidden)]
     pub classes: std::option::Option<std::vec::Vec<crate::model::DocumentClass>>,
@@ -5197,27 +4952,27 @@ pub struct ClassifyDocumentOutput {
 }
 impl ClassifyDocumentOutput {
     /// <p>The classes used by the document being analyzed. These are used for multi-class trained models. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
-    pub fn classes(&self) -> std::option::Option<&[crate::model::DocumentClass]> {
+    pub fn classes(&self) -> std::option::Option<& [crate::model::DocumentClass]> {
         self.classes.as_deref()
     }
     /// <p>The labels used the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
-    pub fn labels(&self) -> std::option::Option<&[crate::model::DocumentLabel]> {
+    pub fn labels(&self) -> std::option::Option<& [crate::model::DocumentLabel]> {
         self.labels.as_deref()
     }
     /// <p>Extraction information about the document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
-    pub fn document_metadata(&self) -> std::option::Option<&crate::model::DocumentMetadata> {
+    pub fn document_metadata(&self) -> std::option::Option<& crate::model::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p>The document type for each page in the input document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
-    pub fn document_type(&self) -> std::option::Option<&[crate::model::DocumentTypeListItem]> {
+    pub fn document_type(&self) -> std::option::Option<& [crate::model::DocumentTypeListItem]> {
         self.document_type.as_deref()
     }
     /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::ErrorsListItem]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::ErrorsListItem]> {
         self.errors.as_deref()
     }
 }
-impl std::fmt::Debug for ClassifyDocumentOutput {
+impl  std::fmt::Debug for ClassifyDocumentOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ClassifyDocumentOutput");
         formatter.field("classes", &"*** Sensitive Data Redacted ***");
@@ -5230,15 +4985,14 @@ impl std::fmt::Debug for ClassifyDocumentOutput {
 }
 /// See [`ClassifyDocumentOutput`](crate::output::ClassifyDocumentOutput).
 pub mod classify_document_output {
-
+    
     /// A builder for [`ClassifyDocumentOutput`](crate::output::ClassifyDocumentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) classes: std::option::Option<std::vec::Vec<crate::model::DocumentClass>>,
         pub(crate) labels: std::option::Option<std::vec::Vec<crate::model::DocumentLabel>>,
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
-        pub(crate) document_type:
-            std::option::Option<std::vec::Vec<crate::model::DocumentTypeListItem>>,
+        pub(crate) document_type: std::option::Option<std::vec::Vec<crate::model::DocumentTypeListItem>>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::ErrorsListItem>>,
     }
     impl Builder {
@@ -5249,17 +5003,13 @@ pub mod classify_document_output {
         /// <p>The classes used by the document being analyzed. These are used for multi-class trained models. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
         pub fn classes(mut self, input: crate::model::DocumentClass) -> Self {
             let mut v = self.classes.unwrap_or_default();
-            v.push(input);
-            self.classes = Some(v);
-            self
+                            v.push(input);
+                            self.classes = Some(v);
+                            self
         }
         /// <p>The classes used by the document being analyzed. These are used for multi-class trained models. Individual classes are mutually exclusive and each document is expected to have only a single class assigned to it. For example, an animal can be a dog or a cat, but not both at the same time. </p>
-        pub fn set_classes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DocumentClass>>,
-        ) -> Self {
-            self.classes = input;
-            self
+        pub fn set_classes(mut self, input: std::option::Option<std::vec::Vec<crate::model::DocumentClass>>) -> Self {
+            self.classes = input; self
         }
         /// Appends an item to `labels`.
         ///
@@ -5268,17 +5018,13 @@ pub mod classify_document_output {
         /// <p>The labels used the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
         pub fn labels(mut self, input: crate::model::DocumentLabel) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(input);
-            self.labels = Some(v);
-            self
+                            v.push(input);
+                            self.labels = Some(v);
+                            self
         }
         /// <p>The labels used the document being analyzed. These are used for multi-label trained models. Individual labels represent different categories that are related in some manner and are not mutually exclusive. For example, a movie can be just an action movie, or it can be an action movie, a science fiction movie, and a comedy, all at the same time. </p>
-        pub fn set_labels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DocumentLabel>>,
-        ) -> Self {
-            self.labels = input;
-            self
+        pub fn set_labels(mut self, input: std::option::Option<std::vec::Vec<crate::model::DocumentLabel>>) -> Self {
+            self.labels = input; self
         }
         /// <p>Extraction information about the document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
         pub fn document_metadata(mut self, input: crate::model::DocumentMetadata) -> Self {
@@ -5286,12 +5032,8 @@ pub mod classify_document_output {
             self
         }
         /// <p>Extraction information about the document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
-        pub fn set_document_metadata(
-            mut self,
-            input: std::option::Option<crate::model::DocumentMetadata>,
-        ) -> Self {
-            self.document_metadata = input;
-            self
+        pub fn set_document_metadata(mut self, input: std::option::Option<crate::model::DocumentMetadata>) -> Self {
+            self.document_metadata = input; self
         }
         /// Appends an item to `document_type`.
         ///
@@ -5300,17 +5042,13 @@ pub mod classify_document_output {
         /// <p>The document type for each page in the input document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
         pub fn document_type(mut self, input: crate::model::DocumentTypeListItem) -> Self {
             let mut v = self.document_type.unwrap_or_default();
-            v.push(input);
-            self.document_type = Some(v);
-            self
+                            v.push(input);
+                            self.document_type = Some(v);
+                            self
         }
         /// <p>The document type for each page in the input document. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
-        pub fn set_document_type(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DocumentTypeListItem>>,
-        ) -> Self {
-            self.document_type = input;
-            self
+        pub fn set_document_type(mut self, input: std::option::Option<std::vec::Vec<crate::model::DocumentTypeListItem>>) -> Self {
+            self.document_type = input; self
         }
         /// Appends an item to `errors`.
         ///
@@ -5319,26 +5057,27 @@ pub mod classify_document_output {
         /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
         pub fn errors(mut self, input: crate::model::ErrorsListItem) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>Page-level errors that the system detected while processing the input document. The field is empty if the system encountered no errors.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ErrorsListItem>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::ErrorsListItem>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`ClassifyDocumentOutput`](crate::output::ClassifyDocumentOutput).
         pub fn build(self) -> crate::output::ClassifyDocumentOutput {
             crate::output::ClassifyDocumentOutput {
-                classes: self.classes,
-                labels: self.labels,
-                document_metadata: self.document_metadata,
-                document_type: self.document_type,
-                errors: self.errors,
+                classes: self.classes
+                ,
+                labels: self.labels
+                ,
+                document_metadata: self.document_metadata
+                ,
+                document_type: self.document_type
+                ,
+                errors: self.errors
+                ,
             }
         }
     }
@@ -5353,6 +5092,8 @@ pub mod classify_document_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ClassifyDocumentOutput {
     /// Creates a new builder-style object to manufacture [`ClassifyDocumentOutput`](crate::output::ClassifyDocumentOutput).
@@ -5364,28 +5105,25 @@ impl ClassifyDocumentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchDetectTargetedSentimentOutput {
+pub struct BatchDetectTargetedSentimentOutput  {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
     #[doc(hidden)]
-    pub result_list:
-        std::option::Option<std::vec::Vec<crate::model::BatchDetectTargetedSentimentItemResult>>,
+    pub result_list: std::option::Option<std::vec::Vec<crate::model::BatchDetectTargetedSentimentItemResult>>,
     /// <p>List of errors that the operation can return.</p>
     #[doc(hidden)]
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
 }
 impl BatchDetectTargetedSentimentOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-    pub fn result_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchDetectTargetedSentimentItemResult]> {
+    pub fn result_list(&self) -> std::option::Option<& [crate::model::BatchDetectTargetedSentimentItemResult]> {
         self.result_list.as_deref()
     }
     /// <p>List of errors that the operation can return.</p>
-    pub fn error_list(&self) -> std::option::Option<&[crate::model::BatchItemError]> {
+    pub fn error_list(&self) -> std::option::Option<& [crate::model::BatchItemError]> {
         self.error_list.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDetectTargetedSentimentOutput {
+impl  std::fmt::Debug for BatchDetectTargetedSentimentOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectTargetedSentimentOutput");
         formatter.field("result_list", &"*** Sensitive Data Redacted ***");
@@ -5395,13 +5133,11 @@ impl std::fmt::Debug for BatchDetectTargetedSentimentOutput {
 }
 /// See [`BatchDetectTargetedSentimentOutput`](crate::output::BatchDetectTargetedSentimentOutput).
 pub mod batch_detect_targeted_sentiment_output {
-
+    
     /// A builder for [`BatchDetectTargetedSentimentOutput`](crate::output::BatchDetectTargetedSentimentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
-        pub(crate) result_list: std::option::Option<
-            std::vec::Vec<crate::model::BatchDetectTargetedSentimentItemResult>,
-        >,
+        pub(crate) result_list: std::option::Option<std::vec::Vec<crate::model::BatchDetectTargetedSentimentItemResult>>,
         pub(crate) error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
     }
     impl Builder {
@@ -5410,24 +5146,15 @@ pub mod batch_detect_targeted_sentiment_output {
         /// To override the contents of this collection use [`set_result_list`](Self::set_result_list).
         ///
         /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-        pub fn result_list(
-            mut self,
-            input: crate::model::BatchDetectTargetedSentimentItemResult,
-        ) -> Self {
+        pub fn result_list(mut self, input: crate::model::BatchDetectTargetedSentimentItemResult) -> Self {
             let mut v = self.result_list.unwrap_or_default();
-            v.push(input);
-            self.result_list = Some(v);
-            self
+                            v.push(input);
+                            self.result_list = Some(v);
+                            self
         }
         /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-        pub fn set_result_list(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::BatchDetectTargetedSentimentItemResult>,
-            >,
-        ) -> Self {
-            self.result_list = input;
-            self
+        pub fn set_result_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchDetectTargetedSentimentItemResult>>) -> Self {
+            self.result_list = input; self
         }
         /// Appends an item to `error_list`.
         ///
@@ -5436,23 +5163,21 @@ pub mod batch_detect_targeted_sentiment_output {
         /// <p>List of errors that the operation can return.</p>
         pub fn error_list(mut self, input: crate::model::BatchItemError) -> Self {
             let mut v = self.error_list.unwrap_or_default();
-            v.push(input);
-            self.error_list = Some(v);
-            self
+                            v.push(input);
+                            self.error_list = Some(v);
+                            self
         }
         /// <p>List of errors that the operation can return.</p>
-        pub fn set_error_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
-        ) -> Self {
-            self.error_list = input;
-            self
+        pub fn set_error_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>) -> Self {
+            self.error_list = input; self
         }
         /// Consumes the builder and constructs a [`BatchDetectTargetedSentimentOutput`](crate::output::BatchDetectTargetedSentimentOutput).
         pub fn build(self) -> crate::output::BatchDetectTargetedSentimentOutput {
             crate::output::BatchDetectTargetedSentimentOutput {
-                result_list: self.result_list,
-                error_list: self.error_list,
+                result_list: self.result_list
+                ,
+                error_list: self.error_list
+                ,
             }
         }
     }
@@ -5464,6 +5189,8 @@ pub mod batch_detect_targeted_sentiment_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl BatchDetectTargetedSentimentOutput {
     /// Creates a new builder-style object to manufacture [`BatchDetectTargetedSentimentOutput`](crate::output::BatchDetectTargetedSentimentOutput).
@@ -5475,7 +5202,7 @@ impl BatchDetectTargetedSentimentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchDetectSyntaxOutput {
+pub struct BatchDetectSyntaxOutput  {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
     #[doc(hidden)]
     pub result_list: std::option::Option<std::vec::Vec<crate::model::BatchDetectSyntaxItemResult>>,
@@ -5485,15 +5212,15 @@ pub struct BatchDetectSyntaxOutput {
 }
 impl BatchDetectSyntaxOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-    pub fn result_list(&self) -> std::option::Option<&[crate::model::BatchDetectSyntaxItemResult]> {
+    pub fn result_list(&self) -> std::option::Option<& [crate::model::BatchDetectSyntaxItemResult]> {
         self.result_list.as_deref()
     }
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
-    pub fn error_list(&self) -> std::option::Option<&[crate::model::BatchItemError]> {
+    pub fn error_list(&self) -> std::option::Option<& [crate::model::BatchItemError]> {
         self.error_list.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDetectSyntaxOutput {
+impl  std::fmt::Debug for BatchDetectSyntaxOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectSyntaxOutput");
         formatter.field("result_list", &"*** Sensitive Data Redacted ***");
@@ -5503,12 +5230,11 @@ impl std::fmt::Debug for BatchDetectSyntaxOutput {
 }
 /// See [`BatchDetectSyntaxOutput`](crate::output::BatchDetectSyntaxOutput).
 pub mod batch_detect_syntax_output {
-
+    
     /// A builder for [`BatchDetectSyntaxOutput`](crate::output::BatchDetectSyntaxOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
-        pub(crate) result_list:
-            std::option::Option<std::vec::Vec<crate::model::BatchDetectSyntaxItemResult>>,
+        pub(crate) result_list: std::option::Option<std::vec::Vec<crate::model::BatchDetectSyntaxItemResult>>,
         pub(crate) error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
     }
     impl Builder {
@@ -5519,17 +5245,13 @@ pub mod batch_detect_syntax_output {
         /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
         pub fn result_list(mut self, input: crate::model::BatchDetectSyntaxItemResult) -> Self {
             let mut v = self.result_list.unwrap_or_default();
-            v.push(input);
-            self.result_list = Some(v);
-            self
+                            v.push(input);
+                            self.result_list = Some(v);
+                            self
         }
         /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-        pub fn set_result_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchDetectSyntaxItemResult>>,
-        ) -> Self {
-            self.result_list = input;
-            self
+        pub fn set_result_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchDetectSyntaxItemResult>>) -> Self {
+            self.result_list = input; self
         }
         /// Appends an item to `error_list`.
         ///
@@ -5538,23 +5260,21 @@ pub mod batch_detect_syntax_output {
         /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
         pub fn error_list(mut self, input: crate::model::BatchItemError) -> Self {
             let mut v = self.error_list.unwrap_or_default();
-            v.push(input);
-            self.error_list = Some(v);
-            self
+                            v.push(input);
+                            self.error_list = Some(v);
+                            self
         }
         /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
-        pub fn set_error_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
-        ) -> Self {
-            self.error_list = input;
-            self
+        pub fn set_error_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>) -> Self {
+            self.error_list = input; self
         }
         /// Consumes the builder and constructs a [`BatchDetectSyntaxOutput`](crate::output::BatchDetectSyntaxOutput).
         pub fn build(self) -> crate::output::BatchDetectSyntaxOutput {
             crate::output::BatchDetectSyntaxOutput {
-                result_list: self.result_list,
-                error_list: self.error_list,
+                result_list: self.result_list
+                ,
+                error_list: self.error_list
+                ,
             }
         }
     }
@@ -5566,6 +5286,8 @@ pub mod batch_detect_syntax_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl BatchDetectSyntaxOutput {
     /// Creates a new builder-style object to manufacture [`BatchDetectSyntaxOutput`](crate::output::BatchDetectSyntaxOutput).
@@ -5577,28 +5299,25 @@ impl BatchDetectSyntaxOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchDetectSentimentOutput {
+pub struct BatchDetectSentimentOutput  {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
     #[doc(hidden)]
-    pub result_list:
-        std::option::Option<std::vec::Vec<crate::model::BatchDetectSentimentItemResult>>,
+    pub result_list: std::option::Option<std::vec::Vec<crate::model::BatchDetectSentimentItemResult>>,
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
     #[doc(hidden)]
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
 }
 impl BatchDetectSentimentOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-    pub fn result_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchDetectSentimentItemResult]> {
+    pub fn result_list(&self) -> std::option::Option<& [crate::model::BatchDetectSentimentItemResult]> {
         self.result_list.as_deref()
     }
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
-    pub fn error_list(&self) -> std::option::Option<&[crate::model::BatchItemError]> {
+    pub fn error_list(&self) -> std::option::Option<& [crate::model::BatchItemError]> {
         self.error_list.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDetectSentimentOutput {
+impl  std::fmt::Debug for BatchDetectSentimentOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectSentimentOutput");
         formatter.field("result_list", &"*** Sensitive Data Redacted ***");
@@ -5608,12 +5327,11 @@ impl std::fmt::Debug for BatchDetectSentimentOutput {
 }
 /// See [`BatchDetectSentimentOutput`](crate::output::BatchDetectSentimentOutput).
 pub mod batch_detect_sentiment_output {
-
+    
     /// A builder for [`BatchDetectSentimentOutput`](crate::output::BatchDetectSentimentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
-        pub(crate) result_list:
-            std::option::Option<std::vec::Vec<crate::model::BatchDetectSentimentItemResult>>,
+        pub(crate) result_list: std::option::Option<std::vec::Vec<crate::model::BatchDetectSentimentItemResult>>,
         pub(crate) error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
     }
     impl Builder {
@@ -5624,17 +5342,13 @@ pub mod batch_detect_sentiment_output {
         /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
         pub fn result_list(mut self, input: crate::model::BatchDetectSentimentItemResult) -> Self {
             let mut v = self.result_list.unwrap_or_default();
-            v.push(input);
-            self.result_list = Some(v);
-            self
+                            v.push(input);
+                            self.result_list = Some(v);
+                            self
         }
         /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-        pub fn set_result_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchDetectSentimentItemResult>>,
-        ) -> Self {
-            self.result_list = input;
-            self
+        pub fn set_result_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchDetectSentimentItemResult>>) -> Self {
+            self.result_list = input; self
         }
         /// Appends an item to `error_list`.
         ///
@@ -5643,23 +5357,21 @@ pub mod batch_detect_sentiment_output {
         /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
         pub fn error_list(mut self, input: crate::model::BatchItemError) -> Self {
             let mut v = self.error_list.unwrap_or_default();
-            v.push(input);
-            self.error_list = Some(v);
-            self
+                            v.push(input);
+                            self.error_list = Some(v);
+                            self
         }
         /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
-        pub fn set_error_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
-        ) -> Self {
-            self.error_list = input;
-            self
+        pub fn set_error_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>) -> Self {
+            self.error_list = input; self
         }
         /// Consumes the builder and constructs a [`BatchDetectSentimentOutput`](crate::output::BatchDetectSentimentOutput).
         pub fn build(self) -> crate::output::BatchDetectSentimentOutput {
             crate::output::BatchDetectSentimentOutput {
-                result_list: self.result_list,
-                error_list: self.error_list,
+                result_list: self.result_list
+                ,
+                error_list: self.error_list
+                ,
             }
         }
     }
@@ -5671,6 +5383,8 @@ pub mod batch_detect_sentiment_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl BatchDetectSentimentOutput {
     /// Creates a new builder-style object to manufacture [`BatchDetectSentimentOutput`](crate::output::BatchDetectSentimentOutput).
@@ -5682,28 +5396,25 @@ impl BatchDetectSentimentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchDetectKeyPhrasesOutput {
+pub struct BatchDetectKeyPhrasesOutput  {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
     #[doc(hidden)]
-    pub result_list:
-        std::option::Option<std::vec::Vec<crate::model::BatchDetectKeyPhrasesItemResult>>,
+    pub result_list: std::option::Option<std::vec::Vec<crate::model::BatchDetectKeyPhrasesItemResult>>,
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
     #[doc(hidden)]
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
 }
 impl BatchDetectKeyPhrasesOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-    pub fn result_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchDetectKeyPhrasesItemResult]> {
+    pub fn result_list(&self) -> std::option::Option<& [crate::model::BatchDetectKeyPhrasesItemResult]> {
         self.result_list.as_deref()
     }
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
-    pub fn error_list(&self) -> std::option::Option<&[crate::model::BatchItemError]> {
+    pub fn error_list(&self) -> std::option::Option<& [crate::model::BatchItemError]> {
         self.error_list.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDetectKeyPhrasesOutput {
+impl  std::fmt::Debug for BatchDetectKeyPhrasesOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectKeyPhrasesOutput");
         formatter.field("result_list", &"*** Sensitive Data Redacted ***");
@@ -5713,12 +5424,11 @@ impl std::fmt::Debug for BatchDetectKeyPhrasesOutput {
 }
 /// See [`BatchDetectKeyPhrasesOutput`](crate::output::BatchDetectKeyPhrasesOutput).
 pub mod batch_detect_key_phrases_output {
-
+    
     /// A builder for [`BatchDetectKeyPhrasesOutput`](crate::output::BatchDetectKeyPhrasesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
-        pub(crate) result_list:
-            std::option::Option<std::vec::Vec<crate::model::BatchDetectKeyPhrasesItemResult>>,
+        pub(crate) result_list: std::option::Option<std::vec::Vec<crate::model::BatchDetectKeyPhrasesItemResult>>,
         pub(crate) error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
     }
     impl Builder {
@@ -5729,19 +5439,13 @@ pub mod batch_detect_key_phrases_output {
         /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
         pub fn result_list(mut self, input: crate::model::BatchDetectKeyPhrasesItemResult) -> Self {
             let mut v = self.result_list.unwrap_or_default();
-            v.push(input);
-            self.result_list = Some(v);
-            self
+                            v.push(input);
+                            self.result_list = Some(v);
+                            self
         }
         /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-        pub fn set_result_list(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::BatchDetectKeyPhrasesItemResult>,
-            >,
-        ) -> Self {
-            self.result_list = input;
-            self
+        pub fn set_result_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchDetectKeyPhrasesItemResult>>) -> Self {
+            self.result_list = input; self
         }
         /// Appends an item to `error_list`.
         ///
@@ -5750,23 +5454,21 @@ pub mod batch_detect_key_phrases_output {
         /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
         pub fn error_list(mut self, input: crate::model::BatchItemError) -> Self {
             let mut v = self.error_list.unwrap_or_default();
-            v.push(input);
-            self.error_list = Some(v);
-            self
+                            v.push(input);
+                            self.error_list = Some(v);
+                            self
         }
         /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
-        pub fn set_error_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
-        ) -> Self {
-            self.error_list = input;
-            self
+        pub fn set_error_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>) -> Self {
+            self.error_list = input; self
         }
         /// Consumes the builder and constructs a [`BatchDetectKeyPhrasesOutput`](crate::output::BatchDetectKeyPhrasesOutput).
         pub fn build(self) -> crate::output::BatchDetectKeyPhrasesOutput {
             crate::output::BatchDetectKeyPhrasesOutput {
-                result_list: self.result_list,
-                error_list: self.error_list,
+                result_list: self.result_list
+                ,
+                error_list: self.error_list
+                ,
             }
         }
     }
@@ -5778,6 +5480,8 @@ pub mod batch_detect_key_phrases_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl BatchDetectKeyPhrasesOutput {
     /// Creates a new builder-style object to manufacture [`BatchDetectKeyPhrasesOutput`](crate::output::BatchDetectKeyPhrasesOutput).
@@ -5789,28 +5493,25 @@ impl BatchDetectKeyPhrasesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchDetectEntitiesOutput {
+pub struct BatchDetectEntitiesOutput  {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
     #[doc(hidden)]
-    pub result_list:
-        std::option::Option<std::vec::Vec<crate::model::BatchDetectEntitiesItemResult>>,
+    pub result_list: std::option::Option<std::vec::Vec<crate::model::BatchDetectEntitiesItemResult>>,
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
     #[doc(hidden)]
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
 }
 impl BatchDetectEntitiesOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-    pub fn result_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchDetectEntitiesItemResult]> {
+    pub fn result_list(&self) -> std::option::Option<& [crate::model::BatchDetectEntitiesItemResult]> {
         self.result_list.as_deref()
     }
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
-    pub fn error_list(&self) -> std::option::Option<&[crate::model::BatchItemError]> {
+    pub fn error_list(&self) -> std::option::Option<& [crate::model::BatchItemError]> {
         self.error_list.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDetectEntitiesOutput {
+impl  std::fmt::Debug for BatchDetectEntitiesOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectEntitiesOutput");
         formatter.field("result_list", &"*** Sensitive Data Redacted ***");
@@ -5820,12 +5521,11 @@ impl std::fmt::Debug for BatchDetectEntitiesOutput {
 }
 /// See [`BatchDetectEntitiesOutput`](crate::output::BatchDetectEntitiesOutput).
 pub mod batch_detect_entities_output {
-
+    
     /// A builder for [`BatchDetectEntitiesOutput`](crate::output::BatchDetectEntitiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
-        pub(crate) result_list:
-            std::option::Option<std::vec::Vec<crate::model::BatchDetectEntitiesItemResult>>,
+        pub(crate) result_list: std::option::Option<std::vec::Vec<crate::model::BatchDetectEntitiesItemResult>>,
         pub(crate) error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
     }
     impl Builder {
@@ -5836,17 +5536,13 @@ pub mod batch_detect_entities_output {
         /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
         pub fn result_list(mut self, input: crate::model::BatchDetectEntitiesItemResult) -> Self {
             let mut v = self.result_list.unwrap_or_default();
-            v.push(input);
-            self.result_list = Some(v);
-            self
+                            v.push(input);
+                            self.result_list = Some(v);
+                            self
         }
         /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-        pub fn set_result_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchDetectEntitiesItemResult>>,
-        ) -> Self {
-            self.result_list = input;
-            self
+        pub fn set_result_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchDetectEntitiesItemResult>>) -> Self {
+            self.result_list = input; self
         }
         /// Appends an item to `error_list`.
         ///
@@ -5855,23 +5551,21 @@ pub mod batch_detect_entities_output {
         /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
         pub fn error_list(mut self, input: crate::model::BatchItemError) -> Self {
             let mut v = self.error_list.unwrap_or_default();
-            v.push(input);
-            self.error_list = Some(v);
-            self
+                            v.push(input);
+                            self.error_list = Some(v);
+                            self
         }
         /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
-        pub fn set_error_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
-        ) -> Self {
-            self.error_list = input;
-            self
+        pub fn set_error_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>) -> Self {
+            self.error_list = input; self
         }
         /// Consumes the builder and constructs a [`BatchDetectEntitiesOutput`](crate::output::BatchDetectEntitiesOutput).
         pub fn build(self) -> crate::output::BatchDetectEntitiesOutput {
             crate::output::BatchDetectEntitiesOutput {
-                result_list: self.result_list,
-                error_list: self.error_list,
+                result_list: self.result_list
+                ,
+                error_list: self.error_list
+                ,
             }
         }
     }
@@ -5883,6 +5577,8 @@ pub mod batch_detect_entities_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl BatchDetectEntitiesOutput {
     /// Creates a new builder-style object to manufacture [`BatchDetectEntitiesOutput`](crate::output::BatchDetectEntitiesOutput).
@@ -5894,28 +5590,25 @@ impl BatchDetectEntitiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchDetectDominantLanguageOutput {
+pub struct BatchDetectDominantLanguageOutput  {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
     #[doc(hidden)]
-    pub result_list:
-        std::option::Option<std::vec::Vec<crate::model::BatchDetectDominantLanguageItemResult>>,
+    pub result_list: std::option::Option<std::vec::Vec<crate::model::BatchDetectDominantLanguageItemResult>>,
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
     #[doc(hidden)]
     pub error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
 }
 impl BatchDetectDominantLanguageOutput {
     /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-    pub fn result_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchDetectDominantLanguageItemResult]> {
+    pub fn result_list(&self) -> std::option::Option<& [crate::model::BatchDetectDominantLanguageItemResult]> {
         self.result_list.as_deref()
     }
     /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
-    pub fn error_list(&self) -> std::option::Option<&[crate::model::BatchItemError]> {
+    pub fn error_list(&self) -> std::option::Option<& [crate::model::BatchItemError]> {
         self.error_list.as_deref()
     }
 }
-impl std::fmt::Debug for BatchDetectDominantLanguageOutput {
+impl  std::fmt::Debug for BatchDetectDominantLanguageOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectDominantLanguageOutput");
         formatter.field("result_list", &"*** Sensitive Data Redacted ***");
@@ -5925,12 +5618,11 @@ impl std::fmt::Debug for BatchDetectDominantLanguageOutput {
 }
 /// See [`BatchDetectDominantLanguageOutput`](crate::output::BatchDetectDominantLanguageOutput).
 pub mod batch_detect_dominant_language_output {
-
+    
     /// A builder for [`BatchDetectDominantLanguageOutput`](crate::output::BatchDetectDominantLanguageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
-        pub(crate) result_list:
-            std::option::Option<std::vec::Vec<crate::model::BatchDetectDominantLanguageItemResult>>,
+        pub(crate) result_list: std::option::Option<std::vec::Vec<crate::model::BatchDetectDominantLanguageItemResult>>,
         pub(crate) error_list: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
     }
     impl Builder {
@@ -5939,24 +5631,15 @@ pub mod batch_detect_dominant_language_output {
         /// To override the contents of this collection use [`set_result_list`](Self::set_result_list).
         ///
         /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-        pub fn result_list(
-            mut self,
-            input: crate::model::BatchDetectDominantLanguageItemResult,
-        ) -> Self {
+        pub fn result_list(mut self, input: crate::model::BatchDetectDominantLanguageItemResult) -> Self {
             let mut v = self.result_list.unwrap_or_default();
-            v.push(input);
-            self.result_list = Some(v);
-            self
+                            v.push(input);
+                            self.result_list = Some(v);
+                            self
         }
         /// <p>A list of objects containing the results of the operation. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If all of the documents contain an error, the <code>ResultList</code> is empty.</p>
-        pub fn set_result_list(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::BatchDetectDominantLanguageItemResult>,
-            >,
-        ) -> Self {
-            self.result_list = input;
-            self
+        pub fn set_result_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchDetectDominantLanguageItemResult>>) -> Self {
+            self.result_list = input; self
         }
         /// Appends an item to `error_list`.
         ///
@@ -5965,23 +5648,21 @@ pub mod batch_detect_dominant_language_output {
         /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
         pub fn error_list(mut self, input: crate::model::BatchItemError) -> Self {
             let mut v = self.error_list.unwrap_or_default();
-            v.push(input);
-            self.error_list = Some(v);
-            self
+                            v.push(input);
+                            self.error_list = Some(v);
+                            self
         }
         /// <p>A list containing one object for each document that contained an error. The results are sorted in ascending order by the <code>Index</code> field and match the order of the documents in the input list. If there are no errors in the batch, the <code>ErrorList</code> is empty.</p>
-        pub fn set_error_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>,
-        ) -> Self {
-            self.error_list = input;
-            self
+        pub fn set_error_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchItemError>>) -> Self {
+            self.error_list = input; self
         }
         /// Consumes the builder and constructs a [`BatchDetectDominantLanguageOutput`](crate::output::BatchDetectDominantLanguageOutput).
         pub fn build(self) -> crate::output::BatchDetectDominantLanguageOutput {
             crate::output::BatchDetectDominantLanguageOutput {
-                result_list: self.result_list,
-                error_list: self.error_list,
+                result_list: self.result_list
+                ,
+                error_list: self.error_list
+                ,
             }
         }
     }
@@ -5993,6 +5674,8 @@ pub mod batch_detect_dominant_language_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl BatchDetectDominantLanguageOutput {
     /// Creates a new builder-style object to manufacture [`BatchDetectDominantLanguageOutput`](crate::output::BatchDetectDominantLanguageOutput).
@@ -6000,3 +5683,4 @@ impl BatchDetectDominantLanguageOutput {
         crate::output::batch_detect_dominant_language_output::Builder::default()
     }
 }
+

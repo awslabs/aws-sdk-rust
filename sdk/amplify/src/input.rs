@@ -3,7 +3,7 @@ use std::fmt::Write;
 
 /// See [`CreateAppInput`](crate::input::CreateAppInput).
 pub mod create_app_input {
-
+    
     /// A builder for [`CreateAppInput`](crate::input::CreateAppInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -14,24 +14,18 @@ pub mod create_app_input {
         pub(crate) iam_service_role_arn: std::option::Option<std::string::String>,
         pub(crate) oauth_token: std::option::Option<std::string::String>,
         pub(crate) access_token: std::option::Option<std::string::String>,
-        pub(crate) environment_variables: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) environment_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) enable_branch_auto_build: std::option::Option<bool>,
         pub(crate) enable_branch_auto_deletion: std::option::Option<bool>,
         pub(crate) enable_basic_auth: std::option::Option<bool>,
         pub(crate) basic_auth_credentials: std::option::Option<std::string::String>,
         pub(crate) custom_rules: std::option::Option<std::vec::Vec<crate::model::CustomRule>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) build_spec: std::option::Option<std::string::String>,
         pub(crate) custom_headers: std::option::Option<std::string::String>,
         pub(crate) enable_auto_branch_creation: std::option::Option<bool>,
-        pub(crate) auto_branch_creation_patterns:
-            std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) auto_branch_creation_config:
-            std::option::Option<crate::model::AutoBranchCreationConfig>,
+        pub(crate) auto_branch_creation_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) auto_branch_creation_config: std::option::Option<crate::model::AutoBranchCreationConfig>,
     }
     impl Builder {
         /// <p> The name for an Amplify app. </p>
@@ -41,8 +35,7 @@ pub mod create_app_input {
         }
         /// <p> The name for an Amplify app. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> The description for an Amplify app. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,8 +44,7 @@ pub mod create_app_input {
         }
         /// <p> The description for an Amplify app. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> The repository for an Amplify app. </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +53,7 @@ pub mod create_app_input {
         }
         /// <p> The repository for an Amplify app. </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input;
-            self
+            self.repository = input; self
         }
         /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
@@ -71,8 +62,7 @@ pub mod create_app_input {
         }
         /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
         pub fn iam_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,69 +70,53 @@ pub mod create_app_input {
             self
         }
         /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
-        pub fn set_iam_service_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.iam_service_role_arn = input;
-            self
+        pub fn set_iam_service_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iam_service_role_arn = input; self
         }
-        /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p>
-        /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit. To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p>
-        /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you create a new app.</p>
+        /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p> 
+        /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit. To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p> 
+        /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you create a new app.</p> 
         /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
         pub fn oauth_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.oauth_token = Some(input.into());
             self
         }
-        /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p>
-        /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit. To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p>
-        /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you create a new app.</p>
+        /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p> 
+        /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit. To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p> 
+        /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you create a new app.</p> 
         /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
         pub fn set_oauth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.oauth_token = input;
-            self
+            self.oauth_token = input; self
         }
-        /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p>
-        /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p>
-        /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you create a new app.</p>
+        /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p> 
+        /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p> 
+        /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you create a new app.</p> 
         /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p>
-        /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p>
-        /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you create a new app.</p>
+        /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p> 
+        /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p> 
+        /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you create a new app.</p> 
         /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.access_token = input;
-            self
+            self.access_token = input; self
         }
         /// Adds a key-value pair to `environment_variables`.
         ///
         /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
         ///
         /// <p> The environment variables map for an Amplify app. </p>
-        pub fn environment_variables(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn environment_variables(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.environment_variables.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.environment_variables = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.environment_variables = Some(hash_map);
+                            self
         }
         /// <p> The environment variables map for an Amplify app. </p>
-        pub fn set_environment_variables(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.environment_variables = input;
-            self
+        pub fn set_environment_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.environment_variables = input; self
         }
         /// <p> Enables the auto building of branches for an Amplify app. </p>
         pub fn enable_branch_auto_build(mut self, input: bool) -> Self {
@@ -151,8 +125,7 @@ pub mod create_app_input {
         }
         /// <p> Enables the auto building of branches for an Amplify app. </p>
         pub fn set_enable_branch_auto_build(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_branch_auto_build = input;
-            self
+            self.enable_branch_auto_build = input; self
         }
         /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
         pub fn enable_branch_auto_deletion(mut self, input: bool) -> Self {
@@ -161,8 +134,7 @@ pub mod create_app_input {
         }
         /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
         pub fn set_enable_branch_auto_deletion(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_branch_auto_deletion = input;
-            self
+            self.enable_branch_auto_deletion = input; self
         }
         /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that are part of this app. </p>
         pub fn enable_basic_auth(mut self, input: bool) -> Self {
@@ -171,8 +143,7 @@ pub mod create_app_input {
         }
         /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that are part of this app. </p>
         pub fn set_enable_basic_auth(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_basic_auth = input;
-            self
+            self.enable_basic_auth = input; self
         }
         /// <p> The credentials for basic authorization for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
         pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
@@ -180,12 +151,8 @@ pub mod create_app_input {
             self
         }
         /// <p> The credentials for basic authorization for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-        pub fn set_basic_auth_credentials(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.basic_auth_credentials = input;
-            self
+        pub fn set_basic_auth_credentials(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.basic_auth_credentials = input; self
         }
         /// Appends an item to `custom_rules`.
         ///
@@ -194,42 +161,28 @@ pub mod create_app_input {
         /// <p> The custom rewrite and redirect rules for an Amplify app. </p>
         pub fn custom_rules(mut self, input: crate::model::CustomRule) -> Self {
             let mut v = self.custom_rules.unwrap_or_default();
-            v.push(input);
-            self.custom_rules = Some(v);
-            self
+                            v.push(input);
+                            self.custom_rules = Some(v);
+                            self
         }
         /// <p> The custom rewrite and redirect rules for an Amplify app. </p>
-        pub fn set_custom_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CustomRule>>,
-        ) -> Self {
-            self.custom_rules = input;
-            self
+        pub fn set_custom_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::CustomRule>>) -> Self {
+            self.custom_rules = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The tag for an Amplify app. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The tag for an Amplify app. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p> The build specification (build spec) for an Amplify app. </p>
         pub fn build_spec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -238,8 +191,7 @@ pub mod create_app_input {
         }
         /// <p> The build specification (build spec) for an Amplify app. </p>
         pub fn set_build_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.build_spec = input;
-            self
+            self.build_spec = input; self
         }
         /// <p>The custom HTTP headers for an Amplify app.</p>
         pub fn custom_headers(mut self, input: impl Into<std::string::String>) -> Self {
@@ -247,12 +199,8 @@ pub mod create_app_input {
             self
         }
         /// <p>The custom HTTP headers for an Amplify app.</p>
-        pub fn set_custom_headers(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_headers = input;
-            self
+        pub fn set_custom_headers(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_headers = input; self
         }
         /// <p> Enables automated branch creation for an Amplify app. </p>
         pub fn enable_auto_branch_creation(mut self, input: bool) -> Self {
@@ -261,73 +209,76 @@ pub mod create_app_input {
         }
         /// <p> Enables automated branch creation for an Amplify app. </p>
         pub fn set_enable_auto_branch_creation(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_auto_branch_creation = input;
-            self
+            self.enable_auto_branch_creation = input; self
         }
         /// Appends an item to `auto_branch_creation_patterns`.
         ///
         /// To override the contents of this collection use [`set_auto_branch_creation_patterns`](Self::set_auto_branch_creation_patterns).
         ///
         /// <p> The automated branch creation glob patterns for an Amplify app. </p>
-        pub fn auto_branch_creation_patterns(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn auto_branch_creation_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.auto_branch_creation_patterns.unwrap_or_default();
-            v.push(input.into());
-            self.auto_branch_creation_patterns = Some(v);
-            self
+                            v.push(input.into());
+                            self.auto_branch_creation_patterns = Some(v);
+                            self
         }
         /// <p> The automated branch creation glob patterns for an Amplify app. </p>
-        pub fn set_auto_branch_creation_patterns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.auto_branch_creation_patterns = input;
-            self
+        pub fn set_auto_branch_creation_patterns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.auto_branch_creation_patterns = input; self
         }
         /// <p> The automated branch creation configuration for an Amplify app. </p>
-        pub fn auto_branch_creation_config(
-            mut self,
-            input: crate::model::AutoBranchCreationConfig,
-        ) -> Self {
+        pub fn auto_branch_creation_config(mut self, input: crate::model::AutoBranchCreationConfig) -> Self {
             self.auto_branch_creation_config = Some(input);
             self
         }
         /// <p> The automated branch creation configuration for an Amplify app. </p>
-        pub fn set_auto_branch_creation_config(
-            mut self,
-            input: std::option::Option<crate::model::AutoBranchCreationConfig>,
-        ) -> Self {
-            self.auto_branch_creation_config = input;
-            self
+        pub fn set_auto_branch_creation_config(mut self, input: std::option::Option<crate::model::AutoBranchCreationConfig>) -> Self {
+            self.auto_branch_creation_config = input; self
         }
         /// Consumes the builder and constructs a [`CreateAppInput`](crate::input::CreateAppInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateAppInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CreateAppInput {
-                name: self.name,
-                description: self.description,
-                repository: self.repository,
-                platform: self.platform,
-                iam_service_role_arn: self.iam_service_role_arn,
-                oauth_token: self.oauth_token,
-                access_token: self.access_token,
-                environment_variables: self.environment_variables,
-                enable_branch_auto_build: self.enable_branch_auto_build,
-                enable_branch_auto_deletion: self.enable_branch_auto_deletion,
-                enable_basic_auth: self.enable_basic_auth,
-                basic_auth_credentials: self.basic_auth_credentials,
-                custom_rules: self.custom_rules,
-                tags: self.tags,
-                build_spec: self.build_spec,
-                custom_headers: self.custom_headers,
-                enable_auto_branch_creation: self.enable_auto_branch_creation,
-                auto_branch_creation_patterns: self.auto_branch_creation_patterns,
-                auto_branch_creation_config: self.auto_branch_creation_config,
-            })
+        pub fn build(self) -> Result<crate::input::CreateAppInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateAppInput {
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    repository: self.repository
+                    ,
+                    platform: self.platform
+                    ,
+                    iam_service_role_arn: self.iam_service_role_arn
+                    ,
+                    oauth_token: self.oauth_token
+                    ,
+                    access_token: self.access_token
+                    ,
+                    environment_variables: self.environment_variables
+                    ,
+                    enable_branch_auto_build: self.enable_branch_auto_build
+                    ,
+                    enable_branch_auto_deletion: self.enable_branch_auto_deletion
+                    ,
+                    enable_basic_auth: self.enable_basic_auth
+                    ,
+                    basic_auth_credentials: self.basic_auth_credentials
+                    ,
+                    custom_rules: self.custom_rules
+                    ,
+                    tags: self.tags
+                    ,
+                    build_spec: self.build_spec
+                    ,
+                    custom_headers: self.custom_headers
+                    ,
+                    enable_auto_branch_creation: self.enable_auto_branch_creation
+                    ,
+                    auto_branch_creation_patterns: self.auto_branch_creation_patterns
+                    ,
+                    auto_branch_creation_config: self.auto_branch_creation_config
+                    ,
+                }
+            )
         }
     }
     impl std::fmt::Debug for Builder {
@@ -342,148 +293,89 @@ pub mod create_app_input {
             formatter.field("access_token", &"*** Sensitive Data Redacted ***");
             formatter.field("environment_variables", &self.environment_variables);
             formatter.field("enable_branch_auto_build", &self.enable_branch_auto_build);
-            formatter.field(
-                "enable_branch_auto_deletion",
-                &self.enable_branch_auto_deletion,
-            );
+            formatter.field("enable_branch_auto_deletion", &self.enable_branch_auto_deletion);
             formatter.field("enable_basic_auth", &self.enable_basic_auth);
             formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
             formatter.field("custom_rules", &self.custom_rules);
             formatter.field("tags", &self.tags);
             formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
             formatter.field("custom_headers", &self.custom_headers);
-            formatter.field(
-                "enable_auto_branch_creation",
-                &self.enable_auto_branch_creation,
-            );
-            formatter.field(
-                "auto_branch_creation_patterns",
-                &self.auto_branch_creation_patterns,
-            );
-            formatter.field(
-                "auto_branch_creation_config",
-                &self.auto_branch_creation_config,
-            );
+            formatter.field("enable_auto_branch_creation", &self.enable_auto_branch_creation);
+            formatter.field("auto_branch_creation_patterns", &self.auto_branch_creation_patterns);
+            formatter.field("auto_branch_creation_config", &self.auto_branch_creation_config);
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreateAppInput {
     /// Consumes the builder and constructs an Operation<[`CreateApp`](crate::operation::CreateApp)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateApp,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateApp, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateAppInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateAppInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/apps").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateAppInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateAppInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_app(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_app(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::CreateApp::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "CreateApp",
-                    "amplify",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateApp::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateApp", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -495,7 +387,7 @@ impl CreateAppInput {
 
 /// See [`CreateBackendEnvironmentInput`](crate::input::CreateBackendEnvironmentInput).
 pub mod create_backend_environment_input {
-
+    
     /// A builder for [`CreateBackendEnvironmentInput`](crate::input::CreateBackendEnvironmentInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -512,8 +404,7 @@ pub mod create_backend_environment_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The name for the backend environment. </p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -521,12 +412,8 @@ pub mod create_backend_environment_input {
             self
         }
         /// <p> The name for the backend environment. </p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
         /// <p> The AWS CloudFormation stack name of a backend environment. </p>
         pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -535,8 +422,7 @@ pub mod create_backend_environment_input {
         }
         /// <p> The AWS CloudFormation stack name of a backend environment. </p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stack_name = input;
-            self
+            self.stack_name = input; self
         }
         /// <p> The name of deployment artifacts. </p>
         pub fn deployment_artifacts(mut self, input: impl Into<std::string::String>) -> Self {
@@ -544,169 +430,101 @@ pub mod create_backend_environment_input {
             self
         }
         /// <p> The name of deployment artifacts. </p>
-        pub fn set_deployment_artifacts(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_artifacts = input;
-            self
+        pub fn set_deployment_artifacts(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_artifacts = input; self
         }
         /// Consumes the builder and constructs a [`CreateBackendEnvironmentInput`](crate::input::CreateBackendEnvironmentInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateBackendEnvironmentInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateBackendEnvironmentInput {
-                app_id: self.app_id,
-                environment_name: self.environment_name,
-                stack_name: self.stack_name,
-                deployment_artifacts: self.deployment_artifacts,
-            })
+        pub fn build(self) -> Result<crate::input::CreateBackendEnvironmentInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateBackendEnvironmentInput {
+                    app_id: self.app_id
+                    ,
+                    environment_name: self.environment_name
+                    ,
+                    stack_name: self.stack_name
+                    ,
+                    deployment_artifacts: self.deployment_artifacts
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateBackendEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`CreateBackendEnvironment`](crate::operation::CreateBackendEnvironment)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateBackendEnvironment,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateBackendEnvironment, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateBackendEnvironmentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateBackendEnvironmentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_1 = &_input.app_id;
-                let input_1 = input_1.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_1,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_1 = input_1.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/apps/{appId}/backendenvironments", appId = app_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/backendenvironments", appId = app_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateBackendEnvironmentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateBackendEnvironmentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_backend_environment(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_create_backend_environment(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateBackendEnvironment::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateBackendEnvironment",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateBackendEnvironment::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateBackendEnvironment", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -718,7 +536,7 @@ impl CreateBackendEnvironmentInput {
 
 /// See [`CreateBranchInput`](crate::input::CreateBranchInput).
 pub mod create_branch_input {
-
+    
     /// A builder for [`CreateBranchInput`](crate::input::CreateBranchInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -729,15 +547,11 @@ pub mod create_branch_input {
         pub(crate) framework: std::option::Option<std::string::String>,
         pub(crate) enable_notification: std::option::Option<bool>,
         pub(crate) enable_auto_build: std::option::Option<bool>,
-        pub(crate) environment_variables: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) environment_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) basic_auth_credentials: std::option::Option<std::string::String>,
         pub(crate) enable_basic_auth: std::option::Option<bool>,
         pub(crate) enable_performance_mode: std::option::Option<bool>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) build_spec: std::option::Option<std::string::String>,
         pub(crate) ttl: std::option::Option<std::string::String>,
         pub(crate) display_name: std::option::Option<std::string::String>,
@@ -753,8 +567,7 @@ pub mod create_branch_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The name for the branch. </p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -763,8 +576,7 @@ pub mod create_branch_input {
         }
         /// <p> The name for the branch. </p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch_name = input;
-            self
+            self.branch_name = input; self
         }
         /// <p> The description for the branch. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -773,8 +585,7 @@ pub mod create_branch_input {
         }
         /// <p> The description for the branch. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> Describes the current stage for the branch. </p>
         pub fn stage(mut self, input: crate::model::Stage) -> Self {
@@ -783,8 +594,7 @@ pub mod create_branch_input {
         }
         /// <p> Describes the current stage for the branch. </p>
         pub fn set_stage(mut self, input: std::option::Option<crate::model::Stage>) -> Self {
-            self.stage = input;
-            self
+            self.stage = input; self
         }
         /// <p> The framework for the branch. </p>
         pub fn framework(mut self, input: impl Into<std::string::String>) -> Self {
@@ -793,8 +603,7 @@ pub mod create_branch_input {
         }
         /// <p> The framework for the branch. </p>
         pub fn set_framework(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.framework = input;
-            self
+            self.framework = input; self
         }
         /// <p> Enables notifications for the branch. </p>
         pub fn enable_notification(mut self, input: bool) -> Self {
@@ -803,8 +612,7 @@ pub mod create_branch_input {
         }
         /// <p> Enables notifications for the branch. </p>
         pub fn set_enable_notification(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_notification = input;
-            self
+            self.enable_notification = input; self
         }
         /// <p> Enables auto building for the branch. </p>
         pub fn enable_auto_build(mut self, input: bool) -> Self {
@@ -813,33 +621,22 @@ pub mod create_branch_input {
         }
         /// <p> Enables auto building for the branch. </p>
         pub fn set_enable_auto_build(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_auto_build = input;
-            self
+            self.enable_auto_build = input; self
         }
         /// Adds a key-value pair to `environment_variables`.
         ///
         /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
         ///
         /// <p> The environment variables for the branch. </p>
-        pub fn environment_variables(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn environment_variables(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.environment_variables.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.environment_variables = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.environment_variables = Some(hash_map);
+                            self
         }
         /// <p> The environment variables for the branch. </p>
-        pub fn set_environment_variables(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.environment_variables = input;
-            self
+        pub fn set_environment_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.environment_variables = input; self
         }
         /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
         pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
@@ -847,12 +644,8 @@ pub mod create_branch_input {
             self
         }
         /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-        pub fn set_basic_auth_credentials(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.basic_auth_credentials = input;
-            self
+        pub fn set_basic_auth_credentials(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.basic_auth_credentials = input; self
         }
         /// <p> Enables basic authorization for the branch. </p>
         pub fn enable_basic_auth(mut self, input: bool) -> Self {
@@ -861,45 +654,33 @@ pub mod create_branch_input {
         }
         /// <p> Enables basic authorization for the branch. </p>
         pub fn set_enable_basic_auth(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_basic_auth = input;
-            self
+            self.enable_basic_auth = input; self
         }
-        /// <p>Enables performance mode for the branch.</p>
+        /// <p>Enables performance mode for the branch.</p> 
         /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
         pub fn enable_performance_mode(mut self, input: bool) -> Self {
             self.enable_performance_mode = Some(input);
             self
         }
-        /// <p>Enables performance mode for the branch.</p>
+        /// <p>Enables performance mode for the branch.</p> 
         /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
         pub fn set_enable_performance_mode(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_performance_mode = input;
-            self
+            self.enable_performance_mode = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The tag for the branch. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The tag for the branch. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p> The build specification (build spec) for the branch. </p>
         pub fn build_spec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -908,8 +689,7 @@ pub mod create_branch_input {
         }
         /// <p> The build specification (build spec) for the branch. </p>
         pub fn set_build_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.build_spec = input;
-            self
+            self.build_spec = input; self
         }
         /// <p> The content Time To Live (TTL) for the website in seconds. </p>
         pub fn ttl(mut self, input: impl Into<std::string::String>) -> Self {
@@ -918,8 +698,7 @@ pub mod create_branch_input {
         }
         /// <p> The content Time To Live (TTL) for the website in seconds. </p>
         pub fn set_ttl(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ttl = input;
-            self
+            self.ttl = input; self
         }
         /// <p> The display name for a branch. This is used as the default domain prefix. </p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -928,8 +707,7 @@ pub mod create_branch_input {
         }
         /// <p> The display name for a branch. This is used as the default domain prefix. </p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p> Enables pull request previews for this branch. </p>
         pub fn enable_pull_request_preview(mut self, input: bool) -> Self {
@@ -938,24 +716,16 @@ pub mod create_branch_input {
         }
         /// <p> Enables pull request previews for this branch. </p>
         pub fn set_enable_pull_request_preview(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_pull_request_preview = input;
-            self
+            self.enable_pull_request_preview = input; self
         }
         /// <p> The Amplify environment name for the pull request. </p>
-        pub fn pull_request_environment_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn pull_request_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.pull_request_environment_name = Some(input.into());
             self
         }
         /// <p> The Amplify environment name for the pull request. </p>
-        pub fn set_pull_request_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pull_request_environment_name = input;
-            self
+        pub fn set_pull_request_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pull_request_environment_name = input; self
         }
         /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
         pub fn backend_environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -963,38 +733,51 @@ pub mod create_branch_input {
             self
         }
         /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
-        pub fn set_backend_environment_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_arn = input;
-            self
+        pub fn set_backend_environment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateBranchInput`](crate::input::CreateBranchInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateBranchInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CreateBranchInput {
-                app_id: self.app_id,
-                branch_name: self.branch_name,
-                description: self.description,
-                stage: self.stage,
-                framework: self.framework,
-                enable_notification: self.enable_notification,
-                enable_auto_build: self.enable_auto_build,
-                environment_variables: self.environment_variables,
-                basic_auth_credentials: self.basic_auth_credentials,
-                enable_basic_auth: self.enable_basic_auth,
-                enable_performance_mode: self.enable_performance_mode,
-                tags: self.tags,
-                build_spec: self.build_spec,
-                ttl: self.ttl,
-                display_name: self.display_name,
-                enable_pull_request_preview: self.enable_pull_request_preview,
-                pull_request_environment_name: self.pull_request_environment_name,
-                backend_environment_arn: self.backend_environment_arn,
-            })
+        pub fn build(self) -> Result<crate::input::CreateBranchInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateBranchInput {
+                    app_id: self.app_id
+                    ,
+                    branch_name: self.branch_name
+                    ,
+                    description: self.description
+                    ,
+                    stage: self.stage
+                    ,
+                    framework: self.framework
+                    ,
+                    enable_notification: self.enable_notification
+                    ,
+                    enable_auto_build: self.enable_auto_build
+                    ,
+                    environment_variables: self.environment_variables
+                    ,
+                    basic_auth_credentials: self.basic_auth_credentials
+                    ,
+                    enable_basic_auth: self.enable_basic_auth
+                    ,
+                    enable_performance_mode: self.enable_performance_mode
+                    ,
+                    tags: self.tags
+                    ,
+                    build_spec: self.build_spec
+                    ,
+                    ttl: self.ttl
+                    ,
+                    display_name: self.display_name
+                    ,
+                    enable_pull_request_preview: self.enable_pull_request_preview
+                    ,
+                    pull_request_environment_name: self.pull_request_environment_name
+                    ,
+                    backend_environment_arn: self.backend_environment_arn
+                    ,
+                }
+            )
         }
     }
     impl std::fmt::Debug for Builder {
@@ -1015,157 +798,88 @@ pub mod create_branch_input {
             formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
             formatter.field("ttl", &self.ttl);
             formatter.field("display_name", &self.display_name);
-            formatter.field(
-                "enable_pull_request_preview",
-                &self.enable_pull_request_preview,
-            );
-            formatter.field(
-                "pull_request_environment_name",
-                &self.pull_request_environment_name,
-            );
+            formatter.field("enable_pull_request_preview", &self.enable_pull_request_preview);
+            formatter.field("pull_request_environment_name", &self.pull_request_environment_name);
             formatter.field("backend_environment_arn", &self.backend_environment_arn);
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreateBranchInput {
     /// Consumes the builder and constructs an Operation<[`CreateBranch`](crate::operation::CreateBranch)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateBranch,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateBranch, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateBranchInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateBranchInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_2 = &_input.app_id;
-                let input_2 = input_2.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_2,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_2 = input_2.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_2, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/apps/{appId}/branches", appId = app_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/branches", appId = app_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateBranchInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateBranchInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_branch(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_branch(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateBranch::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateBranch",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateBranch::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateBranch", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1177,15 +891,13 @@ impl CreateBranchInput {
 
 /// See [`CreateDeploymentInput`](crate::input::CreateDeploymentInput).
 pub mod create_deployment_input {
-
+    
     /// A builder for [`CreateDeploymentInput`](crate::input::CreateDeploymentInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) branch_name: std::option::Option<std::string::String>,
-        pub(crate) file_map: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) file_map: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p> The unique ID for an Amplify app. </p>
@@ -1195,8 +907,7 @@ pub mod create_deployment_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The name for the branch, for the job. </p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1205,211 +916,119 @@ pub mod create_deployment_input {
         }
         /// <p> The name for the branch, for the job. </p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch_name = input;
-            self
+            self.branch_name = input; self
         }
         /// Adds a key-value pair to `file_map`.
         ///
         /// To override the contents of this collection use [`set_file_map`](Self::set_file_map).
         ///
         /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
-        pub fn file_map(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn file_map(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.file_map.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.file_map = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.file_map = Some(hash_map);
+                            self
         }
         /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
-        pub fn set_file_map(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.file_map = input;
-            self
+        pub fn set_file_map(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.file_map = input; self
         }
         /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::input::CreateDeploymentInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateDeploymentInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateDeploymentInput {
-                app_id: self.app_id,
-                branch_name: self.branch_name,
-                file_map: self.file_map,
-            })
+        pub fn build(self) -> Result<crate::input::CreateDeploymentInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateDeploymentInput {
+                    app_id: self.app_id
+                    ,
+                    branch_name: self.branch_name
+                    ,
+                    file_map: self.file_map
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeployment`](crate::operation::CreateDeployment)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateDeployment,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateDeployment, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateDeploymentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateDeploymentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_3 = &_input.app_id;
-                let input_3 = input_3.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_3,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_3 = input_3.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_3, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
                 let input_4 = &_input.branch_name;
-                let input_4 = input_4.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "branch_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let branch_name = aws_smithy_http::label::fmt_string(
-                    input_4,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_4 = input_4.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))?;
+                let branch_name = aws_smithy_http::label::fmt_string(input_4, aws_smithy_http::label::EncodingStrategy::Default);
                 if branch_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "branch_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/apps/{appId}/branches/{branchName}/deployments",
-                    appId = app_id,
-                    branchName = branch_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/branches/{branchName}/deployments", appId = app_id, branchName = branch_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateDeploymentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateDeploymentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_deployment(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_deployment(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateDeployment::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateDeployment",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateDeployment::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateDeployment", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1421,17 +1040,15 @@ impl CreateDeploymentInput {
 
 /// See [`CreateDomainAssociationInput`](crate::input::CreateDomainAssociationInput).
 pub mod create_domain_association_input {
-
+    
     /// A builder for [`CreateDomainAssociationInput`](crate::input::CreateDomainAssociationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) enable_auto_sub_domain: std::option::Option<bool>,
-        pub(crate) sub_domain_settings:
-            std::option::Option<std::vec::Vec<crate::model::SubDomainSetting>>,
-        pub(crate) auto_sub_domain_creation_patterns:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) sub_domain_settings: std::option::Option<std::vec::Vec<crate::model::SubDomainSetting>>,
+        pub(crate) auto_sub_domain_creation_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) auto_sub_domain_iam_role: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1442,8 +1059,7 @@ pub mod create_domain_association_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The domain name for the domain association. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1452,8 +1068,7 @@ pub mod create_domain_association_input {
         }
         /// <p> The domain name for the domain association. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p> Enables the automated creation of subdomains for branches. </p>
         pub fn enable_auto_sub_domain(mut self, input: bool) -> Self {
@@ -1462,8 +1077,7 @@ pub mod create_domain_association_input {
         }
         /// <p> Enables the automated creation of subdomains for branches. </p>
         pub fn set_enable_auto_sub_domain(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_auto_sub_domain = input;
-            self
+            self.enable_auto_sub_domain = input; self
         }
         /// Appends an item to `sub_domain_settings`.
         ///
@@ -1472,39 +1086,28 @@ pub mod create_domain_association_input {
         /// <p> The setting for the subdomain. </p>
         pub fn sub_domain_settings(mut self, input: crate::model::SubDomainSetting) -> Self {
             let mut v = self.sub_domain_settings.unwrap_or_default();
-            v.push(input);
-            self.sub_domain_settings = Some(v);
-            self
+                            v.push(input);
+                            self.sub_domain_settings = Some(v);
+                            self
         }
         /// <p> The setting for the subdomain. </p>
-        pub fn set_sub_domain_settings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SubDomainSetting>>,
-        ) -> Self {
-            self.sub_domain_settings = input;
-            self
+        pub fn set_sub_domain_settings(mut self, input: std::option::Option<std::vec::Vec<crate::model::SubDomainSetting>>) -> Self {
+            self.sub_domain_settings = input; self
         }
         /// Appends an item to `auto_sub_domain_creation_patterns`.
         ///
         /// To override the contents of this collection use [`set_auto_sub_domain_creation_patterns`](Self::set_auto_sub_domain_creation_patterns).
         ///
         /// <p> Sets the branch patterns for automatic subdomain creation. </p>
-        pub fn auto_sub_domain_creation_patterns(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn auto_sub_domain_creation_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.auto_sub_domain_creation_patterns.unwrap_or_default();
-            v.push(input.into());
-            self.auto_sub_domain_creation_patterns = Some(v);
-            self
+                            v.push(input.into());
+                            self.auto_sub_domain_creation_patterns = Some(v);
+                            self
         }
         /// <p> Sets the branch patterns for automatic subdomain creation. </p>
-        pub fn set_auto_sub_domain_creation_patterns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.auto_sub_domain_creation_patterns = input;
-            self
+        pub fn set_auto_sub_domain_creation_patterns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.auto_sub_domain_creation_patterns = input; self
         }
         /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
         pub fn auto_sub_domain_iam_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1512,171 +1115,105 @@ pub mod create_domain_association_input {
             self
         }
         /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
-        pub fn set_auto_sub_domain_iam_role(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.auto_sub_domain_iam_role = input;
-            self
+        pub fn set_auto_sub_domain_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.auto_sub_domain_iam_role = input; self
         }
         /// Consumes the builder and constructs a [`CreateDomainAssociationInput`](crate::input::CreateDomainAssociationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::CreateDomainAssociationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::CreateDomainAssociationInput {
-                app_id: self.app_id,
-                domain_name: self.domain_name,
-                enable_auto_sub_domain: self.enable_auto_sub_domain,
-                sub_domain_settings: self.sub_domain_settings,
-                auto_sub_domain_creation_patterns: self.auto_sub_domain_creation_patterns,
-                auto_sub_domain_iam_role: self.auto_sub_domain_iam_role,
-            })
+        pub fn build(self) -> Result<crate::input::CreateDomainAssociationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateDomainAssociationInput {
+                    app_id: self.app_id
+                    ,
+                    domain_name: self.domain_name
+                    ,
+                    enable_auto_sub_domain: self.enable_auto_sub_domain
+                    ,
+                    sub_domain_settings: self.sub_domain_settings
+                    ,
+                    auto_sub_domain_creation_patterns: self.auto_sub_domain_creation_patterns
+                    ,
+                    auto_sub_domain_iam_role: self.auto_sub_domain_iam_role
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateDomainAssociationInput {
     /// Consumes the builder and constructs an Operation<[`CreateDomainAssociation`](crate::operation::CreateDomainAssociation)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateDomainAssociation,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateDomainAssociation, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateDomainAssociationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateDomainAssociationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_5 = &_input.app_id;
-                let input_5 = input_5.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_5,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_5 = input_5.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_5, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/apps/{appId}/domains", appId = app_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/domains", appId = app_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateDomainAssociationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateDomainAssociationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_domain_association(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_create_domain_association(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateDomainAssociation::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateDomainAssociation",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateDomainAssociation::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateDomainAssociation", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1688,7 +1225,7 @@ impl CreateDomainAssociationInput {
 
 /// See [`CreateWebhookInput`](crate::input::CreateWebhookInput).
 pub mod create_webhook_input {
-
+    
     /// A builder for [`CreateWebhookInput`](crate::input::CreateWebhookInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1704,8 +1241,7 @@ pub mod create_webhook_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The name for a branch that is part of an Amplify app. </p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1714,8 +1250,7 @@ pub mod create_webhook_input {
         }
         /// <p> The name for a branch that is part of an Amplify app. </p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch_name = input;
-            self
+            self.branch_name = input; self
         }
         /// <p> The description for a webhook. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1724,160 +1259,98 @@ pub mod create_webhook_input {
         }
         /// <p> The description for a webhook. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`CreateWebhookInput`](crate::input::CreateWebhookInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateWebhookInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CreateWebhookInput {
-                app_id: self.app_id,
-                branch_name: self.branch_name,
-                description: self.description,
-            })
+        pub fn build(self) -> Result<crate::input::CreateWebhookInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateWebhookInput {
+                    app_id: self.app_id
+                    ,
+                    branch_name: self.branch_name
+                    ,
+                    description: self.description
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateWebhookInput {
     /// Consumes the builder and constructs an Operation<[`CreateWebhook`](crate::operation::CreateWebhook)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateWebhook,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateWebhook, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateWebhookInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateWebhookInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_6 = &_input.app_id;
-                let input_6 = input_6.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_6,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_6 = input_6.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_6, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/apps/{appId}/webhooks", appId = app_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/webhooks", appId = app_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateWebhookInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateWebhookInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_webhook(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_webhook(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateWebhook::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateWebhook",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateWebhook::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateWebhook", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1889,7 +1362,7 @@ impl CreateWebhookInput {
 
 /// See [`DeleteAppInput`](crate::input::DeleteAppInput).
 pub mod delete_app_input {
-
+    
     /// A builder for [`DeleteAppInput`](crate::input::DeleteAppInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1903,89 +1376,53 @@ pub mod delete_app_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAppInput`](crate::input::DeleteAppInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteAppInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DeleteAppInput {
-                app_id: self.app_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteAppInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteAppInput {
+                    app_id: self.app_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteAppInput {
     /// Consumes the builder and constructs an Operation<[`DeleteApp`](crate::operation::DeleteApp)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteApp,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteApp, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteAppInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteAppInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_7 = &_input.app_id;
-                let input_7 = input_7.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_7,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_7 = input_7.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_7, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
                 write!(output, "/apps/{appId}", appId = app_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteAppInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteAppInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -1995,49 +1432,34 @@ impl DeleteAppInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteApp::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "DeleteApp",
-                    "amplify",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteApp::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteApp", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2049,7 +1471,7 @@ impl DeleteAppInput {
 
 /// See [`DeleteBackendEnvironmentInput`](crate::input::DeleteBackendEnvironmentInput).
 pub mod delete_backend_environment_input {
-
+    
     /// A builder for [`DeleteBackendEnvironmentInput`](crate::input::DeleteBackendEnvironmentInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2064,8 +1486,7 @@ pub mod delete_backend_environment_input {
         }
         /// <p> The unique ID of an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The name of a backend environment of an Amplify app. </p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2073,121 +1494,62 @@ pub mod delete_backend_environment_input {
             self
         }
         /// <p> The name of a backend environment of an Amplify app. </p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBackendEnvironmentInput`](crate::input::DeleteBackendEnvironmentInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteBackendEnvironmentInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteBackendEnvironmentInput {
-                app_id: self.app_id,
-                environment_name: self.environment_name,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteBackendEnvironmentInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteBackendEnvironmentInput {
+                    app_id: self.app_id
+                    ,
+                    environment_name: self.environment_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteBackendEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBackendEnvironment`](crate::operation::DeleteBackendEnvironment)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteBackendEnvironment,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteBackendEnvironment, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteBackendEnvironmentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteBackendEnvironmentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_8 = &_input.app_id;
-                let input_8 = input_8.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_8,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_8 = input_8.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_8, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
                 let input_9 = &_input.environment_name;
-                let input_9 = input_9.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "environment_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let environment_name = aws_smithy_http::label::fmt_string(
-                    input_9,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_9 = input_9.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("environment_name", "cannot be empty or unset"))?;
+                let environment_name = aws_smithy_http::label::fmt_string(input_9, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "environment_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/apps/{appId}/backendenvironments/{environmentName}",
-                    appId = app_id,
-                    environmentName = environment_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("environment_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/backendenvironments/{environmentName}", appId = app_id, environmentName = environment_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteBackendEnvironmentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteBackendEnvironmentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2197,51 +1559,34 @@ impl DeleteBackendEnvironmentInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteBackendEnvironment::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteBackendEnvironment",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteBackendEnvironment::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteBackendEnvironment", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2253,7 +1598,7 @@ impl DeleteBackendEnvironmentInput {
 
 /// See [`DeleteBranchInput`](crate::input::DeleteBranchInput).
 pub mod delete_branch_input {
-
+    
     /// A builder for [`DeleteBranchInput`](crate::input::DeleteBranchInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2268,8 +1613,7 @@ pub mod delete_branch_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The name for the branch. </p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2278,115 +1622,61 @@ pub mod delete_branch_input {
         }
         /// <p> The name for the branch. </p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch_name = input;
-            self
+            self.branch_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteBranchInput`](crate::input::DeleteBranchInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteBranchInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DeleteBranchInput {
-                app_id: self.app_id,
-                branch_name: self.branch_name,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteBranchInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteBranchInput {
+                    app_id: self.app_id
+                    ,
+                    branch_name: self.branch_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteBranchInput {
     /// Consumes the builder and constructs an Operation<[`DeleteBranch`](crate::operation::DeleteBranch)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteBranch,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteBranch, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteBranchInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteBranchInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_10 = &_input.app_id;
-                let input_10 = input_10.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_10,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_10 = input_10.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
                 let input_11 = &_input.branch_name;
-                let input_11 = input_11.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "branch_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let branch_name = aws_smithy_http::label::fmt_string(
-                    input_11,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_11 = input_11.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))?;
+                let branch_name = aws_smithy_http::label::fmt_string(input_11, aws_smithy_http::label::EncodingStrategy::Default);
                 if branch_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "branch_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/apps/{appId}/branches/{branchName}",
-                    appId = app_id,
-                    branchName = branch_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/branches/{branchName}", appId = app_id, branchName = branch_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteBranchInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteBranchInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2396,51 +1686,34 @@ impl DeleteBranchInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteBranch::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteBranch",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteBranch::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteBranch", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2452,7 +1725,7 @@ impl DeleteBranchInput {
 
 /// See [`DeleteDomainAssociationInput`](crate::input::DeleteDomainAssociationInput).
 pub mod delete_domain_association_input {
-
+    
     /// A builder for [`DeleteDomainAssociationInput`](crate::input::DeleteDomainAssociationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2467,8 +1740,7 @@ pub mod delete_domain_association_input {
         }
         /// <p> The unique id for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The name of the domain. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2477,117 +1749,61 @@ pub mod delete_domain_association_input {
         }
         /// <p> The name of the domain. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDomainAssociationInput`](crate::input::DeleteDomainAssociationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteDomainAssociationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteDomainAssociationInput {
-                app_id: self.app_id,
-                domain_name: self.domain_name,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteDomainAssociationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteDomainAssociationInput {
+                    app_id: self.app_id
+                    ,
+                    domain_name: self.domain_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteDomainAssociationInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDomainAssociation`](crate::operation::DeleteDomainAssociation)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteDomainAssociation,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteDomainAssociation, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteDomainAssociationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteDomainAssociationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_12 = &_input.app_id;
-                let input_12 = input_12.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_12,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_12 = input_12.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_12, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
                 let input_13 = &_input.domain_name;
-                let input_13 = input_13.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "domain_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let domain_name = aws_smithy_http::label::fmt_string(
-                    input_13,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_13 = input_13.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("domain_name", "cannot be empty or unset"))?;
+                let domain_name = aws_smithy_http::label::fmt_string(input_13, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "domain_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/apps/{appId}/domains/{domainName}",
-                    appId = app_id,
-                    domainName = domain_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("domain_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/domains/{domainName}", appId = app_id, domainName = domain_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteDomainAssociationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteDomainAssociationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2597,51 +1813,34 @@ impl DeleteDomainAssociationInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteDomainAssociation::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteDomainAssociation",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteDomainAssociation::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteDomainAssociation", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2653,7 +1852,7 @@ impl DeleteDomainAssociationInput {
 
 /// See [`DeleteJobInput`](crate::input::DeleteJobInput).
 pub mod delete_job_input {
-
+    
     /// A builder for [`DeleteJobInput`](crate::input::DeleteJobInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2669,8 +1868,7 @@ pub mod delete_job_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The name for the branch, for the job. </p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2679,8 +1877,7 @@ pub mod delete_job_input {
         }
         /// <p> The name for the branch, for the job. </p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch_name = input;
-            self
+            self.branch_name = input; self
         }
         /// <p> The unique ID for the job. </p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2689,136 +1886,69 @@ pub mod delete_job_input {
         }
         /// <p> The unique ID for the job. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteJobInput`](crate::input::DeleteJobInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteJobInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DeleteJobInput {
-                app_id: self.app_id,
-                branch_name: self.branch_name,
-                job_id: self.job_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteJobInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteJobInput {
+                    app_id: self.app_id
+                    ,
+                    branch_name: self.branch_name
+                    ,
+                    job_id: self.job_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteJobInput {
     /// Consumes the builder and constructs an Operation<[`DeleteJob`](crate::operation::DeleteJob)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteJob,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteJobInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_14 = &_input.app_id;
-                let input_14 = input_14.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_14,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_14 = input_14.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_14, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
                 let input_15 = &_input.branch_name;
-                let input_15 = input_15.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "branch_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let branch_name = aws_smithy_http::label::fmt_string(
-                    input_15,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_15 = input_15.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))?;
+                let branch_name = aws_smithy_http::label::fmt_string(input_15, aws_smithy_http::label::EncodingStrategy::Default);
                 if branch_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "branch_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))
+                            }
                 let input_16 = &_input.job_id;
-                let input_16 = input_16.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "job_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let job_id = aws_smithy_http::label::fmt_string(
-                    input_16,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_16 = input_16.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("job_id", "cannot be empty or unset"))?;
+                let job_id = aws_smithy_http::label::fmt_string(input_16, aws_smithy_http::label::EncodingStrategy::Default);
                 if job_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "job_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/apps/{appId}/branches/{branchName}/jobs/{jobId}",
-                    appId = app_id,
-                    branchName = branch_name,
-                    jobId = job_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("job_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/branches/{branchName}/jobs/{jobId}", appId = app_id, branchName = branch_name, jobId = job_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteJobInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteJobInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2828,49 +1958,34 @@ impl DeleteJobInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteJob::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "DeleteJob",
-                    "amplify",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteJob::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteJob", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2882,7 +1997,7 @@ impl DeleteJobInput {
 
 /// See [`DeleteWebhookInput`](crate::input::DeleteWebhookInput).
 pub mod delete_webhook_input {
-
+    
     /// A builder for [`DeleteWebhookInput`](crate::input::DeleteWebhookInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2896,90 +2011,53 @@ pub mod delete_webhook_input {
         }
         /// <p> The unique ID for a webhook. </p>
         pub fn set_webhook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.webhook_id = input;
-            self
+            self.webhook_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteWebhookInput`](crate::input::DeleteWebhookInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteWebhookInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DeleteWebhookInput {
-                webhook_id: self.webhook_id,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteWebhookInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteWebhookInput {
+                    webhook_id: self.webhook_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteWebhookInput {
     /// Consumes the builder and constructs an Operation<[`DeleteWebhook`](crate::operation::DeleteWebhook)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteWebhook,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteWebhook, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteWebhookInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteWebhookInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_17 = &_input.webhook_id;
-                let input_17 = input_17.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "webhook_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let webhook_id = aws_smithy_http::label::fmt_string(
-                    input_17,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_17 = input_17.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("webhook_id", "cannot be empty or unset"))?;
+                let webhook_id = aws_smithy_http::label::fmt_string(input_17, aws_smithy_http::label::EncodingStrategy::Default);
                 if webhook_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "webhook_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/webhooks/{webhookId}", webhookId = webhook_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("webhook_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/webhooks/{webhookId}", webhookId = webhook_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteWebhookInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteWebhookInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -2989,51 +2067,34 @@ impl DeleteWebhookInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteWebhook::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteWebhook",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteWebhook::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteWebhook", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3045,7 +2106,7 @@ impl DeleteWebhookInput {
 
 /// See [`GenerateAccessLogsInput`](crate::input::GenerateAccessLogsInput).
 pub mod generate_access_logs_input {
-
+    
     /// A builder for [`GenerateAccessLogsInput`](crate::input::GenerateAccessLogsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3061,12 +2122,8 @@ pub mod generate_access_logs_input {
             self
         }
         /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3074,12 +2131,8 @@ pub mod generate_access_logs_input {
             self
         }
         /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p> The name of the domain. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3088,8 +2141,7 @@ pub mod generate_access_logs_input {
         }
         /// <p> The name of the domain. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3098,163 +2150,100 @@ pub mod generate_access_logs_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// Consumes the builder and constructs a [`GenerateAccessLogsInput`](crate::input::GenerateAccessLogsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GenerateAccessLogsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GenerateAccessLogsInput {
-                start_time: self.start_time,
-                end_time: self.end_time,
-                domain_name: self.domain_name,
-                app_id: self.app_id,
-            })
+        pub fn build(self) -> Result<crate::input::GenerateAccessLogsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GenerateAccessLogsInput {
+                    start_time: self.start_time
+                    ,
+                    end_time: self.end_time
+                    ,
+                    domain_name: self.domain_name
+                    ,
+                    app_id: self.app_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GenerateAccessLogsInput {
     /// Consumes the builder and constructs an Operation<[`GenerateAccessLogs`](crate::operation::GenerateAccessLogs)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GenerateAccessLogs,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GenerateAccessLogs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GenerateAccessLogsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GenerateAccessLogsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_18 = &_input.app_id;
-                let input_18 = input_18.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_18,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_18 = input_18.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_18, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/apps/{appId}/accesslogs", appId = app_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/accesslogs", appId = app_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GenerateAccessLogsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GenerateAccessLogsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_generate_access_logs(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_generate_access_logs(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GenerateAccessLogs::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GenerateAccessLogs",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GenerateAccessLogs::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GenerateAccessLogs", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3266,7 +2255,7 @@ impl GenerateAccessLogsInput {
 
 /// See [`GetAppInput`](crate::input::GetAppInput).
 pub mod get_app_input {
-
+    
     /// A builder for [`GetAppInput`](crate::input::GetAppInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3280,89 +2269,53 @@ pub mod get_app_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// Consumes the builder and constructs a [`GetAppInput`](crate::input::GetAppInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetAppInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetAppInput {
-                app_id: self.app_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetAppInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetAppInput {
+                    app_id: self.app_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetAppInput {
     /// Consumes the builder and constructs an Operation<[`GetApp`](crate::operation::GetApp)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetApp,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetApp, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetAppInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetAppInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_19 = &_input.app_id;
-                let input_19 = input_19.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_19,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_19 = input_19.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_19, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
                 write!(output, "/apps/{appId}", appId = app_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetAppInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetAppInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3372,48 +2325,34 @@ impl GetAppInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::GetApp::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "GetApp", "amplify",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetApp::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetApp", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3425,7 +2364,7 @@ impl GetAppInput {
 
 /// See [`GetArtifactUrlInput`](crate::input::GetArtifactUrlInput).
 pub mod get_artifact_url_input {
-
+    
     /// A builder for [`GetArtifactUrlInput`](crate::input::GetArtifactUrlInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3439,90 +2378,53 @@ pub mod get_artifact_url_input {
         }
         /// <p> The unique ID for an artifact. </p>
         pub fn set_artifact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.artifact_id = input;
-            self
+            self.artifact_id = input; self
         }
         /// Consumes the builder and constructs a [`GetArtifactUrlInput`](crate::input::GetArtifactUrlInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetArtifactUrlInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetArtifactUrlInput {
-                artifact_id: self.artifact_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetArtifactUrlInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetArtifactUrlInput {
+                    artifact_id: self.artifact_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetArtifactUrlInput {
     /// Consumes the builder and constructs an Operation<[`GetArtifactUrl`](crate::operation::GetArtifactUrl)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetArtifactUrl,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetArtifactUrl, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetArtifactUrlInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetArtifactUrlInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_20 = &_input.artifact_id;
-                let input_20 = input_20.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "artifact_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let artifact_id = aws_smithy_http::label::fmt_string(
-                    input_20,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_20 = input_20.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("artifact_id", "cannot be empty or unset"))?;
+                let artifact_id = aws_smithy_http::label::fmt_string(input_20, aws_smithy_http::label::EncodingStrategy::Default);
                 if artifact_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "artifact_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/artifacts/{artifactId}", artifactId = artifact_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("artifact_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/artifacts/{artifactId}", artifactId = artifact_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetArtifactUrlInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetArtifactUrlInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3532,51 +2434,34 @@ impl GetArtifactUrlInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetArtifactUrl::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetArtifactUrl",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetArtifactUrl::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetArtifactUrl", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3588,7 +2473,7 @@ impl GetArtifactUrlInput {
 
 /// See [`GetBackendEnvironmentInput`](crate::input::GetBackendEnvironmentInput).
 pub mod get_backend_environment_input {
-
+    
     /// A builder for [`GetBackendEnvironmentInput`](crate::input::GetBackendEnvironmentInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3603,8 +2488,7 @@ pub mod get_backend_environment_input {
         }
         /// <p> The unique id for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The name for the backend environment. </p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3612,121 +2496,62 @@ pub mod get_backend_environment_input {
             self
         }
         /// <p> The name for the backend environment. </p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
         /// Consumes the builder and constructs a [`GetBackendEnvironmentInput`](crate::input::GetBackendEnvironmentInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetBackendEnvironmentInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetBackendEnvironmentInput {
-                app_id: self.app_id,
-                environment_name: self.environment_name,
-            })
+        pub fn build(self) -> Result<crate::input::GetBackendEnvironmentInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetBackendEnvironmentInput {
+                    app_id: self.app_id
+                    ,
+                    environment_name: self.environment_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetBackendEnvironmentInput {
     /// Consumes the builder and constructs an Operation<[`GetBackendEnvironment`](crate::operation::GetBackendEnvironment)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetBackendEnvironment,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetBackendEnvironment, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetBackendEnvironmentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetBackendEnvironmentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_21 = &_input.app_id;
-                let input_21 = input_21.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_21,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_21 = input_21.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_21, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
                 let input_22 = &_input.environment_name;
-                let input_22 = input_22.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "environment_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let environment_name = aws_smithy_http::label::fmt_string(
-                    input_22,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_22 = input_22.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("environment_name", "cannot be empty or unset"))?;
+                let environment_name = aws_smithy_http::label::fmt_string(input_22, aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "environment_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/apps/{appId}/backendenvironments/{environmentName}",
-                    appId = app_id,
-                    environmentName = environment_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("environment_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/backendenvironments/{environmentName}", appId = app_id, environmentName = environment_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetBackendEnvironmentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetBackendEnvironmentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3736,51 +2561,34 @@ impl GetBackendEnvironmentInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetBackendEnvironment::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetBackendEnvironment",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetBackendEnvironment::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetBackendEnvironment", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3792,7 +2600,7 @@ impl GetBackendEnvironmentInput {
 
 /// See [`GetBranchInput`](crate::input::GetBranchInput).
 pub mod get_branch_input {
-
+    
     /// A builder for [`GetBranchInput`](crate::input::GetBranchInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3807,8 +2615,7 @@ pub mod get_branch_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The name for the branch. </p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3817,115 +2624,61 @@ pub mod get_branch_input {
         }
         /// <p> The name for the branch. </p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch_name = input;
-            self
+            self.branch_name = input; self
         }
         /// Consumes the builder and constructs a [`GetBranchInput`](crate::input::GetBranchInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetBranchInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetBranchInput {
-                app_id: self.app_id,
-                branch_name: self.branch_name,
-            })
+        pub fn build(self) -> Result<crate::input::GetBranchInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetBranchInput {
+                    app_id: self.app_id
+                    ,
+                    branch_name: self.branch_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetBranchInput {
     /// Consumes the builder and constructs an Operation<[`GetBranch`](crate::operation::GetBranch)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetBranch,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetBranch, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetBranchInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetBranchInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_23 = &_input.app_id;
-                let input_23 = input_23.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_23,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_23 = input_23.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_23, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
                 let input_24 = &_input.branch_name;
-                let input_24 = input_24.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "branch_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let branch_name = aws_smithy_http::label::fmt_string(
-                    input_24,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_24 = input_24.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))?;
+                let branch_name = aws_smithy_http::label::fmt_string(input_24, aws_smithy_http::label::EncodingStrategy::Default);
                 if branch_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "branch_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/apps/{appId}/branches/{branchName}",
-                    appId = app_id,
-                    branchName = branch_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/branches/{branchName}", appId = app_id, branchName = branch_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetBranchInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetBranchInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -3935,49 +2688,34 @@ impl GetBranchInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::GetBranch::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "GetBranch",
-                    "amplify",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetBranch::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetBranch", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3989,7 +2727,7 @@ impl GetBranchInput {
 
 /// See [`GetDomainAssociationInput`](crate::input::GetDomainAssociationInput).
 pub mod get_domain_association_input {
-
+    
     /// A builder for [`GetDomainAssociationInput`](crate::input::GetDomainAssociationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4004,8 +2742,7 @@ pub mod get_domain_association_input {
         }
         /// <p> The unique id for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The name of the domain. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4014,117 +2751,61 @@ pub mod get_domain_association_input {
         }
         /// <p> The name of the domain. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// Consumes the builder and constructs a [`GetDomainAssociationInput`](crate::input::GetDomainAssociationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetDomainAssociationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetDomainAssociationInput {
-                app_id: self.app_id,
-                domain_name: self.domain_name,
-            })
+        pub fn build(self) -> Result<crate::input::GetDomainAssociationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetDomainAssociationInput {
+                    app_id: self.app_id
+                    ,
+                    domain_name: self.domain_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetDomainAssociationInput {
     /// Consumes the builder and constructs an Operation<[`GetDomainAssociation`](crate::operation::GetDomainAssociation)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetDomainAssociation,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetDomainAssociation, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetDomainAssociationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetDomainAssociationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_25 = &_input.app_id;
-                let input_25 = input_25.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_25,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_25 = input_25.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_25, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
                 let input_26 = &_input.domain_name;
-                let input_26 = input_26.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "domain_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let domain_name = aws_smithy_http::label::fmt_string(
-                    input_26,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_26 = input_26.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("domain_name", "cannot be empty or unset"))?;
+                let domain_name = aws_smithy_http::label::fmt_string(input_26, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "domain_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/apps/{appId}/domains/{domainName}",
-                    appId = app_id,
-                    domainName = domain_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("domain_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/domains/{domainName}", appId = app_id, domainName = domain_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetDomainAssociationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetDomainAssociationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -4134,51 +2815,34 @@ impl GetDomainAssociationInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetDomainAssociation::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetDomainAssociation",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetDomainAssociation::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetDomainAssociation", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4190,7 +2854,7 @@ impl GetDomainAssociationInput {
 
 /// See [`GetJobInput`](crate::input::GetJobInput).
 pub mod get_job_input {
-
+    
     /// A builder for [`GetJobInput`](crate::input::GetJobInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4206,8 +2870,7 @@ pub mod get_job_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The branch name for the job. </p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4216,8 +2879,7 @@ pub mod get_job_input {
         }
         /// <p> The branch name for the job. </p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch_name = input;
-            self
+            self.branch_name = input; self
         }
         /// <p> The unique ID for the job. </p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4226,136 +2888,69 @@ pub mod get_job_input {
         }
         /// <p> The unique ID for the job. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`GetJobInput`](crate::input::GetJobInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetJobInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetJobInput {
-                app_id: self.app_id,
-                branch_name: self.branch_name,
-                job_id: self.job_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetJobInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetJobInput {
+                    app_id: self.app_id
+                    ,
+                    branch_name: self.branch_name
+                    ,
+                    job_id: self.job_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetJobInput {
     /// Consumes the builder and constructs an Operation<[`GetJob`](crate::operation::GetJob)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetJob,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetJobInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_27 = &_input.app_id;
-                let input_27 = input_27.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_27,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_27 = input_27.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_27, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
                 let input_28 = &_input.branch_name;
-                let input_28 = input_28.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "branch_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let branch_name = aws_smithy_http::label::fmt_string(
-                    input_28,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_28 = input_28.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))?;
+                let branch_name = aws_smithy_http::label::fmt_string(input_28, aws_smithy_http::label::EncodingStrategy::Default);
                 if branch_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "branch_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))
+                            }
                 let input_29 = &_input.job_id;
-                let input_29 = input_29.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "job_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let job_id = aws_smithy_http::label::fmt_string(
-                    input_29,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_29 = input_29.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("job_id", "cannot be empty or unset"))?;
+                let job_id = aws_smithy_http::label::fmt_string(input_29, aws_smithy_http::label::EncodingStrategy::Default);
                 if job_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "job_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/apps/{appId}/branches/{branchName}/jobs/{jobId}",
-                    appId = app_id,
-                    branchName = branch_name,
-                    jobId = job_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("job_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/branches/{branchName}/jobs/{jobId}", appId = app_id, branchName = branch_name, jobId = job_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetJobInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetJobInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -4365,48 +2960,34 @@ impl GetJobInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::GetJob::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "GetJob", "amplify",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetJob::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetJob", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4418,7 +2999,7 @@ impl GetJobInput {
 
 /// See [`GetWebhookInput`](crate::input::GetWebhookInput).
 pub mod get_webhook_input {
-
+    
     /// A builder for [`GetWebhookInput`](crate::input::GetWebhookInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4432,90 +3013,53 @@ pub mod get_webhook_input {
         }
         /// <p> The unique ID for a webhook. </p>
         pub fn set_webhook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.webhook_id = input;
-            self
+            self.webhook_id = input; self
         }
         /// Consumes the builder and constructs a [`GetWebhookInput`](crate::input::GetWebhookInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetWebhookInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetWebhookInput {
-                webhook_id: self.webhook_id,
-            })
+        pub fn build(self) -> Result<crate::input::GetWebhookInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetWebhookInput {
+                    webhook_id: self.webhook_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetWebhookInput {
     /// Consumes the builder and constructs an Operation<[`GetWebhook`](crate::operation::GetWebhook)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetWebhook,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetWebhook, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetWebhookInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetWebhookInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_30 = &_input.webhook_id;
-                let input_30 = input_30.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "webhook_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let webhook_id = aws_smithy_http::label::fmt_string(
-                    input_30,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_30 = input_30.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("webhook_id", "cannot be empty or unset"))?;
+                let webhook_id = aws_smithy_http::label::fmt_string(input_30, aws_smithy_http::label::EncodingStrategy::Default);
                 if webhook_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "webhook_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/webhooks/{webhookId}", webhookId = webhook_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("webhook_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/webhooks/{webhookId}", webhookId = webhook_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetWebhookInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetWebhookInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -4525,51 +3069,34 @@ impl GetWebhookInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetWebhook::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetWebhook",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetWebhook::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetWebhook", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4581,7 +3108,7 @@ impl GetWebhookInput {
 
 /// See [`ListAppsInput`](crate::input::ListAppsInput).
 pub mod list_apps_input {
-
+    
     /// A builder for [`ListAppsInput`](crate::input::ListAppsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4596,8 +3123,7 @@ pub mod list_apps_input {
         }
         /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> The maximum number of records to list in a single response. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4606,89 +3132,62 @@ pub mod list_apps_input {
         }
         /// <p> The maximum number of records to list in a single response. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListAppsInput`](crate::input::ListAppsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListAppsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListAppsInput {
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::ListAppsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListAppsInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListAppsInput {
     /// Consumes the builder and constructs an Operation<[`ListApps`](crate::operation::ListApps)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListApps,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListApps, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListAppsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListAppsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/apps").expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListAppsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListAppsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_31) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_31));
                     }
                 }
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListAppsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListAppsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4699,48 +3198,34 @@ impl ListAppsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::ListApps::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "ListApps", "amplify",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListApps::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListApps", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4752,7 +3237,7 @@ impl ListAppsInput {
 
 /// See [`ListArtifactsInput`](crate::input::ListArtifactsInput).
 pub mod list_artifacts_input {
-
+    
     /// A builder for [`ListArtifactsInput`](crate::input::ListArtifactsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4770,8 +3255,7 @@ pub mod list_artifacts_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The name of a branch that is part of an Amplify app. </p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4780,8 +3264,7 @@ pub mod list_artifacts_input {
         }
         /// <p> The name of a branch that is part of an Amplify app. </p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch_name = input;
-            self
+            self.branch_name = input; self
         }
         /// <p> The unique ID for a job. </p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4790,8 +3273,7 @@ pub mod list_artifacts_input {
         }
         /// <p> The unique ID for a job. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4800,8 +3282,7 @@ pub mod list_artifacts_input {
         }
         /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> The maximum number of records to list in a single response. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4810,156 +3291,86 @@ pub mod list_artifacts_input {
         }
         /// <p> The maximum number of records to list in a single response. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListArtifactsInput`](crate::input::ListArtifactsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListArtifactsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListArtifactsInput {
-                app_id: self.app_id,
-                branch_name: self.branch_name,
-                job_id: self.job_id,
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::ListArtifactsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListArtifactsInput {
+                    app_id: self.app_id
+                    ,
+                    branch_name: self.branch_name
+                    ,
+                    job_id: self.job_id
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListArtifactsInput {
     /// Consumes the builder and constructs an Operation<[`ListArtifacts`](crate::operation::ListArtifacts)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListArtifacts,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListArtifacts, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListArtifactsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListArtifactsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_32 = &_input.app_id;
-                let input_32 = input_32.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_32,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_32 = input_32.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_32, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
                 let input_33 = &_input.branch_name;
-                let input_33 = input_33.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "branch_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let branch_name = aws_smithy_http::label::fmt_string(
-                    input_33,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_33 = input_33.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))?;
+                let branch_name = aws_smithy_http::label::fmt_string(input_33, aws_smithy_http::label::EncodingStrategy::Default);
                 if branch_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "branch_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))
+                            }
                 let input_34 = &_input.job_id;
-                let input_34 = input_34.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "job_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let job_id = aws_smithy_http::label::fmt_string(
-                    input_34,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_34 = input_34.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("job_id", "cannot be empty or unset"))?;
+                let job_id = aws_smithy_http::label::fmt_string(input_34, aws_smithy_http::label::EncodingStrategy::Default);
                 if job_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "job_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/apps/{appId}/branches/{branchName}/jobs/{jobId}/artifacts",
-                    appId = app_id,
-                    branchName = branch_name,
-                    jobId = job_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("job_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/branches/{branchName}/jobs/{jobId}/artifacts", appId = app_id, branchName = branch_name, jobId = job_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListArtifactsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListArtifactsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_35) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_35));
                     }
                 }
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListArtifactsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListArtifactsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -4970,51 +3381,34 @@ impl ListArtifactsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListArtifacts::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListArtifacts",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListArtifacts::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListArtifacts", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5026,7 +3420,7 @@ impl ListArtifactsInput {
 
 /// See [`ListBackendEnvironmentsInput`](crate::input::ListBackendEnvironmentsInput).
 pub mod list_backend_environments_input {
-
+    
     /// A builder for [`ListBackendEnvironmentsInput`](crate::input::ListBackendEnvironmentsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5043,8 +3437,7 @@ pub mod list_backend_environments_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The name of the backend environment </p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5052,12 +3445,8 @@ pub mod list_backend_environments_input {
             self
         }
         /// <p> The name of the backend environment </p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
         /// <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5066,8 +3455,7 @@ pub mod list_backend_environments_input {
         }
         /// <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> The maximum number of records to list in a single response. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5076,121 +3464,77 @@ pub mod list_backend_environments_input {
         }
         /// <p> The maximum number of records to list in a single response. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListBackendEnvironmentsInput`](crate::input::ListBackendEnvironmentsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListBackendEnvironmentsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListBackendEnvironmentsInput {
-                app_id: self.app_id,
-                environment_name: self.environment_name,
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::ListBackendEnvironmentsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListBackendEnvironmentsInput {
+                    app_id: self.app_id
+                    ,
+                    environment_name: self.environment_name
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListBackendEnvironmentsInput {
     /// Consumes the builder and constructs an Operation<[`ListBackendEnvironments`](crate::operation::ListBackendEnvironments)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListBackendEnvironments,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListBackendEnvironments, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListBackendEnvironmentsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListBackendEnvironmentsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_36 = &_input.app_id;
-                let input_36 = input_36.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_36,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_36 = input_36.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_36, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/apps/{appId}/backendenvironments", appId = app_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/backendenvironments", appId = app_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListBackendEnvironmentsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListBackendEnvironmentsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_37) = &_input.environment_name {
-                    {
-                        query.push_kv(
-                            "environmentName",
-                            &aws_smithy_http::query::fmt_string(&inner_37),
-                        );
+                     {
+                        query.push_kv("environmentName", &aws_smithy_http::query::fmt_string(&inner_37));
                     }
                 }
                 if let Some(inner_38) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_38));
                     }
                 }
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListBackendEnvironmentsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListBackendEnvironmentsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5201,51 +3545,34 @@ impl ListBackendEnvironmentsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListBackendEnvironments::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListBackendEnvironments",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListBackendEnvironments::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListBackendEnvironments", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5257,7 +3584,7 @@ impl ListBackendEnvironmentsInput {
 
 /// See [`ListBranchesInput`](crate::input::ListBranchesInput).
 pub mod list_branches_input {
-
+    
     /// A builder for [`ListBranchesInput`](crate::input::ListBranchesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5273,8 +3600,7 @@ pub mod list_branches_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5283,8 +3609,7 @@ pub mod list_branches_input {
         }
         /// <p> A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> The maximum number of records to list in a single response. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5293,110 +3618,70 @@ pub mod list_branches_input {
         }
         /// <p> The maximum number of records to list in a single response. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListBranchesInput`](crate::input::ListBranchesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListBranchesInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListBranchesInput {
-                app_id: self.app_id,
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::ListBranchesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListBranchesInput {
+                    app_id: self.app_id
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListBranchesInput {
     /// Consumes the builder and constructs an Operation<[`ListBranches`](crate::operation::ListBranches)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListBranches,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListBranches, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListBranchesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListBranchesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_39 = &_input.app_id;
-                let input_39 = input_39.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_39,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_39 = input_39.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_39, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/apps/{appId}/branches", appId = app_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/branches", appId = app_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListBranchesInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListBranchesInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_40) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
                     }
                 }
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListBranchesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListBranchesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5407,51 +3692,34 @@ impl ListBranchesInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListBranches::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListBranches",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListBranches::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListBranches", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5463,7 +3731,7 @@ impl ListBranchesInput {
 
 /// See [`ListDomainAssociationsInput`](crate::input::ListDomainAssociationsInput).
 pub mod list_domain_associations_input {
-
+    
     /// A builder for [`ListDomainAssociationsInput`](crate::input::ListDomainAssociationsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5479,8 +3747,7 @@ pub mod list_domain_associations_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5489,8 +3756,7 @@ pub mod list_domain_associations_input {
         }
         /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> The maximum number of records to list in a single response. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5499,112 +3765,70 @@ pub mod list_domain_associations_input {
         }
         /// <p> The maximum number of records to list in a single response. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListDomainAssociationsInput`](crate::input::ListDomainAssociationsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListDomainAssociationsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListDomainAssociationsInput {
-                app_id: self.app_id,
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::ListDomainAssociationsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListDomainAssociationsInput {
+                    app_id: self.app_id
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListDomainAssociationsInput {
     /// Consumes the builder and constructs an Operation<[`ListDomainAssociations`](crate::operation::ListDomainAssociations)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListDomainAssociations,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListDomainAssociations, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListDomainAssociationsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListDomainAssociationsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_41 = &_input.app_id;
-                let input_41 = input_41.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_41,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_41 = input_41.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_41, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/apps/{appId}/domains", appId = app_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/domains", appId = app_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListDomainAssociationsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListDomainAssociationsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_42) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_42));
                     }
                 }
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListDomainAssociationsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListDomainAssociationsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5615,51 +3839,34 @@ impl ListDomainAssociationsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListDomainAssociations::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListDomainAssociations",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListDomainAssociations::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListDomainAssociations", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5671,7 +3878,7 @@ impl ListDomainAssociationsInput {
 
 /// See [`ListJobsInput`](crate::input::ListJobsInput).
 pub mod list_jobs_input {
-
+    
     /// A builder for [`ListJobsInput`](crate::input::ListJobsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5688,8 +3895,7 @@ pub mod list_jobs_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The name for a branch. </p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5698,8 +3904,7 @@ pub mod list_jobs_input {
         }
         /// <p> The name for a branch. </p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch_name = input;
-            self
+            self.branch_name = input; self
         }
         /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned in a result, pass its value in here to list more steps. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5708,8 +3913,7 @@ pub mod list_jobs_input {
         }
         /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned in a result, pass its value in here to list more steps. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> The maximum number of records to list in a single response. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -5718,135 +3922,78 @@ pub mod list_jobs_input {
         }
         /// <p> The maximum number of records to list in a single response. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListJobsInput`](crate::input::ListJobsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListJobsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListJobsInput {
-                app_id: self.app_id,
-                branch_name: self.branch_name,
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::ListJobsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListJobsInput {
+                    app_id: self.app_id
+                    ,
+                    branch_name: self.branch_name
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListJobs`](crate::operation::ListJobs)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListJobs,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListJobs, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListJobsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListJobsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_43 = &_input.app_id;
-                let input_43 = input_43.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_43,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_43 = input_43.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_43, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
                 let input_44 = &_input.branch_name;
-                let input_44 = input_44.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "branch_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let branch_name = aws_smithy_http::label::fmt_string(
-                    input_44,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_44 = input_44.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))?;
+                let branch_name = aws_smithy_http::label::fmt_string(input_44, aws_smithy_http::label::EncodingStrategy::Default);
                 if branch_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "branch_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/apps/{appId}/branches/{branchName}/jobs",
-                    appId = app_id,
-                    branchName = branch_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/branches/{branchName}/jobs", appId = app_id, branchName = branch_name).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListJobsInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListJobsInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_45) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_45));
                     }
                 }
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListJobsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListJobsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -5857,48 +4004,34 @@ impl ListJobsInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::ListJobs::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "ListJobs", "amplify",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListJobs::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListJobs", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5910,7 +4043,7 @@ impl ListJobsInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-
+    
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5924,92 +4057,53 @@ pub mod list_tags_for_resource_input {
         }
         /// <p> The Amazon Resource Name (ARN) to use to list tags. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListTagsForResourceInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn,
-            })
+        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListTagsForResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTagsForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTagsForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_46 = &_input.resource_arn;
-                let input_46 = input_46.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_46,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_46 = input_46.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_46, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListTagsForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListTagsForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("GET").uri(uri))
@@ -6019,51 +4113,34 @@ impl ListTagsForResourceInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTagsForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTagsForResource",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6075,7 +4152,7 @@ impl ListTagsForResourceInput {
 
 /// See [`ListWebhooksInput`](crate::input::ListWebhooksInput).
 pub mod list_webhooks_input {
-
+    
     /// A builder for [`ListWebhooksInput`](crate::input::ListWebhooksInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6091,8 +4168,7 @@ pub mod list_webhooks_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6101,8 +4177,7 @@ pub mod list_webhooks_input {
         }
         /// <p> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> The maximum number of records to list in a single response. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -6111,110 +4186,70 @@ pub mod list_webhooks_input {
         }
         /// <p> The maximum number of records to list in a single response. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListWebhooksInput`](crate::input::ListWebhooksInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListWebhooksInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListWebhooksInput {
-                app_id: self.app_id,
-                next_token: self.next_token,
-                max_results: self.max_results.unwrap_or_default(),
-            })
+        pub fn build(self) -> Result<crate::input::ListWebhooksInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListWebhooksInput {
+                    app_id: self.app_id
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                        .unwrap_or_default()
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListWebhooksInput {
     /// Consumes the builder and constructs an Operation<[`ListWebhooks`](crate::operation::ListWebhooks)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListWebhooks,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListWebhooks, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListWebhooksInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListWebhooksInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_47 = &_input.app_id;
-                let input_47 = input_47.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_47,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_47 = input_47.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_47, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/apps/{appId}/webhooks", appId = app_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/webhooks", appId = app_id).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::ListWebhooksInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::ListWebhooksInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 if let Some(inner_48) = &_input.next_token {
-                    {
+                     {
                         query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_48));
                     }
                 }
                 if _input.max_results != 0 {
-                    query.push_kv(
-                        "maxResults",
-                        aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
-                    );
+                    query.push_kv("maxResults", aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListWebhooksInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListWebhooksInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -6225,51 +4260,34 @@ impl ListWebhooksInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListWebhooks::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListWebhooks",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListWebhooks::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListWebhooks", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6281,7 +4299,7 @@ impl ListWebhooksInput {
 
 /// See [`StartDeploymentInput`](crate::input::StartDeploymentInput).
 pub mod start_deployment_input {
-
+    
     /// A builder for [`StartDeploymentInput`](crate::input::StartDeploymentInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6298,8 +4316,7 @@ pub mod start_deployment_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The name for the branch, for the job. </p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6308,8 +4325,7 @@ pub mod start_deployment_input {
         }
         /// <p> The name for the branch, for the job. </p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch_name = input;
-            self
+            self.branch_name = input; self
         }
         /// <p> The job ID for this deployment, generated by the create deployment request. </p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6318,8 +4334,7 @@ pub mod start_deployment_input {
         }
         /// <p> The job ID for this deployment, generated by the create deployment request. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p> The source URL for this deployment, used when calling start deployment without create deployment. The source URL can be any HTTP GET URL that is publicly accessible and downloads a single .zip file. </p>
         pub fn source_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6328,185 +4343,106 @@ pub mod start_deployment_input {
         }
         /// <p> The source URL for this deployment, used when calling start deployment without create deployment. The source URL can be any HTTP GET URL that is publicly accessible and downloads a single .zip file. </p>
         pub fn set_source_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_url = input;
-            self
+            self.source_url = input; self
         }
         /// Consumes the builder and constructs a [`StartDeploymentInput`](crate::input::StartDeploymentInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::StartDeploymentInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::StartDeploymentInput {
-                app_id: self.app_id,
-                branch_name: self.branch_name,
-                job_id: self.job_id,
-                source_url: self.source_url,
-            })
+        pub fn build(self) -> Result<crate::input::StartDeploymentInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::StartDeploymentInput {
+                    app_id: self.app_id
+                    ,
+                    branch_name: self.branch_name
+                    ,
+                    job_id: self.job_id
+                    ,
+                    source_url: self.source_url
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StartDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`StartDeployment`](crate::operation::StartDeployment)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StartDeployment,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartDeployment, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StartDeploymentInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::StartDeploymentInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_49 = &_input.app_id;
-                let input_49 = input_49.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_49,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_49 = input_49.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_49, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
                 let input_50 = &_input.branch_name;
-                let input_50 = input_50.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "branch_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let branch_name = aws_smithy_http::label::fmt_string(
-                    input_50,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_50 = input_50.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))?;
+                let branch_name = aws_smithy_http::label::fmt_string(input_50, aws_smithy_http::label::EncodingStrategy::Default);
                 if branch_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "branch_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/apps/{appId}/branches/{branchName}/deployments/start",
-                    appId = app_id,
-                    branchName = branch_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/branches/{branchName}/deployments/start", appId = app_id, branchName = branch_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::StartDeploymentInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::StartDeploymentInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_deployment(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_start_deployment(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StartDeployment::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StartDeployment",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartDeployment::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartDeployment", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6518,7 +4454,7 @@ impl StartDeploymentInput {
 
 /// See [`StartJobInput`](crate::input::StartJobInput).
 pub mod start_job_input {
-
+    
     /// A builder for [`StartJobInput`](crate::input::StartJobInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6539,8 +4475,7 @@ pub mod start_job_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The branch name for the job. </p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6549,8 +4484,7 @@ pub mod start_job_input {
         }
         /// <p> The branch name for the job. </p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch_name = input;
-            self
+            self.branch_name = input; self
         }
         /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6559,8 +4493,7 @@ pub mod start_job_input {
         }
         /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
         pub fn job_type(mut self, input: crate::model::JobType) -> Self {
@@ -6569,8 +4502,7 @@ pub mod start_job_input {
         }
         /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
-            self.job_type = input;
-            self
+            self.job_type = input; self
         }
         /// <p> A descriptive reason for starting this job. </p>
         pub fn job_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6579,8 +4511,7 @@ pub mod start_job_input {
         }
         /// <p> A descriptive reason for starting this job. </p>
         pub fn set_job_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_reason = input;
-            self
+            self.job_reason = input; self
         }
         /// <p> The commit ID from a third-party repository provider for the job. </p>
         pub fn commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6589,8 +4520,7 @@ pub mod start_job_input {
         }
         /// <p> The commit ID from a third-party repository provider for the job. </p>
         pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.commit_id = input;
-            self
+            self.commit_id = input; self
         }
         /// <p> The commit message from a third-party repository provider for the job. </p>
         pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6598,12 +4528,8 @@ pub mod start_job_input {
             self
         }
         /// <p> The commit message from a third-party repository provider for the job. </p>
-        pub fn set_commit_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.commit_message = input;
-            self
+        pub fn set_commit_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.commit_message = input; self
         }
         /// <p> The commit date and time for the job. </p>
         pub fn commit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6611,190 +4537,115 @@ pub mod start_job_input {
             self
         }
         /// <p> The commit date and time for the job. </p>
-        pub fn set_commit_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.commit_time = input;
-            self
+        pub fn set_commit_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.commit_time = input; self
         }
         /// Consumes the builder and constructs a [`StartJobInput`](crate::input::StartJobInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::StartJobInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::StartJobInput {
-                app_id: self.app_id,
-                branch_name: self.branch_name,
-                job_id: self.job_id,
-                job_type: self.job_type,
-                job_reason: self.job_reason,
-                commit_id: self.commit_id,
-                commit_message: self.commit_message,
-                commit_time: self.commit_time,
-            })
+        pub fn build(self) -> Result<crate::input::StartJobInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::StartJobInput {
+                    app_id: self.app_id
+                    ,
+                    branch_name: self.branch_name
+                    ,
+                    job_id: self.job_id
+                    ,
+                    job_type: self.job_type
+                    ,
+                    job_reason: self.job_reason
+                    ,
+                    commit_id: self.commit_id
+                    ,
+                    commit_message: self.commit_message
+                    ,
+                    commit_time: self.commit_time
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StartJobInput {
     /// Consumes the builder and constructs an Operation<[`StartJob`](crate::operation::StartJob)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StartJob,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StartJobInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::StartJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_51 = &_input.app_id;
-                let input_51 = input_51.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_51,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_51 = input_51.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_51, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
                 let input_52 = &_input.branch_name;
-                let input_52 = input_52.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "branch_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let branch_name = aws_smithy_http::label::fmt_string(
-                    input_52,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_52 = input_52.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))?;
+                let branch_name = aws_smithy_http::label::fmt_string(input_52, aws_smithy_http::label::EncodingStrategy::Default);
                 if branch_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "branch_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/apps/{appId}/branches/{branchName}/jobs",
-                    appId = app_id,
-                    branchName = branch_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/branches/{branchName}/jobs", appId = app_id, branchName = branch_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::StartJobInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::StartJobInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_job(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_start_job(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::StartJob::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "StartJob", "amplify",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartJob::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartJob", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6806,7 +4657,7 @@ impl StartJobInput {
 
 /// See [`StopJobInput`](crate::input::StopJobInput).
 pub mod stop_job_input {
-
+    
     /// A builder for [`StopJobInput`](crate::input::StopJobInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6822,8 +4673,7 @@ pub mod stop_job_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The name for the branch, for the job. </p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6832,8 +4682,7 @@ pub mod stop_job_input {
         }
         /// <p> The name for the branch, for the job. </p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch_name = input;
-            self
+            self.branch_name = input; self
         }
         /// <p> The unique id for the job. </p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6842,136 +4691,69 @@ pub mod stop_job_input {
         }
         /// <p> The unique id for the job. </p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`StopJobInput`](crate::input::StopJobInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::StopJobInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::StopJobInput {
-                app_id: self.app_id,
-                branch_name: self.branch_name,
-                job_id: self.job_id,
-            })
+        pub fn build(self) -> Result<crate::input::StopJobInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::StopJobInput {
+                    app_id: self.app_id
+                    ,
+                    branch_name: self.branch_name
+                    ,
+                    job_id: self.job_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StopJobInput {
     /// Consumes the builder and constructs an Operation<[`StopJob`](crate::operation::StopJob)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StopJob,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StopJob, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StopJobInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::StopJobInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_53 = &_input.app_id;
-                let input_53 = input_53.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_53,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_53 = input_53.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_53, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
                 let input_54 = &_input.branch_name;
-                let input_54 = input_54.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "branch_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let branch_name = aws_smithy_http::label::fmt_string(
-                    input_54,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_54 = input_54.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))?;
+                let branch_name = aws_smithy_http::label::fmt_string(input_54, aws_smithy_http::label::EncodingStrategy::Default);
                 if branch_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "branch_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))
+                            }
                 let input_55 = &_input.job_id;
-                let input_55 = input_55.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "job_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let job_id = aws_smithy_http::label::fmt_string(
-                    input_55,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_55 = input_55.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("job_id", "cannot be empty or unset"))?;
+                let job_id = aws_smithy_http::label::fmt_string(input_55, aws_smithy_http::label::EncodingStrategy::Default);
                 if job_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "job_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/apps/{appId}/branches/{branchName}/jobs/{jobId}/stop",
-                    appId = app_id,
-                    branchName = branch_name,
-                    jobId = job_id
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("job_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/branches/{branchName}/jobs/{jobId}/stop", appId = app_id, branchName = branch_name, jobId = job_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::StopJobInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::StopJobInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("DELETE").uri(uri))
@@ -6981,48 +4763,34 @@ impl StopJobInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::StopJob::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "StopJob", "amplify",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StopJob::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StopJob", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7034,14 +4802,12 @@ impl StopJobInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-
+    
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) to use to tag a resource. </p>
@@ -7051,184 +4817,111 @@ pub mod tag_resource_input {
         }
         /// <p> The Amazon Resource Name (ARN) to use to tag a resource. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The tags used to tag the resource. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The tags used to tag the resource. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::TagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::TagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::TagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_56 = &_input.resource_arn;
-                let input_56 = input_56.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_56,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_56 = input_56.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_56, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::TagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::TagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::TagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "TagResource",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7240,7 +4933,7 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-
+    
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7255,8 +4948,7 @@ pub mod untag_resource_input {
         }
         /// <p> The Amazon Resource Name (ARN) to use to untag a resource. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -7265,104 +4957,60 @@ pub mod untag_resource_input {
         /// <p> The tag keys to use to untag a resource. </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(input.into());
-            self.tag_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_keys = Some(v);
+                            self
         }
         /// <p> The tag keys to use to untag a resource. </p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_keys = input;
-            self
+        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_keys = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn,
-                tag_keys: self.tag_keys,
-            })
+        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UntagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tag_keys: self.tag_keys
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UntagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UntagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_57 = &_input.resource_arn;
-                let input_57 = input_57.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let resource_arn = aws_smithy_http::label::fmt_string(
-                    input_57,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_57 = input_57.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
+                let resource_arn = aws_smithy_http::label::fmt_string(input_57, aws_smithy_http::label::EncodingStrategy::Default);
                 if resource_arn.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "resource_arn",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))
+                            }
+                write!(output, "/tags/{resourceArn}", resourceArn = resource_arn).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(
-                _input: &crate::input::UntagResourceInput,
-                mut output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(&mut output);
                 let inner_58 = &_input.tag_keys;
-                let inner_58 = inner_58.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "tag_keys",
-                        "cannot be empty or unset",
-                    )
-                })?;
+                let inner_58 = inner_58.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("tag_keys", "cannot be empty or unset"))?;
                 for inner_59 in inner_58 {
                     query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_59));
                 }
@@ -7370,12 +5018,9 @@ impl UntagResourceInput {
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UntagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UntagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
@@ -7386,51 +5031,34 @@ impl UntagResourceInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from(
+            ""
+        );
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UntagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UntagResource",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7442,7 +5070,7 @@ impl UntagResourceInput {
 
 /// See [`UpdateAppInput`](crate::input::UpdateAppInput).
 pub mod update_app_input {
-
+    
     /// A builder for [`UpdateAppInput`](crate::input::UpdateAppInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -7451,9 +5079,7 @@ pub mod update_app_input {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) platform: std::option::Option<crate::model::Platform>,
         pub(crate) iam_service_role_arn: std::option::Option<std::string::String>,
-        pub(crate) environment_variables: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) environment_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) enable_branch_auto_build: std::option::Option<bool>,
         pub(crate) enable_branch_auto_deletion: std::option::Option<bool>,
         pub(crate) enable_basic_auth: std::option::Option<bool>,
@@ -7462,10 +5088,8 @@ pub mod update_app_input {
         pub(crate) build_spec: std::option::Option<std::string::String>,
         pub(crate) custom_headers: std::option::Option<std::string::String>,
         pub(crate) enable_auto_branch_creation: std::option::Option<bool>,
-        pub(crate) auto_branch_creation_patterns:
-            std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) auto_branch_creation_config:
-            std::option::Option<crate::model::AutoBranchCreationConfig>,
+        pub(crate) auto_branch_creation_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) auto_branch_creation_config: std::option::Option<crate::model::AutoBranchCreationConfig>,
         pub(crate) repository: std::option::Option<std::string::String>,
         pub(crate) oauth_token: std::option::Option<std::string::String>,
         pub(crate) access_token: std::option::Option<std::string::String>,
@@ -7478,8 +5102,7 @@ pub mod update_app_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The name for an Amplify app. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7488,8 +5111,7 @@ pub mod update_app_input {
         }
         /// <p> The name for an Amplify app. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> The description for an Amplify app. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7498,8 +5120,7 @@ pub mod update_app_input {
         }
         /// <p> The description for an Amplify app. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
@@ -7508,8 +5129,7 @@ pub mod update_app_input {
         }
         /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
-            self.platform = input;
-            self
+            self.platform = input; self
         }
         /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
         pub fn iam_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7517,37 +5137,23 @@ pub mod update_app_input {
             self
         }
         /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
-        pub fn set_iam_service_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.iam_service_role_arn = input;
-            self
+        pub fn set_iam_service_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iam_service_role_arn = input; self
         }
         /// Adds a key-value pair to `environment_variables`.
         ///
         /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
         ///
         /// <p> The environment variables for an Amplify app. </p>
-        pub fn environment_variables(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn environment_variables(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.environment_variables.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.environment_variables = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.environment_variables = Some(hash_map);
+                            self
         }
         /// <p> The environment variables for an Amplify app. </p>
-        pub fn set_environment_variables(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.environment_variables = input;
-            self
+        pub fn set_environment_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.environment_variables = input; self
         }
         /// <p> Enables branch auto-building for an Amplify app. </p>
         pub fn enable_branch_auto_build(mut self, input: bool) -> Self {
@@ -7556,8 +5162,7 @@ pub mod update_app_input {
         }
         /// <p> Enables branch auto-building for an Amplify app. </p>
         pub fn set_enable_branch_auto_build(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_branch_auto_build = input;
-            self
+            self.enable_branch_auto_build = input; self
         }
         /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
         pub fn enable_branch_auto_deletion(mut self, input: bool) -> Self {
@@ -7566,8 +5171,7 @@ pub mod update_app_input {
         }
         /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
         pub fn set_enable_branch_auto_deletion(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_branch_auto_deletion = input;
-            self
+            self.enable_branch_auto_deletion = input; self
         }
         /// <p> Enables basic authorization for an Amplify app. </p>
         pub fn enable_basic_auth(mut self, input: bool) -> Self {
@@ -7576,8 +5180,7 @@ pub mod update_app_input {
         }
         /// <p> Enables basic authorization for an Amplify app. </p>
         pub fn set_enable_basic_auth(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_basic_auth = input;
-            self
+            self.enable_basic_auth = input; self
         }
         /// <p> The basic authorization credentials for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
         pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7585,12 +5188,8 @@ pub mod update_app_input {
             self
         }
         /// <p> The basic authorization credentials for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-        pub fn set_basic_auth_credentials(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.basic_auth_credentials = input;
-            self
+        pub fn set_basic_auth_credentials(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.basic_auth_credentials = input; self
         }
         /// Appends an item to `custom_rules`.
         ///
@@ -7599,17 +5198,13 @@ pub mod update_app_input {
         /// <p> The custom redirect and rewrite rules for an Amplify app. </p>
         pub fn custom_rules(mut self, input: crate::model::CustomRule) -> Self {
             let mut v = self.custom_rules.unwrap_or_default();
-            v.push(input);
-            self.custom_rules = Some(v);
-            self
+                            v.push(input);
+                            self.custom_rules = Some(v);
+                            self
         }
         /// <p> The custom redirect and rewrite rules for an Amplify app. </p>
-        pub fn set_custom_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CustomRule>>,
-        ) -> Self {
-            self.custom_rules = input;
-            self
+        pub fn set_custom_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::CustomRule>>) -> Self {
+            self.custom_rules = input; self
         }
         /// <p> The build specification (build spec) for an Amplify app. </p>
         pub fn build_spec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7618,8 +5213,7 @@ pub mod update_app_input {
         }
         /// <p> The build specification (build spec) for an Amplify app. </p>
         pub fn set_build_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.build_spec = input;
-            self
+            self.build_spec = input; self
         }
         /// <p>The custom HTTP headers for an Amplify app.</p>
         pub fn custom_headers(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7627,12 +5221,8 @@ pub mod update_app_input {
             self
         }
         /// <p>The custom HTTP headers for an Amplify app.</p>
-        pub fn set_custom_headers(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.custom_headers = input;
-            self
+        pub fn set_custom_headers(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.custom_headers = input; self
         }
         /// <p> Enables automated branch creation for an Amplify app. </p>
         pub fn enable_auto_branch_creation(mut self, input: bool) -> Self {
@@ -7641,46 +5231,31 @@ pub mod update_app_input {
         }
         /// <p> Enables automated branch creation for an Amplify app. </p>
         pub fn set_enable_auto_branch_creation(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_auto_branch_creation = input;
-            self
+            self.enable_auto_branch_creation = input; self
         }
         /// Appends an item to `auto_branch_creation_patterns`.
         ///
         /// To override the contents of this collection use [`set_auto_branch_creation_patterns`](Self::set_auto_branch_creation_patterns).
         ///
         /// <p> Describes the automated branch creation glob patterns for an Amplify app. </p>
-        pub fn auto_branch_creation_patterns(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn auto_branch_creation_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.auto_branch_creation_patterns.unwrap_or_default();
-            v.push(input.into());
-            self.auto_branch_creation_patterns = Some(v);
-            self
+                            v.push(input.into());
+                            self.auto_branch_creation_patterns = Some(v);
+                            self
         }
         /// <p> Describes the automated branch creation glob patterns for an Amplify app. </p>
-        pub fn set_auto_branch_creation_patterns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.auto_branch_creation_patterns = input;
-            self
+        pub fn set_auto_branch_creation_patterns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.auto_branch_creation_patterns = input; self
         }
         /// <p> The automated branch creation configuration for an Amplify app. </p>
-        pub fn auto_branch_creation_config(
-            mut self,
-            input: crate::model::AutoBranchCreationConfig,
-        ) -> Self {
+        pub fn auto_branch_creation_config(mut self, input: crate::model::AutoBranchCreationConfig) -> Self {
             self.auto_branch_creation_config = Some(input);
             self
         }
         /// <p> The automated branch creation configuration for an Amplify app. </p>
-        pub fn set_auto_branch_creation_config(
-            mut self,
-            input: std::option::Option<crate::model::AutoBranchCreationConfig>,
-        ) -> Self {
-            self.auto_branch_creation_config = input;
-            self
+        pub fn set_auto_branch_creation_config(mut self, input: std::option::Option<crate::model::AutoBranchCreationConfig>) -> Self {
+            self.auto_branch_creation_config = input; self
         }
         /// <p> The name of the repository for an Amplify app </p>
         pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7689,69 +5264,84 @@ pub mod update_app_input {
         }
         /// <p> The name of the repository for an Amplify app </p>
         pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.repository = input;
-            self
+            self.repository = input; self
         }
-        /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p>
-        /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit.</p>
-        /// <p>To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p>
-        /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you update an app.</p>
+        /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p> 
+        /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit.</p> 
+        /// <p>To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p> 
+        /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you update an app.</p> 
         /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
         pub fn oauth_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.oauth_token = Some(input.into());
             self
         }
-        /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p>
-        /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit.</p>
-        /// <p>To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p>
-        /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you update an app.</p>
+        /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p> 
+        /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit.</p> 
+        /// <p>To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p> 
+        /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you update an app.</p> 
         /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
         pub fn set_oauth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.oauth_token = input;
-            self
+            self.oauth_token = input; self
         }
-        /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p>
-        /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p>
-        /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you update an app.</p>
+        /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p> 
+        /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p> 
+        /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you update an app.</p> 
         /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
         pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_token = Some(input.into());
             self
         }
-        /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p>
-        /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p>
-        /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you update an app.</p>
+        /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p> 
+        /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p> 
+        /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you update an app.</p> 
         /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.access_token = input;
-            self
+            self.access_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAppInput`](crate::input::UpdateAppInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateAppInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UpdateAppInput {
-                app_id: self.app_id,
-                name: self.name,
-                description: self.description,
-                platform: self.platform,
-                iam_service_role_arn: self.iam_service_role_arn,
-                environment_variables: self.environment_variables,
-                enable_branch_auto_build: self.enable_branch_auto_build,
-                enable_branch_auto_deletion: self.enable_branch_auto_deletion,
-                enable_basic_auth: self.enable_basic_auth,
-                basic_auth_credentials: self.basic_auth_credentials,
-                custom_rules: self.custom_rules,
-                build_spec: self.build_spec,
-                custom_headers: self.custom_headers,
-                enable_auto_branch_creation: self.enable_auto_branch_creation,
-                auto_branch_creation_patterns: self.auto_branch_creation_patterns,
-                auto_branch_creation_config: self.auto_branch_creation_config,
-                repository: self.repository,
-                oauth_token: self.oauth_token,
-                access_token: self.access_token,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateAppInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateAppInput {
+                    app_id: self.app_id
+                    ,
+                    name: self.name
+                    ,
+                    description: self.description
+                    ,
+                    platform: self.platform
+                    ,
+                    iam_service_role_arn: self.iam_service_role_arn
+                    ,
+                    environment_variables: self.environment_variables
+                    ,
+                    enable_branch_auto_build: self.enable_branch_auto_build
+                    ,
+                    enable_branch_auto_deletion: self.enable_branch_auto_deletion
+                    ,
+                    enable_basic_auth: self.enable_basic_auth
+                    ,
+                    basic_auth_credentials: self.basic_auth_credentials
+                    ,
+                    custom_rules: self.custom_rules
+                    ,
+                    build_spec: self.build_spec
+                    ,
+                    custom_headers: self.custom_headers
+                    ,
+                    enable_auto_branch_creation: self.enable_auto_branch_creation
+                    ,
+                    auto_branch_creation_patterns: self.auto_branch_creation_patterns
+                    ,
+                    auto_branch_creation_config: self.auto_branch_creation_config
+                    ,
+                    repository: self.repository
+                    ,
+                    oauth_token: self.oauth_token
+                    ,
+                    access_token: self.access_token
+                    ,
+                }
+            )
         }
     }
     impl std::fmt::Debug for Builder {
@@ -7764,169 +5354,97 @@ pub mod update_app_input {
             formatter.field("iam_service_role_arn", &self.iam_service_role_arn);
             formatter.field("environment_variables", &self.environment_variables);
             formatter.field("enable_branch_auto_build", &self.enable_branch_auto_build);
-            formatter.field(
-                "enable_branch_auto_deletion",
-                &self.enable_branch_auto_deletion,
-            );
+            formatter.field("enable_branch_auto_deletion", &self.enable_branch_auto_deletion);
             formatter.field("enable_basic_auth", &self.enable_basic_auth);
             formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
             formatter.field("custom_rules", &self.custom_rules);
             formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
             formatter.field("custom_headers", &self.custom_headers);
-            formatter.field(
-                "enable_auto_branch_creation",
-                &self.enable_auto_branch_creation,
-            );
-            formatter.field(
-                "auto_branch_creation_patterns",
-                &self.auto_branch_creation_patterns,
-            );
-            formatter.field(
-                "auto_branch_creation_config",
-                &self.auto_branch_creation_config,
-            );
+            formatter.field("enable_auto_branch_creation", &self.enable_auto_branch_creation);
+            formatter.field("auto_branch_creation_patterns", &self.auto_branch_creation_patterns);
+            formatter.field("auto_branch_creation_config", &self.auto_branch_creation_config);
             formatter.field("repository", &self.repository);
             formatter.field("oauth_token", &"*** Sensitive Data Redacted ***");
             formatter.field("access_token", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdateAppInput {
     /// Consumes the builder and constructs an Operation<[`UpdateApp`](crate::operation::UpdateApp)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateApp,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateApp, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateAppInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateAppInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_60 = &_input.app_id;
-                let input_60 = input_60.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_60,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_60 = input_60.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_60, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
                 write!(output, "/apps/{appId}", appId = app_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateAppInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateAppInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_app(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_app(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateApp::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "UpdateApp",
-                    "amplify",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateApp::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateApp", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7938,7 +5456,7 @@ impl UpdateAppInput {
 
 /// See [`UpdateBranchInput`](crate::input::UpdateBranchInput).
 pub mod update_branch_input {
-
+    
     /// A builder for [`UpdateBranchInput`](crate::input::UpdateBranchInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -7949,9 +5467,7 @@ pub mod update_branch_input {
         pub(crate) stage: std::option::Option<crate::model::Stage>,
         pub(crate) enable_notification: std::option::Option<bool>,
         pub(crate) enable_auto_build: std::option::Option<bool>,
-        pub(crate) environment_variables: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) environment_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) basic_auth_credentials: std::option::Option<std::string::String>,
         pub(crate) enable_basic_auth: std::option::Option<bool>,
         pub(crate) enable_performance_mode: std::option::Option<bool>,
@@ -7970,8 +5486,7 @@ pub mod update_branch_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The name for the branch. </p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7980,8 +5495,7 @@ pub mod update_branch_input {
         }
         /// <p> The name for the branch. </p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch_name = input;
-            self
+            self.branch_name = input; self
         }
         /// <p> The description for the branch. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7990,8 +5504,7 @@ pub mod update_branch_input {
         }
         /// <p> The description for the branch. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> The framework for the branch. </p>
         pub fn framework(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8000,8 +5513,7 @@ pub mod update_branch_input {
         }
         /// <p> The framework for the branch. </p>
         pub fn set_framework(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.framework = input;
-            self
+            self.framework = input; self
         }
         /// <p> Describes the current stage for the branch. </p>
         pub fn stage(mut self, input: crate::model::Stage) -> Self {
@@ -8010,8 +5522,7 @@ pub mod update_branch_input {
         }
         /// <p> Describes the current stage for the branch. </p>
         pub fn set_stage(mut self, input: std::option::Option<crate::model::Stage>) -> Self {
-            self.stage = input;
-            self
+            self.stage = input; self
         }
         /// <p> Enables notifications for the branch. </p>
         pub fn enable_notification(mut self, input: bool) -> Self {
@@ -8020,8 +5531,7 @@ pub mod update_branch_input {
         }
         /// <p> Enables notifications for the branch. </p>
         pub fn set_enable_notification(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_notification = input;
-            self
+            self.enable_notification = input; self
         }
         /// <p> Enables auto building for the branch. </p>
         pub fn enable_auto_build(mut self, input: bool) -> Self {
@@ -8030,33 +5540,22 @@ pub mod update_branch_input {
         }
         /// <p> Enables auto building for the branch. </p>
         pub fn set_enable_auto_build(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_auto_build = input;
-            self
+            self.enable_auto_build = input; self
         }
         /// Adds a key-value pair to `environment_variables`.
         ///
         /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
         ///
         /// <p> The environment variables for the branch. </p>
-        pub fn environment_variables(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn environment_variables(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.environment_variables.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.environment_variables = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.environment_variables = Some(hash_map);
+                            self
         }
         /// <p> The environment variables for the branch. </p>
-        pub fn set_environment_variables(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.environment_variables = input;
-            self
+        pub fn set_environment_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.environment_variables = input; self
         }
         /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
         pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8064,12 +5563,8 @@ pub mod update_branch_input {
             self
         }
         /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-        pub fn set_basic_auth_credentials(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.basic_auth_credentials = input;
-            self
+        pub fn set_basic_auth_credentials(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.basic_auth_credentials = input; self
         }
         /// <p> Enables basic authorization for the branch. </p>
         pub fn enable_basic_auth(mut self, input: bool) -> Self {
@@ -8078,20 +5573,18 @@ pub mod update_branch_input {
         }
         /// <p> Enables basic authorization for the branch. </p>
         pub fn set_enable_basic_auth(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_basic_auth = input;
-            self
+            self.enable_basic_auth = input; self
         }
-        /// <p>Enables performance mode for the branch.</p>
+        /// <p>Enables performance mode for the branch.</p> 
         /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
         pub fn enable_performance_mode(mut self, input: bool) -> Self {
             self.enable_performance_mode = Some(input);
             self
         }
-        /// <p>Enables performance mode for the branch.</p>
+        /// <p>Enables performance mode for the branch.</p> 
         /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
         pub fn set_enable_performance_mode(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_performance_mode = input;
-            self
+            self.enable_performance_mode = input; self
         }
         /// <p> The build specification (build spec) for the branch. </p>
         pub fn build_spec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8100,8 +5593,7 @@ pub mod update_branch_input {
         }
         /// <p> The build specification (build spec) for the branch. </p>
         pub fn set_build_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.build_spec = input;
-            self
+            self.build_spec = input; self
         }
         /// <p> The content Time to Live (TTL) for the website in seconds. </p>
         pub fn ttl(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8110,8 +5602,7 @@ pub mod update_branch_input {
         }
         /// <p> The content Time to Live (TTL) for the website in seconds. </p>
         pub fn set_ttl(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ttl = input;
-            self
+            self.ttl = input; self
         }
         /// <p> The display name for a branch. This is used as the default domain prefix. </p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8120,8 +5611,7 @@ pub mod update_branch_input {
         }
         /// <p> The display name for a branch. This is used as the default domain prefix. </p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p> Enables pull request previews for this branch. </p>
         pub fn enable_pull_request_preview(mut self, input: bool) -> Self {
@@ -8130,24 +5620,16 @@ pub mod update_branch_input {
         }
         /// <p> Enables pull request previews for this branch. </p>
         pub fn set_enable_pull_request_preview(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_pull_request_preview = input;
-            self
+            self.enable_pull_request_preview = input; self
         }
         /// <p> The Amplify environment name for the pull request. </p>
-        pub fn pull_request_environment_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn pull_request_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.pull_request_environment_name = Some(input.into());
             self
         }
         /// <p> The Amplify environment name for the pull request. </p>
-        pub fn set_pull_request_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pull_request_environment_name = input;
-            self
+        pub fn set_pull_request_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pull_request_environment_name = input; self
         }
         /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
         pub fn backend_environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8155,37 +5637,49 @@ pub mod update_branch_input {
             self
         }
         /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
-        pub fn set_backend_environment_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.backend_environment_arn = input;
-            self
+        pub fn set_backend_environment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.backend_environment_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBranchInput`](crate::input::UpdateBranchInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateBranchInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UpdateBranchInput {
-                app_id: self.app_id,
-                branch_name: self.branch_name,
-                description: self.description,
-                framework: self.framework,
-                stage: self.stage,
-                enable_notification: self.enable_notification,
-                enable_auto_build: self.enable_auto_build,
-                environment_variables: self.environment_variables,
-                basic_auth_credentials: self.basic_auth_credentials,
-                enable_basic_auth: self.enable_basic_auth,
-                enable_performance_mode: self.enable_performance_mode,
-                build_spec: self.build_spec,
-                ttl: self.ttl,
-                display_name: self.display_name,
-                enable_pull_request_preview: self.enable_pull_request_preview,
-                pull_request_environment_name: self.pull_request_environment_name,
-                backend_environment_arn: self.backend_environment_arn,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateBranchInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateBranchInput {
+                    app_id: self.app_id
+                    ,
+                    branch_name: self.branch_name
+                    ,
+                    description: self.description
+                    ,
+                    framework: self.framework
+                    ,
+                    stage: self.stage
+                    ,
+                    enable_notification: self.enable_notification
+                    ,
+                    enable_auto_build: self.enable_auto_build
+                    ,
+                    environment_variables: self.environment_variables
+                    ,
+                    basic_auth_credentials: self.basic_auth_credentials
+                    ,
+                    enable_basic_auth: self.enable_basic_auth
+                    ,
+                    enable_performance_mode: self.enable_performance_mode
+                    ,
+                    build_spec: self.build_spec
+                    ,
+                    ttl: self.ttl
+                    ,
+                    display_name: self.display_name
+                    ,
+                    enable_pull_request_preview: self.enable_pull_request_preview
+                    ,
+                    pull_request_environment_name: self.pull_request_environment_name
+                    ,
+                    backend_environment_arn: self.backend_environment_arn
+                    ,
+                }
+            )
         }
     }
     impl std::fmt::Debug for Builder {
@@ -8205,181 +5699,94 @@ pub mod update_branch_input {
             formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
             formatter.field("ttl", &self.ttl);
             formatter.field("display_name", &self.display_name);
-            formatter.field(
-                "enable_pull_request_preview",
-                &self.enable_pull_request_preview,
-            );
-            formatter.field(
-                "pull_request_environment_name",
-                &self.pull_request_environment_name,
-            );
+            formatter.field("enable_pull_request_preview", &self.enable_pull_request_preview);
+            formatter.field("pull_request_environment_name", &self.pull_request_environment_name);
             formatter.field("backend_environment_arn", &self.backend_environment_arn);
             formatter.finish()
         }
     }
+    
+    
 }
 impl UpdateBranchInput {
     /// Consumes the builder and constructs an Operation<[`UpdateBranch`](crate::operation::UpdateBranch)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateBranch,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateBranch, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateBranchInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateBranchInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_61 = &_input.app_id;
-                let input_61 = input_61.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_61,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_61 = input_61.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_61, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
                 let input_62 = &_input.branch_name;
-                let input_62 = input_62.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "branch_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let branch_name = aws_smithy_http::label::fmt_string(
-                    input_62,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_62 = input_62.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))?;
+                let branch_name = aws_smithy_http::label::fmt_string(input_62, aws_smithy_http::label::EncodingStrategy::Default);
                 if branch_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "branch_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/apps/{appId}/branches/{branchName}",
-                    appId = app_id,
-                    branchName = branch_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("branch_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/branches/{branchName}", appId = app_id, branchName = branch_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateBranchInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateBranchInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_branch(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_branch(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateBranch::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateBranch",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateBranch::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateBranch", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8391,17 +5798,15 @@ impl UpdateBranchInput {
 
 /// See [`UpdateDomainAssociationInput`](crate::input::UpdateDomainAssociationInput).
 pub mod update_domain_association_input {
-
+    
     /// A builder for [`UpdateDomainAssociationInput`](crate::input::UpdateDomainAssociationInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_id: std::option::Option<std::string::String>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) enable_auto_sub_domain: std::option::Option<bool>,
-        pub(crate) sub_domain_settings:
-            std::option::Option<std::vec::Vec<crate::model::SubDomainSetting>>,
-        pub(crate) auto_sub_domain_creation_patterns:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) sub_domain_settings: std::option::Option<std::vec::Vec<crate::model::SubDomainSetting>>,
+        pub(crate) auto_sub_domain_creation_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) auto_sub_domain_iam_role: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -8412,8 +5817,7 @@ pub mod update_domain_association_input {
         }
         /// <p> The unique ID for an Amplify app. </p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p> The name of the domain. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8422,8 +5826,7 @@ pub mod update_domain_association_input {
         }
         /// <p> The name of the domain. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p> Enables the automated creation of subdomains for branches. </p>
         pub fn enable_auto_sub_domain(mut self, input: bool) -> Self {
@@ -8432,8 +5835,7 @@ pub mod update_domain_association_input {
         }
         /// <p> Enables the automated creation of subdomains for branches. </p>
         pub fn set_enable_auto_sub_domain(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_auto_sub_domain = input;
-            self
+            self.enable_auto_sub_domain = input; self
         }
         /// Appends an item to `sub_domain_settings`.
         ///
@@ -8442,39 +5844,28 @@ pub mod update_domain_association_input {
         /// <p> Describes the settings for the subdomain. </p>
         pub fn sub_domain_settings(mut self, input: crate::model::SubDomainSetting) -> Self {
             let mut v = self.sub_domain_settings.unwrap_or_default();
-            v.push(input);
-            self.sub_domain_settings = Some(v);
-            self
+                            v.push(input);
+                            self.sub_domain_settings = Some(v);
+                            self
         }
         /// <p> Describes the settings for the subdomain. </p>
-        pub fn set_sub_domain_settings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SubDomainSetting>>,
-        ) -> Self {
-            self.sub_domain_settings = input;
-            self
+        pub fn set_sub_domain_settings(mut self, input: std::option::Option<std::vec::Vec<crate::model::SubDomainSetting>>) -> Self {
+            self.sub_domain_settings = input; self
         }
         /// Appends an item to `auto_sub_domain_creation_patterns`.
         ///
         /// To override the contents of this collection use [`set_auto_sub_domain_creation_patterns`](Self::set_auto_sub_domain_creation_patterns).
         ///
         /// <p> Sets the branch patterns for automatic subdomain creation. </p>
-        pub fn auto_sub_domain_creation_patterns(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn auto_sub_domain_creation_patterns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.auto_sub_domain_creation_patterns.unwrap_or_default();
-            v.push(input.into());
-            self.auto_sub_domain_creation_patterns = Some(v);
-            self
+                            v.push(input.into());
+                            self.auto_sub_domain_creation_patterns = Some(v);
+                            self
         }
         /// <p> Sets the branch patterns for automatic subdomain creation. </p>
-        pub fn set_auto_sub_domain_creation_patterns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.auto_sub_domain_creation_patterns = input;
-            self
+        pub fn set_auto_sub_domain_creation_patterns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.auto_sub_domain_creation_patterns = input; self
         }
         /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
         pub fn auto_sub_domain_iam_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8482,195 +5873,111 @@ pub mod update_domain_association_input {
             self
         }
         /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
-        pub fn set_auto_sub_domain_iam_role(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.auto_sub_domain_iam_role = input;
-            self
+        pub fn set_auto_sub_domain_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.auto_sub_domain_iam_role = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDomainAssociationInput`](crate::input::UpdateDomainAssociationInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::UpdateDomainAssociationInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::UpdateDomainAssociationInput {
-                app_id: self.app_id,
-                domain_name: self.domain_name,
-                enable_auto_sub_domain: self.enable_auto_sub_domain,
-                sub_domain_settings: self.sub_domain_settings,
-                auto_sub_domain_creation_patterns: self.auto_sub_domain_creation_patterns,
-                auto_sub_domain_iam_role: self.auto_sub_domain_iam_role,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateDomainAssociationInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateDomainAssociationInput {
+                    app_id: self.app_id
+                    ,
+                    domain_name: self.domain_name
+                    ,
+                    enable_auto_sub_domain: self.enable_auto_sub_domain
+                    ,
+                    sub_domain_settings: self.sub_domain_settings
+                    ,
+                    auto_sub_domain_creation_patterns: self.auto_sub_domain_creation_patterns
+                    ,
+                    auto_sub_domain_iam_role: self.auto_sub_domain_iam_role
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateDomainAssociationInput {
     /// Consumes the builder and constructs an Operation<[`UpdateDomainAssociation`](crate::operation::UpdateDomainAssociation)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateDomainAssociation,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateDomainAssociation, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateDomainAssociationInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateDomainAssociationInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_63 = &_input.app_id;
-                let input_63 = input_63.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let app_id = aws_smithy_http::label::fmt_string(
-                    input_63,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_63 = input_63.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
+                let app_id = aws_smithy_http::label::fmt_string(input_63, aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "app_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))
+                            }
                 let input_64 = &_input.domain_name;
-                let input_64 = input_64.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "domain_name",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let domain_name = aws_smithy_http::label::fmt_string(
-                    input_64,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_64 = input_64.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("domain_name", "cannot be empty or unset"))?;
+                let domain_name = aws_smithy_http::label::fmt_string(input_64, aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_name.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "domain_name",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(
-                    output,
-                    "/apps/{appId}/domains/{domainName}",
-                    appId = app_id,
-                    domainName = domain_name
-                )
-                .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("domain_name", "cannot be empty or unset"))
+                            }
+                write!(output, "/apps/{appId}/domains/{domainName}", appId = app_id, domainName = domain_name).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateDomainAssociationInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateDomainAssociationInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_domain_association(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_update_domain_association(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateDomainAssociation::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateDomainAssociation",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateDomainAssociation::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateDomainAssociation", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8682,7 +5989,7 @@ impl UpdateDomainAssociationInput {
 
 /// See [`UpdateWebhookInput`](crate::input::UpdateWebhookInput).
 pub mod update_webhook_input {
-
+    
     /// A builder for [`UpdateWebhookInput`](crate::input::UpdateWebhookInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8698,8 +6005,7 @@ pub mod update_webhook_input {
         }
         /// <p> The unique ID for a webhook. </p>
         pub fn set_webhook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.webhook_id = input;
-            self
+            self.webhook_id = input; self
         }
         /// <p> The name for a branch that is part of an Amplify app. </p>
         pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8708,8 +6014,7 @@ pub mod update_webhook_input {
         }
         /// <p> The name for a branch that is part of an Amplify app. </p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.branch_name = input;
-            self
+            self.branch_name = input; self
         }
         /// <p> The description for a webhook. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8718,160 +6023,98 @@ pub mod update_webhook_input {
         }
         /// <p> The description for a webhook. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`UpdateWebhookInput`](crate::input::UpdateWebhookInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateWebhookInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UpdateWebhookInput {
-                webhook_id: self.webhook_id,
-                branch_name: self.branch_name,
-                description: self.description,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateWebhookInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateWebhookInput {
+                    webhook_id: self.webhook_id
+                    ,
+                    branch_name: self.branch_name
+                    ,
+                    description: self.description
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateWebhookInput {
     /// Consumes the builder and constructs an Operation<[`UpdateWebhook`](crate::operation::UpdateWebhook)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateWebhook,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateWebhook, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateWebhookInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateWebhookInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let input_65 = &_input.webhook_id;
-                let input_65 = input_65.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
-                        "webhook_id",
-                        "cannot be empty or unset",
-                    )
-                })?;
-                let webhook_id = aws_smithy_http::label::fmt_string(
-                    input_65,
-                    aws_smithy_http::label::EncodingStrategy::Default,
-                );
+                let input_65 = input_65.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("webhook_id", "cannot be empty or unset"))?;
+                let webhook_id = aws_smithy_http::label::fmt_string(input_65, aws_smithy_http::label::EncodingStrategy::Default);
                 if webhook_id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
-                            "webhook_id",
-                            "cannot be empty or unset",
-                        ),
-                    );
-                }
-                write!(output, "/webhooks/{webhookId}", webhookId = webhook_id)
-                    .expect("formatting should succeed");
+                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("webhook_id", "cannot be empty or unset"))
+                            }
+                write!(output, "/webhooks/{webhookId}", webhookId = webhook_id).expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateWebhookInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateWebhookInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/json",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/json");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_webhook(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_webhook(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateWebhook::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateWebhook",
-            "amplify",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateWebhook::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateWebhook", "amplify"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8884,7 +6127,7 @@ impl UpdateWebhookInput {
 /// <p> The request structure for the update webhook request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWebhookInput {
+pub struct UpdateWebhookInput  {
     /// <p> The unique ID for a webhook. </p>
     #[doc(hidden)]
     pub webhook_id: std::option::Option<std::string::String>,
@@ -8897,15 +6140,15 @@ pub struct UpdateWebhookInput {
 }
 impl UpdateWebhookInput {
     /// <p> The unique ID for a webhook. </p>
-    pub fn webhook_id(&self) -> std::option::Option<&str> {
+    pub fn webhook_id(&self) -> std::option::Option<& str> {
         self.webhook_id.as_deref()
     }
     /// <p> The name for a branch that is part of an Amplify app. </p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p> The description for a webhook. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -8913,7 +6156,7 @@ impl UpdateWebhookInput {
 /// <p> The request structure for the update domain association request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDomainAssociationInput {
+pub struct UpdateDomainAssociationInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -8935,11 +6178,11 @@ pub struct UpdateDomainAssociationInput {
 }
 impl UpdateDomainAssociationInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name of the domain. </p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p> Enables the automated creation of subdomains for branches. </p>
@@ -8947,15 +6190,15 @@ impl UpdateDomainAssociationInput {
         self.enable_auto_sub_domain
     }
     /// <p> Describes the settings for the subdomain. </p>
-    pub fn sub_domain_settings(&self) -> std::option::Option<&[crate::model::SubDomainSetting]> {
+    pub fn sub_domain_settings(&self) -> std::option::Option<& [crate::model::SubDomainSetting]> {
         self.sub_domain_settings.as_deref()
     }
     /// <p> Sets the branch patterns for automatic subdomain creation. </p>
-    pub fn auto_sub_domain_creation_patterns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn auto_sub_domain_creation_patterns(&self) -> std::option::Option<& [std::string::String]> {
         self.auto_sub_domain_creation_patterns.as_deref()
     }
     /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
-    pub fn auto_sub_domain_iam_role(&self) -> std::option::Option<&str> {
+    pub fn auto_sub_domain_iam_role(&self) -> std::option::Option<& str> {
         self.auto_sub_domain_iam_role.as_deref()
     }
 }
@@ -8963,7 +6206,7 @@ impl UpdateDomainAssociationInput {
 /// <p> The request structure for the update branch request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateBranchInput {
+pub struct UpdateBranchInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -8987,15 +6230,14 @@ pub struct UpdateBranchInput {
     pub enable_auto_build: std::option::Option<bool>,
     /// <p> The environment variables for the branch. </p>
     #[doc(hidden)]
-    pub environment_variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub environment_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     #[doc(hidden)]
     pub basic_auth_credentials: std::option::Option<std::string::String>,
     /// <p> Enables basic authorization for the branch. </p>
     #[doc(hidden)]
     pub enable_basic_auth: std::option::Option<bool>,
-    /// <p>Enables performance mode for the branch.</p>
+    /// <p>Enables performance mode for the branch.</p> 
     /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
     #[doc(hidden)]
     pub enable_performance_mode: std::option::Option<bool>,
@@ -9020,23 +6262,23 @@ pub struct UpdateBranchInput {
 }
 impl UpdateBranchInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name for the branch. </p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p> The description for the branch. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The framework for the branch. </p>
-    pub fn framework(&self) -> std::option::Option<&str> {
+    pub fn framework(&self) -> std::option::Option<& str> {
         self.framework.as_deref()
     }
     /// <p> Describes the current stage for the branch. </p>
-    pub fn stage(&self) -> std::option::Option<&crate::model::Stage> {
+    pub fn stage(&self) -> std::option::Option<& crate::model::Stage> {
         self.stage.as_ref()
     }
     /// <p> Enables notifications for the branch. </p>
@@ -9048,35 +6290,32 @@ impl UpdateBranchInput {
         self.enable_auto_build
     }
     /// <p> The environment variables for the branch. </p>
-    pub fn environment_variables(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn environment_variables(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.environment_variables.as_ref()
     }
     /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    pub fn basic_auth_credentials(&self) -> std::option::Option<&str> {
+    pub fn basic_auth_credentials(&self) -> std::option::Option<& str> {
         self.basic_auth_credentials.as_deref()
     }
     /// <p> Enables basic authorization for the branch. </p>
     pub fn enable_basic_auth(&self) -> std::option::Option<bool> {
         self.enable_basic_auth
     }
-    /// <p>Enables performance mode for the branch.</p>
+    /// <p>Enables performance mode for the branch.</p> 
     /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
     pub fn enable_performance_mode(&self) -> std::option::Option<bool> {
         self.enable_performance_mode
     }
     /// <p> The build specification (build spec) for the branch. </p>
-    pub fn build_spec(&self) -> std::option::Option<&str> {
+    pub fn build_spec(&self) -> std::option::Option<& str> {
         self.build_spec.as_deref()
     }
     /// <p> The content Time to Live (TTL) for the website in seconds. </p>
-    pub fn ttl(&self) -> std::option::Option<&str> {
+    pub fn ttl(&self) -> std::option::Option<& str> {
         self.ttl.as_deref()
     }
     /// <p> The display name for a branch. This is used as the default domain prefix. </p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p> Enables pull request previews for this branch. </p>
@@ -9084,15 +6323,15 @@ impl UpdateBranchInput {
         self.enable_pull_request_preview
     }
     /// <p> The Amplify environment name for the pull request. </p>
-    pub fn pull_request_environment_name(&self) -> std::option::Option<&str> {
+    pub fn pull_request_environment_name(&self) -> std::option::Option<& str> {
         self.pull_request_environment_name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
-    pub fn backend_environment_arn(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_arn(&self) -> std::option::Option<& str> {
         self.backend_environment_arn.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateBranchInput {
+impl  std::fmt::Debug for UpdateBranchInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateBranchInput");
         formatter.field("app_id", &self.app_id);
@@ -9109,14 +6348,8 @@ impl std::fmt::Debug for UpdateBranchInput {
         formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("ttl", &self.ttl);
         formatter.field("display_name", &self.display_name);
-        formatter.field(
-            "enable_pull_request_preview",
-            &self.enable_pull_request_preview,
-        );
-        formatter.field(
-            "pull_request_environment_name",
-            &self.pull_request_environment_name,
-        );
+        formatter.field("enable_pull_request_preview", &self.enable_pull_request_preview);
+        formatter.field("pull_request_environment_name", &self.pull_request_environment_name);
         formatter.field("backend_environment_arn", &self.backend_environment_arn);
         formatter.finish()
     }
@@ -9125,7 +6358,7 @@ impl std::fmt::Debug for UpdateBranchInput {
 /// <p> The request structure for the update app request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateAppInput {
+pub struct UpdateAppInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -9143,8 +6376,7 @@ pub struct UpdateAppInput {
     pub iam_service_role_arn: std::option::Option<std::string::String>,
     /// <p> The environment variables for an Amplify app. </p>
     #[doc(hidden)]
-    pub environment_variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub environment_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> Enables branch auto-building for an Amplify app. </p>
     #[doc(hidden)]
     pub enable_branch_auto_build: std::option::Option<bool>,
@@ -9178,46 +6410,43 @@ pub struct UpdateAppInput {
     /// <p> The name of the repository for an Amplify app </p>
     #[doc(hidden)]
     pub repository: std::option::Option<std::string::String>,
-    /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p>
-    /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit.</p>
-    /// <p>To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p>
-    /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you update an app.</p>
+    /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p> 
+    /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit.</p> 
+    /// <p>To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p> 
+    /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you update an app.</p> 
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
     #[doc(hidden)]
     pub oauth_token: std::option::Option<std::string::String>,
-    /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p>
-    /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p>
-    /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you update an app.</p>
+    /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p> 
+    /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p> 
+    /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you update an app.</p> 
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
     #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
 }
 impl UpdateAppInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name for an Amplify app. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The description for an Amplify app. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::model::Platform> {
         self.platform.as_ref()
     }
     /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
-    pub fn iam_service_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_service_role_arn(&self) -> std::option::Option<& str> {
         self.iam_service_role_arn.as_deref()
     }
     /// <p> The environment variables for an Amplify app. </p>
-    pub fn environment_variables(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn environment_variables(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.environment_variables.as_ref()
     }
     /// <p> Enables branch auto-building for an Amplify app. </p>
@@ -9233,19 +6462,19 @@ impl UpdateAppInput {
         self.enable_basic_auth
     }
     /// <p> The basic authorization credentials for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    pub fn basic_auth_credentials(&self) -> std::option::Option<&str> {
+    pub fn basic_auth_credentials(&self) -> std::option::Option<& str> {
         self.basic_auth_credentials.as_deref()
     }
     /// <p> The custom redirect and rewrite rules for an Amplify app. </p>
-    pub fn custom_rules(&self) -> std::option::Option<&[crate::model::CustomRule]> {
+    pub fn custom_rules(&self) -> std::option::Option<& [crate::model::CustomRule]> {
         self.custom_rules.as_deref()
     }
     /// <p> The build specification (build spec) for an Amplify app. </p>
-    pub fn build_spec(&self) -> std::option::Option<&str> {
+    pub fn build_spec(&self) -> std::option::Option<& str> {
         self.build_spec.as_deref()
     }
     /// <p>The custom HTTP headers for an Amplify app.</p>
-    pub fn custom_headers(&self) -> std::option::Option<&str> {
+    pub fn custom_headers(&self) -> std::option::Option<& str> {
         self.custom_headers.as_deref()
     }
     /// <p> Enables automated branch creation for an Amplify app. </p>
@@ -9253,36 +6482,34 @@ impl UpdateAppInput {
         self.enable_auto_branch_creation
     }
     /// <p> Describes the automated branch creation glob patterns for an Amplify app. </p>
-    pub fn auto_branch_creation_patterns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn auto_branch_creation_patterns(&self) -> std::option::Option<& [std::string::String]> {
         self.auto_branch_creation_patterns.as_deref()
     }
     /// <p> The automated branch creation configuration for an Amplify app. </p>
-    pub fn auto_branch_creation_config(
-        &self,
-    ) -> std::option::Option<&crate::model::AutoBranchCreationConfig> {
+    pub fn auto_branch_creation_config(&self) -> std::option::Option<& crate::model::AutoBranchCreationConfig> {
         self.auto_branch_creation_config.as_ref()
     }
     /// <p> The name of the repository for an Amplify app </p>
-    pub fn repository(&self) -> std::option::Option<&str> {
+    pub fn repository(&self) -> std::option::Option<& str> {
         self.repository.as_deref()
     }
-    /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p>
-    /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit.</p>
-    /// <p>To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p>
-    /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you update an app.</p>
+    /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p> 
+    /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit.</p> 
+    /// <p>To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p> 
+    /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you update an app.</p> 
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
-    pub fn oauth_token(&self) -> std::option::Option<&str> {
+    pub fn oauth_token(&self) -> std::option::Option<& str> {
         self.oauth_token.as_deref()
     }
-    /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p>
-    /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p>
-    /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you update an app.</p>
+    /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p> 
+    /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p> 
+    /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you update an app.</p> 
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
-    pub fn access_token(&self) -> std::option::Option<&str> {
+    pub fn access_token(&self) -> std::option::Option<& str> {
         self.access_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAppInput {
+impl  std::fmt::Debug for UpdateAppInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppInput");
         formatter.field("app_id", &self.app_id);
@@ -9292,27 +6519,15 @@ impl std::fmt::Debug for UpdateAppInput {
         formatter.field("iam_service_role_arn", &self.iam_service_role_arn);
         formatter.field("environment_variables", &self.environment_variables);
         formatter.field("enable_branch_auto_build", &self.enable_branch_auto_build);
-        formatter.field(
-            "enable_branch_auto_deletion",
-            &self.enable_branch_auto_deletion,
-        );
+        formatter.field("enable_branch_auto_deletion", &self.enable_branch_auto_deletion);
         formatter.field("enable_basic_auth", &self.enable_basic_auth);
         formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_rules", &self.custom_rules);
         formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_headers", &self.custom_headers);
-        formatter.field(
-            "enable_auto_branch_creation",
-            &self.enable_auto_branch_creation,
-        );
-        formatter.field(
-            "auto_branch_creation_patterns",
-            &self.auto_branch_creation_patterns,
-        );
-        formatter.field(
-            "auto_branch_creation_config",
-            &self.auto_branch_creation_config,
-        );
+        formatter.field("enable_auto_branch_creation", &self.enable_auto_branch_creation);
+        formatter.field("auto_branch_creation_patterns", &self.auto_branch_creation_patterns);
+        formatter.field("auto_branch_creation_config", &self.auto_branch_creation_config);
         formatter.field("repository", &self.repository);
         formatter.field("oauth_token", &"*** Sensitive Data Redacted ***");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
@@ -9323,7 +6538,7 @@ impl std::fmt::Debug for UpdateAppInput {
 /// <p> The request structure for the untag resource request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceInput {
+pub struct UntagResourceInput  {
     /// <p> The Amazon Resource Name (ARN) to use to untag a resource. </p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -9333,11 +6548,11 @@ pub struct UntagResourceInput {
 }
 impl UntagResourceInput {
     /// <p> The Amazon Resource Name (ARN) to use to untag a resource. </p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p> The tag keys to use to untag a resource. </p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -9345,25 +6560,21 @@ impl UntagResourceInput {
 /// <p> The request structure to tag a resource with a tag key and value. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceInput {
+pub struct TagResourceInput  {
     /// <p> The Amazon Resource Name (ARN) to use to tag a resource. </p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p> The tags used to tag the resource. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
     /// <p> The Amazon Resource Name (ARN) to use to tag a resource. </p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p> The tags used to tag the resource. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
@@ -9371,7 +6582,7 @@ impl TagResourceInput {
 /// <p> The request structure for the stop job request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopJobInput {
+pub struct StopJobInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -9384,15 +6595,15 @@ pub struct StopJobInput {
 }
 impl StopJobInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name for the branch, for the job. </p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p> The unique id for the job. </p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -9400,7 +6611,7 @@ impl StopJobInput {
 /// <p> The request structure for the start job request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartJobInput {
+pub struct StartJobInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -9428,35 +6639,35 @@ pub struct StartJobInput {
 }
 impl StartJobInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The branch name for the job. </p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p> The unique ID for an existing job. This is required if the value of <code>jobType</code> is <code>RETRY</code>. </p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job with the latest change from the specified branch. This value is available only for apps that are connected to a repository. The job type <code>RETRY</code> retries an existing job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also required. </p>
-    pub fn job_type(&self) -> std::option::Option<&crate::model::JobType> {
+    pub fn job_type(&self) -> std::option::Option<& crate::model::JobType> {
         self.job_type.as_ref()
     }
     /// <p> A descriptive reason for starting this job. </p>
-    pub fn job_reason(&self) -> std::option::Option<&str> {
+    pub fn job_reason(&self) -> std::option::Option<& str> {
         self.job_reason.as_deref()
     }
     /// <p> The commit ID from a third-party repository provider for the job. </p>
-    pub fn commit_id(&self) -> std::option::Option<&str> {
+    pub fn commit_id(&self) -> std::option::Option<& str> {
         self.commit_id.as_deref()
     }
     /// <p> The commit message from a third-party repository provider for the job. </p>
-    pub fn commit_message(&self) -> std::option::Option<&str> {
+    pub fn commit_message(&self) -> std::option::Option<& str> {
         self.commit_message.as_deref()
     }
     /// <p> The commit date and time for the job. </p>
-    pub fn commit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn commit_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.commit_time.as_ref()
     }
 }
@@ -9464,7 +6675,7 @@ impl StartJobInput {
 /// <p> The request structure for the start a deployment request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDeploymentInput {
+pub struct StartDeploymentInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -9480,19 +6691,19 @@ pub struct StartDeploymentInput {
 }
 impl StartDeploymentInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name for the branch, for the job. </p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p> The job ID for this deployment, generated by the create deployment request. </p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p> The source URL for this deployment, used when calling start deployment without create deployment. The source URL can be any HTTP GET URL that is publicly accessible and downloads a single .zip file. </p>
-    pub fn source_url(&self) -> std::option::Option<&str> {
+    pub fn source_url(&self) -> std::option::Option<& str> {
         self.source_url.as_deref()
     }
 }
@@ -9500,7 +6711,7 @@ impl StartDeploymentInput {
 /// <p> The request structure for the list webhooks request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWebhooksInput {
+pub struct ListWebhooksInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -9513,11 +6724,11 @@ pub struct ListWebhooksInput {
 }
 impl ListWebhooksInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of records to list in a single response. </p>
@@ -9529,14 +6740,14 @@ impl ListWebhooksInput {
 /// <p> The request structure to use to list tags for a resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceInput {
+pub struct ListTagsForResourceInput  {
     /// <p> The Amazon Resource Name (ARN) to use to list tags. </p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
     /// <p> The Amazon Resource Name (ARN) to use to list tags. </p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -9544,7 +6755,7 @@ impl ListTagsForResourceInput {
 /// <p> The request structure for the list jobs request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobsInput {
+pub struct ListJobsInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -9560,15 +6771,15 @@ pub struct ListJobsInput {
 }
 impl ListJobsInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name for a branch. </p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned in a result, pass its value in here to list more steps. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of records to list in a single response. </p>
@@ -9580,7 +6791,7 @@ impl ListJobsInput {
 /// <p> The request structure for the list domain associations request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDomainAssociationsInput {
+pub struct ListDomainAssociationsInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -9593,11 +6804,11 @@ pub struct ListDomainAssociationsInput {
 }
 impl ListDomainAssociationsInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of records to list in a single response. </p>
@@ -9609,7 +6820,7 @@ impl ListDomainAssociationsInput {
 /// <p> The request structure for the list branches request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBranchesInput {
+pub struct ListBranchesInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -9622,11 +6833,11 @@ pub struct ListBranchesInput {
 }
 impl ListBranchesInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of records to list in a single response. </p>
@@ -9638,7 +6849,7 @@ impl ListBranchesInput {
 /// <p> The request structure for the list backend environments request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBackendEnvironmentsInput {
+pub struct ListBackendEnvironmentsInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -9654,15 +6865,15 @@ pub struct ListBackendEnvironmentsInput {
 }
 impl ListBackendEnvironmentsInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name of the backend environment </p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of records to list in a single response. </p>
@@ -9674,7 +6885,7 @@ impl ListBackendEnvironmentsInput {
 /// <p> Describes the request structure for the list artifacts request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListArtifactsInput {
+pub struct ListArtifactsInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -9693,19 +6904,19 @@ pub struct ListArtifactsInput {
 }
 impl ListArtifactsInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name of a branch that is part of an Amplify app. </p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p> The unique ID for a job. </p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of records to list in a single response. </p>
@@ -9717,7 +6928,7 @@ impl ListArtifactsInput {
 /// <p> The request structure for the list apps request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAppsInput {
+pub struct ListAppsInput  {
     /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -9727,7 +6938,7 @@ pub struct ListAppsInput {
 }
 impl ListAppsInput {
     /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of records to list in a single response. </p>
@@ -9739,14 +6950,14 @@ impl ListAppsInput {
 /// <p> The request structure for the get webhook request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWebhookInput {
+pub struct GetWebhookInput  {
     /// <p> The unique ID for a webhook. </p>
     #[doc(hidden)]
     pub webhook_id: std::option::Option<std::string::String>,
 }
 impl GetWebhookInput {
     /// <p> The unique ID for a webhook. </p>
-    pub fn webhook_id(&self) -> std::option::Option<&str> {
+    pub fn webhook_id(&self) -> std::option::Option<& str> {
         self.webhook_id.as_deref()
     }
 }
@@ -9754,7 +6965,7 @@ impl GetWebhookInput {
 /// <p> The request structure for the get job request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJobInput {
+pub struct GetJobInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -9767,15 +6978,15 @@ pub struct GetJobInput {
 }
 impl GetJobInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The branch name for the job. </p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p> The unique ID for the job. </p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -9783,7 +6994,7 @@ impl GetJobInput {
 /// <p> The request structure for the get domain association request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDomainAssociationInput {
+pub struct GetDomainAssociationInput  {
     /// <p> The unique id for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -9793,11 +7004,11 @@ pub struct GetDomainAssociationInput {
 }
 impl GetDomainAssociationInput {
     /// <p> The unique id for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name of the domain. </p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
@@ -9805,7 +7016,7 @@ impl GetDomainAssociationInput {
 /// <p> The request structure for the get branch request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBranchInput {
+pub struct GetBranchInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -9815,11 +7026,11 @@ pub struct GetBranchInput {
 }
 impl GetBranchInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name for the branch. </p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
 }
@@ -9827,7 +7038,7 @@ impl GetBranchInput {
 /// <p> The request structure for the get backend environment request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBackendEnvironmentInput {
+pub struct GetBackendEnvironmentInput  {
     /// <p> The unique id for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -9837,11 +7048,11 @@ pub struct GetBackendEnvironmentInput {
 }
 impl GetBackendEnvironmentInput {
     /// <p> The unique id for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name for the backend environment. </p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
 }
@@ -9849,14 +7060,14 @@ impl GetBackendEnvironmentInput {
 /// <p> Returns the request structure for the get artifact request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetArtifactUrlInput {
+pub struct GetArtifactUrlInput  {
     /// <p> The unique ID for an artifact. </p>
     #[doc(hidden)]
     pub artifact_id: std::option::Option<std::string::String>,
 }
 impl GetArtifactUrlInput {
     /// <p> The unique ID for an artifact. </p>
-    pub fn artifact_id(&self) -> std::option::Option<&str> {
+    pub fn artifact_id(&self) -> std::option::Option<& str> {
         self.artifact_id.as_deref()
     }
 }
@@ -9864,14 +7075,14 @@ impl GetArtifactUrlInput {
 /// <p> The request structure for the get app request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAppInput {
+pub struct GetAppInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl GetAppInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
 }
@@ -9879,7 +7090,7 @@ impl GetAppInput {
 /// <p> The request structure for the generate access logs request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GenerateAccessLogsInput {
+pub struct GenerateAccessLogsInput  {
     /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -9895,19 +7106,19 @@ pub struct GenerateAccessLogsInput {
 }
 impl GenerateAccessLogsInput {
     /// <p> The time at which the logs should start. The time range specified is inclusive of the start time. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p> The time at which the logs should end. The time range specified is inclusive of the end time. </p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p> The name of the domain. </p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
 }
@@ -9915,14 +7126,14 @@ impl GenerateAccessLogsInput {
 /// <p> The request structure for the delete webhook request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWebhookInput {
+pub struct DeleteWebhookInput  {
     /// <p> The unique ID for a webhook. </p>
     #[doc(hidden)]
     pub webhook_id: std::option::Option<std::string::String>,
 }
 impl DeleteWebhookInput {
     /// <p> The unique ID for a webhook. </p>
-    pub fn webhook_id(&self) -> std::option::Option<&str> {
+    pub fn webhook_id(&self) -> std::option::Option<& str> {
         self.webhook_id.as_deref()
     }
 }
@@ -9930,7 +7141,7 @@ impl DeleteWebhookInput {
 /// <p> The request structure for the delete job request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteJobInput {
+pub struct DeleteJobInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -9943,15 +7154,15 @@ pub struct DeleteJobInput {
 }
 impl DeleteJobInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name for the branch, for the job. </p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p> The unique ID for the job. </p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
@@ -9959,7 +7170,7 @@ impl DeleteJobInput {
 /// <p> The request structure for the delete domain association request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDomainAssociationInput {
+pub struct DeleteDomainAssociationInput  {
     /// <p> The unique id for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -9969,11 +7180,11 @@ pub struct DeleteDomainAssociationInput {
 }
 impl DeleteDomainAssociationInput {
     /// <p> The unique id for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name of the domain. </p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
 }
@@ -9981,7 +7192,7 @@ impl DeleteDomainAssociationInput {
 /// <p> The request structure for the delete branch request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBranchInput {
+pub struct DeleteBranchInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -9991,11 +7202,11 @@ pub struct DeleteBranchInput {
 }
 impl DeleteBranchInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name for the branch. </p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
 }
@@ -10003,7 +7214,7 @@ impl DeleteBranchInput {
 /// <p> The request structure for the delete backend environment request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBackendEnvironmentInput {
+pub struct DeleteBackendEnvironmentInput  {
     /// <p> The unique ID of an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -10013,11 +7224,11 @@ pub struct DeleteBackendEnvironmentInput {
 }
 impl DeleteBackendEnvironmentInput {
     /// <p> The unique ID of an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name of a backend environment of an Amplify app. </p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
 }
@@ -10025,14 +7236,14 @@ impl DeleteBackendEnvironmentInput {
 /// <p> Describes the request structure for the delete app request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppInput {
+pub struct DeleteAppInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl DeleteAppInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
 }
@@ -10040,7 +7251,7 @@ impl DeleteAppInput {
 /// <p> The request structure for the create webhook request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWebhookInput {
+pub struct CreateWebhookInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -10053,15 +7264,15 @@ pub struct CreateWebhookInput {
 }
 impl CreateWebhookInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name for a branch that is part of an Amplify app. </p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p> The description for a webhook. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
@@ -10069,7 +7280,7 @@ impl CreateWebhookInput {
 /// <p> The request structure for the create domain association request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDomainAssociationInput {
+pub struct CreateDomainAssociationInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -10091,11 +7302,11 @@ pub struct CreateDomainAssociationInput {
 }
 impl CreateDomainAssociationInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The domain name for the domain association. </p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p> Enables the automated creation of subdomains for branches. </p>
@@ -10103,15 +7314,15 @@ impl CreateDomainAssociationInput {
         self.enable_auto_sub_domain
     }
     /// <p> The setting for the subdomain. </p>
-    pub fn sub_domain_settings(&self) -> std::option::Option<&[crate::model::SubDomainSetting]> {
+    pub fn sub_domain_settings(&self) -> std::option::Option<& [crate::model::SubDomainSetting]> {
         self.sub_domain_settings.as_deref()
     }
     /// <p> Sets the branch patterns for automatic subdomain creation. </p>
-    pub fn auto_sub_domain_creation_patterns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn auto_sub_domain_creation_patterns(&self) -> std::option::Option<& [std::string::String]> {
         self.auto_sub_domain_creation_patterns.as_deref()
     }
     /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
-    pub fn auto_sub_domain_iam_role(&self) -> std::option::Option<&str> {
+    pub fn auto_sub_domain_iam_role(&self) -> std::option::Option<& str> {
         self.auto_sub_domain_iam_role.as_deref()
     }
 }
@@ -10119,7 +7330,7 @@ impl CreateDomainAssociationInput {
 /// <p> The request structure for the create a new deployment request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDeploymentInput {
+pub struct CreateDeploymentInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -10128,23 +7339,19 @@ pub struct CreateDeploymentInput {
     pub branch_name: std::option::Option<std::string::String>,
     /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
     #[doc(hidden)]
-    pub file_map:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub file_map: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateDeploymentInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name for the branch, for the job. </p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
-    pub fn file_map(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn file_map(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.file_map.as_ref()
     }
 }
@@ -10152,7 +7359,7 @@ impl CreateDeploymentInput {
 /// <p> The request structure for the create branch request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateBranchInput {
+pub struct CreateBranchInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -10176,22 +7383,20 @@ pub struct CreateBranchInput {
     pub enable_auto_build: std::option::Option<bool>,
     /// <p> The environment variables for the branch. </p>
     #[doc(hidden)]
-    pub environment_variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub environment_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     #[doc(hidden)]
     pub basic_auth_credentials: std::option::Option<std::string::String>,
     /// <p> Enables basic authorization for the branch. </p>
     #[doc(hidden)]
     pub enable_basic_auth: std::option::Option<bool>,
-    /// <p>Enables performance mode for the branch.</p>
+    /// <p>Enables performance mode for the branch.</p> 
     /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
     #[doc(hidden)]
     pub enable_performance_mode: std::option::Option<bool>,
     /// <p> The tag for the branch. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The build specification (build spec) for the branch. </p>
     #[doc(hidden)]
     pub build_spec: std::option::Option<std::string::String>,
@@ -10213,23 +7418,23 @@ pub struct CreateBranchInput {
 }
 impl CreateBranchInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name for the branch. </p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> std::option::Option<& str> {
         self.branch_name.as_deref()
     }
     /// <p> The description for the branch. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> Describes the current stage for the branch. </p>
-    pub fn stage(&self) -> std::option::Option<&crate::model::Stage> {
+    pub fn stage(&self) -> std::option::Option<& crate::model::Stage> {
         self.stage.as_ref()
     }
     /// <p> The framework for the branch. </p>
-    pub fn framework(&self) -> std::option::Option<&str> {
+    pub fn framework(&self) -> std::option::Option<& str> {
         self.framework.as_deref()
     }
     /// <p> Enables notifications for the branch. </p>
@@ -10241,42 +7446,36 @@ impl CreateBranchInput {
         self.enable_auto_build
     }
     /// <p> The environment variables for the branch. </p>
-    pub fn environment_variables(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn environment_variables(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.environment_variables.as_ref()
     }
     /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    pub fn basic_auth_credentials(&self) -> std::option::Option<&str> {
+    pub fn basic_auth_credentials(&self) -> std::option::Option<& str> {
         self.basic_auth_credentials.as_deref()
     }
     /// <p> Enables basic authorization for the branch. </p>
     pub fn enable_basic_auth(&self) -> std::option::Option<bool> {
         self.enable_basic_auth
     }
-    /// <p>Enables performance mode for the branch.</p>
+    /// <p>Enables performance mode for the branch.</p> 
     /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
     pub fn enable_performance_mode(&self) -> std::option::Option<bool> {
         self.enable_performance_mode
     }
     /// <p> The tag for the branch. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> The build specification (build spec) for the branch. </p>
-    pub fn build_spec(&self) -> std::option::Option<&str> {
+    pub fn build_spec(&self) -> std::option::Option<& str> {
         self.build_spec.as_deref()
     }
     /// <p> The content Time To Live (TTL) for the website in seconds. </p>
-    pub fn ttl(&self) -> std::option::Option<&str> {
+    pub fn ttl(&self) -> std::option::Option<& str> {
         self.ttl.as_deref()
     }
     /// <p> The display name for a branch. This is used as the default domain prefix. </p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p> Enables pull request previews for this branch. </p>
@@ -10284,15 +7483,15 @@ impl CreateBranchInput {
         self.enable_pull_request_preview
     }
     /// <p> The Amplify environment name for the pull request. </p>
-    pub fn pull_request_environment_name(&self) -> std::option::Option<&str> {
+    pub fn pull_request_environment_name(&self) -> std::option::Option<& str> {
         self.pull_request_environment_name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
-    pub fn backend_environment_arn(&self) -> std::option::Option<&str> {
+    pub fn backend_environment_arn(&self) -> std::option::Option<& str> {
         self.backend_environment_arn.as_deref()
     }
 }
-impl std::fmt::Debug for CreateBranchInput {
+impl  std::fmt::Debug for CreateBranchInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBranchInput");
         formatter.field("app_id", &self.app_id);
@@ -10310,14 +7509,8 @@ impl std::fmt::Debug for CreateBranchInput {
         formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("ttl", &self.ttl);
         formatter.field("display_name", &self.display_name);
-        formatter.field(
-            "enable_pull_request_preview",
-            &self.enable_pull_request_preview,
-        );
-        formatter.field(
-            "pull_request_environment_name",
-            &self.pull_request_environment_name,
-        );
+        formatter.field("enable_pull_request_preview", &self.enable_pull_request_preview);
+        formatter.field("pull_request_environment_name", &self.pull_request_environment_name);
         formatter.field("backend_environment_arn", &self.backend_environment_arn);
         formatter.finish()
     }
@@ -10326,7 +7519,7 @@ impl std::fmt::Debug for CreateBranchInput {
 /// <p> The request structure for the backend environment create request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackendEnvironmentInput {
+pub struct CreateBackendEnvironmentInput  {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -10342,19 +7535,19 @@ pub struct CreateBackendEnvironmentInput {
 }
 impl CreateBackendEnvironmentInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p> The name for the backend environment. </p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p> The AWS CloudFormation stack name of a backend environment. </p>
-    pub fn stack_name(&self) -> std::option::Option<&str> {
+    pub fn stack_name(&self) -> std::option::Option<& str> {
         self.stack_name.as_deref()
     }
     /// <p> The name of deployment artifacts. </p>
-    pub fn deployment_artifacts(&self) -> std::option::Option<&str> {
+    pub fn deployment_artifacts(&self) -> std::option::Option<& str> {
         self.deployment_artifacts.as_deref()
     }
 }
@@ -10362,7 +7555,7 @@ impl CreateBackendEnvironmentInput {
 /// <p> The request structure used to create apps in Amplify. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateAppInput {
+pub struct CreateAppInput  {
     /// <p> The name for an Amplify app. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -10378,22 +7571,21 @@ pub struct CreateAppInput {
     /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
     #[doc(hidden)]
     pub iam_service_role_arn: std::option::Option<std::string::String>,
-    /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p>
-    /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit. To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p>
-    /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you create a new app.</p>
+    /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p> 
+    /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit. To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p> 
+    /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you create a new app.</p> 
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
     #[doc(hidden)]
     pub oauth_token: std::option::Option<std::string::String>,
-    /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p>
-    /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p>
-    /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you create a new app.</p>
+    /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p> 
+    /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p> 
+    /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you create a new app.</p> 
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
     #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
     /// <p> The environment variables map for an Amplify app. </p>
     #[doc(hidden)]
-    pub environment_variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub environment_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> Enables the auto building of branches for an Amplify app. </p>
     #[doc(hidden)]
     pub enable_branch_auto_build: std::option::Option<bool>,
@@ -10411,8 +7603,7 @@ pub struct CreateAppInput {
     pub custom_rules: std::option::Option<std::vec::Vec<crate::model::CustomRule>>,
     /// <p> The tag for an Amplify app. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The build specification (build spec) for an Amplify app. </p>
     #[doc(hidden)]
     pub build_spec: std::option::Option<std::string::String>,
@@ -10431,44 +7622,41 @@ pub struct CreateAppInput {
 }
 impl CreateAppInput {
     /// <p> The name for an Amplify app. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The description for an Amplify app. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The repository for an Amplify app. </p>
-    pub fn repository(&self) -> std::option::Option<&str> {
+    pub fn repository(&self) -> std::option::Option<& str> {
         self.repository.as_deref()
     }
     /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::model::Platform> {
+    pub fn platform(&self) -> std::option::Option<& crate::model::Platform> {
         self.platform.as_ref()
     }
     /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
-    pub fn iam_service_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_service_role_arn(&self) -> std::option::Option<& str> {
         self.iam_service_role_arn.as_deref()
     }
-    /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p>
-    /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit. To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p>
-    /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you create a new app.</p>
+    /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p> 
+    /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit. To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p> 
+    /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you create a new app.</p> 
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
-    pub fn oauth_token(&self) -> std::option::Option<&str> {
+    pub fn oauth_token(&self) -> std::option::Option<& str> {
         self.oauth_token.as_deref()
     }
-    /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p>
-    /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p>
-    /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you create a new app.</p>
+    /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p> 
+    /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p> 
+    /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you create a new app.</p> 
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
-    pub fn access_token(&self) -> std::option::Option<&str> {
+    pub fn access_token(&self) -> std::option::Option<& str> {
         self.access_token.as_deref()
     }
     /// <p> The environment variables map for an Amplify app. </p>
-    pub fn environment_variables(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn environment_variables(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.environment_variables.as_ref()
     }
     /// <p> Enables the auto building of branches for an Amplify app. </p>
@@ -10484,26 +7672,23 @@ impl CreateAppInput {
         self.enable_basic_auth
     }
     /// <p> The credentials for basic authorization for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    pub fn basic_auth_credentials(&self) -> std::option::Option<&str> {
+    pub fn basic_auth_credentials(&self) -> std::option::Option<& str> {
         self.basic_auth_credentials.as_deref()
     }
     /// <p> The custom rewrite and redirect rules for an Amplify app. </p>
-    pub fn custom_rules(&self) -> std::option::Option<&[crate::model::CustomRule]> {
+    pub fn custom_rules(&self) -> std::option::Option<& [crate::model::CustomRule]> {
         self.custom_rules.as_deref()
     }
     /// <p> The tag for an Amplify app. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p> The build specification (build spec) for an Amplify app. </p>
-    pub fn build_spec(&self) -> std::option::Option<&str> {
+    pub fn build_spec(&self) -> std::option::Option<& str> {
         self.build_spec.as_deref()
     }
     /// <p>The custom HTTP headers for an Amplify app.</p>
-    pub fn custom_headers(&self) -> std::option::Option<&str> {
+    pub fn custom_headers(&self) -> std::option::Option<& str> {
         self.custom_headers.as_deref()
     }
     /// <p> Enables automated branch creation for an Amplify app. </p>
@@ -10511,17 +7696,15 @@ impl CreateAppInput {
         self.enable_auto_branch_creation
     }
     /// <p> The automated branch creation glob patterns for an Amplify app. </p>
-    pub fn auto_branch_creation_patterns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn auto_branch_creation_patterns(&self) -> std::option::Option<& [std::string::String]> {
         self.auto_branch_creation_patterns.as_deref()
     }
     /// <p> The automated branch creation configuration for an Amplify app. </p>
-    pub fn auto_branch_creation_config(
-        &self,
-    ) -> std::option::Option<&crate::model::AutoBranchCreationConfig> {
+    pub fn auto_branch_creation_config(&self) -> std::option::Option<& crate::model::AutoBranchCreationConfig> {
         self.auto_branch_creation_config.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAppInput {
+impl  std::fmt::Debug for CreateAppInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAppInput");
         formatter.field("name", &self.name);
@@ -10533,28 +7716,17 @@ impl std::fmt::Debug for CreateAppInput {
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.field("environment_variables", &self.environment_variables);
         formatter.field("enable_branch_auto_build", &self.enable_branch_auto_build);
-        formatter.field(
-            "enable_branch_auto_deletion",
-            &self.enable_branch_auto_deletion,
-        );
+        formatter.field("enable_branch_auto_deletion", &self.enable_branch_auto_deletion);
         formatter.field("enable_basic_auth", &self.enable_basic_auth);
         formatter.field("basic_auth_credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_rules", &self.custom_rules);
         formatter.field("tags", &self.tags);
         formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_headers", &self.custom_headers);
-        formatter.field(
-            "enable_auto_branch_creation",
-            &self.enable_auto_branch_creation,
-        );
-        formatter.field(
-            "auto_branch_creation_patterns",
-            &self.auto_branch_creation_patterns,
-        );
-        formatter.field(
-            "auto_branch_creation_config",
-            &self.auto_branch_creation_config,
-        );
+        formatter.field("enable_auto_branch_creation", &self.enable_auto_branch_creation);
+        formatter.field("auto_branch_creation_patterns", &self.auto_branch_creation_patterns);
+        formatter.field("auto_branch_creation_config", &self.auto_branch_creation_config);
         formatter.finish()
     }
 }
+

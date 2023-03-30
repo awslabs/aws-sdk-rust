@@ -7,36 +7,29 @@ pub enum Error {
     InternalException(crate::error::InternalException),
     /// <p>This exception is thrown when the client submits a malformed request.</p>
     InvalidRequestException(crate::error::InvalidRequestException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    /// 
+    Unhandled(crate::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::InternalException(inner) => inner.fmt(f),
             Error::InvalidRequestException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelTaskExecutionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CancelTaskExecutionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CancelTaskExecutionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CancelTaskExecutionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -44,27 +37,16 @@ where
 impl From<crate::error::CancelTaskExecutionError> for Error {
     fn from(err: crate::error::CancelTaskExecutionError) -> Self {
         match err.kind {
-            crate::error::CancelTaskExecutionErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::CancelTaskExecutionErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CancelTaskExecutionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CancelTaskExecutionErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::CancelTaskExecutionErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CancelTaskExecutionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAgentError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAgentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateAgentError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -72,29 +54,16 @@ where
 impl From<crate::error::CreateAgentError> for Error {
     fn from(err: crate::error::CreateAgentError) -> Self {
         match err.kind {
-            crate::error::CreateAgentErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::CreateAgentErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateAgentErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateAgentErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::CreateAgentErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateAgentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationEfsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateLocationEfsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationEfsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateLocationEfsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -102,30 +71,16 @@ where
 impl From<crate::error::CreateLocationEfsError> for Error {
     fn from(err: crate::error::CreateLocationEfsError) -> Self {
         match err.kind {
-            crate::error::CreateLocationEfsErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::CreateLocationEfsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateLocationEfsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateLocationEfsErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::CreateLocationEfsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateLocationEfsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxLustreError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxLustreError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxLustreError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxLustreError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -133,30 +88,16 @@ where
 impl From<crate::error::CreateLocationFsxLustreError> for Error {
     fn from(err: crate::error::CreateLocationFsxLustreError) -> Self {
         match err.kind {
-            crate::error::CreateLocationFsxLustreErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::CreateLocationFsxLustreErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateLocationFsxLustreErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateLocationFsxLustreErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::CreateLocationFsxLustreErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateLocationFsxLustreErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxOntapError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxOntapError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxOntapError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxOntapError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -164,30 +105,16 @@ where
 impl From<crate::error::CreateLocationFsxOntapError> for Error {
     fn from(err: crate::error::CreateLocationFsxOntapError) -> Self {
         match err.kind {
-            crate::error::CreateLocationFsxOntapErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::CreateLocationFsxOntapErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateLocationFsxOntapErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateLocationFsxOntapErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::CreateLocationFsxOntapErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateLocationFsxOntapErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxOpenZfsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxOpenZfsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxOpenZfsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxOpenZfsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -195,30 +122,16 @@ where
 impl From<crate::error::CreateLocationFsxOpenZfsError> for Error {
     fn from(err: crate::error::CreateLocationFsxOpenZfsError) -> Self {
         match err.kind {
-            crate::error::CreateLocationFsxOpenZfsErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::CreateLocationFsxOpenZfsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateLocationFsxOpenZfsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateLocationFsxOpenZfsErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::CreateLocationFsxOpenZfsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateLocationFsxOpenZfsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxWindowsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxWindowsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxWindowsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateLocationFsxWindowsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -226,29 +139,16 @@ where
 impl From<crate::error::CreateLocationFsxWindowsError> for Error {
     fn from(err: crate::error::CreateLocationFsxWindowsError) -> Self {
         match err.kind {
-            crate::error::CreateLocationFsxWindowsErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::CreateLocationFsxWindowsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateLocationFsxWindowsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateLocationFsxWindowsErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::CreateLocationFsxWindowsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateLocationFsxWindowsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationHdfsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateLocationHdfsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationHdfsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateLocationHdfsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -256,29 +156,16 @@ where
 impl From<crate::error::CreateLocationHdfsError> for Error {
     fn from(err: crate::error::CreateLocationHdfsError) -> Self {
         match err.kind {
-            crate::error::CreateLocationHdfsErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::CreateLocationHdfsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateLocationHdfsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateLocationHdfsErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::CreateLocationHdfsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateLocationHdfsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationNfsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateLocationNfsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationNfsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateLocationNfsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -286,30 +173,16 @@ where
 impl From<crate::error::CreateLocationNfsError> for Error {
     fn from(err: crate::error::CreateLocationNfsError) -> Self {
         match err.kind {
-            crate::error::CreateLocationNfsErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::CreateLocationNfsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateLocationNfsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateLocationNfsErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::CreateLocationNfsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateLocationNfsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationObjectStorageError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateLocationObjectStorageError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationObjectStorageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateLocationObjectStorageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -317,29 +190,16 @@ where
 impl From<crate::error::CreateLocationObjectStorageError> for Error {
     fn from(err: crate::error::CreateLocationObjectStorageError) -> Self {
         match err.kind {
-            crate::error::CreateLocationObjectStorageErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::CreateLocationObjectStorageErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateLocationObjectStorageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateLocationObjectStorageErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::CreateLocationObjectStorageErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateLocationObjectStorageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationS3Error, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateLocationS3Error, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationS3Error, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateLocationS3Error, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -347,29 +207,16 @@ where
 impl From<crate::error::CreateLocationS3Error> for Error {
     fn from(err: crate::error::CreateLocationS3Error) -> Self {
         match err.kind {
-            crate::error::CreateLocationS3ErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::CreateLocationS3ErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateLocationS3ErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateLocationS3ErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::CreateLocationS3ErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateLocationS3ErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationSmbError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreateLocationSmbError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateLocationSmbError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateLocationSmbError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -377,27 +224,16 @@ where
 impl From<crate::error::CreateLocationSmbError> for Error {
     fn from(err: crate::error::CreateLocationSmbError) -> Self {
         match err.kind {
-            crate::error::CreateLocationSmbErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::CreateLocationSmbErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateLocationSmbErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateLocationSmbErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::CreateLocationSmbErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateLocationSmbErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateTaskError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateTaskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateTaskError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -405,27 +241,16 @@ where
 impl From<crate::error::CreateTaskError> for Error {
     fn from(err: crate::error::CreateTaskError) -> Self {
         match err.kind {
-            crate::error::CreateTaskErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::CreateTaskErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::CreateTaskErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateTaskErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::CreateTaskErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::CreateTaskErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAgentError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAgentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAgentError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -433,27 +258,16 @@ where
 impl From<crate::error::DeleteAgentError> for Error {
     fn from(err: crate::error::DeleteAgentError) -> Self {
         match err.kind {
-            crate::error::DeleteAgentErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::DeleteAgentErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteAgentErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteAgentErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::DeleteAgentErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeleteAgentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteLocationError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteLocationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteLocationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -461,27 +275,16 @@ where
 impl From<crate::error::DeleteLocationError> for Error {
     fn from(err: crate::error::DeleteLocationError) -> Self {
         match err.kind {
-            crate::error::DeleteLocationErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::DeleteLocationErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteLocationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteLocationErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::DeleteLocationErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeleteLocationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteTaskError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteTaskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteTaskError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -489,27 +292,16 @@ where
 impl From<crate::error::DeleteTaskError> for Error {
     fn from(err: crate::error::DeleteTaskError) -> Self {
         match err.kind {
-            crate::error::DeleteTaskErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::DeleteTaskErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DeleteTaskErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteTaskErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::DeleteTaskErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DeleteTaskErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAgentError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAgentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeAgentError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -517,29 +309,16 @@ where
 impl From<crate::error::DescribeAgentError> for Error {
     fn from(err: crate::error::DescribeAgentError) -> Self {
         match err.kind {
-            crate::error::DescribeAgentErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::DescribeAgentErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeAgentErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeAgentErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::DescribeAgentErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeAgentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationEfsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationEfsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationEfsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationEfsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -547,30 +326,16 @@ where
 impl From<crate::error::DescribeLocationEfsError> for Error {
     fn from(err: crate::error::DescribeLocationEfsError) -> Self {
         match err.kind {
-            crate::error::DescribeLocationEfsErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::DescribeLocationEfsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeLocationEfsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeLocationEfsErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::DescribeLocationEfsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeLocationEfsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxLustreError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxLustreError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxLustreError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxLustreError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -578,30 +343,16 @@ where
 impl From<crate::error::DescribeLocationFsxLustreError> for Error {
     fn from(err: crate::error::DescribeLocationFsxLustreError) -> Self {
         match err.kind {
-            crate::error::DescribeLocationFsxLustreErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::DescribeLocationFsxLustreErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeLocationFsxLustreErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeLocationFsxLustreErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::DescribeLocationFsxLustreErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeLocationFsxLustreErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxOntapError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxOntapError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxOntapError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxOntapError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -609,30 +360,16 @@ where
 impl From<crate::error::DescribeLocationFsxOntapError> for Error {
     fn from(err: crate::error::DescribeLocationFsxOntapError) -> Self {
         match err.kind {
-            crate::error::DescribeLocationFsxOntapErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::DescribeLocationFsxOntapErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeLocationFsxOntapErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeLocationFsxOntapErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::DescribeLocationFsxOntapErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeLocationFsxOntapErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxOpenZfsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxOpenZfsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxOpenZfsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxOpenZfsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -640,30 +377,16 @@ where
 impl From<crate::error::DescribeLocationFsxOpenZfsError> for Error {
     fn from(err: crate::error::DescribeLocationFsxOpenZfsError) -> Self {
         match err.kind {
-            crate::error::DescribeLocationFsxOpenZfsErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::DescribeLocationFsxOpenZfsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeLocationFsxOpenZfsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeLocationFsxOpenZfsErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::DescribeLocationFsxOpenZfsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeLocationFsxOpenZfsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxWindowsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxWindowsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxWindowsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationFsxWindowsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -671,30 +394,16 @@ where
 impl From<crate::error::DescribeLocationFsxWindowsError> for Error {
     fn from(err: crate::error::DescribeLocationFsxWindowsError) -> Self {
         match err.kind {
-            crate::error::DescribeLocationFsxWindowsErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::DescribeLocationFsxWindowsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeLocationFsxWindowsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeLocationFsxWindowsErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::DescribeLocationFsxWindowsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeLocationFsxWindowsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationHdfsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationHdfsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationHdfsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationHdfsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -702,29 +411,16 @@ where
 impl From<crate::error::DescribeLocationHdfsError> for Error {
     fn from(err: crate::error::DescribeLocationHdfsError) -> Self {
         match err.kind {
-            crate::error::DescribeLocationHdfsErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::DescribeLocationHdfsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeLocationHdfsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeLocationHdfsErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::DescribeLocationHdfsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeLocationHdfsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationNfsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationNfsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationNfsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationNfsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -732,30 +428,16 @@ where
 impl From<crate::error::DescribeLocationNfsError> for Error {
     fn from(err: crate::error::DescribeLocationNfsError) -> Self {
         match err.kind {
-            crate::error::DescribeLocationNfsErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::DescribeLocationNfsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeLocationNfsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeLocationNfsErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::DescribeLocationNfsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeLocationNfsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationObjectStorageError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationObjectStorageError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationObjectStorageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationObjectStorageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -763,29 +445,16 @@ where
 impl From<crate::error::DescribeLocationObjectStorageError> for Error {
     fn from(err: crate::error::DescribeLocationObjectStorageError) -> Self {
         match err.kind {
-            crate::error::DescribeLocationObjectStorageErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::DescribeLocationObjectStorageErrorKind::InvalidRequestException(
-                inner,
-            ) => Error::InvalidRequestException(inner),
-            crate::error::DescribeLocationObjectStorageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeLocationObjectStorageErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::DescribeLocationObjectStorageErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeLocationObjectStorageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationS3Error, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationS3Error, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationS3Error, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationS3Error, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -793,29 +462,16 @@ where
 impl From<crate::error::DescribeLocationS3Error> for Error {
     fn from(err: crate::error::DescribeLocationS3Error) -> Self {
         match err.kind {
-            crate::error::DescribeLocationS3ErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::DescribeLocationS3ErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeLocationS3ErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeLocationS3ErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::DescribeLocationS3ErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeLocationS3ErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationSmbError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationSmbError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeLocationSmbError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeLocationSmbError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -823,27 +479,16 @@ where
 impl From<crate::error::DescribeLocationSmbError> for Error {
     fn from(err: crate::error::DescribeLocationSmbError) -> Self {
         match err.kind {
-            crate::error::DescribeLocationSmbErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::DescribeLocationSmbErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeLocationSmbErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeLocationSmbErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::DescribeLocationSmbErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeLocationSmbErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeTaskError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeTaskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeTaskError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -851,30 +496,16 @@ where
 impl From<crate::error::DescribeTaskError> for Error {
     fn from(err: crate::error::DescribeTaskError) -> Self {
         match err.kind {
-            crate::error::DescribeTaskErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::DescribeTaskErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeTaskErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeTaskErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::DescribeTaskErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeTaskErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeTaskExecutionError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribeTaskExecutionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeTaskExecutionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeTaskExecutionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -882,27 +513,16 @@ where
 impl From<crate::error::DescribeTaskExecutionError> for Error {
     fn from(err: crate::error::DescribeTaskExecutionError) -> Self {
         match err.kind {
-            crate::error::DescribeTaskExecutionErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::DescribeTaskExecutionErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::DescribeTaskExecutionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeTaskExecutionErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::DescribeTaskExecutionErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::DescribeTaskExecutionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAgentsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAgentsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAgentsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -910,27 +530,16 @@ where
 impl From<crate::error::ListAgentsError> for Error {
     fn from(err: crate::error::ListAgentsError) -> Self {
         match err.kind {
-            crate::error::ListAgentsErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::ListAgentsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListAgentsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListAgentsErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::ListAgentsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ListAgentsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListLocationsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListLocationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListLocationsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -938,29 +547,16 @@ where
 impl From<crate::error::ListLocationsError> for Error {
     fn from(err: crate::error::ListLocationsError) -> Self {
         match err.kind {
-            crate::error::ListLocationsErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::ListLocationsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListLocationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListLocationsErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::ListLocationsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ListLocationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -968,29 +564,16 @@ where
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
         match err.kind {
-            crate::error::ListTagsForResourceErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::ListTagsForResourceErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTaskExecutionsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTaskExecutionsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTaskExecutionsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTaskExecutionsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -998,27 +581,16 @@ where
 impl From<crate::error::ListTaskExecutionsError> for Error {
     fn from(err: crate::error::ListTaskExecutionsError) -> Self {
         match err.kind {
-            crate::error::ListTaskExecutionsErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::ListTaskExecutionsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListTaskExecutionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTaskExecutionsErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::ListTaskExecutionsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ListTaskExecutionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTasksError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTasksError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTasksError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1026,29 +598,16 @@ where
 impl From<crate::error::ListTasksError> for Error {
     fn from(err: crate::error::ListTasksError) -> Self {
         match err.kind {
-            crate::error::ListTasksErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::ListTasksErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::ListTasksErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTasksErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::ListTasksErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::ListTasksErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartTaskExecutionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::StartTaskExecutionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::StartTaskExecutionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::StartTaskExecutionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1056,27 +615,16 @@ where
 impl From<crate::error::StartTaskExecutionError> for Error {
     fn from(err: crate::error::StartTaskExecutionError) -> Self {
         match err.kind {
-            crate::error::StartTaskExecutionErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::StartTaskExecutionErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::StartTaskExecutionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartTaskExecutionErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::StartTaskExecutionErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::StartTaskExecutionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1084,27 +632,16 @@ where
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
         match err.kind {
-            crate::error::TagResourceErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::TagResourceErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::TagResourceErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1112,27 +649,16 @@ where
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
         match err.kind {
-            crate::error::UntagResourceErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::UntagResourceErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::UntagResourceErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAgentError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateAgentError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateAgentError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1140,29 +666,16 @@ where
 impl From<crate::error::UpdateAgentError> for Error {
     fn from(err: crate::error::UpdateAgentError) -> Self {
         match err.kind {
-            crate::error::UpdateAgentErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::UpdateAgentErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateAgentErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateAgentErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::UpdateAgentErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UpdateAgentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateLocationHdfsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateLocationHdfsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateLocationHdfsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateLocationHdfsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1170,29 +683,16 @@ where
 impl From<crate::error::UpdateLocationHdfsError> for Error {
     fn from(err: crate::error::UpdateLocationHdfsError) -> Self {
         match err.kind {
-            crate::error::UpdateLocationHdfsErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::UpdateLocationHdfsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateLocationHdfsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateLocationHdfsErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::UpdateLocationHdfsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UpdateLocationHdfsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateLocationNfsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateLocationNfsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateLocationNfsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateLocationNfsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1200,30 +700,16 @@ where
 impl From<crate::error::UpdateLocationNfsError> for Error {
     fn from(err: crate::error::UpdateLocationNfsError) -> Self {
         match err.kind {
-            crate::error::UpdateLocationNfsErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::UpdateLocationNfsErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateLocationNfsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateLocationNfsErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::UpdateLocationNfsErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UpdateLocationNfsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateLocationObjectStorageError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateLocationObjectStorageError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateLocationObjectStorageError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateLocationObjectStorageError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1231,29 +717,16 @@ where
 impl From<crate::error::UpdateLocationObjectStorageError> for Error {
     fn from(err: crate::error::UpdateLocationObjectStorageError) -> Self {
         match err.kind {
-            crate::error::UpdateLocationObjectStorageErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::UpdateLocationObjectStorageErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateLocationObjectStorageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateLocationObjectStorageErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::UpdateLocationObjectStorageErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UpdateLocationObjectStorageErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateLocationSmbError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateLocationSmbError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateLocationSmbError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateLocationSmbError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1261,27 +734,16 @@ where
 impl From<crate::error::UpdateLocationSmbError> for Error {
     fn from(err: crate::error::UpdateLocationSmbError) -> Self {
         match err.kind {
-            crate::error::UpdateLocationSmbErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::UpdateLocationSmbErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateLocationSmbErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateLocationSmbErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::UpdateLocationSmbErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UpdateLocationSmbErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateTaskError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateTaskError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateTaskError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1289,29 +751,16 @@ where
 impl From<crate::error::UpdateTaskError> for Error {
     fn from(err: crate::error::UpdateTaskError) -> Self {
         match err.kind {
-            crate::error::UpdateTaskErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::UpdateTaskErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateTaskErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateTaskErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::UpdateTaskErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UpdateTaskErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateTaskExecutionError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdateTaskExecutionError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdateTaskExecutionError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdateTaskExecutionError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -1319,16 +768,11 @@ where
 impl From<crate::error::UpdateTaskExecutionError> for Error {
     fn from(err: crate::error::UpdateTaskExecutionError) -> Self {
         match err.kind {
-            crate::error::UpdateTaskExecutionErrorKind::InternalException(inner) => {
-                Error::InternalException(inner)
-            }
-            crate::error::UpdateTaskExecutionErrorKind::InvalidRequestException(inner) => {
-                Error::InvalidRequestException(inner)
-            }
-            crate::error::UpdateTaskExecutionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateTaskExecutionErrorKind::InternalException(inner) => Error::InternalException(inner),
+            crate::error::UpdateTaskExecutionErrorKind::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::error::UpdateTaskExecutionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
 impl std::error::Error for Error {}
+

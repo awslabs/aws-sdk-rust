@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UpdateEnrollmentStatusError {
     /// Kind of error that occurred.
-    pub kind: UpdateEnrollmentStatusErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateEnrollmentStatusErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateEnrollmentStatusError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateEnrollmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -32,28 +32,40 @@ pub enum UpdateEnrollmentStatusErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateEnrollmentStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateEnrollmentStatusErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            UpdateEnrollmentStatusErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            UpdateEnrollmentStatusErrorKind::InvalidParameterValueException(_inner) => {
+            UpdateEnrollmentStatusErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEnrollmentStatusErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEnrollmentStatusErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEnrollmentStatusErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEnrollmentStatusErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEnrollmentStatusErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateEnrollmentStatusErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateEnrollmentStatusErrorKind::MissingAuthenticationToken(_inner) => _inner.fmt(f),
-            UpdateEnrollmentStatusErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            UpdateEnrollmentStatusErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            UpdateEnrollmentStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -67,103 +79,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateEnrollmentStatusError {
 }
 impl UpdateEnrollmentStatusError {
     /// Creates a new `UpdateEnrollmentStatusError`.
-    pub fn new(kind: UpdateEnrollmentStatusErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateEnrollmentStatusError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateEnrollmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateEnrollmentStatusError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateEnrollmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateEnrollmentStatusErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateEnrollmentStatusError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateEnrollmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateEnrollmentStatusError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateEnrollmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateEnrollmentStatusErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEnrollmentStatusErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, UpdateEnrollmentStatusErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UpdateEnrollmentStatusErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEnrollmentStatusErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, UpdateEnrollmentStatusErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `UpdateEnrollmentStatusErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEnrollmentStatusErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, UpdateEnrollmentStatusErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `UpdateEnrollmentStatusErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEnrollmentStatusErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, UpdateEnrollmentStatusErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `UpdateEnrollmentStatusErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEnrollmentStatusErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateEnrollmentStatusErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateEnrollmentStatusErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateEnrollmentStatusErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, UpdateEnrollmentStatusErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for UpdateEnrollmentStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateEnrollmentStatusErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            UpdateEnrollmentStatusErrorKind::InternalServerException(_inner) => Some(_inner),
-            UpdateEnrollmentStatusErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            UpdateEnrollmentStatusErrorKind::MissingAuthenticationToken(_inner) => Some(_inner),
-            UpdateEnrollmentStatusErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            UpdateEnrollmentStatusErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateEnrollmentStatusErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateEnrollmentStatusErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEnrollmentStatusErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEnrollmentStatusErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEnrollmentStatusErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEnrollmentStatusErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEnrollmentStatusErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateEnrollmentStatusErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -171,22 +175,20 @@ impl std::error::Error for UpdateEnrollmentStatusError {
 /// <p>The request was denied due to request throttling.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThrottlingException {
+pub struct ThrottlingException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -196,7 +198,7 @@ impl std::fmt::Display for ThrottlingException {
 impl std::error::Error for ThrottlingException {}
 /// See [`ThrottlingException`](crate::error::ThrottlingException).
 pub mod throttling_exception {
-
+    
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -210,16 +212,18 @@ pub mod throttling_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
         pub fn build(self) -> crate::error::ThrottlingException {
             crate::error::ThrottlingException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ThrottlingException {
     /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
@@ -231,22 +235,20 @@ impl ThrottlingException {
 /// <p>The request has failed due to a temporary failure of the server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceUnavailableException {
+pub struct ServiceUnavailableException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceUnavailableException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -256,7 +258,7 @@ impl std::fmt::Display for ServiceUnavailableException {
 impl std::error::Error for ServiceUnavailableException {}
 /// See [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
 pub mod service_unavailable_exception {
-
+    
     /// A builder for [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -270,16 +272,18 @@ pub mod service_unavailable_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
         pub fn build(self) -> crate::error::ServiceUnavailableException {
             crate::error::ServiceUnavailableException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceUnavailableException {
     /// Creates a new builder-style object to manufacture [`ServiceUnavailableException`](crate::error::ServiceUnavailableException).
@@ -291,22 +295,20 @@ impl ServiceUnavailableException {
 /// <p>The request must contain either a valid (registered) Amazon Web Services access key ID or X.509 certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MissingAuthenticationToken {
+pub struct MissingAuthenticationToken  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl MissingAuthenticationToken {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for MissingAuthenticationToken {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MissingAuthenticationToken")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -316,7 +318,7 @@ impl std::fmt::Display for MissingAuthenticationToken {
 impl std::error::Error for MissingAuthenticationToken {}
 /// See [`MissingAuthenticationToken`](crate::error::MissingAuthenticationToken).
 pub mod missing_authentication_token {
-
+    
     /// A builder for [`MissingAuthenticationToken`](crate::error::MissingAuthenticationToken).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -330,16 +332,18 @@ pub mod missing_authentication_token {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`MissingAuthenticationToken`](crate::error::MissingAuthenticationToken).
         pub fn build(self) -> crate::error::MissingAuthenticationToken {
             crate::error::MissingAuthenticationToken {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl MissingAuthenticationToken {
     /// Creates a new builder-style object to manufacture [`MissingAuthenticationToken`](crate::error::MissingAuthenticationToken).
@@ -351,22 +355,20 @@ impl MissingAuthenticationToken {
 /// <p>The value supplied for the input parameter is out of range or not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidParameterValueException {
+pub struct InvalidParameterValueException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidParameterValueException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidParameterValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterValueException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -376,7 +378,7 @@ impl std::fmt::Display for InvalidParameterValueException {
 impl std::error::Error for InvalidParameterValueException {}
 /// See [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
 pub mod invalid_parameter_value_exception {
-
+    
     /// A builder for [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -390,16 +392,18 @@ pub mod invalid_parameter_value_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
         pub fn build(self) -> crate::error::InvalidParameterValueException {
             crate::error::InvalidParameterValueException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidParameterValueException {
     /// Creates a new builder-style object to manufacture [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
@@ -411,22 +415,20 @@ impl InvalidParameterValueException {
 /// <p>An internal error has occurred. Try your call again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServerException {
+pub struct InternalServerException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalServerException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -436,7 +438,7 @@ impl std::fmt::Display for InternalServerException {
 impl std::error::Error for InternalServerException {}
 /// See [`InternalServerException`](crate::error::InternalServerException).
 pub mod internal_server_exception {
-
+    
     /// A builder for [`InternalServerException`](crate::error::InternalServerException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -450,16 +452,18 @@ pub mod internal_server_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InternalServerException`](crate::error::InternalServerException).
         pub fn build(self) -> crate::error::InternalServerException {
             crate::error::InternalServerException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InternalServerException {
     /// Creates a new builder-style object to manufacture [`InternalServerException`](crate::error::InternalServerException).
@@ -471,22 +475,20 @@ impl InternalServerException {
 /// <p>You do not have sufficient access to perform this action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessDeniedException {
+pub struct AccessDeniedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -496,7 +498,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException).
 pub mod access_denied_exception {
-
+    
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -510,16 +512,18 @@ pub mod access_denied_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
         pub fn build(self) -> crate::error::AccessDeniedException {
             crate::error::AccessDeniedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
@@ -533,17 +537,15 @@ impl AccessDeniedException {
 #[derive(std::fmt::Debug)]
 pub struct PutRecommendationPreferencesError {
     /// Kind of error that occurred.
-    pub kind: PutRecommendationPreferencesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutRecommendationPreferencesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutRecommendationPreferencesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: PutRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: PutRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -567,36 +569,46 @@ pub enum PutRecommendationPreferencesErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutRecommendationPreferencesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutRecommendationPreferencesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            PutRecommendationPreferencesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            PutRecommendationPreferencesErrorKind::InvalidParameterValueException(_inner) => {
+            PutRecommendationPreferencesErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutRecommendationPreferencesErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutRecommendationPreferencesErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutRecommendationPreferencesErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutRecommendationPreferencesErrorKind::OptInRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutRecommendationPreferencesErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutRecommendationPreferencesErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutRecommendationPreferencesErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutRecommendationPreferencesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            PutRecommendationPreferencesErrorKind::MissingAuthenticationToken(_inner) => {
-                _inner.fmt(f)
-            }
-            PutRecommendationPreferencesErrorKind::OptInRequiredException(_inner) => _inner.fmt(f),
-            PutRecommendationPreferencesErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutRecommendationPreferencesErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            PutRecommendationPreferencesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            PutRecommendationPreferencesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -610,127 +622,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutRecommendationPreferencesE
 }
 impl PutRecommendationPreferencesError {
     /// Creates a new `PutRecommendationPreferencesError`.
-    pub fn new(kind: PutRecommendationPreferencesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutRecommendationPreferencesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutRecommendationPreferencesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutRecommendationPreferencesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutRecommendationPreferencesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutRecommendationPreferencesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutRecommendationPreferencesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutRecommendationPreferencesErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, PutRecommendationPreferencesErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `PutRecommendationPreferencesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutRecommendationPreferencesErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, PutRecommendationPreferencesErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `PutRecommendationPreferencesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutRecommendationPreferencesErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, PutRecommendationPreferencesErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `PutRecommendationPreferencesErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutRecommendationPreferencesErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, PutRecommendationPreferencesErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `PutRecommendationPreferencesErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutRecommendationPreferencesErrorKind::OptInRequiredException(_)
-        )
+        matches!(&self.kind, PutRecommendationPreferencesErrorKind::OptInRequiredException(_))
     }
     /// Returns `true` if the error kind is `PutRecommendationPreferencesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutRecommendationPreferencesErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, PutRecommendationPreferencesErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `PutRecommendationPreferencesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutRecommendationPreferencesErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, PutRecommendationPreferencesErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `PutRecommendationPreferencesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutRecommendationPreferencesErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, PutRecommendationPreferencesErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for PutRecommendationPreferencesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutRecommendationPreferencesErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            PutRecommendationPreferencesErrorKind::InternalServerException(_inner) => Some(_inner),
-            PutRecommendationPreferencesErrorKind::InvalidParameterValueException(_inner) => {
+            PutRecommendationPreferencesErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            PutRecommendationPreferencesErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            PutRecommendationPreferencesErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            PutRecommendationPreferencesErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            PutRecommendationPreferencesErrorKind::OptInRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            PutRecommendationPreferencesErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            PutRecommendationPreferencesErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            PutRecommendationPreferencesErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            PutRecommendationPreferencesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            PutRecommendationPreferencesErrorKind::MissingAuthenticationToken(_inner) => {
-                Some(_inner)
-            }
-            PutRecommendationPreferencesErrorKind::OptInRequiredException(_inner) => Some(_inner),
-            PutRecommendationPreferencesErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            PutRecommendationPreferencesErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            PutRecommendationPreferencesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            PutRecommendationPreferencesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -738,22 +732,20 @@ impl std::error::Error for PutRecommendationPreferencesError {
 /// <p>A resource that is required for the action doesn't exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceNotFoundException {
+pub struct ResourceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -763,7 +755,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
-
+    
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -777,16 +769,18 @@ pub mod resource_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
@@ -798,22 +792,20 @@ impl ResourceNotFoundException {
 /// <p>The account is not opted in to Compute Optimizer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OptInRequiredException {
+pub struct OptInRequiredException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl OptInRequiredException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for OptInRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OptInRequiredException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -823,7 +815,7 @@ impl std::fmt::Display for OptInRequiredException {
 impl std::error::Error for OptInRequiredException {}
 /// See [`OptInRequiredException`](crate::error::OptInRequiredException).
 pub mod opt_in_required_exception {
-
+    
     /// A builder for [`OptInRequiredException`](crate::error::OptInRequiredException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -837,16 +829,18 @@ pub mod opt_in_required_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`OptInRequiredException`](crate::error::OptInRequiredException).
         pub fn build(self) -> crate::error::OptInRequiredException {
             crate::error::OptInRequiredException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl OptInRequiredException {
     /// Creates a new builder-style object to manufacture [`OptInRequiredException`](crate::error::OptInRequiredException).
@@ -860,17 +854,15 @@ impl OptInRequiredException {
 #[derive(std::fmt::Debug)]
 pub struct GetRecommendationSummariesError {
     /// Kind of error that occurred.
-    pub kind: GetRecommendationSummariesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetRecommendationSummariesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetRecommendationSummariesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetRecommendationSummariesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: GetRecommendationSummariesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -892,33 +884,43 @@ pub enum GetRecommendationSummariesErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRecommendationSummariesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetRecommendationSummariesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetRecommendationSummariesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            GetRecommendationSummariesErrorKind::InvalidParameterValueException(_inner) => {
+            GetRecommendationSummariesErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRecommendationSummariesErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRecommendationSummariesErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRecommendationSummariesErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRecommendationSummariesErrorKind::OptInRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRecommendationSummariesErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRecommendationSummariesErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRecommendationSummariesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetRecommendationSummariesErrorKind::MissingAuthenticationToken(_inner) => {
-                _inner.fmt(f)
-            }
-            GetRecommendationSummariesErrorKind::OptInRequiredException(_inner) => _inner.fmt(f),
-            GetRecommendationSummariesErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetRecommendationSummariesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetRecommendationSummariesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -932,115 +934,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetRecommendationSummariesErr
 }
 impl GetRecommendationSummariesError {
     /// Creates a new `GetRecommendationSummariesError`.
-    pub fn new(kind: GetRecommendationSummariesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetRecommendationSummariesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetRecommendationSummariesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetRecommendationSummariesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetRecommendationSummariesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetRecommendationSummariesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetRecommendationSummariesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetRecommendationSummariesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetRecommendationSummariesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetRecommendationSummariesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetRecommendationSummariesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRecommendationSummariesErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetRecommendationSummariesErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetRecommendationSummariesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRecommendationSummariesErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, GetRecommendationSummariesErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `GetRecommendationSummariesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRecommendationSummariesErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, GetRecommendationSummariesErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `GetRecommendationSummariesErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRecommendationSummariesErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, GetRecommendationSummariesErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `GetRecommendationSummariesErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRecommendationSummariesErrorKind::OptInRequiredException(_)
-        )
+        matches!(&self.kind, GetRecommendationSummariesErrorKind::OptInRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetRecommendationSummariesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRecommendationSummariesErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetRecommendationSummariesErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetRecommendationSummariesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRecommendationSummariesErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetRecommendationSummariesErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for GetRecommendationSummariesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetRecommendationSummariesErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetRecommendationSummariesErrorKind::InternalServerException(_inner) => Some(_inner),
-            GetRecommendationSummariesErrorKind::InvalidParameterValueException(_inner) => {
+            GetRecommendationSummariesErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetRecommendationSummariesErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            GetRecommendationSummariesErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            GetRecommendationSummariesErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            GetRecommendationSummariesErrorKind::OptInRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetRecommendationSummariesErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetRecommendationSummariesErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetRecommendationSummariesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetRecommendationSummariesErrorKind::MissingAuthenticationToken(_inner) => Some(_inner),
-            GetRecommendationSummariesErrorKind::OptInRequiredException(_inner) => Some(_inner),
-            GetRecommendationSummariesErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            GetRecommendationSummariesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetRecommendationSummariesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1050,17 +1039,15 @@ impl std::error::Error for GetRecommendationSummariesError {
 #[derive(std::fmt::Debug)]
 pub struct GetRecommendationPreferencesError {
     /// Kind of error that occurred.
-    pub kind: GetRecommendationPreferencesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetRecommendationPreferencesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetRecommendationPreferencesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: GetRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1084,36 +1071,46 @@ pub enum GetRecommendationPreferencesErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRecommendationPreferencesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetRecommendationPreferencesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetRecommendationPreferencesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            GetRecommendationPreferencesErrorKind::InvalidParameterValueException(_inner) => {
+            GetRecommendationPreferencesErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRecommendationPreferencesErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRecommendationPreferencesErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRecommendationPreferencesErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRecommendationPreferencesErrorKind::OptInRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRecommendationPreferencesErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRecommendationPreferencesErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRecommendationPreferencesErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRecommendationPreferencesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetRecommendationPreferencesErrorKind::MissingAuthenticationToken(_inner) => {
-                _inner.fmt(f)
-            }
-            GetRecommendationPreferencesErrorKind::OptInRequiredException(_inner) => _inner.fmt(f),
-            GetRecommendationPreferencesErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetRecommendationPreferencesErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetRecommendationPreferencesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetRecommendationPreferencesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1127,127 +1124,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetRecommendationPreferencesE
 }
 impl GetRecommendationPreferencesError {
     /// Creates a new `GetRecommendationPreferencesError`.
-    pub fn new(kind: GetRecommendationPreferencesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetRecommendationPreferencesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetRecommendationPreferencesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetRecommendationPreferencesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetRecommendationPreferencesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetRecommendationPreferencesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetRecommendationPreferencesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRecommendationPreferencesErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetRecommendationPreferencesErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetRecommendationPreferencesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRecommendationPreferencesErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, GetRecommendationPreferencesErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `GetRecommendationPreferencesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRecommendationPreferencesErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, GetRecommendationPreferencesErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `GetRecommendationPreferencesErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRecommendationPreferencesErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, GetRecommendationPreferencesErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `GetRecommendationPreferencesErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRecommendationPreferencesErrorKind::OptInRequiredException(_)
-        )
+        matches!(&self.kind, GetRecommendationPreferencesErrorKind::OptInRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetRecommendationPreferencesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRecommendationPreferencesErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetRecommendationPreferencesErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetRecommendationPreferencesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRecommendationPreferencesErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetRecommendationPreferencesErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetRecommendationPreferencesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRecommendationPreferencesErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetRecommendationPreferencesErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for GetRecommendationPreferencesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetRecommendationPreferencesErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetRecommendationPreferencesErrorKind::InternalServerException(_inner) => Some(_inner),
-            GetRecommendationPreferencesErrorKind::InvalidParameterValueException(_inner) => {
+            GetRecommendationPreferencesErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetRecommendationPreferencesErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            GetRecommendationPreferencesErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            GetRecommendationPreferencesErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            GetRecommendationPreferencesErrorKind::OptInRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetRecommendationPreferencesErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetRecommendationPreferencesErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetRecommendationPreferencesErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetRecommendationPreferencesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetRecommendationPreferencesErrorKind::MissingAuthenticationToken(_inner) => {
-                Some(_inner)
-            }
-            GetRecommendationPreferencesErrorKind::OptInRequiredException(_inner) => Some(_inner),
-            GetRecommendationPreferencesErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            GetRecommendationPreferencesErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            GetRecommendationPreferencesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetRecommendationPreferencesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1257,17 +1236,15 @@ impl std::error::Error for GetRecommendationPreferencesError {
 #[derive(std::fmt::Debug)]
 pub struct GetLambdaFunctionRecommendationsError {
     /// Kind of error that occurred.
-    pub kind: GetLambdaFunctionRecommendationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetLambdaFunctionRecommendationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetLambdaFunctionRecommendationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetLambdaFunctionRecommendationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: GetLambdaFunctionRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1291,42 +1268,46 @@ pub enum GetLambdaFunctionRecommendationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLambdaFunctionRecommendationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetLambdaFunctionRecommendationsErrorKind::AccessDeniedException(_inner) => {
+            GetLambdaFunctionRecommendationsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLambdaFunctionRecommendationsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLambdaFunctionRecommendationsErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLambdaFunctionRecommendationsErrorKind::OptInRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLambdaFunctionRecommendationsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLambdaFunctionRecommendationsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetLambdaFunctionRecommendationsErrorKind::InternalServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetLambdaFunctionRecommendationsErrorKind::LimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
-                _inner.fmt(f)
-            }
-            GetLambdaFunctionRecommendationsErrorKind::OptInRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetLambdaFunctionRecommendationsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetLambdaFunctionRecommendationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1340,136 +1321,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetLambdaFunctionRecommendati
 }
 impl GetLambdaFunctionRecommendationsError {
     /// Creates a new `GetLambdaFunctionRecommendationsError`.
-    pub fn new(
-        kind: GetLambdaFunctionRecommendationsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetLambdaFunctionRecommendationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetLambdaFunctionRecommendationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetLambdaFunctionRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetLambdaFunctionRecommendationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetLambdaFunctionRecommendationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetLambdaFunctionRecommendationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetLambdaFunctionRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetLambdaFunctionRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetLambdaFunctionRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetLambdaFunctionRecommendationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLambdaFunctionRecommendationsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetLambdaFunctionRecommendationsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetLambdaFunctionRecommendationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLambdaFunctionRecommendationsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, GetLambdaFunctionRecommendationsErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `GetLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, GetLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `GetLambdaFunctionRecommendationsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLambdaFunctionRecommendationsErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, GetLambdaFunctionRecommendationsErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `GetLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, GetLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `GetLambdaFunctionRecommendationsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLambdaFunctionRecommendationsErrorKind::OptInRequiredException(_)
-        )
+        matches!(&self.kind, GetLambdaFunctionRecommendationsErrorKind::OptInRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetLambdaFunctionRecommendationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLambdaFunctionRecommendationsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetLambdaFunctionRecommendationsErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for GetLambdaFunctionRecommendationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetLambdaFunctionRecommendationsErrorKind::AccessDeniedException(_inner) => {
+            GetLambdaFunctionRecommendationsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetLambdaFunctionRecommendationsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            GetLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            GetLambdaFunctionRecommendationsErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            GetLambdaFunctionRecommendationsErrorKind::OptInRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetLambdaFunctionRecommendationsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetLambdaFunctionRecommendationsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetLambdaFunctionRecommendationsErrorKind::InternalServerException(_inner) => {
-                Some(_inner)
-            }
-            GetLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            GetLambdaFunctionRecommendationsErrorKind::LimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            GetLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
-                Some(_inner)
-            }
-            GetLambdaFunctionRecommendationsErrorKind::OptInRequiredException(_inner) => {
-                Some(_inner)
-            }
-            GetLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            GetLambdaFunctionRecommendationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetLambdaFunctionRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1477,22 +1431,20 @@ impl std::error::Error for GetLambdaFunctionRecommendationsError {
 /// <p>The request exceeds a limit of the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LimitExceededException {
+pub struct LimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -1502,7 +1454,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException).
 pub mod limit_exceeded_exception {
-
+    
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1516,16 +1468,18 @@ pub mod limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException).
         pub fn build(self) -> crate::error::LimitExceededException {
             crate::error::LimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl LimitExceededException {
     /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
@@ -1539,17 +1493,15 @@ impl LimitExceededException {
 #[derive(std::fmt::Debug)]
 pub struct GetEnrollmentStatusesForOrganizationError {
     /// Kind of error that occurred.
-    pub kind: GetEnrollmentStatusesForOrganizationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetEnrollmentStatusesForOrganizationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetEnrollmentStatusesForOrganizationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1569,38 +1521,40 @@ pub enum GetEnrollmentStatusesForOrganizationErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEnrollmentStatusesForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetEnrollmentStatusesForOrganizationErrorKind::AccessDeniedException(_inner) => {
+            GetEnrollmentStatusesForOrganizationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEnrollmentStatusesForOrganizationErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEnrollmentStatusesForOrganizationErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEnrollmentStatusesForOrganizationErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEnrollmentStatusesForOrganizationErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEnrollmentStatusesForOrganizationErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetEnrollmentStatusesForOrganizationErrorKind::InternalServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEnrollmentStatusesForOrganizationErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => _inner.fmt(f),
-            GetEnrollmentStatusesForOrganizationErrorKind::MissingAuthenticationToken(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEnrollmentStatusesForOrganizationErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEnrollmentStatusesForOrganizationErrorKind::ThrottlingException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1614,118 +1568,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetEnrollmentStatusesForOrgan
 }
 impl GetEnrollmentStatusesForOrganizationError {
     /// Creates a new `GetEnrollmentStatusesForOrganizationError`.
-    pub fn new(
-        kind: GetEnrollmentStatusesForOrganizationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetEnrollmentStatusesForOrganizationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetEnrollmentStatusesForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetEnrollmentStatusesForOrganizationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetEnrollmentStatusesForOrganizationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetEnrollmentStatusesForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetEnrollmentStatusesForOrganizationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEnrollmentStatusesForOrganizationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetEnrollmentStatusesForOrganizationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetEnrollmentStatusesForOrganizationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEnrollmentStatusesForOrganizationErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, GetEnrollmentStatusesForOrganizationErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `GetEnrollmentStatusesForOrganizationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEnrollmentStatusesForOrganizationErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, GetEnrollmentStatusesForOrganizationErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `GetEnrollmentStatusesForOrganizationErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEnrollmentStatusesForOrganizationErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, GetEnrollmentStatusesForOrganizationErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `GetEnrollmentStatusesForOrganizationErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEnrollmentStatusesForOrganizationErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetEnrollmentStatusesForOrganizationErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetEnrollmentStatusesForOrganizationErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEnrollmentStatusesForOrganizationErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetEnrollmentStatusesForOrganizationErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for GetEnrollmentStatusesForOrganizationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetEnrollmentStatusesForOrganizationErrorKind::AccessDeniedException(_inner) => {
+            GetEnrollmentStatusesForOrganizationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetEnrollmentStatusesForOrganizationErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            GetEnrollmentStatusesForOrganizationErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            GetEnrollmentStatusesForOrganizationErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            GetEnrollmentStatusesForOrganizationErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetEnrollmentStatusesForOrganizationErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetEnrollmentStatusesForOrganizationErrorKind::InternalServerException(_inner) => {
-                Some(_inner)
-            }
-            GetEnrollmentStatusesForOrganizationErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => Some(_inner),
-            GetEnrollmentStatusesForOrganizationErrorKind::MissingAuthenticationToken(_inner) => {
-                Some(_inner)
-            }
-            GetEnrollmentStatusesForOrganizationErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            GetEnrollmentStatusesForOrganizationErrorKind::ThrottlingException(_inner) => {
-                Some(_inner)
-            }
-            GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1735,15 +1666,15 @@ impl std::error::Error for GetEnrollmentStatusesForOrganizationError {
 #[derive(std::fmt::Debug)]
 pub struct GetEnrollmentStatusError {
     /// Kind of error that occurred.
-    pub kind: GetEnrollmentStatusErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetEnrollmentStatusErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetEnrollmentStatusError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetEnrollmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1763,26 +1694,40 @@ pub enum GetEnrollmentStatusErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEnrollmentStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetEnrollmentStatusErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetEnrollmentStatusErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            GetEnrollmentStatusErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            GetEnrollmentStatusErrorKind::MissingAuthenticationToken(_inner) => _inner.fmt(f),
-            GetEnrollmentStatusErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
-            GetEnrollmentStatusErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetEnrollmentStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetEnrollmentStatusErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEnrollmentStatusErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEnrollmentStatusErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEnrollmentStatusErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEnrollmentStatusErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEnrollmentStatusErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEnrollmentStatusErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1796,99 +1741,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetEnrollmentStatusError {
 }
 impl GetEnrollmentStatusError {
     /// Creates a new `GetEnrollmentStatusError`.
-    pub fn new(kind: GetEnrollmentStatusErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetEnrollmentStatusError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetEnrollmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetEnrollmentStatusError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetEnrollmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetEnrollmentStatusErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetEnrollmentStatusError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetEnrollmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetEnrollmentStatusError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetEnrollmentStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetEnrollmentStatusErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEnrollmentStatusErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetEnrollmentStatusErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetEnrollmentStatusErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEnrollmentStatusErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, GetEnrollmentStatusErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `GetEnrollmentStatusErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEnrollmentStatusErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, GetEnrollmentStatusErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `GetEnrollmentStatusErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEnrollmentStatusErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, GetEnrollmentStatusErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `GetEnrollmentStatusErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEnrollmentStatusErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetEnrollmentStatusErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetEnrollmentStatusErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEnrollmentStatusErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetEnrollmentStatusErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for GetEnrollmentStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetEnrollmentStatusErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetEnrollmentStatusErrorKind::InternalServerException(_inner) => Some(_inner),
-            GetEnrollmentStatusErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            GetEnrollmentStatusErrorKind::MissingAuthenticationToken(_inner) => Some(_inner),
-            GetEnrollmentStatusErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
-            GetEnrollmentStatusErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetEnrollmentStatusErrorKind::Unhandled(_inner) => Some(_inner),
+            GetEnrollmentStatusErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetEnrollmentStatusErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            GetEnrollmentStatusErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            GetEnrollmentStatusErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            GetEnrollmentStatusErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetEnrollmentStatusErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetEnrollmentStatusErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1898,17 +1839,15 @@ impl std::error::Error for GetEnrollmentStatusError {
 #[derive(std::fmt::Debug)]
 pub struct GetEffectiveRecommendationPreferencesError {
     /// Kind of error that occurred.
-    pub kind: GetEffectiveRecommendationPreferencesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetEffectiveRecommendationPreferencesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetEffectiveRecommendationPreferencesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetEffectiveRecommendationPreferencesErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: GetEffectiveRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1932,44 +1871,46 @@ pub enum GetEffectiveRecommendationPreferencesErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEffectiveRecommendationPreferencesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetEffectiveRecommendationPreferencesErrorKind::AccessDeniedException(_inner) => {
+            GetEffectiveRecommendationPreferencesErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEffectiveRecommendationPreferencesErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEffectiveRecommendationPreferencesErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEffectiveRecommendationPreferencesErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEffectiveRecommendationPreferencesErrorKind::OptInRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEffectiveRecommendationPreferencesErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEffectiveRecommendationPreferencesErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEffectiveRecommendationPreferencesErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEffectiveRecommendationPreferencesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetEffectiveRecommendationPreferencesErrorKind::InternalServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEffectiveRecommendationPreferencesErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => _inner.fmt(f),
-            GetEffectiveRecommendationPreferencesErrorKind::MissingAuthenticationToken(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEffectiveRecommendationPreferencesErrorKind::OptInRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEffectiveRecommendationPreferencesErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEffectiveRecommendationPreferencesErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEffectiveRecommendationPreferencesErrorKind::ThrottlingException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEffectiveRecommendationPreferencesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1983,138 +1924,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetEffectiveRecommendationPre
 }
 impl GetEffectiveRecommendationPreferencesError {
     /// Creates a new `GetEffectiveRecommendationPreferencesError`.
-    pub fn new(
-        kind: GetEffectiveRecommendationPreferencesErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetEffectiveRecommendationPreferencesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetEffectiveRecommendationPreferencesErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetEffectiveRecommendationPreferencesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetEffectiveRecommendationPreferencesErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetEffectiveRecommendationPreferencesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetEffectiveRecommendationPreferencesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetEffectiveRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetEffectiveRecommendationPreferencesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetEffectiveRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetEffectiveRecommendationPreferencesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEffectiveRecommendationPreferencesErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetEffectiveRecommendationPreferencesErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetEffectiveRecommendationPreferencesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEffectiveRecommendationPreferencesErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, GetEffectiveRecommendationPreferencesErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `GetEffectiveRecommendationPreferencesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEffectiveRecommendationPreferencesErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, GetEffectiveRecommendationPreferencesErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `GetEffectiveRecommendationPreferencesErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEffectiveRecommendationPreferencesErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, GetEffectiveRecommendationPreferencesErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `GetEffectiveRecommendationPreferencesErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEffectiveRecommendationPreferencesErrorKind::OptInRequiredException(_)
-        )
+        matches!(&self.kind, GetEffectiveRecommendationPreferencesErrorKind::OptInRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetEffectiveRecommendationPreferencesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEffectiveRecommendationPreferencesErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetEffectiveRecommendationPreferencesErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetEffectiveRecommendationPreferencesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEffectiveRecommendationPreferencesErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetEffectiveRecommendationPreferencesErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetEffectiveRecommendationPreferencesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEffectiveRecommendationPreferencesErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetEffectiveRecommendationPreferencesErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for GetEffectiveRecommendationPreferencesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetEffectiveRecommendationPreferencesErrorKind::AccessDeniedException(_inner) => {
+            GetEffectiveRecommendationPreferencesErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetEffectiveRecommendationPreferencesErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            GetEffectiveRecommendationPreferencesErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            GetEffectiveRecommendationPreferencesErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            GetEffectiveRecommendationPreferencesErrorKind::OptInRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetEffectiveRecommendationPreferencesErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetEffectiveRecommendationPreferencesErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetEffectiveRecommendationPreferencesErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetEffectiveRecommendationPreferencesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetEffectiveRecommendationPreferencesErrorKind::InternalServerException(_inner) => {
-                Some(_inner)
-            }
-            GetEffectiveRecommendationPreferencesErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => Some(_inner),
-            GetEffectiveRecommendationPreferencesErrorKind::MissingAuthenticationToken(_inner) => {
-                Some(_inner)
-            }
-            GetEffectiveRecommendationPreferencesErrorKind::OptInRequiredException(_inner) => {
-                Some(_inner)
-            }
-            GetEffectiveRecommendationPreferencesErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            GetEffectiveRecommendationPreferencesErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            GetEffectiveRecommendationPreferencesErrorKind::ThrottlingException(_inner) => {
-                Some(_inner)
-            }
-            GetEffectiveRecommendationPreferencesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2124,17 +2036,15 @@ impl std::error::Error for GetEffectiveRecommendationPreferencesError {
 #[derive(std::fmt::Debug)]
 pub struct GetECSServiceRecommendationsError {
     /// Kind of error that occurred.
-    pub kind: GetECSServiceRecommendationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetECSServiceRecommendationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetECSServiceRecommendationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetECSServiceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: GetECSServiceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2158,36 +2068,46 @@ pub enum GetECSServiceRecommendationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetECSServiceRecommendationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetECSServiceRecommendationsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetECSServiceRecommendationsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            GetECSServiceRecommendationsErrorKind::InvalidParameterValueException(_inner) => {
+            GetECSServiceRecommendationsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetECSServiceRecommendationsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetECSServiceRecommendationsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetECSServiceRecommendationsErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetECSServiceRecommendationsErrorKind::OptInRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetECSServiceRecommendationsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetECSServiceRecommendationsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetECSServiceRecommendationsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetECSServiceRecommendationsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetECSServiceRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
-                _inner.fmt(f)
-            }
-            GetECSServiceRecommendationsErrorKind::OptInRequiredException(_inner) => _inner.fmt(f),
-            GetECSServiceRecommendationsErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetECSServiceRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetECSServiceRecommendationsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetECSServiceRecommendationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2201,127 +2121,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetECSServiceRecommendationsE
 }
 impl GetECSServiceRecommendationsError {
     /// Creates a new `GetECSServiceRecommendationsError`.
-    pub fn new(kind: GetECSServiceRecommendationsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetECSServiceRecommendationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetECSServiceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetECSServiceRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetECSServiceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetECSServiceRecommendationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetECSServiceRecommendationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetECSServiceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetECSServiceRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetECSServiceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetECSServiceRecommendationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetECSServiceRecommendationsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetECSServiceRecommendationsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetECSServiceRecommendationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetECSServiceRecommendationsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, GetECSServiceRecommendationsErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `GetECSServiceRecommendationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetECSServiceRecommendationsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, GetECSServiceRecommendationsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `GetECSServiceRecommendationsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetECSServiceRecommendationsErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, GetECSServiceRecommendationsErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `GetECSServiceRecommendationsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetECSServiceRecommendationsErrorKind::OptInRequiredException(_)
-        )
+        matches!(&self.kind, GetECSServiceRecommendationsErrorKind::OptInRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetECSServiceRecommendationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetECSServiceRecommendationsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetECSServiceRecommendationsErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetECSServiceRecommendationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetECSServiceRecommendationsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetECSServiceRecommendationsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetECSServiceRecommendationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetECSServiceRecommendationsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetECSServiceRecommendationsErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for GetECSServiceRecommendationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetECSServiceRecommendationsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetECSServiceRecommendationsErrorKind::InternalServerException(_inner) => Some(_inner),
-            GetECSServiceRecommendationsErrorKind::InvalidParameterValueException(_inner) => {
+            GetECSServiceRecommendationsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetECSServiceRecommendationsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            GetECSServiceRecommendationsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            GetECSServiceRecommendationsErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            GetECSServiceRecommendationsErrorKind::OptInRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetECSServiceRecommendationsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetECSServiceRecommendationsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetECSServiceRecommendationsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetECSServiceRecommendationsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetECSServiceRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
-                Some(_inner)
-            }
-            GetECSServiceRecommendationsErrorKind::OptInRequiredException(_inner) => Some(_inner),
-            GetECSServiceRecommendationsErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            GetECSServiceRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            GetECSServiceRecommendationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetECSServiceRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2331,19 +2233,15 @@ impl std::error::Error for GetECSServiceRecommendationsError {
 #[derive(std::fmt::Debug)]
 pub struct GetECSServiceRecommendationProjectedMetricsError {
     /// Kind of error that occurred.
-    pub kind: GetECSServiceRecommendationProjectedMetricsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetECSServiceRecommendationProjectedMetricsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for GetECSServiceRecommendationProjectedMetricsError
-{
+impl aws_smithy_http::result::CreateUnhandledError for GetECSServiceRecommendationProjectedMetricsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetECSServiceRecommendationProjectedMetricsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: GetECSServiceRecommendationProjectedMetricsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2367,14 +2265,14 @@ pub enum GetECSServiceRecommendationProjectedMetricsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetECSServiceRecommendationProjectedMetricsError {
@@ -2410,9 +2308,7 @@ impl std::fmt::Display for GetECSServiceRecommendationProjectedMetricsError {
         }
     }
 }
-impl aws_smithy_types::retry::ProvideErrorKind
-    for GetECSServiceRecommendationProjectedMetricsError
-{
+impl aws_smithy_types::retry::ProvideErrorKind for GetECSServiceRecommendationProjectedMetricsError {
     fn code(&self) -> Option<&str> {
         GetECSServiceRecommendationProjectedMetricsError::code(self)
     }
@@ -2422,108 +2318,77 @@ impl aws_smithy_types::retry::ProvideErrorKind
 }
 impl GetECSServiceRecommendationProjectedMetricsError {
     /// Creates a new `GetECSServiceRecommendationProjectedMetricsError`.
-    pub fn new(
-        kind: GetECSServiceRecommendationProjectedMetricsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetECSServiceRecommendationProjectedMetricsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetECSServiceRecommendationProjectedMetricsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetECSServiceRecommendationProjectedMetricsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetECSServiceRecommendationProjectedMetricsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetECSServiceRecommendationProjectedMetricsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetECSServiceRecommendationProjectedMetricsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetECSServiceRecommendationProjectedMetricsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetECSServiceRecommendationProjectedMetricsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetECSServiceRecommendationProjectedMetricsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetECSServiceRecommendationProjectedMetricsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetECSServiceRecommendationProjectedMetricsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetECSServiceRecommendationProjectedMetricsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetECSServiceRecommendationProjectedMetricsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetECSServiceRecommendationProjectedMetricsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, GetECSServiceRecommendationProjectedMetricsErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `GetECSServiceRecommendationProjectedMetricsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetECSServiceRecommendationProjectedMetricsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, GetECSServiceRecommendationProjectedMetricsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `GetECSServiceRecommendationProjectedMetricsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetECSServiceRecommendationProjectedMetricsErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, GetECSServiceRecommendationProjectedMetricsErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `GetECSServiceRecommendationProjectedMetricsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetECSServiceRecommendationProjectedMetricsErrorKind::OptInRequiredException(_)
-        )
+        matches!(&self.kind, GetECSServiceRecommendationProjectedMetricsErrorKind::OptInRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetECSServiceRecommendationProjectedMetricsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetECSServiceRecommendationProjectedMetricsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetECSServiceRecommendationProjectedMetricsErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetECSServiceRecommendationProjectedMetricsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetECSServiceRecommendationProjectedMetricsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetECSServiceRecommendationProjectedMetricsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetECSServiceRecommendationProjectedMetricsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetECSServiceRecommendationProjectedMetricsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetECSServiceRecommendationProjectedMetricsErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for GetECSServiceRecommendationProjectedMetricsError {
@@ -2565,17 +2430,15 @@ impl std::error::Error for GetECSServiceRecommendationProjectedMetricsError {
 #[derive(std::fmt::Debug)]
 pub struct GetEC2RecommendationProjectedMetricsError {
     /// Kind of error that occurred.
-    pub kind: GetEC2RecommendationProjectedMetricsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetEC2RecommendationProjectedMetricsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetEC2RecommendationProjectedMetricsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetEC2RecommendationProjectedMetricsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: GetEC2RecommendationProjectedMetricsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2599,44 +2462,46 @@ pub enum GetEC2RecommendationProjectedMetricsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEC2RecommendationProjectedMetricsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetEC2RecommendationProjectedMetricsErrorKind::AccessDeniedException(_inner) => {
+            GetEC2RecommendationProjectedMetricsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEC2RecommendationProjectedMetricsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEC2RecommendationProjectedMetricsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEC2RecommendationProjectedMetricsErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEC2RecommendationProjectedMetricsErrorKind::OptInRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEC2RecommendationProjectedMetricsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEC2RecommendationProjectedMetricsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEC2RecommendationProjectedMetricsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEC2RecommendationProjectedMetricsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetEC2RecommendationProjectedMetricsErrorKind::InternalServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEC2RecommendationProjectedMetricsErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => _inner.fmt(f),
-            GetEC2RecommendationProjectedMetricsErrorKind::MissingAuthenticationToken(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEC2RecommendationProjectedMetricsErrorKind::OptInRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEC2RecommendationProjectedMetricsErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEC2RecommendationProjectedMetricsErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEC2RecommendationProjectedMetricsErrorKind::ThrottlingException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEC2RecommendationProjectedMetricsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2650,138 +2515,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetEC2RecommendationProjected
 }
 impl GetEC2RecommendationProjectedMetricsError {
     /// Creates a new `GetEC2RecommendationProjectedMetricsError`.
-    pub fn new(
-        kind: GetEC2RecommendationProjectedMetricsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetEC2RecommendationProjectedMetricsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetEC2RecommendationProjectedMetricsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetEC2RecommendationProjectedMetricsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetEC2RecommendationProjectedMetricsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetEC2RecommendationProjectedMetricsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetEC2RecommendationProjectedMetricsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetEC2RecommendationProjectedMetricsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetEC2RecommendationProjectedMetricsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetEC2RecommendationProjectedMetricsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEC2RecommendationProjectedMetricsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetEC2RecommendationProjectedMetricsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEC2RecommendationProjectedMetricsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, GetEC2RecommendationProjectedMetricsErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEC2RecommendationProjectedMetricsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, GetEC2RecommendationProjectedMetricsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEC2RecommendationProjectedMetricsErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, GetEC2RecommendationProjectedMetricsErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEC2RecommendationProjectedMetricsErrorKind::OptInRequiredException(_)
-        )
+        matches!(&self.kind, GetEC2RecommendationProjectedMetricsErrorKind::OptInRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEC2RecommendationProjectedMetricsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetEC2RecommendationProjectedMetricsErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEC2RecommendationProjectedMetricsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetEC2RecommendationProjectedMetricsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetEC2RecommendationProjectedMetricsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEC2RecommendationProjectedMetricsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetEC2RecommendationProjectedMetricsErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for GetEC2RecommendationProjectedMetricsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetEC2RecommendationProjectedMetricsErrorKind::AccessDeniedException(_inner) => {
+            GetEC2RecommendationProjectedMetricsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetEC2RecommendationProjectedMetricsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            GetEC2RecommendationProjectedMetricsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            GetEC2RecommendationProjectedMetricsErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            GetEC2RecommendationProjectedMetricsErrorKind::OptInRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetEC2RecommendationProjectedMetricsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetEC2RecommendationProjectedMetricsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetEC2RecommendationProjectedMetricsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetEC2RecommendationProjectedMetricsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetEC2RecommendationProjectedMetricsErrorKind::InternalServerException(_inner) => {
-                Some(_inner)
-            }
-            GetEC2RecommendationProjectedMetricsErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => Some(_inner),
-            GetEC2RecommendationProjectedMetricsErrorKind::MissingAuthenticationToken(_inner) => {
-                Some(_inner)
-            }
-            GetEC2RecommendationProjectedMetricsErrorKind::OptInRequiredException(_inner) => {
-                Some(_inner)
-            }
-            GetEC2RecommendationProjectedMetricsErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            GetEC2RecommendationProjectedMetricsErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            GetEC2RecommendationProjectedMetricsErrorKind::ThrottlingException(_inner) => {
-                Some(_inner)
-            }
-            GetEC2RecommendationProjectedMetricsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2791,17 +2627,15 @@ impl std::error::Error for GetEC2RecommendationProjectedMetricsError {
 #[derive(std::fmt::Debug)]
 pub struct GetEC2InstanceRecommendationsError {
     /// Kind of error that occurred.
-    pub kind: GetEC2InstanceRecommendationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetEC2InstanceRecommendationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetEC2InstanceRecommendationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetEC2InstanceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: GetEC2InstanceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2825,38 +2659,46 @@ pub enum GetEC2InstanceRecommendationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEC2InstanceRecommendationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetEC2InstanceRecommendationsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetEC2InstanceRecommendationsErrorKind::InternalServerException(_inner) => {
+            GetEC2InstanceRecommendationsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEC2InstanceRecommendationsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEC2InstanceRecommendationsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEC2InstanceRecommendationsErrorKind::OptInRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEC2InstanceRecommendationsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEC2InstanceRecommendationsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEC2InstanceRecommendationsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEC2InstanceRecommendationsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetEC2InstanceRecommendationsErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEC2InstanceRecommendationsErrorKind::OptInRequiredException(_inner) => _inner.fmt(f),
-            GetEC2InstanceRecommendationsErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEC2InstanceRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEC2InstanceRecommendationsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetEC2InstanceRecommendationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2870,130 +2712,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetEC2InstanceRecommendations
 }
 impl GetEC2InstanceRecommendationsError {
     /// Creates a new `GetEC2InstanceRecommendationsError`.
-    pub fn new(
-        kind: GetEC2InstanceRecommendationsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetEC2InstanceRecommendationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetEC2InstanceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetEC2InstanceRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetEC2InstanceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetEC2InstanceRecommendationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetEC2InstanceRecommendationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetEC2InstanceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetEC2InstanceRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetEC2InstanceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetEC2InstanceRecommendationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEC2InstanceRecommendationsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetEC2InstanceRecommendationsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetEC2InstanceRecommendationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEC2InstanceRecommendationsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, GetEC2InstanceRecommendationsErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `GetEC2InstanceRecommendationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEC2InstanceRecommendationsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, GetEC2InstanceRecommendationsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `GetEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, GetEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `GetEC2InstanceRecommendationsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEC2InstanceRecommendationsErrorKind::OptInRequiredException(_)
-        )
+        matches!(&self.kind, GetEC2InstanceRecommendationsErrorKind::OptInRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetEC2InstanceRecommendationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEC2InstanceRecommendationsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetEC2InstanceRecommendationsErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetEC2InstanceRecommendationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEC2InstanceRecommendationsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetEC2InstanceRecommendationsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetEC2InstanceRecommendationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEC2InstanceRecommendationsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetEC2InstanceRecommendationsErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for GetEC2InstanceRecommendationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetEC2InstanceRecommendationsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetEC2InstanceRecommendationsErrorKind::InternalServerException(_inner) => Some(_inner),
-            GetEC2InstanceRecommendationsErrorKind::InvalidParameterValueException(_inner) => {
+            GetEC2InstanceRecommendationsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetEC2InstanceRecommendationsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            GetEC2InstanceRecommendationsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            GetEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            GetEC2InstanceRecommendationsErrorKind::OptInRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetEC2InstanceRecommendationsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetEC2InstanceRecommendationsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetEC2InstanceRecommendationsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetEC2InstanceRecommendationsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
-                Some(_inner)
-            }
-            GetEC2InstanceRecommendationsErrorKind::OptInRequiredException(_inner) => Some(_inner),
-            GetEC2InstanceRecommendationsErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            GetEC2InstanceRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            GetEC2InstanceRecommendationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetEC2InstanceRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3003,17 +2824,15 @@ impl std::error::Error for GetEC2InstanceRecommendationsError {
 #[derive(std::fmt::Debug)]
 pub struct GetEBSVolumeRecommendationsError {
     /// Kind of error that occurred.
-    pub kind: GetEBSVolumeRecommendationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetEBSVolumeRecommendationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetEBSVolumeRecommendationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetEBSVolumeRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: GetEBSVolumeRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3037,36 +2856,46 @@ pub enum GetEBSVolumeRecommendationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetEBSVolumeRecommendationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetEBSVolumeRecommendationsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetEBSVolumeRecommendationsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            GetEBSVolumeRecommendationsErrorKind::InvalidParameterValueException(_inner) => {
+            GetEBSVolumeRecommendationsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEBSVolumeRecommendationsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEBSVolumeRecommendationsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEBSVolumeRecommendationsErrorKind::OptInRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEBSVolumeRecommendationsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEBSVolumeRecommendationsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEBSVolumeRecommendationsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetEBSVolumeRecommendationsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEBSVolumeRecommendationsErrorKind::OptInRequiredException(_inner) => _inner.fmt(f),
-            GetEBSVolumeRecommendationsErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEBSVolumeRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetEBSVolumeRecommendationsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetEBSVolumeRecommendationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3080,125 +2909,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetEBSVolumeRecommendationsEr
 }
 impl GetEBSVolumeRecommendationsError {
     /// Creates a new `GetEBSVolumeRecommendationsError`.
-    pub fn new(kind: GetEBSVolumeRecommendationsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetEBSVolumeRecommendationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetEBSVolumeRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetEBSVolumeRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetEBSVolumeRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetEBSVolumeRecommendationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetEBSVolumeRecommendationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetEBSVolumeRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetEBSVolumeRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetEBSVolumeRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetEBSVolumeRecommendationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEBSVolumeRecommendationsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetEBSVolumeRecommendationsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetEBSVolumeRecommendationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEBSVolumeRecommendationsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, GetEBSVolumeRecommendationsErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `GetEBSVolumeRecommendationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEBSVolumeRecommendationsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, GetEBSVolumeRecommendationsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `GetEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, GetEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `GetEBSVolumeRecommendationsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEBSVolumeRecommendationsErrorKind::OptInRequiredException(_)
-        )
+        matches!(&self.kind, GetEBSVolumeRecommendationsErrorKind::OptInRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetEBSVolumeRecommendationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEBSVolumeRecommendationsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetEBSVolumeRecommendationsErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetEBSVolumeRecommendationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEBSVolumeRecommendationsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetEBSVolumeRecommendationsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetEBSVolumeRecommendationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetEBSVolumeRecommendationsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetEBSVolumeRecommendationsErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for GetEBSVolumeRecommendationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetEBSVolumeRecommendationsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetEBSVolumeRecommendationsErrorKind::InternalServerException(_inner) => Some(_inner),
-            GetEBSVolumeRecommendationsErrorKind::InvalidParameterValueException(_inner) => {
+            GetEBSVolumeRecommendationsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetEBSVolumeRecommendationsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            GetEBSVolumeRecommendationsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            GetEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            GetEBSVolumeRecommendationsErrorKind::OptInRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetEBSVolumeRecommendationsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetEBSVolumeRecommendationsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetEBSVolumeRecommendationsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetEBSVolumeRecommendationsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
-                Some(_inner)
-            }
-            GetEBSVolumeRecommendationsErrorKind::OptInRequiredException(_inner) => Some(_inner),
-            GetEBSVolumeRecommendationsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetEBSVolumeRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            GetEBSVolumeRecommendationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetEBSVolumeRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3208,17 +3021,15 @@ impl std::error::Error for GetEBSVolumeRecommendationsError {
 #[derive(std::fmt::Debug)]
 pub struct GetAutoScalingGroupRecommendationsError {
     /// Kind of error that occurred.
-    pub kind: GetAutoScalingGroupRecommendationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetAutoScalingGroupRecommendationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetAutoScalingGroupRecommendationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetAutoScalingGroupRecommendationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: GetAutoScalingGroupRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3242,44 +3053,46 @@ pub enum GetAutoScalingGroupRecommendationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAutoScalingGroupRecommendationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetAutoScalingGroupRecommendationsErrorKind::AccessDeniedException(_inner) => {
+            GetAutoScalingGroupRecommendationsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAutoScalingGroupRecommendationsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAutoScalingGroupRecommendationsErrorKind::OptInRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAutoScalingGroupRecommendationsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAutoScalingGroupRecommendationsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAutoScalingGroupRecommendationsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetAutoScalingGroupRecommendationsErrorKind::InternalServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
-                _inner.fmt(f)
-            }
-            GetAutoScalingGroupRecommendationsErrorKind::OptInRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetAutoScalingGroupRecommendationsErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetAutoScalingGroupRecommendationsErrorKind::ThrottlingException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetAutoScalingGroupRecommendationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3293,138 +3106,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetAutoScalingGroupRecommenda
 }
 impl GetAutoScalingGroupRecommendationsError {
     /// Creates a new `GetAutoScalingGroupRecommendationsError`.
-    pub fn new(
-        kind: GetAutoScalingGroupRecommendationsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetAutoScalingGroupRecommendationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetAutoScalingGroupRecommendationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetAutoScalingGroupRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetAutoScalingGroupRecommendationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetAutoScalingGroupRecommendationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetAutoScalingGroupRecommendationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetAutoScalingGroupRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetAutoScalingGroupRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetAutoScalingGroupRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAutoScalingGroupRecommendationsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetAutoScalingGroupRecommendationsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAutoScalingGroupRecommendationsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, GetAutoScalingGroupRecommendationsErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, GetAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, GetAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAutoScalingGroupRecommendationsErrorKind::OptInRequiredException(_)
-        )
+        matches!(&self.kind, GetAutoScalingGroupRecommendationsErrorKind::OptInRequiredException(_))
     }
     /// Returns `true` if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAutoScalingGroupRecommendationsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetAutoScalingGroupRecommendationsErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, GetAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetAutoScalingGroupRecommendationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAutoScalingGroupRecommendationsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetAutoScalingGroupRecommendationsErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for GetAutoScalingGroupRecommendationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetAutoScalingGroupRecommendationsErrorKind::AccessDeniedException(_inner) => {
+            GetAutoScalingGroupRecommendationsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetAutoScalingGroupRecommendationsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            GetAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            GetAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            GetAutoScalingGroupRecommendationsErrorKind::OptInRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            GetAutoScalingGroupRecommendationsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetAutoScalingGroupRecommendationsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetAutoScalingGroupRecommendationsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetAutoScalingGroupRecommendationsErrorKind::InternalServerException(_inner) => {
-                Some(_inner)
-            }
-            GetAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            GetAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
-                Some(_inner)
-            }
-            GetAutoScalingGroupRecommendationsErrorKind::OptInRequiredException(_inner) => {
-                Some(_inner)
-            }
-            GetAutoScalingGroupRecommendationsErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            GetAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            GetAutoScalingGroupRecommendationsErrorKind::ThrottlingException(_inner) => {
-                Some(_inner)
-            }
-            GetAutoScalingGroupRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3434,17 +3218,15 @@ impl std::error::Error for GetAutoScalingGroupRecommendationsError {
 #[derive(std::fmt::Debug)]
 pub struct ExportLambdaFunctionRecommendationsError {
     /// Kind of error that occurred.
-    pub kind: ExportLambdaFunctionRecommendationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ExportLambdaFunctionRecommendationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ExportLambdaFunctionRecommendationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ExportLambdaFunctionRecommendationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ExportLambdaFunctionRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3468,44 +3250,46 @@ pub enum ExportLambdaFunctionRecommendationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportLambdaFunctionRecommendationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExportLambdaFunctionRecommendationsErrorKind::AccessDeniedException(_inner) => {
+            ExportLambdaFunctionRecommendationsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportLambdaFunctionRecommendationsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportLambdaFunctionRecommendationsErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportLambdaFunctionRecommendationsErrorKind::OptInRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportLambdaFunctionRecommendationsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportLambdaFunctionRecommendationsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ExportLambdaFunctionRecommendationsErrorKind::InternalServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => _inner.fmt(f),
-            ExportLambdaFunctionRecommendationsErrorKind::LimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportLambdaFunctionRecommendationsErrorKind::OptInRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportLambdaFunctionRecommendationsErrorKind::ThrottlingException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportLambdaFunctionRecommendationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3519,138 +3303,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for ExportLambdaFunctionRecommend
 }
 impl ExportLambdaFunctionRecommendationsError {
     /// Creates a new `ExportLambdaFunctionRecommendationsError`.
-    pub fn new(
-        kind: ExportLambdaFunctionRecommendationsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ExportLambdaFunctionRecommendationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ExportLambdaFunctionRecommendationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ExportLambdaFunctionRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ExportLambdaFunctionRecommendationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ExportLambdaFunctionRecommendationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ExportLambdaFunctionRecommendationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ExportLambdaFunctionRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ExportLambdaFunctionRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ExportLambdaFunctionRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportLambdaFunctionRecommendationsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ExportLambdaFunctionRecommendationsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportLambdaFunctionRecommendationsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, ExportLambdaFunctionRecommendationsErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ExportLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportLambdaFunctionRecommendationsErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, ExportLambdaFunctionRecommendationsErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, ExportLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportLambdaFunctionRecommendationsErrorKind::OptInRequiredException(_)
-        )
+        matches!(&self.kind, ExportLambdaFunctionRecommendationsErrorKind::OptInRequiredException(_))
     }
     /// Returns `true` if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ExportLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ExportLambdaFunctionRecommendationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportLambdaFunctionRecommendationsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, ExportLambdaFunctionRecommendationsErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for ExportLambdaFunctionRecommendationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExportLambdaFunctionRecommendationsErrorKind::AccessDeniedException(_inner) => {
+            ExportLambdaFunctionRecommendationsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ExportLambdaFunctionRecommendationsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            ExportLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ExportLambdaFunctionRecommendationsErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ExportLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            ExportLambdaFunctionRecommendationsErrorKind::OptInRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            ExportLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ExportLambdaFunctionRecommendationsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            ExportLambdaFunctionRecommendationsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ExportLambdaFunctionRecommendationsErrorKind::InternalServerException(_inner) => {
-                Some(_inner)
-            }
-            ExportLambdaFunctionRecommendationsErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => Some(_inner),
-            ExportLambdaFunctionRecommendationsErrorKind::LimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            ExportLambdaFunctionRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
-                Some(_inner)
-            }
-            ExportLambdaFunctionRecommendationsErrorKind::OptInRequiredException(_inner) => {
-                Some(_inner)
-            }
-            ExportLambdaFunctionRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            ExportLambdaFunctionRecommendationsErrorKind::ThrottlingException(_inner) => {
-                Some(_inner)
-            }
-            ExportLambdaFunctionRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3660,17 +3415,15 @@ impl std::error::Error for ExportLambdaFunctionRecommendationsError {
 #[derive(std::fmt::Debug)]
 pub struct ExportECSServiceRecommendationsError {
     /// Kind of error that occurred.
-    pub kind: ExportECSServiceRecommendationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ExportECSServiceRecommendationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ExportECSServiceRecommendationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ExportECSServiceRecommendationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ExportECSServiceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3694,42 +3447,46 @@ pub enum ExportECSServiceRecommendationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportECSServiceRecommendationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExportECSServiceRecommendationsErrorKind::AccessDeniedException(_inner) => {
+            ExportECSServiceRecommendationsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportECSServiceRecommendationsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportECSServiceRecommendationsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportECSServiceRecommendationsErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportECSServiceRecommendationsErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportECSServiceRecommendationsErrorKind::OptInRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportECSServiceRecommendationsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportECSServiceRecommendationsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportECSServiceRecommendationsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ExportECSServiceRecommendationsErrorKind::InternalServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportECSServiceRecommendationsErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportECSServiceRecommendationsErrorKind::LimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportECSServiceRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportECSServiceRecommendationsErrorKind::OptInRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportECSServiceRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportECSServiceRecommendationsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            ExportECSServiceRecommendationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3743,134 +3500,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for ExportECSServiceRecommendatio
 }
 impl ExportECSServiceRecommendationsError {
     /// Creates a new `ExportECSServiceRecommendationsError`.
-    pub fn new(
-        kind: ExportECSServiceRecommendationsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ExportECSServiceRecommendationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ExportECSServiceRecommendationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ExportECSServiceRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ExportECSServiceRecommendationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ExportECSServiceRecommendationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ExportECSServiceRecommendationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ExportECSServiceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ExportECSServiceRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ExportECSServiceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ExportECSServiceRecommendationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportECSServiceRecommendationsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ExportECSServiceRecommendationsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ExportECSServiceRecommendationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportECSServiceRecommendationsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, ExportECSServiceRecommendationsErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `ExportECSServiceRecommendationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportECSServiceRecommendationsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ExportECSServiceRecommendationsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ExportECSServiceRecommendationsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportECSServiceRecommendationsErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, ExportECSServiceRecommendationsErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ExportECSServiceRecommendationsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportECSServiceRecommendationsErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, ExportECSServiceRecommendationsErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `ExportECSServiceRecommendationsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportECSServiceRecommendationsErrorKind::OptInRequiredException(_)
-        )
+        matches!(&self.kind, ExportECSServiceRecommendationsErrorKind::OptInRequiredException(_))
     }
     /// Returns `true` if the error kind is `ExportECSServiceRecommendationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportECSServiceRecommendationsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ExportECSServiceRecommendationsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ExportECSServiceRecommendationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportECSServiceRecommendationsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, ExportECSServiceRecommendationsErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for ExportECSServiceRecommendationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExportECSServiceRecommendationsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ExportECSServiceRecommendationsErrorKind::InternalServerException(_inner) => {
+            ExportECSServiceRecommendationsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ExportECSServiceRecommendationsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            ExportECSServiceRecommendationsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ExportECSServiceRecommendationsErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ExportECSServiceRecommendationsErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            ExportECSServiceRecommendationsErrorKind::OptInRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            ExportECSServiceRecommendationsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ExportECSServiceRecommendationsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            ExportECSServiceRecommendationsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ExportECSServiceRecommendationsErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            ExportECSServiceRecommendationsErrorKind::LimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            ExportECSServiceRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
-                Some(_inner)
-            }
-            ExportECSServiceRecommendationsErrorKind::OptInRequiredException(_inner) => {
-                Some(_inner)
-            }
-            ExportECSServiceRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            ExportECSServiceRecommendationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ExportECSServiceRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3880,17 +3612,15 @@ impl std::error::Error for ExportECSServiceRecommendationsError {
 #[derive(std::fmt::Debug)]
 pub struct ExportEC2InstanceRecommendationsError {
     /// Kind of error that occurred.
-    pub kind: ExportEC2InstanceRecommendationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ExportEC2InstanceRecommendationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ExportEC2InstanceRecommendationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ExportEC2InstanceRecommendationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ExportEC2InstanceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3914,42 +3644,46 @@ pub enum ExportEC2InstanceRecommendationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportEC2InstanceRecommendationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExportEC2InstanceRecommendationsErrorKind::AccessDeniedException(_inner) => {
+            ExportEC2InstanceRecommendationsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEC2InstanceRecommendationsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEC2InstanceRecommendationsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEC2InstanceRecommendationsErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEC2InstanceRecommendationsErrorKind::OptInRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEC2InstanceRecommendationsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEC2InstanceRecommendationsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEC2InstanceRecommendationsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ExportEC2InstanceRecommendationsErrorKind::InternalServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportEC2InstanceRecommendationsErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportEC2InstanceRecommendationsErrorKind::LimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportEC2InstanceRecommendationsErrorKind::OptInRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportEC2InstanceRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportEC2InstanceRecommendationsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            ExportEC2InstanceRecommendationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3963,136 +3697,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for ExportEC2InstanceRecommendati
 }
 impl ExportEC2InstanceRecommendationsError {
     /// Creates a new `ExportEC2InstanceRecommendationsError`.
-    pub fn new(
-        kind: ExportEC2InstanceRecommendationsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ExportEC2InstanceRecommendationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ExportEC2InstanceRecommendationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ExportEC2InstanceRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ExportEC2InstanceRecommendationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ExportEC2InstanceRecommendationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ExportEC2InstanceRecommendationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ExportEC2InstanceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ExportEC2InstanceRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ExportEC2InstanceRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ExportEC2InstanceRecommendationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEC2InstanceRecommendationsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ExportEC2InstanceRecommendationsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ExportEC2InstanceRecommendationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEC2InstanceRecommendationsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, ExportEC2InstanceRecommendationsErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `ExportEC2InstanceRecommendationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEC2InstanceRecommendationsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ExportEC2InstanceRecommendationsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ExportEC2InstanceRecommendationsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEC2InstanceRecommendationsErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, ExportEC2InstanceRecommendationsErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ExportEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, ExportEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `ExportEC2InstanceRecommendationsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEC2InstanceRecommendationsErrorKind::OptInRequiredException(_)
-        )
+        matches!(&self.kind, ExportEC2InstanceRecommendationsErrorKind::OptInRequiredException(_))
     }
     /// Returns `true` if the error kind is `ExportEC2InstanceRecommendationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEC2InstanceRecommendationsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ExportEC2InstanceRecommendationsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ExportEC2InstanceRecommendationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEC2InstanceRecommendationsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, ExportEC2InstanceRecommendationsErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for ExportEC2InstanceRecommendationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExportEC2InstanceRecommendationsErrorKind::AccessDeniedException(_inner) => {
+            ExportEC2InstanceRecommendationsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEC2InstanceRecommendationsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEC2InstanceRecommendationsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEC2InstanceRecommendationsErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            ExportEC2InstanceRecommendationsErrorKind::OptInRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEC2InstanceRecommendationsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEC2InstanceRecommendationsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEC2InstanceRecommendationsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ExportEC2InstanceRecommendationsErrorKind::InternalServerException(_inner) => {
-                Some(_inner)
-            }
-            ExportEC2InstanceRecommendationsErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            ExportEC2InstanceRecommendationsErrorKind::LimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            ExportEC2InstanceRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
-                Some(_inner)
-            }
-            ExportEC2InstanceRecommendationsErrorKind::OptInRequiredException(_inner) => {
-                Some(_inner)
-            }
-            ExportEC2InstanceRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            ExportEC2InstanceRecommendationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ExportEC2InstanceRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4102,17 +3809,15 @@ impl std::error::Error for ExportEC2InstanceRecommendationsError {
 #[derive(std::fmt::Debug)]
 pub struct ExportEBSVolumeRecommendationsError {
     /// Kind of error that occurred.
-    pub kind: ExportEBSVolumeRecommendationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ExportEBSVolumeRecommendationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ExportEBSVolumeRecommendationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ExportEBSVolumeRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ExportEBSVolumeRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4136,40 +3841,46 @@ pub enum ExportEBSVolumeRecommendationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportEBSVolumeRecommendationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExportEBSVolumeRecommendationsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ExportEBSVolumeRecommendationsErrorKind::InternalServerException(_inner) => {
+            ExportEBSVolumeRecommendationsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEBSVolumeRecommendationsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEBSVolumeRecommendationsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEBSVolumeRecommendationsErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEBSVolumeRecommendationsErrorKind::OptInRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEBSVolumeRecommendationsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEBSVolumeRecommendationsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportEBSVolumeRecommendationsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ExportEBSVolumeRecommendationsErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportEBSVolumeRecommendationsErrorKind::LimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportEBSVolumeRecommendationsErrorKind::OptInRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportEBSVolumeRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportEBSVolumeRecommendationsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            ExportEBSVolumeRecommendationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4183,130 +3894,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for ExportEBSVolumeRecommendation
 }
 impl ExportEBSVolumeRecommendationsError {
     /// Creates a new `ExportEBSVolumeRecommendationsError`.
-    pub fn new(
-        kind: ExportEBSVolumeRecommendationsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ExportEBSVolumeRecommendationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ExportEBSVolumeRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ExportEBSVolumeRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ExportEBSVolumeRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ExportEBSVolumeRecommendationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ExportEBSVolumeRecommendationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ExportEBSVolumeRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ExportEBSVolumeRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ExportEBSVolumeRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ExportEBSVolumeRecommendationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEBSVolumeRecommendationsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ExportEBSVolumeRecommendationsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ExportEBSVolumeRecommendationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEBSVolumeRecommendationsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, ExportEBSVolumeRecommendationsErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `ExportEBSVolumeRecommendationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEBSVolumeRecommendationsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ExportEBSVolumeRecommendationsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ExportEBSVolumeRecommendationsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEBSVolumeRecommendationsErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, ExportEBSVolumeRecommendationsErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ExportEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, ExportEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `ExportEBSVolumeRecommendationsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEBSVolumeRecommendationsErrorKind::OptInRequiredException(_)
-        )
+        matches!(&self.kind, ExportEBSVolumeRecommendationsErrorKind::OptInRequiredException(_))
     }
     /// Returns `true` if the error kind is `ExportEBSVolumeRecommendationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEBSVolumeRecommendationsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ExportEBSVolumeRecommendationsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ExportEBSVolumeRecommendationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportEBSVolumeRecommendationsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, ExportEBSVolumeRecommendationsErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for ExportEBSVolumeRecommendationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExportEBSVolumeRecommendationsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ExportEBSVolumeRecommendationsErrorKind::InternalServerException(_inner) => {
+            ExportEBSVolumeRecommendationsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEBSVolumeRecommendationsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEBSVolumeRecommendationsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEBSVolumeRecommendationsErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            ExportEBSVolumeRecommendationsErrorKind::OptInRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEBSVolumeRecommendationsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEBSVolumeRecommendationsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            ExportEBSVolumeRecommendationsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ExportEBSVolumeRecommendationsErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            ExportEBSVolumeRecommendationsErrorKind::LimitExceededException(_inner) => Some(_inner),
-            ExportEBSVolumeRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
-                Some(_inner)
-            }
-            ExportEBSVolumeRecommendationsErrorKind::OptInRequiredException(_inner) => Some(_inner),
-            ExportEBSVolumeRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            ExportEBSVolumeRecommendationsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ExportEBSVolumeRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4316,17 +4006,15 @@ impl std::error::Error for ExportEBSVolumeRecommendationsError {
 #[derive(std::fmt::Debug)]
 pub struct ExportAutoScalingGroupRecommendationsError {
     /// Kind of error that occurred.
-    pub kind: ExportAutoScalingGroupRecommendationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ExportAutoScalingGroupRecommendationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ExportAutoScalingGroupRecommendationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ExportAutoScalingGroupRecommendationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ExportAutoScalingGroupRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4350,44 +4038,46 @@ pub enum ExportAutoScalingGroupRecommendationsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExportAutoScalingGroupRecommendationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExportAutoScalingGroupRecommendationsErrorKind::AccessDeniedException(_inner) => {
+            ExportAutoScalingGroupRecommendationsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportAutoScalingGroupRecommendationsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportAutoScalingGroupRecommendationsErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportAutoScalingGroupRecommendationsErrorKind::OptInRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportAutoScalingGroupRecommendationsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExportAutoScalingGroupRecommendationsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ExportAutoScalingGroupRecommendationsErrorKind::InternalServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => _inner.fmt(f),
-            ExportAutoScalingGroupRecommendationsErrorKind::LimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportAutoScalingGroupRecommendationsErrorKind::OptInRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportAutoScalingGroupRecommendationsErrorKind::ThrottlingException(_inner) => {
-                _inner.fmt(f)
-            }
-            ExportAutoScalingGroupRecommendationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4401,138 +4091,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for ExportAutoScalingGroupRecomme
 }
 impl ExportAutoScalingGroupRecommendationsError {
     /// Creates a new `ExportAutoScalingGroupRecommendationsError`.
-    pub fn new(
-        kind: ExportAutoScalingGroupRecommendationsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ExportAutoScalingGroupRecommendationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ExportAutoScalingGroupRecommendationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ExportAutoScalingGroupRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ExportAutoScalingGroupRecommendationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ExportAutoScalingGroupRecommendationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ExportAutoScalingGroupRecommendationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ExportAutoScalingGroupRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ExportAutoScalingGroupRecommendationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ExportAutoScalingGroupRecommendationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportAutoScalingGroupRecommendationsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ExportAutoScalingGroupRecommendationsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportAutoScalingGroupRecommendationsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, ExportAutoScalingGroupRecommendationsErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ExportAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportAutoScalingGroupRecommendationsErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, ExportAutoScalingGroupRecommendationsErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, ExportAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportAutoScalingGroupRecommendationsErrorKind::OptInRequiredException(_)
-        )
+        matches!(&self.kind, ExportAutoScalingGroupRecommendationsErrorKind::OptInRequiredException(_))
     }
     /// Returns `true` if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, ExportAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ExportAutoScalingGroupRecommendationsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExportAutoScalingGroupRecommendationsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, ExportAutoScalingGroupRecommendationsErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for ExportAutoScalingGroupRecommendationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExportAutoScalingGroupRecommendationsErrorKind::AccessDeniedException(_inner) => {
+            ExportAutoScalingGroupRecommendationsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ExportAutoScalingGroupRecommendationsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            ExportAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ExportAutoScalingGroupRecommendationsErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ExportAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            ExportAutoScalingGroupRecommendationsErrorKind::OptInRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            ExportAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ExportAutoScalingGroupRecommendationsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            ExportAutoScalingGroupRecommendationsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ExportAutoScalingGroupRecommendationsErrorKind::InternalServerException(_inner) => {
-                Some(_inner)
-            }
-            ExportAutoScalingGroupRecommendationsErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => Some(_inner),
-            ExportAutoScalingGroupRecommendationsErrorKind::LimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            ExportAutoScalingGroupRecommendationsErrorKind::MissingAuthenticationToken(_inner) => {
-                Some(_inner)
-            }
-            ExportAutoScalingGroupRecommendationsErrorKind::OptInRequiredException(_inner) => {
-                Some(_inner)
-            }
-            ExportAutoScalingGroupRecommendationsErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            ExportAutoScalingGroupRecommendationsErrorKind::ThrottlingException(_inner) => {
-                Some(_inner)
-            }
-            ExportAutoScalingGroupRecommendationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4542,17 +4203,15 @@ impl std::error::Error for ExportAutoScalingGroupRecommendationsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeRecommendationExportJobsError {
     /// Kind of error that occurred.
-    pub kind: DescribeRecommendationExportJobsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeRecommendationExportJobsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeRecommendationExportJobsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeRecommendationExportJobsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeRecommendationExportJobsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4576,42 +4235,46 @@ pub enum DescribeRecommendationExportJobsErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeRecommendationExportJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeRecommendationExportJobsErrorKind::AccessDeniedException(_inner) => {
+            DescribeRecommendationExportJobsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeRecommendationExportJobsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeRecommendationExportJobsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeRecommendationExportJobsErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeRecommendationExportJobsErrorKind::OptInRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeRecommendationExportJobsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeRecommendationExportJobsErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeRecommendationExportJobsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeRecommendationExportJobsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeRecommendationExportJobsErrorKind::InternalServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeRecommendationExportJobsErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeRecommendationExportJobsErrorKind::MissingAuthenticationToken(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeRecommendationExportJobsErrorKind::OptInRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeRecommendationExportJobsErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeRecommendationExportJobsErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeRecommendationExportJobsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DescribeRecommendationExportJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4625,136 +4288,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeRecommendationExportJ
 }
 impl DescribeRecommendationExportJobsError {
     /// Creates a new `DescribeRecommendationExportJobsError`.
-    pub fn new(
-        kind: DescribeRecommendationExportJobsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeRecommendationExportJobsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeRecommendationExportJobsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeRecommendationExportJobsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeRecommendationExportJobsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeRecommendationExportJobsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeRecommendationExportJobsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeRecommendationExportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeRecommendationExportJobsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeRecommendationExportJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeRecommendationExportJobsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeRecommendationExportJobsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DescribeRecommendationExportJobsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DescribeRecommendationExportJobsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeRecommendationExportJobsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, DescribeRecommendationExportJobsErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `DescribeRecommendationExportJobsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeRecommendationExportJobsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DescribeRecommendationExportJobsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `DescribeRecommendationExportJobsErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeRecommendationExportJobsErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, DescribeRecommendationExportJobsErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `DescribeRecommendationExportJobsErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeRecommendationExportJobsErrorKind::OptInRequiredException(_)
-        )
+        matches!(&self.kind, DescribeRecommendationExportJobsErrorKind::OptInRequiredException(_))
     }
     /// Returns `true` if the error kind is `DescribeRecommendationExportJobsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeRecommendationExportJobsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeRecommendationExportJobsErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeRecommendationExportJobsErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeRecommendationExportJobsErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DescribeRecommendationExportJobsErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DescribeRecommendationExportJobsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeRecommendationExportJobsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DescribeRecommendationExportJobsErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for DescribeRecommendationExportJobsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeRecommendationExportJobsErrorKind::AccessDeniedException(_inner) => {
+            DescribeRecommendationExportJobsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeRecommendationExportJobsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeRecommendationExportJobsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeRecommendationExportJobsErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            DescribeRecommendationExportJobsErrorKind::OptInRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeRecommendationExportJobsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeRecommendationExportJobsErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeRecommendationExportJobsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeRecommendationExportJobsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeRecommendationExportJobsErrorKind::InternalServerException(_inner) => {
-                Some(_inner)
-            }
-            DescribeRecommendationExportJobsErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            DescribeRecommendationExportJobsErrorKind::MissingAuthenticationToken(_inner) => {
-                Some(_inner)
-            }
-            DescribeRecommendationExportJobsErrorKind::OptInRequiredException(_inner) => {
-                Some(_inner)
-            }
-            DescribeRecommendationExportJobsErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            DescribeRecommendationExportJobsErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            DescribeRecommendationExportJobsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DescribeRecommendationExportJobsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4764,17 +4400,15 @@ impl std::error::Error for DescribeRecommendationExportJobsError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteRecommendationPreferencesError {
     /// Kind of error that occurred.
-    pub kind: DeleteRecommendationPreferencesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteRecommendationPreferencesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteRecommendationPreferencesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteRecommendationPreferencesErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DeleteRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4798,42 +4432,46 @@ pub enum DeleteRecommendationPreferencesErrorKind {
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteRecommendationPreferencesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteRecommendationPreferencesErrorKind::AccessDeniedException(_inner) => {
+            DeleteRecommendationPreferencesErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRecommendationPreferencesErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRecommendationPreferencesErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRecommendationPreferencesErrorKind::MissingAuthenticationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRecommendationPreferencesErrorKind::OptInRequiredException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRecommendationPreferencesErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRecommendationPreferencesErrorKind::ServiceUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRecommendationPreferencesErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteRecommendationPreferencesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteRecommendationPreferencesErrorKind::InternalServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteRecommendationPreferencesErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteRecommendationPreferencesErrorKind::MissingAuthenticationToken(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteRecommendationPreferencesErrorKind::OptInRequiredException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteRecommendationPreferencesErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteRecommendationPreferencesErrorKind::ServiceUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteRecommendationPreferencesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DeleteRecommendationPreferencesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4847,163 +4485,139 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteRecommendationPreferenc
 }
 impl DeleteRecommendationPreferencesError {
     /// Creates a new `DeleteRecommendationPreferencesError`.
-    pub fn new(
-        kind: DeleteRecommendationPreferencesErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteRecommendationPreferencesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteRecommendationPreferencesErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteRecommendationPreferencesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteRecommendationPreferencesErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteRecommendationPreferencesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteRecommendationPreferencesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteRecommendationPreferencesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteRecommendationPreferencesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteRecommendationPreferencesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRecommendationPreferencesErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DeleteRecommendationPreferencesErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeleteRecommendationPreferencesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRecommendationPreferencesErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, DeleteRecommendationPreferencesErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `DeleteRecommendationPreferencesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRecommendationPreferencesErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DeleteRecommendationPreferencesErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `DeleteRecommendationPreferencesErrorKind::MissingAuthenticationToken`.
     pub fn is_missing_authentication_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRecommendationPreferencesErrorKind::MissingAuthenticationToken(_)
-        )
+        matches!(&self.kind, DeleteRecommendationPreferencesErrorKind::MissingAuthenticationToken(_))
     }
     /// Returns `true` if the error kind is `DeleteRecommendationPreferencesErrorKind::OptInRequiredException`.
     pub fn is_opt_in_required_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRecommendationPreferencesErrorKind::OptInRequiredException(_)
-        )
+        matches!(&self.kind, DeleteRecommendationPreferencesErrorKind::OptInRequiredException(_))
     }
     /// Returns `true` if the error kind is `DeleteRecommendationPreferencesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRecommendationPreferencesErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteRecommendationPreferencesErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteRecommendationPreferencesErrorKind::ServiceUnavailableException`.
     pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRecommendationPreferencesErrorKind::ServiceUnavailableException(_)
-        )
+        matches!(&self.kind, DeleteRecommendationPreferencesErrorKind::ServiceUnavailableException(_))
     }
     /// Returns `true` if the error kind is `DeleteRecommendationPreferencesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteRecommendationPreferencesErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, DeleteRecommendationPreferencesErrorKind::ThrottlingException(_))
     }
 }
 impl std::error::Error for DeleteRecommendationPreferencesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteRecommendationPreferencesErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DeleteRecommendationPreferencesErrorKind::InternalServerException(_inner) => {
+            DeleteRecommendationPreferencesErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRecommendationPreferencesErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRecommendationPreferencesErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRecommendationPreferencesErrorKind::MissingAuthenticationToken(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRecommendationPreferencesErrorKind::OptInRequiredException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRecommendationPreferencesErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRecommendationPreferencesErrorKind::ServiceUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRecommendationPreferencesErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteRecommendationPreferencesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteRecommendationPreferencesErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            DeleteRecommendationPreferencesErrorKind::MissingAuthenticationToken(_inner) => {
-                Some(_inner)
-            }
-            DeleteRecommendationPreferencesErrorKind::OptInRequiredException(_inner) => {
-                Some(_inner)
-            }
-            DeleteRecommendationPreferencesErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            DeleteRecommendationPreferencesErrorKind::ServiceUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            DeleteRecommendationPreferencesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteRecommendationPreferencesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

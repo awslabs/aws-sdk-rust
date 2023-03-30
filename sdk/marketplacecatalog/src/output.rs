@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -26,19 +31,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -50,7 +60,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartChangeSetOutput {
+pub struct StartChangeSetOutput  {
     /// <p>Unique identifier generated for the request.</p>
     #[doc(hidden)]
     pub change_set_id: std::option::Option<std::string::String>,
@@ -60,17 +70,17 @@ pub struct StartChangeSetOutput {
 }
 impl StartChangeSetOutput {
     /// <p>Unique identifier generated for the request.</p>
-    pub fn change_set_id(&self) -> std::option::Option<&str> {
+    pub fn change_set_id(&self) -> std::option::Option<& str> {
         self.change_set_id.as_deref()
     }
     /// <p>The ARN associated to the unique identifier generated for the request.</p>
-    pub fn change_set_arn(&self) -> std::option::Option<&str> {
+    pub fn change_set_arn(&self) -> std::option::Option<& str> {
         self.change_set_arn.as_deref()
     }
 }
 /// See [`StartChangeSetOutput`](crate::output::StartChangeSetOutput).
 pub mod start_change_set_output {
-
+    
     /// A builder for [`StartChangeSetOutput`](crate::output::StartChangeSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -84,12 +94,8 @@ pub mod start_change_set_output {
             self
         }
         /// <p>Unique identifier generated for the request.</p>
-        pub fn set_change_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_set_id = input;
-            self
+        pub fn set_change_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_set_id = input; self
         }
         /// <p>The ARN associated to the unique identifier generated for the request.</p>
         pub fn change_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,21 +103,21 @@ pub mod start_change_set_output {
             self
         }
         /// <p>The ARN associated to the unique identifier generated for the request.</p>
-        pub fn set_change_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_set_arn = input;
-            self
+        pub fn set_change_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_set_arn = input; self
         }
         /// Consumes the builder and constructs a [`StartChangeSetOutput`](crate::output::StartChangeSetOutput).
         pub fn build(self) -> crate::output::StartChangeSetOutput {
             crate::output::StartChangeSetOutput {
-                change_set_id: self.change_set_id,
-                change_set_arn: self.change_set_arn,
+                change_set_id: self.change_set_id
+                ,
+                change_set_arn: self.change_set_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl StartChangeSetOutput {
     /// Creates a new builder-style object to manufacture [`StartChangeSetOutput`](crate::output::StartChangeSetOutput).
@@ -123,7 +129,7 @@ impl StartChangeSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>Required. The ARN associated with the resource you want to list tags on.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -133,17 +139,17 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>Required. The ARN associated with the resource you want to list tags on.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -158,8 +164,7 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>Required. The ARN associated with the resource you want to list tags on.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -168,26 +173,26 @@ pub mod list_tags_for_resource_output {
         /// <p>Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
+                resource_arn: self.resource_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -199,7 +204,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEntitiesOutput {
+pub struct ListEntitiesOutput  {
     /// <p> Array of <code>EntitySummary</code> object.</p>
     #[doc(hidden)]
     pub entity_summary_list: std::option::Option<std::vec::Vec<crate::model::EntitySummary>>,
@@ -209,22 +214,21 @@ pub struct ListEntitiesOutput {
 }
 impl ListEntitiesOutput {
     /// <p> Array of <code>EntitySummary</code> object.</p>
-    pub fn entity_summary_list(&self) -> std::option::Option<&[crate::model::EntitySummary]> {
+    pub fn entity_summary_list(&self) -> std::option::Option<& [crate::model::EntitySummary]> {
         self.entity_summary_list.as_deref()
     }
     /// <p>The value of the next token if it exists. Null if there is no more result.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEntitiesOutput`](crate::output::ListEntitiesOutput).
 pub mod list_entities_output {
-
+    
     /// A builder for [`ListEntitiesOutput`](crate::output::ListEntitiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) entity_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::EntitySummary>>,
+        pub(crate) entity_summary_list: std::option::Option<std::vec::Vec<crate::model::EntitySummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -235,17 +239,13 @@ pub mod list_entities_output {
         /// <p> Array of <code>EntitySummary</code> object.</p>
         pub fn entity_summary_list(mut self, input: crate::model::EntitySummary) -> Self {
             let mut v = self.entity_summary_list.unwrap_or_default();
-            v.push(input);
-            self.entity_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.entity_summary_list = Some(v);
+                            self
         }
         /// <p> Array of <code>EntitySummary</code> object.</p>
-        pub fn set_entity_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EntitySummary>>,
-        ) -> Self {
-            self.entity_summary_list = input;
-            self
+        pub fn set_entity_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::EntitySummary>>) -> Self {
+            self.entity_summary_list = input; self
         }
         /// <p>The value of the next token if it exists. Null if there is no more result.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -254,17 +254,20 @@ pub mod list_entities_output {
         }
         /// <p>The value of the next token if it exists. Null if there is no more result.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEntitiesOutput`](crate::output::ListEntitiesOutput).
         pub fn build(self) -> crate::output::ListEntitiesOutput {
             crate::output::ListEntitiesOutput {
-                entity_summary_list: self.entity_summary_list,
-                next_token: self.next_token,
+                entity_summary_list: self.entity_summary_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEntitiesOutput {
     /// Creates a new builder-style object to manufacture [`ListEntitiesOutput`](crate::output::ListEntitiesOutput).
@@ -276,35 +279,31 @@ impl ListEntitiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListChangeSetsOutput {
+pub struct ListChangeSetsOutput  {
     /// <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
     #[doc(hidden)]
-    pub change_set_summary_list:
-        std::option::Option<std::vec::Vec<crate::model::ChangeSetSummaryListItem>>,
+    pub change_set_summary_list: std::option::Option<std::vec::Vec<crate::model::ChangeSetSummaryListItem>>,
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListChangeSetsOutput {
     /// <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
-    pub fn change_set_summary_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ChangeSetSummaryListItem]> {
+    pub fn change_set_summary_list(&self) -> std::option::Option<& [crate::model::ChangeSetSummaryListItem]> {
         self.change_set_summary_list.as_deref()
     }
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput).
 pub mod list_change_sets_output {
-
+    
     /// A builder for [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) change_set_summary_list:
-            std::option::Option<std::vec::Vec<crate::model::ChangeSetSummaryListItem>>,
+        pub(crate) change_set_summary_list: std::option::Option<std::vec::Vec<crate::model::ChangeSetSummaryListItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -313,22 +312,15 @@ pub mod list_change_sets_output {
         /// To override the contents of this collection use [`set_change_set_summary_list`](Self::set_change_set_summary_list).
         ///
         /// <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
-        pub fn change_set_summary_list(
-            mut self,
-            input: crate::model::ChangeSetSummaryListItem,
-        ) -> Self {
+        pub fn change_set_summary_list(mut self, input: crate::model::ChangeSetSummaryListItem) -> Self {
             let mut v = self.change_set_summary_list.unwrap_or_default();
-            v.push(input);
-            self.change_set_summary_list = Some(v);
-            self
+                            v.push(input);
+                            self.change_set_summary_list = Some(v);
+                            self
         }
         /// <p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>
-        pub fn set_change_set_summary_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ChangeSetSummaryListItem>>,
-        ) -> Self {
-            self.change_set_summary_list = input;
-            self
+        pub fn set_change_set_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ChangeSetSummaryListItem>>) -> Self {
+            self.change_set_summary_list = input; self
         }
         /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -337,17 +329,20 @@ pub mod list_change_sets_output {
         }
         /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput).
         pub fn build(self) -> crate::output::ListChangeSetsOutput {
             crate::output::ListChangeSetsOutput {
-                change_set_summary_list: self.change_set_summary_list,
-                next_token: self.next_token,
+                change_set_summary_list: self.change_set_summary_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListChangeSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListChangeSetsOutput`](crate::output::ListChangeSetsOutput).
@@ -359,7 +354,7 @@ impl ListChangeSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEntityOutput {
+pub struct DescribeEntityOutput  {
     /// <p>The named type of the entity, in the format of <code>EntityType@Version</code>.</p>
     #[doc(hidden)]
     pub entity_type: std::option::Option<std::string::String>,
@@ -378,29 +373,29 @@ pub struct DescribeEntityOutput {
 }
 impl DescribeEntityOutput {
     /// <p>The named type of the entity, in the format of <code>EntityType@Version</code>.</p>
-    pub fn entity_type(&self) -> std::option::Option<&str> {
+    pub fn entity_type(&self) -> std::option::Option<& str> {
         self.entity_type.as_deref()
     }
     /// <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
-    pub fn entity_identifier(&self) -> std::option::Option<&str> {
+    pub fn entity_identifier(&self) -> std::option::Option<& str> {
         self.entity_identifier.as_deref()
     }
     /// <p>The ARN associated to the unique identifier for the entity referenced in this request.</p>
-    pub fn entity_arn(&self) -> std::option::Option<&str> {
+    pub fn entity_arn(&self) -> std::option::Option<& str> {
         self.entity_arn.as_deref()
     }
     /// <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+    pub fn last_modified_date(&self) -> std::option::Option<& str> {
         self.last_modified_date.as_deref()
     }
     /// <p>This stringified JSON object includes the details of the entity.</p>
-    pub fn details(&self) -> std::option::Option<&str> {
+    pub fn details(&self) -> std::option::Option<& str> {
         self.details.as_deref()
     }
 }
 /// See [`DescribeEntityOutput`](crate::output::DescribeEntityOutput).
 pub mod describe_entity_output {
-
+    
     /// A builder for [`DescribeEntityOutput`](crate::output::DescribeEntityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -418,8 +413,7 @@ pub mod describe_entity_output {
         }
         /// <p>The named type of the entity, in the format of <code>EntityType@Version</code>.</p>
         pub fn set_entity_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entity_type = input;
-            self
+            self.entity_type = input; self
         }
         /// <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
         pub fn entity_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -427,12 +421,8 @@ pub mod describe_entity_output {
             self
         }
         /// <p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>
-        pub fn set_entity_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.entity_identifier = input;
-            self
+        pub fn set_entity_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entity_identifier = input; self
         }
         /// <p>The ARN associated to the unique identifier for the entity referenced in this request.</p>
         pub fn entity_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -441,8 +431,7 @@ pub mod describe_entity_output {
         }
         /// <p>The ARN associated to the unique identifier for the entity referenced in this request.</p>
         pub fn set_entity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entity_arn = input;
-            self
+            self.entity_arn = input; self
         }
         /// <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
         pub fn last_modified_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -450,12 +439,8 @@ pub mod describe_entity_output {
             self
         }
         /// <p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>
-        pub fn set_last_modified_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_modified_date = input;
-            self
+        pub fn set_last_modified_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_modified_date = input; self
         }
         /// <p>This stringified JSON object includes the details of the entity.</p>
         pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -464,20 +449,26 @@ pub mod describe_entity_output {
         }
         /// <p>This stringified JSON object includes the details of the entity.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.details = input;
-            self
+            self.details = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEntityOutput`](crate::output::DescribeEntityOutput).
         pub fn build(self) -> crate::output::DescribeEntityOutput {
             crate::output::DescribeEntityOutput {
-                entity_type: self.entity_type,
-                entity_identifier: self.entity_identifier,
-                entity_arn: self.entity_arn,
-                last_modified_date: self.last_modified_date,
-                details: self.details,
+                entity_type: self.entity_type
+                ,
+                entity_identifier: self.entity_identifier
+                ,
+                entity_arn: self.entity_arn
+                ,
+                last_modified_date: self.last_modified_date
+                ,
+                details: self.details
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEntityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEntityOutput`](crate::output::DescribeEntityOutput).
@@ -489,7 +480,7 @@ impl DescribeEntityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeChangeSetOutput {
+pub struct DescribeChangeSetOutput  {
     /// <p>Required. The unique identifier for the change set referenced in this request.</p>
     #[doc(hidden)]
     pub change_set_id: std::option::Option<std::string::String>,
@@ -520,45 +511,45 @@ pub struct DescribeChangeSetOutput {
 }
 impl DescribeChangeSetOutput {
     /// <p>Required. The unique identifier for the change set referenced in this request.</p>
-    pub fn change_set_id(&self) -> std::option::Option<&str> {
+    pub fn change_set_id(&self) -> std::option::Option<& str> {
         self.change_set_id.as_deref()
     }
     /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
-    pub fn change_set_arn(&self) -> std::option::Option<&str> {
+    pub fn change_set_arn(&self) -> std::option::Option<& str> {
         self.change_set_arn.as_deref()
     }
     /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
-    pub fn change_set_name(&self) -> std::option::Option<&str> {
+    pub fn change_set_name(&self) -> std::option::Option<& str> {
         self.change_set_name.as_deref()
     }
     /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>
-    pub fn start_time(&self) -> std::option::Option<&str> {
+    pub fn start_time(&self) -> std::option::Option<& str> {
         self.start_time.as_deref()
     }
     /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>
-    pub fn end_time(&self) -> std::option::Option<&str> {
+    pub fn end_time(&self) -> std::option::Option<& str> {
         self.end_time.as_deref()
     }
     /// <p>The status of the change request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ChangeStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ChangeStatus> {
         self.status.as_ref()
     }
     /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
-    pub fn failure_code(&self) -> std::option::Option<&crate::model::FailureCode> {
+    pub fn failure_code(&self) -> std::option::Option<& crate::model::FailureCode> {
         self.failure_code.as_ref()
     }
     /// <p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>
-    pub fn failure_description(&self) -> std::option::Option<&str> {
+    pub fn failure_description(&self) -> std::option::Option<& str> {
         self.failure_description.as_deref()
     }
     /// <p>An array of <code>ChangeSummary</code> objects.</p>
-    pub fn change_set(&self) -> std::option::Option<&[crate::model::ChangeSummary]> {
+    pub fn change_set(&self) -> std::option::Option<& [crate::model::ChangeSummary]> {
         self.change_set.as_deref()
     }
 }
 /// See [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput).
 pub mod describe_change_set_output {
-
+    
     /// A builder for [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -579,12 +570,8 @@ pub mod describe_change_set_output {
             self
         }
         /// <p>Required. The unique identifier for the change set referenced in this request.</p>
-        pub fn set_change_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_set_id = input;
-            self
+        pub fn set_change_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_set_id = input; self
         }
         /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
         pub fn change_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -592,12 +579,8 @@ pub mod describe_change_set_output {
             self
         }
         /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
-        pub fn set_change_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_set_arn = input;
-            self
+        pub fn set_change_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_set_arn = input; self
         }
         /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
         pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -605,12 +588,8 @@ pub mod describe_change_set_output {
             self
         }
         /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
-        pub fn set_change_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_set_name = input;
-            self
+        pub fn set_change_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_set_name = input; self
         }
         /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>
         pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -619,8 +598,7 @@ pub mod describe_change_set_output {
         }
         /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>
         pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start_time = input;
-            self
+            self.start_time = input; self
         }
         /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>
         pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -629,8 +607,7 @@ pub mod describe_change_set_output {
         }
         /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>
         pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end_time = input;
-            self
+            self.end_time = input; self
         }
         /// <p>The status of the change request.</p>
         pub fn status(mut self, input: crate::model::ChangeStatus) -> Self {
@@ -638,12 +615,8 @@ pub mod describe_change_set_output {
             self
         }
         /// <p>The status of the change request.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ChangeStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ChangeStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
         pub fn failure_code(mut self, input: crate::model::FailureCode) -> Self {
@@ -651,12 +624,8 @@ pub mod describe_change_set_output {
             self
         }
         /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
-        pub fn set_failure_code(
-            mut self,
-            input: std::option::Option<crate::model::FailureCode>,
-        ) -> Self {
-            self.failure_code = input;
-            self
+        pub fn set_failure_code(mut self, input: std::option::Option<crate::model::FailureCode>) -> Self {
+            self.failure_code = input; self
         }
         /// <p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>
         pub fn failure_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -664,12 +633,8 @@ pub mod describe_change_set_output {
             self
         }
         /// <p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>
-        pub fn set_failure_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.failure_description = input;
-            self
+        pub fn set_failure_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.failure_description = input; self
         }
         /// Appends an item to `change_set`.
         ///
@@ -678,33 +643,40 @@ pub mod describe_change_set_output {
         /// <p>An array of <code>ChangeSummary</code> objects.</p>
         pub fn change_set(mut self, input: crate::model::ChangeSummary) -> Self {
             let mut v = self.change_set.unwrap_or_default();
-            v.push(input);
-            self.change_set = Some(v);
-            self
+                            v.push(input);
+                            self.change_set = Some(v);
+                            self
         }
         /// <p>An array of <code>ChangeSummary</code> objects.</p>
-        pub fn set_change_set(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ChangeSummary>>,
-        ) -> Self {
-            self.change_set = input;
-            self
+        pub fn set_change_set(mut self, input: std::option::Option<std::vec::Vec<crate::model::ChangeSummary>>) -> Self {
+            self.change_set = input; self
         }
         /// Consumes the builder and constructs a [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput).
         pub fn build(self) -> crate::output::DescribeChangeSetOutput {
             crate::output::DescribeChangeSetOutput {
-                change_set_id: self.change_set_id,
-                change_set_arn: self.change_set_arn,
-                change_set_name: self.change_set_name,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                status: self.status,
-                failure_code: self.failure_code,
-                failure_description: self.failure_description,
-                change_set: self.change_set,
+                change_set_id: self.change_set_id
+                ,
+                change_set_arn: self.change_set_arn
+                ,
+                change_set_name: self.change_set_name
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                status: self.status
+                ,
+                failure_code: self.failure_code
+                ,
+                failure_description: self.failure_description
+                ,
+                change_set: self.change_set
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeChangeSetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChangeSetOutput`](crate::output::DescribeChangeSetOutput).
@@ -716,7 +688,7 @@ impl DescribeChangeSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelChangeSetOutput {
+pub struct CancelChangeSetOutput  {
     /// <p>The unique identifier for the change set referenced in this request.</p>
     #[doc(hidden)]
     pub change_set_id: std::option::Option<std::string::String>,
@@ -726,17 +698,17 @@ pub struct CancelChangeSetOutput {
 }
 impl CancelChangeSetOutput {
     /// <p>The unique identifier for the change set referenced in this request.</p>
-    pub fn change_set_id(&self) -> std::option::Option<&str> {
+    pub fn change_set_id(&self) -> std::option::Option<& str> {
         self.change_set_id.as_deref()
     }
     /// <p>The ARN associated with the change set referenced in this request.</p>
-    pub fn change_set_arn(&self) -> std::option::Option<&str> {
+    pub fn change_set_arn(&self) -> std::option::Option<& str> {
         self.change_set_arn.as_deref()
     }
 }
 /// See [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput).
 pub mod cancel_change_set_output {
-
+    
     /// A builder for [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -750,12 +722,8 @@ pub mod cancel_change_set_output {
             self
         }
         /// <p>The unique identifier for the change set referenced in this request.</p>
-        pub fn set_change_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_set_id = input;
-            self
+        pub fn set_change_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_set_id = input; self
         }
         /// <p>The ARN associated with the change set referenced in this request.</p>
         pub fn change_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -763,21 +731,21 @@ pub mod cancel_change_set_output {
             self
         }
         /// <p>The ARN associated with the change set referenced in this request.</p>
-        pub fn set_change_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_set_arn = input;
-            self
+        pub fn set_change_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_set_arn = input; self
         }
         /// Consumes the builder and constructs a [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput).
         pub fn build(self) -> crate::output::CancelChangeSetOutput {
             crate::output::CancelChangeSetOutput {
-                change_set_id: self.change_set_id,
-                change_set_arn: self.change_set_arn,
+                change_set_id: self.change_set_id
+                ,
+                change_set_arn: self.change_set_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CancelChangeSetOutput {
     /// Creates a new builder-style object to manufacture [`CancelChangeSetOutput`](crate::output::CancelChangeSetOutput).
@@ -785,3 +753,4 @@ impl CancelChangeSetOutput {
         crate::output::cancel_change_set_output::Builder::default()
     }
 }
+

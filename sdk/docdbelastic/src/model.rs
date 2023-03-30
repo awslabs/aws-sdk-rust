@@ -3,7 +3,7 @@
 /// <p>A specific field in which a given validation exception occurred.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>The name of the field where the validation exception occurred.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ValidationExceptionField {
 }
 impl ValidationExceptionField {
     /// <p>The name of the field where the validation exception occurred.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An error message describing the validation exception in this field.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
-
+    
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod validation_exception_field {
         }
         /// <p>The name of the field where the validation exception occurred.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>An error message describing the validation exception in this field.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod validation_exception_field {
         }
         /// <p>An error message describing the validation exception in this field.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
-                name: self.name,
-                message: self.message,
+                name: self.name
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationExceptionField {
     /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -73,9 +75,9 @@ impl ValidationExceptionField {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -99,22 +101,14 @@ impl ValidationExceptionField {
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     CannotParse,
@@ -125,7 +119,7 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
@@ -134,19 +128,17 @@ impl std::convert::From<&str> for ValidationExceptionReason {
             "fieldValidationFailed" => ValidationExceptionReason::FieldValidationFailed,
             "other" => ValidationExceptionReason::Other,
             "unknownOperation" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationExceptionReason::from(s))
+                }
+            }
 impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -155,16 +147,13 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::FieldValidationFailed => "fieldValidationFailed",
             ValidationExceptionReason::Other => "other",
             ValidationExceptionReason::UnknownOperation => "unknownOperation",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
+            ValidationExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "cannotParse",
-            "fieldValidationFailed",
-            "other",
-            "unknownOperation",
+            "cannotParse", "fieldValidationFailed", "other", "unknownOperation"
         ]
     }
 }
@@ -177,7 +166,7 @@ impl AsRef<str> for ValidationExceptionReason {
 /// <p>Returns information about a specific Elastic DocumentDB cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Cluster {
+pub struct Cluster  {
     /// <p>The name of the Elastic DocumentDB cluster.</p>
     #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
@@ -211,7 +200,7 @@ pub struct Cluster {
     /// <p>The Amazon EC2 subnet IDs for the Elastic DocumentDB cluster.</p>
     #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p> 
     /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
     #[doc(hidden)]
     pub preferred_maintenance_window: std::option::Option<std::string::String>,
@@ -221,31 +210,31 @@ pub struct Cluster {
 }
 impl Cluster {
     /// <p>The name of the Elastic DocumentDB cluster.</p>
-    pub fn cluster_name(&self) -> std::option::Option<&str> {
+    pub fn cluster_name(&self) -> std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The status of the Elastic DocumentDB cluster.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
     /// <p>The URL used to connect to the Elastic DocumentDB cluster.</p>
-    pub fn cluster_endpoint(&self) -> std::option::Option<&str> {
+    pub fn cluster_endpoint(&self) -> std::option::Option<& str> {
         self.cluster_endpoint.as_deref()
     }
     /// <p>The time when the Elastic DocumentDB cluster was created in Universal Coordinated Time (UTC).</p>
-    pub fn create_time(&self) -> std::option::Option<&str> {
+    pub fn create_time(&self) -> std::option::Option<& str> {
         self.create_time.as_deref()
     }
     /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
-    pub fn admin_user_name(&self) -> std::option::Option<&str> {
+    pub fn admin_user_name(&self) -> std::option::Option<& str> {
         self.admin_user_name.as_deref()
     }
     /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
-    pub fn auth_type(&self) -> std::option::Option<&crate::model::Auth> {
+    pub fn auth_type(&self) -> std::option::Option<& crate::model::Auth> {
         self.auth_type.as_ref()
     }
     /// <p>The capacity of each shard in the Elastic DocumentDB cluster.</p>
@@ -257,26 +246,26 @@ impl Cluster {
         self.shard_count
     }
     /// <p>A list of EC2 VPC security groups associated with this cluster.</p>
-    pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn vpc_security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.vpc_security_group_ids.as_deref()
     }
     /// <p>The Amazon EC2 subnet IDs for the Elastic DocumentDB cluster.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
-    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p> 
     /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> std::option::Option<& str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>The KMS key identifier to use to encrypt the Elastic DocumentDB cluster.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
 /// See [`Cluster`](crate::model::Cluster).
 pub mod cluster {
-
+    
     /// A builder for [`Cluster`](crate::model::Cluster).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -302,8 +291,7 @@ pub mod cluster {
         }
         /// <p>The name of the Elastic DocumentDB cluster.</p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_name = input;
-            self
+            self.cluster_name = input; self
         }
         /// <p>The arn of the Elastic DocumentDB cluster.</p>
         pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -312,8 +300,7 @@ pub mod cluster {
         }
         /// <p>The arn of the Elastic DocumentDB cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// <p>The status of the Elastic DocumentDB cluster.</p>
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -322,8 +309,7 @@ pub mod cluster {
         }
         /// <p>The status of the Elastic DocumentDB cluster.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The URL used to connect to the Elastic DocumentDB cluster.</p>
         pub fn cluster_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -331,12 +317,8 @@ pub mod cluster {
             self
         }
         /// <p>The URL used to connect to the Elastic DocumentDB cluster.</p>
-        pub fn set_cluster_endpoint(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_endpoint = input;
-            self
+        pub fn set_cluster_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_endpoint = input; self
         }
         /// <p>The time when the Elastic DocumentDB cluster was created in Universal Coordinated Time (UTC).</p>
         pub fn create_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -345,8 +327,7 @@ pub mod cluster {
         }
         /// <p>The time when the Elastic DocumentDB cluster was created in Universal Coordinated Time (UTC).</p>
         pub fn set_create_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.create_time = input;
-            self
+            self.create_time = input; self
         }
         /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
         pub fn admin_user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -354,12 +335,8 @@ pub mod cluster {
             self
         }
         /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
-        pub fn set_admin_user_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.admin_user_name = input;
-            self
+        pub fn set_admin_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.admin_user_name = input; self
         }
         /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
         pub fn auth_type(mut self, input: crate::model::Auth) -> Self {
@@ -368,8 +345,7 @@ pub mod cluster {
         }
         /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
         pub fn set_auth_type(mut self, input: std::option::Option<crate::model::Auth>) -> Self {
-            self.auth_type = input;
-            self
+            self.auth_type = input; self
         }
         /// <p>The capacity of each shard in the Elastic DocumentDB cluster.</p>
         pub fn shard_capacity(mut self, input: i32) -> Self {
@@ -378,8 +354,7 @@ pub mod cluster {
         }
         /// <p>The capacity of each shard in the Elastic DocumentDB cluster.</p>
         pub fn set_shard_capacity(mut self, input: std::option::Option<i32>) -> Self {
-            self.shard_capacity = input;
-            self
+            self.shard_capacity = input; self
         }
         /// <p>The number of shards in the Elastic DocumentDB cluster.</p>
         pub fn shard_count(mut self, input: i32) -> Self {
@@ -388,8 +363,7 @@ pub mod cluster {
         }
         /// <p>The number of shards in the Elastic DocumentDB cluster.</p>
         pub fn set_shard_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.shard_count = input;
-            self
+            self.shard_count = input; self
         }
         /// Appends an item to `vpc_security_group_ids`.
         ///
@@ -398,17 +372,13 @@ pub mod cluster {
         /// <p>A list of EC2 VPC security groups associated with this cluster.</p>
         pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.vpc_security_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.vpc_security_group_ids = Some(v);
+                            self
         }
         /// <p>A list of EC2 VPC security groups associated with this cluster.</p>
-        pub fn set_vpc_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.vpc_security_group_ids = input;
-            self
+        pub fn set_vpc_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.vpc_security_group_ids = input; self
         }
         /// Appends an item to `subnet_ids`.
         ///
@@ -417,35 +387,24 @@ pub mod cluster {
         /// <p>The Amazon EC2 subnet IDs for the Elastic DocumentDB cluster.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_ids = Some(v);
+                            self
         }
         /// <p>The Amazon EC2 subnet IDs for the Elastic DocumentDB cluster.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
+        pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_ids = input; self
         }
-        /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+        /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p> 
         /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-        pub fn preferred_maintenance_window(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn preferred_maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
-        /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+        /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p> 
         /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
-        pub fn set_preferred_maintenance_window(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.preferred_maintenance_window = input;
-            self
+        pub fn set_preferred_maintenance_window(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.preferred_maintenance_window = input; self
         }
         /// <p>The KMS key identifier to use to encrypt the Elastic DocumentDB cluster.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -454,28 +413,42 @@ pub mod cluster {
         }
         /// <p>The KMS key identifier to use to encrypt the Elastic DocumentDB cluster.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Consumes the builder and constructs a [`Cluster`](crate::model::Cluster).
         pub fn build(self) -> crate::model::Cluster {
             crate::model::Cluster {
-                cluster_name: self.cluster_name,
-                cluster_arn: self.cluster_arn,
-                status: self.status,
-                cluster_endpoint: self.cluster_endpoint,
-                create_time: self.create_time,
-                admin_user_name: self.admin_user_name,
-                auth_type: self.auth_type,
-                shard_capacity: self.shard_capacity,
-                shard_count: self.shard_count,
-                vpc_security_group_ids: self.vpc_security_group_ids,
-                subnet_ids: self.subnet_ids,
-                preferred_maintenance_window: self.preferred_maintenance_window,
-                kms_key_id: self.kms_key_id,
+                cluster_name: self.cluster_name
+                ,
+                cluster_arn: self.cluster_arn
+                ,
+                status: self.status
+                ,
+                cluster_endpoint: self.cluster_endpoint
+                ,
+                create_time: self.create_time
+                ,
+                admin_user_name: self.admin_user_name
+                ,
+                auth_type: self.auth_type
+                ,
+                shard_capacity: self.shard_capacity
+                ,
+                shard_count: self.shard_count
+                ,
+                vpc_security_group_ids: self.vpc_security_group_ids
+                ,
+                subnet_ids: self.subnet_ids
+                ,
+                preferred_maintenance_window: self.preferred_maintenance_window
+                ,
+                kms_key_id: self.kms_key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::model::Cluster).
@@ -490,9 +463,9 @@ impl Cluster {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let auth = unimplemented!();
 /// match auth {
@@ -514,58 +487,52 @@ impl Cluster {
 /// Specifically, when `auth` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Auth::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Auth {
     #[allow(missing_docs)] // documentation missing in model
     PlainText,
     #[allow(missing_docs)] // documentation missing in model
     SecretArn,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Auth {
     fn from(s: &str) -> Self {
         match s {
             "PLAIN_TEXT" => Auth::PlainText,
             "SECRET_ARN" => Auth::SecretArn,
-            other => Auth::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Auth::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Auth {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Auth::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Auth::from(s))
+                }
+            }
 impl Auth {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Auth::PlainText => "PLAIN_TEXT",
             Auth::SecretArn => "SECRET_ARN",
-            Auth::Unknown(value) => value.as_str(),
+            Auth::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PLAIN_TEXT", "SECRET_ARN"]
+        &[
+            "PLAIN_TEXT", "SECRET_ARN"
+        ]
     }
 }
 impl AsRef<str> for Auth {
@@ -580,9 +547,9 @@ impl AsRef<str> for Auth {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let status = unimplemented!();
 /// match status {
@@ -611,22 +578,14 @@ impl AsRef<str> for Auth {
 /// Specifically, when `status` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Status::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -647,7 +606,7 @@ pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     VpcEndpointLimitExceeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Status {
     fn from(s: &str) -> Self {
@@ -661,17 +620,17 @@ impl std::convert::From<&str> for Status {
             "IP_ADDRESS_LIMIT_EXCEEDED" => Status::IpAddressLimitExceeded,
             "UPDATING" => Status::Updating,
             "VPC_ENDPOINT_LIMIT_EXCEEDED" => Status::VpcEndpointLimitExceeded,
-            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Status::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Status {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Status::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Status::from(s))
+                }
+            }
 impl Status {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -685,21 +644,13 @@ impl Status {
             Status::IpAddressLimitExceeded => "IP_ADDRESS_LIMIT_EXCEEDED",
             Status::Updating => "UPDATING",
             Status::VpcEndpointLimitExceeded => "VPC_ENDPOINT_LIMIT_EXCEEDED",
-            Status::Unknown(value) => value.as_str(),
+            Status::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTIVE",
-            "CREATING",
-            "DELETING",
-            "INACCESSIBLE_ENCRYPTION_CREDS",
-            "INVALID_SECURITY_GROUP_ID",
-            "INVALID_SUBNET_ID",
-            "IP_ADDRESS_LIMIT_EXCEEDED",
-            "UPDATING",
-            "VPC_ENDPOINT_LIMIT_EXCEEDED",
+            "ACTIVE", "CREATING", "DELETING", "INACCESSIBLE_ENCRYPTION_CREDS", "INVALID_SECURITY_GROUP_ID", "INVALID_SUBNET_ID", "IP_ADDRESS_LIMIT_EXCEEDED", "UPDATING", "VPC_ENDPOINT_LIMIT_EXCEEDED"
         ]
     }
 }
@@ -712,7 +663,7 @@ impl AsRef<str> for Status {
 /// <p>A list of Elastic DocumentDB snapshots.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterSnapshotInList {
+pub struct ClusterSnapshotInList  {
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
     #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
@@ -731,29 +682,29 @@ pub struct ClusterSnapshotInList {
 }
 impl ClusterSnapshotInList {
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
-    pub fn snapshot_name(&self) -> std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
     /// <p>The arn of the Elastic DocumentDB snapshot</p>
-    pub fn snapshot_arn(&self) -> std::option::Option<&str> {
+    pub fn snapshot_arn(&self) -> std::option::Option<& str> {
         self.snapshot_arn.as_deref()
     }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The status of the Elastic DocumentDB snapshot.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
     /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
-    pub fn snapshot_creation_time(&self) -> std::option::Option<&str> {
+    pub fn snapshot_creation_time(&self) -> std::option::Option<& str> {
         self.snapshot_creation_time.as_deref()
     }
 }
 /// See [`ClusterSnapshotInList`](crate::model::ClusterSnapshotInList).
 pub mod cluster_snapshot_in_list {
-
+    
     /// A builder for [`ClusterSnapshotInList`](crate::model::ClusterSnapshotInList).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -770,12 +721,8 @@ pub mod cluster_snapshot_in_list {
             self
         }
         /// <p>The name of the Elastic DocumentDB snapshot.</p>
-        pub fn set_snapshot_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.snapshot_name = input;
-            self
+        pub fn set_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_name = input; self
         }
         /// <p>The arn of the Elastic DocumentDB snapshot</p>
         pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -784,8 +731,7 @@ pub mod cluster_snapshot_in_list {
         }
         /// <p>The arn of the Elastic DocumentDB snapshot</p>
         pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_arn = input;
-            self
+            self.snapshot_arn = input; self
         }
         /// <p>The arn of the Elastic DocumentDB cluster.</p>
         pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -794,8 +740,7 @@ pub mod cluster_snapshot_in_list {
         }
         /// <p>The arn of the Elastic DocumentDB cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// <p>The status of the Elastic DocumentDB snapshot.</p>
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -804,8 +749,7 @@ pub mod cluster_snapshot_in_list {
         }
         /// <p>The status of the Elastic DocumentDB snapshot.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
         pub fn snapshot_creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -813,24 +757,27 @@ pub mod cluster_snapshot_in_list {
             self
         }
         /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
-        pub fn set_snapshot_creation_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.snapshot_creation_time = input;
-            self
+        pub fn set_snapshot_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_creation_time = input; self
         }
         /// Consumes the builder and constructs a [`ClusterSnapshotInList`](crate::model::ClusterSnapshotInList).
         pub fn build(self) -> crate::model::ClusterSnapshotInList {
             crate::model::ClusterSnapshotInList {
-                snapshot_name: self.snapshot_name,
-                snapshot_arn: self.snapshot_arn,
-                cluster_arn: self.cluster_arn,
-                status: self.status,
-                snapshot_creation_time: self.snapshot_creation_time,
+                snapshot_name: self.snapshot_name
+                ,
+                snapshot_arn: self.snapshot_arn
+                ,
+                cluster_arn: self.cluster_arn
+                ,
+                status: self.status
+                ,
+                snapshot_creation_time: self.snapshot_creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterSnapshotInList {
     /// Creates a new builder-style object to manufacture [`ClusterSnapshotInList`](crate::model::ClusterSnapshotInList).
@@ -842,7 +789,7 @@ impl ClusterSnapshotInList {
 /// <p>A list of Elastic DocumentDB cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterInList {
+pub struct ClusterInList  {
     /// <p>The name of the Elastic DocumentDB cluster.</p>
     #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
@@ -855,21 +802,21 @@ pub struct ClusterInList {
 }
 impl ClusterInList {
     /// <p>The name of the Elastic DocumentDB cluster.</p>
-    pub fn cluster_name(&self) -> std::option::Option<&str> {
+    pub fn cluster_name(&self) -> std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The status of the Elastic DocumentDB cluster.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
 }
 /// See [`ClusterInList`](crate::model::ClusterInList).
 pub mod cluster_in_list {
-
+    
     /// A builder for [`ClusterInList`](crate::model::ClusterInList).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -885,8 +832,7 @@ pub mod cluster_in_list {
         }
         /// <p>The name of the Elastic DocumentDB cluster.</p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_name = input;
-            self
+            self.cluster_name = input; self
         }
         /// <p>The arn of the Elastic DocumentDB cluster.</p>
         pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -895,8 +841,7 @@ pub mod cluster_in_list {
         }
         /// <p>The arn of the Elastic DocumentDB cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// <p>The status of the Elastic DocumentDB cluster.</p>
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -905,18 +850,22 @@ pub mod cluster_in_list {
         }
         /// <p>The status of the Elastic DocumentDB cluster.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ClusterInList`](crate::model::ClusterInList).
         pub fn build(self) -> crate::model::ClusterInList {
             crate::model::ClusterInList {
-                cluster_name: self.cluster_name,
-                cluster_arn: self.cluster_arn,
-                status: self.status,
+                cluster_name: self.cluster_name
+                ,
+                cluster_arn: self.cluster_arn
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterInList {
     /// Creates a new builder-style object to manufacture [`ClusterInList`](crate::model::ClusterInList).
@@ -928,7 +877,7 @@ impl ClusterInList {
 /// <p>Returns information about a specific Elastic DocumentDB snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterSnapshot {
+pub struct ClusterSnapshot  {
     /// <p>A list of the IDs of subnets associated with the DB cluster snapshot.</p>
     #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -962,49 +911,49 @@ pub struct ClusterSnapshot {
 }
 impl ClusterSnapshot {
     /// <p>A list of the IDs of subnets associated with the DB cluster snapshot.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
-    pub fn snapshot_name(&self) -> std::option::Option<&str> {
+    pub fn snapshot_name(&self) -> std::option::Option<& str> {
         self.snapshot_name.as_deref()
     }
     /// <p>The arn of the Elastic DocumentDB snapshot</p>
-    pub fn snapshot_arn(&self) -> std::option::Option<&str> {
+    pub fn snapshot_arn(&self) -> std::option::Option<& str> {
         self.snapshot_arn.as_deref()
     }
     /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
-    pub fn snapshot_creation_time(&self) -> std::option::Option<&str> {
+    pub fn snapshot_creation_time(&self) -> std::option::Option<& str> {
         self.snapshot_creation_time.as_deref()
     }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The time when the Elastic DocumentDB cluster was created in Universal Coordinated Time (UTC).</p>
-    pub fn cluster_creation_time(&self) -> std::option::Option<&str> {
+    pub fn cluster_creation_time(&self) -> std::option::Option<& str> {
         self.cluster_creation_time.as_deref()
     }
     /// <p>The status of the Elastic DocumentDB snapshot.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
     /// <p>A list of the IDs of the VPC security groups associated with the cluster snapshot.</p>
-    pub fn vpc_security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn vpc_security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.vpc_security_group_ids.as_deref()
     }
     /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
-    pub fn admin_user_name(&self) -> std::option::Option<&str> {
+    pub fn admin_user_name(&self) -> std::option::Option<& str> {
         self.admin_user_name.as_deref()
     }
     /// <p>The KMS key identifier to use to encrypt the Elastic DocumentDB cluster.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
 /// See [`ClusterSnapshot`](crate::model::ClusterSnapshot).
 pub mod cluster_snapshot {
-
+    
     /// A builder for [`ClusterSnapshot`](crate::model::ClusterSnapshot).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1027,17 +976,13 @@ pub mod cluster_snapshot {
         /// <p>A list of the IDs of subnets associated with the DB cluster snapshot.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
-            v.push(input.into());
-            self.subnet_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnet_ids = Some(v);
+                            self
         }
         /// <p>A list of the IDs of subnets associated with the DB cluster snapshot.</p>
-        pub fn set_subnet_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnet_ids = input;
-            self
+        pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnet_ids = input; self
         }
         /// <p>The name of the Elastic DocumentDB snapshot.</p>
         pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1045,12 +990,8 @@ pub mod cluster_snapshot {
             self
         }
         /// <p>The name of the Elastic DocumentDB snapshot.</p>
-        pub fn set_snapshot_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.snapshot_name = input;
-            self
+        pub fn set_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_name = input; self
         }
         /// <p>The arn of the Elastic DocumentDB snapshot</p>
         pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1059,8 +1000,7 @@ pub mod cluster_snapshot {
         }
         /// <p>The arn of the Elastic DocumentDB snapshot</p>
         pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_arn = input;
-            self
+            self.snapshot_arn = input; self
         }
         /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
         pub fn snapshot_creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1068,12 +1008,8 @@ pub mod cluster_snapshot {
             self
         }
         /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
-        pub fn set_snapshot_creation_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.snapshot_creation_time = input;
-            self
+        pub fn set_snapshot_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.snapshot_creation_time = input; self
         }
         /// <p>The arn of the Elastic DocumentDB cluster.</p>
         pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1082,8 +1018,7 @@ pub mod cluster_snapshot {
         }
         /// <p>The arn of the Elastic DocumentDB cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// <p>The time when the Elastic DocumentDB cluster was created in Universal Coordinated Time (UTC).</p>
         pub fn cluster_creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1091,12 +1026,8 @@ pub mod cluster_snapshot {
             self
         }
         /// <p>The time when the Elastic DocumentDB cluster was created in Universal Coordinated Time (UTC).</p>
-        pub fn set_cluster_creation_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_creation_time = input;
-            self
+        pub fn set_cluster_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_creation_time = input; self
         }
         /// <p>The status of the Elastic DocumentDB snapshot.</p>
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -1105,8 +1036,7 @@ pub mod cluster_snapshot {
         }
         /// <p>The status of the Elastic DocumentDB snapshot.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Appends an item to `vpc_security_group_ids`.
         ///
@@ -1115,17 +1045,13 @@ pub mod cluster_snapshot {
         /// <p>A list of the IDs of the VPC security groups associated with the cluster snapshot.</p>
         pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.vpc_security_group_ids.unwrap_or_default();
-            v.push(input.into());
-            self.vpc_security_group_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.vpc_security_group_ids = Some(v);
+                            self
         }
         /// <p>A list of the IDs of the VPC security groups associated with the cluster snapshot.</p>
-        pub fn set_vpc_security_group_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.vpc_security_group_ids = input;
-            self
+        pub fn set_vpc_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.vpc_security_group_ids = input; self
         }
         /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
         pub fn admin_user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1133,12 +1059,8 @@ pub mod cluster_snapshot {
             self
         }
         /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
-        pub fn set_admin_user_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.admin_user_name = input;
-            self
+        pub fn set_admin_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.admin_user_name = input; self
         }
         /// <p>The KMS key identifier to use to encrypt the Elastic DocumentDB cluster.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1147,25 +1069,36 @@ pub mod cluster_snapshot {
         }
         /// <p>The KMS key identifier to use to encrypt the Elastic DocumentDB cluster.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Consumes the builder and constructs a [`ClusterSnapshot`](crate::model::ClusterSnapshot).
         pub fn build(self) -> crate::model::ClusterSnapshot {
             crate::model::ClusterSnapshot {
-                subnet_ids: self.subnet_ids,
-                snapshot_name: self.snapshot_name,
-                snapshot_arn: self.snapshot_arn,
-                snapshot_creation_time: self.snapshot_creation_time,
-                cluster_arn: self.cluster_arn,
-                cluster_creation_time: self.cluster_creation_time,
-                status: self.status,
-                vpc_security_group_ids: self.vpc_security_group_ids,
-                admin_user_name: self.admin_user_name,
-                kms_key_id: self.kms_key_id,
+                subnet_ids: self.subnet_ids
+                ,
+                snapshot_name: self.snapshot_name
+                ,
+                snapshot_arn: self.snapshot_arn
+                ,
+                snapshot_creation_time: self.snapshot_creation_time
+                ,
+                cluster_arn: self.cluster_arn
+                ,
+                cluster_creation_time: self.cluster_creation_time
+                ,
+                status: self.status
+                ,
+                vpc_security_group_ids: self.vpc_security_group_ids
+                ,
+                admin_user_name: self.admin_user_name
+                ,
+                kms_key_id: self.kms_key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ClusterSnapshot {
     /// Creates a new builder-style object to manufacture [`ClusterSnapshot`](crate::model::ClusterSnapshot).
@@ -1173,3 +1106,4 @@ impl ClusterSnapshot {
         crate::model::cluster_snapshot::Builder::default()
     }
 }
+

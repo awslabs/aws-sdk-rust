@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let parameterexceptionreason = unimplemented!();
 /// match parameterexceptionreason {
@@ -32,22 +32,14 @@
 /// Specifically, when `parameterexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ParameterExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ParameterExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     IllegalArgument,
@@ -58,7 +50,7 @@ pub enum ParameterExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     InvalidTagKey,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ParameterExceptionReason {
     fn from(s: &str) -> Self {
@@ -67,19 +59,17 @@ impl std::convert::From<&str> for ParameterExceptionReason {
             "ILLEGAL_COMBINATION" => ParameterExceptionReason::IllegalCombination,
             "INVALID_OPTION" => ParameterExceptionReason::InvalidOption,
             "INVALID_TAG_KEY" => ParameterExceptionReason::InvalidTagKey,
-            other => ParameterExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ParameterExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ParameterExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ParameterExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ParameterExceptionReason::from(s))
+                }
+            }
 impl ParameterExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -88,16 +78,13 @@ impl ParameterExceptionReason {
             ParameterExceptionReason::IllegalCombination => "ILLEGAL_COMBINATION",
             ParameterExceptionReason::InvalidOption => "INVALID_OPTION",
             ParameterExceptionReason::InvalidTagKey => "INVALID_TAG_KEY",
-            ParameterExceptionReason::Unknown(value) => value.as_str(),
+            ParameterExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ILLEGAL_ARGUMENT",
-            "ILLEGAL_COMBINATION",
-            "INVALID_OPTION",
-            "INVALID_TAG_KEY",
+            "ILLEGAL_ARGUMENT", "ILLEGAL_COMBINATION", "INVALID_OPTION", "INVALID_TAG_KEY"
         ]
     }
 }
@@ -113,9 +100,9 @@ impl AsRef<str> for ParameterExceptionReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let parameterexceptionfield = unimplemented!();
 /// match parameterexceptionfield {
@@ -153,22 +140,14 @@ impl AsRef<str> for ParameterExceptionReason {
 /// Specifically, when `parameterexceptionfield` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ParameterExceptionField::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ParameterExceptionField {
     #[allow(missing_docs)] // documentation missing in model
     ByteMatchFieldType,
@@ -207,18 +186,14 @@ pub enum ParameterExceptionField {
     #[allow(missing_docs)] // documentation missing in model
     WafOverrideAction,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ParameterExceptionField {
     fn from(s: &str) -> Self {
         match s {
             "BYTE_MATCH_FIELD_TYPE" => ParameterExceptionField::ByteMatchFieldType,
-            "BYTE_MATCH_POSITIONAL_CONSTRAINT" => {
-                ParameterExceptionField::ByteMatchPositionalConstraint
-            }
-            "BYTE_MATCH_TEXT_TRANSFORMATION" => {
-                ParameterExceptionField::ByteMatchTextTransformation
-            }
+            "BYTE_MATCH_POSITIONAL_CONSTRAINT" => ParameterExceptionField::ByteMatchPositionalConstraint,
+            "BYTE_MATCH_TEXT_TRANSFORMATION" => ParameterExceptionField::ByteMatchTextTransformation,
             "CHANGE_ACTION" => ParameterExceptionField::ChangeAction,
             "GEO_MATCH_LOCATION_TYPE" => ParameterExceptionField::GeoMatchLocationType,
             "GEO_MATCH_LOCATION_VALUE" => ParameterExceptionField::GeoMatchLocationValue,
@@ -228,38 +203,30 @@ impl std::convert::From<&str> for ParameterExceptionField {
             "RATE_KEY" => ParameterExceptionField::RateKey,
             "RESOURCE_ARN" => ParameterExceptionField::ResourceArn,
             "RULE_TYPE" => ParameterExceptionField::RuleType,
-            "SIZE_CONSTRAINT_COMPARISON_OPERATOR" => {
-                ParameterExceptionField::SizeConstraintComparisonOperator
-            }
+            "SIZE_CONSTRAINT_COMPARISON_OPERATOR" => ParameterExceptionField::SizeConstraintComparisonOperator,
             "SQL_INJECTION_MATCH_FIELD_TYPE" => ParameterExceptionField::SqlInjectionMatchFieldType,
             "TAGS" => ParameterExceptionField::Tags,
             "TAG_KEYS" => ParameterExceptionField::TagKeys,
             "WAF_ACTION" => ParameterExceptionField::WafAction,
             "WAF_OVERRIDE_ACTION" => ParameterExceptionField::WafOverrideAction,
-            other => ParameterExceptionField::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ParameterExceptionField::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ParameterExceptionField {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ParameterExceptionField::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ParameterExceptionField::from(s))
+                }
+            }
 impl ParameterExceptionField {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ParameterExceptionField::ByteMatchFieldType => "BYTE_MATCH_FIELD_TYPE",
-            ParameterExceptionField::ByteMatchPositionalConstraint => {
-                "BYTE_MATCH_POSITIONAL_CONSTRAINT"
-            }
-            ParameterExceptionField::ByteMatchTextTransformation => {
-                "BYTE_MATCH_TEXT_TRANSFORMATION"
-            }
+            ParameterExceptionField::ByteMatchPositionalConstraint => "BYTE_MATCH_POSITIONAL_CONSTRAINT",
+            ParameterExceptionField::ByteMatchTextTransformation => "BYTE_MATCH_TEXT_TRANSFORMATION",
             ParameterExceptionField::ChangeAction => "CHANGE_ACTION",
             ParameterExceptionField::GeoMatchLocationType => "GEO_MATCH_LOCATION_TYPE",
             ParameterExceptionField::GeoMatchLocationValue => "GEO_MATCH_LOCATION_VALUE",
@@ -269,38 +236,19 @@ impl ParameterExceptionField {
             ParameterExceptionField::RateKey => "RATE_KEY",
             ParameterExceptionField::ResourceArn => "RESOURCE_ARN",
             ParameterExceptionField::RuleType => "RULE_TYPE",
-            ParameterExceptionField::SizeConstraintComparisonOperator => {
-                "SIZE_CONSTRAINT_COMPARISON_OPERATOR"
-            }
+            ParameterExceptionField::SizeConstraintComparisonOperator => "SIZE_CONSTRAINT_COMPARISON_OPERATOR",
             ParameterExceptionField::SqlInjectionMatchFieldType => "SQL_INJECTION_MATCH_FIELD_TYPE",
             ParameterExceptionField::Tags => "TAGS",
             ParameterExceptionField::TagKeys => "TAG_KEYS",
             ParameterExceptionField::WafAction => "WAF_ACTION",
             ParameterExceptionField::WafOverrideAction => "WAF_OVERRIDE_ACTION",
-            ParameterExceptionField::Unknown(value) => value.as_str(),
+            ParameterExceptionField::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BYTE_MATCH_FIELD_TYPE",
-            "BYTE_MATCH_POSITIONAL_CONSTRAINT",
-            "BYTE_MATCH_TEXT_TRANSFORMATION",
-            "CHANGE_ACTION",
-            "GEO_MATCH_LOCATION_TYPE",
-            "GEO_MATCH_LOCATION_VALUE",
-            "IPSET_TYPE",
-            "NEXT_MARKER",
-            "PREDICATE_TYPE",
-            "RATE_KEY",
-            "RESOURCE_ARN",
-            "RULE_TYPE",
-            "SIZE_CONSTRAINT_COMPARISON_OPERATOR",
-            "SQL_INJECTION_MATCH_FIELD_TYPE",
-            "TAGS",
-            "TAG_KEYS",
-            "WAF_ACTION",
-            "WAF_OVERRIDE_ACTION",
+            "BYTE_MATCH_FIELD_TYPE", "BYTE_MATCH_POSITIONAL_CONSTRAINT", "BYTE_MATCH_TEXT_TRANSFORMATION", "CHANGE_ACTION", "GEO_MATCH_LOCATION_TYPE", "GEO_MATCH_LOCATION_VALUE", "IPSET_TYPE", "NEXT_MARKER", "PREDICATE_TYPE", "RATE_KEY", "RESOURCE_ARN", "RULE_TYPE", "SIZE_CONSTRAINT_COMPARISON_OPERATOR", "SQL_INJECTION_MATCH_FIELD_TYPE", "TAGS", "TAG_KEYS", "WAF_ACTION", "WAF_OVERRIDE_ACTION"
         ]
     }
 }
@@ -310,14 +258,14 @@ impl AsRef<str> for ParameterExceptionField {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Specifies the part of a web request that you want to inspect for cross-site scripting attacks and indicates whether you want to add the specification to an <code>XssMatchSet</code> or delete it from an <code>XssMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct XssMatchSetUpdate {
+pub struct XssMatchSetUpdate  {
     /// <p>Specify <code>INSERT</code> to add an <code>XssMatchSetUpdate</code> to an <code>XssMatchSet</code>. Use <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::ChangeAction>,
@@ -327,17 +275,17 @@ pub struct XssMatchSetUpdate {
 }
 impl XssMatchSetUpdate {
     /// <p>Specify <code>INSERT</code> to add an <code>XssMatchSetUpdate</code> to an <code>XssMatchSet</code>. Use <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::ChangeAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::ChangeAction> {
         self.action.as_ref()
     }
     /// <p>Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.</p>
-    pub fn xss_match_tuple(&self) -> std::option::Option<&crate::model::XssMatchTuple> {
+    pub fn xss_match_tuple(&self) -> std::option::Option<& crate::model::XssMatchTuple> {
         self.xss_match_tuple.as_ref()
     }
 }
 /// See [`XssMatchSetUpdate`](crate::model::XssMatchSetUpdate).
 pub mod xss_match_set_update {
-
+    
     /// A builder for [`XssMatchSetUpdate`](crate::model::XssMatchSetUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -351,12 +299,8 @@ pub mod xss_match_set_update {
             self
         }
         /// <p>Specify <code>INSERT</code> to add an <code>XssMatchSetUpdate</code> to an <code>XssMatchSet</code>. Use <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::ChangeAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::ChangeAction>) -> Self {
+            self.action = input; self
         }
         /// <p>Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.</p>
         pub fn xss_match_tuple(mut self, input: crate::model::XssMatchTuple) -> Self {
@@ -364,21 +308,21 @@ pub mod xss_match_set_update {
             self
         }
         /// <p>Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.</p>
-        pub fn set_xss_match_tuple(
-            mut self,
-            input: std::option::Option<crate::model::XssMatchTuple>,
-        ) -> Self {
-            self.xss_match_tuple = input;
-            self
+        pub fn set_xss_match_tuple(mut self, input: std::option::Option<crate::model::XssMatchTuple>) -> Self {
+            self.xss_match_tuple = input; self
         }
         /// Consumes the builder and constructs a [`XssMatchSetUpdate`](crate::model::XssMatchSetUpdate).
         pub fn build(self) -> crate::model::XssMatchSetUpdate {
             crate::model::XssMatchSetUpdate {
-                action: self.action,
-                xss_match_tuple: self.xss_match_tuple,
+                action: self.action
+                ,
+                xss_match_tuple: self.xss_match_tuple
+                ,
             }
         }
     }
+    
+    
 }
 impl XssMatchSetUpdate {
     /// Creates a new builder-style object to manufacture [`XssMatchSetUpdate`](crate::model::XssMatchSetUpdate).
@@ -387,108 +331,108 @@ impl XssMatchSetUpdate {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct XssMatchTuple {
+pub struct XssMatchTuple  {
     /// <p>Specifies where in a web request to look for cross-site scripting attacks.</p>
     #[doc(hidden)]
     pub field_to_match: std::option::Option<crate::model::FieldToMatch>,
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
-    /// <p>You can only specify a single type of TextTransformation.</p>
-    /// <p> <b>CMD_LINE</b> </p>
-    /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
-    /// <ul>
-    /// <li> <p>Delete the following characters: \ " ' ^</p> </li>
-    /// <li> <p>Delete spaces before the following characters: / (</p> </li>
-    /// <li> <p>Replace the following characters with a space: , ;</p> </li>
-    /// <li> <p>Replace multiple spaces with one space</p> </li>
-    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
-    /// </ul>
-    /// <p> <b>COMPRESS_WHITE_SPACE</b> </p>
-    /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
-    /// <ul>
-    /// <li> <p>\f, formfeed, decimal 12</p> </li>
-    /// <li> <p>\t, tab, decimal 9</p> </li>
-    /// <li> <p>\n, newline, decimal 10</p> </li>
-    /// <li> <p>\r, carriage return, decimal 13</p> </li>
-    /// <li> <p>\v, vertical tab, decimal 11</p> </li>
-    /// <li> <p>non-breaking space, decimal 160</p> </li>
-    /// </ul>
-    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
-    /// <p> <b>HTML_ENTITY_DECODE</b> </p>
-    /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
-    /// <ul>
-    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
-    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
-    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
-    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
-    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
-    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
-    /// </ul>
-    /// <p> <b>LOWERCASE</b> </p>
-    /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
-    /// <p> <b>URL_DECODE</b> </p>
-    /// <p>Use this option to decode a URL-encoded value.</p>
-    /// <p> <b>NONE</b> </p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p> 
+    /// <p>You can only specify a single type of TextTransformation.</p> 
+    /// <p> <b>CMD_LINE</b> </p> 
+    /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p> 
+    /// <ul> 
+    /// <li> <p>Delete the following characters: \ " ' ^</p> </li> 
+    /// <li> <p>Delete spaces before the following characters: / (</p> </li> 
+    /// <li> <p>Replace the following characters with a space: , ;</p> </li> 
+    /// <li> <p>Replace multiple spaces with one space</p> </li> 
+    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> 
+    /// </ul> 
+    /// <p> <b>COMPRESS_WHITE_SPACE</b> </p> 
+    /// <p>Use this option to replace the following characters with a space character (decimal 32):</p> 
+    /// <ul> 
+    /// <li> <p>\f, formfeed, decimal 12</p> </li> 
+    /// <li> <p>\t, tab, decimal 9</p> </li> 
+    /// <li> <p>\n, newline, decimal 10</p> </li> 
+    /// <li> <p>\r, carriage return, decimal 13</p> </li> 
+    /// <li> <p>\v, vertical tab, decimal 11</p> </li> 
+    /// <li> <p>non-breaking space, decimal 160</p> </li> 
+    /// </ul> 
+    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p> 
+    /// <p> <b>HTML_ENTITY_DECODE</b> </p> 
+    /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p> 
+    /// <ul> 
+    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li> 
+    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li> 
+    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li> 
+    /// </ul> 
+    /// <p> <b>LOWERCASE</b> </p> 
+    /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p> 
+    /// <p> <b>URL_DECODE</b> </p> 
+    /// <p>Use this option to decode a URL-encoded value.</p> 
+    /// <p> <b>NONE</b> </p> 
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
     #[doc(hidden)]
     pub text_transformation: std::option::Option<crate::model::TextTransformation>,
 }
 impl XssMatchTuple {
     /// <p>Specifies where in a web request to look for cross-site scripting attacks.</p>
-    pub fn field_to_match(&self) -> std::option::Option<&crate::model::FieldToMatch> {
+    pub fn field_to_match(&self) -> std::option::Option<& crate::model::FieldToMatch> {
         self.field_to_match.as_ref()
     }
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
-    /// <p>You can only specify a single type of TextTransformation.</p>
-    /// <p> <b>CMD_LINE</b> </p>
-    /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
-    /// <ul>
-    /// <li> <p>Delete the following characters: \ " ' ^</p> </li>
-    /// <li> <p>Delete spaces before the following characters: / (</p> </li>
-    /// <li> <p>Replace the following characters with a space: , ;</p> </li>
-    /// <li> <p>Replace multiple spaces with one space</p> </li>
-    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
-    /// </ul>
-    /// <p> <b>COMPRESS_WHITE_SPACE</b> </p>
-    /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
-    /// <ul>
-    /// <li> <p>\f, formfeed, decimal 12</p> </li>
-    /// <li> <p>\t, tab, decimal 9</p> </li>
-    /// <li> <p>\n, newline, decimal 10</p> </li>
-    /// <li> <p>\r, carriage return, decimal 13</p> </li>
-    /// <li> <p>\v, vertical tab, decimal 11</p> </li>
-    /// <li> <p>non-breaking space, decimal 160</p> </li>
-    /// </ul>
-    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
-    /// <p> <b>HTML_ENTITY_DECODE</b> </p>
-    /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
-    /// <ul>
-    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
-    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
-    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
-    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
-    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
-    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
-    /// </ul>
-    /// <p> <b>LOWERCASE</b> </p>
-    /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
-    /// <p> <b>URL_DECODE</b> </p>
-    /// <p>Use this option to decode a URL-encoded value.</p>
-    /// <p> <b>NONE</b> </p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p> 
+    /// <p>You can only specify a single type of TextTransformation.</p> 
+    /// <p> <b>CMD_LINE</b> </p> 
+    /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p> 
+    /// <ul> 
+    /// <li> <p>Delete the following characters: \ " ' ^</p> </li> 
+    /// <li> <p>Delete spaces before the following characters: / (</p> </li> 
+    /// <li> <p>Replace the following characters with a space: , ;</p> </li> 
+    /// <li> <p>Replace multiple spaces with one space</p> </li> 
+    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> 
+    /// </ul> 
+    /// <p> <b>COMPRESS_WHITE_SPACE</b> </p> 
+    /// <p>Use this option to replace the following characters with a space character (decimal 32):</p> 
+    /// <ul> 
+    /// <li> <p>\f, formfeed, decimal 12</p> </li> 
+    /// <li> <p>\t, tab, decimal 9</p> </li> 
+    /// <li> <p>\n, newline, decimal 10</p> </li> 
+    /// <li> <p>\r, carriage return, decimal 13</p> </li> 
+    /// <li> <p>\v, vertical tab, decimal 11</p> </li> 
+    /// <li> <p>non-breaking space, decimal 160</p> </li> 
+    /// </ul> 
+    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p> 
+    /// <p> <b>HTML_ENTITY_DECODE</b> </p> 
+    /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p> 
+    /// <ul> 
+    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li> 
+    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li> 
+    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li> 
+    /// </ul> 
+    /// <p> <b>LOWERCASE</b> </p> 
+    /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p> 
+    /// <p> <b>URL_DECODE</b> </p> 
+    /// <p>Use this option to decode a URL-encoded value.</p> 
+    /// <p> <b>NONE</b> </p> 
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    pub fn text_transformation(&self) -> std::option::Option<&crate::model::TextTransformation> {
+    pub fn text_transformation(&self) -> std::option::Option<& crate::model::TextTransformation> {
         self.text_transformation.as_ref()
     }
 }
 /// See [`XssMatchTuple`](crate::model::XssMatchTuple).
 pub mod xss_match_tuple {
-
+    
     /// A builder for [`XssMatchTuple`](crate::model::XssMatchTuple).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -502,108 +446,104 @@ pub mod xss_match_tuple {
             self
         }
         /// <p>Specifies where in a web request to look for cross-site scripting attacks.</p>
-        pub fn set_field_to_match(
-            mut self,
-            input: std::option::Option<crate::model::FieldToMatch>,
-        ) -> Self {
-            self.field_to_match = input;
-            self
+        pub fn set_field_to_match(mut self, input: std::option::Option<crate::model::FieldToMatch>) -> Self {
+            self.field_to_match = input; self
         }
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
-        /// <p>You can only specify a single type of TextTransformation.</p>
-        /// <p> <b>CMD_LINE</b> </p>
-        /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
-        /// <ul>
-        /// <li> <p>Delete the following characters: \ " ' ^</p> </li>
-        /// <li> <p>Delete spaces before the following characters: / (</p> </li>
-        /// <li> <p>Replace the following characters with a space: , ;</p> </li>
-        /// <li> <p>Replace multiple spaces with one space</p> </li>
-        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
-        /// </ul>
-        /// <p> <b>COMPRESS_WHITE_SPACE</b> </p>
-        /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
-        /// <ul>
-        /// <li> <p>\f, formfeed, decimal 12</p> </li>
-        /// <li> <p>\t, tab, decimal 9</p> </li>
-        /// <li> <p>\n, newline, decimal 10</p> </li>
-        /// <li> <p>\r, carriage return, decimal 13</p> </li>
-        /// <li> <p>\v, vertical tab, decimal 11</p> </li>
-        /// <li> <p>non-breaking space, decimal 160</p> </li>
-        /// </ul>
-        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
-        /// <p> <b>HTML_ENTITY_DECODE</b> </p>
-        /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
-        /// <ul>
-        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
-        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
-        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
-        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
-        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
-        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
-        /// </ul>
-        /// <p> <b>LOWERCASE</b> </p>
-        /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
-        /// <p> <b>URL_DECODE</b> </p>
-        /// <p>Use this option to decode a URL-encoded value.</p>
-        /// <p> <b>NONE</b> </p>
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p> 
+        /// <p>You can only specify a single type of TextTransformation.</p> 
+        /// <p> <b>CMD_LINE</b> </p> 
+        /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p> 
+        /// <ul> 
+        /// <li> <p>Delete the following characters: \ " ' ^</p> </li> 
+        /// <li> <p>Delete spaces before the following characters: / (</p> </li> 
+        /// <li> <p>Replace the following characters with a space: , ;</p> </li> 
+        /// <li> <p>Replace multiple spaces with one space</p> </li> 
+        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> 
+        /// </ul> 
+        /// <p> <b>COMPRESS_WHITE_SPACE</b> </p> 
+        /// <p>Use this option to replace the following characters with a space character (decimal 32):</p> 
+        /// <ul> 
+        /// <li> <p>\f, formfeed, decimal 12</p> </li> 
+        /// <li> <p>\t, tab, decimal 9</p> </li> 
+        /// <li> <p>\n, newline, decimal 10</p> </li> 
+        /// <li> <p>\r, carriage return, decimal 13</p> </li> 
+        /// <li> <p>\v, vertical tab, decimal 11</p> </li> 
+        /// <li> <p>non-breaking space, decimal 160</p> </li> 
+        /// </ul> 
+        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p> 
+        /// <p> <b>HTML_ENTITY_DECODE</b> </p> 
+        /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p> 
+        /// <ul> 
+        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li> 
+        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li> 
+        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li> 
+        /// </ul> 
+        /// <p> <b>LOWERCASE</b> </p> 
+        /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p> 
+        /// <p> <b>URL_DECODE</b> </p> 
+        /// <p>Use this option to decode a URL-encoded value.</p> 
+        /// <p> <b>NONE</b> </p> 
         /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
         pub fn text_transformation(mut self, input: crate::model::TextTransformation) -> Self {
             self.text_transformation = Some(input);
             self
         }
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
-        /// <p>You can only specify a single type of TextTransformation.</p>
-        /// <p> <b>CMD_LINE</b> </p>
-        /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
-        /// <ul>
-        /// <li> <p>Delete the following characters: \ " ' ^</p> </li>
-        /// <li> <p>Delete spaces before the following characters: / (</p> </li>
-        /// <li> <p>Replace the following characters with a space: , ;</p> </li>
-        /// <li> <p>Replace multiple spaces with one space</p> </li>
-        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
-        /// </ul>
-        /// <p> <b>COMPRESS_WHITE_SPACE</b> </p>
-        /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
-        /// <ul>
-        /// <li> <p>\f, formfeed, decimal 12</p> </li>
-        /// <li> <p>\t, tab, decimal 9</p> </li>
-        /// <li> <p>\n, newline, decimal 10</p> </li>
-        /// <li> <p>\r, carriage return, decimal 13</p> </li>
-        /// <li> <p>\v, vertical tab, decimal 11</p> </li>
-        /// <li> <p>non-breaking space, decimal 160</p> </li>
-        /// </ul>
-        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
-        /// <p> <b>HTML_ENTITY_DECODE</b> </p>
-        /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
-        /// <ul>
-        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
-        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
-        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
-        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
-        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
-        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
-        /// </ul>
-        /// <p> <b>LOWERCASE</b> </p>
-        /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
-        /// <p> <b>URL_DECODE</b> </p>
-        /// <p>Use this option to decode a URL-encoded value.</p>
-        /// <p> <b>NONE</b> </p>
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p> 
+        /// <p>You can only specify a single type of TextTransformation.</p> 
+        /// <p> <b>CMD_LINE</b> </p> 
+        /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p> 
+        /// <ul> 
+        /// <li> <p>Delete the following characters: \ " ' ^</p> </li> 
+        /// <li> <p>Delete spaces before the following characters: / (</p> </li> 
+        /// <li> <p>Replace the following characters with a space: , ;</p> </li> 
+        /// <li> <p>Replace multiple spaces with one space</p> </li> 
+        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> 
+        /// </ul> 
+        /// <p> <b>COMPRESS_WHITE_SPACE</b> </p> 
+        /// <p>Use this option to replace the following characters with a space character (decimal 32):</p> 
+        /// <ul> 
+        /// <li> <p>\f, formfeed, decimal 12</p> </li> 
+        /// <li> <p>\t, tab, decimal 9</p> </li> 
+        /// <li> <p>\n, newline, decimal 10</p> </li> 
+        /// <li> <p>\r, carriage return, decimal 13</p> </li> 
+        /// <li> <p>\v, vertical tab, decimal 11</p> </li> 
+        /// <li> <p>non-breaking space, decimal 160</p> </li> 
+        /// </ul> 
+        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p> 
+        /// <p> <b>HTML_ENTITY_DECODE</b> </p> 
+        /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p> 
+        /// <ul> 
+        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li> 
+        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li> 
+        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li> 
+        /// </ul> 
+        /// <p> <b>LOWERCASE</b> </p> 
+        /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p> 
+        /// <p> <b>URL_DECODE</b> </p> 
+        /// <p>Use this option to decode a URL-encoded value.</p> 
+        /// <p> <b>NONE</b> </p> 
         /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-        pub fn set_text_transformation(
-            mut self,
-            input: std::option::Option<crate::model::TextTransformation>,
-        ) -> Self {
-            self.text_transformation = input;
-            self
+        pub fn set_text_transformation(mut self, input: std::option::Option<crate::model::TextTransformation>) -> Self {
+            self.text_transformation = input; self
         }
         /// Consumes the builder and constructs a [`XssMatchTuple`](crate::model::XssMatchTuple).
         pub fn build(self) -> crate::model::XssMatchTuple {
             crate::model::XssMatchTuple {
-                field_to_match: self.field_to_match,
-                text_transformation: self.text_transformation,
+                field_to_match: self.field_to_match
+                ,
+                text_transformation: self.text_transformation
+                ,
             }
         }
     }
+    
+    
 }
 impl XssMatchTuple {
     /// Creates a new builder-style object to manufacture [`XssMatchTuple`](crate::model::XssMatchTuple).
@@ -618,9 +558,9 @@ impl XssMatchTuple {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let texttransformation = unimplemented!();
 /// match texttransformation {
@@ -646,22 +586,14 @@ impl XssMatchTuple {
 /// Specifically, when `texttransformation` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TextTransformation::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TextTransformation {
     #[allow(missing_docs)] // documentation missing in model
     CmdLine,
@@ -676,7 +608,7 @@ pub enum TextTransformation {
     #[allow(missing_docs)] // documentation missing in model
     UrlDecode,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TextTransformation {
     fn from(s: &str) -> Self {
@@ -687,19 +619,17 @@ impl std::convert::From<&str> for TextTransformation {
             "LOWERCASE" => TextTransformation::Lowercase,
             "NONE" => TextTransformation::None,
             "URL_DECODE" => TextTransformation::UrlDecode,
-            other => {
-                TextTransformation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => TextTransformation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TextTransformation {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TextTransformation::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TextTransformation::from(s))
+                }
+            }
 impl TextTransformation {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -710,18 +640,13 @@ impl TextTransformation {
             TextTransformation::Lowercase => "LOWERCASE",
             TextTransformation::None => "NONE",
             TextTransformation::UrlDecode => "URL_DECODE",
-            TextTransformation::Unknown(value) => value.as_str(),
+            TextTransformation::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CMD_LINE",
-            "COMPRESS_WHITE_SPACE",
-            "HTML_ENTITY_DECODE",
-            "LOWERCASE",
-            "NONE",
-            "URL_DECODE",
+            "CMD_LINE", "COMPRESS_WHITE_SPACE", "HTML_ENTITY_DECODE", "LOWERCASE", "NONE", "URL_DECODE"
         ]
     }
 }
@@ -731,56 +656,56 @@ impl AsRef<str> for TextTransformation {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Specifies where in a web request to look for <code>TargetString</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FieldToMatch {
-    /// <p>The part of the web request that you want AWS WAF to search for a specified string. Parts of a request that you can search include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>HEADER</code>: A specified request header, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header. If you choose <code>HEADER</code> for the type, specify the name of the header in <code>Data</code>.</p> </li>
-    /// <li> <p> <code>METHOD</code>: The HTTP method, which indicated the type of operation that the request is asking the origin to perform. Amazon CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p> </li>
-    /// <li> <p> <code>QUERY_STRING</code>: A query string, which is the part of a URL that appears after a <code>?</code> character, if any.</p> </li>
-    /// <li> <p> <code>URI</code>: The part of a web request that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p> </li>
-    /// <li> <p> <code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>. </p> </li>
-    /// <li> <p> <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li>
-    /// <li> <p> <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you specify in <code>TargetString</code>.</p> </li>
+pub struct FieldToMatch  {
+    /// <p>The part of the web request that you want AWS WAF to search for a specified string. Parts of a request that you can search include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HEADER</code>: A specified request header, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header. If you choose <code>HEADER</code> for the type, specify the name of the header in <code>Data</code>.</p> </li> 
+    /// <li> <p> <code>METHOD</code>: The HTTP method, which indicated the type of operation that the request is asking the origin to perform. Amazon CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p> </li> 
+    /// <li> <p> <code>QUERY_STRING</code>: A query string, which is the part of a URL that appears after a <code>?</code> character, if any.</p> </li> 
+    /// <li> <p> <code>URI</code>: The part of a web request that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p> </li> 
+    /// <li> <p> <code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>. </p> </li> 
+    /// <li> <p> <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li> 
+    /// <li> <p> <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you specify in <code>TargetString</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::MatchFieldType>,
-    /// <p>When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the header that you want AWS WAF to search, for example, <code>User-Agent</code> or <code>Referer</code>. The name of the header is not case sensitive.</p>
-    /// <p>When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name of the parameter that you want AWS WAF to search, for example, <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not case sensitive.</p>
+    /// <p>When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the header that you want AWS WAF to search, for example, <code>User-Agent</code> or <code>Referer</code>. The name of the header is not case sensitive.</p> 
+    /// <p>When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name of the parameter that you want AWS WAF to search, for example, <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not case sensitive.</p> 
     /// <p>If the value of <code>Type</code> is any other value, omit <code>Data</code>.</p>
     #[doc(hidden)]
     pub data: std::option::Option<std::string::String>,
 }
 impl FieldToMatch {
-    /// <p>The part of the web request that you want AWS WAF to search for a specified string. Parts of a request that you can search include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>HEADER</code>: A specified request header, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header. If you choose <code>HEADER</code> for the type, specify the name of the header in <code>Data</code>.</p> </li>
-    /// <li> <p> <code>METHOD</code>: The HTTP method, which indicated the type of operation that the request is asking the origin to perform. Amazon CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p> </li>
-    /// <li> <p> <code>QUERY_STRING</code>: A query string, which is the part of a URL that appears after a <code>?</code> character, if any.</p> </li>
-    /// <li> <p> <code>URI</code>: The part of a web request that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p> </li>
-    /// <li> <p> <code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>. </p> </li>
-    /// <li> <p> <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li>
-    /// <li> <p> <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you specify in <code>TargetString</code>.</p> </li>
+    /// <p>The part of the web request that you want AWS WAF to search for a specified string. Parts of a request that you can search include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HEADER</code>: A specified request header, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header. If you choose <code>HEADER</code> for the type, specify the name of the header in <code>Data</code>.</p> </li> 
+    /// <li> <p> <code>METHOD</code>: The HTTP method, which indicated the type of operation that the request is asking the origin to perform. Amazon CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p> </li> 
+    /// <li> <p> <code>QUERY_STRING</code>: A query string, which is the part of a URL that appears after a <code>?</code> character, if any.</p> </li> 
+    /// <li> <p> <code>URI</code>: The part of a web request that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p> </li> 
+    /// <li> <p> <code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>. </p> </li> 
+    /// <li> <p> <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li> 
+    /// <li> <p> <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you specify in <code>TargetString</code>.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::MatchFieldType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::MatchFieldType> {
         self.r#type.as_ref()
     }
-    /// <p>When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the header that you want AWS WAF to search, for example, <code>User-Agent</code> or <code>Referer</code>. The name of the header is not case sensitive.</p>
-    /// <p>When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name of the parameter that you want AWS WAF to search, for example, <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not case sensitive.</p>
+    /// <p>When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the header that you want AWS WAF to search, for example, <code>User-Agent</code> or <code>Referer</code>. The name of the header is not case sensitive.</p> 
+    /// <p>When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name of the parameter that you want AWS WAF to search, for example, <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not case sensitive.</p> 
     /// <p>If the value of <code>Type</code> is any other value, omit <code>Data</code>.</p>
-    pub fn data(&self) -> std::option::Option<&str> {
+    pub fn data(&self) -> std::option::Option<& str> {
         self.data.as_deref()
     }
 }
 /// See [`FieldToMatch`](crate::model::FieldToMatch).
 pub mod field_to_match {
-
+    
     /// A builder for [`FieldToMatch`](crate::model::FieldToMatch).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -788,59 +713,58 @@ pub mod field_to_match {
         pub(crate) data: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The part of the web request that you want AWS WAF to search for a specified string. Parts of a request that you can search include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>HEADER</code>: A specified request header, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header. If you choose <code>HEADER</code> for the type, specify the name of the header in <code>Data</code>.</p> </li>
-        /// <li> <p> <code>METHOD</code>: The HTTP method, which indicated the type of operation that the request is asking the origin to perform. Amazon CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p> </li>
-        /// <li> <p> <code>QUERY_STRING</code>: A query string, which is the part of a URL that appears after a <code>?</code> character, if any.</p> </li>
-        /// <li> <p> <code>URI</code>: The part of a web request that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p> </li>
-        /// <li> <p> <code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>. </p> </li>
-        /// <li> <p> <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li>
-        /// <li> <p> <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you specify in <code>TargetString</code>.</p> </li>
+        /// <p>The part of the web request that you want AWS WAF to search for a specified string. Parts of a request that you can search include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>HEADER</code>: A specified request header, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header. If you choose <code>HEADER</code> for the type, specify the name of the header in <code>Data</code>.</p> </li> 
+        /// <li> <p> <code>METHOD</code>: The HTTP method, which indicated the type of operation that the request is asking the origin to perform. Amazon CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p> </li> 
+        /// <li> <p> <code>QUERY_STRING</code>: A query string, which is the part of a URL that appears after a <code>?</code> character, if any.</p> </li> 
+        /// <li> <p> <code>URI</code>: The part of a web request that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p> </li> 
+        /// <li> <p> <code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>. </p> </li> 
+        /// <li> <p> <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li> 
+        /// <li> <p> <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you specify in <code>TargetString</code>.</p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: crate::model::MatchFieldType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The part of the web request that you want AWS WAF to search for a specified string. Parts of a request that you can search include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>HEADER</code>: A specified request header, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header. If you choose <code>HEADER</code> for the type, specify the name of the header in <code>Data</code>.</p> </li>
-        /// <li> <p> <code>METHOD</code>: The HTTP method, which indicated the type of operation that the request is asking the origin to perform. Amazon CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p> </li>
-        /// <li> <p> <code>QUERY_STRING</code>: A query string, which is the part of a URL that appears after a <code>?</code> character, if any.</p> </li>
-        /// <li> <p> <code>URI</code>: The part of a web request that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p> </li>
-        /// <li> <p> <code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>. </p> </li>
-        /// <li> <p> <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li>
-        /// <li> <p> <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you specify in <code>TargetString</code>.</p> </li>
+        /// <p>The part of the web request that you want AWS WAF to search for a specified string. Parts of a request that you can search include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>HEADER</code>: A specified request header, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header. If you choose <code>HEADER</code> for the type, specify the name of the header in <code>Data</code>.</p> </li> 
+        /// <li> <p> <code>METHOD</code>: The HTTP method, which indicated the type of operation that the request is asking the origin to perform. Amazon CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p> </li> 
+        /// <li> <p> <code>QUERY_STRING</code>: A query string, which is the part of a URL that appears after a <code>?</code> character, if any.</p> </li> 
+        /// <li> <p> <code>URI</code>: The part of a web request that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p> </li> 
+        /// <li> <p> <code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>. </p> </li> 
+        /// <li> <p> <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li> 
+        /// <li> <p> <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather than inspecting a single parameter, AWS WAF will inspect all parameters within the query for the value or regex pattern that you specify in <code>TargetString</code>.</p> </li> 
         /// </ul>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::MatchFieldType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::MatchFieldType>) -> Self {
+            self.r#type = input; self
         }
-        /// <p>When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the header that you want AWS WAF to search, for example, <code>User-Agent</code> or <code>Referer</code>. The name of the header is not case sensitive.</p>
-        /// <p>When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name of the parameter that you want AWS WAF to search, for example, <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not case sensitive.</p>
+        /// <p>When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the header that you want AWS WAF to search, for example, <code>User-Agent</code> or <code>Referer</code>. The name of the header is not case sensitive.</p> 
+        /// <p>When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name of the parameter that you want AWS WAF to search, for example, <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not case sensitive.</p> 
         /// <p>If the value of <code>Type</code> is any other value, omit <code>Data</code>.</p>
         pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
             self.data = Some(input.into());
             self
         }
-        /// <p>When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the header that you want AWS WAF to search, for example, <code>User-Agent</code> or <code>Referer</code>. The name of the header is not case sensitive.</p>
-        /// <p>When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name of the parameter that you want AWS WAF to search, for example, <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not case sensitive.</p>
+        /// <p>When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the header that you want AWS WAF to search, for example, <code>User-Agent</code> or <code>Referer</code>. The name of the header is not case sensitive.</p> 
+        /// <p>When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name of the parameter that you want AWS WAF to search, for example, <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not case sensitive.</p> 
         /// <p>If the value of <code>Type</code> is any other value, omit <code>Data</code>.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data = input;
-            self
+            self.data = input; self
         }
         /// Consumes the builder and constructs a [`FieldToMatch`](crate::model::FieldToMatch).
         pub fn build(self) -> crate::model::FieldToMatch {
             crate::model::FieldToMatch {
-                r#type: self.r#type,
-                data: self.data,
+                r#type: self.r#type
+                ,
+                data: self.data
+                ,
             }
         }
     }
+    
+    
 }
 impl FieldToMatch {
     /// Creates a new builder-style object to manufacture [`FieldToMatch`](crate::model::FieldToMatch).
@@ -855,9 +779,9 @@ impl FieldToMatch {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let matchfieldtype = unimplemented!();
 /// match matchfieldtype {
@@ -884,22 +808,14 @@ impl FieldToMatch {
 /// Specifically, when `matchfieldtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MatchFieldType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MatchFieldType {
     #[allow(missing_docs)] // documentation missing in model
     AllQueryArgs,
@@ -916,7 +832,7 @@ pub enum MatchFieldType {
     #[allow(missing_docs)] // documentation missing in model
     Uri,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MatchFieldType {
     fn from(s: &str) -> Self {
@@ -928,17 +844,17 @@ impl std::convert::From<&str> for MatchFieldType {
             "QUERY_STRING" => MatchFieldType::QueryString,
             "SINGLE_QUERY_ARG" => MatchFieldType::SingleQueryArg,
             "URI" => MatchFieldType::Uri,
-            other => MatchFieldType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MatchFieldType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MatchFieldType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MatchFieldType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MatchFieldType::from(s))
+                }
+            }
 impl MatchFieldType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -950,19 +866,13 @@ impl MatchFieldType {
             MatchFieldType::QueryString => "QUERY_STRING",
             MatchFieldType::SingleQueryArg => "SINGLE_QUERY_ARG",
             MatchFieldType::Uri => "URI",
-            MatchFieldType::Unknown(value) => value.as_str(),
+            MatchFieldType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ALL_QUERY_ARGS",
-            "BODY",
-            "HEADER",
-            "METHOD",
-            "QUERY_STRING",
-            "SINGLE_QUERY_ARG",
-            "URI",
+            "ALL_QUERY_ARGS", "BODY", "HEADER", "METHOD", "QUERY_STRING", "SINGLE_QUERY_ARG", "URI"
         ]
     }
 }
@@ -978,9 +888,9 @@ impl AsRef<str> for MatchFieldType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let changeaction = unimplemented!();
 /// match changeaction {
@@ -1002,58 +912,52 @@ impl AsRef<str> for MatchFieldType {
 /// Specifically, when `changeaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChangeAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChangeAction {
     #[allow(missing_docs)] // documentation missing in model
     Delete,
     #[allow(missing_docs)] // documentation missing in model
     Insert,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChangeAction {
     fn from(s: &str) -> Self {
         match s {
             "DELETE" => ChangeAction::Delete,
             "INSERT" => ChangeAction::Insert,
-            other => ChangeAction::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ChangeAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ChangeAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChangeAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChangeAction::from(s))
+                }
+            }
 impl ChangeAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChangeAction::Delete => "DELETE",
             ChangeAction::Insert => "INSERT",
-            ChangeAction::Unknown(value) => value.as_str(),
+            ChangeAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DELETE", "INSERT"]
+        &[
+            "DELETE", "INSERT"
+        ]
     }
 }
 impl AsRef<str> for ChangeAction {
@@ -1062,70 +966,72 @@ impl AsRef<str> for ChangeAction {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>For the action that is associated with a rule in a <code>WebACL</code>, specifies the action that you want AWS WAF to perform when a web request matches all of the conditions in a rule. For the default action in a <code>WebACL</code>, specifies the action that you want AWS WAF to take when a web request doesn't match all of the conditions in any of the rules in a <code>WebACL</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafAction {
-    /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ALLOW</code>: AWS WAF allows requests</p> </li>
-    /// <li> <p> <code>BLOCK</code>: AWS WAF blocks requests</p> </li>
-    /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p> </li>
+pub struct WafAction  {
+    /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALLOW</code>: AWS WAF allows requests</p> </li> 
+    /// <li> <p> <code>BLOCK</code>: AWS WAF blocks requests</p> </li> 
+    /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::WafActionType>,
 }
 impl WafAction {
-    /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ALLOW</code>: AWS WAF allows requests</p> </li>
-    /// <li> <p> <code>BLOCK</code>: AWS WAF blocks requests</p> </li>
-    /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p> </li>
+    /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALLOW</code>: AWS WAF allows requests</p> </li> 
+    /// <li> <p> <code>BLOCK</code>: AWS WAF blocks requests</p> </li> 
+    /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::WafActionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::WafActionType> {
         self.r#type.as_ref()
     }
 }
 /// See [`WafAction`](crate::model::WafAction).
 pub mod waf_action {
-
+    
     /// A builder for [`WafAction`](crate::model::WafAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::WafActionType>,
     }
     impl Builder {
-        /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>ALLOW</code>: AWS WAF allows requests</p> </li>
-        /// <li> <p> <code>BLOCK</code>: AWS WAF blocks requests</p> </li>
-        /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p> </li>
+        /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ALLOW</code>: AWS WAF allows requests</p> </li> 
+        /// <li> <p> <code>BLOCK</code>: AWS WAF blocks requests</p> </li> 
+        /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: crate::model::WafActionType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>ALLOW</code>: AWS WAF allows requests</p> </li>
-        /// <li> <p> <code>BLOCK</code>: AWS WAF blocks requests</p> </li>
-        /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p> </li>
+        /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ALLOW</code>: AWS WAF allows requests</p> </li> 
+        /// <li> <p> <code>BLOCK</code>: AWS WAF blocks requests</p> </li> 
+        /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p> </li> 
         /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::WafActionType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`WafAction`](crate::model::WafAction).
         pub fn build(self) -> crate::model::WafAction {
             crate::model::WafAction {
-                r#type: self.r#type,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl WafAction {
     /// Creates a new builder-style object to manufacture [`WafAction`](crate::model::WafAction).
@@ -1140,9 +1046,9 @@ impl WafAction {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let wafactiontype = unimplemented!();
 /// match wafactiontype {
@@ -1165,22 +1071,14 @@ impl WafAction {
 /// Specifically, when `wafactiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WafActionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WafActionType {
     #[allow(missing_docs)] // documentation missing in model
     Allow,
@@ -1189,7 +1087,7 @@ pub enum WafActionType {
     #[allow(missing_docs)] // documentation missing in model
     Count,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WafActionType {
     fn from(s: &str) -> Self {
@@ -1197,17 +1095,17 @@ impl std::convert::From<&str> for WafActionType {
             "ALLOW" => WafActionType::Allow,
             "BLOCK" => WafActionType::Block,
             "COUNT" => WafActionType::Count,
-            other => WafActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => WafActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WafActionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WafActionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WafActionType::from(s))
+                }
+            }
 impl WafActionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1215,12 +1113,14 @@ impl WafActionType {
             WafActionType::Allow => "ALLOW",
             WafActionType::Block => "BLOCK",
             WafActionType::Count => "COUNT",
-            WafActionType::Unknown(value) => value.as_str(),
+            WafActionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALLOW", "BLOCK", "COUNT"]
+        &[
+            "ALLOW", "BLOCK", "COUNT"
+        ]
     }
 }
 impl AsRef<str> for WafActionType {
@@ -1229,14 +1129,14 @@ impl AsRef<str> for WafActionType {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Specifies whether to insert a <code>Rule</code> into or delete a <code>Rule</code> from a <code>WebACL</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WebAclUpdate {
+pub struct WebAclUpdate  {
     /// <p>Specifies whether to insert a <code>Rule</code> into or delete a <code>Rule</code> from a <code>WebACL</code>.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::ChangeAction>,
@@ -1246,17 +1146,17 @@ pub struct WebAclUpdate {
 }
 impl WebAclUpdate {
     /// <p>Specifies whether to insert a <code>Rule</code> into or delete a <code>Rule</code> from a <code>WebACL</code>.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::ChangeAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::ChangeAction> {
         self.action.as_ref()
     }
     /// <p>The <code>ActivatedRule</code> object in an <code>UpdateWebACL</code> request specifies a <code>Rule</code> that you want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).</p>
-    pub fn activated_rule(&self) -> std::option::Option<&crate::model::ActivatedRule> {
+    pub fn activated_rule(&self) -> std::option::Option<& crate::model::ActivatedRule> {
         self.activated_rule.as_ref()
     }
 }
 /// See [`WebAclUpdate`](crate::model::WebAclUpdate).
 pub mod web_acl_update {
-
+    
     /// A builder for [`WebAclUpdate`](crate::model::WebAclUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1270,12 +1170,8 @@ pub mod web_acl_update {
             self
         }
         /// <p>Specifies whether to insert a <code>Rule</code> into or delete a <code>Rule</code> from a <code>WebACL</code>.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::ChangeAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::ChangeAction>) -> Self {
+            self.action = input; self
         }
         /// <p>The <code>ActivatedRule</code> object in an <code>UpdateWebACL</code> request specifies a <code>Rule</code> that you want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).</p>
         pub fn activated_rule(mut self, input: crate::model::ActivatedRule) -> Self {
@@ -1283,21 +1179,21 @@ pub mod web_acl_update {
             self
         }
         /// <p>The <code>ActivatedRule</code> object in an <code>UpdateWebACL</code> request specifies a <code>Rule</code> that you want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).</p>
-        pub fn set_activated_rule(
-            mut self,
-            input: std::option::Option<crate::model::ActivatedRule>,
-        ) -> Self {
-            self.activated_rule = input;
-            self
+        pub fn set_activated_rule(mut self, input: std::option::Option<crate::model::ActivatedRule>) -> Self {
+            self.activated_rule = input; self
         }
         /// Consumes the builder and constructs a [`WebAclUpdate`](crate::model::WebAclUpdate).
         pub fn build(self) -> crate::model::WebAclUpdate {
             crate::model::WebAclUpdate {
-                action: self.action,
-                activated_rule: self.activated_rule,
+                action: self.action
+                ,
+                activated_rule: self.activated_rule
+                ,
             }
         }
     }
+    
+    
 }
 impl WebAclUpdate {
     /// Creates a new builder-style object to manufacture [`WebAclUpdate`](crate::model::WebAclUpdate).
@@ -1306,50 +1202,50 @@ impl WebAclUpdate {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
-/// <p>The <code>ActivatedRule</code> object in an <code>UpdateWebACL</code> request specifies a <code>Rule</code> that you want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).</p>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
+/// <p>The <code>ActivatedRule</code> object in an <code>UpdateWebACL</code> request specifies a <code>Rule</code> that you want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).</p> 
 /// <p>To specify whether to insert or delete a <code>Rule</code>, use the <code>Action</code> parameter in the <code>WebACLUpdate</code> data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivatedRule {
+pub struct ActivatedRule  {
     /// <p>Specifies the order in which the <code>Rules</code> in a <code>WebACL</code> are evaluated. Rules with a lower value for <code>Priority</code> are evaluated before <code>Rules</code> with a higher value. The value must be a unique integer. If you add multiple <code>Rules</code> to a <code>WebACL</code>, the values don't need to be consecutive.</p>
     #[doc(hidden)]
     pub priority: std::option::Option<i32>,
-    /// <p>The <code>RuleId</code> for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
+    /// <p>The <code>RuleId</code> for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p> 
     /// <p> <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
-    /// <p>Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the <code>Rule</code>. Valid values for <code>Action</code> include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ALLOW</code>: CloudFront responds with the requested object.</p> </li>
-    /// <li> <p> <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.</p> </li>
-    /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and then continues to inspect the web request based on the remaining rules in the web ACL. </p> </li>
-    /// </ul>
+    /// <p>Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the <code>Rule</code>. Valid values for <code>Action</code> include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALLOW</code>: CloudFront responds with the requested object.</p> </li> 
+    /// <li> <p> <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.</p> </li> 
+    /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and then continues to inspect the web request based on the remaining rules in the web ACL. </p> </li> 
+    /// </ul> 
     /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::WafAction>,
-    /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
-    /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> will block a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request. However if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> will then override any block action specified by individual rules contained within the group. Instead of blocking matching requests, those requests will be counted. You can view a record of counted requests using <code>GetSampledRequests</code>. </p>
+    /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p> 
+    /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> will block a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request. However if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> will then override any block action specified by individual rules contained within the group. Instead of blocking matching requests, those requests will be counted. You can view a record of counted requests using <code>GetSampledRequests</code>. </p> 
     /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
     #[doc(hidden)]
     pub override_action: std::option::Option<crate::model::WafOverrideAction>,
     /// <p>The rule type, either <code>REGULAR</code>, as defined by <code>Rule</code>, <code>RATE_BASED</code>, as defined by <code>RateBasedRule</code>, or <code>GROUP</code>, as defined by <code>RuleGroup</code>. The default is REGULAR. Although this field is optional, be aware that if you try to add a RATE_BASED rule to a web ACL without setting the type, the <code>UpdateWebACL</code> request will fail because the request tries to add a REGULAR rule with the specified ID, which does not exist. </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::WafRuleType>,
-    /// <p>An array of rules to exclude from a rule group. This is applicable only when the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>.</p>
-    /// <p>Sometimes it is necessary to troubleshoot rule groups that are blocking traffic unexpectedly (false positives). One troubleshooting technique is to identify the specific rule within the rule group that is blocking the legitimate traffic and then disable (exclude) that particular rule. You can exclude rules from both your own rule groups and AWS Marketplace rule groups that have been associated with a web ACL.</p>
-    /// <p>Specifying <code>ExcludedRules</code> does not remove those rules from the rule group. Rather, it changes the action for the rules to <code>COUNT</code>. Therefore, requests that match an <code>ExcludedRule</code> are counted but not blocked. The <code>RuleGroup</code> owner will receive COUNT metrics for each <code>ExcludedRule</code>.</p>
-    /// <p>If you want to exclude rules from a rule group that is already associated with a web ACL, perform the following steps:</p>
-    /// <ol>
-    /// <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to exclude. For more information about the logs, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL Traffic Information</a>.</p> </li>
-    /// <li> <p>Submit an <code>UpdateWebACL</code> request that has two actions:</p>
-    /// <ul>
-    /// <li> <p>The first action deletes the existing rule group from the web ACL. That is, in the <code>UpdateWebACL</code> request, the first <code>Updates:Action</code> should be <code>DELETE</code> and <code>Updates:ActivatedRule:RuleId</code> should be the rule group that contains the rules that you want to exclude.</p> </li>
-    /// <li> <p>The second action inserts the same rule group back in, but specifying the rules to exclude. That is, the second <code>Updates:Action</code> should be <code>INSERT</code>, <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just removed, and <code>ExcludedRules</code> should contain the rules that you want to exclude.</p> </li>
-    /// </ul> </li>
+    /// <p>An array of rules to exclude from a rule group. This is applicable only when the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>.</p> 
+    /// <p>Sometimes it is necessary to troubleshoot rule groups that are blocking traffic unexpectedly (false positives). One troubleshooting technique is to identify the specific rule within the rule group that is blocking the legitimate traffic and then disable (exclude) that particular rule. You can exclude rules from both your own rule groups and AWS Marketplace rule groups that have been associated with a web ACL.</p> 
+    /// <p>Specifying <code>ExcludedRules</code> does not remove those rules from the rule group. Rather, it changes the action for the rules to <code>COUNT</code>. Therefore, requests that match an <code>ExcludedRule</code> are counted but not blocked. The <code>RuleGroup</code> owner will receive COUNT metrics for each <code>ExcludedRule</code>.</p> 
+    /// <p>If you want to exclude rules from a rule group that is already associated with a web ACL, perform the following steps:</p> 
+    /// <ol> 
+    /// <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to exclude. For more information about the logs, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL Traffic Information</a>.</p> </li> 
+    /// <li> <p>Submit an <code>UpdateWebACL</code> request that has two actions:</p> 
+    /// <ul> 
+    /// <li> <p>The first action deletes the existing rule group from the web ACL. That is, in the <code>UpdateWebACL</code> request, the first <code>Updates:Action</code> should be <code>DELETE</code> and <code>Updates:ActivatedRule:RuleId</code> should be the rule group that contains the rules that you want to exclude.</p> </li> 
+    /// <li> <p>The second action inserts the same rule group back in, but specifying the rules to exclude. That is, the second <code>Updates:Action</code> should be <code>INSERT</code>, <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just removed, and <code>ExcludedRules</code> should contain the rules that you want to exclude.</p> </li> 
+    /// </ul> </li> 
     /// </ol>
     #[doc(hidden)]
     pub excluded_rules: std::option::Option<std::vec::Vec<crate::model::ExcludedRule>>,
@@ -1359,50 +1255,50 @@ impl ActivatedRule {
     pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
-    /// <p>The <code>RuleId</code> for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
+    /// <p>The <code>RuleId</code> for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p> 
     /// <p> <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
-    pub fn rule_id(&self) -> std::option::Option<&str> {
+    pub fn rule_id(&self) -> std::option::Option<& str> {
         self.rule_id.as_deref()
     }
-    /// <p>Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the <code>Rule</code>. Valid values for <code>Action</code> include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ALLOW</code>: CloudFront responds with the requested object.</p> </li>
-    /// <li> <p> <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.</p> </li>
-    /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and then continues to inspect the web request based on the remaining rules in the web ACL. </p> </li>
-    /// </ul>
+    /// <p>Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the <code>Rule</code>. Valid values for <code>Action</code> include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALLOW</code>: CloudFront responds with the requested object.</p> </li> 
+    /// <li> <p> <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.</p> </li> 
+    /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and then continues to inspect the web request based on the remaining rules in the web ACL. </p> </li> 
+    /// </ul> 
     /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::WafAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::WafAction> {
         self.action.as_ref()
     }
-    /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
-    /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> will block a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request. However if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> will then override any block action specified by individual rules contained within the group. Instead of blocking matching requests, those requests will be counted. You can view a record of counted requests using <code>GetSampledRequests</code>. </p>
+    /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p> 
+    /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> will block a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request. However if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> will then override any block action specified by individual rules contained within the group. Instead of blocking matching requests, those requests will be counted. You can view a record of counted requests using <code>GetSampledRequests</code>. </p> 
     /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
-    pub fn override_action(&self) -> std::option::Option<&crate::model::WafOverrideAction> {
+    pub fn override_action(&self) -> std::option::Option<& crate::model::WafOverrideAction> {
         self.override_action.as_ref()
     }
     /// <p>The rule type, either <code>REGULAR</code>, as defined by <code>Rule</code>, <code>RATE_BASED</code>, as defined by <code>RateBasedRule</code>, or <code>GROUP</code>, as defined by <code>RuleGroup</code>. The default is REGULAR. Although this field is optional, be aware that if you try to add a RATE_BASED rule to a web ACL without setting the type, the <code>UpdateWebACL</code> request will fail because the request tries to add a REGULAR rule with the specified ID, which does not exist. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::WafRuleType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::WafRuleType> {
         self.r#type.as_ref()
     }
-    /// <p>An array of rules to exclude from a rule group. This is applicable only when the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>.</p>
-    /// <p>Sometimes it is necessary to troubleshoot rule groups that are blocking traffic unexpectedly (false positives). One troubleshooting technique is to identify the specific rule within the rule group that is blocking the legitimate traffic and then disable (exclude) that particular rule. You can exclude rules from both your own rule groups and AWS Marketplace rule groups that have been associated with a web ACL.</p>
-    /// <p>Specifying <code>ExcludedRules</code> does not remove those rules from the rule group. Rather, it changes the action for the rules to <code>COUNT</code>. Therefore, requests that match an <code>ExcludedRule</code> are counted but not blocked. The <code>RuleGroup</code> owner will receive COUNT metrics for each <code>ExcludedRule</code>.</p>
-    /// <p>If you want to exclude rules from a rule group that is already associated with a web ACL, perform the following steps:</p>
-    /// <ol>
-    /// <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to exclude. For more information about the logs, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL Traffic Information</a>.</p> </li>
-    /// <li> <p>Submit an <code>UpdateWebACL</code> request that has two actions:</p>
-    /// <ul>
-    /// <li> <p>The first action deletes the existing rule group from the web ACL. That is, in the <code>UpdateWebACL</code> request, the first <code>Updates:Action</code> should be <code>DELETE</code> and <code>Updates:ActivatedRule:RuleId</code> should be the rule group that contains the rules that you want to exclude.</p> </li>
-    /// <li> <p>The second action inserts the same rule group back in, but specifying the rules to exclude. That is, the second <code>Updates:Action</code> should be <code>INSERT</code>, <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just removed, and <code>ExcludedRules</code> should contain the rules that you want to exclude.</p> </li>
-    /// </ul> </li>
+    /// <p>An array of rules to exclude from a rule group. This is applicable only when the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>.</p> 
+    /// <p>Sometimes it is necessary to troubleshoot rule groups that are blocking traffic unexpectedly (false positives). One troubleshooting technique is to identify the specific rule within the rule group that is blocking the legitimate traffic and then disable (exclude) that particular rule. You can exclude rules from both your own rule groups and AWS Marketplace rule groups that have been associated with a web ACL.</p> 
+    /// <p>Specifying <code>ExcludedRules</code> does not remove those rules from the rule group. Rather, it changes the action for the rules to <code>COUNT</code>. Therefore, requests that match an <code>ExcludedRule</code> are counted but not blocked. The <code>RuleGroup</code> owner will receive COUNT metrics for each <code>ExcludedRule</code>.</p> 
+    /// <p>If you want to exclude rules from a rule group that is already associated with a web ACL, perform the following steps:</p> 
+    /// <ol> 
+    /// <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to exclude. For more information about the logs, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL Traffic Information</a>.</p> </li> 
+    /// <li> <p>Submit an <code>UpdateWebACL</code> request that has two actions:</p> 
+    /// <ul> 
+    /// <li> <p>The first action deletes the existing rule group from the web ACL. That is, in the <code>UpdateWebACL</code> request, the first <code>Updates:Action</code> should be <code>DELETE</code> and <code>Updates:ActivatedRule:RuleId</code> should be the rule group that contains the rules that you want to exclude.</p> </li> 
+    /// <li> <p>The second action inserts the same rule group back in, but specifying the rules to exclude. That is, the second <code>Updates:Action</code> should be <code>INSERT</code>, <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just removed, and <code>ExcludedRules</code> should contain the rules that you want to exclude.</p> </li> 
+    /// </ul> </li> 
     /// </ol>
-    pub fn excluded_rules(&self) -> std::option::Option<&[crate::model::ExcludedRule]> {
+    pub fn excluded_rules(&self) -> std::option::Option<& [crate::model::ExcludedRule]> {
         self.excluded_rules.as_deref()
     }
 }
 /// See [`ActivatedRule`](crate::model::ActivatedRule).
 pub mod activated_rule {
-
+    
     /// A builder for [`ActivatedRule`](crate::model::ActivatedRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1421,59 +1317,52 @@ pub mod activated_rule {
         }
         /// <p>Specifies the order in which the <code>Rules</code> in a <code>WebACL</code> are evaluated. Rules with a lower value for <code>Priority</code> are evaluated before <code>Rules</code> with a higher value. The value must be a unique integer. If you add multiple <code>Rules</code> to a <code>WebACL</code>, the values don't need to be consecutive.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-            self.priority = input;
-            self
+            self.priority = input; self
         }
-        /// <p>The <code>RuleId</code> for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
+        /// <p>The <code>RuleId</code> for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p> 
         /// <p> <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
         pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_id = Some(input.into());
             self
         }
-        /// <p>The <code>RuleId</code> for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
+        /// <p>The <code>RuleId</code> for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p> 
         /// <p> <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
         pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_id = input;
-            self
+            self.rule_id = input; self
         }
-        /// <p>Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the <code>Rule</code>. Valid values for <code>Action</code> include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>ALLOW</code>: CloudFront responds with the requested object.</p> </li>
-        /// <li> <p> <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.</p> </li>
-        /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and then continues to inspect the web request based on the remaining rules in the web ACL. </p> </li>
-        /// </ul>
+        /// <p>Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the <code>Rule</code>. Valid values for <code>Action</code> include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ALLOW</code>: CloudFront responds with the requested object.</p> </li> 
+        /// <li> <p> <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.</p> </li> 
+        /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and then continues to inspect the web request based on the remaining rules in the web ACL. </p> </li> 
+        /// </ul> 
         /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
         pub fn action(mut self, input: crate::model::WafAction) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p>Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the <code>Rule</code>. Valid values for <code>Action</code> include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>ALLOW</code>: CloudFront responds with the requested object.</p> </li>
-        /// <li> <p> <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.</p> </li>
-        /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and then continues to inspect the web request based on the remaining rules in the web ACL. </p> </li>
-        /// </ul>
+        /// <p>Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the <code>Rule</code>. Valid values for <code>Action</code> include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ALLOW</code>: CloudFront responds with the requested object.</p> </li> 
+        /// <li> <p> <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.</p> </li> 
+        /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions in the rule and then continues to inspect the web request based on the remaining rules in the web ACL. </p> </li> 
+        /// </ul> 
         /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::WafAction>) -> Self {
-            self.action = input;
-            self
+            self.action = input; self
         }
-        /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
-        /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> will block a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request. However if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> will then override any block action specified by individual rules contained within the group. Instead of blocking matching requests, those requests will be counted. You can view a record of counted requests using <code>GetSampledRequests</code>. </p>
+        /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p> 
+        /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> will block a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request. However if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> will then override any block action specified by individual rules contained within the group. Instead of blocking matching requests, those requests will be counted. You can view a record of counted requests using <code>GetSampledRequests</code>. </p> 
         /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
         pub fn override_action(mut self, input: crate::model::WafOverrideAction) -> Self {
             self.override_action = Some(input);
             self
         }
-        /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
-        /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> will block a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request. However if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> will then override any block action specified by individual rules contained within the group. Instead of blocking matching requests, those requests will be counted. You can view a record of counted requests using <code>GetSampledRequests</code>. </p>
+        /// <p>Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p> 
+        /// <p>Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> will block a request if any individual rule in the <code>RuleGroup</code> matches the request and is configured to block that request. However if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code> will then override any block action specified by individual rules contained within the group. Instead of blocking matching requests, those requests will be counted. You can view a record of counted requests using <code>GetSampledRequests</code>. </p> 
         /// <p> <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.</p>
-        pub fn set_override_action(
-            mut self,
-            input: std::option::Option<crate::model::WafOverrideAction>,
-        ) -> Self {
-            self.override_action = input;
-            self
+        pub fn set_override_action(mut self, input: std::option::Option<crate::model::WafOverrideAction>) -> Self {
+            self.override_action = input; self
         }
         /// <p>The rule type, either <code>REGULAR</code>, as defined by <code>Rule</code>, <code>RATE_BASED</code>, as defined by <code>RateBasedRule</code>, or <code>GROUP</code>, as defined by <code>RuleGroup</code>. The default is REGULAR. Although this field is optional, be aware that if you try to add a RATE_BASED rule to a web ACL without setting the type, the <code>UpdateWebACL</code> request will fail because the request tries to add a REGULAR rule with the specified ID, which does not exist. </p>
         pub fn r#type(mut self, input: crate::model::WafRuleType) -> Self {
@@ -1482,62 +1371,65 @@ pub mod activated_rule {
         }
         /// <p>The rule type, either <code>REGULAR</code>, as defined by <code>Rule</code>, <code>RATE_BASED</code>, as defined by <code>RateBasedRule</code>, or <code>GROUP</code>, as defined by <code>RuleGroup</code>. The default is REGULAR. Although this field is optional, be aware that if you try to add a RATE_BASED rule to a web ACL without setting the type, the <code>UpdateWebACL</code> request will fail because the request tries to add a REGULAR rule with the specified ID, which does not exist. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::WafRuleType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Appends an item to `excluded_rules`.
         ///
         /// To override the contents of this collection use [`set_excluded_rules`](Self::set_excluded_rules).
         ///
-        /// <p>An array of rules to exclude from a rule group. This is applicable only when the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>.</p>
-        /// <p>Sometimes it is necessary to troubleshoot rule groups that are blocking traffic unexpectedly (false positives). One troubleshooting technique is to identify the specific rule within the rule group that is blocking the legitimate traffic and then disable (exclude) that particular rule. You can exclude rules from both your own rule groups and AWS Marketplace rule groups that have been associated with a web ACL.</p>
-        /// <p>Specifying <code>ExcludedRules</code> does not remove those rules from the rule group. Rather, it changes the action for the rules to <code>COUNT</code>. Therefore, requests that match an <code>ExcludedRule</code> are counted but not blocked. The <code>RuleGroup</code> owner will receive COUNT metrics for each <code>ExcludedRule</code>.</p>
-        /// <p>If you want to exclude rules from a rule group that is already associated with a web ACL, perform the following steps:</p>
-        /// <ol>
-        /// <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to exclude. For more information about the logs, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL Traffic Information</a>.</p> </li>
-        /// <li> <p>Submit an <code>UpdateWebACL</code> request that has two actions:</p>
-        /// <ul>
-        /// <li> <p>The first action deletes the existing rule group from the web ACL. That is, in the <code>UpdateWebACL</code> request, the first <code>Updates:Action</code> should be <code>DELETE</code> and <code>Updates:ActivatedRule:RuleId</code> should be the rule group that contains the rules that you want to exclude.</p> </li>
-        /// <li> <p>The second action inserts the same rule group back in, but specifying the rules to exclude. That is, the second <code>Updates:Action</code> should be <code>INSERT</code>, <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just removed, and <code>ExcludedRules</code> should contain the rules that you want to exclude.</p> </li>
-        /// </ul> </li>
+        /// <p>An array of rules to exclude from a rule group. This is applicable only when the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>.</p> 
+        /// <p>Sometimes it is necessary to troubleshoot rule groups that are blocking traffic unexpectedly (false positives). One troubleshooting technique is to identify the specific rule within the rule group that is blocking the legitimate traffic and then disable (exclude) that particular rule. You can exclude rules from both your own rule groups and AWS Marketplace rule groups that have been associated with a web ACL.</p> 
+        /// <p>Specifying <code>ExcludedRules</code> does not remove those rules from the rule group. Rather, it changes the action for the rules to <code>COUNT</code>. Therefore, requests that match an <code>ExcludedRule</code> are counted but not blocked. The <code>RuleGroup</code> owner will receive COUNT metrics for each <code>ExcludedRule</code>.</p> 
+        /// <p>If you want to exclude rules from a rule group that is already associated with a web ACL, perform the following steps:</p> 
+        /// <ol> 
+        /// <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to exclude. For more information about the logs, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL Traffic Information</a>.</p> </li> 
+        /// <li> <p>Submit an <code>UpdateWebACL</code> request that has two actions:</p> 
+        /// <ul> 
+        /// <li> <p>The first action deletes the existing rule group from the web ACL. That is, in the <code>UpdateWebACL</code> request, the first <code>Updates:Action</code> should be <code>DELETE</code> and <code>Updates:ActivatedRule:RuleId</code> should be the rule group that contains the rules that you want to exclude.</p> </li> 
+        /// <li> <p>The second action inserts the same rule group back in, but specifying the rules to exclude. That is, the second <code>Updates:Action</code> should be <code>INSERT</code>, <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just removed, and <code>ExcludedRules</code> should contain the rules that you want to exclude.</p> </li> 
+        /// </ul> </li> 
         /// </ol>
         pub fn excluded_rules(mut self, input: crate::model::ExcludedRule) -> Self {
             let mut v = self.excluded_rules.unwrap_or_default();
-            v.push(input);
-            self.excluded_rules = Some(v);
-            self
+                            v.push(input);
+                            self.excluded_rules = Some(v);
+                            self
         }
-        /// <p>An array of rules to exclude from a rule group. This is applicable only when the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>.</p>
-        /// <p>Sometimes it is necessary to troubleshoot rule groups that are blocking traffic unexpectedly (false positives). One troubleshooting technique is to identify the specific rule within the rule group that is blocking the legitimate traffic and then disable (exclude) that particular rule. You can exclude rules from both your own rule groups and AWS Marketplace rule groups that have been associated with a web ACL.</p>
-        /// <p>Specifying <code>ExcludedRules</code> does not remove those rules from the rule group. Rather, it changes the action for the rules to <code>COUNT</code>. Therefore, requests that match an <code>ExcludedRule</code> are counted but not blocked. The <code>RuleGroup</code> owner will receive COUNT metrics for each <code>ExcludedRule</code>.</p>
-        /// <p>If you want to exclude rules from a rule group that is already associated with a web ACL, perform the following steps:</p>
-        /// <ol>
-        /// <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to exclude. For more information about the logs, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL Traffic Information</a>.</p> </li>
-        /// <li> <p>Submit an <code>UpdateWebACL</code> request that has two actions:</p>
-        /// <ul>
-        /// <li> <p>The first action deletes the existing rule group from the web ACL. That is, in the <code>UpdateWebACL</code> request, the first <code>Updates:Action</code> should be <code>DELETE</code> and <code>Updates:ActivatedRule:RuleId</code> should be the rule group that contains the rules that you want to exclude.</p> </li>
-        /// <li> <p>The second action inserts the same rule group back in, but specifying the rules to exclude. That is, the second <code>Updates:Action</code> should be <code>INSERT</code>, <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just removed, and <code>ExcludedRules</code> should contain the rules that you want to exclude.</p> </li>
-        /// </ul> </li>
+        /// <p>An array of rules to exclude from a rule group. This is applicable only when the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>.</p> 
+        /// <p>Sometimes it is necessary to troubleshoot rule groups that are blocking traffic unexpectedly (false positives). One troubleshooting technique is to identify the specific rule within the rule group that is blocking the legitimate traffic and then disable (exclude) that particular rule. You can exclude rules from both your own rule groups and AWS Marketplace rule groups that have been associated with a web ACL.</p> 
+        /// <p>Specifying <code>ExcludedRules</code> does not remove those rules from the rule group. Rather, it changes the action for the rules to <code>COUNT</code>. Therefore, requests that match an <code>ExcludedRule</code> are counted but not blocked. The <code>RuleGroup</code> owner will receive COUNT metrics for each <code>ExcludedRule</code>.</p> 
+        /// <p>If you want to exclude rules from a rule group that is already associated with a web ACL, perform the following steps:</p> 
+        /// <ol> 
+        /// <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to exclude. For more information about the logs, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL Traffic Information</a>.</p> </li> 
+        /// <li> <p>Submit an <code>UpdateWebACL</code> request that has two actions:</p> 
+        /// <ul> 
+        /// <li> <p>The first action deletes the existing rule group from the web ACL. That is, in the <code>UpdateWebACL</code> request, the first <code>Updates:Action</code> should be <code>DELETE</code> and <code>Updates:ActivatedRule:RuleId</code> should be the rule group that contains the rules that you want to exclude.</p> </li> 
+        /// <li> <p>The second action inserts the same rule group back in, but specifying the rules to exclude. That is, the second <code>Updates:Action</code> should be <code>INSERT</code>, <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just removed, and <code>ExcludedRules</code> should contain the rules that you want to exclude.</p> </li> 
+        /// </ul> </li> 
         /// </ol>
-        pub fn set_excluded_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExcludedRule>>,
-        ) -> Self {
-            self.excluded_rules = input;
-            self
+        pub fn set_excluded_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExcludedRule>>) -> Self {
+            self.excluded_rules = input; self
         }
         /// Consumes the builder and constructs a [`ActivatedRule`](crate::model::ActivatedRule).
         pub fn build(self) -> crate::model::ActivatedRule {
             crate::model::ActivatedRule {
-                priority: self.priority,
-                rule_id: self.rule_id,
-                action: self.action,
-                override_action: self.override_action,
-                r#type: self.r#type,
-                excluded_rules: self.excluded_rules,
+                priority: self.priority
+                ,
+                rule_id: self.rule_id
+                ,
+                action: self.action
+                ,
+                override_action: self.override_action
+                ,
+                r#type: self.r#type
+                ,
+                excluded_rules: self.excluded_rules
+                ,
             }
         }
     }
+    
+    
 }
 impl ActivatedRule {
     /// Creates a new builder-style object to manufacture [`ActivatedRule`](crate::model::ActivatedRule).
@@ -1546,27 +1438,27 @@ impl ActivatedRule {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>The rule to exclude from a rule group. This is applicable only when the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>. The rule must belong to the <code>RuleGroup</code> that is specified by the <code>ActivatedRule</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExcludedRule {
+pub struct ExcludedRule  {
     /// <p>The unique identifier for the rule to exclude from the rule group.</p>
     #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
 }
 impl ExcludedRule {
     /// <p>The unique identifier for the rule to exclude from the rule group.</p>
-    pub fn rule_id(&self) -> std::option::Option<&str> {
+    pub fn rule_id(&self) -> std::option::Option<& str> {
         self.rule_id.as_deref()
     }
 }
 /// See [`ExcludedRule`](crate::model::ExcludedRule).
 pub mod excluded_rule {
-
+    
     /// A builder for [`ExcludedRule`](crate::model::ExcludedRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1580,16 +1472,18 @@ pub mod excluded_rule {
         }
         /// <p>The unique identifier for the rule to exclude from the rule group.</p>
         pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_id = input;
-            self
+            self.rule_id = input; self
         }
         /// Consumes the builder and constructs a [`ExcludedRule`](crate::model::ExcludedRule).
         pub fn build(self) -> crate::model::ExcludedRule {
             crate::model::ExcludedRule {
-                rule_id: self.rule_id,
+                rule_id: self.rule_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ExcludedRule {
     /// Creates a new builder-style object to manufacture [`ExcludedRule`](crate::model::ExcludedRule).
@@ -1604,9 +1498,9 @@ impl ExcludedRule {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let wafruletype = unimplemented!();
 /// match wafruletype {
@@ -1629,22 +1523,14 @@ impl ExcludedRule {
 /// Specifically, when `wafruletype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WafRuleType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WafRuleType {
     #[allow(missing_docs)] // documentation missing in model
     Group,
@@ -1653,7 +1539,7 @@ pub enum WafRuleType {
     #[allow(missing_docs)] // documentation missing in model
     Regular,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WafRuleType {
     fn from(s: &str) -> Self {
@@ -1661,17 +1547,17 @@ impl std::convert::From<&str> for WafRuleType {
             "GROUP" => WafRuleType::Group,
             "RATE_BASED" => WafRuleType::RateBased,
             "REGULAR" => WafRuleType::Regular,
-            other => WafRuleType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => WafRuleType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WafRuleType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WafRuleType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WafRuleType::from(s))
+                }
+            }
 impl WafRuleType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1679,12 +1565,14 @@ impl WafRuleType {
             WafRuleType::Group => "GROUP",
             WafRuleType::RateBased => "RATE_BASED",
             WafRuleType::Regular => "REGULAR",
-            WafRuleType::Unknown(value) => value.as_str(),
+            WafRuleType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GROUP", "RATE_BASED", "REGULAR"]
+        &[
+            "GROUP", "RATE_BASED", "REGULAR"
+        ]
     }
 }
 impl AsRef<str> for WafRuleType {
@@ -1693,27 +1581,27 @@ impl AsRef<str> for WafRuleType {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>The action to take if any rule within the <code>RuleGroup</code> matches a request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WafOverrideAction {
+pub struct WafOverrideAction  {
     /// <p> <code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action will take place.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::WafOverrideActionType>,
 }
 impl WafOverrideAction {
     /// <p> <code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action will take place.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::WafOverrideActionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::WafOverrideActionType> {
         self.r#type.as_ref()
     }
 }
 /// See [`WafOverrideAction`](crate::model::WafOverrideAction).
 pub mod waf_override_action {
-
+    
     /// A builder for [`WafOverrideAction`](crate::model::WafOverrideAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1726,20 +1614,19 @@ pub mod waf_override_action {
             self
         }
         /// <p> <code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action will take place.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::WafOverrideActionType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::WafOverrideActionType>) -> Self {
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`WafOverrideAction`](crate::model::WafOverrideAction).
         pub fn build(self) -> crate::model::WafOverrideAction {
             crate::model::WafOverrideAction {
-                r#type: self.r#type,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl WafOverrideAction {
     /// Creates a new builder-style object to manufacture [`WafOverrideAction`](crate::model::WafOverrideAction).
@@ -1754,9 +1641,9 @@ impl WafOverrideAction {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let wafoverrideactiontype = unimplemented!();
 /// match wafoverrideactiontype {
@@ -1778,60 +1665,52 @@ impl WafOverrideAction {
 /// Specifically, when `wafoverrideactiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WafOverrideActionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WafOverrideActionType {
     #[allow(missing_docs)] // documentation missing in model
     Count,
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WafOverrideActionType {
     fn from(s: &str) -> Self {
         match s {
             "COUNT" => WafOverrideActionType::Count,
             "NONE" => WafOverrideActionType::None,
-            other => {
-                WafOverrideActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => WafOverrideActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WafOverrideActionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WafOverrideActionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WafOverrideActionType::from(s))
+                }
+            }
 impl WafOverrideActionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WafOverrideActionType::Count => "COUNT",
             WafOverrideActionType::None => "NONE",
-            WafOverrideActionType::Unknown(value) => value.as_str(),
+            WafOverrideActionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COUNT", "NONE"]
+        &[
+            "COUNT", "NONE"
+        ]
     }
 }
 impl AsRef<str> for WafOverrideActionType {
@@ -1840,14 +1719,14 @@ impl AsRef<str> for WafOverrideActionType {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Specifies the part of a web request that you want to inspect for snippets of malicious SQL code and indicates whether you want to add the specification to a <code>SqlInjectionMatchSet</code> or delete it from a <code>SqlInjectionMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SqlInjectionMatchSetUpdate {
+pub struct SqlInjectionMatchSetUpdate  {
     /// <p>Specify <code>INSERT</code> to add a <code>SqlInjectionMatchSetUpdate</code> to a <code>SqlInjectionMatchSet</code>. Use <code>DELETE</code> to remove a <code>SqlInjectionMatchSetUpdate</code> from a <code>SqlInjectionMatchSet</code>.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::ChangeAction>,
@@ -1857,25 +1736,22 @@ pub struct SqlInjectionMatchSetUpdate {
 }
 impl SqlInjectionMatchSetUpdate {
     /// <p>Specify <code>INSERT</code> to add a <code>SqlInjectionMatchSetUpdate</code> to a <code>SqlInjectionMatchSet</code>. Use <code>DELETE</code> to remove a <code>SqlInjectionMatchSetUpdate</code> from a <code>SqlInjectionMatchSet</code>.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::ChangeAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::ChangeAction> {
         self.action.as_ref()
     }
     /// <p>Specifies the part of a web request that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header.</p>
-    pub fn sql_injection_match_tuple(
-        &self,
-    ) -> std::option::Option<&crate::model::SqlInjectionMatchTuple> {
+    pub fn sql_injection_match_tuple(&self) -> std::option::Option<& crate::model::SqlInjectionMatchTuple> {
         self.sql_injection_match_tuple.as_ref()
     }
 }
 /// See [`SqlInjectionMatchSetUpdate`](crate::model::SqlInjectionMatchSetUpdate).
 pub mod sql_injection_match_set_update {
-
+    
     /// A builder for [`SqlInjectionMatchSetUpdate`](crate::model::SqlInjectionMatchSetUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<crate::model::ChangeAction>,
-        pub(crate) sql_injection_match_tuple:
-            std::option::Option<crate::model::SqlInjectionMatchTuple>,
+        pub(crate) sql_injection_match_tuple: std::option::Option<crate::model::SqlInjectionMatchTuple>,
     }
     impl Builder {
         /// <p>Specify <code>INSERT</code> to add a <code>SqlInjectionMatchSetUpdate</code> to a <code>SqlInjectionMatchSet</code>. Use <code>DELETE</code> to remove a <code>SqlInjectionMatchSetUpdate</code> from a <code>SqlInjectionMatchSet</code>.</p>
@@ -1884,37 +1760,30 @@ pub mod sql_injection_match_set_update {
             self
         }
         /// <p>Specify <code>INSERT</code> to add a <code>SqlInjectionMatchSetUpdate</code> to a <code>SqlInjectionMatchSet</code>. Use <code>DELETE</code> to remove a <code>SqlInjectionMatchSetUpdate</code> from a <code>SqlInjectionMatchSet</code>.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::ChangeAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::ChangeAction>) -> Self {
+            self.action = input; self
         }
         /// <p>Specifies the part of a web request that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header.</p>
-        pub fn sql_injection_match_tuple(
-            mut self,
-            input: crate::model::SqlInjectionMatchTuple,
-        ) -> Self {
+        pub fn sql_injection_match_tuple(mut self, input: crate::model::SqlInjectionMatchTuple) -> Self {
             self.sql_injection_match_tuple = Some(input);
             self
         }
         /// <p>Specifies the part of a web request that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header.</p>
-        pub fn set_sql_injection_match_tuple(
-            mut self,
-            input: std::option::Option<crate::model::SqlInjectionMatchTuple>,
-        ) -> Self {
-            self.sql_injection_match_tuple = input;
-            self
+        pub fn set_sql_injection_match_tuple(mut self, input: std::option::Option<crate::model::SqlInjectionMatchTuple>) -> Self {
+            self.sql_injection_match_tuple = input; self
         }
         /// Consumes the builder and constructs a [`SqlInjectionMatchSetUpdate`](crate::model::SqlInjectionMatchSetUpdate).
         pub fn build(self) -> crate::model::SqlInjectionMatchSetUpdate {
             crate::model::SqlInjectionMatchSetUpdate {
-                action: self.action,
-                sql_injection_match_tuple: self.sql_injection_match_tuple,
+                action: self.action
+                ,
+                sql_injection_match_tuple: self.sql_injection_match_tuple
+                ,
             }
         }
     }
+    
+    
 }
 impl SqlInjectionMatchSetUpdate {
     /// Creates a new builder-style object to manufacture [`SqlInjectionMatchSetUpdate`](crate::model::SqlInjectionMatchSetUpdate).
@@ -1923,108 +1792,108 @@ impl SqlInjectionMatchSetUpdate {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Specifies the part of a web request that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SqlInjectionMatchTuple {
+pub struct SqlInjectionMatchTuple  {
     /// <p>Specifies where in a web request to look for snippets of malicious SQL code.</p>
     #[doc(hidden)]
     pub field_to_match: std::option::Option<crate::model::FieldToMatch>,
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
-    /// <p>You can only specify a single type of TextTransformation.</p>
-    /// <p> <b>CMD_LINE</b> </p>
-    /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
-    /// <ul>
-    /// <li> <p>Delete the following characters: \ " ' ^</p> </li>
-    /// <li> <p>Delete spaces before the following characters: / (</p> </li>
-    /// <li> <p>Replace the following characters with a space: , ;</p> </li>
-    /// <li> <p>Replace multiple spaces with one space</p> </li>
-    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
-    /// </ul>
-    /// <p> <b>COMPRESS_WHITE_SPACE</b> </p>
-    /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
-    /// <ul>
-    /// <li> <p>\f, formfeed, decimal 12</p> </li>
-    /// <li> <p>\t, tab, decimal 9</p> </li>
-    /// <li> <p>\n, newline, decimal 10</p> </li>
-    /// <li> <p>\r, carriage return, decimal 13</p> </li>
-    /// <li> <p>\v, vertical tab, decimal 11</p> </li>
-    /// <li> <p>non-breaking space, decimal 160</p> </li>
-    /// </ul>
-    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
-    /// <p> <b>HTML_ENTITY_DECODE</b> </p>
-    /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
-    /// <ul>
-    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
-    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
-    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
-    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
-    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
-    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
-    /// </ul>
-    /// <p> <b>LOWERCASE</b> </p>
-    /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
-    /// <p> <b>URL_DECODE</b> </p>
-    /// <p>Use this option to decode a URL-encoded value.</p>
-    /// <p> <b>NONE</b> </p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p> 
+    /// <p>You can only specify a single type of TextTransformation.</p> 
+    /// <p> <b>CMD_LINE</b> </p> 
+    /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p> 
+    /// <ul> 
+    /// <li> <p>Delete the following characters: \ " ' ^</p> </li> 
+    /// <li> <p>Delete spaces before the following characters: / (</p> </li> 
+    /// <li> <p>Replace the following characters with a space: , ;</p> </li> 
+    /// <li> <p>Replace multiple spaces with one space</p> </li> 
+    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> 
+    /// </ul> 
+    /// <p> <b>COMPRESS_WHITE_SPACE</b> </p> 
+    /// <p>Use this option to replace the following characters with a space character (decimal 32):</p> 
+    /// <ul> 
+    /// <li> <p>\f, formfeed, decimal 12</p> </li> 
+    /// <li> <p>\t, tab, decimal 9</p> </li> 
+    /// <li> <p>\n, newline, decimal 10</p> </li> 
+    /// <li> <p>\r, carriage return, decimal 13</p> </li> 
+    /// <li> <p>\v, vertical tab, decimal 11</p> </li> 
+    /// <li> <p>non-breaking space, decimal 160</p> </li> 
+    /// </ul> 
+    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p> 
+    /// <p> <b>HTML_ENTITY_DECODE</b> </p> 
+    /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p> 
+    /// <ul> 
+    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li> 
+    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li> 
+    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li> 
+    /// </ul> 
+    /// <p> <b>LOWERCASE</b> </p> 
+    /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p> 
+    /// <p> <b>URL_DECODE</b> </p> 
+    /// <p>Use this option to decode a URL-encoded value.</p> 
+    /// <p> <b>NONE</b> </p> 
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
     #[doc(hidden)]
     pub text_transformation: std::option::Option<crate::model::TextTransformation>,
 }
 impl SqlInjectionMatchTuple {
     /// <p>Specifies where in a web request to look for snippets of malicious SQL code.</p>
-    pub fn field_to_match(&self) -> std::option::Option<&crate::model::FieldToMatch> {
+    pub fn field_to_match(&self) -> std::option::Option<& crate::model::FieldToMatch> {
         self.field_to_match.as_ref()
     }
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
-    /// <p>You can only specify a single type of TextTransformation.</p>
-    /// <p> <b>CMD_LINE</b> </p>
-    /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
-    /// <ul>
-    /// <li> <p>Delete the following characters: \ " ' ^</p> </li>
-    /// <li> <p>Delete spaces before the following characters: / (</p> </li>
-    /// <li> <p>Replace the following characters with a space: , ;</p> </li>
-    /// <li> <p>Replace multiple spaces with one space</p> </li>
-    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
-    /// </ul>
-    /// <p> <b>COMPRESS_WHITE_SPACE</b> </p>
-    /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
-    /// <ul>
-    /// <li> <p>\f, formfeed, decimal 12</p> </li>
-    /// <li> <p>\t, tab, decimal 9</p> </li>
-    /// <li> <p>\n, newline, decimal 10</p> </li>
-    /// <li> <p>\r, carriage return, decimal 13</p> </li>
-    /// <li> <p>\v, vertical tab, decimal 11</p> </li>
-    /// <li> <p>non-breaking space, decimal 160</p> </li>
-    /// </ul>
-    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
-    /// <p> <b>HTML_ENTITY_DECODE</b> </p>
-    /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
-    /// <ul>
-    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
-    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
-    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
-    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
-    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
-    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
-    /// </ul>
-    /// <p> <b>LOWERCASE</b> </p>
-    /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
-    /// <p> <b>URL_DECODE</b> </p>
-    /// <p>Use this option to decode a URL-encoded value.</p>
-    /// <p> <b>NONE</b> </p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p> 
+    /// <p>You can only specify a single type of TextTransformation.</p> 
+    /// <p> <b>CMD_LINE</b> </p> 
+    /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p> 
+    /// <ul> 
+    /// <li> <p>Delete the following characters: \ " ' ^</p> </li> 
+    /// <li> <p>Delete spaces before the following characters: / (</p> </li> 
+    /// <li> <p>Replace the following characters with a space: , ;</p> </li> 
+    /// <li> <p>Replace multiple spaces with one space</p> </li> 
+    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> 
+    /// </ul> 
+    /// <p> <b>COMPRESS_WHITE_SPACE</b> </p> 
+    /// <p>Use this option to replace the following characters with a space character (decimal 32):</p> 
+    /// <ul> 
+    /// <li> <p>\f, formfeed, decimal 12</p> </li> 
+    /// <li> <p>\t, tab, decimal 9</p> </li> 
+    /// <li> <p>\n, newline, decimal 10</p> </li> 
+    /// <li> <p>\r, carriage return, decimal 13</p> </li> 
+    /// <li> <p>\v, vertical tab, decimal 11</p> </li> 
+    /// <li> <p>non-breaking space, decimal 160</p> </li> 
+    /// </ul> 
+    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p> 
+    /// <p> <b>HTML_ENTITY_DECODE</b> </p> 
+    /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p> 
+    /// <ul> 
+    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li> 
+    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li> 
+    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li> 
+    /// </ul> 
+    /// <p> <b>LOWERCASE</b> </p> 
+    /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p> 
+    /// <p> <b>URL_DECODE</b> </p> 
+    /// <p>Use this option to decode a URL-encoded value.</p> 
+    /// <p> <b>NONE</b> </p> 
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    pub fn text_transformation(&self) -> std::option::Option<&crate::model::TextTransformation> {
+    pub fn text_transformation(&self) -> std::option::Option<& crate::model::TextTransformation> {
         self.text_transformation.as_ref()
     }
 }
 /// See [`SqlInjectionMatchTuple`](crate::model::SqlInjectionMatchTuple).
 pub mod sql_injection_match_tuple {
-
+    
     /// A builder for [`SqlInjectionMatchTuple`](crate::model::SqlInjectionMatchTuple).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2038,108 +1907,104 @@ pub mod sql_injection_match_tuple {
             self
         }
         /// <p>Specifies where in a web request to look for snippets of malicious SQL code.</p>
-        pub fn set_field_to_match(
-            mut self,
-            input: std::option::Option<crate::model::FieldToMatch>,
-        ) -> Self {
-            self.field_to_match = input;
-            self
+        pub fn set_field_to_match(mut self, input: std::option::Option<crate::model::FieldToMatch>) -> Self {
+            self.field_to_match = input; self
         }
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
-        /// <p>You can only specify a single type of TextTransformation.</p>
-        /// <p> <b>CMD_LINE</b> </p>
-        /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
-        /// <ul>
-        /// <li> <p>Delete the following characters: \ " ' ^</p> </li>
-        /// <li> <p>Delete spaces before the following characters: / (</p> </li>
-        /// <li> <p>Replace the following characters with a space: , ;</p> </li>
-        /// <li> <p>Replace multiple spaces with one space</p> </li>
-        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
-        /// </ul>
-        /// <p> <b>COMPRESS_WHITE_SPACE</b> </p>
-        /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
-        /// <ul>
-        /// <li> <p>\f, formfeed, decimal 12</p> </li>
-        /// <li> <p>\t, tab, decimal 9</p> </li>
-        /// <li> <p>\n, newline, decimal 10</p> </li>
-        /// <li> <p>\r, carriage return, decimal 13</p> </li>
-        /// <li> <p>\v, vertical tab, decimal 11</p> </li>
-        /// <li> <p>non-breaking space, decimal 160</p> </li>
-        /// </ul>
-        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
-        /// <p> <b>HTML_ENTITY_DECODE</b> </p>
-        /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
-        /// <ul>
-        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
-        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
-        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
-        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
-        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
-        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
-        /// </ul>
-        /// <p> <b>LOWERCASE</b> </p>
-        /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
-        /// <p> <b>URL_DECODE</b> </p>
-        /// <p>Use this option to decode a URL-encoded value.</p>
-        /// <p> <b>NONE</b> </p>
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p> 
+        /// <p>You can only specify a single type of TextTransformation.</p> 
+        /// <p> <b>CMD_LINE</b> </p> 
+        /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p> 
+        /// <ul> 
+        /// <li> <p>Delete the following characters: \ " ' ^</p> </li> 
+        /// <li> <p>Delete spaces before the following characters: / (</p> </li> 
+        /// <li> <p>Replace the following characters with a space: , ;</p> </li> 
+        /// <li> <p>Replace multiple spaces with one space</p> </li> 
+        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> 
+        /// </ul> 
+        /// <p> <b>COMPRESS_WHITE_SPACE</b> </p> 
+        /// <p>Use this option to replace the following characters with a space character (decimal 32):</p> 
+        /// <ul> 
+        /// <li> <p>\f, formfeed, decimal 12</p> </li> 
+        /// <li> <p>\t, tab, decimal 9</p> </li> 
+        /// <li> <p>\n, newline, decimal 10</p> </li> 
+        /// <li> <p>\r, carriage return, decimal 13</p> </li> 
+        /// <li> <p>\v, vertical tab, decimal 11</p> </li> 
+        /// <li> <p>non-breaking space, decimal 160</p> </li> 
+        /// </ul> 
+        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p> 
+        /// <p> <b>HTML_ENTITY_DECODE</b> </p> 
+        /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p> 
+        /// <ul> 
+        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li> 
+        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li> 
+        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li> 
+        /// </ul> 
+        /// <p> <b>LOWERCASE</b> </p> 
+        /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p> 
+        /// <p> <b>URL_DECODE</b> </p> 
+        /// <p>Use this option to decode a URL-encoded value.</p> 
+        /// <p> <b>NONE</b> </p> 
         /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
         pub fn text_transformation(mut self, input: crate::model::TextTransformation) -> Self {
             self.text_transformation = Some(input);
             self
         }
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
-        /// <p>You can only specify a single type of TextTransformation.</p>
-        /// <p> <b>CMD_LINE</b> </p>
-        /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
-        /// <ul>
-        /// <li> <p>Delete the following characters: \ " ' ^</p> </li>
-        /// <li> <p>Delete spaces before the following characters: / (</p> </li>
-        /// <li> <p>Replace the following characters with a space: , ;</p> </li>
-        /// <li> <p>Replace multiple spaces with one space</p> </li>
-        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
-        /// </ul>
-        /// <p> <b>COMPRESS_WHITE_SPACE</b> </p>
-        /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
-        /// <ul>
-        /// <li> <p>\f, formfeed, decimal 12</p> </li>
-        /// <li> <p>\t, tab, decimal 9</p> </li>
-        /// <li> <p>\n, newline, decimal 10</p> </li>
-        /// <li> <p>\r, carriage return, decimal 13</p> </li>
-        /// <li> <p>\v, vertical tab, decimal 11</p> </li>
-        /// <li> <p>non-breaking space, decimal 160</p> </li>
-        /// </ul>
-        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
-        /// <p> <b>HTML_ENTITY_DECODE</b> </p>
-        /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
-        /// <ul>
-        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
-        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
-        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
-        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
-        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
-        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
-        /// </ul>
-        /// <p> <b>LOWERCASE</b> </p>
-        /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
-        /// <p> <b>URL_DECODE</b> </p>
-        /// <p>Use this option to decode a URL-encoded value.</p>
-        /// <p> <b>NONE</b> </p>
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p> 
+        /// <p>You can only specify a single type of TextTransformation.</p> 
+        /// <p> <b>CMD_LINE</b> </p> 
+        /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p> 
+        /// <ul> 
+        /// <li> <p>Delete the following characters: \ " ' ^</p> </li> 
+        /// <li> <p>Delete spaces before the following characters: / (</p> </li> 
+        /// <li> <p>Replace the following characters with a space: , ;</p> </li> 
+        /// <li> <p>Replace multiple spaces with one space</p> </li> 
+        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> 
+        /// </ul> 
+        /// <p> <b>COMPRESS_WHITE_SPACE</b> </p> 
+        /// <p>Use this option to replace the following characters with a space character (decimal 32):</p> 
+        /// <ul> 
+        /// <li> <p>\f, formfeed, decimal 12</p> </li> 
+        /// <li> <p>\t, tab, decimal 9</p> </li> 
+        /// <li> <p>\n, newline, decimal 10</p> </li> 
+        /// <li> <p>\r, carriage return, decimal 13</p> </li> 
+        /// <li> <p>\v, vertical tab, decimal 11</p> </li> 
+        /// <li> <p>non-breaking space, decimal 160</p> </li> 
+        /// </ul> 
+        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p> 
+        /// <p> <b>HTML_ENTITY_DECODE</b> </p> 
+        /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p> 
+        /// <ul> 
+        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li> 
+        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li> 
+        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li> 
+        /// </ul> 
+        /// <p> <b>LOWERCASE</b> </p> 
+        /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p> 
+        /// <p> <b>URL_DECODE</b> </p> 
+        /// <p>Use this option to decode a URL-encoded value.</p> 
+        /// <p> <b>NONE</b> </p> 
         /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-        pub fn set_text_transformation(
-            mut self,
-            input: std::option::Option<crate::model::TextTransformation>,
-        ) -> Self {
-            self.text_transformation = input;
-            self
+        pub fn set_text_transformation(mut self, input: std::option::Option<crate::model::TextTransformation>) -> Self {
+            self.text_transformation = input; self
         }
         /// Consumes the builder and constructs a [`SqlInjectionMatchTuple`](crate::model::SqlInjectionMatchTuple).
         pub fn build(self) -> crate::model::SqlInjectionMatchTuple {
             crate::model::SqlInjectionMatchTuple {
-                field_to_match: self.field_to_match,
-                text_transformation: self.text_transformation,
+                field_to_match: self.field_to_match
+                ,
+                text_transformation: self.text_transformation
+                ,
             }
         }
     }
+    
+    
 }
 impl SqlInjectionMatchTuple {
     /// Creates a new builder-style object to manufacture [`SqlInjectionMatchTuple`](crate::model::SqlInjectionMatchTuple).
@@ -2148,14 +2013,14 @@ impl SqlInjectionMatchTuple {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Specifies the part of a web request that you want to inspect the size of and indicates whether you want to add the specification to a <code>SizeConstraintSet</code> or delete it from a <code>SizeConstraintSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SizeConstraintSetUpdate {
+pub struct SizeConstraintSetUpdate  {
     /// <p>Specify <code>INSERT</code> to add a <code>SizeConstraintSetUpdate</code> to a <code>SizeConstraintSet</code>. Use <code>DELETE</code> to remove a <code>SizeConstraintSetUpdate</code> from a <code>SizeConstraintSet</code>.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::ChangeAction>,
@@ -2165,17 +2030,17 @@ pub struct SizeConstraintSetUpdate {
 }
 impl SizeConstraintSetUpdate {
     /// <p>Specify <code>INSERT</code> to add a <code>SizeConstraintSetUpdate</code> to a <code>SizeConstraintSet</code>. Use <code>DELETE</code> to remove a <code>SizeConstraintSetUpdate</code> from a <code>SizeConstraintSet</code>.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::ChangeAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::ChangeAction> {
         self.action.as_ref()
     }
     /// <p>Specifies a constraint on the size of a part of the web request. AWS WAF uses the <code>Size</code>, <code>ComparisonOperator</code>, and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
-    pub fn size_constraint(&self) -> std::option::Option<&crate::model::SizeConstraint> {
+    pub fn size_constraint(&self) -> std::option::Option<& crate::model::SizeConstraint> {
         self.size_constraint.as_ref()
     }
 }
 /// See [`SizeConstraintSetUpdate`](crate::model::SizeConstraintSetUpdate).
 pub mod size_constraint_set_update {
-
+    
     /// A builder for [`SizeConstraintSetUpdate`](crate::model::SizeConstraintSetUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2189,12 +2054,8 @@ pub mod size_constraint_set_update {
             self
         }
         /// <p>Specify <code>INSERT</code> to add a <code>SizeConstraintSetUpdate</code> to a <code>SizeConstraintSet</code>. Use <code>DELETE</code> to remove a <code>SizeConstraintSetUpdate</code> from a <code>SizeConstraintSet</code>.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::ChangeAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::ChangeAction>) -> Self {
+            self.action = input; self
         }
         /// <p>Specifies a constraint on the size of a part of the web request. AWS WAF uses the <code>Size</code>, <code>ComparisonOperator</code>, and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
         pub fn size_constraint(mut self, input: crate::model::SizeConstraint) -> Self {
@@ -2202,21 +2063,21 @@ pub mod size_constraint_set_update {
             self
         }
         /// <p>Specifies a constraint on the size of a part of the web request. AWS WAF uses the <code>Size</code>, <code>ComparisonOperator</code>, and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
-        pub fn set_size_constraint(
-            mut self,
-            input: std::option::Option<crate::model::SizeConstraint>,
-        ) -> Self {
-            self.size_constraint = input;
-            self
+        pub fn set_size_constraint(mut self, input: std::option::Option<crate::model::SizeConstraint>) -> Self {
+            self.size_constraint = input; self
         }
         /// Consumes the builder and constructs a [`SizeConstraintSetUpdate`](crate::model::SizeConstraintSetUpdate).
         pub fn build(self) -> crate::model::SizeConstraintSetUpdate {
             crate::model::SizeConstraintSetUpdate {
-                action: self.action,
-                size_constraint: self.size_constraint,
+                action: self.action
+                ,
+                size_constraint: self.size_constraint
+                ,
             }
         }
     }
+    
+    
 }
 impl SizeConstraintSetUpdate {
     /// Creates a new builder-style object to manufacture [`SizeConstraintSetUpdate`](crate::model::SizeConstraintSetUpdate).
@@ -2225,132 +2086,132 @@ impl SizeConstraintSetUpdate {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Specifies a constraint on the size of a part of the web request. AWS WAF uses the <code>Size</code>, <code>ComparisonOperator</code>, and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SizeConstraint {
+pub struct SizeConstraint  {
     /// <p>Specifies where in a web request to look for the size constraint.</p>
     #[doc(hidden)]
     pub field_to_match: std::option::Option<crate::model::FieldToMatch>,
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
-    /// <p>You can only specify a single type of TextTransformation.</p>
-    /// <p>Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you must choose <code>NONE</code> for <code>TextTransformation</code> because CloudFront forwards only the first 8192 bytes for inspection. </p>
-    /// <p> <b>NONE</b> </p>
-    /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    /// <p> <b>CMD_LINE</b> </p>
-    /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
-    /// <ul>
-    /// <li> <p>Delete the following characters: \ " ' ^</p> </li>
-    /// <li> <p>Delete spaces before the following characters: / (</p> </li>
-    /// <li> <p>Replace the following characters with a space: , ;</p> </li>
-    /// <li> <p>Replace multiple spaces with one space</p> </li>
-    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
-    /// </ul>
-    /// <p> <b>COMPRESS_WHITE_SPACE</b> </p>
-    /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
-    /// <ul>
-    /// <li> <p>\f, formfeed, decimal 12</p> </li>
-    /// <li> <p>\t, tab, decimal 9</p> </li>
-    /// <li> <p>\n, newline, decimal 10</p> </li>
-    /// <li> <p>\r, carriage return, decimal 13</p> </li>
-    /// <li> <p>\v, vertical tab, decimal 11</p> </li>
-    /// <li> <p>non-breaking space, decimal 160</p> </li>
-    /// </ul>
-    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
-    /// <p> <b>HTML_ENTITY_DECODE</b> </p>
-    /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
-    /// <ul>
-    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
-    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
-    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
-    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
-    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
-    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
-    /// </ul>
-    /// <p> <b>LOWERCASE</b> </p>
-    /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
-    /// <p> <b>URL_DECODE</b> </p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p> 
+    /// <p>You can only specify a single type of TextTransformation.</p> 
+    /// <p>Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you must choose <code>NONE</code> for <code>TextTransformation</code> because CloudFront forwards only the first 8192 bytes for inspection. </p> 
+    /// <p> <b>NONE</b> </p> 
+    /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p> 
+    /// <p> <b>CMD_LINE</b> </p> 
+    /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p> 
+    /// <ul> 
+    /// <li> <p>Delete the following characters: \ " ' ^</p> </li> 
+    /// <li> <p>Delete spaces before the following characters: / (</p> </li> 
+    /// <li> <p>Replace the following characters with a space: , ;</p> </li> 
+    /// <li> <p>Replace multiple spaces with one space</p> </li> 
+    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> 
+    /// </ul> 
+    /// <p> <b>COMPRESS_WHITE_SPACE</b> </p> 
+    /// <p>Use this option to replace the following characters with a space character (decimal 32):</p> 
+    /// <ul> 
+    /// <li> <p>\f, formfeed, decimal 12</p> </li> 
+    /// <li> <p>\t, tab, decimal 9</p> </li> 
+    /// <li> <p>\n, newline, decimal 10</p> </li> 
+    /// <li> <p>\r, carriage return, decimal 13</p> </li> 
+    /// <li> <p>\v, vertical tab, decimal 11</p> </li> 
+    /// <li> <p>non-breaking space, decimal 160</p> </li> 
+    /// </ul> 
+    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p> 
+    /// <p> <b>HTML_ENTITY_DECODE</b> </p> 
+    /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p> 
+    /// <ul> 
+    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li> 
+    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li> 
+    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li> 
+    /// </ul> 
+    /// <p> <b>LOWERCASE</b> </p> 
+    /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p> 
+    /// <p> <b>URL_DECODE</b> </p> 
     /// <p>Use this option to decode a URL-encoded value.</p>
     #[doc(hidden)]
     pub text_transformation: std::option::Option<crate::model::TextTransformation>,
-    /// <p>The type of comparison you want AWS WAF to perform. AWS WAF uses this in combination with the provided <code>Size</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
-    /// <p> <b>EQ</b>: Used to test if the <code>Size</code> is equal to the size of the <code>FieldToMatch</code> </p>
-    /// <p> <b>NE</b>: Used to test if the <code>Size</code> is not equal to the size of the <code>FieldToMatch</code> </p>
-    /// <p> <b>LE</b>: Used to test if the <code>Size</code> is less than or equal to the size of the <code>FieldToMatch</code> </p>
-    /// <p> <b>LT</b>: Used to test if the <code>Size</code> is strictly less than the size of the <code>FieldToMatch</code> </p>
-    /// <p> <b>GE</b>: Used to test if the <code>Size</code> is greater than or equal to the size of the <code>FieldToMatch</code> </p>
+    /// <p>The type of comparison you want AWS WAF to perform. AWS WAF uses this in combination with the provided <code>Size</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p> 
+    /// <p> <b>EQ</b>: Used to test if the <code>Size</code> is equal to the size of the <code>FieldToMatch</code> </p> 
+    /// <p> <b>NE</b>: Used to test if the <code>Size</code> is not equal to the size of the <code>FieldToMatch</code> </p> 
+    /// <p> <b>LE</b>: Used to test if the <code>Size</code> is less than or equal to the size of the <code>FieldToMatch</code> </p> 
+    /// <p> <b>LT</b>: Used to test if the <code>Size</code> is strictly less than the size of the <code>FieldToMatch</code> </p> 
+    /// <p> <b>GE</b>: Used to test if the <code>Size</code> is greater than or equal to the size of the <code>FieldToMatch</code> </p> 
     /// <p> <b>GT</b>: Used to test if the <code>Size</code> is strictly greater than the size of the <code>FieldToMatch</code> </p>
     #[doc(hidden)]
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
-    /// <p>The size in bytes that you want AWS WAF to compare against the size of the specified <code>FieldToMatch</code>. AWS WAF uses this in combination with <code>ComparisonOperator</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
-    /// <p>Valid values for size are 0 - 21474836480 bytes (0 - 20 GB).</p>
+    /// <p>The size in bytes that you want AWS WAF to compare against the size of the specified <code>FieldToMatch</code>. AWS WAF uses this in combination with <code>ComparisonOperator</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p> 
+    /// <p>Valid values for size are 0 - 21474836480 bytes (0 - 20 GB).</p> 
     /// <p>If you specify <code>URI</code> for the value of <code>Type</code>, the / in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
     #[doc(hidden)]
     pub size: i64,
 }
 impl SizeConstraint {
     /// <p>Specifies where in a web request to look for the size constraint.</p>
-    pub fn field_to_match(&self) -> std::option::Option<&crate::model::FieldToMatch> {
+    pub fn field_to_match(&self) -> std::option::Option<& crate::model::FieldToMatch> {
         self.field_to_match.as_ref()
     }
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
-    /// <p>You can only specify a single type of TextTransformation.</p>
-    /// <p>Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you must choose <code>NONE</code> for <code>TextTransformation</code> because CloudFront forwards only the first 8192 bytes for inspection. </p>
-    /// <p> <b>NONE</b> </p>
-    /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    /// <p> <b>CMD_LINE</b> </p>
-    /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
-    /// <ul>
-    /// <li> <p>Delete the following characters: \ " ' ^</p> </li>
-    /// <li> <p>Delete spaces before the following characters: / (</p> </li>
-    /// <li> <p>Replace the following characters with a space: , ;</p> </li>
-    /// <li> <p>Replace multiple spaces with one space</p> </li>
-    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
-    /// </ul>
-    /// <p> <b>COMPRESS_WHITE_SPACE</b> </p>
-    /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
-    /// <ul>
-    /// <li> <p>\f, formfeed, decimal 12</p> </li>
-    /// <li> <p>\t, tab, decimal 9</p> </li>
-    /// <li> <p>\n, newline, decimal 10</p> </li>
-    /// <li> <p>\r, carriage return, decimal 13</p> </li>
-    /// <li> <p>\v, vertical tab, decimal 11</p> </li>
-    /// <li> <p>non-breaking space, decimal 160</p> </li>
-    /// </ul>
-    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
-    /// <p> <b>HTML_ENTITY_DECODE</b> </p>
-    /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
-    /// <ul>
-    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
-    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
-    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
-    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
-    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
-    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
-    /// </ul>
-    /// <p> <b>LOWERCASE</b> </p>
-    /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
-    /// <p> <b>URL_DECODE</b> </p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p> 
+    /// <p>You can only specify a single type of TextTransformation.</p> 
+    /// <p>Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you must choose <code>NONE</code> for <code>TextTransformation</code> because CloudFront forwards only the first 8192 bytes for inspection. </p> 
+    /// <p> <b>NONE</b> </p> 
+    /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p> 
+    /// <p> <b>CMD_LINE</b> </p> 
+    /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p> 
+    /// <ul> 
+    /// <li> <p>Delete the following characters: \ " ' ^</p> </li> 
+    /// <li> <p>Delete spaces before the following characters: / (</p> </li> 
+    /// <li> <p>Replace the following characters with a space: , ;</p> </li> 
+    /// <li> <p>Replace multiple spaces with one space</p> </li> 
+    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> 
+    /// </ul> 
+    /// <p> <b>COMPRESS_WHITE_SPACE</b> </p> 
+    /// <p>Use this option to replace the following characters with a space character (decimal 32):</p> 
+    /// <ul> 
+    /// <li> <p>\f, formfeed, decimal 12</p> </li> 
+    /// <li> <p>\t, tab, decimal 9</p> </li> 
+    /// <li> <p>\n, newline, decimal 10</p> </li> 
+    /// <li> <p>\r, carriage return, decimal 13</p> </li> 
+    /// <li> <p>\v, vertical tab, decimal 11</p> </li> 
+    /// <li> <p>non-breaking space, decimal 160</p> </li> 
+    /// </ul> 
+    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p> 
+    /// <p> <b>HTML_ENTITY_DECODE</b> </p> 
+    /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p> 
+    /// <ul> 
+    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li> 
+    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li> 
+    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li> 
+    /// </ul> 
+    /// <p> <b>LOWERCASE</b> </p> 
+    /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p> 
+    /// <p> <b>URL_DECODE</b> </p> 
     /// <p>Use this option to decode a URL-encoded value.</p>
-    pub fn text_transformation(&self) -> std::option::Option<&crate::model::TextTransformation> {
+    pub fn text_transformation(&self) -> std::option::Option<& crate::model::TextTransformation> {
         self.text_transformation.as_ref()
     }
-    /// <p>The type of comparison you want AWS WAF to perform. AWS WAF uses this in combination with the provided <code>Size</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
-    /// <p> <b>EQ</b>: Used to test if the <code>Size</code> is equal to the size of the <code>FieldToMatch</code> </p>
-    /// <p> <b>NE</b>: Used to test if the <code>Size</code> is not equal to the size of the <code>FieldToMatch</code> </p>
-    /// <p> <b>LE</b>: Used to test if the <code>Size</code> is less than or equal to the size of the <code>FieldToMatch</code> </p>
-    /// <p> <b>LT</b>: Used to test if the <code>Size</code> is strictly less than the size of the <code>FieldToMatch</code> </p>
-    /// <p> <b>GE</b>: Used to test if the <code>Size</code> is greater than or equal to the size of the <code>FieldToMatch</code> </p>
+    /// <p>The type of comparison you want AWS WAF to perform. AWS WAF uses this in combination with the provided <code>Size</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p> 
+    /// <p> <b>EQ</b>: Used to test if the <code>Size</code> is equal to the size of the <code>FieldToMatch</code> </p> 
+    /// <p> <b>NE</b>: Used to test if the <code>Size</code> is not equal to the size of the <code>FieldToMatch</code> </p> 
+    /// <p> <b>LE</b>: Used to test if the <code>Size</code> is less than or equal to the size of the <code>FieldToMatch</code> </p> 
+    /// <p> <b>LT</b>: Used to test if the <code>Size</code> is strictly less than the size of the <code>FieldToMatch</code> </p> 
+    /// <p> <b>GE</b>: Used to test if the <code>Size</code> is greater than or equal to the size of the <code>FieldToMatch</code> </p> 
     /// <p> <b>GT</b>: Used to test if the <code>Size</code> is strictly greater than the size of the <code>FieldToMatch</code> </p>
-    pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> std::option::Option<& crate::model::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
-    /// <p>The size in bytes that you want AWS WAF to compare against the size of the specified <code>FieldToMatch</code>. AWS WAF uses this in combination with <code>ComparisonOperator</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
-    /// <p>Valid values for size are 0 - 21474836480 bytes (0 - 20 GB).</p>
+    /// <p>The size in bytes that you want AWS WAF to compare against the size of the specified <code>FieldToMatch</code>. AWS WAF uses this in combination with <code>ComparisonOperator</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p> 
+    /// <p>Valid values for size are 0 - 21474836480 bytes (0 - 20 GB).</p> 
     /// <p>If you specify <code>URI</code> for the value of <code>Type</code>, the / in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
     pub fn size(&self) -> i64 {
         self.size
@@ -2358,7 +2219,7 @@ impl SizeConstraint {
 }
 /// See [`SizeConstraint`](crate::model::SizeConstraint).
 pub mod size_constraint {
-
+    
     /// A builder for [`SizeConstraint`](crate::model::SizeConstraint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2374,151 +2235,145 @@ pub mod size_constraint {
             self
         }
         /// <p>Specifies where in a web request to look for the size constraint.</p>
-        pub fn set_field_to_match(
-            mut self,
-            input: std::option::Option<crate::model::FieldToMatch>,
-        ) -> Self {
-            self.field_to_match = input;
-            self
+        pub fn set_field_to_match(mut self, input: std::option::Option<crate::model::FieldToMatch>) -> Self {
+            self.field_to_match = input; self
         }
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
-        /// <p>You can only specify a single type of TextTransformation.</p>
-        /// <p>Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you must choose <code>NONE</code> for <code>TextTransformation</code> because CloudFront forwards only the first 8192 bytes for inspection. </p>
-        /// <p> <b>NONE</b> </p>
-        /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-        /// <p> <b>CMD_LINE</b> </p>
-        /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
-        /// <ul>
-        /// <li> <p>Delete the following characters: \ " ' ^</p> </li>
-        /// <li> <p>Delete spaces before the following characters: / (</p> </li>
-        /// <li> <p>Replace the following characters with a space: , ;</p> </li>
-        /// <li> <p>Replace multiple spaces with one space</p> </li>
-        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
-        /// </ul>
-        /// <p> <b>COMPRESS_WHITE_SPACE</b> </p>
-        /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
-        /// <ul>
-        /// <li> <p>\f, formfeed, decimal 12</p> </li>
-        /// <li> <p>\t, tab, decimal 9</p> </li>
-        /// <li> <p>\n, newline, decimal 10</p> </li>
-        /// <li> <p>\r, carriage return, decimal 13</p> </li>
-        /// <li> <p>\v, vertical tab, decimal 11</p> </li>
-        /// <li> <p>non-breaking space, decimal 160</p> </li>
-        /// </ul>
-        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
-        /// <p> <b>HTML_ENTITY_DECODE</b> </p>
-        /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
-        /// <ul>
-        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
-        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
-        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
-        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
-        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
-        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
-        /// </ul>
-        /// <p> <b>LOWERCASE</b> </p>
-        /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
-        /// <p> <b>URL_DECODE</b> </p>
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p> 
+        /// <p>You can only specify a single type of TextTransformation.</p> 
+        /// <p>Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you must choose <code>NONE</code> for <code>TextTransformation</code> because CloudFront forwards only the first 8192 bytes for inspection. </p> 
+        /// <p> <b>NONE</b> </p> 
+        /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p> 
+        /// <p> <b>CMD_LINE</b> </p> 
+        /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p> 
+        /// <ul> 
+        /// <li> <p>Delete the following characters: \ " ' ^</p> </li> 
+        /// <li> <p>Delete spaces before the following characters: / (</p> </li> 
+        /// <li> <p>Replace the following characters with a space: , ;</p> </li> 
+        /// <li> <p>Replace multiple spaces with one space</p> </li> 
+        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> 
+        /// </ul> 
+        /// <p> <b>COMPRESS_WHITE_SPACE</b> </p> 
+        /// <p>Use this option to replace the following characters with a space character (decimal 32):</p> 
+        /// <ul> 
+        /// <li> <p>\f, formfeed, decimal 12</p> </li> 
+        /// <li> <p>\t, tab, decimal 9</p> </li> 
+        /// <li> <p>\n, newline, decimal 10</p> </li> 
+        /// <li> <p>\r, carriage return, decimal 13</p> </li> 
+        /// <li> <p>\v, vertical tab, decimal 11</p> </li> 
+        /// <li> <p>non-breaking space, decimal 160</p> </li> 
+        /// </ul> 
+        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p> 
+        /// <p> <b>HTML_ENTITY_DECODE</b> </p> 
+        /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p> 
+        /// <ul> 
+        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li> 
+        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li> 
+        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li> 
+        /// </ul> 
+        /// <p> <b>LOWERCASE</b> </p> 
+        /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p> 
+        /// <p> <b>URL_DECODE</b> </p> 
         /// <p>Use this option to decode a URL-encoded value.</p>
         pub fn text_transformation(mut self, input: crate::model::TextTransformation) -> Self {
             self.text_transformation = Some(input);
             self
         }
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
-        /// <p>You can only specify a single type of TextTransformation.</p>
-        /// <p>Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you must choose <code>NONE</code> for <code>TextTransformation</code> because CloudFront forwards only the first 8192 bytes for inspection. </p>
-        /// <p> <b>NONE</b> </p>
-        /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-        /// <p> <b>CMD_LINE</b> </p>
-        /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
-        /// <ul>
-        /// <li> <p>Delete the following characters: \ " ' ^</p> </li>
-        /// <li> <p>Delete spaces before the following characters: / (</p> </li>
-        /// <li> <p>Replace the following characters with a space: , ;</p> </li>
-        /// <li> <p>Replace multiple spaces with one space</p> </li>
-        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
-        /// </ul>
-        /// <p> <b>COMPRESS_WHITE_SPACE</b> </p>
-        /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
-        /// <ul>
-        /// <li> <p>\f, formfeed, decimal 12</p> </li>
-        /// <li> <p>\t, tab, decimal 9</p> </li>
-        /// <li> <p>\n, newline, decimal 10</p> </li>
-        /// <li> <p>\r, carriage return, decimal 13</p> </li>
-        /// <li> <p>\v, vertical tab, decimal 11</p> </li>
-        /// <li> <p>non-breaking space, decimal 160</p> </li>
-        /// </ul>
-        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
-        /// <p> <b>HTML_ENTITY_DECODE</b> </p>
-        /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
-        /// <ul>
-        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
-        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
-        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
-        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
-        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
-        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
-        /// </ul>
-        /// <p> <b>LOWERCASE</b> </p>
-        /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
-        /// <p> <b>URL_DECODE</b> </p>
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p> 
+        /// <p>You can only specify a single type of TextTransformation.</p> 
+        /// <p>Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you must choose <code>NONE</code> for <code>TextTransformation</code> because CloudFront forwards only the first 8192 bytes for inspection. </p> 
+        /// <p> <b>NONE</b> </p> 
+        /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p> 
+        /// <p> <b>CMD_LINE</b> </p> 
+        /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p> 
+        /// <ul> 
+        /// <li> <p>Delete the following characters: \ " ' ^</p> </li> 
+        /// <li> <p>Delete spaces before the following characters: / (</p> </li> 
+        /// <li> <p>Replace the following characters with a space: , ;</p> </li> 
+        /// <li> <p>Replace multiple spaces with one space</p> </li> 
+        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> 
+        /// </ul> 
+        /// <p> <b>COMPRESS_WHITE_SPACE</b> </p> 
+        /// <p>Use this option to replace the following characters with a space character (decimal 32):</p> 
+        /// <ul> 
+        /// <li> <p>\f, formfeed, decimal 12</p> </li> 
+        /// <li> <p>\t, tab, decimal 9</p> </li> 
+        /// <li> <p>\n, newline, decimal 10</p> </li> 
+        /// <li> <p>\r, carriage return, decimal 13</p> </li> 
+        /// <li> <p>\v, vertical tab, decimal 11</p> </li> 
+        /// <li> <p>non-breaking space, decimal 160</p> </li> 
+        /// </ul> 
+        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p> 
+        /// <p> <b>HTML_ENTITY_DECODE</b> </p> 
+        /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p> 
+        /// <ul> 
+        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li> 
+        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li> 
+        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li> 
+        /// </ul> 
+        /// <p> <b>LOWERCASE</b> </p> 
+        /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p> 
+        /// <p> <b>URL_DECODE</b> </p> 
         /// <p>Use this option to decode a URL-encoded value.</p>
-        pub fn set_text_transformation(
-            mut self,
-            input: std::option::Option<crate::model::TextTransformation>,
-        ) -> Self {
-            self.text_transformation = input;
-            self
+        pub fn set_text_transformation(mut self, input: std::option::Option<crate::model::TextTransformation>) -> Self {
+            self.text_transformation = input; self
         }
-        /// <p>The type of comparison you want AWS WAF to perform. AWS WAF uses this in combination with the provided <code>Size</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
-        /// <p> <b>EQ</b>: Used to test if the <code>Size</code> is equal to the size of the <code>FieldToMatch</code> </p>
-        /// <p> <b>NE</b>: Used to test if the <code>Size</code> is not equal to the size of the <code>FieldToMatch</code> </p>
-        /// <p> <b>LE</b>: Used to test if the <code>Size</code> is less than or equal to the size of the <code>FieldToMatch</code> </p>
-        /// <p> <b>LT</b>: Used to test if the <code>Size</code> is strictly less than the size of the <code>FieldToMatch</code> </p>
-        /// <p> <b>GE</b>: Used to test if the <code>Size</code> is greater than or equal to the size of the <code>FieldToMatch</code> </p>
+        /// <p>The type of comparison you want AWS WAF to perform. AWS WAF uses this in combination with the provided <code>Size</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p> 
+        /// <p> <b>EQ</b>: Used to test if the <code>Size</code> is equal to the size of the <code>FieldToMatch</code> </p> 
+        /// <p> <b>NE</b>: Used to test if the <code>Size</code> is not equal to the size of the <code>FieldToMatch</code> </p> 
+        /// <p> <b>LE</b>: Used to test if the <code>Size</code> is less than or equal to the size of the <code>FieldToMatch</code> </p> 
+        /// <p> <b>LT</b>: Used to test if the <code>Size</code> is strictly less than the size of the <code>FieldToMatch</code> </p> 
+        /// <p> <b>GE</b>: Used to test if the <code>Size</code> is greater than or equal to the size of the <code>FieldToMatch</code> </p> 
         /// <p> <b>GT</b>: Used to test if the <code>Size</code> is strictly greater than the size of the <code>FieldToMatch</code> </p>
         pub fn comparison_operator(mut self, input: crate::model::ComparisonOperator) -> Self {
             self.comparison_operator = Some(input);
             self
         }
-        /// <p>The type of comparison you want AWS WAF to perform. AWS WAF uses this in combination with the provided <code>Size</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
-        /// <p> <b>EQ</b>: Used to test if the <code>Size</code> is equal to the size of the <code>FieldToMatch</code> </p>
-        /// <p> <b>NE</b>: Used to test if the <code>Size</code> is not equal to the size of the <code>FieldToMatch</code> </p>
-        /// <p> <b>LE</b>: Used to test if the <code>Size</code> is less than or equal to the size of the <code>FieldToMatch</code> </p>
-        /// <p> <b>LT</b>: Used to test if the <code>Size</code> is strictly less than the size of the <code>FieldToMatch</code> </p>
-        /// <p> <b>GE</b>: Used to test if the <code>Size</code> is greater than or equal to the size of the <code>FieldToMatch</code> </p>
+        /// <p>The type of comparison you want AWS WAF to perform. AWS WAF uses this in combination with the provided <code>Size</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p> 
+        /// <p> <b>EQ</b>: Used to test if the <code>Size</code> is equal to the size of the <code>FieldToMatch</code> </p> 
+        /// <p> <b>NE</b>: Used to test if the <code>Size</code> is not equal to the size of the <code>FieldToMatch</code> </p> 
+        /// <p> <b>LE</b>: Used to test if the <code>Size</code> is less than or equal to the size of the <code>FieldToMatch</code> </p> 
+        /// <p> <b>LT</b>: Used to test if the <code>Size</code> is strictly less than the size of the <code>FieldToMatch</code> </p> 
+        /// <p> <b>GE</b>: Used to test if the <code>Size</code> is greater than or equal to the size of the <code>FieldToMatch</code> </p> 
         /// <p> <b>GT</b>: Used to test if the <code>Size</code> is strictly greater than the size of the <code>FieldToMatch</code> </p>
-        pub fn set_comparison_operator(
-            mut self,
-            input: std::option::Option<crate::model::ComparisonOperator>,
-        ) -> Self {
-            self.comparison_operator = input;
-            self
+        pub fn set_comparison_operator(mut self, input: std::option::Option<crate::model::ComparisonOperator>) -> Self {
+            self.comparison_operator = input; self
         }
-        /// <p>The size in bytes that you want AWS WAF to compare against the size of the specified <code>FieldToMatch</code>. AWS WAF uses this in combination with <code>ComparisonOperator</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
-        /// <p>Valid values for size are 0 - 21474836480 bytes (0 - 20 GB).</p>
+        /// <p>The size in bytes that you want AWS WAF to compare against the size of the specified <code>FieldToMatch</code>. AWS WAF uses this in combination with <code>ComparisonOperator</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p> 
+        /// <p>Valid values for size are 0 - 21474836480 bytes (0 - 20 GB).</p> 
         /// <p>If you specify <code>URI</code> for the value of <code>Type</code>, the / in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
         pub fn size(mut self, input: i64) -> Self {
             self.size = Some(input);
             self
         }
-        /// <p>The size in bytes that you want AWS WAF to compare against the size of the specified <code>FieldToMatch</code>. AWS WAF uses this in combination with <code>ComparisonOperator</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
-        /// <p>Valid values for size are 0 - 21474836480 bytes (0 - 20 GB).</p>
+        /// <p>The size in bytes that you want AWS WAF to compare against the size of the specified <code>FieldToMatch</code>. AWS WAF uses this in combination with <code>ComparisonOperator</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p> 
+        /// <p>Valid values for size are 0 - 21474836480 bytes (0 - 20 GB).</p> 
         /// <p>If you specify <code>URI</code> for the value of <code>Type</code>, the / in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
         pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.size = input;
-            self
+            self.size = input; self
         }
         /// Consumes the builder and constructs a [`SizeConstraint`](crate::model::SizeConstraint).
         pub fn build(self) -> crate::model::SizeConstraint {
             crate::model::SizeConstraint {
-                field_to_match: self.field_to_match,
-                text_transformation: self.text_transformation,
-                comparison_operator: self.comparison_operator,
-                size: self.size.unwrap_or_default(),
+                field_to_match: self.field_to_match
+                ,
+                text_transformation: self.text_transformation
+                ,
+                comparison_operator: self.comparison_operator
+                ,
+                size: self.size
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl SizeConstraint {
     /// Creates a new builder-style object to manufacture [`SizeConstraint`](crate::model::SizeConstraint).
@@ -2533,9 +2388,9 @@ impl SizeConstraint {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let comparisonoperator = unimplemented!();
 /// match comparisonoperator {
@@ -2561,22 +2416,14 @@ impl SizeConstraint {
 /// Specifically, when `comparisonoperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ComparisonOperator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ComparisonOperator {
     #[allow(missing_docs)] // documentation missing in model
     Eq,
@@ -2591,7 +2438,7 @@ pub enum ComparisonOperator {
     #[allow(missing_docs)] // documentation missing in model
     Ne,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ComparisonOperator {
     fn from(s: &str) -> Self {
@@ -2602,19 +2449,17 @@ impl std::convert::From<&str> for ComparisonOperator {
             "LE" => ComparisonOperator::Le,
             "LT" => ComparisonOperator::Lt,
             "NE" => ComparisonOperator::Ne,
-            other => {
-                ComparisonOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ComparisonOperator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ComparisonOperator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComparisonOperator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ComparisonOperator::from(s))
+                }
+            }
 impl ComparisonOperator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2625,12 +2470,14 @@ impl ComparisonOperator {
             ComparisonOperator::Le => "LE",
             ComparisonOperator::Lt => "LT",
             ComparisonOperator::Ne => "NE",
-            ComparisonOperator::Unknown(value) => value.as_str(),
+            ComparisonOperator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EQ", "GE", "GT", "LE", "LT", "NE"]
+        &[
+            "EQ", "GE", "GT", "LE", "LT", "NE"
+        ]
     }
 }
 impl AsRef<str> for ComparisonOperator {
@@ -2639,14 +2486,14 @@ impl AsRef<str> for ComparisonOperator {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Specifies an <code>ActivatedRule</code> and indicates whether you want to add it to a <code>RuleGroup</code> or delete it from a <code>RuleGroup</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleGroupUpdate {
+pub struct RuleGroupUpdate  {
     /// <p>Specify <code>INSERT</code> to add an <code>ActivatedRule</code> to a <code>RuleGroup</code>. Use <code>DELETE</code> to remove an <code>ActivatedRule</code> from a <code>RuleGroup</code>.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::ChangeAction>,
@@ -2656,17 +2503,17 @@ pub struct RuleGroupUpdate {
 }
 impl RuleGroupUpdate {
     /// <p>Specify <code>INSERT</code> to add an <code>ActivatedRule</code> to a <code>RuleGroup</code>. Use <code>DELETE</code> to remove an <code>ActivatedRule</code> from a <code>RuleGroup</code>.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::ChangeAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::ChangeAction> {
         self.action.as_ref()
     }
     /// <p>The <code>ActivatedRule</code> object specifies a <code>Rule</code> that you want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).</p>
-    pub fn activated_rule(&self) -> std::option::Option<&crate::model::ActivatedRule> {
+    pub fn activated_rule(&self) -> std::option::Option<& crate::model::ActivatedRule> {
         self.activated_rule.as_ref()
     }
 }
 /// See [`RuleGroupUpdate`](crate::model::RuleGroupUpdate).
 pub mod rule_group_update {
-
+    
     /// A builder for [`RuleGroupUpdate`](crate::model::RuleGroupUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2680,12 +2527,8 @@ pub mod rule_group_update {
             self
         }
         /// <p>Specify <code>INSERT</code> to add an <code>ActivatedRule</code> to a <code>RuleGroup</code>. Use <code>DELETE</code> to remove an <code>ActivatedRule</code> from a <code>RuleGroup</code>.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::ChangeAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::ChangeAction>) -> Self {
+            self.action = input; self
         }
         /// <p>The <code>ActivatedRule</code> object specifies a <code>Rule</code> that you want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).</p>
         pub fn activated_rule(mut self, input: crate::model::ActivatedRule) -> Self {
@@ -2693,21 +2536,21 @@ pub mod rule_group_update {
             self
         }
         /// <p>The <code>ActivatedRule</code> object specifies a <code>Rule</code> that you want to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).</p>
-        pub fn set_activated_rule(
-            mut self,
-            input: std::option::Option<crate::model::ActivatedRule>,
-        ) -> Self {
-            self.activated_rule = input;
-            self
+        pub fn set_activated_rule(mut self, input: std::option::Option<crate::model::ActivatedRule>) -> Self {
+            self.activated_rule = input; self
         }
         /// Consumes the builder and constructs a [`RuleGroupUpdate`](crate::model::RuleGroupUpdate).
         pub fn build(self) -> crate::model::RuleGroupUpdate {
             crate::model::RuleGroupUpdate {
-                action: self.action,
-                activated_rule: self.activated_rule,
+                action: self.action
+                ,
+                activated_rule: self.activated_rule
+                ,
             }
         }
     }
+    
+    
 }
 impl RuleGroupUpdate {
     /// Creates a new builder-style object to manufacture [`RuleGroupUpdate`](crate::model::RuleGroupUpdate).
@@ -2716,14 +2559,14 @@ impl RuleGroupUpdate {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Specifies a <code>Predicate</code> (such as an <code>IPSet</code>) and indicates whether you want to add it to a <code>Rule</code> or delete it from a <code>Rule</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleUpdate {
+pub struct RuleUpdate  {
     /// <p>Specify <code>INSERT</code> to add a <code>Predicate</code> to a <code>Rule</code>. Use <code>DELETE</code> to remove a <code>Predicate</code> from a <code>Rule</code>.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::ChangeAction>,
@@ -2733,17 +2576,17 @@ pub struct RuleUpdate {
 }
 impl RuleUpdate {
     /// <p>Specify <code>INSERT</code> to add a <code>Predicate</code> to a <code>Rule</code>. Use <code>DELETE</code> to remove a <code>Predicate</code> from a <code>Rule</code>.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::ChangeAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::ChangeAction> {
         self.action.as_ref()
     }
     /// <p>The ID of the <code>Predicate</code> (such as an <code>IPSet</code>) that you want to add to a <code>Rule</code>.</p>
-    pub fn predicate(&self) -> std::option::Option<&crate::model::Predicate> {
+    pub fn predicate(&self) -> std::option::Option<& crate::model::Predicate> {
         self.predicate.as_ref()
     }
 }
 /// See [`RuleUpdate`](crate::model::RuleUpdate).
 pub mod rule_update {
-
+    
     /// A builder for [`RuleUpdate`](crate::model::RuleUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2757,12 +2600,8 @@ pub mod rule_update {
             self
         }
         /// <p>Specify <code>INSERT</code> to add a <code>Predicate</code> to a <code>Rule</code>. Use <code>DELETE</code> to remove a <code>Predicate</code> from a <code>Rule</code>.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::ChangeAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::ChangeAction>) -> Self {
+            self.action = input; self
         }
         /// <p>The ID of the <code>Predicate</code> (such as an <code>IPSet</code>) that you want to add to a <code>Rule</code>.</p>
         pub fn predicate(mut self, input: crate::model::Predicate) -> Self {
@@ -2770,21 +2609,21 @@ pub mod rule_update {
             self
         }
         /// <p>The ID of the <code>Predicate</code> (such as an <code>IPSet</code>) that you want to add to a <code>Rule</code>.</p>
-        pub fn set_predicate(
-            mut self,
-            input: std::option::Option<crate::model::Predicate>,
-        ) -> Self {
-            self.predicate = input;
-            self
+        pub fn set_predicate(mut self, input: std::option::Option<crate::model::Predicate>) -> Self {
+            self.predicate = input; self
         }
         /// Consumes the builder and constructs a [`RuleUpdate`](crate::model::RuleUpdate).
         pub fn build(self) -> crate::model::RuleUpdate {
             crate::model::RuleUpdate {
-                action: self.action,
-                predicate: self.predicate,
+                action: self.action
+                ,
+                predicate: self.predicate
+                ,
             }
         }
     }
+    
+    
 }
 impl RuleUpdate {
     /// Creates a new builder-style object to manufacture [`RuleUpdate`](crate::model::RuleUpdate).
@@ -2793,15 +2632,15 @@ impl RuleUpdate {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Specifies the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, and <code>SizeConstraintSet</code> objects that you want to add to a <code>Rule</code> and, for each object, indicates whether you want to negate the settings, for example, requests that do NOT originate from the IP address 192.0.2.44. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Predicate {
-    /// <p>Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests based on the settings in the specified <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.</p>
+pub struct Predicate  {
+    /// <p>Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests based on the settings in the specified <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.</p> 
     /// <p>Set <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block a request based on the negation of the settings in the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests based on all IP addresses <i>except</i> <code>192.0.2.44</code>.</p>
     #[doc(hidden)]
     pub negated: std::option::Option<bool>,
@@ -2813,23 +2652,23 @@ pub struct Predicate {
     pub data_id: std::option::Option<std::string::String>,
 }
 impl Predicate {
-    /// <p>Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests based on the settings in the specified <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.</p>
+    /// <p>Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests based on the settings in the specified <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.</p> 
     /// <p>Set <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block a request based on the negation of the settings in the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests based on all IP addresses <i>except</i> <code>192.0.2.44</code>.</p>
     pub fn negated(&self) -> std::option::Option<bool> {
         self.negated
     }
     /// <p>The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PredicateType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::PredicateType> {
         self.r#type.as_ref()
     }
     /// <p>A unique identifier for a predicate in a <code>Rule</code>, such as <code>ByteMatchSetId</code> or <code>IPSetId</code>. The ID is returned by the corresponding <code>Create</code> or <code>List</code> command.</p>
-    pub fn data_id(&self) -> std::option::Option<&str> {
+    pub fn data_id(&self) -> std::option::Option<& str> {
         self.data_id.as_deref()
     }
 }
 /// See [`Predicate`](crate::model::Predicate).
 pub mod predicate {
-
+    
     /// A builder for [`Predicate`](crate::model::Predicate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2838,17 +2677,16 @@ pub mod predicate {
         pub(crate) data_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests based on the settings in the specified <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.</p>
+        /// <p>Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests based on the settings in the specified <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.</p> 
         /// <p>Set <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block a request based on the negation of the settings in the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests based on all IP addresses <i>except</i> <code>192.0.2.44</code>.</p>
         pub fn negated(mut self, input: bool) -> Self {
             self.negated = Some(input);
             self
         }
-        /// <p>Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests based on the settings in the specified <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.</p>
+        /// <p>Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block, or count requests based on the settings in the specified <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that IP address.</p> 
         /// <p>Set <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block a request based on the negation of the settings in the <code>ByteMatchSet</code>, <code>IPSet</code>, <code>SqlInjectionMatchSet</code>, <code>XssMatchSet</code>, <code>RegexMatchSet</code>, <code>GeoMatchSet</code>, or <code>SizeConstraintSet</code>. For example, if an <code>IPSet</code> includes the IP address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests based on all IP addresses <i>except</i> <code>192.0.2.44</code>.</p>
         pub fn set_negated(mut self, input: std::option::Option<bool>) -> Self {
-            self.negated = input;
-            self
+            self.negated = input; self
         }
         /// <p>The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.</p>
         pub fn r#type(mut self, input: crate::model::PredicateType) -> Self {
@@ -2857,8 +2695,7 @@ pub mod predicate {
         }
         /// <p>The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::PredicateType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>A unique identifier for a predicate in a <code>Rule</code>, such as <code>ByteMatchSetId</code> or <code>IPSetId</code>. The ID is returned by the corresponding <code>Create</code> or <code>List</code> command.</p>
         pub fn data_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2867,18 +2704,22 @@ pub mod predicate {
         }
         /// <p>A unique identifier for a predicate in a <code>Rule</code>, such as <code>ByteMatchSetId</code> or <code>IPSetId</code>. The ID is returned by the corresponding <code>Create</code> or <code>List</code> command.</p>
         pub fn set_data_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_id = input;
-            self
+            self.data_id = input; self
         }
         /// Consumes the builder and constructs a [`Predicate`](crate::model::Predicate).
         pub fn build(self) -> crate::model::Predicate {
             crate::model::Predicate {
-                negated: self.negated,
-                r#type: self.r#type,
-                data_id: self.data_id,
+                negated: self.negated
+                ,
+                r#type: self.r#type
+                ,
+                data_id: self.data_id
+                ,
             }
         }
     }
+    
+    
 }
 impl Predicate {
     /// Creates a new builder-style object to manufacture [`Predicate`](crate::model::Predicate).
@@ -2893,9 +2734,9 @@ impl Predicate {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let predicatetype = unimplemented!();
 /// match predicatetype {
@@ -2922,22 +2763,14 @@ impl Predicate {
 /// Specifically, when `predicatetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PredicateType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PredicateType {
     #[allow(missing_docs)] // documentation missing in model
     ByteMatch,
@@ -2954,7 +2787,7 @@ pub enum PredicateType {
     #[allow(missing_docs)] // documentation missing in model
     XssMatch,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PredicateType {
     fn from(s: &str) -> Self {
@@ -2966,17 +2799,17 @@ impl std::convert::From<&str> for PredicateType {
             "SizeConstraint" => PredicateType::SizeConstraint,
             "SqlInjectionMatch" => PredicateType::SqlInjectionMatch,
             "XssMatch" => PredicateType::XssMatch,
-            other => PredicateType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PredicateType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PredicateType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PredicateType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PredicateType::from(s))
+                }
+            }
 impl PredicateType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2988,19 +2821,13 @@ impl PredicateType {
             PredicateType::SizeConstraint => "SizeConstraint",
             PredicateType::SqlInjectionMatch => "SqlInjectionMatch",
             PredicateType::XssMatch => "XssMatch",
-            PredicateType::Unknown(value) => value.as_str(),
+            PredicateType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ByteMatch",
-            "GeoMatch",
-            "IPMatch",
-            "RegexMatch",
-            "SizeConstraint",
-            "SqlInjectionMatch",
-            "XssMatch",
+            "ByteMatch", "GeoMatch", "IPMatch", "RegexMatch", "SizeConstraint", "SqlInjectionMatch", "XssMatch"
         ]
     }
 }
@@ -3010,14 +2837,14 @@ impl AsRef<str> for PredicateType {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>In an <code>UpdateRegexPatternSet</code> request, <code>RegexPatternSetUpdate</code> specifies whether to insert or delete a <code>RegexPatternString</code> and includes the settings for the <code>RegexPatternString</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegexPatternSetUpdate {
+pub struct RegexPatternSetUpdate  {
     /// <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::ChangeAction>,
@@ -3027,17 +2854,17 @@ pub struct RegexPatternSetUpdate {
 }
 impl RegexPatternSetUpdate {
     /// <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::ChangeAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::ChangeAction> {
         self.action.as_ref()
     }
     /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
-    pub fn regex_pattern_string(&self) -> std::option::Option<&str> {
+    pub fn regex_pattern_string(&self) -> std::option::Option<& str> {
         self.regex_pattern_string.as_deref()
     }
 }
 /// See [`RegexPatternSetUpdate`](crate::model::RegexPatternSetUpdate).
 pub mod regex_pattern_set_update {
-
+    
     /// A builder for [`RegexPatternSetUpdate`](crate::model::RegexPatternSetUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3051,12 +2878,8 @@ pub mod regex_pattern_set_update {
             self
         }
         /// <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::ChangeAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::ChangeAction>) -> Self {
+            self.action = input; self
         }
         /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
         pub fn regex_pattern_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3064,21 +2887,21 @@ pub mod regex_pattern_set_update {
             self
         }
         /// <p>Specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
-        pub fn set_regex_pattern_string(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.regex_pattern_string = input;
-            self
+        pub fn set_regex_pattern_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.regex_pattern_string = input; self
         }
         /// Consumes the builder and constructs a [`RegexPatternSetUpdate`](crate::model::RegexPatternSetUpdate).
         pub fn build(self) -> crate::model::RegexPatternSetUpdate {
             crate::model::RegexPatternSetUpdate {
-                action: self.action,
-                regex_pattern_string: self.regex_pattern_string,
+                action: self.action
+                ,
+                regex_pattern_string: self.regex_pattern_string
+                ,
             }
         }
     }
+    
+    
 }
 impl RegexPatternSetUpdate {
     /// Creates a new builder-style object to manufacture [`RegexPatternSetUpdate`](crate::model::RegexPatternSetUpdate).
@@ -3087,14 +2910,14 @@ impl RegexPatternSetUpdate {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>In an <code>UpdateRegexMatchSet</code> request, <code>RegexMatchSetUpdate</code> specifies whether to insert or delete a <code>RegexMatchTuple</code> and includes the settings for the <code>RegexMatchTuple</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegexMatchSetUpdate {
+pub struct RegexMatchSetUpdate  {
     /// <p>Specifies whether to insert or delete a <code>RegexMatchTuple</code>.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::ChangeAction>,
@@ -3104,17 +2927,17 @@ pub struct RegexMatchSetUpdate {
 }
 impl RegexMatchSetUpdate {
     /// <p>Specifies whether to insert or delete a <code>RegexMatchTuple</code>.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::ChangeAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::ChangeAction> {
         self.action.as_ref()
     }
     /// <p>Information about the part of a web request that you want AWS WAF to inspect and the identifier of the regular expression (regex) pattern that you want AWS WAF to search for. If you specify <code>DELETE</code> for the value of <code>Action</code>, the <code>RegexMatchTuple</code> values must exactly match the values in the <code>RegexMatchTuple</code> that you want to delete from the <code>RegexMatchSet</code>.</p>
-    pub fn regex_match_tuple(&self) -> std::option::Option<&crate::model::RegexMatchTuple> {
+    pub fn regex_match_tuple(&self) -> std::option::Option<& crate::model::RegexMatchTuple> {
         self.regex_match_tuple.as_ref()
     }
 }
 /// See [`RegexMatchSetUpdate`](crate::model::RegexMatchSetUpdate).
 pub mod regex_match_set_update {
-
+    
     /// A builder for [`RegexMatchSetUpdate`](crate::model::RegexMatchSetUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3128,12 +2951,8 @@ pub mod regex_match_set_update {
             self
         }
         /// <p>Specifies whether to insert or delete a <code>RegexMatchTuple</code>.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::ChangeAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::ChangeAction>) -> Self {
+            self.action = input; self
         }
         /// <p>Information about the part of a web request that you want AWS WAF to inspect and the identifier of the regular expression (regex) pattern that you want AWS WAF to search for. If you specify <code>DELETE</code> for the value of <code>Action</code>, the <code>RegexMatchTuple</code> values must exactly match the values in the <code>RegexMatchTuple</code> that you want to delete from the <code>RegexMatchSet</code>.</p>
         pub fn regex_match_tuple(mut self, input: crate::model::RegexMatchTuple) -> Self {
@@ -3141,21 +2960,21 @@ pub mod regex_match_set_update {
             self
         }
         /// <p>Information about the part of a web request that you want AWS WAF to inspect and the identifier of the regular expression (regex) pattern that you want AWS WAF to search for. If you specify <code>DELETE</code> for the value of <code>Action</code>, the <code>RegexMatchTuple</code> values must exactly match the values in the <code>RegexMatchTuple</code> that you want to delete from the <code>RegexMatchSet</code>.</p>
-        pub fn set_regex_match_tuple(
-            mut self,
-            input: std::option::Option<crate::model::RegexMatchTuple>,
-        ) -> Self {
-            self.regex_match_tuple = input;
-            self
+        pub fn set_regex_match_tuple(mut self, input: std::option::Option<crate::model::RegexMatchTuple>) -> Self {
+            self.regex_match_tuple = input; self
         }
         /// Consumes the builder and constructs a [`RegexMatchSetUpdate`](crate::model::RegexMatchSetUpdate).
         pub fn build(self) -> crate::model::RegexMatchSetUpdate {
             crate::model::RegexMatchSetUpdate {
-                action: self.action,
-                regex_match_tuple: self.regex_match_tuple,
+                action: self.action
+                ,
+                regex_match_tuple: self.regex_match_tuple
+                ,
             }
         }
     }
+    
+    
 }
 impl RegexMatchSetUpdate {
     /// Creates a new builder-style object to manufacture [`RegexMatchSetUpdate`](crate::model::RegexMatchSetUpdate).
@@ -3164,122 +2983,122 @@ impl RegexMatchSetUpdate {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
-/// <p>The regular expression pattern that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings. Each <code>RegexMatchTuple</code> object contains: </p>
-/// <ul>
-/// <li> <p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header. </p> </li>
-/// <li> <p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>. </p> </li>
-/// <li> <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p> </li>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
+/// <p>The regular expression pattern that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings. Each <code>RegexMatchTuple</code> object contains: </p> 
+/// <ul> 
+/// <li> <p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header. </p> </li> 
+/// <li> <p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>. </p> </li> 
+/// <li> <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegexMatchTuple {
+pub struct RegexMatchTuple  {
     /// <p>Specifies where in a web request to look for the <code>RegexPatternSet</code>.</p>
     #[doc(hidden)]
     pub field_to_match: std::option::Option<crate::model::FieldToMatch>,
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>RegexPatternSet</code> before inspecting a request for a match.</p>
-    /// <p>You can only specify a single type of TextTransformation.</p>
-    /// <p> <b>CMD_LINE</b> </p>
-    /// <p>When you're concerned that attackers are injecting an operating system commandline command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
-    /// <ul>
-    /// <li> <p>Delete the following characters: \ " ' ^</p> </li>
-    /// <li> <p>Delete spaces before the following characters: / (</p> </li>
-    /// <li> <p>Replace the following characters with a space: , ;</p> </li>
-    /// <li> <p>Replace multiple spaces with one space</p> </li>
-    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
-    /// </ul>
-    /// <p> <b>COMPRESS_WHITE_SPACE</b> </p>
-    /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
-    /// <ul>
-    /// <li> <p>\f, formfeed, decimal 12</p> </li>
-    /// <li> <p>\t, tab, decimal 9</p> </li>
-    /// <li> <p>\n, newline, decimal 10</p> </li>
-    /// <li> <p>\r, carriage return, decimal 13</p> </li>
-    /// <li> <p>\v, vertical tab, decimal 11</p> </li>
-    /// <li> <p>non-breaking space, decimal 160</p> </li>
-    /// </ul>
-    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
-    /// <p> <b>HTML_ENTITY_DECODE</b> </p>
-    /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
-    /// <ul>
-    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
-    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
-    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
-    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
-    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
-    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
-    /// </ul>
-    /// <p> <b>LOWERCASE</b> </p>
-    /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
-    /// <p> <b>URL_DECODE</b> </p>
-    /// <p>Use this option to decode a URL-encoded value.</p>
-    /// <p> <b>NONE</b> </p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>RegexPatternSet</code> before inspecting a request for a match.</p> 
+    /// <p>You can only specify a single type of TextTransformation.</p> 
+    /// <p> <b>CMD_LINE</b> </p> 
+    /// <p>When you're concerned that attackers are injecting an operating system commandline command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p> 
+    /// <ul> 
+    /// <li> <p>Delete the following characters: \ " ' ^</p> </li> 
+    /// <li> <p>Delete spaces before the following characters: / (</p> </li> 
+    /// <li> <p>Replace the following characters with a space: , ;</p> </li> 
+    /// <li> <p>Replace multiple spaces with one space</p> </li> 
+    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> 
+    /// </ul> 
+    /// <p> <b>COMPRESS_WHITE_SPACE</b> </p> 
+    /// <p>Use this option to replace the following characters with a space character (decimal 32):</p> 
+    /// <ul> 
+    /// <li> <p>\f, formfeed, decimal 12</p> </li> 
+    /// <li> <p>\t, tab, decimal 9</p> </li> 
+    /// <li> <p>\n, newline, decimal 10</p> </li> 
+    /// <li> <p>\r, carriage return, decimal 13</p> </li> 
+    /// <li> <p>\v, vertical tab, decimal 11</p> </li> 
+    /// <li> <p>non-breaking space, decimal 160</p> </li> 
+    /// </ul> 
+    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p> 
+    /// <p> <b>HTML_ENTITY_DECODE</b> </p> 
+    /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p> 
+    /// <ul> 
+    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li> 
+    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li> 
+    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li> 
+    /// </ul> 
+    /// <p> <b>LOWERCASE</b> </p> 
+    /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p> 
+    /// <p> <b>URL_DECODE</b> </p> 
+    /// <p>Use this option to decode a URL-encoded value.</p> 
+    /// <p> <b>NONE</b> </p> 
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
     #[doc(hidden)]
     pub text_transformation: std::option::Option<crate::model::TextTransformation>,
-    /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code> (see <code>GetRegexPatternSet</code>), update a <code>RegexPatternSet</code> (see <code>UpdateRegexPatternSet</code>), insert a <code>RegexPatternSet</code> into a <code>RegexMatchSet</code> or delete one from a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), and delete an <code>RegexPatternSet</code> from AWS WAF (see <code>DeleteRegexPatternSet</code>).</p>
+    /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code> (see <code>GetRegexPatternSet</code>), update a <code>RegexPatternSet</code> (see <code>UpdateRegexPatternSet</code>), insert a <code>RegexPatternSet</code> into a <code>RegexMatchSet</code> or delete one from a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), and delete an <code>RegexPatternSet</code> from AWS WAF (see <code>DeleteRegexPatternSet</code>).</p> 
     /// <p> <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
     #[doc(hidden)]
     pub regex_pattern_set_id: std::option::Option<std::string::String>,
 }
 impl RegexMatchTuple {
     /// <p>Specifies where in a web request to look for the <code>RegexPatternSet</code>.</p>
-    pub fn field_to_match(&self) -> std::option::Option<&crate::model::FieldToMatch> {
+    pub fn field_to_match(&self) -> std::option::Option<& crate::model::FieldToMatch> {
         self.field_to_match.as_ref()
     }
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>RegexPatternSet</code> before inspecting a request for a match.</p>
-    /// <p>You can only specify a single type of TextTransformation.</p>
-    /// <p> <b>CMD_LINE</b> </p>
-    /// <p>When you're concerned that attackers are injecting an operating system commandline command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
-    /// <ul>
-    /// <li> <p>Delete the following characters: \ " ' ^</p> </li>
-    /// <li> <p>Delete spaces before the following characters: / (</p> </li>
-    /// <li> <p>Replace the following characters with a space: , ;</p> </li>
-    /// <li> <p>Replace multiple spaces with one space</p> </li>
-    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
-    /// </ul>
-    /// <p> <b>COMPRESS_WHITE_SPACE</b> </p>
-    /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
-    /// <ul>
-    /// <li> <p>\f, formfeed, decimal 12</p> </li>
-    /// <li> <p>\t, tab, decimal 9</p> </li>
-    /// <li> <p>\n, newline, decimal 10</p> </li>
-    /// <li> <p>\r, carriage return, decimal 13</p> </li>
-    /// <li> <p>\v, vertical tab, decimal 11</p> </li>
-    /// <li> <p>non-breaking space, decimal 160</p> </li>
-    /// </ul>
-    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
-    /// <p> <b>HTML_ENTITY_DECODE</b> </p>
-    /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
-    /// <ul>
-    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
-    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
-    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
-    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
-    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
-    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
-    /// </ul>
-    /// <p> <b>LOWERCASE</b> </p>
-    /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
-    /// <p> <b>URL_DECODE</b> </p>
-    /// <p>Use this option to decode a URL-encoded value.</p>
-    /// <p> <b>NONE</b> </p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>RegexPatternSet</code> before inspecting a request for a match.</p> 
+    /// <p>You can only specify a single type of TextTransformation.</p> 
+    /// <p> <b>CMD_LINE</b> </p> 
+    /// <p>When you're concerned that attackers are injecting an operating system commandline command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p> 
+    /// <ul> 
+    /// <li> <p>Delete the following characters: \ " ' ^</p> </li> 
+    /// <li> <p>Delete spaces before the following characters: / (</p> </li> 
+    /// <li> <p>Replace the following characters with a space: , ;</p> </li> 
+    /// <li> <p>Replace multiple spaces with one space</p> </li> 
+    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> 
+    /// </ul> 
+    /// <p> <b>COMPRESS_WHITE_SPACE</b> </p> 
+    /// <p>Use this option to replace the following characters with a space character (decimal 32):</p> 
+    /// <ul> 
+    /// <li> <p>\f, formfeed, decimal 12</p> </li> 
+    /// <li> <p>\t, tab, decimal 9</p> </li> 
+    /// <li> <p>\n, newline, decimal 10</p> </li> 
+    /// <li> <p>\r, carriage return, decimal 13</p> </li> 
+    /// <li> <p>\v, vertical tab, decimal 11</p> </li> 
+    /// <li> <p>non-breaking space, decimal 160</p> </li> 
+    /// </ul> 
+    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p> 
+    /// <p> <b>HTML_ENTITY_DECODE</b> </p> 
+    /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p> 
+    /// <ul> 
+    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li> 
+    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li> 
+    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li> 
+    /// </ul> 
+    /// <p> <b>LOWERCASE</b> </p> 
+    /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p> 
+    /// <p> <b>URL_DECODE</b> </p> 
+    /// <p>Use this option to decode a URL-encoded value.</p> 
+    /// <p> <b>NONE</b> </p> 
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    pub fn text_transformation(&self) -> std::option::Option<&crate::model::TextTransformation> {
+    pub fn text_transformation(&self) -> std::option::Option<& crate::model::TextTransformation> {
         self.text_transformation.as_ref()
     }
-    /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code> (see <code>GetRegexPatternSet</code>), update a <code>RegexPatternSet</code> (see <code>UpdateRegexPatternSet</code>), insert a <code>RegexPatternSet</code> into a <code>RegexMatchSet</code> or delete one from a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), and delete an <code>RegexPatternSet</code> from AWS WAF (see <code>DeleteRegexPatternSet</code>).</p>
+    /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code> (see <code>GetRegexPatternSet</code>), update a <code>RegexPatternSet</code> (see <code>UpdateRegexPatternSet</code>), insert a <code>RegexPatternSet</code> into a <code>RegexMatchSet</code> or delete one from a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), and delete an <code>RegexPatternSet</code> from AWS WAF (see <code>DeleteRegexPatternSet</code>).</p> 
     /// <p> <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    pub fn regex_pattern_set_id(&self) -> std::option::Option<&str> {
+    pub fn regex_pattern_set_id(&self) -> std::option::Option<& str> {
         self.regex_pattern_set_id.as_deref()
     }
 }
 /// See [`RegexMatchTuple`](crate::model::RegexMatchTuple).
 pub mod regex_match_tuple {
-
+    
     /// A builder for [`RegexMatchTuple`](crate::model::RegexMatchTuple).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3294,124 +3113,117 @@ pub mod regex_match_tuple {
             self
         }
         /// <p>Specifies where in a web request to look for the <code>RegexPatternSet</code>.</p>
-        pub fn set_field_to_match(
-            mut self,
-            input: std::option::Option<crate::model::FieldToMatch>,
-        ) -> Self {
-            self.field_to_match = input;
-            self
+        pub fn set_field_to_match(mut self, input: std::option::Option<crate::model::FieldToMatch>) -> Self {
+            self.field_to_match = input; self
         }
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>RegexPatternSet</code> before inspecting a request for a match.</p>
-        /// <p>You can only specify a single type of TextTransformation.</p>
-        /// <p> <b>CMD_LINE</b> </p>
-        /// <p>When you're concerned that attackers are injecting an operating system commandline command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
-        /// <ul>
-        /// <li> <p>Delete the following characters: \ " ' ^</p> </li>
-        /// <li> <p>Delete spaces before the following characters: / (</p> </li>
-        /// <li> <p>Replace the following characters with a space: , ;</p> </li>
-        /// <li> <p>Replace multiple spaces with one space</p> </li>
-        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
-        /// </ul>
-        /// <p> <b>COMPRESS_WHITE_SPACE</b> </p>
-        /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
-        /// <ul>
-        /// <li> <p>\f, formfeed, decimal 12</p> </li>
-        /// <li> <p>\t, tab, decimal 9</p> </li>
-        /// <li> <p>\n, newline, decimal 10</p> </li>
-        /// <li> <p>\r, carriage return, decimal 13</p> </li>
-        /// <li> <p>\v, vertical tab, decimal 11</p> </li>
-        /// <li> <p>non-breaking space, decimal 160</p> </li>
-        /// </ul>
-        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
-        /// <p> <b>HTML_ENTITY_DECODE</b> </p>
-        /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
-        /// <ul>
-        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
-        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
-        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
-        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
-        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
-        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
-        /// </ul>
-        /// <p> <b>LOWERCASE</b> </p>
-        /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
-        /// <p> <b>URL_DECODE</b> </p>
-        /// <p>Use this option to decode a URL-encoded value.</p>
-        /// <p> <b>NONE</b> </p>
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>RegexPatternSet</code> before inspecting a request for a match.</p> 
+        /// <p>You can only specify a single type of TextTransformation.</p> 
+        /// <p> <b>CMD_LINE</b> </p> 
+        /// <p>When you're concerned that attackers are injecting an operating system commandline command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p> 
+        /// <ul> 
+        /// <li> <p>Delete the following characters: \ " ' ^</p> </li> 
+        /// <li> <p>Delete spaces before the following characters: / (</p> </li> 
+        /// <li> <p>Replace the following characters with a space: , ;</p> </li> 
+        /// <li> <p>Replace multiple spaces with one space</p> </li> 
+        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> 
+        /// </ul> 
+        /// <p> <b>COMPRESS_WHITE_SPACE</b> </p> 
+        /// <p>Use this option to replace the following characters with a space character (decimal 32):</p> 
+        /// <ul> 
+        /// <li> <p>\f, formfeed, decimal 12</p> </li> 
+        /// <li> <p>\t, tab, decimal 9</p> </li> 
+        /// <li> <p>\n, newline, decimal 10</p> </li> 
+        /// <li> <p>\r, carriage return, decimal 13</p> </li> 
+        /// <li> <p>\v, vertical tab, decimal 11</p> </li> 
+        /// <li> <p>non-breaking space, decimal 160</p> </li> 
+        /// </ul> 
+        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p> 
+        /// <p> <b>HTML_ENTITY_DECODE</b> </p> 
+        /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p> 
+        /// <ul> 
+        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li> 
+        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li> 
+        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li> 
+        /// </ul> 
+        /// <p> <b>LOWERCASE</b> </p> 
+        /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p> 
+        /// <p> <b>URL_DECODE</b> </p> 
+        /// <p>Use this option to decode a URL-encoded value.</p> 
+        /// <p> <b>NONE</b> </p> 
         /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
         pub fn text_transformation(mut self, input: crate::model::TextTransformation) -> Self {
             self.text_transformation = Some(input);
             self
         }
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>RegexPatternSet</code> before inspecting a request for a match.</p>
-        /// <p>You can only specify a single type of TextTransformation.</p>
-        /// <p> <b>CMD_LINE</b> </p>
-        /// <p>When you're concerned that attackers are injecting an operating system commandline command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
-        /// <ul>
-        /// <li> <p>Delete the following characters: \ " ' ^</p> </li>
-        /// <li> <p>Delete spaces before the following characters: / (</p> </li>
-        /// <li> <p>Replace the following characters with a space: , ;</p> </li>
-        /// <li> <p>Replace multiple spaces with one space</p> </li>
-        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
-        /// </ul>
-        /// <p> <b>COMPRESS_WHITE_SPACE</b> </p>
-        /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
-        /// <ul>
-        /// <li> <p>\f, formfeed, decimal 12</p> </li>
-        /// <li> <p>\t, tab, decimal 9</p> </li>
-        /// <li> <p>\n, newline, decimal 10</p> </li>
-        /// <li> <p>\r, carriage return, decimal 13</p> </li>
-        /// <li> <p>\v, vertical tab, decimal 11</p> </li>
-        /// <li> <p>non-breaking space, decimal 160</p> </li>
-        /// </ul>
-        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
-        /// <p> <b>HTML_ENTITY_DECODE</b> </p>
-        /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
-        /// <ul>
-        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
-        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
-        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
-        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
-        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
-        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
-        /// </ul>
-        /// <p> <b>LOWERCASE</b> </p>
-        /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
-        /// <p> <b>URL_DECODE</b> </p>
-        /// <p>Use this option to decode a URL-encoded value.</p>
-        /// <p> <b>NONE</b> </p>
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>RegexPatternSet</code> before inspecting a request for a match.</p> 
+        /// <p>You can only specify a single type of TextTransformation.</p> 
+        /// <p> <b>CMD_LINE</b> </p> 
+        /// <p>When you're concerned that attackers are injecting an operating system commandline command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p> 
+        /// <ul> 
+        /// <li> <p>Delete the following characters: \ " ' ^</p> </li> 
+        /// <li> <p>Delete spaces before the following characters: / (</p> </li> 
+        /// <li> <p>Replace the following characters with a space: , ;</p> </li> 
+        /// <li> <p>Replace multiple spaces with one space</p> </li> 
+        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> 
+        /// </ul> 
+        /// <p> <b>COMPRESS_WHITE_SPACE</b> </p> 
+        /// <p>Use this option to replace the following characters with a space character (decimal 32):</p> 
+        /// <ul> 
+        /// <li> <p>\f, formfeed, decimal 12</p> </li> 
+        /// <li> <p>\t, tab, decimal 9</p> </li> 
+        /// <li> <p>\n, newline, decimal 10</p> </li> 
+        /// <li> <p>\r, carriage return, decimal 13</p> </li> 
+        /// <li> <p>\v, vertical tab, decimal 11</p> </li> 
+        /// <li> <p>non-breaking space, decimal 160</p> </li> 
+        /// </ul> 
+        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p> 
+        /// <p> <b>HTML_ENTITY_DECODE</b> </p> 
+        /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p> 
+        /// <ul> 
+        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li> 
+        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li> 
+        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li> 
+        /// </ul> 
+        /// <p> <b>LOWERCASE</b> </p> 
+        /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p> 
+        /// <p> <b>URL_DECODE</b> </p> 
+        /// <p>Use this option to decode a URL-encoded value.</p> 
+        /// <p> <b>NONE</b> </p> 
         /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-        pub fn set_text_transformation(
-            mut self,
-            input: std::option::Option<crate::model::TextTransformation>,
-        ) -> Self {
-            self.text_transformation = input;
-            self
+        pub fn set_text_transformation(mut self, input: std::option::Option<crate::model::TextTransformation>) -> Self {
+            self.text_transformation = input; self
         }
-        /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code> (see <code>GetRegexPatternSet</code>), update a <code>RegexPatternSet</code> (see <code>UpdateRegexPatternSet</code>), insert a <code>RegexPatternSet</code> into a <code>RegexMatchSet</code> or delete one from a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), and delete an <code>RegexPatternSet</code> from AWS WAF (see <code>DeleteRegexPatternSet</code>).</p>
+        /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code> (see <code>GetRegexPatternSet</code>), update a <code>RegexPatternSet</code> (see <code>UpdateRegexPatternSet</code>), insert a <code>RegexPatternSet</code> into a <code>RegexMatchSet</code> or delete one from a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), and delete an <code>RegexPatternSet</code> from AWS WAF (see <code>DeleteRegexPatternSet</code>).</p> 
         /// <p> <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
         pub fn regex_pattern_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.regex_pattern_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code> (see <code>GetRegexPatternSet</code>), update a <code>RegexPatternSet</code> (see <code>UpdateRegexPatternSet</code>), insert a <code>RegexPatternSet</code> into a <code>RegexMatchSet</code> or delete one from a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), and delete an <code>RegexPatternSet</code> from AWS WAF (see <code>DeleteRegexPatternSet</code>).</p>
+        /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code> (see <code>GetRegexPatternSet</code>), update a <code>RegexPatternSet</code> (see <code>UpdateRegexPatternSet</code>), insert a <code>RegexPatternSet</code> into a <code>RegexMatchSet</code> or delete one from a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), and delete an <code>RegexPatternSet</code> from AWS WAF (see <code>DeleteRegexPatternSet</code>).</p> 
         /// <p> <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-        pub fn set_regex_pattern_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.regex_pattern_set_id = input;
-            self
+        pub fn set_regex_pattern_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.regex_pattern_set_id = input; self
         }
         /// Consumes the builder and constructs a [`RegexMatchTuple`](crate::model::RegexMatchTuple).
         pub fn build(self) -> crate::model::RegexMatchTuple {
             crate::model::RegexMatchTuple {
-                field_to_match: self.field_to_match,
-                text_transformation: self.text_transformation,
-                regex_pattern_set_id: self.regex_pattern_set_id,
+                field_to_match: self.field_to_match
+                ,
+                text_transformation: self.text_transformation
+                ,
+                regex_pattern_set_id: self.regex_pattern_set_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RegexMatchTuple {
     /// Creates a new builder-style object to manufacture [`RegexMatchTuple`](crate::model::RegexMatchTuple).
@@ -3420,14 +3232,14 @@ impl RegexMatchTuple {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Specifies the type of update to perform to an <code>IPSet</code> with <code>UpdateIPSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IpSetUpdate {
+pub struct IpSetUpdate  {
     /// <p>Specifies whether to insert or delete an IP address with <code>UpdateIPSet</code>.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::ChangeAction>,
@@ -3437,17 +3249,17 @@ pub struct IpSetUpdate {
 }
 impl IpSetUpdate {
     /// <p>Specifies whether to insert or delete an IP address with <code>UpdateIPSet</code>.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::ChangeAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::ChangeAction> {
         self.action.as_ref()
     }
     /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>
-    pub fn ip_set_descriptor(&self) -> std::option::Option<&crate::model::IpSetDescriptor> {
+    pub fn ip_set_descriptor(&self) -> std::option::Option<& crate::model::IpSetDescriptor> {
         self.ip_set_descriptor.as_ref()
     }
 }
 /// See [`IpSetUpdate`](crate::model::IpSetUpdate).
 pub mod ip_set_update {
-
+    
     /// A builder for [`IpSetUpdate`](crate::model::IpSetUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3461,12 +3273,8 @@ pub mod ip_set_update {
             self
         }
         /// <p>Specifies whether to insert or delete an IP address with <code>UpdateIPSet</code>.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::ChangeAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::ChangeAction>) -> Self {
+            self.action = input; self
         }
         /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>
         pub fn ip_set_descriptor(mut self, input: crate::model::IpSetDescriptor) -> Self {
@@ -3474,21 +3282,21 @@ pub mod ip_set_update {
             self
         }
         /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>
-        pub fn set_ip_set_descriptor(
-            mut self,
-            input: std::option::Option<crate::model::IpSetDescriptor>,
-        ) -> Self {
-            self.ip_set_descriptor = input;
-            self
+        pub fn set_ip_set_descriptor(mut self, input: std::option::Option<crate::model::IpSetDescriptor>) -> Self {
+            self.ip_set_descriptor = input; self
         }
         /// Consumes the builder and constructs a [`IpSetUpdate`](crate::model::IpSetUpdate).
         pub fn build(self) -> crate::model::IpSetUpdate {
             crate::model::IpSetUpdate {
-                action: self.action,
-                ip_set_descriptor: self.ip_set_descriptor,
+                action: self.action
+                ,
+                ip_set_descriptor: self.ip_set_descriptor
+                ,
             }
         }
     }
+    
+    
 }
 impl IpSetUpdate {
     /// Creates a new builder-style object to manufacture [`IpSetUpdate`](crate::model::IpSetUpdate).
@@ -3497,54 +3305,54 @@ impl IpSetUpdate {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Specifies the IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR format) that web requests originate from.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IpSetDescriptor {
+pub struct IpSetDescriptor  {
     /// <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::IpSetDescriptorType>,
-    /// <p>Specify an IPv4 address by using CIDR notation. For example:</p>
-    /// <ul>
-    /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
-    /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
-    /// </ul>
-    /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-    /// <p>Specify an IPv6 address by using CIDR notation. For example:</p>
-    /// <ul>
-    /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
-    /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
+    /// <p>Specify an IPv4 address by using CIDR notation. For example:</p> 
+    /// <ul> 
+    /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> 
+    /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> 
+    /// </ul> 
+    /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p> 
+    /// <p>Specify an IPv6 address by using CIDR notation. For example:</p> 
+    /// <ul> 
+    /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> 
+    /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl IpSetDescriptor {
     /// <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::IpSetDescriptorType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::IpSetDescriptorType> {
         self.r#type.as_ref()
     }
-    /// <p>Specify an IPv4 address by using CIDR notation. For example:</p>
-    /// <ul>
-    /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
-    /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
+    /// <p>Specify an IPv4 address by using CIDR notation. For example:</p> 
+    /// <ul> 
+    /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> 
+    /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> 
+    /// </ul> 
+    /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p> 
+    /// <p>Specify an IPv6 address by using CIDR notation. For example:</p> 
+    /// <ul> 
+    /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> 
+    /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> 
     /// </ul>
-    /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-    /// <p>Specify an IPv6 address by using CIDR notation. For example:</p>
-    /// <ul>
-    /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
-    /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
-    /// </ul>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`IpSetDescriptor`](crate::model::IpSetDescriptor).
 pub mod ip_set_descriptor {
-
+    
     /// A builder for [`IpSetDescriptor`](crate::model::IpSetDescriptor).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3558,51 +3366,50 @@ pub mod ip_set_descriptor {
             self
         }
         /// <p>Specify <code>IPV4</code> or <code>IPV6</code>.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::IpSetDescriptorType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::IpSetDescriptorType>) -> Self {
+            self.r#type = input; self
         }
-        /// <p>Specify an IPv4 address by using CIDR notation. For example:</p>
-        /// <ul>
-        /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
-        /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
-        /// </ul>
-        /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-        /// <p>Specify an IPv6 address by using CIDR notation. For example:</p>
-        /// <ul>
-        /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
-        /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
+        /// <p>Specify an IPv4 address by using CIDR notation. For example:</p> 
+        /// <ul> 
+        /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> 
+        /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> 
+        /// </ul> 
+        /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p> 
+        /// <p>Specify an IPv6 address by using CIDR notation. For example:</p> 
+        /// <ul> 
+        /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> 
+        /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> 
         /// </ul>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>Specify an IPv4 address by using CIDR notation. For example:</p>
-        /// <ul>
-        /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li>
-        /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li>
-        /// </ul>
-        /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
-        /// <p>Specify an IPv6 address by using CIDR notation. For example:</p>
-        /// <ul>
-        /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li>
-        /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li>
+        /// <p>Specify an IPv4 address by using CIDR notation. For example:</p> 
+        /// <ul> 
+        /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> 
+        /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> 
+        /// </ul> 
+        /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p> 
+        /// <p>Specify an IPv6 address by using CIDR notation. For example:</p> 
+        /// <ul> 
+        /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> 
+        /// <li> <p>To configure AWS WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> 
         /// </ul>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`IpSetDescriptor`](crate::model::IpSetDescriptor).
         pub fn build(self) -> crate::model::IpSetDescriptor {
             crate::model::IpSetDescriptor {
-                r#type: self.r#type,
-                value: self.value,
+                r#type: self.r#type
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl IpSetDescriptor {
     /// Creates a new builder-style object to manufacture [`IpSetDescriptor`](crate::model::IpSetDescriptor).
@@ -3617,9 +3424,9 @@ impl IpSetDescriptor {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ipsetdescriptortype = unimplemented!();
 /// match ipsetdescriptortype {
@@ -3641,60 +3448,52 @@ impl IpSetDescriptor {
 /// Specifically, when `ipsetdescriptortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IpSetDescriptorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IpSetDescriptorType {
     #[allow(missing_docs)] // documentation missing in model
     Ipv4,
     #[allow(missing_docs)] // documentation missing in model
     Ipv6,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IpSetDescriptorType {
     fn from(s: &str) -> Self {
         match s {
             "IPV4" => IpSetDescriptorType::Ipv4,
             "IPV6" => IpSetDescriptorType::Ipv6,
-            other => {
-                IpSetDescriptorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => IpSetDescriptorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for IpSetDescriptorType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IpSetDescriptorType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IpSetDescriptorType::from(s))
+                }
+            }
 impl IpSetDescriptorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IpSetDescriptorType::Ipv4 => "IPV4",
             IpSetDescriptorType::Ipv6 => "IPV6",
-            IpSetDescriptorType::Unknown(value) => value.as_str(),
+            IpSetDescriptorType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IPV4", "IPV6"]
+        &[
+            "IPV4", "IPV6"
+        ]
     }
 }
 impl AsRef<str> for IpSetDescriptorType {
@@ -3703,14 +3502,14 @@ impl AsRef<str> for IpSetDescriptorType {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Specifies the type of update to perform to an <code>GeoMatchSet</code> with <code>UpdateGeoMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeoMatchSetUpdate {
+pub struct GeoMatchSetUpdate  {
     /// <p>Specifies whether to insert or delete a country with <code>UpdateGeoMatchSet</code>.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::ChangeAction>,
@@ -3720,17 +3519,17 @@ pub struct GeoMatchSetUpdate {
 }
 impl GeoMatchSetUpdate {
     /// <p>Specifies whether to insert or delete a country with <code>UpdateGeoMatchSet</code>.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::ChangeAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::ChangeAction> {
         self.action.as_ref()
     }
     /// <p>The country from which web requests originate that you want AWS WAF to search for.</p>
-    pub fn geo_match_constraint(&self) -> std::option::Option<&crate::model::GeoMatchConstraint> {
+    pub fn geo_match_constraint(&self) -> std::option::Option<& crate::model::GeoMatchConstraint> {
         self.geo_match_constraint.as_ref()
     }
 }
 /// See [`GeoMatchSetUpdate`](crate::model::GeoMatchSetUpdate).
 pub mod geo_match_set_update {
-
+    
     /// A builder for [`GeoMatchSetUpdate`](crate::model::GeoMatchSetUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3744,12 +3543,8 @@ pub mod geo_match_set_update {
             self
         }
         /// <p>Specifies whether to insert or delete a country with <code>UpdateGeoMatchSet</code>.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::ChangeAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::ChangeAction>) -> Self {
+            self.action = input; self
         }
         /// <p>The country from which web requests originate that you want AWS WAF to search for.</p>
         pub fn geo_match_constraint(mut self, input: crate::model::GeoMatchConstraint) -> Self {
@@ -3757,21 +3552,21 @@ pub mod geo_match_set_update {
             self
         }
         /// <p>The country from which web requests originate that you want AWS WAF to search for.</p>
-        pub fn set_geo_match_constraint(
-            mut self,
-            input: std::option::Option<crate::model::GeoMatchConstraint>,
-        ) -> Self {
-            self.geo_match_constraint = input;
-            self
+        pub fn set_geo_match_constraint(mut self, input: std::option::Option<crate::model::GeoMatchConstraint>) -> Self {
+            self.geo_match_constraint = input; self
         }
         /// Consumes the builder and constructs a [`GeoMatchSetUpdate`](crate::model::GeoMatchSetUpdate).
         pub fn build(self) -> crate::model::GeoMatchSetUpdate {
             crate::model::GeoMatchSetUpdate {
-                action: self.action,
-                geo_match_constraint: self.geo_match_constraint,
+                action: self.action
+                ,
+                geo_match_constraint: self.geo_match_constraint
+                ,
             }
         }
     }
+    
+    
 }
 impl GeoMatchSetUpdate {
     /// Creates a new builder-style object to manufacture [`GeoMatchSetUpdate`](crate::model::GeoMatchSetUpdate).
@@ -3780,14 +3575,14 @@ impl GeoMatchSetUpdate {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>The country from which web requests originate that you want AWS WAF to search for.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeoMatchConstraint {
+pub struct GeoMatchConstraint  {
     /// <p>The type of geographical area you want AWS WAF to search for. Currently <code>Country</code> is the only valid value.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::GeoMatchConstraintType>,
@@ -3797,17 +3592,17 @@ pub struct GeoMatchConstraint {
 }
 impl GeoMatchConstraint {
     /// <p>The type of geographical area you want AWS WAF to search for. Currently <code>Country</code> is the only valid value.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::GeoMatchConstraintType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::GeoMatchConstraintType> {
         self.r#type.as_ref()
     }
     /// <p>The country that you want AWS WAF to search for.</p>
-    pub fn value(&self) -> std::option::Option<&crate::model::GeoMatchConstraintValue> {
+    pub fn value(&self) -> std::option::Option<& crate::model::GeoMatchConstraintValue> {
         self.value.as_ref()
     }
 }
 /// See [`GeoMatchConstraint`](crate::model::GeoMatchConstraint).
 pub mod geo_match_constraint {
-
+    
     /// A builder for [`GeoMatchConstraint`](crate::model::GeoMatchConstraint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3821,12 +3616,8 @@ pub mod geo_match_constraint {
             self
         }
         /// <p>The type of geographical area you want AWS WAF to search for. Currently <code>Country</code> is the only valid value.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::GeoMatchConstraintType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::GeoMatchConstraintType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The country that you want AWS WAF to search for.</p>
         pub fn value(mut self, input: crate::model::GeoMatchConstraintValue) -> Self {
@@ -3834,21 +3625,21 @@ pub mod geo_match_constraint {
             self
         }
         /// <p>The country that you want AWS WAF to search for.</p>
-        pub fn set_value(
-            mut self,
-            input: std::option::Option<crate::model::GeoMatchConstraintValue>,
-        ) -> Self {
-            self.value = input;
-            self
+        pub fn set_value(mut self, input: std::option::Option<crate::model::GeoMatchConstraintValue>) -> Self {
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`GeoMatchConstraint`](crate::model::GeoMatchConstraint).
         pub fn build(self) -> crate::model::GeoMatchConstraint {
             crate::model::GeoMatchConstraint {
-                r#type: self.r#type,
-                value: self.value,
+                r#type: self.r#type
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl GeoMatchConstraint {
     /// Creates a new builder-style object to manufacture [`GeoMatchConstraint`](crate::model::GeoMatchConstraint).
@@ -3863,9 +3654,9 @@ impl GeoMatchConstraint {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let geomatchconstraintvalue = unimplemented!();
 /// match geomatchconstraintvalue {
@@ -4134,22 +3925,14 @@ impl GeoMatchConstraint {
 /// Specifically, when `geomatchconstraintvalue` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GeoMatchConstraintValue::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum GeoMatchConstraintValue {
     #[allow(missing_docs)] // documentation missing in model
     Ad,
@@ -4650,7 +4433,7 @@ pub enum GeoMatchConstraintValue {
     #[allow(missing_docs)] // documentation missing in model
     Zw,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GeoMatchConstraintValue {
     fn from(s: &str) -> Self {
@@ -4904,19 +4687,17 @@ impl std::convert::From<&str> for GeoMatchConstraintValue {
             "ZA" => GeoMatchConstraintValue::Za,
             "ZM" => GeoMatchConstraintValue::Zm,
             "ZW" => GeoMatchConstraintValue::Zw,
-            other => GeoMatchConstraintValue::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => GeoMatchConstraintValue::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for GeoMatchConstraintValue {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GeoMatchConstraintValue::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(GeoMatchConstraintValue::from(s))
+                }
+            }
 impl GeoMatchConstraintValue {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5170,30 +4951,13 @@ impl GeoMatchConstraintValue {
             GeoMatchConstraintValue::Za => "ZA",
             GeoMatchConstraintValue::Zm => "ZM",
             GeoMatchConstraintValue::Zw => "ZW",
-            GeoMatchConstraintValue::Unknown(value) => value.as_str(),
+            GeoMatchConstraintValue::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AS", "AT", "AU", "AW",
-            "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN",
-            "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CC", "CD", "CF", "CG",
-            "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CX", "CY", "CZ",
-            "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI",
-            "FJ", "FK", "FM", "FO", "FR", "GA", "GB", "GD", "GE", "GF", "GG", "GH", "GI", "GL",
-            "GM", "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HM", "HN", "HR",
-            "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IO", "IQ", "IR", "IS", "IT", "JE", "JM",
-            "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KP", "KR", "KW", "KY", "KZ", "LA",
-            "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME",
-            "MF", "MG", "MH", "MK", "ML", "MM", "MN", "MO", "MP", "MQ", "MR", "MS", "MT", "MU",
-            "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NF", "NG", "NI", "NL", "NO", "NP",
-            "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PL", "PM", "PN", "PR",
-            "PS", "PT", "PW", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SD",
-            "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "SS", "ST", "SV",
-            "SX", "SY", "SZ", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM", "TN", "TO",
-            "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "UM", "US", "UY", "UZ", "VA", "VC", "VE",
-            "VG", "VI", "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW",
+            "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AS", "AT", "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CC", "CD", "CF", "CG", "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CX", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI", "FJ", "FK", "FM", "FO", "FR", "GA", "GB", "GD", "GE", "GF", "GG", "GH", "GI", "GL", "GM", "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HM", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IO", "IQ", "IR", "IS", "IT", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KP", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MH", "MK", "ML", "MM", "MN", "MO", "MP", "MQ", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NF", "NG", "NI", "NL", "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PL", "PM", "PN", "PR", "PS", "PT", "PW", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SD", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "SS", "ST", "SV", "SX", "SY", "SZ", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM", "TN", "TO", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "UM", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VI", "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW"
         ]
     }
 }
@@ -5209,9 +4973,9 @@ impl AsRef<str> for GeoMatchConstraintValue {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let geomatchconstrainttype = unimplemented!();
 /// match geomatchconstrainttype {
@@ -5232,56 +4996,48 @@ impl AsRef<str> for GeoMatchConstraintValue {
 /// Specifically, when `geomatchconstrainttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GeoMatchConstraintType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum GeoMatchConstraintType {
     #[allow(missing_docs)] // documentation missing in model
     Country,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GeoMatchConstraintType {
     fn from(s: &str) -> Self {
         match s {
             "Country" => GeoMatchConstraintType::Country,
-            other => {
-                GeoMatchConstraintType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => GeoMatchConstraintType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for GeoMatchConstraintType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GeoMatchConstraintType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(GeoMatchConstraintType::from(s))
+                }
+            }
 impl GeoMatchConstraintType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GeoMatchConstraintType::Country => "Country",
-            GeoMatchConstraintType::Unknown(value) => value.as_str(),
+            GeoMatchConstraintType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Country"]
+        &[
+            "Country"
+        ]
     }
 }
 impl AsRef<str> for GeoMatchConstraintType {
@@ -5290,14 +5046,14 @@ impl AsRef<str> for GeoMatchConstraintType {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>In an <code>UpdateByteMatchSet</code> request, <code>ByteMatchSetUpdate</code> specifies whether to insert or delete a <code>ByteMatchTuple</code> and includes the settings for the <code>ByteMatchTuple</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ByteMatchSetUpdate {
+pub struct ByteMatchSetUpdate  {
     /// <p>Specifies whether to insert or delete a <code>ByteMatchTuple</code>.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::ChangeAction>,
@@ -5307,17 +5063,17 @@ pub struct ByteMatchSetUpdate {
 }
 impl ByteMatchSetUpdate {
     /// <p>Specifies whether to insert or delete a <code>ByteMatchTuple</code>.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::ChangeAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::ChangeAction> {
         self.action.as_ref()
     }
     /// <p>Information about the part of a web request that you want AWS WAF to inspect and the value that you want AWS WAF to search for. If you specify <code>DELETE</code> for the value of <code>Action</code>, the <code>ByteMatchTuple</code> values must exactly match the values in the <code>ByteMatchTuple</code> that you want to delete from the <code>ByteMatchSet</code>.</p>
-    pub fn byte_match_tuple(&self) -> std::option::Option<&crate::model::ByteMatchTuple> {
+    pub fn byte_match_tuple(&self) -> std::option::Option<& crate::model::ByteMatchTuple> {
         self.byte_match_tuple.as_ref()
     }
 }
 /// See [`ByteMatchSetUpdate`](crate::model::ByteMatchSetUpdate).
 pub mod byte_match_set_update {
-
+    
     /// A builder for [`ByteMatchSetUpdate`](crate::model::ByteMatchSetUpdate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5331,12 +5087,8 @@ pub mod byte_match_set_update {
             self
         }
         /// <p>Specifies whether to insert or delete a <code>ByteMatchTuple</code>.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::ChangeAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::ChangeAction>) -> Self {
+            self.action = input; self
         }
         /// <p>Information about the part of a web request that you want AWS WAF to inspect and the value that you want AWS WAF to search for. If you specify <code>DELETE</code> for the value of <code>Action</code>, the <code>ByteMatchTuple</code> values must exactly match the values in the <code>ByteMatchTuple</code> that you want to delete from the <code>ByteMatchSet</code>.</p>
         pub fn byte_match_tuple(mut self, input: crate::model::ByteMatchTuple) -> Self {
@@ -5344,21 +5096,21 @@ pub mod byte_match_set_update {
             self
         }
         /// <p>Information about the part of a web request that you want AWS WAF to inspect and the value that you want AWS WAF to search for. If you specify <code>DELETE</code> for the value of <code>Action</code>, the <code>ByteMatchTuple</code> values must exactly match the values in the <code>ByteMatchTuple</code> that you want to delete from the <code>ByteMatchSet</code>.</p>
-        pub fn set_byte_match_tuple(
-            mut self,
-            input: std::option::Option<crate::model::ByteMatchTuple>,
-        ) -> Self {
-            self.byte_match_tuple = input;
-            self
+        pub fn set_byte_match_tuple(mut self, input: std::option::Option<crate::model::ByteMatchTuple>) -> Self {
+            self.byte_match_tuple = input; self
         }
         /// Consumes the builder and constructs a [`ByteMatchSetUpdate`](crate::model::ByteMatchSetUpdate).
         pub fn build(self) -> crate::model::ByteMatchSetUpdate {
             crate::model::ByteMatchSetUpdate {
-                action: self.action,
-                byte_match_tuple: self.byte_match_tuple,
+                action: self.action
+                ,
+                byte_match_tuple: self.byte_match_tuple
+                ,
             }
         }
     }
+    
+    
 }
 impl ByteMatchSetUpdate {
     /// Creates a new builder-style object to manufacture [`ByteMatchSetUpdate`](crate::model::ByteMatchSetUpdate).
@@ -5367,188 +5119,186 @@ impl ByteMatchSetUpdate {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>The bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ByteMatchTuple {
+pub struct ByteMatchTuple  {
     /// <p>The part of a web request that you want AWS WAF to search, such as a specified header or a query string. For more information, see <code>FieldToMatch</code>.</p>
     #[doc(hidden)]
     pub field_to_match: std::option::Option<crate::model::FieldToMatch>,
-    /// <p>The value that you want AWS WAF to search for. AWS WAF searches for the specified string in the part of web requests that you specified in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p>
-    /// <p>Valid values depend on the values that you specified for <code>FieldToMatch</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>HEADER</code>: The value that you want AWS WAF to search for in the request header that you specified in <code>FieldToMatch</code>, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header.</p> </li>
-    /// <li> <p> <code>METHOD</code>: The HTTP method, which indicates the type of operation specified in the request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p> </li>
-    /// <li> <p> <code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the query string, which is the part of a URL that appears after a <code>?</code> character.</p> </li>
-    /// <li> <p> <code>URI</code>: The value that you want AWS WAF to search for in the part of a URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p> </li>
-    /// <li> <p> <code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>. </p> </li>
-    /// <li> <p> <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li>
-    /// <li> <p> <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you specify in <code>TargetString</code>.</p> </li>
-    /// </ul>
-    /// <p>If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
-    /// <p> <b>If you're using the AWS WAF API</b> </p>
-    /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 50 bytes.</p>
-    /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>TargetString</code>.</p>
-    /// <p> <b>If you're using the AWS CLI or one of the AWS SDKs</b> </p>
+    /// <p>The value that you want AWS WAF to search for. AWS WAF searches for the specified string in the part of web requests that you specified in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p> 
+    /// <p>Valid values depend on the values that you specified for <code>FieldToMatch</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HEADER</code>: The value that you want AWS WAF to search for in the request header that you specified in <code>FieldToMatch</code>, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header.</p> </li> 
+    /// <li> <p> <code>METHOD</code>: The HTTP method, which indicates the type of operation specified in the request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p> </li> 
+    /// <li> <p> <code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the query string, which is the part of a URL that appears after a <code>?</code> character.</p> </li> 
+    /// <li> <p> <code>URI</code>: The value that you want AWS WAF to search for in the part of a URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p> </li> 
+    /// <li> <p> <code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>. </p> </li> 
+    /// <li> <p> <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li> 
+    /// <li> <p> <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you specify in <code>TargetString</code>.</p> </li> 
+    /// </ul> 
+    /// <p>If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p> 
+    /// <p> <b>If you're using the AWS WAF API</b> </p> 
+    /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 50 bytes.</p> 
+    /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>TargetString</code>.</p> 
+    /// <p> <b>If you're using the AWS CLI or one of the AWS SDKs</b> </p> 
     /// <p>The value that you want AWS WAF to search for. The SDK automatically base64 encodes the value.</p>
     #[doc(hidden)]
     pub target_string: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
-    /// <p>You can only specify a single type of TextTransformation.</p>
-    /// <p> <b>CMD_LINE</b> </p>
-    /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
-    /// <ul>
-    /// <li> <p>Delete the following characters: \ " ' ^</p> </li>
-    /// <li> <p>Delete spaces before the following characters: / (</p> </li>
-    /// <li> <p>Replace the following characters with a space: , ;</p> </li>
-    /// <li> <p>Replace multiple spaces with one space</p> </li>
-    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
-    /// </ul>
-    /// <p> <b>COMPRESS_WHITE_SPACE</b> </p>
-    /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
-    /// <ul>
-    /// <li> <p>\f, formfeed, decimal 12</p> </li>
-    /// <li> <p>\t, tab, decimal 9</p> </li>
-    /// <li> <p>\n, newline, decimal 10</p> </li>
-    /// <li> <p>\r, carriage return, decimal 13</p> </li>
-    /// <li> <p>\v, vertical tab, decimal 11</p> </li>
-    /// <li> <p>non-breaking space, decimal 160</p> </li>
-    /// </ul>
-    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
-    /// <p> <b>HTML_ENTITY_DECODE</b> </p>
-    /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
-    /// <ul>
-    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
-    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
-    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
-    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
-    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
-    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
-    /// </ul>
-    /// <p> <b>LOWERCASE</b> </p>
-    /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
-    /// <p> <b>URL_DECODE</b> </p>
-    /// <p>Use this option to decode a URL-encoded value.</p>
-    /// <p> <b>NONE</b> </p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p> 
+    /// <p>You can only specify a single type of TextTransformation.</p> 
+    /// <p> <b>CMD_LINE</b> </p> 
+    /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p> 
+    /// <ul> 
+    /// <li> <p>Delete the following characters: \ " ' ^</p> </li> 
+    /// <li> <p>Delete spaces before the following characters: / (</p> </li> 
+    /// <li> <p>Replace the following characters with a space: , ;</p> </li> 
+    /// <li> <p>Replace multiple spaces with one space</p> </li> 
+    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> 
+    /// </ul> 
+    /// <p> <b>COMPRESS_WHITE_SPACE</b> </p> 
+    /// <p>Use this option to replace the following characters with a space character (decimal 32):</p> 
+    /// <ul> 
+    /// <li> <p>\f, formfeed, decimal 12</p> </li> 
+    /// <li> <p>\t, tab, decimal 9</p> </li> 
+    /// <li> <p>\n, newline, decimal 10</p> </li> 
+    /// <li> <p>\r, carriage return, decimal 13</p> </li> 
+    /// <li> <p>\v, vertical tab, decimal 11</p> </li> 
+    /// <li> <p>non-breaking space, decimal 160</p> </li> 
+    /// </ul> 
+    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p> 
+    /// <p> <b>HTML_ENTITY_DECODE</b> </p> 
+    /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p> 
+    /// <ul> 
+    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li> 
+    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li> 
+    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li> 
+    /// </ul> 
+    /// <p> <b>LOWERCASE</b> </p> 
+    /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p> 
+    /// <p> <b>URL_DECODE</b> </p> 
+    /// <p>Use this option to decode a URL-encoded value.</p> 
+    /// <p> <b>NONE</b> </p> 
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
     #[doc(hidden)]
     pub text_transformation: std::option::Option<crate::model::TextTransformation>,
-    /// <p>Within the portion of a web request that you want to search (for example, in the query string, if any), specify where you want AWS WAF to search. Valid values include the following:</p>
-    /// <p> <b>CONTAINS</b> </p>
-    /// <p>The specified part of the web request must include the value of <code>TargetString</code>, but the location doesn't matter.</p>
-    /// <p> <b>CONTAINS_WORD</b> </p>
-    /// <p>The specified part of the web request must include the value of <code>TargetString</code>, and <code>TargetString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>TargetString</code> must be a word, which means one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>TargetString</code> exactly matches the value of the specified part of the web request, such as the value of a header.</p> </li>
-    /// <li> <p> <code>TargetString</code> is at the beginning of the specified part of the web request and is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code>.</p> </li>
-    /// <li> <p> <code>TargetString</code> is at the end of the specified part of the web request and is preceded by a character other than an alphanumeric character or underscore (_), for example, <code>;BadBot</code>.</p> </li>
-    /// <li> <p> <code>TargetString</code> is in the middle of the specified part of the web request and is preceded and followed by characters other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</p> </li>
-    /// </ul>
-    /// <p> <b>EXACTLY</b> </p>
-    /// <p>The value of the specified part of the web request must exactly match the value of <code>TargetString</code>.</p>
-    /// <p> <b>STARTS_WITH</b> </p>
-    /// <p>The value of <code>TargetString</code> must appear at the beginning of the specified part of the web request.</p>
-    /// <p> <b>ENDS_WITH</b> </p>
+    /// <p>Within the portion of a web request that you want to search (for example, in the query string, if any), specify where you want AWS WAF to search. Valid values include the following:</p> 
+    /// <p> <b>CONTAINS</b> </p> 
+    /// <p>The specified part of the web request must include the value of <code>TargetString</code>, but the location doesn't matter.</p> 
+    /// <p> <b>CONTAINS_WORD</b> </p> 
+    /// <p>The specified part of the web request must include the value of <code>TargetString</code>, and <code>TargetString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>TargetString</code> must be a word, which means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>TargetString</code> exactly matches the value of the specified part of the web request, such as the value of a header.</p> </li> 
+    /// <li> <p> <code>TargetString</code> is at the beginning of the specified part of the web request and is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code>.</p> </li> 
+    /// <li> <p> <code>TargetString</code> is at the end of the specified part of the web request and is preceded by a character other than an alphanumeric character or underscore (_), for example, <code>;BadBot</code>.</p> </li> 
+    /// <li> <p> <code>TargetString</code> is in the middle of the specified part of the web request and is preceded and followed by characters other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</p> </li> 
+    /// </ul> 
+    /// <p> <b>EXACTLY</b> </p> 
+    /// <p>The value of the specified part of the web request must exactly match the value of <code>TargetString</code>.</p> 
+    /// <p> <b>STARTS_WITH</b> </p> 
+    /// <p>The value of <code>TargetString</code> must appear at the beginning of the specified part of the web request.</p> 
+    /// <p> <b>ENDS_WITH</b> </p> 
     /// <p>The value of <code>TargetString</code> must appear at the end of the specified part of the web request.</p>
     #[doc(hidden)]
     pub positional_constraint: std::option::Option<crate::model::PositionalConstraint>,
 }
 impl ByteMatchTuple {
     /// <p>The part of a web request that you want AWS WAF to search, such as a specified header or a query string. For more information, see <code>FieldToMatch</code>.</p>
-    pub fn field_to_match(&self) -> std::option::Option<&crate::model::FieldToMatch> {
+    pub fn field_to_match(&self) -> std::option::Option<& crate::model::FieldToMatch> {
         self.field_to_match.as_ref()
     }
-    /// <p>The value that you want AWS WAF to search for. AWS WAF searches for the specified string in the part of web requests that you specified in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p>
-    /// <p>Valid values depend on the values that you specified for <code>FieldToMatch</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>HEADER</code>: The value that you want AWS WAF to search for in the request header that you specified in <code>FieldToMatch</code>, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header.</p> </li>
-    /// <li> <p> <code>METHOD</code>: The HTTP method, which indicates the type of operation specified in the request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p> </li>
-    /// <li> <p> <code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the query string, which is the part of a URL that appears after a <code>?</code> character.</p> </li>
-    /// <li> <p> <code>URI</code>: The value that you want AWS WAF to search for in the part of a URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p> </li>
-    /// <li> <p> <code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>. </p> </li>
-    /// <li> <p> <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li>
-    /// <li> <p> <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you specify in <code>TargetString</code>.</p> </li>
-    /// </ul>
-    /// <p>If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
-    /// <p> <b>If you're using the AWS WAF API</b> </p>
-    /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 50 bytes.</p>
-    /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>TargetString</code>.</p>
-    /// <p> <b>If you're using the AWS CLI or one of the AWS SDKs</b> </p>
+    /// <p>The value that you want AWS WAF to search for. AWS WAF searches for the specified string in the part of web requests that you specified in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p> 
+    /// <p>Valid values depend on the values that you specified for <code>FieldToMatch</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>HEADER</code>: The value that you want AWS WAF to search for in the request header that you specified in <code>FieldToMatch</code>, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header.</p> </li> 
+    /// <li> <p> <code>METHOD</code>: The HTTP method, which indicates the type of operation specified in the request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p> </li> 
+    /// <li> <p> <code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the query string, which is the part of a URL that appears after a <code>?</code> character.</p> </li> 
+    /// <li> <p> <code>URI</code>: The value that you want AWS WAF to search for in the part of a URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p> </li> 
+    /// <li> <p> <code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>. </p> </li> 
+    /// <li> <p> <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li> 
+    /// <li> <p> <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you specify in <code>TargetString</code>.</p> </li> 
+    /// </ul> 
+    /// <p>If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p> 
+    /// <p> <b>If you're using the AWS WAF API</b> </p> 
+    /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 50 bytes.</p> 
+    /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>TargetString</code>.</p> 
+    /// <p> <b>If you're using the AWS CLI or one of the AWS SDKs</b> </p> 
     /// <p>The value that you want AWS WAF to search for. The SDK automatically base64 encodes the value.</p>
-    pub fn target_string(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn target_string(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.target_string.as_ref()
     }
-    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
-    /// <p>You can only specify a single type of TextTransformation.</p>
-    /// <p> <b>CMD_LINE</b> </p>
-    /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
-    /// <ul>
-    /// <li> <p>Delete the following characters: \ " ' ^</p> </li>
-    /// <li> <p>Delete spaces before the following characters: / (</p> </li>
-    /// <li> <p>Replace the following characters with a space: , ;</p> </li>
-    /// <li> <p>Replace multiple spaces with one space</p> </li>
-    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
-    /// </ul>
-    /// <p> <b>COMPRESS_WHITE_SPACE</b> </p>
-    /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
-    /// <ul>
-    /// <li> <p>\f, formfeed, decimal 12</p> </li>
-    /// <li> <p>\t, tab, decimal 9</p> </li>
-    /// <li> <p>\n, newline, decimal 10</p> </li>
-    /// <li> <p>\r, carriage return, decimal 13</p> </li>
-    /// <li> <p>\v, vertical tab, decimal 11</p> </li>
-    /// <li> <p>non-breaking space, decimal 160</p> </li>
-    /// </ul>
-    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
-    /// <p> <b>HTML_ENTITY_DECODE</b> </p>
-    /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
-    /// <ul>
-    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
-    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
-    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
-    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
-    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
-    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
-    /// </ul>
-    /// <p> <b>LOWERCASE</b> </p>
-    /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
-    /// <p> <b>URL_DECODE</b> </p>
-    /// <p>Use this option to decode a URL-encoded value.</p>
-    /// <p> <b>NONE</b> </p>
+    /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p> 
+    /// <p>You can only specify a single type of TextTransformation.</p> 
+    /// <p> <b>CMD_LINE</b> </p> 
+    /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p> 
+    /// <ul> 
+    /// <li> <p>Delete the following characters: \ " ' ^</p> </li> 
+    /// <li> <p>Delete spaces before the following characters: / (</p> </li> 
+    /// <li> <p>Replace the following characters with a space: , ;</p> </li> 
+    /// <li> <p>Replace multiple spaces with one space</p> </li> 
+    /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> 
+    /// </ul> 
+    /// <p> <b>COMPRESS_WHITE_SPACE</b> </p> 
+    /// <p>Use this option to replace the following characters with a space character (decimal 32):</p> 
+    /// <ul> 
+    /// <li> <p>\f, formfeed, decimal 12</p> </li> 
+    /// <li> <p>\t, tab, decimal 9</p> </li> 
+    /// <li> <p>\n, newline, decimal 10</p> </li> 
+    /// <li> <p>\r, carriage return, decimal 13</p> </li> 
+    /// <li> <p>\v, vertical tab, decimal 11</p> </li> 
+    /// <li> <p>non-breaking space, decimal 160</p> </li> 
+    /// </ul> 
+    /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p> 
+    /// <p> <b>HTML_ENTITY_DECODE</b> </p> 
+    /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p> 
+    /// <ul> 
+    /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li> 
+    /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li> 
+    /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li> 
+    /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li> 
+    /// </ul> 
+    /// <p> <b>LOWERCASE</b> </p> 
+    /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p> 
+    /// <p> <b>URL_DECODE</b> </p> 
+    /// <p>Use this option to decode a URL-encoded value.</p> 
+    /// <p> <b>NONE</b> </p> 
     /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-    pub fn text_transformation(&self) -> std::option::Option<&crate::model::TextTransformation> {
+    pub fn text_transformation(&self) -> std::option::Option<& crate::model::TextTransformation> {
         self.text_transformation.as_ref()
     }
-    /// <p>Within the portion of a web request that you want to search (for example, in the query string, if any), specify where you want AWS WAF to search. Valid values include the following:</p>
-    /// <p> <b>CONTAINS</b> </p>
-    /// <p>The specified part of the web request must include the value of <code>TargetString</code>, but the location doesn't matter.</p>
-    /// <p> <b>CONTAINS_WORD</b> </p>
-    /// <p>The specified part of the web request must include the value of <code>TargetString</code>, and <code>TargetString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>TargetString</code> must be a word, which means one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>TargetString</code> exactly matches the value of the specified part of the web request, such as the value of a header.</p> </li>
-    /// <li> <p> <code>TargetString</code> is at the beginning of the specified part of the web request and is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code>.</p> </li>
-    /// <li> <p> <code>TargetString</code> is at the end of the specified part of the web request and is preceded by a character other than an alphanumeric character or underscore (_), for example, <code>;BadBot</code>.</p> </li>
-    /// <li> <p> <code>TargetString</code> is in the middle of the specified part of the web request and is preceded and followed by characters other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</p> </li>
-    /// </ul>
-    /// <p> <b>EXACTLY</b> </p>
-    /// <p>The value of the specified part of the web request must exactly match the value of <code>TargetString</code>.</p>
-    /// <p> <b>STARTS_WITH</b> </p>
-    /// <p>The value of <code>TargetString</code> must appear at the beginning of the specified part of the web request.</p>
-    /// <p> <b>ENDS_WITH</b> </p>
+    /// <p>Within the portion of a web request that you want to search (for example, in the query string, if any), specify where you want AWS WAF to search. Valid values include the following:</p> 
+    /// <p> <b>CONTAINS</b> </p> 
+    /// <p>The specified part of the web request must include the value of <code>TargetString</code>, but the location doesn't matter.</p> 
+    /// <p> <b>CONTAINS_WORD</b> </p> 
+    /// <p>The specified part of the web request must include the value of <code>TargetString</code>, and <code>TargetString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>TargetString</code> must be a word, which means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>TargetString</code> exactly matches the value of the specified part of the web request, such as the value of a header.</p> </li> 
+    /// <li> <p> <code>TargetString</code> is at the beginning of the specified part of the web request and is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code>.</p> </li> 
+    /// <li> <p> <code>TargetString</code> is at the end of the specified part of the web request and is preceded by a character other than an alphanumeric character or underscore (_), for example, <code>;BadBot</code>.</p> </li> 
+    /// <li> <p> <code>TargetString</code> is in the middle of the specified part of the web request and is preceded and followed by characters other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</p> </li> 
+    /// </ul> 
+    /// <p> <b>EXACTLY</b> </p> 
+    /// <p>The value of the specified part of the web request must exactly match the value of <code>TargetString</code>.</p> 
+    /// <p> <b>STARTS_WITH</b> </p> 
+    /// <p>The value of <code>TargetString</code> must appear at the beginning of the specified part of the web request.</p> 
+    /// <p> <b>ENDS_WITH</b> </p> 
     /// <p>The value of <code>TargetString</code> must appear at the end of the specified part of the web request.</p>
-    pub fn positional_constraint(
-        &self,
-    ) -> std::option::Option<&crate::model::PositionalConstraint> {
+    pub fn positional_constraint(&self) -> std::option::Option<& crate::model::PositionalConstraint> {
         self.positional_constraint.as_ref()
     }
 }
 /// See [`ByteMatchTuple`](crate::model::ByteMatchTuple).
 pub mod byte_match_tuple {
-
+    
     /// A builder for [`ByteMatchTuple`](crate::model::ByteMatchTuple).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5564,200 +5314,190 @@ pub mod byte_match_tuple {
             self
         }
         /// <p>The part of a web request that you want AWS WAF to search, such as a specified header or a query string. For more information, see <code>FieldToMatch</code>.</p>
-        pub fn set_field_to_match(
-            mut self,
-            input: std::option::Option<crate::model::FieldToMatch>,
-        ) -> Self {
-            self.field_to_match = input;
-            self
+        pub fn set_field_to_match(mut self, input: std::option::Option<crate::model::FieldToMatch>) -> Self {
+            self.field_to_match = input; self
         }
-        /// <p>The value that you want AWS WAF to search for. AWS WAF searches for the specified string in the part of web requests that you specified in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p>
-        /// <p>Valid values depend on the values that you specified for <code>FieldToMatch</code>:</p>
-        /// <ul>
-        /// <li> <p> <code>HEADER</code>: The value that you want AWS WAF to search for in the request header that you specified in <code>FieldToMatch</code>, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header.</p> </li>
-        /// <li> <p> <code>METHOD</code>: The HTTP method, which indicates the type of operation specified in the request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p> </li>
-        /// <li> <p> <code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the query string, which is the part of a URL that appears after a <code>?</code> character.</p> </li>
-        /// <li> <p> <code>URI</code>: The value that you want AWS WAF to search for in the part of a URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p> </li>
-        /// <li> <p> <code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>. </p> </li>
-        /// <li> <p> <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li>
-        /// <li> <p> <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you specify in <code>TargetString</code>.</p> </li>
-        /// </ul>
-        /// <p>If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
-        /// <p> <b>If you're using the AWS WAF API</b> </p>
-        /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 50 bytes.</p>
-        /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>TargetString</code>.</p>
-        /// <p> <b>If you're using the AWS CLI or one of the AWS SDKs</b> </p>
+        /// <p>The value that you want AWS WAF to search for. AWS WAF searches for the specified string in the part of web requests that you specified in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p> 
+        /// <p>Valid values depend on the values that you specified for <code>FieldToMatch</code>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>HEADER</code>: The value that you want AWS WAF to search for in the request header that you specified in <code>FieldToMatch</code>, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header.</p> </li> 
+        /// <li> <p> <code>METHOD</code>: The HTTP method, which indicates the type of operation specified in the request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p> </li> 
+        /// <li> <p> <code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the query string, which is the part of a URL that appears after a <code>?</code> character.</p> </li> 
+        /// <li> <p> <code>URI</code>: The value that you want AWS WAF to search for in the part of a URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p> </li> 
+        /// <li> <p> <code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>. </p> </li> 
+        /// <li> <p> <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li> 
+        /// <li> <p> <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you specify in <code>TargetString</code>.</p> </li> 
+        /// </ul> 
+        /// <p>If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p> 
+        /// <p> <b>If you're using the AWS WAF API</b> </p> 
+        /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 50 bytes.</p> 
+        /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>TargetString</code>.</p> 
+        /// <p> <b>If you're using the AWS CLI or one of the AWS SDKs</b> </p> 
         /// <p>The value that you want AWS WAF to search for. The SDK automatically base64 encodes the value.</p>
         pub fn target_string(mut self, input: aws_smithy_types::Blob) -> Self {
             self.target_string = Some(input);
             self
         }
-        /// <p>The value that you want AWS WAF to search for. AWS WAF searches for the specified string in the part of web requests that you specified in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p>
-        /// <p>Valid values depend on the values that you specified for <code>FieldToMatch</code>:</p>
-        /// <ul>
-        /// <li> <p> <code>HEADER</code>: The value that you want AWS WAF to search for in the request header that you specified in <code>FieldToMatch</code>, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header.</p> </li>
-        /// <li> <p> <code>METHOD</code>: The HTTP method, which indicates the type of operation specified in the request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p> </li>
-        /// <li> <p> <code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the query string, which is the part of a URL that appears after a <code>?</code> character.</p> </li>
-        /// <li> <p> <code>URI</code>: The value that you want AWS WAF to search for in the part of a URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p> </li>
-        /// <li> <p> <code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>. </p> </li>
-        /// <li> <p> <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li>
-        /// <li> <p> <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you specify in <code>TargetString</code>.</p> </li>
-        /// </ul>
-        /// <p>If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p>
-        /// <p> <b>If you're using the AWS WAF API</b> </p>
-        /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 50 bytes.</p>
-        /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>TargetString</code>.</p>
-        /// <p> <b>If you're using the AWS CLI or one of the AWS SDKs</b> </p>
+        /// <p>The value that you want AWS WAF to search for. AWS WAF searches for the specified string in the part of web requests that you specified in <code>FieldToMatch</code>. The maximum length of the value is 50 bytes.</p> 
+        /// <p>Valid values depend on the values that you specified for <code>FieldToMatch</code>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>HEADER</code>: The value that you want AWS WAF to search for in the request header that you specified in <code>FieldToMatch</code>, for example, the value of the <code>User-Agent</code> or <code>Referer</code> header.</p> </li> 
+        /// <li> <p> <code>METHOD</code>: The HTTP method, which indicates the type of operation specified in the request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.</p> </li> 
+        /// <li> <p> <code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the query string, which is the part of a URL that appears after a <code>?</code> character.</p> </li> 
+        /// <li> <p> <code>URI</code>: The value that you want AWS WAF to search for in the part of a URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.</p> </li> 
+        /// <li> <p> <code>BODY</code>: The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form. The request body immediately follows the request headers. Note that only the first <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection. To allow or block requests based on the length of the body, you can create a size constraint set. For more information, see <code>CreateSizeConstraintSet</code>. </p> </li> 
+        /// <li> <p> <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li> 
+        /// <li> <p> <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead of inspecting a single parameter, AWS WAF inspects all parameters within the query string for the value or regex pattern that you specify in <code>TargetString</code>.</p> </li> 
+        /// </ul> 
+        /// <p>If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that the value is case sensitive.</p> 
+        /// <p> <b>If you're using the AWS WAF API</b> </p> 
+        /// <p>Specify a base64-encoded version of the value. The maximum length of the value before you base64-encode it is 50 bytes.</p> 
+        /// <p>For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the value of <code>TargetString</code>.</p> 
+        /// <p> <b>If you're using the AWS CLI or one of the AWS SDKs</b> </p> 
         /// <p>The value that you want AWS WAF to search for. The SDK automatically base64 encodes the value.</p>
-        pub fn set_target_string(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Blob>,
-        ) -> Self {
-            self.target_string = input;
-            self
+        pub fn set_target_string(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.target_string = input; self
         }
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
-        /// <p>You can only specify a single type of TextTransformation.</p>
-        /// <p> <b>CMD_LINE</b> </p>
-        /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
-        /// <ul>
-        /// <li> <p>Delete the following characters: \ " ' ^</p> </li>
-        /// <li> <p>Delete spaces before the following characters: / (</p> </li>
-        /// <li> <p>Replace the following characters with a space: , ;</p> </li>
-        /// <li> <p>Replace multiple spaces with one space</p> </li>
-        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
-        /// </ul>
-        /// <p> <b>COMPRESS_WHITE_SPACE</b> </p>
-        /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
-        /// <ul>
-        /// <li> <p>\f, formfeed, decimal 12</p> </li>
-        /// <li> <p>\t, tab, decimal 9</p> </li>
-        /// <li> <p>\n, newline, decimal 10</p> </li>
-        /// <li> <p>\r, carriage return, decimal 13</p> </li>
-        /// <li> <p>\v, vertical tab, decimal 11</p> </li>
-        /// <li> <p>non-breaking space, decimal 160</p> </li>
-        /// </ul>
-        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
-        /// <p> <b>HTML_ENTITY_DECODE</b> </p>
-        /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
-        /// <ul>
-        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
-        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
-        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
-        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
-        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
-        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
-        /// </ul>
-        /// <p> <b>LOWERCASE</b> </p>
-        /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
-        /// <p> <b>URL_DECODE</b> </p>
-        /// <p>Use this option to decode a URL-encoded value.</p>
-        /// <p> <b>NONE</b> </p>
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p> 
+        /// <p>You can only specify a single type of TextTransformation.</p> 
+        /// <p> <b>CMD_LINE</b> </p> 
+        /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p> 
+        /// <ul> 
+        /// <li> <p>Delete the following characters: \ " ' ^</p> </li> 
+        /// <li> <p>Delete spaces before the following characters: / (</p> </li> 
+        /// <li> <p>Replace the following characters with a space: , ;</p> </li> 
+        /// <li> <p>Replace multiple spaces with one space</p> </li> 
+        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> 
+        /// </ul> 
+        /// <p> <b>COMPRESS_WHITE_SPACE</b> </p> 
+        /// <p>Use this option to replace the following characters with a space character (decimal 32):</p> 
+        /// <ul> 
+        /// <li> <p>\f, formfeed, decimal 12</p> </li> 
+        /// <li> <p>\t, tab, decimal 9</p> </li> 
+        /// <li> <p>\n, newline, decimal 10</p> </li> 
+        /// <li> <p>\r, carriage return, decimal 13</p> </li> 
+        /// <li> <p>\v, vertical tab, decimal 11</p> </li> 
+        /// <li> <p>non-breaking space, decimal 160</p> </li> 
+        /// </ul> 
+        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p> 
+        /// <p> <b>HTML_ENTITY_DECODE</b> </p> 
+        /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p> 
+        /// <ul> 
+        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li> 
+        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li> 
+        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li> 
+        /// </ul> 
+        /// <p> <b>LOWERCASE</b> </p> 
+        /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p> 
+        /// <p> <b>URL_DECODE</b> </p> 
+        /// <p>Use this option to decode a URL-encoded value.</p> 
+        /// <p> <b>NONE</b> </p> 
         /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
         pub fn text_transformation(mut self, input: crate::model::TextTransformation) -> Self {
             self.text_transformation = Some(input);
             self
         }
-        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
-        /// <p>You can only specify a single type of TextTransformation.</p>
-        /// <p> <b>CMD_LINE</b> </p>
-        /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p>
-        /// <ul>
-        /// <li> <p>Delete the following characters: \ " ' ^</p> </li>
-        /// <li> <p>Delete spaces before the following characters: / (</p> </li>
-        /// <li> <p>Replace the following characters with a space: , ;</p> </li>
-        /// <li> <p>Replace multiple spaces with one space</p> </li>
-        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li>
-        /// </ul>
-        /// <p> <b>COMPRESS_WHITE_SPACE</b> </p>
-        /// <p>Use this option to replace the following characters with a space character (decimal 32):</p>
-        /// <ul>
-        /// <li> <p>\f, formfeed, decimal 12</p> </li>
-        /// <li> <p>\t, tab, decimal 9</p> </li>
-        /// <li> <p>\n, newline, decimal 10</p> </li>
-        /// <li> <p>\r, carriage return, decimal 13</p> </li>
-        /// <li> <p>\v, vertical tab, decimal 11</p> </li>
-        /// <li> <p>non-breaking space, decimal 160</p> </li>
-        /// </ul>
-        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p>
-        /// <p> <b>HTML_ENTITY_DECODE</b> </p>
-        /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p>
-        /// <ul>
-        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li>
-        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li>
-        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li>
-        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li>
-        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li>
-        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li>
-        /// </ul>
-        /// <p> <b>LOWERCASE</b> </p>
-        /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
-        /// <p> <b>URL_DECODE</b> </p>
-        /// <p>Use this option to decode a URL-encoded value.</p>
-        /// <p> <b>NONE</b> </p>
+        /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p> 
+        /// <p>You can only specify a single type of TextTransformation.</p> 
+        /// <p> <b>CMD_LINE</b> </p> 
+        /// <p>When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:</p> 
+        /// <ul> 
+        /// <li> <p>Delete the following characters: \ " ' ^</p> </li> 
+        /// <li> <p>Delete spaces before the following characters: / (</p> </li> 
+        /// <li> <p>Replace the following characters with a space: , ;</p> </li> 
+        /// <li> <p>Replace multiple spaces with one space</p> </li> 
+        /// <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> 
+        /// </ul> 
+        /// <p> <b>COMPRESS_WHITE_SPACE</b> </p> 
+        /// <p>Use this option to replace the following characters with a space character (decimal 32):</p> 
+        /// <ul> 
+        /// <li> <p>\f, formfeed, decimal 12</p> </li> 
+        /// <li> <p>\t, tab, decimal 9</p> </li> 
+        /// <li> <p>\n, newline, decimal 10</p> </li> 
+        /// <li> <p>\r, carriage return, decimal 13</p> </li> 
+        /// <li> <p>\v, vertical tab, decimal 11</p> </li> 
+        /// <li> <p>non-breaking space, decimal 160</p> </li> 
+        /// </ul> 
+        /// <p> <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.</p> 
+        /// <p> <b>HTML_ENTITY_DECODE</b> </p> 
+        /// <p>Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code> performs the following operations:</p> 
+        /// <ul> 
+        /// <li> <p>Replaces <code>(ampersand)quot;</code> with <code>"</code> </p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)lt;</code> with a "less than" symbol</p> </li> 
+        /// <li> <p>Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> </p> </li> 
+        /// <li> <p>Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</p> </li> 
+        /// <li> <p>Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>, with the corresponding characters</p> </li> 
+        /// </ul> 
+        /// <p> <b>LOWERCASE</b> </p> 
+        /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p> 
+        /// <p> <b>URL_DECODE</b> </p> 
+        /// <p>Use this option to decode a URL-encoded value.</p> 
+        /// <p> <b>NONE</b> </p> 
         /// <p>Specify <code>NONE</code> if you don't want to perform any text transformations.</p>
-        pub fn set_text_transformation(
-            mut self,
-            input: std::option::Option<crate::model::TextTransformation>,
-        ) -> Self {
-            self.text_transformation = input;
-            self
+        pub fn set_text_transformation(mut self, input: std::option::Option<crate::model::TextTransformation>) -> Self {
+            self.text_transformation = input; self
         }
-        /// <p>Within the portion of a web request that you want to search (for example, in the query string, if any), specify where you want AWS WAF to search. Valid values include the following:</p>
-        /// <p> <b>CONTAINS</b> </p>
-        /// <p>The specified part of the web request must include the value of <code>TargetString</code>, but the location doesn't matter.</p>
-        /// <p> <b>CONTAINS_WORD</b> </p>
-        /// <p>The specified part of the web request must include the value of <code>TargetString</code>, and <code>TargetString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>TargetString</code> must be a word, which means one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>TargetString</code> exactly matches the value of the specified part of the web request, such as the value of a header.</p> </li>
-        /// <li> <p> <code>TargetString</code> is at the beginning of the specified part of the web request and is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code>.</p> </li>
-        /// <li> <p> <code>TargetString</code> is at the end of the specified part of the web request and is preceded by a character other than an alphanumeric character or underscore (_), for example, <code>;BadBot</code>.</p> </li>
-        /// <li> <p> <code>TargetString</code> is in the middle of the specified part of the web request and is preceded and followed by characters other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</p> </li>
-        /// </ul>
-        /// <p> <b>EXACTLY</b> </p>
-        /// <p>The value of the specified part of the web request must exactly match the value of <code>TargetString</code>.</p>
-        /// <p> <b>STARTS_WITH</b> </p>
-        /// <p>The value of <code>TargetString</code> must appear at the beginning of the specified part of the web request.</p>
-        /// <p> <b>ENDS_WITH</b> </p>
+        /// <p>Within the portion of a web request that you want to search (for example, in the query string, if any), specify where you want AWS WAF to search. Valid values include the following:</p> 
+        /// <p> <b>CONTAINS</b> </p> 
+        /// <p>The specified part of the web request must include the value of <code>TargetString</code>, but the location doesn't matter.</p> 
+        /// <p> <b>CONTAINS_WORD</b> </p> 
+        /// <p>The specified part of the web request must include the value of <code>TargetString</code>, and <code>TargetString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>TargetString</code> must be a word, which means one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>TargetString</code> exactly matches the value of the specified part of the web request, such as the value of a header.</p> </li> 
+        /// <li> <p> <code>TargetString</code> is at the beginning of the specified part of the web request and is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code>.</p> </li> 
+        /// <li> <p> <code>TargetString</code> is at the end of the specified part of the web request and is preceded by a character other than an alphanumeric character or underscore (_), for example, <code>;BadBot</code>.</p> </li> 
+        /// <li> <p> <code>TargetString</code> is in the middle of the specified part of the web request and is preceded and followed by characters other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</p> </li> 
+        /// </ul> 
+        /// <p> <b>EXACTLY</b> </p> 
+        /// <p>The value of the specified part of the web request must exactly match the value of <code>TargetString</code>.</p> 
+        /// <p> <b>STARTS_WITH</b> </p> 
+        /// <p>The value of <code>TargetString</code> must appear at the beginning of the specified part of the web request.</p> 
+        /// <p> <b>ENDS_WITH</b> </p> 
         /// <p>The value of <code>TargetString</code> must appear at the end of the specified part of the web request.</p>
         pub fn positional_constraint(mut self, input: crate::model::PositionalConstraint) -> Self {
             self.positional_constraint = Some(input);
             self
         }
-        /// <p>Within the portion of a web request that you want to search (for example, in the query string, if any), specify where you want AWS WAF to search. Valid values include the following:</p>
-        /// <p> <b>CONTAINS</b> </p>
-        /// <p>The specified part of the web request must include the value of <code>TargetString</code>, but the location doesn't matter.</p>
-        /// <p> <b>CONTAINS_WORD</b> </p>
-        /// <p>The specified part of the web request must include the value of <code>TargetString</code>, and <code>TargetString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>TargetString</code> must be a word, which means one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>TargetString</code> exactly matches the value of the specified part of the web request, such as the value of a header.</p> </li>
-        /// <li> <p> <code>TargetString</code> is at the beginning of the specified part of the web request and is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code>.</p> </li>
-        /// <li> <p> <code>TargetString</code> is at the end of the specified part of the web request and is preceded by a character other than an alphanumeric character or underscore (_), for example, <code>;BadBot</code>.</p> </li>
-        /// <li> <p> <code>TargetString</code> is in the middle of the specified part of the web request and is preceded and followed by characters other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</p> </li>
-        /// </ul>
-        /// <p> <b>EXACTLY</b> </p>
-        /// <p>The value of the specified part of the web request must exactly match the value of <code>TargetString</code>.</p>
-        /// <p> <b>STARTS_WITH</b> </p>
-        /// <p>The value of <code>TargetString</code> must appear at the beginning of the specified part of the web request.</p>
-        /// <p> <b>ENDS_WITH</b> </p>
+        /// <p>Within the portion of a web request that you want to search (for example, in the query string, if any), specify where you want AWS WAF to search. Valid values include the following:</p> 
+        /// <p> <b>CONTAINS</b> </p> 
+        /// <p>The specified part of the web request must include the value of <code>TargetString</code>, but the location doesn't matter.</p> 
+        /// <p> <b>CONTAINS_WORD</b> </p> 
+        /// <p>The specified part of the web request must include the value of <code>TargetString</code>, and <code>TargetString</code> must contain only alphanumeric characters or underscore (A-Z, a-z, 0-9, or _). In addition, <code>TargetString</code> must be a word, which means one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>TargetString</code> exactly matches the value of the specified part of the web request, such as the value of a header.</p> </li> 
+        /// <li> <p> <code>TargetString</code> is at the beginning of the specified part of the web request and is followed by a character other than an alphanumeric character or underscore (_), for example, <code>BadBot;</code>.</p> </li> 
+        /// <li> <p> <code>TargetString</code> is at the end of the specified part of the web request and is preceded by a character other than an alphanumeric character or underscore (_), for example, <code>;BadBot</code>.</p> </li> 
+        /// <li> <p> <code>TargetString</code> is in the middle of the specified part of the web request and is preceded and followed by characters other than alphanumeric characters or underscore (_), for example, <code>-BadBot;</code>.</p> </li> 
+        /// </ul> 
+        /// <p> <b>EXACTLY</b> </p> 
+        /// <p>The value of the specified part of the web request must exactly match the value of <code>TargetString</code>.</p> 
+        /// <p> <b>STARTS_WITH</b> </p> 
+        /// <p>The value of <code>TargetString</code> must appear at the beginning of the specified part of the web request.</p> 
+        /// <p> <b>ENDS_WITH</b> </p> 
         /// <p>The value of <code>TargetString</code> must appear at the end of the specified part of the web request.</p>
-        pub fn set_positional_constraint(
-            mut self,
-            input: std::option::Option<crate::model::PositionalConstraint>,
-        ) -> Self {
-            self.positional_constraint = input;
-            self
+        pub fn set_positional_constraint(mut self, input: std::option::Option<crate::model::PositionalConstraint>) -> Self {
+            self.positional_constraint = input; self
         }
         /// Consumes the builder and constructs a [`ByteMatchTuple`](crate::model::ByteMatchTuple).
         pub fn build(self) -> crate::model::ByteMatchTuple {
             crate::model::ByteMatchTuple {
-                field_to_match: self.field_to_match,
-                target_string: self.target_string,
-                text_transformation: self.text_transformation,
-                positional_constraint: self.positional_constraint,
+                field_to_match: self.field_to_match
+                ,
+                target_string: self.target_string
+                ,
+                text_transformation: self.text_transformation
+                ,
+                positional_constraint: self.positional_constraint
+                ,
             }
         }
     }
+    
+    
 }
 impl ByteMatchTuple {
     /// Creates a new builder-style object to manufacture [`ByteMatchTuple`](crate::model::ByteMatchTuple).
@@ -5772,9 +5512,9 @@ impl ByteMatchTuple {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let positionalconstraint = unimplemented!();
 /// match positionalconstraint {
@@ -5799,22 +5539,14 @@ impl ByteMatchTuple {
 /// Specifically, when `positionalconstraint` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PositionalConstraint::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PositionalConstraint {
     #[allow(missing_docs)] // documentation missing in model
     Contains,
@@ -5827,7 +5559,7 @@ pub enum PositionalConstraint {
     #[allow(missing_docs)] // documentation missing in model
     StartsWith,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PositionalConstraint {
     fn from(s: &str) -> Self {
@@ -5837,19 +5569,17 @@ impl std::convert::From<&str> for PositionalConstraint {
             "ENDS_WITH" => PositionalConstraint::EndsWith,
             "EXACTLY" => PositionalConstraint::Exactly,
             "STARTS_WITH" => PositionalConstraint::StartsWith,
-            other => {
-                PositionalConstraint::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PositionalConstraint::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PositionalConstraint {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PositionalConstraint::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PositionalConstraint::from(s))
+                }
+            }
 impl PositionalConstraint {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5859,17 +5589,13 @@ impl PositionalConstraint {
             PositionalConstraint::EndsWith => "ENDS_WITH",
             PositionalConstraint::Exactly => "EXACTLY",
             PositionalConstraint::StartsWith => "STARTS_WITH",
-            PositionalConstraint::Unknown(value) => value.as_str(),
+            PositionalConstraint::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CONTAINS",
-            "CONTAINS_WORD",
-            "ENDS_WITH",
-            "EXACTLY",
-            "STARTS_WITH",
+            "CONTAINS", "CONTAINS_WORD", "ENDS_WITH", "EXACTLY", "STARTS_WITH"
         ]
     }
 }
@@ -5879,15 +5605,15 @@ impl AsRef<str> for PositionalConstraint {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
-/// <p>A tag associated with an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.</p>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
+/// <p>A tag associated with an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.</p> 
 /// <p>Tagging is only available through the API, SDKs, and CLI. You can't manage or view tags through the AWS WAF Classic console. You can tag the AWS resources that you manage through AWS WAF Classic: web ACLs, rule groups, and rules. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p></p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -5897,17 +5623,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p></p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p></p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5922,8 +5648,7 @@ pub mod tag {
         }
         /// <p></p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p></p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5932,17 +5657,20 @@ pub mod tag {
         }
         /// <p></p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -5951,14 +5679,14 @@ impl Tag {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>The Amazon Kinesis Data Firehose, <code>RedactedFields</code> information, and the web ACL Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoggingConfiguration {
+pub struct LoggingConfiguration  {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -5971,21 +5699,21 @@ pub struct LoggingConfiguration {
 }
 impl LoggingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>An array of Amazon Kinesis Data Firehose ARNs.</p>
-    pub fn log_destination_configs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn log_destination_configs(&self) -> std::option::Option<& [std::string::String]> {
         self.log_destination_configs.as_deref()
     }
     /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>. </p>
-    pub fn redacted_fields(&self) -> std::option::Option<&[crate::model::FieldToMatch]> {
+    pub fn redacted_fields(&self) -> std::option::Option<& [crate::model::FieldToMatch]> {
         self.redacted_fields.as_deref()
     }
 }
 /// See [`LoggingConfiguration`](crate::model::LoggingConfiguration).
 pub mod logging_configuration {
-
+    
     /// A builder for [`LoggingConfiguration`](crate::model::LoggingConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6001,8 +5729,7 @@ pub mod logging_configuration {
         }
         /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `log_destination_configs`.
         ///
@@ -6011,17 +5738,13 @@ pub mod logging_configuration {
         /// <p>An array of Amazon Kinesis Data Firehose ARNs.</p>
         pub fn log_destination_configs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.log_destination_configs.unwrap_or_default();
-            v.push(input.into());
-            self.log_destination_configs = Some(v);
-            self
+                            v.push(input.into());
+                            self.log_destination_configs = Some(v);
+                            self
         }
         /// <p>An array of Amazon Kinesis Data Firehose ARNs.</p>
-        pub fn set_log_destination_configs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.log_destination_configs = input;
-            self
+        pub fn set_log_destination_configs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.log_destination_configs = input; self
         }
         /// Appends an item to `redacted_fields`.
         ///
@@ -6030,27 +5753,28 @@ pub mod logging_configuration {
         /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>. </p>
         pub fn redacted_fields(mut self, input: crate::model::FieldToMatch) -> Self {
             let mut v = self.redacted_fields.unwrap_or_default();
-            v.push(input);
-            self.redacted_fields = Some(v);
-            self
+                            v.push(input);
+                            self.redacted_fields = Some(v);
+                            self
         }
         /// <p>The parts of the request that you want redacted from the logs. For example, if you redact the cookie field, the cookie field in the firehose will be <code>xxx</code>. </p>
-        pub fn set_redacted_fields(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FieldToMatch>>,
-        ) -> Self {
-            self.redacted_fields = input;
-            self
+        pub fn set_redacted_fields(mut self, input: std::option::Option<std::vec::Vec<crate::model::FieldToMatch>>) -> Self {
+            self.redacted_fields = input; self
         }
         /// Consumes the builder and constructs a [`LoggingConfiguration`](crate::model::LoggingConfiguration).
         pub fn build(self) -> crate::model::LoggingConfiguration {
             crate::model::LoggingConfiguration {
-                resource_arn: self.resource_arn,
-                log_destination_configs: self.log_destination_configs,
-                redacted_fields: self.redacted_fields,
+                resource_arn: self.resource_arn
+                ,
+                log_destination_configs: self.log_destination_configs
+                ,
+                redacted_fields: self.redacted_fields
+                ,
             }
         }
     }
+    
+    
 }
 impl LoggingConfiguration {
     /// Creates a new builder-style object to manufacture [`LoggingConfiguration`](crate::model::LoggingConfiguration).
@@ -6059,15 +5783,15 @@ impl LoggingConfiguration {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>The <code>Id</code> and <code>Name</code> of an <code>XssMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct XssMatchSetSummary {
-    /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about a <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
+pub struct XssMatchSetSummary  {
+    /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about a <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p> 
     /// <p> <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     #[doc(hidden)]
     pub xss_match_set_id: std::option::Option<std::string::String>,
@@ -6076,19 +5800,19 @@ pub struct XssMatchSetSummary {
     pub name: std::option::Option<std::string::String>,
 }
 impl XssMatchSetSummary {
-    /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about a <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
+    /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about a <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p> 
     /// <p> <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    pub fn xss_match_set_id(&self) -> std::option::Option<&str> {
+    pub fn xss_match_set_id(&self) -> std::option::Option<& str> {
         self.xss_match_set_id.as_deref()
     }
     /// <p>The name of the <code>XssMatchSet</code>, if any, specified by <code>Id</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`XssMatchSetSummary`](crate::model::XssMatchSetSummary).
 pub mod xss_match_set_summary {
-
+    
     /// A builder for [`XssMatchSetSummary`](crate::model::XssMatchSetSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6096,20 +5820,16 @@ pub mod xss_match_set_summary {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about a <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
+        /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about a <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p> 
         /// <p> <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
         pub fn xss_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.xss_match_set_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about a <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
+        /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about a <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p> 
         /// <p> <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-        pub fn set_xss_match_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.xss_match_set_id = input;
-            self
+        pub fn set_xss_match_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.xss_match_set_id = input; self
         }
         /// <p>The name of the <code>XssMatchSet</code>, if any, specified by <code>Id</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6118,17 +5838,20 @@ pub mod xss_match_set_summary {
         }
         /// <p>The name of the <code>XssMatchSet</code>, if any, specified by <code>Id</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`XssMatchSetSummary`](crate::model::XssMatchSetSummary).
         pub fn build(self) -> crate::model::XssMatchSetSummary {
             crate::model::XssMatchSetSummary {
-                xss_match_set_id: self.xss_match_set_id,
-                name: self.name,
+                xss_match_set_id: self.xss_match_set_id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl XssMatchSetSummary {
     /// Creates a new builder-style object to manufacture [`XssMatchSetSummary`](crate::model::XssMatchSetSummary).
@@ -6137,15 +5860,15 @@ impl XssMatchSetSummary {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Contains the identifier and the name or description of the <code>WebACL</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WebAclSummary {
-    /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p>
+pub struct WebAclSummary  {
+    /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p> 
     /// <p> <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
     #[doc(hidden)]
     pub web_acl_id: std::option::Option<std::string::String>,
@@ -6154,19 +5877,19 @@ pub struct WebAclSummary {
     pub name: std::option::Option<std::string::String>,
 }
 impl WebAclSummary {
-    /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p>
+    /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p> 
     /// <p> <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
-    pub fn web_acl_id(&self) -> std::option::Option<&str> {
+    pub fn web_acl_id(&self) -> std::option::Option<& str> {
         self.web_acl_id.as_deref()
     }
     /// <p>A friendly name or description of the <code>WebACL</code>. You can't change the name of a <code>WebACL</code> after you create it.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`WebAclSummary`](crate::model::WebAclSummary).
 pub mod web_acl_summary {
-
+    
     /// A builder for [`WebAclSummary`](crate::model::WebAclSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6174,17 +5897,16 @@ pub mod web_acl_summary {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p>
+        /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p> 
         /// <p> <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
         pub fn web_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.web_acl_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p>
+        /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p> 
         /// <p> <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
         pub fn set_web_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.web_acl_id = input;
-            self
+            self.web_acl_id = input; self
         }
         /// <p>A friendly name or description of the <code>WebACL</code>. You can't change the name of a <code>WebACL</code> after you create it.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6193,17 +5915,20 @@ pub mod web_acl_summary {
         }
         /// <p>A friendly name or description of the <code>WebACL</code>. You can't change the name of a <code>WebACL</code> after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`WebAclSummary`](crate::model::WebAclSummary).
         pub fn build(self) -> crate::model::WebAclSummary {
             crate::model::WebAclSummary {
-                web_acl_id: self.web_acl_id,
-                name: self.name,
+                web_acl_id: self.web_acl_id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl WebAclSummary {
     /// Creates a new builder-style object to manufacture [`WebAclSummary`](crate::model::WebAclSummary).
@@ -6212,15 +5937,15 @@ impl WebAclSummary {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
-/// <p>Information for a tag associated with an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.</p>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
+/// <p>Information for a tag associated with an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.</p> 
 /// <p>Tagging is only available through the API, SDKs, and CLI. You can't manage or view tags through the AWS WAF Classic console. You can tag the AWS resources that you manage through AWS WAF Classic: web ACLs, rule groups, and rules. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagInfoForResource {
+pub struct TagInfoForResource  {
     /// <p></p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -6230,17 +5955,17 @@ pub struct TagInfoForResource {
 }
 impl TagInfoForResource {
     /// <p></p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p></p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tag_list(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tag_list.as_deref()
     }
 }
 /// See [`TagInfoForResource`](crate::model::TagInfoForResource).
 pub mod tag_info_for_resource {
-
+    
     /// A builder for [`TagInfoForResource`](crate::model::TagInfoForResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6255,8 +5980,7 @@ pub mod tag_info_for_resource {
         }
         /// <p></p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tag_list`.
         ///
@@ -6265,26 +5989,26 @@ pub mod tag_info_for_resource {
         /// <p></p>
         pub fn tag_list(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
-            v.push(input);
-            self.tag_list = Some(v);
-            self
+                            v.push(input);
+                            self.tag_list = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_tag_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tag_list = input;
-            self
+        pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tag_list = input; self
         }
         /// Consumes the builder and constructs a [`TagInfoForResource`](crate::model::TagInfoForResource).
         pub fn build(self) -> crate::model::TagInfoForResource {
             crate::model::TagInfoForResource {
-                resource_arn: self.resource_arn,
-                tag_list: self.tag_list,
+                resource_arn: self.resource_arn
+                ,
+                tag_list: self.tag_list
+                ,
             }
         }
     }
+    
+    
 }
 impl TagInfoForResource {
     /// Creates a new builder-style object to manufacture [`TagInfoForResource`](crate::model::TagInfoForResource).
@@ -6293,14 +6017,14 @@ impl TagInfoForResource {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>A summary of the rule groups you are subscribed to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubscribedRuleGroupSummary {
+pub struct SubscribedRuleGroupSummary  {
     /// <p>A unique identifier for a <code>RuleGroup</code>.</p>
     #[doc(hidden)]
     pub rule_group_id: std::option::Option<std::string::String>,
@@ -6313,21 +6037,21 @@ pub struct SubscribedRuleGroupSummary {
 }
 impl SubscribedRuleGroupSummary {
     /// <p>A unique identifier for a <code>RuleGroup</code>.</p>
-    pub fn rule_group_id(&self) -> std::option::Option<&str> {
+    pub fn rule_group_id(&self) -> std::option::Option<& str> {
         self.rule_group_id.as_deref()
     }
     /// <p>A friendly name or description of the <code>RuleGroup</code>. You can't change the name of a <code>RuleGroup</code> after you create it.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
 }
 /// See [`SubscribedRuleGroupSummary`](crate::model::SubscribedRuleGroupSummary).
 pub mod subscribed_rule_group_summary {
-
+    
     /// A builder for [`SubscribedRuleGroupSummary`](crate::model::SubscribedRuleGroupSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6342,12 +6066,8 @@ pub mod subscribed_rule_group_summary {
             self
         }
         /// <p>A unique identifier for a <code>RuleGroup</code>.</p>
-        pub fn set_rule_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rule_group_id = input;
-            self
+        pub fn set_rule_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_group_id = input; self
         }
         /// <p>A friendly name or description of the <code>RuleGroup</code>. You can't change the name of a <code>RuleGroup</code> after you create it.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6356,8 +6076,7 @@ pub mod subscribed_rule_group_summary {
         }
         /// <p>A friendly name or description of the <code>RuleGroup</code>. You can't change the name of a <code>RuleGroup</code> after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6366,18 +6085,22 @@ pub mod subscribed_rule_group_summary {
         }
         /// <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// Consumes the builder and constructs a [`SubscribedRuleGroupSummary`](crate::model::SubscribedRuleGroupSummary).
         pub fn build(self) -> crate::model::SubscribedRuleGroupSummary {
             crate::model::SubscribedRuleGroupSummary {
-                rule_group_id: self.rule_group_id,
-                name: self.name,
-                metric_name: self.metric_name,
+                rule_group_id: self.rule_group_id
+                ,
+                name: self.name
+                ,
+                metric_name: self.metric_name
+                ,
             }
         }
     }
+    
+    
 }
 impl SubscribedRuleGroupSummary {
     /// Creates a new builder-style object to manufacture [`SubscribedRuleGroupSummary`](crate::model::SubscribedRuleGroupSummary).
@@ -6386,15 +6109,15 @@ impl SubscribedRuleGroupSummary {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>The <code>Id</code> and <code>Name</code> of a <code>SqlInjectionMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SqlInjectionMatchSetSummary {
-    /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
+pub struct SqlInjectionMatchSetSummary  {
+    /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p> 
     /// <p> <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     #[doc(hidden)]
     pub sql_injection_match_set_id: std::option::Option<std::string::String>,
@@ -6403,19 +6126,19 @@ pub struct SqlInjectionMatchSetSummary {
     pub name: std::option::Option<std::string::String>,
 }
 impl SqlInjectionMatchSetSummary {
-    /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
+    /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p> 
     /// <p> <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    pub fn sql_injection_match_set_id(&self) -> std::option::Option<&str> {
+    pub fn sql_injection_match_set_id(&self) -> std::option::Option<& str> {
         self.sql_injection_match_set_id.as_deref()
     }
     /// <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by <code>Id</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`SqlInjectionMatchSetSummary`](crate::model::SqlInjectionMatchSetSummary).
 pub mod sql_injection_match_set_summary {
-
+    
     /// A builder for [`SqlInjectionMatchSetSummary`](crate::model::SqlInjectionMatchSetSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6423,20 +6146,16 @@ pub mod sql_injection_match_set_summary {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
+        /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p> 
         /// <p> <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
         pub fn sql_injection_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.sql_injection_match_set_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
+        /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p> 
         /// <p> <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-        pub fn set_sql_injection_match_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sql_injection_match_set_id = input;
-            self
+        pub fn set_sql_injection_match_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sql_injection_match_set_id = input; self
         }
         /// <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by <code>Id</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6445,17 +6164,20 @@ pub mod sql_injection_match_set_summary {
         }
         /// <p>The name of the <code>SqlInjectionMatchSet</code>, if any, specified by <code>Id</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`SqlInjectionMatchSetSummary`](crate::model::SqlInjectionMatchSetSummary).
         pub fn build(self) -> crate::model::SqlInjectionMatchSetSummary {
             crate::model::SqlInjectionMatchSetSummary {
-                sql_injection_match_set_id: self.sql_injection_match_set_id,
-                name: self.name,
+                sql_injection_match_set_id: self.sql_injection_match_set_id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl SqlInjectionMatchSetSummary {
     /// Creates a new builder-style object to manufacture [`SqlInjectionMatchSetSummary`](crate::model::SqlInjectionMatchSetSummary).
@@ -6464,15 +6186,15 @@ impl SqlInjectionMatchSetSummary {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>The <code>Id</code> and <code>Name</code> of a <code>SizeConstraintSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SizeConstraintSetSummary {
-    /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
+pub struct SizeConstraintSetSummary  {
+    /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p> 
     /// <p> <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     #[doc(hidden)]
     pub size_constraint_set_id: std::option::Option<std::string::String>,
@@ -6481,19 +6203,19 @@ pub struct SizeConstraintSetSummary {
     pub name: std::option::Option<std::string::String>,
 }
 impl SizeConstraintSetSummary {
-    /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
+    /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p> 
     /// <p> <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    pub fn size_constraint_set_id(&self) -> std::option::Option<&str> {
+    pub fn size_constraint_set_id(&self) -> std::option::Option<& str> {
         self.size_constraint_set_id.as_deref()
     }
     /// <p>The name of the <code>SizeConstraintSet</code>, if any.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`SizeConstraintSetSummary`](crate::model::SizeConstraintSetSummary).
 pub mod size_constraint_set_summary {
-
+    
     /// A builder for [`SizeConstraintSetSummary`](crate::model::SizeConstraintSetSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6501,20 +6223,16 @@ pub mod size_constraint_set_summary {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
+        /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p> 
         /// <p> <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
         pub fn size_constraint_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.size_constraint_set_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
+        /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p> 
         /// <p> <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-        pub fn set_size_constraint_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.size_constraint_set_id = input;
-            self
+        pub fn set_size_constraint_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.size_constraint_set_id = input; self
         }
         /// <p>The name of the <code>SizeConstraintSet</code>, if any.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6523,17 +6241,20 @@ pub mod size_constraint_set_summary {
         }
         /// <p>The name of the <code>SizeConstraintSet</code>, if any.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`SizeConstraintSetSummary`](crate::model::SizeConstraintSetSummary).
         pub fn build(self) -> crate::model::SizeConstraintSetSummary {
             crate::model::SizeConstraintSetSummary {
-                size_constraint_set_id: self.size_constraint_set_id,
-                name: self.name,
+                size_constraint_set_id: self.size_constraint_set_id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl SizeConstraintSetSummary {
     /// Creates a new builder-style object to manufacture [`SizeConstraintSetSummary`](crate::model::SizeConstraintSetSummary).
@@ -6542,15 +6263,15 @@ impl SizeConstraintSetSummary {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Contains the identifier and the friendly name or description of the <code>Rule</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleSummary {
-    /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
+pub struct RuleSummary  {
+    /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p> 
     /// <p> <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
@@ -6559,19 +6280,19 @@ pub struct RuleSummary {
     pub name: std::option::Option<std::string::String>,
 }
 impl RuleSummary {
-    /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
+    /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p> 
     /// <p> <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
-    pub fn rule_id(&self) -> std::option::Option<&str> {
+    pub fn rule_id(&self) -> std::option::Option<& str> {
         self.rule_id.as_deref()
     }
     /// <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`RuleSummary`](crate::model::RuleSummary).
 pub mod rule_summary {
-
+    
     /// A builder for [`RuleSummary`](crate::model::RuleSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6579,17 +6300,16 @@ pub mod rule_summary {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
+        /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p> 
         /// <p> <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
         pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
+        /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p> 
         /// <p> <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
         pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_id = input;
-            self
+            self.rule_id = input; self
         }
         /// <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6598,17 +6318,20 @@ pub mod rule_summary {
         }
         /// <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`RuleSummary`](crate::model::RuleSummary).
         pub fn build(self) -> crate::model::RuleSummary {
             crate::model::RuleSummary {
-                rule_id: self.rule_id,
-                name: self.name,
+                rule_id: self.rule_id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl RuleSummary {
     /// Creates a new builder-style object to manufacture [`RuleSummary`](crate::model::RuleSummary).
@@ -6617,15 +6340,15 @@ impl RuleSummary {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Contains the identifier and the friendly name or description of the <code>RuleGroup</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleGroupSummary {
-    /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p>
+pub struct RuleGroupSummary  {
+    /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p> 
     /// <p> <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
     #[doc(hidden)]
     pub rule_group_id: std::option::Option<std::string::String>,
@@ -6634,19 +6357,19 @@ pub struct RuleGroupSummary {
     pub name: std::option::Option<std::string::String>,
 }
 impl RuleGroupSummary {
-    /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p>
+    /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p> 
     /// <p> <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-    pub fn rule_group_id(&self) -> std::option::Option<&str> {
+    pub fn rule_group_id(&self) -> std::option::Option<& str> {
         self.rule_group_id.as_deref()
     }
     /// <p>A friendly name or description of the <code>RuleGroup</code>. You can't change the name of a <code>RuleGroup</code> after you create it.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`RuleGroupSummary`](crate::model::RuleGroupSummary).
 pub mod rule_group_summary {
-
+    
     /// A builder for [`RuleGroupSummary`](crate::model::RuleGroupSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6654,20 +6377,16 @@ pub mod rule_group_summary {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p>
+        /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p> 
         /// <p> <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
         pub fn rule_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_group_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p>
+        /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p> 
         /// <p> <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-        pub fn set_rule_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rule_group_id = input;
-            self
+        pub fn set_rule_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_group_id = input; self
         }
         /// <p>A friendly name or description of the <code>RuleGroup</code>. You can't change the name of a <code>RuleGroup</code> after you create it.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6676,17 +6395,20 @@ pub mod rule_group_summary {
         }
         /// <p>A friendly name or description of the <code>RuleGroup</code>. You can't change the name of a <code>RuleGroup</code> after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`RuleGroupSummary`](crate::model::RuleGroupSummary).
         pub fn build(self) -> crate::model::RuleGroupSummary {
             crate::model::RuleGroupSummary {
-                rule_group_id: self.rule_group_id,
-                name: self.name,
+                rule_group_id: self.rule_group_id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl RuleGroupSummary {
     /// Creates a new builder-style object to manufacture [`RuleGroupSummary`](crate::model::RuleGroupSummary).
@@ -6701,9 +6423,9 @@ impl RuleGroupSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -6725,58 +6447,52 @@ impl RuleGroupSummary {
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     ApiGateway,
     #[allow(missing_docs)] // documentation missing in model
     ApplicationLoadBalancer,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "API_GATEWAY" => ResourceType::ApiGateway,
             "APPLICATION_LOAD_BALANCER" => ResourceType::ApplicationLoadBalancer,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::ApiGateway => "API_GATEWAY",
             ResourceType::ApplicationLoadBalancer => "APPLICATION_LOAD_BALANCER",
-            ResourceType::Unknown(value) => value.as_str(),
+            ResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["API_GATEWAY", "APPLICATION_LOAD_BALANCER"]
+        &[
+            "API_GATEWAY", "APPLICATION_LOAD_BALANCER"
+        ]
     }
 }
 impl AsRef<str> for ResourceType {
@@ -6785,15 +6501,15 @@ impl AsRef<str> for ResourceType {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Returned by <code>ListRegexPatternSets</code>. Each <code>RegexPatternSetSummary</code> object includes the <code>Name</code> and <code>RegexPatternSetId</code> for one <code>RegexPatternSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegexPatternSetSummary {
-    /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>, remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete a <code>RegexPatternSet</code> from AWS WAF.</p>
+pub struct RegexPatternSetSummary  {
+    /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>, remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete a <code>RegexPatternSet</code> from AWS WAF.</p> 
     /// <p> <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
     #[doc(hidden)]
     pub regex_pattern_set_id: std::option::Option<std::string::String>,
@@ -6802,19 +6518,19 @@ pub struct RegexPatternSetSummary {
     pub name: std::option::Option<std::string::String>,
 }
 impl RegexPatternSetSummary {
-    /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>, remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete a <code>RegexPatternSet</code> from AWS WAF.</p>
+    /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>, remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete a <code>RegexPatternSet</code> from AWS WAF.</p> 
     /// <p> <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    pub fn regex_pattern_set_id(&self) -> std::option::Option<&str> {
+    pub fn regex_pattern_set_id(&self) -> std::option::Option<& str> {
         self.regex_pattern_set_id.as_deref()
     }
     /// <p>A friendly name or description of the <code>RegexPatternSet</code>. You can't change <code>Name</code> after you create a <code>RegexPatternSet</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`RegexPatternSetSummary`](crate::model::RegexPatternSetSummary).
 pub mod regex_pattern_set_summary {
-
+    
     /// A builder for [`RegexPatternSetSummary`](crate::model::RegexPatternSetSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6822,20 +6538,16 @@ pub mod regex_pattern_set_summary {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>, remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete a <code>RegexPatternSet</code> from AWS WAF.</p>
+        /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>, remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete a <code>RegexPatternSet</code> from AWS WAF.</p> 
         /// <p> <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
         pub fn regex_pattern_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.regex_pattern_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>, remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete a <code>RegexPatternSet</code> from AWS WAF.</p>
+        /// <p>The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>, remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete a <code>RegexPatternSet</code> from AWS WAF.</p> 
         /// <p> <code>RegexPatternSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-        pub fn set_regex_pattern_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.regex_pattern_set_id = input;
-            self
+        pub fn set_regex_pattern_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.regex_pattern_set_id = input; self
         }
         /// <p>A friendly name or description of the <code>RegexPatternSet</code>. You can't change <code>Name</code> after you create a <code>RegexPatternSet</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6844,17 +6556,20 @@ pub mod regex_pattern_set_summary {
         }
         /// <p>A friendly name or description of the <code>RegexPatternSet</code>. You can't change <code>Name</code> after you create a <code>RegexPatternSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`RegexPatternSetSummary`](crate::model::RegexPatternSetSummary).
         pub fn build(self) -> crate::model::RegexPatternSetSummary {
             crate::model::RegexPatternSetSummary {
-                regex_pattern_set_id: self.regex_pattern_set_id,
-                name: self.name,
+                regex_pattern_set_id: self.regex_pattern_set_id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl RegexPatternSetSummary {
     /// Creates a new builder-style object to manufacture [`RegexPatternSetSummary`](crate::model::RegexPatternSetSummary).
@@ -6863,15 +6578,15 @@ impl RegexPatternSetSummary {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Returned by <code>ListRegexMatchSets</code>. Each <code>RegexMatchSetSummary</code> object includes the <code>Name</code> and <code>RegexMatchSetId</code> for one <code>RegexMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegexMatchSetSummary {
-    /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code>, update a <code>RegexMatchSet</code>, remove a <code>RegexMatchSet</code> from a <code>Rule</code>, and delete a <code>RegexMatchSet</code> from AWS WAF.</p>
+pub struct RegexMatchSetSummary  {
+    /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code>, update a <code>RegexMatchSet</code>, remove a <code>RegexMatchSet</code> from a <code>Rule</code>, and delete a <code>RegexMatchSet</code> from AWS WAF.</p> 
     /// <p> <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
     #[doc(hidden)]
     pub regex_match_set_id: std::option::Option<std::string::String>,
@@ -6880,19 +6595,19 @@ pub struct RegexMatchSetSummary {
     pub name: std::option::Option<std::string::String>,
 }
 impl RegexMatchSetSummary {
-    /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code>, update a <code>RegexMatchSet</code>, remove a <code>RegexMatchSet</code> from a <code>Rule</code>, and delete a <code>RegexMatchSet</code> from AWS WAF.</p>
+    /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code>, update a <code>RegexMatchSet</code>, remove a <code>RegexMatchSet</code> from a <code>Rule</code>, and delete a <code>RegexMatchSet</code> from AWS WAF.</p> 
     /// <p> <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-    pub fn regex_match_set_id(&self) -> std::option::Option<&str> {
+    pub fn regex_match_set_id(&self) -> std::option::Option<& str> {
         self.regex_match_set_id.as_deref()
     }
     /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`RegexMatchSetSummary`](crate::model::RegexMatchSetSummary).
 pub mod regex_match_set_summary {
-
+    
     /// A builder for [`RegexMatchSetSummary`](crate::model::RegexMatchSetSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6900,20 +6615,16 @@ pub mod regex_match_set_summary {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code>, update a <code>RegexMatchSet</code>, remove a <code>RegexMatchSet</code> from a <code>Rule</code>, and delete a <code>RegexMatchSet</code> from AWS WAF.</p>
+        /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code>, update a <code>RegexMatchSet</code>, remove a <code>RegexMatchSet</code> from a <code>Rule</code>, and delete a <code>RegexMatchSet</code> from AWS WAF.</p> 
         /// <p> <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
         pub fn regex_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.regex_match_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code>, update a <code>RegexMatchSet</code>, remove a <code>RegexMatchSet</code> from a <code>Rule</code>, and delete a <code>RegexMatchSet</code> from AWS WAF.</p>
+        /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code>, update a <code>RegexMatchSet</code>, remove a <code>RegexMatchSet</code> from a <code>Rule</code>, and delete a <code>RegexMatchSet</code> from AWS WAF.</p> 
         /// <p> <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-        pub fn set_regex_match_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.regex_match_set_id = input;
-            self
+        pub fn set_regex_match_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.regex_match_set_id = input; self
         }
         /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6922,17 +6633,20 @@ pub mod regex_match_set_summary {
         }
         /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`RegexMatchSetSummary`](crate::model::RegexMatchSetSummary).
         pub fn build(self) -> crate::model::RegexMatchSetSummary {
             crate::model::RegexMatchSetSummary {
-                regex_match_set_id: self.regex_match_set_id,
-                name: self.name,
+                regex_match_set_id: self.regex_match_set_id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl RegexMatchSetSummary {
     /// Creates a new builder-style object to manufacture [`RegexMatchSetSummary`](crate::model::RegexMatchSetSummary).
@@ -6941,14 +6655,14 @@ impl RegexMatchSetSummary {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Contains the identifier and the name of the <code>IPSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IpSetSummary {
+pub struct IpSetSummary  {
     /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You can use <code>IPSetId</code> in a <code>GetIPSet</code> request to get detailed information about an <code>IPSet</code>.</p>
     #[doc(hidden)]
     pub ip_set_id: std::option::Option<std::string::String>,
@@ -6958,17 +6672,17 @@ pub struct IpSetSummary {
 }
 impl IpSetSummary {
     /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You can use <code>IPSetId</code> in a <code>GetIPSet</code> request to get detailed information about an <code>IPSet</code>.</p>
-    pub fn ip_set_id(&self) -> std::option::Option<&str> {
+    pub fn ip_set_id(&self) -> std::option::Option<& str> {
         self.ip_set_id.as_deref()
     }
     /// <p>A friendly name or description of the <code>IPSet</code>. You can't change the name of an <code>IPSet</code> after you create it.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`IpSetSummary`](crate::model::IpSetSummary).
 pub mod ip_set_summary {
-
+    
     /// A builder for [`IpSetSummary`](crate::model::IpSetSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6983,8 +6697,7 @@ pub mod ip_set_summary {
         }
         /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You can use <code>IPSetId</code> in a <code>GetIPSet</code> request to get detailed information about an <code>IPSet</code>.</p>
         pub fn set_ip_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ip_set_id = input;
-            self
+            self.ip_set_id = input; self
         }
         /// <p>A friendly name or description of the <code>IPSet</code>. You can't change the name of an <code>IPSet</code> after you create it.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6993,17 +6706,20 @@ pub mod ip_set_summary {
         }
         /// <p>A friendly name or description of the <code>IPSet</code>. You can't change the name of an <code>IPSet</code> after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`IpSetSummary`](crate::model::IpSetSummary).
         pub fn build(self) -> crate::model::IpSetSummary {
             crate::model::IpSetSummary {
-                ip_set_id: self.ip_set_id,
-                name: self.name,
+                ip_set_id: self.ip_set_id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl IpSetSummary {
     /// Creates a new builder-style object to manufacture [`IpSetSummary`](crate::model::IpSetSummary).
@@ -7012,14 +6728,14 @@ impl IpSetSummary {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Contains the identifier and the name of the <code>GeoMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeoMatchSetSummary {
+pub struct GeoMatchSetSummary  {
     /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You can use <code>GeoMatchSetId</code> in a <code>GetGeoMatchSet</code> request to get detailed information about an <code>GeoMatchSet</code>.</p>
     #[doc(hidden)]
     pub geo_match_set_id: std::option::Option<std::string::String>,
@@ -7029,17 +6745,17 @@ pub struct GeoMatchSetSummary {
 }
 impl GeoMatchSetSummary {
     /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You can use <code>GeoMatchSetId</code> in a <code>GetGeoMatchSet</code> request to get detailed information about an <code>GeoMatchSet</code>.</p>
-    pub fn geo_match_set_id(&self) -> std::option::Option<&str> {
+    pub fn geo_match_set_id(&self) -> std::option::Option<& str> {
         self.geo_match_set_id.as_deref()
     }
     /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change the name of an <code>GeoMatchSet</code> after you create it.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`GeoMatchSetSummary`](crate::model::GeoMatchSetSummary).
 pub mod geo_match_set_summary {
-
+    
     /// A builder for [`GeoMatchSetSummary`](crate::model::GeoMatchSetSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7053,12 +6769,8 @@ pub mod geo_match_set_summary {
             self
         }
         /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You can use <code>GeoMatchSetId</code> in a <code>GetGeoMatchSet</code> request to get detailed information about an <code>GeoMatchSet</code>.</p>
-        pub fn set_geo_match_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.geo_match_set_id = input;
-            self
+        pub fn set_geo_match_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.geo_match_set_id = input; self
         }
         /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change the name of an <code>GeoMatchSet</code> after you create it.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7067,17 +6779,20 @@ pub mod geo_match_set_summary {
         }
         /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change the name of an <code>GeoMatchSet</code> after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`GeoMatchSetSummary`](crate::model::GeoMatchSetSummary).
         pub fn build(self) -> crate::model::GeoMatchSetSummary {
             crate::model::GeoMatchSetSummary {
-                geo_match_set_id: self.geo_match_set_id,
-                name: self.name,
+                geo_match_set_id: self.geo_match_set_id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl GeoMatchSetSummary {
     /// Creates a new builder-style object to manufacture [`GeoMatchSetSummary`](crate::model::GeoMatchSetSummary).
@@ -7086,15 +6801,15 @@ impl GeoMatchSetSummary {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Returned by <code>ListByteMatchSets</code>. Each <code>ByteMatchSetSummary</code> object includes the <code>Name</code> and <code>ByteMatchSetId</code> for one <code>ByteMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ByteMatchSetSummary {
-    /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a <code>ByteMatchSet</code> from AWS WAF.</p>
+pub struct ByteMatchSetSummary  {
+    /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a <code>ByteMatchSet</code> from AWS WAF.</p> 
     /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     #[doc(hidden)]
     pub byte_match_set_id: std::option::Option<std::string::String>,
@@ -7103,19 +6818,19 @@ pub struct ByteMatchSetSummary {
     pub name: std::option::Option<std::string::String>,
 }
 impl ByteMatchSetSummary {
-    /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a <code>ByteMatchSet</code> from AWS WAF.</p>
+    /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a <code>ByteMatchSet</code> from AWS WAF.</p> 
     /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn byte_match_set_id(&self) -> std::option::Option<&str> {
+    pub fn byte_match_set_id(&self) -> std::option::Option<& str> {
         self.byte_match_set_id.as_deref()
     }
     /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`ByteMatchSetSummary`](crate::model::ByteMatchSetSummary).
 pub mod byte_match_set_summary {
-
+    
     /// A builder for [`ByteMatchSetSummary`](crate::model::ByteMatchSetSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7123,20 +6838,16 @@ pub mod byte_match_set_summary {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a <code>ByteMatchSet</code> from AWS WAF.</p>
+        /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a <code>ByteMatchSet</code> from AWS WAF.</p> 
         /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
         pub fn byte_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.byte_match_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a <code>ByteMatchSet</code> from AWS WAF.</p>
+        /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>, remove a <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a <code>ByteMatchSet</code> from AWS WAF.</p> 
         /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-        pub fn set_byte_match_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.byte_match_set_id = input;
-            self
+        pub fn set_byte_match_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.byte_match_set_id = input; self
         }
         /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7145,17 +6856,20 @@ pub mod byte_match_set_summary {
         }
         /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`ByteMatchSetSummary`](crate::model::ByteMatchSetSummary).
         pub fn build(self) -> crate::model::ByteMatchSetSummary {
             crate::model::ByteMatchSetSummary {
-                byte_match_set_id: self.byte_match_set_id,
-                name: self.name,
+                byte_match_set_id: self.byte_match_set_id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl ByteMatchSetSummary {
     /// Creates a new builder-style object to manufacture [`ByteMatchSetSummary`](crate::model::ByteMatchSetSummary).
@@ -7164,15 +6878,15 @@ impl ByteMatchSetSummary {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>A complex type that contains <code>XssMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header. If a <code>XssMatchSet</code> contains more than one <code>XssMatchTuple</code> object, a request needs to include cross-site scripting attacks in only one of the specified parts of the request to be considered a match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct XssMatchSet {
-    /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
+pub struct XssMatchSet  {
+    /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p> 
     /// <p> <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     #[doc(hidden)]
     pub xss_match_set_id: std::option::Option<std::string::String>,
@@ -7184,46 +6898,41 @@ pub struct XssMatchSet {
     pub xss_match_tuples: std::option::Option<std::vec::Vec<crate::model::XssMatchTuple>>,
 }
 impl XssMatchSet {
-    /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
+    /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p> 
     /// <p> <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    pub fn xss_match_set_id(&self) -> std::option::Option<&str> {
+    pub fn xss_match_set_id(&self) -> std::option::Option<& str> {
         self.xss_match_set_id.as_deref()
     }
     /// <p>The name, if any, of the <code>XssMatchSet</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the parts of web requests that you want to inspect for cross-site scripting attacks.</p>
-    pub fn xss_match_tuples(&self) -> std::option::Option<&[crate::model::XssMatchTuple]> {
+    pub fn xss_match_tuples(&self) -> std::option::Option<& [crate::model::XssMatchTuple]> {
         self.xss_match_tuples.as_deref()
     }
 }
 /// See [`XssMatchSet`](crate::model::XssMatchSet).
 pub mod xss_match_set {
-
+    
     /// A builder for [`XssMatchSet`](crate::model::XssMatchSet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) xss_match_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) xss_match_tuples:
-            std::option::Option<std::vec::Vec<crate::model::XssMatchTuple>>,
+        pub(crate) xss_match_tuples: std::option::Option<std::vec::Vec<crate::model::XssMatchTuple>>,
     }
     impl Builder {
-        /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
+        /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p> 
         /// <p> <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
         pub fn xss_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.xss_match_set_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p>
+        /// <p>A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code> to get information about an <code>XssMatchSet</code> (see <code>GetXssMatchSet</code>), update an <code>XssMatchSet</code> (see <code>UpdateXssMatchSet</code>), insert an <code>XssMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>XssMatchSet</code> from AWS WAF (see <code>DeleteXssMatchSet</code>).</p> 
         /// <p> <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-        pub fn set_xss_match_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.xss_match_set_id = input;
-            self
+        pub fn set_xss_match_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.xss_match_set_id = input; self
         }
         /// <p>The name, if any, of the <code>XssMatchSet</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7232,8 +6941,7 @@ pub mod xss_match_set {
         }
         /// <p>The name, if any, of the <code>XssMatchSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `xss_match_tuples`.
         ///
@@ -7242,27 +6950,28 @@ pub mod xss_match_set {
         /// <p>Specifies the parts of web requests that you want to inspect for cross-site scripting attacks.</p>
         pub fn xss_match_tuples(mut self, input: crate::model::XssMatchTuple) -> Self {
             let mut v = self.xss_match_tuples.unwrap_or_default();
-            v.push(input);
-            self.xss_match_tuples = Some(v);
-            self
+                            v.push(input);
+                            self.xss_match_tuples = Some(v);
+                            self
         }
         /// <p>Specifies the parts of web requests that you want to inspect for cross-site scripting attacks.</p>
-        pub fn set_xss_match_tuples(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::XssMatchTuple>>,
-        ) -> Self {
-            self.xss_match_tuples = input;
-            self
+        pub fn set_xss_match_tuples(mut self, input: std::option::Option<std::vec::Vec<crate::model::XssMatchTuple>>) -> Self {
+            self.xss_match_tuples = input; self
         }
         /// Consumes the builder and constructs a [`XssMatchSet`](crate::model::XssMatchSet).
         pub fn build(self) -> crate::model::XssMatchSet {
             crate::model::XssMatchSet {
-                xss_match_set_id: self.xss_match_set_id,
-                name: self.name,
-                xss_match_tuples: self.xss_match_tuples,
+                xss_match_set_id: self.xss_match_set_id
+                ,
+                name: self.name
+                ,
+                xss_match_tuples: self.xss_match_tuples
+                ,
             }
         }
     }
+    
+    
 }
 impl XssMatchSet {
     /// Creates a new builder-style object to manufacture [`XssMatchSet`](crate::model::XssMatchSet).
@@ -7271,15 +6980,15 @@ impl XssMatchSet {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Contains the <code>Rules</code> that identify the requests that you want to allow, block, or count. In a <code>WebACL</code>, you also specify a default action (<code>ALLOW</code> or <code>BLOCK</code>), and the action for each <code>Rule</code> that you add to a <code>WebACL</code>, for example, block requests from specified IP addresses or block requests from specified referrers. You also associate the <code>WebACL</code> with a CloudFront distribution to identify the requests that you want AWS WAF to filter. If you add more than one <code>Rule</code> to a <code>WebACL</code>, a request needs to match only one of the specifications to be allowed, blocked, or counted. For more information, see <code>UpdateWebACL</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WebAcl {
-    /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p>
+pub struct WebAcl  {
+    /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p> 
     /// <p> <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
     #[doc(hidden)]
     pub web_acl_id: std::option::Option<std::string::String>,
@@ -7300,35 +7009,35 @@ pub struct WebAcl {
     pub web_acl_arn: std::option::Option<std::string::String>,
 }
 impl WebAcl {
-    /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p>
+    /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p> 
     /// <p> <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
-    pub fn web_acl_id(&self) -> std::option::Option<&str> {
+    pub fn web_acl_id(&self) -> std::option::Option<& str> {
         self.web_acl_id.as_deref()
     }
     /// <p>A friendly name or description of the <code>WebACL</code>. You can't change the name of a <code>WebACL</code> after you create it.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>WebACL</code>.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. The action is specified by the <code>WafAction</code> object.</p>
-    pub fn default_action(&self) -> std::option::Option<&crate::model::WafAction> {
+    pub fn default_action(&self) -> std::option::Option<& crate::model::WafAction> {
         self.default_action.as_ref()
     }
     /// <p>An array that contains the action for each <code>Rule</code> in a <code>WebACL</code>, the priority of the <code>Rule</code>, and the ID of the <code>Rule</code>.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::model::ActivatedRule]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::model::ActivatedRule]> {
         self.rules.as_deref()
     }
     /// <p>Tha Amazon Resource Name (ARN) of the web ACL.</p>
-    pub fn web_acl_arn(&self) -> std::option::Option<&str> {
+    pub fn web_acl_arn(&self) -> std::option::Option<& str> {
         self.web_acl_arn.as_deref()
     }
 }
 /// See [`WebAcl`](crate::model::WebAcl).
 pub mod web_acl {
-
+    
     /// A builder for [`WebAcl`](crate::model::WebAcl).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7340,17 +7049,16 @@ pub mod web_acl {
         pub(crate) web_acl_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p>
+        /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p> 
         /// <p> <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
         pub fn web_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.web_acl_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p>
+        /// <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code> to get information about a <code>WebACL</code> (see <code>GetWebACL</code>), update a <code>WebACL</code> (see <code>UpdateWebACL</code>), and delete a <code>WebACL</code> from AWS WAF (see <code>DeleteWebACL</code>).</p> 
         /// <p> <code>WebACLId</code> is returned by <code>CreateWebACL</code> and by <code>ListWebACLs</code>.</p>
         pub fn set_web_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.web_acl_id = input;
-            self
+            self.web_acl_id = input; self
         }
         /// <p>A friendly name or description of the <code>WebACL</code>. You can't change the name of a <code>WebACL</code> after you create it.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7359,8 +7067,7 @@ pub mod web_acl {
         }
         /// <p>A friendly name or description of the <code>WebACL</code>. You can't change the name of a <code>WebACL</code> after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>WebACL</code>.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7369,8 +7076,7 @@ pub mod web_acl {
         }
         /// <p>A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>WebACL</code>.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. The action is specified by the <code>WafAction</code> object.</p>
         pub fn default_action(mut self, input: crate::model::WafAction) -> Self {
@@ -7378,12 +7084,8 @@ pub mod web_acl {
             self
         }
         /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. The action is specified by the <code>WafAction</code> object.</p>
-        pub fn set_default_action(
-            mut self,
-            input: std::option::Option<crate::model::WafAction>,
-        ) -> Self {
-            self.default_action = input;
-            self
+        pub fn set_default_action(mut self, input: std::option::Option<crate::model::WafAction>) -> Self {
+            self.default_action = input; self
         }
         /// Appends an item to `rules`.
         ///
@@ -7392,17 +7094,13 @@ pub mod web_acl {
         /// <p>An array that contains the action for each <code>Rule</code> in a <code>WebACL</code>, the priority of the <code>Rule</code>, and the ID of the <code>Rule</code>.</p>
         pub fn rules(mut self, input: crate::model::ActivatedRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input);
-            self.rules = Some(v);
-            self
+                            v.push(input);
+                            self.rules = Some(v);
+                            self
         }
         /// <p>An array that contains the action for each <code>Rule</code> in a <code>WebACL</code>, the priority of the <code>Rule</code>, and the ID of the <code>Rule</code>.</p>
-        pub fn set_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ActivatedRule>>,
-        ) -> Self {
-            self.rules = input;
-            self
+        pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::ActivatedRule>>) -> Self {
+            self.rules = input; self
         }
         /// <p>Tha Amazon Resource Name (ARN) of the web ACL.</p>
         pub fn web_acl_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7411,21 +7109,28 @@ pub mod web_acl {
         }
         /// <p>Tha Amazon Resource Name (ARN) of the web ACL.</p>
         pub fn set_web_acl_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.web_acl_arn = input;
-            self
+            self.web_acl_arn = input; self
         }
         /// Consumes the builder and constructs a [`WebAcl`](crate::model::WebAcl).
         pub fn build(self) -> crate::model::WebAcl {
             crate::model::WebAcl {
-                web_acl_id: self.web_acl_id,
-                name: self.name,
-                metric_name: self.metric_name,
-                default_action: self.default_action,
-                rules: self.rules,
-                web_acl_arn: self.web_acl_arn,
+                web_acl_id: self.web_acl_id
+                ,
+                name: self.name
+                ,
+                metric_name: self.metric_name
+                ,
+                default_action: self.default_action
+                ,
+                rules: self.rules
+                ,
+                web_acl_arn: self.web_acl_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl WebAcl {
     /// Creates a new builder-style object to manufacture [`WebAcl`](crate::model::WebAcl).
@@ -7434,15 +7139,15 @@ impl WebAcl {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>A complex type that contains <code>SqlInjectionMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect for snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the name of the header. If a <code>SqlInjectionMatchSet</code> contains more than one <code>SqlInjectionMatchTuple</code> object, a request needs to include snippets of SQL code in only one of the specified parts of the request to be considered a match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SqlInjectionMatchSet {
-    /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
+pub struct SqlInjectionMatchSet  {
+    /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p> 
     /// <p> <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     #[doc(hidden)]
     pub sql_injection_match_set_id: std::option::Option<std::string::String>,
@@ -7451,52 +7156,44 @@ pub struct SqlInjectionMatchSet {
     pub name: std::option::Option<std::string::String>,
     /// <p>Specifies the parts of web requests that you want to inspect for snippets of malicious SQL code.</p>
     #[doc(hidden)]
-    pub sql_injection_match_tuples:
-        std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchTuple>>,
+    pub sql_injection_match_tuples: std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchTuple>>,
 }
 impl SqlInjectionMatchSet {
-    /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
+    /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p> 
     /// <p> <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    pub fn sql_injection_match_set_id(&self) -> std::option::Option<&str> {
+    pub fn sql_injection_match_set_id(&self) -> std::option::Option<& str> {
         self.sql_injection_match_set_id.as_deref()
     }
     /// <p>The name, if any, of the <code>SqlInjectionMatchSet</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the parts of web requests that you want to inspect for snippets of malicious SQL code.</p>
-    pub fn sql_injection_match_tuples(
-        &self,
-    ) -> std::option::Option<&[crate::model::SqlInjectionMatchTuple]> {
+    pub fn sql_injection_match_tuples(&self) -> std::option::Option<& [crate::model::SqlInjectionMatchTuple]> {
         self.sql_injection_match_tuples.as_deref()
     }
 }
 /// See [`SqlInjectionMatchSet`](crate::model::SqlInjectionMatchSet).
 pub mod sql_injection_match_set {
-
+    
     /// A builder for [`SqlInjectionMatchSet`](crate::model::SqlInjectionMatchSet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) sql_injection_match_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) sql_injection_match_tuples:
-            std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchTuple>>,
+        pub(crate) sql_injection_match_tuples: std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchTuple>>,
     }
     impl Builder {
-        /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
+        /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p> 
         /// <p> <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
         pub fn sql_injection_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.sql_injection_match_set_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p>
+        /// <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code> to get information about a <code>SqlInjectionMatchSet</code> (see <code>GetSqlInjectionMatchSet</code>), update a <code>SqlInjectionMatchSet</code> (see <code>UpdateSqlInjectionMatchSet</code>), insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SqlInjectionMatchSet</code> from AWS WAF (see <code>DeleteSqlInjectionMatchSet</code>).</p> 
         /// <p> <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-        pub fn set_sql_injection_match_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sql_injection_match_set_id = input;
-            self
+        pub fn set_sql_injection_match_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sql_injection_match_set_id = input; self
         }
         /// <p>The name, if any, of the <code>SqlInjectionMatchSet</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7505,40 +7202,37 @@ pub mod sql_injection_match_set {
         }
         /// <p>The name, if any, of the <code>SqlInjectionMatchSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `sql_injection_match_tuples`.
         ///
         /// To override the contents of this collection use [`set_sql_injection_match_tuples`](Self::set_sql_injection_match_tuples).
         ///
         /// <p>Specifies the parts of web requests that you want to inspect for snippets of malicious SQL code.</p>
-        pub fn sql_injection_match_tuples(
-            mut self,
-            input: crate::model::SqlInjectionMatchTuple,
-        ) -> Self {
+        pub fn sql_injection_match_tuples(mut self, input: crate::model::SqlInjectionMatchTuple) -> Self {
             let mut v = self.sql_injection_match_tuples.unwrap_or_default();
-            v.push(input);
-            self.sql_injection_match_tuples = Some(v);
-            self
+                            v.push(input);
+                            self.sql_injection_match_tuples = Some(v);
+                            self
         }
         /// <p>Specifies the parts of web requests that you want to inspect for snippets of malicious SQL code.</p>
-        pub fn set_sql_injection_match_tuples(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchTuple>>,
-        ) -> Self {
-            self.sql_injection_match_tuples = input;
-            self
+        pub fn set_sql_injection_match_tuples(mut self, input: std::option::Option<std::vec::Vec<crate::model::SqlInjectionMatchTuple>>) -> Self {
+            self.sql_injection_match_tuples = input; self
         }
         /// Consumes the builder and constructs a [`SqlInjectionMatchSet`](crate::model::SqlInjectionMatchSet).
         pub fn build(self) -> crate::model::SqlInjectionMatchSet {
             crate::model::SqlInjectionMatchSet {
-                sql_injection_match_set_id: self.sql_injection_match_set_id,
-                name: self.name,
-                sql_injection_match_tuples: self.sql_injection_match_tuples,
+                sql_injection_match_set_id: self.sql_injection_match_set_id
+                ,
+                name: self.name
+                ,
+                sql_injection_match_tuples: self.sql_injection_match_tuples
+                ,
             }
         }
     }
+    
+    
 }
 impl SqlInjectionMatchSet {
     /// Creates a new builder-style object to manufacture [`SqlInjectionMatchSet`](crate::model::SqlInjectionMatchSet).
@@ -7547,15 +7241,15 @@ impl SqlInjectionMatchSet {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>A complex type that contains <code>SizeConstraint</code> objects, which specify the parts of web requests that you want AWS WAF to inspect the size of. If a <code>SizeConstraintSet</code> contains more than one <code>SizeConstraint</code> object, a request only needs to match one constraint to be considered a match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SizeConstraintSet {
-    /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
+pub struct SizeConstraintSet  {
+    /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p> 
     /// <p> <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
     #[doc(hidden)]
     pub size_constraint_set_id: std::option::Option<std::string::String>,
@@ -7567,46 +7261,41 @@ pub struct SizeConstraintSet {
     pub size_constraints: std::option::Option<std::vec::Vec<crate::model::SizeConstraint>>,
 }
 impl SizeConstraintSet {
-    /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
+    /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p> 
     /// <p> <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-    pub fn size_constraint_set_id(&self) -> std::option::Option<&str> {
+    pub fn size_constraint_set_id(&self) -> std::option::Option<& str> {
         self.size_constraint_set_id.as_deref()
     }
     /// <p>The name, if any, of the <code>SizeConstraintSet</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the parts of web requests that you want to inspect the size of.</p>
-    pub fn size_constraints(&self) -> std::option::Option<&[crate::model::SizeConstraint]> {
+    pub fn size_constraints(&self) -> std::option::Option<& [crate::model::SizeConstraint]> {
         self.size_constraints.as_deref()
     }
 }
 /// See [`SizeConstraintSet`](crate::model::SizeConstraintSet).
 pub mod size_constraint_set {
-
+    
     /// A builder for [`SizeConstraintSet`](crate::model::SizeConstraintSet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) size_constraint_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) size_constraints:
-            std::option::Option<std::vec::Vec<crate::model::SizeConstraint>>,
+        pub(crate) size_constraints: std::option::Option<std::vec::Vec<crate::model::SizeConstraint>>,
     }
     impl Builder {
-        /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
+        /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p> 
         /// <p> <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
         pub fn size_constraint_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.size_constraint_set_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p>
+        /// <p>A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code> to get information about a <code>SizeConstraintSet</code> (see <code>GetSizeConstraintSet</code>), update a <code>SizeConstraintSet</code> (see <code>UpdateSizeConstraintSet</code>), insert a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>SizeConstraintSet</code> from AWS WAF (see <code>DeleteSizeConstraintSet</code>).</p> 
         /// <p> <code>SizeConstraintSetId</code> is returned by <code>CreateSizeConstraintSet</code> and by <code>ListSizeConstraintSets</code>.</p>
-        pub fn set_size_constraint_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.size_constraint_set_id = input;
-            self
+        pub fn set_size_constraint_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.size_constraint_set_id = input; self
         }
         /// <p>The name, if any, of the <code>SizeConstraintSet</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7615,8 +7304,7 @@ pub mod size_constraint_set {
         }
         /// <p>The name, if any, of the <code>SizeConstraintSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `size_constraints`.
         ///
@@ -7625,27 +7313,28 @@ pub mod size_constraint_set {
         /// <p>Specifies the parts of web requests that you want to inspect the size of.</p>
         pub fn size_constraints(mut self, input: crate::model::SizeConstraint) -> Self {
             let mut v = self.size_constraints.unwrap_or_default();
-            v.push(input);
-            self.size_constraints = Some(v);
-            self
+                            v.push(input);
+                            self.size_constraints = Some(v);
+                            self
         }
         /// <p>Specifies the parts of web requests that you want to inspect the size of.</p>
-        pub fn set_size_constraints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SizeConstraint>>,
-        ) -> Self {
-            self.size_constraints = input;
-            self
+        pub fn set_size_constraints(mut self, input: std::option::Option<std::vec::Vec<crate::model::SizeConstraint>>) -> Self {
+            self.size_constraints = input; self
         }
         /// Consumes the builder and constructs a [`SizeConstraintSet`](crate::model::SizeConstraintSet).
         pub fn build(self) -> crate::model::SizeConstraintSet {
             crate::model::SizeConstraintSet {
-                size_constraint_set_id: self.size_constraint_set_id,
-                name: self.name,
-                size_constraints: self.size_constraints,
+                size_constraint_set_id: self.size_constraint_set_id
+                ,
+                name: self.name
+                ,
+                size_constraints: self.size_constraints
+                ,
             }
         }
     }
+    
+    
 }
 impl SizeConstraintSet {
     /// Creates a new builder-style object to manufacture [`SizeConstraintSet`](crate::model::SizeConstraintSet).
@@ -7654,16 +7343,16 @@ impl SizeConstraintSet {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
-/// <p>In a <code>GetSampledRequests</code> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want AWS WAF to return a sample of web requests.</p>
-/// <p>You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. </p>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
+/// <p>In a <code>GetSampledRequests</code> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want AWS WAF to return a sample of web requests.</p> 
+/// <p>You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. </p> 
 /// <p>In a <code>GetSampledRequests</code> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which AWS WAF actually returned a sample of web requests. AWS WAF gets the specified number of requests from among the first 5,000 requests that your AWS resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, AWS WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that AWS WAF received the 5,000th request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimeWindow {
+pub struct TimeWindow  {
     /// <p>The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests that your AWS resource received. You must specify the date and time in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -7673,17 +7362,17 @@ pub struct TimeWindow {
 }
 impl TimeWindow {
     /// <p>The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests that your AWS resource received. You must specify the date and time in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests that your AWS resource received. You must specify the date and time in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
 /// See [`TimeWindow`](crate::model::TimeWindow).
 pub mod time_window {
-
+    
     /// A builder for [`TimeWindow`](crate::model::TimeWindow).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7697,12 +7386,8 @@ pub mod time_window {
             self
         }
         /// <p>The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests that your AWS resource received. You must specify the date and time in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests that your AWS resource received. You must specify the date and time in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7710,21 +7395,21 @@ pub mod time_window {
             self
         }
         /// <p>The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests that your AWS resource received. You must specify the date and time in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// Consumes the builder and constructs a [`TimeWindow`](crate::model::TimeWindow).
         pub fn build(self) -> crate::model::TimeWindow {
             crate::model::TimeWindow {
-                start_time: self.start_time,
-                end_time: self.end_time,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
             }
         }
     }
+    
+    
 }
 impl TimeWindow {
     /// Creates a new builder-style object to manufacture [`TimeWindow`](crate::model::TimeWindow).
@@ -7733,14 +7418,14 @@ impl TimeWindow {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>The response from a <code>GetSampledRequests</code> request includes a <code>SampledHTTPRequests</code> complex type that appears as <code>SampledRequests</code> in the response syntax. <code>SampledHTTPRequests</code> contains one <code>SampledHTTPRequest</code> object for each web request that is returned by <code>GetSampledRequests</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SampledHttpRequest {
+pub struct SampledHttpRequest  {
     /// <p>A complex type that contains detailed information about the request.</p>
     #[doc(hidden)]
     pub request: std::option::Option<crate::model::HttpRequest>,
@@ -7759,7 +7444,7 @@ pub struct SampledHttpRequest {
 }
 impl SampledHttpRequest {
     /// <p>A complex type that contains detailed information about the request.</p>
-    pub fn request(&self) -> std::option::Option<&crate::model::HttpRequest> {
+    pub fn request(&self) -> std::option::Option<& crate::model::HttpRequest> {
         self.request.as_ref()
     }
     /// <p>A value that indicates how one result in the response relates proportionally to other results in the response. A result that has a weight of <code>2</code> represents roughly twice as many CloudFront web requests as a result that has a weight of <code>1</code>.</p>
@@ -7767,21 +7452,21 @@ impl SampledHttpRequest {
         self.weight
     }
     /// <p>The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
-    pub fn action(&self) -> std::option::Option<&str> {
+    pub fn action(&self) -> std::option::Option<& str> {
         self.action.as_deref()
     }
     /// <p>This value is returned if the <code>GetSampledRequests</code> request specifies the ID of a <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code> is the rule within the specified <code>RuleGroup</code> that matched the request listed in the response.</p>
-    pub fn rule_within_rule_group(&self) -> std::option::Option<&str> {
+    pub fn rule_within_rule_group(&self) -> std::option::Option<& str> {
         self.rule_within_rule_group.as_deref()
     }
 }
 /// See [`SampledHttpRequest`](crate::model::SampledHttpRequest).
 pub mod sampled_http_request {
-
+    
     /// A builder for [`SampledHttpRequest`](crate::model::SampledHttpRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7798,12 +7483,8 @@ pub mod sampled_http_request {
             self
         }
         /// <p>A complex type that contains detailed information about the request.</p>
-        pub fn set_request(
-            mut self,
-            input: std::option::Option<crate::model::HttpRequest>,
-        ) -> Self {
-            self.request = input;
-            self
+        pub fn set_request(mut self, input: std::option::Option<crate::model::HttpRequest>) -> Self {
+            self.request = input; self
         }
         /// <p>A value that indicates how one result in the response relates proportionally to other results in the response. A result that has a weight of <code>2</code> represents roughly twice as many CloudFront web requests as a result that has a weight of <code>1</code>.</p>
         pub fn weight(mut self, input: i64) -> Self {
@@ -7812,8 +7493,7 @@ pub mod sampled_http_request {
         }
         /// <p>A value that indicates how one result in the response relates proportionally to other results in the response. A result that has a weight of <code>2</code> represents roughly twice as many CloudFront web requests as a result that has a weight of <code>1</code>.</p>
         pub fn set_weight(mut self, input: std::option::Option<i64>) -> Self {
-            self.weight = input;
-            self
+            self.weight = input; self
         }
         /// <p>The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).</p>
         pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -7821,12 +7501,8 @@ pub mod sampled_http_request {
             self
         }
         /// <p>The time at which AWS WAF received the request from your AWS resource, in Unix time format (in seconds).</p>
-        pub fn set_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.timestamp = input;
-            self
+        pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.timestamp = input; self
         }
         /// <p>The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
         pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7835,8 +7511,7 @@ pub mod sampled_http_request {
         }
         /// <p>The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.</p>
         pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action = input;
-            self
+            self.action = input; self
         }
         /// <p>This value is returned if the <code>GetSampledRequests</code> request specifies the ID of a <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code> is the rule within the specified <code>RuleGroup</code> that matched the request listed in the response.</p>
         pub fn rule_within_rule_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7844,24 +7519,28 @@ pub mod sampled_http_request {
             self
         }
         /// <p>This value is returned if the <code>GetSampledRequests</code> request specifies the ID of a <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code> is the rule within the specified <code>RuleGroup</code> that matched the request listed in the response.</p>
-        pub fn set_rule_within_rule_group(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rule_within_rule_group = input;
-            self
+        pub fn set_rule_within_rule_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_within_rule_group = input; self
         }
         /// Consumes the builder and constructs a [`SampledHttpRequest`](crate::model::SampledHttpRequest).
         pub fn build(self) -> crate::model::SampledHttpRequest {
             crate::model::SampledHttpRequest {
-                request: self.request,
-                weight: self.weight.unwrap_or_default(),
-                timestamp: self.timestamp,
-                action: self.action,
-                rule_within_rule_group: self.rule_within_rule_group,
+                request: self.request
+                ,
+                weight: self.weight
+                    .unwrap_or_default()
+                ,
+                timestamp: self.timestamp
+                ,
+                action: self.action
+                ,
+                rule_within_rule_group: self.rule_within_rule_group
+                ,
             }
         }
     }
+    
+    
 }
 impl SampledHttpRequest {
     /// Creates a new builder-style object to manufacture [`SampledHttpRequest`](crate::model::SampledHttpRequest).
@@ -7870,18 +7549,18 @@ impl SampledHttpRequest {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>The response from a <code>GetSampledRequests</code> request includes an <code>HTTPRequest</code> complex type that appears as <code>Request</code> in the response syntax. <code>HTTPRequest</code> contains information about one of the web requests that were returned by <code>GetSampledRequests</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpRequest {
-    /// <p>The IP address that the request originated from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
-    /// <ul>
-    /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li>
-    /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>
+pub struct HttpRequest  {
+    /// <p>The IP address that the request originated from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> 
+    /// <ul> 
+    /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> 
+    /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub client_ip: std::option::Option<std::string::String>,
@@ -7902,38 +7581,38 @@ pub struct HttpRequest {
     pub headers: std::option::Option<std::vec::Vec<crate::model::HttpHeader>>,
 }
 impl HttpRequest {
-    /// <p>The IP address that the request originated from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
-    /// <ul>
-    /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li>
-    /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>
+    /// <p>The IP address that the request originated from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> 
+    /// <ul> 
+    /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> 
+    /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> 
     /// </ul>
-    pub fn client_ip(&self) -> std::option::Option<&str> {
+    pub fn client_ip(&self) -> std::option::Option<& str> {
         self.client_ip.as_deref()
     }
     /// <p>The two-letter country code for the country that the request originated from. For a current list of country codes, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>.</p>
-    pub fn country(&self) -> std::option::Option<&str> {
+    pub fn country(&self) -> std::option::Option<& str> {
         self.country.as_deref()
     }
     /// <p>The part of a web request that identifies the resource, for example, <code>/images/daily-ad.jpg</code>.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>The HTTP method specified in the sampled web request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>. </p>
-    pub fn method(&self) -> std::option::Option<&str> {
+    pub fn method(&self) -> std::option::Option<& str> {
         self.method.as_deref()
     }
     /// <p>The HTTP version specified in the sampled web request, for example, <code>HTTP/1.1</code>.</p>
-    pub fn http_version(&self) -> std::option::Option<&str> {
+    pub fn http_version(&self) -> std::option::Option<& str> {
         self.http_version.as_deref()
     }
     /// <p>A complex type that contains two values for each header in the sampled web request: the name of the header and the value of the header.</p>
-    pub fn headers(&self) -> std::option::Option<&[crate::model::HttpHeader]> {
+    pub fn headers(&self) -> std::option::Option<& [crate::model::HttpHeader]> {
         self.headers.as_deref()
     }
 }
 /// See [`HttpRequest`](crate::model::HttpRequest).
 pub mod http_request {
-
+    
     /// A builder for [`HttpRequest`](crate::model::HttpRequest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7945,23 +7624,22 @@ pub mod http_request {
         pub(crate) headers: std::option::Option<std::vec::Vec<crate::model::HttpHeader>>,
     }
     impl Builder {
-        /// <p>The IP address that the request originated from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
-        /// <ul>
-        /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li>
-        /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>
+        /// <p>The IP address that the request originated from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> 
+        /// <ul> 
+        /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> 
+        /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> 
         /// </ul>
         pub fn client_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_ip = Some(input.into());
             self
         }
-        /// <p>The IP address that the request originated from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
-        /// <ul>
-        /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li>
-        /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>
+        /// <p>The IP address that the request originated from. If the <code>WebACL</code> is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> 
+        /// <ul> 
+        /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> 
+        /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> 
         /// </ul>
         pub fn set_client_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_ip = input;
-            self
+            self.client_ip = input; self
         }
         /// <p>The two-letter country code for the country that the request originated from. For a current list of country codes, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>.</p>
         pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7970,8 +7648,7 @@ pub mod http_request {
         }
         /// <p>The two-letter country code for the country that the request originated from. For a current list of country codes, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>.</p>
         pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.country = input;
-            self
+            self.country = input; self
         }
         /// <p>The part of a web request that identifies the resource, for example, <code>/images/daily-ad.jpg</code>.</p>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7980,8 +7657,7 @@ pub mod http_request {
         }
         /// <p>The part of a web request that identifies the resource, for example, <code>/images/daily-ad.jpg</code>.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uri = input;
-            self
+            self.uri = input; self
         }
         /// <p>The HTTP method specified in the sampled web request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>. </p>
         pub fn method(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7990,8 +7666,7 @@ pub mod http_request {
         }
         /// <p>The HTTP method specified in the sampled web request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>. </p>
         pub fn set_method(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.method = input;
-            self
+            self.method = input; self
         }
         /// <p>The HTTP version specified in the sampled web request, for example, <code>HTTP/1.1</code>.</p>
         pub fn http_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8000,8 +7675,7 @@ pub mod http_request {
         }
         /// <p>The HTTP version specified in the sampled web request, for example, <code>HTTP/1.1</code>.</p>
         pub fn set_http_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.http_version = input;
-            self
+            self.http_version = input; self
         }
         /// Appends an item to `headers`.
         ///
@@ -8010,30 +7684,34 @@ pub mod http_request {
         /// <p>A complex type that contains two values for each header in the sampled web request: the name of the header and the value of the header.</p>
         pub fn headers(mut self, input: crate::model::HttpHeader) -> Self {
             let mut v = self.headers.unwrap_or_default();
-            v.push(input);
-            self.headers = Some(v);
-            self
+                            v.push(input);
+                            self.headers = Some(v);
+                            self
         }
         /// <p>A complex type that contains two values for each header in the sampled web request: the name of the header and the value of the header.</p>
-        pub fn set_headers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HttpHeader>>,
-        ) -> Self {
-            self.headers = input;
-            self
+        pub fn set_headers(mut self, input: std::option::Option<std::vec::Vec<crate::model::HttpHeader>>) -> Self {
+            self.headers = input; self
         }
         /// Consumes the builder and constructs a [`HttpRequest`](crate::model::HttpRequest).
         pub fn build(self) -> crate::model::HttpRequest {
             crate::model::HttpRequest {
-                client_ip: self.client_ip,
-                country: self.country,
-                uri: self.uri,
-                method: self.method,
-                http_version: self.http_version,
-                headers: self.headers,
+                client_ip: self.client_ip
+                ,
+                country: self.country
+                ,
+                uri: self.uri
+                ,
+                method: self.method
+                ,
+                http_version: self.http_version
+                ,
+                headers: self.headers
+                ,
             }
         }
     }
+    
+    
 }
 impl HttpRequest {
     /// Creates a new builder-style object to manufacture [`HttpRequest`](crate::model::HttpRequest).
@@ -8042,14 +7720,14 @@ impl HttpRequest {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>The response from a <code>GetSampledRequests</code> request includes an <code>HTTPHeader</code> complex type that appears as <code>Headers</code> in the response syntax. <code>HTTPHeader</code> contains the names and values of all of the headers that appear in one of the web requests that were returned by <code>GetSampledRequests</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpHeader {
+pub struct HttpHeader  {
     /// <p>The name of one of the headers in the sampled web request.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -8059,17 +7737,17 @@ pub struct HttpHeader {
 }
 impl HttpHeader {
     /// <p>The name of one of the headers in the sampled web request.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of one of the headers in the sampled web request.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`HttpHeader`](crate::model::HttpHeader).
 pub mod http_header {
-
+    
     /// A builder for [`HttpHeader`](crate::model::HttpHeader).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8084,8 +7762,7 @@ pub mod http_header {
         }
         /// <p>The name of one of the headers in the sampled web request.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The value of one of the headers in the sampled web request.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8094,17 +7771,20 @@ pub mod http_header {
         }
         /// <p>The value of one of the headers in the sampled web request.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`HttpHeader`](crate::model::HttpHeader).
         pub fn build(self) -> crate::model::HttpHeader {
             crate::model::HttpHeader {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl HttpHeader {
     /// Creates a new builder-style object to manufacture [`HttpHeader`](crate::model::HttpHeader).
@@ -8113,21 +7793,21 @@ impl HttpHeader {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
-/// <p>A collection of predefined rules that you can add to a web ACL.</p>
-/// <p>Rule groups are subject to the following limits:</p>
-/// <ul>
-/// <li> <p>Three rule groups per account. You can request an increase to this limit by contacting customer support.</p> </li>
-/// <li> <p>One rule group per web ACL.</p> </li>
-/// <li> <p>Ten rules per rule group.</p> </li>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
+/// <p>A collection of predefined rules that you can add to a web ACL.</p> 
+/// <p>Rule groups are subject to the following limits:</p> 
+/// <ul> 
+/// <li> <p>Three rule groups per account. You can request an increase to this limit by contacting customer support.</p> </li> 
+/// <li> <p>One rule group per web ACL.</p> </li> 
+/// <li> <p>Ten rules per rule group.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleGroup {
-    /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p>
+pub struct RuleGroup  {
+    /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p> 
     /// <p> <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
     #[doc(hidden)]
     pub rule_group_id: std::option::Option<std::string::String>,
@@ -8139,23 +7819,23 @@ pub struct RuleGroup {
     pub metric_name: std::option::Option<std::string::String>,
 }
 impl RuleGroup {
-    /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p>
+    /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p> 
     /// <p> <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-    pub fn rule_group_id(&self) -> std::option::Option<&str> {
+    pub fn rule_group_id(&self) -> std::option::Option<& str> {
         self.rule_group_id.as_deref()
     }
     /// <p>The friendly name or description for the <code>RuleGroup</code>. You can't change the name of a <code>RuleGroup</code> after you create it.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
 }
 /// See [`RuleGroup`](crate::model::RuleGroup).
 pub mod rule_group {
-
+    
     /// A builder for [`RuleGroup`](crate::model::RuleGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8164,20 +7844,16 @@ pub mod rule_group {
         pub(crate) metric_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p>
+        /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p> 
         /// <p> <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
         pub fn rule_group_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_group_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p>
+        /// <p>A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code> to get more information about a <code>RuleGroup</code> (see <code>GetRuleGroup</code>), update a <code>RuleGroup</code> (see <code>UpdateRuleGroup</code>), insert a <code>RuleGroup</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RuleGroup</code> from AWS WAF (see <code>DeleteRuleGroup</code>).</p> 
         /// <p> <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-        pub fn set_rule_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rule_group_id = input;
-            self
+        pub fn set_rule_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_group_id = input; self
         }
         /// <p>The friendly name or description for the <code>RuleGroup</code>. You can't change the name of a <code>RuleGroup</code> after you create it.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8186,8 +7862,7 @@ pub mod rule_group {
         }
         /// <p>The friendly name or description for the <code>RuleGroup</code>. You can't change the name of a <code>RuleGroup</code> after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8196,18 +7871,22 @@ pub mod rule_group {
         }
         /// <p>A friendly name or description for the metrics for this <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RuleGroup</code>.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// Consumes the builder and constructs a [`RuleGroup`](crate::model::RuleGroup).
         pub fn build(self) -> crate::model::RuleGroup {
             crate::model::RuleGroup {
-                rule_group_id: self.rule_group_id,
-                name: self.name,
-                metric_name: self.metric_name,
+                rule_group_id: self.rule_group_id
+                ,
+                name: self.name
+                ,
+                metric_name: self.metric_name
+                ,
             }
         }
     }
+    
+    
 }
 impl RuleGroup {
     /// Creates a new builder-style object to manufacture [`RuleGroup`](crate::model::RuleGroup).
@@ -8216,20 +7895,20 @@ impl RuleGroup {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
-/// <p>A combination of <code>ByteMatchSet</code>, <code>IPSet</code>, and/or <code>SqlInjectionMatchSet</code> objects that identify the web requests that you want to allow, block, or count. For example, you might create a <code>Rule</code> that includes the following predicates:</p>
-/// <ul>
-/// <li> <p>An <code>IPSet</code> that causes AWS WAF to search for web requests that originate from the IP address <code>192.0.2.44</code> </p> </li>
-/// <li> <p>A <code>ByteMatchSet</code> that causes AWS WAF to search for web requests for which the value of the <code>User-Agent</code> header is <code>BadBot</code>.</p> </li>
-/// </ul>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
+/// <p>A combination of <code>ByteMatchSet</code>, <code>IPSet</code>, and/or <code>SqlInjectionMatchSet</code> objects that identify the web requests that you want to allow, block, or count. For example, you might create a <code>Rule</code> that includes the following predicates:</p> 
+/// <ul> 
+/// <li> <p>An <code>IPSet</code> that causes AWS WAF to search for web requests that originate from the IP address <code>192.0.2.44</code> </p> </li> 
+/// <li> <p>A <code>ByteMatchSet</code> that causes AWS WAF to search for web requests for which the value of the <code>User-Agent</code> header is <code>BadBot</code>.</p> </li> 
+/// </ul> 
 /// <p>To match the settings in this <code>Rule</code>, a request must originate from <code>192.0.2.44</code> AND include a <code>User-Agent</code> header for which the value is <code>BadBot</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Rule {
-    /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
+pub struct Rule  {
+    /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p> 
     /// <p> <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
     #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
@@ -8244,27 +7923,27 @@ pub struct Rule {
     pub predicates: std::option::Option<std::vec::Vec<crate::model::Predicate>>,
 }
 impl Rule {
-    /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
+    /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p> 
     /// <p> <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
-    pub fn rule_id(&self) -> std::option::Option<&str> {
+    pub fn rule_id(&self) -> std::option::Option<& str> {
         self.rule_id.as_deref()
     }
     /// <p>The friendly name or description for the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>Rule</code>.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>Rule</code>.</p>
-    pub fn predicates(&self) -> std::option::Option<&[crate::model::Predicate]> {
+    pub fn predicates(&self) -> std::option::Option<& [crate::model::Predicate]> {
         self.predicates.as_deref()
     }
 }
 /// See [`Rule`](crate::model::Rule).
 pub mod rule {
-
+    
     /// A builder for [`Rule`](crate::model::Rule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8274,17 +7953,16 @@ pub mod rule {
         pub(crate) predicates: std::option::Option<std::vec::Vec<crate::model::Predicate>>,
     }
     impl Builder {
-        /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
+        /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p> 
         /// <p> <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
         pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_id = Some(input.into());
             self
         }
-        /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p>
+        /// <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more information about a <code>Rule</code> (see <code>GetRule</code>), update a <code>Rule</code> (see <code>UpdateRule</code>), insert a <code>Rule</code> into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>Rule</code> from AWS WAF (see <code>DeleteRule</code>).</p> 
         /// <p> <code>RuleId</code> is returned by <code>CreateRule</code> and by <code>ListRules</code>.</p>
         pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_id = input;
-            self
+            self.rule_id = input; self
         }
         /// <p>The friendly name or description for the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8293,8 +7971,7 @@ pub mod rule {
         }
         /// <p>The friendly name or description for the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>Rule</code>.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8303,8 +7980,7 @@ pub mod rule {
         }
         /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change <code>MetricName</code> after you create the <code>Rule</code>.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// Appends an item to `predicates`.
         ///
@@ -8313,28 +7989,30 @@ pub mod rule {
         /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>Rule</code>.</p>
         pub fn predicates(mut self, input: crate::model::Predicate) -> Self {
             let mut v = self.predicates.unwrap_or_default();
-            v.push(input);
-            self.predicates = Some(v);
-            self
+                            v.push(input);
+                            self.predicates = Some(v);
+                            self
         }
         /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>Rule</code>.</p>
-        pub fn set_predicates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Predicate>>,
-        ) -> Self {
-            self.predicates = input;
-            self
+        pub fn set_predicates(mut self, input: std::option::Option<std::vec::Vec<crate::model::Predicate>>) -> Self {
+            self.predicates = input; self
         }
         /// Consumes the builder and constructs a [`Rule`](crate::model::Rule).
         pub fn build(self) -> crate::model::Rule {
             crate::model::Rule {
-                rule_id: self.rule_id,
-                name: self.name,
-                metric_name: self.metric_name,
-                predicates: self.predicates,
+                rule_id: self.rule_id
+                ,
+                name: self.name
+                ,
+                metric_name: self.metric_name
+                ,
+                predicates: self.predicates
+                ,
             }
         }
     }
+    
+    
 }
 impl Rule {
     /// Creates a new builder-style object to manufacture [`Rule`](crate::model::Rule).
@@ -8343,15 +8021,15 @@ impl Rule {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>The <code>RegexPatternSet</code> specifies the regular expression (regex) pattern that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject those requests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegexPatternSet {
-    /// <p>The identifier for the <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>, remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete a <code>RegexPatternSet</code> from AWS WAF.</p>
+pub struct RegexPatternSet  {
+    /// <p>The identifier for the <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>, remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete a <code>RegexPatternSet</code> from AWS WAF.</p> 
     /// <p> <code>RegexMatchSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
     #[doc(hidden)]
     pub regex_pattern_set_id: std::option::Option<std::string::String>,
@@ -8363,23 +8041,23 @@ pub struct RegexPatternSet {
     pub regex_pattern_strings: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl RegexPatternSet {
-    /// <p>The identifier for the <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>, remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete a <code>RegexPatternSet</code> from AWS WAF.</p>
+    /// <p>The identifier for the <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>, remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete a <code>RegexPatternSet</code> from AWS WAF.</p> 
     /// <p> <code>RegexMatchSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-    pub fn regex_pattern_set_id(&self) -> std::option::Option<&str> {
+    pub fn regex_pattern_set_id(&self) -> std::option::Option<& str> {
         self.regex_pattern_set_id.as_deref()
     }
     /// <p>A friendly name or description of the <code>RegexPatternSet</code>. You can't change <code>Name</code> after you create a <code>RegexPatternSet</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the regular expression (regex) patterns that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
-    pub fn regex_pattern_strings(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn regex_pattern_strings(&self) -> std::option::Option<& [std::string::String]> {
         self.regex_pattern_strings.as_deref()
     }
 }
 /// See [`RegexPatternSet`](crate::model::RegexPatternSet).
 pub mod regex_pattern_set {
-
+    
     /// A builder for [`RegexPatternSet`](crate::model::RegexPatternSet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8388,20 +8066,16 @@ pub mod regex_pattern_set {
         pub(crate) regex_pattern_strings: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The identifier for the <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>, remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete a <code>RegexPatternSet</code> from AWS WAF.</p>
+        /// <p>The identifier for the <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>, remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete a <code>RegexPatternSet</code> from AWS WAF.</p> 
         /// <p> <code>RegexMatchSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
         pub fn regex_pattern_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.regex_pattern_set_id = Some(input.into());
             self
         }
-        /// <p>The identifier for the <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>, remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete a <code>RegexPatternSet</code> from AWS WAF.</p>
+        /// <p>The identifier for the <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code> to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>, remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete a <code>RegexPatternSet</code> from AWS WAF.</p> 
         /// <p> <code>RegexMatchSetId</code> is returned by <code>CreateRegexPatternSet</code> and by <code>ListRegexPatternSets</code>.</p>
-        pub fn set_regex_pattern_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.regex_pattern_set_id = input;
-            self
+        pub fn set_regex_pattern_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.regex_pattern_set_id = input; self
         }
         /// <p>A friendly name or description of the <code>RegexPatternSet</code>. You can't change <code>Name</code> after you create a <code>RegexPatternSet</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8410,8 +8084,7 @@ pub mod regex_pattern_set {
         }
         /// <p>A friendly name or description of the <code>RegexPatternSet</code>. You can't change <code>Name</code> after you create a <code>RegexPatternSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `regex_pattern_strings`.
         ///
@@ -8420,27 +8093,28 @@ pub mod regex_pattern_set {
         /// <p>Specifies the regular expression (regex) patterns that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
         pub fn regex_pattern_strings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regex_pattern_strings.unwrap_or_default();
-            v.push(input.into());
-            self.regex_pattern_strings = Some(v);
-            self
+                            v.push(input.into());
+                            self.regex_pattern_strings = Some(v);
+                            self
         }
         /// <p>Specifies the regular expression (regex) patterns that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>.</p>
-        pub fn set_regex_pattern_strings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.regex_pattern_strings = input;
-            self
+        pub fn set_regex_pattern_strings(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.regex_pattern_strings = input; self
         }
         /// Consumes the builder and constructs a [`RegexPatternSet`](crate::model::RegexPatternSet).
         pub fn build(self) -> crate::model::RegexPatternSet {
             crate::model::RegexPatternSet {
-                regex_pattern_set_id: self.regex_pattern_set_id,
-                name: self.name,
-                regex_pattern_strings: self.regex_pattern_strings,
+                regex_pattern_set_id: self.regex_pattern_set_id
+                ,
+                name: self.name
+                ,
+                regex_pattern_strings: self.regex_pattern_strings
+                ,
             }
         }
     }
+    
+    
 }
 impl RegexPatternSet {
     /// Creates a new builder-style object to manufacture [`RegexPatternSet`](crate::model::RegexPatternSet).
@@ -8449,77 +8123,72 @@ impl RegexPatternSet {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
-/// <p>In a <code>GetRegexMatchSet</code> request, <code>RegexMatchSet</code> is a complex type that contains the <code>RegexMatchSetId</code> and <code>Name</code> of a <code>RegexMatchSet</code>, and the values that you specified when you updated the <code>RegexMatchSet</code>.</p>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
+/// <p>In a <code>GetRegexMatchSet</code> request, <code>RegexMatchSet</code> is a complex type that contains the <code>RegexMatchSetId</code> and <code>Name</code> of a <code>RegexMatchSet</code>, and the values that you specified when you updated the <code>RegexMatchSet</code>.</p> 
 /// <p> The values are contained in a <code>RegexMatchTuple</code> object, which specify the parts of web requests that you want AWS WAF to inspect and the values that you want AWS WAF to search for. If a <code>RegexMatchSet</code> contains more than one <code>RegexMatchTuple</code> object, a request needs to match the settings in only one <code>ByteMatchTuple</code> to be considered a match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegexMatchSet {
-    /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code> (see <code>GetRegexMatchSet</code>), update a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), insert a <code>RegexMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>RegexMatchSet</code> from AWS WAF (see <code>DeleteRegexMatchSet</code>).</p>
+pub struct RegexMatchSet  {
+    /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code> (see <code>GetRegexMatchSet</code>), update a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), insert a <code>RegexMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>RegexMatchSet</code> from AWS WAF (see <code>DeleteRegexMatchSet</code>).</p> 
     /// <p> <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
     #[doc(hidden)]
     pub regex_match_set_id: std::option::Option<std::string::String>,
     /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>Contains an array of <code>RegexMatchTuple</code> objects. Each <code>RegexMatchTuple</code> object contains: </p>
-    /// <ul>
-    /// <li> <p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header. </p> </li>
-    /// <li> <p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p> </li>
-    /// <li> <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p> </li>
+    /// <p>Contains an array of <code>RegexMatchTuple</code> objects. Each <code>RegexMatchTuple</code> object contains: </p> 
+    /// <ul> 
+    /// <li> <p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header. </p> </li> 
+    /// <li> <p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p> </li> 
+    /// <li> <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub regex_match_tuples: std::option::Option<std::vec::Vec<crate::model::RegexMatchTuple>>,
 }
 impl RegexMatchSet {
-    /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code> (see <code>GetRegexMatchSet</code>), update a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), insert a <code>RegexMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>RegexMatchSet</code> from AWS WAF (see <code>DeleteRegexMatchSet</code>).</p>
+    /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code> (see <code>GetRegexMatchSet</code>), update a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), insert a <code>RegexMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>RegexMatchSet</code> from AWS WAF (see <code>DeleteRegexMatchSet</code>).</p> 
     /// <p> <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-    pub fn regex_match_set_id(&self) -> std::option::Option<&str> {
+    pub fn regex_match_set_id(&self) -> std::option::Option<& str> {
         self.regex_match_set_id.as_deref()
     }
     /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>Contains an array of <code>RegexMatchTuple</code> objects. Each <code>RegexMatchTuple</code> object contains: </p>
-    /// <ul>
-    /// <li> <p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header. </p> </li>
-    /// <li> <p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p> </li>
-    /// <li> <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p> </li>
+    /// <p>Contains an array of <code>RegexMatchTuple</code> objects. Each <code>RegexMatchTuple</code> object contains: </p> 
+    /// <ul> 
+    /// <li> <p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header. </p> </li> 
+    /// <li> <p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p> </li> 
+    /// <li> <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p> </li> 
     /// </ul>
-    pub fn regex_match_tuples(&self) -> std::option::Option<&[crate::model::RegexMatchTuple]> {
+    pub fn regex_match_tuples(&self) -> std::option::Option<& [crate::model::RegexMatchTuple]> {
         self.regex_match_tuples.as_deref()
     }
 }
 /// See [`RegexMatchSet`](crate::model::RegexMatchSet).
 pub mod regex_match_set {
-
+    
     /// A builder for [`RegexMatchSet`](crate::model::RegexMatchSet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) regex_match_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) regex_match_tuples:
-            std::option::Option<std::vec::Vec<crate::model::RegexMatchTuple>>,
+        pub(crate) regex_match_tuples: std::option::Option<std::vec::Vec<crate::model::RegexMatchTuple>>,
     }
     impl Builder {
-        /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code> (see <code>GetRegexMatchSet</code>), update a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), insert a <code>RegexMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>RegexMatchSet</code> from AWS WAF (see <code>DeleteRegexMatchSet</code>).</p>
+        /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code> (see <code>GetRegexMatchSet</code>), update a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), insert a <code>RegexMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>RegexMatchSet</code> from AWS WAF (see <code>DeleteRegexMatchSet</code>).</p> 
         /// <p> <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
         pub fn regex_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.regex_match_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code> (see <code>GetRegexMatchSet</code>), update a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), insert a <code>RegexMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>RegexMatchSet</code> from AWS WAF (see <code>DeleteRegexMatchSet</code>).</p>
+        /// <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code> to get information about a <code>RegexMatchSet</code> (see <code>GetRegexMatchSet</code>), update a <code>RegexMatchSet</code> (see <code>UpdateRegexMatchSet</code>), insert a <code>RegexMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>RegexMatchSet</code> from AWS WAF (see <code>DeleteRegexMatchSet</code>).</p> 
         /// <p> <code>RegexMatchSetId</code> is returned by <code>CreateRegexMatchSet</code> and by <code>ListRegexMatchSets</code>.</p>
-        pub fn set_regex_match_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.regex_match_set_id = input;
-            self
+        pub fn set_regex_match_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.regex_match_set_id = input; self
         }
         /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8528,47 +8197,47 @@ pub mod regex_match_set {
         }
         /// <p>A friendly name or description of the <code>RegexMatchSet</code>. You can't change <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `regex_match_tuples`.
         ///
         /// To override the contents of this collection use [`set_regex_match_tuples`](Self::set_regex_match_tuples).
         ///
-        /// <p>Contains an array of <code>RegexMatchTuple</code> objects. Each <code>RegexMatchTuple</code> object contains: </p>
-        /// <ul>
-        /// <li> <p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header. </p> </li>
-        /// <li> <p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p> </li>
-        /// <li> <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p> </li>
+        /// <p>Contains an array of <code>RegexMatchTuple</code> objects. Each <code>RegexMatchTuple</code> object contains: </p> 
+        /// <ul> 
+        /// <li> <p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header. </p> </li> 
+        /// <li> <p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p> </li> 
+        /// <li> <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p> </li> 
         /// </ul>
         pub fn regex_match_tuples(mut self, input: crate::model::RegexMatchTuple) -> Self {
             let mut v = self.regex_match_tuples.unwrap_or_default();
-            v.push(input);
-            self.regex_match_tuples = Some(v);
-            self
+                            v.push(input);
+                            self.regex_match_tuples = Some(v);
+                            self
         }
-        /// <p>Contains an array of <code>RegexMatchTuple</code> objects. Each <code>RegexMatchTuple</code> object contains: </p>
-        /// <ul>
-        /// <li> <p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header. </p> </li>
-        /// <li> <p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p> </li>
-        /// <li> <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p> </li>
+        /// <p>Contains an array of <code>RegexMatchTuple</code> objects. Each <code>RegexMatchTuple</code> object contains: </p> 
+        /// <ul> 
+        /// <li> <p>The part of a web request that you want AWS WAF to inspect, such as a query string or the value of the <code>User-Agent</code> header. </p> </li> 
+        /// <li> <p>The identifier of the pattern (a regular expression) that you want AWS WAF to look for. For more information, see <code>RegexPatternSet</code>.</p> </li> 
+        /// <li> <p>Whether to perform any conversions on the request, such as converting it to lowercase, before inspecting it for the specified string.</p> </li> 
         /// </ul>
-        pub fn set_regex_match_tuples(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RegexMatchTuple>>,
-        ) -> Self {
-            self.regex_match_tuples = input;
-            self
+        pub fn set_regex_match_tuples(mut self, input: std::option::Option<std::vec::Vec<crate::model::RegexMatchTuple>>) -> Self {
+            self.regex_match_tuples = input; self
         }
         /// Consumes the builder and constructs a [`RegexMatchSet`](crate::model::RegexMatchSet).
         pub fn build(self) -> crate::model::RegexMatchSet {
             crate::model::RegexMatchSet {
-                regex_match_set_id: self.regex_match_set_id,
-                name: self.name,
-                regex_match_tuples: self.regex_match_tuples,
+                regex_match_set_id: self.regex_match_set_id
+                ,
+                name: self.name
+                ,
+                regex_match_tuples: self.regex_match_tuples
+                ,
             }
         }
     }
+    
+    
 }
 impl RegexMatchSet {
     /// Creates a new builder-style object to manufacture [`RegexMatchSet`](crate::model::RegexMatchSet).
@@ -8577,20 +8246,20 @@ impl RegexMatchSet {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
-/// <p>A <code>RateBasedRule</code> is identical to a regular <code>Rule</code>, with one addition: a <code>RateBasedRule</code> counts the number of requests that arrive from a specified IP address every five minutes. For example, based on recent requests that you've seen from an attacker, you might create a <code>RateBasedRule</code> that includes the following conditions: </p>
-/// <ul>
-/// <li> <p>The requests come from 192.0.2.44.</p> </li>
-/// <li> <p>They contain the value <code>BadBot</code> in the <code>User-Agent</code> header.</p> </li>
-/// </ul>
-/// <p>In the rule, you also define the rate limit as 1,000.</p>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
+/// <p>A <code>RateBasedRule</code> is identical to a regular <code>Rule</code>, with one addition: a <code>RateBasedRule</code> counts the number of requests that arrive from a specified IP address every five minutes. For example, based on recent requests that you've seen from an attacker, you might create a <code>RateBasedRule</code> that includes the following conditions: </p> 
+/// <ul> 
+/// <li> <p>The requests come from 192.0.2.44.</p> </li> 
+/// <li> <p>They contain the value <code>BadBot</code> in the <code>User-Agent</code> header.</p> </li> 
+/// </ul> 
+/// <p>In the rule, you also define the rate limit as 1,000.</p> 
 /// <p>Requests that meet both of these conditions and exceed 1,000 requests every five minutes trigger the rule's action (block or count), which is defined in the web ACL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RateBasedRule {
+pub struct RateBasedRule  {
     /// <p>A unique identifier for a <code>RateBasedRule</code>. You use <code>RuleId</code> to get more information about a <code>RateBasedRule</code> (see <code>GetRateBasedRule</code>), update a <code>RateBasedRule</code> (see <code>UpdateRateBasedRule</code>), insert a <code>RateBasedRule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RateBasedRule</code> from AWS WAF (see <code>DeleteRateBasedRule</code>).</p>
     #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
@@ -8612,23 +8281,23 @@ pub struct RateBasedRule {
 }
 impl RateBasedRule {
     /// <p>A unique identifier for a <code>RateBasedRule</code>. You use <code>RuleId</code> to get more information about a <code>RateBasedRule</code> (see <code>GetRateBasedRule</code>), update a <code>RateBasedRule</code> (see <code>UpdateRateBasedRule</code>), insert a <code>RateBasedRule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RateBasedRule</code> from AWS WAF (see <code>DeleteRateBasedRule</code>).</p>
-    pub fn rule_id(&self) -> std::option::Option<&str> {
+    pub fn rule_id(&self) -> std::option::Option<& str> {
         self.rule_id.as_deref()
     }
     /// <p>A friendly name or description for a <code>RateBasedRule</code>. You can't change the name of a <code>RateBasedRule</code> after you create it.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A friendly name or description for the metrics for a <code>RateBasedRule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RateBasedRule</code>.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>RateBasedRule</code>.</p>
-    pub fn match_predicates(&self) -> std::option::Option<&[crate::model::Predicate]> {
+    pub fn match_predicates(&self) -> std::option::Option<& [crate::model::Predicate]> {
         self.match_predicates.as_deref()
     }
     /// <p>The field that AWS WAF uses to determine if requests are likely arriving from single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests arriving from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>
-    pub fn rate_key(&self) -> std::option::Option<&crate::model::RateKey> {
+    pub fn rate_key(&self) -> std::option::Option<& crate::model::RateKey> {
         self.rate_key.as_ref()
     }
     /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
@@ -8638,7 +8307,7 @@ impl RateBasedRule {
 }
 /// See [`RateBasedRule`](crate::model::RateBasedRule).
 pub mod rate_based_rule {
-
+    
     /// A builder for [`RateBasedRule`](crate::model::RateBasedRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8657,8 +8326,7 @@ pub mod rate_based_rule {
         }
         /// <p>A unique identifier for a <code>RateBasedRule</code>. You use <code>RuleId</code> to get more information about a <code>RateBasedRule</code> (see <code>GetRateBasedRule</code>), update a <code>RateBasedRule</code> (see <code>UpdateRateBasedRule</code>), insert a <code>RateBasedRule</code> into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <code>UpdateWebACL</code>), or delete a <code>RateBasedRule</code> from AWS WAF (see <code>DeleteRateBasedRule</code>).</p>
         pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_id = input;
-            self
+            self.rule_id = input; self
         }
         /// <p>A friendly name or description for a <code>RateBasedRule</code>. You can't change the name of a <code>RateBasedRule</code> after you create it.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8667,8 +8335,7 @@ pub mod rate_based_rule {
         }
         /// <p>A friendly name or description for a <code>RateBasedRule</code>. You can't change the name of a <code>RateBasedRule</code> after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A friendly name or description for the metrics for a <code>RateBasedRule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RateBasedRule</code>.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8677,8 +8344,7 @@ pub mod rate_based_rule {
         }
         /// <p>A friendly name or description for the metrics for a <code>RateBasedRule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>RateBasedRule</code>.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// Appends an item to `match_predicates`.
         ///
@@ -8687,17 +8353,13 @@ pub mod rate_based_rule {
         /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>RateBasedRule</code>.</p>
         pub fn match_predicates(mut self, input: crate::model::Predicate) -> Self {
             let mut v = self.match_predicates.unwrap_or_default();
-            v.push(input);
-            self.match_predicates = Some(v);
-            self
+                            v.push(input);
+                            self.match_predicates = Some(v);
+                            self
         }
         /// <p>The <code>Predicates</code> object contains one <code>Predicate</code> element for each <code>ByteMatchSet</code>, <code>IPSet</code>, or <code>SqlInjectionMatchSet</code> object that you want to include in a <code>RateBasedRule</code>.</p>
-        pub fn set_match_predicates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Predicate>>,
-        ) -> Self {
-            self.match_predicates = input;
-            self
+        pub fn set_match_predicates(mut self, input: std::option::Option<std::vec::Vec<crate::model::Predicate>>) -> Self {
+            self.match_predicates = input; self
         }
         /// <p>The field that AWS WAF uses to determine if requests are likely arriving from single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests arriving from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>
         pub fn rate_key(mut self, input: crate::model::RateKey) -> Self {
@@ -8706,8 +8368,7 @@ pub mod rate_based_rule {
         }
         /// <p>The field that AWS WAF uses to determine if requests are likely arriving from single source and thus subject to rate monitoring. The only valid value for <code>RateKey</code> is <code>IP</code>. <code>IP</code> indicates that requests arriving from the same IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.</p>
         pub fn set_rate_key(mut self, input: std::option::Option<crate::model::RateKey>) -> Self {
-            self.rate_key = input;
-            self
+            self.rate_key = input; self
         }
         /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
         pub fn rate_limit(mut self, input: i64) -> Self {
@@ -8716,21 +8377,29 @@ pub mod rate_based_rule {
         }
         /// <p>The maximum number of requests, which have an identical value in the field specified by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests exceeds the <code>RateLimit</code> and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.</p>
         pub fn set_rate_limit(mut self, input: std::option::Option<i64>) -> Self {
-            self.rate_limit = input;
-            self
+            self.rate_limit = input; self
         }
         /// Consumes the builder and constructs a [`RateBasedRule`](crate::model::RateBasedRule).
         pub fn build(self) -> crate::model::RateBasedRule {
             crate::model::RateBasedRule {
-                rule_id: self.rule_id,
-                name: self.name,
-                metric_name: self.metric_name,
-                match_predicates: self.match_predicates,
-                rate_key: self.rate_key,
-                rate_limit: self.rate_limit.unwrap_or_default(),
+                rule_id: self.rule_id
+                ,
+                name: self.name
+                ,
+                metric_name: self.metric_name
+                ,
+                match_predicates: self.match_predicates
+                ,
+                rate_key: self.rate_key
+                ,
+                rate_limit: self.rate_limit
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl RateBasedRule {
     /// Creates a new builder-style object to manufacture [`RateBasedRule`](crate::model::RateBasedRule).
@@ -8745,9 +8414,9 @@ impl RateBasedRule {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ratekey = unimplemented!();
 /// match ratekey {
@@ -8768,54 +8437,48 @@ impl RateBasedRule {
 /// Specifically, when `ratekey` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RateKey::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RateKey {
     #[allow(missing_docs)] // documentation missing in model
     Ip,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RateKey {
     fn from(s: &str) -> Self {
         match s {
             "IP" => RateKey::Ip,
-            other => RateKey::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RateKey::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RateKey {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RateKey::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RateKey::from(s))
+                }
+            }
 impl RateKey {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RateKey::Ip => "IP",
-            RateKey::Unknown(value) => value.as_str(),
+            RateKey::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IP"]
+        &[
+            "IP"
+        ]
     }
 }
 impl AsRef<str> for RateKey {
@@ -8824,16 +8487,16 @@ impl AsRef<str> for RateKey {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
-/// <p>Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128.</p>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
+/// <p>Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128.</p> 
 /// <p>To specify an individual IP address, you specify the four-part IP address followed by a <code>/32</code>, for example, 192.0.2.0/32. To block a range of IP addresses, you can specify /8 or any range between /16 through /32 (for IPv4) or /24, /32, /48, /56, /64, or /128 (for IPv6). For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IpSet {
-    /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You use <code>IPSetId</code> to get information about an <code>IPSet</code> (see <code>GetIPSet</code>), update an <code>IPSet</code> (see <code>UpdateIPSet</code>), insert an <code>IPSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>IPSet</code> from AWS WAF (see <code>DeleteIPSet</code>).</p>
+pub struct IpSet  {
+    /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You use <code>IPSetId</code> to get information about an <code>IPSet</code> (see <code>GetIPSet</code>), update an <code>IPSet</code> (see <code>UpdateIPSet</code>), insert an <code>IPSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>IPSet</code> from AWS WAF (see <code>DeleteIPSet</code>).</p> 
     /// <p> <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
     #[doc(hidden)]
     pub ip_set_id: std::option::Option<std::string::String>,
@@ -8845,43 +8508,41 @@ pub struct IpSet {
     pub ip_set_descriptors: std::option::Option<std::vec::Vec<crate::model::IpSetDescriptor>>,
 }
 impl IpSet {
-    /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You use <code>IPSetId</code> to get information about an <code>IPSet</code> (see <code>GetIPSet</code>), update an <code>IPSet</code> (see <code>UpdateIPSet</code>), insert an <code>IPSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>IPSet</code> from AWS WAF (see <code>DeleteIPSet</code>).</p>
+    /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You use <code>IPSetId</code> to get information about an <code>IPSet</code> (see <code>GetIPSet</code>), update an <code>IPSet</code> (see <code>UpdateIPSet</code>), insert an <code>IPSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>IPSet</code> from AWS WAF (see <code>DeleteIPSet</code>).</p> 
     /// <p> <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
-    pub fn ip_set_id(&self) -> std::option::Option<&str> {
+    pub fn ip_set_id(&self) -> std::option::Option<& str> {
         self.ip_set_id.as_deref()
     }
     /// <p>A friendly name or description of the <code>IPSet</code>. You can't change the name of an <code>IPSet</code> after you create it.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution and the viewer did not use an HTTP proxy or a load balancer to send the request, this is the value of the c-ip field in the CloudFront access logs.</p>
-    pub fn ip_set_descriptors(&self) -> std::option::Option<&[crate::model::IpSetDescriptor]> {
+    pub fn ip_set_descriptors(&self) -> std::option::Option<& [crate::model::IpSetDescriptor]> {
         self.ip_set_descriptors.as_deref()
     }
 }
 /// See [`IpSet`](crate::model::IpSet).
 pub mod ip_set {
-
+    
     /// A builder for [`IpSet`](crate::model::IpSet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) ip_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) ip_set_descriptors:
-            std::option::Option<std::vec::Vec<crate::model::IpSetDescriptor>>,
+        pub(crate) ip_set_descriptors: std::option::Option<std::vec::Vec<crate::model::IpSetDescriptor>>,
     }
     impl Builder {
-        /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You use <code>IPSetId</code> to get information about an <code>IPSet</code> (see <code>GetIPSet</code>), update an <code>IPSet</code> (see <code>UpdateIPSet</code>), insert an <code>IPSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>IPSet</code> from AWS WAF (see <code>DeleteIPSet</code>).</p>
+        /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You use <code>IPSetId</code> to get information about an <code>IPSet</code> (see <code>GetIPSet</code>), update an <code>IPSet</code> (see <code>UpdateIPSet</code>), insert an <code>IPSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>IPSet</code> from AWS WAF (see <code>DeleteIPSet</code>).</p> 
         /// <p> <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
         pub fn ip_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ip_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You use <code>IPSetId</code> to get information about an <code>IPSet</code> (see <code>GetIPSet</code>), update an <code>IPSet</code> (see <code>UpdateIPSet</code>), insert an <code>IPSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>IPSet</code> from AWS WAF (see <code>DeleteIPSet</code>).</p>
+        /// <p>The <code>IPSetId</code> for an <code>IPSet</code>. You use <code>IPSetId</code> to get information about an <code>IPSet</code> (see <code>GetIPSet</code>), update an <code>IPSet</code> (see <code>UpdateIPSet</code>), insert an <code>IPSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete an <code>IPSet</code> from AWS WAF (see <code>DeleteIPSet</code>).</p> 
         /// <p> <code>IPSetId</code> is returned by <code>CreateIPSet</code> and by <code>ListIPSets</code>.</p>
         pub fn set_ip_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ip_set_id = input;
-            self
+            self.ip_set_id = input; self
         }
         /// <p>A friendly name or description of the <code>IPSet</code>. You can't change the name of an <code>IPSet</code> after you create it.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8890,8 +8551,7 @@ pub mod ip_set {
         }
         /// <p>A friendly name or description of the <code>IPSet</code>. You can't change the name of an <code>IPSet</code> after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `ip_set_descriptors`.
         ///
@@ -8900,27 +8560,28 @@ pub mod ip_set {
         /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution and the viewer did not use an HTTP proxy or a load balancer to send the request, this is the value of the c-ip field in the CloudFront access logs.</p>
         pub fn ip_set_descriptors(mut self, input: crate::model::IpSetDescriptor) -> Self {
             let mut v = self.ip_set_descriptors.unwrap_or_default();
-            v.push(input);
-            self.ip_set_descriptors = Some(v);
-            self
+                            v.push(input);
+                            self.ip_set_descriptors = Some(v);
+                            self
         }
         /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is associated with a CloudFront distribution and the viewer did not use an HTTP proxy or a load balancer to send the request, this is the value of the c-ip field in the CloudFront access logs.</p>
-        pub fn set_ip_set_descriptors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IpSetDescriptor>>,
-        ) -> Self {
-            self.ip_set_descriptors = input;
-            self
+        pub fn set_ip_set_descriptors(mut self, input: std::option::Option<std::vec::Vec<crate::model::IpSetDescriptor>>) -> Self {
+            self.ip_set_descriptors = input; self
         }
         /// Consumes the builder and constructs a [`IpSet`](crate::model::IpSet).
         pub fn build(self) -> crate::model::IpSet {
             crate::model::IpSet {
-                ip_set_id: self.ip_set_id,
-                name: self.name,
-                ip_set_descriptors: self.ip_set_descriptors,
+                ip_set_id: self.ip_set_id
+                ,
+                name: self.name
+                ,
+                ip_set_descriptors: self.ip_set_descriptors
+                ,
             }
         }
     }
+    
+    
 }
 impl IpSet {
     /// Creates a new builder-style object to manufacture [`IpSet`](crate::model::IpSet).
@@ -8929,15 +8590,15 @@ impl IpSet {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
 /// <p>Contains one or more countries that AWS WAF will search for.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeoMatchSet {
-    /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You use <code>GeoMatchSetId</code> to get information about a <code>GeoMatchSet</code> (see <code>GeoMatchSet</code>), update a <code>GeoMatchSet</code> (see <code>UpdateGeoMatchSet</code>), insert a <code>GeoMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>GeoMatchSet</code> from AWS WAF (see <code>DeleteGeoMatchSet</code>).</p>
+pub struct GeoMatchSet  {
+    /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You use <code>GeoMatchSetId</code> to get information about a <code>GeoMatchSet</code> (see <code>GeoMatchSet</code>), update a <code>GeoMatchSet</code> (see <code>UpdateGeoMatchSet</code>), insert a <code>GeoMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>GeoMatchSet</code> from AWS WAF (see <code>DeleteGeoMatchSet</code>).</p> 
     /// <p> <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
     #[doc(hidden)]
     pub geo_match_set_id: std::option::Option<std::string::String>,
@@ -8949,48 +8610,41 @@ pub struct GeoMatchSet {
     pub geo_match_constraints: std::option::Option<std::vec::Vec<crate::model::GeoMatchConstraint>>,
 }
 impl GeoMatchSet {
-    /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You use <code>GeoMatchSetId</code> to get information about a <code>GeoMatchSet</code> (see <code>GeoMatchSet</code>), update a <code>GeoMatchSet</code> (see <code>UpdateGeoMatchSet</code>), insert a <code>GeoMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>GeoMatchSet</code> from AWS WAF (see <code>DeleteGeoMatchSet</code>).</p>
+    /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You use <code>GeoMatchSetId</code> to get information about a <code>GeoMatchSet</code> (see <code>GeoMatchSet</code>), update a <code>GeoMatchSet</code> (see <code>UpdateGeoMatchSet</code>), insert a <code>GeoMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>GeoMatchSet</code> from AWS WAF (see <code>DeleteGeoMatchSet</code>).</p> 
     /// <p> <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
-    pub fn geo_match_set_id(&self) -> std::option::Option<&str> {
+    pub fn geo_match_set_id(&self) -> std::option::Option<& str> {
         self.geo_match_set_id.as_deref()
     }
     /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change the name of an <code>GeoMatchSet</code> after you create it.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>An array of <code>GeoMatchConstraint</code> objects, which contain the country that you want AWS WAF to search for.</p>
-    pub fn geo_match_constraints(
-        &self,
-    ) -> std::option::Option<&[crate::model::GeoMatchConstraint]> {
+    pub fn geo_match_constraints(&self) -> std::option::Option<& [crate::model::GeoMatchConstraint]> {
         self.geo_match_constraints.as_deref()
     }
 }
 /// See [`GeoMatchSet`](crate::model::GeoMatchSet).
 pub mod geo_match_set {
-
+    
     /// A builder for [`GeoMatchSet`](crate::model::GeoMatchSet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geo_match_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) geo_match_constraints:
-            std::option::Option<std::vec::Vec<crate::model::GeoMatchConstraint>>,
+        pub(crate) geo_match_constraints: std::option::Option<std::vec::Vec<crate::model::GeoMatchConstraint>>,
     }
     impl Builder {
-        /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You use <code>GeoMatchSetId</code> to get information about a <code>GeoMatchSet</code> (see <code>GeoMatchSet</code>), update a <code>GeoMatchSet</code> (see <code>UpdateGeoMatchSet</code>), insert a <code>GeoMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>GeoMatchSet</code> from AWS WAF (see <code>DeleteGeoMatchSet</code>).</p>
+        /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You use <code>GeoMatchSetId</code> to get information about a <code>GeoMatchSet</code> (see <code>GeoMatchSet</code>), update a <code>GeoMatchSet</code> (see <code>UpdateGeoMatchSet</code>), insert a <code>GeoMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>GeoMatchSet</code> from AWS WAF (see <code>DeleteGeoMatchSet</code>).</p> 
         /// <p> <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
         pub fn geo_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.geo_match_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You use <code>GeoMatchSetId</code> to get information about a <code>GeoMatchSet</code> (see <code>GeoMatchSet</code>), update a <code>GeoMatchSet</code> (see <code>UpdateGeoMatchSet</code>), insert a <code>GeoMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>GeoMatchSet</code> from AWS WAF (see <code>DeleteGeoMatchSet</code>).</p>
+        /// <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You use <code>GeoMatchSetId</code> to get information about a <code>GeoMatchSet</code> (see <code>GeoMatchSet</code>), update a <code>GeoMatchSet</code> (see <code>UpdateGeoMatchSet</code>), insert a <code>GeoMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>GeoMatchSet</code> from AWS WAF (see <code>DeleteGeoMatchSet</code>).</p> 
         /// <p> <code>GeoMatchSetId</code> is returned by <code>CreateGeoMatchSet</code> and by <code>ListGeoMatchSets</code>.</p>
-        pub fn set_geo_match_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.geo_match_set_id = input;
-            self
+        pub fn set_geo_match_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.geo_match_set_id = input; self
         }
         /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change the name of an <code>GeoMatchSet</code> after you create it.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8999,8 +8653,7 @@ pub mod geo_match_set {
         }
         /// <p>A friendly name or description of the <code>GeoMatchSet</code>. You can't change the name of an <code>GeoMatchSet</code> after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `geo_match_constraints`.
         ///
@@ -9009,27 +8662,28 @@ pub mod geo_match_set {
         /// <p>An array of <code>GeoMatchConstraint</code> objects, which contain the country that you want AWS WAF to search for.</p>
         pub fn geo_match_constraints(mut self, input: crate::model::GeoMatchConstraint) -> Self {
             let mut v = self.geo_match_constraints.unwrap_or_default();
-            v.push(input);
-            self.geo_match_constraints = Some(v);
-            self
+                            v.push(input);
+                            self.geo_match_constraints = Some(v);
+                            self
         }
         /// <p>An array of <code>GeoMatchConstraint</code> objects, which contain the country that you want AWS WAF to search for.</p>
-        pub fn set_geo_match_constraints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GeoMatchConstraint>>,
-        ) -> Self {
-            self.geo_match_constraints = input;
-            self
+        pub fn set_geo_match_constraints(mut self, input: std::option::Option<std::vec::Vec<crate::model::GeoMatchConstraint>>) -> Self {
+            self.geo_match_constraints = input; self
         }
         /// Consumes the builder and constructs a [`GeoMatchSet`](crate::model::GeoMatchSet).
         pub fn build(self) -> crate::model::GeoMatchSet {
             crate::model::GeoMatchSet {
-                geo_match_set_id: self.geo_match_set_id,
-                name: self.name,
-                geo_match_constraints: self.geo_match_constraints,
+                geo_match_set_id: self.geo_match_set_id
+                ,
+                name: self.name
+                ,
+                geo_match_constraints: self.geo_match_constraints
+                ,
             }
         }
     }
+    
+    
 }
 impl GeoMatchSet {
     /// Creates a new builder-style object to manufacture [`GeoMatchSet`](crate::model::GeoMatchSet).
@@ -9044,9 +8698,9 @@ impl GeoMatchSet {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let changetokenstatus = unimplemented!();
 /// match changetokenstatus {
@@ -9069,22 +8723,14 @@ impl GeoMatchSet {
 /// Specifically, when `changetokenstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChangeTokenStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChangeTokenStatus {
     #[allow(missing_docs)] // documentation missing in model
     Insync,
@@ -9093,7 +8739,7 @@ pub enum ChangeTokenStatus {
     #[allow(missing_docs)] // documentation missing in model
     Provisioned,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChangeTokenStatus {
     fn from(s: &str) -> Self {
@@ -9101,19 +8747,17 @@ impl std::convert::From<&str> for ChangeTokenStatus {
             "INSYNC" => ChangeTokenStatus::Insync,
             "PENDING" => ChangeTokenStatus::Pending,
             "PROVISIONED" => ChangeTokenStatus::Provisioned,
-            other => {
-                ChangeTokenStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ChangeTokenStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ChangeTokenStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChangeTokenStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChangeTokenStatus::from(s))
+                }
+            }
 impl ChangeTokenStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9121,12 +8765,14 @@ impl ChangeTokenStatus {
             ChangeTokenStatus::Insync => "INSYNC",
             ChangeTokenStatus::Pending => "PENDING",
             ChangeTokenStatus::Provisioned => "PROVISIONED",
-            ChangeTokenStatus::Unknown(value) => value.as_str(),
+            ChangeTokenStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INSYNC", "PENDING", "PROVISIONED"]
+        &[
+            "INSYNC", "PENDING", "PROVISIONED"
+        ]
     }
 }
 impl AsRef<str> for ChangeTokenStatus {
@@ -9135,16 +8781,16 @@ impl AsRef<str> for ChangeTokenStatus {
     }
 }
 
-/// <note>
-/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p>
-/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p>
-/// </note>
-/// <p>In a <code>GetByteMatchSet</code> request, <code>ByteMatchSet</code> is a complex type that contains the <code>ByteMatchSetId</code> and <code>Name</code> of a <code>ByteMatchSet</code>, and the values that you specified when you updated the <code>ByteMatchSet</code>. </p>
+/// <note> 
+/// <p>This is <b>AWS WAF Classic</b> documentation. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS WAF Classic</a> in the developer guide.</p> 
+/// <p> <b>For the latest version of AWS WAF</b>, use the AWS WAFV2 API and see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of endpoints for regional and global use. </p> 
+/// </note> 
+/// <p>In a <code>GetByteMatchSet</code> request, <code>ByteMatchSet</code> is a complex type that contains the <code>ByteMatchSetId</code> and <code>Name</code> of a <code>ByteMatchSet</code>, and the values that you specified when you updated the <code>ByteMatchSet</code>. </p> 
 /// <p>A complex type that contains <code>ByteMatchTuple</code> objects, which specify the parts of web requests that you want AWS WAF to inspect and the values that you want AWS WAF to search for. If a <code>ByteMatchSet</code> contains more than one <code>ByteMatchTuple</code> object, a request needs to match the settings in only one <code>ByteMatchTuple</code> to be considered a match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ByteMatchSet {
-    /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code> (see <code>GetByteMatchSet</code>), update a <code>ByteMatchSet</code> (see <code>UpdateByteMatchSet</code>), insert a <code>ByteMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>ByteMatchSet</code> from AWS WAF (see <code>DeleteByteMatchSet</code>).</p>
+pub struct ByteMatchSet  {
+    /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code> (see <code>GetByteMatchSet</code>), update a <code>ByteMatchSet</code> (see <code>UpdateByteMatchSet</code>), insert a <code>ByteMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>ByteMatchSet</code> from AWS WAF (see <code>DeleteByteMatchSet</code>).</p> 
     /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
     #[doc(hidden)]
     pub byte_match_set_id: std::option::Option<std::string::String>,
@@ -9156,46 +8802,41 @@ pub struct ByteMatchSet {
     pub byte_match_tuples: std::option::Option<std::vec::Vec<crate::model::ByteMatchTuple>>,
 }
 impl ByteMatchSet {
-    /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code> (see <code>GetByteMatchSet</code>), update a <code>ByteMatchSet</code> (see <code>UpdateByteMatchSet</code>), insert a <code>ByteMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>ByteMatchSet</code> from AWS WAF (see <code>DeleteByteMatchSet</code>).</p>
+    /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code> (see <code>GetByteMatchSet</code>), update a <code>ByteMatchSet</code> (see <code>UpdateByteMatchSet</code>), insert a <code>ByteMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>ByteMatchSet</code> from AWS WAF (see <code>DeleteByteMatchSet</code>).</p> 
     /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-    pub fn byte_match_set_id(&self) -> std::option::Option<&str> {
+    pub fn byte_match_set_id(&self) -> std::option::Option<& str> {
         self.byte_match_set_id.as_deref()
     }
     /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings.</p>
-    pub fn byte_match_tuples(&self) -> std::option::Option<&[crate::model::ByteMatchTuple]> {
+    pub fn byte_match_tuples(&self) -> std::option::Option<& [crate::model::ByteMatchTuple]> {
         self.byte_match_tuples.as_deref()
     }
 }
 /// See [`ByteMatchSet`](crate::model::ByteMatchSet).
 pub mod byte_match_set {
-
+    
     /// A builder for [`ByteMatchSet`](crate::model::ByteMatchSet).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) byte_match_set_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) byte_match_tuples:
-            std::option::Option<std::vec::Vec<crate::model::ByteMatchTuple>>,
+        pub(crate) byte_match_tuples: std::option::Option<std::vec::Vec<crate::model::ByteMatchTuple>>,
     }
     impl Builder {
-        /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code> (see <code>GetByteMatchSet</code>), update a <code>ByteMatchSet</code> (see <code>UpdateByteMatchSet</code>), insert a <code>ByteMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>ByteMatchSet</code> from AWS WAF (see <code>DeleteByteMatchSet</code>).</p>
+        /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code> (see <code>GetByteMatchSet</code>), update a <code>ByteMatchSet</code> (see <code>UpdateByteMatchSet</code>), insert a <code>ByteMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>ByteMatchSet</code> from AWS WAF (see <code>DeleteByteMatchSet</code>).</p> 
         /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
         pub fn byte_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.byte_match_set_id = Some(input.into());
             self
         }
-        /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code> (see <code>GetByteMatchSet</code>), update a <code>ByteMatchSet</code> (see <code>UpdateByteMatchSet</code>), insert a <code>ByteMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>ByteMatchSet</code> from AWS WAF (see <code>DeleteByteMatchSet</code>).</p>
+        /// <p>The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code> to get information about a <code>ByteMatchSet</code> (see <code>GetByteMatchSet</code>), update a <code>ByteMatchSet</code> (see <code>UpdateByteMatchSet</code>), insert a <code>ByteMatchSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code> (see <code>UpdateRule</code>), and delete a <code>ByteMatchSet</code> from AWS WAF (see <code>DeleteByteMatchSet</code>).</p> 
         /// <p> <code>ByteMatchSetId</code> is returned by <code>CreateByteMatchSet</code> and by <code>ListByteMatchSets</code>.</p>
-        pub fn set_byte_match_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.byte_match_set_id = input;
-            self
+        pub fn set_byte_match_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.byte_match_set_id = input; self
         }
         /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9204,8 +8845,7 @@ pub mod byte_match_set {
         }
         /// <p>A friendly name or description of the <code>ByteMatchSet</code>. You can't change <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `byte_match_tuples`.
         ///
@@ -9214,27 +8854,28 @@ pub mod byte_match_set {
         /// <p>Specifies the bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings.</p>
         pub fn byte_match_tuples(mut self, input: crate::model::ByteMatchTuple) -> Self {
             let mut v = self.byte_match_tuples.unwrap_or_default();
-            v.push(input);
-            self.byte_match_tuples = Some(v);
-            self
+                            v.push(input);
+                            self.byte_match_tuples = Some(v);
+                            self
         }
         /// <p>Specifies the bytes (typically a string that corresponds with ASCII characters) that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings.</p>
-        pub fn set_byte_match_tuples(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ByteMatchTuple>>,
-        ) -> Self {
-            self.byte_match_tuples = input;
-            self
+        pub fn set_byte_match_tuples(mut self, input: std::option::Option<std::vec::Vec<crate::model::ByteMatchTuple>>) -> Self {
+            self.byte_match_tuples = input; self
         }
         /// Consumes the builder and constructs a [`ByteMatchSet`](crate::model::ByteMatchSet).
         pub fn build(self) -> crate::model::ByteMatchSet {
             crate::model::ByteMatchSet {
-                byte_match_set_id: self.byte_match_set_id,
-                name: self.name,
-                byte_match_tuples: self.byte_match_tuples,
+                byte_match_set_id: self.byte_match_set_id
+                ,
+                name: self.name
+                ,
+                byte_match_tuples: self.byte_match_tuples
+                ,
             }
         }
     }
+    
+    
 }
 impl ByteMatchSet {
     /// Creates a new builder-style object to manufacture [`ByteMatchSet`](crate::model::ByteMatchSet).
@@ -9249,9 +8890,9 @@ impl ByteMatchSet {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let migrationerrortype = unimplemented!();
 /// match migrationerrortype {
@@ -9278,22 +8919,14 @@ impl ByteMatchSet {
 /// Specifically, when `migrationerrortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MigrationErrorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MigrationErrorType {
     #[allow(missing_docs)] // documentation missing in model
     EntityNotFound,
@@ -9310,7 +8943,7 @@ pub enum MigrationErrorType {
     #[allow(missing_docs)] // documentation missing in model
     S3InternalError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MigrationErrorType {
     fn from(s: &str) -> Self {
@@ -9322,19 +8955,17 @@ impl std::convert::From<&str> for MigrationErrorType {
             "S3_BUCKET_NOT_FOUND" => MigrationErrorType::S3BucketNotFound,
             "S3_BUCKET_NO_PERMISSION" => MigrationErrorType::S3BucketNoPermission,
             "S3_INTERNAL_ERROR" => MigrationErrorType::S3InternalError,
-            other => {
-                MigrationErrorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => MigrationErrorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MigrationErrorType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MigrationErrorType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MigrationErrorType::from(s))
+                }
+            }
 impl MigrationErrorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9346,19 +8977,13 @@ impl MigrationErrorType {
             MigrationErrorType::S3BucketNotFound => "S3_BUCKET_NOT_FOUND",
             MigrationErrorType::S3BucketNoPermission => "S3_BUCKET_NO_PERMISSION",
             MigrationErrorType::S3InternalError => "S3_INTERNAL_ERROR",
-            MigrationErrorType::Unknown(value) => value.as_str(),
+            MigrationErrorType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ENTITY_NOT_FOUND",
-            "ENTITY_NOT_SUPPORTED",
-            "S3_BUCKET_INVALID_REGION",
-            "S3_BUCKET_NOT_ACCESSIBLE",
-            "S3_BUCKET_NOT_FOUND",
-            "S3_BUCKET_NO_PERMISSION",
-            "S3_INTERNAL_ERROR",
+            "ENTITY_NOT_FOUND", "ENTITY_NOT_SUPPORTED", "S3_BUCKET_INVALID_REGION", "S3_BUCKET_NOT_ACCESSIBLE", "S3_BUCKET_NOT_FOUND", "S3_BUCKET_NO_PERMISSION", "S3_INTERNAL_ERROR"
         ]
     }
 }
@@ -9367,3 +8992,4 @@ impl AsRef<str> for MigrationErrorType {
         self.as_str()
     }
 }
+

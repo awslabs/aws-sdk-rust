@@ -3,7 +3,7 @@
 /// <p>The status of the case returned by the <code>ResolveCase</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResolveCaseOutput {
+pub struct ResolveCaseOutput  {
     /// <p>The status of the case when the <code>ResolveCase</code> request was sent.</p>
     #[doc(hidden)]
     pub initial_case_status: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ResolveCaseOutput {
 }
 impl ResolveCaseOutput {
     /// <p>The status of the case when the <code>ResolveCase</code> request was sent.</p>
-    pub fn initial_case_status(&self) -> std::option::Option<&str> {
+    pub fn initial_case_status(&self) -> std::option::Option<& str> {
         self.initial_case_status.as_deref()
     }
     /// <p>The status of the case after the <code>ResolveCase</code> request was processed.</p>
-    pub fn final_case_status(&self) -> std::option::Option<&str> {
+    pub fn final_case_status(&self) -> std::option::Option<& str> {
         self.final_case_status.as_deref()
     }
 }
 /// See [`ResolveCaseOutput`](crate::output::ResolveCaseOutput).
 pub mod resolve_case_output {
-
+    
     /// A builder for [`ResolveCaseOutput`](crate::output::ResolveCaseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -37,12 +37,8 @@ pub mod resolve_case_output {
             self
         }
         /// <p>The status of the case when the <code>ResolveCase</code> request was sent.</p>
-        pub fn set_initial_case_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.initial_case_status = input;
-            self
+        pub fn set_initial_case_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.initial_case_status = input; self
         }
         /// <p>The status of the case after the <code>ResolveCase</code> request was processed.</p>
         pub fn final_case_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,21 +46,21 @@ pub mod resolve_case_output {
             self
         }
         /// <p>The status of the case after the <code>ResolveCase</code> request was processed.</p>
-        pub fn set_final_case_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.final_case_status = input;
-            self
+        pub fn set_final_case_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.final_case_status = input; self
         }
         /// Consumes the builder and constructs a [`ResolveCaseOutput`](crate::output::ResolveCaseOutput).
         pub fn build(self) -> crate::output::ResolveCaseOutput {
             crate::output::ResolveCaseOutput {
-                initial_case_status: self.initial_case_status,
-                final_case_status: self.final_case_status,
+                initial_case_status: self.initial_case_status
+                ,
+                final_case_status: self.final_case_status
+                ,
             }
         }
     }
+    
+    
 }
 impl ResolveCaseOutput {
     /// Creates a new builder-style object to manufacture [`ResolveCaseOutput`](crate::output::ResolveCaseOutput).
@@ -76,20 +72,20 @@ impl ResolveCaseOutput {
 /// <p>The current refresh status of a Trusted Advisor check.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RefreshTrustedAdvisorCheckOutput {
+pub struct RefreshTrustedAdvisorCheckOutput  {
     /// <p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::TrustedAdvisorCheckRefreshStatus>,
 }
 impl RefreshTrustedAdvisorCheckOutput {
     /// <p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::TrustedAdvisorCheckRefreshStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::TrustedAdvisorCheckRefreshStatus> {
         self.status.as_ref()
     }
 }
 /// See [`RefreshTrustedAdvisorCheckOutput`](crate::output::RefreshTrustedAdvisorCheckOutput).
 pub mod refresh_trusted_advisor_check_output {
-
+    
     /// A builder for [`RefreshTrustedAdvisorCheckOutput`](crate::output::RefreshTrustedAdvisorCheckOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -102,20 +98,19 @@ pub mod refresh_trusted_advisor_check_output {
             self
         }
         /// <p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::TrustedAdvisorCheckRefreshStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::TrustedAdvisorCheckRefreshStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`RefreshTrustedAdvisorCheckOutput`](crate::output::RefreshTrustedAdvisorCheckOutput).
         pub fn build(self) -> crate::output::RefreshTrustedAdvisorCheckOutput {
             crate::output::RefreshTrustedAdvisorCheckOutput {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl RefreshTrustedAdvisorCheckOutput {
     /// Creates a new builder-style object to manufacture [`RefreshTrustedAdvisorCheckOutput`](crate::output::RefreshTrustedAdvisorCheckOutput).
@@ -127,25 +122,24 @@ impl RefreshTrustedAdvisorCheckOutput {
 /// <p>The summaries of the Trusted Advisor checks returned by the <code>DescribeTrustedAdvisorCheckSummaries</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTrustedAdvisorCheckSummariesOutput {
+pub struct DescribeTrustedAdvisorCheckSummariesOutput  {
     /// <p>The summary information for the requested Trusted Advisor checks.</p>
     #[doc(hidden)]
     pub summaries: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckSummary>>,
 }
 impl DescribeTrustedAdvisorCheckSummariesOutput {
     /// <p>The summary information for the requested Trusted Advisor checks.</p>
-    pub fn summaries(&self) -> std::option::Option<&[crate::model::TrustedAdvisorCheckSummary]> {
+    pub fn summaries(&self) -> std::option::Option<& [crate::model::TrustedAdvisorCheckSummary]> {
         self.summaries.as_deref()
     }
 }
 /// See [`DescribeTrustedAdvisorCheckSummariesOutput`](crate::output::DescribeTrustedAdvisorCheckSummariesOutput).
 pub mod describe_trusted_advisor_check_summaries_output {
-
+    
     /// A builder for [`DescribeTrustedAdvisorCheckSummariesOutput`](crate::output::DescribeTrustedAdvisorCheckSummariesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) summaries:
-            std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckSummary>>,
+        pub(crate) summaries: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckSummary>>,
     }
     impl Builder {
         /// Appends an item to `summaries`.
@@ -155,25 +149,24 @@ pub mod describe_trusted_advisor_check_summaries_output {
         /// <p>The summary information for the requested Trusted Advisor checks.</p>
         pub fn summaries(mut self, input: crate::model::TrustedAdvisorCheckSummary) -> Self {
             let mut v = self.summaries.unwrap_or_default();
-            v.push(input);
-            self.summaries = Some(v);
-            self
+                            v.push(input);
+                            self.summaries = Some(v);
+                            self
         }
         /// <p>The summary information for the requested Trusted Advisor checks.</p>
-        pub fn set_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckSummary>>,
-        ) -> Self {
-            self.summaries = input;
-            self
+        pub fn set_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckSummary>>) -> Self {
+            self.summaries = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckSummariesOutput`](crate::output::DescribeTrustedAdvisorCheckSummariesOutput).
         pub fn build(self) -> crate::output::DescribeTrustedAdvisorCheckSummariesOutput {
             crate::output::DescribeTrustedAdvisorCheckSummariesOutput {
-                summaries: self.summaries,
+                summaries: self.summaries
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTrustedAdvisorCheckSummariesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckSummariesOutput`](crate::output::DescribeTrustedAdvisorCheckSummariesOutput).
@@ -185,25 +178,24 @@ impl DescribeTrustedAdvisorCheckSummariesOutput {
 /// <p>Information about the Trusted Advisor checks returned by the <code>DescribeTrustedAdvisorChecks</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTrustedAdvisorChecksOutput {
+pub struct DescribeTrustedAdvisorChecksOutput  {
     /// <p>Information about all available Trusted Advisor checks.</p>
     #[doc(hidden)]
     pub checks: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckDescription>>,
 }
 impl DescribeTrustedAdvisorChecksOutput {
     /// <p>Information about all available Trusted Advisor checks.</p>
-    pub fn checks(&self) -> std::option::Option<&[crate::model::TrustedAdvisorCheckDescription]> {
+    pub fn checks(&self) -> std::option::Option<& [crate::model::TrustedAdvisorCheckDescription]> {
         self.checks.as_deref()
     }
 }
 /// See [`DescribeTrustedAdvisorChecksOutput`](crate::output::DescribeTrustedAdvisorChecksOutput).
 pub mod describe_trusted_advisor_checks_output {
-
+    
     /// A builder for [`DescribeTrustedAdvisorChecksOutput`](crate::output::DescribeTrustedAdvisorChecksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) checks:
-            std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckDescription>>,
+        pub(crate) checks: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckDescription>>,
     }
     impl Builder {
         /// Appends an item to `checks`.
@@ -213,25 +205,24 @@ pub mod describe_trusted_advisor_checks_output {
         /// <p>Information about all available Trusted Advisor checks.</p>
         pub fn checks(mut self, input: crate::model::TrustedAdvisorCheckDescription) -> Self {
             let mut v = self.checks.unwrap_or_default();
-            v.push(input);
-            self.checks = Some(v);
-            self
+                            v.push(input);
+                            self.checks = Some(v);
+                            self
         }
         /// <p>Information about all available Trusted Advisor checks.</p>
-        pub fn set_checks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckDescription>>,
-        ) -> Self {
-            self.checks = input;
-            self
+        pub fn set_checks(mut self, input: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckDescription>>) -> Self {
+            self.checks = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTrustedAdvisorChecksOutput`](crate::output::DescribeTrustedAdvisorChecksOutput).
         pub fn build(self) -> crate::output::DescribeTrustedAdvisorChecksOutput {
             crate::output::DescribeTrustedAdvisorChecksOutput {
-                checks: self.checks,
+                checks: self.checks
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTrustedAdvisorChecksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorChecksOutput`](crate::output::DescribeTrustedAdvisorChecksOutput).
@@ -243,20 +234,20 @@ impl DescribeTrustedAdvisorChecksOutput {
 /// <p>The result of the Trusted Advisor check returned by the <code>DescribeTrustedAdvisorCheckResult</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTrustedAdvisorCheckResultOutput {
+pub struct DescribeTrustedAdvisorCheckResultOutput  {
     /// <p>The detailed results of the Trusted Advisor check.</p>
     #[doc(hidden)]
     pub result: std::option::Option<crate::model::TrustedAdvisorCheckResult>,
 }
 impl DescribeTrustedAdvisorCheckResultOutput {
     /// <p>The detailed results of the Trusted Advisor check.</p>
-    pub fn result(&self) -> std::option::Option<&crate::model::TrustedAdvisorCheckResult> {
+    pub fn result(&self) -> std::option::Option<& crate::model::TrustedAdvisorCheckResult> {
         self.result.as_ref()
     }
 }
 /// See [`DescribeTrustedAdvisorCheckResultOutput`](crate::output::DescribeTrustedAdvisorCheckResultOutput).
 pub mod describe_trusted_advisor_check_result_output {
-
+    
     /// A builder for [`DescribeTrustedAdvisorCheckResultOutput`](crate::output::DescribeTrustedAdvisorCheckResultOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -269,20 +260,19 @@ pub mod describe_trusted_advisor_check_result_output {
             self
         }
         /// <p>The detailed results of the Trusted Advisor check.</p>
-        pub fn set_result(
-            mut self,
-            input: std::option::Option<crate::model::TrustedAdvisorCheckResult>,
-        ) -> Self {
-            self.result = input;
-            self
+        pub fn set_result(mut self, input: std::option::Option<crate::model::TrustedAdvisorCheckResult>) -> Self {
+            self.result = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckResultOutput`](crate::output::DescribeTrustedAdvisorCheckResultOutput).
         pub fn build(self) -> crate::output::DescribeTrustedAdvisorCheckResultOutput {
             crate::output::DescribeTrustedAdvisorCheckResultOutput {
-                result: self.result,
+                result: self.result
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTrustedAdvisorCheckResultOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckResultOutput`](crate::output::DescribeTrustedAdvisorCheckResultOutput).
@@ -294,28 +284,24 @@ impl DescribeTrustedAdvisorCheckResultOutput {
 /// <p>The statuses of the Trusted Advisor checks returned by the <code>DescribeTrustedAdvisorCheckRefreshStatuses</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTrustedAdvisorCheckRefreshStatusesOutput {
+pub struct DescribeTrustedAdvisorCheckRefreshStatusesOutput  {
     /// <p>The refresh status of the specified Trusted Advisor checks.</p>
     #[doc(hidden)]
-    pub statuses:
-        std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckRefreshStatus>>,
+    pub statuses: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckRefreshStatus>>,
 }
 impl DescribeTrustedAdvisorCheckRefreshStatusesOutput {
     /// <p>The refresh status of the specified Trusted Advisor checks.</p>
-    pub fn statuses(
-        &self,
-    ) -> std::option::Option<&[crate::model::TrustedAdvisorCheckRefreshStatus]> {
+    pub fn statuses(&self) -> std::option::Option<& [crate::model::TrustedAdvisorCheckRefreshStatus]> {
         self.statuses.as_deref()
     }
 }
 /// See [`DescribeTrustedAdvisorCheckRefreshStatusesOutput`](crate::output::DescribeTrustedAdvisorCheckRefreshStatusesOutput).
 pub mod describe_trusted_advisor_check_refresh_statuses_output {
-
+    
     /// A builder for [`DescribeTrustedAdvisorCheckRefreshStatusesOutput`](crate::output::DescribeTrustedAdvisorCheckRefreshStatusesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) statuses:
-            std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckRefreshStatus>>,
+        pub(crate) statuses: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckRefreshStatus>>,
     }
     impl Builder {
         /// Appends an item to `statuses`.
@@ -325,32 +311,28 @@ pub mod describe_trusted_advisor_check_refresh_statuses_output {
         /// <p>The refresh status of the specified Trusted Advisor checks.</p>
         pub fn statuses(mut self, input: crate::model::TrustedAdvisorCheckRefreshStatus) -> Self {
             let mut v = self.statuses.unwrap_or_default();
-            v.push(input);
-            self.statuses = Some(v);
-            self
+                            v.push(input);
+                            self.statuses = Some(v);
+                            self
         }
         /// <p>The refresh status of the specified Trusted Advisor checks.</p>
-        pub fn set_statuses(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::TrustedAdvisorCheckRefreshStatus>,
-            >,
-        ) -> Self {
-            self.statuses = input;
-            self
+        pub fn set_statuses(mut self, input: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckRefreshStatus>>) -> Self {
+            self.statuses = input; self
         }
         /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckRefreshStatusesOutput`](crate::output::DescribeTrustedAdvisorCheckRefreshStatusesOutput).
         pub fn build(self) -> crate::output::DescribeTrustedAdvisorCheckRefreshStatusesOutput {
             crate::output::DescribeTrustedAdvisorCheckRefreshStatusesOutput {
-                statuses: self.statuses,
+                statuses: self.statuses
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeTrustedAdvisorCheckRefreshStatusesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckRefreshStatusesOutput`](crate::output::DescribeTrustedAdvisorCheckRefreshStatusesOutput).
-    pub fn builder(
-    ) -> crate::output::describe_trusted_advisor_check_refresh_statuses_output::Builder {
+    pub fn builder() -> crate::output::describe_trusted_advisor_check_refresh_statuses_output::Builder {
         crate::output::describe_trusted_advisor_check_refresh_statuses_output::Builder::default()
     }
 }
@@ -358,20 +340,20 @@ impl DescribeTrustedAdvisorCheckRefreshStatusesOutput {
 /// <p>The list of severity levels returned by the <code>DescribeSeverityLevels</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSeverityLevelsOutput {
+pub struct DescribeSeverityLevelsOutput  {
     /// <p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with Amazon Web Services.</p>
     #[doc(hidden)]
     pub severity_levels: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>,
 }
 impl DescribeSeverityLevelsOutput {
     /// <p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with Amazon Web Services.</p>
-    pub fn severity_levels(&self) -> std::option::Option<&[crate::model::SeverityLevel]> {
+    pub fn severity_levels(&self) -> std::option::Option<& [crate::model::SeverityLevel]> {
         self.severity_levels.as_deref()
     }
 }
 /// See [`DescribeSeverityLevelsOutput`](crate::output::DescribeSeverityLevelsOutput).
 pub mod describe_severity_levels_output {
-
+    
     /// A builder for [`DescribeSeverityLevelsOutput`](crate::output::DescribeSeverityLevelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -385,25 +367,24 @@ pub mod describe_severity_levels_output {
         /// <p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with Amazon Web Services.</p>
         pub fn severity_levels(mut self, input: crate::model::SeverityLevel) -> Self {
             let mut v = self.severity_levels.unwrap_or_default();
-            v.push(input);
-            self.severity_levels = Some(v);
-            self
+                            v.push(input);
+                            self.severity_levels = Some(v);
+                            self
         }
         /// <p>The available severity levels for the support case. Available severity levels are defined by your service level agreement with Amazon Web Services.</p>
-        pub fn set_severity_levels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>,
-        ) -> Self {
-            self.severity_levels = input;
-            self
+        pub fn set_severity_levels(mut self, input: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>) -> Self {
+            self.severity_levels = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSeverityLevelsOutput`](crate::output::DescribeSeverityLevelsOutput).
         pub fn build(self) -> crate::output::DescribeSeverityLevelsOutput {
             crate::output::DescribeSeverityLevelsOutput {
-                severity_levels: self.severity_levels,
+                severity_levels: self.severity_levels
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSeverityLevelsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSeverityLevelsOutput`](crate::output::DescribeSeverityLevelsOutput).
@@ -415,20 +396,20 @@ impl DescribeSeverityLevelsOutput {
 /// <p>The list of Amazon Web Services services returned by the <code>DescribeServices</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeServicesOutput {
+pub struct DescribeServicesOutput  {
     /// <p>A JSON-formatted list of Amazon Web Services services.</p>
     #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::Service>>,
 }
 impl DescribeServicesOutput {
     /// <p>A JSON-formatted list of Amazon Web Services services.</p>
-    pub fn services(&self) -> std::option::Option<&[crate::model::Service]> {
+    pub fn services(&self) -> std::option::Option<& [crate::model::Service]> {
         self.services.as_deref()
     }
 }
 /// See [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
 pub mod describe_services_output {
-
+    
     /// A builder for [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -442,25 +423,24 @@ pub mod describe_services_output {
         /// <p>A JSON-formatted list of Amazon Web Services services.</p>
         pub fn services(mut self, input: crate::model::Service) -> Self {
             let mut v = self.services.unwrap_or_default();
-            v.push(input);
-            self.services = Some(v);
-            self
+                            v.push(input);
+                            self.services = Some(v);
+                            self
         }
         /// <p>A JSON-formatted list of Amazon Web Services services.</p>
-        pub fn set_services(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Service>>,
-        ) -> Self {
-            self.services = input;
-            self
+        pub fn set_services(mut self, input: std::option::Option<std::vec::Vec<crate::model::Service>>) -> Self {
+            self.services = input; self
         }
         /// Consumes the builder and constructs a [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
         pub fn build(self) -> crate::output::DescribeServicesOutput {
             crate::output::DescribeServicesOutput {
-                services: self.services,
+                services: self.services
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeServicesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
@@ -472,7 +452,7 @@ impl DescribeServicesOutput {
 /// <p>The communications returned by the <code>DescribeCommunications</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCommunicationsOutput {
+pub struct DescribeCommunicationsOutput  {
     /// <p>The communications for the case.</p>
     #[doc(hidden)]
     pub communications: std::option::Option<std::vec::Vec<crate::model::Communication>>,
@@ -482,17 +462,17 @@ pub struct DescribeCommunicationsOutput {
 }
 impl DescribeCommunicationsOutput {
     /// <p>The communications for the case.</p>
-    pub fn communications(&self) -> std::option::Option<&[crate::model::Communication]> {
+    pub fn communications(&self) -> std::option::Option<& [crate::model::Communication]> {
         self.communications.as_deref()
     }
     /// <p>A resumption point for pagination.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeCommunicationsOutput`](crate::output::DescribeCommunicationsOutput).
 pub mod describe_communications_output {
-
+    
     /// A builder for [`DescribeCommunicationsOutput`](crate::output::DescribeCommunicationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -507,17 +487,13 @@ pub mod describe_communications_output {
         /// <p>The communications for the case.</p>
         pub fn communications(mut self, input: crate::model::Communication) -> Self {
             let mut v = self.communications.unwrap_or_default();
-            v.push(input);
-            self.communications = Some(v);
-            self
+                            v.push(input);
+                            self.communications = Some(v);
+                            self
         }
         /// <p>The communications for the case.</p>
-        pub fn set_communications(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Communication>>,
-        ) -> Self {
-            self.communications = input;
-            self
+        pub fn set_communications(mut self, input: std::option::Option<std::vec::Vec<crate::model::Communication>>) -> Self {
+            self.communications = input; self
         }
         /// <p>A resumption point for pagination.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -526,17 +502,20 @@ pub mod describe_communications_output {
         }
         /// <p>A resumption point for pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCommunicationsOutput`](crate::output::DescribeCommunicationsOutput).
         pub fn build(self) -> crate::output::DescribeCommunicationsOutput {
             crate::output::DescribeCommunicationsOutput {
-                communications: self.communications,
-                next_token: self.next_token,
+                communications: self.communications
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCommunicationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCommunicationsOutput`](crate::output::DescribeCommunicationsOutput).
@@ -548,7 +527,7 @@ impl DescribeCommunicationsOutput {
 /// <p>Returns an array of <a href="https://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html">CaseDetails</a> objects and a <code>nextToken</code> that defines a point for pagination in the result set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCasesOutput {
+pub struct DescribeCasesOutput  {
     /// <p>The details for the cases that match the request.</p>
     #[doc(hidden)]
     pub cases: std::option::Option<std::vec::Vec<crate::model::CaseDetails>>,
@@ -558,17 +537,17 @@ pub struct DescribeCasesOutput {
 }
 impl DescribeCasesOutput {
     /// <p>The details for the cases that match the request.</p>
-    pub fn cases(&self) -> std::option::Option<&[crate::model::CaseDetails]> {
+    pub fn cases(&self) -> std::option::Option<& [crate::model::CaseDetails]> {
         self.cases.as_deref()
     }
     /// <p>A resumption point for pagination.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeCasesOutput`](crate::output::DescribeCasesOutput).
 pub mod describe_cases_output {
-
+    
     /// A builder for [`DescribeCasesOutput`](crate::output::DescribeCasesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -583,17 +562,13 @@ pub mod describe_cases_output {
         /// <p>The details for the cases that match the request.</p>
         pub fn cases(mut self, input: crate::model::CaseDetails) -> Self {
             let mut v = self.cases.unwrap_or_default();
-            v.push(input);
-            self.cases = Some(v);
-            self
+                            v.push(input);
+                            self.cases = Some(v);
+                            self
         }
         /// <p>The details for the cases that match the request.</p>
-        pub fn set_cases(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CaseDetails>>,
-        ) -> Self {
-            self.cases = input;
-            self
+        pub fn set_cases(mut self, input: std::option::Option<std::vec::Vec<crate::model::CaseDetails>>) -> Self {
+            self.cases = input; self
         }
         /// <p>A resumption point for pagination.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -602,17 +577,20 @@ pub mod describe_cases_output {
         }
         /// <p>A resumption point for pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCasesOutput`](crate::output::DescribeCasesOutput).
         pub fn build(self) -> crate::output::DescribeCasesOutput {
             crate::output::DescribeCasesOutput {
-                cases: self.cases,
-                next_token: self.next_token,
+                cases: self.cases
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCasesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCasesOutput`](crate::output::DescribeCasesOutput).
@@ -624,50 +602,49 @@ impl DescribeCasesOutput {
 /// <p>The content and file name of the attachment returned by the <code>DescribeAttachment</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAttachmentOutput {
-    /// <p>This object includes the attachment content and file name.</p>
+pub struct DescribeAttachmentOutput  {
+    /// <p>This object includes the attachment content and file name.</p> 
     /// <p>In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
     #[doc(hidden)]
     pub attachment: std::option::Option<crate::model::Attachment>,
 }
 impl DescribeAttachmentOutput {
-    /// <p>This object includes the attachment content and file name.</p>
+    /// <p>This object includes the attachment content and file name.</p> 
     /// <p>In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
-    pub fn attachment(&self) -> std::option::Option<&crate::model::Attachment> {
+    pub fn attachment(&self) -> std::option::Option<& crate::model::Attachment> {
         self.attachment.as_ref()
     }
 }
 /// See [`DescribeAttachmentOutput`](crate::output::DescribeAttachmentOutput).
 pub mod describe_attachment_output {
-
+    
     /// A builder for [`DescribeAttachmentOutput`](crate::output::DescribeAttachmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) attachment: std::option::Option<crate::model::Attachment>,
     }
     impl Builder {
-        /// <p>This object includes the attachment content and file name.</p>
+        /// <p>This object includes the attachment content and file name.</p> 
         /// <p>In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
         pub fn attachment(mut self, input: crate::model::Attachment) -> Self {
             self.attachment = Some(input);
             self
         }
-        /// <p>This object includes the attachment content and file name.</p>
+        /// <p>This object includes the attachment content and file name.</p> 
         /// <p>In the previous response syntax, the value for the <code>data</code> parameter appears as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
-        pub fn set_attachment(
-            mut self,
-            input: std::option::Option<crate::model::Attachment>,
-        ) -> Self {
-            self.attachment = input;
-            self
+        pub fn set_attachment(mut self, input: std::option::Option<crate::model::Attachment>) -> Self {
+            self.attachment = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAttachmentOutput`](crate::output::DescribeAttachmentOutput).
         pub fn build(self) -> crate::output::DescribeAttachmentOutput {
             crate::output::DescribeAttachmentOutput {
-                attachment: self.attachment,
+                attachment: self.attachment
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAttachmentOutput`](crate::output::DescribeAttachmentOutput).
@@ -679,20 +656,20 @@ impl DescribeAttachmentOutput {
 /// <p>The support case ID returned by a successful completion of the <code>CreateCase</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCaseOutput {
+pub struct CreateCaseOutput  {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string in the following format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     #[doc(hidden)]
     pub case_id: std::option::Option<std::string::String>,
 }
 impl CreateCaseOutput {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string in the following format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-    pub fn case_id(&self) -> std::option::Option<&str> {
+    pub fn case_id(&self) -> std::option::Option<& str> {
         self.case_id.as_deref()
     }
 }
 /// See [`CreateCaseOutput`](crate::output::CreateCaseOutput).
 pub mod create_case_output {
-
+    
     /// A builder for [`CreateCaseOutput`](crate::output::CreateCaseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -706,16 +683,18 @@ pub mod create_case_output {
         }
         /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string in the following format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
         pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.case_id = input;
-            self
+            self.case_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateCaseOutput`](crate::output::CreateCaseOutput).
         pub fn build(self) -> crate::output::CreateCaseOutput {
             crate::output::CreateCaseOutput {
-                case_id: self.case_id,
+                case_id: self.case_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCaseOutput {
     /// Creates a new builder-style object to manufacture [`CreateCaseOutput`](crate::output::CreateCaseOutput).
@@ -727,7 +706,7 @@ impl CreateCaseOutput {
 /// <p>The result of the <code>AddCommunicationToCase</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddCommunicationToCaseOutput {
+pub struct AddCommunicationToCaseOutput  {
     /// <p>True if <code>AddCommunicationToCase</code> succeeds. Otherwise, returns an error.</p>
     #[doc(hidden)]
     pub result: bool,
@@ -740,7 +719,7 @@ impl AddCommunicationToCaseOutput {
 }
 /// See [`AddCommunicationToCaseOutput`](crate::output::AddCommunicationToCaseOutput).
 pub mod add_communication_to_case_output {
-
+    
     /// A builder for [`AddCommunicationToCaseOutput`](crate::output::AddCommunicationToCaseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -754,16 +733,19 @@ pub mod add_communication_to_case_output {
         }
         /// <p>True if <code>AddCommunicationToCase</code> succeeds. Otherwise, returns an error.</p>
         pub fn set_result(mut self, input: std::option::Option<bool>) -> Self {
-            self.result = input;
-            self
+            self.result = input; self
         }
         /// Consumes the builder and constructs a [`AddCommunicationToCaseOutput`](crate::output::AddCommunicationToCaseOutput).
         pub fn build(self) -> crate::output::AddCommunicationToCaseOutput {
             crate::output::AddCommunicationToCaseOutput {
-                result: self.result.unwrap_or_default(),
+                result: self.result
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl AddCommunicationToCaseOutput {
     /// Creates a new builder-style object to manufacture [`AddCommunicationToCaseOutput`](crate::output::AddCommunicationToCaseOutput).
@@ -775,7 +757,7 @@ impl AddCommunicationToCaseOutput {
 /// <p>The ID and expiry time of the attachment set returned by the <code>AddAttachmentsToSet</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddAttachmentsToSetOutput {
+pub struct AddAttachmentsToSetOutput  {
     /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.</p>
     #[doc(hidden)]
     pub attachment_set_id: std::option::Option<std::string::String>,
@@ -785,17 +767,17 @@ pub struct AddAttachmentsToSetOutput {
 }
 impl AddAttachmentsToSetOutput {
     /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.</p>
-    pub fn attachment_set_id(&self) -> std::option::Option<&str> {
+    pub fn attachment_set_id(&self) -> std::option::Option<& str> {
         self.attachment_set_id.as_deref()
     }
     /// <p>The time and date when the attachment set expires.</p>
-    pub fn expiry_time(&self) -> std::option::Option<&str> {
+    pub fn expiry_time(&self) -> std::option::Option<& str> {
         self.expiry_time.as_deref()
     }
 }
 /// See [`AddAttachmentsToSetOutput`](crate::output::AddAttachmentsToSetOutput).
 pub mod add_attachments_to_set_output {
-
+    
     /// A builder for [`AddAttachmentsToSetOutput`](crate::output::AddAttachmentsToSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -809,12 +791,8 @@ pub mod add_attachments_to_set_output {
             self
         }
         /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> was specified, the attachments are added to the specified set, if it exists.</p>
-        pub fn set_attachment_set_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attachment_set_id = input;
-            self
+        pub fn set_attachment_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attachment_set_id = input; self
         }
         /// <p>The time and date when the attachment set expires.</p>
         pub fn expiry_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -823,17 +801,20 @@ pub mod add_attachments_to_set_output {
         }
         /// <p>The time and date when the attachment set expires.</p>
         pub fn set_expiry_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.expiry_time = input;
-            self
+            self.expiry_time = input; self
         }
         /// Consumes the builder and constructs a [`AddAttachmentsToSetOutput`](crate::output::AddAttachmentsToSetOutput).
         pub fn build(self) -> crate::output::AddAttachmentsToSetOutput {
             crate::output::AddAttachmentsToSetOutput {
-                attachment_set_id: self.attachment_set_id,
-                expiry_time: self.expiry_time,
+                attachment_set_id: self.attachment_set_id
+                ,
+                expiry_time: self.expiry_time
+                ,
             }
         }
     }
+    
+    
 }
 impl AddAttachmentsToSetOutput {
     /// Creates a new builder-style object to manufacture [`AddAttachmentsToSetOutput`](crate::output::AddAttachmentsToSetOutput).
@@ -841,3 +822,4 @@ impl AddAttachmentsToSetOutput {
         crate::output::add_attachments_to_set_output::Builder::default()
     }
 }
+

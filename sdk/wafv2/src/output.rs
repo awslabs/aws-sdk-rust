@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWebAclOutput {
+pub struct UpdateWebAclOutput  {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
     #[doc(hidden)]
     pub next_lock_token: std::option::Option<std::string::String>,
 }
 impl UpdateWebAclOutput {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
-    pub fn next_lock_token(&self) -> std::option::Option<&str> {
+    pub fn next_lock_token(&self) -> std::option::Option<& str> {
         self.next_lock_token.as_deref()
     }
 }
 /// See [`UpdateWebAclOutput`](crate::output::UpdateWebAclOutput).
 pub mod update_web_acl_output {
-
+    
     /// A builder for [`UpdateWebAclOutput`](crate::output::UpdateWebAclOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -28,20 +28,19 @@ pub mod update_web_acl_output {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
-        pub fn set_next_lock_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_lock_token = input;
-            self
+        pub fn set_next_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_lock_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateWebAclOutput`](crate::output::UpdateWebAclOutput).
         pub fn build(self) -> crate::output::UpdateWebAclOutput {
             crate::output::UpdateWebAclOutput {
-                next_lock_token: self.next_lock_token,
+                next_lock_token: self.next_lock_token
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateWebAclOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWebAclOutput`](crate::output::UpdateWebAclOutput).
@@ -53,20 +52,20 @@ impl UpdateWebAclOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRuleGroupOutput {
+pub struct UpdateRuleGroupOutput  {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
     #[doc(hidden)]
     pub next_lock_token: std::option::Option<std::string::String>,
 }
 impl UpdateRuleGroupOutput {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
-    pub fn next_lock_token(&self) -> std::option::Option<&str> {
+    pub fn next_lock_token(&self) -> std::option::Option<& str> {
         self.next_lock_token.as_deref()
     }
 }
 /// See [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
 pub mod update_rule_group_output {
-
+    
     /// A builder for [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -79,20 +78,19 @@ pub mod update_rule_group_output {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
-        pub fn set_next_lock_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_lock_token = input;
-            self
+        pub fn set_next_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_lock_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
         pub fn build(self) -> crate::output::UpdateRuleGroupOutput {
             crate::output::UpdateRuleGroupOutput {
-                next_lock_token: self.next_lock_token,
+                next_lock_token: self.next_lock_token
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRuleGroupOutput`](crate::output::UpdateRuleGroupOutput).
@@ -104,20 +102,20 @@ impl UpdateRuleGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRegexPatternSetOutput {
+pub struct UpdateRegexPatternSetOutput  {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
     #[doc(hidden)]
     pub next_lock_token: std::option::Option<std::string::String>,
 }
 impl UpdateRegexPatternSetOutput {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
-    pub fn next_lock_token(&self) -> std::option::Option<&str> {
+    pub fn next_lock_token(&self) -> std::option::Option<& str> {
         self.next_lock_token.as_deref()
     }
 }
 /// See [`UpdateRegexPatternSetOutput`](crate::output::UpdateRegexPatternSetOutput).
 pub mod update_regex_pattern_set_output {
-
+    
     /// A builder for [`UpdateRegexPatternSetOutput`](crate::output::UpdateRegexPatternSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -130,20 +128,19 @@ pub mod update_regex_pattern_set_output {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
-        pub fn set_next_lock_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_lock_token = input;
-            self
+        pub fn set_next_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_lock_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRegexPatternSetOutput`](crate::output::UpdateRegexPatternSetOutput).
         pub fn build(self) -> crate::output::UpdateRegexPatternSetOutput {
             crate::output::UpdateRegexPatternSetOutput {
-                next_lock_token: self.next_lock_token,
+                next_lock_token: self.next_lock_token
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateRegexPatternSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRegexPatternSetOutput`](crate::output::UpdateRegexPatternSetOutput).
@@ -155,11 +152,11 @@ impl UpdateRegexPatternSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateManagedRuleSetVersionExpiryDateOutput {
+pub struct UpdateManagedRuleSetVersionExpiryDateOutput  {
     /// <p>The version that is set to expire. </p>
     #[doc(hidden)]
     pub expiring_version: std::option::Option<std::string::String>,
-    /// <p>The time that the version will expire. </p>
+    /// <p>The time that the version will expire. </p> 
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
     #[doc(hidden)]
     pub expiry_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -169,22 +166,22 @@ pub struct UpdateManagedRuleSetVersionExpiryDateOutput {
 }
 impl UpdateManagedRuleSetVersionExpiryDateOutput {
     /// <p>The version that is set to expire. </p>
-    pub fn expiring_version(&self) -> std::option::Option<&str> {
+    pub fn expiring_version(&self) -> std::option::Option<& str> {
         self.expiring_version.as_deref()
     }
-    /// <p>The time that the version will expire. </p>
+    /// <p>The time that the version will expire. </p> 
     /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-    pub fn expiry_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiry_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiry_timestamp.as_ref()
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    pub fn next_lock_token(&self) -> std::option::Option<&str> {
+    pub fn next_lock_token(&self) -> std::option::Option<& str> {
         self.next_lock_token.as_deref()
     }
 }
 /// See [`UpdateManagedRuleSetVersionExpiryDateOutput`](crate::output::UpdateManagedRuleSetVersionExpiryDateOutput).
 pub mod update_managed_rule_set_version_expiry_date_output {
-
+    
     /// A builder for [`UpdateManagedRuleSetVersionExpiryDateOutput`](crate::output::UpdateManagedRuleSetVersionExpiryDateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -199,27 +196,19 @@ pub mod update_managed_rule_set_version_expiry_date_output {
             self
         }
         /// <p>The version that is set to expire. </p>
-        pub fn set_expiring_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.expiring_version = input;
-            self
+        pub fn set_expiring_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expiring_version = input; self
         }
-        /// <p>The time that the version will expire. </p>
+        /// <p>The time that the version will expire. </p> 
         /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
         pub fn expiry_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiry_timestamp = Some(input);
             self
         }
-        /// <p>The time that the version will expire. </p>
+        /// <p>The time that the version will expire. </p> 
         /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
-        pub fn set_expiry_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.expiry_timestamp = input;
-            self
+        pub fn set_expiry_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.expiry_timestamp = input; self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn next_lock_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -227,22 +216,23 @@ pub mod update_managed_rule_set_version_expiry_date_output {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn set_next_lock_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_lock_token = input;
-            self
+        pub fn set_next_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_lock_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateManagedRuleSetVersionExpiryDateOutput`](crate::output::UpdateManagedRuleSetVersionExpiryDateOutput).
         pub fn build(self) -> crate::output::UpdateManagedRuleSetVersionExpiryDateOutput {
             crate::output::UpdateManagedRuleSetVersionExpiryDateOutput {
-                expiring_version: self.expiring_version,
-                expiry_timestamp: self.expiry_timestamp,
-                next_lock_token: self.next_lock_token,
+                expiring_version: self.expiring_version
+                ,
+                expiry_timestamp: self.expiry_timestamp
+                ,
+                next_lock_token: self.next_lock_token
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateManagedRuleSetVersionExpiryDateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateManagedRuleSetVersionExpiryDateOutput`](crate::output::UpdateManagedRuleSetVersionExpiryDateOutput).
@@ -254,20 +244,20 @@ impl UpdateManagedRuleSetVersionExpiryDateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateIpSetOutput {
+pub struct UpdateIpSetOutput  {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
     #[doc(hidden)]
     pub next_lock_token: std::option::Option<std::string::String>,
 }
 impl UpdateIpSetOutput {
     /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
-    pub fn next_lock_token(&self) -> std::option::Option<&str> {
+    pub fn next_lock_token(&self) -> std::option::Option<& str> {
         self.next_lock_token.as_deref()
     }
 }
 /// See [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput).
 pub mod update_ip_set_output {
-
+    
     /// A builder for [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -280,20 +270,19 @@ pub mod update_ip_set_output {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns this token to your <code>update</code> requests. You use <code>NextLockToken</code> in the same manner as you use <code>LockToken</code>. </p>
-        pub fn set_next_lock_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_lock_token = input;
-            self
+        pub fn set_next_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_lock_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput).
         pub fn build(self) -> crate::output::UpdateIpSetOutput {
             crate::output::UpdateIpSetOutput {
-                next_lock_token: self.next_lock_token,
+                next_lock_token: self.next_lock_token
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateIpSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateIpSetOutput`](crate::output::UpdateIpSetOutput).
@@ -305,19 +294,24 @@ impl UpdateIpSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -329,19 +323,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -353,19 +352,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutPermissionPolicyOutput {}
+pub struct PutPermissionPolicyOutput  {
+}
 /// See [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput).
 pub mod put_permission_policy_output {
-
+    
     /// A builder for [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput).
         pub fn build(self) -> crate::output::PutPermissionPolicyOutput {
-            crate::output::PutPermissionPolicyOutput {}
+            crate::output::PutPermissionPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl PutPermissionPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutPermissionPolicyOutput`](crate::output::PutPermissionPolicyOutput).
@@ -377,20 +381,20 @@ impl PutPermissionPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutManagedRuleSetVersionsOutput {
+pub struct PutManagedRuleSetVersionsOutput  {
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     #[doc(hidden)]
     pub next_lock_token: std::option::Option<std::string::String>,
 }
 impl PutManagedRuleSetVersionsOutput {
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    pub fn next_lock_token(&self) -> std::option::Option<&str> {
+    pub fn next_lock_token(&self) -> std::option::Option<& str> {
         self.next_lock_token.as_deref()
     }
 }
 /// See [`PutManagedRuleSetVersionsOutput`](crate::output::PutManagedRuleSetVersionsOutput).
 pub mod put_managed_rule_set_versions_output {
-
+    
     /// A builder for [`PutManagedRuleSetVersionsOutput`](crate::output::PutManagedRuleSetVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -403,20 +407,19 @@ pub mod put_managed_rule_set_versions_output {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn set_next_lock_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_lock_token = input;
-            self
+        pub fn set_next_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_lock_token = input; self
         }
         /// Consumes the builder and constructs a [`PutManagedRuleSetVersionsOutput`](crate::output::PutManagedRuleSetVersionsOutput).
         pub fn build(self) -> crate::output::PutManagedRuleSetVersionsOutput {
             crate::output::PutManagedRuleSetVersionsOutput {
-                next_lock_token: self.next_lock_token,
+                next_lock_token: self.next_lock_token
+                ,
             }
         }
     }
+    
+    
 }
 impl PutManagedRuleSetVersionsOutput {
     /// Creates a new builder-style object to manufacture [`PutManagedRuleSetVersionsOutput`](crate::output::PutManagedRuleSetVersionsOutput).
@@ -428,22 +431,20 @@ impl PutManagedRuleSetVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutLoggingConfigurationOutput {
+pub struct PutLoggingConfigurationOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
 impl PutLoggingConfigurationOutput {
     /// <p></p>
-    pub fn logging_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> std::option::Option<& crate::model::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
 }
 /// See [`PutLoggingConfigurationOutput`](crate::output::PutLoggingConfigurationOutput).
 pub mod put_logging_configuration_output {
-
+    
     /// A builder for [`PutLoggingConfigurationOutput`](crate::output::PutLoggingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -456,20 +457,19 @@ pub mod put_logging_configuration_output {
             self
         }
         /// <p></p>
-        pub fn set_logging_configuration(
-            mut self,
-            input: std::option::Option<crate::model::LoggingConfiguration>,
-        ) -> Self {
-            self.logging_configuration = input;
-            self
+        pub fn set_logging_configuration(mut self, input: std::option::Option<crate::model::LoggingConfiguration>) -> Self {
+            self.logging_configuration = input; self
         }
         /// Consumes the builder and constructs a [`PutLoggingConfigurationOutput`](crate::output::PutLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::PutLoggingConfigurationOutput {
             crate::output::PutLoggingConfigurationOutput {
-                logging_configuration: self.logging_configuration,
+                logging_configuration: self.logging_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl PutLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutLoggingConfigurationOutput`](crate::output::PutLoggingConfigurationOutput).
@@ -481,7 +481,7 @@ impl PutLoggingConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWebAcLsOutput {
+pub struct ListWebAcLsOutput  {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -491,17 +491,17 @@ pub struct ListWebAcLsOutput {
 }
 impl ListWebAcLsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p></p>
-    pub fn web_ac_ls(&self) -> std::option::Option<&[crate::model::WebAclSummary]> {
+    pub fn web_ac_ls(&self) -> std::option::Option<& [crate::model::WebAclSummary]> {
         self.web_ac_ls.as_deref()
     }
 }
 /// See [`ListWebAcLsOutput`](crate::output::ListWebAcLsOutput).
 pub mod list_web_ac_ls_output {
-
+    
     /// A builder for [`ListWebAcLsOutput`](crate::output::ListWebAcLsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -516,8 +516,7 @@ pub mod list_web_ac_ls_output {
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `web_ac_ls`.
         ///
@@ -526,26 +525,26 @@ pub mod list_web_ac_ls_output {
         /// <p></p>
         pub fn web_ac_ls(mut self, input: crate::model::WebAclSummary) -> Self {
             let mut v = self.web_ac_ls.unwrap_or_default();
-            v.push(input);
-            self.web_ac_ls = Some(v);
-            self
+                            v.push(input);
+                            self.web_ac_ls = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_web_ac_ls(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WebAclSummary>>,
-        ) -> Self {
-            self.web_ac_ls = input;
-            self
+        pub fn set_web_ac_ls(mut self, input: std::option::Option<std::vec::Vec<crate::model::WebAclSummary>>) -> Self {
+            self.web_ac_ls = input; self
         }
         /// Consumes the builder and constructs a [`ListWebAcLsOutput`](crate::output::ListWebAcLsOutput).
         pub fn build(self) -> crate::output::ListWebAcLsOutput {
             crate::output::ListWebAcLsOutput {
-                next_marker: self.next_marker,
-                web_ac_ls: self.web_ac_ls,
+                next_marker: self.next_marker
+                ,
+                web_ac_ls: self.web_ac_ls
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWebAcLsOutput {
     /// Creates a new builder-style object to manufacture [`ListWebAcLsOutput`](crate::output::ListWebAcLsOutput).
@@ -557,7 +556,7 @@ impl ListWebAcLsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -567,17 +566,17 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>The collection of tagging definitions for the resource. </p>
-    pub fn tag_info_for_resource(&self) -> std::option::Option<&crate::model::TagInfoForResource> {
+    pub fn tag_info_for_resource(&self) -> std::option::Option<& crate::model::TagInfoForResource> {
         self.tag_info_for_resource.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -592,8 +591,7 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// <p>The collection of tagging definitions for the resource. </p>
         pub fn tag_info_for_resource(mut self, input: crate::model::TagInfoForResource) -> Self {
@@ -601,21 +599,21 @@ pub mod list_tags_for_resource_output {
             self
         }
         /// <p>The collection of tagging definitions for the resource. </p>
-        pub fn set_tag_info_for_resource(
-            mut self,
-            input: std::option::Option<crate::model::TagInfoForResource>,
-        ) -> Self {
-            self.tag_info_for_resource = input;
-            self
+        pub fn set_tag_info_for_resource(mut self, input: std::option::Option<crate::model::TagInfoForResource>) -> Self {
+            self.tag_info_for_resource = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                next_marker: self.next_marker,
-                tag_info_for_resource: self.tag_info_for_resource,
+                next_marker: self.next_marker
+                ,
+                tag_info_for_resource: self.tag_info_for_resource
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -627,7 +625,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRuleGroupsOutput {
+pub struct ListRuleGroupsOutput  {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -637,17 +635,17 @@ pub struct ListRuleGroupsOutput {
 }
 impl ListRuleGroupsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p></p>
-    pub fn rule_groups(&self) -> std::option::Option<&[crate::model::RuleGroupSummary]> {
+    pub fn rule_groups(&self) -> std::option::Option<& [crate::model::RuleGroupSummary]> {
         self.rule_groups.as_deref()
     }
 }
 /// See [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
 pub mod list_rule_groups_output {
-
+    
     /// A builder for [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -662,8 +660,7 @@ pub mod list_rule_groups_output {
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `rule_groups`.
         ///
@@ -672,26 +669,26 @@ pub mod list_rule_groups_output {
         /// <p></p>
         pub fn rule_groups(mut self, input: crate::model::RuleGroupSummary) -> Self {
             let mut v = self.rule_groups.unwrap_or_default();
-            v.push(input);
-            self.rule_groups = Some(v);
-            self
+                            v.push(input);
+                            self.rule_groups = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_rule_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RuleGroupSummary>>,
-        ) -> Self {
-            self.rule_groups = input;
-            self
+        pub fn set_rule_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::RuleGroupSummary>>) -> Self {
+            self.rule_groups = input; self
         }
         /// Consumes the builder and constructs a [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
         pub fn build(self) -> crate::output::ListRuleGroupsOutput {
             crate::output::ListRuleGroupsOutput {
-                next_marker: self.next_marker,
-                rule_groups: self.rule_groups,
+                next_marker: self.next_marker
+                ,
+                rule_groups: self.rule_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRuleGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListRuleGroupsOutput`](crate::output::ListRuleGroupsOutput).
@@ -703,20 +700,20 @@ impl ListRuleGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourcesForWebAclOutput {
+pub struct ListResourcesForWebAclOutput  {
     /// <p>The array of Amazon Resource Names (ARNs) of the associated resources.</p>
     #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ListResourcesForWebAclOutput {
     /// <p>The array of Amazon Resource Names (ARNs) of the associated resources.</p>
-    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_arns.as_deref()
     }
 }
 /// See [`ListResourcesForWebAclOutput`](crate::output::ListResourcesForWebAclOutput).
 pub mod list_resources_for_web_acl_output {
-
+    
     /// A builder for [`ListResourcesForWebAclOutput`](crate::output::ListResourcesForWebAclOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -730,25 +727,24 @@ pub mod list_resources_for_web_acl_output {
         /// <p>The array of Amazon Resource Names (ARNs) of the associated resources.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
-            v.push(input.into());
-            self.resource_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.resource_arns = Some(v);
+                            self
         }
         /// <p>The array of Amazon Resource Names (ARNs) of the associated resources.</p>
-        pub fn set_resource_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resource_arns = input;
-            self
+        pub fn set_resource_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resource_arns = input; self
         }
         /// Consumes the builder and constructs a [`ListResourcesForWebAclOutput`](crate::output::ListResourcesForWebAclOutput).
         pub fn build(self) -> crate::output::ListResourcesForWebAclOutput {
             crate::output::ListResourcesForWebAclOutput {
-                resource_arns: self.resource_arns,
+                resource_arns: self.resource_arns
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResourcesForWebAclOutput {
     /// Creates a new builder-style object to manufacture [`ListResourcesForWebAclOutput`](crate::output::ListResourcesForWebAclOutput).
@@ -760,36 +756,32 @@ impl ListResourcesForWebAclOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRegexPatternSetsOutput {
+pub struct ListRegexPatternSetsOutput  {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p></p>
     #[doc(hidden)]
-    pub regex_pattern_sets:
-        std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>,
+    pub regex_pattern_sets: std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>,
 }
 impl ListRegexPatternSetsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p></p>
-    pub fn regex_pattern_sets(
-        &self,
-    ) -> std::option::Option<&[crate::model::RegexPatternSetSummary]> {
+    pub fn regex_pattern_sets(&self) -> std::option::Option<& [crate::model::RegexPatternSetSummary]> {
         self.regex_pattern_sets.as_deref()
     }
 }
 /// See [`ListRegexPatternSetsOutput`](crate::output::ListRegexPatternSetsOutput).
 pub mod list_regex_pattern_sets_output {
-
+    
     /// A builder for [`ListRegexPatternSetsOutput`](crate::output::ListRegexPatternSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
-        pub(crate) regex_pattern_sets:
-            std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>,
+        pub(crate) regex_pattern_sets: std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>,
     }
     impl Builder {
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
@@ -799,8 +791,7 @@ pub mod list_regex_pattern_sets_output {
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `regex_pattern_sets`.
         ///
@@ -809,26 +800,26 @@ pub mod list_regex_pattern_sets_output {
         /// <p></p>
         pub fn regex_pattern_sets(mut self, input: crate::model::RegexPatternSetSummary) -> Self {
             let mut v = self.regex_pattern_sets.unwrap_or_default();
-            v.push(input);
-            self.regex_pattern_sets = Some(v);
-            self
+                            v.push(input);
+                            self.regex_pattern_sets = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_regex_pattern_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>,
-        ) -> Self {
-            self.regex_pattern_sets = input;
-            self
+        pub fn set_regex_pattern_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::RegexPatternSetSummary>>) -> Self {
+            self.regex_pattern_sets = input; self
         }
         /// Consumes the builder and constructs a [`ListRegexPatternSetsOutput`](crate::output::ListRegexPatternSetsOutput).
         pub fn build(self) -> crate::output::ListRegexPatternSetsOutput {
             crate::output::ListRegexPatternSetsOutput {
-                next_marker: self.next_marker,
-                regex_pattern_sets: self.regex_pattern_sets,
+                next_marker: self.next_marker
+                ,
+                regex_pattern_sets: self.regex_pattern_sets
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRegexPatternSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListRegexPatternSetsOutput`](crate::output::ListRegexPatternSetsOutput).
@@ -840,7 +831,7 @@ impl ListRegexPatternSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMobileSdkReleasesOutput {
+pub struct ListMobileSdkReleasesOutput  {
     /// <p>High level information for the available SDK releases. </p>
     #[doc(hidden)]
     pub release_summaries: std::option::Option<std::vec::Vec<crate::model::ReleaseSummary>>,
@@ -850,22 +841,21 @@ pub struct ListMobileSdkReleasesOutput {
 }
 impl ListMobileSdkReleasesOutput {
     /// <p>High level information for the available SDK releases. </p>
-    pub fn release_summaries(&self) -> std::option::Option<&[crate::model::ReleaseSummary]> {
+    pub fn release_summaries(&self) -> std::option::Option<& [crate::model::ReleaseSummary]> {
         self.release_summaries.as_deref()
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 /// See [`ListMobileSdkReleasesOutput`](crate::output::ListMobileSdkReleasesOutput).
 pub mod list_mobile_sdk_releases_output {
-
+    
     /// A builder for [`ListMobileSdkReleasesOutput`](crate::output::ListMobileSdkReleasesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) release_summaries:
-            std::option::Option<std::vec::Vec<crate::model::ReleaseSummary>>,
+        pub(crate) release_summaries: std::option::Option<std::vec::Vec<crate::model::ReleaseSummary>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -876,17 +866,13 @@ pub mod list_mobile_sdk_releases_output {
         /// <p>High level information for the available SDK releases. </p>
         pub fn release_summaries(mut self, input: crate::model::ReleaseSummary) -> Self {
             let mut v = self.release_summaries.unwrap_or_default();
-            v.push(input);
-            self.release_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.release_summaries = Some(v);
+                            self
         }
         /// <p>High level information for the available SDK releases. </p>
-        pub fn set_release_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ReleaseSummary>>,
-        ) -> Self {
-            self.release_summaries = input;
-            self
+        pub fn set_release_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::ReleaseSummary>>) -> Self {
+            self.release_summaries = input; self
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -895,17 +881,20 @@ pub mod list_mobile_sdk_releases_output {
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Consumes the builder and constructs a [`ListMobileSdkReleasesOutput`](crate::output::ListMobileSdkReleasesOutput).
         pub fn build(self) -> crate::output::ListMobileSdkReleasesOutput {
             crate::output::ListMobileSdkReleasesOutput {
-                release_summaries: self.release_summaries,
-                next_marker: self.next_marker,
+                release_summaries: self.release_summaries
+                ,
+                next_marker: self.next_marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMobileSdkReleasesOutput {
     /// Creates a new builder-style object to manufacture [`ListMobileSdkReleasesOutput`](crate::output::ListMobileSdkReleasesOutput).
@@ -917,7 +906,7 @@ impl ListMobileSdkReleasesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListManagedRuleSetsOutput {
+pub struct ListManagedRuleSetsOutput  {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -927,23 +916,22 @@ pub struct ListManagedRuleSetsOutput {
 }
 impl ListManagedRuleSetsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>Your managed rule sets. </p>
-    pub fn managed_rule_sets(&self) -> std::option::Option<&[crate::model::ManagedRuleSetSummary]> {
+    pub fn managed_rule_sets(&self) -> std::option::Option<& [crate::model::ManagedRuleSetSummary]> {
         self.managed_rule_sets.as_deref()
     }
 }
 /// See [`ListManagedRuleSetsOutput`](crate::output::ListManagedRuleSetsOutput).
 pub mod list_managed_rule_sets_output {
-
+    
     /// A builder for [`ListManagedRuleSetsOutput`](crate::output::ListManagedRuleSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
-        pub(crate) managed_rule_sets:
-            std::option::Option<std::vec::Vec<crate::model::ManagedRuleSetSummary>>,
+        pub(crate) managed_rule_sets: std::option::Option<std::vec::Vec<crate::model::ManagedRuleSetSummary>>,
     }
     impl Builder {
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
@@ -953,8 +941,7 @@ pub mod list_managed_rule_sets_output {
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `managed_rule_sets`.
         ///
@@ -963,26 +950,26 @@ pub mod list_managed_rule_sets_output {
         /// <p>Your managed rule sets. </p>
         pub fn managed_rule_sets(mut self, input: crate::model::ManagedRuleSetSummary) -> Self {
             let mut v = self.managed_rule_sets.unwrap_or_default();
-            v.push(input);
-            self.managed_rule_sets = Some(v);
-            self
+                            v.push(input);
+                            self.managed_rule_sets = Some(v);
+                            self
         }
         /// <p>Your managed rule sets. </p>
-        pub fn set_managed_rule_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ManagedRuleSetSummary>>,
-        ) -> Self {
-            self.managed_rule_sets = input;
-            self
+        pub fn set_managed_rule_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::ManagedRuleSetSummary>>) -> Self {
+            self.managed_rule_sets = input; self
         }
         /// Consumes the builder and constructs a [`ListManagedRuleSetsOutput`](crate::output::ListManagedRuleSetsOutput).
         pub fn build(self) -> crate::output::ListManagedRuleSetsOutput {
             crate::output::ListManagedRuleSetsOutput {
-                next_marker: self.next_marker,
-                managed_rule_sets: self.managed_rule_sets,
+                next_marker: self.next_marker
+                ,
+                managed_rule_sets: self.managed_rule_sets
+                ,
             }
         }
     }
+    
+    
 }
 impl ListManagedRuleSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListManagedRuleSetsOutput`](crate::output::ListManagedRuleSetsOutput).
@@ -994,35 +981,31 @@ impl ListManagedRuleSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLoggingConfigurationsOutput {
+pub struct ListLoggingConfigurationsOutput  {
     /// <p></p>
     #[doc(hidden)]
-    pub logging_configurations:
-        std::option::Option<std::vec::Vec<crate::model::LoggingConfiguration>>,
+    pub logging_configurations: std::option::Option<std::vec::Vec<crate::model::LoggingConfiguration>>,
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
 }
 impl ListLoggingConfigurationsOutput {
     /// <p></p>
-    pub fn logging_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::LoggingConfiguration]> {
+    pub fn logging_configurations(&self) -> std::option::Option<& [crate::model::LoggingConfiguration]> {
         self.logging_configurations.as_deref()
     }
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
 }
 /// See [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
 pub mod list_logging_configurations_output {
-
+    
     /// A builder for [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) logging_configurations:
-            std::option::Option<std::vec::Vec<crate::model::LoggingConfiguration>>,
+        pub(crate) logging_configurations: std::option::Option<std::vec::Vec<crate::model::LoggingConfiguration>>,
         pub(crate) next_marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1033,17 +1016,13 @@ pub mod list_logging_configurations_output {
         /// <p></p>
         pub fn logging_configurations(mut self, input: crate::model::LoggingConfiguration) -> Self {
             let mut v = self.logging_configurations.unwrap_or_default();
-            v.push(input);
-            self.logging_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.logging_configurations = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_logging_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LoggingConfiguration>>,
-        ) -> Self {
-            self.logging_configurations = input;
-            self
+        pub fn set_logging_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::LoggingConfiguration>>) -> Self {
+            self.logging_configurations = input; self
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1052,17 +1031,20 @@ pub mod list_logging_configurations_output {
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Consumes the builder and constructs a [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
         pub fn build(self) -> crate::output::ListLoggingConfigurationsOutput {
             crate::output::ListLoggingConfigurationsOutput {
-                logging_configurations: self.logging_configurations,
-                next_marker: self.next_marker,
+                logging_configurations: self.logging_configurations
+                ,
+                next_marker: self.next_marker
+                ,
             }
         }
     }
+    
+    
 }
 impl ListLoggingConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListLoggingConfigurationsOutput`](crate::output::ListLoggingConfigurationsOutput).
@@ -1074,7 +1056,7 @@ impl ListLoggingConfigurationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIpSetsOutput {
+pub struct ListIpSetsOutput  {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -1084,17 +1066,17 @@ pub struct ListIpSetsOutput {
 }
 impl ListIpSetsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>Array of IPSets. This may not be the full list of IPSets that you have defined. See the <code>Limit</code> specification for this request.</p>
-    pub fn ip_sets(&self) -> std::option::Option<&[crate::model::IpSetSummary]> {
+    pub fn ip_sets(&self) -> std::option::Option<& [crate::model::IpSetSummary]> {
         self.ip_sets.as_deref()
     }
 }
 /// See [`ListIpSetsOutput`](crate::output::ListIpSetsOutput).
 pub mod list_ip_sets_output {
-
+    
     /// A builder for [`ListIpSetsOutput`](crate::output::ListIpSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1109,8 +1091,7 @@ pub mod list_ip_sets_output {
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `ip_sets`.
         ///
@@ -1119,26 +1100,26 @@ pub mod list_ip_sets_output {
         /// <p>Array of IPSets. This may not be the full list of IPSets that you have defined. See the <code>Limit</code> specification for this request.</p>
         pub fn ip_sets(mut self, input: crate::model::IpSetSummary) -> Self {
             let mut v = self.ip_sets.unwrap_or_default();
-            v.push(input);
-            self.ip_sets = Some(v);
-            self
+                            v.push(input);
+                            self.ip_sets = Some(v);
+                            self
         }
         /// <p>Array of IPSets. This may not be the full list of IPSets that you have defined. See the <code>Limit</code> specification for this request.</p>
-        pub fn set_ip_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IpSetSummary>>,
-        ) -> Self {
-            self.ip_sets = input;
-            self
+        pub fn set_ip_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::IpSetSummary>>) -> Self {
+            self.ip_sets = input; self
         }
         /// Consumes the builder and constructs a [`ListIpSetsOutput`](crate::output::ListIpSetsOutput).
         pub fn build(self) -> crate::output::ListIpSetsOutput {
             crate::output::ListIpSetsOutput {
-                next_marker: self.next_marker,
-                ip_sets: self.ip_sets,
+                next_marker: self.next_marker
+                ,
+                ip_sets: self.ip_sets
+                ,
             }
         }
     }
+    
+    
 }
 impl ListIpSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListIpSetsOutput`](crate::output::ListIpSetsOutput).
@@ -1150,7 +1131,7 @@ impl ListIpSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAvailableManagedRuleGroupVersionsOutput {
+pub struct ListAvailableManagedRuleGroupVersionsOutput  {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -1163,27 +1144,26 @@ pub struct ListAvailableManagedRuleGroupVersionsOutput {
 }
 impl ListAvailableManagedRuleGroupVersionsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>The versions that are currently available for the specified managed rule group. </p>
-    pub fn versions(&self) -> std::option::Option<&[crate::model::ManagedRuleGroupVersion]> {
+    pub fn versions(&self) -> std::option::Option<& [crate::model::ManagedRuleGroupVersion]> {
         self.versions.as_deref()
     }
     /// <p>The name of the version that's currently set as the default. </p>
-    pub fn current_default_version(&self) -> std::option::Option<&str> {
+    pub fn current_default_version(&self) -> std::option::Option<& str> {
         self.current_default_version.as_deref()
     }
 }
 /// See [`ListAvailableManagedRuleGroupVersionsOutput`](crate::output::ListAvailableManagedRuleGroupVersionsOutput).
 pub mod list_available_managed_rule_group_versions_output {
-
+    
     /// A builder for [`ListAvailableManagedRuleGroupVersionsOutput`](crate::output::ListAvailableManagedRuleGroupVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
-        pub(crate) versions:
-            std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupVersion>>,
+        pub(crate) versions: std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupVersion>>,
         pub(crate) current_default_version: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1194,8 +1174,7 @@ pub mod list_available_managed_rule_group_versions_output {
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `versions`.
         ///
@@ -1204,17 +1183,13 @@ pub mod list_available_managed_rule_group_versions_output {
         /// <p>The versions that are currently available for the specified managed rule group. </p>
         pub fn versions(mut self, input: crate::model::ManagedRuleGroupVersion) -> Self {
             let mut v = self.versions.unwrap_or_default();
-            v.push(input);
-            self.versions = Some(v);
-            self
+                            v.push(input);
+                            self.versions = Some(v);
+                            self
         }
         /// <p>The versions that are currently available for the specified managed rule group. </p>
-        pub fn set_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupVersion>>,
-        ) -> Self {
-            self.versions = input;
-            self
+        pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupVersion>>) -> Self {
+            self.versions = input; self
         }
         /// <p>The name of the version that's currently set as the default. </p>
         pub fn current_default_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1222,22 +1197,23 @@ pub mod list_available_managed_rule_group_versions_output {
             self
         }
         /// <p>The name of the version that's currently set as the default. </p>
-        pub fn set_current_default_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.current_default_version = input;
-            self
+        pub fn set_current_default_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.current_default_version = input; self
         }
         /// Consumes the builder and constructs a [`ListAvailableManagedRuleGroupVersionsOutput`](crate::output::ListAvailableManagedRuleGroupVersionsOutput).
         pub fn build(self) -> crate::output::ListAvailableManagedRuleGroupVersionsOutput {
             crate::output::ListAvailableManagedRuleGroupVersionsOutput {
-                next_marker: self.next_marker,
-                versions: self.versions,
-                current_default_version: self.current_default_version,
+                next_marker: self.next_marker
+                ,
+                versions: self.versions
+                ,
+                current_default_version: self.current_default_version
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAvailableManagedRuleGroupVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAvailableManagedRuleGroupVersionsOutput`](crate::output::ListAvailableManagedRuleGroupVersionsOutput).
@@ -1249,36 +1225,32 @@ impl ListAvailableManagedRuleGroupVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAvailableManagedRuleGroupsOutput {
+pub struct ListAvailableManagedRuleGroupsOutput  {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
     /// <p></p>
     #[doc(hidden)]
-    pub managed_rule_groups:
-        std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupSummary>>,
+    pub managed_rule_groups: std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupSummary>>,
 }
 impl ListAvailableManagedRuleGroupsOutput {
     /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p></p>
-    pub fn managed_rule_groups(
-        &self,
-    ) -> std::option::Option<&[crate::model::ManagedRuleGroupSummary]> {
+    pub fn managed_rule_groups(&self) -> std::option::Option<& [crate::model::ManagedRuleGroupSummary]> {
         self.managed_rule_groups.as_deref()
     }
 }
 /// See [`ListAvailableManagedRuleGroupsOutput`](crate::output::ListAvailableManagedRuleGroupsOutput).
 pub mod list_available_managed_rule_groups_output {
-
+    
     /// A builder for [`ListAvailableManagedRuleGroupsOutput`](crate::output::ListAvailableManagedRuleGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_marker: std::option::Option<std::string::String>,
-        pub(crate) managed_rule_groups:
-            std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupSummary>>,
+        pub(crate) managed_rule_groups: std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupSummary>>,
     }
     impl Builder {
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
@@ -1288,8 +1260,7 @@ pub mod list_available_managed_rule_groups_output {
         }
         /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available for retrieval exceeds the limit, WAF returns a <code>NextMarker</code> value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_marker = input;
-            self
+            self.next_marker = input; self
         }
         /// Appends an item to `managed_rule_groups`.
         ///
@@ -1298,26 +1269,26 @@ pub mod list_available_managed_rule_groups_output {
         /// <p></p>
         pub fn managed_rule_groups(mut self, input: crate::model::ManagedRuleGroupSummary) -> Self {
             let mut v = self.managed_rule_groups.unwrap_or_default();
-            v.push(input);
-            self.managed_rule_groups = Some(v);
-            self
+                            v.push(input);
+                            self.managed_rule_groups = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_managed_rule_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupSummary>>,
-        ) -> Self {
-            self.managed_rule_groups = input;
-            self
+        pub fn set_managed_rule_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::ManagedRuleGroupSummary>>) -> Self {
+            self.managed_rule_groups = input; self
         }
         /// Consumes the builder and constructs a [`ListAvailableManagedRuleGroupsOutput`](crate::output::ListAvailableManagedRuleGroupsOutput).
         pub fn build(self) -> crate::output::ListAvailableManagedRuleGroupsOutput {
             crate::output::ListAvailableManagedRuleGroupsOutput {
-                next_marker: self.next_marker,
-                managed_rule_groups: self.managed_rule_groups,
+                next_marker: self.next_marker
+                ,
+                managed_rule_groups: self.managed_rule_groups
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAvailableManagedRuleGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListAvailableManagedRuleGroupsOutput`](crate::output::ListAvailableManagedRuleGroupsOutput).
@@ -1329,20 +1300,20 @@ impl ListAvailableManagedRuleGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWebAclForResourceOutput {
+pub struct GetWebAclForResourceOutput  {
     /// <p>The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null web ACL.</p>
     #[doc(hidden)]
     pub web_acl: std::option::Option<crate::model::WebAcl>,
 }
 impl GetWebAclForResourceOutput {
     /// <p>The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null web ACL.</p>
-    pub fn web_acl(&self) -> std::option::Option<&crate::model::WebAcl> {
+    pub fn web_acl(&self) -> std::option::Option<& crate::model::WebAcl> {
         self.web_acl.as_ref()
     }
 }
 /// See [`GetWebAclForResourceOutput`](crate::output::GetWebAclForResourceOutput).
 pub mod get_web_acl_for_resource_output {
-
+    
     /// A builder for [`GetWebAclForResourceOutput`](crate::output::GetWebAclForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1356,16 +1327,18 @@ pub mod get_web_acl_for_resource_output {
         }
         /// <p>The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null web ACL.</p>
         pub fn set_web_acl(mut self, input: std::option::Option<crate::model::WebAcl>) -> Self {
-            self.web_acl = input;
-            self
+            self.web_acl = input; self
         }
         /// Consumes the builder and constructs a [`GetWebAclForResourceOutput`](crate::output::GetWebAclForResourceOutput).
         pub fn build(self) -> crate::output::GetWebAclForResourceOutput {
             crate::output::GetWebAclForResourceOutput {
-                web_acl: self.web_acl,
+                web_acl: self.web_acl
+                ,
             }
         }
     }
+    
+    
 }
 impl GetWebAclForResourceOutput {
     /// Creates a new builder-style object to manufacture [`GetWebAclForResourceOutput`](crate::output::GetWebAclForResourceOutput).
@@ -1377,7 +1350,7 @@ impl GetWebAclForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWebAclOutput {
+pub struct GetWebAclOutput  {
     /// <p>The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or create a new one.</p>
     #[doc(hidden)]
     pub web_acl: std::option::Option<crate::model::WebAcl>,
@@ -1390,21 +1363,21 @@ pub struct GetWebAclOutput {
 }
 impl GetWebAclOutput {
     /// <p>The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or create a new one.</p>
-    pub fn web_acl(&self) -> std::option::Option<&crate::model::WebAcl> {
+    pub fn web_acl(&self) -> std::option::Option<& crate::model::WebAcl> {
         self.web_acl.as_ref()
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    pub fn lock_token(&self) -> std::option::Option<&str> {
+    pub fn lock_token(&self) -> std::option::Option<& str> {
         self.lock_token.as_deref()
     }
     /// <p>The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use the integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>. This is only populated if you are using a rule group in your web ACL that integrates with your applications in this way. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn application_integration_url(&self) -> std::option::Option<&str> {
+    pub fn application_integration_url(&self) -> std::option::Option<& str> {
         self.application_integration_url.as_deref()
     }
 }
 /// See [`GetWebAclOutput`](crate::output::GetWebAclOutput).
 pub mod get_web_acl_output {
-
+    
     /// A builder for [`GetWebAclOutput`](crate::output::GetWebAclOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1420,8 +1393,7 @@ pub mod get_web_acl_output {
         }
         /// <p>The web ACL specification. You can modify the settings in this web ACL and use it to update this web ACL or create a new one.</p>
         pub fn set_web_acl(mut self, input: std::option::Option<crate::model::WebAcl>) -> Self {
-            self.web_acl = input;
-            self
+            self.web_acl = input; self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1430,34 +1402,31 @@ pub mod get_web_acl_output {
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lock_token = input;
-            self
+            self.lock_token = input; self
         }
         /// <p>The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use the integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>. This is only populated if you are using a rule group in your web ACL that integrates with your applications in this way. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
-        pub fn application_integration_url(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn application_integration_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.application_integration_url = Some(input.into());
             self
         }
         /// <p>The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use the integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>. This is only populated if you are using a rule group in your web ACL that integrates with your applications in this way. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
-        pub fn set_application_integration_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_integration_url = input;
-            self
+        pub fn set_application_integration_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_integration_url = input; self
         }
         /// Consumes the builder and constructs a [`GetWebAclOutput`](crate::output::GetWebAclOutput).
         pub fn build(self) -> crate::output::GetWebAclOutput {
             crate::output::GetWebAclOutput {
-                web_acl: self.web_acl,
-                lock_token: self.lock_token,
-                application_integration_url: self.application_integration_url,
+                web_acl: self.web_acl
+                ,
+                lock_token: self.lock_token
+                ,
+                application_integration_url: self.application_integration_url
+                ,
             }
         }
     }
+    
+    
 }
 impl GetWebAclOutput {
     /// Creates a new builder-style object to manufacture [`GetWebAclOutput`](crate::output::GetWebAclOutput).
@@ -1469,7 +1438,7 @@ impl GetWebAclOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSampledRequestsOutput {
+pub struct GetSampledRequestsOutput  {
     /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
     #[doc(hidden)]
     pub sampled_requests: std::option::Option<std::vec::Vec<crate::model::SampledHttpRequest>>,
@@ -1482,7 +1451,7 @@ pub struct GetSampledRequestsOutput {
 }
 impl GetSampledRequestsOutput {
     /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
-    pub fn sampled_requests(&self) -> std::option::Option<&[crate::model::SampledHttpRequest]> {
+    pub fn sampled_requests(&self) -> std::option::Option<& [crate::model::SampledHttpRequest]> {
         self.sampled_requests.as_deref()
     }
     /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request that your Amazon Web Services resource received during the specified time range.</p>
@@ -1490,18 +1459,17 @@ impl GetSampledRequestsOutput {
         self.population_size
     }
     /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code> request. However, if your Amazon Web Services resource received more than 5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
-    pub fn time_window(&self) -> std::option::Option<&crate::model::TimeWindow> {
+    pub fn time_window(&self) -> std::option::Option<& crate::model::TimeWindow> {
         self.time_window.as_ref()
     }
 }
 /// See [`GetSampledRequestsOutput`](crate::output::GetSampledRequestsOutput).
 pub mod get_sampled_requests_output {
-
+    
     /// A builder for [`GetSampledRequestsOutput`](crate::output::GetSampledRequestsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) sampled_requests:
-            std::option::Option<std::vec::Vec<crate::model::SampledHttpRequest>>,
+        pub(crate) sampled_requests: std::option::Option<std::vec::Vec<crate::model::SampledHttpRequest>>,
         pub(crate) population_size: std::option::Option<i64>,
         pub(crate) time_window: std::option::Option<crate::model::TimeWindow>,
     }
@@ -1513,17 +1481,13 @@ pub mod get_sampled_requests_output {
         /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
         pub fn sampled_requests(mut self, input: crate::model::SampledHttpRequest) -> Self {
             let mut v = self.sampled_requests.unwrap_or_default();
-            v.push(input);
-            self.sampled_requests = Some(v);
-            self
+                            v.push(input);
+                            self.sampled_requests = Some(v);
+                            self
         }
         /// <p>A complex type that contains detailed information about each of the requests in the sample.</p>
-        pub fn set_sampled_requests(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SampledHttpRequest>>,
-        ) -> Self {
-            self.sampled_requests = input;
-            self
+        pub fn set_sampled_requests(mut self, input: std::option::Option<std::vec::Vec<crate::model::SampledHttpRequest>>) -> Self {
+            self.sampled_requests = input; self
         }
         /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request that your Amazon Web Services resource received during the specified time range.</p>
         pub fn population_size(mut self, input: i64) -> Self {
@@ -1532,8 +1496,7 @@ pub mod get_sampled_requests_output {
         }
         /// <p>The total number of requests from which <code>GetSampledRequests</code> got a sample of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>, the sample includes every request that your Amazon Web Services resource received during the specified time range.</p>
         pub fn set_population_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.population_size = input;
-            self
+            self.population_size = input; self
         }
         /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code> request. However, if your Amazon Web Services resource received more than 5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
         pub fn time_window(mut self, input: crate::model::TimeWindow) -> Self {
@@ -1541,22 +1504,24 @@ pub mod get_sampled_requests_output {
             self
         }
         /// <p>Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code> request. However, if your Amazon Web Services resource received more than 5,000 requests during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.</p>
-        pub fn set_time_window(
-            mut self,
-            input: std::option::Option<crate::model::TimeWindow>,
-        ) -> Self {
-            self.time_window = input;
-            self
+        pub fn set_time_window(mut self, input: std::option::Option<crate::model::TimeWindow>) -> Self {
+            self.time_window = input; self
         }
         /// Consumes the builder and constructs a [`GetSampledRequestsOutput`](crate::output::GetSampledRequestsOutput).
         pub fn build(self) -> crate::output::GetSampledRequestsOutput {
             crate::output::GetSampledRequestsOutput {
-                sampled_requests: self.sampled_requests,
-                population_size: self.population_size.unwrap_or_default(),
-                time_window: self.time_window,
+                sampled_requests: self.sampled_requests
+                ,
+                population_size: self.population_size
+                    .unwrap_or_default()
+                ,
+                time_window: self.time_window
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSampledRequestsOutput {
     /// Creates a new builder-style object to manufacture [`GetSampledRequestsOutput`](crate::output::GetSampledRequestsOutput).
@@ -1568,7 +1533,7 @@ impl GetSampledRequestsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRuleGroupOutput {
+pub struct GetRuleGroupOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub rule_group: std::option::Option<crate::model::RuleGroup>,
@@ -1578,17 +1543,17 @@ pub struct GetRuleGroupOutput {
 }
 impl GetRuleGroupOutput {
     /// <p></p>
-    pub fn rule_group(&self) -> std::option::Option<&crate::model::RuleGroup> {
+    pub fn rule_group(&self) -> std::option::Option<& crate::model::RuleGroup> {
         self.rule_group.as_ref()
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    pub fn lock_token(&self) -> std::option::Option<&str> {
+    pub fn lock_token(&self) -> std::option::Option<& str> {
         self.lock_token.as_deref()
     }
 }
 /// See [`GetRuleGroupOutput`](crate::output::GetRuleGroupOutput).
 pub mod get_rule_group_output {
-
+    
     /// A builder for [`GetRuleGroupOutput`](crate::output::GetRuleGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1602,12 +1567,8 @@ pub mod get_rule_group_output {
             self
         }
         /// <p></p>
-        pub fn set_rule_group(
-            mut self,
-            input: std::option::Option<crate::model::RuleGroup>,
-        ) -> Self {
-            self.rule_group = input;
-            self
+        pub fn set_rule_group(mut self, input: std::option::Option<crate::model::RuleGroup>) -> Self {
+            self.rule_group = input; self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1616,17 +1577,20 @@ pub mod get_rule_group_output {
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lock_token = input;
-            self
+            self.lock_token = input; self
         }
         /// Consumes the builder and constructs a [`GetRuleGroupOutput`](crate::output::GetRuleGroupOutput).
         pub fn build(self) -> crate::output::GetRuleGroupOutput {
             crate::output::GetRuleGroupOutput {
-                rule_group: self.rule_group,
-                lock_token: self.lock_token,
+                rule_group: self.rule_group
+                ,
+                lock_token: self.lock_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetRuleGroupOutput`](crate::output::GetRuleGroupOutput).
@@ -1638,7 +1602,7 @@ impl GetRuleGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRegexPatternSetOutput {
+pub struct GetRegexPatternSetOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub regex_pattern_set: std::option::Option<crate::model::RegexPatternSet>,
@@ -1648,17 +1612,17 @@ pub struct GetRegexPatternSetOutput {
 }
 impl GetRegexPatternSetOutput {
     /// <p></p>
-    pub fn regex_pattern_set(&self) -> std::option::Option<&crate::model::RegexPatternSet> {
+    pub fn regex_pattern_set(&self) -> std::option::Option<& crate::model::RegexPatternSet> {
         self.regex_pattern_set.as_ref()
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    pub fn lock_token(&self) -> std::option::Option<&str> {
+    pub fn lock_token(&self) -> std::option::Option<& str> {
         self.lock_token.as_deref()
     }
 }
 /// See [`GetRegexPatternSetOutput`](crate::output::GetRegexPatternSetOutput).
 pub mod get_regex_pattern_set_output {
-
+    
     /// A builder for [`GetRegexPatternSetOutput`](crate::output::GetRegexPatternSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1672,12 +1636,8 @@ pub mod get_regex_pattern_set_output {
             self
         }
         /// <p></p>
-        pub fn set_regex_pattern_set(
-            mut self,
-            input: std::option::Option<crate::model::RegexPatternSet>,
-        ) -> Self {
-            self.regex_pattern_set = input;
-            self
+        pub fn set_regex_pattern_set(mut self, input: std::option::Option<crate::model::RegexPatternSet>) -> Self {
+            self.regex_pattern_set = input; self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1686,17 +1646,20 @@ pub mod get_regex_pattern_set_output {
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lock_token = input;
-            self
+            self.lock_token = input; self
         }
         /// Consumes the builder and constructs a [`GetRegexPatternSetOutput`](crate::output::GetRegexPatternSetOutput).
         pub fn build(self) -> crate::output::GetRegexPatternSetOutput {
             crate::output::GetRegexPatternSetOutput {
-                regex_pattern_set: self.regex_pattern_set,
-                lock_token: self.lock_token,
+                regex_pattern_set: self.regex_pattern_set
+                ,
+                lock_token: self.lock_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRegexPatternSetOutput {
     /// Creates a new builder-style object to manufacture [`GetRegexPatternSetOutput`](crate::output::GetRegexPatternSetOutput).
@@ -1708,7 +1671,7 @@ impl GetRegexPatternSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRateBasedStatementManagedKeysOutput {
+pub struct GetRateBasedStatementManagedKeysOutput  {
     /// <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
     #[doc(hidden)]
     pub managed_keys_ipv4: std::option::Option<crate::model::RateBasedStatementManagedKeysIpSet>,
@@ -1718,70 +1681,54 @@ pub struct GetRateBasedStatementManagedKeysOutput {
 }
 impl GetRateBasedStatementManagedKeysOutput {
     /// <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
-    pub fn managed_keys_ipv4(
-        &self,
-    ) -> std::option::Option<&crate::model::RateBasedStatementManagedKeysIpSet> {
+    pub fn managed_keys_ipv4(&self) -> std::option::Option<& crate::model::RateBasedStatementManagedKeysIpSet> {
         self.managed_keys_ipv4.as_ref()
     }
     /// <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
-    pub fn managed_keys_ipv6(
-        &self,
-    ) -> std::option::Option<&crate::model::RateBasedStatementManagedKeysIpSet> {
+    pub fn managed_keys_ipv6(&self) -> std::option::Option<& crate::model::RateBasedStatementManagedKeysIpSet> {
         self.managed_keys_ipv6.as_ref()
     }
 }
 /// See [`GetRateBasedStatementManagedKeysOutput`](crate::output::GetRateBasedStatementManagedKeysOutput).
 pub mod get_rate_based_statement_managed_keys_output {
-
+    
     /// A builder for [`GetRateBasedStatementManagedKeysOutput`](crate::output::GetRateBasedStatementManagedKeysOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) managed_keys_ipv4:
-            std::option::Option<crate::model::RateBasedStatementManagedKeysIpSet>,
-        pub(crate) managed_keys_ipv6:
-            std::option::Option<crate::model::RateBasedStatementManagedKeysIpSet>,
+        pub(crate) managed_keys_ipv4: std::option::Option<crate::model::RateBasedStatementManagedKeysIpSet>,
+        pub(crate) managed_keys_ipv6: std::option::Option<crate::model::RateBasedStatementManagedKeysIpSet>,
     }
     impl Builder {
         /// <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
-        pub fn managed_keys_ipv4(
-            mut self,
-            input: crate::model::RateBasedStatementManagedKeysIpSet,
-        ) -> Self {
+        pub fn managed_keys_ipv4(mut self, input: crate::model::RateBasedStatementManagedKeysIpSet) -> Self {
             self.managed_keys_ipv4 = Some(input);
             self
         }
         /// <p>The keys that are of Internet Protocol version 4 (IPv4). </p>
-        pub fn set_managed_keys_ipv4(
-            mut self,
-            input: std::option::Option<crate::model::RateBasedStatementManagedKeysIpSet>,
-        ) -> Self {
-            self.managed_keys_ipv4 = input;
-            self
+        pub fn set_managed_keys_ipv4(mut self, input: std::option::Option<crate::model::RateBasedStatementManagedKeysIpSet>) -> Self {
+            self.managed_keys_ipv4 = input; self
         }
         /// <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
-        pub fn managed_keys_ipv6(
-            mut self,
-            input: crate::model::RateBasedStatementManagedKeysIpSet,
-        ) -> Self {
+        pub fn managed_keys_ipv6(mut self, input: crate::model::RateBasedStatementManagedKeysIpSet) -> Self {
             self.managed_keys_ipv6 = Some(input);
             self
         }
         /// <p>The keys that are of Internet Protocol version 6 (IPv6). </p>
-        pub fn set_managed_keys_ipv6(
-            mut self,
-            input: std::option::Option<crate::model::RateBasedStatementManagedKeysIpSet>,
-        ) -> Self {
-            self.managed_keys_ipv6 = input;
-            self
+        pub fn set_managed_keys_ipv6(mut self, input: std::option::Option<crate::model::RateBasedStatementManagedKeysIpSet>) -> Self {
+            self.managed_keys_ipv6 = input; self
         }
         /// Consumes the builder and constructs a [`GetRateBasedStatementManagedKeysOutput`](crate::output::GetRateBasedStatementManagedKeysOutput).
         pub fn build(self) -> crate::output::GetRateBasedStatementManagedKeysOutput {
             crate::output::GetRateBasedStatementManagedKeysOutput {
-                managed_keys_ipv4: self.managed_keys_ipv4,
-                managed_keys_ipv6: self.managed_keys_ipv6,
+                managed_keys_ipv4: self.managed_keys_ipv4
+                ,
+                managed_keys_ipv6: self.managed_keys_ipv6
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRateBasedStatementManagedKeysOutput {
     /// Creates a new builder-style object to manufacture [`GetRateBasedStatementManagedKeysOutput`](crate::output::GetRateBasedStatementManagedKeysOutput).
@@ -1793,20 +1740,20 @@ impl GetRateBasedStatementManagedKeysOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPermissionPolicyOutput {
+pub struct GetPermissionPolicyOutput  {
     /// <p>The IAM policy that is attached to the specified rule group.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GetPermissionPolicyOutput {
     /// <p>The IAM policy that is attached to the specified rule group.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`GetPermissionPolicyOutput`](crate::output::GetPermissionPolicyOutput).
 pub mod get_permission_policy_output {
-
+    
     /// A builder for [`GetPermissionPolicyOutput`](crate::output::GetPermissionPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1820,16 +1767,18 @@ pub mod get_permission_policy_output {
         }
         /// <p>The IAM policy that is attached to the specified rule group.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`GetPermissionPolicyOutput`](crate::output::GetPermissionPolicyOutput).
         pub fn build(self) -> crate::output::GetPermissionPolicyOutput {
             crate::output::GetPermissionPolicyOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPermissionPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetPermissionPolicyOutput`](crate::output::GetPermissionPolicyOutput).
@@ -1841,20 +1790,20 @@ impl GetPermissionPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMobileSdkReleaseOutput {
+pub struct GetMobileSdkReleaseOutput  {
     /// <p>Information for a specified SDK release, including release notes and tags.</p>
     #[doc(hidden)]
     pub mobile_sdk_release: std::option::Option<crate::model::MobileSdkRelease>,
 }
 impl GetMobileSdkReleaseOutput {
     /// <p>Information for a specified SDK release, including release notes and tags.</p>
-    pub fn mobile_sdk_release(&self) -> std::option::Option<&crate::model::MobileSdkRelease> {
+    pub fn mobile_sdk_release(&self) -> std::option::Option<& crate::model::MobileSdkRelease> {
         self.mobile_sdk_release.as_ref()
     }
 }
 /// See [`GetMobileSdkReleaseOutput`](crate::output::GetMobileSdkReleaseOutput).
 pub mod get_mobile_sdk_release_output {
-
+    
     /// A builder for [`GetMobileSdkReleaseOutput`](crate::output::GetMobileSdkReleaseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1867,20 +1816,19 @@ pub mod get_mobile_sdk_release_output {
             self
         }
         /// <p>Information for a specified SDK release, including release notes and tags.</p>
-        pub fn set_mobile_sdk_release(
-            mut self,
-            input: std::option::Option<crate::model::MobileSdkRelease>,
-        ) -> Self {
-            self.mobile_sdk_release = input;
-            self
+        pub fn set_mobile_sdk_release(mut self, input: std::option::Option<crate::model::MobileSdkRelease>) -> Self {
+            self.mobile_sdk_release = input; self
         }
         /// Consumes the builder and constructs a [`GetMobileSdkReleaseOutput`](crate::output::GetMobileSdkReleaseOutput).
         pub fn build(self) -> crate::output::GetMobileSdkReleaseOutput {
             crate::output::GetMobileSdkReleaseOutput {
-                mobile_sdk_release: self.mobile_sdk_release,
+                mobile_sdk_release: self.mobile_sdk_release
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMobileSdkReleaseOutput {
     /// Creates a new builder-style object to manufacture [`GetMobileSdkReleaseOutput`](crate::output::GetMobileSdkReleaseOutput).
@@ -1892,7 +1840,7 @@ impl GetMobileSdkReleaseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetManagedRuleSetOutput {
+pub struct GetManagedRuleSetOutput  {
     /// <p>The managed rule set that you requested. </p>
     #[doc(hidden)]
     pub managed_rule_set: std::option::Option<crate::model::ManagedRuleSet>,
@@ -1902,17 +1850,17 @@ pub struct GetManagedRuleSetOutput {
 }
 impl GetManagedRuleSetOutput {
     /// <p>The managed rule set that you requested. </p>
-    pub fn managed_rule_set(&self) -> std::option::Option<&crate::model::ManagedRuleSet> {
+    pub fn managed_rule_set(&self) -> std::option::Option<& crate::model::ManagedRuleSet> {
         self.managed_rule_set.as_ref()
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    pub fn lock_token(&self) -> std::option::Option<&str> {
+    pub fn lock_token(&self) -> std::option::Option<& str> {
         self.lock_token.as_deref()
     }
 }
 /// See [`GetManagedRuleSetOutput`](crate::output::GetManagedRuleSetOutput).
 pub mod get_managed_rule_set_output {
-
+    
     /// A builder for [`GetManagedRuleSetOutput`](crate::output::GetManagedRuleSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1926,12 +1874,8 @@ pub mod get_managed_rule_set_output {
             self
         }
         /// <p>The managed rule set that you requested. </p>
-        pub fn set_managed_rule_set(
-            mut self,
-            input: std::option::Option<crate::model::ManagedRuleSet>,
-        ) -> Self {
-            self.managed_rule_set = input;
-            self
+        pub fn set_managed_rule_set(mut self, input: std::option::Option<crate::model::ManagedRuleSet>) -> Self {
+            self.managed_rule_set = input; self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1940,17 +1884,20 @@ pub mod get_managed_rule_set_output {
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lock_token = input;
-            self
+            self.lock_token = input; self
         }
         /// Consumes the builder and constructs a [`GetManagedRuleSetOutput`](crate::output::GetManagedRuleSetOutput).
         pub fn build(self) -> crate::output::GetManagedRuleSetOutput {
             crate::output::GetManagedRuleSetOutput {
-                managed_rule_set: self.managed_rule_set,
-                lock_token: self.lock_token,
+                managed_rule_set: self.managed_rule_set
+                ,
+                lock_token: self.lock_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetManagedRuleSetOutput {
     /// Creates a new builder-style object to manufacture [`GetManagedRuleSetOutput`](crate::output::GetManagedRuleSetOutput).
@@ -1962,22 +1909,20 @@ impl GetManagedRuleSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLoggingConfigurationOutput {
+pub struct GetLoggingConfigurationOutput  {
     /// <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
     #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfiguration>,
 }
 impl GetLoggingConfigurationOutput {
     /// <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
-    pub fn logging_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::LoggingConfiguration> {
+    pub fn logging_configuration(&self) -> std::option::Option<& crate::model::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
 }
 /// See [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
 pub mod get_logging_configuration_output {
-
+    
     /// A builder for [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1990,20 +1935,19 @@ pub mod get_logging_configuration_output {
             self
         }
         /// <p>The <code>LoggingConfiguration</code> for the specified web ACL.</p>
-        pub fn set_logging_configuration(
-            mut self,
-            input: std::option::Option<crate::model::LoggingConfiguration>,
-        ) -> Self {
-            self.logging_configuration = input;
-            self
+        pub fn set_logging_configuration(mut self, input: std::option::Option<crate::model::LoggingConfiguration>) -> Self {
+            self.logging_configuration = input; self
         }
         /// Consumes the builder and constructs a [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::GetLoggingConfigurationOutput {
             crate::output::GetLoggingConfigurationOutput {
-                logging_configuration: self.logging_configuration,
+                logging_configuration: self.logging_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetLoggingConfigurationOutput`](crate::output::GetLoggingConfigurationOutput).
@@ -2015,7 +1959,7 @@ impl GetLoggingConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIpSetOutput {
+pub struct GetIpSetOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub ip_set: std::option::Option<crate::model::IpSet>,
@@ -2025,17 +1969,17 @@ pub struct GetIpSetOutput {
 }
 impl GetIpSetOutput {
     /// <p></p>
-    pub fn ip_set(&self) -> std::option::Option<&crate::model::IpSet> {
+    pub fn ip_set(&self) -> std::option::Option<& crate::model::IpSet> {
         self.ip_set.as_ref()
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    pub fn lock_token(&self) -> std::option::Option<&str> {
+    pub fn lock_token(&self) -> std::option::Option<& str> {
         self.lock_token.as_deref()
     }
 }
 /// See [`GetIpSetOutput`](crate::output::GetIpSetOutput).
 pub mod get_ip_set_output {
-
+    
     /// A builder for [`GetIpSetOutput`](crate::output::GetIpSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2050,8 +1994,7 @@ pub mod get_ip_set_output {
         }
         /// <p></p>
         pub fn set_ip_set(mut self, input: std::option::Option<crate::model::IpSet>) -> Self {
-            self.ip_set = input;
-            self
+            self.ip_set = input; self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2060,17 +2003,20 @@ pub mod get_ip_set_output {
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.lock_token = input;
-            self
+            self.lock_token = input; self
         }
         /// Consumes the builder and constructs a [`GetIpSetOutput`](crate::output::GetIpSetOutput).
         pub fn build(self) -> crate::output::GetIpSetOutput {
             crate::output::GetIpSetOutput {
-                ip_set: self.ip_set,
-                lock_token: self.lock_token,
+                ip_set: self.ip_set
+                ,
+                lock_token: self.lock_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetIpSetOutput {
     /// Creates a new builder-style object to manufacture [`GetIpSetOutput`](crate::output::GetIpSetOutput).
@@ -2082,20 +2028,20 @@ impl GetIpSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GenerateMobileSdkReleaseUrlOutput {
+pub struct GenerateMobileSdkReleaseUrlOutput  {
     /// <p>The presigned download URL for the specified SDK release.</p>
     #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
 }
 impl GenerateMobileSdkReleaseUrlOutput {
     /// <p>The presigned download URL for the specified SDK release.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
 }
 /// See [`GenerateMobileSdkReleaseUrlOutput`](crate::output::GenerateMobileSdkReleaseUrlOutput).
 pub mod generate_mobile_sdk_release_url_output {
-
+    
     /// A builder for [`GenerateMobileSdkReleaseUrlOutput`](crate::output::GenerateMobileSdkReleaseUrlOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2109,14 +2055,18 @@ pub mod generate_mobile_sdk_release_url_output {
         }
         /// <p>The presigned download URL for the specified SDK release.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// Consumes the builder and constructs a [`GenerateMobileSdkReleaseUrlOutput`](crate::output::GenerateMobileSdkReleaseUrlOutput).
         pub fn build(self) -> crate::output::GenerateMobileSdkReleaseUrlOutput {
-            crate::output::GenerateMobileSdkReleaseUrlOutput { url: self.url }
+            crate::output::GenerateMobileSdkReleaseUrlOutput {
+                url: self.url
+                ,
+            }
         }
     }
+    
+    
 }
 impl GenerateMobileSdkReleaseUrlOutput {
     /// Creates a new builder-style object to manufacture [`GenerateMobileSdkReleaseUrlOutput`](crate::output::GenerateMobileSdkReleaseUrlOutput).
@@ -2128,19 +2078,24 @@ impl GenerateMobileSdkReleaseUrlOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateWebAclOutput {}
+pub struct DisassociateWebAclOutput  {
+}
 /// See [`DisassociateWebAclOutput`](crate::output::DisassociateWebAclOutput).
 pub mod disassociate_web_acl_output {
-
+    
     /// A builder for [`DisassociateWebAclOutput`](crate::output::DisassociateWebAclOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateWebAclOutput`](crate::output::DisassociateWebAclOutput).
         pub fn build(self) -> crate::output::DisassociateWebAclOutput {
-            crate::output::DisassociateWebAclOutput {}
+            crate::output::DisassociateWebAclOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateWebAclOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateWebAclOutput`](crate::output::DisassociateWebAclOutput).
@@ -2152,7 +2107,7 @@ impl DisassociateWebAclOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeManagedRuleGroupOutput {
+pub struct DescribeManagedRuleGroupOutput  {
     /// <p>The managed rule group's version. </p>
     #[doc(hidden)]
     pub version_name: std::option::Option<std::string::String>,
@@ -2165,14 +2120,14 @@ pub struct DescribeManagedRuleGroupOutput {
     /// <p></p>
     #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
-    /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>
-    /// <ul>
+    /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p> 
+    /// <ul> 
     /// <li> <p>The syntax for the label namespace prefix for a managed rule group is the following: </p> <p> <code>awswaf:managed:
     /// <vendor>
     /// :
     /// <rule group name></rule>
-    /// </vendor></code>:</p> </li>
-    /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
+    /// </vendor></code>:</p> </li> 
+    /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub label_namespace: std::option::Option<std::string::String>,
@@ -2185,11 +2140,11 @@ pub struct DescribeManagedRuleGroupOutput {
 }
 impl DescribeManagedRuleGroupOutput {
     /// <p>The managed rule group's version. </p>
-    pub fn version_name(&self) -> std::option::Option<&str> {
+    pub fn version_name(&self) -> std::option::Option<& str> {
         self.version_name.as_deref()
     }
     /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> std::option::Option<& str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
@@ -2197,33 +2152,33 @@ impl DescribeManagedRuleGroupOutput {
         self.capacity
     }
     /// <p></p>
-    pub fn rules(&self) -> std::option::Option<&[crate::model::RuleSummary]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::model::RuleSummary]> {
         self.rules.as_deref()
     }
-    /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>
-    /// <ul>
+    /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p> 
+    /// <ul> 
     /// <li> <p>The syntax for the label namespace prefix for a managed rule group is the following: </p> <p> <code>awswaf:managed:
     /// <vendor>
     /// :
     /// <rule group name></rule>
-    /// </vendor></code>:</p> </li>
-    /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
+    /// </vendor></code>:</p> </li> 
+    /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li> 
     /// </ul>
-    pub fn label_namespace(&self) -> std::option::Option<&str> {
+    pub fn label_namespace(&self) -> std::option::Option<& str> {
         self.label_namespace.as_deref()
     }
     /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
-    pub fn available_labels(&self) -> std::option::Option<&[crate::model::LabelSummary]> {
+    pub fn available_labels(&self) -> std::option::Option<& [crate::model::LabelSummary]> {
         self.available_labels.as_deref()
     }
     /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
-    pub fn consumed_labels(&self) -> std::option::Option<&[crate::model::LabelSummary]> {
+    pub fn consumed_labels(&self) -> std::option::Option<& [crate::model::LabelSummary]> {
         self.consumed_labels.as_deref()
     }
 }
 /// See [`DescribeManagedRuleGroupOutput`](crate::output::DescribeManagedRuleGroupOutput).
 pub mod describe_managed_rule_group_output {
-
+    
     /// A builder for [`DescribeManagedRuleGroupOutput`](crate::output::DescribeManagedRuleGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2243,8 +2198,7 @@ pub mod describe_managed_rule_group_output {
         }
         /// <p>The managed rule group's version. </p>
         pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version_name = input;
-            self
+            self.version_name = input; self
         }
         /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2252,12 +2206,8 @@ pub mod describe_managed_rule_group_output {
             self
         }
         /// <p>The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic that's used to record changes to the managed rule group. You can subscribe to the SNS topic to receive notifications when the managed rule group is modified, such as for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple Notification Service Developer Guide</a>.</p>
-        pub fn set_sns_topic_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sns_topic_arn = input;
-            self
+        pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sns_topic_arn = input; self
         }
         /// <p>The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
         pub fn capacity(mut self, input: i64) -> Self {
@@ -2266,8 +2216,7 @@ pub mod describe_managed_rule_group_output {
         }
         /// <p>The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
         pub fn set_capacity(mut self, input: std::option::Option<i64>) -> Self {
-            self.capacity = input;
-            self
+            self.capacity = input; self
         }
         /// Appends an item to `rules`.
         ///
@@ -2276,46 +2225,38 @@ pub mod describe_managed_rule_group_output {
         /// <p></p>
         pub fn rules(mut self, input: crate::model::RuleSummary) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input);
-            self.rules = Some(v);
-            self
+                            v.push(input);
+                            self.rules = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
-        ) -> Self {
-            self.rules = input;
-            self
+        pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>) -> Self {
+            self.rules = input; self
         }
-        /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>
-        /// <ul>
+        /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p> 
+        /// <ul> 
         /// <li> <p>The syntax for the label namespace prefix for a managed rule group is the following: </p> <p> <code>awswaf:managed:
         /// <vendor>
         /// :
         /// <rule group name></rule>
-        /// </vendor></code>:</p> </li>
-        /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
+        /// </vendor></code>:</p> </li> 
+        /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li> 
         /// </ul>
         pub fn label_namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.label_namespace = Some(input.into());
             self
         }
-        /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p>
-        /// <ul>
+        /// <p>The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix. </p> 
+        /// <ul> 
         /// <li> <p>The syntax for the label namespace prefix for a managed rule group is the following: </p> <p> <code>awswaf:managed:
         /// <vendor>
         /// :
         /// <rule group name></rule>
-        /// </vendor></code>:</p> </li>
-        /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li>
+        /// </vendor></code>:</p> </li> 
+        /// <li> <p>When a rule with a label matches a web request, WAF adds the fully qualified label to the request. A fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and the label from the rule, separated by a colon: </p> <p> <code><label namespace>:<label from rule></label></label></code> </p> </li> 
         /// </ul>
-        pub fn set_label_namespace(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.label_namespace = input;
-            self
+        pub fn set_label_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.label_namespace = input; self
         }
         /// Appends an item to `available_labels`.
         ///
@@ -2324,17 +2265,13 @@ pub mod describe_managed_rule_group_output {
         /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
         pub fn available_labels(mut self, input: crate::model::LabelSummary) -> Self {
             let mut v = self.available_labels.unwrap_or_default();
-            v.push(input);
-            self.available_labels = Some(v);
-            self
+                            v.push(input);
+                            self.available_labels = Some(v);
+                            self
         }
         /// <p>The labels that one or more rules in this rule group add to matching web requests. These labels are defined in the <code>RuleLabels</code> for a <code>Rule</code>.</p>
-        pub fn set_available_labels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>,
-        ) -> Self {
-            self.available_labels = input;
-            self
+        pub fn set_available_labels(mut self, input: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>) -> Self {
+            self.available_labels = input; self
         }
         /// Appends an item to `consumed_labels`.
         ///
@@ -2343,31 +2280,37 @@ pub mod describe_managed_rule_group_output {
         /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
         pub fn consumed_labels(mut self, input: crate::model::LabelSummary) -> Self {
             let mut v = self.consumed_labels.unwrap_or_default();
-            v.push(input);
-            self.consumed_labels = Some(v);
-            self
+                            v.push(input);
+                            self.consumed_labels = Some(v);
+                            self
         }
         /// <p>The labels that one or more rules in this rule group match against in label match statements. These labels are defined in a <code>LabelMatchStatement</code> specification, in the <code>Statement</code> definition of a rule. </p>
-        pub fn set_consumed_labels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>,
-        ) -> Self {
-            self.consumed_labels = input;
-            self
+        pub fn set_consumed_labels(mut self, input: std::option::Option<std::vec::Vec<crate::model::LabelSummary>>) -> Self {
+            self.consumed_labels = input; self
         }
         /// Consumes the builder and constructs a [`DescribeManagedRuleGroupOutput`](crate::output::DescribeManagedRuleGroupOutput).
         pub fn build(self) -> crate::output::DescribeManagedRuleGroupOutput {
             crate::output::DescribeManagedRuleGroupOutput {
-                version_name: self.version_name,
-                sns_topic_arn: self.sns_topic_arn,
-                capacity: self.capacity.unwrap_or_default(),
-                rules: self.rules,
-                label_namespace: self.label_namespace,
-                available_labels: self.available_labels,
-                consumed_labels: self.consumed_labels,
+                version_name: self.version_name
+                ,
+                sns_topic_arn: self.sns_topic_arn
+                ,
+                capacity: self.capacity
+                    .unwrap_or_default()
+                ,
+                rules: self.rules
+                ,
+                label_namespace: self.label_namespace
+                ,
+                available_labels: self.available_labels
+                ,
+                consumed_labels: self.consumed_labels
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeManagedRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeManagedRuleGroupOutput`](crate::output::DescribeManagedRuleGroupOutput).
@@ -2379,19 +2322,24 @@ impl DescribeManagedRuleGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWebAclOutput {}
+pub struct DeleteWebAclOutput  {
+}
 /// See [`DeleteWebAclOutput`](crate::output::DeleteWebAclOutput).
 pub mod delete_web_acl_output {
-
+    
     /// A builder for [`DeleteWebAclOutput`](crate::output::DeleteWebAclOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteWebAclOutput`](crate::output::DeleteWebAclOutput).
         pub fn build(self) -> crate::output::DeleteWebAclOutput {
-            crate::output::DeleteWebAclOutput {}
+            crate::output::DeleteWebAclOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteWebAclOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWebAclOutput`](crate::output::DeleteWebAclOutput).
@@ -2403,19 +2351,24 @@ impl DeleteWebAclOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRuleGroupOutput {}
+pub struct DeleteRuleGroupOutput  {
+}
 /// See [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
 pub mod delete_rule_group_output {
-
+    
     /// A builder for [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
         pub fn build(self) -> crate::output::DeleteRuleGroupOutput {
-            crate::output::DeleteRuleGroupOutput {}
+            crate::output::DeleteRuleGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRuleGroupOutput`](crate::output::DeleteRuleGroupOutput).
@@ -2427,19 +2380,24 @@ impl DeleteRuleGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRegexPatternSetOutput {}
+pub struct DeleteRegexPatternSetOutput  {
+}
 /// See [`DeleteRegexPatternSetOutput`](crate::output::DeleteRegexPatternSetOutput).
 pub mod delete_regex_pattern_set_output {
-
+    
     /// A builder for [`DeleteRegexPatternSetOutput`](crate::output::DeleteRegexPatternSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRegexPatternSetOutput`](crate::output::DeleteRegexPatternSetOutput).
         pub fn build(self) -> crate::output::DeleteRegexPatternSetOutput {
-            crate::output::DeleteRegexPatternSetOutput {}
+            crate::output::DeleteRegexPatternSetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteRegexPatternSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRegexPatternSetOutput`](crate::output::DeleteRegexPatternSetOutput).
@@ -2451,19 +2409,24 @@ impl DeleteRegexPatternSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePermissionPolicyOutput {}
+pub struct DeletePermissionPolicyOutput  {
+}
 /// See [`DeletePermissionPolicyOutput`](crate::output::DeletePermissionPolicyOutput).
 pub mod delete_permission_policy_output {
-
+    
     /// A builder for [`DeletePermissionPolicyOutput`](crate::output::DeletePermissionPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePermissionPolicyOutput`](crate::output::DeletePermissionPolicyOutput).
         pub fn build(self) -> crate::output::DeletePermissionPolicyOutput {
-            crate::output::DeletePermissionPolicyOutput {}
+            crate::output::DeletePermissionPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePermissionPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeletePermissionPolicyOutput`](crate::output::DeletePermissionPolicyOutput).
@@ -2475,19 +2438,24 @@ impl DeletePermissionPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLoggingConfigurationOutput {}
+pub struct DeleteLoggingConfigurationOutput  {
+}
 /// See [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
 pub mod delete_logging_configuration_output {
-
+    
     /// A builder for [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteLoggingConfigurationOutput {
-            crate::output::DeleteLoggingConfigurationOutput {}
+            crate::output::DeleteLoggingConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLoggingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
@@ -2499,19 +2467,24 @@ impl DeleteLoggingConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIpSetOutput {}
+pub struct DeleteIpSetOutput  {
+}
 /// See [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput).
 pub mod delete_ip_set_output {
-
+    
     /// A builder for [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput).
         pub fn build(self) -> crate::output::DeleteIpSetOutput {
-            crate::output::DeleteIpSetOutput {}
+            crate::output::DeleteIpSetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteIpSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteIpSetOutput`](crate::output::DeleteIpSetOutput).
@@ -2523,20 +2496,20 @@ impl DeleteIpSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFirewallManagerRuleGroupsOutput {
+pub struct DeleteFirewallManagerRuleGroupsOutput  {
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     #[doc(hidden)]
     pub next_web_acl_lock_token: std::option::Option<std::string::String>,
 }
 impl DeleteFirewallManagerRuleGroupsOutput {
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    pub fn next_web_acl_lock_token(&self) -> std::option::Option<&str> {
+    pub fn next_web_acl_lock_token(&self) -> std::option::Option<& str> {
         self.next_web_acl_lock_token.as_deref()
     }
 }
 /// See [`DeleteFirewallManagerRuleGroupsOutput`](crate::output::DeleteFirewallManagerRuleGroupsOutput).
 pub mod delete_firewall_manager_rule_groups_output {
-
+    
     /// A builder for [`DeleteFirewallManagerRuleGroupsOutput`](crate::output::DeleteFirewallManagerRuleGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2549,20 +2522,19 @@ pub mod delete_firewall_manager_rule_groups_output {
             self
         }
         /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-        pub fn set_next_web_acl_lock_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.next_web_acl_lock_token = input;
-            self
+        pub fn set_next_web_acl_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_web_acl_lock_token = input; self
         }
         /// Consumes the builder and constructs a [`DeleteFirewallManagerRuleGroupsOutput`](crate::output::DeleteFirewallManagerRuleGroupsOutput).
         pub fn build(self) -> crate::output::DeleteFirewallManagerRuleGroupsOutput {
             crate::output::DeleteFirewallManagerRuleGroupsOutput {
-                next_web_acl_lock_token: self.next_web_acl_lock_token,
+                next_web_acl_lock_token: self.next_web_acl_lock_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteFirewallManagerRuleGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFirewallManagerRuleGroupsOutput`](crate::output::DeleteFirewallManagerRuleGroupsOutput).
@@ -2574,20 +2546,20 @@ impl DeleteFirewallManagerRuleGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWebAclOutput {
+pub struct CreateWebAclOutput  {
     /// <p>High-level information about a <code>WebACL</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <code>AssociateWebACL</code>.</p>
     #[doc(hidden)]
     pub summary: std::option::Option<crate::model::WebAclSummary>,
 }
 impl CreateWebAclOutput {
     /// <p>High-level information about a <code>WebACL</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <code>AssociateWebACL</code>.</p>
-    pub fn summary(&self) -> std::option::Option<&crate::model::WebAclSummary> {
+    pub fn summary(&self) -> std::option::Option<& crate::model::WebAclSummary> {
         self.summary.as_ref()
     }
 }
 /// See [`CreateWebAclOutput`](crate::output::CreateWebAclOutput).
 pub mod create_web_acl_output {
-
+    
     /// A builder for [`CreateWebAclOutput`](crate::output::CreateWebAclOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2600,20 +2572,19 @@ pub mod create_web_acl_output {
             self
         }
         /// <p>High-level information about a <code>WebACL</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <code>AssociateWebACL</code>.</p>
-        pub fn set_summary(
-            mut self,
-            input: std::option::Option<crate::model::WebAclSummary>,
-        ) -> Self {
-            self.summary = input;
-            self
+        pub fn set_summary(mut self, input: std::option::Option<crate::model::WebAclSummary>) -> Self {
+            self.summary = input; self
         }
         /// Consumes the builder and constructs a [`CreateWebAclOutput`](crate::output::CreateWebAclOutput).
         pub fn build(self) -> crate::output::CreateWebAclOutput {
             crate::output::CreateWebAclOutput {
-                summary: self.summary,
+                summary: self.summary
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateWebAclOutput {
     /// Creates a new builder-style object to manufacture [`CreateWebAclOutput`](crate::output::CreateWebAclOutput).
@@ -2625,20 +2596,20 @@ impl CreateWebAclOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRuleGroupOutput {
+pub struct CreateRuleGroupOutput  {
     /// <p>High-level information about a <code>RuleGroup</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
     #[doc(hidden)]
     pub summary: std::option::Option<crate::model::RuleGroupSummary>,
 }
 impl CreateRuleGroupOutput {
     /// <p>High-level information about a <code>RuleGroup</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
-    pub fn summary(&self) -> std::option::Option<&crate::model::RuleGroupSummary> {
+    pub fn summary(&self) -> std::option::Option<& crate::model::RuleGroupSummary> {
         self.summary.as_ref()
     }
 }
 /// See [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
 pub mod create_rule_group_output {
-
+    
     /// A builder for [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2651,20 +2622,19 @@ pub mod create_rule_group_output {
             self
         }
         /// <p>High-level information about a <code>RuleGroup</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>, and the ARN, that you provide to the <code>RuleGroupReferenceStatement</code> to use the rule group in a <code>Rule</code>.</p>
-        pub fn set_summary(
-            mut self,
-            input: std::option::Option<crate::model::RuleGroupSummary>,
-        ) -> Self {
-            self.summary = input;
-            self
+        pub fn set_summary(mut self, input: std::option::Option<crate::model::RuleGroupSummary>) -> Self {
+            self.summary = input; self
         }
         /// Consumes the builder and constructs a [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
         pub fn build(self) -> crate::output::CreateRuleGroupOutput {
             crate::output::CreateRuleGroupOutput {
-                summary: self.summary,
+                summary: self.summary
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRuleGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateRuleGroupOutput`](crate::output::CreateRuleGroupOutput).
@@ -2676,20 +2646,20 @@ impl CreateRuleGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRegexPatternSetOutput {
+pub struct CreateRegexPatternSetOutput  {
     /// <p>High-level information about a <code>RegexPatternSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <code>RegexPatternSetReferenceStatement</code> to use the pattern set in a <code>Rule</code>.</p>
     #[doc(hidden)]
     pub summary: std::option::Option<crate::model::RegexPatternSetSummary>,
 }
 impl CreateRegexPatternSetOutput {
     /// <p>High-level information about a <code>RegexPatternSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <code>RegexPatternSetReferenceStatement</code> to use the pattern set in a <code>Rule</code>.</p>
-    pub fn summary(&self) -> std::option::Option<&crate::model::RegexPatternSetSummary> {
+    pub fn summary(&self) -> std::option::Option<& crate::model::RegexPatternSetSummary> {
         self.summary.as_ref()
     }
 }
 /// See [`CreateRegexPatternSetOutput`](crate::output::CreateRegexPatternSetOutput).
 pub mod create_regex_pattern_set_output {
-
+    
     /// A builder for [`CreateRegexPatternSetOutput`](crate::output::CreateRegexPatternSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2702,20 +2672,19 @@ pub mod create_regex_pattern_set_output {
             self
         }
         /// <p>High-level information about a <code>RegexPatternSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <code>RegexPatternSetReferenceStatement</code> to use the pattern set in a <code>Rule</code>.</p>
-        pub fn set_summary(
-            mut self,
-            input: std::option::Option<crate::model::RegexPatternSetSummary>,
-        ) -> Self {
-            self.summary = input;
-            self
+        pub fn set_summary(mut self, input: std::option::Option<crate::model::RegexPatternSetSummary>) -> Self {
+            self.summary = input; self
         }
         /// Consumes the builder and constructs a [`CreateRegexPatternSetOutput`](crate::output::CreateRegexPatternSetOutput).
         pub fn build(self) -> crate::output::CreateRegexPatternSetOutput {
             crate::output::CreateRegexPatternSetOutput {
-                summary: self.summary,
+                summary: self.summary
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRegexPatternSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateRegexPatternSetOutput`](crate::output::CreateRegexPatternSetOutput).
@@ -2727,20 +2696,20 @@ impl CreateRegexPatternSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateIpSetOutput {
+pub struct CreateIpSetOutput  {
     /// <p>High-level information about an <code>IPSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <code>IPSetReferenceStatement</code> to use the address set in a <code>Rule</code>.</p>
     #[doc(hidden)]
     pub summary: std::option::Option<crate::model::IpSetSummary>,
 }
 impl CreateIpSetOutput {
     /// <p>High-level information about an <code>IPSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <code>IPSetReferenceStatement</code> to use the address set in a <code>Rule</code>.</p>
-    pub fn summary(&self) -> std::option::Option<&crate::model::IpSetSummary> {
+    pub fn summary(&self) -> std::option::Option<& crate::model::IpSetSummary> {
         self.summary.as_ref()
     }
 }
 /// See [`CreateIpSetOutput`](crate::output::CreateIpSetOutput).
 pub mod create_ip_set_output {
-
+    
     /// A builder for [`CreateIpSetOutput`](crate::output::CreateIpSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2753,20 +2722,19 @@ pub mod create_ip_set_output {
             self
         }
         /// <p>High-level information about an <code>IPSet</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage an <code>IPSet</code>, and the ARN, that you provide to the <code>IPSetReferenceStatement</code> to use the address set in a <code>Rule</code>.</p>
-        pub fn set_summary(
-            mut self,
-            input: std::option::Option<crate::model::IpSetSummary>,
-        ) -> Self {
-            self.summary = input;
-            self
+        pub fn set_summary(mut self, input: std::option::Option<crate::model::IpSetSummary>) -> Self {
+            self.summary = input; self
         }
         /// Consumes the builder and constructs a [`CreateIpSetOutput`](crate::output::CreateIpSetOutput).
         pub fn build(self) -> crate::output::CreateIpSetOutput {
             crate::output::CreateIpSetOutput {
-                summary: self.summary,
+                summary: self.summary
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateIpSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateIpSetOutput`](crate::output::CreateIpSetOutput).
@@ -2778,7 +2746,7 @@ impl CreateIpSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CheckCapacityOutput {
+pub struct CheckCapacityOutput  {
     /// <p>The capacity required by the rules and scope.</p>
     #[doc(hidden)]
     pub capacity: i64,
@@ -2791,7 +2759,7 @@ impl CheckCapacityOutput {
 }
 /// See [`CheckCapacityOutput`](crate::output::CheckCapacityOutput).
 pub mod check_capacity_output {
-
+    
     /// A builder for [`CheckCapacityOutput`](crate::output::CheckCapacityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2805,16 +2773,19 @@ pub mod check_capacity_output {
         }
         /// <p>The capacity required by the rules and scope.</p>
         pub fn set_capacity(mut self, input: std::option::Option<i64>) -> Self {
-            self.capacity = input;
-            self
+            self.capacity = input; self
         }
         /// Consumes the builder and constructs a [`CheckCapacityOutput`](crate::output::CheckCapacityOutput).
         pub fn build(self) -> crate::output::CheckCapacityOutput {
             crate::output::CheckCapacityOutput {
-                capacity: self.capacity.unwrap_or_default(),
+                capacity: self.capacity
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CheckCapacityOutput {
     /// Creates a new builder-style object to manufacture [`CheckCapacityOutput`](crate::output::CheckCapacityOutput).
@@ -2826,19 +2797,24 @@ impl CheckCapacityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateWebAclOutput {}
+pub struct AssociateWebAclOutput  {
+}
 /// See [`AssociateWebAclOutput`](crate::output::AssociateWebAclOutput).
 pub mod associate_web_acl_output {
-
+    
     /// A builder for [`AssociateWebAclOutput`](crate::output::AssociateWebAclOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateWebAclOutput`](crate::output::AssociateWebAclOutput).
         pub fn build(self) -> crate::output::AssociateWebAclOutput {
-            crate::output::AssociateWebAclOutput {}
+            crate::output::AssociateWebAclOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateWebAclOutput {
     /// Creates a new builder-style object to manufacture [`AssociateWebAclOutput`](crate::output::AssociateWebAclOutput).
@@ -2846,3 +2822,4 @@ impl AssociateWebAclOutput {
         crate::output::associate_web_acl_output::Builder::default()
     }
 }
+

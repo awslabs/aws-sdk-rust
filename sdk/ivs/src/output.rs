@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateChannelOutput {
+pub struct UpdateChannelOutput  {
     /// <p>Object specifying a channel.</p>
     #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
 }
 impl UpdateChannelOutput {
     /// <p>Object specifying a channel.</p>
-    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+    pub fn channel(&self) -> std::option::Option<& crate::model::Channel> {
         self.channel.as_ref()
     }
 }
 /// See [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
 pub mod update_channel_output {
-
+    
     /// A builder for [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,16 +29,18 @@ pub mod update_channel_output {
         }
         /// <p>Object specifying a channel.</p>
         pub fn set_channel(mut self, input: std::option::Option<crate::model::Channel>) -> Self {
-            self.channel = input;
-            self
+            self.channel = input; self
         }
         /// Consumes the builder and constructs a [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
         pub fn build(self) -> crate::output::UpdateChannelOutput {
             crate::output::UpdateChannelOutput {
-                channel: self.channel,
+                channel: self.channel
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
@@ -50,19 +52,24 @@ impl UpdateChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -74,19 +81,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -98,19 +110,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopStreamOutput {}
+pub struct StopStreamOutput  {
+}
 /// See [`StopStreamOutput`](crate::output::StopStreamOutput).
 pub mod stop_stream_output {
-
+    
     /// A builder for [`StopStreamOutput`](crate::output::StopStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopStreamOutput`](crate::output::StopStreamOutput).
         pub fn build(self) -> crate::output::StopStreamOutput {
-            crate::output::StopStreamOutput {}
+            crate::output::StopStreamOutput {
+            }
         }
     }
+    
+    
 }
 impl StopStreamOutput {
     /// Creates a new builder-style object to manufacture [`StopStreamOutput`](crate::output::StopStreamOutput).
@@ -122,19 +139,24 @@ impl StopStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutMetadataOutput {}
+pub struct PutMetadataOutput  {
+}
 /// See [`PutMetadataOutput`](crate::output::PutMetadataOutput).
 pub mod put_metadata_output {
-
+    
     /// A builder for [`PutMetadataOutput`](crate::output::PutMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutMetadataOutput`](crate::output::PutMetadataOutput).
         pub fn build(self) -> crate::output::PutMetadataOutput {
-            crate::output::PutMetadataOutput {}
+            crate::output::PutMetadataOutput {
+            }
         }
     }
+    
+    
 }
 impl PutMetadataOutput {
     /// Creates a new builder-style object to manufacture [`PutMetadataOutput`](crate::output::PutMetadataOutput).
@@ -146,30 +168,24 @@ impl PutMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -177,31 +193,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -213,7 +224,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStreamSessionsOutput {
+pub struct ListStreamSessionsOutput  {
     /// <p>List of stream sessions.</p>
     #[doc(hidden)]
     pub stream_sessions: std::option::Option<std::vec::Vec<crate::model::StreamSessionSummary>>,
@@ -223,22 +234,21 @@ pub struct ListStreamSessionsOutput {
 }
 impl ListStreamSessionsOutput {
     /// <p>List of stream sessions.</p>
-    pub fn stream_sessions(&self) -> std::option::Option<&[crate::model::StreamSessionSummary]> {
+    pub fn stream_sessions(&self) -> std::option::Option<& [crate::model::StreamSessionSummary]> {
         self.stream_sessions.as_deref()
     }
     /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListStreamSessionsOutput`](crate::output::ListStreamSessionsOutput).
 pub mod list_stream_sessions_output {
-
+    
     /// A builder for [`ListStreamSessionsOutput`](crate::output::ListStreamSessionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) stream_sessions:
-            std::option::Option<std::vec::Vec<crate::model::StreamSessionSummary>>,
+        pub(crate) stream_sessions: std::option::Option<std::vec::Vec<crate::model::StreamSessionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -249,17 +259,13 @@ pub mod list_stream_sessions_output {
         /// <p>List of stream sessions.</p>
         pub fn stream_sessions(mut self, input: crate::model::StreamSessionSummary) -> Self {
             let mut v = self.stream_sessions.unwrap_or_default();
-            v.push(input);
-            self.stream_sessions = Some(v);
-            self
+                            v.push(input);
+                            self.stream_sessions = Some(v);
+                            self
         }
         /// <p>List of stream sessions.</p>
-        pub fn set_stream_sessions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StreamSessionSummary>>,
-        ) -> Self {
-            self.stream_sessions = input;
-            self
+        pub fn set_stream_sessions(mut self, input: std::option::Option<std::vec::Vec<crate::model::StreamSessionSummary>>) -> Self {
+            self.stream_sessions = input; self
         }
         /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -268,17 +274,20 @@ pub mod list_stream_sessions_output {
         }
         /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListStreamSessionsOutput`](crate::output::ListStreamSessionsOutput).
         pub fn build(self) -> crate::output::ListStreamSessionsOutput {
             crate::output::ListStreamSessionsOutput {
-                stream_sessions: self.stream_sessions,
-                next_token: self.next_token,
+                stream_sessions: self.stream_sessions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListStreamSessionsOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamSessionsOutput`](crate::output::ListStreamSessionsOutput).
@@ -290,7 +299,7 @@ impl ListStreamSessionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStreamsOutput {
+pub struct ListStreamsOutput  {
     /// <p>List of streams.</p>
     #[doc(hidden)]
     pub streams: std::option::Option<std::vec::Vec<crate::model::StreamSummary>>,
@@ -300,17 +309,17 @@ pub struct ListStreamsOutput {
 }
 impl ListStreamsOutput {
     /// <p>List of streams.</p>
-    pub fn streams(&self) -> std::option::Option<&[crate::model::StreamSummary]> {
+    pub fn streams(&self) -> std::option::Option<& [crate::model::StreamSummary]> {
         self.streams.as_deref()
     }
     /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListStreamsOutput`](crate::output::ListStreamsOutput).
 pub mod list_streams_output {
-
+    
     /// A builder for [`ListStreamsOutput`](crate::output::ListStreamsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -325,17 +334,13 @@ pub mod list_streams_output {
         /// <p>List of streams.</p>
         pub fn streams(mut self, input: crate::model::StreamSummary) -> Self {
             let mut v = self.streams.unwrap_or_default();
-            v.push(input);
-            self.streams = Some(v);
-            self
+                            v.push(input);
+                            self.streams = Some(v);
+                            self
         }
         /// <p>List of streams.</p>
-        pub fn set_streams(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StreamSummary>>,
-        ) -> Self {
-            self.streams = input;
-            self
+        pub fn set_streams(mut self, input: std::option::Option<std::vec::Vec<crate::model::StreamSummary>>) -> Self {
+            self.streams = input; self
         }
         /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -344,17 +349,20 @@ pub mod list_streams_output {
         }
         /// <p>If there are more streams than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListStreamsOutput`](crate::output::ListStreamsOutput).
         pub fn build(self) -> crate::output::ListStreamsOutput {
             crate::output::ListStreamsOutput {
-                streams: self.streams,
-                next_token: self.next_token,
+                streams: self.streams
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListStreamsOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamsOutput`](crate::output::ListStreamsOutput).
@@ -366,7 +374,7 @@ impl ListStreamsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStreamKeysOutput {
+pub struct ListStreamKeysOutput  {
     /// <p>List of stream keys.</p>
     #[doc(hidden)]
     pub stream_keys: std::option::Option<std::vec::Vec<crate::model::StreamKeySummary>>,
@@ -376,17 +384,17 @@ pub struct ListStreamKeysOutput {
 }
 impl ListStreamKeysOutput {
     /// <p>List of stream keys.</p>
-    pub fn stream_keys(&self) -> std::option::Option<&[crate::model::StreamKeySummary]> {
+    pub fn stream_keys(&self) -> std::option::Option<& [crate::model::StreamKeySummary]> {
         self.stream_keys.as_deref()
     }
     /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListStreamKeysOutput`](crate::output::ListStreamKeysOutput).
 pub mod list_stream_keys_output {
-
+    
     /// A builder for [`ListStreamKeysOutput`](crate::output::ListStreamKeysOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -401,17 +409,13 @@ pub mod list_stream_keys_output {
         /// <p>List of stream keys.</p>
         pub fn stream_keys(mut self, input: crate::model::StreamKeySummary) -> Self {
             let mut v = self.stream_keys.unwrap_or_default();
-            v.push(input);
-            self.stream_keys = Some(v);
-            self
+                            v.push(input);
+                            self.stream_keys = Some(v);
+                            self
         }
         /// <p>List of stream keys.</p>
-        pub fn set_stream_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StreamKeySummary>>,
-        ) -> Self {
-            self.stream_keys = input;
-            self
+        pub fn set_stream_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::StreamKeySummary>>) -> Self {
+            self.stream_keys = input; self
         }
         /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -420,17 +424,20 @@ pub mod list_stream_keys_output {
         }
         /// <p>If there are more stream keys than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListStreamKeysOutput`](crate::output::ListStreamKeysOutput).
         pub fn build(self) -> crate::output::ListStreamKeysOutput {
             crate::output::ListStreamKeysOutput {
-                stream_keys: self.stream_keys,
-                next_token: self.next_token,
+                stream_keys: self.stream_keys
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListStreamKeysOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamKeysOutput`](crate::output::ListStreamKeysOutput).
@@ -442,35 +449,31 @@ impl ListStreamKeysOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRecordingConfigurationsOutput {
+pub struct ListRecordingConfigurationsOutput  {
     /// <p>List of the matching recording configurations.</p>
     #[doc(hidden)]
-    pub recording_configurations:
-        std::option::Option<std::vec::Vec<crate::model::RecordingConfigurationSummary>>,
+    pub recording_configurations: std::option::Option<std::vec::Vec<crate::model::RecordingConfigurationSummary>>,
     /// <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRecordingConfigurationsOutput {
     /// <p>List of the matching recording configurations.</p>
-    pub fn recording_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::RecordingConfigurationSummary]> {
+    pub fn recording_configurations(&self) -> std::option::Option<& [crate::model::RecordingConfigurationSummary]> {
         self.recording_configurations.as_deref()
     }
     /// <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListRecordingConfigurationsOutput`](crate::output::ListRecordingConfigurationsOutput).
 pub mod list_recording_configurations_output {
-
+    
     /// A builder for [`ListRecordingConfigurationsOutput`](crate::output::ListRecordingConfigurationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) recording_configurations:
-            std::option::Option<std::vec::Vec<crate::model::RecordingConfigurationSummary>>,
+        pub(crate) recording_configurations: std::option::Option<std::vec::Vec<crate::model::RecordingConfigurationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -479,22 +482,15 @@ pub mod list_recording_configurations_output {
         /// To override the contents of this collection use [`set_recording_configurations`](Self::set_recording_configurations).
         ///
         /// <p>List of the matching recording configurations.</p>
-        pub fn recording_configurations(
-            mut self,
-            input: crate::model::RecordingConfigurationSummary,
-        ) -> Self {
+        pub fn recording_configurations(mut self, input: crate::model::RecordingConfigurationSummary) -> Self {
             let mut v = self.recording_configurations.unwrap_or_default();
-            v.push(input);
-            self.recording_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.recording_configurations = Some(v);
+                            self
         }
         /// <p>List of the matching recording configurations.</p>
-        pub fn set_recording_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RecordingConfigurationSummary>>,
-        ) -> Self {
-            self.recording_configurations = input;
-            self
+        pub fn set_recording_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecordingConfigurationSummary>>) -> Self {
+            self.recording_configurations = input; self
         }
         /// <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -503,17 +499,20 @@ pub mod list_recording_configurations_output {
         }
         /// <p>If there are more recording configurations than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRecordingConfigurationsOutput`](crate::output::ListRecordingConfigurationsOutput).
         pub fn build(self) -> crate::output::ListRecordingConfigurationsOutput {
             crate::output::ListRecordingConfigurationsOutput {
-                recording_configurations: self.recording_configurations,
-                next_token: self.next_token,
+                recording_configurations: self.recording_configurations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRecordingConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListRecordingConfigurationsOutput`](crate::output::ListRecordingConfigurationsOutput).
@@ -525,7 +524,7 @@ impl ListRecordingConfigurationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPlaybackKeyPairsOutput {
+pub struct ListPlaybackKeyPairsOutput  {
     /// <p>List of key pairs.</p>
     #[doc(hidden)]
     pub key_pairs: std::option::Option<std::vec::Vec<crate::model::PlaybackKeyPairSummary>>,
@@ -535,22 +534,21 @@ pub struct ListPlaybackKeyPairsOutput {
 }
 impl ListPlaybackKeyPairsOutput {
     /// <p>List of key pairs.</p>
-    pub fn key_pairs(&self) -> std::option::Option<&[crate::model::PlaybackKeyPairSummary]> {
+    pub fn key_pairs(&self) -> std::option::Option<& [crate::model::PlaybackKeyPairSummary]> {
         self.key_pairs.as_deref()
     }
     /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPlaybackKeyPairsOutput`](crate::output::ListPlaybackKeyPairsOutput).
 pub mod list_playback_key_pairs_output {
-
+    
     /// A builder for [`ListPlaybackKeyPairsOutput`](crate::output::ListPlaybackKeyPairsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) key_pairs:
-            std::option::Option<std::vec::Vec<crate::model::PlaybackKeyPairSummary>>,
+        pub(crate) key_pairs: std::option::Option<std::vec::Vec<crate::model::PlaybackKeyPairSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -561,17 +559,13 @@ pub mod list_playback_key_pairs_output {
         /// <p>List of key pairs.</p>
         pub fn key_pairs(mut self, input: crate::model::PlaybackKeyPairSummary) -> Self {
             let mut v = self.key_pairs.unwrap_or_default();
-            v.push(input);
-            self.key_pairs = Some(v);
-            self
+                            v.push(input);
+                            self.key_pairs = Some(v);
+                            self
         }
         /// <p>List of key pairs.</p>
-        pub fn set_key_pairs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PlaybackKeyPairSummary>>,
-        ) -> Self {
-            self.key_pairs = input;
-            self
+        pub fn set_key_pairs(mut self, input: std::option::Option<std::vec::Vec<crate::model::PlaybackKeyPairSummary>>) -> Self {
+            self.key_pairs = input; self
         }
         /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -580,17 +574,20 @@ pub mod list_playback_key_pairs_output {
         }
         /// <p>If there are more key pairs than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPlaybackKeyPairsOutput`](crate::output::ListPlaybackKeyPairsOutput).
         pub fn build(self) -> crate::output::ListPlaybackKeyPairsOutput {
             crate::output::ListPlaybackKeyPairsOutput {
-                key_pairs: self.key_pairs,
-                next_token: self.next_token,
+                key_pairs: self.key_pairs
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPlaybackKeyPairsOutput {
     /// Creates a new builder-style object to manufacture [`ListPlaybackKeyPairsOutput`](crate::output::ListPlaybackKeyPairsOutput).
@@ -602,7 +599,7 @@ impl ListPlaybackKeyPairsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListChannelsOutput {
+pub struct ListChannelsOutput  {
     /// <p>List of the matching channels.</p>
     #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
@@ -612,17 +609,17 @@ pub struct ListChannelsOutput {
 }
 impl ListChannelsOutput {
     /// <p>List of the matching channels.</p>
-    pub fn channels(&self) -> std::option::Option<&[crate::model::ChannelSummary]> {
+    pub fn channels(&self) -> std::option::Option<& [crate::model::ChannelSummary]> {
         self.channels.as_deref()
     }
     /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListChannelsOutput`](crate::output::ListChannelsOutput).
 pub mod list_channels_output {
-
+    
     /// A builder for [`ListChannelsOutput`](crate::output::ListChannelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -637,17 +634,13 @@ pub mod list_channels_output {
         /// <p>List of the matching channels.</p>
         pub fn channels(mut self, input: crate::model::ChannelSummary) -> Self {
             let mut v = self.channels.unwrap_or_default();
-            v.push(input);
-            self.channels = Some(v);
-            self
+                            v.push(input);
+                            self.channels = Some(v);
+                            self
         }
         /// <p>List of the matching channels.</p>
-        pub fn set_channels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
-        ) -> Self {
-            self.channels = input;
-            self
+        pub fn set_channels(mut self, input: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>) -> Self {
+            self.channels = input; self
         }
         /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -656,17 +649,20 @@ pub mod list_channels_output {
         }
         /// <p>If there are more channels than <code>maxResults</code>, use <code>nextToken</code> in the request to get the next set.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListChannelsOutput`](crate::output::ListChannelsOutput).
         pub fn build(self) -> crate::output::ListChannelsOutput {
             crate::output::ListChannelsOutput {
-                channels: self.channels,
-                next_token: self.next_token,
+                channels: self.channels
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListChannelsOutput {
     /// Creates a new builder-style object to manufacture [`ListChannelsOutput`](crate::output::ListChannelsOutput).
@@ -678,20 +674,20 @@ impl ListChannelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportPlaybackKeyPairOutput {
+pub struct ImportPlaybackKeyPairOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub key_pair: std::option::Option<crate::model::PlaybackKeyPair>,
 }
 impl ImportPlaybackKeyPairOutput {
     /// <p></p>
-    pub fn key_pair(&self) -> std::option::Option<&crate::model::PlaybackKeyPair> {
+    pub fn key_pair(&self) -> std::option::Option<& crate::model::PlaybackKeyPair> {
         self.key_pair.as_ref()
     }
 }
 /// See [`ImportPlaybackKeyPairOutput`](crate::output::ImportPlaybackKeyPairOutput).
 pub mod import_playback_key_pair_output {
-
+    
     /// A builder for [`ImportPlaybackKeyPairOutput`](crate::output::ImportPlaybackKeyPairOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -704,20 +700,19 @@ pub mod import_playback_key_pair_output {
             self
         }
         /// <p></p>
-        pub fn set_key_pair(
-            mut self,
-            input: std::option::Option<crate::model::PlaybackKeyPair>,
-        ) -> Self {
-            self.key_pair = input;
-            self
+        pub fn set_key_pair(mut self, input: std::option::Option<crate::model::PlaybackKeyPair>) -> Self {
+            self.key_pair = input; self
         }
         /// Consumes the builder and constructs a [`ImportPlaybackKeyPairOutput`](crate::output::ImportPlaybackKeyPairOutput).
         pub fn build(self) -> crate::output::ImportPlaybackKeyPairOutput {
             crate::output::ImportPlaybackKeyPairOutput {
-                key_pair: self.key_pair,
+                key_pair: self.key_pair
+                ,
             }
         }
     }
+    
+    
 }
 impl ImportPlaybackKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`ImportPlaybackKeyPairOutput`](crate::output::ImportPlaybackKeyPairOutput).
@@ -729,20 +724,20 @@ impl ImportPlaybackKeyPairOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStreamSessionOutput {
+pub struct GetStreamSessionOutput  {
     /// <p>List of stream details.</p>
     #[doc(hidden)]
     pub stream_session: std::option::Option<crate::model::StreamSession>,
 }
 impl GetStreamSessionOutput {
     /// <p>List of stream details.</p>
-    pub fn stream_session(&self) -> std::option::Option<&crate::model::StreamSession> {
+    pub fn stream_session(&self) -> std::option::Option<& crate::model::StreamSession> {
         self.stream_session.as_ref()
     }
 }
 /// See [`GetStreamSessionOutput`](crate::output::GetStreamSessionOutput).
 pub mod get_stream_session_output {
-
+    
     /// A builder for [`GetStreamSessionOutput`](crate::output::GetStreamSessionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -755,20 +750,19 @@ pub mod get_stream_session_output {
             self
         }
         /// <p>List of stream details.</p>
-        pub fn set_stream_session(
-            mut self,
-            input: std::option::Option<crate::model::StreamSession>,
-        ) -> Self {
-            self.stream_session = input;
-            self
+        pub fn set_stream_session(mut self, input: std::option::Option<crate::model::StreamSession>) -> Self {
+            self.stream_session = input; self
         }
         /// Consumes the builder and constructs a [`GetStreamSessionOutput`](crate::output::GetStreamSessionOutput).
         pub fn build(self) -> crate::output::GetStreamSessionOutput {
             crate::output::GetStreamSessionOutput {
-                stream_session: self.stream_session,
+                stream_session: self.stream_session
+                ,
             }
         }
     }
+    
+    
 }
 impl GetStreamSessionOutput {
     /// Creates a new builder-style object to manufacture [`GetStreamSessionOutput`](crate::output::GetStreamSessionOutput).
@@ -780,20 +774,20 @@ impl GetStreamSessionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStreamKeyOutput {
+pub struct GetStreamKeyOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub stream_key: std::option::Option<crate::model::StreamKey>,
 }
 impl GetStreamKeyOutput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn stream_key(&self) -> std::option::Option<&crate::model::StreamKey> {
+    pub fn stream_key(&self) -> std::option::Option<& crate::model::StreamKey> {
         self.stream_key.as_ref()
     }
 }
 /// See [`GetStreamKeyOutput`](crate::output::GetStreamKeyOutput).
 pub mod get_stream_key_output {
-
+    
     /// A builder for [`GetStreamKeyOutput`](crate::output::GetStreamKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -806,20 +800,19 @@ pub mod get_stream_key_output {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_stream_key(
-            mut self,
-            input: std::option::Option<crate::model::StreamKey>,
-        ) -> Self {
-            self.stream_key = input;
-            self
+        pub fn set_stream_key(mut self, input: std::option::Option<crate::model::StreamKey>) -> Self {
+            self.stream_key = input; self
         }
         /// Consumes the builder and constructs a [`GetStreamKeyOutput`](crate::output::GetStreamKeyOutput).
         pub fn build(self) -> crate::output::GetStreamKeyOutput {
             crate::output::GetStreamKeyOutput {
-                stream_key: self.stream_key,
+                stream_key: self.stream_key
+                ,
             }
         }
     }
+    
+    
 }
 impl GetStreamKeyOutput {
     /// Creates a new builder-style object to manufacture [`GetStreamKeyOutput`](crate::output::GetStreamKeyOutput).
@@ -831,20 +824,20 @@ impl GetStreamKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStreamOutput {
+pub struct GetStreamOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub stream: std::option::Option<crate::model::Stream>,
 }
 impl GetStreamOutput {
     /// <p></p>
-    pub fn stream(&self) -> std::option::Option<&crate::model::Stream> {
+    pub fn stream(&self) -> std::option::Option<& crate::model::Stream> {
         self.stream.as_ref()
     }
 }
 /// See [`GetStreamOutput`](crate::output::GetStreamOutput).
 pub mod get_stream_output {
-
+    
     /// A builder for [`GetStreamOutput`](crate::output::GetStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -858,16 +851,18 @@ pub mod get_stream_output {
         }
         /// <p></p>
         pub fn set_stream(mut self, input: std::option::Option<crate::model::Stream>) -> Self {
-            self.stream = input;
-            self
+            self.stream = input; self
         }
         /// Consumes the builder and constructs a [`GetStreamOutput`](crate::output::GetStreamOutput).
         pub fn build(self) -> crate::output::GetStreamOutput {
             crate::output::GetStreamOutput {
-                stream: self.stream,
+                stream: self.stream
+                ,
             }
         }
     }
+    
+    
 }
 impl GetStreamOutput {
     /// Creates a new builder-style object to manufacture [`GetStreamOutput`](crate::output::GetStreamOutput).
@@ -879,52 +874,45 @@ impl GetStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRecordingConfigurationOutput {
+pub struct GetRecordingConfigurationOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub recording_configuration: std::option::Option<crate::model::RecordingConfiguration>,
 }
 impl GetRecordingConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn recording_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::RecordingConfiguration> {
+    pub fn recording_configuration(&self) -> std::option::Option<& crate::model::RecordingConfiguration> {
         self.recording_configuration.as_ref()
     }
 }
 /// See [`GetRecordingConfigurationOutput`](crate::output::GetRecordingConfigurationOutput).
 pub mod get_recording_configuration_output {
-
+    
     /// A builder for [`GetRecordingConfigurationOutput`](crate::output::GetRecordingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) recording_configuration:
-            std::option::Option<crate::model::RecordingConfiguration>,
+        pub(crate) recording_configuration: std::option::Option<crate::model::RecordingConfiguration>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
-        pub fn recording_configuration(
-            mut self,
-            input: crate::model::RecordingConfiguration,
-        ) -> Self {
+        pub fn recording_configuration(mut self, input: crate::model::RecordingConfiguration) -> Self {
             self.recording_configuration = Some(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_recording_configuration(
-            mut self,
-            input: std::option::Option<crate::model::RecordingConfiguration>,
-        ) -> Self {
-            self.recording_configuration = input;
-            self
+        pub fn set_recording_configuration(mut self, input: std::option::Option<crate::model::RecordingConfiguration>) -> Self {
+            self.recording_configuration = input; self
         }
         /// Consumes the builder and constructs a [`GetRecordingConfigurationOutput`](crate::output::GetRecordingConfigurationOutput).
         pub fn build(self) -> crate::output::GetRecordingConfigurationOutput {
             crate::output::GetRecordingConfigurationOutput {
-                recording_configuration: self.recording_configuration,
+                recording_configuration: self.recording_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRecordingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetRecordingConfigurationOutput`](crate::output::GetRecordingConfigurationOutput).
@@ -936,20 +924,20 @@ impl GetRecordingConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPlaybackKeyPairOutput {
+pub struct GetPlaybackKeyPairOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub key_pair: std::option::Option<crate::model::PlaybackKeyPair>,
 }
 impl GetPlaybackKeyPairOutput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn key_pair(&self) -> std::option::Option<&crate::model::PlaybackKeyPair> {
+    pub fn key_pair(&self) -> std::option::Option<& crate::model::PlaybackKeyPair> {
         self.key_pair.as_ref()
     }
 }
 /// See [`GetPlaybackKeyPairOutput`](crate::output::GetPlaybackKeyPairOutput).
 pub mod get_playback_key_pair_output {
-
+    
     /// A builder for [`GetPlaybackKeyPairOutput`](crate::output::GetPlaybackKeyPairOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -962,20 +950,19 @@ pub mod get_playback_key_pair_output {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_key_pair(
-            mut self,
-            input: std::option::Option<crate::model::PlaybackKeyPair>,
-        ) -> Self {
-            self.key_pair = input;
-            self
+        pub fn set_key_pair(mut self, input: std::option::Option<crate::model::PlaybackKeyPair>) -> Self {
+            self.key_pair = input; self
         }
         /// Consumes the builder and constructs a [`GetPlaybackKeyPairOutput`](crate::output::GetPlaybackKeyPairOutput).
         pub fn build(self) -> crate::output::GetPlaybackKeyPairOutput {
             crate::output::GetPlaybackKeyPairOutput {
-                key_pair: self.key_pair,
+                key_pair: self.key_pair
+                ,
             }
         }
     }
+    
+    
 }
 impl GetPlaybackKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`GetPlaybackKeyPairOutput`](crate::output::GetPlaybackKeyPairOutput).
@@ -987,20 +974,20 @@ impl GetPlaybackKeyPairOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetChannelOutput {
+pub struct GetChannelOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
 }
 impl GetChannelOutput {
     /// <p></p>
-    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+    pub fn channel(&self) -> std::option::Option<& crate::model::Channel> {
         self.channel.as_ref()
     }
 }
 /// See [`GetChannelOutput`](crate::output::GetChannelOutput).
 pub mod get_channel_output {
-
+    
     /// A builder for [`GetChannelOutput`](crate::output::GetChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1014,16 +1001,18 @@ pub mod get_channel_output {
         }
         /// <p></p>
         pub fn set_channel(mut self, input: std::option::Option<crate::model::Channel>) -> Self {
-            self.channel = input;
-            self
+            self.channel = input; self
         }
         /// Consumes the builder and constructs a [`GetChannelOutput`](crate::output::GetChannelOutput).
         pub fn build(self) -> crate::output::GetChannelOutput {
             crate::output::GetChannelOutput {
-                channel: self.channel,
+                channel: self.channel
+                ,
             }
         }
     }
+    
+    
 }
 impl GetChannelOutput {
     /// Creates a new builder-style object to manufacture [`GetChannelOutput`](crate::output::GetChannelOutput).
@@ -1035,19 +1024,24 @@ impl GetChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStreamKeyOutput {}
+pub struct DeleteStreamKeyOutput  {
+}
 /// See [`DeleteStreamKeyOutput`](crate::output::DeleteStreamKeyOutput).
 pub mod delete_stream_key_output {
-
+    
     /// A builder for [`DeleteStreamKeyOutput`](crate::output::DeleteStreamKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteStreamKeyOutput`](crate::output::DeleteStreamKeyOutput).
         pub fn build(self) -> crate::output::DeleteStreamKeyOutput {
-            crate::output::DeleteStreamKeyOutput {}
+            crate::output::DeleteStreamKeyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteStreamKeyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteStreamKeyOutput`](crate::output::DeleteStreamKeyOutput).
@@ -1059,19 +1053,24 @@ impl DeleteStreamKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRecordingConfigurationOutput {}
+pub struct DeleteRecordingConfigurationOutput  {
+}
 /// See [`DeleteRecordingConfigurationOutput`](crate::output::DeleteRecordingConfigurationOutput).
 pub mod delete_recording_configuration_output {
-
+    
     /// A builder for [`DeleteRecordingConfigurationOutput`](crate::output::DeleteRecordingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRecordingConfigurationOutput`](crate::output::DeleteRecordingConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteRecordingConfigurationOutput {
-            crate::output::DeleteRecordingConfigurationOutput {}
+            crate::output::DeleteRecordingConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteRecordingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRecordingConfigurationOutput`](crate::output::DeleteRecordingConfigurationOutput).
@@ -1083,19 +1082,24 @@ impl DeleteRecordingConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePlaybackKeyPairOutput {}
+pub struct DeletePlaybackKeyPairOutput  {
+}
 /// See [`DeletePlaybackKeyPairOutput`](crate::output::DeletePlaybackKeyPairOutput).
 pub mod delete_playback_key_pair_output {
-
+    
     /// A builder for [`DeletePlaybackKeyPairOutput`](crate::output::DeletePlaybackKeyPairOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePlaybackKeyPairOutput`](crate::output::DeletePlaybackKeyPairOutput).
         pub fn build(self) -> crate::output::DeletePlaybackKeyPairOutput {
-            crate::output::DeletePlaybackKeyPairOutput {}
+            crate::output::DeletePlaybackKeyPairOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePlaybackKeyPairOutput {
     /// Creates a new builder-style object to manufacture [`DeletePlaybackKeyPairOutput`](crate::output::DeletePlaybackKeyPairOutput).
@@ -1107,19 +1111,24 @@ impl DeletePlaybackKeyPairOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelOutput {}
+pub struct DeleteChannelOutput  {
+}
 /// See [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
 pub mod delete_channel_output {
-
+    
     /// A builder for [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
         pub fn build(self) -> crate::output::DeleteChannelOutput {
-            crate::output::DeleteChannelOutput {}
+            crate::output::DeleteChannelOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
@@ -1131,20 +1140,20 @@ impl DeleteChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateStreamKeyOutput {
+pub struct CreateStreamKeyOutput  {
     /// <p>Stream key used to authenticate an RTMPS stream for ingestion.</p>
     #[doc(hidden)]
     pub stream_key: std::option::Option<crate::model::StreamKey>,
 }
 impl CreateStreamKeyOutput {
     /// <p>Stream key used to authenticate an RTMPS stream for ingestion.</p>
-    pub fn stream_key(&self) -> std::option::Option<&crate::model::StreamKey> {
+    pub fn stream_key(&self) -> std::option::Option<& crate::model::StreamKey> {
         self.stream_key.as_ref()
     }
 }
 /// See [`CreateStreamKeyOutput`](crate::output::CreateStreamKeyOutput).
 pub mod create_stream_key_output {
-
+    
     /// A builder for [`CreateStreamKeyOutput`](crate::output::CreateStreamKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1157,20 +1166,19 @@ pub mod create_stream_key_output {
             self
         }
         /// <p>Stream key used to authenticate an RTMPS stream for ingestion.</p>
-        pub fn set_stream_key(
-            mut self,
-            input: std::option::Option<crate::model::StreamKey>,
-        ) -> Self {
-            self.stream_key = input;
-            self
+        pub fn set_stream_key(mut self, input: std::option::Option<crate::model::StreamKey>) -> Self {
+            self.stream_key = input; self
         }
         /// Consumes the builder and constructs a [`CreateStreamKeyOutput`](crate::output::CreateStreamKeyOutput).
         pub fn build(self) -> crate::output::CreateStreamKeyOutput {
             crate::output::CreateStreamKeyOutput {
-                stream_key: self.stream_key,
+                stream_key: self.stream_key
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateStreamKeyOutput {
     /// Creates a new builder-style object to manufacture [`CreateStreamKeyOutput`](crate::output::CreateStreamKeyOutput).
@@ -1182,52 +1190,45 @@ impl CreateStreamKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRecordingConfigurationOutput {
+pub struct CreateRecordingConfigurationOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub recording_configuration: std::option::Option<crate::model::RecordingConfiguration>,
 }
 impl CreateRecordingConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn recording_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::RecordingConfiguration> {
+    pub fn recording_configuration(&self) -> std::option::Option<& crate::model::RecordingConfiguration> {
         self.recording_configuration.as_ref()
     }
 }
 /// See [`CreateRecordingConfigurationOutput`](crate::output::CreateRecordingConfigurationOutput).
 pub mod create_recording_configuration_output {
-
+    
     /// A builder for [`CreateRecordingConfigurationOutput`](crate::output::CreateRecordingConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) recording_configuration:
-            std::option::Option<crate::model::RecordingConfiguration>,
+        pub(crate) recording_configuration: std::option::Option<crate::model::RecordingConfiguration>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
-        pub fn recording_configuration(
-            mut self,
-            input: crate::model::RecordingConfiguration,
-        ) -> Self {
+        pub fn recording_configuration(mut self, input: crate::model::RecordingConfiguration) -> Self {
             self.recording_configuration = Some(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_recording_configuration(
-            mut self,
-            input: std::option::Option<crate::model::RecordingConfiguration>,
-        ) -> Self {
-            self.recording_configuration = input;
-            self
+        pub fn set_recording_configuration(mut self, input: std::option::Option<crate::model::RecordingConfiguration>) -> Self {
+            self.recording_configuration = input; self
         }
         /// Consumes the builder and constructs a [`CreateRecordingConfigurationOutput`](crate::output::CreateRecordingConfigurationOutput).
         pub fn build(self) -> crate::output::CreateRecordingConfigurationOutput {
             crate::output::CreateRecordingConfigurationOutput {
-                recording_configuration: self.recording_configuration,
+                recording_configuration: self.recording_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRecordingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateRecordingConfigurationOutput`](crate::output::CreateRecordingConfigurationOutput).
@@ -1239,7 +1240,7 @@ impl CreateRecordingConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateChannelOutput {
+pub struct CreateChannelOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
@@ -1249,17 +1250,17 @@ pub struct CreateChannelOutput {
 }
 impl CreateChannelOutput {
     /// <p></p>
-    pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
+    pub fn channel(&self) -> std::option::Option<& crate::model::Channel> {
         self.channel.as_ref()
     }
     /// <p></p>
-    pub fn stream_key(&self) -> std::option::Option<&crate::model::StreamKey> {
+    pub fn stream_key(&self) -> std::option::Option<& crate::model::StreamKey> {
         self.stream_key.as_ref()
     }
 }
 /// See [`CreateChannelOutput`](crate::output::CreateChannelOutput).
 pub mod create_channel_output {
-
+    
     /// A builder for [`CreateChannelOutput`](crate::output::CreateChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1274,8 +1275,7 @@ pub mod create_channel_output {
         }
         /// <p></p>
         pub fn set_channel(mut self, input: std::option::Option<crate::model::Channel>) -> Self {
-            self.channel = input;
-            self
+            self.channel = input; self
         }
         /// <p></p>
         pub fn stream_key(mut self, input: crate::model::StreamKey) -> Self {
@@ -1283,21 +1283,21 @@ pub mod create_channel_output {
             self
         }
         /// <p></p>
-        pub fn set_stream_key(
-            mut self,
-            input: std::option::Option<crate::model::StreamKey>,
-        ) -> Self {
-            self.stream_key = input;
-            self
+        pub fn set_stream_key(mut self, input: std::option::Option<crate::model::StreamKey>) -> Self {
+            self.stream_key = input; self
         }
         /// Consumes the builder and constructs a [`CreateChannelOutput`](crate::output::CreateChannelOutput).
         pub fn build(self) -> crate::output::CreateChannelOutput {
             crate::output::CreateChannelOutput {
-                channel: self.channel,
-                stream_key: self.stream_key,
+                channel: self.channel
+                ,
+                stream_key: self.stream_key
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateChannelOutput {
     /// Creates a new builder-style object to manufacture [`CreateChannelOutput`](crate::output::CreateChannelOutput).
@@ -1309,7 +1309,7 @@ impl CreateChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetStreamKeyOutput {
+pub struct BatchGetStreamKeyOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub stream_keys: std::option::Option<std::vec::Vec<crate::model::StreamKey>>,
@@ -1319,17 +1319,17 @@ pub struct BatchGetStreamKeyOutput {
 }
 impl BatchGetStreamKeyOutput {
     /// <p></p>
-    pub fn stream_keys(&self) -> std::option::Option<&[crate::model::StreamKey]> {
+    pub fn stream_keys(&self) -> std::option::Option<& [crate::model::StreamKey]> {
         self.stream_keys.as_deref()
     }
     /// <p></p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::BatchError]> {
         self.errors.as_deref()
     }
 }
 /// See [`BatchGetStreamKeyOutput`](crate::output::BatchGetStreamKeyOutput).
 pub mod batch_get_stream_key_output {
-
+    
     /// A builder for [`BatchGetStreamKeyOutput`](crate::output::BatchGetStreamKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1344,17 +1344,13 @@ pub mod batch_get_stream_key_output {
         /// <p></p>
         pub fn stream_keys(mut self, input: crate::model::StreamKey) -> Self {
             let mut v = self.stream_keys.unwrap_or_default();
-            v.push(input);
-            self.stream_keys = Some(v);
-            self
+                            v.push(input);
+                            self.stream_keys = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_stream_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StreamKey>>,
-        ) -> Self {
-            self.stream_keys = input;
-            self
+        pub fn set_stream_keys(mut self, input: std::option::Option<std::vec::Vec<crate::model::StreamKey>>) -> Self {
+            self.stream_keys = input; self
         }
         /// Appends an item to `errors`.
         ///
@@ -1363,26 +1359,26 @@ pub mod batch_get_stream_key_output {
         /// <p></p>
         pub fn errors(mut self, input: crate::model::BatchError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchError>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetStreamKeyOutput`](crate::output::BatchGetStreamKeyOutput).
         pub fn build(self) -> crate::output::BatchGetStreamKeyOutput {
             crate::output::BatchGetStreamKeyOutput {
-                stream_keys: self.stream_keys,
-                errors: self.errors,
+                stream_keys: self.stream_keys
+                ,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetStreamKeyOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetStreamKeyOutput`](crate::output::BatchGetStreamKeyOutput).
@@ -1394,7 +1390,7 @@ impl BatchGetStreamKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetChannelOutput {
+pub struct BatchGetChannelOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
@@ -1404,17 +1400,17 @@ pub struct BatchGetChannelOutput {
 }
 impl BatchGetChannelOutput {
     /// <p></p>
-    pub fn channels(&self) -> std::option::Option<&[crate::model::Channel]> {
+    pub fn channels(&self) -> std::option::Option<& [crate::model::Channel]> {
         self.channels.as_deref()
     }
     /// <p>Each error object is related to a specific ARN in the request.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::BatchError]> {
         self.errors.as_deref()
     }
 }
 /// See [`BatchGetChannelOutput`](crate::output::BatchGetChannelOutput).
 pub mod batch_get_channel_output {
-
+    
     /// A builder for [`BatchGetChannelOutput`](crate::output::BatchGetChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1429,17 +1425,13 @@ pub mod batch_get_channel_output {
         /// <p></p>
         pub fn channels(mut self, input: crate::model::Channel) -> Self {
             let mut v = self.channels.unwrap_or_default();
-            v.push(input);
-            self.channels = Some(v);
-            self
+                            v.push(input);
+                            self.channels = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_channels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Channel>>,
-        ) -> Self {
-            self.channels = input;
-            self
+        pub fn set_channels(mut self, input: std::option::Option<std::vec::Vec<crate::model::Channel>>) -> Self {
+            self.channels = input; self
         }
         /// Appends an item to `errors`.
         ///
@@ -1448,26 +1440,26 @@ pub mod batch_get_channel_output {
         /// <p>Each error object is related to a specific ARN in the request.</p>
         pub fn errors(mut self, input: crate::model::BatchError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>Each error object is related to a specific ARN in the request.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchError>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetChannelOutput`](crate::output::BatchGetChannelOutput).
         pub fn build(self) -> crate::output::BatchGetChannelOutput {
             crate::output::BatchGetChannelOutput {
-                channels: self.channels,
-                errors: self.errors,
+                channels: self.channels
+                ,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetChannelOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetChannelOutput`](crate::output::BatchGetChannelOutput).
@@ -1475,3 +1467,4 @@ impl BatchGetChannelOutput {
         crate::output::batch_get_channel_output::Builder::default()
     }
 }
+

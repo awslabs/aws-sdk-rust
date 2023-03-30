@@ -3,7 +3,7 @@
 /// <p>Information for one billing record.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BillingRecord {
+pub struct BillingRecord  {
     /// <p>The name of the domain that the billing record applies to. If the domain name contains characters other than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -16,29 +16,29 @@ pub struct BillingRecord {
     /// <p>The date that the operation was billed, in Unix format.</p>
     #[doc(hidden)]
     pub bill_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The price that you were charged for the operation, in US dollars.</p>
+    /// <p>The price that you were charged for the operation, in US dollars.</p> 
     /// <p>Example value: 12.0</p>
     #[doc(hidden)]
     pub price: f64,
 }
 impl BillingRecord {
     /// <p>The name of the domain that the billing record applies to. If the domain name contains characters other than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>The operation that you were charged for.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::OperationType> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::OperationType> {
         self.operation.as_ref()
     }
     /// <p>The ID of the invoice that is associated with the billing record.</p>
-    pub fn invoice_id(&self) -> std::option::Option<&str> {
+    pub fn invoice_id(&self) -> std::option::Option<& str> {
         self.invoice_id.as_deref()
     }
     /// <p>The date that the operation was billed, in Unix format.</p>
-    pub fn bill_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn bill_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.bill_date.as_ref()
     }
-    /// <p>The price that you were charged for the operation, in US dollars.</p>
+    /// <p>The price that you were charged for the operation, in US dollars.</p> 
     /// <p>Example value: 12.0</p>
     pub fn price(&self) -> f64 {
         self.price
@@ -46,7 +46,7 @@ impl BillingRecord {
 }
 /// See [`BillingRecord`](crate::model::BillingRecord).
 pub mod billing_record {
-
+    
     /// A builder for [`BillingRecord`](crate::model::BillingRecord).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -64,8 +64,7 @@ pub mod billing_record {
         }
         /// <p>The name of the domain that the billing record applies to. If the domain name contains characters other than a-z, 0-9, and - (hyphen), such as an internationalized domain name, then this value is in Punycode. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p>The operation that you were charged for.</p>
         pub fn operation(mut self, input: crate::model::OperationType) -> Self {
@@ -73,12 +72,8 @@ pub mod billing_record {
             self
         }
         /// <p>The operation that you were charged for.</p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::OperationType>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::OperationType>) -> Self {
+            self.operation = input; self
         }
         /// <p>The ID of the invoice that is associated with the billing record.</p>
         pub fn invoice_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,8 +82,7 @@ pub mod billing_record {
         }
         /// <p>The ID of the invoice that is associated with the billing record.</p>
         pub fn set_invoice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.invoice_id = input;
-            self
+            self.invoice_id = input; self
         }
         /// <p>The date that the operation was billed, in Unix format.</p>
         pub fn bill_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -96,36 +90,39 @@ pub mod billing_record {
             self
         }
         /// <p>The date that the operation was billed, in Unix format.</p>
-        pub fn set_bill_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.bill_date = input;
-            self
+        pub fn set_bill_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.bill_date = input; self
         }
-        /// <p>The price that you were charged for the operation, in US dollars.</p>
+        /// <p>The price that you were charged for the operation, in US dollars.</p> 
         /// <p>Example value: 12.0</p>
         pub fn price(mut self, input: f64) -> Self {
             self.price = Some(input);
             self
         }
-        /// <p>The price that you were charged for the operation, in US dollars.</p>
+        /// <p>The price that you were charged for the operation, in US dollars.</p> 
         /// <p>Example value: 12.0</p>
         pub fn set_price(mut self, input: std::option::Option<f64>) -> Self {
-            self.price = input;
-            self
+            self.price = input; self
         }
         /// Consumes the builder and constructs a [`BillingRecord`](crate::model::BillingRecord).
         pub fn build(self) -> crate::model::BillingRecord {
             crate::model::BillingRecord {
-                domain_name: self.domain_name,
-                operation: self.operation,
-                invoice_id: self.invoice_id,
-                bill_date: self.bill_date,
-                price: self.price.unwrap_or_default(),
+                domain_name: self.domain_name
+                ,
+                operation: self.operation
+                ,
+                invoice_id: self.invoice_id
+                ,
+                bill_date: self.bill_date
+                ,
+                price: self.price
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl BillingRecord {
     /// Creates a new builder-style object to manufacture [`BillingRecord`](crate::model::BillingRecord).
@@ -140,9 +137,9 @@ impl BillingRecord {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let operationtype = unimplemented!();
 /// match operationtype {
@@ -180,22 +177,14 @@ impl BillingRecord {
 /// Specifically, when `operationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OperationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OperationType {
     #[allow(missing_docs)] // documentation missing in model
     AddDnssec,
@@ -234,7 +223,7 @@ pub enum OperationType {
     #[allow(missing_docs)] // documentation missing in model
     UpdateNameserver,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OperationType {
     fn from(s: &str) -> Self {
@@ -257,17 +246,17 @@ impl std::convert::From<&str> for OperationType {
             "TRANSFER_OUT_DOMAIN" => OperationType::TransferOutDomain,
             "UPDATE_DOMAIN_CONTACT" => OperationType::UpdateDomainContact,
             "UPDATE_NAMESERVER" => OperationType::UpdateNameserver,
-            other => OperationType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OperationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OperationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OperationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OperationType::from(s))
+                }
+            }
 impl OperationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -290,30 +279,13 @@ impl OperationType {
             OperationType::TransferOutDomain => "TRANSFER_OUT_DOMAIN",
             OperationType::UpdateDomainContact => "UPDATE_DOMAIN_CONTACT",
             OperationType::UpdateNameserver => "UPDATE_NAMESERVER",
-            OperationType::Unknown(value) => value.as_str(),
+            OperationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ADD_DNSSEC",
-            "CHANGE_DOMAIN_OWNER",
-            "CHANGE_PRIVACY_PROTECTION",
-            "DELETE_DOMAIN",
-            "DISABLE_AUTORENEW",
-            "DOMAIN_LOCK",
-            "ENABLE_AUTORENEW",
-            "EXPIRE_DOMAIN",
-            "INTERNAL_TRANSFER_IN_DOMAIN",
-            "INTERNAL_TRANSFER_OUT_DOMAIN",
-            "PUSH_DOMAIN",
-            "REGISTER_DOMAIN",
-            "REMOVE_DNSSEC",
-            "RENEW_DOMAIN",
-            "TRANSFER_IN_DOMAIN",
-            "TRANSFER_OUT_DOMAIN",
-            "UPDATE_DOMAIN_CONTACT",
-            "UPDATE_NAMESERVER",
+            "ADD_DNSSEC", "CHANGE_DOMAIN_OWNER", "CHANGE_PRIVACY_PROTECTION", "DELETE_DOMAIN", "DISABLE_AUTORENEW", "DOMAIN_LOCK", "ENABLE_AUTORENEW", "EXPIRE_DOMAIN", "INTERNAL_TRANSFER_IN_DOMAIN", "INTERNAL_TRANSFER_OUT_DOMAIN", "PUSH_DOMAIN", "REGISTER_DOMAIN", "REMOVE_DNSSEC", "RENEW_DOMAIN", "TRANSFER_IN_DOMAIN", "TRANSFER_OUT_DOMAIN", "UPDATE_DOMAIN_CONTACT", "UPDATE_NAMESERVER"
         ]
     }
 }
@@ -326,35 +298,35 @@ impl AsRef<str> for OperationType {
 /// <p>Each tag includes the following elements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
-    /// <p>The key (name) of a tag.</p>
-    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
+pub struct Tag  {
+    /// <p>The key (name) of a tag.</p> 
+    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p> 
     /// <p>Constraints: Each key can be 1-128 characters long.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
-    /// <p>The value of a tag.</p>
-    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
+    /// <p>The value of a tag.</p> 
+    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p> 
     /// <p>Constraints: Each value can be 0-256 characters long.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>The key (name) of a tag.</p>
-    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
+    /// <p>The key (name) of a tag.</p> 
+    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p> 
     /// <p>Constraints: Each key can be 1-128 characters long.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
-    /// <p>The value of a tag.</p>
-    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
+    /// <p>The value of a tag.</p> 
+    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p> 
     /// <p>Constraints: Each value can be 0-256 characters long.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -362,42 +334,44 @@ pub mod tag {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The key (name) of a tag.</p>
-        /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
+        /// <p>The key (name) of a tag.</p> 
+        /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p> 
         /// <p>Constraints: Each key can be 1-128 characters long.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
         }
-        /// <p>The key (name) of a tag.</p>
-        /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
+        /// <p>The key (name) of a tag.</p> 
+        /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p> 
         /// <p>Constraints: Each key can be 1-128 characters long.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
-        /// <p>The value of a tag.</p>
-        /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
+        /// <p>The value of a tag.</p> 
+        /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p> 
         /// <p>Constraints: Each value can be 0-256 characters long.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The value of a tag.</p>
-        /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
+        /// <p>The value of a tag.</p> 
+        /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p> 
         /// <p>Constraints: Each value can be 0-256 characters long.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -409,31 +383,31 @@ impl Tag {
 /// <p>Name server includes the following elements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Nameserver {
-    /// <p>The fully qualified host name of the name server.</p>
+pub struct Nameserver  {
+    /// <p>The fully qualified host name of the name server.</p> 
     /// <p>Constraint: Maximum 255 characters</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
+    /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p> 
     /// <p>Constraints: The list can contain only one IPv4 and one IPv6 address.</p>
     #[doc(hidden)]
     pub glue_ips: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Nameserver {
-    /// <p>The fully qualified host name of the name server.</p>
+    /// <p>The fully qualified host name of the name server.</p> 
     /// <p>Constraint: Maximum 255 characters</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
+    /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p> 
     /// <p>Constraints: The list can contain only one IPv4 and one IPv6 address.</p>
-    pub fn glue_ips(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn glue_ips(&self) -> std::option::Option<& [std::string::String]> {
         self.glue_ips.as_deref()
     }
 }
 /// See [`Nameserver`](crate::model::Nameserver).
 pub mod nameserver {
-
+    
     /// A builder for [`Nameserver`](crate::model::Nameserver).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -441,47 +415,46 @@ pub mod nameserver {
         pub(crate) glue_ips: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The fully qualified host name of the name server.</p>
+        /// <p>The fully qualified host name of the name server.</p> 
         /// <p>Constraint: Maximum 255 characters</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The fully qualified host name of the name server.</p>
+        /// <p>The fully qualified host name of the name server.</p> 
         /// <p>Constraint: Maximum 255 characters</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `glue_ips`.
         ///
         /// To override the contents of this collection use [`set_glue_ips`](Self::set_glue_ips).
         ///
-        /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
+        /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p> 
         /// <p>Constraints: The list can contain only one IPv4 and one IPv6 address.</p>
         pub fn glue_ips(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.glue_ips.unwrap_or_default();
-            v.push(input.into());
-            self.glue_ips = Some(v);
-            self
+                            v.push(input.into());
+                            self.glue_ips = Some(v);
+                            self
         }
-        /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p>
+        /// <p>Glue IP address of a name server entry. Glue IP addresses are required only when the name of the name server is a subdomain of the domain. For example, if your domain is example.com and the name server for the domain is ns.example.com, you need to specify the IP address for ns.example.com.</p> 
         /// <p>Constraints: The list can contain only one IPv4 and one IPv6 address.</p>
-        pub fn set_glue_ips(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.glue_ips = input;
-            self
+        pub fn set_glue_ips(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.glue_ips = input; self
         }
         /// Consumes the builder and constructs a [`Nameserver`](crate::model::Nameserver).
         pub fn build(self) -> crate::model::Nameserver {
             crate::model::Nameserver {
-                name: self.name,
-                glue_ips: self.glue_ips,
+                name: self.name
+                ,
+                glue_ips: self.glue_ips
+                ,
             }
         }
     }
+    
+    
 }
 impl Nameserver {
     /// Creates a new builder-style object to manufacture [`Nameserver`](crate::model::Nameserver).
@@ -493,7 +466,7 @@ impl Nameserver {
 /// <p> Customer's consent for the owner change request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Consent {
+pub struct Consent  {
     /// <p> Maximum amount the customer agreed to accept. </p>
     #[doc(hidden)]
     pub max_price: f64,
@@ -507,13 +480,13 @@ impl Consent {
         self.max_price
     }
     /// <p> Currency for the <code>MaxPrice</code>. </p>
-    pub fn currency(&self) -> std::option::Option<&str> {
+    pub fn currency(&self) -> std::option::Option<& str> {
         self.currency.as_deref()
     }
 }
 /// See [`Consent`](crate::model::Consent).
 pub mod consent {
-
+    
     /// A builder for [`Consent`](crate::model::Consent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -528,8 +501,7 @@ pub mod consent {
         }
         /// <p> Maximum amount the customer agreed to accept. </p>
         pub fn set_max_price(mut self, input: std::option::Option<f64>) -> Self {
-            self.max_price = input;
-            self
+            self.max_price = input; self
         }
         /// <p> Currency for the <code>MaxPrice</code>. </p>
         pub fn currency(mut self, input: impl Into<std::string::String>) -> Self {
@@ -538,17 +510,21 @@ pub mod consent {
         }
         /// <p> Currency for the <code>MaxPrice</code>. </p>
         pub fn set_currency(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.currency = input;
-            self
+            self.currency = input; self
         }
         /// Consumes the builder and constructs a [`Consent`](crate::model::Consent).
         pub fn build(self) -> crate::model::Consent {
             crate::model::Consent {
-                max_price: self.max_price.unwrap_or_default(),
-                currency: self.currency,
+                max_price: self.max_price
+                    .unwrap_or_default()
+                ,
+                currency: self.currency
+                ,
             }
         }
     }
+    
+    
 }
 impl Consent {
     /// Creates a new builder-style object to manufacture [`Consent`](crate::model::Consent).
@@ -560,18 +536,18 @@ impl Consent {
 /// <p>ContactDetail includes the following elements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ContactDetail {
+pub struct ContactDetail  {
     /// <p>First name of contact.</p>
     #[doc(hidden)]
     pub first_name: std::option::Option<std::string::String>,
     /// <p>Last name of contact.</p>
     #[doc(hidden)]
     pub last_name: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p>
-    /// <ul>
-    /// <li> <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p> </li>
-    /// <li> <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i> </p> </li>
-    /// <li> <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p> </li>
+    /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p> 
+    /// <ul> 
+    /// <li> <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p> </li> 
+    /// <li> <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i> </p> </li> 
+    /// <li> <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub contact_type: std::option::Option<crate::model::ContactType>,
@@ -596,14 +572,14 @@ pub struct ContactDetail {
     /// <p>The zip or postal code of the contact's address.</p>
     #[doc(hidden)]
     pub zip_code: std::option::Option<std::string::String>,
-    /// <p>The phone number of the contact.</p>
+    /// <p>The phone number of the contact.</p> 
     /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
     #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
     /// <p>Email address of the contact.</p>
     #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
-    /// <p>Fax number of the contact.</p>
+    /// <p>Fax number of the contact.</p> 
     /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
     #[doc(hidden)]
     pub fax: std::option::Option<std::string::String>,
@@ -613,70 +589,70 @@ pub struct ContactDetail {
 }
 impl ContactDetail {
     /// <p>First name of contact.</p>
-    pub fn first_name(&self) -> std::option::Option<&str> {
+    pub fn first_name(&self) -> std::option::Option<& str> {
         self.first_name.as_deref()
     }
     /// <p>Last name of contact.</p>
-    pub fn last_name(&self) -> std::option::Option<&str> {
+    pub fn last_name(&self) -> std::option::Option<& str> {
         self.last_name.as_deref()
     }
-    /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p>
-    /// <ul>
-    /// <li> <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p> </li>
-    /// <li> <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i> </p> </li>
-    /// <li> <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p> </li>
+    /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p> 
+    /// <ul> 
+    /// <li> <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p> </li> 
+    /// <li> <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i> </p> </li> 
+    /// <li> <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p> </li> 
     /// </ul>
-    pub fn contact_type(&self) -> std::option::Option<&crate::model::ContactType> {
+    pub fn contact_type(&self) -> std::option::Option<& crate::model::ContactType> {
         self.contact_type.as_ref()
     }
     /// <p>Name of the organization for contact types other than <code>PERSON</code>.</p>
-    pub fn organization_name(&self) -> std::option::Option<&str> {
+    pub fn organization_name(&self) -> std::option::Option<& str> {
         self.organization_name.as_deref()
     }
     /// <p>First line of the contact's address.</p>
-    pub fn address_line1(&self) -> std::option::Option<&str> {
+    pub fn address_line1(&self) -> std::option::Option<& str> {
         self.address_line1.as_deref()
     }
     /// <p>Second line of contact's address, if any.</p>
-    pub fn address_line2(&self) -> std::option::Option<&str> {
+    pub fn address_line2(&self) -> std::option::Option<& str> {
         self.address_line2.as_deref()
     }
     /// <p>The city of the contact's address.</p>
-    pub fn city(&self) -> std::option::Option<&str> {
+    pub fn city(&self) -> std::option::Option<& str> {
         self.city.as_deref()
     }
     /// <p>The state or province of the contact's city.</p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> std::option::Option<& str> {
         self.state.as_deref()
     }
     /// <p>Code for the country of the contact's address.</p>
-    pub fn country_code(&self) -> std::option::Option<&crate::model::CountryCode> {
+    pub fn country_code(&self) -> std::option::Option<& crate::model::CountryCode> {
         self.country_code.as_ref()
     }
     /// <p>The zip or postal code of the contact's address.</p>
-    pub fn zip_code(&self) -> std::option::Option<&str> {
+    pub fn zip_code(&self) -> std::option::Option<& str> {
         self.zip_code.as_deref()
     }
-    /// <p>The phone number of the contact.</p>
+    /// <p>The phone number of the contact.</p> 
     /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>Email address of the contact.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> std::option::Option<& str> {
         self.email.as_deref()
     }
-    /// <p>Fax number of the contact.</p>
+    /// <p>Fax number of the contact.</p> 
     /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
-    pub fn fax(&self) -> std::option::Option<&str> {
+    pub fn fax(&self) -> std::option::Option<& str> {
         self.fax.as_deref()
     }
     /// <p>A list of name-value pairs for parameters required by certain top-level domains.</p>
-    pub fn extra_params(&self) -> std::option::Option<&[crate::model::ExtraParam]> {
+    pub fn extra_params(&self) -> std::option::Option<& [crate::model::ExtraParam]> {
         self.extra_params.as_deref()
     }
 }
-impl std::fmt::Debug for ContactDetail {
+impl  std::fmt::Debug for ContactDetail  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ContactDetail");
         formatter.field("first_name", &"*** Sensitive Data Redacted ***");
@@ -698,7 +674,7 @@ impl std::fmt::Debug for ContactDetail {
 }
 /// See [`ContactDetail`](crate::model::ContactDetail).
 pub mod contact_detail {
-
+    
     /// A builder for [`ContactDetail`](crate::model::ContactDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -725,8 +701,7 @@ pub mod contact_detail {
         }
         /// <p>First name of contact.</p>
         pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.first_name = input;
-            self
+            self.first_name = input; self
         }
         /// <p>Last name of contact.</p>
         pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -735,31 +710,26 @@ pub mod contact_detail {
         }
         /// <p>Last name of contact.</p>
         pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.last_name = input;
-            self
+            self.last_name = input; self
         }
-        /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p>
-        /// <ul>
-        /// <li> <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p> </li>
-        /// <li> <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i> </p> </li>
-        /// <li> <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p> </li>
+        /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p> 
+        /// <ul> 
+        /// <li> <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p> </li> 
+        /// <li> <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i> </p> </li> 
+        /// <li> <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p> </li> 
         /// </ul>
         pub fn contact_type(mut self, input: crate::model::ContactType) -> Self {
             self.contact_type = Some(input);
             self
         }
-        /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p>
-        /// <ul>
-        /// <li> <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p> </li>
-        /// <li> <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i> </p> </li>
-        /// <li> <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p> </li>
+        /// <p>Indicates whether the contact is a person, company, association, or public organization. Note the following:</p> 
+        /// <ul> 
+        /// <li> <p>If you specify a value other than <code>PERSON</code>, you must also specify a value for <code>OrganizationName</code>.</p> </li> 
+        /// <li> <p>For some TLDs, the privacy protection available depends on the value that you specify for <code>Contact Type</code>. For the privacy protection settings for your TLD, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i> </p> </li> 
+        /// <li> <p>For .es domains, the value of <code>ContactType</code> must be <code>PERSON</code> for all three contacts.</p> </li> 
         /// </ul>
-        pub fn set_contact_type(
-            mut self,
-            input: std::option::Option<crate::model::ContactType>,
-        ) -> Self {
-            self.contact_type = input;
-            self
+        pub fn set_contact_type(mut self, input: std::option::Option<crate::model::ContactType>) -> Self {
+            self.contact_type = input; self
         }
         /// <p>Name of the organization for contact types other than <code>PERSON</code>.</p>
         pub fn organization_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -767,12 +737,8 @@ pub mod contact_detail {
             self
         }
         /// <p>Name of the organization for contact types other than <code>PERSON</code>.</p>
-        pub fn set_organization_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.organization_name = input;
-            self
+        pub fn set_organization_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.organization_name = input; self
         }
         /// <p>First line of the contact's address.</p>
         pub fn address_line1(mut self, input: impl Into<std::string::String>) -> Self {
@@ -780,12 +746,8 @@ pub mod contact_detail {
             self
         }
         /// <p>First line of the contact's address.</p>
-        pub fn set_address_line1(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.address_line1 = input;
-            self
+        pub fn set_address_line1(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.address_line1 = input; self
         }
         /// <p>Second line of contact's address, if any.</p>
         pub fn address_line2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -793,12 +755,8 @@ pub mod contact_detail {
             self
         }
         /// <p>Second line of contact's address, if any.</p>
-        pub fn set_address_line2(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.address_line2 = input;
-            self
+        pub fn set_address_line2(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.address_line2 = input; self
         }
         /// <p>The city of the contact's address.</p>
         pub fn city(mut self, input: impl Into<std::string::String>) -> Self {
@@ -807,8 +765,7 @@ pub mod contact_detail {
         }
         /// <p>The city of the contact's address.</p>
         pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.city = input;
-            self
+            self.city = input; self
         }
         /// <p>The state or province of the contact's city.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -817,8 +774,7 @@ pub mod contact_detail {
         }
         /// <p>The state or province of the contact's city.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>Code for the country of the contact's address.</p>
         pub fn country_code(mut self, input: crate::model::CountryCode) -> Self {
@@ -826,12 +782,8 @@ pub mod contact_detail {
             self
         }
         /// <p>Code for the country of the contact's address.</p>
-        pub fn set_country_code(
-            mut self,
-            input: std::option::Option<crate::model::CountryCode>,
-        ) -> Self {
-            self.country_code = input;
-            self
+        pub fn set_country_code(mut self, input: std::option::Option<crate::model::CountryCode>) -> Self {
+            self.country_code = input; self
         }
         /// <p>The zip or postal code of the contact's address.</p>
         pub fn zip_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -840,20 +792,18 @@ pub mod contact_detail {
         }
         /// <p>The zip or postal code of the contact's address.</p>
         pub fn set_zip_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.zip_code = input;
-            self
+            self.zip_code = input; self
         }
-        /// <p>The phone number of the contact.</p>
+        /// <p>The phone number of the contact.</p> 
         /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.phone_number = Some(input.into());
             self
         }
-        /// <p>The phone number of the contact.</p>
+        /// <p>The phone number of the contact.</p> 
         /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code&gt;]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.phone_number = input;
-            self
+            self.phone_number = input; self
         }
         /// <p>Email address of the contact.</p>
         pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -862,20 +812,18 @@ pub mod contact_detail {
         }
         /// <p>Email address of the contact.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.email = input;
-            self
+            self.email = input; self
         }
-        /// <p>Fax number of the contact.</p>
+        /// <p>Fax number of the contact.</p> 
         /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
         pub fn fax(mut self, input: impl Into<std::string::String>) -> Self {
             self.fax = Some(input.into());
             self
         }
-        /// <p>Fax number of the contact.</p>
+        /// <p>Fax number of the contact.</p> 
         /// <p>Constraints: Phone number must be specified in the format "+[country dialing code].[number including any area code]". For example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
         pub fn set_fax(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.fax = input;
-            self
+            self.fax = input; self
         }
         /// Appends an item to `extra_params`.
         ///
@@ -884,35 +832,45 @@ pub mod contact_detail {
         /// <p>A list of name-value pairs for parameters required by certain top-level domains.</p>
         pub fn extra_params(mut self, input: crate::model::ExtraParam) -> Self {
             let mut v = self.extra_params.unwrap_or_default();
-            v.push(input);
-            self.extra_params = Some(v);
-            self
+                            v.push(input);
+                            self.extra_params = Some(v);
+                            self
         }
         /// <p>A list of name-value pairs for parameters required by certain top-level domains.</p>
-        pub fn set_extra_params(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExtraParam>>,
-        ) -> Self {
-            self.extra_params = input;
-            self
+        pub fn set_extra_params(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExtraParam>>) -> Self {
+            self.extra_params = input; self
         }
         /// Consumes the builder and constructs a [`ContactDetail`](crate::model::ContactDetail).
         pub fn build(self) -> crate::model::ContactDetail {
             crate::model::ContactDetail {
-                first_name: self.first_name,
-                last_name: self.last_name,
-                contact_type: self.contact_type,
-                organization_name: self.organization_name,
-                address_line1: self.address_line1,
-                address_line2: self.address_line2,
-                city: self.city,
-                state: self.state,
-                country_code: self.country_code,
-                zip_code: self.zip_code,
-                phone_number: self.phone_number,
-                email: self.email,
-                fax: self.fax,
-                extra_params: self.extra_params,
+                first_name: self.first_name
+                ,
+                last_name: self.last_name
+                ,
+                contact_type: self.contact_type
+                ,
+                organization_name: self.organization_name
+                ,
+                address_line1: self.address_line1
+                ,
+                address_line2: self.address_line2
+                ,
+                city: self.city
+                ,
+                state: self.state
+                ,
+                country_code: self.country_code
+                ,
+                zip_code: self.zip_code
+                ,
+                phone_number: self.phone_number
+                ,
+                email: self.email
+                ,
+                fax: self.fax
+                ,
+                extra_params: self.extra_params
+                ,
             }
         }
     }
@@ -936,6 +894,8 @@ pub mod contact_detail {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ContactDetail {
     /// Creates a new builder-style object to manufacture [`ContactDetail`](crate::model::ContactDetail).
@@ -947,277 +907,277 @@ impl ContactDetail {
 /// <p>ExtraParam includes the following elements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ExtraParam {
-    /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
-    /// <dl>
+pub struct ExtraParam  {
+    /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p> 
+    /// <dl> 
     /// <dt>
     /// .com.au and .net.au
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code>AU_ID_NUMBER</code> </p> </li>
-    /// <li> <p> <code>AU_ID_TYPE</code> </p> <p>Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ABN</code> (Australian business number)</p> </li>
-    /// <li> <p> <code>ACN</code> (Australian company number)</p> </li>
-    /// <li> <p> <code>TM</code> (Trademark number)</p> </li>
-    /// </ul> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code>AU_ID_NUMBER</code> </p> </li> 
+    /// <li> <p> <code>AU_ID_TYPE</code> </p> <p>Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ABN</code> (Australian business number)</p> </li> 
+    /// <li> <p> <code>ACN</code> (Australian company number)</p> </li> 
+    /// <li> <p> <code>TM</code> (Trademark number)</p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// .ca
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code>BRAND_NUMBER</code> </p> </li>
-    /// <li> <p> <code>CA_BUSINESS_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>BANK</code> (Bank)</p> </li>
-    /// <li> <p> <code>COMMERCIAL_COMPANY</code> (Commercial company)</p> </li>
-    /// <li> <p> <code>COMPANY</code> (Company)</p> </li>
-    /// <li> <p> <code>COOPERATION</code> (Cooperation)</p> </li>
-    /// <li> <p> <code>COOPERATIVE</code> (Cooperative)</p> </li>
-    /// <li> <p> <code>COOPRIX</code> (Cooprix)</p> </li>
-    /// <li> <p> <code>CORP</code> (Corporation)</p> </li>
-    /// <li> <p> <code>CREDIT_UNION</code> (Credit union)</p> </li>
-    /// <li> <p> <code>FOMIA</code> (Federation of mutual insurance associations)</p> </li>
-    /// <li> <p> <code>INC</code> (Incorporated)</p> </li>
-    /// <li> <p> <code>LTD</code> (Limited)</p> </li>
-    /// <li> <p> <code>LTEE</code> (Limitée)</p> </li>
-    /// <li> <p> <code>LLC</code> (Limited liability corporation)</p> </li>
-    /// <li> <p> <code>LLP</code> (Limited liability partnership)</p> </li>
-    /// <li> <p> <code>LTE</code> (Lte.)</p> </li>
-    /// <li> <p> <code>MBA</code> (Mutual benefit association)</p> </li>
-    /// <li> <p> <code>MIC</code> (Mutual insurance company)</p> </li>
-    /// <li> <p> <code>NFP</code> (Not-for-profit corporation)</p> </li>
-    /// <li> <p> <code>SA</code> (S.A.)</p> </li>
-    /// <li> <p> <code>SAVINGS_COMPANY</code> (Savings company)</p> </li>
-    /// <li> <p> <code>SAVINGS_UNION</code> (Savings union)</p> </li>
-    /// <li> <p> <code>SARL</code> (Société à responsabilité limitée)</p> </li>
-    /// <li> <p> <code>TRUST</code> (Trust)</p> </li>
-    /// <li> <p> <code>ULC</code> (Unlimited liability corporation)</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>CA_LEGAL_TYPE</code> </p> <p>When <code>ContactType</code> is <code>PERSON</code>, valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ABO</code> (Aboriginal Peoples indigenous to Canada)</p> </li>
-    /// <li> <p> <code>CCT</code> (Canadian citizen)</p> </li>
-    /// <li> <p> <code>LGR</code> (Legal Representative of a Canadian Citizen or Permanent Resident)</p> </li>
-    /// <li> <p> <code>RES</code> (Permanent resident of Canada)</p> </li>
-    /// </ul> <p>When <code>ContactType</code> is a value other than <code>PERSON</code>, valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ASS</code> (Canadian unincorporated association)</p> </li>
-    /// <li> <p> <code>CCO</code> (Canadian corporation)</p> </li>
-    /// <li> <p> <code>EDU</code> (Canadian educational institution)</p> </li>
-    /// <li> <p> <code>GOV</code> (Government or government entity in Canada)</p> </li>
-    /// <li> <p> <code>HOP</code> (Canadian Hospital)</p> </li>
-    /// <li> <p> <code>INB</code> (Indian Band recognized by the Indian Act of Canada)</p> </li>
-    /// <li> <p> <code>LAM</code> (Canadian Library, Archive, or Museum)</p> </li>
-    /// <li> <p> <code>MAJ</code> (Her/His Majesty the Queen/King)</p> </li>
-    /// <li> <p> <code>OMK</code> (Official mark registered in Canada)</p> </li>
-    /// <li> <p> <code>PLT</code> (Canadian Political Party)</p> </li>
-    /// <li> <p> <code>PRT</code> (Partnership Registered in Canada)</p> </li>
-    /// <li> <p> <code>TDM</code> (Trademark registered in Canada)</p> </li>
-    /// <li> <p> <code>TRD</code> (Canadian Trade Union)</p> </li>
-    /// <li> <p> <code>TRS</code> (Trust established in Canada)</p> </li>
-    /// </ul> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code>BRAND_NUMBER</code> </p> </li> 
+    /// <li> <p> <code>CA_BUSINESS_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>BANK</code> (Bank)</p> </li> 
+    /// <li> <p> <code>COMMERCIAL_COMPANY</code> (Commercial company)</p> </li> 
+    /// <li> <p> <code>COMPANY</code> (Company)</p> </li> 
+    /// <li> <p> <code>COOPERATION</code> (Cooperation)</p> </li> 
+    /// <li> <p> <code>COOPERATIVE</code> (Cooperative)</p> </li> 
+    /// <li> <p> <code>COOPRIX</code> (Cooprix)</p> </li> 
+    /// <li> <p> <code>CORP</code> (Corporation)</p> </li> 
+    /// <li> <p> <code>CREDIT_UNION</code> (Credit union)</p> </li> 
+    /// <li> <p> <code>FOMIA</code> (Federation of mutual insurance associations)</p> </li> 
+    /// <li> <p> <code>INC</code> (Incorporated)</p> </li> 
+    /// <li> <p> <code>LTD</code> (Limited)</p> </li> 
+    /// <li> <p> <code>LTEE</code> (Limitée)</p> </li> 
+    /// <li> <p> <code>LLC</code> (Limited liability corporation)</p> </li> 
+    /// <li> <p> <code>LLP</code> (Limited liability partnership)</p> </li> 
+    /// <li> <p> <code>LTE</code> (Lte.)</p> </li> 
+    /// <li> <p> <code>MBA</code> (Mutual benefit association)</p> </li> 
+    /// <li> <p> <code>MIC</code> (Mutual insurance company)</p> </li> 
+    /// <li> <p> <code>NFP</code> (Not-for-profit corporation)</p> </li> 
+    /// <li> <p> <code>SA</code> (S.A.)</p> </li> 
+    /// <li> <p> <code>SAVINGS_COMPANY</code> (Savings company)</p> </li> 
+    /// <li> <p> <code>SAVINGS_UNION</code> (Savings union)</p> </li> 
+    /// <li> <p> <code>SARL</code> (Société à responsabilité limitée)</p> </li> 
+    /// <li> <p> <code>TRUST</code> (Trust)</p> </li> 
+    /// <li> <p> <code>ULC</code> (Unlimited liability corporation)</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>CA_LEGAL_TYPE</code> </p> <p>When <code>ContactType</code> is <code>PERSON</code>, valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ABO</code> (Aboriginal Peoples indigenous to Canada)</p> </li> 
+    /// <li> <p> <code>CCT</code> (Canadian citizen)</p> </li> 
+    /// <li> <p> <code>LGR</code> (Legal Representative of a Canadian Citizen or Permanent Resident)</p> </li> 
+    /// <li> <p> <code>RES</code> (Permanent resident of Canada)</p> </li> 
+    /// </ul> <p>When <code>ContactType</code> is a value other than <code>PERSON</code>, valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASS</code> (Canadian unincorporated association)</p> </li> 
+    /// <li> <p> <code>CCO</code> (Canadian corporation)</p> </li> 
+    /// <li> <p> <code>EDU</code> (Canadian educational institution)</p> </li> 
+    /// <li> <p> <code>GOV</code> (Government or government entity in Canada)</p> </li> 
+    /// <li> <p> <code>HOP</code> (Canadian Hospital)</p> </li> 
+    /// <li> <p> <code>INB</code> (Indian Band recognized by the Indian Act of Canada)</p> </li> 
+    /// <li> <p> <code>LAM</code> (Canadian Library, Archive, or Museum)</p> </li> 
+    /// <li> <p> <code>MAJ</code> (Her/His Majesty the Queen/King)</p> </li> 
+    /// <li> <p> <code>OMK</code> (Official mark registered in Canada)</p> </li> 
+    /// <li> <p> <code>PLT</code> (Canadian Political Party)</p> </li> 
+    /// <li> <p> <code>PRT</code> (Partnership Registered in Canada)</p> </li> 
+    /// <li> <p> <code>TDM</code> (Trademark registered in Canada)</p> </li> 
+    /// <li> <p> <code>TRD</code> (Canadian Trade Union)</p> </li> 
+    /// <li> <p> <code>TRS</code> (Trust established in Canada)</p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// .es
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>The value of <code>ES_IDENTIFICATION</code> depends on the following values:</p>
-    /// <ul>
-    /// <li> <p>The value of <code>ES_LEGAL_FORM</code> </p> </li>
-    /// <li> <p>The value of <code>ES_IDENTIFICATION_TYPE</code> </p> </li>
-    /// </ul> <p> <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b> </p>
-    /// <ul>
-    /// <li> <p>Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])</p> </li>
-    /// <li> <p>Example: B12345678</p> </li>
-    /// </ul> <p> <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify for <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b> </p>
-    /// <ul>
-    /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):</p>
-    /// <ul>
-    /// <li> <p>Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación Fiscal])</p> </li>
-    /// <li> <p>Example: 12345678M</p> </li>
-    /// </ul> </li>
-    /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):</p>
-    /// <ul>
-    /// <li> <p>Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])</p> </li>
-    /// <li> <p>Example: Y1234567X</p> </li>
-    /// </ul> </li>
-    /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside of Spain):</p>
-    /// <ul>
-    /// <li> <p>Specify a passport number, drivers license number, or national identity card number</p> </li>
-    /// </ul> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>DNI_AND_NIF</code> (For Spanish contacts)</p> </li>
-    /// <li> <p> <code>NIE</code> (For foreigners with legal residence)</p> </li>
-    /// <li> <p> <code>OTHER</code> (For contacts outside of Spain)</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ASSOCIATION</code> </p> </li>
-    /// <li> <p> <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li>
-    /// <li> <p> <code>CIVIL_SOCIETY</code> </p> </li>
-    /// <li> <p> <code>COMMUNITY_OF_OWNERS</code> </p> </li>
-    /// <li> <p> <code>COMMUNITY_PROPERTY</code> </p> </li>
-    /// <li> <p> <code>CONSULATE</code> </p> </li>
-    /// <li> <p> <code>COOPERATIVE</code> </p> </li>
-    /// <li> <p> <code>DESIGNATION_OF_ORIGIN_SUPERVISORY_COUNCIL</code> </p> </li>
-    /// <li> <p> <code>ECONOMIC_INTEREST_GROUP</code> </p> </li>
-    /// <li> <p> <code>EMBASSY</code> </p> </li>
-    /// <li> <p> <code>ENTITY_MANAGING_NATURAL_AREAS</code> </p> </li>
-    /// <li> <p> <code>FARM_PARTNERSHIP</code> </p> </li>
-    /// <li> <p> <code>FOUNDATION</code> </p> </li>
-    /// <li> <p> <code>GENERAL_AND_LIMITED_PARTNERSHIP</code> </p> </li>
-    /// <li> <p> <code>GENERAL_PARTNERSHIP</code> </p> </li>
-    /// <li> <p> <code>INDIVIDUAL</code> </p> </li>
-    /// <li> <p> <code>LIMITED_COMPANY</code> </p> </li>
-    /// <li> <p> <code>LOCAL_AUTHORITY</code> </p> </li>
-    /// <li> <p> <code>LOCAL_PUBLIC_ENTITY</code> </p> </li>
-    /// <li> <p> <code>MUTUAL_INSURANCE_COMPANY</code> </p> </li>
-    /// <li> <p> <code>NATIONAL_PUBLIC_ENTITY</code> </p> </li>
-    /// <li> <p> <code>ORDER_OR_RELIGIOUS_INSTITUTION</code> </p> </li>
-    /// <li> <p> <code>OTHERS (Only for contacts outside of Spain)</code> </p> </li>
-    /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li>
-    /// <li> <p> <code>PROFESSIONAL_ASSOCIATION</code> </p> </li>
-    /// <li> <p> <code>PUBLIC_LAW_ASSOCIATION</code> </p> </li>
-    /// <li> <p> <code>PUBLIC_LIMITED_COMPANY</code> </p> </li>
-    /// <li> <p> <code>REGIONAL_GOVERNMENT_BODY</code> </p> </li>
-    /// <li> <p> <code>REGIONAL_PUBLIC_ENTITY</code> </p> </li>
-    /// <li> <p> <code>SAVINGS_BANK</code> </p> </li>
-    /// <li> <p> <code>SPANISH_OFFICE</code> </p> </li>
-    /// <li> <p> <code>SPORTS_ASSOCIATION</code> </p> </li>
-    /// <li> <p> <code>SPORTS_FEDERATION</code> </p> </li>
-    /// <li> <p> <code>SPORTS_LIMITED_COMPANY</code> </p> </li>
-    /// <li> <p> <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code> </p> </li>
-    /// <li> <p> <code>TRADE_UNION</code> </p> </li>
-    /// <li> <p> <code>WORKER_OWNED_COMPANY</code> </p> </li>
-    /// <li> <p> <code>WORKER_OWNED_LIMITED_COMPANY</code> </p> </li>
-    /// </ul> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>The value of <code>ES_IDENTIFICATION</code> depends on the following values:</p> 
+    /// <ul> 
+    /// <li> <p>The value of <code>ES_LEGAL_FORM</code> </p> </li> 
+    /// <li> <p>The value of <code>ES_IDENTIFICATION_TYPE</code> </p> </li> 
+    /// </ul> <p> <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b> </p> 
+    /// <ul> 
+    /// <li> <p>Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])</p> </li> 
+    /// <li> <p>Example: B12345678</p> </li> 
+    /// </ul> <p> <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify for <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b> </p> 
+    /// <ul> 
+    /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):</p> 
+    /// <ul> 
+    /// <li> <p>Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación Fiscal])</p> </li> 
+    /// <li> <p>Example: 12345678M</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):</p> 
+    /// <ul> 
+    /// <li> <p>Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])</p> </li> 
+    /// <li> <p>Example: Y1234567X</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside of Spain):</p> 
+    /// <ul> 
+    /// <li> <p>Specify a passport number, drivers license number, or national identity card number</p> </li> 
+    /// </ul> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DNI_AND_NIF</code> (For Spanish contacts)</p> </li> 
+    /// <li> <p> <code>NIE</code> (For foreigners with legal residence)</p> </li> 
+    /// <li> <p> <code>OTHER</code> (For contacts outside of Spain)</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASSOCIATION</code> </p> </li> 
+    /// <li> <p> <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li> 
+    /// <li> <p> <code>CIVIL_SOCIETY</code> </p> </li> 
+    /// <li> <p> <code>COMMUNITY_OF_OWNERS</code> </p> </li> 
+    /// <li> <p> <code>COMMUNITY_PROPERTY</code> </p> </li> 
+    /// <li> <p> <code>CONSULATE</code> </p> </li> 
+    /// <li> <p> <code>COOPERATIVE</code> </p> </li> 
+    /// <li> <p> <code>DESIGNATION_OF_ORIGIN_SUPERVISORY_COUNCIL</code> </p> </li> 
+    /// <li> <p> <code>ECONOMIC_INTEREST_GROUP</code> </p> </li> 
+    /// <li> <p> <code>EMBASSY</code> </p> </li> 
+    /// <li> <p> <code>ENTITY_MANAGING_NATURAL_AREAS</code> </p> </li> 
+    /// <li> <p> <code>FARM_PARTNERSHIP</code> </p> </li> 
+    /// <li> <p> <code>FOUNDATION</code> </p> </li> 
+    /// <li> <p> <code>GENERAL_AND_LIMITED_PARTNERSHIP</code> </p> </li> 
+    /// <li> <p> <code>GENERAL_PARTNERSHIP</code> </p> </li> 
+    /// <li> <p> <code>INDIVIDUAL</code> </p> </li> 
+    /// <li> <p> <code>LIMITED_COMPANY</code> </p> </li> 
+    /// <li> <p> <code>LOCAL_AUTHORITY</code> </p> </li> 
+    /// <li> <p> <code>LOCAL_PUBLIC_ENTITY</code> </p> </li> 
+    /// <li> <p> <code>MUTUAL_INSURANCE_COMPANY</code> </p> </li> 
+    /// <li> <p> <code>NATIONAL_PUBLIC_ENTITY</code> </p> </li> 
+    /// <li> <p> <code>ORDER_OR_RELIGIOUS_INSTITUTION</code> </p> </li> 
+    /// <li> <p> <code>OTHERS (Only for contacts outside of Spain)</code> </p> </li> 
+    /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li> 
+    /// <li> <p> <code>PROFESSIONAL_ASSOCIATION</code> </p> </li> 
+    /// <li> <p> <code>PUBLIC_LAW_ASSOCIATION</code> </p> </li> 
+    /// <li> <p> <code>PUBLIC_LIMITED_COMPANY</code> </p> </li> 
+    /// <li> <p> <code>REGIONAL_GOVERNMENT_BODY</code> </p> </li> 
+    /// <li> <p> <code>REGIONAL_PUBLIC_ENTITY</code> </p> </li> 
+    /// <li> <p> <code>SAVINGS_BANK</code> </p> </li> 
+    /// <li> <p> <code>SPANISH_OFFICE</code> </p> </li> 
+    /// <li> <p> <code>SPORTS_ASSOCIATION</code> </p> </li> 
+    /// <li> <p> <code>SPORTS_FEDERATION</code> </p> </li> 
+    /// <li> <p> <code>SPORTS_LIMITED_COMPANY</code> </p> </li> 
+    /// <li> <p> <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code> </p> </li> 
+    /// <li> <p> <code>TRADE_UNION</code> </p> </li> 
+    /// <li> <p> <code>WORKER_OWNED_COMPANY</code> </p> </li> 
+    /// <li> <p> <code>WORKER_OWNED_LIMITED_COMPANY</code> </p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// .eu
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code> EU_COUNTRY_OF_CITIZENSHIP</code> </p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code> EU_COUNTRY_OF_CITIZENSHIP</code> </p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// .fi
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
-    /// <li> <p> <code>FI_BUSINESS_NUMBER</code> </p> </li>
-    /// <li> <p> <code>FI_ID_NUMBER</code> </p> </li>
-    /// <li> <p> <code>FI_NATIONALITY</code> </p> <p>Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>FINNISH</code> </p> </li>
-    /// <li> <p> <code>NOT_FINNISH</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>FI_ORGANIZATION_TYPE</code> </p> <p>Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>COMPANY</code> </p> </li>
-    /// <li> <p> <code>CORPORATION</code> </p> </li>
-    /// <li> <p> <code>GOVERNMENT</code> </p> </li>
-    /// <li> <p> <code>INSTITUTION</code> </p> </li>
-    /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li>
-    /// <li> <p> <code>PUBLIC_COMMUNITY</code> </p> </li>
-    /// <li> <p> <code>TOWNSHIP</code> </p> </li>
-    /// </ul> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> 
+    /// <li> <p> <code>FI_BUSINESS_NUMBER</code> </p> </li> 
+    /// <li> <p> <code>FI_ID_NUMBER</code> </p> </li> 
+    /// <li> <p> <code>FI_NATIONALITY</code> </p> <p>Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>FINNISH</code> </p> </li> 
+    /// <li> <p> <code>NOT_FINNISH</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>FI_ORGANIZATION_TYPE</code> </p> <p>Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>COMPANY</code> </p> </li> 
+    /// <li> <p> <code>CORPORATION</code> </p> </li> 
+    /// <li> <p> <code>GOVERNMENT</code> </p> </li> 
+    /// <li> <p> <code>INSTITUTION</code> </p> </li> 
+    /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li> 
+    /// <li> <p> <code>PUBLIC_COMMUNITY</code> </p> </li> 
+    /// <li> <p> <code>TOWNSHIP</code> </p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// .fr
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code>BIRTH_CITY</code> </p> </li>
-    /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li>
-    /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
-    /// <li> <p> <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was born. If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>. For more information, including a list of departments and the corresponding INSEE numbers, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.</p> </li>
-    /// <li> <p> <code>BRAND_NUMBER</code> </p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code>BIRTH_CITY</code> </p> </li> 
+    /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li> 
+    /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> 
+    /// <li> <p> <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was born. If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>. For more information, including a list of departments and the corresponding INSEE numbers, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.</p> </li> 
+    /// <li> <p> <code>BRAND_NUMBER</code> </p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// .it
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code>IT_NATIONALITY</code> </p> </li>
-    /// <li> <p> <code>IT_PIN</code> </p> </li>
-    /// <li> <p> <code>IT_REGISTRANT_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>FOREIGNERS</code> </p> </li>
-    /// <li> <p> <code>FREELANCE_WORKERS</code> (Freelance workers and professionals)</p> </li>
-    /// <li> <p> <code>ITALIAN_COMPANIES</code> (Italian companies and one-person companies)</p> </li>
-    /// <li> <p> <code>NON_PROFIT_ORGANIZATIONS</code> </p> </li>
-    /// <li> <p> <code>OTHER_SUBJECTS</code> </p> </li>
-    /// <li> <p> <code>PUBLIC_ORGANIZATIONS</code> </p> </li>
-    /// </ul> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code>IT_NATIONALITY</code> </p> </li> 
+    /// <li> <p> <code>IT_PIN</code> </p> </li> 
+    /// <li> <p> <code>IT_REGISTRANT_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>FOREIGNERS</code> </p> </li> 
+    /// <li> <p> <code>FREELANCE_WORKERS</code> (Freelance workers and professionals)</p> </li> 
+    /// <li> <p> <code>ITALIAN_COMPANIES</code> (Italian companies and one-person companies)</p> </li> 
+    /// <li> <p> <code>NON_PROFIT_ORGANIZATIONS</code> </p> </li> 
+    /// <li> <p> <code>OTHER_SUBJECTS</code> </p> </li> 
+    /// <li> <p> <code>PUBLIC_ORGANIZATIONS</code> </p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// .ru
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
-    /// <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> 
+    /// <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// .se
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li>
-    /// <li> <p> <code>SE_ID_NUMBER</code> </p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li> 
+    /// <li> <p> <code>SE_ID_NUMBER</code> </p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// .sg
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code>SG_ID_NUMBER</code> </p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code>SG_ID_NUMBER</code> </p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// .uk, .co.uk, .me.uk, and .org.uk
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>CRC</code> (UK Corporation by Royal Charter)</p> </li>
-    /// <li> <p> <code>FCORP</code> (Non-UK Corporation)</p> </li>
-    /// <li> <p> <code>FIND</code> (Non-UK Individual, representing self)</p> </li>
-    /// <li> <p> <code>FOTHER</code> (Non-UK Entity that does not fit into any other category)</p> </li>
-    /// <li> <p> <code>GOV</code> (UK Government Body)</p> </li>
-    /// <li> <p> <code>IND</code> (UK Individual (representing self))</p> </li>
-    /// <li> <p> <code>IP</code> (UK Industrial/Provident Registered Company)</p> </li>
-    /// <li> <p> <code>LLP</code> (UK Limited Liability Partnership)</p> </li>
-    /// <li> <p> <code>LTD</code> (UK Limited Company)</p> </li>
-    /// <li> <p> <code>OTHER</code> (UK Entity that does not fit into any other category)</p> </li>
-    /// <li> <p> <code>PLC</code> (UK Public Limited Company)</p> </li>
-    /// <li> <p> <code>PTNR</code> (UK Partnership)</p> </li>
-    /// <li> <p> <code>RCHAR</code> (UK Registered Charity)</p> </li>
-    /// <li> <p> <code>SCH</code> (UK School)</p> </li>
-    /// <li> <p> <code>STAT</code> (UK Statutory Body)</p> </li>
-    /// <li> <p> <code>STRA</code> (UK Sole Trader)</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>UK_COMPANY_NUMBER</code> </p> </li>
-    /// </ul>
-    /// </dd>
-    /// </dl>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CRC</code> (UK Corporation by Royal Charter)</p> </li> 
+    /// <li> <p> <code>FCORP</code> (Non-UK Corporation)</p> </li> 
+    /// <li> <p> <code>FIND</code> (Non-UK Individual, representing self)</p> </li> 
+    /// <li> <p> <code>FOTHER</code> (Non-UK Entity that does not fit into any other category)</p> </li> 
+    /// <li> <p> <code>GOV</code> (UK Government Body)</p> </li> 
+    /// <li> <p> <code>IND</code> (UK Individual (representing self))</p> </li> 
+    /// <li> <p> <code>IP</code> (UK Industrial/Provident Registered Company)</p> </li> 
+    /// <li> <p> <code>LLP</code> (UK Limited Liability Partnership)</p> </li> 
+    /// <li> <p> <code>LTD</code> (UK Limited Company)</p> </li> 
+    /// <li> <p> <code>OTHER</code> (UK Entity that does not fit into any other category)</p> </li> 
+    /// <li> <p> <code>PLC</code> (UK Public Limited Company)</p> </li> 
+    /// <li> <p> <code>PTNR</code> (UK Partnership)</p> </li> 
+    /// <li> <p> <code>RCHAR</code> (UK Registered Charity)</p> </li> 
+    /// <li> <p> <code>SCH</code> (UK School)</p> </li> 
+    /// <li> <p> <code>STAT</code> (UK Statutory Body)</p> </li> 
+    /// <li> <p> <code>STRA</code> (UK Sole Trader)</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>UK_COMPANY_NUMBER</code> </p> </li> 
+    /// </ul> 
+    /// </dd> 
+    /// </dl> 
     /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::ExtraParamName>,
@@ -1226,286 +1186,286 @@ pub struct ExtraParam {
     pub value: std::option::Option<std::string::String>,
 }
 impl ExtraParam {
-    /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
-    /// <dl>
+    /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p> 
+    /// <dl> 
     /// <dt>
     /// .com.au and .net.au
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code>AU_ID_NUMBER</code> </p> </li>
-    /// <li> <p> <code>AU_ID_TYPE</code> </p> <p>Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ABN</code> (Australian business number)</p> </li>
-    /// <li> <p> <code>ACN</code> (Australian company number)</p> </li>
-    /// <li> <p> <code>TM</code> (Trademark number)</p> </li>
-    /// </ul> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code>AU_ID_NUMBER</code> </p> </li> 
+    /// <li> <p> <code>AU_ID_TYPE</code> </p> <p>Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ABN</code> (Australian business number)</p> </li> 
+    /// <li> <p> <code>ACN</code> (Australian company number)</p> </li> 
+    /// <li> <p> <code>TM</code> (Trademark number)</p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// .ca
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code>BRAND_NUMBER</code> </p> </li>
-    /// <li> <p> <code>CA_BUSINESS_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>BANK</code> (Bank)</p> </li>
-    /// <li> <p> <code>COMMERCIAL_COMPANY</code> (Commercial company)</p> </li>
-    /// <li> <p> <code>COMPANY</code> (Company)</p> </li>
-    /// <li> <p> <code>COOPERATION</code> (Cooperation)</p> </li>
-    /// <li> <p> <code>COOPERATIVE</code> (Cooperative)</p> </li>
-    /// <li> <p> <code>COOPRIX</code> (Cooprix)</p> </li>
-    /// <li> <p> <code>CORP</code> (Corporation)</p> </li>
-    /// <li> <p> <code>CREDIT_UNION</code> (Credit union)</p> </li>
-    /// <li> <p> <code>FOMIA</code> (Federation of mutual insurance associations)</p> </li>
-    /// <li> <p> <code>INC</code> (Incorporated)</p> </li>
-    /// <li> <p> <code>LTD</code> (Limited)</p> </li>
-    /// <li> <p> <code>LTEE</code> (Limitée)</p> </li>
-    /// <li> <p> <code>LLC</code> (Limited liability corporation)</p> </li>
-    /// <li> <p> <code>LLP</code> (Limited liability partnership)</p> </li>
-    /// <li> <p> <code>LTE</code> (Lte.)</p> </li>
-    /// <li> <p> <code>MBA</code> (Mutual benefit association)</p> </li>
-    /// <li> <p> <code>MIC</code> (Mutual insurance company)</p> </li>
-    /// <li> <p> <code>NFP</code> (Not-for-profit corporation)</p> </li>
-    /// <li> <p> <code>SA</code> (S.A.)</p> </li>
-    /// <li> <p> <code>SAVINGS_COMPANY</code> (Savings company)</p> </li>
-    /// <li> <p> <code>SAVINGS_UNION</code> (Savings union)</p> </li>
-    /// <li> <p> <code>SARL</code> (Société à responsabilité limitée)</p> </li>
-    /// <li> <p> <code>TRUST</code> (Trust)</p> </li>
-    /// <li> <p> <code>ULC</code> (Unlimited liability corporation)</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>CA_LEGAL_TYPE</code> </p> <p>When <code>ContactType</code> is <code>PERSON</code>, valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ABO</code> (Aboriginal Peoples indigenous to Canada)</p> </li>
-    /// <li> <p> <code>CCT</code> (Canadian citizen)</p> </li>
-    /// <li> <p> <code>LGR</code> (Legal Representative of a Canadian Citizen or Permanent Resident)</p> </li>
-    /// <li> <p> <code>RES</code> (Permanent resident of Canada)</p> </li>
-    /// </ul> <p>When <code>ContactType</code> is a value other than <code>PERSON</code>, valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ASS</code> (Canadian unincorporated association)</p> </li>
-    /// <li> <p> <code>CCO</code> (Canadian corporation)</p> </li>
-    /// <li> <p> <code>EDU</code> (Canadian educational institution)</p> </li>
-    /// <li> <p> <code>GOV</code> (Government or government entity in Canada)</p> </li>
-    /// <li> <p> <code>HOP</code> (Canadian Hospital)</p> </li>
-    /// <li> <p> <code>INB</code> (Indian Band recognized by the Indian Act of Canada)</p> </li>
-    /// <li> <p> <code>LAM</code> (Canadian Library, Archive, or Museum)</p> </li>
-    /// <li> <p> <code>MAJ</code> (Her/His Majesty the Queen/King)</p> </li>
-    /// <li> <p> <code>OMK</code> (Official mark registered in Canada)</p> </li>
-    /// <li> <p> <code>PLT</code> (Canadian Political Party)</p> </li>
-    /// <li> <p> <code>PRT</code> (Partnership Registered in Canada)</p> </li>
-    /// <li> <p> <code>TDM</code> (Trademark registered in Canada)</p> </li>
-    /// <li> <p> <code>TRD</code> (Canadian Trade Union)</p> </li>
-    /// <li> <p> <code>TRS</code> (Trust established in Canada)</p> </li>
-    /// </ul> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code>BRAND_NUMBER</code> </p> </li> 
+    /// <li> <p> <code>CA_BUSINESS_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>BANK</code> (Bank)</p> </li> 
+    /// <li> <p> <code>COMMERCIAL_COMPANY</code> (Commercial company)</p> </li> 
+    /// <li> <p> <code>COMPANY</code> (Company)</p> </li> 
+    /// <li> <p> <code>COOPERATION</code> (Cooperation)</p> </li> 
+    /// <li> <p> <code>COOPERATIVE</code> (Cooperative)</p> </li> 
+    /// <li> <p> <code>COOPRIX</code> (Cooprix)</p> </li> 
+    /// <li> <p> <code>CORP</code> (Corporation)</p> </li> 
+    /// <li> <p> <code>CREDIT_UNION</code> (Credit union)</p> </li> 
+    /// <li> <p> <code>FOMIA</code> (Federation of mutual insurance associations)</p> </li> 
+    /// <li> <p> <code>INC</code> (Incorporated)</p> </li> 
+    /// <li> <p> <code>LTD</code> (Limited)</p> </li> 
+    /// <li> <p> <code>LTEE</code> (Limitée)</p> </li> 
+    /// <li> <p> <code>LLC</code> (Limited liability corporation)</p> </li> 
+    /// <li> <p> <code>LLP</code> (Limited liability partnership)</p> </li> 
+    /// <li> <p> <code>LTE</code> (Lte.)</p> </li> 
+    /// <li> <p> <code>MBA</code> (Mutual benefit association)</p> </li> 
+    /// <li> <p> <code>MIC</code> (Mutual insurance company)</p> </li> 
+    /// <li> <p> <code>NFP</code> (Not-for-profit corporation)</p> </li> 
+    /// <li> <p> <code>SA</code> (S.A.)</p> </li> 
+    /// <li> <p> <code>SAVINGS_COMPANY</code> (Savings company)</p> </li> 
+    /// <li> <p> <code>SAVINGS_UNION</code> (Savings union)</p> </li> 
+    /// <li> <p> <code>SARL</code> (Société à responsabilité limitée)</p> </li> 
+    /// <li> <p> <code>TRUST</code> (Trust)</p> </li> 
+    /// <li> <p> <code>ULC</code> (Unlimited liability corporation)</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>CA_LEGAL_TYPE</code> </p> <p>When <code>ContactType</code> is <code>PERSON</code>, valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ABO</code> (Aboriginal Peoples indigenous to Canada)</p> </li> 
+    /// <li> <p> <code>CCT</code> (Canadian citizen)</p> </li> 
+    /// <li> <p> <code>LGR</code> (Legal Representative of a Canadian Citizen or Permanent Resident)</p> </li> 
+    /// <li> <p> <code>RES</code> (Permanent resident of Canada)</p> </li> 
+    /// </ul> <p>When <code>ContactType</code> is a value other than <code>PERSON</code>, valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASS</code> (Canadian unincorporated association)</p> </li> 
+    /// <li> <p> <code>CCO</code> (Canadian corporation)</p> </li> 
+    /// <li> <p> <code>EDU</code> (Canadian educational institution)</p> </li> 
+    /// <li> <p> <code>GOV</code> (Government or government entity in Canada)</p> </li> 
+    /// <li> <p> <code>HOP</code> (Canadian Hospital)</p> </li> 
+    /// <li> <p> <code>INB</code> (Indian Band recognized by the Indian Act of Canada)</p> </li> 
+    /// <li> <p> <code>LAM</code> (Canadian Library, Archive, or Museum)</p> </li> 
+    /// <li> <p> <code>MAJ</code> (Her/His Majesty the Queen/King)</p> </li> 
+    /// <li> <p> <code>OMK</code> (Official mark registered in Canada)</p> </li> 
+    /// <li> <p> <code>PLT</code> (Canadian Political Party)</p> </li> 
+    /// <li> <p> <code>PRT</code> (Partnership Registered in Canada)</p> </li> 
+    /// <li> <p> <code>TDM</code> (Trademark registered in Canada)</p> </li> 
+    /// <li> <p> <code>TRD</code> (Canadian Trade Union)</p> </li> 
+    /// <li> <p> <code>TRS</code> (Trust established in Canada)</p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// .es
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>The value of <code>ES_IDENTIFICATION</code> depends on the following values:</p>
-    /// <ul>
-    /// <li> <p>The value of <code>ES_LEGAL_FORM</code> </p> </li>
-    /// <li> <p>The value of <code>ES_IDENTIFICATION_TYPE</code> </p> </li>
-    /// </ul> <p> <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b> </p>
-    /// <ul>
-    /// <li> <p>Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])</p> </li>
-    /// <li> <p>Example: B12345678</p> </li>
-    /// </ul> <p> <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify for <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b> </p>
-    /// <ul>
-    /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):</p>
-    /// <ul>
-    /// <li> <p>Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación Fiscal])</p> </li>
-    /// <li> <p>Example: 12345678M</p> </li>
-    /// </ul> </li>
-    /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):</p>
-    /// <ul>
-    /// <li> <p>Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])</p> </li>
-    /// <li> <p>Example: Y1234567X</p> </li>
-    /// </ul> </li>
-    /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside of Spain):</p>
-    /// <ul>
-    /// <li> <p>Specify a passport number, drivers license number, or national identity card number</p> </li>
-    /// </ul> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>DNI_AND_NIF</code> (For Spanish contacts)</p> </li>
-    /// <li> <p> <code>NIE</code> (For foreigners with legal residence)</p> </li>
-    /// <li> <p> <code>OTHER</code> (For contacts outside of Spain)</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ASSOCIATION</code> </p> </li>
-    /// <li> <p> <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li>
-    /// <li> <p> <code>CIVIL_SOCIETY</code> </p> </li>
-    /// <li> <p> <code>COMMUNITY_OF_OWNERS</code> </p> </li>
-    /// <li> <p> <code>COMMUNITY_PROPERTY</code> </p> </li>
-    /// <li> <p> <code>CONSULATE</code> </p> </li>
-    /// <li> <p> <code>COOPERATIVE</code> </p> </li>
-    /// <li> <p> <code>DESIGNATION_OF_ORIGIN_SUPERVISORY_COUNCIL</code> </p> </li>
-    /// <li> <p> <code>ECONOMIC_INTEREST_GROUP</code> </p> </li>
-    /// <li> <p> <code>EMBASSY</code> </p> </li>
-    /// <li> <p> <code>ENTITY_MANAGING_NATURAL_AREAS</code> </p> </li>
-    /// <li> <p> <code>FARM_PARTNERSHIP</code> </p> </li>
-    /// <li> <p> <code>FOUNDATION</code> </p> </li>
-    /// <li> <p> <code>GENERAL_AND_LIMITED_PARTNERSHIP</code> </p> </li>
-    /// <li> <p> <code>GENERAL_PARTNERSHIP</code> </p> </li>
-    /// <li> <p> <code>INDIVIDUAL</code> </p> </li>
-    /// <li> <p> <code>LIMITED_COMPANY</code> </p> </li>
-    /// <li> <p> <code>LOCAL_AUTHORITY</code> </p> </li>
-    /// <li> <p> <code>LOCAL_PUBLIC_ENTITY</code> </p> </li>
-    /// <li> <p> <code>MUTUAL_INSURANCE_COMPANY</code> </p> </li>
-    /// <li> <p> <code>NATIONAL_PUBLIC_ENTITY</code> </p> </li>
-    /// <li> <p> <code>ORDER_OR_RELIGIOUS_INSTITUTION</code> </p> </li>
-    /// <li> <p> <code>OTHERS (Only for contacts outside of Spain)</code> </p> </li>
-    /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li>
-    /// <li> <p> <code>PROFESSIONAL_ASSOCIATION</code> </p> </li>
-    /// <li> <p> <code>PUBLIC_LAW_ASSOCIATION</code> </p> </li>
-    /// <li> <p> <code>PUBLIC_LIMITED_COMPANY</code> </p> </li>
-    /// <li> <p> <code>REGIONAL_GOVERNMENT_BODY</code> </p> </li>
-    /// <li> <p> <code>REGIONAL_PUBLIC_ENTITY</code> </p> </li>
-    /// <li> <p> <code>SAVINGS_BANK</code> </p> </li>
-    /// <li> <p> <code>SPANISH_OFFICE</code> </p> </li>
-    /// <li> <p> <code>SPORTS_ASSOCIATION</code> </p> </li>
-    /// <li> <p> <code>SPORTS_FEDERATION</code> </p> </li>
-    /// <li> <p> <code>SPORTS_LIMITED_COMPANY</code> </p> </li>
-    /// <li> <p> <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code> </p> </li>
-    /// <li> <p> <code>TRADE_UNION</code> </p> </li>
-    /// <li> <p> <code>WORKER_OWNED_COMPANY</code> </p> </li>
-    /// <li> <p> <code>WORKER_OWNED_LIMITED_COMPANY</code> </p> </li>
-    /// </ul> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>The value of <code>ES_IDENTIFICATION</code> depends on the following values:</p> 
+    /// <ul> 
+    /// <li> <p>The value of <code>ES_LEGAL_FORM</code> </p> </li> 
+    /// <li> <p>The value of <code>ES_IDENTIFICATION_TYPE</code> </p> </li> 
+    /// </ul> <p> <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b> </p> 
+    /// <ul> 
+    /// <li> <p>Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])</p> </li> 
+    /// <li> <p>Example: B12345678</p> </li> 
+    /// </ul> <p> <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify for <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b> </p> 
+    /// <ul> 
+    /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):</p> 
+    /// <ul> 
+    /// <li> <p>Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación Fiscal])</p> </li> 
+    /// <li> <p>Example: 12345678M</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):</p> 
+    /// <ul> 
+    /// <li> <p>Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])</p> </li> 
+    /// <li> <p>Example: Y1234567X</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside of Spain):</p> 
+    /// <ul> 
+    /// <li> <p>Specify a passport number, drivers license number, or national identity card number</p> </li> 
+    /// </ul> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>DNI_AND_NIF</code> (For Spanish contacts)</p> </li> 
+    /// <li> <p> <code>NIE</code> (For foreigners with legal residence)</p> </li> 
+    /// <li> <p> <code>OTHER</code> (For contacts outside of Spain)</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ASSOCIATION</code> </p> </li> 
+    /// <li> <p> <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li> 
+    /// <li> <p> <code>CIVIL_SOCIETY</code> </p> </li> 
+    /// <li> <p> <code>COMMUNITY_OF_OWNERS</code> </p> </li> 
+    /// <li> <p> <code>COMMUNITY_PROPERTY</code> </p> </li> 
+    /// <li> <p> <code>CONSULATE</code> </p> </li> 
+    /// <li> <p> <code>COOPERATIVE</code> </p> </li> 
+    /// <li> <p> <code>DESIGNATION_OF_ORIGIN_SUPERVISORY_COUNCIL</code> </p> </li> 
+    /// <li> <p> <code>ECONOMIC_INTEREST_GROUP</code> </p> </li> 
+    /// <li> <p> <code>EMBASSY</code> </p> </li> 
+    /// <li> <p> <code>ENTITY_MANAGING_NATURAL_AREAS</code> </p> </li> 
+    /// <li> <p> <code>FARM_PARTNERSHIP</code> </p> </li> 
+    /// <li> <p> <code>FOUNDATION</code> </p> </li> 
+    /// <li> <p> <code>GENERAL_AND_LIMITED_PARTNERSHIP</code> </p> </li> 
+    /// <li> <p> <code>GENERAL_PARTNERSHIP</code> </p> </li> 
+    /// <li> <p> <code>INDIVIDUAL</code> </p> </li> 
+    /// <li> <p> <code>LIMITED_COMPANY</code> </p> </li> 
+    /// <li> <p> <code>LOCAL_AUTHORITY</code> </p> </li> 
+    /// <li> <p> <code>LOCAL_PUBLIC_ENTITY</code> </p> </li> 
+    /// <li> <p> <code>MUTUAL_INSURANCE_COMPANY</code> </p> </li> 
+    /// <li> <p> <code>NATIONAL_PUBLIC_ENTITY</code> </p> </li> 
+    /// <li> <p> <code>ORDER_OR_RELIGIOUS_INSTITUTION</code> </p> </li> 
+    /// <li> <p> <code>OTHERS (Only for contacts outside of Spain)</code> </p> </li> 
+    /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li> 
+    /// <li> <p> <code>PROFESSIONAL_ASSOCIATION</code> </p> </li> 
+    /// <li> <p> <code>PUBLIC_LAW_ASSOCIATION</code> </p> </li> 
+    /// <li> <p> <code>PUBLIC_LIMITED_COMPANY</code> </p> </li> 
+    /// <li> <p> <code>REGIONAL_GOVERNMENT_BODY</code> </p> </li> 
+    /// <li> <p> <code>REGIONAL_PUBLIC_ENTITY</code> </p> </li> 
+    /// <li> <p> <code>SAVINGS_BANK</code> </p> </li> 
+    /// <li> <p> <code>SPANISH_OFFICE</code> </p> </li> 
+    /// <li> <p> <code>SPORTS_ASSOCIATION</code> </p> </li> 
+    /// <li> <p> <code>SPORTS_FEDERATION</code> </p> </li> 
+    /// <li> <p> <code>SPORTS_LIMITED_COMPANY</code> </p> </li> 
+    /// <li> <p> <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code> </p> </li> 
+    /// <li> <p> <code>TRADE_UNION</code> </p> </li> 
+    /// <li> <p> <code>WORKER_OWNED_COMPANY</code> </p> </li> 
+    /// <li> <p> <code>WORKER_OWNED_LIMITED_COMPANY</code> </p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// .eu
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code> EU_COUNTRY_OF_CITIZENSHIP</code> </p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code> EU_COUNTRY_OF_CITIZENSHIP</code> </p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// .fi
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
-    /// <li> <p> <code>FI_BUSINESS_NUMBER</code> </p> </li>
-    /// <li> <p> <code>FI_ID_NUMBER</code> </p> </li>
-    /// <li> <p> <code>FI_NATIONALITY</code> </p> <p>Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>FINNISH</code> </p> </li>
-    /// <li> <p> <code>NOT_FINNISH</code> </p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>FI_ORGANIZATION_TYPE</code> </p> <p>Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>COMPANY</code> </p> </li>
-    /// <li> <p> <code>CORPORATION</code> </p> </li>
-    /// <li> <p> <code>GOVERNMENT</code> </p> </li>
-    /// <li> <p> <code>INSTITUTION</code> </p> </li>
-    /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li>
-    /// <li> <p> <code>PUBLIC_COMMUNITY</code> </p> </li>
-    /// <li> <p> <code>TOWNSHIP</code> </p> </li>
-    /// </ul> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> 
+    /// <li> <p> <code>FI_BUSINESS_NUMBER</code> </p> </li> 
+    /// <li> <p> <code>FI_ID_NUMBER</code> </p> </li> 
+    /// <li> <p> <code>FI_NATIONALITY</code> </p> <p>Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>FINNISH</code> </p> </li> 
+    /// <li> <p> <code>NOT_FINNISH</code> </p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>FI_ORGANIZATION_TYPE</code> </p> <p>Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>COMPANY</code> </p> </li> 
+    /// <li> <p> <code>CORPORATION</code> </p> </li> 
+    /// <li> <p> <code>GOVERNMENT</code> </p> </li> 
+    /// <li> <p> <code>INSTITUTION</code> </p> </li> 
+    /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li> 
+    /// <li> <p> <code>PUBLIC_COMMUNITY</code> </p> </li> 
+    /// <li> <p> <code>TOWNSHIP</code> </p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// .fr
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code>BIRTH_CITY</code> </p> </li>
-    /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li>
-    /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
-    /// <li> <p> <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was born. If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>. For more information, including a list of departments and the corresponding INSEE numbers, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.</p> </li>
-    /// <li> <p> <code>BRAND_NUMBER</code> </p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code>BIRTH_CITY</code> </p> </li> 
+    /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li> 
+    /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> 
+    /// <li> <p> <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was born. If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>. For more information, including a list of departments and the corresponding INSEE numbers, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.</p> </li> 
+    /// <li> <p> <code>BRAND_NUMBER</code> </p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// .it
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code>IT_NATIONALITY</code> </p> </li>
-    /// <li> <p> <code>IT_PIN</code> </p> </li>
-    /// <li> <p> <code>IT_REGISTRANT_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>FOREIGNERS</code> </p> </li>
-    /// <li> <p> <code>FREELANCE_WORKERS</code> (Freelance workers and professionals)</p> </li>
-    /// <li> <p> <code>ITALIAN_COMPANIES</code> (Italian companies and one-person companies)</p> </li>
-    /// <li> <p> <code>NON_PROFIT_ORGANIZATIONS</code> </p> </li>
-    /// <li> <p> <code>OTHER_SUBJECTS</code> </p> </li>
-    /// <li> <p> <code>PUBLIC_ORGANIZATIONS</code> </p> </li>
-    /// </ul> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code>IT_NATIONALITY</code> </p> </li> 
+    /// <li> <p> <code>IT_PIN</code> </p> </li> 
+    /// <li> <p> <code>IT_REGISTRANT_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>FOREIGNERS</code> </p> </li> 
+    /// <li> <p> <code>FREELANCE_WORKERS</code> (Freelance workers and professionals)</p> </li> 
+    /// <li> <p> <code>ITALIAN_COMPANIES</code> (Italian companies and one-person companies)</p> </li> 
+    /// <li> <p> <code>NON_PROFIT_ORGANIZATIONS</code> </p> </li> 
+    /// <li> <p> <code>OTHER_SUBJECTS</code> </p> </li> 
+    /// <li> <p> <code>PUBLIC_ORGANIZATIONS</code> </p> </li> 
+    /// </ul> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// .ru
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
-    /// <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> 
+    /// <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// .se
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li>
-    /// <li> <p> <code>SE_ID_NUMBER</code> </p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li> 
+    /// <li> <p> <code>SE_ID_NUMBER</code> </p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// .sg
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code>SG_ID_NUMBER</code> </p> </li>
-    /// </ul>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code>SG_ID_NUMBER</code> </p> </li> 
+    /// </ul> 
+    /// </dd> 
     /// <dt>
     /// .uk, .co.uk, .me.uk, and .org.uk
-    /// </dt>
-    /// <dd>
-    /// <ul>
-    /// <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid values include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>CRC</code> (UK Corporation by Royal Charter)</p> </li>
-    /// <li> <p> <code>FCORP</code> (Non-UK Corporation)</p> </li>
-    /// <li> <p> <code>FIND</code> (Non-UK Individual, representing self)</p> </li>
-    /// <li> <p> <code>FOTHER</code> (Non-UK Entity that does not fit into any other category)</p> </li>
-    /// <li> <p> <code>GOV</code> (UK Government Body)</p> </li>
-    /// <li> <p> <code>IND</code> (UK Individual (representing self))</p> </li>
-    /// <li> <p> <code>IP</code> (UK Industrial/Provident Registered Company)</p> </li>
-    /// <li> <p> <code>LLP</code> (UK Limited Liability Partnership)</p> </li>
-    /// <li> <p> <code>LTD</code> (UK Limited Company)</p> </li>
-    /// <li> <p> <code>OTHER</code> (UK Entity that does not fit into any other category)</p> </li>
-    /// <li> <p> <code>PLC</code> (UK Public Limited Company)</p> </li>
-    /// <li> <p> <code>PTNR</code> (UK Partnership)</p> </li>
-    /// <li> <p> <code>RCHAR</code> (UK Registered Charity)</p> </li>
-    /// <li> <p> <code>SCH</code> (UK School)</p> </li>
-    /// <li> <p> <code>STAT</code> (UK Statutory Body)</p> </li>
-    /// <li> <p> <code>STRA</code> (UK Sole Trader)</p> </li>
-    /// </ul> </li>
-    /// <li> <p> <code>UK_COMPANY_NUMBER</code> </p> </li>
-    /// </ul>
-    /// </dd>
-    /// </dl>
+    /// </dt> 
+    /// <dd> 
+    /// <ul> 
+    /// <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid values include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>CRC</code> (UK Corporation by Royal Charter)</p> </li> 
+    /// <li> <p> <code>FCORP</code> (Non-UK Corporation)</p> </li> 
+    /// <li> <p> <code>FIND</code> (Non-UK Individual, representing self)</p> </li> 
+    /// <li> <p> <code>FOTHER</code> (Non-UK Entity that does not fit into any other category)</p> </li> 
+    /// <li> <p> <code>GOV</code> (UK Government Body)</p> </li> 
+    /// <li> <p> <code>IND</code> (UK Individual (representing self))</p> </li> 
+    /// <li> <p> <code>IP</code> (UK Industrial/Provident Registered Company)</p> </li> 
+    /// <li> <p> <code>LLP</code> (UK Limited Liability Partnership)</p> </li> 
+    /// <li> <p> <code>LTD</code> (UK Limited Company)</p> </li> 
+    /// <li> <p> <code>OTHER</code> (UK Entity that does not fit into any other category)</p> </li> 
+    /// <li> <p> <code>PLC</code> (UK Public Limited Company)</p> </li> 
+    /// <li> <p> <code>PTNR</code> (UK Partnership)</p> </li> 
+    /// <li> <p> <code>RCHAR</code> (UK Registered Charity)</p> </li> 
+    /// <li> <p> <code>SCH</code> (UK School)</p> </li> 
+    /// <li> <p> <code>STAT</code> (UK Statutory Body)</p> </li> 
+    /// <li> <p> <code>STRA</code> (UK Sole Trader)</p> </li> 
+    /// </ul> </li> 
+    /// <li> <p> <code>UK_COMPANY_NUMBER</code> </p> </li> 
+    /// </ul> 
+    /// </dd> 
+    /// </dl> 
     /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::ExtraParamName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::ExtraParamName> {
         self.name.as_ref()
     }
     /// <p>The value that corresponds with the name of an extra parameter.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for ExtraParam {
+impl  std::fmt::Debug for ExtraParam  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExtraParam");
         formatter.field("name", &self.name);
@@ -1515,7 +1475,7 @@ impl std::fmt::Debug for ExtraParam {
 }
 /// See [`ExtraParam`](crate::model::ExtraParam).
 pub mod extra_param {
-
+    
     /// A builder for [`ExtraParam`](crate::model::ExtraParam).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1523,558 +1483,554 @@ pub mod extra_param {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
-        /// <dl>
+        /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p> 
+        /// <dl> 
         /// <dt>
         /// .com.au and .net.au
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code>AU_ID_NUMBER</code> </p> </li>
-        /// <li> <p> <code>AU_ID_TYPE</code> </p> <p>Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>ABN</code> (Australian business number)</p> </li>
-        /// <li> <p> <code>ACN</code> (Australian company number)</p> </li>
-        /// <li> <p> <code>TM</code> (Trademark number)</p> </li>
-        /// </ul> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code>AU_ID_NUMBER</code> </p> </li> 
+        /// <li> <p> <code>AU_ID_TYPE</code> </p> <p>Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ABN</code> (Australian business number)</p> </li> 
+        /// <li> <p> <code>ACN</code> (Australian company number)</p> </li> 
+        /// <li> <p> <code>TM</code> (Trademark number)</p> </li> 
+        /// </ul> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// .ca
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code>BRAND_NUMBER</code> </p> </li>
-        /// <li> <p> <code>CA_BUSINESS_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>BANK</code> (Bank)</p> </li>
-        /// <li> <p> <code>COMMERCIAL_COMPANY</code> (Commercial company)</p> </li>
-        /// <li> <p> <code>COMPANY</code> (Company)</p> </li>
-        /// <li> <p> <code>COOPERATION</code> (Cooperation)</p> </li>
-        /// <li> <p> <code>COOPERATIVE</code> (Cooperative)</p> </li>
-        /// <li> <p> <code>COOPRIX</code> (Cooprix)</p> </li>
-        /// <li> <p> <code>CORP</code> (Corporation)</p> </li>
-        /// <li> <p> <code>CREDIT_UNION</code> (Credit union)</p> </li>
-        /// <li> <p> <code>FOMIA</code> (Federation of mutual insurance associations)</p> </li>
-        /// <li> <p> <code>INC</code> (Incorporated)</p> </li>
-        /// <li> <p> <code>LTD</code> (Limited)</p> </li>
-        /// <li> <p> <code>LTEE</code> (Limitée)</p> </li>
-        /// <li> <p> <code>LLC</code> (Limited liability corporation)</p> </li>
-        /// <li> <p> <code>LLP</code> (Limited liability partnership)</p> </li>
-        /// <li> <p> <code>LTE</code> (Lte.)</p> </li>
-        /// <li> <p> <code>MBA</code> (Mutual benefit association)</p> </li>
-        /// <li> <p> <code>MIC</code> (Mutual insurance company)</p> </li>
-        /// <li> <p> <code>NFP</code> (Not-for-profit corporation)</p> </li>
-        /// <li> <p> <code>SA</code> (S.A.)</p> </li>
-        /// <li> <p> <code>SAVINGS_COMPANY</code> (Savings company)</p> </li>
-        /// <li> <p> <code>SAVINGS_UNION</code> (Savings union)</p> </li>
-        /// <li> <p> <code>SARL</code> (Société à responsabilité limitée)</p> </li>
-        /// <li> <p> <code>TRUST</code> (Trust)</p> </li>
-        /// <li> <p> <code>ULC</code> (Unlimited liability corporation)</p> </li>
-        /// </ul> </li>
-        /// <li> <p> <code>CA_LEGAL_TYPE</code> </p> <p>When <code>ContactType</code> is <code>PERSON</code>, valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>ABO</code> (Aboriginal Peoples indigenous to Canada)</p> </li>
-        /// <li> <p> <code>CCT</code> (Canadian citizen)</p> </li>
-        /// <li> <p> <code>LGR</code> (Legal Representative of a Canadian Citizen or Permanent Resident)</p> </li>
-        /// <li> <p> <code>RES</code> (Permanent resident of Canada)</p> </li>
-        /// </ul> <p>When <code>ContactType</code> is a value other than <code>PERSON</code>, valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>ASS</code> (Canadian unincorporated association)</p> </li>
-        /// <li> <p> <code>CCO</code> (Canadian corporation)</p> </li>
-        /// <li> <p> <code>EDU</code> (Canadian educational institution)</p> </li>
-        /// <li> <p> <code>GOV</code> (Government or government entity in Canada)</p> </li>
-        /// <li> <p> <code>HOP</code> (Canadian Hospital)</p> </li>
-        /// <li> <p> <code>INB</code> (Indian Band recognized by the Indian Act of Canada)</p> </li>
-        /// <li> <p> <code>LAM</code> (Canadian Library, Archive, or Museum)</p> </li>
-        /// <li> <p> <code>MAJ</code> (Her/His Majesty the Queen/King)</p> </li>
-        /// <li> <p> <code>OMK</code> (Official mark registered in Canada)</p> </li>
-        /// <li> <p> <code>PLT</code> (Canadian Political Party)</p> </li>
-        /// <li> <p> <code>PRT</code> (Partnership Registered in Canada)</p> </li>
-        /// <li> <p> <code>TDM</code> (Trademark registered in Canada)</p> </li>
-        /// <li> <p> <code>TRD</code> (Canadian Trade Union)</p> </li>
-        /// <li> <p> <code>TRS</code> (Trust established in Canada)</p> </li>
-        /// </ul> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code>BRAND_NUMBER</code> </p> </li> 
+        /// <li> <p> <code>CA_BUSINESS_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>BANK</code> (Bank)</p> </li> 
+        /// <li> <p> <code>COMMERCIAL_COMPANY</code> (Commercial company)</p> </li> 
+        /// <li> <p> <code>COMPANY</code> (Company)</p> </li> 
+        /// <li> <p> <code>COOPERATION</code> (Cooperation)</p> </li> 
+        /// <li> <p> <code>COOPERATIVE</code> (Cooperative)</p> </li> 
+        /// <li> <p> <code>COOPRIX</code> (Cooprix)</p> </li> 
+        /// <li> <p> <code>CORP</code> (Corporation)</p> </li> 
+        /// <li> <p> <code>CREDIT_UNION</code> (Credit union)</p> </li> 
+        /// <li> <p> <code>FOMIA</code> (Federation of mutual insurance associations)</p> </li> 
+        /// <li> <p> <code>INC</code> (Incorporated)</p> </li> 
+        /// <li> <p> <code>LTD</code> (Limited)</p> </li> 
+        /// <li> <p> <code>LTEE</code> (Limitée)</p> </li> 
+        /// <li> <p> <code>LLC</code> (Limited liability corporation)</p> </li> 
+        /// <li> <p> <code>LLP</code> (Limited liability partnership)</p> </li> 
+        /// <li> <p> <code>LTE</code> (Lte.)</p> </li> 
+        /// <li> <p> <code>MBA</code> (Mutual benefit association)</p> </li> 
+        /// <li> <p> <code>MIC</code> (Mutual insurance company)</p> </li> 
+        /// <li> <p> <code>NFP</code> (Not-for-profit corporation)</p> </li> 
+        /// <li> <p> <code>SA</code> (S.A.)</p> </li> 
+        /// <li> <p> <code>SAVINGS_COMPANY</code> (Savings company)</p> </li> 
+        /// <li> <p> <code>SAVINGS_UNION</code> (Savings union)</p> </li> 
+        /// <li> <p> <code>SARL</code> (Société à responsabilité limitée)</p> </li> 
+        /// <li> <p> <code>TRUST</code> (Trust)</p> </li> 
+        /// <li> <p> <code>ULC</code> (Unlimited liability corporation)</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <code>CA_LEGAL_TYPE</code> </p> <p>When <code>ContactType</code> is <code>PERSON</code>, valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ABO</code> (Aboriginal Peoples indigenous to Canada)</p> </li> 
+        /// <li> <p> <code>CCT</code> (Canadian citizen)</p> </li> 
+        /// <li> <p> <code>LGR</code> (Legal Representative of a Canadian Citizen or Permanent Resident)</p> </li> 
+        /// <li> <p> <code>RES</code> (Permanent resident of Canada)</p> </li> 
+        /// </ul> <p>When <code>ContactType</code> is a value other than <code>PERSON</code>, valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ASS</code> (Canadian unincorporated association)</p> </li> 
+        /// <li> <p> <code>CCO</code> (Canadian corporation)</p> </li> 
+        /// <li> <p> <code>EDU</code> (Canadian educational institution)</p> </li> 
+        /// <li> <p> <code>GOV</code> (Government or government entity in Canada)</p> </li> 
+        /// <li> <p> <code>HOP</code> (Canadian Hospital)</p> </li> 
+        /// <li> <p> <code>INB</code> (Indian Band recognized by the Indian Act of Canada)</p> </li> 
+        /// <li> <p> <code>LAM</code> (Canadian Library, Archive, or Museum)</p> </li> 
+        /// <li> <p> <code>MAJ</code> (Her/His Majesty the Queen/King)</p> </li> 
+        /// <li> <p> <code>OMK</code> (Official mark registered in Canada)</p> </li> 
+        /// <li> <p> <code>PLT</code> (Canadian Political Party)</p> </li> 
+        /// <li> <p> <code>PRT</code> (Partnership Registered in Canada)</p> </li> 
+        /// <li> <p> <code>TDM</code> (Trademark registered in Canada)</p> </li> 
+        /// <li> <p> <code>TRD</code> (Canadian Trade Union)</p> </li> 
+        /// <li> <p> <code>TRS</code> (Trust established in Canada)</p> </li> 
+        /// </ul> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// .es
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>The value of <code>ES_IDENTIFICATION</code> depends on the following values:</p>
-        /// <ul>
-        /// <li> <p>The value of <code>ES_LEGAL_FORM</code> </p> </li>
-        /// <li> <p>The value of <code>ES_IDENTIFICATION_TYPE</code> </p> </li>
-        /// </ul> <p> <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b> </p>
-        /// <ul>
-        /// <li> <p>Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])</p> </li>
-        /// <li> <p>Example: B12345678</p> </li>
-        /// </ul> <p> <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify for <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b> </p>
-        /// <ul>
-        /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):</p>
-        /// <ul>
-        /// <li> <p>Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación Fiscal])</p> </li>
-        /// <li> <p>Example: 12345678M</p> </li>
-        /// </ul> </li>
-        /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):</p>
-        /// <ul>
-        /// <li> <p>Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])</p> </li>
-        /// <li> <p>Example: Y1234567X</p> </li>
-        /// </ul> </li>
-        /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside of Spain):</p>
-        /// <ul>
-        /// <li> <p>Specify a passport number, drivers license number, or national identity card number</p> </li>
-        /// </ul> </li>
-        /// </ul> </li>
-        /// <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>DNI_AND_NIF</code> (For Spanish contacts)</p> </li>
-        /// <li> <p> <code>NIE</code> (For foreigners with legal residence)</p> </li>
-        /// <li> <p> <code>OTHER</code> (For contacts outside of Spain)</p> </li>
-        /// </ul> </li>
-        /// <li> <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>ASSOCIATION</code> </p> </li>
-        /// <li> <p> <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li>
-        /// <li> <p> <code>CIVIL_SOCIETY</code> </p> </li>
-        /// <li> <p> <code>COMMUNITY_OF_OWNERS</code> </p> </li>
-        /// <li> <p> <code>COMMUNITY_PROPERTY</code> </p> </li>
-        /// <li> <p> <code>CONSULATE</code> </p> </li>
-        /// <li> <p> <code>COOPERATIVE</code> </p> </li>
-        /// <li> <p> <code>DESIGNATION_OF_ORIGIN_SUPERVISORY_COUNCIL</code> </p> </li>
-        /// <li> <p> <code>ECONOMIC_INTEREST_GROUP</code> </p> </li>
-        /// <li> <p> <code>EMBASSY</code> </p> </li>
-        /// <li> <p> <code>ENTITY_MANAGING_NATURAL_AREAS</code> </p> </li>
-        /// <li> <p> <code>FARM_PARTNERSHIP</code> </p> </li>
-        /// <li> <p> <code>FOUNDATION</code> </p> </li>
-        /// <li> <p> <code>GENERAL_AND_LIMITED_PARTNERSHIP</code> </p> </li>
-        /// <li> <p> <code>GENERAL_PARTNERSHIP</code> </p> </li>
-        /// <li> <p> <code>INDIVIDUAL</code> </p> </li>
-        /// <li> <p> <code>LIMITED_COMPANY</code> </p> </li>
-        /// <li> <p> <code>LOCAL_AUTHORITY</code> </p> </li>
-        /// <li> <p> <code>LOCAL_PUBLIC_ENTITY</code> </p> </li>
-        /// <li> <p> <code>MUTUAL_INSURANCE_COMPANY</code> </p> </li>
-        /// <li> <p> <code>NATIONAL_PUBLIC_ENTITY</code> </p> </li>
-        /// <li> <p> <code>ORDER_OR_RELIGIOUS_INSTITUTION</code> </p> </li>
-        /// <li> <p> <code>OTHERS (Only for contacts outside of Spain)</code> </p> </li>
-        /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li>
-        /// <li> <p> <code>PROFESSIONAL_ASSOCIATION</code> </p> </li>
-        /// <li> <p> <code>PUBLIC_LAW_ASSOCIATION</code> </p> </li>
-        /// <li> <p> <code>PUBLIC_LIMITED_COMPANY</code> </p> </li>
-        /// <li> <p> <code>REGIONAL_GOVERNMENT_BODY</code> </p> </li>
-        /// <li> <p> <code>REGIONAL_PUBLIC_ENTITY</code> </p> </li>
-        /// <li> <p> <code>SAVINGS_BANK</code> </p> </li>
-        /// <li> <p> <code>SPANISH_OFFICE</code> </p> </li>
-        /// <li> <p> <code>SPORTS_ASSOCIATION</code> </p> </li>
-        /// <li> <p> <code>SPORTS_FEDERATION</code> </p> </li>
-        /// <li> <p> <code>SPORTS_LIMITED_COMPANY</code> </p> </li>
-        /// <li> <p> <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code> </p> </li>
-        /// <li> <p> <code>TRADE_UNION</code> </p> </li>
-        /// <li> <p> <code>WORKER_OWNED_COMPANY</code> </p> </li>
-        /// <li> <p> <code>WORKER_OWNED_LIMITED_COMPANY</code> </p> </li>
-        /// </ul> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>The value of <code>ES_IDENTIFICATION</code> depends on the following values:</p> 
+        /// <ul> 
+        /// <li> <p>The value of <code>ES_LEGAL_FORM</code> </p> </li> 
+        /// <li> <p>The value of <code>ES_IDENTIFICATION_TYPE</code> </p> </li> 
+        /// </ul> <p> <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b> </p> 
+        /// <ul> 
+        /// <li> <p>Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])</p> </li> 
+        /// <li> <p>Example: B12345678</p> </li> 
+        /// </ul> <p> <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify for <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b> </p> 
+        /// <ul> 
+        /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):</p> 
+        /// <ul> 
+        /// <li> <p>Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación Fiscal])</p> </li> 
+        /// <li> <p>Example: 12345678M</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):</p> 
+        /// <ul> 
+        /// <li> <p>Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])</p> </li> 
+        /// <li> <p>Example: Y1234567X</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside of Spain):</p> 
+        /// <ul> 
+        /// <li> <p>Specify a passport number, drivers license number, or national identity card number</p> </li> 
+        /// </ul> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>DNI_AND_NIF</code> (For Spanish contacts)</p> </li> 
+        /// <li> <p> <code>NIE</code> (For foreigners with legal residence)</p> </li> 
+        /// <li> <p> <code>OTHER</code> (For contacts outside of Spain)</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ASSOCIATION</code> </p> </li> 
+        /// <li> <p> <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li> 
+        /// <li> <p> <code>CIVIL_SOCIETY</code> </p> </li> 
+        /// <li> <p> <code>COMMUNITY_OF_OWNERS</code> </p> </li> 
+        /// <li> <p> <code>COMMUNITY_PROPERTY</code> </p> </li> 
+        /// <li> <p> <code>CONSULATE</code> </p> </li> 
+        /// <li> <p> <code>COOPERATIVE</code> </p> </li> 
+        /// <li> <p> <code>DESIGNATION_OF_ORIGIN_SUPERVISORY_COUNCIL</code> </p> </li> 
+        /// <li> <p> <code>ECONOMIC_INTEREST_GROUP</code> </p> </li> 
+        /// <li> <p> <code>EMBASSY</code> </p> </li> 
+        /// <li> <p> <code>ENTITY_MANAGING_NATURAL_AREAS</code> </p> </li> 
+        /// <li> <p> <code>FARM_PARTNERSHIP</code> </p> </li> 
+        /// <li> <p> <code>FOUNDATION</code> </p> </li> 
+        /// <li> <p> <code>GENERAL_AND_LIMITED_PARTNERSHIP</code> </p> </li> 
+        /// <li> <p> <code>GENERAL_PARTNERSHIP</code> </p> </li> 
+        /// <li> <p> <code>INDIVIDUAL</code> </p> </li> 
+        /// <li> <p> <code>LIMITED_COMPANY</code> </p> </li> 
+        /// <li> <p> <code>LOCAL_AUTHORITY</code> </p> </li> 
+        /// <li> <p> <code>LOCAL_PUBLIC_ENTITY</code> </p> </li> 
+        /// <li> <p> <code>MUTUAL_INSURANCE_COMPANY</code> </p> </li> 
+        /// <li> <p> <code>NATIONAL_PUBLIC_ENTITY</code> </p> </li> 
+        /// <li> <p> <code>ORDER_OR_RELIGIOUS_INSTITUTION</code> </p> </li> 
+        /// <li> <p> <code>OTHERS (Only for contacts outside of Spain)</code> </p> </li> 
+        /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li> 
+        /// <li> <p> <code>PROFESSIONAL_ASSOCIATION</code> </p> </li> 
+        /// <li> <p> <code>PUBLIC_LAW_ASSOCIATION</code> </p> </li> 
+        /// <li> <p> <code>PUBLIC_LIMITED_COMPANY</code> </p> </li> 
+        /// <li> <p> <code>REGIONAL_GOVERNMENT_BODY</code> </p> </li> 
+        /// <li> <p> <code>REGIONAL_PUBLIC_ENTITY</code> </p> </li> 
+        /// <li> <p> <code>SAVINGS_BANK</code> </p> </li> 
+        /// <li> <p> <code>SPANISH_OFFICE</code> </p> </li> 
+        /// <li> <p> <code>SPORTS_ASSOCIATION</code> </p> </li> 
+        /// <li> <p> <code>SPORTS_FEDERATION</code> </p> </li> 
+        /// <li> <p> <code>SPORTS_LIMITED_COMPANY</code> </p> </li> 
+        /// <li> <p> <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code> </p> </li> 
+        /// <li> <p> <code>TRADE_UNION</code> </p> </li> 
+        /// <li> <p> <code>WORKER_OWNED_COMPANY</code> </p> </li> 
+        /// <li> <p> <code>WORKER_OWNED_LIMITED_COMPANY</code> </p> </li> 
+        /// </ul> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// .eu
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code> EU_COUNTRY_OF_CITIZENSHIP</code> </p> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code> EU_COUNTRY_OF_CITIZENSHIP</code> </p> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// .fi
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
-        /// <li> <p> <code>FI_BUSINESS_NUMBER</code> </p> </li>
-        /// <li> <p> <code>FI_ID_NUMBER</code> </p> </li>
-        /// <li> <p> <code>FI_NATIONALITY</code> </p> <p>Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>FINNISH</code> </p> </li>
-        /// <li> <p> <code>NOT_FINNISH</code> </p> </li>
-        /// </ul> </li>
-        /// <li> <p> <code>FI_ORGANIZATION_TYPE</code> </p> <p>Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>COMPANY</code> </p> </li>
-        /// <li> <p> <code>CORPORATION</code> </p> </li>
-        /// <li> <p> <code>GOVERNMENT</code> </p> </li>
-        /// <li> <p> <code>INSTITUTION</code> </p> </li>
-        /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li>
-        /// <li> <p> <code>PUBLIC_COMMUNITY</code> </p> </li>
-        /// <li> <p> <code>TOWNSHIP</code> </p> </li>
-        /// </ul> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> 
+        /// <li> <p> <code>FI_BUSINESS_NUMBER</code> </p> </li> 
+        /// <li> <p> <code>FI_ID_NUMBER</code> </p> </li> 
+        /// <li> <p> <code>FI_NATIONALITY</code> </p> <p>Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>FINNISH</code> </p> </li> 
+        /// <li> <p> <code>NOT_FINNISH</code> </p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <code>FI_ORGANIZATION_TYPE</code> </p> <p>Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>COMPANY</code> </p> </li> 
+        /// <li> <p> <code>CORPORATION</code> </p> </li> 
+        /// <li> <p> <code>GOVERNMENT</code> </p> </li> 
+        /// <li> <p> <code>INSTITUTION</code> </p> </li> 
+        /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li> 
+        /// <li> <p> <code>PUBLIC_COMMUNITY</code> </p> </li> 
+        /// <li> <p> <code>TOWNSHIP</code> </p> </li> 
+        /// </ul> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// .fr
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code>BIRTH_CITY</code> </p> </li>
-        /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li>
-        /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
-        /// <li> <p> <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was born. If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>. For more information, including a list of departments and the corresponding INSEE numbers, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.</p> </li>
-        /// <li> <p> <code>BRAND_NUMBER</code> </p> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code>BIRTH_CITY</code> </p> </li> 
+        /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li> 
+        /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> 
+        /// <li> <p> <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was born. If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>. For more information, including a list of departments and the corresponding INSEE numbers, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.</p> </li> 
+        /// <li> <p> <code>BRAND_NUMBER</code> </p> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// .it
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code>IT_NATIONALITY</code> </p> </li>
-        /// <li> <p> <code>IT_PIN</code> </p> </li>
-        /// <li> <p> <code>IT_REGISTRANT_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>FOREIGNERS</code> </p> </li>
-        /// <li> <p> <code>FREELANCE_WORKERS</code> (Freelance workers and professionals)</p> </li>
-        /// <li> <p> <code>ITALIAN_COMPANIES</code> (Italian companies and one-person companies)</p> </li>
-        /// <li> <p> <code>NON_PROFIT_ORGANIZATIONS</code> </p> </li>
-        /// <li> <p> <code>OTHER_SUBJECTS</code> </p> </li>
-        /// <li> <p> <code>PUBLIC_ORGANIZATIONS</code> </p> </li>
-        /// </ul> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code>IT_NATIONALITY</code> </p> </li> 
+        /// <li> <p> <code>IT_PIN</code> </p> </li> 
+        /// <li> <p> <code>IT_REGISTRANT_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>FOREIGNERS</code> </p> </li> 
+        /// <li> <p> <code>FREELANCE_WORKERS</code> (Freelance workers and professionals)</p> </li> 
+        /// <li> <p> <code>ITALIAN_COMPANIES</code> (Italian companies and one-person companies)</p> </li> 
+        /// <li> <p> <code>NON_PROFIT_ORGANIZATIONS</code> </p> </li> 
+        /// <li> <p> <code>OTHER_SUBJECTS</code> </p> </li> 
+        /// <li> <p> <code>PUBLIC_ORGANIZATIONS</code> </p> </li> 
+        /// </ul> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// .ru
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
-        /// <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> 
+        /// <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// .se
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li>
-        /// <li> <p> <code>SE_ID_NUMBER</code> </p> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li> 
+        /// <li> <p> <code>SE_ID_NUMBER</code> </p> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// .sg
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code>SG_ID_NUMBER</code> </p> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code>SG_ID_NUMBER</code> </p> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// .uk, .co.uk, .me.uk, and .org.uk
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>CRC</code> (UK Corporation by Royal Charter)</p> </li>
-        /// <li> <p> <code>FCORP</code> (Non-UK Corporation)</p> </li>
-        /// <li> <p> <code>FIND</code> (Non-UK Individual, representing self)</p> </li>
-        /// <li> <p> <code>FOTHER</code> (Non-UK Entity that does not fit into any other category)</p> </li>
-        /// <li> <p> <code>GOV</code> (UK Government Body)</p> </li>
-        /// <li> <p> <code>IND</code> (UK Individual (representing self))</p> </li>
-        /// <li> <p> <code>IP</code> (UK Industrial/Provident Registered Company)</p> </li>
-        /// <li> <p> <code>LLP</code> (UK Limited Liability Partnership)</p> </li>
-        /// <li> <p> <code>LTD</code> (UK Limited Company)</p> </li>
-        /// <li> <p> <code>OTHER</code> (UK Entity that does not fit into any other category)</p> </li>
-        /// <li> <p> <code>PLC</code> (UK Public Limited Company)</p> </li>
-        /// <li> <p> <code>PTNR</code> (UK Partnership)</p> </li>
-        /// <li> <p> <code>RCHAR</code> (UK Registered Charity)</p> </li>
-        /// <li> <p> <code>SCH</code> (UK School)</p> </li>
-        /// <li> <p> <code>STAT</code> (UK Statutory Body)</p> </li>
-        /// <li> <p> <code>STRA</code> (UK Sole Trader)</p> </li>
-        /// </ul> </li>
-        /// <li> <p> <code>UK_COMPANY_NUMBER</code> </p> </li>
-        /// </ul>
-        /// </dd>
-        /// </dl>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CRC</code> (UK Corporation by Royal Charter)</p> </li> 
+        /// <li> <p> <code>FCORP</code> (Non-UK Corporation)</p> </li> 
+        /// <li> <p> <code>FIND</code> (Non-UK Individual, representing self)</p> </li> 
+        /// <li> <p> <code>FOTHER</code> (Non-UK Entity that does not fit into any other category)</p> </li> 
+        /// <li> <p> <code>GOV</code> (UK Government Body)</p> </li> 
+        /// <li> <p> <code>IND</code> (UK Individual (representing self))</p> </li> 
+        /// <li> <p> <code>IP</code> (UK Industrial/Provident Registered Company)</p> </li> 
+        /// <li> <p> <code>LLP</code> (UK Limited Liability Partnership)</p> </li> 
+        /// <li> <p> <code>LTD</code> (UK Limited Company)</p> </li> 
+        /// <li> <p> <code>OTHER</code> (UK Entity that does not fit into any other category)</p> </li> 
+        /// <li> <p> <code>PLC</code> (UK Public Limited Company)</p> </li> 
+        /// <li> <p> <code>PTNR</code> (UK Partnership)</p> </li> 
+        /// <li> <p> <code>RCHAR</code> (UK Registered Charity)</p> </li> 
+        /// <li> <p> <code>SCH</code> (UK School)</p> </li> 
+        /// <li> <p> <code>STAT</code> (UK Statutory Body)</p> </li> 
+        /// <li> <p> <code>STRA</code> (UK Sole Trader)</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <code>UK_COMPANY_NUMBER</code> </p> </li> 
+        /// </ul> 
+        /// </dd> 
+        /// </dl> 
         /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
         pub fn name(mut self, input: crate::model::ExtraParamName) -> Self {
             self.name = Some(input);
             self
         }
-        /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
-        /// <dl>
+        /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p> 
+        /// <dl> 
         /// <dt>
         /// .com.au and .net.au
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code>AU_ID_NUMBER</code> </p> </li>
-        /// <li> <p> <code>AU_ID_TYPE</code> </p> <p>Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>ABN</code> (Australian business number)</p> </li>
-        /// <li> <p> <code>ACN</code> (Australian company number)</p> </li>
-        /// <li> <p> <code>TM</code> (Trademark number)</p> </li>
-        /// </ul> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code>AU_ID_NUMBER</code> </p> </li> 
+        /// <li> <p> <code>AU_ID_TYPE</code> </p> <p>Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ABN</code> (Australian business number)</p> </li> 
+        /// <li> <p> <code>ACN</code> (Australian company number)</p> </li> 
+        /// <li> <p> <code>TM</code> (Trademark number)</p> </li> 
+        /// </ul> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// .ca
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code>BRAND_NUMBER</code> </p> </li>
-        /// <li> <p> <code>CA_BUSINESS_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>BANK</code> (Bank)</p> </li>
-        /// <li> <p> <code>COMMERCIAL_COMPANY</code> (Commercial company)</p> </li>
-        /// <li> <p> <code>COMPANY</code> (Company)</p> </li>
-        /// <li> <p> <code>COOPERATION</code> (Cooperation)</p> </li>
-        /// <li> <p> <code>COOPERATIVE</code> (Cooperative)</p> </li>
-        /// <li> <p> <code>COOPRIX</code> (Cooprix)</p> </li>
-        /// <li> <p> <code>CORP</code> (Corporation)</p> </li>
-        /// <li> <p> <code>CREDIT_UNION</code> (Credit union)</p> </li>
-        /// <li> <p> <code>FOMIA</code> (Federation of mutual insurance associations)</p> </li>
-        /// <li> <p> <code>INC</code> (Incorporated)</p> </li>
-        /// <li> <p> <code>LTD</code> (Limited)</p> </li>
-        /// <li> <p> <code>LTEE</code> (Limitée)</p> </li>
-        /// <li> <p> <code>LLC</code> (Limited liability corporation)</p> </li>
-        /// <li> <p> <code>LLP</code> (Limited liability partnership)</p> </li>
-        /// <li> <p> <code>LTE</code> (Lte.)</p> </li>
-        /// <li> <p> <code>MBA</code> (Mutual benefit association)</p> </li>
-        /// <li> <p> <code>MIC</code> (Mutual insurance company)</p> </li>
-        /// <li> <p> <code>NFP</code> (Not-for-profit corporation)</p> </li>
-        /// <li> <p> <code>SA</code> (S.A.)</p> </li>
-        /// <li> <p> <code>SAVINGS_COMPANY</code> (Savings company)</p> </li>
-        /// <li> <p> <code>SAVINGS_UNION</code> (Savings union)</p> </li>
-        /// <li> <p> <code>SARL</code> (Société à responsabilité limitée)</p> </li>
-        /// <li> <p> <code>TRUST</code> (Trust)</p> </li>
-        /// <li> <p> <code>ULC</code> (Unlimited liability corporation)</p> </li>
-        /// </ul> </li>
-        /// <li> <p> <code>CA_LEGAL_TYPE</code> </p> <p>When <code>ContactType</code> is <code>PERSON</code>, valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>ABO</code> (Aboriginal Peoples indigenous to Canada)</p> </li>
-        /// <li> <p> <code>CCT</code> (Canadian citizen)</p> </li>
-        /// <li> <p> <code>LGR</code> (Legal Representative of a Canadian Citizen or Permanent Resident)</p> </li>
-        /// <li> <p> <code>RES</code> (Permanent resident of Canada)</p> </li>
-        /// </ul> <p>When <code>ContactType</code> is a value other than <code>PERSON</code>, valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>ASS</code> (Canadian unincorporated association)</p> </li>
-        /// <li> <p> <code>CCO</code> (Canadian corporation)</p> </li>
-        /// <li> <p> <code>EDU</code> (Canadian educational institution)</p> </li>
-        /// <li> <p> <code>GOV</code> (Government or government entity in Canada)</p> </li>
-        /// <li> <p> <code>HOP</code> (Canadian Hospital)</p> </li>
-        /// <li> <p> <code>INB</code> (Indian Band recognized by the Indian Act of Canada)</p> </li>
-        /// <li> <p> <code>LAM</code> (Canadian Library, Archive, or Museum)</p> </li>
-        /// <li> <p> <code>MAJ</code> (Her/His Majesty the Queen/King)</p> </li>
-        /// <li> <p> <code>OMK</code> (Official mark registered in Canada)</p> </li>
-        /// <li> <p> <code>PLT</code> (Canadian Political Party)</p> </li>
-        /// <li> <p> <code>PRT</code> (Partnership Registered in Canada)</p> </li>
-        /// <li> <p> <code>TDM</code> (Trademark registered in Canada)</p> </li>
-        /// <li> <p> <code>TRD</code> (Canadian Trade Union)</p> </li>
-        /// <li> <p> <code>TRS</code> (Trust established in Canada)</p> </li>
-        /// </ul> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code>BRAND_NUMBER</code> </p> </li> 
+        /// <li> <p> <code>CA_BUSINESS_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>BANK</code> (Bank)</p> </li> 
+        /// <li> <p> <code>COMMERCIAL_COMPANY</code> (Commercial company)</p> </li> 
+        /// <li> <p> <code>COMPANY</code> (Company)</p> </li> 
+        /// <li> <p> <code>COOPERATION</code> (Cooperation)</p> </li> 
+        /// <li> <p> <code>COOPERATIVE</code> (Cooperative)</p> </li> 
+        /// <li> <p> <code>COOPRIX</code> (Cooprix)</p> </li> 
+        /// <li> <p> <code>CORP</code> (Corporation)</p> </li> 
+        /// <li> <p> <code>CREDIT_UNION</code> (Credit union)</p> </li> 
+        /// <li> <p> <code>FOMIA</code> (Federation of mutual insurance associations)</p> </li> 
+        /// <li> <p> <code>INC</code> (Incorporated)</p> </li> 
+        /// <li> <p> <code>LTD</code> (Limited)</p> </li> 
+        /// <li> <p> <code>LTEE</code> (Limitée)</p> </li> 
+        /// <li> <p> <code>LLC</code> (Limited liability corporation)</p> </li> 
+        /// <li> <p> <code>LLP</code> (Limited liability partnership)</p> </li> 
+        /// <li> <p> <code>LTE</code> (Lte.)</p> </li> 
+        /// <li> <p> <code>MBA</code> (Mutual benefit association)</p> </li> 
+        /// <li> <p> <code>MIC</code> (Mutual insurance company)</p> </li> 
+        /// <li> <p> <code>NFP</code> (Not-for-profit corporation)</p> </li> 
+        /// <li> <p> <code>SA</code> (S.A.)</p> </li> 
+        /// <li> <p> <code>SAVINGS_COMPANY</code> (Savings company)</p> </li> 
+        /// <li> <p> <code>SAVINGS_UNION</code> (Savings union)</p> </li> 
+        /// <li> <p> <code>SARL</code> (Société à responsabilité limitée)</p> </li> 
+        /// <li> <p> <code>TRUST</code> (Trust)</p> </li> 
+        /// <li> <p> <code>ULC</code> (Unlimited liability corporation)</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <code>CA_LEGAL_TYPE</code> </p> <p>When <code>ContactType</code> is <code>PERSON</code>, valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ABO</code> (Aboriginal Peoples indigenous to Canada)</p> </li> 
+        /// <li> <p> <code>CCT</code> (Canadian citizen)</p> </li> 
+        /// <li> <p> <code>LGR</code> (Legal Representative of a Canadian Citizen or Permanent Resident)</p> </li> 
+        /// <li> <p> <code>RES</code> (Permanent resident of Canada)</p> </li> 
+        /// </ul> <p>When <code>ContactType</code> is a value other than <code>PERSON</code>, valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ASS</code> (Canadian unincorporated association)</p> </li> 
+        /// <li> <p> <code>CCO</code> (Canadian corporation)</p> </li> 
+        /// <li> <p> <code>EDU</code> (Canadian educational institution)</p> </li> 
+        /// <li> <p> <code>GOV</code> (Government or government entity in Canada)</p> </li> 
+        /// <li> <p> <code>HOP</code> (Canadian Hospital)</p> </li> 
+        /// <li> <p> <code>INB</code> (Indian Band recognized by the Indian Act of Canada)</p> </li> 
+        /// <li> <p> <code>LAM</code> (Canadian Library, Archive, or Museum)</p> </li> 
+        /// <li> <p> <code>MAJ</code> (Her/His Majesty the Queen/King)</p> </li> 
+        /// <li> <p> <code>OMK</code> (Official mark registered in Canada)</p> </li> 
+        /// <li> <p> <code>PLT</code> (Canadian Political Party)</p> </li> 
+        /// <li> <p> <code>PRT</code> (Partnership Registered in Canada)</p> </li> 
+        /// <li> <p> <code>TDM</code> (Trademark registered in Canada)</p> </li> 
+        /// <li> <p> <code>TRD</code> (Canadian Trade Union)</p> </li> 
+        /// <li> <p> <code>TRS</code> (Trust established in Canada)</p> </li> 
+        /// </ul> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// .es
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>The value of <code>ES_IDENTIFICATION</code> depends on the following values:</p>
-        /// <ul>
-        /// <li> <p>The value of <code>ES_LEGAL_FORM</code> </p> </li>
-        /// <li> <p>The value of <code>ES_IDENTIFICATION_TYPE</code> </p> </li>
-        /// </ul> <p> <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b> </p>
-        /// <ul>
-        /// <li> <p>Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])</p> </li>
-        /// <li> <p>Example: B12345678</p> </li>
-        /// </ul> <p> <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify for <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b> </p>
-        /// <ul>
-        /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):</p>
-        /// <ul>
-        /// <li> <p>Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación Fiscal])</p> </li>
-        /// <li> <p>Example: 12345678M</p> </li>
-        /// </ul> </li>
-        /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):</p>
-        /// <ul>
-        /// <li> <p>Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])</p> </li>
-        /// <li> <p>Example: Y1234567X</p> </li>
-        /// </ul> </li>
-        /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside of Spain):</p>
-        /// <ul>
-        /// <li> <p>Specify a passport number, drivers license number, or national identity card number</p> </li>
-        /// </ul> </li>
-        /// </ul> </li>
-        /// <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>DNI_AND_NIF</code> (For Spanish contacts)</p> </li>
-        /// <li> <p> <code>NIE</code> (For foreigners with legal residence)</p> </li>
-        /// <li> <p> <code>OTHER</code> (For contacts outside of Spain)</p> </li>
-        /// </ul> </li>
-        /// <li> <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>ASSOCIATION</code> </p> </li>
-        /// <li> <p> <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li>
-        /// <li> <p> <code>CIVIL_SOCIETY</code> </p> </li>
-        /// <li> <p> <code>COMMUNITY_OF_OWNERS</code> </p> </li>
-        /// <li> <p> <code>COMMUNITY_PROPERTY</code> </p> </li>
-        /// <li> <p> <code>CONSULATE</code> </p> </li>
-        /// <li> <p> <code>COOPERATIVE</code> </p> </li>
-        /// <li> <p> <code>DESIGNATION_OF_ORIGIN_SUPERVISORY_COUNCIL</code> </p> </li>
-        /// <li> <p> <code>ECONOMIC_INTEREST_GROUP</code> </p> </li>
-        /// <li> <p> <code>EMBASSY</code> </p> </li>
-        /// <li> <p> <code>ENTITY_MANAGING_NATURAL_AREAS</code> </p> </li>
-        /// <li> <p> <code>FARM_PARTNERSHIP</code> </p> </li>
-        /// <li> <p> <code>FOUNDATION</code> </p> </li>
-        /// <li> <p> <code>GENERAL_AND_LIMITED_PARTNERSHIP</code> </p> </li>
-        /// <li> <p> <code>GENERAL_PARTNERSHIP</code> </p> </li>
-        /// <li> <p> <code>INDIVIDUAL</code> </p> </li>
-        /// <li> <p> <code>LIMITED_COMPANY</code> </p> </li>
-        /// <li> <p> <code>LOCAL_AUTHORITY</code> </p> </li>
-        /// <li> <p> <code>LOCAL_PUBLIC_ENTITY</code> </p> </li>
-        /// <li> <p> <code>MUTUAL_INSURANCE_COMPANY</code> </p> </li>
-        /// <li> <p> <code>NATIONAL_PUBLIC_ENTITY</code> </p> </li>
-        /// <li> <p> <code>ORDER_OR_RELIGIOUS_INSTITUTION</code> </p> </li>
-        /// <li> <p> <code>OTHERS (Only for contacts outside of Spain)</code> </p> </li>
-        /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li>
-        /// <li> <p> <code>PROFESSIONAL_ASSOCIATION</code> </p> </li>
-        /// <li> <p> <code>PUBLIC_LAW_ASSOCIATION</code> </p> </li>
-        /// <li> <p> <code>PUBLIC_LIMITED_COMPANY</code> </p> </li>
-        /// <li> <p> <code>REGIONAL_GOVERNMENT_BODY</code> </p> </li>
-        /// <li> <p> <code>REGIONAL_PUBLIC_ENTITY</code> </p> </li>
-        /// <li> <p> <code>SAVINGS_BANK</code> </p> </li>
-        /// <li> <p> <code>SPANISH_OFFICE</code> </p> </li>
-        /// <li> <p> <code>SPORTS_ASSOCIATION</code> </p> </li>
-        /// <li> <p> <code>SPORTS_FEDERATION</code> </p> </li>
-        /// <li> <p> <code>SPORTS_LIMITED_COMPANY</code> </p> </li>
-        /// <li> <p> <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code> </p> </li>
-        /// <li> <p> <code>TRADE_UNION</code> </p> </li>
-        /// <li> <p> <code>WORKER_OWNED_COMPANY</code> </p> </li>
-        /// <li> <p> <code>WORKER_OWNED_LIMITED_COMPANY</code> </p> </li>
-        /// </ul> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code>ES_IDENTIFICATION</code> </p> <p>The value of <code>ES_IDENTIFICATION</code> depends on the following values:</p> 
+        /// <ul> 
+        /// <li> <p>The value of <code>ES_LEGAL_FORM</code> </p> </li> 
+        /// <li> <p>The value of <code>ES_IDENTIFICATION_TYPE</code> </p> </li> 
+        /// </ul> <p> <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b> </p> 
+        /// <ul> 
+        /// <li> <p>Specify 1 letter + 8 numbers (CIF [Certificado de Identificación Fiscal])</p> </li> 
+        /// <li> <p>Example: B12345678</p> </li> 
+        /// </ul> <p> <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify for <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b> </p> 
+        /// <ul> 
+        /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):</p> 
+        /// <ul> 
+        /// <li> <p>Specify 8 numbers + 1 letter (DNI [Documento Nacional de Identidad], NIF [Número de Identificación Fiscal])</p> </li> 
+        /// <li> <p>Example: 12345678M</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal residence):</p> 
+        /// <ul> 
+        /// <li> <p>Specify 1 letter + 7 numbers + 1 letter ( NIE [Número de Identidad de Extranjero])</p> </li> 
+        /// <li> <p>Example: Y1234567X</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p>If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside of Spain):</p> 
+        /// <ul> 
+        /// <li> <p>Specify a passport number, drivers license number, or national identity card number</p> </li> 
+        /// </ul> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <code>ES_IDENTIFICATION_TYPE</code> </p> <p>Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>DNI_AND_NIF</code> (For Spanish contacts)</p> </li> 
+        /// <li> <p> <code>NIE</code> (For foreigners with legal residence)</p> </li> 
+        /// <li> <p> <code>OTHER</code> (For contacts outside of Spain)</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <code>ES_LEGAL_FORM</code> </p> <p>Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ASSOCIATION</code> </p> </li> 
+        /// <li> <p> <code>CENTRAL_GOVERNMENT_BODY</code> </p> </li> 
+        /// <li> <p> <code>CIVIL_SOCIETY</code> </p> </li> 
+        /// <li> <p> <code>COMMUNITY_OF_OWNERS</code> </p> </li> 
+        /// <li> <p> <code>COMMUNITY_PROPERTY</code> </p> </li> 
+        /// <li> <p> <code>CONSULATE</code> </p> </li> 
+        /// <li> <p> <code>COOPERATIVE</code> </p> </li> 
+        /// <li> <p> <code>DESIGNATION_OF_ORIGIN_SUPERVISORY_COUNCIL</code> </p> </li> 
+        /// <li> <p> <code>ECONOMIC_INTEREST_GROUP</code> </p> </li> 
+        /// <li> <p> <code>EMBASSY</code> </p> </li> 
+        /// <li> <p> <code>ENTITY_MANAGING_NATURAL_AREAS</code> </p> </li> 
+        /// <li> <p> <code>FARM_PARTNERSHIP</code> </p> </li> 
+        /// <li> <p> <code>FOUNDATION</code> </p> </li> 
+        /// <li> <p> <code>GENERAL_AND_LIMITED_PARTNERSHIP</code> </p> </li> 
+        /// <li> <p> <code>GENERAL_PARTNERSHIP</code> </p> </li> 
+        /// <li> <p> <code>INDIVIDUAL</code> </p> </li> 
+        /// <li> <p> <code>LIMITED_COMPANY</code> </p> </li> 
+        /// <li> <p> <code>LOCAL_AUTHORITY</code> </p> </li> 
+        /// <li> <p> <code>LOCAL_PUBLIC_ENTITY</code> </p> </li> 
+        /// <li> <p> <code>MUTUAL_INSURANCE_COMPANY</code> </p> </li> 
+        /// <li> <p> <code>NATIONAL_PUBLIC_ENTITY</code> </p> </li> 
+        /// <li> <p> <code>ORDER_OR_RELIGIOUS_INSTITUTION</code> </p> </li> 
+        /// <li> <p> <code>OTHERS (Only for contacts outside of Spain)</code> </p> </li> 
+        /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li> 
+        /// <li> <p> <code>PROFESSIONAL_ASSOCIATION</code> </p> </li> 
+        /// <li> <p> <code>PUBLIC_LAW_ASSOCIATION</code> </p> </li> 
+        /// <li> <p> <code>PUBLIC_LIMITED_COMPANY</code> </p> </li> 
+        /// <li> <p> <code>REGIONAL_GOVERNMENT_BODY</code> </p> </li> 
+        /// <li> <p> <code>REGIONAL_PUBLIC_ENTITY</code> </p> </li> 
+        /// <li> <p> <code>SAVINGS_BANK</code> </p> </li> 
+        /// <li> <p> <code>SPANISH_OFFICE</code> </p> </li> 
+        /// <li> <p> <code>SPORTS_ASSOCIATION</code> </p> </li> 
+        /// <li> <p> <code>SPORTS_FEDERATION</code> </p> </li> 
+        /// <li> <p> <code>SPORTS_LIMITED_COMPANY</code> </p> </li> 
+        /// <li> <p> <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code> </p> </li> 
+        /// <li> <p> <code>TRADE_UNION</code> </p> </li> 
+        /// <li> <p> <code>WORKER_OWNED_COMPANY</code> </p> </li> 
+        /// <li> <p> <code>WORKER_OWNED_LIMITED_COMPANY</code> </p> </li> 
+        /// </ul> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// .eu
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code> EU_COUNTRY_OF_CITIZENSHIP</code> </p> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code> EU_COUNTRY_OF_CITIZENSHIP</code> </p> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// .fi
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
-        /// <li> <p> <code>FI_BUSINESS_NUMBER</code> </p> </li>
-        /// <li> <p> <code>FI_ID_NUMBER</code> </p> </li>
-        /// <li> <p> <code>FI_NATIONALITY</code> </p> <p>Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>FINNISH</code> </p> </li>
-        /// <li> <p> <code>NOT_FINNISH</code> </p> </li>
-        /// </ul> </li>
-        /// <li> <p> <code>FI_ORGANIZATION_TYPE</code> </p> <p>Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>COMPANY</code> </p> </li>
-        /// <li> <p> <code>CORPORATION</code> </p> </li>
-        /// <li> <p> <code>GOVERNMENT</code> </p> </li>
-        /// <li> <p> <code>INSTITUTION</code> </p> </li>
-        /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li>
-        /// <li> <p> <code>PUBLIC_COMMUNITY</code> </p> </li>
-        /// <li> <p> <code>TOWNSHIP</code> </p> </li>
-        /// </ul> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> 
+        /// <li> <p> <code>FI_BUSINESS_NUMBER</code> </p> </li> 
+        /// <li> <p> <code>FI_ID_NUMBER</code> </p> </li> 
+        /// <li> <p> <code>FI_NATIONALITY</code> </p> <p>Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>FINNISH</code> </p> </li> 
+        /// <li> <p> <code>NOT_FINNISH</code> </p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <code>FI_ORGANIZATION_TYPE</code> </p> <p>Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>COMPANY</code> </p> </li> 
+        /// <li> <p> <code>CORPORATION</code> </p> </li> 
+        /// <li> <p> <code>GOVERNMENT</code> </p> </li> 
+        /// <li> <p> <code>INSTITUTION</code> </p> </li> 
+        /// <li> <p> <code>POLITICAL_PARTY</code> </p> </li> 
+        /// <li> <p> <code>PUBLIC_COMMUNITY</code> </p> </li> 
+        /// <li> <p> <code>TOWNSHIP</code> </p> </li> 
+        /// </ul> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// .fr
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code>BIRTH_CITY</code> </p> </li>
-        /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li>
-        /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
-        /// <li> <p> <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was born. If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>. For more information, including a list of departments and the corresponding INSEE numbers, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.</p> </li>
-        /// <li> <p> <code>BRAND_NUMBER</code> </p> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code>BIRTH_CITY</code> </p> </li> 
+        /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li> 
+        /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> 
+        /// <li> <p> <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was born. If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>. For more information, including a list of departments and the corresponding INSEE numbers, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.</p> </li> 
+        /// <li> <p> <code>BRAND_NUMBER</code> </p> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// .it
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code>IT_NATIONALITY</code> </p> </li>
-        /// <li> <p> <code>IT_PIN</code> </p> </li>
-        /// <li> <p> <code>IT_REGISTRANT_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>FOREIGNERS</code> </p> </li>
-        /// <li> <p> <code>FREELANCE_WORKERS</code> (Freelance workers and professionals)</p> </li>
-        /// <li> <p> <code>ITALIAN_COMPANIES</code> (Italian companies and one-person companies)</p> </li>
-        /// <li> <p> <code>NON_PROFIT_ORGANIZATIONS</code> </p> </li>
-        /// <li> <p> <code>OTHER_SUBJECTS</code> </p> </li>
-        /// <li> <p> <code>PUBLIC_ORGANIZATIONS</code> </p> </li>
-        /// </ul> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code>IT_NATIONALITY</code> </p> </li> 
+        /// <li> <p> <code>IT_PIN</code> </p> </li> 
+        /// <li> <p> <code>IT_REGISTRANT_ENTITY_TYPE</code> </p> <p>Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>FOREIGNERS</code> </p> </li> 
+        /// <li> <p> <code>FREELANCE_WORKERS</code> (Freelance workers and professionals)</p> </li> 
+        /// <li> <p> <code>ITALIAN_COMPANIES</code> (Italian companies and one-person companies)</p> </li> 
+        /// <li> <p> <code>NON_PROFIT_ORGANIZATIONS</code> </p> </li> 
+        /// <li> <p> <code>OTHER_SUBJECTS</code> </p> </li> 
+        /// <li> <p> <code>PUBLIC_ORGANIZATIONS</code> </p> </li> 
+        /// </ul> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// .ru
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li>
-        /// <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> </p> </li> 
+        /// <li> <p> <code>RU_PASSPORT_DATA</code> </p> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// .se
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li>
-        /// <li> <p> <code>SE_ID_NUMBER</code> </p> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code>BIRTH_COUNTRY</code> </p> </li> 
+        /// <li> <p> <code>SE_ID_NUMBER</code> </p> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// .sg
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code>SG_ID_NUMBER</code> </p> </li>
-        /// </ul>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code>SG_ID_NUMBER</code> </p> </li> 
+        /// </ul> 
+        /// </dd> 
         /// <dt>
         /// .uk, .co.uk, .me.uk, and .org.uk
-        /// </dt>
-        /// <dd>
-        /// <ul>
-        /// <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid values include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>CRC</code> (UK Corporation by Royal Charter)</p> </li>
-        /// <li> <p> <code>FCORP</code> (Non-UK Corporation)</p> </li>
-        /// <li> <p> <code>FIND</code> (Non-UK Individual, representing self)</p> </li>
-        /// <li> <p> <code>FOTHER</code> (Non-UK Entity that does not fit into any other category)</p> </li>
-        /// <li> <p> <code>GOV</code> (UK Government Body)</p> </li>
-        /// <li> <p> <code>IND</code> (UK Individual (representing self))</p> </li>
-        /// <li> <p> <code>IP</code> (UK Industrial/Provident Registered Company)</p> </li>
-        /// <li> <p> <code>LLP</code> (UK Limited Liability Partnership)</p> </li>
-        /// <li> <p> <code>LTD</code> (UK Limited Company)</p> </li>
-        /// <li> <p> <code>OTHER</code> (UK Entity that does not fit into any other category)</p> </li>
-        /// <li> <p> <code>PLC</code> (UK Public Limited Company)</p> </li>
-        /// <li> <p> <code>PTNR</code> (UK Partnership)</p> </li>
-        /// <li> <p> <code>RCHAR</code> (UK Registered Charity)</p> </li>
-        /// <li> <p> <code>SCH</code> (UK School)</p> </li>
-        /// <li> <p> <code>STAT</code> (UK Statutory Body)</p> </li>
-        /// <li> <p> <code>STRA</code> (UK Sole Trader)</p> </li>
-        /// </ul> </li>
-        /// <li> <p> <code>UK_COMPANY_NUMBER</code> </p> </li>
-        /// </ul>
-        /// </dd>
-        /// </dl>
+        /// </dt> 
+        /// <dd> 
+        /// <ul> 
+        /// <li> <p> <code>UK_CONTACT_TYPE</code> </p> <p>Valid values include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>CRC</code> (UK Corporation by Royal Charter)</p> </li> 
+        /// <li> <p> <code>FCORP</code> (Non-UK Corporation)</p> </li> 
+        /// <li> <p> <code>FIND</code> (Non-UK Individual, representing self)</p> </li> 
+        /// <li> <p> <code>FOTHER</code> (Non-UK Entity that does not fit into any other category)</p> </li> 
+        /// <li> <p> <code>GOV</code> (UK Government Body)</p> </li> 
+        /// <li> <p> <code>IND</code> (UK Individual (representing self))</p> </li> 
+        /// <li> <p> <code>IP</code> (UK Industrial/Provident Registered Company)</p> </li> 
+        /// <li> <p> <code>LLP</code> (UK Limited Liability Partnership)</p> </li> 
+        /// <li> <p> <code>LTD</code> (UK Limited Company)</p> </li> 
+        /// <li> <p> <code>OTHER</code> (UK Entity that does not fit into any other category)</p> </li> 
+        /// <li> <p> <code>PLC</code> (UK Public Limited Company)</p> </li> 
+        /// <li> <p> <code>PTNR</code> (UK Partnership)</p> </li> 
+        /// <li> <p> <code>RCHAR</code> (UK Registered Charity)</p> </li> 
+        /// <li> <p> <code>SCH</code> (UK School)</p> </li> 
+        /// <li> <p> <code>STAT</code> (UK Statutory Body)</p> </li> 
+        /// <li> <p> <code>STRA</code> (UK Sole Trader)</p> </li> 
+        /// </ul> </li> 
+        /// <li> <p> <code>UK_COMPANY_NUMBER</code> </p> </li> 
+        /// </ul> 
+        /// </dd> 
+        /// </dl> 
         /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::ExtraParamName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::ExtraParamName>) -> Self {
+            self.name = input; self
         }
         /// <p>The value that corresponds with the name of an extra parameter.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2083,14 +2039,15 @@ pub mod extra_param {
         }
         /// <p>The value that corresponds with the name of an extra parameter.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`ExtraParam`](crate::model::ExtraParam).
         pub fn build(self) -> crate::model::ExtraParam {
             crate::model::ExtraParam {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
@@ -2102,6 +2059,8 @@ pub mod extra_param {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ExtraParam {
     /// Creates a new builder-style object to manufacture [`ExtraParam`](crate::model::ExtraParam).
@@ -2116,9 +2075,9 @@ impl ExtraParam {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let extraparamname = unimplemented!();
 /// match extraparamname {
@@ -2169,22 +2128,14 @@ impl ExtraParam {
 /// Specifically, when `extraparamname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExtraParamName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ExtraParamName {
     #[allow(missing_docs)] // documentation missing in model
     AuIdNumber,
@@ -2249,7 +2200,7 @@ pub enum ExtraParamName {
     #[allow(missing_docs)] // documentation missing in model
     VatNumber,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExtraParamName {
     fn from(s: &str) -> Self {
@@ -2285,17 +2236,17 @@ impl std::convert::From<&str> for ExtraParamName {
             "UK_COMPANY_NUMBER" => ExtraParamName::UkCompanyNumber,
             "UK_CONTACT_TYPE" => ExtraParamName::UkContactType,
             "VAT_NUMBER" => ExtraParamName::VatNumber,
-            other => ExtraParamName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ExtraParamName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ExtraParamName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExtraParamName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ExtraParamName::from(s))
+                }
+            }
 impl ExtraParamName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2331,43 +2282,13 @@ impl ExtraParamName {
             ExtraParamName::UkCompanyNumber => "UK_COMPANY_NUMBER",
             ExtraParamName::UkContactType => "UK_CONTACT_TYPE",
             ExtraParamName::VatNumber => "VAT_NUMBER",
-            ExtraParamName::Unknown(value) => value.as_str(),
+            ExtraParamName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AU_ID_NUMBER",
-            "AU_ID_TYPE",
-            "AU_PRIORITY_TOKEN",
-            "BIRTH_CITY",
-            "BIRTH_COUNTRY",
-            "BIRTH_DATE_IN_YYYY_MM_DD",
-            "BIRTH_DEPARTMENT",
-            "BRAND_NUMBER",
-            "CA_BUSINESS_ENTITY_TYPE",
-            "CA_LEGAL_REPRESENTATIVE",
-            "CA_LEGAL_REPRESENTATIVE_CAPACITY",
-            "CA_LEGAL_TYPE",
-            "DOCUMENT_NUMBER",
-            "DUNS_NUMBER",
-            "ES_IDENTIFICATION",
-            "ES_IDENTIFICATION_TYPE",
-            "ES_LEGAL_FORM",
-            "EU_COUNTRY_OF_CITIZENSHIP",
-            "FI_BUSINESS_NUMBER",
-            "FI_ID_NUMBER",
-            "FI_NATIONALITY",
-            "FI_ORGANIZATION_TYPE",
-            "IT_NATIONALITY",
-            "IT_PIN",
-            "IT_REGISTRANT_ENTITY_TYPE",
-            "RU_PASSPORT_DATA",
-            "SE_ID_NUMBER",
-            "SG_ID_NUMBER",
-            "UK_COMPANY_NUMBER",
-            "UK_CONTACT_TYPE",
-            "VAT_NUMBER",
+            "AU_ID_NUMBER", "AU_ID_TYPE", "AU_PRIORITY_TOKEN", "BIRTH_CITY", "BIRTH_COUNTRY", "BIRTH_DATE_IN_YYYY_MM_DD", "BIRTH_DEPARTMENT", "BRAND_NUMBER", "CA_BUSINESS_ENTITY_TYPE", "CA_LEGAL_REPRESENTATIVE", "CA_LEGAL_REPRESENTATIVE_CAPACITY", "CA_LEGAL_TYPE", "DOCUMENT_NUMBER", "DUNS_NUMBER", "ES_IDENTIFICATION", "ES_IDENTIFICATION_TYPE", "ES_LEGAL_FORM", "EU_COUNTRY_OF_CITIZENSHIP", "FI_BUSINESS_NUMBER", "FI_ID_NUMBER", "FI_NATIONALITY", "FI_ORGANIZATION_TYPE", "IT_NATIONALITY", "IT_PIN", "IT_REGISTRANT_ENTITY_TYPE", "RU_PASSPORT_DATA", "SE_ID_NUMBER", "SG_ID_NUMBER", "UK_COMPANY_NUMBER", "UK_CONTACT_TYPE", "VAT_NUMBER"
         ]
     }
 }
@@ -2383,9 +2304,9 @@ impl AsRef<str> for ExtraParamName {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let countrycode = unimplemented!();
 /// match countrycode {
@@ -2656,22 +2577,14 @@ impl AsRef<str> for ExtraParamName {
 /// Specifically, when `countrycode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CountryCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CountryCode {
     #[allow(missing_docs)] // documentation missing in model
     Ac,
@@ -3176,7 +3089,7 @@ pub enum CountryCode {
     #[allow(missing_docs)] // documentation missing in model
     Zw,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CountryCode {
     fn from(s: &str) -> Self {
@@ -3432,17 +3345,17 @@ impl std::convert::From<&str> for CountryCode {
             "ZA" => CountryCode::Za,
             "ZM" => CountryCode::Zm,
             "ZW" => CountryCode::Zw,
-            other => CountryCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => CountryCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CountryCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CountryCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CountryCode::from(s))
+                }
+            }
 impl CountryCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3698,30 +3611,13 @@ impl CountryCode {
             CountryCode::Za => "ZA",
             CountryCode::Zm => "ZM",
             CountryCode::Zw => "ZW",
-            CountryCode::Unknown(value) => value.as_str(),
+            CountryCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AC", "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AN", "AO", "AQ", "AR", "AS", "AT",
-            "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL",
-            "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CC", "CD",
-            "CF", "CG", "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CX",
-            "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES",
-            "ET", "FI", "FJ", "FK", "FM", "FO", "FR", "GA", "GB", "GD", "GE", "GF", "GG", "GH",
-            "GI", "GL", "GM", "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HM",
-            "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IO", "IQ", "IR", "IS", "IT",
-            "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KP", "KR", "KW", "KY",
-            "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC",
-            "MD", "ME", "MF", "MG", "MH", "MK", "ML", "MM", "MN", "MO", "MP", "MQ", "MR", "MS",
-            "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NF", "NG", "NI", "NL",
-            "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PL", "PM",
-            "PN", "PR", "PS", "PT", "PW", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB",
-            "SC", "SD", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "SS",
-            "ST", "SV", "SX", "SY", "SZ", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM",
-            "TN", "TO", "TP", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "US", "UY", "UZ", "VA",
-            "VC", "VE", "VG", "VI", "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW",
+            "AC", "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AN", "AO", "AQ", "AR", "AS", "AT", "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL", "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CC", "CD", "CF", "CG", "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", "CU", "CV", "CW", "CX", "CY", "CZ", "DE", "DJ", "DK", "DM", "DO", "DZ", "EC", "EE", "EG", "EH", "ER", "ES", "ET", "FI", "FJ", "FK", "FM", "FO", "FR", "GA", "GB", "GD", "GE", "GF", "GG", "GH", "GI", "GL", "GM", "GN", "GP", "GQ", "GR", "GS", "GT", "GU", "GW", "GY", "HK", "HM", "HN", "HR", "HT", "HU", "ID", "IE", "IL", "IM", "IN", "IO", "IQ", "IR", "IS", "IT", "JE", "JM", "JO", "JP", "KE", "KG", "KH", "KI", "KM", "KN", "KP", "KR", "KW", "KY", "KZ", "LA", "LB", "LC", "LI", "LK", "LR", "LS", "LT", "LU", "LV", "LY", "MA", "MC", "MD", "ME", "MF", "MG", "MH", "MK", "ML", "MM", "MN", "MO", "MP", "MQ", "MR", "MS", "MT", "MU", "MV", "MW", "MX", "MY", "MZ", "NA", "NC", "NE", "NF", "NG", "NI", "NL", "NO", "NP", "NR", "NU", "NZ", "OM", "PA", "PE", "PF", "PG", "PH", "PK", "PL", "PM", "PN", "PR", "PS", "PT", "PW", "PY", "QA", "RE", "RO", "RS", "RU", "RW", "SA", "SB", "SC", "SD", "SE", "SG", "SH", "SI", "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "SS", "ST", "SV", "SX", "SY", "SZ", "TC", "TD", "TF", "TG", "TH", "TJ", "TK", "TL", "TM", "TN", "TO", "TP", "TR", "TT", "TV", "TW", "TZ", "UA", "UG", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VI", "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW"
         ]
     }
 }
@@ -3737,9 +3633,9 @@ impl AsRef<str> for CountryCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let contacttype = unimplemented!();
 /// match contacttype {
@@ -3764,22 +3660,14 @@ impl AsRef<str> for CountryCode {
 /// Specifically, when `contacttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ContactType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ContactType {
     #[allow(missing_docs)] // documentation missing in model
     Association,
@@ -3792,7 +3680,7 @@ pub enum ContactType {
     #[allow(missing_docs)] // documentation missing in model
     Reseller,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ContactType {
     fn from(s: &str) -> Self {
@@ -3802,17 +3690,17 @@ impl std::convert::From<&str> for ContactType {
             "PERSON" => ContactType::Person,
             "PUBLIC_BODY" => ContactType::PublicBody,
             "RESELLER" => ContactType::Reseller,
-            other => ContactType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ContactType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ContactType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContactType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ContactType::from(s))
+                }
+            }
 impl ContactType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3822,17 +3710,13 @@ impl ContactType {
             ContactType::Person => "PERSON",
             ContactType::PublicBody => "PUBLIC_BODY",
             ContactType::Reseller => "RESELLER",
-            ContactType::Unknown(value) => value.as_str(),
+            ContactType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ASSOCIATION",
-            "COMPANY",
-            "PERSON",
-            "PUBLIC_BODY",
-            "RESELLER",
+            "ASSOCIATION", "COMPANY", "PERSON", "PUBLIC_BODY", "RESELLER"
         ]
     }
 }
@@ -3845,7 +3729,7 @@ impl AsRef<str> for ContactType {
 /// <p>Information about the domain price associated with a TLD.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainPrice {
+pub struct DomainPrice  {
     /// <p>The name of the TLD for which the prices apply.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3867,33 +3751,33 @@ pub struct DomainPrice {
 }
 impl DomainPrice {
     /// <p>The name of the TLD for which the prices apply.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The price for domain registration with Route&nbsp;53.</p>
-    pub fn registration_price(&self) -> std::option::Option<&crate::model::PriceWithCurrency> {
+    pub fn registration_price(&self) -> std::option::Option<& crate::model::PriceWithCurrency> {
         self.registration_price.as_ref()
     }
     /// <p>The price for transferring the domain registration to Route&nbsp;53.</p>
-    pub fn transfer_price(&self) -> std::option::Option<&crate::model::PriceWithCurrency> {
+    pub fn transfer_price(&self) -> std::option::Option<& crate::model::PriceWithCurrency> {
         self.transfer_price.as_ref()
     }
     /// <p>The price for renewing domain registration with Route&nbsp;53.</p>
-    pub fn renewal_price(&self) -> std::option::Option<&crate::model::PriceWithCurrency> {
+    pub fn renewal_price(&self) -> std::option::Option<& crate::model::PriceWithCurrency> {
         self.renewal_price.as_ref()
     }
     /// <p>The price for changing domain ownership.</p>
-    pub fn change_ownership_price(&self) -> std::option::Option<&crate::model::PriceWithCurrency> {
+    pub fn change_ownership_price(&self) -> std::option::Option<& crate::model::PriceWithCurrency> {
         self.change_ownership_price.as_ref()
     }
     /// <p>The price for restoring the domain with Route&nbsp;53.</p>
-    pub fn restoration_price(&self) -> std::option::Option<&crate::model::PriceWithCurrency> {
+    pub fn restoration_price(&self) -> std::option::Option<& crate::model::PriceWithCurrency> {
         self.restoration_price.as_ref()
     }
 }
 /// See [`DomainPrice`](crate::model::DomainPrice).
 pub mod domain_price {
-
+    
     /// A builder for [`DomainPrice`](crate::model::DomainPrice).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3912,8 +3796,7 @@ pub mod domain_price {
         }
         /// <p>The name of the TLD for which the prices apply.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The price for domain registration with Route&nbsp;53.</p>
         pub fn registration_price(mut self, input: crate::model::PriceWithCurrency) -> Self {
@@ -3921,12 +3804,8 @@ pub mod domain_price {
             self
         }
         /// <p>The price for domain registration with Route&nbsp;53.</p>
-        pub fn set_registration_price(
-            mut self,
-            input: std::option::Option<crate::model::PriceWithCurrency>,
-        ) -> Self {
-            self.registration_price = input;
-            self
+        pub fn set_registration_price(mut self, input: std::option::Option<crate::model::PriceWithCurrency>) -> Self {
+            self.registration_price = input; self
         }
         /// <p>The price for transferring the domain registration to Route&nbsp;53.</p>
         pub fn transfer_price(mut self, input: crate::model::PriceWithCurrency) -> Self {
@@ -3934,12 +3813,8 @@ pub mod domain_price {
             self
         }
         /// <p>The price for transferring the domain registration to Route&nbsp;53.</p>
-        pub fn set_transfer_price(
-            mut self,
-            input: std::option::Option<crate::model::PriceWithCurrency>,
-        ) -> Self {
-            self.transfer_price = input;
-            self
+        pub fn set_transfer_price(mut self, input: std::option::Option<crate::model::PriceWithCurrency>) -> Self {
+            self.transfer_price = input; self
         }
         /// <p>The price for renewing domain registration with Route&nbsp;53.</p>
         pub fn renewal_price(mut self, input: crate::model::PriceWithCurrency) -> Self {
@@ -3947,12 +3822,8 @@ pub mod domain_price {
             self
         }
         /// <p>The price for renewing domain registration with Route&nbsp;53.</p>
-        pub fn set_renewal_price(
-            mut self,
-            input: std::option::Option<crate::model::PriceWithCurrency>,
-        ) -> Self {
-            self.renewal_price = input;
-            self
+        pub fn set_renewal_price(mut self, input: std::option::Option<crate::model::PriceWithCurrency>) -> Self {
+            self.renewal_price = input; self
         }
         /// <p>The price for changing domain ownership.</p>
         pub fn change_ownership_price(mut self, input: crate::model::PriceWithCurrency) -> Self {
@@ -3960,12 +3831,8 @@ pub mod domain_price {
             self
         }
         /// <p>The price for changing domain ownership.</p>
-        pub fn set_change_ownership_price(
-            mut self,
-            input: std::option::Option<crate::model::PriceWithCurrency>,
-        ) -> Self {
-            self.change_ownership_price = input;
-            self
+        pub fn set_change_ownership_price(mut self, input: std::option::Option<crate::model::PriceWithCurrency>) -> Self {
+            self.change_ownership_price = input; self
         }
         /// <p>The price for restoring the domain with Route&nbsp;53.</p>
         pub fn restoration_price(mut self, input: crate::model::PriceWithCurrency) -> Self {
@@ -3973,25 +3840,29 @@ pub mod domain_price {
             self
         }
         /// <p>The price for restoring the domain with Route&nbsp;53.</p>
-        pub fn set_restoration_price(
-            mut self,
-            input: std::option::Option<crate::model::PriceWithCurrency>,
-        ) -> Self {
-            self.restoration_price = input;
-            self
+        pub fn set_restoration_price(mut self, input: std::option::Option<crate::model::PriceWithCurrency>) -> Self {
+            self.restoration_price = input; self
         }
         /// Consumes the builder and constructs a [`DomainPrice`](crate::model::DomainPrice).
         pub fn build(self) -> crate::model::DomainPrice {
             crate::model::DomainPrice {
-                name: self.name,
-                registration_price: self.registration_price,
-                transfer_price: self.transfer_price,
-                renewal_price: self.renewal_price,
-                change_ownership_price: self.change_ownership_price,
-                restoration_price: self.restoration_price,
+                name: self.name
+                ,
+                registration_price: self.registration_price
+                ,
+                transfer_price: self.transfer_price
+                ,
+                renewal_price: self.renewal_price
+                ,
+                change_ownership_price: self.change_ownership_price
+                ,
+                restoration_price: self.restoration_price
+                ,
             }
         }
     }
+    
+    
 }
 impl DomainPrice {
     /// Creates a new builder-style object to manufacture [`DomainPrice`](crate::model::DomainPrice).
@@ -4003,7 +3874,7 @@ impl DomainPrice {
 /// <p>Currency-specific price information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PriceWithCurrency {
+pub struct PriceWithCurrency  {
     /// <p>The price of a domain, in a specific currency.</p>
     #[doc(hidden)]
     pub price: f64,
@@ -4017,13 +3888,13 @@ impl PriceWithCurrency {
         self.price
     }
     /// <p>The currency specifier.</p>
-    pub fn currency(&self) -> std::option::Option<&str> {
+    pub fn currency(&self) -> std::option::Option<& str> {
         self.currency.as_deref()
     }
 }
 /// See [`PriceWithCurrency`](crate::model::PriceWithCurrency).
 pub mod price_with_currency {
-
+    
     /// A builder for [`PriceWithCurrency`](crate::model::PriceWithCurrency).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4038,8 +3909,7 @@ pub mod price_with_currency {
         }
         /// <p>The price of a domain, in a specific currency.</p>
         pub fn set_price(mut self, input: std::option::Option<f64>) -> Self {
-            self.price = input;
-            self
+            self.price = input; self
         }
         /// <p>The currency specifier.</p>
         pub fn currency(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4048,17 +3918,21 @@ pub mod price_with_currency {
         }
         /// <p>The currency specifier.</p>
         pub fn set_currency(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.currency = input;
-            self
+            self.currency = input; self
         }
         /// Consumes the builder and constructs a [`PriceWithCurrency`](crate::model::PriceWithCurrency).
         pub fn build(self) -> crate::model::PriceWithCurrency {
             crate::model::PriceWithCurrency {
-                price: self.price.unwrap_or_default(),
-                currency: self.currency,
+                price: self.price
+                    .unwrap_or_default()
+                ,
+                currency: self.currency
+                ,
             }
         }
     }
+    
+    
 }
 impl PriceWithCurrency {
     /// Creates a new builder-style object to manufacture [`PriceWithCurrency`](crate::model::PriceWithCurrency).
@@ -4070,7 +3944,7 @@ impl PriceWithCurrency {
 /// <p>OperationSummary includes the following elements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OperationSummary {
+pub struct OperationSummary  {
     /// <p>Identifier returned to track the requested action.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
@@ -4089,14 +3963,14 @@ pub struct OperationSummary {
     /// <p> Message about the operation. </p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
-    /// <p> Automatically checks whether there are no outstanding operations on domains that need customer attention. </p>
-    /// <p> Valid values are:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li>
-    /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li>
-    /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li>
-    /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
-    /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
+    /// <p> Automatically checks whether there are no outstanding operations on domains that need customer attention. </p> 
+    /// <p> Valid values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li> 
+    /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li> 
+    /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li> 
+    /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li> 
+    /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status_flag: std::option::Option<crate::model::StatusFlag>,
@@ -4106,49 +3980,49 @@ pub struct OperationSummary {
 }
 impl OperationSummary {
     /// <p>Identifier returned to track the requested action.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> std::option::Option<& str> {
         self.operation_id.as_deref()
     }
     /// <p>The current status of the requested operation in the system.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::OperationStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::OperationStatus> {
         self.status.as_ref()
     }
     /// <p>Type of the action requested.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::OperationType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::OperationType> {
         self.r#type.as_ref()
     }
     /// <p>The date when the request was submitted.</p>
-    pub fn submitted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn submitted_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.submitted_date.as_ref()
     }
     /// <p> Name of the domain. </p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p> Message about the operation. </p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
-    /// <p> Automatically checks whether there are no outstanding operations on domains that need customer attention. </p>
-    /// <p> Valid values are:</p>
-    /// <ul>
-    /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li>
-    /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li>
-    /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li>
-    /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
-    /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
+    /// <p> Automatically checks whether there are no outstanding operations on domains that need customer attention. </p> 
+    /// <p> Valid values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li> 
+    /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li> 
+    /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li> 
+    /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li> 
+    /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li> 
     /// </ul>
-    pub fn status_flag(&self) -> std::option::Option<&crate::model::StatusFlag> {
+    pub fn status_flag(&self) -> std::option::Option<& crate::model::StatusFlag> {
         self.status_flag.as_ref()
     }
     /// <p> The date when the last change was made in Unix time format and Coordinated Universal Time (UTC). </p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
 }
 /// See [`OperationSummary`](crate::model::OperationSummary).
 pub mod operation_summary {
-
+    
     /// A builder for [`OperationSummary`](crate::model::OperationSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4169,8 +4043,7 @@ pub mod operation_summary {
         }
         /// <p>Identifier returned to track the requested action.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operation_id = input;
-            self
+            self.operation_id = input; self
         }
         /// <p>The current status of the requested operation in the system.</p>
         pub fn status(mut self, input: crate::model::OperationStatus) -> Self {
@@ -4178,12 +4051,8 @@ pub mod operation_summary {
             self
         }
         /// <p>The current status of the requested operation in the system.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::OperationStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::OperationStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Type of the action requested.</p>
         pub fn r#type(mut self, input: crate::model::OperationType) -> Self {
@@ -4192,8 +4061,7 @@ pub mod operation_summary {
         }
         /// <p>Type of the action requested.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::OperationType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The date when the request was submitted.</p>
         pub fn submitted_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4201,12 +4069,8 @@ pub mod operation_summary {
             self
         }
         /// <p>The date when the request was submitted.</p>
-        pub fn set_submitted_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.submitted_date = input;
-            self
+        pub fn set_submitted_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.submitted_date = input; self
         }
         /// <p> Name of the domain. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4215,8 +4079,7 @@ pub mod operation_summary {
         }
         /// <p> Name of the domain. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p> Message about the operation. </p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4225,37 +4088,32 @@ pub mod operation_summary {
         }
         /// <p> Message about the operation. </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
-        /// <p> Automatically checks whether there are no outstanding operations on domains that need customer attention. </p>
-        /// <p> Valid values are:</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li>
-        /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li>
-        /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li>
-        /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
-        /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
+        /// <p> Automatically checks whether there are no outstanding operations on domains that need customer attention. </p> 
+        /// <p> Valid values are:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li> 
+        /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li> 
+        /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li> 
+        /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li> 
+        /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li> 
         /// </ul>
         pub fn status_flag(mut self, input: crate::model::StatusFlag) -> Self {
             self.status_flag = Some(input);
             self
         }
-        /// <p> Automatically checks whether there are no outstanding operations on domains that need customer attention. </p>
-        /// <p> Valid values are:</p>
-        /// <ul>
-        /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li>
-        /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li>
-        /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li>
-        /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
-        /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
+        /// <p> Automatically checks whether there are no outstanding operations on domains that need customer attention. </p> 
+        /// <p> Valid values are:</p> 
+        /// <ul> 
+        /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li> 
+        /// <li> <p> <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an email.</p> </li> 
+        /// <li> <p> <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.</p> </li> 
+        /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li> 
+        /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li> 
         /// </ul>
-        pub fn set_status_flag(
-            mut self,
-            input: std::option::Option<crate::model::StatusFlag>,
-        ) -> Self {
-            self.status_flag = input;
-            self
+        pub fn set_status_flag(mut self, input: std::option::Option<crate::model::StatusFlag>) -> Self {
+            self.status_flag = input; self
         }
         /// <p> The date when the last change was made in Unix time format and Coordinated Universal Time (UTC). </p>
         pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4263,27 +4121,33 @@ pub mod operation_summary {
             self
         }
         /// <p> The date when the last change was made in Unix time format and Coordinated Universal Time (UTC). </p>
-        pub fn set_last_updated_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_date = input;
-            self
+        pub fn set_last_updated_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_date = input; self
         }
         /// Consumes the builder and constructs a [`OperationSummary`](crate::model::OperationSummary).
         pub fn build(self) -> crate::model::OperationSummary {
             crate::model::OperationSummary {
-                operation_id: self.operation_id,
-                status: self.status,
-                r#type: self.r#type,
-                submitted_date: self.submitted_date,
-                domain_name: self.domain_name,
-                message: self.message,
-                status_flag: self.status_flag,
-                last_updated_date: self.last_updated_date,
+                operation_id: self.operation_id
+                ,
+                status: self.status
+                ,
+                r#type: self.r#type
+                ,
+                submitted_date: self.submitted_date
+                ,
+                domain_name: self.domain_name
+                ,
+                message: self.message
+                ,
+                status_flag: self.status_flag
+                ,
+                last_updated_date: self.last_updated_date
+                ,
             }
         }
     }
+    
+    
 }
 impl OperationSummary {
     /// Creates a new builder-style object to manufacture [`OperationSummary`](crate::model::OperationSummary).
@@ -4298,9 +4162,9 @@ impl OperationSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let statusflag = unimplemented!();
 /// match statusflag {
@@ -4325,22 +4189,14 @@ impl OperationSummary {
 /// Specifically, when `statusflag` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StatusFlag::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StatusFlag {
     #[allow(missing_docs)] // documentation missing in model
     PendingAcceptance,
@@ -4353,7 +4209,7 @@ pub enum StatusFlag {
     #[allow(missing_docs)] // documentation missing in model
     PendingSupportCase,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StatusFlag {
     fn from(s: &str) -> Self {
@@ -4363,17 +4219,17 @@ impl std::convert::From<&str> for StatusFlag {
             "PENDING_CUSTOMER_ACTION" => StatusFlag::PendingCustomerAction,
             "PENDING_PAYMENT_VERIFICATION" => StatusFlag::PendingPaymentVerification,
             "PENDING_SUPPORT_CASE" => StatusFlag::PendingSupportCase,
-            other => StatusFlag::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StatusFlag::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StatusFlag {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StatusFlag::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StatusFlag::from(s))
+                }
+            }
 impl StatusFlag {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4383,17 +4239,13 @@ impl StatusFlag {
             StatusFlag::PendingCustomerAction => "PENDING_CUSTOMER_ACTION",
             StatusFlag::PendingPaymentVerification => "PENDING_PAYMENT_VERIFICATION",
             StatusFlag::PendingSupportCase => "PENDING_SUPPORT_CASE",
-            StatusFlag::Unknown(value) => value.as_str(),
+            StatusFlag::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "PENDING_ACCEPTANCE",
-            "PENDING_AUTHORIZATION",
-            "PENDING_CUSTOMER_ACTION",
-            "PENDING_PAYMENT_VERIFICATION",
-            "PENDING_SUPPORT_CASE",
+            "PENDING_ACCEPTANCE", "PENDING_AUTHORIZATION", "PENDING_CUSTOMER_ACTION", "PENDING_PAYMENT_VERIFICATION", "PENDING_SUPPORT_CASE"
         ]
     }
 }
@@ -4409,9 +4261,9 @@ impl AsRef<str> for StatusFlag {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let operationstatus = unimplemented!();
 /// match operationstatus {
@@ -4436,22 +4288,14 @@ impl AsRef<str> for StatusFlag {
 /// Specifically, when `operationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OperationStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OperationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Error,
@@ -4464,7 +4308,7 @@ pub enum OperationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Successful,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OperationStatus {
     fn from(s: &str) -> Self {
@@ -4474,17 +4318,17 @@ impl std::convert::From<&str> for OperationStatus {
             "IN_PROGRESS" => OperationStatus::InProgress,
             "SUBMITTED" => OperationStatus::Submitted,
             "SUCCESSFUL" => OperationStatus::Successful,
-            other => OperationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OperationStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OperationStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OperationStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OperationStatus::from(s))
+                }
+            }
 impl OperationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4494,12 +4338,14 @@ impl OperationStatus {
             OperationStatus::InProgress => "IN_PROGRESS",
             OperationStatus::Submitted => "SUBMITTED",
             OperationStatus::Successful => "SUCCESSFUL",
-            OperationStatus::Unknown(value) => value.as_str(),
+            OperationStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ERROR", "FAILED", "IN_PROGRESS", "SUBMITTED", "SUCCESSFUL"]
+        &[
+            "ERROR", "FAILED", "IN_PROGRESS", "SUBMITTED", "SUCCESSFUL"
+        ]
     }
 }
 impl AsRef<str> for OperationStatus {
@@ -4514,9 +4360,9 @@ impl AsRef<str> for OperationStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sortorder = unimplemented!();
 /// match sortorder {
@@ -4538,58 +4384,52 @@ impl AsRef<str> for OperationStatus {
 /// Specifically, when `sortorder` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SortOrder::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SortOrder {
     #[allow(missing_docs)] // documentation missing in model
     Asc,
     #[allow(missing_docs)] // documentation missing in model
     Desc,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SortOrder {
     fn from(s: &str) -> Self {
         match s {
             "ASC" => SortOrder::Asc,
             "DESC" => SortOrder::Desc,
-            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SortOrder::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SortOrder {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SortOrder::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SortOrder::from(s))
+                }
+            }
 impl SortOrder {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortOrder::Asc => "ASC",
             SortOrder::Desc => "DESC",
-            SortOrder::Unknown(value) => value.as_str(),
+            SortOrder::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASC", "DESC"]
+        &[
+            "ASC", "DESC"
+        ]
     }
 }
 impl AsRef<str> for SortOrder {
@@ -4604,9 +4444,9 @@ impl AsRef<str> for SortOrder {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let listoperationssortattributename = unimplemented!();
 /// match listoperationssortattributename {
@@ -4627,56 +4467,48 @@ impl AsRef<str> for SortOrder {
 /// Specifically, when `listoperationssortattributename` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ListOperationsSortAttributeName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ListOperationsSortAttributeName {
     #[allow(missing_docs)] // documentation missing in model
     SubmittedDate,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ListOperationsSortAttributeName {
     fn from(s: &str) -> Self {
         match s {
             "SubmittedDate" => ListOperationsSortAttributeName::SubmittedDate,
-            other => ListOperationsSortAttributeName::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ListOperationsSortAttributeName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ListOperationsSortAttributeName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ListOperationsSortAttributeName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ListOperationsSortAttributeName::from(s))
+                }
+            }
 impl ListOperationsSortAttributeName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ListOperationsSortAttributeName::SubmittedDate => "SubmittedDate",
-            ListOperationsSortAttributeName::Unknown(value) => value.as_str(),
+            ListOperationsSortAttributeName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SubmittedDate"]
+        &[
+            "SubmittedDate"
+        ]
     }
 }
 impl AsRef<str> for ListOperationsSortAttributeName {
@@ -4688,7 +4520,7 @@ impl AsRef<str> for ListOperationsSortAttributeName {
 /// <p>Summary information about one domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainSummary {
+pub struct DomainSummary  {
     /// <p>The name of the domain that the summary information applies to.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -4704,7 +4536,7 @@ pub struct DomainSummary {
 }
 impl DomainSummary {
     /// <p>The name of the domain that the summary information applies to.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p>Indicates whether the domain is automatically renewed upon expiration.</p>
@@ -4716,13 +4548,13 @@ impl DomainSummary {
         self.transfer_lock
     }
     /// <p>Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn expiry(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiry(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiry.as_ref()
     }
 }
 /// See [`DomainSummary`](crate::model::DomainSummary).
 pub mod domain_summary {
-
+    
     /// A builder for [`DomainSummary`](crate::model::DomainSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4739,8 +4571,7 @@ pub mod domain_summary {
         }
         /// <p>The name of the domain that the summary information applies to.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p>Indicates whether the domain is automatically renewed upon expiration.</p>
         pub fn auto_renew(mut self, input: bool) -> Self {
@@ -4749,8 +4580,7 @@ pub mod domain_summary {
         }
         /// <p>Indicates whether the domain is automatically renewed upon expiration.</p>
         pub fn set_auto_renew(mut self, input: std::option::Option<bool>) -> Self {
-            self.auto_renew = input;
-            self
+            self.auto_renew = input; self
         }
         /// <p>Indicates whether a domain is locked from unauthorized transfer to another party.</p>
         pub fn transfer_lock(mut self, input: bool) -> Self {
@@ -4759,8 +4589,7 @@ pub mod domain_summary {
         }
         /// <p>Indicates whether a domain is locked from unauthorized transfer to another party.</p>
         pub fn set_transfer_lock(mut self, input: std::option::Option<bool>) -> Self {
-            self.transfer_lock = input;
-            self
+            self.transfer_lock = input; self
         }
         /// <p>Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).</p>
         pub fn expiry(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4768,23 +4597,25 @@ pub mod domain_summary {
             self
         }
         /// <p>Expiration date of the domain in Unix time format and Coordinated Universal Time (UTC).</p>
-        pub fn set_expiry(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.expiry = input;
-            self
+        pub fn set_expiry(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.expiry = input; self
         }
         /// Consumes the builder and constructs a [`DomainSummary`](crate::model::DomainSummary).
         pub fn build(self) -> crate::model::DomainSummary {
             crate::model::DomainSummary {
-                domain_name: self.domain_name,
-                auto_renew: self.auto_renew,
-                transfer_lock: self.transfer_lock,
-                expiry: self.expiry,
+                domain_name: self.domain_name
+                ,
+                auto_renew: self.auto_renew
+                ,
+                transfer_lock: self.transfer_lock
+                ,
+                expiry: self.expiry
+                ,
             }
         }
     }
+    
+    
 }
 impl DomainSummary {
     /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::model::DomainSummary).
@@ -4796,7 +4627,7 @@ impl DomainSummary {
 /// <p>Information for sorting a list of domains.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SortCondition {
+pub struct SortCondition  {
     /// <p>Field to be used for sorting the list of domains. It can be either the name or the expiration for a domain. Note that if <code>filterCondition</code> is used in the same <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains__ListDomains.html">ListDomains</a> call, the field used for sorting has to be the same as the field used for filtering.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::ListDomainsAttributeName>,
@@ -4806,17 +4637,17 @@ pub struct SortCondition {
 }
 impl SortCondition {
     /// <p>Field to be used for sorting the list of domains. It can be either the name or the expiration for a domain. Note that if <code>filterCondition</code> is used in the same <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains__ListDomains.html">ListDomains</a> call, the field used for sorting has to be the same as the field used for filtering.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::ListDomainsAttributeName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::ListDomainsAttributeName> {
         self.name.as_ref()
     }
     /// <p>The sort order for a list of domains. Either ascending (ASC) or descending (DES).</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::model::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<& crate::model::SortOrder> {
         self.sort_order.as_ref()
     }
 }
 /// See [`SortCondition`](crate::model::SortCondition).
 pub mod sort_condition {
-
+    
     /// A builder for [`SortCondition`](crate::model::SortCondition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4830,12 +4661,8 @@ pub mod sort_condition {
             self
         }
         /// <p>Field to be used for sorting the list of domains. It can be either the name or the expiration for a domain. Note that if <code>filterCondition</code> is used in the same <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains__ListDomains.html">ListDomains</a> call, the field used for sorting has to be the same as the field used for filtering.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::ListDomainsAttributeName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::ListDomainsAttributeName>) -> Self {
+            self.name = input; self
         }
         /// <p>The sort order for a list of domains. Either ascending (ASC) or descending (DES).</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
@@ -4843,21 +4670,21 @@ pub mod sort_condition {
             self
         }
         /// <p>The sort order for a list of domains. Either ascending (ASC) or descending (DES).</p>
-        pub fn set_sort_order(
-            mut self,
-            input: std::option::Option<crate::model::SortOrder>,
-        ) -> Self {
-            self.sort_order = input;
-            self
+        pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortOrder>) -> Self {
+            self.sort_order = input; self
         }
         /// Consumes the builder and constructs a [`SortCondition`](crate::model::SortCondition).
         pub fn build(self) -> crate::model::SortCondition {
             crate::model::SortCondition {
-                name: self.name,
-                sort_order: self.sort_order,
+                name: self.name
+                ,
+                sort_order: self.sort_order
+                ,
             }
         }
     }
+    
+    
 }
 impl SortCondition {
     /// Creates a new builder-style object to manufacture [`SortCondition`](crate::model::SortCondition).
@@ -4872,9 +4699,9 @@ impl SortCondition {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let listdomainsattributename = unimplemented!();
 /// match listdomainsattributename {
@@ -4896,60 +4723,52 @@ impl SortCondition {
 /// Specifically, when `listdomainsattributename` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ListDomainsAttributeName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ListDomainsAttributeName {
     #[allow(missing_docs)] // documentation missing in model
     DomainName,
     #[allow(missing_docs)] // documentation missing in model
     Expiry,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ListDomainsAttributeName {
     fn from(s: &str) -> Self {
         match s {
             "DomainName" => ListDomainsAttributeName::DomainName,
             "Expiry" => ListDomainsAttributeName::Expiry,
-            other => ListDomainsAttributeName::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ListDomainsAttributeName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ListDomainsAttributeName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ListDomainsAttributeName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ListDomainsAttributeName::from(s))
+                }
+            }
 impl ListDomainsAttributeName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ListDomainsAttributeName::DomainName => "DomainName",
             ListDomainsAttributeName::Expiry => "Expiry",
-            ListDomainsAttributeName::Unknown(value) => value.as_str(),
+            ListDomainsAttributeName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DomainName", "Expiry"]
+        &[
+            "DomainName", "Expiry"
+        ]
     }
 }
 impl AsRef<str> for ListDomainsAttributeName {
@@ -4961,15 +4780,15 @@ impl AsRef<str> for ListDomainsAttributeName {
 /// <p>Information for the filtering of a list of domains returned by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains__ListDomains.html">ListDomains</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilterCondition {
+pub struct FilterCondition  {
     /// <p>Name of the field which should be used for filtering the list of domains.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::ListDomainsAttributeName>,
-    /// <p>The operator values for filtering domain names. The values can be:</p>
-    /// <ul>
-    /// <li> <p> <code>LE</code>: Less than, or equal to</p> </li>
-    /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li>
-    /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li>
+    /// <p>The operator values for filtering domain names. The values can be:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LE</code>: Less than, or equal to</p> </li> 
+    /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li> 
+    /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub operator: std::option::Option<crate::model::Operator>,
@@ -4979,26 +4798,26 @@ pub struct FilterCondition {
 }
 impl FilterCondition {
     /// <p>Name of the field which should be used for filtering the list of domains.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::ListDomainsAttributeName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::ListDomainsAttributeName> {
         self.name.as_ref()
     }
-    /// <p>The operator values for filtering domain names. The values can be:</p>
-    /// <ul>
-    /// <li> <p> <code>LE</code>: Less than, or equal to</p> </li>
-    /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li>
-    /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li>
+    /// <p>The operator values for filtering domain names. The values can be:</p> 
+    /// <ul> 
+    /// <li> <p> <code>LE</code>: Less than, or equal to</p> </li> 
+    /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li> 
+    /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li> 
     /// </ul>
-    pub fn operator(&self) -> std::option::Option<&crate::model::Operator> {
+    pub fn operator(&self) -> std::option::Option<& crate::model::Operator> {
         self.operator.as_ref()
     }
     /// <p> An array of strings presenting values to compare. Only 1 item in the list is currently supported.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
 /// See [`FilterCondition`](crate::model::FilterCondition).
 pub mod filter_condition {
-
+    
     /// A builder for [`FilterCondition`](crate::model::FilterCondition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5013,32 +4832,27 @@ pub mod filter_condition {
             self
         }
         /// <p>Name of the field which should be used for filtering the list of domains.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::ListDomainsAttributeName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::ListDomainsAttributeName>) -> Self {
+            self.name = input; self
         }
-        /// <p>The operator values for filtering domain names. The values can be:</p>
-        /// <ul>
-        /// <li> <p> <code>LE</code>: Less than, or equal to</p> </li>
-        /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li>
-        /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li>
+        /// <p>The operator values for filtering domain names. The values can be:</p> 
+        /// <ul> 
+        /// <li> <p> <code>LE</code>: Less than, or equal to</p> </li> 
+        /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li> 
+        /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li> 
         /// </ul>
         pub fn operator(mut self, input: crate::model::Operator) -> Self {
             self.operator = Some(input);
             self
         }
-        /// <p>The operator values for filtering domain names. The values can be:</p>
-        /// <ul>
-        /// <li> <p> <code>LE</code>: Less than, or equal to</p> </li>
-        /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li>
-        /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li>
+        /// <p>The operator values for filtering domain names. The values can be:</p> 
+        /// <ul> 
+        /// <li> <p> <code>LE</code>: Less than, or equal to</p> </li> 
+        /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li> 
+        /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li> 
         /// </ul>
         pub fn set_operator(mut self, input: std::option::Option<crate::model::Operator>) -> Self {
-            self.operator = input;
-            self
+            self.operator = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -5047,27 +4861,28 @@ pub mod filter_condition {
         /// <p> An array of strings presenting values to compare. Only 1 item in the list is currently supported.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input.into());
-            self.values = Some(v);
-            self
+                            v.push(input.into());
+                            self.values = Some(v);
+                            self
         }
         /// <p> An array of strings presenting values to compare. Only 1 item in the list is currently supported.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`FilterCondition`](crate::model::FilterCondition).
         pub fn build(self) -> crate::model::FilterCondition {
             crate::model::FilterCondition {
-                name: self.name,
-                operator: self.operator,
-                values: self.values,
+                name: self.name
+                ,
+                operator: self.operator
+                ,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl FilterCondition {
     /// Creates a new builder-style object to manufacture [`FilterCondition`](crate::model::FilterCondition).
@@ -5082,9 +4897,9 @@ impl FilterCondition {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let operator = unimplemented!();
 /// match operator {
@@ -5107,22 +4922,14 @@ impl FilterCondition {
 /// Specifically, when `operator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Operator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Operator {
     #[allow(missing_docs)] // documentation missing in model
     BeginsWith,
@@ -5131,7 +4938,7 @@ pub enum Operator {
     #[allow(missing_docs)] // documentation missing in model
     Le,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Operator {
     fn from(s: &str) -> Self {
@@ -5139,17 +4946,17 @@ impl std::convert::From<&str> for Operator {
             "BEGINS_WITH" => Operator::BeginsWith,
             "GE" => Operator::Ge,
             "LE" => Operator::Le,
-            other => Operator::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Operator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Operator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Operator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Operator::from(s))
+                }
+            }
 impl Operator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5157,12 +4964,14 @@ impl Operator {
             Operator::BeginsWith => "BEGINS_WITH",
             Operator::Ge => "GE",
             Operator::Le => "LE",
-            Operator::Unknown(value) => value.as_str(),
+            Operator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BEGINS_WITH", "GE", "LE"]
+        &[
+            "BEGINS_WITH", "GE", "LE"
+        ]
     }
 }
 impl AsRef<str> for Operator {
@@ -5174,145 +4983,145 @@ impl AsRef<str> for Operator {
 /// <p>Information about one suggested domain name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainSuggestion {
+pub struct DomainSuggestion  {
     /// <p>A suggested domain name.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>Whether the domain name is available for registering.</p> <note>
-    /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
-    /// </note>
-    /// <p>Valid values:</p>
-    /// <dl>
+    /// <p>Whether the domain name is available for registering.</p> <note> 
+    /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p> 
+    /// </note> 
+    /// <p>Valid values:</p> 
+    /// <dl> 
     /// <dt>
     /// AVAILABLE
-    /// </dt>
-    /// <dd>
-    /// <p>The domain name is available.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The domain name is available.</p> 
+    /// </dd> 
     /// <dt>
     /// AVAILABLE_RESERVED
-    /// </dt>
-    /// <dd>
-    /// <p>The domain name is reserved under specific conditions.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The domain name is reserved under specific conditions.</p> 
+    /// </dd> 
     /// <dt>
     /// AVAILABLE_PREORDER
-    /// </dt>
-    /// <dd>
-    /// <p>The domain name is available and can be preordered.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The domain name is available and can be preordered.</p> 
+    /// </dd> 
     /// <dt>
     /// DONT_KNOW
-    /// </dt>
-    /// <dd>
-    /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try again later.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try again later.</p> 
+    /// </dd> 
     /// <dt>
     /// PENDING
-    /// </dt>
-    /// <dd>
-    /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed, it usually takes just a few extra seconds. You can resubmit the request immediately.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed, it usually takes just a few extra seconds. You can resubmit the request immediately.</p> 
+    /// </dd> 
     /// <dt>
     /// RESERVED
-    /// </dt>
-    /// <dd>
-    /// <p>The domain name has been reserved for another person or organization.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The domain name has been reserved for another person or organization.</p> 
+    /// </dd> 
     /// <dt>
     /// UNAVAILABLE
-    /// </dt>
-    /// <dd>
-    /// <p>The domain name is not available.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The domain name is not available.</p> 
+    /// </dd> 
     /// <dt>
     /// UNAVAILABLE_PREMIUM
-    /// </dt>
-    /// <dd>
-    /// <p>The domain name is not available.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The domain name is not available.</p> 
+    /// </dd> 
     /// <dt>
     /// UNAVAILABLE_RESTRICTED
-    /// </dt>
-    /// <dd>
-    /// <p>The domain name is forbidden.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The domain name is forbidden.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub availability: std::option::Option<std::string::String>,
 }
 impl DomainSuggestion {
     /// <p>A suggested domain name.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
-    /// <p>Whether the domain name is available for registering.</p> <note>
-    /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
-    /// </note>
-    /// <p>Valid values:</p>
-    /// <dl>
+    /// <p>Whether the domain name is available for registering.</p> <note> 
+    /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p> 
+    /// </note> 
+    /// <p>Valid values:</p> 
+    /// <dl> 
     /// <dt>
     /// AVAILABLE
-    /// </dt>
-    /// <dd>
-    /// <p>The domain name is available.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The domain name is available.</p> 
+    /// </dd> 
     /// <dt>
     /// AVAILABLE_RESERVED
-    /// </dt>
-    /// <dd>
-    /// <p>The domain name is reserved under specific conditions.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The domain name is reserved under specific conditions.</p> 
+    /// </dd> 
     /// <dt>
     /// AVAILABLE_PREORDER
-    /// </dt>
-    /// <dd>
-    /// <p>The domain name is available and can be preordered.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The domain name is available and can be preordered.</p> 
+    /// </dd> 
     /// <dt>
     /// DONT_KNOW
-    /// </dt>
-    /// <dd>
-    /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try again later.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try again later.</p> 
+    /// </dd> 
     /// <dt>
     /// PENDING
-    /// </dt>
-    /// <dd>
-    /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed, it usually takes just a few extra seconds. You can resubmit the request immediately.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed, it usually takes just a few extra seconds. You can resubmit the request immediately.</p> 
+    /// </dd> 
     /// <dt>
     /// RESERVED
-    /// </dt>
-    /// <dd>
-    /// <p>The domain name has been reserved for another person or organization.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The domain name has been reserved for another person or organization.</p> 
+    /// </dd> 
     /// <dt>
     /// UNAVAILABLE
-    /// </dt>
-    /// <dd>
-    /// <p>The domain name is not available.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The domain name is not available.</p> 
+    /// </dd> 
     /// <dt>
     /// UNAVAILABLE_PREMIUM
-    /// </dt>
-    /// <dd>
-    /// <p>The domain name is not available.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The domain name is not available.</p> 
+    /// </dd> 
     /// <dt>
     /// UNAVAILABLE_RESTRICTED
-    /// </dt>
-    /// <dd>
-    /// <p>The domain name is forbidden.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The domain name is forbidden.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn availability(&self) -> std::option::Option<&str> {
+    pub fn availability(&self) -> std::option::Option<& str> {
         self.availability.as_deref()
     }
 }
 /// See [`DomainSuggestion`](crate::model::DomainSuggestion).
 pub mod domain_suggestion {
-
+    
     /// A builder for [`DomainSuggestion`](crate::model::DomainSuggestion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5327,145 +5136,147 @@ pub mod domain_suggestion {
         }
         /// <p>A suggested domain name.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
-        /// <p>Whether the domain name is available for registering.</p> <note>
-        /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
-        /// </note>
-        /// <p>Valid values:</p>
-        /// <dl>
+        /// <p>Whether the domain name is available for registering.</p> <note> 
+        /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p> 
+        /// </note> 
+        /// <p>Valid values:</p> 
+        /// <dl> 
         /// <dt>
         /// AVAILABLE
-        /// </dt>
-        /// <dd>
-        /// <p>The domain name is available.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The domain name is available.</p> 
+        /// </dd> 
         /// <dt>
         /// AVAILABLE_RESERVED
-        /// </dt>
-        /// <dd>
-        /// <p>The domain name is reserved under specific conditions.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The domain name is reserved under specific conditions.</p> 
+        /// </dd> 
         /// <dt>
         /// AVAILABLE_PREORDER
-        /// </dt>
-        /// <dd>
-        /// <p>The domain name is available and can be preordered.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The domain name is available and can be preordered.</p> 
+        /// </dd> 
         /// <dt>
         /// DONT_KNOW
-        /// </dt>
-        /// <dd>
-        /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try again later.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try again later.</p> 
+        /// </dd> 
         /// <dt>
         /// PENDING
-        /// </dt>
-        /// <dd>
-        /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed, it usually takes just a few extra seconds. You can resubmit the request immediately.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed, it usually takes just a few extra seconds. You can resubmit the request immediately.</p> 
+        /// </dd> 
         /// <dt>
         /// RESERVED
-        /// </dt>
-        /// <dd>
-        /// <p>The domain name has been reserved for another person or organization.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The domain name has been reserved for another person or organization.</p> 
+        /// </dd> 
         /// <dt>
         /// UNAVAILABLE
-        /// </dt>
-        /// <dd>
-        /// <p>The domain name is not available.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The domain name is not available.</p> 
+        /// </dd> 
         /// <dt>
         /// UNAVAILABLE_PREMIUM
-        /// </dt>
-        /// <dd>
-        /// <p>The domain name is not available.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The domain name is not available.</p> 
+        /// </dd> 
         /// <dt>
         /// UNAVAILABLE_RESTRICTED
-        /// </dt>
-        /// <dd>
-        /// <p>The domain name is forbidden.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The domain name is forbidden.</p> 
+        /// </dd> 
         /// </dl>
         pub fn availability(mut self, input: impl Into<std::string::String>) -> Self {
             self.availability = Some(input.into());
             self
         }
-        /// <p>Whether the domain name is available for registering.</p> <note>
-        /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
-        /// </note>
-        /// <p>Valid values:</p>
-        /// <dl>
+        /// <p>Whether the domain name is available for registering.</p> <note> 
+        /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p> 
+        /// </note> 
+        /// <p>Valid values:</p> 
+        /// <dl> 
         /// <dt>
         /// AVAILABLE
-        /// </dt>
-        /// <dd>
-        /// <p>The domain name is available.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The domain name is available.</p> 
+        /// </dd> 
         /// <dt>
         /// AVAILABLE_RESERVED
-        /// </dt>
-        /// <dd>
-        /// <p>The domain name is reserved under specific conditions.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The domain name is reserved under specific conditions.</p> 
+        /// </dd> 
         /// <dt>
         /// AVAILABLE_PREORDER
-        /// </dt>
-        /// <dd>
-        /// <p>The domain name is available and can be preordered.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The domain name is available and can be preordered.</p> 
+        /// </dd> 
         /// <dt>
         /// DONT_KNOW
-        /// </dt>
-        /// <dd>
-        /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try again later.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The TLD registry didn't reply with a definitive answer about whether the domain name is available. Route 53 can return this response for a variety of reasons, for example, the registry is performing maintenance. Try again later.</p> 
+        /// </dd> 
         /// <dt>
         /// PENDING
-        /// </dt>
-        /// <dd>
-        /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed, it usually takes just a few extra seconds. You can resubmit the request immediately.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The TLD registry didn't return a response in the expected amount of time. When the response is delayed, it usually takes just a few extra seconds. You can resubmit the request immediately.</p> 
+        /// </dd> 
         /// <dt>
         /// RESERVED
-        /// </dt>
-        /// <dd>
-        /// <p>The domain name has been reserved for another person or organization.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The domain name has been reserved for another person or organization.</p> 
+        /// </dd> 
         /// <dt>
         /// UNAVAILABLE
-        /// </dt>
-        /// <dd>
-        /// <p>The domain name is not available.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The domain name is not available.</p> 
+        /// </dd> 
         /// <dt>
         /// UNAVAILABLE_PREMIUM
-        /// </dt>
-        /// <dd>
-        /// <p>The domain name is not available.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The domain name is not available.</p> 
+        /// </dd> 
         /// <dt>
         /// UNAVAILABLE_RESTRICTED
-        /// </dt>
-        /// <dd>
-        /// <p>The domain name is forbidden.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The domain name is forbidden.</p> 
+        /// </dd> 
         /// </dl>
         pub fn set_availability(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.availability = input;
-            self
+            self.availability = input; self
         }
         /// Consumes the builder and constructs a [`DomainSuggestion`](crate::model::DomainSuggestion).
         pub fn build(self) -> crate::model::DomainSuggestion {
             crate::model::DomainSuggestion {
-                domain_name: self.domain_name,
-                availability: self.availability,
+                domain_name: self.domain_name
+                ,
+                availability: self.availability
+                ,
             }
         }
     }
+    
+    
 }
 impl DomainSuggestion {
     /// Creates a new builder-style object to manufacture [`DomainSuggestion`](crate::model::DomainSuggestion).
@@ -5474,28 +5285,28 @@ impl DomainSuggestion {
     }
 }
 
-/// <p>Information about the DNSSEC key.</p>
+/// <p>Information about the DNSSEC key.</p> 
 /// <p>You get this from your DNS provider and then give it to Route&nbsp;53 (by using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>) to pass it to the registry to establish the chain of trust.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DnssecKey {
-    /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment. </p>
-    /// <p>If Route&nbsp;53 is your DNS service, set this to 13.</p>
+pub struct DnssecKey  {
+    /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment. </p> 
+    /// <p>If Route&nbsp;53 is your DNS service, set this to 13.</p> 
     /// <p>For more information about enabling DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec-enable-signing.html">Enabling DNSSEC signing and establishing a chain of trust</a>.</p>
     #[doc(hidden)]
     pub algorithm: std::option::Option<i32>,
-    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route&nbsp;53 and you don’t have KSK available.</p>
+    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route&nbsp;53 and you don’t have KSK available.</p> 
     /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
     #[doc(hidden)]
     pub flags: std::option::Option<i32>,
     /// <p>The base64-encoded public key part of the key pair that is passed to the registry .</p>
     #[doc(hidden)]
     pub public_key: std::option::Option<std::string::String>,
-    /// <p> The number of the DS digest algorithm according to an IANA assignment.</p>
+    /// <p> The number of the DS digest algorithm according to an IANA assignment.</p> 
     /// <p>For more information, see <a href="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">IANA</a> for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms. </p>
     #[doc(hidden)]
     pub digest_type: std::option::Option<i32>,
-    /// <p> The delegation signer digest.</p>
+    /// <p> The delegation signer digest.</p> 
     /// <p>Digest is calculated from the public key provided using specified digest algorithm and this digest is the actual value returned from the registry nameservers as the value of DS records. </p>
     #[doc(hidden)]
     pub digest: std::option::Option<std::string::String>,
@@ -5507,29 +5318,29 @@ pub struct DnssecKey {
     pub id: std::option::Option<std::string::String>,
 }
 impl DnssecKey {
-    /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment. </p>
-    /// <p>If Route&nbsp;53 is your DNS service, set this to 13.</p>
+    /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment. </p> 
+    /// <p>If Route&nbsp;53 is your DNS service, set this to 13.</p> 
     /// <p>For more information about enabling DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec-enable-signing.html">Enabling DNSSEC signing and establishing a chain of trust</a>.</p>
     pub fn algorithm(&self) -> std::option::Option<i32> {
         self.algorithm
     }
-    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route&nbsp;53 and you don’t have KSK available.</p>
+    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route&nbsp;53 and you don’t have KSK available.</p> 
     /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
     pub fn flags(&self) -> std::option::Option<i32> {
         self.flags
     }
     /// <p>The base64-encoded public key part of the key pair that is passed to the registry .</p>
-    pub fn public_key(&self) -> std::option::Option<&str> {
+    pub fn public_key(&self) -> std::option::Option<& str> {
         self.public_key.as_deref()
     }
-    /// <p> The number of the DS digest algorithm according to an IANA assignment.</p>
+    /// <p> The number of the DS digest algorithm according to an IANA assignment.</p> 
     /// <p>For more information, see <a href="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">IANA</a> for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms. </p>
     pub fn digest_type(&self) -> std::option::Option<i32> {
         self.digest_type
     }
-    /// <p> The delegation signer digest.</p>
+    /// <p> The delegation signer digest.</p> 
     /// <p>Digest is calculated from the public key provided using specified digest algorithm and this digest is the actual value returned from the registry nameservers as the value of DS records. </p>
-    pub fn digest(&self) -> std::option::Option<&str> {
+    pub fn digest(&self) -> std::option::Option<& str> {
         self.digest.as_deref()
     }
     /// <p> A numeric identification of the DNSKEY record referred to by this DS record. </p>
@@ -5537,13 +5348,13 @@ impl DnssecKey {
         self.key_tag
     }
     /// <p> An ID assigned to each DS record created by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`DnssecKey`](crate::model::DnssecKey).
 pub mod dnssec_key {
-
+    
     /// A builder for [`DnssecKey`](crate::model::DnssecKey).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5556,31 +5367,29 @@ pub mod dnssec_key {
         pub(crate) id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment. </p>
-        /// <p>If Route&nbsp;53 is your DNS service, set this to 13.</p>
+        /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment. </p> 
+        /// <p>If Route&nbsp;53 is your DNS service, set this to 13.</p> 
         /// <p>For more information about enabling DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec-enable-signing.html">Enabling DNSSEC signing and establishing a chain of trust</a>.</p>
         pub fn algorithm(mut self, input: i32) -> Self {
             self.algorithm = Some(input);
             self
         }
-        /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment. </p>
-        /// <p>If Route&nbsp;53 is your DNS service, set this to 13.</p>
+        /// <p>The number of the public key’s cryptographic algorithm according to an <a href="https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xml">IANA</a> assignment. </p> 
+        /// <p>If Route&nbsp;53 is your DNS service, set this to 13.</p> 
         /// <p>For more information about enabling DNSSEC signing, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec-enable-signing.html">Enabling DNSSEC signing and establishing a chain of trust</a>.</p>
         pub fn set_algorithm(mut self, input: std::option::Option<i32>) -> Self {
-            self.algorithm = input;
-            self
+            self.algorithm = input; self
         }
-        /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route&nbsp;53 and you don’t have KSK available.</p>
+        /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route&nbsp;53 and you don’t have KSK available.</p> 
         /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
         pub fn flags(mut self, input: i32) -> Self {
             self.flags = Some(input);
             self
         }
-        /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route&nbsp;53 and you don’t have KSK available.</p>
+        /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route&nbsp;53 and you don’t have KSK available.</p> 
         /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
         pub fn set_flags(mut self, input: std::option::Option<i32>) -> Self {
-            self.flags = input;
-            self
+            self.flags = input; self
         }
         /// <p>The base64-encoded public key part of the key pair that is passed to the registry .</p>
         pub fn public_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5589,32 +5398,29 @@ pub mod dnssec_key {
         }
         /// <p>The base64-encoded public key part of the key pair that is passed to the registry .</p>
         pub fn set_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.public_key = input;
-            self
+            self.public_key = input; self
         }
-        /// <p> The number of the DS digest algorithm according to an IANA assignment.</p>
+        /// <p> The number of the DS digest algorithm according to an IANA assignment.</p> 
         /// <p>For more information, see <a href="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">IANA</a> for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms. </p>
         pub fn digest_type(mut self, input: i32) -> Self {
             self.digest_type = Some(input);
             self
         }
-        /// <p> The number of the DS digest algorithm according to an IANA assignment.</p>
+        /// <p> The number of the DS digest algorithm according to an IANA assignment.</p> 
         /// <p>For more information, see <a href="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">IANA</a> for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms. </p>
         pub fn set_digest_type(mut self, input: std::option::Option<i32>) -> Self {
-            self.digest_type = input;
-            self
+            self.digest_type = input; self
         }
-        /// <p> The delegation signer digest.</p>
+        /// <p> The delegation signer digest.</p> 
         /// <p>Digest is calculated from the public key provided using specified digest algorithm and this digest is the actual value returned from the registry nameservers as the value of DS records. </p>
         pub fn digest(mut self, input: impl Into<std::string::String>) -> Self {
             self.digest = Some(input.into());
             self
         }
-        /// <p> The delegation signer digest.</p>
+        /// <p> The delegation signer digest.</p> 
         /// <p>Digest is calculated from the public key provided using specified digest algorithm and this digest is the actual value returned from the registry nameservers as the value of DS records. </p>
         pub fn set_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.digest = input;
-            self
+            self.digest = input; self
         }
         /// <p> A numeric identification of the DNSKEY record referred to by this DS record. </p>
         pub fn key_tag(mut self, input: i32) -> Self {
@@ -5623,8 +5429,7 @@ pub mod dnssec_key {
         }
         /// <p> A numeric identification of the DNSKEY record referred to by this DS record. </p>
         pub fn set_key_tag(mut self, input: std::option::Option<i32>) -> Self {
-            self.key_tag = input;
-            self
+            self.key_tag = input; self
         }
         /// <p> An ID assigned to each DS record created by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5633,22 +5438,30 @@ pub mod dnssec_key {
         }
         /// <p> An ID assigned to each DS record created by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`DnssecKey`](crate::model::DnssecKey).
         pub fn build(self) -> crate::model::DnssecKey {
             crate::model::DnssecKey {
-                algorithm: self.algorithm,
-                flags: self.flags,
-                public_key: self.public_key,
-                digest_type: self.digest_type,
-                digest: self.digest,
-                key_tag: self.key_tag,
-                id: self.id,
+                algorithm: self.algorithm
+                ,
+                flags: self.flags
+                ,
+                public_key: self.public_key
+                ,
+                digest_type: self.digest_type
+                ,
+                digest: self.digest
+                ,
+                key_tag: self.key_tag
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl DnssecKey {
     /// Creates a new builder-style object to manufacture [`DnssecKey`](crate::model::DnssecKey).
@@ -5663,9 +5476,9 @@ impl DnssecKey {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let reachabilitystatus = unimplemented!();
 /// match reachabilitystatus {
@@ -5688,22 +5501,14 @@ impl DnssecKey {
 /// Specifically, when `reachabilitystatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReachabilityStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReachabilityStatus {
     #[allow(missing_docs)] // documentation missing in model
     Done,
@@ -5712,7 +5517,7 @@ pub enum ReachabilityStatus {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReachabilityStatus {
     fn from(s: &str) -> Self {
@@ -5720,19 +5525,17 @@ impl std::convert::From<&str> for ReachabilityStatus {
             "DONE" => ReachabilityStatus::Done,
             "EXPIRED" => ReachabilityStatus::Expired,
             "PENDING" => ReachabilityStatus::Pending,
-            other => {
-                ReachabilityStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ReachabilityStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReachabilityStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReachabilityStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReachabilityStatus::from(s))
+                }
+            }
 impl ReachabilityStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5740,12 +5543,14 @@ impl ReachabilityStatus {
             ReachabilityStatus::Done => "DONE",
             ReachabilityStatus::Expired => "EXPIRED",
             ReachabilityStatus::Pending => "PENDING",
-            ReachabilityStatus::Unknown(value) => value.as_str(),
+            ReachabilityStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DONE", "EXPIRED", "PENDING"]
+        &[
+            "DONE", "EXPIRED", "PENDING"
+        ]
     }
 }
 impl AsRef<str> for ReachabilityStatus {
@@ -5757,210 +5562,209 @@ impl AsRef<str> for ReachabilityStatus {
 /// <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainTransferability {
-    /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
-    /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p>
-    /// </note>
-    /// <p>Valid values:</p>
-    /// <dl>
+pub struct DomainTransferability  {
+    /// <p>Whether the domain name can be transferred to Route 53.</p> <note> 
+    /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p> 
+    /// </note> 
+    /// <p>Valid values:</p> 
+    /// <dl> 
     /// <dt>
     /// TRANSFERABLE
-    /// </dt>
-    /// <dd>
-    /// <p>The domain name can be transferred to Route 53.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The domain name can be transferred to Route 53.</p> 
+    /// </dd> 
     /// <dt>
     /// UNTRANSFERRABLE
-    /// </dt>
-    /// <dd>
-    /// <p>The domain name can't be transferred to Route 53.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The domain name can't be transferred to Route 53.</p> 
+    /// </dd> 
     /// <dt>
     /// DONT_KNOW
-    /// </dt>
-    /// <dd>
-    /// <p>Reserved for future use.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Reserved for future use.</p> 
+    /// </dd> 
     /// <dt>
     /// DOMAIN_IN_OWN_ACCOUNT
-    /// </dt>
-    /// <dd>
-    /// <p>The domain already exists in the current Amazon Web Services account.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The domain already exists in the current Amazon Web Services account.</p> 
+    /// </dd> 
     /// <dt>
     /// DOMAIN_IN_ANOTHER_ACCOUNT
-    /// </dt>
-    /// <dd>
-    /// <p> the domain exists in another Amazon Web Services account.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> the domain exists in another Amazon Web Services account.</p> 
+    /// </dd> 
     /// <dt>
     /// PREMIUM_DOMAIN
-    /// </dt>
-    /// <dd>
-    /// <p>Premium domain transfer is not supported.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Premium domain transfer is not supported.</p> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub transferable: std::option::Option<crate::model::Transferable>,
 }
 impl DomainTransferability {
-    /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
-    /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p>
-    /// </note>
-    /// <p>Valid values:</p>
-    /// <dl>
+    /// <p>Whether the domain name can be transferred to Route 53.</p> <note> 
+    /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p> 
+    /// </note> 
+    /// <p>Valid values:</p> 
+    /// <dl> 
     /// <dt>
     /// TRANSFERABLE
-    /// </dt>
-    /// <dd>
-    /// <p>The domain name can be transferred to Route 53.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The domain name can be transferred to Route 53.</p> 
+    /// </dd> 
     /// <dt>
     /// UNTRANSFERRABLE
-    /// </dt>
-    /// <dd>
-    /// <p>The domain name can't be transferred to Route 53.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The domain name can't be transferred to Route 53.</p> 
+    /// </dd> 
     /// <dt>
     /// DONT_KNOW
-    /// </dt>
-    /// <dd>
-    /// <p>Reserved for future use.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Reserved for future use.</p> 
+    /// </dd> 
     /// <dt>
     /// DOMAIN_IN_OWN_ACCOUNT
-    /// </dt>
-    /// <dd>
-    /// <p>The domain already exists in the current Amazon Web Services account.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The domain already exists in the current Amazon Web Services account.</p> 
+    /// </dd> 
     /// <dt>
     /// DOMAIN_IN_ANOTHER_ACCOUNT
-    /// </dt>
-    /// <dd>
-    /// <p> the domain exists in another Amazon Web Services account.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> the domain exists in another Amazon Web Services account.</p> 
+    /// </dd> 
     /// <dt>
     /// PREMIUM_DOMAIN
-    /// </dt>
-    /// <dd>
-    /// <p>Premium domain transfer is not supported.</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>Premium domain transfer is not supported.</p> 
+    /// </dd> 
     /// </dl>
-    pub fn transferable(&self) -> std::option::Option<&crate::model::Transferable> {
+    pub fn transferable(&self) -> std::option::Option<& crate::model::Transferable> {
         self.transferable.as_ref()
     }
 }
 /// See [`DomainTransferability`](crate::model::DomainTransferability).
 pub mod domain_transferability {
-
+    
     /// A builder for [`DomainTransferability`](crate::model::DomainTransferability).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transferable: std::option::Option<crate::model::Transferable>,
     }
     impl Builder {
-        /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
-        /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p>
-        /// </note>
-        /// <p>Valid values:</p>
-        /// <dl>
+        /// <p>Whether the domain name can be transferred to Route 53.</p> <note> 
+        /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p> 
+        /// </note> 
+        /// <p>Valid values:</p> 
+        /// <dl> 
         /// <dt>
         /// TRANSFERABLE
-        /// </dt>
-        /// <dd>
-        /// <p>The domain name can be transferred to Route 53.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The domain name can be transferred to Route 53.</p> 
+        /// </dd> 
         /// <dt>
         /// UNTRANSFERRABLE
-        /// </dt>
-        /// <dd>
-        /// <p>The domain name can't be transferred to Route 53.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The domain name can't be transferred to Route 53.</p> 
+        /// </dd> 
         /// <dt>
         /// DONT_KNOW
-        /// </dt>
-        /// <dd>
-        /// <p>Reserved for future use.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Reserved for future use.</p> 
+        /// </dd> 
         /// <dt>
         /// DOMAIN_IN_OWN_ACCOUNT
-        /// </dt>
-        /// <dd>
-        /// <p>The domain already exists in the current Amazon Web Services account.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The domain already exists in the current Amazon Web Services account.</p> 
+        /// </dd> 
         /// <dt>
         /// DOMAIN_IN_ANOTHER_ACCOUNT
-        /// </dt>
-        /// <dd>
-        /// <p> the domain exists in another Amazon Web Services account.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> the domain exists in another Amazon Web Services account.</p> 
+        /// </dd> 
         /// <dt>
         /// PREMIUM_DOMAIN
-        /// </dt>
-        /// <dd>
-        /// <p>Premium domain transfer is not supported.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Premium domain transfer is not supported.</p> 
+        /// </dd> 
         /// </dl>
         pub fn transferable(mut self, input: crate::model::Transferable) -> Self {
             self.transferable = Some(input);
             self
         }
-        /// <p>Whether the domain name can be transferred to Route 53.</p> <note>
-        /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p>
-        /// </note>
-        /// <p>Valid values:</p>
-        /// <dl>
+        /// <p>Whether the domain name can be transferred to Route 53.</p> <note> 
+        /// <p>You can transfer only domains that have a value of <code>TRANSFERABLE</code> or <code>Transferable</code>.</p> 
+        /// </note> 
+        /// <p>Valid values:</p> 
+        /// <dl> 
         /// <dt>
         /// TRANSFERABLE
-        /// </dt>
-        /// <dd>
-        /// <p>The domain name can be transferred to Route 53.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The domain name can be transferred to Route 53.</p> 
+        /// </dd> 
         /// <dt>
         /// UNTRANSFERRABLE
-        /// </dt>
-        /// <dd>
-        /// <p>The domain name can't be transferred to Route 53.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The domain name can't be transferred to Route 53.</p> 
+        /// </dd> 
         /// <dt>
         /// DONT_KNOW
-        /// </dt>
-        /// <dd>
-        /// <p>Reserved for future use.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Reserved for future use.</p> 
+        /// </dd> 
         /// <dt>
         /// DOMAIN_IN_OWN_ACCOUNT
-        /// </dt>
-        /// <dd>
-        /// <p>The domain already exists in the current Amazon Web Services account.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The domain already exists in the current Amazon Web Services account.</p> 
+        /// </dd> 
         /// <dt>
         /// DOMAIN_IN_ANOTHER_ACCOUNT
-        /// </dt>
-        /// <dd>
-        /// <p> the domain exists in another Amazon Web Services account.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> the domain exists in another Amazon Web Services account.</p> 
+        /// </dd> 
         /// <dt>
         /// PREMIUM_DOMAIN
-        /// </dt>
-        /// <dd>
-        /// <p>Premium domain transfer is not supported.</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>Premium domain transfer is not supported.</p> 
+        /// </dd> 
         /// </dl>
-        pub fn set_transferable(
-            mut self,
-            input: std::option::Option<crate::model::Transferable>,
-        ) -> Self {
-            self.transferable = input;
-            self
+        pub fn set_transferable(mut self, input: std::option::Option<crate::model::Transferable>) -> Self {
+            self.transferable = input; self
         }
         /// Consumes the builder and constructs a [`DomainTransferability`](crate::model::DomainTransferability).
         pub fn build(self) -> crate::model::DomainTransferability {
             crate::model::DomainTransferability {
-                transferable: self.transferable,
+                transferable: self.transferable
+                ,
             }
         }
     }
+    
+    
 }
 impl DomainTransferability {
     /// Creates a new builder-style object to manufacture [`DomainTransferability`](crate::model::DomainTransferability).
@@ -5975,9 +5779,9 @@ impl DomainTransferability {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let transferable = unimplemented!();
 /// match transferable {
@@ -6003,7 +5807,7 @@ impl DomainTransferability {
 /// Specifically, when `transferable` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Transferable::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -6041,15 +5845,7 @@ impl DomainTransferability {
 /// </dd>
 /// </dl>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Transferable {
     #[allow(missing_docs)] // documentation missing in model
     DomainInAnotherAccount,
@@ -6064,7 +5860,7 @@ pub enum Transferable {
     #[allow(missing_docs)] // documentation missing in model
     Untransferable,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Transferable {
     fn from(s: &str) -> Self {
@@ -6075,17 +5871,17 @@ impl std::convert::From<&str> for Transferable {
             "PREMIUM_DOMAIN" => Transferable::PremiumDomain,
             "TRANSFERABLE" => Transferable::Transferable,
             "UNTRANSFERABLE" => Transferable::Untransferable,
-            other => Transferable::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Transferable::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Transferable {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Transferable::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Transferable::from(s))
+                }
+            }
 impl Transferable {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6096,18 +5892,13 @@ impl Transferable {
             Transferable::PremiumDomain => "PREMIUM_DOMAIN",
             Transferable::Transferable => "TRANSFERABLE",
             Transferable::Untransferable => "UNTRANSFERABLE",
-            Transferable::Unknown(value) => value.as_str(),
+            Transferable::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DOMAIN_IN_ANOTHER_ACCOUNT",
-            "DOMAIN_IN_OWN_ACCOUNT",
-            "DONT_KNOW",
-            "PREMIUM_DOMAIN",
-            "TRANSFERABLE",
-            "UNTRANSFERABLE",
+            "DOMAIN_IN_ANOTHER_ACCOUNT", "DOMAIN_IN_OWN_ACCOUNT", "DONT_KNOW", "PREMIUM_DOMAIN", "TRANSFERABLE", "UNTRANSFERABLE"
         ]
     }
 }
@@ -6123,9 +5914,9 @@ impl AsRef<str> for Transferable {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let domainavailability = unimplemented!();
 /// match domainavailability {
@@ -6153,22 +5944,14 @@ impl AsRef<str> for Transferable {
 /// Specifically, when `domainavailability` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DomainAvailability::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DomainAvailability {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -6187,7 +5970,7 @@ pub enum DomainAvailability {
     #[allow(missing_docs)] // documentation missing in model
     UnavailableRestricted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DomainAvailability {
     fn from(s: &str) -> Self {
@@ -6200,19 +5983,17 @@ impl std::convert::From<&str> for DomainAvailability {
             "UNAVAILABLE" => DomainAvailability::Unavailable,
             "UNAVAILABLE_PREMIUM" => DomainAvailability::UnavailablePremium,
             "UNAVAILABLE_RESTRICTED" => DomainAvailability::UnavailableRestricted,
-            other => {
-                DomainAvailability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DomainAvailability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DomainAvailability {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DomainAvailability::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DomainAvailability::from(s))
+                }
+            }
 impl DomainAvailability {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6225,20 +6006,13 @@ impl DomainAvailability {
             DomainAvailability::Unavailable => "UNAVAILABLE",
             DomainAvailability::UnavailablePremium => "UNAVAILABLE_PREMIUM",
             DomainAvailability::UnavailableRestricted => "UNAVAILABLE_RESTRICTED",
-            DomainAvailability::Unknown(value) => value.as_str(),
+            DomainAvailability::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AVAILABLE",
-            "AVAILABLE_PREORDER",
-            "AVAILABLE_RESERVED",
-            "DONT_KNOW",
-            "RESERVED",
-            "UNAVAILABLE",
-            "UNAVAILABLE_PREMIUM",
-            "UNAVAILABLE_RESTRICTED",
+            "AVAILABLE", "AVAILABLE_PREORDER", "AVAILABLE_RESERVED", "DONT_KNOW", "RESERVED", "UNAVAILABLE", "UNAVAILABLE_PREMIUM", "UNAVAILABLE_RESTRICTED"
         ]
     }
 }
@@ -6251,11 +6025,11 @@ impl AsRef<str> for DomainAvailability {
 /// <p>Information about a delegation signer (DS) record that was created in the registry by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DnssecSigningAttributes {
+pub struct DnssecSigningAttributes  {
     /// <p> Algorithm which was used to generate the digest from the public key. </p>
     #[doc(hidden)]
     pub algorithm: std::option::Option<i32>,
-    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p>
+    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p> 
     /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
     #[doc(hidden)]
     pub flags: std::option::Option<i32>,
@@ -6268,19 +6042,19 @@ impl DnssecSigningAttributes {
     pub fn algorithm(&self) -> std::option::Option<i32> {
         self.algorithm
     }
-    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p>
+    /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p> 
     /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
     pub fn flags(&self) -> std::option::Option<i32> {
         self.flags
     }
     /// <p> The base64-encoded public key part of the key pair that is passed to the registry. </p>
-    pub fn public_key(&self) -> std::option::Option<&str> {
+    pub fn public_key(&self) -> std::option::Option<& str> {
         self.public_key.as_deref()
     }
 }
 /// See [`DnssecSigningAttributes`](crate::model::DnssecSigningAttributes).
 pub mod dnssec_signing_attributes {
-
+    
     /// A builder for [`DnssecSigningAttributes`](crate::model::DnssecSigningAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6296,20 +6070,18 @@ pub mod dnssec_signing_attributes {
         }
         /// <p> Algorithm which was used to generate the digest from the public key. </p>
         pub fn set_algorithm(mut self, input: std::option::Option<i32>) -> Self {
-            self.algorithm = input;
-            self
+            self.algorithm = input; self
         }
-        /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p>
+        /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p> 
         /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
         pub fn flags(mut self, input: i32) -> Self {
             self.flags = Some(input);
             self
         }
-        /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p>
+        /// <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257) or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p> 
         /// <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
         pub fn set_flags(mut self, input: std::option::Option<i32>) -> Self {
-            self.flags = input;
-            self
+            self.flags = input; self
         }
         /// <p> The base64-encoded public key part of the key pair that is passed to the registry. </p>
         pub fn public_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6318,18 +6090,22 @@ pub mod dnssec_signing_attributes {
         }
         /// <p> The base64-encoded public key part of the key pair that is passed to the registry. </p>
         pub fn set_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.public_key = input;
-            self
+            self.public_key = input; self
         }
         /// Consumes the builder and constructs a [`DnssecSigningAttributes`](crate::model::DnssecSigningAttributes).
         pub fn build(self) -> crate::model::DnssecSigningAttributes {
             crate::model::DnssecSigningAttributes {
-                algorithm: self.algorithm,
-                flags: self.flags,
-                public_key: self.public_key,
+                algorithm: self.algorithm
+                ,
+                flags: self.flags
+                ,
+                public_key: self.public_key
+                ,
             }
         }
     }
+    
+    
 }
 impl DnssecSigningAttributes {
     /// Creates a new builder-style object to manufacture [`DnssecSigningAttributes`](crate::model::DnssecSigningAttributes).
@@ -6337,3 +6113,4 @@ impl DnssecSigningAttributes {
         crate::model::dnssec_signing_attributes::Builder::default()
     }
 }
+

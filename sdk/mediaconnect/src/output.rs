@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFlowSourceOutput {
+pub struct UpdateFlowSourceOutput  {
     /// The ARN of the flow that you want to update.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct UpdateFlowSourceOutput {
 }
 impl UpdateFlowSourceOutput {
     /// The ARN of the flow that you want to update.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The settings for the source of the flow.
-    pub fn source(&self) -> std::option::Option<&crate::model::Source> {
+    pub fn source(&self) -> std::option::Option<& crate::model::Source> {
         self.source.as_ref()
     }
 }
 /// See [`UpdateFlowSourceOutput`](crate::output::UpdateFlowSourceOutput).
 pub mod update_flow_source_output {
-
+    
     /// A builder for [`UpdateFlowSourceOutput`](crate::output::UpdateFlowSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -37,8 +37,7 @@ pub mod update_flow_source_output {
         }
         /// The ARN of the flow that you want to update.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// The settings for the source of the flow.
         pub fn source(mut self, input: crate::model::Source) -> Self {
@@ -47,17 +46,20 @@ pub mod update_flow_source_output {
         }
         /// The settings for the source of the flow.
         pub fn set_source(mut self, input: std::option::Option<crate::model::Source>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFlowSourceOutput`](crate::output::UpdateFlowSourceOutput).
         pub fn build(self) -> crate::output::UpdateFlowSourceOutput {
             crate::output::UpdateFlowSourceOutput {
-                flow_arn: self.flow_arn,
-                source: self.source,
+                flow_arn: self.flow_arn
+                ,
+                source: self.source
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFlowSourceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowSourceOutput`](crate::output::UpdateFlowSourceOutput).
@@ -69,7 +71,7 @@ impl UpdateFlowSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFlowOutputOutput {
+pub struct UpdateFlowOutputOutput  {
     /// The ARN of the flow that is associated with the updated output.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -79,17 +81,17 @@ pub struct UpdateFlowOutputOutput {
 }
 impl UpdateFlowOutputOutput {
     /// The ARN of the flow that is associated with the updated output.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The new settings of the output that you updated.
-    pub fn output(&self) -> std::option::Option<&crate::model::Output> {
+    pub fn output(&self) -> std::option::Option<& crate::model::Output> {
         self.output.as_ref()
     }
 }
 /// See [`UpdateFlowOutputOutput`](crate::output::UpdateFlowOutputOutput).
 pub mod update_flow_output_output {
-
+    
     /// A builder for [`UpdateFlowOutputOutput`](crate::output::UpdateFlowOutputOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -104,8 +106,7 @@ pub mod update_flow_output_output {
         }
         /// The ARN of the flow that is associated with the updated output.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// The new settings of the output that you updated.
         pub fn output(mut self, input: crate::model::Output) -> Self {
@@ -114,17 +115,20 @@ pub mod update_flow_output_output {
         }
         /// The new settings of the output that you updated.
         pub fn set_output(mut self, input: std::option::Option<crate::model::Output>) -> Self {
-            self.output = input;
-            self
+            self.output = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFlowOutputOutput`](crate::output::UpdateFlowOutputOutput).
         pub fn build(self) -> crate::output::UpdateFlowOutputOutput {
             crate::output::UpdateFlowOutputOutput {
-                flow_arn: self.flow_arn,
-                output: self.output,
+                flow_arn: self.flow_arn
+                ,
+                output: self.output
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFlowOutputOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowOutputOutput`](crate::output::UpdateFlowOutputOutput).
@@ -136,7 +140,7 @@ impl UpdateFlowOutputOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFlowMediaStreamOutput {
+pub struct UpdateFlowMediaStreamOutput  {
     /// The ARN of the flow that is associated with the media stream that you updated.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -146,17 +150,17 @@ pub struct UpdateFlowMediaStreamOutput {
 }
 impl UpdateFlowMediaStreamOutput {
     /// The ARN of the flow that is associated with the media stream that you updated.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The media stream that you updated.
-    pub fn media_stream(&self) -> std::option::Option<&crate::model::MediaStream> {
+    pub fn media_stream(&self) -> std::option::Option<& crate::model::MediaStream> {
         self.media_stream.as_ref()
     }
 }
 /// See [`UpdateFlowMediaStreamOutput`](crate::output::UpdateFlowMediaStreamOutput).
 pub mod update_flow_media_stream_output {
-
+    
     /// A builder for [`UpdateFlowMediaStreamOutput`](crate::output::UpdateFlowMediaStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -171,8 +175,7 @@ pub mod update_flow_media_stream_output {
         }
         /// The ARN of the flow that is associated with the media stream that you updated.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// The media stream that you updated.
         pub fn media_stream(mut self, input: crate::model::MediaStream) -> Self {
@@ -180,21 +183,21 @@ pub mod update_flow_media_stream_output {
             self
         }
         /// The media stream that you updated.
-        pub fn set_media_stream(
-            mut self,
-            input: std::option::Option<crate::model::MediaStream>,
-        ) -> Self {
-            self.media_stream = input;
-            self
+        pub fn set_media_stream(mut self, input: std::option::Option<crate::model::MediaStream>) -> Self {
+            self.media_stream = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFlowMediaStreamOutput`](crate::output::UpdateFlowMediaStreamOutput).
         pub fn build(self) -> crate::output::UpdateFlowMediaStreamOutput {
             crate::output::UpdateFlowMediaStreamOutput {
-                flow_arn: self.flow_arn,
-                media_stream: self.media_stream,
+                flow_arn: self.flow_arn
+                ,
+                media_stream: self.media_stream
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFlowMediaStreamOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowMediaStreamOutput`](crate::output::UpdateFlowMediaStreamOutput).
@@ -206,7 +209,7 @@ impl UpdateFlowMediaStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFlowEntitlementOutput {
+pub struct UpdateFlowEntitlementOutput  {
     /// The new configuration of the entitlement that you updated.
     #[doc(hidden)]
     pub entitlement: std::option::Option<crate::model::Entitlement>,
@@ -216,17 +219,17 @@ pub struct UpdateFlowEntitlementOutput {
 }
 impl UpdateFlowEntitlementOutput {
     /// The new configuration of the entitlement that you updated.
-    pub fn entitlement(&self) -> std::option::Option<&crate::model::Entitlement> {
+    pub fn entitlement(&self) -> std::option::Option<& crate::model::Entitlement> {
         self.entitlement.as_ref()
     }
     /// The ARN of the flow that this entitlement was granted on.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
 }
 /// See [`UpdateFlowEntitlementOutput`](crate::output::UpdateFlowEntitlementOutput).
 pub mod update_flow_entitlement_output {
-
+    
     /// A builder for [`UpdateFlowEntitlementOutput`](crate::output::UpdateFlowEntitlementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -240,12 +243,8 @@ pub mod update_flow_entitlement_output {
             self
         }
         /// The new configuration of the entitlement that you updated.
-        pub fn set_entitlement(
-            mut self,
-            input: std::option::Option<crate::model::Entitlement>,
-        ) -> Self {
-            self.entitlement = input;
-            self
+        pub fn set_entitlement(mut self, input: std::option::Option<crate::model::Entitlement>) -> Self {
+            self.entitlement = input; self
         }
         /// The ARN of the flow that this entitlement was granted on.
         pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -254,17 +253,20 @@ pub mod update_flow_entitlement_output {
         }
         /// The ARN of the flow that this entitlement was granted on.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFlowEntitlementOutput`](crate::output::UpdateFlowEntitlementOutput).
         pub fn build(self) -> crate::output::UpdateFlowEntitlementOutput {
             crate::output::UpdateFlowEntitlementOutput {
-                entitlement: self.entitlement,
-                flow_arn: self.flow_arn,
+                entitlement: self.entitlement
+                ,
+                flow_arn: self.flow_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFlowEntitlementOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowEntitlementOutput`](crate::output::UpdateFlowEntitlementOutput).
@@ -276,20 +278,20 @@ impl UpdateFlowEntitlementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFlowOutput {
+pub struct UpdateFlowOutput  {
     /// The settings for a flow, including its source, outputs, and entitlements.
     #[doc(hidden)]
     pub flow: std::option::Option<crate::model::Flow>,
 }
 impl UpdateFlowOutput {
     /// The settings for a flow, including its source, outputs, and entitlements.
-    pub fn flow(&self) -> std::option::Option<&crate::model::Flow> {
+    pub fn flow(&self) -> std::option::Option<& crate::model::Flow> {
         self.flow.as_ref()
     }
 }
 /// See [`UpdateFlowOutput`](crate::output::UpdateFlowOutput).
 pub mod update_flow_output {
-
+    
     /// A builder for [`UpdateFlowOutput`](crate::output::UpdateFlowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -303,14 +305,18 @@ pub mod update_flow_output {
         }
         /// The settings for a flow, including its source, outputs, and entitlements.
         pub fn set_flow(mut self, input: std::option::Option<crate::model::Flow>) -> Self {
-            self.flow = input;
-            self
+            self.flow = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFlowOutput`](crate::output::UpdateFlowOutput).
         pub fn build(self) -> crate::output::UpdateFlowOutput {
-            crate::output::UpdateFlowOutput { flow: self.flow }
+            crate::output::UpdateFlowOutput {
+                flow: self.flow
+                ,
+            }
         }
     }
+    
+    
 }
 impl UpdateFlowOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowOutput`](crate::output::UpdateFlowOutput).
@@ -322,19 +328,24 @@ impl UpdateFlowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -346,19 +357,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -370,7 +386,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopFlowOutput {
+pub struct StopFlowOutput  {
     /// The ARN of the flow that you stopped.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -380,17 +396,17 @@ pub struct StopFlowOutput {
 }
 impl StopFlowOutput {
     /// The ARN of the flow that you stopped.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The status of the flow when the StopFlow process begins.
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
 }
 /// See [`StopFlowOutput`](crate::output::StopFlowOutput).
 pub mod stop_flow_output {
-
+    
     /// A builder for [`StopFlowOutput`](crate::output::StopFlowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -405,8 +421,7 @@ pub mod stop_flow_output {
         }
         /// The ARN of the flow that you stopped.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// The status of the flow when the StopFlow process begins.
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -415,17 +430,20 @@ pub mod stop_flow_output {
         }
         /// The status of the flow when the StopFlow process begins.
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`StopFlowOutput`](crate::output::StopFlowOutput).
         pub fn build(self) -> crate::output::StopFlowOutput {
             crate::output::StopFlowOutput {
-                flow_arn: self.flow_arn,
-                status: self.status,
+                flow_arn: self.flow_arn
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl StopFlowOutput {
     /// Creates a new builder-style object to manufacture [`StopFlowOutput`](crate::output::StopFlowOutput).
@@ -437,7 +455,7 @@ impl StopFlowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartFlowOutput {
+pub struct StartFlowOutput  {
     /// The ARN of the flow that you started.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -447,17 +465,17 @@ pub struct StartFlowOutput {
 }
 impl StartFlowOutput {
     /// The ARN of the flow that you started.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The status of the flow when the StartFlow process begins.
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
 }
 /// See [`StartFlowOutput`](crate::output::StartFlowOutput).
 pub mod start_flow_output {
-
+    
     /// A builder for [`StartFlowOutput`](crate::output::StartFlowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -472,8 +490,7 @@ pub mod start_flow_output {
         }
         /// The ARN of the flow that you started.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// The status of the flow when the StartFlow process begins.
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -482,17 +499,20 @@ pub mod start_flow_output {
         }
         /// The status of the flow when the StartFlow process begins.
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`StartFlowOutput`](crate::output::StartFlowOutput).
         pub fn build(self) -> crate::output::StartFlowOutput {
             crate::output::StartFlowOutput {
-                flow_arn: self.flow_arn,
-                status: self.status,
+                flow_arn: self.flow_arn
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl StartFlowOutput {
     /// Creates a new builder-style object to manufacture [`StartFlowOutput`](crate::output::StartFlowOutput).
@@ -504,7 +524,7 @@ impl StartFlowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RevokeFlowEntitlementOutput {
+pub struct RevokeFlowEntitlementOutput  {
     /// The ARN of the entitlement that was revoked.
     #[doc(hidden)]
     pub entitlement_arn: std::option::Option<std::string::String>,
@@ -514,17 +534,17 @@ pub struct RevokeFlowEntitlementOutput {
 }
 impl RevokeFlowEntitlementOutput {
     /// The ARN of the entitlement that was revoked.
-    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
+    pub fn entitlement_arn(&self) -> std::option::Option<& str> {
         self.entitlement_arn.as_deref()
     }
     /// The ARN of the flow that the entitlement was revoked from.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
 }
 /// See [`RevokeFlowEntitlementOutput`](crate::output::RevokeFlowEntitlementOutput).
 pub mod revoke_flow_entitlement_output {
-
+    
     /// A builder for [`RevokeFlowEntitlementOutput`](crate::output::RevokeFlowEntitlementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -538,12 +558,8 @@ pub mod revoke_flow_entitlement_output {
             self
         }
         /// The ARN of the entitlement that was revoked.
-        pub fn set_entitlement_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.entitlement_arn = input;
-            self
+        pub fn set_entitlement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entitlement_arn = input; self
         }
         /// The ARN of the flow that the entitlement was revoked from.
         pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -552,17 +568,20 @@ pub mod revoke_flow_entitlement_output {
         }
         /// The ARN of the flow that the entitlement was revoked from.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// Consumes the builder and constructs a [`RevokeFlowEntitlementOutput`](crate::output::RevokeFlowEntitlementOutput).
         pub fn build(self) -> crate::output::RevokeFlowEntitlementOutput {
             crate::output::RevokeFlowEntitlementOutput {
-                entitlement_arn: self.entitlement_arn,
-                flow_arn: self.flow_arn,
+                entitlement_arn: self.entitlement_arn
+                ,
+                flow_arn: self.flow_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl RevokeFlowEntitlementOutput {
     /// Creates a new builder-style object to manufacture [`RevokeFlowEntitlementOutput`](crate::output::RevokeFlowEntitlementOutput).
@@ -574,7 +593,7 @@ impl RevokeFlowEntitlementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveFlowVpcInterfaceOutput {
+pub struct RemoveFlowVpcInterfaceOutput  {
     /// The ARN of the flow that is associated with the VPC interface you removed.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -587,27 +606,26 @@ pub struct RemoveFlowVpcInterfaceOutput {
 }
 impl RemoveFlowVpcInterfaceOutput {
     /// The ARN of the flow that is associated with the VPC interface you removed.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// IDs of network interfaces associated with the removed VPC interface that Media Connect was unable to remove.
-    pub fn non_deleted_network_interface_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn non_deleted_network_interface_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.non_deleted_network_interface_ids.as_deref()
     }
     /// The name of the VPC interface that was removed.
-    pub fn vpc_interface_name(&self) -> std::option::Option<&str> {
+    pub fn vpc_interface_name(&self) -> std::option::Option<& str> {
         self.vpc_interface_name.as_deref()
     }
 }
 /// See [`RemoveFlowVpcInterfaceOutput`](crate::output::RemoveFlowVpcInterfaceOutput).
 pub mod remove_flow_vpc_interface_output {
-
+    
     /// A builder for [`RemoveFlowVpcInterfaceOutput`](crate::output::RemoveFlowVpcInterfaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
-        pub(crate) non_deleted_network_interface_ids:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) non_deleted_network_interface_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) vpc_interface_name: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -618,30 +636,22 @@ pub mod remove_flow_vpc_interface_output {
         }
         /// The ARN of the flow that is associated with the VPC interface you removed.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// Appends an item to `non_deleted_network_interface_ids`.
         ///
         /// To override the contents of this collection use [`set_non_deleted_network_interface_ids`](Self::set_non_deleted_network_interface_ids).
         ///
         /// IDs of network interfaces associated with the removed VPC interface that Media Connect was unable to remove.
-        pub fn non_deleted_network_interface_ids(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn non_deleted_network_interface_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.non_deleted_network_interface_ids.unwrap_or_default();
-            v.push(input.into());
-            self.non_deleted_network_interface_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.non_deleted_network_interface_ids = Some(v);
+                            self
         }
         /// IDs of network interfaces associated with the removed VPC interface that Media Connect was unable to remove.
-        pub fn set_non_deleted_network_interface_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.non_deleted_network_interface_ids = input;
-            self
+        pub fn set_non_deleted_network_interface_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.non_deleted_network_interface_ids = input; self
         }
         /// The name of the VPC interface that was removed.
         pub fn vpc_interface_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -649,22 +659,23 @@ pub mod remove_flow_vpc_interface_output {
             self
         }
         /// The name of the VPC interface that was removed.
-        pub fn set_vpc_interface_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.vpc_interface_name = input;
-            self
+        pub fn set_vpc_interface_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_interface_name = input; self
         }
         /// Consumes the builder and constructs a [`RemoveFlowVpcInterfaceOutput`](crate::output::RemoveFlowVpcInterfaceOutput).
         pub fn build(self) -> crate::output::RemoveFlowVpcInterfaceOutput {
             crate::output::RemoveFlowVpcInterfaceOutput {
-                flow_arn: self.flow_arn,
-                non_deleted_network_interface_ids: self.non_deleted_network_interface_ids,
-                vpc_interface_name: self.vpc_interface_name,
+                flow_arn: self.flow_arn
+                ,
+                non_deleted_network_interface_ids: self.non_deleted_network_interface_ids
+                ,
+                vpc_interface_name: self.vpc_interface_name
+                ,
             }
         }
     }
+    
+    
 }
 impl RemoveFlowVpcInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`RemoveFlowVpcInterfaceOutput`](crate::output::RemoveFlowVpcInterfaceOutput).
@@ -676,7 +687,7 @@ impl RemoveFlowVpcInterfaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveFlowSourceOutput {
+pub struct RemoveFlowSourceOutput  {
     /// The ARN of the flow that is associated with the source you removed.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -686,17 +697,17 @@ pub struct RemoveFlowSourceOutput {
 }
 impl RemoveFlowSourceOutput {
     /// The ARN of the flow that is associated with the source you removed.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The ARN of the source that was removed.
-    pub fn source_arn(&self) -> std::option::Option<&str> {
+    pub fn source_arn(&self) -> std::option::Option<& str> {
         self.source_arn.as_deref()
     }
 }
 /// See [`RemoveFlowSourceOutput`](crate::output::RemoveFlowSourceOutput).
 pub mod remove_flow_source_output {
-
+    
     /// A builder for [`RemoveFlowSourceOutput`](crate::output::RemoveFlowSourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -711,8 +722,7 @@ pub mod remove_flow_source_output {
         }
         /// The ARN of the flow that is associated with the source you removed.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// The ARN of the source that was removed.
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -721,17 +731,20 @@ pub mod remove_flow_source_output {
         }
         /// The ARN of the source that was removed.
         pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_arn = input;
-            self
+            self.source_arn = input; self
         }
         /// Consumes the builder and constructs a [`RemoveFlowSourceOutput`](crate::output::RemoveFlowSourceOutput).
         pub fn build(self) -> crate::output::RemoveFlowSourceOutput {
             crate::output::RemoveFlowSourceOutput {
-                flow_arn: self.flow_arn,
-                source_arn: self.source_arn,
+                flow_arn: self.flow_arn
+                ,
+                source_arn: self.source_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl RemoveFlowSourceOutput {
     /// Creates a new builder-style object to manufacture [`RemoveFlowSourceOutput`](crate::output::RemoveFlowSourceOutput).
@@ -743,7 +756,7 @@ impl RemoveFlowSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveFlowOutputOutput {
+pub struct RemoveFlowOutputOutput  {
     /// The ARN of the flow that is associated with the output you removed.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -753,17 +766,17 @@ pub struct RemoveFlowOutputOutput {
 }
 impl RemoveFlowOutputOutput {
     /// The ARN of the flow that is associated with the output you removed.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The ARN of the output that was removed.
-    pub fn output_arn(&self) -> std::option::Option<&str> {
+    pub fn output_arn(&self) -> std::option::Option<& str> {
         self.output_arn.as_deref()
     }
 }
 /// See [`RemoveFlowOutputOutput`](crate::output::RemoveFlowOutputOutput).
 pub mod remove_flow_output_output {
-
+    
     /// A builder for [`RemoveFlowOutputOutput`](crate::output::RemoveFlowOutputOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -778,8 +791,7 @@ pub mod remove_flow_output_output {
         }
         /// The ARN of the flow that is associated with the output you removed.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// The ARN of the output that was removed.
         pub fn output_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -788,17 +800,20 @@ pub mod remove_flow_output_output {
         }
         /// The ARN of the output that was removed.
         pub fn set_output_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.output_arn = input;
-            self
+            self.output_arn = input; self
         }
         /// Consumes the builder and constructs a [`RemoveFlowOutputOutput`](crate::output::RemoveFlowOutputOutput).
         pub fn build(self) -> crate::output::RemoveFlowOutputOutput {
             crate::output::RemoveFlowOutputOutput {
-                flow_arn: self.flow_arn,
-                output_arn: self.output_arn,
+                flow_arn: self.flow_arn
+                ,
+                output_arn: self.output_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl RemoveFlowOutputOutput {
     /// Creates a new builder-style object to manufacture [`RemoveFlowOutputOutput`](crate::output::RemoveFlowOutputOutput).
@@ -810,7 +825,7 @@ impl RemoveFlowOutputOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveFlowMediaStreamOutput {
+pub struct RemoveFlowMediaStreamOutput  {
     /// The Amazon Resource Name (ARN) of the flow.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -820,17 +835,17 @@ pub struct RemoveFlowMediaStreamOutput {
 }
 impl RemoveFlowMediaStreamOutput {
     /// The Amazon Resource Name (ARN) of the flow.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The name of the media stream that was removed.
-    pub fn media_stream_name(&self) -> std::option::Option<&str> {
+    pub fn media_stream_name(&self) -> std::option::Option<& str> {
         self.media_stream_name.as_deref()
     }
 }
 /// See [`RemoveFlowMediaStreamOutput`](crate::output::RemoveFlowMediaStreamOutput).
 pub mod remove_flow_media_stream_output {
-
+    
     /// A builder for [`RemoveFlowMediaStreamOutput`](crate::output::RemoveFlowMediaStreamOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -845,8 +860,7 @@ pub mod remove_flow_media_stream_output {
         }
         /// The Amazon Resource Name (ARN) of the flow.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// The name of the media stream that was removed.
         pub fn media_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -854,21 +868,21 @@ pub mod remove_flow_media_stream_output {
             self
         }
         /// The name of the media stream that was removed.
-        pub fn set_media_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.media_stream_name = input;
-            self
+        pub fn set_media_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.media_stream_name = input; self
         }
         /// Consumes the builder and constructs a [`RemoveFlowMediaStreamOutput`](crate::output::RemoveFlowMediaStreamOutput).
         pub fn build(self) -> crate::output::RemoveFlowMediaStreamOutput {
             crate::output::RemoveFlowMediaStreamOutput {
-                flow_arn: self.flow_arn,
-                media_stream_name: self.media_stream_name,
+                flow_arn: self.flow_arn
+                ,
+                media_stream_name: self.media_stream_name
+                ,
             }
         }
     }
+    
+    
 }
 impl RemoveFlowMediaStreamOutput {
     /// Creates a new builder-style object to manufacture [`RemoveFlowMediaStreamOutput`](crate::output::RemoveFlowMediaStreamOutput).
@@ -880,20 +894,20 @@ impl RemoveFlowMediaStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PurchaseOfferingOutput {
+pub struct PurchaseOfferingOutput  {
     /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
     #[doc(hidden)]
     pub reservation: std::option::Option<crate::model::Reservation>,
 }
 impl PurchaseOfferingOutput {
     /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
-    pub fn reservation(&self) -> std::option::Option<&crate::model::Reservation> {
+    pub fn reservation(&self) -> std::option::Option<& crate::model::Reservation> {
         self.reservation.as_ref()
     }
 }
 /// See [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput).
 pub mod purchase_offering_output {
-
+    
     /// A builder for [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -906,20 +920,19 @@ pub mod purchase_offering_output {
             self
         }
         /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
-        pub fn set_reservation(
-            mut self,
-            input: std::option::Option<crate::model::Reservation>,
-        ) -> Self {
-            self.reservation = input;
-            self
+        pub fn set_reservation(mut self, input: std::option::Option<crate::model::Reservation>) -> Self {
+            self.reservation = input; self
         }
         /// Consumes the builder and constructs a [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput).
         pub fn build(self) -> crate::output::PurchaseOfferingOutput {
             crate::output::PurchaseOfferingOutput {
-                reservation: self.reservation,
+                reservation: self.reservation
+                ,
             }
         }
     }
+    
+    
 }
 impl PurchaseOfferingOutput {
     /// Creates a new builder-style object to manufacture [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput).
@@ -931,30 +944,24 @@ impl PurchaseOfferingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -962,31 +969,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -998,7 +1000,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReservationsOutput {
+pub struct ListReservationsOutput  {
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListReservations request a second time and specify the NextToken value.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1008,17 +1010,17 @@ pub struct ListReservationsOutput {
 }
 impl ListReservationsOutput {
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListReservations request a second time and specify the NextToken value.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// A list of all reservations that have been purchased by this account in the current AWS Region.
-    pub fn reservations(&self) -> std::option::Option<&[crate::model::Reservation]> {
+    pub fn reservations(&self) -> std::option::Option<& [crate::model::Reservation]> {
         self.reservations.as_deref()
     }
 }
 /// See [`ListReservationsOutput`](crate::output::ListReservationsOutput).
 pub mod list_reservations_output {
-
+    
     /// A builder for [`ListReservationsOutput`](crate::output::ListReservationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1033,8 +1035,7 @@ pub mod list_reservations_output {
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListReservations request a second time and specify the NextToken value.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `reservations`.
         ///
@@ -1043,26 +1044,26 @@ pub mod list_reservations_output {
         /// A list of all reservations that have been purchased by this account in the current AWS Region.
         pub fn reservations(mut self, input: crate::model::Reservation) -> Self {
             let mut v = self.reservations.unwrap_or_default();
-            v.push(input);
-            self.reservations = Some(v);
-            self
+                            v.push(input);
+                            self.reservations = Some(v);
+                            self
         }
         /// A list of all reservations that have been purchased by this account in the current AWS Region.
-        pub fn set_reservations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Reservation>>,
-        ) -> Self {
-            self.reservations = input;
-            self
+        pub fn set_reservations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Reservation>>) -> Self {
+            self.reservations = input; self
         }
         /// Consumes the builder and constructs a [`ListReservationsOutput`](crate::output::ListReservationsOutput).
         pub fn build(self) -> crate::output::ListReservationsOutput {
             crate::output::ListReservationsOutput {
-                next_token: self.next_token,
-                reservations: self.reservations,
+                next_token: self.next_token
+                ,
+                reservations: self.reservations
+                ,
             }
         }
     }
+    
+    
 }
 impl ListReservationsOutput {
     /// Creates a new builder-style object to manufacture [`ListReservationsOutput`](crate::output::ListReservationsOutput).
@@ -1074,7 +1075,7 @@ impl ListReservationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOfferingsOutput {
+pub struct ListOfferingsOutput  {
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1084,17 +1085,17 @@ pub struct ListOfferingsOutput {
 }
 impl ListOfferingsOutput {
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// A list of offerings that are available to this account in the current AWS Region.
-    pub fn offerings(&self) -> std::option::Option<&[crate::model::Offering]> {
+    pub fn offerings(&self) -> std::option::Option<& [crate::model::Offering]> {
         self.offerings.as_deref()
     }
 }
 /// See [`ListOfferingsOutput`](crate::output::ListOfferingsOutput).
 pub mod list_offerings_output {
-
+    
     /// A builder for [`ListOfferingsOutput`](crate::output::ListOfferingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1109,8 +1110,7 @@ pub mod list_offerings_output {
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `offerings`.
         ///
@@ -1119,26 +1119,26 @@ pub mod list_offerings_output {
         /// A list of offerings that are available to this account in the current AWS Region.
         pub fn offerings(mut self, input: crate::model::Offering) -> Self {
             let mut v = self.offerings.unwrap_or_default();
-            v.push(input);
-            self.offerings = Some(v);
-            self
+                            v.push(input);
+                            self.offerings = Some(v);
+                            self
         }
         /// A list of offerings that are available to this account in the current AWS Region.
-        pub fn set_offerings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Offering>>,
-        ) -> Self {
-            self.offerings = input;
-            self
+        pub fn set_offerings(mut self, input: std::option::Option<std::vec::Vec<crate::model::Offering>>) -> Self {
+            self.offerings = input; self
         }
         /// Consumes the builder and constructs a [`ListOfferingsOutput`](crate::output::ListOfferingsOutput).
         pub fn build(self) -> crate::output::ListOfferingsOutput {
             crate::output::ListOfferingsOutput {
-                next_token: self.next_token,
-                offerings: self.offerings,
+                next_token: self.next_token
+                ,
+                offerings: self.offerings
+                ,
             }
         }
     }
+    
+    
 }
 impl ListOfferingsOutput {
     /// Creates a new builder-style object to manufacture [`ListOfferingsOutput`](crate::output::ListOfferingsOutput).
@@ -1150,7 +1150,7 @@ impl ListOfferingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFlowsOutput {
+pub struct ListFlowsOutput  {
     /// A list of flow summaries.
     #[doc(hidden)]
     pub flows: std::option::Option<std::vec::Vec<crate::model::ListedFlow>>,
@@ -1160,17 +1160,17 @@ pub struct ListFlowsOutput {
 }
 impl ListFlowsOutput {
     /// A list of flow summaries.
-    pub fn flows(&self) -> std::option::Option<&[crate::model::ListedFlow]> {
+    pub fn flows(&self) -> std::option::Option<& [crate::model::ListedFlow]> {
         self.flows.as_deref()
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFlowsOutput`](crate::output::ListFlowsOutput).
 pub mod list_flows_output {
-
+    
     /// A builder for [`ListFlowsOutput`](crate::output::ListFlowsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1185,17 +1185,13 @@ pub mod list_flows_output {
         /// A list of flow summaries.
         pub fn flows(mut self, input: crate::model::ListedFlow) -> Self {
             let mut v = self.flows.unwrap_or_default();
-            v.push(input);
-            self.flows = Some(v);
-            self
+                            v.push(input);
+                            self.flows = Some(v);
+                            self
         }
         /// A list of flow summaries.
-        pub fn set_flows(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListedFlow>>,
-        ) -> Self {
-            self.flows = input;
-            self
+        pub fn set_flows(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListedFlow>>) -> Self {
+            self.flows = input; self
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1204,17 +1200,20 @@ pub mod list_flows_output {
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFlowsOutput`](crate::output::ListFlowsOutput).
         pub fn build(self) -> crate::output::ListFlowsOutput {
             crate::output::ListFlowsOutput {
-                flows: self.flows,
-                next_token: self.next_token,
+                flows: self.flows
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFlowsOutput {
     /// Creates a new builder-style object to manufacture [`ListFlowsOutput`](crate::output::ListFlowsOutput).
@@ -1226,7 +1225,7 @@ impl ListFlowsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEntitlementsOutput {
+pub struct ListEntitlementsOutput  {
     /// A list of entitlements that have been granted to you from other AWS accounts.
     #[doc(hidden)]
     pub entitlements: std::option::Option<std::vec::Vec<crate::model::ListedEntitlement>>,
@@ -1236,22 +1235,21 @@ pub struct ListEntitlementsOutput {
 }
 impl ListEntitlementsOutput {
     /// A list of entitlements that have been granted to you from other AWS accounts.
-    pub fn entitlements(&self) -> std::option::Option<&[crate::model::ListedEntitlement]> {
+    pub fn entitlements(&self) -> std::option::Option<& [crate::model::ListedEntitlement]> {
         self.entitlements.as_deref()
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEntitlementsOutput`](crate::output::ListEntitlementsOutput).
 pub mod list_entitlements_output {
-
+    
     /// A builder for [`ListEntitlementsOutput`](crate::output::ListEntitlementsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) entitlements:
-            std::option::Option<std::vec::Vec<crate::model::ListedEntitlement>>,
+        pub(crate) entitlements: std::option::Option<std::vec::Vec<crate::model::ListedEntitlement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1262,17 +1260,13 @@ pub mod list_entitlements_output {
         /// A list of entitlements that have been granted to you from other AWS accounts.
         pub fn entitlements(mut self, input: crate::model::ListedEntitlement) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input);
-            self.entitlements = Some(v);
-            self
+                            v.push(input);
+                            self.entitlements = Some(v);
+                            self
         }
         /// A list of entitlements that have been granted to you from other AWS accounts.
-        pub fn set_entitlements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListedEntitlement>>,
-        ) -> Self {
-            self.entitlements = input;
-            self
+        pub fn set_entitlements(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListedEntitlement>>) -> Self {
+            self.entitlements = input; self
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1281,17 +1275,20 @@ pub mod list_entitlements_output {
         }
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEntitlementsOutput`](crate::output::ListEntitlementsOutput).
         pub fn build(self) -> crate::output::ListEntitlementsOutput {
             crate::output::ListEntitlementsOutput {
-                entitlements: self.entitlements,
-                next_token: self.next_token,
+                entitlements: self.entitlements
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEntitlementsOutput {
     /// Creates a new builder-style object to manufacture [`ListEntitlementsOutput`](crate::output::ListEntitlementsOutput).
@@ -1303,7 +1300,7 @@ impl ListEntitlementsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrantFlowEntitlementsOutput {
+pub struct GrantFlowEntitlementsOutput  {
     /// The entitlements that were just granted.
     #[doc(hidden)]
     pub entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
@@ -1313,17 +1310,17 @@ pub struct GrantFlowEntitlementsOutput {
 }
 impl GrantFlowEntitlementsOutput {
     /// The entitlements that were just granted.
-    pub fn entitlements(&self) -> std::option::Option<&[crate::model::Entitlement]> {
+    pub fn entitlements(&self) -> std::option::Option<& [crate::model::Entitlement]> {
         self.entitlements.as_deref()
     }
     /// The ARN of the flow that these entitlements were granted to.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
 }
 /// See [`GrantFlowEntitlementsOutput`](crate::output::GrantFlowEntitlementsOutput).
 pub mod grant_flow_entitlements_output {
-
+    
     /// A builder for [`GrantFlowEntitlementsOutput`](crate::output::GrantFlowEntitlementsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1338,17 +1335,13 @@ pub mod grant_flow_entitlements_output {
         /// The entitlements that were just granted.
         pub fn entitlements(mut self, input: crate::model::Entitlement) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
-            v.push(input);
-            self.entitlements = Some(v);
-            self
+                            v.push(input);
+                            self.entitlements = Some(v);
+                            self
         }
         /// The entitlements that were just granted.
-        pub fn set_entitlements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
-        ) -> Self {
-            self.entitlements = input;
-            self
+        pub fn set_entitlements(mut self, input: std::option::Option<std::vec::Vec<crate::model::Entitlement>>) -> Self {
+            self.entitlements = input; self
         }
         /// The ARN of the flow that these entitlements were granted to.
         pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1357,17 +1350,20 @@ pub mod grant_flow_entitlements_output {
         }
         /// The ARN of the flow that these entitlements were granted to.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// Consumes the builder and constructs a [`GrantFlowEntitlementsOutput`](crate::output::GrantFlowEntitlementsOutput).
         pub fn build(self) -> crate::output::GrantFlowEntitlementsOutput {
             crate::output::GrantFlowEntitlementsOutput {
-                entitlements: self.entitlements,
-                flow_arn: self.flow_arn,
+                entitlements: self.entitlements
+                ,
+                flow_arn: self.flow_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GrantFlowEntitlementsOutput {
     /// Creates a new builder-style object to manufacture [`GrantFlowEntitlementsOutput`](crate::output::GrantFlowEntitlementsOutput).
@@ -1379,20 +1375,20 @@ impl GrantFlowEntitlementsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReservationOutput {
+pub struct DescribeReservationOutput  {
     /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
     #[doc(hidden)]
     pub reservation: std::option::Option<crate::model::Reservation>,
 }
 impl DescribeReservationOutput {
     /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
-    pub fn reservation(&self) -> std::option::Option<&crate::model::Reservation> {
+    pub fn reservation(&self) -> std::option::Option<& crate::model::Reservation> {
         self.reservation.as_ref()
     }
 }
 /// See [`DescribeReservationOutput`](crate::output::DescribeReservationOutput).
 pub mod describe_reservation_output {
-
+    
     /// A builder for [`DescribeReservationOutput`](crate::output::DescribeReservationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1405,20 +1401,19 @@ pub mod describe_reservation_output {
             self
         }
         /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
-        pub fn set_reservation(
-            mut self,
-            input: std::option::Option<crate::model::Reservation>,
-        ) -> Self {
-            self.reservation = input;
-            self
+        pub fn set_reservation(mut self, input: std::option::Option<crate::model::Reservation>) -> Self {
+            self.reservation = input; self
         }
         /// Consumes the builder and constructs a [`DescribeReservationOutput`](crate::output::DescribeReservationOutput).
         pub fn build(self) -> crate::output::DescribeReservationOutput {
             crate::output::DescribeReservationOutput {
-                reservation: self.reservation,
+                reservation: self.reservation
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeReservationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReservationOutput`](crate::output::DescribeReservationOutput).
@@ -1430,20 +1425,20 @@ impl DescribeReservationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOfferingOutput {
+pub struct DescribeOfferingOutput  {
     /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
     #[doc(hidden)]
     pub offering: std::option::Option<crate::model::Offering>,
 }
 impl DescribeOfferingOutput {
     /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
-    pub fn offering(&self) -> std::option::Option<&crate::model::Offering> {
+    pub fn offering(&self) -> std::option::Option<& crate::model::Offering> {
         self.offering.as_ref()
     }
 }
 /// See [`DescribeOfferingOutput`](crate::output::DescribeOfferingOutput).
 pub mod describe_offering_output {
-
+    
     /// A builder for [`DescribeOfferingOutput`](crate::output::DescribeOfferingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1457,16 +1452,18 @@ pub mod describe_offering_output {
         }
         /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
         pub fn set_offering(mut self, input: std::option::Option<crate::model::Offering>) -> Self {
-            self.offering = input;
-            self
+            self.offering = input; self
         }
         /// Consumes the builder and constructs a [`DescribeOfferingOutput`](crate::output::DescribeOfferingOutput).
         pub fn build(self) -> crate::output::DescribeOfferingOutput {
             crate::output::DescribeOfferingOutput {
-                offering: self.offering,
+                offering: self.offering
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeOfferingOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOfferingOutput`](crate::output::DescribeOfferingOutput).
@@ -1478,7 +1475,7 @@ impl DescribeOfferingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFlowOutput {
+pub struct DescribeFlowOutput  {
     /// The settings for a flow, including its source, outputs, and entitlements.
     #[doc(hidden)]
     pub flow: std::option::Option<crate::model::Flow>,
@@ -1488,17 +1485,17 @@ pub struct DescribeFlowOutput {
 }
 impl DescribeFlowOutput {
     /// The settings for a flow, including its source, outputs, and entitlements.
-    pub fn flow(&self) -> std::option::Option<&crate::model::Flow> {
+    pub fn flow(&self) -> std::option::Option<& crate::model::Flow> {
         self.flow.as_ref()
     }
     /// Messages that provide the state of the flow.
-    pub fn messages(&self) -> std::option::Option<&crate::model::Messages> {
+    pub fn messages(&self) -> std::option::Option<& crate::model::Messages> {
         self.messages.as_ref()
     }
 }
 /// See [`DescribeFlowOutput`](crate::output::DescribeFlowOutput).
 pub mod describe_flow_output {
-
+    
     /// A builder for [`DescribeFlowOutput`](crate::output::DescribeFlowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1513,8 +1510,7 @@ pub mod describe_flow_output {
         }
         /// The settings for a flow, including its source, outputs, and entitlements.
         pub fn set_flow(mut self, input: std::option::Option<crate::model::Flow>) -> Self {
-            self.flow = input;
-            self
+            self.flow = input; self
         }
         /// Messages that provide the state of the flow.
         pub fn messages(mut self, input: crate::model::Messages) -> Self {
@@ -1523,17 +1519,20 @@ pub mod describe_flow_output {
         }
         /// Messages that provide the state of the flow.
         pub fn set_messages(mut self, input: std::option::Option<crate::model::Messages>) -> Self {
-            self.messages = input;
-            self
+            self.messages = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFlowOutput`](crate::output::DescribeFlowOutput).
         pub fn build(self) -> crate::output::DescribeFlowOutput {
             crate::output::DescribeFlowOutput {
-                flow: self.flow,
-                messages: self.messages,
+                flow: self.flow
+                ,
+                messages: self.messages
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFlowOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFlowOutput`](crate::output::DescribeFlowOutput).
@@ -1545,7 +1544,7 @@ impl DescribeFlowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFlowOutput {
+pub struct DeleteFlowOutput  {
     /// The ARN of the flow that was deleted.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -1555,17 +1554,17 @@ pub struct DeleteFlowOutput {
 }
 impl DeleteFlowOutput {
     /// The ARN of the flow that was deleted.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The status of the flow when the DeleteFlow process begins.
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
 }
 /// See [`DeleteFlowOutput`](crate::output::DeleteFlowOutput).
 pub mod delete_flow_output {
-
+    
     /// A builder for [`DeleteFlowOutput`](crate::output::DeleteFlowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1580,8 +1579,7 @@ pub mod delete_flow_output {
         }
         /// The ARN of the flow that was deleted.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// The status of the flow when the DeleteFlow process begins.
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -1590,17 +1588,20 @@ pub mod delete_flow_output {
         }
         /// The status of the flow when the DeleteFlow process begins.
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteFlowOutput`](crate::output::DeleteFlowOutput).
         pub fn build(self) -> crate::output::DeleteFlowOutput {
             crate::output::DeleteFlowOutput {
-                flow_arn: self.flow_arn,
-                status: self.status,
+                flow_arn: self.flow_arn
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteFlowOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFlowOutput`](crate::output::DeleteFlowOutput).
@@ -1612,20 +1613,20 @@ impl DeleteFlowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFlowOutput {
+pub struct CreateFlowOutput  {
     /// The settings for a flow, including its source, outputs, and entitlements.
     #[doc(hidden)]
     pub flow: std::option::Option<crate::model::Flow>,
 }
 impl CreateFlowOutput {
     /// The settings for a flow, including its source, outputs, and entitlements.
-    pub fn flow(&self) -> std::option::Option<&crate::model::Flow> {
+    pub fn flow(&self) -> std::option::Option<& crate::model::Flow> {
         self.flow.as_ref()
     }
 }
 /// See [`CreateFlowOutput`](crate::output::CreateFlowOutput).
 pub mod create_flow_output {
-
+    
     /// A builder for [`CreateFlowOutput`](crate::output::CreateFlowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1639,14 +1640,18 @@ pub mod create_flow_output {
         }
         /// The settings for a flow, including its source, outputs, and entitlements.
         pub fn set_flow(mut self, input: std::option::Option<crate::model::Flow>) -> Self {
-            self.flow = input;
-            self
+            self.flow = input; self
         }
         /// Consumes the builder and constructs a [`CreateFlowOutput`](crate::output::CreateFlowOutput).
         pub fn build(self) -> crate::output::CreateFlowOutput {
-            crate::output::CreateFlowOutput { flow: self.flow }
+            crate::output::CreateFlowOutput {
+                flow: self.flow
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateFlowOutput {
     /// Creates a new builder-style object to manufacture [`CreateFlowOutput`](crate::output::CreateFlowOutput).
@@ -1658,7 +1663,7 @@ impl CreateFlowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddFlowVpcInterfacesOutput {
+pub struct AddFlowVpcInterfacesOutput  {
     /// The ARN of the flow that these VPC interfaces were added to.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -1668,17 +1673,17 @@ pub struct AddFlowVpcInterfacesOutput {
 }
 impl AddFlowVpcInterfacesOutput {
     /// The ARN of the flow that these VPC interfaces were added to.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The details of the newly added VPC interfaces.
-    pub fn vpc_interfaces(&self) -> std::option::Option<&[crate::model::VpcInterface]> {
+    pub fn vpc_interfaces(&self) -> std::option::Option<& [crate::model::VpcInterface]> {
         self.vpc_interfaces.as_deref()
     }
 }
 /// See [`AddFlowVpcInterfacesOutput`](crate::output::AddFlowVpcInterfacesOutput).
 pub mod add_flow_vpc_interfaces_output {
-
+    
     /// A builder for [`AddFlowVpcInterfacesOutput`](crate::output::AddFlowVpcInterfacesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1693,8 +1698,7 @@ pub mod add_flow_vpc_interfaces_output {
         }
         /// The ARN of the flow that these VPC interfaces were added to.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// Appends an item to `vpc_interfaces`.
         ///
@@ -1703,26 +1707,26 @@ pub mod add_flow_vpc_interfaces_output {
         /// The details of the newly added VPC interfaces.
         pub fn vpc_interfaces(mut self, input: crate::model::VpcInterface) -> Self {
             let mut v = self.vpc_interfaces.unwrap_or_default();
-            v.push(input);
-            self.vpc_interfaces = Some(v);
-            self
+                            v.push(input);
+                            self.vpc_interfaces = Some(v);
+                            self
         }
         /// The details of the newly added VPC interfaces.
-        pub fn set_vpc_interfaces(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VpcInterface>>,
-        ) -> Self {
-            self.vpc_interfaces = input;
-            self
+        pub fn set_vpc_interfaces(mut self, input: std::option::Option<std::vec::Vec<crate::model::VpcInterface>>) -> Self {
+            self.vpc_interfaces = input; self
         }
         /// Consumes the builder and constructs a [`AddFlowVpcInterfacesOutput`](crate::output::AddFlowVpcInterfacesOutput).
         pub fn build(self) -> crate::output::AddFlowVpcInterfacesOutput {
             crate::output::AddFlowVpcInterfacesOutput {
-                flow_arn: self.flow_arn,
-                vpc_interfaces: self.vpc_interfaces,
+                flow_arn: self.flow_arn
+                ,
+                vpc_interfaces: self.vpc_interfaces
+                ,
             }
         }
     }
+    
+    
 }
 impl AddFlowVpcInterfacesOutput {
     /// Creates a new builder-style object to manufacture [`AddFlowVpcInterfacesOutput`](crate::output::AddFlowVpcInterfacesOutput).
@@ -1734,7 +1738,7 @@ impl AddFlowVpcInterfacesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddFlowSourcesOutput {
+pub struct AddFlowSourcesOutput  {
     /// The ARN of the flow that these sources were added to.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -1744,17 +1748,17 @@ pub struct AddFlowSourcesOutput {
 }
 impl AddFlowSourcesOutput {
     /// The ARN of the flow that these sources were added to.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The details of the newly added sources.
-    pub fn sources(&self) -> std::option::Option<&[crate::model::Source]> {
+    pub fn sources(&self) -> std::option::Option<& [crate::model::Source]> {
         self.sources.as_deref()
     }
 }
 /// See [`AddFlowSourcesOutput`](crate::output::AddFlowSourcesOutput).
 pub mod add_flow_sources_output {
-
+    
     /// A builder for [`AddFlowSourcesOutput`](crate::output::AddFlowSourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1769,8 +1773,7 @@ pub mod add_flow_sources_output {
         }
         /// The ARN of the flow that these sources were added to.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// Appends an item to `sources`.
         ///
@@ -1779,26 +1782,26 @@ pub mod add_flow_sources_output {
         /// The details of the newly added sources.
         pub fn sources(mut self, input: crate::model::Source) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input);
-            self.sources = Some(v);
-            self
+                            v.push(input);
+                            self.sources = Some(v);
+                            self
         }
         /// The details of the newly added sources.
-        pub fn set_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Source>>,
-        ) -> Self {
-            self.sources = input;
-            self
+        pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::Source>>) -> Self {
+            self.sources = input; self
         }
         /// Consumes the builder and constructs a [`AddFlowSourcesOutput`](crate::output::AddFlowSourcesOutput).
         pub fn build(self) -> crate::output::AddFlowSourcesOutput {
             crate::output::AddFlowSourcesOutput {
-                flow_arn: self.flow_arn,
-                sources: self.sources,
+                flow_arn: self.flow_arn
+                ,
+                sources: self.sources
+                ,
             }
         }
     }
+    
+    
 }
 impl AddFlowSourcesOutput {
     /// Creates a new builder-style object to manufacture [`AddFlowSourcesOutput`](crate::output::AddFlowSourcesOutput).
@@ -1810,7 +1813,7 @@ impl AddFlowSourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddFlowOutputsOutput {
+pub struct AddFlowOutputsOutput  {
     /// The ARN of the flow that these outputs were added to.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -1820,17 +1823,17 @@ pub struct AddFlowOutputsOutput {
 }
 impl AddFlowOutputsOutput {
     /// The ARN of the flow that these outputs were added to.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The details of the newly added outputs.
-    pub fn outputs(&self) -> std::option::Option<&[crate::model::Output]> {
+    pub fn outputs(&self) -> std::option::Option<& [crate::model::Output]> {
         self.outputs.as_deref()
     }
 }
 /// See [`AddFlowOutputsOutput`](crate::output::AddFlowOutputsOutput).
 pub mod add_flow_outputs_output {
-
+    
     /// A builder for [`AddFlowOutputsOutput`](crate::output::AddFlowOutputsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1845,8 +1848,7 @@ pub mod add_flow_outputs_output {
         }
         /// The ARN of the flow that these outputs were added to.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// Appends an item to `outputs`.
         ///
@@ -1855,26 +1857,26 @@ pub mod add_flow_outputs_output {
         /// The details of the newly added outputs.
         pub fn outputs(mut self, input: crate::model::Output) -> Self {
             let mut v = self.outputs.unwrap_or_default();
-            v.push(input);
-            self.outputs = Some(v);
-            self
+                            v.push(input);
+                            self.outputs = Some(v);
+                            self
         }
         /// The details of the newly added outputs.
-        pub fn set_outputs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Output>>,
-        ) -> Self {
-            self.outputs = input;
-            self
+        pub fn set_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::model::Output>>) -> Self {
+            self.outputs = input; self
         }
         /// Consumes the builder and constructs a [`AddFlowOutputsOutput`](crate::output::AddFlowOutputsOutput).
         pub fn build(self) -> crate::output::AddFlowOutputsOutput {
             crate::output::AddFlowOutputsOutput {
-                flow_arn: self.flow_arn,
-                outputs: self.outputs,
+                flow_arn: self.flow_arn
+                ,
+                outputs: self.outputs
+                ,
             }
         }
     }
+    
+    
 }
 impl AddFlowOutputsOutput {
     /// Creates a new builder-style object to manufacture [`AddFlowOutputsOutput`](crate::output::AddFlowOutputsOutput).
@@ -1886,7 +1888,7 @@ impl AddFlowOutputsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddFlowMediaStreamsOutput {
+pub struct AddFlowMediaStreamsOutput  {
     /// The ARN of the flow that you added media streams to.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -1896,17 +1898,17 @@ pub struct AddFlowMediaStreamsOutput {
 }
 impl AddFlowMediaStreamsOutput {
     /// The ARN of the flow that you added media streams to.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// The media streams that you added to the flow.
-    pub fn media_streams(&self) -> std::option::Option<&[crate::model::MediaStream]> {
+    pub fn media_streams(&self) -> std::option::Option<& [crate::model::MediaStream]> {
         self.media_streams.as_deref()
     }
 }
 /// See [`AddFlowMediaStreamsOutput`](crate::output::AddFlowMediaStreamsOutput).
 pub mod add_flow_media_streams_output {
-
+    
     /// A builder for [`AddFlowMediaStreamsOutput`](crate::output::AddFlowMediaStreamsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1921,8 +1923,7 @@ pub mod add_flow_media_streams_output {
         }
         /// The ARN of the flow that you added media streams to.
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// Appends an item to `media_streams`.
         ///
@@ -1931,26 +1932,26 @@ pub mod add_flow_media_streams_output {
         /// The media streams that you added to the flow.
         pub fn media_streams(mut self, input: crate::model::MediaStream) -> Self {
             let mut v = self.media_streams.unwrap_or_default();
-            v.push(input);
-            self.media_streams = Some(v);
-            self
+                            v.push(input);
+                            self.media_streams = Some(v);
+                            self
         }
         /// The media streams that you added to the flow.
-        pub fn set_media_streams(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MediaStream>>,
-        ) -> Self {
-            self.media_streams = input;
-            self
+        pub fn set_media_streams(mut self, input: std::option::Option<std::vec::Vec<crate::model::MediaStream>>) -> Self {
+            self.media_streams = input; self
         }
         /// Consumes the builder and constructs a [`AddFlowMediaStreamsOutput`](crate::output::AddFlowMediaStreamsOutput).
         pub fn build(self) -> crate::output::AddFlowMediaStreamsOutput {
             crate::output::AddFlowMediaStreamsOutput {
-                flow_arn: self.flow_arn,
-                media_streams: self.media_streams,
+                flow_arn: self.flow_arn
+                ,
+                media_streams: self.media_streams
+                ,
             }
         }
     }
+    
+    
 }
 impl AddFlowMediaStreamsOutput {
     /// Creates a new builder-style object to manufacture [`AddFlowMediaStreamsOutput`](crate::output::AddFlowMediaStreamsOutput).
@@ -1958,3 +1959,4 @@ impl AddFlowMediaStreamsOutput {
         crate::output::add_flow_media_streams_output::Builder::default()
     }
 }
+

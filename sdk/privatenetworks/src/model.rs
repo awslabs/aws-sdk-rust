@@ -3,7 +3,7 @@
 /// <p>Information about a field that failed validation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>The field name that failed validation.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ValidationExceptionField {
 }
 impl ValidationExceptionField {
     /// <p>The field name that failed validation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The message about the validation failure.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
-
+    
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod validation_exception_field {
         }
         /// <p>The field name that failed validation.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The message about the validation failure.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod validation_exception_field {
         }
         /// <p>The message about the validation failure.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
-                name: self.name,
-                message: self.message,
+                name: self.name
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationExceptionField {
     /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -73,9 +75,9 @@ impl ValidationExceptionField {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -100,22 +102,14 @@ impl ValidationExceptionField {
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     CannotAssumeRole,
@@ -128,7 +122,7 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
@@ -138,19 +132,17 @@ impl std::convert::From<&str> for ValidationExceptionReason {
             "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
             "OTHER" => ValidationExceptionReason::Other,
             "UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationExceptionReason::from(s))
+                }
+            }
 impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -160,17 +152,13 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
             ValidationExceptionReason::Other => "OTHER",
             ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
+            ValidationExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CANNOT_ASSUME_ROLE",
-            "CANNOT_PARSE",
-            "FIELD_VALIDATION_FAILED",
-            "OTHER",
-            "UNKNOWN_OPERATION",
+            "CANNOT_ASSUME_ROLE", "CANNOT_PARSE", "FIELD_VALIDATION_FAILED", "OTHER", "UNKNOWN_OPERATION"
         ]
     }
 }
@@ -183,7 +171,7 @@ impl AsRef<str> for ValidationExceptionReason {
 /// <p>Information about a network site.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkSite {
+pub struct NetworkSite  {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
     #[doc(hidden)]
     pub network_site_arn: std::option::Option<std::string::String>,
@@ -220,53 +208,53 @@ pub struct NetworkSite {
 }
 impl NetworkSite {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn network_site_arn(&self) -> std::option::Option<&str> {
+    pub fn network_site_arn(&self) -> std::option::Option<& str> {
         self.network_site_arn.as_deref()
     }
     /// <p>The name of the network site.</p>
-    pub fn network_site_name(&self) -> std::option::Option<&str> {
+    pub fn network_site_name(&self) -> std::option::Option<& str> {
         self.network_site_name.as_deref()
     }
     /// <p>The description of the network site.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the network site.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::NetworkSiteStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::NetworkSiteStatus> {
         self.status.as_ref()
     }
     /// <p>The status reason of the network site.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network to which the network site belongs.</p>
-    pub fn network_arn(&self) -> std::option::Option<&str> {
+    pub fn network_arn(&self) -> std::option::Option<& str> {
         self.network_arn.as_deref()
     }
     /// <p>The pending plan of the network site.</p>
-    pub fn pending_plan(&self) -> std::option::Option<&crate::model::SitePlan> {
+    pub fn pending_plan(&self) -> std::option::Option<& crate::model::SitePlan> {
         self.pending_plan.as_ref()
     }
     /// <p>The current plan of the network site.</p>
-    pub fn current_plan(&self) -> std::option::Option<&crate::model::SitePlan> {
+    pub fn current_plan(&self) -> std::option::Option<& crate::model::SitePlan> {
         self.current_plan.as_ref()
     }
     /// <p>The creation time of the network site.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> The parent Availability Zone for the network site. </p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> std::option::Option<& str> {
         self.availability_zone.as_deref()
     }
     /// <p> The parent Availability Zone ID for the network site. </p>
-    pub fn availability_zone_id(&self) -> std::option::Option<&str> {
+    pub fn availability_zone_id(&self) -> std::option::Option<& str> {
         self.availability_zone_id.as_deref()
     }
 }
 /// See [`NetworkSite`](crate::model::NetworkSite).
 pub mod network_site {
-
+    
     /// A builder for [`NetworkSite`](crate::model::NetworkSite).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -289,12 +277,8 @@ pub mod network_site {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-        pub fn set_network_site_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_site_arn = input;
-            self
+        pub fn set_network_site_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_site_arn = input; self
         }
         /// <p>The name of the network site.</p>
         pub fn network_site_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -302,12 +286,8 @@ pub mod network_site {
             self
         }
         /// <p>The name of the network site.</p>
-        pub fn set_network_site_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_site_name = input;
-            self
+        pub fn set_network_site_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_site_name = input; self
         }
         /// <p>The description of the network site.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -316,8 +296,7 @@ pub mod network_site {
         }
         /// <p>The description of the network site.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The status of the network site.</p>
         pub fn status(mut self, input: crate::model::NetworkSiteStatus) -> Self {
@@ -325,12 +304,8 @@ pub mod network_site {
             self
         }
         /// <p>The status of the network site.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::NetworkSiteStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::NetworkSiteStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The status reason of the network site.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -338,12 +313,8 @@ pub mod network_site {
             self
         }
         /// <p>The status reason of the network site.</p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the network to which the network site belongs.</p>
         pub fn network_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -352,8 +323,7 @@ pub mod network_site {
         }
         /// <p>The Amazon Resource Name (ARN) of the network to which the network site belongs.</p>
         pub fn set_network_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.network_arn = input;
-            self
+            self.network_arn = input; self
         }
         /// <p>The pending plan of the network site.</p>
         pub fn pending_plan(mut self, input: crate::model::SitePlan) -> Self {
@@ -361,12 +331,8 @@ pub mod network_site {
             self
         }
         /// <p>The pending plan of the network site.</p>
-        pub fn set_pending_plan(
-            mut self,
-            input: std::option::Option<crate::model::SitePlan>,
-        ) -> Self {
-            self.pending_plan = input;
-            self
+        pub fn set_pending_plan(mut self, input: std::option::Option<crate::model::SitePlan>) -> Self {
+            self.pending_plan = input; self
         }
         /// <p>The current plan of the network site.</p>
         pub fn current_plan(mut self, input: crate::model::SitePlan) -> Self {
@@ -374,12 +340,8 @@ pub mod network_site {
             self
         }
         /// <p>The current plan of the network site.</p>
-        pub fn set_current_plan(
-            mut self,
-            input: std::option::Option<crate::model::SitePlan>,
-        ) -> Self {
-            self.current_plan = input;
-            self
+        pub fn set_current_plan(mut self, input: std::option::Option<crate::model::SitePlan>) -> Self {
+            self.current_plan = input; self
         }
         /// <p>The creation time of the network site.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -387,12 +349,8 @@ pub mod network_site {
             self
         }
         /// <p>The creation time of the network site.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p> The parent Availability Zone for the network site. </p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -400,12 +358,8 @@ pub mod network_site {
             self
         }
         /// <p> The parent Availability Zone for the network site. </p>
-        pub fn set_availability_zone(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone = input;
-            self
+        pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone = input; self
         }
         /// <p> The parent Availability Zone ID for the network site. </p>
         pub fn availability_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -413,30 +367,39 @@ pub mod network_site {
             self
         }
         /// <p> The parent Availability Zone ID for the network site. </p>
-        pub fn set_availability_zone_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.availability_zone_id = input;
-            self
+        pub fn set_availability_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.availability_zone_id = input; self
         }
         /// Consumes the builder and constructs a [`NetworkSite`](crate::model::NetworkSite).
         pub fn build(self) -> crate::model::NetworkSite {
             crate::model::NetworkSite {
-                network_site_arn: self.network_site_arn,
-                network_site_name: self.network_site_name,
-                description: self.description,
-                status: self.status,
-                status_reason: self.status_reason,
-                network_arn: self.network_arn,
-                pending_plan: self.pending_plan,
-                current_plan: self.current_plan,
-                created_at: self.created_at,
-                availability_zone: self.availability_zone,
-                availability_zone_id: self.availability_zone_id,
+                network_site_arn: self.network_site_arn
+                ,
+                network_site_name: self.network_site_name
+                ,
+                description: self.description
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
+                network_arn: self.network_arn
+                ,
+                pending_plan: self.pending_plan
+                ,
+                current_plan: self.current_plan
+                ,
+                created_at: self.created_at
+                ,
+                availability_zone: self.availability_zone
+                ,
+                availability_zone_id: self.availability_zone_id
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkSite {
     /// Creates a new builder-style object to manufacture [`NetworkSite`](crate::model::NetworkSite).
@@ -448,35 +411,31 @@ impl NetworkSite {
 /// <p>Information about a site plan.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SitePlan {
+pub struct SitePlan  {
     /// <p>The resource definitions of the plan.</p>
     #[doc(hidden)]
-    pub resource_definitions:
-        std::option::Option<std::vec::Vec<crate::model::NetworkResourceDefinition>>,
+    pub resource_definitions: std::option::Option<std::vec::Vec<crate::model::NetworkResourceDefinition>>,
     /// <p>The options of the plan.</p>
     #[doc(hidden)]
     pub options: std::option::Option<std::vec::Vec<crate::model::NameValuePair>>,
 }
 impl SitePlan {
     /// <p>The resource definitions of the plan.</p>
-    pub fn resource_definitions(
-        &self,
-    ) -> std::option::Option<&[crate::model::NetworkResourceDefinition]> {
+    pub fn resource_definitions(&self) -> std::option::Option<& [crate::model::NetworkResourceDefinition]> {
         self.resource_definitions.as_deref()
     }
     /// <p>The options of the plan.</p>
-    pub fn options(&self) -> std::option::Option<&[crate::model::NameValuePair]> {
+    pub fn options(&self) -> std::option::Option<& [crate::model::NameValuePair]> {
         self.options.as_deref()
     }
 }
 /// See [`SitePlan`](crate::model::SitePlan).
 pub mod site_plan {
-
+    
     /// A builder for [`SitePlan`](crate::model::SitePlan).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resource_definitions:
-            std::option::Option<std::vec::Vec<crate::model::NetworkResourceDefinition>>,
+        pub(crate) resource_definitions: std::option::Option<std::vec::Vec<crate::model::NetworkResourceDefinition>>,
         pub(crate) options: std::option::Option<std::vec::Vec<crate::model::NameValuePair>>,
     }
     impl Builder {
@@ -485,22 +444,15 @@ pub mod site_plan {
         /// To override the contents of this collection use [`set_resource_definitions`](Self::set_resource_definitions).
         ///
         /// <p>The resource definitions of the plan.</p>
-        pub fn resource_definitions(
-            mut self,
-            input: crate::model::NetworkResourceDefinition,
-        ) -> Self {
+        pub fn resource_definitions(mut self, input: crate::model::NetworkResourceDefinition) -> Self {
             let mut v = self.resource_definitions.unwrap_or_default();
-            v.push(input);
-            self.resource_definitions = Some(v);
-            self
+                            v.push(input);
+                            self.resource_definitions = Some(v);
+                            self
         }
         /// <p>The resource definitions of the plan.</p>
-        pub fn set_resource_definitions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NetworkResourceDefinition>>,
-        ) -> Self {
-            self.resource_definitions = input;
-            self
+        pub fn set_resource_definitions(mut self, input: std::option::Option<std::vec::Vec<crate::model::NetworkResourceDefinition>>) -> Self {
+            self.resource_definitions = input; self
         }
         /// Appends an item to `options`.
         ///
@@ -509,26 +461,26 @@ pub mod site_plan {
         /// <p>The options of the plan.</p>
         pub fn options(mut self, input: crate::model::NameValuePair) -> Self {
             let mut v = self.options.unwrap_or_default();
-            v.push(input);
-            self.options = Some(v);
-            self
+                            v.push(input);
+                            self.options = Some(v);
+                            self
         }
         /// <p>The options of the plan.</p>
-        pub fn set_options(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NameValuePair>>,
-        ) -> Self {
-            self.options = input;
-            self
+        pub fn set_options(mut self, input: std::option::Option<std::vec::Vec<crate::model::NameValuePair>>) -> Self {
+            self.options = input; self
         }
         /// Consumes the builder and constructs a [`SitePlan`](crate::model::SitePlan).
         pub fn build(self) -> crate::model::SitePlan {
             crate::model::SitePlan {
-                resource_definitions: self.resource_definitions,
-                options: self.options,
+                resource_definitions: self.resource_definitions
+                ,
+                options: self.options
+                ,
             }
         }
     }
+    
+    
 }
 impl SitePlan {
     /// Creates a new builder-style object to manufacture [`SitePlan`](crate::model::SitePlan).
@@ -540,7 +492,7 @@ impl SitePlan {
 /// <p>Information about a name/value pair.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NameValuePair {
+pub struct NameValuePair  {
     /// <p>The name of the pair.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -550,17 +502,17 @@ pub struct NameValuePair {
 }
 impl NameValuePair {
     /// <p>The name of the pair.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of the pair.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`NameValuePair`](crate::model::NameValuePair).
 pub mod name_value_pair {
-
+    
     /// A builder for [`NameValuePair`](crate::model::NameValuePair).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -575,8 +527,7 @@ pub mod name_value_pair {
         }
         /// <p>The name of the pair.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The value of the pair.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -585,17 +536,20 @@ pub mod name_value_pair {
         }
         /// <p>The value of the pair.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`NameValuePair`](crate::model::NameValuePair).
         pub fn build(self) -> crate::model::NameValuePair {
             crate::model::NameValuePair {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl NameValuePair {
     /// Creates a new builder-style object to manufacture [`NameValuePair`](crate::model::NameValuePair).
@@ -607,7 +561,7 @@ impl NameValuePair {
 /// <p>Information about a network resource definition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkResourceDefinition {
+pub struct NetworkResourceDefinition  {
     /// <p>The type in the network resource definition.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::NetworkResourceDefinitionType>,
@@ -620,11 +574,11 @@ pub struct NetworkResourceDefinition {
 }
 impl NetworkResourceDefinition {
     /// <p>The type in the network resource definition.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::NetworkResourceDefinitionType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::NetworkResourceDefinitionType> {
         self.r#type.as_ref()
     }
     /// <p>The options in the network resource definition.</p>
-    pub fn options(&self) -> std::option::Option<&[crate::model::NameValuePair]> {
+    pub fn options(&self) -> std::option::Option<& [crate::model::NameValuePair]> {
         self.options.as_deref()
     }
     /// <p>The count in the network resource definition.</p>
@@ -634,7 +588,7 @@ impl NetworkResourceDefinition {
 }
 /// See [`NetworkResourceDefinition`](crate::model::NetworkResourceDefinition).
 pub mod network_resource_definition {
-
+    
     /// A builder for [`NetworkResourceDefinition`](crate::model::NetworkResourceDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -649,12 +603,8 @@ pub mod network_resource_definition {
             self
         }
         /// <p>The type in the network resource definition.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::NetworkResourceDefinitionType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::NetworkResourceDefinitionType>) -> Self {
+            self.r#type = input; self
         }
         /// Appends an item to `options`.
         ///
@@ -663,17 +613,13 @@ pub mod network_resource_definition {
         /// <p>The options in the network resource definition.</p>
         pub fn options(mut self, input: crate::model::NameValuePair) -> Self {
             let mut v = self.options.unwrap_or_default();
-            v.push(input);
-            self.options = Some(v);
-            self
+                            v.push(input);
+                            self.options = Some(v);
+                            self
         }
         /// <p>The options in the network resource definition.</p>
-        pub fn set_options(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NameValuePair>>,
-        ) -> Self {
-            self.options = input;
-            self
+        pub fn set_options(mut self, input: std::option::Option<std::vec::Vec<crate::model::NameValuePair>>) -> Self {
+            self.options = input; self
         }
         /// <p>The count in the network resource definition.</p>
         pub fn count(mut self, input: i32) -> Self {
@@ -682,18 +628,22 @@ pub mod network_resource_definition {
         }
         /// <p>The count in the network resource definition.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.count = input;
-            self
+            self.count = input; self
         }
         /// Consumes the builder and constructs a [`NetworkResourceDefinition`](crate::model::NetworkResourceDefinition).
         pub fn build(self) -> crate::model::NetworkResourceDefinition {
             crate::model::NetworkResourceDefinition {
-                r#type: self.r#type,
-                options: self.options,
-                count: self.count,
+                r#type: self.r#type
+                ,
+                options: self.options
+                ,
+                count: self.count
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkResourceDefinition {
     /// Creates a new builder-style object to manufacture [`NetworkResourceDefinition`](crate::model::NetworkResourceDefinition).
@@ -708,9 +658,9 @@ impl NetworkResourceDefinition {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let networkresourcedefinitiontype = unimplemented!();
 /// match networkresourcedefinitiontype {
@@ -732,60 +682,52 @@ impl NetworkResourceDefinition {
 /// Specifically, when `networkresourcedefinitiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NetworkResourceDefinitionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NetworkResourceDefinitionType {
     #[allow(missing_docs)] // documentation missing in model
     DeviceIdentifier,
     #[allow(missing_docs)] // documentation missing in model
     RadioUnit,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NetworkResourceDefinitionType {
     fn from(s: &str) -> Self {
         match s {
             "DEVICE_IDENTIFIER" => NetworkResourceDefinitionType::DeviceIdentifier,
             "RADIO_UNIT" => NetworkResourceDefinitionType::RadioUnit,
-            other => NetworkResourceDefinitionType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => NetworkResourceDefinitionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NetworkResourceDefinitionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NetworkResourceDefinitionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NetworkResourceDefinitionType::from(s))
+                }
+            }
 impl NetworkResourceDefinitionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NetworkResourceDefinitionType::DeviceIdentifier => "DEVICE_IDENTIFIER",
             NetworkResourceDefinitionType::RadioUnit => "RADIO_UNIT",
-            NetworkResourceDefinitionType::Unknown(value) => value.as_str(),
+            NetworkResourceDefinitionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEVICE_IDENTIFIER", "RADIO_UNIT"]
+        &[
+            "DEVICE_IDENTIFIER", "RADIO_UNIT"
+        ]
     }
 }
 impl AsRef<str> for NetworkResourceDefinitionType {
@@ -800,9 +742,9 @@ impl AsRef<str> for NetworkResourceDefinitionType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let networksitestatus = unimplemented!();
 /// match networksitestatus {
@@ -827,22 +769,14 @@ impl AsRef<str> for NetworkResourceDefinitionType {
 /// Specifically, when `networksitestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NetworkSiteStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NetworkSiteStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -855,7 +789,7 @@ pub enum NetworkSiteStatus {
     #[allow(missing_docs)] // documentation missing in model
     Provisioning,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NetworkSiteStatus {
     fn from(s: &str) -> Self {
@@ -865,19 +799,17 @@ impl std::convert::From<&str> for NetworkSiteStatus {
             "DELETED" => NetworkSiteStatus::Deleted,
             "DEPROVISIONING" => NetworkSiteStatus::Deprovisioning,
             "PROVISIONING" => NetworkSiteStatus::Provisioning,
-            other => {
-                NetworkSiteStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => NetworkSiteStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NetworkSiteStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NetworkSiteStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NetworkSiteStatus::from(s))
+                }
+            }
 impl NetworkSiteStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -887,17 +819,13 @@ impl NetworkSiteStatus {
             NetworkSiteStatus::Deleted => "DELETED",
             NetworkSiteStatus::Deprovisioning => "DEPROVISIONING",
             NetworkSiteStatus::Provisioning => "PROVISIONING",
-            NetworkSiteStatus::Unknown(value) => value.as_str(),
+            NetworkSiteStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AVAILABLE",
-            "CREATED",
-            "DELETED",
-            "DEPROVISIONING",
-            "PROVISIONING",
+            "AVAILABLE", "CREATED", "DELETED", "DEPROVISIONING", "PROVISIONING"
         ]
     }
 }
@@ -910,7 +838,7 @@ impl AsRef<str> for NetworkSiteStatus {
 /// <p>Information about an order.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Order {
+pub struct Order  {
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
     #[doc(hidden)]
     pub order_arn: std::option::Option<std::string::String>,
@@ -935,41 +863,37 @@ pub struct Order {
 }
 impl Order {
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
-    pub fn order_arn(&self) -> std::option::Option<&str> {
+    pub fn order_arn(&self) -> std::option::Option<& str> {
         self.order_arn.as_deref()
     }
     /// <p>The shipping address of the order.</p>
-    pub fn shipping_address(&self) -> std::option::Option<&crate::model::Address> {
+    pub fn shipping_address(&self) -> std::option::Option<& crate::model::Address> {
         self.shipping_address.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network associated with this order.</p>
-    pub fn network_arn(&self) -> std::option::Option<&str> {
+    pub fn network_arn(&self) -> std::option::Option<& str> {
         self.network_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network site associated with this order.</p>
-    pub fn network_site_arn(&self) -> std::option::Option<&str> {
+    pub fn network_site_arn(&self) -> std::option::Option<& str> {
         self.network_site_arn.as_deref()
     }
     /// <p>The tracking information of the order.</p>
-    pub fn tracking_information(
-        &self,
-    ) -> std::option::Option<&[crate::model::TrackingInformation]> {
+    pub fn tracking_information(&self) -> std::option::Option<& [crate::model::TrackingInformation]> {
         self.tracking_information.as_deref()
     }
     /// <p>The acknowledgement status of the order.</p>
-    pub fn acknowledgment_status(
-        &self,
-    ) -> std::option::Option<&crate::model::AcknowledgmentStatus> {
+    pub fn acknowledgment_status(&self) -> std::option::Option<& crate::model::AcknowledgmentStatus> {
         self.acknowledgment_status.as_ref()
     }
     /// <p>The creation time of the order.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 /// See [`Order`](crate::model::Order).
 pub mod order {
-
+    
     /// A builder for [`Order`](crate::model::Order).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -977,8 +901,7 @@ pub mod order {
         pub(crate) shipping_address: std::option::Option<crate::model::Address>,
         pub(crate) network_arn: std::option::Option<std::string::String>,
         pub(crate) network_site_arn: std::option::Option<std::string::String>,
-        pub(crate) tracking_information:
-            std::option::Option<std::vec::Vec<crate::model::TrackingInformation>>,
+        pub(crate) tracking_information: std::option::Option<std::vec::Vec<crate::model::TrackingInformation>>,
         pub(crate) acknowledgment_status: std::option::Option<crate::model::AcknowledgmentStatus>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -990,8 +913,7 @@ pub mod order {
         }
         /// <p>The Amazon Resource Name (ARN) of the order.</p>
         pub fn set_order_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.order_arn = input;
-            self
+            self.order_arn = input; self
         }
         /// <p>The shipping address of the order.</p>
         pub fn shipping_address(mut self, input: crate::model::Address) -> Self {
@@ -999,12 +921,8 @@ pub mod order {
             self
         }
         /// <p>The shipping address of the order.</p>
-        pub fn set_shipping_address(
-            mut self,
-            input: std::option::Option<crate::model::Address>,
-        ) -> Self {
-            self.shipping_address = input;
-            self
+        pub fn set_shipping_address(mut self, input: std::option::Option<crate::model::Address>) -> Self {
+            self.shipping_address = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the network associated with this order.</p>
         pub fn network_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1013,8 +931,7 @@ pub mod order {
         }
         /// <p>The Amazon Resource Name (ARN) of the network associated with this order.</p>
         pub fn set_network_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.network_arn = input;
-            self
+            self.network_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the network site associated with this order.</p>
         pub fn network_site_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1022,12 +939,8 @@ pub mod order {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the network site associated with this order.</p>
-        pub fn set_network_site_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_site_arn = input;
-            self
+        pub fn set_network_site_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_site_arn = input; self
         }
         /// Appends an item to `tracking_information`.
         ///
@@ -1036,17 +949,13 @@ pub mod order {
         /// <p>The tracking information of the order.</p>
         pub fn tracking_information(mut self, input: crate::model::TrackingInformation) -> Self {
             let mut v = self.tracking_information.unwrap_or_default();
-            v.push(input);
-            self.tracking_information = Some(v);
-            self
+                            v.push(input);
+                            self.tracking_information = Some(v);
+                            self
         }
         /// <p>The tracking information of the order.</p>
-        pub fn set_tracking_information(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TrackingInformation>>,
-        ) -> Self {
-            self.tracking_information = input;
-            self
+        pub fn set_tracking_information(mut self, input: std::option::Option<std::vec::Vec<crate::model::TrackingInformation>>) -> Self {
+            self.tracking_information = input; self
         }
         /// <p>The acknowledgement status of the order.</p>
         pub fn acknowledgment_status(mut self, input: crate::model::AcknowledgmentStatus) -> Self {
@@ -1054,12 +963,8 @@ pub mod order {
             self
         }
         /// <p>The acknowledgement status of the order.</p>
-        pub fn set_acknowledgment_status(
-            mut self,
-            input: std::option::Option<crate::model::AcknowledgmentStatus>,
-        ) -> Self {
-            self.acknowledgment_status = input;
-            self
+        pub fn set_acknowledgment_status(mut self, input: std::option::Option<crate::model::AcknowledgmentStatus>) -> Self {
+            self.acknowledgment_status = input; self
         }
         /// <p>The creation time of the order.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1067,26 +972,31 @@ pub mod order {
             self
         }
         /// <p>The creation time of the order.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`Order`](crate::model::Order).
         pub fn build(self) -> crate::model::Order {
             crate::model::Order {
-                order_arn: self.order_arn,
-                shipping_address: self.shipping_address,
-                network_arn: self.network_arn,
-                network_site_arn: self.network_site_arn,
-                tracking_information: self.tracking_information,
-                acknowledgment_status: self.acknowledgment_status,
-                created_at: self.created_at,
+                order_arn: self.order_arn
+                ,
+                shipping_address: self.shipping_address
+                ,
+                network_arn: self.network_arn
+                ,
+                network_site_arn: self.network_site_arn
+                ,
+                tracking_information: self.tracking_information
+                ,
+                acknowledgment_status: self.acknowledgment_status
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl Order {
     /// Creates a new builder-style object to manufacture [`Order`](crate::model::Order).
@@ -1101,9 +1011,9 @@ impl Order {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let acknowledgmentstatus = unimplemented!();
 /// match acknowledgmentstatus {
@@ -1126,22 +1036,14 @@ impl Order {
 /// Specifically, when `acknowledgmentstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AcknowledgmentStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AcknowledgmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Acknowledged,
@@ -1150,7 +1052,7 @@ pub enum AcknowledgmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Unacknowledged,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AcknowledgmentStatus {
     fn from(s: &str) -> Self {
@@ -1158,19 +1060,17 @@ impl std::convert::From<&str> for AcknowledgmentStatus {
             "ACKNOWLEDGED" => AcknowledgmentStatus::Acknowledged,
             "ACKNOWLEDGING" => AcknowledgmentStatus::Acknowledging,
             "UNACKNOWLEDGED" => AcknowledgmentStatus::Unacknowledged,
-            other => {
-                AcknowledgmentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AcknowledgmentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AcknowledgmentStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AcknowledgmentStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AcknowledgmentStatus::from(s))
+                }
+            }
 impl AcknowledgmentStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1178,12 +1078,14 @@ impl AcknowledgmentStatus {
             AcknowledgmentStatus::Acknowledged => "ACKNOWLEDGED",
             AcknowledgmentStatus::Acknowledging => "ACKNOWLEDGING",
             AcknowledgmentStatus::Unacknowledged => "UNACKNOWLEDGED",
-            AcknowledgmentStatus::Unknown(value) => value.as_str(),
+            AcknowledgmentStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACKNOWLEDGED", "ACKNOWLEDGING", "UNACKNOWLEDGED"]
+        &[
+            "ACKNOWLEDGED", "ACKNOWLEDGING", "UNACKNOWLEDGED"
+        ]
     }
 }
 impl AsRef<str> for AcknowledgmentStatus {
@@ -1195,20 +1097,20 @@ impl AsRef<str> for AcknowledgmentStatus {
 /// <p>Information about tracking a shipment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrackingInformation {
+pub struct TrackingInformation  {
     /// <p>The tracking number of the shipment.</p>
     #[doc(hidden)]
     pub tracking_number: std::option::Option<std::string::String>,
 }
 impl TrackingInformation {
     /// <p>The tracking number of the shipment.</p>
-    pub fn tracking_number(&self) -> std::option::Option<&str> {
+    pub fn tracking_number(&self) -> std::option::Option<& str> {
         self.tracking_number.as_deref()
     }
 }
 /// See [`TrackingInformation`](crate::model::TrackingInformation).
 pub mod tracking_information {
-
+    
     /// A builder for [`TrackingInformation`](crate::model::TrackingInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1221,20 +1123,19 @@ pub mod tracking_information {
             self
         }
         /// <p>The tracking number of the shipment.</p>
-        pub fn set_tracking_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.tracking_number = input;
-            self
+        pub fn set_tracking_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tracking_number = input; self
         }
         /// Consumes the builder and constructs a [`TrackingInformation`](crate::model::TrackingInformation).
         pub fn build(self) -> crate::model::TrackingInformation {
             crate::model::TrackingInformation {
-                tracking_number: self.tracking_number,
+                tracking_number: self.tracking_number
+                ,
             }
         }
     }
+    
+    
 }
 impl TrackingInformation {
     /// Creates a new builder-style object to manufacture [`TrackingInformation`](crate::model::TrackingInformation).
@@ -1246,7 +1147,7 @@ impl TrackingInformation {
 /// <p>Information about an address.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Address {
+pub struct Address  {
     /// <p>The city for this address.</p>
     #[doc(hidden)]
     pub city: std::option::Option<std::string::String>,
@@ -1280,47 +1181,47 @@ pub struct Address {
 }
 impl Address {
     /// <p>The city for this address.</p>
-    pub fn city(&self) -> std::option::Option<&str> {
+    pub fn city(&self) -> std::option::Option<& str> {
         self.city.as_deref()
     }
     /// <p>The company name for this address.</p>
-    pub fn company(&self) -> std::option::Option<&str> {
+    pub fn company(&self) -> std::option::Option<& str> {
         self.company.as_deref()
     }
     /// <p>The country for this address.</p>
-    pub fn country(&self) -> std::option::Option<&str> {
+    pub fn country(&self) -> std::option::Option<& str> {
         self.country.as_deref()
     }
     /// <p>The recipient's name for this address.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The phone number for this address.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>The postal code for this address.</p>
-    pub fn postal_code(&self) -> std::option::Option<&str> {
+    pub fn postal_code(&self) -> std::option::Option<& str> {
         self.postal_code.as_deref()
     }
     /// <p>The state or province for this address.</p>
-    pub fn state_or_province(&self) -> std::option::Option<&str> {
+    pub fn state_or_province(&self) -> std::option::Option<& str> {
         self.state_or_province.as_deref()
     }
     /// <p>The first line of the street address.</p>
-    pub fn street1(&self) -> std::option::Option<&str> {
+    pub fn street1(&self) -> std::option::Option<& str> {
         self.street1.as_deref()
     }
     /// <p>The second line of the street address.</p>
-    pub fn street2(&self) -> std::option::Option<&str> {
+    pub fn street2(&self) -> std::option::Option<& str> {
         self.street2.as_deref()
     }
     /// <p>The third line of the street address.</p>
-    pub fn street3(&self) -> std::option::Option<&str> {
+    pub fn street3(&self) -> std::option::Option<& str> {
         self.street3.as_deref()
     }
 }
-impl std::fmt::Debug for Address {
+impl  std::fmt::Debug for Address  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Address");
         formatter.field("city", &"*** Sensitive Data Redacted ***");
@@ -1338,7 +1239,7 @@ impl std::fmt::Debug for Address {
 }
 /// See [`Address`](crate::model::Address).
 pub mod address {
-
+    
     /// A builder for [`Address`](crate::model::Address).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1361,8 +1262,7 @@ pub mod address {
         }
         /// <p>The city for this address.</p>
         pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.city = input;
-            self
+            self.city = input; self
         }
         /// <p>The company name for this address.</p>
         pub fn company(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1371,8 +1271,7 @@ pub mod address {
         }
         /// <p>The company name for this address.</p>
         pub fn set_company(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.company = input;
-            self
+            self.company = input; self
         }
         /// <p>The country for this address.</p>
         pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1381,8 +1280,7 @@ pub mod address {
         }
         /// <p>The country for this address.</p>
         pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.country = input;
-            self
+            self.country = input; self
         }
         /// <p>The recipient's name for this address.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1391,8 +1289,7 @@ pub mod address {
         }
         /// <p>The recipient's name for this address.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The phone number for this address.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1401,8 +1298,7 @@ pub mod address {
         }
         /// <p>The phone number for this address.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.phone_number = input;
-            self
+            self.phone_number = input; self
         }
         /// <p>The postal code for this address.</p>
         pub fn postal_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1411,8 +1307,7 @@ pub mod address {
         }
         /// <p>The postal code for this address.</p>
         pub fn set_postal_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.postal_code = input;
-            self
+            self.postal_code = input; self
         }
         /// <p>The state or province for this address.</p>
         pub fn state_or_province(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1420,12 +1315,8 @@ pub mod address {
             self
         }
         /// <p>The state or province for this address.</p>
-        pub fn set_state_or_province(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.state_or_province = input;
-            self
+        pub fn set_state_or_province(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_or_province = input; self
         }
         /// <p>The first line of the street address.</p>
         pub fn street1(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1434,8 +1325,7 @@ pub mod address {
         }
         /// <p>The first line of the street address.</p>
         pub fn set_street1(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.street1 = input;
-            self
+            self.street1 = input; self
         }
         /// <p>The second line of the street address.</p>
         pub fn street2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1444,8 +1334,7 @@ pub mod address {
         }
         /// <p>The second line of the street address.</p>
         pub fn set_street2(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.street2 = input;
-            self
+            self.street2 = input; self
         }
         /// <p>The third line of the street address.</p>
         pub fn street3(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1454,22 +1343,31 @@ pub mod address {
         }
         /// <p>The third line of the street address.</p>
         pub fn set_street3(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.street3 = input;
-            self
+            self.street3 = input; self
         }
         /// Consumes the builder and constructs a [`Address`](crate::model::Address).
         pub fn build(self) -> crate::model::Address {
             crate::model::Address {
-                city: self.city,
-                company: self.company,
-                country: self.country,
-                name: self.name,
-                phone_number: self.phone_number,
-                postal_code: self.postal_code,
-                state_or_province: self.state_or_province,
-                street1: self.street1,
-                street2: self.street2,
-                street3: self.street3,
+                city: self.city
+                ,
+                company: self.company
+                ,
+                country: self.country
+                ,
+                name: self.name
+                ,
+                phone_number: self.phone_number
+                ,
+                postal_code: self.postal_code
+                ,
+                state_or_province: self.state_or_province
+                ,
+                street1: self.street1
+                ,
+                street2: self.street2
+                ,
+                street3: self.street3
+                ,
             }
         }
     }
@@ -1489,6 +1387,8 @@ pub mod address {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Address {
     /// Creates a new builder-style object to manufacture [`Address`](crate::model::Address).
@@ -1503,9 +1403,9 @@ impl Address {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let orderfilterkeys = unimplemented!();
 /// match orderfilterkeys {
@@ -1527,58 +1427,52 @@ impl Address {
 /// Specifically, when `orderfilterkeys` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OrderFilterKeys::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OrderFilterKeys {
     #[allow(missing_docs)] // documentation missing in model
     NetworkSite,
     #[allow(missing_docs)] // documentation missing in model
     Status,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrderFilterKeys {
     fn from(s: &str) -> Self {
         match s {
             "NETWORK_SITE" => OrderFilterKeys::NetworkSite,
             "STATUS" => OrderFilterKeys::Status,
-            other => OrderFilterKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OrderFilterKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OrderFilterKeys {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OrderFilterKeys::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OrderFilterKeys::from(s))
+                }
+            }
 impl OrderFilterKeys {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrderFilterKeys::NetworkSite => "NETWORK_SITE",
             OrderFilterKeys::Status => "STATUS",
-            OrderFilterKeys::Unknown(value) => value.as_str(),
+            OrderFilterKeys::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NETWORK_SITE", "STATUS"]
+        &[
+            "NETWORK_SITE", "STATUS"
+        ]
     }
 }
 impl AsRef<str> for OrderFilterKeys {
@@ -1593,9 +1487,9 @@ impl AsRef<str> for OrderFilterKeys {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let networksitefilterkeys = unimplemented!();
 /// match networksitefilterkeys {
@@ -1616,56 +1510,48 @@ impl AsRef<str> for OrderFilterKeys {
 /// Specifically, when `networksitefilterkeys` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NetworkSiteFilterKeys::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NetworkSiteFilterKeys {
     #[allow(missing_docs)] // documentation missing in model
     Status,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NetworkSiteFilterKeys {
     fn from(s: &str) -> Self {
         match s {
             "STATUS" => NetworkSiteFilterKeys::Status,
-            other => {
-                NetworkSiteFilterKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => NetworkSiteFilterKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NetworkSiteFilterKeys {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NetworkSiteFilterKeys::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NetworkSiteFilterKeys::from(s))
+                }
+            }
 impl NetworkSiteFilterKeys {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NetworkSiteFilterKeys::Status => "STATUS",
-            NetworkSiteFilterKeys::Unknown(value) => value.as_str(),
+            NetworkSiteFilterKeys::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["STATUS"]
+        &[
+            "STATUS"
+        ]
     }
 }
 impl AsRef<str> for NetworkSiteFilterKeys {
@@ -1677,7 +1563,7 @@ impl AsRef<str> for NetworkSiteFilterKeys {
 /// <p>Information about a network.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Network {
+pub struct Network  {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
     #[doc(hidden)]
     pub network_arn: std::option::Option<std::string::String>,
@@ -1699,33 +1585,33 @@ pub struct Network {
 }
 impl Network {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
-    pub fn network_arn(&self) -> std::option::Option<&str> {
+    pub fn network_arn(&self) -> std::option::Option<& str> {
         self.network_arn.as_deref()
     }
     /// <p>The name of the network.</p>
-    pub fn network_name(&self) -> std::option::Option<&str> {
+    pub fn network_name(&self) -> std::option::Option<& str> {
         self.network_name.as_deref()
     }
     /// <p>The description of the network.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The status of the network.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::NetworkStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::NetworkStatus> {
         self.status.as_ref()
     }
     /// <p>The status reason of the network.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The creation time of the network.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 /// See [`Network`](crate::model::Network).
 pub mod network {
-
+    
     /// A builder for [`Network`](crate::model::Network).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1744,8 +1630,7 @@ pub mod network {
         }
         /// <p>The Amazon Resource Name (ARN) of the network.</p>
         pub fn set_network_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.network_arn = input;
-            self
+            self.network_arn = input; self
         }
         /// <p>The name of the network.</p>
         pub fn network_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1754,8 +1639,7 @@ pub mod network {
         }
         /// <p>The name of the network.</p>
         pub fn set_network_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.network_name = input;
-            self
+            self.network_name = input; self
         }
         /// <p>The description of the network.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1764,8 +1648,7 @@ pub mod network {
         }
         /// <p>The description of the network.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The status of the network.</p>
         pub fn status(mut self, input: crate::model::NetworkStatus) -> Self {
@@ -1773,12 +1656,8 @@ pub mod network {
             self
         }
         /// <p>The status of the network.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::NetworkStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::NetworkStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The status reason of the network.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1786,12 +1665,8 @@ pub mod network {
             self
         }
         /// <p>The status reason of the network.</p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// <p>The creation time of the network.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1799,25 +1674,29 @@ pub mod network {
             self
         }
         /// <p>The creation time of the network.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`Network`](crate::model::Network).
         pub fn build(self) -> crate::model::Network {
             crate::model::Network {
-                network_arn: self.network_arn,
-                network_name: self.network_name,
-                description: self.description,
-                status: self.status,
-                status_reason: self.status_reason,
-                created_at: self.created_at,
+                network_arn: self.network_arn
+                ,
+                network_name: self.network_name
+                ,
+                description: self.description
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl Network {
     /// Creates a new builder-style object to manufacture [`Network`](crate::model::Network).
@@ -1832,9 +1711,9 @@ impl Network {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let networkstatus = unimplemented!();
 /// match networkstatus {
@@ -1859,22 +1738,14 @@ impl Network {
 /// Specifically, when `networkstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NetworkStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NetworkStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -1887,7 +1758,7 @@ pub enum NetworkStatus {
     #[allow(missing_docs)] // documentation missing in model
     Provisioning,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NetworkStatus {
     fn from(s: &str) -> Self {
@@ -1897,17 +1768,17 @@ impl std::convert::From<&str> for NetworkStatus {
             "DELETED" => NetworkStatus::Deleted,
             "DEPROVISIONING" => NetworkStatus::Deprovisioning,
             "PROVISIONING" => NetworkStatus::Provisioning,
-            other => NetworkStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => NetworkStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NetworkStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NetworkStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NetworkStatus::from(s))
+                }
+            }
 impl NetworkStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1917,17 +1788,13 @@ impl NetworkStatus {
             NetworkStatus::Deleted => "DELETED",
             NetworkStatus::Deprovisioning => "DEPROVISIONING",
             NetworkStatus::Provisioning => "PROVISIONING",
-            NetworkStatus::Unknown(value) => value.as_str(),
+            NetworkStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AVAILABLE",
-            "CREATED",
-            "DELETED",
-            "DEPROVISIONING",
-            "PROVISIONING",
+            "AVAILABLE", "CREATED", "DELETED", "DEPROVISIONING", "PROVISIONING"
         ]
     }
 }
@@ -1943,9 +1810,9 @@ impl AsRef<str> for NetworkStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let networkfilterkeys = unimplemented!();
 /// match networkfilterkeys {
@@ -1966,56 +1833,48 @@ impl AsRef<str> for NetworkStatus {
 /// Specifically, when `networkfilterkeys` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NetworkFilterKeys::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NetworkFilterKeys {
     #[allow(missing_docs)] // documentation missing in model
     Status,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NetworkFilterKeys {
     fn from(s: &str) -> Self {
         match s {
             "STATUS" => NetworkFilterKeys::Status,
-            other => {
-                NetworkFilterKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => NetworkFilterKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NetworkFilterKeys {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NetworkFilterKeys::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NetworkFilterKeys::from(s))
+                }
+            }
 impl NetworkFilterKeys {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NetworkFilterKeys::Status => "STATUS",
-            NetworkFilterKeys::Unknown(value) => value.as_str(),
+            NetworkFilterKeys::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["STATUS"]
+        &[
+            "STATUS"
+        ]
     }
 }
 impl AsRef<str> for NetworkFilterKeys {
@@ -2027,7 +1886,7 @@ impl AsRef<str> for NetworkFilterKeys {
 /// <p>Information about a network resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkResource {
+pub struct NetworkResource  {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
     #[doc(hidden)]
     pub network_resource_arn: std::option::Option<std::string::String>,
@@ -2076,69 +1935,69 @@ pub struct NetworkResource {
 }
 impl NetworkResource {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn network_resource_arn(&self) -> std::option::Option<&str> {
+    pub fn network_resource_arn(&self) -> std::option::Option<& str> {
         self.network_resource_arn.as_deref()
     }
     /// <p>The description of the network resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of the network resource.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::NetworkResourceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::NetworkResourceType> {
         self.r#type.as_ref()
     }
     /// <p>The status of the network resource.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::NetworkResourceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::NetworkResourceStatus> {
         self.status.as_ref()
     }
     /// <p>The status reason of the network resource.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The vendor of the network resource.</p>
-    pub fn vendor(&self) -> std::option::Option<&str> {
+    pub fn vendor(&self) -> std::option::Option<& str> {
         self.vendor.as_deref()
     }
     /// <p>The model of the network resource.</p>
-    pub fn model(&self) -> std::option::Option<&str> {
+    pub fn model(&self) -> std::option::Option<& str> {
         self.model.as_deref()
     }
     /// <p>The serial number of the network resource.</p>
-    pub fn serial_number(&self) -> std::option::Option<&str> {
+    pub fn serial_number(&self) -> std::option::Option<& str> {
         self.serial_number.as_deref()
     }
     /// <p>The health of the network resource.</p>
-    pub fn health(&self) -> std::option::Option<&crate::model::HealthStatus> {
+    pub fn health(&self) -> std::option::Option<& crate::model::HealthStatus> {
         self.health.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network on which this network resource appears.</p>
-    pub fn network_arn(&self) -> std::option::Option<&str> {
+    pub fn network_arn(&self) -> std::option::Option<& str> {
         self.network_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network site on which this network resource appears.</p>
-    pub fn network_site_arn(&self) -> std::option::Option<&str> {
+    pub fn network_site_arn(&self) -> std::option::Option<& str> {
         self.network_site_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the order used to purchase this network resource.</p>
-    pub fn order_arn(&self) -> std::option::Option<&str> {
+    pub fn order_arn(&self) -> std::option::Option<& str> {
         self.order_arn.as_deref()
     }
     /// <p>The attributes of the network resource.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::NameValuePair]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::NameValuePair]> {
         self.attributes.as_deref()
     }
     /// <p>The position of the network resource.</p>
-    pub fn position(&self) -> std::option::Option<&crate::model::Position> {
+    pub fn position(&self) -> std::option::Option<& crate::model::Position> {
         self.position.as_ref()
     }
     /// <p>The creation time of the network resource.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 /// See [`NetworkResource`](crate::model::NetworkResource).
 pub mod network_resource {
-
+    
     /// A builder for [`NetworkResource`](crate::model::NetworkResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2165,12 +2024,8 @@ pub mod network_resource {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-        pub fn set_network_resource_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_resource_arn = input;
-            self
+        pub fn set_network_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_resource_arn = input; self
         }
         /// <p>The description of the network resource.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2179,8 +2034,7 @@ pub mod network_resource {
         }
         /// <p>The description of the network resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The type of the network resource.</p>
         pub fn r#type(mut self, input: crate::model::NetworkResourceType) -> Self {
@@ -2188,12 +2042,8 @@ pub mod network_resource {
             self
         }
         /// <p>The type of the network resource.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::NetworkResourceType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::NetworkResourceType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The status of the network resource.</p>
         pub fn status(mut self, input: crate::model::NetworkResourceStatus) -> Self {
@@ -2201,12 +2051,8 @@ pub mod network_resource {
             self
         }
         /// <p>The status of the network resource.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::NetworkResourceStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::NetworkResourceStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The status reason of the network resource.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2214,12 +2060,8 @@ pub mod network_resource {
             self
         }
         /// <p>The status reason of the network resource.</p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// <p>The vendor of the network resource.</p>
         pub fn vendor(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2228,8 +2070,7 @@ pub mod network_resource {
         }
         /// <p>The vendor of the network resource.</p>
         pub fn set_vendor(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vendor = input;
-            self
+            self.vendor = input; self
         }
         /// <p>The model of the network resource.</p>
         pub fn model(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2238,8 +2079,7 @@ pub mod network_resource {
         }
         /// <p>The model of the network resource.</p>
         pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model = input;
-            self
+            self.model = input; self
         }
         /// <p>The serial number of the network resource.</p>
         pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2247,12 +2087,8 @@ pub mod network_resource {
             self
         }
         /// <p>The serial number of the network resource.</p>
-        pub fn set_serial_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.serial_number = input;
-            self
+        pub fn set_serial_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.serial_number = input; self
         }
         /// <p>The health of the network resource.</p>
         pub fn health(mut self, input: crate::model::HealthStatus) -> Self {
@@ -2260,12 +2096,8 @@ pub mod network_resource {
             self
         }
         /// <p>The health of the network resource.</p>
-        pub fn set_health(
-            mut self,
-            input: std::option::Option<crate::model::HealthStatus>,
-        ) -> Self {
-            self.health = input;
-            self
+        pub fn set_health(mut self, input: std::option::Option<crate::model::HealthStatus>) -> Self {
+            self.health = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the network on which this network resource appears.</p>
         pub fn network_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2274,8 +2106,7 @@ pub mod network_resource {
         }
         /// <p>The Amazon Resource Name (ARN) of the network on which this network resource appears.</p>
         pub fn set_network_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.network_arn = input;
-            self
+            self.network_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the network site on which this network resource appears.</p>
         pub fn network_site_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2283,12 +2114,8 @@ pub mod network_resource {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the network site on which this network resource appears.</p>
-        pub fn set_network_site_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.network_site_arn = input;
-            self
+        pub fn set_network_site_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.network_site_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the order used to purchase this network resource.</p>
         pub fn order_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2297,8 +2124,7 @@ pub mod network_resource {
         }
         /// <p>The Amazon Resource Name (ARN) of the order used to purchase this network resource.</p>
         pub fn set_order_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.order_arn = input;
-            self
+            self.order_arn = input; self
         }
         /// Appends an item to `attributes`.
         ///
@@ -2307,17 +2133,13 @@ pub mod network_resource {
         /// <p>The attributes of the network resource.</p>
         pub fn attributes(mut self, input: crate::model::NameValuePair) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>The attributes of the network resource.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NameValuePair>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::NameValuePair>>) -> Self {
+            self.attributes = input; self
         }
         /// <p>The position of the network resource.</p>
         pub fn position(mut self, input: crate::model::Position) -> Self {
@@ -2326,8 +2148,7 @@ pub mod network_resource {
         }
         /// <p>The position of the network resource.</p>
         pub fn set_position(mut self, input: std::option::Option<crate::model::Position>) -> Self {
-            self.position = input;
-            self
+            self.position = input; self
         }
         /// <p>The creation time of the network resource.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2335,34 +2156,47 @@ pub mod network_resource {
             self
         }
         /// <p>The creation time of the network resource.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`NetworkResource`](crate::model::NetworkResource).
         pub fn build(self) -> crate::model::NetworkResource {
             crate::model::NetworkResource {
-                network_resource_arn: self.network_resource_arn,
-                description: self.description,
-                r#type: self.r#type,
-                status: self.status,
-                status_reason: self.status_reason,
-                vendor: self.vendor,
-                model: self.model,
-                serial_number: self.serial_number,
-                health: self.health,
-                network_arn: self.network_arn,
-                network_site_arn: self.network_site_arn,
-                order_arn: self.order_arn,
-                attributes: self.attributes,
-                position: self.position,
-                created_at: self.created_at,
+                network_resource_arn: self.network_resource_arn
+                ,
+                description: self.description
+                ,
+                r#type: self.r#type
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
+                vendor: self.vendor
+                ,
+                model: self.model
+                ,
+                serial_number: self.serial_number
+                ,
+                health: self.health
+                ,
+                network_arn: self.network_arn
+                ,
+                network_site_arn: self.network_site_arn
+                ,
+                order_arn: self.order_arn
+                ,
+                attributes: self.attributes
+                ,
+                position: self.position
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkResource {
     /// Creates a new builder-style object to manufacture [`NetworkResource`](crate::model::NetworkResource).
@@ -2374,7 +2208,7 @@ impl NetworkResource {
 /// <p>Information about a position.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Position {
+pub struct Position  {
     /// <p>The latitude of the position.</p>
     #[doc(hidden)]
     pub latitude: std::option::Option<f64>,
@@ -2405,17 +2239,17 @@ impl Position {
         self.elevation
     }
     /// <p>The units used to measure the elevation of the position.</p>
-    pub fn elevation_unit(&self) -> std::option::Option<&crate::model::ElevationUnit> {
+    pub fn elevation_unit(&self) -> std::option::Option<& crate::model::ElevationUnit> {
         self.elevation_unit.as_ref()
     }
     /// <p>The reference point from which elevation is reported.</p>
-    pub fn elevation_reference(&self) -> std::option::Option<&crate::model::ElevationReference> {
+    pub fn elevation_reference(&self) -> std::option::Option<& crate::model::ElevationReference> {
         self.elevation_reference.as_ref()
     }
 }
 /// See [`Position`](crate::model::Position).
 pub mod position {
-
+    
     /// A builder for [`Position`](crate::model::Position).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2433,8 +2267,7 @@ pub mod position {
         }
         /// <p>The latitude of the position.</p>
         pub fn set_latitude(mut self, input: std::option::Option<f64>) -> Self {
-            self.latitude = input;
-            self
+            self.latitude = input; self
         }
         /// <p>The longitude of the position.</p>
         pub fn longitude(mut self, input: f64) -> Self {
@@ -2443,8 +2276,7 @@ pub mod position {
         }
         /// <p>The longitude of the position.</p>
         pub fn set_longitude(mut self, input: std::option::Option<f64>) -> Self {
-            self.longitude = input;
-            self
+            self.longitude = input; self
         }
         /// <p>The elevation of the equipment at this position.</p>
         pub fn elevation(mut self, input: f64) -> Self {
@@ -2453,8 +2285,7 @@ pub mod position {
         }
         /// <p>The elevation of the equipment at this position.</p>
         pub fn set_elevation(mut self, input: std::option::Option<f64>) -> Self {
-            self.elevation = input;
-            self
+            self.elevation = input; self
         }
         /// <p>The units used to measure the elevation of the position.</p>
         pub fn elevation_unit(mut self, input: crate::model::ElevationUnit) -> Self {
@@ -2462,12 +2293,8 @@ pub mod position {
             self
         }
         /// <p>The units used to measure the elevation of the position.</p>
-        pub fn set_elevation_unit(
-            mut self,
-            input: std::option::Option<crate::model::ElevationUnit>,
-        ) -> Self {
-            self.elevation_unit = input;
-            self
+        pub fn set_elevation_unit(mut self, input: std::option::Option<crate::model::ElevationUnit>) -> Self {
+            self.elevation_unit = input; self
         }
         /// <p>The reference point from which elevation is reported.</p>
         pub fn elevation_reference(mut self, input: crate::model::ElevationReference) -> Self {
@@ -2475,24 +2302,27 @@ pub mod position {
             self
         }
         /// <p>The reference point from which elevation is reported.</p>
-        pub fn set_elevation_reference(
-            mut self,
-            input: std::option::Option<crate::model::ElevationReference>,
-        ) -> Self {
-            self.elevation_reference = input;
-            self
+        pub fn set_elevation_reference(mut self, input: std::option::Option<crate::model::ElevationReference>) -> Self {
+            self.elevation_reference = input; self
         }
         /// Consumes the builder and constructs a [`Position`](crate::model::Position).
         pub fn build(self) -> crate::model::Position {
             crate::model::Position {
-                latitude: self.latitude,
-                longitude: self.longitude,
-                elevation: self.elevation,
-                elevation_unit: self.elevation_unit,
-                elevation_reference: self.elevation_reference,
+                latitude: self.latitude
+                ,
+                longitude: self.longitude
+                ,
+                elevation: self.elevation
+                ,
+                elevation_unit: self.elevation_unit
+                ,
+                elevation_reference: self.elevation_reference
+                ,
             }
         }
     }
+    
+    
 }
 impl Position {
     /// Creates a new builder-style object to manufacture [`Position`](crate::model::Position).
@@ -2507,9 +2337,9 @@ impl Position {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let elevationreference = unimplemented!();
 /// match elevationreference {
@@ -2531,60 +2361,52 @@ impl Position {
 /// Specifically, when `elevationreference` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ElevationReference::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ElevationReference {
     #[allow(missing_docs)] // documentation missing in model
     Agl,
     #[allow(missing_docs)] // documentation missing in model
     Amsl,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ElevationReference {
     fn from(s: &str) -> Self {
         match s {
             "AGL" => ElevationReference::Agl,
             "AMSL" => ElevationReference::Amsl,
-            other => {
-                ElevationReference::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ElevationReference::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ElevationReference {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ElevationReference::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ElevationReference::from(s))
+                }
+            }
 impl ElevationReference {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ElevationReference::Agl => "AGL",
             ElevationReference::Amsl => "AMSL",
-            ElevationReference::Unknown(value) => value.as_str(),
+            ElevationReference::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AGL", "AMSL"]
+        &[
+            "AGL", "AMSL"
+        ]
     }
 }
 impl AsRef<str> for ElevationReference {
@@ -2599,9 +2421,9 @@ impl AsRef<str> for ElevationReference {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let elevationunit = unimplemented!();
 /// match elevationunit {
@@ -2622,54 +2444,48 @@ impl AsRef<str> for ElevationReference {
 /// Specifically, when `elevationunit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ElevationUnit::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ElevationUnit {
     /// Feet.
     Feet,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ElevationUnit {
     fn from(s: &str) -> Self {
         match s {
             "FEET" => ElevationUnit::Feet,
-            other => ElevationUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ElevationUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ElevationUnit {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ElevationUnit::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ElevationUnit::from(s))
+                }
+            }
 impl ElevationUnit {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ElevationUnit::Feet => "FEET",
-            ElevationUnit::Unknown(value) => value.as_str(),
+            ElevationUnit::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FEET"]
+        &[
+            "FEET"
+        ]
     }
 }
 impl AsRef<str> for ElevationUnit {
@@ -2684,9 +2500,9 @@ impl AsRef<str> for ElevationUnit {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let healthstatus = unimplemented!();
 /// match healthstatus {
@@ -2709,22 +2525,14 @@ impl AsRef<str> for ElevationUnit {
 /// Specifically, when `healthstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HealthStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HealthStatus {
     #[allow(missing_docs)] // documentation missing in model
     Healthy,
@@ -2733,7 +2541,7 @@ pub enum HealthStatus {
     #[allow(missing_docs)] // documentation missing in model
     Unhealthy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HealthStatus {
     fn from(s: &str) -> Self {
@@ -2741,17 +2549,17 @@ impl std::convert::From<&str> for HealthStatus {
             "HEALTHY" => HealthStatus::Healthy,
             "INITIAL" => HealthStatus::Initial,
             "UNHEALTHY" => HealthStatus::Unhealthy,
-            other => HealthStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => HealthStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HealthStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HealthStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HealthStatus::from(s))
+                }
+            }
 impl HealthStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2759,12 +2567,14 @@ impl HealthStatus {
             HealthStatus::Healthy => "HEALTHY",
             HealthStatus::Initial => "INITIAL",
             HealthStatus::Unhealthy => "UNHEALTHY",
-            HealthStatus::Unknown(value) => value.as_str(),
+            HealthStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HEALTHY", "INITIAL", "UNHEALTHY"]
+        &[
+            "HEALTHY", "INITIAL", "UNHEALTHY"
+        ]
     }
 }
 impl AsRef<str> for HealthStatus {
@@ -2779,9 +2589,9 @@ impl AsRef<str> for HealthStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let networkresourcestatus = unimplemented!();
 /// match networkresourcestatus {
@@ -2809,22 +2619,14 @@ impl AsRef<str> for HealthStatus {
 /// Specifically, when `networkresourcestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NetworkResourceStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NetworkResourceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -2843,7 +2645,7 @@ pub enum NetworkResourceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Shipped,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NetworkResourceStatus {
     fn from(s: &str) -> Self {
@@ -2856,19 +2658,17 @@ impl std::convert::From<&str> for NetworkResourceStatus {
             "PROVISIONED" => NetworkResourceStatus::Provisioned,
             "PROVISIONING" => NetworkResourceStatus::Provisioning,
             "SHIPPED" => NetworkResourceStatus::Shipped,
-            other => {
-                NetworkResourceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => NetworkResourceStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NetworkResourceStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NetworkResourceStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NetworkResourceStatus::from(s))
+                }
+            }
 impl NetworkResourceStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2881,20 +2681,13 @@ impl NetworkResourceStatus {
             NetworkResourceStatus::Provisioned => "PROVISIONED",
             NetworkResourceStatus::Provisioning => "PROVISIONING",
             NetworkResourceStatus::Shipped => "SHIPPED",
-            NetworkResourceStatus::Unknown(value) => value.as_str(),
+            NetworkResourceStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AVAILABLE",
-            "DELETED",
-            "DELETING",
-            "PENDING",
-            "PENDING_RETURN",
-            "PROVISIONED",
-            "PROVISIONING",
-            "SHIPPED",
+            "AVAILABLE", "DELETED", "DELETING", "PENDING", "PENDING_RETURN", "PROVISIONED", "PROVISIONING", "SHIPPED"
         ]
     }
 }
@@ -2910,9 +2703,9 @@ impl AsRef<str> for NetworkResourceStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let networkresourcetype = unimplemented!();
 /// match networkresourcetype {
@@ -2933,56 +2726,48 @@ impl AsRef<str> for NetworkResourceStatus {
 /// Specifically, when `networkresourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NetworkResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NetworkResourceType {
     #[allow(missing_docs)] // documentation missing in model
     RadioUnit,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NetworkResourceType {
     fn from(s: &str) -> Self {
         match s {
             "RADIO_UNIT" => NetworkResourceType::RadioUnit,
-            other => {
-                NetworkResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => NetworkResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NetworkResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NetworkResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NetworkResourceType::from(s))
+                }
+            }
 impl NetworkResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NetworkResourceType::RadioUnit => "RADIO_UNIT",
-            NetworkResourceType::Unknown(value) => value.as_str(),
+            NetworkResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RADIO_UNIT"]
+        &[
+            "RADIO_UNIT"
+        ]
     }
 }
 impl AsRef<str> for NetworkResourceType {
@@ -2997,9 +2782,9 @@ impl AsRef<str> for NetworkResourceType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let networkresourcefilterkeys = unimplemented!();
 /// match networkresourcefilterkeys {
@@ -3021,60 +2806,52 @@ impl AsRef<str> for NetworkResourceType {
 /// Specifically, when `networkresourcefilterkeys` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NetworkResourceFilterKeys::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NetworkResourceFilterKeys {
     #[allow(missing_docs)] // documentation missing in model
     Order,
     #[allow(missing_docs)] // documentation missing in model
     Status,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NetworkResourceFilterKeys {
     fn from(s: &str) -> Self {
         match s {
             "ORDER" => NetworkResourceFilterKeys::Order,
             "STATUS" => NetworkResourceFilterKeys::Status,
-            other => NetworkResourceFilterKeys::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => NetworkResourceFilterKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NetworkResourceFilterKeys {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NetworkResourceFilterKeys::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NetworkResourceFilterKeys::from(s))
+                }
+            }
 impl NetworkResourceFilterKeys {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NetworkResourceFilterKeys::Order => "ORDER",
             NetworkResourceFilterKeys::Status => "STATUS",
-            NetworkResourceFilterKeys::Unknown(value) => value.as_str(),
+            NetworkResourceFilterKeys::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ORDER", "STATUS"]
+        &[
+            "ORDER", "STATUS"
+        ]
     }
 }
 impl AsRef<str> for NetworkResourceFilterKeys {
@@ -3086,7 +2863,7 @@ impl AsRef<str> for NetworkResourceFilterKeys {
 /// <p>Information about a subscriber of a device that can use a network.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeviceIdentifier {
+pub struct DeviceIdentifier  {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
     #[doc(hidden)]
     pub device_identifier_arn: std::option::Option<std::string::String>,
@@ -3117,43 +2894,43 @@ pub struct DeviceIdentifier {
 }
 impl DeviceIdentifier {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
-    pub fn device_identifier_arn(&self) -> std::option::Option<&str> {
+    pub fn device_identifier_arn(&self) -> std::option::Option<& str> {
         self.device_identifier_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the traffic group to which the device identifier belongs.</p>
-    pub fn traffic_group_arn(&self) -> std::option::Option<&str> {
+    pub fn traffic_group_arn(&self) -> std::option::Option<& str> {
         self.traffic_group_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network on which the device identifier appears.</p>
-    pub fn network_arn(&self) -> std::option::Option<&str> {
+    pub fn network_arn(&self) -> std::option::Option<& str> {
         self.network_arn.as_deref()
     }
     /// <p>The International Mobile Subscriber Identity of the device identifier.</p>
-    pub fn imsi(&self) -> std::option::Option<&str> {
+    pub fn imsi(&self) -> std::option::Option<& str> {
         self.imsi.as_deref()
     }
     /// <p>The Integrated Circuit Card Identifier of the device identifier.</p>
-    pub fn iccid(&self) -> std::option::Option<&str> {
+    pub fn iccid(&self) -> std::option::Option<& str> {
         self.iccid.as_deref()
     }
     /// <p>The vendor of the device identifier.</p>
-    pub fn vendor(&self) -> std::option::Option<&str> {
+    pub fn vendor(&self) -> std::option::Option<& str> {
         self.vendor.as_deref()
     }
     /// <p>The status of the device identifier.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DeviceIdentifierStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DeviceIdentifierStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the order used to purchase the device identifier.</p>
-    pub fn order_arn(&self) -> std::option::Option<&str> {
+    pub fn order_arn(&self) -> std::option::Option<& str> {
         self.order_arn.as_deref()
     }
     /// <p>The creation time of this device identifier.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
-impl std::fmt::Debug for DeviceIdentifier {
+impl  std::fmt::Debug for DeviceIdentifier  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeviceIdentifier");
         formatter.field("device_identifier_arn", &self.device_identifier_arn);
@@ -3170,7 +2947,7 @@ impl std::fmt::Debug for DeviceIdentifier {
 }
 /// See [`DeviceIdentifier`](crate::model::DeviceIdentifier).
 pub mod device_identifier {
-
+    
     /// A builder for [`DeviceIdentifier`](crate::model::DeviceIdentifier).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3191,12 +2968,8 @@ pub mod device_identifier {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
-        pub fn set_device_identifier_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.device_identifier_arn = input;
-            self
+        pub fn set_device_identifier_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.device_identifier_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the traffic group to which the device identifier belongs.</p>
         pub fn traffic_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3204,12 +2977,8 @@ pub mod device_identifier {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the traffic group to which the device identifier belongs.</p>
-        pub fn set_traffic_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.traffic_group_arn = input;
-            self
+        pub fn set_traffic_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.traffic_group_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the network on which the device identifier appears.</p>
         pub fn network_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3218,8 +2987,7 @@ pub mod device_identifier {
         }
         /// <p>The Amazon Resource Name (ARN) of the network on which the device identifier appears.</p>
         pub fn set_network_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.network_arn = input;
-            self
+            self.network_arn = input; self
         }
         /// <p>The International Mobile Subscriber Identity of the device identifier.</p>
         pub fn imsi(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3228,8 +2996,7 @@ pub mod device_identifier {
         }
         /// <p>The International Mobile Subscriber Identity of the device identifier.</p>
         pub fn set_imsi(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.imsi = input;
-            self
+            self.imsi = input; self
         }
         /// <p>The Integrated Circuit Card Identifier of the device identifier.</p>
         pub fn iccid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3238,8 +3005,7 @@ pub mod device_identifier {
         }
         /// <p>The Integrated Circuit Card Identifier of the device identifier.</p>
         pub fn set_iccid(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iccid = input;
-            self
+            self.iccid = input; self
         }
         /// <p>The vendor of the device identifier.</p>
         pub fn vendor(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3248,8 +3014,7 @@ pub mod device_identifier {
         }
         /// <p>The vendor of the device identifier.</p>
         pub fn set_vendor(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vendor = input;
-            self
+            self.vendor = input; self
         }
         /// <p>The status of the device identifier.</p>
         pub fn status(mut self, input: crate::model::DeviceIdentifierStatus) -> Self {
@@ -3257,12 +3022,8 @@ pub mod device_identifier {
             self
         }
         /// <p>The status of the device identifier.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DeviceIdentifierStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DeviceIdentifierStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the order used to purchase the device identifier.</p>
         pub fn order_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3271,8 +3032,7 @@ pub mod device_identifier {
         }
         /// <p>The Amazon Resource Name (ARN) of the order used to purchase the device identifier.</p>
         pub fn set_order_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.order_arn = input;
-            self
+            self.order_arn = input; self
         }
         /// <p>The creation time of this device identifier.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3280,25 +3040,30 @@ pub mod device_identifier {
             self
         }
         /// <p>The creation time of this device identifier.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`DeviceIdentifier`](crate::model::DeviceIdentifier).
         pub fn build(self) -> crate::model::DeviceIdentifier {
             crate::model::DeviceIdentifier {
-                device_identifier_arn: self.device_identifier_arn,
-                traffic_group_arn: self.traffic_group_arn,
-                network_arn: self.network_arn,
-                imsi: self.imsi,
-                iccid: self.iccid,
-                vendor: self.vendor,
-                status: self.status,
-                order_arn: self.order_arn,
-                created_at: self.created_at,
+                device_identifier_arn: self.device_identifier_arn
+                ,
+                traffic_group_arn: self.traffic_group_arn
+                ,
+                network_arn: self.network_arn
+                ,
+                imsi: self.imsi
+                ,
+                iccid: self.iccid
+                ,
+                vendor: self.vendor
+                ,
+                status: self.status
+                ,
+                order_arn: self.order_arn
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
@@ -3317,6 +3082,8 @@ pub mod device_identifier {
             formatter.finish()
         }
     }
+    
+    
 }
 impl DeviceIdentifier {
     /// Creates a new builder-style object to manufacture [`DeviceIdentifier`](crate::model::DeviceIdentifier).
@@ -3331,9 +3098,9 @@ impl DeviceIdentifier {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deviceidentifierstatus = unimplemented!();
 /// match deviceidentifierstatus {
@@ -3355,60 +3122,52 @@ impl DeviceIdentifier {
 /// Specifically, when `deviceidentifierstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeviceIdentifierStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeviceIdentifierStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeviceIdentifierStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => DeviceIdentifierStatus::Active,
             "INACTIVE" => DeviceIdentifierStatus::Inactive,
-            other => {
-                DeviceIdentifierStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DeviceIdentifierStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeviceIdentifierStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeviceIdentifierStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeviceIdentifierStatus::from(s))
+                }
+            }
 impl DeviceIdentifierStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceIdentifierStatus::Active => "ACTIVE",
             DeviceIdentifierStatus::Inactive => "INACTIVE",
-            DeviceIdentifierStatus::Unknown(value) => value.as_str(),
+            DeviceIdentifierStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "INACTIVE"]
+        &[
+            "ACTIVE", "INACTIVE"
+        ]
     }
 }
 impl AsRef<str> for DeviceIdentifierStatus {
@@ -3423,9 +3182,9 @@ impl AsRef<str> for DeviceIdentifierStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deviceidentifierfilterkeys = unimplemented!();
 /// match deviceidentifierfilterkeys {
@@ -3448,22 +3207,14 @@ impl AsRef<str> for DeviceIdentifierStatus {
 /// Specifically, when `deviceidentifierfilterkeys` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeviceIdentifierFilterKeys::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeviceIdentifierFilterKeys {
     #[allow(missing_docs)] // documentation missing in model
     Order,
@@ -3472,7 +3223,7 @@ pub enum DeviceIdentifierFilterKeys {
     #[allow(missing_docs)] // documentation missing in model
     TrafficGroup,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeviceIdentifierFilterKeys {
     fn from(s: &str) -> Self {
@@ -3480,19 +3231,17 @@ impl std::convert::From<&str> for DeviceIdentifierFilterKeys {
             "ORDER" => DeviceIdentifierFilterKeys::Order,
             "STATUS" => DeviceIdentifierFilterKeys::Status,
             "TRAFFIC_GROUP" => DeviceIdentifierFilterKeys::TrafficGroup,
-            other => DeviceIdentifierFilterKeys::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DeviceIdentifierFilterKeys::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeviceIdentifierFilterKeys {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeviceIdentifierFilterKeys::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeviceIdentifierFilterKeys::from(s))
+                }
+            }
 impl DeviceIdentifierFilterKeys {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3500,12 +3249,14 @@ impl DeviceIdentifierFilterKeys {
             DeviceIdentifierFilterKeys::Order => "ORDER",
             DeviceIdentifierFilterKeys::Status => "STATUS",
             DeviceIdentifierFilterKeys::TrafficGroup => "TRAFFIC_GROUP",
-            DeviceIdentifierFilterKeys::Unknown(value) => value.as_str(),
+            DeviceIdentifierFilterKeys::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ORDER", "STATUS", "TRAFFIC_GROUP"]
+        &[
+            "ORDER", "STATUS", "TRAFFIC_GROUP"
+        ]
     }
 }
 impl AsRef<str> for DeviceIdentifierFilterKeys {
@@ -3513,3 +3264,4 @@ impl AsRef<str> for DeviceIdentifierFilterKeys {
         self.as_str()
     }
 }
+

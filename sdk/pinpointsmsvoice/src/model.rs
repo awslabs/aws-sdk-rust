@@ -3,7 +3,7 @@
 /// An object that defines a single event destination.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventDestinationDefinition {
+pub struct EventDestinationDefinition  {
     /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
     #[doc(hidden)]
     pub cloud_watch_logs_destination: std::option::Option<crate::model::CloudWatchLogsDestination>,
@@ -22,9 +22,7 @@ pub struct EventDestinationDefinition {
 }
 impl EventDestinationDefinition {
     /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
-    pub fn cloud_watch_logs_destination(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchLogsDestination> {
+    pub fn cloud_watch_logs_destination(&self) -> std::option::Option<& crate::model::CloudWatchLogsDestination> {
         self.cloud_watch_logs_destination.as_ref()
     }
     /// Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.
@@ -32,51 +30,39 @@ impl EventDestinationDefinition {
         self.enabled
     }
     /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
-    pub fn kinesis_firehose_destination(
-        &self,
-    ) -> std::option::Option<&crate::model::KinesisFirehoseDestination> {
+    pub fn kinesis_firehose_destination(&self) -> std::option::Option<& crate::model::KinesisFirehoseDestination> {
         self.kinesis_firehose_destination.as_ref()
     }
     /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
-    pub fn matching_event_types(&self) -> std::option::Option<&[crate::model::EventType]> {
+    pub fn matching_event_types(&self) -> std::option::Option<& [crate::model::EventType]> {
         self.matching_event_types.as_deref()
     }
     /// An object that contains information about an event destination that sends data to Amazon SNS.
-    pub fn sns_destination(&self) -> std::option::Option<&crate::model::SnsDestination> {
+    pub fn sns_destination(&self) -> std::option::Option<& crate::model::SnsDestination> {
         self.sns_destination.as_ref()
     }
 }
 /// See [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
 pub mod event_destination_definition {
-
+    
     /// A builder for [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) cloud_watch_logs_destination:
-            std::option::Option<crate::model::CloudWatchLogsDestination>,
+        pub(crate) cloud_watch_logs_destination: std::option::Option<crate::model::CloudWatchLogsDestination>,
         pub(crate) enabled: std::option::Option<bool>,
-        pub(crate) kinesis_firehose_destination:
-            std::option::Option<crate::model::KinesisFirehoseDestination>,
-        pub(crate) matching_event_types:
-            std::option::Option<std::vec::Vec<crate::model::EventType>>,
+        pub(crate) kinesis_firehose_destination: std::option::Option<crate::model::KinesisFirehoseDestination>,
+        pub(crate) matching_event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
         pub(crate) sns_destination: std::option::Option<crate::model::SnsDestination>,
     }
     impl Builder {
         /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
-        pub fn cloud_watch_logs_destination(
-            mut self,
-            input: crate::model::CloudWatchLogsDestination,
-        ) -> Self {
+        pub fn cloud_watch_logs_destination(mut self, input: crate::model::CloudWatchLogsDestination) -> Self {
             self.cloud_watch_logs_destination = Some(input);
             self
         }
         /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
-        pub fn set_cloud_watch_logs_destination(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchLogsDestination>,
-        ) -> Self {
-            self.cloud_watch_logs_destination = input;
-            self
+        pub fn set_cloud_watch_logs_destination(mut self, input: std::option::Option<crate::model::CloudWatchLogsDestination>) -> Self {
+            self.cloud_watch_logs_destination = input; self
         }
         /// Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.
         pub fn enabled(mut self, input: bool) -> Self {
@@ -85,24 +71,16 @@ pub mod event_destination_definition {
         }
         /// Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
-        pub fn kinesis_firehose_destination(
-            mut self,
-            input: crate::model::KinesisFirehoseDestination,
-        ) -> Self {
+        pub fn kinesis_firehose_destination(mut self, input: crate::model::KinesisFirehoseDestination) -> Self {
             self.kinesis_firehose_destination = Some(input);
             self
         }
         /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
-        pub fn set_kinesis_firehose_destination(
-            mut self,
-            input: std::option::Option<crate::model::KinesisFirehoseDestination>,
-        ) -> Self {
-            self.kinesis_firehose_destination = input;
-            self
+        pub fn set_kinesis_firehose_destination(mut self, input: std::option::Option<crate::model::KinesisFirehoseDestination>) -> Self {
+            self.kinesis_firehose_destination = input; self
         }
         /// Appends an item to `matching_event_types`.
         ///
@@ -111,17 +89,13 @@ pub mod event_destination_definition {
         /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
         pub fn matching_event_types(mut self, input: crate::model::EventType) -> Self {
             let mut v = self.matching_event_types.unwrap_or_default();
-            v.push(input);
-            self.matching_event_types = Some(v);
-            self
+                            v.push(input);
+                            self.matching_event_types = Some(v);
+                            self
         }
         /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
-        pub fn set_matching_event_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventType>>,
-        ) -> Self {
-            self.matching_event_types = input;
-            self
+        pub fn set_matching_event_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventType>>) -> Self {
+            self.matching_event_types = input; self
         }
         /// An object that contains information about an event destination that sends data to Amazon SNS.
         pub fn sns_destination(mut self, input: crate::model::SnsDestination) -> Self {
@@ -129,24 +103,28 @@ pub mod event_destination_definition {
             self
         }
         /// An object that contains information about an event destination that sends data to Amazon SNS.
-        pub fn set_sns_destination(
-            mut self,
-            input: std::option::Option<crate::model::SnsDestination>,
-        ) -> Self {
-            self.sns_destination = input;
-            self
+        pub fn set_sns_destination(mut self, input: std::option::Option<crate::model::SnsDestination>) -> Self {
+            self.sns_destination = input; self
         }
         /// Consumes the builder and constructs a [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
         pub fn build(self) -> crate::model::EventDestinationDefinition {
             crate::model::EventDestinationDefinition {
-                cloud_watch_logs_destination: self.cloud_watch_logs_destination,
-                enabled: self.enabled.unwrap_or_default(),
-                kinesis_firehose_destination: self.kinesis_firehose_destination,
-                matching_event_types: self.matching_event_types,
-                sns_destination: self.sns_destination,
+                cloud_watch_logs_destination: self.cloud_watch_logs_destination
+                ,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                kinesis_firehose_destination: self.kinesis_firehose_destination
+                ,
+                matching_event_types: self.matching_event_types
+                ,
+                sns_destination: self.sns_destination
+                ,
             }
         }
     }
+    
+    
 }
 impl EventDestinationDefinition {
     /// Creates a new builder-style object to manufacture [`EventDestinationDefinition`](crate::model::EventDestinationDefinition).
@@ -158,20 +136,20 @@ impl EventDestinationDefinition {
 /// An object that contains information about an event destination that sends data to Amazon SNS.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnsDestination {
+pub struct SnsDestination  {
     /// The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.
     #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl SnsDestination {
     /// The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.
-    pub fn topic_arn(&self) -> std::option::Option<&str> {
+    pub fn topic_arn(&self) -> std::option::Option<& str> {
         self.topic_arn.as_deref()
     }
 }
 /// See [`SnsDestination`](crate::model::SnsDestination).
 pub mod sns_destination {
-
+    
     /// A builder for [`SnsDestination`](crate::model::SnsDestination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -185,16 +163,18 @@ pub mod sns_destination {
         }
         /// The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.topic_arn = input;
-            self
+            self.topic_arn = input; self
         }
         /// Consumes the builder and constructs a [`SnsDestination`](crate::model::SnsDestination).
         pub fn build(self) -> crate::model::SnsDestination {
             crate::model::SnsDestination {
-                topic_arn: self.topic_arn,
+                topic_arn: self.topic_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl SnsDestination {
     /// Creates a new builder-style object to manufacture [`SnsDestination`](crate::model::SnsDestination).
@@ -209,9 +189,9 @@ impl SnsDestination {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let eventtype = unimplemented!();
 /// match eventtype {
@@ -238,22 +218,14 @@ impl SnsDestination {
 /// Specifically, when `eventtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EventType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// The types of events that are sent to the event destination.
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
     Answered,
@@ -270,7 +242,7 @@ pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
     Ringing,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EventType {
     fn from(s: &str) -> Self {
@@ -282,17 +254,17 @@ impl std::convert::From<&str> for EventType {
             "INITIATED_CALL" => EventType::InitiatedCall,
             "NO_ANSWER" => EventType::NoAnswer,
             "RINGING" => EventType::Ringing,
-            other => EventType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EventType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EventType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EventType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EventType::from(s))
+                }
+            }
 impl EventType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -304,19 +276,13 @@ impl EventType {
             EventType::InitiatedCall => "INITIATED_CALL",
             EventType::NoAnswer => "NO_ANSWER",
             EventType::Ringing => "RINGING",
-            EventType::Unknown(value) => value.as_str(),
+            EventType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ANSWERED",
-            "BUSY",
-            "COMPLETED_CALL",
-            "FAILED",
-            "INITIATED_CALL",
-            "NO_ANSWER",
-            "RINGING",
+            "ANSWERED", "BUSY", "COMPLETED_CALL", "FAILED", "INITIATED_CALL", "NO_ANSWER", "RINGING"
         ]
     }
 }
@@ -329,7 +295,7 @@ impl AsRef<str> for EventType {
 /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KinesisFirehoseDestination {
+pub struct KinesisFirehoseDestination  {
     /// The Amazon Resource Name (ARN) of an IAM role that can write data to an Amazon Kinesis Data Firehose stream.
     #[doc(hidden)]
     pub delivery_stream_arn: std::option::Option<std::string::String>,
@@ -339,17 +305,17 @@ pub struct KinesisFirehoseDestination {
 }
 impl KinesisFirehoseDestination {
     /// The Amazon Resource Name (ARN) of an IAM role that can write data to an Amazon Kinesis Data Firehose stream.
-    pub fn delivery_stream_arn(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_arn(&self) -> std::option::Option<& str> {
         self.delivery_stream_arn.as_deref()
     }
     /// The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose destination that you want to use in the event destination.
-    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
 }
 /// See [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
 pub mod kinesis_firehose_destination {
-
+    
     /// A builder for [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -363,12 +329,8 @@ pub mod kinesis_firehose_destination {
             self
         }
         /// The Amazon Resource Name (ARN) of an IAM role that can write data to an Amazon Kinesis Data Firehose stream.
-        pub fn set_delivery_stream_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.delivery_stream_arn = input;
-            self
+        pub fn set_delivery_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.delivery_stream_arn = input; self
         }
         /// The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose destination that you want to use in the event destination.
         pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -377,17 +339,20 @@ pub mod kinesis_firehose_destination {
         }
         /// The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose destination that you want to use in the event destination.
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_role_arn = input;
-            self
+            self.iam_role_arn = input; self
         }
         /// Consumes the builder and constructs a [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
         pub fn build(self) -> crate::model::KinesisFirehoseDestination {
             crate::model::KinesisFirehoseDestination {
-                delivery_stream_arn: self.delivery_stream_arn,
-                iam_role_arn: self.iam_role_arn,
+                delivery_stream_arn: self.delivery_stream_arn
+                ,
+                iam_role_arn: self.iam_role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl KinesisFirehoseDestination {
     /// Creates a new builder-style object to manufacture [`KinesisFirehoseDestination`](crate::model::KinesisFirehoseDestination).
@@ -399,7 +364,7 @@ impl KinesisFirehoseDestination {
 /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchLogsDestination {
+pub struct CloudWatchLogsDestination  {
     /// The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.
     #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
@@ -409,17 +374,17 @@ pub struct CloudWatchLogsDestination {
 }
 impl CloudWatchLogsDestination {
     /// The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.
-    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> std::option::Option<& str> {
         self.iam_role_arn.as_deref()
     }
     /// The name of the Amazon CloudWatch Log Group that you want to record events in.
-    pub fn log_group_arn(&self) -> std::option::Option<&str> {
+    pub fn log_group_arn(&self) -> std::option::Option<& str> {
         self.log_group_arn.as_deref()
     }
 }
 /// See [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
 pub mod cloud_watch_logs_destination {
-
+    
     /// A builder for [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -434,8 +399,7 @@ pub mod cloud_watch_logs_destination {
         }
         /// The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.iam_role_arn = input;
-            self
+            self.iam_role_arn = input; self
         }
         /// The name of the Amazon CloudWatch Log Group that you want to record events in.
         pub fn log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -443,21 +407,21 @@ pub mod cloud_watch_logs_destination {
             self
         }
         /// The name of the Amazon CloudWatch Log Group that you want to record events in.
-        pub fn set_log_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_group_arn = input;
-            self
+        pub fn set_log_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_group_arn = input; self
         }
         /// Consumes the builder and constructs a [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
         pub fn build(self) -> crate::model::CloudWatchLogsDestination {
             crate::model::CloudWatchLogsDestination {
-                iam_role_arn: self.iam_role_arn,
-                log_group_arn: self.log_group_arn,
+                iam_role_arn: self.iam_role_arn
+                ,
+                log_group_arn: self.log_group_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudWatchLogsDestination {
     /// Creates a new builder-style object to manufacture [`CloudWatchLogsDestination`](crate::model::CloudWatchLogsDestination).
@@ -469,7 +433,7 @@ impl CloudWatchLogsDestination {
 /// An object that contains a voice message and information about the recipient that you want to send it to.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VoiceMessageContent {
+pub struct VoiceMessageContent  {
     /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
     #[doc(hidden)]
     pub call_instructions_message: std::option::Option<crate::model::CallInstructionsMessageType>,
@@ -482,47 +446,37 @@ pub struct VoiceMessageContent {
 }
 impl VoiceMessageContent {
     /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
-    pub fn call_instructions_message(
-        &self,
-    ) -> std::option::Option<&crate::model::CallInstructionsMessageType> {
+    pub fn call_instructions_message(&self) -> std::option::Option<& crate::model::CallInstructionsMessageType> {
         self.call_instructions_message.as_ref()
     }
     /// An object that defines a message that contains unformatted text.
-    pub fn plain_text_message(&self) -> std::option::Option<&crate::model::PlainTextMessageType> {
+    pub fn plain_text_message(&self) -> std::option::Option<& crate::model::PlainTextMessageType> {
         self.plain_text_message.as_ref()
     }
     /// An object that defines a message that contains SSML-formatted text.
-    pub fn ssml_message(&self) -> std::option::Option<&crate::model::SsmlMessageType> {
+    pub fn ssml_message(&self) -> std::option::Option<& crate::model::SsmlMessageType> {
         self.ssml_message.as_ref()
     }
 }
 /// See [`VoiceMessageContent`](crate::model::VoiceMessageContent).
 pub mod voice_message_content {
-
+    
     /// A builder for [`VoiceMessageContent`](crate::model::VoiceMessageContent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) call_instructions_message:
-            std::option::Option<crate::model::CallInstructionsMessageType>,
+        pub(crate) call_instructions_message: std::option::Option<crate::model::CallInstructionsMessageType>,
         pub(crate) plain_text_message: std::option::Option<crate::model::PlainTextMessageType>,
         pub(crate) ssml_message: std::option::Option<crate::model::SsmlMessageType>,
     }
     impl Builder {
         /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
-        pub fn call_instructions_message(
-            mut self,
-            input: crate::model::CallInstructionsMessageType,
-        ) -> Self {
+        pub fn call_instructions_message(mut self, input: crate::model::CallInstructionsMessageType) -> Self {
             self.call_instructions_message = Some(input);
             self
         }
         /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
-        pub fn set_call_instructions_message(
-            mut self,
-            input: std::option::Option<crate::model::CallInstructionsMessageType>,
-        ) -> Self {
-            self.call_instructions_message = input;
-            self
+        pub fn set_call_instructions_message(mut self, input: std::option::Option<crate::model::CallInstructionsMessageType>) -> Self {
+            self.call_instructions_message = input; self
         }
         /// An object that defines a message that contains unformatted text.
         pub fn plain_text_message(mut self, input: crate::model::PlainTextMessageType) -> Self {
@@ -530,12 +484,8 @@ pub mod voice_message_content {
             self
         }
         /// An object that defines a message that contains unformatted text.
-        pub fn set_plain_text_message(
-            mut self,
-            input: std::option::Option<crate::model::PlainTextMessageType>,
-        ) -> Self {
-            self.plain_text_message = input;
-            self
+        pub fn set_plain_text_message(mut self, input: std::option::Option<crate::model::PlainTextMessageType>) -> Self {
+            self.plain_text_message = input; self
         }
         /// An object that defines a message that contains SSML-formatted text.
         pub fn ssml_message(mut self, input: crate::model::SsmlMessageType) -> Self {
@@ -543,22 +493,23 @@ pub mod voice_message_content {
             self
         }
         /// An object that defines a message that contains SSML-formatted text.
-        pub fn set_ssml_message(
-            mut self,
-            input: std::option::Option<crate::model::SsmlMessageType>,
-        ) -> Self {
-            self.ssml_message = input;
-            self
+        pub fn set_ssml_message(mut self, input: std::option::Option<crate::model::SsmlMessageType>) -> Self {
+            self.ssml_message = input; self
         }
         /// Consumes the builder and constructs a [`VoiceMessageContent`](crate::model::VoiceMessageContent).
         pub fn build(self) -> crate::model::VoiceMessageContent {
             crate::model::VoiceMessageContent {
-                call_instructions_message: self.call_instructions_message,
-                plain_text_message: self.plain_text_message,
-                ssml_message: self.ssml_message,
+                call_instructions_message: self.call_instructions_message
+                ,
+                plain_text_message: self.plain_text_message
+                ,
+                ssml_message: self.ssml_message
+                ,
             }
         }
     }
+    
+    
 }
 impl VoiceMessageContent {
     /// Creates a new builder-style object to manufacture [`VoiceMessageContent`](crate::model::VoiceMessageContent).
@@ -570,7 +521,7 @@ impl VoiceMessageContent {
 /// An object that defines a message that contains SSML-formatted text.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SsmlMessageType {
+pub struct SsmlMessageType  {
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
     #[doc(hidden)]
     pub language_code: std::option::Option<std::string::String>,
@@ -583,21 +534,21 @@ pub struct SsmlMessageType {
 }
 impl SsmlMessageType {
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
-    pub fn language_code(&self) -> std::option::Option<&str> {
+    pub fn language_code(&self) -> std::option::Option<& str> {
         self.language_code.as_deref()
     }
     /// The SSML-formatted text to deliver to the recipient.
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> std::option::Option<& str> {
         self.text.as_deref()
     }
     /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
-    pub fn voice_id(&self) -> std::option::Option<&str> {
+    pub fn voice_id(&self) -> std::option::Option<& str> {
         self.voice_id.as_deref()
     }
 }
 /// See [`SsmlMessageType`](crate::model::SsmlMessageType).
 pub mod ssml_message_type {
-
+    
     /// A builder for [`SsmlMessageType`](crate::model::SsmlMessageType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -612,12 +563,8 @@ pub mod ssml_message_type {
             self
         }
         /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
-        pub fn set_language_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.language_code = input;
-            self
+        pub fn set_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.language_code = input; self
         }
         /// The SSML-formatted text to deliver to the recipient.
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -626,8 +573,7 @@ pub mod ssml_message_type {
         }
         /// The SSML-formatted text to deliver to the recipient.
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.text = input;
-            self
+            self.text = input; self
         }
         /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
         pub fn voice_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -636,18 +582,22 @@ pub mod ssml_message_type {
         }
         /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
         pub fn set_voice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.voice_id = input;
-            self
+            self.voice_id = input; self
         }
         /// Consumes the builder and constructs a [`SsmlMessageType`](crate::model::SsmlMessageType).
         pub fn build(self) -> crate::model::SsmlMessageType {
             crate::model::SsmlMessageType {
-                language_code: self.language_code,
-                text: self.text,
-                voice_id: self.voice_id,
+                language_code: self.language_code
+                ,
+                text: self.text
+                ,
+                voice_id: self.voice_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SsmlMessageType {
     /// Creates a new builder-style object to manufacture [`SsmlMessageType`](crate::model::SsmlMessageType).
@@ -659,7 +609,7 @@ impl SsmlMessageType {
 /// An object that defines a message that contains unformatted text.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlainTextMessageType {
+pub struct PlainTextMessageType  {
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
     #[doc(hidden)]
     pub language_code: std::option::Option<std::string::String>,
@@ -672,21 +622,21 @@ pub struct PlainTextMessageType {
 }
 impl PlainTextMessageType {
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
-    pub fn language_code(&self) -> std::option::Option<&str> {
+    pub fn language_code(&self) -> std::option::Option<& str> {
         self.language_code.as_deref()
     }
     /// The plain (not SSML-formatted) text to deliver to the recipient.
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> std::option::Option<& str> {
         self.text.as_deref()
     }
     /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
-    pub fn voice_id(&self) -> std::option::Option<&str> {
+    pub fn voice_id(&self) -> std::option::Option<& str> {
         self.voice_id.as_deref()
     }
 }
 /// See [`PlainTextMessageType`](crate::model::PlainTextMessageType).
 pub mod plain_text_message_type {
-
+    
     /// A builder for [`PlainTextMessageType`](crate::model::PlainTextMessageType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -701,12 +651,8 @@ pub mod plain_text_message_type {
             self
         }
         /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
-        pub fn set_language_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.language_code = input;
-            self
+        pub fn set_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.language_code = input; self
         }
         /// The plain (not SSML-formatted) text to deliver to the recipient.
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -715,8 +661,7 @@ pub mod plain_text_message_type {
         }
         /// The plain (not SSML-formatted) text to deliver to the recipient.
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.text = input;
-            self
+            self.text = input; self
         }
         /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
         pub fn voice_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -725,18 +670,22 @@ pub mod plain_text_message_type {
         }
         /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
         pub fn set_voice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.voice_id = input;
-            self
+            self.voice_id = input; self
         }
         /// Consumes the builder and constructs a [`PlainTextMessageType`](crate::model::PlainTextMessageType).
         pub fn build(self) -> crate::model::PlainTextMessageType {
             crate::model::PlainTextMessageType {
-                language_code: self.language_code,
-                text: self.text,
-                voice_id: self.voice_id,
+                language_code: self.language_code
+                ,
+                text: self.text
+                ,
+                voice_id: self.voice_id
+                ,
             }
         }
     }
+    
+    
 }
 impl PlainTextMessageType {
     /// Creates a new builder-style object to manufacture [`PlainTextMessageType`](crate::model::PlainTextMessageType).
@@ -748,20 +697,20 @@ impl PlainTextMessageType {
 /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CallInstructionsMessageType {
+pub struct CallInstructionsMessageType  {
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
 }
 impl CallInstructionsMessageType {
     /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> std::option::Option<& str> {
         self.text.as_deref()
     }
 }
 /// See [`CallInstructionsMessageType`](crate::model::CallInstructionsMessageType).
 pub mod call_instructions_message_type {
-
+    
     /// A builder for [`CallInstructionsMessageType`](crate::model::CallInstructionsMessageType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -775,14 +724,18 @@ pub mod call_instructions_message_type {
         }
         /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.text = input;
-            self
+            self.text = input; self
         }
         /// Consumes the builder and constructs a [`CallInstructionsMessageType`](crate::model::CallInstructionsMessageType).
         pub fn build(self) -> crate::model::CallInstructionsMessageType {
-            crate::model::CallInstructionsMessageType { text: self.text }
+            crate::model::CallInstructionsMessageType {
+                text: self.text
+                ,
+            }
         }
     }
+    
+    
 }
 impl CallInstructionsMessageType {
     /// Creates a new builder-style object to manufacture [`CallInstructionsMessageType`](crate::model::CallInstructionsMessageType).
@@ -794,7 +747,7 @@ impl CallInstructionsMessageType {
 /// An object that defines an event destination.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventDestination {
+pub struct EventDestination  {
     /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
     #[doc(hidden)]
     pub cloud_watch_logs_destination: std::option::Option<crate::model::CloudWatchLogsDestination>,
@@ -816,9 +769,7 @@ pub struct EventDestination {
 }
 impl EventDestination {
     /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
-    pub fn cloud_watch_logs_destination(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudWatchLogsDestination> {
+    pub fn cloud_watch_logs_destination(&self) -> std::option::Option<& crate::model::CloudWatchLogsDestination> {
         self.cloud_watch_logs_destination.as_ref()
     }
     /// Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.
@@ -826,56 +777,44 @@ impl EventDestination {
         self.enabled
     }
     /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
-    pub fn kinesis_firehose_destination(
-        &self,
-    ) -> std::option::Option<&crate::model::KinesisFirehoseDestination> {
+    pub fn kinesis_firehose_destination(&self) -> std::option::Option<& crate::model::KinesisFirehoseDestination> {
         self.kinesis_firehose_destination.as_ref()
     }
     /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
-    pub fn matching_event_types(&self) -> std::option::Option<&[crate::model::EventType]> {
+    pub fn matching_event_types(&self) -> std::option::Option<& [crate::model::EventType]> {
         self.matching_event_types.as_deref()
     }
     /// A name that identifies the event destination configuration.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// An object that contains information about an event destination that sends data to Amazon SNS.
-    pub fn sns_destination(&self) -> std::option::Option<&crate::model::SnsDestination> {
+    pub fn sns_destination(&self) -> std::option::Option<& crate::model::SnsDestination> {
         self.sns_destination.as_ref()
     }
 }
 /// See [`EventDestination`](crate::model::EventDestination).
 pub mod event_destination {
-
+    
     /// A builder for [`EventDestination`](crate::model::EventDestination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) cloud_watch_logs_destination:
-            std::option::Option<crate::model::CloudWatchLogsDestination>,
+        pub(crate) cloud_watch_logs_destination: std::option::Option<crate::model::CloudWatchLogsDestination>,
         pub(crate) enabled: std::option::Option<bool>,
-        pub(crate) kinesis_firehose_destination:
-            std::option::Option<crate::model::KinesisFirehoseDestination>,
-        pub(crate) matching_event_types:
-            std::option::Option<std::vec::Vec<crate::model::EventType>>,
+        pub(crate) kinesis_firehose_destination: std::option::Option<crate::model::KinesisFirehoseDestination>,
+        pub(crate) matching_event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) sns_destination: std::option::Option<crate::model::SnsDestination>,
     }
     impl Builder {
         /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
-        pub fn cloud_watch_logs_destination(
-            mut self,
-            input: crate::model::CloudWatchLogsDestination,
-        ) -> Self {
+        pub fn cloud_watch_logs_destination(mut self, input: crate::model::CloudWatchLogsDestination) -> Self {
             self.cloud_watch_logs_destination = Some(input);
             self
         }
         /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
-        pub fn set_cloud_watch_logs_destination(
-            mut self,
-            input: std::option::Option<crate::model::CloudWatchLogsDestination>,
-        ) -> Self {
-            self.cloud_watch_logs_destination = input;
-            self
+        pub fn set_cloud_watch_logs_destination(mut self, input: std::option::Option<crate::model::CloudWatchLogsDestination>) -> Self {
+            self.cloud_watch_logs_destination = input; self
         }
         /// Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.
         pub fn enabled(mut self, input: bool) -> Self {
@@ -884,24 +823,16 @@ pub mod event_destination {
         }
         /// Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
-        pub fn kinesis_firehose_destination(
-            mut self,
-            input: crate::model::KinesisFirehoseDestination,
-        ) -> Self {
+        pub fn kinesis_firehose_destination(mut self, input: crate::model::KinesisFirehoseDestination) -> Self {
             self.kinesis_firehose_destination = Some(input);
             self
         }
         /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
-        pub fn set_kinesis_firehose_destination(
-            mut self,
-            input: std::option::Option<crate::model::KinesisFirehoseDestination>,
-        ) -> Self {
-            self.kinesis_firehose_destination = input;
-            self
+        pub fn set_kinesis_firehose_destination(mut self, input: std::option::Option<crate::model::KinesisFirehoseDestination>) -> Self {
+            self.kinesis_firehose_destination = input; self
         }
         /// Appends an item to `matching_event_types`.
         ///
@@ -910,17 +841,13 @@ pub mod event_destination {
         /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
         pub fn matching_event_types(mut self, input: crate::model::EventType) -> Self {
             let mut v = self.matching_event_types.unwrap_or_default();
-            v.push(input);
-            self.matching_event_types = Some(v);
-            self
+                            v.push(input);
+                            self.matching_event_types = Some(v);
+                            self
         }
         /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
-        pub fn set_matching_event_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventType>>,
-        ) -> Self {
-            self.matching_event_types = input;
-            self
+        pub fn set_matching_event_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventType>>) -> Self {
+            self.matching_event_types = input; self
         }
         /// A name that identifies the event destination configuration.
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -929,8 +856,7 @@ pub mod event_destination {
         }
         /// A name that identifies the event destination configuration.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// An object that contains information about an event destination that sends data to Amazon SNS.
         pub fn sns_destination(mut self, input: crate::model::SnsDestination) -> Self {
@@ -938,25 +864,30 @@ pub mod event_destination {
             self
         }
         /// An object that contains information about an event destination that sends data to Amazon SNS.
-        pub fn set_sns_destination(
-            mut self,
-            input: std::option::Option<crate::model::SnsDestination>,
-        ) -> Self {
-            self.sns_destination = input;
-            self
+        pub fn set_sns_destination(mut self, input: std::option::Option<crate::model::SnsDestination>) -> Self {
+            self.sns_destination = input; self
         }
         /// Consumes the builder and constructs a [`EventDestination`](crate::model::EventDestination).
         pub fn build(self) -> crate::model::EventDestination {
             crate::model::EventDestination {
-                cloud_watch_logs_destination: self.cloud_watch_logs_destination,
-                enabled: self.enabled.unwrap_or_default(),
-                kinesis_firehose_destination: self.kinesis_firehose_destination,
-                matching_event_types: self.matching_event_types,
-                name: self.name,
-                sns_destination: self.sns_destination,
+                cloud_watch_logs_destination: self.cloud_watch_logs_destination
+                ,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                kinesis_firehose_destination: self.kinesis_firehose_destination
+                ,
+                matching_event_types: self.matching_event_types
+                ,
+                name: self.name
+                ,
+                sns_destination: self.sns_destination
+                ,
             }
         }
     }
+    
+    
 }
 impl EventDestination {
     /// Creates a new builder-style object to manufacture [`EventDestination`](crate::model::EventDestination).
@@ -964,3 +895,4 @@ impl EventDestination {
         crate::model::event_destination::Builder::default()
     }
 }
+

@@ -3,7 +3,7 @@
 /// <p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReportDefinition {
+pub struct ReportDefinition  {
     /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
     #[doc(hidden)]
     pub report_name: std::option::Option<std::string::String>,
@@ -43,41 +43,39 @@ pub struct ReportDefinition {
 }
 impl ReportDefinition {
     /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
-    pub fn report_name(&self) -> std::option::Option<&str> {
+    pub fn report_name(&self) -> std::option::Option<& str> {
         self.report_name.as_deref()
     }
     /// <p>The length of time covered by the report. </p>
-    pub fn time_unit(&self) -> std::option::Option<&crate::model::TimeUnit> {
+    pub fn time_unit(&self) -> std::option::Option<& crate::model::TimeUnit> {
         self.time_unit.as_ref()
     }
     /// <p>The format that AWS saves the report in.</p>
-    pub fn format(&self) -> std::option::Option<&crate::model::ReportFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::model::ReportFormat> {
         self.format.as_ref()
     }
     /// <p>The compression format that AWS uses for the report.</p>
-    pub fn compression(&self) -> std::option::Option<&crate::model::CompressionFormat> {
+    pub fn compression(&self) -> std::option::Option<& crate::model::CompressionFormat> {
         self.compression.as_ref()
     }
     /// <p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>
-    pub fn additional_schema_elements(
-        &self,
-    ) -> std::option::Option<&[crate::model::SchemaElement]> {
+    pub fn additional_schema_elements(&self) -> std::option::Option<& [crate::model::SchemaElement]> {
         self.additional_schema_elements.as_deref()
     }
     /// <p>The S3 bucket where AWS delivers the report.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> std::option::Option<& str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The prefix that AWS adds to the report name when AWS delivers the report. Your prefix can't include spaces.</p>
-    pub fn s3_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_prefix(&self) -> std::option::Option<& str> {
         self.s3_prefix.as_deref()
     }
     /// <p>The region of the S3 bucket that AWS delivers the report into.</p>
-    pub fn s3_region(&self) -> std::option::Option<&crate::model::AwsRegion> {
+    pub fn s3_region(&self) -> std::option::Option<& crate::model::AwsRegion> {
         self.s3_region.as_ref()
     }
     /// <p>A list of manifests that you want Amazon Web Services to create for this report.</p>
-    pub fn additional_artifacts(&self) -> std::option::Option<&[crate::model::AdditionalArtifact]> {
+    pub fn additional_artifacts(&self) -> std::option::Option<& [crate::model::AdditionalArtifact]> {
         self.additional_artifacts.as_deref()
     }
     /// <p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>
@@ -85,17 +83,17 @@ impl ReportDefinition {
         self.refresh_closed_reports
     }
     /// <p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>
-    pub fn report_versioning(&self) -> std::option::Option<&crate::model::ReportVersioning> {
+    pub fn report_versioning(&self) -> std::option::Option<& crate::model::ReportVersioning> {
         self.report_versioning.as_ref()
     }
     /// <p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>
-    pub fn billing_view_arn(&self) -> std::option::Option<&str> {
+    pub fn billing_view_arn(&self) -> std::option::Option<& str> {
         self.billing_view_arn.as_deref()
     }
 }
 /// See [`ReportDefinition`](crate::model::ReportDefinition).
 pub mod report_definition {
-
+    
     /// A builder for [`ReportDefinition`](crate::model::ReportDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -103,13 +101,11 @@ pub mod report_definition {
         pub(crate) time_unit: std::option::Option<crate::model::TimeUnit>,
         pub(crate) format: std::option::Option<crate::model::ReportFormat>,
         pub(crate) compression: std::option::Option<crate::model::CompressionFormat>,
-        pub(crate) additional_schema_elements:
-            std::option::Option<std::vec::Vec<crate::model::SchemaElement>>,
+        pub(crate) additional_schema_elements: std::option::Option<std::vec::Vec<crate::model::SchemaElement>>,
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
         pub(crate) s3_prefix: std::option::Option<std::string::String>,
         pub(crate) s3_region: std::option::Option<crate::model::AwsRegion>,
-        pub(crate) additional_artifacts:
-            std::option::Option<std::vec::Vec<crate::model::AdditionalArtifact>>,
+        pub(crate) additional_artifacts: std::option::Option<std::vec::Vec<crate::model::AdditionalArtifact>>,
         pub(crate) refresh_closed_reports: std::option::Option<bool>,
         pub(crate) report_versioning: std::option::Option<crate::model::ReportVersioning>,
         pub(crate) billing_view_arn: std::option::Option<std::string::String>,
@@ -122,8 +118,7 @@ pub mod report_definition {
         }
         /// <p>The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces. </p>
         pub fn set_report_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.report_name = input;
-            self
+            self.report_name = input; self
         }
         /// <p>The length of time covered by the report. </p>
         pub fn time_unit(mut self, input: crate::model::TimeUnit) -> Self {
@@ -132,8 +127,7 @@ pub mod report_definition {
         }
         /// <p>The length of time covered by the report. </p>
         pub fn set_time_unit(mut self, input: std::option::Option<crate::model::TimeUnit>) -> Self {
-            self.time_unit = input;
-            self
+            self.time_unit = input; self
         }
         /// <p>The format that AWS saves the report in.</p>
         pub fn format(mut self, input: crate::model::ReportFormat) -> Self {
@@ -141,12 +135,8 @@ pub mod report_definition {
             self
         }
         /// <p>The format that AWS saves the report in.</p>
-        pub fn set_format(
-            mut self,
-            input: std::option::Option<crate::model::ReportFormat>,
-        ) -> Self {
-            self.format = input;
-            self
+        pub fn set_format(mut self, input: std::option::Option<crate::model::ReportFormat>) -> Self {
+            self.format = input; self
         }
         /// <p>The compression format that AWS uses for the report.</p>
         pub fn compression(mut self, input: crate::model::CompressionFormat) -> Self {
@@ -154,12 +144,8 @@ pub mod report_definition {
             self
         }
         /// <p>The compression format that AWS uses for the report.</p>
-        pub fn set_compression(
-            mut self,
-            input: std::option::Option<crate::model::CompressionFormat>,
-        ) -> Self {
-            self.compression = input;
-            self
+        pub fn set_compression(mut self, input: std::option::Option<crate::model::CompressionFormat>) -> Self {
+            self.compression = input; self
         }
         /// Appends an item to `additional_schema_elements`.
         ///
@@ -168,17 +154,13 @@ pub mod report_definition {
         /// <p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>
         pub fn additional_schema_elements(mut self, input: crate::model::SchemaElement) -> Self {
             let mut v = self.additional_schema_elements.unwrap_or_default();
-            v.push(input);
-            self.additional_schema_elements = Some(v);
-            self
+                            v.push(input);
+                            self.additional_schema_elements = Some(v);
+                            self
         }
         /// <p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>
-        pub fn set_additional_schema_elements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SchemaElement>>,
-        ) -> Self {
-            self.additional_schema_elements = input;
-            self
+        pub fn set_additional_schema_elements(mut self, input: std::option::Option<std::vec::Vec<crate::model::SchemaElement>>) -> Self {
+            self.additional_schema_elements = input; self
         }
         /// <p>The S3 bucket where AWS delivers the report.</p>
         pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -187,8 +169,7 @@ pub mod report_definition {
         }
         /// <p>The S3 bucket where AWS delivers the report.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_bucket = input;
-            self
+            self.s3_bucket = input; self
         }
         /// <p>The prefix that AWS adds to the report name when AWS delivers the report. Your prefix can't include spaces.</p>
         pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -197,8 +178,7 @@ pub mod report_definition {
         }
         /// <p>The prefix that AWS adds to the report name when AWS delivers the report. Your prefix can't include spaces.</p>
         pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_prefix = input;
-            self
+            self.s3_prefix = input; self
         }
         /// <p>The region of the S3 bucket that AWS delivers the report into.</p>
         pub fn s3_region(mut self, input: crate::model::AwsRegion) -> Self {
@@ -206,12 +186,8 @@ pub mod report_definition {
             self
         }
         /// <p>The region of the S3 bucket that AWS delivers the report into.</p>
-        pub fn set_s3_region(
-            mut self,
-            input: std::option::Option<crate::model::AwsRegion>,
-        ) -> Self {
-            self.s3_region = input;
-            self
+        pub fn set_s3_region(mut self, input: std::option::Option<crate::model::AwsRegion>) -> Self {
+            self.s3_region = input; self
         }
         /// Appends an item to `additional_artifacts`.
         ///
@@ -220,17 +196,13 @@ pub mod report_definition {
         /// <p>A list of manifests that you want Amazon Web Services to create for this report.</p>
         pub fn additional_artifacts(mut self, input: crate::model::AdditionalArtifact) -> Self {
             let mut v = self.additional_artifacts.unwrap_or_default();
-            v.push(input);
-            self.additional_artifacts = Some(v);
-            self
+                            v.push(input);
+                            self.additional_artifacts = Some(v);
+                            self
         }
         /// <p>A list of manifests that you want Amazon Web Services to create for this report.</p>
-        pub fn set_additional_artifacts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AdditionalArtifact>>,
-        ) -> Self {
-            self.additional_artifacts = input;
-            self
+        pub fn set_additional_artifacts(mut self, input: std::option::Option<std::vec::Vec<crate::model::AdditionalArtifact>>) -> Self {
+            self.additional_artifacts = input; self
         }
         /// <p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>
         pub fn refresh_closed_reports(mut self, input: bool) -> Self {
@@ -239,8 +211,7 @@ pub mod report_definition {
         }
         /// <p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>
         pub fn set_refresh_closed_reports(mut self, input: std::option::Option<bool>) -> Self {
-            self.refresh_closed_reports = input;
-            self
+            self.refresh_closed_reports = input; self
         }
         /// <p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>
         pub fn report_versioning(mut self, input: crate::model::ReportVersioning) -> Self {
@@ -248,12 +219,8 @@ pub mod report_definition {
             self
         }
         /// <p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>
-        pub fn set_report_versioning(
-            mut self,
-            input: std::option::Option<crate::model::ReportVersioning>,
-        ) -> Self {
-            self.report_versioning = input;
-            self
+        pub fn set_report_versioning(mut self, input: std::option::Option<crate::model::ReportVersioning>) -> Self {
+            self.report_versioning = input; self
         }
         /// <p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>
         pub fn billing_view_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -261,31 +228,41 @@ pub mod report_definition {
             self
         }
         /// <p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>
-        pub fn set_billing_view_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.billing_view_arn = input;
-            self
+        pub fn set_billing_view_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.billing_view_arn = input; self
         }
         /// Consumes the builder and constructs a [`ReportDefinition`](crate::model::ReportDefinition).
         pub fn build(self) -> crate::model::ReportDefinition {
             crate::model::ReportDefinition {
-                report_name: self.report_name,
-                time_unit: self.time_unit,
-                format: self.format,
-                compression: self.compression,
-                additional_schema_elements: self.additional_schema_elements,
-                s3_bucket: self.s3_bucket,
-                s3_prefix: self.s3_prefix,
-                s3_region: self.s3_region,
-                additional_artifacts: self.additional_artifacts,
-                refresh_closed_reports: self.refresh_closed_reports,
-                report_versioning: self.report_versioning,
-                billing_view_arn: self.billing_view_arn,
+                report_name: self.report_name
+                ,
+                time_unit: self.time_unit
+                ,
+                format: self.format
+                ,
+                compression: self.compression
+                ,
+                additional_schema_elements: self.additional_schema_elements
+                ,
+                s3_bucket: self.s3_bucket
+                ,
+                s3_prefix: self.s3_prefix
+                ,
+                s3_region: self.s3_region
+                ,
+                additional_artifacts: self.additional_artifacts
+                ,
+                refresh_closed_reports: self.refresh_closed_reports
+                ,
+                report_versioning: self.report_versioning
+                ,
+                billing_view_arn: self.billing_view_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ReportDefinition {
     /// Creates a new builder-style object to manufacture [`ReportDefinition`](crate::model::ReportDefinition).
@@ -300,9 +277,9 @@ impl ReportDefinition {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let reportversioning = unimplemented!();
 /// match reportversioning {
@@ -324,58 +301,52 @@ impl ReportDefinition {
 /// Specifically, when `reportversioning` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReportVersioning::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReportVersioning {
     #[allow(missing_docs)] // documentation missing in model
     CreateNewReport,
     #[allow(missing_docs)] // documentation missing in model
     OverwriteReport,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReportVersioning {
     fn from(s: &str) -> Self {
         match s {
             "CREATE_NEW_REPORT" => ReportVersioning::CreateNewReport,
             "OVERWRITE_REPORT" => ReportVersioning::OverwriteReport,
-            other => ReportVersioning::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ReportVersioning::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReportVersioning {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReportVersioning::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReportVersioning::from(s))
+                }
+            }
 impl ReportVersioning {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportVersioning::CreateNewReport => "CREATE_NEW_REPORT",
             ReportVersioning::OverwriteReport => "OVERWRITE_REPORT",
-            ReportVersioning::Unknown(value) => value.as_str(),
+            ReportVersioning::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATE_NEW_REPORT", "OVERWRITE_REPORT"]
+        &[
+            "CREATE_NEW_REPORT", "OVERWRITE_REPORT"
+        ]
     }
 }
 impl AsRef<str> for ReportVersioning {
@@ -390,9 +361,9 @@ impl AsRef<str> for ReportVersioning {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let additionalartifact = unimplemented!();
 /// match additionalartifact {
@@ -415,22 +386,14 @@ impl AsRef<str> for ReportVersioning {
 /// Specifically, when `additionalartifact` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AdditionalArtifact::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The types of manifest that you want AWS to create for this report.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AdditionalArtifact {
     #[allow(missing_docs)] // documentation missing in model
     Athena,
@@ -439,7 +402,7 @@ pub enum AdditionalArtifact {
     #[allow(missing_docs)] // documentation missing in model
     Redshift,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AdditionalArtifact {
     fn from(s: &str) -> Self {
@@ -447,19 +410,17 @@ impl std::convert::From<&str> for AdditionalArtifact {
             "ATHENA" => AdditionalArtifact::Athena,
             "QUICKSIGHT" => AdditionalArtifact::Quicksight,
             "REDSHIFT" => AdditionalArtifact::Redshift,
-            other => {
-                AdditionalArtifact::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AdditionalArtifact::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AdditionalArtifact {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AdditionalArtifact::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AdditionalArtifact::from(s))
+                }
+            }
 impl AdditionalArtifact {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -467,12 +428,14 @@ impl AdditionalArtifact {
             AdditionalArtifact::Athena => "ATHENA",
             AdditionalArtifact::Quicksight => "QUICKSIGHT",
             AdditionalArtifact::Redshift => "REDSHIFT",
-            AdditionalArtifact::Unknown(value) => value.as_str(),
+            AdditionalArtifact::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ATHENA", "QUICKSIGHT", "REDSHIFT"]
+        &[
+            "ATHENA", "QUICKSIGHT", "REDSHIFT"
+        ]
     }
 }
 impl AsRef<str> for AdditionalArtifact {
@@ -487,9 +450,9 @@ impl AsRef<str> for AdditionalArtifact {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let awsregion = unimplemented!();
 /// match awsregion {
@@ -535,22 +498,14 @@ impl AsRef<str> for AdditionalArtifact {
 /// Specifically, when `awsregion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AwsRegion::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The region of the S3 bucket that AWS delivers the report into.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AwsRegion {
     #[allow(missing_docs)] // documentation missing in model
     CapeTown,
@@ -605,7 +560,7 @@ pub enum AwsRegion {
     #[allow(missing_docs)] // documentation missing in model
     Oregon,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AwsRegion {
     fn from(s: &str) -> Self {
@@ -636,17 +591,17 @@ impl std::convert::From<&str> for AwsRegion {
             "us-east-2" => AwsRegion::Ohio,
             "us-west-1" => AwsRegion::NorthernCalifornia,
             "us-west-2" => AwsRegion::Oregon,
-            other => AwsRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AwsRegion::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AwsRegion {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AwsRegion::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AwsRegion::from(s))
+                }
+            }
 impl AwsRegion {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -677,38 +632,13 @@ impl AwsRegion {
             AwsRegion::Ohio => "us-east-2",
             AwsRegion::NorthernCalifornia => "us-west-1",
             AwsRegion::Oregon => "us-west-2",
-            AwsRegion::Unknown(value) => value.as_str(),
+            AwsRegion::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "af-south-1",
-            "ap-east-1",
-            "ap-northeast-1",
-            "ap-northeast-2",
-            "ap-northeast-3",
-            "ap-south-1",
-            "ap-southeast-1",
-            "ap-southeast-2",
-            "ap-southeast-3",
-            "ca-central-1",
-            "cn-north-1",
-            "cn-northwest-1",
-            "eu-central-1",
-            "eu-north-1",
-            "eu-south-1",
-            "eu-south-2",
-            "eu-west-1",
-            "eu-west-2",
-            "eu-west-3",
-            "me-central-1",
-            "me-south-1",
-            "sa-east-1",
-            "us-east-1",
-            "us-east-2",
-            "us-west-1",
-            "us-west-2",
+            "af-south-1", "ap-east-1", "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-south-1", "ap-southeast-1", "ap-southeast-2", "ap-southeast-3", "ca-central-1", "cn-north-1", "cn-northwest-1", "eu-central-1", "eu-north-1", "eu-south-1", "eu-south-2", "eu-west-1", "eu-west-2", "eu-west-3", "me-central-1", "me-south-1", "sa-east-1", "us-east-1", "us-east-2", "us-west-1", "us-west-2"
         ]
     }
 }
@@ -724,9 +654,9 @@ impl AsRef<str> for AwsRegion {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let schemaelement = unimplemented!();
 /// match schemaelement {
@@ -747,54 +677,48 @@ impl AsRef<str> for AwsRegion {
 /// Specifically, when `schemaelement` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SchemaElement::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>Whether or not AWS includes resource IDs in the report. </p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SchemaElement {
     #[allow(missing_docs)] // documentation missing in model
     Resources,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SchemaElement {
     fn from(s: &str) -> Self {
         match s {
             "RESOURCES" => SchemaElement::Resources,
-            other => SchemaElement::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SchemaElement::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SchemaElement {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SchemaElement::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SchemaElement::from(s))
+                }
+            }
 impl SchemaElement {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SchemaElement::Resources => "RESOURCES",
-            SchemaElement::Unknown(value) => value.as_str(),
+            SchemaElement::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RESOURCES"]
+        &[
+            "RESOURCES"
+        ]
     }
 }
 impl AsRef<str> for SchemaElement {
@@ -809,9 +733,9 @@ impl AsRef<str> for SchemaElement {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let compressionformat = unimplemented!();
 /// match compressionformat {
@@ -834,22 +758,14 @@ impl AsRef<str> for SchemaElement {
 /// Specifically, when `compressionformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CompressionFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The compression format that AWS uses for the report.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CompressionFormat {
     #[allow(missing_docs)] // documentation missing in model
     Gzip,
@@ -858,7 +774,7 @@ pub enum CompressionFormat {
     #[allow(missing_docs)] // documentation missing in model
     Zip,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CompressionFormat {
     fn from(s: &str) -> Self {
@@ -866,19 +782,17 @@ impl std::convert::From<&str> for CompressionFormat {
             "GZIP" => CompressionFormat::Gzip,
             "Parquet" => CompressionFormat::Parquet,
             "ZIP" => CompressionFormat::Zip,
-            other => {
-                CompressionFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CompressionFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CompressionFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CompressionFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CompressionFormat::from(s))
+                }
+            }
 impl CompressionFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -886,12 +800,14 @@ impl CompressionFormat {
             CompressionFormat::Gzip => "GZIP",
             CompressionFormat::Parquet => "Parquet",
             CompressionFormat::Zip => "ZIP",
-            CompressionFormat::Unknown(value) => value.as_str(),
+            CompressionFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GZIP", "Parquet", "ZIP"]
+        &[
+            "GZIP", "Parquet", "ZIP"
+        ]
     }
 }
 impl AsRef<str> for CompressionFormat {
@@ -906,9 +822,9 @@ impl AsRef<str> for CompressionFormat {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let reportformat = unimplemented!();
 /// match reportformat {
@@ -930,58 +846,52 @@ impl AsRef<str> for CompressionFormat {
 /// Specifically, when `reportformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReportFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The format that AWS saves the report in.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReportFormat {
     #[allow(missing_docs)] // documentation missing in model
     Parquet,
     #[allow(missing_docs)] // documentation missing in model
     Csv,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReportFormat {
     fn from(s: &str) -> Self {
         match s {
             "Parquet" => ReportFormat::Parquet,
             "textORcsv" => ReportFormat::Csv,
-            other => ReportFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ReportFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReportFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReportFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReportFormat::from(s))
+                }
+            }
 impl ReportFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportFormat::Parquet => "Parquet",
             ReportFormat::Csv => "textORcsv",
-            ReportFormat::Unknown(value) => value.as_str(),
+            ReportFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Parquet", "textORcsv"]
+        &[
+            "Parquet", "textORcsv"
+        ]
     }
 }
 impl AsRef<str> for ReportFormat {
@@ -996,9 +906,9 @@ impl AsRef<str> for ReportFormat {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let timeunit = unimplemented!();
 /// match timeunit {
@@ -1021,22 +931,14 @@ impl AsRef<str> for ReportFormat {
 /// Specifically, when `timeunit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TimeUnit::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The length of time covered by the report. </p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TimeUnit {
     #[allow(missing_docs)] // documentation missing in model
     Daily,
@@ -1045,7 +947,7 @@ pub enum TimeUnit {
     #[allow(missing_docs)] // documentation missing in model
     Monthly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TimeUnit {
     fn from(s: &str) -> Self {
@@ -1053,17 +955,17 @@ impl std::convert::From<&str> for TimeUnit {
             "DAILY" => TimeUnit::Daily,
             "HOURLY" => TimeUnit::Hourly,
             "MONTHLY" => TimeUnit::Monthly,
-            other => TimeUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TimeUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TimeUnit {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TimeUnit::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TimeUnit::from(s))
+                }
+            }
 impl TimeUnit {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1071,12 +973,14 @@ impl TimeUnit {
             TimeUnit::Daily => "DAILY",
             TimeUnit::Hourly => "HOURLY",
             TimeUnit::Monthly => "MONTHLY",
-            TimeUnit::Unknown(value) => value.as_str(),
+            TimeUnit::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DAILY", "HOURLY", "MONTHLY"]
+        &[
+            "DAILY", "HOURLY", "MONTHLY"
+        ]
     }
 }
 impl AsRef<str> for TimeUnit {
@@ -1084,3 +988,4 @@ impl AsRef<str> for TimeUnit {
         self.as_str()
     }
 }
+

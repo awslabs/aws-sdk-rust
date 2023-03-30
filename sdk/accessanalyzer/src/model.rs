@@ -3,7 +3,7 @@
 /// <p>Contains information about a validation exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>The name of the validation exception.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ValidationExceptionField {
 }
 impl ValidationExceptionField {
     /// <p>The name of the validation exception.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A message about the validation exception.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
-
+    
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod validation_exception_field {
         }
         /// <p>The name of the validation exception.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A message about the validation exception.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod validation_exception_field {
         }
         /// <p>A message about the validation exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
-                name: self.name,
-                message: self.message,
+                name: self.name
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationExceptionField {
     /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -73,9 +75,9 @@ impl ValidationExceptionField {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -99,22 +101,14 @@ impl ValidationExceptionField {
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     CannotParse,
@@ -125,7 +119,7 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
@@ -134,19 +128,17 @@ impl std::convert::From<&str> for ValidationExceptionReason {
             "fieldValidationFailed" => ValidationExceptionReason::FieldValidationFailed,
             "other" => ValidationExceptionReason::Other,
             "unknownOperation" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationExceptionReason::from(s))
+                }
+            }
 impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -155,16 +147,13 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::FieldValidationFailed => "fieldValidationFailed",
             ValidationExceptionReason::Other => "other",
             ValidationExceptionReason::UnknownOperation => "unknownOperation",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
+            ValidationExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "cannotParse",
-            "fieldValidationFailed",
-            "other",
-            "unknownOperation",
+            "cannotParse", "fieldValidationFailed", "other", "unknownOperation"
         ]
     }
 }
@@ -177,7 +166,7 @@ impl AsRef<str> for ValidationExceptionReason {
 /// <p>Contains information about the analyzer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnalyzerSummary {
+pub struct AnalyzerSummary  {
     /// <p>The ARN of the analyzer.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -198,8 +187,7 @@ pub struct AnalyzerSummary {
     pub last_resource_analyzed_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags added to the analyzer.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted access for Identity and Access Management Access Analyzer from Organizations, causes the analyzer to stop generating new findings. The status is <code>Creating</code> when the analyzer creation is in progress and <code>Failed</code> when the analyzer creation has failed. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::AnalyzerStatus>,
@@ -209,48 +197,45 @@ pub struct AnalyzerSummary {
 }
 impl AnalyzerSummary {
     /// <p>The ARN of the analyzer.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the analyzer.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::Type> {
         self.r#type.as_ref()
     }
     /// <p>A timestamp for the time at which the analyzer was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The resource that was most recently analyzed by the analyzer.</p>
-    pub fn last_resource_analyzed(&self) -> std::option::Option<&str> {
+    pub fn last_resource_analyzed(&self) -> std::option::Option<& str> {
         self.last_resource_analyzed.as_deref()
     }
     /// <p>The time at which the most recently analyzed resource was analyzed.</p>
-    pub fn last_resource_analyzed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_resource_analyzed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_resource_analyzed_at.as_ref()
     }
     /// <p>The tags added to the analyzer.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted access for Identity and Access Management Access Analyzer from Organizations, causes the analyzer to stop generating new findings. The status is <code>Creating</code> when the analyzer creation is in progress and <code>Failed</code> when the analyzer creation has failed. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AnalyzerStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AnalyzerStatus> {
         self.status.as_ref()
     }
     /// <p>The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
-    pub fn status_reason(&self) -> std::option::Option<&crate::model::StatusReason> {
+    pub fn status_reason(&self) -> std::option::Option<& crate::model::StatusReason> {
         self.status_reason.as_ref()
     }
 }
 /// See [`AnalyzerSummary`](crate::model::AnalyzerSummary).
 pub mod analyzer_summary {
-
+    
     /// A builder for [`AnalyzerSummary`](crate::model::AnalyzerSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -260,9 +245,7 @@ pub mod analyzer_summary {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_resource_analyzed: std::option::Option<std::string::String>,
         pub(crate) last_resource_analyzed_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) status: std::option::Option<crate::model::AnalyzerStatus>,
         pub(crate) status_reason: std::option::Option<crate::model::StatusReason>,
     }
@@ -274,8 +257,7 @@ pub mod analyzer_summary {
         }
         /// <p>The ARN of the analyzer.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the analyzer.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -284,8 +266,7 @@ pub mod analyzer_summary {
         }
         /// <p>The name of the analyzer.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.</p>
         pub fn r#type(mut self, input: crate::model::Type) -> Self {
@@ -294,8 +275,7 @@ pub mod analyzer_summary {
         }
         /// <p>The type of analyzer, which corresponds to the zone of trust chosen for the analyzer.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>A timestamp for the time at which the analyzer was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -303,12 +283,8 @@ pub mod analyzer_summary {
             self
         }
         /// <p>A timestamp for the time at which the analyzer was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The resource that was most recently analyzed by the analyzer.</p>
         pub fn last_resource_analyzed(mut self, input: impl Into<std::string::String>) -> Self {
@@ -316,12 +292,8 @@ pub mod analyzer_summary {
             self
         }
         /// <p>The resource that was most recently analyzed by the analyzer.</p>
-        pub fn set_last_resource_analyzed(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_resource_analyzed = input;
-            self
+        pub fn set_last_resource_analyzed(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_resource_analyzed = input; self
         }
         /// <p>The time at which the most recently analyzed resource was analyzed.</p>
         pub fn last_resource_analyzed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -329,37 +301,23 @@ pub mod analyzer_summary {
             self
         }
         /// <p>The time at which the most recently analyzed resource was analyzed.</p>
-        pub fn set_last_resource_analyzed_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_resource_analyzed_at = input;
-            self
+        pub fn set_last_resource_analyzed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_resource_analyzed_at = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags added to the analyzer.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags added to the analyzer.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted access for Identity and Access Management Access Analyzer from Organizations, causes the analyzer to stop generating new findings. The status is <code>Creating</code> when the analyzer creation is in progress and <code>Failed</code> when the analyzer creation has failed. </p>
         pub fn status(mut self, input: crate::model::AnalyzerStatus) -> Self {
@@ -367,12 +325,8 @@ pub mod analyzer_summary {
             self
         }
         /// <p>The status of the analyzer. An <code>Active</code> analyzer successfully monitors supported resources and generates new findings. The analyzer is <code>Disabled</code> when a user action, such as removing trusted access for Identity and Access Management Access Analyzer from Organizations, causes the analyzer to stop generating new findings. The status is <code>Creating</code> when the analyzer creation is in progress and <code>Failed</code> when the analyzer creation has failed. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AnalyzerStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AnalyzerStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
         pub fn status_reason(mut self, input: crate::model::StatusReason) -> Self {
@@ -380,28 +334,35 @@ pub mod analyzer_summary {
             self
         }
         /// <p>The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<crate::model::StatusReason>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<crate::model::StatusReason>) -> Self {
+            self.status_reason = input; self
         }
         /// Consumes the builder and constructs a [`AnalyzerSummary`](crate::model::AnalyzerSummary).
         pub fn build(self) -> crate::model::AnalyzerSummary {
             crate::model::AnalyzerSummary {
-                arn: self.arn,
-                name: self.name,
-                r#type: self.r#type,
-                created_at: self.created_at,
-                last_resource_analyzed: self.last_resource_analyzed,
-                last_resource_analyzed_at: self.last_resource_analyzed_at,
-                tags: self.tags,
-                status: self.status,
-                status_reason: self.status_reason,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                created_at: self.created_at
+                ,
+                last_resource_analyzed: self.last_resource_analyzed
+                ,
+                last_resource_analyzed_at: self.last_resource_analyzed_at
+                ,
+                tags: self.tags
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl AnalyzerSummary {
     /// Creates a new builder-style object to manufacture [`AnalyzerSummary`](crate::model::AnalyzerSummary).
@@ -413,20 +374,20 @@ impl AnalyzerSummary {
 /// <p>Provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StatusReason {
+pub struct StatusReason  {
     /// <p>The reason code for the current status of the analyzer.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ReasonCode>,
 }
 impl StatusReason {
     /// <p>The reason code for the current status of the analyzer.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::ReasonCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ReasonCode> {
         self.code.as_ref()
     }
 }
 /// See [`StatusReason`](crate::model::StatusReason).
 pub mod status_reason {
-
+    
     /// A builder for [`StatusReason`](crate::model::StatusReason).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -440,14 +401,18 @@ pub mod status_reason {
         }
         /// <p>The reason code for the current status of the analyzer.</p>
         pub fn set_code(mut self, input: std::option::Option<crate::model::ReasonCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`StatusReason`](crate::model::StatusReason).
         pub fn build(self) -> crate::model::StatusReason {
-            crate::model::StatusReason { code: self.code }
+            crate::model::StatusReason {
+                code: self.code
+                ,
+            }
         }
     }
+    
+    
 }
 impl StatusReason {
     /// Creates a new builder-style object to manufacture [`StatusReason`](crate::model::StatusReason).
@@ -462,9 +427,9 @@ impl StatusReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let reasoncode = unimplemented!();
 /// match reasoncode {
@@ -488,22 +453,14 @@ impl StatusReason {
 /// Specifically, when `reasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     AwsServiceAccessDisabled,
@@ -514,48 +471,41 @@ pub enum ReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     ServiceLinkedRoleCreationFailed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ReasonCode {
     fn from(s: &str) -> Self {
         match s {
             "AWS_SERVICE_ACCESS_DISABLED" => ReasonCode::AwsServiceAccessDisabled,
-            "DELEGATED_ADMINISTRATOR_DEREGISTERED" => {
-                ReasonCode::DelegatedAdministratorDeregistered
-            }
+            "DELEGATED_ADMINISTRATOR_DEREGISTERED" => ReasonCode::DelegatedAdministratorDeregistered,
             "ORGANIZATION_DELETED" => ReasonCode::OrganizationDeleted,
             "SERVICE_LINKED_ROLE_CREATION_FAILED" => ReasonCode::ServiceLinkedRoleCreationFailed,
-            other => ReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ReasonCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReasonCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ReasonCode::from(s))
+                }
+            }
 impl ReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReasonCode::AwsServiceAccessDisabled => "AWS_SERVICE_ACCESS_DISABLED",
-            ReasonCode::DelegatedAdministratorDeregistered => {
-                "DELEGATED_ADMINISTRATOR_DEREGISTERED"
-            }
+            ReasonCode::DelegatedAdministratorDeregistered => "DELEGATED_ADMINISTRATOR_DEREGISTERED",
             ReasonCode::OrganizationDeleted => "ORGANIZATION_DELETED",
             ReasonCode::ServiceLinkedRoleCreationFailed => "SERVICE_LINKED_ROLE_CREATION_FAILED",
-            ReasonCode::Unknown(value) => value.as_str(),
+            ReasonCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AWS_SERVICE_ACCESS_DISABLED",
-            "DELEGATED_ADMINISTRATOR_DEREGISTERED",
-            "ORGANIZATION_DELETED",
-            "SERVICE_LINKED_ROLE_CREATION_FAILED",
+            "AWS_SERVICE_ACCESS_DISABLED", "DELEGATED_ADMINISTRATOR_DEREGISTERED", "ORGANIZATION_DELETED", "SERVICE_LINKED_ROLE_CREATION_FAILED"
         ]
     }
 }
@@ -571,9 +521,9 @@ impl AsRef<str> for ReasonCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let analyzerstatus = unimplemented!();
 /// match analyzerstatus {
@@ -597,22 +547,14 @@ impl AsRef<str> for ReasonCode {
 /// Specifically, when `analyzerstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AnalyzerStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AnalyzerStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -623,7 +565,7 @@ pub enum AnalyzerStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AnalyzerStatus {
     fn from(s: &str) -> Self {
@@ -632,17 +574,17 @@ impl std::convert::From<&str> for AnalyzerStatus {
             "CREATING" => AnalyzerStatus::Creating,
             "DISABLED" => AnalyzerStatus::Disabled,
             "FAILED" => AnalyzerStatus::Failed,
-            other => AnalyzerStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AnalyzerStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AnalyzerStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AnalyzerStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AnalyzerStatus::from(s))
+                }
+            }
 impl AnalyzerStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -651,12 +593,14 @@ impl AnalyzerStatus {
             AnalyzerStatus::Creating => "CREATING",
             AnalyzerStatus::Disabled => "DISABLED",
             AnalyzerStatus::Failed => "FAILED",
-            AnalyzerStatus::Unknown(value) => value.as_str(),
+            AnalyzerStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "CREATING", "DISABLED", "FAILED"]
+        &[
+            "ACTIVE", "CREATING", "DISABLED", "FAILED"
+        ]
     }
 }
 impl AsRef<str> for AnalyzerStatus {
@@ -671,9 +615,9 @@ impl AsRef<str> for AnalyzerStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let type = unimplemented!();
 /// match type {
@@ -695,58 +639,52 @@ impl AsRef<str> for AnalyzerStatus {
 /// Specifically, when `type` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Type::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Type {
     #[allow(missing_docs)] // documentation missing in model
     Account,
     #[allow(missing_docs)] // documentation missing in model
     Organization,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Type {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT" => Type::Account,
             "ORGANIZATION" => Type::Organization,
-            other => Type::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Type::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Type {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Type::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Type::from(s))
+                }
+            }
 impl Type {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Type::Account => "ACCOUNT",
             Type::Organization => "ORGANIZATION",
-            Type::Unknown(value) => value.as_str(),
+            Type::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCOUNT", "ORGANIZATION"]
+        &[
+            "ACCOUNT", "ORGANIZATION"
+        ]
     }
 }
 impl AsRef<str> for Type {
@@ -758,39 +696,32 @@ impl AsRef<str> for Type {
 /// <p>An criterion statement in an archive rule. Each archive rule may have multiple criteria.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InlineArchiveRule {
+pub struct InlineArchiveRule  {
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>The condition and values for a criterion.</p>
     #[doc(hidden)]
-    pub filter: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::Criterion>,
-    >,
+    pub filter: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Criterion>>,
 }
 impl InlineArchiveRule {
     /// <p>The name of the rule.</p>
-    pub fn rule_name(&self) -> std::option::Option<&str> {
+    pub fn rule_name(&self) -> std::option::Option<& str> {
         self.rule_name.as_deref()
     }
     /// <p>The condition and values for a criterion.</p>
-    pub fn filter(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Criterion>>
-    {
+    pub fn filter(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::Criterion>> {
         self.filter.as_ref()
     }
 }
 /// See [`InlineArchiveRule`](crate::model::InlineArchiveRule).
 pub mod inline_archive_rule {
-
+    
     /// A builder for [`InlineArchiveRule`](crate::model::InlineArchiveRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_name: std::option::Option<std::string::String>,
-        pub(crate) filter: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::Criterion>,
-        >,
+        pub(crate) filter: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Criterion>>,
     }
     impl Builder {
         /// <p>The name of the rule.</p>
@@ -800,42 +731,35 @@ pub mod inline_archive_rule {
         }
         /// <p>The name of the rule.</p>
         pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_name = input;
-            self
+            self.rule_name = input; self
         }
         /// Adds a key-value pair to `filter`.
         ///
         /// To override the contents of this collection use [`set_filter`](Self::set_filter).
         ///
         /// <p>The condition and values for a criterion.</p>
-        pub fn filter(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::Criterion,
-        ) -> Self {
+        pub fn filter(mut self, k: impl Into<std::string::String>, v: crate::model::Criterion) -> Self {
             let mut hash_map = self.filter.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.filter = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.filter = Some(hash_map);
+                            self
         }
         /// <p>The condition and values for a criterion.</p>
-        pub fn set_filter(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::Criterion>,
-            >,
-        ) -> Self {
-            self.filter = input;
-            self
+        pub fn set_filter(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Criterion>>) -> Self {
+            self.filter = input; self
         }
         /// Consumes the builder and constructs a [`InlineArchiveRule`](crate::model::InlineArchiveRule).
         pub fn build(self) -> crate::model::InlineArchiveRule {
             crate::model::InlineArchiveRule {
-                rule_name: self.rule_name,
-                filter: self.filter,
+                rule_name: self.rule_name
+                ,
+                filter: self.filter
+                ,
             }
         }
     }
+    
+    
 }
 impl InlineArchiveRule {
     /// Creates a new builder-style object to manufacture [`InlineArchiveRule`](crate::model::InlineArchiveRule).
@@ -847,7 +771,7 @@ impl InlineArchiveRule {
 /// <p>The criteria to use in the filter that defines the archive rule. For more information on available filter keys, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM Access Analyzer filter keys</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Criterion {
+pub struct Criterion  {
     /// <p>An "equals" operator to match for the filter used to create the rule.</p>
     #[doc(hidden)]
     pub eq: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -863,15 +787,15 @@ pub struct Criterion {
 }
 impl Criterion {
     /// <p>An "equals" operator to match for the filter used to create the rule.</p>
-    pub fn eq(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn eq(&self) -> std::option::Option<& [std::string::String]> {
         self.eq.as_deref()
     }
     /// <p>A "not equals" operator to match for the filter used to create the rule.</p>
-    pub fn neq(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn neq(&self) -> std::option::Option<& [std::string::String]> {
         self.neq.as_deref()
     }
     /// <p>A "contains" operator to match for the filter used to create the rule.</p>
-    pub fn contains(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn contains(&self) -> std::option::Option<& [std::string::String]> {
         self.contains.as_deref()
     }
     /// <p>An "exists" operator to match for the filter used to create the rule. </p>
@@ -881,7 +805,7 @@ impl Criterion {
 }
 /// See [`Criterion`](crate::model::Criterion).
 pub mod criterion {
-
+    
     /// A builder for [`Criterion`](crate::model::Criterion).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -898,17 +822,13 @@ pub mod criterion {
         /// <p>An "equals" operator to match for the filter used to create the rule.</p>
         pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.eq.unwrap_or_default();
-            v.push(input.into());
-            self.eq = Some(v);
-            self
+                            v.push(input.into());
+                            self.eq = Some(v);
+                            self
         }
         /// <p>An "equals" operator to match for the filter used to create the rule.</p>
-        pub fn set_eq(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.eq = input;
-            self
+        pub fn set_eq(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.eq = input; self
         }
         /// Appends an item to `neq`.
         ///
@@ -917,17 +837,13 @@ pub mod criterion {
         /// <p>A "not equals" operator to match for the filter used to create the rule.</p>
         pub fn neq(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.neq.unwrap_or_default();
-            v.push(input.into());
-            self.neq = Some(v);
-            self
+                            v.push(input.into());
+                            self.neq = Some(v);
+                            self
         }
         /// <p>A "not equals" operator to match for the filter used to create the rule.</p>
-        pub fn set_neq(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.neq = input;
-            self
+        pub fn set_neq(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.neq = input; self
         }
         /// Appends an item to `contains`.
         ///
@@ -936,17 +852,13 @@ pub mod criterion {
         /// <p>A "contains" operator to match for the filter used to create the rule.</p>
         pub fn contains(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.contains.unwrap_or_default();
-            v.push(input.into());
-            self.contains = Some(v);
-            self
+                            v.push(input.into());
+                            self.contains = Some(v);
+                            self
         }
         /// <p>A "contains" operator to match for the filter used to create the rule.</p>
-        pub fn set_contains(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.contains = input;
-            self
+        pub fn set_contains(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.contains = input; self
         }
         /// <p>An "exists" operator to match for the filter used to create the rule. </p>
         pub fn exists(mut self, input: bool) -> Self {
@@ -955,19 +867,24 @@ pub mod criterion {
         }
         /// <p>An "exists" operator to match for the filter used to create the rule. </p>
         pub fn set_exists(mut self, input: std::option::Option<bool>) -> Self {
-            self.exists = input;
-            self
+            self.exists = input; self
         }
         /// Consumes the builder and constructs a [`Criterion`](crate::model::Criterion).
         pub fn build(self) -> crate::model::Criterion {
             crate::model::Criterion {
-                eq: self.eq,
-                neq: self.neq,
-                contains: self.contains,
-                exists: self.exists,
+                eq: self.eq
+                ,
+                neq: self.neq
+                ,
+                contains: self.contains
+                ,
+                exists: self.exists
+                ,
             }
         }
     }
+    
+    
 }
 impl Criterion {
     /// Creates a new builder-style object to manufacture [`Criterion`](crate::model::Criterion).
@@ -979,15 +896,13 @@ impl Criterion {
 /// <p>Contains information about an archive rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ArchiveRuleSummary {
+pub struct ArchiveRuleSummary  {
     /// <p>The name of the archive rule.</p>
     #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
     /// <p>A filter used to define the archive rule.</p>
     #[doc(hidden)]
-    pub filter: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::Criterion>,
-    >,
+    pub filter: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Criterion>>,
     /// <p>The time at which the archive rule was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -997,35 +912,30 @@ pub struct ArchiveRuleSummary {
 }
 impl ArchiveRuleSummary {
     /// <p>The name of the archive rule.</p>
-    pub fn rule_name(&self) -> std::option::Option<&str> {
+    pub fn rule_name(&self) -> std::option::Option<& str> {
         self.rule_name.as_deref()
     }
     /// <p>A filter used to define the archive rule.</p>
-    pub fn filter(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Criterion>>
-    {
+    pub fn filter(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::Criterion>> {
         self.filter.as_ref()
     }
     /// <p>The time at which the archive rule was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time at which the archive rule was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`ArchiveRuleSummary`](crate::model::ArchiveRuleSummary).
 pub mod archive_rule_summary {
-
+    
     /// A builder for [`ArchiveRuleSummary`](crate::model::ArchiveRuleSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) rule_name: std::option::Option<std::string::String>,
-        pub(crate) filter: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::Criterion>,
-        >,
+        pub(crate) filter: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Criterion>>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -1037,33 +947,22 @@ pub mod archive_rule_summary {
         }
         /// <p>The name of the archive rule.</p>
         pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_name = input;
-            self
+            self.rule_name = input; self
         }
         /// Adds a key-value pair to `filter`.
         ///
         /// To override the contents of this collection use [`set_filter`](Self::set_filter).
         ///
         /// <p>A filter used to define the archive rule.</p>
-        pub fn filter(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::Criterion,
-        ) -> Self {
+        pub fn filter(mut self, k: impl Into<std::string::String>, v: crate::model::Criterion) -> Self {
             let mut hash_map = self.filter.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.filter = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.filter = Some(hash_map);
+                            self
         }
         /// <p>A filter used to define the archive rule.</p>
-        pub fn set_filter(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::Criterion>,
-            >,
-        ) -> Self {
-            self.filter = input;
-            self
+        pub fn set_filter(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Criterion>>) -> Self {
+            self.filter = input; self
         }
         /// <p>The time at which the archive rule was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1071,12 +970,8 @@ pub mod archive_rule_summary {
             self
         }
         /// <p>The time at which the archive rule was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time at which the archive rule was last updated.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1084,23 +979,25 @@ pub mod archive_rule_summary {
             self
         }
         /// <p>The time at which the archive rule was last updated.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`ArchiveRuleSummary`](crate::model::ArchiveRuleSummary).
         pub fn build(self) -> crate::model::ArchiveRuleSummary {
             crate::model::ArchiveRuleSummary {
-                rule_name: self.rule_name,
-                filter: self.filter,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
+                rule_name: self.rule_name
+                ,
+                filter: self.filter
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl ArchiveRuleSummary {
     /// Creates a new builder-style object to manufacture [`ArchiveRuleSummary`](crate::model::ArchiveRuleSummary).
@@ -1112,14 +1009,14 @@ impl ArchiveRuleSummary {
 /// <p>A finding in a policy. Each finding is an actionable recommendation that can be used to improve the policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidatePolicyFinding {
+pub struct ValidatePolicyFinding  {
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
     #[doc(hidden)]
     pub finding_details: std::option::Option<std::string::String>,
-    /// <p>The impact of the finding.</p>
-    /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p>
-    /// <p>Errors report when a part of the policy is not functional.</p>
-    /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p>
+    /// <p>The impact of the finding.</p> 
+    /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p> 
+    /// <p>Errors report when a part of the policy is not functional.</p> 
+    /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p> 
     /// <p>Suggestions recommend stylistic improvements in the policy that do not impact access.</p>
     #[doc(hidden)]
     pub finding_type: std::option::Option<crate::model::ValidatePolicyFindingType>,
@@ -1135,33 +1032,33 @@ pub struct ValidatePolicyFinding {
 }
 impl ValidatePolicyFinding {
     /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
-    pub fn finding_details(&self) -> std::option::Option<&str> {
+    pub fn finding_details(&self) -> std::option::Option<& str> {
         self.finding_details.as_deref()
     }
-    /// <p>The impact of the finding.</p>
-    /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p>
-    /// <p>Errors report when a part of the policy is not functional.</p>
-    /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p>
+    /// <p>The impact of the finding.</p> 
+    /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p> 
+    /// <p>Errors report when a part of the policy is not functional.</p> 
+    /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p> 
     /// <p>Suggestions recommend stylistic improvements in the policy that do not impact access.</p>
-    pub fn finding_type(&self) -> std::option::Option<&crate::model::ValidatePolicyFindingType> {
+    pub fn finding_type(&self) -> std::option::Option<& crate::model::ValidatePolicyFindingType> {
         self.finding_type.as_ref()
     }
     /// <p>The issue code provides an identifier of the issue associated with this finding.</p>
-    pub fn issue_code(&self) -> std::option::Option<&str> {
+    pub fn issue_code(&self) -> std::option::Option<& str> {
         self.issue_code.as_deref()
     }
     /// <p>A link to additional documentation about the type of finding.</p>
-    pub fn learn_more_link(&self) -> std::option::Option<&str> {
+    pub fn learn_more_link(&self) -> std::option::Option<& str> {
         self.learn_more_link.as_deref()
     }
     /// <p>The list of locations in the policy document that are related to the finding. The issue code provides a summary of an issue identified by the finding.</p>
-    pub fn locations(&self) -> std::option::Option<&[crate::model::Location]> {
+    pub fn locations(&self) -> std::option::Option<& [crate::model::Location]> {
         self.locations.as_deref()
     }
 }
 /// See [`ValidatePolicyFinding`](crate::model::ValidatePolicyFinding).
 pub mod validate_policy_finding {
-
+    
     /// A builder for [`ValidatePolicyFinding`](crate::model::ValidatePolicyFinding).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1178,33 +1075,25 @@ pub mod validate_policy_finding {
             self
         }
         /// <p>A localized message that explains the finding and provides guidance on how to address it.</p>
-        pub fn set_finding_details(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.finding_details = input;
-            self
+        pub fn set_finding_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.finding_details = input; self
         }
-        /// <p>The impact of the finding.</p>
-        /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p>
-        /// <p>Errors report when a part of the policy is not functional.</p>
-        /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p>
+        /// <p>The impact of the finding.</p> 
+        /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p> 
+        /// <p>Errors report when a part of the policy is not functional.</p> 
+        /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p> 
         /// <p>Suggestions recommend stylistic improvements in the policy that do not impact access.</p>
         pub fn finding_type(mut self, input: crate::model::ValidatePolicyFindingType) -> Self {
             self.finding_type = Some(input);
             self
         }
-        /// <p>The impact of the finding.</p>
-        /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p>
-        /// <p>Errors report when a part of the policy is not functional.</p>
-        /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p>
+        /// <p>The impact of the finding.</p> 
+        /// <p>Security warnings report when the policy allows access that we consider overly permissive.</p> 
+        /// <p>Errors report when a part of the policy is not functional.</p> 
+        /// <p>Warnings report non-security issues when a policy does not conform to policy writing best practices.</p> 
         /// <p>Suggestions recommend stylistic improvements in the policy that do not impact access.</p>
-        pub fn set_finding_type(
-            mut self,
-            input: std::option::Option<crate::model::ValidatePolicyFindingType>,
-        ) -> Self {
-            self.finding_type = input;
-            self
+        pub fn set_finding_type(mut self, input: std::option::Option<crate::model::ValidatePolicyFindingType>) -> Self {
+            self.finding_type = input; self
         }
         /// <p>The issue code provides an identifier of the issue associated with this finding.</p>
         pub fn issue_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1213,8 +1102,7 @@ pub mod validate_policy_finding {
         }
         /// <p>The issue code provides an identifier of the issue associated with this finding.</p>
         pub fn set_issue_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.issue_code = input;
-            self
+            self.issue_code = input; self
         }
         /// <p>A link to additional documentation about the type of finding.</p>
         pub fn learn_more_link(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1222,12 +1110,8 @@ pub mod validate_policy_finding {
             self
         }
         /// <p>A link to additional documentation about the type of finding.</p>
-        pub fn set_learn_more_link(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.learn_more_link = input;
-            self
+        pub fn set_learn_more_link(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.learn_more_link = input; self
         }
         /// Appends an item to `locations`.
         ///
@@ -1236,29 +1120,32 @@ pub mod validate_policy_finding {
         /// <p>The list of locations in the policy document that are related to the finding. The issue code provides a summary of an issue identified by the finding.</p>
         pub fn locations(mut self, input: crate::model::Location) -> Self {
             let mut v = self.locations.unwrap_or_default();
-            v.push(input);
-            self.locations = Some(v);
-            self
+                            v.push(input);
+                            self.locations = Some(v);
+                            self
         }
         /// <p>The list of locations in the policy document that are related to the finding. The issue code provides a summary of an issue identified by the finding.</p>
-        pub fn set_locations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Location>>,
-        ) -> Self {
-            self.locations = input;
-            self
+        pub fn set_locations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Location>>) -> Self {
+            self.locations = input; self
         }
         /// Consumes the builder and constructs a [`ValidatePolicyFinding`](crate::model::ValidatePolicyFinding).
         pub fn build(self) -> crate::model::ValidatePolicyFinding {
             crate::model::ValidatePolicyFinding {
-                finding_details: self.finding_details,
-                finding_type: self.finding_type,
-                issue_code: self.issue_code,
-                learn_more_link: self.learn_more_link,
-                locations: self.locations,
+                finding_details: self.finding_details
+                ,
+                finding_type: self.finding_type
+                ,
+                issue_code: self.issue_code
+                ,
+                learn_more_link: self.learn_more_link
+                ,
+                locations: self.locations
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidatePolicyFinding {
     /// Creates a new builder-style object to manufacture [`ValidatePolicyFinding`](crate::model::ValidatePolicyFinding).
@@ -1270,7 +1157,7 @@ impl ValidatePolicyFinding {
 /// <p>A location in a policy that is represented as a path through the JSON representation and a corresponding span.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Location {
+pub struct Location  {
     /// <p>A path in a policy, represented as a sequence of path elements.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::vec::Vec<crate::model::PathElement>>,
@@ -1280,17 +1167,17 @@ pub struct Location {
 }
 impl Location {
     /// <p>A path in a policy, represented as a sequence of path elements.</p>
-    pub fn path(&self) -> std::option::Option<&[crate::model::PathElement]> {
+    pub fn path(&self) -> std::option::Option<& [crate::model::PathElement]> {
         self.path.as_deref()
     }
     /// <p>A span in a policy.</p>
-    pub fn span(&self) -> std::option::Option<&crate::model::Span> {
+    pub fn span(&self) -> std::option::Option<& crate::model::Span> {
         self.span.as_ref()
     }
 }
 /// See [`Location`](crate::model::Location).
 pub mod location {
-
+    
     /// A builder for [`Location`](crate::model::Location).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1305,17 +1192,13 @@ pub mod location {
         /// <p>A path in a policy, represented as a sequence of path elements.</p>
         pub fn path(mut self, input: crate::model::PathElement) -> Self {
             let mut v = self.path.unwrap_or_default();
-            v.push(input);
-            self.path = Some(v);
-            self
+                            v.push(input);
+                            self.path = Some(v);
+                            self
         }
         /// <p>A path in a policy, represented as a sequence of path elements.</p>
-        pub fn set_path(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PathElement>>,
-        ) -> Self {
-            self.path = input;
-            self
+        pub fn set_path(mut self, input: std::option::Option<std::vec::Vec<crate::model::PathElement>>) -> Self {
+            self.path = input; self
         }
         /// <p>A span in a policy.</p>
         pub fn span(mut self, input: crate::model::Span) -> Self {
@@ -1324,17 +1207,20 @@ pub mod location {
         }
         /// <p>A span in a policy.</p>
         pub fn set_span(mut self, input: std::option::Option<crate::model::Span>) -> Self {
-            self.span = input;
-            self
+            self.span = input; self
         }
         /// Consumes the builder and constructs a [`Location`](crate::model::Location).
         pub fn build(self) -> crate::model::Location {
             crate::model::Location {
-                path: self.path,
-                span: self.span,
+                path: self.path
+                ,
+                span: self.span
+                ,
             }
         }
     }
+    
+    
 }
 impl Location {
     /// Creates a new builder-style object to manufacture [`Location`](crate::model::Location).
@@ -1346,7 +1232,7 @@ impl Location {
 /// <p>A span in a policy. The span consists of a start position (inclusive) and end position (exclusive).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Span {
+pub struct Span  {
     /// <p>The start position of the span (inclusive).</p>
     #[doc(hidden)]
     pub start: std::option::Option<crate::model::Position>,
@@ -1356,17 +1242,17 @@ pub struct Span {
 }
 impl Span {
     /// <p>The start position of the span (inclusive).</p>
-    pub fn start(&self) -> std::option::Option<&crate::model::Position> {
+    pub fn start(&self) -> std::option::Option<& crate::model::Position> {
         self.start.as_ref()
     }
     /// <p>The end position of the span (exclusive).</p>
-    pub fn end(&self) -> std::option::Option<&crate::model::Position> {
+    pub fn end(&self) -> std::option::Option<& crate::model::Position> {
         self.end.as_ref()
     }
 }
 /// See [`Span`](crate::model::Span).
 pub mod span {
-
+    
     /// A builder for [`Span`](crate::model::Span).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1381,8 +1267,7 @@ pub mod span {
         }
         /// <p>The start position of the span (inclusive).</p>
         pub fn set_start(mut self, input: std::option::Option<crate::model::Position>) -> Self {
-            self.start = input;
-            self
+            self.start = input; self
         }
         /// <p>The end position of the span (exclusive).</p>
         pub fn end(mut self, input: crate::model::Position) -> Self {
@@ -1391,17 +1276,20 @@ pub mod span {
         }
         /// <p>The end position of the span (exclusive).</p>
         pub fn set_end(mut self, input: std::option::Option<crate::model::Position>) -> Self {
-            self.end = input;
-            self
+            self.end = input; self
         }
         /// Consumes the builder and constructs a [`Span`](crate::model::Span).
         pub fn build(self) -> crate::model::Span {
             crate::model::Span {
-                start: self.start,
-                end: self.end,
+                start: self.start
+                ,
+                end: self.end
+                ,
             }
         }
     }
+    
+    
 }
 impl Span {
     /// Creates a new builder-style object to manufacture [`Span`](crate::model::Span).
@@ -1413,7 +1301,7 @@ impl Span {
 /// <p>A position in a policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Position {
+pub struct Position  {
     /// <p>The line of the position, starting from 1.</p>
     #[doc(hidden)]
     pub line: std::option::Option<i32>,
@@ -1440,7 +1328,7 @@ impl Position {
 }
 /// See [`Position`](crate::model::Position).
 pub mod position {
-
+    
     /// A builder for [`Position`](crate::model::Position).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1456,8 +1344,7 @@ pub mod position {
         }
         /// <p>The line of the position, starting from 1.</p>
         pub fn set_line(mut self, input: std::option::Option<i32>) -> Self {
-            self.line = input;
-            self
+            self.line = input; self
         }
         /// <p>The column of the position, starting from 0.</p>
         pub fn column(mut self, input: i32) -> Self {
@@ -1466,8 +1353,7 @@ pub mod position {
         }
         /// <p>The column of the position, starting from 0.</p>
         pub fn set_column(mut self, input: std::option::Option<i32>) -> Self {
-            self.column = input;
-            self
+            self.column = input; self
         }
         /// <p>The offset within the policy that corresponds to the position, starting from 0.</p>
         pub fn offset(mut self, input: i32) -> Self {
@@ -1476,18 +1362,22 @@ pub mod position {
         }
         /// <p>The offset within the policy that corresponds to the position, starting from 0.</p>
         pub fn set_offset(mut self, input: std::option::Option<i32>) -> Self {
-            self.offset = input;
-            self
+            self.offset = input; self
         }
         /// Consumes the builder and constructs a [`Position`](crate::model::Position).
         pub fn build(self) -> crate::model::Position {
             crate::model::Position {
-                line: self.line,
-                column: self.column,
-                offset: self.offset,
+                line: self.line
+                ,
+                column: self.column
+                ,
+                offset: self.offset
+                ,
             }
         }
     }
+    
+    
 }
 impl Position {
     /// Creates a new builder-style object to manufacture [`Position`](crate::model::Position).
@@ -1522,11 +1412,7 @@ impl PathElement {
     /// Tries to convert the enum instance into [`Index`](crate::model::PathElement::Index), extracting the inner [`i32`](i32).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_index(&self) -> std::result::Result<&i32, &Self> {
-        if let PathElement::Index(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let PathElement::Index(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Index`](crate::model::PathElement::Index).
     pub fn is_index(&self) -> bool {
@@ -1535,11 +1421,7 @@ impl PathElement {
     /// Tries to convert the enum instance into [`Key`](crate::model::PathElement::Key), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_key(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let PathElement::Key(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let PathElement::Key(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Key`](crate::model::PathElement::Key).
     pub fn is_key(&self) -> bool {
@@ -1548,11 +1430,7 @@ impl PathElement {
     /// Tries to convert the enum instance into [`Substring`](crate::model::PathElement::Substring), extracting the inner [`Substring`](crate::model::Substring).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_substring(&self) -> std::result::Result<&crate::model::Substring, &Self> {
-        if let PathElement::Substring(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let PathElement::Substring(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Substring`](crate::model::PathElement::Substring).
     pub fn is_substring(&self) -> bool {
@@ -1561,11 +1439,7 @@ impl PathElement {
     /// Tries to convert the enum instance into [`Value`](crate::model::PathElement::Value), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_value(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let PathElement::Value(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let PathElement::Value(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Value`](crate::model::PathElement::Value).
     pub fn is_value(&self) -> bool {
@@ -1580,7 +1454,7 @@ impl PathElement {
 /// <p>A reference to a substring of a literal string in a JSON document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Substring {
+pub struct Substring  {
     /// <p>The start index of the substring, starting from 0.</p>
     #[doc(hidden)]
     pub start: std::option::Option<i32>,
@@ -1600,7 +1474,7 @@ impl Substring {
 }
 /// See [`Substring`](crate::model::Substring).
 pub mod substring {
-
+    
     /// A builder for [`Substring`](crate::model::Substring).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1615,8 +1489,7 @@ pub mod substring {
         }
         /// <p>The start index of the substring, starting from 0.</p>
         pub fn set_start(mut self, input: std::option::Option<i32>) -> Self {
-            self.start = input;
-            self
+            self.start = input; self
         }
         /// <p>The length of the substring.</p>
         pub fn length(mut self, input: i32) -> Self {
@@ -1625,17 +1498,20 @@ pub mod substring {
         }
         /// <p>The length of the substring.</p>
         pub fn set_length(mut self, input: std::option::Option<i32>) -> Self {
-            self.length = input;
-            self
+            self.length = input; self
         }
         /// Consumes the builder and constructs a [`Substring`](crate::model::Substring).
         pub fn build(self) -> crate::model::Substring {
             crate::model::Substring {
-                start: self.start,
-                length: self.length,
+                start: self.start
+                ,
+                length: self.length
+                ,
             }
         }
     }
+    
+    
 }
 impl Substring {
     /// Creates a new builder-style object to manufacture [`Substring`](crate::model::Substring).
@@ -1650,9 +1526,9 @@ impl Substring {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validatepolicyfindingtype = unimplemented!();
 /// match validatepolicyfindingtype {
@@ -1676,22 +1552,14 @@ impl Substring {
 /// Specifically, when `validatepolicyfindingtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidatePolicyFindingType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidatePolicyFindingType {
     #[allow(missing_docs)] // documentation missing in model
     Error,
@@ -1702,7 +1570,7 @@ pub enum ValidatePolicyFindingType {
     #[allow(missing_docs)] // documentation missing in model
     Warning,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidatePolicyFindingType {
     fn from(s: &str) -> Self {
@@ -1711,19 +1579,17 @@ impl std::convert::From<&str> for ValidatePolicyFindingType {
             "SECURITY_WARNING" => ValidatePolicyFindingType::SecurityWarning,
             "SUGGESTION" => ValidatePolicyFindingType::Suggestion,
             "WARNING" => ValidatePolicyFindingType::Warning,
-            other => ValidatePolicyFindingType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidatePolicyFindingType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidatePolicyFindingType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidatePolicyFindingType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidatePolicyFindingType::from(s))
+                }
+            }
 impl ValidatePolicyFindingType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1732,12 +1598,14 @@ impl ValidatePolicyFindingType {
             ValidatePolicyFindingType::SecurityWarning => "SECURITY_WARNING",
             ValidatePolicyFindingType::Suggestion => "SUGGESTION",
             ValidatePolicyFindingType::Warning => "WARNING",
-            ValidatePolicyFindingType::Unknown(value) => value.as_str(),
+            ValidatePolicyFindingType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ERROR", "SECURITY_WARNING", "SUGGESTION", "WARNING"]
+        &[
+            "ERROR", "SECURITY_WARNING", "SUGGESTION", "WARNING"
+        ]
     }
 }
 impl AsRef<str> for ValidatePolicyFindingType {
@@ -1752,9 +1620,9 @@ impl AsRef<str> for ValidatePolicyFindingType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validatepolicyresourcetype = unimplemented!();
 /// match validatepolicyresourcetype {
@@ -1779,22 +1647,14 @@ impl AsRef<str> for ValidatePolicyFindingType {
 /// Specifically, when `validatepolicyresourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidatePolicyResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidatePolicyResourceType {
     #[allow(missing_docs)] // documentation missing in model
     RoleTrust,
@@ -1807,7 +1667,7 @@ pub enum ValidatePolicyResourceType {
     #[allow(missing_docs)] // documentation missing in model
     S3ObjectLambdaAccessPoint,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidatePolicyResourceType {
     fn from(s: &str) -> Self {
@@ -1815,25 +1675,19 @@ impl std::convert::From<&str> for ValidatePolicyResourceType {
             "AWS::IAM::AssumeRolePolicyDocument" => ValidatePolicyResourceType::RoleTrust,
             "AWS::S3::AccessPoint" => ValidatePolicyResourceType::S3AccessPoint,
             "AWS::S3::Bucket" => ValidatePolicyResourceType::S3Bucket,
-            "AWS::S3::MultiRegionAccessPoint" => {
-                ValidatePolicyResourceType::S3MultiRegionAccessPoint
-            }
-            "AWS::S3ObjectLambda::AccessPoint" => {
-                ValidatePolicyResourceType::S3ObjectLambdaAccessPoint
-            }
-            other => ValidatePolicyResourceType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "AWS::S3::MultiRegionAccessPoint" => ValidatePolicyResourceType::S3MultiRegionAccessPoint,
+            "AWS::S3ObjectLambda::AccessPoint" => ValidatePolicyResourceType::S3ObjectLambdaAccessPoint,
+            other => ValidatePolicyResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidatePolicyResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidatePolicyResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidatePolicyResourceType::from(s))
+                }
+            }
 impl ValidatePolicyResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1841,23 +1695,15 @@ impl ValidatePolicyResourceType {
             ValidatePolicyResourceType::RoleTrust => "AWS::IAM::AssumeRolePolicyDocument",
             ValidatePolicyResourceType::S3AccessPoint => "AWS::S3::AccessPoint",
             ValidatePolicyResourceType::S3Bucket => "AWS::S3::Bucket",
-            ValidatePolicyResourceType::S3MultiRegionAccessPoint => {
-                "AWS::S3::MultiRegionAccessPoint"
-            }
-            ValidatePolicyResourceType::S3ObjectLambdaAccessPoint => {
-                "AWS::S3ObjectLambda::AccessPoint"
-            }
-            ValidatePolicyResourceType::Unknown(value) => value.as_str(),
+            ValidatePolicyResourceType::S3MultiRegionAccessPoint => "AWS::S3::MultiRegionAccessPoint",
+            ValidatePolicyResourceType::S3ObjectLambdaAccessPoint => "AWS::S3ObjectLambda::AccessPoint",
+            ValidatePolicyResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AWS::IAM::AssumeRolePolicyDocument",
-            "AWS::S3::AccessPoint",
-            "AWS::S3::Bucket",
-            "AWS::S3::MultiRegionAccessPoint",
-            "AWS::S3ObjectLambda::AccessPoint",
+            "AWS::IAM::AssumeRolePolicyDocument", "AWS::S3::AccessPoint", "AWS::S3::Bucket", "AWS::S3::MultiRegionAccessPoint", "AWS::S3ObjectLambda::AccessPoint"
         ]
     }
 }
@@ -1873,9 +1719,9 @@ impl AsRef<str> for ValidatePolicyResourceType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let policytype = unimplemented!();
 /// match policytype {
@@ -1898,22 +1744,14 @@ impl AsRef<str> for ValidatePolicyResourceType {
 /// Specifically, when `policytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PolicyType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PolicyType {
     #[allow(missing_docs)] // documentation missing in model
     IdentityPolicy,
@@ -1922,7 +1760,7 @@ pub enum PolicyType {
     #[allow(missing_docs)] // documentation missing in model
     ServiceControlPolicy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PolicyType {
     fn from(s: &str) -> Self {
@@ -1930,17 +1768,17 @@ impl std::convert::From<&str> for PolicyType {
             "IDENTITY_POLICY" => PolicyType::IdentityPolicy,
             "RESOURCE_POLICY" => PolicyType::ResourcePolicy,
             "SERVICE_CONTROL_POLICY" => PolicyType::ServiceControlPolicy,
-            other => PolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PolicyType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PolicyType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PolicyType::from(s))
+                }
+            }
 impl PolicyType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1948,15 +1786,13 @@ impl PolicyType {
             PolicyType::IdentityPolicy => "IDENTITY_POLICY",
             PolicyType::ResourcePolicy => "RESOURCE_POLICY",
             PolicyType::ServiceControlPolicy => "SERVICE_CONTROL_POLICY",
-            PolicyType::Unknown(value) => value.as_str(),
+            PolicyType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "IDENTITY_POLICY",
-            "RESOURCE_POLICY",
-            "SERVICE_CONTROL_POLICY",
+            "IDENTITY_POLICY", "RESOURCE_POLICY", "SERVICE_CONTROL_POLICY"
         ]
     }
 }
@@ -1972,9 +1808,9 @@ impl AsRef<str> for PolicyType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let locale = unimplemented!();
 /// match locale {
@@ -2004,22 +1840,14 @@ impl AsRef<str> for PolicyType {
 /// Specifically, when `locale` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Locale::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Locale {
     #[allow(missing_docs)] // documentation missing in model
     De,
@@ -2042,7 +1870,7 @@ pub enum Locale {
     #[allow(missing_docs)] // documentation missing in model
     ZhTw,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Locale {
     fn from(s: &str) -> Self {
@@ -2057,17 +1885,17 @@ impl std::convert::From<&str> for Locale {
             "PT_BR" => Locale::PtBr,
             "ZH_CN" => Locale::ZhCn,
             "ZH_TW" => Locale::ZhTw,
-            other => Locale::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Locale::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Locale {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Locale::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Locale::from(s))
+                }
+            }
 impl Locale {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2082,13 +1910,13 @@ impl Locale {
             Locale::PtBr => "PT_BR",
             Locale::ZhCn => "ZH_CN",
             Locale::ZhTw => "ZH_TW",
-            Locale::Unknown(value) => value.as_str(),
+            Locale::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DE", "EN", "ES", "FR", "IT", "JA", "KO", "PT_BR", "ZH_CN", "ZH_TW",
+            "DE", "EN", "ES", "FR", "IT", "JA", "KO", "PT_BR", "ZH_CN", "ZH_TW"
         ]
     }
 }
@@ -2104,9 +1932,9 @@ impl AsRef<str> for Locale {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let findingstatusupdate = unimplemented!();
 /// match findingstatusupdate {
@@ -2128,60 +1956,52 @@ impl AsRef<str> for Locale {
 /// Specifically, when `findingstatusupdate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FindingStatusUpdate::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FindingStatusUpdate {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Archived,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FindingStatusUpdate {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => FindingStatusUpdate::Active,
             "ARCHIVED" => FindingStatusUpdate::Archived,
-            other => {
-                FindingStatusUpdate::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FindingStatusUpdate::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FindingStatusUpdate {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FindingStatusUpdate::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FindingStatusUpdate::from(s))
+                }
+            }
 impl FindingStatusUpdate {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FindingStatusUpdate::Active => "ACTIVE",
             FindingStatusUpdate::Archived => "ARCHIVED",
-            FindingStatusUpdate::Unknown(value) => value.as_str(),
+            FindingStatusUpdate::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "ARCHIVED"]
+        &[
+            "ACTIVE", "ARCHIVED"
+        ]
     }
 }
 impl AsRef<str> for FindingStatusUpdate {
@@ -2193,7 +2013,7 @@ impl AsRef<str> for FindingStatusUpdate {
 /// <p>Contains information about CloudTrail access.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudTrailDetails {
+pub struct CloudTrailDetails  {
     /// <p>A <code>Trail</code> object that contains settings for a trail.</p>
     #[doc(hidden)]
     pub trails: std::option::Option<std::vec::Vec<crate::model::Trail>>,
@@ -2209,25 +2029,25 @@ pub struct CloudTrailDetails {
 }
 impl CloudTrailDetails {
     /// <p>A <code>Trail</code> object that contains settings for a trail.</p>
-    pub fn trails(&self) -> std::option::Option<&[crate::model::Trail]> {
+    pub fn trails(&self) -> std::option::Option<& [crate::model::Trail]> {
         self.trails.as_deref()
     }
     /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last accessed information.</p>
-    pub fn access_role(&self) -> std::option::Option<&str> {
+    pub fn access_role(&self) -> std::option::Option<& str> {
         self.access_role.as_deref()
     }
     /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
 /// See [`CloudTrailDetails`](crate::model::CloudTrailDetails).
 pub mod cloud_trail_details {
-
+    
     /// A builder for [`CloudTrailDetails`](crate::model::CloudTrailDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2244,17 +2064,13 @@ pub mod cloud_trail_details {
         /// <p>A <code>Trail</code> object that contains settings for a trail.</p>
         pub fn trails(mut self, input: crate::model::Trail) -> Self {
             let mut v = self.trails.unwrap_or_default();
-            v.push(input);
-            self.trails = Some(v);
-            self
+                            v.push(input);
+                            self.trails = Some(v);
+                            self
         }
         /// <p>A <code>Trail</code> object that contains settings for a trail.</p>
-        pub fn set_trails(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Trail>>,
-        ) -> Self {
-            self.trails = input;
-            self
+        pub fn set_trails(mut self, input: std::option::Option<std::vec::Vec<crate::model::Trail>>) -> Self {
+            self.trails = input; self
         }
         /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last accessed information.</p>
         pub fn access_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2263,8 +2079,7 @@ pub mod cloud_trail_details {
         }
         /// <p>The ARN of the service role that IAM Access Analyzer uses to access your CloudTrail trail and service last accessed information.</p>
         pub fn set_access_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.access_role = input;
-            self
+            self.access_role = input; self
         }
         /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2272,12 +2087,8 @@ pub mod cloud_trail_details {
             self
         }
         /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2285,23 +2096,25 @@ pub mod cloud_trail_details {
             self
         }
         /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// Consumes the builder and constructs a [`CloudTrailDetails`](crate::model::CloudTrailDetails).
         pub fn build(self) -> crate::model::CloudTrailDetails {
             crate::model::CloudTrailDetails {
-                trails: self.trails,
-                access_role: self.access_role,
-                start_time: self.start_time,
-                end_time: self.end_time,
+                trails: self.trails
+                ,
+                access_role: self.access_role
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudTrailDetails {
     /// Creates a new builder-style object to manufacture [`CloudTrailDetails`](crate::model::CloudTrailDetails).
@@ -2313,7 +2126,7 @@ impl CloudTrailDetails {
 /// <p>Contains details about the CloudTrail trail being analyzed to generate a policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Trail {
+pub struct Trail  {
     /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
     #[doc(hidden)]
     pub cloud_trail_arn: std::option::Option<std::string::String>,
@@ -2326,11 +2139,11 @@ pub struct Trail {
 }
 impl Trail {
     /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
-    pub fn cloud_trail_arn(&self) -> std::option::Option<&str> {
+    pub fn cloud_trail_arn(&self) -> std::option::Option<& str> {
         self.cloud_trail_arn.as_deref()
     }
     /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
-    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn regions(&self) -> std::option::Option<& [std::string::String]> {
         self.regions.as_deref()
     }
     /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
@@ -2340,7 +2153,7 @@ impl Trail {
 }
 /// See [`Trail`](crate::model::Trail).
 pub mod trail {
-
+    
     /// A builder for [`Trail`](crate::model::Trail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2355,12 +2168,8 @@ pub mod trail {
             self
         }
         /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
-        pub fn set_cloud_trail_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cloud_trail_arn = input;
-            self
+        pub fn set_cloud_trail_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cloud_trail_arn = input; self
         }
         /// Appends an item to `regions`.
         ///
@@ -2369,17 +2178,13 @@ pub mod trail {
         /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
         pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(input.into());
-            self.regions = Some(v);
-            self
+                            v.push(input.into());
+                            self.regions = Some(v);
+                            self
         }
         /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
-        pub fn set_regions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.regions = input;
-            self
+        pub fn set_regions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.regions = input; self
         }
         /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
         pub fn all_regions(mut self, input: bool) -> Self {
@@ -2388,18 +2193,22 @@ pub mod trail {
         }
         /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
         pub fn set_all_regions(mut self, input: std::option::Option<bool>) -> Self {
-            self.all_regions = input;
-            self
+            self.all_regions = input; self
         }
         /// Consumes the builder and constructs a [`Trail`](crate::model::Trail).
         pub fn build(self) -> crate::model::Trail {
             crate::model::Trail {
-                cloud_trail_arn: self.cloud_trail_arn,
-                regions: self.regions,
-                all_regions: self.all_regions,
+                cloud_trail_arn: self.cloud_trail_arn
+                ,
+                regions: self.regions
+                ,
+                all_regions: self.all_regions
+                ,
             }
         }
     }
+    
+    
 }
 impl Trail {
     /// Creates a new builder-style object to manufacture [`Trail`](crate::model::Trail).
@@ -2411,20 +2220,20 @@ impl Trail {
 /// <p>Contains the ARN details about the IAM entity for which the policy is generated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicyGenerationDetails {
+pub struct PolicyGenerationDetails  {
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
     #[doc(hidden)]
     pub principal_arn: std::option::Option<std::string::String>,
 }
 impl PolicyGenerationDetails {
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    pub fn principal_arn(&self) -> std::option::Option<&str> {
+    pub fn principal_arn(&self) -> std::option::Option<& str> {
         self.principal_arn.as_deref()
     }
 }
 /// See [`PolicyGenerationDetails`](crate::model::PolicyGenerationDetails).
 pub mod policy_generation_details {
-
+    
     /// A builder for [`PolicyGenerationDetails`](crate::model::PolicyGenerationDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2437,20 +2246,19 @@ pub mod policy_generation_details {
             self
         }
         /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-        pub fn set_principal_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.principal_arn = input;
-            self
+        pub fn set_principal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.principal_arn = input; self
         }
         /// Consumes the builder and constructs a [`PolicyGenerationDetails`](crate::model::PolicyGenerationDetails).
         pub fn build(self) -> crate::model::PolicyGenerationDetails {
             crate::model::PolicyGenerationDetails {
-                principal_arn: self.principal_arn,
+                principal_arn: self.principal_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl PolicyGenerationDetails {
     /// Creates a new builder-style object to manufacture [`PolicyGenerationDetails`](crate::model::PolicyGenerationDetails).
@@ -2462,7 +2270,7 @@ impl PolicyGenerationDetails {
 /// <p>Contains details about the policy generation status and properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicyGeneration {
+pub struct PolicyGeneration  {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -2481,29 +2289,29 @@ pub struct PolicyGeneration {
 }
 impl PolicyGeneration {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    pub fn principal_arn(&self) -> std::option::Option<&str> {
+    pub fn principal_arn(&self) -> std::option::Option<& str> {
         self.principal_arn.as_deref()
     }
     /// <p>The status of the policy generation request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.status.as_ref()
     }
     /// <p>A timestamp of when the policy generation started.</p>
-    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_on(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.started_on.as_ref()
     }
     /// <p>A timestamp of when the policy generation was completed.</p>
-    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completed_on(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completed_on.as_ref()
     }
 }
 /// See [`PolicyGeneration`](crate::model::PolicyGeneration).
 pub mod policy_generation {
-
+    
     /// A builder for [`PolicyGeneration`](crate::model::PolicyGeneration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2521,8 +2329,7 @@ pub mod policy_generation {
         }
         /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
         pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2530,12 +2337,8 @@ pub mod policy_generation {
             self
         }
         /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-        pub fn set_principal_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.principal_arn = input;
-            self
+        pub fn set_principal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.principal_arn = input; self
         }
         /// <p>The status of the policy generation request.</p>
         pub fn status(mut self, input: crate::model::JobStatus) -> Self {
@@ -2544,8 +2347,7 @@ pub mod policy_generation {
         }
         /// <p>The status of the policy generation request.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>A timestamp of when the policy generation started.</p>
         pub fn started_on(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2553,12 +2355,8 @@ pub mod policy_generation {
             self
         }
         /// <p>A timestamp of when the policy generation started.</p>
-        pub fn set_started_on(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.started_on = input;
-            self
+        pub fn set_started_on(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.started_on = input; self
         }
         /// <p>A timestamp of when the policy generation was completed.</p>
         pub fn completed_on(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2566,24 +2364,27 @@ pub mod policy_generation {
             self
         }
         /// <p>A timestamp of when the policy generation was completed.</p>
-        pub fn set_completed_on(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.completed_on = input;
-            self
+        pub fn set_completed_on(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.completed_on = input; self
         }
         /// Consumes the builder and constructs a [`PolicyGeneration`](crate::model::PolicyGeneration).
         pub fn build(self) -> crate::model::PolicyGeneration {
             crate::model::PolicyGeneration {
-                job_id: self.job_id,
-                principal_arn: self.principal_arn,
-                status: self.status,
-                started_on: self.started_on,
-                completed_on: self.completed_on,
+                job_id: self.job_id
+                ,
+                principal_arn: self.principal_arn
+                ,
+                status: self.status
+                ,
+                started_on: self.started_on
+                ,
+                completed_on: self.completed_on
+                ,
             }
         }
     }
+    
+    
 }
 impl PolicyGeneration {
     /// Creates a new builder-style object to manufacture [`PolicyGeneration`](crate::model::PolicyGeneration).
@@ -2598,9 +2399,9 @@ impl PolicyGeneration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let jobstatus = unimplemented!();
 /// match jobstatus {
@@ -2624,22 +2425,14 @@ impl PolicyGeneration {
 /// Specifically, when `jobstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Canceled,
@@ -2650,7 +2443,7 @@ pub enum JobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobStatus {
     fn from(s: &str) -> Self {
@@ -2659,17 +2452,17 @@ impl std::convert::From<&str> for JobStatus {
             "FAILED" => JobStatus::Failed,
             "IN_PROGRESS" => JobStatus::InProgress,
             "SUCCEEDED" => JobStatus::Succeeded,
-            other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JobStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobStatus::from(s))
+                }
+            }
 impl JobStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2678,12 +2471,14 @@ impl JobStatus {
             JobStatus::Failed => "FAILED",
             JobStatus::InProgress => "IN_PROGRESS",
             JobStatus::Succeeded => "SUCCEEDED",
-            JobStatus::Unknown(value) => value.as_str(),
+            JobStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CANCELED", "FAILED", "IN_PROGRESS", "SUCCEEDED"]
+        &[
+            "CANCELED", "FAILED", "IN_PROGRESS", "SUCCEEDED"
+        ]
     }
 }
 impl AsRef<str> for JobStatus {
@@ -2695,14 +2490,13 @@ impl AsRef<str> for JobStatus {
 /// <p>Contains information about a finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FindingSummary {
+pub struct FindingSummary  {
     /// <p>The ID of the finding.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The external principal that has access to a resource within the zone of trust.</p>
     #[doc(hidden)]
-    pub principal:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub principal: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
     #[doc(hidden)]
     pub action: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2717,8 +2511,7 @@ pub struct FindingSummary {
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
     #[doc(hidden)]
-    pub condition:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub condition: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The time at which the finding was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -2743,22 +2536,19 @@ pub struct FindingSummary {
 }
 impl FindingSummary {
     /// <p>The ID of the finding.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The external principal that has access to a resource within the zone of trust.</p>
-    pub fn principal(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn principal(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.principal.as_ref()
     }
     /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
-    pub fn action(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn action(&self) -> std::option::Option<& [std::string::String]> {
         self.action.as_deref()
     }
     /// <p>The resource that the external principal has access to.</p>
-    pub fn resource(&self) -> std::option::Option<&str> {
+    pub fn resource(&self) -> std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>Indicates whether the finding reports a resource that has a policy that allows public access.</p>
@@ -2766,62 +2556,55 @@ impl FindingSummary {
         self.is_public
     }
     /// <p>The type of the resource that the external principal has access to.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
-    pub fn condition(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn condition(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.condition.as_ref()
     }
     /// <p>The time at which the finding was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time at which the resource-based policy that generated the finding was analyzed.</p>
-    pub fn analyzed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn analyzed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.analyzed_at.as_ref()
     }
     /// <p>The time at which the finding was most recently updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The status of the finding.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::FindingStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::FindingStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
-    pub fn resource_owner_account(&self) -> std::option::Option<&str> {
+    pub fn resource_owner_account(&self) -> std::option::Option<& str> {
         self.resource_owner_account.as_deref()
     }
     /// <p>The error that resulted in an Error finding.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
-    pub fn sources(&self) -> std::option::Option<&[crate::model::FindingSource]> {
+    pub fn sources(&self) -> std::option::Option<& [crate::model::FindingSource]> {
         self.sources.as_deref()
     }
 }
 /// See [`FindingSummary`](crate::model::FindingSummary).
 pub mod finding_summary {
-
+    
     /// A builder for [`FindingSummary`](crate::model::FindingSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) principal: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) principal: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) action: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) resource: std::option::Option<std::string::String>,
         pub(crate) is_public: std::option::Option<bool>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
-        pub(crate) condition: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) condition: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) analyzed_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -2838,33 +2621,22 @@ pub mod finding_summary {
         }
         /// <p>The ID of the finding.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Adds a key-value pair to `principal`.
         ///
         /// To override the contents of this collection use [`set_principal`](Self::set_principal).
         ///
         /// <p>The external principal that has access to a resource within the zone of trust.</p>
-        pub fn principal(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn principal(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.principal.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.principal = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.principal = Some(hash_map);
+                            self
         }
         /// <p>The external principal that has access to a resource within the zone of trust.</p>
-        pub fn set_principal(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.principal = input;
-            self
+        pub fn set_principal(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.principal = input; self
         }
         /// Appends an item to `action`.
         ///
@@ -2873,17 +2645,13 @@ pub mod finding_summary {
         /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
         pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.action.unwrap_or_default();
-            v.push(input.into());
-            self.action = Some(v);
-            self
+                            v.push(input.into());
+                            self.action = Some(v);
+                            self
         }
         /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.action = input; self
         }
         /// <p>The resource that the external principal has access to.</p>
         pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2892,8 +2660,7 @@ pub mod finding_summary {
         }
         /// <p>The resource that the external principal has access to.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource = input;
-            self
+            self.resource = input; self
         }
         /// <p>Indicates whether the finding reports a resource that has a policy that allows public access.</p>
         pub fn is_public(mut self, input: bool) -> Self {
@@ -2902,8 +2669,7 @@ pub mod finding_summary {
         }
         /// <p>Indicates whether the finding reports a resource that has a policy that allows public access.</p>
         pub fn set_is_public(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_public = input;
-            self
+            self.is_public = input; self
         }
         /// <p>The type of the resource that the external principal has access to.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
@@ -2911,37 +2677,23 @@ pub mod finding_summary {
             self
         }
         /// <p>The type of the resource that the external principal has access to.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// Adds a key-value pair to `condition`.
         ///
         /// To override the contents of this collection use [`set_condition`](Self::set_condition).
         ///
         /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
-        pub fn condition(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn condition(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.condition.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.condition = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.condition = Some(hash_map);
+                            self
         }
         /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
-        pub fn set_condition(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.condition = input;
-            self
+        pub fn set_condition(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.condition = input; self
         }
         /// <p>The time at which the finding was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2949,12 +2701,8 @@ pub mod finding_summary {
             self
         }
         /// <p>The time at which the finding was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time at which the resource-based policy that generated the finding was analyzed.</p>
         pub fn analyzed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2962,12 +2710,8 @@ pub mod finding_summary {
             self
         }
         /// <p>The time at which the resource-based policy that generated the finding was analyzed.</p>
-        pub fn set_analyzed_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.analyzed_at = input;
-            self
+        pub fn set_analyzed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.analyzed_at = input; self
         }
         /// <p>The time at which the finding was most recently updated.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2975,12 +2719,8 @@ pub mod finding_summary {
             self
         }
         /// <p>The time at which the finding was most recently updated.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// <p>The status of the finding.</p>
         pub fn status(mut self, input: crate::model::FindingStatus) -> Self {
@@ -2988,12 +2728,8 @@ pub mod finding_summary {
             self
         }
         /// <p>The status of the finding.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::FindingStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::FindingStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The Amazon Web Services account ID that owns the resource.</p>
         pub fn resource_owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3001,12 +2737,8 @@ pub mod finding_summary {
             self
         }
         /// <p>The Amazon Web Services account ID that owns the resource.</p>
-        pub fn set_resource_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_owner_account = input;
-            self
+        pub fn set_resource_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_owner_account = input; self
         }
         /// <p>The error that resulted in an Error finding.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3015,8 +2747,7 @@ pub mod finding_summary {
         }
         /// <p>The error that resulted in an Error finding.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// Appends an item to `sources`.
         ///
@@ -3025,38 +2756,50 @@ pub mod finding_summary {
         /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
         pub fn sources(mut self, input: crate::model::FindingSource) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input);
-            self.sources = Some(v);
-            self
+                            v.push(input);
+                            self.sources = Some(v);
+                            self
         }
         /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
-        pub fn set_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FindingSource>>,
-        ) -> Self {
-            self.sources = input;
-            self
+        pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::FindingSource>>) -> Self {
+            self.sources = input; self
         }
         /// Consumes the builder and constructs a [`FindingSummary`](crate::model::FindingSummary).
         pub fn build(self) -> crate::model::FindingSummary {
             crate::model::FindingSummary {
-                id: self.id,
-                principal: self.principal,
-                action: self.action,
-                resource: self.resource,
-                is_public: self.is_public,
-                resource_type: self.resource_type,
-                condition: self.condition,
-                created_at: self.created_at,
-                analyzed_at: self.analyzed_at,
-                updated_at: self.updated_at,
-                status: self.status,
-                resource_owner_account: self.resource_owner_account,
-                error: self.error,
-                sources: self.sources,
+                id: self.id
+                ,
+                principal: self.principal
+                ,
+                action: self.action
+                ,
+                resource: self.resource
+                ,
+                is_public: self.is_public
+                ,
+                resource_type: self.resource_type
+                ,
+                condition: self.condition
+                ,
+                created_at: self.created_at
+                ,
+                analyzed_at: self.analyzed_at
+                ,
+                updated_at: self.updated_at
+                ,
+                status: self.status
+                ,
+                resource_owner_account: self.resource_owner_account
+                ,
+                error: self.error
+                ,
+                sources: self.sources
+                ,
             }
         }
     }
+    
+    
 }
 impl FindingSummary {
     /// Creates a new builder-style object to manufacture [`FindingSummary`](crate::model::FindingSummary).
@@ -3068,7 +2811,7 @@ impl FindingSummary {
 /// <p>The source of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FindingSource {
+pub struct FindingSource  {
     /// <p>Indicates the type of access that generated the finding.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::FindingSourceType>,
@@ -3078,17 +2821,17 @@ pub struct FindingSource {
 }
 impl FindingSource {
     /// <p>Indicates the type of access that generated the finding.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::FindingSourceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::FindingSourceType> {
         self.r#type.as_ref()
     }
     /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
-    pub fn detail(&self) -> std::option::Option<&crate::model::FindingSourceDetail> {
+    pub fn detail(&self) -> std::option::Option<& crate::model::FindingSourceDetail> {
         self.detail.as_ref()
     }
 }
 /// See [`FindingSource`](crate::model::FindingSource).
 pub mod finding_source {
-
+    
     /// A builder for [`FindingSource`](crate::model::FindingSource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3102,12 +2845,8 @@ pub mod finding_source {
             self
         }
         /// <p>Indicates the type of access that generated the finding.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::FindingSourceType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::FindingSourceType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
         pub fn detail(mut self, input: crate::model::FindingSourceDetail) -> Self {
@@ -3115,21 +2854,21 @@ pub mod finding_source {
             self
         }
         /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
-        pub fn set_detail(
-            mut self,
-            input: std::option::Option<crate::model::FindingSourceDetail>,
-        ) -> Self {
-            self.detail = input;
-            self
+        pub fn set_detail(mut self, input: std::option::Option<crate::model::FindingSourceDetail>) -> Self {
+            self.detail = input; self
         }
         /// Consumes the builder and constructs a [`FindingSource`](crate::model::FindingSource).
         pub fn build(self) -> crate::model::FindingSource {
             crate::model::FindingSource {
-                r#type: self.r#type,
-                detail: self.detail,
+                r#type: self.r#type
+                ,
+                detail: self.detail
+                ,
             }
         }
     }
+    
+    
 }
 impl FindingSource {
     /// Creates a new builder-style object to manufacture [`FindingSource`](crate::model::FindingSource).
@@ -3141,7 +2880,7 @@ impl FindingSource {
 /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FindingSourceDetail {
+pub struct FindingSourceDetail  {
     /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
     #[doc(hidden)]
     pub access_point_arn: std::option::Option<std::string::String>,
@@ -3151,17 +2890,17 @@ pub struct FindingSourceDetail {
 }
 impl FindingSourceDetail {
     /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
-    pub fn access_point_arn(&self) -> std::option::Option<&str> {
+    pub fn access_point_arn(&self) -> std::option::Option<& str> {
         self.access_point_arn.as_deref()
     }
     /// <p>The account of the cross-account access point that generated the finding.</p>
-    pub fn access_point_account(&self) -> std::option::Option<&str> {
+    pub fn access_point_account(&self) -> std::option::Option<& str> {
         self.access_point_account.as_deref()
     }
 }
 /// See [`FindingSourceDetail`](crate::model::FindingSourceDetail).
 pub mod finding_source_detail {
-
+    
     /// A builder for [`FindingSourceDetail`](crate::model::FindingSourceDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3175,12 +2914,8 @@ pub mod finding_source_detail {
             self
         }
         /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
-        pub fn set_access_point_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_point_arn = input;
-            self
+        pub fn set_access_point_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_point_arn = input; self
         }
         /// <p>The account of the cross-account access point that generated the finding.</p>
         pub fn access_point_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3188,21 +2923,21 @@ pub mod finding_source_detail {
             self
         }
         /// <p>The account of the cross-account access point that generated the finding.</p>
-        pub fn set_access_point_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_point_account = input;
-            self
+        pub fn set_access_point_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_point_account = input; self
         }
         /// Consumes the builder and constructs a [`FindingSourceDetail`](crate::model::FindingSourceDetail).
         pub fn build(self) -> crate::model::FindingSourceDetail {
             crate::model::FindingSourceDetail {
-                access_point_arn: self.access_point_arn,
-                access_point_account: self.access_point_account,
+                access_point_arn: self.access_point_arn
+                ,
+                access_point_account: self.access_point_account
+                ,
             }
         }
     }
+    
+    
 }
 impl FindingSourceDetail {
     /// Creates a new builder-style object to manufacture [`FindingSourceDetail`](crate::model::FindingSourceDetail).
@@ -3217,9 +2952,9 @@ impl FindingSourceDetail {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let findingsourcetype = unimplemented!();
 /// match findingsourcetype {
@@ -3243,22 +2978,14 @@ impl FindingSourceDetail {
 /// Specifically, when `findingsourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FindingSourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FindingSourceType {
     #[allow(missing_docs)] // documentation missing in model
     BucketAcl,
@@ -3269,7 +2996,7 @@ pub enum FindingSourceType {
     #[allow(missing_docs)] // documentation missing in model
     S3AccessPointAccount,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FindingSourceType {
     fn from(s: &str) -> Self {
@@ -3278,19 +3005,17 @@ impl std::convert::From<&str> for FindingSourceType {
             "POLICY" => FindingSourceType::Policy,
             "S3_ACCESS_POINT" => FindingSourceType::S3AccessPoint,
             "S3_ACCESS_POINT_ACCOUNT" => FindingSourceType::S3AccessPointAccount,
-            other => {
-                FindingSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FindingSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FindingSourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FindingSourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FindingSourceType::from(s))
+                }
+            }
 impl FindingSourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3299,16 +3024,13 @@ impl FindingSourceType {
             FindingSourceType::Policy => "POLICY",
             FindingSourceType::S3AccessPoint => "S3_ACCESS_POINT",
             FindingSourceType::S3AccessPointAccount => "S3_ACCESS_POINT_ACCOUNT",
-            FindingSourceType::Unknown(value) => value.as_str(),
+            FindingSourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BUCKET_ACL",
-            "POLICY",
-            "S3_ACCESS_POINT",
-            "S3_ACCESS_POINT_ACCOUNT",
+            "BUCKET_ACL", "POLICY", "S3_ACCESS_POINT", "S3_ACCESS_POINT_ACCOUNT"
         ]
     }
 }
@@ -3324,9 +3046,9 @@ impl AsRef<str> for FindingSourceType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let findingstatus = unimplemented!();
 /// match findingstatus {
@@ -3349,22 +3071,14 @@ impl AsRef<str> for FindingSourceType {
 /// Specifically, when `findingstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FindingStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FindingStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -3373,7 +3087,7 @@ pub enum FindingStatus {
     #[allow(missing_docs)] // documentation missing in model
     Resolved,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FindingStatus {
     fn from(s: &str) -> Self {
@@ -3381,17 +3095,17 @@ impl std::convert::From<&str> for FindingStatus {
             "ACTIVE" => FindingStatus::Active,
             "ARCHIVED" => FindingStatus::Archived,
             "RESOLVED" => FindingStatus::Resolved,
-            other => FindingStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FindingStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FindingStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FindingStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FindingStatus::from(s))
+                }
+            }
 impl FindingStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3399,12 +3113,14 @@ impl FindingStatus {
             FindingStatus::Active => "ACTIVE",
             FindingStatus::Archived => "ARCHIVED",
             FindingStatus::Resolved => "RESOLVED",
-            FindingStatus::Unknown(value) => value.as_str(),
+            FindingStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "ARCHIVED", "RESOLVED"]
+        &[
+            "ACTIVE", "ARCHIVED", "RESOLVED"
+        ]
     }
 }
 impl AsRef<str> for FindingStatus {
@@ -3419,9 +3135,9 @@ impl AsRef<str> for FindingStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -3454,22 +3170,14 @@ impl AsRef<str> for FindingStatus {
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AwsEc2Snapshot,
@@ -3498,7 +3206,7 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AwsSecretsmanagerSecret,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
@@ -3516,17 +3224,17 @@ impl std::convert::From<&str> for ResourceType {
             "AWS::SNS::Topic" => ResourceType::AwsSnsTopic,
             "AWS::SQS::Queue" => ResourceType::AwsSqsQueue,
             "AWS::SecretsManager::Secret" => ResourceType::AwsSecretsmanagerSecret,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3544,25 +3252,13 @@ impl ResourceType {
             ResourceType::AwsSnsTopic => "AWS::SNS::Topic",
             ResourceType::AwsSqsQueue => "AWS::SQS::Queue",
             ResourceType::AwsSecretsmanagerSecret => "AWS::SecretsManager::Secret",
-            ResourceType::Unknown(value) => value.as_str(),
+            ResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AWS::EC2::Snapshot",
-            "AWS::ECR::Repository",
-            "AWS::EFS::FileSystem",
-            "AWS::IAM::Role",
-            "AWS::KMS::Key",
-            "AWS::Lambda::Function",
-            "AWS::Lambda::LayerVersion",
-            "AWS::RDS::DBClusterSnapshot",
-            "AWS::RDS::DBSnapshot",
-            "AWS::S3::Bucket",
-            "AWS::SNS::Topic",
-            "AWS::SQS::Queue",
-            "AWS::SecretsManager::Secret",
+            "AWS::EC2::Snapshot", "AWS::ECR::Repository", "AWS::EFS::FileSystem", "AWS::IAM::Role", "AWS::KMS::Key", "AWS::Lambda::Function", "AWS::Lambda::LayerVersion", "AWS::RDS::DBClusterSnapshot", "AWS::RDS::DBSnapshot", "AWS::S3::Bucket", "AWS::SNS::Topic", "AWS::SQS::Queue", "AWS::SecretsManager::Secret"
         ]
     }
 }
@@ -3575,7 +3271,7 @@ impl AsRef<str> for ResourceType {
 /// <p>The criteria used to sort.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SortCriteria {
+pub struct SortCriteria  {
     /// <p>The name of the attribute to sort on.</p>
     #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
@@ -3585,17 +3281,17 @@ pub struct SortCriteria {
 }
 impl SortCriteria {
     /// <p>The name of the attribute to sort on.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> std::option::Option<& str> {
         self.attribute_name.as_deref()
     }
     /// <p>The sort order, ascending or descending.</p>
-    pub fn order_by(&self) -> std::option::Option<&crate::model::OrderBy> {
+    pub fn order_by(&self) -> std::option::Option<& crate::model::OrderBy> {
         self.order_by.as_ref()
     }
 }
 /// See [`SortCriteria`](crate::model::SortCriteria).
 pub mod sort_criteria {
-
+    
     /// A builder for [`SortCriteria`](crate::model::SortCriteria).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3609,12 +3305,8 @@ pub mod sort_criteria {
             self
         }
         /// <p>The name of the attribute to sort on.</p>
-        pub fn set_attribute_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.attribute_name = input;
-            self
+        pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.attribute_name = input; self
         }
         /// <p>The sort order, ascending or descending.</p>
         pub fn order_by(mut self, input: crate::model::OrderBy) -> Self {
@@ -3623,17 +3315,20 @@ pub mod sort_criteria {
         }
         /// <p>The sort order, ascending or descending.</p>
         pub fn set_order_by(mut self, input: std::option::Option<crate::model::OrderBy>) -> Self {
-            self.order_by = input;
-            self
+            self.order_by = input; self
         }
         /// Consumes the builder and constructs a [`SortCriteria`](crate::model::SortCriteria).
         pub fn build(self) -> crate::model::SortCriteria {
             crate::model::SortCriteria {
-                attribute_name: self.attribute_name,
-                order_by: self.order_by,
+                attribute_name: self.attribute_name
+                ,
+                order_by: self.order_by
+                ,
             }
         }
     }
+    
+    
 }
 impl SortCriteria {
     /// Creates a new builder-style object to manufacture [`SortCriteria`](crate::model::SortCriteria).
@@ -3648,9 +3343,9 @@ impl SortCriteria {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let orderby = unimplemented!();
 /// match orderby {
@@ -3672,58 +3367,52 @@ impl SortCriteria {
 /// Specifically, when `orderby` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OrderBy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OrderBy {
     #[allow(missing_docs)] // documentation missing in model
     Asc,
     #[allow(missing_docs)] // documentation missing in model
     Desc,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrderBy {
     fn from(s: &str) -> Self {
         match s {
             "ASC" => OrderBy::Asc,
             "DESC" => OrderBy::Desc,
-            other => OrderBy::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OrderBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OrderBy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OrderBy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OrderBy::from(s))
+                }
+            }
 impl OrderBy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrderBy::Asc => "ASC",
             OrderBy::Desc => "DESC",
-            OrderBy::Unknown(value) => value.as_str(),
+            OrderBy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASC", "DESC"]
+        &[
+            "ASC", "DESC"
+        ]
     }
 }
 impl AsRef<str> for OrderBy {
@@ -3735,7 +3424,7 @@ impl AsRef<str> for OrderBy {
 /// <p>Contains the ARN of the analyzed resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnalyzedResourceSummary {
+pub struct AnalyzedResourceSummary  {
     /// <p>The ARN of the analyzed resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -3748,21 +3437,21 @@ pub struct AnalyzedResourceSummary {
 }
 impl AnalyzedResourceSummary {
     /// <p>The ARN of the analyzed resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
-    pub fn resource_owner_account(&self) -> std::option::Option<&str> {
+    pub fn resource_owner_account(&self) -> std::option::Option<& str> {
         self.resource_owner_account.as_deref()
     }
     /// <p>The type of resource that was analyzed.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
 }
 /// See [`AnalyzedResourceSummary`](crate::model::AnalyzedResourceSummary).
 pub mod analyzed_resource_summary {
-
+    
     /// A builder for [`AnalyzedResourceSummary`](crate::model::AnalyzedResourceSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3778,8 +3467,7 @@ pub mod analyzed_resource_summary {
         }
         /// <p>The ARN of the analyzed resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The Amazon Web Services account ID that owns the resource.</p>
         pub fn resource_owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3787,12 +3475,8 @@ pub mod analyzed_resource_summary {
             self
         }
         /// <p>The Amazon Web Services account ID that owns the resource.</p>
-        pub fn set_resource_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_owner_account = input;
-            self
+        pub fn set_resource_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_owner_account = input; self
         }
         /// <p>The type of resource that was analyzed.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
@@ -3800,22 +3484,23 @@ pub mod analyzed_resource_summary {
             self
         }
         /// <p>The type of resource that was analyzed.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// Consumes the builder and constructs a [`AnalyzedResourceSummary`](crate::model::AnalyzedResourceSummary).
         pub fn build(self) -> crate::model::AnalyzedResourceSummary {
             crate::model::AnalyzedResourceSummary {
-                resource_arn: self.resource_arn,
-                resource_owner_account: self.resource_owner_account,
-                resource_type: self.resource_type,
+                resource_arn: self.resource_arn
+                ,
+                resource_owner_account: self.resource_owner_account
+                ,
+                resource_type: self.resource_type
+                ,
             }
         }
     }
+    
+    
 }
 impl AnalyzedResourceSummary {
     /// Creates a new builder-style object to manufacture [`AnalyzedResourceSummary`](crate::model::AnalyzedResourceSummary).
@@ -3827,7 +3512,7 @@ impl AnalyzedResourceSummary {
 /// <p>Contains a summary of information about an access preview.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessPreviewSummary {
+pub struct AccessPreviewSummary  {
     /// <p>The unique ID for the access preview.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3837,11 +3522,11 @@ pub struct AccessPreviewSummary {
     /// <p>The time at which the access preview was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the access preview.</p>
-    /// <ul>
-    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
-    /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li>
-    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
+    /// <p>The status of the access preview.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li> 
+    /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li> 
+    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::AccessPreviewStatus>,
@@ -3851,34 +3536,34 @@ pub struct AccessPreviewSummary {
 }
 impl AccessPreviewSummary {
     /// <p>The unique ID for the access preview.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN of the analyzer used to generate the access preview.</p>
-    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
+    pub fn analyzer_arn(&self) -> std::option::Option<& str> {
         self.analyzer_arn.as_deref()
     }
     /// <p>The time at which the access preview was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The status of the access preview.</p>
-    /// <ul>
-    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
-    /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li>
-    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
+    /// <p>The status of the access preview.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li> 
+    /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li> 
+    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::AccessPreviewStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AccessPreviewStatus> {
         self.status.as_ref()
     }
     /// <p>Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.</p>
-    pub fn status_reason(&self) -> std::option::Option<&crate::model::AccessPreviewStatusReason> {
+    pub fn status_reason(&self) -> std::option::Option<& crate::model::AccessPreviewStatusReason> {
         self.status_reason.as_ref()
     }
 }
 /// See [`AccessPreviewSummary`](crate::model::AccessPreviewSummary).
 pub mod access_preview_summary {
-
+    
     /// A builder for [`AccessPreviewSummary`](crate::model::AccessPreviewSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3896,8 +3581,7 @@ pub mod access_preview_summary {
         }
         /// <p>The unique ID for the access preview.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ARN of the analyzer used to generate the access preview.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3906,8 +3590,7 @@ pub mod access_preview_summary {
         }
         /// <p>The ARN of the analyzer used to generate the access preview.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.analyzer_arn = input;
-            self
+            self.analyzer_arn = input; self
         }
         /// <p>The time at which the access preview was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3915,35 +3598,27 @@ pub mod access_preview_summary {
             self
         }
         /// <p>The time at which the access preview was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
-        /// <p>The status of the access preview.</p>
-        /// <ul>
-        /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
-        /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li>
-        /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
+        /// <p>The status of the access preview.</p> 
+        /// <ul> 
+        /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li> 
+        /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li> 
+        /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::AccessPreviewStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the access preview.</p>
-        /// <ul>
-        /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
-        /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li>
-        /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
+        /// <p>The status of the access preview.</p> 
+        /// <ul> 
+        /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li> 
+        /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li> 
+        /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AccessPreviewStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AccessPreviewStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.</p>
         pub fn status_reason(mut self, input: crate::model::AccessPreviewStatusReason) -> Self {
@@ -3951,24 +3626,27 @@ pub mod access_preview_summary {
             self
         }
         /// <p>Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.</p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<crate::model::AccessPreviewStatusReason>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<crate::model::AccessPreviewStatusReason>) -> Self {
+            self.status_reason = input; self
         }
         /// Consumes the builder and constructs a [`AccessPreviewSummary`](crate::model::AccessPreviewSummary).
         pub fn build(self) -> crate::model::AccessPreviewSummary {
             crate::model::AccessPreviewSummary {
-                id: self.id,
-                analyzer_arn: self.analyzer_arn,
-                created_at: self.created_at,
-                status: self.status,
-                status_reason: self.status_reason,
+                id: self.id
+                ,
+                analyzer_arn: self.analyzer_arn
+                ,
+                created_at: self.created_at
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessPreviewSummary {
     /// Creates a new builder-style object to manufacture [`AccessPreviewSummary`](crate::model::AccessPreviewSummary).
@@ -3980,20 +3658,20 @@ impl AccessPreviewSummary {
 /// <p>Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessPreviewStatusReason {
+pub struct AccessPreviewStatusReason  {
     /// <p>The reason code for the current status of the access preview.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::AccessPreviewStatusReasonCode>,
 }
 impl AccessPreviewStatusReason {
     /// <p>The reason code for the current status of the access preview.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::AccessPreviewStatusReasonCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::AccessPreviewStatusReasonCode> {
         self.code.as_ref()
     }
 }
 /// See [`AccessPreviewStatusReason`](crate::model::AccessPreviewStatusReason).
 pub mod access_preview_status_reason {
-
+    
     /// A builder for [`AccessPreviewStatusReason`](crate::model::AccessPreviewStatusReason).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4006,18 +3684,19 @@ pub mod access_preview_status_reason {
             self
         }
         /// <p>The reason code for the current status of the access preview.</p>
-        pub fn set_code(
-            mut self,
-            input: std::option::Option<crate::model::AccessPreviewStatusReasonCode>,
-        ) -> Self {
-            self.code = input;
-            self
+        pub fn set_code(mut self, input: std::option::Option<crate::model::AccessPreviewStatusReasonCode>) -> Self {
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`AccessPreviewStatusReason`](crate::model::AccessPreviewStatusReason).
         pub fn build(self) -> crate::model::AccessPreviewStatusReason {
-            crate::model::AccessPreviewStatusReason { code: self.code }
+            crate::model::AccessPreviewStatusReason {
+                code: self.code
+                ,
+            }
         }
     }
+    
+    
 }
 impl AccessPreviewStatusReason {
     /// Creates a new builder-style object to manufacture [`AccessPreviewStatusReason`](crate::model::AccessPreviewStatusReason).
@@ -4032,9 +3711,9 @@ impl AccessPreviewStatusReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accesspreviewstatusreasoncode = unimplemented!();
 /// match accesspreviewstatusreasoncode {
@@ -4056,60 +3735,52 @@ impl AccessPreviewStatusReason {
 /// Specifically, when `accesspreviewstatusreasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccessPreviewStatusReasonCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccessPreviewStatusReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     InternalError,
     #[allow(missing_docs)] // documentation missing in model
     InvalidConfiguration,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccessPreviewStatusReasonCode {
     fn from(s: &str) -> Self {
         match s {
             "INTERNAL_ERROR" => AccessPreviewStatusReasonCode::InternalError,
             "INVALID_CONFIGURATION" => AccessPreviewStatusReasonCode::InvalidConfiguration,
-            other => AccessPreviewStatusReasonCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AccessPreviewStatusReasonCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccessPreviewStatusReasonCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccessPreviewStatusReasonCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccessPreviewStatusReasonCode::from(s))
+                }
+            }
 impl AccessPreviewStatusReasonCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccessPreviewStatusReasonCode::InternalError => "INTERNAL_ERROR",
             AccessPreviewStatusReasonCode::InvalidConfiguration => "INVALID_CONFIGURATION",
-            AccessPreviewStatusReasonCode::Unknown(value) => value.as_str(),
+            AccessPreviewStatusReasonCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INTERNAL_ERROR", "INVALID_CONFIGURATION"]
+        &[
+            "INTERNAL_ERROR", "INVALID_CONFIGURATION"
+        ]
     }
 }
 impl AsRef<str> for AccessPreviewStatusReasonCode {
@@ -4124,9 +3795,9 @@ impl AsRef<str> for AccessPreviewStatusReasonCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accesspreviewstatus = unimplemented!();
 /// match accesspreviewstatus {
@@ -4149,22 +3820,14 @@ impl AsRef<str> for AccessPreviewStatusReasonCode {
 /// Specifically, when `accesspreviewstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccessPreviewStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccessPreviewStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -4173,7 +3836,7 @@ pub enum AccessPreviewStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccessPreviewStatus {
     fn from(s: &str) -> Self {
@@ -4181,19 +3844,17 @@ impl std::convert::From<&str> for AccessPreviewStatus {
             "COMPLETED" => AccessPreviewStatus::Completed,
             "CREATING" => AccessPreviewStatus::Creating,
             "FAILED" => AccessPreviewStatus::Failed,
-            other => {
-                AccessPreviewStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AccessPreviewStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccessPreviewStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccessPreviewStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccessPreviewStatus::from(s))
+                }
+            }
 impl AccessPreviewStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4201,12 +3862,14 @@ impl AccessPreviewStatus {
             AccessPreviewStatus::Completed => "COMPLETED",
             AccessPreviewStatus::Creating => "CREATING",
             AccessPreviewStatus::Failed => "FAILED",
-            AccessPreviewStatus::Unknown(value) => value.as_str(),
+            AccessPreviewStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "CREATING", "FAILED"]
+        &[
+            "COMPLETED", "CREATING", "FAILED"
+        ]
     }
 }
 impl AsRef<str> for AccessPreviewStatus {
@@ -4218,7 +3881,7 @@ impl AsRef<str> for AccessPreviewStatus {
 /// <p>An access preview finding generated by the access preview.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessPreviewFinding {
+pub struct AccessPreviewFinding  {
     /// <p>The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview findings and is not related to the finding ID in Access Analyzer.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -4230,15 +3893,13 @@ pub struct AccessPreviewFinding {
     pub existing_finding_status: std::option::Option<crate::model::FindingStatus>,
     /// <p>The external principal that has access to a resource within the zone of trust.</p>
     #[doc(hidden)]
-    pub principal:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub principal: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The action in the analyzed policy statement that an external principal has permission to perform.</p>
     #[doc(hidden)]
     pub action: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
     #[doc(hidden)]
-    pub condition:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub condition: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The resource that an external principal has access to. This is the resource associated with the access preview.</p>
     #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
@@ -4251,12 +3912,12 @@ pub struct AccessPreviewFinding {
     /// <p>The time at which the access preview finding was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p>
-    /// <ul>
-    /// <li> <p> <code>New</code> - The finding is for newly-introduced access.</p> </li>
-    /// <li> <p> <code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p> </li>
-    /// <li> <p> <code>Changed</code> - The preview finding is an existing finding with a change in status.</p> </li>
-    /// </ul>
+    /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p> 
+    /// <ul> 
+    /// <li> <p> <code>New</code> - The finding is for newly-introduced access.</p> </li> 
+    /// <li> <p> <code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p> </li> 
+    /// <li> <p> <code>Changed</code> - The preview finding is an existing finding with a change in status.</p> </li> 
+    /// </ul> 
     /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
     #[doc(hidden)]
     pub change_type: std::option::Option<crate::model::FindingChangeType>,
@@ -4275,37 +3936,31 @@ pub struct AccessPreviewFinding {
 }
 impl AccessPreviewFinding {
     /// <p>The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview findings and is not related to the finding ID in Access Analyzer.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.</p>
-    pub fn existing_finding_id(&self) -> std::option::Option<&str> {
+    pub fn existing_finding_id(&self) -> std::option::Option<& str> {
         self.existing_finding_id.as_deref()
     }
     /// <p>The existing status of the finding, provided only for existing findings.</p>
-    pub fn existing_finding_status(&self) -> std::option::Option<&crate::model::FindingStatus> {
+    pub fn existing_finding_status(&self) -> std::option::Option<& crate::model::FindingStatus> {
         self.existing_finding_status.as_ref()
     }
     /// <p>The external principal that has access to a resource within the zone of trust.</p>
-    pub fn principal(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn principal(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.principal.as_ref()
     }
     /// <p>The action in the analyzed policy statement that an external principal has permission to perform.</p>
-    pub fn action(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn action(&self) -> std::option::Option<& [std::string::String]> {
         self.action.as_deref()
     }
     /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
-    pub fn condition(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn condition(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.condition.as_ref()
     }
     /// <p>The resource that an external principal has access to. This is the resource associated with the access preview.</p>
-    pub fn resource(&self) -> std::option::Option<&str> {
+    pub fn resource(&self) -> std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
@@ -4313,56 +3968,52 @@ impl AccessPreviewFinding {
         self.is_public
     }
     /// <p>The type of the resource that can be accessed in the finding.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The time at which the access preview finding was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p>
-    /// <ul>
-    /// <li> <p> <code>New</code> - The finding is for newly-introduced access.</p> </li>
-    /// <li> <p> <code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p> </li>
-    /// <li> <p> <code>Changed</code> - The preview finding is an existing finding with a change in status.</p> </li>
-    /// </ul>
+    /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p> 
+    /// <ul> 
+    /// <li> <p> <code>New</code> - The finding is for newly-introduced access.</p> </li> 
+    /// <li> <p> <code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p> </li> 
+    /// <li> <p> <code>Changed</code> - The preview finding is an existing finding with a change in status.</p> </li> 
+    /// </ul> 
     /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
-    pub fn change_type(&self) -> std::option::Option<&crate::model::FindingChangeType> {
+    pub fn change_type(&self) -> std::option::Option<& crate::model::FindingChangeType> {
         self.change_type.as_ref()
     }
     /// <p>The preview status of the finding. This is what the status of the finding would be after permissions deployment. For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::FindingStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::FindingStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
-    pub fn resource_owner_account(&self) -> std::option::Option<&str> {
+    pub fn resource_owner_account(&self) -> std::option::Option<& str> {
         self.resource_owner_account.as_deref()
     }
     /// <p>An error.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
-    pub fn sources(&self) -> std::option::Option<&[crate::model::FindingSource]> {
+    pub fn sources(&self) -> std::option::Option<& [crate::model::FindingSource]> {
         self.sources.as_deref()
     }
 }
 /// See [`AccessPreviewFinding`](crate::model::AccessPreviewFinding).
 pub mod access_preview_finding {
-
+    
     /// A builder for [`AccessPreviewFinding`](crate::model::AccessPreviewFinding).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) existing_finding_id: std::option::Option<std::string::String>,
         pub(crate) existing_finding_status: std::option::Option<crate::model::FindingStatus>,
-        pub(crate) principal: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) principal: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) action: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) condition: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) condition: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) resource: std::option::Option<std::string::String>,
         pub(crate) is_public: std::option::Option<bool>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
@@ -4381,8 +4032,7 @@ pub mod access_preview_finding {
         }
         /// <p>The ID of the access preview finding. This ID uniquely identifies the element in the list of access preview findings and is not related to the finding ID in Access Analyzer.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.</p>
         pub fn existing_finding_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4390,12 +4040,8 @@ pub mod access_preview_finding {
             self
         }
         /// <p>The existing ID of the finding in IAM Access Analyzer, provided only for existing findings.</p>
-        pub fn set_existing_finding_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.existing_finding_id = input;
-            self
+        pub fn set_existing_finding_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.existing_finding_id = input; self
         }
         /// <p>The existing status of the finding, provided only for existing findings.</p>
         pub fn existing_finding_status(mut self, input: crate::model::FindingStatus) -> Self {
@@ -4403,37 +4049,23 @@ pub mod access_preview_finding {
             self
         }
         /// <p>The existing status of the finding, provided only for existing findings.</p>
-        pub fn set_existing_finding_status(
-            mut self,
-            input: std::option::Option<crate::model::FindingStatus>,
-        ) -> Self {
-            self.existing_finding_status = input;
-            self
+        pub fn set_existing_finding_status(mut self, input: std::option::Option<crate::model::FindingStatus>) -> Self {
+            self.existing_finding_status = input; self
         }
         /// Adds a key-value pair to `principal`.
         ///
         /// To override the contents of this collection use [`set_principal`](Self::set_principal).
         ///
         /// <p>The external principal that has access to a resource within the zone of trust.</p>
-        pub fn principal(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn principal(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.principal.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.principal = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.principal = Some(hash_map);
+                            self
         }
         /// <p>The external principal that has access to a resource within the zone of trust.</p>
-        pub fn set_principal(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.principal = input;
-            self
+        pub fn set_principal(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.principal = input; self
         }
         /// Appends an item to `action`.
         ///
@@ -4442,42 +4074,28 @@ pub mod access_preview_finding {
         /// <p>The action in the analyzed policy statement that an external principal has permission to perform.</p>
         pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.action.unwrap_or_default();
-            v.push(input.into());
-            self.action = Some(v);
-            self
+                            v.push(input.into());
+                            self.action = Some(v);
+                            self
         }
         /// <p>The action in the analyzed policy statement that an external principal has permission to perform.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.action = input; self
         }
         /// Adds a key-value pair to `condition`.
         ///
         /// To override the contents of this collection use [`set_condition`](Self::set_condition).
         ///
         /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
-        pub fn condition(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn condition(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.condition.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.condition = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.condition = Some(hash_map);
+                            self
         }
         /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
-        pub fn set_condition(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.condition = input;
-            self
+        pub fn set_condition(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.condition = input; self
         }
         /// <p>The resource that an external principal has access to. This is the resource associated with the access preview.</p>
         pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4486,8 +4104,7 @@ pub mod access_preview_finding {
         }
         /// <p>The resource that an external principal has access to. This is the resource associated with the access preview.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource = input;
-            self
+            self.resource = input; self
         }
         /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
         pub fn is_public(mut self, input: bool) -> Self {
@@ -4496,8 +4113,7 @@ pub mod access_preview_finding {
         }
         /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
         pub fn set_is_public(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_public = input;
-            self
+            self.is_public = input; self
         }
         /// <p>The type of the resource that can be accessed in the finding.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
@@ -4505,12 +4121,8 @@ pub mod access_preview_finding {
             self
         }
         /// <p>The type of the resource that can be accessed in the finding.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>The time at which the access preview finding was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4518,37 +4130,29 @@ pub mod access_preview_finding {
             self
         }
         /// <p>The time at which the access preview finding was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
-        /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p>
-        /// <ul>
-        /// <li> <p> <code>New</code> - The finding is for newly-introduced access.</p> </li>
-        /// <li> <p> <code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p> </li>
-        /// <li> <p> <code>Changed</code> - The preview finding is an existing finding with a change in status.</p> </li>
-        /// </ul>
+        /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p> 
+        /// <ul> 
+        /// <li> <p> <code>New</code> - The finding is for newly-introduced access.</p> </li> 
+        /// <li> <p> <code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p> </li> 
+        /// <li> <p> <code>Changed</code> - The preview finding is an existing finding with a change in status.</p> </li> 
+        /// </ul> 
         /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
         pub fn change_type(mut self, input: crate::model::FindingChangeType) -> Self {
             self.change_type = Some(input);
             self
         }
-        /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p>
-        /// <ul>
-        /// <li> <p> <code>New</code> - The finding is for newly-introduced access.</p> </li>
-        /// <li> <p> <code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p> </li>
-        /// <li> <p> <code>Changed</code> - The preview finding is an existing finding with a change in status.</p> </li>
-        /// </ul>
+        /// <p>Provides context on how the access preview finding compares to existing access identified in IAM Access Analyzer.</p> 
+        /// <ul> 
+        /// <li> <p> <code>New</code> - The finding is for newly-introduced access.</p> </li> 
+        /// <li> <p> <code>Unchanged</code> - The preview finding is an existing finding that would remain unchanged.</p> </li> 
+        /// <li> <p> <code>Changed</code> - The preview finding is an existing finding with a change in status.</p> </li> 
+        /// </ul> 
         /// <p>For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
-        pub fn set_change_type(
-            mut self,
-            input: std::option::Option<crate::model::FindingChangeType>,
-        ) -> Self {
-            self.change_type = input;
-            self
+        pub fn set_change_type(mut self, input: std::option::Option<crate::model::FindingChangeType>) -> Self {
+            self.change_type = input; self
         }
         /// <p>The preview status of the finding. This is what the status of the finding would be after permissions deployment. For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
         pub fn status(mut self, input: crate::model::FindingStatus) -> Self {
@@ -4556,12 +4160,8 @@ pub mod access_preview_finding {
             self
         }
         /// <p>The preview status of the finding. This is what the status of the finding would be after permissions deployment. For example, a <code>Changed</code> finding with preview status <code>Resolved</code> and existing status <code>Active</code> indicates the existing <code>Active</code> finding would become <code>Resolved</code> as a result of the proposed permissions change.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::FindingStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::FindingStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
         pub fn resource_owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4569,12 +4169,8 @@ pub mod access_preview_finding {
             self
         }
         /// <p>The Amazon Web Services account ID that owns the resource. For most Amazon Web Services resources, the owning account is the account in which the resource was created.</p>
-        pub fn set_resource_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_owner_account = input;
-            self
+        pub fn set_resource_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_owner_account = input; self
         }
         /// <p>An error.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4583,8 +4179,7 @@ pub mod access_preview_finding {
         }
         /// <p>An error.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// Appends an item to `sources`.
         ///
@@ -4593,39 +4188,52 @@ pub mod access_preview_finding {
         /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
         pub fn sources(mut self, input: crate::model::FindingSource) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input);
-            self.sources = Some(v);
-            self
+                            v.push(input);
+                            self.sources = Some(v);
+                            self
         }
         /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
-        pub fn set_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FindingSource>>,
-        ) -> Self {
-            self.sources = input;
-            self
+        pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::FindingSource>>) -> Self {
+            self.sources = input; self
         }
         /// Consumes the builder and constructs a [`AccessPreviewFinding`](crate::model::AccessPreviewFinding).
         pub fn build(self) -> crate::model::AccessPreviewFinding {
             crate::model::AccessPreviewFinding {
-                id: self.id,
-                existing_finding_id: self.existing_finding_id,
-                existing_finding_status: self.existing_finding_status,
-                principal: self.principal,
-                action: self.action,
-                condition: self.condition,
-                resource: self.resource,
-                is_public: self.is_public,
-                resource_type: self.resource_type,
-                created_at: self.created_at,
-                change_type: self.change_type,
-                status: self.status,
-                resource_owner_account: self.resource_owner_account,
-                error: self.error,
-                sources: self.sources,
+                id: self.id
+                ,
+                existing_finding_id: self.existing_finding_id
+                ,
+                existing_finding_status: self.existing_finding_status
+                ,
+                principal: self.principal
+                ,
+                action: self.action
+                ,
+                condition: self.condition
+                ,
+                resource: self.resource
+                ,
+                is_public: self.is_public
+                ,
+                resource_type: self.resource_type
+                ,
+                created_at: self.created_at
+                ,
+                change_type: self.change_type
+                ,
+                status: self.status
+                ,
+                resource_owner_account: self.resource_owner_account
+                ,
+                error: self.error
+                ,
+                sources: self.sources
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessPreviewFinding {
     /// Creates a new builder-style object to manufacture [`AccessPreviewFinding`](crate::model::AccessPreviewFinding).
@@ -4640,9 +4248,9 @@ impl AccessPreviewFinding {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let findingchangetype = unimplemented!();
 /// match findingchangetype {
@@ -4665,22 +4273,14 @@ impl AccessPreviewFinding {
 /// Specifically, when `findingchangetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FindingChangeType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FindingChangeType {
     #[allow(missing_docs)] // documentation missing in model
     Changed,
@@ -4689,7 +4289,7 @@ pub enum FindingChangeType {
     #[allow(missing_docs)] // documentation missing in model
     Unchanged,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FindingChangeType {
     fn from(s: &str) -> Self {
@@ -4697,19 +4297,17 @@ impl std::convert::From<&str> for FindingChangeType {
             "CHANGED" => FindingChangeType::Changed,
             "NEW" => FindingChangeType::New,
             "UNCHANGED" => FindingChangeType::Unchanged,
-            other => {
-                FindingChangeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FindingChangeType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FindingChangeType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FindingChangeType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FindingChangeType::from(s))
+                }
+            }
 impl FindingChangeType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4717,12 +4315,14 @@ impl FindingChangeType {
             FindingChangeType::Changed => "CHANGED",
             FindingChangeType::New => "NEW",
             FindingChangeType::Unchanged => "UNCHANGED",
-            FindingChangeType::Unknown(value) => value.as_str(),
+            FindingChangeType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CHANGED", "NEW", "UNCHANGED"]
+        &[
+            "CHANGED", "NEW", "UNCHANGED"
+        ]
     }
 }
 impl AsRef<str> for FindingChangeType {
@@ -4734,7 +4334,7 @@ impl AsRef<str> for FindingChangeType {
 /// <p>Contains the text for the generated policy and its details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeneratedPolicyResult {
+pub struct GeneratedPolicyResult  {
     /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.</p>
     #[doc(hidden)]
     pub properties: std::option::Option<crate::model::GeneratedPolicyProperties>,
@@ -4744,23 +4344,22 @@ pub struct GeneratedPolicyResult {
 }
 impl GeneratedPolicyResult {
     /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.</p>
-    pub fn properties(&self) -> std::option::Option<&crate::model::GeneratedPolicyProperties> {
+    pub fn properties(&self) -> std::option::Option<& crate::model::GeneratedPolicyProperties> {
         self.properties.as_ref()
     }
     /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
-    pub fn generated_policies(&self) -> std::option::Option<&[crate::model::GeneratedPolicy]> {
+    pub fn generated_policies(&self) -> std::option::Option<& [crate::model::GeneratedPolicy]> {
         self.generated_policies.as_deref()
     }
 }
 /// See [`GeneratedPolicyResult`](crate::model::GeneratedPolicyResult).
 pub mod generated_policy_result {
-
+    
     /// A builder for [`GeneratedPolicyResult`](crate::model::GeneratedPolicyResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) properties: std::option::Option<crate::model::GeneratedPolicyProperties>,
-        pub(crate) generated_policies:
-            std::option::Option<std::vec::Vec<crate::model::GeneratedPolicy>>,
+        pub(crate) generated_policies: std::option::Option<std::vec::Vec<crate::model::GeneratedPolicy>>,
     }
     impl Builder {
         /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.</p>
@@ -4769,12 +4368,8 @@ pub mod generated_policy_result {
             self
         }
         /// <p>A <code>GeneratedPolicyProperties</code> object that contains properties of the generated policy.</p>
-        pub fn set_properties(
-            mut self,
-            input: std::option::Option<crate::model::GeneratedPolicyProperties>,
-        ) -> Self {
-            self.properties = input;
-            self
+        pub fn set_properties(mut self, input: std::option::Option<crate::model::GeneratedPolicyProperties>) -> Self {
+            self.properties = input; self
         }
         /// Appends an item to `generated_policies`.
         ///
@@ -4783,26 +4378,26 @@ pub mod generated_policy_result {
         /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
         pub fn generated_policies(mut self, input: crate::model::GeneratedPolicy) -> Self {
             let mut v = self.generated_policies.unwrap_or_default();
-            v.push(input);
-            self.generated_policies = Some(v);
-            self
+                            v.push(input);
+                            self.generated_policies = Some(v);
+                            self
         }
         /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
-        pub fn set_generated_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GeneratedPolicy>>,
-        ) -> Self {
-            self.generated_policies = input;
-            self
+        pub fn set_generated_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::GeneratedPolicy>>) -> Self {
+            self.generated_policies = input; self
         }
         /// Consumes the builder and constructs a [`GeneratedPolicyResult`](crate::model::GeneratedPolicyResult).
         pub fn build(self) -> crate::model::GeneratedPolicyResult {
             crate::model::GeneratedPolicyResult {
-                properties: self.properties,
-                generated_policies: self.generated_policies,
+                properties: self.properties
+                ,
+                generated_policies: self.generated_policies
+                ,
             }
         }
     }
+    
+    
 }
 impl GeneratedPolicyResult {
     /// Creates a new builder-style object to manufacture [`GeneratedPolicyResult`](crate::model::GeneratedPolicyResult).
@@ -4814,20 +4409,20 @@ impl GeneratedPolicyResult {
 /// <p>Contains the text for the generated policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeneratedPolicy {
+pub struct GeneratedPolicy  {
     /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl GeneratedPolicy {
     /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`GeneratedPolicy`](crate::model::GeneratedPolicy).
 pub mod generated_policy {
-
+    
     /// A builder for [`GeneratedPolicy`](crate::model::GeneratedPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4841,16 +4436,18 @@ pub mod generated_policy {
         }
         /// <p>The text to use as the content for the new policy. The policy is created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">CreatePolicy</a> action.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`GeneratedPolicy`](crate::model::GeneratedPolicy).
         pub fn build(self) -> crate::model::GeneratedPolicy {
             crate::model::GeneratedPolicy {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl GeneratedPolicy {
     /// Creates a new builder-style object to manufacture [`GeneratedPolicy`](crate::model::GeneratedPolicy).
@@ -4862,7 +4459,7 @@ impl GeneratedPolicy {
 /// <p>Contains the generated policy details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeneratedPolicyProperties {
+pub struct GeneratedPolicyProperties  {
     /// <p>This value is set to <code>true</code> if the generated policy contains all possible actions for a service that IAM Access Analyzer identified from the CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
     #[doc(hidden)]
     pub is_complete: std::option::Option<bool>,
@@ -4879,19 +4476,17 @@ impl GeneratedPolicyProperties {
         self.is_complete
     }
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-    pub fn principal_arn(&self) -> std::option::Option<&str> {
+    pub fn principal_arn(&self) -> std::option::Option<& str> {
         self.principal_arn.as_deref()
     }
     /// <p>Lists details about the <code>Trail</code> used to generated policy.</p>
-    pub fn cloud_trail_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::CloudTrailProperties> {
+    pub fn cloud_trail_properties(&self) -> std::option::Option<& crate::model::CloudTrailProperties> {
         self.cloud_trail_properties.as_ref()
     }
 }
 /// See [`GeneratedPolicyProperties`](crate::model::GeneratedPolicyProperties).
 pub mod generated_policy_properties {
-
+    
     /// A builder for [`GeneratedPolicyProperties`](crate::model::GeneratedPolicyProperties).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4907,8 +4502,7 @@ pub mod generated_policy_properties {
         }
         /// <p>This value is set to <code>true</code> if the generated policy contains all possible actions for a service that IAM Access Analyzer identified from the CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
         pub fn set_is_complete(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_complete = input;
-            self
+            self.is_complete = input; self
         }
         /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
         pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4916,12 +4510,8 @@ pub mod generated_policy_properties {
             self
         }
         /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy.</p>
-        pub fn set_principal_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.principal_arn = input;
-            self
+        pub fn set_principal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.principal_arn = input; self
         }
         /// <p>Lists details about the <code>Trail</code> used to generated policy.</p>
         pub fn cloud_trail_properties(mut self, input: crate::model::CloudTrailProperties) -> Self {
@@ -4929,22 +4519,23 @@ pub mod generated_policy_properties {
             self
         }
         /// <p>Lists details about the <code>Trail</code> used to generated policy.</p>
-        pub fn set_cloud_trail_properties(
-            mut self,
-            input: std::option::Option<crate::model::CloudTrailProperties>,
-        ) -> Self {
-            self.cloud_trail_properties = input;
-            self
+        pub fn set_cloud_trail_properties(mut self, input: std::option::Option<crate::model::CloudTrailProperties>) -> Self {
+            self.cloud_trail_properties = input; self
         }
         /// Consumes the builder and constructs a [`GeneratedPolicyProperties`](crate::model::GeneratedPolicyProperties).
         pub fn build(self) -> crate::model::GeneratedPolicyProperties {
             crate::model::GeneratedPolicyProperties {
-                is_complete: self.is_complete,
-                principal_arn: self.principal_arn,
-                cloud_trail_properties: self.cloud_trail_properties,
+                is_complete: self.is_complete
+                ,
+                principal_arn: self.principal_arn
+                ,
+                cloud_trail_properties: self.cloud_trail_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl GeneratedPolicyProperties {
     /// Creates a new builder-style object to manufacture [`GeneratedPolicyProperties`](crate::model::GeneratedPolicyProperties).
@@ -4956,7 +4547,7 @@ impl GeneratedPolicyProperties {
 /// <p>Contains information about CloudTrail access.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudTrailProperties {
+pub struct CloudTrailProperties  {
     /// <p>A <code>TrailProperties</code> object that contains settings for trail properties.</p>
     #[doc(hidden)]
     pub trail_properties: std::option::Option<std::vec::Vec<crate::model::TrailProperties>>,
@@ -4969,26 +4560,25 @@ pub struct CloudTrailProperties {
 }
 impl CloudTrailProperties {
     /// <p>A <code>TrailProperties</code> object that contains settings for trail properties.</p>
-    pub fn trail_properties(&self) -> std::option::Option<&[crate::model::TrailProperties]> {
+    pub fn trail_properties(&self) -> std::option::Option<& [crate::model::TrailProperties]> {
         self.trail_properties.as_deref()
     }
     /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
 /// See [`CloudTrailProperties`](crate::model::CloudTrailProperties).
 pub mod cloud_trail_properties {
-
+    
     /// A builder for [`CloudTrailProperties`](crate::model::CloudTrailProperties).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) trail_properties:
-            std::option::Option<std::vec::Vec<crate::model::TrailProperties>>,
+        pub(crate) trail_properties: std::option::Option<std::vec::Vec<crate::model::TrailProperties>>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -5000,17 +4590,13 @@ pub mod cloud_trail_properties {
         /// <p>A <code>TrailProperties</code> object that contains settings for trail properties.</p>
         pub fn trail_properties(mut self, input: crate::model::TrailProperties) -> Self {
             let mut v = self.trail_properties.unwrap_or_default();
-            v.push(input);
-            self.trail_properties = Some(v);
-            self
+                            v.push(input);
+                            self.trail_properties = Some(v);
+                            self
         }
         /// <p>A <code>TrailProperties</code> object that contains settings for trail properties.</p>
-        pub fn set_trail_properties(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TrailProperties>>,
-        ) -> Self {
-            self.trail_properties = input;
-            self
+        pub fn set_trail_properties(mut self, input: std::option::Option<std::vec::Vec<crate::model::TrailProperties>>) -> Self {
+            self.trail_properties = input; self
         }
         /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5018,12 +4604,8 @@ pub mod cloud_trail_properties {
             self
         }
         /// <p>The start of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp before this time are not considered to generate a policy.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5031,22 +4613,23 @@ pub mod cloud_trail_properties {
             self
         }
         /// <p>The end of the time range for which IAM Access Analyzer reviews your CloudTrail events. Events with a timestamp after this time are not considered to generate a policy. If this is not included in the request, the default value is the current time.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// Consumes the builder and constructs a [`CloudTrailProperties`](crate::model::CloudTrailProperties).
         pub fn build(self) -> crate::model::CloudTrailProperties {
             crate::model::CloudTrailProperties {
-                trail_properties: self.trail_properties,
-                start_time: self.start_time,
-                end_time: self.end_time,
+                trail_properties: self.trail_properties
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudTrailProperties {
     /// Creates a new builder-style object to manufacture [`CloudTrailProperties`](crate::model::CloudTrailProperties).
@@ -5058,7 +4641,7 @@ impl CloudTrailProperties {
 /// <p>Contains details about the CloudTrail trail being analyzed to generate a policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrailProperties {
+pub struct TrailProperties  {
     /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
     #[doc(hidden)]
     pub cloud_trail_arn: std::option::Option<std::string::String>,
@@ -5071,11 +4654,11 @@ pub struct TrailProperties {
 }
 impl TrailProperties {
     /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
-    pub fn cloud_trail_arn(&self) -> std::option::Option<&str> {
+    pub fn cloud_trail_arn(&self) -> std::option::Option<& str> {
         self.cloud_trail_arn.as_deref()
     }
     /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
-    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn regions(&self) -> std::option::Option<& [std::string::String]> {
         self.regions.as_deref()
     }
     /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
@@ -5085,7 +4668,7 @@ impl TrailProperties {
 }
 /// See [`TrailProperties`](crate::model::TrailProperties).
 pub mod trail_properties {
-
+    
     /// A builder for [`TrailProperties`](crate::model::TrailProperties).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5100,12 +4683,8 @@ pub mod trail_properties {
             self
         }
         /// <p>Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.</p>
-        pub fn set_cloud_trail_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cloud_trail_arn = input;
-            self
+        pub fn set_cloud_trail_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cloud_trail_arn = input; self
         }
         /// Appends an item to `regions`.
         ///
@@ -5114,17 +4693,13 @@ pub mod trail_properties {
         /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
         pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regions.unwrap_or_default();
-            v.push(input.into());
-            self.regions = Some(v);
-            self
+                            v.push(input.into());
+                            self.regions = Some(v);
+                            self
         }
         /// <p>A list of regions to get CloudTrail data from and analyze to generate a policy.</p>
-        pub fn set_regions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.regions = input;
-            self
+        pub fn set_regions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.regions = input; self
         }
         /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
         pub fn all_regions(mut self, input: bool) -> Self {
@@ -5133,18 +4708,22 @@ pub mod trail_properties {
         }
         /// <p>Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>, IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.</p>
         pub fn set_all_regions(mut self, input: std::option::Option<bool>) -> Self {
-            self.all_regions = input;
-            self
+            self.all_regions = input; self
         }
         /// Consumes the builder and constructs a [`TrailProperties`](crate::model::TrailProperties).
         pub fn build(self) -> crate::model::TrailProperties {
             crate::model::TrailProperties {
-                cloud_trail_arn: self.cloud_trail_arn,
-                regions: self.regions,
-                all_regions: self.all_regions,
+                cloud_trail_arn: self.cloud_trail_arn
+                ,
+                regions: self.regions
+                ,
+                all_regions: self.all_regions
+                ,
             }
         }
     }
+    
+    
 }
 impl TrailProperties {
     /// Creates a new builder-style object to manufacture [`TrailProperties`](crate::model::TrailProperties).
@@ -5156,7 +4735,7 @@ impl TrailProperties {
 /// <p>Contains details about the policy generation request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobDetails {
+pub struct JobDetails  {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -5175,29 +4754,29 @@ pub struct JobDetails {
 }
 impl JobDetails {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The status of the job request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::JobStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::JobStatus> {
         self.status.as_ref()
     }
     /// <p>A timestamp of when the job was started.</p>
-    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_on(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.started_on.as_ref()
     }
     /// <p>A timestamp of when the job was completed.</p>
-    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completed_on(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completed_on.as_ref()
     }
     /// <p>The job error for the policy generation request.</p>
-    pub fn job_error(&self) -> std::option::Option<&crate::model::JobError> {
+    pub fn job_error(&self) -> std::option::Option<& crate::model::JobError> {
         self.job_error.as_ref()
     }
 }
 /// See [`JobDetails`](crate::model::JobDetails).
 pub mod job_details {
-
+    
     /// A builder for [`JobDetails`](crate::model::JobDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5215,8 +4794,7 @@ pub mod job_details {
         }
         /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The status of the job request.</p>
         pub fn status(mut self, input: crate::model::JobStatus) -> Self {
@@ -5225,8 +4803,7 @@ pub mod job_details {
         }
         /// <p>The status of the job request.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>A timestamp of when the job was started.</p>
         pub fn started_on(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5234,12 +4811,8 @@ pub mod job_details {
             self
         }
         /// <p>A timestamp of when the job was started.</p>
-        pub fn set_started_on(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.started_on = input;
-            self
+        pub fn set_started_on(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.started_on = input; self
         }
         /// <p>A timestamp of when the job was completed.</p>
         pub fn completed_on(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5247,12 +4820,8 @@ pub mod job_details {
             self
         }
         /// <p>A timestamp of when the job was completed.</p>
-        pub fn set_completed_on(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.completed_on = input;
-            self
+        pub fn set_completed_on(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.completed_on = input; self
         }
         /// <p>The job error for the policy generation request.</p>
         pub fn job_error(mut self, input: crate::model::JobError) -> Self {
@@ -5261,20 +4830,26 @@ pub mod job_details {
         }
         /// <p>The job error for the policy generation request.</p>
         pub fn set_job_error(mut self, input: std::option::Option<crate::model::JobError>) -> Self {
-            self.job_error = input;
-            self
+            self.job_error = input; self
         }
         /// Consumes the builder and constructs a [`JobDetails`](crate::model::JobDetails).
         pub fn build(self) -> crate::model::JobDetails {
             crate::model::JobDetails {
-                job_id: self.job_id,
-                status: self.status,
-                started_on: self.started_on,
-                completed_on: self.completed_on,
-                job_error: self.job_error,
+                job_id: self.job_id
+                ,
+                status: self.status
+                ,
+                started_on: self.started_on
+                ,
+                completed_on: self.completed_on
+                ,
+                job_error: self.job_error
+                ,
             }
         }
     }
+    
+    
 }
 impl JobDetails {
     /// Creates a new builder-style object to manufacture [`JobDetails`](crate::model::JobDetails).
@@ -5286,7 +4861,7 @@ impl JobDetails {
 /// <p>Contains the details about the policy generation error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobError {
+pub struct JobError  {
     /// <p>The job error code.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::JobErrorCode>,
@@ -5296,17 +4871,17 @@ pub struct JobError {
 }
 impl JobError {
     /// <p>The job error code.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::JobErrorCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::JobErrorCode> {
         self.code.as_ref()
     }
     /// <p>Specific information about the error. For example, which service quota was exceeded or which resource was not found.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`JobError`](crate::model::JobError).
 pub mod job_error {
-
+    
     /// A builder for [`JobError`](crate::model::JobError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5321,8 +4896,7 @@ pub mod job_error {
         }
         /// <p>The job error code.</p>
         pub fn set_code(mut self, input: std::option::Option<crate::model::JobErrorCode>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// <p>Specific information about the error. For example, which service quota was exceeded or which resource was not found.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5331,17 +4905,20 @@ pub mod job_error {
         }
         /// <p>Specific information about the error. For example, which service quota was exceeded or which resource was not found.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`JobError`](crate::model::JobError).
         pub fn build(self) -> crate::model::JobError {
             crate::model::JobError {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl JobError {
     /// Creates a new builder-style object to manufacture [`JobError`](crate::model::JobError).
@@ -5356,9 +4933,9 @@ impl JobError {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let joberrorcode = unimplemented!();
 /// match joberrorcode {
@@ -5382,22 +4959,14 @@ impl JobError {
 /// Specifically, when `joberrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AuthorizationError,
@@ -5408,7 +4977,7 @@ pub enum JobErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     ServiceQuotaExceededError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobErrorCode {
     fn from(s: &str) -> Self {
@@ -5417,17 +4986,17 @@ impl std::convert::From<&str> for JobErrorCode {
             "RESOURCE_NOT_FOUND_ERROR" => JobErrorCode::ResourceNotFoundError,
             "SERVICE_ERROR" => JobErrorCode::ServiceError,
             "SERVICE_QUOTA_EXCEEDED_ERROR" => JobErrorCode::ServiceQuotaExceededError,
-            other => JobErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => JobErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JobErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobErrorCode::from(s))
+                }
+            }
 impl JobErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5436,16 +5005,13 @@ impl JobErrorCode {
             JobErrorCode::ResourceNotFoundError => "RESOURCE_NOT_FOUND_ERROR",
             JobErrorCode::ServiceError => "SERVICE_ERROR",
             JobErrorCode::ServiceQuotaExceededError => "SERVICE_QUOTA_EXCEEDED_ERROR",
-            JobErrorCode::Unknown(value) => value.as_str(),
+            JobErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AUTHORIZATION_ERROR",
-            "RESOURCE_NOT_FOUND_ERROR",
-            "SERVICE_ERROR",
-            "SERVICE_QUOTA_EXCEEDED_ERROR",
+            "AUTHORIZATION_ERROR", "RESOURCE_NOT_FOUND_ERROR", "SERVICE_ERROR", "SERVICE_QUOTA_EXCEEDED_ERROR"
         ]
     }
 }
@@ -5458,14 +5024,13 @@ impl AsRef<str> for JobErrorCode {
 /// <p>Contains information about a finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Finding {
+pub struct Finding  {
     /// <p>The ID of the finding.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The external principal that access to a resource within the zone of trust.</p>
     #[doc(hidden)]
-    pub principal:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub principal: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
     #[doc(hidden)]
     pub action: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5480,8 +5045,7 @@ pub struct Finding {
     pub resource_type: std::option::Option<crate::model::ResourceType>,
     /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
     #[doc(hidden)]
-    pub condition:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub condition: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The time at which the finding was generated.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -5506,22 +5070,19 @@ pub struct Finding {
 }
 impl Finding {
     /// <p>The ID of the finding.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The external principal that access to a resource within the zone of trust.</p>
-    pub fn principal(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn principal(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.principal.as_ref()
     }
     /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
-    pub fn action(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn action(&self) -> std::option::Option<& [std::string::String]> {
         self.action.as_deref()
     }
     /// <p>The resource that an external principal has access to.</p>
-    pub fn resource(&self) -> std::option::Option<&str> {
+    pub fn resource(&self) -> std::option::Option<& str> {
         self.resource.as_deref()
     }
     /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
@@ -5529,62 +5090,55 @@ impl Finding {
         self.is_public
     }
     /// <p>The type of the resource identified in the finding.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
-    pub fn condition(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn condition(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.condition.as_ref()
     }
     /// <p>The time at which the finding was generated.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time at which the resource was analyzed.</p>
-    pub fn analyzed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn analyzed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.analyzed_at.as_ref()
     }
     /// <p>The time at which the finding was updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The current status of the finding.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::FindingStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::FindingStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
-    pub fn resource_owner_account(&self) -> std::option::Option<&str> {
+    pub fn resource_owner_account(&self) -> std::option::Option<& str> {
         self.resource_owner_account.as_deref()
     }
     /// <p>An error.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
     /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
-    pub fn sources(&self) -> std::option::Option<&[crate::model::FindingSource]> {
+    pub fn sources(&self) -> std::option::Option<& [crate::model::FindingSource]> {
         self.sources.as_deref()
     }
 }
 /// See [`Finding`](crate::model::Finding).
 pub mod finding {
-
+    
     /// A builder for [`Finding`](crate::model::Finding).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) principal: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) principal: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) action: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) resource: std::option::Option<std::string::String>,
         pub(crate) is_public: std::option::Option<bool>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
-        pub(crate) condition: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) condition: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) analyzed_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -5601,33 +5155,22 @@ pub mod finding {
         }
         /// <p>The ID of the finding.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Adds a key-value pair to `principal`.
         ///
         /// To override the contents of this collection use [`set_principal`](Self::set_principal).
         ///
         /// <p>The external principal that access to a resource within the zone of trust.</p>
-        pub fn principal(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn principal(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.principal.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.principal = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.principal = Some(hash_map);
+                            self
         }
         /// <p>The external principal that access to a resource within the zone of trust.</p>
-        pub fn set_principal(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.principal = input;
-            self
+        pub fn set_principal(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.principal = input; self
         }
         /// Appends an item to `action`.
         ///
@@ -5636,17 +5179,13 @@ pub mod finding {
         /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
         pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.action.unwrap_or_default();
-            v.push(input.into());
-            self.action = Some(v);
-            self
+                            v.push(input.into());
+                            self.action = Some(v);
+                            self
         }
         /// <p>The action in the analyzed policy statement that an external principal has permission to use.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.action = input; self
         }
         /// <p>The resource that an external principal has access to.</p>
         pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5655,8 +5194,7 @@ pub mod finding {
         }
         /// <p>The resource that an external principal has access to.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource = input;
-            self
+            self.resource = input; self
         }
         /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
         pub fn is_public(mut self, input: bool) -> Self {
@@ -5665,8 +5203,7 @@ pub mod finding {
         }
         /// <p>Indicates whether the policy that generated the finding allows public access to the resource.</p>
         pub fn set_is_public(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_public = input;
-            self
+            self.is_public = input; self
         }
         /// <p>The type of the resource identified in the finding.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
@@ -5674,37 +5211,23 @@ pub mod finding {
             self
         }
         /// <p>The type of the resource identified in the finding.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// Adds a key-value pair to `condition`.
         ///
         /// To override the contents of this collection use [`set_condition`](Self::set_condition).
         ///
         /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
-        pub fn condition(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn condition(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.condition.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.condition = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.condition = Some(hash_map);
+                            self
         }
         /// <p>The condition in the analyzed policy statement that resulted in a finding.</p>
-        pub fn set_condition(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.condition = input;
-            self
+        pub fn set_condition(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.condition = input; self
         }
         /// <p>The time at which the finding was generated.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5712,12 +5235,8 @@ pub mod finding {
             self
         }
         /// <p>The time at which the finding was generated.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time at which the resource was analyzed.</p>
         pub fn analyzed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5725,12 +5244,8 @@ pub mod finding {
             self
         }
         /// <p>The time at which the resource was analyzed.</p>
-        pub fn set_analyzed_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.analyzed_at = input;
-            self
+        pub fn set_analyzed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.analyzed_at = input; self
         }
         /// <p>The time at which the finding was updated.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5738,12 +5253,8 @@ pub mod finding {
             self
         }
         /// <p>The time at which the finding was updated.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// <p>The current status of the finding.</p>
         pub fn status(mut self, input: crate::model::FindingStatus) -> Self {
@@ -5751,12 +5262,8 @@ pub mod finding {
             self
         }
         /// <p>The current status of the finding.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::FindingStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::FindingStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The Amazon Web Services account ID that owns the resource.</p>
         pub fn resource_owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5764,12 +5271,8 @@ pub mod finding {
             self
         }
         /// <p>The Amazon Web Services account ID that owns the resource.</p>
-        pub fn set_resource_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_owner_account = input;
-            self
+        pub fn set_resource_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_owner_account = input; self
         }
         /// <p>An error.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5778,8 +5281,7 @@ pub mod finding {
         }
         /// <p>An error.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// Appends an item to `sources`.
         ///
@@ -5788,38 +5290,50 @@ pub mod finding {
         /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
         pub fn sources(mut self, input: crate::model::FindingSource) -> Self {
             let mut v = self.sources.unwrap_or_default();
-            v.push(input);
-            self.sources = Some(v);
-            self
+                            v.push(input);
+                            self.sources = Some(v);
+                            self
         }
         /// <p>The sources of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
-        pub fn set_sources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FindingSource>>,
-        ) -> Self {
-            self.sources = input;
-            self
+        pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::model::FindingSource>>) -> Self {
+            self.sources = input; self
         }
         /// Consumes the builder and constructs a [`Finding`](crate::model::Finding).
         pub fn build(self) -> crate::model::Finding {
             crate::model::Finding {
-                id: self.id,
-                principal: self.principal,
-                action: self.action,
-                resource: self.resource,
-                is_public: self.is_public,
-                resource_type: self.resource_type,
-                condition: self.condition,
-                created_at: self.created_at,
-                analyzed_at: self.analyzed_at,
-                updated_at: self.updated_at,
-                status: self.status,
-                resource_owner_account: self.resource_owner_account,
-                error: self.error,
-                sources: self.sources,
+                id: self.id
+                ,
+                principal: self.principal
+                ,
+                action: self.action
+                ,
+                resource: self.resource
+                ,
+                is_public: self.is_public
+                ,
+                resource_type: self.resource_type
+                ,
+                condition: self.condition
+                ,
+                created_at: self.created_at
+                ,
+                analyzed_at: self.analyzed_at
+                ,
+                updated_at: self.updated_at
+                ,
+                status: self.status
+                ,
+                resource_owner_account: self.resource_owner_account
+                ,
+                error: self.error
+                ,
+                sources: self.sources
+                ,
             }
         }
     }
+    
+    
 }
 impl Finding {
     /// Creates a new builder-style object to manufacture [`Finding`](crate::model::Finding).
@@ -5831,7 +5345,7 @@ impl Finding {
 /// <p>Contains details about the analyzed resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnalyzedResource {
+pub struct AnalyzedResource  {
     /// <p>The ARN of the resource that was analyzed.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -5868,23 +5382,23 @@ pub struct AnalyzedResource {
 }
 impl AnalyzedResource {
     /// <p>The ARN of the resource that was analyzed.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The type of the resource that was analyzed.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::model::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<& crate::model::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The time at which the finding was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time at which the resource was analyzed.</p>
-    pub fn analyzed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn analyzed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.analyzed_at.as_ref()
     }
     /// <p>The time at which the finding was updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>Indicates whether the policy that generated the finding grants public access to the resource.</p>
@@ -5892,29 +5406,29 @@ impl AnalyzedResource {
         self.is_public
     }
     /// <p>The actions that an external principal is granted permission to use by the policy that generated the finding.</p>
-    pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn actions(&self) -> std::option::Option<& [std::string::String]> {
         self.actions.as_deref()
     }
     /// <p>Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
-    pub fn shared_via(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn shared_via(&self) -> std::option::Option<& [std::string::String]> {
         self.shared_via.as_deref()
     }
     /// <p>The current status of the finding generated from the analyzed resource.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::FindingStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::FindingStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Web Services account ID that owns the resource.</p>
-    pub fn resource_owner_account(&self) -> std::option::Option<&str> {
+    pub fn resource_owner_account(&self) -> std::option::Option<& str> {
         self.resource_owner_account.as_deref()
     }
     /// <p>An error message.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> std::option::Option<& str> {
         self.error.as_deref()
     }
 }
 /// See [`AnalyzedResource`](crate::model::AnalyzedResource).
 pub mod analyzed_resource {
-
+    
     /// A builder for [`AnalyzedResource`](crate::model::AnalyzedResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5938,8 +5452,7 @@ pub mod analyzed_resource {
         }
         /// <p>The ARN of the resource that was analyzed.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The type of the resource that was analyzed.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
@@ -5947,12 +5460,8 @@ pub mod analyzed_resource {
             self
         }
         /// <p>The type of the resource that was analyzed.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<crate::model::ResourceType>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>The time at which the finding was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5960,12 +5469,8 @@ pub mod analyzed_resource {
             self
         }
         /// <p>The time at which the finding was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time at which the resource was analyzed.</p>
         pub fn analyzed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5973,12 +5478,8 @@ pub mod analyzed_resource {
             self
         }
         /// <p>The time at which the resource was analyzed.</p>
-        pub fn set_analyzed_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.analyzed_at = input;
-            self
+        pub fn set_analyzed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.analyzed_at = input; self
         }
         /// <p>The time at which the finding was updated.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5986,12 +5487,8 @@ pub mod analyzed_resource {
             self
         }
         /// <p>The time at which the finding was updated.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// <p>Indicates whether the policy that generated the finding grants public access to the resource.</p>
         pub fn is_public(mut self, input: bool) -> Self {
@@ -6000,8 +5497,7 @@ pub mod analyzed_resource {
         }
         /// <p>Indicates whether the policy that generated the finding grants public access to the resource.</p>
         pub fn set_is_public(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_public = input;
-            self
+            self.is_public = input; self
         }
         /// Appends an item to `actions`.
         ///
@@ -6010,17 +5506,13 @@ pub mod analyzed_resource {
         /// <p>The actions that an external principal is granted permission to use by the policy that generated the finding.</p>
         pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input.into());
-            self.actions = Some(v);
-            self
+                            v.push(input.into());
+                            self.actions = Some(v);
+                            self
         }
         /// <p>The actions that an external principal is granted permission to use by the policy that generated the finding.</p>
-        pub fn set_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.actions = input;
-            self
+        pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.actions = input; self
         }
         /// Appends an item to `shared_via`.
         ///
@@ -6029,17 +5521,13 @@ pub mod analyzed_resource {
         /// <p>Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
         pub fn shared_via(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.shared_via.unwrap_or_default();
-            v.push(input.into());
-            self.shared_via = Some(v);
-            self
+                            v.push(input.into());
+                            self.shared_via = Some(v);
+                            self
         }
         /// <p>Indicates how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
-        pub fn set_shared_via(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.shared_via = input;
-            self
+        pub fn set_shared_via(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.shared_via = input; self
         }
         /// <p>The current status of the finding generated from the analyzed resource.</p>
         pub fn status(mut self, input: crate::model::FindingStatus) -> Self {
@@ -6047,12 +5535,8 @@ pub mod analyzed_resource {
             self
         }
         /// <p>The current status of the finding generated from the analyzed resource.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::FindingStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::FindingStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The Amazon Web Services account ID that owns the resource.</p>
         pub fn resource_owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6060,12 +5544,8 @@ pub mod analyzed_resource {
             self
         }
         /// <p>The Amazon Web Services account ID that owns the resource.</p>
-        pub fn set_resource_owner_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_owner_account = input;
-            self
+        pub fn set_resource_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_owner_account = input; self
         }
         /// <p>An error message.</p>
         pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6074,26 +5554,38 @@ pub mod analyzed_resource {
         }
         /// <p>An error message.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error = input;
-            self
+            self.error = input; self
         }
         /// Consumes the builder and constructs a [`AnalyzedResource`](crate::model::AnalyzedResource).
         pub fn build(self) -> crate::model::AnalyzedResource {
             crate::model::AnalyzedResource {
-                resource_arn: self.resource_arn,
-                resource_type: self.resource_type,
-                created_at: self.created_at,
-                analyzed_at: self.analyzed_at,
-                updated_at: self.updated_at,
-                is_public: self.is_public,
-                actions: self.actions,
-                shared_via: self.shared_via,
-                status: self.status,
-                resource_owner_account: self.resource_owner_account,
-                error: self.error,
+                resource_arn: self.resource_arn
+                ,
+                resource_type: self.resource_type
+                ,
+                created_at: self.created_at
+                ,
+                analyzed_at: self.analyzed_at
+                ,
+                updated_at: self.updated_at
+                ,
+                is_public: self.is_public
+                ,
+                actions: self.actions
+                ,
+                shared_via: self.shared_via
+                ,
+                status: self.status
+                ,
+                resource_owner_account: self.resource_owner_account
+                ,
+                error: self.error
+                ,
             }
         }
     }
+    
+    
 }
 impl AnalyzedResource {
     /// Creates a new builder-style object to manufacture [`AnalyzedResource`](crate::model::AnalyzedResource).
@@ -6105,7 +5597,7 @@ impl AnalyzedResource {
 /// <p>Contains information about an access preview.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessPreview {
+pub struct AccessPreview  {
     /// <p>The unique ID for the access preview.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -6114,72 +5606,64 @@ pub struct AccessPreview {
     pub analyzer_arn: std::option::Option<std::string::String>,
     /// <p>A map of resource ARNs for the proposed resource configuration.</p>
     #[doc(hidden)]
-    pub configurations: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::Configuration>,
-    >,
+    pub configurations: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Configuration>>,
     /// <p>The time at which the access preview was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the access preview.</p>
-    /// <ul>
-    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
-    /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li>
-    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
+    /// <p>The status of the access preview.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li> 
+    /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li> 
+    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::AccessPreviewStatus>,
-    /// <p>Provides more details about the current status of the access preview.</p>
+    /// <p>Provides more details about the current status of the access preview.</p> 
     /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
     #[doc(hidden)]
     pub status_reason: std::option::Option<crate::model::AccessPreviewStatusReason>,
 }
 impl AccessPreview {
     /// <p>The unique ID for the access preview.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN of the analyzer used to generate the access preview.</p>
-    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
+    pub fn analyzer_arn(&self) -> std::option::Option<& str> {
         self.analyzer_arn.as_deref()
     }
     /// <p>A map of resource ARNs for the proposed resource configuration.</p>
-    pub fn configurations(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::Configuration>,
-    > {
+    pub fn configurations(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::Configuration>> {
         self.configurations.as_ref()
     }
     /// <p>The time at which the access preview was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The status of the access preview.</p>
-    /// <ul>
-    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
-    /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li>
-    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
+    /// <p>The status of the access preview.</p> 
+    /// <ul> 
+    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li> 
+    /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li> 
+    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::AccessPreviewStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AccessPreviewStatus> {
         self.status.as_ref()
     }
-    /// <p>Provides more details about the current status of the access preview.</p>
+    /// <p>Provides more details about the current status of the access preview.</p> 
     /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
-    pub fn status_reason(&self) -> std::option::Option<&crate::model::AccessPreviewStatusReason> {
+    pub fn status_reason(&self) -> std::option::Option<& crate::model::AccessPreviewStatusReason> {
         self.status_reason.as_ref()
     }
 }
 /// See [`AccessPreview`](crate::model::AccessPreview).
 pub mod access_preview {
-
+    
     /// A builder for [`AccessPreview`](crate::model::AccessPreview).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) analyzer_arn: std::option::Option<std::string::String>,
-        pub(crate) configurations: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::Configuration>,
-        >,
+        pub(crate) configurations: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Configuration>>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status: std::option::Option<crate::model::AccessPreviewStatus>,
         pub(crate) status_reason: std::option::Option<crate::model::AccessPreviewStatusReason>,
@@ -6192,8 +5676,7 @@ pub mod access_preview {
         }
         /// <p>The unique ID for the access preview.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ARN of the analyzer used to generate the access preview.</p>
         pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6202,33 +5685,22 @@ pub mod access_preview {
         }
         /// <p>The ARN of the analyzer used to generate the access preview.</p>
         pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.analyzer_arn = input;
-            self
+            self.analyzer_arn = input; self
         }
         /// Adds a key-value pair to `configurations`.
         ///
         /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
         ///
         /// <p>A map of resource ARNs for the proposed resource configuration.</p>
-        pub fn configurations(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::Configuration,
-        ) -> Self {
+        pub fn configurations(mut self, k: impl Into<std::string::String>, v: crate::model::Configuration) -> Self {
             let mut hash_map = self.configurations.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.configurations = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.configurations = Some(hash_map);
+                            self
         }
         /// <p>A map of resource ARNs for the proposed resource configuration.</p>
-        pub fn set_configurations(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::Configuration>,
-            >,
-        ) -> Self {
-            self.configurations = input;
-            self
+        pub fn set_configurations(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Configuration>>) -> Self {
+            self.configurations = input; self
         }
         /// <p>The time at which the access preview was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6236,63 +5708,59 @@ pub mod access_preview {
             self
         }
         /// <p>The time at which the access preview was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
-        /// <p>The status of the access preview.</p>
-        /// <ul>
-        /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
-        /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li>
-        /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
+        /// <p>The status of the access preview.</p> 
+        /// <ul> 
+        /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li> 
+        /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li> 
+        /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::AccessPreviewStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the access preview.</p>
-        /// <ul>
-        /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
-        /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li>
-        /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
+        /// <p>The status of the access preview.</p> 
+        /// <ul> 
+        /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li> 
+        /// <li> <p> <code>Completed</code> - The access preview is complete. You can preview findings for external access to the resource.</p> </li> 
+        /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AccessPreviewStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AccessPreviewStatus>) -> Self {
+            self.status = input; self
         }
-        /// <p>Provides more details about the current status of the access preview.</p>
+        /// <p>Provides more details about the current status of the access preview.</p> 
         /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
         pub fn status_reason(mut self, input: crate::model::AccessPreviewStatusReason) -> Self {
             self.status_reason = Some(input);
             self
         }
-        /// <p>Provides more details about the current status of the access preview.</p>
+        /// <p>Provides more details about the current status of the access preview.</p> 
         /// <p>For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid resource configuration.</p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<crate::model::AccessPreviewStatusReason>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<crate::model::AccessPreviewStatusReason>) -> Self {
+            self.status_reason = input; self
         }
         /// Consumes the builder and constructs a [`AccessPreview`](crate::model::AccessPreview).
         pub fn build(self) -> crate::model::AccessPreview {
             crate::model::AccessPreview {
-                id: self.id,
-                analyzer_arn: self.analyzer_arn,
-                configurations: self.configurations,
-                created_at: self.created_at,
-                status: self.status,
-                status_reason: self.status_reason,
+                id: self.id
+                ,
+                analyzer_arn: self.analyzer_arn
+                ,
+                configurations: self.configurations
+                ,
+                created_at: self.created_at
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessPreview {
     /// Creates a new builder-style object to manufacture [`AccessPreview`](crate::model::AccessPreview).
@@ -6340,14 +5808,8 @@ pub enum Configuration {
 impl Configuration {
     /// Tries to convert the enum instance into [`EbsSnapshot`](crate::model::Configuration::EbsSnapshot), extracting the inner [`EbsSnapshotConfiguration`](crate::model::EbsSnapshotConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_ebs_snapshot(
-        &self,
-    ) -> std::result::Result<&crate::model::EbsSnapshotConfiguration, &Self> {
-        if let Configuration::EbsSnapshot(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_ebs_snapshot(&self) -> std::result::Result<&crate::model::EbsSnapshotConfiguration, &Self> {
+        if let Configuration::EbsSnapshot(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`EbsSnapshot`](crate::model::Configuration::EbsSnapshot).
     pub fn is_ebs_snapshot(&self) -> bool {
@@ -6355,14 +5817,8 @@ impl Configuration {
     }
     /// Tries to convert the enum instance into [`EcrRepository`](crate::model::Configuration::EcrRepository), extracting the inner [`EcrRepositoryConfiguration`](crate::model::EcrRepositoryConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_ecr_repository(
-        &self,
-    ) -> std::result::Result<&crate::model::EcrRepositoryConfiguration, &Self> {
-        if let Configuration::EcrRepository(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_ecr_repository(&self) -> std::result::Result<&crate::model::EcrRepositoryConfiguration, &Self> {
+        if let Configuration::EcrRepository(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`EcrRepository`](crate::model::Configuration::EcrRepository).
     pub fn is_ecr_repository(&self) -> bool {
@@ -6370,14 +5826,8 @@ impl Configuration {
     }
     /// Tries to convert the enum instance into [`EfsFileSystem`](crate::model::Configuration::EfsFileSystem), extracting the inner [`EfsFileSystemConfiguration`](crate::model::EfsFileSystemConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_efs_file_system(
-        &self,
-    ) -> std::result::Result<&crate::model::EfsFileSystemConfiguration, &Self> {
-        if let Configuration::EfsFileSystem(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_efs_file_system(&self) -> std::result::Result<&crate::model::EfsFileSystemConfiguration, &Self> {
+        if let Configuration::EfsFileSystem(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`EfsFileSystem`](crate::model::Configuration::EfsFileSystem).
     pub fn is_efs_file_system(&self) -> bool {
@@ -6386,11 +5836,7 @@ impl Configuration {
     /// Tries to convert the enum instance into [`IamRole`](crate::model::Configuration::IamRole), extracting the inner [`IamRoleConfiguration`](crate::model::IamRoleConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_iam_role(&self) -> std::result::Result<&crate::model::IamRoleConfiguration, &Self> {
-        if let Configuration::IamRole(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Configuration::IamRole(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`IamRole`](crate::model::Configuration::IamRole).
     pub fn is_iam_role(&self) -> bool {
@@ -6399,11 +5845,7 @@ impl Configuration {
     /// Tries to convert the enum instance into [`KmsKey`](crate::model::Configuration::KmsKey), extracting the inner [`KmsKeyConfiguration`](crate::model::KmsKeyConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_kms_key(&self) -> std::result::Result<&crate::model::KmsKeyConfiguration, &Self> {
-        if let Configuration::KmsKey(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Configuration::KmsKey(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`KmsKey`](crate::model::Configuration::KmsKey).
     pub fn is_kms_key(&self) -> bool {
@@ -6411,14 +5853,8 @@ impl Configuration {
     }
     /// Tries to convert the enum instance into [`RdsDbClusterSnapshot`](crate::model::Configuration::RdsDbClusterSnapshot), extracting the inner [`RdsDbClusterSnapshotConfiguration`](crate::model::RdsDbClusterSnapshotConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_rds_db_cluster_snapshot(
-        &self,
-    ) -> std::result::Result<&crate::model::RdsDbClusterSnapshotConfiguration, &Self> {
-        if let Configuration::RdsDbClusterSnapshot(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_rds_db_cluster_snapshot(&self) -> std::result::Result<&crate::model::RdsDbClusterSnapshotConfiguration, &Self> {
+        if let Configuration::RdsDbClusterSnapshot(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`RdsDbClusterSnapshot`](crate::model::Configuration::RdsDbClusterSnapshot).
     pub fn is_rds_db_cluster_snapshot(&self) -> bool {
@@ -6426,14 +5862,8 @@ impl Configuration {
     }
     /// Tries to convert the enum instance into [`RdsDbSnapshot`](crate::model::Configuration::RdsDbSnapshot), extracting the inner [`RdsDbSnapshotConfiguration`](crate::model::RdsDbSnapshotConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_rds_db_snapshot(
-        &self,
-    ) -> std::result::Result<&crate::model::RdsDbSnapshotConfiguration, &Self> {
-        if let Configuration::RdsDbSnapshot(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_rds_db_snapshot(&self) -> std::result::Result<&crate::model::RdsDbSnapshotConfiguration, &Self> {
+        if let Configuration::RdsDbSnapshot(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`RdsDbSnapshot`](crate::model::Configuration::RdsDbSnapshot).
     pub fn is_rds_db_snapshot(&self) -> bool {
@@ -6442,11 +5872,7 @@ impl Configuration {
     /// Tries to convert the enum instance into [`S3Bucket`](crate::model::Configuration::S3Bucket), extracting the inner [`S3BucketConfiguration`](crate::model::S3BucketConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_bucket(&self) -> std::result::Result<&crate::model::S3BucketConfiguration, &Self> {
-        if let Configuration::S3Bucket(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Configuration::S3Bucket(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`S3Bucket`](crate::model::Configuration::S3Bucket).
     pub fn is_s3_bucket(&self) -> bool {
@@ -6454,14 +5880,8 @@ impl Configuration {
     }
     /// Tries to convert the enum instance into [`SecretsManagerSecret`](crate::model::Configuration::SecretsManagerSecret), extracting the inner [`SecretsManagerSecretConfiguration`](crate::model::SecretsManagerSecretConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_secrets_manager_secret(
-        &self,
-    ) -> std::result::Result<&crate::model::SecretsManagerSecretConfiguration, &Self> {
-        if let Configuration::SecretsManagerSecret(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_secrets_manager_secret(&self) -> std::result::Result<&crate::model::SecretsManagerSecretConfiguration, &Self> {
+        if let Configuration::SecretsManagerSecret(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`SecretsManagerSecret`](crate::model::Configuration::SecretsManagerSecret).
     pub fn is_secrets_manager_secret(&self) -> bool {
@@ -6470,11 +5890,7 @@ impl Configuration {
     /// Tries to convert the enum instance into [`SnsTopic`](crate::model::Configuration::SnsTopic), extracting the inner [`SnsTopicConfiguration`](crate::model::SnsTopicConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sns_topic(&self) -> std::result::Result<&crate::model::SnsTopicConfiguration, &Self> {
-        if let Configuration::SnsTopic(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Configuration::SnsTopic(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`SnsTopic`](crate::model::Configuration::SnsTopic).
     pub fn is_sns_topic(&self) -> bool {
@@ -6483,11 +5899,7 @@ impl Configuration {
     /// Tries to convert the enum instance into [`SqsQueue`](crate::model::Configuration::SqsQueue), extracting the inner [`SqsQueueConfiguration`](crate::model::SqsQueueConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sqs_queue(&self) -> std::result::Result<&crate::model::SqsQueueConfiguration, &Self> {
-        if let Configuration::SqsQueue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Configuration::SqsQueue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`SqsQueue`](crate::model::Configuration::SqsQueue).
     pub fn is_sqs_queue(&self) -> bool {
@@ -6502,20 +5914,20 @@ impl Configuration {
 /// <p>The proposed access control configuration for an Amazon SQS queue. You can propose a configuration for a new Amazon SQS queue or an existing Amazon SQS queue that you own by specifying the Amazon SQS policy. If the configuration is for an existing Amazon SQS queue and you do not specify the Amazon SQS policy, the access preview uses the existing Amazon SQS policy for the queue. If the access preview is for a new resource and you do not specify the policy, the access preview assumes an Amazon SQS queue without a policy. To propose deletion of an existing Amazon SQS queue policy, you can specify an empty string for the Amazon SQS policy. For more information about Amazon SQS policy limits, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-policies.html">Quotas related to policies</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SqsQueueConfiguration {
+pub struct SqsQueueConfiguration  {
     /// <p> The proposed resource policy for the Amazon SQS queue. </p>
     #[doc(hidden)]
     pub queue_policy: std::option::Option<std::string::String>,
 }
 impl SqsQueueConfiguration {
     /// <p> The proposed resource policy for the Amazon SQS queue. </p>
-    pub fn queue_policy(&self) -> std::option::Option<&str> {
+    pub fn queue_policy(&self) -> std::option::Option<& str> {
         self.queue_policy.as_deref()
     }
 }
 /// See [`SqsQueueConfiguration`](crate::model::SqsQueueConfiguration).
 pub mod sqs_queue_configuration {
-
+    
     /// A builder for [`SqsQueueConfiguration`](crate::model::SqsQueueConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6529,16 +5941,18 @@ pub mod sqs_queue_configuration {
         }
         /// <p> The proposed resource policy for the Amazon SQS queue. </p>
         pub fn set_queue_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.queue_policy = input;
-            self
+            self.queue_policy = input; self
         }
         /// Consumes the builder and constructs a [`SqsQueueConfiguration`](crate::model::SqsQueueConfiguration).
         pub fn build(self) -> crate::model::SqsQueueConfiguration {
             crate::model::SqsQueueConfiguration {
-                queue_policy: self.queue_policy,
+                queue_policy: self.queue_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl SqsQueueConfiguration {
     /// Creates a new builder-style object to manufacture [`SqsQueueConfiguration`](crate::model::SqsQueueConfiguration).
@@ -6550,20 +5964,20 @@ impl SqsQueueConfiguration {
 /// <p>The proposed access control configuration for an Amazon SNS topic. You can propose a configuration for a new Amazon SNS topic or an existing Amazon SNS topic that you own by specifying the policy. If the configuration is for an existing Amazon SNS topic and you do not specify the Amazon SNS policy, then the access preview uses the existing Amazon SNS policy for the topic. If the access preview is for a new resource and you do not specify the policy, then the access preview assumes an Amazon SNS topic without a policy. To propose deletion of an existing Amazon SNS topic policy, you can specify an empty string for the Amazon SNS policy. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_Topic.html">Topic</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnsTopicConfiguration {
+pub struct SnsTopicConfiguration  {
     /// <p>The JSON policy text that defines who can access an Amazon SNS topic. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html">Example cases for Amazon SNS access control</a> in the <i>Amazon SNS Developer Guide</i>.</p>
     #[doc(hidden)]
     pub topic_policy: std::option::Option<std::string::String>,
 }
 impl SnsTopicConfiguration {
     /// <p>The JSON policy text that defines who can access an Amazon SNS topic. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html">Example cases for Amazon SNS access control</a> in the <i>Amazon SNS Developer Guide</i>.</p>
-    pub fn topic_policy(&self) -> std::option::Option<&str> {
+    pub fn topic_policy(&self) -> std::option::Option<& str> {
         self.topic_policy.as_deref()
     }
 }
 /// See [`SnsTopicConfiguration`](crate::model::SnsTopicConfiguration).
 pub mod sns_topic_configuration {
-
+    
     /// A builder for [`SnsTopicConfiguration`](crate::model::SnsTopicConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6577,16 +5991,18 @@ pub mod sns_topic_configuration {
         }
         /// <p>The JSON policy text that defines who can access an Amazon SNS topic. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-use-cases.html">Example cases for Amazon SNS access control</a> in the <i>Amazon SNS Developer Guide</i>.</p>
         pub fn set_topic_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.topic_policy = input;
-            self
+            self.topic_policy = input; self
         }
         /// Consumes the builder and constructs a [`SnsTopicConfiguration`](crate::model::SnsTopicConfiguration).
         pub fn build(self) -> crate::model::SnsTopicConfiguration {
             crate::model::SnsTopicConfiguration {
-                topic_policy: self.topic_policy,
+                topic_policy: self.topic_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl SnsTopicConfiguration {
     /// Creates a new builder-style object to manufacture [`SnsTopicConfiguration`](crate::model::SnsTopicConfiguration).
@@ -6598,67 +6014,48 @@ impl SnsTopicConfiguration {
 /// <p>Proposed access control configuration for an Amazon S3 bucket. You can propose a configuration for a new Amazon S3 bucket or an existing Amazon S3 bucket that you own by specifying the Amazon S3 bucket policy, bucket ACLs, bucket BPA settings, Amazon S3 access points, and multi-region access points attached to the bucket. If the configuration is for an existing Amazon S3 bucket and you do not specify the Amazon S3 bucket policy, the access preview uses the existing policy attached to the bucket. If the access preview is for a new resource and you do not specify the Amazon S3 bucket policy, the access preview assumes a bucket without a policy. To propose deletion of an existing bucket policy, you can specify an empty string. For more information about bucket policy limits, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html">Bucket Policy Examples</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3BucketConfiguration {
+pub struct S3BucketConfiguration  {
     /// <p>The proposed bucket policy for the Amazon S3 bucket.</p>
     #[doc(hidden)]
     pub bucket_policy: std::option::Option<std::string::String>,
     /// <p>The proposed list of ACL grants for the Amazon S3 bucket. You can propose up to 100 ACL grants per bucket. If the proposed grant configuration is for an existing bucket, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the bucket.</p>
     #[doc(hidden)]
-    pub bucket_acl_grants:
-        std::option::Option<std::vec::Vec<crate::model::S3BucketAclGrantConfiguration>>,
+    pub bucket_acl_grants: std::option::Option<std::vec::Vec<crate::model::S3BucketAclGrantConfiguration>>,
     /// <p>The proposed block public access configuration for the Amazon S3 bucket.</p>
     #[doc(hidden)]
-    pub bucket_public_access_block:
-        std::option::Option<crate::model::S3PublicAccessBlockConfiguration>,
+    pub bucket_public_access_block: std::option::Option<crate::model::S3PublicAccessBlockConfiguration>,
     /// <p>The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to 10 new access points per bucket.</p>
     #[doc(hidden)]
-    pub access_points: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::S3AccessPointConfiguration>,
-    >,
+    pub access_points: std::option::Option<std::collections::HashMap<std::string::String, crate::model::S3AccessPointConfiguration>>,
 }
 impl S3BucketConfiguration {
     /// <p>The proposed bucket policy for the Amazon S3 bucket.</p>
-    pub fn bucket_policy(&self) -> std::option::Option<&str> {
+    pub fn bucket_policy(&self) -> std::option::Option<& str> {
         self.bucket_policy.as_deref()
     }
     /// <p>The proposed list of ACL grants for the Amazon S3 bucket. You can propose up to 100 ACL grants per bucket. If the proposed grant configuration is for an existing bucket, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the bucket.</p>
-    pub fn bucket_acl_grants(
-        &self,
-    ) -> std::option::Option<&[crate::model::S3BucketAclGrantConfiguration]> {
+    pub fn bucket_acl_grants(&self) -> std::option::Option<& [crate::model::S3BucketAclGrantConfiguration]> {
         self.bucket_acl_grants.as_deref()
     }
     /// <p>The proposed block public access configuration for the Amazon S3 bucket.</p>
-    pub fn bucket_public_access_block(
-        &self,
-    ) -> std::option::Option<&crate::model::S3PublicAccessBlockConfiguration> {
+    pub fn bucket_public_access_block(&self) -> std::option::Option<& crate::model::S3PublicAccessBlockConfiguration> {
         self.bucket_public_access_block.as_ref()
     }
     /// <p>The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to 10 new access points per bucket.</p>
-    pub fn access_points(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::S3AccessPointConfiguration>,
-    > {
+    pub fn access_points(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::S3AccessPointConfiguration>> {
         self.access_points.as_ref()
     }
 }
 /// See [`S3BucketConfiguration`](crate::model::S3BucketConfiguration).
 pub mod s3_bucket_configuration {
-
+    
     /// A builder for [`S3BucketConfiguration`](crate::model::S3BucketConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) bucket_policy: std::option::Option<std::string::String>,
-        pub(crate) bucket_acl_grants:
-            std::option::Option<std::vec::Vec<crate::model::S3BucketAclGrantConfiguration>>,
-        pub(crate) bucket_public_access_block:
-            std::option::Option<crate::model::S3PublicAccessBlockConfiguration>,
-        pub(crate) access_points: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                crate::model::S3AccessPointConfiguration,
-            >,
-        >,
+        pub(crate) bucket_acl_grants: std::option::Option<std::vec::Vec<crate::model::S3BucketAclGrantConfiguration>>,
+        pub(crate) bucket_public_access_block: std::option::Option<crate::model::S3PublicAccessBlockConfiguration>,
+        pub(crate) access_points: std::option::Option<std::collections::HashMap<std::string::String, crate::model::S3AccessPointConfiguration>>,
     }
     impl Builder {
         /// <p>The proposed bucket policy for the Amazon S3 bucket.</p>
@@ -6667,89 +6064,64 @@ pub mod s3_bucket_configuration {
             self
         }
         /// <p>The proposed bucket policy for the Amazon S3 bucket.</p>
-        pub fn set_bucket_policy(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bucket_policy = input;
-            self
+        pub fn set_bucket_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket_policy = input; self
         }
         /// Appends an item to `bucket_acl_grants`.
         ///
         /// To override the contents of this collection use [`set_bucket_acl_grants`](Self::set_bucket_acl_grants).
         ///
         /// <p>The proposed list of ACL grants for the Amazon S3 bucket. You can propose up to 100 ACL grants per bucket. If the proposed grant configuration is for an existing bucket, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the bucket.</p>
-        pub fn bucket_acl_grants(
-            mut self,
-            input: crate::model::S3BucketAclGrantConfiguration,
-        ) -> Self {
+        pub fn bucket_acl_grants(mut self, input: crate::model::S3BucketAclGrantConfiguration) -> Self {
             let mut v = self.bucket_acl_grants.unwrap_or_default();
-            v.push(input);
-            self.bucket_acl_grants = Some(v);
-            self
+                            v.push(input);
+                            self.bucket_acl_grants = Some(v);
+                            self
         }
         /// <p>The proposed list of ACL grants for the Amazon S3 bucket. You can propose up to 100 ACL grants per bucket. If the proposed grant configuration is for an existing bucket, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the bucket.</p>
-        pub fn set_bucket_acl_grants(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::S3BucketAclGrantConfiguration>>,
-        ) -> Self {
-            self.bucket_acl_grants = input;
-            self
+        pub fn set_bucket_acl_grants(mut self, input: std::option::Option<std::vec::Vec<crate::model::S3BucketAclGrantConfiguration>>) -> Self {
+            self.bucket_acl_grants = input; self
         }
         /// <p>The proposed block public access configuration for the Amazon S3 bucket.</p>
-        pub fn bucket_public_access_block(
-            mut self,
-            input: crate::model::S3PublicAccessBlockConfiguration,
-        ) -> Self {
+        pub fn bucket_public_access_block(mut self, input: crate::model::S3PublicAccessBlockConfiguration) -> Self {
             self.bucket_public_access_block = Some(input);
             self
         }
         /// <p>The proposed block public access configuration for the Amazon S3 bucket.</p>
-        pub fn set_bucket_public_access_block(
-            mut self,
-            input: std::option::Option<crate::model::S3PublicAccessBlockConfiguration>,
-        ) -> Self {
-            self.bucket_public_access_block = input;
-            self
+        pub fn set_bucket_public_access_block(mut self, input: std::option::Option<crate::model::S3PublicAccessBlockConfiguration>) -> Self {
+            self.bucket_public_access_block = input; self
         }
         /// Adds a key-value pair to `access_points`.
         ///
         /// To override the contents of this collection use [`set_access_points`](Self::set_access_points).
         ///
         /// <p>The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to 10 new access points per bucket.</p>
-        pub fn access_points(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::S3AccessPointConfiguration,
-        ) -> Self {
+        pub fn access_points(mut self, k: impl Into<std::string::String>, v: crate::model::S3AccessPointConfiguration) -> Self {
             let mut hash_map = self.access_points.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.access_points = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.access_points = Some(hash_map);
+                            self
         }
         /// <p>The configuration of Amazon S3 access points or multi-region access points for the bucket. You can propose up to 10 new access points per bucket.</p>
-        pub fn set_access_points(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::S3AccessPointConfiguration,
-                >,
-            >,
-        ) -> Self {
-            self.access_points = input;
-            self
+        pub fn set_access_points(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::S3AccessPointConfiguration>>) -> Self {
+            self.access_points = input; self
         }
         /// Consumes the builder and constructs a [`S3BucketConfiguration`](crate::model::S3BucketConfiguration).
         pub fn build(self) -> crate::model::S3BucketConfiguration {
             crate::model::S3BucketConfiguration {
-                bucket_policy: self.bucket_policy,
-                bucket_acl_grants: self.bucket_acl_grants,
-                bucket_public_access_block: self.bucket_public_access_block,
-                access_points: self.access_points,
+                bucket_policy: self.bucket_policy
+                ,
+                bucket_acl_grants: self.bucket_acl_grants
+                ,
+                bucket_public_access_block: self.bucket_public_access_block
+                ,
+                access_points: self.access_points
+                ,
             }
         }
     }
+    
+    
 }
 impl S3BucketConfiguration {
     /// Creates a new builder-style object to manufacture [`S3BucketConfiguration`](crate::model::S3BucketConfiguration).
@@ -6761,7 +6133,7 @@ impl S3BucketConfiguration {
 /// <p>The configuration for an Amazon S3 access point or multi-region access point for the bucket. You can propose up to 10 access points or multi-region access points per bucket. If the proposed Amazon S3 access point configuration is for an existing bucket, the access preview uses the proposed access point configuration in place of the existing access points. To propose an access point without a policy, you can provide an empty string as the access point policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html">Creating access points</a>. For more information about access point policy limits, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points-restrictions-limitations.html">Access points restrictions and limitations</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3AccessPointConfiguration {
+pub struct S3AccessPointConfiguration  {
     /// <p>The access point or multi-region access point policy.</p>
     #[doc(hidden)]
     pub access_point_policy: std::option::Option<std::string::String>,
@@ -6774,29 +6146,26 @@ pub struct S3AccessPointConfiguration {
 }
 impl S3AccessPointConfiguration {
     /// <p>The access point or multi-region access point policy.</p>
-    pub fn access_point_policy(&self) -> std::option::Option<&str> {
+    pub fn access_point_policy(&self) -> std::option::Option<& str> {
         self.access_point_policy.as_deref()
     }
     /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or multi-region access point.</p>
-    pub fn public_access_block(
-        &self,
-    ) -> std::option::Option<&crate::model::S3PublicAccessBlockConfiguration> {
+    pub fn public_access_block(&self) -> std::option::Option<& crate::model::S3PublicAccessBlockConfiguration> {
         self.public_access_block.as_ref()
     }
     /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access points. If the access preview is for a new resource and neither is specified, the access preview uses <code>Internet</code> for the network origin. If the access preview is for an existing resource and neither is specified, the access preview uses the exiting network origin.</p>
-    pub fn network_origin(&self) -> std::option::Option<&crate::model::NetworkOriginConfiguration> {
+    pub fn network_origin(&self) -> std::option::Option<& crate::model::NetworkOriginConfiguration> {
         self.network_origin.as_ref()
     }
 }
 /// See [`S3AccessPointConfiguration`](crate::model::S3AccessPointConfiguration).
 pub mod s3_access_point_configuration {
-
+    
     /// A builder for [`S3AccessPointConfiguration`](crate::model::S3AccessPointConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_point_policy: std::option::Option<std::string::String>,
-        pub(crate) public_access_block:
-            std::option::Option<crate::model::S3PublicAccessBlockConfiguration>,
+        pub(crate) public_access_block: std::option::Option<crate::model::S3PublicAccessBlockConfiguration>,
         pub(crate) network_origin: std::option::Option<crate::model::NetworkOriginConfiguration>,
     }
     impl Builder {
@@ -6806,28 +6175,17 @@ pub mod s3_access_point_configuration {
             self
         }
         /// <p>The access point or multi-region access point policy.</p>
-        pub fn set_access_point_policy(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_point_policy = input;
-            self
+        pub fn set_access_point_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_point_policy = input; self
         }
         /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or multi-region access point.</p>
-        pub fn public_access_block(
-            mut self,
-            input: crate::model::S3PublicAccessBlockConfiguration,
-        ) -> Self {
+        pub fn public_access_block(mut self, input: crate::model::S3PublicAccessBlockConfiguration) -> Self {
             self.public_access_block = Some(input);
             self
         }
         /// <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon S3 access point or multi-region access point.</p>
-        pub fn set_public_access_block(
-            mut self,
-            input: std::option::Option<crate::model::S3PublicAccessBlockConfiguration>,
-        ) -> Self {
-            self.public_access_block = input;
-            self
+        pub fn set_public_access_block(mut self, input: std::option::Option<crate::model::S3PublicAccessBlockConfiguration>) -> Self {
+            self.public_access_block = input; self
         }
         /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access points. If the access preview is for a new resource and neither is specified, the access preview uses <code>Internet</code> for the network origin. If the access preview is for an existing resource and neither is specified, the access preview uses the exiting network origin.</p>
         pub fn network_origin(mut self, input: crate::model::NetworkOriginConfiguration) -> Self {
@@ -6835,22 +6193,23 @@ pub mod s3_access_point_configuration {
             self
         }
         /// <p>The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access points. If the access preview is for a new resource and neither is specified, the access preview uses <code>Internet</code> for the network origin. If the access preview is for an existing resource and neither is specified, the access preview uses the exiting network origin.</p>
-        pub fn set_network_origin(
-            mut self,
-            input: std::option::Option<crate::model::NetworkOriginConfiguration>,
-        ) -> Self {
-            self.network_origin = input;
-            self
+        pub fn set_network_origin(mut self, input: std::option::Option<crate::model::NetworkOriginConfiguration>) -> Self {
+            self.network_origin = input; self
         }
         /// Consumes the builder and constructs a [`S3AccessPointConfiguration`](crate::model::S3AccessPointConfiguration).
         pub fn build(self) -> crate::model::S3AccessPointConfiguration {
             crate::model::S3AccessPointConfiguration {
-                access_point_policy: self.access_point_policy,
-                public_access_block: self.public_access_block,
-                network_origin: self.network_origin,
+                access_point_policy: self.access_point_policy
+                ,
+                public_access_block: self.public_access_block
+                ,
+                network_origin: self.network_origin
+                ,
             }
         }
     }
+    
+    
 }
 impl S3AccessPointConfiguration {
     /// Creates a new builder-style object to manufacture [`S3AccessPointConfiguration`](crate::model::S3AccessPointConfiguration).
@@ -6880,14 +6239,8 @@ pub enum NetworkOriginConfiguration {
 impl NetworkOriginConfiguration {
     /// Tries to convert the enum instance into [`InternetConfiguration`](crate::model::NetworkOriginConfiguration::InternetConfiguration), extracting the inner [`InternetConfiguration`](crate::model::InternetConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_internet_configuration(
-        &self,
-    ) -> std::result::Result<&crate::model::InternetConfiguration, &Self> {
-        if let NetworkOriginConfiguration::InternetConfiguration(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_internet_configuration(&self) -> std::result::Result<&crate::model::InternetConfiguration, &Self> {
+        if let NetworkOriginConfiguration::InternetConfiguration(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`InternetConfiguration`](crate::model::NetworkOriginConfiguration::InternetConfiguration).
     pub fn is_internet_configuration(&self) -> bool {
@@ -6895,14 +6248,8 @@ impl NetworkOriginConfiguration {
     }
     /// Tries to convert the enum instance into [`VpcConfiguration`](crate::model::NetworkOriginConfiguration::VpcConfiguration), extracting the inner [`VpcConfiguration`](crate::model::VpcConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_vpc_configuration(
-        &self,
-    ) -> std::result::Result<&crate::model::VpcConfiguration, &Self> {
-        if let NetworkOriginConfiguration::VpcConfiguration(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_vpc_configuration(&self) -> std::result::Result<&crate::model::VpcConfiguration, &Self> {
+        if let NetworkOriginConfiguration::VpcConfiguration(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`VpcConfiguration`](crate::model::NetworkOriginConfiguration::VpcConfiguration).
     pub fn is_vpc_configuration(&self) -> bool {
@@ -6917,19 +6264,24 @@ impl NetworkOriginConfiguration {
 /// <p>This configuration sets the network origin for the Amazon S3 access point or multi-region access point to <code>Internet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternetConfiguration {}
+pub struct InternetConfiguration  {
+}
 /// See [`InternetConfiguration`](crate::model::InternetConfiguration).
 pub mod internet_configuration {
-
+    
     /// A builder for [`InternetConfiguration`](crate::model::InternetConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`InternetConfiguration`](crate::model::InternetConfiguration).
         pub fn build(self) -> crate::model::InternetConfiguration {
-            crate::model::InternetConfiguration {}
+            crate::model::InternetConfiguration {
+            }
         }
     }
+    
+    
 }
 impl InternetConfiguration {
     /// Creates a new builder-style object to manufacture [`InternetConfiguration`](crate::model::InternetConfiguration).
@@ -6941,20 +6293,20 @@ impl InternetConfiguration {
 /// <p>The proposed virtual private cloud (VPC) configuration for the Amazon S3 access point. VPC configuration does not apply to multi-region access points. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_VpcConfiguration.html">VpcConfiguration</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcConfiguration {
+pub struct VpcConfiguration  {
     /// <p> If this field is specified, this access point will only allow connections from the specified VPC ID. </p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
 }
 impl VpcConfiguration {
     /// <p> If this field is specified, this access point will only allow connections from the specified VPC ID. </p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> std::option::Option<& str> {
         self.vpc_id.as_deref()
     }
 }
 /// See [`VpcConfiguration`](crate::model::VpcConfiguration).
 pub mod vpc_configuration {
-
+    
     /// A builder for [`VpcConfiguration`](crate::model::VpcConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6968,16 +6320,18 @@ pub mod vpc_configuration {
         }
         /// <p> If this field is specified, this access point will only allow connections from the specified VPC ID. </p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vpc_id = input;
-            self
+            self.vpc_id = input; self
         }
         /// Consumes the builder and constructs a [`VpcConfiguration`](crate::model::VpcConfiguration).
         pub fn build(self) -> crate::model::VpcConfiguration {
             crate::model::VpcConfiguration {
-                vpc_id: self.vpc_id,
+                vpc_id: self.vpc_id
+                ,
             }
         }
     }
+    
+    
 }
 impl VpcConfiguration {
     /// Creates a new builder-style object to manufacture [`VpcConfiguration`](crate::model::VpcConfiguration).
@@ -6989,7 +6343,7 @@ impl VpcConfiguration {
 /// <p>The <code>PublicAccessBlock</code> configuration to apply to this Amazon S3 bucket. If the proposed configuration is for an existing Amazon S3 bucket and the configuration is not specified, the access preview uses the existing setting. If the proposed configuration is for a new bucket and the configuration is not specified, the access preview uses <code>false</code>. If the proposed configuration is for a new access point or multi-region access point and the access point BPA configuration is not specified, the access preview uses <code>true</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-publicaccessblockconfiguration.html">PublicAccessBlockConfiguration</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3PublicAccessBlockConfiguration {
+pub struct S3PublicAccessBlockConfiguration  {
     /// <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. </p>
     #[doc(hidden)]
     pub ignore_public_acls: std::option::Option<bool>,
@@ -7009,7 +6363,7 @@ impl S3PublicAccessBlockConfiguration {
 }
 /// See [`S3PublicAccessBlockConfiguration`](crate::model::S3PublicAccessBlockConfiguration).
 pub mod s3_public_access_block_configuration {
-
+    
     /// A builder for [`S3PublicAccessBlockConfiguration`](crate::model::S3PublicAccessBlockConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7024,8 +6378,7 @@ pub mod s3_public_access_block_configuration {
         }
         /// <p> Specifies whether Amazon S3 should ignore public ACLs for this bucket and objects in this bucket. </p>
         pub fn set_ignore_public_acls(mut self, input: std::option::Option<bool>) -> Self {
-            self.ignore_public_acls = input;
-            self
+            self.ignore_public_acls = input; self
         }
         /// <p> Specifies whether Amazon S3 should restrict public bucket policies for this bucket. </p>
         pub fn restrict_public_buckets(mut self, input: bool) -> Self {
@@ -7034,17 +6387,20 @@ pub mod s3_public_access_block_configuration {
         }
         /// <p> Specifies whether Amazon S3 should restrict public bucket policies for this bucket. </p>
         pub fn set_restrict_public_buckets(mut self, input: std::option::Option<bool>) -> Self {
-            self.restrict_public_buckets = input;
-            self
+            self.restrict_public_buckets = input; self
         }
         /// Consumes the builder and constructs a [`S3PublicAccessBlockConfiguration`](crate::model::S3PublicAccessBlockConfiguration).
         pub fn build(self) -> crate::model::S3PublicAccessBlockConfiguration {
             crate::model::S3PublicAccessBlockConfiguration {
-                ignore_public_acls: self.ignore_public_acls,
-                restrict_public_buckets: self.restrict_public_buckets,
+                ignore_public_acls: self.ignore_public_acls
+                ,
+                restrict_public_buckets: self.restrict_public_buckets
+                ,
             }
         }
     }
+    
+    
 }
 impl S3PublicAccessBlockConfiguration {
     /// Creates a new builder-style object to manufacture [`S3PublicAccessBlockConfiguration`](crate::model::S3PublicAccessBlockConfiguration).
@@ -7056,7 +6412,7 @@ impl S3PublicAccessBlockConfiguration {
 /// <p>A proposed access control list grant configuration for an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#setting-acls">How to Specify an ACL</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3BucketAclGrantConfiguration {
+pub struct S3BucketAclGrantConfiguration  {
     /// <p>The permissions being granted.</p>
     #[doc(hidden)]
     pub permission: std::option::Option<crate::model::AclPermission>,
@@ -7066,17 +6422,17 @@ pub struct S3BucketAclGrantConfiguration {
 }
 impl S3BucketAclGrantConfiguration {
     /// <p>The permissions being granted.</p>
-    pub fn permission(&self) -> std::option::Option<&crate::model::AclPermission> {
+    pub fn permission(&self) -> std::option::Option<& crate::model::AclPermission> {
         self.permission.as_ref()
     }
     /// <p>The grantee to whom you’re assigning access rights.</p>
-    pub fn grantee(&self) -> std::option::Option<&crate::model::AclGrantee> {
+    pub fn grantee(&self) -> std::option::Option<& crate::model::AclGrantee> {
         self.grantee.as_ref()
     }
 }
 /// See [`S3BucketAclGrantConfiguration`](crate::model::S3BucketAclGrantConfiguration).
 pub mod s3_bucket_acl_grant_configuration {
-
+    
     /// A builder for [`S3BucketAclGrantConfiguration`](crate::model::S3BucketAclGrantConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7090,12 +6446,8 @@ pub mod s3_bucket_acl_grant_configuration {
             self
         }
         /// <p>The permissions being granted.</p>
-        pub fn set_permission(
-            mut self,
-            input: std::option::Option<crate::model::AclPermission>,
-        ) -> Self {
-            self.permission = input;
-            self
+        pub fn set_permission(mut self, input: std::option::Option<crate::model::AclPermission>) -> Self {
+            self.permission = input; self
         }
         /// <p>The grantee to whom you’re assigning access rights.</p>
         pub fn grantee(mut self, input: crate::model::AclGrantee) -> Self {
@@ -7104,17 +6456,20 @@ pub mod s3_bucket_acl_grant_configuration {
         }
         /// <p>The grantee to whom you’re assigning access rights.</p>
         pub fn set_grantee(mut self, input: std::option::Option<crate::model::AclGrantee>) -> Self {
-            self.grantee = input;
-            self
+            self.grantee = input; self
         }
         /// Consumes the builder and constructs a [`S3BucketAclGrantConfiguration`](crate::model::S3BucketAclGrantConfiguration).
         pub fn build(self) -> crate::model::S3BucketAclGrantConfiguration {
             crate::model::S3BucketAclGrantConfiguration {
-                permission: self.permission,
-                grantee: self.grantee,
+                permission: self.permission
+                ,
+                grantee: self.grantee
+                ,
             }
         }
     }
+    
+    
 }
 impl S3BucketAclGrantConfiguration {
     /// Creates a new builder-style object to manufacture [`S3BucketAclGrantConfiguration`](crate::model::S3BucketAclGrantConfiguration).
@@ -7145,11 +6500,7 @@ impl AclGrantee {
     /// Tries to convert the enum instance into [`Id`](crate::model::AclGrantee::Id), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_id(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let AclGrantee::Id(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let AclGrantee::Id(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Id`](crate::model::AclGrantee::Id).
     pub fn is_id(&self) -> bool {
@@ -7158,11 +6509,7 @@ impl AclGrantee {
     /// Tries to convert the enum instance into [`Uri`](crate::model::AclGrantee::Uri), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_uri(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let AclGrantee::Uri(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let AclGrantee::Uri(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Uri`](crate::model::AclGrantee::Uri).
     pub fn is_uri(&self) -> bool {
@@ -7180,9 +6527,9 @@ impl AclGrantee {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let aclpermission = unimplemented!();
 /// match aclpermission {
@@ -7207,22 +6554,14 @@ impl AclGrantee {
 /// Specifically, when `aclpermission` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AclPermission::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AclPermission {
     #[allow(missing_docs)] // documentation missing in model
     FullControl,
@@ -7235,7 +6574,7 @@ pub enum AclPermission {
     #[allow(missing_docs)] // documentation missing in model
     WriteAcp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AclPermission {
     fn from(s: &str) -> Self {
@@ -7245,17 +6584,17 @@ impl std::convert::From<&str> for AclPermission {
             "READ_ACP" => AclPermission::ReadAcp,
             "WRITE" => AclPermission::Write,
             "WRITE_ACP" => AclPermission::WriteAcp,
-            other => AclPermission::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AclPermission::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AclPermission {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AclPermission::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AclPermission::from(s))
+                }
+            }
 impl AclPermission {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7265,12 +6604,14 @@ impl AclPermission {
             AclPermission::ReadAcp => "READ_ACP",
             AclPermission::Write => "WRITE",
             AclPermission::WriteAcp => "WRITE_ACP",
-            AclPermission::Unknown(value) => value.as_str(),
+            AclPermission::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FULL_CONTROL", "READ", "READ_ACP", "WRITE", "WRITE_ACP"]
+        &[
+            "FULL_CONTROL", "READ", "READ_ACP", "WRITE", "WRITE_ACP"
+        ]
     }
 }
 impl AsRef<str> for AclPermission {
@@ -7279,11 +6620,11 @@ impl AsRef<str> for AclPermission {
     }
 }
 
-/// <p>The configuration for a Secrets Manager secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html">CreateSecret</a>.</p>
+/// <p>The configuration for a Secrets Manager secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html">CreateSecret</a>.</p> 
 /// <p>You can propose a configuration for a new secret or an existing secret that you own by specifying the secret policy and optional KMS encryption key. If the configuration is for an existing secret and you do not specify the secret policy, the access preview uses the existing policy for the secret. If the access preview is for a new resource and you do not specify the policy, the access preview assumes a secret without a policy. To propose deletion of an existing policy, you can specify an empty string. If the proposed configuration is for a new secret and you do not specify the KMS key ID, the access preview uses the Amazon Web Services managed key <code>aws/secretsmanager</code>. If you specify an empty string for the KMS key ID, the access preview uses the Amazon Web Services managed key of the Amazon Web Services account. For more information about secret policy limits, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_limits.html">Quotas for Secrets Manager.</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SecretsManagerSecretConfiguration {
+pub struct SecretsManagerSecretConfiguration  {
     /// <p>The proposed ARN, key ID, or alias of the KMS key.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -7293,17 +6634,17 @@ pub struct SecretsManagerSecretConfiguration {
 }
 impl SecretsManagerSecretConfiguration {
     /// <p>The proposed ARN, key ID, or alias of the KMS key.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The proposed resource policy defining who can access or manage the secret.</p>
-    pub fn secret_policy(&self) -> std::option::Option<&str> {
+    pub fn secret_policy(&self) -> std::option::Option<& str> {
         self.secret_policy.as_deref()
     }
 }
 /// See [`SecretsManagerSecretConfiguration`](crate::model::SecretsManagerSecretConfiguration).
 pub mod secrets_manager_secret_configuration {
-
+    
     /// A builder for [`SecretsManagerSecretConfiguration`](crate::model::SecretsManagerSecretConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7318,8 +6659,7 @@ pub mod secrets_manager_secret_configuration {
         }
         /// <p>The proposed ARN, key ID, or alias of the KMS key.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>The proposed resource policy defining who can access or manage the secret.</p>
         pub fn secret_policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7327,21 +6667,21 @@ pub mod secrets_manager_secret_configuration {
             self
         }
         /// <p>The proposed resource policy defining who can access or manage the secret.</p>
-        pub fn set_secret_policy(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.secret_policy = input;
-            self
+        pub fn set_secret_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_policy = input; self
         }
         /// Consumes the builder and constructs a [`SecretsManagerSecretConfiguration`](crate::model::SecretsManagerSecretConfiguration).
         pub fn build(self) -> crate::model::SecretsManagerSecretConfiguration {
             crate::model::SecretsManagerSecretConfiguration {
-                kms_key_id: self.kms_key_id,
-                secret_policy: self.secret_policy,
+                kms_key_id: self.kms_key_id
+                ,
+                secret_policy: self.secret_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl SecretsManagerSecretConfiguration {
     /// Creates a new builder-style object to manufacture [`SecretsManagerSecretConfiguration`](crate::model::SecretsManagerSecretConfiguration).
@@ -7353,50 +6693,39 @@ impl SecretsManagerSecretConfiguration {
 /// <p>The proposed access control configuration for an Amazon RDS DB snapshot. You can propose a configuration for a new Amazon RDS DB snapshot or an Amazon RDS DB snapshot that you own by specifying the <code>RdsDbSnapshotAttributeValue</code> and optional KMS encryption key. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSnapshotAttribute.html">ModifyDBSnapshotAttribute</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RdsDbSnapshotConfiguration {
+pub struct RdsDbSnapshotConfiguration  {
     /// <p>The names and values of manual DB snapshot attributes. Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB snapshot. The only valid value for <code>attributeName</code> for the attribute map is restore.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::RdsDbSnapshotAttributeValue>,
-    >,
-    /// <p>The KMS key identifier for an encrypted Amazon RDS DB snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    /// <ul>
-    /// <li> <p>If the configuration is for an existing Amazon RDS DB snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
-    /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li>
+    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, crate::model::RdsDbSnapshotAttributeValue>>,
+    /// <p>The KMS key identifier for an encrypted Amazon RDS DB snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p> 
+    /// <ul> 
+    /// <li> <p>If the configuration is for an existing Amazon RDS DB snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li> 
+    /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl RdsDbSnapshotConfiguration {
     /// <p>The names and values of manual DB snapshot attributes. Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB snapshot. The only valid value for <code>attributeName</code> for the attribute map is restore.</p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::RdsDbSnapshotAttributeValue>,
-    > {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::RdsDbSnapshotAttributeValue>> {
         self.attributes.as_ref()
     }
-    /// <p>The KMS key identifier for an encrypted Amazon RDS DB snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    /// <ul>
-    /// <li> <p>If the configuration is for an existing Amazon RDS DB snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
-    /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li>
+    /// <p>The KMS key identifier for an encrypted Amazon RDS DB snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p> 
+    /// <ul> 
+    /// <li> <p>If the configuration is for an existing Amazon RDS DB snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li> 
+    /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li> 
     /// </ul>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
 /// See [`RdsDbSnapshotConfiguration`](crate::model::RdsDbSnapshotConfiguration).
 pub mod rds_db_snapshot_configuration {
-
+    
     /// A builder for [`RdsDbSnapshotConfiguration`](crate::model::RdsDbSnapshotConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attributes: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                crate::model::RdsDbSnapshotAttributeValue,
-            >,
-        >,
+        pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, crate::model::RdsDbSnapshotAttributeValue>>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7405,55 +6734,45 @@ pub mod rds_db_snapshot_configuration {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The names and values of manual DB snapshot attributes. Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB snapshot. The only valid value for <code>attributeName</code> for the attribute map is restore.</p>
-        pub fn attributes(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::RdsDbSnapshotAttributeValue,
-        ) -> Self {
+        pub fn attributes(mut self, k: impl Into<std::string::String>, v: crate::model::RdsDbSnapshotAttributeValue) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.attributes = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.attributes = Some(hash_map);
+                            self
         }
         /// <p>The names and values of manual DB snapshot attributes. Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB snapshot. The only valid value for <code>attributeName</code> for the attribute map is restore.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::RdsDbSnapshotAttributeValue,
-                >,
-            >,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::RdsDbSnapshotAttributeValue>>) -> Self {
+            self.attributes = input; self
         }
-        /// <p>The KMS key identifier for an encrypted Amazon RDS DB snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-        /// <ul>
-        /// <li> <p>If the configuration is for an existing Amazon RDS DB snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
-        /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li>
+        /// <p>The KMS key identifier for an encrypted Amazon RDS DB snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p> 
+        /// <ul> 
+        /// <li> <p>If the configuration is for an existing Amazon RDS DB snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li> 
+        /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li> 
         /// </ul>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The KMS key identifier for an encrypted Amazon RDS DB snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-        /// <ul>
-        /// <li> <p>If the configuration is for an existing Amazon RDS DB snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
-        /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li>
+        /// <p>The KMS key identifier for an encrypted Amazon RDS DB snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p> 
+        /// <ul> 
+        /// <li> <p>If the configuration is for an existing Amazon RDS DB snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li> 
+        /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li> 
         /// </ul>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Consumes the builder and constructs a [`RdsDbSnapshotConfiguration`](crate::model::RdsDbSnapshotConfiguration).
         pub fn build(self) -> crate::model::RdsDbSnapshotConfiguration {
             crate::model::RdsDbSnapshotConfiguration {
-                attributes: self.attributes,
-                kms_key_id: self.kms_key_id,
+                attributes: self.attributes
+                ,
+                kms_key_id: self.kms_key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RdsDbSnapshotConfiguration {
     /// Creates a new builder-style object to manufacture [`RdsDbSnapshotConfiguration`](crate::model::RdsDbSnapshotConfiguration).
@@ -7466,11 +6785,11 @@ impl RdsDbSnapshotConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum RdsDbSnapshotAttributeValue {
-    /// <p>The Amazon Web Services account IDs that have access to the manual Amazon RDS DB snapshot. If the value <code>all</code> is specified, then the Amazon RDS DB snapshot is public and can be copied or restored by all Amazon Web Services accounts.</p>
-    /// <ul>
-    /// <li> <p>If the configuration is for an existing Amazon RDS DB snapshot and you do not specify the <code>accountIds</code> in <code>RdsDbSnapshotAttributeValue</code>, then the access preview uses the existing shared <code>accountIds</code> for the snapshot.</p> </li>
-    /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>accountIds</code> in <code>RdsDbSnapshotAttributeValue</code>, then the access preview considers the snapshot without any attributes.</p> </li>
-    /// <li> <p>To propose deletion of an existing shared <code>accountIds</code>, you can specify an empty list for <code>accountIds</code> in the <code>RdsDbSnapshotAttributeValue</code>.</p> </li>
+    /// <p>The Amazon Web Services account IDs that have access to the manual Amazon RDS DB snapshot. If the value <code>all</code> is specified, then the Amazon RDS DB snapshot is public and can be copied or restored by all Amazon Web Services accounts.</p> 
+    /// <ul> 
+    /// <li> <p>If the configuration is for an existing Amazon RDS DB snapshot and you do not specify the <code>accountIds</code> in <code>RdsDbSnapshotAttributeValue</code>, then the access preview uses the existing shared <code>accountIds</code> for the snapshot.</p> </li> 
+    /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>accountIds</code> in <code>RdsDbSnapshotAttributeValue</code>, then the access preview considers the snapshot without any attributes.</p> </li> 
+    /// <li> <p>To propose deletion of an existing shared <code>accountIds</code>, you can specify an empty list for <code>accountIds</code> in the <code>RdsDbSnapshotAttributeValue</code>.</p> </li> 
     /// </ul>
     AccountIds(std::vec::Vec<std::string::String>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -7487,14 +6806,8 @@ impl RdsDbSnapshotAttributeValue {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`AccountIds`](crate::model::RdsDbSnapshotAttributeValue::AccountIds), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_account_ids(
-        &self,
-    ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
-        if let RdsDbSnapshotAttributeValue::AccountIds(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_account_ids(&self) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
+        if let RdsDbSnapshotAttributeValue::AccountIds(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`AccountIds`](crate::model::RdsDbSnapshotAttributeValue::AccountIds).
     pub fn is_account_ids(&self) -> bool {
@@ -7509,56 +6822,39 @@ impl RdsDbSnapshotAttributeValue {
 /// <p>The proposed access control configuration for an Amazon RDS DB cluster snapshot. You can propose a configuration for a new Amazon RDS DB cluster snapshot or an Amazon RDS DB cluster snapshot that you own by specifying the <code>RdsDbClusterSnapshotAttributeValue</code> and optional KMS encryption key. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterSnapshotAttribute.html">ModifyDBClusterSnapshotAttribute</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RdsDbClusterSnapshotConfiguration {
+pub struct RdsDbClusterSnapshotConfiguration  {
     /// <p>The names and values of manual DB cluster snapshot attributes. Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB cluster snapshot. The only valid value for <code>AttributeName</code> for the attribute map is <code>restore</code> </p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            crate::model::RdsDbClusterSnapshotAttributeValue,
-        >,
-    >,
-    /// <p>The KMS key identifier for an encrypted Amazon RDS DB cluster snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    /// <ul>
-    /// <li> <p>If the configuration is for an existing Amazon RDS DB cluster snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
-    /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li>
+    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, crate::model::RdsDbClusterSnapshotAttributeValue>>,
+    /// <p>The KMS key identifier for an encrypted Amazon RDS DB cluster snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p> 
+    /// <ul> 
+    /// <li> <p>If the configuration is for an existing Amazon RDS DB cluster snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li> 
+    /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl RdsDbClusterSnapshotConfiguration {
     /// <p>The names and values of manual DB cluster snapshot attributes. Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB cluster snapshot. The only valid value for <code>AttributeName</code> for the attribute map is <code>restore</code> </p>
-    pub fn attributes(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            crate::model::RdsDbClusterSnapshotAttributeValue,
-        >,
-    > {
+    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::RdsDbClusterSnapshotAttributeValue>> {
         self.attributes.as_ref()
     }
-    /// <p>The KMS key identifier for an encrypted Amazon RDS DB cluster snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    /// <ul>
-    /// <li> <p>If the configuration is for an existing Amazon RDS DB cluster snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
-    /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li>
+    /// <p>The KMS key identifier for an encrypted Amazon RDS DB cluster snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p> 
+    /// <ul> 
+    /// <li> <p>If the configuration is for an existing Amazon RDS DB cluster snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li> 
+    /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li> 
     /// </ul>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
 /// See [`RdsDbClusterSnapshotConfiguration`](crate::model::RdsDbClusterSnapshotConfiguration).
 pub mod rds_db_cluster_snapshot_configuration {
-
+    
     /// A builder for [`RdsDbClusterSnapshotConfiguration`](crate::model::RdsDbClusterSnapshotConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attributes: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                crate::model::RdsDbClusterSnapshotAttributeValue,
-            >,
-        >,
+        pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, crate::model::RdsDbClusterSnapshotAttributeValue>>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7567,55 +6863,45 @@ pub mod rds_db_cluster_snapshot_configuration {
         /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
         ///
         /// <p>The names and values of manual DB cluster snapshot attributes. Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB cluster snapshot. The only valid value for <code>AttributeName</code> for the attribute map is <code>restore</code> </p>
-        pub fn attributes(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::RdsDbClusterSnapshotAttributeValue,
-        ) -> Self {
+        pub fn attributes(mut self, k: impl Into<std::string::String>, v: crate::model::RdsDbClusterSnapshotAttributeValue) -> Self {
             let mut hash_map = self.attributes.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.attributes = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.attributes = Some(hash_map);
+                            self
         }
         /// <p>The names and values of manual DB cluster snapshot attributes. Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB cluster snapshot. The only valid value for <code>AttributeName</code> for the attribute map is <code>restore</code> </p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::RdsDbClusterSnapshotAttributeValue,
-                >,
-            >,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::RdsDbClusterSnapshotAttributeValue>>) -> Self {
+            self.attributes = input; self
         }
-        /// <p>The KMS key identifier for an encrypted Amazon RDS DB cluster snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-        /// <ul>
-        /// <li> <p>If the configuration is for an existing Amazon RDS DB cluster snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
-        /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li>
+        /// <p>The KMS key identifier for an encrypted Amazon RDS DB cluster snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p> 
+        /// <ul> 
+        /// <li> <p>If the configuration is for an existing Amazon RDS DB cluster snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li> 
+        /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li> 
         /// </ul>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The KMS key identifier for an encrypted Amazon RDS DB cluster snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-        /// <ul>
-        /// <li> <p>If the configuration is for an existing Amazon RDS DB cluster snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
-        /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li>
+        /// <p>The KMS key identifier for an encrypted Amazon RDS DB cluster snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p> 
+        /// <ul> 
+        /// <li> <p>If the configuration is for an existing Amazon RDS DB cluster snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li> 
+        /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.</p> </li> 
         /// </ul>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Consumes the builder and constructs a [`RdsDbClusterSnapshotConfiguration`](crate::model::RdsDbClusterSnapshotConfiguration).
         pub fn build(self) -> crate::model::RdsDbClusterSnapshotConfiguration {
             crate::model::RdsDbClusterSnapshotConfiguration {
-                attributes: self.attributes,
-                kms_key_id: self.kms_key_id,
+                attributes: self.attributes
+                ,
+                kms_key_id: self.kms_key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl RdsDbClusterSnapshotConfiguration {
     /// Creates a new builder-style object to manufacture [`RdsDbClusterSnapshotConfiguration`](crate::model::RdsDbClusterSnapshotConfiguration).
@@ -7628,11 +6914,11 @@ impl RdsDbClusterSnapshotConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum RdsDbClusterSnapshotAttributeValue {
-    /// <p>The Amazon Web Services account IDs that have access to the manual Amazon RDS DB cluster snapshot. If the value <code>all</code> is specified, then the Amazon RDS DB cluster snapshot is public and can be copied or restored by all Amazon Web Services accounts.</p>
-    /// <ul>
-    /// <li> <p>If the configuration is for an existing Amazon RDS DB cluster snapshot and you do not specify the <code>accountIds</code> in <code>RdsDbClusterSnapshotAttributeValue</code>, then the access preview uses the existing shared <code>accountIds</code> for the snapshot.</p> </li>
-    /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>accountIds</code> in <code>RdsDbClusterSnapshotAttributeValue</code>, then the access preview considers the snapshot without any attributes.</p> </li>
-    /// <li> <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>accountIds</code> in the <code>RdsDbClusterSnapshotAttributeValue</code>.</p> </li>
+    /// <p>The Amazon Web Services account IDs that have access to the manual Amazon RDS DB cluster snapshot. If the value <code>all</code> is specified, then the Amazon RDS DB cluster snapshot is public and can be copied or restored by all Amazon Web Services accounts.</p> 
+    /// <ul> 
+    /// <li> <p>If the configuration is for an existing Amazon RDS DB cluster snapshot and you do not specify the <code>accountIds</code> in <code>RdsDbClusterSnapshotAttributeValue</code>, then the access preview uses the existing shared <code>accountIds</code> for the snapshot.</p> </li> 
+    /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>accountIds</code> in <code>RdsDbClusterSnapshotAttributeValue</code>, then the access preview considers the snapshot without any attributes.</p> </li> 
+    /// <li> <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>accountIds</code> in the <code>RdsDbClusterSnapshotAttributeValue</code>.</p> </li> 
     /// </ul>
     AccountIds(std::vec::Vec<std::string::String>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -7649,14 +6935,8 @@ impl RdsDbClusterSnapshotAttributeValue {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`AccountIds`](crate::model::RdsDbClusterSnapshotAttributeValue::AccountIds), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_account_ids(
-        &self,
-    ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
-        if let RdsDbClusterSnapshotAttributeValue::AccountIds(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_account_ids(&self) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
+        if let RdsDbClusterSnapshotAttributeValue::AccountIds(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`AccountIds`](crate::model::RdsDbClusterSnapshotAttributeValue::AccountIds).
     pub fn is_account_ids(&self) -> bool {
@@ -7668,41 +6948,35 @@ impl RdsDbClusterSnapshotAttributeValue {
     }
 }
 
-/// <p>Proposed access control configuration for a KMS key. You can propose a configuration for a new KMS key or an existing KMS key that you own by specifying the key policy and KMS grant configuration. If the configuration is for an existing key and you do not specify the key policy, the access preview uses the existing policy for the key. If the access preview is for a new resource and you do not specify the key policy, then the access preview uses the default key policy. The proposed key policy cannot be an empty string. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>. For more information about key policy limits, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource quotas</a>.</p>
+/// <p>Proposed access control configuration for a KMS key. You can propose a configuration for a new KMS key or an existing KMS key that you own by specifying the key policy and KMS grant configuration. If the configuration is for an existing key and you do not specify the key policy, the access preview uses the existing policy for the key. If the access preview is for a new resource and you do not specify the key policy, then the access preview uses the default key policy. The proposed key policy cannot be an empty string. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>. For more information about key policy limits, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource quotas</a>.</p> 
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KmsKeyConfiguration {
+pub struct KmsKeyConfiguration  {
     /// <p>Resource policy configuration for the KMS key. The only valid value for the name of the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>.</p>
     #[doc(hidden)]
-    pub key_policies:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub key_policies: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing key, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the key.</p>
     #[doc(hidden)]
     pub grants: std::option::Option<std::vec::Vec<crate::model::KmsGrantConfiguration>>,
 }
 impl KmsKeyConfiguration {
     /// <p>Resource policy configuration for the KMS key. The only valid value for the name of the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>.</p>
-    pub fn key_policies(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn key_policies(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.key_policies.as_ref()
     }
     /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing key, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the key.</p>
-    pub fn grants(&self) -> std::option::Option<&[crate::model::KmsGrantConfiguration]> {
+    pub fn grants(&self) -> std::option::Option<& [crate::model::KmsGrantConfiguration]> {
         self.grants.as_deref()
     }
 }
 /// See [`KmsKeyConfiguration`](crate::model::KmsKeyConfiguration).
 pub mod kms_key_configuration {
-
+    
     /// A builder for [`KmsKeyConfiguration`](crate::model::KmsKeyConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) key_policies: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) key_policies: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) grants: std::option::Option<std::vec::Vec<crate::model::KmsGrantConfiguration>>,
     }
     impl Builder {
@@ -7711,25 +6985,15 @@ pub mod kms_key_configuration {
         /// To override the contents of this collection use [`set_key_policies`](Self::set_key_policies).
         ///
         /// <p>Resource policy configuration for the KMS key. The only valid value for the name of the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>.</p>
-        pub fn key_policies(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn key_policies(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.key_policies.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.key_policies = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.key_policies = Some(hash_map);
+                            self
         }
         /// <p>Resource policy configuration for the KMS key. The only valid value for the name of the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default key policy</a>.</p>
-        pub fn set_key_policies(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.key_policies = input;
-            self
+        pub fn set_key_policies(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.key_policies = input; self
         }
         /// Appends an item to `grants`.
         ///
@@ -7738,26 +7002,26 @@ pub mod kms_key_configuration {
         /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing key, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the key.</p>
         pub fn grants(mut self, input: crate::model::KmsGrantConfiguration) -> Self {
             let mut v = self.grants.unwrap_or_default();
-            v.push(input);
-            self.grants = Some(v);
-            self
+                            v.push(input);
+                            self.grants = Some(v);
+                            self
         }
         /// <p>A list of proposed grant configurations for the KMS key. If the proposed grant configuration is for an existing key, the access preview uses the proposed list of grant configurations in place of the existing grants. Otherwise, the access preview uses the existing grants for the key.</p>
-        pub fn set_grants(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::KmsGrantConfiguration>>,
-        ) -> Self {
-            self.grants = input;
-            self
+        pub fn set_grants(mut self, input: std::option::Option<std::vec::Vec<crate::model::KmsGrantConfiguration>>) -> Self {
+            self.grants = input; self
         }
         /// Consumes the builder and constructs a [`KmsKeyConfiguration`](crate::model::KmsKeyConfiguration).
         pub fn build(self) -> crate::model::KmsKeyConfiguration {
             crate::model::KmsKeyConfiguration {
-                key_policies: self.key_policies,
-                grants: self.grants,
+                key_policies: self.key_policies
+                ,
+                grants: self.grants
+                ,
             }
         }
     }
+    
+    
 }
 impl KmsKeyConfiguration {
     /// Creates a new builder-style object to manufacture [`KmsKeyConfiguration`](crate::model::KmsKeyConfiguration).
@@ -7769,7 +7033,7 @@ impl KmsKeyConfiguration {
 /// <p>A proposed grant configuration for a KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KmsGrantConfiguration {
+pub struct KmsGrantConfiguration  {
     /// <p>A list of operations that the grant permits.</p>
     #[doc(hidden)]
     pub operations: std::option::Option<std::vec::Vec<crate::model::KmsGrantOperation>>,
@@ -7788,29 +7052,29 @@ pub struct KmsGrantConfiguration {
 }
 impl KmsGrantConfiguration {
     /// <p>A list of operations that the grant permits.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::model::KmsGrantOperation]> {
+    pub fn operations(&self) -> std::option::Option<& [crate::model::KmsGrantOperation]> {
         self.operations.as_deref()
     }
     /// <p>The principal that is given permission to perform the operations that the grant permits.</p>
-    pub fn grantee_principal(&self) -> std::option::Option<&str> {
+    pub fn grantee_principal(&self) -> std::option::Option<& str> {
         self.grantee_principal.as_deref()
     }
     /// <p>The principal that is given permission to retire the grant by using <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a> operation.</p>
-    pub fn retiring_principal(&self) -> std::option::Option<&str> {
+    pub fn retiring_principal(&self) -> std::option::Option<& str> {
         self.retiring_principal.as_deref()
     }
     /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>.</p>
-    pub fn constraints(&self) -> std::option::Option<&crate::model::KmsGrantConstraints> {
+    pub fn constraints(&self) -> std::option::Option<& crate::model::KmsGrantConstraints> {
         self.constraints.as_ref()
     }
     /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
-    pub fn issuing_account(&self) -> std::option::Option<&str> {
+    pub fn issuing_account(&self) -> std::option::Option<& str> {
         self.issuing_account.as_deref()
     }
 }
 /// See [`KmsGrantConfiguration`](crate::model::KmsGrantConfiguration).
 pub mod kms_grant_configuration {
-
+    
     /// A builder for [`KmsGrantConfiguration`](crate::model::KmsGrantConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7828,17 +7092,13 @@ pub mod kms_grant_configuration {
         /// <p>A list of operations that the grant permits.</p>
         pub fn operations(mut self, input: crate::model::KmsGrantOperation) -> Self {
             let mut v = self.operations.unwrap_or_default();
-            v.push(input);
-            self.operations = Some(v);
-            self
+                            v.push(input);
+                            self.operations = Some(v);
+                            self
         }
         /// <p>A list of operations that the grant permits.</p>
-        pub fn set_operations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::KmsGrantOperation>>,
-        ) -> Self {
-            self.operations = input;
-            self
+        pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::model::KmsGrantOperation>>) -> Self {
+            self.operations = input; self
         }
         /// <p>The principal that is given permission to perform the operations that the grant permits.</p>
         pub fn grantee_principal(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7846,12 +7106,8 @@ pub mod kms_grant_configuration {
             self
         }
         /// <p>The principal that is given permission to perform the operations that the grant permits.</p>
-        pub fn set_grantee_principal(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.grantee_principal = input;
-            self
+        pub fn set_grantee_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.grantee_principal = input; self
         }
         /// <p>The principal that is given permission to retire the grant by using <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a> operation.</p>
         pub fn retiring_principal(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7859,12 +7115,8 @@ pub mod kms_grant_configuration {
             self
         }
         /// <p>The principal that is given permission to retire the grant by using <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_RetireGrant.html">RetireGrant</a> operation.</p>
-        pub fn set_retiring_principal(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.retiring_principal = input;
-            self
+        pub fn set_retiring_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.retiring_principal = input; self
         }
         /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>.</p>
         pub fn constraints(mut self, input: crate::model::KmsGrantConstraints) -> Self {
@@ -7872,12 +7124,8 @@ pub mod kms_grant_configuration {
             self
         }
         /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>.</p>
-        pub fn set_constraints(
-            mut self,
-            input: std::option::Option<crate::model::KmsGrantConstraints>,
-        ) -> Self {
-            self.constraints = input;
-            self
+        pub fn set_constraints(mut self, input: std::option::Option<crate::model::KmsGrantConstraints>) -> Self {
+            self.constraints = input; self
         }
         /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
         pub fn issuing_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7885,24 +7133,27 @@ pub mod kms_grant_configuration {
             self
         }
         /// <p> The Amazon Web Services account under which the grant was issued. The account is used to propose KMS grants issued by accounts other than the owner of the key.</p>
-        pub fn set_issuing_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.issuing_account = input;
-            self
+        pub fn set_issuing_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.issuing_account = input; self
         }
         /// Consumes the builder and constructs a [`KmsGrantConfiguration`](crate::model::KmsGrantConfiguration).
         pub fn build(self) -> crate::model::KmsGrantConfiguration {
             crate::model::KmsGrantConfiguration {
-                operations: self.operations,
-                grantee_principal: self.grantee_principal,
-                retiring_principal: self.retiring_principal,
-                constraints: self.constraints,
-                issuing_account: self.issuing_account,
+                operations: self.operations
+                ,
+                grantee_principal: self.grantee_principal
+                ,
+                retiring_principal: self.retiring_principal
+                ,
+                constraints: self.constraints
+                ,
+                issuing_account: self.issuing_account
+                ,
             }
         }
     }
+    
+    
 }
 impl KmsGrantConfiguration {
     /// Creates a new builder-style object to manufacture [`KmsGrantConfiguration`](crate::model::KmsGrantConfiguration).
@@ -7914,44 +7165,32 @@ impl KmsGrantConfiguration {
 /// <p>Use this structure to propose allowing <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> in the grant only when the operation request includes the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a>. You can specify only one type of encryption context. An empty map is treated as not specified. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GrantConstraints.html">GrantConstraints</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KmsGrantConstraints {
+pub struct KmsGrantConstraints  {
     /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint.</p>
     #[doc(hidden)]
-    pub encryption_context_equals:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub encryption_context_equals: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs.</p>
     #[doc(hidden)]
-    pub encryption_context_subset:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub encryption_context_subset: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl KmsGrantConstraints {
     /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint.</p>
-    pub fn encryption_context_equals(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn encryption_context_equals(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.encryption_context_equals.as_ref()
     }
     /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs.</p>
-    pub fn encryption_context_subset(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn encryption_context_subset(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.encryption_context_subset.as_ref()
     }
 }
 /// See [`KmsGrantConstraints`](crate::model::KmsGrantConstraints).
 pub mod kms_grant_constraints {
-
+    
     /// A builder for [`KmsGrantConstraints`](crate::model::KmsGrantConstraints).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) encryption_context_equals: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) encryption_context_subset: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) encryption_context_equals: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) encryption_context_subset: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `encryption_context_equals`.
@@ -7959,59 +7198,43 @@ pub mod kms_grant_constraints {
         /// To override the contents of this collection use [`set_encryption_context_equals`](Self::set_encryption_context_equals).
         ///
         /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint.</p>
-        pub fn encryption_context_equals(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn encryption_context_equals(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.encryption_context_equals.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.encryption_context_equals = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.encryption_context_equals = Some(hash_map);
+                            self
         }
         /// <p>A list of key-value pairs that must match the encryption context in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint.</p>
-        pub fn set_encryption_context_equals(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.encryption_context_equals = input;
-            self
+        pub fn set_encryption_context_equals(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.encryption_context_equals = input; self
         }
         /// Adds a key-value pair to `encryption_context_subset`.
         ///
         /// To override the contents of this collection use [`set_encryption_context_subset`](Self::set_encryption_context_subset).
         ///
         /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs.</p>
-        pub fn encryption_context_subset(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn encryption_context_subset(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.encryption_context_subset.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.encryption_context_subset = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.encryption_context_subset = Some(hash_map);
+                            self
         }
         /// <p>A list of key-value pairs that must be included in the encryption context of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> request. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs.</p>
-        pub fn set_encryption_context_subset(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.encryption_context_subset = input;
-            self
+        pub fn set_encryption_context_subset(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.encryption_context_subset = input; self
         }
         /// Consumes the builder and constructs a [`KmsGrantConstraints`](crate::model::KmsGrantConstraints).
         pub fn build(self) -> crate::model::KmsGrantConstraints {
             crate::model::KmsGrantConstraints {
-                encryption_context_equals: self.encryption_context_equals,
-                encryption_context_subset: self.encryption_context_subset,
+                encryption_context_equals: self.encryption_context_equals
+                ,
+                encryption_context_subset: self.encryption_context_subset
+                ,
             }
         }
     }
+    
+    
 }
 impl KmsGrantConstraints {
     /// Creates a new builder-style object to manufacture [`KmsGrantConstraints`](crate::model::KmsGrantConstraints).
@@ -8026,9 +7249,9 @@ impl KmsGrantConstraints {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let kmsgrantoperation = unimplemented!();
 /// match kmsgrantoperation {
@@ -8062,22 +7285,14 @@ impl KmsGrantConstraints {
 /// Specifically, when `kmsgrantoperation` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `KmsGrantOperation::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum KmsGrantOperation {
     #[allow(missing_docs)] // documentation missing in model
     CreateGrant,
@@ -8108,7 +7323,7 @@ pub enum KmsGrantOperation {
     #[allow(missing_docs)] // documentation missing in model
     Verify,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KmsGrantOperation {
     fn from(s: &str) -> Self {
@@ -8119,9 +7334,7 @@ impl std::convert::From<&str> for KmsGrantOperation {
             "Encrypt" => KmsGrantOperation::Encrypt,
             "GenerateDataKey" => KmsGrantOperation::GenerateDataKey,
             "GenerateDataKeyPair" => KmsGrantOperation::GenerateDataKeyPair,
-            "GenerateDataKeyPairWithoutPlaintext" => {
-                KmsGrantOperation::GenerateDataKeyPairWithoutPlaintext
-            }
+            "GenerateDataKeyPairWithoutPlaintext" => KmsGrantOperation::GenerateDataKeyPairWithoutPlaintext,
             "GenerateDataKeyWithoutPlaintext" => KmsGrantOperation::GenerateDataKeyWithoutPlaintext,
             "GetPublicKey" => KmsGrantOperation::GetPublicKey,
             "ReEncryptFrom" => KmsGrantOperation::ReencryptFrom,
@@ -8129,19 +7342,17 @@ impl std::convert::From<&str> for KmsGrantOperation {
             "RetireGrant" => KmsGrantOperation::RetireGrant,
             "Sign" => KmsGrantOperation::Sign,
             "Verify" => KmsGrantOperation::Verify,
-            other => {
-                KmsGrantOperation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => KmsGrantOperation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for KmsGrantOperation {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KmsGrantOperation::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(KmsGrantOperation::from(s))
+                }
+            }
 impl KmsGrantOperation {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8152,9 +7363,7 @@ impl KmsGrantOperation {
             KmsGrantOperation::Encrypt => "Encrypt",
             KmsGrantOperation::GenerateDataKey => "GenerateDataKey",
             KmsGrantOperation::GenerateDataKeyPair => "GenerateDataKeyPair",
-            KmsGrantOperation::GenerateDataKeyPairWithoutPlaintext => {
-                "GenerateDataKeyPairWithoutPlaintext"
-            }
+            KmsGrantOperation::GenerateDataKeyPairWithoutPlaintext => "GenerateDataKeyPairWithoutPlaintext",
             KmsGrantOperation::GenerateDataKeyWithoutPlaintext => "GenerateDataKeyWithoutPlaintext",
             KmsGrantOperation::GetPublicKey => "GetPublicKey",
             KmsGrantOperation::ReencryptFrom => "ReEncryptFrom",
@@ -8162,26 +7371,13 @@ impl KmsGrantOperation {
             KmsGrantOperation::RetireGrant => "RetireGrant",
             KmsGrantOperation::Sign => "Sign",
             KmsGrantOperation::Verify => "Verify",
-            KmsGrantOperation::Unknown(value) => value.as_str(),
+            KmsGrantOperation::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CreateGrant",
-            "Decrypt",
-            "DescribeKey",
-            "Encrypt",
-            "GenerateDataKey",
-            "GenerateDataKeyPair",
-            "GenerateDataKeyPairWithoutPlaintext",
-            "GenerateDataKeyWithoutPlaintext",
-            "GetPublicKey",
-            "ReEncryptFrom",
-            "ReEncryptTo",
-            "RetireGrant",
-            "Sign",
-            "Verify",
+            "CreateGrant", "Decrypt", "DescribeKey", "Encrypt", "GenerateDataKey", "GenerateDataKeyPair", "GenerateDataKeyPairWithoutPlaintext", "GenerateDataKeyWithoutPlaintext", "GetPublicKey", "ReEncryptFrom", "ReEncryptTo", "RetireGrant", "Sign", "Verify"
         ]
     }
 }
@@ -8191,28 +7387,28 @@ impl AsRef<str> for KmsGrantOperation {
     }
 }
 
-/// <p>The proposed access control configuration for an Amazon EFS file system. You can propose a configuration for a new Amazon EFS file system or an existing Amazon EFS file system that you own by specifying the Amazon EFS policy. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/using-fs.html">Using file systems in Amazon EFS</a>.</p>
-/// <ul>
-/// <li> <p>If the configuration is for an existing Amazon EFS file system and you do not specify the Amazon EFS policy, then the access preview uses the existing Amazon EFS policy for the file system.</p> </li>
-/// <li> <p>If the access preview is for a new resource and you do not specify the policy, then the access preview assumes an Amazon EFS file system without a policy.</p> </li>
-/// <li> <p>To propose deletion of an existing Amazon EFS file system policy, you can specify an empty string for the Amazon EFS policy.</p> </li>
+/// <p>The proposed access control configuration for an Amazon EFS file system. You can propose a configuration for a new Amazon EFS file system or an existing Amazon EFS file system that you own by specifying the Amazon EFS policy. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/using-fs.html">Using file systems in Amazon EFS</a>.</p> 
+/// <ul> 
+/// <li> <p>If the configuration is for an existing Amazon EFS file system and you do not specify the Amazon EFS policy, then the access preview uses the existing Amazon EFS policy for the file system.</p> </li> 
+/// <li> <p>If the access preview is for a new resource and you do not specify the policy, then the access preview assumes an Amazon EFS file system without a policy.</p> </li> 
+/// <li> <p>To propose deletion of an existing Amazon EFS file system policy, you can specify an empty string for the Amazon EFS policy.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EfsFileSystemConfiguration {
+pub struct EfsFileSystemConfiguration  {
     /// <p>The JSON policy definition to apply to the Amazon EFS file system. For more information on the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">Amazon EFS Resource-based policies</a>.</p>
     #[doc(hidden)]
     pub file_system_policy: std::option::Option<std::string::String>,
 }
 impl EfsFileSystemConfiguration {
     /// <p>The JSON policy definition to apply to the Amazon EFS file system. For more information on the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">Amazon EFS Resource-based policies</a>.</p>
-    pub fn file_system_policy(&self) -> std::option::Option<&str> {
+    pub fn file_system_policy(&self) -> std::option::Option<& str> {
         self.file_system_policy.as_deref()
     }
 }
 /// See [`EfsFileSystemConfiguration`](crate::model::EfsFileSystemConfiguration).
 pub mod efs_file_system_configuration {
-
+    
     /// A builder for [`EfsFileSystemConfiguration`](crate::model::EfsFileSystemConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8225,20 +7421,19 @@ pub mod efs_file_system_configuration {
             self
         }
         /// <p>The JSON policy definition to apply to the Amazon EFS file system. For more information on the elements that make up a file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">Amazon EFS Resource-based policies</a>.</p>
-        pub fn set_file_system_policy(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.file_system_policy = input;
-            self
+        pub fn set_file_system_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.file_system_policy = input; self
         }
         /// Consumes the builder and constructs a [`EfsFileSystemConfiguration`](crate::model::EfsFileSystemConfiguration).
         pub fn build(self) -> crate::model::EfsFileSystemConfiguration {
             crate::model::EfsFileSystemConfiguration {
-                file_system_policy: self.file_system_policy,
+                file_system_policy: self.file_system_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl EfsFileSystemConfiguration {
     /// Creates a new builder-style object to manufacture [`EfsFileSystemConfiguration`](crate::model::EfsFileSystemConfiguration).
@@ -8250,20 +7445,20 @@ impl EfsFileSystemConfiguration {
 /// <p>The proposed access control configuration for an IAM role. You can propose a configuration for a new IAM role or an existing IAM role that you own by specifying the trust policy. If the configuration is for a new IAM role, you must specify the trust policy. If the configuration is for an existing IAM role that you own and you do not propose the trust policy, the access preview uses the existing trust policy for the role. The proposed trust policy cannot be an empty string. For more information about role trust policy limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html">IAM and STS quotas</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IamRoleConfiguration {
+pub struct IamRoleConfiguration  {
     /// <p>The proposed trust policy for the IAM role.</p>
     #[doc(hidden)]
     pub trust_policy: std::option::Option<std::string::String>,
 }
 impl IamRoleConfiguration {
     /// <p>The proposed trust policy for the IAM role.</p>
-    pub fn trust_policy(&self) -> std::option::Option<&str> {
+    pub fn trust_policy(&self) -> std::option::Option<& str> {
         self.trust_policy.as_deref()
     }
 }
 /// See [`IamRoleConfiguration`](crate::model::IamRoleConfiguration).
 pub mod iam_role_configuration {
-
+    
     /// A builder for [`IamRoleConfiguration`](crate::model::IamRoleConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8277,16 +7472,18 @@ pub mod iam_role_configuration {
         }
         /// <p>The proposed trust policy for the IAM role.</p>
         pub fn set_trust_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.trust_policy = input;
-            self
+            self.trust_policy = input; self
         }
         /// Consumes the builder and constructs a [`IamRoleConfiguration`](crate::model::IamRoleConfiguration).
         pub fn build(self) -> crate::model::IamRoleConfiguration {
             crate::model::IamRoleConfiguration {
-                trust_policy: self.trust_policy,
+                trust_policy: self.trust_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl IamRoleConfiguration {
     /// Creates a new builder-style object to manufacture [`IamRoleConfiguration`](crate::model::IamRoleConfiguration).
@@ -8295,28 +7492,28 @@ impl IamRoleConfiguration {
     }
 }
 
-/// <p>The proposed access control configuration for an Amazon ECR repository. You can propose a configuration for a new Amazon ECR repository or an existing Amazon ECR repository that you own by specifying the Amazon ECR policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_Repository.html">Repository</a>.</p>
-/// <ul>
-/// <li> <p>If the configuration is for an existing Amazon ECR repository and you do not specify the Amazon ECR policy, then the access preview uses the existing Amazon ECR policy for the repository.</p> </li>
-/// <li> <p>If the access preview is for a new resource and you do not specify the policy, then the access preview assumes an Amazon ECR repository without a policy.</p> </li>
-/// <li> <p>To propose deletion of an existing Amazon ECR repository policy, you can specify an empty string for the Amazon ECR policy.</p> </li>
+/// <p>The proposed access control configuration for an Amazon ECR repository. You can propose a configuration for a new Amazon ECR repository or an existing Amazon ECR repository that you own by specifying the Amazon ECR policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_Repository.html">Repository</a>.</p> 
+/// <ul> 
+/// <li> <p>If the configuration is for an existing Amazon ECR repository and you do not specify the Amazon ECR policy, then the access preview uses the existing Amazon ECR policy for the repository.</p> </li> 
+/// <li> <p>If the access preview is for a new resource and you do not specify the policy, then the access preview assumes an Amazon ECR repository without a policy.</p> </li> 
+/// <li> <p>To propose deletion of an existing Amazon ECR repository policy, you can specify an empty string for the Amazon ECR policy.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EcrRepositoryConfiguration {
+pub struct EcrRepositoryConfiguration  {
     /// <p>The JSON repository policy text to apply to the Amazon ECR repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
     #[doc(hidden)]
     pub repository_policy: std::option::Option<std::string::String>,
 }
 impl EcrRepositoryConfiguration {
     /// <p>The JSON repository policy text to apply to the Amazon ECR repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
-    pub fn repository_policy(&self) -> std::option::Option<&str> {
+    pub fn repository_policy(&self) -> std::option::Option<& str> {
         self.repository_policy.as_deref()
     }
 }
 /// See [`EcrRepositoryConfiguration`](crate::model::EcrRepositoryConfiguration).
 pub mod ecr_repository_configuration {
-
+    
     /// A builder for [`EcrRepositoryConfiguration`](crate::model::EcrRepositoryConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8329,20 +7526,19 @@ pub mod ecr_repository_configuration {
             self
         }
         /// <p>The JSON repository policy text to apply to the Amazon ECR repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
-        pub fn set_repository_policy(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_policy = input;
-            self
+        pub fn set_repository_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_policy = input; self
         }
         /// Consumes the builder and constructs a [`EcrRepositoryConfiguration`](crate::model::EcrRepositoryConfiguration).
         pub fn build(self) -> crate::model::EcrRepositoryConfiguration {
             crate::model::EcrRepositoryConfiguration {
-                repository_policy: self.repository_policy,
+                repository_policy: self.repository_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl EcrRepositoryConfiguration {
     /// Creates a new builder-style object to manufacture [`EcrRepositoryConfiguration`](crate::model::EcrRepositoryConfiguration).
@@ -8354,62 +7550,62 @@ impl EcrRepositoryConfiguration {
 /// <p>The proposed access control configuration for an Amazon EBS volume snapshot. You can propose a configuration for a new Amazon EBS volume snapshot or an Amazon EBS volume snapshot that you own by specifying the user IDs, groups, and optional KMS encryption key. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySnapshotAttribute.html">ModifySnapshotAttribute</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EbsSnapshotConfiguration {
-    /// <p>The IDs of the Amazon Web Services accounts that have access to the Amazon EBS volume snapshot.</p>
-    /// <ul>
-    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>userIds</code>, then the access preview uses the existing shared <code>userIds</code> for the snapshot.</p> </li>
-    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>userIds</code>, then the access preview considers the snapshot without any <code>userIds</code>.</p> </li>
-    /// <li> <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>userIds</code>.</p> </li>
+pub struct EbsSnapshotConfiguration  {
+    /// <p>The IDs of the Amazon Web Services accounts that have access to the Amazon EBS volume snapshot.</p> 
+    /// <ul> 
+    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>userIds</code>, then the access preview uses the existing shared <code>userIds</code> for the snapshot.</p> </li> 
+    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>userIds</code>, then the access preview considers the snapshot without any <code>userIds</code>.</p> </li> 
+    /// <li> <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>userIds</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The groups that have access to the Amazon EBS volume snapshot. If the value <code>all</code> is specified, then the Amazon EBS volume snapshot is public.</p>
-    /// <ul>
-    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>groups</code>, then the access preview uses the existing shared <code>groups</code> for the snapshot.</p> </li>
-    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>groups</code>, then the access preview considers the snapshot without any <code>groups</code>.</p> </li>
-    /// <li> <p>To propose deletion of existing shared <code>groups</code>, you can specify an empty list for <code>groups</code>.</p> </li>
+    /// <p>The groups that have access to the Amazon EBS volume snapshot. If the value <code>all</code> is specified, then the Amazon EBS volume snapshot is public.</p> 
+    /// <ul> 
+    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>groups</code>, then the access preview uses the existing shared <code>groups</code> for the snapshot.</p> </li> 
+    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>groups</code>, then the access preview considers the snapshot without any <code>groups</code>.</p> </li> 
+    /// <li> <p>To propose deletion of existing shared <code>groups</code>, you can specify an empty list for <code>groups</code>.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The KMS key identifier for an encrypted Amazon EBS volume snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    /// <ul>
-    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
-    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>kmsKeyId</code>, the access preview considers the snapshot as unencrypted.</p> </li>
+    /// <p>The KMS key identifier for an encrypted Amazon EBS volume snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p> 
+    /// <ul> 
+    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li> 
+    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>kmsKeyId</code>, the access preview considers the snapshot as unencrypted.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl EbsSnapshotConfiguration {
-    /// <p>The IDs of the Amazon Web Services accounts that have access to the Amazon EBS volume snapshot.</p>
-    /// <ul>
-    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>userIds</code>, then the access preview uses the existing shared <code>userIds</code> for the snapshot.</p> </li>
-    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>userIds</code>, then the access preview considers the snapshot without any <code>userIds</code>.</p> </li>
-    /// <li> <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>userIds</code>.</p> </li>
+    /// <p>The IDs of the Amazon Web Services accounts that have access to the Amazon EBS volume snapshot.</p> 
+    /// <ul> 
+    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>userIds</code>, then the access preview uses the existing shared <code>userIds</code> for the snapshot.</p> </li> 
+    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>userIds</code>, then the access preview considers the snapshot without any <code>userIds</code>.</p> </li> 
+    /// <li> <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>userIds</code>.</p> </li> 
     /// </ul>
-    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn user_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.user_ids.as_deref()
     }
-    /// <p>The groups that have access to the Amazon EBS volume snapshot. If the value <code>all</code> is specified, then the Amazon EBS volume snapshot is public.</p>
-    /// <ul>
-    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>groups</code>, then the access preview uses the existing shared <code>groups</code> for the snapshot.</p> </li>
-    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>groups</code>, then the access preview considers the snapshot without any <code>groups</code>.</p> </li>
-    /// <li> <p>To propose deletion of existing shared <code>groups</code>, you can specify an empty list for <code>groups</code>.</p> </li>
+    /// <p>The groups that have access to the Amazon EBS volume snapshot. If the value <code>all</code> is specified, then the Amazon EBS volume snapshot is public.</p> 
+    /// <ul> 
+    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>groups</code>, then the access preview uses the existing shared <code>groups</code> for the snapshot.</p> </li> 
+    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>groups</code>, then the access preview considers the snapshot without any <code>groups</code>.</p> </li> 
+    /// <li> <p>To propose deletion of existing shared <code>groups</code>, you can specify an empty list for <code>groups</code>.</p> </li> 
     /// </ul>
-    pub fn groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn groups(&self) -> std::option::Option<& [std::string::String]> {
         self.groups.as_deref()
     }
-    /// <p>The KMS key identifier for an encrypted Amazon EBS volume snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-    /// <ul>
-    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
-    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>kmsKeyId</code>, the access preview considers the snapshot as unencrypted.</p> </li>
+    /// <p>The KMS key identifier for an encrypted Amazon EBS volume snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p> 
+    /// <ul> 
+    /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li> 
+    /// <li> <p>If the access preview is for a new resource and you do not specify the <code>kmsKeyId</code>, the access preview considers the snapshot as unencrypted.</p> </li> 
     /// </ul>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
 /// See [`EbsSnapshotConfiguration`](crate::model::EbsSnapshotConfiguration).
 pub mod ebs_snapshot_configuration {
-
+    
     /// A builder for [`EbsSnapshotConfiguration`](crate::model::EbsSnapshotConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8422,87 +7618,83 @@ pub mod ebs_snapshot_configuration {
         ///
         /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
         ///
-        /// <p>The IDs of the Amazon Web Services accounts that have access to the Amazon EBS volume snapshot.</p>
-        /// <ul>
-        /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>userIds</code>, then the access preview uses the existing shared <code>userIds</code> for the snapshot.</p> </li>
-        /// <li> <p>If the access preview is for a new resource and you do not specify the <code>userIds</code>, then the access preview considers the snapshot without any <code>userIds</code>.</p> </li>
-        /// <li> <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>userIds</code>.</p> </li>
+        /// <p>The IDs of the Amazon Web Services accounts that have access to the Amazon EBS volume snapshot.</p> 
+        /// <ul> 
+        /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>userIds</code>, then the access preview uses the existing shared <code>userIds</code> for the snapshot.</p> </li> 
+        /// <li> <p>If the access preview is for a new resource and you do not specify the <code>userIds</code>, then the access preview considers the snapshot without any <code>userIds</code>.</p> </li> 
+        /// <li> <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>userIds</code>.</p> </li> 
         /// </ul>
         pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_ids.unwrap_or_default();
-            v.push(input.into());
-            self.user_ids = Some(v);
-            self
+                            v.push(input.into());
+                            self.user_ids = Some(v);
+                            self
         }
-        /// <p>The IDs of the Amazon Web Services accounts that have access to the Amazon EBS volume snapshot.</p>
-        /// <ul>
-        /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>userIds</code>, then the access preview uses the existing shared <code>userIds</code> for the snapshot.</p> </li>
-        /// <li> <p>If the access preview is for a new resource and you do not specify the <code>userIds</code>, then the access preview considers the snapshot without any <code>userIds</code>.</p> </li>
-        /// <li> <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>userIds</code>.</p> </li>
+        /// <p>The IDs of the Amazon Web Services accounts that have access to the Amazon EBS volume snapshot.</p> 
+        /// <ul> 
+        /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>userIds</code>, then the access preview uses the existing shared <code>userIds</code> for the snapshot.</p> </li> 
+        /// <li> <p>If the access preview is for a new resource and you do not specify the <code>userIds</code>, then the access preview considers the snapshot without any <code>userIds</code>.</p> </li> 
+        /// <li> <p>To propose deletion of existing shared <code>accountIds</code>, you can specify an empty list for <code>userIds</code>.</p> </li> 
         /// </ul>
-        pub fn set_user_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.user_ids = input;
-            self
+        pub fn set_user_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.user_ids = input; self
         }
         /// Appends an item to `groups`.
         ///
         /// To override the contents of this collection use [`set_groups`](Self::set_groups).
         ///
-        /// <p>The groups that have access to the Amazon EBS volume snapshot. If the value <code>all</code> is specified, then the Amazon EBS volume snapshot is public.</p>
-        /// <ul>
-        /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>groups</code>, then the access preview uses the existing shared <code>groups</code> for the snapshot.</p> </li>
-        /// <li> <p>If the access preview is for a new resource and you do not specify the <code>groups</code>, then the access preview considers the snapshot without any <code>groups</code>.</p> </li>
-        /// <li> <p>To propose deletion of existing shared <code>groups</code>, you can specify an empty list for <code>groups</code>.</p> </li>
+        /// <p>The groups that have access to the Amazon EBS volume snapshot. If the value <code>all</code> is specified, then the Amazon EBS volume snapshot is public.</p> 
+        /// <ul> 
+        /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>groups</code>, then the access preview uses the existing shared <code>groups</code> for the snapshot.</p> </li> 
+        /// <li> <p>If the access preview is for a new resource and you do not specify the <code>groups</code>, then the access preview considers the snapshot without any <code>groups</code>.</p> </li> 
+        /// <li> <p>To propose deletion of existing shared <code>groups</code>, you can specify an empty list for <code>groups</code>.</p> </li> 
         /// </ul>
         pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input.into());
-            self.groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.groups = Some(v);
+                            self
         }
-        /// <p>The groups that have access to the Amazon EBS volume snapshot. If the value <code>all</code> is specified, then the Amazon EBS volume snapshot is public.</p>
-        /// <ul>
-        /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>groups</code>, then the access preview uses the existing shared <code>groups</code> for the snapshot.</p> </li>
-        /// <li> <p>If the access preview is for a new resource and you do not specify the <code>groups</code>, then the access preview considers the snapshot without any <code>groups</code>.</p> </li>
-        /// <li> <p>To propose deletion of existing shared <code>groups</code>, you can specify an empty list for <code>groups</code>.</p> </li>
+        /// <p>The groups that have access to the Amazon EBS volume snapshot. If the value <code>all</code> is specified, then the Amazon EBS volume snapshot is public.</p> 
+        /// <ul> 
+        /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>groups</code>, then the access preview uses the existing shared <code>groups</code> for the snapshot.</p> </li> 
+        /// <li> <p>If the access preview is for a new resource and you do not specify the <code>groups</code>, then the access preview considers the snapshot without any <code>groups</code>.</p> </li> 
+        /// <li> <p>To propose deletion of existing shared <code>groups</code>, you can specify an empty list for <code>groups</code>.</p> </li> 
         /// </ul>
-        pub fn set_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.groups = input;
-            self
+        pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.groups = input; self
         }
-        /// <p>The KMS key identifier for an encrypted Amazon EBS volume snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-        /// <ul>
-        /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
-        /// <li> <p>If the access preview is for a new resource and you do not specify the <code>kmsKeyId</code>, the access preview considers the snapshot as unencrypted.</p> </li>
+        /// <p>The KMS key identifier for an encrypted Amazon EBS volume snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p> 
+        /// <ul> 
+        /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li> 
+        /// <li> <p>If the access preview is for a new resource and you do not specify the <code>kmsKeyId</code>, the access preview considers the snapshot as unencrypted.</p> </li> 
         /// </ul>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
         }
-        /// <p>The KMS key identifier for an encrypted Amazon EBS volume snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-        /// <ul>
-        /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li>
-        /// <li> <p>If the access preview is for a new resource and you do not specify the <code>kmsKeyId</code>, the access preview considers the snapshot as unencrypted.</p> </li>
+        /// <p>The KMS key identifier for an encrypted Amazon EBS volume snapshot. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p> 
+        /// <ul> 
+        /// <li> <p>If the configuration is for an existing Amazon EBS volume snapshot and you do not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access preview uses the existing <code>kmsKeyId</code> of the snapshot.</p> </li> 
+        /// <li> <p>If the access preview is for a new resource and you do not specify the <code>kmsKeyId</code>, the access preview considers the snapshot as unencrypted.</p> </li> 
         /// </ul>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Consumes the builder and constructs a [`EbsSnapshotConfiguration`](crate::model::EbsSnapshotConfiguration).
         pub fn build(self) -> crate::model::EbsSnapshotConfiguration {
             crate::model::EbsSnapshotConfiguration {
-                user_ids: self.user_ids,
-                groups: self.groups,
-                kms_key_id: self.kms_key_id,
+                user_ids: self.user_ids
+                ,
+                groups: self.groups
+                ,
+                kms_key_id: self.kms_key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl EbsSnapshotConfiguration {
     /// Creates a new builder-style object to manufacture [`EbsSnapshotConfiguration`](crate::model::EbsSnapshotConfiguration).
@@ -8510,3 +7702,4 @@ impl EbsSnapshotConfiguration {
         crate::model::ebs_snapshot_configuration::Builder::default()
     }
 }
+

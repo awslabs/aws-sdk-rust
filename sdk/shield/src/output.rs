@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSubscriptionOutput {}
+pub struct UpdateSubscriptionOutput  {
+}
 /// See [`UpdateSubscriptionOutput`](crate::output::UpdateSubscriptionOutput).
 pub mod update_subscription_output {
-
+    
     /// A builder for [`UpdateSubscriptionOutput`](crate::output::UpdateSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateSubscriptionOutput`](crate::output::UpdateSubscriptionOutput).
         pub fn build(self) -> crate::output::UpdateSubscriptionOutput {
-            crate::output::UpdateSubscriptionOutput {}
+            crate::output::UpdateSubscriptionOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSubscriptionOutput`](crate::output::UpdateSubscriptionOutput).
@@ -26,19 +31,24 @@ impl UpdateSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProtectionGroupOutput {}
+pub struct UpdateProtectionGroupOutput  {
+}
 /// See [`UpdateProtectionGroupOutput`](crate::output::UpdateProtectionGroupOutput).
 pub mod update_protection_group_output {
-
+    
     /// A builder for [`UpdateProtectionGroupOutput`](crate::output::UpdateProtectionGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateProtectionGroupOutput`](crate::output::UpdateProtectionGroupOutput).
         pub fn build(self) -> crate::output::UpdateProtectionGroupOutput {
-            crate::output::UpdateProtectionGroupOutput {}
+            crate::output::UpdateProtectionGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateProtectionGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateProtectionGroupOutput`](crate::output::UpdateProtectionGroupOutput).
@@ -50,19 +60,24 @@ impl UpdateProtectionGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEmergencyContactSettingsOutput {}
+pub struct UpdateEmergencyContactSettingsOutput  {
+}
 /// See [`UpdateEmergencyContactSettingsOutput`](crate::output::UpdateEmergencyContactSettingsOutput).
 pub mod update_emergency_contact_settings_output {
-
+    
     /// A builder for [`UpdateEmergencyContactSettingsOutput`](crate::output::UpdateEmergencyContactSettingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateEmergencyContactSettingsOutput`](crate::output::UpdateEmergencyContactSettingsOutput).
         pub fn build(self) -> crate::output::UpdateEmergencyContactSettingsOutput {
-            crate::output::UpdateEmergencyContactSettingsOutput {}
+            crate::output::UpdateEmergencyContactSettingsOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateEmergencyContactSettingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEmergencyContactSettingsOutput`](crate::output::UpdateEmergencyContactSettingsOutput).
@@ -74,19 +89,24 @@ impl UpdateEmergencyContactSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApplicationLayerAutomaticResponseOutput {}
+pub struct UpdateApplicationLayerAutomaticResponseOutput  {
+}
 /// See [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput).
 pub mod update_application_layer_automatic_response_output {
-
+    
     /// A builder for [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput).
         pub fn build(self) -> crate::output::UpdateApplicationLayerAutomaticResponseOutput {
-            crate::output::UpdateApplicationLayerAutomaticResponseOutput {}
+            crate::output::UpdateApplicationLayerAutomaticResponseOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateApplicationLayerAutomaticResponseOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationLayerAutomaticResponseOutput`](crate::output::UpdateApplicationLayerAutomaticResponseOutput).
@@ -98,19 +118,24 @@ impl UpdateApplicationLayerAutomaticResponseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -122,19 +147,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -146,20 +176,20 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A list of tag key and value pairs associated with the specified resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of tag key and value pairs associated with the specified resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -173,23 +203,24 @@ pub mod list_tags_for_resource_output {
         /// <p>A list of tag key and value pairs associated with the specified resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of tag key and value pairs associated with the specified resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -201,31 +232,31 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourcesInProtectionGroupOutput {
+pub struct ListResourcesInProtectionGroupOutput  {
     /// <p>The Amazon Resource Names (ARNs) of the resources that are included in the protection group.</p>
     #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
-    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p> 
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p> 
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListResourcesInProtectionGroupOutput {
     /// <p>The Amazon Resource Names (ARNs) of the resources that are included in the protection group.</p>
-    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_arns.as_deref()
     }
-    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
-    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p> 
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p> 
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListResourcesInProtectionGroupOutput`](crate::output::ListResourcesInProtectionGroupOutput).
 pub mod list_resources_in_protection_group_output {
-
+    
     /// A builder for [`ListResourcesInProtectionGroupOutput`](crate::output::ListResourcesInProtectionGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -240,40 +271,39 @@ pub mod list_resources_in_protection_group_output {
         /// <p>The Amazon Resource Names (ARNs) of the resources that are included in the protection group.</p>
         pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_arns.unwrap_or_default();
-            v.push(input.into());
-            self.resource_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.resource_arns = Some(v);
+                            self
         }
         /// <p>The Amazon Resource Names (ARNs) of the resources that are included in the protection group.</p>
-        pub fn set_resource_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resource_arns = input;
-            self
+        pub fn set_resource_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resource_arns = input; self
         }
-        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
-        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p> 
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p> 
         /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
-        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p> 
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p> 
         /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListResourcesInProtectionGroupOutput`](crate::output::ListResourcesInProtectionGroupOutput).
         pub fn build(self) -> crate::output::ListResourcesInProtectionGroupOutput {
             crate::output::ListResourcesInProtectionGroupOutput {
-                resource_arns: self.resource_arns,
-                next_token: self.next_token,
+                resource_arns: self.resource_arns
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListResourcesInProtectionGroupOutput {
     /// Creates a new builder-style object to manufacture [`ListResourcesInProtectionGroupOutput`](crate::output::ListResourcesInProtectionGroupOutput).
@@ -285,31 +315,31 @@ impl ListResourcesInProtectionGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProtectionsOutput {
+pub struct ListProtectionsOutput  {
     /// <p>The array of enabled <code>Protection</code> objects.</p>
     #[doc(hidden)]
     pub protections: std::option::Option<std::vec::Vec<crate::model::Protection>>,
-    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
-    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p> 
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p> 
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProtectionsOutput {
     /// <p>The array of enabled <code>Protection</code> objects.</p>
-    pub fn protections(&self) -> std::option::Option<&[crate::model::Protection]> {
+    pub fn protections(&self) -> std::option::Option<& [crate::model::Protection]> {
         self.protections.as_deref()
     }
-    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
-    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p> 
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p> 
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListProtectionsOutput`](crate::output::ListProtectionsOutput).
 pub mod list_protections_output {
-
+    
     /// A builder for [`ListProtectionsOutput`](crate::output::ListProtectionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -324,40 +354,39 @@ pub mod list_protections_output {
         /// <p>The array of enabled <code>Protection</code> objects.</p>
         pub fn protections(mut self, input: crate::model::Protection) -> Self {
             let mut v = self.protections.unwrap_or_default();
-            v.push(input);
-            self.protections = Some(v);
-            self
+                            v.push(input);
+                            self.protections = Some(v);
+                            self
         }
         /// <p>The array of enabled <code>Protection</code> objects.</p>
-        pub fn set_protections(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Protection>>,
-        ) -> Self {
-            self.protections = input;
-            self
+        pub fn set_protections(mut self, input: std::option::Option<std::vec::Vec<crate::model::Protection>>) -> Self {
+            self.protections = input; self
         }
-        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
-        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p> 
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p> 
         /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
-        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p> 
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p> 
         /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListProtectionsOutput`](crate::output::ListProtectionsOutput).
         pub fn build(self) -> crate::output::ListProtectionsOutput {
             crate::output::ListProtectionsOutput {
-                protections: self.protections,
-                next_token: self.next_token,
+                protections: self.protections
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProtectionsOutput {
     /// Creates a new builder-style object to manufacture [`ListProtectionsOutput`](crate::output::ListProtectionsOutput).
@@ -369,36 +398,35 @@ impl ListProtectionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProtectionGroupsOutput {
+pub struct ListProtectionGroupsOutput  {
     /// <p></p>
     #[doc(hidden)]
     pub protection_groups: std::option::Option<std::vec::Vec<crate::model::ProtectionGroup>>,
-    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
-    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p> 
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p> 
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListProtectionGroupsOutput {
     /// <p></p>
-    pub fn protection_groups(&self) -> std::option::Option<&[crate::model::ProtectionGroup]> {
+    pub fn protection_groups(&self) -> std::option::Option<& [crate::model::ProtectionGroup]> {
         self.protection_groups.as_deref()
     }
-    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
-    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p> 
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p> 
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListProtectionGroupsOutput`](crate::output::ListProtectionGroupsOutput).
 pub mod list_protection_groups_output {
-
+    
     /// A builder for [`ListProtectionGroupsOutput`](crate::output::ListProtectionGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) protection_groups:
-            std::option::Option<std::vec::Vec<crate::model::ProtectionGroup>>,
+        pub(crate) protection_groups: std::option::Option<std::vec::Vec<crate::model::ProtectionGroup>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -409,40 +437,39 @@ pub mod list_protection_groups_output {
         /// <p></p>
         pub fn protection_groups(mut self, input: crate::model::ProtectionGroup) -> Self {
             let mut v = self.protection_groups.unwrap_or_default();
-            v.push(input);
-            self.protection_groups = Some(v);
-            self
+                            v.push(input);
+                            self.protection_groups = Some(v);
+                            self
         }
         /// <p></p>
-        pub fn set_protection_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProtectionGroup>>,
-        ) -> Self {
-            self.protection_groups = input;
-            self
+        pub fn set_protection_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProtectionGroup>>) -> Self {
+            self.protection_groups = input; self
         }
-        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
-        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p> 
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p> 
         /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
-        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p> 
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p> 
         /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListProtectionGroupsOutput`](crate::output::ListProtectionGroupsOutput).
         pub fn build(self) -> crate::output::ListProtectionGroupsOutput {
             crate::output::ListProtectionGroupsOutput {
-                protection_groups: self.protection_groups,
-                next_token: self.next_token,
+                protection_groups: self.protection_groups
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProtectionGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListProtectionGroupsOutput`](crate::output::ListProtectionGroupsOutput).
@@ -454,36 +481,35 @@ impl ListProtectionGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAttacksOutput {
+pub struct ListAttacksOutput  {
     /// <p>The attack information for the specified time range.</p>
     #[doc(hidden)]
     pub attack_summaries: std::option::Option<std::vec::Vec<crate::model::AttackSummary>>,
-    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
-    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p> 
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p> 
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAttacksOutput {
     /// <p>The attack information for the specified time range.</p>
-    pub fn attack_summaries(&self) -> std::option::Option<&[crate::model::AttackSummary]> {
+    pub fn attack_summaries(&self) -> std::option::Option<& [crate::model::AttackSummary]> {
         self.attack_summaries.as_deref()
     }
-    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
-    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+    /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p> 
+    /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p> 
     /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAttacksOutput`](crate::output::ListAttacksOutput).
 pub mod list_attacks_output {
-
+    
     /// A builder for [`ListAttacksOutput`](crate::output::ListAttacksOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attack_summaries:
-            std::option::Option<std::vec::Vec<crate::model::AttackSummary>>,
+        pub(crate) attack_summaries: std::option::Option<std::vec::Vec<crate::model::AttackSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -494,40 +520,39 @@ pub mod list_attacks_output {
         /// <p>The attack information for the specified time range.</p>
         pub fn attack_summaries(mut self, input: crate::model::AttackSummary) -> Self {
             let mut v = self.attack_summaries.unwrap_or_default();
-            v.push(input);
-            self.attack_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.attack_summaries = Some(v);
+                            self
         }
         /// <p>The attack information for the specified time range.</p>
-        pub fn set_attack_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttackSummary>>,
-        ) -> Self {
-            self.attack_summaries = input;
-            self
+        pub fn set_attack_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttackSummary>>) -> Self {
+            self.attack_summaries = input; self
         }
-        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
-        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p> 
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p> 
         /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
-        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p>
-        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
+        /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code> value in the response. You can retrieve the next batch of objects by requesting the list again and providing the token that was returned by the prior call in your request. </p> 
+        /// <p>You can indicate the maximum number of objects that you want Shield Advanced to return for a single call with the <code>MaxResults</code> setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p> 
         /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAttacksOutput`](crate::output::ListAttacksOutput).
         pub fn build(self) -> crate::output::ListAttacksOutput {
             crate::output::ListAttacksOutput {
-                attack_summaries: self.attack_summaries,
-                next_token: self.next_token,
+                attack_summaries: self.attack_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAttacksOutput {
     /// Creates a new builder-style object to manufacture [`ListAttacksOutput`](crate::output::ListAttacksOutput).
@@ -539,20 +564,20 @@ impl ListAttacksOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSubscriptionStateOutput {
+pub struct GetSubscriptionStateOutput  {
     /// <p>The status of the subscription.</p>
     #[doc(hidden)]
     pub subscription_state: std::option::Option<crate::model::SubscriptionState>,
 }
 impl GetSubscriptionStateOutput {
     /// <p>The status of the subscription.</p>
-    pub fn subscription_state(&self) -> std::option::Option<&crate::model::SubscriptionState> {
+    pub fn subscription_state(&self) -> std::option::Option<& crate::model::SubscriptionState> {
         self.subscription_state.as_ref()
     }
 }
 /// See [`GetSubscriptionStateOutput`](crate::output::GetSubscriptionStateOutput).
 pub mod get_subscription_state_output {
-
+    
     /// A builder for [`GetSubscriptionStateOutput`](crate::output::GetSubscriptionStateOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -565,20 +590,19 @@ pub mod get_subscription_state_output {
             self
         }
         /// <p>The status of the subscription.</p>
-        pub fn set_subscription_state(
-            mut self,
-            input: std::option::Option<crate::model::SubscriptionState>,
-        ) -> Self {
-            self.subscription_state = input;
-            self
+        pub fn set_subscription_state(mut self, input: std::option::Option<crate::model::SubscriptionState>) -> Self {
+            self.subscription_state = input; self
         }
         /// Consumes the builder and constructs a [`GetSubscriptionStateOutput`](crate::output::GetSubscriptionStateOutput).
         pub fn build(self) -> crate::output::GetSubscriptionStateOutput {
             crate::output::GetSubscriptionStateOutput {
-                subscription_state: self.subscription_state,
+                subscription_state: self.subscription_state
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSubscriptionStateOutput {
     /// Creates a new builder-style object to manufacture [`GetSubscriptionStateOutput`](crate::output::GetSubscriptionStateOutput).
@@ -590,19 +614,24 @@ impl GetSubscriptionStateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableProactiveEngagementOutput {}
+pub struct EnableProactiveEngagementOutput  {
+}
 /// See [`EnableProactiveEngagementOutput`](crate::output::EnableProactiveEngagementOutput).
 pub mod enable_proactive_engagement_output {
-
+    
     /// A builder for [`EnableProactiveEngagementOutput`](crate::output::EnableProactiveEngagementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`EnableProactiveEngagementOutput`](crate::output::EnableProactiveEngagementOutput).
         pub fn build(self) -> crate::output::EnableProactiveEngagementOutput {
-            crate::output::EnableProactiveEngagementOutput {}
+            crate::output::EnableProactiveEngagementOutput {
+            }
         }
     }
+    
+    
 }
 impl EnableProactiveEngagementOutput {
     /// Creates a new builder-style object to manufacture [`EnableProactiveEngagementOutput`](crate::output::EnableProactiveEngagementOutput).
@@ -614,19 +643,24 @@ impl EnableProactiveEngagementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableApplicationLayerAutomaticResponseOutput {}
+pub struct EnableApplicationLayerAutomaticResponseOutput  {
+}
 /// See [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput).
 pub mod enable_application_layer_automatic_response_output {
-
+    
     /// A builder for [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput).
         pub fn build(self) -> crate::output::EnableApplicationLayerAutomaticResponseOutput {
-            crate::output::EnableApplicationLayerAutomaticResponseOutput {}
+            crate::output::EnableApplicationLayerAutomaticResponseOutput {
+            }
         }
     }
+    
+    
 }
 impl EnableApplicationLayerAutomaticResponseOutput {
     /// Creates a new builder-style object to manufacture [`EnableApplicationLayerAutomaticResponseOutput`](crate::output::EnableApplicationLayerAutomaticResponseOutput).
@@ -638,19 +672,24 @@ impl EnableApplicationLayerAutomaticResponseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateHealthCheckOutput {}
+pub struct DisassociateHealthCheckOutput  {
+}
 /// See [`DisassociateHealthCheckOutput`](crate::output::DisassociateHealthCheckOutput).
 pub mod disassociate_health_check_output {
-
+    
     /// A builder for [`DisassociateHealthCheckOutput`](crate::output::DisassociateHealthCheckOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateHealthCheckOutput`](crate::output::DisassociateHealthCheckOutput).
         pub fn build(self) -> crate::output::DisassociateHealthCheckOutput {
-            crate::output::DisassociateHealthCheckOutput {}
+            crate::output::DisassociateHealthCheckOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateHealthCheckOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateHealthCheckOutput`](crate::output::DisassociateHealthCheckOutput).
@@ -662,19 +701,24 @@ impl DisassociateHealthCheckOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateDrtRoleOutput {}
+pub struct DisassociateDrtRoleOutput  {
+}
 /// See [`DisassociateDrtRoleOutput`](crate::output::DisassociateDrtRoleOutput).
 pub mod disassociate_drt_role_output {
-
+    
     /// A builder for [`DisassociateDrtRoleOutput`](crate::output::DisassociateDrtRoleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateDrtRoleOutput`](crate::output::DisassociateDrtRoleOutput).
         pub fn build(self) -> crate::output::DisassociateDrtRoleOutput {
-            crate::output::DisassociateDrtRoleOutput {}
+            crate::output::DisassociateDrtRoleOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateDrtRoleOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateDrtRoleOutput`](crate::output::DisassociateDrtRoleOutput).
@@ -686,19 +730,24 @@ impl DisassociateDrtRoleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateDrtLogBucketOutput {}
+pub struct DisassociateDrtLogBucketOutput  {
+}
 /// See [`DisassociateDrtLogBucketOutput`](crate::output::DisassociateDrtLogBucketOutput).
 pub mod disassociate_drt_log_bucket_output {
-
+    
     /// A builder for [`DisassociateDrtLogBucketOutput`](crate::output::DisassociateDrtLogBucketOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateDrtLogBucketOutput`](crate::output::DisassociateDrtLogBucketOutput).
         pub fn build(self) -> crate::output::DisassociateDrtLogBucketOutput {
-            crate::output::DisassociateDrtLogBucketOutput {}
+            crate::output::DisassociateDrtLogBucketOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateDrtLogBucketOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateDrtLogBucketOutput`](crate::output::DisassociateDrtLogBucketOutput).
@@ -710,19 +759,24 @@ impl DisassociateDrtLogBucketOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableProactiveEngagementOutput {}
+pub struct DisableProactiveEngagementOutput  {
+}
 /// See [`DisableProactiveEngagementOutput`](crate::output::DisableProactiveEngagementOutput).
 pub mod disable_proactive_engagement_output {
-
+    
     /// A builder for [`DisableProactiveEngagementOutput`](crate::output::DisableProactiveEngagementOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisableProactiveEngagementOutput`](crate::output::DisableProactiveEngagementOutput).
         pub fn build(self) -> crate::output::DisableProactiveEngagementOutput {
-            crate::output::DisableProactiveEngagementOutput {}
+            crate::output::DisableProactiveEngagementOutput {
+            }
         }
     }
+    
+    
 }
 impl DisableProactiveEngagementOutput {
     /// Creates a new builder-style object to manufacture [`DisableProactiveEngagementOutput`](crate::output::DisableProactiveEngagementOutput).
@@ -734,24 +788,28 @@ impl DisableProactiveEngagementOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableApplicationLayerAutomaticResponseOutput {}
+pub struct DisableApplicationLayerAutomaticResponseOutput  {
+}
 /// See [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput).
 pub mod disable_application_layer_automatic_response_output {
-
+    
     /// A builder for [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput).
         pub fn build(self) -> crate::output::DisableApplicationLayerAutomaticResponseOutput {
-            crate::output::DisableApplicationLayerAutomaticResponseOutput {}
+            crate::output::DisableApplicationLayerAutomaticResponseOutput {
+            }
         }
     }
+    
+    
 }
 impl DisableApplicationLayerAutomaticResponseOutput {
     /// Creates a new builder-style object to manufacture [`DisableApplicationLayerAutomaticResponseOutput`](crate::output::DisableApplicationLayerAutomaticResponseOutput).
-    pub fn builder() -> crate::output::disable_application_layer_automatic_response_output::Builder
-    {
+    pub fn builder() -> crate::output::disable_application_layer_automatic_response_output::Builder {
         crate::output::disable_application_layer_automatic_response_output::Builder::default()
     }
 }
@@ -759,20 +817,20 @@ impl DisableApplicationLayerAutomaticResponseOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSubscriptionOutput {
+pub struct DescribeSubscriptionOutput  {
     /// <p>The Shield Advanced subscription details for an account.</p>
     #[doc(hidden)]
     pub subscription: std::option::Option<crate::model::Subscription>,
 }
 impl DescribeSubscriptionOutput {
     /// <p>The Shield Advanced subscription details for an account.</p>
-    pub fn subscription(&self) -> std::option::Option<&crate::model::Subscription> {
+    pub fn subscription(&self) -> std::option::Option<& crate::model::Subscription> {
         self.subscription.as_ref()
     }
 }
 /// See [`DescribeSubscriptionOutput`](crate::output::DescribeSubscriptionOutput).
 pub mod describe_subscription_output {
-
+    
     /// A builder for [`DescribeSubscriptionOutput`](crate::output::DescribeSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -785,20 +843,19 @@ pub mod describe_subscription_output {
             self
         }
         /// <p>The Shield Advanced subscription details for an account.</p>
-        pub fn set_subscription(
-            mut self,
-            input: std::option::Option<crate::model::Subscription>,
-        ) -> Self {
-            self.subscription = input;
-            self
+        pub fn set_subscription(mut self, input: std::option::Option<crate::model::Subscription>) -> Self {
+            self.subscription = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSubscriptionOutput`](crate::output::DescribeSubscriptionOutput).
         pub fn build(self) -> crate::output::DescribeSubscriptionOutput {
             crate::output::DescribeSubscriptionOutput {
-                subscription: self.subscription,
+                subscription: self.subscription
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSubscriptionOutput`](crate::output::DescribeSubscriptionOutput).
@@ -810,20 +867,20 @@ impl DescribeSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProtectionGroupOutput {
+pub struct DescribeProtectionGroupOutput  {
     /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
     #[doc(hidden)]
     pub protection_group: std::option::Option<crate::model::ProtectionGroup>,
 }
 impl DescribeProtectionGroupOutput {
     /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
-    pub fn protection_group(&self) -> std::option::Option<&crate::model::ProtectionGroup> {
+    pub fn protection_group(&self) -> std::option::Option<& crate::model::ProtectionGroup> {
         self.protection_group.as_ref()
     }
 }
 /// See [`DescribeProtectionGroupOutput`](crate::output::DescribeProtectionGroupOutput).
 pub mod describe_protection_group_output {
-
+    
     /// A builder for [`DescribeProtectionGroupOutput`](crate::output::DescribeProtectionGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -836,20 +893,19 @@ pub mod describe_protection_group_output {
             self
         }
         /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
-        pub fn set_protection_group(
-            mut self,
-            input: std::option::Option<crate::model::ProtectionGroup>,
-        ) -> Self {
-            self.protection_group = input;
-            self
+        pub fn set_protection_group(mut self, input: std::option::Option<crate::model::ProtectionGroup>) -> Self {
+            self.protection_group = input; self
         }
         /// Consumes the builder and constructs a [`DescribeProtectionGroupOutput`](crate::output::DescribeProtectionGroupOutput).
         pub fn build(self) -> crate::output::DescribeProtectionGroupOutput {
             crate::output::DescribeProtectionGroupOutput {
-                protection_group: self.protection_group,
+                protection_group: self.protection_group
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeProtectionGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProtectionGroupOutput`](crate::output::DescribeProtectionGroupOutput).
@@ -861,20 +917,20 @@ impl DescribeProtectionGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProtectionOutput {
+pub struct DescribeProtectionOutput  {
     /// <p>The <code>Protection</code> that you requested. </p>
     #[doc(hidden)]
     pub protection: std::option::Option<crate::model::Protection>,
 }
 impl DescribeProtectionOutput {
     /// <p>The <code>Protection</code> that you requested. </p>
-    pub fn protection(&self) -> std::option::Option<&crate::model::Protection> {
+    pub fn protection(&self) -> std::option::Option<& crate::model::Protection> {
         self.protection.as_ref()
     }
 }
 /// See [`DescribeProtectionOutput`](crate::output::DescribeProtectionOutput).
 pub mod describe_protection_output {
-
+    
     /// A builder for [`DescribeProtectionOutput`](crate::output::DescribeProtectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -887,20 +943,19 @@ pub mod describe_protection_output {
             self
         }
         /// <p>The <code>Protection</code> that you requested. </p>
-        pub fn set_protection(
-            mut self,
-            input: std::option::Option<crate::model::Protection>,
-        ) -> Self {
-            self.protection = input;
-            self
+        pub fn set_protection(mut self, input: std::option::Option<crate::model::Protection>) -> Self {
+            self.protection = input; self
         }
         /// Consumes the builder and constructs a [`DescribeProtectionOutput`](crate::output::DescribeProtectionOutput).
         pub fn build(self) -> crate::output::DescribeProtectionOutput {
             crate::output::DescribeProtectionOutput {
-                protection: self.protection,
+                protection: self.protection
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeProtectionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProtectionOutput`](crate::output::DescribeProtectionOutput).
@@ -912,25 +967,24 @@ impl DescribeProtectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEmergencyContactSettingsOutput {
+pub struct DescribeEmergencyContactSettingsOutput  {
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
     #[doc(hidden)]
     pub emergency_contact_list: std::option::Option<std::vec::Vec<crate::model::EmergencyContact>>,
 }
 impl DescribeEmergencyContactSettingsOutput {
     /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
-    pub fn emergency_contact_list(&self) -> std::option::Option<&[crate::model::EmergencyContact]> {
+    pub fn emergency_contact_list(&self) -> std::option::Option<& [crate::model::EmergencyContact]> {
         self.emergency_contact_list.as_deref()
     }
 }
 /// See [`DescribeEmergencyContactSettingsOutput`](crate::output::DescribeEmergencyContactSettingsOutput).
 pub mod describe_emergency_contact_settings_output {
-
+    
     /// A builder for [`DescribeEmergencyContactSettingsOutput`](crate::output::DescribeEmergencyContactSettingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) emergency_contact_list:
-            std::option::Option<std::vec::Vec<crate::model::EmergencyContact>>,
+        pub(crate) emergency_contact_list: std::option::Option<std::vec::Vec<crate::model::EmergencyContact>>,
     }
     impl Builder {
         /// Appends an item to `emergency_contact_list`.
@@ -940,25 +994,24 @@ pub mod describe_emergency_contact_settings_output {
         /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
         pub fn emergency_contact_list(mut self, input: crate::model::EmergencyContact) -> Self {
             let mut v = self.emergency_contact_list.unwrap_or_default();
-            v.push(input);
-            self.emergency_contact_list = Some(v);
-            self
+                            v.push(input);
+                            self.emergency_contact_list = Some(v);
+                            self
         }
         /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
-        pub fn set_emergency_contact_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EmergencyContact>>,
-        ) -> Self {
-            self.emergency_contact_list = input;
-            self
+        pub fn set_emergency_contact_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::EmergencyContact>>) -> Self {
+            self.emergency_contact_list = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEmergencyContactSettingsOutput`](crate::output::DescribeEmergencyContactSettingsOutput).
         pub fn build(self) -> crate::output::DescribeEmergencyContactSettingsOutput {
             crate::output::DescribeEmergencyContactSettingsOutput {
-                emergency_contact_list: self.emergency_contact_list,
+                emergency_contact_list: self.emergency_contact_list
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEmergencyContactSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEmergencyContactSettingsOutput`](crate::output::DescribeEmergencyContactSettingsOutput).
@@ -970,7 +1023,7 @@ impl DescribeEmergencyContactSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDrtAccessOutput {
+pub struct DescribeDrtAccessOutput  {
     /// <p>The Amazon Resource Name (ARN) of the role the SRT used to access your Amazon Web Services account.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -980,17 +1033,17 @@ pub struct DescribeDrtAccessOutput {
 }
 impl DescribeDrtAccessOutput {
     /// <p>The Amazon Resource Name (ARN) of the role the SRT used to access your Amazon Web Services account.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The list of Amazon S3 buckets accessed by the SRT.</p>
-    pub fn log_bucket_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn log_bucket_list(&self) -> std::option::Option<& [std::string::String]> {
         self.log_bucket_list.as_deref()
     }
 }
 /// See [`DescribeDrtAccessOutput`](crate::output::DescribeDrtAccessOutput).
 pub mod describe_drt_access_output {
-
+    
     /// A builder for [`DescribeDrtAccessOutput`](crate::output::DescribeDrtAccessOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1005,8 +1058,7 @@ pub mod describe_drt_access_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the role the SRT used to access your Amazon Web Services account.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Appends an item to `log_bucket_list`.
         ///
@@ -1015,26 +1067,26 @@ pub mod describe_drt_access_output {
         /// <p>The list of Amazon S3 buckets accessed by the SRT.</p>
         pub fn log_bucket_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.log_bucket_list.unwrap_or_default();
-            v.push(input.into());
-            self.log_bucket_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.log_bucket_list = Some(v);
+                            self
         }
         /// <p>The list of Amazon S3 buckets accessed by the SRT.</p>
-        pub fn set_log_bucket_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.log_bucket_list = input;
-            self
+        pub fn set_log_bucket_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.log_bucket_list = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDrtAccessOutput`](crate::output::DescribeDrtAccessOutput).
         pub fn build(self) -> crate::output::DescribeDrtAccessOutput {
             crate::output::DescribeDrtAccessOutput {
-                role_arn: self.role_arn,
-                log_bucket_list: self.log_bucket_list,
+                role_arn: self.role_arn
+                ,
+                log_bucket_list: self.log_bucket_list
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDrtAccessOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDrtAccessOutput`](crate::output::DescribeDrtAccessOutput).
@@ -1046,7 +1098,7 @@ impl DescribeDrtAccessOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAttackStatisticsOutput {
+pub struct DescribeAttackStatisticsOutput  {
     /// <p>The time range of the attack.</p>
     #[doc(hidden)]
     pub time_range: std::option::Option<crate::model::TimeRange>,
@@ -1056,23 +1108,22 @@ pub struct DescribeAttackStatisticsOutput {
 }
 impl DescribeAttackStatisticsOutput {
     /// <p>The time range of the attack.</p>
-    pub fn time_range(&self) -> std::option::Option<&crate::model::TimeRange> {
+    pub fn time_range(&self) -> std::option::Option<& crate::model::TimeRange> {
         self.time_range.as_ref()
     }
     /// <p>The data that describes the attacks detected during the time period.</p>
-    pub fn data_items(&self) -> std::option::Option<&[crate::model::AttackStatisticsDataItem]> {
+    pub fn data_items(&self) -> std::option::Option<& [crate::model::AttackStatisticsDataItem]> {
         self.data_items.as_deref()
     }
 }
 /// See [`DescribeAttackStatisticsOutput`](crate::output::DescribeAttackStatisticsOutput).
 pub mod describe_attack_statistics_output {
-
+    
     /// A builder for [`DescribeAttackStatisticsOutput`](crate::output::DescribeAttackStatisticsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) time_range: std::option::Option<crate::model::TimeRange>,
-        pub(crate) data_items:
-            std::option::Option<std::vec::Vec<crate::model::AttackStatisticsDataItem>>,
+        pub(crate) data_items: std::option::Option<std::vec::Vec<crate::model::AttackStatisticsDataItem>>,
     }
     impl Builder {
         /// <p>The time range of the attack.</p>
@@ -1081,12 +1132,8 @@ pub mod describe_attack_statistics_output {
             self
         }
         /// <p>The time range of the attack.</p>
-        pub fn set_time_range(
-            mut self,
-            input: std::option::Option<crate::model::TimeRange>,
-        ) -> Self {
-            self.time_range = input;
-            self
+        pub fn set_time_range(mut self, input: std::option::Option<crate::model::TimeRange>) -> Self {
+            self.time_range = input; self
         }
         /// Appends an item to `data_items`.
         ///
@@ -1095,26 +1142,26 @@ pub mod describe_attack_statistics_output {
         /// <p>The data that describes the attacks detected during the time period.</p>
         pub fn data_items(mut self, input: crate::model::AttackStatisticsDataItem) -> Self {
             let mut v = self.data_items.unwrap_or_default();
-            v.push(input);
-            self.data_items = Some(v);
-            self
+                            v.push(input);
+                            self.data_items = Some(v);
+                            self
         }
         /// <p>The data that describes the attacks detected during the time period.</p>
-        pub fn set_data_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AttackStatisticsDataItem>>,
-        ) -> Self {
-            self.data_items = input;
-            self
+        pub fn set_data_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::AttackStatisticsDataItem>>) -> Self {
+            self.data_items = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAttackStatisticsOutput`](crate::output::DescribeAttackStatisticsOutput).
         pub fn build(self) -> crate::output::DescribeAttackStatisticsOutput {
             crate::output::DescribeAttackStatisticsOutput {
-                time_range: self.time_range,
-                data_items: self.data_items,
+                time_range: self.time_range
+                ,
+                data_items: self.data_items
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAttackStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAttackStatisticsOutput`](crate::output::DescribeAttackStatisticsOutput).
@@ -1126,20 +1173,20 @@ impl DescribeAttackStatisticsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAttackOutput {
+pub struct DescribeAttackOutput  {
     /// <p>The attack that you requested. </p>
     #[doc(hidden)]
     pub attack: std::option::Option<crate::model::AttackDetail>,
 }
 impl DescribeAttackOutput {
     /// <p>The attack that you requested. </p>
-    pub fn attack(&self) -> std::option::Option<&crate::model::AttackDetail> {
+    pub fn attack(&self) -> std::option::Option<& crate::model::AttackDetail> {
         self.attack.as_ref()
     }
 }
 /// See [`DescribeAttackOutput`](crate::output::DescribeAttackOutput).
 pub mod describe_attack_output {
-
+    
     /// A builder for [`DescribeAttackOutput`](crate::output::DescribeAttackOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1152,20 +1199,19 @@ pub mod describe_attack_output {
             self
         }
         /// <p>The attack that you requested. </p>
-        pub fn set_attack(
-            mut self,
-            input: std::option::Option<crate::model::AttackDetail>,
-        ) -> Self {
-            self.attack = input;
-            self
+        pub fn set_attack(mut self, input: std::option::Option<crate::model::AttackDetail>) -> Self {
+            self.attack = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAttackOutput`](crate::output::DescribeAttackOutput).
         pub fn build(self) -> crate::output::DescribeAttackOutput {
             crate::output::DescribeAttackOutput {
-                attack: self.attack,
+                attack: self.attack
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAttackOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAttackOutput`](crate::output::DescribeAttackOutput).
@@ -1178,19 +1224,24 @@ impl DescribeAttackOutput {
 #[deprecated]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSubscriptionOutput {}
+pub struct DeleteSubscriptionOutput  {
+}
 /// See [`DeleteSubscriptionOutput`](crate::output::DeleteSubscriptionOutput).
 pub mod delete_subscription_output {
-
+    
     /// A builder for [`DeleteSubscriptionOutput`](crate::output::DeleteSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteSubscriptionOutput`](crate::output::DeleteSubscriptionOutput).
         pub fn build(self) -> crate::output::DeleteSubscriptionOutput {
-            crate::output::DeleteSubscriptionOutput {}
+            crate::output::DeleteSubscriptionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSubscriptionOutput`](crate::output::DeleteSubscriptionOutput).
@@ -1202,19 +1253,24 @@ impl DeleteSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProtectionGroupOutput {}
+pub struct DeleteProtectionGroupOutput  {
+}
 /// See [`DeleteProtectionGroupOutput`](crate::output::DeleteProtectionGroupOutput).
 pub mod delete_protection_group_output {
-
+    
     /// A builder for [`DeleteProtectionGroupOutput`](crate::output::DeleteProtectionGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteProtectionGroupOutput`](crate::output::DeleteProtectionGroupOutput).
         pub fn build(self) -> crate::output::DeleteProtectionGroupOutput {
-            crate::output::DeleteProtectionGroupOutput {}
+            crate::output::DeleteProtectionGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteProtectionGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProtectionGroupOutput`](crate::output::DeleteProtectionGroupOutput).
@@ -1226,19 +1282,24 @@ impl DeleteProtectionGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProtectionOutput {}
+pub struct DeleteProtectionOutput  {
+}
 /// See [`DeleteProtectionOutput`](crate::output::DeleteProtectionOutput).
 pub mod delete_protection_output {
-
+    
     /// A builder for [`DeleteProtectionOutput`](crate::output::DeleteProtectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteProtectionOutput`](crate::output::DeleteProtectionOutput).
         pub fn build(self) -> crate::output::DeleteProtectionOutput {
-            crate::output::DeleteProtectionOutput {}
+            crate::output::DeleteProtectionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteProtectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteProtectionOutput`](crate::output::DeleteProtectionOutput).
@@ -1250,19 +1311,24 @@ impl DeleteProtectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSubscriptionOutput {}
+pub struct CreateSubscriptionOutput  {
+}
 /// See [`CreateSubscriptionOutput`](crate::output::CreateSubscriptionOutput).
 pub mod create_subscription_output {
-
+    
     /// A builder for [`CreateSubscriptionOutput`](crate::output::CreateSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateSubscriptionOutput`](crate::output::CreateSubscriptionOutput).
         pub fn build(self) -> crate::output::CreateSubscriptionOutput {
-            crate::output::CreateSubscriptionOutput {}
+            crate::output::CreateSubscriptionOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`CreateSubscriptionOutput`](crate::output::CreateSubscriptionOutput).
@@ -1274,19 +1340,24 @@ impl CreateSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProtectionGroupOutput {}
+pub struct CreateProtectionGroupOutput  {
+}
 /// See [`CreateProtectionGroupOutput`](crate::output::CreateProtectionGroupOutput).
 pub mod create_protection_group_output {
-
+    
     /// A builder for [`CreateProtectionGroupOutput`](crate::output::CreateProtectionGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateProtectionGroupOutput`](crate::output::CreateProtectionGroupOutput).
         pub fn build(self) -> crate::output::CreateProtectionGroupOutput {
-            crate::output::CreateProtectionGroupOutput {}
+            crate::output::CreateProtectionGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateProtectionGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateProtectionGroupOutput`](crate::output::CreateProtectionGroupOutput).
@@ -1298,20 +1369,20 @@ impl CreateProtectionGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProtectionOutput {
+pub struct CreateProtectionOutput  {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object that is created.</p>
     #[doc(hidden)]
     pub protection_id: std::option::Option<std::string::String>,
 }
 impl CreateProtectionOutput {
     /// <p>The unique identifier (ID) for the <code>Protection</code> object that is created.</p>
-    pub fn protection_id(&self) -> std::option::Option<&str> {
+    pub fn protection_id(&self) -> std::option::Option<& str> {
         self.protection_id.as_deref()
     }
 }
 /// See [`CreateProtectionOutput`](crate::output::CreateProtectionOutput).
 pub mod create_protection_output {
-
+    
     /// A builder for [`CreateProtectionOutput`](crate::output::CreateProtectionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1324,20 +1395,19 @@ pub mod create_protection_output {
             self
         }
         /// <p>The unique identifier (ID) for the <code>Protection</code> object that is created.</p>
-        pub fn set_protection_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.protection_id = input;
-            self
+        pub fn set_protection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.protection_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateProtectionOutput`](crate::output::CreateProtectionOutput).
         pub fn build(self) -> crate::output::CreateProtectionOutput {
             crate::output::CreateProtectionOutput {
-                protection_id: self.protection_id,
+                protection_id: self.protection_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateProtectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateProtectionOutput`](crate::output::CreateProtectionOutput).
@@ -1349,19 +1419,24 @@ impl CreateProtectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateProactiveEngagementDetailsOutput {}
+pub struct AssociateProactiveEngagementDetailsOutput  {
+}
 /// See [`AssociateProactiveEngagementDetailsOutput`](crate::output::AssociateProactiveEngagementDetailsOutput).
 pub mod associate_proactive_engagement_details_output {
-
+    
     /// A builder for [`AssociateProactiveEngagementDetailsOutput`](crate::output::AssociateProactiveEngagementDetailsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateProactiveEngagementDetailsOutput`](crate::output::AssociateProactiveEngagementDetailsOutput).
         pub fn build(self) -> crate::output::AssociateProactiveEngagementDetailsOutput {
-            crate::output::AssociateProactiveEngagementDetailsOutput {}
+            crate::output::AssociateProactiveEngagementDetailsOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateProactiveEngagementDetailsOutput {
     /// Creates a new builder-style object to manufacture [`AssociateProactiveEngagementDetailsOutput`](crate::output::AssociateProactiveEngagementDetailsOutput).
@@ -1373,19 +1448,24 @@ impl AssociateProactiveEngagementDetailsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateHealthCheckOutput {}
+pub struct AssociateHealthCheckOutput  {
+}
 /// See [`AssociateHealthCheckOutput`](crate::output::AssociateHealthCheckOutput).
 pub mod associate_health_check_output {
-
+    
     /// A builder for [`AssociateHealthCheckOutput`](crate::output::AssociateHealthCheckOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateHealthCheckOutput`](crate::output::AssociateHealthCheckOutput).
         pub fn build(self) -> crate::output::AssociateHealthCheckOutput {
-            crate::output::AssociateHealthCheckOutput {}
+            crate::output::AssociateHealthCheckOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateHealthCheckOutput {
     /// Creates a new builder-style object to manufacture [`AssociateHealthCheckOutput`](crate::output::AssociateHealthCheckOutput).
@@ -1397,19 +1477,24 @@ impl AssociateHealthCheckOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateDrtRoleOutput {}
+pub struct AssociateDrtRoleOutput  {
+}
 /// See [`AssociateDrtRoleOutput`](crate::output::AssociateDrtRoleOutput).
 pub mod associate_drt_role_output {
-
+    
     /// A builder for [`AssociateDrtRoleOutput`](crate::output::AssociateDrtRoleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateDrtRoleOutput`](crate::output::AssociateDrtRoleOutput).
         pub fn build(self) -> crate::output::AssociateDrtRoleOutput {
-            crate::output::AssociateDrtRoleOutput {}
+            crate::output::AssociateDrtRoleOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateDrtRoleOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDrtRoleOutput`](crate::output::AssociateDrtRoleOutput).
@@ -1421,19 +1506,24 @@ impl AssociateDrtRoleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateDrtLogBucketOutput {}
+pub struct AssociateDrtLogBucketOutput  {
+}
 /// See [`AssociateDrtLogBucketOutput`](crate::output::AssociateDrtLogBucketOutput).
 pub mod associate_drt_log_bucket_output {
-
+    
     /// A builder for [`AssociateDrtLogBucketOutput`](crate::output::AssociateDrtLogBucketOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateDrtLogBucketOutput`](crate::output::AssociateDrtLogBucketOutput).
         pub fn build(self) -> crate::output::AssociateDrtLogBucketOutput {
-            crate::output::AssociateDrtLogBucketOutput {}
+            crate::output::AssociateDrtLogBucketOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateDrtLogBucketOutput {
     /// Creates a new builder-style object to manufacture [`AssociateDrtLogBucketOutput`](crate::output::AssociateDrtLogBucketOutput).
@@ -1441,3 +1531,4 @@ impl AssociateDrtLogBucketOutput {
         crate::output::associate_drt_log_bucket_output::Builder::default()
     }
 }
+

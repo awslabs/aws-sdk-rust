@@ -3,7 +3,7 @@
 /// <p>Information about the task assigned to one or many devices.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TaskSummary {
+pub struct TaskSummary  {
     /// <p>The task ID.</p>
     #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
@@ -15,42 +15,36 @@ pub struct TaskSummary {
     pub state: std::option::Option<crate::model::TaskState>,
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TaskSummary {
     /// <p>The task ID.</p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
-    pub fn task_arn(&self) -> std::option::Option<&str> {
+    pub fn task_arn(&self) -> std::option::Option<& str> {
         self.task_arn.as_deref()
     }
     /// <p>The state of the task assigned to one or many devices.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::TaskState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::TaskState> {
         self.state.as_ref()
     }
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`TaskSummary`](crate::model::TaskSummary).
 pub mod task_summary {
-
+    
     /// A builder for [`TaskSummary`](crate::model::TaskSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) task_id: std::option::Option<std::string::String>,
         pub(crate) task_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::TaskState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The task ID.</p>
@@ -60,8 +54,7 @@ pub mod task_summary {
         }
         /// <p>The task ID.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_id = input;
-            self
+            self.task_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the task.</p>
         pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -70,8 +63,7 @@ pub mod task_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the task.</p>
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_arn = input;
-            self
+            self.task_arn = input; self
         }
         /// <p>The state of the task assigned to one or many devices.</p>
         pub fn state(mut self, input: crate::model::TaskState) -> Self {
@@ -80,44 +72,39 @@ pub mod task_summary {
         }
         /// <p>The state of the task assigned to one or many devices.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::TaskState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TaskSummary`](crate::model::TaskSummary).
         pub fn build(self) -> crate::model::TaskSummary {
             crate::model::TaskSummary {
-                task_id: self.task_id,
-                task_arn: self.task_arn,
-                state: self.state,
-                tags: self.tags,
+                task_id: self.task_id
+                ,
+                task_arn: self.task_arn
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl TaskSummary {
     /// Creates a new builder-style object to manufacture [`TaskSummary`](crate::model::TaskSummary).
@@ -132,9 +119,9 @@ impl TaskSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let taskstate = unimplemented!();
 /// match taskstate {
@@ -157,22 +144,14 @@ impl TaskSummary {
 /// Specifically, when `taskstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TaskState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TaskState {
     #[allow(missing_docs)] // documentation missing in model
     Canceled,
@@ -181,7 +160,7 @@ pub enum TaskState {
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TaskState {
     fn from(s: &str) -> Self {
@@ -189,17 +168,17 @@ impl std::convert::From<&str> for TaskState {
             "CANCELED" => TaskState::Canceled,
             "COMPLETED" => TaskState::Completed,
             "IN_PROGRESS" => TaskState::InProgress,
-            other => TaskState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TaskState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TaskState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TaskState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TaskState::from(s))
+                }
+            }
 impl TaskState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -207,12 +186,14 @@ impl TaskState {
             TaskState::Canceled => "CANCELED",
             TaskState::Completed => "COMPLETED",
             TaskState::InProgress => "IN_PROGRESS",
-            TaskState::Unknown(value) => value.as_str(),
+            TaskState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CANCELED", "COMPLETED", "IN_PROGRESS"]
+        &[
+            "CANCELED", "COMPLETED", "IN_PROGRESS"
+        ]
     }
 }
 impl AsRef<str> for TaskState {
@@ -243,11 +224,7 @@ impl Command {
     /// Tries to convert the enum instance into [`Reboot`](crate::model::Command::Reboot), extracting the inner [`Reboot`](crate::model::Reboot).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_reboot(&self) -> std::result::Result<&crate::model::Reboot, &Self> {
-        if let Command::Reboot(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Command::Reboot(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Reboot`](crate::model::Command::Reboot).
     pub fn is_reboot(&self) -> bool {
@@ -256,11 +233,7 @@ impl Command {
     /// Tries to convert the enum instance into [`Unlock`](crate::model::Command::Unlock), extracting the inner [`Unlock`](crate::model::Unlock).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_unlock(&self) -> std::result::Result<&crate::model::Unlock, &Self> {
-        if let Command::Unlock(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let Command::Unlock(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Unlock`](crate::model::Command::Unlock).
     pub fn is_unlock(&self) -> bool {
@@ -275,19 +248,24 @@ impl Command {
 /// <p>A structure used to reboot the device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Reboot {}
+pub struct Reboot  {
+}
 /// See [`Reboot`](crate::model::Reboot).
 pub mod reboot {
-
+    
     /// A builder for [`Reboot`](crate::model::Reboot).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`Reboot`](crate::model::Reboot).
         pub fn build(self) -> crate::model::Reboot {
-            crate::model::Reboot {}
+            crate::model::Reboot {
+            }
         }
     }
+    
+    
 }
 impl Reboot {
     /// Creates a new builder-style object to manufacture [`Reboot`](crate::model::Reboot).
@@ -299,19 +277,24 @@ impl Reboot {
 /// <p>A structure used to unlock a device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Unlock {}
+pub struct Unlock  {
+}
 /// See [`Unlock`](crate::model::Unlock).
 pub mod unlock {
-
+    
     /// A builder for [`Unlock`](crate::model::Unlock).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`Unlock`](crate::model::Unlock).
         pub fn build(self) -> crate::model::Unlock {
-            crate::model::Unlock {}
+            crate::model::Unlock {
+            }
         }
     }
+    
+    
 }
 impl Unlock {
     /// Creates a new builder-style object to manufacture [`Unlock`](crate::model::Unlock).
@@ -323,7 +306,7 @@ impl Unlock {
 /// <p>The summary of a task execution on a specified device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecutionSummary {
+pub struct ExecutionSummary  {
     /// <p>The ID of the task.</p>
     #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
@@ -339,25 +322,25 @@ pub struct ExecutionSummary {
 }
 impl ExecutionSummary {
     /// <p>The ID of the task.</p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>The ID of the execution.</p>
-    pub fn execution_id(&self) -> std::option::Option<&str> {
+    pub fn execution_id(&self) -> std::option::Option<& str> {
         self.execution_id.as_deref()
     }
     /// <p>The ID of the managed device that the task is being executed on.</p>
-    pub fn managed_device_id(&self) -> std::option::Option<&str> {
+    pub fn managed_device_id(&self) -> std::option::Option<& str> {
         self.managed_device_id.as_deref()
     }
     /// <p>The state of the execution.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ExecutionState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ExecutionState> {
         self.state.as_ref()
     }
 }
 /// See [`ExecutionSummary`](crate::model::ExecutionSummary).
 pub mod execution_summary {
-
+    
     /// A builder for [`ExecutionSummary`](crate::model::ExecutionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -374,8 +357,7 @@ pub mod execution_summary {
         }
         /// <p>The ID of the task.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_id = input;
-            self
+            self.task_id = input; self
         }
         /// <p>The ID of the execution.</p>
         pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -384,8 +366,7 @@ pub mod execution_summary {
         }
         /// <p>The ID of the execution.</p>
         pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.execution_id = input;
-            self
+            self.execution_id = input; self
         }
         /// <p>The ID of the managed device that the task is being executed on.</p>
         pub fn managed_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -393,12 +374,8 @@ pub mod execution_summary {
             self
         }
         /// <p>The ID of the managed device that the task is being executed on.</p>
-        pub fn set_managed_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.managed_device_id = input;
-            self
+        pub fn set_managed_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.managed_device_id = input; self
         }
         /// <p>The state of the execution.</p>
         pub fn state(mut self, input: crate::model::ExecutionState) -> Self {
@@ -406,23 +383,25 @@ pub mod execution_summary {
             self
         }
         /// <p>The state of the execution.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ExecutionState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ExecutionState>) -> Self {
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`ExecutionSummary`](crate::model::ExecutionSummary).
         pub fn build(self) -> crate::model::ExecutionSummary {
             crate::model::ExecutionSummary {
-                task_id: self.task_id,
-                execution_id: self.execution_id,
-                managed_device_id: self.managed_device_id,
-                state: self.state,
+                task_id: self.task_id
+                ,
+                execution_id: self.execution_id
+                ,
+                managed_device_id: self.managed_device_id
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl ExecutionSummary {
     /// Creates a new builder-style object to manufacture [`ExecutionSummary`](crate::model::ExecutionSummary).
@@ -437,9 +416,9 @@ impl ExecutionSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let executionstate = unimplemented!();
 /// match executionstate {
@@ -466,22 +445,14 @@ impl ExecutionSummary {
 /// Specifically, when `executionstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExecutionState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ExecutionState {
     #[allow(missing_docs)] // documentation missing in model
     Canceled,
@@ -498,7 +469,7 @@ pub enum ExecutionState {
     #[allow(missing_docs)] // documentation missing in model
     TimedOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExecutionState {
     fn from(s: &str) -> Self {
@@ -510,17 +481,17 @@ impl std::convert::From<&str> for ExecutionState {
             "REJECTED" => ExecutionState::Rejected,
             "SUCCEEDED" => ExecutionState::Succeeded,
             "TIMED_OUT" => ExecutionState::TimedOut,
-            other => ExecutionState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ExecutionState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ExecutionState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExecutionState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ExecutionState::from(s))
+                }
+            }
 impl ExecutionState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -532,19 +503,13 @@ impl ExecutionState {
             ExecutionState::Rejected => "REJECTED",
             ExecutionState::Succeeded => "SUCCEEDED",
             ExecutionState::TimedOut => "TIMED_OUT",
-            ExecutionState::Unknown(value) => value.as_str(),
+            ExecutionState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CANCELED",
-            "FAILED",
-            "IN_PROGRESS",
-            "QUEUED",
-            "REJECTED",
-            "SUCCEEDED",
-            "TIMED_OUT",
+            "CANCELED", "FAILED", "IN_PROGRESS", "QUEUED", "REJECTED", "SUCCEEDED", "TIMED_OUT"
         ]
     }
 }
@@ -557,7 +522,7 @@ impl AsRef<str> for ExecutionState {
 /// <p>A summary of a resource available on the device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceSummary {
+pub struct ResourceSummary  {
     /// <p>The resource type.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
@@ -570,21 +535,21 @@ pub struct ResourceSummary {
 }
 impl ResourceSummary {
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`ResourceSummary`](crate::model::ResourceSummary).
 pub mod resource_summary {
-
+    
     /// A builder for [`ResourceSummary`](crate::model::ResourceSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -599,12 +564,8 @@ pub mod resource_summary {
             self
         }
         /// <p>The resource type.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -613,8 +574,7 @@ pub mod resource_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The ID of the resource.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -623,18 +583,22 @@ pub mod resource_summary {
         }
         /// <p>The ID of the resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`ResourceSummary`](crate::model::ResourceSummary).
         pub fn build(self) -> crate::model::ResourceSummary {
             crate::model::ResourceSummary {
-                resource_type: self.resource_type,
-                arn: self.arn,
-                id: self.id,
+                resource_type: self.resource_type
+                ,
+                arn: self.arn
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceSummary {
     /// Creates a new builder-style object to manufacture [`ResourceSummary`](crate::model::ResourceSummary).
@@ -646,7 +610,7 @@ impl ResourceSummary {
 /// <p>The details about the instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceSummary {
+pub struct InstanceSummary  {
     /// <p>A structure containing details about the instance.</p>
     #[doc(hidden)]
     pub instance: std::option::Option<crate::model::Instance>,
@@ -656,17 +620,17 @@ pub struct InstanceSummary {
 }
 impl InstanceSummary {
     /// <p>A structure containing details about the instance.</p>
-    pub fn instance(&self) -> std::option::Option<&crate::model::Instance> {
+    pub fn instance(&self) -> std::option::Option<& crate::model::Instance> {
         self.instance.as_ref()
     }
     /// <p>When the instance summary was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
 /// See [`InstanceSummary`](crate::model::InstanceSummary).
 pub mod instance_summary {
-
+    
     /// A builder for [`InstanceSummary`](crate::model::InstanceSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -681,8 +645,7 @@ pub mod instance_summary {
         }
         /// <p>A structure containing details about the instance.</p>
         pub fn set_instance(mut self, input: std::option::Option<crate::model::Instance>) -> Self {
-            self.instance = input;
-            self
+            self.instance = input; self
         }
         /// <p>When the instance summary was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -690,21 +653,21 @@ pub mod instance_summary {
             self
         }
         /// <p>When the instance summary was last updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Consumes the builder and constructs a [`InstanceSummary`](crate::model::InstanceSummary).
         pub fn build(self) -> crate::model::InstanceSummary {
             crate::model::InstanceSummary {
-                instance: self.instance,
-                last_updated_at: self.last_updated_at,
+                instance: self.instance
+                ,
+                last_updated_at: self.last_updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceSummary {
     /// Creates a new builder-style object to manufacture [`InstanceSummary`](crate::model::InstanceSummary).
@@ -716,7 +679,7 @@ impl InstanceSummary {
 /// <p>The description of an instance. Currently, Amazon EC2 instances are the only supported instance type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Instance {
+pub struct Instance  {
     /// <p>The ID of the AMI used to launch the instance.</p>
     #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
@@ -746,8 +709,7 @@ pub struct Instance {
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Any block device mapping entries for the instance.</p>
     #[doc(hidden)]
-    pub block_device_mappings:
-        std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
+    pub block_device_mappings: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
     /// <p>The security groups for the instance.</p>
     #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<crate::model::SecurityGroupIdentifier>>,
@@ -760,7 +722,7 @@ pub struct Instance {
 }
 impl Instance {
     /// <p>The ID of the AMI used to launch the instance.</p>
-    pub fn image_id(&self) -> std::option::Option<&str> {
+    pub fn image_id(&self) -> std::option::Option<& str> {
         self.image_id.as_deref()
     }
     /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group. </p>
@@ -768,55 +730,53 @@ impl Instance {
         self.ami_launch_index
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> std::option::Option<& str> {
         self.instance_id.as_deref()
     }
     /// <p>The description of the current state of an instance.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::InstanceState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::InstanceState> {
         self.state.as_ref()
     }
     /// <p>The instance type.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The private IPv4 address assigned to the instance.</p>
-    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> std::option::Option<& str> {
         self.private_ip_address.as_deref()
     }
     /// <p>The public IPv4 address assigned to the instance.</p>
-    pub fn public_ip_address(&self) -> std::option::Option<&str> {
+    pub fn public_ip_address(&self) -> std::option::Option<& str> {
         self.public_ip_address.as_deref()
     }
     /// <p>When the instance was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>When the instance was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>Any block device mapping entries for the instance.</p>
-    pub fn block_device_mappings(
-        &self,
-    ) -> std::option::Option<&[crate::model::InstanceBlockDeviceMapping]> {
+    pub fn block_device_mappings(&self) -> std::option::Option<& [crate::model::InstanceBlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
     }
     /// <p>The security groups for the instance.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[crate::model::SecurityGroupIdentifier]> {
+    pub fn security_groups(&self) -> std::option::Option<& [crate::model::SecurityGroupIdentifier]> {
         self.security_groups.as_deref()
     }
     /// <p>The CPU options for the instance.</p>
-    pub fn cpu_options(&self) -> std::option::Option<&crate::model::CpuOptions> {
+    pub fn cpu_options(&self) -> std::option::Option<& crate::model::CpuOptions> {
         self.cpu_options.as_ref()
     }
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
-    pub fn root_device_name(&self) -> std::option::Option<&str> {
+    pub fn root_device_name(&self) -> std::option::Option<& str> {
         self.root_device_name.as_deref()
     }
 }
 /// See [`Instance`](crate::model::Instance).
 pub mod instance {
-
+    
     /// A builder for [`Instance`](crate::model::Instance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -829,10 +789,8 @@ pub mod instance {
         pub(crate) public_ip_address: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) block_device_mappings:
-            std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
-        pub(crate) security_groups:
-            std::option::Option<std::vec::Vec<crate::model::SecurityGroupIdentifier>>,
+        pub(crate) block_device_mappings: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
+        pub(crate) security_groups: std::option::Option<std::vec::Vec<crate::model::SecurityGroupIdentifier>>,
         pub(crate) cpu_options: std::option::Option<crate::model::CpuOptions>,
         pub(crate) root_device_name: std::option::Option<std::string::String>,
     }
@@ -844,8 +802,7 @@ pub mod instance {
         }
         /// <p>The ID of the AMI used to launch the instance.</p>
         pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.image_id = input;
-            self
+            self.image_id = input; self
         }
         /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group. </p>
         pub fn ami_launch_index(mut self, input: i32) -> Self {
@@ -854,8 +811,7 @@ pub mod instance {
         }
         /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in the launch group. </p>
         pub fn set_ami_launch_index(mut self, input: std::option::Option<i32>) -> Self {
-            self.ami_launch_index = input;
-            self
+            self.ami_launch_index = input; self
         }
         /// <p>The ID of the instance.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -864,8 +820,7 @@ pub mod instance {
         }
         /// <p>The ID of the instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.instance_id = input;
-            self
+            self.instance_id = input; self
         }
         /// <p>The description of the current state of an instance.</p>
         pub fn state(mut self, input: crate::model::InstanceState) -> Self {
@@ -873,12 +828,8 @@ pub mod instance {
             self
         }
         /// <p>The description of the current state of an instance.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::InstanceState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::InstanceState>) -> Self {
+            self.state = input; self
         }
         /// <p>The instance type.</p>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -886,12 +837,8 @@ pub mod instance {
             self
         }
         /// <p>The instance type.</p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
         /// <p>The private IPv4 address assigned to the instance.</p>
         pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -899,12 +846,8 @@ pub mod instance {
             self
         }
         /// <p>The private IPv4 address assigned to the instance.</p>
-        pub fn set_private_ip_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.private_ip_address = input;
-            self
+        pub fn set_private_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.private_ip_address = input; self
         }
         /// <p>The public IPv4 address assigned to the instance.</p>
         pub fn public_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -912,12 +855,8 @@ pub mod instance {
             self
         }
         /// <p>The public IPv4 address assigned to the instance.</p>
-        pub fn set_public_ip_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.public_ip_address = input;
-            self
+        pub fn set_public_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.public_ip_address = input; self
         }
         /// <p>When the instance was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -925,12 +864,8 @@ pub mod instance {
             self
         }
         /// <p>When the instance was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>When the instance was last updated.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -938,34 +873,23 @@ pub mod instance {
             self
         }
         /// <p>When the instance was last updated.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Appends an item to `block_device_mappings`.
         ///
         /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
         ///
         /// <p>Any block device mapping entries for the instance.</p>
-        pub fn block_device_mappings(
-            mut self,
-            input: crate::model::InstanceBlockDeviceMapping,
-        ) -> Self {
+        pub fn block_device_mappings(mut self, input: crate::model::InstanceBlockDeviceMapping) -> Self {
             let mut v = self.block_device_mappings.unwrap_or_default();
-            v.push(input);
-            self.block_device_mappings = Some(v);
-            self
+                            v.push(input);
+                            self.block_device_mappings = Some(v);
+                            self
         }
         /// <p>Any block device mapping entries for the instance.</p>
-        pub fn set_block_device_mappings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
-        ) -> Self {
-            self.block_device_mappings = input;
-            self
+        pub fn set_block_device_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>) -> Self {
+            self.block_device_mappings = input; self
         }
         /// Appends an item to `security_groups`.
         ///
@@ -974,17 +898,13 @@ pub mod instance {
         /// <p>The security groups for the instance.</p>
         pub fn security_groups(mut self, input: crate::model::SecurityGroupIdentifier) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input);
-            self.security_groups = Some(v);
-            self
+                            v.push(input);
+                            self.security_groups = Some(v);
+                            self
         }
         /// <p>The security groups for the instance.</p>
-        pub fn set_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SecurityGroupIdentifier>>,
-        ) -> Self {
-            self.security_groups = input;
-            self
+        pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::SecurityGroupIdentifier>>) -> Self {
+            self.security_groups = input; self
         }
         /// <p>The CPU options for the instance.</p>
         pub fn cpu_options(mut self, input: crate::model::CpuOptions) -> Self {
@@ -992,12 +912,8 @@ pub mod instance {
             self
         }
         /// <p>The CPU options for the instance.</p>
-        pub fn set_cpu_options(
-            mut self,
-            input: std::option::Option<crate::model::CpuOptions>,
-        ) -> Self {
-            self.cpu_options = input;
-            self
+        pub fn set_cpu_options(mut self, input: std::option::Option<crate::model::CpuOptions>) -> Self {
+            self.cpu_options = input; self
         }
         /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
         pub fn root_device_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1005,32 +921,43 @@ pub mod instance {
             self
         }
         /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
-        pub fn set_root_device_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.root_device_name = input;
-            self
+        pub fn set_root_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.root_device_name = input; self
         }
         /// Consumes the builder and constructs a [`Instance`](crate::model::Instance).
         pub fn build(self) -> crate::model::Instance {
             crate::model::Instance {
-                image_id: self.image_id,
-                ami_launch_index: self.ami_launch_index,
-                instance_id: self.instance_id,
-                state: self.state,
-                instance_type: self.instance_type,
-                private_ip_address: self.private_ip_address,
-                public_ip_address: self.public_ip_address,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
-                block_device_mappings: self.block_device_mappings,
-                security_groups: self.security_groups,
-                cpu_options: self.cpu_options,
-                root_device_name: self.root_device_name,
+                image_id: self.image_id
+                ,
+                ami_launch_index: self.ami_launch_index
+                ,
+                instance_id: self.instance_id
+                ,
+                state: self.state
+                ,
+                instance_type: self.instance_type
+                ,
+                private_ip_address: self.private_ip_address
+                ,
+                public_ip_address: self.public_ip_address
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                block_device_mappings: self.block_device_mappings
+                ,
+                security_groups: self.security_groups
+                ,
+                cpu_options: self.cpu_options
+                ,
+                root_device_name: self.root_device_name
+                ,
             }
         }
     }
+    
+    
 }
 impl Instance {
     /// Creates a new builder-style object to manufacture [`Instance`](crate::model::Instance).
@@ -1042,7 +969,7 @@ impl Instance {
 /// <p>The options for how a device's CPU is configured.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CpuOptions {
+pub struct CpuOptions  {
     /// <p>The number of cores that the CPU can use.</p>
     #[doc(hidden)]
     pub core_count: std::option::Option<i32>,
@@ -1062,7 +989,7 @@ impl CpuOptions {
 }
 /// See [`CpuOptions`](crate::model::CpuOptions).
 pub mod cpu_options {
-
+    
     /// A builder for [`CpuOptions`](crate::model::CpuOptions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1077,8 +1004,7 @@ pub mod cpu_options {
         }
         /// <p>The number of cores that the CPU can use.</p>
         pub fn set_core_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.core_count = input;
-            self
+            self.core_count = input; self
         }
         /// <p>The number of threads per core in the CPU.</p>
         pub fn threads_per_core(mut self, input: i32) -> Self {
@@ -1087,17 +1013,20 @@ pub mod cpu_options {
         }
         /// <p>The number of threads per core in the CPU.</p>
         pub fn set_threads_per_core(mut self, input: std::option::Option<i32>) -> Self {
-            self.threads_per_core = input;
-            self
+            self.threads_per_core = input; self
         }
         /// Consumes the builder and constructs a [`CpuOptions`](crate::model::CpuOptions).
         pub fn build(self) -> crate::model::CpuOptions {
             crate::model::CpuOptions {
-                core_count: self.core_count,
-                threads_per_core: self.threads_per_core,
+                core_count: self.core_count
+                ,
+                threads_per_core: self.threads_per_core
+                ,
             }
         }
     }
+    
+    
 }
 impl CpuOptions {
     /// Creates a new builder-style object to manufacture [`CpuOptions`](crate::model::CpuOptions).
@@ -1109,7 +1038,7 @@ impl CpuOptions {
 /// <p>Information about the device's security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SecurityGroupIdentifier {
+pub struct SecurityGroupIdentifier  {
     /// <p>The security group ID.</p>
     #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
@@ -1119,17 +1048,17 @@ pub struct SecurityGroupIdentifier {
 }
 impl SecurityGroupIdentifier {
     /// <p>The security group ID.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> std::option::Option<& str> {
         self.group_id.as_deref()
     }
     /// <p>The security group name.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
 }
 /// See [`SecurityGroupIdentifier`](crate::model::SecurityGroupIdentifier).
 pub mod security_group_identifier {
-
+    
     /// A builder for [`SecurityGroupIdentifier`](crate::model::SecurityGroupIdentifier).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1144,8 +1073,7 @@ pub mod security_group_identifier {
         }
         /// <p>The security group ID.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_id = input;
-            self
+            self.group_id = input; self
         }
         /// <p>The security group name.</p>
         pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1154,17 +1082,20 @@ pub mod security_group_identifier {
         }
         /// <p>The security group name.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group_name = input;
-            self
+            self.group_name = input; self
         }
         /// Consumes the builder and constructs a [`SecurityGroupIdentifier`](crate::model::SecurityGroupIdentifier).
         pub fn build(self) -> crate::model::SecurityGroupIdentifier {
             crate::model::SecurityGroupIdentifier {
-                group_id: self.group_id,
-                group_name: self.group_name,
+                group_id: self.group_id
+                ,
+                group_name: self.group_name
+                ,
             }
         }
     }
+    
+    
 }
 impl SecurityGroupIdentifier {
     /// Creates a new builder-style object to manufacture [`SecurityGroupIdentifier`](crate::model::SecurityGroupIdentifier).
@@ -1176,7 +1107,7 @@ impl SecurityGroupIdentifier {
 /// <p>The description of a block device mapping.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceBlockDeviceMapping {
+pub struct InstanceBlockDeviceMapping  {
     /// <p>The block device name.</p>
     #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
@@ -1186,17 +1117,17 @@ pub struct InstanceBlockDeviceMapping {
 }
 impl InstanceBlockDeviceMapping {
     /// <p>The block device name.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched. </p>
-    pub fn ebs(&self) -> std::option::Option<&crate::model::EbsInstanceBlockDevice> {
+    pub fn ebs(&self) -> std::option::Option<& crate::model::EbsInstanceBlockDevice> {
         self.ebs.as_ref()
     }
 }
 /// See [`InstanceBlockDeviceMapping`](crate::model::InstanceBlockDeviceMapping).
 pub mod instance_block_device_mapping {
-
+    
     /// A builder for [`InstanceBlockDeviceMapping`](crate::model::InstanceBlockDeviceMapping).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1211,8 +1142,7 @@ pub mod instance_block_device_mapping {
         }
         /// <p>The block device name.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_name = input;
-            self
+            self.device_name = input; self
         }
         /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched. </p>
         pub fn ebs(mut self, input: crate::model::EbsInstanceBlockDevice) -> Self {
@@ -1220,21 +1150,21 @@ pub mod instance_block_device_mapping {
             self
         }
         /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS) volumes when the instance is launched. </p>
-        pub fn set_ebs(
-            mut self,
-            input: std::option::Option<crate::model::EbsInstanceBlockDevice>,
-        ) -> Self {
-            self.ebs = input;
-            self
+        pub fn set_ebs(mut self, input: std::option::Option<crate::model::EbsInstanceBlockDevice>) -> Self {
+            self.ebs = input; self
         }
         /// Consumes the builder and constructs a [`InstanceBlockDeviceMapping`](crate::model::InstanceBlockDeviceMapping).
         pub fn build(self) -> crate::model::InstanceBlockDeviceMapping {
             crate::model::InstanceBlockDeviceMapping {
-                device_name: self.device_name,
-                ebs: self.ebs,
+                device_name: self.device_name
+                ,
+                ebs: self.ebs
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceBlockDeviceMapping {
     /// Creates a new builder-style object to manufacture [`InstanceBlockDeviceMapping`](crate::model::InstanceBlockDeviceMapping).
@@ -1246,7 +1176,7 @@ impl InstanceBlockDeviceMapping {
 /// <p>Describes a parameter used to set up an Amazon Elastic Block Store (Amazon EBS) volume in a block device mapping.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EbsInstanceBlockDevice {
+pub struct EbsInstanceBlockDevice  {
     /// <p>When the attachment was initiated.</p>
     #[doc(hidden)]
     pub attach_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -1262,7 +1192,7 @@ pub struct EbsInstanceBlockDevice {
 }
 impl EbsInstanceBlockDevice {
     /// <p>When the attachment was initiated.</p>
-    pub fn attach_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn attach_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.attach_time.as_ref()
     }
     /// <p>A value that indicates whether the volume is deleted on instance termination.</p>
@@ -1270,17 +1200,17 @@ impl EbsInstanceBlockDevice {
         self.delete_on_termination
     }
     /// <p>The attachment state.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AttachmentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AttachmentStatus> {
         self.status.as_ref()
     }
     /// <p>The ID of the Amazon EBS volume.</p>
-    pub fn volume_id(&self) -> std::option::Option<&str> {
+    pub fn volume_id(&self) -> std::option::Option<& str> {
         self.volume_id.as_deref()
     }
 }
 /// See [`EbsInstanceBlockDevice`](crate::model::EbsInstanceBlockDevice).
 pub mod ebs_instance_block_device {
-
+    
     /// A builder for [`EbsInstanceBlockDevice`](crate::model::EbsInstanceBlockDevice).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1296,12 +1226,8 @@ pub mod ebs_instance_block_device {
             self
         }
         /// <p>When the attachment was initiated.</p>
-        pub fn set_attach_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.attach_time = input;
-            self
+        pub fn set_attach_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.attach_time = input; self
         }
         /// <p>A value that indicates whether the volume is deleted on instance termination.</p>
         pub fn delete_on_termination(mut self, input: bool) -> Self {
@@ -1310,8 +1236,7 @@ pub mod ebs_instance_block_device {
         }
         /// <p>A value that indicates whether the volume is deleted on instance termination.</p>
         pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
-            self.delete_on_termination = input;
-            self
+            self.delete_on_termination = input; self
         }
         /// <p>The attachment state.</p>
         pub fn status(mut self, input: crate::model::AttachmentStatus) -> Self {
@@ -1319,12 +1244,8 @@ pub mod ebs_instance_block_device {
             self
         }
         /// <p>The attachment state.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AttachmentStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AttachmentStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The ID of the Amazon EBS volume.</p>
         pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1333,19 +1254,24 @@ pub mod ebs_instance_block_device {
         }
         /// <p>The ID of the Amazon EBS volume.</p>
         pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.volume_id = input;
-            self
+            self.volume_id = input; self
         }
         /// Consumes the builder and constructs a [`EbsInstanceBlockDevice`](crate::model::EbsInstanceBlockDevice).
         pub fn build(self) -> crate::model::EbsInstanceBlockDevice {
             crate::model::EbsInstanceBlockDevice {
-                attach_time: self.attach_time,
-                delete_on_termination: self.delete_on_termination,
-                status: self.status,
-                volume_id: self.volume_id,
+                attach_time: self.attach_time
+                ,
+                delete_on_termination: self.delete_on_termination
+                ,
+                status: self.status
+                ,
+                volume_id: self.volume_id
+                ,
             }
         }
     }
+    
+    
 }
 impl EbsInstanceBlockDevice {
     /// Creates a new builder-style object to manufacture [`EbsInstanceBlockDevice`](crate::model::EbsInstanceBlockDevice).
@@ -1360,9 +1286,9 @@ impl EbsInstanceBlockDevice {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let attachmentstatus = unimplemented!();
 /// match attachmentstatus {
@@ -1386,22 +1312,14 @@ impl EbsInstanceBlockDevice {
 /// Specifically, when `attachmentstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AttachmentStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AttachmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Attached,
@@ -1412,7 +1330,7 @@ pub enum AttachmentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Detaching,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AttachmentStatus {
     fn from(s: &str) -> Self {
@@ -1421,17 +1339,17 @@ impl std::convert::From<&str> for AttachmentStatus {
             "ATTACHING" => AttachmentStatus::Attaching,
             "DETACHED" => AttachmentStatus::Detached,
             "DETACHING" => AttachmentStatus::Detaching,
-            other => AttachmentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AttachmentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AttachmentStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AttachmentStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AttachmentStatus::from(s))
+                }
+            }
 impl AttachmentStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1440,12 +1358,14 @@ impl AttachmentStatus {
             AttachmentStatus::Attaching => "ATTACHING",
             AttachmentStatus::Detached => "DETACHED",
             AttachmentStatus::Detaching => "DETACHING",
-            AttachmentStatus::Unknown(value) => value.as_str(),
+            AttachmentStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ATTACHED", "ATTACHING", "DETACHED", "DETACHING"]
+        &[
+            "ATTACHED", "ATTACHING", "DETACHED", "DETACHING"
+        ]
     }
 }
 impl AsRef<str> for AttachmentStatus {
@@ -1457,19 +1377,19 @@ impl AsRef<str> for AttachmentStatus {
 /// <p>The description of the current state of an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceState {
-    /// <p>The state of the instance as a 16-bit unsigned integer. </p>
-    /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p>
-    /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255. </p>
-    /// <p>The valid values for the instance state code are all in the range of the low byte. These values are: </p>
-    /// <ul>
-    /// <li> <p> <code>0</code> : <code>pending</code> </p> </li>
-    /// <li> <p> <code>16</code> : <code>running</code> </p> </li>
-    /// <li> <p> <code>32</code> : <code>shutting-down</code> </p> </li>
-    /// <li> <p> <code>48</code> : <code>terminated</code> </p> </li>
-    /// <li> <p> <code>64</code> : <code>stopping</code> </p> </li>
-    /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li>
-    /// </ul>
+pub struct InstanceState  {
+    /// <p>The state of the instance as a 16-bit unsigned integer. </p> 
+    /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p> 
+    /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255. </p> 
+    /// <p>The valid values for the instance state code are all in the range of the low byte. These values are: </p> 
+    /// <ul> 
+    /// <li> <p> <code>0</code> : <code>pending</code> </p> </li> 
+    /// <li> <p> <code>16</code> : <code>running</code> </p> </li> 
+    /// <li> <p> <code>32</code> : <code>shutting-down</code> </p> </li> 
+    /// <li> <p> <code>48</code> : <code>terminated</code> </p> </li> 
+    /// <li> <p> <code>64</code> : <code>stopping</code> </p> </li> 
+    /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li> 
+    /// </ul> 
     /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal. </p>
     #[doc(hidden)]
     pub code: std::option::Option<i32>,
@@ -1478,30 +1398,30 @@ pub struct InstanceState {
     pub name: std::option::Option<crate::model::InstanceStateName>,
 }
 impl InstanceState {
-    /// <p>The state of the instance as a 16-bit unsigned integer. </p>
-    /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p>
-    /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255. </p>
-    /// <p>The valid values for the instance state code are all in the range of the low byte. These values are: </p>
-    /// <ul>
-    /// <li> <p> <code>0</code> : <code>pending</code> </p> </li>
-    /// <li> <p> <code>16</code> : <code>running</code> </p> </li>
-    /// <li> <p> <code>32</code> : <code>shutting-down</code> </p> </li>
-    /// <li> <p> <code>48</code> : <code>terminated</code> </p> </li>
-    /// <li> <p> <code>64</code> : <code>stopping</code> </p> </li>
-    /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li>
-    /// </ul>
+    /// <p>The state of the instance as a 16-bit unsigned integer. </p> 
+    /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p> 
+    /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255. </p> 
+    /// <p>The valid values for the instance state code are all in the range of the low byte. These values are: </p> 
+    /// <ul> 
+    /// <li> <p> <code>0</code> : <code>pending</code> </p> </li> 
+    /// <li> <p> <code>16</code> : <code>running</code> </p> </li> 
+    /// <li> <p> <code>32</code> : <code>shutting-down</code> </p> </li> 
+    /// <li> <p> <code>48</code> : <code>terminated</code> </p> </li> 
+    /// <li> <p> <code>64</code> : <code>stopping</code> </p> </li> 
+    /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li> 
+    /// </ul> 
     /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal. </p>
     pub fn code(&self) -> std::option::Option<i32> {
         self.code
     }
     /// <p>The current state of the instance.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::InstanceStateName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::InstanceStateName> {
         self.name.as_ref()
     }
 }
 /// See [`InstanceState`](crate::model::InstanceState).
 pub mod instance_state {
-
+    
     /// A builder for [`InstanceState`](crate::model::InstanceState).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1509,39 +1429,38 @@ pub mod instance_state {
         pub(crate) name: std::option::Option<crate::model::InstanceStateName>,
     }
     impl Builder {
-        /// <p>The state of the instance as a 16-bit unsigned integer. </p>
-        /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p>
-        /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255. </p>
-        /// <p>The valid values for the instance state code are all in the range of the low byte. These values are: </p>
-        /// <ul>
-        /// <li> <p> <code>0</code> : <code>pending</code> </p> </li>
-        /// <li> <p> <code>16</code> : <code>running</code> </p> </li>
-        /// <li> <p> <code>32</code> : <code>shutting-down</code> </p> </li>
-        /// <li> <p> <code>48</code> : <code>terminated</code> </p> </li>
-        /// <li> <p> <code>64</code> : <code>stopping</code> </p> </li>
-        /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li>
-        /// </ul>
+        /// <p>The state of the instance as a 16-bit unsigned integer. </p> 
+        /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p> 
+        /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255. </p> 
+        /// <p>The valid values for the instance state code are all in the range of the low byte. These values are: </p> 
+        /// <ul> 
+        /// <li> <p> <code>0</code> : <code>pending</code> </p> </li> 
+        /// <li> <p> <code>16</code> : <code>running</code> </p> </li> 
+        /// <li> <p> <code>32</code> : <code>shutting-down</code> </p> </li> 
+        /// <li> <p> <code>48</code> : <code>terminated</code> </p> </li> 
+        /// <li> <p> <code>64</code> : <code>stopping</code> </p> </li> 
+        /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li> 
+        /// </ul> 
         /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal. </p>
         pub fn code(mut self, input: i32) -> Self {
             self.code = Some(input);
             self
         }
-        /// <p>The state of the instance as a 16-bit unsigned integer. </p>
-        /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p>
-        /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255. </p>
-        /// <p>The valid values for the instance state code are all in the range of the low byte. These values are: </p>
-        /// <ul>
-        /// <li> <p> <code>0</code> : <code>pending</code> </p> </li>
-        /// <li> <p> <code>16</code> : <code>running</code> </p> </li>
-        /// <li> <p> <code>32</code> : <code>shutting-down</code> </p> </li>
-        /// <li> <p> <code>48</code> : <code>terminated</code> </p> </li>
-        /// <li> <p> <code>64</code> : <code>stopping</code> </p> </li>
-        /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li>
-        /// </ul>
+        /// <p>The state of the instance as a 16-bit unsigned integer. </p> 
+        /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p> 
+        /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255. </p> 
+        /// <p>The valid values for the instance state code are all in the range of the low byte. These values are: </p> 
+        /// <ul> 
+        /// <li> <p> <code>0</code> : <code>pending</code> </p> </li> 
+        /// <li> <p> <code>16</code> : <code>running</code> </p> </li> 
+        /// <li> <p> <code>32</code> : <code>shutting-down</code> </p> </li> 
+        /// <li> <p> <code>48</code> : <code>terminated</code> </p> </li> 
+        /// <li> <p> <code>64</code> : <code>stopping</code> </p> </li> 
+        /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li> 
+        /// </ul> 
         /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal. </p>
         pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// <p>The current state of the instance.</p>
         pub fn name(mut self, input: crate::model::InstanceStateName) -> Self {
@@ -1549,21 +1468,21 @@ pub mod instance_state {
             self
         }
         /// <p>The current state of the instance.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::InstanceStateName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::InstanceStateName>) -> Self {
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`InstanceState`](crate::model::InstanceState).
         pub fn build(self) -> crate::model::InstanceState {
             crate::model::InstanceState {
-                code: self.code,
-                name: self.name,
+                code: self.code
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl InstanceState {
     /// Creates a new builder-style object to manufacture [`InstanceState`](crate::model::InstanceState).
@@ -1578,9 +1497,9 @@ impl InstanceState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let instancestatename = unimplemented!();
 /// match instancestatename {
@@ -1606,22 +1525,14 @@ impl InstanceState {
 /// Specifically, when `instancestatename` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceStateName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InstanceStateName {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
@@ -1636,7 +1547,7 @@ pub enum InstanceStateName {
     #[allow(missing_docs)] // documentation missing in model
     Terminated,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InstanceStateName {
     fn from(s: &str) -> Self {
@@ -1647,19 +1558,17 @@ impl std::convert::From<&str> for InstanceStateName {
             "STOPPED" => InstanceStateName::Stopped,
             "STOPPING" => InstanceStateName::Stopping,
             "TERMINATED" => InstanceStateName::Terminated,
-            other => {
-                InstanceStateName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => InstanceStateName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InstanceStateName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceStateName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InstanceStateName::from(s))
+                }
+            }
 impl InstanceStateName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1670,18 +1579,13 @@ impl InstanceStateName {
             InstanceStateName::Stopped => "STOPPED",
             InstanceStateName::Stopping => "STOPPING",
             InstanceStateName::Terminated => "TERMINATED",
-            InstanceStateName::Unknown(value) => value.as_str(),
+            InstanceStateName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "PENDING",
-            "RUNNING",
-            "SHUTTING_DOWN",
-            "STOPPED",
-            "STOPPING",
-            "TERMINATED",
+            "PENDING", "RUNNING", "SHUTTING_DOWN", "STOPPED", "STOPPING", "TERMINATED"
         ]
     }
 }
@@ -1694,7 +1598,7 @@ impl AsRef<str> for InstanceStateName {
 /// <p>Identifying information about the device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceSummary {
+pub struct DeviceSummary  {
     /// <p>The ID of the device.</p>
     #[doc(hidden)]
     pub managed_device_id: std::option::Option<std::string::String>,
@@ -1706,42 +1610,36 @@ pub struct DeviceSummary {
     pub associated_with_job: std::option::Option<std::string::String>,
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DeviceSummary {
     /// <p>The ID of the device.</p>
-    pub fn managed_device_id(&self) -> std::option::Option<&str> {
+    pub fn managed_device_id(&self) -> std::option::Option<& str> {
         self.managed_device_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the device.</p>
-    pub fn managed_device_arn(&self) -> std::option::Option<&str> {
+    pub fn managed_device_arn(&self) -> std::option::Option<& str> {
         self.managed_device_arn.as_deref()
     }
     /// <p>The ID of the job used to order the device.</p>
-    pub fn associated_with_job(&self) -> std::option::Option<&str> {
+    pub fn associated_with_job(&self) -> std::option::Option<& str> {
         self.associated_with_job.as_deref()
     }
     /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`DeviceSummary`](crate::model::DeviceSummary).
 pub mod device_summary {
-
+    
     /// A builder for [`DeviceSummary`](crate::model::DeviceSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) managed_device_id: std::option::Option<std::string::String>,
         pub(crate) managed_device_arn: std::option::Option<std::string::String>,
         pub(crate) associated_with_job: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The ID of the device.</p>
@@ -1750,12 +1648,8 @@ pub mod device_summary {
             self
         }
         /// <p>The ID of the device.</p>
-        pub fn set_managed_device_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.managed_device_id = input;
-            self
+        pub fn set_managed_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.managed_device_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the device.</p>
         pub fn managed_device_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1763,12 +1657,8 @@ pub mod device_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the device.</p>
-        pub fn set_managed_device_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.managed_device_arn = input;
-            self
+        pub fn set_managed_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.managed_device_arn = input; self
         }
         /// <p>The ID of the job used to order the device.</p>
         pub fn associated_with_job(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1776,48 +1666,40 @@ pub mod device_summary {
             self
         }
         /// <p>The ID of the job used to order the device.</p>
-        pub fn set_associated_with_job(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.associated_with_job = input;
-            self
+        pub fn set_associated_with_job(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.associated_with_job = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`DeviceSummary`](crate::model::DeviceSummary).
         pub fn build(self) -> crate::model::DeviceSummary {
             crate::model::DeviceSummary {
-                managed_device_id: self.managed_device_id,
-                managed_device_arn: self.managed_device_arn,
-                associated_with_job: self.associated_with_job,
-                tags: self.tags,
+                managed_device_id: self.managed_device_id
+                ,
+                managed_device_arn: self.managed_device_arn
+                ,
+                associated_with_job: self.associated_with_job
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl DeviceSummary {
     /// Creates a new builder-style object to manufacture [`DeviceSummary`](crate::model::DeviceSummary).
@@ -1829,7 +1711,7 @@ impl DeviceSummary {
 /// <p>Information about the software on the device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SoftwareInformation {
+pub struct SoftwareInformation  {
     /// <p>The version of the software currently installed on the device.</p>
     #[doc(hidden)]
     pub installed_version: std::option::Option<std::string::String>,
@@ -1842,21 +1724,21 @@ pub struct SoftwareInformation {
 }
 impl SoftwareInformation {
     /// <p>The version of the software currently installed on the device.</p>
-    pub fn installed_version(&self) -> std::option::Option<&str> {
+    pub fn installed_version(&self) -> std::option::Option<& str> {
         self.installed_version.as_deref()
     }
     /// <p>The version of the software being installed on the device.</p>
-    pub fn installing_version(&self) -> std::option::Option<&str> {
+    pub fn installing_version(&self) -> std::option::Option<& str> {
         self.installing_version.as_deref()
     }
     /// <p>The state of the software that is installed or that is being installed on the device.</p>
-    pub fn install_state(&self) -> std::option::Option<&str> {
+    pub fn install_state(&self) -> std::option::Option<& str> {
         self.install_state.as_deref()
     }
 }
 /// See [`SoftwareInformation`](crate::model::SoftwareInformation).
 pub mod software_information {
-
+    
     /// A builder for [`SoftwareInformation`](crate::model::SoftwareInformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1871,12 +1753,8 @@ pub mod software_information {
             self
         }
         /// <p>The version of the software currently installed on the device.</p>
-        pub fn set_installed_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.installed_version = input;
-            self
+        pub fn set_installed_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.installed_version = input; self
         }
         /// <p>The version of the software being installed on the device.</p>
         pub fn installing_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1884,12 +1762,8 @@ pub mod software_information {
             self
         }
         /// <p>The version of the software being installed on the device.</p>
-        pub fn set_installing_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.installing_version = input;
-            self
+        pub fn set_installing_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.installing_version = input; self
         }
         /// <p>The state of the software that is installed or that is being installed on the device.</p>
         pub fn install_state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1897,22 +1771,23 @@ pub mod software_information {
             self
         }
         /// <p>The state of the software that is installed or that is being installed on the device.</p>
-        pub fn set_install_state(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.install_state = input;
-            self
+        pub fn set_install_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.install_state = input; self
         }
         /// Consumes the builder and constructs a [`SoftwareInformation`](crate::model::SoftwareInformation).
         pub fn build(self) -> crate::model::SoftwareInformation {
             crate::model::SoftwareInformation {
-                installed_version: self.installed_version,
-                installing_version: self.installing_version,
-                install_state: self.install_state,
+                installed_version: self.installed_version
+                ,
+                installing_version: self.installing_version
+                ,
+                install_state: self.install_state
+                ,
             }
         }
     }
+    
+    
 }
 impl SoftwareInformation {
     /// Creates a new builder-style object to manufacture [`SoftwareInformation`](crate::model::SoftwareInformation).
@@ -1924,7 +1799,7 @@ impl SoftwareInformation {
 /// <p>The physical capacity of the Amazon Web Services Snow Family device. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Capacity {
+pub struct Capacity  {
     /// <p>The name of the type of capacity, such as memory.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1943,11 +1818,11 @@ pub struct Capacity {
 }
 impl Capacity {
     /// <p>The name of the type of capacity, such as memory.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unit of measure for the type of capacity.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> std::option::Option<& str> {
         self.unit.as_deref()
     }
     /// <p>The total capacity on the device.</p>
@@ -1965,7 +1840,7 @@ impl Capacity {
 }
 /// See [`Capacity`](crate::model::Capacity).
 pub mod capacity {
-
+    
     /// A builder for [`Capacity`](crate::model::Capacity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1983,8 +1858,7 @@ pub mod capacity {
         }
         /// <p>The name of the type of capacity, such as memory.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The unit of measure for the type of capacity.</p>
         pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1993,8 +1867,7 @@ pub mod capacity {
         }
         /// <p>The unit of measure for the type of capacity.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// <p>The total capacity on the device.</p>
         pub fn total(mut self, input: i64) -> Self {
@@ -2003,8 +1876,7 @@ pub mod capacity {
         }
         /// <p>The total capacity on the device.</p>
         pub fn set_total(mut self, input: std::option::Option<i64>) -> Self {
-            self.total = input;
-            self
+            self.total = input; self
         }
         /// <p>The amount of capacity used on the device.</p>
         pub fn used(mut self, input: i64) -> Self {
@@ -2013,8 +1885,7 @@ pub mod capacity {
         }
         /// <p>The amount of capacity used on the device.</p>
         pub fn set_used(mut self, input: std::option::Option<i64>) -> Self {
-            self.used = input;
-            self
+            self.used = input; self
         }
         /// <p>The amount of capacity available for use on the device.</p>
         pub fn available(mut self, input: i64) -> Self {
@@ -2023,20 +1894,26 @@ pub mod capacity {
         }
         /// <p>The amount of capacity available for use on the device.</p>
         pub fn set_available(mut self, input: std::option::Option<i64>) -> Self {
-            self.available = input;
-            self
+            self.available = input; self
         }
         /// Consumes the builder and constructs a [`Capacity`](crate::model::Capacity).
         pub fn build(self) -> crate::model::Capacity {
             crate::model::Capacity {
-                name: self.name,
-                unit: self.unit,
-                total: self.total,
-                used: self.used,
-                available: self.available,
+                name: self.name
+                ,
+                unit: self.unit
+                ,
+                total: self.total
+                ,
+                used: self.used
+                ,
+                available: self.available
+                ,
             }
         }
     }
+    
+    
 }
 impl Capacity {
     /// Creates a new builder-style object to manufacture [`Capacity`](crate::model::Capacity).
@@ -2048,7 +1925,7 @@ impl Capacity {
 /// <p>The details about the physical network interface for the device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PhysicalNetworkInterface {
+pub struct PhysicalNetworkInterface  {
     /// <p>The physical network interface ID.</p>
     #[doc(hidden)]
     pub physical_network_interface_id: std::option::Option<std::string::String>,
@@ -2073,45 +1950,42 @@ pub struct PhysicalNetworkInterface {
 }
 impl PhysicalNetworkInterface {
     /// <p>The physical network interface ID.</p>
-    pub fn physical_network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn physical_network_interface_id(&self) -> std::option::Option<& str> {
         self.physical_network_interface_id.as_deref()
     }
     /// <p>The physical connector type.</p>
-    pub fn physical_connector_type(
-        &self,
-    ) -> std::option::Option<&crate::model::PhysicalConnectorType> {
+    pub fn physical_connector_type(&self) -> std::option::Option<& crate::model::PhysicalConnectorType> {
         self.physical_connector_type.as_ref()
     }
     /// <p>A value that describes whether the IP address is dynamic or persistent.</p>
-    pub fn ip_address_assignment(&self) -> std::option::Option<&crate::model::IpAddressAssignment> {
+    pub fn ip_address_assignment(&self) -> std::option::Option<& crate::model::IpAddressAssignment> {
         self.ip_address_assignment.as_ref()
     }
     /// <p>The IP address of the device.</p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
+    pub fn ip_address(&self) -> std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The netmask used to divide the IP address into subnets.</p>
-    pub fn netmask(&self) -> std::option::Option<&str> {
+    pub fn netmask(&self) -> std::option::Option<& str> {
         self.netmask.as_deref()
     }
     /// <p>The default gateway of the device.</p>
-    pub fn default_gateway(&self) -> std::option::Option<&str> {
+    pub fn default_gateway(&self) -> std::option::Option<& str> {
         self.default_gateway.as_deref()
     }
     /// <p>The MAC address of the device.</p>
-    pub fn mac_address(&self) -> std::option::Option<&str> {
+    pub fn mac_address(&self) -> std::option::Option<& str> {
         self.mac_address.as_deref()
     }
 }
 /// See [`PhysicalNetworkInterface`](crate::model::PhysicalNetworkInterface).
 pub mod physical_network_interface {
-
+    
     /// A builder for [`PhysicalNetworkInterface`](crate::model::PhysicalNetworkInterface).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) physical_network_interface_id: std::option::Option<std::string::String>,
-        pub(crate) physical_connector_type:
-            std::option::Option<crate::model::PhysicalConnectorType>,
+        pub(crate) physical_connector_type: std::option::Option<crate::model::PhysicalConnectorType>,
         pub(crate) ip_address_assignment: std::option::Option<crate::model::IpAddressAssignment>,
         pub(crate) ip_address: std::option::Option<std::string::String>,
         pub(crate) netmask: std::option::Option<std::string::String>,
@@ -2120,36 +1994,22 @@ pub mod physical_network_interface {
     }
     impl Builder {
         /// <p>The physical network interface ID.</p>
-        pub fn physical_network_interface_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn physical_network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.physical_network_interface_id = Some(input.into());
             self
         }
         /// <p>The physical network interface ID.</p>
-        pub fn set_physical_network_interface_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.physical_network_interface_id = input;
-            self
+        pub fn set_physical_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.physical_network_interface_id = input; self
         }
         /// <p>The physical connector type.</p>
-        pub fn physical_connector_type(
-            mut self,
-            input: crate::model::PhysicalConnectorType,
-        ) -> Self {
+        pub fn physical_connector_type(mut self, input: crate::model::PhysicalConnectorType) -> Self {
             self.physical_connector_type = Some(input);
             self
         }
         /// <p>The physical connector type.</p>
-        pub fn set_physical_connector_type(
-            mut self,
-            input: std::option::Option<crate::model::PhysicalConnectorType>,
-        ) -> Self {
-            self.physical_connector_type = input;
-            self
+        pub fn set_physical_connector_type(mut self, input: std::option::Option<crate::model::PhysicalConnectorType>) -> Self {
+            self.physical_connector_type = input; self
         }
         /// <p>A value that describes whether the IP address is dynamic or persistent.</p>
         pub fn ip_address_assignment(mut self, input: crate::model::IpAddressAssignment) -> Self {
@@ -2157,12 +2017,8 @@ pub mod physical_network_interface {
             self
         }
         /// <p>A value that describes whether the IP address is dynamic or persistent.</p>
-        pub fn set_ip_address_assignment(
-            mut self,
-            input: std::option::Option<crate::model::IpAddressAssignment>,
-        ) -> Self {
-            self.ip_address_assignment = input;
-            self
+        pub fn set_ip_address_assignment(mut self, input: std::option::Option<crate::model::IpAddressAssignment>) -> Self {
+            self.ip_address_assignment = input; self
         }
         /// <p>The IP address of the device.</p>
         pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2171,8 +2027,7 @@ pub mod physical_network_interface {
         }
         /// <p>The IP address of the device.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ip_address = input;
-            self
+            self.ip_address = input; self
         }
         /// <p>The netmask used to divide the IP address into subnets.</p>
         pub fn netmask(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2181,8 +2036,7 @@ pub mod physical_network_interface {
         }
         /// <p>The netmask used to divide the IP address into subnets.</p>
         pub fn set_netmask(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.netmask = input;
-            self
+            self.netmask = input; self
         }
         /// <p>The default gateway of the device.</p>
         pub fn default_gateway(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2190,12 +2044,8 @@ pub mod physical_network_interface {
             self
         }
         /// <p>The default gateway of the device.</p>
-        pub fn set_default_gateway(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_gateway = input;
-            self
+        pub fn set_default_gateway(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_gateway = input; self
         }
         /// <p>The MAC address of the device.</p>
         pub fn mac_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2204,22 +2054,30 @@ pub mod physical_network_interface {
         }
         /// <p>The MAC address of the device.</p>
         pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mac_address = input;
-            self
+            self.mac_address = input; self
         }
         /// Consumes the builder and constructs a [`PhysicalNetworkInterface`](crate::model::PhysicalNetworkInterface).
         pub fn build(self) -> crate::model::PhysicalNetworkInterface {
             crate::model::PhysicalNetworkInterface {
-                physical_network_interface_id: self.physical_network_interface_id,
-                physical_connector_type: self.physical_connector_type,
-                ip_address_assignment: self.ip_address_assignment,
-                ip_address: self.ip_address,
-                netmask: self.netmask,
-                default_gateway: self.default_gateway,
-                mac_address: self.mac_address,
+                physical_network_interface_id: self.physical_network_interface_id
+                ,
+                physical_connector_type: self.physical_connector_type
+                ,
+                ip_address_assignment: self.ip_address_assignment
+                ,
+                ip_address: self.ip_address
+                ,
+                netmask: self.netmask
+                ,
+                default_gateway: self.default_gateway
+                ,
+                mac_address: self.mac_address
+                ,
             }
         }
     }
+    
+    
 }
 impl PhysicalNetworkInterface {
     /// Creates a new builder-style object to manufacture [`PhysicalNetworkInterface`](crate::model::PhysicalNetworkInterface).
@@ -2234,9 +2092,9 @@ impl PhysicalNetworkInterface {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ipaddressassignment = unimplemented!();
 /// match ipaddressassignment {
@@ -2258,60 +2116,52 @@ impl PhysicalNetworkInterface {
 /// Specifically, when `ipaddressassignment` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IpAddressAssignment::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IpAddressAssignment {
     #[allow(missing_docs)] // documentation missing in model
     Dhcp,
     #[allow(missing_docs)] // documentation missing in model
     Static,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IpAddressAssignment {
     fn from(s: &str) -> Self {
         match s {
             "DHCP" => IpAddressAssignment::Dhcp,
             "STATIC" => IpAddressAssignment::Static,
-            other => {
-                IpAddressAssignment::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => IpAddressAssignment::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for IpAddressAssignment {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IpAddressAssignment::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IpAddressAssignment::from(s))
+                }
+            }
 impl IpAddressAssignment {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IpAddressAssignment::Dhcp => "DHCP",
             IpAddressAssignment::Static => "STATIC",
-            IpAddressAssignment::Unknown(value) => value.as_str(),
+            IpAddressAssignment::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DHCP", "STATIC"]
+        &[
+            "DHCP", "STATIC"
+        ]
     }
 }
 impl AsRef<str> for IpAddressAssignment {
@@ -2326,9 +2176,9 @@ impl AsRef<str> for IpAddressAssignment {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let physicalconnectortype = unimplemented!();
 /// match physicalconnectortype {
@@ -2353,22 +2203,14 @@ impl AsRef<str> for IpAddressAssignment {
 /// Specifically, when `physicalconnectortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PhysicalConnectorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PhysicalConnectorType {
     #[allow(missing_docs)] // documentation missing in model
     Qsfp,
@@ -2381,7 +2223,7 @@ pub enum PhysicalConnectorType {
     #[allow(missing_docs)] // documentation missing in model
     Wifi,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PhysicalConnectorType {
     fn from(s: &str) -> Self {
@@ -2391,19 +2233,17 @@ impl std::convert::From<&str> for PhysicalConnectorType {
             "RJ45_2" => PhysicalConnectorType::Rj452,
             "SFP_PLUS" => PhysicalConnectorType::SfpPlus,
             "WIFI" => PhysicalConnectorType::Wifi,
-            other => {
-                PhysicalConnectorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PhysicalConnectorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PhysicalConnectorType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PhysicalConnectorType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PhysicalConnectorType::from(s))
+                }
+            }
 impl PhysicalConnectorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2413,12 +2253,14 @@ impl PhysicalConnectorType {
             PhysicalConnectorType::Rj452 => "RJ45_2",
             PhysicalConnectorType::SfpPlus => "SFP_PLUS",
             PhysicalConnectorType::Wifi => "WIFI",
-            PhysicalConnectorType::Unknown(value) => value.as_str(),
+            PhysicalConnectorType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["QSFP", "RJ45", "RJ45_2", "SFP_PLUS", "WIFI"]
+        &[
+            "QSFP", "RJ45", "RJ45_2", "SFP_PLUS", "WIFI"
+        ]
     }
 }
 impl AsRef<str> for PhysicalConnectorType {
@@ -2433,9 +2275,9 @@ impl AsRef<str> for PhysicalConnectorType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let unlockstate = unimplemented!();
 /// match unlockstate {
@@ -2458,22 +2300,14 @@ impl AsRef<str> for PhysicalConnectorType {
 /// Specifically, when `unlockstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UnlockState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UnlockState {
     #[allow(missing_docs)] // documentation missing in model
     Locked,
@@ -2482,7 +2316,7 @@ pub enum UnlockState {
     #[allow(missing_docs)] // documentation missing in model
     Unlocking,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UnlockState {
     fn from(s: &str) -> Self {
@@ -2490,17 +2324,17 @@ impl std::convert::From<&str> for UnlockState {
             "LOCKED" => UnlockState::Locked,
             "UNLOCKED" => UnlockState::Unlocked,
             "UNLOCKING" => UnlockState::Unlocking,
-            other => UnlockState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UnlockState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UnlockState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UnlockState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UnlockState::from(s))
+                }
+            }
 impl UnlockState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2508,12 +2342,14 @@ impl UnlockState {
             UnlockState::Locked => "LOCKED",
             UnlockState::Unlocked => "UNLOCKED",
             UnlockState::Unlocking => "UNLOCKING",
-            UnlockState::Unknown(value) => value.as_str(),
+            UnlockState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LOCKED", "UNLOCKED", "UNLOCKING"]
+        &[
+            "LOCKED", "UNLOCKED", "UNLOCKING"
+        ]
     }
 }
 impl AsRef<str> for UnlockState {
@@ -2521,3 +2357,4 @@ impl AsRef<str> for UnlockState {
         self.as_str()
     }
 }
+

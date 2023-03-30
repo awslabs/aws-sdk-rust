@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct VerifyMacError {
     /// Kind of error that occurred.
-    pub kind: VerifyMacErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: VerifyMacErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for VerifyMacError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: VerifyMacErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -24,12 +24,12 @@ pub enum VerifyMacErrorKind {
     DisabledException(crate::error::DisabledException),
     /// <p>The request was rejected because the specified grant token is not valid.</p>
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
-    /// <p>The request was rejected for one of the following reasons: </p>
-    /// <ul>
-    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
-    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
-    /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>The request was rejected for one of the following reasons: </p> 
+    /// <ul> 
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li> 
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li> 
+    /// </ul> 
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p> 
     /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
     /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
@@ -38,37 +38,55 @@ pub enum VerifyMacErrorKind {
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the HMAC verification failed. HMAC verification fails when the HMAC computed by using the specified message, HMAC KMS key, and MAC algorithm does not match the HMAC specified in the request.</p>
     KmsInvalidMacException(crate::error::KmsInvalidMacException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for VerifyMacError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            VerifyMacErrorKind::DisabledException(_inner) => _inner.fmt(f),
-            VerifyMacErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
-            VerifyMacErrorKind::InvalidKeyUsageException(_inner) => _inner.fmt(f),
-            VerifyMacErrorKind::KeyUnavailableException(_inner) => _inner.fmt(f),
-            VerifyMacErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            VerifyMacErrorKind::KmsInvalidMacException(_inner) => _inner.fmt(f),
-            VerifyMacErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            VerifyMacErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            VerifyMacErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            VerifyMacErrorKind::DisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            VerifyMacErrorKind::InvalidGrantTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            VerifyMacErrorKind::InvalidKeyUsageException(_inner) =>
+            _inner.fmt(f)
+            ,
+            VerifyMacErrorKind::KeyUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            VerifyMacErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            VerifyMacErrorKind::KmsInvalidMacException(_inner) =>
+            _inner.fmt(f)
+            ,
+            VerifyMacErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            VerifyMacErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            VerifyMacErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -82,56 +100,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for VerifyMacError {
 }
 impl VerifyMacError {
     /// Creates a new `VerifyMacError`.
-    pub fn new(kind: VerifyMacErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `VerifyMacError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: VerifyMacErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `VerifyMacError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: VerifyMacErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: VerifyMacErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `VerifyMacError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: VerifyMacErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `VerifyMacError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: VerifyMacErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `VerifyMacErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
         matches!(&self.kind, VerifyMacErrorKind::DisabledException(_))
     }
     /// Returns `true` if the error kind is `VerifyMacErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            VerifyMacErrorKind::InvalidGrantTokenException(_)
-        )
+        matches!(&self.kind, VerifyMacErrorKind::InvalidGrantTokenException(_))
     }
     /// Returns `true` if the error kind is `VerifyMacErrorKind::InvalidKeyUsageException`.
     pub fn is_invalid_key_usage_exception(&self) -> bool {
@@ -161,15 +176,33 @@ impl VerifyMacError {
 impl std::error::Error for VerifyMacError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            VerifyMacErrorKind::DisabledException(_inner) => Some(_inner),
-            VerifyMacErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
-            VerifyMacErrorKind::InvalidKeyUsageException(_inner) => Some(_inner),
-            VerifyMacErrorKind::KeyUnavailableException(_inner) => Some(_inner),
-            VerifyMacErrorKind::KmsInternalException(_inner) => Some(_inner),
-            VerifyMacErrorKind::KmsInvalidMacException(_inner) => Some(_inner),
-            VerifyMacErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            VerifyMacErrorKind::NotFoundException(_inner) => Some(_inner),
-            VerifyMacErrorKind::Unhandled(_inner) => Some(_inner),
+            VerifyMacErrorKind::DisabledException(_inner) =>
+            Some(_inner)
+            ,
+            VerifyMacErrorKind::InvalidGrantTokenException(_inner) =>
+            Some(_inner)
+            ,
+            VerifyMacErrorKind::InvalidKeyUsageException(_inner) =>
+            Some(_inner)
+            ,
+            VerifyMacErrorKind::KeyUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            VerifyMacErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            VerifyMacErrorKind::KmsInvalidMacException(_inner) =>
+            Some(_inner)
+            ,
+            VerifyMacErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            VerifyMacErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            VerifyMacErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -177,22 +210,20 @@ impl std::error::Error for VerifyMacError {
 /// <p>The request was rejected because the specified entity or resource could not be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotFoundException {
+pub struct NotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotFoundException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -202,7 +233,7 @@ impl std::fmt::Display for NotFoundException {
 impl std::error::Error for NotFoundException {}
 /// See [`NotFoundException`](crate::error::NotFoundException).
 pub mod not_found_exception {
-
+    
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -216,16 +247,18 @@ pub mod not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException).
         pub fn build(self) -> crate::error::NotFoundException {
             crate::error::NotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NotFoundException {
     /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException).
@@ -234,30 +267,28 @@ impl NotFoundException {
     }
 }
 
-/// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-/// <p>This exceptions means one of the following:</p>
-/// <ul>
-/// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-/// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+/// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+/// <p>This exceptions means one of the following:</p> 
+/// <ul> 
+/// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+/// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KmsInvalidStateException {
+pub struct KmsInvalidStateException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl KmsInvalidStateException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for KmsInvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsInvalidStateException [KMSInvalidStateException]")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -267,7 +298,7 @@ impl std::fmt::Display for KmsInvalidStateException {
 impl std::error::Error for KmsInvalidStateException {}
 /// See [`KmsInvalidStateException`](crate::error::KmsInvalidStateException).
 pub mod kms_invalid_state_exception {
-
+    
     /// A builder for [`KmsInvalidStateException`](crate::error::KmsInvalidStateException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -281,16 +312,18 @@ pub mod kms_invalid_state_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`KmsInvalidStateException`](crate::error::KmsInvalidStateException).
         pub fn build(self) -> crate::error::KmsInvalidStateException {
             crate::error::KmsInvalidStateException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl KmsInvalidStateException {
     /// Creates a new builder-style object to manufacture [`KmsInvalidStateException`](crate::error::KmsInvalidStateException).
@@ -302,22 +335,20 @@ impl KmsInvalidStateException {
 /// <p>The request was rejected because the HMAC verification failed. HMAC verification fails when the HMAC computed by using the specified message, HMAC KMS key, and MAC algorithm does not match the HMAC specified in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KmsInvalidMacException {
+pub struct KmsInvalidMacException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl KmsInvalidMacException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for KmsInvalidMacException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsInvalidMacException [KMSInvalidMacException]")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -327,7 +358,7 @@ impl std::fmt::Display for KmsInvalidMacException {
 impl std::error::Error for KmsInvalidMacException {}
 /// See [`KmsInvalidMacException`](crate::error::KmsInvalidMacException).
 pub mod kms_invalid_mac_exception {
-
+    
     /// A builder for [`KmsInvalidMacException`](crate::error::KmsInvalidMacException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -341,16 +372,18 @@ pub mod kms_invalid_mac_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`KmsInvalidMacException`](crate::error::KmsInvalidMacException).
         pub fn build(self) -> crate::error::KmsInvalidMacException {
             crate::error::KmsInvalidMacException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl KmsInvalidMacException {
     /// Creates a new builder-style object to manufacture [`KmsInvalidMacException`](crate::error::KmsInvalidMacException).
@@ -362,22 +395,20 @@ impl KmsInvalidMacException {
 /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KmsInternalException {
+pub struct KmsInternalException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl KmsInternalException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for KmsInternalException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KmsInternalException [KMSInternalException]")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -387,7 +418,7 @@ impl std::fmt::Display for KmsInternalException {
 impl std::error::Error for KmsInternalException {}
 /// See [`KmsInternalException`](crate::error::KmsInternalException).
 pub mod kms_internal_exception {
-
+    
     /// A builder for [`KmsInternalException`](crate::error::KmsInternalException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -401,16 +432,18 @@ pub mod kms_internal_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`KmsInternalException`](crate::error::KmsInternalException).
         pub fn build(self) -> crate::error::KmsInternalException {
             crate::error::KmsInternalException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl KmsInternalException {
     /// Creates a new builder-style object to manufacture [`KmsInternalException`](crate::error::KmsInternalException).
@@ -422,22 +455,20 @@ impl KmsInternalException {
 /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KeyUnavailableException {
+pub struct KeyUnavailableException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl KeyUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for KeyUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "KeyUnavailableException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -447,7 +478,7 @@ impl std::fmt::Display for KeyUnavailableException {
 impl std::error::Error for KeyUnavailableException {}
 /// See [`KeyUnavailableException`](crate::error::KeyUnavailableException).
 pub mod key_unavailable_exception {
-
+    
     /// A builder for [`KeyUnavailableException`](crate::error::KeyUnavailableException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -461,16 +492,18 @@ pub mod key_unavailable_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`KeyUnavailableException`](crate::error::KeyUnavailableException).
         pub fn build(self) -> crate::error::KeyUnavailableException {
             crate::error::KeyUnavailableException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl KeyUnavailableException {
     /// Creates a new builder-style object to manufacture [`KeyUnavailableException`](crate::error::KeyUnavailableException).
@@ -479,31 +512,29 @@ impl KeyUnavailableException {
     }
 }
 
-/// <p>The request was rejected for one of the following reasons: </p>
-/// <ul>
-/// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
-/// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
-/// </ul>
-/// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+/// <p>The request was rejected for one of the following reasons: </p> 
+/// <ul> 
+/// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li> 
+/// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li> 
+/// </ul> 
+/// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p> 
 /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidKeyUsageException {
+pub struct InvalidKeyUsageException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidKeyUsageException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidKeyUsageException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidKeyUsageException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -513,7 +544,7 @@ impl std::fmt::Display for InvalidKeyUsageException {
 impl std::error::Error for InvalidKeyUsageException {}
 /// See [`InvalidKeyUsageException`](crate::error::InvalidKeyUsageException).
 pub mod invalid_key_usage_exception {
-
+    
     /// A builder for [`InvalidKeyUsageException`](crate::error::InvalidKeyUsageException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -527,16 +558,18 @@ pub mod invalid_key_usage_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidKeyUsageException`](crate::error::InvalidKeyUsageException).
         pub fn build(self) -> crate::error::InvalidKeyUsageException {
             crate::error::InvalidKeyUsageException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidKeyUsageException {
     /// Creates a new builder-style object to manufacture [`InvalidKeyUsageException`](crate::error::InvalidKeyUsageException).
@@ -548,22 +581,20 @@ impl InvalidKeyUsageException {
 /// <p>The request was rejected because the specified grant token is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidGrantTokenException {
+pub struct InvalidGrantTokenException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidGrantTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidGrantTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidGrantTokenException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -573,7 +604,7 @@ impl std::fmt::Display for InvalidGrantTokenException {
 impl std::error::Error for InvalidGrantTokenException {}
 /// See [`InvalidGrantTokenException`](crate::error::InvalidGrantTokenException).
 pub mod invalid_grant_token_exception {
-
+    
     /// A builder for [`InvalidGrantTokenException`](crate::error::InvalidGrantTokenException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -587,16 +618,18 @@ pub mod invalid_grant_token_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidGrantTokenException`](crate::error::InvalidGrantTokenException).
         pub fn build(self) -> crate::error::InvalidGrantTokenException {
             crate::error::InvalidGrantTokenException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidGrantTokenException {
     /// Creates a new builder-style object to manufacture [`InvalidGrantTokenException`](crate::error::InvalidGrantTokenException).
@@ -608,22 +641,20 @@ impl InvalidGrantTokenException {
 /// <p>The request was rejected because the specified KMS key is not enabled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisabledException {
+pub struct DisabledException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DisabledException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DisabledException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -633,7 +664,7 @@ impl std::fmt::Display for DisabledException {
 impl std::error::Error for DisabledException {}
 /// See [`DisabledException`](crate::error::DisabledException).
 pub mod disabled_exception {
-
+    
     /// A builder for [`DisabledException`](crate::error::DisabledException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -647,16 +678,18 @@ pub mod disabled_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DisabledException`](crate::error::DisabledException).
         pub fn build(self) -> crate::error::DisabledException {
             crate::error::DisabledException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DisabledException {
     /// Creates a new builder-style object to manufacture [`DisabledException`](crate::error::DisabledException).
@@ -670,15 +703,15 @@ impl DisabledException {
 #[derive(std::fmt::Debug)]
 pub struct VerifyError {
     /// Kind of error that occurred.
-    pub kind: VerifyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: VerifyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for VerifyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: VerifyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -692,12 +725,12 @@ pub enum VerifyErrorKind {
     DisabledException(crate::error::DisabledException),
     /// <p>The request was rejected because the specified grant token is not valid.</p>
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
-    /// <p>The request was rejected for one of the following reasons: </p>
-    /// <ul>
-    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
-    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
-    /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>The request was rejected for one of the following reasons: </p> 
+    /// <ul> 
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li> 
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li> 
+    /// </ul> 
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p> 
     /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
     /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
@@ -706,38 +739,58 @@ pub enum VerifyErrorKind {
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the signature verification failed. Signature verification fails when it cannot confirm that signature was produced by signing the specified message with the specified KMS key and signing algorithm.</p>
     KmsInvalidSignatureException(crate::error::KmsInvalidSignatureException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for VerifyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            VerifyErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            VerifyErrorKind::DisabledException(_inner) => _inner.fmt(f),
-            VerifyErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
-            VerifyErrorKind::InvalidKeyUsageException(_inner) => _inner.fmt(f),
-            VerifyErrorKind::KeyUnavailableException(_inner) => _inner.fmt(f),
-            VerifyErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            VerifyErrorKind::KmsInvalidSignatureException(_inner) => _inner.fmt(f),
-            VerifyErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            VerifyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            VerifyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            VerifyErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            VerifyErrorKind::DisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            VerifyErrorKind::InvalidGrantTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            VerifyErrorKind::InvalidKeyUsageException(_inner) =>
+            _inner.fmt(f)
+            ,
+            VerifyErrorKind::KeyUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            VerifyErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            VerifyErrorKind::KmsInvalidSignatureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            VerifyErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            VerifyErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            VerifyErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -751,46 +804,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for VerifyError {
 }
 impl VerifyError {
     /// Creates a new `VerifyError`.
-    pub fn new(kind: VerifyErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `VerifyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: VerifyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `VerifyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: VerifyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: VerifyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `VerifyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: VerifyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `VerifyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: VerifyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `VerifyErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(&self.kind, VerifyErrorKind::DependencyTimeoutException(_))
@@ -831,16 +884,36 @@ impl VerifyError {
 impl std::error::Error for VerifyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            VerifyErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            VerifyErrorKind::DisabledException(_inner) => Some(_inner),
-            VerifyErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
-            VerifyErrorKind::InvalidKeyUsageException(_inner) => Some(_inner),
-            VerifyErrorKind::KeyUnavailableException(_inner) => Some(_inner),
-            VerifyErrorKind::KmsInternalException(_inner) => Some(_inner),
-            VerifyErrorKind::KmsInvalidSignatureException(_inner) => Some(_inner),
-            VerifyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            VerifyErrorKind::NotFoundException(_inner) => Some(_inner),
-            VerifyErrorKind::Unhandled(_inner) => Some(_inner),
+            VerifyErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            VerifyErrorKind::DisabledException(_inner) =>
+            Some(_inner)
+            ,
+            VerifyErrorKind::InvalidGrantTokenException(_inner) =>
+            Some(_inner)
+            ,
+            VerifyErrorKind::InvalidKeyUsageException(_inner) =>
+            Some(_inner)
+            ,
+            VerifyErrorKind::KeyUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            VerifyErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            VerifyErrorKind::KmsInvalidSignatureException(_inner) =>
+            Some(_inner)
+            ,
+            VerifyErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            VerifyErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            VerifyErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -848,25 +921,20 @@ impl std::error::Error for VerifyError {
 /// <p>The request was rejected because the signature verification failed. Signature verification fails when it cannot confirm that signature was produced by signing the specified message with the specified KMS key and signing algorithm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KmsInvalidSignatureException {
+pub struct KmsInvalidSignatureException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl KmsInvalidSignatureException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for KmsInvalidSignatureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "KmsInvalidSignatureException [KMSInvalidSignatureException]"
-        )?;
+        write!(f, "KmsInvalidSignatureException [KMSInvalidSignatureException]")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -876,7 +944,7 @@ impl std::fmt::Display for KmsInvalidSignatureException {
 impl std::error::Error for KmsInvalidSignatureException {}
 /// See [`KmsInvalidSignatureException`](crate::error::KmsInvalidSignatureException).
 pub mod kms_invalid_signature_exception {
-
+    
     /// A builder for [`KmsInvalidSignatureException`](crate::error::KmsInvalidSignatureException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -890,16 +958,18 @@ pub mod kms_invalid_signature_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`KmsInvalidSignatureException`](crate::error::KmsInvalidSignatureException).
         pub fn build(self) -> crate::error::KmsInvalidSignatureException {
             crate::error::KmsInvalidSignatureException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl KmsInvalidSignatureException {
     /// Creates a new builder-style object to manufacture [`KmsInvalidSignatureException`](crate::error::KmsInvalidSignatureException).
@@ -911,22 +981,20 @@ impl KmsInvalidSignatureException {
 /// <p>The system timed out while trying to fulfill the request. You can retry the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DependencyTimeoutException {
+pub struct DependencyTimeoutException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DependencyTimeoutException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DependencyTimeoutException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DependencyTimeoutException")?;
         if let Some(inner_10) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_10)?;
             }
         }
@@ -936,7 +1004,7 @@ impl std::fmt::Display for DependencyTimeoutException {
 impl std::error::Error for DependencyTimeoutException {}
 /// See [`DependencyTimeoutException`](crate::error::DependencyTimeoutException).
 pub mod dependency_timeout_exception {
-
+    
     /// A builder for [`DependencyTimeoutException`](crate::error::DependencyTimeoutException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -950,16 +1018,18 @@ pub mod dependency_timeout_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DependencyTimeoutException`](crate::error::DependencyTimeoutException).
         pub fn build(self) -> crate::error::DependencyTimeoutException {
             crate::error::DependencyTimeoutException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DependencyTimeoutException {
     /// Creates a new builder-style object to manufacture [`DependencyTimeoutException`](crate::error::DependencyTimeoutException).
@@ -973,15 +1043,15 @@ impl DependencyTimeoutException {
 #[derive(std::fmt::Debug)]
 pub struct UpdatePrimaryRegionError {
     /// Kind of error that occurred.
-    pub kind: UpdatePrimaryRegionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdatePrimaryRegionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdatePrimaryRegionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdatePrimaryRegionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -995,37 +1065,51 @@ pub enum UpdatePrimaryRegionErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdatePrimaryRegionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdatePrimaryRegionErrorKind::DisabledException(_inner) => _inner.fmt(f),
-            UpdatePrimaryRegionErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            UpdatePrimaryRegionErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            UpdatePrimaryRegionErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            UpdatePrimaryRegionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdatePrimaryRegionErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
-            UpdatePrimaryRegionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdatePrimaryRegionErrorKind::DisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdatePrimaryRegionErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdatePrimaryRegionErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdatePrimaryRegionErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdatePrimaryRegionErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdatePrimaryRegionErrorKind::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdatePrimaryRegionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1039,99 +1123,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdatePrimaryRegionError {
 }
 impl UpdatePrimaryRegionError {
     /// Creates a new `UpdatePrimaryRegionError`.
-    pub fn new(kind: UpdatePrimaryRegionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdatePrimaryRegionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdatePrimaryRegionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdatePrimaryRegionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdatePrimaryRegionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdatePrimaryRegionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdatePrimaryRegionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdatePrimaryRegionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdatePrimaryRegionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdatePrimaryRegionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdatePrimaryRegionErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdatePrimaryRegionErrorKind::DisabledException(_)
-        )
+        matches!(&self.kind, UpdatePrimaryRegionErrorKind::DisabledException(_))
     }
     /// Returns `true` if the error kind is `UpdatePrimaryRegionErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdatePrimaryRegionErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, UpdatePrimaryRegionErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `UpdatePrimaryRegionErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdatePrimaryRegionErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, UpdatePrimaryRegionErrorKind::KmsInternalException(_))
     }
     /// Returns `true` if the error kind is `UpdatePrimaryRegionErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdatePrimaryRegionErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, UpdatePrimaryRegionErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `UpdatePrimaryRegionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdatePrimaryRegionErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, UpdatePrimaryRegionErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdatePrimaryRegionErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdatePrimaryRegionErrorKind::UnsupportedOperationException(_)
-        )
+        matches!(&self.kind, UpdatePrimaryRegionErrorKind::UnsupportedOperationException(_))
     }
 }
 impl std::error::Error for UpdatePrimaryRegionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdatePrimaryRegionErrorKind::DisabledException(_inner) => Some(_inner),
-            UpdatePrimaryRegionErrorKind::InvalidArnException(_inner) => Some(_inner),
-            UpdatePrimaryRegionErrorKind::KmsInternalException(_inner) => Some(_inner),
-            UpdatePrimaryRegionErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            UpdatePrimaryRegionErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdatePrimaryRegionErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            UpdatePrimaryRegionErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdatePrimaryRegionErrorKind::DisabledException(_inner) =>
+            Some(_inner)
+            ,
+            UpdatePrimaryRegionErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            UpdatePrimaryRegionErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            UpdatePrimaryRegionErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            UpdatePrimaryRegionErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdatePrimaryRegionErrorKind::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdatePrimaryRegionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1139,22 +1219,20 @@ impl std::error::Error for UpdatePrimaryRegionError {
 /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsupportedOperationException {
+pub struct UnsupportedOperationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnsupportedOperationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UnsupportedOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedOperationException")?;
         if let Some(inner_11) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_11)?;
             }
         }
@@ -1164,7 +1242,7 @@ impl std::fmt::Display for UnsupportedOperationException {
 impl std::error::Error for UnsupportedOperationException {}
 /// See [`UnsupportedOperationException`](crate::error::UnsupportedOperationException).
 pub mod unsupported_operation_exception {
-
+    
     /// A builder for [`UnsupportedOperationException`](crate::error::UnsupportedOperationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1178,16 +1256,18 @@ pub mod unsupported_operation_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UnsupportedOperationException`](crate::error::UnsupportedOperationException).
         pub fn build(self) -> crate::error::UnsupportedOperationException {
             crate::error::UnsupportedOperationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UnsupportedOperationException {
     /// Creates a new builder-style object to manufacture [`UnsupportedOperationException`](crate::error::UnsupportedOperationException).
@@ -1199,22 +1279,20 @@ impl UnsupportedOperationException {
 /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidArnException {
+pub struct InvalidArnException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidArnException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidArnException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidArnException")?;
         if let Some(inner_12) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_12)?;
             }
         }
@@ -1224,7 +1302,7 @@ impl std::fmt::Display for InvalidArnException {
 impl std::error::Error for InvalidArnException {}
 /// See [`InvalidArnException`](crate::error::InvalidArnException).
 pub mod invalid_arn_exception {
-
+    
     /// A builder for [`InvalidArnException`](crate::error::InvalidArnException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1238,16 +1316,18 @@ pub mod invalid_arn_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidArnException`](crate::error::InvalidArnException).
         pub fn build(self) -> crate::error::InvalidArnException {
             crate::error::InvalidArnException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidArnException {
     /// Creates a new builder-style object to manufacture [`InvalidArnException`](crate::error::InvalidArnException).
@@ -1261,15 +1341,15 @@ impl InvalidArnException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateKeyDescriptionError {
     /// Kind of error that occurred.
-    pub kind: UpdateKeyDescriptionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateKeyDescriptionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateKeyDescriptionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateKeyDescriptionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1283,34 +1363,46 @@ pub enum UpdateKeyDescriptionErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateKeyDescriptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateKeyDescriptionErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            UpdateKeyDescriptionErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            UpdateKeyDescriptionErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            UpdateKeyDescriptionErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            UpdateKeyDescriptionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateKeyDescriptionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateKeyDescriptionErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateKeyDescriptionErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateKeyDescriptionErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateKeyDescriptionErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateKeyDescriptionErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateKeyDescriptionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1324,95 +1416,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateKeyDescriptionError {
 }
 impl UpdateKeyDescriptionError {
     /// Creates a new `UpdateKeyDescriptionError`.
-    pub fn new(kind: UpdateKeyDescriptionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateKeyDescriptionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateKeyDescriptionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateKeyDescriptionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateKeyDescriptionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateKeyDescriptionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateKeyDescriptionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateKeyDescriptionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateKeyDescriptionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateKeyDescriptionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateKeyDescriptionErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateKeyDescriptionErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, UpdateKeyDescriptionErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `UpdateKeyDescriptionErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateKeyDescriptionErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, UpdateKeyDescriptionErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `UpdateKeyDescriptionErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateKeyDescriptionErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, UpdateKeyDescriptionErrorKind::KmsInternalException(_))
     }
     /// Returns `true` if the error kind is `UpdateKeyDescriptionErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateKeyDescriptionErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, UpdateKeyDescriptionErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `UpdateKeyDescriptionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateKeyDescriptionErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, UpdateKeyDescriptionErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for UpdateKeyDescriptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateKeyDescriptionErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            UpdateKeyDescriptionErrorKind::InvalidArnException(_inner) => Some(_inner),
-            UpdateKeyDescriptionErrorKind::KmsInternalException(_inner) => Some(_inner),
-            UpdateKeyDescriptionErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            UpdateKeyDescriptionErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateKeyDescriptionErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateKeyDescriptionErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateKeyDescriptionErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateKeyDescriptionErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateKeyDescriptionErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateKeyDescriptionErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateKeyDescriptionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1422,15 +1507,15 @@ impl std::error::Error for UpdateKeyDescriptionError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateCustomKeyStoreError {
     /// Kind of error that occurred.
-    pub kind: UpdateCustomKeyStoreErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateCustomKeyStoreErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateCustomKeyStoreError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1438,33 +1523,31 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateCustomKeyStoreError
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateCustomKeyStoreErrorKind {
-    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for an CloudHSM key store.</p>
-    /// <ul>
-    /// <li> <p>The CloudHSM cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li>
+    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for an CloudHSM key store.</p> 
+    /// <ul> 
+    /// <li> <p>The CloudHSM cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li> 
     /// <li> <p>The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for the cluster</a> (cloudhsm-cluster-<i>
-    /// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the CloudHSM cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li>
-    /// <li> <p>The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
-    /// </ul>
+    /// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the CloudHSM cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li> 
+    /// <li> <p>The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li> 
+    /// </ul> 
     /// <p>For information about the requirements for an CloudHSM cluster that is associated with an CloudHSM key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
-    CloudHsmClusterInvalidConfigurationException(
-        crate::error::CloudHsmClusterInvalidConfigurationException,
-    ),
+    CloudHsmClusterInvalidConfigurationException(crate::error::CloudHsmClusterInvalidConfigurationException),
     /// <p>The request was rejected because the CloudHSM cluster associated with the CloudHSM key store is not active. Initialize and activate the cluster and try the command again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>CloudHSM User Guide</i>.</p>
     CloudHsmClusterNotActiveException(crate::error::CloudHsmClusterNotActiveException),
     /// <p>The request was rejected because KMS cannot find the CloudHSM cluster with the specified cluster ID. Retry the request with a different cluster ID.</p>
     CloudHsmClusterNotFoundException(crate::error::CloudHsmClusterNotFoundException),
-    /// <p>The request was rejected because the specified CloudHSM cluster has a different cluster certificate than the original cluster. You cannot use the operation to specify an unrelated cluster for an CloudHSM key store.</p>
-    /// <p>Specify an CloudHSM cluster that shares a backup history with the original cluster. This includes clusters that were created from a backup of the current cluster, and clusters that were created from the same backup that produced the current cluster.</p>
+    /// <p>The request was rejected because the specified CloudHSM cluster has a different cluster certificate than the original cluster. You cannot use the operation to specify an unrelated cluster for an CloudHSM key store.</p> 
+    /// <p>Specify an CloudHSM cluster that shares a backup history with the original cluster. This includes clusters that were created from a backup of the current cluster, and clusters that were created from the same backup that produced the current cluster.</p> 
     /// <p>CloudHSM clusters that share a backup history have the same cluster certificate. To view the cluster certificate of an CloudHSM cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
     CloudHsmClusterNotRelatedException(crate::error::CloudHsmClusterNotRelatedException),
-    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
-    /// <p>This exception is thrown under the following conditions:</p>
-    /// <ul>
-    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li>
-    /// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
-    /// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
-    /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
-    /// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li>
+    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p> 
+    /// <p>This exception is thrown under the following conditions:</p> 
+    /// <ul> 
+    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li> 
+    /// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li> 
+    /// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li> 
+    /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li> 
+    /// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li> 
     /// </ul>
     CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
     /// <p>The request was rejected because the specified custom key store name is already assigned to another custom key store in the account. Try again with a custom key store name that is unique in the account.</p>
@@ -1474,41 +1557,33 @@ pub enum UpdateCustomKeyStoreErrorKind {
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the proxy credentials failed to authenticate to the specified external key store proxy. The specified external key store proxy rejected a status request from KMS due to invalid credentials. This can indicate an error in the credentials or in the identification of the external key store proxy.</p>
-    XksProxyIncorrectAuthenticationCredentialException(
-        crate::error::XksProxyIncorrectAuthenticationCredentialException,
-    ),
+    XksProxyIncorrectAuthenticationCredentialException(crate::error::XksProxyIncorrectAuthenticationCredentialException),
     /// <p>The request was rejected because the Amazon VPC endpoint service configuration does not fulfill the requirements for an external key store proxy. For details, see the exception message.</p>
     XksProxyInvalidConfigurationException(crate::error::XksProxyInvalidConfigurationException),
-    /// <p></p>
+    /// <p></p> 
     /// <p>KMS cannot interpret the response it received from the external key store proxy. The problem might be a poorly constructed response, but it could also be a transient network issue. If you see this error repeatedly, report it to the proxy vendor.</p>
     XksProxyInvalidResponseException(crate::error::XksProxyInvalidResponseException),
     /// <p>The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code> is already associated with an external key store in the Amazon Web Services account and Region. Each external key store in an account and Region must use a unique external key store proxy address.</p>
     XksProxyUriEndpointInUseException(crate::error::XksProxyUriEndpointInUseException),
     /// <p>The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> is already associated with an external key store in the Amazon Web Services account and Region. Each external key store in an account and Region must use a unique external key store proxy API address.</p>
     XksProxyUriInUseException(crate::error::XksProxyUriInUseException),
-    /// <p>KMS was unable to reach the specified <code>XksProxyUriPath</code>. The path must be reachable before you create the external key store or update its settings.</p>
+    /// <p>KMS was unable to reach the specified <code>XksProxyUriPath</code>. The path must be reachable before you create the external key store or update its settings.</p> 
     /// <p>This exception is also thrown when the external key store proxy response to a <code>GetHealthStatus</code> request indicates that all external key manager instances are unavailable.</p>
     XksProxyUriUnreachableException(crate::error::XksProxyUriUnreachableException),
     /// <p>The request was rejected because the specified Amazon VPC endpoint service is already associated with an external key store in the Amazon Web Services account and Region. Each external key store in an Amazon Web Services account and Region must use a different Amazon VPC endpoint service.</p>
-    XksProxyVpcEndpointServiceInUseException(
-        crate::error::XksProxyVpcEndpointServiceInUseException,
-    ),
+    XksProxyVpcEndpointServiceInUseException(crate::error::XksProxyVpcEndpointServiceInUseException),
     /// <p>The request was rejected because the Amazon VPC endpoint service configuration does not fulfill the requirements for an external key store proxy. For details, see the exception message and <a href="kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review the requirements</a> for Amazon VPC endpoint service connectivity for an external key store.</p>
-    XksProxyVpcEndpointServiceInvalidConfigurationException(
-        crate::error::XksProxyVpcEndpointServiceInvalidConfigurationException,
-    ),
+    XksProxyVpcEndpointServiceInvalidConfigurationException(crate::error::XksProxyVpcEndpointServiceInvalidConfigurationException),
     /// <p>The request was rejected because KMS could not find the specified VPC endpoint service. Use <code>DescribeCustomKeyStores</code> to verify the VPC endpoint service name for the external key store. Also, confirm that the <code>Allow principals</code> list for the VPC endpoint service includes the KMS service principal for the Region, such as <code>cks.kms.us-east-1.amazonaws.com</code>.</p>
-    XksProxyVpcEndpointServiceNotFoundException(
-        crate::error::XksProxyVpcEndpointServiceNotFoundException,
-    ),
-    ///
+    XksProxyVpcEndpointServiceNotFoundException(crate::error::XksProxyVpcEndpointServiceNotFoundException),
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateCustomKeyStoreError {
@@ -1581,170 +1656,113 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateCustomKeyStoreError {
 }
 impl UpdateCustomKeyStoreError {
     /// Creates a new `UpdateCustomKeyStoreError`.
-    pub fn new(kind: UpdateCustomKeyStoreErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateCustomKeyStoreError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateCustomKeyStoreError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateCustomKeyStoreErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateCustomKeyStoreError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateCustomKeyStoreError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException`.
     pub fn is_cloud_hsm_cluster_invalid_configuration_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_)
-        )
+        matches!(&self.kind, UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException`.
     pub fn is_cloud_hsm_cluster_not_active_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_)
-        )
+        matches!(&self.kind, UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException`.
     pub fn is_cloud_hsm_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedException`.
     pub fn is_cloud_hsm_cluster_not_related_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedException(_)
-        )
+        matches!(&self.kind, UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException`.
     pub fn is_custom_key_store_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_)
-        )
+        matches!(&self.kind, UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException`.
     pub fn is_custom_key_store_name_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_)
-        )
+        matches!(&self.kind, UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException`.
     pub fn is_custom_key_store_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomKeyStoreErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, UpdateCustomKeyStoreErrorKind::KmsInternalException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::XksProxyIncorrectAuthenticationCredentialException`.
     pub fn is_xks_proxy_incorrect_authentication_credential_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomKeyStoreErrorKind::XksProxyIncorrectAuthenticationCredentialException(_)
-        )
+        matches!(&self.kind, UpdateCustomKeyStoreErrorKind::XksProxyIncorrectAuthenticationCredentialException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::XksProxyInvalidConfigurationException`.
     pub fn is_xks_proxy_invalid_configuration_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomKeyStoreErrorKind::XksProxyInvalidConfigurationException(_)
-        )
+        matches!(&self.kind, UpdateCustomKeyStoreErrorKind::XksProxyInvalidConfigurationException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::XksProxyInvalidResponseException`.
     pub fn is_xks_proxy_invalid_response_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomKeyStoreErrorKind::XksProxyInvalidResponseException(_)
-        )
+        matches!(&self.kind, UpdateCustomKeyStoreErrorKind::XksProxyInvalidResponseException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::XksProxyUriEndpointInUseException`.
     pub fn is_xks_proxy_uri_endpoint_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomKeyStoreErrorKind::XksProxyUriEndpointInUseException(_)
-        )
+        matches!(&self.kind, UpdateCustomKeyStoreErrorKind::XksProxyUriEndpointInUseException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::XksProxyUriInUseException`.
     pub fn is_xks_proxy_uri_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomKeyStoreErrorKind::XksProxyUriInUseException(_)
-        )
+        matches!(&self.kind, UpdateCustomKeyStoreErrorKind::XksProxyUriInUseException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::XksProxyUriUnreachableException`.
     pub fn is_xks_proxy_uri_unreachable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomKeyStoreErrorKind::XksProxyUriUnreachableException(_)
-        )
+        matches!(&self.kind, UpdateCustomKeyStoreErrorKind::XksProxyUriUnreachableException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInUseException`.
     pub fn is_xks_proxy_vpc_endpoint_service_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInUseException(_)
-        )
+        matches!(&self.kind, UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInUseException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInvalidConfigurationException`.
     pub fn is_xks_proxy_vpc_endpoint_service_invalid_configuration_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInvalidConfigurationException(
-                _
-            )
-        )
+        matches!(&self.kind, UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInvalidConfigurationException(_))
     }
     /// Returns `true` if the error kind is `UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceNotFoundException`.
     pub fn is_xks_proxy_vpc_endpoint_service_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceNotFoundException(_))
     }
 }
 impl std::error::Error for UpdateCustomKeyStoreError {
@@ -1811,22 +1829,20 @@ impl std::error::Error for UpdateCustomKeyStoreError {
 /// <p>The request was rejected because KMS could not find the specified VPC endpoint service. Use <code>DescribeCustomKeyStores</code> to verify the VPC endpoint service name for the external key store. Also, confirm that the <code>Allow principals</code> list for the VPC endpoint service includes the KMS service principal for the Region, such as <code>cks.kms.us-east-1.amazonaws.com</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct XksProxyVpcEndpointServiceNotFoundException {
+pub struct XksProxyVpcEndpointServiceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl XksProxyVpcEndpointServiceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for XksProxyVpcEndpointServiceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "XksProxyVpcEndpointServiceNotFoundException")?;
         if let Some(inner_13) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_13)?;
             }
         }
@@ -1836,7 +1852,7 @@ impl std::fmt::Display for XksProxyVpcEndpointServiceNotFoundException {
 impl std::error::Error for XksProxyVpcEndpointServiceNotFoundException {}
 /// See [`XksProxyVpcEndpointServiceNotFoundException`](crate::error::XksProxyVpcEndpointServiceNotFoundException).
 pub mod xks_proxy_vpc_endpoint_service_not_found_exception {
-
+    
     /// A builder for [`XksProxyVpcEndpointServiceNotFoundException`](crate::error::XksProxyVpcEndpointServiceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1850,16 +1866,18 @@ pub mod xks_proxy_vpc_endpoint_service_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`XksProxyVpcEndpointServiceNotFoundException`](crate::error::XksProxyVpcEndpointServiceNotFoundException).
         pub fn build(self) -> crate::error::XksProxyVpcEndpointServiceNotFoundException {
             crate::error::XksProxyVpcEndpointServiceNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl XksProxyVpcEndpointServiceNotFoundException {
     /// Creates a new builder-style object to manufacture [`XksProxyVpcEndpointServiceNotFoundException`](crate::error::XksProxyVpcEndpointServiceNotFoundException).
@@ -1871,22 +1889,20 @@ impl XksProxyVpcEndpointServiceNotFoundException {
 /// <p>The request was rejected because the Amazon VPC endpoint service configuration does not fulfill the requirements for an external key store proxy. For details, see the exception message and <a href="kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review the requirements</a> for Amazon VPC endpoint service connectivity for an external key store.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct XksProxyVpcEndpointServiceInvalidConfigurationException {
+pub struct XksProxyVpcEndpointServiceInvalidConfigurationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl XksProxyVpcEndpointServiceInvalidConfigurationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for XksProxyVpcEndpointServiceInvalidConfigurationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "XksProxyVpcEndpointServiceInvalidConfigurationException")?;
         if let Some(inner_14) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_14)?;
             }
         }
@@ -1896,7 +1912,7 @@ impl std::fmt::Display for XksProxyVpcEndpointServiceInvalidConfigurationExcepti
 impl std::error::Error for XksProxyVpcEndpointServiceInvalidConfigurationException {}
 /// See [`XksProxyVpcEndpointServiceInvalidConfigurationException`](crate::error::XksProxyVpcEndpointServiceInvalidConfigurationException).
 pub mod xks_proxy_vpc_endpoint_service_invalid_configuration_exception {
-
+    
     /// A builder for [`XksProxyVpcEndpointServiceInvalidConfigurationException`](crate::error::XksProxyVpcEndpointServiceInvalidConfigurationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1910,23 +1926,22 @@ pub mod xks_proxy_vpc_endpoint_service_invalid_configuration_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`XksProxyVpcEndpointServiceInvalidConfigurationException`](crate::error::XksProxyVpcEndpointServiceInvalidConfigurationException).
-        pub fn build(
-            self,
-        ) -> crate::error::XksProxyVpcEndpointServiceInvalidConfigurationException {
+        pub fn build(self) -> crate::error::XksProxyVpcEndpointServiceInvalidConfigurationException {
             crate::error::XksProxyVpcEndpointServiceInvalidConfigurationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl XksProxyVpcEndpointServiceInvalidConfigurationException {
     /// Creates a new builder-style object to manufacture [`XksProxyVpcEndpointServiceInvalidConfigurationException`](crate::error::XksProxyVpcEndpointServiceInvalidConfigurationException).
-    pub fn builder(
-    ) -> crate::error::xks_proxy_vpc_endpoint_service_invalid_configuration_exception::Builder {
+    pub fn builder() -> crate::error::xks_proxy_vpc_endpoint_service_invalid_configuration_exception::Builder {
         crate::error::xks_proxy_vpc_endpoint_service_invalid_configuration_exception::Builder::default()
     }
 }
@@ -1934,22 +1949,20 @@ impl XksProxyVpcEndpointServiceInvalidConfigurationException {
 /// <p>The request was rejected because the specified Amazon VPC endpoint service is already associated with an external key store in the Amazon Web Services account and Region. Each external key store in an Amazon Web Services account and Region must use a different Amazon VPC endpoint service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct XksProxyVpcEndpointServiceInUseException {
+pub struct XksProxyVpcEndpointServiceInUseException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl XksProxyVpcEndpointServiceInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for XksProxyVpcEndpointServiceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "XksProxyVpcEndpointServiceInUseException")?;
         if let Some(inner_15) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_15)?;
             }
         }
@@ -1959,7 +1972,7 @@ impl std::fmt::Display for XksProxyVpcEndpointServiceInUseException {
 impl std::error::Error for XksProxyVpcEndpointServiceInUseException {}
 /// See [`XksProxyVpcEndpointServiceInUseException`](crate::error::XksProxyVpcEndpointServiceInUseException).
 pub mod xks_proxy_vpc_endpoint_service_in_use_exception {
-
+    
     /// A builder for [`XksProxyVpcEndpointServiceInUseException`](crate::error::XksProxyVpcEndpointServiceInUseException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1973,16 +1986,18 @@ pub mod xks_proxy_vpc_endpoint_service_in_use_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`XksProxyVpcEndpointServiceInUseException`](crate::error::XksProxyVpcEndpointServiceInUseException).
         pub fn build(self) -> crate::error::XksProxyVpcEndpointServiceInUseException {
             crate::error::XksProxyVpcEndpointServiceInUseException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl XksProxyVpcEndpointServiceInUseException {
     /// Creates a new builder-style object to manufacture [`XksProxyVpcEndpointServiceInUseException`](crate::error::XksProxyVpcEndpointServiceInUseException).
@@ -1991,26 +2006,24 @@ impl XksProxyVpcEndpointServiceInUseException {
     }
 }
 
-/// <p>KMS was unable to reach the specified <code>XksProxyUriPath</code>. The path must be reachable before you create the external key store or update its settings.</p>
+/// <p>KMS was unable to reach the specified <code>XksProxyUriPath</code>. The path must be reachable before you create the external key store or update its settings.</p> 
 /// <p>This exception is also thrown when the external key store proxy response to a <code>GetHealthStatus</code> request indicates that all external key manager instances are unavailable.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct XksProxyUriUnreachableException {
+pub struct XksProxyUriUnreachableException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl XksProxyUriUnreachableException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for XksProxyUriUnreachableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "XksProxyUriUnreachableException")?;
         if let Some(inner_16) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_16)?;
             }
         }
@@ -2020,7 +2033,7 @@ impl std::fmt::Display for XksProxyUriUnreachableException {
 impl std::error::Error for XksProxyUriUnreachableException {}
 /// See [`XksProxyUriUnreachableException`](crate::error::XksProxyUriUnreachableException).
 pub mod xks_proxy_uri_unreachable_exception {
-
+    
     /// A builder for [`XksProxyUriUnreachableException`](crate::error::XksProxyUriUnreachableException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2034,16 +2047,18 @@ pub mod xks_proxy_uri_unreachable_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`XksProxyUriUnreachableException`](crate::error::XksProxyUriUnreachableException).
         pub fn build(self) -> crate::error::XksProxyUriUnreachableException {
             crate::error::XksProxyUriUnreachableException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl XksProxyUriUnreachableException {
     /// Creates a new builder-style object to manufacture [`XksProxyUriUnreachableException`](crate::error::XksProxyUriUnreachableException).
@@ -2055,22 +2070,20 @@ impl XksProxyUriUnreachableException {
 /// <p>The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> is already associated with an external key store in the Amazon Web Services account and Region. Each external key store in an account and Region must use a unique external key store proxy API address.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct XksProxyUriInUseException {
+pub struct XksProxyUriInUseException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl XksProxyUriInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for XksProxyUriInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "XksProxyUriInUseException")?;
         if let Some(inner_17) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_17)?;
             }
         }
@@ -2080,7 +2093,7 @@ impl std::fmt::Display for XksProxyUriInUseException {
 impl std::error::Error for XksProxyUriInUseException {}
 /// See [`XksProxyUriInUseException`](crate::error::XksProxyUriInUseException).
 pub mod xks_proxy_uri_in_use_exception {
-
+    
     /// A builder for [`XksProxyUriInUseException`](crate::error::XksProxyUriInUseException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2094,16 +2107,18 @@ pub mod xks_proxy_uri_in_use_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`XksProxyUriInUseException`](crate::error::XksProxyUriInUseException).
         pub fn build(self) -> crate::error::XksProxyUriInUseException {
             crate::error::XksProxyUriInUseException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl XksProxyUriInUseException {
     /// Creates a new builder-style object to manufacture [`XksProxyUriInUseException`](crate::error::XksProxyUriInUseException).
@@ -2115,22 +2130,20 @@ impl XksProxyUriInUseException {
 /// <p>The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code> is already associated with an external key store in the Amazon Web Services account and Region. Each external key store in an account and Region must use a unique external key store proxy address.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct XksProxyUriEndpointInUseException {
+pub struct XksProxyUriEndpointInUseException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl XksProxyUriEndpointInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for XksProxyUriEndpointInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "XksProxyUriEndpointInUseException")?;
         if let Some(inner_18) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_18)?;
             }
         }
@@ -2140,7 +2153,7 @@ impl std::fmt::Display for XksProxyUriEndpointInUseException {
 impl std::error::Error for XksProxyUriEndpointInUseException {}
 /// See [`XksProxyUriEndpointInUseException`](crate::error::XksProxyUriEndpointInUseException).
 pub mod xks_proxy_uri_endpoint_in_use_exception {
-
+    
     /// A builder for [`XksProxyUriEndpointInUseException`](crate::error::XksProxyUriEndpointInUseException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2154,16 +2167,18 @@ pub mod xks_proxy_uri_endpoint_in_use_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`XksProxyUriEndpointInUseException`](crate::error::XksProxyUriEndpointInUseException).
         pub fn build(self) -> crate::error::XksProxyUriEndpointInUseException {
             crate::error::XksProxyUriEndpointInUseException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl XksProxyUriEndpointInUseException {
     /// Creates a new builder-style object to manufacture [`XksProxyUriEndpointInUseException`](crate::error::XksProxyUriEndpointInUseException).
@@ -2172,26 +2187,24 @@ impl XksProxyUriEndpointInUseException {
     }
 }
 
-/// <p></p>
+/// <p></p> 
 /// <p>KMS cannot interpret the response it received from the external key store proxy. The problem might be a poorly constructed response, but it could also be a transient network issue. If you see this error repeatedly, report it to the proxy vendor.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct XksProxyInvalidResponseException {
+pub struct XksProxyInvalidResponseException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl XksProxyInvalidResponseException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for XksProxyInvalidResponseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "XksProxyInvalidResponseException")?;
         if let Some(inner_19) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_19)?;
             }
         }
@@ -2201,7 +2214,7 @@ impl std::fmt::Display for XksProxyInvalidResponseException {
 impl std::error::Error for XksProxyInvalidResponseException {}
 /// See [`XksProxyInvalidResponseException`](crate::error::XksProxyInvalidResponseException).
 pub mod xks_proxy_invalid_response_exception {
-
+    
     /// A builder for [`XksProxyInvalidResponseException`](crate::error::XksProxyInvalidResponseException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2215,16 +2228,18 @@ pub mod xks_proxy_invalid_response_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`XksProxyInvalidResponseException`](crate::error::XksProxyInvalidResponseException).
         pub fn build(self) -> crate::error::XksProxyInvalidResponseException {
             crate::error::XksProxyInvalidResponseException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl XksProxyInvalidResponseException {
     /// Creates a new builder-style object to manufacture [`XksProxyInvalidResponseException`](crate::error::XksProxyInvalidResponseException).
@@ -2236,22 +2251,20 @@ impl XksProxyInvalidResponseException {
 /// <p>The request was rejected because the Amazon VPC endpoint service configuration does not fulfill the requirements for an external key store proxy. For details, see the exception message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct XksProxyInvalidConfigurationException {
+pub struct XksProxyInvalidConfigurationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl XksProxyInvalidConfigurationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for XksProxyInvalidConfigurationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "XksProxyInvalidConfigurationException")?;
         if let Some(inner_20) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_20)?;
             }
         }
@@ -2261,7 +2274,7 @@ impl std::fmt::Display for XksProxyInvalidConfigurationException {
 impl std::error::Error for XksProxyInvalidConfigurationException {}
 /// See [`XksProxyInvalidConfigurationException`](crate::error::XksProxyInvalidConfigurationException).
 pub mod xks_proxy_invalid_configuration_exception {
-
+    
     /// A builder for [`XksProxyInvalidConfigurationException`](crate::error::XksProxyInvalidConfigurationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2275,16 +2288,18 @@ pub mod xks_proxy_invalid_configuration_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`XksProxyInvalidConfigurationException`](crate::error::XksProxyInvalidConfigurationException).
         pub fn build(self) -> crate::error::XksProxyInvalidConfigurationException {
             crate::error::XksProxyInvalidConfigurationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl XksProxyInvalidConfigurationException {
     /// Creates a new builder-style object to manufacture [`XksProxyInvalidConfigurationException`](crate::error::XksProxyInvalidConfigurationException).
@@ -2296,22 +2311,20 @@ impl XksProxyInvalidConfigurationException {
 /// <p>The request was rejected because the proxy credentials failed to authenticate to the specified external key store proxy. The specified external key store proxy rejected a status request from KMS due to invalid credentials. This can indicate an error in the credentials or in the identification of the external key store proxy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct XksProxyIncorrectAuthenticationCredentialException {
+pub struct XksProxyIncorrectAuthenticationCredentialException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl XksProxyIncorrectAuthenticationCredentialException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for XksProxyIncorrectAuthenticationCredentialException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "XksProxyIncorrectAuthenticationCredentialException")?;
         if let Some(inner_21) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_21)?;
             }
         }
@@ -2321,7 +2334,7 @@ impl std::fmt::Display for XksProxyIncorrectAuthenticationCredentialException {
 impl std::error::Error for XksProxyIncorrectAuthenticationCredentialException {}
 /// See [`XksProxyIncorrectAuthenticationCredentialException`](crate::error::XksProxyIncorrectAuthenticationCredentialException).
 pub mod xks_proxy_incorrect_authentication_credential_exception {
-
+    
     /// A builder for [`XksProxyIncorrectAuthenticationCredentialException`](crate::error::XksProxyIncorrectAuthenticationCredentialException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2335,21 +2348,22 @@ pub mod xks_proxy_incorrect_authentication_credential_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`XksProxyIncorrectAuthenticationCredentialException`](crate::error::XksProxyIncorrectAuthenticationCredentialException).
         pub fn build(self) -> crate::error::XksProxyIncorrectAuthenticationCredentialException {
             crate::error::XksProxyIncorrectAuthenticationCredentialException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl XksProxyIncorrectAuthenticationCredentialException {
     /// Creates a new builder-style object to manufacture [`XksProxyIncorrectAuthenticationCredentialException`](crate::error::XksProxyIncorrectAuthenticationCredentialException).
-    pub fn builder(
-    ) -> crate::error::xks_proxy_incorrect_authentication_credential_exception::Builder {
+    pub fn builder() -> crate::error::xks_proxy_incorrect_authentication_credential_exception::Builder {
         crate::error::xks_proxy_incorrect_authentication_credential_exception::Builder::default()
     }
 }
@@ -2357,22 +2371,20 @@ impl XksProxyIncorrectAuthenticationCredentialException {
 /// <p>The request was rejected because KMS cannot find a custom key store with the specified key store name or ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomKeyStoreNotFoundException {
+pub struct CustomKeyStoreNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CustomKeyStoreNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CustomKeyStoreNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CustomKeyStoreNotFoundException")?;
         if let Some(inner_22) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_22)?;
             }
         }
@@ -2382,7 +2394,7 @@ impl std::fmt::Display for CustomKeyStoreNotFoundException {
 impl std::error::Error for CustomKeyStoreNotFoundException {}
 /// See [`CustomKeyStoreNotFoundException`](crate::error::CustomKeyStoreNotFoundException).
 pub mod custom_key_store_not_found_exception {
-
+    
     /// A builder for [`CustomKeyStoreNotFoundException`](crate::error::CustomKeyStoreNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2396,16 +2408,18 @@ pub mod custom_key_store_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CustomKeyStoreNotFoundException`](crate::error::CustomKeyStoreNotFoundException).
         pub fn build(self) -> crate::error::CustomKeyStoreNotFoundException {
             crate::error::CustomKeyStoreNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomKeyStoreNotFoundException {
     /// Creates a new builder-style object to manufacture [`CustomKeyStoreNotFoundException`](crate::error::CustomKeyStoreNotFoundException).
@@ -2417,22 +2431,20 @@ impl CustomKeyStoreNotFoundException {
 /// <p>The request was rejected because the specified custom key store name is already assigned to another custom key store in the account. Try again with a custom key store name that is unique in the account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomKeyStoreNameInUseException {
+pub struct CustomKeyStoreNameInUseException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CustomKeyStoreNameInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CustomKeyStoreNameInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CustomKeyStoreNameInUseException")?;
         if let Some(inner_23) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_23)?;
             }
         }
@@ -2442,7 +2454,7 @@ impl std::fmt::Display for CustomKeyStoreNameInUseException {
 impl std::error::Error for CustomKeyStoreNameInUseException {}
 /// See [`CustomKeyStoreNameInUseException`](crate::error::CustomKeyStoreNameInUseException).
 pub mod custom_key_store_name_in_use_exception {
-
+    
     /// A builder for [`CustomKeyStoreNameInUseException`](crate::error::CustomKeyStoreNameInUseException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2456,16 +2468,18 @@ pub mod custom_key_store_name_in_use_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CustomKeyStoreNameInUseException`](crate::error::CustomKeyStoreNameInUseException).
         pub fn build(self) -> crate::error::CustomKeyStoreNameInUseException {
             crate::error::CustomKeyStoreNameInUseException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomKeyStoreNameInUseException {
     /// Creates a new builder-style object to manufacture [`CustomKeyStoreNameInUseException`](crate::error::CustomKeyStoreNameInUseException).
@@ -2474,33 +2488,31 @@ impl CustomKeyStoreNameInUseException {
     }
 }
 
-/// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
-/// <p>This exception is thrown under the following conditions:</p>
-/// <ul>
-/// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li>
-/// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
-/// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
-/// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
-/// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li>
+/// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p> 
+/// <p>This exception is thrown under the following conditions:</p> 
+/// <ul> 
+/// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li> 
+/// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li> 
+/// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li> 
+/// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li> 
+/// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomKeyStoreInvalidStateException {
+pub struct CustomKeyStoreInvalidStateException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CustomKeyStoreInvalidStateException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CustomKeyStoreInvalidStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CustomKeyStoreInvalidStateException")?;
         if let Some(inner_24) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_24)?;
             }
         }
@@ -2510,7 +2522,7 @@ impl std::fmt::Display for CustomKeyStoreInvalidStateException {
 impl std::error::Error for CustomKeyStoreInvalidStateException {}
 /// See [`CustomKeyStoreInvalidStateException`](crate::error::CustomKeyStoreInvalidStateException).
 pub mod custom_key_store_invalid_state_exception {
-
+    
     /// A builder for [`CustomKeyStoreInvalidStateException`](crate::error::CustomKeyStoreInvalidStateException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2524,16 +2536,18 @@ pub mod custom_key_store_invalid_state_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CustomKeyStoreInvalidStateException`](crate::error::CustomKeyStoreInvalidStateException).
         pub fn build(self) -> crate::error::CustomKeyStoreInvalidStateException {
             crate::error::CustomKeyStoreInvalidStateException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomKeyStoreInvalidStateException {
     /// Creates a new builder-style object to manufacture [`CustomKeyStoreInvalidStateException`](crate::error::CustomKeyStoreInvalidStateException).
@@ -2542,27 +2556,25 @@ impl CustomKeyStoreInvalidStateException {
     }
 }
 
-/// <p>The request was rejected because the specified CloudHSM cluster has a different cluster certificate than the original cluster. You cannot use the operation to specify an unrelated cluster for an CloudHSM key store.</p>
-/// <p>Specify an CloudHSM cluster that shares a backup history with the original cluster. This includes clusters that were created from a backup of the current cluster, and clusters that were created from the same backup that produced the current cluster.</p>
+/// <p>The request was rejected because the specified CloudHSM cluster has a different cluster certificate than the original cluster. You cannot use the operation to specify an unrelated cluster for an CloudHSM key store.</p> 
+/// <p>Specify an CloudHSM cluster that shares a backup history with the original cluster. This includes clusters that were created from a backup of the current cluster, and clusters that were created from the same backup that produced the current cluster.</p> 
 /// <p>CloudHSM clusters that share a backup history have the same cluster certificate. To view the cluster certificate of an CloudHSM cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudHsmClusterNotRelatedException {
+pub struct CloudHsmClusterNotRelatedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CloudHsmClusterNotRelatedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CloudHsmClusterNotRelatedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmClusterNotRelatedException")?;
         if let Some(inner_25) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_25)?;
             }
         }
@@ -2572,7 +2584,7 @@ impl std::fmt::Display for CloudHsmClusterNotRelatedException {
 impl std::error::Error for CloudHsmClusterNotRelatedException {}
 /// See [`CloudHsmClusterNotRelatedException`](crate::error::CloudHsmClusterNotRelatedException).
 pub mod cloud_hsm_cluster_not_related_exception {
-
+    
     /// A builder for [`CloudHsmClusterNotRelatedException`](crate::error::CloudHsmClusterNotRelatedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2586,16 +2598,18 @@ pub mod cloud_hsm_cluster_not_related_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CloudHsmClusterNotRelatedException`](crate::error::CloudHsmClusterNotRelatedException).
         pub fn build(self) -> crate::error::CloudHsmClusterNotRelatedException {
             crate::error::CloudHsmClusterNotRelatedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudHsmClusterNotRelatedException {
     /// Creates a new builder-style object to manufacture [`CloudHsmClusterNotRelatedException`](crate::error::CloudHsmClusterNotRelatedException).
@@ -2607,22 +2621,20 @@ impl CloudHsmClusterNotRelatedException {
 /// <p>The request was rejected because KMS cannot find the CloudHSM cluster with the specified cluster ID. Retry the request with a different cluster ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudHsmClusterNotFoundException {
+pub struct CloudHsmClusterNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CloudHsmClusterNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CloudHsmClusterNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmClusterNotFoundException")?;
         if let Some(inner_26) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_26)?;
             }
         }
@@ -2632,7 +2644,7 @@ impl std::fmt::Display for CloudHsmClusterNotFoundException {
 impl std::error::Error for CloudHsmClusterNotFoundException {}
 /// See [`CloudHsmClusterNotFoundException`](crate::error::CloudHsmClusterNotFoundException).
 pub mod cloud_hsm_cluster_not_found_exception {
-
+    
     /// A builder for [`CloudHsmClusterNotFoundException`](crate::error::CloudHsmClusterNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2646,16 +2658,18 @@ pub mod cloud_hsm_cluster_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CloudHsmClusterNotFoundException`](crate::error::CloudHsmClusterNotFoundException).
         pub fn build(self) -> crate::error::CloudHsmClusterNotFoundException {
             crate::error::CloudHsmClusterNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudHsmClusterNotFoundException {
     /// Creates a new builder-style object to manufacture [`CloudHsmClusterNotFoundException`](crate::error::CloudHsmClusterNotFoundException).
@@ -2667,22 +2681,20 @@ impl CloudHsmClusterNotFoundException {
 /// <p>The request was rejected because the CloudHSM cluster associated with the CloudHSM key store is not active. Initialize and activate the cluster and try the command again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>CloudHSM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudHsmClusterNotActiveException {
+pub struct CloudHsmClusterNotActiveException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CloudHsmClusterNotActiveException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CloudHsmClusterNotActiveException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmClusterNotActiveException")?;
         if let Some(inner_27) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_27)?;
             }
         }
@@ -2692,7 +2704,7 @@ impl std::fmt::Display for CloudHsmClusterNotActiveException {
 impl std::error::Error for CloudHsmClusterNotActiveException {}
 /// See [`CloudHsmClusterNotActiveException`](crate::error::CloudHsmClusterNotActiveException).
 pub mod cloud_hsm_cluster_not_active_exception {
-
+    
     /// A builder for [`CloudHsmClusterNotActiveException`](crate::error::CloudHsmClusterNotActiveException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2706,16 +2718,18 @@ pub mod cloud_hsm_cluster_not_active_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CloudHsmClusterNotActiveException`](crate::error::CloudHsmClusterNotActiveException).
         pub fn build(self) -> crate::error::CloudHsmClusterNotActiveException {
             crate::error::CloudHsmClusterNotActiveException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudHsmClusterNotActiveException {
     /// Creates a new builder-style object to manufacture [`CloudHsmClusterNotActiveException`](crate::error::CloudHsmClusterNotActiveException).
@@ -2724,32 +2738,30 @@ impl CloudHsmClusterNotActiveException {
     }
 }
 
-/// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for an CloudHSM key store.</p>
-/// <ul>
-/// <li> <p>The CloudHSM cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li>
+/// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for an CloudHSM key store.</p> 
+/// <ul> 
+/// <li> <p>The CloudHSM cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li> 
 /// <li> <p>The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for the cluster</a> (cloudhsm-cluster-<i>
-/// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the CloudHSM cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li>
-/// <li> <p>The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
-/// </ul>
+/// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the CloudHSM cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li> 
+/// <li> <p>The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li> 
+/// </ul> 
 /// <p>For information about the requirements for an CloudHSM cluster that is associated with an CloudHSM key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudHsmClusterInvalidConfigurationException {
+pub struct CloudHsmClusterInvalidConfigurationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CloudHsmClusterInvalidConfigurationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CloudHsmClusterInvalidConfigurationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmClusterInvalidConfigurationException")?;
         if let Some(inner_28) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_28)?;
             }
         }
@@ -2759,7 +2771,7 @@ impl std::fmt::Display for CloudHsmClusterInvalidConfigurationException {
 impl std::error::Error for CloudHsmClusterInvalidConfigurationException {}
 /// See [`CloudHsmClusterInvalidConfigurationException`](crate::error::CloudHsmClusterInvalidConfigurationException).
 pub mod cloud_hsm_cluster_invalid_configuration_exception {
-
+    
     /// A builder for [`CloudHsmClusterInvalidConfigurationException`](crate::error::CloudHsmClusterInvalidConfigurationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2773,16 +2785,18 @@ pub mod cloud_hsm_cluster_invalid_configuration_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CloudHsmClusterInvalidConfigurationException`](crate::error::CloudHsmClusterInvalidConfigurationException).
         pub fn build(self) -> crate::error::CloudHsmClusterInvalidConfigurationException {
             crate::error::CloudHsmClusterInvalidConfigurationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudHsmClusterInvalidConfigurationException {
     /// Creates a new builder-style object to manufacture [`CloudHsmClusterInvalidConfigurationException`](crate::error::CloudHsmClusterInvalidConfigurationException).
@@ -2796,15 +2810,15 @@ impl CloudHsmClusterInvalidConfigurationException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateAliasError {
     /// Kind of error that occurred.
-    pub kind: UpdateAliasErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateAliasErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateAliasError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateAliasErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2816,36 +2830,48 @@ pub enum UpdateAliasErrorKind {
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateAliasErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            UpdateAliasErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            UpdateAliasErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            UpdateAliasErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            UpdateAliasErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UpdateAliasErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateAliasErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAliasErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAliasErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAliasErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAliasErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateAliasErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2859,52 +2885,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateAliasError {
 }
 impl UpdateAliasError {
     /// Creates a new `UpdateAliasError`.
-    pub fn new(kind: UpdateAliasErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateAliasError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateAliasError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateAliasErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateAliasError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateAliasError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateAliasErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAliasErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, UpdateAliasErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `UpdateAliasErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
@@ -2912,10 +2935,7 @@ impl UpdateAliasError {
     }
     /// Returns `true` if the error kind is `UpdateAliasErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateAliasErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, UpdateAliasErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `UpdateAliasErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -2929,12 +2949,24 @@ impl UpdateAliasError {
 impl std::error::Error for UpdateAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateAliasErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            UpdateAliasErrorKind::KmsInternalException(_inner) => Some(_inner),
-            UpdateAliasErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            UpdateAliasErrorKind::LimitExceededException(_inner) => Some(_inner),
-            UpdateAliasErrorKind::NotFoundException(_inner) => Some(_inner),
-            UpdateAliasErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateAliasErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAliasErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAliasErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAliasErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAliasErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateAliasErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2942,22 +2974,20 @@ impl std::error::Error for UpdateAliasError {
 /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LimitExceededException {
+pub struct LimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
         if let Some(inner_29) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_29)?;
             }
         }
@@ -2967,7 +2997,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException).
 pub mod limit_exceeded_exception {
-
+    
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2981,16 +3011,18 @@ pub mod limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException).
         pub fn build(self) -> crate::error::LimitExceededException {
             crate::error::LimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl LimitExceededException {
     /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
@@ -3004,15 +3036,15 @@ impl LimitExceededException {
 #[derive(std::fmt::Debug)]
 pub struct UntagResourceError {
     /// Kind of error that occurred.
-    pub kind: UntagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UntagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3024,36 +3056,48 @@ pub enum UntagResourceErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request was rejected because one or more tags are not valid.</p>
     TagException(crate::error::TagException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::TagException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::TagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3067,46 +3111,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
 }
 impl UntagResourceError {
     /// Creates a new `UntagResourceError`.
-    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::InvalidArnException(_))
@@ -3117,10 +3161,7 @@ impl UntagResourceError {
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -3134,12 +3175,24 @@ impl UntagResourceError {
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::InvalidArnException(_inner) => Some(_inner),
-            UntagResourceErrorKind::KmsInternalException(_inner) => Some(_inner),
-            UntagResourceErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            UntagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::TagException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            UntagResourceErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::TagException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3147,22 +3200,20 @@ impl std::error::Error for UntagResourceError {
 /// <p>The request was rejected because one or more tags are not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagException {
+pub struct TagException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TagException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TagException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TagException")?;
         if let Some(inner_30) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_30)?;
             }
         }
@@ -3172,7 +3223,7 @@ impl std::fmt::Display for TagException {
 impl std::error::Error for TagException {}
 /// See [`TagException`](crate::error::TagException).
 pub mod tag_exception {
-
+    
     /// A builder for [`TagException`](crate::error::TagException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3186,16 +3237,18 @@ pub mod tag_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TagException`](crate::error::TagException).
         pub fn build(self) -> crate::error::TagException {
             crate::error::TagException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TagException {
     /// Creates a new builder-style object to manufacture [`TagException`](crate::error::TagException).
@@ -3209,15 +3262,15 @@ impl TagException {
 #[derive(std::fmt::Debug)]
 pub struct TagResourceError {
     /// Kind of error that occurred.
-    pub kind: TagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3229,11 +3282,11 @@ pub enum TagResourceErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -3242,26 +3295,40 @@ pub enum TagResourceErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request was rejected because one or more tags are not valid.</p>
     TagException(crate::error::TagException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::TagException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::TagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3275,46 +3342,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
 }
 impl TagResourceError {
     /// Creates a new `TagResourceError`.
-    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::InvalidArnException(_))
@@ -3325,10 +3392,7 @@ impl TagResourceError {
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -3346,13 +3410,27 @@ impl TagResourceError {
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::InvalidArnException(_inner) => Some(_inner),
-            TagResourceErrorKind::KmsInternalException(_inner) => Some(_inner),
-            TagResourceErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            TagResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
-            TagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::TagException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            TagResourceErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::TagException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3362,15 +3440,15 @@ impl std::error::Error for TagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct SignError {
     /// Kind of error that occurred.
-    pub kind: SignErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: SignErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for SignError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: SignErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3384,49 +3462,67 @@ pub enum SignErrorKind {
     DisabledException(crate::error::DisabledException),
     /// <p>The request was rejected because the specified grant token is not valid.</p>
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
-    /// <p>The request was rejected for one of the following reasons: </p>
-    /// <ul>
-    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
-    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
-    /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>The request was rejected for one of the following reasons: </p> 
+    /// <ul> 
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li> 
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li> 
+    /// </ul> 
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p> 
     /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
     /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SignError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SignErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            SignErrorKind::DisabledException(_inner) => _inner.fmt(f),
-            SignErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
-            SignErrorKind::InvalidKeyUsageException(_inner) => _inner.fmt(f),
-            SignErrorKind::KeyUnavailableException(_inner) => _inner.fmt(f),
-            SignErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            SignErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            SignErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            SignErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            SignErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SignErrorKind::DisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SignErrorKind::InvalidGrantTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SignErrorKind::InvalidKeyUsageException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SignErrorKind::KeyUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SignErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SignErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SignErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SignErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3440,46 +3536,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for SignError {
 }
 impl SignError {
     /// Creates a new `SignError`.
-    pub fn new(kind: SignErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `SignError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: SignErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `SignError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: SignErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: SignErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `SignError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: SignErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `SignError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: SignErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `SignErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(&self.kind, SignErrorKind::DependencyTimeoutException(_))
@@ -3516,15 +3612,33 @@ impl SignError {
 impl std::error::Error for SignError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SignErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            SignErrorKind::DisabledException(_inner) => Some(_inner),
-            SignErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
-            SignErrorKind::InvalidKeyUsageException(_inner) => Some(_inner),
-            SignErrorKind::KeyUnavailableException(_inner) => Some(_inner),
-            SignErrorKind::KmsInternalException(_inner) => Some(_inner),
-            SignErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            SignErrorKind::NotFoundException(_inner) => Some(_inner),
-            SignErrorKind::Unhandled(_inner) => Some(_inner),
+            SignErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            SignErrorKind::DisabledException(_inner) =>
+            Some(_inner)
+            ,
+            SignErrorKind::InvalidGrantTokenException(_inner) =>
+            Some(_inner)
+            ,
+            SignErrorKind::InvalidKeyUsageException(_inner) =>
+            Some(_inner)
+            ,
+            SignErrorKind::KeyUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            SignErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            SignErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            SignErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            SignErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3534,15 +3648,15 @@ impl std::error::Error for SignError {
 #[derive(std::fmt::Debug)]
 pub struct ScheduleKeyDeletionError {
     /// Kind of error that occurred.
-    pub kind: ScheduleKeyDeletionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ScheduleKeyDeletionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ScheduleKeyDeletionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ScheduleKeyDeletionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3556,34 +3670,46 @@ pub enum ScheduleKeyDeletionErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ScheduleKeyDeletionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ScheduleKeyDeletionErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            ScheduleKeyDeletionErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            ScheduleKeyDeletionErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            ScheduleKeyDeletionErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            ScheduleKeyDeletionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ScheduleKeyDeletionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ScheduleKeyDeletionErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ScheduleKeyDeletionErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ScheduleKeyDeletionErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ScheduleKeyDeletionErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ScheduleKeyDeletionErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ScheduleKeyDeletionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3597,91 +3723,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for ScheduleKeyDeletionError {
 }
 impl ScheduleKeyDeletionError {
     /// Creates a new `ScheduleKeyDeletionError`.
-    pub fn new(kind: ScheduleKeyDeletionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ScheduleKeyDeletionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ScheduleKeyDeletionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ScheduleKeyDeletionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ScheduleKeyDeletionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ScheduleKeyDeletionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ScheduleKeyDeletionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ScheduleKeyDeletionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ScheduleKeyDeletionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ScheduleKeyDeletionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ScheduleKeyDeletionErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ScheduleKeyDeletionErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, ScheduleKeyDeletionErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `ScheduleKeyDeletionErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ScheduleKeyDeletionErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, ScheduleKeyDeletionErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `ScheduleKeyDeletionErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ScheduleKeyDeletionErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, ScheduleKeyDeletionErrorKind::KmsInternalException(_))
     }
     /// Returns `true` if the error kind is `ScheduleKeyDeletionErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ScheduleKeyDeletionErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, ScheduleKeyDeletionErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `ScheduleKeyDeletionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ScheduleKeyDeletionErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, ScheduleKeyDeletionErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for ScheduleKeyDeletionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ScheduleKeyDeletionErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            ScheduleKeyDeletionErrorKind::InvalidArnException(_inner) => Some(_inner),
-            ScheduleKeyDeletionErrorKind::KmsInternalException(_inner) => Some(_inner),
-            ScheduleKeyDeletionErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            ScheduleKeyDeletionErrorKind::NotFoundException(_inner) => Some(_inner),
-            ScheduleKeyDeletionErrorKind::Unhandled(_inner) => Some(_inner),
+            ScheduleKeyDeletionErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            ScheduleKeyDeletionErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            ScheduleKeyDeletionErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ScheduleKeyDeletionErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            ScheduleKeyDeletionErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ScheduleKeyDeletionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3691,15 +3814,15 @@ impl std::error::Error for ScheduleKeyDeletionError {
 #[derive(std::fmt::Debug)]
 pub struct RevokeGrantError {
     /// Kind of error that occurred.
-    pub kind: RevokeGrantErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RevokeGrantErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RevokeGrantError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RevokeGrantErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3715,35 +3838,49 @@ pub enum RevokeGrantErrorKind {
     InvalidGrantIdException(crate::error::InvalidGrantIdException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RevokeGrantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RevokeGrantErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            RevokeGrantErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            RevokeGrantErrorKind::InvalidGrantIdException(_inner) => _inner.fmt(f),
-            RevokeGrantErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            RevokeGrantErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            RevokeGrantErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            RevokeGrantErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            RevokeGrantErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeGrantErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeGrantErrorKind::InvalidGrantIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeGrantErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeGrantErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeGrantErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeGrantErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3757,52 +3894,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for RevokeGrantError {
 }
 impl RevokeGrantError {
     /// Creates a new `RevokeGrantError`.
-    pub fn new(kind: RevokeGrantErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RevokeGrantError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RevokeGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RevokeGrantError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RevokeGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RevokeGrantErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RevokeGrantError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RevokeGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RevokeGrantError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RevokeGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RevokeGrantErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RevokeGrantErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, RevokeGrantErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `RevokeGrantErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
@@ -3818,10 +3952,7 @@ impl RevokeGrantError {
     }
     /// Returns `true` if the error kind is `RevokeGrantErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RevokeGrantErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, RevokeGrantErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `RevokeGrantErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -3831,13 +3962,27 @@ impl RevokeGrantError {
 impl std::error::Error for RevokeGrantError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RevokeGrantErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            RevokeGrantErrorKind::InvalidArnException(_inner) => Some(_inner),
-            RevokeGrantErrorKind::InvalidGrantIdException(_inner) => Some(_inner),
-            RevokeGrantErrorKind::KmsInternalException(_inner) => Some(_inner),
-            RevokeGrantErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            RevokeGrantErrorKind::NotFoundException(_inner) => Some(_inner),
-            RevokeGrantErrorKind::Unhandled(_inner) => Some(_inner),
+            RevokeGrantErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            RevokeGrantErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            RevokeGrantErrorKind::InvalidGrantIdException(_inner) =>
+            Some(_inner)
+            ,
+            RevokeGrantErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            RevokeGrantErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            RevokeGrantErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RevokeGrantErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3845,22 +3990,20 @@ impl std::error::Error for RevokeGrantError {
 /// <p>The request was rejected because the specified <code>GrantId</code> is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidGrantIdException {
+pub struct InvalidGrantIdException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidGrantIdException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidGrantIdException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidGrantIdException")?;
         if let Some(inner_31) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_31)?;
             }
         }
@@ -3870,7 +4013,7 @@ impl std::fmt::Display for InvalidGrantIdException {
 impl std::error::Error for InvalidGrantIdException {}
 /// See [`InvalidGrantIdException`](crate::error::InvalidGrantIdException).
 pub mod invalid_grant_id_exception {
-
+    
     /// A builder for [`InvalidGrantIdException`](crate::error::InvalidGrantIdException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3884,16 +4027,18 @@ pub mod invalid_grant_id_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidGrantIdException`](crate::error::InvalidGrantIdException).
         pub fn build(self) -> crate::error::InvalidGrantIdException {
             crate::error::InvalidGrantIdException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidGrantIdException {
     /// Creates a new builder-style object to manufacture [`InvalidGrantIdException`](crate::error::InvalidGrantIdException).
@@ -3907,15 +4052,15 @@ impl InvalidGrantIdException {
 #[derive(std::fmt::Debug)]
 pub struct RetireGrantError {
     /// Kind of error that occurred.
-    pub kind: RetireGrantErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RetireGrantErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RetireGrantError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RetireGrantErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3933,36 +4078,52 @@ pub enum RetireGrantErrorKind {
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RetireGrantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RetireGrantErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            RetireGrantErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            RetireGrantErrorKind::InvalidGrantIdException(_inner) => _inner.fmt(f),
-            RetireGrantErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
-            RetireGrantErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            RetireGrantErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            RetireGrantErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            RetireGrantErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            RetireGrantErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RetireGrantErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RetireGrantErrorKind::InvalidGrantIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RetireGrantErrorKind::InvalidGrantTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RetireGrantErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RetireGrantErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RetireGrantErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RetireGrantErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3976,52 +4137,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for RetireGrantError {
 }
 impl RetireGrantError {
     /// Creates a new `RetireGrantError`.
-    pub fn new(kind: RetireGrantErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RetireGrantError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RetireGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RetireGrantError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RetireGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RetireGrantErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RetireGrantError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RetireGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RetireGrantError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RetireGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RetireGrantErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RetireGrantErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, RetireGrantErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `RetireGrantErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
@@ -4033,10 +4191,7 @@ impl RetireGrantError {
     }
     /// Returns `true` if the error kind is `RetireGrantErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RetireGrantErrorKind::InvalidGrantTokenException(_)
-        )
+        matches!(&self.kind, RetireGrantErrorKind::InvalidGrantTokenException(_))
     }
     /// Returns `true` if the error kind is `RetireGrantErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
@@ -4044,10 +4199,7 @@ impl RetireGrantError {
     }
     /// Returns `true` if the error kind is `RetireGrantErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RetireGrantErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, RetireGrantErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `RetireGrantErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -4057,14 +4209,30 @@ impl RetireGrantError {
 impl std::error::Error for RetireGrantError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RetireGrantErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            RetireGrantErrorKind::InvalidArnException(_inner) => Some(_inner),
-            RetireGrantErrorKind::InvalidGrantIdException(_inner) => Some(_inner),
-            RetireGrantErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
-            RetireGrantErrorKind::KmsInternalException(_inner) => Some(_inner),
-            RetireGrantErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            RetireGrantErrorKind::NotFoundException(_inner) => Some(_inner),
-            RetireGrantErrorKind::Unhandled(_inner) => Some(_inner),
+            RetireGrantErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            RetireGrantErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            RetireGrantErrorKind::InvalidGrantIdException(_inner) =>
+            Some(_inner)
+            ,
+            RetireGrantErrorKind::InvalidGrantTokenException(_inner) =>
+            Some(_inner)
+            ,
+            RetireGrantErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            RetireGrantErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            RetireGrantErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RetireGrantErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4074,15 +4242,15 @@ impl std::error::Error for RetireGrantError {
 #[derive(std::fmt::Debug)]
 pub struct ReplicateKeyError {
     /// Kind of error that occurred.
-    pub kind: ReplicateKeyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ReplicateKeyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ReplicateKeyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ReplicateKeyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4098,11 +4266,11 @@ pub enum ReplicateKeyErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -4115,30 +4283,52 @@ pub enum ReplicateKeyErrorKind {
     TagException(crate::error::TagException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ReplicateKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ReplicateKeyErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
-            ReplicateKeyErrorKind::DisabledException(_inner) => _inner.fmt(f),
-            ReplicateKeyErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            ReplicateKeyErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            ReplicateKeyErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            ReplicateKeyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            ReplicateKeyErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
-            ReplicateKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ReplicateKeyErrorKind::TagException(_inner) => _inner.fmt(f),
-            ReplicateKeyErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
-            ReplicateKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ReplicateKeyErrorKind::AlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ReplicateKeyErrorKind::DisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ReplicateKeyErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ReplicateKeyErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ReplicateKeyErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ReplicateKeyErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ReplicateKeyErrorKind::MalformedPolicyDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ReplicateKeyErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ReplicateKeyErrorKind::TagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ReplicateKeyErrorKind::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ReplicateKeyErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4152,46 +4342,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for ReplicateKeyError {
 }
 impl ReplicateKeyError {
     /// Creates a new `ReplicateKeyError`.
-    pub fn new(kind: ReplicateKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ReplicateKeyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ReplicateKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ReplicateKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ReplicateKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ReplicateKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ReplicateKeyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ReplicateKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ReplicateKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ReplicateKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ReplicateKeyErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(&self.kind, ReplicateKeyErrorKind::AlreadyExistsException(_))
@@ -4210,10 +4400,7 @@ impl ReplicateKeyError {
     }
     /// Returns `true` if the error kind is `ReplicateKeyErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ReplicateKeyErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, ReplicateKeyErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `ReplicateKeyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -4221,10 +4408,7 @@ impl ReplicateKeyError {
     }
     /// Returns `true` if the error kind is `ReplicateKeyErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ReplicateKeyErrorKind::MalformedPolicyDocumentException(_)
-        )
+        matches!(&self.kind, ReplicateKeyErrorKind::MalformedPolicyDocumentException(_))
     }
     /// Returns `true` if the error kind is `ReplicateKeyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -4236,26 +4420,45 @@ impl ReplicateKeyError {
     }
     /// Returns `true` if the error kind is `ReplicateKeyErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ReplicateKeyErrorKind::UnsupportedOperationException(_)
-        )
+        matches!(&self.kind, ReplicateKeyErrorKind::UnsupportedOperationException(_))
     }
 }
 impl std::error::Error for ReplicateKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ReplicateKeyErrorKind::AlreadyExistsException(_inner) => Some(_inner),
-            ReplicateKeyErrorKind::DisabledException(_inner) => Some(_inner),
-            ReplicateKeyErrorKind::InvalidArnException(_inner) => Some(_inner),
-            ReplicateKeyErrorKind::KmsInternalException(_inner) => Some(_inner),
-            ReplicateKeyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            ReplicateKeyErrorKind::LimitExceededException(_inner) => Some(_inner),
-            ReplicateKeyErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
-            ReplicateKeyErrorKind::NotFoundException(_inner) => Some(_inner),
-            ReplicateKeyErrorKind::TagException(_inner) => Some(_inner),
-            ReplicateKeyErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            ReplicateKeyErrorKind::Unhandled(_inner) => Some(_inner),
+            ReplicateKeyErrorKind::AlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            ReplicateKeyErrorKind::DisabledException(_inner) =>
+            Some(_inner)
+            ,
+            ReplicateKeyErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            ReplicateKeyErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ReplicateKeyErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            ReplicateKeyErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ReplicateKeyErrorKind::MalformedPolicyDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            ReplicateKeyErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ReplicateKeyErrorKind::TagException(_inner) =>
+            Some(_inner)
+            ,
+            ReplicateKeyErrorKind::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            ReplicateKeyErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4263,22 +4466,20 @@ impl std::error::Error for ReplicateKeyError {
 /// <p>The request was rejected because the specified policy is not syntactically or semantically correct.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MalformedPolicyDocumentException {
+pub struct MalformedPolicyDocumentException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl MalformedPolicyDocumentException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for MalformedPolicyDocumentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MalformedPolicyDocumentException")?;
         if let Some(inner_32) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_32)?;
             }
         }
@@ -4288,7 +4489,7 @@ impl std::fmt::Display for MalformedPolicyDocumentException {
 impl std::error::Error for MalformedPolicyDocumentException {}
 /// See [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
 pub mod malformed_policy_document_exception {
-
+    
     /// A builder for [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4302,16 +4503,18 @@ pub mod malformed_policy_document_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
         pub fn build(self) -> crate::error::MalformedPolicyDocumentException {
             crate::error::MalformedPolicyDocumentException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl MalformedPolicyDocumentException {
     /// Creates a new builder-style object to manufacture [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
@@ -4323,22 +4526,20 @@ impl MalformedPolicyDocumentException {
 /// <p>The request was rejected because it attempted to create a resource that already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlreadyExistsException {
+pub struct AlreadyExistsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AlreadyExistsException")?;
         if let Some(inner_33) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_33)?;
             }
         }
@@ -4348,7 +4549,7 @@ impl std::fmt::Display for AlreadyExistsException {
 impl std::error::Error for AlreadyExistsException {}
 /// See [`AlreadyExistsException`](crate::error::AlreadyExistsException).
 pub mod already_exists_exception {
-
+    
     /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4362,16 +4563,18 @@ pub mod already_exists_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AlreadyExistsException`](crate::error::AlreadyExistsException).
         pub fn build(self) -> crate::error::AlreadyExistsException {
             crate::error::AlreadyExistsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`AlreadyExistsException`](crate::error::AlreadyExistsException).
@@ -4385,15 +4588,15 @@ impl AlreadyExistsException {
 #[derive(std::fmt::Debug)]
 pub struct ReEncryptError {
     /// Kind of error that occurred.
-    pub kind: ReEncryptErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ReEncryptErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ReEncryptError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ReEncryptErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4407,56 +4610,78 @@ pub enum ReEncryptErrorKind {
     DisabledException(crate::error::DisabledException),
     /// <p>The request was rejected because the specified KMS key cannot decrypt the data. The <code>KeyId</code> in a <code>Decrypt</code> request and the <code>SourceKeyId</code> in a <code>ReEncrypt</code> request must identify the same KMS key that was used to encrypt the ciphertext.</p>
     IncorrectKeyException(crate::error::IncorrectKeyException),
-    /// <p>From the <code>Decrypt</code> or <code>ReEncrypt</code> operation, the request was rejected because the specified ciphertext, or additional authenticated data incorporated into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.</p>
+    /// <p>From the <code>Decrypt</code> or <code>ReEncrypt</code> operation, the request was rejected because the specified ciphertext, or additional authenticated data incorporated into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.</p> 
     /// <p>From the <code>ImportKeyMaterial</code> operation, the request was rejected because KMS could not decrypt the encrypted (wrapped) key material. </p>
     InvalidCiphertextException(crate::error::InvalidCiphertextException),
     /// <p>The request was rejected because the specified grant token is not valid.</p>
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
-    /// <p>The request was rejected for one of the following reasons: </p>
-    /// <ul>
-    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
-    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
-    /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>The request was rejected for one of the following reasons: </p> 
+    /// <ul> 
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li> 
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li> 
+    /// </ul> 
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p> 
     /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
     /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ReEncryptError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ReEncryptErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            ReEncryptErrorKind::DisabledException(_inner) => _inner.fmt(f),
-            ReEncryptErrorKind::IncorrectKeyException(_inner) => _inner.fmt(f),
-            ReEncryptErrorKind::InvalidCiphertextException(_inner) => _inner.fmt(f),
-            ReEncryptErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
-            ReEncryptErrorKind::InvalidKeyUsageException(_inner) => _inner.fmt(f),
-            ReEncryptErrorKind::KeyUnavailableException(_inner) => _inner.fmt(f),
-            ReEncryptErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            ReEncryptErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            ReEncryptErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ReEncryptErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ReEncryptErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ReEncryptErrorKind::DisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ReEncryptErrorKind::IncorrectKeyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ReEncryptErrorKind::InvalidCiphertextException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ReEncryptErrorKind::InvalidGrantTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ReEncryptErrorKind::InvalidKeyUsageException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ReEncryptErrorKind::KeyUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ReEncryptErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ReEncryptErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ReEncryptErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ReEncryptErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4470,52 +4695,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for ReEncryptError {
 }
 impl ReEncryptError {
     /// Creates a new `ReEncryptError`.
-    pub fn new(kind: ReEncryptErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ReEncryptError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ReEncryptErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ReEncryptError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ReEncryptErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ReEncryptErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ReEncryptError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ReEncryptErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ReEncryptError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ReEncryptErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ReEncryptErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ReEncryptErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, ReEncryptErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `ReEncryptErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
@@ -4527,17 +4749,11 @@ impl ReEncryptError {
     }
     /// Returns `true` if the error kind is `ReEncryptErrorKind::InvalidCiphertextException`.
     pub fn is_invalid_ciphertext_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ReEncryptErrorKind::InvalidCiphertextException(_)
-        )
+        matches!(&self.kind, ReEncryptErrorKind::InvalidCiphertextException(_))
     }
     /// Returns `true` if the error kind is `ReEncryptErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ReEncryptErrorKind::InvalidGrantTokenException(_)
-        )
+        matches!(&self.kind, ReEncryptErrorKind::InvalidGrantTokenException(_))
     }
     /// Returns `true` if the error kind is `ReEncryptErrorKind::InvalidKeyUsageException`.
     pub fn is_invalid_key_usage_exception(&self) -> bool {
@@ -4563,41 +4779,61 @@ impl ReEncryptError {
 impl std::error::Error for ReEncryptError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ReEncryptErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            ReEncryptErrorKind::DisabledException(_inner) => Some(_inner),
-            ReEncryptErrorKind::IncorrectKeyException(_inner) => Some(_inner),
-            ReEncryptErrorKind::InvalidCiphertextException(_inner) => Some(_inner),
-            ReEncryptErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
-            ReEncryptErrorKind::InvalidKeyUsageException(_inner) => Some(_inner),
-            ReEncryptErrorKind::KeyUnavailableException(_inner) => Some(_inner),
-            ReEncryptErrorKind::KmsInternalException(_inner) => Some(_inner),
-            ReEncryptErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            ReEncryptErrorKind::NotFoundException(_inner) => Some(_inner),
-            ReEncryptErrorKind::Unhandled(_inner) => Some(_inner),
+            ReEncryptErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            ReEncryptErrorKind::DisabledException(_inner) =>
+            Some(_inner)
+            ,
+            ReEncryptErrorKind::IncorrectKeyException(_inner) =>
+            Some(_inner)
+            ,
+            ReEncryptErrorKind::InvalidCiphertextException(_inner) =>
+            Some(_inner)
+            ,
+            ReEncryptErrorKind::InvalidGrantTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ReEncryptErrorKind::InvalidKeyUsageException(_inner) =>
+            Some(_inner)
+            ,
+            ReEncryptErrorKind::KeyUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ReEncryptErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ReEncryptErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            ReEncryptErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ReEncryptErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-/// <p>From the <code>Decrypt</code> or <code>ReEncrypt</code> operation, the request was rejected because the specified ciphertext, or additional authenticated data incorporated into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.</p>
+/// <p>From the <code>Decrypt</code> or <code>ReEncrypt</code> operation, the request was rejected because the specified ciphertext, or additional authenticated data incorporated into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.</p> 
 /// <p>From the <code>ImportKeyMaterial</code> operation, the request was rejected because KMS could not decrypt the encrypted (wrapped) key material. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidCiphertextException {
+pub struct InvalidCiphertextException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidCiphertextException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidCiphertextException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCiphertextException")?;
         if let Some(inner_34) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_34)?;
             }
         }
@@ -4607,7 +4843,7 @@ impl std::fmt::Display for InvalidCiphertextException {
 impl std::error::Error for InvalidCiphertextException {}
 /// See [`InvalidCiphertextException`](crate::error::InvalidCiphertextException).
 pub mod invalid_ciphertext_exception {
-
+    
     /// A builder for [`InvalidCiphertextException`](crate::error::InvalidCiphertextException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4621,16 +4857,18 @@ pub mod invalid_ciphertext_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidCiphertextException`](crate::error::InvalidCiphertextException).
         pub fn build(self) -> crate::error::InvalidCiphertextException {
             crate::error::InvalidCiphertextException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidCiphertextException {
     /// Creates a new builder-style object to manufacture [`InvalidCiphertextException`](crate::error::InvalidCiphertextException).
@@ -4642,22 +4880,20 @@ impl InvalidCiphertextException {
 /// <p>The request was rejected because the specified KMS key cannot decrypt the data. The <code>KeyId</code> in a <code>Decrypt</code> request and the <code>SourceKeyId</code> in a <code>ReEncrypt</code> request must identify the same KMS key that was used to encrypt the ciphertext.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IncorrectKeyException {
+pub struct IncorrectKeyException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl IncorrectKeyException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for IncorrectKeyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IncorrectKeyException")?;
         if let Some(inner_35) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_35)?;
             }
         }
@@ -4667,7 +4903,7 @@ impl std::fmt::Display for IncorrectKeyException {
 impl std::error::Error for IncorrectKeyException {}
 /// See [`IncorrectKeyException`](crate::error::IncorrectKeyException).
 pub mod incorrect_key_exception {
-
+    
     /// A builder for [`IncorrectKeyException`](crate::error::IncorrectKeyException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4681,16 +4917,18 @@ pub mod incorrect_key_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`IncorrectKeyException`](crate::error::IncorrectKeyException).
         pub fn build(self) -> crate::error::IncorrectKeyException {
             crate::error::IncorrectKeyException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl IncorrectKeyException {
     /// Creates a new builder-style object to manufacture [`IncorrectKeyException`](crate::error::IncorrectKeyException).
@@ -4704,15 +4942,15 @@ impl IncorrectKeyException {
 #[derive(std::fmt::Debug)]
 pub struct PutKeyPolicyError {
     /// Kind of error that occurred.
-    pub kind: PutKeyPolicyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutKeyPolicyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutKeyPolicyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: PutKeyPolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4726,11 +4964,11 @@ pub enum PutKeyPolicyErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -4741,28 +4979,46 @@ pub enum PutKeyPolicyErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutKeyPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutKeyPolicyErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            PutKeyPolicyErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            PutKeyPolicyErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            PutKeyPolicyErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            PutKeyPolicyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            PutKeyPolicyErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
-            PutKeyPolicyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            PutKeyPolicyErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
-            PutKeyPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            PutKeyPolicyErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutKeyPolicyErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutKeyPolicyErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutKeyPolicyErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutKeyPolicyErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutKeyPolicyErrorKind::MalformedPolicyDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutKeyPolicyErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutKeyPolicyErrorKind::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutKeyPolicyErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4776,52 +5032,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutKeyPolicyError {
 }
 impl PutKeyPolicyError {
     /// Creates a new `PutKeyPolicyError`.
-    pub fn new(kind: PutKeyPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutKeyPolicyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutKeyPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutKeyPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutKeyPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutKeyPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutKeyPolicyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutKeyPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutKeyPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutKeyPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutKeyPolicyErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutKeyPolicyErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, PutKeyPolicyErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `PutKeyPolicyErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
@@ -4833,10 +5086,7 @@ impl PutKeyPolicyError {
     }
     /// Returns `true` if the error kind is `PutKeyPolicyErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutKeyPolicyErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, PutKeyPolicyErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `PutKeyPolicyErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -4844,10 +5094,7 @@ impl PutKeyPolicyError {
     }
     /// Returns `true` if the error kind is `PutKeyPolicyErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutKeyPolicyErrorKind::MalformedPolicyDocumentException(_)
-        )
+        matches!(&self.kind, PutKeyPolicyErrorKind::MalformedPolicyDocumentException(_))
     }
     /// Returns `true` if the error kind is `PutKeyPolicyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -4855,24 +5102,39 @@ impl PutKeyPolicyError {
     }
     /// Returns `true` if the error kind is `PutKeyPolicyErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutKeyPolicyErrorKind::UnsupportedOperationException(_)
-        )
+        matches!(&self.kind, PutKeyPolicyErrorKind::UnsupportedOperationException(_))
     }
 }
 impl std::error::Error for PutKeyPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutKeyPolicyErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            PutKeyPolicyErrorKind::InvalidArnException(_inner) => Some(_inner),
-            PutKeyPolicyErrorKind::KmsInternalException(_inner) => Some(_inner),
-            PutKeyPolicyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            PutKeyPolicyErrorKind::LimitExceededException(_inner) => Some(_inner),
-            PutKeyPolicyErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
-            PutKeyPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
-            PutKeyPolicyErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            PutKeyPolicyErrorKind::Unhandled(_inner) => Some(_inner),
+            PutKeyPolicyErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            PutKeyPolicyErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            PutKeyPolicyErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            PutKeyPolicyErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            PutKeyPolicyErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            PutKeyPolicyErrorKind::MalformedPolicyDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            PutKeyPolicyErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            PutKeyPolicyErrorKind::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            PutKeyPolicyErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4882,15 +5144,15 @@ impl std::error::Error for PutKeyPolicyError {
 #[derive(std::fmt::Debug)]
 pub struct ListRetirableGrantsError {
     /// Kind of error that occurred.
-    pub kind: ListRetirableGrantsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListRetirableGrantsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListRetirableGrantsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListRetirableGrantsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4908,25 +5170,37 @@ pub enum ListRetirableGrantsErrorKind {
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRetirableGrantsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListRetirableGrantsErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            ListRetirableGrantsErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            ListRetirableGrantsErrorKind::InvalidMarkerException(_inner) => _inner.fmt(f),
-            ListRetirableGrantsErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            ListRetirableGrantsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ListRetirableGrantsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListRetirableGrantsErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRetirableGrantsErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRetirableGrantsErrorKind::InvalidMarkerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRetirableGrantsErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRetirableGrantsErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRetirableGrantsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4940,91 +5214,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListRetirableGrantsError {
 }
 impl ListRetirableGrantsError {
     /// Creates a new `ListRetirableGrantsError`.
-    pub fn new(kind: ListRetirableGrantsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListRetirableGrantsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListRetirableGrantsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListRetirableGrantsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListRetirableGrantsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListRetirableGrantsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListRetirableGrantsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListRetirableGrantsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListRetirableGrantsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListRetirableGrantsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListRetirableGrantsErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRetirableGrantsErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, ListRetirableGrantsErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `ListRetirableGrantsErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRetirableGrantsErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, ListRetirableGrantsErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `ListRetirableGrantsErrorKind::InvalidMarkerException`.
     pub fn is_invalid_marker_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRetirableGrantsErrorKind::InvalidMarkerException(_)
-        )
+        matches!(&self.kind, ListRetirableGrantsErrorKind::InvalidMarkerException(_))
     }
     /// Returns `true` if the error kind is `ListRetirableGrantsErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRetirableGrantsErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, ListRetirableGrantsErrorKind::KmsInternalException(_))
     }
     /// Returns `true` if the error kind is `ListRetirableGrantsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRetirableGrantsErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, ListRetirableGrantsErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for ListRetirableGrantsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListRetirableGrantsErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            ListRetirableGrantsErrorKind::InvalidArnException(_inner) => Some(_inner),
-            ListRetirableGrantsErrorKind::InvalidMarkerException(_inner) => Some(_inner),
-            ListRetirableGrantsErrorKind::KmsInternalException(_inner) => Some(_inner),
-            ListRetirableGrantsErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListRetirableGrantsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListRetirableGrantsErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            ListRetirableGrantsErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            ListRetirableGrantsErrorKind::InvalidMarkerException(_inner) =>
+            Some(_inner)
+            ,
+            ListRetirableGrantsErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListRetirableGrantsErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListRetirableGrantsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5032,22 +5303,20 @@ impl std::error::Error for ListRetirableGrantsError {
 /// <p>The request was rejected because the marker that specifies where pagination should next begin is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidMarkerException {
+pub struct InvalidMarkerException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidMarkerException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidMarkerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidMarkerException")?;
         if let Some(inner_36) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_36)?;
             }
         }
@@ -5057,7 +5326,7 @@ impl std::fmt::Display for InvalidMarkerException {
 impl std::error::Error for InvalidMarkerException {}
 /// See [`InvalidMarkerException`](crate::error::InvalidMarkerException).
 pub mod invalid_marker_exception {
-
+    
     /// A builder for [`InvalidMarkerException`](crate::error::InvalidMarkerException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5071,16 +5340,18 @@ pub mod invalid_marker_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidMarkerException`](crate::error::InvalidMarkerException).
         pub fn build(self) -> crate::error::InvalidMarkerException {
             crate::error::InvalidMarkerException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidMarkerException {
     /// Creates a new builder-style object to manufacture [`InvalidMarkerException`](crate::error::InvalidMarkerException).
@@ -5094,15 +5365,15 @@ impl InvalidMarkerException {
 #[derive(std::fmt::Debug)]
 pub struct ListResourceTagsError {
     /// Kind of error that occurred.
-    pub kind: ListResourceTagsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListResourceTagsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListResourceTagsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListResourceTagsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5118,24 +5389,34 @@ pub enum ListResourceTagsErrorKind {
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListResourceTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListResourceTagsErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            ListResourceTagsErrorKind::InvalidMarkerException(_inner) => _inner.fmt(f),
-            ListResourceTagsErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            ListResourceTagsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ListResourceTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListResourceTagsErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourceTagsErrorKind::InvalidMarkerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourceTagsErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourceTagsErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourceTagsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5149,66 +5430,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListResourceTagsError {
 }
 impl ListResourceTagsError {
     /// Creates a new `ListResourceTagsError`.
-    pub fn new(kind: ListResourceTagsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListResourceTagsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListResourceTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListResourceTagsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListResourceTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListResourceTagsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListResourceTagsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListResourceTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListResourceTagsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListResourceTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListResourceTagsErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourceTagsErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, ListResourceTagsErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `ListResourceTagsErrorKind::InvalidMarkerException`.
     pub fn is_invalid_marker_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourceTagsErrorKind::InvalidMarkerException(_)
-        )
+        matches!(&self.kind, ListResourceTagsErrorKind::InvalidMarkerException(_))
     }
     /// Returns `true` if the error kind is `ListResourceTagsErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourceTagsErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, ListResourceTagsErrorKind::KmsInternalException(_))
     }
     /// Returns `true` if the error kind is `ListResourceTagsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -5218,11 +5490,21 @@ impl ListResourceTagsError {
 impl std::error::Error for ListResourceTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListResourceTagsErrorKind::InvalidArnException(_inner) => Some(_inner),
-            ListResourceTagsErrorKind::InvalidMarkerException(_inner) => Some(_inner),
-            ListResourceTagsErrorKind::KmsInternalException(_inner) => Some(_inner),
-            ListResourceTagsErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListResourceTagsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListResourceTagsErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourceTagsErrorKind::InvalidMarkerException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourceTagsErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourceTagsErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourceTagsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5232,15 +5514,15 @@ impl std::error::Error for ListResourceTagsError {
 #[derive(std::fmt::Debug)]
 pub struct ListKeysError {
     /// Kind of error that occurred.
-    pub kind: ListKeysErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListKeysErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListKeysError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListKeysErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5254,23 +5536,31 @@ pub enum ListKeysErrorKind {
     InvalidMarkerException(crate::error::InvalidMarkerException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListKeysErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            ListKeysErrorKind::InvalidMarkerException(_inner) => _inner.fmt(f),
-            ListKeysErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            ListKeysErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListKeysErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListKeysErrorKind::InvalidMarkerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListKeysErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListKeysErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5284,46 +5574,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListKeysError {
 }
 impl ListKeysError {
     /// Creates a new `ListKeysError`.
-    pub fn new(kind: ListKeysErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListKeysError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListKeysError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListKeysErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListKeysError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListKeysError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListKeysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListKeysErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(&self.kind, ListKeysErrorKind::DependencyTimeoutException(_))
@@ -5340,10 +5630,18 @@ impl ListKeysError {
 impl std::error::Error for ListKeysError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListKeysErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            ListKeysErrorKind::InvalidMarkerException(_inner) => Some(_inner),
-            ListKeysErrorKind::KmsInternalException(_inner) => Some(_inner),
-            ListKeysErrorKind::Unhandled(_inner) => Some(_inner),
+            ListKeysErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            ListKeysErrorKind::InvalidMarkerException(_inner) =>
+            Some(_inner)
+            ,
+            ListKeysErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListKeysErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5353,15 +5651,15 @@ impl std::error::Error for ListKeysError {
 #[derive(std::fmt::Debug)]
 pub struct ListKeyPoliciesError {
     /// Kind of error that occurred.
-    pub kind: ListKeyPoliciesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListKeyPoliciesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListKeyPoliciesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListKeyPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5375,34 +5673,46 @@ pub enum ListKeyPoliciesErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListKeyPoliciesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListKeyPoliciesErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            ListKeyPoliciesErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            ListKeyPoliciesErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            ListKeyPoliciesErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            ListKeyPoliciesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ListKeyPoliciesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListKeyPoliciesErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListKeyPoliciesErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListKeyPoliciesErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListKeyPoliciesErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListKeyPoliciesErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListKeyPoliciesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5416,52 +5726,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListKeyPoliciesError {
 }
 impl ListKeyPoliciesError {
     /// Creates a new `ListKeyPoliciesError`.
-    pub fn new(kind: ListKeyPoliciesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListKeyPoliciesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListKeyPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListKeyPoliciesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListKeyPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListKeyPoliciesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListKeyPoliciesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListKeyPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListKeyPoliciesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListKeyPoliciesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListKeyPoliciesErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListKeyPoliciesErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, ListKeyPoliciesErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `ListKeyPoliciesErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
@@ -5469,17 +5776,11 @@ impl ListKeyPoliciesError {
     }
     /// Returns `true` if the error kind is `ListKeyPoliciesErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListKeyPoliciesErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, ListKeyPoliciesErrorKind::KmsInternalException(_))
     }
     /// Returns `true` if the error kind is `ListKeyPoliciesErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListKeyPoliciesErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, ListKeyPoliciesErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `ListKeyPoliciesErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -5489,12 +5790,24 @@ impl ListKeyPoliciesError {
 impl std::error::Error for ListKeyPoliciesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListKeyPoliciesErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            ListKeyPoliciesErrorKind::InvalidArnException(_inner) => Some(_inner),
-            ListKeyPoliciesErrorKind::KmsInternalException(_inner) => Some(_inner),
-            ListKeyPoliciesErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            ListKeyPoliciesErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListKeyPoliciesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListKeyPoliciesErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            ListKeyPoliciesErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            ListKeyPoliciesErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListKeyPoliciesErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            ListKeyPoliciesErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListKeyPoliciesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5504,15 +5817,15 @@ impl std::error::Error for ListKeyPoliciesError {
 #[derive(std::fmt::Debug)]
 pub struct ListGrantsError {
     /// Kind of error that occurred.
-    pub kind: ListGrantsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListGrantsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListGrantsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListGrantsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5530,36 +5843,52 @@ pub enum ListGrantsErrorKind {
     InvalidMarkerException(crate::error::InvalidMarkerException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListGrantsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListGrantsErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            ListGrantsErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            ListGrantsErrorKind::InvalidGrantIdException(_inner) => _inner.fmt(f),
-            ListGrantsErrorKind::InvalidMarkerException(_inner) => _inner.fmt(f),
-            ListGrantsErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            ListGrantsErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            ListGrantsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ListGrantsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListGrantsErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGrantsErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGrantsErrorKind::InvalidGrantIdException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGrantsErrorKind::InvalidMarkerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGrantsErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGrantsErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGrantsErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListGrantsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5573,52 +5902,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListGrantsError {
 }
 impl ListGrantsError {
     /// Creates a new `ListGrantsError`.
-    pub fn new(kind: ListGrantsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListGrantsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListGrantsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListGrantsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListGrantsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListGrantsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListGrantsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListGrantsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListGrantsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListGrantsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListGrantsErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListGrantsErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, ListGrantsErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `ListGrantsErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
@@ -5648,14 +5974,30 @@ impl ListGrantsError {
 impl std::error::Error for ListGrantsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListGrantsErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            ListGrantsErrorKind::InvalidArnException(_inner) => Some(_inner),
-            ListGrantsErrorKind::InvalidGrantIdException(_inner) => Some(_inner),
-            ListGrantsErrorKind::InvalidMarkerException(_inner) => Some(_inner),
-            ListGrantsErrorKind::KmsInternalException(_inner) => Some(_inner),
-            ListGrantsErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            ListGrantsErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListGrantsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListGrantsErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            ListGrantsErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            ListGrantsErrorKind::InvalidGrantIdException(_inner) =>
+            Some(_inner)
+            ,
+            ListGrantsErrorKind::InvalidMarkerException(_inner) =>
+            Some(_inner)
+            ,
+            ListGrantsErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListGrantsErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            ListGrantsErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListGrantsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5665,15 +6007,15 @@ impl std::error::Error for ListGrantsError {
 #[derive(std::fmt::Debug)]
 pub struct ListAliasesError {
     /// Kind of error that occurred.
-    pub kind: ListAliasesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListAliasesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListAliasesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListAliasesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5691,25 +6033,37 @@ pub enum ListAliasesErrorKind {
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAliasesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAliasesErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            ListAliasesErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            ListAliasesErrorKind::InvalidMarkerException(_inner) => _inner.fmt(f),
-            ListAliasesErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            ListAliasesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ListAliasesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListAliasesErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAliasesErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAliasesErrorKind::InvalidMarkerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAliasesErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAliasesErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAliasesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5723,52 +6077,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListAliasesError {
 }
 impl ListAliasesError {
     /// Creates a new `ListAliasesError`.
-    pub fn new(kind: ListAliasesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListAliasesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListAliasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListAliasesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListAliasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListAliasesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListAliasesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListAliasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListAliasesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListAliasesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListAliasesErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAliasesErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, ListAliasesErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `ListAliasesErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
@@ -5790,12 +6141,24 @@ impl ListAliasesError {
 impl std::error::Error for ListAliasesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAliasesErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            ListAliasesErrorKind::InvalidArnException(_inner) => Some(_inner),
-            ListAliasesErrorKind::InvalidMarkerException(_inner) => Some(_inner),
-            ListAliasesErrorKind::KmsInternalException(_inner) => Some(_inner),
-            ListAliasesErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListAliasesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListAliasesErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            ListAliasesErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            ListAliasesErrorKind::InvalidMarkerException(_inner) =>
+            Some(_inner)
+            ,
+            ListAliasesErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListAliasesErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListAliasesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5805,15 +6168,15 @@ impl std::error::Error for ListAliasesError {
 #[derive(std::fmt::Debug)]
 pub struct ImportKeyMaterialError {
     /// Kind of error that occurred.
-    pub kind: ImportKeyMaterialErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ImportKeyMaterialErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ImportKeyMaterialError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ImportKeyMaterialErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5829,48 +6192,70 @@ pub enum ImportKeyMaterialErrorKind {
     IncorrectKeyMaterialException(crate::error::IncorrectKeyMaterialException),
     /// <p>The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.</p>
     InvalidArnException(crate::error::InvalidArnException),
-    /// <p>From the <code>Decrypt</code> or <code>ReEncrypt</code> operation, the request was rejected because the specified ciphertext, or additional authenticated data incorporated into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.</p>
+    /// <p>From the <code>Decrypt</code> or <code>ReEncrypt</code> operation, the request was rejected because the specified ciphertext, or additional authenticated data incorporated into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.</p> 
     /// <p>From the <code>ImportKeyMaterial</code> operation, the request was rejected because KMS could not decrypt the encrypted (wrapped) key material. </p>
     InvalidCiphertextException(crate::error::InvalidCiphertextException),
     /// <p>The request was rejected because the provided import token is invalid or is associated with a different KMS key.</p>
     InvalidImportTokenException(crate::error::InvalidImportTokenException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ImportKeyMaterialError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ImportKeyMaterialErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            ImportKeyMaterialErrorKind::ExpiredImportTokenException(_inner) => _inner.fmt(f),
-            ImportKeyMaterialErrorKind::IncorrectKeyMaterialException(_inner) => _inner.fmt(f),
-            ImportKeyMaterialErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            ImportKeyMaterialErrorKind::InvalidCiphertextException(_inner) => _inner.fmt(f),
-            ImportKeyMaterialErrorKind::InvalidImportTokenException(_inner) => _inner.fmt(f),
-            ImportKeyMaterialErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            ImportKeyMaterialErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            ImportKeyMaterialErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ImportKeyMaterialErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
-            ImportKeyMaterialErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ImportKeyMaterialErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ImportKeyMaterialErrorKind::ExpiredImportTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ImportKeyMaterialErrorKind::IncorrectKeyMaterialException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ImportKeyMaterialErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ImportKeyMaterialErrorKind::InvalidCiphertextException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ImportKeyMaterialErrorKind::InvalidImportTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ImportKeyMaterialErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ImportKeyMaterialErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ImportKeyMaterialErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ImportKeyMaterialErrorKind::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ImportKeyMaterialErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5884,101 +6269,77 @@ impl aws_smithy_types::retry::ProvideErrorKind for ImportKeyMaterialError {
 }
 impl ImportKeyMaterialError {
     /// Creates a new `ImportKeyMaterialError`.
-    pub fn new(kind: ImportKeyMaterialErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ImportKeyMaterialError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ImportKeyMaterialErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ImportKeyMaterialError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ImportKeyMaterialErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ImportKeyMaterialErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ImportKeyMaterialError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ImportKeyMaterialErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ImportKeyMaterialError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ImportKeyMaterialErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ImportKeyMaterialErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ImportKeyMaterialErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, ImportKeyMaterialErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `ImportKeyMaterialErrorKind::ExpiredImportTokenException`.
     pub fn is_expired_import_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ImportKeyMaterialErrorKind::ExpiredImportTokenException(_)
-        )
+        matches!(&self.kind, ImportKeyMaterialErrorKind::ExpiredImportTokenException(_))
     }
     /// Returns `true` if the error kind is `ImportKeyMaterialErrorKind::IncorrectKeyMaterialException`.
     pub fn is_incorrect_key_material_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ImportKeyMaterialErrorKind::IncorrectKeyMaterialException(_)
-        )
+        matches!(&self.kind, ImportKeyMaterialErrorKind::IncorrectKeyMaterialException(_))
     }
     /// Returns `true` if the error kind is `ImportKeyMaterialErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ImportKeyMaterialErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, ImportKeyMaterialErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `ImportKeyMaterialErrorKind::InvalidCiphertextException`.
     pub fn is_invalid_ciphertext_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ImportKeyMaterialErrorKind::InvalidCiphertextException(_)
-        )
+        matches!(&self.kind, ImportKeyMaterialErrorKind::InvalidCiphertextException(_))
     }
     /// Returns `true` if the error kind is `ImportKeyMaterialErrorKind::InvalidImportTokenException`.
     pub fn is_invalid_import_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ImportKeyMaterialErrorKind::InvalidImportTokenException(_)
-        )
+        matches!(&self.kind, ImportKeyMaterialErrorKind::InvalidImportTokenException(_))
     }
     /// Returns `true` if the error kind is `ImportKeyMaterialErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ImportKeyMaterialErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, ImportKeyMaterialErrorKind::KmsInternalException(_))
     }
     /// Returns `true` if the error kind is `ImportKeyMaterialErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ImportKeyMaterialErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, ImportKeyMaterialErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `ImportKeyMaterialErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -5986,26 +6347,45 @@ impl ImportKeyMaterialError {
     }
     /// Returns `true` if the error kind is `ImportKeyMaterialErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ImportKeyMaterialErrorKind::UnsupportedOperationException(_)
-        )
+        matches!(&self.kind, ImportKeyMaterialErrorKind::UnsupportedOperationException(_))
     }
 }
 impl std::error::Error for ImportKeyMaterialError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ImportKeyMaterialErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            ImportKeyMaterialErrorKind::ExpiredImportTokenException(_inner) => Some(_inner),
-            ImportKeyMaterialErrorKind::IncorrectKeyMaterialException(_inner) => Some(_inner),
-            ImportKeyMaterialErrorKind::InvalidArnException(_inner) => Some(_inner),
-            ImportKeyMaterialErrorKind::InvalidCiphertextException(_inner) => Some(_inner),
-            ImportKeyMaterialErrorKind::InvalidImportTokenException(_inner) => Some(_inner),
-            ImportKeyMaterialErrorKind::KmsInternalException(_inner) => Some(_inner),
-            ImportKeyMaterialErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            ImportKeyMaterialErrorKind::NotFoundException(_inner) => Some(_inner),
-            ImportKeyMaterialErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            ImportKeyMaterialErrorKind::Unhandled(_inner) => Some(_inner),
+            ImportKeyMaterialErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            ImportKeyMaterialErrorKind::ExpiredImportTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ImportKeyMaterialErrorKind::IncorrectKeyMaterialException(_inner) =>
+            Some(_inner)
+            ,
+            ImportKeyMaterialErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            ImportKeyMaterialErrorKind::InvalidCiphertextException(_inner) =>
+            Some(_inner)
+            ,
+            ImportKeyMaterialErrorKind::InvalidImportTokenException(_inner) =>
+            Some(_inner)
+            ,
+            ImportKeyMaterialErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ImportKeyMaterialErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            ImportKeyMaterialErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ImportKeyMaterialErrorKind::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            ImportKeyMaterialErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6013,22 +6393,20 @@ impl std::error::Error for ImportKeyMaterialError {
 /// <p>The request was rejected because the provided import token is invalid or is associated with a different KMS key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidImportTokenException {
+pub struct InvalidImportTokenException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidImportTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidImportTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidImportTokenException")?;
         if let Some(inner_37) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_37)?;
             }
         }
@@ -6038,7 +6416,7 @@ impl std::fmt::Display for InvalidImportTokenException {
 impl std::error::Error for InvalidImportTokenException {}
 /// See [`InvalidImportTokenException`](crate::error::InvalidImportTokenException).
 pub mod invalid_import_token_exception {
-
+    
     /// A builder for [`InvalidImportTokenException`](crate::error::InvalidImportTokenException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6052,16 +6430,18 @@ pub mod invalid_import_token_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidImportTokenException`](crate::error::InvalidImportTokenException).
         pub fn build(self) -> crate::error::InvalidImportTokenException {
             crate::error::InvalidImportTokenException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidImportTokenException {
     /// Creates a new builder-style object to manufacture [`InvalidImportTokenException`](crate::error::InvalidImportTokenException).
@@ -6073,22 +6453,20 @@ impl InvalidImportTokenException {
 /// <p>The request was rejected because the key material in the request is, expired, invalid, or is not the same key material that was previously imported into this KMS key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IncorrectKeyMaterialException {
+pub struct IncorrectKeyMaterialException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl IncorrectKeyMaterialException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for IncorrectKeyMaterialException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IncorrectKeyMaterialException")?;
         if let Some(inner_38) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_38)?;
             }
         }
@@ -6098,7 +6476,7 @@ impl std::fmt::Display for IncorrectKeyMaterialException {
 impl std::error::Error for IncorrectKeyMaterialException {}
 /// See [`IncorrectKeyMaterialException`](crate::error::IncorrectKeyMaterialException).
 pub mod incorrect_key_material_exception {
-
+    
     /// A builder for [`IncorrectKeyMaterialException`](crate::error::IncorrectKeyMaterialException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6112,16 +6490,18 @@ pub mod incorrect_key_material_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`IncorrectKeyMaterialException`](crate::error::IncorrectKeyMaterialException).
         pub fn build(self) -> crate::error::IncorrectKeyMaterialException {
             crate::error::IncorrectKeyMaterialException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl IncorrectKeyMaterialException {
     /// Creates a new builder-style object to manufacture [`IncorrectKeyMaterialException`](crate::error::IncorrectKeyMaterialException).
@@ -6133,22 +6513,20 @@ impl IncorrectKeyMaterialException {
 /// <p>The request was rejected because the specified import token is expired. Use <code>GetParametersForImport</code> to get a new import token and public key, use the new public key to encrypt the key material, and then try the request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExpiredImportTokenException {
+pub struct ExpiredImportTokenException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ExpiredImportTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ExpiredImportTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExpiredImportTokenException")?;
         if let Some(inner_39) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_39)?;
             }
         }
@@ -6158,7 +6536,7 @@ impl std::fmt::Display for ExpiredImportTokenException {
 impl std::error::Error for ExpiredImportTokenException {}
 /// See [`ExpiredImportTokenException`](crate::error::ExpiredImportTokenException).
 pub mod expired_import_token_exception {
-
+    
     /// A builder for [`ExpiredImportTokenException`](crate::error::ExpiredImportTokenException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6172,16 +6550,18 @@ pub mod expired_import_token_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ExpiredImportTokenException`](crate::error::ExpiredImportTokenException).
         pub fn build(self) -> crate::error::ExpiredImportTokenException {
             crate::error::ExpiredImportTokenException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ExpiredImportTokenException {
     /// Creates a new builder-style object to manufacture [`ExpiredImportTokenException`](crate::error::ExpiredImportTokenException).
@@ -6195,15 +6575,15 @@ impl ExpiredImportTokenException {
 #[derive(std::fmt::Debug)]
 pub struct GetPublicKeyError {
     /// Kind of error that occurred.
-    pub kind: GetPublicKeyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetPublicKeyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetPublicKeyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6219,53 +6599,75 @@ pub enum GetPublicKeyErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because the specified grant token is not valid.</p>
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
-    /// <p>The request was rejected for one of the following reasons: </p>
-    /// <ul>
-    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
-    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
-    /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>The request was rejected for one of the following reasons: </p> 
+    /// <ul> 
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li> 
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li> 
+    /// </ul> 
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p> 
     /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
     /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetPublicKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetPublicKeyErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            GetPublicKeyErrorKind::DisabledException(_inner) => _inner.fmt(f),
-            GetPublicKeyErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            GetPublicKeyErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
-            GetPublicKeyErrorKind::InvalidKeyUsageException(_inner) => _inner.fmt(f),
-            GetPublicKeyErrorKind::KeyUnavailableException(_inner) => _inner.fmt(f),
-            GetPublicKeyErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            GetPublicKeyErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            GetPublicKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetPublicKeyErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
-            GetPublicKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetPublicKeyErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPublicKeyErrorKind::DisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPublicKeyErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPublicKeyErrorKind::InvalidGrantTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPublicKeyErrorKind::InvalidKeyUsageException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPublicKeyErrorKind::KeyUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPublicKeyErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPublicKeyErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPublicKeyErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPublicKeyErrorKind::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetPublicKeyErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6279,52 +6681,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetPublicKeyError {
 }
 impl GetPublicKeyError {
     /// Creates a new `GetPublicKeyError`.
-    pub fn new(kind: GetPublicKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetPublicKeyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetPublicKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetPublicKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetPublicKeyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetPublicKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetPublicKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetPublicKeyErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPublicKeyErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, GetPublicKeyErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `GetPublicKeyErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
@@ -6336,24 +6735,15 @@ impl GetPublicKeyError {
     }
     /// Returns `true` if the error kind is `GetPublicKeyErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPublicKeyErrorKind::InvalidGrantTokenException(_)
-        )
+        matches!(&self.kind, GetPublicKeyErrorKind::InvalidGrantTokenException(_))
     }
     /// Returns `true` if the error kind is `GetPublicKeyErrorKind::InvalidKeyUsageException`.
     pub fn is_invalid_key_usage_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPublicKeyErrorKind::InvalidKeyUsageException(_)
-        )
+        matches!(&self.kind, GetPublicKeyErrorKind::InvalidKeyUsageException(_))
     }
     /// Returns `true` if the error kind is `GetPublicKeyErrorKind::KeyUnavailableException`.
     pub fn is_key_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPublicKeyErrorKind::KeyUnavailableException(_)
-        )
+        matches!(&self.kind, GetPublicKeyErrorKind::KeyUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetPublicKeyErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
@@ -6361,10 +6751,7 @@ impl GetPublicKeyError {
     }
     /// Returns `true` if the error kind is `GetPublicKeyErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPublicKeyErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, GetPublicKeyErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `GetPublicKeyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -6372,26 +6759,45 @@ impl GetPublicKeyError {
     }
     /// Returns `true` if the error kind is `GetPublicKeyErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetPublicKeyErrorKind::UnsupportedOperationException(_)
-        )
+        matches!(&self.kind, GetPublicKeyErrorKind::UnsupportedOperationException(_))
     }
 }
 impl std::error::Error for GetPublicKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetPublicKeyErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            GetPublicKeyErrorKind::DisabledException(_inner) => Some(_inner),
-            GetPublicKeyErrorKind::InvalidArnException(_inner) => Some(_inner),
-            GetPublicKeyErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
-            GetPublicKeyErrorKind::InvalidKeyUsageException(_inner) => Some(_inner),
-            GetPublicKeyErrorKind::KeyUnavailableException(_inner) => Some(_inner),
-            GetPublicKeyErrorKind::KmsInternalException(_inner) => Some(_inner),
-            GetPublicKeyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            GetPublicKeyErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetPublicKeyErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            GetPublicKeyErrorKind::Unhandled(_inner) => Some(_inner),
+            GetPublicKeyErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            GetPublicKeyErrorKind::DisabledException(_inner) =>
+            Some(_inner)
+            ,
+            GetPublicKeyErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            GetPublicKeyErrorKind::InvalidGrantTokenException(_inner) =>
+            Some(_inner)
+            ,
+            GetPublicKeyErrorKind::InvalidKeyUsageException(_inner) =>
+            Some(_inner)
+            ,
+            GetPublicKeyErrorKind::KeyUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetPublicKeyErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            GetPublicKeyErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            GetPublicKeyErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetPublicKeyErrorKind::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            GetPublicKeyErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6401,15 +6807,15 @@ impl std::error::Error for GetPublicKeyError {
 #[derive(std::fmt::Debug)]
 pub struct GetParametersForImportError {
     /// Kind of error that occurred.
-    pub kind: GetParametersForImportErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetParametersForImportErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetParametersForImportError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetParametersForImportErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6423,37 +6829,51 @@ pub enum GetParametersForImportErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetParametersForImportError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetParametersForImportErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            GetParametersForImportErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            GetParametersForImportErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            GetParametersForImportErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            GetParametersForImportErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetParametersForImportErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
-            GetParametersForImportErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetParametersForImportErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetParametersForImportErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetParametersForImportErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetParametersForImportErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetParametersForImportErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetParametersForImportErrorKind::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetParametersForImportErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6467,103 +6887,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetParametersForImportError {
 }
 impl GetParametersForImportError {
     /// Creates a new `GetParametersForImportError`.
-    pub fn new(kind: GetParametersForImportErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetParametersForImportError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetParametersForImportErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetParametersForImportError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetParametersForImportErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetParametersForImportErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetParametersForImportError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetParametersForImportErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetParametersForImportError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetParametersForImportErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetParametersForImportErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetParametersForImportErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, GetParametersForImportErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `GetParametersForImportErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetParametersForImportErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, GetParametersForImportErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `GetParametersForImportErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetParametersForImportErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, GetParametersForImportErrorKind::KmsInternalException(_))
     }
     /// Returns `true` if the error kind is `GetParametersForImportErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetParametersForImportErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, GetParametersForImportErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `GetParametersForImportErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetParametersForImportErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, GetParametersForImportErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetParametersForImportErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetParametersForImportErrorKind::UnsupportedOperationException(_)
-        )
+        matches!(&self.kind, GetParametersForImportErrorKind::UnsupportedOperationException(_))
     }
 }
 impl std::error::Error for GetParametersForImportError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetParametersForImportErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            GetParametersForImportErrorKind::InvalidArnException(_inner) => Some(_inner),
-            GetParametersForImportErrorKind::KmsInternalException(_inner) => Some(_inner),
-            GetParametersForImportErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            GetParametersForImportErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetParametersForImportErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            GetParametersForImportErrorKind::Unhandled(_inner) => Some(_inner),
+            GetParametersForImportErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            GetParametersForImportErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            GetParametersForImportErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            GetParametersForImportErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            GetParametersForImportErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetParametersForImportErrorKind::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            GetParametersForImportErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6573,15 +6985,15 @@ impl std::error::Error for GetParametersForImportError {
 #[derive(std::fmt::Debug)]
 pub struct GetKeyRotationStatusError {
     /// Kind of error that occurred.
-    pub kind: GetKeyRotationStatusErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetKeyRotationStatusErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetKeyRotationStatusError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetKeyRotationStatusErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6595,37 +7007,51 @@ pub enum GetKeyRotationStatusErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetKeyRotationStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetKeyRotationStatusErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            GetKeyRotationStatusErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            GetKeyRotationStatusErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            GetKeyRotationStatusErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            GetKeyRotationStatusErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetKeyRotationStatusErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
-            GetKeyRotationStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetKeyRotationStatusErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetKeyRotationStatusErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetKeyRotationStatusErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetKeyRotationStatusErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetKeyRotationStatusErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetKeyRotationStatusErrorKind::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetKeyRotationStatusErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6639,103 +7065,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetKeyRotationStatusError {
 }
 impl GetKeyRotationStatusError {
     /// Creates a new `GetKeyRotationStatusError`.
-    pub fn new(kind: GetKeyRotationStatusErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetKeyRotationStatusError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetKeyRotationStatusErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetKeyRotationStatusError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetKeyRotationStatusErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetKeyRotationStatusErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetKeyRotationStatusError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetKeyRotationStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetKeyRotationStatusError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetKeyRotationStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetKeyRotationStatusErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetKeyRotationStatusErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, GetKeyRotationStatusErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `GetKeyRotationStatusErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetKeyRotationStatusErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, GetKeyRotationStatusErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `GetKeyRotationStatusErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetKeyRotationStatusErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, GetKeyRotationStatusErrorKind::KmsInternalException(_))
     }
     /// Returns `true` if the error kind is `GetKeyRotationStatusErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetKeyRotationStatusErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, GetKeyRotationStatusErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `GetKeyRotationStatusErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetKeyRotationStatusErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, GetKeyRotationStatusErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetKeyRotationStatusErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetKeyRotationStatusErrorKind::UnsupportedOperationException(_)
-        )
+        matches!(&self.kind, GetKeyRotationStatusErrorKind::UnsupportedOperationException(_))
     }
 }
 impl std::error::Error for GetKeyRotationStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetKeyRotationStatusErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            GetKeyRotationStatusErrorKind::InvalidArnException(_inner) => Some(_inner),
-            GetKeyRotationStatusErrorKind::KmsInternalException(_inner) => Some(_inner),
-            GetKeyRotationStatusErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            GetKeyRotationStatusErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetKeyRotationStatusErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            GetKeyRotationStatusErrorKind::Unhandled(_inner) => Some(_inner),
+            GetKeyRotationStatusErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            GetKeyRotationStatusErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            GetKeyRotationStatusErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            GetKeyRotationStatusErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            GetKeyRotationStatusErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetKeyRotationStatusErrorKind::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            GetKeyRotationStatusErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6745,15 +7163,15 @@ impl std::error::Error for GetKeyRotationStatusError {
 #[derive(std::fmt::Debug)]
 pub struct GetKeyPolicyError {
     /// Kind of error that occurred.
-    pub kind: GetKeyPolicyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetKeyPolicyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetKeyPolicyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetKeyPolicyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6767,34 +7185,46 @@ pub enum GetKeyPolicyErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetKeyPolicyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetKeyPolicyErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            GetKeyPolicyErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            GetKeyPolicyErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            GetKeyPolicyErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            GetKeyPolicyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetKeyPolicyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetKeyPolicyErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetKeyPolicyErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetKeyPolicyErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetKeyPolicyErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetKeyPolicyErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetKeyPolicyErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6808,52 +7238,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetKeyPolicyError {
 }
 impl GetKeyPolicyError {
     /// Creates a new `GetKeyPolicyError`.
-    pub fn new(kind: GetKeyPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetKeyPolicyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetKeyPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetKeyPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetKeyPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetKeyPolicyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetKeyPolicyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetKeyPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetKeyPolicyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetKeyPolicyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetKeyPolicyErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetKeyPolicyErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, GetKeyPolicyErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `GetKeyPolicyErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
@@ -6865,10 +7292,7 @@ impl GetKeyPolicyError {
     }
     /// Returns `true` if the error kind is `GetKeyPolicyErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetKeyPolicyErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, GetKeyPolicyErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `GetKeyPolicyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -6878,12 +7302,24 @@ impl GetKeyPolicyError {
 impl std::error::Error for GetKeyPolicyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetKeyPolicyErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            GetKeyPolicyErrorKind::InvalidArnException(_inner) => Some(_inner),
-            GetKeyPolicyErrorKind::KmsInternalException(_inner) => Some(_inner),
-            GetKeyPolicyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            GetKeyPolicyErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetKeyPolicyErrorKind::Unhandled(_inner) => Some(_inner),
+            GetKeyPolicyErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            GetKeyPolicyErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            GetKeyPolicyErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            GetKeyPolicyErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            GetKeyPolicyErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetKeyPolicyErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6893,15 +7329,15 @@ impl std::error::Error for GetKeyPolicyError {
 #[derive(std::fmt::Debug)]
 pub struct GenerateRandomError {
     /// Kind of error that occurred.
-    pub kind: GenerateRandomErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GenerateRandomErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GenerateRandomError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GenerateRandomErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6909,14 +7345,14 @@ impl aws_smithy_http::result::CreateUnhandledError for GenerateRandomError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateRandomErrorKind {
-    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
-    /// <p>This exception is thrown under the following conditions:</p>
-    /// <ul>
-    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li>
-    /// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
-    /// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
-    /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
-    /// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li>
+    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p> 
+    /// <p>This exception is thrown under the following conditions:</p> 
+    /// <ul> 
+    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li> 
+    /// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li> 
+    /// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li> 
+    /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li> 
+    /// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li> 
     /// </ul>
     CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
     /// <p>The request was rejected because KMS cannot find a custom key store with the specified key store name or ID.</p>
@@ -6927,25 +7363,37 @@ pub enum GenerateRandomErrorKind {
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateRandomError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GenerateRandomErrorKind::CustomKeyStoreInvalidStateException(_inner) => _inner.fmt(f),
-            GenerateRandomErrorKind::CustomKeyStoreNotFoundException(_inner) => _inner.fmt(f),
-            GenerateRandomErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            GenerateRandomErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            GenerateRandomErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
-            GenerateRandomErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GenerateRandomErrorKind::CustomKeyStoreInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateRandomErrorKind::CustomKeyStoreNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateRandomErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateRandomErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateRandomErrorKind::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateRandomErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6959,66 +7407,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for GenerateRandomError {
 }
 impl GenerateRandomError {
     /// Creates a new `GenerateRandomError`.
-    pub fn new(kind: GenerateRandomErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GenerateRandomError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GenerateRandomErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GenerateRandomError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GenerateRandomErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GenerateRandomErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GenerateRandomError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GenerateRandomErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GenerateRandomError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GenerateRandomErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GenerateRandomErrorKind::CustomKeyStoreInvalidStateException`.
     pub fn is_custom_key_store_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateRandomErrorKind::CustomKeyStoreInvalidStateException(_)
-        )
+        matches!(&self.kind, GenerateRandomErrorKind::CustomKeyStoreInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `GenerateRandomErrorKind::CustomKeyStoreNotFoundException`.
     pub fn is_custom_key_store_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateRandomErrorKind::CustomKeyStoreNotFoundException(_)
-        )
+        matches!(&self.kind, GenerateRandomErrorKind::CustomKeyStoreNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GenerateRandomErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateRandomErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, GenerateRandomErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `GenerateRandomErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
@@ -7026,21 +7465,30 @@ impl GenerateRandomError {
     }
     /// Returns `true` if the error kind is `GenerateRandomErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateRandomErrorKind::UnsupportedOperationException(_)
-        )
+        matches!(&self.kind, GenerateRandomErrorKind::UnsupportedOperationException(_))
     }
 }
 impl std::error::Error for GenerateRandomError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GenerateRandomErrorKind::CustomKeyStoreInvalidStateException(_inner) => Some(_inner),
-            GenerateRandomErrorKind::CustomKeyStoreNotFoundException(_inner) => Some(_inner),
-            GenerateRandomErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            GenerateRandomErrorKind::KmsInternalException(_inner) => Some(_inner),
-            GenerateRandomErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            GenerateRandomErrorKind::Unhandled(_inner) => Some(_inner),
+            GenerateRandomErrorKind::CustomKeyStoreInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateRandomErrorKind::CustomKeyStoreNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateRandomErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateRandomErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateRandomErrorKind::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateRandomErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7050,15 +7498,15 @@ impl std::error::Error for GenerateRandomError {
 #[derive(std::fmt::Debug)]
 pub struct GenerateMacError {
     /// Kind of error that occurred.
-    pub kind: GenerateMacErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GenerateMacErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GenerateMacError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GenerateMacErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7070,48 +7518,64 @@ pub enum GenerateMacErrorKind {
     DisabledException(crate::error::DisabledException),
     /// <p>The request was rejected because the specified grant token is not valid.</p>
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
-    /// <p>The request was rejected for one of the following reasons: </p>
-    /// <ul>
-    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
-    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
-    /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>The request was rejected for one of the following reasons: </p> 
+    /// <ul> 
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li> 
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li> 
+    /// </ul> 
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p> 
     /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
     /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateMacError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GenerateMacErrorKind::DisabledException(_inner) => _inner.fmt(f),
-            GenerateMacErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
-            GenerateMacErrorKind::InvalidKeyUsageException(_inner) => _inner.fmt(f),
-            GenerateMacErrorKind::KeyUnavailableException(_inner) => _inner.fmt(f),
-            GenerateMacErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            GenerateMacErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            GenerateMacErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GenerateMacErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GenerateMacErrorKind::DisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateMacErrorKind::InvalidGrantTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateMacErrorKind::InvalidKeyUsageException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateMacErrorKind::KeyUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateMacErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateMacErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateMacErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateMacErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7125,63 +7589,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for GenerateMacError {
 }
 impl GenerateMacError {
     /// Creates a new `GenerateMacError`.
-    pub fn new(kind: GenerateMacErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GenerateMacError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GenerateMacErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GenerateMacError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GenerateMacErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GenerateMacErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GenerateMacError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GenerateMacErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GenerateMacError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GenerateMacErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GenerateMacErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
         matches!(&self.kind, GenerateMacErrorKind::DisabledException(_))
     }
     /// Returns `true` if the error kind is `GenerateMacErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateMacErrorKind::InvalidGrantTokenException(_)
-        )
+        matches!(&self.kind, GenerateMacErrorKind::InvalidGrantTokenException(_))
     }
     /// Returns `true` if the error kind is `GenerateMacErrorKind::InvalidKeyUsageException`.
     pub fn is_invalid_key_usage_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateMacErrorKind::InvalidKeyUsageException(_)
-        )
+        matches!(&self.kind, GenerateMacErrorKind::InvalidKeyUsageException(_))
     }
     /// Returns `true` if the error kind is `GenerateMacErrorKind::KeyUnavailableException`.
     pub fn is_key_unavailable_exception(&self) -> bool {
@@ -7193,10 +7651,7 @@ impl GenerateMacError {
     }
     /// Returns `true` if the error kind is `GenerateMacErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateMacErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, GenerateMacErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `GenerateMacErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -7206,14 +7661,30 @@ impl GenerateMacError {
 impl std::error::Error for GenerateMacError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GenerateMacErrorKind::DisabledException(_inner) => Some(_inner),
-            GenerateMacErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
-            GenerateMacErrorKind::InvalidKeyUsageException(_inner) => Some(_inner),
-            GenerateMacErrorKind::KeyUnavailableException(_inner) => Some(_inner),
-            GenerateMacErrorKind::KmsInternalException(_inner) => Some(_inner),
-            GenerateMacErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            GenerateMacErrorKind::NotFoundException(_inner) => Some(_inner),
-            GenerateMacErrorKind::Unhandled(_inner) => Some(_inner),
+            GenerateMacErrorKind::DisabledException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateMacErrorKind::InvalidGrantTokenException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateMacErrorKind::InvalidKeyUsageException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateMacErrorKind::KeyUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateMacErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateMacErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateMacErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateMacErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7223,17 +7694,15 @@ impl std::error::Error for GenerateMacError {
 #[derive(std::fmt::Debug)]
 pub struct GenerateDataKeyWithoutPlaintextError {
     /// Kind of error that occurred.
-    pub kind: GenerateDataKeyWithoutPlaintextErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GenerateDataKeyWithoutPlaintextErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GenerateDataKeyWithoutPlaintextError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7247,59 +7716,67 @@ pub enum GenerateDataKeyWithoutPlaintextErrorKind {
     DisabledException(crate::error::DisabledException),
     /// <p>The request was rejected because the specified grant token is not valid.</p>
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
-    /// <p>The request was rejected for one of the following reasons: </p>
-    /// <ul>
-    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
-    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
-    /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>The request was rejected for one of the following reasons: </p> 
+    /// <ul> 
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li> 
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li> 
+    /// </ul> 
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p> 
     /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
     /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateDataKeyWithoutPlaintextError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GenerateDataKeyWithoutPlaintextErrorKind::DependencyTimeoutException(_inner) => {
+            GenerateDataKeyWithoutPlaintextErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyWithoutPlaintextErrorKind::DisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyWithoutPlaintextErrorKind::InvalidGrantTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyWithoutPlaintextErrorKind::InvalidKeyUsageException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyWithoutPlaintextErrorKind::KeyUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyWithoutPlaintextErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyWithoutPlaintextErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyWithoutPlaintextErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GenerateDataKeyWithoutPlaintextErrorKind::DisabledException(_inner) => _inner.fmt(f),
-            GenerateDataKeyWithoutPlaintextErrorKind::InvalidGrantTokenException(_inner) => {
-                _inner.fmt(f)
-            }
-            GenerateDataKeyWithoutPlaintextErrorKind::InvalidKeyUsageException(_inner) => {
-                _inner.fmt(f)
-            }
-            GenerateDataKeyWithoutPlaintextErrorKind::KeyUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            GenerateDataKeyWithoutPlaintextErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            GenerateDataKeyWithoutPlaintextErrorKind::KmsInvalidStateException(_inner) => {
-                _inner.fmt(f)
-            }
-            GenerateDataKeyWithoutPlaintextErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7313,132 +7790,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for GenerateDataKeyWithoutPlainte
 }
 impl GenerateDataKeyWithoutPlaintextError {
     /// Creates a new `GenerateDataKeyWithoutPlaintextError`.
-    pub fn new(
-        kind: GenerateDataKeyWithoutPlaintextErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GenerateDataKeyWithoutPlaintextError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GenerateDataKeyWithoutPlaintextError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GenerateDataKeyWithoutPlaintextErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GenerateDataKeyWithoutPlaintextError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GenerateDataKeyWithoutPlaintextError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyWithoutPlaintextErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyWithoutPlaintextErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyWithoutPlaintextErrorKind::DisabledException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyWithoutPlaintextErrorKind::DisabledException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyWithoutPlaintextErrorKind::InvalidGrantTokenException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyWithoutPlaintextErrorKind::InvalidGrantTokenException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::InvalidKeyUsageException`.
     pub fn is_invalid_key_usage_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyWithoutPlaintextErrorKind::InvalidKeyUsageException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyWithoutPlaintextErrorKind::InvalidKeyUsageException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::KeyUnavailableException`.
     pub fn is_key_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyWithoutPlaintextErrorKind::KeyUnavailableException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyWithoutPlaintextErrorKind::KeyUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyWithoutPlaintextErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyWithoutPlaintextErrorKind::KmsInternalException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyWithoutPlaintextErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyWithoutPlaintextErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyWithoutPlaintextErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyWithoutPlaintextErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyWithoutPlaintextErrorKind::NotFoundException(_))
     }
 }
 impl std::error::Error for GenerateDataKeyWithoutPlaintextError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GenerateDataKeyWithoutPlaintextErrorKind::DependencyTimeoutException(_inner) => {
+            GenerateDataKeyWithoutPlaintextErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyWithoutPlaintextErrorKind::DisabledException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyWithoutPlaintextErrorKind::InvalidGrantTokenException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyWithoutPlaintextErrorKind::InvalidKeyUsageException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyWithoutPlaintextErrorKind::KeyUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyWithoutPlaintextErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyWithoutPlaintextErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyWithoutPlaintextErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GenerateDataKeyWithoutPlaintextErrorKind::DisabledException(_inner) => Some(_inner),
-            GenerateDataKeyWithoutPlaintextErrorKind::InvalidGrantTokenException(_inner) => {
-                Some(_inner)
-            }
-            GenerateDataKeyWithoutPlaintextErrorKind::InvalidKeyUsageException(_inner) => {
-                Some(_inner)
-            }
-            GenerateDataKeyWithoutPlaintextErrorKind::KeyUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            GenerateDataKeyWithoutPlaintextErrorKind::KmsInternalException(_inner) => Some(_inner),
-            GenerateDataKeyWithoutPlaintextErrorKind::KmsInvalidStateException(_inner) => {
-                Some(_inner)
-            }
-            GenerateDataKeyWithoutPlaintextErrorKind::NotFoundException(_inner) => Some(_inner),
-            GenerateDataKeyWithoutPlaintextErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7448,17 +7902,15 @@ impl std::error::Error for GenerateDataKeyWithoutPlaintextError {
 #[derive(std::fmt::Debug)]
 pub struct GenerateDataKeyPairWithoutPlaintextError {
     /// Kind of error that occurred.
-    pub kind: GenerateDataKeyPairWithoutPlaintextErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GenerateDataKeyPairWithoutPlaintextErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GenerateDataKeyPairWithoutPlaintextError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GenerateDataKeyPairWithoutPlaintextErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: GenerateDataKeyPairWithoutPlaintextErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7472,70 +7924,72 @@ pub enum GenerateDataKeyPairWithoutPlaintextErrorKind {
     DisabledException(crate::error::DisabledException),
     /// <p>The request was rejected because the specified grant token is not valid.</p>
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
-    /// <p>The request was rejected for one of the following reasons: </p>
-    /// <ul>
-    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
-    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
-    /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>The request was rejected for one of the following reasons: </p> 
+    /// <ul> 
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li> 
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li> 
+    /// </ul> 
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p> 
     /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
     /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateDataKeyPairWithoutPlaintextError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutException(_inner) => {
+            GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledException(_inner) => {
-                _inner.fmt(f)
-            }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenException(_inner) => {
-                _inner.fmt(f)
-            }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageException(_inner) => {
-                _inner.fmt(f)
-            }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableException(_inner) => {
-                _inner.fmt(f)
-            }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInternalException(_inner) => {
-                _inner.fmt(f)
-            }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInvalidStateException(_inner) => {
-                _inner.fmt(f)
-            }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationException(_inner) => {
-                _inner.fmt(f)
-            }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7549,144 +8003,116 @@ impl aws_smithy_types::retry::ProvideErrorKind for GenerateDataKeyPairWithoutPla
 }
 impl GenerateDataKeyPairWithoutPlaintextError {
     /// Creates a new `GenerateDataKeyPairWithoutPlaintextError`.
-    pub fn new(
-        kind: GenerateDataKeyPairWithoutPlaintextErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GenerateDataKeyPairWithoutPlaintextError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GenerateDataKeyPairWithoutPlaintextErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GenerateDataKeyPairWithoutPlaintextError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GenerateDataKeyPairWithoutPlaintextErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GenerateDataKeyPairWithoutPlaintextErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GenerateDataKeyPairWithoutPlaintextError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GenerateDataKeyPairWithoutPlaintextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GenerateDataKeyPairWithoutPlaintextError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GenerateDataKeyPairWithoutPlaintextErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageException`.
     pub fn is_invalid_key_usage_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableException`.
     pub fn is_key_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInternalException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationException(_))
     }
 }
 impl std::error::Error for GenerateDataKeyPairWithoutPlaintextError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutException(_inner) => {
+            GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyPairWithoutPlaintextErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledException(_inner) => Some(_inner),
-            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenException(_inner) => {
-                Some(_inner)
-            }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageException(_inner) => {
-                Some(_inner)
-            }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableException(_inner) => {
-                Some(_inner)
-            }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInternalException(_inner) => {
-                Some(_inner)
-            }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInvalidStateException(_inner) => {
-                Some(_inner)
-            }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundException(_inner) => Some(_inner),
-            GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationException(_inner) => {
-                Some(_inner)
-            }
-            GenerateDataKeyPairWithoutPlaintextErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7696,15 +8122,15 @@ impl std::error::Error for GenerateDataKeyPairWithoutPlaintextError {
 #[derive(std::fmt::Debug)]
 pub struct GenerateDataKeyPairError {
     /// Kind of error that occurred.
-    pub kind: GenerateDataKeyPairErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GenerateDataKeyPairErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GenerateDataKeyPairError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GenerateDataKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7718,52 +8144,72 @@ pub enum GenerateDataKeyPairErrorKind {
     DisabledException(crate::error::DisabledException),
     /// <p>The request was rejected because the specified grant token is not valid.</p>
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
-    /// <p>The request was rejected for one of the following reasons: </p>
-    /// <ul>
-    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
-    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
-    /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>The request was rejected for one of the following reasons: </p> 
+    /// <ul> 
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li> 
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li> 
+    /// </ul> 
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p> 
     /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
     /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateDataKeyPairError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GenerateDataKeyPairErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            GenerateDataKeyPairErrorKind::DisabledException(_inner) => _inner.fmt(f),
-            GenerateDataKeyPairErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
-            GenerateDataKeyPairErrorKind::InvalidKeyUsageException(_inner) => _inner.fmt(f),
-            GenerateDataKeyPairErrorKind::KeyUnavailableException(_inner) => _inner.fmt(f),
-            GenerateDataKeyPairErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            GenerateDataKeyPairErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            GenerateDataKeyPairErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GenerateDataKeyPairErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
-            GenerateDataKeyPairErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GenerateDataKeyPairErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyPairErrorKind::DisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyPairErrorKind::InvalidGrantTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyPairErrorKind::InvalidKeyUsageException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyPairErrorKind::KeyUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyPairErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyPairErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyPairErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyPairErrorKind::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyPairErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7777,123 +8223,116 @@ impl aws_smithy_types::retry::ProvideErrorKind for GenerateDataKeyPairError {
 }
 impl GenerateDataKeyPairError {
     /// Creates a new `GenerateDataKeyPairError`.
-    pub fn new(kind: GenerateDataKeyPairErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GenerateDataKeyPairError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GenerateDataKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GenerateDataKeyPairError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GenerateDataKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GenerateDataKeyPairErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GenerateDataKeyPairError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GenerateDataKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GenerateDataKeyPairError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GenerateDataKeyPairErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GenerateDataKeyPairErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyPairErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyPairErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyPairErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyPairErrorKind::DisabledException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyPairErrorKind::DisabledException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyPairErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyPairErrorKind::InvalidGrantTokenException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyPairErrorKind::InvalidGrantTokenException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyPairErrorKind::InvalidKeyUsageException`.
     pub fn is_invalid_key_usage_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyPairErrorKind::InvalidKeyUsageException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyPairErrorKind::InvalidKeyUsageException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyPairErrorKind::KeyUnavailableException`.
     pub fn is_key_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyPairErrorKind::KeyUnavailableException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyPairErrorKind::KeyUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyPairErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyPairErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyPairErrorKind::KmsInternalException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyPairErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyPairErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyPairErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyPairErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyPairErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyPairErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyPairErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyPairErrorKind::UnsupportedOperationException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyPairErrorKind::UnsupportedOperationException(_))
     }
 }
 impl std::error::Error for GenerateDataKeyPairError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GenerateDataKeyPairErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            GenerateDataKeyPairErrorKind::DisabledException(_inner) => Some(_inner),
-            GenerateDataKeyPairErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
-            GenerateDataKeyPairErrorKind::InvalidKeyUsageException(_inner) => Some(_inner),
-            GenerateDataKeyPairErrorKind::KeyUnavailableException(_inner) => Some(_inner),
-            GenerateDataKeyPairErrorKind::KmsInternalException(_inner) => Some(_inner),
-            GenerateDataKeyPairErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            GenerateDataKeyPairErrorKind::NotFoundException(_inner) => Some(_inner),
-            GenerateDataKeyPairErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            GenerateDataKeyPairErrorKind::Unhandled(_inner) => Some(_inner),
+            GenerateDataKeyPairErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyPairErrorKind::DisabledException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyPairErrorKind::InvalidGrantTokenException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyPairErrorKind::InvalidKeyUsageException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyPairErrorKind::KeyUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyPairErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyPairErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyPairErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyPairErrorKind::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyPairErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7903,15 +8342,15 @@ impl std::error::Error for GenerateDataKeyPairError {
 #[derive(std::fmt::Debug)]
 pub struct GenerateDataKeyError {
     /// Kind of error that occurred.
-    pub kind: GenerateDataKeyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GenerateDataKeyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GenerateDataKeyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GenerateDataKeyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7925,49 +8364,67 @@ pub enum GenerateDataKeyErrorKind {
     DisabledException(crate::error::DisabledException),
     /// <p>The request was rejected because the specified grant token is not valid.</p>
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
-    /// <p>The request was rejected for one of the following reasons: </p>
-    /// <ul>
-    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
-    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
-    /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>The request was rejected for one of the following reasons: </p> 
+    /// <ul> 
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li> 
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li> 
+    /// </ul> 
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p> 
     /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
     /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GenerateDataKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GenerateDataKeyErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            GenerateDataKeyErrorKind::DisabledException(_inner) => _inner.fmt(f),
-            GenerateDataKeyErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
-            GenerateDataKeyErrorKind::InvalidKeyUsageException(_inner) => _inner.fmt(f),
-            GenerateDataKeyErrorKind::KeyUnavailableException(_inner) => _inner.fmt(f),
-            GenerateDataKeyErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            GenerateDataKeyErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            GenerateDataKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GenerateDataKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GenerateDataKeyErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyErrorKind::DisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyErrorKind::InvalidGrantTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyErrorKind::InvalidKeyUsageException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyErrorKind::KeyUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GenerateDataKeyErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7981,52 +8438,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for GenerateDataKeyError {
 }
 impl GenerateDataKeyError {
     /// Creates a new `GenerateDataKeyError`.
-    pub fn new(kind: GenerateDataKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GenerateDataKeyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GenerateDataKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GenerateDataKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GenerateDataKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GenerateDataKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GenerateDataKeyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GenerateDataKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GenerateDataKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GenerateDataKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GenerateDataKeyErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
@@ -8034,38 +8488,23 @@ impl GenerateDataKeyError {
     }
     /// Returns `true` if the error kind is `GenerateDataKeyErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyErrorKind::InvalidGrantTokenException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyErrorKind::InvalidGrantTokenException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyErrorKind::InvalidKeyUsageException`.
     pub fn is_invalid_key_usage_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyErrorKind::InvalidKeyUsageException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyErrorKind::InvalidKeyUsageException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyErrorKind::KeyUnavailableException`.
     pub fn is_key_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyErrorKind::KeyUnavailableException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyErrorKind::KeyUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyErrorKind::KmsInternalException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GenerateDataKeyErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, GenerateDataKeyErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `GenerateDataKeyErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -8075,15 +8514,33 @@ impl GenerateDataKeyError {
 impl std::error::Error for GenerateDataKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GenerateDataKeyErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            GenerateDataKeyErrorKind::DisabledException(_inner) => Some(_inner),
-            GenerateDataKeyErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
-            GenerateDataKeyErrorKind::InvalidKeyUsageException(_inner) => Some(_inner),
-            GenerateDataKeyErrorKind::KeyUnavailableException(_inner) => Some(_inner),
-            GenerateDataKeyErrorKind::KmsInternalException(_inner) => Some(_inner),
-            GenerateDataKeyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            GenerateDataKeyErrorKind::NotFoundException(_inner) => Some(_inner),
-            GenerateDataKeyErrorKind::Unhandled(_inner) => Some(_inner),
+            GenerateDataKeyErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyErrorKind::DisabledException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyErrorKind::InvalidGrantTokenException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyErrorKind::InvalidKeyUsageException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyErrorKind::KeyUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GenerateDataKeyErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8093,15 +8550,15 @@ impl std::error::Error for GenerateDataKeyError {
 #[derive(std::fmt::Debug)]
 pub struct EncryptError {
     /// Kind of error that occurred.
-    pub kind: EncryptErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: EncryptErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for EncryptError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: EncryptErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8115,49 +8572,67 @@ pub enum EncryptErrorKind {
     DisabledException(crate::error::DisabledException),
     /// <p>The request was rejected because the specified grant token is not valid.</p>
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
-    /// <p>The request was rejected for one of the following reasons: </p>
-    /// <ul>
-    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
-    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
-    /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>The request was rejected for one of the following reasons: </p> 
+    /// <ul> 
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li> 
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li> 
+    /// </ul> 
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p> 
     /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
     /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EncryptError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            EncryptErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            EncryptErrorKind::DisabledException(_inner) => _inner.fmt(f),
-            EncryptErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
-            EncryptErrorKind::InvalidKeyUsageException(_inner) => _inner.fmt(f),
-            EncryptErrorKind::KeyUnavailableException(_inner) => _inner.fmt(f),
-            EncryptErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            EncryptErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            EncryptErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            EncryptErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            EncryptErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EncryptErrorKind::DisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EncryptErrorKind::InvalidGrantTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EncryptErrorKind::InvalidKeyUsageException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EncryptErrorKind::KeyUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EncryptErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EncryptErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EncryptErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EncryptErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8171,46 +8646,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for EncryptError {
 }
 impl EncryptError {
     /// Creates a new `EncryptError`.
-    pub fn new(kind: EncryptErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `EncryptError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: EncryptErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `EncryptError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: EncryptErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: EncryptErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `EncryptError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: EncryptErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `EncryptError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: EncryptErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `EncryptErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(&self.kind, EncryptErrorKind::DependencyTimeoutException(_))
@@ -8247,15 +8722,33 @@ impl EncryptError {
 impl std::error::Error for EncryptError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            EncryptErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            EncryptErrorKind::DisabledException(_inner) => Some(_inner),
-            EncryptErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
-            EncryptErrorKind::InvalidKeyUsageException(_inner) => Some(_inner),
-            EncryptErrorKind::KeyUnavailableException(_inner) => Some(_inner),
-            EncryptErrorKind::KmsInternalException(_inner) => Some(_inner),
-            EncryptErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            EncryptErrorKind::NotFoundException(_inner) => Some(_inner),
-            EncryptErrorKind::Unhandled(_inner) => Some(_inner),
+            EncryptErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            EncryptErrorKind::DisabledException(_inner) =>
+            Some(_inner)
+            ,
+            EncryptErrorKind::InvalidGrantTokenException(_inner) =>
+            Some(_inner)
+            ,
+            EncryptErrorKind::InvalidKeyUsageException(_inner) =>
+            Some(_inner)
+            ,
+            EncryptErrorKind::KeyUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            EncryptErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            EncryptErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            EncryptErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            EncryptErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8265,15 +8758,15 @@ impl std::error::Error for EncryptError {
 #[derive(std::fmt::Debug)]
 pub struct EnableKeyRotationError {
     /// Kind of error that occurred.
-    pub kind: EnableKeyRotationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: EnableKeyRotationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for EnableKeyRotationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: EnableKeyRotationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8289,38 +8782,54 @@ pub enum EnableKeyRotationErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableKeyRotationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            EnableKeyRotationErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            EnableKeyRotationErrorKind::DisabledException(_inner) => _inner.fmt(f),
-            EnableKeyRotationErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            EnableKeyRotationErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            EnableKeyRotationErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            EnableKeyRotationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            EnableKeyRotationErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
-            EnableKeyRotationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            EnableKeyRotationErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableKeyRotationErrorKind::DisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableKeyRotationErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableKeyRotationErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableKeyRotationErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableKeyRotationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableKeyRotationErrorKind::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableKeyRotationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8334,52 +8843,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for EnableKeyRotationError {
 }
 impl EnableKeyRotationError {
     /// Creates a new `EnableKeyRotationError`.
-    pub fn new(kind: EnableKeyRotationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `EnableKeyRotationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: EnableKeyRotationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `EnableKeyRotationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: EnableKeyRotationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: EnableKeyRotationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `EnableKeyRotationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: EnableKeyRotationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `EnableKeyRotationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: EnableKeyRotationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `EnableKeyRotationErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            EnableKeyRotationErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, EnableKeyRotationErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `EnableKeyRotationErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
@@ -8387,24 +8893,15 @@ impl EnableKeyRotationError {
     }
     /// Returns `true` if the error kind is `EnableKeyRotationErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            EnableKeyRotationErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, EnableKeyRotationErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `EnableKeyRotationErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            EnableKeyRotationErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, EnableKeyRotationErrorKind::KmsInternalException(_))
     }
     /// Returns `true` if the error kind is `EnableKeyRotationErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            EnableKeyRotationErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, EnableKeyRotationErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `EnableKeyRotationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -8412,23 +8909,36 @@ impl EnableKeyRotationError {
     }
     /// Returns `true` if the error kind is `EnableKeyRotationErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            EnableKeyRotationErrorKind::UnsupportedOperationException(_)
-        )
+        matches!(&self.kind, EnableKeyRotationErrorKind::UnsupportedOperationException(_))
     }
 }
 impl std::error::Error for EnableKeyRotationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            EnableKeyRotationErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            EnableKeyRotationErrorKind::DisabledException(_inner) => Some(_inner),
-            EnableKeyRotationErrorKind::InvalidArnException(_inner) => Some(_inner),
-            EnableKeyRotationErrorKind::KmsInternalException(_inner) => Some(_inner),
-            EnableKeyRotationErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            EnableKeyRotationErrorKind::NotFoundException(_inner) => Some(_inner),
-            EnableKeyRotationErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            EnableKeyRotationErrorKind::Unhandled(_inner) => Some(_inner),
+            EnableKeyRotationErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            EnableKeyRotationErrorKind::DisabledException(_inner) =>
+            Some(_inner)
+            ,
+            EnableKeyRotationErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            EnableKeyRotationErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            EnableKeyRotationErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            EnableKeyRotationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            EnableKeyRotationErrorKind::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            EnableKeyRotationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8438,15 +8948,15 @@ impl std::error::Error for EnableKeyRotationError {
 #[derive(std::fmt::Debug)]
 pub struct EnableKeyError {
     /// Kind of error that occurred.
-    pub kind: EnableKeyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: EnableKeyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for EnableKeyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: EnableKeyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8460,37 +8970,51 @@ pub enum EnableKeyErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            EnableKeyErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            EnableKeyErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            EnableKeyErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            EnableKeyErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            EnableKeyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            EnableKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            EnableKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            EnableKeyErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableKeyErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableKeyErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableKeyErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableKeyErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableKeyErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableKeyErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8504,52 +9028,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for EnableKeyError {
 }
 impl EnableKeyError {
     /// Creates a new `EnableKeyError`.
-    pub fn new(kind: EnableKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `EnableKeyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: EnableKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `EnableKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: EnableKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: EnableKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `EnableKeyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: EnableKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `EnableKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: EnableKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `EnableKeyErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            EnableKeyErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, EnableKeyErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `EnableKeyErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
@@ -8575,13 +9096,27 @@ impl EnableKeyError {
 impl std::error::Error for EnableKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            EnableKeyErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            EnableKeyErrorKind::InvalidArnException(_inner) => Some(_inner),
-            EnableKeyErrorKind::KmsInternalException(_inner) => Some(_inner),
-            EnableKeyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            EnableKeyErrorKind::LimitExceededException(_inner) => Some(_inner),
-            EnableKeyErrorKind::NotFoundException(_inner) => Some(_inner),
-            EnableKeyErrorKind::Unhandled(_inner) => Some(_inner),
+            EnableKeyErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            EnableKeyErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            EnableKeyErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            EnableKeyErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            EnableKeyErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            EnableKeyErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            EnableKeyErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8591,17 +9126,15 @@ impl std::error::Error for EnableKeyError {
 #[derive(std::fmt::Debug)]
 pub struct DisconnectCustomKeyStoreError {
     /// Kind of error that occurred.
-    pub kind: DisconnectCustomKeyStoreErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DisconnectCustomKeyStoreErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DisconnectCustomKeyStoreError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DisconnectCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DisconnectCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -8609,41 +9142,45 @@ impl aws_smithy_http::result::CreateUnhandledError for DisconnectCustomKeyStoreE
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DisconnectCustomKeyStoreErrorKind {
-    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
-    /// <p>This exception is thrown under the following conditions:</p>
-    /// <ul>
-    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li>
-    /// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
-    /// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
-    /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
-    /// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li>
+    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p> 
+    /// <p>This exception is thrown under the following conditions:</p> 
+    /// <ul> 
+    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li> 
+    /// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li> 
+    /// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li> 
+    /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li> 
+    /// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li> 
     /// </ul>
     CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
     /// <p>The request was rejected because KMS cannot find a custom key store with the specified key store name or ID.</p>
     CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisconnectCustomKeyStoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) => {
+            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisconnectCustomKeyStoreErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisconnectCustomKeyStoreErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            DisconnectCustomKeyStoreErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            DisconnectCustomKeyStoreErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8657,83 +9194,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DisconnectCustomKeyStoreError
 }
 impl DisconnectCustomKeyStoreError {
     /// Creates a new `DisconnectCustomKeyStoreError`.
-    pub fn new(kind: DisconnectCustomKeyStoreErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DisconnectCustomKeyStoreError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DisconnectCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DisconnectCustomKeyStoreError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DisconnectCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DisconnectCustomKeyStoreErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DisconnectCustomKeyStoreError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DisconnectCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DisconnectCustomKeyStoreError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DisconnectCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DisconnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException`.
     pub fn is_custom_key_store_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_)
-        )
+        matches!(&self.kind, DisconnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `DisconnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException`.
     pub fn is_custom_key_store_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_)
-        )
+        matches!(&self.kind, DisconnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DisconnectCustomKeyStoreErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisconnectCustomKeyStoreErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, DisconnectCustomKeyStoreErrorKind::KmsInternalException(_))
     }
 }
 impl std::error::Error for DisconnectCustomKeyStoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) => {
+            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DisconnectCustomKeyStoreErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            DisconnectCustomKeyStoreErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DisconnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            DisconnectCustomKeyStoreErrorKind::KmsInternalException(_inner) => Some(_inner),
-            DisconnectCustomKeyStoreErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8743,15 +9271,15 @@ impl std::error::Error for DisconnectCustomKeyStoreError {
 #[derive(std::fmt::Debug)]
 pub struct DisableKeyRotationError {
     /// Kind of error that occurred.
-    pub kind: DisableKeyRotationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DisableKeyRotationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DisableKeyRotationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DisableKeyRotationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8767,38 +9295,54 @@ pub enum DisableKeyRotationErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableKeyRotationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DisableKeyRotationErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            DisableKeyRotationErrorKind::DisabledException(_inner) => _inner.fmt(f),
-            DisableKeyRotationErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            DisableKeyRotationErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            DisableKeyRotationErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            DisableKeyRotationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DisableKeyRotationErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
-            DisableKeyRotationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DisableKeyRotationErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableKeyRotationErrorKind::DisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableKeyRotationErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableKeyRotationErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableKeyRotationErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableKeyRotationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableKeyRotationErrorKind::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableKeyRotationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8812,107 +9356,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for DisableKeyRotationError {
 }
 impl DisableKeyRotationError {
     /// Creates a new `DisableKeyRotationError`.
-    pub fn new(kind: DisableKeyRotationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DisableKeyRotationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DisableKeyRotationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DisableKeyRotationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DisableKeyRotationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DisableKeyRotationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DisableKeyRotationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DisableKeyRotationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DisableKeyRotationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DisableKeyRotationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DisableKeyRotationErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisableKeyRotationErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, DisableKeyRotationErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `DisableKeyRotationErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisableKeyRotationErrorKind::DisabledException(_)
-        )
+        matches!(&self.kind, DisableKeyRotationErrorKind::DisabledException(_))
     }
     /// Returns `true` if the error kind is `DisableKeyRotationErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisableKeyRotationErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, DisableKeyRotationErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `DisableKeyRotationErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisableKeyRotationErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, DisableKeyRotationErrorKind::KmsInternalException(_))
     }
     /// Returns `true` if the error kind is `DisableKeyRotationErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisableKeyRotationErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, DisableKeyRotationErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `DisableKeyRotationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisableKeyRotationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DisableKeyRotationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DisableKeyRotationErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisableKeyRotationErrorKind::UnsupportedOperationException(_)
-        )
+        matches!(&self.kind, DisableKeyRotationErrorKind::UnsupportedOperationException(_))
     }
 }
 impl std::error::Error for DisableKeyRotationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DisableKeyRotationErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            DisableKeyRotationErrorKind::DisabledException(_inner) => Some(_inner),
-            DisableKeyRotationErrorKind::InvalidArnException(_inner) => Some(_inner),
-            DisableKeyRotationErrorKind::KmsInternalException(_inner) => Some(_inner),
-            DisableKeyRotationErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            DisableKeyRotationErrorKind::NotFoundException(_inner) => Some(_inner),
-            DisableKeyRotationErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            DisableKeyRotationErrorKind::Unhandled(_inner) => Some(_inner),
+            DisableKeyRotationErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            DisableKeyRotationErrorKind::DisabledException(_inner) =>
+            Some(_inner)
+            ,
+            DisableKeyRotationErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            DisableKeyRotationErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            DisableKeyRotationErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            DisableKeyRotationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DisableKeyRotationErrorKind::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            DisableKeyRotationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8922,15 +9461,15 @@ impl std::error::Error for DisableKeyRotationError {
 #[derive(std::fmt::Debug)]
 pub struct DisableKeyError {
     /// Kind of error that occurred.
-    pub kind: DisableKeyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DisableKeyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DisableKeyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DisableKeyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8944,34 +9483,46 @@ pub enum DisableKeyErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DisableKeyErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            DisableKeyErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            DisableKeyErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            DisableKeyErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            DisableKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DisableKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DisableKeyErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableKeyErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableKeyErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableKeyErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableKeyErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableKeyErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8985,52 +9536,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for DisableKeyError {
 }
 impl DisableKeyError {
     /// Creates a new `DisableKeyError`.
-    pub fn new(kind: DisableKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DisableKeyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DisableKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DisableKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DisableKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DisableKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DisableKeyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DisableKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DisableKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DisableKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DisableKeyErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisableKeyErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, DisableKeyErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `DisableKeyErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
@@ -9052,12 +9600,24 @@ impl DisableKeyError {
 impl std::error::Error for DisableKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DisableKeyErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            DisableKeyErrorKind::InvalidArnException(_inner) => Some(_inner),
-            DisableKeyErrorKind::KmsInternalException(_inner) => Some(_inner),
-            DisableKeyErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            DisableKeyErrorKind::NotFoundException(_inner) => Some(_inner),
-            DisableKeyErrorKind::Unhandled(_inner) => Some(_inner),
+            DisableKeyErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            DisableKeyErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            DisableKeyErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            DisableKeyErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            DisableKeyErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DisableKeyErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9067,15 +9627,15 @@ impl std::error::Error for DisableKeyError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeKeyError {
     /// Kind of error that occurred.
-    pub kind: DescribeKeyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeKeyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeKeyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeKeyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9091,24 +9651,34 @@ pub enum DescribeKeyErrorKind {
     KmsInternalException(crate::error::KmsInternalException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeKeyErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            DescribeKeyErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            DescribeKeyErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            DescribeKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DescribeKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeKeyErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeKeyErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeKeyErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeKeyErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeKeyErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9122,52 +9692,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeKeyError {
 }
 impl DescribeKeyError {
     /// Creates a new `DescribeKeyError`.
-    pub fn new(kind: DescribeKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeKeyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeKeyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeKeyErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeKeyErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, DescribeKeyErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `DescribeKeyErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
@@ -9185,11 +9752,21 @@ impl DescribeKeyError {
 impl std::error::Error for DescribeKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeKeyErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            DescribeKeyErrorKind::InvalidArnException(_inner) => Some(_inner),
-            DescribeKeyErrorKind::KmsInternalException(_inner) => Some(_inner),
-            DescribeKeyErrorKind::NotFoundException(_inner) => Some(_inner),
-            DescribeKeyErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeKeyErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeKeyErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeKeyErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeKeyErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeKeyErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9199,15 +9776,15 @@ impl std::error::Error for DescribeKeyError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeCustomKeyStoresError {
     /// Kind of error that occurred.
-    pub kind: DescribeCustomKeyStoresErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeCustomKeyStoresErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeCustomKeyStoresError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeCustomKeyStoresErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9221,25 +9798,31 @@ pub enum DescribeCustomKeyStoresErrorKind {
     InvalidMarkerException(crate::error::InvalidMarkerException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCustomKeyStoresError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundException(_inner) => {
+            DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCustomKeyStoresErrorKind::InvalidMarkerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCustomKeyStoresErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCustomKeyStoresErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeCustomKeyStoresErrorKind::InvalidMarkerException(_inner) => _inner.fmt(f),
-            DescribeCustomKeyStoresErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            DescribeCustomKeyStoresErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -9253,81 +9836,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeCustomKeyStoresError 
 }
 impl DescribeCustomKeyStoresError {
     /// Creates a new `DescribeCustomKeyStoresError`.
-    pub fn new(kind: DescribeCustomKeyStoresErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeCustomKeyStoresError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeCustomKeyStoresErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeCustomKeyStoresError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeCustomKeyStoresErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeCustomKeyStoresErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeCustomKeyStoresError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeCustomKeyStoresErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeCustomKeyStoresError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeCustomKeyStoresErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundException`.
     pub fn is_custom_key_store_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeCustomKeyStoresErrorKind::InvalidMarkerException`.
     pub fn is_invalid_marker_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCustomKeyStoresErrorKind::InvalidMarkerException(_)
-        )
+        matches!(&self.kind, DescribeCustomKeyStoresErrorKind::InvalidMarkerException(_))
     }
     /// Returns `true` if the error kind is `DescribeCustomKeyStoresErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCustomKeyStoresErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, DescribeCustomKeyStoresErrorKind::KmsInternalException(_))
     }
 }
 impl std::error::Error for DescribeCustomKeyStoresError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundException(_inner) => {
+            DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCustomKeyStoresErrorKind::InvalidMarkerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCustomKeyStoresErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCustomKeyStoresErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeCustomKeyStoresErrorKind::InvalidMarkerException(_inner) => Some(_inner),
-            DescribeCustomKeyStoresErrorKind::KmsInternalException(_inner) => Some(_inner),
-            DescribeCustomKeyStoresErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9337,17 +9913,15 @@ impl std::error::Error for DescribeCustomKeyStoresError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteImportedKeyMaterialError {
     /// Kind of error that occurred.
-    pub kind: DeleteImportedKeyMaterialErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteImportedKeyMaterialErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteImportedKeyMaterialError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteImportedKeyMaterialErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeleteImportedKeyMaterialErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -9361,39 +9935,51 @@ pub enum DeleteImportedKeyMaterialErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteImportedKeyMaterialError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteImportedKeyMaterialErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            DeleteImportedKeyMaterialErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            DeleteImportedKeyMaterialErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            DeleteImportedKeyMaterialErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            DeleteImportedKeyMaterialErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteImportedKeyMaterialErrorKind::UnsupportedOperationException(_inner) => {
+            DeleteImportedKeyMaterialErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteImportedKeyMaterialErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteImportedKeyMaterialErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteImportedKeyMaterialErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteImportedKeyMaterialErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteImportedKeyMaterialErrorKind::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteImportedKeyMaterialErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteImportedKeyMaterialErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -9407,105 +9993,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteImportedKeyMaterialErro
 }
 impl DeleteImportedKeyMaterialError {
     /// Creates a new `DeleteImportedKeyMaterialError`.
-    pub fn new(kind: DeleteImportedKeyMaterialErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteImportedKeyMaterialError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteImportedKeyMaterialErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteImportedKeyMaterialError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteImportedKeyMaterialErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteImportedKeyMaterialErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteImportedKeyMaterialError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteImportedKeyMaterialErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteImportedKeyMaterialError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteImportedKeyMaterialErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteImportedKeyMaterialErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteImportedKeyMaterialErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, DeleteImportedKeyMaterialErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `DeleteImportedKeyMaterialErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteImportedKeyMaterialErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, DeleteImportedKeyMaterialErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `DeleteImportedKeyMaterialErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteImportedKeyMaterialErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, DeleteImportedKeyMaterialErrorKind::KmsInternalException(_))
     }
     /// Returns `true` if the error kind is `DeleteImportedKeyMaterialErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteImportedKeyMaterialErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, DeleteImportedKeyMaterialErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `DeleteImportedKeyMaterialErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteImportedKeyMaterialErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteImportedKeyMaterialErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteImportedKeyMaterialErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteImportedKeyMaterialErrorKind::UnsupportedOperationException(_)
-        )
+        matches!(&self.kind, DeleteImportedKeyMaterialErrorKind::UnsupportedOperationException(_))
     }
 }
 impl std::error::Error for DeleteImportedKeyMaterialError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteImportedKeyMaterialErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            DeleteImportedKeyMaterialErrorKind::InvalidArnException(_inner) => Some(_inner),
-            DeleteImportedKeyMaterialErrorKind::KmsInternalException(_inner) => Some(_inner),
-            DeleteImportedKeyMaterialErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            DeleteImportedKeyMaterialErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteImportedKeyMaterialErrorKind::UnsupportedOperationException(_inner) => {
+            DeleteImportedKeyMaterialErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteImportedKeyMaterialErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteImportedKeyMaterialErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteImportedKeyMaterialErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteImportedKeyMaterialErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteImportedKeyMaterialErrorKind::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteImportedKeyMaterialErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteImportedKeyMaterialErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9515,15 +10091,15 @@ impl std::error::Error for DeleteImportedKeyMaterialError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteCustomKeyStoreError {
     /// Kind of error that occurred.
-    pub kind: DeleteCustomKeyStoreErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteCustomKeyStoreErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteCustomKeyStoreError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9533,40 +10109,48 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteCustomKeyStoreError
 pub enum DeleteCustomKeyStoreErrorKind {
     /// <p>The request was rejected because the custom key store contains KMS keys. After verifying that you do not need to use the KMS keys, use the <code>ScheduleKeyDeletion</code> operation to delete the KMS keys. After they are deleted, you can delete the custom key store.</p>
     CustomKeyStoreHasCmKsException(crate::error::CustomKeyStoreHasCmKsException),
-    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
-    /// <p>This exception is thrown under the following conditions:</p>
-    /// <ul>
-    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li>
-    /// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
-    /// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
-    /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
-    /// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li>
+    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p> 
+    /// <p>This exception is thrown under the following conditions:</p> 
+    /// <ul> 
+    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li> 
+    /// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li> 
+    /// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li> 
+    /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li> 
+    /// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li> 
     /// </ul>
     CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
     /// <p>The request was rejected because KMS cannot find a custom key store with the specified key store name or ID.</p>
     CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteCustomKeyStoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteCustomKeyStoreErrorKind::CustomKeyStoreHasCmKsException(_inner) => _inner.fmt(f),
-            DeleteCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) => {
+            DeleteCustomKeyStoreErrorKind::CustomKeyStoreHasCmKsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCustomKeyStoreErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteCustomKeyStoreErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) => _inner.fmt(f),
-            DeleteCustomKeyStoreErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            DeleteCustomKeyStoreErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -9580,89 +10164,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteCustomKeyStoreError {
 }
 impl DeleteCustomKeyStoreError {
     /// Creates a new `DeleteCustomKeyStoreError`.
-    pub fn new(kind: DeleteCustomKeyStoreErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteCustomKeyStoreError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteCustomKeyStoreError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteCustomKeyStoreErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteCustomKeyStoreError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteCustomKeyStoreError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteCustomKeyStoreErrorKind::CustomKeyStoreHasCmKsException`.
     pub fn is_custom_key_store_has_cm_ks_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCustomKeyStoreErrorKind::CustomKeyStoreHasCmKsException(_)
-        )
+        matches!(&self.kind, DeleteCustomKeyStoreErrorKind::CustomKeyStoreHasCmKsException(_))
     }
     /// Returns `true` if the error kind is `DeleteCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException`.
     pub fn is_custom_key_store_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_)
-        )
+        matches!(&self.kind, DeleteCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException`.
     pub fn is_custom_key_store_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteCustomKeyStoreErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteCustomKeyStoreErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, DeleteCustomKeyStoreErrorKind::KmsInternalException(_))
     }
 }
 impl std::error::Error for DeleteCustomKeyStoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteCustomKeyStoreErrorKind::CustomKeyStoreHasCmKsException(_inner) => Some(_inner),
-            DeleteCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) => {
+            DeleteCustomKeyStoreErrorKind::CustomKeyStoreHasCmKsException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCustomKeyStoreErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteCustomKeyStoreErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) => Some(_inner),
-            DeleteCustomKeyStoreErrorKind::KmsInternalException(_inner) => Some(_inner),
-            DeleteCustomKeyStoreErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9670,25 +10246,20 @@ impl std::error::Error for DeleteCustomKeyStoreError {
 /// <p>The request was rejected because the custom key store contains KMS keys. After verifying that you do not need to use the KMS keys, use the <code>ScheduleKeyDeletion</code> operation to delete the KMS keys. After they are deleted, you can delete the custom key store.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomKeyStoreHasCmKsException {
+pub struct CustomKeyStoreHasCmKsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CustomKeyStoreHasCmKsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CustomKeyStoreHasCmKsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "CustomKeyStoreHasCmKsException [CustomKeyStoreHasCMKsException]"
-        )?;
+        write!(f, "CustomKeyStoreHasCmKsException [CustomKeyStoreHasCMKsException]")?;
         if let Some(inner_40) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_40)?;
             }
         }
@@ -9698,7 +10269,7 @@ impl std::fmt::Display for CustomKeyStoreHasCmKsException {
 impl std::error::Error for CustomKeyStoreHasCmKsException {}
 /// See [`CustomKeyStoreHasCmKsException`](crate::error::CustomKeyStoreHasCmKsException).
 pub mod custom_key_store_has_cm_ks_exception {
-
+    
     /// A builder for [`CustomKeyStoreHasCmKsException`](crate::error::CustomKeyStoreHasCmKsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9712,16 +10283,18 @@ pub mod custom_key_store_has_cm_ks_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CustomKeyStoreHasCmKsException`](crate::error::CustomKeyStoreHasCmKsException).
         pub fn build(self) -> crate::error::CustomKeyStoreHasCmKsException {
             crate::error::CustomKeyStoreHasCmKsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CustomKeyStoreHasCmKsException {
     /// Creates a new builder-style object to manufacture [`CustomKeyStoreHasCmKsException`](crate::error::CustomKeyStoreHasCmKsException).
@@ -9735,15 +10308,15 @@ impl CustomKeyStoreHasCmKsException {
 #[derive(std::fmt::Debug)]
 pub struct DeleteAliasError {
     /// Kind of error that occurred.
-    pub kind: DeleteAliasErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteAliasErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteAliasError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteAliasErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9755,33 +10328,43 @@ pub enum DeleteAliasErrorKind {
     DependencyTimeoutException(crate::error::DependencyTimeoutException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteAliasErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            DeleteAliasErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            DeleteAliasErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            DeleteAliasErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteAliasErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteAliasErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAliasErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAliasErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAliasErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAliasErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9795,52 +10378,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteAliasError {
 }
 impl DeleteAliasError {
     /// Creates a new `DeleteAliasError`.
-    pub fn new(kind: DeleteAliasErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteAliasError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteAliasError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteAliasErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteAliasError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteAliasError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteAliasErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAliasErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, DeleteAliasErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `DeleteAliasErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
@@ -9848,10 +10428,7 @@ impl DeleteAliasError {
     }
     /// Returns `true` if the error kind is `DeleteAliasErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAliasErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, DeleteAliasErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `DeleteAliasErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -9861,11 +10438,21 @@ impl DeleteAliasError {
 impl std::error::Error for DeleteAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteAliasErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            DeleteAliasErrorKind::KmsInternalException(_inner) => Some(_inner),
-            DeleteAliasErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            DeleteAliasErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteAliasErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteAliasErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAliasErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAliasErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAliasErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAliasErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9875,15 +10462,15 @@ impl std::error::Error for DeleteAliasError {
 #[derive(std::fmt::Debug)]
 pub struct DecryptError {
     /// Kind of error that occurred.
-    pub kind: DecryptErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DecryptErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DecryptError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DecryptErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9897,56 +10484,78 @@ pub enum DecryptErrorKind {
     DisabledException(crate::error::DisabledException),
     /// <p>The request was rejected because the specified KMS key cannot decrypt the data. The <code>KeyId</code> in a <code>Decrypt</code> request and the <code>SourceKeyId</code> in a <code>ReEncrypt</code> request must identify the same KMS key that was used to encrypt the ciphertext.</p>
     IncorrectKeyException(crate::error::IncorrectKeyException),
-    /// <p>From the <code>Decrypt</code> or <code>ReEncrypt</code> operation, the request was rejected because the specified ciphertext, or additional authenticated data incorporated into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.</p>
+    /// <p>From the <code>Decrypt</code> or <code>ReEncrypt</code> operation, the request was rejected because the specified ciphertext, or additional authenticated data incorporated into the ciphertext, such as the encryption context, is corrupted, missing, or otherwise invalid.</p> 
     /// <p>From the <code>ImportKeyMaterial</code> operation, the request was rejected because KMS could not decrypt the encrypted (wrapped) key material. </p>
     InvalidCiphertextException(crate::error::InvalidCiphertextException),
     /// <p>The request was rejected because the specified grant token is not valid.</p>
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
-    /// <p>The request was rejected for one of the following reasons: </p>
-    /// <ul>
-    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li>
-    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li>
-    /// </ul>
-    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p>
+    /// <p>The request was rejected for one of the following reasons: </p> 
+    /// <ul> 
+    /// <li> <p>The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.</p> </li> 
+    /// <li> <p>The encryption algorithm or signing algorithm specified for the operation is incompatible with the type of key material in the KMS key <code>(KeySpec</code>).</p> </li> 
+    /// </ul> 
+    /// <p>For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code> must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code> must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>. To find the <code>KeyUsage</code> of a KMS key, use the <code>DescribeKey</code> operation.</p> 
     /// <p>To find the encryption or signing algorithms supported for a particular KMS key, use the <code>DescribeKey</code> operation.</p>
     InvalidKeyUsageException(crate::error::InvalidKeyUsageException),
     /// <p>The request was rejected because the specified KMS key was not available. You can retry the request.</p>
     KeyUnavailableException(crate::error::KeyUnavailableException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DecryptError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DecryptErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            DecryptErrorKind::DisabledException(_inner) => _inner.fmt(f),
-            DecryptErrorKind::IncorrectKeyException(_inner) => _inner.fmt(f),
-            DecryptErrorKind::InvalidCiphertextException(_inner) => _inner.fmt(f),
-            DecryptErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
-            DecryptErrorKind::InvalidKeyUsageException(_inner) => _inner.fmt(f),
-            DecryptErrorKind::KeyUnavailableException(_inner) => _inner.fmt(f),
-            DecryptErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            DecryptErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            DecryptErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DecryptErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DecryptErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecryptErrorKind::DisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecryptErrorKind::IncorrectKeyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecryptErrorKind::InvalidCiphertextException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecryptErrorKind::InvalidGrantTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecryptErrorKind::InvalidKeyUsageException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecryptErrorKind::KeyUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecryptErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecryptErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecryptErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecryptErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9960,46 +10569,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for DecryptError {
 }
 impl DecryptError {
     /// Creates a new `DecryptError`.
-    pub fn new(kind: DecryptErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DecryptError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DecryptErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DecryptError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DecryptErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DecryptErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DecryptError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DecryptErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DecryptError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DecryptErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DecryptErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
         matches!(&self.kind, DecryptErrorKind::DependencyTimeoutException(_))
@@ -10044,17 +10653,39 @@ impl DecryptError {
 impl std::error::Error for DecryptError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DecryptErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            DecryptErrorKind::DisabledException(_inner) => Some(_inner),
-            DecryptErrorKind::IncorrectKeyException(_inner) => Some(_inner),
-            DecryptErrorKind::InvalidCiphertextException(_inner) => Some(_inner),
-            DecryptErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
-            DecryptErrorKind::InvalidKeyUsageException(_inner) => Some(_inner),
-            DecryptErrorKind::KeyUnavailableException(_inner) => Some(_inner),
-            DecryptErrorKind::KmsInternalException(_inner) => Some(_inner),
-            DecryptErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            DecryptErrorKind::NotFoundException(_inner) => Some(_inner),
-            DecryptErrorKind::Unhandled(_inner) => Some(_inner),
+            DecryptErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            DecryptErrorKind::DisabledException(_inner) =>
+            Some(_inner)
+            ,
+            DecryptErrorKind::IncorrectKeyException(_inner) =>
+            Some(_inner)
+            ,
+            DecryptErrorKind::InvalidCiphertextException(_inner) =>
+            Some(_inner)
+            ,
+            DecryptErrorKind::InvalidGrantTokenException(_inner) =>
+            Some(_inner)
+            ,
+            DecryptErrorKind::InvalidKeyUsageException(_inner) =>
+            Some(_inner)
+            ,
+            DecryptErrorKind::KeyUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            DecryptErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            DecryptErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            DecryptErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DecryptErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -10064,15 +10695,15 @@ impl std::error::Error for DecryptError {
 #[derive(std::fmt::Debug)]
 pub struct CreateKeyError {
     /// Kind of error that occurred.
-    pub kind: CreateKeyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateKeyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateKeyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateKeyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -10080,25 +10711,23 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateKeyErrorKind {
-    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for an CloudHSM key store.</p>
-    /// <ul>
-    /// <li> <p>The CloudHSM cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li>
+    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for an CloudHSM key store.</p> 
+    /// <ul> 
+    /// <li> <p>The CloudHSM cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li> 
     /// <li> <p>The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for the cluster</a> (cloudhsm-cluster-<i>
-    /// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the CloudHSM cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li>
-    /// <li> <p>The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
-    /// </ul>
+    /// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the CloudHSM cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li> 
+    /// <li> <p>The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li> 
+    /// </ul> 
     /// <p>For information about the requirements for an CloudHSM cluster that is associated with an CloudHSM key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
-    CloudHsmClusterInvalidConfigurationException(
-        crate::error::CloudHsmClusterInvalidConfigurationException,
-    ),
-    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
-    /// <p>This exception is thrown under the following conditions:</p>
-    /// <ul>
-    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li>
-    /// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
-    /// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
-    /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
-    /// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li>
+    CloudHsmClusterInvalidConfigurationException(crate::error::CloudHsmClusterInvalidConfigurationException),
+    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p> 
+    /// <p>This exception is thrown under the following conditions:</p> 
+    /// <ul> 
+    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li> 
+    /// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li> 
+    /// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li> 
+    /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li> 
+    /// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li> 
     /// </ul>
     CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
     /// <p>The request was rejected because KMS cannot find a custom key store with the specified key store name or ID.</p>
@@ -10119,41 +10748,67 @@ pub enum CreateKeyErrorKind {
     UnsupportedOperationException(crate::error::UnsupportedOperationException),
     /// <p>The request was rejected because the (<code>XksKeyId</code>) is already associated with a KMS key in this external key store. Each KMS key in an external key store must be associated with a different external key.</p>
     XksKeyAlreadyInUseException(crate::error::XksKeyAlreadyInUseException),
-    /// <p>The request was rejected because the external key specified by the <code>XksKeyId</code> parameter did not meet the configuration requirements for an external key store.</p>
+    /// <p>The request was rejected because the external key specified by the <code>XksKeyId</code> parameter did not meet the configuration requirements for an external key store.</p> 
     /// <p>The external key must be an AES-256 symmetric key that is enabled and performs encryption and decryption.</p>
     XksKeyInvalidConfigurationException(crate::error::XksKeyInvalidConfigurationException),
-    /// <p>The request was rejected because the external key store proxy could not find the external key. This exception is thrown when the value of the <code>XksKeyId</code> parameter doesn't identify a key in the external key manager associated with the external key proxy.</p>
+    /// <p>The request was rejected because the external key store proxy could not find the external key. This exception is thrown when the value of the <code>XksKeyId</code> parameter doesn't identify a key in the external key manager associated with the external key proxy.</p> 
     /// <p>Verify that the <code>XksKeyId</code> represents an existing key in the external key manager. Use the key identifier that the external key store proxy uses to identify the key. For details, see the documentation provided with your external key store proxy or key manager.</p>
     XksKeyNotFoundException(crate::error::XksKeyNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationException(_inner) => {
+            CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateKeyErrorKind::CustomKeyStoreInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateKeyErrorKind::CustomKeyStoreNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateKeyErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateKeyErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateKeyErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateKeyErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateKeyErrorKind::MalformedPolicyDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateKeyErrorKind::TagException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateKeyErrorKind::UnsupportedOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateKeyErrorKind::XksKeyAlreadyInUseException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateKeyErrorKind::XksKeyInvalidConfigurationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateKeyErrorKind::XksKeyNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateKeyErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateKeyErrorKind::CustomKeyStoreInvalidStateException(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::CustomKeyStoreNotFoundException(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::TagException(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::UnsupportedOperationException(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::XksKeyAlreadyInUseException(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::XksKeyInvalidConfigurationException(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::XksKeyNotFoundException(_inner) => _inner.fmt(f),
-            CreateKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -10167,73 +10822,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateKeyError {
 }
 impl CreateKeyError {
     /// Creates a new `CreateKeyError`.
-    pub fn new(kind: CreateKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateKeyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateKeyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationException`.
     pub fn is_cloud_hsm_cluster_invalid_configuration_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationException(_)
-        )
+        matches!(&self.kind, CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationException(_))
     }
     /// Returns `true` if the error kind is `CreateKeyErrorKind::CustomKeyStoreInvalidStateException`.
     pub fn is_custom_key_store_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateKeyErrorKind::CustomKeyStoreInvalidStateException(_)
-        )
+        matches!(&self.kind, CreateKeyErrorKind::CustomKeyStoreInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `CreateKeyErrorKind::CustomKeyStoreNotFoundException`.
     pub fn is_custom_key_store_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateKeyErrorKind::CustomKeyStoreNotFoundException(_)
-        )
+        matches!(&self.kind, CreateKeyErrorKind::CustomKeyStoreNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateKeyErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateKeyErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, CreateKeyErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `CreateKeyErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
@@ -10249,10 +10892,7 @@ impl CreateKeyError {
     }
     /// Returns `true` if the error kind is `CreateKeyErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateKeyErrorKind::MalformedPolicyDocumentException(_)
-        )
+        matches!(&self.kind, CreateKeyErrorKind::MalformedPolicyDocumentException(_))
     }
     /// Returns `true` if the error kind is `CreateKeyErrorKind::TagException`.
     pub fn is_tag_exception(&self) -> bool {
@@ -10260,24 +10900,15 @@ impl CreateKeyError {
     }
     /// Returns `true` if the error kind is `CreateKeyErrorKind::UnsupportedOperationException`.
     pub fn is_unsupported_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateKeyErrorKind::UnsupportedOperationException(_)
-        )
+        matches!(&self.kind, CreateKeyErrorKind::UnsupportedOperationException(_))
     }
     /// Returns `true` if the error kind is `CreateKeyErrorKind::XksKeyAlreadyInUseException`.
     pub fn is_xks_key_already_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateKeyErrorKind::XksKeyAlreadyInUseException(_)
-        )
+        matches!(&self.kind, CreateKeyErrorKind::XksKeyAlreadyInUseException(_))
     }
     /// Returns `true` if the error kind is `CreateKeyErrorKind::XksKeyInvalidConfigurationException`.
     pub fn is_xks_key_invalid_configuration_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateKeyErrorKind::XksKeyInvalidConfigurationException(_)
-        )
+        matches!(&self.kind, CreateKeyErrorKind::XksKeyInvalidConfigurationException(_))
     }
     /// Returns `true` if the error kind is `CreateKeyErrorKind::XksKeyNotFoundException`.
     pub fn is_xks_key_not_found_exception(&self) -> bool {
@@ -10287,46 +10918,70 @@ impl CreateKeyError {
 impl std::error::Error for CreateKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationException(_inner) => {
+            CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateKeyErrorKind::CustomKeyStoreInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            CreateKeyErrorKind::CustomKeyStoreNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateKeyErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            CreateKeyErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            CreateKeyErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            CreateKeyErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateKeyErrorKind::MalformedPolicyDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            CreateKeyErrorKind::TagException(_inner) =>
+            Some(_inner)
+            ,
+            CreateKeyErrorKind::UnsupportedOperationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateKeyErrorKind::XksKeyAlreadyInUseException(_inner) =>
+            Some(_inner)
+            ,
+            CreateKeyErrorKind::XksKeyInvalidConfigurationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateKeyErrorKind::XksKeyNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateKeyErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateKeyErrorKind::CustomKeyStoreInvalidStateException(_inner) => Some(_inner),
-            CreateKeyErrorKind::CustomKeyStoreNotFoundException(_inner) => Some(_inner),
-            CreateKeyErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            CreateKeyErrorKind::InvalidArnException(_inner) => Some(_inner),
-            CreateKeyErrorKind::KmsInternalException(_inner) => Some(_inner),
-            CreateKeyErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateKeyErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
-            CreateKeyErrorKind::TagException(_inner) => Some(_inner),
-            CreateKeyErrorKind::UnsupportedOperationException(_inner) => Some(_inner),
-            CreateKeyErrorKind::XksKeyAlreadyInUseException(_inner) => Some(_inner),
-            CreateKeyErrorKind::XksKeyInvalidConfigurationException(_inner) => Some(_inner),
-            CreateKeyErrorKind::XksKeyNotFoundException(_inner) => Some(_inner),
-            CreateKeyErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
 
-/// <p>The request was rejected because the external key store proxy could not find the external key. This exception is thrown when the value of the <code>XksKeyId</code> parameter doesn't identify a key in the external key manager associated with the external key proxy.</p>
+/// <p>The request was rejected because the external key store proxy could not find the external key. This exception is thrown when the value of the <code>XksKeyId</code> parameter doesn't identify a key in the external key manager associated with the external key proxy.</p> 
 /// <p>Verify that the <code>XksKeyId</code> represents an existing key in the external key manager. Use the key identifier that the external key store proxy uses to identify the key. For details, see the documentation provided with your external key store proxy or key manager.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct XksKeyNotFoundException {
+pub struct XksKeyNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl XksKeyNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for XksKeyNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "XksKeyNotFoundException")?;
         if let Some(inner_41) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_41)?;
             }
         }
@@ -10336,7 +10991,7 @@ impl std::fmt::Display for XksKeyNotFoundException {
 impl std::error::Error for XksKeyNotFoundException {}
 /// See [`XksKeyNotFoundException`](crate::error::XksKeyNotFoundException).
 pub mod xks_key_not_found_exception {
-
+    
     /// A builder for [`XksKeyNotFoundException`](crate::error::XksKeyNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10350,16 +11005,18 @@ pub mod xks_key_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`XksKeyNotFoundException`](crate::error::XksKeyNotFoundException).
         pub fn build(self) -> crate::error::XksKeyNotFoundException {
             crate::error::XksKeyNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl XksKeyNotFoundException {
     /// Creates a new builder-style object to manufacture [`XksKeyNotFoundException`](crate::error::XksKeyNotFoundException).
@@ -10368,26 +11025,24 @@ impl XksKeyNotFoundException {
     }
 }
 
-/// <p>The request was rejected because the external key specified by the <code>XksKeyId</code> parameter did not meet the configuration requirements for an external key store.</p>
+/// <p>The request was rejected because the external key specified by the <code>XksKeyId</code> parameter did not meet the configuration requirements for an external key store.</p> 
 /// <p>The external key must be an AES-256 symmetric key that is enabled and performs encryption and decryption.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct XksKeyInvalidConfigurationException {
+pub struct XksKeyInvalidConfigurationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl XksKeyInvalidConfigurationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for XksKeyInvalidConfigurationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "XksKeyInvalidConfigurationException")?;
         if let Some(inner_42) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_42)?;
             }
         }
@@ -10397,7 +11052,7 @@ impl std::fmt::Display for XksKeyInvalidConfigurationException {
 impl std::error::Error for XksKeyInvalidConfigurationException {}
 /// See [`XksKeyInvalidConfigurationException`](crate::error::XksKeyInvalidConfigurationException).
 pub mod xks_key_invalid_configuration_exception {
-
+    
     /// A builder for [`XksKeyInvalidConfigurationException`](crate::error::XksKeyInvalidConfigurationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10411,16 +11066,18 @@ pub mod xks_key_invalid_configuration_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`XksKeyInvalidConfigurationException`](crate::error::XksKeyInvalidConfigurationException).
         pub fn build(self) -> crate::error::XksKeyInvalidConfigurationException {
             crate::error::XksKeyInvalidConfigurationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl XksKeyInvalidConfigurationException {
     /// Creates a new builder-style object to manufacture [`XksKeyInvalidConfigurationException`](crate::error::XksKeyInvalidConfigurationException).
@@ -10432,22 +11089,20 @@ impl XksKeyInvalidConfigurationException {
 /// <p>The request was rejected because the (<code>XksKeyId</code>) is already associated with a KMS key in this external key store. Each KMS key in an external key store must be associated with a different external key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct XksKeyAlreadyInUseException {
+pub struct XksKeyAlreadyInUseException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl XksKeyAlreadyInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for XksKeyAlreadyInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "XksKeyAlreadyInUseException")?;
         if let Some(inner_43) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_43)?;
             }
         }
@@ -10457,7 +11112,7 @@ impl std::fmt::Display for XksKeyAlreadyInUseException {
 impl std::error::Error for XksKeyAlreadyInUseException {}
 /// See [`XksKeyAlreadyInUseException`](crate::error::XksKeyAlreadyInUseException).
 pub mod xks_key_already_in_use_exception {
-
+    
     /// A builder for [`XksKeyAlreadyInUseException`](crate::error::XksKeyAlreadyInUseException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10471,16 +11126,18 @@ pub mod xks_key_already_in_use_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`XksKeyAlreadyInUseException`](crate::error::XksKeyAlreadyInUseException).
         pub fn build(self) -> crate::error::XksKeyAlreadyInUseException {
             crate::error::XksKeyAlreadyInUseException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl XksKeyAlreadyInUseException {
     /// Creates a new builder-style object to manufacture [`XksKeyAlreadyInUseException`](crate::error::XksKeyAlreadyInUseException).
@@ -10494,15 +11151,15 @@ impl XksKeyAlreadyInUseException {
 #[derive(std::fmt::Debug)]
 pub struct CreateGrantError {
     /// Kind of error that occurred.
-    pub kind: CreateGrantErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateGrantErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateGrantError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateGrantErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -10520,39 +11177,57 @@ pub enum CreateGrantErrorKind {
     InvalidGrantTokenException(crate::error::InvalidGrantTokenException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGrantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateGrantErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::DisabledException(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::InvalidGrantTokenException(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateGrantErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantErrorKind::DisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantErrorKind::InvalidGrantTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -10566,52 +11241,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateGrantError {
 }
 impl CreateGrantError {
     /// Creates a new `CreateGrantError`.
-    pub fn new(kind: CreateGrantErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateGrantError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateGrantError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateGrantErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateGrantError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateGrantError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateGrantErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGrantErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, CreateGrantErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `CreateGrantErrorKind::DisabledException`.
     pub fn is_disabled_exception(&self) -> bool {
@@ -10623,10 +11295,7 @@ impl CreateGrantError {
     }
     /// Returns `true` if the error kind is `CreateGrantErrorKind::InvalidGrantTokenException`.
     pub fn is_invalid_grant_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGrantErrorKind::InvalidGrantTokenException(_)
-        )
+        matches!(&self.kind, CreateGrantErrorKind::InvalidGrantTokenException(_))
     }
     /// Returns `true` if the error kind is `CreateGrantErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
@@ -10634,10 +11303,7 @@ impl CreateGrantError {
     }
     /// Returns `true` if the error kind is `CreateGrantErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGrantErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, CreateGrantErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `CreateGrantErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -10651,15 +11317,33 @@ impl CreateGrantError {
 impl std::error::Error for CreateGrantError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateGrantErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            CreateGrantErrorKind::DisabledException(_inner) => Some(_inner),
-            CreateGrantErrorKind::InvalidArnException(_inner) => Some(_inner),
-            CreateGrantErrorKind::InvalidGrantTokenException(_inner) => Some(_inner),
-            CreateGrantErrorKind::KmsInternalException(_inner) => Some(_inner),
-            CreateGrantErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            CreateGrantErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateGrantErrorKind::NotFoundException(_inner) => Some(_inner),
-            CreateGrantErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateGrantErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantErrorKind::DisabledException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantErrorKind::InvalidGrantTokenException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -10669,15 +11353,15 @@ impl std::error::Error for CreateGrantError {
 #[derive(std::fmt::Debug)]
 pub struct CreateCustomKeyStoreError {
     /// Kind of error that occurred.
-    pub kind: CreateCustomKeyStoreErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateCustomKeyStoreErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateCustomKeyStoreError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -10685,27 +11369,25 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateCustomKeyStoreError
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CreateCustomKeyStoreErrorKind {
-    /// <p>The request was rejected because the specified CloudHSM cluster is already associated with an CloudHSM key store in the account, or it shares a backup history with an CloudHSM key store in the account. Each CloudHSM key store in the account must be associated with a different CloudHSM cluster.</p>
+    /// <p>The request was rejected because the specified CloudHSM cluster is already associated with an CloudHSM key store in the account, or it shares a backup history with an CloudHSM key store in the account. Each CloudHSM key store in the account must be associated with a different CloudHSM cluster.</p> 
     /// <p>CloudHSM clusters that share a backup history have the same cluster certificate. To view the cluster certificate of an CloudHSM cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
     CloudHsmClusterInUseException(crate::error::CloudHsmClusterInUseException),
-    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for an CloudHSM key store.</p>
-    /// <ul>
-    /// <li> <p>The CloudHSM cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li>
+    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for an CloudHSM key store.</p> 
+    /// <ul> 
+    /// <li> <p>The CloudHSM cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li> 
     /// <li> <p>The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for the cluster</a> (cloudhsm-cluster-<i>
-    /// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the CloudHSM cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li>
-    /// <li> <p>The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
-    /// </ul>
+    /// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the CloudHSM cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li> 
+    /// <li> <p>The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li> 
+    /// </ul> 
     /// <p>For information about the requirements for an CloudHSM cluster that is associated with an CloudHSM key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
-    CloudHsmClusterInvalidConfigurationException(
-        crate::error::CloudHsmClusterInvalidConfigurationException,
-    ),
+    CloudHsmClusterInvalidConfigurationException(crate::error::CloudHsmClusterInvalidConfigurationException),
     /// <p>The request was rejected because the CloudHSM cluster associated with the CloudHSM key store is not active. Initialize and activate the cluster and try the command again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>CloudHSM User Guide</i>.</p>
     CloudHsmClusterNotActiveException(crate::error::CloudHsmClusterNotActiveException),
     /// <p>The request was rejected because KMS cannot find the CloudHSM cluster with the specified cluster ID. Retry the request with a different cluster ID.</p>
     CloudHsmClusterNotFoundException(crate::error::CloudHsmClusterNotFoundException),
     /// <p>The request was rejected because the specified custom key store name is already assigned to another custom key store in the account. Try again with a custom key store name that is unique in the account.</p>
     CustomKeyStoreNameInUseException(crate::error::CustomKeyStoreNameInUseException),
-    /// <p>The request was rejected because the trust anchor certificate in the request to create an CloudHSM key store is not the trust anchor certificate for the specified CloudHSM cluster.</p>
+    /// <p>The request was rejected because the trust anchor certificate in the request to create an CloudHSM key store is not the trust anchor certificate for the specified CloudHSM cluster.</p> 
     /// <p>When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the CloudHSM cluster</a>, you create the trust anchor certificate and save it in the <code>customerCA.crt</code> file.</p>
     IncorrectTrustAnchorException(crate::error::IncorrectTrustAnchorException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
@@ -10713,41 +11395,33 @@ pub enum CreateCustomKeyStoreErrorKind {
     /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because the proxy credentials failed to authenticate to the specified external key store proxy. The specified external key store proxy rejected a status request from KMS due to invalid credentials. This can indicate an error in the credentials or in the identification of the external key store proxy.</p>
-    XksProxyIncorrectAuthenticationCredentialException(
-        crate::error::XksProxyIncorrectAuthenticationCredentialException,
-    ),
+    XksProxyIncorrectAuthenticationCredentialException(crate::error::XksProxyIncorrectAuthenticationCredentialException),
     /// <p>The request was rejected because the Amazon VPC endpoint service configuration does not fulfill the requirements for an external key store proxy. For details, see the exception message.</p>
     XksProxyInvalidConfigurationException(crate::error::XksProxyInvalidConfigurationException),
-    /// <p></p>
+    /// <p></p> 
     /// <p>KMS cannot interpret the response it received from the external key store proxy. The problem might be a poorly constructed response, but it could also be a transient network issue. If you see this error repeatedly, report it to the proxy vendor.</p>
     XksProxyInvalidResponseException(crate::error::XksProxyInvalidResponseException),
     /// <p>The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code> is already associated with an external key store in the Amazon Web Services account and Region. Each external key store in an account and Region must use a unique external key store proxy address.</p>
     XksProxyUriEndpointInUseException(crate::error::XksProxyUriEndpointInUseException),
     /// <p>The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> is already associated with an external key store in the Amazon Web Services account and Region. Each external key store in an account and Region must use a unique external key store proxy API address.</p>
     XksProxyUriInUseException(crate::error::XksProxyUriInUseException),
-    /// <p>KMS was unable to reach the specified <code>XksProxyUriPath</code>. The path must be reachable before you create the external key store or update its settings.</p>
+    /// <p>KMS was unable to reach the specified <code>XksProxyUriPath</code>. The path must be reachable before you create the external key store or update its settings.</p> 
     /// <p>This exception is also thrown when the external key store proxy response to a <code>GetHealthStatus</code> request indicates that all external key manager instances are unavailable.</p>
     XksProxyUriUnreachableException(crate::error::XksProxyUriUnreachableException),
     /// <p>The request was rejected because the specified Amazon VPC endpoint service is already associated with an external key store in the Amazon Web Services account and Region. Each external key store in an Amazon Web Services account and Region must use a different Amazon VPC endpoint service.</p>
-    XksProxyVpcEndpointServiceInUseException(
-        crate::error::XksProxyVpcEndpointServiceInUseException,
-    ),
+    XksProxyVpcEndpointServiceInUseException(crate::error::XksProxyVpcEndpointServiceInUseException),
     /// <p>The request was rejected because the Amazon VPC endpoint service configuration does not fulfill the requirements for an external key store proxy. For details, see the exception message and <a href="kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements">review the requirements</a> for Amazon VPC endpoint service connectivity for an external key store.</p>
-    XksProxyVpcEndpointServiceInvalidConfigurationException(
-        crate::error::XksProxyVpcEndpointServiceInvalidConfigurationException,
-    ),
+    XksProxyVpcEndpointServiceInvalidConfigurationException(crate::error::XksProxyVpcEndpointServiceInvalidConfigurationException),
     /// <p>The request was rejected because KMS could not find the specified VPC endpoint service. Use <code>DescribeCustomKeyStores</code> to verify the VPC endpoint service name for the external key store. Also, confirm that the <code>Allow principals</code> list for the VPC endpoint service includes the KMS service principal for the Region, such as <code>cks.kms.us-east-1.amazonaws.com</code>.</p>
-    XksProxyVpcEndpointServiceNotFoundException(
-        crate::error::XksProxyVpcEndpointServiceNotFoundException,
-    ),
-    ///
+    XksProxyVpcEndpointServiceNotFoundException(crate::error::XksProxyVpcEndpointServiceNotFoundException),
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateCustomKeyStoreError {
@@ -10820,170 +11494,113 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateCustomKeyStoreError {
 }
 impl CreateCustomKeyStoreError {
     /// Creates a new `CreateCustomKeyStoreError`.
-    pub fn new(kind: CreateCustomKeyStoreErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateCustomKeyStoreError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateCustomKeyStoreError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateCustomKeyStoreErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateCustomKeyStoreError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateCustomKeyStoreError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseException`.
     pub fn is_cloud_hsm_cluster_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseException(_)
-        )
+        matches!(&self.kind, CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException`.
     pub fn is_cloud_hsm_cluster_invalid_configuration_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_)
-        )
+        matches!(&self.kind, CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException`.
     pub fn is_cloud_hsm_cluster_not_active_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_)
-        )
+        matches!(&self.kind, CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException`.
     pub fn is_cloud_hsm_cluster_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(_)
-        )
+        matches!(&self.kind, CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException`.
     pub fn is_custom_key_store_name_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_)
-        )
+        matches!(&self.kind, CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorException`.
     pub fn is_incorrect_trust_anchor_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorException(_)
-        )
+        matches!(&self.kind, CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomKeyStoreErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, CreateCustomKeyStoreErrorKind::KmsInternalException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomKeyStoreErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, CreateCustomKeyStoreErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::XksProxyIncorrectAuthenticationCredentialException`.
     pub fn is_xks_proxy_incorrect_authentication_credential_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomKeyStoreErrorKind::XksProxyIncorrectAuthenticationCredentialException(_)
-        )
+        matches!(&self.kind, CreateCustomKeyStoreErrorKind::XksProxyIncorrectAuthenticationCredentialException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::XksProxyInvalidConfigurationException`.
     pub fn is_xks_proxy_invalid_configuration_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomKeyStoreErrorKind::XksProxyInvalidConfigurationException(_)
-        )
+        matches!(&self.kind, CreateCustomKeyStoreErrorKind::XksProxyInvalidConfigurationException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::XksProxyInvalidResponseException`.
     pub fn is_xks_proxy_invalid_response_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomKeyStoreErrorKind::XksProxyInvalidResponseException(_)
-        )
+        matches!(&self.kind, CreateCustomKeyStoreErrorKind::XksProxyInvalidResponseException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::XksProxyUriEndpointInUseException`.
     pub fn is_xks_proxy_uri_endpoint_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomKeyStoreErrorKind::XksProxyUriEndpointInUseException(_)
-        )
+        matches!(&self.kind, CreateCustomKeyStoreErrorKind::XksProxyUriEndpointInUseException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::XksProxyUriInUseException`.
     pub fn is_xks_proxy_uri_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomKeyStoreErrorKind::XksProxyUriInUseException(_)
-        )
+        matches!(&self.kind, CreateCustomKeyStoreErrorKind::XksProxyUriInUseException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::XksProxyUriUnreachableException`.
     pub fn is_xks_proxy_uri_unreachable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomKeyStoreErrorKind::XksProxyUriUnreachableException(_)
-        )
+        matches!(&self.kind, CreateCustomKeyStoreErrorKind::XksProxyUriUnreachableException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInUseException`.
     pub fn is_xks_proxy_vpc_endpoint_service_in_use_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInUseException(_)
-        )
+        matches!(&self.kind, CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInUseException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInvalidConfigurationException`.
     pub fn is_xks_proxy_vpc_endpoint_service_invalid_configuration_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInvalidConfigurationException(
-                _
-            )
-        )
+        matches!(&self.kind, CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInvalidConfigurationException(_))
     }
     /// Returns `true` if the error kind is `CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceNotFoundException`.
     pub fn is_xks_proxy_vpc_endpoint_service_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceNotFoundException(_)
-        )
+        matches!(&self.kind, CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceNotFoundException(_))
     }
 }
 impl std::error::Error for CreateCustomKeyStoreError {
@@ -11047,26 +11664,24 @@ impl std::error::Error for CreateCustomKeyStoreError {
     }
 }
 
-/// <p>The request was rejected because the trust anchor certificate in the request to create an CloudHSM key store is not the trust anchor certificate for the specified CloudHSM cluster.</p>
+/// <p>The request was rejected because the trust anchor certificate in the request to create an CloudHSM key store is not the trust anchor certificate for the specified CloudHSM cluster.</p> 
 /// <p>When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize the CloudHSM cluster</a>, you create the trust anchor certificate and save it in the <code>customerCA.crt</code> file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IncorrectTrustAnchorException {
+pub struct IncorrectTrustAnchorException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl IncorrectTrustAnchorException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for IncorrectTrustAnchorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IncorrectTrustAnchorException")?;
         if let Some(inner_44) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_44)?;
             }
         }
@@ -11076,7 +11691,7 @@ impl std::fmt::Display for IncorrectTrustAnchorException {
 impl std::error::Error for IncorrectTrustAnchorException {}
 /// See [`IncorrectTrustAnchorException`](crate::error::IncorrectTrustAnchorException).
 pub mod incorrect_trust_anchor_exception {
-
+    
     /// A builder for [`IncorrectTrustAnchorException`](crate::error::IncorrectTrustAnchorException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11090,16 +11705,18 @@ pub mod incorrect_trust_anchor_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`IncorrectTrustAnchorException`](crate::error::IncorrectTrustAnchorException).
         pub fn build(self) -> crate::error::IncorrectTrustAnchorException {
             crate::error::IncorrectTrustAnchorException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl IncorrectTrustAnchorException {
     /// Creates a new builder-style object to manufacture [`IncorrectTrustAnchorException`](crate::error::IncorrectTrustAnchorException).
@@ -11108,26 +11725,24 @@ impl IncorrectTrustAnchorException {
     }
 }
 
-/// <p>The request was rejected because the specified CloudHSM cluster is already associated with an CloudHSM key store in the account, or it shares a backup history with an CloudHSM key store in the account. Each CloudHSM key store in the account must be associated with a different CloudHSM cluster.</p>
+/// <p>The request was rejected because the specified CloudHSM cluster is already associated with an CloudHSM key store in the account, or it shares a backup history with an CloudHSM key store in the account. Each CloudHSM key store in the account must be associated with a different CloudHSM cluster.</p> 
 /// <p>CloudHSM clusters that share a backup history have the same cluster certificate. To view the cluster certificate of an CloudHSM cluster, use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudHsmClusterInUseException {
+pub struct CloudHsmClusterInUseException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl CloudHsmClusterInUseException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for CloudHsmClusterInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CloudHsmClusterInUseException")?;
         if let Some(inner_45) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_45)?;
             }
         }
@@ -11137,7 +11752,7 @@ impl std::fmt::Display for CloudHsmClusterInUseException {
 impl std::error::Error for CloudHsmClusterInUseException {}
 /// See [`CloudHsmClusterInUseException`](crate::error::CloudHsmClusterInUseException).
 pub mod cloud_hsm_cluster_in_use_exception {
-
+    
     /// A builder for [`CloudHsmClusterInUseException`](crate::error::CloudHsmClusterInUseException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11151,16 +11766,18 @@ pub mod cloud_hsm_cluster_in_use_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`CloudHsmClusterInUseException`](crate::error::CloudHsmClusterInUseException).
         pub fn build(self) -> crate::error::CloudHsmClusterInUseException {
             crate::error::CloudHsmClusterInUseException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl CloudHsmClusterInUseException {
     /// Creates a new builder-style object to manufacture [`CloudHsmClusterInUseException`](crate::error::CloudHsmClusterInUseException).
@@ -11174,15 +11791,15 @@ impl CloudHsmClusterInUseException {
 #[derive(std::fmt::Debug)]
 pub struct CreateAliasError {
     /// Kind of error that occurred.
-    pub kind: CreateAliasErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateAliasErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateAliasError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateAliasErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -11198,38 +11815,54 @@ pub enum CreateAliasErrorKind {
     InvalidAliasNameException(crate::error::InvalidAliasNameException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because a quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key Management Service Developer Guide</i>.</p>
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateAliasErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
-            CreateAliasErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            CreateAliasErrorKind::InvalidAliasNameException(_inner) => _inner.fmt(f),
-            CreateAliasErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            CreateAliasErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            CreateAliasErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateAliasErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            CreateAliasErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateAliasErrorKind::AlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAliasErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAliasErrorKind::InvalidAliasNameException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAliasErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAliasErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAliasErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAliasErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateAliasErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -11243,63 +11876,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateAliasError {
 }
 impl CreateAliasError {
     /// Creates a new `CreateAliasError`.
-    pub fn new(kind: CreateAliasErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateAliasError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateAliasError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateAliasErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateAliasError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateAliasError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateAliasErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(&self.kind, CreateAliasErrorKind::AlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `CreateAliasErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAliasErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, CreateAliasErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `CreateAliasErrorKind::InvalidAliasNameException`.
     pub fn is_invalid_alias_name_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAliasErrorKind::InvalidAliasNameException(_)
-        )
+        matches!(&self.kind, CreateAliasErrorKind::InvalidAliasNameException(_))
     }
     /// Returns `true` if the error kind is `CreateAliasErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
@@ -11307,10 +11934,7 @@ impl CreateAliasError {
     }
     /// Returns `true` if the error kind is `CreateAliasErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateAliasErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, CreateAliasErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `CreateAliasErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -11324,14 +11948,30 @@ impl CreateAliasError {
 impl std::error::Error for CreateAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateAliasErrorKind::AlreadyExistsException(_inner) => Some(_inner),
-            CreateAliasErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            CreateAliasErrorKind::InvalidAliasNameException(_inner) => Some(_inner),
-            CreateAliasErrorKind::KmsInternalException(_inner) => Some(_inner),
-            CreateAliasErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            CreateAliasErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateAliasErrorKind::NotFoundException(_inner) => Some(_inner),
-            CreateAliasErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateAliasErrorKind::AlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAliasErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAliasErrorKind::InvalidAliasNameException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAliasErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAliasErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAliasErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAliasErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateAliasErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -11339,22 +11979,20 @@ impl std::error::Error for CreateAliasError {
 /// <p>The request was rejected because the specified alias name is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidAliasNameException {
+pub struct InvalidAliasNameException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidAliasNameException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidAliasNameException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidAliasNameException")?;
         if let Some(inner_46) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_46)?;
             }
         }
@@ -11364,7 +12002,7 @@ impl std::fmt::Display for InvalidAliasNameException {
 impl std::error::Error for InvalidAliasNameException {}
 /// See [`InvalidAliasNameException`](crate::error::InvalidAliasNameException).
 pub mod invalid_alias_name_exception {
-
+    
     /// A builder for [`InvalidAliasNameException`](crate::error::InvalidAliasNameException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11378,16 +12016,18 @@ pub mod invalid_alias_name_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidAliasNameException`](crate::error::InvalidAliasNameException).
         pub fn build(self) -> crate::error::InvalidAliasNameException {
             crate::error::InvalidAliasNameException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidAliasNameException {
     /// Creates a new builder-style object to manufacture [`InvalidAliasNameException`](crate::error::InvalidAliasNameException).
@@ -11401,15 +12041,15 @@ impl InvalidAliasNameException {
 #[derive(std::fmt::Debug)]
 pub struct ConnectCustomKeyStoreError {
     /// Kind of error that occurred.
-    pub kind: ConnectCustomKeyStoreErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ConnectCustomKeyStoreErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ConnectCustomKeyStoreError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ConnectCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -11417,60 +12057,62 @@ impl aws_smithy_http::result::CreateUnhandledError for ConnectCustomKeyStoreErro
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ConnectCustomKeyStoreErrorKind {
-    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for an CloudHSM key store.</p>
-    /// <ul>
-    /// <li> <p>The CloudHSM cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li>
+    /// <p>The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for an CloudHSM key store.</p> 
+    /// <ul> 
+    /// <li> <p>The CloudHSM cluster must be configured with private subnets in at least two different Availability Zones in the Region.</p> </li> 
     /// <li> <p>The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for the cluster</a> (cloudhsm-cluster-<i>
-    /// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the CloudHSM cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li>
-    /// <li> <p>The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li>
-    /// </ul>
+    /// <cluster-id></cluster-id></i>-sg) must include inbound rules and outbound rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default when you create the CloudHSM cluster. Do not delete or change them. To get information about a particular security group, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html">DescribeSecurityGroups</a> operation.</p> </li> 
+    /// <li> <p>The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.</p> <p>For the <code>CreateCustomKeyStore</code>, <code>UpdateCustomKeyStore</code>, and <code>CreateKey</code> operations, the CloudHSM cluster must have at least two active HSMs, each in a different Availability Zone. For the <code>ConnectCustomKeyStore</code> operation, the CloudHSM must contain at least one active HSM.</p> </li> 
+    /// </ul> 
     /// <p>For information about the requirements for an CloudHSM cluster that is associated with an CloudHSM key store, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private subnet for an CloudHSM cluster, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/create-subnets.html">Create a Private Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>. </p>
-    CloudHsmClusterInvalidConfigurationException(
-        crate::error::CloudHsmClusterInvalidConfigurationException,
-    ),
+    CloudHsmClusterInvalidConfigurationException(crate::error::CloudHsmClusterInvalidConfigurationException),
     /// <p>The request was rejected because the CloudHSM cluster associated with the CloudHSM key store is not active. Initialize and activate the cluster and try the command again. For detailed instructions, see <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in the <i>CloudHSM User Guide</i>.</p>
     CloudHsmClusterNotActiveException(crate::error::CloudHsmClusterNotActiveException),
-    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
-    /// <p>This exception is thrown under the following conditions:</p>
-    /// <ul>
-    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li>
-    /// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li>
-    /// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li>
-    /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li>
-    /// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li>
+    /// <p>The request was rejected because of the <code>ConnectionState</code> of the custom key store. To get the <code>ConnectionState</code> of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p> 
+    /// <p>This exception is thrown under the following conditions:</p> 
+    /// <ul> 
+    /// <li> <p>You requested the <code>ConnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it (<code>DisconnectCustomKeyStore</code>), then connect it (<code>ConnectCustomKeyStore</code>).</p> </li> 
+    /// <li> <p>You requested the <code>CreateKey</code> operation in a custom key store that is not connected. This operations is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.</p> </li> 
+    /// <li> <p>You requested the <code>DisconnectCustomKeyStore</code> operation on a custom key store with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other <code>ConnectionState</code> values.</p> </li> 
+    /// <li> <p>You requested the <code>UpdateCustomKeyStore</code> or <code>DeleteCustomKeyStore</code> operation on a custom key store that is not disconnected. This operation is valid only when the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.</p> </li> 
+    /// <li> <p>You requested the <code>GenerateRandom</code> operation in an CloudHSM key store that is not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>. </p> </li> 
     /// </ul>
     CustomKeyStoreInvalidStateException(crate::error::CustomKeyStoreInvalidStateException),
     /// <p>The request was rejected because KMS cannot find a custom key store with the specified key store name or ID.</p>
     CustomKeyStoreNotFoundException(crate::error::CustomKeyStoreNotFoundException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ConnectCustomKeyStoreError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(
-                _inner,
-            ) => _inner.fmt(f),
-            ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_inner) => {
+            ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ConnectCustomKeyStoreErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ConnectCustomKeyStoreErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) => {
-                _inner.fmt(f)
-            }
-            ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            ConnectCustomKeyStoreErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            ConnectCustomKeyStoreErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -11484,101 +12126,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for ConnectCustomKeyStoreError {
 }
 impl ConnectCustomKeyStoreError {
     /// Creates a new `ConnectCustomKeyStoreError`.
-    pub fn new(kind: ConnectCustomKeyStoreErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ConnectCustomKeyStoreError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ConnectCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ConnectCustomKeyStoreError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ConnectCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ConnectCustomKeyStoreErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ConnectCustomKeyStoreError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ConnectCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ConnectCustomKeyStoreError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ConnectCustomKeyStoreErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException`.
     pub fn is_cloud_hsm_cluster_invalid_configuration_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_)
-        )
+        matches!(&self.kind, ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_))
     }
     /// Returns `true` if the error kind is `ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException`.
     pub fn is_cloud_hsm_cluster_not_active_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_)
-        )
+        matches!(&self.kind, ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_))
     }
     /// Returns `true` if the error kind is `ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException`.
     pub fn is_custom_key_store_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_)
-        )
+        matches!(&self.kind, ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException`.
     pub fn is_custom_key_store_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_)
-        )
+        matches!(&self.kind, ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ConnectCustomKeyStoreErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ConnectCustomKeyStoreErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, ConnectCustomKeyStoreErrorKind::KmsInternalException(_))
     }
 }
 impl std::error::Error for ConnectCustomKeyStoreError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(
-                _inner,
-            ) => Some(_inner),
-            ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_inner) => {
+            ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException(_inner) =>
+            Some(_inner)
+            ,
+            ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException(_inner) =>
+            Some(_inner)
+            ,
+            ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ConnectCustomKeyStoreErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ConnectCustomKeyStoreErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(_inner) => {
-                Some(_inner)
-            }
-            ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(_inner) => Some(_inner),
-            ConnectCustomKeyStoreErrorKind::KmsInternalException(_inner) => Some(_inner),
-            ConnectCustomKeyStoreErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -11588,15 +12217,15 @@ impl std::error::Error for ConnectCustomKeyStoreError {
 #[derive(std::fmt::Debug)]
 pub struct CancelKeyDeletionError {
     /// Kind of error that occurred.
-    pub kind: CancelKeyDeletionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CancelKeyDeletionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CancelKeyDeletionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CancelKeyDeletionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -11610,34 +12239,46 @@ pub enum CancelKeyDeletionErrorKind {
     InvalidArnException(crate::error::InvalidArnException),
     /// <p>The request was rejected because an internal exception occurred. The request can be retried.</p>
     KmsInternalException(crate::error::KmsInternalException),
-    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p>
-    /// <p>This exceptions means one of the following:</p>
-    /// <ul>
-    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li>
-    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li>
+    /// <p>The request was rejected because the state of the specified resource is not valid for this request.</p> 
+    /// <p>This exceptions means one of the following:</p> 
+    /// <ul> 
+    /// <li> <p>The key state of the KMS key is not compatible with the operation. </p> <p>To find the key state, use the <code>DescribeKey</code> operation. For more information about which key states are compatible with each KMS operation, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p> </li> 
+    /// <li> <p>For cryptographic operations on KMS keys in custom key stores, this exception represents a general failure with many possible causes. To identify the cause, see the error message that accompanies the exception.</p> </li> 
     /// </ul>
     KmsInvalidStateException(crate::error::KmsInvalidStateException),
     /// <p>The request was rejected because the specified entity or resource could not be found.</p>
     NotFoundException(crate::error::NotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelKeyDeletionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CancelKeyDeletionErrorKind::DependencyTimeoutException(_inner) => _inner.fmt(f),
-            CancelKeyDeletionErrorKind::InvalidArnException(_inner) => _inner.fmt(f),
-            CancelKeyDeletionErrorKind::KmsInternalException(_inner) => _inner.fmt(f),
-            CancelKeyDeletionErrorKind::KmsInvalidStateException(_inner) => _inner.fmt(f),
-            CancelKeyDeletionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            CancelKeyDeletionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CancelKeyDeletionErrorKind::DependencyTimeoutException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CancelKeyDeletionErrorKind::InvalidArnException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CancelKeyDeletionErrorKind::KmsInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CancelKeyDeletionErrorKind::KmsInvalidStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CancelKeyDeletionErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CancelKeyDeletionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -11651,73 +12292,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for CancelKeyDeletionError {
 }
 impl CancelKeyDeletionError {
     /// Creates a new `CancelKeyDeletionError`.
-    pub fn new(kind: CancelKeyDeletionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CancelKeyDeletionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CancelKeyDeletionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CancelKeyDeletionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CancelKeyDeletionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CancelKeyDeletionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CancelKeyDeletionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CancelKeyDeletionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CancelKeyDeletionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CancelKeyDeletionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CancelKeyDeletionErrorKind::DependencyTimeoutException`.
     pub fn is_dependency_timeout_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CancelKeyDeletionErrorKind::DependencyTimeoutException(_)
-        )
+        matches!(&self.kind, CancelKeyDeletionErrorKind::DependencyTimeoutException(_))
     }
     /// Returns `true` if the error kind is `CancelKeyDeletionErrorKind::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CancelKeyDeletionErrorKind::InvalidArnException(_)
-        )
+        matches!(&self.kind, CancelKeyDeletionErrorKind::InvalidArnException(_))
     }
     /// Returns `true` if the error kind is `CancelKeyDeletionErrorKind::KmsInternalException`.
     pub fn is_kms_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CancelKeyDeletionErrorKind::KmsInternalException(_)
-        )
+        matches!(&self.kind, CancelKeyDeletionErrorKind::KmsInternalException(_))
     }
     /// Returns `true` if the error kind is `CancelKeyDeletionErrorKind::KmsInvalidStateException`.
     pub fn is_kms_invalid_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CancelKeyDeletionErrorKind::KmsInvalidStateException(_)
-        )
+        matches!(&self.kind, CancelKeyDeletionErrorKind::KmsInvalidStateException(_))
     }
     /// Returns `true` if the error kind is `CancelKeyDeletionErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -11727,41 +12356,54 @@ impl CancelKeyDeletionError {
 impl std::error::Error for CancelKeyDeletionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CancelKeyDeletionErrorKind::DependencyTimeoutException(_inner) => Some(_inner),
-            CancelKeyDeletionErrorKind::InvalidArnException(_inner) => Some(_inner),
-            CancelKeyDeletionErrorKind::KmsInternalException(_inner) => Some(_inner),
-            CancelKeyDeletionErrorKind::KmsInvalidStateException(_inner) => Some(_inner),
-            CancelKeyDeletionErrorKind::NotFoundException(_inner) => Some(_inner),
-            CancelKeyDeletionErrorKind::Unhandled(_inner) => Some(_inner),
+            CancelKeyDeletionErrorKind::DependencyTimeoutException(_inner) =>
+            Some(_inner)
+            ,
+            CancelKeyDeletionErrorKind::InvalidArnException(_inner) =>
+            Some(_inner)
+            ,
+            CancelKeyDeletionErrorKind::KmsInternalException(_inner) =>
+            Some(_inner)
+            ,
+            CancelKeyDeletionErrorKind::KmsInvalidStateException(_inner) =>
+            Some(_inner)
+            ,
+            CancelKeyDeletionErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CancelKeyDeletionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

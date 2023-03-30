@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVariableOutput {}
+pub struct UpdateVariableOutput  {
+}
 /// See [`UpdateVariableOutput`](crate::output::UpdateVariableOutput).
 pub mod update_variable_output {
-
+    
     /// A builder for [`UpdateVariableOutput`](crate::output::UpdateVariableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateVariableOutput`](crate::output::UpdateVariableOutput).
         pub fn build(self) -> crate::output::UpdateVariableOutput {
-            crate::output::UpdateVariableOutput {}
+            crate::output::UpdateVariableOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateVariableOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVariableOutput`](crate::output::UpdateVariableOutput).
@@ -26,20 +31,20 @@ impl UpdateVariableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRuleVersionOutput {
+pub struct UpdateRuleVersionOutput  {
     /// <p>The new rule version that was created.</p>
     #[doc(hidden)]
     pub rule: std::option::Option<crate::model::Rule>,
 }
 impl UpdateRuleVersionOutput {
     /// <p>The new rule version that was created.</p>
-    pub fn rule(&self) -> std::option::Option<&crate::model::Rule> {
+    pub fn rule(&self) -> std::option::Option<& crate::model::Rule> {
         self.rule.as_ref()
     }
 }
 /// See [`UpdateRuleVersionOutput`](crate::output::UpdateRuleVersionOutput).
 pub mod update_rule_version_output {
-
+    
     /// A builder for [`UpdateRuleVersionOutput`](crate::output::UpdateRuleVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -53,14 +58,18 @@ pub mod update_rule_version_output {
         }
         /// <p>The new rule version that was created.</p>
         pub fn set_rule(mut self, input: std::option::Option<crate::model::Rule>) -> Self {
-            self.rule = input;
-            self
+            self.rule = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRuleVersionOutput`](crate::output::UpdateRuleVersionOutput).
         pub fn build(self) -> crate::output::UpdateRuleVersionOutput {
-            crate::output::UpdateRuleVersionOutput { rule: self.rule }
+            crate::output::UpdateRuleVersionOutput {
+                rule: self.rule
+                ,
+            }
         }
     }
+    
+    
 }
 impl UpdateRuleVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRuleVersionOutput`](crate::output::UpdateRuleVersionOutput).
@@ -72,19 +81,24 @@ impl UpdateRuleVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRuleMetadataOutput {}
+pub struct UpdateRuleMetadataOutput  {
+}
 /// See [`UpdateRuleMetadataOutput`](crate::output::UpdateRuleMetadataOutput).
 pub mod update_rule_metadata_output {
-
+    
     /// A builder for [`UpdateRuleMetadataOutput`](crate::output::UpdateRuleMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateRuleMetadataOutput`](crate::output::UpdateRuleMetadataOutput).
         pub fn build(self) -> crate::output::UpdateRuleMetadataOutput {
-            crate::output::UpdateRuleMetadataOutput {}
+            crate::output::UpdateRuleMetadataOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateRuleMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRuleMetadataOutput`](crate::output::UpdateRuleMetadataOutput).
@@ -96,19 +110,24 @@ impl UpdateRuleMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateModelVersionStatusOutput {}
+pub struct UpdateModelVersionStatusOutput  {
+}
 /// See [`UpdateModelVersionStatusOutput`](crate::output::UpdateModelVersionStatusOutput).
 pub mod update_model_version_status_output {
-
+    
     /// A builder for [`UpdateModelVersionStatusOutput`](crate::output::UpdateModelVersionStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateModelVersionStatusOutput`](crate::output::UpdateModelVersionStatusOutput).
         pub fn build(self) -> crate::output::UpdateModelVersionStatusOutput {
-            crate::output::UpdateModelVersionStatusOutput {}
+            crate::output::UpdateModelVersionStatusOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateModelVersionStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateModelVersionStatusOutput`](crate::output::UpdateModelVersionStatusOutput).
@@ -120,7 +139,7 @@ impl UpdateModelVersionStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateModelVersionOutput {
+pub struct UpdateModelVersionOutput  {
     /// <p>The model ID.</p>
     #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
@@ -136,25 +155,25 @@ pub struct UpdateModelVersionOutput {
 }
 impl UpdateModelVersionOutput {
     /// <p>The model ID.</p>
-    pub fn model_id(&self) -> std::option::Option<&str> {
+    pub fn model_id(&self) -> std::option::Option<& str> {
         self.model_id.as_deref()
     }
     /// <p>The model type.</p>
-    pub fn model_type(&self) -> std::option::Option<&crate::model::ModelTypeEnum> {
+    pub fn model_type(&self) -> std::option::Option<& crate::model::ModelTypeEnum> {
         self.model_type.as_ref()
     }
     /// <p>The model version number of the model version updated.</p>
-    pub fn model_version_number(&self) -> std::option::Option<&str> {
+    pub fn model_version_number(&self) -> std::option::Option<& str> {
         self.model_version_number.as_deref()
     }
     /// <p>The status of the updated model version.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`UpdateModelVersionOutput`](crate::output::UpdateModelVersionOutput).
 pub mod update_model_version_output {
-
+    
     /// A builder for [`UpdateModelVersionOutput`](crate::output::UpdateModelVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -171,8 +190,7 @@ pub mod update_model_version_output {
         }
         /// <p>The model ID.</p>
         pub fn set_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_id = input;
-            self
+            self.model_id = input; self
         }
         /// <p>The model type.</p>
         pub fn model_type(mut self, input: crate::model::ModelTypeEnum) -> Self {
@@ -180,12 +198,8 @@ pub mod update_model_version_output {
             self
         }
         /// <p>The model type.</p>
-        pub fn set_model_type(
-            mut self,
-            input: std::option::Option<crate::model::ModelTypeEnum>,
-        ) -> Self {
-            self.model_type = input;
-            self
+        pub fn set_model_type(mut self, input: std::option::Option<crate::model::ModelTypeEnum>) -> Self {
+            self.model_type = input; self
         }
         /// <p>The model version number of the model version updated.</p>
         pub fn model_version_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -193,12 +207,8 @@ pub mod update_model_version_output {
             self
         }
         /// <p>The model version number of the model version updated.</p>
-        pub fn set_model_version_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.model_version_number = input;
-            self
+        pub fn set_model_version_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_version_number = input; self
         }
         /// <p>The status of the updated model version.</p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -207,19 +217,24 @@ pub mod update_model_version_output {
         }
         /// <p>The status of the updated model version.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateModelVersionOutput`](crate::output::UpdateModelVersionOutput).
         pub fn build(self) -> crate::output::UpdateModelVersionOutput {
             crate::output::UpdateModelVersionOutput {
-                model_id: self.model_id,
-                model_type: self.model_type,
-                model_version_number: self.model_version_number,
-                status: self.status,
+                model_id: self.model_id
+                ,
+                model_type: self.model_type
+                ,
+                model_version_number: self.model_version_number
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateModelVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateModelVersionOutput`](crate::output::UpdateModelVersionOutput).
@@ -231,19 +246,24 @@ impl UpdateModelVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateModelOutput {}
+pub struct UpdateModelOutput  {
+}
 /// See [`UpdateModelOutput`](crate::output::UpdateModelOutput).
 pub mod update_model_output {
-
+    
     /// A builder for [`UpdateModelOutput`](crate::output::UpdateModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateModelOutput`](crate::output::UpdateModelOutput).
         pub fn build(self) -> crate::output::UpdateModelOutput {
-            crate::output::UpdateModelOutput {}
+            crate::output::UpdateModelOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateModelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateModelOutput`](crate::output::UpdateModelOutput).
@@ -255,19 +275,24 @@ impl UpdateModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEventLabelOutput {}
+pub struct UpdateEventLabelOutput  {
+}
 /// See [`UpdateEventLabelOutput`](crate::output::UpdateEventLabelOutput).
 pub mod update_event_label_output {
-
+    
     /// A builder for [`UpdateEventLabelOutput`](crate::output::UpdateEventLabelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateEventLabelOutput`](crate::output::UpdateEventLabelOutput).
         pub fn build(self) -> crate::output::UpdateEventLabelOutput {
-            crate::output::UpdateEventLabelOutput {}
+            crate::output::UpdateEventLabelOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateEventLabelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEventLabelOutput`](crate::output::UpdateEventLabelOutput).
@@ -279,19 +304,24 @@ impl UpdateEventLabelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDetectorVersionStatusOutput {}
+pub struct UpdateDetectorVersionStatusOutput  {
+}
 /// See [`UpdateDetectorVersionStatusOutput`](crate::output::UpdateDetectorVersionStatusOutput).
 pub mod update_detector_version_status_output {
-
+    
     /// A builder for [`UpdateDetectorVersionStatusOutput`](crate::output::UpdateDetectorVersionStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDetectorVersionStatusOutput`](crate::output::UpdateDetectorVersionStatusOutput).
         pub fn build(self) -> crate::output::UpdateDetectorVersionStatusOutput {
-            crate::output::UpdateDetectorVersionStatusOutput {}
+            crate::output::UpdateDetectorVersionStatusOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateDetectorVersionStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDetectorVersionStatusOutput`](crate::output::UpdateDetectorVersionStatusOutput).
@@ -303,19 +333,24 @@ impl UpdateDetectorVersionStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDetectorVersionMetadataOutput {}
+pub struct UpdateDetectorVersionMetadataOutput  {
+}
 /// See [`UpdateDetectorVersionMetadataOutput`](crate::output::UpdateDetectorVersionMetadataOutput).
 pub mod update_detector_version_metadata_output {
-
+    
     /// A builder for [`UpdateDetectorVersionMetadataOutput`](crate::output::UpdateDetectorVersionMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDetectorVersionMetadataOutput`](crate::output::UpdateDetectorVersionMetadataOutput).
         pub fn build(self) -> crate::output::UpdateDetectorVersionMetadataOutput {
-            crate::output::UpdateDetectorVersionMetadataOutput {}
+            crate::output::UpdateDetectorVersionMetadataOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateDetectorVersionMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDetectorVersionMetadataOutput`](crate::output::UpdateDetectorVersionMetadataOutput).
@@ -327,19 +362,24 @@ impl UpdateDetectorVersionMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDetectorVersionOutput {}
+pub struct UpdateDetectorVersionOutput  {
+}
 /// See [`UpdateDetectorVersionOutput`](crate::output::UpdateDetectorVersionOutput).
 pub mod update_detector_version_output {
-
+    
     /// A builder for [`UpdateDetectorVersionOutput`](crate::output::UpdateDetectorVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateDetectorVersionOutput`](crate::output::UpdateDetectorVersionOutput).
         pub fn build(self) -> crate::output::UpdateDetectorVersionOutput {
-            crate::output::UpdateDetectorVersionOutput {}
+            crate::output::UpdateDetectorVersionOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateDetectorVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDetectorVersionOutput`](crate::output::UpdateDetectorVersionOutput).
@@ -351,19 +391,24 @@ impl UpdateDetectorVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -375,19 +420,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -399,19 +449,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendEventOutput {}
+pub struct SendEventOutput  {
+}
 /// See [`SendEventOutput`](crate::output::SendEventOutput).
 pub mod send_event_output {
-
+    
     /// A builder for [`SendEventOutput`](crate::output::SendEventOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`SendEventOutput`](crate::output::SendEventOutput).
         pub fn build(self) -> crate::output::SendEventOutput {
-            crate::output::SendEventOutput {}
+            crate::output::SendEventOutput {
+            }
         }
     }
+    
+    
 }
 impl SendEventOutput {
     /// Creates a new builder-style object to manufacture [`SendEventOutput`](crate::output::SendEventOutput).
@@ -423,19 +478,24 @@ impl SendEventOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutOutcomeOutput {}
+pub struct PutOutcomeOutput  {
+}
 /// See [`PutOutcomeOutput`](crate::output::PutOutcomeOutput).
 pub mod put_outcome_output {
-
+    
     /// A builder for [`PutOutcomeOutput`](crate::output::PutOutcomeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutOutcomeOutput`](crate::output::PutOutcomeOutput).
         pub fn build(self) -> crate::output::PutOutcomeOutput {
-            crate::output::PutOutcomeOutput {}
+            crate::output::PutOutcomeOutput {
+            }
         }
     }
+    
+    
 }
 impl PutOutcomeOutput {
     /// Creates a new builder-style object to manufacture [`PutOutcomeOutput`](crate::output::PutOutcomeOutput).
@@ -447,19 +507,24 @@ impl PutOutcomeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutLabelOutput {}
+pub struct PutLabelOutput  {
+}
 /// See [`PutLabelOutput`](crate::output::PutLabelOutput).
 pub mod put_label_output {
-
+    
     /// A builder for [`PutLabelOutput`](crate::output::PutLabelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutLabelOutput`](crate::output::PutLabelOutput).
         pub fn build(self) -> crate::output::PutLabelOutput {
-            crate::output::PutLabelOutput {}
+            crate::output::PutLabelOutput {
+            }
         }
     }
+    
+    
 }
 impl PutLabelOutput {
     /// Creates a new builder-style object to manufacture [`PutLabelOutput`](crate::output::PutLabelOutput).
@@ -471,19 +536,24 @@ impl PutLabelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutKmsEncryptionKeyOutput {}
+pub struct PutKmsEncryptionKeyOutput  {
+}
 /// See [`PutKmsEncryptionKeyOutput`](crate::output::PutKmsEncryptionKeyOutput).
 pub mod put_kms_encryption_key_output {
-
+    
     /// A builder for [`PutKmsEncryptionKeyOutput`](crate::output::PutKmsEncryptionKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutKmsEncryptionKeyOutput`](crate::output::PutKmsEncryptionKeyOutput).
         pub fn build(self) -> crate::output::PutKmsEncryptionKeyOutput {
-            crate::output::PutKmsEncryptionKeyOutput {}
+            crate::output::PutKmsEncryptionKeyOutput {
+            }
         }
     }
+    
+    
 }
 impl PutKmsEncryptionKeyOutput {
     /// Creates a new builder-style object to manufacture [`PutKmsEncryptionKeyOutput`](crate::output::PutKmsEncryptionKeyOutput).
@@ -495,19 +565,24 @@ impl PutKmsEncryptionKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutExternalModelOutput {}
+pub struct PutExternalModelOutput  {
+}
 /// See [`PutExternalModelOutput`](crate::output::PutExternalModelOutput).
 pub mod put_external_model_output {
-
+    
     /// A builder for [`PutExternalModelOutput`](crate::output::PutExternalModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutExternalModelOutput`](crate::output::PutExternalModelOutput).
         pub fn build(self) -> crate::output::PutExternalModelOutput {
-            crate::output::PutExternalModelOutput {}
+            crate::output::PutExternalModelOutput {
+            }
         }
     }
+    
+    
 }
 impl PutExternalModelOutput {
     /// Creates a new builder-style object to manufacture [`PutExternalModelOutput`](crate::output::PutExternalModelOutput).
@@ -519,19 +594,24 @@ impl PutExternalModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEventTypeOutput {}
+pub struct PutEventTypeOutput  {
+}
 /// See [`PutEventTypeOutput`](crate::output::PutEventTypeOutput).
 pub mod put_event_type_output {
-
+    
     /// A builder for [`PutEventTypeOutput`](crate::output::PutEventTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutEventTypeOutput`](crate::output::PutEventTypeOutput).
         pub fn build(self) -> crate::output::PutEventTypeOutput {
-            crate::output::PutEventTypeOutput {}
+            crate::output::PutEventTypeOutput {
+            }
         }
     }
+    
+    
 }
 impl PutEventTypeOutput {
     /// Creates a new builder-style object to manufacture [`PutEventTypeOutput`](crate::output::PutEventTypeOutput).
@@ -543,19 +623,24 @@ impl PutEventTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEntityTypeOutput {}
+pub struct PutEntityTypeOutput  {
+}
 /// See [`PutEntityTypeOutput`](crate::output::PutEntityTypeOutput).
 pub mod put_entity_type_output {
-
+    
     /// A builder for [`PutEntityTypeOutput`](crate::output::PutEntityTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutEntityTypeOutput`](crate::output::PutEntityTypeOutput).
         pub fn build(self) -> crate::output::PutEntityTypeOutput {
-            crate::output::PutEntityTypeOutput {}
+            crate::output::PutEntityTypeOutput {
+            }
         }
     }
+    
+    
 }
 impl PutEntityTypeOutput {
     /// Creates a new builder-style object to manufacture [`PutEntityTypeOutput`](crate::output::PutEntityTypeOutput).
@@ -567,19 +652,24 @@ impl PutEntityTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutDetectorOutput {}
+pub struct PutDetectorOutput  {
+}
 /// See [`PutDetectorOutput`](crate::output::PutDetectorOutput).
 pub mod put_detector_output {
-
+    
     /// A builder for [`PutDetectorOutput`](crate::output::PutDetectorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutDetectorOutput`](crate::output::PutDetectorOutput).
         pub fn build(self) -> crate::output::PutDetectorOutput {
-            crate::output::PutDetectorOutput {}
+            crate::output::PutDetectorOutput {
+            }
         }
     }
+    
+    
 }
 impl PutDetectorOutput {
     /// Creates a new builder-style object to manufacture [`PutDetectorOutput`](crate::output::PutDetectorOutput).
@@ -591,7 +681,7 @@ impl PutDetectorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A collection of key and value pairs.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -601,17 +691,17 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>A collection of key and value pairs.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The next token for subsequent requests. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -626,17 +716,13 @@ pub mod list_tags_for_resource_output {
         /// <p>A collection of key and value pairs.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A collection of key and value pairs.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The next token for subsequent requests. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -645,17 +731,20 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>The next token for subsequent requests. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                tags: self.tags,
-                next_token: self.next_token,
+                tags: self.tags
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -667,35 +756,31 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEventPredictionsOutput {
+pub struct ListEventPredictionsOutput  {
     /// <p> The summary of the past predictions. </p>
     #[doc(hidden)]
-    pub event_prediction_summaries:
-        std::option::Option<std::vec::Vec<crate::model::EventPredictionSummary>>,
+    pub event_prediction_summaries: std::option::Option<std::vec::Vec<crate::model::EventPredictionSummary>>,
     /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListEventPredictionsOutput {
     /// <p> The summary of the past predictions. </p>
-    pub fn event_prediction_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::EventPredictionSummary]> {
+    pub fn event_prediction_summaries(&self) -> std::option::Option<& [crate::model::EventPredictionSummary]> {
         self.event_prediction_summaries.as_deref()
     }
     /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEventPredictionsOutput`](crate::output::ListEventPredictionsOutput).
 pub mod list_event_predictions_output {
-
+    
     /// A builder for [`ListEventPredictionsOutput`](crate::output::ListEventPredictionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) event_prediction_summaries:
-            std::option::Option<std::vec::Vec<crate::model::EventPredictionSummary>>,
+        pub(crate) event_prediction_summaries: std::option::Option<std::vec::Vec<crate::model::EventPredictionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -704,22 +789,15 @@ pub mod list_event_predictions_output {
         /// To override the contents of this collection use [`set_event_prediction_summaries`](Self::set_event_prediction_summaries).
         ///
         /// <p> The summary of the past predictions. </p>
-        pub fn event_prediction_summaries(
-            mut self,
-            input: crate::model::EventPredictionSummary,
-        ) -> Self {
+        pub fn event_prediction_summaries(mut self, input: crate::model::EventPredictionSummary) -> Self {
             let mut v = self.event_prediction_summaries.unwrap_or_default();
-            v.push(input);
-            self.event_prediction_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.event_prediction_summaries = Some(v);
+                            self
         }
         /// <p> The summary of the past predictions. </p>
-        pub fn set_event_prediction_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventPredictionSummary>>,
-        ) -> Self {
-            self.event_prediction_summaries = input;
-            self
+        pub fn set_event_prediction_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventPredictionSummary>>) -> Self {
+            self.event_prediction_summaries = input; self
         }
         /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -728,17 +806,20 @@ pub mod list_event_predictions_output {
         }
         /// <p> Identifies the next page of results to return. Use the token to make the call again to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEventPredictionsOutput`](crate::output::ListEventPredictionsOutput).
         pub fn build(self) -> crate::output::ListEventPredictionsOutput {
             crate::output::ListEventPredictionsOutput {
-                event_prediction_summaries: self.event_prediction_summaries,
-                next_token: self.next_token,
+                event_prediction_summaries: self.event_prediction_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEventPredictionsOutput {
     /// Creates a new builder-style object to manufacture [`ListEventPredictionsOutput`](crate::output::ListEventPredictionsOutput).
@@ -750,7 +831,7 @@ impl ListEventPredictionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVariablesOutput {
+pub struct GetVariablesOutput  {
     /// <p>The names of the variables returned. </p>
     #[doc(hidden)]
     pub variables: std::option::Option<std::vec::Vec<crate::model::Variable>>,
@@ -760,17 +841,17 @@ pub struct GetVariablesOutput {
 }
 impl GetVariablesOutput {
     /// <p>The names of the variables returned. </p>
-    pub fn variables(&self) -> std::option::Option<&[crate::model::Variable]> {
+    pub fn variables(&self) -> std::option::Option<& [crate::model::Variable]> {
         self.variables.as_deref()
     }
     /// <p>The next page token to be used in subsequent requests. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetVariablesOutput`](crate::output::GetVariablesOutput).
 pub mod get_variables_output {
-
+    
     /// A builder for [`GetVariablesOutput`](crate::output::GetVariablesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -785,17 +866,13 @@ pub mod get_variables_output {
         /// <p>The names of the variables returned. </p>
         pub fn variables(mut self, input: crate::model::Variable) -> Self {
             let mut v = self.variables.unwrap_or_default();
-            v.push(input);
-            self.variables = Some(v);
-            self
+                            v.push(input);
+                            self.variables = Some(v);
+                            self
         }
         /// <p>The names of the variables returned. </p>
-        pub fn set_variables(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Variable>>,
-        ) -> Self {
-            self.variables = input;
-            self
+        pub fn set_variables(mut self, input: std::option::Option<std::vec::Vec<crate::model::Variable>>) -> Self {
+            self.variables = input; self
         }
         /// <p>The next page token to be used in subsequent requests. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -804,17 +881,20 @@ pub mod get_variables_output {
         }
         /// <p>The next page token to be used in subsequent requests. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetVariablesOutput`](crate::output::GetVariablesOutput).
         pub fn build(self) -> crate::output::GetVariablesOutput {
             crate::output::GetVariablesOutput {
-                variables: self.variables,
-                next_token: self.next_token,
+                variables: self.variables
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetVariablesOutput {
     /// Creates a new builder-style object to manufacture [`GetVariablesOutput`](crate::output::GetVariablesOutput).
@@ -826,7 +906,7 @@ impl GetVariablesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRulesOutput {
+pub struct GetRulesOutput  {
     /// <p>The details of the requested rule.</p>
     #[doc(hidden)]
     pub rule_details: std::option::Option<std::vec::Vec<crate::model::RuleDetail>>,
@@ -836,17 +916,17 @@ pub struct GetRulesOutput {
 }
 impl GetRulesOutput {
     /// <p>The details of the requested rule.</p>
-    pub fn rule_details(&self) -> std::option::Option<&[crate::model::RuleDetail]> {
+    pub fn rule_details(&self) -> std::option::Option<& [crate::model::RuleDetail]> {
         self.rule_details.as_deref()
     }
     /// <p>The next page token to be used in subsequent requests.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetRulesOutput`](crate::output::GetRulesOutput).
 pub mod get_rules_output {
-
+    
     /// A builder for [`GetRulesOutput`](crate::output::GetRulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -861,17 +941,13 @@ pub mod get_rules_output {
         /// <p>The details of the requested rule.</p>
         pub fn rule_details(mut self, input: crate::model::RuleDetail) -> Self {
             let mut v = self.rule_details.unwrap_or_default();
-            v.push(input);
-            self.rule_details = Some(v);
-            self
+                            v.push(input);
+                            self.rule_details = Some(v);
+                            self
         }
         /// <p>The details of the requested rule.</p>
-        pub fn set_rule_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RuleDetail>>,
-        ) -> Self {
-            self.rule_details = input;
-            self
+        pub fn set_rule_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::RuleDetail>>) -> Self {
+            self.rule_details = input; self
         }
         /// <p>The next page token to be used in subsequent requests.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -880,17 +956,20 @@ pub mod get_rules_output {
         }
         /// <p>The next page token to be used in subsequent requests.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetRulesOutput`](crate::output::GetRulesOutput).
         pub fn build(self) -> crate::output::GetRulesOutput {
             crate::output::GetRulesOutput {
-                rule_details: self.rule_details,
-                next_token: self.next_token,
+                rule_details: self.rule_details
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRulesOutput {
     /// Creates a new builder-style object to manufacture [`GetRulesOutput`](crate::output::GetRulesOutput).
@@ -902,7 +981,7 @@ impl GetRulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOutcomesOutput {
+pub struct GetOutcomesOutput  {
     /// <p>The outcomes. </p>
     #[doc(hidden)]
     pub outcomes: std::option::Option<std::vec::Vec<crate::model::Outcome>>,
@@ -912,17 +991,17 @@ pub struct GetOutcomesOutput {
 }
 impl GetOutcomesOutput {
     /// <p>The outcomes. </p>
-    pub fn outcomes(&self) -> std::option::Option<&[crate::model::Outcome]> {
+    pub fn outcomes(&self) -> std::option::Option<& [crate::model::Outcome]> {
         self.outcomes.as_deref()
     }
     /// <p>The next page token for subsequent requests.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetOutcomesOutput`](crate::output::GetOutcomesOutput).
 pub mod get_outcomes_output {
-
+    
     /// A builder for [`GetOutcomesOutput`](crate::output::GetOutcomesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -937,17 +1016,13 @@ pub mod get_outcomes_output {
         /// <p>The outcomes. </p>
         pub fn outcomes(mut self, input: crate::model::Outcome) -> Self {
             let mut v = self.outcomes.unwrap_or_default();
-            v.push(input);
-            self.outcomes = Some(v);
-            self
+                            v.push(input);
+                            self.outcomes = Some(v);
+                            self
         }
         /// <p>The outcomes. </p>
-        pub fn set_outcomes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Outcome>>,
-        ) -> Self {
-            self.outcomes = input;
-            self
+        pub fn set_outcomes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Outcome>>) -> Self {
+            self.outcomes = input; self
         }
         /// <p>The next page token for subsequent requests.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -956,17 +1031,20 @@ pub mod get_outcomes_output {
         }
         /// <p>The next page token for subsequent requests.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetOutcomesOutput`](crate::output::GetOutcomesOutput).
         pub fn build(self) -> crate::output::GetOutcomesOutput {
             crate::output::GetOutcomesOutput {
-                outcomes: self.outcomes,
-                next_token: self.next_token,
+                outcomes: self.outcomes
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetOutcomesOutput {
     /// Creates a new builder-style object to manufacture [`GetOutcomesOutput`](crate::output::GetOutcomesOutput).
@@ -978,7 +1056,7 @@ impl GetOutcomesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetModelVersionOutput {
+pub struct GetModelVersionOutput  {
     /// <p>The model ID.</p>
     #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
@@ -1000,18 +1078,18 @@ pub struct GetModelVersionOutput {
     /// <p>The details of the ingested events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
     #[doc(hidden)]
     pub ingested_events_detail: std::option::Option<crate::model::IngestedEventsDetail>,
-    /// <p>The model version status.</p>
-    /// <p>Possible values are:</p>
-    /// <ul>
-    /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li>
-    /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li>
-    /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li>
-    /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>INACTIVE</code> </p> </li>
-    /// <li> <p> <code>ERROR</code> </p> </li>
+    /// <p>The model version status.</p> 
+    /// <p>Possible values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li> 
+    /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li> 
+    /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>ACTIVE</code> </p> </li> 
+    /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li> 
+    /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>INACTIVE</code> </p> </li> 
+    /// <li> <p> <code>ERROR</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -1021,63 +1099,57 @@ pub struct GetModelVersionOutput {
 }
 impl GetModelVersionOutput {
     /// <p>The model ID.</p>
-    pub fn model_id(&self) -> std::option::Option<&str> {
+    pub fn model_id(&self) -> std::option::Option<& str> {
         self.model_id.as_deref()
     }
     /// <p>The model type.</p>
-    pub fn model_type(&self) -> std::option::Option<&crate::model::ModelTypeEnum> {
+    pub fn model_type(&self) -> std::option::Option<& crate::model::ModelTypeEnum> {
         self.model_type.as_ref()
     }
     /// <p>The model version number.</p>
-    pub fn model_version_number(&self) -> std::option::Option<&str> {
+    pub fn model_version_number(&self) -> std::option::Option<& str> {
         self.model_version_number.as_deref()
     }
     /// <p>The training data source.</p>
-    pub fn training_data_source(
-        &self,
-    ) -> std::option::Option<&crate::model::TrainingDataSourceEnum> {
+    pub fn training_data_source(&self) -> std::option::Option<& crate::model::TrainingDataSourceEnum> {
         self.training_data_source.as_ref()
     }
     /// <p>The training data schema.</p>
-    pub fn training_data_schema(&self) -> std::option::Option<&crate::model::TrainingDataSchema> {
+    pub fn training_data_schema(&self) -> std::option::Option<& crate::model::TrainingDataSchema> {
         self.training_data_schema.as_ref()
     }
     /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code> </p>
-    pub fn external_events_detail(
-        &self,
-    ) -> std::option::Option<&crate::model::ExternalEventsDetail> {
+    pub fn external_events_detail(&self) -> std::option::Option<& crate::model::ExternalEventsDetail> {
         self.external_events_detail.as_ref()
     }
     /// <p>The details of the ingested events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
-    pub fn ingested_events_detail(
-        &self,
-    ) -> std::option::Option<&crate::model::IngestedEventsDetail> {
+    pub fn ingested_events_detail(&self) -> std::option::Option<& crate::model::IngestedEventsDetail> {
         self.ingested_events_detail.as_ref()
     }
-    /// <p>The model version status.</p>
-    /// <p>Possible values are:</p>
-    /// <ul>
-    /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li>
-    /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li>
-    /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>ACTIVE</code> </p> </li>
-    /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li>
-    /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li>
-    /// <li> <p> <code>INACTIVE</code> </p> </li>
-    /// <li> <p> <code>ERROR</code> </p> </li>
+    /// <p>The model version status.</p> 
+    /// <p>Possible values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li> 
+    /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li> 
+    /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>ACTIVE</code> </p> </li> 
+    /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li> 
+    /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li> 
+    /// <li> <p> <code>INACTIVE</code> </p> </li> 
+    /// <li> <p> <code>ERROR</code> </p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
     /// <p>The model version ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`GetModelVersionOutput`](crate::output::GetModelVersionOutput).
 pub mod get_model_version_output {
-
+    
     /// A builder for [`GetModelVersionOutput`](crate::output::GetModelVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1099,8 +1171,7 @@ pub mod get_model_version_output {
         }
         /// <p>The model ID.</p>
         pub fn set_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_id = input;
-            self
+            self.model_id = input; self
         }
         /// <p>The model type.</p>
         pub fn model_type(mut self, input: crate::model::ModelTypeEnum) -> Self {
@@ -1108,12 +1179,8 @@ pub mod get_model_version_output {
             self
         }
         /// <p>The model type.</p>
-        pub fn set_model_type(
-            mut self,
-            input: std::option::Option<crate::model::ModelTypeEnum>,
-        ) -> Self {
-            self.model_type = input;
-            self
+        pub fn set_model_type(mut self, input: std::option::Option<crate::model::ModelTypeEnum>) -> Self {
+            self.model_type = input; self
         }
         /// <p>The model version number.</p>
         pub fn model_version_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1121,12 +1188,8 @@ pub mod get_model_version_output {
             self
         }
         /// <p>The model version number.</p>
-        pub fn set_model_version_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.model_version_number = input;
-            self
+        pub fn set_model_version_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_version_number = input; self
         }
         /// <p>The training data source.</p>
         pub fn training_data_source(mut self, input: crate::model::TrainingDataSourceEnum) -> Self {
@@ -1134,12 +1197,8 @@ pub mod get_model_version_output {
             self
         }
         /// <p>The training data source.</p>
-        pub fn set_training_data_source(
-            mut self,
-            input: std::option::Option<crate::model::TrainingDataSourceEnum>,
-        ) -> Self {
-            self.training_data_source = input;
-            self
+        pub fn set_training_data_source(mut self, input: std::option::Option<crate::model::TrainingDataSourceEnum>) -> Self {
+            self.training_data_source = input; self
         }
         /// <p>The training data schema.</p>
         pub fn training_data_schema(mut self, input: crate::model::TrainingDataSchema) -> Self {
@@ -1147,12 +1206,8 @@ pub mod get_model_version_output {
             self
         }
         /// <p>The training data schema.</p>
-        pub fn set_training_data_schema(
-            mut self,
-            input: std::option::Option<crate::model::TrainingDataSchema>,
-        ) -> Self {
-            self.training_data_schema = input;
-            self
+        pub fn set_training_data_schema(mut self, input: std::option::Option<crate::model::TrainingDataSchema>) -> Self {
+            self.training_data_schema = input; self
         }
         /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code> </p>
         pub fn external_events_detail(mut self, input: crate::model::ExternalEventsDetail) -> Self {
@@ -1160,12 +1215,8 @@ pub mod get_model_version_output {
             self
         }
         /// <p>The details of the external events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code> </p>
-        pub fn set_external_events_detail(
-            mut self,
-            input: std::option::Option<crate::model::ExternalEventsDetail>,
-        ) -> Self {
-            self.external_events_detail = input;
-            self
+        pub fn set_external_events_detail(mut self, input: std::option::Option<crate::model::ExternalEventsDetail>) -> Self {
+            self.external_events_detail = input; self
         }
         /// <p>The details of the ingested events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
         pub fn ingested_events_detail(mut self, input: crate::model::IngestedEventsDetail) -> Self {
@@ -1173,46 +1224,41 @@ pub mod get_model_version_output {
             self
         }
         /// <p>The details of the ingested events data used for training the model version. This will be populated if the <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
-        pub fn set_ingested_events_detail(
-            mut self,
-            input: std::option::Option<crate::model::IngestedEventsDetail>,
-        ) -> Self {
-            self.ingested_events_detail = input;
-            self
+        pub fn set_ingested_events_detail(mut self, input: std::option::Option<crate::model::IngestedEventsDetail>) -> Self {
+            self.ingested_events_detail = input; self
         }
-        /// <p>The model version status.</p>
-        /// <p>Possible values are:</p>
-        /// <ul>
-        /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li>
-        /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li>
-        /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li>
-        /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li>
-        /// <li> <p> <code>ACTIVE</code> </p> </li>
-        /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li>
-        /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li>
-        /// <li> <p> <code>INACTIVE</code> </p> </li>
-        /// <li> <p> <code>ERROR</code> </p> </li>
+        /// <p>The model version status.</p> 
+        /// <p>Possible values are:</p> 
+        /// <ul> 
+        /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li> 
+        /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li> 
+        /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li> 
+        /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li> 
+        /// <li> <p> <code>ACTIVE</code> </p> </li> 
+        /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li> 
+        /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li> 
+        /// <li> <p> <code>INACTIVE</code> </p> </li> 
+        /// <li> <p> <code>ERROR</code> </p> </li> 
         /// </ul>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
             self.status = Some(input.into());
             self
         }
-        /// <p>The model version status.</p>
-        /// <p>Possible values are:</p>
-        /// <ul>
-        /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li>
-        /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li>
-        /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li>
-        /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li>
-        /// <li> <p> <code>ACTIVE</code> </p> </li>
-        /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li>
-        /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li>
-        /// <li> <p> <code>INACTIVE</code> </p> </li>
-        /// <li> <p> <code>ERROR</code> </p> </li>
+        /// <p>The model version status.</p> 
+        /// <p>Possible values are:</p> 
+        /// <ul> 
+        /// <li> <p> <code>TRAINING_IN_PROGRESS</code> </p> </li> 
+        /// <li> <p> <code>TRAINING_COMPLETE</code> </p> </li> 
+        /// <li> <p> <code>ACTIVATE_REQUESTED</code> </p> </li> 
+        /// <li> <p> <code>ACTIVATE_IN_PROGRESS</code> </p> </li> 
+        /// <li> <p> <code>ACTIVE</code> </p> </li> 
+        /// <li> <p> <code>INACTIVATE_REQUESTED</code> </p> </li> 
+        /// <li> <p> <code>INACTIVATE_IN_PROGRESS</code> </p> </li> 
+        /// <li> <p> <code>INACTIVE</code> </p> </li> 
+        /// <li> <p> <code>ERROR</code> </p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The model version ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1221,24 +1267,34 @@ pub mod get_model_version_output {
         }
         /// <p>The model version ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`GetModelVersionOutput`](crate::output::GetModelVersionOutput).
         pub fn build(self) -> crate::output::GetModelVersionOutput {
             crate::output::GetModelVersionOutput {
-                model_id: self.model_id,
-                model_type: self.model_type,
-                model_version_number: self.model_version_number,
-                training_data_source: self.training_data_source,
-                training_data_schema: self.training_data_schema,
-                external_events_detail: self.external_events_detail,
-                ingested_events_detail: self.ingested_events_detail,
-                status: self.status,
-                arn: self.arn,
+                model_id: self.model_id
+                ,
+                model_type: self.model_type
+                ,
+                model_version_number: self.model_version_number
+                ,
+                training_data_source: self.training_data_source
+                ,
+                training_data_schema: self.training_data_schema
+                ,
+                external_events_detail: self.external_events_detail
+                ,
+                ingested_events_detail: self.ingested_events_detail
+                ,
+                status: self.status
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GetModelVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetModelVersionOutput`](crate::output::GetModelVersionOutput).
@@ -1250,7 +1306,7 @@ impl GetModelVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetModelsOutput {
+pub struct GetModelsOutput  {
     /// <p>The next page token to be used in subsequent requests.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1260,17 +1316,17 @@ pub struct GetModelsOutput {
 }
 impl GetModelsOutput {
     /// <p>The next page token to be used in subsequent requests.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The array of models.</p>
-    pub fn models(&self) -> std::option::Option<&[crate::model::Model]> {
+    pub fn models(&self) -> std::option::Option<& [crate::model::Model]> {
         self.models.as_deref()
     }
 }
 /// See [`GetModelsOutput`](crate::output::GetModelsOutput).
 pub mod get_models_output {
-
+    
     /// A builder for [`GetModelsOutput`](crate::output::GetModelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1285,8 +1341,7 @@ pub mod get_models_output {
         }
         /// <p>The next page token to be used in subsequent requests.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `models`.
         ///
@@ -1295,26 +1350,26 @@ pub mod get_models_output {
         /// <p>The array of models.</p>
         pub fn models(mut self, input: crate::model::Model) -> Self {
             let mut v = self.models.unwrap_or_default();
-            v.push(input);
-            self.models = Some(v);
-            self
+                            v.push(input);
+                            self.models = Some(v);
+                            self
         }
         /// <p>The array of models.</p>
-        pub fn set_models(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Model>>,
-        ) -> Self {
-            self.models = input;
-            self
+        pub fn set_models(mut self, input: std::option::Option<std::vec::Vec<crate::model::Model>>) -> Self {
+            self.models = input; self
         }
         /// Consumes the builder and constructs a [`GetModelsOutput`](crate::output::GetModelsOutput).
         pub fn build(self) -> crate::output::GetModelsOutput {
             crate::output::GetModelsOutput {
-                next_token: self.next_token,
-                models: self.models,
+                next_token: self.next_token
+                ,
+                models: self.models
+                ,
             }
         }
     }
+    
+    
 }
 impl GetModelsOutput {
     /// Creates a new builder-style object to manufacture [`GetModelsOutput`](crate::output::GetModelsOutput).
@@ -1326,7 +1381,7 @@ impl GetModelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLabelsOutput {
+pub struct GetLabelsOutput  {
     /// <p>An array of labels.</p>
     #[doc(hidden)]
     pub labels: std::option::Option<std::vec::Vec<crate::model::Label>>,
@@ -1336,17 +1391,17 @@ pub struct GetLabelsOutput {
 }
 impl GetLabelsOutput {
     /// <p>An array of labels.</p>
-    pub fn labels(&self) -> std::option::Option<&[crate::model::Label]> {
+    pub fn labels(&self) -> std::option::Option<& [crate::model::Label]> {
         self.labels.as_deref()
     }
     /// <p>The next page token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetLabelsOutput`](crate::output::GetLabelsOutput).
 pub mod get_labels_output {
-
+    
     /// A builder for [`GetLabelsOutput`](crate::output::GetLabelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1361,17 +1416,13 @@ pub mod get_labels_output {
         /// <p>An array of labels.</p>
         pub fn labels(mut self, input: crate::model::Label) -> Self {
             let mut v = self.labels.unwrap_or_default();
-            v.push(input);
-            self.labels = Some(v);
-            self
+                            v.push(input);
+                            self.labels = Some(v);
+                            self
         }
         /// <p>An array of labels.</p>
-        pub fn set_labels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Label>>,
-        ) -> Self {
-            self.labels = input;
-            self
+        pub fn set_labels(mut self, input: std::option::Option<std::vec::Vec<crate::model::Label>>) -> Self {
+            self.labels = input; self
         }
         /// <p>The next page token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1380,17 +1431,20 @@ pub mod get_labels_output {
         }
         /// <p>The next page token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetLabelsOutput`](crate::output::GetLabelsOutput).
         pub fn build(self) -> crate::output::GetLabelsOutput {
             crate::output::GetLabelsOutput {
-                labels: self.labels,
-                next_token: self.next_token,
+                labels: self.labels
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetLabelsOutput {
     /// Creates a new builder-style object to manufacture [`GetLabelsOutput`](crate::output::GetLabelsOutput).
@@ -1402,20 +1456,20 @@ impl GetLabelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetKmsEncryptionKeyOutput {
+pub struct GetKmsEncryptionKeyOutput  {
     /// <p>The KMS encryption key.</p>
     #[doc(hidden)]
     pub kms_key: std::option::Option<crate::model::KmsKey>,
 }
 impl GetKmsEncryptionKeyOutput {
     /// <p>The KMS encryption key.</p>
-    pub fn kms_key(&self) -> std::option::Option<&crate::model::KmsKey> {
+    pub fn kms_key(&self) -> std::option::Option<& crate::model::KmsKey> {
         self.kms_key.as_ref()
     }
 }
 /// See [`GetKmsEncryptionKeyOutput`](crate::output::GetKmsEncryptionKeyOutput).
 pub mod get_kms_encryption_key_output {
-
+    
     /// A builder for [`GetKmsEncryptionKeyOutput`](crate::output::GetKmsEncryptionKeyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1429,16 +1483,18 @@ pub mod get_kms_encryption_key_output {
         }
         /// <p>The KMS encryption key.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<crate::model::KmsKey>) -> Self {
-            self.kms_key = input;
-            self
+            self.kms_key = input; self
         }
         /// Consumes the builder and constructs a [`GetKmsEncryptionKeyOutput`](crate::output::GetKmsEncryptionKeyOutput).
         pub fn build(self) -> crate::output::GetKmsEncryptionKeyOutput {
             crate::output::GetKmsEncryptionKeyOutput {
-                kms_key: self.kms_key,
+                kms_key: self.kms_key
+                ,
             }
         }
     }
+    
+    
 }
 impl GetKmsEncryptionKeyOutput {
     /// Creates a new builder-style object to manufacture [`GetKmsEncryptionKeyOutput`](crate::output::GetKmsEncryptionKeyOutput).
@@ -1450,7 +1506,7 @@ impl GetKmsEncryptionKeyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExternalModelsOutput {
+pub struct GetExternalModelsOutput  {
     /// <p>Gets the Amazon SageMaker models.</p>
     #[doc(hidden)]
     pub external_models: std::option::Option<std::vec::Vec<crate::model::ExternalModel>>,
@@ -1460,17 +1516,17 @@ pub struct GetExternalModelsOutput {
 }
 impl GetExternalModelsOutput {
     /// <p>Gets the Amazon SageMaker models.</p>
-    pub fn external_models(&self) -> std::option::Option<&[crate::model::ExternalModel]> {
+    pub fn external_models(&self) -> std::option::Option<& [crate::model::ExternalModel]> {
         self.external_models.as_deref()
     }
     /// <p>The next page token to be used in subsequent requests.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetExternalModelsOutput`](crate::output::GetExternalModelsOutput).
 pub mod get_external_models_output {
-
+    
     /// A builder for [`GetExternalModelsOutput`](crate::output::GetExternalModelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1485,17 +1541,13 @@ pub mod get_external_models_output {
         /// <p>Gets the Amazon SageMaker models.</p>
         pub fn external_models(mut self, input: crate::model::ExternalModel) -> Self {
             let mut v = self.external_models.unwrap_or_default();
-            v.push(input);
-            self.external_models = Some(v);
-            self
+                            v.push(input);
+                            self.external_models = Some(v);
+                            self
         }
         /// <p>Gets the Amazon SageMaker models.</p>
-        pub fn set_external_models(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExternalModel>>,
-        ) -> Self {
-            self.external_models = input;
-            self
+        pub fn set_external_models(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExternalModel>>) -> Self {
+            self.external_models = input; self
         }
         /// <p>The next page token to be used in subsequent requests.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1504,17 +1556,20 @@ pub mod get_external_models_output {
         }
         /// <p>The next page token to be used in subsequent requests.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetExternalModelsOutput`](crate::output::GetExternalModelsOutput).
         pub fn build(self) -> crate::output::GetExternalModelsOutput {
             crate::output::GetExternalModelsOutput {
-                external_models: self.external_models,
-                next_token: self.next_token,
+                external_models: self.external_models
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetExternalModelsOutput {
     /// Creates a new builder-style object to manufacture [`GetExternalModelsOutput`](crate::output::GetExternalModelsOutput).
@@ -1526,7 +1581,7 @@ impl GetExternalModelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEventTypesOutput {
+pub struct GetEventTypesOutput  {
     /// <p>An array of event types.</p>
     #[doc(hidden)]
     pub event_types: std::option::Option<std::vec::Vec<crate::model::EventType>>,
@@ -1536,17 +1591,17 @@ pub struct GetEventTypesOutput {
 }
 impl GetEventTypesOutput {
     /// <p>An array of event types.</p>
-    pub fn event_types(&self) -> std::option::Option<&[crate::model::EventType]> {
+    pub fn event_types(&self) -> std::option::Option<& [crate::model::EventType]> {
         self.event_types.as_deref()
     }
     /// <p>The next page token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetEventTypesOutput`](crate::output::GetEventTypesOutput).
 pub mod get_event_types_output {
-
+    
     /// A builder for [`GetEventTypesOutput`](crate::output::GetEventTypesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1561,17 +1616,13 @@ pub mod get_event_types_output {
         /// <p>An array of event types.</p>
         pub fn event_types(mut self, input: crate::model::EventType) -> Self {
             let mut v = self.event_types.unwrap_or_default();
-            v.push(input);
-            self.event_types = Some(v);
-            self
+                            v.push(input);
+                            self.event_types = Some(v);
+                            self
         }
         /// <p>An array of event types.</p>
-        pub fn set_event_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventType>>,
-        ) -> Self {
-            self.event_types = input;
-            self
+        pub fn set_event_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventType>>) -> Self {
+            self.event_types = input; self
         }
         /// <p>The next page token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1580,17 +1631,20 @@ pub mod get_event_types_output {
         }
         /// <p>The next page token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetEventTypesOutput`](crate::output::GetEventTypesOutput).
         pub fn build(self) -> crate::output::GetEventTypesOutput {
             crate::output::GetEventTypesOutput {
-                event_types: self.event_types,
-                next_token: self.next_token,
+                event_types: self.event_types
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetEventTypesOutput {
     /// Creates a new builder-style object to manufacture [`GetEventTypesOutput`](crate::output::GetEventTypesOutput).
@@ -1602,7 +1656,7 @@ impl GetEventTypesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEventPredictionMetadataOutput {
+pub struct GetEventPredictionMetadataOutput  {
     /// <p> The event ID. </p>
     #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
@@ -1641,85 +1695,79 @@ pub struct GetEventPredictionMetadataOutput {
     pub outcomes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p> Model versions that were evaluated for generating predictions. </p>
     #[doc(hidden)]
-    pub evaluated_model_versions:
-        std::option::Option<std::vec::Vec<crate::model::EvaluatedModelVersion>>,
+    pub evaluated_model_versions: std::option::Option<std::vec::Vec<crate::model::EvaluatedModelVersion>>,
     /// <p> External (Amazon SageMaker) models that were evaluated for generating predictions. </p>
     #[doc(hidden)]
-    pub evaluated_external_models:
-        std::option::Option<std::vec::Vec<crate::model::EvaluatedExternalModel>>,
+    pub evaluated_external_models: std::option::Option<std::vec::Vec<crate::model::EvaluatedExternalModel>>,
     /// <p>The timestamp that defines when the prediction was generated. </p>
     #[doc(hidden)]
     pub prediction_timestamp: std::option::Option<std::string::String>,
 }
 impl GetEventPredictionMetadataOutput {
     /// <p> The event ID. </p>
-    pub fn event_id(&self) -> std::option::Option<&str> {
+    pub fn event_id(&self) -> std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p> The event type associated with the detector specified for this prediction. </p>
-    pub fn event_type_name(&self) -> std::option::Option<&str> {
+    pub fn event_type_name(&self) -> std::option::Option<& str> {
         self.event_type_name.as_deref()
     }
     /// <p> The entity ID. </p>
-    pub fn entity_id(&self) -> std::option::Option<&str> {
+    pub fn entity_id(&self) -> std::option::Option<& str> {
         self.entity_id.as_deref()
     }
     /// <p> The entity type. </p>
-    pub fn entity_type(&self) -> std::option::Option<&str> {
+    pub fn entity_type(&self) -> std::option::Option<& str> {
         self.entity_type.as_deref()
     }
     /// <p> The timestamp for when the prediction was generated for the associated event ID. </p>
-    pub fn event_timestamp(&self) -> std::option::Option<&str> {
+    pub fn event_timestamp(&self) -> std::option::Option<& str> {
         self.event_timestamp.as_deref()
     }
     /// <p> The detector ID. </p>
-    pub fn detector_id(&self) -> std::option::Option<&str> {
+    pub fn detector_id(&self) -> std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p> The detector version ID. </p>
-    pub fn detector_version_id(&self) -> std::option::Option<&str> {
+    pub fn detector_version_id(&self) -> std::option::Option<& str> {
         self.detector_version_id.as_deref()
     }
     /// <p> The status of the detector version. </p>
-    pub fn detector_version_status(&self) -> std::option::Option<&str> {
+    pub fn detector_version_status(&self) -> std::option::Option<& str> {
         self.detector_version_status.as_deref()
     }
     /// <p> A list of event variables that influenced the prediction scores. </p>
-    pub fn event_variables(&self) -> std::option::Option<&[crate::model::EventVariableSummary]> {
+    pub fn event_variables(&self) -> std::option::Option<& [crate::model::EventVariableSummary]> {
         self.event_variables.as_deref()
     }
     /// <p> List of rules associated with the detector version that were used for evaluating variable values. </p>
-    pub fn rules(&self) -> std::option::Option<&[crate::model::EvaluatedRule]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::model::EvaluatedRule]> {
         self.rules.as_deref()
     }
     /// <p> The execution mode of the rule used for evaluating variable values. </p>
-    pub fn rule_execution_mode(&self) -> std::option::Option<&crate::model::RuleExecutionMode> {
+    pub fn rule_execution_mode(&self) -> std::option::Option<& crate::model::RuleExecutionMode> {
         self.rule_execution_mode.as_ref()
     }
     /// <p> The outcomes of the matched rule, based on the rule execution mode. </p>
-    pub fn outcomes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn outcomes(&self) -> std::option::Option<& [std::string::String]> {
         self.outcomes.as_deref()
     }
     /// <p> Model versions that were evaluated for generating predictions. </p>
-    pub fn evaluated_model_versions(
-        &self,
-    ) -> std::option::Option<&[crate::model::EvaluatedModelVersion]> {
+    pub fn evaluated_model_versions(&self) -> std::option::Option<& [crate::model::EvaluatedModelVersion]> {
         self.evaluated_model_versions.as_deref()
     }
     /// <p> External (Amazon SageMaker) models that were evaluated for generating predictions. </p>
-    pub fn evaluated_external_models(
-        &self,
-    ) -> std::option::Option<&[crate::model::EvaluatedExternalModel]> {
+    pub fn evaluated_external_models(&self) -> std::option::Option<& [crate::model::EvaluatedExternalModel]> {
         self.evaluated_external_models.as_deref()
     }
     /// <p>The timestamp that defines when the prediction was generated. </p>
-    pub fn prediction_timestamp(&self) -> std::option::Option<&str> {
+    pub fn prediction_timestamp(&self) -> std::option::Option<& str> {
         self.prediction_timestamp.as_deref()
     }
 }
 /// See [`GetEventPredictionMetadataOutput`](crate::output::GetEventPredictionMetadataOutput).
 pub mod get_event_prediction_metadata_output {
-
+    
     /// A builder for [`GetEventPredictionMetadataOutput`](crate::output::GetEventPredictionMetadataOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1731,15 +1779,12 @@ pub mod get_event_prediction_metadata_output {
         pub(crate) detector_id: std::option::Option<std::string::String>,
         pub(crate) detector_version_id: std::option::Option<std::string::String>,
         pub(crate) detector_version_status: std::option::Option<std::string::String>,
-        pub(crate) event_variables:
-            std::option::Option<std::vec::Vec<crate::model::EventVariableSummary>>,
+        pub(crate) event_variables: std::option::Option<std::vec::Vec<crate::model::EventVariableSummary>>,
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::EvaluatedRule>>,
         pub(crate) rule_execution_mode: std::option::Option<crate::model::RuleExecutionMode>,
         pub(crate) outcomes: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) evaluated_model_versions:
-            std::option::Option<std::vec::Vec<crate::model::EvaluatedModelVersion>>,
-        pub(crate) evaluated_external_models:
-            std::option::Option<std::vec::Vec<crate::model::EvaluatedExternalModel>>,
+        pub(crate) evaluated_model_versions: std::option::Option<std::vec::Vec<crate::model::EvaluatedModelVersion>>,
+        pub(crate) evaluated_external_models: std::option::Option<std::vec::Vec<crate::model::EvaluatedExternalModel>>,
         pub(crate) prediction_timestamp: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1750,8 +1795,7 @@ pub mod get_event_prediction_metadata_output {
         }
         /// <p> The event ID. </p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_id = input;
-            self
+            self.event_id = input; self
         }
         /// <p> The event type associated with the detector specified for this prediction. </p>
         pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1759,12 +1803,8 @@ pub mod get_event_prediction_metadata_output {
             self
         }
         /// <p> The event type associated with the detector specified for this prediction. </p>
-        pub fn set_event_type_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_type_name = input;
-            self
+        pub fn set_event_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_type_name = input; self
         }
         /// <p> The entity ID. </p>
         pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1773,8 +1813,7 @@ pub mod get_event_prediction_metadata_output {
         }
         /// <p> The entity ID. </p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entity_id = input;
-            self
+            self.entity_id = input; self
         }
         /// <p> The entity type. </p>
         pub fn entity_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1783,8 +1822,7 @@ pub mod get_event_prediction_metadata_output {
         }
         /// <p> The entity type. </p>
         pub fn set_entity_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entity_type = input;
-            self
+            self.entity_type = input; self
         }
         /// <p> The timestamp for when the prediction was generated for the associated event ID. </p>
         pub fn event_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1792,12 +1830,8 @@ pub mod get_event_prediction_metadata_output {
             self
         }
         /// <p> The timestamp for when the prediction was generated for the associated event ID. </p>
-        pub fn set_event_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_timestamp = input;
-            self
+        pub fn set_event_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_timestamp = input; self
         }
         /// <p> The detector ID. </p>
         pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1806,8 +1840,7 @@ pub mod get_event_prediction_metadata_output {
         }
         /// <p> The detector ID. </p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.detector_id = input;
-            self
+            self.detector_id = input; self
         }
         /// <p> The detector version ID. </p>
         pub fn detector_version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1815,12 +1848,8 @@ pub mod get_event_prediction_metadata_output {
             self
         }
         /// <p> The detector version ID. </p>
-        pub fn set_detector_version_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detector_version_id = input;
-            self
+        pub fn set_detector_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detector_version_id = input; self
         }
         /// <p> The status of the detector version. </p>
         pub fn detector_version_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1828,12 +1857,8 @@ pub mod get_event_prediction_metadata_output {
             self
         }
         /// <p> The status of the detector version. </p>
-        pub fn set_detector_version_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detector_version_status = input;
-            self
+        pub fn set_detector_version_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detector_version_status = input; self
         }
         /// Appends an item to `event_variables`.
         ///
@@ -1842,17 +1867,13 @@ pub mod get_event_prediction_metadata_output {
         /// <p> A list of event variables that influenced the prediction scores. </p>
         pub fn event_variables(mut self, input: crate::model::EventVariableSummary) -> Self {
             let mut v = self.event_variables.unwrap_or_default();
-            v.push(input);
-            self.event_variables = Some(v);
-            self
+                            v.push(input);
+                            self.event_variables = Some(v);
+                            self
         }
         /// <p> A list of event variables that influenced the prediction scores. </p>
-        pub fn set_event_variables(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventVariableSummary>>,
-        ) -> Self {
-            self.event_variables = input;
-            self
+        pub fn set_event_variables(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventVariableSummary>>) -> Self {
+            self.event_variables = input; self
         }
         /// Appends an item to `rules`.
         ///
@@ -1861,17 +1882,13 @@ pub mod get_event_prediction_metadata_output {
         /// <p> List of rules associated with the detector version that were used for evaluating variable values. </p>
         pub fn rules(mut self, input: crate::model::EvaluatedRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input);
-            self.rules = Some(v);
-            self
+                            v.push(input);
+                            self.rules = Some(v);
+                            self
         }
         /// <p> List of rules associated with the detector version that were used for evaluating variable values. </p>
-        pub fn set_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EvaluatedRule>>,
-        ) -> Self {
-            self.rules = input;
-            self
+        pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::EvaluatedRule>>) -> Self {
+            self.rules = input; self
         }
         /// <p> The execution mode of the rule used for evaluating variable values. </p>
         pub fn rule_execution_mode(mut self, input: crate::model::RuleExecutionMode) -> Self {
@@ -1879,12 +1896,8 @@ pub mod get_event_prediction_metadata_output {
             self
         }
         /// <p> The execution mode of the rule used for evaluating variable values. </p>
-        pub fn set_rule_execution_mode(
-            mut self,
-            input: std::option::Option<crate::model::RuleExecutionMode>,
-        ) -> Self {
-            self.rule_execution_mode = input;
-            self
+        pub fn set_rule_execution_mode(mut self, input: std::option::Option<crate::model::RuleExecutionMode>) -> Self {
+            self.rule_execution_mode = input; self
         }
         /// Appends an item to `outcomes`.
         ///
@@ -1893,61 +1906,43 @@ pub mod get_event_prediction_metadata_output {
         /// <p> The outcomes of the matched rule, based on the rule execution mode. </p>
         pub fn outcomes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.outcomes.unwrap_or_default();
-            v.push(input.into());
-            self.outcomes = Some(v);
-            self
+                            v.push(input.into());
+                            self.outcomes = Some(v);
+                            self
         }
         /// <p> The outcomes of the matched rule, based on the rule execution mode. </p>
-        pub fn set_outcomes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.outcomes = input;
-            self
+        pub fn set_outcomes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.outcomes = input; self
         }
         /// Appends an item to `evaluated_model_versions`.
         ///
         /// To override the contents of this collection use [`set_evaluated_model_versions`](Self::set_evaluated_model_versions).
         ///
         /// <p> Model versions that were evaluated for generating predictions. </p>
-        pub fn evaluated_model_versions(
-            mut self,
-            input: crate::model::EvaluatedModelVersion,
-        ) -> Self {
+        pub fn evaluated_model_versions(mut self, input: crate::model::EvaluatedModelVersion) -> Self {
             let mut v = self.evaluated_model_versions.unwrap_or_default();
-            v.push(input);
-            self.evaluated_model_versions = Some(v);
-            self
+                            v.push(input);
+                            self.evaluated_model_versions = Some(v);
+                            self
         }
         /// <p> Model versions that were evaluated for generating predictions. </p>
-        pub fn set_evaluated_model_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EvaluatedModelVersion>>,
-        ) -> Self {
-            self.evaluated_model_versions = input;
-            self
+        pub fn set_evaluated_model_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::EvaluatedModelVersion>>) -> Self {
+            self.evaluated_model_versions = input; self
         }
         /// Appends an item to `evaluated_external_models`.
         ///
         /// To override the contents of this collection use [`set_evaluated_external_models`](Self::set_evaluated_external_models).
         ///
         /// <p> External (Amazon SageMaker) models that were evaluated for generating predictions. </p>
-        pub fn evaluated_external_models(
-            mut self,
-            input: crate::model::EvaluatedExternalModel,
-        ) -> Self {
+        pub fn evaluated_external_models(mut self, input: crate::model::EvaluatedExternalModel) -> Self {
             let mut v = self.evaluated_external_models.unwrap_or_default();
-            v.push(input);
-            self.evaluated_external_models = Some(v);
-            self
+                            v.push(input);
+                            self.evaluated_external_models = Some(v);
+                            self
         }
         /// <p> External (Amazon SageMaker) models that were evaluated for generating predictions. </p>
-        pub fn set_evaluated_external_models(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EvaluatedExternalModel>>,
-        ) -> Self {
-            self.evaluated_external_models = input;
-            self
+        pub fn set_evaluated_external_models(mut self, input: std::option::Option<std::vec::Vec<crate::model::EvaluatedExternalModel>>) -> Self {
+            self.evaluated_external_models = input; self
         }
         /// <p>The timestamp that defines when the prediction was generated. </p>
         pub fn prediction_timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1955,34 +1950,47 @@ pub mod get_event_prediction_metadata_output {
             self
         }
         /// <p>The timestamp that defines when the prediction was generated. </p>
-        pub fn set_prediction_timestamp(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.prediction_timestamp = input;
-            self
+        pub fn set_prediction_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.prediction_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`GetEventPredictionMetadataOutput`](crate::output::GetEventPredictionMetadataOutput).
         pub fn build(self) -> crate::output::GetEventPredictionMetadataOutput {
             crate::output::GetEventPredictionMetadataOutput {
-                event_id: self.event_id,
-                event_type_name: self.event_type_name,
-                entity_id: self.entity_id,
-                entity_type: self.entity_type,
-                event_timestamp: self.event_timestamp,
-                detector_id: self.detector_id,
-                detector_version_id: self.detector_version_id,
-                detector_version_status: self.detector_version_status,
-                event_variables: self.event_variables,
-                rules: self.rules,
-                rule_execution_mode: self.rule_execution_mode,
-                outcomes: self.outcomes,
-                evaluated_model_versions: self.evaluated_model_versions,
-                evaluated_external_models: self.evaluated_external_models,
-                prediction_timestamp: self.prediction_timestamp,
+                event_id: self.event_id
+                ,
+                event_type_name: self.event_type_name
+                ,
+                entity_id: self.entity_id
+                ,
+                entity_type: self.entity_type
+                ,
+                event_timestamp: self.event_timestamp
+                ,
+                detector_id: self.detector_id
+                ,
+                detector_version_id: self.detector_version_id
+                ,
+                detector_version_status: self.detector_version_status
+                ,
+                event_variables: self.event_variables
+                ,
+                rules: self.rules
+                ,
+                rule_execution_mode: self.rule_execution_mode
+                ,
+                outcomes: self.outcomes
+                ,
+                evaluated_model_versions: self.evaluated_model_versions
+                ,
+                evaluated_external_models: self.evaluated_external_models
+                ,
+                prediction_timestamp: self.prediction_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl GetEventPredictionMetadataOutput {
     /// Creates a new builder-style object to manufacture [`GetEventPredictionMetadataOutput`](crate::output::GetEventPredictionMetadataOutput).
@@ -1994,7 +2002,7 @@ impl GetEventPredictionMetadataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEventPredictionOutput {
+pub struct GetEventPredictionOutput  {
     /// <p>The model scores. Amazon Fraud Detector generates model scores between 0 and 1000, where 0 is low fraud risk and 1000 is high fraud risk. Model scores are directly related to the false positive rate (FPR). For example, a score of 600 corresponds to an estimated 10% false positive rate whereas a score of 900 corresponds to an estimated 2% false positive rate.</p>
     #[doc(hidden)]
     pub model_scores: std::option::Option<std::vec::Vec<crate::model::ModelScores>>,
@@ -2003,35 +2011,31 @@ pub struct GetEventPredictionOutput {
     pub rule_results: std::option::Option<std::vec::Vec<crate::model::RuleResult>>,
     /// <p>The model scores for Amazon SageMaker models.</p>
     #[doc(hidden)]
-    pub external_model_outputs:
-        std::option::Option<std::vec::Vec<crate::model::ExternalModelOutputs>>,
+    pub external_model_outputs: std::option::Option<std::vec::Vec<crate::model::ExternalModelOutputs>>,
 }
 impl GetEventPredictionOutput {
     /// <p>The model scores. Amazon Fraud Detector generates model scores between 0 and 1000, where 0 is low fraud risk and 1000 is high fraud risk. Model scores are directly related to the false positive rate (FPR). For example, a score of 600 corresponds to an estimated 10% false positive rate whereas a score of 900 corresponds to an estimated 2% false positive rate.</p>
-    pub fn model_scores(&self) -> std::option::Option<&[crate::model::ModelScores]> {
+    pub fn model_scores(&self) -> std::option::Option<& [crate::model::ModelScores]> {
         self.model_scores.as_deref()
     }
     /// <p>The results from the rules.</p>
-    pub fn rule_results(&self) -> std::option::Option<&[crate::model::RuleResult]> {
+    pub fn rule_results(&self) -> std::option::Option<& [crate::model::RuleResult]> {
         self.rule_results.as_deref()
     }
     /// <p>The model scores for Amazon SageMaker models.</p>
-    pub fn external_model_outputs(
-        &self,
-    ) -> std::option::Option<&[crate::model::ExternalModelOutputs]> {
+    pub fn external_model_outputs(&self) -> std::option::Option<& [crate::model::ExternalModelOutputs]> {
         self.external_model_outputs.as_deref()
     }
 }
 /// See [`GetEventPredictionOutput`](crate::output::GetEventPredictionOutput).
 pub mod get_event_prediction_output {
-
+    
     /// A builder for [`GetEventPredictionOutput`](crate::output::GetEventPredictionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) model_scores: std::option::Option<std::vec::Vec<crate::model::ModelScores>>,
         pub(crate) rule_results: std::option::Option<std::vec::Vec<crate::model::RuleResult>>,
-        pub(crate) external_model_outputs:
-            std::option::Option<std::vec::Vec<crate::model::ExternalModelOutputs>>,
+        pub(crate) external_model_outputs: std::option::Option<std::vec::Vec<crate::model::ExternalModelOutputs>>,
     }
     impl Builder {
         /// Appends an item to `model_scores`.
@@ -2041,17 +2045,13 @@ pub mod get_event_prediction_output {
         /// <p>The model scores. Amazon Fraud Detector generates model scores between 0 and 1000, where 0 is low fraud risk and 1000 is high fraud risk. Model scores are directly related to the false positive rate (FPR). For example, a score of 600 corresponds to an estimated 10% false positive rate whereas a score of 900 corresponds to an estimated 2% false positive rate.</p>
         pub fn model_scores(mut self, input: crate::model::ModelScores) -> Self {
             let mut v = self.model_scores.unwrap_or_default();
-            v.push(input);
-            self.model_scores = Some(v);
-            self
+                            v.push(input);
+                            self.model_scores = Some(v);
+                            self
         }
         /// <p>The model scores. Amazon Fraud Detector generates model scores between 0 and 1000, where 0 is low fraud risk and 1000 is high fraud risk. Model scores are directly related to the false positive rate (FPR). For example, a score of 600 corresponds to an estimated 10% false positive rate whereas a score of 900 corresponds to an estimated 2% false positive rate.</p>
-        pub fn set_model_scores(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ModelScores>>,
-        ) -> Self {
-            self.model_scores = input;
-            self
+        pub fn set_model_scores(mut self, input: std::option::Option<std::vec::Vec<crate::model::ModelScores>>) -> Self {
+            self.model_scores = input; self
         }
         /// Appends an item to `rule_results`.
         ///
@@ -2060,17 +2060,13 @@ pub mod get_event_prediction_output {
         /// <p>The results from the rules.</p>
         pub fn rule_results(mut self, input: crate::model::RuleResult) -> Self {
             let mut v = self.rule_results.unwrap_or_default();
-            v.push(input);
-            self.rule_results = Some(v);
-            self
+                            v.push(input);
+                            self.rule_results = Some(v);
+                            self
         }
         /// <p>The results from the rules.</p>
-        pub fn set_rule_results(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RuleResult>>,
-        ) -> Self {
-            self.rule_results = input;
-            self
+        pub fn set_rule_results(mut self, input: std::option::Option<std::vec::Vec<crate::model::RuleResult>>) -> Self {
+            self.rule_results = input; self
         }
         /// Appends an item to `external_model_outputs`.
         ///
@@ -2079,27 +2075,28 @@ pub mod get_event_prediction_output {
         /// <p>The model scores for Amazon SageMaker models.</p>
         pub fn external_model_outputs(mut self, input: crate::model::ExternalModelOutputs) -> Self {
             let mut v = self.external_model_outputs.unwrap_or_default();
-            v.push(input);
-            self.external_model_outputs = Some(v);
-            self
+                            v.push(input);
+                            self.external_model_outputs = Some(v);
+                            self
         }
         /// <p>The model scores for Amazon SageMaker models.</p>
-        pub fn set_external_model_outputs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExternalModelOutputs>>,
-        ) -> Self {
-            self.external_model_outputs = input;
-            self
+        pub fn set_external_model_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExternalModelOutputs>>) -> Self {
+            self.external_model_outputs = input; self
         }
         /// Consumes the builder and constructs a [`GetEventPredictionOutput`](crate::output::GetEventPredictionOutput).
         pub fn build(self) -> crate::output::GetEventPredictionOutput {
             crate::output::GetEventPredictionOutput {
-                model_scores: self.model_scores,
-                rule_results: self.rule_results,
-                external_model_outputs: self.external_model_outputs,
+                model_scores: self.model_scores
+                ,
+                rule_results: self.rule_results
+                ,
+                external_model_outputs: self.external_model_outputs
+                ,
             }
         }
     }
+    
+    
 }
 impl GetEventPredictionOutput {
     /// Creates a new builder-style object to manufacture [`GetEventPredictionOutput`](crate::output::GetEventPredictionOutput).
@@ -2111,20 +2108,20 @@ impl GetEventPredictionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEventOutput {
+pub struct GetEventOutput  {
     /// <p>The details of the event.</p>
     #[doc(hidden)]
     pub event: std::option::Option<crate::model::Event>,
 }
 impl GetEventOutput {
     /// <p>The details of the event.</p>
-    pub fn event(&self) -> std::option::Option<&crate::model::Event> {
+    pub fn event(&self) -> std::option::Option<& crate::model::Event> {
         self.event.as_ref()
     }
 }
 /// See [`GetEventOutput`](crate::output::GetEventOutput).
 pub mod get_event_output {
-
+    
     /// A builder for [`GetEventOutput`](crate::output::GetEventOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2138,14 +2135,18 @@ pub mod get_event_output {
         }
         /// <p>The details of the event.</p>
         pub fn set_event(mut self, input: std::option::Option<crate::model::Event>) -> Self {
-            self.event = input;
-            self
+            self.event = input; self
         }
         /// Consumes the builder and constructs a [`GetEventOutput`](crate::output::GetEventOutput).
         pub fn build(self) -> crate::output::GetEventOutput {
-            crate::output::GetEventOutput { event: self.event }
+            crate::output::GetEventOutput {
+                event: self.event
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetEventOutput {
     /// Creates a new builder-style object to manufacture [`GetEventOutput`](crate::output::GetEventOutput).
@@ -2157,7 +2158,7 @@ impl GetEventOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEntityTypesOutput {
+pub struct GetEntityTypesOutput  {
     /// <p>An array of entity types.</p>
     #[doc(hidden)]
     pub entity_types: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
@@ -2167,17 +2168,17 @@ pub struct GetEntityTypesOutput {
 }
 impl GetEntityTypesOutput {
     /// <p>An array of entity types.</p>
-    pub fn entity_types(&self) -> std::option::Option<&[crate::model::EntityType]> {
+    pub fn entity_types(&self) -> std::option::Option<& [crate::model::EntityType]> {
         self.entity_types.as_deref()
     }
     /// <p>The next page token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetEntityTypesOutput`](crate::output::GetEntityTypesOutput).
 pub mod get_entity_types_output {
-
+    
     /// A builder for [`GetEntityTypesOutput`](crate::output::GetEntityTypesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2192,17 +2193,13 @@ pub mod get_entity_types_output {
         /// <p>An array of entity types.</p>
         pub fn entity_types(mut self, input: crate::model::EntityType) -> Self {
             let mut v = self.entity_types.unwrap_or_default();
-            v.push(input);
-            self.entity_types = Some(v);
-            self
+                            v.push(input);
+                            self.entity_types = Some(v);
+                            self
         }
         /// <p>An array of entity types.</p>
-        pub fn set_entity_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
-        ) -> Self {
-            self.entity_types = input;
-            self
+        pub fn set_entity_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::EntityType>>) -> Self {
+            self.entity_types = input; self
         }
         /// <p>The next page token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2211,17 +2208,20 @@ pub mod get_entity_types_output {
         }
         /// <p>The next page token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetEntityTypesOutput`](crate::output::GetEntityTypesOutput).
         pub fn build(self) -> crate::output::GetEntityTypesOutput {
             crate::output::GetEntityTypesOutput {
-                entity_types: self.entity_types,
-                next_token: self.next_token,
+                entity_types: self.entity_types
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetEntityTypesOutput {
     /// Creates a new builder-style object to manufacture [`GetEntityTypesOutput`](crate::output::GetEntityTypesOutput).
@@ -2233,7 +2233,7 @@ impl GetEntityTypesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDetectorVersionOutput {
+pub struct GetDetectorVersionOutput  {
     /// <p>The detector ID.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -2261,8 +2261,8 @@ pub struct GetDetectorVersionOutput {
     /// <p>The timestamp when the detector version was created. </p>
     #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
-    /// <p>The execution mode of the rule in the dectector</p>
-    /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+    /// <p>The execution mode of the rule in the dectector</p> 
+    /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p> 
     /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
     #[doc(hidden)]
     pub rule_execution_mode: std::option::Option<crate::model::RuleExecutionMode>,
@@ -2272,63 +2272,62 @@ pub struct GetDetectorVersionOutput {
 }
 impl GetDetectorVersionOutput {
     /// <p>The detector ID.</p>
-    pub fn detector_id(&self) -> std::option::Option<&str> {
+    pub fn detector_id(&self) -> std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The detector version ID.</p>
-    pub fn detector_version_id(&self) -> std::option::Option<&str> {
+    pub fn detector_version_id(&self) -> std::option::Option<& str> {
         self.detector_version_id.as_deref()
     }
     /// <p>The detector version description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon SageMaker model endpoints included in the detector version.</p>
-    pub fn external_model_endpoints(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn external_model_endpoints(&self) -> std::option::Option<& [std::string::String]> {
         self.external_model_endpoints.as_deref()
     }
     /// <p>The model versions included in the detector version. </p>
-    pub fn model_versions(&self) -> std::option::Option<&[crate::model::ModelVersion]> {
+    pub fn model_versions(&self) -> std::option::Option<& [crate::model::ModelVersion]> {
         self.model_versions.as_deref()
     }
     /// <p>The rules included in the detector version.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::model::Rule]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::model::Rule]> {
         self.rules.as_deref()
     }
     /// <p>The status of the detector version.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DetectorVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DetectorVersionStatus> {
         self.status.as_ref()
     }
     /// <p>The timestamp when the detector version was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+    pub fn last_updated_time(&self) -> std::option::Option<& str> {
         self.last_updated_time.as_deref()
     }
     /// <p>The timestamp when the detector version was created. </p>
-    pub fn created_time(&self) -> std::option::Option<&str> {
+    pub fn created_time(&self) -> std::option::Option<& str> {
         self.created_time.as_deref()
     }
-    /// <p>The execution mode of the rule in the dectector</p>
-    /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+    /// <p>The execution mode of the rule in the dectector</p> 
+    /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p> 
     /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
-    pub fn rule_execution_mode(&self) -> std::option::Option<&crate::model::RuleExecutionMode> {
+    pub fn rule_execution_mode(&self) -> std::option::Option<& crate::model::RuleExecutionMode> {
         self.rule_execution_mode.as_ref()
     }
     /// <p>The detector version ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`GetDetectorVersionOutput`](crate::output::GetDetectorVersionOutput).
 pub mod get_detector_version_output {
-
+    
     /// A builder for [`GetDetectorVersionOutput`](crate::output::GetDetectorVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_id: std::option::Option<std::string::String>,
         pub(crate) detector_version_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) external_model_endpoints:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) external_model_endpoints: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) model_versions: std::option::Option<std::vec::Vec<crate::model::ModelVersion>>,
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
         pub(crate) status: std::option::Option<crate::model::DetectorVersionStatus>,
@@ -2345,8 +2344,7 @@ pub mod get_detector_version_output {
         }
         /// <p>The detector ID.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.detector_id = input;
-            self
+            self.detector_id = input; self
         }
         /// <p>The detector version ID.</p>
         pub fn detector_version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2354,12 +2352,8 @@ pub mod get_detector_version_output {
             self
         }
         /// <p>The detector version ID.</p>
-        pub fn set_detector_version_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detector_version_id = input;
-            self
+        pub fn set_detector_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detector_version_id = input; self
         }
         /// <p>The detector version description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2368,8 +2362,7 @@ pub mod get_detector_version_output {
         }
         /// <p>The detector version description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `external_model_endpoints`.
         ///
@@ -2378,17 +2371,13 @@ pub mod get_detector_version_output {
         /// <p>The Amazon SageMaker model endpoints included in the detector version.</p>
         pub fn external_model_endpoints(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.external_model_endpoints.unwrap_or_default();
-            v.push(input.into());
-            self.external_model_endpoints = Some(v);
-            self
+                            v.push(input.into());
+                            self.external_model_endpoints = Some(v);
+                            self
         }
         /// <p>The Amazon SageMaker model endpoints included in the detector version.</p>
-        pub fn set_external_model_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.external_model_endpoints = input;
-            self
+        pub fn set_external_model_endpoints(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.external_model_endpoints = input; self
         }
         /// Appends an item to `model_versions`.
         ///
@@ -2397,17 +2386,13 @@ pub mod get_detector_version_output {
         /// <p>The model versions included in the detector version. </p>
         pub fn model_versions(mut self, input: crate::model::ModelVersion) -> Self {
             let mut v = self.model_versions.unwrap_or_default();
-            v.push(input);
-            self.model_versions = Some(v);
-            self
+                            v.push(input);
+                            self.model_versions = Some(v);
+                            self
         }
         /// <p>The model versions included in the detector version. </p>
-        pub fn set_model_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ModelVersion>>,
-        ) -> Self {
-            self.model_versions = input;
-            self
+        pub fn set_model_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ModelVersion>>) -> Self {
+            self.model_versions = input; self
         }
         /// Appends an item to `rules`.
         ///
@@ -2416,17 +2401,13 @@ pub mod get_detector_version_output {
         /// <p>The rules included in the detector version.</p>
         pub fn rules(mut self, input: crate::model::Rule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input);
-            self.rules = Some(v);
-            self
+                            v.push(input);
+                            self.rules = Some(v);
+                            self
         }
         /// <p>The rules included in the detector version.</p>
-        pub fn set_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
-        ) -> Self {
-            self.rules = input;
-            self
+        pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::Rule>>) -> Self {
+            self.rules = input; self
         }
         /// <p>The status of the detector version.</p>
         pub fn status(mut self, input: crate::model::DetectorVersionStatus) -> Self {
@@ -2434,12 +2415,8 @@ pub mod get_detector_version_output {
             self
         }
         /// <p>The status of the detector version.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DetectorVersionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DetectorVersionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The timestamp when the detector version was last updated. </p>
         pub fn last_updated_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2447,12 +2424,8 @@ pub mod get_detector_version_output {
             self
         }
         /// <p>The timestamp when the detector version was last updated. </p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>The timestamp when the detector version was created. </p>
         pub fn created_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2461,25 +2434,20 @@ pub mod get_detector_version_output {
         }
         /// <p>The timestamp when the detector version was created. </p>
         pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_time = input;
-            self
+            self.created_time = input; self
         }
-        /// <p>The execution mode of the rule in the dectector</p>
-        /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+        /// <p>The execution mode of the rule in the dectector</p> 
+        /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p> 
         /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
         pub fn rule_execution_mode(mut self, input: crate::model::RuleExecutionMode) -> Self {
             self.rule_execution_mode = Some(input);
             self
         }
-        /// <p>The execution mode of the rule in the dectector</p>
-        /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+        /// <p>The execution mode of the rule in the dectector</p> 
+        /// <p> <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p> 
         /// <p> <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
-        pub fn set_rule_execution_mode(
-            mut self,
-            input: std::option::Option<crate::model::RuleExecutionMode>,
-        ) -> Self {
-            self.rule_execution_mode = input;
-            self
+        pub fn set_rule_execution_mode(mut self, input: std::option::Option<crate::model::RuleExecutionMode>) -> Self {
+            self.rule_execution_mode = input; self
         }
         /// <p>The detector version ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2488,26 +2456,38 @@ pub mod get_detector_version_output {
         }
         /// <p>The detector version ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`GetDetectorVersionOutput`](crate::output::GetDetectorVersionOutput).
         pub fn build(self) -> crate::output::GetDetectorVersionOutput {
             crate::output::GetDetectorVersionOutput {
-                detector_id: self.detector_id,
-                detector_version_id: self.detector_version_id,
-                description: self.description,
-                external_model_endpoints: self.external_model_endpoints,
-                model_versions: self.model_versions,
-                rules: self.rules,
-                status: self.status,
-                last_updated_time: self.last_updated_time,
-                created_time: self.created_time,
-                rule_execution_mode: self.rule_execution_mode,
-                arn: self.arn,
+                detector_id: self.detector_id
+                ,
+                detector_version_id: self.detector_version_id
+                ,
+                description: self.description
+                ,
+                external_model_endpoints: self.external_model_endpoints
+                ,
+                model_versions: self.model_versions
+                ,
+                rules: self.rules
+                ,
+                status: self.status
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                created_time: self.created_time
+                ,
+                rule_execution_mode: self.rule_execution_mode
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDetectorVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetDetectorVersionOutput`](crate::output::GetDetectorVersionOutput).
@@ -2519,7 +2499,7 @@ impl GetDetectorVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDetectorsOutput {
+pub struct GetDetectorsOutput  {
     /// <p>The detectors.</p>
     #[doc(hidden)]
     pub detectors: std::option::Option<std::vec::Vec<crate::model::Detector>>,
@@ -2529,17 +2509,17 @@ pub struct GetDetectorsOutput {
 }
 impl GetDetectorsOutput {
     /// <p>The detectors.</p>
-    pub fn detectors(&self) -> std::option::Option<&[crate::model::Detector]> {
+    pub fn detectors(&self) -> std::option::Option<& [crate::model::Detector]> {
         self.detectors.as_deref()
     }
     /// <p>The next page token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetDetectorsOutput`](crate::output::GetDetectorsOutput).
 pub mod get_detectors_output {
-
+    
     /// A builder for [`GetDetectorsOutput`](crate::output::GetDetectorsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2554,17 +2534,13 @@ pub mod get_detectors_output {
         /// <p>The detectors.</p>
         pub fn detectors(mut self, input: crate::model::Detector) -> Self {
             let mut v = self.detectors.unwrap_or_default();
-            v.push(input);
-            self.detectors = Some(v);
-            self
+                            v.push(input);
+                            self.detectors = Some(v);
+                            self
         }
         /// <p>The detectors.</p>
-        pub fn set_detectors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Detector>>,
-        ) -> Self {
-            self.detectors = input;
-            self
+        pub fn set_detectors(mut self, input: std::option::Option<std::vec::Vec<crate::model::Detector>>) -> Self {
+            self.detectors = input; self
         }
         /// <p>The next page token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2573,17 +2549,20 @@ pub mod get_detectors_output {
         }
         /// <p>The next page token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetDetectorsOutput`](crate::output::GetDetectorsOutput).
         pub fn build(self) -> crate::output::GetDetectorsOutput {
             crate::output::GetDetectorsOutput {
-                detectors: self.detectors,
-                next_token: self.next_token,
+                detectors: self.detectors
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDetectorsOutput {
     /// Creates a new builder-style object to manufacture [`GetDetectorsOutput`](crate::output::GetDetectorsOutput).
@@ -2595,7 +2574,7 @@ impl GetDetectorsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeleteEventsByEventTypeStatusOutput {
+pub struct GetDeleteEventsByEventTypeStatusOutput  {
     /// <p>The event type name.</p>
     #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
@@ -2605,17 +2584,17 @@ pub struct GetDeleteEventsByEventTypeStatusOutput {
 }
 impl GetDeleteEventsByEventTypeStatusOutput {
     /// <p>The event type name.</p>
-    pub fn event_type_name(&self) -> std::option::Option<&str> {
+    pub fn event_type_name(&self) -> std::option::Option<& str> {
         self.event_type_name.as_deref()
     }
     /// <p>The deletion status.</p>
-    pub fn events_deletion_status(&self) -> std::option::Option<&crate::model::AsyncJobStatus> {
+    pub fn events_deletion_status(&self) -> std::option::Option<& crate::model::AsyncJobStatus> {
         self.events_deletion_status.as_ref()
     }
 }
 /// See [`GetDeleteEventsByEventTypeStatusOutput`](crate::output::GetDeleteEventsByEventTypeStatusOutput).
 pub mod get_delete_events_by_event_type_status_output {
-
+    
     /// A builder for [`GetDeleteEventsByEventTypeStatusOutput`](crate::output::GetDeleteEventsByEventTypeStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2629,12 +2608,8 @@ pub mod get_delete_events_by_event_type_status_output {
             self
         }
         /// <p>The event type name.</p>
-        pub fn set_event_type_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_type_name = input;
-            self
+        pub fn set_event_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_type_name = input; self
         }
         /// <p>The deletion status.</p>
         pub fn events_deletion_status(mut self, input: crate::model::AsyncJobStatus) -> Self {
@@ -2642,21 +2617,21 @@ pub mod get_delete_events_by_event_type_status_output {
             self
         }
         /// <p>The deletion status.</p>
-        pub fn set_events_deletion_status(
-            mut self,
-            input: std::option::Option<crate::model::AsyncJobStatus>,
-        ) -> Self {
-            self.events_deletion_status = input;
-            self
+        pub fn set_events_deletion_status(mut self, input: std::option::Option<crate::model::AsyncJobStatus>) -> Self {
+            self.events_deletion_status = input; self
         }
         /// Consumes the builder and constructs a [`GetDeleteEventsByEventTypeStatusOutput`](crate::output::GetDeleteEventsByEventTypeStatusOutput).
         pub fn build(self) -> crate::output::GetDeleteEventsByEventTypeStatusOutput {
             crate::output::GetDeleteEventsByEventTypeStatusOutput {
-                event_type_name: self.event_type_name,
-                events_deletion_status: self.events_deletion_status,
+                event_type_name: self.event_type_name
+                ,
+                events_deletion_status: self.events_deletion_status
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDeleteEventsByEventTypeStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetDeleteEventsByEventTypeStatusOutput`](crate::output::GetDeleteEventsByEventTypeStatusOutput).
@@ -2668,7 +2643,7 @@ impl GetDeleteEventsByEventTypeStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBatchPredictionJobsOutput {
+pub struct GetBatchPredictionJobsOutput  {
     /// <p>An array containing the details of each batch prediction job.</p>
     #[doc(hidden)]
     pub batch_predictions: std::option::Option<std::vec::Vec<crate::model::BatchPrediction>>,
@@ -2678,22 +2653,21 @@ pub struct GetBatchPredictionJobsOutput {
 }
 impl GetBatchPredictionJobsOutput {
     /// <p>An array containing the details of each batch prediction job.</p>
-    pub fn batch_predictions(&self) -> std::option::Option<&[crate::model::BatchPrediction]> {
+    pub fn batch_predictions(&self) -> std::option::Option<& [crate::model::BatchPrediction]> {
         self.batch_predictions.as_deref()
     }
     /// <p>The next token for the subsequent request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetBatchPredictionJobsOutput`](crate::output::GetBatchPredictionJobsOutput).
 pub mod get_batch_prediction_jobs_output {
-
+    
     /// A builder for [`GetBatchPredictionJobsOutput`](crate::output::GetBatchPredictionJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) batch_predictions:
-            std::option::Option<std::vec::Vec<crate::model::BatchPrediction>>,
+        pub(crate) batch_predictions: std::option::Option<std::vec::Vec<crate::model::BatchPrediction>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2704,17 +2678,13 @@ pub mod get_batch_prediction_jobs_output {
         /// <p>An array containing the details of each batch prediction job.</p>
         pub fn batch_predictions(mut self, input: crate::model::BatchPrediction) -> Self {
             let mut v = self.batch_predictions.unwrap_or_default();
-            v.push(input);
-            self.batch_predictions = Some(v);
-            self
+                            v.push(input);
+                            self.batch_predictions = Some(v);
+                            self
         }
         /// <p>An array containing the details of each batch prediction job.</p>
-        pub fn set_batch_predictions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchPrediction>>,
-        ) -> Self {
-            self.batch_predictions = input;
-            self
+        pub fn set_batch_predictions(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchPrediction>>) -> Self {
+            self.batch_predictions = input; self
         }
         /// <p>The next token for the subsequent request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2723,17 +2693,20 @@ pub mod get_batch_prediction_jobs_output {
         }
         /// <p>The next token for the subsequent request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetBatchPredictionJobsOutput`](crate::output::GetBatchPredictionJobsOutput).
         pub fn build(self) -> crate::output::GetBatchPredictionJobsOutput {
             crate::output::GetBatchPredictionJobsOutput {
-                batch_predictions: self.batch_predictions,
-                next_token: self.next_token,
+                batch_predictions: self.batch_predictions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBatchPredictionJobsOutput {
     /// Creates a new builder-style object to manufacture [`GetBatchPredictionJobsOutput`](crate::output::GetBatchPredictionJobsOutput).
@@ -2745,7 +2718,7 @@ impl GetBatchPredictionJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBatchImportJobsOutput {
+pub struct GetBatchImportJobsOutput  {
     /// <p>An array containing the details of each batch import job.</p>
     #[doc(hidden)]
     pub batch_imports: std::option::Option<std::vec::Vec<crate::model::BatchImport>>,
@@ -2755,17 +2728,17 @@ pub struct GetBatchImportJobsOutput {
 }
 impl GetBatchImportJobsOutput {
     /// <p>An array containing the details of each batch import job.</p>
-    pub fn batch_imports(&self) -> std::option::Option<&[crate::model::BatchImport]> {
+    pub fn batch_imports(&self) -> std::option::Option<& [crate::model::BatchImport]> {
         self.batch_imports.as_deref()
     }
     /// <p>The next token for the subsequent resquest.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetBatchImportJobsOutput`](crate::output::GetBatchImportJobsOutput).
 pub mod get_batch_import_jobs_output {
-
+    
     /// A builder for [`GetBatchImportJobsOutput`](crate::output::GetBatchImportJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2780,17 +2753,13 @@ pub mod get_batch_import_jobs_output {
         /// <p>An array containing the details of each batch import job.</p>
         pub fn batch_imports(mut self, input: crate::model::BatchImport) -> Self {
             let mut v = self.batch_imports.unwrap_or_default();
-            v.push(input);
-            self.batch_imports = Some(v);
-            self
+                            v.push(input);
+                            self.batch_imports = Some(v);
+                            self
         }
         /// <p>An array containing the details of each batch import job.</p>
-        pub fn set_batch_imports(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchImport>>,
-        ) -> Self {
-            self.batch_imports = input;
-            self
+        pub fn set_batch_imports(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchImport>>) -> Self {
+            self.batch_imports = input; self
         }
         /// <p>The next token for the subsequent resquest.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2799,17 +2768,20 @@ pub mod get_batch_import_jobs_output {
         }
         /// <p>The next token for the subsequent resquest.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetBatchImportJobsOutput`](crate::output::GetBatchImportJobsOutput).
         pub fn build(self) -> crate::output::GetBatchImportJobsOutput {
             crate::output::GetBatchImportJobsOutput {
-                batch_imports: self.batch_imports,
-                next_token: self.next_token,
+                batch_imports: self.batch_imports
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBatchImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`GetBatchImportJobsOutput`](crate::output::GetBatchImportJobsOutput).
@@ -2821,7 +2793,7 @@ impl GetBatchImportJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeModelVersionsOutput {
+pub struct DescribeModelVersionsOutput  {
     /// <p>The model version details.</p>
     #[doc(hidden)]
     pub model_version_details: std::option::Option<std::vec::Vec<crate::model::ModelVersionDetail>>,
@@ -2831,24 +2803,21 @@ pub struct DescribeModelVersionsOutput {
 }
 impl DescribeModelVersionsOutput {
     /// <p>The model version details.</p>
-    pub fn model_version_details(
-        &self,
-    ) -> std::option::Option<&[crate::model::ModelVersionDetail]> {
+    pub fn model_version_details(&self) -> std::option::Option<& [crate::model::ModelVersionDetail]> {
         self.model_version_details.as_deref()
     }
     /// <p>The next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeModelVersionsOutput`](crate::output::DescribeModelVersionsOutput).
 pub mod describe_model_versions_output {
-
+    
     /// A builder for [`DescribeModelVersionsOutput`](crate::output::DescribeModelVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) model_version_details:
-            std::option::Option<std::vec::Vec<crate::model::ModelVersionDetail>>,
+        pub(crate) model_version_details: std::option::Option<std::vec::Vec<crate::model::ModelVersionDetail>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2859,17 +2828,13 @@ pub mod describe_model_versions_output {
         /// <p>The model version details.</p>
         pub fn model_version_details(mut self, input: crate::model::ModelVersionDetail) -> Self {
             let mut v = self.model_version_details.unwrap_or_default();
-            v.push(input);
-            self.model_version_details = Some(v);
-            self
+                            v.push(input);
+                            self.model_version_details = Some(v);
+                            self
         }
         /// <p>The model version details.</p>
-        pub fn set_model_version_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ModelVersionDetail>>,
-        ) -> Self {
-            self.model_version_details = input;
-            self
+        pub fn set_model_version_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::ModelVersionDetail>>) -> Self {
+            self.model_version_details = input; self
         }
         /// <p>The next token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2878,17 +2843,20 @@ pub mod describe_model_versions_output {
         }
         /// <p>The next token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeModelVersionsOutput`](crate::output::DescribeModelVersionsOutput).
         pub fn build(self) -> crate::output::DescribeModelVersionsOutput {
             crate::output::DescribeModelVersionsOutput {
-                model_version_details: self.model_version_details,
-                next_token: self.next_token,
+                model_version_details: self.model_version_details
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeModelVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeModelVersionsOutput`](crate::output::DescribeModelVersionsOutput).
@@ -2900,14 +2868,13 @@ impl DescribeModelVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDetectorOutput {
+pub struct DescribeDetectorOutput  {
     /// <p>The detector ID.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
     /// <p>The status and description for each detector version.</p>
     #[doc(hidden)]
-    pub detector_version_summaries:
-        std::option::Option<std::vec::Vec<crate::model::DetectorVersionSummary>>,
+    pub detector_version_summaries: std::option::Option<std::vec::Vec<crate::model::DetectorVersionSummary>>,
     /// <p>The next token to be used for subsequent requests.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -2917,33 +2884,30 @@ pub struct DescribeDetectorOutput {
 }
 impl DescribeDetectorOutput {
     /// <p>The detector ID.</p>
-    pub fn detector_id(&self) -> std::option::Option<&str> {
+    pub fn detector_id(&self) -> std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The status and description for each detector version.</p>
-    pub fn detector_version_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::DetectorVersionSummary]> {
+    pub fn detector_version_summaries(&self) -> std::option::Option<& [crate::model::DetectorVersionSummary]> {
         self.detector_version_summaries.as_deref()
     }
     /// <p>The next token to be used for subsequent requests.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The detector ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`DescribeDetectorOutput`](crate::output::DescribeDetectorOutput).
 pub mod describe_detector_output {
-
+    
     /// A builder for [`DescribeDetectorOutput`](crate::output::DescribeDetectorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) detector_id: std::option::Option<std::string::String>,
-        pub(crate) detector_version_summaries:
-            std::option::Option<std::vec::Vec<crate::model::DetectorVersionSummary>>,
+        pub(crate) detector_version_summaries: std::option::Option<std::vec::Vec<crate::model::DetectorVersionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
     }
@@ -2955,30 +2919,22 @@ pub mod describe_detector_output {
         }
         /// <p>The detector ID.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.detector_id = input;
-            self
+            self.detector_id = input; self
         }
         /// Appends an item to `detector_version_summaries`.
         ///
         /// To override the contents of this collection use [`set_detector_version_summaries`](Self::set_detector_version_summaries).
         ///
         /// <p>The status and description for each detector version.</p>
-        pub fn detector_version_summaries(
-            mut self,
-            input: crate::model::DetectorVersionSummary,
-        ) -> Self {
+        pub fn detector_version_summaries(mut self, input: crate::model::DetectorVersionSummary) -> Self {
             let mut v = self.detector_version_summaries.unwrap_or_default();
-            v.push(input);
-            self.detector_version_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.detector_version_summaries = Some(v);
+                            self
         }
         /// <p>The status and description for each detector version.</p>
-        pub fn set_detector_version_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DetectorVersionSummary>>,
-        ) -> Self {
-            self.detector_version_summaries = input;
-            self
+        pub fn set_detector_version_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::DetectorVersionSummary>>) -> Self {
+            self.detector_version_summaries = input; self
         }
         /// <p>The next token to be used for subsequent requests.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2987,8 +2943,7 @@ pub mod describe_detector_output {
         }
         /// <p>The next token to be used for subsequent requests.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The detector ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2997,19 +2952,24 @@ pub mod describe_detector_output {
         }
         /// <p>The detector ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`DescribeDetectorOutput`](crate::output::DescribeDetectorOutput).
         pub fn build(self) -> crate::output::DescribeDetectorOutput {
             crate::output::DescribeDetectorOutput {
-                detector_id: self.detector_id,
-                detector_version_summaries: self.detector_version_summaries,
-                next_token: self.next_token,
-                arn: self.arn,
+                detector_id: self.detector_id
+                ,
+                detector_version_summaries: self.detector_version_summaries
+                ,
+                next_token: self.next_token
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeDetectorOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDetectorOutput`](crate::output::DescribeDetectorOutput).
@@ -3021,19 +2981,24 @@ impl DescribeDetectorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVariableOutput {}
+pub struct DeleteVariableOutput  {
+}
 /// See [`DeleteVariableOutput`](crate::output::DeleteVariableOutput).
 pub mod delete_variable_output {
-
+    
     /// A builder for [`DeleteVariableOutput`](crate::output::DeleteVariableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteVariableOutput`](crate::output::DeleteVariableOutput).
         pub fn build(self) -> crate::output::DeleteVariableOutput {
-            crate::output::DeleteVariableOutput {}
+            crate::output::DeleteVariableOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteVariableOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVariableOutput`](crate::output::DeleteVariableOutput).
@@ -3045,19 +3010,24 @@ impl DeleteVariableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRuleOutput {}
+pub struct DeleteRuleOutput  {
+}
 /// See [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
 pub mod delete_rule_output {
-
+    
     /// A builder for [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
         pub fn build(self) -> crate::output::DeleteRuleOutput {
-            crate::output::DeleteRuleOutput {}
+            crate::output::DeleteRuleOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
@@ -3069,19 +3039,24 @@ impl DeleteRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteOutcomeOutput {}
+pub struct DeleteOutcomeOutput  {
+}
 /// See [`DeleteOutcomeOutput`](crate::output::DeleteOutcomeOutput).
 pub mod delete_outcome_output {
-
+    
     /// A builder for [`DeleteOutcomeOutput`](crate::output::DeleteOutcomeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteOutcomeOutput`](crate::output::DeleteOutcomeOutput).
         pub fn build(self) -> crate::output::DeleteOutcomeOutput {
-            crate::output::DeleteOutcomeOutput {}
+            crate::output::DeleteOutcomeOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteOutcomeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOutcomeOutput`](crate::output::DeleteOutcomeOutput).
@@ -3093,19 +3068,24 @@ impl DeleteOutcomeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteModelVersionOutput {}
+pub struct DeleteModelVersionOutput  {
+}
 /// See [`DeleteModelVersionOutput`](crate::output::DeleteModelVersionOutput).
 pub mod delete_model_version_output {
-
+    
     /// A builder for [`DeleteModelVersionOutput`](crate::output::DeleteModelVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteModelVersionOutput`](crate::output::DeleteModelVersionOutput).
         pub fn build(self) -> crate::output::DeleteModelVersionOutput {
-            crate::output::DeleteModelVersionOutput {}
+            crate::output::DeleteModelVersionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteModelVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteModelVersionOutput`](crate::output::DeleteModelVersionOutput).
@@ -3117,19 +3097,24 @@ impl DeleteModelVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteModelOutput {}
+pub struct DeleteModelOutput  {
+}
 /// See [`DeleteModelOutput`](crate::output::DeleteModelOutput).
 pub mod delete_model_output {
-
+    
     /// A builder for [`DeleteModelOutput`](crate::output::DeleteModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteModelOutput`](crate::output::DeleteModelOutput).
         pub fn build(self) -> crate::output::DeleteModelOutput {
-            crate::output::DeleteModelOutput {}
+            crate::output::DeleteModelOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteModelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteModelOutput`](crate::output::DeleteModelOutput).
@@ -3141,19 +3126,24 @@ impl DeleteModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLabelOutput {}
+pub struct DeleteLabelOutput  {
+}
 /// See [`DeleteLabelOutput`](crate::output::DeleteLabelOutput).
 pub mod delete_label_output {
-
+    
     /// A builder for [`DeleteLabelOutput`](crate::output::DeleteLabelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteLabelOutput`](crate::output::DeleteLabelOutput).
         pub fn build(self) -> crate::output::DeleteLabelOutput {
-            crate::output::DeleteLabelOutput {}
+            crate::output::DeleteLabelOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteLabelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteLabelOutput`](crate::output::DeleteLabelOutput).
@@ -3165,19 +3155,24 @@ impl DeleteLabelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteExternalModelOutput {}
+pub struct DeleteExternalModelOutput  {
+}
 /// See [`DeleteExternalModelOutput`](crate::output::DeleteExternalModelOutput).
 pub mod delete_external_model_output {
-
+    
     /// A builder for [`DeleteExternalModelOutput`](crate::output::DeleteExternalModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteExternalModelOutput`](crate::output::DeleteExternalModelOutput).
         pub fn build(self) -> crate::output::DeleteExternalModelOutput {
-            crate::output::DeleteExternalModelOutput {}
+            crate::output::DeleteExternalModelOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteExternalModelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteExternalModelOutput`](crate::output::DeleteExternalModelOutput).
@@ -3189,19 +3184,24 @@ impl DeleteExternalModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEventTypeOutput {}
+pub struct DeleteEventTypeOutput  {
+}
 /// See [`DeleteEventTypeOutput`](crate::output::DeleteEventTypeOutput).
 pub mod delete_event_type_output {
-
+    
     /// A builder for [`DeleteEventTypeOutput`](crate::output::DeleteEventTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEventTypeOutput`](crate::output::DeleteEventTypeOutput).
         pub fn build(self) -> crate::output::DeleteEventTypeOutput {
-            crate::output::DeleteEventTypeOutput {}
+            crate::output::DeleteEventTypeOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteEventTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEventTypeOutput`](crate::output::DeleteEventTypeOutput).
@@ -3213,7 +3213,7 @@ impl DeleteEventTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEventsByEventTypeOutput {
+pub struct DeleteEventsByEventTypeOutput  {
     /// <p>Name of event type for which to delete the events.</p>
     #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
@@ -3223,17 +3223,17 @@ pub struct DeleteEventsByEventTypeOutput {
 }
 impl DeleteEventsByEventTypeOutput {
     /// <p>Name of event type for which to delete the events.</p>
-    pub fn event_type_name(&self) -> std::option::Option<&str> {
+    pub fn event_type_name(&self) -> std::option::Option<& str> {
         self.event_type_name.as_deref()
     }
     /// <p>The status of the delete request.</p>
-    pub fn events_deletion_status(&self) -> std::option::Option<&str> {
+    pub fn events_deletion_status(&self) -> std::option::Option<& str> {
         self.events_deletion_status.as_deref()
     }
 }
 /// See [`DeleteEventsByEventTypeOutput`](crate::output::DeleteEventsByEventTypeOutput).
 pub mod delete_events_by_event_type_output {
-
+    
     /// A builder for [`DeleteEventsByEventTypeOutput`](crate::output::DeleteEventsByEventTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3247,12 +3247,8 @@ pub mod delete_events_by_event_type_output {
             self
         }
         /// <p>Name of event type for which to delete the events.</p>
-        pub fn set_event_type_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_type_name = input;
-            self
+        pub fn set_event_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_type_name = input; self
         }
         /// <p>The status of the delete request.</p>
         pub fn events_deletion_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3260,21 +3256,21 @@ pub mod delete_events_by_event_type_output {
             self
         }
         /// <p>The status of the delete request.</p>
-        pub fn set_events_deletion_status(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.events_deletion_status = input;
-            self
+        pub fn set_events_deletion_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.events_deletion_status = input; self
         }
         /// Consumes the builder and constructs a [`DeleteEventsByEventTypeOutput`](crate::output::DeleteEventsByEventTypeOutput).
         pub fn build(self) -> crate::output::DeleteEventsByEventTypeOutput {
             crate::output::DeleteEventsByEventTypeOutput {
-                event_type_name: self.event_type_name,
-                events_deletion_status: self.events_deletion_status,
+                event_type_name: self.event_type_name
+                ,
+                events_deletion_status: self.events_deletion_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteEventsByEventTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEventsByEventTypeOutput`](crate::output::DeleteEventsByEventTypeOutput).
@@ -3286,19 +3282,24 @@ impl DeleteEventsByEventTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEventOutput {}
+pub struct DeleteEventOutput  {
+}
 /// See [`DeleteEventOutput`](crate::output::DeleteEventOutput).
 pub mod delete_event_output {
-
+    
     /// A builder for [`DeleteEventOutput`](crate::output::DeleteEventOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEventOutput`](crate::output::DeleteEventOutput).
         pub fn build(self) -> crate::output::DeleteEventOutput {
-            crate::output::DeleteEventOutput {}
+            crate::output::DeleteEventOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteEventOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEventOutput`](crate::output::DeleteEventOutput).
@@ -3310,19 +3311,24 @@ impl DeleteEventOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEntityTypeOutput {}
+pub struct DeleteEntityTypeOutput  {
+}
 /// See [`DeleteEntityTypeOutput`](crate::output::DeleteEntityTypeOutput).
 pub mod delete_entity_type_output {
-
+    
     /// A builder for [`DeleteEntityTypeOutput`](crate::output::DeleteEntityTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEntityTypeOutput`](crate::output::DeleteEntityTypeOutput).
         pub fn build(self) -> crate::output::DeleteEntityTypeOutput {
-            crate::output::DeleteEntityTypeOutput {}
+            crate::output::DeleteEntityTypeOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteEntityTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEntityTypeOutput`](crate::output::DeleteEntityTypeOutput).
@@ -3334,19 +3340,24 @@ impl DeleteEntityTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDetectorVersionOutput {}
+pub struct DeleteDetectorVersionOutput  {
+}
 /// See [`DeleteDetectorVersionOutput`](crate::output::DeleteDetectorVersionOutput).
 pub mod delete_detector_version_output {
-
+    
     /// A builder for [`DeleteDetectorVersionOutput`](crate::output::DeleteDetectorVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDetectorVersionOutput`](crate::output::DeleteDetectorVersionOutput).
         pub fn build(self) -> crate::output::DeleteDetectorVersionOutput {
-            crate::output::DeleteDetectorVersionOutput {}
+            crate::output::DeleteDetectorVersionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDetectorVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDetectorVersionOutput`](crate::output::DeleteDetectorVersionOutput).
@@ -3358,19 +3369,24 @@ impl DeleteDetectorVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDetectorOutput {}
+pub struct DeleteDetectorOutput  {
+}
 /// See [`DeleteDetectorOutput`](crate::output::DeleteDetectorOutput).
 pub mod delete_detector_output {
-
+    
     /// A builder for [`DeleteDetectorOutput`](crate::output::DeleteDetectorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDetectorOutput`](crate::output::DeleteDetectorOutput).
         pub fn build(self) -> crate::output::DeleteDetectorOutput {
-            crate::output::DeleteDetectorOutput {}
+            crate::output::DeleteDetectorOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDetectorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDetectorOutput`](crate::output::DeleteDetectorOutput).
@@ -3382,19 +3398,24 @@ impl DeleteDetectorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBatchPredictionJobOutput {}
+pub struct DeleteBatchPredictionJobOutput  {
+}
 /// See [`DeleteBatchPredictionJobOutput`](crate::output::DeleteBatchPredictionJobOutput).
 pub mod delete_batch_prediction_job_output {
-
+    
     /// A builder for [`DeleteBatchPredictionJobOutput`](crate::output::DeleteBatchPredictionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBatchPredictionJobOutput`](crate::output::DeleteBatchPredictionJobOutput).
         pub fn build(self) -> crate::output::DeleteBatchPredictionJobOutput {
-            crate::output::DeleteBatchPredictionJobOutput {}
+            crate::output::DeleteBatchPredictionJobOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteBatchPredictionJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBatchPredictionJobOutput`](crate::output::DeleteBatchPredictionJobOutput).
@@ -3406,19 +3427,24 @@ impl DeleteBatchPredictionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBatchImportJobOutput {}
+pub struct DeleteBatchImportJobOutput  {
+}
 /// See [`DeleteBatchImportJobOutput`](crate::output::DeleteBatchImportJobOutput).
 pub mod delete_batch_import_job_output {
-
+    
     /// A builder for [`DeleteBatchImportJobOutput`](crate::output::DeleteBatchImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteBatchImportJobOutput`](crate::output::DeleteBatchImportJobOutput).
         pub fn build(self) -> crate::output::DeleteBatchImportJobOutput {
-            crate::output::DeleteBatchImportJobOutput {}
+            crate::output::DeleteBatchImportJobOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteBatchImportJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteBatchImportJobOutput`](crate::output::DeleteBatchImportJobOutput).
@@ -3430,19 +3456,24 @@ impl DeleteBatchImportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVariableOutput {}
+pub struct CreateVariableOutput  {
+}
 /// See [`CreateVariableOutput`](crate::output::CreateVariableOutput).
 pub mod create_variable_output {
-
+    
     /// A builder for [`CreateVariableOutput`](crate::output::CreateVariableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateVariableOutput`](crate::output::CreateVariableOutput).
         pub fn build(self) -> crate::output::CreateVariableOutput {
-            crate::output::CreateVariableOutput {}
+            crate::output::CreateVariableOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateVariableOutput {
     /// Creates a new builder-style object to manufacture [`CreateVariableOutput`](crate::output::CreateVariableOutput).
@@ -3454,20 +3485,20 @@ impl CreateVariableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRuleOutput {
+pub struct CreateRuleOutput  {
     /// <p>The created rule.</p>
     #[doc(hidden)]
     pub rule: std::option::Option<crate::model::Rule>,
 }
 impl CreateRuleOutput {
     /// <p>The created rule.</p>
-    pub fn rule(&self) -> std::option::Option<&crate::model::Rule> {
+    pub fn rule(&self) -> std::option::Option<& crate::model::Rule> {
         self.rule.as_ref()
     }
 }
 /// See [`CreateRuleOutput`](crate::output::CreateRuleOutput).
 pub mod create_rule_output {
-
+    
     /// A builder for [`CreateRuleOutput`](crate::output::CreateRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3481,14 +3512,18 @@ pub mod create_rule_output {
         }
         /// <p>The created rule.</p>
         pub fn set_rule(mut self, input: std::option::Option<crate::model::Rule>) -> Self {
-            self.rule = input;
-            self
+            self.rule = input; self
         }
         /// Consumes the builder and constructs a [`CreateRuleOutput`](crate::output::CreateRuleOutput).
         pub fn build(self) -> crate::output::CreateRuleOutput {
-            crate::output::CreateRuleOutput { rule: self.rule }
+            crate::output::CreateRuleOutput {
+                rule: self.rule
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreateRuleOutput`](crate::output::CreateRuleOutput).
@@ -3500,7 +3535,7 @@ impl CreateRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateModelVersionOutput {
+pub struct CreateModelVersionOutput  {
     /// <p>The model ID.</p>
     #[doc(hidden)]
     pub model_id: std::option::Option<std::string::String>,
@@ -3516,25 +3551,25 @@ pub struct CreateModelVersionOutput {
 }
 impl CreateModelVersionOutput {
     /// <p>The model ID.</p>
-    pub fn model_id(&self) -> std::option::Option<&str> {
+    pub fn model_id(&self) -> std::option::Option<& str> {
         self.model_id.as_deref()
     }
     /// <p>The model type.</p>
-    pub fn model_type(&self) -> std::option::Option<&crate::model::ModelTypeEnum> {
+    pub fn model_type(&self) -> std::option::Option<& crate::model::ModelTypeEnum> {
         self.model_type.as_ref()
     }
     /// <p>The model version number of the model version created.</p>
-    pub fn model_version_number(&self) -> std::option::Option<&str> {
+    pub fn model_version_number(&self) -> std::option::Option<& str> {
         self.model_version_number.as_deref()
     }
     /// <p>The model version status. </p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> std::option::Option<& str> {
         self.status.as_deref()
     }
 }
 /// See [`CreateModelVersionOutput`](crate::output::CreateModelVersionOutput).
 pub mod create_model_version_output {
-
+    
     /// A builder for [`CreateModelVersionOutput`](crate::output::CreateModelVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3551,8 +3586,7 @@ pub mod create_model_version_output {
         }
         /// <p>The model ID.</p>
         pub fn set_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model_id = input;
-            self
+            self.model_id = input; self
         }
         /// <p>The model type.</p>
         pub fn model_type(mut self, input: crate::model::ModelTypeEnum) -> Self {
@@ -3560,12 +3594,8 @@ pub mod create_model_version_output {
             self
         }
         /// <p>The model type.</p>
-        pub fn set_model_type(
-            mut self,
-            input: std::option::Option<crate::model::ModelTypeEnum>,
-        ) -> Self {
-            self.model_type = input;
-            self
+        pub fn set_model_type(mut self, input: std::option::Option<crate::model::ModelTypeEnum>) -> Self {
+            self.model_type = input; self
         }
         /// <p>The model version number of the model version created.</p>
         pub fn model_version_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3573,12 +3603,8 @@ pub mod create_model_version_output {
             self
         }
         /// <p>The model version number of the model version created.</p>
-        pub fn set_model_version_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.model_version_number = input;
-            self
+        pub fn set_model_version_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.model_version_number = input; self
         }
         /// <p>The model version status. </p>
         pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3587,19 +3613,24 @@ pub mod create_model_version_output {
         }
         /// <p>The model version status. </p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateModelVersionOutput`](crate::output::CreateModelVersionOutput).
         pub fn build(self) -> crate::output::CreateModelVersionOutput {
             crate::output::CreateModelVersionOutput {
-                model_id: self.model_id,
-                model_type: self.model_type,
-                model_version_number: self.model_version_number,
-                status: self.status,
+                model_id: self.model_id
+                ,
+                model_type: self.model_type
+                ,
+                model_version_number: self.model_version_number
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateModelVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateModelVersionOutput`](crate::output::CreateModelVersionOutput).
@@ -3611,19 +3642,24 @@ impl CreateModelVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateModelOutput {}
+pub struct CreateModelOutput  {
+}
 /// See [`CreateModelOutput`](crate::output::CreateModelOutput).
 pub mod create_model_output {
-
+    
     /// A builder for [`CreateModelOutput`](crate::output::CreateModelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateModelOutput`](crate::output::CreateModelOutput).
         pub fn build(self) -> crate::output::CreateModelOutput {
-            crate::output::CreateModelOutput {}
+            crate::output::CreateModelOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateModelOutput {
     /// Creates a new builder-style object to manufacture [`CreateModelOutput`](crate::output::CreateModelOutput).
@@ -3635,7 +3671,7 @@ impl CreateModelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDetectorVersionOutput {
+pub struct CreateDetectorVersionOutput  {
     /// <p>The ID for the created version's parent detector.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -3648,21 +3684,21 @@ pub struct CreateDetectorVersionOutput {
 }
 impl CreateDetectorVersionOutput {
     /// <p>The ID for the created version's parent detector.</p>
-    pub fn detector_id(&self) -> std::option::Option<&str> {
+    pub fn detector_id(&self) -> std::option::Option<& str> {
         self.detector_id.as_deref()
     }
     /// <p>The ID for the created detector. </p>
-    pub fn detector_version_id(&self) -> std::option::Option<&str> {
+    pub fn detector_version_id(&self) -> std::option::Option<& str> {
         self.detector_version_id.as_deref()
     }
     /// <p>The status of the detector version.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DetectorVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DetectorVersionStatus> {
         self.status.as_ref()
     }
 }
 /// See [`CreateDetectorVersionOutput`](crate::output::CreateDetectorVersionOutput).
 pub mod create_detector_version_output {
-
+    
     /// A builder for [`CreateDetectorVersionOutput`](crate::output::CreateDetectorVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3678,8 +3714,7 @@ pub mod create_detector_version_output {
         }
         /// <p>The ID for the created version's parent detector.</p>
         pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.detector_id = input;
-            self
+            self.detector_id = input; self
         }
         /// <p>The ID for the created detector. </p>
         pub fn detector_version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3687,12 +3722,8 @@ pub mod create_detector_version_output {
             self
         }
         /// <p>The ID for the created detector. </p>
-        pub fn set_detector_version_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.detector_version_id = input;
-            self
+        pub fn set_detector_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.detector_version_id = input; self
         }
         /// <p>The status of the detector version.</p>
         pub fn status(mut self, input: crate::model::DetectorVersionStatus) -> Self {
@@ -3700,22 +3731,23 @@ pub mod create_detector_version_output {
             self
         }
         /// <p>The status of the detector version.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DetectorVersionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DetectorVersionStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateDetectorVersionOutput`](crate::output::CreateDetectorVersionOutput).
         pub fn build(self) -> crate::output::CreateDetectorVersionOutput {
             crate::output::CreateDetectorVersionOutput {
-                detector_id: self.detector_id,
-                detector_version_id: self.detector_version_id,
-                status: self.status,
+                detector_id: self.detector_id
+                ,
+                detector_version_id: self.detector_version_id
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDetectorVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateDetectorVersionOutput`](crate::output::CreateDetectorVersionOutput).
@@ -3727,19 +3759,24 @@ impl CreateDetectorVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBatchPredictionJobOutput {}
+pub struct CreateBatchPredictionJobOutput  {
+}
 /// See [`CreateBatchPredictionJobOutput`](crate::output::CreateBatchPredictionJobOutput).
 pub mod create_batch_prediction_job_output {
-
+    
     /// A builder for [`CreateBatchPredictionJobOutput`](crate::output::CreateBatchPredictionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateBatchPredictionJobOutput`](crate::output::CreateBatchPredictionJobOutput).
         pub fn build(self) -> crate::output::CreateBatchPredictionJobOutput {
-            crate::output::CreateBatchPredictionJobOutput {}
+            crate::output::CreateBatchPredictionJobOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateBatchPredictionJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateBatchPredictionJobOutput`](crate::output::CreateBatchPredictionJobOutput).
@@ -3751,19 +3788,24 @@ impl CreateBatchPredictionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBatchImportJobOutput {}
+pub struct CreateBatchImportJobOutput  {
+}
 /// See [`CreateBatchImportJobOutput`](crate::output::CreateBatchImportJobOutput).
 pub mod create_batch_import_job_output {
-
+    
     /// A builder for [`CreateBatchImportJobOutput`](crate::output::CreateBatchImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateBatchImportJobOutput`](crate::output::CreateBatchImportJobOutput).
         pub fn build(self) -> crate::output::CreateBatchImportJobOutput {
-            crate::output::CreateBatchImportJobOutput {}
+            crate::output::CreateBatchImportJobOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateBatchImportJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateBatchImportJobOutput`](crate::output::CreateBatchImportJobOutput).
@@ -3775,19 +3817,24 @@ impl CreateBatchImportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelBatchPredictionJobOutput {}
+pub struct CancelBatchPredictionJobOutput  {
+}
 /// See [`CancelBatchPredictionJobOutput`](crate::output::CancelBatchPredictionJobOutput).
 pub mod cancel_batch_prediction_job_output {
-
+    
     /// A builder for [`CancelBatchPredictionJobOutput`](crate::output::CancelBatchPredictionJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CancelBatchPredictionJobOutput`](crate::output::CancelBatchPredictionJobOutput).
         pub fn build(self) -> crate::output::CancelBatchPredictionJobOutput {
-            crate::output::CancelBatchPredictionJobOutput {}
+            crate::output::CancelBatchPredictionJobOutput {
+            }
         }
     }
+    
+    
 }
 impl CancelBatchPredictionJobOutput {
     /// Creates a new builder-style object to manufacture [`CancelBatchPredictionJobOutput`](crate::output::CancelBatchPredictionJobOutput).
@@ -3799,19 +3846,24 @@ impl CancelBatchPredictionJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelBatchImportJobOutput {}
+pub struct CancelBatchImportJobOutput  {
+}
 /// See [`CancelBatchImportJobOutput`](crate::output::CancelBatchImportJobOutput).
 pub mod cancel_batch_import_job_output {
-
+    
     /// A builder for [`CancelBatchImportJobOutput`](crate::output::CancelBatchImportJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CancelBatchImportJobOutput`](crate::output::CancelBatchImportJobOutput).
         pub fn build(self) -> crate::output::CancelBatchImportJobOutput {
-            crate::output::CancelBatchImportJobOutput {}
+            crate::output::CancelBatchImportJobOutput {
+            }
         }
     }
+    
+    
 }
 impl CancelBatchImportJobOutput {
     /// Creates a new builder-style object to manufacture [`CancelBatchImportJobOutput`](crate::output::CancelBatchImportJobOutput).
@@ -3823,7 +3875,7 @@ impl CancelBatchImportJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetVariableOutput {
+pub struct BatchGetVariableOutput  {
     /// <p>The returned variables.</p>
     #[doc(hidden)]
     pub variables: std::option::Option<std::vec::Vec<crate::model::Variable>>,
@@ -3833,17 +3885,17 @@ pub struct BatchGetVariableOutput {
 }
 impl BatchGetVariableOutput {
     /// <p>The returned variables.</p>
-    pub fn variables(&self) -> std::option::Option<&[crate::model::Variable]> {
+    pub fn variables(&self) -> std::option::Option<& [crate::model::Variable]> {
         self.variables.as_deref()
     }
     /// <p>The errors from the request.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchGetVariableError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::BatchGetVariableError]> {
         self.errors.as_deref()
     }
 }
 /// See [`BatchGetVariableOutput`](crate::output::BatchGetVariableOutput).
 pub mod batch_get_variable_output {
-
+    
     /// A builder for [`BatchGetVariableOutput`](crate::output::BatchGetVariableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3858,17 +3910,13 @@ pub mod batch_get_variable_output {
         /// <p>The returned variables.</p>
         pub fn variables(mut self, input: crate::model::Variable) -> Self {
             let mut v = self.variables.unwrap_or_default();
-            v.push(input);
-            self.variables = Some(v);
-            self
+                            v.push(input);
+                            self.variables = Some(v);
+                            self
         }
         /// <p>The returned variables.</p>
-        pub fn set_variables(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Variable>>,
-        ) -> Self {
-            self.variables = input;
-            self
+        pub fn set_variables(mut self, input: std::option::Option<std::vec::Vec<crate::model::Variable>>) -> Self {
+            self.variables = input; self
         }
         /// Appends an item to `errors`.
         ///
@@ -3877,26 +3925,26 @@ pub mod batch_get_variable_output {
         /// <p>The errors from the request.</p>
         pub fn errors(mut self, input: crate::model::BatchGetVariableError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>The errors from the request.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchGetVariableError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchGetVariableError>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`BatchGetVariableOutput`](crate::output::BatchGetVariableOutput).
         pub fn build(self) -> crate::output::BatchGetVariableOutput {
             crate::output::BatchGetVariableOutput {
-                variables: self.variables,
-                errors: self.errors,
+                variables: self.variables
+                ,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchGetVariableOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetVariableOutput`](crate::output::BatchGetVariableOutput).
@@ -3908,25 +3956,24 @@ impl BatchGetVariableOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchCreateVariableOutput {
+pub struct BatchCreateVariableOutput  {
     /// <p>Provides the errors for the <code>BatchCreateVariable</code> request.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchCreateVariableError>>,
 }
 impl BatchCreateVariableOutput {
     /// <p>Provides the errors for the <code>BatchCreateVariable</code> request.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::BatchCreateVariableError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::BatchCreateVariableError]> {
         self.errors.as_deref()
     }
 }
 /// See [`BatchCreateVariableOutput`](crate::output::BatchCreateVariableOutput).
 pub mod batch_create_variable_output {
-
+    
     /// A builder for [`BatchCreateVariableOutput`](crate::output::BatchCreateVariableOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) errors:
-            std::option::Option<std::vec::Vec<crate::model::BatchCreateVariableError>>,
+        pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::BatchCreateVariableError>>,
     }
     impl Builder {
         /// Appends an item to `errors`.
@@ -3936,25 +3983,24 @@ pub mod batch_create_variable_output {
         /// <p>Provides the errors for the <code>BatchCreateVariable</code> request.</p>
         pub fn errors(mut self, input: crate::model::BatchCreateVariableError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>Provides the errors for the <code>BatchCreateVariable</code> request.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchCreateVariableError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchCreateVariableError>>) -> Self {
+            self.errors = input; self
         }
         /// Consumes the builder and constructs a [`BatchCreateVariableOutput`](crate::output::BatchCreateVariableOutput).
         pub fn build(self) -> crate::output::BatchCreateVariableOutput {
             crate::output::BatchCreateVariableOutput {
-                errors: self.errors,
+                errors: self.errors
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchCreateVariableOutput {
     /// Creates a new builder-style object to manufacture [`BatchCreateVariableOutput`](crate::output::BatchCreateVariableOutput).
@@ -3962,3 +4008,4 @@ impl BatchCreateVariableOutput {
         crate::output::batch_create_variable_output::Builder::default()
     }
 }
+

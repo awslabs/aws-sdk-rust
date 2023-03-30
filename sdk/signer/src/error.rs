@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UntagResourceError {
     /// Kind of error that occurred.
-    pub kind: UntagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UntagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -26,27 +26,37 @@ pub enum UntagResourceErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>The signing profile was not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The allowed number of job-signing requests has been exceeded.</p>
+    /// <p>The allowed number of job-signing requests has been exceeded.</p> 
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -60,56 +70,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
 }
 impl UntagResourceError {
     /// Creates a new `UntagResourceError`.
-    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -117,29 +124,36 @@ impl UntagResourceError {
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
-            UntagResourceErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            UntagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            UntagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            UntagResourceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-/// <p>The allowed number of job-signing requests has been exceeded.</p>
+/// <p>The allowed number of job-signing requests has been exceeded.</p> 
 /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TooManyRequestsException {
+pub struct TooManyRequestsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -149,21 +163,19 @@ pub struct TooManyRequestsException {
 }
 impl TooManyRequestsException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl TooManyRequestsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyRequestsException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -173,7 +185,7 @@ impl std::fmt::Display for TooManyRequestsException {
 impl std::error::Error for TooManyRequestsException {}
 /// See [`TooManyRequestsException`](crate::error::TooManyRequestsException).
 pub mod too_many_requests_exception {
-
+    
     /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -188,8 +200,7 @@ pub mod too_many_requests_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -198,17 +209,20 @@ pub mod too_many_requests_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::error::TooManyRequestsException).
         pub fn build(self) -> crate::error::TooManyRequestsException {
             crate::error::TooManyRequestsException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl TooManyRequestsException {
     /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::error::TooManyRequestsException).
@@ -220,7 +234,7 @@ impl TooManyRequestsException {
 /// <p>The signing profile was not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotFoundException {
+pub struct NotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -230,21 +244,19 @@ pub struct NotFoundException {
 }
 impl NotFoundException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl NotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotFoundException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -254,7 +266,7 @@ impl std::fmt::Display for NotFoundException {
 impl std::error::Error for NotFoundException {}
 /// See [`NotFoundException`](crate::error::NotFoundException).
 pub mod not_found_exception {
-
+    
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -269,8 +281,7 @@ pub mod not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -279,17 +290,20 @@ pub mod not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException).
         pub fn build(self) -> crate::error::NotFoundException {
             crate::error::NotFoundException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl NotFoundException {
     /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException).
@@ -301,7 +315,7 @@ impl NotFoundException {
 /// <p>An internal error occurred.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServiceErrorException {
+pub struct InternalServiceErrorException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -311,21 +325,19 @@ pub struct InternalServiceErrorException {
 }
 impl InternalServiceErrorException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl InternalServiceErrorException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalServiceErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServiceErrorException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -335,7 +347,7 @@ impl std::fmt::Display for InternalServiceErrorException {
 impl std::error::Error for InternalServiceErrorException {}
 /// See [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
 pub mod internal_service_error_exception {
-
+    
     /// A builder for [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -350,8 +362,7 @@ pub mod internal_service_error_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -360,17 +371,20 @@ pub mod internal_service_error_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
         pub fn build(self) -> crate::error::InternalServiceErrorException {
             crate::error::InternalServiceErrorException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl InternalServiceErrorException {
     /// Creates a new builder-style object to manufacture [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
@@ -382,7 +396,7 @@ impl InternalServiceErrorException {
 /// <p>The request contains invalid parameters for the ARN or tags. This exception also occurs when you call a tagging API on a cancelled signing profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BadRequestException {
+pub struct BadRequestException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -392,21 +406,19 @@ pub struct BadRequestException {
 }
 impl BadRequestException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl BadRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BadRequestException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -416,7 +428,7 @@ impl std::fmt::Display for BadRequestException {
 impl std::error::Error for BadRequestException {}
 /// See [`BadRequestException`](crate::error::BadRequestException).
 pub mod bad_request_exception {
-
+    
     /// A builder for [`BadRequestException`](crate::error::BadRequestException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -431,8 +443,7 @@ pub mod bad_request_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -441,17 +452,20 @@ pub mod bad_request_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException).
         pub fn build(self) -> crate::error::BadRequestException {
             crate::error::BadRequestException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl BadRequestException {
     /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException).
@@ -465,15 +479,15 @@ impl BadRequestException {
 #[derive(std::fmt::Debug)]
 pub struct TagResourceError {
     /// Kind of error that occurred.
-    pub kind: TagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -487,27 +501,37 @@ pub enum TagResourceErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>The signing profile was not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The allowed number of job-signing requests has been exceeded.</p>
+    /// <p>The allowed number of job-signing requests has been exceeded.</p> 
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -521,56 +545,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
 }
 impl TagResourceError {
     /// Creates a new `TagResourceError`.
-    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TagResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
@@ -578,20 +599,27 @@ impl TagResourceError {
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
-            TagResourceErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            TagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            TagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            TagResourceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -601,15 +629,15 @@ impl std::error::Error for TagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct StartSigningJobError {
     /// Kind of error that occurred.
-    pub kind: StartSigningJobErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StartSigningJobErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StartSigningJobError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: StartSigningJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -623,35 +651,49 @@ pub enum StartSigningJobErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>A specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling.</p>
+    /// <p>The request was denied due to request throttling.</p> 
     /// <p>Instead of this error, <code>TooManyRequestsException</code> should be used.</p>
     #[deprecated(note = "Instead of this error, TooManyRequestsException should be used.")]
     ThrottlingException(crate::error::ThrottlingException),
-    /// <p>The allowed number of job-signing requests has been exceeded.</p>
+    /// <p>The allowed number of job-signing requests has been exceeded.</p> 
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartSigningJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartSigningJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            StartSigningJobErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            StartSigningJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            StartSigningJobErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            StartSigningJobErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            StartSigningJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            StartSigningJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            StartSigningJobErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSigningJobErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSigningJobErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSigningJobErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSigningJobErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSigningJobErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSigningJobErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -665,66 +707,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for StartSigningJobError {
 }
 impl StartSigningJobError {
     /// Creates a new `StartSigningJobError`.
-    pub fn new(kind: StartSigningJobErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StartSigningJobError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StartSigningJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StartSigningJobError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StartSigningJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StartSigningJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StartSigningJobError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StartSigningJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StartSigningJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StartSigningJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StartSigningJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSigningJobErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, StartSigningJobErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `StartSigningJobErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSigningJobErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, StartSigningJobErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `StartSigningJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSigningJobErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, StartSigningJobErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `StartSigningJobErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -732,10 +765,7 @@ impl StartSigningJobError {
     }
     /// Returns `true` if the error kind is `StartSigningJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSigningJobErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, StartSigningJobErrorKind::TooManyRequestsException(_))
     }
     /// Returns `true` if the error kind is `StartSigningJobErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -745,13 +775,27 @@ impl StartSigningJobError {
 impl std::error::Error for StartSigningJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartSigningJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            StartSigningJobErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            StartSigningJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            StartSigningJobErrorKind::ThrottlingException(_inner) => Some(_inner),
-            StartSigningJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            StartSigningJobErrorKind::ValidationException(_inner) => Some(_inner),
-            StartSigningJobErrorKind::Unhandled(_inner) => Some(_inner),
+            StartSigningJobErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            StartSigningJobErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            StartSigningJobErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            StartSigningJobErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            StartSigningJobErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            StartSigningJobErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            StartSigningJobErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -759,7 +803,7 @@ impl std::error::Error for StartSigningJobError {
 /// <p>You signing certificate could not be validated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationException {
+pub struct ValidationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -769,21 +813,19 @@ pub struct ValidationException {
 }
 impl ValidationException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ValidationException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -793,7 +835,7 @@ impl std::fmt::Display for ValidationException {
 impl std::error::Error for ValidationException {}
 /// See [`ValidationException`](crate::error::ValidationException).
 pub mod validation_exception {
-
+    
     /// A builder for [`ValidationException`](crate::error::ValidationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -808,8 +850,7 @@ pub mod validation_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -818,17 +859,20 @@ pub mod validation_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException).
         pub fn build(self) -> crate::error::ValidationException {
             crate::error::ValidationException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationException {
     /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException).
@@ -837,12 +881,12 @@ impl ValidationException {
     }
 }
 
-/// <p>The request was denied due to request throttling.</p>
+/// <p>The request was denied due to request throttling.</p> 
 /// <p>Instead of this error, <code>TooManyRequestsException</code> should be used.</p>
 #[deprecated(note = "Instead of this error, TooManyRequestsException should be used.")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThrottlingException {
+pub struct ThrottlingException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -852,21 +896,19 @@ pub struct ThrottlingException {
 }
 impl ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -876,7 +918,7 @@ impl std::fmt::Display for ThrottlingException {
 impl std::error::Error for ThrottlingException {}
 /// See [`ThrottlingException`](crate::error::ThrottlingException).
 pub mod throttling_exception {
-
+    
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -891,8 +933,7 @@ pub mod throttling_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -901,17 +942,20 @@ pub mod throttling_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
         pub fn build(self) -> crate::error::ThrottlingException {
             crate::error::ThrottlingException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl ThrottlingException {
     /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
@@ -923,7 +967,7 @@ impl ThrottlingException {
 /// <p>A specified resource could not be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceNotFoundException {
+pub struct ResourceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -933,21 +977,19 @@ pub struct ResourceNotFoundException {
 }
 impl ResourceNotFoundException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -957,7 +999,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
-
+    
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -972,8 +1014,7 @@ pub mod resource_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -982,17 +1023,20 @@ pub mod resource_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
@@ -1004,7 +1048,7 @@ impl ResourceNotFoundException {
 /// <p>You do not have sufficient access to perform this action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessDeniedException {
+pub struct AccessDeniedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -1014,21 +1058,19 @@ pub struct AccessDeniedException {
 }
 impl AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -1038,7 +1080,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException).
 pub mod access_denied_exception {
-
+    
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1053,8 +1095,7 @@ pub mod access_denied_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1063,17 +1104,20 @@ pub mod access_denied_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
         pub fn build(self) -> crate::error::AccessDeniedException {
             crate::error::AccessDeniedException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
@@ -1087,15 +1131,15 @@ impl AccessDeniedException {
 #[derive(std::fmt::Debug)]
 pub struct RevokeSigningProfileError {
     /// Kind of error that occurred.
-    pub kind: RevokeSigningProfileErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RevokeSigningProfileErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RevokeSigningProfileError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RevokeSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1109,30 +1153,42 @@ pub enum RevokeSigningProfileErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>A specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The allowed number of job-signing requests has been exceeded.</p>
+    /// <p>The allowed number of job-signing requests has been exceeded.</p> 
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RevokeSigningProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RevokeSigningProfileErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            RevokeSigningProfileErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            RevokeSigningProfileErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            RevokeSigningProfileErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            RevokeSigningProfileErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            RevokeSigningProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            RevokeSigningProfileErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeSigningProfileErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeSigningProfileErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeSigningProfileErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeSigningProfileErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeSigningProfileErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1146,95 +1202,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for RevokeSigningProfileError {
 }
 impl RevokeSigningProfileError {
     /// Creates a new `RevokeSigningProfileError`.
-    pub fn new(kind: RevokeSigningProfileErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RevokeSigningProfileError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RevokeSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RevokeSigningProfileError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RevokeSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RevokeSigningProfileErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RevokeSigningProfileError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RevokeSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RevokeSigningProfileError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RevokeSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RevokeSigningProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RevokeSigningProfileErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, RevokeSigningProfileErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `RevokeSigningProfileErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RevokeSigningProfileErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, RevokeSigningProfileErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `RevokeSigningProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RevokeSigningProfileErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, RevokeSigningProfileErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `RevokeSigningProfileErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RevokeSigningProfileErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, RevokeSigningProfileErrorKind::TooManyRequestsException(_))
     }
     /// Returns `true` if the error kind is `RevokeSigningProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RevokeSigningProfileErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, RevokeSigningProfileErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for RevokeSigningProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RevokeSigningProfileErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            RevokeSigningProfileErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            RevokeSigningProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            RevokeSigningProfileErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            RevokeSigningProfileErrorKind::ValidationException(_inner) => Some(_inner),
-            RevokeSigningProfileErrorKind::Unhandled(_inner) => Some(_inner),
+            RevokeSigningProfileErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            RevokeSigningProfileErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            RevokeSigningProfileErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RevokeSigningProfileErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            RevokeSigningProfileErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            RevokeSigningProfileErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1244,15 +1293,15 @@ impl std::error::Error for RevokeSigningProfileError {
 #[derive(std::fmt::Debug)]
 pub struct RevokeSignatureError {
     /// Kind of error that occurred.
-    pub kind: RevokeSignatureErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RevokeSignatureErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RevokeSignatureError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RevokeSignatureErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1266,30 +1315,42 @@ pub enum RevokeSignatureErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>A specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The allowed number of job-signing requests has been exceeded.</p>
+    /// <p>The allowed number of job-signing requests has been exceeded.</p> 
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RevokeSignatureError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RevokeSignatureErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            RevokeSignatureErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            RevokeSignatureErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            RevokeSignatureErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            RevokeSignatureErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            RevokeSignatureErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            RevokeSignatureErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeSignatureErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeSignatureErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeSignatureErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeSignatureErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RevokeSignatureErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1303,73 +1364,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for RevokeSignatureError {
 }
 impl RevokeSignatureError {
     /// Creates a new `RevokeSignatureError`.
-    pub fn new(kind: RevokeSignatureErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RevokeSignatureError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RevokeSignatureErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RevokeSignatureError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RevokeSignatureErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RevokeSignatureErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RevokeSignatureError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RevokeSignatureErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RevokeSignatureError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RevokeSignatureErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RevokeSignatureErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RevokeSignatureErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, RevokeSignatureErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `RevokeSignatureErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RevokeSignatureErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, RevokeSignatureErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `RevokeSignatureErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RevokeSignatureErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, RevokeSignatureErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `RevokeSignatureErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RevokeSignatureErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, RevokeSignatureErrorKind::TooManyRequestsException(_))
     }
     /// Returns `true` if the error kind is `RevokeSignatureErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -1379,12 +1428,24 @@ impl RevokeSignatureError {
 impl std::error::Error for RevokeSignatureError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RevokeSignatureErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            RevokeSignatureErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            RevokeSignatureErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            RevokeSignatureErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            RevokeSignatureErrorKind::ValidationException(_inner) => Some(_inner),
-            RevokeSignatureErrorKind::Unhandled(_inner) => Some(_inner),
+            RevokeSignatureErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            RevokeSignatureErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            RevokeSignatureErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RevokeSignatureErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            RevokeSignatureErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            RevokeSignatureErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1394,15 +1455,15 @@ impl std::error::Error for RevokeSignatureError {
 #[derive(std::fmt::Debug)]
 pub struct RemoveProfilePermissionError {
     /// Kind of error that occurred.
-    pub kind: RemoveProfilePermissionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RemoveProfilePermissionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RemoveProfilePermissionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RemoveProfilePermissionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1418,33 +1479,45 @@ pub enum RemoveProfilePermissionErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>A specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The allowed number of job-signing requests has been exceeded.</p>
+    /// <p>The allowed number of job-signing requests has been exceeded.</p> 
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RemoveProfilePermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RemoveProfilePermissionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            RemoveProfilePermissionErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            RemoveProfilePermissionErrorKind::InternalServiceErrorException(_inner) => {
+            RemoveProfilePermissionErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveProfilePermissionErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveProfilePermissionErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveProfilePermissionErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveProfilePermissionErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveProfilePermissionErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RemoveProfilePermissionErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            RemoveProfilePermissionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            RemoveProfilePermissionErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            RemoveProfilePermissionErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            RemoveProfilePermissionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1458,103 +1531,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for RemoveProfilePermissionError 
 }
 impl RemoveProfilePermissionError {
     /// Creates a new `RemoveProfilePermissionError`.
-    pub fn new(kind: RemoveProfilePermissionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RemoveProfilePermissionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RemoveProfilePermissionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RemoveProfilePermissionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RemoveProfilePermissionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RemoveProfilePermissionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RemoveProfilePermissionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RemoveProfilePermissionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RemoveProfilePermissionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RemoveProfilePermissionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RemoveProfilePermissionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveProfilePermissionErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, RemoveProfilePermissionErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `RemoveProfilePermissionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveProfilePermissionErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, RemoveProfilePermissionErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `RemoveProfilePermissionErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveProfilePermissionErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, RemoveProfilePermissionErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `RemoveProfilePermissionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveProfilePermissionErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, RemoveProfilePermissionErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `RemoveProfilePermissionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveProfilePermissionErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, RemoveProfilePermissionErrorKind::TooManyRequestsException(_))
     }
     /// Returns `true` if the error kind is `RemoveProfilePermissionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RemoveProfilePermissionErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, RemoveProfilePermissionErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for RemoveProfilePermissionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RemoveProfilePermissionErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            RemoveProfilePermissionErrorKind::ConflictException(_inner) => Some(_inner),
-            RemoveProfilePermissionErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            RemoveProfilePermissionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            RemoveProfilePermissionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            RemoveProfilePermissionErrorKind::ValidationException(_inner) => Some(_inner),
-            RemoveProfilePermissionErrorKind::Unhandled(_inner) => Some(_inner),
+            RemoveProfilePermissionErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveProfilePermissionErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveProfilePermissionErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveProfilePermissionErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveProfilePermissionErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveProfilePermissionErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            RemoveProfilePermissionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1562,7 +1627,7 @@ impl std::error::Error for RemoveProfilePermissionError {
 /// <p>The resource encountered a conflicting state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -1572,21 +1637,19 @@ pub struct ConflictException {
 }
 impl ConflictException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -1596,7 +1659,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException).
 pub mod conflict_exception {
-
+    
     /// A builder for [`ConflictException`](crate::error::ConflictException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1611,8 +1674,7 @@ pub mod conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1621,17 +1683,20 @@ pub mod conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
         pub fn build(self) -> crate::error::ConflictException {
             crate::error::ConflictException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
@@ -1645,15 +1710,15 @@ impl ConflictException {
 #[derive(std::fmt::Debug)]
 pub struct PutSigningProfileError {
     /// Kind of error that occurred.
-    pub kind: PutSigningProfileErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutSigningProfileErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutSigningProfileError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: PutSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1667,30 +1732,42 @@ pub enum PutSigningProfileErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>A specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The allowed number of job-signing requests has been exceeded.</p>
+    /// <p>The allowed number of job-signing requests has been exceeded.</p> 
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutSigningProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutSigningProfileErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            PutSigningProfileErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            PutSigningProfileErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            PutSigningProfileErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            PutSigningProfileErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            PutSigningProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            PutSigningProfileErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSigningProfileErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSigningProfileErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSigningProfileErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSigningProfileErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSigningProfileErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1704,91 +1781,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutSigningProfileError {
 }
 impl PutSigningProfileError {
     /// Creates a new `PutSigningProfileError`.
-    pub fn new(kind: PutSigningProfileErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutSigningProfileError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutSigningProfileError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutSigningProfileErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutSigningProfileError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutSigningProfileError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutSigningProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSigningProfileErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, PutSigningProfileErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `PutSigningProfileErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSigningProfileErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, PutSigningProfileErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `PutSigningProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSigningProfileErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, PutSigningProfileErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `PutSigningProfileErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSigningProfileErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, PutSigningProfileErrorKind::TooManyRequestsException(_))
     }
     /// Returns `true` if the error kind is `PutSigningProfileErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSigningProfileErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, PutSigningProfileErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for PutSigningProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutSigningProfileErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            PutSigningProfileErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            PutSigningProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            PutSigningProfileErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            PutSigningProfileErrorKind::ValidationException(_inner) => Some(_inner),
-            PutSigningProfileErrorKind::Unhandled(_inner) => Some(_inner),
+            PutSigningProfileErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            PutSigningProfileErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            PutSigningProfileErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            PutSigningProfileErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            PutSigningProfileErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            PutSigningProfileErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1798,15 +1872,15 @@ impl std::error::Error for PutSigningProfileError {
 #[derive(std::fmt::Debug)]
 pub struct ListTagsForResourceError {
     /// Kind of error that occurred.
-    pub kind: ListTagsForResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTagsForResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1820,27 +1894,37 @@ pub enum ListTagsForResourceErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>The signing profile was not found.</p>
     NotFoundException(crate::error::NotFoundException),
-    /// <p>The allowed number of job-signing requests has been exceeded.</p>
+    /// <p>The allowed number of job-signing requests has been exceeded.</p> 
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1854,83 +1938,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
 }
 impl ListTagsForResourceError {
     /// Creates a new `ListTagsForResourceError`.
-    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::NotFoundException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1940,15 +2022,15 @@ impl std::error::Error for ListTagsForResourceError {
 #[derive(std::fmt::Debug)]
 pub struct ListSigningProfilesError {
     /// Kind of error that occurred.
-    pub kind: ListSigningProfilesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListSigningProfilesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListSigningProfilesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListSigningProfilesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1960,26 +2042,34 @@ pub enum ListSigningProfilesErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal error occurred.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
-    /// <p>The allowed number of job-signing requests has been exceeded.</p>
+    /// <p>The allowed number of job-signing requests has been exceeded.</p> 
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSigningProfilesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListSigningProfilesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListSigningProfilesErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            ListSigningProfilesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            ListSigningProfilesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListSigningProfilesErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSigningProfilesErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSigningProfilesErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSigningProfilesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1993,75 +2083,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListSigningProfilesError {
 }
 impl ListSigningProfilesError {
     /// Creates a new `ListSigningProfilesError`.
-    pub fn new(kind: ListSigningProfilesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListSigningProfilesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListSigningProfilesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListSigningProfilesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListSigningProfilesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListSigningProfilesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListSigningProfilesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListSigningProfilesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListSigningProfilesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListSigningProfilesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListSigningProfilesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSigningProfilesErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListSigningProfilesErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListSigningProfilesErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSigningProfilesErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, ListSigningProfilesErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `ListSigningProfilesErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSigningProfilesErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, ListSigningProfilesErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for ListSigningProfilesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListSigningProfilesErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListSigningProfilesErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            ListSigningProfilesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListSigningProfilesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListSigningProfilesErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListSigningProfilesErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListSigningProfilesErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            ListSigningProfilesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2071,15 +2160,15 @@ impl std::error::Error for ListSigningProfilesError {
 #[derive(std::fmt::Debug)]
 pub struct ListSigningPlatformsError {
     /// Kind of error that occurred.
-    pub kind: ListSigningPlatformsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListSigningPlatformsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListSigningPlatformsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListSigningPlatformsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2091,29 +2180,39 @@ pub enum ListSigningPlatformsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal error occurred.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
-    /// <p>The allowed number of job-signing requests has been exceeded.</p>
+    /// <p>The allowed number of job-signing requests has been exceeded.</p> 
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSigningPlatformsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListSigningPlatformsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListSigningPlatformsErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            ListSigningPlatformsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            ListSigningPlatformsErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListSigningPlatformsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListSigningPlatformsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSigningPlatformsErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSigningPlatformsErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSigningPlatformsErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSigningPlatformsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2127,87 +2226,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListSigningPlatformsError {
 }
 impl ListSigningPlatformsError {
     /// Creates a new `ListSigningPlatformsError`.
-    pub fn new(kind: ListSigningPlatformsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListSigningPlatformsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListSigningPlatformsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListSigningPlatformsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListSigningPlatformsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListSigningPlatformsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListSigningPlatformsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListSigningPlatformsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListSigningPlatformsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListSigningPlatformsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListSigningPlatformsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSigningPlatformsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListSigningPlatformsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListSigningPlatformsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSigningPlatformsErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, ListSigningPlatformsErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `ListSigningPlatformsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSigningPlatformsErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, ListSigningPlatformsErrorKind::TooManyRequestsException(_))
     }
     /// Returns `true` if the error kind is `ListSigningPlatformsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSigningPlatformsErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ListSigningPlatformsErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ListSigningPlatformsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListSigningPlatformsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListSigningPlatformsErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            ListSigningPlatformsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListSigningPlatformsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListSigningPlatformsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListSigningPlatformsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListSigningPlatformsErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListSigningPlatformsErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            ListSigningPlatformsErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListSigningPlatformsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2217,15 +2310,15 @@ impl std::error::Error for ListSigningPlatformsError {
 #[derive(std::fmt::Debug)]
 pub struct ListSigningJobsError {
     /// Kind of error that occurred.
-    pub kind: ListSigningJobsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListSigningJobsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListSigningJobsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListSigningJobsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2237,29 +2330,39 @@ pub enum ListSigningJobsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>An internal error occurred.</p>
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
-    /// <p>The allowed number of job-signing requests has been exceeded.</p>
+    /// <p>The allowed number of job-signing requests has been exceeded.</p> 
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSigningJobsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListSigningJobsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListSigningJobsErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            ListSigningJobsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            ListSigningJobsErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListSigningJobsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListSigningJobsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSigningJobsErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSigningJobsErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSigningJobsErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSigningJobsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2273,66 +2376,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListSigningJobsError {
 }
 impl ListSigningJobsError {
     /// Creates a new `ListSigningJobsError`.
-    pub fn new(kind: ListSigningJobsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListSigningJobsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListSigningJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListSigningJobsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListSigningJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListSigningJobsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListSigningJobsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListSigningJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListSigningJobsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListSigningJobsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListSigningJobsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSigningJobsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListSigningJobsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListSigningJobsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSigningJobsErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, ListSigningJobsErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `ListSigningJobsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSigningJobsErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, ListSigningJobsErrorKind::TooManyRequestsException(_))
     }
     /// Returns `true` if the error kind is `ListSigningJobsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -2342,11 +2436,21 @@ impl ListSigningJobsError {
 impl std::error::Error for ListSigningJobsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListSigningJobsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListSigningJobsErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            ListSigningJobsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListSigningJobsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListSigningJobsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListSigningJobsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListSigningJobsErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListSigningJobsErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            ListSigningJobsErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListSigningJobsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2356,15 +2460,15 @@ impl std::error::Error for ListSigningJobsError {
 #[derive(std::fmt::Debug)]
 pub struct ListProfilePermissionsError {
     /// Kind of error that occurred.
-    pub kind: ListProfilePermissionsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListProfilePermissionsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListProfilePermissionsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListProfilePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2378,30 +2482,42 @@ pub enum ListProfilePermissionsErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>A specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The allowed number of job-signing requests has been exceeded.</p>
+    /// <p>The allowed number of job-signing requests has been exceeded.</p> 
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListProfilePermissionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListProfilePermissionsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListProfilePermissionsErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            ListProfilePermissionsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ListProfilePermissionsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            ListProfilePermissionsErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListProfilePermissionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListProfilePermissionsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListProfilePermissionsErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListProfilePermissionsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListProfilePermissionsErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListProfilePermissionsErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListProfilePermissionsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2415,95 +2531,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListProfilePermissionsError {
 }
 impl ListProfilePermissionsError {
     /// Creates a new `ListProfilePermissionsError`.
-    pub fn new(kind: ListProfilePermissionsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListProfilePermissionsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListProfilePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListProfilePermissionsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListProfilePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListProfilePermissionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListProfilePermissionsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListProfilePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListProfilePermissionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListProfilePermissionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListProfilePermissionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListProfilePermissionsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListProfilePermissionsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListProfilePermissionsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListProfilePermissionsErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, ListProfilePermissionsErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `ListProfilePermissionsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListProfilePermissionsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ListProfilePermissionsErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListProfilePermissionsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListProfilePermissionsErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, ListProfilePermissionsErrorKind::TooManyRequestsException(_))
     }
     /// Returns `true` if the error kind is `ListProfilePermissionsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListProfilePermissionsErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ListProfilePermissionsErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ListProfilePermissionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListProfilePermissionsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListProfilePermissionsErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            ListProfilePermissionsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListProfilePermissionsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListProfilePermissionsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListProfilePermissionsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListProfilePermissionsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListProfilePermissionsErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListProfilePermissionsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListProfilePermissionsErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            ListProfilePermissionsErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListProfilePermissionsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2513,15 +2622,15 @@ impl std::error::Error for ListProfilePermissionsError {
 #[derive(std::fmt::Debug)]
 pub struct GetSigningProfileError {
     /// Kind of error that occurred.
-    pub kind: GetSigningProfileErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetSigningProfileErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetSigningProfileError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2535,27 +2644,37 @@ pub enum GetSigningProfileErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>A specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The allowed number of job-signing requests has been exceeded.</p>
+    /// <p>The allowed number of job-signing requests has been exceeded.</p> 
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSigningProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSigningProfileErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetSigningProfileErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            GetSigningProfileErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            GetSigningProfileErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            GetSigningProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetSigningProfileErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSigningProfileErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSigningProfileErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSigningProfileErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSigningProfileErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2569,83 +2688,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetSigningProfileError {
 }
 impl GetSigningProfileError {
     /// Creates a new `GetSigningProfileError`.
-    pub fn new(kind: GetSigningProfileErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetSigningProfileError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetSigningProfileError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetSigningProfileErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetSigningProfileError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetSigningProfileError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetSigningProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSigningProfileErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetSigningProfileErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetSigningProfileErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSigningProfileErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, GetSigningProfileErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `GetSigningProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSigningProfileErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetSigningProfileErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetSigningProfileErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSigningProfileErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, GetSigningProfileErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for GetSigningProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSigningProfileErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetSigningProfileErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            GetSigningProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetSigningProfileErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetSigningProfileErrorKind::Unhandled(_inner) => Some(_inner),
+            GetSigningProfileErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetSigningProfileErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GetSigningProfileErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetSigningProfileErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            GetSigningProfileErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2655,15 +2772,15 @@ impl std::error::Error for GetSigningProfileError {
 #[derive(std::fmt::Debug)]
 pub struct GetSigningPlatformError {
     /// Kind of error that occurred.
-    pub kind: GetSigningPlatformErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetSigningPlatformErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetSigningPlatformError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetSigningPlatformErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2677,27 +2794,37 @@ pub enum GetSigningPlatformErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>A specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The allowed number of job-signing requests has been exceeded.</p>
+    /// <p>The allowed number of job-signing requests has been exceeded.</p> 
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSigningPlatformError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSigningPlatformErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetSigningPlatformErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            GetSigningPlatformErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            GetSigningPlatformErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            GetSigningPlatformErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetSigningPlatformErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSigningPlatformErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSigningPlatformErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSigningPlatformErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSigningPlatformErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2711,83 +2838,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetSigningPlatformError {
 }
 impl GetSigningPlatformError {
     /// Creates a new `GetSigningPlatformError`.
-    pub fn new(kind: GetSigningPlatformErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetSigningPlatformError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetSigningPlatformErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetSigningPlatformError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetSigningPlatformErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetSigningPlatformErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetSigningPlatformError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetSigningPlatformErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetSigningPlatformError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetSigningPlatformErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetSigningPlatformErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSigningPlatformErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetSigningPlatformErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetSigningPlatformErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSigningPlatformErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, GetSigningPlatformErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `GetSigningPlatformErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSigningPlatformErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetSigningPlatformErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetSigningPlatformErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSigningPlatformErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, GetSigningPlatformErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for GetSigningPlatformError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSigningPlatformErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetSigningPlatformErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            GetSigningPlatformErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetSigningPlatformErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            GetSigningPlatformErrorKind::Unhandled(_inner) => Some(_inner),
+            GetSigningPlatformErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetSigningPlatformErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GetSigningPlatformErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetSigningPlatformErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            GetSigningPlatformErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2797,15 +2922,15 @@ impl std::error::Error for GetSigningPlatformError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeSigningJobError {
     /// Kind of error that occurred.
-    pub kind: DescribeSigningJobErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeSigningJobErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeSigningJobError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeSigningJobErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2819,27 +2944,37 @@ pub enum DescribeSigningJobErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>A specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The allowed number of job-signing requests has been exceeded.</p>
+    /// <p>The allowed number of job-signing requests has been exceeded.</p> 
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeSigningJobError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeSigningJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DescribeSigningJobErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            DescribeSigningJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            DescribeSigningJobErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DescribeSigningJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeSigningJobErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeSigningJobErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeSigningJobErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeSigningJobErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeSigningJobErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2853,83 +2988,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeSigningJobError {
 }
 impl DescribeSigningJobError {
     /// Creates a new `DescribeSigningJobError`.
-    pub fn new(kind: DescribeSigningJobErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeSigningJobError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeSigningJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeSigningJobError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeSigningJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeSigningJobErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeSigningJobError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeSigningJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeSigningJobError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeSigningJobErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeSigningJobErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeSigningJobErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DescribeSigningJobErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DescribeSigningJobErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeSigningJobErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, DescribeSigningJobErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `DescribeSigningJobErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeSigningJobErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DescribeSigningJobErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DescribeSigningJobErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeSigningJobErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DescribeSigningJobErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DescribeSigningJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeSigningJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DescribeSigningJobErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            DescribeSigningJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DescribeSigningJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DescribeSigningJobErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeSigningJobErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeSigningJobErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeSigningJobErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeSigningJobErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeSigningJobErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2939,15 +3072,15 @@ impl std::error::Error for DescribeSigningJobError {
 #[derive(std::fmt::Debug)]
 pub struct CancelSigningProfileError {
     /// Kind of error that occurred.
-    pub kind: CancelSigningProfileErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CancelSigningProfileErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CancelSigningProfileError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CancelSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2961,27 +3094,37 @@ pub enum CancelSigningProfileErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// <p>A specified resource could not be found.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    /// <p>The allowed number of job-signing requests has been exceeded.</p>
+    /// <p>The allowed number of job-signing requests has been exceeded.</p> 
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelSigningProfileError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CancelSigningProfileErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CancelSigningProfileErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            CancelSigningProfileErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            CancelSigningProfileErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            CancelSigningProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CancelSigningProfileErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CancelSigningProfileErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CancelSigningProfileErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CancelSigningProfileErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CancelSigningProfileErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2995,87 +3138,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for CancelSigningProfileError {
 }
 impl CancelSigningProfileError {
     /// Creates a new `CancelSigningProfileError`.
-    pub fn new(kind: CancelSigningProfileErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CancelSigningProfileError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CancelSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CancelSigningProfileError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CancelSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CancelSigningProfileErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CancelSigningProfileError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CancelSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CancelSigningProfileError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CancelSigningProfileErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CancelSigningProfileErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CancelSigningProfileErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CancelSigningProfileErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CancelSigningProfileErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CancelSigningProfileErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, CancelSigningProfileErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `CancelSigningProfileErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CancelSigningProfileErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, CancelSigningProfileErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CancelSigningProfileErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CancelSigningProfileErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, CancelSigningProfileErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for CancelSigningProfileError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CancelSigningProfileErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CancelSigningProfileErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            CancelSigningProfileErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            CancelSigningProfileErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CancelSigningProfileErrorKind::Unhandled(_inner) => Some(_inner),
+            CancelSigningProfileErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CancelSigningProfileErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CancelSigningProfileErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CancelSigningProfileErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            CancelSigningProfileErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3085,15 +3222,15 @@ impl std::error::Error for CancelSigningProfileError {
 #[derive(std::fmt::Debug)]
 pub struct AddProfilePermissionError {
     /// Kind of error that occurred.
-    pub kind: AddProfilePermissionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AddProfilePermissionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AddProfilePermissionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: AddProfilePermissionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3111,32 +3248,48 @@ pub enum AddProfilePermissionErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The client is making a request that exceeds service limits.</p>
     ServiceLimitExceededException(crate::error::ServiceLimitExceededException),
-    /// <p>The allowed number of job-signing requests has been exceeded.</p>
+    /// <p>The allowed number of job-signing requests has been exceeded.</p> 
     /// <p>This error supersedes the error <code>ThrottlingException</code>.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>You signing certificate could not be validated.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AddProfilePermissionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AddProfilePermissionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            AddProfilePermissionErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            AddProfilePermissionErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            AddProfilePermissionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            AddProfilePermissionErrorKind::ServiceLimitExceededException(_inner) => _inner.fmt(f),
-            AddProfilePermissionErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            AddProfilePermissionErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            AddProfilePermissionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            AddProfilePermissionErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddProfilePermissionErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddProfilePermissionErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddProfilePermissionErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddProfilePermissionErrorKind::ServiceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddProfilePermissionErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddProfilePermissionErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AddProfilePermissionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3150,111 +3303,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for AddProfilePermissionError {
 }
 impl AddProfilePermissionError {
     /// Creates a new `AddProfilePermissionError`.
-    pub fn new(kind: AddProfilePermissionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AddProfilePermissionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AddProfilePermissionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AddProfilePermissionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AddProfilePermissionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AddProfilePermissionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AddProfilePermissionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AddProfilePermissionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AddProfilePermissionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AddProfilePermissionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AddProfilePermissionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddProfilePermissionErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, AddProfilePermissionErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `AddProfilePermissionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddProfilePermissionErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, AddProfilePermissionErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `AddProfilePermissionErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddProfilePermissionErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, AddProfilePermissionErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `AddProfilePermissionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddProfilePermissionErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, AddProfilePermissionErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `AddProfilePermissionErrorKind::ServiceLimitExceededException`.
     pub fn is_service_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddProfilePermissionErrorKind::ServiceLimitExceededException(_)
-        )
+        matches!(&self.kind, AddProfilePermissionErrorKind::ServiceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `AddProfilePermissionErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddProfilePermissionErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, AddProfilePermissionErrorKind::TooManyRequestsException(_))
     }
     /// Returns `true` if the error kind is `AddProfilePermissionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AddProfilePermissionErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, AddProfilePermissionErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for AddProfilePermissionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AddProfilePermissionErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            AddProfilePermissionErrorKind::ConflictException(_inner) => Some(_inner),
-            AddProfilePermissionErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            AddProfilePermissionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            AddProfilePermissionErrorKind::ServiceLimitExceededException(_inner) => Some(_inner),
-            AddProfilePermissionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            AddProfilePermissionErrorKind::ValidationException(_inner) => Some(_inner),
-            AddProfilePermissionErrorKind::Unhandled(_inner) => Some(_inner),
+            AddProfilePermissionErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            AddProfilePermissionErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            AddProfilePermissionErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            AddProfilePermissionErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            AddProfilePermissionErrorKind::ServiceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            AddProfilePermissionErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            AddProfilePermissionErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            AddProfilePermissionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3262,7 +3406,7 @@ impl std::error::Error for AddProfilePermissionError {
 /// <p>The client is making a request that exceeds service limits.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceLimitExceededException {
+pub struct ServiceLimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -3272,21 +3416,19 @@ pub struct ServiceLimitExceededException {
 }
 impl ServiceLimitExceededException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
 }
 impl ServiceLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceLimitExceededException")?;
         if let Some(inner_10) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_10)?;
             }
         }
@@ -3296,7 +3438,7 @@ impl std::fmt::Display for ServiceLimitExceededException {
 impl std::error::Error for ServiceLimitExceededException {}
 /// See [`ServiceLimitExceededException`](crate::error::ServiceLimitExceededException).
 pub mod service_limit_exceeded_exception {
-
+    
     /// A builder for [`ServiceLimitExceededException`](crate::error::ServiceLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3311,8 +3453,7 @@ pub mod service_limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3321,17 +3462,20 @@ pub mod service_limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// Consumes the builder and constructs a [`ServiceLimitExceededException`](crate::error::ServiceLimitExceededException).
         pub fn build(self) -> crate::error::ServiceLimitExceededException {
             crate::error::ServiceLimitExceededException {
-                message: self.message,
-                code: self.code,
+                message: self.message
+                ,
+                code: self.code
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceLimitExceededException {
     /// Creates a new builder-style object to manufacture [`ServiceLimitExceededException`](crate::error::ServiceLimitExceededException).
@@ -3340,31 +3484,32 @@ impl ServiceLimitExceededException {
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

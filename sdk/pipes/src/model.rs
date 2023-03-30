@@ -3,7 +3,7 @@
 /// <p>Indicates that an error has occurred while performing a validate operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationExceptionField {
+pub struct ValidationExceptionField  {
     /// <p>The name of the exception.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ValidationExceptionField {
 }
 impl ValidationExceptionField {
     /// <p>The name of the exception.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The message of the exception.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ValidationExceptionField`](crate::model::ValidationExceptionField).
 pub mod validation_exception_field {
-
+    
     /// A builder for [`ValidationExceptionField`](crate::model::ValidationExceptionField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod validation_exception_field {
         }
         /// <p>The name of the exception.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The message of the exception.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -48,17 +47,20 @@ pub mod validation_exception_field {
         }
         /// <p>The message of the exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::model::ValidationExceptionField).
         pub fn build(self) -> crate::model::ValidationExceptionField {
             crate::model::ValidationExceptionField {
-                name: self.name,
-                message: self.message,
+                name: self.name
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationExceptionField {
     /// Creates a new builder-style object to manufacture [`ValidationExceptionField`](crate::model::ValidationExceptionField).
@@ -73,9 +75,9 @@ impl ValidationExceptionField {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let pipestate = unimplemented!();
 /// match pipestate {
@@ -106,22 +108,14 @@ impl ValidationExceptionField {
 /// Specifically, when `pipestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PipeState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PipeState {
     #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
@@ -146,7 +140,7 @@ pub enum PipeState {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PipeState {
     fn from(s: &str) -> Self {
@@ -162,17 +156,17 @@ impl std::convert::From<&str> for PipeState {
             "STOP_FAILED" => PipeState::StopFailed,
             "UPDATE_FAILED" => PipeState::UpdateFailed,
             "UPDATING" => PipeState::Updating,
-            other => PipeState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PipeState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PipeState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PipeState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PipeState::from(s))
+                }
+            }
 impl PipeState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -188,23 +182,13 @@ impl PipeState {
             PipeState::StopFailed => "STOP_FAILED",
             PipeState::UpdateFailed => "UPDATE_FAILED",
             PipeState::Updating => "UPDATING",
-            PipeState::Unknown(value) => value.as_str(),
+            PipeState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CREATE_FAILED",
-            "CREATING",
-            "DELETING",
-            "RUNNING",
-            "STARTING",
-            "START_FAILED",
-            "STOPPED",
-            "STOPPING",
-            "STOP_FAILED",
-            "UPDATE_FAILED",
-            "UPDATING",
+            "CREATE_FAILED", "CREATING", "DELETING", "RUNNING", "STARTING", "START_FAILED", "STOPPED", "STOPPING", "STOP_FAILED", "UPDATE_FAILED", "UPDATING"
         ]
     }
 }
@@ -220,9 +204,9 @@ impl AsRef<str> for PipeState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let requestedpipestate = unimplemented!();
 /// match requestedpipestate {
@@ -244,60 +228,52 @@ impl AsRef<str> for PipeState {
 /// Specifically, when `requestedpipestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RequestedPipeState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RequestedPipeState {
     #[allow(missing_docs)] // documentation missing in model
     Running,
     #[allow(missing_docs)] // documentation missing in model
     Stopped,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RequestedPipeState {
     fn from(s: &str) -> Self {
         match s {
             "RUNNING" => RequestedPipeState::Running,
             "STOPPED" => RequestedPipeState::Stopped,
-            other => {
-                RequestedPipeState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => RequestedPipeState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RequestedPipeState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RequestedPipeState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RequestedPipeState::from(s))
+                }
+            }
 impl RequestedPipeState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RequestedPipeState::Running => "RUNNING",
             RequestedPipeState::Stopped => "STOPPED",
-            RequestedPipeState::Unknown(value) => value.as_str(),
+            RequestedPipeState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RUNNING", "STOPPED"]
+        &[
+            "RUNNING", "STOPPED"
+        ]
     }
 }
 impl AsRef<str> for RequestedPipeState {
@@ -309,7 +285,7 @@ impl AsRef<str> for RequestedPipeState {
 /// <p>An object that represents a pipe. Amazon EventBridgePipes connect event sources to targets and reduces the need for specialized knowledge and integration code.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Pipe {
+pub struct Pipe  {
     /// <p>The name of the pipe.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -343,49 +319,49 @@ pub struct Pipe {
 }
 impl Pipe {
     /// <p>The name of the pipe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the pipe.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn desired_state(&self) -> std::option::Option<&crate::model::RequestedPipeState> {
+    pub fn desired_state(&self) -> std::option::Option<& crate::model::RequestedPipeState> {
         self.desired_state.as_ref()
     }
     /// <p>The state the pipe is in.</p>
-    pub fn current_state(&self) -> std::option::Option<&crate::model::PipeState> {
+    pub fn current_state(&self) -> std::option::Option<& crate::model::PipeState> {
         self.current_state.as_ref()
     }
     /// <p>The reason the pipe is in its current state.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The time the pipe was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The ARN of the source resource.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The ARN of the target resource.</p>
-    pub fn target(&self) -> std::option::Option<&str> {
+    pub fn target(&self) -> std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>The ARN of the enrichment resource.</p>
-    pub fn enrichment(&self) -> std::option::Option<&str> {
+    pub fn enrichment(&self) -> std::option::Option<& str> {
         self.enrichment.as_deref()
     }
 }
 /// See [`Pipe`](crate::model::Pipe).
 pub mod pipe {
-
+    
     /// A builder for [`Pipe`](crate::model::Pipe).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -408,8 +384,7 @@ pub mod pipe {
         }
         /// <p>The name of the pipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ARN of the pipe.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -418,8 +393,7 @@ pub mod pipe {
         }
         /// <p>The ARN of the pipe.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The state the pipe should be in.</p>
         pub fn desired_state(mut self, input: crate::model::RequestedPipeState) -> Self {
@@ -427,12 +401,8 @@ pub mod pipe {
             self
         }
         /// <p>The state the pipe should be in.</p>
-        pub fn set_desired_state(
-            mut self,
-            input: std::option::Option<crate::model::RequestedPipeState>,
-        ) -> Self {
-            self.desired_state = input;
-            self
+        pub fn set_desired_state(mut self, input: std::option::Option<crate::model::RequestedPipeState>) -> Self {
+            self.desired_state = input; self
         }
         /// <p>The state the pipe is in.</p>
         pub fn current_state(mut self, input: crate::model::PipeState) -> Self {
@@ -440,12 +410,8 @@ pub mod pipe {
             self
         }
         /// <p>The state the pipe is in.</p>
-        pub fn set_current_state(
-            mut self,
-            input: std::option::Option<crate::model::PipeState>,
-        ) -> Self {
-            self.current_state = input;
-            self
+        pub fn set_current_state(mut self, input: std::option::Option<crate::model::PipeState>) -> Self {
+            self.current_state = input; self
         }
         /// <p>The reason the pipe is in its current state.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -454,8 +420,7 @@ pub mod pipe {
         }
         /// <p>The reason the pipe is in its current state.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
         /// <p>The time the pipe was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -463,12 +428,8 @@ pub mod pipe {
             self
         }
         /// <p>The time the pipe was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -476,12 +437,8 @@ pub mod pipe {
             self
         }
         /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// <p>The ARN of the source resource.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -490,8 +447,7 @@ pub mod pipe {
         }
         /// <p>The ARN of the source resource.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// <p>The ARN of the target resource.</p>
         pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
@@ -500,8 +456,7 @@ pub mod pipe {
         }
         /// <p>The ARN of the target resource.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target = input;
-            self
+            self.target = input; self
         }
         /// <p>The ARN of the enrichment resource.</p>
         pub fn enrichment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -510,25 +465,36 @@ pub mod pipe {
         }
         /// <p>The ARN of the enrichment resource.</p>
         pub fn set_enrichment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.enrichment = input;
-            self
+            self.enrichment = input; self
         }
         /// Consumes the builder and constructs a [`Pipe`](crate::model::Pipe).
         pub fn build(self) -> crate::model::Pipe {
             crate::model::Pipe {
-                name: self.name,
-                arn: self.arn,
-                desired_state: self.desired_state,
-                current_state: self.current_state,
-                state_reason: self.state_reason,
-                creation_time: self.creation_time,
-                last_modified_time: self.last_modified_time,
-                source: self.source,
-                target: self.target,
-                enrichment: self.enrichment,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                desired_state: self.desired_state
+                ,
+                current_state: self.current_state
+                ,
+                state_reason: self.state_reason
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
+                source: self.source
+                ,
+                target: self.target
+                ,
+                enrichment: self.enrichment
+                ,
             }
         }
     }
+    
+    
 }
 impl Pipe {
     /// Creates a new builder-style object to manufacture [`Pipe`](crate::model::Pipe).
@@ -540,22 +506,19 @@ impl Pipe {
 /// <p>The parameters required to set up a target for your pipe.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PipeTargetParameters {
+pub struct PipeTargetParameters  {
     /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
     #[doc(hidden)]
     pub input_template: std::option::Option<std::string::String>,
     /// <p>The parameters for using a Lambda function as a target.</p>
     #[doc(hidden)]
-    pub lambda_function_parameters:
-        std::option::Option<crate::model::PipeTargetLambdaFunctionParameters>,
+    pub lambda_function_parameters: std::option::Option<crate::model::PipeTargetLambdaFunctionParameters>,
     /// <p>The parameters for using a Step Functions state machine as a target.</p>
     #[doc(hidden)]
-    pub step_function_state_machine_parameters:
-        std::option::Option<crate::model::PipeTargetStateMachineParameters>,
+    pub step_function_state_machine_parameters: std::option::Option<crate::model::PipeTargetStateMachineParameters>,
     /// <p>The parameters for using a Kinesis stream as a source.</p>
     #[doc(hidden)]
-    pub kinesis_stream_parameters:
-        std::option::Option<crate::model::PipeTargetKinesisStreamParameters>,
+    pub kinesis_stream_parameters: std::option::Option<crate::model::PipeTargetKinesisStreamParameters>,
     /// <p>The parameters for using an Amazon ECS task as a target.</p>
     #[doc(hidden)]
     pub ecs_task_parameters: std::option::Option<crate::model::PipeTargetEcsTaskParameters>,
@@ -570,152 +533,103 @@ pub struct PipeTargetParameters {
     pub http_parameters: std::option::Option<crate::model::PipeTargetHttpParameters>,
     /// <p>These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the Amazon Redshift Data API ExecuteStatement.</p>
     #[doc(hidden)]
-    pub redshift_data_parameters:
-        std::option::Option<crate::model::PipeTargetRedshiftDataParameters>,
+    pub redshift_data_parameters: std::option::Option<crate::model::PipeTargetRedshiftDataParameters>,
     /// <p>The parameters for using a SageMaker pipeline as a target.</p>
     #[doc(hidden)]
-    pub sage_maker_pipeline_parameters:
-        std::option::Option<crate::model::PipeTargetSageMakerPipelineParameters>,
+    pub sage_maker_pipeline_parameters: std::option::Option<crate::model::PipeTargetSageMakerPipelineParameters>,
     /// <p>The parameters for using an EventBridge event bus as a target.</p>
     #[doc(hidden)]
-    pub event_bridge_event_bus_parameters:
-        std::option::Option<crate::model::PipeTargetEventBridgeEventBusParameters>,
+    pub event_bridge_event_bus_parameters: std::option::Option<crate::model::PipeTargetEventBridgeEventBusParameters>,
     /// <p>The parameters for using an CloudWatch Logs log stream as a target.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs_parameters:
-        std::option::Option<crate::model::PipeTargetCloudWatchLogsParameters>,
+    pub cloud_watch_logs_parameters: std::option::Option<crate::model::PipeTargetCloudWatchLogsParameters>,
 }
 impl PipeTargetParameters {
     /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
-    pub fn input_template(&self) -> std::option::Option<&str> {
+    pub fn input_template(&self) -> std::option::Option<& str> {
         self.input_template.as_deref()
     }
     /// <p>The parameters for using a Lambda function as a target.</p>
-    pub fn lambda_function_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::PipeTargetLambdaFunctionParameters> {
+    pub fn lambda_function_parameters(&self) -> std::option::Option<& crate::model::PipeTargetLambdaFunctionParameters> {
         self.lambda_function_parameters.as_ref()
     }
     /// <p>The parameters for using a Step Functions state machine as a target.</p>
-    pub fn step_function_state_machine_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::PipeTargetStateMachineParameters> {
+    pub fn step_function_state_machine_parameters(&self) -> std::option::Option<& crate::model::PipeTargetStateMachineParameters> {
         self.step_function_state_machine_parameters.as_ref()
     }
     /// <p>The parameters for using a Kinesis stream as a source.</p>
-    pub fn kinesis_stream_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::PipeTargetKinesisStreamParameters> {
+    pub fn kinesis_stream_parameters(&self) -> std::option::Option<& crate::model::PipeTargetKinesisStreamParameters> {
         self.kinesis_stream_parameters.as_ref()
     }
     /// <p>The parameters for using an Amazon ECS task as a target.</p>
-    pub fn ecs_task_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::PipeTargetEcsTaskParameters> {
+    pub fn ecs_task_parameters(&self) -> std::option::Option<& crate::model::PipeTargetEcsTaskParameters> {
         self.ecs_task_parameters.as_ref()
     }
     /// <p>The parameters for using an Batch job as a target.</p>
-    pub fn batch_job_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::PipeTargetBatchJobParameters> {
+    pub fn batch_job_parameters(&self) -> std::option::Option<& crate::model::PipeTargetBatchJobParameters> {
         self.batch_job_parameters.as_ref()
     }
     /// <p>The parameters for using a Amazon SQS stream as a source.</p>
-    pub fn sqs_queue_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::PipeTargetSqsQueueParameters> {
+    pub fn sqs_queue_parameters(&self) -> std::option::Option<& crate::model::PipeTargetSqsQueueParameters> {
         self.sqs_queue_parameters.as_ref()
     }
     /// <p>These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations.</p>
-    pub fn http_parameters(&self) -> std::option::Option<&crate::model::PipeTargetHttpParameters> {
+    pub fn http_parameters(&self) -> std::option::Option<& crate::model::PipeTargetHttpParameters> {
         self.http_parameters.as_ref()
     }
     /// <p>These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the Amazon Redshift Data API ExecuteStatement.</p>
-    pub fn redshift_data_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::PipeTargetRedshiftDataParameters> {
+    pub fn redshift_data_parameters(&self) -> std::option::Option<& crate::model::PipeTargetRedshiftDataParameters> {
         self.redshift_data_parameters.as_ref()
     }
     /// <p>The parameters for using a SageMaker pipeline as a target.</p>
-    pub fn sage_maker_pipeline_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::PipeTargetSageMakerPipelineParameters> {
+    pub fn sage_maker_pipeline_parameters(&self) -> std::option::Option<& crate::model::PipeTargetSageMakerPipelineParameters> {
         self.sage_maker_pipeline_parameters.as_ref()
     }
     /// <p>The parameters for using an EventBridge event bus as a target.</p>
-    pub fn event_bridge_event_bus_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::PipeTargetEventBridgeEventBusParameters> {
+    pub fn event_bridge_event_bus_parameters(&self) -> std::option::Option<& crate::model::PipeTargetEventBridgeEventBusParameters> {
         self.event_bridge_event_bus_parameters.as_ref()
     }
     /// <p>The parameters for using an CloudWatch Logs log stream as a target.</p>
-    pub fn cloud_watch_logs_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::PipeTargetCloudWatchLogsParameters> {
+    pub fn cloud_watch_logs_parameters(&self) -> std::option::Option<& crate::model::PipeTargetCloudWatchLogsParameters> {
         self.cloud_watch_logs_parameters.as_ref()
     }
 }
-impl std::fmt::Debug for PipeTargetParameters {
+impl  std::fmt::Debug for PipeTargetParameters  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipeTargetParameters");
         formatter.field("input_template", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "lambda_function_parameters",
-            &self.lambda_function_parameters,
-        );
-        formatter.field(
-            "step_function_state_machine_parameters",
-            &self.step_function_state_machine_parameters,
-        );
+        formatter.field("lambda_function_parameters", &self.lambda_function_parameters);
+        formatter.field("step_function_state_machine_parameters", &self.step_function_state_machine_parameters);
         formatter.field("kinesis_stream_parameters", &self.kinesis_stream_parameters);
         formatter.field("ecs_task_parameters", &self.ecs_task_parameters);
         formatter.field("batch_job_parameters", &self.batch_job_parameters);
         formatter.field("sqs_queue_parameters", &self.sqs_queue_parameters);
         formatter.field("http_parameters", &self.http_parameters);
         formatter.field("redshift_data_parameters", &self.redshift_data_parameters);
-        formatter.field(
-            "sage_maker_pipeline_parameters",
-            &self.sage_maker_pipeline_parameters,
-        );
-        formatter.field(
-            "event_bridge_event_bus_parameters",
-            &self.event_bridge_event_bus_parameters,
-        );
-        formatter.field(
-            "cloud_watch_logs_parameters",
-            &self.cloud_watch_logs_parameters,
-        );
+        formatter.field("sage_maker_pipeline_parameters", &self.sage_maker_pipeline_parameters);
+        formatter.field("event_bridge_event_bus_parameters", &self.event_bridge_event_bus_parameters);
+        formatter.field("cloud_watch_logs_parameters", &self.cloud_watch_logs_parameters);
         formatter.finish()
     }
 }
 /// See [`PipeTargetParameters`](crate::model::PipeTargetParameters).
 pub mod pipe_target_parameters {
-
+    
     /// A builder for [`PipeTargetParameters`](crate::model::PipeTargetParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) input_template: std::option::Option<std::string::String>,
-        pub(crate) lambda_function_parameters:
-            std::option::Option<crate::model::PipeTargetLambdaFunctionParameters>,
-        pub(crate) step_function_state_machine_parameters:
-            std::option::Option<crate::model::PipeTargetStateMachineParameters>,
-        pub(crate) kinesis_stream_parameters:
-            std::option::Option<crate::model::PipeTargetKinesisStreamParameters>,
-        pub(crate) ecs_task_parameters:
-            std::option::Option<crate::model::PipeTargetEcsTaskParameters>,
-        pub(crate) batch_job_parameters:
-            std::option::Option<crate::model::PipeTargetBatchJobParameters>,
-        pub(crate) sqs_queue_parameters:
-            std::option::Option<crate::model::PipeTargetSqsQueueParameters>,
+        pub(crate) lambda_function_parameters: std::option::Option<crate::model::PipeTargetLambdaFunctionParameters>,
+        pub(crate) step_function_state_machine_parameters: std::option::Option<crate::model::PipeTargetStateMachineParameters>,
+        pub(crate) kinesis_stream_parameters: std::option::Option<crate::model::PipeTargetKinesisStreamParameters>,
+        pub(crate) ecs_task_parameters: std::option::Option<crate::model::PipeTargetEcsTaskParameters>,
+        pub(crate) batch_job_parameters: std::option::Option<crate::model::PipeTargetBatchJobParameters>,
+        pub(crate) sqs_queue_parameters: std::option::Option<crate::model::PipeTargetSqsQueueParameters>,
         pub(crate) http_parameters: std::option::Option<crate::model::PipeTargetHttpParameters>,
-        pub(crate) redshift_data_parameters:
-            std::option::Option<crate::model::PipeTargetRedshiftDataParameters>,
-        pub(crate) sage_maker_pipeline_parameters:
-            std::option::Option<crate::model::PipeTargetSageMakerPipelineParameters>,
-        pub(crate) event_bridge_event_bus_parameters:
-            std::option::Option<crate::model::PipeTargetEventBridgeEventBusParameters>,
-        pub(crate) cloud_watch_logs_parameters:
-            std::option::Option<crate::model::PipeTargetCloudWatchLogsParameters>,
+        pub(crate) redshift_data_parameters: std::option::Option<crate::model::PipeTargetRedshiftDataParameters>,
+        pub(crate) sage_maker_pipeline_parameters: std::option::Option<crate::model::PipeTargetSageMakerPipelineParameters>,
+        pub(crate) event_bridge_event_bus_parameters: std::option::Option<crate::model::PipeTargetEventBridgeEventBusParameters>,
+        pub(crate) cloud_watch_logs_parameters: std::option::Option<crate::model::PipeTargetCloudWatchLogsParameters>,
     }
     impl Builder {
         /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
@@ -724,108 +638,62 @@ pub mod pipe_target_parameters {
             self
         }
         /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
-        pub fn set_input_template(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.input_template = input;
-            self
+        pub fn set_input_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.input_template = input; self
         }
         /// <p>The parameters for using a Lambda function as a target.</p>
-        pub fn lambda_function_parameters(
-            mut self,
-            input: crate::model::PipeTargetLambdaFunctionParameters,
-        ) -> Self {
+        pub fn lambda_function_parameters(mut self, input: crate::model::PipeTargetLambdaFunctionParameters) -> Self {
             self.lambda_function_parameters = Some(input);
             self
         }
         /// <p>The parameters for using a Lambda function as a target.</p>
-        pub fn set_lambda_function_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeTargetLambdaFunctionParameters>,
-        ) -> Self {
-            self.lambda_function_parameters = input;
-            self
+        pub fn set_lambda_function_parameters(mut self, input: std::option::Option<crate::model::PipeTargetLambdaFunctionParameters>) -> Self {
+            self.lambda_function_parameters = input; self
         }
         /// <p>The parameters for using a Step Functions state machine as a target.</p>
-        pub fn step_function_state_machine_parameters(
-            mut self,
-            input: crate::model::PipeTargetStateMachineParameters,
-        ) -> Self {
+        pub fn step_function_state_machine_parameters(mut self, input: crate::model::PipeTargetStateMachineParameters) -> Self {
             self.step_function_state_machine_parameters = Some(input);
             self
         }
         /// <p>The parameters for using a Step Functions state machine as a target.</p>
-        pub fn set_step_function_state_machine_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeTargetStateMachineParameters>,
-        ) -> Self {
-            self.step_function_state_machine_parameters = input;
-            self
+        pub fn set_step_function_state_machine_parameters(mut self, input: std::option::Option<crate::model::PipeTargetStateMachineParameters>) -> Self {
+            self.step_function_state_machine_parameters = input; self
         }
         /// <p>The parameters for using a Kinesis stream as a source.</p>
-        pub fn kinesis_stream_parameters(
-            mut self,
-            input: crate::model::PipeTargetKinesisStreamParameters,
-        ) -> Self {
+        pub fn kinesis_stream_parameters(mut self, input: crate::model::PipeTargetKinesisStreamParameters) -> Self {
             self.kinesis_stream_parameters = Some(input);
             self
         }
         /// <p>The parameters for using a Kinesis stream as a source.</p>
-        pub fn set_kinesis_stream_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeTargetKinesisStreamParameters>,
-        ) -> Self {
-            self.kinesis_stream_parameters = input;
-            self
+        pub fn set_kinesis_stream_parameters(mut self, input: std::option::Option<crate::model::PipeTargetKinesisStreamParameters>) -> Self {
+            self.kinesis_stream_parameters = input; self
         }
         /// <p>The parameters for using an Amazon ECS task as a target.</p>
-        pub fn ecs_task_parameters(
-            mut self,
-            input: crate::model::PipeTargetEcsTaskParameters,
-        ) -> Self {
+        pub fn ecs_task_parameters(mut self, input: crate::model::PipeTargetEcsTaskParameters) -> Self {
             self.ecs_task_parameters = Some(input);
             self
         }
         /// <p>The parameters for using an Amazon ECS task as a target.</p>
-        pub fn set_ecs_task_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeTargetEcsTaskParameters>,
-        ) -> Self {
-            self.ecs_task_parameters = input;
-            self
+        pub fn set_ecs_task_parameters(mut self, input: std::option::Option<crate::model::PipeTargetEcsTaskParameters>) -> Self {
+            self.ecs_task_parameters = input; self
         }
         /// <p>The parameters for using an Batch job as a target.</p>
-        pub fn batch_job_parameters(
-            mut self,
-            input: crate::model::PipeTargetBatchJobParameters,
-        ) -> Self {
+        pub fn batch_job_parameters(mut self, input: crate::model::PipeTargetBatchJobParameters) -> Self {
             self.batch_job_parameters = Some(input);
             self
         }
         /// <p>The parameters for using an Batch job as a target.</p>
-        pub fn set_batch_job_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeTargetBatchJobParameters>,
-        ) -> Self {
-            self.batch_job_parameters = input;
-            self
+        pub fn set_batch_job_parameters(mut self, input: std::option::Option<crate::model::PipeTargetBatchJobParameters>) -> Self {
+            self.batch_job_parameters = input; self
         }
         /// <p>The parameters for using a Amazon SQS stream as a source.</p>
-        pub fn sqs_queue_parameters(
-            mut self,
-            input: crate::model::PipeTargetSqsQueueParameters,
-        ) -> Self {
+        pub fn sqs_queue_parameters(mut self, input: crate::model::PipeTargetSqsQueueParameters) -> Self {
             self.sqs_queue_parameters = Some(input);
             self
         }
         /// <p>The parameters for using a Amazon SQS stream as a source.</p>
-        pub fn set_sqs_queue_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeTargetSqsQueueParameters>,
-        ) -> Self {
-            self.sqs_queue_parameters = input;
-            self
+        pub fn set_sqs_queue_parameters(mut self, input: std::option::Option<crate::model::PipeTargetSqsQueueParameters>) -> Self {
+            self.sqs_queue_parameters = input; self
         }
         /// <p>These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations.</p>
         pub fn http_parameters(mut self, input: crate::model::PipeTargetHttpParameters) -> Self {
@@ -833,92 +701,72 @@ pub mod pipe_target_parameters {
             self
         }
         /// <p>These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations.</p>
-        pub fn set_http_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeTargetHttpParameters>,
-        ) -> Self {
-            self.http_parameters = input;
-            self
+        pub fn set_http_parameters(mut self, input: std::option::Option<crate::model::PipeTargetHttpParameters>) -> Self {
+            self.http_parameters = input; self
         }
         /// <p>These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the Amazon Redshift Data API ExecuteStatement.</p>
-        pub fn redshift_data_parameters(
-            mut self,
-            input: crate::model::PipeTargetRedshiftDataParameters,
-        ) -> Self {
+        pub fn redshift_data_parameters(mut self, input: crate::model::PipeTargetRedshiftDataParameters) -> Self {
             self.redshift_data_parameters = Some(input);
             self
         }
         /// <p>These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the Amazon Redshift Data API ExecuteStatement.</p>
-        pub fn set_redshift_data_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeTargetRedshiftDataParameters>,
-        ) -> Self {
-            self.redshift_data_parameters = input;
-            self
+        pub fn set_redshift_data_parameters(mut self, input: std::option::Option<crate::model::PipeTargetRedshiftDataParameters>) -> Self {
+            self.redshift_data_parameters = input; self
         }
         /// <p>The parameters for using a SageMaker pipeline as a target.</p>
-        pub fn sage_maker_pipeline_parameters(
-            mut self,
-            input: crate::model::PipeTargetSageMakerPipelineParameters,
-        ) -> Self {
+        pub fn sage_maker_pipeline_parameters(mut self, input: crate::model::PipeTargetSageMakerPipelineParameters) -> Self {
             self.sage_maker_pipeline_parameters = Some(input);
             self
         }
         /// <p>The parameters for using a SageMaker pipeline as a target.</p>
-        pub fn set_sage_maker_pipeline_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeTargetSageMakerPipelineParameters>,
-        ) -> Self {
-            self.sage_maker_pipeline_parameters = input;
-            self
+        pub fn set_sage_maker_pipeline_parameters(mut self, input: std::option::Option<crate::model::PipeTargetSageMakerPipelineParameters>) -> Self {
+            self.sage_maker_pipeline_parameters = input; self
         }
         /// <p>The parameters for using an EventBridge event bus as a target.</p>
-        pub fn event_bridge_event_bus_parameters(
-            mut self,
-            input: crate::model::PipeTargetEventBridgeEventBusParameters,
-        ) -> Self {
+        pub fn event_bridge_event_bus_parameters(mut self, input: crate::model::PipeTargetEventBridgeEventBusParameters) -> Self {
             self.event_bridge_event_bus_parameters = Some(input);
             self
         }
         /// <p>The parameters for using an EventBridge event bus as a target.</p>
-        pub fn set_event_bridge_event_bus_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeTargetEventBridgeEventBusParameters>,
-        ) -> Self {
-            self.event_bridge_event_bus_parameters = input;
-            self
+        pub fn set_event_bridge_event_bus_parameters(mut self, input: std::option::Option<crate::model::PipeTargetEventBridgeEventBusParameters>) -> Self {
+            self.event_bridge_event_bus_parameters = input; self
         }
         /// <p>The parameters for using an CloudWatch Logs log stream as a target.</p>
-        pub fn cloud_watch_logs_parameters(
-            mut self,
-            input: crate::model::PipeTargetCloudWatchLogsParameters,
-        ) -> Self {
+        pub fn cloud_watch_logs_parameters(mut self, input: crate::model::PipeTargetCloudWatchLogsParameters) -> Self {
             self.cloud_watch_logs_parameters = Some(input);
             self
         }
         /// <p>The parameters for using an CloudWatch Logs log stream as a target.</p>
-        pub fn set_cloud_watch_logs_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeTargetCloudWatchLogsParameters>,
-        ) -> Self {
-            self.cloud_watch_logs_parameters = input;
-            self
+        pub fn set_cloud_watch_logs_parameters(mut self, input: std::option::Option<crate::model::PipeTargetCloudWatchLogsParameters>) -> Self {
+            self.cloud_watch_logs_parameters = input; self
         }
         /// Consumes the builder and constructs a [`PipeTargetParameters`](crate::model::PipeTargetParameters).
         pub fn build(self) -> crate::model::PipeTargetParameters {
             crate::model::PipeTargetParameters {
-                input_template: self.input_template,
-                lambda_function_parameters: self.lambda_function_parameters,
-                step_function_state_machine_parameters: self.step_function_state_machine_parameters,
-                kinesis_stream_parameters: self.kinesis_stream_parameters,
-                ecs_task_parameters: self.ecs_task_parameters,
-                batch_job_parameters: self.batch_job_parameters,
-                sqs_queue_parameters: self.sqs_queue_parameters,
-                http_parameters: self.http_parameters,
-                redshift_data_parameters: self.redshift_data_parameters,
-                sage_maker_pipeline_parameters: self.sage_maker_pipeline_parameters,
-                event_bridge_event_bus_parameters: self.event_bridge_event_bus_parameters,
-                cloud_watch_logs_parameters: self.cloud_watch_logs_parameters,
+                input_template: self.input_template
+                ,
+                lambda_function_parameters: self.lambda_function_parameters
+                ,
+                step_function_state_machine_parameters: self.step_function_state_machine_parameters
+                ,
+                kinesis_stream_parameters: self.kinesis_stream_parameters
+                ,
+                ecs_task_parameters: self.ecs_task_parameters
+                ,
+                batch_job_parameters: self.batch_job_parameters
+                ,
+                sqs_queue_parameters: self.sqs_queue_parameters
+                ,
+                http_parameters: self.http_parameters
+                ,
+                redshift_data_parameters: self.redshift_data_parameters
+                ,
+                sage_maker_pipeline_parameters: self.sage_maker_pipeline_parameters
+                ,
+                event_bridge_event_bus_parameters: self.event_bridge_event_bus_parameters
+                ,
+                cloud_watch_logs_parameters: self.cloud_watch_logs_parameters
+                ,
             }
         }
     }
@@ -926,35 +774,22 @@ pub mod pipe_target_parameters {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("input_template", &"*** Sensitive Data Redacted ***");
-            formatter.field(
-                "lambda_function_parameters",
-                &self.lambda_function_parameters,
-            );
-            formatter.field(
-                "step_function_state_machine_parameters",
-                &self.step_function_state_machine_parameters,
-            );
+            formatter.field("lambda_function_parameters", &self.lambda_function_parameters);
+            formatter.field("step_function_state_machine_parameters", &self.step_function_state_machine_parameters);
             formatter.field("kinesis_stream_parameters", &self.kinesis_stream_parameters);
             formatter.field("ecs_task_parameters", &self.ecs_task_parameters);
             formatter.field("batch_job_parameters", &self.batch_job_parameters);
             formatter.field("sqs_queue_parameters", &self.sqs_queue_parameters);
             formatter.field("http_parameters", &self.http_parameters);
             formatter.field("redshift_data_parameters", &self.redshift_data_parameters);
-            formatter.field(
-                "sage_maker_pipeline_parameters",
-                &self.sage_maker_pipeline_parameters,
-            );
-            formatter.field(
-                "event_bridge_event_bus_parameters",
-                &self.event_bridge_event_bus_parameters,
-            );
-            formatter.field(
-                "cloud_watch_logs_parameters",
-                &self.cloud_watch_logs_parameters,
-            );
+            formatter.field("sage_maker_pipeline_parameters", &self.sage_maker_pipeline_parameters);
+            formatter.field("event_bridge_event_bus_parameters", &self.event_bridge_event_bus_parameters);
+            formatter.field("cloud_watch_logs_parameters", &self.cloud_watch_logs_parameters);
             formatter.finish()
         }
     }
+    
+    
 }
 impl PipeTargetParameters {
     /// Creates a new builder-style object to manufacture [`PipeTargetParameters`](crate::model::PipeTargetParameters).
@@ -966,7 +801,7 @@ impl PipeTargetParameters {
 /// <p>The parameters for using an CloudWatch Logs log stream as a target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipeTargetCloudWatchLogsParameters {
+pub struct PipeTargetCloudWatchLogsParameters  {
     /// <p>The name of the log stream.</p>
     #[doc(hidden)]
     pub log_stream_name: std::option::Option<std::string::String>,
@@ -976,17 +811,17 @@ pub struct PipeTargetCloudWatchLogsParameters {
 }
 impl PipeTargetCloudWatchLogsParameters {
     /// <p>The name of the log stream.</p>
-    pub fn log_stream_name(&self) -> std::option::Option<&str> {
+    pub fn log_stream_name(&self) -> std::option::Option<& str> {
         self.log_stream_name.as_deref()
     }
     /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
-    pub fn timestamp(&self) -> std::option::Option<&str> {
+    pub fn timestamp(&self) -> std::option::Option<& str> {
         self.timestamp.as_deref()
     }
 }
 /// See [`PipeTargetCloudWatchLogsParameters`](crate::model::PipeTargetCloudWatchLogsParameters).
 pub mod pipe_target_cloud_watch_logs_parameters {
-
+    
     /// A builder for [`PipeTargetCloudWatchLogsParameters`](crate::model::PipeTargetCloudWatchLogsParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1000,12 +835,8 @@ pub mod pipe_target_cloud_watch_logs_parameters {
             self
         }
         /// <p>The name of the log stream.</p>
-        pub fn set_log_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_stream_name = input;
-            self
+        pub fn set_log_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_stream_name = input; self
         }
         /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
         pub fn timestamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1014,17 +845,20 @@ pub mod pipe_target_cloud_watch_logs_parameters {
         }
         /// <p>The time the event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.timestamp = input;
-            self
+            self.timestamp = input; self
         }
         /// Consumes the builder and constructs a [`PipeTargetCloudWatchLogsParameters`](crate::model::PipeTargetCloudWatchLogsParameters).
         pub fn build(self) -> crate::model::PipeTargetCloudWatchLogsParameters {
             crate::model::PipeTargetCloudWatchLogsParameters {
-                log_stream_name: self.log_stream_name,
-                timestamp: self.timestamp,
+                log_stream_name: self.log_stream_name
+                ,
+                timestamp: self.timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl PipeTargetCloudWatchLogsParameters {
     /// Creates a new builder-style object to manufacture [`PipeTargetCloudWatchLogsParameters`](crate::model::PipeTargetCloudWatchLogsParameters).
@@ -1036,9 +870,9 @@ impl PipeTargetCloudWatchLogsParameters {
 /// <p>The parameters for using an EventBridge event bus as a target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PipeTargetEventBridgeEventBusParameters {
-    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
-    /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
+pub struct PipeTargetEventBridgeEventBusParameters  {
+    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important> 
+    /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p> 
     /// </important>
     #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
@@ -1056,30 +890,30 @@ pub struct PipeTargetEventBridgeEventBusParameters {
     pub time: std::option::Option<std::string::String>,
 }
 impl PipeTargetEventBridgeEventBusParameters {
-    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
-    /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
+    /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important> 
+    /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p> 
     /// </important>
-    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn endpoint_id(&self) -> std::option::Option<& str> {
         self.endpoint_id.as_deref()
     }
     /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
-    pub fn detail_type(&self) -> std::option::Option<&str> {
+    pub fn detail_type(&self) -> std::option::Option<& str> {
         self.detail_type.as_deref()
     }
     /// <p>The source of the event.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
-    pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resources(&self) -> std::option::Option<& [std::string::String]> {
         self.resources.as_deref()
     }
     /// <p>The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp is provided, the time stamp of the <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a> call is used.</p>
-    pub fn time(&self) -> std::option::Option<&str> {
+    pub fn time(&self) -> std::option::Option<& str> {
         self.time.as_deref()
     }
 }
-impl std::fmt::Debug for PipeTargetEventBridgeEventBusParameters {
+impl  std::fmt::Debug for PipeTargetEventBridgeEventBusParameters  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipeTargetEventBridgeEventBusParameters");
         formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
@@ -1092,7 +926,7 @@ impl std::fmt::Debug for PipeTargetEventBridgeEventBusParameters {
 }
 /// See [`PipeTargetEventBridgeEventBusParameters`](crate::model::PipeTargetEventBridgeEventBusParameters).
 pub mod pipe_target_event_bridge_event_bus_parameters {
-
+    
     /// A builder for [`PipeTargetEventBridgeEventBusParameters`](crate::model::PipeTargetEventBridgeEventBusParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1103,19 +937,18 @@ pub mod pipe_target_event_bridge_event_bus_parameters {
         pub(crate) time: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
-        /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
+        /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important> 
+        /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p> 
         /// </important>
         pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_id = Some(input.into());
             self
         }
-        /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important>
-        /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p>
+        /// <p>The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is <code>abcde.veo</code>.</p> <important> 
+        /// <p>When using Java, you must include <code>auth-crt</code> on the class path.</p> 
         /// </important>
         pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.endpoint_id = input;
-            self
+            self.endpoint_id = input; self
         }
         /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
         pub fn detail_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1124,8 +957,7 @@ pub mod pipe_target_event_bridge_event_bus_parameters {
         }
         /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
         pub fn set_detail_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.detail_type = input;
-            self
+            self.detail_type = input; self
         }
         /// <p>The source of the event.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1134,8 +966,7 @@ pub mod pipe_target_event_bridge_event_bus_parameters {
         }
         /// <p>The source of the event.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// Appends an item to `resources`.
         ///
@@ -1144,17 +975,13 @@ pub mod pipe_target_event_bridge_event_bus_parameters {
         /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
         pub fn resources(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
-            self.resources = Some(v);
-            self
+                            v.push(input.into());
+                            self.resources = Some(v);
+                            self
         }
         /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily concerns. Any number, including zero, may be present.</p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resources = input; self
         }
         /// <p>The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp is provided, the time stamp of the <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a> call is used.</p>
         pub fn time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1163,17 +990,21 @@ pub mod pipe_target_event_bridge_event_bus_parameters {
         }
         /// <p>The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp is provided, the time stamp of the <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a> call is used.</p>
         pub fn set_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.time = input;
-            self
+            self.time = input; self
         }
         /// Consumes the builder and constructs a [`PipeTargetEventBridgeEventBusParameters`](crate::model::PipeTargetEventBridgeEventBusParameters).
         pub fn build(self) -> crate::model::PipeTargetEventBridgeEventBusParameters {
             crate::model::PipeTargetEventBridgeEventBusParameters {
-                endpoint_id: self.endpoint_id,
-                detail_type: self.detail_type,
-                source: self.source,
-                resources: self.resources,
-                time: self.time,
+                endpoint_id: self.endpoint_id
+                ,
+                detail_type: self.detail_type
+                ,
+                source: self.source
+                ,
+                resources: self.resources
+                ,
+                time: self.time
+                ,
             }
         }
     }
@@ -1188,6 +1019,8 @@ pub mod pipe_target_event_bridge_event_bus_parameters {
             formatter.finish()
         }
     }
+    
+    
 }
 impl PipeTargetEventBridgeEventBusParameters {
     /// Creates a new builder-style object to manufacture [`PipeTargetEventBridgeEventBusParameters`](crate::model::PipeTargetEventBridgeEventBusParameters).
@@ -1199,28 +1032,24 @@ impl PipeTargetEventBridgeEventBusParameters {
 /// <p>The parameters for using a SageMaker pipeline as a target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipeTargetSageMakerPipelineParameters {
+pub struct PipeTargetSageMakerPipelineParameters  {
     /// <p>List of Parameter names and values for SageMaker Model Building Pipeline execution.</p>
     #[doc(hidden)]
-    pub pipeline_parameter_list:
-        std::option::Option<std::vec::Vec<crate::model::SageMakerPipelineParameter>>,
+    pub pipeline_parameter_list: std::option::Option<std::vec::Vec<crate::model::SageMakerPipelineParameter>>,
 }
 impl PipeTargetSageMakerPipelineParameters {
     /// <p>List of Parameter names and values for SageMaker Model Building Pipeline execution.</p>
-    pub fn pipeline_parameter_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::SageMakerPipelineParameter]> {
+    pub fn pipeline_parameter_list(&self) -> std::option::Option<& [crate::model::SageMakerPipelineParameter]> {
         self.pipeline_parameter_list.as_deref()
     }
 }
 /// See [`PipeTargetSageMakerPipelineParameters`](crate::model::PipeTargetSageMakerPipelineParameters).
 pub mod pipe_target_sage_maker_pipeline_parameters {
-
+    
     /// A builder for [`PipeTargetSageMakerPipelineParameters`](crate::model::PipeTargetSageMakerPipelineParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) pipeline_parameter_list:
-            std::option::Option<std::vec::Vec<crate::model::SageMakerPipelineParameter>>,
+        pub(crate) pipeline_parameter_list: std::option::Option<std::vec::Vec<crate::model::SageMakerPipelineParameter>>,
     }
     impl Builder {
         /// Appends an item to `pipeline_parameter_list`.
@@ -1228,30 +1057,26 @@ pub mod pipe_target_sage_maker_pipeline_parameters {
         /// To override the contents of this collection use [`set_pipeline_parameter_list`](Self::set_pipeline_parameter_list).
         ///
         /// <p>List of Parameter names and values for SageMaker Model Building Pipeline execution.</p>
-        pub fn pipeline_parameter_list(
-            mut self,
-            input: crate::model::SageMakerPipelineParameter,
-        ) -> Self {
+        pub fn pipeline_parameter_list(mut self, input: crate::model::SageMakerPipelineParameter) -> Self {
             let mut v = self.pipeline_parameter_list.unwrap_or_default();
-            v.push(input);
-            self.pipeline_parameter_list = Some(v);
-            self
+                            v.push(input);
+                            self.pipeline_parameter_list = Some(v);
+                            self
         }
         /// <p>List of Parameter names and values for SageMaker Model Building Pipeline execution.</p>
-        pub fn set_pipeline_parameter_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SageMakerPipelineParameter>>,
-        ) -> Self {
-            self.pipeline_parameter_list = input;
-            self
+        pub fn set_pipeline_parameter_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::SageMakerPipelineParameter>>) -> Self {
+            self.pipeline_parameter_list = input; self
         }
         /// Consumes the builder and constructs a [`PipeTargetSageMakerPipelineParameters`](crate::model::PipeTargetSageMakerPipelineParameters).
         pub fn build(self) -> crate::model::PipeTargetSageMakerPipelineParameters {
             crate::model::PipeTargetSageMakerPipelineParameters {
-                pipeline_parameter_list: self.pipeline_parameter_list,
+                pipeline_parameter_list: self.pipeline_parameter_list
+                ,
             }
         }
     }
+    
+    
 }
 impl PipeTargetSageMakerPipelineParameters {
     /// Creates a new builder-style object to manufacture [`PipeTargetSageMakerPipelineParameters`](crate::model::PipeTargetSageMakerPipelineParameters).
@@ -1263,7 +1088,7 @@ impl PipeTargetSageMakerPipelineParameters {
 /// <p>Name/Value pair of a parameter to start execution of a SageMaker Model Building Pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SageMakerPipelineParameter {
+pub struct SageMakerPipelineParameter  {
     /// <p>Name of parameter to start execution of a SageMaker Model Building Pipeline.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1273,15 +1098,15 @@ pub struct SageMakerPipelineParameter {
 }
 impl SageMakerPipelineParameter {
     /// <p>Name of parameter to start execution of a SageMaker Model Building Pipeline.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Value of parameter to start execution of a SageMaker Model Building Pipeline.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for SageMakerPipelineParameter {
+impl  std::fmt::Debug for SageMakerPipelineParameter  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SageMakerPipelineParameter");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -1291,7 +1116,7 @@ impl std::fmt::Debug for SageMakerPipelineParameter {
 }
 /// See [`SageMakerPipelineParameter`](crate::model::SageMakerPipelineParameter).
 pub mod sage_maker_pipeline_parameter {
-
+    
     /// A builder for [`SageMakerPipelineParameter`](crate::model::SageMakerPipelineParameter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1306,8 +1131,7 @@ pub mod sage_maker_pipeline_parameter {
         }
         /// <p>Name of parameter to start execution of a SageMaker Model Building Pipeline.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Value of parameter to start execution of a SageMaker Model Building Pipeline.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1316,14 +1140,15 @@ pub mod sage_maker_pipeline_parameter {
         }
         /// <p>Value of parameter to start execution of a SageMaker Model Building Pipeline.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`SageMakerPipelineParameter`](crate::model::SageMakerPipelineParameter).
         pub fn build(self) -> crate::model::SageMakerPipelineParameter {
             crate::model::SageMakerPipelineParameter {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
@@ -1335,6 +1160,8 @@ pub mod sage_maker_pipeline_parameter {
             formatter.finish()
         }
     }
+    
+    
 }
 impl SageMakerPipelineParameter {
     /// Creates a new builder-style object to manufacture [`SageMakerPipelineParameter`](crate::model::SageMakerPipelineParameter).
@@ -1346,7 +1173,7 @@ impl SageMakerPipelineParameter {
 /// <p>These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the Amazon Redshift Data API ExecuteStatement.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PipeTargetRedshiftDataParameters {
+pub struct PipeTargetRedshiftDataParameters  {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using SageMaker.</p>
     #[doc(hidden)]
     pub secret_manager_arn: std::option::Option<std::string::String>,
@@ -1368,19 +1195,19 @@ pub struct PipeTargetRedshiftDataParameters {
 }
 impl PipeTargetRedshiftDataParameters {
     /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using SageMaker.</p>
-    pub fn secret_manager_arn(&self) -> std::option::Option<&str> {
+    pub fn secret_manager_arn(&self) -> std::option::Option<& str> {
         self.secret_manager_arn.as_deref()
     }
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> std::option::Option<& str> {
         self.database.as_deref()
     }
     /// <p>The database user name. Required when authenticating using temporary credentials.</p>
-    pub fn db_user(&self) -> std::option::Option<&str> {
+    pub fn db_user(&self) -> std::option::Option<& str> {
         self.db_user.as_deref()
     }
     /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
-    pub fn statement_name(&self) -> std::option::Option<&str> {
+    pub fn statement_name(&self) -> std::option::Option<& str> {
         self.statement_name.as_deref()
     }
     /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
@@ -1388,11 +1215,11 @@ impl PipeTargetRedshiftDataParameters {
         self.with_event
     }
     /// <p>The SQL statement text to run.</p>
-    pub fn sqls(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn sqls(&self) -> std::option::Option<& [std::string::String]> {
         self.sqls.as_deref()
     }
 }
-impl std::fmt::Debug for PipeTargetRedshiftDataParameters {
+impl  std::fmt::Debug for PipeTargetRedshiftDataParameters  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipeTargetRedshiftDataParameters");
         formatter.field("secret_manager_arn", &self.secret_manager_arn);
@@ -1406,7 +1233,7 @@ impl std::fmt::Debug for PipeTargetRedshiftDataParameters {
 }
 /// See [`PipeTargetRedshiftDataParameters`](crate::model::PipeTargetRedshiftDataParameters).
 pub mod pipe_target_redshift_data_parameters {
-
+    
     /// A builder for [`PipeTargetRedshiftDataParameters`](crate::model::PipeTargetRedshiftDataParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1424,12 +1251,8 @@ pub mod pipe_target_redshift_data_parameters {
             self
         }
         /// <p>The name or ARN of the secret that enables access to the database. Required when authenticating using SageMaker.</p>
-        pub fn set_secret_manager_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.secret_manager_arn = input;
-            self
+        pub fn set_secret_manager_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_manager_arn = input; self
         }
         /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
         pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1438,8 +1261,7 @@ pub mod pipe_target_redshift_data_parameters {
         }
         /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.database = input;
-            self
+            self.database = input; self
         }
         /// <p>The database user name. Required when authenticating using temporary credentials.</p>
         pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1448,8 +1270,7 @@ pub mod pipe_target_redshift_data_parameters {
         }
         /// <p>The database user name. Required when authenticating using temporary credentials.</p>
         pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.db_user = input;
-            self
+            self.db_user = input; self
         }
         /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
         pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1457,12 +1278,8 @@ pub mod pipe_target_redshift_data_parameters {
             self
         }
         /// <p>The name of the SQL statement. You can name the SQL statement when you create it to identify the query.</p>
-        pub fn set_statement_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.statement_name = input;
-            self
+        pub fn set_statement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.statement_name = input; self
         }
         /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
         pub fn with_event(mut self, input: bool) -> Self {
@@ -1471,8 +1288,7 @@ pub mod pipe_target_redshift_data_parameters {
         }
         /// <p>Indicates whether to send an event back to EventBridge after the SQL statement runs.</p>
         pub fn set_with_event(mut self, input: std::option::Option<bool>) -> Self {
-            self.with_event = input;
-            self
+            self.with_event = input; self
         }
         /// Appends an item to `sqls`.
         ///
@@ -1481,27 +1297,30 @@ pub mod pipe_target_redshift_data_parameters {
         /// <p>The SQL statement text to run.</p>
         pub fn sqls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.sqls.unwrap_or_default();
-            v.push(input.into());
-            self.sqls = Some(v);
-            self
+                            v.push(input.into());
+                            self.sqls = Some(v);
+                            self
         }
         /// <p>The SQL statement text to run.</p>
-        pub fn set_sqls(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.sqls = input;
-            self
+        pub fn set_sqls(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.sqls = input; self
         }
         /// Consumes the builder and constructs a [`PipeTargetRedshiftDataParameters`](crate::model::PipeTargetRedshiftDataParameters).
         pub fn build(self) -> crate::model::PipeTargetRedshiftDataParameters {
             crate::model::PipeTargetRedshiftDataParameters {
-                secret_manager_arn: self.secret_manager_arn,
-                database: self.database,
-                db_user: self.db_user,
-                statement_name: self.statement_name,
-                with_event: self.with_event.unwrap_or_default(),
-                sqls: self.sqls,
+                secret_manager_arn: self.secret_manager_arn
+                ,
+                database: self.database
+                ,
+                db_user: self.db_user
+                ,
+                statement_name: self.statement_name
+                ,
+                with_event: self.with_event
+                    .unwrap_or_default()
+                ,
+                sqls: self.sqls
+                ,
             }
         }
     }
@@ -1517,6 +1336,8 @@ pub mod pipe_target_redshift_data_parameters {
             formatter.finish()
         }
     }
+    
+    
 }
 impl PipeTargetRedshiftDataParameters {
     /// Creates a new builder-style object to manufacture [`PipeTargetRedshiftDataParameters`](crate::model::PipeTargetRedshiftDataParameters).
@@ -1528,52 +1349,40 @@ impl PipeTargetRedshiftDataParameters {
 /// <p>These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipeTargetHttpParameters {
+pub struct PipeTargetHttpParameters  {
     /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
     #[doc(hidden)]
     pub path_parameter_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
     #[doc(hidden)]
-    pub header_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub header_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
     #[doc(hidden)]
-    pub query_string_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub query_string_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PipeTargetHttpParameters {
     /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
-    pub fn path_parameter_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn path_parameter_values(&self) -> std::option::Option<& [std::string::String]> {
         self.path_parameter_values.as_deref()
     }
     /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
-    pub fn header_parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn header_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.header_parameters.as_ref()
     }
     /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
-    pub fn query_string_parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn query_string_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.query_string_parameters.as_ref()
     }
 }
 /// See [`PipeTargetHttpParameters`](crate::model::PipeTargetHttpParameters).
 pub mod pipe_target_http_parameters {
-
+    
     /// A builder for [`PipeTargetHttpParameters`](crate::model::PipeTargetHttpParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path_parameter_values: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) header_parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) query_string_parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) header_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) query_string_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `path_parameter_values`.
@@ -1583,77 +1392,58 @@ pub mod pipe_target_http_parameters {
         /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
         pub fn path_parameter_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.path_parameter_values.unwrap_or_default();
-            v.push(input.into());
-            self.path_parameter_values = Some(v);
-            self
+                            v.push(input.into());
+                            self.path_parameter_values = Some(v);
+                            self
         }
         /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
-        pub fn set_path_parameter_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.path_parameter_values = input;
-            self
+        pub fn set_path_parameter_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.path_parameter_values = input; self
         }
         /// Adds a key-value pair to `header_parameters`.
         ///
         /// To override the contents of this collection use [`set_header_parameters`](Self::set_header_parameters).
         ///
         /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
-        pub fn header_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn header_parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.header_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.header_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.header_parameters = Some(hash_map);
+                            self
         }
         /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
-        pub fn set_header_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.header_parameters = input;
-            self
+        pub fn set_header_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.header_parameters = input; self
         }
         /// Adds a key-value pair to `query_string_parameters`.
         ///
         /// To override the contents of this collection use [`set_query_string_parameters`](Self::set_query_string_parameters).
         ///
         /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
-        pub fn query_string_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn query_string_parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.query_string_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.query_string_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.query_string_parameters = Some(hash_map);
+                            self
         }
         /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
-        pub fn set_query_string_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.query_string_parameters = input;
-            self
+        pub fn set_query_string_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.query_string_parameters = input; self
         }
         /// Consumes the builder and constructs a [`PipeTargetHttpParameters`](crate::model::PipeTargetHttpParameters).
         pub fn build(self) -> crate::model::PipeTargetHttpParameters {
             crate::model::PipeTargetHttpParameters {
-                path_parameter_values: self.path_parameter_values,
-                header_parameters: self.header_parameters,
-                query_string_parameters: self.query_string_parameters,
+                path_parameter_values: self.path_parameter_values
+                ,
+                header_parameters: self.header_parameters
+                ,
+                query_string_parameters: self.query_string_parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl PipeTargetHttpParameters {
     /// Creates a new builder-style object to manufacture [`PipeTargetHttpParameters`](crate::model::PipeTargetHttpParameters).
@@ -1665,40 +1455,37 @@ impl PipeTargetHttpParameters {
 /// <p>The parameters for using a Amazon SQS stream as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PipeTargetSqsQueueParameters {
+pub struct PipeTargetSqsQueueParameters  {
     /// <p>The FIFO message group ID to use as the target.</p>
     #[doc(hidden)]
     pub message_group_id: std::option::Option<std::string::String>,
-    /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
+    /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> 
     /// <p>The token used for deduplication of sent messages.</p>
     #[doc(hidden)]
     pub message_deduplication_id: std::option::Option<std::string::String>,
 }
 impl PipeTargetSqsQueueParameters {
     /// <p>The FIFO message group ID to use as the target.</p>
-    pub fn message_group_id(&self) -> std::option::Option<&str> {
+    pub fn message_group_id(&self) -> std::option::Option<& str> {
         self.message_group_id.as_deref()
     }
-    /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
+    /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> 
     /// <p>The token used for deduplication of sent messages.</p>
-    pub fn message_deduplication_id(&self) -> std::option::Option<&str> {
+    pub fn message_deduplication_id(&self) -> std::option::Option<& str> {
         self.message_deduplication_id.as_deref()
     }
 }
-impl std::fmt::Debug for PipeTargetSqsQueueParameters {
+impl  std::fmt::Debug for PipeTargetSqsQueueParameters  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipeTargetSqsQueueParameters");
         formatter.field("message_group_id", &"*** Sensitive Data Redacted ***");
-        formatter.field(
-            "message_deduplication_id",
-            &"*** Sensitive Data Redacted ***",
-        );
+        formatter.field("message_deduplication_id", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
 /// See [`PipeTargetSqsQueueParameters`](crate::model::PipeTargetSqsQueueParameters).
 pub mod pipe_target_sqs_queue_parameters {
-
+    
     /// A builder for [`PipeTargetSqsQueueParameters`](crate::model::PipeTargetSqsQueueParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1712,33 +1499,27 @@ pub mod pipe_target_sqs_queue_parameters {
             self
         }
         /// <p>The FIFO message group ID to use as the target.</p>
-        pub fn set_message_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.message_group_id = input;
-            self
+        pub fn set_message_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message_group_id = input; self
         }
-        /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
+        /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> 
         /// <p>The token used for deduplication of sent messages.</p>
         pub fn message_deduplication_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.message_deduplication_id = Some(input.into());
             self
         }
-        /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
+        /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p> 
         /// <p>The token used for deduplication of sent messages.</p>
-        pub fn set_message_deduplication_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.message_deduplication_id = input;
-            self
+        pub fn set_message_deduplication_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message_deduplication_id = input; self
         }
         /// Consumes the builder and constructs a [`PipeTargetSqsQueueParameters`](crate::model::PipeTargetSqsQueueParameters).
         pub fn build(self) -> crate::model::PipeTargetSqsQueueParameters {
             crate::model::PipeTargetSqsQueueParameters {
-                message_group_id: self.message_group_id,
-                message_deduplication_id: self.message_deduplication_id,
+                message_group_id: self.message_group_id
+                ,
+                message_deduplication_id: self.message_deduplication_id
+                ,
             }
         }
     }
@@ -1746,13 +1527,12 @@ pub mod pipe_target_sqs_queue_parameters {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("message_group_id", &"*** Sensitive Data Redacted ***");
-            formatter.field(
-                "message_deduplication_id",
-                &"*** Sensitive Data Redacted ***",
-            );
+            formatter.field("message_deduplication_id", &"*** Sensitive Data Redacted ***");
             formatter.finish()
         }
     }
+    
+    
 }
 impl PipeTargetSqsQueueParameters {
     /// Creates a new builder-style object to manufacture [`PipeTargetSqsQueueParameters`](crate::model::PipeTargetSqsQueueParameters).
@@ -1764,7 +1544,7 @@ impl PipeTargetSqsQueueParameters {
 /// <p>The parameters for using an Batch job as a target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipeTargetBatchJobParameters {
+pub struct PipeTargetBatchJobParameters  {
     /// <p>The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN) for the job definition. If name is specified without a revision then the latest active revision is used.</p>
     #[doc(hidden)]
     pub job_definition: std::option::Option<std::string::String>,
@@ -1785,47 +1565,41 @@ pub struct PipeTargetBatchJobParameters {
     pub depends_on: std::option::Option<std::vec::Vec<crate::model::BatchJobDependency>>,
     /// <p>Additional parameters passed to the job that replace parameter substitution placeholders that are set in the job definition. Parameters are specified as a key and value pair mapping. Parameters included here override any corresponding parameter defaults from the job definition.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PipeTargetBatchJobParameters {
     /// <p>The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN) for the job definition. If name is specified without a revision then the latest active revision is used.</p>
-    pub fn job_definition(&self) -> std::option::Option<&str> {
+    pub fn job_definition(&self) -> std::option::Option<& str> {
         self.job_definition.as_deref()
     }
     /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
-    pub fn array_properties(&self) -> std::option::Option<&crate::model::BatchArrayProperties> {
+    pub fn array_properties(&self) -> std::option::Option<& crate::model::BatchArrayProperties> {
         self.array_properties.as_ref()
     }
     /// <p>The retry strategy to use for failed jobs. When a retry strategy is specified here, it overrides the retry strategy defined in the job definition.</p>
-    pub fn retry_strategy(&self) -> std::option::Option<&crate::model::BatchRetryStrategy> {
+    pub fn retry_strategy(&self) -> std::option::Option<& crate::model::BatchRetryStrategy> {
         self.retry_strategy.as_ref()
     }
     /// <p>The overrides that are sent to a container.</p>
-    pub fn container_overrides(
-        &self,
-    ) -> std::option::Option<&crate::model::BatchContainerOverrides> {
+    pub fn container_overrides(&self) -> std::option::Option<& crate::model::BatchContainerOverrides> {
         self.container_overrides.as_ref()
     }
     /// <p>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each dependency to complete before it can begin.</p>
-    pub fn depends_on(&self) -> std::option::Option<&[crate::model::BatchJobDependency]> {
+    pub fn depends_on(&self) -> std::option::Option<& [crate::model::BatchJobDependency]> {
         self.depends_on.as_deref()
     }
     /// <p>Additional parameters passed to the job that replace parameter substitution placeholders that are set in the job definition. Parameters are specified as a key and value pair mapping. Parameters included here override any corresponding parameter defaults from the job definition.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
 }
 /// See [`PipeTargetBatchJobParameters`](crate::model::PipeTargetBatchJobParameters).
 pub mod pipe_target_batch_job_parameters {
-
+    
     /// A builder for [`PipeTargetBatchJobParameters`](crate::model::PipeTargetBatchJobParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1835,9 +1609,7 @@ pub mod pipe_target_batch_job_parameters {
         pub(crate) retry_strategy: std::option::Option<crate::model::BatchRetryStrategy>,
         pub(crate) container_overrides: std::option::Option<crate::model::BatchContainerOverrides>,
         pub(crate) depends_on: std::option::Option<std::vec::Vec<crate::model::BatchJobDependency>>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN) for the job definition. If name is specified without a revision then the latest active revision is used.</p>
@@ -1846,12 +1618,8 @@ pub mod pipe_target_batch_job_parameters {
             self
         }
         /// <p>The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or the Amazon Resource Name (ARN) for the job definition. If name is specified without a revision then the latest active revision is used.</p>
-        pub fn set_job_definition(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.job_definition = input;
-            self
+        pub fn set_job_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_definition = input; self
         }
         /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1860,8 +1628,7 @@ pub mod pipe_target_batch_job_parameters {
         }
         /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_name = input;
-            self
+            self.job_name = input; self
         }
         /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
         pub fn array_properties(mut self, input: crate::model::BatchArrayProperties) -> Self {
@@ -1869,12 +1636,8 @@ pub mod pipe_target_batch_job_parameters {
             self
         }
         /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
-        pub fn set_array_properties(
-            mut self,
-            input: std::option::Option<crate::model::BatchArrayProperties>,
-        ) -> Self {
-            self.array_properties = input;
-            self
+        pub fn set_array_properties(mut self, input: std::option::Option<crate::model::BatchArrayProperties>) -> Self {
+            self.array_properties = input; self
         }
         /// <p>The retry strategy to use for failed jobs. When a retry strategy is specified here, it overrides the retry strategy defined in the job definition.</p>
         pub fn retry_strategy(mut self, input: crate::model::BatchRetryStrategy) -> Self {
@@ -1882,12 +1645,8 @@ pub mod pipe_target_batch_job_parameters {
             self
         }
         /// <p>The retry strategy to use for failed jobs. When a retry strategy is specified here, it overrides the retry strategy defined in the job definition.</p>
-        pub fn set_retry_strategy(
-            mut self,
-            input: std::option::Option<crate::model::BatchRetryStrategy>,
-        ) -> Self {
-            self.retry_strategy = input;
-            self
+        pub fn set_retry_strategy(mut self, input: std::option::Option<crate::model::BatchRetryStrategy>) -> Self {
+            self.retry_strategy = input; self
         }
         /// <p>The overrides that are sent to a container.</p>
         pub fn container_overrides(mut self, input: crate::model::BatchContainerOverrides) -> Self {
@@ -1895,12 +1654,8 @@ pub mod pipe_target_batch_job_parameters {
             self
         }
         /// <p>The overrides that are sent to a container.</p>
-        pub fn set_container_overrides(
-            mut self,
-            input: std::option::Option<crate::model::BatchContainerOverrides>,
-        ) -> Self {
-            self.container_overrides = input;
-            self
+        pub fn set_container_overrides(mut self, input: std::option::Option<crate::model::BatchContainerOverrides>) -> Self {
+            self.container_overrides = input; self
         }
         /// Appends an item to `depends_on`.
         ///
@@ -1909,56 +1664,51 @@ pub mod pipe_target_batch_job_parameters {
         /// <p>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each dependency to complete before it can begin.</p>
         pub fn depends_on(mut self, input: crate::model::BatchJobDependency) -> Self {
             let mut v = self.depends_on.unwrap_or_default();
-            v.push(input);
-            self.depends_on = Some(v);
-            self
+                            v.push(input);
+                            self.depends_on = Some(v);
+                            self
         }
         /// <p>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You can specify a <code>SEQUENTIAL</code> type dependency without specifying a job ID for array jobs so that each child array job completes sequentially, starting at index 0. You can also specify an <code>N_TO_N</code> type dependency with a job ID for array jobs. In that case, each index child of this job must wait for the corresponding index child of each dependency to complete before it can begin.</p>
-        pub fn set_depends_on(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchJobDependency>>,
-        ) -> Self {
-            self.depends_on = input;
-            self
+        pub fn set_depends_on(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchJobDependency>>) -> Self {
+            self.depends_on = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>Additional parameters passed to the job that replace parameter substitution placeholders that are set in the job definition. Parameters are specified as a key and value pair mapping. Parameters included here override any corresponding parameter defaults from the job definition.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>Additional parameters passed to the job that replace parameter substitution placeholders that are set in the job definition. Parameters are specified as a key and value pair mapping. Parameters included here override any corresponding parameter defaults from the job definition.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`PipeTargetBatchJobParameters`](crate::model::PipeTargetBatchJobParameters).
         pub fn build(self) -> crate::model::PipeTargetBatchJobParameters {
             crate::model::PipeTargetBatchJobParameters {
-                job_definition: self.job_definition,
-                job_name: self.job_name,
-                array_properties: self.array_properties,
-                retry_strategy: self.retry_strategy,
-                container_overrides: self.container_overrides,
-                depends_on: self.depends_on,
-                parameters: self.parameters,
+                job_definition: self.job_definition
+                ,
+                job_name: self.job_name
+                ,
+                array_properties: self.array_properties
+                ,
+                retry_strategy: self.retry_strategy
+                ,
+                container_overrides: self.container_overrides
+                ,
+                depends_on: self.depends_on
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl PipeTargetBatchJobParameters {
     /// Creates a new builder-style object to manufacture [`PipeTargetBatchJobParameters`](crate::model::PipeTargetBatchJobParameters).
@@ -1970,7 +1720,7 @@ impl PipeTargetBatchJobParameters {
 /// <p>An object that represents an Batch job dependency.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchJobDependency {
+pub struct BatchJobDependency  {
     /// <p>The job ID of the Batch job that's associated with this dependency.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -1980,17 +1730,17 @@ pub struct BatchJobDependency {
 }
 impl BatchJobDependency {
     /// <p>The job ID of the Batch job that's associated with this dependency.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The type of the job dependency.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::BatchJobDependencyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::BatchJobDependencyType> {
         self.r#type.as_ref()
     }
 }
 /// See [`BatchJobDependency`](crate::model::BatchJobDependency).
 pub mod batch_job_dependency {
-
+    
     /// A builder for [`BatchJobDependency`](crate::model::BatchJobDependency).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2005,8 +1755,7 @@ pub mod batch_job_dependency {
         }
         /// <p>The job ID of the Batch job that's associated with this dependency.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The type of the job dependency.</p>
         pub fn r#type(mut self, input: crate::model::BatchJobDependencyType) -> Self {
@@ -2014,21 +1763,21 @@ pub mod batch_job_dependency {
             self
         }
         /// <p>The type of the job dependency.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::BatchJobDependencyType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::BatchJobDependencyType>) -> Self {
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`BatchJobDependency`](crate::model::BatchJobDependency).
         pub fn build(self) -> crate::model::BatchJobDependency {
             crate::model::BatchJobDependency {
-                job_id: self.job_id,
-                r#type: self.r#type,
+                job_id: self.job_id
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchJobDependency {
     /// Creates a new builder-style object to manufacture [`BatchJobDependency`](crate::model::BatchJobDependency).
@@ -2043,9 +1792,9 @@ impl BatchJobDependency {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let batchjobdependencytype = unimplemented!();
 /// match batchjobdependencytype {
@@ -2067,60 +1816,52 @@ impl BatchJobDependency {
 /// Specifically, when `batchjobdependencytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BatchJobDependencyType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BatchJobDependencyType {
     #[allow(missing_docs)] // documentation missing in model
     NToN,
     #[allow(missing_docs)] // documentation missing in model
     Sequential,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BatchJobDependencyType {
     fn from(s: &str) -> Self {
         match s {
             "N_TO_N" => BatchJobDependencyType::NToN,
             "SEQUENTIAL" => BatchJobDependencyType::Sequential,
-            other => {
-                BatchJobDependencyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => BatchJobDependencyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BatchJobDependencyType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BatchJobDependencyType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BatchJobDependencyType::from(s))
+                }
+            }
 impl BatchJobDependencyType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BatchJobDependencyType::NToN => "N_TO_N",
             BatchJobDependencyType::Sequential => "SEQUENTIAL",
-            BatchJobDependencyType::Unknown(value) => value.as_str(),
+            BatchJobDependencyType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["N_TO_N", "SEQUENTIAL"]
+        &[
+            "N_TO_N", "SEQUENTIAL"
+        ]
     }
 }
 impl AsRef<str> for BatchJobDependencyType {
@@ -2132,61 +1873,56 @@ impl AsRef<str> for BatchJobDependencyType {
 /// <p>The overrides that are sent to a container.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchContainerOverrides {
+pub struct BatchContainerOverrides  {
     /// <p>The command to send to the container that overrides the default command from the Docker image or the task definition.</p>
     #[doc(hidden)]
     pub command: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition.</p> <note>
-    /// <p>Environment variables cannot start with "<code>Batch</code>". This naming convention is reserved for variables that Batch sets.</p>
+    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition.</p> <note> 
+    /// <p>Environment variables cannot start with "<code>Batch</code>". This naming convention is reserved for variables that Batch sets.</p> 
     /// </note>
     #[doc(hidden)]
     pub environment: std::option::Option<std::vec::Vec<crate::model::BatchEnvironmentVariable>>,
-    /// <p>The instance type to use for a multi-node parallel job.</p> <note>
-    /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p>
+    /// <p>The instance type to use for a multi-node parallel job.</p> <note> 
+    /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p> 
     /// </note>
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
     /// <p>The type and amount of resources to assign to a container. This overrides the settings in the job definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
     #[doc(hidden)]
-    pub resource_requirements:
-        std::option::Option<std::vec::Vec<crate::model::BatchResourceRequirement>>,
+    pub resource_requirements: std::option::Option<std::vec::Vec<crate::model::BatchResourceRequirement>>,
 }
 impl BatchContainerOverrides {
     /// <p>The command to send to the container that overrides the default command from the Docker image or the task definition.</p>
-    pub fn command(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn command(&self) -> std::option::Option<& [std::string::String]> {
         self.command.as_deref()
     }
-    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition.</p> <note>
-    /// <p>Environment variables cannot start with "<code>Batch</code>". This naming convention is reserved for variables that Batch sets.</p>
+    /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition.</p> <note> 
+    /// <p>Environment variables cannot start with "<code>Batch</code>". This naming convention is reserved for variables that Batch sets.</p> 
     /// </note>
-    pub fn environment(&self) -> std::option::Option<&[crate::model::BatchEnvironmentVariable]> {
+    pub fn environment(&self) -> std::option::Option<& [crate::model::BatchEnvironmentVariable]> {
         self.environment.as_deref()
     }
-    /// <p>The instance type to use for a multi-node parallel job.</p> <note>
-    /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p>
+    /// <p>The instance type to use for a multi-node parallel job.</p> <note> 
+    /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p> 
     /// </note>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> std::option::Option<& str> {
         self.instance_type.as_deref()
     }
     /// <p>The type and amount of resources to assign to a container. This overrides the settings in the job definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    pub fn resource_requirements(
-        &self,
-    ) -> std::option::Option<&[crate::model::BatchResourceRequirement]> {
+    pub fn resource_requirements(&self) -> std::option::Option<& [crate::model::BatchResourceRequirement]> {
         self.resource_requirements.as_deref()
     }
 }
 /// See [`BatchContainerOverrides`](crate::model::BatchContainerOverrides).
 pub mod batch_container_overrides {
-
+    
     /// A builder for [`BatchContainerOverrides`](crate::model::BatchContainerOverrides).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) command: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) environment:
-            std::option::Option<std::vec::Vec<crate::model::BatchEnvironmentVariable>>,
+        pub(crate) environment: std::option::Option<std::vec::Vec<crate::model::BatchEnvironmentVariable>>,
         pub(crate) instance_type: std::option::Option<std::string::String>,
-        pub(crate) resource_requirements:
-            std::option::Option<std::vec::Vec<crate::model::BatchResourceRequirement>>,
+        pub(crate) resource_requirements: std::option::Option<std::vec::Vec<crate::model::BatchResourceRequirement>>,
     }
     impl Builder {
         /// Appends an item to `command`.
@@ -2196,90 +1932,77 @@ pub mod batch_container_overrides {
         /// <p>The command to send to the container that overrides the default command from the Docker image or the task definition.</p>
         pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.command.unwrap_or_default();
-            v.push(input.into());
-            self.command = Some(v);
-            self
+                            v.push(input.into());
+                            self.command = Some(v);
+                            self
         }
         /// <p>The command to send to the container that overrides the default command from the Docker image or the task definition.</p>
-        pub fn set_command(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.command = input;
-            self
+        pub fn set_command(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.command = input; self
         }
         /// Appends an item to `environment`.
         ///
         /// To override the contents of this collection use [`set_environment`](Self::set_environment).
         ///
-        /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition.</p> <note>
-        /// <p>Environment variables cannot start with "<code>Batch</code>". This naming convention is reserved for variables that Batch sets.</p>
+        /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition.</p> <note> 
+        /// <p>Environment variables cannot start with "<code>Batch</code>". This naming convention is reserved for variables that Batch sets.</p> 
         /// </note>
         pub fn environment(mut self, input: crate::model::BatchEnvironmentVariable) -> Self {
             let mut v = self.environment.unwrap_or_default();
-            v.push(input);
-            self.environment = Some(v);
-            self
+                            v.push(input);
+                            self.environment = Some(v);
+                            self
         }
-        /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition.</p> <note>
-        /// <p>Environment variables cannot start with "<code>Batch</code>". This naming convention is reserved for variables that Batch sets.</p>
+        /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition.</p> <note> 
+        /// <p>Environment variables cannot start with "<code>Batch</code>". This naming convention is reserved for variables that Batch sets.</p> 
         /// </note>
-        pub fn set_environment(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchEnvironmentVariable>>,
-        ) -> Self {
-            self.environment = input;
-            self
+        pub fn set_environment(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchEnvironmentVariable>>) -> Self {
+            self.environment = input; self
         }
-        /// <p>The instance type to use for a multi-node parallel job.</p> <note>
-        /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p>
+        /// <p>The instance type to use for a multi-node parallel job.</p> <note> 
+        /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p> 
         /// </note>
         pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_type = Some(input.into());
             self
         }
-        /// <p>The instance type to use for a multi-node parallel job.</p> <note>
-        /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p>
+        /// <p>The instance type to use for a multi-node parallel job.</p> <note> 
+        /// <p>This parameter isn't applicable to single-node container jobs or jobs that run on Fargate resources, and shouldn't be provided.</p> 
         /// </note>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.instance_type = input; self
         }
         /// Appends an item to `resource_requirements`.
         ///
         /// To override the contents of this collection use [`set_resource_requirements`](Self::set_resource_requirements).
         ///
         /// <p>The type and amount of resources to assign to a container. This overrides the settings in the job definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-        pub fn resource_requirements(
-            mut self,
-            input: crate::model::BatchResourceRequirement,
-        ) -> Self {
+        pub fn resource_requirements(mut self, input: crate::model::BatchResourceRequirement) -> Self {
             let mut v = self.resource_requirements.unwrap_or_default();
-            v.push(input);
-            self.resource_requirements = Some(v);
-            self
+                            v.push(input);
+                            self.resource_requirements = Some(v);
+                            self
         }
         /// <p>The type and amount of resources to assign to a container. This overrides the settings in the job definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-        pub fn set_resource_requirements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BatchResourceRequirement>>,
-        ) -> Self {
-            self.resource_requirements = input;
-            self
+        pub fn set_resource_requirements(mut self, input: std::option::Option<std::vec::Vec<crate::model::BatchResourceRequirement>>) -> Self {
+            self.resource_requirements = input; self
         }
         /// Consumes the builder and constructs a [`BatchContainerOverrides`](crate::model::BatchContainerOverrides).
         pub fn build(self) -> crate::model::BatchContainerOverrides {
             crate::model::BatchContainerOverrides {
-                command: self.command,
-                environment: self.environment,
-                instance_type: self.instance_type,
-                resource_requirements: self.resource_requirements,
+                command: self.command
+                ,
+                environment: self.environment
+                ,
+                instance_type: self.instance_type
+                ,
+                resource_requirements: self.resource_requirements
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchContainerOverrides {
     /// Creates a new builder-style object to manufacture [`BatchContainerOverrides`](crate::model::BatchContainerOverrides).
@@ -2291,341 +2014,341 @@ impl BatchContainerOverrides {
 /// <p>The type and amount of a resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchResourceRequirement {
+pub struct BatchResourceRequirement  {
     /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::BatchResourceRequirementType>,
-    /// <p>The quantity of the specified resource to reserve for the container. The values vary based on the <code>type</code> specified.</p>
-    /// <dl>
+    /// <p>The quantity of the specified resource to reserve for the container. The values vary based on the <code>type</code> specified.</p> 
+    /// <dl> 
     /// <dt>
     /// type="GPU"
-    /// </dt>
-    /// <dd>
-    /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note>
-    /// <p>GPUs aren't available for jobs that are running on Fargate resources.</p>
-    /// </note>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note> 
+    /// <p>GPUs aren't available for jobs that are running on Fargate resources.</p> 
+    /// </note> 
+    /// </dd> 
     /// <dt>
     /// type="MEMORY"
-    /// </dt>
-    /// <dd>
-    /// <p>The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-    /// <p>If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p>
-    /// </note>
-    /// <p>For jobs that are running on Fargate resources, then <code>value</code> is the hard limit (in MiB), and must match one of the supported values and the <code>VCPU</code> values must be one of the values supported for that memory value.</p>
-    /// <dl>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note> 
+    /// <p>If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p> 
+    /// </note> 
+    /// <p>For jobs that are running on Fargate resources, then <code>value</code> is the hard limit (in MiB), and must match one of the supported values and the <code>VCPU</code> values must be one of the values supported for that memory value.</p> 
+    /// <dl> 
     /// <dt>
     /// value = 512
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 0.25</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 0.25</p> 
+    /// </dd> 
     /// <dt>
     /// value = 1024
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 0.25 or 0.5</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 0.25 or 0.5</p> 
+    /// </dd> 
     /// <dt>
     /// value = 2048
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 0.25, 0.5, or 1</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 0.25, 0.5, or 1</p> 
+    /// </dd> 
     /// <dt>
     /// value = 3072
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 0.5, or 1</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 0.5, or 1</p> 
+    /// </dd> 
     /// <dt>
     /// value = 4096
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 0.5, 1, or 2</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 0.5, 1, or 2</p> 
+    /// </dd> 
     /// <dt>
     /// value = 5120, 6144, or 7168
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 1 or 2</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 1 or 2</p> 
+    /// </dd> 
     /// <dt>
     /// value = 8192
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p> 
+    /// </dd> 
     /// <dt>
     /// value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 2 or 4</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 2 or 4</p> 
+    /// </dd> 
     /// <dt>
     /// value = 16384
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 2, 4, or 8</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 2, 4, or 8</p> 
+    /// </dd> 
     /// <dt>
     /// value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648, 29696, or 30720
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 4</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 4</p> 
+    /// </dd> 
     /// <dt>
     /// value = 20480, 24576, or 28672
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 4 or 8</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 4 or 8</p> 
+    /// </dd> 
     /// <dt>
     /// value = 36864, 45056, 53248, or 61440
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 8</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 8</p> 
+    /// </dd> 
     /// <dt>
     /// value = 32768, 40960, 49152, or 57344
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 8 or 16</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 8 or 16</p> 
+    /// </dd> 
     /// <dt>
     /// value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 16</p>
-    /// </dd>
-    /// </dl>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 16</p> 
+    /// </dd> 
+    /// </dl> 
+    /// </dd> 
     /// <dt>
     /// type="VCPU"
-    /// </dt>
-    /// <dd>
-    /// <p>The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least one vCPU. This is required but can be specified in several places; it must be specified for each node at least once.</p>
-    /// <p>The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about Fargate quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    /// <p>For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported values and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, 4, 8, and 16</p>
-    /// <dl>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least one vCPU. This is required but can be specified in several places; it must be specified for each node at least once.</p> 
+    /// <p>The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about Fargate quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate quotas</a> in the <i>Amazon Web Services General Reference</i>.</p> 
+    /// <p>For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported values and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, 4, 8, and 16</p> 
+    /// <dl> 
     /// <dt>
     /// value = 0.25
-    /// </dt>
-    /// <dd>
-    /// <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>MEMORY</code> = 512, 1024, or 2048</p> 
+    /// </dd> 
     /// <dt>
     /// value = 0.5
-    /// </dt>
-    /// <dd>
-    /// <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p> 
+    /// </dd> 
     /// <dt>
     /// value = 1
-    /// </dt>
-    /// <dd>
-    /// <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p> 
+    /// </dd> 
     /// <dt>
     /// value = 2
-    /// </dt>
-    /// <dd>
-    /// <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p> 
+    /// </dd> 
     /// <dt>
     /// value = 4
-    /// </dt>
-    /// <dd>
-    /// <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p> 
+    /// </dd> 
     /// <dt>
     /// value = 8
-    /// </dt>
-    /// <dd>
-    /// <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440 </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440 </p> 
+    /// </dd> 
     /// <dt>
     /// value = 16
-    /// </dt>
-    /// <dd>
-    /// <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880 </p>
-    /// </dd>
-    /// </dl>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880 </p> 
+    /// </dd> 
+    /// </dl> 
+    /// </dd> 
     /// </dl>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl BatchResourceRequirement {
     /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::BatchResourceRequirementType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::BatchResourceRequirementType> {
         self.r#type.as_ref()
     }
-    /// <p>The quantity of the specified resource to reserve for the container. The values vary based on the <code>type</code> specified.</p>
-    /// <dl>
+    /// <p>The quantity of the specified resource to reserve for the container. The values vary based on the <code>type</code> specified.</p> 
+    /// <dl> 
     /// <dt>
     /// type="GPU"
-    /// </dt>
-    /// <dd>
-    /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note>
-    /// <p>GPUs aren't available for jobs that are running on Fargate resources.</p>
-    /// </note>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note> 
+    /// <p>GPUs aren't available for jobs that are running on Fargate resources.</p> 
+    /// </note> 
+    /// </dd> 
     /// <dt>
     /// type="MEMORY"
-    /// </dt>
-    /// <dd>
-    /// <p>The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-    /// <p>If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p>
-    /// </note>
-    /// <p>For jobs that are running on Fargate resources, then <code>value</code> is the hard limit (in MiB), and must match one of the supported values and the <code>VCPU</code> values must be one of the values supported for that memory value.</p>
-    /// <dl>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note> 
+    /// <p>If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p> 
+    /// </note> 
+    /// <p>For jobs that are running on Fargate resources, then <code>value</code> is the hard limit (in MiB), and must match one of the supported values and the <code>VCPU</code> values must be one of the values supported for that memory value.</p> 
+    /// <dl> 
     /// <dt>
     /// value = 512
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 0.25</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 0.25</p> 
+    /// </dd> 
     /// <dt>
     /// value = 1024
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 0.25 or 0.5</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 0.25 or 0.5</p> 
+    /// </dd> 
     /// <dt>
     /// value = 2048
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 0.25, 0.5, or 1</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 0.25, 0.5, or 1</p> 
+    /// </dd> 
     /// <dt>
     /// value = 3072
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 0.5, or 1</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 0.5, or 1</p> 
+    /// </dd> 
     /// <dt>
     /// value = 4096
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 0.5, 1, or 2</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 0.5, 1, or 2</p> 
+    /// </dd> 
     /// <dt>
     /// value = 5120, 6144, or 7168
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 1 or 2</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 1 or 2</p> 
+    /// </dd> 
     /// <dt>
     /// value = 8192
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p> 
+    /// </dd> 
     /// <dt>
     /// value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 2 or 4</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 2 or 4</p> 
+    /// </dd> 
     /// <dt>
     /// value = 16384
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 2, 4, or 8</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 2, 4, or 8</p> 
+    /// </dd> 
     /// <dt>
     /// value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648, 29696, or 30720
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 4</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 4</p> 
+    /// </dd> 
     /// <dt>
     /// value = 20480, 24576, or 28672
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 4 or 8</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 4 or 8</p> 
+    /// </dd> 
     /// <dt>
     /// value = 36864, 45056, 53248, or 61440
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 8</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 8</p> 
+    /// </dd> 
     /// <dt>
     /// value = 32768, 40960, 49152, or 57344
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 8 or 16</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 8 or 16</p> 
+    /// </dd> 
     /// <dt>
     /// value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880
-    /// </dt>
-    /// <dd>
-    /// <p> <code>VCPU</code> = 16</p>
-    /// </dd>
-    /// </dl>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>VCPU</code> = 16</p> 
+    /// </dd> 
+    /// </dl> 
+    /// </dd> 
     /// <dt>
     /// type="VCPU"
-    /// </dt>
-    /// <dd>
-    /// <p>The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least one vCPU. This is required but can be specified in several places; it must be specified for each node at least once.</p>
-    /// <p>The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about Fargate quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    /// <p>For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported values and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, 4, 8, and 16</p>
-    /// <dl>
+    /// </dt> 
+    /// <dd> 
+    /// <p>The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least one vCPU. This is required but can be specified in several places; it must be specified for each node at least once.</p> 
+    /// <p>The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about Fargate quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate quotas</a> in the <i>Amazon Web Services General Reference</i>.</p> 
+    /// <p>For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported values and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, 4, 8, and 16</p> 
+    /// <dl> 
     /// <dt>
     /// value = 0.25
-    /// </dt>
-    /// <dd>
-    /// <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>MEMORY</code> = 512, 1024, or 2048</p> 
+    /// </dd> 
     /// <dt>
     /// value = 0.5
-    /// </dt>
-    /// <dd>
-    /// <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p> 
+    /// </dd> 
     /// <dt>
     /// value = 1
-    /// </dt>
-    /// <dd>
-    /// <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p> 
+    /// </dd> 
     /// <dt>
     /// value = 2
-    /// </dt>
-    /// <dd>
-    /// <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p> 
+    /// </dd> 
     /// <dt>
     /// value = 4
-    /// </dt>
-    /// <dd>
-    /// <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p> 
+    /// </dd> 
     /// <dt>
     /// value = 8
-    /// </dt>
-    /// <dd>
-    /// <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440 </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440 </p> 
+    /// </dd> 
     /// <dt>
     /// value = 16
-    /// </dt>
-    /// <dd>
-    /// <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880 </p>
-    /// </dd>
+    /// </dt> 
+    /// <dd> 
+    /// <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880 </p> 
+    /// </dd> 
+    /// </dl> 
+    /// </dd> 
     /// </dl>
-    /// </dd>
-    /// </dl>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`BatchResourceRequirement`](crate::model::BatchResourceRequirement).
 pub mod batch_resource_requirement {
-
+    
     /// A builder for [`BatchResourceRequirement`](crate::model::BatchResourceRequirement).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2639,345 +2362,344 @@ pub mod batch_resource_requirement {
             self
         }
         /// <p>The type of resource to assign to a container. The supported resources include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::BatchResourceRequirementType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::BatchResourceRequirementType>) -> Self {
+            self.r#type = input; self
         }
-        /// <p>The quantity of the specified resource to reserve for the container. The values vary based on the <code>type</code> specified.</p>
-        /// <dl>
+        /// <p>The quantity of the specified resource to reserve for the container. The values vary based on the <code>type</code> specified.</p> 
+        /// <dl> 
         /// <dt>
         /// type="GPU"
-        /// </dt>
-        /// <dd>
-        /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note>
-        /// <p>GPUs aren't available for jobs that are running on Fargate resources.</p>
-        /// </note>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note> 
+        /// <p>GPUs aren't available for jobs that are running on Fargate resources.</p> 
+        /// </note> 
+        /// </dd> 
         /// <dt>
         /// type="MEMORY"
-        /// </dt>
-        /// <dd>
-        /// <p>The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-        /// <p>If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p>
-        /// </note>
-        /// <p>For jobs that are running on Fargate resources, then <code>value</code> is the hard limit (in MiB), and must match one of the supported values and the <code>VCPU</code> values must be one of the values supported for that memory value.</p>
-        /// <dl>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note> 
+        /// <p>If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p> 
+        /// </note> 
+        /// <p>For jobs that are running on Fargate resources, then <code>value</code> is the hard limit (in MiB), and must match one of the supported values and the <code>VCPU</code> values must be one of the values supported for that memory value.</p> 
+        /// <dl> 
         /// <dt>
         /// value = 512
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 0.25</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 0.25</p> 
+        /// </dd> 
         /// <dt>
         /// value = 1024
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 0.25 or 0.5</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 0.25 or 0.5</p> 
+        /// </dd> 
         /// <dt>
         /// value = 2048
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 0.25, 0.5, or 1</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 0.25, 0.5, or 1</p> 
+        /// </dd> 
         /// <dt>
         /// value = 3072
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 0.5, or 1</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 0.5, or 1</p> 
+        /// </dd> 
         /// <dt>
         /// value = 4096
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 0.5, 1, or 2</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 0.5, 1, or 2</p> 
+        /// </dd> 
         /// <dt>
         /// value = 5120, 6144, or 7168
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 1 or 2</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 1 or 2</p> 
+        /// </dd> 
         /// <dt>
         /// value = 8192
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p> 
+        /// </dd> 
         /// <dt>
         /// value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 2 or 4</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 2 or 4</p> 
+        /// </dd> 
         /// <dt>
         /// value = 16384
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 2, 4, or 8</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 2, 4, or 8</p> 
+        /// </dd> 
         /// <dt>
         /// value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648, 29696, or 30720
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 4</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 4</p> 
+        /// </dd> 
         /// <dt>
         /// value = 20480, 24576, or 28672
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 4 or 8</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 4 or 8</p> 
+        /// </dd> 
         /// <dt>
         /// value = 36864, 45056, 53248, or 61440
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 8</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 8</p> 
+        /// </dd> 
         /// <dt>
         /// value = 32768, 40960, 49152, or 57344
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 8 or 16</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 8 or 16</p> 
+        /// </dd> 
         /// <dt>
         /// value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 16</p>
-        /// </dd>
-        /// </dl>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 16</p> 
+        /// </dd> 
+        /// </dl> 
+        /// </dd> 
         /// <dt>
         /// type="VCPU"
-        /// </dt>
-        /// <dd>
-        /// <p>The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least one vCPU. This is required but can be specified in several places; it must be specified for each node at least once.</p>
-        /// <p>The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about Fargate quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        /// <p>For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported values and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, 4, 8, and 16</p>
-        /// <dl>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least one vCPU. This is required but can be specified in several places; it must be specified for each node at least once.</p> 
+        /// <p>The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about Fargate quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate quotas</a> in the <i>Amazon Web Services General Reference</i>.</p> 
+        /// <p>For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported values and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, 4, 8, and 16</p> 
+        /// <dl> 
         /// <dt>
         /// value = 0.25
-        /// </dt>
-        /// <dd>
-        /// <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>MEMORY</code> = 512, 1024, or 2048</p> 
+        /// </dd> 
         /// <dt>
         /// value = 0.5
-        /// </dt>
-        /// <dd>
-        /// <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p> 
+        /// </dd> 
         /// <dt>
         /// value = 1
-        /// </dt>
-        /// <dd>
-        /// <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p> 
+        /// </dd> 
         /// <dt>
         /// value = 2
-        /// </dt>
-        /// <dd>
-        /// <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p> 
+        /// </dd> 
         /// <dt>
         /// value = 4
-        /// </dt>
-        /// <dd>
-        /// <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p> 
+        /// </dd> 
         /// <dt>
         /// value = 8
-        /// </dt>
-        /// <dd>
-        /// <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440 </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440 </p> 
+        /// </dd> 
         /// <dt>
         /// value = 16
-        /// </dt>
-        /// <dd>
-        /// <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880 </p>
-        /// </dd>
-        /// </dl>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880 </p> 
+        /// </dd> 
+        /// </dl> 
+        /// </dd> 
         /// </dl>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The quantity of the specified resource to reserve for the container. The values vary based on the <code>type</code> specified.</p>
-        /// <dl>
+        /// <p>The quantity of the specified resource to reserve for the container. The values vary based on the <code>type</code> specified.</p> 
+        /// <dl> 
         /// <dt>
         /// type="GPU"
-        /// </dt>
-        /// <dd>
-        /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note>
-        /// <p>GPUs aren't available for jobs that are running on Fargate resources.</p>
-        /// </note>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched on.</p> <note> 
+        /// <p>GPUs aren't available for jobs that are running on Fargate resources.</p> 
+        /// </note> 
+        /// </dd> 
         /// <dt>
         /// type="MEMORY"
-        /// </dt>
-        /// <dd>
-        /// <p>The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-        /// <p>If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p>
-        /// </note>
-        /// <p>For jobs that are running on Fargate resources, then <code>value</code> is the hard limit (in MiB), and must match one of the supported values and the <code>VCPU</code> values must be one of the values supported for that memory value.</p>
-        /// <dl>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The memory hard limit (in MiB) present to the container. This parameter is supported for jobs that are running on EC2 resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note> 
+        /// <p>If you're trying to maximize your resource utilization by providing your jobs as much memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory management</a> in the <i>Batch User Guide</i>.</p> 
+        /// </note> 
+        /// <p>For jobs that are running on Fargate resources, then <code>value</code> is the hard limit (in MiB), and must match one of the supported values and the <code>VCPU</code> values must be one of the values supported for that memory value.</p> 
+        /// <dl> 
         /// <dt>
         /// value = 512
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 0.25</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 0.25</p> 
+        /// </dd> 
         /// <dt>
         /// value = 1024
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 0.25 or 0.5</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 0.25 or 0.5</p> 
+        /// </dd> 
         /// <dt>
         /// value = 2048
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 0.25, 0.5, or 1</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 0.25, 0.5, or 1</p> 
+        /// </dd> 
         /// <dt>
         /// value = 3072
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 0.5, or 1</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 0.5, or 1</p> 
+        /// </dd> 
         /// <dt>
         /// value = 4096
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 0.5, 1, or 2</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 0.5, 1, or 2</p> 
+        /// </dd> 
         /// <dt>
         /// value = 5120, 6144, or 7168
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 1 or 2</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 1 or 2</p> 
+        /// </dd> 
         /// <dt>
         /// value = 8192
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 1, 2, 4, or 8</p> 
+        /// </dd> 
         /// <dt>
         /// value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 2 or 4</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 2 or 4</p> 
+        /// </dd> 
         /// <dt>
         /// value = 16384
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 2, 4, or 8</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 2, 4, or 8</p> 
+        /// </dd> 
         /// <dt>
         /// value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648, 29696, or 30720
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 4</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 4</p> 
+        /// </dd> 
         /// <dt>
         /// value = 20480, 24576, or 28672
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 4 or 8</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 4 or 8</p> 
+        /// </dd> 
         /// <dt>
         /// value = 36864, 45056, 53248, or 61440
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 8</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 8</p> 
+        /// </dd> 
         /// <dt>
         /// value = 32768, 40960, 49152, or 57344
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 8 or 16</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 8 or 16</p> 
+        /// </dd> 
         /// <dt>
         /// value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880
-        /// </dt>
-        /// <dd>
-        /// <p> <code>VCPU</code> = 16</p>
-        /// </dd>
-        /// </dl>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>VCPU</code> = 16</p> 
+        /// </dd> 
+        /// </dl> 
+        /// </dd> 
         /// <dt>
         /// type="VCPU"
-        /// </dt>
-        /// <dd>
-        /// <p>The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least one vCPU. This is required but can be specified in several places; it must be specified for each node at least once.</p>
-        /// <p>The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about Fargate quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        /// <p>For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported values and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, 4, 8, and 16</p>
-        /// <dl>
+        /// </dt> 
+        /// <dd> 
+        /// <p>The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container"> Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least one vCPU. This is required but can be specified in several places; it must be specified for each node at least once.</p> 
+        /// <p>The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about Fargate quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate quotas</a> in the <i>Amazon Web Services General Reference</i>.</p> 
+        /// <p>For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported values and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code> value. The supported values are 0.25, 0.5, 1, 2, 4, 8, and 16</p> 
+        /// <dl> 
         /// <dt>
         /// value = 0.25
-        /// </dt>
-        /// <dd>
-        /// <p> <code>MEMORY</code> = 512, 1024, or 2048</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>MEMORY</code> = 512, 1024, or 2048</p> 
+        /// </dd> 
         /// <dt>
         /// value = 0.5
-        /// </dt>
-        /// <dd>
-        /// <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>MEMORY</code> = 1024, 2048, 3072, or 4096</p> 
+        /// </dd> 
         /// <dt>
         /// value = 1
-        /// </dt>
-        /// <dd>
-        /// <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>MEMORY</code> = 2048, 3072, 4096, 5120, 6144, 7168, or 8192</p> 
+        /// </dd> 
         /// <dt>
         /// value = 2
-        /// </dt>
-        /// <dd>
-        /// <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>MEMORY</code> = 4096, 5120, 6144, 7168, 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</p> 
+        /// </dd> 
         /// <dt>
         /// value = 4
-        /// </dt>
-        /// <dd>
-        /// <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</p> 
+        /// </dd> 
         /// <dt>
         /// value = 8
-        /// </dt>
-        /// <dd>
-        /// <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440 </p>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440 </p> 
+        /// </dd> 
         /// <dt>
         /// value = 16
-        /// </dt>
-        /// <dd>
-        /// <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880 </p>
-        /// </dd>
-        /// </dl>
-        /// </dd>
+        /// </dt> 
+        /// <dd> 
+        /// <p> <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880 </p> 
+        /// </dd> 
+        /// </dl> 
+        /// </dd> 
         /// </dl>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`BatchResourceRequirement`](crate::model::BatchResourceRequirement).
         pub fn build(self) -> crate::model::BatchResourceRequirement {
             crate::model::BatchResourceRequirement {
-                r#type: self.r#type,
-                value: self.value,
+                r#type: self.r#type
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchResourceRequirement {
     /// Creates a new builder-style object to manufacture [`BatchResourceRequirement`](crate::model::BatchResourceRequirement).
@@ -2992,9 +2714,9 @@ impl BatchResourceRequirement {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let batchresourcerequirementtype = unimplemented!();
 /// match batchresourcerequirementtype {
@@ -3017,22 +2739,14 @@ impl BatchResourceRequirement {
 /// Specifically, when `batchresourcerequirementtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BatchResourceRequirementType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BatchResourceRequirementType {
     #[allow(missing_docs)] // documentation missing in model
     Gpu,
@@ -3041,7 +2755,7 @@ pub enum BatchResourceRequirementType {
     #[allow(missing_docs)] // documentation missing in model
     Vcpu,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BatchResourceRequirementType {
     fn from(s: &str) -> Self {
@@ -3049,19 +2763,17 @@ impl std::convert::From<&str> for BatchResourceRequirementType {
             "GPU" => BatchResourceRequirementType::Gpu,
             "MEMORY" => BatchResourceRequirementType::Memory,
             "VCPU" => BatchResourceRequirementType::Vcpu,
-            other => BatchResourceRequirementType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => BatchResourceRequirementType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BatchResourceRequirementType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BatchResourceRequirementType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BatchResourceRequirementType::from(s))
+                }
+            }
 impl BatchResourceRequirementType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3069,12 +2781,14 @@ impl BatchResourceRequirementType {
             BatchResourceRequirementType::Gpu => "GPU",
             BatchResourceRequirementType::Memory => "MEMORY",
             BatchResourceRequirementType::Vcpu => "VCPU",
-            BatchResourceRequirementType::Unknown(value) => value.as_str(),
+            BatchResourceRequirementType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GPU", "MEMORY", "VCPU"]
+        &[
+            "GPU", "MEMORY", "VCPU"
+        ]
     }
 }
 impl AsRef<str> for BatchResourceRequirementType {
@@ -3083,12 +2797,12 @@ impl AsRef<str> for BatchResourceRequirementType {
     }
 }
 
-/// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition.</p> <note>
-/// <p>Environment variables cannot start with "<code>Batch</code>". This naming convention is reserved for variables that Batch sets.</p>
+/// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition.</p> <note> 
+/// <p>Environment variables cannot start with "<code>Batch</code>". This naming convention is reserved for variables that Batch sets.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchEnvironmentVariable {
+pub struct BatchEnvironmentVariable  {
     /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3098,17 +2812,17 @@ pub struct BatchEnvironmentVariable {
 }
 impl BatchEnvironmentVariable {
     /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of the key-value pair. For environment variables, this is the value of the environment variable.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`BatchEnvironmentVariable`](crate::model::BatchEnvironmentVariable).
 pub mod batch_environment_variable {
-
+    
     /// A builder for [`BatchEnvironmentVariable`](crate::model::BatchEnvironmentVariable).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3123,8 +2837,7 @@ pub mod batch_environment_variable {
         }
         /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The value of the key-value pair. For environment variables, this is the value of the environment variable.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3133,17 +2846,20 @@ pub mod batch_environment_variable {
         }
         /// <p>The value of the key-value pair. For environment variables, this is the value of the environment variable.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`BatchEnvironmentVariable`](crate::model::BatchEnvironmentVariable).
         pub fn build(self) -> crate::model::BatchEnvironmentVariable {
             crate::model::BatchEnvironmentVariable {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchEnvironmentVariable {
     /// Creates a new builder-style object to manufacture [`BatchEnvironmentVariable`](crate::model::BatchEnvironmentVariable).
@@ -3155,7 +2871,7 @@ impl BatchEnvironmentVariable {
 /// <p>The retry strategy that's associated with a job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html"> Automated job retries</a> in the <i>Batch User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchRetryStrategy {
+pub struct BatchRetryStrategy  {
     /// <p>The number of times to move a job to the <code>RUNNABLE</code> status. If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of attempts as the value.</p>
     #[doc(hidden)]
     pub attempts: i32,
@@ -3168,7 +2884,7 @@ impl BatchRetryStrategy {
 }
 /// See [`BatchRetryStrategy`](crate::model::BatchRetryStrategy).
 pub mod batch_retry_strategy {
-
+    
     /// A builder for [`BatchRetryStrategy`](crate::model::BatchRetryStrategy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3182,16 +2898,19 @@ pub mod batch_retry_strategy {
         }
         /// <p>The number of times to move a job to the <code>RUNNABLE</code> status. If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of attempts as the value.</p>
         pub fn set_attempts(mut self, input: std::option::Option<i32>) -> Self {
-            self.attempts = input;
-            self
+            self.attempts = input; self
         }
         /// Consumes the builder and constructs a [`BatchRetryStrategy`](crate::model::BatchRetryStrategy).
         pub fn build(self) -> crate::model::BatchRetryStrategy {
             crate::model::BatchRetryStrategy {
-                attempts: self.attempts.unwrap_or_default(),
+                attempts: self.attempts
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchRetryStrategy {
     /// Creates a new builder-style object to manufacture [`BatchRetryStrategy`](crate::model::BatchRetryStrategy).
@@ -3203,7 +2922,7 @@ impl BatchRetryStrategy {
 /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchArrayProperties {
+pub struct BatchArrayProperties  {
     /// <p>The size of the array, if this is an array batch job.</p>
     #[doc(hidden)]
     pub size: i32,
@@ -3216,7 +2935,7 @@ impl BatchArrayProperties {
 }
 /// See [`BatchArrayProperties`](crate::model::BatchArrayProperties).
 pub mod batch_array_properties {
-
+    
     /// A builder for [`BatchArrayProperties`](crate::model::BatchArrayProperties).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3230,16 +2949,19 @@ pub mod batch_array_properties {
         }
         /// <p>The size of the array, if this is an array batch job.</p>
         pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.size = input;
-            self
+            self.size = input; self
         }
         /// Consumes the builder and constructs a [`BatchArrayProperties`](crate::model::BatchArrayProperties).
         pub fn build(self) -> crate::model::BatchArrayProperties {
             crate::model::BatchArrayProperties {
-                size: self.size.unwrap_or_default(),
+                size: self.size
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchArrayProperties {
     /// Creates a new builder-style object to manufacture [`BatchArrayProperties`](crate::model::BatchArrayProperties).
@@ -3251,7 +2973,7 @@ impl BatchArrayProperties {
 /// <p>The parameters for using an Amazon ECS task as a target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PipeTargetEcsTaskParameters {
+pub struct PipeTargetEcsTaskParameters  {
     /// <p>The ARN of the task definition to use if the event target is an Amazon ECS task. </p>
     #[doc(hidden)]
     pub task_definition_arn: std::option::Option<std::string::String>,
@@ -3261,22 +2983,21 @@ pub struct PipeTargetEcsTaskParameters {
     /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub launch_type: std::option::Option<crate::model::LaunchType>,
-    /// <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate tasks.</p>
+    /// <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate tasks.</p> 
     /// <p>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the <code>awsvpc</code> network mode, the task fails.</p>
     #[doc(hidden)]
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
-    /// <p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p>
+    /// <p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p> 
     /// <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For more information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>Specifies an Amazon ECS task group for the task. The maximum length is 255 characters.</p>
     #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
-    /// <p>The capacity provider strategy to use for the task.</p>
+    /// <p>The capacity provider strategy to use for the task.</p> 
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
     #[doc(hidden)]
-    pub capacity_provider_strategy:
-        std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
+    pub capacity_provider_strategy: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
     /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide. </p>
     #[doc(hidden)]
     pub enable_ecs_managed_tags: bool,
@@ -3285,8 +3006,7 @@ pub struct PipeTargetEcsTaskParameters {
     pub enable_execute_command: bool,
     /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).</p>
     #[doc(hidden)]
-    pub placement_constraints:
-        std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
+    pub placement_constraints: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
     /// <p>The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task. </p>
     #[doc(hidden)]
     pub placement_strategy: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
@@ -3305,7 +3025,7 @@ pub struct PipeTargetEcsTaskParameters {
 }
 impl PipeTargetEcsTaskParameters {
     /// <p>The ARN of the task definition to use if the event target is an Amazon ECS task. </p>
-    pub fn task_definition_arn(&self) -> std::option::Option<&str> {
+    pub fn task_definition_arn(&self) -> std::option::Option<& str> {
         self.task_definition_arn.as_deref()
     }
     /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is 1.</p>
@@ -3313,30 +3033,26 @@ impl PipeTargetEcsTaskParameters {
         self.task_count
     }
     /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn launch_type(&self) -> std::option::Option<&crate::model::LaunchType> {
+    pub fn launch_type(&self) -> std::option::Option<& crate::model::LaunchType> {
         self.launch_type.as_ref()
     }
-    /// <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate tasks.</p>
+    /// <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate tasks.</p> 
     /// <p>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the <code>awsvpc</code> network mode, the task fails.</p>
-    pub fn network_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::NetworkConfiguration> {
+    pub fn network_configuration(&self) -> std::option::Option<& crate::model::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
-    /// <p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p>
+    /// <p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p> 
     /// <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For more information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn platform_version(&self) -> std::option::Option<&str> {
+    pub fn platform_version(&self) -> std::option::Option<& str> {
         self.platform_version.as_deref()
     }
     /// <p>Specifies an Amazon ECS task group for the task. The maximum length is 255 characters.</p>
-    pub fn group(&self) -> std::option::Option<&str> {
+    pub fn group(&self) -> std::option::Option<& str> {
         self.group.as_deref()
     }
-    /// <p>The capacity provider strategy to use for the task.</p>
+    /// <p>The capacity provider strategy to use for the task.</p> 
     /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
-    pub fn capacity_provider_strategy(
-        &self,
-    ) -> std::option::Option<&[crate::model::CapacityProviderStrategyItem]> {
+    pub fn capacity_provider_strategy(&self) -> std::option::Option<& [crate::model::CapacityProviderStrategyItem]> {
         self.capacity_provider_strategy.as_deref()
     }
     /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide. </p>
@@ -3348,33 +3064,31 @@ impl PipeTargetEcsTaskParameters {
         self.enable_execute_command
     }
     /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).</p>
-    pub fn placement_constraints(
-        &self,
-    ) -> std::option::Option<&[crate::model::PlacementConstraint]> {
+    pub fn placement_constraints(&self) -> std::option::Option<& [crate::model::PlacementConstraint]> {
         self.placement_constraints.as_deref()
     }
     /// <p>The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task. </p>
-    pub fn placement_strategy(&self) -> std::option::Option<&[crate::model::PlacementStrategy]> {
+    pub fn placement_strategy(&self) -> std::option::Option<& [crate::model::PlacementStrategy]> {
         self.placement_strategy.as_deref()
     }
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <code>TagResource</code> API action. </p>
-    pub fn propagate_tags(&self) -> std::option::Option<&crate::model::PropagateTags> {
+    pub fn propagate_tags(&self) -> std::option::Option<& crate::model::PropagateTags> {
         self.propagate_tags.as_ref()
     }
     /// <p>The reference ID to use for the task.</p>
-    pub fn reference_id(&self) -> std::option::Option<&str> {
+    pub fn reference_id(&self) -> std::option::Option<& str> {
         self.reference_id.as_deref()
     }
     /// <p>The overrides that are associated with a task.</p>
-    pub fn overrides(&self) -> std::option::Option<&crate::model::EcsTaskOverride> {
+    pub fn overrides(&self) -> std::option::Option<& crate::model::EcsTaskOverride> {
         self.overrides.as_ref()
     }
     /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a> in the Amazon ECS API Reference.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for PipeTargetEcsTaskParameters {
+impl  std::fmt::Debug for PipeTargetEcsTaskParameters  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipeTargetEcsTaskParameters");
         formatter.field("task_definition_arn", &self.task_definition_arn);
@@ -3383,10 +3097,7 @@ impl std::fmt::Debug for PipeTargetEcsTaskParameters {
         formatter.field("network_configuration", &self.network_configuration);
         formatter.field("platform_version", &self.platform_version);
         formatter.field("group", &self.group);
-        formatter.field(
-            "capacity_provider_strategy",
-            &self.capacity_provider_strategy,
-        );
+        formatter.field("capacity_provider_strategy", &self.capacity_provider_strategy);
         formatter.field("enable_ecs_managed_tags", &self.enable_ecs_managed_tags);
         formatter.field("enable_execute_command", &self.enable_execute_command);
         formatter.field("placement_constraints", &self.placement_constraints);
@@ -3400,7 +3111,7 @@ impl std::fmt::Debug for PipeTargetEcsTaskParameters {
 }
 /// See [`PipeTargetEcsTaskParameters`](crate::model::PipeTargetEcsTaskParameters).
 pub mod pipe_target_ecs_task_parameters {
-
+    
     /// A builder for [`PipeTargetEcsTaskParameters`](crate::model::PipeTargetEcsTaskParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3410,14 +3121,11 @@ pub mod pipe_target_ecs_task_parameters {
         pub(crate) network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
         pub(crate) platform_version: std::option::Option<std::string::String>,
         pub(crate) group: std::option::Option<std::string::String>,
-        pub(crate) capacity_provider_strategy:
-            std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
+        pub(crate) capacity_provider_strategy: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
         pub(crate) enable_ecs_managed_tags: std::option::Option<bool>,
         pub(crate) enable_execute_command: std::option::Option<bool>,
-        pub(crate) placement_constraints:
-            std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
-        pub(crate) placement_strategy:
-            std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
+        pub(crate) placement_constraints: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
+        pub(crate) placement_strategy: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
         pub(crate) propagate_tags: std::option::Option<crate::model::PropagateTags>,
         pub(crate) reference_id: std::option::Option<std::string::String>,
         pub(crate) overrides: std::option::Option<crate::model::EcsTaskOverride>,
@@ -3430,12 +3138,8 @@ pub mod pipe_target_ecs_task_parameters {
             self
         }
         /// <p>The ARN of the task definition to use if the event target is an Amazon ECS task. </p>
-        pub fn set_task_definition_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.task_definition_arn = input;
-            self
+        pub fn set_task_definition_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_definition_arn = input; self
         }
         /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is 1.</p>
         pub fn task_count(mut self, input: i32) -> Self {
@@ -3444,8 +3148,7 @@ pub mod pipe_target_ecs_task_parameters {
         }
         /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is 1.</p>
         pub fn set_task_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.task_count = input;
-            self
+            self.task_count = input; self
         }
         /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn launch_type(mut self, input: crate::model::LaunchType) -> Self {
@@ -3453,42 +3156,30 @@ pub mod pipe_target_ecs_task_parameters {
             self
         }
         /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn set_launch_type(
-            mut self,
-            input: std::option::Option<crate::model::LaunchType>,
-        ) -> Self {
-            self.launch_type = input;
-            self
+        pub fn set_launch_type(mut self, input: std::option::Option<crate::model::LaunchType>) -> Self {
+            self.launch_type = input; self
         }
-        /// <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate tasks.</p>
+        /// <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate tasks.</p> 
         /// <p>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the <code>awsvpc</code> network mode, the task fails.</p>
         pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
             self.network_configuration = Some(input);
             self
         }
-        /// <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate tasks.</p>
+        /// <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if <code>LaunchType</code> is <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate tasks.</p> 
         /// <p>If you specify <code>NetworkConfiguration</code> when the target ECS task does not use the <code>awsvpc</code> network mode, the task fails.</p>
-        pub fn set_network_configuration(
-            mut self,
-            input: std::option::Option<crate::model::NetworkConfiguration>,
-        ) -> Self {
-            self.network_configuration = input;
-            self
+        pub fn set_network_configuration(mut self, input: std::option::Option<crate::model::NetworkConfiguration>) -> Self {
+            self.network_configuration = input; self
         }
-        /// <p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p>
+        /// <p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p> 
         /// <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For more information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform_version = Some(input.into());
             self
         }
-        /// <p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p>
+        /// <p>Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as <code>1.1.0</code>.</p> 
         /// <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For more information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn set_platform_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.platform_version = input;
-            self
+        pub fn set_platform_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.platform_version = input; self
         }
         /// <p>Specifies an Amazon ECS task group for the task. The maximum length is 255 characters.</p>
         pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3497,32 +3188,24 @@ pub mod pipe_target_ecs_task_parameters {
         }
         /// <p>Specifies an Amazon ECS task group for the task. The maximum length is 255 characters.</p>
         pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.group = input;
-            self
+            self.group = input; self
         }
         /// Appends an item to `capacity_provider_strategy`.
         ///
         /// To override the contents of this collection use [`set_capacity_provider_strategy`](Self::set_capacity_provider_strategy).
         ///
-        /// <p>The capacity provider strategy to use for the task.</p>
+        /// <p>The capacity provider strategy to use for the task.</p> 
         /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
-        pub fn capacity_provider_strategy(
-            mut self,
-            input: crate::model::CapacityProviderStrategyItem,
-        ) -> Self {
+        pub fn capacity_provider_strategy(mut self, input: crate::model::CapacityProviderStrategyItem) -> Self {
             let mut v = self.capacity_provider_strategy.unwrap_or_default();
-            v.push(input);
-            self.capacity_provider_strategy = Some(v);
-            self
+                            v.push(input);
+                            self.capacity_provider_strategy = Some(v);
+                            self
         }
-        /// <p>The capacity provider strategy to use for the task.</p>
+        /// <p>The capacity provider strategy to use for the task.</p> 
         /// <p>If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code> parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is used. </p>
-        pub fn set_capacity_provider_strategy(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
-        ) -> Self {
-            self.capacity_provider_strategy = input;
-            self
+        pub fn set_capacity_provider_strategy(mut self, input: std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>) -> Self {
+            self.capacity_provider_strategy = input; self
         }
         /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide. </p>
         pub fn enable_ecs_managed_tags(mut self, input: bool) -> Self {
@@ -3531,8 +3214,7 @@ pub mod pipe_target_ecs_task_parameters {
         }
         /// <p>Specifies whether to enable Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer Guide. </p>
         pub fn set_enable_ecs_managed_tags(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_ecs_managed_tags = input;
-            self
+            self.enable_ecs_managed_tags = input; self
         }
         /// <p>Whether or not to enable the execute command functionality for the containers in this task. If true, this enables execute command functionality on all containers in the task.</p>
         pub fn enable_execute_command(mut self, input: bool) -> Self {
@@ -3541,8 +3223,7 @@ pub mod pipe_target_ecs_task_parameters {
         }
         /// <p>Whether or not to enable the execute command functionality for the containers in this task. If true, this enables execute command functionality on all containers in the task.</p>
         pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
-            self.enable_execute_command = input;
-            self
+            self.enable_execute_command = input; self
         }
         /// Appends an item to `placement_constraints`.
         ///
@@ -3551,17 +3232,13 @@ pub mod pipe_target_ecs_task_parameters {
         /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).</p>
         pub fn placement_constraints(mut self, input: crate::model::PlacementConstraint) -> Self {
             let mut v = self.placement_constraints.unwrap_or_default();
-            v.push(input);
-            self.placement_constraints = Some(v);
-            self
+                            v.push(input);
+                            self.placement_constraints = Some(v);
+                            self
         }
         /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints per task (including constraints in the task definition and those specified at runtime).</p>
-        pub fn set_placement_constraints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
-        ) -> Self {
-            self.placement_constraints = input;
-            self
+        pub fn set_placement_constraints(mut self, input: std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>) -> Self {
+            self.placement_constraints = input; self
         }
         /// Appends an item to `placement_strategy`.
         ///
@@ -3570,17 +3247,13 @@ pub mod pipe_target_ecs_task_parameters {
         /// <p>The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task. </p>
         pub fn placement_strategy(mut self, input: crate::model::PlacementStrategy) -> Self {
             let mut v = self.placement_strategy.unwrap_or_default();
-            v.push(input);
-            self.placement_strategy = Some(v);
-            self
+                            v.push(input);
+                            self.placement_strategy = Some(v);
+                            self
         }
         /// <p>The placement strategy objects to use for the task. You can specify a maximum of five strategy rules per task. </p>
-        pub fn set_placement_strategy(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
-        ) -> Self {
-            self.placement_strategy = input;
-            self
+        pub fn set_placement_strategy(mut self, input: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>) -> Self {
+            self.placement_strategy = input; self
         }
         /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <code>TagResource</code> API action. </p>
         pub fn propagate_tags(mut self, input: crate::model::PropagateTags) -> Self {
@@ -3588,12 +3261,8 @@ pub mod pipe_target_ecs_task_parameters {
             self
         }
         /// <p>Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the <code>TagResource</code> API action. </p>
-        pub fn set_propagate_tags(
-            mut self,
-            input: std::option::Option<crate::model::PropagateTags>,
-        ) -> Self {
-            self.propagate_tags = input;
-            self
+        pub fn set_propagate_tags(mut self, input: std::option::Option<crate::model::PropagateTags>) -> Self {
+            self.propagate_tags = input; self
         }
         /// <p>The reference ID to use for the task.</p>
         pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3602,8 +3271,7 @@ pub mod pipe_target_ecs_task_parameters {
         }
         /// <p>The reference ID to use for the task.</p>
         pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reference_id = input;
-            self
+            self.reference_id = input; self
         }
         /// <p>The overrides that are associated with a task.</p>
         pub fn overrides(mut self, input: crate::model::EcsTaskOverride) -> Self {
@@ -3611,12 +3279,8 @@ pub mod pipe_target_ecs_task_parameters {
             self
         }
         /// <p>The overrides that are associated with a task.</p>
-        pub fn set_overrides(
-            mut self,
-            input: std::option::Option<crate::model::EcsTaskOverride>,
-        ) -> Self {
-            self.overrides = input;
-            self
+        pub fn set_overrides(mut self, input: std::option::Option<crate::model::EcsTaskOverride>) -> Self {
+            self.overrides = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -3625,36 +3289,49 @@ pub mod pipe_target_ecs_task_parameters {
         /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a> in the Amazon ECS API Reference.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a> in the Amazon ECS API Reference.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`PipeTargetEcsTaskParameters`](crate::model::PipeTargetEcsTaskParameters).
         pub fn build(self) -> crate::model::PipeTargetEcsTaskParameters {
             crate::model::PipeTargetEcsTaskParameters {
-                task_definition_arn: self.task_definition_arn,
-                task_count: self.task_count,
-                launch_type: self.launch_type,
-                network_configuration: self.network_configuration,
-                platform_version: self.platform_version,
-                group: self.group,
-                capacity_provider_strategy: self.capacity_provider_strategy,
-                enable_ecs_managed_tags: self.enable_ecs_managed_tags.unwrap_or_default(),
-                enable_execute_command: self.enable_execute_command.unwrap_or_default(),
-                placement_constraints: self.placement_constraints,
-                placement_strategy: self.placement_strategy,
-                propagate_tags: self.propagate_tags,
-                reference_id: self.reference_id,
-                overrides: self.overrides,
-                tags: self.tags,
+                task_definition_arn: self.task_definition_arn
+                ,
+                task_count: self.task_count
+                ,
+                launch_type: self.launch_type
+                ,
+                network_configuration: self.network_configuration
+                ,
+                platform_version: self.platform_version
+                ,
+                group: self.group
+                ,
+                capacity_provider_strategy: self.capacity_provider_strategy
+                ,
+                enable_ecs_managed_tags: self.enable_ecs_managed_tags
+                    .unwrap_or_default()
+                ,
+                enable_execute_command: self.enable_execute_command
+                    .unwrap_or_default()
+                ,
+                placement_constraints: self.placement_constraints
+                ,
+                placement_strategy: self.placement_strategy
+                ,
+                propagate_tags: self.propagate_tags
+                ,
+                reference_id: self.reference_id
+                ,
+                overrides: self.overrides
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
@@ -3667,10 +3344,7 @@ pub mod pipe_target_ecs_task_parameters {
             formatter.field("network_configuration", &self.network_configuration);
             formatter.field("platform_version", &self.platform_version);
             formatter.field("group", &self.group);
-            formatter.field(
-                "capacity_provider_strategy",
-                &self.capacity_provider_strategy,
-            );
+            formatter.field("capacity_provider_strategy", &self.capacity_provider_strategy);
             formatter.field("enable_ecs_managed_tags", &self.enable_ecs_managed_tags);
             formatter.field("enable_execute_command", &self.enable_execute_command);
             formatter.field("placement_constraints", &self.placement_constraints);
@@ -3682,6 +3356,8 @@ pub mod pipe_target_ecs_task_parameters {
             formatter.finish()
         }
     }
+    
+    
 }
 impl PipeTargetEcsTaskParameters {
     /// Creates a new builder-style object to manufacture [`PipeTargetEcsTaskParameters`](crate::model::PipeTargetEcsTaskParameters).
@@ -3693,7 +3369,7 @@ impl PipeTargetEcsTaskParameters {
 /// <p>A key-value pair associated with an Amazon Web Services resource. In EventBridge, rules and event buses support tagging.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>A string you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -3703,15 +3379,15 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>A string you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value for the specified tag key.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
+impl  std::fmt::Debug for Tag  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
         formatter.field("key", &self.key);
@@ -3721,7 +3397,7 @@ impl std::fmt::Debug for Tag {
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3736,8 +3412,7 @@ pub mod tag {
         }
         /// <p>A string you can use to assign a value. The combination of tag keys and values can help you organize and categorize your resources.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value for the specified tag key.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3746,14 +3421,15 @@ pub mod tag {
         }
         /// <p>The value for the specified tag key.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
@@ -3765,6 +3441,8 @@ pub mod tag {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -3776,19 +3454,19 @@ impl Tag {
 /// <p>The overrides that are associated with a task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EcsTaskOverride {
+pub struct EcsTaskOverride  {
     /// <p>One or more container overrides that are sent to a task.</p>
     #[doc(hidden)]
     pub container_overrides: std::option::Option<std::vec::Vec<crate::model::EcsContainerOverride>>,
     /// <p>The cpu override for the task.</p>
     #[doc(hidden)]
     pub cpu: std::option::Option<std::string::String>,
-    /// <p>The ephemeral storage setting override for the task.</p> <note>
-    /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p>
-    /// <ul>
-    /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
-    /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
-    /// </ul>
+    /// <p>The ephemeral storage setting override for the task.</p> <note> 
+    /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p> 
+    /// <ul> 
+    /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> 
+    /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li> 
+    /// </ul> 
     /// </note>
     #[doc(hidden)]
     pub ephemeral_storage: std::option::Option<crate::model::EcsEphemeralStorage>,
@@ -3797,8 +3475,7 @@ pub struct EcsTaskOverride {
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>The Elastic Inference accelerator override for the task.</p>
     #[doc(hidden)]
-    pub inference_accelerator_overrides:
-        std::option::Option<std::vec::Vec<crate::model::EcsInferenceAcceleratorOverride>>,
+    pub inference_accelerator_overrides: std::option::Option<std::vec::Vec<crate::model::EcsInferenceAcceleratorOverride>>,
     /// <p>The memory override for the task.</p>
     #[doc(hidden)]
     pub memory: std::option::Option<std::string::String>,
@@ -3808,57 +3485,51 @@ pub struct EcsTaskOverride {
 }
 impl EcsTaskOverride {
     /// <p>One or more container overrides that are sent to a task.</p>
-    pub fn container_overrides(
-        &self,
-    ) -> std::option::Option<&[crate::model::EcsContainerOverride]> {
+    pub fn container_overrides(&self) -> std::option::Option<& [crate::model::EcsContainerOverride]> {
         self.container_overrides.as_deref()
     }
     /// <p>The cpu override for the task.</p>
-    pub fn cpu(&self) -> std::option::Option<&str> {
+    pub fn cpu(&self) -> std::option::Option<& str> {
         self.cpu.as_deref()
     }
-    /// <p>The ephemeral storage setting override for the task.</p> <note>
-    /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p>
-    /// <ul>
-    /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
-    /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
-    /// </ul>
+    /// <p>The ephemeral storage setting override for the task.</p> <note> 
+    /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p> 
+    /// <ul> 
+    /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> 
+    /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li> 
+    /// </ul> 
     /// </note>
-    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::model::EcsEphemeralStorage> {
+    pub fn ephemeral_storage(&self) -> std::option::Option<& crate::model::EcsEphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution IAM role override for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>The Elastic Inference accelerator override for the task.</p>
-    pub fn inference_accelerator_overrides(
-        &self,
-    ) -> std::option::Option<&[crate::model::EcsInferenceAcceleratorOverride]> {
+    pub fn inference_accelerator_overrides(&self) -> std::option::Option<& [crate::model::EcsInferenceAcceleratorOverride]> {
         self.inference_accelerator_overrides.as_deref()
     }
     /// <p>The memory override for the task.</p>
-    pub fn memory(&self) -> std::option::Option<&str> {
+    pub fn memory(&self) -> std::option::Option<& str> {
         self.memory.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this task are granted the permissions that are specified in this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn task_role_arn(&self) -> std::option::Option<&str> {
+    pub fn task_role_arn(&self) -> std::option::Option<& str> {
         self.task_role_arn.as_deref()
     }
 }
 /// See [`EcsTaskOverride`](crate::model::EcsTaskOverride).
 pub mod ecs_task_override {
-
+    
     /// A builder for [`EcsTaskOverride`](crate::model::EcsTaskOverride).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) container_overrides:
-            std::option::Option<std::vec::Vec<crate::model::EcsContainerOverride>>,
+        pub(crate) container_overrides: std::option::Option<std::vec::Vec<crate::model::EcsContainerOverride>>,
         pub(crate) cpu: std::option::Option<std::string::String>,
         pub(crate) ephemeral_storage: std::option::Option<crate::model::EcsEphemeralStorage>,
         pub(crate) execution_role_arn: std::option::Option<std::string::String>,
-        pub(crate) inference_accelerator_overrides:
-            std::option::Option<std::vec::Vec<crate::model::EcsInferenceAcceleratorOverride>>,
+        pub(crate) inference_accelerator_overrides: std::option::Option<std::vec::Vec<crate::model::EcsInferenceAcceleratorOverride>>,
         pub(crate) memory: std::option::Option<std::string::String>,
         pub(crate) task_role_arn: std::option::Option<std::string::String>,
     }
@@ -3870,17 +3541,13 @@ pub mod ecs_task_override {
         /// <p>One or more container overrides that are sent to a task.</p>
         pub fn container_overrides(mut self, input: crate::model::EcsContainerOverride) -> Self {
             let mut v = self.container_overrides.unwrap_or_default();
-            v.push(input);
-            self.container_overrides = Some(v);
-            self
+                            v.push(input);
+                            self.container_overrides = Some(v);
+                            self
         }
         /// <p>One or more container overrides that are sent to a task.</p>
-        pub fn set_container_overrides(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EcsContainerOverride>>,
-        ) -> Self {
-            self.container_overrides = input;
-            self
+        pub fn set_container_overrides(mut self, input: std::option::Option<std::vec::Vec<crate::model::EcsContainerOverride>>) -> Self {
+            self.container_overrides = input; self
         }
         /// <p>The cpu override for the task.</p>
         pub fn cpu(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3889,33 +3556,28 @@ pub mod ecs_task_override {
         }
         /// <p>The cpu override for the task.</p>
         pub fn set_cpu(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cpu = input;
-            self
+            self.cpu = input; self
         }
-        /// <p>The ephemeral storage setting override for the task.</p> <note>
-        /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p>
-        /// <ul>
-        /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
-        /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
-        /// </ul>
+        /// <p>The ephemeral storage setting override for the task.</p> <note> 
+        /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p> 
+        /// <ul> 
+        /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> 
+        /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li> 
+        /// </ul> 
         /// </note>
         pub fn ephemeral_storage(mut self, input: crate::model::EcsEphemeralStorage) -> Self {
             self.ephemeral_storage = Some(input);
             self
         }
-        /// <p>The ephemeral storage setting override for the task.</p> <note>
-        /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p>
-        /// <ul>
-        /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
-        /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
-        /// </ul>
+        /// <p>The ephemeral storage setting override for the task.</p> <note> 
+        /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p> 
+        /// <ul> 
+        /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> 
+        /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li> 
+        /// </ul> 
         /// </note>
-        pub fn set_ephemeral_storage(
-            mut self,
-            input: std::option::Option<crate::model::EcsEphemeralStorage>,
-        ) -> Self {
-            self.ephemeral_storage = input;
-            self
+        pub fn set_ephemeral_storage(mut self, input: std::option::Option<crate::model::EcsEphemeralStorage>) -> Self {
+            self.ephemeral_storage = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the task execution IAM role override for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3923,36 +3585,23 @@ pub mod ecs_task_override {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the task execution IAM role override for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn set_execution_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_role_arn = input;
-            self
+        pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_role_arn = input; self
         }
         /// Appends an item to `inference_accelerator_overrides`.
         ///
         /// To override the contents of this collection use [`set_inference_accelerator_overrides`](Self::set_inference_accelerator_overrides).
         ///
         /// <p>The Elastic Inference accelerator override for the task.</p>
-        pub fn inference_accelerator_overrides(
-            mut self,
-            input: crate::model::EcsInferenceAcceleratorOverride,
-        ) -> Self {
+        pub fn inference_accelerator_overrides(mut self, input: crate::model::EcsInferenceAcceleratorOverride) -> Self {
             let mut v = self.inference_accelerator_overrides.unwrap_or_default();
-            v.push(input);
-            self.inference_accelerator_overrides = Some(v);
-            self
+                            v.push(input);
+                            self.inference_accelerator_overrides = Some(v);
+                            self
         }
         /// <p>The Elastic Inference accelerator override for the task.</p>
-        pub fn set_inference_accelerator_overrides(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::EcsInferenceAcceleratorOverride>,
-            >,
-        ) -> Self {
-            self.inference_accelerator_overrides = input;
-            self
+        pub fn set_inference_accelerator_overrides(mut self, input: std::option::Option<std::vec::Vec<crate::model::EcsInferenceAcceleratorOverride>>) -> Self {
+            self.inference_accelerator_overrides = input; self
         }
         /// <p>The memory override for the task.</p>
         pub fn memory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3961,8 +3610,7 @@ pub mod ecs_task_override {
         }
         /// <p>The memory override for the task.</p>
         pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.memory = input;
-            self
+            self.memory = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this task are granted the permissions that are specified in this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn task_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3970,26 +3618,31 @@ pub mod ecs_task_override {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this task are granted the permissions that are specified in this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn set_task_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.task_role_arn = input;
-            self
+        pub fn set_task_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.task_role_arn = input; self
         }
         /// Consumes the builder and constructs a [`EcsTaskOverride`](crate::model::EcsTaskOverride).
         pub fn build(self) -> crate::model::EcsTaskOverride {
             crate::model::EcsTaskOverride {
-                container_overrides: self.container_overrides,
-                cpu: self.cpu,
-                ephemeral_storage: self.ephemeral_storage,
-                execution_role_arn: self.execution_role_arn,
-                inference_accelerator_overrides: self.inference_accelerator_overrides,
-                memory: self.memory,
-                task_role_arn: self.task_role_arn,
+                container_overrides: self.container_overrides
+                ,
+                cpu: self.cpu
+                ,
+                ephemeral_storage: self.ephemeral_storage
+                ,
+                execution_role_arn: self.execution_role_arn
+                ,
+                inference_accelerator_overrides: self.inference_accelerator_overrides
+                ,
+                memory: self.memory
+                ,
+                task_role_arn: self.task_role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl EcsTaskOverride {
     /// Creates a new builder-style object to manufacture [`EcsTaskOverride`](crate::model::EcsTaskOverride).
@@ -4001,7 +3654,7 @@ impl EcsTaskOverride {
 /// <p>Details on an Elastic Inference accelerator task override. This parameter is used to override the Elastic Inference accelerator specified in the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/ecs-inference.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EcsInferenceAcceleratorOverride {
+pub struct EcsInferenceAcceleratorOverride  {
     /// <p>The Elastic Inference accelerator device name to override for the task. This parameter must match a <code>deviceName</code> specified in the task definition.</p>
     #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
@@ -4011,17 +3664,17 @@ pub struct EcsInferenceAcceleratorOverride {
 }
 impl EcsInferenceAcceleratorOverride {
     /// <p>The Elastic Inference accelerator device name to override for the task. This parameter must match a <code>deviceName</code> specified in the task definition.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> std::option::Option<& str> {
         self.device_name.as_deref()
     }
     /// <p>The Elastic Inference accelerator type to use.</p>
-    pub fn device_type(&self) -> std::option::Option<&str> {
+    pub fn device_type(&self) -> std::option::Option<& str> {
         self.device_type.as_deref()
     }
 }
 /// See [`EcsInferenceAcceleratorOverride`](crate::model::EcsInferenceAcceleratorOverride).
 pub mod ecs_inference_accelerator_override {
-
+    
     /// A builder for [`EcsInferenceAcceleratorOverride`](crate::model::EcsInferenceAcceleratorOverride).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4036,8 +3689,7 @@ pub mod ecs_inference_accelerator_override {
         }
         /// <p>The Elastic Inference accelerator device name to override for the task. This parameter must match a <code>deviceName</code> specified in the task definition.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_name = input;
-            self
+            self.device_name = input; self
         }
         /// <p>The Elastic Inference accelerator type to use.</p>
         pub fn device_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4046,17 +3698,20 @@ pub mod ecs_inference_accelerator_override {
         }
         /// <p>The Elastic Inference accelerator type to use.</p>
         pub fn set_device_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_type = input;
-            self
+            self.device_type = input; self
         }
         /// Consumes the builder and constructs a [`EcsInferenceAcceleratorOverride`](crate::model::EcsInferenceAcceleratorOverride).
         pub fn build(self) -> crate::model::EcsInferenceAcceleratorOverride {
             crate::model::EcsInferenceAcceleratorOverride {
-                device_name: self.device_name,
-                device_type: self.device_type,
+                device_name: self.device_name
+                ,
+                device_type: self.device_type
+                ,
             }
         }
     }
+    
+    
 }
 impl EcsInferenceAcceleratorOverride {
     /// Creates a new builder-style object to manufacture [`EcsInferenceAcceleratorOverride`](crate::model::EcsInferenceAcceleratorOverride).
@@ -4065,12 +3720,12 @@ impl EcsInferenceAcceleratorOverride {
     }
 }
 
-/// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> <note>
-/// <p>This parameter is only supported for tasks hosted on Fargate using Linux platform version <code>1.4.0</code> or later. This parameter is not supported for Windows containers on Fargate.</p>
+/// <p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> <note> 
+/// <p>This parameter is only supported for tasks hosted on Fargate using Linux platform version <code>1.4.0</code> or later. This parameter is not supported for Windows containers on Fargate.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EcsEphemeralStorage {
+pub struct EcsEphemeralStorage  {
     /// <p>The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is <code>21</code> GiB and the maximum supported value is <code>200</code> GiB.</p>
     #[doc(hidden)]
     pub size_in_gi_b: i32,
@@ -4083,7 +3738,7 @@ impl EcsEphemeralStorage {
 }
 /// See [`EcsEphemeralStorage`](crate::model::EcsEphemeralStorage).
 pub mod ecs_ephemeral_storage {
-
+    
     /// A builder for [`EcsEphemeralStorage`](crate::model::EcsEphemeralStorage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4097,16 +3752,19 @@ pub mod ecs_ephemeral_storage {
         }
         /// <p>The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is <code>21</code> GiB and the maximum supported value is <code>200</code> GiB.</p>
         pub fn set_size_in_gi_b(mut self, input: std::option::Option<i32>) -> Self {
-            self.size_in_gi_b = input;
-            self
+            self.size_in_gi_b = input; self
         }
         /// Consumes the builder and constructs a [`EcsEphemeralStorage`](crate::model::EcsEphemeralStorage).
         pub fn build(self) -> crate::model::EcsEphemeralStorage {
             crate::model::EcsEphemeralStorage {
-                size_in_gi_b: self.size_in_gi_b.unwrap_or_default(),
+                size_in_gi_b: self.size_in_gi_b
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl EcsEphemeralStorage {
     /// Creates a new builder-style object to manufacture [`EcsEphemeralStorage`](crate::model::EcsEphemeralStorage).
@@ -4118,7 +3776,7 @@ impl EcsEphemeralStorage {
 /// <p>The overrides that are sent to a container. An empty container override can be passed in. An example of an empty container override is <code>{"containerOverrides": [ ] }</code>. If a non-empty container override is specified, the <code>name</code> parameter must be included.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EcsContainerOverride {
+pub struct EcsContainerOverride  {
     /// <p>The command to send to the container that overrides the default command from the Docker image or the task definition. You must also specify a container name.</p>
     #[doc(hidden)]
     pub command: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4142,12 +3800,11 @@ pub struct EcsContainerOverride {
     pub name: std::option::Option<std::string::String>,
     /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU.</p>
     #[doc(hidden)]
-    pub resource_requirements:
-        std::option::Option<std::vec::Vec<crate::model::EcsResourceRequirement>>,
+    pub resource_requirements: std::option::Option<std::vec::Vec<crate::model::EcsResourceRequirement>>,
 }
 impl EcsContainerOverride {
     /// <p>The command to send to the container that overrides the default command from the Docker image or the task definition. You must also specify a container name.</p>
-    pub fn command(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn command(&self) -> std::option::Option<& [std::string::String]> {
         self.command.as_deref()
     }
     /// <p>The number of <code>cpu</code> units reserved for the container, instead of the default value from the task definition. You must also specify a container name.</p>
@@ -4155,11 +3812,11 @@ impl EcsContainerOverride {
         self.cpu
     }
     /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. You must also specify a container name.</p>
-    pub fn environment(&self) -> std::option::Option<&[crate::model::EcsEnvironmentVariable]> {
+    pub fn environment(&self) -> std::option::Option<& [crate::model::EcsEnvironmentVariable]> {
         self.environment.as_deref()
     }
     /// <p>A list of files containing the environment variables to pass to a container, instead of the value from the container definition.</p>
-    pub fn environment_files(&self) -> std::option::Option<&[crate::model::EcsEnvironmentFile]> {
+    pub fn environment_files(&self) -> std::option::Option<& [crate::model::EcsEnvironmentFile]> {
         self.environment_files.as_deref()
     }
     /// <p>The hard limit (in MiB) of memory to present to the container, instead of the default value from the task definition. If your container attempts to exceed the memory specified here, the container is killed. You must also specify a container name.</p>
@@ -4171,33 +3828,28 @@ impl EcsContainerOverride {
         self.memory_reservation
     }
     /// <p>The name of the container that receives the override. This parameter is required if any override is specified.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU.</p>
-    pub fn resource_requirements(
-        &self,
-    ) -> std::option::Option<&[crate::model::EcsResourceRequirement]> {
+    pub fn resource_requirements(&self) -> std::option::Option<& [crate::model::EcsResourceRequirement]> {
         self.resource_requirements.as_deref()
     }
 }
 /// See [`EcsContainerOverride`](crate::model::EcsContainerOverride).
 pub mod ecs_container_override {
-
+    
     /// A builder for [`EcsContainerOverride`](crate::model::EcsContainerOverride).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) command: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) cpu: std::option::Option<i32>,
-        pub(crate) environment:
-            std::option::Option<std::vec::Vec<crate::model::EcsEnvironmentVariable>>,
-        pub(crate) environment_files:
-            std::option::Option<std::vec::Vec<crate::model::EcsEnvironmentFile>>,
+        pub(crate) environment: std::option::Option<std::vec::Vec<crate::model::EcsEnvironmentVariable>>,
+        pub(crate) environment_files: std::option::Option<std::vec::Vec<crate::model::EcsEnvironmentFile>>,
         pub(crate) memory: std::option::Option<i32>,
         pub(crate) memory_reservation: std::option::Option<i32>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) resource_requirements:
-            std::option::Option<std::vec::Vec<crate::model::EcsResourceRequirement>>,
+        pub(crate) resource_requirements: std::option::Option<std::vec::Vec<crate::model::EcsResourceRequirement>>,
     }
     impl Builder {
         /// Appends an item to `command`.
@@ -4207,17 +3859,13 @@ pub mod ecs_container_override {
         /// <p>The command to send to the container that overrides the default command from the Docker image or the task definition. You must also specify a container name.</p>
         pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.command.unwrap_or_default();
-            v.push(input.into());
-            self.command = Some(v);
-            self
+                            v.push(input.into());
+                            self.command = Some(v);
+                            self
         }
         /// <p>The command to send to the container that overrides the default command from the Docker image or the task definition. You must also specify a container name.</p>
-        pub fn set_command(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.command = input;
-            self
+        pub fn set_command(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.command = input; self
         }
         /// <p>The number of <code>cpu</code> units reserved for the container, instead of the default value from the task definition. You must also specify a container name.</p>
         pub fn cpu(mut self, input: i32) -> Self {
@@ -4226,8 +3874,7 @@ pub mod ecs_container_override {
         }
         /// <p>The number of <code>cpu</code> units reserved for the container, instead of the default value from the task definition. You must also specify a container name.</p>
         pub fn set_cpu(mut self, input: std::option::Option<i32>) -> Self {
-            self.cpu = input;
-            self
+            self.cpu = input; self
         }
         /// Appends an item to `environment`.
         ///
@@ -4236,17 +3883,13 @@ pub mod ecs_container_override {
         /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. You must also specify a container name.</p>
         pub fn environment(mut self, input: crate::model::EcsEnvironmentVariable) -> Self {
             let mut v = self.environment.unwrap_or_default();
-            v.push(input);
-            self.environment = Some(v);
-            self
+                            v.push(input);
+                            self.environment = Some(v);
+                            self
         }
         /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. You must also specify a container name.</p>
-        pub fn set_environment(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EcsEnvironmentVariable>>,
-        ) -> Self {
-            self.environment = input;
-            self
+        pub fn set_environment(mut self, input: std::option::Option<std::vec::Vec<crate::model::EcsEnvironmentVariable>>) -> Self {
+            self.environment = input; self
         }
         /// Appends an item to `environment_files`.
         ///
@@ -4255,17 +3898,13 @@ pub mod ecs_container_override {
         /// <p>A list of files containing the environment variables to pass to a container, instead of the value from the container definition.</p>
         pub fn environment_files(mut self, input: crate::model::EcsEnvironmentFile) -> Self {
             let mut v = self.environment_files.unwrap_or_default();
-            v.push(input);
-            self.environment_files = Some(v);
-            self
+                            v.push(input);
+                            self.environment_files = Some(v);
+                            self
         }
         /// <p>A list of files containing the environment variables to pass to a container, instead of the value from the container definition.</p>
-        pub fn set_environment_files(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EcsEnvironmentFile>>,
-        ) -> Self {
-            self.environment_files = input;
-            self
+        pub fn set_environment_files(mut self, input: std::option::Option<std::vec::Vec<crate::model::EcsEnvironmentFile>>) -> Self {
+            self.environment_files = input; self
         }
         /// <p>The hard limit (in MiB) of memory to present to the container, instead of the default value from the task definition. If your container attempts to exceed the memory specified here, the container is killed. You must also specify a container name.</p>
         pub fn memory(mut self, input: i32) -> Self {
@@ -4274,8 +3913,7 @@ pub mod ecs_container_override {
         }
         /// <p>The hard limit (in MiB) of memory to present to the container, instead of the default value from the task definition. If your container attempts to exceed the memory specified here, the container is killed. You must also specify a container name.</p>
         pub fn set_memory(mut self, input: std::option::Option<i32>) -> Self {
-            self.memory = input;
-            self
+            self.memory = input; self
         }
         /// <p>The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task definition. You must also specify a container name.</p>
         pub fn memory_reservation(mut self, input: i32) -> Self {
@@ -4284,8 +3922,7 @@ pub mod ecs_container_override {
         }
         /// <p>The soft limit (in MiB) of memory to reserve for the container, instead of the default value from the task definition. You must also specify a container name.</p>
         pub fn set_memory_reservation(mut self, input: std::option::Option<i32>) -> Self {
-            self.memory_reservation = input;
-            self
+            self.memory_reservation = input; self
         }
         /// <p>The name of the container that receives the override. This parameter is required if any override is specified.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4294,45 +3931,47 @@ pub mod ecs_container_override {
         }
         /// <p>The name of the container that receives the override. This parameter is required if any override is specified.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `resource_requirements`.
         ///
         /// To override the contents of this collection use [`set_resource_requirements`](Self::set_resource_requirements).
         ///
         /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU.</p>
-        pub fn resource_requirements(
-            mut self,
-            input: crate::model::EcsResourceRequirement,
-        ) -> Self {
+        pub fn resource_requirements(mut self, input: crate::model::EcsResourceRequirement) -> Self {
             let mut v = self.resource_requirements.unwrap_or_default();
-            v.push(input);
-            self.resource_requirements = Some(v);
-            self
+                            v.push(input);
+                            self.resource_requirements = Some(v);
+                            self
         }
         /// <p>The type and amount of a resource to assign to a container, instead of the default value from the task definition. The only supported resource is a GPU.</p>
-        pub fn set_resource_requirements(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EcsResourceRequirement>>,
-        ) -> Self {
-            self.resource_requirements = input;
-            self
+        pub fn set_resource_requirements(mut self, input: std::option::Option<std::vec::Vec<crate::model::EcsResourceRequirement>>) -> Self {
+            self.resource_requirements = input; self
         }
         /// Consumes the builder and constructs a [`EcsContainerOverride`](crate::model::EcsContainerOverride).
         pub fn build(self) -> crate::model::EcsContainerOverride {
             crate::model::EcsContainerOverride {
-                command: self.command,
-                cpu: self.cpu,
-                environment: self.environment,
-                environment_files: self.environment_files,
-                memory: self.memory,
-                memory_reservation: self.memory_reservation,
-                name: self.name,
-                resource_requirements: self.resource_requirements,
+                command: self.command
+                ,
+                cpu: self.cpu
+                ,
+                environment: self.environment
+                ,
+                environment_files: self.environment_files
+                ,
+                memory: self.memory
+                ,
+                memory_reservation: self.memory_reservation
+                ,
+                name: self.name
+                ,
+                resource_requirements: self.resource_requirements
+                ,
             }
         }
     }
+    
+    
 }
 impl EcsContainerOverride {
     /// Creates a new builder-style object to manufacture [`EcsContainerOverride`](crate::model::EcsContainerOverride).
@@ -4344,31 +3983,31 @@ impl EcsContainerOverride {
 /// <p>The type and amount of a resource to assign to a container. The supported resource types are GPUs and Elastic Inference accelerators. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working with GPUs on Amazon ECS</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i> </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EcsResourceRequirement {
+pub struct EcsResourceRequirement  {
     /// <p>The type of resource to assign to a container. The supported values are <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EcsResourceRequirementType>,
-    /// <p>The value for the specified resource type.</p>
-    /// <p>If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code> the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on.</p>
+    /// <p>The value for the specified resource type.</p> 
+    /// <p>If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code> the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on.</p> 
     /// <p>If the <code>InferenceAccelerator</code> type is used, the <code>value</code> matches the <code>deviceName</code> for an InferenceAccelerator specified in a task definition.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl EcsResourceRequirement {
     /// <p>The type of resource to assign to a container. The supported values are <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::EcsResourceRequirementType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::EcsResourceRequirementType> {
         self.r#type.as_ref()
     }
-    /// <p>The value for the specified resource type.</p>
-    /// <p>If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code> the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on.</p>
+    /// <p>The value for the specified resource type.</p> 
+    /// <p>If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code> the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on.</p> 
     /// <p>If the <code>InferenceAccelerator</code> type is used, the <code>value</code> matches the <code>deviceName</code> for an InferenceAccelerator specified in a task definition.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`EcsResourceRequirement`](crate::model::EcsResourceRequirement).
 pub mod ecs_resource_requirement {
-
+    
     /// A builder for [`EcsResourceRequirement`](crate::model::EcsResourceRequirement).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4382,35 +4021,34 @@ pub mod ecs_resource_requirement {
             self
         }
         /// <p>The type of resource to assign to a container. The supported values are <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::EcsResourceRequirementType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::EcsResourceRequirementType>) -> Self {
+            self.r#type = input; self
         }
-        /// <p>The value for the specified resource type.</p>
-        /// <p>If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code> the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on.</p>
+        /// <p>The value for the specified resource type.</p> 
+        /// <p>If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code> the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on.</p> 
         /// <p>If the <code>InferenceAccelerator</code> type is used, the <code>value</code> matches the <code>deviceName</code> for an InferenceAccelerator specified in a task definition.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
         }
-        /// <p>The value for the specified resource type.</p>
-        /// <p>If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code> the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on.</p>
+        /// <p>The value for the specified resource type.</p> 
+        /// <p>If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code> the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on.</p> 
         /// <p>If the <code>InferenceAccelerator</code> type is used, the <code>value</code> matches the <code>deviceName</code> for an InferenceAccelerator specified in a task definition.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`EcsResourceRequirement`](crate::model::EcsResourceRequirement).
         pub fn build(self) -> crate::model::EcsResourceRequirement {
             crate::model::EcsResourceRequirement {
-                r#type: self.r#type,
-                value: self.value,
+                r#type: self.r#type
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl EcsResourceRequirement {
     /// Creates a new builder-style object to manufacture [`EcsResourceRequirement`](crate::model::EcsResourceRequirement).
@@ -4425,9 +4063,9 @@ impl EcsResourceRequirement {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ecsresourcerequirementtype = unimplemented!();
 /// match ecsresourcerequirementtype {
@@ -4449,60 +4087,52 @@ impl EcsResourceRequirement {
 /// Specifically, when `ecsresourcerequirementtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EcsResourceRequirementType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EcsResourceRequirementType {
     #[allow(missing_docs)] // documentation missing in model
     Gpu,
     #[allow(missing_docs)] // documentation missing in model
     InferenceAccelerator,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EcsResourceRequirementType {
     fn from(s: &str) -> Self {
         match s {
             "GPU" => EcsResourceRequirementType::Gpu,
             "InferenceAccelerator" => EcsResourceRequirementType::InferenceAccelerator,
-            other => EcsResourceRequirementType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => EcsResourceRequirementType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EcsResourceRequirementType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EcsResourceRequirementType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EcsResourceRequirementType::from(s))
+                }
+            }
 impl EcsResourceRequirementType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EcsResourceRequirementType::Gpu => "GPU",
             EcsResourceRequirementType::InferenceAccelerator => "InferenceAccelerator",
-            EcsResourceRequirementType::Unknown(value) => value.as_str(),
+            EcsResourceRequirementType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GPU", "InferenceAccelerator"]
+        &[
+            "GPU", "InferenceAccelerator"
+        ]
     }
 }
 impl AsRef<str> for EcsResourceRequirementType {
@@ -4511,16 +4141,16 @@ impl AsRef<str> for EcsResourceRequirementType {
     }
 }
 
-/// <p>A list of files containing the environment variables to pass to a container. You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated as comments and are ignored. For more information about the environment variable file syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default environment variables in file</a>.</p>
-/// <p>If there are environment variables specified using the <code>environment</code> parameter in a container definition, they take precedence over the variables contained within an environment file. If multiple environment files are specified that contain the same variable, they're processed from the top down. We recommend that you use unique variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying environment variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-/// <p>This parameter is only supported for tasks hosted on Fargate using the following platform versions:</p>
-/// <ul>
-/// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
-/// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
+/// <p>A list of files containing the environment variables to pass to a container. You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated as comments and are ignored. For more information about the environment variable file syntax, see <a href="https://docs.docker.com/compose/env-file/">Declare default environment variables in file</a>.</p> 
+/// <p>If there are environment variables specified using the <code>environment</code> parameter in a container definition, they take precedence over the variables contained within an environment file. If multiple environment files are specified that contain the same variable, they're processed from the top down. We recommend that you use unique variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying environment variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> 
+/// <p>This parameter is only supported for tasks hosted on Fargate using the following platform versions:</p> 
+/// <ul> 
+/// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> 
+/// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EcsEnvironmentFile {
+pub struct EcsEnvironmentFile  {
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EcsEnvironmentFileType>,
@@ -4530,17 +4160,17 @@ pub struct EcsEnvironmentFile {
 }
 impl EcsEnvironmentFile {
     /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::EcsEnvironmentFileType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::EcsEnvironmentFileType> {
         self.r#type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`EcsEnvironmentFile`](crate::model::EcsEnvironmentFile).
 pub mod ecs_environment_file {
-
+    
     /// A builder for [`EcsEnvironmentFile`](crate::model::EcsEnvironmentFile).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4554,12 +4184,8 @@ pub mod ecs_environment_file {
             self
         }
         /// <p>The file type to use. The only supported value is <code>s3</code>.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::EcsEnvironmentFileType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::EcsEnvironmentFileType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4568,17 +4194,20 @@ pub mod ecs_environment_file {
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon S3 object containing the environment variable file.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`EcsEnvironmentFile`](crate::model::EcsEnvironmentFile).
         pub fn build(self) -> crate::model::EcsEnvironmentFile {
             crate::model::EcsEnvironmentFile {
-                r#type: self.r#type,
-                value: self.value,
+                r#type: self.r#type
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl EcsEnvironmentFile {
     /// Creates a new builder-style object to manufacture [`EcsEnvironmentFile`](crate::model::EcsEnvironmentFile).
@@ -4593,9 +4222,9 @@ impl EcsEnvironmentFile {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ecsenvironmentfiletype = unimplemented!();
 /// match ecsenvironmentfiletype {
@@ -4616,56 +4245,48 @@ impl EcsEnvironmentFile {
 /// Specifically, when `ecsenvironmentfiletype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EcsEnvironmentFileType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EcsEnvironmentFileType {
     #[allow(missing_docs)] // documentation missing in model
     S3,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EcsEnvironmentFileType {
     fn from(s: &str) -> Self {
         match s {
             "s3" => EcsEnvironmentFileType::S3,
-            other => {
-                EcsEnvironmentFileType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => EcsEnvironmentFileType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EcsEnvironmentFileType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EcsEnvironmentFileType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EcsEnvironmentFileType::from(s))
+                }
+            }
 impl EcsEnvironmentFileType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EcsEnvironmentFileType::S3 => "s3",
-            EcsEnvironmentFileType::Unknown(value) => value.as_str(),
+            EcsEnvironmentFileType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["s3"]
+        &[
+            "s3"
+        ]
     }
 }
 impl AsRef<str> for EcsEnvironmentFileType {
@@ -4677,7 +4298,7 @@ impl AsRef<str> for EcsEnvironmentFileType {
 /// <p>The environment variables to send to the container. You can add new environment variables, which are added to the container at launch, or you can override the existing environment variables from the Docker image or the task definition. You must also specify a container name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EcsEnvironmentVariable {
+pub struct EcsEnvironmentVariable  {
     /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4687,17 +4308,17 @@ pub struct EcsEnvironmentVariable {
 }
 impl EcsEnvironmentVariable {
     /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The value of the key-value pair. For environment variables, this is the value of the environment variable.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`EcsEnvironmentVariable`](crate::model::EcsEnvironmentVariable).
 pub mod ecs_environment_variable {
-
+    
     /// A builder for [`EcsEnvironmentVariable`](crate::model::EcsEnvironmentVariable).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4712,8 +4333,7 @@ pub mod ecs_environment_variable {
         }
         /// <p>The name of the key-value pair. For environment variables, this is the name of the environment variable.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The value of the key-value pair. For environment variables, this is the value of the environment variable.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4722,17 +4342,20 @@ pub mod ecs_environment_variable {
         }
         /// <p>The value of the key-value pair. For environment variables, this is the value of the environment variable.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`EcsEnvironmentVariable`](crate::model::EcsEnvironmentVariable).
         pub fn build(self) -> crate::model::EcsEnvironmentVariable {
             crate::model::EcsEnvironmentVariable {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl EcsEnvironmentVariable {
     /// Creates a new builder-style object to manufacture [`EcsEnvironmentVariable`](crate::model::EcsEnvironmentVariable).
@@ -4747,9 +4370,9 @@ impl EcsEnvironmentVariable {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let propagatetags = unimplemented!();
 /// match propagatetags {
@@ -4770,54 +4393,48 @@ impl EcsEnvironmentVariable {
 /// Specifically, when `propagatetags` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PropagateTags::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PropagateTags {
     #[allow(missing_docs)] // documentation missing in model
     TaskDefinition,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PropagateTags {
     fn from(s: &str) -> Self {
         match s {
             "TASK_DEFINITION" => PropagateTags::TaskDefinition,
-            other => PropagateTags::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PropagateTags::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PropagateTags {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PropagateTags::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PropagateTags::from(s))
+                }
+            }
 impl PropagateTags {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PropagateTags::TaskDefinition => "TASK_DEFINITION",
-            PropagateTags::Unknown(value) => value.as_str(),
+            PropagateTags::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TASK_DEFINITION"]
+        &[
+            "TASK_DEFINITION"
+        ]
     }
 }
 impl AsRef<str> for PropagateTags {
@@ -4829,7 +4446,7 @@ impl AsRef<str> for PropagateTags {
 /// <p>The task placement strategy for a task or service. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task Placement Strategies</a> in the Amazon Elastic Container Service Service Developer Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PlacementStrategy {
+pub struct PlacementStrategy  {
     /// <p>The type of placement strategy. The random placement strategy randomly places tasks on available candidates. The spread placement strategy spreads placement across available candidates evenly based on the field parameter. The binpack strategy places tasks on available candidates that have the least available amount of the resource that is specified with the field parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory (but still enough to run the task). </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PlacementStrategyType>,
@@ -4839,15 +4456,15 @@ pub struct PlacementStrategy {
 }
 impl PlacementStrategy {
     /// <p>The type of placement strategy. The random placement strategy randomly places tasks on available candidates. The spread placement strategy spreads placement across available candidates evenly based on the field parameter. The binpack strategy places tasks on available candidates that have the least available amount of the resource that is specified with the field parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory (but still enough to run the task). </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PlacementStrategyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::PlacementStrategyType> {
         self.r#type.as_ref()
     }
     /// <p>The field to apply the placement strategy against. For the spread placement strategy, valid values are instanceId (or host, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as attribute:ecs.availability-zone. For the binpack placement strategy, valid values are cpu and memory. For the random placement strategy, this field is not used. </p>
-    pub fn field(&self) -> std::option::Option<&str> {
+    pub fn field(&self) -> std::option::Option<& str> {
         self.field.as_deref()
     }
 }
-impl std::fmt::Debug for PlacementStrategy {
+impl  std::fmt::Debug for PlacementStrategy  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PlacementStrategy");
         formatter.field("r#type", &self.r#type);
@@ -4857,7 +4474,7 @@ impl std::fmt::Debug for PlacementStrategy {
 }
 /// See [`PlacementStrategy`](crate::model::PlacementStrategy).
 pub mod placement_strategy {
-
+    
     /// A builder for [`PlacementStrategy`](crate::model::PlacementStrategy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4871,12 +4488,8 @@ pub mod placement_strategy {
             self
         }
         /// <p>The type of placement strategy. The random placement strategy randomly places tasks on available candidates. The spread placement strategy spreads placement across available candidates evenly based on the field parameter. The binpack strategy places tasks on available candidates that have the least available amount of the resource that is specified with the field parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory (but still enough to run the task). </p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::PlacementStrategyType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::PlacementStrategyType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The field to apply the placement strategy against. For the spread placement strategy, valid values are instanceId (or host, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as attribute:ecs.availability-zone. For the binpack placement strategy, valid values are cpu and memory. For the random placement strategy, this field is not used. </p>
         pub fn field(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4885,14 +4498,15 @@ pub mod placement_strategy {
         }
         /// <p>The field to apply the placement strategy against. For the spread placement strategy, valid values are instanceId (or host, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as attribute:ecs.availability-zone. For the binpack placement strategy, valid values are cpu and memory. For the random placement strategy, this field is not used. </p>
         pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.field = input;
-            self
+            self.field = input; self
         }
         /// Consumes the builder and constructs a [`PlacementStrategy`](crate::model::PlacementStrategy).
         pub fn build(self) -> crate::model::PlacementStrategy {
             crate::model::PlacementStrategy {
-                r#type: self.r#type,
-                field: self.field,
+                r#type: self.r#type
+                ,
+                field: self.field
+                ,
             }
         }
     }
@@ -4904,6 +4518,8 @@ pub mod placement_strategy {
             formatter.finish()
         }
     }
+    
+    
 }
 impl PlacementStrategy {
     /// Creates a new builder-style object to manufacture [`PlacementStrategy`](crate::model::PlacementStrategy).
@@ -4918,9 +4534,9 @@ impl PlacementStrategy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let placementstrategytype = unimplemented!();
 /// match placementstrategytype {
@@ -4943,22 +4559,14 @@ impl PlacementStrategy {
 /// Specifically, when `placementstrategytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PlacementStrategyType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PlacementStrategyType {
     #[allow(missing_docs)] // documentation missing in model
     Binpack,
@@ -4967,7 +4575,7 @@ pub enum PlacementStrategyType {
     #[allow(missing_docs)] // documentation missing in model
     Spread,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PlacementStrategyType {
     fn from(s: &str) -> Self {
@@ -4975,19 +4583,17 @@ impl std::convert::From<&str> for PlacementStrategyType {
             "binpack" => PlacementStrategyType::Binpack,
             "random" => PlacementStrategyType::Random,
             "spread" => PlacementStrategyType::Spread,
-            other => {
-                PlacementStrategyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PlacementStrategyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PlacementStrategyType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PlacementStrategyType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PlacementStrategyType::from(s))
+                }
+            }
 impl PlacementStrategyType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4995,12 +4601,14 @@ impl PlacementStrategyType {
             PlacementStrategyType::Binpack => "binpack",
             PlacementStrategyType::Random => "random",
             PlacementStrategyType::Spread => "spread",
-            PlacementStrategyType::Unknown(value) => value.as_str(),
+            PlacementStrategyType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["binpack", "random", "spread"]
+        &[
+            "binpack", "random", "spread"
+        ]
     }
 }
 impl AsRef<str> for PlacementStrategyType {
@@ -5012,7 +4620,7 @@ impl AsRef<str> for PlacementStrategyType {
 /// <p>An object representing a constraint on task placement. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement Constraints</a> in the Amazon Elastic Container Service Developer Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PlacementConstraint {
+pub struct PlacementConstraint  {
     /// <p>The type of constraint. Use distinctInstance to ensure that each task in a particular group is running on a different container instance. Use memberOf to restrict the selection to a group of valid candidates. </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PlacementConstraintType>,
@@ -5022,15 +4630,15 @@ pub struct PlacementConstraint {
 }
 impl PlacementConstraint {
     /// <p>The type of constraint. Use distinctInstance to ensure that each task in a particular group is running on a different container instance. Use memberOf to restrict the selection to a group of valid candidates. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PlacementConstraintType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::PlacementConstraintType> {
         self.r#type.as_ref()
     }
     /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the Amazon Elastic Container Service Developer Guide. </p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> std::option::Option<& str> {
         self.expression.as_deref()
     }
 }
-impl std::fmt::Debug for PlacementConstraint {
+impl  std::fmt::Debug for PlacementConstraint  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PlacementConstraint");
         formatter.field("r#type", &self.r#type);
@@ -5040,7 +4648,7 @@ impl std::fmt::Debug for PlacementConstraint {
 }
 /// See [`PlacementConstraint`](crate::model::PlacementConstraint).
 pub mod placement_constraint {
-
+    
     /// A builder for [`PlacementConstraint`](crate::model::PlacementConstraint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -5054,12 +4662,8 @@ pub mod placement_constraint {
             self
         }
         /// <p>The type of constraint. Use distinctInstance to ensure that each task in a particular group is running on a different container instance. Use memberOf to restrict the selection to a group of valid candidates. </p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::PlacementConstraintType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::PlacementConstraintType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the Amazon Elastic Container Service Developer Guide. </p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5068,14 +4672,15 @@ pub mod placement_constraint {
         }
         /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the Amazon Elastic Container Service Developer Guide. </p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.expression = input;
-            self
+            self.expression = input; self
         }
         /// Consumes the builder and constructs a [`PlacementConstraint`](crate::model::PlacementConstraint).
         pub fn build(self) -> crate::model::PlacementConstraint {
             crate::model::PlacementConstraint {
-                r#type: self.r#type,
-                expression: self.expression,
+                r#type: self.r#type
+                ,
+                expression: self.expression
+                ,
             }
         }
     }
@@ -5087,6 +4692,8 @@ pub mod placement_constraint {
             formatter.finish()
         }
     }
+    
+    
 }
 impl PlacementConstraint {
     /// Creates a new builder-style object to manufacture [`PlacementConstraint`](crate::model::PlacementConstraint).
@@ -5101,9 +4708,9 @@ impl PlacementConstraint {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let placementconstrainttype = unimplemented!();
 /// match placementconstrainttype {
@@ -5125,60 +4732,52 @@ impl PlacementConstraint {
 /// Specifically, when `placementconstrainttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PlacementConstraintType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PlacementConstraintType {
     #[allow(missing_docs)] // documentation missing in model
     DistinctInstance,
     #[allow(missing_docs)] // documentation missing in model
     MemberOf,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PlacementConstraintType {
     fn from(s: &str) -> Self {
         match s {
             "distinctInstance" => PlacementConstraintType::DistinctInstance,
             "memberOf" => PlacementConstraintType::MemberOf,
-            other => PlacementConstraintType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PlacementConstraintType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PlacementConstraintType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PlacementConstraintType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PlacementConstraintType::from(s))
+                }
+            }
 impl PlacementConstraintType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PlacementConstraintType::DistinctInstance => "distinctInstance",
             PlacementConstraintType::MemberOf => "memberOf",
-            PlacementConstraintType::Unknown(value) => value.as_str(),
+            PlacementConstraintType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["distinctInstance", "memberOf"]
+        &[
+            "distinctInstance", "memberOf"
+        ]
     }
 }
 impl AsRef<str> for PlacementConstraintType {
@@ -5190,7 +4789,7 @@ impl AsRef<str> for PlacementConstraintType {
 /// <p>The details of a capacity provider strategy. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CapacityProviderStrategyItem.html">CapacityProviderStrategyItem</a> in the Amazon ECS API Reference.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CapacityProviderStrategyItem {
+pub struct CapacityProviderStrategyItem  {
     /// <p>The short name of the capacity provider.</p>
     #[doc(hidden)]
     pub capacity_provider: std::option::Option<std::string::String>,
@@ -5203,7 +4802,7 @@ pub struct CapacityProviderStrategyItem {
 }
 impl CapacityProviderStrategyItem {
     /// <p>The short name of the capacity provider.</p>
-    pub fn capacity_provider(&self) -> std::option::Option<&str> {
+    pub fn capacity_provider(&self) -> std::option::Option<& str> {
         self.capacity_provider.as_deref()
     }
     /// <p>The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied.</p>
@@ -5215,7 +4814,7 @@ impl CapacityProviderStrategyItem {
         self.base
     }
 }
-impl std::fmt::Debug for CapacityProviderStrategyItem {
+impl  std::fmt::Debug for CapacityProviderStrategyItem  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CapacityProviderStrategyItem");
         formatter.field("capacity_provider", &"*** Sensitive Data Redacted ***");
@@ -5226,7 +4825,7 @@ impl std::fmt::Debug for CapacityProviderStrategyItem {
 }
 /// See [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
 pub mod capacity_provider_strategy_item {
-
+    
     /// A builder for [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -5241,12 +4840,8 @@ pub mod capacity_provider_strategy_item {
             self
         }
         /// <p>The short name of the capacity provider.</p>
-        pub fn set_capacity_provider(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.capacity_provider = input;
-            self
+        pub fn set_capacity_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.capacity_provider = input; self
         }
         /// <p>The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied.</p>
         pub fn weight(mut self, input: i32) -> Self {
@@ -5255,8 +4850,7 @@ pub mod capacity_provider_strategy_item {
         }
         /// <p>The weight value designates the relative percentage of the total number of tasks launched that should use the specified capacity provider. The weight value is taken into consideration after the base value, if defined, is satisfied.</p>
         pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
-            self.weight = input;
-            self
+            self.weight = input; self
         }
         /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. </p>
         pub fn base(mut self, input: i32) -> Self {
@@ -5265,15 +4859,19 @@ pub mod capacity_provider_strategy_item {
         }
         /// <p>The base value designates how many tasks, at a minimum, to run on the specified capacity provider. Only one capacity provider in a capacity provider strategy can have a base defined. If no value is specified, the default value of 0 is used. </p>
         pub fn set_base(mut self, input: std::option::Option<i32>) -> Self {
-            self.base = input;
-            self
+            self.base = input; self
         }
         /// Consumes the builder and constructs a [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
         pub fn build(self) -> crate::model::CapacityProviderStrategyItem {
             crate::model::CapacityProviderStrategyItem {
-                capacity_provider: self.capacity_provider,
-                weight: self.weight.unwrap_or_default(),
-                base: self.base.unwrap_or_default(),
+                capacity_provider: self.capacity_provider
+                ,
+                weight: self.weight
+                    .unwrap_or_default()
+                ,
+                base: self.base
+                    .unwrap_or_default()
+                ,
             }
         }
     }
@@ -5286,6 +4884,8 @@ pub mod capacity_provider_strategy_item {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CapacityProviderStrategyItem {
     /// Creates a new builder-style object to manufacture [`CapacityProviderStrategyItem`](crate::model::CapacityProviderStrategyItem).
@@ -5297,20 +4897,20 @@ impl CapacityProviderStrategyItem {
 /// <p>This structure specifies the network configuration for an Amazon ECS task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkConfiguration {
+pub struct NetworkConfiguration  {
     /// <p>Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
     #[doc(hidden)]
     pub awsvpc_configuration: std::option::Option<crate::model::AwsVpcConfiguration>,
 }
 impl NetworkConfiguration {
     /// <p>Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
-    pub fn awsvpc_configuration(&self) -> std::option::Option<&crate::model::AwsVpcConfiguration> {
+    pub fn awsvpc_configuration(&self) -> std::option::Option<& crate::model::AwsVpcConfiguration> {
         self.awsvpc_configuration.as_ref()
     }
 }
 /// See [`NetworkConfiguration`](crate::model::NetworkConfiguration).
 pub mod network_configuration {
-
+    
     /// A builder for [`NetworkConfiguration`](crate::model::NetworkConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5323,20 +4923,19 @@ pub mod network_configuration {
             self
         }
         /// <p>Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
-        pub fn set_awsvpc_configuration(
-            mut self,
-            input: std::option::Option<crate::model::AwsVpcConfiguration>,
-        ) -> Self {
-            self.awsvpc_configuration = input;
-            self
+        pub fn set_awsvpc_configuration(mut self, input: std::option::Option<crate::model::AwsVpcConfiguration>) -> Self {
+            self.awsvpc_configuration = input; self
         }
         /// Consumes the builder and constructs a [`NetworkConfiguration`](crate::model::NetworkConfiguration).
         pub fn build(self) -> crate::model::NetworkConfiguration {
             crate::model::NetworkConfiguration {
-                awsvpc_configuration: self.awsvpc_configuration,
+                awsvpc_configuration: self.awsvpc_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkConfiguration {
     /// Creates a new builder-style object to manufacture [`NetworkConfiguration`](crate::model::NetworkConfiguration).
@@ -5348,7 +4947,7 @@ impl NetworkConfiguration {
 /// <p>This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsVpcConfiguration {
+pub struct AwsVpcConfiguration  {
     /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
     #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5361,21 +4960,21 @@ pub struct AwsVpcConfiguration {
 }
 impl AwsVpcConfiguration {
     /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
-    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
         self.subnets.as_deref()
     }
     /// <p>Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
         self.security_groups.as_deref()
     }
     /// <p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
-    pub fn assign_public_ip(&self) -> std::option::Option<&crate::model::AssignPublicIp> {
+    pub fn assign_public_ip(&self) -> std::option::Option<& crate::model::AssignPublicIp> {
         self.assign_public_ip.as_ref()
     }
 }
 /// See [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
 pub mod aws_vpc_configuration {
-
+    
     /// A builder for [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5391,17 +4990,13 @@ pub mod aws_vpc_configuration {
         /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
-            self.subnets = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnets = Some(v);
+                            self
         }
         /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
-        pub fn set_subnets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnets = input;
-            self
+        pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnets = input; self
         }
         /// Appends an item to `security_groups`.
         ///
@@ -5410,17 +5005,13 @@ pub mod aws_vpc_configuration {
         /// <p>Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
-            v.push(input.into());
-            self.security_groups = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_groups = Some(v);
+                            self
         }
         /// <p>Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
-        pub fn set_security_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_groups = input;
-            self
+        pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_groups = input; self
         }
         /// <p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
         pub fn assign_public_ip(mut self, input: crate::model::AssignPublicIp) -> Self {
@@ -5428,22 +5019,23 @@ pub mod aws_vpc_configuration {
             self
         }
         /// <p>Specifies whether the task's elastic network interface receives a public IP address. You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
-        pub fn set_assign_public_ip(
-            mut self,
-            input: std::option::Option<crate::model::AssignPublicIp>,
-        ) -> Self {
-            self.assign_public_ip = input;
-            self
+        pub fn set_assign_public_ip(mut self, input: std::option::Option<crate::model::AssignPublicIp>) -> Self {
+            self.assign_public_ip = input; self
         }
         /// Consumes the builder and constructs a [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
         pub fn build(self) -> crate::model::AwsVpcConfiguration {
             crate::model::AwsVpcConfiguration {
-                subnets: self.subnets,
-                security_groups: self.security_groups,
-                assign_public_ip: self.assign_public_ip,
+                subnets: self.subnets
+                ,
+                security_groups: self.security_groups
+                ,
+                assign_public_ip: self.assign_public_ip
+                ,
             }
         }
     }
+    
+    
 }
 impl AwsVpcConfiguration {
     /// Creates a new builder-style object to manufacture [`AwsVpcConfiguration`](crate::model::AwsVpcConfiguration).
@@ -5458,9 +5050,9 @@ impl AwsVpcConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let assignpublicip = unimplemented!();
 /// match assignpublicip {
@@ -5482,58 +5074,52 @@ impl AwsVpcConfiguration {
 /// Specifically, when `assignpublicip` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AssignPublicIp::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AssignPublicIp {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AssignPublicIp {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => AssignPublicIp::Disabled,
             "ENABLED" => AssignPublicIp::Enabled,
-            other => AssignPublicIp::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AssignPublicIp::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AssignPublicIp {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssignPublicIp::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AssignPublicIp::from(s))
+                }
+            }
 impl AssignPublicIp {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AssignPublicIp::Disabled => "DISABLED",
             AssignPublicIp::Enabled => "ENABLED",
-            AssignPublicIp::Unknown(value) => value.as_str(),
+            AssignPublicIp::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &[
+            "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for AssignPublicIp {
@@ -5548,9 +5134,9 @@ impl AsRef<str> for AssignPublicIp {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let launchtype = unimplemented!();
 /// match launchtype {
@@ -5573,22 +5159,14 @@ impl AsRef<str> for AssignPublicIp {
 /// Specifically, when `launchtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LaunchType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum LaunchType {
     #[allow(missing_docs)] // documentation missing in model
     Ec2,
@@ -5597,7 +5175,7 @@ pub enum LaunchType {
     #[allow(missing_docs)] // documentation missing in model
     Fargate,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for LaunchType {
     fn from(s: &str) -> Self {
@@ -5605,17 +5183,17 @@ impl std::convert::From<&str> for LaunchType {
             "EC2" => LaunchType::Ec2,
             "EXTERNAL" => LaunchType::External,
             "FARGATE" => LaunchType::Fargate,
-            other => LaunchType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => LaunchType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for LaunchType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LaunchType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(LaunchType::from(s))
+                }
+            }
 impl LaunchType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5623,12 +5201,14 @@ impl LaunchType {
             LaunchType::Ec2 => "EC2",
             LaunchType::External => "EXTERNAL",
             LaunchType::Fargate => "FARGATE",
-            LaunchType::Unknown(value) => value.as_str(),
+            LaunchType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EC2", "EXTERNAL", "FARGATE"]
+        &[
+            "EC2", "EXTERNAL", "FARGATE"
+        ]
     }
 }
 impl AsRef<str> for LaunchType {
@@ -5640,18 +5220,18 @@ impl AsRef<str> for LaunchType {
 /// <p>The parameters for using a Kinesis stream as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PipeTargetKinesisStreamParameters {
+pub struct PipeTargetKinesisStreamParameters  {
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
     #[doc(hidden)]
     pub partition_key: std::option::Option<std::string::String>,
 }
 impl PipeTargetKinesisStreamParameters {
     /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
-    pub fn partition_key(&self) -> std::option::Option<&str> {
+    pub fn partition_key(&self) -> std::option::Option<& str> {
         self.partition_key.as_deref()
     }
 }
-impl std::fmt::Debug for PipeTargetKinesisStreamParameters {
+impl  std::fmt::Debug for PipeTargetKinesisStreamParameters  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipeTargetKinesisStreamParameters");
         formatter.field("partition_key", &"*** Sensitive Data Redacted ***");
@@ -5660,7 +5240,7 @@ impl std::fmt::Debug for PipeTargetKinesisStreamParameters {
 }
 /// See [`PipeTargetKinesisStreamParameters`](crate::model::PipeTargetKinesisStreamParameters).
 pub mod pipe_target_kinesis_stream_parameters {
-
+    
     /// A builder for [`PipeTargetKinesisStreamParameters`](crate::model::PipeTargetKinesisStreamParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -5673,17 +5253,14 @@ pub mod pipe_target_kinesis_stream_parameters {
             self
         }
         /// <p>Determines which shard in the stream the data record is assigned to. Partition keys are Unicode strings with a maximum length limit of 256 characters for each key. Amazon Kinesis Data Streams uses the partition key as input to a hash function that maps the partition key and associated data to a specific shard. Specifically, an MD5 hash function is used to map partition keys to 128-bit integer values and to map associated data records to shards. As a result of this hashing mechanism, all data records with the same partition key map to the same shard within the stream.</p>
-        pub fn set_partition_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.partition_key = input;
-            self
+        pub fn set_partition_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.partition_key = input; self
         }
         /// Consumes the builder and constructs a [`PipeTargetKinesisStreamParameters`](crate::model::PipeTargetKinesisStreamParameters).
         pub fn build(self) -> crate::model::PipeTargetKinesisStreamParameters {
             crate::model::PipeTargetKinesisStreamParameters {
-                partition_key: self.partition_key,
+                partition_key: self.partition_key
+                ,
             }
         }
     }
@@ -5694,6 +5271,8 @@ pub mod pipe_target_kinesis_stream_parameters {
             formatter.finish()
         }
     }
+    
+    
 }
 impl PipeTargetKinesisStreamParameters {
     /// Creates a new builder-style object to manufacture [`PipeTargetKinesisStreamParameters`](crate::model::PipeTargetKinesisStreamParameters).
@@ -5705,20 +5284,20 @@ impl PipeTargetKinesisStreamParameters {
 /// <p>The parameters for using a Step Functions state machine as a target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipeTargetStateMachineParameters {
+pub struct PipeTargetStateMachineParameters  {
     /// <p>Specify whether to wait for the state machine to finish or not.</p>
     #[doc(hidden)]
     pub invocation_type: std::option::Option<crate::model::PipeTargetInvocationType>,
 }
 impl PipeTargetStateMachineParameters {
     /// <p>Specify whether to wait for the state machine to finish or not.</p>
-    pub fn invocation_type(&self) -> std::option::Option<&crate::model::PipeTargetInvocationType> {
+    pub fn invocation_type(&self) -> std::option::Option<& crate::model::PipeTargetInvocationType> {
         self.invocation_type.as_ref()
     }
 }
 /// See [`PipeTargetStateMachineParameters`](crate::model::PipeTargetStateMachineParameters).
 pub mod pipe_target_state_machine_parameters {
-
+    
     /// A builder for [`PipeTargetStateMachineParameters`](crate::model::PipeTargetStateMachineParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5731,20 +5310,19 @@ pub mod pipe_target_state_machine_parameters {
             self
         }
         /// <p>Specify whether to wait for the state machine to finish or not.</p>
-        pub fn set_invocation_type(
-            mut self,
-            input: std::option::Option<crate::model::PipeTargetInvocationType>,
-        ) -> Self {
-            self.invocation_type = input;
-            self
+        pub fn set_invocation_type(mut self, input: std::option::Option<crate::model::PipeTargetInvocationType>) -> Self {
+            self.invocation_type = input; self
         }
         /// Consumes the builder and constructs a [`PipeTargetStateMachineParameters`](crate::model::PipeTargetStateMachineParameters).
         pub fn build(self) -> crate::model::PipeTargetStateMachineParameters {
             crate::model::PipeTargetStateMachineParameters {
-                invocation_type: self.invocation_type,
+                invocation_type: self.invocation_type
+                ,
             }
         }
     }
+    
+    
 }
 impl PipeTargetStateMachineParameters {
     /// Creates a new builder-style object to manufacture [`PipeTargetStateMachineParameters`](crate::model::PipeTargetStateMachineParameters).
@@ -5759,9 +5337,9 @@ impl PipeTargetStateMachineParameters {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let pipetargetinvocationtype = unimplemented!();
 /// match pipetargetinvocationtype {
@@ -5783,60 +5361,52 @@ impl PipeTargetStateMachineParameters {
 /// Specifically, when `pipetargetinvocationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PipeTargetInvocationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PipeTargetInvocationType {
     #[allow(missing_docs)] // documentation missing in model
     FireAndForget,
     #[allow(missing_docs)] // documentation missing in model
     RequestResponse,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PipeTargetInvocationType {
     fn from(s: &str) -> Self {
         match s {
             "FIRE_AND_FORGET" => PipeTargetInvocationType::FireAndForget,
             "REQUEST_RESPONSE" => PipeTargetInvocationType::RequestResponse,
-            other => PipeTargetInvocationType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PipeTargetInvocationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PipeTargetInvocationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PipeTargetInvocationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PipeTargetInvocationType::from(s))
+                }
+            }
 impl PipeTargetInvocationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PipeTargetInvocationType::FireAndForget => "FIRE_AND_FORGET",
             PipeTargetInvocationType::RequestResponse => "REQUEST_RESPONSE",
-            PipeTargetInvocationType::Unknown(value) => value.as_str(),
+            PipeTargetInvocationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FIRE_AND_FORGET", "REQUEST_RESPONSE"]
+        &[
+            "FIRE_AND_FORGET", "REQUEST_RESPONSE"
+        ]
     }
 }
 impl AsRef<str> for PipeTargetInvocationType {
@@ -5848,66 +5418,65 @@ impl AsRef<str> for PipeTargetInvocationType {
 /// <p>The parameters for using a Lambda function as a target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipeTargetLambdaFunctionParameters {
-    /// <p>Choose from the following options.</p>
-    /// <ul>
-    /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li>
-    /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li>
-    /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
+pub struct PipeTargetLambdaFunctionParameters  {
+    /// <p>Choose from the following options.</p> 
+    /// <ul> 
+    /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li> 
+    /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li> 
+    /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub invocation_type: std::option::Option<crate::model::PipeTargetInvocationType>,
 }
 impl PipeTargetLambdaFunctionParameters {
-    /// <p>Choose from the following options.</p>
-    /// <ul>
-    /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li>
-    /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li>
-    /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
+    /// <p>Choose from the following options.</p> 
+    /// <ul> 
+    /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li> 
+    /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li> 
+    /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li> 
     /// </ul>
-    pub fn invocation_type(&self) -> std::option::Option<&crate::model::PipeTargetInvocationType> {
+    pub fn invocation_type(&self) -> std::option::Option<& crate::model::PipeTargetInvocationType> {
         self.invocation_type.as_ref()
     }
 }
 /// See [`PipeTargetLambdaFunctionParameters`](crate::model::PipeTargetLambdaFunctionParameters).
 pub mod pipe_target_lambda_function_parameters {
-
+    
     /// A builder for [`PipeTargetLambdaFunctionParameters`](crate::model::PipeTargetLambdaFunctionParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) invocation_type: std::option::Option<crate::model::PipeTargetInvocationType>,
     }
     impl Builder {
-        /// <p>Choose from the following options.</p>
-        /// <ul>
-        /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li>
-        /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li>
-        /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
+        /// <p>Choose from the following options.</p> 
+        /// <ul> 
+        /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li> 
+        /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li> 
+        /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li> 
         /// </ul>
         pub fn invocation_type(mut self, input: crate::model::PipeTargetInvocationType) -> Self {
             self.invocation_type = Some(input);
             self
         }
-        /// <p>Choose from the following options.</p>
-        /// <ul>
-        /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li>
-        /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li>
-        /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
+        /// <p>Choose from the following options.</p> 
+        /// <ul> 
+        /// <li> <p> <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li> 
+        /// <li> <p> <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if it's configured). The API response only includes a status code.</p> </li> 
+        /// <li> <p> <code>DryRun</code> - Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li> 
         /// </ul>
-        pub fn set_invocation_type(
-            mut self,
-            input: std::option::Option<crate::model::PipeTargetInvocationType>,
-        ) -> Self {
-            self.invocation_type = input;
-            self
+        pub fn set_invocation_type(mut self, input: std::option::Option<crate::model::PipeTargetInvocationType>) -> Self {
+            self.invocation_type = input; self
         }
         /// Consumes the builder and constructs a [`PipeTargetLambdaFunctionParameters`](crate::model::PipeTargetLambdaFunctionParameters).
         pub fn build(self) -> crate::model::PipeTargetLambdaFunctionParameters {
             crate::model::PipeTargetLambdaFunctionParameters {
-                invocation_type: self.invocation_type,
+                invocation_type: self.invocation_type
+                ,
             }
         }
     }
+    
+    
 }
 impl PipeTargetLambdaFunctionParameters {
     /// Creates a new builder-style object to manufacture [`PipeTargetLambdaFunctionParameters`](crate::model::PipeTargetLambdaFunctionParameters).
@@ -5919,29 +5488,27 @@ impl PipeTargetLambdaFunctionParameters {
 /// <p>The parameters required to set up enrichment on your pipe.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PipeEnrichmentParameters {
+pub struct PipeEnrichmentParameters  {
     /// <p>Valid JSON text passed to the enrichment. In this case, nothing from the event itself is passed to the enrichment. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
     #[doc(hidden)]
     pub input_template: std::option::Option<std::string::String>,
-    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
+    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p> 
     /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
     #[doc(hidden)]
     pub http_parameters: std::option::Option<crate::model::PipeEnrichmentHttpParameters>,
 }
 impl PipeEnrichmentParameters {
     /// <p>Valid JSON text passed to the enrichment. In this case, nothing from the event itself is passed to the enrichment. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
-    pub fn input_template(&self) -> std::option::Option<&str> {
+    pub fn input_template(&self) -> std::option::Option<& str> {
         self.input_template.as_deref()
     }
-    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
+    /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p> 
     /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
-    pub fn http_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::PipeEnrichmentHttpParameters> {
+    pub fn http_parameters(&self) -> std::option::Option<& crate::model::PipeEnrichmentHttpParameters> {
         self.http_parameters.as_ref()
     }
 }
-impl std::fmt::Debug for PipeEnrichmentParameters {
+impl  std::fmt::Debug for PipeEnrichmentParameters  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipeEnrichmentParameters");
         formatter.field("input_template", &"*** Sensitive Data Redacted ***");
@@ -5951,7 +5518,7 @@ impl std::fmt::Debug for PipeEnrichmentParameters {
 }
 /// See [`PipeEnrichmentParameters`](crate::model::PipeEnrichmentParameters).
 pub mod pipe_enrichment_parameters {
-
+    
     /// A builder for [`PipeEnrichmentParameters`](crate::model::PipeEnrichmentParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -5965,36 +5532,27 @@ pub mod pipe_enrichment_parameters {
             self
         }
         /// <p>Valid JSON text passed to the enrichment. In this case, nothing from the event itself is passed to the enrichment. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
-        pub fn set_input_template(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.input_template = input;
-            self
+        pub fn set_input_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.input_template = input; self
         }
-        /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
+        /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p> 
         /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
-        pub fn http_parameters(
-            mut self,
-            input: crate::model::PipeEnrichmentHttpParameters,
-        ) -> Self {
+        pub fn http_parameters(mut self, input: crate::model::PipeEnrichmentHttpParameters) -> Self {
             self.http_parameters = Some(input);
             self
         }
-        /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p>
+        /// <p>Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.</p> 
         /// <p>If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values configured. In case of any conflicting keys, values from the Connection take precedence.</p>
-        pub fn set_http_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeEnrichmentHttpParameters>,
-        ) -> Self {
-            self.http_parameters = input;
-            self
+        pub fn set_http_parameters(mut self, input: std::option::Option<crate::model::PipeEnrichmentHttpParameters>) -> Self {
+            self.http_parameters = input; self
         }
         /// Consumes the builder and constructs a [`PipeEnrichmentParameters`](crate::model::PipeEnrichmentParameters).
         pub fn build(self) -> crate::model::PipeEnrichmentParameters {
             crate::model::PipeEnrichmentParameters {
-                input_template: self.input_template,
-                http_parameters: self.http_parameters,
+                input_template: self.input_template
+                ,
+                http_parameters: self.http_parameters
+                ,
             }
         }
     }
@@ -6006,6 +5564,8 @@ pub mod pipe_enrichment_parameters {
             formatter.finish()
         }
     }
+    
+    
 }
 impl PipeEnrichmentParameters {
     /// Creates a new builder-style object to manufacture [`PipeEnrichmentParameters`](crate::model::PipeEnrichmentParameters).
@@ -6017,52 +5577,40 @@ impl PipeEnrichmentParameters {
 /// <p>These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations. In the latter case, these are merged with any InvocationParameters specified on the Connection, with any values from the Connection taking precedence.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipeEnrichmentHttpParameters {
+pub struct PipeEnrichmentHttpParameters  {
     /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
     #[doc(hidden)]
     pub path_parameter_values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
     #[doc(hidden)]
-    pub header_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub header_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
     #[doc(hidden)]
-    pub query_string_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub query_string_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PipeEnrichmentHttpParameters {
     /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
-    pub fn path_parameter_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn path_parameter_values(&self) -> std::option::Option<& [std::string::String]> {
         self.path_parameter_values.as_deref()
     }
     /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
-    pub fn header_parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn header_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.header_parameters.as_ref()
     }
     /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
-    pub fn query_string_parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn query_string_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.query_string_parameters.as_ref()
     }
 }
 /// See [`PipeEnrichmentHttpParameters`](crate::model::PipeEnrichmentHttpParameters).
 pub mod pipe_enrichment_http_parameters {
-
+    
     /// A builder for [`PipeEnrichmentHttpParameters`](crate::model::PipeEnrichmentHttpParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) path_parameter_values: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) header_parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) query_string_parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) header_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) query_string_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `path_parameter_values`.
@@ -6072,77 +5620,58 @@ pub mod pipe_enrichment_http_parameters {
         /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
         pub fn path_parameter_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.path_parameter_values.unwrap_or_default();
-            v.push(input.into());
-            self.path_parameter_values = Some(v);
-            self
+                            v.push(input.into());
+                            self.path_parameter_values = Some(v);
+                            self
         }
         /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
-        pub fn set_path_parameter_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.path_parameter_values = input;
-            self
+        pub fn set_path_parameter_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.path_parameter_values = input; self
         }
         /// Adds a key-value pair to `header_parameters`.
         ///
         /// To override the contents of this collection use [`set_header_parameters`](Self::set_header_parameters).
         ///
         /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
-        pub fn header_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn header_parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.header_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.header_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.header_parameters = Some(hash_map);
+                            self
         }
         /// <p>The headers that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
-        pub fn set_header_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.header_parameters = input;
-            self
+        pub fn set_header_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.header_parameters = input; self
         }
         /// Adds a key-value pair to `query_string_parameters`.
         ///
         /// To override the contents of this collection use [`set_query_string_parameters`](Self::set_query_string_parameters).
         ///
         /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
-        pub fn query_string_parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn query_string_parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.query_string_parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.query_string_parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.query_string_parameters = Some(hash_map);
+                            self
         }
         /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway REST API or EventBridge ApiDestination.</p>
-        pub fn set_query_string_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.query_string_parameters = input;
-            self
+        pub fn set_query_string_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.query_string_parameters = input; self
         }
         /// Consumes the builder and constructs a [`PipeEnrichmentHttpParameters`](crate::model::PipeEnrichmentHttpParameters).
         pub fn build(self) -> crate::model::PipeEnrichmentHttpParameters {
             crate::model::PipeEnrichmentHttpParameters {
-                path_parameter_values: self.path_parameter_values,
-                header_parameters: self.header_parameters,
-                query_string_parameters: self.query_string_parameters,
+                path_parameter_values: self.path_parameter_values
+                ,
+                header_parameters: self.header_parameters
+                ,
+                query_string_parameters: self.query_string_parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl PipeEnrichmentHttpParameters {
     /// Creates a new builder-style object to manufacture [`PipeEnrichmentHttpParameters`](crate::model::PipeEnrichmentHttpParameters).
@@ -6154,107 +5683,80 @@ impl PipeEnrichmentHttpParameters {
 /// <p>The parameters required to set up a source for your pipe.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipeSourceParameters {
+pub struct PipeSourceParameters  {
     /// <p>The collection of event patterns used to filter events. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     #[doc(hidden)]
     pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>The parameters for using a Kinesis stream as a source.</p>
     #[doc(hidden)]
-    pub kinesis_stream_parameters:
-        std::option::Option<crate::model::PipeSourceKinesisStreamParameters>,
+    pub kinesis_stream_parameters: std::option::Option<crate::model::PipeSourceKinesisStreamParameters>,
     /// <p>The parameters for using a DynamoDB stream as a source.</p>
     #[doc(hidden)]
-    pub dynamo_db_stream_parameters:
-        std::option::Option<crate::model::PipeSourceDynamoDbStreamParameters>,
+    pub dynamo_db_stream_parameters: std::option::Option<crate::model::PipeSourceDynamoDbStreamParameters>,
     /// <p>The parameters for using a Amazon SQS stream as a source.</p>
     #[doc(hidden)]
     pub sqs_queue_parameters: std::option::Option<crate::model::PipeSourceSqsQueueParameters>,
     /// <p>The parameters for using an Active MQ broker as a source.</p>
     #[doc(hidden)]
-    pub active_mq_broker_parameters:
-        std::option::Option<crate::model::PipeSourceActiveMqBrokerParameters>,
+    pub active_mq_broker_parameters: std::option::Option<crate::model::PipeSourceActiveMqBrokerParameters>,
     /// <p>The parameters for using a Rabbit MQ broker as a source.</p>
     #[doc(hidden)]
-    pub rabbit_mq_broker_parameters:
-        std::option::Option<crate::model::PipeSourceRabbitMqBrokerParameters>,
+    pub rabbit_mq_broker_parameters: std::option::Option<crate::model::PipeSourceRabbitMqBrokerParameters>,
     /// <p>The parameters for using an MSK stream as a source.</p>
     #[doc(hidden)]
-    pub managed_streaming_kafka_parameters:
-        std::option::Option<crate::model::PipeSourceManagedStreamingKafkaParameters>,
+    pub managed_streaming_kafka_parameters: std::option::Option<crate::model::PipeSourceManagedStreamingKafkaParameters>,
     /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
     #[doc(hidden)]
-    pub self_managed_kafka_parameters:
-        std::option::Option<crate::model::PipeSourceSelfManagedKafkaParameters>,
+    pub self_managed_kafka_parameters: std::option::Option<crate::model::PipeSourceSelfManagedKafkaParameters>,
 }
 impl PipeSourceParameters {
     /// <p>The collection of event patterns used to filter events. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
+    pub fn filter_criteria(&self) -> std::option::Option<& crate::model::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
     /// <p>The parameters for using a Kinesis stream as a source.</p>
-    pub fn kinesis_stream_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::PipeSourceKinesisStreamParameters> {
+    pub fn kinesis_stream_parameters(&self) -> std::option::Option<& crate::model::PipeSourceKinesisStreamParameters> {
         self.kinesis_stream_parameters.as_ref()
     }
     /// <p>The parameters for using a DynamoDB stream as a source.</p>
-    pub fn dynamo_db_stream_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::PipeSourceDynamoDbStreamParameters> {
+    pub fn dynamo_db_stream_parameters(&self) -> std::option::Option<& crate::model::PipeSourceDynamoDbStreamParameters> {
         self.dynamo_db_stream_parameters.as_ref()
     }
     /// <p>The parameters for using a Amazon SQS stream as a source.</p>
-    pub fn sqs_queue_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::PipeSourceSqsQueueParameters> {
+    pub fn sqs_queue_parameters(&self) -> std::option::Option<& crate::model::PipeSourceSqsQueueParameters> {
         self.sqs_queue_parameters.as_ref()
     }
     /// <p>The parameters for using an Active MQ broker as a source.</p>
-    pub fn active_mq_broker_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::PipeSourceActiveMqBrokerParameters> {
+    pub fn active_mq_broker_parameters(&self) -> std::option::Option<& crate::model::PipeSourceActiveMqBrokerParameters> {
         self.active_mq_broker_parameters.as_ref()
     }
     /// <p>The parameters for using a Rabbit MQ broker as a source.</p>
-    pub fn rabbit_mq_broker_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::PipeSourceRabbitMqBrokerParameters> {
+    pub fn rabbit_mq_broker_parameters(&self) -> std::option::Option<& crate::model::PipeSourceRabbitMqBrokerParameters> {
         self.rabbit_mq_broker_parameters.as_ref()
     }
     /// <p>The parameters for using an MSK stream as a source.</p>
-    pub fn managed_streaming_kafka_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::PipeSourceManagedStreamingKafkaParameters> {
+    pub fn managed_streaming_kafka_parameters(&self) -> std::option::Option<& crate::model::PipeSourceManagedStreamingKafkaParameters> {
         self.managed_streaming_kafka_parameters.as_ref()
     }
     /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
-    pub fn self_managed_kafka_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::PipeSourceSelfManagedKafkaParameters> {
+    pub fn self_managed_kafka_parameters(&self) -> std::option::Option<& crate::model::PipeSourceSelfManagedKafkaParameters> {
         self.self_managed_kafka_parameters.as_ref()
     }
 }
 /// See [`PipeSourceParameters`](crate::model::PipeSourceParameters).
 pub mod pipe_source_parameters {
-
+    
     /// A builder for [`PipeSourceParameters`](crate::model::PipeSourceParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_criteria: std::option::Option<crate::model::FilterCriteria>,
-        pub(crate) kinesis_stream_parameters:
-            std::option::Option<crate::model::PipeSourceKinesisStreamParameters>,
-        pub(crate) dynamo_db_stream_parameters:
-            std::option::Option<crate::model::PipeSourceDynamoDbStreamParameters>,
-        pub(crate) sqs_queue_parameters:
-            std::option::Option<crate::model::PipeSourceSqsQueueParameters>,
-        pub(crate) active_mq_broker_parameters:
-            std::option::Option<crate::model::PipeSourceActiveMqBrokerParameters>,
-        pub(crate) rabbit_mq_broker_parameters:
-            std::option::Option<crate::model::PipeSourceRabbitMqBrokerParameters>,
-        pub(crate) managed_streaming_kafka_parameters:
-            std::option::Option<crate::model::PipeSourceManagedStreamingKafkaParameters>,
-        pub(crate) self_managed_kafka_parameters:
-            std::option::Option<crate::model::PipeSourceSelfManagedKafkaParameters>,
+        pub(crate) kinesis_stream_parameters: std::option::Option<crate::model::PipeSourceKinesisStreamParameters>,
+        pub(crate) dynamo_db_stream_parameters: std::option::Option<crate::model::PipeSourceDynamoDbStreamParameters>,
+        pub(crate) sqs_queue_parameters: std::option::Option<crate::model::PipeSourceSqsQueueParameters>,
+        pub(crate) active_mq_broker_parameters: std::option::Option<crate::model::PipeSourceActiveMqBrokerParameters>,
+        pub(crate) rabbit_mq_broker_parameters: std::option::Option<crate::model::PipeSourceRabbitMqBrokerParameters>,
+        pub(crate) managed_streaming_kafka_parameters: std::option::Option<crate::model::PipeSourceManagedStreamingKafkaParameters>,
+        pub(crate) self_managed_kafka_parameters: std::option::Option<crate::model::PipeSourceSelfManagedKafkaParameters>,
     }
     impl Builder {
         /// <p>The collection of event patterns used to filter events. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
@@ -6263,139 +5765,96 @@ pub mod pipe_source_parameters {
             self
         }
         /// <p>The collection of event patterns used to filter events. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-        pub fn set_filter_criteria(
-            mut self,
-            input: std::option::Option<crate::model::FilterCriteria>,
-        ) -> Self {
-            self.filter_criteria = input;
-            self
+        pub fn set_filter_criteria(mut self, input: std::option::Option<crate::model::FilterCriteria>) -> Self {
+            self.filter_criteria = input; self
         }
         /// <p>The parameters for using a Kinesis stream as a source.</p>
-        pub fn kinesis_stream_parameters(
-            mut self,
-            input: crate::model::PipeSourceKinesisStreamParameters,
-        ) -> Self {
+        pub fn kinesis_stream_parameters(mut self, input: crate::model::PipeSourceKinesisStreamParameters) -> Self {
             self.kinesis_stream_parameters = Some(input);
             self
         }
         /// <p>The parameters for using a Kinesis stream as a source.</p>
-        pub fn set_kinesis_stream_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeSourceKinesisStreamParameters>,
-        ) -> Self {
-            self.kinesis_stream_parameters = input;
-            self
+        pub fn set_kinesis_stream_parameters(mut self, input: std::option::Option<crate::model::PipeSourceKinesisStreamParameters>) -> Self {
+            self.kinesis_stream_parameters = input; self
         }
         /// <p>The parameters for using a DynamoDB stream as a source.</p>
-        pub fn dynamo_db_stream_parameters(
-            mut self,
-            input: crate::model::PipeSourceDynamoDbStreamParameters,
-        ) -> Self {
+        pub fn dynamo_db_stream_parameters(mut self, input: crate::model::PipeSourceDynamoDbStreamParameters) -> Self {
             self.dynamo_db_stream_parameters = Some(input);
             self
         }
         /// <p>The parameters for using a DynamoDB stream as a source.</p>
-        pub fn set_dynamo_db_stream_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeSourceDynamoDbStreamParameters>,
-        ) -> Self {
-            self.dynamo_db_stream_parameters = input;
-            self
+        pub fn set_dynamo_db_stream_parameters(mut self, input: std::option::Option<crate::model::PipeSourceDynamoDbStreamParameters>) -> Self {
+            self.dynamo_db_stream_parameters = input; self
         }
         /// <p>The parameters for using a Amazon SQS stream as a source.</p>
-        pub fn sqs_queue_parameters(
-            mut self,
-            input: crate::model::PipeSourceSqsQueueParameters,
-        ) -> Self {
+        pub fn sqs_queue_parameters(mut self, input: crate::model::PipeSourceSqsQueueParameters) -> Self {
             self.sqs_queue_parameters = Some(input);
             self
         }
         /// <p>The parameters for using a Amazon SQS stream as a source.</p>
-        pub fn set_sqs_queue_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeSourceSqsQueueParameters>,
-        ) -> Self {
-            self.sqs_queue_parameters = input;
-            self
+        pub fn set_sqs_queue_parameters(mut self, input: std::option::Option<crate::model::PipeSourceSqsQueueParameters>) -> Self {
+            self.sqs_queue_parameters = input; self
         }
         /// <p>The parameters for using an Active MQ broker as a source.</p>
-        pub fn active_mq_broker_parameters(
-            mut self,
-            input: crate::model::PipeSourceActiveMqBrokerParameters,
-        ) -> Self {
+        pub fn active_mq_broker_parameters(mut self, input: crate::model::PipeSourceActiveMqBrokerParameters) -> Self {
             self.active_mq_broker_parameters = Some(input);
             self
         }
         /// <p>The parameters for using an Active MQ broker as a source.</p>
-        pub fn set_active_mq_broker_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeSourceActiveMqBrokerParameters>,
-        ) -> Self {
-            self.active_mq_broker_parameters = input;
-            self
+        pub fn set_active_mq_broker_parameters(mut self, input: std::option::Option<crate::model::PipeSourceActiveMqBrokerParameters>) -> Self {
+            self.active_mq_broker_parameters = input; self
         }
         /// <p>The parameters for using a Rabbit MQ broker as a source.</p>
-        pub fn rabbit_mq_broker_parameters(
-            mut self,
-            input: crate::model::PipeSourceRabbitMqBrokerParameters,
-        ) -> Self {
+        pub fn rabbit_mq_broker_parameters(mut self, input: crate::model::PipeSourceRabbitMqBrokerParameters) -> Self {
             self.rabbit_mq_broker_parameters = Some(input);
             self
         }
         /// <p>The parameters for using a Rabbit MQ broker as a source.</p>
-        pub fn set_rabbit_mq_broker_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeSourceRabbitMqBrokerParameters>,
-        ) -> Self {
-            self.rabbit_mq_broker_parameters = input;
-            self
+        pub fn set_rabbit_mq_broker_parameters(mut self, input: std::option::Option<crate::model::PipeSourceRabbitMqBrokerParameters>) -> Self {
+            self.rabbit_mq_broker_parameters = input; self
         }
         /// <p>The parameters for using an MSK stream as a source.</p>
-        pub fn managed_streaming_kafka_parameters(
-            mut self,
-            input: crate::model::PipeSourceManagedStreamingKafkaParameters,
-        ) -> Self {
+        pub fn managed_streaming_kafka_parameters(mut self, input: crate::model::PipeSourceManagedStreamingKafkaParameters) -> Self {
             self.managed_streaming_kafka_parameters = Some(input);
             self
         }
         /// <p>The parameters for using an MSK stream as a source.</p>
-        pub fn set_managed_streaming_kafka_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeSourceManagedStreamingKafkaParameters>,
-        ) -> Self {
-            self.managed_streaming_kafka_parameters = input;
-            self
+        pub fn set_managed_streaming_kafka_parameters(mut self, input: std::option::Option<crate::model::PipeSourceManagedStreamingKafkaParameters>) -> Self {
+            self.managed_streaming_kafka_parameters = input; self
         }
         /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
-        pub fn self_managed_kafka_parameters(
-            mut self,
-            input: crate::model::PipeSourceSelfManagedKafkaParameters,
-        ) -> Self {
+        pub fn self_managed_kafka_parameters(mut self, input: crate::model::PipeSourceSelfManagedKafkaParameters) -> Self {
             self.self_managed_kafka_parameters = Some(input);
             self
         }
         /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
-        pub fn set_self_managed_kafka_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeSourceSelfManagedKafkaParameters>,
-        ) -> Self {
-            self.self_managed_kafka_parameters = input;
-            self
+        pub fn set_self_managed_kafka_parameters(mut self, input: std::option::Option<crate::model::PipeSourceSelfManagedKafkaParameters>) -> Self {
+            self.self_managed_kafka_parameters = input; self
         }
         /// Consumes the builder and constructs a [`PipeSourceParameters`](crate::model::PipeSourceParameters).
         pub fn build(self) -> crate::model::PipeSourceParameters {
             crate::model::PipeSourceParameters {
-                filter_criteria: self.filter_criteria,
-                kinesis_stream_parameters: self.kinesis_stream_parameters,
-                dynamo_db_stream_parameters: self.dynamo_db_stream_parameters,
-                sqs_queue_parameters: self.sqs_queue_parameters,
-                active_mq_broker_parameters: self.active_mq_broker_parameters,
-                rabbit_mq_broker_parameters: self.rabbit_mq_broker_parameters,
-                managed_streaming_kafka_parameters: self.managed_streaming_kafka_parameters,
-                self_managed_kafka_parameters: self.self_managed_kafka_parameters,
+                filter_criteria: self.filter_criteria
+                ,
+                kinesis_stream_parameters: self.kinesis_stream_parameters
+                ,
+                dynamo_db_stream_parameters: self.dynamo_db_stream_parameters
+                ,
+                sqs_queue_parameters: self.sqs_queue_parameters
+                ,
+                active_mq_broker_parameters: self.active_mq_broker_parameters
+                ,
+                rabbit_mq_broker_parameters: self.rabbit_mq_broker_parameters
+                ,
+                managed_streaming_kafka_parameters: self.managed_streaming_kafka_parameters
+                ,
+                self_managed_kafka_parameters: self.self_managed_kafka_parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl PipeSourceParameters {
     /// Creates a new builder-style object to manufacture [`PipeSourceParameters`](crate::model::PipeSourceParameters).
@@ -6407,7 +5866,7 @@ impl PipeSourceParameters {
 /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PipeSourceSelfManagedKafkaParameters {
+pub struct PipeSourceSelfManagedKafkaParameters  {
     /// <p>The name of the topic that the pipe will read from.</p>
     #[doc(hidden)]
     pub topic_name: std::option::Option<std::string::String>,
@@ -6428,8 +5887,7 @@ pub struct PipeSourceSelfManagedKafkaParameters {
     pub consumer_group_id: std::option::Option<std::string::String>,
     /// <p>The credentials needed to access the resource.</p>
     #[doc(hidden)]
-    pub credentials:
-        std::option::Option<crate::model::SelfManagedKafkaAccessConfigurationCredentials>,
+    pub credentials: std::option::Option<crate::model::SelfManagedKafkaAccessConfigurationCredentials>,
     /// <p>The ARN of the Secrets Manager secret used for certification.</p>
     #[doc(hidden)]
     pub server_root_ca_certificate: std::option::Option<std::string::String>,
@@ -6439,17 +5897,15 @@ pub struct PipeSourceSelfManagedKafkaParameters {
 }
 impl PipeSourceSelfManagedKafkaParameters {
     /// <p>The name of the topic that the pipe will read from.</p>
-    pub fn topic_name(&self) -> std::option::Option<&str> {
+    pub fn topic_name(&self) -> std::option::Option<& str> {
         self.topic_name.as_deref()
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
-    pub fn starting_position(
-        &self,
-    ) -> std::option::Option<&crate::model::SelfManagedKafkaStartPosition> {
+    pub fn starting_position(&self) -> std::option::Option<& crate::model::SelfManagedKafkaStartPosition> {
         self.starting_position.as_ref()
     }
     /// <p>An array of server URLs.</p>
-    pub fn additional_bootstrap_servers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn additional_bootstrap_servers(&self) -> std::option::Option<& [std::string::String]> {
         self.additional_bootstrap_servers.as_deref()
     }
     /// <p>The maximum number of records to include in each batch.</p>
@@ -6461,66 +5917,50 @@ impl PipeSourceSelfManagedKafkaParameters {
         self.maximum_batching_window_in_seconds
     }
     /// <p>The name of the destination queue to consume.</p>
-    pub fn consumer_group_id(&self) -> std::option::Option<&str> {
+    pub fn consumer_group_id(&self) -> std::option::Option<& str> {
         self.consumer_group_id.as_deref()
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn credentials(
-        &self,
-    ) -> std::option::Option<&crate::model::SelfManagedKafkaAccessConfigurationCredentials> {
+    pub fn credentials(&self) -> std::option::Option<& crate::model::SelfManagedKafkaAccessConfigurationCredentials> {
         self.credentials.as_ref()
     }
     /// <p>The ARN of the Secrets Manager secret used for certification.</p>
-    pub fn server_root_ca_certificate(&self) -> std::option::Option<&str> {
+    pub fn server_root_ca_certificate(&self) -> std::option::Option<& str> {
         self.server_root_ca_certificate.as_deref()
     }
     /// <p>This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used.</p>
-    pub fn vpc(
-        &self,
-    ) -> std::option::Option<&crate::model::SelfManagedKafkaAccessConfigurationVpc> {
+    pub fn vpc(&self) -> std::option::Option<& crate::model::SelfManagedKafkaAccessConfigurationVpc> {
         self.vpc.as_ref()
     }
 }
-impl std::fmt::Debug for PipeSourceSelfManagedKafkaParameters {
+impl  std::fmt::Debug for PipeSourceSelfManagedKafkaParameters  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipeSourceSelfManagedKafkaParameters");
         formatter.field("topic_name", &"*** Sensitive Data Redacted ***");
         formatter.field("starting_position", &self.starting_position);
-        formatter.field(
-            "additional_bootstrap_servers",
-            &self.additional_bootstrap_servers,
-        );
+        formatter.field("additional_bootstrap_servers", &self.additional_bootstrap_servers);
         formatter.field("batch_size", &self.batch_size);
-        formatter.field(
-            "maximum_batching_window_in_seconds",
-            &self.maximum_batching_window_in_seconds,
-        );
+        formatter.field("maximum_batching_window_in_seconds", &self.maximum_batching_window_in_seconds);
         formatter.field("consumer_group_id", &"*** Sensitive Data Redacted ***");
         formatter.field("credentials", &self.credentials);
-        formatter.field(
-            "server_root_ca_certificate",
-            &self.server_root_ca_certificate,
-        );
+        formatter.field("server_root_ca_certificate", &self.server_root_ca_certificate);
         formatter.field("vpc", &self.vpc);
         formatter.finish()
     }
 }
 /// See [`PipeSourceSelfManagedKafkaParameters`](crate::model::PipeSourceSelfManagedKafkaParameters).
 pub mod pipe_source_self_managed_kafka_parameters {
-
+    
     /// A builder for [`PipeSourceSelfManagedKafkaParameters`](crate::model::PipeSourceSelfManagedKafkaParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) topic_name: std::option::Option<std::string::String>,
-        pub(crate) starting_position:
-            std::option::Option<crate::model::SelfManagedKafkaStartPosition>,
-        pub(crate) additional_bootstrap_servers:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) starting_position: std::option::Option<crate::model::SelfManagedKafkaStartPosition>,
+        pub(crate) additional_bootstrap_servers: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) batch_size: std::option::Option<i32>,
         pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
         pub(crate) consumer_group_id: std::option::Option<std::string::String>,
-        pub(crate) credentials:
-            std::option::Option<crate::model::SelfManagedKafkaAccessConfigurationCredentials>,
+        pub(crate) credentials: std::option::Option<crate::model::SelfManagedKafkaAccessConfigurationCredentials>,
         pub(crate) server_root_ca_certificate: std::option::Option<std::string::String>,
         pub(crate) vpc: std::option::Option<crate::model::SelfManagedKafkaAccessConfigurationVpc>,
     }
@@ -6532,46 +5972,31 @@ pub mod pipe_source_self_managed_kafka_parameters {
         }
         /// <p>The name of the topic that the pipe will read from.</p>
         pub fn set_topic_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.topic_name = input;
-            self
+            self.topic_name = input; self
         }
         /// <p>(Streams only) The position in a stream from which to start reading.</p>
-        pub fn starting_position(
-            mut self,
-            input: crate::model::SelfManagedKafkaStartPosition,
-        ) -> Self {
+        pub fn starting_position(mut self, input: crate::model::SelfManagedKafkaStartPosition) -> Self {
             self.starting_position = Some(input);
             self
         }
         /// <p>(Streams only) The position in a stream from which to start reading.</p>
-        pub fn set_starting_position(
-            mut self,
-            input: std::option::Option<crate::model::SelfManagedKafkaStartPosition>,
-        ) -> Self {
-            self.starting_position = input;
-            self
+        pub fn set_starting_position(mut self, input: std::option::Option<crate::model::SelfManagedKafkaStartPosition>) -> Self {
+            self.starting_position = input; self
         }
         /// Appends an item to `additional_bootstrap_servers`.
         ///
         /// To override the contents of this collection use [`set_additional_bootstrap_servers`](Self::set_additional_bootstrap_servers).
         ///
         /// <p>An array of server URLs.</p>
-        pub fn additional_bootstrap_servers(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn additional_bootstrap_servers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.additional_bootstrap_servers.unwrap_or_default();
-            v.push(input.into());
-            self.additional_bootstrap_servers = Some(v);
-            self
+                            v.push(input.into());
+                            self.additional_bootstrap_servers = Some(v);
+                            self
         }
         /// <p>An array of server URLs.</p>
-        pub fn set_additional_bootstrap_servers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.additional_bootstrap_servers = input;
-            self
+        pub fn set_additional_bootstrap_servers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.additional_bootstrap_servers = input; self
         }
         /// <p>The maximum number of records to include in each batch.</p>
         pub fn batch_size(mut self, input: i32) -> Self {
@@ -6580,8 +6005,7 @@ pub mod pipe_source_self_managed_kafka_parameters {
         }
         /// <p>The maximum number of records to include in each batch.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_size = input;
-            self
+            self.batch_size = input; self
         }
         /// <p>The maximum length of a time to wait for events.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -6589,12 +6013,8 @@ pub mod pipe_source_self_managed_kafka_parameters {
             self
         }
         /// <p>The maximum length of a time to wait for events.</p>
-        pub fn set_maximum_batching_window_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_batching_window_in_seconds = input;
-            self
+        pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_batching_window_in_seconds = input; self
         }
         /// <p>The name of the destination queue to consume.</p>
         pub fn consumer_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6602,30 +6022,17 @@ pub mod pipe_source_self_managed_kafka_parameters {
             self
         }
         /// <p>The name of the destination queue to consume.</p>
-        pub fn set_consumer_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.consumer_group_id = input;
-            self
+        pub fn set_consumer_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.consumer_group_id = input; self
         }
         /// <p>The credentials needed to access the resource.</p>
-        pub fn credentials(
-            mut self,
-            input: crate::model::SelfManagedKafkaAccessConfigurationCredentials,
-        ) -> Self {
+        pub fn credentials(mut self, input: crate::model::SelfManagedKafkaAccessConfigurationCredentials) -> Self {
             self.credentials = Some(input);
             self
         }
         /// <p>The credentials needed to access the resource.</p>
-        pub fn set_credentials(
-            mut self,
-            input: std::option::Option<
-                crate::model::SelfManagedKafkaAccessConfigurationCredentials,
-            >,
-        ) -> Self {
-            self.credentials = input;
-            self
+        pub fn set_credentials(mut self, input: std::option::Option<crate::model::SelfManagedKafkaAccessConfigurationCredentials>) -> Self {
+            self.credentials = input; self
         }
         /// <p>The ARN of the Secrets Manager secret used for certification.</p>
         pub fn server_root_ca_certificate(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6633,12 +6040,8 @@ pub mod pipe_source_self_managed_kafka_parameters {
             self
         }
         /// <p>The ARN of the Secrets Manager secret used for certification.</p>
-        pub fn set_server_root_ca_certificate(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.server_root_ca_certificate = input;
-            self
+        pub fn set_server_root_ca_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_root_ca_certificate = input; self
         }
         /// <p>This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used.</p>
         pub fn vpc(mut self, input: crate::model::SelfManagedKafkaAccessConfigurationVpc) -> Self {
@@ -6646,25 +6049,30 @@ pub mod pipe_source_self_managed_kafka_parameters {
             self
         }
         /// <p>This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used.</p>
-        pub fn set_vpc(
-            mut self,
-            input: std::option::Option<crate::model::SelfManagedKafkaAccessConfigurationVpc>,
-        ) -> Self {
-            self.vpc = input;
-            self
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::SelfManagedKafkaAccessConfigurationVpc>) -> Self {
+            self.vpc = input; self
         }
         /// Consumes the builder and constructs a [`PipeSourceSelfManagedKafkaParameters`](crate::model::PipeSourceSelfManagedKafkaParameters).
         pub fn build(self) -> crate::model::PipeSourceSelfManagedKafkaParameters {
             crate::model::PipeSourceSelfManagedKafkaParameters {
-                topic_name: self.topic_name,
-                starting_position: self.starting_position,
-                additional_bootstrap_servers: self.additional_bootstrap_servers,
-                batch_size: self.batch_size,
-                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
-                consumer_group_id: self.consumer_group_id,
-                credentials: self.credentials,
-                server_root_ca_certificate: self.server_root_ca_certificate,
-                vpc: self.vpc,
+                topic_name: self.topic_name
+                ,
+                starting_position: self.starting_position
+                ,
+                additional_bootstrap_servers: self.additional_bootstrap_servers
+                ,
+                batch_size: self.batch_size
+                ,
+                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+                ,
+                consumer_group_id: self.consumer_group_id
+                ,
+                credentials: self.credentials
+                ,
+                server_root_ca_certificate: self.server_root_ca_certificate
+                ,
+                vpc: self.vpc
+                ,
             }
         }
     }
@@ -6673,25 +6081,18 @@ pub mod pipe_source_self_managed_kafka_parameters {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("topic_name", &"*** Sensitive Data Redacted ***");
             formatter.field("starting_position", &self.starting_position);
-            formatter.field(
-                "additional_bootstrap_servers",
-                &self.additional_bootstrap_servers,
-            );
+            formatter.field("additional_bootstrap_servers", &self.additional_bootstrap_servers);
             formatter.field("batch_size", &self.batch_size);
-            formatter.field(
-                "maximum_batching_window_in_seconds",
-                &self.maximum_batching_window_in_seconds,
-            );
+            formatter.field("maximum_batching_window_in_seconds", &self.maximum_batching_window_in_seconds);
             formatter.field("consumer_group_id", &"*** Sensitive Data Redacted ***");
             formatter.field("credentials", &self.credentials);
-            formatter.field(
-                "server_root_ca_certificate",
-                &self.server_root_ca_certificate,
-            );
+            formatter.field("server_root_ca_certificate", &self.server_root_ca_certificate);
             formatter.field("vpc", &self.vpc);
             formatter.finish()
         }
     }
+    
+    
 }
 impl PipeSourceSelfManagedKafkaParameters {
     /// Creates a new builder-style object to manufacture [`PipeSourceSelfManagedKafkaParameters`](crate::model::PipeSourceSelfManagedKafkaParameters).
@@ -6703,7 +6104,7 @@ impl PipeSourceSelfManagedKafkaParameters {
 /// <p>This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SelfManagedKafkaAccessConfigurationVpc {
+pub struct SelfManagedKafkaAccessConfigurationVpc  {
     /// <p>Specifies the subnets associated with the stream. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
     #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6713,17 +6114,17 @@ pub struct SelfManagedKafkaAccessConfigurationVpc {
 }
 impl SelfManagedKafkaAccessConfigurationVpc {
     /// <p>Specifies the subnets associated with the stream. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
-    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
         self.subnets.as_deref()
     }
     /// <p>Specifies the security groups associated with the stream. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
-    pub fn security_group(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group(&self) -> std::option::Option<& [std::string::String]> {
         self.security_group.as_deref()
     }
 }
 /// See [`SelfManagedKafkaAccessConfigurationVpc`](crate::model::SelfManagedKafkaAccessConfigurationVpc).
 pub mod self_managed_kafka_access_configuration_vpc {
-
+    
     /// A builder for [`SelfManagedKafkaAccessConfigurationVpc`](crate::model::SelfManagedKafkaAccessConfigurationVpc).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6738,17 +6139,13 @@ pub mod self_managed_kafka_access_configuration_vpc {
         /// <p>Specifies the subnets associated with the stream. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
-            v.push(input.into());
-            self.subnets = Some(v);
-            self
+                            v.push(input.into());
+                            self.subnets = Some(v);
+                            self
         }
         /// <p>Specifies the subnets associated with the stream. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
-        pub fn set_subnets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.subnets = input;
-            self
+        pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.subnets = input; self
         }
         /// Appends an item to `security_group`.
         ///
@@ -6757,26 +6154,26 @@ pub mod self_managed_kafka_access_configuration_vpc {
         /// <p>Specifies the security groups associated with the stream. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
         pub fn security_group(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group.unwrap_or_default();
-            v.push(input.into());
-            self.security_group = Some(v);
-            self
+                            v.push(input.into());
+                            self.security_group = Some(v);
+                            self
         }
         /// <p>Specifies the security groups associated with the stream. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.</p>
-        pub fn set_security_group(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.security_group = input;
-            self
+        pub fn set_security_group(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.security_group = input; self
         }
         /// Consumes the builder and constructs a [`SelfManagedKafkaAccessConfigurationVpc`](crate::model::SelfManagedKafkaAccessConfigurationVpc).
         pub fn build(self) -> crate::model::SelfManagedKafkaAccessConfigurationVpc {
             crate::model::SelfManagedKafkaAccessConfigurationVpc {
-                subnets: self.subnets,
-                security_group: self.security_group,
+                subnets: self.subnets
+                ,
+                security_group: self.security_group
+                ,
             }
         }
     }
+    
+    
 }
 impl SelfManagedKafkaAccessConfigurationVpc {
     /// Creates a new builder-style object to manufacture [`SelfManagedKafkaAccessConfigurationVpc`](crate::model::SelfManagedKafkaAccessConfigurationVpc).
@@ -6811,11 +6208,7 @@ impl SelfManagedKafkaAccessConfigurationCredentials {
     /// Tries to convert the enum instance into [`BasicAuth`](crate::model::SelfManagedKafkaAccessConfigurationCredentials::BasicAuth), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_basic_auth(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let SelfManagedKafkaAccessConfigurationCredentials::BasicAuth(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let SelfManagedKafkaAccessConfigurationCredentials::BasicAuth(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`BasicAuth`](crate::model::SelfManagedKafkaAccessConfigurationCredentials::BasicAuth).
     pub fn is_basic_auth(&self) -> bool {
@@ -6823,15 +6216,8 @@ impl SelfManagedKafkaAccessConfigurationCredentials {
     }
     /// Tries to convert the enum instance into [`ClientCertificateTlsAuth`](crate::model::SelfManagedKafkaAccessConfigurationCredentials::ClientCertificateTlsAuth), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_client_certificate_tls_auth(
-        &self,
-    ) -> std::result::Result<&std::string::String, &Self> {
-        if let SelfManagedKafkaAccessConfigurationCredentials::ClientCertificateTlsAuth(val) = &self
-        {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_client_certificate_tls_auth(&self) -> std::result::Result<&std::string::String, &Self> {
+        if let SelfManagedKafkaAccessConfigurationCredentials::ClientCertificateTlsAuth(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`ClientCertificateTlsAuth`](crate::model::SelfManagedKafkaAccessConfigurationCredentials::ClientCertificateTlsAuth).
     pub fn is_client_certificate_tls_auth(&self) -> bool {
@@ -6840,11 +6226,7 @@ impl SelfManagedKafkaAccessConfigurationCredentials {
     /// Tries to convert the enum instance into [`SaslScram256Auth`](crate::model::SelfManagedKafkaAccessConfigurationCredentials::SaslScram256Auth), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sasl_scram256_auth(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let SelfManagedKafkaAccessConfigurationCredentials::SaslScram256Auth(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let SelfManagedKafkaAccessConfigurationCredentials::SaslScram256Auth(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`SaslScram256Auth`](crate::model::SelfManagedKafkaAccessConfigurationCredentials::SaslScram256Auth).
     pub fn is_sasl_scram256_auth(&self) -> bool {
@@ -6853,11 +6235,7 @@ impl SelfManagedKafkaAccessConfigurationCredentials {
     /// Tries to convert the enum instance into [`SaslScram512Auth`](crate::model::SelfManagedKafkaAccessConfigurationCredentials::SaslScram512Auth), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sasl_scram512_auth(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let SelfManagedKafkaAccessConfigurationCredentials::SaslScram512Auth(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let SelfManagedKafkaAccessConfigurationCredentials::SaslScram512Auth(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`SaslScram512Auth`](crate::model::SelfManagedKafkaAccessConfigurationCredentials::SaslScram512Auth).
     pub fn is_sasl_scram512_auth(&self) -> bool {
@@ -6875,9 +6253,9 @@ impl SelfManagedKafkaAccessConfigurationCredentials {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let selfmanagedkafkastartposition = unimplemented!();
 /// match selfmanagedkafkastartposition {
@@ -6899,60 +6277,52 @@ impl SelfManagedKafkaAccessConfigurationCredentials {
 /// Specifically, when `selfmanagedkafkastartposition` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SelfManagedKafkaStartPosition::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SelfManagedKafkaStartPosition {
     #[allow(missing_docs)] // documentation missing in model
     Latest,
     #[allow(missing_docs)] // documentation missing in model
     TrimHorizon,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SelfManagedKafkaStartPosition {
     fn from(s: &str) -> Self {
         match s {
             "LATEST" => SelfManagedKafkaStartPosition::Latest,
             "TRIM_HORIZON" => SelfManagedKafkaStartPosition::TrimHorizon,
-            other => SelfManagedKafkaStartPosition::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SelfManagedKafkaStartPosition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SelfManagedKafkaStartPosition {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SelfManagedKafkaStartPosition::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SelfManagedKafkaStartPosition::from(s))
+                }
+            }
 impl SelfManagedKafkaStartPosition {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SelfManagedKafkaStartPosition::Latest => "LATEST",
             SelfManagedKafkaStartPosition::TrimHorizon => "TRIM_HORIZON",
-            SelfManagedKafkaStartPosition::Unknown(value) => value.as_str(),
+            SelfManagedKafkaStartPosition::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LATEST", "TRIM_HORIZON"]
+        &[
+            "LATEST", "TRIM_HORIZON"
+        ]
     }
 }
 impl AsRef<str> for SelfManagedKafkaStartPosition {
@@ -6964,7 +6334,7 @@ impl AsRef<str> for SelfManagedKafkaStartPosition {
 /// <p>The parameters for using an MSK stream as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PipeSourceManagedStreamingKafkaParameters {
+pub struct PipeSourceManagedStreamingKafkaParameters  {
     /// <p>The name of the topic that the pipe will read from.</p>
     #[doc(hidden)]
     pub topic_name: std::option::Option<std::string::String>,
@@ -6986,11 +6356,11 @@ pub struct PipeSourceManagedStreamingKafkaParameters {
 }
 impl PipeSourceManagedStreamingKafkaParameters {
     /// <p>The name of the topic that the pipe will read from.</p>
-    pub fn topic_name(&self) -> std::option::Option<&str> {
+    pub fn topic_name(&self) -> std::option::Option<& str> {
         self.topic_name.as_deref()
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
-    pub fn starting_position(&self) -> std::option::Option<&crate::model::MskStartPosition> {
+    pub fn starting_position(&self) -> std::option::Option<& crate::model::MskStartPosition> {
         self.starting_position.as_ref()
     }
     /// <p>The maximum number of records to include in each batch.</p>
@@ -7002,24 +6372,21 @@ impl PipeSourceManagedStreamingKafkaParameters {
         self.maximum_batching_window_in_seconds
     }
     /// <p>The name of the destination queue to consume.</p>
-    pub fn consumer_group_id(&self) -> std::option::Option<&str> {
+    pub fn consumer_group_id(&self) -> std::option::Option<& str> {
         self.consumer_group_id.as_deref()
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn credentials(&self) -> std::option::Option<&crate::model::MskAccessCredentials> {
+    pub fn credentials(&self) -> std::option::Option<& crate::model::MskAccessCredentials> {
         self.credentials.as_ref()
     }
 }
-impl std::fmt::Debug for PipeSourceManagedStreamingKafkaParameters {
+impl  std::fmt::Debug for PipeSourceManagedStreamingKafkaParameters  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipeSourceManagedStreamingKafkaParameters");
         formatter.field("topic_name", &"*** Sensitive Data Redacted ***");
         formatter.field("starting_position", &self.starting_position);
         formatter.field("batch_size", &self.batch_size);
-        formatter.field(
-            "maximum_batching_window_in_seconds",
-            &self.maximum_batching_window_in_seconds,
-        );
+        formatter.field("maximum_batching_window_in_seconds", &self.maximum_batching_window_in_seconds);
         formatter.field("consumer_group_id", &"*** Sensitive Data Redacted ***");
         formatter.field("credentials", &self.credentials);
         formatter.finish()
@@ -7027,7 +6394,7 @@ impl std::fmt::Debug for PipeSourceManagedStreamingKafkaParameters {
 }
 /// See [`PipeSourceManagedStreamingKafkaParameters`](crate::model::PipeSourceManagedStreamingKafkaParameters).
 pub mod pipe_source_managed_streaming_kafka_parameters {
-
+    
     /// A builder for [`PipeSourceManagedStreamingKafkaParameters`](crate::model::PipeSourceManagedStreamingKafkaParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -7046,8 +6413,7 @@ pub mod pipe_source_managed_streaming_kafka_parameters {
         }
         /// <p>The name of the topic that the pipe will read from.</p>
         pub fn set_topic_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.topic_name = input;
-            self
+            self.topic_name = input; self
         }
         /// <p>(Streams only) The position in a stream from which to start reading.</p>
         pub fn starting_position(mut self, input: crate::model::MskStartPosition) -> Self {
@@ -7055,12 +6421,8 @@ pub mod pipe_source_managed_streaming_kafka_parameters {
             self
         }
         /// <p>(Streams only) The position in a stream from which to start reading.</p>
-        pub fn set_starting_position(
-            mut self,
-            input: std::option::Option<crate::model::MskStartPosition>,
-        ) -> Self {
-            self.starting_position = input;
-            self
+        pub fn set_starting_position(mut self, input: std::option::Option<crate::model::MskStartPosition>) -> Self {
+            self.starting_position = input; self
         }
         /// <p>The maximum number of records to include in each batch.</p>
         pub fn batch_size(mut self, input: i32) -> Self {
@@ -7069,8 +6431,7 @@ pub mod pipe_source_managed_streaming_kafka_parameters {
         }
         /// <p>The maximum number of records to include in each batch.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_size = input;
-            self
+            self.batch_size = input; self
         }
         /// <p>The maximum length of a time to wait for events.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -7078,12 +6439,8 @@ pub mod pipe_source_managed_streaming_kafka_parameters {
             self
         }
         /// <p>The maximum length of a time to wait for events.</p>
-        pub fn set_maximum_batching_window_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_batching_window_in_seconds = input;
-            self
+        pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_batching_window_in_seconds = input; self
         }
         /// <p>The name of the destination queue to consume.</p>
         pub fn consumer_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7091,12 +6448,8 @@ pub mod pipe_source_managed_streaming_kafka_parameters {
             self
         }
         /// <p>The name of the destination queue to consume.</p>
-        pub fn set_consumer_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.consumer_group_id = input;
-            self
+        pub fn set_consumer_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.consumer_group_id = input; self
         }
         /// <p>The credentials needed to access the resource.</p>
         pub fn credentials(mut self, input: crate::model::MskAccessCredentials) -> Self {
@@ -7104,22 +6457,24 @@ pub mod pipe_source_managed_streaming_kafka_parameters {
             self
         }
         /// <p>The credentials needed to access the resource.</p>
-        pub fn set_credentials(
-            mut self,
-            input: std::option::Option<crate::model::MskAccessCredentials>,
-        ) -> Self {
-            self.credentials = input;
-            self
+        pub fn set_credentials(mut self, input: std::option::Option<crate::model::MskAccessCredentials>) -> Self {
+            self.credentials = input; self
         }
         /// Consumes the builder and constructs a [`PipeSourceManagedStreamingKafkaParameters`](crate::model::PipeSourceManagedStreamingKafkaParameters).
         pub fn build(self) -> crate::model::PipeSourceManagedStreamingKafkaParameters {
             crate::model::PipeSourceManagedStreamingKafkaParameters {
-                topic_name: self.topic_name,
-                starting_position: self.starting_position,
-                batch_size: self.batch_size,
-                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
-                consumer_group_id: self.consumer_group_id,
-                credentials: self.credentials,
+                topic_name: self.topic_name
+                ,
+                starting_position: self.starting_position
+                ,
+                batch_size: self.batch_size
+                ,
+                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+                ,
+                consumer_group_id: self.consumer_group_id
+                ,
+                credentials: self.credentials
+                ,
             }
         }
     }
@@ -7129,15 +6484,14 @@ pub mod pipe_source_managed_streaming_kafka_parameters {
             formatter.field("topic_name", &"*** Sensitive Data Redacted ***");
             formatter.field("starting_position", &self.starting_position);
             formatter.field("batch_size", &self.batch_size);
-            formatter.field(
-                "maximum_batching_window_in_seconds",
-                &self.maximum_batching_window_in_seconds,
-            );
+            formatter.field("maximum_batching_window_in_seconds", &self.maximum_batching_window_in_seconds);
             formatter.field("consumer_group_id", &"*** Sensitive Data Redacted ***");
             formatter.field("credentials", &self.credentials);
             formatter.finish()
         }
     }
+    
+    
 }
 impl PipeSourceManagedStreamingKafkaParameters {
     /// Creates a new builder-style object to manufacture [`PipeSourceManagedStreamingKafkaParameters`](crate::model::PipeSourceManagedStreamingKafkaParameters).
@@ -7167,14 +6521,8 @@ pub enum MskAccessCredentials {
 impl MskAccessCredentials {
     /// Tries to convert the enum instance into [`ClientCertificateTlsAuth`](crate::model::MskAccessCredentials::ClientCertificateTlsAuth), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_client_certificate_tls_auth(
-        &self,
-    ) -> std::result::Result<&std::string::String, &Self> {
-        if let MskAccessCredentials::ClientCertificateTlsAuth(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_client_certificate_tls_auth(&self) -> std::result::Result<&std::string::String, &Self> {
+        if let MskAccessCredentials::ClientCertificateTlsAuth(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`ClientCertificateTlsAuth`](crate::model::MskAccessCredentials::ClientCertificateTlsAuth).
     pub fn is_client_certificate_tls_auth(&self) -> bool {
@@ -7183,11 +6531,7 @@ impl MskAccessCredentials {
     /// Tries to convert the enum instance into [`SaslScram512Auth`](crate::model::MskAccessCredentials::SaslScram512Auth), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sasl_scram512_auth(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let MskAccessCredentials::SaslScram512Auth(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let MskAccessCredentials::SaslScram512Auth(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`SaslScram512Auth`](crate::model::MskAccessCredentials::SaslScram512Auth).
     pub fn is_sasl_scram512_auth(&self) -> bool {
@@ -7205,9 +6549,9 @@ impl MskAccessCredentials {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let mskstartposition = unimplemented!();
 /// match mskstartposition {
@@ -7229,58 +6573,52 @@ impl MskAccessCredentials {
 /// Specifically, when `mskstartposition` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MskStartPosition::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MskStartPosition {
     #[allow(missing_docs)] // documentation missing in model
     Latest,
     #[allow(missing_docs)] // documentation missing in model
     TrimHorizon,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MskStartPosition {
     fn from(s: &str) -> Self {
         match s {
             "LATEST" => MskStartPosition::Latest,
             "TRIM_HORIZON" => MskStartPosition::TrimHorizon,
-            other => MskStartPosition::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MskStartPosition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MskStartPosition {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MskStartPosition::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MskStartPosition::from(s))
+                }
+            }
 impl MskStartPosition {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MskStartPosition::Latest => "LATEST",
             MskStartPosition::TrimHorizon => "TRIM_HORIZON",
-            MskStartPosition::Unknown(value) => value.as_str(),
+            MskStartPosition::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LATEST", "TRIM_HORIZON"]
+        &[
+            "LATEST", "TRIM_HORIZON"
+        ]
     }
 }
 impl AsRef<str> for MskStartPosition {
@@ -7292,7 +6630,7 @@ impl AsRef<str> for MskStartPosition {
 /// <p>The parameters for using a Rabbit MQ broker as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PipeSourceRabbitMqBrokerParameters {
+pub struct PipeSourceRabbitMqBrokerParameters  {
     /// <p>The credentials needed to access the resource.</p>
     #[doc(hidden)]
     pub credentials: std::option::Option<crate::model::MqBrokerAccessCredentials>,
@@ -7311,15 +6649,15 @@ pub struct PipeSourceRabbitMqBrokerParameters {
 }
 impl PipeSourceRabbitMqBrokerParameters {
     /// <p>The credentials needed to access the resource.</p>
-    pub fn credentials(&self) -> std::option::Option<&crate::model::MqBrokerAccessCredentials> {
+    pub fn credentials(&self) -> std::option::Option<& crate::model::MqBrokerAccessCredentials> {
         self.credentials.as_ref()
     }
     /// <p>The name of the destination queue to consume.</p>
-    pub fn queue_name(&self) -> std::option::Option<&str> {
+    pub fn queue_name(&self) -> std::option::Option<& str> {
         self.queue_name.as_deref()
     }
     /// <p>The name of the virtual host associated with the source broker.</p>
-    pub fn virtual_host(&self) -> std::option::Option<&str> {
+    pub fn virtual_host(&self) -> std::option::Option<& str> {
         self.virtual_host.as_deref()
     }
     /// <p>The maximum number of records to include in each batch.</p>
@@ -7331,23 +6669,20 @@ impl PipeSourceRabbitMqBrokerParameters {
         self.maximum_batching_window_in_seconds
     }
 }
-impl std::fmt::Debug for PipeSourceRabbitMqBrokerParameters {
+impl  std::fmt::Debug for PipeSourceRabbitMqBrokerParameters  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipeSourceRabbitMqBrokerParameters");
         formatter.field("credentials", &self.credentials);
         formatter.field("queue_name", &"*** Sensitive Data Redacted ***");
         formatter.field("virtual_host", &"*** Sensitive Data Redacted ***");
         formatter.field("batch_size", &self.batch_size);
-        formatter.field(
-            "maximum_batching_window_in_seconds",
-            &self.maximum_batching_window_in_seconds,
-        );
+        formatter.field("maximum_batching_window_in_seconds", &self.maximum_batching_window_in_seconds);
         formatter.finish()
     }
 }
 /// See [`PipeSourceRabbitMqBrokerParameters`](crate::model::PipeSourceRabbitMqBrokerParameters).
 pub mod pipe_source_rabbit_mq_broker_parameters {
-
+    
     /// A builder for [`PipeSourceRabbitMqBrokerParameters`](crate::model::PipeSourceRabbitMqBrokerParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -7364,12 +6699,8 @@ pub mod pipe_source_rabbit_mq_broker_parameters {
             self
         }
         /// <p>The credentials needed to access the resource.</p>
-        pub fn set_credentials(
-            mut self,
-            input: std::option::Option<crate::model::MqBrokerAccessCredentials>,
-        ) -> Self {
-            self.credentials = input;
-            self
+        pub fn set_credentials(mut self, input: std::option::Option<crate::model::MqBrokerAccessCredentials>) -> Self {
+            self.credentials = input; self
         }
         /// <p>The name of the destination queue to consume.</p>
         pub fn queue_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7378,8 +6709,7 @@ pub mod pipe_source_rabbit_mq_broker_parameters {
         }
         /// <p>The name of the destination queue to consume.</p>
         pub fn set_queue_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.queue_name = input;
-            self
+            self.queue_name = input; self
         }
         /// <p>The name of the virtual host associated with the source broker.</p>
         pub fn virtual_host(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7388,8 +6718,7 @@ pub mod pipe_source_rabbit_mq_broker_parameters {
         }
         /// <p>The name of the virtual host associated with the source broker.</p>
         pub fn set_virtual_host(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.virtual_host = input;
-            self
+            self.virtual_host = input; self
         }
         /// <p>The maximum number of records to include in each batch.</p>
         pub fn batch_size(mut self, input: i32) -> Self {
@@ -7398,8 +6727,7 @@ pub mod pipe_source_rabbit_mq_broker_parameters {
         }
         /// <p>The maximum number of records to include in each batch.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_size = input;
-            self
+            self.batch_size = input; self
         }
         /// <p>The maximum length of a time to wait for events.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -7407,21 +6735,22 @@ pub mod pipe_source_rabbit_mq_broker_parameters {
             self
         }
         /// <p>The maximum length of a time to wait for events.</p>
-        pub fn set_maximum_batching_window_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_batching_window_in_seconds = input;
-            self
+        pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_batching_window_in_seconds = input; self
         }
         /// Consumes the builder and constructs a [`PipeSourceRabbitMqBrokerParameters`](crate::model::PipeSourceRabbitMqBrokerParameters).
         pub fn build(self) -> crate::model::PipeSourceRabbitMqBrokerParameters {
             crate::model::PipeSourceRabbitMqBrokerParameters {
-                credentials: self.credentials,
-                queue_name: self.queue_name,
-                virtual_host: self.virtual_host,
-                batch_size: self.batch_size,
-                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
+                credentials: self.credentials
+                ,
+                queue_name: self.queue_name
+                ,
+                virtual_host: self.virtual_host
+                ,
+                batch_size: self.batch_size
+                ,
+                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+                ,
             }
         }
     }
@@ -7432,13 +6761,12 @@ pub mod pipe_source_rabbit_mq_broker_parameters {
             formatter.field("queue_name", &"*** Sensitive Data Redacted ***");
             formatter.field("virtual_host", &"*** Sensitive Data Redacted ***");
             formatter.field("batch_size", &self.batch_size);
-            formatter.field(
-                "maximum_batching_window_in_seconds",
-                &self.maximum_batching_window_in_seconds,
-            );
+            formatter.field("maximum_batching_window_in_seconds", &self.maximum_batching_window_in_seconds);
             formatter.finish()
         }
     }
+    
+    
 }
 impl PipeSourceRabbitMqBrokerParameters {
     /// Creates a new builder-style object to manufacture [`PipeSourceRabbitMqBrokerParameters`](crate::model::PipeSourceRabbitMqBrokerParameters).
@@ -7468,11 +6796,7 @@ impl MqBrokerAccessCredentials {
     /// Tries to convert the enum instance into [`BasicAuth`](crate::model::MqBrokerAccessCredentials::BasicAuth), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_basic_auth(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let MqBrokerAccessCredentials::BasicAuth(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let MqBrokerAccessCredentials::BasicAuth(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`BasicAuth`](crate::model::MqBrokerAccessCredentials::BasicAuth).
     pub fn is_basic_auth(&self) -> bool {
@@ -7487,7 +6811,7 @@ impl MqBrokerAccessCredentials {
 /// <p>The parameters for using an Active MQ broker as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PipeSourceActiveMqBrokerParameters {
+pub struct PipeSourceActiveMqBrokerParameters  {
     /// <p>The credentials needed to access the resource.</p>
     #[doc(hidden)]
     pub credentials: std::option::Option<crate::model::MqBrokerAccessCredentials>,
@@ -7503,11 +6827,11 @@ pub struct PipeSourceActiveMqBrokerParameters {
 }
 impl PipeSourceActiveMqBrokerParameters {
     /// <p>The credentials needed to access the resource.</p>
-    pub fn credentials(&self) -> std::option::Option<&crate::model::MqBrokerAccessCredentials> {
+    pub fn credentials(&self) -> std::option::Option<& crate::model::MqBrokerAccessCredentials> {
         self.credentials.as_ref()
     }
     /// <p>The name of the destination queue to consume.</p>
-    pub fn queue_name(&self) -> std::option::Option<&str> {
+    pub fn queue_name(&self) -> std::option::Option<& str> {
         self.queue_name.as_deref()
     }
     /// <p>The maximum number of records to include in each batch.</p>
@@ -7519,22 +6843,19 @@ impl PipeSourceActiveMqBrokerParameters {
         self.maximum_batching_window_in_seconds
     }
 }
-impl std::fmt::Debug for PipeSourceActiveMqBrokerParameters {
+impl  std::fmt::Debug for PipeSourceActiveMqBrokerParameters  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipeSourceActiveMqBrokerParameters");
         formatter.field("credentials", &self.credentials);
         formatter.field("queue_name", &"*** Sensitive Data Redacted ***");
         formatter.field("batch_size", &self.batch_size);
-        formatter.field(
-            "maximum_batching_window_in_seconds",
-            &self.maximum_batching_window_in_seconds,
-        );
+        formatter.field("maximum_batching_window_in_seconds", &self.maximum_batching_window_in_seconds);
         formatter.finish()
     }
 }
 /// See [`PipeSourceActiveMqBrokerParameters`](crate::model::PipeSourceActiveMqBrokerParameters).
 pub mod pipe_source_active_mq_broker_parameters {
-
+    
     /// A builder for [`PipeSourceActiveMqBrokerParameters`](crate::model::PipeSourceActiveMqBrokerParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -7550,12 +6871,8 @@ pub mod pipe_source_active_mq_broker_parameters {
             self
         }
         /// <p>The credentials needed to access the resource.</p>
-        pub fn set_credentials(
-            mut self,
-            input: std::option::Option<crate::model::MqBrokerAccessCredentials>,
-        ) -> Self {
-            self.credentials = input;
-            self
+        pub fn set_credentials(mut self, input: std::option::Option<crate::model::MqBrokerAccessCredentials>) -> Self {
+            self.credentials = input; self
         }
         /// <p>The name of the destination queue to consume.</p>
         pub fn queue_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7564,8 +6881,7 @@ pub mod pipe_source_active_mq_broker_parameters {
         }
         /// <p>The name of the destination queue to consume.</p>
         pub fn set_queue_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.queue_name = input;
-            self
+            self.queue_name = input; self
         }
         /// <p>The maximum number of records to include in each batch.</p>
         pub fn batch_size(mut self, input: i32) -> Self {
@@ -7574,8 +6890,7 @@ pub mod pipe_source_active_mq_broker_parameters {
         }
         /// <p>The maximum number of records to include in each batch.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_size = input;
-            self
+            self.batch_size = input; self
         }
         /// <p>The maximum length of a time to wait for events.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -7583,20 +6898,20 @@ pub mod pipe_source_active_mq_broker_parameters {
             self
         }
         /// <p>The maximum length of a time to wait for events.</p>
-        pub fn set_maximum_batching_window_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_batching_window_in_seconds = input;
-            self
+        pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_batching_window_in_seconds = input; self
         }
         /// Consumes the builder and constructs a [`PipeSourceActiveMqBrokerParameters`](crate::model::PipeSourceActiveMqBrokerParameters).
         pub fn build(self) -> crate::model::PipeSourceActiveMqBrokerParameters {
             crate::model::PipeSourceActiveMqBrokerParameters {
-                credentials: self.credentials,
-                queue_name: self.queue_name,
-                batch_size: self.batch_size,
-                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
+                credentials: self.credentials
+                ,
+                queue_name: self.queue_name
+                ,
+                batch_size: self.batch_size
+                ,
+                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+                ,
             }
         }
     }
@@ -7606,13 +6921,12 @@ pub mod pipe_source_active_mq_broker_parameters {
             formatter.field("credentials", &self.credentials);
             formatter.field("queue_name", &"*** Sensitive Data Redacted ***");
             formatter.field("batch_size", &self.batch_size);
-            formatter.field(
-                "maximum_batching_window_in_seconds",
-                &self.maximum_batching_window_in_seconds,
-            );
+            formatter.field("maximum_batching_window_in_seconds", &self.maximum_batching_window_in_seconds);
             formatter.finish()
         }
     }
+    
+    
 }
 impl PipeSourceActiveMqBrokerParameters {
     /// Creates a new builder-style object to manufacture [`PipeSourceActiveMqBrokerParameters`](crate::model::PipeSourceActiveMqBrokerParameters).
@@ -7624,7 +6938,7 @@ impl PipeSourceActiveMqBrokerParameters {
 /// <p>The parameters for using a Amazon SQS stream as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipeSourceSqsQueueParameters {
+pub struct PipeSourceSqsQueueParameters  {
     /// <p>The maximum number of records to include in each batch.</p>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
@@ -7644,7 +6958,7 @@ impl PipeSourceSqsQueueParameters {
 }
 /// See [`PipeSourceSqsQueueParameters`](crate::model::PipeSourceSqsQueueParameters).
 pub mod pipe_source_sqs_queue_parameters {
-
+    
     /// A builder for [`PipeSourceSqsQueueParameters`](crate::model::PipeSourceSqsQueueParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7659,8 +6973,7 @@ pub mod pipe_source_sqs_queue_parameters {
         }
         /// <p>The maximum number of records to include in each batch.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_size = input;
-            self
+            self.batch_size = input; self
         }
         /// <p>The maximum length of a time to wait for events.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -7668,21 +6981,21 @@ pub mod pipe_source_sqs_queue_parameters {
             self
         }
         /// <p>The maximum length of a time to wait for events.</p>
-        pub fn set_maximum_batching_window_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_batching_window_in_seconds = input;
-            self
+        pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_batching_window_in_seconds = input; self
         }
         /// Consumes the builder and constructs a [`PipeSourceSqsQueueParameters`](crate::model::PipeSourceSqsQueueParameters).
         pub fn build(self) -> crate::model::PipeSourceSqsQueueParameters {
             crate::model::PipeSourceSqsQueueParameters {
-                batch_size: self.batch_size,
-                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
+                batch_size: self.batch_size
+                ,
+                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+                ,
             }
         }
     }
+    
+    
 }
 impl PipeSourceSqsQueueParameters {
     /// Creates a new builder-style object to manufacture [`PipeSourceSqsQueueParameters`](crate::model::PipeSourceSqsQueueParameters).
@@ -7694,7 +7007,7 @@ impl PipeSourceSqsQueueParameters {
 /// <p>The parameters for using a DynamoDB stream as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipeSourceDynamoDbStreamParameters {
+pub struct PipeSourceDynamoDbStreamParameters  {
     /// <p>The maximum number of records to include in each batch.</p>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
@@ -7703,8 +7016,7 @@ pub struct PipeSourceDynamoDbStreamParameters {
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
     #[doc(hidden)]
-    pub on_partial_batch_item_failure:
-        std::option::Option<crate::model::OnPartialBatchItemFailureStreams>,
+    pub on_partial_batch_item_failure: std::option::Option<crate::model::OnPartialBatchItemFailureStreams>,
     /// <p>The maximum length of a time to wait for events.</p>
     #[doc(hidden)]
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
@@ -7727,13 +7039,11 @@ impl PipeSourceDynamoDbStreamParameters {
         self.batch_size
     }
     /// <p>Define the target queue to send dead-letter queue events to.</p>
-    pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
+    pub fn dead_letter_config(&self) -> std::option::Option<& crate::model::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-    pub fn on_partial_batch_item_failure(
-        &self,
-    ) -> std::option::Option<&crate::model::OnPartialBatchItemFailureStreams> {
+    pub fn on_partial_batch_item_failure(&self) -> std::option::Option<& crate::model::OnPartialBatchItemFailureStreams> {
         self.on_partial_batch_item_failure.as_ref()
     }
     /// <p>The maximum length of a time to wait for events.</p>
@@ -7753,28 +7063,24 @@ impl PipeSourceDynamoDbStreamParameters {
         self.parallelization_factor
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
-    pub fn starting_position(
-        &self,
-    ) -> std::option::Option<&crate::model::DynamoDbStreamStartPosition> {
+    pub fn starting_position(&self) -> std::option::Option<& crate::model::DynamoDbStreamStartPosition> {
         self.starting_position.as_ref()
     }
 }
 /// See [`PipeSourceDynamoDbStreamParameters`](crate::model::PipeSourceDynamoDbStreamParameters).
 pub mod pipe_source_dynamo_db_stream_parameters {
-
+    
     /// A builder for [`PipeSourceDynamoDbStreamParameters`](crate::model::PipeSourceDynamoDbStreamParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_size: std::option::Option<i32>,
         pub(crate) dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
-        pub(crate) on_partial_batch_item_failure:
-            std::option::Option<crate::model::OnPartialBatchItemFailureStreams>,
+        pub(crate) on_partial_batch_item_failure: std::option::Option<crate::model::OnPartialBatchItemFailureStreams>,
         pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
         pub(crate) maximum_record_age_in_seconds: std::option::Option<i32>,
         pub(crate) maximum_retry_attempts: std::option::Option<i32>,
         pub(crate) parallelization_factor: std::option::Option<i32>,
-        pub(crate) starting_position:
-            std::option::Option<crate::model::DynamoDbStreamStartPosition>,
+        pub(crate) starting_position: std::option::Option<crate::model::DynamoDbStreamStartPosition>,
     }
     impl Builder {
         /// <p>The maximum number of records to include in each batch.</p>
@@ -7784,8 +7090,7 @@ pub mod pipe_source_dynamo_db_stream_parameters {
         }
         /// <p>The maximum number of records to include in each batch.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_size = input;
-            self
+            self.batch_size = input; self
         }
         /// <p>Define the target queue to send dead-letter queue events to.</p>
         pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
@@ -7793,28 +7098,17 @@ pub mod pipe_source_dynamo_db_stream_parameters {
             self
         }
         /// <p>Define the target queue to send dead-letter queue events to.</p>
-        pub fn set_dead_letter_config(
-            mut self,
-            input: std::option::Option<crate::model::DeadLetterConfig>,
-        ) -> Self {
-            self.dead_letter_config = input;
-            self
+        pub fn set_dead_letter_config(mut self, input: std::option::Option<crate::model::DeadLetterConfig>) -> Self {
+            self.dead_letter_config = input; self
         }
         /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-        pub fn on_partial_batch_item_failure(
-            mut self,
-            input: crate::model::OnPartialBatchItemFailureStreams,
-        ) -> Self {
+        pub fn on_partial_batch_item_failure(mut self, input: crate::model::OnPartialBatchItemFailureStreams) -> Self {
             self.on_partial_batch_item_failure = Some(input);
             self
         }
         /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-        pub fn set_on_partial_batch_item_failure(
-            mut self,
-            input: std::option::Option<crate::model::OnPartialBatchItemFailureStreams>,
-        ) -> Self {
-            self.on_partial_batch_item_failure = input;
-            self
+        pub fn set_on_partial_batch_item_failure(mut self, input: std::option::Option<crate::model::OnPartialBatchItemFailureStreams>) -> Self {
+            self.on_partial_batch_item_failure = input; self
         }
         /// <p>The maximum length of a time to wait for events.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -7822,12 +7116,8 @@ pub mod pipe_source_dynamo_db_stream_parameters {
             self
         }
         /// <p>The maximum length of a time to wait for events.</p>
-        pub fn set_maximum_batching_window_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_batching_window_in_seconds = input;
-            self
+        pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_batching_window_in_seconds = input; self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. </p>
         pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
@@ -7835,12 +7125,8 @@ pub mod pipe_source_dynamo_db_stream_parameters {
             self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. </p>
-        pub fn set_maximum_record_age_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_record_age_in_seconds = input;
-            self
+        pub fn set_maximum_record_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_record_age_in_seconds = input; self
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
@@ -7849,8 +7135,7 @@ pub mod pipe_source_dynamo_db_stream_parameters {
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = input;
-            self
+            self.maximum_retry_attempts = input; self
         }
         /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn parallelization_factor(mut self, input: i32) -> Self {
@@ -7859,39 +7144,41 @@ pub mod pipe_source_dynamo_db_stream_parameters {
         }
         /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn set_parallelization_factor(mut self, input: std::option::Option<i32>) -> Self {
-            self.parallelization_factor = input;
-            self
+            self.parallelization_factor = input; self
         }
         /// <p>(Streams only) The position in a stream from which to start reading.</p>
-        pub fn starting_position(
-            mut self,
-            input: crate::model::DynamoDbStreamStartPosition,
-        ) -> Self {
+        pub fn starting_position(mut self, input: crate::model::DynamoDbStreamStartPosition) -> Self {
             self.starting_position = Some(input);
             self
         }
         /// <p>(Streams only) The position in a stream from which to start reading.</p>
-        pub fn set_starting_position(
-            mut self,
-            input: std::option::Option<crate::model::DynamoDbStreamStartPosition>,
-        ) -> Self {
-            self.starting_position = input;
-            self
+        pub fn set_starting_position(mut self, input: std::option::Option<crate::model::DynamoDbStreamStartPosition>) -> Self {
+            self.starting_position = input; self
         }
         /// Consumes the builder and constructs a [`PipeSourceDynamoDbStreamParameters`](crate::model::PipeSourceDynamoDbStreamParameters).
         pub fn build(self) -> crate::model::PipeSourceDynamoDbStreamParameters {
             crate::model::PipeSourceDynamoDbStreamParameters {
-                batch_size: self.batch_size,
-                dead_letter_config: self.dead_letter_config,
-                on_partial_batch_item_failure: self.on_partial_batch_item_failure,
-                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
-                maximum_record_age_in_seconds: self.maximum_record_age_in_seconds,
-                maximum_retry_attempts: self.maximum_retry_attempts,
-                parallelization_factor: self.parallelization_factor,
-                starting_position: self.starting_position,
+                batch_size: self.batch_size
+                ,
+                dead_letter_config: self.dead_letter_config
+                ,
+                on_partial_batch_item_failure: self.on_partial_batch_item_failure
+                ,
+                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+                ,
+                maximum_record_age_in_seconds: self.maximum_record_age_in_seconds
+                ,
+                maximum_retry_attempts: self.maximum_retry_attempts
+                ,
+                parallelization_factor: self.parallelization_factor
+                ,
+                starting_position: self.starting_position
+                ,
             }
         }
     }
+    
+    
 }
 impl PipeSourceDynamoDbStreamParameters {
     /// Creates a new builder-style object to manufacture [`PipeSourceDynamoDbStreamParameters`](crate::model::PipeSourceDynamoDbStreamParameters).
@@ -7906,9 +7193,9 @@ impl PipeSourceDynamoDbStreamParameters {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dynamodbstreamstartposition = unimplemented!();
 /// match dynamodbstreamstartposition {
@@ -7930,60 +7217,52 @@ impl PipeSourceDynamoDbStreamParameters {
 /// Specifically, when `dynamodbstreamstartposition` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DynamoDbStreamStartPosition::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DynamoDbStreamStartPosition {
     #[allow(missing_docs)] // documentation missing in model
     Latest,
     #[allow(missing_docs)] // documentation missing in model
     TrimHorizon,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DynamoDbStreamStartPosition {
     fn from(s: &str) -> Self {
         match s {
             "LATEST" => DynamoDbStreamStartPosition::Latest,
             "TRIM_HORIZON" => DynamoDbStreamStartPosition::TrimHorizon,
-            other => DynamoDbStreamStartPosition::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DynamoDbStreamStartPosition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DynamoDbStreamStartPosition {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DynamoDbStreamStartPosition::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DynamoDbStreamStartPosition::from(s))
+                }
+            }
 impl DynamoDbStreamStartPosition {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DynamoDbStreamStartPosition::Latest => "LATEST",
             DynamoDbStreamStartPosition::TrimHorizon => "TRIM_HORIZON",
-            DynamoDbStreamStartPosition::Unknown(value) => value.as_str(),
+            DynamoDbStreamStartPosition::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LATEST", "TRIM_HORIZON"]
+        &[
+            "LATEST", "TRIM_HORIZON"
+        ]
     }
 }
 impl AsRef<str> for DynamoDbStreamStartPosition {
@@ -7998,9 +7277,9 @@ impl AsRef<str> for DynamoDbStreamStartPosition {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let onpartialbatchitemfailurestreams = unimplemented!();
 /// match onpartialbatchitemfailurestreams {
@@ -8021,56 +7300,48 @@ impl AsRef<str> for DynamoDbStreamStartPosition {
 /// Specifically, when `onpartialbatchitemfailurestreams` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OnPartialBatchItemFailureStreams::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OnPartialBatchItemFailureStreams {
     #[allow(missing_docs)] // documentation missing in model
     AutomaticBisect,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OnPartialBatchItemFailureStreams {
     fn from(s: &str) -> Self {
         match s {
             "AUTOMATIC_BISECT" => OnPartialBatchItemFailureStreams::AutomaticBisect,
-            other => OnPartialBatchItemFailureStreams::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => OnPartialBatchItemFailureStreams::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OnPartialBatchItemFailureStreams {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OnPartialBatchItemFailureStreams::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OnPartialBatchItemFailureStreams::from(s))
+                }
+            }
 impl OnPartialBatchItemFailureStreams {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OnPartialBatchItemFailureStreams::AutomaticBisect => "AUTOMATIC_BISECT",
-            OnPartialBatchItemFailureStreams::Unknown(value) => value.as_str(),
+            OnPartialBatchItemFailureStreams::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUTOMATIC_BISECT"]
+        &[
+            "AUTOMATIC_BISECT"
+        ]
     }
 }
 impl AsRef<str> for OnPartialBatchItemFailureStreams {
@@ -8082,20 +7353,20 @@ impl AsRef<str> for OnPartialBatchItemFailureStreams {
 /// <p>A <code>DeadLetterConfig</code> object that contains information about a dead-letter queue configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeadLetterConfig {
+pub struct DeadLetterConfig  {
     /// <p>The ARN of the Amazon SQS queue specified as the target for the dead-letter queue.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl DeadLetterConfig {
     /// <p>The ARN of the Amazon SQS queue specified as the target for the dead-letter queue.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`DeadLetterConfig`](crate::model::DeadLetterConfig).
 pub mod dead_letter_config {
-
+    
     /// A builder for [`DeadLetterConfig`](crate::model::DeadLetterConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8109,14 +7380,18 @@ pub mod dead_letter_config {
         }
         /// <p>The ARN of the Amazon SQS queue specified as the target for the dead-letter queue.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`DeadLetterConfig`](crate::model::DeadLetterConfig).
         pub fn build(self) -> crate::model::DeadLetterConfig {
-            crate::model::DeadLetterConfig { arn: self.arn }
+            crate::model::DeadLetterConfig {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl DeadLetterConfig {
     /// Creates a new builder-style object to manufacture [`DeadLetterConfig`](crate::model::DeadLetterConfig).
@@ -8128,7 +7403,7 @@ impl DeadLetterConfig {
 /// <p>The parameters for using a Kinesis stream as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipeSourceKinesisStreamParameters {
+pub struct PipeSourceKinesisStreamParameters  {
     /// <p>The maximum number of records to include in each batch.</p>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
@@ -8137,8 +7412,7 @@ pub struct PipeSourceKinesisStreamParameters {
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
     #[doc(hidden)]
-    pub on_partial_batch_item_failure:
-        std::option::Option<crate::model::OnPartialBatchItemFailureStreams>,
+    pub on_partial_batch_item_failure: std::option::Option<crate::model::OnPartialBatchItemFailureStreams>,
     /// <p>The maximum length of a time to wait for events.</p>
     #[doc(hidden)]
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
@@ -8164,13 +7438,11 @@ impl PipeSourceKinesisStreamParameters {
         self.batch_size
     }
     /// <p>Define the target queue to send dead-letter queue events to.</p>
-    pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
+    pub fn dead_letter_config(&self) -> std::option::Option<& crate::model::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-    pub fn on_partial_batch_item_failure(
-        &self,
-    ) -> std::option::Option<&crate::model::OnPartialBatchItemFailureStreams> {
+    pub fn on_partial_batch_item_failure(&self) -> std::option::Option<& crate::model::OnPartialBatchItemFailureStreams> {
         self.on_partial_batch_item_failure.as_ref()
     }
     /// <p>The maximum length of a time to wait for events.</p>
@@ -8190,26 +7462,23 @@ impl PipeSourceKinesisStreamParameters {
         self.parallelization_factor
     }
     /// <p>(Streams only) The position in a stream from which to start reading.</p>
-    pub fn starting_position(
-        &self,
-    ) -> std::option::Option<&crate::model::KinesisStreamStartPosition> {
+    pub fn starting_position(&self) -> std::option::Option<& crate::model::KinesisStreamStartPosition> {
         self.starting_position.as_ref()
     }
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading, in Unix time seconds.</p>
-    pub fn starting_position_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn starting_position_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.starting_position_timestamp.as_ref()
     }
 }
 /// See [`PipeSourceKinesisStreamParameters`](crate::model::PipeSourceKinesisStreamParameters).
 pub mod pipe_source_kinesis_stream_parameters {
-
+    
     /// A builder for [`PipeSourceKinesisStreamParameters`](crate::model::PipeSourceKinesisStreamParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_size: std::option::Option<i32>,
         pub(crate) dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
-        pub(crate) on_partial_batch_item_failure:
-            std::option::Option<crate::model::OnPartialBatchItemFailureStreams>,
+        pub(crate) on_partial_batch_item_failure: std::option::Option<crate::model::OnPartialBatchItemFailureStreams>,
         pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
         pub(crate) maximum_record_age_in_seconds: std::option::Option<i32>,
         pub(crate) maximum_retry_attempts: std::option::Option<i32>,
@@ -8225,8 +7494,7 @@ pub mod pipe_source_kinesis_stream_parameters {
         }
         /// <p>The maximum number of records to include in each batch.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_size = input;
-            self
+            self.batch_size = input; self
         }
         /// <p>Define the target queue to send dead-letter queue events to.</p>
         pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
@@ -8234,28 +7502,17 @@ pub mod pipe_source_kinesis_stream_parameters {
             self
         }
         /// <p>Define the target queue to send dead-letter queue events to.</p>
-        pub fn set_dead_letter_config(
-            mut self,
-            input: std::option::Option<crate::model::DeadLetterConfig>,
-        ) -> Self {
-            self.dead_letter_config = input;
-            self
+        pub fn set_dead_letter_config(mut self, input: std::option::Option<crate::model::DeadLetterConfig>) -> Self {
+            self.dead_letter_config = input; self
         }
         /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-        pub fn on_partial_batch_item_failure(
-            mut self,
-            input: crate::model::OnPartialBatchItemFailureStreams,
-        ) -> Self {
+        pub fn on_partial_batch_item_failure(mut self, input: crate::model::OnPartialBatchItemFailureStreams) -> Self {
             self.on_partial_batch_item_failure = Some(input);
             self
         }
         /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-        pub fn set_on_partial_batch_item_failure(
-            mut self,
-            input: std::option::Option<crate::model::OnPartialBatchItemFailureStreams>,
-        ) -> Self {
-            self.on_partial_batch_item_failure = input;
-            self
+        pub fn set_on_partial_batch_item_failure(mut self, input: std::option::Option<crate::model::OnPartialBatchItemFailureStreams>) -> Self {
+            self.on_partial_batch_item_failure = input; self
         }
         /// <p>The maximum length of a time to wait for events.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -8263,12 +7520,8 @@ pub mod pipe_source_kinesis_stream_parameters {
             self
         }
         /// <p>The maximum length of a time to wait for events.</p>
-        pub fn set_maximum_batching_window_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_batching_window_in_seconds = input;
-            self
+        pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_batching_window_in_seconds = input; self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. </p>
         pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
@@ -8276,12 +7529,8 @@ pub mod pipe_source_kinesis_stream_parameters {
             self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. </p>
-        pub fn set_maximum_record_age_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_record_age_in_seconds = input;
-            self
+        pub fn set_maximum_record_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_record_age_in_seconds = input; self
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
@@ -8290,8 +7539,7 @@ pub mod pipe_source_kinesis_stream_parameters {
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = input;
-            self
+            self.maximum_retry_attempts = input; self
         }
         /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn parallelization_factor(mut self, input: i32) -> Self {
@@ -8300,24 +7548,16 @@ pub mod pipe_source_kinesis_stream_parameters {
         }
         /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn set_parallelization_factor(mut self, input: std::option::Option<i32>) -> Self {
-            self.parallelization_factor = input;
-            self
+            self.parallelization_factor = input; self
         }
         /// <p>(Streams only) The position in a stream from which to start reading.</p>
-        pub fn starting_position(
-            mut self,
-            input: crate::model::KinesisStreamStartPosition,
-        ) -> Self {
+        pub fn starting_position(mut self, input: crate::model::KinesisStreamStartPosition) -> Self {
             self.starting_position = Some(input);
             self
         }
         /// <p>(Streams only) The position in a stream from which to start reading.</p>
-        pub fn set_starting_position(
-            mut self,
-            input: std::option::Option<crate::model::KinesisStreamStartPosition>,
-        ) -> Self {
-            self.starting_position = input;
-            self
+        pub fn set_starting_position(mut self, input: std::option::Option<crate::model::KinesisStreamStartPosition>) -> Self {
+            self.starting_position = input; self
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading, in Unix time seconds.</p>
         pub fn starting_position_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8325,28 +7565,35 @@ pub mod pipe_source_kinesis_stream_parameters {
             self
         }
         /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading, in Unix time seconds.</p>
-        pub fn set_starting_position_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.starting_position_timestamp = input;
-            self
+        pub fn set_starting_position_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.starting_position_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`PipeSourceKinesisStreamParameters`](crate::model::PipeSourceKinesisStreamParameters).
         pub fn build(self) -> crate::model::PipeSourceKinesisStreamParameters {
             crate::model::PipeSourceKinesisStreamParameters {
-                batch_size: self.batch_size,
-                dead_letter_config: self.dead_letter_config,
-                on_partial_batch_item_failure: self.on_partial_batch_item_failure,
-                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
-                maximum_record_age_in_seconds: self.maximum_record_age_in_seconds,
-                maximum_retry_attempts: self.maximum_retry_attempts,
-                parallelization_factor: self.parallelization_factor,
-                starting_position: self.starting_position,
-                starting_position_timestamp: self.starting_position_timestamp,
+                batch_size: self.batch_size
+                ,
+                dead_letter_config: self.dead_letter_config
+                ,
+                on_partial_batch_item_failure: self.on_partial_batch_item_failure
+                ,
+                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+                ,
+                maximum_record_age_in_seconds: self.maximum_record_age_in_seconds
+                ,
+                maximum_retry_attempts: self.maximum_retry_attempts
+                ,
+                parallelization_factor: self.parallelization_factor
+                ,
+                starting_position: self.starting_position
+                ,
+                starting_position_timestamp: self.starting_position_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl PipeSourceKinesisStreamParameters {
     /// Creates a new builder-style object to manufacture [`PipeSourceKinesisStreamParameters`](crate::model::PipeSourceKinesisStreamParameters).
@@ -8361,9 +7608,9 @@ impl PipeSourceKinesisStreamParameters {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let kinesisstreamstartposition = unimplemented!();
 /// match kinesisstreamstartposition {
@@ -8386,22 +7633,14 @@ impl PipeSourceKinesisStreamParameters {
 /// Specifically, when `kinesisstreamstartposition` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `KinesisStreamStartPosition::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum KinesisStreamStartPosition {
     #[allow(missing_docs)] // documentation missing in model
     AtTimestamp,
@@ -8410,7 +7649,7 @@ pub enum KinesisStreamStartPosition {
     #[allow(missing_docs)] // documentation missing in model
     TrimHorizon,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for KinesisStreamStartPosition {
     fn from(s: &str) -> Self {
@@ -8418,19 +7657,17 @@ impl std::convert::From<&str> for KinesisStreamStartPosition {
             "AT_TIMESTAMP" => KinesisStreamStartPosition::AtTimestamp,
             "LATEST" => KinesisStreamStartPosition::Latest,
             "TRIM_HORIZON" => KinesisStreamStartPosition::TrimHorizon,
-            other => KinesisStreamStartPosition::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => KinesisStreamStartPosition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for KinesisStreamStartPosition {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KinesisStreamStartPosition::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(KinesisStreamStartPosition::from(s))
+                }
+            }
 impl KinesisStreamStartPosition {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8438,12 +7675,14 @@ impl KinesisStreamStartPosition {
             KinesisStreamStartPosition::AtTimestamp => "AT_TIMESTAMP",
             KinesisStreamStartPosition::Latest => "LATEST",
             KinesisStreamStartPosition::TrimHorizon => "TRIM_HORIZON",
-            KinesisStreamStartPosition::Unknown(value) => value.as_str(),
+            KinesisStreamStartPosition::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AT_TIMESTAMP", "LATEST", "TRIM_HORIZON"]
+        &[
+            "AT_TIMESTAMP", "LATEST", "TRIM_HORIZON"
+        ]
     }
 }
 impl AsRef<str> for KinesisStreamStartPosition {
@@ -8455,20 +7694,20 @@ impl AsRef<str> for KinesisStreamStartPosition {
 /// <p>The collection of event patterns used to filter events. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilterCriteria {
+pub struct FilterCriteria  {
     /// <p>The event patterns.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
 }
 impl FilterCriteria {
     /// <p>The event patterns.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::Filter]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::Filter]> {
         self.filters.as_deref()
     }
 }
 /// See [`FilterCriteria`](crate::model::FilterCriteria).
 pub mod filter_criteria {
-
+    
     /// A builder for [`FilterCriteria`](crate::model::FilterCriteria).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8482,25 +7721,24 @@ pub mod filter_criteria {
         /// <p>The event patterns.</p>
         pub fn filters(mut self, input: crate::model::Filter) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p>The event patterns.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::Filter>>) -> Self {
+            self.filters = input; self
         }
         /// Consumes the builder and constructs a [`FilterCriteria`](crate::model::FilterCriteria).
         pub fn build(self) -> crate::model::FilterCriteria {
             crate::model::FilterCriteria {
-                filters: self.filters,
+                filters: self.filters
+                ,
             }
         }
     }
+    
+    
 }
 impl FilterCriteria {
     /// Creates a new builder-style object to manufacture [`FilterCriteria`](crate::model::FilterCriteria).
@@ -8512,18 +7750,18 @@ impl FilterCriteria {
 /// <p>Filter events using an event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Filter {
+pub struct Filter  {
     /// <p>The event pattern.</p>
     #[doc(hidden)]
     pub pattern: std::option::Option<std::string::String>,
 }
 impl Filter {
     /// <p>The event pattern.</p>
-    pub fn pattern(&self) -> std::option::Option<&str> {
+    pub fn pattern(&self) -> std::option::Option<& str> {
         self.pattern.as_deref()
     }
 }
-impl std::fmt::Debug for Filter {
+impl  std::fmt::Debug for Filter  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Filter");
         formatter.field("pattern", &"*** Sensitive Data Redacted ***");
@@ -8532,7 +7770,7 @@ impl std::fmt::Debug for Filter {
 }
 /// See [`Filter`](crate::model::Filter).
 pub mod filter {
-
+    
     /// A builder for [`Filter`](crate::model::Filter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -8546,13 +7784,13 @@ pub mod filter {
         }
         /// <p>The event pattern.</p>
         pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pattern = input;
-            self
+            self.pattern = input; self
         }
         /// Consumes the builder and constructs a [`Filter`](crate::model::Filter).
         pub fn build(self) -> crate::model::Filter {
             crate::model::Filter {
-                pattern: self.pattern,
+                pattern: self.pattern
+                ,
             }
         }
     }
@@ -8563,6 +7801,8 @@ pub mod filter {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Filter {
     /// Creates a new builder-style object to manufacture [`Filter`](crate::model::Filter).
@@ -8577,9 +7817,9 @@ impl Filter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let requestedpipestatedescriberesponse = unimplemented!();
 /// match requestedpipestatedescriberesponse {
@@ -8602,22 +7842,14 @@ impl Filter {
 /// Specifically, when `requestedpipestatedescriberesponse` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RequestedPipeStateDescribeResponse::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RequestedPipeStateDescribeResponse {
     #[allow(missing_docs)] // documentation missing in model
     Deleted,
@@ -8626,7 +7858,7 @@ pub enum RequestedPipeStateDescribeResponse {
     #[allow(missing_docs)] // documentation missing in model
     Stopped,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RequestedPipeStateDescribeResponse {
     fn from(s: &str) -> Self {
@@ -8634,19 +7866,17 @@ impl std::convert::From<&str> for RequestedPipeStateDescribeResponse {
             "DELETED" => RequestedPipeStateDescribeResponse::Deleted,
             "RUNNING" => RequestedPipeStateDescribeResponse::Running,
             "STOPPED" => RequestedPipeStateDescribeResponse::Stopped,
-            other => RequestedPipeStateDescribeResponse::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            other => RequestedPipeStateDescribeResponse::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RequestedPipeStateDescribeResponse {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RequestedPipeStateDescribeResponse::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RequestedPipeStateDescribeResponse::from(s))
+                }
+            }
 impl RequestedPipeStateDescribeResponse {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8654,12 +7884,14 @@ impl RequestedPipeStateDescribeResponse {
             RequestedPipeStateDescribeResponse::Deleted => "DELETED",
             RequestedPipeStateDescribeResponse::Running => "RUNNING",
             RequestedPipeStateDescribeResponse::Stopped => "STOPPED",
-            RequestedPipeStateDescribeResponse::Unknown(value) => value.as_str(),
+            RequestedPipeStateDescribeResponse::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DELETED", "RUNNING", "STOPPED"]
+        &[
+            "DELETED", "RUNNING", "STOPPED"
+        ]
     }
 }
 impl AsRef<str> for RequestedPipeStateDescribeResponse {
@@ -8671,107 +7903,80 @@ impl AsRef<str> for RequestedPipeStateDescribeResponse {
 /// <p>The parameters required to set up a source for your pipe.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePipeSourceParameters {
+pub struct UpdatePipeSourceParameters  {
     /// <p>The collection of event patterns used to filter events. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     #[doc(hidden)]
     pub filter_criteria: std::option::Option<crate::model::FilterCriteria>,
     /// <p>The parameters for using a Kinesis stream as a source.</p>
     #[doc(hidden)]
-    pub kinesis_stream_parameters:
-        std::option::Option<crate::model::UpdatePipeSourceKinesisStreamParameters>,
+    pub kinesis_stream_parameters: std::option::Option<crate::model::UpdatePipeSourceKinesisStreamParameters>,
     /// <p>The parameters for using a DynamoDB stream as a source.</p>
     #[doc(hidden)]
-    pub dynamo_db_stream_parameters:
-        std::option::Option<crate::model::UpdatePipeSourceDynamoDbStreamParameters>,
+    pub dynamo_db_stream_parameters: std::option::Option<crate::model::UpdatePipeSourceDynamoDbStreamParameters>,
     /// <p>The parameters for using a Amazon SQS stream as a source.</p>
     #[doc(hidden)]
     pub sqs_queue_parameters: std::option::Option<crate::model::UpdatePipeSourceSqsQueueParameters>,
     /// <p>The parameters for using an Active MQ broker as a source.</p>
     #[doc(hidden)]
-    pub active_mq_broker_parameters:
-        std::option::Option<crate::model::UpdatePipeSourceActiveMqBrokerParameters>,
+    pub active_mq_broker_parameters: std::option::Option<crate::model::UpdatePipeSourceActiveMqBrokerParameters>,
     /// <p>The parameters for using a Rabbit MQ broker as a source.</p>
     #[doc(hidden)]
-    pub rabbit_mq_broker_parameters:
-        std::option::Option<crate::model::UpdatePipeSourceRabbitMqBrokerParameters>,
+    pub rabbit_mq_broker_parameters: std::option::Option<crate::model::UpdatePipeSourceRabbitMqBrokerParameters>,
     /// <p>The parameters for using an MSK stream as a source.</p>
     #[doc(hidden)]
-    pub managed_streaming_kafka_parameters:
-        std::option::Option<crate::model::UpdatePipeSourceManagedStreamingKafkaParameters>,
+    pub managed_streaming_kafka_parameters: std::option::Option<crate::model::UpdatePipeSourceManagedStreamingKafkaParameters>,
     /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
     #[doc(hidden)]
-    pub self_managed_kafka_parameters:
-        std::option::Option<crate::model::UpdatePipeSourceSelfManagedKafkaParameters>,
+    pub self_managed_kafka_parameters: std::option::Option<crate::model::UpdatePipeSourceSelfManagedKafkaParameters>,
 }
 impl UpdatePipeSourceParameters {
     /// <p>The collection of event patterns used to filter events. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-    pub fn filter_criteria(&self) -> std::option::Option<&crate::model::FilterCriteria> {
+    pub fn filter_criteria(&self) -> std::option::Option<& crate::model::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
     /// <p>The parameters for using a Kinesis stream as a source.</p>
-    pub fn kinesis_stream_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::UpdatePipeSourceKinesisStreamParameters> {
+    pub fn kinesis_stream_parameters(&self) -> std::option::Option<& crate::model::UpdatePipeSourceKinesisStreamParameters> {
         self.kinesis_stream_parameters.as_ref()
     }
     /// <p>The parameters for using a DynamoDB stream as a source.</p>
-    pub fn dynamo_db_stream_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::UpdatePipeSourceDynamoDbStreamParameters> {
+    pub fn dynamo_db_stream_parameters(&self) -> std::option::Option<& crate::model::UpdatePipeSourceDynamoDbStreamParameters> {
         self.dynamo_db_stream_parameters.as_ref()
     }
     /// <p>The parameters for using a Amazon SQS stream as a source.</p>
-    pub fn sqs_queue_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::UpdatePipeSourceSqsQueueParameters> {
+    pub fn sqs_queue_parameters(&self) -> std::option::Option<& crate::model::UpdatePipeSourceSqsQueueParameters> {
         self.sqs_queue_parameters.as_ref()
     }
     /// <p>The parameters for using an Active MQ broker as a source.</p>
-    pub fn active_mq_broker_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::UpdatePipeSourceActiveMqBrokerParameters> {
+    pub fn active_mq_broker_parameters(&self) -> std::option::Option<& crate::model::UpdatePipeSourceActiveMqBrokerParameters> {
         self.active_mq_broker_parameters.as_ref()
     }
     /// <p>The parameters for using a Rabbit MQ broker as a source.</p>
-    pub fn rabbit_mq_broker_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::UpdatePipeSourceRabbitMqBrokerParameters> {
+    pub fn rabbit_mq_broker_parameters(&self) -> std::option::Option<& crate::model::UpdatePipeSourceRabbitMqBrokerParameters> {
         self.rabbit_mq_broker_parameters.as_ref()
     }
     /// <p>The parameters for using an MSK stream as a source.</p>
-    pub fn managed_streaming_kafka_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::UpdatePipeSourceManagedStreamingKafkaParameters> {
+    pub fn managed_streaming_kafka_parameters(&self) -> std::option::Option<& crate::model::UpdatePipeSourceManagedStreamingKafkaParameters> {
         self.managed_streaming_kafka_parameters.as_ref()
     }
     /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
-    pub fn self_managed_kafka_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::UpdatePipeSourceSelfManagedKafkaParameters> {
+    pub fn self_managed_kafka_parameters(&self) -> std::option::Option<& crate::model::UpdatePipeSourceSelfManagedKafkaParameters> {
         self.self_managed_kafka_parameters.as_ref()
     }
 }
 /// See [`UpdatePipeSourceParameters`](crate::model::UpdatePipeSourceParameters).
 pub mod update_pipe_source_parameters {
-
+    
     /// A builder for [`UpdatePipeSourceParameters`](crate::model::UpdatePipeSourceParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_criteria: std::option::Option<crate::model::FilterCriteria>,
-        pub(crate) kinesis_stream_parameters:
-            std::option::Option<crate::model::UpdatePipeSourceKinesisStreamParameters>,
-        pub(crate) dynamo_db_stream_parameters:
-            std::option::Option<crate::model::UpdatePipeSourceDynamoDbStreamParameters>,
-        pub(crate) sqs_queue_parameters:
-            std::option::Option<crate::model::UpdatePipeSourceSqsQueueParameters>,
-        pub(crate) active_mq_broker_parameters:
-            std::option::Option<crate::model::UpdatePipeSourceActiveMqBrokerParameters>,
-        pub(crate) rabbit_mq_broker_parameters:
-            std::option::Option<crate::model::UpdatePipeSourceRabbitMqBrokerParameters>,
-        pub(crate) managed_streaming_kafka_parameters:
-            std::option::Option<crate::model::UpdatePipeSourceManagedStreamingKafkaParameters>,
-        pub(crate) self_managed_kafka_parameters:
-            std::option::Option<crate::model::UpdatePipeSourceSelfManagedKafkaParameters>,
+        pub(crate) kinesis_stream_parameters: std::option::Option<crate::model::UpdatePipeSourceKinesisStreamParameters>,
+        pub(crate) dynamo_db_stream_parameters: std::option::Option<crate::model::UpdatePipeSourceDynamoDbStreamParameters>,
+        pub(crate) sqs_queue_parameters: std::option::Option<crate::model::UpdatePipeSourceSqsQueueParameters>,
+        pub(crate) active_mq_broker_parameters: std::option::Option<crate::model::UpdatePipeSourceActiveMqBrokerParameters>,
+        pub(crate) rabbit_mq_broker_parameters: std::option::Option<crate::model::UpdatePipeSourceRabbitMqBrokerParameters>,
+        pub(crate) managed_streaming_kafka_parameters: std::option::Option<crate::model::UpdatePipeSourceManagedStreamingKafkaParameters>,
+        pub(crate) self_managed_kafka_parameters: std::option::Option<crate::model::UpdatePipeSourceSelfManagedKafkaParameters>,
     }
     impl Builder {
         /// <p>The collection of event patterns used to filter events. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
@@ -8780,141 +7985,96 @@ pub mod update_pipe_source_parameters {
             self
         }
         /// <p>The collection of event patterns used to filter events. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-        pub fn set_filter_criteria(
-            mut self,
-            input: std::option::Option<crate::model::FilterCriteria>,
-        ) -> Self {
-            self.filter_criteria = input;
-            self
+        pub fn set_filter_criteria(mut self, input: std::option::Option<crate::model::FilterCriteria>) -> Self {
+            self.filter_criteria = input; self
         }
         /// <p>The parameters for using a Kinesis stream as a source.</p>
-        pub fn kinesis_stream_parameters(
-            mut self,
-            input: crate::model::UpdatePipeSourceKinesisStreamParameters,
-        ) -> Self {
+        pub fn kinesis_stream_parameters(mut self, input: crate::model::UpdatePipeSourceKinesisStreamParameters) -> Self {
             self.kinesis_stream_parameters = Some(input);
             self
         }
         /// <p>The parameters for using a Kinesis stream as a source.</p>
-        pub fn set_kinesis_stream_parameters(
-            mut self,
-            input: std::option::Option<crate::model::UpdatePipeSourceKinesisStreamParameters>,
-        ) -> Self {
-            self.kinesis_stream_parameters = input;
-            self
+        pub fn set_kinesis_stream_parameters(mut self, input: std::option::Option<crate::model::UpdatePipeSourceKinesisStreamParameters>) -> Self {
+            self.kinesis_stream_parameters = input; self
         }
         /// <p>The parameters for using a DynamoDB stream as a source.</p>
-        pub fn dynamo_db_stream_parameters(
-            mut self,
-            input: crate::model::UpdatePipeSourceDynamoDbStreamParameters,
-        ) -> Self {
+        pub fn dynamo_db_stream_parameters(mut self, input: crate::model::UpdatePipeSourceDynamoDbStreamParameters) -> Self {
             self.dynamo_db_stream_parameters = Some(input);
             self
         }
         /// <p>The parameters for using a DynamoDB stream as a source.</p>
-        pub fn set_dynamo_db_stream_parameters(
-            mut self,
-            input: std::option::Option<crate::model::UpdatePipeSourceDynamoDbStreamParameters>,
-        ) -> Self {
-            self.dynamo_db_stream_parameters = input;
-            self
+        pub fn set_dynamo_db_stream_parameters(mut self, input: std::option::Option<crate::model::UpdatePipeSourceDynamoDbStreamParameters>) -> Self {
+            self.dynamo_db_stream_parameters = input; self
         }
         /// <p>The parameters for using a Amazon SQS stream as a source.</p>
-        pub fn sqs_queue_parameters(
-            mut self,
-            input: crate::model::UpdatePipeSourceSqsQueueParameters,
-        ) -> Self {
+        pub fn sqs_queue_parameters(mut self, input: crate::model::UpdatePipeSourceSqsQueueParameters) -> Self {
             self.sqs_queue_parameters = Some(input);
             self
         }
         /// <p>The parameters for using a Amazon SQS stream as a source.</p>
-        pub fn set_sqs_queue_parameters(
-            mut self,
-            input: std::option::Option<crate::model::UpdatePipeSourceSqsQueueParameters>,
-        ) -> Self {
-            self.sqs_queue_parameters = input;
-            self
+        pub fn set_sqs_queue_parameters(mut self, input: std::option::Option<crate::model::UpdatePipeSourceSqsQueueParameters>) -> Self {
+            self.sqs_queue_parameters = input; self
         }
         /// <p>The parameters for using an Active MQ broker as a source.</p>
-        pub fn active_mq_broker_parameters(
-            mut self,
-            input: crate::model::UpdatePipeSourceActiveMqBrokerParameters,
-        ) -> Self {
+        pub fn active_mq_broker_parameters(mut self, input: crate::model::UpdatePipeSourceActiveMqBrokerParameters) -> Self {
             self.active_mq_broker_parameters = Some(input);
             self
         }
         /// <p>The parameters for using an Active MQ broker as a source.</p>
-        pub fn set_active_mq_broker_parameters(
-            mut self,
-            input: std::option::Option<crate::model::UpdatePipeSourceActiveMqBrokerParameters>,
-        ) -> Self {
-            self.active_mq_broker_parameters = input;
-            self
+        pub fn set_active_mq_broker_parameters(mut self, input: std::option::Option<crate::model::UpdatePipeSourceActiveMqBrokerParameters>) -> Self {
+            self.active_mq_broker_parameters = input; self
         }
         /// <p>The parameters for using a Rabbit MQ broker as a source.</p>
-        pub fn rabbit_mq_broker_parameters(
-            mut self,
-            input: crate::model::UpdatePipeSourceRabbitMqBrokerParameters,
-        ) -> Self {
+        pub fn rabbit_mq_broker_parameters(mut self, input: crate::model::UpdatePipeSourceRabbitMqBrokerParameters) -> Self {
             self.rabbit_mq_broker_parameters = Some(input);
             self
         }
         /// <p>The parameters for using a Rabbit MQ broker as a source.</p>
-        pub fn set_rabbit_mq_broker_parameters(
-            mut self,
-            input: std::option::Option<crate::model::UpdatePipeSourceRabbitMqBrokerParameters>,
-        ) -> Self {
-            self.rabbit_mq_broker_parameters = input;
-            self
+        pub fn set_rabbit_mq_broker_parameters(mut self, input: std::option::Option<crate::model::UpdatePipeSourceRabbitMqBrokerParameters>) -> Self {
+            self.rabbit_mq_broker_parameters = input; self
         }
         /// <p>The parameters for using an MSK stream as a source.</p>
-        pub fn managed_streaming_kafka_parameters(
-            mut self,
-            input: crate::model::UpdatePipeSourceManagedStreamingKafkaParameters,
-        ) -> Self {
+        pub fn managed_streaming_kafka_parameters(mut self, input: crate::model::UpdatePipeSourceManagedStreamingKafkaParameters) -> Self {
             self.managed_streaming_kafka_parameters = Some(input);
             self
         }
         /// <p>The parameters for using an MSK stream as a source.</p>
-        pub fn set_managed_streaming_kafka_parameters(
-            mut self,
-            input: std::option::Option<
-                crate::model::UpdatePipeSourceManagedStreamingKafkaParameters,
-            >,
-        ) -> Self {
-            self.managed_streaming_kafka_parameters = input;
-            self
+        pub fn set_managed_streaming_kafka_parameters(mut self, input: std::option::Option<crate::model::UpdatePipeSourceManagedStreamingKafkaParameters>) -> Self {
+            self.managed_streaming_kafka_parameters = input; self
         }
         /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
-        pub fn self_managed_kafka_parameters(
-            mut self,
-            input: crate::model::UpdatePipeSourceSelfManagedKafkaParameters,
-        ) -> Self {
+        pub fn self_managed_kafka_parameters(mut self, input: crate::model::UpdatePipeSourceSelfManagedKafkaParameters) -> Self {
             self.self_managed_kafka_parameters = Some(input);
             self
         }
         /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
-        pub fn set_self_managed_kafka_parameters(
-            mut self,
-            input: std::option::Option<crate::model::UpdatePipeSourceSelfManagedKafkaParameters>,
-        ) -> Self {
-            self.self_managed_kafka_parameters = input;
-            self
+        pub fn set_self_managed_kafka_parameters(mut self, input: std::option::Option<crate::model::UpdatePipeSourceSelfManagedKafkaParameters>) -> Self {
+            self.self_managed_kafka_parameters = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePipeSourceParameters`](crate::model::UpdatePipeSourceParameters).
         pub fn build(self) -> crate::model::UpdatePipeSourceParameters {
             crate::model::UpdatePipeSourceParameters {
-                filter_criteria: self.filter_criteria,
-                kinesis_stream_parameters: self.kinesis_stream_parameters,
-                dynamo_db_stream_parameters: self.dynamo_db_stream_parameters,
-                sqs_queue_parameters: self.sqs_queue_parameters,
-                active_mq_broker_parameters: self.active_mq_broker_parameters,
-                rabbit_mq_broker_parameters: self.rabbit_mq_broker_parameters,
-                managed_streaming_kafka_parameters: self.managed_streaming_kafka_parameters,
-                self_managed_kafka_parameters: self.self_managed_kafka_parameters,
+                filter_criteria: self.filter_criteria
+                ,
+                kinesis_stream_parameters: self.kinesis_stream_parameters
+                ,
+                dynamo_db_stream_parameters: self.dynamo_db_stream_parameters
+                ,
+                sqs_queue_parameters: self.sqs_queue_parameters
+                ,
+                active_mq_broker_parameters: self.active_mq_broker_parameters
+                ,
+                rabbit_mq_broker_parameters: self.rabbit_mq_broker_parameters
+                ,
+                managed_streaming_kafka_parameters: self.managed_streaming_kafka_parameters
+                ,
+                self_managed_kafka_parameters: self.self_managed_kafka_parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePipeSourceParameters {
     /// Creates a new builder-style object to manufacture [`UpdatePipeSourceParameters`](crate::model::UpdatePipeSourceParameters).
@@ -8926,7 +8086,7 @@ impl UpdatePipeSourceParameters {
 /// <p>The parameters for using a self-managed Apache Kafka stream as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePipeSourceSelfManagedKafkaParameters {
+pub struct UpdatePipeSourceSelfManagedKafkaParameters  {
     /// <p>The maximum number of records to include in each batch.</p>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
@@ -8935,8 +8095,7 @@ pub struct UpdatePipeSourceSelfManagedKafkaParameters {
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
     /// <p>The credentials needed to access the resource.</p>
     #[doc(hidden)]
-    pub credentials:
-        std::option::Option<crate::model::SelfManagedKafkaAccessConfigurationCredentials>,
+    pub credentials: std::option::Option<crate::model::SelfManagedKafkaAccessConfigurationCredentials>,
     /// <p>The ARN of the Secrets Manager secret used for certification.</p>
     #[doc(hidden)]
     pub server_root_ca_certificate: std::option::Option<std::string::String>,
@@ -8954,32 +8113,27 @@ impl UpdatePipeSourceSelfManagedKafkaParameters {
         self.maximum_batching_window_in_seconds
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn credentials(
-        &self,
-    ) -> std::option::Option<&crate::model::SelfManagedKafkaAccessConfigurationCredentials> {
+    pub fn credentials(&self) -> std::option::Option<& crate::model::SelfManagedKafkaAccessConfigurationCredentials> {
         self.credentials.as_ref()
     }
     /// <p>The ARN of the Secrets Manager secret used for certification.</p>
-    pub fn server_root_ca_certificate(&self) -> std::option::Option<&str> {
+    pub fn server_root_ca_certificate(&self) -> std::option::Option<& str> {
         self.server_root_ca_certificate.as_deref()
     }
     /// <p>This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used.</p>
-    pub fn vpc(
-        &self,
-    ) -> std::option::Option<&crate::model::SelfManagedKafkaAccessConfigurationVpc> {
+    pub fn vpc(&self) -> std::option::Option<& crate::model::SelfManagedKafkaAccessConfigurationVpc> {
         self.vpc.as_ref()
     }
 }
 /// See [`UpdatePipeSourceSelfManagedKafkaParameters`](crate::model::UpdatePipeSourceSelfManagedKafkaParameters).
 pub mod update_pipe_source_self_managed_kafka_parameters {
-
+    
     /// A builder for [`UpdatePipeSourceSelfManagedKafkaParameters`](crate::model::UpdatePipeSourceSelfManagedKafkaParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_size: std::option::Option<i32>,
         pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
-        pub(crate) credentials:
-            std::option::Option<crate::model::SelfManagedKafkaAccessConfigurationCredentials>,
+        pub(crate) credentials: std::option::Option<crate::model::SelfManagedKafkaAccessConfigurationCredentials>,
         pub(crate) server_root_ca_certificate: std::option::Option<std::string::String>,
         pub(crate) vpc: std::option::Option<crate::model::SelfManagedKafkaAccessConfigurationVpc>,
     }
@@ -8991,8 +8145,7 @@ pub mod update_pipe_source_self_managed_kafka_parameters {
         }
         /// <p>The maximum number of records to include in each batch.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_size = input;
-            self
+            self.batch_size = input; self
         }
         /// <p>The maximum length of a time to wait for events.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -9000,30 +8153,17 @@ pub mod update_pipe_source_self_managed_kafka_parameters {
             self
         }
         /// <p>The maximum length of a time to wait for events.</p>
-        pub fn set_maximum_batching_window_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_batching_window_in_seconds = input;
-            self
+        pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_batching_window_in_seconds = input; self
         }
         /// <p>The credentials needed to access the resource.</p>
-        pub fn credentials(
-            mut self,
-            input: crate::model::SelfManagedKafkaAccessConfigurationCredentials,
-        ) -> Self {
+        pub fn credentials(mut self, input: crate::model::SelfManagedKafkaAccessConfigurationCredentials) -> Self {
             self.credentials = Some(input);
             self
         }
         /// <p>The credentials needed to access the resource.</p>
-        pub fn set_credentials(
-            mut self,
-            input: std::option::Option<
-                crate::model::SelfManagedKafkaAccessConfigurationCredentials,
-            >,
-        ) -> Self {
-            self.credentials = input;
-            self
+        pub fn set_credentials(mut self, input: std::option::Option<crate::model::SelfManagedKafkaAccessConfigurationCredentials>) -> Self {
+            self.credentials = input; self
         }
         /// <p>The ARN of the Secrets Manager secret used for certification.</p>
         pub fn server_root_ca_certificate(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9031,12 +8171,8 @@ pub mod update_pipe_source_self_managed_kafka_parameters {
             self
         }
         /// <p>The ARN of the Secrets Manager secret used for certification.</p>
-        pub fn set_server_root_ca_certificate(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.server_root_ca_certificate = input;
-            self
+        pub fn set_server_root_ca_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_root_ca_certificate = input; self
         }
         /// <p>This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used.</p>
         pub fn vpc(mut self, input: crate::model::SelfManagedKafkaAccessConfigurationVpc) -> Self {
@@ -9044,24 +8180,27 @@ pub mod update_pipe_source_self_managed_kafka_parameters {
             self
         }
         /// <p>This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used.</p>
-        pub fn set_vpc(
-            mut self,
-            input: std::option::Option<crate::model::SelfManagedKafkaAccessConfigurationVpc>,
-        ) -> Self {
-            self.vpc = input;
-            self
+        pub fn set_vpc(mut self, input: std::option::Option<crate::model::SelfManagedKafkaAccessConfigurationVpc>) -> Self {
+            self.vpc = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePipeSourceSelfManagedKafkaParameters`](crate::model::UpdatePipeSourceSelfManagedKafkaParameters).
         pub fn build(self) -> crate::model::UpdatePipeSourceSelfManagedKafkaParameters {
             crate::model::UpdatePipeSourceSelfManagedKafkaParameters {
-                batch_size: self.batch_size,
-                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
-                credentials: self.credentials,
-                server_root_ca_certificate: self.server_root_ca_certificate,
-                vpc: self.vpc,
+                batch_size: self.batch_size
+                ,
+                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+                ,
+                credentials: self.credentials
+                ,
+                server_root_ca_certificate: self.server_root_ca_certificate
+                ,
+                vpc: self.vpc
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePipeSourceSelfManagedKafkaParameters {
     /// Creates a new builder-style object to manufacture [`UpdatePipeSourceSelfManagedKafkaParameters`](crate::model::UpdatePipeSourceSelfManagedKafkaParameters).
@@ -9073,7 +8212,7 @@ impl UpdatePipeSourceSelfManagedKafkaParameters {
 /// <p>The parameters for using an MSK stream as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePipeSourceManagedStreamingKafkaParameters {
+pub struct UpdatePipeSourceManagedStreamingKafkaParameters  {
     /// <p>The maximum number of records to include in each batch.</p>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
@@ -9090,7 +8229,7 @@ impl UpdatePipeSourceManagedStreamingKafkaParameters {
         self.batch_size
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn credentials(&self) -> std::option::Option<&crate::model::MskAccessCredentials> {
+    pub fn credentials(&self) -> std::option::Option<& crate::model::MskAccessCredentials> {
         self.credentials.as_ref()
     }
     /// <p>The maximum length of a time to wait for events.</p>
@@ -9100,7 +8239,7 @@ impl UpdatePipeSourceManagedStreamingKafkaParameters {
 }
 /// See [`UpdatePipeSourceManagedStreamingKafkaParameters`](crate::model::UpdatePipeSourceManagedStreamingKafkaParameters).
 pub mod update_pipe_source_managed_streaming_kafka_parameters {
-
+    
     /// A builder for [`UpdatePipeSourceManagedStreamingKafkaParameters`](crate::model::UpdatePipeSourceManagedStreamingKafkaParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9116,8 +8255,7 @@ pub mod update_pipe_source_managed_streaming_kafka_parameters {
         }
         /// <p>The maximum number of records to include in each batch.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_size = input;
-            self
+            self.batch_size = input; self
         }
         /// <p>The credentials needed to access the resource.</p>
         pub fn credentials(mut self, input: crate::model::MskAccessCredentials) -> Self {
@@ -9125,12 +8263,8 @@ pub mod update_pipe_source_managed_streaming_kafka_parameters {
             self
         }
         /// <p>The credentials needed to access the resource.</p>
-        pub fn set_credentials(
-            mut self,
-            input: std::option::Option<crate::model::MskAccessCredentials>,
-        ) -> Self {
-            self.credentials = input;
-            self
+        pub fn set_credentials(mut self, input: std::option::Option<crate::model::MskAccessCredentials>) -> Self {
+            self.credentials = input; self
         }
         /// <p>The maximum length of a time to wait for events.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -9138,27 +8272,27 @@ pub mod update_pipe_source_managed_streaming_kafka_parameters {
             self
         }
         /// <p>The maximum length of a time to wait for events.</p>
-        pub fn set_maximum_batching_window_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_batching_window_in_seconds = input;
-            self
+        pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_batching_window_in_seconds = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePipeSourceManagedStreamingKafkaParameters`](crate::model::UpdatePipeSourceManagedStreamingKafkaParameters).
         pub fn build(self) -> crate::model::UpdatePipeSourceManagedStreamingKafkaParameters {
             crate::model::UpdatePipeSourceManagedStreamingKafkaParameters {
-                batch_size: self.batch_size,
-                credentials: self.credentials,
-                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
+                batch_size: self.batch_size
+                ,
+                credentials: self.credentials
+                ,
+                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePipeSourceManagedStreamingKafkaParameters {
     /// Creates a new builder-style object to manufacture [`UpdatePipeSourceManagedStreamingKafkaParameters`](crate::model::UpdatePipeSourceManagedStreamingKafkaParameters).
-    pub fn builder() -> crate::model::update_pipe_source_managed_streaming_kafka_parameters::Builder
-    {
+    pub fn builder() -> crate::model::update_pipe_source_managed_streaming_kafka_parameters::Builder {
         crate::model::update_pipe_source_managed_streaming_kafka_parameters::Builder::default()
     }
 }
@@ -9166,7 +8300,7 @@ impl UpdatePipeSourceManagedStreamingKafkaParameters {
 /// <p>The parameters for using a Rabbit MQ broker as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePipeSourceRabbitMqBrokerParameters {
+pub struct UpdatePipeSourceRabbitMqBrokerParameters  {
     /// <p>The credentials needed to access the resource.</p>
     #[doc(hidden)]
     pub credentials: std::option::Option<crate::model::MqBrokerAccessCredentials>,
@@ -9179,7 +8313,7 @@ pub struct UpdatePipeSourceRabbitMqBrokerParameters {
 }
 impl UpdatePipeSourceRabbitMqBrokerParameters {
     /// <p>The credentials needed to access the resource.</p>
-    pub fn credentials(&self) -> std::option::Option<&crate::model::MqBrokerAccessCredentials> {
+    pub fn credentials(&self) -> std::option::Option<& crate::model::MqBrokerAccessCredentials> {
         self.credentials.as_ref()
     }
     /// <p>The maximum number of records to include in each batch.</p>
@@ -9193,7 +8327,7 @@ impl UpdatePipeSourceRabbitMqBrokerParameters {
 }
 /// See [`UpdatePipeSourceRabbitMqBrokerParameters`](crate::model::UpdatePipeSourceRabbitMqBrokerParameters).
 pub mod update_pipe_source_rabbit_mq_broker_parameters {
-
+    
     /// A builder for [`UpdatePipeSourceRabbitMqBrokerParameters`](crate::model::UpdatePipeSourceRabbitMqBrokerParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9208,12 +8342,8 @@ pub mod update_pipe_source_rabbit_mq_broker_parameters {
             self
         }
         /// <p>The credentials needed to access the resource.</p>
-        pub fn set_credentials(
-            mut self,
-            input: std::option::Option<crate::model::MqBrokerAccessCredentials>,
-        ) -> Self {
-            self.credentials = input;
-            self
+        pub fn set_credentials(mut self, input: std::option::Option<crate::model::MqBrokerAccessCredentials>) -> Self {
+            self.credentials = input; self
         }
         /// <p>The maximum number of records to include in each batch.</p>
         pub fn batch_size(mut self, input: i32) -> Self {
@@ -9222,8 +8352,7 @@ pub mod update_pipe_source_rabbit_mq_broker_parameters {
         }
         /// <p>The maximum number of records to include in each batch.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_size = input;
-            self
+            self.batch_size = input; self
         }
         /// <p>The maximum length of a time to wait for events.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -9231,22 +8360,23 @@ pub mod update_pipe_source_rabbit_mq_broker_parameters {
             self
         }
         /// <p>The maximum length of a time to wait for events.</p>
-        pub fn set_maximum_batching_window_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_batching_window_in_seconds = input;
-            self
+        pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_batching_window_in_seconds = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePipeSourceRabbitMqBrokerParameters`](crate::model::UpdatePipeSourceRabbitMqBrokerParameters).
         pub fn build(self) -> crate::model::UpdatePipeSourceRabbitMqBrokerParameters {
             crate::model::UpdatePipeSourceRabbitMqBrokerParameters {
-                credentials: self.credentials,
-                batch_size: self.batch_size,
-                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
+                credentials: self.credentials
+                ,
+                batch_size: self.batch_size
+                ,
+                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePipeSourceRabbitMqBrokerParameters {
     /// Creates a new builder-style object to manufacture [`UpdatePipeSourceRabbitMqBrokerParameters`](crate::model::UpdatePipeSourceRabbitMqBrokerParameters).
@@ -9258,7 +8388,7 @@ impl UpdatePipeSourceRabbitMqBrokerParameters {
 /// <p>The parameters for using an Active MQ broker as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePipeSourceActiveMqBrokerParameters {
+pub struct UpdatePipeSourceActiveMqBrokerParameters  {
     /// <p>The credentials needed to access the resource.</p>
     #[doc(hidden)]
     pub credentials: std::option::Option<crate::model::MqBrokerAccessCredentials>,
@@ -9271,7 +8401,7 @@ pub struct UpdatePipeSourceActiveMqBrokerParameters {
 }
 impl UpdatePipeSourceActiveMqBrokerParameters {
     /// <p>The credentials needed to access the resource.</p>
-    pub fn credentials(&self) -> std::option::Option<&crate::model::MqBrokerAccessCredentials> {
+    pub fn credentials(&self) -> std::option::Option<& crate::model::MqBrokerAccessCredentials> {
         self.credentials.as_ref()
     }
     /// <p>The maximum number of records to include in each batch.</p>
@@ -9285,7 +8415,7 @@ impl UpdatePipeSourceActiveMqBrokerParameters {
 }
 /// See [`UpdatePipeSourceActiveMqBrokerParameters`](crate::model::UpdatePipeSourceActiveMqBrokerParameters).
 pub mod update_pipe_source_active_mq_broker_parameters {
-
+    
     /// A builder for [`UpdatePipeSourceActiveMqBrokerParameters`](crate::model::UpdatePipeSourceActiveMqBrokerParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9300,12 +8430,8 @@ pub mod update_pipe_source_active_mq_broker_parameters {
             self
         }
         /// <p>The credentials needed to access the resource.</p>
-        pub fn set_credentials(
-            mut self,
-            input: std::option::Option<crate::model::MqBrokerAccessCredentials>,
-        ) -> Self {
-            self.credentials = input;
-            self
+        pub fn set_credentials(mut self, input: std::option::Option<crate::model::MqBrokerAccessCredentials>) -> Self {
+            self.credentials = input; self
         }
         /// <p>The maximum number of records to include in each batch.</p>
         pub fn batch_size(mut self, input: i32) -> Self {
@@ -9314,8 +8440,7 @@ pub mod update_pipe_source_active_mq_broker_parameters {
         }
         /// <p>The maximum number of records to include in each batch.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_size = input;
-            self
+            self.batch_size = input; self
         }
         /// <p>The maximum length of a time to wait for events.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -9323,22 +8448,23 @@ pub mod update_pipe_source_active_mq_broker_parameters {
             self
         }
         /// <p>The maximum length of a time to wait for events.</p>
-        pub fn set_maximum_batching_window_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_batching_window_in_seconds = input;
-            self
+        pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_batching_window_in_seconds = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePipeSourceActiveMqBrokerParameters`](crate::model::UpdatePipeSourceActiveMqBrokerParameters).
         pub fn build(self) -> crate::model::UpdatePipeSourceActiveMqBrokerParameters {
             crate::model::UpdatePipeSourceActiveMqBrokerParameters {
-                credentials: self.credentials,
-                batch_size: self.batch_size,
-                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
+                credentials: self.credentials
+                ,
+                batch_size: self.batch_size
+                ,
+                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePipeSourceActiveMqBrokerParameters {
     /// Creates a new builder-style object to manufacture [`UpdatePipeSourceActiveMqBrokerParameters`](crate::model::UpdatePipeSourceActiveMqBrokerParameters).
@@ -9350,7 +8476,7 @@ impl UpdatePipeSourceActiveMqBrokerParameters {
 /// <p>The parameters for using a Amazon SQS stream as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePipeSourceSqsQueueParameters {
+pub struct UpdatePipeSourceSqsQueueParameters  {
     /// <p>The maximum number of records to include in each batch.</p>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
@@ -9370,7 +8496,7 @@ impl UpdatePipeSourceSqsQueueParameters {
 }
 /// See [`UpdatePipeSourceSqsQueueParameters`](crate::model::UpdatePipeSourceSqsQueueParameters).
 pub mod update_pipe_source_sqs_queue_parameters {
-
+    
     /// A builder for [`UpdatePipeSourceSqsQueueParameters`](crate::model::UpdatePipeSourceSqsQueueParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9385,8 +8511,7 @@ pub mod update_pipe_source_sqs_queue_parameters {
         }
         /// <p>The maximum number of records to include in each batch.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_size = input;
-            self
+            self.batch_size = input; self
         }
         /// <p>The maximum length of a time to wait for events.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -9394,21 +8519,21 @@ pub mod update_pipe_source_sqs_queue_parameters {
             self
         }
         /// <p>The maximum length of a time to wait for events.</p>
-        pub fn set_maximum_batching_window_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_batching_window_in_seconds = input;
-            self
+        pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_batching_window_in_seconds = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePipeSourceSqsQueueParameters`](crate::model::UpdatePipeSourceSqsQueueParameters).
         pub fn build(self) -> crate::model::UpdatePipeSourceSqsQueueParameters {
             crate::model::UpdatePipeSourceSqsQueueParameters {
-                batch_size: self.batch_size,
-                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
+                batch_size: self.batch_size
+                ,
+                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePipeSourceSqsQueueParameters {
     /// Creates a new builder-style object to manufacture [`UpdatePipeSourceSqsQueueParameters`](crate::model::UpdatePipeSourceSqsQueueParameters).
@@ -9420,7 +8545,7 @@ impl UpdatePipeSourceSqsQueueParameters {
 /// <p>The parameters for using a DynamoDB stream as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePipeSourceDynamoDbStreamParameters {
+pub struct UpdatePipeSourceDynamoDbStreamParameters  {
     /// <p>The maximum number of records to include in each batch.</p>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
@@ -9429,8 +8554,7 @@ pub struct UpdatePipeSourceDynamoDbStreamParameters {
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
     #[doc(hidden)]
-    pub on_partial_batch_item_failure:
-        std::option::Option<crate::model::OnPartialBatchItemFailureStreams>,
+    pub on_partial_batch_item_failure: std::option::Option<crate::model::OnPartialBatchItemFailureStreams>,
     /// <p>The maximum length of a time to wait for events.</p>
     #[doc(hidden)]
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
@@ -9450,13 +8574,11 @@ impl UpdatePipeSourceDynamoDbStreamParameters {
         self.batch_size
     }
     /// <p>Define the target queue to send dead-letter queue events to.</p>
-    pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
+    pub fn dead_letter_config(&self) -> std::option::Option<& crate::model::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-    pub fn on_partial_batch_item_failure(
-        &self,
-    ) -> std::option::Option<&crate::model::OnPartialBatchItemFailureStreams> {
+    pub fn on_partial_batch_item_failure(&self) -> std::option::Option<& crate::model::OnPartialBatchItemFailureStreams> {
         self.on_partial_batch_item_failure.as_ref()
     }
     /// <p>The maximum length of a time to wait for events.</p>
@@ -9478,14 +8600,13 @@ impl UpdatePipeSourceDynamoDbStreamParameters {
 }
 /// See [`UpdatePipeSourceDynamoDbStreamParameters`](crate::model::UpdatePipeSourceDynamoDbStreamParameters).
 pub mod update_pipe_source_dynamo_db_stream_parameters {
-
+    
     /// A builder for [`UpdatePipeSourceDynamoDbStreamParameters`](crate::model::UpdatePipeSourceDynamoDbStreamParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_size: std::option::Option<i32>,
         pub(crate) dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
-        pub(crate) on_partial_batch_item_failure:
-            std::option::Option<crate::model::OnPartialBatchItemFailureStreams>,
+        pub(crate) on_partial_batch_item_failure: std::option::Option<crate::model::OnPartialBatchItemFailureStreams>,
         pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
         pub(crate) maximum_record_age_in_seconds: std::option::Option<i32>,
         pub(crate) maximum_retry_attempts: std::option::Option<i32>,
@@ -9499,8 +8620,7 @@ pub mod update_pipe_source_dynamo_db_stream_parameters {
         }
         /// <p>The maximum number of records to include in each batch.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_size = input;
-            self
+            self.batch_size = input; self
         }
         /// <p>Define the target queue to send dead-letter queue events to.</p>
         pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
@@ -9508,28 +8628,17 @@ pub mod update_pipe_source_dynamo_db_stream_parameters {
             self
         }
         /// <p>Define the target queue to send dead-letter queue events to.</p>
-        pub fn set_dead_letter_config(
-            mut self,
-            input: std::option::Option<crate::model::DeadLetterConfig>,
-        ) -> Self {
-            self.dead_letter_config = input;
-            self
+        pub fn set_dead_letter_config(mut self, input: std::option::Option<crate::model::DeadLetterConfig>) -> Self {
+            self.dead_letter_config = input; self
         }
         /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-        pub fn on_partial_batch_item_failure(
-            mut self,
-            input: crate::model::OnPartialBatchItemFailureStreams,
-        ) -> Self {
+        pub fn on_partial_batch_item_failure(mut self, input: crate::model::OnPartialBatchItemFailureStreams) -> Self {
             self.on_partial_batch_item_failure = Some(input);
             self
         }
         /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-        pub fn set_on_partial_batch_item_failure(
-            mut self,
-            input: std::option::Option<crate::model::OnPartialBatchItemFailureStreams>,
-        ) -> Self {
-            self.on_partial_batch_item_failure = input;
-            self
+        pub fn set_on_partial_batch_item_failure(mut self, input: std::option::Option<crate::model::OnPartialBatchItemFailureStreams>) -> Self {
+            self.on_partial_batch_item_failure = input; self
         }
         /// <p>The maximum length of a time to wait for events.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -9537,12 +8646,8 @@ pub mod update_pipe_source_dynamo_db_stream_parameters {
             self
         }
         /// <p>The maximum length of a time to wait for events.</p>
-        pub fn set_maximum_batching_window_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_batching_window_in_seconds = input;
-            self
+        pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_batching_window_in_seconds = input; self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. </p>
         pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
@@ -9550,12 +8655,8 @@ pub mod update_pipe_source_dynamo_db_stream_parameters {
             self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. </p>
-        pub fn set_maximum_record_age_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_record_age_in_seconds = input;
-            self
+        pub fn set_maximum_record_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_record_age_in_seconds = input; self
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
@@ -9564,8 +8665,7 @@ pub mod update_pipe_source_dynamo_db_stream_parameters {
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = input;
-            self
+            self.maximum_retry_attempts = input; self
         }
         /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn parallelization_factor(mut self, input: i32) -> Self {
@@ -9574,22 +8674,30 @@ pub mod update_pipe_source_dynamo_db_stream_parameters {
         }
         /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn set_parallelization_factor(mut self, input: std::option::Option<i32>) -> Self {
-            self.parallelization_factor = input;
-            self
+            self.parallelization_factor = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePipeSourceDynamoDbStreamParameters`](crate::model::UpdatePipeSourceDynamoDbStreamParameters).
         pub fn build(self) -> crate::model::UpdatePipeSourceDynamoDbStreamParameters {
             crate::model::UpdatePipeSourceDynamoDbStreamParameters {
-                batch_size: self.batch_size,
-                dead_letter_config: self.dead_letter_config,
-                on_partial_batch_item_failure: self.on_partial_batch_item_failure,
-                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
-                maximum_record_age_in_seconds: self.maximum_record_age_in_seconds,
-                maximum_retry_attempts: self.maximum_retry_attempts,
-                parallelization_factor: self.parallelization_factor,
+                batch_size: self.batch_size
+                ,
+                dead_letter_config: self.dead_letter_config
+                ,
+                on_partial_batch_item_failure: self.on_partial_batch_item_failure
+                ,
+                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+                ,
+                maximum_record_age_in_seconds: self.maximum_record_age_in_seconds
+                ,
+                maximum_retry_attempts: self.maximum_retry_attempts
+                ,
+                parallelization_factor: self.parallelization_factor
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePipeSourceDynamoDbStreamParameters {
     /// Creates a new builder-style object to manufacture [`UpdatePipeSourceDynamoDbStreamParameters`](crate::model::UpdatePipeSourceDynamoDbStreamParameters).
@@ -9601,7 +8709,7 @@ impl UpdatePipeSourceDynamoDbStreamParameters {
 /// <p>The parameters for using a Kinesis stream as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePipeSourceKinesisStreamParameters {
+pub struct UpdatePipeSourceKinesisStreamParameters  {
     /// <p>The maximum number of records to include in each batch.</p>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
@@ -9610,8 +8718,7 @@ pub struct UpdatePipeSourceKinesisStreamParameters {
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
     #[doc(hidden)]
-    pub on_partial_batch_item_failure:
-        std::option::Option<crate::model::OnPartialBatchItemFailureStreams>,
+    pub on_partial_batch_item_failure: std::option::Option<crate::model::OnPartialBatchItemFailureStreams>,
     /// <p>The maximum length of a time to wait for events.</p>
     #[doc(hidden)]
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
@@ -9631,13 +8738,11 @@ impl UpdatePipeSourceKinesisStreamParameters {
         self.batch_size
     }
     /// <p>Define the target queue to send dead-letter queue events to.</p>
-    pub fn dead_letter_config(&self) -> std::option::Option<&crate::model::DeadLetterConfig> {
+    pub fn dead_letter_config(&self) -> std::option::Option<& crate::model::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
     /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-    pub fn on_partial_batch_item_failure(
-        &self,
-    ) -> std::option::Option<&crate::model::OnPartialBatchItemFailureStreams> {
+    pub fn on_partial_batch_item_failure(&self) -> std::option::Option<& crate::model::OnPartialBatchItemFailureStreams> {
         self.on_partial_batch_item_failure.as_ref()
     }
     /// <p>The maximum length of a time to wait for events.</p>
@@ -9659,14 +8764,13 @@ impl UpdatePipeSourceKinesisStreamParameters {
 }
 /// See [`UpdatePipeSourceKinesisStreamParameters`](crate::model::UpdatePipeSourceKinesisStreamParameters).
 pub mod update_pipe_source_kinesis_stream_parameters {
-
+    
     /// A builder for [`UpdatePipeSourceKinesisStreamParameters`](crate::model::UpdatePipeSourceKinesisStreamParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) batch_size: std::option::Option<i32>,
         pub(crate) dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
-        pub(crate) on_partial_batch_item_failure:
-            std::option::Option<crate::model::OnPartialBatchItemFailureStreams>,
+        pub(crate) on_partial_batch_item_failure: std::option::Option<crate::model::OnPartialBatchItemFailureStreams>,
         pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
         pub(crate) maximum_record_age_in_seconds: std::option::Option<i32>,
         pub(crate) maximum_retry_attempts: std::option::Option<i32>,
@@ -9680,8 +8784,7 @@ pub mod update_pipe_source_kinesis_stream_parameters {
         }
         /// <p>The maximum number of records to include in each batch.</p>
         pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.batch_size = input;
-            self
+            self.batch_size = input; self
         }
         /// <p>Define the target queue to send dead-letter queue events to.</p>
         pub fn dead_letter_config(mut self, input: crate::model::DeadLetterConfig) -> Self {
@@ -9689,28 +8792,17 @@ pub mod update_pipe_source_kinesis_stream_parameters {
             self
         }
         /// <p>Define the target queue to send dead-letter queue events to.</p>
-        pub fn set_dead_letter_config(
-            mut self,
-            input: std::option::Option<crate::model::DeadLetterConfig>,
-        ) -> Self {
-            self.dead_letter_config = input;
-            self
+        pub fn set_dead_letter_config(mut self, input: std::option::Option<crate::model::DeadLetterConfig>) -> Self {
+            self.dead_letter_config = input; self
         }
         /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-        pub fn on_partial_batch_item_failure(
-            mut self,
-            input: crate::model::OnPartialBatchItemFailureStreams,
-        ) -> Self {
+        pub fn on_partial_batch_item_failure(mut self, input: crate::model::OnPartialBatchItemFailureStreams) -> Self {
             self.on_partial_batch_item_failure = Some(input);
             self
         }
         /// <p>(Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code> halves each batch and retry each half until all the records are processed or there is one failed message left in the batch.</p>
-        pub fn set_on_partial_batch_item_failure(
-            mut self,
-            input: std::option::Option<crate::model::OnPartialBatchItemFailureStreams>,
-        ) -> Self {
-            self.on_partial_batch_item_failure = input;
-            self
+        pub fn set_on_partial_batch_item_failure(mut self, input: std::option::Option<crate::model::OnPartialBatchItemFailureStreams>) -> Self {
+            self.on_partial_batch_item_failure = input; self
         }
         /// <p>The maximum length of a time to wait for events.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -9718,12 +8810,8 @@ pub mod update_pipe_source_kinesis_stream_parameters {
             self
         }
         /// <p>The maximum length of a time to wait for events.</p>
-        pub fn set_maximum_batching_window_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_batching_window_in_seconds = input;
-            self
+        pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_batching_window_in_seconds = input; self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. </p>
         pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
@@ -9731,12 +8819,8 @@ pub mod update_pipe_source_kinesis_stream_parameters {
             self
         }
         /// <p>(Streams only) Discard records older than the specified age. The default value is -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge never discards old records. </p>
-        pub fn set_maximum_record_age_in_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.maximum_record_age_in_seconds = input;
-            self
+        pub fn set_maximum_record_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_record_age_in_seconds = input; self
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
@@ -9745,8 +8829,7 @@ pub mod update_pipe_source_kinesis_stream_parameters {
         }
         /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, EventBridge retries failed records until the record expires in the event source.</p>
         pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_retry_attempts = input;
-            self
+            self.maximum_retry_attempts = input; self
         }
         /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn parallelization_factor(mut self, input: i32) -> Self {
@@ -9755,22 +8838,30 @@ pub mod update_pipe_source_kinesis_stream_parameters {
         }
         /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn set_parallelization_factor(mut self, input: std::option::Option<i32>) -> Self {
-            self.parallelization_factor = input;
-            self
+            self.parallelization_factor = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePipeSourceKinesisStreamParameters`](crate::model::UpdatePipeSourceKinesisStreamParameters).
         pub fn build(self) -> crate::model::UpdatePipeSourceKinesisStreamParameters {
             crate::model::UpdatePipeSourceKinesisStreamParameters {
-                batch_size: self.batch_size,
-                dead_letter_config: self.dead_letter_config,
-                on_partial_batch_item_failure: self.on_partial_batch_item_failure,
-                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
-                maximum_record_age_in_seconds: self.maximum_record_age_in_seconds,
-                maximum_retry_attempts: self.maximum_retry_attempts,
-                parallelization_factor: self.parallelization_factor,
+                batch_size: self.batch_size
+                ,
+                dead_letter_config: self.dead_letter_config
+                ,
+                on_partial_batch_item_failure: self.on_partial_batch_item_failure
+                ,
+                maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
+                ,
+                maximum_record_age_in_seconds: self.maximum_record_age_in_seconds
+                ,
+                maximum_retry_attempts: self.maximum_retry_attempts
+                ,
+                parallelization_factor: self.parallelization_factor
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePipeSourceKinesisStreamParameters {
     /// Creates a new builder-style object to manufacture [`UpdatePipeSourceKinesisStreamParameters`](crate::model::UpdatePipeSourceKinesisStreamParameters).
@@ -9778,3 +8869,4 @@ impl UpdatePipeSourceKinesisStreamParameters {
         crate::model::update_pipe_source_kinesis_stream_parameters::Builder::default()
     }
 }
+

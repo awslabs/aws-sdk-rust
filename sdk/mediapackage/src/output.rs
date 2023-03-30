@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateOriginEndpointOutput {
+pub struct UpdateOriginEndpointOutput  {
     /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -41,8 +41,7 @@ pub struct UpdateOriginEndpointOutput {
     pub startover_window_seconds: i32,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
     #[doc(hidden)]
     pub time_delay_seconds: i32,
@@ -55,47 +54,47 @@ pub struct UpdateOriginEndpointOutput {
 }
 impl UpdateOriginEndpointOutput {
     /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// CDN Authorization credentials
-    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+    pub fn authorization(&self) -> std::option::Option<& crate::model::Authorization> {
         self.authorization.as_ref()
     }
     /// The ID of the Channel the OriginEndpoint is associated with.
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> std::option::Option<& str> {
         self.channel_id.as_deref()
     }
     /// A Common Media Application Format (CMAF) packaging configuration.
-    pub fn cmaf_package(&self) -> std::option::Option<&crate::model::CmafPackage> {
+    pub fn cmaf_package(&self) -> std::option::Option<& crate::model::CmafPackage> {
         self.cmaf_package.as_ref()
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-    pub fn dash_package(&self) -> std::option::Option<&crate::model::DashPackage> {
+    pub fn dash_package(&self) -> std::option::Option<& crate::model::DashPackage> {
         self.dash_package.as_ref()
     }
     /// A short text description of the OriginEndpoint.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// An HTTP Live Streaming (HLS) packaging configuration.
-    pub fn hls_package(&self) -> std::option::Option<&crate::model::HlsPackage> {
+    pub fn hls_package(&self) -> std::option::Option<& crate::model::HlsPackage> {
         self.hls_package.as_ref()
     }
     /// The ID of the OriginEndpoint.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// A short string appended to the end of the OriginEndpoint URL.
-    pub fn manifest_name(&self) -> std::option::Option<&str> {
+    pub fn manifest_name(&self) -> std::option::Option<& str> {
         self.manifest_name.as_deref()
     }
     /// A Microsoft Smooth Streaming (MSS) packaging configuration.
-    pub fn mss_package(&self) -> std::option::Option<&crate::model::MssPackage> {
+    pub fn mss_package(&self) -> std::option::Option<& crate::model::MssPackage> {
         self.mss_package.as_ref()
     }
     /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-    pub fn origination(&self) -> std::option::Option<&crate::model::Origination> {
+    pub fn origination(&self) -> std::option::Option<& crate::model::Origination> {
         self.origination.as_ref()
     }
     /// Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
@@ -103,10 +102,7 @@ impl UpdateOriginEndpointOutput {
         self.startover_window_seconds
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
@@ -114,17 +110,17 @@ impl UpdateOriginEndpointOutput {
         self.time_delay_seconds
     }
     /// The URL of the packaged OriginEndpoint for consumption.
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
-    pub fn whitelist(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn whitelist(&self) -> std::option::Option<& [std::string::String]> {
         self.whitelist.as_deref()
     }
 }
 /// See [`UpdateOriginEndpointOutput`](crate::output::UpdateOriginEndpointOutput).
 pub mod update_origin_endpoint_output {
-
+    
     /// A builder for [`UpdateOriginEndpointOutput`](crate::output::UpdateOriginEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -140,9 +136,7 @@ pub mod update_origin_endpoint_output {
         pub(crate) mss_package: std::option::Option<crate::model::MssPackage>,
         pub(crate) origination: std::option::Option<crate::model::Origination>,
         pub(crate) startover_window_seconds: std::option::Option<i32>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) time_delay_seconds: std::option::Option<i32>,
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -155,8 +149,7 @@ pub mod update_origin_endpoint_output {
         }
         /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// CDN Authorization credentials
         pub fn authorization(mut self, input: crate::model::Authorization) -> Self {
@@ -164,12 +157,8 @@ pub mod update_origin_endpoint_output {
             self
         }
         /// CDN Authorization credentials
-        pub fn set_authorization(
-            mut self,
-            input: std::option::Option<crate::model::Authorization>,
-        ) -> Self {
-            self.authorization = input;
-            self
+        pub fn set_authorization(mut self, input: std::option::Option<crate::model::Authorization>) -> Self {
+            self.authorization = input; self
         }
         /// The ID of the Channel the OriginEndpoint is associated with.
         pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -178,8 +167,7 @@ pub mod update_origin_endpoint_output {
         }
         /// The ID of the Channel the OriginEndpoint is associated with.
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_id = input;
-            self
+            self.channel_id = input; self
         }
         /// A Common Media Application Format (CMAF) packaging configuration.
         pub fn cmaf_package(mut self, input: crate::model::CmafPackage) -> Self {
@@ -187,12 +175,8 @@ pub mod update_origin_endpoint_output {
             self
         }
         /// A Common Media Application Format (CMAF) packaging configuration.
-        pub fn set_cmaf_package(
-            mut self,
-            input: std::option::Option<crate::model::CmafPackage>,
-        ) -> Self {
-            self.cmaf_package = input;
-            self
+        pub fn set_cmaf_package(mut self, input: std::option::Option<crate::model::CmafPackage>) -> Self {
+            self.cmaf_package = input; self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
         pub fn dash_package(mut self, input: crate::model::DashPackage) -> Self {
@@ -200,12 +184,8 @@ pub mod update_origin_endpoint_output {
             self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-        pub fn set_dash_package(
-            mut self,
-            input: std::option::Option<crate::model::DashPackage>,
-        ) -> Self {
-            self.dash_package = input;
-            self
+        pub fn set_dash_package(mut self, input: std::option::Option<crate::model::DashPackage>) -> Self {
+            self.dash_package = input; self
         }
         /// A short text description of the OriginEndpoint.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -214,8 +194,7 @@ pub mod update_origin_endpoint_output {
         }
         /// A short text description of the OriginEndpoint.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
         pub fn hls_package(mut self, input: crate::model::HlsPackage) -> Self {
@@ -223,12 +202,8 @@ pub mod update_origin_endpoint_output {
             self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
-        pub fn set_hls_package(
-            mut self,
-            input: std::option::Option<crate::model::HlsPackage>,
-        ) -> Self {
-            self.hls_package = input;
-            self
+        pub fn set_hls_package(mut self, input: std::option::Option<crate::model::HlsPackage>) -> Self {
+            self.hls_package = input; self
         }
         /// The ID of the OriginEndpoint.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -237,8 +212,7 @@ pub mod update_origin_endpoint_output {
         }
         /// The ID of the OriginEndpoint.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// A short string appended to the end of the OriginEndpoint URL.
         pub fn manifest_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -246,12 +220,8 @@ pub mod update_origin_endpoint_output {
             self
         }
         /// A short string appended to the end of the OriginEndpoint URL.
-        pub fn set_manifest_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.manifest_name = input;
-            self
+        pub fn set_manifest_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.manifest_name = input; self
         }
         /// A Microsoft Smooth Streaming (MSS) packaging configuration.
         pub fn mss_package(mut self, input: crate::model::MssPackage) -> Self {
@@ -259,12 +229,8 @@ pub mod update_origin_endpoint_output {
             self
         }
         /// A Microsoft Smooth Streaming (MSS) packaging configuration.
-        pub fn set_mss_package(
-            mut self,
-            input: std::option::Option<crate::model::MssPackage>,
-        ) -> Self {
-            self.mss_package = input;
-            self
+        pub fn set_mss_package(mut self, input: std::option::Option<crate::model::MssPackage>) -> Self {
+            self.mss_package = input; self
         }
         /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
         pub fn origination(mut self, input: crate::model::Origination) -> Self {
@@ -272,12 +238,8 @@ pub mod update_origin_endpoint_output {
             self
         }
         /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-        pub fn set_origination(
-            mut self,
-            input: std::option::Option<crate::model::Origination>,
-        ) -> Self {
-            self.origination = input;
-            self
+        pub fn set_origination(mut self, input: std::option::Option<crate::model::Origination>) -> Self {
+            self.origination = input; self
         }
         /// Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
         pub fn startover_window_seconds(mut self, input: i32) -> Self {
@@ -286,33 +248,22 @@ pub mod update_origin_endpoint_output {
         }
         /// Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
         pub fn set_startover_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.startover_window_seconds = input;
-            self
+            self.startover_window_seconds = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
         pub fn time_delay_seconds(mut self, input: i32) -> Self {
@@ -321,8 +272,7 @@ pub mod update_origin_endpoint_output {
         }
         /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
         pub fn set_time_delay_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.time_delay_seconds = input;
-            self
+            self.time_delay_seconds = input; self
         }
         /// The URL of the packaged OriginEndpoint for consumption.
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -331,8 +281,7 @@ pub mod update_origin_endpoint_output {
         }
         /// The URL of the packaged OriginEndpoint for consumption.
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// Appends an item to `whitelist`.
         ///
@@ -341,40 +290,56 @@ pub mod update_origin_endpoint_output {
         /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
         pub fn whitelist(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.whitelist.unwrap_or_default();
-            v.push(input.into());
-            self.whitelist = Some(v);
-            self
+                            v.push(input.into());
+                            self.whitelist = Some(v);
+                            self
         }
         /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
-        pub fn set_whitelist(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.whitelist = input;
-            self
+        pub fn set_whitelist(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.whitelist = input; self
         }
         /// Consumes the builder and constructs a [`UpdateOriginEndpointOutput`](crate::output::UpdateOriginEndpointOutput).
         pub fn build(self) -> crate::output::UpdateOriginEndpointOutput {
             crate::output::UpdateOriginEndpointOutput {
-                arn: self.arn,
-                authorization: self.authorization,
-                channel_id: self.channel_id,
-                cmaf_package: self.cmaf_package,
-                dash_package: self.dash_package,
-                description: self.description,
-                hls_package: self.hls_package,
-                id: self.id,
-                manifest_name: self.manifest_name,
-                mss_package: self.mss_package,
-                origination: self.origination,
-                startover_window_seconds: self.startover_window_seconds.unwrap_or_default(),
-                tags: self.tags,
-                time_delay_seconds: self.time_delay_seconds.unwrap_or_default(),
-                url: self.url,
-                whitelist: self.whitelist,
+                arn: self.arn
+                ,
+                authorization: self.authorization
+                ,
+                channel_id: self.channel_id
+                ,
+                cmaf_package: self.cmaf_package
+                ,
+                dash_package: self.dash_package
+                ,
+                description: self.description
+                ,
+                hls_package: self.hls_package
+                ,
+                id: self.id
+                ,
+                manifest_name: self.manifest_name
+                ,
+                mss_package: self.mss_package
+                ,
+                origination: self.origination
+                ,
+                startover_window_seconds: self.startover_window_seconds
+                    .unwrap_or_default()
+                ,
+                tags: self.tags
+                ,
+                time_delay_seconds: self.time_delay_seconds
+                    .unwrap_or_default()
+                ,
+                url: self.url
+                ,
+                whitelist: self.whitelist
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateOriginEndpointOutput {
     /// Creates a new builder-style object to manufacture [`UpdateOriginEndpointOutput`](crate::output::UpdateOriginEndpointOutput).
@@ -386,7 +351,7 @@ impl UpdateOriginEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateChannelOutput {
+pub struct UpdateChannelOutput  {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -407,45 +372,41 @@ pub struct UpdateChannelOutput {
     pub ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateChannelOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// A short text description of the Channel.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Configure egress access logging.
-    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+    pub fn egress_access_logs(&self) -> std::option::Option<& crate::model::EgressAccessLogs> {
         self.egress_access_logs.as_ref()
     }
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
-    pub fn hls_ingest(&self) -> std::option::Option<&crate::model::HlsIngest> {
+    pub fn hls_ingest(&self) -> std::option::Option<& crate::model::HlsIngest> {
         self.hls_ingest.as_ref()
     }
     /// The ID of the Channel.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Configure ingress access logging.
-    pub fn ingress_access_logs(&self) -> std::option::Option<&crate::model::IngressAccessLogs> {
+    pub fn ingress_access_logs(&self) -> std::option::Option<& crate::model::IngressAccessLogs> {
         self.ingress_access_logs.as_ref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
 pub mod update_channel_output {
-
+    
     /// A builder for [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -455,9 +416,7 @@ pub mod update_channel_output {
         pub(crate) hls_ingest: std::option::Option<crate::model::HlsIngest>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) assigned to the Channel.
@@ -467,8 +426,7 @@ pub mod update_channel_output {
         }
         /// The Amazon Resource Name (ARN) assigned to the Channel.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// A short text description of the Channel.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -477,8 +435,7 @@ pub mod update_channel_output {
         }
         /// A short text description of the Channel.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Configure egress access logging.
         pub fn egress_access_logs(mut self, input: crate::model::EgressAccessLogs) -> Self {
@@ -486,12 +443,8 @@ pub mod update_channel_output {
             self
         }
         /// Configure egress access logging.
-        pub fn set_egress_access_logs(
-            mut self,
-            input: std::option::Option<crate::model::EgressAccessLogs>,
-        ) -> Self {
-            self.egress_access_logs = input;
-            self
+        pub fn set_egress_access_logs(mut self, input: std::option::Option<crate::model::EgressAccessLogs>) -> Self {
+            self.egress_access_logs = input; self
         }
         /// An HTTP Live Streaming (HLS) ingest resource configuration.
         pub fn hls_ingest(mut self, input: crate::model::HlsIngest) -> Self {
@@ -499,12 +452,8 @@ pub mod update_channel_output {
             self
         }
         /// An HTTP Live Streaming (HLS) ingest resource configuration.
-        pub fn set_hls_ingest(
-            mut self,
-            input: std::option::Option<crate::model::HlsIngest>,
-        ) -> Self {
-            self.hls_ingest = input;
-            self
+        pub fn set_hls_ingest(mut self, input: std::option::Option<crate::model::HlsIngest>) -> Self {
+            self.hls_ingest = input; self
         }
         /// The ID of the Channel.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -513,8 +462,7 @@ pub mod update_channel_output {
         }
         /// The ID of the Channel.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Configure ingress access logging.
         pub fn ingress_access_logs(mut self, input: crate::model::IngressAccessLogs) -> Self {
@@ -522,51 +470,46 @@ pub mod update_channel_output {
             self
         }
         /// Configure ingress access logging.
-        pub fn set_ingress_access_logs(
-            mut self,
-            input: std::option::Option<crate::model::IngressAccessLogs>,
-        ) -> Self {
-            self.ingress_access_logs = input;
-            self
+        pub fn set_ingress_access_logs(mut self, input: std::option::Option<crate::model::IngressAccessLogs>) -> Self {
+            self.ingress_access_logs = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
         pub fn build(self) -> crate::output::UpdateChannelOutput {
             crate::output::UpdateChannelOutput {
-                arn: self.arn,
-                description: self.description,
-                egress_access_logs: self.egress_access_logs,
-                hls_ingest: self.hls_ingest,
-                id: self.id,
-                ingress_access_logs: self.ingress_access_logs,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
+                egress_access_logs: self.egress_access_logs
+                ,
+                hls_ingest: self.hls_ingest
+                ,
+                id: self.id
+                ,
+                ingress_access_logs: self.ingress_access_logs
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
@@ -578,19 +521,24 @@ impl UpdateChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -602,19 +550,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -626,7 +579,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RotateIngestEndpointCredentialsOutput {
+pub struct RotateIngestEndpointCredentialsOutput  {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -647,45 +600,41 @@ pub struct RotateIngestEndpointCredentialsOutput {
     pub ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl RotateIngestEndpointCredentialsOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// A short text description of the Channel.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Configure egress access logging.
-    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+    pub fn egress_access_logs(&self) -> std::option::Option<& crate::model::EgressAccessLogs> {
         self.egress_access_logs.as_ref()
     }
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
-    pub fn hls_ingest(&self) -> std::option::Option<&crate::model::HlsIngest> {
+    pub fn hls_ingest(&self) -> std::option::Option<& crate::model::HlsIngest> {
         self.hls_ingest.as_ref()
     }
     /// The ID of the Channel.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Configure ingress access logging.
-    pub fn ingress_access_logs(&self) -> std::option::Option<&crate::model::IngressAccessLogs> {
+    pub fn ingress_access_logs(&self) -> std::option::Option<& crate::model::IngressAccessLogs> {
         self.ingress_access_logs.as_ref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`RotateIngestEndpointCredentialsOutput`](crate::output::RotateIngestEndpointCredentialsOutput).
 pub mod rotate_ingest_endpoint_credentials_output {
-
+    
     /// A builder for [`RotateIngestEndpointCredentialsOutput`](crate::output::RotateIngestEndpointCredentialsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -695,9 +644,7 @@ pub mod rotate_ingest_endpoint_credentials_output {
         pub(crate) hls_ingest: std::option::Option<crate::model::HlsIngest>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) assigned to the Channel.
@@ -707,8 +654,7 @@ pub mod rotate_ingest_endpoint_credentials_output {
         }
         /// The Amazon Resource Name (ARN) assigned to the Channel.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// A short text description of the Channel.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -717,8 +663,7 @@ pub mod rotate_ingest_endpoint_credentials_output {
         }
         /// A short text description of the Channel.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Configure egress access logging.
         pub fn egress_access_logs(mut self, input: crate::model::EgressAccessLogs) -> Self {
@@ -726,12 +671,8 @@ pub mod rotate_ingest_endpoint_credentials_output {
             self
         }
         /// Configure egress access logging.
-        pub fn set_egress_access_logs(
-            mut self,
-            input: std::option::Option<crate::model::EgressAccessLogs>,
-        ) -> Self {
-            self.egress_access_logs = input;
-            self
+        pub fn set_egress_access_logs(mut self, input: std::option::Option<crate::model::EgressAccessLogs>) -> Self {
+            self.egress_access_logs = input; self
         }
         /// An HTTP Live Streaming (HLS) ingest resource configuration.
         pub fn hls_ingest(mut self, input: crate::model::HlsIngest) -> Self {
@@ -739,12 +680,8 @@ pub mod rotate_ingest_endpoint_credentials_output {
             self
         }
         /// An HTTP Live Streaming (HLS) ingest resource configuration.
-        pub fn set_hls_ingest(
-            mut self,
-            input: std::option::Option<crate::model::HlsIngest>,
-        ) -> Self {
-            self.hls_ingest = input;
-            self
+        pub fn set_hls_ingest(mut self, input: std::option::Option<crate::model::HlsIngest>) -> Self {
+            self.hls_ingest = input; self
         }
         /// The ID of the Channel.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -753,8 +690,7 @@ pub mod rotate_ingest_endpoint_credentials_output {
         }
         /// The ID of the Channel.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Configure ingress access logging.
         pub fn ingress_access_logs(mut self, input: crate::model::IngressAccessLogs) -> Self {
@@ -762,51 +698,46 @@ pub mod rotate_ingest_endpoint_credentials_output {
             self
         }
         /// Configure ingress access logging.
-        pub fn set_ingress_access_logs(
-            mut self,
-            input: std::option::Option<crate::model::IngressAccessLogs>,
-        ) -> Self {
-            self.ingress_access_logs = input;
-            self
+        pub fn set_ingress_access_logs(mut self, input: std::option::Option<crate::model::IngressAccessLogs>) -> Self {
+            self.ingress_access_logs = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`RotateIngestEndpointCredentialsOutput`](crate::output::RotateIngestEndpointCredentialsOutput).
         pub fn build(self) -> crate::output::RotateIngestEndpointCredentialsOutput {
             crate::output::RotateIngestEndpointCredentialsOutput {
-                arn: self.arn,
-                description: self.description,
-                egress_access_logs: self.egress_access_logs,
-                hls_ingest: self.hls_ingest,
-                id: self.id,
-                ingress_access_logs: self.ingress_access_logs,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
+                egress_access_logs: self.egress_access_logs
+                ,
+                hls_ingest: self.hls_ingest
+                ,
+                id: self.id
+                ,
+                ingress_access_logs: self.ingress_access_logs
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl RotateIngestEndpointCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`RotateIngestEndpointCredentialsOutput`](crate::output::RotateIngestEndpointCredentialsOutput).
@@ -819,7 +750,7 @@ impl RotateIngestEndpointCredentialsOutput {
 #[deprecated]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RotateChannelCredentialsOutput {
+pub struct RotateChannelCredentialsOutput  {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -840,45 +771,41 @@ pub struct RotateChannelCredentialsOutput {
     pub ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl RotateChannelCredentialsOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// A short text description of the Channel.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Configure egress access logging.
-    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+    pub fn egress_access_logs(&self) -> std::option::Option<& crate::model::EgressAccessLogs> {
         self.egress_access_logs.as_ref()
     }
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
-    pub fn hls_ingest(&self) -> std::option::Option<&crate::model::HlsIngest> {
+    pub fn hls_ingest(&self) -> std::option::Option<& crate::model::HlsIngest> {
         self.hls_ingest.as_ref()
     }
     /// The ID of the Channel.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Configure ingress access logging.
-    pub fn ingress_access_logs(&self) -> std::option::Option<&crate::model::IngressAccessLogs> {
+    pub fn ingress_access_logs(&self) -> std::option::Option<& crate::model::IngressAccessLogs> {
         self.ingress_access_logs.as_ref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`RotateChannelCredentialsOutput`](crate::output::RotateChannelCredentialsOutput).
 pub mod rotate_channel_credentials_output {
-
+    
     /// A builder for [`RotateChannelCredentialsOutput`](crate::output::RotateChannelCredentialsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -888,9 +815,7 @@ pub mod rotate_channel_credentials_output {
         pub(crate) hls_ingest: std::option::Option<crate::model::HlsIngest>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) assigned to the Channel.
@@ -900,8 +825,7 @@ pub mod rotate_channel_credentials_output {
         }
         /// The Amazon Resource Name (ARN) assigned to the Channel.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// A short text description of the Channel.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -910,8 +834,7 @@ pub mod rotate_channel_credentials_output {
         }
         /// A short text description of the Channel.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Configure egress access logging.
         pub fn egress_access_logs(mut self, input: crate::model::EgressAccessLogs) -> Self {
@@ -919,12 +842,8 @@ pub mod rotate_channel_credentials_output {
             self
         }
         /// Configure egress access logging.
-        pub fn set_egress_access_logs(
-            mut self,
-            input: std::option::Option<crate::model::EgressAccessLogs>,
-        ) -> Self {
-            self.egress_access_logs = input;
-            self
+        pub fn set_egress_access_logs(mut self, input: std::option::Option<crate::model::EgressAccessLogs>) -> Self {
+            self.egress_access_logs = input; self
         }
         /// An HTTP Live Streaming (HLS) ingest resource configuration.
         pub fn hls_ingest(mut self, input: crate::model::HlsIngest) -> Self {
@@ -932,12 +851,8 @@ pub mod rotate_channel_credentials_output {
             self
         }
         /// An HTTP Live Streaming (HLS) ingest resource configuration.
-        pub fn set_hls_ingest(
-            mut self,
-            input: std::option::Option<crate::model::HlsIngest>,
-        ) -> Self {
-            self.hls_ingest = input;
-            self
+        pub fn set_hls_ingest(mut self, input: std::option::Option<crate::model::HlsIngest>) -> Self {
+            self.hls_ingest = input; self
         }
         /// The ID of the Channel.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -946,8 +861,7 @@ pub mod rotate_channel_credentials_output {
         }
         /// The ID of the Channel.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Configure ingress access logging.
         pub fn ingress_access_logs(mut self, input: crate::model::IngressAccessLogs) -> Self {
@@ -955,51 +869,46 @@ pub mod rotate_channel_credentials_output {
             self
         }
         /// Configure ingress access logging.
-        pub fn set_ingress_access_logs(
-            mut self,
-            input: std::option::Option<crate::model::IngressAccessLogs>,
-        ) -> Self {
-            self.ingress_access_logs = input;
-            self
+        pub fn set_ingress_access_logs(mut self, input: std::option::Option<crate::model::IngressAccessLogs>) -> Self {
+            self.ingress_access_logs = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`RotateChannelCredentialsOutput`](crate::output::RotateChannelCredentialsOutput).
         pub fn build(self) -> crate::output::RotateChannelCredentialsOutput {
             crate::output::RotateChannelCredentialsOutput {
-                arn: self.arn,
-                description: self.description,
-                egress_access_logs: self.egress_access_logs,
-                hls_ingest: self.hls_ingest,
-                id: self.id,
-                ingress_access_logs: self.ingress_access_logs,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
+                egress_access_logs: self.egress_access_logs
+                ,
+                hls_ingest: self.hls_ingest
+                ,
+                id: self.id
+                ,
+                ingress_access_logs: self.ingress_access_logs
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl RotateChannelCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`RotateChannelCredentialsOutput`](crate::output::RotateChannelCredentialsOutput).
@@ -1011,61 +920,50 @@ impl RotateChannelCredentialsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1077,7 +975,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOriginEndpointsOutput {
+pub struct ListOriginEndpointsOutput  {
     /// A token that can be used to resume pagination from the end of the collection.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1087,23 +985,22 @@ pub struct ListOriginEndpointsOutput {
 }
 impl ListOriginEndpointsOutput {
     /// A token that can be used to resume pagination from the end of the collection.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// A list of OriginEndpoint records.
-    pub fn origin_endpoints(&self) -> std::option::Option<&[crate::model::OriginEndpoint]> {
+    pub fn origin_endpoints(&self) -> std::option::Option<& [crate::model::OriginEndpoint]> {
         self.origin_endpoints.as_deref()
     }
 }
 /// See [`ListOriginEndpointsOutput`](crate::output::ListOriginEndpointsOutput).
 pub mod list_origin_endpoints_output {
-
+    
     /// A builder for [`ListOriginEndpointsOutput`](crate::output::ListOriginEndpointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) origin_endpoints:
-            std::option::Option<std::vec::Vec<crate::model::OriginEndpoint>>,
+        pub(crate) origin_endpoints: std::option::Option<std::vec::Vec<crate::model::OriginEndpoint>>,
     }
     impl Builder {
         /// A token that can be used to resume pagination from the end of the collection.
@@ -1113,8 +1010,7 @@ pub mod list_origin_endpoints_output {
         }
         /// A token that can be used to resume pagination from the end of the collection.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `origin_endpoints`.
         ///
@@ -1123,26 +1019,26 @@ pub mod list_origin_endpoints_output {
         /// A list of OriginEndpoint records.
         pub fn origin_endpoints(mut self, input: crate::model::OriginEndpoint) -> Self {
             let mut v = self.origin_endpoints.unwrap_or_default();
-            v.push(input);
-            self.origin_endpoints = Some(v);
-            self
+                            v.push(input);
+                            self.origin_endpoints = Some(v);
+                            self
         }
         /// A list of OriginEndpoint records.
-        pub fn set_origin_endpoints(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OriginEndpoint>>,
-        ) -> Self {
-            self.origin_endpoints = input;
-            self
+        pub fn set_origin_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::model::OriginEndpoint>>) -> Self {
+            self.origin_endpoints = input; self
         }
         /// Consumes the builder and constructs a [`ListOriginEndpointsOutput`](crate::output::ListOriginEndpointsOutput).
         pub fn build(self) -> crate::output::ListOriginEndpointsOutput {
             crate::output::ListOriginEndpointsOutput {
-                next_token: self.next_token,
-                origin_endpoints: self.origin_endpoints,
+                next_token: self.next_token
+                ,
+                origin_endpoints: self.origin_endpoints
+                ,
             }
         }
     }
+    
+    
 }
 impl ListOriginEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`ListOriginEndpointsOutput`](crate::output::ListOriginEndpointsOutput).
@@ -1154,7 +1050,7 @@ impl ListOriginEndpointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHarvestJobsOutput {
+pub struct ListHarvestJobsOutput  {
     /// A list of HarvestJob records.
     #[doc(hidden)]
     pub harvest_jobs: std::option::Option<std::vec::Vec<crate::model::HarvestJob>>,
@@ -1164,17 +1060,17 @@ pub struct ListHarvestJobsOutput {
 }
 impl ListHarvestJobsOutput {
     /// A list of HarvestJob records.
-    pub fn harvest_jobs(&self) -> std::option::Option<&[crate::model::HarvestJob]> {
+    pub fn harvest_jobs(&self) -> std::option::Option<& [crate::model::HarvestJob]> {
         self.harvest_jobs.as_deref()
     }
     /// A token that can be used to resume pagination from the end of the collection.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListHarvestJobsOutput`](crate::output::ListHarvestJobsOutput).
 pub mod list_harvest_jobs_output {
-
+    
     /// A builder for [`ListHarvestJobsOutput`](crate::output::ListHarvestJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1189,17 +1085,13 @@ pub mod list_harvest_jobs_output {
         /// A list of HarvestJob records.
         pub fn harvest_jobs(mut self, input: crate::model::HarvestJob) -> Self {
             let mut v = self.harvest_jobs.unwrap_or_default();
-            v.push(input);
-            self.harvest_jobs = Some(v);
-            self
+                            v.push(input);
+                            self.harvest_jobs = Some(v);
+                            self
         }
         /// A list of HarvestJob records.
-        pub fn set_harvest_jobs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HarvestJob>>,
-        ) -> Self {
-            self.harvest_jobs = input;
-            self
+        pub fn set_harvest_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::model::HarvestJob>>) -> Self {
+            self.harvest_jobs = input; self
         }
         /// A token that can be used to resume pagination from the end of the collection.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1208,17 +1100,20 @@ pub mod list_harvest_jobs_output {
         }
         /// A token that can be used to resume pagination from the end of the collection.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListHarvestJobsOutput`](crate::output::ListHarvestJobsOutput).
         pub fn build(self) -> crate::output::ListHarvestJobsOutput {
             crate::output::ListHarvestJobsOutput {
-                harvest_jobs: self.harvest_jobs,
-                next_token: self.next_token,
+                harvest_jobs: self.harvest_jobs
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListHarvestJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListHarvestJobsOutput`](crate::output::ListHarvestJobsOutput).
@@ -1230,7 +1125,7 @@ impl ListHarvestJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListChannelsOutput {
+pub struct ListChannelsOutput  {
     /// A list of Channel records.
     #[doc(hidden)]
     pub channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
@@ -1240,17 +1135,17 @@ pub struct ListChannelsOutput {
 }
 impl ListChannelsOutput {
     /// A list of Channel records.
-    pub fn channels(&self) -> std::option::Option<&[crate::model::Channel]> {
+    pub fn channels(&self) -> std::option::Option<& [crate::model::Channel]> {
         self.channels.as_deref()
     }
     /// A token that can be used to resume pagination from the end of the collection.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListChannelsOutput`](crate::output::ListChannelsOutput).
 pub mod list_channels_output {
-
+    
     /// A builder for [`ListChannelsOutput`](crate::output::ListChannelsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1265,17 +1160,13 @@ pub mod list_channels_output {
         /// A list of Channel records.
         pub fn channels(mut self, input: crate::model::Channel) -> Self {
             let mut v = self.channels.unwrap_or_default();
-            v.push(input);
-            self.channels = Some(v);
-            self
+                            v.push(input);
+                            self.channels = Some(v);
+                            self
         }
         /// A list of Channel records.
-        pub fn set_channels(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Channel>>,
-        ) -> Self {
-            self.channels = input;
-            self
+        pub fn set_channels(mut self, input: std::option::Option<std::vec::Vec<crate::model::Channel>>) -> Self {
+            self.channels = input; self
         }
         /// A token that can be used to resume pagination from the end of the collection.
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1284,17 +1175,20 @@ pub mod list_channels_output {
         }
         /// A token that can be used to resume pagination from the end of the collection.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListChannelsOutput`](crate::output::ListChannelsOutput).
         pub fn build(self) -> crate::output::ListChannelsOutput {
             crate::output::ListChannelsOutput {
-                channels: self.channels,
-                next_token: self.next_token,
+                channels: self.channels
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListChannelsOutput {
     /// Creates a new builder-style object to manufacture [`ListChannelsOutput`](crate::output::ListChannelsOutput).
@@ -1306,7 +1200,7 @@ impl ListChannelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOriginEndpointOutput {
+pub struct DescribeOriginEndpointOutput  {
     /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1345,8 +1239,7 @@ pub struct DescribeOriginEndpointOutput {
     pub startover_window_seconds: i32,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
     #[doc(hidden)]
     pub time_delay_seconds: i32,
@@ -1359,47 +1252,47 @@ pub struct DescribeOriginEndpointOutput {
 }
 impl DescribeOriginEndpointOutput {
     /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// CDN Authorization credentials
-    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+    pub fn authorization(&self) -> std::option::Option<& crate::model::Authorization> {
         self.authorization.as_ref()
     }
     /// The ID of the Channel the OriginEndpoint is associated with.
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> std::option::Option<& str> {
         self.channel_id.as_deref()
     }
     /// A Common Media Application Format (CMAF) packaging configuration.
-    pub fn cmaf_package(&self) -> std::option::Option<&crate::model::CmafPackage> {
+    pub fn cmaf_package(&self) -> std::option::Option<& crate::model::CmafPackage> {
         self.cmaf_package.as_ref()
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-    pub fn dash_package(&self) -> std::option::Option<&crate::model::DashPackage> {
+    pub fn dash_package(&self) -> std::option::Option<& crate::model::DashPackage> {
         self.dash_package.as_ref()
     }
     /// A short text description of the OriginEndpoint.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// An HTTP Live Streaming (HLS) packaging configuration.
-    pub fn hls_package(&self) -> std::option::Option<&crate::model::HlsPackage> {
+    pub fn hls_package(&self) -> std::option::Option<& crate::model::HlsPackage> {
         self.hls_package.as_ref()
     }
     /// The ID of the OriginEndpoint.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// A short string appended to the end of the OriginEndpoint URL.
-    pub fn manifest_name(&self) -> std::option::Option<&str> {
+    pub fn manifest_name(&self) -> std::option::Option<& str> {
         self.manifest_name.as_deref()
     }
     /// A Microsoft Smooth Streaming (MSS) packaging configuration.
-    pub fn mss_package(&self) -> std::option::Option<&crate::model::MssPackage> {
+    pub fn mss_package(&self) -> std::option::Option<& crate::model::MssPackage> {
         self.mss_package.as_ref()
     }
     /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-    pub fn origination(&self) -> std::option::Option<&crate::model::Origination> {
+    pub fn origination(&self) -> std::option::Option<& crate::model::Origination> {
         self.origination.as_ref()
     }
     /// Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
@@ -1407,10 +1300,7 @@ impl DescribeOriginEndpointOutput {
         self.startover_window_seconds
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
@@ -1418,17 +1308,17 @@ impl DescribeOriginEndpointOutput {
         self.time_delay_seconds
     }
     /// The URL of the packaged OriginEndpoint for consumption.
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
-    pub fn whitelist(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn whitelist(&self) -> std::option::Option<& [std::string::String]> {
         self.whitelist.as_deref()
     }
 }
 /// See [`DescribeOriginEndpointOutput`](crate::output::DescribeOriginEndpointOutput).
 pub mod describe_origin_endpoint_output {
-
+    
     /// A builder for [`DescribeOriginEndpointOutput`](crate::output::DescribeOriginEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1444,9 +1334,7 @@ pub mod describe_origin_endpoint_output {
         pub(crate) mss_package: std::option::Option<crate::model::MssPackage>,
         pub(crate) origination: std::option::Option<crate::model::Origination>,
         pub(crate) startover_window_seconds: std::option::Option<i32>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) time_delay_seconds: std::option::Option<i32>,
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1459,8 +1347,7 @@ pub mod describe_origin_endpoint_output {
         }
         /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// CDN Authorization credentials
         pub fn authorization(mut self, input: crate::model::Authorization) -> Self {
@@ -1468,12 +1355,8 @@ pub mod describe_origin_endpoint_output {
             self
         }
         /// CDN Authorization credentials
-        pub fn set_authorization(
-            mut self,
-            input: std::option::Option<crate::model::Authorization>,
-        ) -> Self {
-            self.authorization = input;
-            self
+        pub fn set_authorization(mut self, input: std::option::Option<crate::model::Authorization>) -> Self {
+            self.authorization = input; self
         }
         /// The ID of the Channel the OriginEndpoint is associated with.
         pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1482,8 +1365,7 @@ pub mod describe_origin_endpoint_output {
         }
         /// The ID of the Channel the OriginEndpoint is associated with.
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_id = input;
-            self
+            self.channel_id = input; self
         }
         /// A Common Media Application Format (CMAF) packaging configuration.
         pub fn cmaf_package(mut self, input: crate::model::CmafPackage) -> Self {
@@ -1491,12 +1373,8 @@ pub mod describe_origin_endpoint_output {
             self
         }
         /// A Common Media Application Format (CMAF) packaging configuration.
-        pub fn set_cmaf_package(
-            mut self,
-            input: std::option::Option<crate::model::CmafPackage>,
-        ) -> Self {
-            self.cmaf_package = input;
-            self
+        pub fn set_cmaf_package(mut self, input: std::option::Option<crate::model::CmafPackage>) -> Self {
+            self.cmaf_package = input; self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
         pub fn dash_package(mut self, input: crate::model::DashPackage) -> Self {
@@ -1504,12 +1382,8 @@ pub mod describe_origin_endpoint_output {
             self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-        pub fn set_dash_package(
-            mut self,
-            input: std::option::Option<crate::model::DashPackage>,
-        ) -> Self {
-            self.dash_package = input;
-            self
+        pub fn set_dash_package(mut self, input: std::option::Option<crate::model::DashPackage>) -> Self {
+            self.dash_package = input; self
         }
         /// A short text description of the OriginEndpoint.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1518,8 +1392,7 @@ pub mod describe_origin_endpoint_output {
         }
         /// A short text description of the OriginEndpoint.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
         pub fn hls_package(mut self, input: crate::model::HlsPackage) -> Self {
@@ -1527,12 +1400,8 @@ pub mod describe_origin_endpoint_output {
             self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
-        pub fn set_hls_package(
-            mut self,
-            input: std::option::Option<crate::model::HlsPackage>,
-        ) -> Self {
-            self.hls_package = input;
-            self
+        pub fn set_hls_package(mut self, input: std::option::Option<crate::model::HlsPackage>) -> Self {
+            self.hls_package = input; self
         }
         /// The ID of the OriginEndpoint.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1541,8 +1410,7 @@ pub mod describe_origin_endpoint_output {
         }
         /// The ID of the OriginEndpoint.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// A short string appended to the end of the OriginEndpoint URL.
         pub fn manifest_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1550,12 +1418,8 @@ pub mod describe_origin_endpoint_output {
             self
         }
         /// A short string appended to the end of the OriginEndpoint URL.
-        pub fn set_manifest_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.manifest_name = input;
-            self
+        pub fn set_manifest_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.manifest_name = input; self
         }
         /// A Microsoft Smooth Streaming (MSS) packaging configuration.
         pub fn mss_package(mut self, input: crate::model::MssPackage) -> Self {
@@ -1563,12 +1427,8 @@ pub mod describe_origin_endpoint_output {
             self
         }
         /// A Microsoft Smooth Streaming (MSS) packaging configuration.
-        pub fn set_mss_package(
-            mut self,
-            input: std::option::Option<crate::model::MssPackage>,
-        ) -> Self {
-            self.mss_package = input;
-            self
+        pub fn set_mss_package(mut self, input: std::option::Option<crate::model::MssPackage>) -> Self {
+            self.mss_package = input; self
         }
         /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
         pub fn origination(mut self, input: crate::model::Origination) -> Self {
@@ -1576,12 +1436,8 @@ pub mod describe_origin_endpoint_output {
             self
         }
         /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-        pub fn set_origination(
-            mut self,
-            input: std::option::Option<crate::model::Origination>,
-        ) -> Self {
-            self.origination = input;
-            self
+        pub fn set_origination(mut self, input: std::option::Option<crate::model::Origination>) -> Self {
+            self.origination = input; self
         }
         /// Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
         pub fn startover_window_seconds(mut self, input: i32) -> Self {
@@ -1590,33 +1446,22 @@ pub mod describe_origin_endpoint_output {
         }
         /// Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
         pub fn set_startover_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.startover_window_seconds = input;
-            self
+            self.startover_window_seconds = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
         pub fn time_delay_seconds(mut self, input: i32) -> Self {
@@ -1625,8 +1470,7 @@ pub mod describe_origin_endpoint_output {
         }
         /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
         pub fn set_time_delay_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.time_delay_seconds = input;
-            self
+            self.time_delay_seconds = input; self
         }
         /// The URL of the packaged OriginEndpoint for consumption.
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1635,8 +1479,7 @@ pub mod describe_origin_endpoint_output {
         }
         /// The URL of the packaged OriginEndpoint for consumption.
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// Appends an item to `whitelist`.
         ///
@@ -1645,40 +1488,56 @@ pub mod describe_origin_endpoint_output {
         /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
         pub fn whitelist(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.whitelist.unwrap_or_default();
-            v.push(input.into());
-            self.whitelist = Some(v);
-            self
+                            v.push(input.into());
+                            self.whitelist = Some(v);
+                            self
         }
         /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
-        pub fn set_whitelist(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.whitelist = input;
-            self
+        pub fn set_whitelist(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.whitelist = input; self
         }
         /// Consumes the builder and constructs a [`DescribeOriginEndpointOutput`](crate::output::DescribeOriginEndpointOutput).
         pub fn build(self) -> crate::output::DescribeOriginEndpointOutput {
             crate::output::DescribeOriginEndpointOutput {
-                arn: self.arn,
-                authorization: self.authorization,
-                channel_id: self.channel_id,
-                cmaf_package: self.cmaf_package,
-                dash_package: self.dash_package,
-                description: self.description,
-                hls_package: self.hls_package,
-                id: self.id,
-                manifest_name: self.manifest_name,
-                mss_package: self.mss_package,
-                origination: self.origination,
-                startover_window_seconds: self.startover_window_seconds.unwrap_or_default(),
-                tags: self.tags,
-                time_delay_seconds: self.time_delay_seconds.unwrap_or_default(),
-                url: self.url,
-                whitelist: self.whitelist,
+                arn: self.arn
+                ,
+                authorization: self.authorization
+                ,
+                channel_id: self.channel_id
+                ,
+                cmaf_package: self.cmaf_package
+                ,
+                dash_package: self.dash_package
+                ,
+                description: self.description
+                ,
+                hls_package: self.hls_package
+                ,
+                id: self.id
+                ,
+                manifest_name: self.manifest_name
+                ,
+                mss_package: self.mss_package
+                ,
+                origination: self.origination
+                ,
+                startover_window_seconds: self.startover_window_seconds
+                    .unwrap_or_default()
+                ,
+                tags: self.tags
+                ,
+                time_delay_seconds: self.time_delay_seconds
+                    .unwrap_or_default()
+                ,
+                url: self.url
+                ,
+                whitelist: self.whitelist
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeOriginEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOriginEndpointOutput`](crate::output::DescribeOriginEndpointOutput).
@@ -1690,7 +1549,7 @@ impl DescribeOriginEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeHarvestJobOutput {
+pub struct DescribeHarvestJobOutput  {
     /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1721,45 +1580,45 @@ pub struct DescribeHarvestJobOutput {
 }
 impl DescribeHarvestJobOutput {
     /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The ID of the Channel that the HarvestJob will harvest from.
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> std::option::Option<& str> {
         self.channel_id.as_deref()
     }
     /// The time the HarvestJob was submitted
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// The end of the time-window which will be harvested.
-    pub fn end_time(&self) -> std::option::Option<&str> {
+    pub fn end_time(&self) -> std::option::Option<& str> {
         self.end_time.as_deref()
     }
     /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
-    pub fn origin_endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn origin_endpoint_id(&self) -> std::option::Option<& str> {
         self.origin_endpoint_id.as_deref()
     }
     /// Configuration parameters for where in an S3 bucket to place the harvested content
-    pub fn s3_destination(&self) -> std::option::Option<&crate::model::S3Destination> {
+    pub fn s3_destination(&self) -> std::option::Option<& crate::model::S3Destination> {
         self.s3_destination.as_ref()
     }
     /// The start of the time-window which will be harvested.
-    pub fn start_time(&self) -> std::option::Option<&str> {
+    pub fn start_time(&self) -> std::option::Option<& str> {
         self.start_time.as_deref()
     }
     /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will include an explanation of why the HarvestJob failed.
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
 }
 /// See [`DescribeHarvestJobOutput`](crate::output::DescribeHarvestJobOutput).
 pub mod describe_harvest_job_output {
-
+    
     /// A builder for [`DescribeHarvestJobOutput`](crate::output::DescribeHarvestJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1781,8 +1640,7 @@ pub mod describe_harvest_job_output {
         }
         /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The ID of the Channel that the HarvestJob will harvest from.
         pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1791,8 +1649,7 @@ pub mod describe_harvest_job_output {
         }
         /// The ID of the Channel that the HarvestJob will harvest from.
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_id = input;
-            self
+            self.channel_id = input; self
         }
         /// The time the HarvestJob was submitted
         pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1801,8 +1658,7 @@ pub mod describe_harvest_job_output {
         }
         /// The time the HarvestJob was submitted
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_at = input;
-            self
+            self.created_at = input; self
         }
         /// The end of the time-window which will be harvested.
         pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1811,8 +1667,7 @@ pub mod describe_harvest_job_output {
         }
         /// The end of the time-window which will be harvested.
         pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end_time = input;
-            self
+            self.end_time = input; self
         }
         /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1821,8 +1676,7 @@ pub mod describe_harvest_job_output {
         }
         /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
         pub fn origin_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1830,12 +1684,8 @@ pub mod describe_harvest_job_output {
             self
         }
         /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
-        pub fn set_origin_endpoint_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origin_endpoint_id = input;
-            self
+        pub fn set_origin_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origin_endpoint_id = input; self
         }
         /// Configuration parameters for where in an S3 bucket to place the harvested content
         pub fn s3_destination(mut self, input: crate::model::S3Destination) -> Self {
@@ -1843,12 +1693,8 @@ pub mod describe_harvest_job_output {
             self
         }
         /// Configuration parameters for where in an S3 bucket to place the harvested content
-        pub fn set_s3_destination(
-            mut self,
-            input: std::option::Option<crate::model::S3Destination>,
-        ) -> Self {
-            self.s3_destination = input;
-            self
+        pub fn set_s3_destination(mut self, input: std::option::Option<crate::model::S3Destination>) -> Self {
+            self.s3_destination = input; self
         }
         /// The start of the time-window which will be harvested.
         pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1857,8 +1703,7 @@ pub mod describe_harvest_job_output {
         }
         /// The start of the time-window which will be harvested.
         pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start_time = input;
-            self
+            self.start_time = input; self
         }
         /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will include an explanation of why the HarvestJob failed.
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -1867,24 +1712,34 @@ pub mod describe_harvest_job_output {
         }
         /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will include an explanation of why the HarvestJob failed.
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeHarvestJobOutput`](crate::output::DescribeHarvestJobOutput).
         pub fn build(self) -> crate::output::DescribeHarvestJobOutput {
             crate::output::DescribeHarvestJobOutput {
-                arn: self.arn,
-                channel_id: self.channel_id,
-                created_at: self.created_at,
-                end_time: self.end_time,
-                id: self.id,
-                origin_endpoint_id: self.origin_endpoint_id,
-                s3_destination: self.s3_destination,
-                start_time: self.start_time,
-                status: self.status,
+                arn: self.arn
+                ,
+                channel_id: self.channel_id
+                ,
+                created_at: self.created_at
+                ,
+                end_time: self.end_time
+                ,
+                id: self.id
+                ,
+                origin_endpoint_id: self.origin_endpoint_id
+                ,
+                s3_destination: self.s3_destination
+                ,
+                start_time: self.start_time
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeHarvestJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHarvestJobOutput`](crate::output::DescribeHarvestJobOutput).
@@ -1896,7 +1751,7 @@ impl DescribeHarvestJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeChannelOutput {
+pub struct DescribeChannelOutput  {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1917,45 +1772,41 @@ pub struct DescribeChannelOutput {
     pub ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DescribeChannelOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// A short text description of the Channel.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Configure egress access logging.
-    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+    pub fn egress_access_logs(&self) -> std::option::Option<& crate::model::EgressAccessLogs> {
         self.egress_access_logs.as_ref()
     }
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
-    pub fn hls_ingest(&self) -> std::option::Option<&crate::model::HlsIngest> {
+    pub fn hls_ingest(&self) -> std::option::Option<& crate::model::HlsIngest> {
         self.hls_ingest.as_ref()
     }
     /// The ID of the Channel.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Configure ingress access logging.
-    pub fn ingress_access_logs(&self) -> std::option::Option<&crate::model::IngressAccessLogs> {
+    pub fn ingress_access_logs(&self) -> std::option::Option<& crate::model::IngressAccessLogs> {
         self.ingress_access_logs.as_ref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
 pub mod describe_channel_output {
-
+    
     /// A builder for [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1965,9 +1816,7 @@ pub mod describe_channel_output {
         pub(crate) hls_ingest: std::option::Option<crate::model::HlsIngest>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) assigned to the Channel.
@@ -1977,8 +1826,7 @@ pub mod describe_channel_output {
         }
         /// The Amazon Resource Name (ARN) assigned to the Channel.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// A short text description of the Channel.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1987,8 +1835,7 @@ pub mod describe_channel_output {
         }
         /// A short text description of the Channel.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Configure egress access logging.
         pub fn egress_access_logs(mut self, input: crate::model::EgressAccessLogs) -> Self {
@@ -1996,12 +1843,8 @@ pub mod describe_channel_output {
             self
         }
         /// Configure egress access logging.
-        pub fn set_egress_access_logs(
-            mut self,
-            input: std::option::Option<crate::model::EgressAccessLogs>,
-        ) -> Self {
-            self.egress_access_logs = input;
-            self
+        pub fn set_egress_access_logs(mut self, input: std::option::Option<crate::model::EgressAccessLogs>) -> Self {
+            self.egress_access_logs = input; self
         }
         /// An HTTP Live Streaming (HLS) ingest resource configuration.
         pub fn hls_ingest(mut self, input: crate::model::HlsIngest) -> Self {
@@ -2009,12 +1852,8 @@ pub mod describe_channel_output {
             self
         }
         /// An HTTP Live Streaming (HLS) ingest resource configuration.
-        pub fn set_hls_ingest(
-            mut self,
-            input: std::option::Option<crate::model::HlsIngest>,
-        ) -> Self {
-            self.hls_ingest = input;
-            self
+        pub fn set_hls_ingest(mut self, input: std::option::Option<crate::model::HlsIngest>) -> Self {
+            self.hls_ingest = input; self
         }
         /// The ID of the Channel.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2023,8 +1862,7 @@ pub mod describe_channel_output {
         }
         /// The ID of the Channel.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Configure ingress access logging.
         pub fn ingress_access_logs(mut self, input: crate::model::IngressAccessLogs) -> Self {
@@ -2032,51 +1870,46 @@ pub mod describe_channel_output {
             self
         }
         /// Configure ingress access logging.
-        pub fn set_ingress_access_logs(
-            mut self,
-            input: std::option::Option<crate::model::IngressAccessLogs>,
-        ) -> Self {
-            self.ingress_access_logs = input;
-            self
+        pub fn set_ingress_access_logs(mut self, input: std::option::Option<crate::model::IngressAccessLogs>) -> Self {
+            self.ingress_access_logs = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
         pub fn build(self) -> crate::output::DescribeChannelOutput {
             crate::output::DescribeChannelOutput {
-                arn: self.arn,
-                description: self.description,
-                egress_access_logs: self.egress_access_logs,
-                hls_ingest: self.hls_ingest,
-                id: self.id,
-                ingress_access_logs: self.ingress_access_logs,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
+                egress_access_logs: self.egress_access_logs
+                ,
+                hls_ingest: self.hls_ingest
+                ,
+                id: self.id
+                ,
+                ingress_access_logs: self.ingress_access_logs
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeChannelOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
@@ -2088,19 +1921,24 @@ impl DescribeChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteOriginEndpointOutput {}
+pub struct DeleteOriginEndpointOutput  {
+}
 /// See [`DeleteOriginEndpointOutput`](crate::output::DeleteOriginEndpointOutput).
 pub mod delete_origin_endpoint_output {
-
+    
     /// A builder for [`DeleteOriginEndpointOutput`](crate::output::DeleteOriginEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteOriginEndpointOutput`](crate::output::DeleteOriginEndpointOutput).
         pub fn build(self) -> crate::output::DeleteOriginEndpointOutput {
-            crate::output::DeleteOriginEndpointOutput {}
+            crate::output::DeleteOriginEndpointOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteOriginEndpointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOriginEndpointOutput`](crate::output::DeleteOriginEndpointOutput).
@@ -2112,19 +1950,24 @@ impl DeleteOriginEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelOutput {}
+pub struct DeleteChannelOutput  {
+}
 /// See [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
 pub mod delete_channel_output {
-
+    
     /// A builder for [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
         pub fn build(self) -> crate::output::DeleteChannelOutput {
-            crate::output::DeleteChannelOutput {}
+            crate::output::DeleteChannelOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteChannelOutput {
     /// Creates a new builder-style object to manufacture [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
@@ -2136,7 +1979,7 @@ impl DeleteChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateOriginEndpointOutput {
+pub struct CreateOriginEndpointOutput  {
     /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2175,8 +2018,7 @@ pub struct CreateOriginEndpointOutput {
     pub startover_window_seconds: i32,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
     #[doc(hidden)]
     pub time_delay_seconds: i32,
@@ -2189,47 +2031,47 @@ pub struct CreateOriginEndpointOutput {
 }
 impl CreateOriginEndpointOutput {
     /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// CDN Authorization credentials
-    pub fn authorization(&self) -> std::option::Option<&crate::model::Authorization> {
+    pub fn authorization(&self) -> std::option::Option<& crate::model::Authorization> {
         self.authorization.as_ref()
     }
     /// The ID of the Channel the OriginEndpoint is associated with.
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> std::option::Option<& str> {
         self.channel_id.as_deref()
     }
     /// A Common Media Application Format (CMAF) packaging configuration.
-    pub fn cmaf_package(&self) -> std::option::Option<&crate::model::CmafPackage> {
+    pub fn cmaf_package(&self) -> std::option::Option<& crate::model::CmafPackage> {
         self.cmaf_package.as_ref()
     }
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-    pub fn dash_package(&self) -> std::option::Option<&crate::model::DashPackage> {
+    pub fn dash_package(&self) -> std::option::Option<& crate::model::DashPackage> {
         self.dash_package.as_ref()
     }
     /// A short text description of the OriginEndpoint.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// An HTTP Live Streaming (HLS) packaging configuration.
-    pub fn hls_package(&self) -> std::option::Option<&crate::model::HlsPackage> {
+    pub fn hls_package(&self) -> std::option::Option<& crate::model::HlsPackage> {
         self.hls_package.as_ref()
     }
     /// The ID of the OriginEndpoint.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// A short string appended to the end of the OriginEndpoint URL.
-    pub fn manifest_name(&self) -> std::option::Option<&str> {
+    pub fn manifest_name(&self) -> std::option::Option<& str> {
         self.manifest_name.as_deref()
     }
     /// A Microsoft Smooth Streaming (MSS) packaging configuration.
-    pub fn mss_package(&self) -> std::option::Option<&crate::model::MssPackage> {
+    pub fn mss_package(&self) -> std::option::Option<& crate::model::MssPackage> {
         self.mss_package.as_ref()
     }
     /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-    pub fn origination(&self) -> std::option::Option<&crate::model::Origination> {
+    pub fn origination(&self) -> std::option::Option<& crate::model::Origination> {
         self.origination.as_ref()
     }
     /// Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
@@ -2237,10 +2079,7 @@ impl CreateOriginEndpointOutput {
         self.startover_window_seconds
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
@@ -2248,17 +2087,17 @@ impl CreateOriginEndpointOutput {
         self.time_delay_seconds
     }
     /// The URL of the packaged OriginEndpoint for consumption.
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
-    pub fn whitelist(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn whitelist(&self) -> std::option::Option<& [std::string::String]> {
         self.whitelist.as_deref()
     }
 }
 /// See [`CreateOriginEndpointOutput`](crate::output::CreateOriginEndpointOutput).
 pub mod create_origin_endpoint_output {
-
+    
     /// A builder for [`CreateOriginEndpointOutput`](crate::output::CreateOriginEndpointOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2274,9 +2113,7 @@ pub mod create_origin_endpoint_output {
         pub(crate) mss_package: std::option::Option<crate::model::MssPackage>,
         pub(crate) origination: std::option::Option<crate::model::Origination>,
         pub(crate) startover_window_seconds: std::option::Option<i32>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) time_delay_seconds: std::option::Option<i32>,
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2289,8 +2126,7 @@ pub mod create_origin_endpoint_output {
         }
         /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// CDN Authorization credentials
         pub fn authorization(mut self, input: crate::model::Authorization) -> Self {
@@ -2298,12 +2134,8 @@ pub mod create_origin_endpoint_output {
             self
         }
         /// CDN Authorization credentials
-        pub fn set_authorization(
-            mut self,
-            input: std::option::Option<crate::model::Authorization>,
-        ) -> Self {
-            self.authorization = input;
-            self
+        pub fn set_authorization(mut self, input: std::option::Option<crate::model::Authorization>) -> Self {
+            self.authorization = input; self
         }
         /// The ID of the Channel the OriginEndpoint is associated with.
         pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2312,8 +2144,7 @@ pub mod create_origin_endpoint_output {
         }
         /// The ID of the Channel the OriginEndpoint is associated with.
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_id = input;
-            self
+            self.channel_id = input; self
         }
         /// A Common Media Application Format (CMAF) packaging configuration.
         pub fn cmaf_package(mut self, input: crate::model::CmafPackage) -> Self {
@@ -2321,12 +2152,8 @@ pub mod create_origin_endpoint_output {
             self
         }
         /// A Common Media Application Format (CMAF) packaging configuration.
-        pub fn set_cmaf_package(
-            mut self,
-            input: std::option::Option<crate::model::CmafPackage>,
-        ) -> Self {
-            self.cmaf_package = input;
-            self
+        pub fn set_cmaf_package(mut self, input: std::option::Option<crate::model::CmafPackage>) -> Self {
+            self.cmaf_package = input; self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
         pub fn dash_package(mut self, input: crate::model::DashPackage) -> Self {
@@ -2334,12 +2161,8 @@ pub mod create_origin_endpoint_output {
             self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-        pub fn set_dash_package(
-            mut self,
-            input: std::option::Option<crate::model::DashPackage>,
-        ) -> Self {
-            self.dash_package = input;
-            self
+        pub fn set_dash_package(mut self, input: std::option::Option<crate::model::DashPackage>) -> Self {
+            self.dash_package = input; self
         }
         /// A short text description of the OriginEndpoint.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2348,8 +2171,7 @@ pub mod create_origin_endpoint_output {
         }
         /// A short text description of the OriginEndpoint.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
         pub fn hls_package(mut self, input: crate::model::HlsPackage) -> Self {
@@ -2357,12 +2179,8 @@ pub mod create_origin_endpoint_output {
             self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
-        pub fn set_hls_package(
-            mut self,
-            input: std::option::Option<crate::model::HlsPackage>,
-        ) -> Self {
-            self.hls_package = input;
-            self
+        pub fn set_hls_package(mut self, input: std::option::Option<crate::model::HlsPackage>) -> Self {
+            self.hls_package = input; self
         }
         /// The ID of the OriginEndpoint.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2371,8 +2189,7 @@ pub mod create_origin_endpoint_output {
         }
         /// The ID of the OriginEndpoint.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// A short string appended to the end of the OriginEndpoint URL.
         pub fn manifest_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2380,12 +2197,8 @@ pub mod create_origin_endpoint_output {
             self
         }
         /// A short string appended to the end of the OriginEndpoint URL.
-        pub fn set_manifest_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.manifest_name = input;
-            self
+        pub fn set_manifest_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.manifest_name = input; self
         }
         /// A Microsoft Smooth Streaming (MSS) packaging configuration.
         pub fn mss_package(mut self, input: crate::model::MssPackage) -> Self {
@@ -2393,12 +2206,8 @@ pub mod create_origin_endpoint_output {
             self
         }
         /// A Microsoft Smooth Streaming (MSS) packaging configuration.
-        pub fn set_mss_package(
-            mut self,
-            input: std::option::Option<crate::model::MssPackage>,
-        ) -> Self {
-            self.mss_package = input;
-            self
+        pub fn set_mss_package(mut self, input: std::option::Option<crate::model::MssPackage>) -> Self {
+            self.mss_package = input; self
         }
         /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
         pub fn origination(mut self, input: crate::model::Origination) -> Self {
@@ -2406,12 +2215,8 @@ pub mod create_origin_endpoint_output {
             self
         }
         /// Control whether origination of video is allowed for this OriginEndpoint. If set to ALLOW, the OriginEndpoint may by requested, pursuant to any other form of access control. If set to DENY, the OriginEndpoint may not be requested. This can be helpful for Live to VOD harvesting, or for temporarily disabling origination
-        pub fn set_origination(
-            mut self,
-            input: std::option::Option<crate::model::Origination>,
-        ) -> Self {
-            self.origination = input;
-            self
+        pub fn set_origination(mut self, input: std::option::Option<crate::model::Origination>) -> Self {
+            self.origination = input; self
         }
         /// Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
         pub fn startover_window_seconds(mut self, input: i32) -> Self {
@@ -2420,33 +2225,22 @@ pub mod create_origin_endpoint_output {
         }
         /// Maximum duration (seconds) of content to retain for startover playback. If not specified, startover playback will be disabled for the OriginEndpoint.
         pub fn set_startover_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.startover_window_seconds = input;
-            self
+            self.startover_window_seconds = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
         pub fn time_delay_seconds(mut self, input: i32) -> Self {
@@ -2455,8 +2249,7 @@ pub mod create_origin_endpoint_output {
         }
         /// Amount of delay (seconds) to enforce on the playback of live content. If not specified, there will be no time delay in effect for the OriginEndpoint.
         pub fn set_time_delay_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.time_delay_seconds = input;
-            self
+            self.time_delay_seconds = input; self
         }
         /// The URL of the packaged OriginEndpoint for consumption.
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2465,8 +2258,7 @@ pub mod create_origin_endpoint_output {
         }
         /// The URL of the packaged OriginEndpoint for consumption.
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// Appends an item to `whitelist`.
         ///
@@ -2475,40 +2267,56 @@ pub mod create_origin_endpoint_output {
         /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
         pub fn whitelist(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.whitelist.unwrap_or_default();
-            v.push(input.into());
-            self.whitelist = Some(v);
-            self
+                            v.push(input.into());
+                            self.whitelist = Some(v);
+                            self
         }
         /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
-        pub fn set_whitelist(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.whitelist = input;
-            self
+        pub fn set_whitelist(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.whitelist = input; self
         }
         /// Consumes the builder and constructs a [`CreateOriginEndpointOutput`](crate::output::CreateOriginEndpointOutput).
         pub fn build(self) -> crate::output::CreateOriginEndpointOutput {
             crate::output::CreateOriginEndpointOutput {
-                arn: self.arn,
-                authorization: self.authorization,
-                channel_id: self.channel_id,
-                cmaf_package: self.cmaf_package,
-                dash_package: self.dash_package,
-                description: self.description,
-                hls_package: self.hls_package,
-                id: self.id,
-                manifest_name: self.manifest_name,
-                mss_package: self.mss_package,
-                origination: self.origination,
-                startover_window_seconds: self.startover_window_seconds.unwrap_or_default(),
-                tags: self.tags,
-                time_delay_seconds: self.time_delay_seconds.unwrap_or_default(),
-                url: self.url,
-                whitelist: self.whitelist,
+                arn: self.arn
+                ,
+                authorization: self.authorization
+                ,
+                channel_id: self.channel_id
+                ,
+                cmaf_package: self.cmaf_package
+                ,
+                dash_package: self.dash_package
+                ,
+                description: self.description
+                ,
+                hls_package: self.hls_package
+                ,
+                id: self.id
+                ,
+                manifest_name: self.manifest_name
+                ,
+                mss_package: self.mss_package
+                ,
+                origination: self.origination
+                ,
+                startover_window_seconds: self.startover_window_seconds
+                    .unwrap_or_default()
+                ,
+                tags: self.tags
+                ,
+                time_delay_seconds: self.time_delay_seconds
+                    .unwrap_or_default()
+                ,
+                url: self.url
+                ,
+                whitelist: self.whitelist
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateOriginEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreateOriginEndpointOutput`](crate::output::CreateOriginEndpointOutput).
@@ -2520,7 +2328,7 @@ impl CreateOriginEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateHarvestJobOutput {
+pub struct CreateHarvestJobOutput  {
     /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2551,45 +2359,45 @@ pub struct CreateHarvestJobOutput {
 }
 impl CreateHarvestJobOutput {
     /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// The ID of the Channel that the HarvestJob will harvest from.
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> std::option::Option<& str> {
         self.channel_id.as_deref()
     }
     /// The time the HarvestJob was submitted
-    pub fn created_at(&self) -> std::option::Option<&str> {
+    pub fn created_at(&self) -> std::option::Option<& str> {
         self.created_at.as_deref()
     }
     /// The end of the time-window which will be harvested.
-    pub fn end_time(&self) -> std::option::Option<&str> {
+    pub fn end_time(&self) -> std::option::Option<& str> {
         self.end_time.as_deref()
     }
     /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
-    pub fn origin_endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn origin_endpoint_id(&self) -> std::option::Option<& str> {
         self.origin_endpoint_id.as_deref()
     }
     /// Configuration parameters for where in an S3 bucket to place the harvested content
-    pub fn s3_destination(&self) -> std::option::Option<&crate::model::S3Destination> {
+    pub fn s3_destination(&self) -> std::option::Option<& crate::model::S3Destination> {
         self.s3_destination.as_ref()
     }
     /// The start of the time-window which will be harvested.
-    pub fn start_time(&self) -> std::option::Option<&str> {
+    pub fn start_time(&self) -> std::option::Option<& str> {
         self.start_time.as_deref()
     }
     /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will include an explanation of why the HarvestJob failed.
-    pub fn status(&self) -> std::option::Option<&crate::model::Status> {
+    pub fn status(&self) -> std::option::Option<& crate::model::Status> {
         self.status.as_ref()
     }
 }
 /// See [`CreateHarvestJobOutput`](crate::output::CreateHarvestJobOutput).
 pub mod create_harvest_job_output {
-
+    
     /// A builder for [`CreateHarvestJobOutput`](crate::output::CreateHarvestJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2611,8 +2419,7 @@ pub mod create_harvest_job_output {
         }
         /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// The ID of the Channel that the HarvestJob will harvest from.
         pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2621,8 +2428,7 @@ pub mod create_harvest_job_output {
         }
         /// The ID of the Channel that the HarvestJob will harvest from.
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_id = input;
-            self
+            self.channel_id = input; self
         }
         /// The time the HarvestJob was submitted
         pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2631,8 +2437,7 @@ pub mod create_harvest_job_output {
         }
         /// The time the HarvestJob was submitted
         pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_at = input;
-            self
+            self.created_at = input; self
         }
         /// The end of the time-window which will be harvested.
         pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2641,8 +2446,7 @@ pub mod create_harvest_job_output {
         }
         /// The end of the time-window which will be harvested.
         pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end_time = input;
-            self
+            self.end_time = input; self
         }
         /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2651,8 +2455,7 @@ pub mod create_harvest_job_output {
         }
         /// The ID of the HarvestJob. The ID must be unique within the region and it cannot be changed after the HarvestJob is submitted.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
         pub fn origin_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2660,12 +2463,8 @@ pub mod create_harvest_job_output {
             self
         }
         /// The ID of the OriginEndpoint that the HarvestJob will harvest from. This cannot be changed after the HarvestJob is submitted.
-        pub fn set_origin_endpoint_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origin_endpoint_id = input;
-            self
+        pub fn set_origin_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origin_endpoint_id = input; self
         }
         /// Configuration parameters for where in an S3 bucket to place the harvested content
         pub fn s3_destination(mut self, input: crate::model::S3Destination) -> Self {
@@ -2673,12 +2472,8 @@ pub mod create_harvest_job_output {
             self
         }
         /// Configuration parameters for where in an S3 bucket to place the harvested content
-        pub fn set_s3_destination(
-            mut self,
-            input: std::option::Option<crate::model::S3Destination>,
-        ) -> Self {
-            self.s3_destination = input;
-            self
+        pub fn set_s3_destination(mut self, input: std::option::Option<crate::model::S3Destination>) -> Self {
+            self.s3_destination = input; self
         }
         /// The start of the time-window which will be harvested.
         pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2687,8 +2482,7 @@ pub mod create_harvest_job_output {
         }
         /// The start of the time-window which will be harvested.
         pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start_time = input;
-            self
+            self.start_time = input; self
         }
         /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will include an explanation of why the HarvestJob failed.
         pub fn status(mut self, input: crate::model::Status) -> Self {
@@ -2697,24 +2491,34 @@ pub mod create_harvest_job_output {
         }
         /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will include an explanation of why the HarvestJob failed.
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`CreateHarvestJobOutput`](crate::output::CreateHarvestJobOutput).
         pub fn build(self) -> crate::output::CreateHarvestJobOutput {
             crate::output::CreateHarvestJobOutput {
-                arn: self.arn,
-                channel_id: self.channel_id,
-                created_at: self.created_at,
-                end_time: self.end_time,
-                id: self.id,
-                origin_endpoint_id: self.origin_endpoint_id,
-                s3_destination: self.s3_destination,
-                start_time: self.start_time,
-                status: self.status,
+                arn: self.arn
+                ,
+                channel_id: self.channel_id
+                ,
+                created_at: self.created_at
+                ,
+                end_time: self.end_time
+                ,
+                id: self.id
+                ,
+                origin_endpoint_id: self.origin_endpoint_id
+                ,
+                s3_destination: self.s3_destination
+                ,
+                start_time: self.start_time
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateHarvestJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateHarvestJobOutput`](crate::output::CreateHarvestJobOutput).
@@ -2726,7 +2530,7 @@ impl CreateHarvestJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateChannelOutput {
+pub struct CreateChannelOutput  {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2747,45 +2551,41 @@ pub struct CreateChannelOutput {
     pub ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateChannelOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// A short text description of the Channel.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Configure egress access logging.
-    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+    pub fn egress_access_logs(&self) -> std::option::Option<& crate::model::EgressAccessLogs> {
         self.egress_access_logs.as_ref()
     }
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
-    pub fn hls_ingest(&self) -> std::option::Option<&crate::model::HlsIngest> {
+    pub fn hls_ingest(&self) -> std::option::Option<& crate::model::HlsIngest> {
         self.hls_ingest.as_ref()
     }
     /// The ID of the Channel.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Configure ingress access logging.
-    pub fn ingress_access_logs(&self) -> std::option::Option<&crate::model::IngressAccessLogs> {
+    pub fn ingress_access_logs(&self) -> std::option::Option<& crate::model::IngressAccessLogs> {
         self.ingress_access_logs.as_ref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`CreateChannelOutput`](crate::output::CreateChannelOutput).
 pub mod create_channel_output {
-
+    
     /// A builder for [`CreateChannelOutput`](crate::output::CreateChannelOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2795,9 +2595,7 @@ pub mod create_channel_output {
         pub(crate) hls_ingest: std::option::Option<crate::model::HlsIngest>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) assigned to the Channel.
@@ -2807,8 +2605,7 @@ pub mod create_channel_output {
         }
         /// The Amazon Resource Name (ARN) assigned to the Channel.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// A short text description of the Channel.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2817,8 +2614,7 @@ pub mod create_channel_output {
         }
         /// A short text description of the Channel.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Configure egress access logging.
         pub fn egress_access_logs(mut self, input: crate::model::EgressAccessLogs) -> Self {
@@ -2826,12 +2622,8 @@ pub mod create_channel_output {
             self
         }
         /// Configure egress access logging.
-        pub fn set_egress_access_logs(
-            mut self,
-            input: std::option::Option<crate::model::EgressAccessLogs>,
-        ) -> Self {
-            self.egress_access_logs = input;
-            self
+        pub fn set_egress_access_logs(mut self, input: std::option::Option<crate::model::EgressAccessLogs>) -> Self {
+            self.egress_access_logs = input; self
         }
         /// An HTTP Live Streaming (HLS) ingest resource configuration.
         pub fn hls_ingest(mut self, input: crate::model::HlsIngest) -> Self {
@@ -2839,12 +2631,8 @@ pub mod create_channel_output {
             self
         }
         /// An HTTP Live Streaming (HLS) ingest resource configuration.
-        pub fn set_hls_ingest(
-            mut self,
-            input: std::option::Option<crate::model::HlsIngest>,
-        ) -> Self {
-            self.hls_ingest = input;
-            self
+        pub fn set_hls_ingest(mut self, input: std::option::Option<crate::model::HlsIngest>) -> Self {
+            self.hls_ingest = input; self
         }
         /// The ID of the Channel.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2853,8 +2641,7 @@ pub mod create_channel_output {
         }
         /// The ID of the Channel.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Configure ingress access logging.
         pub fn ingress_access_logs(mut self, input: crate::model::IngressAccessLogs) -> Self {
@@ -2862,51 +2649,46 @@ pub mod create_channel_output {
             self
         }
         /// Configure ingress access logging.
-        pub fn set_ingress_access_logs(
-            mut self,
-            input: std::option::Option<crate::model::IngressAccessLogs>,
-        ) -> Self {
-            self.ingress_access_logs = input;
-            self
+        pub fn set_ingress_access_logs(mut self, input: std::option::Option<crate::model::IngressAccessLogs>) -> Self {
+            self.ingress_access_logs = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateChannelOutput`](crate::output::CreateChannelOutput).
         pub fn build(self) -> crate::output::CreateChannelOutput {
             crate::output::CreateChannelOutput {
-                arn: self.arn,
-                description: self.description,
-                egress_access_logs: self.egress_access_logs,
-                hls_ingest: self.hls_ingest,
-                id: self.id,
-                ingress_access_logs: self.ingress_access_logs,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
+                egress_access_logs: self.egress_access_logs
+                ,
+                hls_ingest: self.hls_ingest
+                ,
+                id: self.id
+                ,
+                ingress_access_logs: self.ingress_access_logs
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateChannelOutput {
     /// Creates a new builder-style object to manufacture [`CreateChannelOutput`](crate::output::CreateChannelOutput).
@@ -2918,7 +2700,7 @@ impl CreateChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigureLogsOutput {
+pub struct ConfigureLogsOutput  {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2939,45 +2721,41 @@ pub struct ConfigureLogsOutput {
     pub ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
     /// A collection of tags associated with a resource
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ConfigureLogsOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// A short text description of the Channel.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// Configure egress access logging.
-    pub fn egress_access_logs(&self) -> std::option::Option<&crate::model::EgressAccessLogs> {
+    pub fn egress_access_logs(&self) -> std::option::Option<& crate::model::EgressAccessLogs> {
         self.egress_access_logs.as_ref()
     }
     /// An HTTP Live Streaming (HLS) ingest resource configuration.
-    pub fn hls_ingest(&self) -> std::option::Option<&crate::model::HlsIngest> {
+    pub fn hls_ingest(&self) -> std::option::Option<& crate::model::HlsIngest> {
         self.hls_ingest.as_ref()
     }
     /// The ID of the Channel.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// Configure ingress access logging.
-    pub fn ingress_access_logs(&self) -> std::option::Option<&crate::model::IngressAccessLogs> {
+    pub fn ingress_access_logs(&self) -> std::option::Option<& crate::model::IngressAccessLogs> {
         self.ingress_access_logs.as_ref()
     }
     /// A collection of tags associated with a resource
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput).
 pub mod configure_logs_output {
-
+    
     /// A builder for [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2987,9 +2765,7 @@ pub mod configure_logs_output {
         pub(crate) hls_ingest: std::option::Option<crate::model::HlsIngest>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) ingress_access_logs: std::option::Option<crate::model::IngressAccessLogs>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) assigned to the Channel.
@@ -2999,8 +2775,7 @@ pub mod configure_logs_output {
         }
         /// The Amazon Resource Name (ARN) assigned to the Channel.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// A short text description of the Channel.
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3009,8 +2784,7 @@ pub mod configure_logs_output {
         }
         /// A short text description of the Channel.
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Configure egress access logging.
         pub fn egress_access_logs(mut self, input: crate::model::EgressAccessLogs) -> Self {
@@ -3018,12 +2792,8 @@ pub mod configure_logs_output {
             self
         }
         /// Configure egress access logging.
-        pub fn set_egress_access_logs(
-            mut self,
-            input: std::option::Option<crate::model::EgressAccessLogs>,
-        ) -> Self {
-            self.egress_access_logs = input;
-            self
+        pub fn set_egress_access_logs(mut self, input: std::option::Option<crate::model::EgressAccessLogs>) -> Self {
+            self.egress_access_logs = input; self
         }
         /// An HTTP Live Streaming (HLS) ingest resource configuration.
         pub fn hls_ingest(mut self, input: crate::model::HlsIngest) -> Self {
@@ -3031,12 +2801,8 @@ pub mod configure_logs_output {
             self
         }
         /// An HTTP Live Streaming (HLS) ingest resource configuration.
-        pub fn set_hls_ingest(
-            mut self,
-            input: std::option::Option<crate::model::HlsIngest>,
-        ) -> Self {
-            self.hls_ingest = input;
-            self
+        pub fn set_hls_ingest(mut self, input: std::option::Option<crate::model::HlsIngest>) -> Self {
+            self.hls_ingest = input; self
         }
         /// The ID of the Channel.
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3045,8 +2811,7 @@ pub mod configure_logs_output {
         }
         /// The ID of the Channel.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Configure ingress access logging.
         pub fn ingress_access_logs(mut self, input: crate::model::IngressAccessLogs) -> Self {
@@ -3054,51 +2819,46 @@ pub mod configure_logs_output {
             self
         }
         /// Configure ingress access logging.
-        pub fn set_ingress_access_logs(
-            mut self,
-            input: std::option::Option<crate::model::IngressAccessLogs>,
-        ) -> Self {
-            self.ingress_access_logs = input;
-            self
+        pub fn set_ingress_access_logs(mut self, input: std::option::Option<crate::model::IngressAccessLogs>) -> Self {
+            self.ingress_access_logs = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// A collection of tags associated with a resource
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// A collection of tags associated with a resource
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput).
         pub fn build(self) -> crate::output::ConfigureLogsOutput {
             crate::output::ConfigureLogsOutput {
-                arn: self.arn,
-                description: self.description,
-                egress_access_logs: self.egress_access_logs,
-                hls_ingest: self.hls_ingest,
-                id: self.id,
-                ingress_access_logs: self.ingress_access_logs,
-                tags: self.tags,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
+                egress_access_logs: self.egress_access_logs
+                ,
+                hls_ingest: self.hls_ingest
+                ,
+                id: self.id
+                ,
+                ingress_access_logs: self.ingress_access_logs
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ConfigureLogsOutput {
     /// Creates a new builder-style object to manufacture [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput).
@@ -3106,3 +2866,4 @@ impl ConfigureLogsOutput {
         crate::output::configure_logs_output::Builder::default()
     }
 }
+

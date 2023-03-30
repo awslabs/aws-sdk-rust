@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopPipeOutput {
+pub struct StopPipeOutput  {
     /// <p>The ARN of the pipe.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -24,33 +24,33 @@ pub struct StopPipeOutput {
 }
 impl StopPipeOutput {
     /// <p>The ARN of the pipe.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the pipe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn desired_state(&self) -> std::option::Option<&crate::model::RequestedPipeState> {
+    pub fn desired_state(&self) -> std::option::Option<& crate::model::RequestedPipeState> {
         self.desired_state.as_ref()
     }
     /// <p>The state the pipe is in.</p>
-    pub fn current_state(&self) -> std::option::Option<&crate::model::PipeState> {
+    pub fn current_state(&self) -> std::option::Option<& crate::model::PipeState> {
         self.current_state.as_ref()
     }
     /// <p>The time the pipe was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
 /// See [`StopPipeOutput`](crate::output::StopPipeOutput).
 pub mod stop_pipe_output {
-
+    
     /// A builder for [`StopPipeOutput`](crate::output::StopPipeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -69,8 +69,7 @@ pub mod stop_pipe_output {
         }
         /// <p>The ARN of the pipe.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the pipe.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +78,7 @@ pub mod stop_pipe_output {
         }
         /// <p>The name of the pipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The state the pipe should be in.</p>
         pub fn desired_state(mut self, input: crate::model::RequestedPipeState) -> Self {
@@ -88,12 +86,8 @@ pub mod stop_pipe_output {
             self
         }
         /// <p>The state the pipe should be in.</p>
-        pub fn set_desired_state(
-            mut self,
-            input: std::option::Option<crate::model::RequestedPipeState>,
-        ) -> Self {
-            self.desired_state = input;
-            self
+        pub fn set_desired_state(mut self, input: std::option::Option<crate::model::RequestedPipeState>) -> Self {
+            self.desired_state = input; self
         }
         /// <p>The state the pipe is in.</p>
         pub fn current_state(mut self, input: crate::model::PipeState) -> Self {
@@ -101,12 +95,8 @@ pub mod stop_pipe_output {
             self
         }
         /// <p>The state the pipe is in.</p>
-        pub fn set_current_state(
-            mut self,
-            input: std::option::Option<crate::model::PipeState>,
-        ) -> Self {
-            self.current_state = input;
-            self
+        pub fn set_current_state(mut self, input: std::option::Option<crate::model::PipeState>) -> Self {
+            self.current_state = input; self
         }
         /// <p>The time the pipe was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -114,12 +104,8 @@ pub mod stop_pipe_output {
             self
         }
         /// <p>The time the pipe was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -127,25 +113,29 @@ pub mod stop_pipe_output {
             self
         }
         /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// Consumes the builder and constructs a [`StopPipeOutput`](crate::output::StopPipeOutput).
         pub fn build(self) -> crate::output::StopPipeOutput {
             crate::output::StopPipeOutput {
-                arn: self.arn,
-                name: self.name,
-                desired_state: self.desired_state,
-                current_state: self.current_state,
-                creation_time: self.creation_time,
-                last_modified_time: self.last_modified_time,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                desired_state: self.desired_state
+                ,
+                current_state: self.current_state
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
             }
         }
     }
+    
+    
 }
 impl StopPipeOutput {
     /// Creates a new builder-style object to manufacture [`StopPipeOutput`](crate::output::StopPipeOutput).
@@ -157,7 +147,7 @@ impl StopPipeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartPipeOutput {
+pub struct StartPipeOutput  {
     /// <p>The ARN of the pipe.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -179,33 +169,33 @@ pub struct StartPipeOutput {
 }
 impl StartPipeOutput {
     /// <p>The ARN of the pipe.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the pipe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn desired_state(&self) -> std::option::Option<&crate::model::RequestedPipeState> {
+    pub fn desired_state(&self) -> std::option::Option<& crate::model::RequestedPipeState> {
         self.desired_state.as_ref()
     }
     /// <p>The state the pipe is in.</p>
-    pub fn current_state(&self) -> std::option::Option<&crate::model::PipeState> {
+    pub fn current_state(&self) -> std::option::Option<& crate::model::PipeState> {
         self.current_state.as_ref()
     }
     /// <p>The time the pipe was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
 /// See [`StartPipeOutput`](crate::output::StartPipeOutput).
 pub mod start_pipe_output {
-
+    
     /// A builder for [`StartPipeOutput`](crate::output::StartPipeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -224,8 +214,7 @@ pub mod start_pipe_output {
         }
         /// <p>The ARN of the pipe.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the pipe.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -234,8 +223,7 @@ pub mod start_pipe_output {
         }
         /// <p>The name of the pipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The state the pipe should be in.</p>
         pub fn desired_state(mut self, input: crate::model::RequestedPipeState) -> Self {
@@ -243,12 +231,8 @@ pub mod start_pipe_output {
             self
         }
         /// <p>The state the pipe should be in.</p>
-        pub fn set_desired_state(
-            mut self,
-            input: std::option::Option<crate::model::RequestedPipeState>,
-        ) -> Self {
-            self.desired_state = input;
-            self
+        pub fn set_desired_state(mut self, input: std::option::Option<crate::model::RequestedPipeState>) -> Self {
+            self.desired_state = input; self
         }
         /// <p>The state the pipe is in.</p>
         pub fn current_state(mut self, input: crate::model::PipeState) -> Self {
@@ -256,12 +240,8 @@ pub mod start_pipe_output {
             self
         }
         /// <p>The state the pipe is in.</p>
-        pub fn set_current_state(
-            mut self,
-            input: std::option::Option<crate::model::PipeState>,
-        ) -> Self {
-            self.current_state = input;
-            self
+        pub fn set_current_state(mut self, input: std::option::Option<crate::model::PipeState>) -> Self {
+            self.current_state = input; self
         }
         /// <p>The time the pipe was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -269,12 +249,8 @@ pub mod start_pipe_output {
             self
         }
         /// <p>The time the pipe was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -282,25 +258,29 @@ pub mod start_pipe_output {
             self
         }
         /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// Consumes the builder and constructs a [`StartPipeOutput`](crate::output::StartPipeOutput).
         pub fn build(self) -> crate::output::StartPipeOutput {
             crate::output::StartPipeOutput {
-                arn: self.arn,
-                name: self.name,
-                desired_state: self.desired_state,
-                current_state: self.current_state,
-                creation_time: self.creation_time,
-                last_modified_time: self.last_modified_time,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                desired_state: self.desired_state
+                ,
+                current_state: self.current_state
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
             }
         }
     }
+    
+    
 }
 impl StartPipeOutput {
     /// Creates a new builder-style object to manufacture [`StartPipeOutput`](crate::output::StartPipeOutput).
@@ -312,7 +292,7 @@ impl StartPipeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListPipesOutput {
+pub struct ListPipesOutput  {
     /// <p>The pipes returned by the call.</p>
     #[doc(hidden)]
     pub pipes: std::option::Option<std::vec::Vec<crate::model::Pipe>>,
@@ -322,15 +302,15 @@ pub struct ListPipesOutput {
 }
 impl ListPipesOutput {
     /// <p>The pipes returned by the call.</p>
-    pub fn pipes(&self) -> std::option::Option<&[crate::model::Pipe]> {
+    pub fn pipes(&self) -> std::option::Option<& [crate::model::Pipe]> {
         self.pipes.as_deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
-impl std::fmt::Debug for ListPipesOutput {
+impl  std::fmt::Debug for ListPipesOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListPipesOutput");
         formatter.field("pipes", &self.pipes);
@@ -340,7 +320,7 @@ impl std::fmt::Debug for ListPipesOutput {
 }
 /// See [`ListPipesOutput`](crate::output::ListPipesOutput).
 pub mod list_pipes_output {
-
+    
     /// A builder for [`ListPipesOutput`](crate::output::ListPipesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -355,17 +335,13 @@ pub mod list_pipes_output {
         /// <p>The pipes returned by the call.</p>
         pub fn pipes(mut self, input: crate::model::Pipe) -> Self {
             let mut v = self.pipes.unwrap_or_default();
-            v.push(input);
-            self.pipes = Some(v);
-            self
+                            v.push(input);
+                            self.pipes = Some(v);
+                            self
         }
         /// <p>The pipes returned by the call.</p>
-        pub fn set_pipes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Pipe>>,
-        ) -> Self {
-            self.pipes = input;
-            self
+        pub fn set_pipes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Pipe>>) -> Self {
+            self.pipes = input; self
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -374,14 +350,15 @@ pub mod list_pipes_output {
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPipesOutput`](crate::output::ListPipesOutput).
         pub fn build(self) -> crate::output::ListPipesOutput {
             crate::output::ListPipesOutput {
-                pipes: self.pipes,
-                next_token: self.next_token,
+                pipes: self.pipes
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
@@ -393,6 +370,8 @@ pub mod list_pipes_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ListPipesOutput {
     /// Creates a new builder-style object to manufacture [`ListPipesOutput`](crate::output::ListPipesOutput).
@@ -404,7 +383,7 @@ impl ListPipesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePipeOutput {
+pub struct CreatePipeOutput  {
     /// <p>The ARN of the pipe.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -426,33 +405,33 @@ pub struct CreatePipeOutput {
 }
 impl CreatePipeOutput {
     /// <p>The ARN of the pipe.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the pipe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn desired_state(&self) -> std::option::Option<&crate::model::RequestedPipeState> {
+    pub fn desired_state(&self) -> std::option::Option<& crate::model::RequestedPipeState> {
         self.desired_state.as_ref()
     }
     /// <p>The state the pipe is in.</p>
-    pub fn current_state(&self) -> std::option::Option<&crate::model::PipeState> {
+    pub fn current_state(&self) -> std::option::Option<& crate::model::PipeState> {
         self.current_state.as_ref()
     }
     /// <p>The time the pipe was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
 /// See [`CreatePipeOutput`](crate::output::CreatePipeOutput).
 pub mod create_pipe_output {
-
+    
     /// A builder for [`CreatePipeOutput`](crate::output::CreatePipeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -471,8 +450,7 @@ pub mod create_pipe_output {
         }
         /// <p>The ARN of the pipe.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the pipe.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -481,8 +459,7 @@ pub mod create_pipe_output {
         }
         /// <p>The name of the pipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The state the pipe should be in.</p>
         pub fn desired_state(mut self, input: crate::model::RequestedPipeState) -> Self {
@@ -490,12 +467,8 @@ pub mod create_pipe_output {
             self
         }
         /// <p>The state the pipe should be in.</p>
-        pub fn set_desired_state(
-            mut self,
-            input: std::option::Option<crate::model::RequestedPipeState>,
-        ) -> Self {
-            self.desired_state = input;
-            self
+        pub fn set_desired_state(mut self, input: std::option::Option<crate::model::RequestedPipeState>) -> Self {
+            self.desired_state = input; self
         }
         /// <p>The state the pipe is in.</p>
         pub fn current_state(mut self, input: crate::model::PipeState) -> Self {
@@ -503,12 +476,8 @@ pub mod create_pipe_output {
             self
         }
         /// <p>The state the pipe is in.</p>
-        pub fn set_current_state(
-            mut self,
-            input: std::option::Option<crate::model::PipeState>,
-        ) -> Self {
-            self.current_state = input;
-            self
+        pub fn set_current_state(mut self, input: std::option::Option<crate::model::PipeState>) -> Self {
+            self.current_state = input; self
         }
         /// <p>The time the pipe was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -516,12 +485,8 @@ pub mod create_pipe_output {
             self
         }
         /// <p>The time the pipe was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -529,25 +494,29 @@ pub mod create_pipe_output {
             self
         }
         /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// Consumes the builder and constructs a [`CreatePipeOutput`](crate::output::CreatePipeOutput).
         pub fn build(self) -> crate::output::CreatePipeOutput {
             crate::output::CreatePipeOutput {
-                arn: self.arn,
-                name: self.name,
-                desired_state: self.desired_state,
-                current_state: self.current_state,
-                creation_time: self.creation_time,
-                last_modified_time: self.last_modified_time,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                desired_state: self.desired_state
+                ,
+                current_state: self.current_state
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePipeOutput {
     /// Creates a new builder-style object to manufacture [`CreatePipeOutput`](crate::output::CreatePipeOutput).
@@ -559,7 +528,7 @@ impl CreatePipeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePipeOutput {
+pub struct DeletePipeOutput  {
     /// <p>The ARN of the pipe.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -581,42 +550,39 @@ pub struct DeletePipeOutput {
 }
 impl DeletePipeOutput {
     /// <p>The ARN of the pipe.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the pipe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn desired_state(
-        &self,
-    ) -> std::option::Option<&crate::model::RequestedPipeStateDescribeResponse> {
+    pub fn desired_state(&self) -> std::option::Option<& crate::model::RequestedPipeStateDescribeResponse> {
         self.desired_state.as_ref()
     }
     /// <p>The state the pipe is in.</p>
-    pub fn current_state(&self) -> std::option::Option<&crate::model::PipeState> {
+    pub fn current_state(&self) -> std::option::Option<& crate::model::PipeState> {
         self.current_state.as_ref()
     }
     /// <p>The time the pipe was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
 /// See [`DeletePipeOutput`](crate::output::DeletePipeOutput).
 pub mod delete_pipe_output {
-
+    
     /// A builder for [`DeletePipeOutput`](crate::output::DeletePipeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) desired_state:
-            std::option::Option<crate::model::RequestedPipeStateDescribeResponse>,
+        pub(crate) desired_state: std::option::Option<crate::model::RequestedPipeStateDescribeResponse>,
         pub(crate) current_state: std::option::Option<crate::model::PipeState>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -629,8 +595,7 @@ pub mod delete_pipe_output {
         }
         /// <p>The ARN of the pipe.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the pipe.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -639,24 +604,16 @@ pub mod delete_pipe_output {
         }
         /// <p>The name of the pipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The state the pipe should be in.</p>
-        pub fn desired_state(
-            mut self,
-            input: crate::model::RequestedPipeStateDescribeResponse,
-        ) -> Self {
+        pub fn desired_state(mut self, input: crate::model::RequestedPipeStateDescribeResponse) -> Self {
             self.desired_state = Some(input);
             self
         }
         /// <p>The state the pipe should be in.</p>
-        pub fn set_desired_state(
-            mut self,
-            input: std::option::Option<crate::model::RequestedPipeStateDescribeResponse>,
-        ) -> Self {
-            self.desired_state = input;
-            self
+        pub fn set_desired_state(mut self, input: std::option::Option<crate::model::RequestedPipeStateDescribeResponse>) -> Self {
+            self.desired_state = input; self
         }
         /// <p>The state the pipe is in.</p>
         pub fn current_state(mut self, input: crate::model::PipeState) -> Self {
@@ -664,12 +621,8 @@ pub mod delete_pipe_output {
             self
         }
         /// <p>The state the pipe is in.</p>
-        pub fn set_current_state(
-            mut self,
-            input: std::option::Option<crate::model::PipeState>,
-        ) -> Self {
-            self.current_state = input;
-            self
+        pub fn set_current_state(mut self, input: std::option::Option<crate::model::PipeState>) -> Self {
+            self.current_state = input; self
         }
         /// <p>The time the pipe was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -677,12 +630,8 @@ pub mod delete_pipe_output {
             self
         }
         /// <p>The time the pipe was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -690,25 +639,29 @@ pub mod delete_pipe_output {
             self
         }
         /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// Consumes the builder and constructs a [`DeletePipeOutput`](crate::output::DeletePipeOutput).
         pub fn build(self) -> crate::output::DeletePipeOutput {
             crate::output::DeletePipeOutput {
-                arn: self.arn,
-                name: self.name,
-                desired_state: self.desired_state,
-                current_state: self.current_state,
-                creation_time: self.creation_time,
-                last_modified_time: self.last_modified_time,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                desired_state: self.desired_state
+                ,
+                current_state: self.current_state
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DeletePipeOutput {
     /// Creates a new builder-style object to manufacture [`DeletePipeOutput`](crate::output::DeletePipeOutput).
@@ -720,7 +673,7 @@ impl DeletePipeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePipeOutput {
+pub struct UpdatePipeOutput  {
     /// <p>The ARN of the pipe.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -742,33 +695,33 @@ pub struct UpdatePipeOutput {
 }
 impl UpdatePipeOutput {
     /// <p>The ARN of the pipe.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the pipe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn desired_state(&self) -> std::option::Option<&crate::model::RequestedPipeState> {
+    pub fn desired_state(&self) -> std::option::Option<& crate::model::RequestedPipeState> {
         self.desired_state.as_ref()
     }
     /// <p>The state the pipe is in.</p>
-    pub fn current_state(&self) -> std::option::Option<&crate::model::PipeState> {
+    pub fn current_state(&self) -> std::option::Option<& crate::model::PipeState> {
         self.current_state.as_ref()
     }
     /// <p>The time the pipe was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
 /// See [`UpdatePipeOutput`](crate::output::UpdatePipeOutput).
 pub mod update_pipe_output {
-
+    
     /// A builder for [`UpdatePipeOutput`](crate::output::UpdatePipeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -787,8 +740,7 @@ pub mod update_pipe_output {
         }
         /// <p>The ARN of the pipe.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the pipe.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -797,8 +749,7 @@ pub mod update_pipe_output {
         }
         /// <p>The name of the pipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The state the pipe should be in.</p>
         pub fn desired_state(mut self, input: crate::model::RequestedPipeState) -> Self {
@@ -806,12 +757,8 @@ pub mod update_pipe_output {
             self
         }
         /// <p>The state the pipe should be in.</p>
-        pub fn set_desired_state(
-            mut self,
-            input: std::option::Option<crate::model::RequestedPipeState>,
-        ) -> Self {
-            self.desired_state = input;
-            self
+        pub fn set_desired_state(mut self, input: std::option::Option<crate::model::RequestedPipeState>) -> Self {
+            self.desired_state = input; self
         }
         /// <p>The state the pipe is in.</p>
         pub fn current_state(mut self, input: crate::model::PipeState) -> Self {
@@ -819,12 +766,8 @@ pub mod update_pipe_output {
             self
         }
         /// <p>The state the pipe is in.</p>
-        pub fn set_current_state(
-            mut self,
-            input: std::option::Option<crate::model::PipeState>,
-        ) -> Self {
-            self.current_state = input;
-            self
+        pub fn set_current_state(mut self, input: std::option::Option<crate::model::PipeState>) -> Self {
+            self.current_state = input; self
         }
         /// <p>The time the pipe was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -832,12 +775,8 @@ pub mod update_pipe_output {
             self
         }
         /// <p>The time the pipe was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -845,25 +784,29 @@ pub mod update_pipe_output {
             self
         }
         /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePipeOutput`](crate::output::UpdatePipeOutput).
         pub fn build(self) -> crate::output::UpdatePipeOutput {
             crate::output::UpdatePipeOutput {
-                arn: self.arn,
-                name: self.name,
-                desired_state: self.desired_state,
-                current_state: self.current_state,
-                creation_time: self.creation_time,
-                last_modified_time: self.last_modified_time,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                desired_state: self.desired_state
+                ,
+                current_state: self.current_state
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePipeOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePipeOutput`](crate::output::UpdatePipeOutput).
@@ -875,7 +818,7 @@ impl UpdatePipeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribePipeOutput {
+pub struct DescribePipeOutput  {
     /// <p>The ARN of the pipe.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -917,8 +860,7 @@ pub struct DescribePipeOutput {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The list of key-value pairs to associate with the pipe.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The time the pipe was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -928,78 +870,71 @@ pub struct DescribePipeOutput {
 }
 impl DescribePipeOutput {
     /// <p>The ARN of the pipe.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name of the pipe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A description of the pipe.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The state the pipe should be in.</p>
-    pub fn desired_state(
-        &self,
-    ) -> std::option::Option<&crate::model::RequestedPipeStateDescribeResponse> {
+    pub fn desired_state(&self) -> std::option::Option<& crate::model::RequestedPipeStateDescribeResponse> {
         self.desired_state.as_ref()
     }
     /// <p>The state the pipe is in.</p>
-    pub fn current_state(&self) -> std::option::Option<&crate::model::PipeState> {
+    pub fn current_state(&self) -> std::option::Option<& crate::model::PipeState> {
         self.current_state.as_ref()
     }
     /// <p>The reason the pipe is in its current state.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
     /// <p>The ARN of the source resource.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> std::option::Option<& str> {
         self.source.as_deref()
     }
     /// <p>The parameters required to set up a source for your pipe.</p>
-    pub fn source_parameters(&self) -> std::option::Option<&crate::model::PipeSourceParameters> {
+    pub fn source_parameters(&self) -> std::option::Option<& crate::model::PipeSourceParameters> {
         self.source_parameters.as_ref()
     }
     /// <p>The ARN of the enrichment resource.</p>
-    pub fn enrichment(&self) -> std::option::Option<&str> {
+    pub fn enrichment(&self) -> std::option::Option<& str> {
         self.enrichment.as_deref()
     }
     /// <p>The parameters required to set up enrichment on your pipe.</p>
-    pub fn enrichment_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::PipeEnrichmentParameters> {
+    pub fn enrichment_parameters(&self) -> std::option::Option<& crate::model::PipeEnrichmentParameters> {
         self.enrichment_parameters.as_ref()
     }
     /// <p>The ARN of the target resource.</p>
-    pub fn target(&self) -> std::option::Option<&str> {
+    pub fn target(&self) -> std::option::Option<& str> {
         self.target.as_deref()
     }
     /// <p>The parameters required to set up a target for your pipe.</p>
-    pub fn target_parameters(&self) -> std::option::Option<&crate::model::PipeTargetParameters> {
+    pub fn target_parameters(&self) -> std::option::Option<& crate::model::PipeTargetParameters> {
         self.target_parameters.as_ref()
     }
     /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The list of key-value pairs to associate with the pipe.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The time the pipe was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
-impl std::fmt::Debug for DescribePipeOutput {
+impl  std::fmt::Debug for DescribePipeOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribePipeOutput");
         formatter.field("arn", &self.arn);
@@ -1023,28 +958,24 @@ impl std::fmt::Debug for DescribePipeOutput {
 }
 /// See [`DescribePipeOutput`](crate::output::DescribePipeOutput).
 pub mod describe_pipe_output {
-
+    
     /// A builder for [`DescribePipeOutput`](crate::output::DescribePipeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) desired_state:
-            std::option::Option<crate::model::RequestedPipeStateDescribeResponse>,
+        pub(crate) desired_state: std::option::Option<crate::model::RequestedPipeStateDescribeResponse>,
         pub(crate) current_state: std::option::Option<crate::model::PipeState>,
         pub(crate) state_reason: std::option::Option<std::string::String>,
         pub(crate) source: std::option::Option<std::string::String>,
         pub(crate) source_parameters: std::option::Option<crate::model::PipeSourceParameters>,
         pub(crate) enrichment: std::option::Option<std::string::String>,
-        pub(crate) enrichment_parameters:
-            std::option::Option<crate::model::PipeEnrichmentParameters>,
+        pub(crate) enrichment_parameters: std::option::Option<crate::model::PipeEnrichmentParameters>,
         pub(crate) target: std::option::Option<std::string::String>,
         pub(crate) target_parameters: std::option::Option<crate::model::PipeTargetParameters>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -1056,8 +987,7 @@ pub mod describe_pipe_output {
         }
         /// <p>The ARN of the pipe.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name of the pipe.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1066,8 +996,7 @@ pub mod describe_pipe_output {
         }
         /// <p>The name of the pipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A description of the pipe.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1076,24 +1005,16 @@ pub mod describe_pipe_output {
         }
         /// <p>A description of the pipe.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The state the pipe should be in.</p>
-        pub fn desired_state(
-            mut self,
-            input: crate::model::RequestedPipeStateDescribeResponse,
-        ) -> Self {
+        pub fn desired_state(mut self, input: crate::model::RequestedPipeStateDescribeResponse) -> Self {
             self.desired_state = Some(input);
             self
         }
         /// <p>The state the pipe should be in.</p>
-        pub fn set_desired_state(
-            mut self,
-            input: std::option::Option<crate::model::RequestedPipeStateDescribeResponse>,
-        ) -> Self {
-            self.desired_state = input;
-            self
+        pub fn set_desired_state(mut self, input: std::option::Option<crate::model::RequestedPipeStateDescribeResponse>) -> Self {
+            self.desired_state = input; self
         }
         /// <p>The state the pipe is in.</p>
         pub fn current_state(mut self, input: crate::model::PipeState) -> Self {
@@ -1101,12 +1022,8 @@ pub mod describe_pipe_output {
             self
         }
         /// <p>The state the pipe is in.</p>
-        pub fn set_current_state(
-            mut self,
-            input: std::option::Option<crate::model::PipeState>,
-        ) -> Self {
-            self.current_state = input;
-            self
+        pub fn set_current_state(mut self, input: std::option::Option<crate::model::PipeState>) -> Self {
+            self.current_state = input; self
         }
         /// <p>The reason the pipe is in its current state.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1115,8 +1032,7 @@ pub mod describe_pipe_output {
         }
         /// <p>The reason the pipe is in its current state.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
         /// <p>The ARN of the source resource.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1125,8 +1041,7 @@ pub mod describe_pipe_output {
         }
         /// <p>The ARN of the source resource.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source = input;
-            self
+            self.source = input; self
         }
         /// <p>The parameters required to set up a source for your pipe.</p>
         pub fn source_parameters(mut self, input: crate::model::PipeSourceParameters) -> Self {
@@ -1134,12 +1049,8 @@ pub mod describe_pipe_output {
             self
         }
         /// <p>The parameters required to set up a source for your pipe.</p>
-        pub fn set_source_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeSourceParameters>,
-        ) -> Self {
-            self.source_parameters = input;
-            self
+        pub fn set_source_parameters(mut self, input: std::option::Option<crate::model::PipeSourceParameters>) -> Self {
+            self.source_parameters = input; self
         }
         /// <p>The ARN of the enrichment resource.</p>
         pub fn enrichment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1148,24 +1059,16 @@ pub mod describe_pipe_output {
         }
         /// <p>The ARN of the enrichment resource.</p>
         pub fn set_enrichment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.enrichment = input;
-            self
+            self.enrichment = input; self
         }
         /// <p>The parameters required to set up enrichment on your pipe.</p>
-        pub fn enrichment_parameters(
-            mut self,
-            input: crate::model::PipeEnrichmentParameters,
-        ) -> Self {
+        pub fn enrichment_parameters(mut self, input: crate::model::PipeEnrichmentParameters) -> Self {
             self.enrichment_parameters = Some(input);
             self
         }
         /// <p>The parameters required to set up enrichment on your pipe.</p>
-        pub fn set_enrichment_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeEnrichmentParameters>,
-        ) -> Self {
-            self.enrichment_parameters = input;
-            self
+        pub fn set_enrichment_parameters(mut self, input: std::option::Option<crate::model::PipeEnrichmentParameters>) -> Self {
+            self.enrichment_parameters = input; self
         }
         /// <p>The ARN of the target resource.</p>
         pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1174,8 +1077,7 @@ pub mod describe_pipe_output {
         }
         /// <p>The ARN of the target resource.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target = input;
-            self
+            self.target = input; self
         }
         /// <p>The parameters required to set up a target for your pipe.</p>
         pub fn target_parameters(mut self, input: crate::model::PipeTargetParameters) -> Self {
@@ -1183,12 +1085,8 @@ pub mod describe_pipe_output {
             self
         }
         /// <p>The parameters required to set up a target for your pipe.</p>
-        pub fn set_target_parameters(
-            mut self,
-            input: std::option::Option<crate::model::PipeTargetParameters>,
-        ) -> Self {
-            self.target_parameters = input;
-            self
+        pub fn set_target_parameters(mut self, input: std::option::Option<crate::model::PipeTargetParameters>) -> Self {
+            self.target_parameters = input; self
         }
         /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1197,33 +1095,22 @@ pub mod describe_pipe_output {
         }
         /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of key-value pairs to associate with the pipe.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The list of key-value pairs to associate with the pipe.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The time the pipe was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1231,12 +1118,8 @@ pub mod describe_pipe_output {
             self
         }
         /// <p>The time the pipe was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
         pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1244,32 +1127,44 @@ pub mod describe_pipe_output {
             self
         }
         /// <p>When the pipe was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ss.sTZD).</p>
-        pub fn set_last_modified_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified_time = input;
-            self
+        pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified_time = input; self
         }
         /// Consumes the builder and constructs a [`DescribePipeOutput`](crate::output::DescribePipeOutput).
         pub fn build(self) -> crate::output::DescribePipeOutput {
             crate::output::DescribePipeOutput {
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                desired_state: self.desired_state,
-                current_state: self.current_state,
-                state_reason: self.state_reason,
-                source: self.source,
-                source_parameters: self.source_parameters,
-                enrichment: self.enrichment,
-                enrichment_parameters: self.enrichment_parameters,
-                target: self.target,
-                target_parameters: self.target_parameters,
-                role_arn: self.role_arn,
-                tags: self.tags,
-                creation_time: self.creation_time,
-                last_modified_time: self.last_modified_time,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                desired_state: self.desired_state
+                ,
+                current_state: self.current_state
+                ,
+                state_reason: self.state_reason
+                ,
+                source: self.source
+                ,
+                source_parameters: self.source_parameters
+                ,
+                enrichment: self.enrichment
+                ,
+                enrichment_parameters: self.enrichment_parameters
+                ,
+                target: self.target
+                ,
+                target_parameters: self.target_parameters
+                ,
+                role_arn: self.role_arn
+                ,
+                tags: self.tags
+                ,
+                creation_time: self.creation_time
+                ,
+                last_modified_time: self.last_modified_time
+                ,
             }
         }
     }
@@ -1295,6 +1190,8 @@ pub mod describe_pipe_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl DescribePipeOutput {
     /// Creates a new builder-style object to manufacture [`DescribePipeOutput`](crate::output::DescribePipeOutput).
@@ -1306,19 +1203,24 @@ impl DescribePipeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -1330,19 +1232,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -1354,30 +1261,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The list of key-value pairs to associate with the pipe.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The list of key-value pairs to associate with the pipe.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -1385,31 +1286,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of key-value pairs to associate with the pipe.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The list of key-value pairs to associate with the pipe.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1417,3 +1313,4 @@ impl ListTagsForResourceOutput {
         crate::output::list_tags_for_resource_output::Builder::default()
     }
 }
+

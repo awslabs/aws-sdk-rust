@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePoolOutput {
+pub struct UpdatePoolOutput  {
     /// <p>The ARN of the pool.</p>
     #[doc(hidden)]
     pub pool_arn: std::option::Option<std::string::String>,
@@ -39,19 +39,19 @@ pub struct UpdatePoolOutput {
 }
 impl UpdatePoolOutput {
     /// <p>The ARN of the pool.</p>
-    pub fn pool_arn(&self) -> std::option::Option<&str> {
+    pub fn pool_arn(&self) -> std::option::Option<& str> {
         self.pool_arn.as_deref()
     }
     /// <p>The unique identifier of the pool.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>The current status of the pool update request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::PoolStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::PoolStatus> {
         self.status.as_ref()
     }
     /// <p>The type of message for the pool to use.</p>
-    pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+    pub fn message_type(&self) -> std::option::Option<& crate::model::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
@@ -59,7 +59,7 @@ impl UpdatePoolOutput {
         self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn two_way_channel_arn(&self) -> std::option::Option<&str> {
+    pub fn two_way_channel_arn(&self) -> std::option::Option<& str> {
         self.two_way_channel_arn.as_deref()
     }
     /// <p>When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
@@ -67,7 +67,7 @@ impl UpdatePoolOutput {
         self.self_managed_opt_outs_enabled
     }
     /// <p>The name of the OptOutList associated with the pool.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
@@ -79,13 +79,13 @@ impl UpdatePoolOutput {
         self.deletion_protection_enabled
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 /// See [`UpdatePoolOutput`](crate::output::UpdatePoolOutput).
 pub mod update_pool_output {
-
+    
     /// A builder for [`UpdatePoolOutput`](crate::output::UpdatePoolOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -109,8 +109,7 @@ pub mod update_pool_output {
         }
         /// <p>The ARN of the pool.</p>
         pub fn set_pool_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_arn = input;
-            self
+            self.pool_arn = input; self
         }
         /// <p>The unique identifier of the pool.</p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,8 +118,7 @@ pub mod update_pool_output {
         }
         /// <p>The unique identifier of the pool.</p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_id = input;
-            self
+            self.pool_id = input; self
         }
         /// <p>The current status of the pool update request.</p>
         pub fn status(mut self, input: crate::model::PoolStatus) -> Self {
@@ -129,8 +127,7 @@ pub mod update_pool_output {
         }
         /// <p>The current status of the pool update request.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::PoolStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The type of message for the pool to use.</p>
         pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
@@ -138,12 +135,8 @@ pub mod update_pool_output {
             self
         }
         /// <p>The type of message for the pool to use.</p>
-        pub fn set_message_type(
-            mut self,
-            input: std::option::Option<crate::model::MessageType>,
-        ) -> Self {
-            self.message_type = input;
-            self
+        pub fn set_message_type(mut self, input: std::option::Option<crate::model::MessageType>) -> Self {
+            self.message_type = input; self
         }
         /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
         pub fn two_way_enabled(mut self, input: bool) -> Self {
@@ -152,8 +145,7 @@ pub mod update_pool_output {
         }
         /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
         pub fn set_two_way_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.two_way_enabled = input;
-            self
+            self.two_way_enabled = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
         pub fn two_way_channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -161,12 +153,8 @@ pub mod update_pool_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-        pub fn set_two_way_channel_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.two_way_channel_arn = input;
-            self
+        pub fn set_two_way_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.two_way_channel_arn = input; self
         }
         /// <p>When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
         pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
@@ -174,12 +162,8 @@ pub mod update_pool_output {
             self
         }
         /// <p>When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
-        pub fn set_self_managed_opt_outs_enabled(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.self_managed_opt_outs_enabled = input;
-            self
+        pub fn set_self_managed_opt_outs_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.self_managed_opt_outs_enabled = input; self
         }
         /// <p>The name of the OptOutList associated with the pool.</p>
         pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -187,12 +171,8 @@ pub mod update_pool_output {
             self
         }
         /// <p>The name of the OptOutList associated with the pool.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// <p>Indicates whether shared routes are enabled for the pool.</p>
         pub fn shared_routes_enabled(mut self, input: bool) -> Self {
@@ -201,8 +181,7 @@ pub mod update_pool_output {
         }
         /// <p>Indicates whether shared routes are enabled for the pool.</p>
         pub fn set_shared_routes_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.shared_routes_enabled = input;
-            self
+            self.shared_routes_enabled = input; self
         }
         /// <p>When set to true the pool can't be deleted.</p>
         pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
@@ -211,8 +190,7 @@ pub mod update_pool_output {
         }
         /// <p>When set to true the pool can't be deleted.</p>
         pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.deletion_protection_enabled = input;
-            self
+            self.deletion_protection_enabled = input; self
         }
         /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -220,32 +198,43 @@ pub mod update_pool_output {
             self
         }
         /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePoolOutput`](crate::output::UpdatePoolOutput).
         pub fn build(self) -> crate::output::UpdatePoolOutput {
             crate::output::UpdatePoolOutput {
-                pool_arn: self.pool_arn,
-                pool_id: self.pool_id,
-                status: self.status,
-                message_type: self.message_type,
-                two_way_enabled: self.two_way_enabled.unwrap_or_default(),
-                two_way_channel_arn: self.two_way_channel_arn,
-                self_managed_opt_outs_enabled: self
-                    .self_managed_opt_outs_enabled
-                    .unwrap_or_default(),
-                opt_out_list_name: self.opt_out_list_name,
-                shared_routes_enabled: self.shared_routes_enabled.unwrap_or_default(),
-                deletion_protection_enabled: self.deletion_protection_enabled.unwrap_or_default(),
-                created_timestamp: self.created_timestamp,
+                pool_arn: self.pool_arn
+                ,
+                pool_id: self.pool_id
+                ,
+                status: self.status
+                ,
+                message_type: self.message_type
+                ,
+                two_way_enabled: self.two_way_enabled
+                    .unwrap_or_default()
+                ,
+                two_way_channel_arn: self.two_way_channel_arn
+                ,
+                self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled
+                    .unwrap_or_default()
+                ,
+                opt_out_list_name: self.opt_out_list_name
+                ,
+                shared_routes_enabled: self.shared_routes_enabled
+                    .unwrap_or_default()
+                ,
+                deletion_protection_enabled: self.deletion_protection_enabled
+                    .unwrap_or_default()
+                ,
+                created_timestamp: self.created_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePoolOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePoolOutput`](crate::output::UpdatePoolOutput).
@@ -257,7 +246,7 @@ impl UpdatePoolOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePhoneNumberOutput {
+pub struct UpdatePhoneNumberOutput  {
     /// <p>The Amazon Resource Name (ARN) of the updated phone number.</p>
     #[doc(hidden)]
     pub phone_number_arn: std::option::Option<std::string::String>,
@@ -306,39 +295,39 @@ pub struct UpdatePhoneNumberOutput {
 }
 impl UpdatePhoneNumberOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated phone number.</p>
-    pub fn phone_number_arn(&self) -> std::option::Option<&str> {
+    pub fn phone_number_arn(&self) -> std::option::Option<& str> {
         self.phone_number_arn.as_deref()
     }
     /// <p>The unique identifier of the phone number.</p>
-    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
     /// <p>The phone number that was updated.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::NumberStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::NumberStatus> {
         self.status.as_ref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+    pub fn message_type(&self) -> std::option::Option<& crate::model::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>Specifies if the number could be used for text messages, voice or both.</p>
-    pub fn number_capabilities(&self) -> std::option::Option<&[crate::model::NumberCapability]> {
+    pub fn number_capabilities(&self) -> std::option::Option<& [crate::model::NumberCapability]> {
         self.number_capabilities.as_deref()
     }
     /// <p>The type of number that was requested.</p>
-    pub fn number_type(&self) -> std::option::Option<&crate::model::NumberType> {
+    pub fn number_type(&self) -> std::option::Option<& crate::model::NumberType> {
         self.number_type.as_ref()
     }
     /// <p>The monthly leasing price of the phone number, in US dollars.</p>
-    pub fn monthly_leasing_price(&self) -> std::option::Option<&str> {
+    pub fn monthly_leasing_price(&self) -> std::option::Option<& str> {
         self.monthly_leasing_price.as_deref()
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
@@ -346,7 +335,7 @@ impl UpdatePhoneNumberOutput {
         self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn two_way_channel_arn(&self) -> std::option::Option<&str> {
+    pub fn two_way_channel_arn(&self) -> std::option::Option<& str> {
         self.two_way_channel_arn.as_deref()
     }
     /// <p>This is true if self managed opt-out are enabled.</p>
@@ -354,7 +343,7 @@ impl UpdatePhoneNumberOutput {
         self.self_managed_opt_outs_enabled
     }
     /// <p>The name of the OptOutList associated with the phone number.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>When set to true the phone number can't be deleted.</p>
@@ -362,13 +351,13 @@ impl UpdatePhoneNumberOutput {
         self.deletion_protection_enabled
     }
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 /// See [`UpdatePhoneNumberOutput`](crate::output::UpdatePhoneNumberOutput).
 pub mod update_phone_number_output {
-
+    
     /// A builder for [`UpdatePhoneNumberOutput`](crate::output::UpdatePhoneNumberOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -378,8 +367,7 @@ pub mod update_phone_number_output {
         pub(crate) status: std::option::Option<crate::model::NumberStatus>,
         pub(crate) iso_country_code: std::option::Option<std::string::String>,
         pub(crate) message_type: std::option::Option<crate::model::MessageType>,
-        pub(crate) number_capabilities:
-            std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
+        pub(crate) number_capabilities: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
         pub(crate) number_type: std::option::Option<crate::model::NumberType>,
         pub(crate) monthly_leasing_price: std::option::Option<std::string::String>,
         pub(crate) two_way_enabled: std::option::Option<bool>,
@@ -396,12 +384,8 @@ pub mod update_phone_number_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the updated phone number.</p>
-        pub fn set_phone_number_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.phone_number_arn = input;
-            self
+        pub fn set_phone_number_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number_arn = input; self
         }
         /// <p>The unique identifier of the phone number.</p>
         pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -409,12 +393,8 @@ pub mod update_phone_number_output {
             self
         }
         /// <p>The unique identifier of the phone number.</p>
-        pub fn set_phone_number_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.phone_number_id = input;
-            self
+        pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number_id = input; self
         }
         /// <p>The phone number that was updated.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -423,8 +403,7 @@ pub mod update_phone_number_output {
         }
         /// <p>The phone number that was updated.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.phone_number = input;
-            self
+            self.phone_number = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: crate::model::NumberStatus) -> Self {
@@ -432,12 +411,8 @@ pub mod update_phone_number_output {
             self
         }
         /// <p>The current status of the request.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::NumberStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::NumberStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
         pub fn iso_country_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -445,12 +420,8 @@ pub mod update_phone_number_output {
             self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-        pub fn set_iso_country_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.iso_country_code = input;
-            self
+        pub fn set_iso_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iso_country_code = input; self
         }
         /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
         pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
@@ -458,12 +429,8 @@ pub mod update_phone_number_output {
             self
         }
         /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-        pub fn set_message_type(
-            mut self,
-            input: std::option::Option<crate::model::MessageType>,
-        ) -> Self {
-            self.message_type = input;
-            self
+        pub fn set_message_type(mut self, input: std::option::Option<crate::model::MessageType>) -> Self {
+            self.message_type = input; self
         }
         /// Appends an item to `number_capabilities`.
         ///
@@ -472,17 +439,13 @@ pub mod update_phone_number_output {
         /// <p>Specifies if the number could be used for text messages, voice or both.</p>
         pub fn number_capabilities(mut self, input: crate::model::NumberCapability) -> Self {
             let mut v = self.number_capabilities.unwrap_or_default();
-            v.push(input);
-            self.number_capabilities = Some(v);
-            self
+                            v.push(input);
+                            self.number_capabilities = Some(v);
+                            self
         }
         /// <p>Specifies if the number could be used for text messages, voice or both.</p>
-        pub fn set_number_capabilities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
-        ) -> Self {
-            self.number_capabilities = input;
-            self
+        pub fn set_number_capabilities(mut self, input: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>) -> Self {
+            self.number_capabilities = input; self
         }
         /// <p>The type of number that was requested.</p>
         pub fn number_type(mut self, input: crate::model::NumberType) -> Self {
@@ -490,12 +453,8 @@ pub mod update_phone_number_output {
             self
         }
         /// <p>The type of number that was requested.</p>
-        pub fn set_number_type(
-            mut self,
-            input: std::option::Option<crate::model::NumberType>,
-        ) -> Self {
-            self.number_type = input;
-            self
+        pub fn set_number_type(mut self, input: std::option::Option<crate::model::NumberType>) -> Self {
+            self.number_type = input; self
         }
         /// <p>The monthly leasing price of the phone number, in US dollars.</p>
         pub fn monthly_leasing_price(mut self, input: impl Into<std::string::String>) -> Self {
@@ -503,12 +462,8 @@ pub mod update_phone_number_output {
             self
         }
         /// <p>The monthly leasing price of the phone number, in US dollars.</p>
-        pub fn set_monthly_leasing_price(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.monthly_leasing_price = input;
-            self
+        pub fn set_monthly_leasing_price(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.monthly_leasing_price = input; self
         }
         /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
         pub fn two_way_enabled(mut self, input: bool) -> Self {
@@ -517,8 +472,7 @@ pub mod update_phone_number_output {
         }
         /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
         pub fn set_two_way_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.two_way_enabled = input;
-            self
+            self.two_way_enabled = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
         pub fn two_way_channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -526,12 +480,8 @@ pub mod update_phone_number_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-        pub fn set_two_way_channel_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.two_way_channel_arn = input;
-            self
+        pub fn set_two_way_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.two_way_channel_arn = input; self
         }
         /// <p>This is true if self managed opt-out are enabled.</p>
         pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
@@ -539,12 +489,8 @@ pub mod update_phone_number_output {
             self
         }
         /// <p>This is true if self managed opt-out are enabled.</p>
-        pub fn set_self_managed_opt_outs_enabled(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.self_managed_opt_outs_enabled = input;
-            self
+        pub fn set_self_managed_opt_outs_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.self_managed_opt_outs_enabled = input; self
         }
         /// <p>The name of the OptOutList associated with the phone number.</p>
         pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -552,12 +498,8 @@ pub mod update_phone_number_output {
             self
         }
         /// <p>The name of the OptOutList associated with the phone number.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// <p>When set to true the phone number can't be deleted.</p>
         pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
@@ -566,8 +508,7 @@ pub mod update_phone_number_output {
         }
         /// <p>When set to true the phone number can't be deleted.</p>
         pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.deletion_protection_enabled = input;
-            self
+            self.deletion_protection_enabled = input; self
         }
         /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -575,36 +516,50 @@ pub mod update_phone_number_output {
             self
         }
         /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePhoneNumberOutput`](crate::output::UpdatePhoneNumberOutput).
         pub fn build(self) -> crate::output::UpdatePhoneNumberOutput {
             crate::output::UpdatePhoneNumberOutput {
-                phone_number_arn: self.phone_number_arn,
-                phone_number_id: self.phone_number_id,
-                phone_number: self.phone_number,
-                status: self.status,
-                iso_country_code: self.iso_country_code,
-                message_type: self.message_type,
-                number_capabilities: self.number_capabilities,
-                number_type: self.number_type,
-                monthly_leasing_price: self.monthly_leasing_price,
-                two_way_enabled: self.two_way_enabled.unwrap_or_default(),
-                two_way_channel_arn: self.two_way_channel_arn,
-                self_managed_opt_outs_enabled: self
-                    .self_managed_opt_outs_enabled
-                    .unwrap_or_default(),
-                opt_out_list_name: self.opt_out_list_name,
-                deletion_protection_enabled: self.deletion_protection_enabled.unwrap_or_default(),
-                created_timestamp: self.created_timestamp,
+                phone_number_arn: self.phone_number_arn
+                ,
+                phone_number_id: self.phone_number_id
+                ,
+                phone_number: self.phone_number
+                ,
+                status: self.status
+                ,
+                iso_country_code: self.iso_country_code
+                ,
+                message_type: self.message_type
+                ,
+                number_capabilities: self.number_capabilities
+                ,
+                number_type: self.number_type
+                ,
+                monthly_leasing_price: self.monthly_leasing_price
+                ,
+                two_way_enabled: self.two_way_enabled
+                    .unwrap_or_default()
+                ,
+                two_way_channel_arn: self.two_way_channel_arn
+                ,
+                self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled
+                    .unwrap_or_default()
+                ,
+                opt_out_list_name: self.opt_out_list_name
+                ,
+                deletion_protection_enabled: self.deletion_protection_enabled
+                    .unwrap_or_default()
+                ,
+                created_timestamp: self.created_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePhoneNumberOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePhoneNumberOutput`](crate::output::UpdatePhoneNumberOutput).
@@ -616,7 +571,7 @@ impl UpdatePhoneNumberOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEventDestinationOutput {
+pub struct UpdateEventDestinationOutput  {
     /// <p>The Amazon Resource Name (ARN) for the ConfigurationSet that was updated.</p>
     #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
@@ -629,21 +584,21 @@ pub struct UpdateEventDestinationOutput {
 }
 impl UpdateEventDestinationOutput {
     /// <p>The Amazon Resource Name (ARN) for the ConfigurationSet that was updated.</p>
-    pub fn configuration_set_arn(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_arn(&self) -> std::option::Option<& str> {
         self.configuration_set_arn.as_deref()
     }
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>An EventDestination object containing the details of where events will be logged. </p>
-    pub fn event_destination(&self) -> std::option::Option<&crate::model::EventDestination> {
+    pub fn event_destination(&self) -> std::option::Option<& crate::model::EventDestination> {
         self.event_destination.as_ref()
     }
 }
 /// See [`UpdateEventDestinationOutput`](crate::output::UpdateEventDestinationOutput).
 pub mod update_event_destination_output {
-
+    
     /// A builder for [`UpdateEventDestinationOutput`](crate::output::UpdateEventDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -658,12 +613,8 @@ pub mod update_event_destination_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the ConfigurationSet that was updated.</p>
-        pub fn set_configuration_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_arn = input;
-            self
+        pub fn set_configuration_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_arn = input; self
         }
         /// <p>The name of the configuration set.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -671,12 +622,8 @@ pub mod update_event_destination_output {
             self
         }
         /// <p>The name of the configuration set.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>An EventDestination object containing the details of where events will be logged. </p>
         pub fn event_destination(mut self, input: crate::model::EventDestination) -> Self {
@@ -684,22 +631,23 @@ pub mod update_event_destination_output {
             self
         }
         /// <p>An EventDestination object containing the details of where events will be logged. </p>
-        pub fn set_event_destination(
-            mut self,
-            input: std::option::Option<crate::model::EventDestination>,
-        ) -> Self {
-            self.event_destination = input;
-            self
+        pub fn set_event_destination(mut self, input: std::option::Option<crate::model::EventDestination>) -> Self {
+            self.event_destination = input; self
         }
         /// Consumes the builder and constructs a [`UpdateEventDestinationOutput`](crate::output::UpdateEventDestinationOutput).
         pub fn build(self) -> crate::output::UpdateEventDestinationOutput {
             crate::output::UpdateEventDestinationOutput {
-                configuration_set_arn: self.configuration_set_arn,
-                configuration_set_name: self.configuration_set_name,
-                event_destination: self.event_destination,
+                configuration_set_arn: self.configuration_set_arn
+                ,
+                configuration_set_name: self.configuration_set_name
+                ,
+                event_destination: self.event_destination
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateEventDestinationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEventDestinationOutput`](crate::output::UpdateEventDestinationOutput).
@@ -711,19 +659,24 @@ impl UpdateEventDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -735,19 +688,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -759,7 +717,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetVoiceMessageSpendLimitOverrideOutput {
+pub struct SetVoiceMessageSpendLimitOverrideOutput  {
     /// <p>The current monthly limit to enforce on sending voice messages.</p>
     #[doc(hidden)]
     pub monthly_limit: std::option::Option<i64>,
@@ -772,7 +730,7 @@ impl SetVoiceMessageSpendLimitOverrideOutput {
 }
 /// See [`SetVoiceMessageSpendLimitOverrideOutput`](crate::output::SetVoiceMessageSpendLimitOverrideOutput).
 pub mod set_voice_message_spend_limit_override_output {
-
+    
     /// A builder for [`SetVoiceMessageSpendLimitOverrideOutput`](crate::output::SetVoiceMessageSpendLimitOverrideOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -786,16 +744,18 @@ pub mod set_voice_message_spend_limit_override_output {
         }
         /// <p>The current monthly limit to enforce on sending voice messages.</p>
         pub fn set_monthly_limit(mut self, input: std::option::Option<i64>) -> Self {
-            self.monthly_limit = input;
-            self
+            self.monthly_limit = input; self
         }
         /// Consumes the builder and constructs a [`SetVoiceMessageSpendLimitOverrideOutput`](crate::output::SetVoiceMessageSpendLimitOverrideOutput).
         pub fn build(self) -> crate::output::SetVoiceMessageSpendLimitOverrideOutput {
             crate::output::SetVoiceMessageSpendLimitOverrideOutput {
-                monthly_limit: self.monthly_limit,
+                monthly_limit: self.monthly_limit
+                ,
             }
         }
     }
+    
+    
 }
 impl SetVoiceMessageSpendLimitOverrideOutput {
     /// Creates a new builder-style object to manufacture [`SetVoiceMessageSpendLimitOverrideOutput`](crate::output::SetVoiceMessageSpendLimitOverrideOutput).
@@ -807,7 +767,7 @@ impl SetVoiceMessageSpendLimitOverrideOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetTextMessageSpendLimitOverrideOutput {
+pub struct SetTextMessageSpendLimitOverrideOutput  {
     /// <p>The current monthly limit to enforce on sending text messages.</p>
     #[doc(hidden)]
     pub monthly_limit: std::option::Option<i64>,
@@ -820,7 +780,7 @@ impl SetTextMessageSpendLimitOverrideOutput {
 }
 /// See [`SetTextMessageSpendLimitOverrideOutput`](crate::output::SetTextMessageSpendLimitOverrideOutput).
 pub mod set_text_message_spend_limit_override_output {
-
+    
     /// A builder for [`SetTextMessageSpendLimitOverrideOutput`](crate::output::SetTextMessageSpendLimitOverrideOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -834,16 +794,18 @@ pub mod set_text_message_spend_limit_override_output {
         }
         /// <p>The current monthly limit to enforce on sending text messages.</p>
         pub fn set_monthly_limit(mut self, input: std::option::Option<i64>) -> Self {
-            self.monthly_limit = input;
-            self
+            self.monthly_limit = input; self
         }
         /// Consumes the builder and constructs a [`SetTextMessageSpendLimitOverrideOutput`](crate::output::SetTextMessageSpendLimitOverrideOutput).
         pub fn build(self) -> crate::output::SetTextMessageSpendLimitOverrideOutput {
             crate::output::SetTextMessageSpendLimitOverrideOutput {
-                monthly_limit: self.monthly_limit,
+                monthly_limit: self.monthly_limit
+                ,
             }
         }
     }
+    
+    
 }
 impl SetTextMessageSpendLimitOverrideOutput {
     /// Creates a new builder-style object to manufacture [`SetTextMessageSpendLimitOverrideOutput`](crate::output::SetTextMessageSpendLimitOverrideOutput).
@@ -855,7 +817,7 @@ impl SetTextMessageSpendLimitOverrideOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetDefaultSenderIdOutput {
+pub struct SetDefaultSenderIdOutput  {
     /// <p>The Amazon Resource Name (ARN) of the updated configuration set.</p>
     #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
@@ -868,21 +830,21 @@ pub struct SetDefaultSenderIdOutput {
 }
 impl SetDefaultSenderIdOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated configuration set.</p>
-    pub fn configuration_set_arn(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_arn(&self) -> std::option::Option<& str> {
         self.configuration_set_arn.as_deref()
     }
     /// <p>The name of the configuration set that was updated.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The default sender ID to set for the ConfigurationSet.</p>
-    pub fn sender_id(&self) -> std::option::Option<&str> {
+    pub fn sender_id(&self) -> std::option::Option<& str> {
         self.sender_id.as_deref()
     }
 }
 /// See [`SetDefaultSenderIdOutput`](crate::output::SetDefaultSenderIdOutput).
 pub mod set_default_sender_id_output {
-
+    
     /// A builder for [`SetDefaultSenderIdOutput`](crate::output::SetDefaultSenderIdOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -897,12 +859,8 @@ pub mod set_default_sender_id_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the updated configuration set.</p>
-        pub fn set_configuration_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_arn = input;
-            self
+        pub fn set_configuration_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_arn = input; self
         }
         /// <p>The name of the configuration set that was updated.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -910,12 +868,8 @@ pub mod set_default_sender_id_output {
             self
         }
         /// <p>The name of the configuration set that was updated.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>The default sender ID to set for the ConfigurationSet.</p>
         pub fn sender_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -924,18 +878,22 @@ pub mod set_default_sender_id_output {
         }
         /// <p>The default sender ID to set for the ConfigurationSet.</p>
         pub fn set_sender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sender_id = input;
-            self
+            self.sender_id = input; self
         }
         /// Consumes the builder and constructs a [`SetDefaultSenderIdOutput`](crate::output::SetDefaultSenderIdOutput).
         pub fn build(self) -> crate::output::SetDefaultSenderIdOutput {
             crate::output::SetDefaultSenderIdOutput {
-                configuration_set_arn: self.configuration_set_arn,
-                configuration_set_name: self.configuration_set_name,
-                sender_id: self.sender_id,
+                configuration_set_arn: self.configuration_set_arn
+                ,
+                configuration_set_name: self.configuration_set_name
+                ,
+                sender_id: self.sender_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SetDefaultSenderIdOutput {
     /// Creates a new builder-style object to manufacture [`SetDefaultSenderIdOutput`](crate::output::SetDefaultSenderIdOutput).
@@ -947,7 +905,7 @@ impl SetDefaultSenderIdOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetDefaultMessageTypeOutput {
+pub struct SetDefaultMessageTypeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the updated configuration set.</p>
     #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
@@ -960,21 +918,21 @@ pub struct SetDefaultMessageTypeOutput {
 }
 impl SetDefaultMessageTypeOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated configuration set.</p>
-    pub fn configuration_set_arn(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_arn(&self) -> std::option::Option<& str> {
         self.configuration_set_arn.as_deref()
     }
     /// <p>The name of the configuration set that was updated.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The new default message type of the configuration set.</p>
-    pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+    pub fn message_type(&self) -> std::option::Option<& crate::model::MessageType> {
         self.message_type.as_ref()
     }
 }
 /// See [`SetDefaultMessageTypeOutput`](crate::output::SetDefaultMessageTypeOutput).
 pub mod set_default_message_type_output {
-
+    
     /// A builder for [`SetDefaultMessageTypeOutput`](crate::output::SetDefaultMessageTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -989,12 +947,8 @@ pub mod set_default_message_type_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the updated configuration set.</p>
-        pub fn set_configuration_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_arn = input;
-            self
+        pub fn set_configuration_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_arn = input; self
         }
         /// <p>The name of the configuration set that was updated.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1002,12 +956,8 @@ pub mod set_default_message_type_output {
             self
         }
         /// <p>The name of the configuration set that was updated.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>The new default message type of the configuration set.</p>
         pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
@@ -1015,22 +965,23 @@ pub mod set_default_message_type_output {
             self
         }
         /// <p>The new default message type of the configuration set.</p>
-        pub fn set_message_type(
-            mut self,
-            input: std::option::Option<crate::model::MessageType>,
-        ) -> Self {
-            self.message_type = input;
-            self
+        pub fn set_message_type(mut self, input: std::option::Option<crate::model::MessageType>) -> Self {
+            self.message_type = input; self
         }
         /// Consumes the builder and constructs a [`SetDefaultMessageTypeOutput`](crate::output::SetDefaultMessageTypeOutput).
         pub fn build(self) -> crate::output::SetDefaultMessageTypeOutput {
             crate::output::SetDefaultMessageTypeOutput {
-                configuration_set_arn: self.configuration_set_arn,
-                configuration_set_name: self.configuration_set_name,
-                message_type: self.message_type,
+                configuration_set_arn: self.configuration_set_arn
+                ,
+                configuration_set_name: self.configuration_set_name
+                ,
+                message_type: self.message_type
+                ,
             }
         }
     }
+    
+    
 }
 impl SetDefaultMessageTypeOutput {
     /// Creates a new builder-style object to manufacture [`SetDefaultMessageTypeOutput`](crate::output::SetDefaultMessageTypeOutput).
@@ -1042,20 +993,20 @@ impl SetDefaultMessageTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendVoiceMessageOutput {
+pub struct SendVoiceMessageOutput  {
     /// <p>The unique identifier for the message.</p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendVoiceMessageOutput {
     /// <p>The unique identifier for the message.</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> std::option::Option<& str> {
         self.message_id.as_deref()
     }
 }
 /// See [`SendVoiceMessageOutput`](crate::output::SendVoiceMessageOutput).
 pub mod send_voice_message_output {
-
+    
     /// A builder for [`SendVoiceMessageOutput`](crate::output::SendVoiceMessageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1069,16 +1020,18 @@ pub mod send_voice_message_output {
         }
         /// <p>The unique identifier for the message.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message_id = input;
-            self
+            self.message_id = input; self
         }
         /// Consumes the builder and constructs a [`SendVoiceMessageOutput`](crate::output::SendVoiceMessageOutput).
         pub fn build(self) -> crate::output::SendVoiceMessageOutput {
             crate::output::SendVoiceMessageOutput {
-                message_id: self.message_id,
+                message_id: self.message_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SendVoiceMessageOutput {
     /// Creates a new builder-style object to manufacture [`SendVoiceMessageOutput`](crate::output::SendVoiceMessageOutput).
@@ -1090,20 +1043,20 @@ impl SendVoiceMessageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendTextMessageOutput {
+pub struct SendTextMessageOutput  {
     /// <p>The unique identifier for the message.</p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
 }
 impl SendTextMessageOutput {
     /// <p>The unique identifier for the message.</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> std::option::Option<& str> {
         self.message_id.as_deref()
     }
 }
 /// See [`SendTextMessageOutput`](crate::output::SendTextMessageOutput).
 pub mod send_text_message_output {
-
+    
     /// A builder for [`SendTextMessageOutput`](crate::output::SendTextMessageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1117,16 +1070,18 @@ pub mod send_text_message_output {
         }
         /// <p>The unique identifier for the message.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message_id = input;
-            self
+            self.message_id = input; self
         }
         /// Consumes the builder and constructs a [`SendTextMessageOutput`](crate::output::SendTextMessageOutput).
         pub fn build(self) -> crate::output::SendTextMessageOutput {
             crate::output::SendTextMessageOutput {
-                message_id: self.message_id,
+                message_id: self.message_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SendTextMessageOutput {
     /// Creates a new builder-style object to manufacture [`SendTextMessageOutput`](crate::output::SendTextMessageOutput).
@@ -1138,7 +1093,7 @@ impl SendTextMessageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestPhoneNumberOutput {
+pub struct RequestPhoneNumberOutput  {
     /// <p>The Amazon Resource Name (ARN) of the requested phone number.</p>
     #[doc(hidden)]
     pub phone_number_arn: std::option::Option<std::string::String>,
@@ -1193,39 +1148,39 @@ pub struct RequestPhoneNumberOutput {
 }
 impl RequestPhoneNumberOutput {
     /// <p>The Amazon Resource Name (ARN) of the requested phone number.</p>
-    pub fn phone_number_arn(&self) -> std::option::Option<&str> {
+    pub fn phone_number_arn(&self) -> std::option::Option<& str> {
         self.phone_number_arn.as_deref()
     }
     /// <p>The unique identifier of the new phone number.</p>
-    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
     /// <p>The new phone number that was requested.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::NumberStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::NumberStatus> {
         self.status.as_ref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+    pub fn message_type(&self) -> std::option::Option<& crate::model::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>Indicates if the phone number will be used for text messages, voice messages or both. </p>
-    pub fn number_capabilities(&self) -> std::option::Option<&[crate::model::NumberCapability]> {
+    pub fn number_capabilities(&self) -> std::option::Option<& [crate::model::NumberCapability]> {
         self.number_capabilities.as_deref()
     }
     /// <p>The type of number that was released.</p>
-    pub fn number_type(&self) -> std::option::Option<&crate::model::RequestableNumberType> {
+    pub fn number_type(&self) -> std::option::Option<& crate::model::RequestableNumberType> {
         self.number_type.as_ref()
     }
     /// <p>The monthly price, in US dollars, to lease the phone number.</p>
-    pub fn monthly_leasing_price(&self) -> std::option::Option<&str> {
+    pub fn monthly_leasing_price(&self) -> std::option::Option<& str> {
         self.monthly_leasing_price.as_deref()
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
@@ -1233,7 +1188,7 @@ impl RequestPhoneNumberOutput {
         self.two_way_enabled
     }
     /// <p>The ARN used to identify the two way channel.</p>
-    pub fn two_way_channel_arn(&self) -> std::option::Option<&str> {
+    pub fn two_way_channel_arn(&self) -> std::option::Option<& str> {
         self.two_way_channel_arn.as_deref()
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
@@ -1241,7 +1196,7 @@ impl RequestPhoneNumberOutput {
         self.self_managed_opt_outs_enabled
     }
     /// <p>The name of the OptOutList that is associated with the requested phone number.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
@@ -1249,21 +1204,21 @@ impl RequestPhoneNumberOutput {
         self.deletion_protection_enabled
     }
     /// <p>The unique identifier of the pool associated with the phone number </p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>An array of key and value pair tags that are associated with the phone number.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 /// See [`RequestPhoneNumberOutput`](crate::output::RequestPhoneNumberOutput).
 pub mod request_phone_number_output {
-
+    
     /// A builder for [`RequestPhoneNumberOutput`](crate::output::RequestPhoneNumberOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1273,8 +1228,7 @@ pub mod request_phone_number_output {
         pub(crate) status: std::option::Option<crate::model::NumberStatus>,
         pub(crate) iso_country_code: std::option::Option<std::string::String>,
         pub(crate) message_type: std::option::Option<crate::model::MessageType>,
-        pub(crate) number_capabilities:
-            std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
+        pub(crate) number_capabilities: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
         pub(crate) number_type: std::option::Option<crate::model::RequestableNumberType>,
         pub(crate) monthly_leasing_price: std::option::Option<std::string::String>,
         pub(crate) two_way_enabled: std::option::Option<bool>,
@@ -1293,12 +1247,8 @@ pub mod request_phone_number_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the requested phone number.</p>
-        pub fn set_phone_number_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.phone_number_arn = input;
-            self
+        pub fn set_phone_number_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number_arn = input; self
         }
         /// <p>The unique identifier of the new phone number.</p>
         pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1306,12 +1256,8 @@ pub mod request_phone_number_output {
             self
         }
         /// <p>The unique identifier of the new phone number.</p>
-        pub fn set_phone_number_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.phone_number_id = input;
-            self
+        pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number_id = input; self
         }
         /// <p>The new phone number that was requested.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1320,8 +1266,7 @@ pub mod request_phone_number_output {
         }
         /// <p>The new phone number that was requested.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.phone_number = input;
-            self
+            self.phone_number = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: crate::model::NumberStatus) -> Self {
@@ -1329,12 +1274,8 @@ pub mod request_phone_number_output {
             self
         }
         /// <p>The current status of the request.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::NumberStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::NumberStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
         pub fn iso_country_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1342,12 +1283,8 @@ pub mod request_phone_number_output {
             self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-        pub fn set_iso_country_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.iso_country_code = input;
-            self
+        pub fn set_iso_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iso_country_code = input; self
         }
         /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
         pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
@@ -1355,12 +1292,8 @@ pub mod request_phone_number_output {
             self
         }
         /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-        pub fn set_message_type(
-            mut self,
-            input: std::option::Option<crate::model::MessageType>,
-        ) -> Self {
-            self.message_type = input;
-            self
+        pub fn set_message_type(mut self, input: std::option::Option<crate::model::MessageType>) -> Self {
+            self.message_type = input; self
         }
         /// Appends an item to `number_capabilities`.
         ///
@@ -1369,17 +1302,13 @@ pub mod request_phone_number_output {
         /// <p>Indicates if the phone number will be used for text messages, voice messages or both. </p>
         pub fn number_capabilities(mut self, input: crate::model::NumberCapability) -> Self {
             let mut v = self.number_capabilities.unwrap_or_default();
-            v.push(input);
-            self.number_capabilities = Some(v);
-            self
+                            v.push(input);
+                            self.number_capabilities = Some(v);
+                            self
         }
         /// <p>Indicates if the phone number will be used for text messages, voice messages or both. </p>
-        pub fn set_number_capabilities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
-        ) -> Self {
-            self.number_capabilities = input;
-            self
+        pub fn set_number_capabilities(mut self, input: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>) -> Self {
+            self.number_capabilities = input; self
         }
         /// <p>The type of number that was released.</p>
         pub fn number_type(mut self, input: crate::model::RequestableNumberType) -> Self {
@@ -1387,12 +1316,8 @@ pub mod request_phone_number_output {
             self
         }
         /// <p>The type of number that was released.</p>
-        pub fn set_number_type(
-            mut self,
-            input: std::option::Option<crate::model::RequestableNumberType>,
-        ) -> Self {
-            self.number_type = input;
-            self
+        pub fn set_number_type(mut self, input: std::option::Option<crate::model::RequestableNumberType>) -> Self {
+            self.number_type = input; self
         }
         /// <p>The monthly price, in US dollars, to lease the phone number.</p>
         pub fn monthly_leasing_price(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1400,12 +1325,8 @@ pub mod request_phone_number_output {
             self
         }
         /// <p>The monthly price, in US dollars, to lease the phone number.</p>
-        pub fn set_monthly_leasing_price(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.monthly_leasing_price = input;
-            self
+        pub fn set_monthly_leasing_price(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.monthly_leasing_price = input; self
         }
         /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
         pub fn two_way_enabled(mut self, input: bool) -> Self {
@@ -1414,8 +1335,7 @@ pub mod request_phone_number_output {
         }
         /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
         pub fn set_two_way_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.two_way_enabled = input;
-            self
+            self.two_way_enabled = input; self
         }
         /// <p>The ARN used to identify the two way channel.</p>
         pub fn two_way_channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1423,12 +1343,8 @@ pub mod request_phone_number_output {
             self
         }
         /// <p>The ARN used to identify the two way channel.</p>
-        pub fn set_two_way_channel_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.two_way_channel_arn = input;
-            self
+        pub fn set_two_way_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.two_way_channel_arn = input; self
         }
         /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
         pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
@@ -1436,12 +1352,8 @@ pub mod request_phone_number_output {
             self
         }
         /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
-        pub fn set_self_managed_opt_outs_enabled(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.self_managed_opt_outs_enabled = input;
-            self
+        pub fn set_self_managed_opt_outs_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.self_managed_opt_outs_enabled = input; self
         }
         /// <p>The name of the OptOutList that is associated with the requested phone number.</p>
         pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1449,12 +1361,8 @@ pub mod request_phone_number_output {
             self
         }
         /// <p>The name of the OptOutList that is associated with the requested phone number.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
         pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
@@ -1463,8 +1371,7 @@ pub mod request_phone_number_output {
         }
         /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
         pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.deletion_protection_enabled = input;
-            self
+            self.deletion_protection_enabled = input; self
         }
         /// <p>The unique identifier of the pool associated with the phone number </p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1473,8 +1380,7 @@ pub mod request_phone_number_output {
         }
         /// <p>The unique identifier of the pool associated with the phone number </p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_id = input;
-            self
+            self.pool_id = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -1483,17 +1389,13 @@ pub mod request_phone_number_output {
         /// <p>An array of key and value pair tags that are associated with the phone number.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of key and value pair tags that are associated with the phone number.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1501,38 +1403,54 @@ pub mod request_phone_number_output {
             self
         }
         /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`RequestPhoneNumberOutput`](crate::output::RequestPhoneNumberOutput).
         pub fn build(self) -> crate::output::RequestPhoneNumberOutput {
             crate::output::RequestPhoneNumberOutput {
-                phone_number_arn: self.phone_number_arn,
-                phone_number_id: self.phone_number_id,
-                phone_number: self.phone_number,
-                status: self.status,
-                iso_country_code: self.iso_country_code,
-                message_type: self.message_type,
-                number_capabilities: self.number_capabilities,
-                number_type: self.number_type,
-                monthly_leasing_price: self.monthly_leasing_price,
-                two_way_enabled: self.two_way_enabled.unwrap_or_default(),
-                two_way_channel_arn: self.two_way_channel_arn,
-                self_managed_opt_outs_enabled: self
-                    .self_managed_opt_outs_enabled
-                    .unwrap_or_default(),
-                opt_out_list_name: self.opt_out_list_name,
-                deletion_protection_enabled: self.deletion_protection_enabled.unwrap_or_default(),
-                pool_id: self.pool_id,
-                tags: self.tags,
-                created_timestamp: self.created_timestamp,
+                phone_number_arn: self.phone_number_arn
+                ,
+                phone_number_id: self.phone_number_id
+                ,
+                phone_number: self.phone_number
+                ,
+                status: self.status
+                ,
+                iso_country_code: self.iso_country_code
+                ,
+                message_type: self.message_type
+                ,
+                number_capabilities: self.number_capabilities
+                ,
+                number_type: self.number_type
+                ,
+                monthly_leasing_price: self.monthly_leasing_price
+                ,
+                two_way_enabled: self.two_way_enabled
+                    .unwrap_or_default()
+                ,
+                two_way_channel_arn: self.two_way_channel_arn
+                ,
+                self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled
+                    .unwrap_or_default()
+                ,
+                opt_out_list_name: self.opt_out_list_name
+                ,
+                deletion_protection_enabled: self.deletion_protection_enabled
+                    .unwrap_or_default()
+                ,
+                pool_id: self.pool_id
+                ,
+                tags: self.tags
+                ,
+                created_timestamp: self.created_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl RequestPhoneNumberOutput {
     /// Creates a new builder-style object to manufacture [`RequestPhoneNumberOutput`](crate::output::RequestPhoneNumberOutput).
@@ -1544,7 +1462,7 @@ impl RequestPhoneNumberOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReleasePhoneNumberOutput {
+pub struct ReleasePhoneNumberOutput  {
     /// <p>The PhoneNumberArn of the phone number that was released.</p>
     #[doc(hidden)]
     pub phone_number_arn: std::option::Option<std::string::String>,
@@ -1590,39 +1508,39 @@ pub struct ReleasePhoneNumberOutput {
 }
 impl ReleasePhoneNumberOutput {
     /// <p>The PhoneNumberArn of the phone number that was released.</p>
-    pub fn phone_number_arn(&self) -> std::option::Option<&str> {
+    pub fn phone_number_arn(&self) -> std::option::Option<& str> {
         self.phone_number_arn.as_deref()
     }
     /// <p>The PhoneNumberId of the phone number that was released.</p>
-    pub fn phone_number_id(&self) -> std::option::Option<&str> {
+    pub fn phone_number_id(&self) -> std::option::Option<& str> {
         self.phone_number_id.as_deref()
     }
     /// <p>The phone number that was released.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> std::option::Option<& str> {
         self.phone_number.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::NumberStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::NumberStatus> {
         self.status.as_ref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
-    pub fn iso_country_code(&self) -> std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
     /// <p>The message type that was associated with the phone number.</p>
-    pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+    pub fn message_type(&self) -> std::option::Option<& crate::model::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>Specifies if the number could be used for text messages, voice, or both.</p>
-    pub fn number_capabilities(&self) -> std::option::Option<&[crate::model::NumberCapability]> {
+    pub fn number_capabilities(&self) -> std::option::Option<& [crate::model::NumberCapability]> {
         self.number_capabilities.as_deref()
     }
     /// <p>The type of number that was released.</p>
-    pub fn number_type(&self) -> std::option::Option<&crate::model::NumberType> {
+    pub fn number_type(&self) -> std::option::Option<& crate::model::NumberType> {
         self.number_type.as_ref()
     }
     /// <p>The monthly price of the phone number, in US dollars.</p>
-    pub fn monthly_leasing_price(&self) -> std::option::Option<&str> {
+    pub fn monthly_leasing_price(&self) -> std::option::Option<& str> {
         self.monthly_leasing_price.as_deref()
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
@@ -1630,7 +1548,7 @@ impl ReleasePhoneNumberOutput {
         self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the TwoWayChannel.</p>
-    pub fn two_way_channel_arn(&self) -> std::option::Option<&str> {
+    pub fn two_way_channel_arn(&self) -> std::option::Option<& str> {
         self.two_way_channel_arn.as_deref()
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
@@ -1638,17 +1556,17 @@ impl ReleasePhoneNumberOutput {
         self.self_managed_opt_outs_enabled
     }
     /// <p>The name of the OptOutList that was associated with the phone number.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 /// See [`ReleasePhoneNumberOutput`](crate::output::ReleasePhoneNumberOutput).
 pub mod release_phone_number_output {
-
+    
     /// A builder for [`ReleasePhoneNumberOutput`](crate::output::ReleasePhoneNumberOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1658,8 +1576,7 @@ pub mod release_phone_number_output {
         pub(crate) status: std::option::Option<crate::model::NumberStatus>,
         pub(crate) iso_country_code: std::option::Option<std::string::String>,
         pub(crate) message_type: std::option::Option<crate::model::MessageType>,
-        pub(crate) number_capabilities:
-            std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
+        pub(crate) number_capabilities: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
         pub(crate) number_type: std::option::Option<crate::model::NumberType>,
         pub(crate) monthly_leasing_price: std::option::Option<std::string::String>,
         pub(crate) two_way_enabled: std::option::Option<bool>,
@@ -1675,12 +1592,8 @@ pub mod release_phone_number_output {
             self
         }
         /// <p>The PhoneNumberArn of the phone number that was released.</p>
-        pub fn set_phone_number_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.phone_number_arn = input;
-            self
+        pub fn set_phone_number_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number_arn = input; self
         }
         /// <p>The PhoneNumberId of the phone number that was released.</p>
         pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1688,12 +1601,8 @@ pub mod release_phone_number_output {
             self
         }
         /// <p>The PhoneNumberId of the phone number that was released.</p>
-        pub fn set_phone_number_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.phone_number_id = input;
-            self
+        pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.phone_number_id = input; self
         }
         /// <p>The phone number that was released.</p>
         pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1702,8 +1611,7 @@ pub mod release_phone_number_output {
         }
         /// <p>The phone number that was released.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.phone_number = input;
-            self
+            self.phone_number = input; self
         }
         /// <p>The current status of the request.</p>
         pub fn status(mut self, input: crate::model::NumberStatus) -> Self {
@@ -1711,12 +1619,8 @@ pub mod release_phone_number_output {
             self
         }
         /// <p>The current status of the request.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::NumberStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::NumberStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
         pub fn iso_country_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1724,12 +1628,8 @@ pub mod release_phone_number_output {
             self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
-        pub fn set_iso_country_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.iso_country_code = input;
-            self
+        pub fn set_iso_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iso_country_code = input; self
         }
         /// <p>The message type that was associated with the phone number.</p>
         pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
@@ -1737,12 +1637,8 @@ pub mod release_phone_number_output {
             self
         }
         /// <p>The message type that was associated with the phone number.</p>
-        pub fn set_message_type(
-            mut self,
-            input: std::option::Option<crate::model::MessageType>,
-        ) -> Self {
-            self.message_type = input;
-            self
+        pub fn set_message_type(mut self, input: std::option::Option<crate::model::MessageType>) -> Self {
+            self.message_type = input; self
         }
         /// Appends an item to `number_capabilities`.
         ///
@@ -1751,17 +1647,13 @@ pub mod release_phone_number_output {
         /// <p>Specifies if the number could be used for text messages, voice, or both.</p>
         pub fn number_capabilities(mut self, input: crate::model::NumberCapability) -> Self {
             let mut v = self.number_capabilities.unwrap_or_default();
-            v.push(input);
-            self.number_capabilities = Some(v);
-            self
+                            v.push(input);
+                            self.number_capabilities = Some(v);
+                            self
         }
         /// <p>Specifies if the number could be used for text messages, voice, or both.</p>
-        pub fn set_number_capabilities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>,
-        ) -> Self {
-            self.number_capabilities = input;
-            self
+        pub fn set_number_capabilities(mut self, input: std::option::Option<std::vec::Vec<crate::model::NumberCapability>>) -> Self {
+            self.number_capabilities = input; self
         }
         /// <p>The type of number that was released.</p>
         pub fn number_type(mut self, input: crate::model::NumberType) -> Self {
@@ -1769,12 +1661,8 @@ pub mod release_phone_number_output {
             self
         }
         /// <p>The type of number that was released.</p>
-        pub fn set_number_type(
-            mut self,
-            input: std::option::Option<crate::model::NumberType>,
-        ) -> Self {
-            self.number_type = input;
-            self
+        pub fn set_number_type(mut self, input: std::option::Option<crate::model::NumberType>) -> Self {
+            self.number_type = input; self
         }
         /// <p>The monthly price of the phone number, in US dollars.</p>
         pub fn monthly_leasing_price(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1782,12 +1670,8 @@ pub mod release_phone_number_output {
             self
         }
         /// <p>The monthly price of the phone number, in US dollars.</p>
-        pub fn set_monthly_leasing_price(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.monthly_leasing_price = input;
-            self
+        pub fn set_monthly_leasing_price(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.monthly_leasing_price = input; self
         }
         /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
         pub fn two_way_enabled(mut self, input: bool) -> Self {
@@ -1796,8 +1680,7 @@ pub mod release_phone_number_output {
         }
         /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
         pub fn set_two_way_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.two_way_enabled = input;
-            self
+            self.two_way_enabled = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the TwoWayChannel.</p>
         pub fn two_way_channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1805,12 +1688,8 @@ pub mod release_phone_number_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the TwoWayChannel.</p>
-        pub fn set_two_way_channel_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.two_way_channel_arn = input;
-            self
+        pub fn set_two_way_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.two_way_channel_arn = input; self
         }
         /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
         pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
@@ -1818,12 +1697,8 @@ pub mod release_phone_number_output {
             self
         }
         /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
-        pub fn set_self_managed_opt_outs_enabled(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.self_managed_opt_outs_enabled = input;
-            self
+        pub fn set_self_managed_opt_outs_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.self_managed_opt_outs_enabled = input; self
         }
         /// <p>The name of the OptOutList that was associated with the phone number.</p>
         pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1831,12 +1706,8 @@ pub mod release_phone_number_output {
             self
         }
         /// <p>The name of the OptOutList that was associated with the phone number.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1844,35 +1715,47 @@ pub mod release_phone_number_output {
             self
         }
         /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`ReleasePhoneNumberOutput`](crate::output::ReleasePhoneNumberOutput).
         pub fn build(self) -> crate::output::ReleasePhoneNumberOutput {
             crate::output::ReleasePhoneNumberOutput {
-                phone_number_arn: self.phone_number_arn,
-                phone_number_id: self.phone_number_id,
-                phone_number: self.phone_number,
-                status: self.status,
-                iso_country_code: self.iso_country_code,
-                message_type: self.message_type,
-                number_capabilities: self.number_capabilities,
-                number_type: self.number_type,
-                monthly_leasing_price: self.monthly_leasing_price,
-                two_way_enabled: self.two_way_enabled.unwrap_or_default(),
-                two_way_channel_arn: self.two_way_channel_arn,
-                self_managed_opt_outs_enabled: self
-                    .self_managed_opt_outs_enabled
-                    .unwrap_or_default(),
-                opt_out_list_name: self.opt_out_list_name,
-                created_timestamp: self.created_timestamp,
+                phone_number_arn: self.phone_number_arn
+                ,
+                phone_number_id: self.phone_number_id
+                ,
+                phone_number: self.phone_number
+                ,
+                status: self.status
+                ,
+                iso_country_code: self.iso_country_code
+                ,
+                message_type: self.message_type
+                ,
+                number_capabilities: self.number_capabilities
+                ,
+                number_type: self.number_type
+                ,
+                monthly_leasing_price: self.monthly_leasing_price
+                ,
+                two_way_enabled: self.two_way_enabled
+                    .unwrap_or_default()
+                ,
+                two_way_channel_arn: self.two_way_channel_arn
+                ,
+                self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled
+                    .unwrap_or_default()
+                ,
+                opt_out_list_name: self.opt_out_list_name
+                ,
+                created_timestamp: self.created_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl ReleasePhoneNumberOutput {
     /// Creates a new builder-style object to manufacture [`ReleasePhoneNumberOutput`](crate::output::ReleasePhoneNumberOutput).
@@ -1884,7 +1767,7 @@ impl ReleasePhoneNumberOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutOptedOutNumberOutput {
+pub struct PutOptedOutNumberOutput  {
     /// <p>The OptOutListArn that the phone number was removed from.</p>
     #[doc(hidden)]
     pub opt_out_list_arn: std::option::Option<std::string::String>,
@@ -1903,19 +1786,19 @@ pub struct PutOptedOutNumberOutput {
 }
 impl PutOptedOutNumberOutput {
     /// <p>The OptOutListArn that the phone number was removed from.</p>
-    pub fn opt_out_list_arn(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_arn(&self) -> std::option::Option<& str> {
         self.opt_out_list_arn.as_deref()
     }
     /// <p>The OptOutListName that the phone number was removed from.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>The phone number that was added to the OptOutList.</p>
-    pub fn opted_out_number(&self) -> std::option::Option<&str> {
+    pub fn opted_out_number(&self) -> std::option::Option<& str> {
         self.opted_out_number.as_deref()
     }
     /// <p>The time that the phone number was added to the OptOutList, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn opted_out_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn opted_out_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.opted_out_timestamp.as_ref()
     }
     /// <p>This is true if it was the end user who requested their phone number be removed. </p>
@@ -1925,7 +1808,7 @@ impl PutOptedOutNumberOutput {
 }
 /// See [`PutOptedOutNumberOutput`](crate::output::PutOptedOutNumberOutput).
 pub mod put_opted_out_number_output {
-
+    
     /// A builder for [`PutOptedOutNumberOutput`](crate::output::PutOptedOutNumberOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1942,12 +1825,8 @@ pub mod put_opted_out_number_output {
             self
         }
         /// <p>The OptOutListArn that the phone number was removed from.</p>
-        pub fn set_opt_out_list_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_arn = input;
-            self
+        pub fn set_opt_out_list_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_arn = input; self
         }
         /// <p>The OptOutListName that the phone number was removed from.</p>
         pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1955,12 +1834,8 @@ pub mod put_opted_out_number_output {
             self
         }
         /// <p>The OptOutListName that the phone number was removed from.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// <p>The phone number that was added to the OptOutList.</p>
         pub fn opted_out_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1968,12 +1843,8 @@ pub mod put_opted_out_number_output {
             self
         }
         /// <p>The phone number that was added to the OptOutList.</p>
-        pub fn set_opted_out_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opted_out_number = input;
-            self
+        pub fn set_opted_out_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opted_out_number = input; self
         }
         /// <p>The time that the phone number was added to the OptOutList, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
         pub fn opted_out_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1981,12 +1852,8 @@ pub mod put_opted_out_number_output {
             self
         }
         /// <p>The time that the phone number was added to the OptOutList, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-        pub fn set_opted_out_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.opted_out_timestamp = input;
-            self
+        pub fn set_opted_out_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.opted_out_timestamp = input; self
         }
         /// <p>This is true if it was the end user who requested their phone number be removed. </p>
         pub fn end_user_opted_out(mut self, input: bool) -> Self {
@@ -1995,20 +1862,27 @@ pub mod put_opted_out_number_output {
         }
         /// <p>This is true if it was the end user who requested their phone number be removed. </p>
         pub fn set_end_user_opted_out(mut self, input: std::option::Option<bool>) -> Self {
-            self.end_user_opted_out = input;
-            self
+            self.end_user_opted_out = input; self
         }
         /// Consumes the builder and constructs a [`PutOptedOutNumberOutput`](crate::output::PutOptedOutNumberOutput).
         pub fn build(self) -> crate::output::PutOptedOutNumberOutput {
             crate::output::PutOptedOutNumberOutput {
-                opt_out_list_arn: self.opt_out_list_arn,
-                opt_out_list_name: self.opt_out_list_name,
-                opted_out_number: self.opted_out_number,
-                opted_out_timestamp: self.opted_out_timestamp,
-                end_user_opted_out: self.end_user_opted_out.unwrap_or_default(),
+                opt_out_list_arn: self.opt_out_list_arn
+                ,
+                opt_out_list_name: self.opt_out_list_name
+                ,
+                opted_out_number: self.opted_out_number
+                ,
+                opted_out_timestamp: self.opted_out_timestamp
+                ,
+                end_user_opted_out: self.end_user_opted_out
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl PutOptedOutNumberOutput {
     /// Creates a new builder-style object to manufacture [`PutOptedOutNumberOutput`](crate::output::PutOptedOutNumberOutput).
@@ -2020,7 +1894,7 @@ impl PutOptedOutNumberOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutKeywordOutput {
+pub struct PutKeywordOutput  {
     /// <p>The PhoneNumberArn or PoolArn that the keyword was associated with.</p>
     #[doc(hidden)]
     pub origination_identity_arn: std::option::Option<std::string::String>,
@@ -2039,29 +1913,29 @@ pub struct PutKeywordOutput {
 }
 impl PutKeywordOutput {
     /// <p>The PhoneNumberArn or PoolArn that the keyword was associated with.</p>
-    pub fn origination_identity_arn(&self) -> std::option::Option<&str> {
+    pub fn origination_identity_arn(&self) -> std::option::Option<& str> {
         self.origination_identity_arn.as_deref()
     }
     /// <p>The PhoneNumberId or PoolId that the keyword was associated with.</p>
-    pub fn origination_identity(&self) -> std::option::Option<&str> {
+    pub fn origination_identity(&self) -> std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>The keyword that was added.</p>
-    pub fn keyword(&self) -> std::option::Option<&str> {
+    pub fn keyword(&self) -> std::option::Option<& str> {
         self.keyword.as_deref()
     }
     /// <p>The message associated with the keyword.</p>
-    pub fn keyword_message(&self) -> std::option::Option<&str> {
+    pub fn keyword_message(&self) -> std::option::Option<& str> {
         self.keyword_message.as_deref()
     }
     /// <p>The action to perform when the keyword is used.</p>
-    pub fn keyword_action(&self) -> std::option::Option<&crate::model::KeywordAction> {
+    pub fn keyword_action(&self) -> std::option::Option<& crate::model::KeywordAction> {
         self.keyword_action.as_ref()
     }
 }
 /// See [`PutKeywordOutput`](crate::output::PutKeywordOutput).
 pub mod put_keyword_output {
-
+    
     /// A builder for [`PutKeywordOutput`](crate::output::PutKeywordOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2078,12 +1952,8 @@ pub mod put_keyword_output {
             self
         }
         /// <p>The PhoneNumberArn or PoolArn that the keyword was associated with.</p>
-        pub fn set_origination_identity_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origination_identity_arn = input;
-            self
+        pub fn set_origination_identity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origination_identity_arn = input; self
         }
         /// <p>The PhoneNumberId or PoolId that the keyword was associated with.</p>
         pub fn origination_identity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2091,12 +1961,8 @@ pub mod put_keyword_output {
             self
         }
         /// <p>The PhoneNumberId or PoolId that the keyword was associated with.</p>
-        pub fn set_origination_identity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origination_identity = input;
-            self
+        pub fn set_origination_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origination_identity = input; self
         }
         /// <p>The keyword that was added.</p>
         pub fn keyword(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2105,8 +1971,7 @@ pub mod put_keyword_output {
         }
         /// <p>The keyword that was added.</p>
         pub fn set_keyword(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.keyword = input;
-            self
+            self.keyword = input; self
         }
         /// <p>The message associated with the keyword.</p>
         pub fn keyword_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2114,12 +1979,8 @@ pub mod put_keyword_output {
             self
         }
         /// <p>The message associated with the keyword.</p>
-        pub fn set_keyword_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.keyword_message = input;
-            self
+        pub fn set_keyword_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.keyword_message = input; self
         }
         /// <p>The action to perform when the keyword is used.</p>
         pub fn keyword_action(mut self, input: crate::model::KeywordAction) -> Self {
@@ -2127,24 +1988,27 @@ pub mod put_keyword_output {
             self
         }
         /// <p>The action to perform when the keyword is used.</p>
-        pub fn set_keyword_action(
-            mut self,
-            input: std::option::Option<crate::model::KeywordAction>,
-        ) -> Self {
-            self.keyword_action = input;
-            self
+        pub fn set_keyword_action(mut self, input: std::option::Option<crate::model::KeywordAction>) -> Self {
+            self.keyword_action = input; self
         }
         /// Consumes the builder and constructs a [`PutKeywordOutput`](crate::output::PutKeywordOutput).
         pub fn build(self) -> crate::output::PutKeywordOutput {
             crate::output::PutKeywordOutput {
-                origination_identity_arn: self.origination_identity_arn,
-                origination_identity: self.origination_identity,
-                keyword: self.keyword,
-                keyword_message: self.keyword_message,
-                keyword_action: self.keyword_action,
+                origination_identity_arn: self.origination_identity_arn
+                ,
+                origination_identity: self.origination_identity
+                ,
+                keyword: self.keyword
+                ,
+                keyword_message: self.keyword_message
+                ,
+                keyword_action: self.keyword_action
+                ,
             }
         }
     }
+    
+    
 }
 impl PutKeywordOutput {
     /// Creates a new builder-style object to manufacture [`PutKeywordOutput`](crate::output::PutKeywordOutput).
@@ -2156,7 +2020,7 @@ impl PutKeywordOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -2166,17 +2030,17 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>The ARN of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>An array of key and value pair tags that are associated with the resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2191,8 +2055,7 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>The ARN of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -2201,26 +2064,26 @@ pub mod list_tags_for_resource_output {
         /// <p>An array of key and value pair tags that are associated with the resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of key and value pair tags that are associated with the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
+                resource_arn: self.resource_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -2232,7 +2095,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPoolOriginationIdentitiesOutput {
+pub struct ListPoolOriginationIdentitiesOutput  {
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
     #[doc(hidden)]
     pub pool_arn: std::option::Option<std::string::String>,
@@ -2241,42 +2104,38 @@ pub struct ListPoolOriginationIdentitiesOutput {
     pub pool_id: std::option::Option<std::string::String>,
     /// <p>An array of any OriginationIdentityMetadata objects.</p>
     #[doc(hidden)]
-    pub origination_identities:
-        std::option::Option<std::vec::Vec<crate::model::OriginationIdentityMetadata>>,
+    pub origination_identities: std::option::Option<std::vec::Vec<crate::model::OriginationIdentityMetadata>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListPoolOriginationIdentitiesOutput {
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
-    pub fn pool_arn(&self) -> std::option::Option<&str> {
+    pub fn pool_arn(&self) -> std::option::Option<& str> {
         self.pool_arn.as_deref()
     }
     /// <p>The unique PoolId of the pool.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>An array of any OriginationIdentityMetadata objects.</p>
-    pub fn origination_identities(
-        &self,
-    ) -> std::option::Option<&[crate::model::OriginationIdentityMetadata]> {
+    pub fn origination_identities(&self) -> std::option::Option<& [crate::model::OriginationIdentityMetadata]> {
         self.origination_identities.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPoolOriginationIdentitiesOutput`](crate::output::ListPoolOriginationIdentitiesOutput).
 pub mod list_pool_origination_identities_output {
-
+    
     /// A builder for [`ListPoolOriginationIdentitiesOutput`](crate::output::ListPoolOriginationIdentitiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pool_arn: std::option::Option<std::string::String>,
         pub(crate) pool_id: std::option::Option<std::string::String>,
-        pub(crate) origination_identities:
-            std::option::Option<std::vec::Vec<crate::model::OriginationIdentityMetadata>>,
+        pub(crate) origination_identities: std::option::Option<std::vec::Vec<crate::model::OriginationIdentityMetadata>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2287,8 +2146,7 @@ pub mod list_pool_origination_identities_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the pool.</p>
         pub fn set_pool_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_arn = input;
-            self
+            self.pool_arn = input; self
         }
         /// <p>The unique PoolId of the pool.</p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2297,30 +2155,22 @@ pub mod list_pool_origination_identities_output {
         }
         /// <p>The unique PoolId of the pool.</p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_id = input;
-            self
+            self.pool_id = input; self
         }
         /// Appends an item to `origination_identities`.
         ///
         /// To override the contents of this collection use [`set_origination_identities`](Self::set_origination_identities).
         ///
         /// <p>An array of any OriginationIdentityMetadata objects.</p>
-        pub fn origination_identities(
-            mut self,
-            input: crate::model::OriginationIdentityMetadata,
-        ) -> Self {
+        pub fn origination_identities(mut self, input: crate::model::OriginationIdentityMetadata) -> Self {
             let mut v = self.origination_identities.unwrap_or_default();
-            v.push(input);
-            self.origination_identities = Some(v);
-            self
+                            v.push(input);
+                            self.origination_identities = Some(v);
+                            self
         }
         /// <p>An array of any OriginationIdentityMetadata objects.</p>
-        pub fn set_origination_identities(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OriginationIdentityMetadata>>,
-        ) -> Self {
-            self.origination_identities = input;
-            self
+        pub fn set_origination_identities(mut self, input: std::option::Option<std::vec::Vec<crate::model::OriginationIdentityMetadata>>) -> Self {
+            self.origination_identities = input; self
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2329,19 +2179,24 @@ pub mod list_pool_origination_identities_output {
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPoolOriginationIdentitiesOutput`](crate::output::ListPoolOriginationIdentitiesOutput).
         pub fn build(self) -> crate::output::ListPoolOriginationIdentitiesOutput {
             crate::output::ListPoolOriginationIdentitiesOutput {
-                pool_arn: self.pool_arn,
-                pool_id: self.pool_id,
-                origination_identities: self.origination_identities,
-                next_token: self.next_token,
+                pool_arn: self.pool_arn
+                ,
+                pool_id: self.pool_id
+                ,
+                origination_identities: self.origination_identities
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPoolOriginationIdentitiesOutput {
     /// Creates a new builder-style object to manufacture [`ListPoolOriginationIdentitiesOutput`](crate::output::ListPoolOriginationIdentitiesOutput).
@@ -2353,7 +2208,7 @@ impl ListPoolOriginationIdentitiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateOriginationIdentityOutput {
+pub struct DisassociateOriginationIdentityOutput  {
     /// <p>The Amazon Resource Name (ARN) of the pool.</p>
     #[doc(hidden)]
     pub pool_arn: std::option::Option<std::string::String>,
@@ -2372,29 +2227,29 @@ pub struct DisassociateOriginationIdentityOutput {
 }
 impl DisassociateOriginationIdentityOutput {
     /// <p>The Amazon Resource Name (ARN) of the pool.</p>
-    pub fn pool_arn(&self) -> std::option::Option<&str> {
+    pub fn pool_arn(&self) -> std::option::Option<& str> {
         self.pool_arn.as_deref()
     }
     /// <p>The PoolId of the pool no longer associated with the origination identity.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>The PhoneNumberArn or SenderIdArn of the origination identity.</p>
-    pub fn origination_identity_arn(&self) -> std::option::Option<&str> {
+    pub fn origination_identity_arn(&self) -> std::option::Option<& str> {
         self.origination_identity_arn.as_deref()
     }
     /// <p>The PhoneNumberId or SenderId of the origination identity.</p>
-    pub fn origination_identity(&self) -> std::option::Option<&str> {
+    pub fn origination_identity(&self) -> std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
-    pub fn iso_country_code(&self) -> std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
 }
 /// See [`DisassociateOriginationIdentityOutput`](crate::output::DisassociateOriginationIdentityOutput).
 pub mod disassociate_origination_identity_output {
-
+    
     /// A builder for [`DisassociateOriginationIdentityOutput`](crate::output::DisassociateOriginationIdentityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2412,8 +2267,7 @@ pub mod disassociate_origination_identity_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the pool.</p>
         pub fn set_pool_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_arn = input;
-            self
+            self.pool_arn = input; self
         }
         /// <p>The PoolId of the pool no longer associated with the origination identity.</p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2422,8 +2276,7 @@ pub mod disassociate_origination_identity_output {
         }
         /// <p>The PoolId of the pool no longer associated with the origination identity.</p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_id = input;
-            self
+            self.pool_id = input; self
         }
         /// <p>The PhoneNumberArn or SenderIdArn of the origination identity.</p>
         pub fn origination_identity_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2431,12 +2284,8 @@ pub mod disassociate_origination_identity_output {
             self
         }
         /// <p>The PhoneNumberArn or SenderIdArn of the origination identity.</p>
-        pub fn set_origination_identity_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origination_identity_arn = input;
-            self
+        pub fn set_origination_identity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origination_identity_arn = input; self
         }
         /// <p>The PhoneNumberId or SenderId of the origination identity.</p>
         pub fn origination_identity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2444,12 +2293,8 @@ pub mod disassociate_origination_identity_output {
             self
         }
         /// <p>The PhoneNumberId or SenderId of the origination identity.</p>
-        pub fn set_origination_identity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origination_identity = input;
-            self
+        pub fn set_origination_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origination_identity = input; self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
         pub fn iso_country_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2457,24 +2302,27 @@ pub mod disassociate_origination_identity_output {
             self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region.</p>
-        pub fn set_iso_country_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.iso_country_code = input;
-            self
+        pub fn set_iso_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iso_country_code = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateOriginationIdentityOutput`](crate::output::DisassociateOriginationIdentityOutput).
         pub fn build(self) -> crate::output::DisassociateOriginationIdentityOutput {
             crate::output::DisassociateOriginationIdentityOutput {
-                pool_arn: self.pool_arn,
-                pool_id: self.pool_id,
-                origination_identity_arn: self.origination_identity_arn,
-                origination_identity: self.origination_identity,
-                iso_country_code: self.iso_country_code,
+                pool_arn: self.pool_arn
+                ,
+                pool_id: self.pool_id
+                ,
+                origination_identity_arn: self.origination_identity_arn
+                ,
+                origination_identity: self.origination_identity
+                ,
+                iso_country_code: self.iso_country_code
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateOriginationIdentityOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateOriginationIdentityOutput`](crate::output::DisassociateOriginationIdentityOutput).
@@ -2486,7 +2334,7 @@ impl DisassociateOriginationIdentityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSpendLimitsOutput {
+pub struct DescribeSpendLimitsOutput  {
     /// <p>An array of SpendLimit objects that contain the details for the requested spend limits.</p>
     #[doc(hidden)]
     pub spend_limits: std::option::Option<std::vec::Vec<crate::model::SpendLimit>>,
@@ -2496,17 +2344,17 @@ pub struct DescribeSpendLimitsOutput {
 }
 impl DescribeSpendLimitsOutput {
     /// <p>An array of SpendLimit objects that contain the details for the requested spend limits.</p>
-    pub fn spend_limits(&self) -> std::option::Option<&[crate::model::SpendLimit]> {
+    pub fn spend_limits(&self) -> std::option::Option<& [crate::model::SpendLimit]> {
         self.spend_limits.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeSpendLimitsOutput`](crate::output::DescribeSpendLimitsOutput).
 pub mod describe_spend_limits_output {
-
+    
     /// A builder for [`DescribeSpendLimitsOutput`](crate::output::DescribeSpendLimitsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2521,17 +2369,13 @@ pub mod describe_spend_limits_output {
         /// <p>An array of SpendLimit objects that contain the details for the requested spend limits.</p>
         pub fn spend_limits(mut self, input: crate::model::SpendLimit) -> Self {
             let mut v = self.spend_limits.unwrap_or_default();
-            v.push(input);
-            self.spend_limits = Some(v);
-            self
+                            v.push(input);
+                            self.spend_limits = Some(v);
+                            self
         }
         /// <p>An array of SpendLimit objects that contain the details for the requested spend limits.</p>
-        pub fn set_spend_limits(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SpendLimit>>,
-        ) -> Self {
-            self.spend_limits = input;
-            self
+        pub fn set_spend_limits(mut self, input: std::option::Option<std::vec::Vec<crate::model::SpendLimit>>) -> Self {
+            self.spend_limits = input; self
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2540,17 +2384,20 @@ pub mod describe_spend_limits_output {
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSpendLimitsOutput`](crate::output::DescribeSpendLimitsOutput).
         pub fn build(self) -> crate::output::DescribeSpendLimitsOutput {
             crate::output::DescribeSpendLimitsOutput {
-                spend_limits: self.spend_limits,
-                next_token: self.next_token,
+                spend_limits: self.spend_limits
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSpendLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSpendLimitsOutput`](crate::output::DescribeSpendLimitsOutput).
@@ -2562,7 +2409,7 @@ impl DescribeSpendLimitsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSenderIdsOutput {
+pub struct DescribeSenderIdsOutput  {
     /// <p>An array of SernderIdInformation objects that contain the details for the requested SenderIds.</p>
     #[doc(hidden)]
     pub sender_ids: std::option::Option<std::vec::Vec<crate::model::SenderIdInformation>>,
@@ -2572,22 +2419,21 @@ pub struct DescribeSenderIdsOutput {
 }
 impl DescribeSenderIdsOutput {
     /// <p>An array of SernderIdInformation objects that contain the details for the requested SenderIds.</p>
-    pub fn sender_ids(&self) -> std::option::Option<&[crate::model::SenderIdInformation]> {
+    pub fn sender_ids(&self) -> std::option::Option<& [crate::model::SenderIdInformation]> {
         self.sender_ids.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeSenderIdsOutput`](crate::output::DescribeSenderIdsOutput).
 pub mod describe_sender_ids_output {
-
+    
     /// A builder for [`DescribeSenderIdsOutput`](crate::output::DescribeSenderIdsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) sender_ids:
-            std::option::Option<std::vec::Vec<crate::model::SenderIdInformation>>,
+        pub(crate) sender_ids: std::option::Option<std::vec::Vec<crate::model::SenderIdInformation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2598,17 +2444,13 @@ pub mod describe_sender_ids_output {
         /// <p>An array of SernderIdInformation objects that contain the details for the requested SenderIds.</p>
         pub fn sender_ids(mut self, input: crate::model::SenderIdInformation) -> Self {
             let mut v = self.sender_ids.unwrap_or_default();
-            v.push(input);
-            self.sender_ids = Some(v);
-            self
+                            v.push(input);
+                            self.sender_ids = Some(v);
+                            self
         }
         /// <p>An array of SernderIdInformation objects that contain the details for the requested SenderIds.</p>
-        pub fn set_sender_ids(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SenderIdInformation>>,
-        ) -> Self {
-            self.sender_ids = input;
-            self
+        pub fn set_sender_ids(mut self, input: std::option::Option<std::vec::Vec<crate::model::SenderIdInformation>>) -> Self {
+            self.sender_ids = input; self
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2617,17 +2459,20 @@ pub mod describe_sender_ids_output {
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeSenderIdsOutput`](crate::output::DescribeSenderIdsOutput).
         pub fn build(self) -> crate::output::DescribeSenderIdsOutput {
             crate::output::DescribeSenderIdsOutput {
-                sender_ids: self.sender_ids,
-                next_token: self.next_token,
+                sender_ids: self.sender_ids
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeSenderIdsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSenderIdsOutput`](crate::output::DescribeSenderIdsOutput).
@@ -2639,7 +2484,7 @@ impl DescribeSenderIdsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePoolsOutput {
+pub struct DescribePoolsOutput  {
     /// <p>An array of PoolInformation objects that contain the details for the requested pools. </p>
     #[doc(hidden)]
     pub pools: std::option::Option<std::vec::Vec<crate::model::PoolInformation>>,
@@ -2649,17 +2494,17 @@ pub struct DescribePoolsOutput {
 }
 impl DescribePoolsOutput {
     /// <p>An array of PoolInformation objects that contain the details for the requested pools. </p>
-    pub fn pools(&self) -> std::option::Option<&[crate::model::PoolInformation]> {
+    pub fn pools(&self) -> std::option::Option<& [crate::model::PoolInformation]> {
         self.pools.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribePoolsOutput`](crate::output::DescribePoolsOutput).
 pub mod describe_pools_output {
-
+    
     /// A builder for [`DescribePoolsOutput`](crate::output::DescribePoolsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2674,17 +2519,13 @@ pub mod describe_pools_output {
         /// <p>An array of PoolInformation objects that contain the details for the requested pools. </p>
         pub fn pools(mut self, input: crate::model::PoolInformation) -> Self {
             let mut v = self.pools.unwrap_or_default();
-            v.push(input);
-            self.pools = Some(v);
-            self
+                            v.push(input);
+                            self.pools = Some(v);
+                            self
         }
         /// <p>An array of PoolInformation objects that contain the details for the requested pools. </p>
-        pub fn set_pools(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PoolInformation>>,
-        ) -> Self {
-            self.pools = input;
-            self
+        pub fn set_pools(mut self, input: std::option::Option<std::vec::Vec<crate::model::PoolInformation>>) -> Self {
+            self.pools = input; self
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2693,17 +2534,20 @@ pub mod describe_pools_output {
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribePoolsOutput`](crate::output::DescribePoolsOutput).
         pub fn build(self) -> crate::output::DescribePoolsOutput {
             crate::output::DescribePoolsOutput {
-                pools: self.pools,
-                next_token: self.next_token,
+                pools: self.pools
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePoolsOutput {
     /// Creates a new builder-style object to manufacture [`DescribePoolsOutput`](crate::output::DescribePoolsOutput).
@@ -2715,7 +2559,7 @@ impl DescribePoolsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePhoneNumbersOutput {
+pub struct DescribePhoneNumbersOutput  {
     /// <p>An array of PhoneNumberInformation objects that contain the details for the requested phone numbers.</p>
     #[doc(hidden)]
     pub phone_numbers: std::option::Option<std::vec::Vec<crate::model::PhoneNumberInformation>>,
@@ -2725,22 +2569,21 @@ pub struct DescribePhoneNumbersOutput {
 }
 impl DescribePhoneNumbersOutput {
     /// <p>An array of PhoneNumberInformation objects that contain the details for the requested phone numbers.</p>
-    pub fn phone_numbers(&self) -> std::option::Option<&[crate::model::PhoneNumberInformation]> {
+    pub fn phone_numbers(&self) -> std::option::Option<& [crate::model::PhoneNumberInformation]> {
         self.phone_numbers.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribePhoneNumbersOutput`](crate::output::DescribePhoneNumbersOutput).
 pub mod describe_phone_numbers_output {
-
+    
     /// A builder for [`DescribePhoneNumbersOutput`](crate::output::DescribePhoneNumbersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) phone_numbers:
-            std::option::Option<std::vec::Vec<crate::model::PhoneNumberInformation>>,
+        pub(crate) phone_numbers: std::option::Option<std::vec::Vec<crate::model::PhoneNumberInformation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2751,17 +2594,13 @@ pub mod describe_phone_numbers_output {
         /// <p>An array of PhoneNumberInformation objects that contain the details for the requested phone numbers.</p>
         pub fn phone_numbers(mut self, input: crate::model::PhoneNumberInformation) -> Self {
             let mut v = self.phone_numbers.unwrap_or_default();
-            v.push(input);
-            self.phone_numbers = Some(v);
-            self
+                            v.push(input);
+                            self.phone_numbers = Some(v);
+                            self
         }
         /// <p>An array of PhoneNumberInformation objects that contain the details for the requested phone numbers.</p>
-        pub fn set_phone_numbers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberInformation>>,
-        ) -> Self {
-            self.phone_numbers = input;
-            self
+        pub fn set_phone_numbers(mut self, input: std::option::Option<std::vec::Vec<crate::model::PhoneNumberInformation>>) -> Self {
+            self.phone_numbers = input; self
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2770,17 +2609,20 @@ pub mod describe_phone_numbers_output {
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribePhoneNumbersOutput`](crate::output::DescribePhoneNumbersOutput).
         pub fn build(self) -> crate::output::DescribePhoneNumbersOutput {
             crate::output::DescribePhoneNumbersOutput {
-                phone_numbers: self.phone_numbers,
-                next_token: self.next_token,
+                phone_numbers: self.phone_numbers
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePhoneNumbersOutput {
     /// Creates a new builder-style object to manufacture [`DescribePhoneNumbersOutput`](crate::output::DescribePhoneNumbersOutput).
@@ -2792,7 +2634,7 @@ impl DescribePhoneNumbersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOptOutListsOutput {
+pub struct DescribeOptOutListsOutput  {
     /// <p>An array of OptOutListInformation objects that contain the details for the requested OptOutLists.</p>
     #[doc(hidden)]
     pub opt_out_lists: std::option::Option<std::vec::Vec<crate::model::OptOutListInformation>>,
@@ -2802,22 +2644,21 @@ pub struct DescribeOptOutListsOutput {
 }
 impl DescribeOptOutListsOutput {
     /// <p>An array of OptOutListInformation objects that contain the details for the requested OptOutLists.</p>
-    pub fn opt_out_lists(&self) -> std::option::Option<&[crate::model::OptOutListInformation]> {
+    pub fn opt_out_lists(&self) -> std::option::Option<& [crate::model::OptOutListInformation]> {
         self.opt_out_lists.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeOptOutListsOutput`](crate::output::DescribeOptOutListsOutput).
 pub mod describe_opt_out_lists_output {
-
+    
     /// A builder for [`DescribeOptOutListsOutput`](crate::output::DescribeOptOutListsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) opt_out_lists:
-            std::option::Option<std::vec::Vec<crate::model::OptOutListInformation>>,
+        pub(crate) opt_out_lists: std::option::Option<std::vec::Vec<crate::model::OptOutListInformation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2828,17 +2669,13 @@ pub mod describe_opt_out_lists_output {
         /// <p>An array of OptOutListInformation objects that contain the details for the requested OptOutLists.</p>
         pub fn opt_out_lists(mut self, input: crate::model::OptOutListInformation) -> Self {
             let mut v = self.opt_out_lists.unwrap_or_default();
-            v.push(input);
-            self.opt_out_lists = Some(v);
-            self
+                            v.push(input);
+                            self.opt_out_lists = Some(v);
+                            self
         }
         /// <p>An array of OptOutListInformation objects that contain the details for the requested OptOutLists.</p>
-        pub fn set_opt_out_lists(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OptOutListInformation>>,
-        ) -> Self {
-            self.opt_out_lists = input;
-            self
+        pub fn set_opt_out_lists(mut self, input: std::option::Option<std::vec::Vec<crate::model::OptOutListInformation>>) -> Self {
+            self.opt_out_lists = input; self
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2847,17 +2684,20 @@ pub mod describe_opt_out_lists_output {
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeOptOutListsOutput`](crate::output::DescribeOptOutListsOutput).
         pub fn build(self) -> crate::output::DescribeOptOutListsOutput {
             crate::output::DescribeOptOutListsOutput {
-                opt_out_lists: self.opt_out_lists,
-                next_token: self.next_token,
+                opt_out_lists: self.opt_out_lists
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeOptOutListsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOptOutListsOutput`](crate::output::DescribeOptOutListsOutput).
@@ -2869,7 +2709,7 @@ impl DescribeOptOutListsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOptedOutNumbersOutput {
+pub struct DescribeOptedOutNumbersOutput  {
     /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
     #[doc(hidden)]
     pub opt_out_list_arn: std::option::Option<std::string::String>,
@@ -2878,42 +2718,38 @@ pub struct DescribeOptedOutNumbersOutput {
     pub opt_out_list_name: std::option::Option<std::string::String>,
     /// <p>An array of OptedOutNumbersInformation objects that provide information about the requested OptedOutNumbers.</p>
     #[doc(hidden)]
-    pub opted_out_numbers:
-        std::option::Option<std::vec::Vec<crate::model::OptedOutNumberInformation>>,
+    pub opted_out_numbers: std::option::Option<std::vec::Vec<crate::model::OptedOutNumberInformation>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeOptedOutNumbersOutput {
     /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
-    pub fn opt_out_list_arn(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_arn(&self) -> std::option::Option<& str> {
         self.opt_out_list_arn.as_deref()
     }
     /// <p>The name of the OptOutList.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>An array of OptedOutNumbersInformation objects that provide information about the requested OptedOutNumbers.</p>
-    pub fn opted_out_numbers(
-        &self,
-    ) -> std::option::Option<&[crate::model::OptedOutNumberInformation]> {
+    pub fn opted_out_numbers(&self) -> std::option::Option<& [crate::model::OptedOutNumberInformation]> {
         self.opted_out_numbers.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeOptedOutNumbersOutput`](crate::output::DescribeOptedOutNumbersOutput).
 pub mod describe_opted_out_numbers_output {
-
+    
     /// A builder for [`DescribeOptedOutNumbersOutput`](crate::output::DescribeOptedOutNumbersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) opt_out_list_arn: std::option::Option<std::string::String>,
         pub(crate) opt_out_list_name: std::option::Option<std::string::String>,
-        pub(crate) opted_out_numbers:
-            std::option::Option<std::vec::Vec<crate::model::OptedOutNumberInformation>>,
+        pub(crate) opted_out_numbers: std::option::Option<std::vec::Vec<crate::model::OptedOutNumberInformation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2923,12 +2759,8 @@ pub mod describe_opted_out_numbers_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the OptOutList.</p>
-        pub fn set_opt_out_list_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_arn = input;
-            self
+        pub fn set_opt_out_list_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_arn = input; self
         }
         /// <p>The name of the OptOutList.</p>
         pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2936,12 +2768,8 @@ pub mod describe_opted_out_numbers_output {
             self
         }
         /// <p>The name of the OptOutList.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// Appends an item to `opted_out_numbers`.
         ///
@@ -2950,17 +2778,13 @@ pub mod describe_opted_out_numbers_output {
         /// <p>An array of OptedOutNumbersInformation objects that provide information about the requested OptedOutNumbers.</p>
         pub fn opted_out_numbers(mut self, input: crate::model::OptedOutNumberInformation) -> Self {
             let mut v = self.opted_out_numbers.unwrap_or_default();
-            v.push(input);
-            self.opted_out_numbers = Some(v);
-            self
+                            v.push(input);
+                            self.opted_out_numbers = Some(v);
+                            self
         }
         /// <p>An array of OptedOutNumbersInformation objects that provide information about the requested OptedOutNumbers.</p>
-        pub fn set_opted_out_numbers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OptedOutNumberInformation>>,
-        ) -> Self {
-            self.opted_out_numbers = input;
-            self
+        pub fn set_opted_out_numbers(mut self, input: std::option::Option<std::vec::Vec<crate::model::OptedOutNumberInformation>>) -> Self {
+            self.opted_out_numbers = input; self
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2969,19 +2793,24 @@ pub mod describe_opted_out_numbers_output {
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeOptedOutNumbersOutput`](crate::output::DescribeOptedOutNumbersOutput).
         pub fn build(self) -> crate::output::DescribeOptedOutNumbersOutput {
             crate::output::DescribeOptedOutNumbersOutput {
-                opt_out_list_arn: self.opt_out_list_arn,
-                opt_out_list_name: self.opt_out_list_name,
-                opted_out_numbers: self.opted_out_numbers,
-                next_token: self.next_token,
+                opt_out_list_arn: self.opt_out_list_arn
+                ,
+                opt_out_list_name: self.opt_out_list_name
+                ,
+                opted_out_numbers: self.opted_out_numbers
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeOptedOutNumbersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOptedOutNumbersOutput`](crate::output::DescribeOptedOutNumbersOutput).
@@ -2993,7 +2822,7 @@ impl DescribeOptedOutNumbersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeKeywordsOutput {
+pub struct DescribeKeywordsOutput  {
     /// <p>The PhoneNumberArn or PoolArn that is associated with the OriginationIdentity. </p>
     #[doc(hidden)]
     pub origination_identity_arn: std::option::Option<std::string::String>,
@@ -3009,25 +2838,25 @@ pub struct DescribeKeywordsOutput {
 }
 impl DescribeKeywordsOutput {
     /// <p>The PhoneNumberArn or PoolArn that is associated with the OriginationIdentity. </p>
-    pub fn origination_identity_arn(&self) -> std::option::Option<&str> {
+    pub fn origination_identity_arn(&self) -> std::option::Option<& str> {
         self.origination_identity_arn.as_deref()
     }
     /// <p>The PhoneNumberId or PoolId that is associated with the OriginationIdentity.</p>
-    pub fn origination_identity(&self) -> std::option::Option<&str> {
+    pub fn origination_identity(&self) -> std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>An array of KeywordInformation objects that contain the results.</p>
-    pub fn keywords(&self) -> std::option::Option<&[crate::model::KeywordInformation]> {
+    pub fn keywords(&self) -> std::option::Option<& [crate::model::KeywordInformation]> {
         self.keywords.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeKeywordsOutput`](crate::output::DescribeKeywordsOutput).
 pub mod describe_keywords_output {
-
+    
     /// A builder for [`DescribeKeywordsOutput`](crate::output::DescribeKeywordsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3043,12 +2872,8 @@ pub mod describe_keywords_output {
             self
         }
         /// <p>The PhoneNumberArn or PoolArn that is associated with the OriginationIdentity. </p>
-        pub fn set_origination_identity_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origination_identity_arn = input;
-            self
+        pub fn set_origination_identity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origination_identity_arn = input; self
         }
         /// <p>The PhoneNumberId or PoolId that is associated with the OriginationIdentity.</p>
         pub fn origination_identity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3056,12 +2881,8 @@ pub mod describe_keywords_output {
             self
         }
         /// <p>The PhoneNumberId or PoolId that is associated with the OriginationIdentity.</p>
-        pub fn set_origination_identity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origination_identity = input;
-            self
+        pub fn set_origination_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origination_identity = input; self
         }
         /// Appends an item to `keywords`.
         ///
@@ -3070,17 +2891,13 @@ pub mod describe_keywords_output {
         /// <p>An array of KeywordInformation objects that contain the results.</p>
         pub fn keywords(mut self, input: crate::model::KeywordInformation) -> Self {
             let mut v = self.keywords.unwrap_or_default();
-            v.push(input);
-            self.keywords = Some(v);
-            self
+                            v.push(input);
+                            self.keywords = Some(v);
+                            self
         }
         /// <p>An array of KeywordInformation objects that contain the results.</p>
-        pub fn set_keywords(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::KeywordInformation>>,
-        ) -> Self {
-            self.keywords = input;
-            self
+        pub fn set_keywords(mut self, input: std::option::Option<std::vec::Vec<crate::model::KeywordInformation>>) -> Self {
+            self.keywords = input; self
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3089,19 +2906,24 @@ pub mod describe_keywords_output {
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeKeywordsOutput`](crate::output::DescribeKeywordsOutput).
         pub fn build(self) -> crate::output::DescribeKeywordsOutput {
             crate::output::DescribeKeywordsOutput {
-                origination_identity_arn: self.origination_identity_arn,
-                origination_identity: self.origination_identity,
-                keywords: self.keywords,
-                next_token: self.next_token,
+                origination_identity_arn: self.origination_identity_arn
+                ,
+                origination_identity: self.origination_identity
+                ,
+                keywords: self.keywords
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeKeywordsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeKeywordsOutput`](crate::output::DescribeKeywordsOutput).
@@ -3113,35 +2935,31 @@ impl DescribeKeywordsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConfigurationSetsOutput {
+pub struct DescribeConfigurationSetsOutput  {
     /// <p>An array of ConfigurationSets objects.</p>
     #[doc(hidden)]
-    pub configuration_sets:
-        std::option::Option<std::vec::Vec<crate::model::ConfigurationSetInformation>>,
+    pub configuration_sets: std::option::Option<std::vec::Vec<crate::model::ConfigurationSetInformation>>,
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConfigurationSetsOutput {
     /// <p>An array of ConfigurationSets objects.</p>
-    pub fn configuration_sets(
-        &self,
-    ) -> std::option::Option<&[crate::model::ConfigurationSetInformation]> {
+    pub fn configuration_sets(&self) -> std::option::Option<& [crate::model::ConfigurationSetInformation]> {
         self.configuration_sets.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeConfigurationSetsOutput`](crate::output::DescribeConfigurationSetsOutput).
 pub mod describe_configuration_sets_output {
-
+    
     /// A builder for [`DescribeConfigurationSetsOutput`](crate::output::DescribeConfigurationSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) configuration_sets:
-            std::option::Option<std::vec::Vec<crate::model::ConfigurationSetInformation>>,
+        pub(crate) configuration_sets: std::option::Option<std::vec::Vec<crate::model::ConfigurationSetInformation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3150,22 +2968,15 @@ pub mod describe_configuration_sets_output {
         /// To override the contents of this collection use [`set_configuration_sets`](Self::set_configuration_sets).
         ///
         /// <p>An array of ConfigurationSets objects.</p>
-        pub fn configuration_sets(
-            mut self,
-            input: crate::model::ConfigurationSetInformation,
-        ) -> Self {
+        pub fn configuration_sets(mut self, input: crate::model::ConfigurationSetInformation) -> Self {
             let mut v = self.configuration_sets.unwrap_or_default();
-            v.push(input);
-            self.configuration_sets = Some(v);
-            self
+                            v.push(input);
+                            self.configuration_sets = Some(v);
+                            self
         }
         /// <p>An array of ConfigurationSets objects.</p>
-        pub fn set_configuration_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConfigurationSetInformation>>,
-        ) -> Self {
-            self.configuration_sets = input;
-            self
+        pub fn set_configuration_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConfigurationSetInformation>>) -> Self {
+            self.configuration_sets = input; self
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3174,17 +2985,20 @@ pub mod describe_configuration_sets_output {
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeConfigurationSetsOutput`](crate::output::DescribeConfigurationSetsOutput).
         pub fn build(self) -> crate::output::DescribeConfigurationSetsOutput {
             crate::output::DescribeConfigurationSetsOutput {
-                configuration_sets: self.configuration_sets,
-                next_token: self.next_token,
+                configuration_sets: self.configuration_sets
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeConfigurationSetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationSetsOutput`](crate::output::DescribeConfigurationSetsOutput).
@@ -3196,7 +3010,7 @@ impl DescribeConfigurationSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountLimitsOutput {
+pub struct DescribeAccountLimitsOutput  {
     /// <p>An array of AccountLimit objects that show the current spend limits.</p>
     #[doc(hidden)]
     pub account_limits: std::option::Option<std::vec::Vec<crate::model::AccountLimit>>,
@@ -3206,17 +3020,17 @@ pub struct DescribeAccountLimitsOutput {
 }
 impl DescribeAccountLimitsOutput {
     /// <p>An array of AccountLimit objects that show the current spend limits.</p>
-    pub fn account_limits(&self) -> std::option::Option<&[crate::model::AccountLimit]> {
+    pub fn account_limits(&self) -> std::option::Option<& [crate::model::AccountLimit]> {
         self.account_limits.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
 pub mod describe_account_limits_output {
-
+    
     /// A builder for [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3231,17 +3045,13 @@ pub mod describe_account_limits_output {
         /// <p>An array of AccountLimit objects that show the current spend limits.</p>
         pub fn account_limits(mut self, input: crate::model::AccountLimit) -> Self {
             let mut v = self.account_limits.unwrap_or_default();
-            v.push(input);
-            self.account_limits = Some(v);
-            self
+                            v.push(input);
+                            self.account_limits = Some(v);
+                            self
         }
         /// <p>An array of AccountLimit objects that show the current spend limits.</p>
-        pub fn set_account_limits(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccountLimit>>,
-        ) -> Self {
-            self.account_limits = input;
-            self
+        pub fn set_account_limits(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccountLimit>>) -> Self {
+            self.account_limits = input; self
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3250,17 +3060,20 @@ pub mod describe_account_limits_output {
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
         pub fn build(self) -> crate::output::DescribeAccountLimitsOutput {
             crate::output::DescribeAccountLimitsOutput {
-                account_limits: self.account_limits,
-                next_token: self.next_token,
+                account_limits: self.account_limits
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAccountLimitsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountLimitsOutput`](crate::output::DescribeAccountLimitsOutput).
@@ -3272,7 +3085,7 @@ impl DescribeAccountLimitsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountAttributesOutput {
+pub struct DescribeAccountAttributesOutput  {
     /// <p>An array of AccountAttributes objects.</p>
     #[doc(hidden)]
     pub account_attributes: std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>,
@@ -3282,22 +3095,21 @@ pub struct DescribeAccountAttributesOutput {
 }
 impl DescribeAccountAttributesOutput {
     /// <p>An array of AccountAttributes objects.</p>
-    pub fn account_attributes(&self) -> std::option::Option<&[crate::model::AccountAttribute]> {
+    pub fn account_attributes(&self) -> std::option::Option<& [crate::model::AccountAttribute]> {
         self.account_attributes.as_deref()
     }
     /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput).
 pub mod describe_account_attributes_output {
-
+    
     /// A builder for [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) account_attributes:
-            std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>,
+        pub(crate) account_attributes: std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3308,17 +3120,13 @@ pub mod describe_account_attributes_output {
         /// <p>An array of AccountAttributes objects.</p>
         pub fn account_attributes(mut self, input: crate::model::AccountAttribute) -> Self {
             let mut v = self.account_attributes.unwrap_or_default();
-            v.push(input);
-            self.account_attributes = Some(v);
-            self
+                            v.push(input);
+                            self.account_attributes = Some(v);
+                            self
         }
         /// <p>An array of AccountAttributes objects.</p>
-        pub fn set_account_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>,
-        ) -> Self {
-            self.account_attributes = input;
-            self
+        pub fn set_account_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>) -> Self {
+            self.account_attributes = input; self
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3327,17 +3135,20 @@ pub mod describe_account_attributes_output {
         }
         /// <p>The token to be used for the next set of paginated results. If this field is empty then there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput).
         pub fn build(self) -> crate::output::DescribeAccountAttributesOutput {
             crate::output::DescribeAccountAttributesOutput {
-                account_attributes: self.account_attributes,
-                next_token: self.next_token,
+                account_attributes: self.account_attributes
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAccountAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountAttributesOutput`](crate::output::DescribeAccountAttributesOutput).
@@ -3349,7 +3160,7 @@ impl DescribeAccountAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVoiceMessageSpendLimitOverrideOutput {
+pub struct DeleteVoiceMessageSpendLimitOverrideOutput  {
     /// <p>The current monthly limit, in US dollars.</p>
     #[doc(hidden)]
     pub monthly_limit: std::option::Option<i64>,
@@ -3362,7 +3173,7 @@ impl DeleteVoiceMessageSpendLimitOverrideOutput {
 }
 /// See [`DeleteVoiceMessageSpendLimitOverrideOutput`](crate::output::DeleteVoiceMessageSpendLimitOverrideOutput).
 pub mod delete_voice_message_spend_limit_override_output {
-
+    
     /// A builder for [`DeleteVoiceMessageSpendLimitOverrideOutput`](crate::output::DeleteVoiceMessageSpendLimitOverrideOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3376,16 +3187,18 @@ pub mod delete_voice_message_spend_limit_override_output {
         }
         /// <p>The current monthly limit, in US dollars.</p>
         pub fn set_monthly_limit(mut self, input: std::option::Option<i64>) -> Self {
-            self.monthly_limit = input;
-            self
+            self.monthly_limit = input; self
         }
         /// Consumes the builder and constructs a [`DeleteVoiceMessageSpendLimitOverrideOutput`](crate::output::DeleteVoiceMessageSpendLimitOverrideOutput).
         pub fn build(self) -> crate::output::DeleteVoiceMessageSpendLimitOverrideOutput {
             crate::output::DeleteVoiceMessageSpendLimitOverrideOutput {
-                monthly_limit: self.monthly_limit,
+                monthly_limit: self.monthly_limit
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteVoiceMessageSpendLimitOverrideOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceMessageSpendLimitOverrideOutput`](crate::output::DeleteVoiceMessageSpendLimitOverrideOutput).
@@ -3397,7 +3210,7 @@ impl DeleteVoiceMessageSpendLimitOverrideOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTextMessageSpendLimitOverrideOutput {
+pub struct DeleteTextMessageSpendLimitOverrideOutput  {
     /// <p>The current monthly limit, in US dollars.</p>
     #[doc(hidden)]
     pub monthly_limit: std::option::Option<i64>,
@@ -3410,7 +3223,7 @@ impl DeleteTextMessageSpendLimitOverrideOutput {
 }
 /// See [`DeleteTextMessageSpendLimitOverrideOutput`](crate::output::DeleteTextMessageSpendLimitOverrideOutput).
 pub mod delete_text_message_spend_limit_override_output {
-
+    
     /// A builder for [`DeleteTextMessageSpendLimitOverrideOutput`](crate::output::DeleteTextMessageSpendLimitOverrideOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3424,16 +3237,18 @@ pub mod delete_text_message_spend_limit_override_output {
         }
         /// <p>The current monthly limit, in US dollars.</p>
         pub fn set_monthly_limit(mut self, input: std::option::Option<i64>) -> Self {
-            self.monthly_limit = input;
-            self
+            self.monthly_limit = input; self
         }
         /// Consumes the builder and constructs a [`DeleteTextMessageSpendLimitOverrideOutput`](crate::output::DeleteTextMessageSpendLimitOverrideOutput).
         pub fn build(self) -> crate::output::DeleteTextMessageSpendLimitOverrideOutput {
             crate::output::DeleteTextMessageSpendLimitOverrideOutput {
-                monthly_limit: self.monthly_limit,
+                monthly_limit: self.monthly_limit
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteTextMessageSpendLimitOverrideOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTextMessageSpendLimitOverrideOutput`](crate::output::DeleteTextMessageSpendLimitOverrideOutput).
@@ -3445,18 +3260,18 @@ impl DeleteTextMessageSpendLimitOverrideOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePoolOutput {
+pub struct DeletePoolOutput  {
     /// <p>The Amazon Resource Name (ARN) of the pool that was deleted.</p>
     #[doc(hidden)]
     pub pool_arn: std::option::Option<std::string::String>,
     /// <p>The PoolId of the pool that was deleted.</p>
     #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
-    /// <p>The current status of the pool.</p>
-    /// <ul>
-    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
-    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
-    /// <li> <p>DELETING: The pool is being deleted.</p> </li>
+    /// <p>The current status of the pool.</p> 
+    /// <ul> 
+    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li> 
+    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li> 
+    /// <li> <p>DELETING: The pool is being deleted.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::PoolStatus>,
@@ -3484,24 +3299,24 @@ pub struct DeletePoolOutput {
 }
 impl DeletePoolOutput {
     /// <p>The Amazon Resource Name (ARN) of the pool that was deleted.</p>
-    pub fn pool_arn(&self) -> std::option::Option<&str> {
+    pub fn pool_arn(&self) -> std::option::Option<& str> {
         self.pool_arn.as_deref()
     }
     /// <p>The PoolId of the pool that was deleted.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
-    /// <p>The current status of the pool.</p>
-    /// <ul>
-    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
-    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
-    /// <li> <p>DELETING: The pool is being deleted.</p> </li>
+    /// <p>The current status of the pool.</p> 
+    /// <ul> 
+    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li> 
+    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li> 
+    /// <li> <p>DELETING: The pool is being deleted.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::PoolStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::PoolStatus> {
         self.status.as_ref()
     }
     /// <p>The message type that was associated with the deleted pool.</p>
-    pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+    pub fn message_type(&self) -> std::option::Option<& crate::model::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
@@ -3509,7 +3324,7 @@ impl DeletePoolOutput {
         self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the TwoWayChannel.</p>
-    pub fn two_way_channel_arn(&self) -> std::option::Option<&str> {
+    pub fn two_way_channel_arn(&self) -> std::option::Option<& str> {
         self.two_way_channel_arn.as_deref()
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
@@ -3517,7 +3332,7 @@ impl DeletePoolOutput {
         self.self_managed_opt_outs_enabled
     }
     /// <p>The name of the OptOutList that was associated with the deleted pool.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
@@ -3525,13 +3340,13 @@ impl DeletePoolOutput {
         self.shared_routes_enabled
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 /// See [`DeletePoolOutput`](crate::output::DeletePoolOutput).
 pub mod delete_pool_output {
-
+    
     /// A builder for [`DeletePoolOutput`](crate::output::DeletePoolOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3554,8 +3369,7 @@ pub mod delete_pool_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the pool that was deleted.</p>
         pub fn set_pool_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_arn = input;
-            self
+            self.pool_arn = input; self
         }
         /// <p>The PoolId of the pool that was deleted.</p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3564,28 +3378,26 @@ pub mod delete_pool_output {
         }
         /// <p>The PoolId of the pool that was deleted.</p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_id = input;
-            self
+            self.pool_id = input; self
         }
-        /// <p>The current status of the pool.</p>
-        /// <ul>
-        /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
-        /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
-        /// <li> <p>DELETING: The pool is being deleted.</p> </li>
+        /// <p>The current status of the pool.</p> 
+        /// <ul> 
+        /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li> 
+        /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li> 
+        /// <li> <p>DELETING: The pool is being deleted.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::PoolStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The current status of the pool.</p>
-        /// <ul>
-        /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
-        /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
-        /// <li> <p>DELETING: The pool is being deleted.</p> </li>
+        /// <p>The current status of the pool.</p> 
+        /// <ul> 
+        /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li> 
+        /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li> 
+        /// <li> <p>DELETING: The pool is being deleted.</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::PoolStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The message type that was associated with the deleted pool.</p>
         pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
@@ -3593,12 +3405,8 @@ pub mod delete_pool_output {
             self
         }
         /// <p>The message type that was associated with the deleted pool.</p>
-        pub fn set_message_type(
-            mut self,
-            input: std::option::Option<crate::model::MessageType>,
-        ) -> Self {
-            self.message_type = input;
-            self
+        pub fn set_message_type(mut self, input: std::option::Option<crate::model::MessageType>) -> Self {
+            self.message_type = input; self
         }
         /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
         pub fn two_way_enabled(mut self, input: bool) -> Self {
@@ -3607,8 +3415,7 @@ pub mod delete_pool_output {
         }
         /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
         pub fn set_two_way_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.two_way_enabled = input;
-            self
+            self.two_way_enabled = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the TwoWayChannel.</p>
         pub fn two_way_channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3616,12 +3423,8 @@ pub mod delete_pool_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the TwoWayChannel.</p>
-        pub fn set_two_way_channel_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.two_way_channel_arn = input;
-            self
+        pub fn set_two_way_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.two_way_channel_arn = input; self
         }
         /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
         pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
@@ -3629,12 +3432,8 @@ pub mod delete_pool_output {
             self
         }
         /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
-        pub fn set_self_managed_opt_outs_enabled(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.self_managed_opt_outs_enabled = input;
-            self
+        pub fn set_self_managed_opt_outs_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.self_managed_opt_outs_enabled = input; self
         }
         /// <p>The name of the OptOutList that was associated with the deleted pool.</p>
         pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3642,12 +3441,8 @@ pub mod delete_pool_output {
             self
         }
         /// <p>The name of the OptOutList that was associated with the deleted pool.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// <p>Indicates whether shared routes are enabled for the pool.</p>
         pub fn shared_routes_enabled(mut self, input: bool) -> Self {
@@ -3656,8 +3451,7 @@ pub mod delete_pool_output {
         }
         /// <p>Indicates whether shared routes are enabled for the pool.</p>
         pub fn set_shared_routes_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.shared_routes_enabled = input;
-            self
+            self.shared_routes_enabled = input; self
         }
         /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3665,31 +3459,40 @@ pub mod delete_pool_output {
             self
         }
         /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`DeletePoolOutput`](crate::output::DeletePoolOutput).
         pub fn build(self) -> crate::output::DeletePoolOutput {
             crate::output::DeletePoolOutput {
-                pool_arn: self.pool_arn,
-                pool_id: self.pool_id,
-                status: self.status,
-                message_type: self.message_type,
-                two_way_enabled: self.two_way_enabled.unwrap_or_default(),
-                two_way_channel_arn: self.two_way_channel_arn,
-                self_managed_opt_outs_enabled: self
-                    .self_managed_opt_outs_enabled
-                    .unwrap_or_default(),
-                opt_out_list_name: self.opt_out_list_name,
-                shared_routes_enabled: self.shared_routes_enabled.unwrap_or_default(),
-                created_timestamp: self.created_timestamp,
+                pool_arn: self.pool_arn
+                ,
+                pool_id: self.pool_id
+                ,
+                status: self.status
+                ,
+                message_type: self.message_type
+                ,
+                two_way_enabled: self.two_way_enabled
+                    .unwrap_or_default()
+                ,
+                two_way_channel_arn: self.two_way_channel_arn
+                ,
+                self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled
+                    .unwrap_or_default()
+                ,
+                opt_out_list_name: self.opt_out_list_name
+                ,
+                shared_routes_enabled: self.shared_routes_enabled
+                    .unwrap_or_default()
+                ,
+                created_timestamp: self.created_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl DeletePoolOutput {
     /// Creates a new builder-style object to manufacture [`DeletePoolOutput`](crate::output::DeletePoolOutput).
@@ -3701,7 +3504,7 @@ impl DeletePoolOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteOptOutListOutput {
+pub struct DeleteOptOutListOutput  {
     /// <p>The Amazon Resource Name (ARN) of the OptOutList that was removed.</p>
     #[doc(hidden)]
     pub opt_out_list_arn: std::option::Option<std::string::String>,
@@ -3714,21 +3517,21 @@ pub struct DeleteOptOutListOutput {
 }
 impl DeleteOptOutListOutput {
     /// <p>The Amazon Resource Name (ARN) of the OptOutList that was removed.</p>
-    pub fn opt_out_list_arn(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_arn(&self) -> std::option::Option<& str> {
         self.opt_out_list_arn.as_deref()
     }
     /// <p>The name of the OptOutList that was removed.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>The time when the OptOutList was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 /// See [`DeleteOptOutListOutput`](crate::output::DeleteOptOutListOutput).
 pub mod delete_opt_out_list_output {
-
+    
     /// A builder for [`DeleteOptOutListOutput`](crate::output::DeleteOptOutListOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3743,12 +3546,8 @@ pub mod delete_opt_out_list_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the OptOutList that was removed.</p>
-        pub fn set_opt_out_list_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_arn = input;
-            self
+        pub fn set_opt_out_list_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_arn = input; self
         }
         /// <p>The name of the OptOutList that was removed.</p>
         pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3756,12 +3555,8 @@ pub mod delete_opt_out_list_output {
             self
         }
         /// <p>The name of the OptOutList that was removed.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// <p>The time when the OptOutList was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3769,22 +3564,23 @@ pub mod delete_opt_out_list_output {
             self
         }
         /// <p>The time when the OptOutList was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`DeleteOptOutListOutput`](crate::output::DeleteOptOutListOutput).
         pub fn build(self) -> crate::output::DeleteOptOutListOutput {
             crate::output::DeleteOptOutListOutput {
-                opt_out_list_arn: self.opt_out_list_arn,
-                opt_out_list_name: self.opt_out_list_name,
-                created_timestamp: self.created_timestamp,
+                opt_out_list_arn: self.opt_out_list_arn
+                ,
+                opt_out_list_name: self.opt_out_list_name
+                ,
+                created_timestamp: self.created_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteOptOutListOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOptOutListOutput`](crate::output::DeleteOptOutListOutput).
@@ -3796,7 +3592,7 @@ impl DeleteOptOutListOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteOptedOutNumberOutput {
+pub struct DeleteOptedOutNumberOutput  {
     /// <p>The OptOutListArn that the phone number was removed from.</p>
     #[doc(hidden)]
     pub opt_out_list_arn: std::option::Option<std::string::String>,
@@ -3815,19 +3611,19 @@ pub struct DeleteOptedOutNumberOutput {
 }
 impl DeleteOptedOutNumberOutput {
     /// <p>The OptOutListArn that the phone number was removed from.</p>
-    pub fn opt_out_list_arn(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_arn(&self) -> std::option::Option<& str> {
         self.opt_out_list_arn.as_deref()
     }
     /// <p>The OptOutListName that the phone number was removed from.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>The phone number that was removed from the OptOutList.</p>
-    pub fn opted_out_number(&self) -> std::option::Option<&str> {
+    pub fn opted_out_number(&self) -> std::option::Option<& str> {
         self.opted_out_number.as_deref()
     }
     /// <p>The time that the number was removed at, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn opted_out_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn opted_out_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.opted_out_timestamp.as_ref()
     }
     /// <p>This is true if it was the end user who requested their phone number be removed. </p>
@@ -3837,7 +3633,7 @@ impl DeleteOptedOutNumberOutput {
 }
 /// See [`DeleteOptedOutNumberOutput`](crate::output::DeleteOptedOutNumberOutput).
 pub mod delete_opted_out_number_output {
-
+    
     /// A builder for [`DeleteOptedOutNumberOutput`](crate::output::DeleteOptedOutNumberOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3854,12 +3650,8 @@ pub mod delete_opted_out_number_output {
             self
         }
         /// <p>The OptOutListArn that the phone number was removed from.</p>
-        pub fn set_opt_out_list_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_arn = input;
-            self
+        pub fn set_opt_out_list_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_arn = input; self
         }
         /// <p>The OptOutListName that the phone number was removed from.</p>
         pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3867,12 +3659,8 @@ pub mod delete_opted_out_number_output {
             self
         }
         /// <p>The OptOutListName that the phone number was removed from.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// <p>The phone number that was removed from the OptOutList.</p>
         pub fn opted_out_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3880,12 +3668,8 @@ pub mod delete_opted_out_number_output {
             self
         }
         /// <p>The phone number that was removed from the OptOutList.</p>
-        pub fn set_opted_out_number(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opted_out_number = input;
-            self
+        pub fn set_opted_out_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opted_out_number = input; self
         }
         /// <p>The time that the number was removed at, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
         pub fn opted_out_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3893,12 +3677,8 @@ pub mod delete_opted_out_number_output {
             self
         }
         /// <p>The time that the number was removed at, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-        pub fn set_opted_out_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.opted_out_timestamp = input;
-            self
+        pub fn set_opted_out_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.opted_out_timestamp = input; self
         }
         /// <p>This is true if it was the end user who requested their phone number be removed. </p>
         pub fn end_user_opted_out(mut self, input: bool) -> Self {
@@ -3907,20 +3687,27 @@ pub mod delete_opted_out_number_output {
         }
         /// <p>This is true if it was the end user who requested their phone number be removed. </p>
         pub fn set_end_user_opted_out(mut self, input: std::option::Option<bool>) -> Self {
-            self.end_user_opted_out = input;
-            self
+            self.end_user_opted_out = input; self
         }
         /// Consumes the builder and constructs a [`DeleteOptedOutNumberOutput`](crate::output::DeleteOptedOutNumberOutput).
         pub fn build(self) -> crate::output::DeleteOptedOutNumberOutput {
             crate::output::DeleteOptedOutNumberOutput {
-                opt_out_list_arn: self.opt_out_list_arn,
-                opt_out_list_name: self.opt_out_list_name,
-                opted_out_number: self.opted_out_number,
-                opted_out_timestamp: self.opted_out_timestamp,
-                end_user_opted_out: self.end_user_opted_out.unwrap_or_default(),
+                opt_out_list_arn: self.opt_out_list_arn
+                ,
+                opt_out_list_name: self.opt_out_list_name
+                ,
+                opted_out_number: self.opted_out_number
+                ,
+                opted_out_timestamp: self.opted_out_timestamp
+                ,
+                end_user_opted_out: self.end_user_opted_out
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteOptedOutNumberOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOptedOutNumberOutput`](crate::output::DeleteOptedOutNumberOutput).
@@ -3932,7 +3719,7 @@ impl DeleteOptedOutNumberOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteKeywordOutput {
+pub struct DeleteKeywordOutput  {
     /// <p>The PhoneNumberArn or PoolArn that the keyword was associated with.</p>
     #[doc(hidden)]
     pub origination_identity_arn: std::option::Option<std::string::String>,
@@ -3951,29 +3738,29 @@ pub struct DeleteKeywordOutput {
 }
 impl DeleteKeywordOutput {
     /// <p>The PhoneNumberArn or PoolArn that the keyword was associated with.</p>
-    pub fn origination_identity_arn(&self) -> std::option::Option<&str> {
+    pub fn origination_identity_arn(&self) -> std::option::Option<& str> {
         self.origination_identity_arn.as_deref()
     }
     /// <p>The PhoneNumberId or PoolId that the keyword was associated with.</p>
-    pub fn origination_identity(&self) -> std::option::Option<&str> {
+    pub fn origination_identity(&self) -> std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>The keyword that was deleted.</p>
-    pub fn keyword(&self) -> std::option::Option<&str> {
+    pub fn keyword(&self) -> std::option::Option<& str> {
         self.keyword.as_deref()
     }
     /// <p>The message that was associated with the deleted keyword.</p>
-    pub fn keyword_message(&self) -> std::option::Option<&str> {
+    pub fn keyword_message(&self) -> std::option::Option<& str> {
         self.keyword_message.as_deref()
     }
     /// <p>The action that was associated with the deleted keyword.</p>
-    pub fn keyword_action(&self) -> std::option::Option<&crate::model::KeywordAction> {
+    pub fn keyword_action(&self) -> std::option::Option<& crate::model::KeywordAction> {
         self.keyword_action.as_ref()
     }
 }
 /// See [`DeleteKeywordOutput`](crate::output::DeleteKeywordOutput).
 pub mod delete_keyword_output {
-
+    
     /// A builder for [`DeleteKeywordOutput`](crate::output::DeleteKeywordOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3990,12 +3777,8 @@ pub mod delete_keyword_output {
             self
         }
         /// <p>The PhoneNumberArn or PoolArn that the keyword was associated with.</p>
-        pub fn set_origination_identity_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origination_identity_arn = input;
-            self
+        pub fn set_origination_identity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origination_identity_arn = input; self
         }
         /// <p>The PhoneNumberId or PoolId that the keyword was associated with.</p>
         pub fn origination_identity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4003,12 +3786,8 @@ pub mod delete_keyword_output {
             self
         }
         /// <p>The PhoneNumberId or PoolId that the keyword was associated with.</p>
-        pub fn set_origination_identity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origination_identity = input;
-            self
+        pub fn set_origination_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origination_identity = input; self
         }
         /// <p>The keyword that was deleted.</p>
         pub fn keyword(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4017,8 +3796,7 @@ pub mod delete_keyword_output {
         }
         /// <p>The keyword that was deleted.</p>
         pub fn set_keyword(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.keyword = input;
-            self
+            self.keyword = input; self
         }
         /// <p>The message that was associated with the deleted keyword.</p>
         pub fn keyword_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4026,12 +3804,8 @@ pub mod delete_keyword_output {
             self
         }
         /// <p>The message that was associated with the deleted keyword.</p>
-        pub fn set_keyword_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.keyword_message = input;
-            self
+        pub fn set_keyword_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.keyword_message = input; self
         }
         /// <p>The action that was associated with the deleted keyword.</p>
         pub fn keyword_action(mut self, input: crate::model::KeywordAction) -> Self {
@@ -4039,24 +3813,27 @@ pub mod delete_keyword_output {
             self
         }
         /// <p>The action that was associated with the deleted keyword.</p>
-        pub fn set_keyword_action(
-            mut self,
-            input: std::option::Option<crate::model::KeywordAction>,
-        ) -> Self {
-            self.keyword_action = input;
-            self
+        pub fn set_keyword_action(mut self, input: std::option::Option<crate::model::KeywordAction>) -> Self {
+            self.keyword_action = input; self
         }
         /// Consumes the builder and constructs a [`DeleteKeywordOutput`](crate::output::DeleteKeywordOutput).
         pub fn build(self) -> crate::output::DeleteKeywordOutput {
             crate::output::DeleteKeywordOutput {
-                origination_identity_arn: self.origination_identity_arn,
-                origination_identity: self.origination_identity,
-                keyword: self.keyword,
-                keyword_message: self.keyword_message,
-                keyword_action: self.keyword_action,
+                origination_identity_arn: self.origination_identity_arn
+                ,
+                origination_identity: self.origination_identity
+                ,
+                keyword: self.keyword
+                ,
+                keyword_message: self.keyword_message
+                ,
+                keyword_action: self.keyword_action
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteKeywordOutput {
     /// Creates a new builder-style object to manufacture [`DeleteKeywordOutput`](crate::output::DeleteKeywordOutput).
@@ -4068,7 +3845,7 @@ impl DeleteKeywordOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEventDestinationOutput {
+pub struct DeleteEventDestinationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
     #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
@@ -4081,21 +3858,21 @@ pub struct DeleteEventDestinationOutput {
 }
 impl DeleteEventDestinationOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
-    pub fn configuration_set_arn(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_arn(&self) -> std::option::Option<& str> {
         self.configuration_set_arn.as_deref()
     }
     /// <p>The name of the configuration set the event destination was deleted from.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The event destination object that was deleted.</p>
-    pub fn event_destination(&self) -> std::option::Option<&crate::model::EventDestination> {
+    pub fn event_destination(&self) -> std::option::Option<& crate::model::EventDestination> {
         self.event_destination.as_ref()
     }
 }
 /// See [`DeleteEventDestinationOutput`](crate::output::DeleteEventDestinationOutput).
 pub mod delete_event_destination_output {
-
+    
     /// A builder for [`DeleteEventDestinationOutput`](crate::output::DeleteEventDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4110,12 +3887,8 @@ pub mod delete_event_destination_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
-        pub fn set_configuration_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_arn = input;
-            self
+        pub fn set_configuration_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_arn = input; self
         }
         /// <p>The name of the configuration set the event destination was deleted from.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4123,12 +3896,8 @@ pub mod delete_event_destination_output {
             self
         }
         /// <p>The name of the configuration set the event destination was deleted from.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>The event destination object that was deleted.</p>
         pub fn event_destination(mut self, input: crate::model::EventDestination) -> Self {
@@ -4136,22 +3905,23 @@ pub mod delete_event_destination_output {
             self
         }
         /// <p>The event destination object that was deleted.</p>
-        pub fn set_event_destination(
-            mut self,
-            input: std::option::Option<crate::model::EventDestination>,
-        ) -> Self {
-            self.event_destination = input;
-            self
+        pub fn set_event_destination(mut self, input: std::option::Option<crate::model::EventDestination>) -> Self {
+            self.event_destination = input; self
         }
         /// Consumes the builder and constructs a [`DeleteEventDestinationOutput`](crate::output::DeleteEventDestinationOutput).
         pub fn build(self) -> crate::output::DeleteEventDestinationOutput {
             crate::output::DeleteEventDestinationOutput {
-                configuration_set_arn: self.configuration_set_arn,
-                configuration_set_name: self.configuration_set_name,
-                event_destination: self.event_destination,
+                configuration_set_arn: self.configuration_set_arn
+                ,
+                configuration_set_name: self.configuration_set_name
+                ,
+                event_destination: self.event_destination
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteEventDestinationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEventDestinationOutput`](crate::output::DeleteEventDestinationOutput).
@@ -4163,7 +3933,7 @@ impl DeleteEventDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDefaultSenderIdOutput {
+pub struct DeleteDefaultSenderIdOutput  {
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
     #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
@@ -4176,21 +3946,21 @@ pub struct DeleteDefaultSenderIdOutput {
 }
 impl DeleteDefaultSenderIdOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
-    pub fn configuration_set_arn(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_arn(&self) -> std::option::Option<& str> {
         self.configuration_set_arn.as_deref()
     }
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The current sender ID for the configuration set.</p>
-    pub fn sender_id(&self) -> std::option::Option<&str> {
+    pub fn sender_id(&self) -> std::option::Option<& str> {
         self.sender_id.as_deref()
     }
 }
 /// See [`DeleteDefaultSenderIdOutput`](crate::output::DeleteDefaultSenderIdOutput).
 pub mod delete_default_sender_id_output {
-
+    
     /// A builder for [`DeleteDefaultSenderIdOutput`](crate::output::DeleteDefaultSenderIdOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4205,12 +3975,8 @@ pub mod delete_default_sender_id_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
-        pub fn set_configuration_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_arn = input;
-            self
+        pub fn set_configuration_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_arn = input; self
         }
         /// <p>The name of the configuration set.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4218,12 +3984,8 @@ pub mod delete_default_sender_id_output {
             self
         }
         /// <p>The name of the configuration set.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>The current sender ID for the configuration set.</p>
         pub fn sender_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4232,18 +3994,22 @@ pub mod delete_default_sender_id_output {
         }
         /// <p>The current sender ID for the configuration set.</p>
         pub fn set_sender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sender_id = input;
-            self
+            self.sender_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDefaultSenderIdOutput`](crate::output::DeleteDefaultSenderIdOutput).
         pub fn build(self) -> crate::output::DeleteDefaultSenderIdOutput {
             crate::output::DeleteDefaultSenderIdOutput {
-                configuration_set_arn: self.configuration_set_arn,
-                configuration_set_name: self.configuration_set_name,
-                sender_id: self.sender_id,
+                configuration_set_arn: self.configuration_set_arn
+                ,
+                configuration_set_name: self.configuration_set_name
+                ,
+                sender_id: self.sender_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDefaultSenderIdOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDefaultSenderIdOutput`](crate::output::DeleteDefaultSenderIdOutput).
@@ -4255,7 +4021,7 @@ impl DeleteDefaultSenderIdOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDefaultMessageTypeOutput {
+pub struct DeleteDefaultMessageTypeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
     #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
@@ -4268,21 +4034,21 @@ pub struct DeleteDefaultMessageTypeOutput {
 }
 impl DeleteDefaultMessageTypeOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
-    pub fn configuration_set_arn(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_arn(&self) -> std::option::Option<& str> {
         self.configuration_set_arn.as_deref()
     }
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The current message type for the configuration set.</p>
-    pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+    pub fn message_type(&self) -> std::option::Option<& crate::model::MessageType> {
         self.message_type.as_ref()
     }
 }
 /// See [`DeleteDefaultMessageTypeOutput`](crate::output::DeleteDefaultMessageTypeOutput).
 pub mod delete_default_message_type_output {
-
+    
     /// A builder for [`DeleteDefaultMessageTypeOutput`](crate::output::DeleteDefaultMessageTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4297,12 +4063,8 @@ pub mod delete_default_message_type_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the configuration set.</p>
-        pub fn set_configuration_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_arn = input;
-            self
+        pub fn set_configuration_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_arn = input; self
         }
         /// <p>The name of the configuration set.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4310,12 +4072,8 @@ pub mod delete_default_message_type_output {
             self
         }
         /// <p>The name of the configuration set.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>The current message type for the configuration set.</p>
         pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
@@ -4323,22 +4081,23 @@ pub mod delete_default_message_type_output {
             self
         }
         /// <p>The current message type for the configuration set.</p>
-        pub fn set_message_type(
-            mut self,
-            input: std::option::Option<crate::model::MessageType>,
-        ) -> Self {
-            self.message_type = input;
-            self
+        pub fn set_message_type(mut self, input: std::option::Option<crate::model::MessageType>) -> Self {
+            self.message_type = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDefaultMessageTypeOutput`](crate::output::DeleteDefaultMessageTypeOutput).
         pub fn build(self) -> crate::output::DeleteDefaultMessageTypeOutput {
             crate::output::DeleteDefaultMessageTypeOutput {
-                configuration_set_arn: self.configuration_set_arn,
-                configuration_set_name: self.configuration_set_name,
-                message_type: self.message_type,
+                configuration_set_arn: self.configuration_set_arn
+                ,
+                configuration_set_name: self.configuration_set_name
+                ,
+                message_type: self.message_type
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDefaultMessageTypeOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDefaultMessageTypeOutput`](crate::output::DeleteDefaultMessageTypeOutput).
@@ -4350,7 +4109,7 @@ impl DeleteDefaultMessageTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfigurationSetOutput {
+pub struct DeleteConfigurationSetOutput  {
     /// <p>The Amazon Resource Name (ARN) of the deleted configuration set.</p>
     #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
@@ -4372,40 +4131,39 @@ pub struct DeleteConfigurationSetOutput {
 }
 impl DeleteConfigurationSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted configuration set.</p>
-    pub fn configuration_set_arn(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_arn(&self) -> std::option::Option<& str> {
         self.configuration_set_arn.as_deref()
     }
     /// <p>The name of the deleted configuration set.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>An array of any EventDestination objects that were associated with the deleted configuration set.</p>
-    pub fn event_destinations(&self) -> std::option::Option<&[crate::model::EventDestination]> {
+    pub fn event_destinations(&self) -> std::option::Option<& [crate::model::EventDestination]> {
         self.event_destinations.as_deref()
     }
     /// <p>The default message type of the configuration set that was deleted.</p>
-    pub fn default_message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+    pub fn default_message_type(&self) -> std::option::Option<& crate::model::MessageType> {
         self.default_message_type.as_ref()
     }
     /// <p>The default Sender ID of the configuration set that was deleted.</p>
-    pub fn default_sender_id(&self) -> std::option::Option<&str> {
+    pub fn default_sender_id(&self) -> std::option::Option<& str> {
         self.default_sender_id.as_deref()
     }
     /// <p>The time that the deleted configuration set was created in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 /// See [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
 pub mod delete_configuration_set_output {
-
+    
     /// A builder for [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_set_arn: std::option::Option<std::string::String>,
         pub(crate) configuration_set_name: std::option::Option<std::string::String>,
-        pub(crate) event_destinations:
-            std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
+        pub(crate) event_destinations: std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
         pub(crate) default_message_type: std::option::Option<crate::model::MessageType>,
         pub(crate) default_sender_id: std::option::Option<std::string::String>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -4417,12 +4175,8 @@ pub mod delete_configuration_set_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the deleted configuration set.</p>
-        pub fn set_configuration_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_arn = input;
-            self
+        pub fn set_configuration_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_arn = input; self
         }
         /// <p>The name of the deleted configuration set.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4430,12 +4184,8 @@ pub mod delete_configuration_set_output {
             self
         }
         /// <p>The name of the deleted configuration set.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// Appends an item to `event_destinations`.
         ///
@@ -4444,17 +4194,13 @@ pub mod delete_configuration_set_output {
         /// <p>An array of any EventDestination objects that were associated with the deleted configuration set.</p>
         pub fn event_destinations(mut self, input: crate::model::EventDestination) -> Self {
             let mut v = self.event_destinations.unwrap_or_default();
-            v.push(input);
-            self.event_destinations = Some(v);
-            self
+                            v.push(input);
+                            self.event_destinations = Some(v);
+                            self
         }
         /// <p>An array of any EventDestination objects that were associated with the deleted configuration set.</p>
-        pub fn set_event_destinations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
-        ) -> Self {
-            self.event_destinations = input;
-            self
+        pub fn set_event_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventDestination>>) -> Self {
+            self.event_destinations = input; self
         }
         /// <p>The default message type of the configuration set that was deleted.</p>
         pub fn default_message_type(mut self, input: crate::model::MessageType) -> Self {
@@ -4462,12 +4208,8 @@ pub mod delete_configuration_set_output {
             self
         }
         /// <p>The default message type of the configuration set that was deleted.</p>
-        pub fn set_default_message_type(
-            mut self,
-            input: std::option::Option<crate::model::MessageType>,
-        ) -> Self {
-            self.default_message_type = input;
-            self
+        pub fn set_default_message_type(mut self, input: std::option::Option<crate::model::MessageType>) -> Self {
+            self.default_message_type = input; self
         }
         /// <p>The default Sender ID of the configuration set that was deleted.</p>
         pub fn default_sender_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4475,12 +4217,8 @@ pub mod delete_configuration_set_output {
             self
         }
         /// <p>The default Sender ID of the configuration set that was deleted.</p>
-        pub fn set_default_sender_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_sender_id = input;
-            self
+        pub fn set_default_sender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_sender_id = input; self
         }
         /// <p>The time that the deleted configuration set was created in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4488,25 +4226,29 @@ pub mod delete_configuration_set_output {
             self
         }
         /// <p>The time that the deleted configuration set was created in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
         pub fn build(self) -> crate::output::DeleteConfigurationSetOutput {
             crate::output::DeleteConfigurationSetOutput {
-                configuration_set_arn: self.configuration_set_arn,
-                configuration_set_name: self.configuration_set_name,
-                event_destinations: self.event_destinations,
-                default_message_type: self.default_message_type,
-                default_sender_id: self.default_sender_id,
-                created_timestamp: self.created_timestamp,
+                configuration_set_arn: self.configuration_set_arn
+                ,
+                configuration_set_name: self.configuration_set_name
+                ,
+                event_destinations: self.event_destinations
+                ,
+                default_message_type: self.default_message_type
+                ,
+                default_sender_id: self.default_sender_id
+                ,
+                created_timestamp: self.created_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteConfigurationSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
@@ -4518,18 +4260,18 @@ impl DeleteConfigurationSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePoolOutput {
+pub struct CreatePoolOutput  {
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
     #[doc(hidden)]
     pub pool_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the pool.</p>
     #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
-    /// <p>The current status of the pool.</p>
-    /// <ul>
-    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
-    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
-    /// <li> <p>DELETING: The pool is being deleted.</p> </li>
+    /// <p>The current status of the pool.</p> 
+    /// <ul> 
+    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li> 
+    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li> 
+    /// <li> <p>DELETING: The pool is being deleted.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::PoolStatus>,
@@ -4563,24 +4305,24 @@ pub struct CreatePoolOutput {
 }
 impl CreatePoolOutput {
     /// <p>The Amazon Resource Name (ARN) for the pool.</p>
-    pub fn pool_arn(&self) -> std::option::Option<&str> {
+    pub fn pool_arn(&self) -> std::option::Option<& str> {
         self.pool_arn.as_deref()
     }
     /// <p>The unique identifier for the pool.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
-    /// <p>The current status of the pool.</p>
-    /// <ul>
-    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
-    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
-    /// <li> <p>DELETING: The pool is being deleted.</p> </li>
+    /// <p>The current status of the pool.</p> 
+    /// <ul> 
+    /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li> 
+    /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li> 
+    /// <li> <p>DELETING: The pool is being deleted.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::PoolStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::PoolStatus> {
         self.status.as_ref()
     }
     /// <p>The type of message for the pool to use.</p>
-    pub fn message_type(&self) -> std::option::Option<&crate::model::MessageType> {
+    pub fn message_type(&self) -> std::option::Option<& crate::model::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
@@ -4588,7 +4330,7 @@ impl CreatePoolOutput {
         self.two_way_enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn two_way_channel_arn(&self) -> std::option::Option<&str> {
+    pub fn two_way_channel_arn(&self) -> std::option::Option<& str> {
         self.two_way_channel_arn.as_deref()
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
@@ -4596,7 +4338,7 @@ impl CreatePoolOutput {
         self.self_managed_opt_outs_enabled
     }
     /// <p>The name of the OptOutList associated with the pool.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
@@ -4608,17 +4350,17 @@ impl CreatePoolOutput {
         self.deletion_protection_enabled
     }
     /// <p>An array of tags (key and value pairs) associated with the pool.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 /// See [`CreatePoolOutput`](crate::output::CreatePoolOutput).
 pub mod create_pool_output {
-
+    
     /// A builder for [`CreatePoolOutput`](crate::output::CreatePoolOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4643,8 +4385,7 @@ pub mod create_pool_output {
         }
         /// <p>The Amazon Resource Name (ARN) for the pool.</p>
         pub fn set_pool_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_arn = input;
-            self
+            self.pool_arn = input; self
         }
         /// <p>The unique identifier for the pool.</p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4653,28 +4394,26 @@ pub mod create_pool_output {
         }
         /// <p>The unique identifier for the pool.</p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_id = input;
-            self
+            self.pool_id = input; self
         }
-        /// <p>The current status of the pool.</p>
-        /// <ul>
-        /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
-        /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
-        /// <li> <p>DELETING: The pool is being deleted.</p> </li>
+        /// <p>The current status of the pool.</p> 
+        /// <ul> 
+        /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li> 
+        /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li> 
+        /// <li> <p>DELETING: The pool is being deleted.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::PoolStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The current status of the pool.</p>
-        /// <ul>
-        /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li>
-        /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li>
-        /// <li> <p>DELETING: The pool is being deleted.</p> </li>
+        /// <p>The current status of the pool.</p> 
+        /// <ul> 
+        /// <li> <p>CREATING: The pool is currently being created and isn't yet available for use.</p> </li> 
+        /// <li> <p>ACTIVE: The pool is active and available for use.</p> </li> 
+        /// <li> <p>DELETING: The pool is being deleted.</p> </li> 
         /// </ul>
         pub fn set_status(mut self, input: std::option::Option<crate::model::PoolStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The type of message for the pool to use.</p>
         pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
@@ -4682,12 +4421,8 @@ pub mod create_pool_output {
             self
         }
         /// <p>The type of message for the pool to use.</p>
-        pub fn set_message_type(
-            mut self,
-            input: std::option::Option<crate::model::MessageType>,
-        ) -> Self {
-            self.message_type = input;
-            self
+        pub fn set_message_type(mut self, input: std::option::Option<crate::model::MessageType>) -> Self {
+            self.message_type = input; self
         }
         /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
         pub fn two_way_enabled(mut self, input: bool) -> Self {
@@ -4696,8 +4431,7 @@ pub mod create_pool_output {
         }
         /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
         pub fn set_two_way_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.two_way_enabled = input;
-            self
+            self.two_way_enabled = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
         pub fn two_way_channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4705,12 +4439,8 @@ pub mod create_pool_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-        pub fn set_two_way_channel_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.two_way_channel_arn = input;
-            self
+        pub fn set_two_way_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.two_way_channel_arn = input; self
         }
         /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
         pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
@@ -4718,12 +4448,8 @@ pub mod create_pool_output {
             self
         }
         /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
-        pub fn set_self_managed_opt_outs_enabled(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.self_managed_opt_outs_enabled = input;
-            self
+        pub fn set_self_managed_opt_outs_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.self_managed_opt_outs_enabled = input; self
         }
         /// <p>The name of the OptOutList associated with the pool.</p>
         pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4731,12 +4457,8 @@ pub mod create_pool_output {
             self
         }
         /// <p>The name of the OptOutList associated with the pool.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// <p>Indicates whether shared routes are enabled for the pool.</p>
         pub fn shared_routes_enabled(mut self, input: bool) -> Self {
@@ -4745,8 +4467,7 @@ pub mod create_pool_output {
         }
         /// <p>Indicates whether shared routes are enabled for the pool.</p>
         pub fn set_shared_routes_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.shared_routes_enabled = input;
-            self
+            self.shared_routes_enabled = input; self
         }
         /// <p>When set to true deletion protection is enabled. By default this is set to false. </p>
         pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
@@ -4755,8 +4476,7 @@ pub mod create_pool_output {
         }
         /// <p>When set to true deletion protection is enabled. By default this is set to false. </p>
         pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.deletion_protection_enabled = input;
-            self
+            self.deletion_protection_enabled = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -4765,17 +4485,13 @@ pub mod create_pool_output {
         /// <p>An array of tags (key and value pairs) associated with the pool.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of tags (key and value pairs) associated with the pool.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4783,33 +4499,45 @@ pub mod create_pool_output {
             self
         }
         /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`CreatePoolOutput`](crate::output::CreatePoolOutput).
         pub fn build(self) -> crate::output::CreatePoolOutput {
             crate::output::CreatePoolOutput {
-                pool_arn: self.pool_arn,
-                pool_id: self.pool_id,
-                status: self.status,
-                message_type: self.message_type,
-                two_way_enabled: self.two_way_enabled.unwrap_or_default(),
-                two_way_channel_arn: self.two_way_channel_arn,
-                self_managed_opt_outs_enabled: self
-                    .self_managed_opt_outs_enabled
-                    .unwrap_or_default(),
-                opt_out_list_name: self.opt_out_list_name,
-                shared_routes_enabled: self.shared_routes_enabled.unwrap_or_default(),
-                deletion_protection_enabled: self.deletion_protection_enabled.unwrap_or_default(),
-                tags: self.tags,
-                created_timestamp: self.created_timestamp,
+                pool_arn: self.pool_arn
+                ,
+                pool_id: self.pool_id
+                ,
+                status: self.status
+                ,
+                message_type: self.message_type
+                ,
+                two_way_enabled: self.two_way_enabled
+                    .unwrap_or_default()
+                ,
+                two_way_channel_arn: self.two_way_channel_arn
+                ,
+                self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled
+                    .unwrap_or_default()
+                ,
+                opt_out_list_name: self.opt_out_list_name
+                ,
+                shared_routes_enabled: self.shared_routes_enabled
+                    .unwrap_or_default()
+                ,
+                deletion_protection_enabled: self.deletion_protection_enabled
+                    .unwrap_or_default()
+                ,
+                tags: self.tags
+                ,
+                created_timestamp: self.created_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePoolOutput {
     /// Creates a new builder-style object to manufacture [`CreatePoolOutput`](crate::output::CreatePoolOutput).
@@ -4821,7 +4549,7 @@ impl CreatePoolOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateOptOutListOutput {
+pub struct CreateOptOutListOutput  {
     /// <p>The Amazon Resource Name (ARN) for the OptOutList.</p>
     #[doc(hidden)]
     pub opt_out_list_arn: std::option::Option<std::string::String>,
@@ -4837,25 +4565,25 @@ pub struct CreateOptOutListOutput {
 }
 impl CreateOptOutListOutput {
     /// <p>The Amazon Resource Name (ARN) for the OptOutList.</p>
-    pub fn opt_out_list_arn(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_arn(&self) -> std::option::Option<& str> {
         self.opt_out_list_arn.as_deref()
     }
     /// <p>The name of the new OptOutList.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>An array of tags (key and value pairs) associated with the new OptOutList.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 /// See [`CreateOptOutListOutput`](crate::output::CreateOptOutListOutput).
 pub mod create_opt_out_list_output {
-
+    
     /// A builder for [`CreateOptOutListOutput`](crate::output::CreateOptOutListOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4871,12 +4599,8 @@ pub mod create_opt_out_list_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the OptOutList.</p>
-        pub fn set_opt_out_list_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_arn = input;
-            self
+        pub fn set_opt_out_list_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_arn = input; self
         }
         /// <p>The name of the new OptOutList.</p>
         pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4884,12 +4608,8 @@ pub mod create_opt_out_list_output {
             self
         }
         /// <p>The name of the new OptOutList.</p>
-        pub fn set_opt_out_list_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.opt_out_list_name = input;
-            self
+        pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.opt_out_list_name = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -4898,17 +4618,13 @@ pub mod create_opt_out_list_output {
         /// <p>An array of tags (key and value pairs) associated with the new OptOutList.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of tags (key and value pairs) associated with the new OptOutList.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4916,23 +4632,25 @@ pub mod create_opt_out_list_output {
             self
         }
         /// <p>The time when the pool was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`CreateOptOutListOutput`](crate::output::CreateOptOutListOutput).
         pub fn build(self) -> crate::output::CreateOptOutListOutput {
             crate::output::CreateOptOutListOutput {
-                opt_out_list_arn: self.opt_out_list_arn,
-                opt_out_list_name: self.opt_out_list_name,
-                tags: self.tags,
-                created_timestamp: self.created_timestamp,
+                opt_out_list_arn: self.opt_out_list_arn
+                ,
+                opt_out_list_name: self.opt_out_list_name
+                ,
+                tags: self.tags
+                ,
+                created_timestamp: self.created_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateOptOutListOutput {
     /// Creates a new builder-style object to manufacture [`CreateOptOutListOutput`](crate::output::CreateOptOutListOutput).
@@ -4944,7 +4662,7 @@ impl CreateOptOutListOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEventDestinationOutput {
+pub struct CreateEventDestinationOutput  {
     /// <p>The ARN of the configuration set.</p>
     #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
@@ -4957,21 +4675,21 @@ pub struct CreateEventDestinationOutput {
 }
 impl CreateEventDestinationOutput {
     /// <p>The ARN of the configuration set.</p>
-    pub fn configuration_set_arn(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_arn(&self) -> std::option::Option<& str> {
         self.configuration_set_arn.as_deref()
     }
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The details of the destination where events are logged.</p>
-    pub fn event_destination(&self) -> std::option::Option<&crate::model::EventDestination> {
+    pub fn event_destination(&self) -> std::option::Option<& crate::model::EventDestination> {
         self.event_destination.as_ref()
     }
 }
 /// See [`CreateEventDestinationOutput`](crate::output::CreateEventDestinationOutput).
 pub mod create_event_destination_output {
-
+    
     /// A builder for [`CreateEventDestinationOutput`](crate::output::CreateEventDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4986,12 +4704,8 @@ pub mod create_event_destination_output {
             self
         }
         /// <p>The ARN of the configuration set.</p>
-        pub fn set_configuration_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_arn = input;
-            self
+        pub fn set_configuration_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_arn = input; self
         }
         /// <p>The name of the configuration set.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4999,12 +4713,8 @@ pub mod create_event_destination_output {
             self
         }
         /// <p>The name of the configuration set.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// <p>The details of the destination where events are logged.</p>
         pub fn event_destination(mut self, input: crate::model::EventDestination) -> Self {
@@ -5012,22 +4722,23 @@ pub mod create_event_destination_output {
             self
         }
         /// <p>The details of the destination where events are logged.</p>
-        pub fn set_event_destination(
-            mut self,
-            input: std::option::Option<crate::model::EventDestination>,
-        ) -> Self {
-            self.event_destination = input;
-            self
+        pub fn set_event_destination(mut self, input: std::option::Option<crate::model::EventDestination>) -> Self {
+            self.event_destination = input; self
         }
         /// Consumes the builder and constructs a [`CreateEventDestinationOutput`](crate::output::CreateEventDestinationOutput).
         pub fn build(self) -> crate::output::CreateEventDestinationOutput {
             crate::output::CreateEventDestinationOutput {
-                configuration_set_arn: self.configuration_set_arn,
-                configuration_set_name: self.configuration_set_name,
-                event_destination: self.event_destination,
+                configuration_set_arn: self.configuration_set_arn
+                ,
+                configuration_set_name: self.configuration_set_name
+                ,
+                event_destination: self.event_destination
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateEventDestinationOutput {
     /// Creates a new builder-style object to manufacture [`CreateEventDestinationOutput`](crate::output::CreateEventDestinationOutput).
@@ -5039,7 +4750,7 @@ impl CreateEventDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConfigurationSetOutput {
+pub struct CreateConfigurationSetOutput  {
     /// <p>The Amazon Resource Name (ARN) of the newly created configuration set.</p>
     #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
@@ -5055,25 +4766,25 @@ pub struct CreateConfigurationSetOutput {
 }
 impl CreateConfigurationSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the newly created configuration set.</p>
-    pub fn configuration_set_arn(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_arn(&self) -> std::option::Option<& str> {
         self.configuration_set_arn.as_deref()
     }
     /// <p>The name of the new configuration set.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>An array of key and value pair tags that's associated with the configuration set.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The time when the configuration set was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 /// See [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
 pub mod create_configuration_set_output {
-
+    
     /// A builder for [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5089,12 +4800,8 @@ pub mod create_configuration_set_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the newly created configuration set.</p>
-        pub fn set_configuration_set_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_arn = input;
-            self
+        pub fn set_configuration_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_arn = input; self
         }
         /// <p>The name of the new configuration set.</p>
         pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5102,12 +4809,8 @@ pub mod create_configuration_set_output {
             self
         }
         /// <p>The name of the new configuration set.</p>
-        pub fn set_configuration_set_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_set_name = input;
-            self
+        pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_set_name = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -5116,17 +4819,13 @@ pub mod create_configuration_set_output {
         /// <p>An array of key and value pair tags that's associated with the configuration set.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>An array of key and value pair tags that's associated with the configuration set.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The time when the configuration set was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5134,23 +4833,25 @@ pub mod create_configuration_set_output {
             self
         }
         /// <p>The time when the configuration set was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
         pub fn build(self) -> crate::output::CreateConfigurationSetOutput {
             crate::output::CreateConfigurationSetOutput {
-                configuration_set_arn: self.configuration_set_arn,
-                configuration_set_name: self.configuration_set_name,
-                tags: self.tags,
-                created_timestamp: self.created_timestamp,
+                configuration_set_arn: self.configuration_set_arn
+                ,
+                configuration_set_name: self.configuration_set_name
+                ,
+                tags: self.tags
+                ,
+                created_timestamp: self.created_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateConfigurationSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
@@ -5162,7 +4863,7 @@ impl CreateConfigurationSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateOriginationIdentityOutput {
+pub struct AssociateOriginationIdentityOutput  {
     /// <p>The Amazon Resource Name (ARN) of the pool that is now associated with the origination identity.</p>
     #[doc(hidden)]
     pub pool_arn: std::option::Option<std::string::String>,
@@ -5181,29 +4882,29 @@ pub struct AssociateOriginationIdentityOutput {
 }
 impl AssociateOriginationIdentityOutput {
     /// <p>The Amazon Resource Name (ARN) of the pool that is now associated with the origination identity.</p>
-    pub fn pool_arn(&self) -> std::option::Option<&str> {
+    pub fn pool_arn(&self) -> std::option::Option<& str> {
         self.pool_arn.as_deref()
     }
     /// <p>The PoolId of the pool that is now associated with the origination identity.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> std::option::Option<& str> {
         self.pool_id.as_deref()
     }
     /// <p>The PhoneNumberArn or SenderIdArn of the origination identity.</p>
-    pub fn origination_identity_arn(&self) -> std::option::Option<&str> {
+    pub fn origination_identity_arn(&self) -> std::option::Option<& str> {
         self.origination_identity_arn.as_deref()
     }
     /// <p>The PhoneNumberId or SenderId of the origination identity.</p>
-    pub fn origination_identity(&self) -> std::option::Option<&str> {
+    pub fn origination_identity(&self) -> std::option::Option<& str> {
         self.origination_identity.as_deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> std::option::Option<&str> {
+    pub fn iso_country_code(&self) -> std::option::Option<& str> {
         self.iso_country_code.as_deref()
     }
 }
 /// See [`AssociateOriginationIdentityOutput`](crate::output::AssociateOriginationIdentityOutput).
 pub mod associate_origination_identity_output {
-
+    
     /// A builder for [`AssociateOriginationIdentityOutput`](crate::output::AssociateOriginationIdentityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5221,8 +4922,7 @@ pub mod associate_origination_identity_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the pool that is now associated with the origination identity.</p>
         pub fn set_pool_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_arn = input;
-            self
+            self.pool_arn = input; self
         }
         /// <p>The PoolId of the pool that is now associated with the origination identity.</p>
         pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5231,8 +4931,7 @@ pub mod associate_origination_identity_output {
         }
         /// <p>The PoolId of the pool that is now associated with the origination identity.</p>
         pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pool_id = input;
-            self
+            self.pool_id = input; self
         }
         /// <p>The PhoneNumberArn or SenderIdArn of the origination identity.</p>
         pub fn origination_identity_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5240,12 +4939,8 @@ pub mod associate_origination_identity_output {
             self
         }
         /// <p>The PhoneNumberArn or SenderIdArn of the origination identity.</p>
-        pub fn set_origination_identity_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origination_identity_arn = input;
-            self
+        pub fn set_origination_identity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origination_identity_arn = input; self
         }
         /// <p>The PhoneNumberId or SenderId of the origination identity.</p>
         pub fn origination_identity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5253,12 +4948,8 @@ pub mod associate_origination_identity_output {
             self
         }
         /// <p>The PhoneNumberId or SenderId of the origination identity.</p>
-        pub fn set_origination_identity(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.origination_identity = input;
-            self
+        pub fn set_origination_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.origination_identity = input; self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
         pub fn iso_country_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5266,24 +4957,27 @@ pub mod associate_origination_identity_output {
             self
         }
         /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-        pub fn set_iso_country_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.iso_country_code = input;
-            self
+        pub fn set_iso_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.iso_country_code = input; self
         }
         /// Consumes the builder and constructs a [`AssociateOriginationIdentityOutput`](crate::output::AssociateOriginationIdentityOutput).
         pub fn build(self) -> crate::output::AssociateOriginationIdentityOutput {
             crate::output::AssociateOriginationIdentityOutput {
-                pool_arn: self.pool_arn,
-                pool_id: self.pool_id,
-                origination_identity_arn: self.origination_identity_arn,
-                origination_identity: self.origination_identity,
-                iso_country_code: self.iso_country_code,
+                pool_arn: self.pool_arn
+                ,
+                pool_id: self.pool_id
+                ,
+                origination_identity_arn: self.origination_identity_arn
+                ,
+                origination_identity: self.origination_identity
+                ,
+                iso_country_code: self.iso_country_code
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateOriginationIdentityOutput {
     /// Creates a new builder-style object to manufacture [`AssociateOriginationIdentityOutput`](crate::output::AssociateOriginationIdentityOutput).
@@ -5291,3 +4985,4 @@ impl AssociateOriginationIdentityOutput {
         crate::output::associate_origination_identity_output::Builder::default()
     }
 }
+

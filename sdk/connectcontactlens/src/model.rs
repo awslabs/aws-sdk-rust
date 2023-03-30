@@ -3,7 +3,7 @@
 /// <p>An analyzed segment for a real-time analysis session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RealtimeContactAnalysisSegment {
+pub struct RealtimeContactAnalysisSegment  {
     /// <p>The analyzed transcript.</p>
     #[doc(hidden)]
     pub transcript: std::option::Option<crate::model::Transcript>,
@@ -13,17 +13,17 @@ pub struct RealtimeContactAnalysisSegment {
 }
 impl RealtimeContactAnalysisSegment {
     /// <p>The analyzed transcript.</p>
-    pub fn transcript(&self) -> std::option::Option<&crate::model::Transcript> {
+    pub fn transcript(&self) -> std::option::Option<& crate::model::Transcript> {
         self.transcript.as_ref()
     }
     /// <p>The matched category rules.</p>
-    pub fn categories(&self) -> std::option::Option<&crate::model::Categories> {
+    pub fn categories(&self) -> std::option::Option<& crate::model::Categories> {
         self.categories.as_ref()
     }
 }
 /// See [`RealtimeContactAnalysisSegment`](crate::model::RealtimeContactAnalysisSegment).
 pub mod realtime_contact_analysis_segment {
-
+    
     /// A builder for [`RealtimeContactAnalysisSegment`](crate::model::RealtimeContactAnalysisSegment).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -37,12 +37,8 @@ pub mod realtime_contact_analysis_segment {
             self
         }
         /// <p>The analyzed transcript.</p>
-        pub fn set_transcript(
-            mut self,
-            input: std::option::Option<crate::model::Transcript>,
-        ) -> Self {
-            self.transcript = input;
-            self
+        pub fn set_transcript(mut self, input: std::option::Option<crate::model::Transcript>) -> Self {
+            self.transcript = input; self
         }
         /// <p>The matched category rules.</p>
         pub fn categories(mut self, input: crate::model::Categories) -> Self {
@@ -50,21 +46,21 @@ pub mod realtime_contact_analysis_segment {
             self
         }
         /// <p>The matched category rules.</p>
-        pub fn set_categories(
-            mut self,
-            input: std::option::Option<crate::model::Categories>,
-        ) -> Self {
-            self.categories = input;
-            self
+        pub fn set_categories(mut self, input: std::option::Option<crate::model::Categories>) -> Self {
+            self.categories = input; self
         }
         /// Consumes the builder and constructs a [`RealtimeContactAnalysisSegment`](crate::model::RealtimeContactAnalysisSegment).
         pub fn build(self) -> crate::model::RealtimeContactAnalysisSegment {
             crate::model::RealtimeContactAnalysisSegment {
-                transcript: self.transcript,
-                categories: self.categories,
+                transcript: self.transcript
+                ,
+                categories: self.categories
+                ,
             }
         }
     }
+    
+    
 }
 impl RealtimeContactAnalysisSegment {
     /// Creates a new builder-style object to manufacture [`RealtimeContactAnalysisSegment`](crate::model::RealtimeContactAnalysisSegment).
@@ -76,40 +72,32 @@ impl RealtimeContactAnalysisSegment {
 /// <p>Provides the category rules that are used to automatically categorize contacts based on uttered keywords and phrases.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Categories {
+pub struct Categories  {
     /// <p>The category rules that have been matched in the analyzed segment.</p>
     #[doc(hidden)]
     pub matched_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The category rule that was matched and when it occurred in the transcript.</p>
     #[doc(hidden)]
-    pub matched_details: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::CategoryDetails>,
-    >,
+    pub matched_details: std::option::Option<std::collections::HashMap<std::string::String, crate::model::CategoryDetails>>,
 }
 impl Categories {
     /// <p>The category rules that have been matched in the analyzed segment.</p>
-    pub fn matched_categories(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn matched_categories(&self) -> std::option::Option<& [std::string::String]> {
         self.matched_categories.as_deref()
     }
     /// <p>The category rule that was matched and when it occurred in the transcript.</p>
-    pub fn matched_details(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::CategoryDetails>,
-    > {
+    pub fn matched_details(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::CategoryDetails>> {
         self.matched_details.as_ref()
     }
 }
 /// See [`Categories`](crate::model::Categories).
 pub mod categories {
-
+    
     /// A builder for [`Categories`](crate::model::Categories).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) matched_categories: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) matched_details: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::CategoryDetails>,
-        >,
+        pub(crate) matched_details: std::option::Option<std::collections::HashMap<std::string::String, crate::model::CategoryDetails>>,
     }
     impl Builder {
         /// Appends an item to `matched_categories`.
@@ -119,51 +107,41 @@ pub mod categories {
         /// <p>The category rules that have been matched in the analyzed segment.</p>
         pub fn matched_categories(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.matched_categories.unwrap_or_default();
-            v.push(input.into());
-            self.matched_categories = Some(v);
-            self
+                            v.push(input.into());
+                            self.matched_categories = Some(v);
+                            self
         }
         /// <p>The category rules that have been matched in the analyzed segment.</p>
-        pub fn set_matched_categories(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.matched_categories = input;
-            self
+        pub fn set_matched_categories(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.matched_categories = input; self
         }
         /// Adds a key-value pair to `matched_details`.
         ///
         /// To override the contents of this collection use [`set_matched_details`](Self::set_matched_details).
         ///
         /// <p>The category rule that was matched and when it occurred in the transcript.</p>
-        pub fn matched_details(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::CategoryDetails,
-        ) -> Self {
+        pub fn matched_details(mut self, k: impl Into<std::string::String>, v: crate::model::CategoryDetails) -> Self {
             let mut hash_map = self.matched_details.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.matched_details = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.matched_details = Some(hash_map);
+                            self
         }
         /// <p>The category rule that was matched and when it occurred in the transcript.</p>
-        pub fn set_matched_details(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::CategoryDetails>,
-            >,
-        ) -> Self {
-            self.matched_details = input;
-            self
+        pub fn set_matched_details(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::CategoryDetails>>) -> Self {
+            self.matched_details = input; self
         }
         /// Consumes the builder and constructs a [`Categories`](crate::model::Categories).
         pub fn build(self) -> crate::model::Categories {
             crate::model::Categories {
-                matched_categories: self.matched_categories,
-                matched_details: self.matched_details,
+                matched_categories: self.matched_categories
+                ,
+                matched_details: self.matched_details
+                ,
             }
         }
     }
+    
+    
 }
 impl Categories {
     /// Creates a new builder-style object to manufacture [`Categories`](crate::model::Categories).
@@ -175,25 +153,24 @@ impl Categories {
 /// <p>Provides information about the category rule that was matched.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CategoryDetails {
+pub struct CategoryDetails  {
     /// <p>The section of audio where the category rule was detected.</p>
     #[doc(hidden)]
     pub points_of_interest: std::option::Option<std::vec::Vec<crate::model::PointOfInterest>>,
 }
 impl CategoryDetails {
     /// <p>The section of audio where the category rule was detected.</p>
-    pub fn points_of_interest(&self) -> std::option::Option<&[crate::model::PointOfInterest]> {
+    pub fn points_of_interest(&self) -> std::option::Option<& [crate::model::PointOfInterest]> {
         self.points_of_interest.as_deref()
     }
 }
 /// See [`CategoryDetails`](crate::model::CategoryDetails).
 pub mod category_details {
-
+    
     /// A builder for [`CategoryDetails`](crate::model::CategoryDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) points_of_interest:
-            std::option::Option<std::vec::Vec<crate::model::PointOfInterest>>,
+        pub(crate) points_of_interest: std::option::Option<std::vec::Vec<crate::model::PointOfInterest>>,
     }
     impl Builder {
         /// Appends an item to `points_of_interest`.
@@ -203,25 +180,24 @@ pub mod category_details {
         /// <p>The section of audio where the category rule was detected.</p>
         pub fn points_of_interest(mut self, input: crate::model::PointOfInterest) -> Self {
             let mut v = self.points_of_interest.unwrap_or_default();
-            v.push(input);
-            self.points_of_interest = Some(v);
-            self
+                            v.push(input);
+                            self.points_of_interest = Some(v);
+                            self
         }
         /// <p>The section of audio where the category rule was detected.</p>
-        pub fn set_points_of_interest(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PointOfInterest>>,
-        ) -> Self {
-            self.points_of_interest = input;
-            self
+        pub fn set_points_of_interest(mut self, input: std::option::Option<std::vec::Vec<crate::model::PointOfInterest>>) -> Self {
+            self.points_of_interest = input; self
         }
         /// Consumes the builder and constructs a [`CategoryDetails`](crate::model::CategoryDetails).
         pub fn build(self) -> crate::model::CategoryDetails {
             crate::model::CategoryDetails {
-                points_of_interest: self.points_of_interest,
+                points_of_interest: self.points_of_interest
+                ,
             }
         }
     }
+    
+    
 }
 impl CategoryDetails {
     /// Creates a new builder-style object to manufacture [`CategoryDetails`](crate::model::CategoryDetails).
@@ -233,7 +209,7 @@ impl CategoryDetails {
 /// <p>The section of the contact audio where that category rule was detected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PointOfInterest {
+pub struct PointOfInterest  {
     /// <p>The beginning offset in milliseconds where the category rule was detected.</p>
     #[doc(hidden)]
     pub begin_offset_millis: i32,
@@ -253,7 +229,7 @@ impl PointOfInterest {
 }
 /// See [`PointOfInterest`](crate::model::PointOfInterest).
 pub mod point_of_interest {
-
+    
     /// A builder for [`PointOfInterest`](crate::model::PointOfInterest).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -268,8 +244,7 @@ pub mod point_of_interest {
         }
         /// <p>The beginning offset in milliseconds where the category rule was detected.</p>
         pub fn set_begin_offset_millis(mut self, input: std::option::Option<i32>) -> Self {
-            self.begin_offset_millis = input;
-            self
+            self.begin_offset_millis = input; self
         }
         /// <p>The ending offset in milliseconds where the category rule was detected.</p>
         pub fn end_offset_millis(mut self, input: i32) -> Self {
@@ -278,17 +253,22 @@ pub mod point_of_interest {
         }
         /// <p>The ending offset in milliseconds where the category rule was detected.</p>
         pub fn set_end_offset_millis(mut self, input: std::option::Option<i32>) -> Self {
-            self.end_offset_millis = input;
-            self
+            self.end_offset_millis = input; self
         }
         /// Consumes the builder and constructs a [`PointOfInterest`](crate::model::PointOfInterest).
         pub fn build(self) -> crate::model::PointOfInterest {
             crate::model::PointOfInterest {
-                begin_offset_millis: self.begin_offset_millis.unwrap_or_default(),
-                end_offset_millis: self.end_offset_millis.unwrap_or_default(),
+                begin_offset_millis: self.begin_offset_millis
+                    .unwrap_or_default()
+                ,
+                end_offset_millis: self.end_offset_millis
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl PointOfInterest {
     /// Creates a new builder-style object to manufacture [`PointOfInterest`](crate::model::PointOfInterest).
@@ -300,7 +280,7 @@ impl PointOfInterest {
 /// <p>A list of messages in the session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Transcript {
+pub struct Transcript  {
     /// <p>The identifier of the transcript.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -328,19 +308,19 @@ pub struct Transcript {
 }
 impl Transcript {
     /// <p>The identifier of the transcript.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the participant.</p>
-    pub fn participant_id(&self) -> std::option::Option<&str> {
+    pub fn participant_id(&self) -> std::option::Option<& str> {
         self.participant_id.as_deref()
     }
     /// <p>The role of participant. For example, is it a customer, agent, or system.</p>
-    pub fn participant_role(&self) -> std::option::Option<&str> {
+    pub fn participant_role(&self) -> std::option::Option<& str> {
         self.participant_role.as_deref()
     }
     /// <p>The content of the transcript.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
     /// <p>The beginning offset in the contact for this transcript.</p>
@@ -352,17 +332,17 @@ impl Transcript {
         self.end_offset_millis
     }
     /// <p>The sentiment of the detected for this piece of transcript.</p>
-    pub fn sentiment(&self) -> std::option::Option<&crate::model::SentimentValue> {
+    pub fn sentiment(&self) -> std::option::Option<& crate::model::SentimentValue> {
         self.sentiment.as_ref()
     }
     /// <p>List of positions where issues were detected on the transcript.</p>
-    pub fn issues_detected(&self) -> std::option::Option<&[crate::model::IssueDetected]> {
+    pub fn issues_detected(&self) -> std::option::Option<& [crate::model::IssueDetected]> {
         self.issues_detected.as_deref()
     }
 }
 /// See [`Transcript`](crate::model::Transcript).
 pub mod transcript {
-
+    
     /// A builder for [`Transcript`](crate::model::Transcript).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -383,8 +363,7 @@ pub mod transcript {
         }
         /// <p>The identifier of the transcript.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The identifier of the participant.</p>
         pub fn participant_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -392,12 +371,8 @@ pub mod transcript {
             self
         }
         /// <p>The identifier of the participant.</p>
-        pub fn set_participant_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.participant_id = input;
-            self
+        pub fn set_participant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.participant_id = input; self
         }
         /// <p>The role of participant. For example, is it a customer, agent, or system.</p>
         pub fn participant_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -405,12 +380,8 @@ pub mod transcript {
             self
         }
         /// <p>The role of participant. For example, is it a customer, agent, or system.</p>
-        pub fn set_participant_role(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.participant_role = input;
-            self
+        pub fn set_participant_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.participant_role = input; self
         }
         /// <p>The content of the transcript.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -419,8 +390,7 @@ pub mod transcript {
         }
         /// <p>The content of the transcript.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
         /// <p>The beginning offset in the contact for this transcript.</p>
         pub fn begin_offset_millis(mut self, input: i32) -> Self {
@@ -429,8 +399,7 @@ pub mod transcript {
         }
         /// <p>The beginning offset in the contact for this transcript.</p>
         pub fn set_begin_offset_millis(mut self, input: std::option::Option<i32>) -> Self {
-            self.begin_offset_millis = input;
-            self
+            self.begin_offset_millis = input; self
         }
         /// <p>The end offset in the contact for this transcript.</p>
         pub fn end_offset_millis(mut self, input: i32) -> Self {
@@ -439,8 +408,7 @@ pub mod transcript {
         }
         /// <p>The end offset in the contact for this transcript.</p>
         pub fn set_end_offset_millis(mut self, input: std::option::Option<i32>) -> Self {
-            self.end_offset_millis = input;
-            self
+            self.end_offset_millis = input; self
         }
         /// <p>The sentiment of the detected for this piece of transcript.</p>
         pub fn sentiment(mut self, input: crate::model::SentimentValue) -> Self {
@@ -448,12 +416,8 @@ pub mod transcript {
             self
         }
         /// <p>The sentiment of the detected for this piece of transcript.</p>
-        pub fn set_sentiment(
-            mut self,
-            input: std::option::Option<crate::model::SentimentValue>,
-        ) -> Self {
-            self.sentiment = input;
-            self
+        pub fn set_sentiment(mut self, input: std::option::Option<crate::model::SentimentValue>) -> Self {
+            self.sentiment = input; self
         }
         /// Appends an item to `issues_detected`.
         ///
@@ -462,32 +426,40 @@ pub mod transcript {
         /// <p>List of positions where issues were detected on the transcript.</p>
         pub fn issues_detected(mut self, input: crate::model::IssueDetected) -> Self {
             let mut v = self.issues_detected.unwrap_or_default();
-            v.push(input);
-            self.issues_detected = Some(v);
-            self
+                            v.push(input);
+                            self.issues_detected = Some(v);
+                            self
         }
         /// <p>List of positions where issues were detected on the transcript.</p>
-        pub fn set_issues_detected(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IssueDetected>>,
-        ) -> Self {
-            self.issues_detected = input;
-            self
+        pub fn set_issues_detected(mut self, input: std::option::Option<std::vec::Vec<crate::model::IssueDetected>>) -> Self {
+            self.issues_detected = input; self
         }
         /// Consumes the builder and constructs a [`Transcript`](crate::model::Transcript).
         pub fn build(self) -> crate::model::Transcript {
             crate::model::Transcript {
-                id: self.id,
-                participant_id: self.participant_id,
-                participant_role: self.participant_role,
-                content: self.content,
-                begin_offset_millis: self.begin_offset_millis.unwrap_or_default(),
-                end_offset_millis: self.end_offset_millis.unwrap_or_default(),
-                sentiment: self.sentiment,
-                issues_detected: self.issues_detected,
+                id: self.id
+                ,
+                participant_id: self.participant_id
+                ,
+                participant_role: self.participant_role
+                ,
+                content: self.content
+                ,
+                begin_offset_millis: self.begin_offset_millis
+                    .unwrap_or_default()
+                ,
+                end_offset_millis: self.end_offset_millis
+                    .unwrap_or_default()
+                ,
+                sentiment: self.sentiment
+                ,
+                issues_detected: self.issues_detected
+                ,
             }
         }
     }
+    
+    
 }
 impl Transcript {
     /// Creates a new builder-style object to manufacture [`Transcript`](crate::model::Transcript).
@@ -499,20 +471,20 @@ impl Transcript {
 /// <p>Potential issues that are detected based on an artificial intelligence analysis of each turn in the conversation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IssueDetected {
+pub struct IssueDetected  {
     /// <p>The offset for when the issue was detected in the segment.</p>
     #[doc(hidden)]
     pub character_offsets: std::option::Option<crate::model::CharacterOffsets>,
 }
 impl IssueDetected {
     /// <p>The offset for when the issue was detected in the segment.</p>
-    pub fn character_offsets(&self) -> std::option::Option<&crate::model::CharacterOffsets> {
+    pub fn character_offsets(&self) -> std::option::Option<& crate::model::CharacterOffsets> {
         self.character_offsets.as_ref()
     }
 }
 /// See [`IssueDetected`](crate::model::IssueDetected).
 pub mod issue_detected {
-
+    
     /// A builder for [`IssueDetected`](crate::model::IssueDetected).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -525,20 +497,19 @@ pub mod issue_detected {
             self
         }
         /// <p>The offset for when the issue was detected in the segment.</p>
-        pub fn set_character_offsets(
-            mut self,
-            input: std::option::Option<crate::model::CharacterOffsets>,
-        ) -> Self {
-            self.character_offsets = input;
-            self
+        pub fn set_character_offsets(mut self, input: std::option::Option<crate::model::CharacterOffsets>) -> Self {
+            self.character_offsets = input; self
         }
         /// Consumes the builder and constructs a [`IssueDetected`](crate::model::IssueDetected).
         pub fn build(self) -> crate::model::IssueDetected {
             crate::model::IssueDetected {
-                character_offsets: self.character_offsets,
+                character_offsets: self.character_offsets
+                ,
             }
         }
     }
+    
+    
 }
 impl IssueDetected {
     /// Creates a new builder-style object to manufacture [`IssueDetected`](crate::model::IssueDetected).
@@ -550,7 +521,7 @@ impl IssueDetected {
 /// <p>For characters that were detected as issues, where they occur in the transcript.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CharacterOffsets {
+pub struct CharacterOffsets  {
     /// <p>The beginning of the issue.</p>
     #[doc(hidden)]
     pub begin_offset_char: i32,
@@ -570,7 +541,7 @@ impl CharacterOffsets {
 }
 /// See [`CharacterOffsets`](crate::model::CharacterOffsets).
 pub mod character_offsets {
-
+    
     /// A builder for [`CharacterOffsets`](crate::model::CharacterOffsets).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -585,8 +556,7 @@ pub mod character_offsets {
         }
         /// <p>The beginning of the issue.</p>
         pub fn set_begin_offset_char(mut self, input: std::option::Option<i32>) -> Self {
-            self.begin_offset_char = input;
-            self
+            self.begin_offset_char = input; self
         }
         /// <p>The end of the issue.</p>
         pub fn end_offset_char(mut self, input: i32) -> Self {
@@ -595,17 +565,22 @@ pub mod character_offsets {
         }
         /// <p>The end of the issue.</p>
         pub fn set_end_offset_char(mut self, input: std::option::Option<i32>) -> Self {
-            self.end_offset_char = input;
-            self
+            self.end_offset_char = input; self
         }
         /// Consumes the builder and constructs a [`CharacterOffsets`](crate::model::CharacterOffsets).
         pub fn build(self) -> crate::model::CharacterOffsets {
             crate::model::CharacterOffsets {
-                begin_offset_char: self.begin_offset_char.unwrap_or_default(),
-                end_offset_char: self.end_offset_char.unwrap_or_default(),
+                begin_offset_char: self.begin_offset_char
+                    .unwrap_or_default()
+                ,
+                end_offset_char: self.end_offset_char
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CharacterOffsets {
     /// Creates a new builder-style object to manufacture [`CharacterOffsets`](crate::model::CharacterOffsets).
@@ -620,9 +595,9 @@ impl CharacterOffsets {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let sentimentvalue = unimplemented!();
 /// match sentimentvalue {
@@ -645,22 +620,14 @@ impl CharacterOffsets {
 /// Specifically, when `sentimentvalue` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SentimentValue::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SentimentValue {
     #[allow(missing_docs)] // documentation missing in model
     Negative,
@@ -669,7 +636,7 @@ pub enum SentimentValue {
     #[allow(missing_docs)] // documentation missing in model
     Positive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SentimentValue {
     fn from(s: &str) -> Self {
@@ -677,17 +644,17 @@ impl std::convert::From<&str> for SentimentValue {
             "NEGATIVE" => SentimentValue::Negative,
             "NEUTRAL" => SentimentValue::Neutral,
             "POSITIVE" => SentimentValue::Positive,
-            other => SentimentValue::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SentimentValue::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SentimentValue {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SentimentValue::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SentimentValue::from(s))
+                }
+            }
 impl SentimentValue {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -695,12 +662,14 @@ impl SentimentValue {
             SentimentValue::Negative => "NEGATIVE",
             SentimentValue::Neutral => "NEUTRAL",
             SentimentValue::Positive => "POSITIVE",
-            SentimentValue::Unknown(value) => value.as_str(),
+            SentimentValue::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NEGATIVE", "NEUTRAL", "POSITIVE"]
+        &[
+            "NEGATIVE", "NEUTRAL", "POSITIVE"
+        ]
     }
 }
 impl AsRef<str> for SentimentValue {
@@ -708,3 +677,4 @@ impl AsRef<str> for SentimentValue {
         self.as_str()
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let supportdatasettype = unimplemented!();
 /// match supportdatasettype {
@@ -30,66 +30,51 @@
 /// Specifically, when `supportdatasettype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SupportDataSetType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SupportDataSetType {
     #[allow(missing_docs)] // documentation missing in model
     CustomerSupportContactsData,
     #[allow(missing_docs)] // documentation missing in model
     TestCustomerSupportContactsData,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SupportDataSetType {
     fn from(s: &str) -> Self {
         match s {
             "customer_support_contacts_data" => SupportDataSetType::CustomerSupportContactsData,
-            "test_customer_support_contacts_data" => {
-                SupportDataSetType::TestCustomerSupportContactsData
-            }
-            other => {
-                SupportDataSetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            "test_customer_support_contacts_data" => SupportDataSetType::TestCustomerSupportContactsData,
+            other => SupportDataSetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SupportDataSetType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SupportDataSetType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SupportDataSetType::from(s))
+                }
+            }
 impl SupportDataSetType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SupportDataSetType::CustomerSupportContactsData => "customer_support_contacts_data",
-            SupportDataSetType::TestCustomerSupportContactsData => {
-                "test_customer_support_contacts_data"
-            }
-            SupportDataSetType::Unknown(value) => value.as_str(),
+            SupportDataSetType::TestCustomerSupportContactsData => "test_customer_support_contacts_data",
+            SupportDataSetType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "customer_support_contacts_data",
-            "test_customer_support_contacts_data",
+            "customer_support_contacts_data", "test_customer_support_contacts_data"
         ]
     }
 }
@@ -105,9 +90,9 @@ impl AsRef<str> for SupportDataSetType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datasettype = unimplemented!();
 /// match datasettype {
@@ -152,22 +137,14 @@ impl AsRef<str> for SupportDataSetType {
 /// Specifically, when `datasettype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataSetType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DataSetType {
     #[allow(missing_docs)] // documentation missing in model
     CustomerProfileByGeography,
@@ -220,7 +197,7 @@ pub enum DataSetType {
     #[allow(missing_docs)] // documentation missing in model
     UsSalesAndUseTaxRecords,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataSetType {
     fn from(s: &str) -> Self {
@@ -228,69 +205,39 @@ impl std::convert::From<&str> for DataSetType {
             "customer_profile_by_geography" => DataSetType::CustomerProfileByGeography,
             "customer_profile_by_industry" => DataSetType::CustomerProfileByIndustry,
             "customer_profile_by_revenue" => DataSetType::CustomerProfileByRevenue,
-            "customer_subscriber_annual_subscriptions" => {
-                DataSetType::CustomerSubscriberAnnualSubscriptions
-            }
-            "customer_subscriber_hourly_monthly_subscriptions" => {
-                DataSetType::CustomerSubscriberHourlyMonthlySubscriptions
-            }
-            "daily_business_canceled_product_subscribers" => {
-                DataSetType::DailyBusinessCanceledProductSubscribers
-            }
+            "customer_subscriber_annual_subscriptions" => DataSetType::CustomerSubscriberAnnualSubscriptions,
+            "customer_subscriber_hourly_monthly_subscriptions" => DataSetType::CustomerSubscriberHourlyMonthlySubscriptions,
+            "daily_business_canceled_product_subscribers" => DataSetType::DailyBusinessCanceledProductSubscribers,
             "daily_business_fees" => DataSetType::DailyBusinessFees,
-            "daily_business_free_trial_conversions" => {
-                DataSetType::DailyBusinessFreeTrialConversions
-            }
+            "daily_business_free_trial_conversions" => DataSetType::DailyBusinessFreeTrialConversions,
             "daily_business_new_instances" => DataSetType::DailyBusinessNewInstances,
-            "daily_business_new_product_subscribers" => {
-                DataSetType::DailyBusinessNewProductSubscribers
-            }
-            "daily_business_usage_by_instance_type" => {
-                DataSetType::DailyBusinessUsageByInstanceType
-            }
-            "disbursed_amount_by_age_of_disbursed_funds" => {
-                DataSetType::DisbursedAmountByAgeOfDisbursedFunds
-            }
-            "disbursed_amount_by_age_of_past_due_funds" => {
-                DataSetType::DisbursedAmountByAgeOfPastDueFunds
-            }
-            "disbursed_amount_by_age_of_uncollected_funds" => {
-                DataSetType::DisbursedAmountByAgeOfUncollectedFunds
-            }
+            "daily_business_new_product_subscribers" => DataSetType::DailyBusinessNewProductSubscribers,
+            "daily_business_usage_by_instance_type" => DataSetType::DailyBusinessUsageByInstanceType,
+            "disbursed_amount_by_age_of_disbursed_funds" => DataSetType::DisbursedAmountByAgeOfDisbursedFunds,
+            "disbursed_amount_by_age_of_past_due_funds" => DataSetType::DisbursedAmountByAgeOfPastDueFunds,
+            "disbursed_amount_by_age_of_uncollected_funds" => DataSetType::DisbursedAmountByAgeOfUncollectedFunds,
             "disbursed_amount_by_customer_geo" => DataSetType::DisbursedAmountByCustomerGeo,
             "disbursed_amount_by_instance_hours" => DataSetType::DisbursedAmountByInstanceHours,
             "disbursed_amount_by_product" => DataSetType::DisbursedAmountByProduct,
-            "disbursed_amount_by_product_with_uncollected_funds" => {
-                DataSetType::DisbursedAmountByProductWithUncollectedFunds
-            }
-            "disbursed_amount_by_uncollected_funds_breakdown" => {
-                DataSetType::DisbursedAmountByUncollectedFundsBreakdown
-            }
-            "monthly_revenue_annual_subscriptions" => {
-                DataSetType::MonthlyRevenueAnnualSubscriptions
-            }
-            "monthly_revenue_billing_and_revenue_data" => {
-                DataSetType::MonthlyRevenueBillingAndRevenueData
-            }
-            "monthly_revenue_field_demonstration_usage" => {
-                DataSetType::MonthlyRevenueFieldDemonstrationUsage
-            }
-            "monthly_revenue_flexible_payment_schedule" => {
-                DataSetType::MonthlyRevenueFlexiblePaymentSchedule
-            }
+            "disbursed_amount_by_product_with_uncollected_funds" => DataSetType::DisbursedAmountByProductWithUncollectedFunds,
+            "disbursed_amount_by_uncollected_funds_breakdown" => DataSetType::DisbursedAmountByUncollectedFundsBreakdown,
+            "monthly_revenue_annual_subscriptions" => DataSetType::MonthlyRevenueAnnualSubscriptions,
+            "monthly_revenue_billing_and_revenue_data" => DataSetType::MonthlyRevenueBillingAndRevenueData,
+            "monthly_revenue_field_demonstration_usage" => DataSetType::MonthlyRevenueFieldDemonstrationUsage,
+            "monthly_revenue_flexible_payment_schedule" => DataSetType::MonthlyRevenueFlexiblePaymentSchedule,
             "sales_compensation_billed_revenue" => DataSetType::SalesCompensationBilledRevenue,
             "us_sales_and_use_tax_records" => DataSetType::UsSalesAndUseTaxRecords,
-            other => DataSetType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DataSetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DataSetType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataSetType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DataSetType::from(s))
+                }
+            }
 impl DataSetType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -298,89 +245,35 @@ impl DataSetType {
             DataSetType::CustomerProfileByGeography => "customer_profile_by_geography",
             DataSetType::CustomerProfileByIndustry => "customer_profile_by_industry",
             DataSetType::CustomerProfileByRevenue => "customer_profile_by_revenue",
-            DataSetType::CustomerSubscriberAnnualSubscriptions => {
-                "customer_subscriber_annual_subscriptions"
-            }
-            DataSetType::CustomerSubscriberHourlyMonthlySubscriptions => {
-                "customer_subscriber_hourly_monthly_subscriptions"
-            }
-            DataSetType::DailyBusinessCanceledProductSubscribers => {
-                "daily_business_canceled_product_subscribers"
-            }
+            DataSetType::CustomerSubscriberAnnualSubscriptions => "customer_subscriber_annual_subscriptions",
+            DataSetType::CustomerSubscriberHourlyMonthlySubscriptions => "customer_subscriber_hourly_monthly_subscriptions",
+            DataSetType::DailyBusinessCanceledProductSubscribers => "daily_business_canceled_product_subscribers",
             DataSetType::DailyBusinessFees => "daily_business_fees",
-            DataSetType::DailyBusinessFreeTrialConversions => {
-                "daily_business_free_trial_conversions"
-            }
+            DataSetType::DailyBusinessFreeTrialConversions => "daily_business_free_trial_conversions",
             DataSetType::DailyBusinessNewInstances => "daily_business_new_instances",
-            DataSetType::DailyBusinessNewProductSubscribers => {
-                "daily_business_new_product_subscribers"
-            }
-            DataSetType::DailyBusinessUsageByInstanceType => {
-                "daily_business_usage_by_instance_type"
-            }
-            DataSetType::DisbursedAmountByAgeOfDisbursedFunds => {
-                "disbursed_amount_by_age_of_disbursed_funds"
-            }
-            DataSetType::DisbursedAmountByAgeOfPastDueFunds => {
-                "disbursed_amount_by_age_of_past_due_funds"
-            }
-            DataSetType::DisbursedAmountByAgeOfUncollectedFunds => {
-                "disbursed_amount_by_age_of_uncollected_funds"
-            }
+            DataSetType::DailyBusinessNewProductSubscribers => "daily_business_new_product_subscribers",
+            DataSetType::DailyBusinessUsageByInstanceType => "daily_business_usage_by_instance_type",
+            DataSetType::DisbursedAmountByAgeOfDisbursedFunds => "disbursed_amount_by_age_of_disbursed_funds",
+            DataSetType::DisbursedAmountByAgeOfPastDueFunds => "disbursed_amount_by_age_of_past_due_funds",
+            DataSetType::DisbursedAmountByAgeOfUncollectedFunds => "disbursed_amount_by_age_of_uncollected_funds",
             DataSetType::DisbursedAmountByCustomerGeo => "disbursed_amount_by_customer_geo",
             DataSetType::DisbursedAmountByInstanceHours => "disbursed_amount_by_instance_hours",
             DataSetType::DisbursedAmountByProduct => "disbursed_amount_by_product",
-            DataSetType::DisbursedAmountByProductWithUncollectedFunds => {
-                "disbursed_amount_by_product_with_uncollected_funds"
-            }
-            DataSetType::DisbursedAmountByUncollectedFundsBreakdown => {
-                "disbursed_amount_by_uncollected_funds_breakdown"
-            }
-            DataSetType::MonthlyRevenueAnnualSubscriptions => {
-                "monthly_revenue_annual_subscriptions"
-            }
-            DataSetType::MonthlyRevenueBillingAndRevenueData => {
-                "monthly_revenue_billing_and_revenue_data"
-            }
-            DataSetType::MonthlyRevenueFieldDemonstrationUsage => {
-                "monthly_revenue_field_demonstration_usage"
-            }
-            DataSetType::MonthlyRevenueFlexiblePaymentSchedule => {
-                "monthly_revenue_flexible_payment_schedule"
-            }
+            DataSetType::DisbursedAmountByProductWithUncollectedFunds => "disbursed_amount_by_product_with_uncollected_funds",
+            DataSetType::DisbursedAmountByUncollectedFundsBreakdown => "disbursed_amount_by_uncollected_funds_breakdown",
+            DataSetType::MonthlyRevenueAnnualSubscriptions => "monthly_revenue_annual_subscriptions",
+            DataSetType::MonthlyRevenueBillingAndRevenueData => "monthly_revenue_billing_and_revenue_data",
+            DataSetType::MonthlyRevenueFieldDemonstrationUsage => "monthly_revenue_field_demonstration_usage",
+            DataSetType::MonthlyRevenueFlexiblePaymentSchedule => "monthly_revenue_flexible_payment_schedule",
             DataSetType::SalesCompensationBilledRevenue => "sales_compensation_billed_revenue",
             DataSetType::UsSalesAndUseTaxRecords => "us_sales_and_use_tax_records",
-            DataSetType::Unknown(value) => value.as_str(),
+            DataSetType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "customer_profile_by_geography",
-            "customer_profile_by_industry",
-            "customer_profile_by_revenue",
-            "customer_subscriber_annual_subscriptions",
-            "customer_subscriber_hourly_monthly_subscriptions",
-            "daily_business_canceled_product_subscribers",
-            "daily_business_fees",
-            "daily_business_free_trial_conversions",
-            "daily_business_new_instances",
-            "daily_business_new_product_subscribers",
-            "daily_business_usage_by_instance_type",
-            "disbursed_amount_by_age_of_disbursed_funds",
-            "disbursed_amount_by_age_of_past_due_funds",
-            "disbursed_amount_by_age_of_uncollected_funds",
-            "disbursed_amount_by_customer_geo",
-            "disbursed_amount_by_instance_hours",
-            "disbursed_amount_by_product",
-            "disbursed_amount_by_product_with_uncollected_funds",
-            "disbursed_amount_by_uncollected_funds_breakdown",
-            "monthly_revenue_annual_subscriptions",
-            "monthly_revenue_billing_and_revenue_data",
-            "monthly_revenue_field_demonstration_usage",
-            "monthly_revenue_flexible_payment_schedule",
-            "sales_compensation_billed_revenue",
-            "us_sales_and_use_tax_records",
+            "customer_profile_by_geography", "customer_profile_by_industry", "customer_profile_by_revenue", "customer_subscriber_annual_subscriptions", "customer_subscriber_hourly_monthly_subscriptions", "daily_business_canceled_product_subscribers", "daily_business_fees", "daily_business_free_trial_conversions", "daily_business_new_instances", "daily_business_new_product_subscribers", "daily_business_usage_by_instance_type", "disbursed_amount_by_age_of_disbursed_funds", "disbursed_amount_by_age_of_past_due_funds", "disbursed_amount_by_age_of_uncollected_funds", "disbursed_amount_by_customer_geo", "disbursed_amount_by_instance_hours", "disbursed_amount_by_product", "disbursed_amount_by_product_with_uncollected_funds", "disbursed_amount_by_uncollected_funds_breakdown", "monthly_revenue_annual_subscriptions", "monthly_revenue_billing_and_revenue_data", "monthly_revenue_field_demonstration_usage", "monthly_revenue_flexible_payment_schedule", "sales_compensation_billed_revenue", "us_sales_and_use_tax_records"
         ]
     }
 }
@@ -389,3 +282,4 @@ impl AsRef<str> for DataSetType {
         self.as_str()
     }
 }
+

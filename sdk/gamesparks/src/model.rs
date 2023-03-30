@@ -3,11 +3,11 @@
 /// <p>Properties that provide details of a stage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StageDetails {
+pub struct StageDetails  {
     /// <p>The name of the stage.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The game key associated with the stage.</p>
+    /// <p>The game key associated with the stage.</p> 
     /// <p> The game key is a unique identifier that the game client uses to connect to the GameSparks backend. </p>
     #[doc(hidden)]
     pub game_key: std::option::Option<std::string::String>,
@@ -31,61 +31,57 @@ pub struct StageDetails {
     pub state: std::option::Option<crate::model::StageState>,
     /// <p>The tags associated with the stage.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The Amazon CloudWatch log group for game runtimes deployed to the stage.</p>
     #[doc(hidden)]
     pub log_group: std::option::Option<std::string::String>,
 }
 impl StageDetails {
     /// <p>The name of the stage.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The game key associated with the stage.</p>
+    /// <p>The game key associated with the stage.</p> 
     /// <p> The game key is a unique identifier that the game client uses to connect to the GameSparks backend. </p>
-    pub fn game_key(&self) -> std::option::Option<&str> {
+    pub fn game_key(&self) -> std::option::Option<& str> {
         self.game_key.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the stage.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role used to run the game runtimes deployed to the stage.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> std::option::Option<& str> {
         self.role.as_deref()
     }
     /// <p>The description of the stage.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The timestamp of when the stage was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The timestamp of when the stage was last updated.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The state of the stage.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::StageState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::StageState> {
         self.state.as_ref()
     }
     /// <p>The tags associated with the stage.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The Amazon CloudWatch log group for game runtimes deployed to the stage.</p>
-    pub fn log_group(&self) -> std::option::Option<&str> {
+    pub fn log_group(&self) -> std::option::Option<& str> {
         self.log_group.as_deref()
     }
 }
 /// See [`StageDetails`](crate::model::StageDetails).
 pub mod stage_details {
-
+    
     /// A builder for [`StageDetails`](crate::model::StageDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -97,9 +93,7 @@ pub mod stage_details {
         pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) state: std::option::Option<crate::model::StageState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) log_group: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -110,20 +104,18 @@ pub mod stage_details {
         }
         /// <p>The name of the stage.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The game key associated with the stage.</p>
+        /// <p>The game key associated with the stage.</p> 
         /// <p> The game key is a unique identifier that the game client uses to connect to the GameSparks backend. </p>
         pub fn game_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_key = Some(input.into());
             self
         }
-        /// <p>The game key associated with the stage.</p>
+        /// <p>The game key associated with the stage.</p> 
         /// <p> The game key is a unique identifier that the game client uses to connect to the GameSparks backend. </p>
         pub fn set_game_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_key = input;
-            self
+            self.game_key = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the stage.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,8 +124,7 @@ pub mod stage_details {
         }
         /// <p>The Amazon Resource Name (ARN) of the stage.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the role used to run the game runtimes deployed to the stage.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,8 +133,7 @@ pub mod stage_details {
         }
         /// <p>The Amazon Resource Name (ARN) of the role used to run the game runtimes deployed to the stage.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role = input;
-            self
+            self.role = input; self
         }
         /// <p>The description of the stage.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -152,8 +142,7 @@ pub mod stage_details {
         }
         /// <p>The description of the stage.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The timestamp of when the stage was created.</p>
         pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -161,12 +150,8 @@ pub mod stage_details {
             self
         }
         /// <p>The timestamp of when the stage was created.</p>
-        pub fn set_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created = input;
-            self
+        pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created = input; self
         }
         /// <p>The timestamp of when the stage was last updated.</p>
         pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -174,12 +159,8 @@ pub mod stage_details {
             self
         }
         /// <p>The timestamp of when the stage was last updated.</p>
-        pub fn set_last_updated(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated = input;
-            self
+        pub fn set_last_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated = input; self
         }
         /// <p>The state of the stage.</p>
         pub fn state(mut self, input: crate::model::StageState) -> Self {
@@ -188,33 +169,22 @@ pub mod stage_details {
         }
         /// <p>The state of the stage.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::StageState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the stage.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags associated with the stage.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The Amazon CloudWatch log group for game runtimes deployed to the stage.</p>
         pub fn log_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -223,25 +193,36 @@ pub mod stage_details {
         }
         /// <p>The Amazon CloudWatch log group for game runtimes deployed to the stage.</p>
         pub fn set_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.log_group = input;
-            self
+            self.log_group = input; self
         }
         /// Consumes the builder and constructs a [`StageDetails`](crate::model::StageDetails).
         pub fn build(self) -> crate::model::StageDetails {
             crate::model::StageDetails {
-                name: self.name,
-                game_key: self.game_key,
-                arn: self.arn,
-                role: self.role,
-                description: self.description,
-                created: self.created,
-                last_updated: self.last_updated,
-                state: self.state,
-                tags: self.tags,
-                log_group: self.log_group,
+                name: self.name
+                ,
+                game_key: self.game_key
+                ,
+                arn: self.arn
+                ,
+                role: self.role
+                ,
+                description: self.description
+                ,
+                created: self.created
+                ,
+                last_updated: self.last_updated
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
+                log_group: self.log_group
+                ,
             }
         }
     }
+    
+    
 }
 impl StageDetails {
     /// Creates a new builder-style object to manufacture [`StageDetails`](crate::model::StageDetails).
@@ -256,9 +237,9 @@ impl StageDetails {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let stagestate = unimplemented!();
 /// match stagestate {
@@ -280,58 +261,52 @@ impl StageDetails {
 /// Specifically, when `stagestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StageState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StageState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StageState {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => StageState::Active,
             "DELETING" => StageState::Deleting,
-            other => StageState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StageState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StageState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StageState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StageState::from(s))
+                }
+            }
 impl StageState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StageState::Active => "ACTIVE",
             StageState::Deleting => "DELETING",
-            StageState::Unknown(value) => value.as_str(),
+            StageState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DELETING"]
+        &[
+            "ACTIVE", "DELETING"
+        ]
     }
 }
 impl AsRef<str> for StageState {
@@ -343,7 +318,7 @@ impl AsRef<str> for StageState {
 /// <p>Properties that provide details of a snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotDetails {
+pub struct SnapshotDetails  {
     /// <p>The identifier of the snapshot.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -352,8 +327,7 @@ pub struct SnapshotDetails {
     pub description: std::option::Option<std::string::String>,
     /// <p>The sections in the snapshot.</p>
     #[doc(hidden)]
-    pub sections:
-        std::option::Option<std::collections::HashMap<std::string::String, crate::model::Section>>,
+    pub sections: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Section>>,
     /// <p>The timestamp of when the snapshot was created.</p>
     #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
@@ -363,40 +337,35 @@ pub struct SnapshotDetails {
 }
 impl SnapshotDetails {
     /// <p>The identifier of the snapshot.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The description of the snapshot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The sections in the snapshot.</p>
-    pub fn sections(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Section>>
-    {
+    pub fn sections(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::Section>> {
         self.sections.as_ref()
     }
     /// <p>The timestamp of when the snapshot was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The timestamp of when the snapshot was last updated.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
 }
 /// See [`SnapshotDetails`](crate::model::SnapshotDetails).
 pub mod snapshot_details {
-
+    
     /// A builder for [`SnapshotDetails`](crate::model::SnapshotDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) sections: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::Section>,
-        >,
+        pub(crate) sections: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Section>>,
         pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -408,8 +377,7 @@ pub mod snapshot_details {
         }
         /// <p>The identifier of the snapshot.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The description of the snapshot.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -418,33 +386,22 @@ pub mod snapshot_details {
         }
         /// <p>The description of the snapshot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `sections`.
         ///
         /// To override the contents of this collection use [`set_sections`](Self::set_sections).
         ///
         /// <p>The sections in the snapshot.</p>
-        pub fn sections(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::Section,
-        ) -> Self {
+        pub fn sections(mut self, k: impl Into<std::string::String>, v: crate::model::Section) -> Self {
             let mut hash_map = self.sections.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.sections = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.sections = Some(hash_map);
+                            self
         }
         /// <p>The sections in the snapshot.</p>
-        pub fn set_sections(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::Section>,
-            >,
-        ) -> Self {
-            self.sections = input;
-            self
+        pub fn set_sections(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Section>>) -> Self {
+            self.sections = input; self
         }
         /// <p>The timestamp of when the snapshot was created.</p>
         pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -452,12 +409,8 @@ pub mod snapshot_details {
             self
         }
         /// <p>The timestamp of when the snapshot was created.</p>
-        pub fn set_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created = input;
-            self
+        pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created = input; self
         }
         /// <p>The timestamp of when the snapshot was last updated.</p>
         pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -465,24 +418,27 @@ pub mod snapshot_details {
             self
         }
         /// <p>The timestamp of when the snapshot was last updated.</p>
-        pub fn set_last_updated(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated = input;
-            self
+        pub fn set_last_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated = input; self
         }
         /// Consumes the builder and constructs a [`SnapshotDetails`](crate::model::SnapshotDetails).
         pub fn build(self) -> crate::model::SnapshotDetails {
             crate::model::SnapshotDetails {
-                id: self.id,
-                description: self.description,
-                sections: self.sections,
-                created: self.created,
-                last_updated: self.last_updated,
+                id: self.id
+                ,
+                description: self.description
+                ,
+                sections: self.sections
+                ,
+                created: self.created
+                ,
+                last_updated: self.last_updated
+                ,
             }
         }
     }
+    
+    
 }
 impl SnapshotDetails {
     /// Creates a new builder-style object to manufacture [`SnapshotDetails`](crate::model::SnapshotDetails).
@@ -494,7 +450,7 @@ impl SnapshotDetails {
 /// <p>The configuration section.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Section {
+pub struct Section  {
     /// <p>The name of the section.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -507,7 +463,7 @@ pub struct Section {
 }
 impl Section {
     /// <p>The name of the section.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The size, in bytes, of the section contents.</p>
@@ -515,13 +471,13 @@ impl Section {
         self.size
     }
     /// <p>The content of a configuration section.</p>
-    pub fn attributes(&self) -> std::option::Option<&aws_smithy_types::Document> {
+    pub fn attributes(&self) -> std::option::Option<& aws_smithy_types::Document> {
         self.attributes.as_ref()
     }
 }
 /// See [`Section`](crate::model::Section).
 pub mod section {
-
+    
     /// A builder for [`Section`](crate::model::Section).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -537,8 +493,7 @@ pub mod section {
         }
         /// <p>The name of the section.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The size, in bytes, of the section contents.</p>
         pub fn size(mut self, input: i32) -> Self {
@@ -547,8 +502,7 @@ pub mod section {
         }
         /// <p>The size, in bytes, of the section contents.</p>
         pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
-            self.size = input;
-            self
+            self.size = input; self
         }
         /// <p>The content of a configuration section.</p>
         pub fn attributes(mut self, input: aws_smithy_types::Document) -> Self {
@@ -556,22 +510,24 @@ pub mod section {
             self
         }
         /// <p>The content of a configuration section.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Document>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<aws_smithy_types::Document>) -> Self {
+            self.attributes = input; self
         }
         /// Consumes the builder and constructs a [`Section`](crate::model::Section).
         pub fn build(self) -> crate::model::Section {
             crate::model::Section {
-                name: self.name,
-                size: self.size.unwrap_or_default(),
-                attributes: self.attributes,
+                name: self.name
+                ,
+                size: self.size
+                    .unwrap_or_default()
+                ,
+                attributes: self.attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl Section {
     /// Creates a new builder-style object to manufacture [`Section`](crate::model::Section).
@@ -580,15 +536,14 @@ impl Section {
     }
 }
 
-/// <p>Details about the game configuration.</p>
+/// <p>Details about the game configuration.</p> 
 /// <p> The game configuration is organized into named sections, where the schema of each section is defined by an extension. The schema for these sections can be retrieved using the <code>GetExtensionVersion</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GameConfigurationDetails {
+pub struct GameConfigurationDetails  {
     /// <p>Configuration data, organized by section name.</p>
     #[doc(hidden)]
-    pub sections:
-        std::option::Option<std::collections::HashMap<std::string::String, crate::model::Section>>,
+    pub sections: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Section>>,
     /// <p>The date when the game was created.</p>
     #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
@@ -598,30 +553,25 @@ pub struct GameConfigurationDetails {
 }
 impl GameConfigurationDetails {
     /// <p>Configuration data, organized by section name.</p>
-    pub fn sections(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Section>>
-    {
+    pub fn sections(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::Section>> {
         self.sections.as_ref()
     }
     /// <p>The date when the game was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date when the game was last modified.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
 }
 /// See [`GameConfigurationDetails`](crate::model::GameConfigurationDetails).
 pub mod game_configuration_details {
-
+    
     /// A builder for [`GameConfigurationDetails`](crate::model::GameConfigurationDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) sections: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::Section>,
-        >,
+        pub(crate) sections: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Section>>,
         pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
     }
@@ -631,25 +581,15 @@ pub mod game_configuration_details {
         /// To override the contents of this collection use [`set_sections`](Self::set_sections).
         ///
         /// <p>Configuration data, organized by section name.</p>
-        pub fn sections(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::Section,
-        ) -> Self {
+        pub fn sections(mut self, k: impl Into<std::string::String>, v: crate::model::Section) -> Self {
             let mut hash_map = self.sections.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.sections = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.sections = Some(hash_map);
+                            self
         }
         /// <p>Configuration data, organized by section name.</p>
-        pub fn set_sections(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::Section>,
-            >,
-        ) -> Self {
-            self.sections = input;
-            self
+        pub fn set_sections(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Section>>) -> Self {
+            self.sections = input; self
         }
         /// <p>The date when the game was created.</p>
         pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -657,12 +597,8 @@ pub mod game_configuration_details {
             self
         }
         /// <p>The date when the game was created.</p>
-        pub fn set_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created = input;
-            self
+        pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created = input; self
         }
         /// <p>The date when the game was last modified.</p>
         pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -670,22 +606,23 @@ pub mod game_configuration_details {
             self
         }
         /// <p>The date when the game was last modified.</p>
-        pub fn set_last_updated(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated = input;
-            self
+        pub fn set_last_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated = input; self
         }
         /// Consumes the builder and constructs a [`GameConfigurationDetails`](crate::model::GameConfigurationDetails).
         pub fn build(self) -> crate::model::GameConfigurationDetails {
             crate::model::GameConfigurationDetails {
-                sections: self.sections,
-                created: self.created,
-                last_updated: self.last_updated,
+                sections: self.sections
+                ,
+                created: self.created
+                ,
+                last_updated: self.last_updated
+                ,
             }
         }
     }
+    
+    
 }
 impl GameConfigurationDetails {
     /// Creates a new builder-style object to manufacture [`GameConfigurationDetails`](crate::model::GameConfigurationDetails).
@@ -697,45 +634,45 @@ impl GameConfigurationDetails {
 /// <p>A single modification to the configuration section.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SectionModification {
+pub struct SectionModification  {
     /// <p>The name of the section to be modified.</p>
     #[doc(hidden)]
     pub section: std::option::Option<std::string::String>,
     /// <p>The path within the section content to be modified.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
-    /// <p>The operation to be performed on a configuration section.</p>
+    /// <p>The operation to be performed on a configuration section.</p> 
     /// <p> Content can be added, deleted, or replaced within a section. </p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::model::Operation>,
-    /// <p>For add and replace operations, this is the value that will be used.</p>
+    /// <p>For add and replace operations, this is the value that will be used.</p> 
     /// <p> This field should be omitted for delete operations. </p>
     #[doc(hidden)]
     pub value: std::option::Option<aws_smithy_types::Document>,
 }
 impl SectionModification {
     /// <p>The name of the section to be modified.</p>
-    pub fn section(&self) -> std::option::Option<&str> {
+    pub fn section(&self) -> std::option::Option<& str> {
         self.section.as_deref()
     }
     /// <p>The path within the section content to be modified.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
-    /// <p>The operation to be performed on a configuration section.</p>
+    /// <p>The operation to be performed on a configuration section.</p> 
     /// <p> Content can be added, deleted, or replaced within a section. </p>
-    pub fn operation(&self) -> std::option::Option<&crate::model::Operation> {
+    pub fn operation(&self) -> std::option::Option<& crate::model::Operation> {
         self.operation.as_ref()
     }
-    /// <p>For add and replace operations, this is the value that will be used.</p>
+    /// <p>For add and replace operations, this is the value that will be used.</p> 
     /// <p> This field should be omitted for delete operations. </p>
-    pub fn value(&self) -> std::option::Option<&aws_smithy_types::Document> {
+    pub fn value(&self) -> std::option::Option<& aws_smithy_types::Document> {
         self.value.as_ref()
     }
 }
 /// See [`SectionModification`](crate::model::SectionModification).
 pub mod section_modification {
-
+    
     /// A builder for [`SectionModification`](crate::model::SectionModification).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -752,8 +689,7 @@ pub mod section_modification {
         }
         /// <p>The name of the section to be modified.</p>
         pub fn set_section(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.section = input;
-            self
+            self.section = input; self
         }
         /// <p>The path within the section content to be modified.</p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -762,46 +698,46 @@ pub mod section_modification {
         }
         /// <p>The path within the section content to be modified.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
-        /// <p>The operation to be performed on a configuration section.</p>
+        /// <p>The operation to be performed on a configuration section.</p> 
         /// <p> Content can be added, deleted, or replaced within a section. </p>
         pub fn operation(mut self, input: crate::model::Operation) -> Self {
             self.operation = Some(input);
             self
         }
-        /// <p>The operation to be performed on a configuration section.</p>
+        /// <p>The operation to be performed on a configuration section.</p> 
         /// <p> Content can be added, deleted, or replaced within a section. </p>
-        pub fn set_operation(
-            mut self,
-            input: std::option::Option<crate::model::Operation>,
-        ) -> Self {
-            self.operation = input;
-            self
+        pub fn set_operation(mut self, input: std::option::Option<crate::model::Operation>) -> Self {
+            self.operation = input; self
         }
-        /// <p>For add and replace operations, this is the value that will be used.</p>
+        /// <p>For add and replace operations, this is the value that will be used.</p> 
         /// <p> This field should be omitted for delete operations. </p>
         pub fn value(mut self, input: aws_smithy_types::Document) -> Self {
             self.value = Some(input);
             self
         }
-        /// <p>For add and replace operations, this is the value that will be used.</p>
+        /// <p>For add and replace operations, this is the value that will be used.</p> 
         /// <p> This field should be omitted for delete operations. </p>
         pub fn set_value(mut self, input: std::option::Option<aws_smithy_types::Document>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`SectionModification`](crate::model::SectionModification).
         pub fn build(self) -> crate::model::SectionModification {
             crate::model::SectionModification {
-                section: self.section,
-                path: self.path,
-                operation: self.operation,
-                value: self.value,
+                section: self.section
+                ,
+                path: self.path
+                ,
+                operation: self.operation
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl SectionModification {
     /// Creates a new builder-style object to manufacture [`SectionModification`](crate::model::SectionModification).
@@ -816,9 +752,9 @@ impl SectionModification {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let operation = unimplemented!();
 /// match operation {
@@ -841,22 +777,14 @@ impl SectionModification {
 /// Specifically, when `operation` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Operation::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Operation {
     #[allow(missing_docs)] // documentation missing in model
     Add,
@@ -865,7 +793,7 @@ pub enum Operation {
     #[allow(missing_docs)] // documentation missing in model
     Replace,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Operation {
     fn from(s: &str) -> Self {
@@ -873,17 +801,17 @@ impl std::convert::From<&str> for Operation {
             "ADD" => Operation::Add,
             "REMOVE" => Operation::Remove,
             "REPLACE" => Operation::Replace,
-            other => Operation::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Operation::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Operation {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Operation::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Operation::from(s))
+                }
+            }
 impl Operation {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -891,12 +819,14 @@ impl Operation {
             Operation::Add => "ADD",
             Operation::Remove => "REMOVE",
             Operation::Replace => "REPLACE",
-            Operation::Unknown(value) => value.as_str(),
+            Operation::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ADD", "REMOVE", "REPLACE"]
+        &[
+            "ADD", "REMOVE", "REPLACE"
+        ]
     }
 }
 impl AsRef<str> for Operation {
@@ -908,7 +838,7 @@ impl AsRef<str> for Operation {
 /// <p>Details about a game.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GameDetails {
+pub struct GameDetails  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -932,32 +862,31 @@ pub struct GameDetails {
     pub enable_termination_protection: bool,
     /// <p>The tags associated with the game.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GameDetails {
     /// <p>The name of the game.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of this game.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The description of the game.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The date when the game was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date when the game was last modified.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The state of the game.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::GameState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::GameState> {
         self.state.as_ref()
     }
     /// <p>Determines if the game can be deleted.</p>
@@ -965,16 +894,13 @@ impl GameDetails {
         self.enable_termination_protection
     }
     /// <p>The tags associated with the game.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GameDetails`](crate::model::GameDetails).
 pub mod game_details {
-
+    
     /// A builder for [`GameDetails`](crate::model::GameDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -985,9 +911,7 @@ pub mod game_details {
         pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) state: std::option::Option<crate::model::GameState>,
         pub(crate) enable_termination_protection: std::option::Option<bool>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the game.</p>
@@ -997,8 +921,7 @@ pub mod game_details {
         }
         /// <p>The name of the game.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of this game.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1007,8 +930,7 @@ pub mod game_details {
         }
         /// <p>The Amazon Resource Name (ARN) of this game.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The description of the game.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1017,8 +939,7 @@ pub mod game_details {
         }
         /// <p>The description of the game.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The date when the game was created.</p>
         pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1026,12 +947,8 @@ pub mod game_details {
             self
         }
         /// <p>The date when the game was created.</p>
-        pub fn set_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created = input;
-            self
+        pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created = input; self
         }
         /// <p>The date when the game was last modified.</p>
         pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1039,12 +956,8 @@ pub mod game_details {
             self
         }
         /// <p>The date when the game was last modified.</p>
-        pub fn set_last_updated(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated = input;
-            self
+        pub fn set_last_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated = input; self
         }
         /// <p>The state of the game.</p>
         pub fn state(mut self, input: crate::model::GameState) -> Self {
@@ -1053,8 +966,7 @@ pub mod game_details {
         }
         /// <p>The state of the game.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::GameState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>Determines if the game can be deleted.</p>
         pub fn enable_termination_protection(mut self, input: bool) -> Self {
@@ -1062,54 +974,49 @@ pub mod game_details {
             self
         }
         /// <p>Determines if the game can be deleted.</p>
-        pub fn set_enable_termination_protection(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.enable_termination_protection = input;
-            self
+        pub fn set_enable_termination_protection(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_termination_protection = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the game.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags associated with the game.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GameDetails`](crate::model::GameDetails).
         pub fn build(self) -> crate::model::GameDetails {
             crate::model::GameDetails {
-                name: self.name,
-                arn: self.arn,
-                description: self.description,
-                created: self.created,
-                last_updated: self.last_updated,
-                state: self.state,
-                enable_termination_protection: self
-                    .enable_termination_protection
-                    .unwrap_or_default(),
-                tags: self.tags,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
+                created: self.created
+                ,
+                last_updated: self.last_updated
+                ,
+                state: self.state
+                ,
+                enable_termination_protection: self.enable_termination_protection
+                    .unwrap_or_default()
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GameDetails {
     /// Creates a new builder-style object to manufacture [`GameDetails`](crate::model::GameDetails).
@@ -1124,9 +1031,9 @@ impl GameDetails {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let gamestate = unimplemented!();
 /// match gamestate {
@@ -1148,58 +1055,52 @@ impl GameDetails {
 /// Specifically, when `gamestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GameState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum GameState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GameState {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => GameState::Active,
             "DELETING" => GameState::Deleting,
-            other => GameState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => GameState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for GameState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GameState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(GameState::from(s))
+                }
+            }
 impl GameState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GameState::Active => "ACTIVE",
             GameState::Deleting => "DELETING",
-            GameState::Unknown(value) => value.as_str(),
+            GameState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DELETING"]
+        &[
+            "ACTIVE", "DELETING"
+        ]
     }
 }
 impl AsRef<str> for GameState {
@@ -1211,7 +1112,7 @@ impl AsRef<str> for GameState {
 /// <p>Properties that provide details of a stage deployment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StageDeploymentDetails {
+pub struct StageDeploymentDetails  {
     /// <p>The identifier of the deployment.</p>
     #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
@@ -1236,37 +1137,37 @@ pub struct StageDeploymentDetails {
 }
 impl StageDeploymentDetails {
     /// <p>The identifier of the deployment.</p>
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// <p>The identifier of the snapshot associated with the stage deployment.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The type of action of the stage deployment.</p>
-    pub fn deployment_action(&self) -> std::option::Option<&crate::model::DeploymentAction> {
+    pub fn deployment_action(&self) -> std::option::Option<& crate::model::DeploymentAction> {
         self.deployment_action.as_ref()
     }
     /// <p>The state of the deployment.</p>
-    pub fn deployment_state(&self) -> std::option::Option<&crate::model::DeploymentState> {
+    pub fn deployment_state(&self) -> std::option::Option<& crate::model::DeploymentState> {
         self.deployment_state.as_ref()
     }
     /// <p>The timestamp of when the stage deployment was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The timestamp of when the deployment was last updated.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The result of the deployment.</p>
-    pub fn deployment_result(&self) -> std::option::Option<&crate::model::DeploymentResult> {
+    pub fn deployment_result(&self) -> std::option::Option<& crate::model::DeploymentResult> {
         self.deployment_result.as_ref()
     }
 }
 /// See [`StageDeploymentDetails`](crate::model::StageDeploymentDetails).
 pub mod stage_deployment_details {
-
+    
     /// A builder for [`StageDeploymentDetails`](crate::model::StageDeploymentDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1285,12 +1186,8 @@ pub mod stage_deployment_details {
             self
         }
         /// <p>The identifier of the deployment.</p>
-        pub fn set_deployment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_id = input;
-            self
+        pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_id = input; self
         }
         /// <p>The identifier of the snapshot associated with the stage deployment.</p>
         pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1299,8 +1196,7 @@ pub mod stage_deployment_details {
         }
         /// <p>The identifier of the snapshot associated with the stage deployment.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_id = input;
-            self
+            self.snapshot_id = input; self
         }
         /// <p>The type of action of the stage deployment.</p>
         pub fn deployment_action(mut self, input: crate::model::DeploymentAction) -> Self {
@@ -1308,12 +1204,8 @@ pub mod stage_deployment_details {
             self
         }
         /// <p>The type of action of the stage deployment.</p>
-        pub fn set_deployment_action(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentAction>,
-        ) -> Self {
-            self.deployment_action = input;
-            self
+        pub fn set_deployment_action(mut self, input: std::option::Option<crate::model::DeploymentAction>) -> Self {
+            self.deployment_action = input; self
         }
         /// <p>The state of the deployment.</p>
         pub fn deployment_state(mut self, input: crate::model::DeploymentState) -> Self {
@@ -1321,12 +1213,8 @@ pub mod stage_deployment_details {
             self
         }
         /// <p>The state of the deployment.</p>
-        pub fn set_deployment_state(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentState>,
-        ) -> Self {
-            self.deployment_state = input;
-            self
+        pub fn set_deployment_state(mut self, input: std::option::Option<crate::model::DeploymentState>) -> Self {
+            self.deployment_state = input; self
         }
         /// <p>The timestamp of when the stage deployment was created.</p>
         pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1334,12 +1222,8 @@ pub mod stage_deployment_details {
             self
         }
         /// <p>The timestamp of when the stage deployment was created.</p>
-        pub fn set_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created = input;
-            self
+        pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created = input; self
         }
         /// <p>The timestamp of when the deployment was last updated.</p>
         pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1347,12 +1231,8 @@ pub mod stage_deployment_details {
             self
         }
         /// <p>The timestamp of when the deployment was last updated.</p>
-        pub fn set_last_updated(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated = input;
-            self
+        pub fn set_last_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated = input; self
         }
         /// <p>The result of the deployment.</p>
         pub fn deployment_result(mut self, input: crate::model::DeploymentResult) -> Self {
@@ -1360,26 +1240,31 @@ pub mod stage_deployment_details {
             self
         }
         /// <p>The result of the deployment.</p>
-        pub fn set_deployment_result(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentResult>,
-        ) -> Self {
-            self.deployment_result = input;
-            self
+        pub fn set_deployment_result(mut self, input: std::option::Option<crate::model::DeploymentResult>) -> Self {
+            self.deployment_result = input; self
         }
         /// Consumes the builder and constructs a [`StageDeploymentDetails`](crate::model::StageDeploymentDetails).
         pub fn build(self) -> crate::model::StageDeploymentDetails {
             crate::model::StageDeploymentDetails {
-                deployment_id: self.deployment_id,
-                snapshot_id: self.snapshot_id,
-                deployment_action: self.deployment_action,
-                deployment_state: self.deployment_state,
-                created: self.created,
-                last_updated: self.last_updated,
-                deployment_result: self.deployment_result,
+                deployment_id: self.deployment_id
+                ,
+                snapshot_id: self.snapshot_id
+                ,
+                deployment_action: self.deployment_action
+                ,
+                deployment_state: self.deployment_state
+                ,
+                created: self.created
+                ,
+                last_updated: self.last_updated
+                ,
+                deployment_result: self.deployment_result
+                ,
             }
         }
     }
+    
+    
 }
 impl StageDeploymentDetails {
     /// Creates a new builder-style object to manufacture [`StageDeploymentDetails`](crate::model::StageDeploymentDetails).
@@ -1391,7 +1276,7 @@ impl StageDeploymentDetails {
 /// <p>The result of the deployment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeploymentResult {
+pub struct DeploymentResult  {
     /// <p>The type of deployment result.</p>
     #[doc(hidden)]
     pub result_code: std::option::Option<crate::model::ResultCode>,
@@ -1401,17 +1286,17 @@ pub struct DeploymentResult {
 }
 impl DeploymentResult {
     /// <p>The type of deployment result.</p>
-    pub fn result_code(&self) -> std::option::Option<&crate::model::ResultCode> {
+    pub fn result_code(&self) -> std::option::Option<& crate::model::ResultCode> {
         self.result_code.as_ref()
     }
     /// <p>Details about the deployment result.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`DeploymentResult`](crate::model::DeploymentResult).
 pub mod deployment_result {
-
+    
     /// A builder for [`DeploymentResult`](crate::model::DeploymentResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1425,12 +1310,8 @@ pub mod deployment_result {
             self
         }
         /// <p>The type of deployment result.</p>
-        pub fn set_result_code(
-            mut self,
-            input: std::option::Option<crate::model::ResultCode>,
-        ) -> Self {
-            self.result_code = input;
-            self
+        pub fn set_result_code(mut self, input: std::option::Option<crate::model::ResultCode>) -> Self {
+            self.result_code = input; self
         }
         /// <p>Details about the deployment result.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1439,17 +1320,20 @@ pub mod deployment_result {
         }
         /// <p>Details about the deployment result.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DeploymentResult`](crate::model::DeploymentResult).
         pub fn build(self) -> crate::model::DeploymentResult {
             crate::model::DeploymentResult {
-                result_code: self.result_code,
-                message: self.message,
+                result_code: self.result_code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DeploymentResult {
     /// Creates a new builder-style object to manufacture [`DeploymentResult`](crate::model::DeploymentResult).
@@ -1464,9 +1348,9 @@ impl DeploymentResult {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resultcode = unimplemented!();
 /// match resultcode {
@@ -1489,22 +1373,14 @@ impl DeploymentResult {
 /// Specifically, when `resultcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResultCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResultCode {
     #[allow(missing_docs)] // documentation missing in model
     InvalidRoleFailure,
@@ -1513,7 +1389,7 @@ pub enum ResultCode {
     #[allow(missing_docs)] // documentation missing in model
     UnspecifiedFailure,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResultCode {
     fn from(s: &str) -> Self {
@@ -1521,17 +1397,17 @@ impl std::convert::From<&str> for ResultCode {
             "INVALID_ROLE_FAILURE" => ResultCode::InvalidRoleFailure,
             "SUCCESS" => ResultCode::Success,
             "UNSPECIFIED_FAILURE" => ResultCode::UnspecifiedFailure,
-            other => ResultCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResultCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResultCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResultCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResultCode::from(s))
+                }
+            }
 impl ResultCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1539,12 +1415,14 @@ impl ResultCode {
             ResultCode::InvalidRoleFailure => "INVALID_ROLE_FAILURE",
             ResultCode::Success => "SUCCESS",
             ResultCode::UnspecifiedFailure => "UNSPECIFIED_FAILURE",
-            ResultCode::Unknown(value) => value.as_str(),
+            ResultCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INVALID_ROLE_FAILURE", "SUCCESS", "UNSPECIFIED_FAILURE"]
+        &[
+            "INVALID_ROLE_FAILURE", "SUCCESS", "UNSPECIFIED_FAILURE"
+        ]
     }
 }
 impl AsRef<str> for ResultCode {
@@ -1559,9 +1437,9 @@ impl AsRef<str> for ResultCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deploymentstate = unimplemented!();
 /// match deploymentstate {
@@ -1585,22 +1463,14 @@ impl AsRef<str> for ResultCode {
 /// Specifically, when `deploymentstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeploymentState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeploymentState {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -1611,7 +1481,7 @@ pub enum DeploymentState {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeploymentState {
     fn from(s: &str) -> Self {
@@ -1620,17 +1490,17 @@ impl std::convert::From<&str> for DeploymentState {
             "FAILED" => DeploymentState::Failed,
             "IN_PROGRESS" => DeploymentState::InProgress,
             "PENDING" => DeploymentState::Pending,
-            other => DeploymentState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DeploymentState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeploymentState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeploymentState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeploymentState::from(s))
+                }
+            }
 impl DeploymentState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1639,12 +1509,14 @@ impl DeploymentState {
             DeploymentState::Failed => "FAILED",
             DeploymentState::InProgress => "IN_PROGRESS",
             DeploymentState::Pending => "PENDING",
-            DeploymentState::Unknown(value) => value.as_str(),
+            DeploymentState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "FAILED", "IN_PROGRESS", "PENDING"]
+        &[
+            "COMPLETED", "FAILED", "IN_PROGRESS", "PENDING"
+        ]
     }
 }
 impl AsRef<str> for DeploymentState {
@@ -1659,9 +1531,9 @@ impl AsRef<str> for DeploymentState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deploymentaction = unimplemented!();
 /// match deploymentaction {
@@ -1683,58 +1555,52 @@ impl AsRef<str> for DeploymentState {
 /// Specifically, when `deploymentaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeploymentAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeploymentAction {
     #[allow(missing_docs)] // documentation missing in model
     Deploy,
     #[allow(missing_docs)] // documentation missing in model
     Undeploy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeploymentAction {
     fn from(s: &str) -> Self {
         match s {
             "DEPLOY" => DeploymentAction::Deploy,
             "UNDEPLOY" => DeploymentAction::Undeploy,
-            other => DeploymentAction::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DeploymentAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeploymentAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeploymentAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeploymentAction::from(s))
+                }
+            }
 impl DeploymentAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentAction::Deploy => "DEPLOY",
             DeploymentAction::Undeploy => "UNDEPLOY",
-            DeploymentAction::Unknown(value) => value.as_str(),
+            DeploymentAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEPLOY", "UNDEPLOY"]
+        &[
+            "DEPLOY", "UNDEPLOY"
+        ]
     }
 }
 impl AsRef<str> for DeploymentAction {
@@ -1746,11 +1612,11 @@ impl AsRef<str> for DeploymentAction {
 /// <p>Properties that specify the code generator for a generated code job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Generator {
+pub struct Generator  {
     /// <p>The platform that will be used to run the generated code.</p>
     #[doc(hidden)]
     pub target_platform: std::option::Option<std::string::String>,
-    /// <p>The programming language for the generated code.</p>
+    /// <p>The programming language for the generated code.</p> 
     /// <p> Not all languages are supported for each platform. For cases where multiple languages are supported, this parameter specifies the language to be used. If this value is omitted, the default language for the target platform will be used. </p>
     #[doc(hidden)]
     pub language: std::option::Option<std::string::String>,
@@ -1760,22 +1626,22 @@ pub struct Generator {
 }
 impl Generator {
     /// <p>The platform that will be used to run the generated code.</p>
-    pub fn target_platform(&self) -> std::option::Option<&str> {
+    pub fn target_platform(&self) -> std::option::Option<& str> {
         self.target_platform.as_deref()
     }
-    /// <p>The programming language for the generated code.</p>
+    /// <p>The programming language for the generated code.</p> 
     /// <p> Not all languages are supported for each platform. For cases where multiple languages are supported, this parameter specifies the language to be used. If this value is omitted, the default language for the target platform will be used. </p>
-    pub fn language(&self) -> std::option::Option<&str> {
+    pub fn language(&self) -> std::option::Option<& str> {
         self.language.as_deref()
     }
     /// <p>The target version of the GameSparks Game SDK.</p>
-    pub fn game_sdk_version(&self) -> std::option::Option<&str> {
+    pub fn game_sdk_version(&self) -> std::option::Option<& str> {
         self.game_sdk_version.as_deref()
     }
 }
 /// See [`Generator`](crate::model::Generator).
 pub mod generator {
-
+    
     /// A builder for [`Generator`](crate::model::Generator).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1790,24 +1656,19 @@ pub mod generator {
             self
         }
         /// <p>The platform that will be used to run the generated code.</p>
-        pub fn set_target_platform(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_platform = input;
-            self
+        pub fn set_target_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_platform = input; self
         }
-        /// <p>The programming language for the generated code.</p>
+        /// <p>The programming language for the generated code.</p> 
         /// <p> Not all languages are supported for each platform. For cases where multiple languages are supported, this parameter specifies the language to be used. If this value is omitted, the default language for the target platform will be used. </p>
         pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
             self.language = Some(input.into());
             self
         }
-        /// <p>The programming language for the generated code.</p>
+        /// <p>The programming language for the generated code.</p> 
         /// <p> Not all languages are supported for each platform. For cases where multiple languages are supported, this parameter specifies the language to be used. If this value is omitted, the default language for the target platform will be used. </p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.language = input;
-            self
+            self.language = input; self
         }
         /// <p>The target version of the GameSparks Game SDK.</p>
         pub fn game_sdk_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1815,22 +1676,23 @@ pub mod generator {
             self
         }
         /// <p>The target version of the GameSparks Game SDK.</p>
-        pub fn set_game_sdk_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.game_sdk_version = input;
-            self
+        pub fn set_game_sdk_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.game_sdk_version = input; self
         }
         /// Consumes the builder and constructs a [`Generator`](crate::model::Generator).
         pub fn build(self) -> crate::model::Generator {
             crate::model::Generator {
-                target_platform: self.target_platform,
-                language: self.language,
-                game_sdk_version: self.game_sdk_version,
+                target_platform: self.target_platform
+                ,
+                language: self.language
+                ,
+                game_sdk_version: self.game_sdk_version
+                ,
             }
         }
     }
+    
+    
 }
 impl Generator {
     /// Creates a new builder-style object to manufacture [`Generator`](crate::model::Generator).
@@ -1842,11 +1704,11 @@ impl Generator {
 /// <p>The summary of the properties of a stage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StageSummary {
+pub struct StageSummary  {
     /// <p>The name of the stage.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The game key associated with the stage.</p>
+    /// <p>The game key associated with the stage.</p> 
     /// <p> The game key is a unique identifier that the game client uses to connect to the GameSparks backend. </p>
     #[doc(hidden)]
     pub game_key: std::option::Option<std::string::String>,
@@ -1858,38 +1720,34 @@ pub struct StageSummary {
     pub state: std::option::Option<crate::model::StageState>,
     /// <p>The tags associated with the stage.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl StageSummary {
     /// <p>The name of the stage.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The game key associated with the stage.</p>
+    /// <p>The game key associated with the stage.</p> 
     /// <p> The game key is a unique identifier that the game client uses to connect to the GameSparks backend. </p>
-    pub fn game_key(&self) -> std::option::Option<&str> {
+    pub fn game_key(&self) -> std::option::Option<& str> {
         self.game_key.as_deref()
     }
     /// <p>The description of the stage.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The state of the stage.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::StageState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::StageState> {
         self.state.as_ref()
     }
     /// <p>The tags associated with the stage.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`StageSummary`](crate::model::StageSummary).
 pub mod stage_summary {
-
+    
     /// A builder for [`StageSummary`](crate::model::StageSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1897,9 +1755,7 @@ pub mod stage_summary {
         pub(crate) game_key: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::StageState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the stage.</p>
@@ -1909,20 +1765,18 @@ pub mod stage_summary {
         }
         /// <p>The name of the stage.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
-        /// <p>The game key associated with the stage.</p>
+        /// <p>The game key associated with the stage.</p> 
         /// <p> The game key is a unique identifier that the game client uses to connect to the GameSparks backend. </p>
         pub fn game_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.game_key = Some(input.into());
             self
         }
-        /// <p>The game key associated with the stage.</p>
+        /// <p>The game key associated with the stage.</p> 
         /// <p> The game key is a unique identifier that the game client uses to connect to the GameSparks backend. </p>
         pub fn set_game_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.game_key = input;
-            self
+            self.game_key = input; self
         }
         /// <p>The description of the stage.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1931,8 +1785,7 @@ pub mod stage_summary {
         }
         /// <p>The description of the stage.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The state of the stage.</p>
         pub fn state(mut self, input: crate::model::StageState) -> Self {
@@ -1941,45 +1794,41 @@ pub mod stage_summary {
         }
         /// <p>The state of the stage.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::StageState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the stage.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags associated with the stage.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`StageSummary`](crate::model::StageSummary).
         pub fn build(self) -> crate::model::StageSummary {
             crate::model::StageSummary {
-                name: self.name,
-                game_key: self.game_key,
-                description: self.description,
-                state: self.state,
-                tags: self.tags,
+                name: self.name
+                ,
+                game_key: self.game_key
+                ,
+                description: self.description
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl StageSummary {
     /// Creates a new builder-style object to manufacture [`StageSummary`](crate::model::StageSummary).
@@ -1991,7 +1840,7 @@ impl StageSummary {
 /// <p>The summary of the properties of a stage deployment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StageDeploymentSummary {
+pub struct StageDeploymentSummary  {
     /// <p>The identifier of the deployment.</p>
     #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
@@ -2013,33 +1862,33 @@ pub struct StageDeploymentSummary {
 }
 impl StageDeploymentSummary {
     /// <p>The identifier of the deployment.</p>
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> std::option::Option<& str> {
         self.deployment_id.as_deref()
     }
     /// <p>The identifier of the snapshot associated with the stage deployment.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> std::option::Option<& str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The type of action of the deployment.</p>
-    pub fn deployment_action(&self) -> std::option::Option<&crate::model::DeploymentAction> {
+    pub fn deployment_action(&self) -> std::option::Option<& crate::model::DeploymentAction> {
         self.deployment_action.as_ref()
     }
     /// <p>The state of the deployment.</p>
-    pub fn deployment_state(&self) -> std::option::Option<&crate::model::DeploymentState> {
+    pub fn deployment_state(&self) -> std::option::Option<& crate::model::DeploymentState> {
         self.deployment_state.as_ref()
     }
     /// <p>The timestamp of when the deployment was last updated.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The result of the deployment.</p>
-    pub fn deployment_result(&self) -> std::option::Option<&crate::model::DeploymentResult> {
+    pub fn deployment_result(&self) -> std::option::Option<& crate::model::DeploymentResult> {
         self.deployment_result.as_ref()
     }
 }
 /// See [`StageDeploymentSummary`](crate::model::StageDeploymentSummary).
 pub mod stage_deployment_summary {
-
+    
     /// A builder for [`StageDeploymentSummary`](crate::model::StageDeploymentSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2057,12 +1906,8 @@ pub mod stage_deployment_summary {
             self
         }
         /// <p>The identifier of the deployment.</p>
-        pub fn set_deployment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_id = input;
-            self
+        pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_id = input; self
         }
         /// <p>The identifier of the snapshot associated with the stage deployment.</p>
         pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2071,8 +1916,7 @@ pub mod stage_deployment_summary {
         }
         /// <p>The identifier of the snapshot associated with the stage deployment.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.snapshot_id = input;
-            self
+            self.snapshot_id = input; self
         }
         /// <p>The type of action of the deployment.</p>
         pub fn deployment_action(mut self, input: crate::model::DeploymentAction) -> Self {
@@ -2080,12 +1924,8 @@ pub mod stage_deployment_summary {
             self
         }
         /// <p>The type of action of the deployment.</p>
-        pub fn set_deployment_action(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentAction>,
-        ) -> Self {
-            self.deployment_action = input;
-            self
+        pub fn set_deployment_action(mut self, input: std::option::Option<crate::model::DeploymentAction>) -> Self {
+            self.deployment_action = input; self
         }
         /// <p>The state of the deployment.</p>
         pub fn deployment_state(mut self, input: crate::model::DeploymentState) -> Self {
@@ -2093,12 +1933,8 @@ pub mod stage_deployment_summary {
             self
         }
         /// <p>The state of the deployment.</p>
-        pub fn set_deployment_state(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentState>,
-        ) -> Self {
-            self.deployment_state = input;
-            self
+        pub fn set_deployment_state(mut self, input: std::option::Option<crate::model::DeploymentState>) -> Self {
+            self.deployment_state = input; self
         }
         /// <p>The timestamp of when the deployment was last updated.</p>
         pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2106,12 +1942,8 @@ pub mod stage_deployment_summary {
             self
         }
         /// <p>The timestamp of when the deployment was last updated.</p>
-        pub fn set_last_updated(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated = input;
-            self
+        pub fn set_last_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated = input; self
         }
         /// <p>The result of the deployment.</p>
         pub fn deployment_result(mut self, input: crate::model::DeploymentResult) -> Self {
@@ -2119,25 +1951,29 @@ pub mod stage_deployment_summary {
             self
         }
         /// <p>The result of the deployment.</p>
-        pub fn set_deployment_result(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentResult>,
-        ) -> Self {
-            self.deployment_result = input;
-            self
+        pub fn set_deployment_result(mut self, input: std::option::Option<crate::model::DeploymentResult>) -> Self {
+            self.deployment_result = input; self
         }
         /// Consumes the builder and constructs a [`StageDeploymentSummary`](crate::model::StageDeploymentSummary).
         pub fn build(self) -> crate::model::StageDeploymentSummary {
             crate::model::StageDeploymentSummary {
-                deployment_id: self.deployment_id,
-                snapshot_id: self.snapshot_id,
-                deployment_action: self.deployment_action,
-                deployment_state: self.deployment_state,
-                last_updated: self.last_updated,
-                deployment_result: self.deployment_result,
+                deployment_id: self.deployment_id
+                ,
+                snapshot_id: self.snapshot_id
+                ,
+                deployment_action: self.deployment_action
+                ,
+                deployment_state: self.deployment_state
+                ,
+                last_updated: self.last_updated
+                ,
+                deployment_result: self.deployment_result
+                ,
             }
         }
     }
+    
+    
 }
 impl StageDeploymentSummary {
     /// Creates a new builder-style object to manufacture [`StageDeploymentSummary`](crate::model::StageDeploymentSummary).
@@ -2149,7 +1985,7 @@ impl StageDeploymentSummary {
 /// <p>The summary of the properties of a snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotSummary {
+pub struct SnapshotSummary  {
     /// <p>The identifier of the snapshot.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2165,25 +2001,25 @@ pub struct SnapshotSummary {
 }
 impl SnapshotSummary {
     /// <p>The identifier of the snapshot.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The description of the snapshot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The timestamp of when the snapshot was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>Then timestamp of when the snapshot was last updated.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
 }
 /// See [`SnapshotSummary`](crate::model::SnapshotSummary).
 pub mod snapshot_summary {
-
+    
     /// A builder for [`SnapshotSummary`](crate::model::SnapshotSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2200,8 +2036,7 @@ pub mod snapshot_summary {
         }
         /// <p>The identifier of the snapshot.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The description of the snapshot.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2210,8 +2045,7 @@ pub mod snapshot_summary {
         }
         /// <p>The description of the snapshot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The timestamp of when the snapshot was created.</p>
         pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2219,12 +2053,8 @@ pub mod snapshot_summary {
             self
         }
         /// <p>The timestamp of when the snapshot was created.</p>
-        pub fn set_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created = input;
-            self
+        pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created = input; self
         }
         /// <p>Then timestamp of when the snapshot was last updated.</p>
         pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2232,23 +2062,25 @@ pub mod snapshot_summary {
             self
         }
         /// <p>Then timestamp of when the snapshot was last updated.</p>
-        pub fn set_last_updated(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated = input;
-            self
+        pub fn set_last_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated = input; self
         }
         /// Consumes the builder and constructs a [`SnapshotSummary`](crate::model::SnapshotSummary).
         pub fn build(self) -> crate::model::SnapshotSummary {
             crate::model::SnapshotSummary {
-                id: self.id,
-                description: self.description,
-                created: self.created,
-                last_updated: self.last_updated,
+                id: self.id
+                ,
+                description: self.description
+                ,
+                created: self.created
+                ,
+                last_updated: self.last_updated
+                ,
             }
         }
     }
+    
+    
 }
 impl SnapshotSummary {
     /// Creates a new builder-style object to manufacture [`SnapshotSummary`](crate::model::SnapshotSummary).
@@ -2260,7 +2092,7 @@ impl SnapshotSummary {
 /// <p>Details about a generated code job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeneratedCodeJobDetails {
+pub struct GeneratedCodeJobDetails  {
     /// <p>A presigned URL that can be used to download the generated code.</p>
     #[doc(hidden)]
     pub s3_url: std::option::Option<std::string::String>,
@@ -2270,7 +2102,7 @@ pub struct GeneratedCodeJobDetails {
     /// <p>The description of the generated code job.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The expiration date and time for the download URL.</p>
+    /// <p>The expiration date and time for the download URL.</p> 
     /// <p> The download URL us guaranteed to be available until at least this time. </p>
     #[doc(hidden)]
     pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -2280,30 +2112,30 @@ pub struct GeneratedCodeJobDetails {
 }
 impl GeneratedCodeJobDetails {
     /// <p>A presigned URL that can be used to download the generated code.</p>
-    pub fn s3_url(&self) -> std::option::Option<&str> {
+    pub fn s3_url(&self) -> std::option::Option<& str> {
         self.s3_url.as_deref()
     }
     /// <p>The status of the generated code job</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::GeneratedCodeJobState> {
+    pub fn status(&self) -> std::option::Option<& crate::model::GeneratedCodeJobState> {
         self.status.as_ref()
     }
     /// <p>The description of the generated code job.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
-    /// <p>The expiration date and time for the download URL.</p>
+    /// <p>The expiration date and time for the download URL.</p> 
     /// <p> The download URL us guaranteed to be available until at least this time. </p>
-    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
     /// <p>The identifier for the generated code job.</p>
-    pub fn generated_code_job_id(&self) -> std::option::Option<&str> {
+    pub fn generated_code_job_id(&self) -> std::option::Option<& str> {
         self.generated_code_job_id.as_deref()
     }
 }
 /// See [`GeneratedCodeJobDetails`](crate::model::GeneratedCodeJobDetails).
 pub mod generated_code_job_details {
-
+    
     /// A builder for [`GeneratedCodeJobDetails`](crate::model::GeneratedCodeJobDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2321,8 +2153,7 @@ pub mod generated_code_job_details {
         }
         /// <p>A presigned URL that can be used to download the generated code.</p>
         pub fn set_s3_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_url = input;
-            self
+            self.s3_url = input; self
         }
         /// <p>The status of the generated code job</p>
         pub fn status(mut self, input: crate::model::GeneratedCodeJobState) -> Self {
@@ -2330,12 +2161,8 @@ pub mod generated_code_job_details {
             self
         }
         /// <p>The status of the generated code job</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::GeneratedCodeJobState>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::GeneratedCodeJobState>) -> Self {
+            self.status = input; self
         }
         /// <p>The description of the generated code job.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2344,23 +2171,18 @@ pub mod generated_code_job_details {
         }
         /// <p>The description of the generated code job.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
-        /// <p>The expiration date and time for the download URL.</p>
+        /// <p>The expiration date and time for the download URL.</p> 
         /// <p> The download URL us guaranteed to be available until at least this time. </p>
         pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.expiration_time = Some(input);
             self
         }
-        /// <p>The expiration date and time for the download URL.</p>
+        /// <p>The expiration date and time for the download URL.</p> 
         /// <p> The download URL us guaranteed to be available until at least this time. </p>
-        pub fn set_expiration_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.expiration_time = input;
-            self
+        pub fn set_expiration_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.expiration_time = input; self
         }
         /// <p>The identifier for the generated code job.</p>
         pub fn generated_code_job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2368,24 +2190,27 @@ pub mod generated_code_job_details {
             self
         }
         /// <p>The identifier for the generated code job.</p>
-        pub fn set_generated_code_job_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.generated_code_job_id = input;
-            self
+        pub fn set_generated_code_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.generated_code_job_id = input; self
         }
         /// Consumes the builder and constructs a [`GeneratedCodeJobDetails`](crate::model::GeneratedCodeJobDetails).
         pub fn build(self) -> crate::model::GeneratedCodeJobDetails {
             crate::model::GeneratedCodeJobDetails {
-                s3_url: self.s3_url,
-                status: self.status,
-                description: self.description,
-                expiration_time: self.expiration_time,
-                generated_code_job_id: self.generated_code_job_id,
+                s3_url: self.s3_url
+                ,
+                status: self.status
+                ,
+                description: self.description
+                ,
+                expiration_time: self.expiration_time
+                ,
+                generated_code_job_id: self.generated_code_job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl GeneratedCodeJobDetails {
     /// Creates a new builder-style object to manufacture [`GeneratedCodeJobDetails`](crate::model::GeneratedCodeJobDetails).
@@ -2400,9 +2225,9 @@ impl GeneratedCodeJobDetails {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let generatedcodejobstate = unimplemented!();
 /// match generatedcodejobstate {
@@ -2426,22 +2251,14 @@ impl GeneratedCodeJobDetails {
 /// Specifically, when `generatedcodejobstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GeneratedCodeJobState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum GeneratedCodeJobState {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -2452,7 +2269,7 @@ pub enum GeneratedCodeJobState {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GeneratedCodeJobState {
     fn from(s: &str) -> Self {
@@ -2461,19 +2278,17 @@ impl std::convert::From<&str> for GeneratedCodeJobState {
             "FAILED" => GeneratedCodeJobState::Failed,
             "IN_PROGRESS" => GeneratedCodeJobState::InProgress,
             "PENDING" => GeneratedCodeJobState::Pending,
-            other => {
-                GeneratedCodeJobState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => GeneratedCodeJobState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for GeneratedCodeJobState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GeneratedCodeJobState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(GeneratedCodeJobState::from(s))
+                }
+            }
 impl GeneratedCodeJobState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2482,12 +2297,14 @@ impl GeneratedCodeJobState {
             GeneratedCodeJobState::Failed => "FAILED",
             GeneratedCodeJobState::InProgress => "IN_PROGRESS",
             GeneratedCodeJobState::Pending => "PENDING",
-            GeneratedCodeJobState::Unknown(value) => value.as_str(),
+            GeneratedCodeJobState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "FAILED", "IN_PROGRESS", "PENDING"]
+        &[
+            "COMPLETED", "FAILED", "IN_PROGRESS", "PENDING"
+        ]
     }
 }
 impl AsRef<str> for GeneratedCodeJobState {
@@ -2499,7 +2316,7 @@ impl AsRef<str> for GeneratedCodeJobState {
 /// <p>The summary of the properties of a game.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GameSummary {
+pub struct GameSummary  {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2511,42 +2328,36 @@ pub struct GameSummary {
     pub state: std::option::Option<crate::model::GameState>,
     /// <p>The tags associated with the game.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GameSummary {
     /// <p>The name of the game.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the game.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The state of the game.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::GameState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::GameState> {
         self.state.as_ref()
     }
     /// <p>The tags associated with the game.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GameSummary`](crate::model::GameSummary).
 pub mod game_summary {
-
+    
     /// A builder for [`GameSummary`](crate::model::GameSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::GameState>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the game.</p>
@@ -2556,8 +2367,7 @@ pub mod game_summary {
         }
         /// <p>The name of the game.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the game.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2566,8 +2376,7 @@ pub mod game_summary {
         }
         /// <p>The description of the game.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The state of the game.</p>
         pub fn state(mut self, input: crate::model::GameState) -> Self {
@@ -2576,44 +2385,39 @@ pub mod game_summary {
         }
         /// <p>The state of the game.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::GameState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags associated with the game.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags associated with the game.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GameSummary`](crate::model::GameSummary).
         pub fn build(self) -> crate::model::GameSummary {
             crate::model::GameSummary {
-                name: self.name,
-                description: self.description,
-                state: self.state,
-                tags: self.tags,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                state: self.state
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GameSummary {
     /// Creates a new builder-style object to manufacture [`GameSummary`](crate::model::GameSummary).
@@ -2625,7 +2429,7 @@ impl GameSummary {
 /// <p>Details about the extension version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExtensionVersionDetails {
+pub struct ExtensionVersionDetails  {
     /// <p>The namespace (qualifier) of the extension.</p>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -2641,25 +2445,25 @@ pub struct ExtensionVersionDetails {
 }
 impl ExtensionVersionDetails {
     /// <p>The namespace (qualifier) of the extension.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the extension.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The model that defines the interface for this extension version.</p>
-    pub fn schema(&self) -> std::option::Option<&str> {
+    pub fn schema(&self) -> std::option::Option<& str> {
         self.schema.as_deref()
     }
     /// <p>The version of the extension.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`ExtensionVersionDetails`](crate::model::ExtensionVersionDetails).
 pub mod extension_version_details {
-
+    
     /// A builder for [`ExtensionVersionDetails`](crate::model::ExtensionVersionDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2676,8 +2480,7 @@ pub mod extension_version_details {
         }
         /// <p>The namespace (qualifier) of the extension.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>The name of the extension.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2686,8 +2489,7 @@ pub mod extension_version_details {
         }
         /// <p>The name of the extension.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The model that defines the interface for this extension version.</p>
         pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2696,8 +2498,7 @@ pub mod extension_version_details {
         }
         /// <p>The model that defines the interface for this extension version.</p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.schema = input;
-            self
+            self.schema = input; self
         }
         /// <p>The version of the extension.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2706,19 +2507,24 @@ pub mod extension_version_details {
         }
         /// <p>The version of the extension.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`ExtensionVersionDetails`](crate::model::ExtensionVersionDetails).
         pub fn build(self) -> crate::model::ExtensionVersionDetails {
             crate::model::ExtensionVersionDetails {
-                namespace: self.namespace,
-                name: self.name,
-                schema: self.schema,
-                version: self.version,
+                namespace: self.namespace
+                ,
+                name: self.name
+                ,
+                schema: self.schema
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl ExtensionVersionDetails {
     /// Creates a new builder-style object to manufacture [`ExtensionVersionDetails`](crate::model::ExtensionVersionDetails).
@@ -2730,7 +2536,7 @@ impl ExtensionVersionDetails {
 /// <p>Details about the extension.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExtensionDetails {
+pub struct ExtensionDetails  {
     /// <p>The namespace (qualifier) of the extension.</p>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -2743,21 +2549,21 @@ pub struct ExtensionDetails {
 }
 impl ExtensionDetails {
     /// <p>The namespace (qualifier) of the extension.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the extension.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the extension.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`ExtensionDetails`](crate::model::ExtensionDetails).
 pub mod extension_details {
-
+    
     /// A builder for [`ExtensionDetails`](crate::model::ExtensionDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2773,8 +2579,7 @@ pub mod extension_details {
         }
         /// <p>The namespace (qualifier) of the extension.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>The name of the extension.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2783,8 +2588,7 @@ pub mod extension_details {
         }
         /// <p>The name of the extension.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the extension.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2793,18 +2597,22 @@ pub mod extension_details {
         }
         /// <p>The description of the extension.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`ExtensionDetails`](crate::model::ExtensionDetails).
         pub fn build(self) -> crate::model::ExtensionDetails {
             crate::model::ExtensionDetails {
-                namespace: self.namespace,
-                name: self.name,
-                description: self.description,
+                namespace: self.namespace
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl ExtensionDetails {
     /// Creates a new builder-style object to manufacture [`ExtensionDetails`](crate::model::ExtensionDetails).
@@ -2816,20 +2624,20 @@ impl ExtensionDetails {
 /// <p>The source used to import configuration sections.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportGameConfigurationSource {
+pub struct ImportGameConfigurationSource  {
     /// <p>The JSON string containing the configuration sections.</p>
     #[doc(hidden)]
     pub file: std::option::Option<aws_smithy_types::Blob>,
 }
 impl ImportGameConfigurationSource {
     /// <p>The JSON string containing the configuration sections.</p>
-    pub fn file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn file(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.file.as_ref()
     }
 }
 /// See [`ImportGameConfigurationSource`](crate::model::ImportGameConfigurationSource).
 pub mod import_game_configuration_source {
-
+    
     /// A builder for [`ImportGameConfigurationSource`](crate::model::ImportGameConfigurationSource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2843,14 +2651,18 @@ pub mod import_game_configuration_source {
         }
         /// <p>The JSON string containing the configuration sections.</p>
         pub fn set_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.file = input;
-            self
+            self.file = input; self
         }
         /// Consumes the builder and constructs a [`ImportGameConfigurationSource`](crate::model::ImportGameConfigurationSource).
         pub fn build(self) -> crate::model::ImportGameConfigurationSource {
-            crate::model::ImportGameConfigurationSource { file: self.file }
+            crate::model::ImportGameConfigurationSource {
+                file: self.file
+                ,
+            }
         }
     }
+    
+    
 }
 impl ImportGameConfigurationSource {
     /// Creates a new builder-style object to manufacture [`ImportGameConfigurationSource`](crate::model::ImportGameConfigurationSource).
@@ -2862,7 +2674,7 @@ impl ImportGameConfigurationSource {
 /// <p>Details about a WebSocket connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Connection {
+pub struct Connection  {
     /// <p>The identifier used to indicate a specific WebSocket connection.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2872,17 +2684,17 @@ pub struct Connection {
 }
 impl Connection {
     /// <p>The identifier used to indicate a specific WebSocket connection.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The date and time when the connection was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
 }
 /// See [`Connection`](crate::model::Connection).
 pub mod connection {
-
+    
     /// A builder for [`Connection`](crate::model::Connection).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2897,8 +2709,7 @@ pub mod connection {
         }
         /// <p>The identifier used to indicate a specific WebSocket connection.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The date and time when the connection was created.</p>
         pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2906,21 +2717,21 @@ pub mod connection {
             self
         }
         /// <p>The date and time when the connection was created.</p>
-        pub fn set_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created = input;
-            self
+        pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created = input; self
         }
         /// Consumes the builder and constructs a [`Connection`](crate::model::Connection).
         pub fn build(self) -> crate::model::Connection {
             crate::model::Connection {
-                id: self.id,
-                created: self.created,
+                id: self.id
+                ,
+                created: self.created
+                ,
             }
         }
     }
+    
+    
 }
 impl Connection {
     /// Creates a new builder-style object to manufacture [`Connection`](crate::model::Connection).
@@ -2928,3 +2739,4 @@ impl Connection {
         crate::model::connection::Builder::default()
     }
 }
+

@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCanaryOutput {}
+pub struct UpdateCanaryOutput  {
+}
 /// See [`UpdateCanaryOutput`](crate::output::UpdateCanaryOutput).
 pub mod update_canary_output {
-
+    
     /// A builder for [`UpdateCanaryOutput`](crate::output::UpdateCanaryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateCanaryOutput`](crate::output::UpdateCanaryOutput).
         pub fn build(self) -> crate::output::UpdateCanaryOutput {
-            crate::output::UpdateCanaryOutput {}
+            crate::output::UpdateCanaryOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateCanaryOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCanaryOutput`](crate::output::UpdateCanaryOutput).
@@ -26,19 +31,24 @@ impl UpdateCanaryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -50,19 +60,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -74,19 +89,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopCanaryOutput {}
+pub struct StopCanaryOutput  {
+}
 /// See [`StopCanaryOutput`](crate::output::StopCanaryOutput).
 pub mod stop_canary_output {
-
+    
     /// A builder for [`StopCanaryOutput`](crate::output::StopCanaryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StopCanaryOutput`](crate::output::StopCanaryOutput).
         pub fn build(self) -> crate::output::StopCanaryOutput {
-            crate::output::StopCanaryOutput {}
+            crate::output::StopCanaryOutput {
+            }
         }
     }
+    
+    
 }
 impl StopCanaryOutput {
     /// Creates a new builder-style object to manufacture [`StopCanaryOutput`](crate::output::StopCanaryOutput).
@@ -98,19 +118,24 @@ impl StopCanaryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartCanaryOutput {}
+pub struct StartCanaryOutput  {
+}
 /// See [`StartCanaryOutput`](crate::output::StartCanaryOutput).
 pub mod start_canary_output {
-
+    
     /// A builder for [`StartCanaryOutput`](crate::output::StartCanaryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StartCanaryOutput`](crate::output::StartCanaryOutput).
         pub fn build(self) -> crate::output::StartCanaryOutput {
-            crate::output::StartCanaryOutput {}
+            crate::output::StartCanaryOutput {
+            }
         }
     }
+    
+    
 }
 impl StartCanaryOutput {
     /// Creates a new builder-style object to manufacture [`StartCanaryOutput`](crate::output::StartCanaryOutput).
@@ -122,30 +147,24 @@ impl StartCanaryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The list of tag keys and values associated with the resource that you specified.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The list of tag keys and values associated with the resource that you specified.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -153,31 +172,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The list of tag keys and values associated with the resource that you specified.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The list of tag keys and values associated with the resource that you specified.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -189,7 +203,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGroupsOutput {
+pub struct ListGroupsOutput  {
     /// <p>An array of structures that each contain information about one group.</p>
     #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
@@ -199,17 +213,17 @@ pub struct ListGroupsOutput {
 }
 impl ListGroupsOutput {
     /// <p>An array of structures that each contain information about one group.</p>
-    pub fn groups(&self) -> std::option::Option<&[crate::model::GroupSummary]> {
+    pub fn groups(&self) -> std::option::Option<& [crate::model::GroupSummary]> {
         self.groups.as_deref()
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroups</code> operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListGroupsOutput`](crate::output::ListGroupsOutput).
 pub mod list_groups_output {
-
+    
     /// A builder for [`ListGroupsOutput`](crate::output::ListGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -224,17 +238,13 @@ pub mod list_groups_output {
         /// <p>An array of structures that each contain information about one group.</p>
         pub fn groups(mut self, input: crate::model::GroupSummary) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input);
-            self.groups = Some(v);
-            self
+                            v.push(input);
+                            self.groups = Some(v);
+                            self
         }
         /// <p>An array of structures that each contain information about one group.</p>
-        pub fn set_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
-        ) -> Self {
-            self.groups = input;
-            self
+        pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>) -> Self {
+            self.groups = input; self
         }
         /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroups</code> operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -243,17 +253,20 @@ pub mod list_groups_output {
         }
         /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroups</code> operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListGroupsOutput`](crate::output::ListGroupsOutput).
         pub fn build(self) -> crate::output::ListGroupsOutput {
             crate::output::ListGroupsOutput {
-                groups: self.groups,
-                next_token: self.next_token,
+                groups: self.groups
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupsOutput`](crate::output::ListGroupsOutput).
@@ -265,7 +278,7 @@ impl ListGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGroupResourcesOutput {
+pub struct ListGroupResourcesOutput  {
     /// <p>An array of ARNs. These ARNs are for the canaries that are associated with the group.</p>
     #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -275,17 +288,17 @@ pub struct ListGroupResourcesOutput {
 }
 impl ListGroupResourcesOutput {
     /// <p>An array of ARNs. These ARNs are for the canaries that are associated with the group.</p>
-    pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resources(&self) -> std::option::Option<& [std::string::String]> {
         self.resources.as_deref()
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroupResources</code> operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListGroupResourcesOutput`](crate::output::ListGroupResourcesOutput).
 pub mod list_group_resources_output {
-
+    
     /// A builder for [`ListGroupResourcesOutput`](crate::output::ListGroupResourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -300,17 +313,13 @@ pub mod list_group_resources_output {
         /// <p>An array of ARNs. These ARNs are for the canaries that are associated with the group.</p>
         pub fn resources(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input.into());
-            self.resources = Some(v);
-            self
+                            v.push(input.into());
+                            self.resources = Some(v);
+                            self
         }
         /// <p>An array of ARNs. These ARNs are for the canaries that are associated with the group.</p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.resources = input; self
         }
         /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroupResources</code> operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -319,17 +328,20 @@ pub mod list_group_resources_output {
         }
         /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListGroupResources</code> operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListGroupResourcesOutput`](crate::output::ListGroupResourcesOutput).
         pub fn build(self) -> crate::output::ListGroupResourcesOutput {
             crate::output::ListGroupResourcesOutput {
-                resources: self.resources,
-                next_token: self.next_token,
+                resources: self.resources
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGroupResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupResourcesOutput`](crate::output::ListGroupResourcesOutput).
@@ -341,7 +353,7 @@ impl ListGroupResourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssociatedGroupsOutput {
+pub struct ListAssociatedGroupsOutput  {
     /// <p>An array of structures that contain information about the groups that this canary is associated with.</p>
     #[doc(hidden)]
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
@@ -351,17 +363,17 @@ pub struct ListAssociatedGroupsOutput {
 }
 impl ListAssociatedGroupsOutput {
     /// <p>An array of structures that contain information about the groups that this canary is associated with.</p>
-    pub fn groups(&self) -> std::option::Option<&[crate::model::GroupSummary]> {
+    pub fn groups(&self) -> std::option::Option<& [crate::model::GroupSummary]> {
         self.groups.as_deref()
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListAssociatedGroups</code> operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAssociatedGroupsOutput`](crate::output::ListAssociatedGroupsOutput).
 pub mod list_associated_groups_output {
-
+    
     /// A builder for [`ListAssociatedGroupsOutput`](crate::output::ListAssociatedGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -376,17 +388,13 @@ pub mod list_associated_groups_output {
         /// <p>An array of structures that contain information about the groups that this canary is associated with.</p>
         pub fn groups(mut self, input: crate::model::GroupSummary) -> Self {
             let mut v = self.groups.unwrap_or_default();
-            v.push(input);
-            self.groups = Some(v);
-            self
+                            v.push(input);
+                            self.groups = Some(v);
+                            self
         }
         /// <p>An array of structures that contain information about the groups that this canary is associated with.</p>
-        pub fn set_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
-        ) -> Self {
-            self.groups = input;
-            self
+        pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>) -> Self {
+            self.groups = input; self
         }
         /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListAssociatedGroups</code> operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -395,17 +403,20 @@ pub mod list_associated_groups_output {
         }
         /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>ListAssociatedGroups</code> operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAssociatedGroupsOutput`](crate::output::ListAssociatedGroupsOutput).
         pub fn build(self) -> crate::output::ListAssociatedGroupsOutput {
             crate::output::ListAssociatedGroupsOutput {
-                groups: self.groups,
-                next_token: self.next_token,
+                groups: self.groups
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAssociatedGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedGroupsOutput`](crate::output::ListAssociatedGroupsOutput).
@@ -417,20 +428,20 @@ impl ListAssociatedGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGroupOutput {
+pub struct GetGroupOutput  {
     /// <p>A structure that contains information about the group.</p>
     #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
 }
 impl GetGroupOutput {
     /// <p>A structure that contains information about the group.</p>
-    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+    pub fn group(&self) -> std::option::Option<& crate::model::Group> {
         self.group.as_ref()
     }
 }
 /// See [`GetGroupOutput`](crate::output::GetGroupOutput).
 pub mod get_group_output {
-
+    
     /// A builder for [`GetGroupOutput`](crate::output::GetGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -444,14 +455,18 @@ pub mod get_group_output {
         }
         /// <p>A structure that contains information about the group.</p>
         pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
-            self.group = input;
-            self
+            self.group = input; self
         }
         /// Consumes the builder and constructs a [`GetGroupOutput`](crate::output::GetGroupOutput).
         pub fn build(self) -> crate::output::GetGroupOutput {
-            crate::output::GetGroupOutput { group: self.group }
+            crate::output::GetGroupOutput {
+                group: self.group
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetGroupOutput`](crate::output::GetGroupOutput).
@@ -463,7 +478,7 @@ impl GetGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCanaryRunsOutput {
+pub struct GetCanaryRunsOutput  {
     /// <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
     #[doc(hidden)]
     pub canary_runs: std::option::Option<std::vec::Vec<crate::model::CanaryRun>>,
@@ -473,17 +488,17 @@ pub struct GetCanaryRunsOutput {
 }
 impl GetCanaryRunsOutput {
     /// <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
-    pub fn canary_runs(&self) -> std::option::Option<&[crate::model::CanaryRun]> {
+    pub fn canary_runs(&self) -> std::option::Option<& [crate::model::CanaryRun]> {
         self.canary_runs.as_deref()
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`GetCanaryRunsOutput`](crate::output::GetCanaryRunsOutput).
 pub mod get_canary_runs_output {
-
+    
     /// A builder for [`GetCanaryRunsOutput`](crate::output::GetCanaryRunsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -498,17 +513,13 @@ pub mod get_canary_runs_output {
         /// <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
         pub fn canary_runs(mut self, input: crate::model::CanaryRun) -> Self {
             let mut v = self.canary_runs.unwrap_or_default();
-            v.push(input);
-            self.canary_runs = Some(v);
-            self
+                            v.push(input);
+                            self.canary_runs = Some(v);
+                            self
         }
         /// <p>An array of structures. Each structure contains the details of one of the retrieved canary runs.</p>
-        pub fn set_canary_runs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CanaryRun>>,
-        ) -> Self {
-            self.canary_runs = input;
-            self
+        pub fn set_canary_runs(mut self, input: std::option::Option<std::vec::Vec<crate::model::CanaryRun>>) -> Self {
+            self.canary_runs = input; self
         }
         /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -517,17 +528,20 @@ pub mod get_canary_runs_output {
         }
         /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`GetCanaryRunsOutput`](crate::output::GetCanaryRunsOutput).
         pub fn build(self) -> crate::output::GetCanaryRunsOutput {
             crate::output::GetCanaryRunsOutput {
-                canary_runs: self.canary_runs,
-                next_token: self.next_token,
+                canary_runs: self.canary_runs
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCanaryRunsOutput {
     /// Creates a new builder-style object to manufacture [`GetCanaryRunsOutput`](crate::output::GetCanaryRunsOutput).
@@ -539,20 +553,20 @@ impl GetCanaryRunsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCanaryOutput {
+pub struct GetCanaryOutput  {
     /// <p>A structure that contains the full information about the canary.</p>
     #[doc(hidden)]
     pub canary: std::option::Option<crate::model::Canary>,
 }
 impl GetCanaryOutput {
     /// <p>A structure that contains the full information about the canary.</p>
-    pub fn canary(&self) -> std::option::Option<&crate::model::Canary> {
+    pub fn canary(&self) -> std::option::Option<& crate::model::Canary> {
         self.canary.as_ref()
     }
 }
 /// See [`GetCanaryOutput`](crate::output::GetCanaryOutput).
 pub mod get_canary_output {
-
+    
     /// A builder for [`GetCanaryOutput`](crate::output::GetCanaryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -566,16 +580,18 @@ pub mod get_canary_output {
         }
         /// <p>A structure that contains the full information about the canary.</p>
         pub fn set_canary(mut self, input: std::option::Option<crate::model::Canary>) -> Self {
-            self.canary = input;
-            self
+            self.canary = input; self
         }
         /// Consumes the builder and constructs a [`GetCanaryOutput`](crate::output::GetCanaryOutput).
         pub fn build(self) -> crate::output::GetCanaryOutput {
             crate::output::GetCanaryOutput {
-                canary: self.canary,
+                canary: self.canary
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCanaryOutput {
     /// Creates a new builder-style object to manufacture [`GetCanaryOutput`](crate::output::GetCanaryOutput).
@@ -587,19 +603,24 @@ impl GetCanaryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateResourceOutput {}
+pub struct DisassociateResourceOutput  {
+}
 /// See [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput).
 pub mod disassociate_resource_output {
-
+    
     /// A builder for [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput).
         pub fn build(self) -> crate::output::DisassociateResourceOutput {
-            crate::output::DisassociateResourceOutput {}
+            crate::output::DisassociateResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl DisassociateResourceOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateResourceOutput`](crate::output::DisassociateResourceOutput).
@@ -611,7 +632,7 @@ impl DisassociateResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRuntimeVersionsOutput {
+pub struct DescribeRuntimeVersionsOutput  {
     /// <p>An array of objects that display the details about each Synthetics canary runtime version.</p>
     #[doc(hidden)]
     pub runtime_versions: std::option::Option<std::vec::Vec<crate::model::RuntimeVersion>>,
@@ -621,22 +642,21 @@ pub struct DescribeRuntimeVersionsOutput {
 }
 impl DescribeRuntimeVersionsOutput {
     /// <p>An array of objects that display the details about each Synthetics canary runtime version.</p>
-    pub fn runtime_versions(&self) -> std::option::Option<&[crate::model::RuntimeVersion]> {
+    pub fn runtime_versions(&self) -> std::option::Option<& [crate::model::RuntimeVersion]> {
         self.runtime_versions.as_deref()
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeRuntimeVersionsOutput`](crate::output::DescribeRuntimeVersionsOutput).
 pub mod describe_runtime_versions_output {
-
+    
     /// A builder for [`DescribeRuntimeVersionsOutput`](crate::output::DescribeRuntimeVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) runtime_versions:
-            std::option::Option<std::vec::Vec<crate::model::RuntimeVersion>>,
+        pub(crate) runtime_versions: std::option::Option<std::vec::Vec<crate::model::RuntimeVersion>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -647,17 +667,13 @@ pub mod describe_runtime_versions_output {
         /// <p>An array of objects that display the details about each Synthetics canary runtime version.</p>
         pub fn runtime_versions(mut self, input: crate::model::RuntimeVersion) -> Self {
             let mut v = self.runtime_versions.unwrap_or_default();
-            v.push(input);
-            self.runtime_versions = Some(v);
-            self
+                            v.push(input);
+                            self.runtime_versions = Some(v);
+                            self
         }
         /// <p>An array of objects that display the details about each Synthetics canary runtime version.</p>
-        pub fn set_runtime_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RuntimeVersion>>,
-        ) -> Self {
-            self.runtime_versions = input;
-            self
+        pub fn set_runtime_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::RuntimeVersion>>) -> Self {
+            self.runtime_versions = input; self
         }
         /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -666,17 +682,20 @@ pub mod describe_runtime_versions_output {
         }
         /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeRuntimeVersionsOutput`](crate::output::DescribeRuntimeVersionsOutput).
         pub fn build(self) -> crate::output::DescribeRuntimeVersionsOutput {
             crate::output::DescribeRuntimeVersionsOutput {
-                runtime_versions: self.runtime_versions,
-                next_token: self.next_token,
+                runtime_versions: self.runtime_versions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeRuntimeVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRuntimeVersionsOutput`](crate::output::DescribeRuntimeVersionsOutput).
@@ -688,7 +707,7 @@ impl DescribeRuntimeVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCanariesLastRunOutput {
+pub struct DescribeCanariesLastRunOutput  {
     /// <p>An array that contains the information from the most recent run of each canary.</p>
     #[doc(hidden)]
     pub canaries_last_run: std::option::Option<std::vec::Vec<crate::model::CanaryLastRun>>,
@@ -698,22 +717,21 @@ pub struct DescribeCanariesLastRunOutput {
 }
 impl DescribeCanariesLastRunOutput {
     /// <p>An array that contains the information from the most recent run of each canary.</p>
-    pub fn canaries_last_run(&self) -> std::option::Option<&[crate::model::CanaryLastRun]> {
+    pub fn canaries_last_run(&self) -> std::option::Option<& [crate::model::CanaryLastRun]> {
         self.canaries_last_run.as_deref()
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeCanariesLastRunOutput`](crate::output::DescribeCanariesLastRunOutput).
 pub mod describe_canaries_last_run_output {
-
+    
     /// A builder for [`DescribeCanariesLastRunOutput`](crate::output::DescribeCanariesLastRunOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) canaries_last_run:
-            std::option::Option<std::vec::Vec<crate::model::CanaryLastRun>>,
+        pub(crate) canaries_last_run: std::option::Option<std::vec::Vec<crate::model::CanaryLastRun>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -724,17 +742,13 @@ pub mod describe_canaries_last_run_output {
         /// <p>An array that contains the information from the most recent run of each canary.</p>
         pub fn canaries_last_run(mut self, input: crate::model::CanaryLastRun) -> Self {
             let mut v = self.canaries_last_run.unwrap_or_default();
-            v.push(input);
-            self.canaries_last_run = Some(v);
-            self
+                            v.push(input);
+                            self.canaries_last_run = Some(v);
+                            self
         }
         /// <p>An array that contains the information from the most recent run of each canary.</p>
-        pub fn set_canaries_last_run(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CanaryLastRun>>,
-        ) -> Self {
-            self.canaries_last_run = input;
-            self
+        pub fn set_canaries_last_run(mut self, input: std::option::Option<std::vec::Vec<crate::model::CanaryLastRun>>) -> Self {
+            self.canaries_last_run = input; self
         }
         /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -743,17 +757,20 @@ pub mod describe_canaries_last_run_output {
         }
         /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCanariesLastRunOutput`](crate::output::DescribeCanariesLastRunOutput).
         pub fn build(self) -> crate::output::DescribeCanariesLastRunOutput {
             crate::output::DescribeCanariesLastRunOutput {
-                canaries_last_run: self.canaries_last_run,
-                next_token: self.next_token,
+                canaries_last_run: self.canaries_last_run
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCanariesLastRunOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCanariesLastRunOutput`](crate::output::DescribeCanariesLastRunOutput).
@@ -765,7 +782,7 @@ impl DescribeCanariesLastRunOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCanariesOutput {
+pub struct DescribeCanariesOutput  {
     /// <p>Returns an array. Each item in the array contains the full information about one canary.</p>
     #[doc(hidden)]
     pub canaries: std::option::Option<std::vec::Vec<crate::model::Canary>>,
@@ -775,17 +792,17 @@ pub struct DescribeCanariesOutput {
 }
 impl DescribeCanariesOutput {
     /// <p>Returns an array. Each item in the array contains the full information about one canary.</p>
-    pub fn canaries(&self) -> std::option::Option<&[crate::model::Canary]> {
+    pub fn canaries(&self) -> std::option::Option<& [crate::model::Canary]> {
         self.canaries.as_deref()
     }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeCanariesOutput`](crate::output::DescribeCanariesOutput).
 pub mod describe_canaries_output {
-
+    
     /// A builder for [`DescribeCanariesOutput`](crate::output::DescribeCanariesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -800,17 +817,13 @@ pub mod describe_canaries_output {
         /// <p>Returns an array. Each item in the array contains the full information about one canary.</p>
         pub fn canaries(mut self, input: crate::model::Canary) -> Self {
             let mut v = self.canaries.unwrap_or_default();
-            v.push(input);
-            self.canaries = Some(v);
-            self
+                            v.push(input);
+                            self.canaries = Some(v);
+                            self
         }
         /// <p>Returns an array. Each item in the array contains the full information about one canary.</p>
-        pub fn set_canaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Canary>>,
-        ) -> Self {
-            self.canaries = input;
-            self
+        pub fn set_canaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::Canary>>) -> Self {
+            self.canaries = input; self
         }
         /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -819,17 +832,20 @@ pub mod describe_canaries_output {
         }
         /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCanariesOutput`](crate::output::DescribeCanariesOutput).
         pub fn build(self) -> crate::output::DescribeCanariesOutput {
             crate::output::DescribeCanariesOutput {
-                canaries: self.canaries,
-                next_token: self.next_token,
+                canaries: self.canaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCanariesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCanariesOutput`](crate::output::DescribeCanariesOutput).
@@ -841,19 +857,24 @@ impl DescribeCanariesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGroupOutput {}
+pub struct DeleteGroupOutput  {
+}
 /// See [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
 pub mod delete_group_output {
-
+    
     /// A builder for [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
         pub fn build(self) -> crate::output::DeleteGroupOutput {
-            crate::output::DeleteGroupOutput {}
+            crate::output::DeleteGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
@@ -865,19 +886,24 @@ impl DeleteGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCanaryOutput {}
+pub struct DeleteCanaryOutput  {
+}
 /// See [`DeleteCanaryOutput`](crate::output::DeleteCanaryOutput).
 pub mod delete_canary_output {
-
+    
     /// A builder for [`DeleteCanaryOutput`](crate::output::DeleteCanaryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCanaryOutput`](crate::output::DeleteCanaryOutput).
         pub fn build(self) -> crate::output::DeleteCanaryOutput {
-            crate::output::DeleteCanaryOutput {}
+            crate::output::DeleteCanaryOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteCanaryOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCanaryOutput`](crate::output::DeleteCanaryOutput).
@@ -889,20 +915,20 @@ impl DeleteCanaryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGroupOutput {
+pub struct CreateGroupOutput  {
     /// <p>A structure that contains information about the group that was just created.</p>
     #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
 }
 impl CreateGroupOutput {
     /// <p>A structure that contains information about the group that was just created.</p>
-    pub fn group(&self) -> std::option::Option<&crate::model::Group> {
+    pub fn group(&self) -> std::option::Option<& crate::model::Group> {
         self.group.as_ref()
     }
 }
 /// See [`CreateGroupOutput`](crate::output::CreateGroupOutput).
 pub mod create_group_output {
-
+    
     /// A builder for [`CreateGroupOutput`](crate::output::CreateGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -916,14 +942,18 @@ pub mod create_group_output {
         }
         /// <p>A structure that contains information about the group that was just created.</p>
         pub fn set_group(mut self, input: std::option::Option<crate::model::Group>) -> Self {
-            self.group = input;
-            self
+            self.group = input; self
         }
         /// Consumes the builder and constructs a [`CreateGroupOutput`](crate::output::CreateGroupOutput).
         pub fn build(self) -> crate::output::CreateGroupOutput {
-            crate::output::CreateGroupOutput { group: self.group }
+            crate::output::CreateGroupOutput {
+                group: self.group
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateGroupOutput`](crate::output::CreateGroupOutput).
@@ -935,20 +965,20 @@ impl CreateGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCanaryOutput {
+pub struct CreateCanaryOutput  {
     /// <p>The full details about the canary you have created.</p>
     #[doc(hidden)]
     pub canary: std::option::Option<crate::model::Canary>,
 }
 impl CreateCanaryOutput {
     /// <p>The full details about the canary you have created.</p>
-    pub fn canary(&self) -> std::option::Option<&crate::model::Canary> {
+    pub fn canary(&self) -> std::option::Option<& crate::model::Canary> {
         self.canary.as_ref()
     }
 }
 /// See [`CreateCanaryOutput`](crate::output::CreateCanaryOutput).
 pub mod create_canary_output {
-
+    
     /// A builder for [`CreateCanaryOutput`](crate::output::CreateCanaryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -962,16 +992,18 @@ pub mod create_canary_output {
         }
         /// <p>The full details about the canary you have created.</p>
         pub fn set_canary(mut self, input: std::option::Option<crate::model::Canary>) -> Self {
-            self.canary = input;
-            self
+            self.canary = input; self
         }
         /// Consumes the builder and constructs a [`CreateCanaryOutput`](crate::output::CreateCanaryOutput).
         pub fn build(self) -> crate::output::CreateCanaryOutput {
             crate::output::CreateCanaryOutput {
-                canary: self.canary,
+                canary: self.canary
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCanaryOutput {
     /// Creates a new builder-style object to manufacture [`CreateCanaryOutput`](crate::output::CreateCanaryOutput).
@@ -983,19 +1015,24 @@ impl CreateCanaryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateResourceOutput {}
+pub struct AssociateResourceOutput  {
+}
 /// See [`AssociateResourceOutput`](crate::output::AssociateResourceOutput).
 pub mod associate_resource_output {
-
+    
     /// A builder for [`AssociateResourceOutput`](crate::output::AssociateResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AssociateResourceOutput`](crate::output::AssociateResourceOutput).
         pub fn build(self) -> crate::output::AssociateResourceOutput {
-            crate::output::AssociateResourceOutput {}
+            crate::output::AssociateResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl AssociateResourceOutput {
     /// Creates a new builder-style object to manufacture [`AssociateResourceOutput`](crate::output::AssociateResourceOutput).
@@ -1003,3 +1040,4 @@ impl AssociateResourceOutput {
         crate::output::associate_resource_output::Builder::default()
     }
 }
+

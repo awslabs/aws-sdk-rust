@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UpdateServiceSettingsError {
     /// Kind of error that occurred.
-    pub kind: UpdateServiceSettingsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateServiceSettingsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateServiceSettingsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateServiceSettingsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -30,25 +30,37 @@ pub enum UpdateServiceSettingsErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateServiceSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateServiceSettingsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            UpdateServiceSettingsErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            UpdateServiceSettingsErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            UpdateServiceSettingsErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            UpdateServiceSettingsErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            UpdateServiceSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateServiceSettingsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServiceSettingsErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServiceSettingsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServiceSettingsErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServiceSettingsErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateServiceSettingsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -62,95 +74,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateServiceSettingsError {
 }
 impl UpdateServiceSettingsError {
     /// Creates a new `UpdateServiceSettingsError`.
-    pub fn new(kind: UpdateServiceSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateServiceSettingsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateServiceSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateServiceSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateServiceSettingsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateServiceSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateServiceSettingsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateServiceSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateServiceSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateServiceSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateServiceSettingsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServiceSettingsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, UpdateServiceSettingsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UpdateServiceSettingsErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServiceSettingsErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, UpdateServiceSettingsErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `UpdateServiceSettingsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServiceSettingsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, UpdateServiceSettingsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `UpdateServiceSettingsErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServiceSettingsErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateServiceSettingsErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateServiceSettingsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateServiceSettingsErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, UpdateServiceSettingsErrorKind::ServerInternalException(_))
     }
 }
 impl std::error::Error for UpdateServiceSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateServiceSettingsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            UpdateServiceSettingsErrorKind::AuthorizationException(_inner) => Some(_inner),
-            UpdateServiceSettingsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            UpdateServiceSettingsErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            UpdateServiceSettingsErrorKind::ServerInternalException(_inner) => Some(_inner),
-            UpdateServiceSettingsErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateServiceSettingsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServiceSettingsErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServiceSettingsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServiceSettingsErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServiceSettingsErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateServiceSettingsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -158,22 +163,20 @@ impl std::error::Error for UpdateServiceSettingsError {
 /// <p>The server experienced an internal error. Try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServerInternalException {
+pub struct ServerInternalException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServerInternalException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServerInternalException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServerInternalException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -183,7 +186,7 @@ impl std::fmt::Display for ServerInternalException {
 impl std::error::Error for ServerInternalException {}
 /// See [`ServerInternalException`](crate::error::ServerInternalException).
 pub mod server_internal_exception {
-
+    
     /// A builder for [`ServerInternalException`](crate::error::ServerInternalException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -197,16 +200,18 @@ pub mod server_internal_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServerInternalException`](crate::error::ServerInternalException).
         pub fn build(self) -> crate::error::ServerInternalException {
             crate::error::ServerInternalException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServerInternalException {
     /// Creates a new builder-style object to manufacture [`ServerInternalException`](crate::error::ServerInternalException).
@@ -218,22 +223,20 @@ impl ServerInternalException {
 /// <p>Too many requests have been submitted. Try again after a brief wait.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RateLimitExceededException {
+pub struct RateLimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl RateLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for RateLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RateLimitExceededException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -243,7 +246,7 @@ impl std::fmt::Display for RateLimitExceededException {
 impl std::error::Error for RateLimitExceededException {}
 /// See [`RateLimitExceededException`](crate::error::RateLimitExceededException).
 pub mod rate_limit_exceeded_exception {
-
+    
     /// A builder for [`RateLimitExceededException`](crate::error::RateLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -257,16 +260,18 @@ pub mod rate_limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`RateLimitExceededException`](crate::error::RateLimitExceededException).
         pub fn build(self) -> crate::error::RateLimitExceededException {
             crate::error::RateLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl RateLimitExceededException {
     /// Creates a new builder-style object to manufacture [`RateLimitExceededException`](crate::error::RateLimitExceededException).
@@ -278,22 +283,20 @@ impl RateLimitExceededException {
 /// <p>One or more parameter values are not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidParameterValueException {
+pub struct InvalidParameterValueException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidParameterValueException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidParameterValueException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidParameterValueException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -303,7 +306,7 @@ impl std::fmt::Display for InvalidParameterValueException {
 impl std::error::Error for InvalidParameterValueException {}
 /// See [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
 pub mod invalid_parameter_value_exception {
-
+    
     /// A builder for [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -317,16 +320,18 @@ pub mod invalid_parameter_value_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
         pub fn build(self) -> crate::error::InvalidParameterValueException {
             crate::error::InvalidParameterValueException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidParameterValueException {
     /// Creates a new builder-style object to manufacture [`InvalidParameterValueException`](crate::error::InvalidParameterValueException).
@@ -338,22 +343,20 @@ impl InvalidParameterValueException {
 /// <p>The Amazon Web Services user account does not have permission to perform the action. Check the IAM policy associated with this account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthorizationException {
+pub struct AuthorizationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AuthorizationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AuthorizationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorizationException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -363,7 +366,7 @@ impl std::fmt::Display for AuthorizationException {
 impl std::error::Error for AuthorizationException {}
 /// See [`AuthorizationException`](crate::error::AuthorizationException).
 pub mod authorization_exception {
-
+    
     /// A builder for [`AuthorizationException`](crate::error::AuthorizationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -377,16 +380,18 @@ pub mod authorization_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AuthorizationException`](crate::error::AuthorizationException).
         pub fn build(self) -> crate::error::AuthorizationException {
             crate::error::AuthorizationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AuthorizationException {
     /// Creates a new builder-style object to manufacture [`AuthorizationException`](crate::error::AuthorizationException).
@@ -398,22 +403,20 @@ impl AuthorizationException {
 /// <p>Access to resource denied.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessDeniedException {
+pub struct AccessDeniedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -423,7 +426,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException).
 pub mod access_denied_exception {
-
+    
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -437,16 +440,18 @@ pub mod access_denied_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
         pub fn build(self) -> crate::error::AccessDeniedException {
             crate::error::AccessDeniedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
@@ -460,17 +465,15 @@ impl AccessDeniedException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateLicenseSpecificationsForResourceError {
     /// Kind of error that occurred.
-    pub kind: UpdateLicenseSpecificationsForResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateLicenseSpecificationsForResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateLicenseSpecificationsForResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateLicenseSpecificationsForResourceErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: UpdateLicenseSpecificationsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -484,7 +487,7 @@ pub enum UpdateLicenseSpecificationsForResourceErrorKind {
     AuthorizationException(crate::error::AuthorizationException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
-    /// <p>License Manager cannot allocate a license to a resource because of its state. </p>
+    /// <p>License Manager cannot allocate a license to a resource because of its state. </p> 
     /// <p>For example, you cannot allocate a license to an instance in the process of shutting down.</p>
     InvalidResourceStateException(crate::error::InvalidResourceStateException),
     /// <p>You do not have enough licenses available to support a new resource launch.</p>
@@ -493,41 +496,43 @@ pub enum UpdateLicenseSpecificationsForResourceErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateLicenseSpecificationsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateLicenseSpecificationsForResourceErrorKind::AccessDeniedException(_inner) => {
+            UpdateLicenseSpecificationsForResourceErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseSpecificationsForResourceErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseSpecificationsForResourceErrorKind::InvalidResourceStateException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseSpecificationsForResourceErrorKind::LicenseUsageException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseSpecificationsForResourceErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseSpecificationsForResourceErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseSpecificationsForResourceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateLicenseSpecificationsForResourceErrorKind::AuthorizationException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => _inner.fmt(f),
-            UpdateLicenseSpecificationsForResourceErrorKind::InvalidResourceStateException(
-                _inner,
-            ) => _inner.fmt(f),
-            UpdateLicenseSpecificationsForResourceErrorKind::LicenseUsageException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateLicenseSpecificationsForResourceErrorKind::RateLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateLicenseSpecificationsForResourceErrorKind::ServerInternalException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateLicenseSpecificationsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -541,128 +546,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateLicenseSpecificationsFo
 }
 impl UpdateLicenseSpecificationsForResourceError {
     /// Creates a new `UpdateLicenseSpecificationsForResourceError`.
-    pub fn new(
-        kind: UpdateLicenseSpecificationsForResourceErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateLicenseSpecificationsForResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateLicenseSpecificationsForResourceErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateLicenseSpecificationsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateLicenseSpecificationsForResourceErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateLicenseSpecificationsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateLicenseSpecificationsForResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateLicenseSpecificationsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateLicenseSpecificationsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateLicenseSpecificationsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseSpecificationsForResourceErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, UpdateLicenseSpecificationsForResourceErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseSpecificationsForResourceErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, UpdateLicenseSpecificationsForResourceErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, UpdateLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::InvalidResourceStateException`.
     pub fn is_invalid_resource_state_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseSpecificationsForResourceErrorKind::InvalidResourceStateException(_)
-        )
+        matches!(&self.kind, UpdateLicenseSpecificationsForResourceErrorKind::InvalidResourceStateException(_))
     }
     /// Returns `true` if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::LicenseUsageException`.
     pub fn is_license_usage_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseSpecificationsForResourceErrorKind::LicenseUsageException(_)
-        )
+        matches!(&self.kind, UpdateLicenseSpecificationsForResourceErrorKind::LicenseUsageException(_))
     }
     /// Returns `true` if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseSpecificationsForResourceErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateLicenseSpecificationsForResourceErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateLicenseSpecificationsForResourceErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseSpecificationsForResourceErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, UpdateLicenseSpecificationsForResourceErrorKind::ServerInternalException(_))
     }
 }
 impl std::error::Error for UpdateLicenseSpecificationsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateLicenseSpecificationsForResourceErrorKind::AccessDeniedException(_inner) => {
+            UpdateLicenseSpecificationsForResourceErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseSpecificationsForResourceErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseSpecificationsForResourceErrorKind::InvalidResourceStateException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseSpecificationsForResourceErrorKind::LicenseUsageException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseSpecificationsForResourceErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseSpecificationsForResourceErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseSpecificationsForResourceErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateLicenseSpecificationsForResourceErrorKind::AuthorizationException(_inner) => {
-                Some(_inner)
-            }
-            UpdateLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => Some(_inner),
-            UpdateLicenseSpecificationsForResourceErrorKind::InvalidResourceStateException(
-                _inner,
-            ) => Some(_inner),
-            UpdateLicenseSpecificationsForResourceErrorKind::LicenseUsageException(_inner) => {
-                Some(_inner)
-            }
-            UpdateLicenseSpecificationsForResourceErrorKind::RateLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            UpdateLicenseSpecificationsForResourceErrorKind::ServerInternalException(_inner) => {
-                Some(_inner)
-            }
-            UpdateLicenseSpecificationsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -670,22 +649,20 @@ impl std::error::Error for UpdateLicenseSpecificationsForResourceError {
 /// <p>You do not have enough licenses available to support a new resource launch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LicenseUsageException {
+pub struct LicenseUsageException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl LicenseUsageException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for LicenseUsageException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LicenseUsageException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -695,7 +672,7 @@ impl std::fmt::Display for LicenseUsageException {
 impl std::error::Error for LicenseUsageException {}
 /// See [`LicenseUsageException`](crate::error::LicenseUsageException).
 pub mod license_usage_exception {
-
+    
     /// A builder for [`LicenseUsageException`](crate::error::LicenseUsageException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -709,16 +686,18 @@ pub mod license_usage_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`LicenseUsageException`](crate::error::LicenseUsageException).
         pub fn build(self) -> crate::error::LicenseUsageException {
             crate::error::LicenseUsageException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl LicenseUsageException {
     /// Creates a new builder-style object to manufacture [`LicenseUsageException`](crate::error::LicenseUsageException).
@@ -727,26 +706,24 @@ impl LicenseUsageException {
     }
 }
 
-/// <p>License Manager cannot allocate a license to a resource because of its state. </p>
+/// <p>License Manager cannot allocate a license to a resource because of its state. </p> 
 /// <p>For example, you cannot allocate a license to an instance in the process of shutting down.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidResourceStateException {
+pub struct InvalidResourceStateException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidResourceStateException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidResourceStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidResourceStateException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -756,7 +733,7 @@ impl std::fmt::Display for InvalidResourceStateException {
 impl std::error::Error for InvalidResourceStateException {}
 /// See [`InvalidResourceStateException`](crate::error::InvalidResourceStateException).
 pub mod invalid_resource_state_exception {
-
+    
     /// A builder for [`InvalidResourceStateException`](crate::error::InvalidResourceStateException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -770,16 +747,18 @@ pub mod invalid_resource_state_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidResourceStateException`](crate::error::InvalidResourceStateException).
         pub fn build(self) -> crate::error::InvalidResourceStateException {
             crate::error::InvalidResourceStateException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidResourceStateException {
     /// Creates a new builder-style object to manufacture [`InvalidResourceStateException`](crate::error::InvalidResourceStateException).
@@ -793,17 +772,15 @@ impl InvalidResourceStateException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateLicenseManagerReportGeneratorError {
     /// Kind of error that occurred.
-    pub kind: UpdateLicenseManagerReportGeneratorErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateLicenseManagerReportGeneratorErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateLicenseManagerReportGeneratorError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateLicenseManagerReportGeneratorErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: UpdateLicenseManagerReportGeneratorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -827,44 +804,46 @@ pub enum UpdateLicenseManagerReportGeneratorErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateLicenseManagerReportGeneratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_inner) => {
+            UpdateLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseManagerReportGeneratorErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseManagerReportGeneratorErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseManagerReportGeneratorErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateLicenseManagerReportGeneratorErrorKind::AuthorizationException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => _inner.fmt(f),
-            UpdateLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(
-                _inner,
-            ) => _inner.fmt(f),
-            UpdateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateLicenseManagerReportGeneratorErrorKind::ServerInternalException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateLicenseManagerReportGeneratorErrorKind::ValidationException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -878,138 +857,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateLicenseManagerReportGen
 }
 impl UpdateLicenseManagerReportGeneratorError {
     /// Creates a new `UpdateLicenseManagerReportGeneratorError`.
-    pub fn new(
-        kind: UpdateLicenseManagerReportGeneratorErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateLicenseManagerReportGeneratorError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateLicenseManagerReportGeneratorErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateLicenseManagerReportGeneratorError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateLicenseManagerReportGeneratorErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateLicenseManagerReportGeneratorErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateLicenseManagerReportGeneratorError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateLicenseManagerReportGeneratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateLicenseManagerReportGeneratorError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateLicenseManagerReportGeneratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, UpdateLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseManagerReportGeneratorErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, UpdateLicenseManagerReportGeneratorErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, UpdateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseManagerReportGeneratorErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, UpdateLicenseManagerReportGeneratorErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `UpdateLicenseManagerReportGeneratorErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseManagerReportGeneratorErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, UpdateLicenseManagerReportGeneratorErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for UpdateLicenseManagerReportGeneratorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_inner) => {
+            UpdateLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseManagerReportGeneratorErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseManagerReportGeneratorErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseManagerReportGeneratorErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateLicenseManagerReportGeneratorErrorKind::AuthorizationException(_inner) => {
-                Some(_inner)
-            }
-            UpdateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => Some(_inner),
-            UpdateLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            UpdateLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(
-                _inner,
-            ) => Some(_inner),
-            UpdateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            UpdateLicenseManagerReportGeneratorErrorKind::ServerInternalException(_inner) => {
-                Some(_inner)
-            }
-            UpdateLicenseManagerReportGeneratorErrorKind::ValidationException(_inner) => {
-                Some(_inner)
-            }
-            UpdateLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1017,22 +967,20 @@ impl std::error::Error for UpdateLicenseManagerReportGeneratorError {
 /// <p>The provided input is not valid. Try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationException {
+pub struct ValidationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ValidationException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -1042,7 +990,7 @@ impl std::fmt::Display for ValidationException {
 impl std::error::Error for ValidationException {}
 /// See [`ValidationException`](crate::error::ValidationException).
 pub mod validation_exception {
-
+    
     /// A builder for [`ValidationException`](crate::error::ValidationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1056,16 +1004,18 @@ pub mod validation_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException).
         pub fn build(self) -> crate::error::ValidationException {
             crate::error::ValidationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationException {
     /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException).
@@ -1077,22 +1027,20 @@ impl ValidationException {
 /// <p>The resource cannot be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceNotFoundException {
+pub struct ResourceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -1102,7 +1050,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
-
+    
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1116,16 +1064,18 @@ pub mod resource_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
@@ -1137,22 +1087,20 @@ impl ResourceNotFoundException {
 /// <p>Your resource limits have been exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceLimitExceededException {
+pub struct ResourceLimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceLimitExceededException")?;
         if let Some(inner_10) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_10)?;
             }
         }
@@ -1162,7 +1110,7 @@ impl std::fmt::Display for ResourceLimitExceededException {
 impl std::error::Error for ResourceLimitExceededException {}
 /// See [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
 pub mod resource_limit_exceeded_exception {
-
+    
     /// A builder for [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1176,16 +1124,18 @@ pub mod resource_limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
         pub fn build(self) -> crate::error::ResourceLimitExceededException {
             crate::error::ResourceLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceLimitExceededException {
     /// Creates a new builder-style object to manufacture [`ResourceLimitExceededException`](crate::error::ResourceLimitExceededException).
@@ -1199,17 +1149,15 @@ impl ResourceLimitExceededException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateLicenseConfigurationError {
     /// Kind of error that occurred.
-    pub kind: UpdateLicenseConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateLicenseConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateLicenseConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: UpdateLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1229,32 +1177,40 @@ pub enum UpdateLicenseConfigurationErrorKind {
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateLicenseConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateLicenseConfigurationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            UpdateLicenseConfigurationErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            UpdateLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) => {
+            UpdateLicenseConfigurationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseConfigurationErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseConfigurationErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseConfigurationErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseConfigurationErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLicenseConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateLicenseConfigurationErrorKind::RateLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateLicenseConfigurationErrorKind::ResourceLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateLicenseConfigurationErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            UpdateLicenseConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1268,107 +1224,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateLicenseConfigurationErr
 }
 impl UpdateLicenseConfigurationError {
     /// Creates a new `UpdateLicenseConfigurationError`.
-    pub fn new(kind: UpdateLicenseConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateLicenseConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateLicenseConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateLicenseConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateLicenseConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateLicenseConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateLicenseConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseConfigurationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, UpdateLicenseConfigurationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UpdateLicenseConfigurationErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseConfigurationErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, UpdateLicenseConfigurationErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `UpdateLicenseConfigurationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseConfigurationErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, UpdateLicenseConfigurationErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `UpdateLicenseConfigurationErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseConfigurationErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateLicenseConfigurationErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateLicenseConfigurationErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseConfigurationErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateLicenseConfigurationErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateLicenseConfigurationErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLicenseConfigurationErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, UpdateLicenseConfigurationErrorKind::ServerInternalException(_))
     }
 }
 impl std::error::Error for UpdateLicenseConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateLicenseConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            UpdateLicenseConfigurationErrorKind::AuthorizationException(_inner) => Some(_inner),
-            UpdateLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) => {
+            UpdateLicenseConfigurationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseConfigurationErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseConfigurationErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseConfigurationErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseConfigurationErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLicenseConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateLicenseConfigurationErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            UpdateLicenseConfigurationErrorKind::ResourceLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            UpdateLicenseConfigurationErrorKind::ServerInternalException(_inner) => Some(_inner),
-            UpdateLicenseConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1378,15 +1322,15 @@ impl std::error::Error for UpdateLicenseConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct UntagResourceError {
     /// Kind of error that occurred.
-    pub kind: UntagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UntagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1404,25 +1348,37 @@ pub enum UntagResourceErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1436,88 +1392,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
 }
 impl UntagResourceError {
     /// Creates a new `UntagResourceError`.
-    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::ServerInternalException(_))
     }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            UntagResourceErrorKind::AuthorizationException(_inner) => Some(_inner),
-            UntagResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            UntagResourceErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            UntagResourceErrorKind::ServerInternalException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            UntagResourceErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1527,15 +1483,15 @@ impl std::error::Error for UntagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct TagResourceError {
     /// Kind of error that occurred.
-    pub kind: TagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1553,25 +1509,37 @@ pub enum TagResourceErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1585,46 +1553,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
 }
 impl TagResourceError {
     /// Creates a new `TagResourceError`.
-    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TagResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, TagResourceErrorKind::AccessDeniedException(_))
@@ -1635,17 +1603,11 @@ impl TagResourceError {
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
@@ -1655,12 +1617,24 @@ impl TagResourceError {
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            TagResourceErrorKind::AuthorizationException(_inner) => Some(_inner),
-            TagResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            TagResourceErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            TagResourceErrorKind::ServerInternalException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            TagResourceErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1670,15 +1644,15 @@ impl std::error::Error for TagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct RejectGrantError {
     /// Kind of error that occurred.
-    pub kind: RejectGrantErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RejectGrantErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RejectGrantError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: RejectGrantErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1700,27 +1674,43 @@ pub enum RejectGrantErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RejectGrantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RejectGrantErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            RejectGrantErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            RejectGrantErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            RejectGrantErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            RejectGrantErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            RejectGrantErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            RejectGrantErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            RejectGrantErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            RejectGrantErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RejectGrantErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RejectGrantErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RejectGrantErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RejectGrantErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RejectGrantErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RejectGrantErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RejectGrantErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1734,46 +1724,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for RejectGrantError {
 }
 impl RejectGrantError {
     /// Creates a new `RejectGrantError`.
-    pub fn new(kind: RejectGrantErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RejectGrantError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RejectGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RejectGrantError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RejectGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RejectGrantErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RejectGrantError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RejectGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RejectGrantError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RejectGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RejectGrantErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, RejectGrantErrorKind::AccessDeniedException(_))
@@ -1784,24 +1774,15 @@ impl RejectGrantError {
     }
     /// Returns `true` if the error kind is `RejectGrantErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RejectGrantErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, RejectGrantErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `RejectGrantErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RejectGrantErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, RejectGrantErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `RejectGrantErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RejectGrantErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, RejectGrantErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `RejectGrantErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
@@ -1815,14 +1796,30 @@ impl RejectGrantError {
 impl std::error::Error for RejectGrantError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RejectGrantErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            RejectGrantErrorKind::AuthorizationException(_inner) => Some(_inner),
-            RejectGrantErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            RejectGrantErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            RejectGrantErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            RejectGrantErrorKind::ServerInternalException(_inner) => Some(_inner),
-            RejectGrantErrorKind::ValidationException(_inner) => Some(_inner),
-            RejectGrantErrorKind::Unhandled(_inner) => Some(_inner),
+            RejectGrantErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            RejectGrantErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            RejectGrantErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            RejectGrantErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            RejectGrantErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            RejectGrantErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            RejectGrantErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            RejectGrantErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1832,17 +1829,15 @@ impl std::error::Error for RejectGrantError {
 #[derive(std::fmt::Debug)]
 pub struct ListUsageForLicenseConfigurationError {
     /// Kind of error that occurred.
-    pub kind: ListUsageForLicenseConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListUsageForLicenseConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListUsageForLicenseConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListUsageForLicenseConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ListUsageForLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1862,38 +1857,40 @@ pub enum ListUsageForLicenseConfigurationErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListUsageForLicenseConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListUsageForLicenseConfigurationErrorKind::AccessDeniedException(_inner) => {
+            ListUsageForLicenseConfigurationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListUsageForLicenseConfigurationErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListUsageForLicenseConfigurationErrorKind::FilterLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListUsageForLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListUsageForLicenseConfigurationErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListUsageForLicenseConfigurationErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListUsageForLicenseConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListUsageForLicenseConfigurationErrorKind::AuthorizationException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListUsageForLicenseConfigurationErrorKind::FilterLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListUsageForLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListUsageForLicenseConfigurationErrorKind::RateLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListUsageForLicenseConfigurationErrorKind::ServerInternalException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListUsageForLicenseConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1907,118 +1904,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListUsageForLicenseConfigurat
 }
 impl ListUsageForLicenseConfigurationError {
     /// Creates a new `ListUsageForLicenseConfigurationError`.
-    pub fn new(
-        kind: ListUsageForLicenseConfigurationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListUsageForLicenseConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListUsageForLicenseConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListUsageForLicenseConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListUsageForLicenseConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListUsageForLicenseConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListUsageForLicenseConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListUsageForLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListUsageForLicenseConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListUsageForLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListUsageForLicenseConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListUsageForLicenseConfigurationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListUsageForLicenseConfigurationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListUsageForLicenseConfigurationErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListUsageForLicenseConfigurationErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, ListUsageForLicenseConfigurationErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `ListUsageForLicenseConfigurationErrorKind::FilterLimitExceededException`.
     pub fn is_filter_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListUsageForLicenseConfigurationErrorKind::FilterLimitExceededException(_)
-        )
+        matches!(&self.kind, ListUsageForLicenseConfigurationErrorKind::FilterLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListUsageForLicenseConfigurationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListUsageForLicenseConfigurationErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ListUsageForLicenseConfigurationErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ListUsageForLicenseConfigurationErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListUsageForLicenseConfigurationErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, ListUsageForLicenseConfigurationErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListUsageForLicenseConfigurationErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListUsageForLicenseConfigurationErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, ListUsageForLicenseConfigurationErrorKind::ServerInternalException(_))
     }
 }
 impl std::error::Error for ListUsageForLicenseConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListUsageForLicenseConfigurationErrorKind::AccessDeniedException(_inner) => {
+            ListUsageForLicenseConfigurationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListUsageForLicenseConfigurationErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            ListUsageForLicenseConfigurationErrorKind::FilterLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListUsageForLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ListUsageForLicenseConfigurationErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListUsageForLicenseConfigurationErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListUsageForLicenseConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListUsageForLicenseConfigurationErrorKind::AuthorizationException(_inner) => {
-                Some(_inner)
-            }
-            ListUsageForLicenseConfigurationErrorKind::FilterLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            ListUsageForLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            ListUsageForLicenseConfigurationErrorKind::RateLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            ListUsageForLicenseConfigurationErrorKind::ServerInternalException(_inner) => {
-                Some(_inner)
-            }
-            ListUsageForLicenseConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2026,22 +2000,20 @@ impl std::error::Error for ListUsageForLicenseConfigurationError {
 /// <p>The request uses too many filters or too many filter values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilterLimitExceededException {
+pub struct FilterLimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl FilterLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for FilterLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FilterLimitExceededException")?;
         if let Some(inner_11) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_11)?;
             }
         }
@@ -2051,7 +2023,7 @@ impl std::fmt::Display for FilterLimitExceededException {
 impl std::error::Error for FilterLimitExceededException {}
 /// See [`FilterLimitExceededException`](crate::error::FilterLimitExceededException).
 pub mod filter_limit_exceeded_exception {
-
+    
     /// A builder for [`FilterLimitExceededException`](crate::error::FilterLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2065,16 +2037,18 @@ pub mod filter_limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`FilterLimitExceededException`](crate::error::FilterLimitExceededException).
         pub fn build(self) -> crate::error::FilterLimitExceededException {
             crate::error::FilterLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl FilterLimitExceededException {
     /// Creates a new builder-style object to manufacture [`FilterLimitExceededException`](crate::error::FilterLimitExceededException).
@@ -2088,15 +2062,15 @@ impl FilterLimitExceededException {
 #[derive(std::fmt::Debug)]
 pub struct ListTokensError {
     /// Kind of error that occurred.
-    pub kind: ListTokensErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTokensErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTokensError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTokensErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2114,25 +2088,37 @@ pub enum ListTokensErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTokensError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTokensErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListTokensErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            ListTokensErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            ListTokensErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            ListTokensErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListTokensErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListTokensErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTokensErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTokensErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTokensErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTokensErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTokensErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2146,46 +2132,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTokensError {
 }
 impl ListTokensError {
     /// Creates a new `ListTokensError`.
-    pub fn new(kind: ListTokensErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTokensError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTokensErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTokensError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTokensErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTokensErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTokensError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTokensErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTokensError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTokensErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTokensErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListTokensErrorKind::AccessDeniedException(_))
@@ -2196,10 +2182,7 @@ impl ListTokensError {
     }
     /// Returns `true` if the error kind is `ListTokensErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTokensErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, ListTokensErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListTokensErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
@@ -2213,12 +2196,24 @@ impl ListTokensError {
 impl std::error::Error for ListTokensError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTokensErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListTokensErrorKind::AuthorizationException(_inner) => Some(_inner),
-            ListTokensErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            ListTokensErrorKind::ServerInternalException(_inner) => Some(_inner),
-            ListTokensErrorKind::ValidationException(_inner) => Some(_inner),
-            ListTokensErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTokensErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListTokensErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            ListTokensErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListTokensErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListTokensErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListTokensErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2228,15 +2223,15 @@ impl std::error::Error for ListTokensError {
 #[derive(std::fmt::Debug)]
 pub struct ListTagsForResourceError {
     /// Kind of error that occurred.
-    pub kind: ListTagsForResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListTagsForResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListTagsForResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2254,25 +2249,37 @@ pub enum ListTagsForResourceErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListTagsForResourceErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListTagsForResourceErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2286,91 +2293,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
 }
 impl ListTagsForResourceError {
     /// Creates a new `ListTagsForResourceError`.
-    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListTagsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListTagsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListTagsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListTagsForResourceErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, ListTagsForResourceErrorKind::ServerInternalException(_))
     }
 }
 impl std::error::Error for ListTagsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListTagsForResourceErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::AuthorizationException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::ServerInternalException(_inner) => Some(_inner),
-            ListTagsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            ListTagsForResourceErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListTagsForResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2380,15 +2384,15 @@ impl std::error::Error for ListTagsForResourceError {
 #[derive(std::fmt::Debug)]
 pub struct ListResourceInventoryError {
     /// Kind of error that occurred.
-    pub kind: ListResourceInventoryErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListResourceInventoryErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListResourceInventoryError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListResourceInventoryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2410,27 +2414,43 @@ pub enum ListResourceInventoryErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListResourceInventoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListResourceInventoryErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListResourceInventoryErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            ListResourceInventoryErrorKind::FailedDependencyException(_inner) => _inner.fmt(f),
-            ListResourceInventoryErrorKind::FilterLimitExceededException(_inner) => _inner.fmt(f),
-            ListResourceInventoryErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            ListResourceInventoryErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            ListResourceInventoryErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            ListResourceInventoryErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListResourceInventoryErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourceInventoryErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourceInventoryErrorKind::FailedDependencyException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourceInventoryErrorKind::FilterLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourceInventoryErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourceInventoryErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourceInventoryErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourceInventoryErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2444,111 +2464,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListResourceInventoryError {
 }
 impl ListResourceInventoryError {
     /// Creates a new `ListResourceInventoryError`.
-    pub fn new(kind: ListResourceInventoryErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListResourceInventoryError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListResourceInventoryErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListResourceInventoryError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListResourceInventoryErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListResourceInventoryErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListResourceInventoryError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListResourceInventoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListResourceInventoryError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListResourceInventoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListResourceInventoryErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourceInventoryErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListResourceInventoryErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListResourceInventoryErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourceInventoryErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, ListResourceInventoryErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `ListResourceInventoryErrorKind::FailedDependencyException`.
     pub fn is_failed_dependency_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourceInventoryErrorKind::FailedDependencyException(_)
-        )
+        matches!(&self.kind, ListResourceInventoryErrorKind::FailedDependencyException(_))
     }
     /// Returns `true` if the error kind is `ListResourceInventoryErrorKind::FilterLimitExceededException`.
     pub fn is_filter_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourceInventoryErrorKind::FilterLimitExceededException(_)
-        )
+        matches!(&self.kind, ListResourceInventoryErrorKind::FilterLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListResourceInventoryErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourceInventoryErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ListResourceInventoryErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ListResourceInventoryErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourceInventoryErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, ListResourceInventoryErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListResourceInventoryErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourceInventoryErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, ListResourceInventoryErrorKind::ServerInternalException(_))
     }
 }
 impl std::error::Error for ListResourceInventoryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListResourceInventoryErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListResourceInventoryErrorKind::AuthorizationException(_inner) => Some(_inner),
-            ListResourceInventoryErrorKind::FailedDependencyException(_inner) => Some(_inner),
-            ListResourceInventoryErrorKind::FilterLimitExceededException(_inner) => Some(_inner),
-            ListResourceInventoryErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            ListResourceInventoryErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            ListResourceInventoryErrorKind::ServerInternalException(_inner) => Some(_inner),
-            ListResourceInventoryErrorKind::Unhandled(_inner) => Some(_inner),
+            ListResourceInventoryErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourceInventoryErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourceInventoryErrorKind::FailedDependencyException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourceInventoryErrorKind::FilterLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourceInventoryErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourceInventoryErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourceInventoryErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourceInventoryErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2556,7 +2567,7 @@ impl std::error::Error for ListResourceInventoryError {
 /// <p>A dependency required to run the API is missing.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailedDependencyException {
+pub struct FailedDependencyException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -2566,21 +2577,19 @@ pub struct FailedDependencyException {
 }
 impl FailedDependencyException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
 }
 impl FailedDependencyException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for FailedDependencyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "FailedDependencyException")?;
         if let Some(inner_12) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_12)?;
             }
         }
@@ -2590,7 +2599,7 @@ impl std::fmt::Display for FailedDependencyException {
 impl std::error::Error for FailedDependencyException {}
 /// See [`FailedDependencyException`](crate::error::FailedDependencyException).
 pub mod failed_dependency_exception {
-
+    
     /// A builder for [`FailedDependencyException`](crate::error::FailedDependencyException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2605,8 +2614,7 @@ pub mod failed_dependency_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2615,17 +2623,20 @@ pub mod failed_dependency_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// Consumes the builder and constructs a [`FailedDependencyException`](crate::error::FailedDependencyException).
         pub fn build(self) -> crate::error::FailedDependencyException {
             crate::error::FailedDependencyException {
-                message: self.message,
-                error_code: self.error_code,
+                message: self.message
+                ,
+                error_code: self.error_code
+                ,
             }
         }
     }
+    
+    
 }
 impl FailedDependencyException {
     /// Creates a new builder-style object to manufacture [`FailedDependencyException`](crate::error::FailedDependencyException).
@@ -2639,17 +2650,15 @@ impl FailedDependencyException {
 #[derive(std::fmt::Debug)]
 pub struct ListReceivedLicensesForOrganizationError {
     /// Kind of error that occurred.
-    pub kind: ListReceivedLicensesForOrganizationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListReceivedLicensesForOrganizationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListReceivedLicensesForOrganizationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListReceivedLicensesForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ListReceivedLicensesForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2671,41 +2680,43 @@ pub enum ListReceivedLicensesForOrganizationErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListReceivedLicensesForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListReceivedLicensesForOrganizationErrorKind::AccessDeniedException(_inner) => {
+            ListReceivedLicensesForOrganizationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedLicensesForOrganizationErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedLicensesForOrganizationErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedLicensesForOrganizationErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedLicensesForOrganizationErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedLicensesForOrganizationErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedLicensesForOrganizationErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedLicensesForOrganizationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListReceivedLicensesForOrganizationErrorKind::AuthorizationException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListReceivedLicensesForOrganizationErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => _inner.fmt(f),
-            ListReceivedLicensesForOrganizationErrorKind::RateLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListReceivedLicensesForOrganizationErrorKind::ResourceLimitExceededException(
-                _inner,
-            ) => _inner.fmt(f),
-            ListReceivedLicensesForOrganizationErrorKind::ServerInternalException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListReceivedLicensesForOrganizationErrorKind::ValidationException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListReceivedLicensesForOrganizationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2719,128 +2730,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListReceivedLicensesForOrgani
 }
 impl ListReceivedLicensesForOrganizationError {
     /// Creates a new `ListReceivedLicensesForOrganizationError`.
-    pub fn new(
-        kind: ListReceivedLicensesForOrganizationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListReceivedLicensesForOrganizationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListReceivedLicensesForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListReceivedLicensesForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListReceivedLicensesForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListReceivedLicensesForOrganizationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListReceivedLicensesForOrganizationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListReceivedLicensesForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListReceivedLicensesForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListReceivedLicensesForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListReceivedLicensesForOrganizationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedLicensesForOrganizationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListReceivedLicensesForOrganizationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedLicensesForOrganizationErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedLicensesForOrganizationErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, ListReceivedLicensesForOrganizationErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedLicensesForOrganizationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedLicensesForOrganizationErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ListReceivedLicensesForOrganizationErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedLicensesForOrganizationErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedLicensesForOrganizationErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, ListReceivedLicensesForOrganizationErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedLicensesForOrganizationErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedLicensesForOrganizationErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, ListReceivedLicensesForOrganizationErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedLicensesForOrganizationErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedLicensesForOrganizationErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, ListReceivedLicensesForOrganizationErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedLicensesForOrganizationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedLicensesForOrganizationErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ListReceivedLicensesForOrganizationErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ListReceivedLicensesForOrganizationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListReceivedLicensesForOrganizationErrorKind::AccessDeniedException(_inner) => {
+            ListReceivedLicensesForOrganizationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedLicensesForOrganizationErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedLicensesForOrganizationErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedLicensesForOrganizationErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedLicensesForOrganizationErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedLicensesForOrganizationErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedLicensesForOrganizationErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedLicensesForOrganizationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListReceivedLicensesForOrganizationErrorKind::AuthorizationException(_inner) => {
-                Some(_inner)
-            }
-            ListReceivedLicensesForOrganizationErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => Some(_inner),
-            ListReceivedLicensesForOrganizationErrorKind::RateLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            ListReceivedLicensesForOrganizationErrorKind::ResourceLimitExceededException(
-                _inner,
-            ) => Some(_inner),
-            ListReceivedLicensesForOrganizationErrorKind::ServerInternalException(_inner) => {
-                Some(_inner)
-            }
-            ListReceivedLicensesForOrganizationErrorKind::ValidationException(_inner) => {
-                Some(_inner)
-            }
-            ListReceivedLicensesForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2850,15 +2835,15 @@ impl std::error::Error for ListReceivedLicensesForOrganizationError {
 #[derive(std::fmt::Debug)]
 pub struct ListReceivedLicensesError {
     /// Kind of error that occurred.
-    pub kind: ListReceivedLicensesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListReceivedLicensesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListReceivedLicensesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListReceivedLicensesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2880,27 +2865,43 @@ pub enum ListReceivedLicensesErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListReceivedLicensesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListReceivedLicensesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListReceivedLicensesErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            ListReceivedLicensesErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            ListReceivedLicensesErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            ListReceivedLicensesErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            ListReceivedLicensesErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            ListReceivedLicensesErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListReceivedLicensesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListReceivedLicensesErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedLicensesErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedLicensesErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedLicensesErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedLicensesErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedLicensesErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedLicensesErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedLicensesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2914,111 +2915,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListReceivedLicensesError {
 }
 impl ListReceivedLicensesError {
     /// Creates a new `ListReceivedLicensesError`.
-    pub fn new(kind: ListReceivedLicensesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListReceivedLicensesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListReceivedLicensesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListReceivedLicensesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListReceivedLicensesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListReceivedLicensesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListReceivedLicensesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListReceivedLicensesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListReceivedLicensesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListReceivedLicensesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListReceivedLicensesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedLicensesErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListReceivedLicensesErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedLicensesErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedLicensesErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, ListReceivedLicensesErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedLicensesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedLicensesErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ListReceivedLicensesErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedLicensesErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedLicensesErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, ListReceivedLicensesErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedLicensesErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedLicensesErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, ListReceivedLicensesErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedLicensesErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedLicensesErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, ListReceivedLicensesErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedLicensesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedLicensesErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ListReceivedLicensesErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ListReceivedLicensesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListReceivedLicensesErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListReceivedLicensesErrorKind::AuthorizationException(_inner) => Some(_inner),
-            ListReceivedLicensesErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            ListReceivedLicensesErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            ListReceivedLicensesErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            ListReceivedLicensesErrorKind::ServerInternalException(_inner) => Some(_inner),
-            ListReceivedLicensesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListReceivedLicensesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListReceivedLicensesErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedLicensesErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedLicensesErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedLicensesErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedLicensesErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedLicensesErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedLicensesErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedLicensesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3028,17 +3020,15 @@ impl std::error::Error for ListReceivedLicensesError {
 #[derive(std::fmt::Debug)]
 pub struct ListReceivedGrantsForOrganizationError {
     /// Kind of error that occurred.
-    pub kind: ListReceivedGrantsForOrganizationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListReceivedGrantsForOrganizationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListReceivedGrantsForOrganizationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListReceivedGrantsForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ListReceivedGrantsForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3060,41 +3050,43 @@ pub enum ListReceivedGrantsForOrganizationErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListReceivedGrantsForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListReceivedGrantsForOrganizationErrorKind::AccessDeniedException(_inner) => {
+            ListReceivedGrantsForOrganizationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedGrantsForOrganizationErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedGrantsForOrganizationErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedGrantsForOrganizationErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedGrantsForOrganizationErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedGrantsForOrganizationErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedGrantsForOrganizationErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedGrantsForOrganizationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListReceivedGrantsForOrganizationErrorKind::AuthorizationException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListReceivedGrantsForOrganizationErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListReceivedGrantsForOrganizationErrorKind::RateLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListReceivedGrantsForOrganizationErrorKind::ResourceLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListReceivedGrantsForOrganizationErrorKind::ServerInternalException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListReceivedGrantsForOrganizationErrorKind::ValidationException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListReceivedGrantsForOrganizationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3108,126 +3100,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListReceivedGrantsForOrganiza
 }
 impl ListReceivedGrantsForOrganizationError {
     /// Creates a new `ListReceivedGrantsForOrganizationError`.
-    pub fn new(
-        kind: ListReceivedGrantsForOrganizationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListReceivedGrantsForOrganizationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListReceivedGrantsForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListReceivedGrantsForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListReceivedGrantsForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListReceivedGrantsForOrganizationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListReceivedGrantsForOrganizationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListReceivedGrantsForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListReceivedGrantsForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListReceivedGrantsForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListReceivedGrantsForOrganizationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedGrantsForOrganizationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListReceivedGrantsForOrganizationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedGrantsForOrganizationErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedGrantsForOrganizationErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, ListReceivedGrantsForOrganizationErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedGrantsForOrganizationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedGrantsForOrganizationErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ListReceivedGrantsForOrganizationErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedGrantsForOrganizationErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedGrantsForOrganizationErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, ListReceivedGrantsForOrganizationErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedGrantsForOrganizationErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedGrantsForOrganizationErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, ListReceivedGrantsForOrganizationErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedGrantsForOrganizationErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedGrantsForOrganizationErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, ListReceivedGrantsForOrganizationErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedGrantsForOrganizationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedGrantsForOrganizationErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ListReceivedGrantsForOrganizationErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ListReceivedGrantsForOrganizationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListReceivedGrantsForOrganizationErrorKind::AccessDeniedException(_inner) => {
+            ListReceivedGrantsForOrganizationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedGrantsForOrganizationErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedGrantsForOrganizationErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedGrantsForOrganizationErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedGrantsForOrganizationErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedGrantsForOrganizationErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedGrantsForOrganizationErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedGrantsForOrganizationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListReceivedGrantsForOrganizationErrorKind::AuthorizationException(_inner) => {
-                Some(_inner)
-            }
-            ListReceivedGrantsForOrganizationErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            ListReceivedGrantsForOrganizationErrorKind::RateLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            ListReceivedGrantsForOrganizationErrorKind::ResourceLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            ListReceivedGrantsForOrganizationErrorKind::ServerInternalException(_inner) => {
-                Some(_inner)
-            }
-            ListReceivedGrantsForOrganizationErrorKind::ValidationException(_inner) => Some(_inner),
-            ListReceivedGrantsForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3237,15 +3205,15 @@ impl std::error::Error for ListReceivedGrantsForOrganizationError {
 #[derive(std::fmt::Debug)]
 pub struct ListReceivedGrantsError {
     /// Kind of error that occurred.
-    pub kind: ListReceivedGrantsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListReceivedGrantsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListReceivedGrantsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListReceivedGrantsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3267,27 +3235,43 @@ pub enum ListReceivedGrantsErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListReceivedGrantsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListReceivedGrantsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListReceivedGrantsErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            ListReceivedGrantsErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            ListReceivedGrantsErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            ListReceivedGrantsErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            ListReceivedGrantsErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            ListReceivedGrantsErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListReceivedGrantsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListReceivedGrantsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedGrantsErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedGrantsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedGrantsErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedGrantsErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedGrantsErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedGrantsErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListReceivedGrantsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3301,107 +3285,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListReceivedGrantsError {
 }
 impl ListReceivedGrantsError {
     /// Creates a new `ListReceivedGrantsError`.
-    pub fn new(kind: ListReceivedGrantsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListReceivedGrantsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListReceivedGrantsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListReceivedGrantsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListReceivedGrantsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListReceivedGrantsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListReceivedGrantsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListReceivedGrantsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListReceivedGrantsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListReceivedGrantsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListReceivedGrantsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedGrantsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListReceivedGrantsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedGrantsErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedGrantsErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, ListReceivedGrantsErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedGrantsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedGrantsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ListReceivedGrantsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedGrantsErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedGrantsErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, ListReceivedGrantsErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedGrantsErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedGrantsErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, ListReceivedGrantsErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedGrantsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedGrantsErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, ListReceivedGrantsErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `ListReceivedGrantsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListReceivedGrantsErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ListReceivedGrantsErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ListReceivedGrantsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListReceivedGrantsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListReceivedGrantsErrorKind::AuthorizationException(_inner) => Some(_inner),
-            ListReceivedGrantsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            ListReceivedGrantsErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            ListReceivedGrantsErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            ListReceivedGrantsErrorKind::ServerInternalException(_inner) => Some(_inner),
-            ListReceivedGrantsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListReceivedGrantsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListReceivedGrantsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedGrantsErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedGrantsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedGrantsErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedGrantsErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedGrantsErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedGrantsErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListReceivedGrantsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3411,15 +3390,15 @@ impl std::error::Error for ListReceivedGrantsError {
 #[derive(std::fmt::Debug)]
 pub struct ListLicenseVersionsError {
     /// Kind of error that occurred.
-    pub kind: ListLicenseVersionsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListLicenseVersionsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListLicenseVersionsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListLicenseVersionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3437,25 +3416,37 @@ pub enum ListLicenseVersionsErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLicenseVersionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListLicenseVersionsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListLicenseVersionsErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            ListLicenseVersionsErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            ListLicenseVersionsErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            ListLicenseVersionsErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            ListLicenseVersionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListLicenseVersionsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseVersionsErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseVersionsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseVersionsErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseVersionsErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseVersionsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3469,91 +3460,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListLicenseVersionsError {
 }
 impl ListLicenseVersionsError {
     /// Creates a new `ListLicenseVersionsError`.
-    pub fn new(kind: ListLicenseVersionsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListLicenseVersionsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListLicenseVersionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListLicenseVersionsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListLicenseVersionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListLicenseVersionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListLicenseVersionsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListLicenseVersionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListLicenseVersionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListLicenseVersionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListLicenseVersionsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseVersionsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListLicenseVersionsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseVersionsErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseVersionsErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, ListLicenseVersionsErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseVersionsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseVersionsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ListLicenseVersionsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseVersionsErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseVersionsErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, ListLicenseVersionsErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseVersionsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseVersionsErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, ListLicenseVersionsErrorKind::ServerInternalException(_))
     }
 }
 impl std::error::Error for ListLicenseVersionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListLicenseVersionsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListLicenseVersionsErrorKind::AuthorizationException(_inner) => Some(_inner),
-            ListLicenseVersionsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            ListLicenseVersionsErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            ListLicenseVersionsErrorKind::ServerInternalException(_inner) => Some(_inner),
-            ListLicenseVersionsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListLicenseVersionsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseVersionsErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseVersionsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseVersionsErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseVersionsErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseVersionsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3563,17 +3551,15 @@ impl std::error::Error for ListLicenseVersionsError {
 #[derive(std::fmt::Debug)]
 pub struct ListLicenseSpecificationsForResourceError {
     /// Kind of error that occurred.
-    pub kind: ListLicenseSpecificationsForResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListLicenseSpecificationsForResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListLicenseSpecificationsForResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListLicenseSpecificationsForResourceErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ListLicenseSpecificationsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3591,35 +3577,37 @@ pub enum ListLicenseSpecificationsForResourceErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLicenseSpecificationsForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListLicenseSpecificationsForResourceErrorKind::AccessDeniedException(_inner) => {
+            ListLicenseSpecificationsForResourceErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseSpecificationsForResourceErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseSpecificationsForResourceErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseSpecificationsForResourceErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseSpecificationsForResourceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListLicenseSpecificationsForResourceErrorKind::AuthorizationException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => _inner.fmt(f),
-            ListLicenseSpecificationsForResourceErrorKind::RateLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListLicenseSpecificationsForResourceErrorKind::ServerInternalException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListLicenseSpecificationsForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3633,108 +3621,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListLicenseSpecificationsForR
 }
 impl ListLicenseSpecificationsForResourceError {
     /// Creates a new `ListLicenseSpecificationsForResourceError`.
-    pub fn new(
-        kind: ListLicenseSpecificationsForResourceErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListLicenseSpecificationsForResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListLicenseSpecificationsForResourceErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListLicenseSpecificationsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListLicenseSpecificationsForResourceErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListLicenseSpecificationsForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListLicenseSpecificationsForResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListLicenseSpecificationsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListLicenseSpecificationsForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListLicenseSpecificationsForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListLicenseSpecificationsForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseSpecificationsForResourceErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListLicenseSpecificationsForResourceErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseSpecificationsForResourceErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseSpecificationsForResourceErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, ListLicenseSpecificationsForResourceErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ListLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseSpecificationsForResourceErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseSpecificationsForResourceErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, ListLicenseSpecificationsForResourceErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseSpecificationsForResourceErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseSpecificationsForResourceErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, ListLicenseSpecificationsForResourceErrorKind::ServerInternalException(_))
     }
 }
 impl std::error::Error for ListLicenseSpecificationsForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListLicenseSpecificationsForResourceErrorKind::AccessDeniedException(_inner) => {
+            ListLicenseSpecificationsForResourceErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseSpecificationsForResourceErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseSpecificationsForResourceErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseSpecificationsForResourceErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseSpecificationsForResourceErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListLicenseSpecificationsForResourceErrorKind::AuthorizationException(_inner) => {
-                Some(_inner)
-            }
-            ListLicenseSpecificationsForResourceErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => Some(_inner),
-            ListLicenseSpecificationsForResourceErrorKind::RateLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            ListLicenseSpecificationsForResourceErrorKind::ServerInternalException(_inner) => {
-                Some(_inner)
-            }
-            ListLicenseSpecificationsForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3744,15 +3712,15 @@ impl std::error::Error for ListLicenseSpecificationsForResourceError {
 #[derive(std::fmt::Debug)]
 pub struct ListLicensesError {
     /// Kind of error that occurred.
-    pub kind: ListLicensesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListLicensesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListLicensesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListLicensesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3772,26 +3740,40 @@ pub enum ListLicensesErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLicensesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListLicensesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListLicensesErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            ListLicensesErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            ListLicensesErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            ListLicensesErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            ListLicensesErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListLicensesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListLicensesErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicensesErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicensesErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicensesErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicensesErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicensesErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicensesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3805,46 +3787,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListLicensesError {
 }
 impl ListLicensesError {
     /// Creates a new `ListLicensesError`.
-    pub fn new(kind: ListLicensesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListLicensesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListLicensesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListLicensesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListLicensesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListLicensesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListLicensesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListLicensesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListLicensesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListLicensesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListLicensesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, ListLicensesErrorKind::AccessDeniedException(_))
@@ -3855,24 +3837,15 @@ impl ListLicensesError {
     }
     /// Returns `true` if the error kind is `ListLicensesErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicensesErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ListLicensesErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ListLicensesErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicensesErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, ListLicensesErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListLicensesErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicensesErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, ListLicensesErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `ListLicensesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -3882,13 +3855,27 @@ impl ListLicensesError {
 impl std::error::Error for ListLicensesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListLicensesErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListLicensesErrorKind::AuthorizationException(_inner) => Some(_inner),
-            ListLicensesErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            ListLicensesErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            ListLicensesErrorKind::ServerInternalException(_inner) => Some(_inner),
-            ListLicensesErrorKind::ValidationException(_inner) => Some(_inner),
-            ListLicensesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListLicensesErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicensesErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicensesErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicensesErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicensesErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicensesErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicensesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3898,17 +3885,15 @@ impl std::error::Error for ListLicensesError {
 #[derive(std::fmt::Debug)]
 pub struct ListLicenseManagerReportGeneratorsError {
     /// Kind of error that occurred.
-    pub kind: ListLicenseManagerReportGeneratorsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListLicenseManagerReportGeneratorsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListLicenseManagerReportGeneratorsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListLicenseManagerReportGeneratorsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ListLicenseManagerReportGeneratorsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3932,44 +3917,46 @@ pub enum ListLicenseManagerReportGeneratorsErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLicenseManagerReportGeneratorsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListLicenseManagerReportGeneratorsErrorKind::AccessDeniedException(_inner) => {
+            ListLicenseManagerReportGeneratorsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseManagerReportGeneratorsErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseManagerReportGeneratorsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseManagerReportGeneratorsErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseManagerReportGeneratorsErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseManagerReportGeneratorsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseManagerReportGeneratorsErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseManagerReportGeneratorsErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseManagerReportGeneratorsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListLicenseManagerReportGeneratorsErrorKind::AuthorizationException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListLicenseManagerReportGeneratorsErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListLicenseManagerReportGeneratorsErrorKind::RateLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListLicenseManagerReportGeneratorsErrorKind::ResourceLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListLicenseManagerReportGeneratorsErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListLicenseManagerReportGeneratorsErrorKind::ServerInternalException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListLicenseManagerReportGeneratorsErrorKind::ValidationException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListLicenseManagerReportGeneratorsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3983,138 +3970,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListLicenseManagerReportGener
 }
 impl ListLicenseManagerReportGeneratorsError {
     /// Creates a new `ListLicenseManagerReportGeneratorsError`.
-    pub fn new(
-        kind: ListLicenseManagerReportGeneratorsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListLicenseManagerReportGeneratorsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListLicenseManagerReportGeneratorsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListLicenseManagerReportGeneratorsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListLicenseManagerReportGeneratorsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListLicenseManagerReportGeneratorsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListLicenseManagerReportGeneratorsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListLicenseManagerReportGeneratorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListLicenseManagerReportGeneratorsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListLicenseManagerReportGeneratorsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseManagerReportGeneratorsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListLicenseManagerReportGeneratorsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseManagerReportGeneratorsErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, ListLicenseManagerReportGeneratorsErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseManagerReportGeneratorsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ListLicenseManagerReportGeneratorsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseManagerReportGeneratorsErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, ListLicenseManagerReportGeneratorsErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseManagerReportGeneratorsErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, ListLicenseManagerReportGeneratorsErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseManagerReportGeneratorsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ListLicenseManagerReportGeneratorsErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseManagerReportGeneratorsErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, ListLicenseManagerReportGeneratorsErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseManagerReportGeneratorsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseManagerReportGeneratorsErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ListLicenseManagerReportGeneratorsErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ListLicenseManagerReportGeneratorsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListLicenseManagerReportGeneratorsErrorKind::AccessDeniedException(_inner) => {
+            ListLicenseManagerReportGeneratorsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseManagerReportGeneratorsErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseManagerReportGeneratorsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseManagerReportGeneratorsErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseManagerReportGeneratorsErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseManagerReportGeneratorsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseManagerReportGeneratorsErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseManagerReportGeneratorsErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseManagerReportGeneratorsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListLicenseManagerReportGeneratorsErrorKind::AuthorizationException(_inner) => {
-                Some(_inner)
-            }
-            ListLicenseManagerReportGeneratorsErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            ListLicenseManagerReportGeneratorsErrorKind::RateLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            ListLicenseManagerReportGeneratorsErrorKind::ResourceLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            ListLicenseManagerReportGeneratorsErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            ListLicenseManagerReportGeneratorsErrorKind::ServerInternalException(_inner) => {
-                Some(_inner)
-            }
-            ListLicenseManagerReportGeneratorsErrorKind::ValidationException(_inner) => {
-                Some(_inner)
-            }
-            ListLicenseManagerReportGeneratorsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4124,17 +4082,15 @@ impl std::error::Error for ListLicenseManagerReportGeneratorsError {
 #[derive(std::fmt::Debug)]
 pub struct ListLicenseConversionTasksError {
     /// Kind of error that occurred.
-    pub kind: ListLicenseConversionTasksErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListLicenseConversionTasksErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListLicenseConversionTasksError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListLicenseConversionTasksErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ListLicenseConversionTasksErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4152,29 +4108,37 @@ pub enum ListLicenseConversionTasksErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLicenseConversionTasksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListLicenseConversionTasksErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListLicenseConversionTasksErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            ListLicenseConversionTasksErrorKind::InvalidParameterValueException(_inner) => {
+            ListLicenseConversionTasksErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseConversionTasksErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseConversionTasksErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseConversionTasksErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseConversionTasksErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseConversionTasksErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListLicenseConversionTasksErrorKind::RateLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListLicenseConversionTasksErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            ListLicenseConversionTasksErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4188,97 +4152,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListLicenseConversionTasksErr
 }
 impl ListLicenseConversionTasksError {
     /// Creates a new `ListLicenseConversionTasksError`.
-    pub fn new(kind: ListLicenseConversionTasksErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListLicenseConversionTasksError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListLicenseConversionTasksErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListLicenseConversionTasksError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListLicenseConversionTasksErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListLicenseConversionTasksErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListLicenseConversionTasksError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListLicenseConversionTasksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListLicenseConversionTasksError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListLicenseConversionTasksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListLicenseConversionTasksErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseConversionTasksErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListLicenseConversionTasksErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseConversionTasksErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseConversionTasksErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, ListLicenseConversionTasksErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseConversionTasksErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseConversionTasksErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ListLicenseConversionTasksErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseConversionTasksErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseConversionTasksErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, ListLicenseConversionTasksErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseConversionTasksErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseConversionTasksErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, ListLicenseConversionTasksErrorKind::ServerInternalException(_))
     }
 }
 impl std::error::Error for ListLicenseConversionTasksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListLicenseConversionTasksErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListLicenseConversionTasksErrorKind::AuthorizationException(_inner) => Some(_inner),
-            ListLicenseConversionTasksErrorKind::InvalidParameterValueException(_inner) => {
+            ListLicenseConversionTasksErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseConversionTasksErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseConversionTasksErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseConversionTasksErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseConversionTasksErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseConversionTasksErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListLicenseConversionTasksErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            ListLicenseConversionTasksErrorKind::ServerInternalException(_inner) => Some(_inner),
-            ListLicenseConversionTasksErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4288,17 +4243,15 @@ impl std::error::Error for ListLicenseConversionTasksError {
 #[derive(std::fmt::Debug)]
 pub struct ListLicenseConfigurationsError {
     /// Kind of error that occurred.
-    pub kind: ListLicenseConfigurationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListLicenseConfigurationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListLicenseConfigurationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListLicenseConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ListLicenseConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4318,30 +4271,40 @@ pub enum ListLicenseConfigurationsErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListLicenseConfigurationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListLicenseConfigurationsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListLicenseConfigurationsErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            ListLicenseConfigurationsErrorKind::FilterLimitExceededException(_inner) => {
+            ListLicenseConfigurationsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseConfigurationsErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseConfigurationsErrorKind::FilterLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseConfigurationsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseConfigurationsErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseConfigurationsErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListLicenseConfigurationsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListLicenseConfigurationsErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListLicenseConfigurationsErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            ListLicenseConfigurationsErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            ListLicenseConfigurationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4355,107 +4318,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListLicenseConfigurationsErro
 }
 impl ListLicenseConfigurationsError {
     /// Creates a new `ListLicenseConfigurationsError`.
-    pub fn new(kind: ListLicenseConfigurationsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListLicenseConfigurationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListLicenseConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListLicenseConfigurationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListLicenseConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListLicenseConfigurationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListLicenseConfigurationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListLicenseConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListLicenseConfigurationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListLicenseConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListLicenseConfigurationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseConfigurationsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListLicenseConfigurationsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseConfigurationsErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseConfigurationsErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, ListLicenseConfigurationsErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseConfigurationsErrorKind::FilterLimitExceededException`.
     pub fn is_filter_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseConfigurationsErrorKind::FilterLimitExceededException(_)
-        )
+        matches!(&self.kind, ListLicenseConfigurationsErrorKind::FilterLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseConfigurationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseConfigurationsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ListLicenseConfigurationsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseConfigurationsErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseConfigurationsErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, ListLicenseConfigurationsErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListLicenseConfigurationsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListLicenseConfigurationsErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, ListLicenseConfigurationsErrorKind::ServerInternalException(_))
     }
 }
 impl std::error::Error for ListLicenseConfigurationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListLicenseConfigurationsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListLicenseConfigurationsErrorKind::AuthorizationException(_inner) => Some(_inner),
-            ListLicenseConfigurationsErrorKind::FilterLimitExceededException(_inner) => {
+            ListLicenseConfigurationsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseConfigurationsErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseConfigurationsErrorKind::FilterLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseConfigurationsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseConfigurationsErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseConfigurationsErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListLicenseConfigurationsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListLicenseConfigurationsErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            ListLicenseConfigurationsErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            ListLicenseConfigurationsErrorKind::ServerInternalException(_inner) => Some(_inner),
-            ListLicenseConfigurationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4465,19 +4416,15 @@ impl std::error::Error for ListLicenseConfigurationsError {
 #[derive(std::fmt::Debug)]
 pub struct ListFailuresForLicenseConfigurationOperationsError {
     /// Kind of error that occurred.
-    pub kind: ListFailuresForLicenseConfigurationOperationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListFailuresForLicenseConfigurationOperationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for ListFailuresForLicenseConfigurationOperationsError
-{
+impl aws_smithy_http::result::CreateUnhandledError for ListFailuresForLicenseConfigurationOperationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListFailuresForLicenseConfigurationOperationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ListFailuresForLicenseConfigurationOperationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4495,14 +4442,14 @@ pub enum ListFailuresForLicenseConfigurationOperationsErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListFailuresForLicenseConfigurationOperationsError {
@@ -4529,9 +4476,7 @@ impl std::fmt::Display for ListFailuresForLicenseConfigurationOperationsError {
         }
     }
 }
-impl aws_smithy_types::retry::ProvideErrorKind
-    for ListFailuresForLicenseConfigurationOperationsError
-{
+impl aws_smithy_types::retry::ProvideErrorKind for ListFailuresForLicenseConfigurationOperationsError {
     fn code(&self) -> Option<&str> {
         ListFailuresForLicenseConfigurationOperationsError::code(self)
     }
@@ -4541,89 +4486,65 @@ impl aws_smithy_types::retry::ProvideErrorKind
 }
 impl ListFailuresForLicenseConfigurationOperationsError {
     /// Creates a new `ListFailuresForLicenseConfigurationOperationsError`.
-    pub fn new(
-        kind: ListFailuresForLicenseConfigurationOperationsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListFailuresForLicenseConfigurationOperationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListFailuresForLicenseConfigurationOperationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListFailuresForLicenseConfigurationOperationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListFailuresForLicenseConfigurationOperationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListFailuresForLicenseConfigurationOperationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListFailuresForLicenseConfigurationOperationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListFailuresForLicenseConfigurationOperationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListFailuresForLicenseConfigurationOperationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListFailuresForLicenseConfigurationOperationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListFailuresForLicenseConfigurationOperationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFailuresForLicenseConfigurationOperationsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListFailuresForLicenseConfigurationOperationsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListFailuresForLicenseConfigurationOperationsErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFailuresForLicenseConfigurationOperationsErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, ListFailuresForLicenseConfigurationOperationsErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `ListFailuresForLicenseConfigurationOperationsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFailuresForLicenseConfigurationOperationsErrorKind::InvalidParameterValueException(
-                _
-            )
-        )
+        matches!(&self.kind, ListFailuresForLicenseConfigurationOperationsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ListFailuresForLicenseConfigurationOperationsErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFailuresForLicenseConfigurationOperationsErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, ListFailuresForLicenseConfigurationOperationsErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListFailuresForLicenseConfigurationOperationsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListFailuresForLicenseConfigurationOperationsErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, ListFailuresForLicenseConfigurationOperationsErrorKind::ServerInternalException(_))
     }
 }
 impl std::error::Error for ListFailuresForLicenseConfigurationOperationsError {
@@ -4656,15 +4577,15 @@ impl std::error::Error for ListFailuresForLicenseConfigurationOperationsError {
 #[derive(std::fmt::Debug)]
 pub struct ListDistributedGrantsError {
     /// Kind of error that occurred.
-    pub kind: ListDistributedGrantsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListDistributedGrantsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListDistributedGrantsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListDistributedGrantsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4686,27 +4607,43 @@ pub enum ListDistributedGrantsErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListDistributedGrantsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListDistributedGrantsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListDistributedGrantsErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            ListDistributedGrantsErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            ListDistributedGrantsErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            ListDistributedGrantsErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            ListDistributedGrantsErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            ListDistributedGrantsErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListDistributedGrantsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListDistributedGrantsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDistributedGrantsErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDistributedGrantsErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDistributedGrantsErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDistributedGrantsErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDistributedGrantsErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDistributedGrantsErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListDistributedGrantsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4720,111 +4657,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListDistributedGrantsError {
 }
 impl ListDistributedGrantsError {
     /// Creates a new `ListDistributedGrantsError`.
-    pub fn new(kind: ListDistributedGrantsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListDistributedGrantsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListDistributedGrantsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListDistributedGrantsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListDistributedGrantsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListDistributedGrantsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListDistributedGrantsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListDistributedGrantsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListDistributedGrantsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListDistributedGrantsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListDistributedGrantsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDistributedGrantsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListDistributedGrantsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListDistributedGrantsErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDistributedGrantsErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, ListDistributedGrantsErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `ListDistributedGrantsErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDistributedGrantsErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ListDistributedGrantsErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ListDistributedGrantsErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDistributedGrantsErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, ListDistributedGrantsErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListDistributedGrantsErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDistributedGrantsErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, ListDistributedGrantsErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListDistributedGrantsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDistributedGrantsErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, ListDistributedGrantsErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `ListDistributedGrantsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListDistributedGrantsErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ListDistributedGrantsErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ListDistributedGrantsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListDistributedGrantsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListDistributedGrantsErrorKind::AuthorizationException(_inner) => Some(_inner),
-            ListDistributedGrantsErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            ListDistributedGrantsErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            ListDistributedGrantsErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            ListDistributedGrantsErrorKind::ServerInternalException(_inner) => Some(_inner),
-            ListDistributedGrantsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListDistributedGrantsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListDistributedGrantsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListDistributedGrantsErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            ListDistributedGrantsErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ListDistributedGrantsErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListDistributedGrantsErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListDistributedGrantsErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListDistributedGrantsErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListDistributedGrantsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4834,19 +4762,15 @@ impl std::error::Error for ListDistributedGrantsError {
 #[derive(std::fmt::Debug)]
 pub struct ListAssociationsForLicenseConfigurationError {
     /// Kind of error that occurred.
-    pub kind: ListAssociationsForLicenseConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListAssociationsForLicenseConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for ListAssociationsForLicenseConfigurationError
-{
+impl aws_smithy_http::result::CreateUnhandledError for ListAssociationsForLicenseConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListAssociationsForLicenseConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ListAssociationsForLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4866,38 +4790,40 @@ pub enum ListAssociationsForLicenseConfigurationErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListAssociationsForLicenseConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListAssociationsForLicenseConfigurationErrorKind::AccessDeniedException(_inner) => {
+            ListAssociationsForLicenseConfigurationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAssociationsForLicenseConfigurationErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAssociationsForLicenseConfigurationErrorKind::FilterLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAssociationsForLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAssociationsForLicenseConfigurationErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAssociationsForLicenseConfigurationErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListAssociationsForLicenseConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListAssociationsForLicenseConfigurationErrorKind::AuthorizationException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListAssociationsForLicenseConfigurationErrorKind::FilterLimitExceededException(
-                _inner,
-            ) => _inner.fmt(f),
-            ListAssociationsForLicenseConfigurationErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => _inner.fmt(f),
-            ListAssociationsForLicenseConfigurationErrorKind::RateLimitExceededException(
-                _inner,
-            ) => _inner.fmt(f),
-            ListAssociationsForLicenseConfigurationErrorKind::ServerInternalException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListAssociationsForLicenseConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4911,118 +4837,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListAssociationsForLicenseCon
 }
 impl ListAssociationsForLicenseConfigurationError {
     /// Creates a new `ListAssociationsForLicenseConfigurationError`.
-    pub fn new(
-        kind: ListAssociationsForLicenseConfigurationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListAssociationsForLicenseConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListAssociationsForLicenseConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListAssociationsForLicenseConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListAssociationsForLicenseConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListAssociationsForLicenseConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListAssociationsForLicenseConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListAssociationsForLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListAssociationsForLicenseConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListAssociationsForLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListAssociationsForLicenseConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAssociationsForLicenseConfigurationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListAssociationsForLicenseConfigurationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListAssociationsForLicenseConfigurationErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAssociationsForLicenseConfigurationErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, ListAssociationsForLicenseConfigurationErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `ListAssociationsForLicenseConfigurationErrorKind::FilterLimitExceededException`.
     pub fn is_filter_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAssociationsForLicenseConfigurationErrorKind::FilterLimitExceededException(_)
-        )
+        matches!(&self.kind, ListAssociationsForLicenseConfigurationErrorKind::FilterLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListAssociationsForLicenseConfigurationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAssociationsForLicenseConfigurationErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ListAssociationsForLicenseConfigurationErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ListAssociationsForLicenseConfigurationErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAssociationsForLicenseConfigurationErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, ListAssociationsForLicenseConfigurationErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListAssociationsForLicenseConfigurationErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListAssociationsForLicenseConfigurationErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, ListAssociationsForLicenseConfigurationErrorKind::ServerInternalException(_))
     }
 }
 impl std::error::Error for ListAssociationsForLicenseConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListAssociationsForLicenseConfigurationErrorKind::AccessDeniedException(_inner) => {
+            ListAssociationsForLicenseConfigurationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListAssociationsForLicenseConfigurationErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            ListAssociationsForLicenseConfigurationErrorKind::FilterLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListAssociationsForLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ListAssociationsForLicenseConfigurationErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListAssociationsForLicenseConfigurationErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ListAssociationsForLicenseConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListAssociationsForLicenseConfigurationErrorKind::AuthorizationException(_inner) => {
-                Some(_inner)
-            }
-            ListAssociationsForLicenseConfigurationErrorKind::FilterLimitExceededException(
-                _inner,
-            ) => Some(_inner),
-            ListAssociationsForLicenseConfigurationErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => Some(_inner),
-            ListAssociationsForLicenseConfigurationErrorKind::RateLimitExceededException(
-                _inner,
-            ) => Some(_inner),
-            ListAssociationsForLicenseConfigurationErrorKind::ServerInternalException(_inner) => {
-                Some(_inner)
-            }
-            ListAssociationsForLicenseConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5032,15 +4935,15 @@ impl std::error::Error for ListAssociationsForLicenseConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct GetServiceSettingsError {
     /// Kind of error that occurred.
-    pub kind: GetServiceSettingsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetServiceSettingsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetServiceSettingsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetServiceSettingsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5056,24 +4959,34 @@ pub enum GetServiceSettingsErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetServiceSettingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetServiceSettingsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetServiceSettingsErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            GetServiceSettingsErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            GetServiceSettingsErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            GetServiceSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetServiceSettingsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetServiceSettingsErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetServiceSettingsErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetServiceSettingsErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetServiceSettingsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5087,83 +5000,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetServiceSettingsError {
 }
 impl GetServiceSettingsError {
     /// Creates a new `GetServiceSettingsError`.
-    pub fn new(kind: GetServiceSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetServiceSettingsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetServiceSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetServiceSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetServiceSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetServiceSettingsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetServiceSettingsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetServiceSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetServiceSettingsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetServiceSettingsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetServiceSettingsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetServiceSettingsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetServiceSettingsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetServiceSettingsErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetServiceSettingsErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, GetServiceSettingsErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `GetServiceSettingsErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetServiceSettingsErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, GetServiceSettingsErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `GetServiceSettingsErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetServiceSettingsErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, GetServiceSettingsErrorKind::ServerInternalException(_))
     }
 }
 impl std::error::Error for GetServiceSettingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetServiceSettingsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetServiceSettingsErrorKind::AuthorizationException(_inner) => Some(_inner),
-            GetServiceSettingsErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            GetServiceSettingsErrorKind::ServerInternalException(_inner) => Some(_inner),
-            GetServiceSettingsErrorKind::Unhandled(_inner) => Some(_inner),
+            GetServiceSettingsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetServiceSettingsErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            GetServiceSettingsErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetServiceSettingsErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            GetServiceSettingsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5173,15 +5084,15 @@ impl std::error::Error for GetServiceSettingsError {
 #[derive(std::fmt::Debug)]
 pub struct GetLicenseUsageError {
     /// Kind of error that occurred.
-    pub kind: GetLicenseUsageErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetLicenseUsageErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetLicenseUsageError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetLicenseUsageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5201,26 +5112,40 @@ pub enum GetLicenseUsageErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLicenseUsageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetLicenseUsageErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetLicenseUsageErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            GetLicenseUsageErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            GetLicenseUsageErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            GetLicenseUsageErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            GetLicenseUsageErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            GetLicenseUsageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetLicenseUsageErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseUsageErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseUsageErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseUsageErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseUsageErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseUsageErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseUsageErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5234,80 +5159,65 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetLicenseUsageError {
 }
 impl GetLicenseUsageError {
     /// Creates a new `GetLicenseUsageError`.
-    pub fn new(kind: GetLicenseUsageErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetLicenseUsageError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetLicenseUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetLicenseUsageError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetLicenseUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetLicenseUsageErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetLicenseUsageError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetLicenseUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetLicenseUsageError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetLicenseUsageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetLicenseUsageErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseUsageErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetLicenseUsageErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseUsageErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseUsageErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, GetLicenseUsageErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseUsageErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseUsageErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, GetLicenseUsageErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseUsageErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseUsageErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, GetLicenseUsageErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseUsageErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseUsageErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, GetLicenseUsageErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseUsageErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -5317,13 +5227,27 @@ impl GetLicenseUsageError {
 impl std::error::Error for GetLicenseUsageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetLicenseUsageErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetLicenseUsageErrorKind::AuthorizationException(_inner) => Some(_inner),
-            GetLicenseUsageErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            GetLicenseUsageErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            GetLicenseUsageErrorKind::ServerInternalException(_inner) => Some(_inner),
-            GetLicenseUsageErrorKind::ValidationException(_inner) => Some(_inner),
-            GetLicenseUsageErrorKind::Unhandled(_inner) => Some(_inner),
+            GetLicenseUsageErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseUsageErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseUsageErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseUsageErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseUsageErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseUsageErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseUsageErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5333,17 +5257,15 @@ impl std::error::Error for GetLicenseUsageError {
 #[derive(std::fmt::Debug)]
 pub struct GetLicenseManagerReportGeneratorError {
     /// Kind of error that occurred.
-    pub kind: GetLicenseManagerReportGeneratorErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetLicenseManagerReportGeneratorErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetLicenseManagerReportGeneratorError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetLicenseManagerReportGeneratorErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: GetLicenseManagerReportGeneratorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -5367,42 +5289,46 @@ pub enum GetLicenseManagerReportGeneratorErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLicenseManagerReportGeneratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_inner) => {
+            GetLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseManagerReportGeneratorErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseManagerReportGeneratorErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseManagerReportGeneratorErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetLicenseManagerReportGeneratorErrorKind::AuthorizationException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetLicenseManagerReportGeneratorErrorKind::ServerInternalException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetLicenseManagerReportGeneratorErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            GetLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -5416,136 +5342,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetLicenseManagerReportGenera
 }
 impl GetLicenseManagerReportGeneratorError {
     /// Creates a new `GetLicenseManagerReportGeneratorError`.
-    pub fn new(
-        kind: GetLicenseManagerReportGeneratorErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetLicenseManagerReportGeneratorError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetLicenseManagerReportGeneratorErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetLicenseManagerReportGeneratorError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetLicenseManagerReportGeneratorErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetLicenseManagerReportGeneratorErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetLicenseManagerReportGeneratorError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetLicenseManagerReportGeneratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetLicenseManagerReportGeneratorError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetLicenseManagerReportGeneratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetLicenseManagerReportGeneratorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseManagerReportGeneratorErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseManagerReportGeneratorErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, GetLicenseManagerReportGeneratorErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, GetLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseManagerReportGeneratorErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, GetLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, GetLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseManagerReportGeneratorErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseManagerReportGeneratorErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, GetLicenseManagerReportGeneratorErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseManagerReportGeneratorErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseManagerReportGeneratorErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, GetLicenseManagerReportGeneratorErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for GetLicenseManagerReportGeneratorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_inner) => {
+            GetLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseManagerReportGeneratorErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseManagerReportGeneratorErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseManagerReportGeneratorErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetLicenseManagerReportGeneratorErrorKind::AuthorizationException(_inner) => {
-                Some(_inner)
-            }
-            GetLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_inner) => {
-                Some(_inner)
-            }
-            GetLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            GetLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            GetLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            GetLicenseManagerReportGeneratorErrorKind::ServerInternalException(_inner) => {
-                Some(_inner)
-            }
-            GetLicenseManagerReportGeneratorErrorKind::ValidationException(_inner) => Some(_inner),
-            GetLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5555,17 +5454,15 @@ impl std::error::Error for GetLicenseManagerReportGeneratorError {
 #[derive(std::fmt::Debug)]
 pub struct GetLicenseConversionTaskError {
     /// Kind of error that occurred.
-    pub kind: GetLicenseConversionTaskErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetLicenseConversionTaskErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetLicenseConversionTaskError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetLicenseConversionTaskErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: GetLicenseConversionTaskErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -5583,27 +5480,37 @@ pub enum GetLicenseConversionTaskErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLicenseConversionTaskError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetLicenseConversionTaskErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetLicenseConversionTaskErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            GetLicenseConversionTaskErrorKind::InvalidParameterValueException(_inner) => {
+            GetLicenseConversionTaskErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseConversionTaskErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseConversionTaskErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseConversionTaskErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseConversionTaskErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseConversionTaskErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetLicenseConversionTaskErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            GetLicenseConversionTaskErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            GetLicenseConversionTaskErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -5617,97 +5524,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetLicenseConversionTaskError
 }
 impl GetLicenseConversionTaskError {
     /// Creates a new `GetLicenseConversionTaskError`.
-    pub fn new(kind: GetLicenseConversionTaskErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetLicenseConversionTaskError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetLicenseConversionTaskErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetLicenseConversionTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetLicenseConversionTaskErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetLicenseConversionTaskErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetLicenseConversionTaskError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetLicenseConversionTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetLicenseConversionTaskError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetLicenseConversionTaskErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetLicenseConversionTaskErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseConversionTaskErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetLicenseConversionTaskErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseConversionTaskErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseConversionTaskErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, GetLicenseConversionTaskErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseConversionTaskErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseConversionTaskErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, GetLicenseConversionTaskErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseConversionTaskErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseConversionTaskErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, GetLicenseConversionTaskErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseConversionTaskErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseConversionTaskErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, GetLicenseConversionTaskErrorKind::ServerInternalException(_))
     }
 }
 impl std::error::Error for GetLicenseConversionTaskError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetLicenseConversionTaskErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetLicenseConversionTaskErrorKind::AuthorizationException(_inner) => Some(_inner),
-            GetLicenseConversionTaskErrorKind::InvalidParameterValueException(_inner) => {
+            GetLicenseConversionTaskErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseConversionTaskErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseConversionTaskErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseConversionTaskErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseConversionTaskErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseConversionTaskErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetLicenseConversionTaskErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            GetLicenseConversionTaskErrorKind::ServerInternalException(_inner) => Some(_inner),
-            GetLicenseConversionTaskErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5717,15 +5615,15 @@ impl std::error::Error for GetLicenseConversionTaskError {
 #[derive(std::fmt::Debug)]
 pub struct GetLicenseConfigurationError {
     /// Kind of error that occurred.
-    pub kind: GetLicenseConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetLicenseConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetLicenseConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5743,27 +5641,37 @@ pub enum GetLicenseConfigurationErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLicenseConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetLicenseConfigurationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetLicenseConfigurationErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            GetLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) => {
+            GetLicenseConfigurationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseConfigurationErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseConfigurationErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseConfigurationErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetLicenseConfigurationErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            GetLicenseConfigurationErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            GetLicenseConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -5777,97 +5685,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetLicenseConfigurationError 
 }
 impl GetLicenseConfigurationError {
     /// Creates a new `GetLicenseConfigurationError`.
-    pub fn new(kind: GetLicenseConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetLicenseConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetLicenseConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetLicenseConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetLicenseConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetLicenseConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetLicenseConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseConfigurationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetLicenseConfigurationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseConfigurationErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseConfigurationErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, GetLicenseConfigurationErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseConfigurationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseConfigurationErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, GetLicenseConfigurationErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseConfigurationErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseConfigurationErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, GetLicenseConfigurationErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseConfigurationErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseConfigurationErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, GetLicenseConfigurationErrorKind::ServerInternalException(_))
     }
 }
 impl std::error::Error for GetLicenseConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetLicenseConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetLicenseConfigurationErrorKind::AuthorizationException(_inner) => Some(_inner),
-            GetLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) => {
+            GetLicenseConfigurationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseConfigurationErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseConfigurationErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseConfigurationErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetLicenseConfigurationErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            GetLicenseConfigurationErrorKind::ServerInternalException(_inner) => Some(_inner),
-            GetLicenseConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5877,15 +5776,15 @@ impl std::error::Error for GetLicenseConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct GetLicenseError {
     /// Kind of error that occurred.
-    pub kind: GetLicenseErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetLicenseErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetLicenseError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetLicenseErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5905,26 +5804,40 @@ pub enum GetLicenseErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetLicenseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetLicenseErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetLicenseErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            GetLicenseErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            GetLicenseErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            GetLicenseErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            GetLicenseErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            GetLicenseErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetLicenseErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetLicenseErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5938,46 +5851,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetLicenseError {
 }
 impl GetLicenseError {
     /// Creates a new `GetLicenseError`.
-    pub fn new(kind: GetLicenseErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetLicenseError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetLicenseError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetLicenseErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetLicenseError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetLicenseError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetLicenseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetLicenseErrorKind::AccessDeniedException(_))
@@ -5988,17 +5901,11 @@ impl GetLicenseError {
     }
     /// Returns `true` if the error kind is `GetLicenseErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, GetLicenseErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetLicenseErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, GetLicenseErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `GetLicenseErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
@@ -6012,13 +5919,27 @@ impl GetLicenseError {
 impl std::error::Error for GetLicenseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetLicenseErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetLicenseErrorKind::AuthorizationException(_inner) => Some(_inner),
-            GetLicenseErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            GetLicenseErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            GetLicenseErrorKind::ServerInternalException(_inner) => Some(_inner),
-            GetLicenseErrorKind::ValidationException(_inner) => Some(_inner),
-            GetLicenseErrorKind::Unhandled(_inner) => Some(_inner),
+            GetLicenseErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            GetLicenseErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6028,15 +5949,15 @@ impl std::error::Error for GetLicenseError {
 #[derive(std::fmt::Debug)]
 pub struct GetGrantError {
     /// Kind of error that occurred.
-    pub kind: GetGrantErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetGrantErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetGrantError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetGrantErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6058,27 +5979,43 @@ pub enum GetGrantErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetGrantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetGrantErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetGrantErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            GetGrantErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            GetGrantErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            GetGrantErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            GetGrantErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            GetGrantErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            GetGrantErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetGrantErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGrantErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGrantErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGrantErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGrantErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGrantErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGrantErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetGrantErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6092,46 +6029,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetGrantError {
 }
 impl GetGrantError {
     /// Creates a new `GetGrantError`.
-    pub fn new(kind: GetGrantErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetGrantError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetGrantError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetGrantErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetGrantError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetGrantError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetGrantErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, GetGrantErrorKind::AccessDeniedException(_))
@@ -6142,10 +6079,7 @@ impl GetGrantError {
     }
     /// Returns `true` if the error kind is `GetGrantErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetGrantErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, GetGrantErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `GetGrantErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
@@ -6153,10 +6087,7 @@ impl GetGrantError {
     }
     /// Returns `true` if the error kind is `GetGrantErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetGrantErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, GetGrantErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `GetGrantErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
@@ -6170,14 +6101,30 @@ impl GetGrantError {
 impl std::error::Error for GetGrantError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetGrantErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetGrantErrorKind::AuthorizationException(_inner) => Some(_inner),
-            GetGrantErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            GetGrantErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            GetGrantErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            GetGrantErrorKind::ServerInternalException(_inner) => Some(_inner),
-            GetGrantErrorKind::ValidationException(_inner) => Some(_inner),
-            GetGrantErrorKind::Unhandled(_inner) => Some(_inner),
+            GetGrantErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetGrantErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            GetGrantErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            GetGrantErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetGrantErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetGrantErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            GetGrantErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            GetGrantErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6187,15 +6134,15 @@ impl std::error::Error for GetGrantError {
 #[derive(std::fmt::Debug)]
 pub struct GetAccessTokenError {
     /// Kind of error that occurred.
-    pub kind: GetAccessTokenErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetAccessTokenErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetAccessTokenError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetAccessTokenErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6213,25 +6160,37 @@ pub enum GetAccessTokenErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAccessTokenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetAccessTokenErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetAccessTokenErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            GetAccessTokenErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            GetAccessTokenErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            GetAccessTokenErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            GetAccessTokenErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetAccessTokenErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAccessTokenErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAccessTokenErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAccessTokenErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAccessTokenErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAccessTokenErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6245,73 +6204,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetAccessTokenError {
 }
 impl GetAccessTokenError {
     /// Creates a new `GetAccessTokenError`.
-    pub fn new(kind: GetAccessTokenErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetAccessTokenError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetAccessTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetAccessTokenError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetAccessTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetAccessTokenErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetAccessTokenError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetAccessTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetAccessTokenError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetAccessTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetAccessTokenErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAccessTokenErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetAccessTokenErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetAccessTokenErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAccessTokenErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, GetAccessTokenErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `GetAccessTokenErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAccessTokenErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, GetAccessTokenErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `GetAccessTokenErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAccessTokenErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, GetAccessTokenErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `GetAccessTokenErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -6321,12 +6268,24 @@ impl GetAccessTokenError {
 impl std::error::Error for GetAccessTokenError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetAccessTokenErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetAccessTokenErrorKind::AuthorizationException(_inner) => Some(_inner),
-            GetAccessTokenErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            GetAccessTokenErrorKind::ServerInternalException(_inner) => Some(_inner),
-            GetAccessTokenErrorKind::ValidationException(_inner) => Some(_inner),
-            GetAccessTokenErrorKind::Unhandled(_inner) => Some(_inner),
+            GetAccessTokenErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetAccessTokenErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            GetAccessTokenErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetAccessTokenErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            GetAccessTokenErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            GetAccessTokenErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6336,17 +6295,15 @@ impl std::error::Error for GetAccessTokenError {
 #[derive(std::fmt::Debug)]
 pub struct ExtendLicenseConsumptionError {
     /// Kind of error that occurred.
-    pub kind: ExtendLicenseConsumptionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ExtendLicenseConsumptionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ExtendLicenseConsumptionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ExtendLicenseConsumptionErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ExtendLicenseConsumptionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6368,29 +6325,43 @@ pub enum ExtendLicenseConsumptionErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ExtendLicenseConsumptionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ExtendLicenseConsumptionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ExtendLicenseConsumptionErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            ExtendLicenseConsumptionErrorKind::InvalidParameterValueException(_inner) => {
+            ExtendLicenseConsumptionErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExtendLicenseConsumptionErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExtendLicenseConsumptionErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExtendLicenseConsumptionErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExtendLicenseConsumptionErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExtendLicenseConsumptionErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExtendLicenseConsumptionErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ExtendLicenseConsumptionErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ExtendLicenseConsumptionErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            ExtendLicenseConsumptionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ExtendLicenseConsumptionErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            ExtendLicenseConsumptionErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ExtendLicenseConsumptionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6404,113 +6375,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for ExtendLicenseConsumptionError
 }
 impl ExtendLicenseConsumptionError {
     /// Creates a new `ExtendLicenseConsumptionError`.
-    pub fn new(kind: ExtendLicenseConsumptionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ExtendLicenseConsumptionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ExtendLicenseConsumptionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ExtendLicenseConsumptionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ExtendLicenseConsumptionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ExtendLicenseConsumptionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ExtendLicenseConsumptionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ExtendLicenseConsumptionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ExtendLicenseConsumptionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ExtendLicenseConsumptionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ExtendLicenseConsumptionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExtendLicenseConsumptionErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ExtendLicenseConsumptionErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ExtendLicenseConsumptionErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExtendLicenseConsumptionErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, ExtendLicenseConsumptionErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `ExtendLicenseConsumptionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExtendLicenseConsumptionErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, ExtendLicenseConsumptionErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `ExtendLicenseConsumptionErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExtendLicenseConsumptionErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, ExtendLicenseConsumptionErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ExtendLicenseConsumptionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExtendLicenseConsumptionErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ExtendLicenseConsumptionErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ExtendLicenseConsumptionErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExtendLicenseConsumptionErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, ExtendLicenseConsumptionErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `ExtendLicenseConsumptionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ExtendLicenseConsumptionErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ExtendLicenseConsumptionErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ExtendLicenseConsumptionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ExtendLicenseConsumptionErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ExtendLicenseConsumptionErrorKind::AuthorizationException(_inner) => Some(_inner),
-            ExtendLicenseConsumptionErrorKind::InvalidParameterValueException(_inner) => {
+            ExtendLicenseConsumptionErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ExtendLicenseConsumptionErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            ExtendLicenseConsumptionErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            ExtendLicenseConsumptionErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ExtendLicenseConsumptionErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ExtendLicenseConsumptionErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            ExtendLicenseConsumptionErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ExtendLicenseConsumptionErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ExtendLicenseConsumptionErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            ExtendLicenseConsumptionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ExtendLicenseConsumptionErrorKind::ServerInternalException(_inner) => Some(_inner),
-            ExtendLicenseConsumptionErrorKind::ValidationException(_inner) => Some(_inner),
-            ExtendLicenseConsumptionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6520,15 +6480,15 @@ impl std::error::Error for ExtendLicenseConsumptionError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteTokenError {
     /// Kind of error that occurred.
-    pub kind: DeleteTokenErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteTokenErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteTokenError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteTokenErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6550,27 +6510,43 @@ pub enum DeleteTokenErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteTokenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteTokenErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DeleteTokenErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            DeleteTokenErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            DeleteTokenErrorKind::RedirectException(_inner) => _inner.fmt(f),
-            DeleteTokenErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            DeleteTokenErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            DeleteTokenErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            DeleteTokenErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteTokenErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTokenErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTokenErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTokenErrorKind::RedirectException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTokenErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTokenErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTokenErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteTokenErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6584,46 +6560,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteTokenError {
 }
 impl DeleteTokenError {
     /// Creates a new `DeleteTokenError`.
-    pub fn new(kind: DeleteTokenErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteTokenError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteTokenError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteTokenErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteTokenError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteTokenError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteTokenErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteTokenErrorKind::AccessDeniedException(_))
@@ -6634,10 +6610,7 @@ impl DeleteTokenError {
     }
     /// Returns `true` if the error kind is `DeleteTokenErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteTokenErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, DeleteTokenErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `DeleteTokenErrorKind::RedirectException`.
     pub fn is_redirect_exception(&self) -> bool {
@@ -6645,10 +6618,7 @@ impl DeleteTokenError {
     }
     /// Returns `true` if the error kind is `DeleteTokenErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteTokenErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteTokenErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteTokenErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
@@ -6662,14 +6632,30 @@ impl DeleteTokenError {
 impl std::error::Error for DeleteTokenError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteTokenErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DeleteTokenErrorKind::AuthorizationException(_inner) => Some(_inner),
-            DeleteTokenErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            DeleteTokenErrorKind::RedirectException(_inner) => Some(_inner),
-            DeleteTokenErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteTokenErrorKind::ServerInternalException(_inner) => Some(_inner),
-            DeleteTokenErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteTokenErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteTokenErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTokenErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTokenErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTokenErrorKind::RedirectException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTokenErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTokenErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTokenErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteTokenErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6677,7 +6663,7 @@ impl std::error::Error for DeleteTokenError {
 /// <p>This is not the correct Region for the resource. Try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RedirectException {
+pub struct RedirectException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub location: std::option::Option<std::string::String>,
@@ -6687,21 +6673,19 @@ pub struct RedirectException {
 }
 impl RedirectException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
 }
 impl RedirectException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for RedirectException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RedirectException")?;
         if let Some(inner_13) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_13)?;
             }
         }
@@ -6711,7 +6695,7 @@ impl std::fmt::Display for RedirectException {
 impl std::error::Error for RedirectException {}
 /// See [`RedirectException`](crate::error::RedirectException).
 pub mod redirect_exception {
-
+    
     /// A builder for [`RedirectException`](crate::error::RedirectException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6726,8 +6710,7 @@ pub mod redirect_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6736,17 +6719,20 @@ pub mod redirect_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`RedirectException`](crate::error::RedirectException).
         pub fn build(self) -> crate::error::RedirectException {
             crate::error::RedirectException {
-                location: self.location,
-                message: self.message,
+                location: self.location
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl RedirectException {
     /// Creates a new builder-style object to manufacture [`RedirectException`](crate::error::RedirectException).
@@ -6760,17 +6746,15 @@ impl RedirectException {
 #[derive(std::fmt::Debug)]
 pub struct DeleteLicenseManagerReportGeneratorError {
     /// Kind of error that occurred.
-    pub kind: DeleteLicenseManagerReportGeneratorErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteLicenseManagerReportGeneratorErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteLicenseManagerReportGeneratorError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteLicenseManagerReportGeneratorErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DeleteLicenseManagerReportGeneratorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6794,44 +6778,46 @@ pub enum DeleteLicenseManagerReportGeneratorErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLicenseManagerReportGeneratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_inner) => {
+            DeleteLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseManagerReportGeneratorErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseManagerReportGeneratorErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseManagerReportGeneratorErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteLicenseManagerReportGeneratorErrorKind::AuthorizationException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => _inner.fmt(f),
-            DeleteLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(
-                _inner,
-            ) => _inner.fmt(f),
-            DeleteLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteLicenseManagerReportGeneratorErrorKind::ServerInternalException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteLicenseManagerReportGeneratorErrorKind::ValidationException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6845,138 +6831,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteLicenseManagerReportGen
 }
 impl DeleteLicenseManagerReportGeneratorError {
     /// Creates a new `DeleteLicenseManagerReportGeneratorError`.
-    pub fn new(
-        kind: DeleteLicenseManagerReportGeneratorErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteLicenseManagerReportGeneratorError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteLicenseManagerReportGeneratorErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteLicenseManagerReportGeneratorError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteLicenseManagerReportGeneratorErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteLicenseManagerReportGeneratorErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteLicenseManagerReportGeneratorError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteLicenseManagerReportGeneratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteLicenseManagerReportGeneratorError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteLicenseManagerReportGeneratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DeleteLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLicenseManagerReportGeneratorErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, DeleteLicenseManagerReportGeneratorErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DeleteLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, DeleteLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, DeleteLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLicenseManagerReportGeneratorErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, DeleteLicenseManagerReportGeneratorErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `DeleteLicenseManagerReportGeneratorErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLicenseManagerReportGeneratorErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, DeleteLicenseManagerReportGeneratorErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for DeleteLicenseManagerReportGeneratorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_inner) => {
+            DeleteLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseManagerReportGeneratorErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseManagerReportGeneratorErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseManagerReportGeneratorErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteLicenseManagerReportGeneratorErrorKind::AuthorizationException(_inner) => {
-                Some(_inner)
-            }
-            DeleteLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => Some(_inner),
-            DeleteLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            DeleteLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(
-                _inner,
-            ) => Some(_inner),
-            DeleteLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            DeleteLicenseManagerReportGeneratorErrorKind::ServerInternalException(_inner) => {
-                Some(_inner)
-            }
-            DeleteLicenseManagerReportGeneratorErrorKind::ValidationException(_inner) => {
-                Some(_inner)
-            }
-            DeleteLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6986,17 +6943,15 @@ impl std::error::Error for DeleteLicenseManagerReportGeneratorError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteLicenseConfigurationError {
     /// Kind of error that occurred.
-    pub kind: DeleteLicenseConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteLicenseConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteLicenseConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeleteLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7014,29 +6969,37 @@ pub enum DeleteLicenseConfigurationErrorKind {
     RateLimitExceededException(crate::error::RateLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLicenseConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteLicenseConfigurationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DeleteLicenseConfigurationErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            DeleteLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) => {
+            DeleteLicenseConfigurationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseConfigurationErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseConfigurationErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseConfigurationErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteLicenseConfigurationErrorKind::RateLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteLicenseConfigurationErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            DeleteLicenseConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7050,97 +7013,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteLicenseConfigurationErr
 }
 impl DeleteLicenseConfigurationError {
     /// Creates a new `DeleteLicenseConfigurationError`.
-    pub fn new(kind: DeleteLicenseConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteLicenseConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteLicenseConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteLicenseConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteLicenseConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteLicenseConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteLicenseConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLicenseConfigurationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DeleteLicenseConfigurationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeleteLicenseConfigurationErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLicenseConfigurationErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, DeleteLicenseConfigurationErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `DeleteLicenseConfigurationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLicenseConfigurationErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DeleteLicenseConfigurationErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `DeleteLicenseConfigurationErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLicenseConfigurationErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, DeleteLicenseConfigurationErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `DeleteLicenseConfigurationErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLicenseConfigurationErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, DeleteLicenseConfigurationErrorKind::ServerInternalException(_))
     }
 }
 impl std::error::Error for DeleteLicenseConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteLicenseConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DeleteLicenseConfigurationErrorKind::AuthorizationException(_inner) => Some(_inner),
-            DeleteLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) => {
+            DeleteLicenseConfigurationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseConfigurationErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseConfigurationErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseConfigurationErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteLicenseConfigurationErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            DeleteLicenseConfigurationErrorKind::ServerInternalException(_inner) => Some(_inner),
-            DeleteLicenseConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7150,15 +7104,15 @@ impl std::error::Error for DeleteLicenseConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteLicenseError {
     /// Kind of error that occurred.
-    pub kind: DeleteLicenseErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteLicenseErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteLicenseError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteLicenseErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7182,28 +7136,46 @@ pub enum DeleteLicenseErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLicenseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteLicenseErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DeleteLicenseErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            DeleteLicenseErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            DeleteLicenseErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            DeleteLicenseErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            DeleteLicenseErrorKind::RedirectException(_inner) => _inner.fmt(f),
-            DeleteLicenseErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            DeleteLicenseErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            DeleteLicenseErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteLicenseErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseErrorKind::RedirectException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLicenseErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7217,56 +7189,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteLicenseError {
 }
 impl DeleteLicenseError {
     /// Creates a new `DeleteLicenseError`.
-    pub fn new(kind: DeleteLicenseErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteLicenseError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteLicenseError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteLicenseErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteLicenseError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteLicenseError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteLicenseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteLicenseErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeleteLicenseErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLicenseErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, DeleteLicenseErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `DeleteLicenseErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
@@ -7274,17 +7243,11 @@ impl DeleteLicenseError {
     }
     /// Returns `true` if the error kind is `DeleteLicenseErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLicenseErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DeleteLicenseErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `DeleteLicenseErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLicenseErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, DeleteLicenseErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `DeleteLicenseErrorKind::RedirectException`.
     pub fn is_redirect_exception(&self) -> bool {
@@ -7292,10 +7255,7 @@ impl DeleteLicenseError {
     }
     /// Returns `true` if the error kind is `DeleteLicenseErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLicenseErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, DeleteLicenseErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `DeleteLicenseErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -7305,15 +7265,33 @@ impl DeleteLicenseError {
 impl std::error::Error for DeleteLicenseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteLicenseErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DeleteLicenseErrorKind::AuthorizationException(_inner) => Some(_inner),
-            DeleteLicenseErrorKind::ConflictException(_inner) => Some(_inner),
-            DeleteLicenseErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            DeleteLicenseErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            DeleteLicenseErrorKind::RedirectException(_inner) => Some(_inner),
-            DeleteLicenseErrorKind::ServerInternalException(_inner) => Some(_inner),
-            DeleteLicenseErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteLicenseErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteLicenseErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseErrorKind::RedirectException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLicenseErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7321,22 +7299,20 @@ impl std::error::Error for DeleteLicenseError {
 /// <p>There was a conflict processing the request. Try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
         if let Some(inner_14) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_14)?;
             }
         }
@@ -7346,7 +7322,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException).
 pub mod conflict_exception {
-
+    
     /// A builder for [`ConflictException`](crate::error::ConflictException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7360,16 +7336,18 @@ pub mod conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
         pub fn build(self) -> crate::error::ConflictException {
             crate::error::ConflictException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
@@ -7383,15 +7361,15 @@ impl ConflictException {
 #[derive(std::fmt::Debug)]
 pub struct DeleteGrantError {
     /// Kind of error that occurred.
-    pub kind: DeleteGrantErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteGrantErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteGrantError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteGrantErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7413,27 +7391,43 @@ pub enum DeleteGrantErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteGrantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteGrantErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DeleteGrantErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            DeleteGrantErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            DeleteGrantErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            DeleteGrantErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            DeleteGrantErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            DeleteGrantErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            DeleteGrantErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteGrantErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGrantErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGrantErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGrantErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGrantErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGrantErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGrantErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteGrantErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7447,46 +7441,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteGrantError {
 }
 impl DeleteGrantError {
     /// Creates a new `DeleteGrantError`.
-    pub fn new(kind: DeleteGrantErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteGrantError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteGrantError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteGrantErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteGrantError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteGrantError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteGrantErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, DeleteGrantErrorKind::AccessDeniedException(_))
@@ -7497,24 +7491,15 @@ impl DeleteGrantError {
     }
     /// Returns `true` if the error kind is `DeleteGrantErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGrantErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, DeleteGrantErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `DeleteGrantErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGrantErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, DeleteGrantErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `DeleteGrantErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteGrantErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, DeleteGrantErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `DeleteGrantErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
@@ -7528,14 +7513,30 @@ impl DeleteGrantError {
 impl std::error::Error for DeleteGrantError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteGrantErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DeleteGrantErrorKind::AuthorizationException(_inner) => Some(_inner),
-            DeleteGrantErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            DeleteGrantErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            DeleteGrantErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            DeleteGrantErrorKind::ServerInternalException(_inner) => Some(_inner),
-            DeleteGrantErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteGrantErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteGrantErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGrantErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGrantErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGrantErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGrantErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGrantErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGrantErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteGrantErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7545,15 +7546,15 @@ impl std::error::Error for DeleteGrantError {
 #[derive(std::fmt::Debug)]
 pub struct CreateTokenError {
     /// Kind of error that occurred.
-    pub kind: CreateTokenErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateTokenErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateTokenError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateTokenErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7577,28 +7578,46 @@ pub enum CreateTokenErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTokenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateTokenErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateTokenErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            CreateTokenErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            CreateTokenErrorKind::RedirectException(_inner) => _inner.fmt(f),
-            CreateTokenErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            CreateTokenErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            CreateTokenErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            CreateTokenErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            CreateTokenErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateTokenErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTokenErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTokenErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTokenErrorKind::RedirectException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTokenErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTokenErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTokenErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTokenErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTokenErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7612,46 +7631,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateTokenError {
 }
 impl CreateTokenError {
     /// Creates a new `CreateTokenError`.
-    pub fn new(kind: CreateTokenErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateTokenError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateTokenError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateTokenErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateTokenError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateTokenError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateTokenErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateTokenErrorKind::AccessDeniedException(_))
@@ -7662,10 +7681,7 @@ impl CreateTokenError {
     }
     /// Returns `true` if the error kind is `CreateTokenErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateTokenErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateTokenErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateTokenErrorKind::RedirectException`.
     pub fn is_redirect_exception(&self) -> bool {
@@ -7673,17 +7689,11 @@ impl CreateTokenError {
     }
     /// Returns `true` if the error kind is `CreateTokenErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateTokenErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateTokenErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateTokenErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateTokenErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, CreateTokenErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateTokenErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
@@ -7697,15 +7707,33 @@ impl CreateTokenError {
 impl std::error::Error for CreateTokenError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateTokenErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateTokenErrorKind::AuthorizationException(_inner) => Some(_inner),
-            CreateTokenErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            CreateTokenErrorKind::RedirectException(_inner) => Some(_inner),
-            CreateTokenErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            CreateTokenErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            CreateTokenErrorKind::ServerInternalException(_inner) => Some(_inner),
-            CreateTokenErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateTokenErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateTokenErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTokenErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTokenErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTokenErrorKind::RedirectException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTokenErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTokenErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTokenErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTokenErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTokenErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7715,15 +7743,15 @@ impl std::error::Error for CreateTokenError {
 #[derive(std::fmt::Debug)]
 pub struct CreateLicenseVersionError {
     /// Kind of error that occurred.
-    pub kind: CreateLicenseVersionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateLicenseVersionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateLicenseVersionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateLicenseVersionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7747,28 +7775,46 @@ pub enum CreateLicenseVersionErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLicenseVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateLicenseVersionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateLicenseVersionErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            CreateLicenseVersionErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            CreateLicenseVersionErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            CreateLicenseVersionErrorKind::RedirectException(_inner) => _inner.fmt(f),
-            CreateLicenseVersionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            CreateLicenseVersionErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            CreateLicenseVersionErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            CreateLicenseVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateLicenseVersionErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseVersionErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseVersionErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseVersionErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseVersionErrorKind::RedirectException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseVersionErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseVersionErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseVersionErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseVersionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7782,119 +7828,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateLicenseVersionError {
 }
 impl CreateLicenseVersionError {
     /// Creates a new `CreateLicenseVersionError`.
-    pub fn new(kind: CreateLicenseVersionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateLicenseVersionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateLicenseVersionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateLicenseVersionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateLicenseVersionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateLicenseVersionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateLicenseVersionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateLicenseVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateLicenseVersionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateLicenseVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateLicenseVersionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseVersionErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CreateLicenseVersionErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseVersionErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseVersionErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, CreateLicenseVersionErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseVersionErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseVersionErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, CreateLicenseVersionErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseVersionErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseVersionErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateLicenseVersionErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseVersionErrorKind::RedirectException`.
     pub fn is_redirect_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseVersionErrorKind::RedirectException(_)
-        )
+        matches!(&self.kind, CreateLicenseVersionErrorKind::RedirectException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseVersionErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseVersionErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, CreateLicenseVersionErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseVersionErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseVersionErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, CreateLicenseVersionErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseVersionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseVersionErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, CreateLicenseVersionErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for CreateLicenseVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateLicenseVersionErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateLicenseVersionErrorKind::AuthorizationException(_inner) => Some(_inner),
-            CreateLicenseVersionErrorKind::ConflictException(_inner) => Some(_inner),
-            CreateLicenseVersionErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            CreateLicenseVersionErrorKind::RedirectException(_inner) => Some(_inner),
-            CreateLicenseVersionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            CreateLicenseVersionErrorKind::ServerInternalException(_inner) => Some(_inner),
-            CreateLicenseVersionErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateLicenseVersionErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateLicenseVersionErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseVersionErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseVersionErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseVersionErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseVersionErrorKind::RedirectException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseVersionErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseVersionErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseVersionErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseVersionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7904,17 +7940,15 @@ impl std::error::Error for CreateLicenseVersionError {
 #[derive(std::fmt::Debug)]
 pub struct CreateLicenseManagerReportGeneratorError {
     /// Kind of error that occurred.
-    pub kind: CreateLicenseManagerReportGeneratorErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateLicenseManagerReportGeneratorErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateLicenseManagerReportGeneratorError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateLicenseManagerReportGeneratorErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: CreateLicenseManagerReportGeneratorErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7938,44 +7972,46 @@ pub enum CreateLicenseManagerReportGeneratorErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLicenseManagerReportGeneratorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_inner) => {
+            CreateLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseManagerReportGeneratorErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseManagerReportGeneratorErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseManagerReportGeneratorErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateLicenseManagerReportGeneratorErrorKind::AuthorizationException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => _inner.fmt(f),
-            CreateLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(
-                _inner,
-            ) => _inner.fmt(f),
-            CreateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateLicenseManagerReportGeneratorErrorKind::ServerInternalException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateLicenseManagerReportGeneratorErrorKind::ValidationException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7989,138 +8025,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateLicenseManagerReportGen
 }
 impl CreateLicenseManagerReportGeneratorError {
     /// Creates a new `CreateLicenseManagerReportGeneratorError`.
-    pub fn new(
-        kind: CreateLicenseManagerReportGeneratorErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateLicenseManagerReportGeneratorError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateLicenseManagerReportGeneratorErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateLicenseManagerReportGeneratorError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateLicenseManagerReportGeneratorErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateLicenseManagerReportGeneratorErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateLicenseManagerReportGeneratorError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateLicenseManagerReportGeneratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateLicenseManagerReportGeneratorError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateLicenseManagerReportGeneratorErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CreateLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseManagerReportGeneratorErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, CreateLicenseManagerReportGeneratorErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, CreateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, CreateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseManagerReportGeneratorErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, CreateLicenseManagerReportGeneratorErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseManagerReportGeneratorErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseManagerReportGeneratorErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, CreateLicenseManagerReportGeneratorErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for CreateLicenseManagerReportGeneratorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_inner) => {
+            CreateLicenseManagerReportGeneratorErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseManagerReportGeneratorErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseManagerReportGeneratorErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseManagerReportGeneratorErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateLicenseManagerReportGeneratorErrorKind::AuthorizationException(_inner) => {
-                Some(_inner)
-            }
-            CreateLicenseManagerReportGeneratorErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => Some(_inner),
-            CreateLicenseManagerReportGeneratorErrorKind::RateLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            CreateLicenseManagerReportGeneratorErrorKind::ResourceLimitExceededException(
-                _inner,
-            ) => Some(_inner),
-            CreateLicenseManagerReportGeneratorErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            CreateLicenseManagerReportGeneratorErrorKind::ServerInternalException(_inner) => {
-                Some(_inner)
-            }
-            CreateLicenseManagerReportGeneratorErrorKind::ValidationException(_inner) => {
-                Some(_inner)
-            }
-            CreateLicenseManagerReportGeneratorErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8130,17 +8137,15 @@ impl std::error::Error for CreateLicenseManagerReportGeneratorError {
 #[derive(std::fmt::Debug)]
 pub struct CreateLicenseConversionTaskForResourceError {
     /// Kind of error that occurred.
-    pub kind: CreateLicenseConversionTaskForResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateLicenseConversionTaskForResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateLicenseConversionTaskForResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateLicenseConversionTaskForResourceErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: CreateLicenseConversionTaskForResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -8160,38 +8165,40 @@ pub enum CreateLicenseConversionTaskForResourceErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLicenseConversionTaskForResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateLicenseConversionTaskForResourceErrorKind::AccessDeniedException(_inner) => {
+            CreateLicenseConversionTaskForResourceErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseConversionTaskForResourceErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseConversionTaskForResourceErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseConversionTaskForResourceErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseConversionTaskForResourceErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseConversionTaskForResourceErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseConversionTaskForResourceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateLicenseConversionTaskForResourceErrorKind::AuthorizationException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateLicenseConversionTaskForResourceErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => _inner.fmt(f),
-            CreateLicenseConversionTaskForResourceErrorKind::RateLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateLicenseConversionTaskForResourceErrorKind::ServerInternalException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateLicenseConversionTaskForResourceErrorKind::ValidationException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateLicenseConversionTaskForResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8205,118 +8212,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateLicenseConversionTaskFo
 }
 impl CreateLicenseConversionTaskForResourceError {
     /// Creates a new `CreateLicenseConversionTaskForResourceError`.
-    pub fn new(
-        kind: CreateLicenseConversionTaskForResourceErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateLicenseConversionTaskForResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateLicenseConversionTaskForResourceErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateLicenseConversionTaskForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateLicenseConversionTaskForResourceErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateLicenseConversionTaskForResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateLicenseConversionTaskForResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateLicenseConversionTaskForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateLicenseConversionTaskForResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateLicenseConversionTaskForResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateLicenseConversionTaskForResourceErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseConversionTaskForResourceErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CreateLicenseConversionTaskForResourceErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseConversionTaskForResourceErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseConversionTaskForResourceErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, CreateLicenseConversionTaskForResourceErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseConversionTaskForResourceErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseConversionTaskForResourceErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, CreateLicenseConversionTaskForResourceErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseConversionTaskForResourceErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseConversionTaskForResourceErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateLicenseConversionTaskForResourceErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseConversionTaskForResourceErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseConversionTaskForResourceErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, CreateLicenseConversionTaskForResourceErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseConversionTaskForResourceErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseConversionTaskForResourceErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, CreateLicenseConversionTaskForResourceErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for CreateLicenseConversionTaskForResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateLicenseConversionTaskForResourceErrorKind::AccessDeniedException(_inner) => {
+            CreateLicenseConversionTaskForResourceErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseConversionTaskForResourceErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseConversionTaskForResourceErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseConversionTaskForResourceErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseConversionTaskForResourceErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseConversionTaskForResourceErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseConversionTaskForResourceErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateLicenseConversionTaskForResourceErrorKind::AuthorizationException(_inner) => {
-                Some(_inner)
-            }
-            CreateLicenseConversionTaskForResourceErrorKind::InvalidParameterValueException(
-                _inner,
-            ) => Some(_inner),
-            CreateLicenseConversionTaskForResourceErrorKind::RateLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            CreateLicenseConversionTaskForResourceErrorKind::ServerInternalException(_inner) => {
-                Some(_inner)
-            }
-            CreateLicenseConversionTaskForResourceErrorKind::ValidationException(_inner) => {
-                Some(_inner)
-            }
-            CreateLicenseConversionTaskForResourceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8326,17 +8310,15 @@ impl std::error::Error for CreateLicenseConversionTaskForResourceError {
 #[derive(std::fmt::Debug)]
 pub struct CreateLicenseConfigurationError {
     /// Kind of error that occurred.
-    pub kind: CreateLicenseConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateLicenseConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateLicenseConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: CreateLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -8356,32 +8338,40 @@ pub enum CreateLicenseConfigurationErrorKind {
     ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLicenseConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateLicenseConfigurationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateLicenseConfigurationErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            CreateLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) => {
+            CreateLicenseConfigurationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseConfigurationErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseConfigurationErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseConfigurationErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseConfigurationErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateLicenseConfigurationErrorKind::RateLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateLicenseConfigurationErrorKind::ResourceLimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateLicenseConfigurationErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            CreateLicenseConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8395,107 +8385,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateLicenseConfigurationErr
 }
 impl CreateLicenseConfigurationError {
     /// Creates a new `CreateLicenseConfigurationError`.
-    pub fn new(kind: CreateLicenseConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateLicenseConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateLicenseConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateLicenseConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateLicenseConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateLicenseConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateLicenseConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateLicenseConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseConfigurationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CreateLicenseConfigurationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseConfigurationErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseConfigurationErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, CreateLicenseConfigurationErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseConfigurationErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseConfigurationErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, CreateLicenseConfigurationErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseConfigurationErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseConfigurationErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateLicenseConfigurationErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseConfigurationErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseConfigurationErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateLicenseConfigurationErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseConfigurationErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseConfigurationErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, CreateLicenseConfigurationErrorKind::ServerInternalException(_))
     }
 }
 impl std::error::Error for CreateLicenseConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateLicenseConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateLicenseConfigurationErrorKind::AuthorizationException(_inner) => Some(_inner),
-            CreateLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) => {
+            CreateLicenseConfigurationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseConfigurationErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseConfigurationErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseConfigurationErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseConfigurationErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseConfigurationErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateLicenseConfigurationErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            CreateLicenseConfigurationErrorKind::ResourceLimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            CreateLicenseConfigurationErrorKind::ServerInternalException(_inner) => Some(_inner),
-            CreateLicenseConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8505,15 +8483,15 @@ impl std::error::Error for CreateLicenseConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct CreateLicenseError {
     /// Kind of error that occurred.
-    pub kind: CreateLicenseErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateLicenseErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateLicenseError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateLicenseErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8535,27 +8513,43 @@ pub enum CreateLicenseErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLicenseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateLicenseErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateLicenseErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            CreateLicenseErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            CreateLicenseErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            CreateLicenseErrorKind::RedirectException(_inner) => _inner.fmt(f),
-            CreateLicenseErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            CreateLicenseErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            CreateLicenseErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateLicenseErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseErrorKind::RedirectException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLicenseErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8569,70 +8563,61 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateLicenseError {
 }
 impl CreateLicenseError {
     /// Creates a new `CreateLicenseError`.
-    pub fn new(kind: CreateLicenseErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateLicenseError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateLicenseError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateLicenseErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateLicenseError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateLicenseError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateLicenseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateLicenseErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, CreateLicenseErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, CreateLicenseErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateLicenseErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseErrorKind::RedirectException`.
     pub fn is_redirect_exception(&self) -> bool {
@@ -8640,10 +8625,7 @@ impl CreateLicenseError {
     }
     /// Returns `true` if the error kind is `CreateLicenseErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLicenseErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, CreateLicenseErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `CreateLicenseErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -8653,14 +8635,30 @@ impl CreateLicenseError {
 impl std::error::Error for CreateLicenseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateLicenseErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateLicenseErrorKind::AuthorizationException(_inner) => Some(_inner),
-            CreateLicenseErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            CreateLicenseErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            CreateLicenseErrorKind::RedirectException(_inner) => Some(_inner),
-            CreateLicenseErrorKind::ServerInternalException(_inner) => Some(_inner),
-            CreateLicenseErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateLicenseErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateLicenseErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseErrorKind::RedirectException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLicenseErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8670,15 +8668,15 @@ impl std::error::Error for CreateLicenseError {
 #[derive(std::fmt::Debug)]
 pub struct CreateGrantVersionError {
     /// Kind of error that occurred.
-    pub kind: CreateGrantVersionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateGrantVersionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateGrantVersionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateGrantVersionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8700,27 +8698,43 @@ pub enum CreateGrantVersionErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGrantVersionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateGrantVersionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateGrantVersionErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            CreateGrantVersionErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            CreateGrantVersionErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            CreateGrantVersionErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            CreateGrantVersionErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            CreateGrantVersionErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            CreateGrantVersionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateGrantVersionErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantVersionErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantVersionErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantVersionErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantVersionErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantVersionErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantVersionErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantVersionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8734,107 +8748,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateGrantVersionError {
 }
 impl CreateGrantVersionError {
     /// Creates a new `CreateGrantVersionError`.
-    pub fn new(kind: CreateGrantVersionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateGrantVersionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateGrantVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateGrantVersionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateGrantVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateGrantVersionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateGrantVersionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateGrantVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateGrantVersionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateGrantVersionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateGrantVersionErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGrantVersionErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CreateGrantVersionErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateGrantVersionErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGrantVersionErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, CreateGrantVersionErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `CreateGrantVersionErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGrantVersionErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, CreateGrantVersionErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `CreateGrantVersionErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGrantVersionErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateGrantVersionErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateGrantVersionErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGrantVersionErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateGrantVersionErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateGrantVersionErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGrantVersionErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, CreateGrantVersionErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `CreateGrantVersionErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGrantVersionErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, CreateGrantVersionErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for CreateGrantVersionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateGrantVersionErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateGrantVersionErrorKind::AuthorizationException(_inner) => Some(_inner),
-            CreateGrantVersionErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            CreateGrantVersionErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            CreateGrantVersionErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            CreateGrantVersionErrorKind::ServerInternalException(_inner) => Some(_inner),
-            CreateGrantVersionErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateGrantVersionErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateGrantVersionErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantVersionErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantVersionErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantVersionErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantVersionErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantVersionErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantVersionErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantVersionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8844,15 +8853,15 @@ impl std::error::Error for CreateGrantVersionError {
 #[derive(std::fmt::Debug)]
 pub struct CreateGrantError {
     /// Kind of error that occurred.
-    pub kind: CreateGrantErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateGrantErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateGrantError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateGrantErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -8874,27 +8883,43 @@ pub enum CreateGrantErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateGrantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateGrantErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            CreateGrantErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateGrantErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateGrantErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -8908,46 +8933,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateGrantError {
 }
 impl CreateGrantError {
     /// Creates a new `CreateGrantError`.
-    pub fn new(kind: CreateGrantErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateGrantError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateGrantError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateGrantErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateGrantError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateGrantError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateGrantErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, CreateGrantErrorKind::AccessDeniedException(_))
@@ -8958,24 +8983,15 @@ impl CreateGrantError {
     }
     /// Returns `true` if the error kind is `CreateGrantErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGrantErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, CreateGrantErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `CreateGrantErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGrantErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateGrantErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateGrantErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateGrantErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateGrantErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateGrantErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
@@ -8989,14 +9005,30 @@ impl CreateGrantError {
 impl std::error::Error for CreateGrantError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateGrantErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateGrantErrorKind::AuthorizationException(_inner) => Some(_inner),
-            CreateGrantErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            CreateGrantErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            CreateGrantErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            CreateGrantErrorKind::ServerInternalException(_inner) => Some(_inner),
-            CreateGrantErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateGrantErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateGrantErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateGrantErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9006,15 +9038,15 @@ impl std::error::Error for CreateGrantError {
 #[derive(std::fmt::Debug)]
 pub struct CheckoutLicenseError {
     /// Kind of error that occurred.
-    pub kind: CheckoutLicenseErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CheckoutLicenseErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CheckoutLicenseError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CheckoutLicenseErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9039,37 +9071,55 @@ pub enum CheckoutLicenseErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The digital signature method is unsupported. Try your request again.</p>
-    UnsupportedDigitalSignatureMethodException(
-        crate::error::UnsupportedDigitalSignatureMethodException,
-    ),
+    UnsupportedDigitalSignatureMethodException(crate::error::UnsupportedDigitalSignatureMethodException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CheckoutLicenseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CheckoutLicenseErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CheckoutLicenseErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            CheckoutLicenseErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            CheckoutLicenseErrorKind::NoEntitlementsAllowedException(_inner) => _inner.fmt(f),
-            CheckoutLicenseErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            CheckoutLicenseErrorKind::RedirectException(_inner) => _inner.fmt(f),
-            CheckoutLicenseErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            CheckoutLicenseErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            CheckoutLicenseErrorKind::UnsupportedDigitalSignatureMethodException(_inner) => {
+            CheckoutLicenseErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutLicenseErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutLicenseErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutLicenseErrorKind::NoEntitlementsAllowedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutLicenseErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutLicenseErrorKind::RedirectException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutLicenseErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutLicenseErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutLicenseErrorKind::UnsupportedDigitalSignatureMethodException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutLicenseErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutLicenseErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CheckoutLicenseErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            CheckoutLicenseErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -9083,80 +9133,65 @@ impl aws_smithy_types::retry::ProvideErrorKind for CheckoutLicenseError {
 }
 impl CheckoutLicenseError {
     /// Creates a new `CheckoutLicenseError`.
-    pub fn new(kind: CheckoutLicenseErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CheckoutLicenseError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CheckoutLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CheckoutLicenseError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CheckoutLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CheckoutLicenseErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CheckoutLicenseError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CheckoutLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CheckoutLicenseError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CheckoutLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CheckoutLicenseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckoutLicenseErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CheckoutLicenseErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CheckoutLicenseErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckoutLicenseErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, CheckoutLicenseErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `CheckoutLicenseErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckoutLicenseErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, CheckoutLicenseErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `CheckoutLicenseErrorKind::NoEntitlementsAllowedException`.
     pub fn is_no_entitlements_allowed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckoutLicenseErrorKind::NoEntitlementsAllowedException(_)
-        )
+        matches!(&self.kind, CheckoutLicenseErrorKind::NoEntitlementsAllowedException(_))
     }
     /// Returns `true` if the error kind is `CheckoutLicenseErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckoutLicenseErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, CheckoutLicenseErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CheckoutLicenseErrorKind::RedirectException`.
     pub fn is_redirect_exception(&self) -> bool {
@@ -9164,24 +9199,15 @@ impl CheckoutLicenseError {
     }
     /// Returns `true` if the error kind is `CheckoutLicenseErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckoutLicenseErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, CheckoutLicenseErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CheckoutLicenseErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckoutLicenseErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, CheckoutLicenseErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `CheckoutLicenseErrorKind::UnsupportedDigitalSignatureMethodException`.
     pub fn is_unsupported_digital_signature_method_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckoutLicenseErrorKind::UnsupportedDigitalSignatureMethodException(_)
-        )
+        matches!(&self.kind, CheckoutLicenseErrorKind::UnsupportedDigitalSignatureMethodException(_))
     }
     /// Returns `true` if the error kind is `CheckoutLicenseErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -9191,19 +9217,39 @@ impl CheckoutLicenseError {
 impl std::error::Error for CheckoutLicenseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CheckoutLicenseErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CheckoutLicenseErrorKind::AuthorizationException(_inner) => Some(_inner),
-            CheckoutLicenseErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            CheckoutLicenseErrorKind::NoEntitlementsAllowedException(_inner) => Some(_inner),
-            CheckoutLicenseErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            CheckoutLicenseErrorKind::RedirectException(_inner) => Some(_inner),
-            CheckoutLicenseErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            CheckoutLicenseErrorKind::ServerInternalException(_inner) => Some(_inner),
-            CheckoutLicenseErrorKind::UnsupportedDigitalSignatureMethodException(_inner) => {
+            CheckoutLicenseErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutLicenseErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutLicenseErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutLicenseErrorKind::NoEntitlementsAllowedException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutLicenseErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutLicenseErrorKind::RedirectException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutLicenseErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutLicenseErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutLicenseErrorKind::UnsupportedDigitalSignatureMethodException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutLicenseErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutLicenseErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CheckoutLicenseErrorKind::ValidationException(_inner) => Some(_inner),
-            CheckoutLicenseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9211,22 +9257,20 @@ impl std::error::Error for CheckoutLicenseError {
 /// <p>The digital signature method is unsupported. Try your request again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsupportedDigitalSignatureMethodException {
+pub struct UnsupportedDigitalSignatureMethodException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnsupportedDigitalSignatureMethodException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UnsupportedDigitalSignatureMethodException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedDigitalSignatureMethodException")?;
         if let Some(inner_15) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_15)?;
             }
         }
@@ -9236,7 +9280,7 @@ impl std::fmt::Display for UnsupportedDigitalSignatureMethodException {
 impl std::error::Error for UnsupportedDigitalSignatureMethodException {}
 /// See [`UnsupportedDigitalSignatureMethodException`](crate::error::UnsupportedDigitalSignatureMethodException).
 pub mod unsupported_digital_signature_method_exception {
-
+    
     /// A builder for [`UnsupportedDigitalSignatureMethodException`](crate::error::UnsupportedDigitalSignatureMethodException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9250,16 +9294,18 @@ pub mod unsupported_digital_signature_method_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UnsupportedDigitalSignatureMethodException`](crate::error::UnsupportedDigitalSignatureMethodException).
         pub fn build(self) -> crate::error::UnsupportedDigitalSignatureMethodException {
             crate::error::UnsupportedDigitalSignatureMethodException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UnsupportedDigitalSignatureMethodException {
     /// Creates a new builder-style object to manufacture [`UnsupportedDigitalSignatureMethodException`](crate::error::UnsupportedDigitalSignatureMethodException).
@@ -9271,22 +9317,20 @@ impl UnsupportedDigitalSignatureMethodException {
 /// <p>There are no entitlements found for this license, or the entitlement maximum count is reached.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NoEntitlementsAllowedException {
+pub struct NoEntitlementsAllowedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NoEntitlementsAllowedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NoEntitlementsAllowedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NoEntitlementsAllowedException")?;
         if let Some(inner_16) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_16)?;
             }
         }
@@ -9296,7 +9340,7 @@ impl std::fmt::Display for NoEntitlementsAllowedException {
 impl std::error::Error for NoEntitlementsAllowedException {}
 /// See [`NoEntitlementsAllowedException`](crate::error::NoEntitlementsAllowedException).
 pub mod no_entitlements_allowed_exception {
-
+    
     /// A builder for [`NoEntitlementsAllowedException`](crate::error::NoEntitlementsAllowedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9310,16 +9354,18 @@ pub mod no_entitlements_allowed_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NoEntitlementsAllowedException`](crate::error::NoEntitlementsAllowedException).
         pub fn build(self) -> crate::error::NoEntitlementsAllowedException {
             crate::error::NoEntitlementsAllowedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NoEntitlementsAllowedException {
     /// Creates a new builder-style object to manufacture [`NoEntitlementsAllowedException`](crate::error::NoEntitlementsAllowedException).
@@ -9333,15 +9379,15 @@ impl NoEntitlementsAllowedException {
 #[derive(std::fmt::Debug)]
 pub struct CheckoutBorrowLicenseError {
     /// Kind of error that occurred.
-    pub kind: CheckoutBorrowLicenseErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CheckoutBorrowLicenseErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CheckoutBorrowLicenseError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CheckoutBorrowLicenseErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9368,38 +9414,58 @@ pub enum CheckoutBorrowLicenseErrorKind {
     /// <p>The server experienced an internal error. Try again.</p>
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The digital signature method is unsupported. Try your request again.</p>
-    UnsupportedDigitalSignatureMethodException(
-        crate::error::UnsupportedDigitalSignatureMethodException,
-    ),
+    UnsupportedDigitalSignatureMethodException(crate::error::UnsupportedDigitalSignatureMethodException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CheckoutBorrowLicenseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CheckoutBorrowLicenseErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CheckoutBorrowLicenseErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            CheckoutBorrowLicenseErrorKind::EntitlementNotAllowedException(_inner) => _inner.fmt(f),
-            CheckoutBorrowLicenseErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            CheckoutBorrowLicenseErrorKind::NoEntitlementsAllowedException(_inner) => _inner.fmt(f),
-            CheckoutBorrowLicenseErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            CheckoutBorrowLicenseErrorKind::RedirectException(_inner) => _inner.fmt(f),
-            CheckoutBorrowLicenseErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            CheckoutBorrowLicenseErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            CheckoutBorrowLicenseErrorKind::UnsupportedDigitalSignatureMethodException(_inner) => {
+            CheckoutBorrowLicenseErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutBorrowLicenseErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutBorrowLicenseErrorKind::EntitlementNotAllowedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutBorrowLicenseErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutBorrowLicenseErrorKind::NoEntitlementsAllowedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutBorrowLicenseErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutBorrowLicenseErrorKind::RedirectException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutBorrowLicenseErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutBorrowLicenseErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutBorrowLicenseErrorKind::UnsupportedDigitalSignatureMethodException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutBorrowLicenseErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckoutBorrowLicenseErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CheckoutBorrowLicenseErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            CheckoutBorrowLicenseErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -9413,145 +9479,130 @@ impl aws_smithy_types::retry::ProvideErrorKind for CheckoutBorrowLicenseError {
 }
 impl CheckoutBorrowLicenseError {
     /// Creates a new `CheckoutBorrowLicenseError`.
-    pub fn new(kind: CheckoutBorrowLicenseErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CheckoutBorrowLicenseError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CheckoutBorrowLicenseErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CheckoutBorrowLicenseError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CheckoutBorrowLicenseErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CheckoutBorrowLicenseErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CheckoutBorrowLicenseError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CheckoutBorrowLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CheckoutBorrowLicenseError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CheckoutBorrowLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckoutBorrowLicenseErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CheckoutBorrowLicenseErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckoutBorrowLicenseErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, CheckoutBorrowLicenseErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::EntitlementNotAllowedException`.
     pub fn is_entitlement_not_allowed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckoutBorrowLicenseErrorKind::EntitlementNotAllowedException(_)
-        )
+        matches!(&self.kind, CheckoutBorrowLicenseErrorKind::EntitlementNotAllowedException(_))
     }
     /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckoutBorrowLicenseErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, CheckoutBorrowLicenseErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::NoEntitlementsAllowedException`.
     pub fn is_no_entitlements_allowed_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckoutBorrowLicenseErrorKind::NoEntitlementsAllowedException(_)
-        )
+        matches!(&self.kind, CheckoutBorrowLicenseErrorKind::NoEntitlementsAllowedException(_))
     }
     /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckoutBorrowLicenseErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, CheckoutBorrowLicenseErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::RedirectException`.
     pub fn is_redirect_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckoutBorrowLicenseErrorKind::RedirectException(_)
-        )
+        matches!(&self.kind, CheckoutBorrowLicenseErrorKind::RedirectException(_))
     }
     /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckoutBorrowLicenseErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, CheckoutBorrowLicenseErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckoutBorrowLicenseErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, CheckoutBorrowLicenseErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::UnsupportedDigitalSignatureMethodException`.
     pub fn is_unsupported_digital_signature_method_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckoutBorrowLicenseErrorKind::UnsupportedDigitalSignatureMethodException(_)
-        )
+        matches!(&self.kind, CheckoutBorrowLicenseErrorKind::UnsupportedDigitalSignatureMethodException(_))
     }
     /// Returns `true` if the error kind is `CheckoutBorrowLicenseErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckoutBorrowLicenseErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, CheckoutBorrowLicenseErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for CheckoutBorrowLicenseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CheckoutBorrowLicenseErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CheckoutBorrowLicenseErrorKind::AuthorizationException(_inner) => Some(_inner),
-            CheckoutBorrowLicenseErrorKind::EntitlementNotAllowedException(_inner) => Some(_inner),
-            CheckoutBorrowLicenseErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            CheckoutBorrowLicenseErrorKind::NoEntitlementsAllowedException(_inner) => Some(_inner),
-            CheckoutBorrowLicenseErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            CheckoutBorrowLicenseErrorKind::RedirectException(_inner) => Some(_inner),
-            CheckoutBorrowLicenseErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            CheckoutBorrowLicenseErrorKind::ServerInternalException(_inner) => Some(_inner),
-            CheckoutBorrowLicenseErrorKind::UnsupportedDigitalSignatureMethodException(_inner) => {
+            CheckoutBorrowLicenseErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutBorrowLicenseErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutBorrowLicenseErrorKind::EntitlementNotAllowedException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutBorrowLicenseErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutBorrowLicenseErrorKind::NoEntitlementsAllowedException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutBorrowLicenseErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutBorrowLicenseErrorKind::RedirectException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutBorrowLicenseErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutBorrowLicenseErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutBorrowLicenseErrorKind::UnsupportedDigitalSignatureMethodException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutBorrowLicenseErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            CheckoutBorrowLicenseErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CheckoutBorrowLicenseErrorKind::ValidationException(_inner) => Some(_inner),
-            CheckoutBorrowLicenseErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -9559,22 +9610,20 @@ impl std::error::Error for CheckoutBorrowLicenseError {
 /// <p>The entitlement is not allowed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EntitlementNotAllowedException {
+pub struct EntitlementNotAllowedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl EntitlementNotAllowedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for EntitlementNotAllowedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EntitlementNotAllowedException")?;
         if let Some(inner_17) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_17)?;
             }
         }
@@ -9584,7 +9633,7 @@ impl std::fmt::Display for EntitlementNotAllowedException {
 impl std::error::Error for EntitlementNotAllowedException {}
 /// See [`EntitlementNotAllowedException`](crate::error::EntitlementNotAllowedException).
 pub mod entitlement_not_allowed_exception {
-
+    
     /// A builder for [`EntitlementNotAllowedException`](crate::error::EntitlementNotAllowedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9598,16 +9647,18 @@ pub mod entitlement_not_allowed_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`EntitlementNotAllowedException`](crate::error::EntitlementNotAllowedException).
         pub fn build(self) -> crate::error::EntitlementNotAllowedException {
             crate::error::EntitlementNotAllowedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl EntitlementNotAllowedException {
     /// Creates a new builder-style object to manufacture [`EntitlementNotAllowedException`](crate::error::EntitlementNotAllowedException).
@@ -9621,15 +9672,15 @@ impl EntitlementNotAllowedException {
 #[derive(std::fmt::Debug)]
 pub struct CheckInLicenseError {
     /// Kind of error that occurred.
-    pub kind: CheckInLicenseErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CheckInLicenseErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CheckInLicenseError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CheckInLicenseErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9653,28 +9704,46 @@ pub enum CheckInLicenseErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CheckInLicenseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CheckInLicenseErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CheckInLicenseErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            CheckInLicenseErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            CheckInLicenseErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            CheckInLicenseErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            CheckInLicenseErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            CheckInLicenseErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            CheckInLicenseErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            CheckInLicenseErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CheckInLicenseErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckInLicenseErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckInLicenseErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckInLicenseErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckInLicenseErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckInLicenseErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckInLicenseErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckInLicenseErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CheckInLicenseErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9688,59 +9757,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for CheckInLicenseError {
 }
 impl CheckInLicenseError {
     /// Creates a new `CheckInLicenseError`.
-    pub fn new(kind: CheckInLicenseErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CheckInLicenseError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CheckInLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CheckInLicenseError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CheckInLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CheckInLicenseErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CheckInLicenseError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CheckInLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CheckInLicenseError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CheckInLicenseErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CheckInLicenseErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckInLicenseErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CheckInLicenseErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CheckInLicenseErrorKind::AuthorizationException`.
     pub fn is_authorization_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckInLicenseErrorKind::AuthorizationException(_)
-        )
+        matches!(&self.kind, CheckInLicenseErrorKind::AuthorizationException(_))
     }
     /// Returns `true` if the error kind is `CheckInLicenseErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
@@ -9748,31 +9811,19 @@ impl CheckInLicenseError {
     }
     /// Returns `true` if the error kind is `CheckInLicenseErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckInLicenseErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, CheckInLicenseErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `CheckInLicenseErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckInLicenseErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, CheckInLicenseErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CheckInLicenseErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckInLicenseErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, CheckInLicenseErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CheckInLicenseErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CheckInLicenseErrorKind::ServerInternalException(_)
-        )
+        matches!(&self.kind, CheckInLicenseErrorKind::ServerInternalException(_))
     }
     /// Returns `true` if the error kind is `CheckInLicenseErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -9782,15 +9833,33 @@ impl CheckInLicenseError {
 impl std::error::Error for CheckInLicenseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CheckInLicenseErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CheckInLicenseErrorKind::AuthorizationException(_inner) => Some(_inner),
-            CheckInLicenseErrorKind::ConflictException(_inner) => Some(_inner),
-            CheckInLicenseErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            CheckInLicenseErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            CheckInLicenseErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            CheckInLicenseErrorKind::ServerInternalException(_inner) => Some(_inner),
-            CheckInLicenseErrorKind::ValidationException(_inner) => Some(_inner),
-            CheckInLicenseErrorKind::Unhandled(_inner) => Some(_inner),
+            CheckInLicenseErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CheckInLicenseErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            CheckInLicenseErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            CheckInLicenseErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            CheckInLicenseErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CheckInLicenseErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CheckInLicenseErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            CheckInLicenseErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            CheckInLicenseErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -9800,15 +9869,15 @@ impl std::error::Error for CheckInLicenseError {
 #[derive(std::fmt::Debug)]
 pub struct AcceptGrantError {
     /// Kind of error that occurred.
-    pub kind: AcceptGrantErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AcceptGrantErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AcceptGrantError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: AcceptGrantErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -9830,27 +9899,43 @@ pub enum AcceptGrantErrorKind {
     ServerInternalException(crate::error::ServerInternalException),
     /// <p>The provided input is not valid. Try your request again.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AcceptGrantError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AcceptGrantErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            AcceptGrantErrorKind::AuthorizationException(_inner) => _inner.fmt(f),
-            AcceptGrantErrorKind::InvalidParameterValueException(_inner) => _inner.fmt(f),
-            AcceptGrantErrorKind::RateLimitExceededException(_inner) => _inner.fmt(f),
-            AcceptGrantErrorKind::ResourceLimitExceededException(_inner) => _inner.fmt(f),
-            AcceptGrantErrorKind::ServerInternalException(_inner) => _inner.fmt(f),
-            AcceptGrantErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            AcceptGrantErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            AcceptGrantErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AcceptGrantErrorKind::AuthorizationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AcceptGrantErrorKind::InvalidParameterValueException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AcceptGrantErrorKind::RateLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AcceptGrantErrorKind::ResourceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AcceptGrantErrorKind::ServerInternalException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AcceptGrantErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AcceptGrantErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -9864,46 +9949,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for AcceptGrantError {
 }
 impl AcceptGrantError {
     /// Creates a new `AcceptGrantError`.
-    pub fn new(kind: AcceptGrantErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AcceptGrantError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AcceptGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AcceptGrantError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AcceptGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AcceptGrantErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AcceptGrantError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AcceptGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AcceptGrantError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AcceptGrantErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AcceptGrantErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, AcceptGrantErrorKind::AccessDeniedException(_))
@@ -9914,24 +9999,15 @@ impl AcceptGrantError {
     }
     /// Returns `true` if the error kind is `AcceptGrantErrorKind::InvalidParameterValueException`.
     pub fn is_invalid_parameter_value_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AcceptGrantErrorKind::InvalidParameterValueException(_)
-        )
+        matches!(&self.kind, AcceptGrantErrorKind::InvalidParameterValueException(_))
     }
     /// Returns `true` if the error kind is `AcceptGrantErrorKind::RateLimitExceededException`.
     pub fn is_rate_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AcceptGrantErrorKind::RateLimitExceededException(_)
-        )
+        matches!(&self.kind, AcceptGrantErrorKind::RateLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `AcceptGrantErrorKind::ResourceLimitExceededException`.
     pub fn is_resource_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AcceptGrantErrorKind::ResourceLimitExceededException(_)
-        )
+        matches!(&self.kind, AcceptGrantErrorKind::ResourceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `AcceptGrantErrorKind::ServerInternalException`.
     pub fn is_server_internal_exception(&self) -> bool {
@@ -9945,43 +10021,60 @@ impl AcceptGrantError {
 impl std::error::Error for AcceptGrantError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AcceptGrantErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            AcceptGrantErrorKind::AuthorizationException(_inner) => Some(_inner),
-            AcceptGrantErrorKind::InvalidParameterValueException(_inner) => Some(_inner),
-            AcceptGrantErrorKind::RateLimitExceededException(_inner) => Some(_inner),
-            AcceptGrantErrorKind::ResourceLimitExceededException(_inner) => Some(_inner),
-            AcceptGrantErrorKind::ServerInternalException(_inner) => Some(_inner),
-            AcceptGrantErrorKind::ValidationException(_inner) => Some(_inner),
-            AcceptGrantErrorKind::Unhandled(_inner) => Some(_inner),
+            AcceptGrantErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            AcceptGrantErrorKind::AuthorizationException(_inner) =>
+            Some(_inner)
+            ,
+            AcceptGrantErrorKind::InvalidParameterValueException(_inner) =>
+            Some(_inner)
+            ,
+            AcceptGrantErrorKind::RateLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            AcceptGrantErrorKind::ResourceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            AcceptGrantErrorKind::ServerInternalException(_inner) =>
+            Some(_inner)
+            ,
+            AcceptGrantErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            AcceptGrantErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

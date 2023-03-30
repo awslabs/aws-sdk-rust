@@ -15,15 +15,15 @@ pub enum Error {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// The parameters sent in the request are not valid.
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    /// 
+    Unhandled(crate::error::Unhandled)
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -34,19 +34,14 @@ impl std::fmt::Display for Error {
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::TooManyRequestsException(inner) => inner.fmt(f),
             Error::UnprocessableEntityException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f),
+            Error::Unhandled(inner) => inner.fmt(f)
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ConfigureLogsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ConfigureLogsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ConfigureLogsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -54,39 +49,20 @@ where
 impl From<crate::error::ConfigureLogsError> for Error {
     fn from(err: crate::error::ConfigureLogsError) -> Self {
         match err.kind {
-            crate::error::ConfigureLogsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ConfigureLogsErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::ConfigureLogsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ConfigureLogsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ConfigureLogsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ConfigureLogsErrorKind::UnprocessableEntityException(inner) => {
-                Error::UnprocessableEntityException(inner)
-            }
-            crate::error::ConfigureLogsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ConfigureLogsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ConfigureLogsErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::error::ConfigureLogsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ConfigureLogsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ConfigureLogsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ConfigureLogsErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+            crate::error::ConfigureLogsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAssetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreateAssetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::CreateAssetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -94,42 +70,20 @@ where
 impl From<crate::error::CreateAssetError> for Error {
     fn from(err: crate::error::CreateAssetError) -> Self {
         match err.kind {
-            crate::error::CreateAssetErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreateAssetErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::CreateAssetErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreateAssetErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreateAssetErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreateAssetErrorKind::UnprocessableEntityException(inner) => {
-                Error::UnprocessableEntityException(inner)
-            }
-            crate::error::CreateAssetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateAssetErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreateAssetErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::error::CreateAssetErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::CreateAssetErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreateAssetErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::CreateAssetErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+            crate::error::CreateAssetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePackagingConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreatePackagingConfigurationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePackagingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreatePackagingConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -137,42 +91,20 @@ where
 impl From<crate::error::CreatePackagingConfigurationError> for Error {
     fn from(err: crate::error::CreatePackagingConfigurationError) -> Self {
         match err.kind {
-            crate::error::CreatePackagingConfigurationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreatePackagingConfigurationErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::CreatePackagingConfigurationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreatePackagingConfigurationErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::CreatePackagingConfigurationErrorKind::TooManyRequestsException(
-                inner,
-            ) => Error::TooManyRequestsException(inner),
-            crate::error::CreatePackagingConfigurationErrorKind::UnprocessableEntityException(
-                inner,
-            ) => Error::UnprocessableEntityException(inner),
-            crate::error::CreatePackagingConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreatePackagingConfigurationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreatePackagingConfigurationErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::error::CreatePackagingConfigurationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::CreatePackagingConfigurationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreatePackagingConfigurationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::CreatePackagingConfigurationErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+            crate::error::CreatePackagingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePackagingGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::CreatePackagingGroupError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::CreatePackagingGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::CreatePackagingGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -180,39 +112,20 @@ where
 impl From<crate::error::CreatePackagingGroupError> for Error {
     fn from(err: crate::error::CreatePackagingGroupError) -> Self {
         match err.kind {
-            crate::error::CreatePackagingGroupErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::CreatePackagingGroupErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::CreatePackagingGroupErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::CreatePackagingGroupErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::CreatePackagingGroupErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::CreatePackagingGroupErrorKind::UnprocessableEntityException(inner) => {
-                Error::UnprocessableEntityException(inner)
-            }
-            crate::error::CreatePackagingGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreatePackagingGroupErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::CreatePackagingGroupErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::error::CreatePackagingGroupErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::CreatePackagingGroupErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::CreatePackagingGroupErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::CreatePackagingGroupErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+            crate::error::CreatePackagingGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAssetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeleteAssetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DeleteAssetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -220,42 +133,20 @@ where
 impl From<crate::error::DeleteAssetError> for Error {
     fn from(err: crate::error::DeleteAssetError) -> Self {
         match err.kind {
-            crate::error::DeleteAssetErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeleteAssetErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeleteAssetErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeleteAssetErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeleteAssetErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeleteAssetErrorKind::UnprocessableEntityException(inner) => {
-                Error::UnprocessableEntityException(inner)
-            }
-            crate::error::DeleteAssetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteAssetErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeleteAssetErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::error::DeleteAssetErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeleteAssetErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeleteAssetErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DeleteAssetErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+            crate::error::DeleteAssetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePackagingConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeletePackagingConfigurationError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePackagingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeletePackagingConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -263,42 +154,20 @@ where
 impl From<crate::error::DeletePackagingConfigurationError> for Error {
     fn from(err: crate::error::DeletePackagingConfigurationError) -> Self {
         match err.kind {
-            crate::error::DeletePackagingConfigurationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeletePackagingConfigurationErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::DeletePackagingConfigurationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeletePackagingConfigurationErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::DeletePackagingConfigurationErrorKind::TooManyRequestsException(
-                inner,
-            ) => Error::TooManyRequestsException(inner),
-            crate::error::DeletePackagingConfigurationErrorKind::UnprocessableEntityException(
-                inner,
-            ) => Error::UnprocessableEntityException(inner),
-            crate::error::DeletePackagingConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeletePackagingConfigurationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeletePackagingConfigurationErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::error::DeletePackagingConfigurationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeletePackagingConfigurationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeletePackagingConfigurationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DeletePackagingConfigurationErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+            crate::error::DeletePackagingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePackagingGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DeletePackagingGroupError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DeletePackagingGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DeletePackagingGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -306,39 +175,20 @@ where
 impl From<crate::error::DeletePackagingGroupError> for Error {
     fn from(err: crate::error::DeletePackagingGroupError) -> Self {
         match err.kind {
-            crate::error::DeletePackagingGroupErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DeletePackagingGroupErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DeletePackagingGroupErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DeletePackagingGroupErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DeletePackagingGroupErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DeletePackagingGroupErrorKind::UnprocessableEntityException(inner) => {
-                Error::UnprocessableEntityException(inner)
-            }
-            crate::error::DeletePackagingGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeletePackagingGroupErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DeletePackagingGroupErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::error::DeletePackagingGroupErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DeletePackagingGroupErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DeletePackagingGroupErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DeletePackagingGroupErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+            crate::error::DeletePackagingGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAssetError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribeAssetError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribeAssetError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -346,46 +196,20 @@ where
 impl From<crate::error::DescribeAssetError> for Error {
     fn from(err: crate::error::DescribeAssetError) -> Self {
         match err.kind {
-            crate::error::DescribeAssetErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DescribeAssetErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DescribeAssetErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribeAssetErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DescribeAssetErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribeAssetErrorKind::UnprocessableEntityException(inner) => {
-                Error::UnprocessableEntityException(inner)
-            }
-            crate::error::DescribeAssetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeAssetErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DescribeAssetErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::error::DescribeAssetErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribeAssetErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DescribeAssetErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DescribeAssetErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+            crate::error::DescribeAssetErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R>
-    From<aws_smithy_http::result::SdkError<crate::error::DescribePackagingConfigurationError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<
-            crate::error::DescribePackagingConfigurationError,
-            R,
-        >,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribePackagingConfigurationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribePackagingConfigurationError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -393,42 +217,20 @@ where
 impl From<crate::error::DescribePackagingConfigurationError> for Error {
     fn from(err: crate::error::DescribePackagingConfigurationError) -> Self {
         match err.kind {
-            crate::error::DescribePackagingConfigurationErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DescribePackagingConfigurationErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::DescribePackagingConfigurationErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribePackagingConfigurationErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::DescribePackagingConfigurationErrorKind::TooManyRequestsException(
-                inner,
-            ) => Error::TooManyRequestsException(inner),
-            crate::error::DescribePackagingConfigurationErrorKind::UnprocessableEntityException(
-                inner,
-            ) => Error::UnprocessableEntityException(inner),
-            crate::error::DescribePackagingConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribePackagingConfigurationErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DescribePackagingConfigurationErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::error::DescribePackagingConfigurationErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribePackagingConfigurationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DescribePackagingConfigurationErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DescribePackagingConfigurationErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+            crate::error::DescribePackagingConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribePackagingGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::DescribePackagingGroupError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::DescribePackagingGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::DescribePackagingGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -436,39 +238,20 @@ where
 impl From<crate::error::DescribePackagingGroupError> for Error {
     fn from(err: crate::error::DescribePackagingGroupError) -> Self {
         match err.kind {
-            crate::error::DescribePackagingGroupErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::DescribePackagingGroupErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::DescribePackagingGroupErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::DescribePackagingGroupErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::DescribePackagingGroupErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::DescribePackagingGroupErrorKind::UnprocessableEntityException(inner) => {
-                Error::UnprocessableEntityException(inner)
-            }
-            crate::error::DescribePackagingGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribePackagingGroupErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::DescribePackagingGroupErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::error::DescribePackagingGroupErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::DescribePackagingGroupErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::DescribePackagingGroupErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::DescribePackagingGroupErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+            crate::error::DescribePackagingGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAssetsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListAssetsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::ListAssetsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -476,42 +259,20 @@ where
 impl From<crate::error::ListAssetsError> for Error {
     fn from(err: crate::error::ListAssetsError) -> Self {
         match err.kind {
-            crate::error::ListAssetsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListAssetsErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::ListAssetsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListAssetsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListAssetsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListAssetsErrorKind::UnprocessableEntityException(inner) => {
-                Error::UnprocessableEntityException(inner)
-            }
-            crate::error::ListAssetsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListAssetsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListAssetsErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::error::ListAssetsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ListAssetsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListAssetsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListAssetsErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+            crate::error::ListAssetsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPackagingConfigurationsError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListPackagingConfigurationsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPackagingConfigurationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPackagingConfigurationsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -519,41 +280,20 @@ where
 impl From<crate::error::ListPackagingConfigurationsError> for Error {
     fn from(err: crate::error::ListPackagingConfigurationsError) -> Self {
         match err.kind {
-            crate::error::ListPackagingConfigurationsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListPackagingConfigurationsErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::ListPackagingConfigurationsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListPackagingConfigurationsErrorKind::ServiceUnavailableException(
-                inner,
-            ) => Error::ServiceUnavailableException(inner),
-            crate::error::ListPackagingConfigurationsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListPackagingConfigurationsErrorKind::UnprocessableEntityException(
-                inner,
-            ) => Error::UnprocessableEntityException(inner),
-            crate::error::ListPackagingConfigurationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListPackagingConfigurationsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListPackagingConfigurationsErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::error::ListPackagingConfigurationsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ListPackagingConfigurationsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListPackagingConfigurationsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListPackagingConfigurationsErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+            crate::error::ListPackagingConfigurationsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPackagingGroupsError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListPackagingGroupsError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListPackagingGroupsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListPackagingGroupsError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -561,41 +301,20 @@ where
 impl From<crate::error::ListPackagingGroupsError> for Error {
     fn from(err: crate::error::ListPackagingGroupsError) -> Self {
         match err.kind {
-            crate::error::ListPackagingGroupsErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::ListPackagingGroupsErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::ListPackagingGroupsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::ListPackagingGroupsErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::ListPackagingGroupsErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::ListPackagingGroupsErrorKind::UnprocessableEntityException(inner) => {
-                Error::UnprocessableEntityException(inner)
-            }
-            crate::error::ListPackagingGroupsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListPackagingGroupsErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::ListPackagingGroupsErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::error::ListPackagingGroupsErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::ListPackagingGroupsErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::ListPackagingGroupsErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::ListPackagingGroupsErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+            crate::error::ListPackagingGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -603,21 +322,14 @@ where
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
         match err.kind {
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -625,21 +337,14 @@ where
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
         match err.kind {
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
     fn from(err: aws_smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -647,24 +352,14 @@ where
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
         match err.kind {
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdatePackagingGroupError, R>>
-    for Error
-where
-    R: Send + Sync + std::fmt::Debug + 'static,
-{
-    fn from(
-        err: aws_smithy_http::result::SdkError<crate::error::UpdatePackagingGroupError, R>,
-    ) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::error::UpdatePackagingGroupError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: aws_smithy_http::result::SdkError<crate::error::UpdatePackagingGroupError, R>) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => {
-                Self::from(context.into_err())
-            }
+            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
         }
     }
@@ -672,28 +367,15 @@ where
 impl From<crate::error::UpdatePackagingGroupError> for Error {
     fn from(err: crate::error::UpdatePackagingGroupError) -> Self {
         match err.kind {
-            crate::error::UpdatePackagingGroupErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UpdatePackagingGroupErrorKind::InternalServerErrorException(inner) => {
-                Error::InternalServerErrorException(inner)
-            }
-            crate::error::UpdatePackagingGroupErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UpdatePackagingGroupErrorKind::ServiceUnavailableException(inner) => {
-                Error::ServiceUnavailableException(inner)
-            }
-            crate::error::UpdatePackagingGroupErrorKind::TooManyRequestsException(inner) => {
-                Error::TooManyRequestsException(inner)
-            }
-            crate::error::UpdatePackagingGroupErrorKind::UnprocessableEntityException(inner) => {
-                Error::UnprocessableEntityException(inner)
-            }
-            crate::error::UpdatePackagingGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdatePackagingGroupErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UpdatePackagingGroupErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::error::UpdatePackagingGroupErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UpdatePackagingGroupErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::error::UpdatePackagingGroupErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::error::UpdatePackagingGroupErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+            crate::error::UpdatePackagingGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
         }
     }
 }
 impl std::error::Error for Error {}
+

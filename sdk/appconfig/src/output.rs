@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidateConfigurationOutput {}
+pub struct ValidateConfigurationOutput  {
+}
 /// See [`ValidateConfigurationOutput`](crate::output::ValidateConfigurationOutput).
 pub mod validate_configuration_output {
-
+    
     /// A builder for [`ValidateConfigurationOutput`](crate::output::ValidateConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ValidateConfigurationOutput`](crate::output::ValidateConfigurationOutput).
         pub fn build(self) -> crate::output::ValidateConfigurationOutput {
-            crate::output::ValidateConfigurationOutput {}
+            crate::output::ValidateConfigurationOutput {
+            }
         }
     }
+    
+    
 }
 impl ValidateConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`ValidateConfigurationOutput`](crate::output::ValidateConfigurationOutput).
@@ -26,7 +31,7 @@ impl ValidateConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateExtensionAssociationOutput {
+pub struct UpdateExtensionAssociationOutput  {
     /// <p>The system-generated ID for the association.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -41,34 +46,30 @@ pub struct UpdateExtensionAssociationOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The parameter names and values defined in the association.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The version number for the extension defined in the association.</p>
     #[doc(hidden)]
     pub extension_version_number: i32,
 }
 impl UpdateExtensionAssociationOutput {
     /// <p>The system-generated ID for the association.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN of the extension defined in the association.</p>
-    pub fn extension_arn(&self) -> std::option::Option<&str> {
+    pub fn extension_arn(&self) -> std::option::Option<& str> {
         self.extension_arn.as_deref()
     }
     /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The parameter names and values defined in the association.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>The version number for the extension defined in the association.</p>
@@ -78,7 +79,7 @@ impl UpdateExtensionAssociationOutput {
 }
 /// See [`UpdateExtensionAssociationOutput`](crate::output::UpdateExtensionAssociationOutput).
 pub mod update_extension_association_output {
-
+    
     /// A builder for [`UpdateExtensionAssociationOutput`](crate::output::UpdateExtensionAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -86,9 +87,7 @@ pub mod update_extension_association_output {
         pub(crate) extension_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) extension_version_number: std::option::Option<i32>,
     }
     impl Builder {
@@ -99,8 +98,7 @@ pub mod update_extension_association_output {
         }
         /// <p>The system-generated ID for the association.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ARN of the extension defined in the association.</p>
         pub fn extension_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,12 +106,8 @@ pub mod update_extension_association_output {
             self
         }
         /// <p>The ARN of the extension defined in the association.</p>
-        pub fn set_extension_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.extension_arn = input;
-            self
+        pub fn set_extension_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.extension_arn = input; self
         }
         /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,8 +116,7 @@ pub mod update_extension_association_output {
         }
         /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,33 +125,22 @@ pub mod update_extension_association_output {
         }
         /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The parameter names and values defined in the association.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>The parameter names and values defined in the association.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.parameters = input; self
         }
         /// <p>The version number for the extension defined in the association.</p>
         pub fn extension_version_number(mut self, input: i32) -> Self {
@@ -167,21 +149,29 @@ pub mod update_extension_association_output {
         }
         /// <p>The version number for the extension defined in the association.</p>
         pub fn set_extension_version_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.extension_version_number = input;
-            self
+            self.extension_version_number = input; self
         }
         /// Consumes the builder and constructs a [`UpdateExtensionAssociationOutput`](crate::output::UpdateExtensionAssociationOutput).
         pub fn build(self) -> crate::output::UpdateExtensionAssociationOutput {
             crate::output::UpdateExtensionAssociationOutput {
-                id: self.id,
-                extension_arn: self.extension_arn,
-                resource_arn: self.resource_arn,
-                arn: self.arn,
-                parameters: self.parameters,
-                extension_version_number: self.extension_version_number.unwrap_or_default(),
+                id: self.id
+                ,
+                extension_arn: self.extension_arn
+                ,
+                resource_arn: self.resource_arn
+                ,
+                arn: self.arn
+                ,
+                parameters: self.parameters
+                ,
+                extension_version_number: self.extension_version_number
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateExtensionAssociationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateExtensionAssociationOutput`](crate::output::UpdateExtensionAssociationOutput).
@@ -193,7 +183,7 @@ impl UpdateExtensionAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateExtensionOutput {
+pub struct UpdateExtensionOutput  {
     /// <p>The system-generated ID of the extension.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -211,22 +201,18 @@ pub struct UpdateExtensionOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The actions defined in the extension.</p>
     #[doc(hidden)]
-    pub actions: std::option::Option<
-        std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>,
-    >,
+    pub actions: std::option::Option<std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>>,
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::Parameter>,
-    >,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Parameter>>,
 }
 impl UpdateExtensionOutput {
     /// <p>The system-generated ID of the extension.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The extension name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The extension version number.</p>
@@ -234,32 +220,25 @@ impl UpdateExtensionOutput {
         self.version_number
     }
     /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Information about the extension.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The actions defined in the extension.</p>
-    pub fn actions(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>,
-    > {
+    pub fn actions(&self) -> std::option::Option<& std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>> {
         self.actions.as_ref()
     }
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Parameter>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::Parameter>> {
         self.parameters.as_ref()
     }
 }
 /// See [`UpdateExtensionOutput`](crate::output::UpdateExtensionOutput).
 pub mod update_extension_output {
-
+    
     /// A builder for [`UpdateExtensionOutput`](crate::output::UpdateExtensionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -268,15 +247,8 @@ pub mod update_extension_output {
         pub(crate) version_number: std::option::Option<i32>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) actions: std::option::Option<
-            std::collections::HashMap<
-                crate::model::ActionPoint,
-                std::vec::Vec<crate::model::Action>,
-            >,
-        >,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::Parameter>,
-        >,
+        pub(crate) actions: std::option::Option<std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>>,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Parameter>>,
     }
     impl Builder {
         /// <p>The system-generated ID of the extension.</p>
@@ -286,8 +258,7 @@ pub mod update_extension_output {
         }
         /// <p>The system-generated ID of the extension.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The extension name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -296,8 +267,7 @@ pub mod update_extension_output {
         }
         /// <p>The extension name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The extension version number.</p>
         pub fn version_number(mut self, input: i32) -> Self {
@@ -306,8 +276,7 @@ pub mod update_extension_output {
         }
         /// <p>The extension version number.</p>
         pub fn set_version_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.version_number = input;
-            self
+            self.version_number = input; self
         }
         /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -316,8 +285,7 @@ pub mod update_extension_output {
         }
         /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Information about the extension.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -326,75 +294,61 @@ pub mod update_extension_output {
         }
         /// <p>Information about the extension.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `actions`.
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions defined in the extension.</p>
-        pub fn actions(
-            mut self,
-            k: crate::model::ActionPoint,
-            v: std::vec::Vec<crate::model::Action>,
-        ) -> Self {
+        pub fn actions(mut self, k: crate::model::ActionPoint, v: std::vec::Vec<crate::model::Action>) -> Self {
             let mut hash_map = self.actions.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.actions = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.actions = Some(hash_map);
+                            self
         }
         /// <p>The actions defined in the extension.</p>
-        pub fn set_actions(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    crate::model::ActionPoint,
-                    std::vec::Vec<crate::model::Action>,
-                >,
-            >,
-        ) -> Self {
-            self.actions = input;
-            self
+        pub fn set_actions(mut self, input: std::option::Option<std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>>) -> Self {
+            self.actions = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::Parameter,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: crate::model::Parameter) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::Parameter>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Parameter>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`UpdateExtensionOutput`](crate::output::UpdateExtensionOutput).
         pub fn build(self) -> crate::output::UpdateExtensionOutput {
             crate::output::UpdateExtensionOutput {
-                id: self.id,
-                name: self.name,
-                version_number: self.version_number.unwrap_or_default(),
-                arn: self.arn,
-                description: self.description,
-                actions: self.actions,
-                parameters: self.parameters,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                version_number: self.version_number
+                    .unwrap_or_default()
+                ,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
+                actions: self.actions
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateExtensionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateExtensionOutput`](crate::output::UpdateExtensionOutput).
@@ -406,7 +360,7 @@ impl UpdateExtensionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEnvironmentOutput {
+pub struct UpdateEnvironmentOutput  {
     /// <p>The application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -428,33 +382,33 @@ pub struct UpdateEnvironmentOutput {
 }
 impl UpdateEnvironmentOutput {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The environment ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the environment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::EnvironmentState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::EnvironmentState> {
         self.state.as_ref()
     }
     /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
-    pub fn monitors(&self) -> std::option::Option<&[crate::model::Monitor]> {
+    pub fn monitors(&self) -> std::option::Option<& [crate::model::Monitor]> {
         self.monitors.as_deref()
     }
 }
 /// See [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
 pub mod update_environment_output {
-
+    
     /// A builder for [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -472,12 +426,8 @@ pub mod update_environment_output {
             self
         }
         /// <p>The application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The environment ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -486,8 +436,7 @@ pub mod update_environment_output {
         }
         /// <p>The environment ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the environment.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -496,8 +445,7 @@ pub mod update_environment_output {
         }
         /// <p>The name of the environment.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the environment.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -506,8 +454,7 @@ pub mod update_environment_output {
         }
         /// <p>The description of the environment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
         pub fn state(mut self, input: crate::model::EnvironmentState) -> Self {
@@ -515,12 +462,8 @@ pub mod update_environment_output {
             self
         }
         /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::EnvironmentState>) -> Self {
+            self.state = input; self
         }
         /// Appends an item to `monitors`.
         ///
@@ -529,30 +472,34 @@ pub mod update_environment_output {
         /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
         pub fn monitors(mut self, input: crate::model::Monitor) -> Self {
             let mut v = self.monitors.unwrap_or_default();
-            v.push(input);
-            self.monitors = Some(v);
-            self
+                            v.push(input);
+                            self.monitors = Some(v);
+                            self
         }
         /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
-        pub fn set_monitors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Monitor>>,
-        ) -> Self {
-            self.monitors = input;
-            self
+        pub fn set_monitors(mut self, input: std::option::Option<std::vec::Vec<crate::model::Monitor>>) -> Self {
+            self.monitors = input; self
         }
         /// Consumes the builder and constructs a [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
         pub fn build(self) -> crate::output::UpdateEnvironmentOutput {
             crate::output::UpdateEnvironmentOutput {
-                application_id: self.application_id,
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                state: self.state,
-                monitors: self.monitors,
+                application_id: self.application_id
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                state: self.state
+                ,
+                monitors: self.monitors
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEnvironmentOutput`](crate::output::UpdateEnvironmentOutput).
@@ -564,7 +511,7 @@ impl UpdateEnvironmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDeploymentStrategyOutput {
+pub struct UpdateDeploymentStrategyOutput  {
     /// <p>The deployment strategy ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -592,15 +539,15 @@ pub struct UpdateDeploymentStrategyOutput {
 }
 impl UpdateDeploymentStrategyOutput {
     /// <p>The deployment strategy ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the deployment strategy.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the deployment strategy.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Total amount of time the deployment lasted.</p>
@@ -608,7 +555,7 @@ impl UpdateDeploymentStrategyOutput {
         self.deployment_duration_in_minutes
     }
     /// <p>The algorithm used to define how percentage grew over time.</p>
-    pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
+    pub fn growth_type(&self) -> std::option::Option<& crate::model::GrowthType> {
         self.growth_type.as_ref()
     }
     /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
@@ -620,13 +567,13 @@ impl UpdateDeploymentStrategyOutput {
         self.final_bake_time_in_minutes
     }
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
-    pub fn replicate_to(&self) -> std::option::Option<&crate::model::ReplicateTo> {
+    pub fn replicate_to(&self) -> std::option::Option<& crate::model::ReplicateTo> {
         self.replicate_to.as_ref()
     }
 }
 /// See [`UpdateDeploymentStrategyOutput`](crate::output::UpdateDeploymentStrategyOutput).
 pub mod update_deployment_strategy_output {
-
+    
     /// A builder for [`UpdateDeploymentStrategyOutput`](crate::output::UpdateDeploymentStrategyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -647,8 +594,7 @@ pub mod update_deployment_strategy_output {
         }
         /// <p>The deployment strategy ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the deployment strategy.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -657,8 +603,7 @@ pub mod update_deployment_strategy_output {
         }
         /// <p>The name of the deployment strategy.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the deployment strategy.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -667,8 +612,7 @@ pub mod update_deployment_strategy_output {
         }
         /// <p>The description of the deployment strategy.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Total amount of time the deployment lasted.</p>
         pub fn deployment_duration_in_minutes(mut self, input: i32) -> Self {
@@ -676,12 +620,8 @@ pub mod update_deployment_strategy_output {
             self
         }
         /// <p>Total amount of time the deployment lasted.</p>
-        pub fn set_deployment_duration_in_minutes(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.deployment_duration_in_minutes = input;
-            self
+        pub fn set_deployment_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+            self.deployment_duration_in_minutes = input; self
         }
         /// <p>The algorithm used to define how percentage grew over time.</p>
         pub fn growth_type(mut self, input: crate::model::GrowthType) -> Self {
@@ -689,12 +629,8 @@ pub mod update_deployment_strategy_output {
             self
         }
         /// <p>The algorithm used to define how percentage grew over time.</p>
-        pub fn set_growth_type(
-            mut self,
-            input: std::option::Option<crate::model::GrowthType>,
-        ) -> Self {
-            self.growth_type = input;
-            self
+        pub fn set_growth_type(mut self, input: std::option::Option<crate::model::GrowthType>) -> Self {
+            self.growth_type = input; self
         }
         /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
         pub fn growth_factor(mut self, input: f32) -> Self {
@@ -703,8 +639,7 @@ pub mod update_deployment_strategy_output {
         }
         /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
         pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
-            self.growth_factor = input;
-            self
+            self.growth_factor = input; self
         }
         /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
@@ -713,8 +648,7 @@ pub mod update_deployment_strategy_output {
         }
         /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.final_bake_time_in_minutes = input;
-            self
+            self.final_bake_time_in_minutes = input; self
         }
         /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
         pub fn replicate_to(mut self, input: crate::model::ReplicateTo) -> Self {
@@ -722,29 +656,36 @@ pub mod update_deployment_strategy_output {
             self
         }
         /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
-        pub fn set_replicate_to(
-            mut self,
-            input: std::option::Option<crate::model::ReplicateTo>,
-        ) -> Self {
-            self.replicate_to = input;
-            self
+        pub fn set_replicate_to(mut self, input: std::option::Option<crate::model::ReplicateTo>) -> Self {
+            self.replicate_to = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDeploymentStrategyOutput`](crate::output::UpdateDeploymentStrategyOutput).
         pub fn build(self) -> crate::output::UpdateDeploymentStrategyOutput {
             crate::output::UpdateDeploymentStrategyOutput {
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                deployment_duration_in_minutes: self
-                    .deployment_duration_in_minutes
-                    .unwrap_or_default(),
-                growth_type: self.growth_type,
-                growth_factor: self.growth_factor.unwrap_or_default(),
-                final_bake_time_in_minutes: self.final_bake_time_in_minutes.unwrap_or_default(),
-                replicate_to: self.replicate_to,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                deployment_duration_in_minutes: self.deployment_duration_in_minutes
+                    .unwrap_or_default()
+                ,
+                growth_type: self.growth_type
+                ,
+                growth_factor: self.growth_factor
+                    .unwrap_or_default()
+                ,
+                final_bake_time_in_minutes: self.final_bake_time_in_minutes
+                    .unwrap_or_default()
+                ,
+                replicate_to: self.replicate_to
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDeploymentStrategyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDeploymentStrategyOutput`](crate::output::UpdateDeploymentStrategyOutput).
@@ -756,7 +697,7 @@ impl UpdateDeploymentStrategyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfigurationProfileOutput {
+pub struct UpdateConfigurationProfileOutput  {
     /// <p>The application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -778,51 +719,51 @@ pub struct UpdateConfigurationProfileOutput {
     /// <p>A list of methods for validating the configuration.</p>
     #[doc(hidden)]
     pub validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
-    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p> 
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p> 
     /// <p> <code>AWS.Freeform</code> </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl UpdateConfigurationProfileOutput {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The configuration profile ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the configuration profile.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The configuration profile description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The URI location of the configuration.</p>
-    pub fn location_uri(&self) -> std::option::Option<&str> {
+    pub fn location_uri(&self) -> std::option::Option<& str> {
         self.location_uri.as_deref()
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
-    pub fn retrieval_role_arn(&self) -> std::option::Option<&str> {
+    pub fn retrieval_role_arn(&self) -> std::option::Option<& str> {
         self.retrieval_role_arn.as_deref()
     }
     /// <p>A list of methods for validating the configuration.</p>
-    pub fn validators(&self) -> std::option::Option<&[crate::model::Validator]> {
+    pub fn validators(&self) -> std::option::Option<& [crate::model::Validator]> {
         self.validators.as_deref()
     }
-    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p> 
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p> 
     /// <p> <code>AWS.Freeform</code> </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
 /// See [`UpdateConfigurationProfileOutput`](crate::output::UpdateConfigurationProfileOutput).
 pub mod update_configuration_profile_output {
-
+    
     /// A builder for [`UpdateConfigurationProfileOutput`](crate::output::UpdateConfigurationProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -842,12 +783,8 @@ pub mod update_configuration_profile_output {
             self
         }
         /// <p>The application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The configuration profile ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -856,8 +793,7 @@ pub mod update_configuration_profile_output {
         }
         /// <p>The configuration profile ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the configuration profile.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -866,8 +802,7 @@ pub mod update_configuration_profile_output {
         }
         /// <p>The name of the configuration profile.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The configuration profile description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -876,8 +811,7 @@ pub mod update_configuration_profile_output {
         }
         /// <p>The configuration profile description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The URI location of the configuration.</p>
         pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -886,8 +820,7 @@ pub mod update_configuration_profile_output {
         }
         /// <p>The URI location of the configuration.</p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_uri = input;
-            self
+            self.location_uri = input; self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
         pub fn retrieval_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -895,12 +828,8 @@ pub mod update_configuration_profile_output {
             self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
-        pub fn set_retrieval_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.retrieval_role_arn = input;
-            self
+        pub fn set_retrieval_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.retrieval_role_arn = input; self
         }
         /// Appends an item to `validators`.
         ///
@@ -909,46 +838,51 @@ pub mod update_configuration_profile_output {
         /// <p>A list of methods for validating the configuration.</p>
         pub fn validators(mut self, input: crate::model::Validator) -> Self {
             let mut v = self.validators.unwrap_or_default();
-            v.push(input);
-            self.validators = Some(v);
-            self
+                            v.push(input);
+                            self.validators = Some(v);
+                            self
         }
         /// <p>A list of methods for validating the configuration.</p>
-        pub fn set_validators(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Validator>>,
-        ) -> Self {
-            self.validators = input;
-            self
+        pub fn set_validators(mut self, input: std::option::Option<std::vec::Vec<crate::model::Validator>>) -> Self {
+            self.validators = input; self
         }
-        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p> 
+        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p> 
         /// <p> <code>AWS.Freeform</code> </p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p> 
+        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p> 
         /// <p> <code>AWS.Freeform</code> </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`UpdateConfigurationProfileOutput`](crate::output::UpdateConfigurationProfileOutput).
         pub fn build(self) -> crate::output::UpdateConfigurationProfileOutput {
             crate::output::UpdateConfigurationProfileOutput {
-                application_id: self.application_id,
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                location_uri: self.location_uri,
-                retrieval_role_arn: self.retrieval_role_arn,
-                validators: self.validators,
-                r#type: self.r#type,
+                application_id: self.application_id
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                location_uri: self.location_uri
+                ,
+                retrieval_role_arn: self.retrieval_role_arn
+                ,
+                validators: self.validators
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateConfigurationProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationProfileOutput`](crate::output::UpdateConfigurationProfileOutput).
@@ -960,7 +894,7 @@ impl UpdateConfigurationProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApplicationOutput {
+pub struct UpdateApplicationOutput  {
     /// <p>The application ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -973,21 +907,21 @@ pub struct UpdateApplicationOutput {
 }
 impl UpdateApplicationOutput {
     /// <p>The application ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The application name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the application.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
 pub mod update_application_output {
-
+    
     /// A builder for [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1003,8 +937,7 @@ pub mod update_application_output {
         }
         /// <p>The application ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The application name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1013,8 +946,7 @@ pub mod update_application_output {
         }
         /// <p>The application name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the application.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1023,18 +955,22 @@ pub mod update_application_output {
         }
         /// <p>The description of the application.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
         pub fn build(self) -> crate::output::UpdateApplicationOutput {
             crate::output::UpdateApplicationOutput {
-                id: self.id,
-                name: self.name,
-                description: self.description,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationOutput`](crate::output::UpdateApplicationOutput).
@@ -1046,19 +982,24 @@ impl UpdateApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -1070,19 +1011,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -1094,7 +1040,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopDeploymentOutput {
+pub struct StopDeploymentOutput  {
     /// <p>The ID of the application that was deployed.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -1155,19 +1101,19 @@ pub struct StopDeploymentOutput {
 }
 impl StopDeploymentOutput {
     /// <p>The ID of the application that was deployed.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the environment that was deployed.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The ID of the deployment strategy that was deployed.</p>
-    pub fn deployment_strategy_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_strategy_id(&self) -> std::option::Option<& str> {
         self.deployment_strategy_id.as_deref()
     }
     /// <p>The ID of the configuration profile that was deployed.</p>
-    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+    pub fn configuration_profile_id(&self) -> std::option::Option<& str> {
         self.configuration_profile_id.as_deref()
     }
     /// <p>The sequence number of the deployment.</p>
@@ -1175,19 +1121,19 @@ impl StopDeploymentOutput {
         self.deployment_number
     }
     /// <p>The name of the configuration.</p>
-    pub fn configuration_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_name(&self) -> std::option::Option<& str> {
         self.configuration_name.as_deref()
     }
     /// <p>Information about the source location of the configuration.</p>
-    pub fn configuration_location_uri(&self) -> std::option::Option<&str> {
+    pub fn configuration_location_uri(&self) -> std::option::Option<& str> {
         self.configuration_location_uri.as_deref()
     }
     /// <p>The configuration version that was deployed.</p>
-    pub fn configuration_version(&self) -> std::option::Option<&str> {
+    pub fn configuration_version(&self) -> std::option::Option<& str> {
         self.configuration_version.as_deref()
     }
     /// <p>The description of the deployment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Total amount of time the deployment lasted.</p>
@@ -1195,7 +1141,7 @@ impl StopDeploymentOutput {
         self.deployment_duration_in_minutes
     }
     /// <p>The algorithm used to define how percentage grew over time.</p>
-    pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
+    pub fn growth_type(&self) -> std::option::Option<& crate::model::GrowthType> {
         self.growth_type.as_ref()
     }
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
@@ -1207,11 +1153,11 @@ impl StopDeploymentOutput {
         self.final_bake_time_in_minutes
     }
     /// <p>The state of the deployment.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::DeploymentState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::DeploymentState> {
         self.state.as_ref()
     }
     /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
-    pub fn event_log(&self) -> std::option::Option<&[crate::model::DeploymentEvent]> {
+    pub fn event_log(&self) -> std::option::Option<& [crate::model::DeploymentEvent]> {
         self.event_log.as_deref()
     }
     /// <p>The percentage of targets for which the deployment is available.</p>
@@ -1219,21 +1165,21 @@ impl StopDeploymentOutput {
         self.percentage_complete
     }
     /// <p>The time the deployment started.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The time the deployment completed. </p>
-    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
     /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
-    pub fn applied_extensions(&self) -> std::option::Option<&[crate::model::AppliedExtension]> {
+    pub fn applied_extensions(&self) -> std::option::Option<& [crate::model::AppliedExtension]> {
         self.applied_extensions.as_deref()
     }
 }
 /// See [`StopDeploymentOutput`](crate::output::StopDeploymentOutput).
 pub mod stop_deployment_output {
-
+    
     /// A builder for [`StopDeploymentOutput`](crate::output::StopDeploymentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1255,8 +1201,7 @@ pub mod stop_deployment_output {
         pub(crate) percentage_complete: std::option::Option<f32>,
         pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) completed_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) applied_extensions:
-            std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>,
+        pub(crate) applied_extensions: std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>,
     }
     impl Builder {
         /// <p>The ID of the application that was deployed.</p>
@@ -1265,12 +1210,8 @@ pub mod stop_deployment_output {
             self
         }
         /// <p>The ID of the application that was deployed.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The ID of the environment that was deployed.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1278,12 +1219,8 @@ pub mod stop_deployment_output {
             self
         }
         /// <p>The ID of the environment that was deployed.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The ID of the deployment strategy that was deployed.</p>
         pub fn deployment_strategy_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1291,12 +1228,8 @@ pub mod stop_deployment_output {
             self
         }
         /// <p>The ID of the deployment strategy that was deployed.</p>
-        pub fn set_deployment_strategy_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_strategy_id = input;
-            self
+        pub fn set_deployment_strategy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_strategy_id = input; self
         }
         /// <p>The ID of the configuration profile that was deployed.</p>
         pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1304,12 +1237,8 @@ pub mod stop_deployment_output {
             self
         }
         /// <p>The ID of the configuration profile that was deployed.</p>
-        pub fn set_configuration_profile_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_profile_id = input;
-            self
+        pub fn set_configuration_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_profile_id = input; self
         }
         /// <p>The sequence number of the deployment.</p>
         pub fn deployment_number(mut self, input: i32) -> Self {
@@ -1318,8 +1247,7 @@ pub mod stop_deployment_output {
         }
         /// <p>The sequence number of the deployment.</p>
         pub fn set_deployment_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.deployment_number = input;
-            self
+            self.deployment_number = input; self
         }
         /// <p>The name of the configuration.</p>
         pub fn configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1327,12 +1255,8 @@ pub mod stop_deployment_output {
             self
         }
         /// <p>The name of the configuration.</p>
-        pub fn set_configuration_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_name = input;
-            self
+        pub fn set_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_name = input; self
         }
         /// <p>Information about the source location of the configuration.</p>
         pub fn configuration_location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1340,12 +1264,8 @@ pub mod stop_deployment_output {
             self
         }
         /// <p>Information about the source location of the configuration.</p>
-        pub fn set_configuration_location_uri(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_location_uri = input;
-            self
+        pub fn set_configuration_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_location_uri = input; self
         }
         /// <p>The configuration version that was deployed.</p>
         pub fn configuration_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1353,12 +1273,8 @@ pub mod stop_deployment_output {
             self
         }
         /// <p>The configuration version that was deployed.</p>
-        pub fn set_configuration_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_version = input;
-            self
+        pub fn set_configuration_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_version = input; self
         }
         /// <p>The description of the deployment.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1367,8 +1283,7 @@ pub mod stop_deployment_output {
         }
         /// <p>The description of the deployment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Total amount of time the deployment lasted.</p>
         pub fn deployment_duration_in_minutes(mut self, input: i32) -> Self {
@@ -1376,12 +1291,8 @@ pub mod stop_deployment_output {
             self
         }
         /// <p>Total amount of time the deployment lasted.</p>
-        pub fn set_deployment_duration_in_minutes(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.deployment_duration_in_minutes = input;
-            self
+        pub fn set_deployment_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+            self.deployment_duration_in_minutes = input; self
         }
         /// <p>The algorithm used to define how percentage grew over time.</p>
         pub fn growth_type(mut self, input: crate::model::GrowthType) -> Self {
@@ -1389,12 +1300,8 @@ pub mod stop_deployment_output {
             self
         }
         /// <p>The algorithm used to define how percentage grew over time.</p>
-        pub fn set_growth_type(
-            mut self,
-            input: std::option::Option<crate::model::GrowthType>,
-        ) -> Self {
-            self.growth_type = input;
-            self
+        pub fn set_growth_type(mut self, input: std::option::Option<crate::model::GrowthType>) -> Self {
+            self.growth_type = input; self
         }
         /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn growth_factor(mut self, input: f32) -> Self {
@@ -1403,8 +1310,7 @@ pub mod stop_deployment_output {
         }
         /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
-            self.growth_factor = input;
-            self
+            self.growth_factor = input; self
         }
         /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
@@ -1413,8 +1319,7 @@ pub mod stop_deployment_output {
         }
         /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.final_bake_time_in_minutes = input;
-            self
+            self.final_bake_time_in_minutes = input; self
         }
         /// <p>The state of the deployment.</p>
         pub fn state(mut self, input: crate::model::DeploymentState) -> Self {
@@ -1422,12 +1327,8 @@ pub mod stop_deployment_output {
             self
         }
         /// <p>The state of the deployment.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::DeploymentState>) -> Self {
+            self.state = input; self
         }
         /// Appends an item to `event_log`.
         ///
@@ -1436,17 +1337,13 @@ pub mod stop_deployment_output {
         /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
         pub fn event_log(mut self, input: crate::model::DeploymentEvent) -> Self {
             let mut v = self.event_log.unwrap_or_default();
-            v.push(input);
-            self.event_log = Some(v);
-            self
+                            v.push(input);
+                            self.event_log = Some(v);
+                            self
         }
         /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
-        pub fn set_event_log(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeploymentEvent>>,
-        ) -> Self {
-            self.event_log = input;
-            self
+        pub fn set_event_log(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeploymentEvent>>) -> Self {
+            self.event_log = input; self
         }
         /// <p>The percentage of targets for which the deployment is available.</p>
         pub fn percentage_complete(mut self, input: f32) -> Self {
@@ -1455,8 +1352,7 @@ pub mod stop_deployment_output {
         }
         /// <p>The percentage of targets for which the deployment is available.</p>
         pub fn set_percentage_complete(mut self, input: std::option::Option<f32>) -> Self {
-            self.percentage_complete = input;
-            self
+            self.percentage_complete = input; self
         }
         /// <p>The time the deployment started.</p>
         pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1464,12 +1360,8 @@ pub mod stop_deployment_output {
             self
         }
         /// <p>The time the deployment started.</p>
-        pub fn set_started_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.started_at = input;
-            self
+        pub fn set_started_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.started_at = input; self
         }
         /// <p>The time the deployment completed. </p>
         pub fn completed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1477,12 +1369,8 @@ pub mod stop_deployment_output {
             self
         }
         /// <p>The time the deployment completed. </p>
-        pub fn set_completed_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.completed_at = input;
-            self
+        pub fn set_completed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.completed_at = input; self
         }
         /// Appends an item to `applied_extensions`.
         ///
@@ -1491,45 +1379,65 @@ pub mod stop_deployment_output {
         /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
         pub fn applied_extensions(mut self, input: crate::model::AppliedExtension) -> Self {
             let mut v = self.applied_extensions.unwrap_or_default();
-            v.push(input);
-            self.applied_extensions = Some(v);
-            self
+                            v.push(input);
+                            self.applied_extensions = Some(v);
+                            self
         }
         /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
-        pub fn set_applied_extensions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>,
-        ) -> Self {
-            self.applied_extensions = input;
-            self
+        pub fn set_applied_extensions(mut self, input: std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>) -> Self {
+            self.applied_extensions = input; self
         }
         /// Consumes the builder and constructs a [`StopDeploymentOutput`](crate::output::StopDeploymentOutput).
         pub fn build(self) -> crate::output::StopDeploymentOutput {
             crate::output::StopDeploymentOutput {
-                application_id: self.application_id,
-                environment_id: self.environment_id,
-                deployment_strategy_id: self.deployment_strategy_id,
-                configuration_profile_id: self.configuration_profile_id,
-                deployment_number: self.deployment_number.unwrap_or_default(),
-                configuration_name: self.configuration_name,
-                configuration_location_uri: self.configuration_location_uri,
-                configuration_version: self.configuration_version,
-                description: self.description,
-                deployment_duration_in_minutes: self
-                    .deployment_duration_in_minutes
-                    .unwrap_or_default(),
-                growth_type: self.growth_type,
-                growth_factor: self.growth_factor.unwrap_or_default(),
-                final_bake_time_in_minutes: self.final_bake_time_in_minutes.unwrap_or_default(),
-                state: self.state,
-                event_log: self.event_log,
-                percentage_complete: self.percentage_complete.unwrap_or_default(),
-                started_at: self.started_at,
-                completed_at: self.completed_at,
-                applied_extensions: self.applied_extensions,
+                application_id: self.application_id
+                ,
+                environment_id: self.environment_id
+                ,
+                deployment_strategy_id: self.deployment_strategy_id
+                ,
+                configuration_profile_id: self.configuration_profile_id
+                ,
+                deployment_number: self.deployment_number
+                    .unwrap_or_default()
+                ,
+                configuration_name: self.configuration_name
+                ,
+                configuration_location_uri: self.configuration_location_uri
+                ,
+                configuration_version: self.configuration_version
+                ,
+                description: self.description
+                ,
+                deployment_duration_in_minutes: self.deployment_duration_in_minutes
+                    .unwrap_or_default()
+                ,
+                growth_type: self.growth_type
+                ,
+                growth_factor: self.growth_factor
+                    .unwrap_or_default()
+                ,
+                final_bake_time_in_minutes: self.final_bake_time_in_minutes
+                    .unwrap_or_default()
+                ,
+                state: self.state
+                ,
+                event_log: self.event_log
+                ,
+                percentage_complete: self.percentage_complete
+                    .unwrap_or_default()
+                ,
+                started_at: self.started_at
+                ,
+                completed_at: self.completed_at
+                ,
+                applied_extensions: self.applied_extensions
+                ,
             }
         }
     }
+    
+    
 }
 impl StopDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`StopDeploymentOutput`](crate::output::StopDeploymentOutput).
@@ -1541,7 +1449,7 @@ impl StopDeploymentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDeploymentOutput {
+pub struct StartDeploymentOutput  {
     /// <p>The ID of the application that was deployed.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -1602,19 +1510,19 @@ pub struct StartDeploymentOutput {
 }
 impl StartDeploymentOutput {
     /// <p>The ID of the application that was deployed.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the environment that was deployed.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The ID of the deployment strategy that was deployed.</p>
-    pub fn deployment_strategy_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_strategy_id(&self) -> std::option::Option<& str> {
         self.deployment_strategy_id.as_deref()
     }
     /// <p>The ID of the configuration profile that was deployed.</p>
-    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+    pub fn configuration_profile_id(&self) -> std::option::Option<& str> {
         self.configuration_profile_id.as_deref()
     }
     /// <p>The sequence number of the deployment.</p>
@@ -1622,19 +1530,19 @@ impl StartDeploymentOutput {
         self.deployment_number
     }
     /// <p>The name of the configuration.</p>
-    pub fn configuration_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_name(&self) -> std::option::Option<& str> {
         self.configuration_name.as_deref()
     }
     /// <p>Information about the source location of the configuration.</p>
-    pub fn configuration_location_uri(&self) -> std::option::Option<&str> {
+    pub fn configuration_location_uri(&self) -> std::option::Option<& str> {
         self.configuration_location_uri.as_deref()
     }
     /// <p>The configuration version that was deployed.</p>
-    pub fn configuration_version(&self) -> std::option::Option<&str> {
+    pub fn configuration_version(&self) -> std::option::Option<& str> {
         self.configuration_version.as_deref()
     }
     /// <p>The description of the deployment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Total amount of time the deployment lasted.</p>
@@ -1642,7 +1550,7 @@ impl StartDeploymentOutput {
         self.deployment_duration_in_minutes
     }
     /// <p>The algorithm used to define how percentage grew over time.</p>
-    pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
+    pub fn growth_type(&self) -> std::option::Option<& crate::model::GrowthType> {
         self.growth_type.as_ref()
     }
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
@@ -1654,11 +1562,11 @@ impl StartDeploymentOutput {
         self.final_bake_time_in_minutes
     }
     /// <p>The state of the deployment.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::DeploymentState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::DeploymentState> {
         self.state.as_ref()
     }
     /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
-    pub fn event_log(&self) -> std::option::Option<&[crate::model::DeploymentEvent]> {
+    pub fn event_log(&self) -> std::option::Option<& [crate::model::DeploymentEvent]> {
         self.event_log.as_deref()
     }
     /// <p>The percentage of targets for which the deployment is available.</p>
@@ -1666,21 +1574,21 @@ impl StartDeploymentOutput {
         self.percentage_complete
     }
     /// <p>The time the deployment started.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The time the deployment completed. </p>
-    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
     /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
-    pub fn applied_extensions(&self) -> std::option::Option<&[crate::model::AppliedExtension]> {
+    pub fn applied_extensions(&self) -> std::option::Option<& [crate::model::AppliedExtension]> {
         self.applied_extensions.as_deref()
     }
 }
 /// See [`StartDeploymentOutput`](crate::output::StartDeploymentOutput).
 pub mod start_deployment_output {
-
+    
     /// A builder for [`StartDeploymentOutput`](crate::output::StartDeploymentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1702,8 +1610,7 @@ pub mod start_deployment_output {
         pub(crate) percentage_complete: std::option::Option<f32>,
         pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) completed_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) applied_extensions:
-            std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>,
+        pub(crate) applied_extensions: std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>,
     }
     impl Builder {
         /// <p>The ID of the application that was deployed.</p>
@@ -1712,12 +1619,8 @@ pub mod start_deployment_output {
             self
         }
         /// <p>The ID of the application that was deployed.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The ID of the environment that was deployed.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1725,12 +1628,8 @@ pub mod start_deployment_output {
             self
         }
         /// <p>The ID of the environment that was deployed.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The ID of the deployment strategy that was deployed.</p>
         pub fn deployment_strategy_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1738,12 +1637,8 @@ pub mod start_deployment_output {
             self
         }
         /// <p>The ID of the deployment strategy that was deployed.</p>
-        pub fn set_deployment_strategy_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_strategy_id = input;
-            self
+        pub fn set_deployment_strategy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_strategy_id = input; self
         }
         /// <p>The ID of the configuration profile that was deployed.</p>
         pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1751,12 +1646,8 @@ pub mod start_deployment_output {
             self
         }
         /// <p>The ID of the configuration profile that was deployed.</p>
-        pub fn set_configuration_profile_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_profile_id = input;
-            self
+        pub fn set_configuration_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_profile_id = input; self
         }
         /// <p>The sequence number of the deployment.</p>
         pub fn deployment_number(mut self, input: i32) -> Self {
@@ -1765,8 +1656,7 @@ pub mod start_deployment_output {
         }
         /// <p>The sequence number of the deployment.</p>
         pub fn set_deployment_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.deployment_number = input;
-            self
+            self.deployment_number = input; self
         }
         /// <p>The name of the configuration.</p>
         pub fn configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1774,12 +1664,8 @@ pub mod start_deployment_output {
             self
         }
         /// <p>The name of the configuration.</p>
-        pub fn set_configuration_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_name = input;
-            self
+        pub fn set_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_name = input; self
         }
         /// <p>Information about the source location of the configuration.</p>
         pub fn configuration_location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1787,12 +1673,8 @@ pub mod start_deployment_output {
             self
         }
         /// <p>Information about the source location of the configuration.</p>
-        pub fn set_configuration_location_uri(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_location_uri = input;
-            self
+        pub fn set_configuration_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_location_uri = input; self
         }
         /// <p>The configuration version that was deployed.</p>
         pub fn configuration_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1800,12 +1682,8 @@ pub mod start_deployment_output {
             self
         }
         /// <p>The configuration version that was deployed.</p>
-        pub fn set_configuration_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_version = input;
-            self
+        pub fn set_configuration_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_version = input; self
         }
         /// <p>The description of the deployment.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1814,8 +1692,7 @@ pub mod start_deployment_output {
         }
         /// <p>The description of the deployment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Total amount of time the deployment lasted.</p>
         pub fn deployment_duration_in_minutes(mut self, input: i32) -> Self {
@@ -1823,12 +1700,8 @@ pub mod start_deployment_output {
             self
         }
         /// <p>Total amount of time the deployment lasted.</p>
-        pub fn set_deployment_duration_in_minutes(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.deployment_duration_in_minutes = input;
-            self
+        pub fn set_deployment_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+            self.deployment_duration_in_minutes = input; self
         }
         /// <p>The algorithm used to define how percentage grew over time.</p>
         pub fn growth_type(mut self, input: crate::model::GrowthType) -> Self {
@@ -1836,12 +1709,8 @@ pub mod start_deployment_output {
             self
         }
         /// <p>The algorithm used to define how percentage grew over time.</p>
-        pub fn set_growth_type(
-            mut self,
-            input: std::option::Option<crate::model::GrowthType>,
-        ) -> Self {
-            self.growth_type = input;
-            self
+        pub fn set_growth_type(mut self, input: std::option::Option<crate::model::GrowthType>) -> Self {
+            self.growth_type = input; self
         }
         /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn growth_factor(mut self, input: f32) -> Self {
@@ -1850,8 +1719,7 @@ pub mod start_deployment_output {
         }
         /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
-            self.growth_factor = input;
-            self
+            self.growth_factor = input; self
         }
         /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
@@ -1860,8 +1728,7 @@ pub mod start_deployment_output {
         }
         /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.final_bake_time_in_minutes = input;
-            self
+            self.final_bake_time_in_minutes = input; self
         }
         /// <p>The state of the deployment.</p>
         pub fn state(mut self, input: crate::model::DeploymentState) -> Self {
@@ -1869,12 +1736,8 @@ pub mod start_deployment_output {
             self
         }
         /// <p>The state of the deployment.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::DeploymentState>) -> Self {
+            self.state = input; self
         }
         /// Appends an item to `event_log`.
         ///
@@ -1883,17 +1746,13 @@ pub mod start_deployment_output {
         /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
         pub fn event_log(mut self, input: crate::model::DeploymentEvent) -> Self {
             let mut v = self.event_log.unwrap_or_default();
-            v.push(input);
-            self.event_log = Some(v);
-            self
+                            v.push(input);
+                            self.event_log = Some(v);
+                            self
         }
         /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
-        pub fn set_event_log(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeploymentEvent>>,
-        ) -> Self {
-            self.event_log = input;
-            self
+        pub fn set_event_log(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeploymentEvent>>) -> Self {
+            self.event_log = input; self
         }
         /// <p>The percentage of targets for which the deployment is available.</p>
         pub fn percentage_complete(mut self, input: f32) -> Self {
@@ -1902,8 +1761,7 @@ pub mod start_deployment_output {
         }
         /// <p>The percentage of targets for which the deployment is available.</p>
         pub fn set_percentage_complete(mut self, input: std::option::Option<f32>) -> Self {
-            self.percentage_complete = input;
-            self
+            self.percentage_complete = input; self
         }
         /// <p>The time the deployment started.</p>
         pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1911,12 +1769,8 @@ pub mod start_deployment_output {
             self
         }
         /// <p>The time the deployment started.</p>
-        pub fn set_started_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.started_at = input;
-            self
+        pub fn set_started_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.started_at = input; self
         }
         /// <p>The time the deployment completed. </p>
         pub fn completed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1924,12 +1778,8 @@ pub mod start_deployment_output {
             self
         }
         /// <p>The time the deployment completed. </p>
-        pub fn set_completed_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.completed_at = input;
-            self
+        pub fn set_completed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.completed_at = input; self
         }
         /// Appends an item to `applied_extensions`.
         ///
@@ -1938,45 +1788,65 @@ pub mod start_deployment_output {
         /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
         pub fn applied_extensions(mut self, input: crate::model::AppliedExtension) -> Self {
             let mut v = self.applied_extensions.unwrap_or_default();
-            v.push(input);
-            self.applied_extensions = Some(v);
-            self
+                            v.push(input);
+                            self.applied_extensions = Some(v);
+                            self
         }
         /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
-        pub fn set_applied_extensions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>,
-        ) -> Self {
-            self.applied_extensions = input;
-            self
+        pub fn set_applied_extensions(mut self, input: std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>) -> Self {
+            self.applied_extensions = input; self
         }
         /// Consumes the builder and constructs a [`StartDeploymentOutput`](crate::output::StartDeploymentOutput).
         pub fn build(self) -> crate::output::StartDeploymentOutput {
             crate::output::StartDeploymentOutput {
-                application_id: self.application_id,
-                environment_id: self.environment_id,
-                deployment_strategy_id: self.deployment_strategy_id,
-                configuration_profile_id: self.configuration_profile_id,
-                deployment_number: self.deployment_number.unwrap_or_default(),
-                configuration_name: self.configuration_name,
-                configuration_location_uri: self.configuration_location_uri,
-                configuration_version: self.configuration_version,
-                description: self.description,
-                deployment_duration_in_minutes: self
-                    .deployment_duration_in_minutes
-                    .unwrap_or_default(),
-                growth_type: self.growth_type,
-                growth_factor: self.growth_factor.unwrap_or_default(),
-                final_bake_time_in_minutes: self.final_bake_time_in_minutes.unwrap_or_default(),
-                state: self.state,
-                event_log: self.event_log,
-                percentage_complete: self.percentage_complete.unwrap_or_default(),
-                started_at: self.started_at,
-                completed_at: self.completed_at,
-                applied_extensions: self.applied_extensions,
+                application_id: self.application_id
+                ,
+                environment_id: self.environment_id
+                ,
+                deployment_strategy_id: self.deployment_strategy_id
+                ,
+                configuration_profile_id: self.configuration_profile_id
+                ,
+                deployment_number: self.deployment_number
+                    .unwrap_or_default()
+                ,
+                configuration_name: self.configuration_name
+                ,
+                configuration_location_uri: self.configuration_location_uri
+                ,
+                configuration_version: self.configuration_version
+                ,
+                description: self.description
+                ,
+                deployment_duration_in_minutes: self.deployment_duration_in_minutes
+                    .unwrap_or_default()
+                ,
+                growth_type: self.growth_type
+                ,
+                growth_factor: self.growth_factor
+                    .unwrap_or_default()
+                ,
+                final_bake_time_in_minutes: self.final_bake_time_in_minutes
+                    .unwrap_or_default()
+                ,
+                state: self.state
+                ,
+                event_log: self.event_log
+                ,
+                percentage_complete: self.percentage_complete
+                    .unwrap_or_default()
+                ,
+                started_at: self.started_at
+                ,
+                completed_at: self.completed_at
+                ,
+                applied_extensions: self.applied_extensions
+                ,
             }
         }
     }
+    
+    
 }
 impl StartDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`StartDeploymentOutput`](crate::output::StartDeploymentOutput).
@@ -1988,30 +1858,24 @@ impl StartDeploymentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>Metadata to assign to AppConfig resources. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Metadata to assign to AppConfig resources. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -2019,31 +1883,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Metadata to assign to AppConfig resources. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Metadata to assign to AppConfig resources. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -2055,7 +1914,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHostedConfigurationVersionsOutput {
+pub struct ListHostedConfigurationVersionsOutput  {
     /// <p>The elements from this collection.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::HostedConfigurationVersionSummary>>,
@@ -2065,22 +1924,21 @@ pub struct ListHostedConfigurationVersionsOutput {
 }
 impl ListHostedConfigurationVersionsOutput {
     /// <p>The elements from this collection.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::HostedConfigurationVersionSummary]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::HostedConfigurationVersionSummary]> {
         self.items.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListHostedConfigurationVersionsOutput`](crate::output::ListHostedConfigurationVersionsOutput).
 pub mod list_hosted_configuration_versions_output {
-
+    
     /// A builder for [`ListHostedConfigurationVersionsOutput`](crate::output::ListHostedConfigurationVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) items:
-            std::option::Option<std::vec::Vec<crate::model::HostedConfigurationVersionSummary>>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::HostedConfigurationVersionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2091,19 +1949,13 @@ pub mod list_hosted_configuration_versions_output {
         /// <p>The elements from this collection.</p>
         pub fn items(mut self, input: crate::model::HostedConfigurationVersionSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The elements from this collection.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::HostedConfigurationVersionSummary>,
-            >,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::HostedConfigurationVersionSummary>>) -> Self {
+            self.items = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2112,17 +1964,20 @@ pub mod list_hosted_configuration_versions_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListHostedConfigurationVersionsOutput`](crate::output::ListHostedConfigurationVersionsOutput).
         pub fn build(self) -> crate::output::ListHostedConfigurationVersionsOutput {
             crate::output::ListHostedConfigurationVersionsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListHostedConfigurationVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListHostedConfigurationVersionsOutput`](crate::output::ListHostedConfigurationVersionsOutput).
@@ -2134,7 +1989,7 @@ impl ListHostedConfigurationVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExtensionsOutput {
+pub struct ListExtensionsOutput  {
     /// <p>The list of available extensions. The list includes Amazon Web Services-authored and user-created extensions.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ExtensionSummary>>,
@@ -2144,17 +1999,17 @@ pub struct ListExtensionsOutput {
 }
 impl ListExtensionsOutput {
     /// <p>The list of available extensions. The list includes Amazon Web Services-authored and user-created extensions.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::ExtensionSummary]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::ExtensionSummary]> {
         self.items.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListExtensionsOutput`](crate::output::ListExtensionsOutput).
 pub mod list_extensions_output {
-
+    
     /// A builder for [`ListExtensionsOutput`](crate::output::ListExtensionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2169,17 +2024,13 @@ pub mod list_extensions_output {
         /// <p>The list of available extensions. The list includes Amazon Web Services-authored and user-created extensions.</p>
         pub fn items(mut self, input: crate::model::ExtensionSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The list of available extensions. The list includes Amazon Web Services-authored and user-created extensions.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExtensionSummary>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExtensionSummary>>) -> Self {
+            self.items = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2188,17 +2039,20 @@ pub mod list_extensions_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListExtensionsOutput`](crate::output::ListExtensionsOutput).
         pub fn build(self) -> crate::output::ListExtensionsOutput {
             crate::output::ListExtensionsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListExtensionsOutput {
     /// Creates a new builder-style object to manufacture [`ListExtensionsOutput`](crate::output::ListExtensionsOutput).
@@ -2210,7 +2064,7 @@ impl ListExtensionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExtensionAssociationsOutput {
+pub struct ListExtensionAssociationsOutput  {
     /// <p>The list of extension associations. Each item represents an extension association to an application, environment, or configuration profile. </p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ExtensionAssociationSummary>>,
@@ -2220,22 +2074,21 @@ pub struct ListExtensionAssociationsOutput {
 }
 impl ListExtensionAssociationsOutput {
     /// <p>The list of extension associations. Each item represents an extension association to an application, environment, or configuration profile. </p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::ExtensionAssociationSummary]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::ExtensionAssociationSummary]> {
         self.items.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListExtensionAssociationsOutput`](crate::output::ListExtensionAssociationsOutput).
 pub mod list_extension_associations_output {
-
+    
     /// A builder for [`ListExtensionAssociationsOutput`](crate::output::ListExtensionAssociationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) items:
-            std::option::Option<std::vec::Vec<crate::model::ExtensionAssociationSummary>>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ExtensionAssociationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2246,17 +2099,13 @@ pub mod list_extension_associations_output {
         /// <p>The list of extension associations. Each item represents an extension association to an application, environment, or configuration profile. </p>
         pub fn items(mut self, input: crate::model::ExtensionAssociationSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The list of extension associations. Each item represents an extension association to an application, environment, or configuration profile. </p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExtensionAssociationSummary>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExtensionAssociationSummary>>) -> Self {
+            self.items = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2265,17 +2114,20 @@ pub mod list_extension_associations_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListExtensionAssociationsOutput`](crate::output::ListExtensionAssociationsOutput).
         pub fn build(self) -> crate::output::ListExtensionAssociationsOutput {
             crate::output::ListExtensionAssociationsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListExtensionAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListExtensionAssociationsOutput`](crate::output::ListExtensionAssociationsOutput).
@@ -2287,7 +2139,7 @@ impl ListExtensionAssociationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEnvironmentsOutput {
+pub struct ListEnvironmentsOutput  {
     /// <p>The elements from this collection.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Environment>>,
@@ -2297,17 +2149,17 @@ pub struct ListEnvironmentsOutput {
 }
 impl ListEnvironmentsOutput {
     /// <p>The elements from this collection.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::Environment]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::Environment]> {
         self.items.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
 pub mod list_environments_output {
-
+    
     /// A builder for [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2322,17 +2174,13 @@ pub mod list_environments_output {
         /// <p>The elements from this collection.</p>
         pub fn items(mut self, input: crate::model::Environment) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The elements from this collection.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Environment>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::Environment>>) -> Self {
+            self.items = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2341,17 +2189,20 @@ pub mod list_environments_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
         pub fn build(self) -> crate::output::ListEnvironmentsOutput {
             crate::output::ListEnvironmentsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEnvironmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
@@ -2363,7 +2214,7 @@ impl ListEnvironmentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeploymentStrategiesOutput {
+pub struct ListDeploymentStrategiesOutput  {
     /// <p>The elements from this collection.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::DeploymentStrategy>>,
@@ -2373,17 +2224,17 @@ pub struct ListDeploymentStrategiesOutput {
 }
 impl ListDeploymentStrategiesOutput {
     /// <p>The elements from this collection.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::DeploymentStrategy]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::DeploymentStrategy]> {
         self.items.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDeploymentStrategiesOutput`](crate::output::ListDeploymentStrategiesOutput).
 pub mod list_deployment_strategies_output {
-
+    
     /// A builder for [`ListDeploymentStrategiesOutput`](crate::output::ListDeploymentStrategiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2398,17 +2249,13 @@ pub mod list_deployment_strategies_output {
         /// <p>The elements from this collection.</p>
         pub fn items(mut self, input: crate::model::DeploymentStrategy) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The elements from this collection.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeploymentStrategy>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeploymentStrategy>>) -> Self {
+            self.items = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2417,17 +2264,20 @@ pub mod list_deployment_strategies_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDeploymentStrategiesOutput`](crate::output::ListDeploymentStrategiesOutput).
         pub fn build(self) -> crate::output::ListDeploymentStrategiesOutput {
             crate::output::ListDeploymentStrategiesOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDeploymentStrategiesOutput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentStrategiesOutput`](crate::output::ListDeploymentStrategiesOutput).
@@ -2439,7 +2289,7 @@ impl ListDeploymentStrategiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeploymentsOutput {
+pub struct ListDeploymentsOutput  {
     /// <p>The elements from this collection.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::DeploymentSummary>>,
@@ -2449,17 +2299,17 @@ pub struct ListDeploymentsOutput {
 }
 impl ListDeploymentsOutput {
     /// <p>The elements from this collection.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::DeploymentSummary]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::DeploymentSummary]> {
         self.items.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput).
 pub mod list_deployments_output {
-
+    
     /// A builder for [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2474,17 +2324,13 @@ pub mod list_deployments_output {
         /// <p>The elements from this collection.</p>
         pub fn items(mut self, input: crate::model::DeploymentSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The elements from this collection.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeploymentSummary>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeploymentSummary>>) -> Self {
+            self.items = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2493,17 +2339,20 @@ pub mod list_deployments_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput).
         pub fn build(self) -> crate::output::ListDeploymentsOutput {
             crate::output::ListDeploymentsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentsOutput`](crate::output::ListDeploymentsOutput).
@@ -2515,7 +2364,7 @@ impl ListDeploymentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConfigurationProfilesOutput {
+pub struct ListConfigurationProfilesOutput  {
     /// <p>The elements from this collection.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ConfigurationProfileSummary>>,
@@ -2525,22 +2374,21 @@ pub struct ListConfigurationProfilesOutput {
 }
 impl ListConfigurationProfilesOutput {
     /// <p>The elements from this collection.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::ConfigurationProfileSummary]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::ConfigurationProfileSummary]> {
         self.items.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListConfigurationProfilesOutput`](crate::output::ListConfigurationProfilesOutput).
 pub mod list_configuration_profiles_output {
-
+    
     /// A builder for [`ListConfigurationProfilesOutput`](crate::output::ListConfigurationProfilesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) items:
-            std::option::Option<std::vec::Vec<crate::model::ConfigurationProfileSummary>>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ConfigurationProfileSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2551,17 +2399,13 @@ pub mod list_configuration_profiles_output {
         /// <p>The elements from this collection.</p>
         pub fn items(mut self, input: crate::model::ConfigurationProfileSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The elements from this collection.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConfigurationProfileSummary>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConfigurationProfileSummary>>) -> Self {
+            self.items = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2570,17 +2414,20 @@ pub mod list_configuration_profiles_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListConfigurationProfilesOutput`](crate::output::ListConfigurationProfilesOutput).
         pub fn build(self) -> crate::output::ListConfigurationProfilesOutput {
             crate::output::ListConfigurationProfilesOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListConfigurationProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationProfilesOutput`](crate::output::ListConfigurationProfilesOutput).
@@ -2592,7 +2439,7 @@ impl ListConfigurationProfilesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationsOutput {
+pub struct ListApplicationsOutput  {
     /// <p>The elements from this collection.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::Application>>,
@@ -2602,17 +2449,17 @@ pub struct ListApplicationsOutput {
 }
 impl ListApplicationsOutput {
     /// <p>The elements from this collection.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::Application]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::Application]> {
         self.items.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
 pub mod list_applications_output {
-
+    
     /// A builder for [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2627,17 +2474,13 @@ pub mod list_applications_output {
         /// <p>The elements from this collection.</p>
         pub fn items(mut self, input: crate::model::Application) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>The elements from this collection.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Application>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::Application>>) -> Self {
+            self.items = input; self
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2646,17 +2489,20 @@ pub mod list_applications_output {
         }
         /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
         pub fn build(self) -> crate::output::ListApplicationsOutput {
             crate::output::ListApplicationsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListApplicationsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
@@ -2668,7 +2514,7 @@ impl ListApplicationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetHostedConfigurationVersionOutput {
+pub struct GetHostedConfigurationVersionOutput  {
     /// <p>The application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -2690,11 +2536,11 @@ pub struct GetHostedConfigurationVersionOutput {
 }
 impl GetHostedConfigurationVersionOutput {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The configuration profile ID.</p>
-    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+    pub fn configuration_profile_id(&self) -> std::option::Option<& str> {
         self.configuration_profile_id.as_deref()
     }
     /// <p>The configuration version.</p>
@@ -2702,19 +2548,19 @@ impl GetHostedConfigurationVersionOutput {
         self.version_number
     }
     /// <p>A description of the configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The content of the configuration or the configuration data.</p>
-    pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn content(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.content.as_ref()
     }
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
 }
-impl std::fmt::Debug for GetHostedConfigurationVersionOutput {
+impl  std::fmt::Debug for GetHostedConfigurationVersionOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetHostedConfigurationVersionOutput");
         formatter.field("application_id", &self.application_id);
@@ -2728,7 +2574,7 @@ impl std::fmt::Debug for GetHostedConfigurationVersionOutput {
 }
 /// See [`GetHostedConfigurationVersionOutput`](crate::output::GetHostedConfigurationVersionOutput).
 pub mod get_hosted_configuration_version_output {
-
+    
     /// A builder for [`GetHostedConfigurationVersionOutput`](crate::output::GetHostedConfigurationVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2746,12 +2592,8 @@ pub mod get_hosted_configuration_version_output {
             self
         }
         /// <p>The application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The configuration profile ID.</p>
         pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2759,12 +2601,8 @@ pub mod get_hosted_configuration_version_output {
             self
         }
         /// <p>The configuration profile ID.</p>
-        pub fn set_configuration_profile_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_profile_id = input;
-            self
+        pub fn set_configuration_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_profile_id = input; self
         }
         /// <p>The configuration version.</p>
         pub fn version_number(mut self, input: i32) -> Self {
@@ -2773,8 +2611,7 @@ pub mod get_hosted_configuration_version_output {
         }
         /// <p>The configuration version.</p>
         pub fn set_version_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.version_number = input;
-            self
+            self.version_number = input; self
         }
         /// <p>A description of the configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2783,8 +2620,7 @@ pub mod get_hosted_configuration_version_output {
         }
         /// <p>A description of the configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The content of the configuration or the configuration data.</p>
         pub fn content(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -2793,8 +2629,7 @@ pub mod get_hosted_configuration_version_output {
         }
         /// <p>The content of the configuration or the configuration data.</p>
         pub fn set_content(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
         /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2803,18 +2638,24 @@ pub mod get_hosted_configuration_version_output {
         }
         /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
+            self.content_type = input; self
         }
         /// Consumes the builder and constructs a [`GetHostedConfigurationVersionOutput`](crate::output::GetHostedConfigurationVersionOutput).
         pub fn build(self) -> crate::output::GetHostedConfigurationVersionOutput {
             crate::output::GetHostedConfigurationVersionOutput {
-                application_id: self.application_id,
-                configuration_profile_id: self.configuration_profile_id,
-                version_number: self.version_number.unwrap_or_default(),
-                description: self.description,
-                content: self.content,
-                content_type: self.content_type,
+                application_id: self.application_id
+                ,
+                configuration_profile_id: self.configuration_profile_id
+                ,
+                version_number: self.version_number
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
+                content: self.content
+                ,
+                content_type: self.content_type
+                ,
             }
         }
     }
@@ -2830,6 +2671,8 @@ pub mod get_hosted_configuration_version_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetHostedConfigurationVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetHostedConfigurationVersionOutput`](crate::output::GetHostedConfigurationVersionOutput).
@@ -2841,7 +2684,7 @@ impl GetHostedConfigurationVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExtensionAssociationOutput {
+pub struct GetExtensionAssociationOutput  {
     /// <p>The system-generated ID for the association.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2856,34 +2699,30 @@ pub struct GetExtensionAssociationOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The parameter names and values defined in the association.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The version number for the extension defined in the association.</p>
     #[doc(hidden)]
     pub extension_version_number: i32,
 }
 impl GetExtensionAssociationOutput {
     /// <p>The system-generated ID for the association.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN of the extension defined in the association.</p>
-    pub fn extension_arn(&self) -> std::option::Option<&str> {
+    pub fn extension_arn(&self) -> std::option::Option<& str> {
         self.extension_arn.as_deref()
     }
     /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The parameter names and values defined in the association.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>The version number for the extension defined in the association.</p>
@@ -2893,7 +2732,7 @@ impl GetExtensionAssociationOutput {
 }
 /// See [`GetExtensionAssociationOutput`](crate::output::GetExtensionAssociationOutput).
 pub mod get_extension_association_output {
-
+    
     /// A builder for [`GetExtensionAssociationOutput`](crate::output::GetExtensionAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2901,9 +2740,7 @@ pub mod get_extension_association_output {
         pub(crate) extension_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) extension_version_number: std::option::Option<i32>,
     }
     impl Builder {
@@ -2914,8 +2751,7 @@ pub mod get_extension_association_output {
         }
         /// <p>The system-generated ID for the association.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ARN of the extension defined in the association.</p>
         pub fn extension_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2923,12 +2759,8 @@ pub mod get_extension_association_output {
             self
         }
         /// <p>The ARN of the extension defined in the association.</p>
-        pub fn set_extension_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.extension_arn = input;
-            self
+        pub fn set_extension_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.extension_arn = input; self
         }
         /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2937,8 +2769,7 @@ pub mod get_extension_association_output {
         }
         /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2947,33 +2778,22 @@ pub mod get_extension_association_output {
         }
         /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The parameter names and values defined in the association.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>The parameter names and values defined in the association.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.parameters = input; self
         }
         /// <p>The version number for the extension defined in the association.</p>
         pub fn extension_version_number(mut self, input: i32) -> Self {
@@ -2982,21 +2802,29 @@ pub mod get_extension_association_output {
         }
         /// <p>The version number for the extension defined in the association.</p>
         pub fn set_extension_version_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.extension_version_number = input;
-            self
+            self.extension_version_number = input; self
         }
         /// Consumes the builder and constructs a [`GetExtensionAssociationOutput`](crate::output::GetExtensionAssociationOutput).
         pub fn build(self) -> crate::output::GetExtensionAssociationOutput {
             crate::output::GetExtensionAssociationOutput {
-                id: self.id,
-                extension_arn: self.extension_arn,
-                resource_arn: self.resource_arn,
-                arn: self.arn,
-                parameters: self.parameters,
-                extension_version_number: self.extension_version_number.unwrap_or_default(),
+                id: self.id
+                ,
+                extension_arn: self.extension_arn
+                ,
+                resource_arn: self.resource_arn
+                ,
+                arn: self.arn
+                ,
+                parameters: self.parameters
+                ,
+                extension_version_number: self.extension_version_number
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl GetExtensionAssociationOutput {
     /// Creates a new builder-style object to manufacture [`GetExtensionAssociationOutput`](crate::output::GetExtensionAssociationOutput).
@@ -3008,7 +2836,7 @@ impl GetExtensionAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExtensionOutput {
+pub struct GetExtensionOutput  {
     /// <p>The system-generated ID of the extension.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3026,22 +2854,18 @@ pub struct GetExtensionOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The actions defined in the extension.</p>
     #[doc(hidden)]
-    pub actions: std::option::Option<
-        std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>,
-    >,
+    pub actions: std::option::Option<std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>>,
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::Parameter>,
-    >,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Parameter>>,
 }
 impl GetExtensionOutput {
     /// <p>The system-generated ID of the extension.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The extension name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The extension version number.</p>
@@ -3049,32 +2873,25 @@ impl GetExtensionOutput {
         self.version_number
     }
     /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Information about the extension.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The actions defined in the extension.</p>
-    pub fn actions(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>,
-    > {
+    pub fn actions(&self) -> std::option::Option<& std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>> {
         self.actions.as_ref()
     }
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Parameter>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::Parameter>> {
         self.parameters.as_ref()
     }
 }
 /// See [`GetExtensionOutput`](crate::output::GetExtensionOutput).
 pub mod get_extension_output {
-
+    
     /// A builder for [`GetExtensionOutput`](crate::output::GetExtensionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3083,15 +2900,8 @@ pub mod get_extension_output {
         pub(crate) version_number: std::option::Option<i32>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) actions: std::option::Option<
-            std::collections::HashMap<
-                crate::model::ActionPoint,
-                std::vec::Vec<crate::model::Action>,
-            >,
-        >,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::Parameter>,
-        >,
+        pub(crate) actions: std::option::Option<std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>>,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Parameter>>,
     }
     impl Builder {
         /// <p>The system-generated ID of the extension.</p>
@@ -3101,8 +2911,7 @@ pub mod get_extension_output {
         }
         /// <p>The system-generated ID of the extension.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The extension name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3111,8 +2920,7 @@ pub mod get_extension_output {
         }
         /// <p>The extension name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The extension version number.</p>
         pub fn version_number(mut self, input: i32) -> Self {
@@ -3121,8 +2929,7 @@ pub mod get_extension_output {
         }
         /// <p>The extension version number.</p>
         pub fn set_version_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.version_number = input;
-            self
+            self.version_number = input; self
         }
         /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3131,8 +2938,7 @@ pub mod get_extension_output {
         }
         /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Information about the extension.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3141,75 +2947,61 @@ pub mod get_extension_output {
         }
         /// <p>Information about the extension.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `actions`.
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions defined in the extension.</p>
-        pub fn actions(
-            mut self,
-            k: crate::model::ActionPoint,
-            v: std::vec::Vec<crate::model::Action>,
-        ) -> Self {
+        pub fn actions(mut self, k: crate::model::ActionPoint, v: std::vec::Vec<crate::model::Action>) -> Self {
             let mut hash_map = self.actions.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.actions = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.actions = Some(hash_map);
+                            self
         }
         /// <p>The actions defined in the extension.</p>
-        pub fn set_actions(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    crate::model::ActionPoint,
-                    std::vec::Vec<crate::model::Action>,
-                >,
-            >,
-        ) -> Self {
-            self.actions = input;
-            self
+        pub fn set_actions(mut self, input: std::option::Option<std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>>) -> Self {
+            self.actions = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::Parameter,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: crate::model::Parameter) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::Parameter>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Parameter>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`GetExtensionOutput`](crate::output::GetExtensionOutput).
         pub fn build(self) -> crate::output::GetExtensionOutput {
             crate::output::GetExtensionOutput {
-                id: self.id,
-                name: self.name,
-                version_number: self.version_number.unwrap_or_default(),
-                arn: self.arn,
-                description: self.description,
-                actions: self.actions,
-                parameters: self.parameters,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                version_number: self.version_number
+                    .unwrap_or_default()
+                ,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
+                actions: self.actions
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl GetExtensionOutput {
     /// Creates a new builder-style object to manufacture [`GetExtensionOutput`](crate::output::GetExtensionOutput).
@@ -3221,7 +3013,7 @@ impl GetExtensionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEnvironmentOutput {
+pub struct GetEnvironmentOutput  {
     /// <p>The application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -3243,33 +3035,33 @@ pub struct GetEnvironmentOutput {
 }
 impl GetEnvironmentOutput {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The environment ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the environment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::EnvironmentState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::EnvironmentState> {
         self.state.as_ref()
     }
     /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
-    pub fn monitors(&self) -> std::option::Option<&[crate::model::Monitor]> {
+    pub fn monitors(&self) -> std::option::Option<& [crate::model::Monitor]> {
         self.monitors.as_deref()
     }
 }
 /// See [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
 pub mod get_environment_output {
-
+    
     /// A builder for [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3287,12 +3079,8 @@ pub mod get_environment_output {
             self
         }
         /// <p>The application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The environment ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3301,8 +3089,7 @@ pub mod get_environment_output {
         }
         /// <p>The environment ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the environment.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3311,8 +3098,7 @@ pub mod get_environment_output {
         }
         /// <p>The name of the environment.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the environment.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3321,8 +3107,7 @@ pub mod get_environment_output {
         }
         /// <p>The description of the environment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
         pub fn state(mut self, input: crate::model::EnvironmentState) -> Self {
@@ -3330,12 +3115,8 @@ pub mod get_environment_output {
             self
         }
         /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::EnvironmentState>) -> Self {
+            self.state = input; self
         }
         /// Appends an item to `monitors`.
         ///
@@ -3344,30 +3125,34 @@ pub mod get_environment_output {
         /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
         pub fn monitors(mut self, input: crate::model::Monitor) -> Self {
             let mut v = self.monitors.unwrap_or_default();
-            v.push(input);
-            self.monitors = Some(v);
-            self
+                            v.push(input);
+                            self.monitors = Some(v);
+                            self
         }
         /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
-        pub fn set_monitors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Monitor>>,
-        ) -> Self {
-            self.monitors = input;
-            self
+        pub fn set_monitors(mut self, input: std::option::Option<std::vec::Vec<crate::model::Monitor>>) -> Self {
+            self.monitors = input; self
         }
         /// Consumes the builder and constructs a [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
         pub fn build(self) -> crate::output::GetEnvironmentOutput {
             crate::output::GetEnvironmentOutput {
-                application_id: self.application_id,
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                state: self.state,
-                monitors: self.monitors,
+                application_id: self.application_id
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                state: self.state
+                ,
+                monitors: self.monitors
+                ,
             }
         }
     }
+    
+    
 }
 impl GetEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
@@ -3379,7 +3164,7 @@ impl GetEnvironmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeploymentStrategyOutput {
+pub struct GetDeploymentStrategyOutput  {
     /// <p>The deployment strategy ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3407,15 +3192,15 @@ pub struct GetDeploymentStrategyOutput {
 }
 impl GetDeploymentStrategyOutput {
     /// <p>The deployment strategy ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the deployment strategy.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the deployment strategy.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Total amount of time the deployment lasted.</p>
@@ -3423,7 +3208,7 @@ impl GetDeploymentStrategyOutput {
         self.deployment_duration_in_minutes
     }
     /// <p>The algorithm used to define how percentage grew over time.</p>
-    pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
+    pub fn growth_type(&self) -> std::option::Option<& crate::model::GrowthType> {
         self.growth_type.as_ref()
     }
     /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
@@ -3435,13 +3220,13 @@ impl GetDeploymentStrategyOutput {
         self.final_bake_time_in_minutes
     }
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
-    pub fn replicate_to(&self) -> std::option::Option<&crate::model::ReplicateTo> {
+    pub fn replicate_to(&self) -> std::option::Option<& crate::model::ReplicateTo> {
         self.replicate_to.as_ref()
     }
 }
 /// See [`GetDeploymentStrategyOutput`](crate::output::GetDeploymentStrategyOutput).
 pub mod get_deployment_strategy_output {
-
+    
     /// A builder for [`GetDeploymentStrategyOutput`](crate::output::GetDeploymentStrategyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3462,8 +3247,7 @@ pub mod get_deployment_strategy_output {
         }
         /// <p>The deployment strategy ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the deployment strategy.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3472,8 +3256,7 @@ pub mod get_deployment_strategy_output {
         }
         /// <p>The name of the deployment strategy.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the deployment strategy.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3482,8 +3265,7 @@ pub mod get_deployment_strategy_output {
         }
         /// <p>The description of the deployment strategy.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Total amount of time the deployment lasted.</p>
         pub fn deployment_duration_in_minutes(mut self, input: i32) -> Self {
@@ -3491,12 +3273,8 @@ pub mod get_deployment_strategy_output {
             self
         }
         /// <p>Total amount of time the deployment lasted.</p>
-        pub fn set_deployment_duration_in_minutes(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.deployment_duration_in_minutes = input;
-            self
+        pub fn set_deployment_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+            self.deployment_duration_in_minutes = input; self
         }
         /// <p>The algorithm used to define how percentage grew over time.</p>
         pub fn growth_type(mut self, input: crate::model::GrowthType) -> Self {
@@ -3504,12 +3282,8 @@ pub mod get_deployment_strategy_output {
             self
         }
         /// <p>The algorithm used to define how percentage grew over time.</p>
-        pub fn set_growth_type(
-            mut self,
-            input: std::option::Option<crate::model::GrowthType>,
-        ) -> Self {
-            self.growth_type = input;
-            self
+        pub fn set_growth_type(mut self, input: std::option::Option<crate::model::GrowthType>) -> Self {
+            self.growth_type = input; self
         }
         /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
         pub fn growth_factor(mut self, input: f32) -> Self {
@@ -3518,8 +3292,7 @@ pub mod get_deployment_strategy_output {
         }
         /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
         pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
-            self.growth_factor = input;
-            self
+            self.growth_factor = input; self
         }
         /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
@@ -3528,8 +3301,7 @@ pub mod get_deployment_strategy_output {
         }
         /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.final_bake_time_in_minutes = input;
-            self
+            self.final_bake_time_in_minutes = input; self
         }
         /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
         pub fn replicate_to(mut self, input: crate::model::ReplicateTo) -> Self {
@@ -3537,29 +3309,36 @@ pub mod get_deployment_strategy_output {
             self
         }
         /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
-        pub fn set_replicate_to(
-            mut self,
-            input: std::option::Option<crate::model::ReplicateTo>,
-        ) -> Self {
-            self.replicate_to = input;
-            self
+        pub fn set_replicate_to(mut self, input: std::option::Option<crate::model::ReplicateTo>) -> Self {
+            self.replicate_to = input; self
         }
         /// Consumes the builder and constructs a [`GetDeploymentStrategyOutput`](crate::output::GetDeploymentStrategyOutput).
         pub fn build(self) -> crate::output::GetDeploymentStrategyOutput {
             crate::output::GetDeploymentStrategyOutput {
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                deployment_duration_in_minutes: self
-                    .deployment_duration_in_minutes
-                    .unwrap_or_default(),
-                growth_type: self.growth_type,
-                growth_factor: self.growth_factor.unwrap_or_default(),
-                final_bake_time_in_minutes: self.final_bake_time_in_minutes.unwrap_or_default(),
-                replicate_to: self.replicate_to,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                deployment_duration_in_minutes: self.deployment_duration_in_minutes
+                    .unwrap_or_default()
+                ,
+                growth_type: self.growth_type
+                ,
+                growth_factor: self.growth_factor
+                    .unwrap_or_default()
+                ,
+                final_bake_time_in_minutes: self.final_bake_time_in_minutes
+                    .unwrap_or_default()
+                ,
+                replicate_to: self.replicate_to
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDeploymentStrategyOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentStrategyOutput`](crate::output::GetDeploymentStrategyOutput).
@@ -3571,7 +3350,7 @@ impl GetDeploymentStrategyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeploymentOutput {
+pub struct GetDeploymentOutput  {
     /// <p>The ID of the application that was deployed.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -3632,19 +3411,19 @@ pub struct GetDeploymentOutput {
 }
 impl GetDeploymentOutput {
     /// <p>The ID of the application that was deployed.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the environment that was deployed.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> std::option::Option<& str> {
         self.environment_id.as_deref()
     }
     /// <p>The ID of the deployment strategy that was deployed.</p>
-    pub fn deployment_strategy_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_strategy_id(&self) -> std::option::Option<& str> {
         self.deployment_strategy_id.as_deref()
     }
     /// <p>The ID of the configuration profile that was deployed.</p>
-    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+    pub fn configuration_profile_id(&self) -> std::option::Option<& str> {
         self.configuration_profile_id.as_deref()
     }
     /// <p>The sequence number of the deployment.</p>
@@ -3652,19 +3431,19 @@ impl GetDeploymentOutput {
         self.deployment_number
     }
     /// <p>The name of the configuration.</p>
-    pub fn configuration_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_name(&self) -> std::option::Option<& str> {
         self.configuration_name.as_deref()
     }
     /// <p>Information about the source location of the configuration.</p>
-    pub fn configuration_location_uri(&self) -> std::option::Option<&str> {
+    pub fn configuration_location_uri(&self) -> std::option::Option<& str> {
         self.configuration_location_uri.as_deref()
     }
     /// <p>The configuration version that was deployed.</p>
-    pub fn configuration_version(&self) -> std::option::Option<&str> {
+    pub fn configuration_version(&self) -> std::option::Option<& str> {
         self.configuration_version.as_deref()
     }
     /// <p>The description of the deployment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Total amount of time the deployment lasted.</p>
@@ -3672,7 +3451,7 @@ impl GetDeploymentOutput {
         self.deployment_duration_in_minutes
     }
     /// <p>The algorithm used to define how percentage grew over time.</p>
-    pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
+    pub fn growth_type(&self) -> std::option::Option<& crate::model::GrowthType> {
         self.growth_type.as_ref()
     }
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
@@ -3684,11 +3463,11 @@ impl GetDeploymentOutput {
         self.final_bake_time_in_minutes
     }
     /// <p>The state of the deployment.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::DeploymentState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::DeploymentState> {
         self.state.as_ref()
     }
     /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
-    pub fn event_log(&self) -> std::option::Option<&[crate::model::DeploymentEvent]> {
+    pub fn event_log(&self) -> std::option::Option<& [crate::model::DeploymentEvent]> {
         self.event_log.as_deref()
     }
     /// <p>The percentage of targets for which the deployment is available.</p>
@@ -3696,21 +3475,21 @@ impl GetDeploymentOutput {
         self.percentage_complete
     }
     /// <p>The time the deployment started.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The time the deployment completed. </p>
-    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
     /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
-    pub fn applied_extensions(&self) -> std::option::Option<&[crate::model::AppliedExtension]> {
+    pub fn applied_extensions(&self) -> std::option::Option<& [crate::model::AppliedExtension]> {
         self.applied_extensions.as_deref()
     }
 }
 /// See [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
 pub mod get_deployment_output {
-
+    
     /// A builder for [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3732,8 +3511,7 @@ pub mod get_deployment_output {
         pub(crate) percentage_complete: std::option::Option<f32>,
         pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) completed_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) applied_extensions:
-            std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>,
+        pub(crate) applied_extensions: std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>,
     }
     impl Builder {
         /// <p>The ID of the application that was deployed.</p>
@@ -3742,12 +3520,8 @@ pub mod get_deployment_output {
             self
         }
         /// <p>The ID of the application that was deployed.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The ID of the environment that was deployed.</p>
         pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3755,12 +3529,8 @@ pub mod get_deployment_output {
             self
         }
         /// <p>The ID of the environment that was deployed.</p>
-        pub fn set_environment_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_id = input;
-            self
+        pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_id = input; self
         }
         /// <p>The ID of the deployment strategy that was deployed.</p>
         pub fn deployment_strategy_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3768,12 +3538,8 @@ pub mod get_deployment_output {
             self
         }
         /// <p>The ID of the deployment strategy that was deployed.</p>
-        pub fn set_deployment_strategy_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.deployment_strategy_id = input;
-            self
+        pub fn set_deployment_strategy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.deployment_strategy_id = input; self
         }
         /// <p>The ID of the configuration profile that was deployed.</p>
         pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3781,12 +3547,8 @@ pub mod get_deployment_output {
             self
         }
         /// <p>The ID of the configuration profile that was deployed.</p>
-        pub fn set_configuration_profile_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_profile_id = input;
-            self
+        pub fn set_configuration_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_profile_id = input; self
         }
         /// <p>The sequence number of the deployment.</p>
         pub fn deployment_number(mut self, input: i32) -> Self {
@@ -3795,8 +3557,7 @@ pub mod get_deployment_output {
         }
         /// <p>The sequence number of the deployment.</p>
         pub fn set_deployment_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.deployment_number = input;
-            self
+            self.deployment_number = input; self
         }
         /// <p>The name of the configuration.</p>
         pub fn configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3804,12 +3565,8 @@ pub mod get_deployment_output {
             self
         }
         /// <p>The name of the configuration.</p>
-        pub fn set_configuration_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_name = input;
-            self
+        pub fn set_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_name = input; self
         }
         /// <p>Information about the source location of the configuration.</p>
         pub fn configuration_location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3817,12 +3574,8 @@ pub mod get_deployment_output {
             self
         }
         /// <p>Information about the source location of the configuration.</p>
-        pub fn set_configuration_location_uri(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_location_uri = input;
-            self
+        pub fn set_configuration_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_location_uri = input; self
         }
         /// <p>The configuration version that was deployed.</p>
         pub fn configuration_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3830,12 +3583,8 @@ pub mod get_deployment_output {
             self
         }
         /// <p>The configuration version that was deployed.</p>
-        pub fn set_configuration_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_version = input;
-            self
+        pub fn set_configuration_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_version = input; self
         }
         /// <p>The description of the deployment.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3844,8 +3593,7 @@ pub mod get_deployment_output {
         }
         /// <p>The description of the deployment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Total amount of time the deployment lasted.</p>
         pub fn deployment_duration_in_minutes(mut self, input: i32) -> Self {
@@ -3853,12 +3601,8 @@ pub mod get_deployment_output {
             self
         }
         /// <p>Total amount of time the deployment lasted.</p>
-        pub fn set_deployment_duration_in_minutes(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.deployment_duration_in_minutes = input;
-            self
+        pub fn set_deployment_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+            self.deployment_duration_in_minutes = input; self
         }
         /// <p>The algorithm used to define how percentage grew over time.</p>
         pub fn growth_type(mut self, input: crate::model::GrowthType) -> Self {
@@ -3866,12 +3610,8 @@ pub mod get_deployment_output {
             self
         }
         /// <p>The algorithm used to define how percentage grew over time.</p>
-        pub fn set_growth_type(
-            mut self,
-            input: std::option::Option<crate::model::GrowthType>,
-        ) -> Self {
-            self.growth_type = input;
-            self
+        pub fn set_growth_type(mut self, input: std::option::Option<crate::model::GrowthType>) -> Self {
+            self.growth_type = input; self
         }
         /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn growth_factor(mut self, input: f32) -> Self {
@@ -3880,8 +3620,7 @@ pub mod get_deployment_output {
         }
         /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
         pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
-            self.growth_factor = input;
-            self
+            self.growth_factor = input; self
         }
         /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
@@ -3890,8 +3629,7 @@ pub mod get_deployment_output {
         }
         /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.final_bake_time_in_minutes = input;
-            self
+            self.final_bake_time_in_minutes = input; self
         }
         /// <p>The state of the deployment.</p>
         pub fn state(mut self, input: crate::model::DeploymentState) -> Self {
@@ -3899,12 +3637,8 @@ pub mod get_deployment_output {
             self
         }
         /// <p>The state of the deployment.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::DeploymentState>) -> Self {
+            self.state = input; self
         }
         /// Appends an item to `event_log`.
         ///
@@ -3913,17 +3647,13 @@ pub mod get_deployment_output {
         /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
         pub fn event_log(mut self, input: crate::model::DeploymentEvent) -> Self {
             let mut v = self.event_log.unwrap_or_default();
-            v.push(input);
-            self.event_log = Some(v);
-            self
+                            v.push(input);
+                            self.event_log = Some(v);
+                            self
         }
         /// <p>A list containing all events related to a deployment. The most recent events are displayed first.</p>
-        pub fn set_event_log(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DeploymentEvent>>,
-        ) -> Self {
-            self.event_log = input;
-            self
+        pub fn set_event_log(mut self, input: std::option::Option<std::vec::Vec<crate::model::DeploymentEvent>>) -> Self {
+            self.event_log = input; self
         }
         /// <p>The percentage of targets for which the deployment is available.</p>
         pub fn percentage_complete(mut self, input: f32) -> Self {
@@ -3932,8 +3662,7 @@ pub mod get_deployment_output {
         }
         /// <p>The percentage of targets for which the deployment is available.</p>
         pub fn set_percentage_complete(mut self, input: std::option::Option<f32>) -> Self {
-            self.percentage_complete = input;
-            self
+            self.percentage_complete = input; self
         }
         /// <p>The time the deployment started.</p>
         pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3941,12 +3670,8 @@ pub mod get_deployment_output {
             self
         }
         /// <p>The time the deployment started.</p>
-        pub fn set_started_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.started_at = input;
-            self
+        pub fn set_started_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.started_at = input; self
         }
         /// <p>The time the deployment completed. </p>
         pub fn completed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3954,12 +3679,8 @@ pub mod get_deployment_output {
             self
         }
         /// <p>The time the deployment completed. </p>
-        pub fn set_completed_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.completed_at = input;
-            self
+        pub fn set_completed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.completed_at = input; self
         }
         /// Appends an item to `applied_extensions`.
         ///
@@ -3968,45 +3689,65 @@ pub mod get_deployment_output {
         /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
         pub fn applied_extensions(mut self, input: crate::model::AppliedExtension) -> Self {
             let mut v = self.applied_extensions.unwrap_or_default();
-            v.push(input);
-            self.applied_extensions = Some(v);
-            self
+                            v.push(input);
+                            self.applied_extensions = Some(v);
+                            self
         }
         /// <p>A list of extensions that were processed as part of the deployment. The extensions that were previously associated to the configuration profile, environment, or the application when <code>StartDeployment</code> was called.</p>
-        pub fn set_applied_extensions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>,
-        ) -> Self {
-            self.applied_extensions = input;
-            self
+        pub fn set_applied_extensions(mut self, input: std::option::Option<std::vec::Vec<crate::model::AppliedExtension>>) -> Self {
+            self.applied_extensions = input; self
         }
         /// Consumes the builder and constructs a [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
         pub fn build(self) -> crate::output::GetDeploymentOutput {
             crate::output::GetDeploymentOutput {
-                application_id: self.application_id,
-                environment_id: self.environment_id,
-                deployment_strategy_id: self.deployment_strategy_id,
-                configuration_profile_id: self.configuration_profile_id,
-                deployment_number: self.deployment_number.unwrap_or_default(),
-                configuration_name: self.configuration_name,
-                configuration_location_uri: self.configuration_location_uri,
-                configuration_version: self.configuration_version,
-                description: self.description,
-                deployment_duration_in_minutes: self
-                    .deployment_duration_in_minutes
-                    .unwrap_or_default(),
-                growth_type: self.growth_type,
-                growth_factor: self.growth_factor.unwrap_or_default(),
-                final_bake_time_in_minutes: self.final_bake_time_in_minutes.unwrap_or_default(),
-                state: self.state,
-                event_log: self.event_log,
-                percentage_complete: self.percentage_complete.unwrap_or_default(),
-                started_at: self.started_at,
-                completed_at: self.completed_at,
-                applied_extensions: self.applied_extensions,
+                application_id: self.application_id
+                ,
+                environment_id: self.environment_id
+                ,
+                deployment_strategy_id: self.deployment_strategy_id
+                ,
+                configuration_profile_id: self.configuration_profile_id
+                ,
+                deployment_number: self.deployment_number
+                    .unwrap_or_default()
+                ,
+                configuration_name: self.configuration_name
+                ,
+                configuration_location_uri: self.configuration_location_uri
+                ,
+                configuration_version: self.configuration_version
+                ,
+                description: self.description
+                ,
+                deployment_duration_in_minutes: self.deployment_duration_in_minutes
+                    .unwrap_or_default()
+                ,
+                growth_type: self.growth_type
+                ,
+                growth_factor: self.growth_factor
+                    .unwrap_or_default()
+                ,
+                final_bake_time_in_minutes: self.final_bake_time_in_minutes
+                    .unwrap_or_default()
+                ,
+                state: self.state
+                ,
+                event_log: self.event_log
+                ,
+                percentage_complete: self.percentage_complete
+                    .unwrap_or_default()
+                ,
+                started_at: self.started_at
+                ,
+                completed_at: self.completed_at
+                ,
+                applied_extensions: self.applied_extensions
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDeploymentOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentOutput`](crate::output::GetDeploymentOutput).
@@ -4018,7 +3759,7 @@ impl GetDeploymentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConfigurationProfileOutput {
+pub struct GetConfigurationProfileOutput  {
     /// <p>The application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -4040,51 +3781,51 @@ pub struct GetConfigurationProfileOutput {
     /// <p>A list of methods for validating the configuration.</p>
     #[doc(hidden)]
     pub validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
-    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p> 
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p> 
     /// <p> <code>AWS.Freeform</code> </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl GetConfigurationProfileOutput {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The configuration profile ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the configuration profile.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The configuration profile description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The URI location of the configuration.</p>
-    pub fn location_uri(&self) -> std::option::Option<&str> {
+    pub fn location_uri(&self) -> std::option::Option<& str> {
         self.location_uri.as_deref()
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
-    pub fn retrieval_role_arn(&self) -> std::option::Option<&str> {
+    pub fn retrieval_role_arn(&self) -> std::option::Option<& str> {
         self.retrieval_role_arn.as_deref()
     }
     /// <p>A list of methods for validating the configuration.</p>
-    pub fn validators(&self) -> std::option::Option<&[crate::model::Validator]> {
+    pub fn validators(&self) -> std::option::Option<& [crate::model::Validator]> {
         self.validators.as_deref()
     }
-    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p> 
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p> 
     /// <p> <code>AWS.Freeform</code> </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
 /// See [`GetConfigurationProfileOutput`](crate::output::GetConfigurationProfileOutput).
 pub mod get_configuration_profile_output {
-
+    
     /// A builder for [`GetConfigurationProfileOutput`](crate::output::GetConfigurationProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4104,12 +3845,8 @@ pub mod get_configuration_profile_output {
             self
         }
         /// <p>The application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The configuration profile ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4118,8 +3855,7 @@ pub mod get_configuration_profile_output {
         }
         /// <p>The configuration profile ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the configuration profile.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4128,8 +3864,7 @@ pub mod get_configuration_profile_output {
         }
         /// <p>The name of the configuration profile.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The configuration profile description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4138,8 +3873,7 @@ pub mod get_configuration_profile_output {
         }
         /// <p>The configuration profile description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The URI location of the configuration.</p>
         pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4148,8 +3882,7 @@ pub mod get_configuration_profile_output {
         }
         /// <p>The URI location of the configuration.</p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_uri = input;
-            self
+            self.location_uri = input; self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
         pub fn retrieval_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4157,12 +3890,8 @@ pub mod get_configuration_profile_output {
             self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
-        pub fn set_retrieval_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.retrieval_role_arn = input;
-            self
+        pub fn set_retrieval_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.retrieval_role_arn = input; self
         }
         /// Appends an item to `validators`.
         ///
@@ -4171,46 +3900,51 @@ pub mod get_configuration_profile_output {
         /// <p>A list of methods for validating the configuration.</p>
         pub fn validators(mut self, input: crate::model::Validator) -> Self {
             let mut v = self.validators.unwrap_or_default();
-            v.push(input);
-            self.validators = Some(v);
-            self
+                            v.push(input);
+                            self.validators = Some(v);
+                            self
         }
         /// <p>A list of methods for validating the configuration.</p>
-        pub fn set_validators(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Validator>>,
-        ) -> Self {
-            self.validators = input;
-            self
+        pub fn set_validators(mut self, input: std::option::Option<std::vec::Vec<crate::model::Validator>>) -> Self {
+            self.validators = input; self
         }
-        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p> 
+        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p> 
         /// <p> <code>AWS.Freeform</code> </p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p> 
+        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p> 
         /// <p> <code>AWS.Freeform</code> </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`GetConfigurationProfileOutput`](crate::output::GetConfigurationProfileOutput).
         pub fn build(self) -> crate::output::GetConfigurationProfileOutput {
             crate::output::GetConfigurationProfileOutput {
-                application_id: self.application_id,
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                location_uri: self.location_uri,
-                retrieval_role_arn: self.retrieval_role_arn,
-                validators: self.validators,
-                r#type: self.r#type,
+                application_id: self.application_id
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                location_uri: self.location_uri
+                ,
+                retrieval_role_arn: self.retrieval_role_arn
+                ,
+                validators: self.validators
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl GetConfigurationProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetConfigurationProfileOutput`](crate::output::GetConfigurationProfileOutput).
@@ -4222,9 +3956,9 @@ impl GetConfigurationProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetConfigurationOutput {
-    /// <p>The content of the configuration or the configuration data.</p> <important>
-    /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p>
+pub struct GetConfigurationOutput  {
+    /// <p>The content of the configuration or the configuration data.</p> <important> 
+    /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p> 
     /// </important>
     #[doc(hidden)]
     pub content: std::option::Option<aws_smithy_types::Blob>,
@@ -4236,22 +3970,22 @@ pub struct GetConfigurationOutput {
     pub content_type: std::option::Option<std::string::String>,
 }
 impl GetConfigurationOutput {
-    /// <p>The content of the configuration or the configuration data.</p> <important>
-    /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p>
+    /// <p>The content of the configuration or the configuration data.</p> <important> 
+    /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p> 
     /// </important>
-    pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn content(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.content.as_ref()
     }
     /// <p>The configuration version.</p>
-    pub fn configuration_version(&self) -> std::option::Option<&str> {
+    pub fn configuration_version(&self) -> std::option::Option<& str> {
         self.configuration_version.as_deref()
     }
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
 }
-impl std::fmt::Debug for GetConfigurationOutput {
+impl  std::fmt::Debug for GetConfigurationOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetConfigurationOutput");
         formatter.field("content", &"*** Sensitive Data Redacted ***");
@@ -4262,7 +3996,7 @@ impl std::fmt::Debug for GetConfigurationOutput {
 }
 /// See [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
 pub mod get_configuration_output {
-
+    
     /// A builder for [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4271,19 +4005,18 @@ pub mod get_configuration_output {
         pub(crate) content_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The content of the configuration or the configuration data.</p> <important>
-        /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p>
+        /// <p>The content of the configuration or the configuration data.</p> <important> 
+        /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p> 
         /// </important>
         pub fn content(mut self, input: aws_smithy_types::Blob) -> Self {
             self.content = Some(input);
             self
         }
-        /// <p>The content of the configuration or the configuration data.</p> <important>
-        /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p>
+        /// <p>The content of the configuration or the configuration data.</p> <important> 
+        /// <p>The <code>Content</code> attribute only contains data if the system finds new or updated configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code> matches the version of the current configuration, AppConfig returns a <code>204 No Content</code> HTTP response code and the <code>Content</code> value will be empty.</p> 
         /// </important>
         pub fn set_content(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
         /// <p>The configuration version.</p>
         pub fn configuration_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4291,12 +4024,8 @@ pub mod get_configuration_output {
             self
         }
         /// <p>The configuration version.</p>
-        pub fn set_configuration_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_version = input;
-            self
+        pub fn set_configuration_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_version = input; self
         }
         /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4305,15 +4034,17 @@ pub mod get_configuration_output {
         }
         /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
+            self.content_type = input; self
         }
         /// Consumes the builder and constructs a [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
         pub fn build(self) -> crate::output::GetConfigurationOutput {
             crate::output::GetConfigurationOutput {
-                content: self.content,
-                configuration_version: self.configuration_version,
-                content_type: self.content_type,
+                content: self.content
+                ,
+                configuration_version: self.configuration_version
+                ,
+                content_type: self.content_type
+                ,
             }
         }
     }
@@ -4326,6 +4057,8 @@ pub mod get_configuration_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl GetConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetConfigurationOutput`](crate::output::GetConfigurationOutput).
@@ -4337,7 +4070,7 @@ impl GetConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApplicationOutput {
+pub struct GetApplicationOutput  {
     /// <p>The application ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -4350,21 +4083,21 @@ pub struct GetApplicationOutput {
 }
 impl GetApplicationOutput {
     /// <p>The application ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The application name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the application.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`GetApplicationOutput`](crate::output::GetApplicationOutput).
 pub mod get_application_output {
-
+    
     /// A builder for [`GetApplicationOutput`](crate::output::GetApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4380,8 +4113,7 @@ pub mod get_application_output {
         }
         /// <p>The application ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The application name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4390,8 +4122,7 @@ pub mod get_application_output {
         }
         /// <p>The application name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the application.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4400,18 +4131,22 @@ pub mod get_application_output {
         }
         /// <p>The description of the application.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`GetApplicationOutput`](crate::output::GetApplicationOutput).
         pub fn build(self) -> crate::output::GetApplicationOutput {
             crate::output::GetApplicationOutput {
-                id: self.id,
-                name: self.name,
-                description: self.description,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl GetApplicationOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationOutput`](crate::output::GetApplicationOutput).
@@ -4423,19 +4158,24 @@ impl GetApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteHostedConfigurationVersionOutput {}
+pub struct DeleteHostedConfigurationVersionOutput  {
+}
 /// See [`DeleteHostedConfigurationVersionOutput`](crate::output::DeleteHostedConfigurationVersionOutput).
 pub mod delete_hosted_configuration_version_output {
-
+    
     /// A builder for [`DeleteHostedConfigurationVersionOutput`](crate::output::DeleteHostedConfigurationVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteHostedConfigurationVersionOutput`](crate::output::DeleteHostedConfigurationVersionOutput).
         pub fn build(self) -> crate::output::DeleteHostedConfigurationVersionOutput {
-            crate::output::DeleteHostedConfigurationVersionOutput {}
+            crate::output::DeleteHostedConfigurationVersionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteHostedConfigurationVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHostedConfigurationVersionOutput`](crate::output::DeleteHostedConfigurationVersionOutput).
@@ -4447,19 +4187,24 @@ impl DeleteHostedConfigurationVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteExtensionAssociationOutput {}
+pub struct DeleteExtensionAssociationOutput  {
+}
 /// See [`DeleteExtensionAssociationOutput`](crate::output::DeleteExtensionAssociationOutput).
 pub mod delete_extension_association_output {
-
+    
     /// A builder for [`DeleteExtensionAssociationOutput`](crate::output::DeleteExtensionAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteExtensionAssociationOutput`](crate::output::DeleteExtensionAssociationOutput).
         pub fn build(self) -> crate::output::DeleteExtensionAssociationOutput {
-            crate::output::DeleteExtensionAssociationOutput {}
+            crate::output::DeleteExtensionAssociationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteExtensionAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteExtensionAssociationOutput`](crate::output::DeleteExtensionAssociationOutput).
@@ -4471,19 +4216,24 @@ impl DeleteExtensionAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteExtensionOutput {}
+pub struct DeleteExtensionOutput  {
+}
 /// See [`DeleteExtensionOutput`](crate::output::DeleteExtensionOutput).
 pub mod delete_extension_output {
-
+    
     /// A builder for [`DeleteExtensionOutput`](crate::output::DeleteExtensionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteExtensionOutput`](crate::output::DeleteExtensionOutput).
         pub fn build(self) -> crate::output::DeleteExtensionOutput {
-            crate::output::DeleteExtensionOutput {}
+            crate::output::DeleteExtensionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteExtensionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteExtensionOutput`](crate::output::DeleteExtensionOutput).
@@ -4495,19 +4245,24 @@ impl DeleteExtensionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEnvironmentOutput {}
+pub struct DeleteEnvironmentOutput  {
+}
 /// See [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
 pub mod delete_environment_output {
-
+    
     /// A builder for [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
         pub fn build(self) -> crate::output::DeleteEnvironmentOutput {
-            crate::output::DeleteEnvironmentOutput {}
+            crate::output::DeleteEnvironmentOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
@@ -4519,19 +4274,24 @@ impl DeleteEnvironmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDeploymentStrategyOutput {}
+pub struct DeleteDeploymentStrategyOutput  {
+}
 /// See [`DeleteDeploymentStrategyOutput`](crate::output::DeleteDeploymentStrategyOutput).
 pub mod delete_deployment_strategy_output {
-
+    
     /// A builder for [`DeleteDeploymentStrategyOutput`](crate::output::DeleteDeploymentStrategyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDeploymentStrategyOutput`](crate::output::DeleteDeploymentStrategyOutput).
         pub fn build(self) -> crate::output::DeleteDeploymentStrategyOutput {
-            crate::output::DeleteDeploymentStrategyOutput {}
+            crate::output::DeleteDeploymentStrategyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDeploymentStrategyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDeploymentStrategyOutput`](crate::output::DeleteDeploymentStrategyOutput).
@@ -4543,19 +4303,24 @@ impl DeleteDeploymentStrategyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfigurationProfileOutput {}
+pub struct DeleteConfigurationProfileOutput  {
+}
 /// See [`DeleteConfigurationProfileOutput`](crate::output::DeleteConfigurationProfileOutput).
 pub mod delete_configuration_profile_output {
-
+    
     /// A builder for [`DeleteConfigurationProfileOutput`](crate::output::DeleteConfigurationProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteConfigurationProfileOutput`](crate::output::DeleteConfigurationProfileOutput).
         pub fn build(self) -> crate::output::DeleteConfigurationProfileOutput {
-            crate::output::DeleteConfigurationProfileOutput {}
+            crate::output::DeleteConfigurationProfileOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteConfigurationProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationProfileOutput`](crate::output::DeleteConfigurationProfileOutput).
@@ -4567,19 +4332,24 @@ impl DeleteConfigurationProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationOutput {}
+pub struct DeleteApplicationOutput  {
+}
 /// See [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
 pub mod delete_application_output {
-
+    
     /// A builder for [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
         pub fn build(self) -> crate::output::DeleteApplicationOutput {
-            crate::output::DeleteApplicationOutput {}
+            crate::output::DeleteApplicationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
@@ -4591,7 +4361,7 @@ impl DeleteApplicationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateHostedConfigurationVersionOutput {
+pub struct CreateHostedConfigurationVersionOutput  {
     /// <p>The application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -4613,11 +4383,11 @@ pub struct CreateHostedConfigurationVersionOutput {
 }
 impl CreateHostedConfigurationVersionOutput {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The configuration profile ID.</p>
-    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
+    pub fn configuration_profile_id(&self) -> std::option::Option<& str> {
         self.configuration_profile_id.as_deref()
     }
     /// <p>The configuration version.</p>
@@ -4625,19 +4395,19 @@ impl CreateHostedConfigurationVersionOutput {
         self.version_number
     }
     /// <p>A description of the configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The content of the configuration or the configuration data.</p>
-    pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn content(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.content.as_ref()
     }
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
 }
-impl std::fmt::Debug for CreateHostedConfigurationVersionOutput {
+impl  std::fmt::Debug for CreateHostedConfigurationVersionOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHostedConfigurationVersionOutput");
         formatter.field("application_id", &self.application_id);
@@ -4651,7 +4421,7 @@ impl std::fmt::Debug for CreateHostedConfigurationVersionOutput {
 }
 /// See [`CreateHostedConfigurationVersionOutput`](crate::output::CreateHostedConfigurationVersionOutput).
 pub mod create_hosted_configuration_version_output {
-
+    
     /// A builder for [`CreateHostedConfigurationVersionOutput`](crate::output::CreateHostedConfigurationVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4669,12 +4439,8 @@ pub mod create_hosted_configuration_version_output {
             self
         }
         /// <p>The application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The configuration profile ID.</p>
         pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4682,12 +4448,8 @@ pub mod create_hosted_configuration_version_output {
             self
         }
         /// <p>The configuration profile ID.</p>
-        pub fn set_configuration_profile_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_profile_id = input;
-            self
+        pub fn set_configuration_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_profile_id = input; self
         }
         /// <p>The configuration version.</p>
         pub fn version_number(mut self, input: i32) -> Self {
@@ -4696,8 +4458,7 @@ pub mod create_hosted_configuration_version_output {
         }
         /// <p>The configuration version.</p>
         pub fn set_version_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.version_number = input;
-            self
+            self.version_number = input; self
         }
         /// <p>A description of the configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4706,8 +4467,7 @@ pub mod create_hosted_configuration_version_output {
         }
         /// <p>A description of the configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The content of the configuration or the configuration data.</p>
         pub fn content(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -4716,8 +4476,7 @@ pub mod create_hosted_configuration_version_output {
         }
         /// <p>The content of the configuration or the configuration data.</p>
         pub fn set_content(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
         /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4726,18 +4485,24 @@ pub mod create_hosted_configuration_version_output {
         }
         /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
+            self.content_type = input; self
         }
         /// Consumes the builder and constructs a [`CreateHostedConfigurationVersionOutput`](crate::output::CreateHostedConfigurationVersionOutput).
         pub fn build(self) -> crate::output::CreateHostedConfigurationVersionOutput {
             crate::output::CreateHostedConfigurationVersionOutput {
-                application_id: self.application_id,
-                configuration_profile_id: self.configuration_profile_id,
-                version_number: self.version_number.unwrap_or_default(),
-                description: self.description,
-                content: self.content,
-                content_type: self.content_type,
+                application_id: self.application_id
+                ,
+                configuration_profile_id: self.configuration_profile_id
+                ,
+                version_number: self.version_number
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
+                content: self.content
+                ,
+                content_type: self.content_type
+                ,
             }
         }
     }
@@ -4753,6 +4518,8 @@ pub mod create_hosted_configuration_version_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreateHostedConfigurationVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateHostedConfigurationVersionOutput`](crate::output::CreateHostedConfigurationVersionOutput).
@@ -4764,7 +4531,7 @@ impl CreateHostedConfigurationVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateExtensionAssociationOutput {
+pub struct CreateExtensionAssociationOutput  {
     /// <p>The system-generated ID for the association.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -4779,34 +4546,30 @@ pub struct CreateExtensionAssociationOutput {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The parameter names and values defined in the association.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The version number for the extension defined in the association.</p>
     #[doc(hidden)]
     pub extension_version_number: i32,
 }
 impl CreateExtensionAssociationOutput {
     /// <p>The system-generated ID for the association.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN of the extension defined in the association.</p>
-    pub fn extension_arn(&self) -> std::option::Option<&str> {
+    pub fn extension_arn(&self) -> std::option::Option<& str> {
         self.extension_arn.as_deref()
     }
     /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The parameter names and values defined in the association.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.parameters.as_ref()
     }
     /// <p>The version number for the extension defined in the association.</p>
@@ -4816,7 +4579,7 @@ impl CreateExtensionAssociationOutput {
 }
 /// See [`CreateExtensionAssociationOutput`](crate::output::CreateExtensionAssociationOutput).
 pub mod create_extension_association_output {
-
+    
     /// A builder for [`CreateExtensionAssociationOutput`](crate::output::CreateExtensionAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4824,9 +4587,7 @@ pub mod create_extension_association_output {
         pub(crate) extension_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) extension_version_number: std::option::Option<i32>,
     }
     impl Builder {
@@ -4837,8 +4598,7 @@ pub mod create_extension_association_output {
         }
         /// <p>The system-generated ID for the association.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ARN of the extension defined in the association.</p>
         pub fn extension_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4846,12 +4606,8 @@ pub mod create_extension_association_output {
             self
         }
         /// <p>The ARN of the extension defined in the association.</p>
-        pub fn set_extension_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.extension_arn = input;
-            self
+        pub fn set_extension_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.extension_arn = input; self
         }
         /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4860,8 +4616,7 @@ pub mod create_extension_association_output {
         }
         /// <p>The ARNs of applications, configuration profiles, or environments defined in the association.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4870,33 +4625,22 @@ pub mod create_extension_association_output {
         }
         /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The parameter names and values defined in the association.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>The parameter names and values defined in the association.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.parameters = input; self
         }
         /// <p>The version number for the extension defined in the association.</p>
         pub fn extension_version_number(mut self, input: i32) -> Self {
@@ -4905,21 +4649,29 @@ pub mod create_extension_association_output {
         }
         /// <p>The version number for the extension defined in the association.</p>
         pub fn set_extension_version_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.extension_version_number = input;
-            self
+            self.extension_version_number = input; self
         }
         /// Consumes the builder and constructs a [`CreateExtensionAssociationOutput`](crate::output::CreateExtensionAssociationOutput).
         pub fn build(self) -> crate::output::CreateExtensionAssociationOutput {
             crate::output::CreateExtensionAssociationOutput {
-                id: self.id,
-                extension_arn: self.extension_arn,
-                resource_arn: self.resource_arn,
-                arn: self.arn,
-                parameters: self.parameters,
-                extension_version_number: self.extension_version_number.unwrap_or_default(),
+                id: self.id
+                ,
+                extension_arn: self.extension_arn
+                ,
+                resource_arn: self.resource_arn
+                ,
+                arn: self.arn
+                ,
+                parameters: self.parameters
+                ,
+                extension_version_number: self.extension_version_number
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateExtensionAssociationOutput {
     /// Creates a new builder-style object to manufacture [`CreateExtensionAssociationOutput`](crate::output::CreateExtensionAssociationOutput).
@@ -4931,7 +4683,7 @@ impl CreateExtensionAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateExtensionOutput {
+pub struct CreateExtensionOutput  {
     /// <p>The system-generated ID of the extension.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -4949,22 +4701,18 @@ pub struct CreateExtensionOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The actions defined in the extension.</p>
     #[doc(hidden)]
-    pub actions: std::option::Option<
-        std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>,
-    >,
+    pub actions: std::option::Option<std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>>,
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::Parameter>,
-    >,
+    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Parameter>>,
 }
 impl CreateExtensionOutput {
     /// <p>The system-generated ID of the extension.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The extension name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The extension version number.</p>
@@ -4972,32 +4720,25 @@ impl CreateExtensionOutput {
         self.version_number
     }
     /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Information about the extension.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The actions defined in the extension.</p>
-    pub fn actions(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>,
-    > {
+    pub fn actions(&self) -> std::option::Option<& std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>> {
         self.actions.as_ref()
     }
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
-    pub fn parameters(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::model::Parameter>>
-    {
+    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::Parameter>> {
         self.parameters.as_ref()
     }
 }
 /// See [`CreateExtensionOutput`](crate::output::CreateExtensionOutput).
 pub mod create_extension_output {
-
+    
     /// A builder for [`CreateExtensionOutput`](crate::output::CreateExtensionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5006,15 +4747,8 @@ pub mod create_extension_output {
         pub(crate) version_number: std::option::Option<i32>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) actions: std::option::Option<
-            std::collections::HashMap<
-                crate::model::ActionPoint,
-                std::vec::Vec<crate::model::Action>,
-            >,
-        >,
-        pub(crate) parameters: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::Parameter>,
-        >,
+        pub(crate) actions: std::option::Option<std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>>,
+        pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Parameter>>,
     }
     impl Builder {
         /// <p>The system-generated ID of the extension.</p>
@@ -5024,8 +4758,7 @@ pub mod create_extension_output {
         }
         /// <p>The system-generated ID of the extension.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The extension name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5034,8 +4767,7 @@ pub mod create_extension_output {
         }
         /// <p>The extension name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The extension version number.</p>
         pub fn version_number(mut self, input: i32) -> Self {
@@ -5044,8 +4776,7 @@ pub mod create_extension_output {
         }
         /// <p>The extension version number.</p>
         pub fn set_version_number(mut self, input: std::option::Option<i32>) -> Self {
-            self.version_number = input;
-            self
+            self.version_number = input; self
         }
         /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5054,8 +4785,7 @@ pub mod create_extension_output {
         }
         /// <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Information about the extension.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5064,75 +4794,61 @@ pub mod create_extension_output {
         }
         /// <p>Information about the extension.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Adds a key-value pair to `actions`.
         ///
         /// To override the contents of this collection use [`set_actions`](Self::set_actions).
         ///
         /// <p>The actions defined in the extension.</p>
-        pub fn actions(
-            mut self,
-            k: crate::model::ActionPoint,
-            v: std::vec::Vec<crate::model::Action>,
-        ) -> Self {
+        pub fn actions(mut self, k: crate::model::ActionPoint, v: std::vec::Vec<crate::model::Action>) -> Self {
             let mut hash_map = self.actions.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.actions = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.actions = Some(hash_map);
+                            self
         }
         /// <p>The actions defined in the extension.</p>
-        pub fn set_actions(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    crate::model::ActionPoint,
-                    std::vec::Vec<crate::model::Action>,
-                >,
-            >,
-        ) -> Self {
-            self.actions = input;
-            self
+        pub fn set_actions(mut self, input: std::option::Option<std::collections::HashMap<crate::model::ActionPoint, std::vec::Vec<crate::model::Action>>>) -> Self {
+            self.actions = input; self
         }
         /// Adds a key-value pair to `parameters`.
         ///
         /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
         ///
         /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
-        pub fn parameters(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::Parameter,
-        ) -> Self {
+        pub fn parameters(mut self, k: impl Into<std::string::String>, v: crate::model::Parameter) -> Self {
             let mut hash_map = self.parameters.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.parameters = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.parameters = Some(hash_map);
+                            self
         }
         /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::Parameter>,
-            >,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::Parameter>>) -> Self {
+            self.parameters = input; self
         }
         /// Consumes the builder and constructs a [`CreateExtensionOutput`](crate::output::CreateExtensionOutput).
         pub fn build(self) -> crate::output::CreateExtensionOutput {
             crate::output::CreateExtensionOutput {
-                id: self.id,
-                name: self.name,
-                version_number: self.version_number.unwrap_or_default(),
-                arn: self.arn,
-                description: self.description,
-                actions: self.actions,
-                parameters: self.parameters,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                version_number: self.version_number
+                    .unwrap_or_default()
+                ,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
+                actions: self.actions
+                ,
+                parameters: self.parameters
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateExtensionOutput {
     /// Creates a new builder-style object to manufacture [`CreateExtensionOutput`](crate::output::CreateExtensionOutput).
@@ -5144,7 +4860,7 @@ impl CreateExtensionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEnvironmentOutput {
+pub struct CreateEnvironmentOutput  {
     /// <p>The application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -5166,33 +4882,33 @@ pub struct CreateEnvironmentOutput {
 }
 impl CreateEnvironmentOutput {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The environment ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the environment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::EnvironmentState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::EnvironmentState> {
         self.state.as_ref()
     }
     /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
-    pub fn monitors(&self) -> std::option::Option<&[crate::model::Monitor]> {
+    pub fn monitors(&self) -> std::option::Option<& [crate::model::Monitor]> {
         self.monitors.as_deref()
     }
 }
 /// See [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
 pub mod create_environment_output {
-
+    
     /// A builder for [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5210,12 +4926,8 @@ pub mod create_environment_output {
             self
         }
         /// <p>The application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The environment ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5224,8 +4936,7 @@ pub mod create_environment_output {
         }
         /// <p>The environment ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the environment.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5234,8 +4945,7 @@ pub mod create_environment_output {
         }
         /// <p>The name of the environment.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the environment.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5244,8 +4954,7 @@ pub mod create_environment_output {
         }
         /// <p>The description of the environment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
         pub fn state(mut self, input: crate::model::EnvironmentState) -> Self {
@@ -5253,12 +4962,8 @@ pub mod create_environment_output {
             self
         }
         /// <p>The state of the environment. An environment can be in one of the following states: <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>, or <code>ROLLED_BACK</code> </p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::EnvironmentState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::EnvironmentState>) -> Self {
+            self.state = input; self
         }
         /// Appends an item to `monitors`.
         ///
@@ -5267,30 +4972,34 @@ pub mod create_environment_output {
         /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
         pub fn monitors(mut self, input: crate::model::Monitor) -> Self {
             let mut v = self.monitors.unwrap_or_default();
-            v.push(input);
-            self.monitors = Some(v);
-            self
+                            v.push(input);
+                            self.monitors = Some(v);
+                            self
         }
         /// <p>Amazon CloudWatch alarms monitored during the deployment.</p>
-        pub fn set_monitors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Monitor>>,
-        ) -> Self {
-            self.monitors = input;
-            self
+        pub fn set_monitors(mut self, input: std::option::Option<std::vec::Vec<crate::model::Monitor>>) -> Self {
+            self.monitors = input; self
         }
         /// Consumes the builder and constructs a [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
         pub fn build(self) -> crate::output::CreateEnvironmentOutput {
             crate::output::CreateEnvironmentOutput {
-                application_id: self.application_id,
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                state: self.state,
-                monitors: self.monitors,
+                application_id: self.application_id
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                state: self.state
+                ,
+                monitors: self.monitors
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
@@ -5302,7 +5011,7 @@ impl CreateEnvironmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDeploymentStrategyOutput {
+pub struct CreateDeploymentStrategyOutput  {
     /// <p>The deployment strategy ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -5330,15 +5039,15 @@ pub struct CreateDeploymentStrategyOutput {
 }
 impl CreateDeploymentStrategyOutput {
     /// <p>The deployment strategy ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the deployment strategy.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the deployment strategy.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Total amount of time the deployment lasted.</p>
@@ -5346,7 +5055,7 @@ impl CreateDeploymentStrategyOutput {
         self.deployment_duration_in_minutes
     }
     /// <p>The algorithm used to define how percentage grew over time.</p>
-    pub fn growth_type(&self) -> std::option::Option<&crate::model::GrowthType> {
+    pub fn growth_type(&self) -> std::option::Option<& crate::model::GrowthType> {
         self.growth_type.as_ref()
     }
     /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
@@ -5358,13 +5067,13 @@ impl CreateDeploymentStrategyOutput {
         self.final_bake_time_in_minutes
     }
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
-    pub fn replicate_to(&self) -> std::option::Option<&crate::model::ReplicateTo> {
+    pub fn replicate_to(&self) -> std::option::Option<& crate::model::ReplicateTo> {
         self.replicate_to.as_ref()
     }
 }
 /// See [`CreateDeploymentStrategyOutput`](crate::output::CreateDeploymentStrategyOutput).
 pub mod create_deployment_strategy_output {
-
+    
     /// A builder for [`CreateDeploymentStrategyOutput`](crate::output::CreateDeploymentStrategyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5385,8 +5094,7 @@ pub mod create_deployment_strategy_output {
         }
         /// <p>The deployment strategy ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the deployment strategy.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5395,8 +5103,7 @@ pub mod create_deployment_strategy_output {
         }
         /// <p>The name of the deployment strategy.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the deployment strategy.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5405,8 +5112,7 @@ pub mod create_deployment_strategy_output {
         }
         /// <p>The description of the deployment strategy.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Total amount of time the deployment lasted.</p>
         pub fn deployment_duration_in_minutes(mut self, input: i32) -> Self {
@@ -5414,12 +5120,8 @@ pub mod create_deployment_strategy_output {
             self
         }
         /// <p>Total amount of time the deployment lasted.</p>
-        pub fn set_deployment_duration_in_minutes(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.deployment_duration_in_minutes = input;
-            self
+        pub fn set_deployment_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+            self.deployment_duration_in_minutes = input; self
         }
         /// <p>The algorithm used to define how percentage grew over time.</p>
         pub fn growth_type(mut self, input: crate::model::GrowthType) -> Self {
@@ -5427,12 +5129,8 @@ pub mod create_deployment_strategy_output {
             self
         }
         /// <p>The algorithm used to define how percentage grew over time.</p>
-        pub fn set_growth_type(
-            mut self,
-            input: std::option::Option<crate::model::GrowthType>,
-        ) -> Self {
-            self.growth_type = input;
-            self
+        pub fn set_growth_type(mut self, input: std::option::Option<crate::model::GrowthType>) -> Self {
+            self.growth_type = input; self
         }
         /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
         pub fn growth_factor(mut self, input: f32) -> Self {
@@ -5441,8 +5139,7 @@ pub mod create_deployment_strategy_output {
         }
         /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
         pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
-            self.growth_factor = input;
-            self
+            self.growth_factor = input; self
         }
         /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
@@ -5451,8 +5148,7 @@ pub mod create_deployment_strategy_output {
         }
         /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
         pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.final_bake_time_in_minutes = input;
-            self
+            self.final_bake_time_in_minutes = input; self
         }
         /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
         pub fn replicate_to(mut self, input: crate::model::ReplicateTo) -> Self {
@@ -5460,29 +5156,36 @@ pub mod create_deployment_strategy_output {
             self
         }
         /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
-        pub fn set_replicate_to(
-            mut self,
-            input: std::option::Option<crate::model::ReplicateTo>,
-        ) -> Self {
-            self.replicate_to = input;
-            self
+        pub fn set_replicate_to(mut self, input: std::option::Option<crate::model::ReplicateTo>) -> Self {
+            self.replicate_to = input; self
         }
         /// Consumes the builder and constructs a [`CreateDeploymentStrategyOutput`](crate::output::CreateDeploymentStrategyOutput).
         pub fn build(self) -> crate::output::CreateDeploymentStrategyOutput {
             crate::output::CreateDeploymentStrategyOutput {
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                deployment_duration_in_minutes: self
-                    .deployment_duration_in_minutes
-                    .unwrap_or_default(),
-                growth_type: self.growth_type,
-                growth_factor: self.growth_factor.unwrap_or_default(),
-                final_bake_time_in_minutes: self.final_bake_time_in_minutes.unwrap_or_default(),
-                replicate_to: self.replicate_to,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                deployment_duration_in_minutes: self.deployment_duration_in_minutes
+                    .unwrap_or_default()
+                ,
+                growth_type: self.growth_type
+                ,
+                growth_factor: self.growth_factor
+                    .unwrap_or_default()
+                ,
+                final_bake_time_in_minutes: self.final_bake_time_in_minutes
+                    .unwrap_or_default()
+                ,
+                replicate_to: self.replicate_to
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDeploymentStrategyOutput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentStrategyOutput`](crate::output::CreateDeploymentStrategyOutput).
@@ -5494,7 +5197,7 @@ impl CreateDeploymentStrategyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConfigurationProfileOutput {
+pub struct CreateConfigurationProfileOutput  {
     /// <p>The application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -5516,51 +5219,51 @@ pub struct CreateConfigurationProfileOutput {
     /// <p>A list of methods for validating the configuration.</p>
     #[doc(hidden)]
     pub validators: std::option::Option<std::vec::Vec<crate::model::Validator>>,
-    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p> 
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p> 
     /// <p> <code>AWS.Freeform</code> </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl CreateConfigurationProfileOutput {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> std::option::Option<& str> {
         self.application_id.as_deref()
     }
     /// <p>The configuration profile ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the configuration profile.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The configuration profile description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The URI location of the configuration.</p>
-    pub fn location_uri(&self) -> std::option::Option<&str> {
+    pub fn location_uri(&self) -> std::option::Option<& str> {
         self.location_uri.as_deref()
     }
     /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
-    pub fn retrieval_role_arn(&self) -> std::option::Option<&str> {
+    pub fn retrieval_role_arn(&self) -> std::option::Option<& str> {
         self.retrieval_role_arn.as_deref()
     }
     /// <p>A list of methods for validating the configuration.</p>
-    pub fn validators(&self) -> std::option::Option<&[crate::model::Validator]> {
+    pub fn validators(&self) -> std::option::Option<& [crate::model::Validator]> {
         self.validators.as_deref()
     }
-    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+    /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p> 
+    /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p> 
     /// <p> <code>AWS.Freeform</code> </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
 }
 /// See [`CreateConfigurationProfileOutput`](crate::output::CreateConfigurationProfileOutput).
 pub mod create_configuration_profile_output {
-
+    
     /// A builder for [`CreateConfigurationProfileOutput`](crate::output::CreateConfigurationProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5580,12 +5283,8 @@ pub mod create_configuration_profile_output {
             self
         }
         /// <p>The application ID.</p>
-        pub fn set_application_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.application_id = input;
-            self
+        pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.application_id = input; self
         }
         /// <p>The configuration profile ID.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5594,8 +5293,7 @@ pub mod create_configuration_profile_output {
         }
         /// <p>The configuration profile ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the configuration profile.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5604,8 +5302,7 @@ pub mod create_configuration_profile_output {
         }
         /// <p>The name of the configuration profile.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The configuration profile description.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5614,8 +5311,7 @@ pub mod create_configuration_profile_output {
         }
         /// <p>The configuration profile description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The URI location of the configuration.</p>
         pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5624,8 +5320,7 @@ pub mod create_configuration_profile_output {
         }
         /// <p>The URI location of the configuration.</p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location_uri = input;
-            self
+            self.location_uri = input; self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
         pub fn retrieval_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5633,12 +5328,8 @@ pub mod create_configuration_profile_output {
             self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified <code>LocationUri</code>.</p>
-        pub fn set_retrieval_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.retrieval_role_arn = input;
-            self
+        pub fn set_retrieval_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.retrieval_role_arn = input; self
         }
         /// Appends an item to `validators`.
         ///
@@ -5647,46 +5338,51 @@ pub mod create_configuration_profile_output {
         /// <p>A list of methods for validating the configuration.</p>
         pub fn validators(mut self, input: crate::model::Validator) -> Self {
             let mut v = self.validators.unwrap_or_default();
-            v.push(input);
-            self.validators = Some(v);
-            self
+                            v.push(input);
+                            self.validators = Some(v);
+                            self
         }
         /// <p>A list of methods for validating the configuration.</p>
-        pub fn set_validators(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Validator>>,
-        ) -> Self {
-            self.validators = input;
-            self
+        pub fn set_validators(mut self, input: std::option::Option<std::vec::Vec<crate::model::Validator>>) -> Self {
+            self.validators = input; self
         }
-        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p> 
+        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p> 
         /// <p> <code>AWS.Freeform</code> </p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
-        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p>
-        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p>
+        /// <p>The type of configurations contained in the profile. AppConfig supports <code>feature flags</code> and <code>freeform</code> configurations. We recommend you create feature flag configurations to enable or disable new features and freeform configurations to distribute configurations to an application. When calling this API, enter one of the following values for <code>Type</code>:</p> 
+        /// <p> <code>AWS.AppConfig.FeatureFlags</code> </p> 
         /// <p> <code>AWS.Freeform</code> </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`CreateConfigurationProfileOutput`](crate::output::CreateConfigurationProfileOutput).
         pub fn build(self) -> crate::output::CreateConfigurationProfileOutput {
             crate::output::CreateConfigurationProfileOutput {
-                application_id: self.application_id,
-                id: self.id,
-                name: self.name,
-                description: self.description,
-                location_uri: self.location_uri,
-                retrieval_role_arn: self.retrieval_role_arn,
-                validators: self.validators,
-                r#type: self.r#type,
+                application_id: self.application_id
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                location_uri: self.location_uri
+                ,
+                retrieval_role_arn: self.retrieval_role_arn
+                ,
+                validators: self.validators
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateConfigurationProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationProfileOutput`](crate::output::CreateConfigurationProfileOutput).
@@ -5698,7 +5394,7 @@ impl CreateConfigurationProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateApplicationOutput {
+pub struct CreateApplicationOutput  {
     /// <p>The application ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -5711,21 +5407,21 @@ pub struct CreateApplicationOutput {
 }
 impl CreateApplicationOutput {
     /// <p>The application ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The application name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the application.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
 pub mod create_application_output {
-
+    
     /// A builder for [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5741,8 +5437,7 @@ pub mod create_application_output {
         }
         /// <p>The application ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The application name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5751,8 +5446,7 @@ pub mod create_application_output {
         }
         /// <p>The application name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the application.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5761,18 +5455,22 @@ pub mod create_application_output {
         }
         /// <p>The description of the application.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
         pub fn build(self) -> crate::output::CreateApplicationOutput {
             crate::output::CreateApplicationOutput {
-                id: self.id,
-                name: self.name,
-                description: self.description,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
@@ -5780,3 +5478,4 @@ impl CreateApplicationOutput {
         crate::output::create_application_output::Builder::default()
     }
 }
+

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
@@ -33,22 +33,14 @@
 /// Specifically, when `validationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ValidationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     CannotParse,
@@ -61,7 +53,7 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
@@ -71,19 +63,17 @@ impl std::convert::From<&str> for ValidationExceptionReason {
             "FIELD_VALIDATION_FAILED" => ValidationExceptionReason::FieldValidationFailed,
             "OTHER" => ValidationExceptionReason::Other,
             "UNKNOWN_OPERATION" => ValidationExceptionReason::UnknownOperation,
-            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ValidationExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ValidationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ValidationExceptionReason::from(s))
+                }
+            }
 impl ValidationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -93,17 +83,13 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
             ValidationExceptionReason::Other => "OTHER",
             ValidationExceptionReason::UnknownOperation => "UNKNOWN_OPERATION",
-            ValidationExceptionReason::Unknown(value) => value.as_str(),
+            ValidationExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CANNOT_PARSE",
-            "ENCRYPTION_KEY_ERROR",
-            "FIELD_VALIDATION_FAILED",
-            "OTHER",
-            "UNKNOWN_OPERATION",
+            "CANNOT_PARSE", "ENCRYPTION_KEY_ERROR", "FIELD_VALIDATION_FAILED", "OTHER", "UNKNOWN_OPERATION"
         ]
     }
 }
@@ -119,9 +105,9 @@ impl AsRef<str> for ValidationExceptionReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -146,22 +132,14 @@ impl AsRef<str> for ValidationExceptionReason {
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Asset,
@@ -174,7 +152,7 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Repository,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
@@ -184,17 +162,17 @@ impl std::convert::From<&str> for ResourceType {
             "package" => ResourceType::Package,
             "package-version" => ResourceType::PackageVersion,
             "repository" => ResourceType::Repository,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -204,17 +182,13 @@ impl ResourceType {
             ResourceType::Package => "package",
             ResourceType::PackageVersion => "package-version",
             ResourceType::Repository => "repository",
-            ResourceType::Unknown(value) => value.as_str(),
+            ResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "asset",
-            "domain",
-            "package",
-            "package-version",
-            "repository",
+            "asset", "domain", "package", "package-version", "repository"
         ]
     }
 }
@@ -227,7 +201,7 @@ impl AsRef<str> for ResourceType {
 /// <p> The details of a repository stored in CodeArtifact. A CodeArtifact repository contains a set of package versions, each of which maps to a set of assets. Repositories are polyglot—a single repository can contain packages of any supported type. Each repository exposes endpoints for fetching and publishing packages using tools like the <code>npm</code> CLI, the Maven CLI (<code>mvn</code>), and <code>pip</code>. You can create up to 100 repositories per Amazon Web Services account. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryDescription {
+pub struct RepositoryDescription  {
     /// <p> The name of the repository. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -251,48 +225,45 @@ pub struct RepositoryDescription {
     pub upstreams: std::option::Option<std::vec::Vec<crate::model::UpstreamRepositoryInfo>>,
     /// <p> An array of external connections associated with the repository. </p>
     #[doc(hidden)]
-    pub external_connections:
-        std::option::Option<std::vec::Vec<crate::model::RepositoryExternalConnectionInfo>>,
+    pub external_connections: std::option::Option<std::vec::Vec<crate::model::RepositoryExternalConnectionInfo>>,
 }
 impl RepositoryDescription {
     /// <p> The name of the repository. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that manages the repository. </p>
-    pub fn administrator_account(&self) -> std::option::Option<&str> {
+    pub fn administrator_account(&self) -> std::option::Option<& str> {
         self.administrator_account.as_deref()
     }
     /// <p> The name of the domain that contains the repository. </p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<&str> {
+    pub fn domain_owner(&self) -> std::option::Option<& str> {
         self.domain_owner.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the repository. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> A text description of the repository. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-    pub fn upstreams(&self) -> std::option::Option<&[crate::model::UpstreamRepositoryInfo]> {
+    pub fn upstreams(&self) -> std::option::Option<& [crate::model::UpstreamRepositoryInfo]> {
         self.upstreams.as_deref()
     }
     /// <p> An array of external connections associated with the repository. </p>
-    pub fn external_connections(
-        &self,
-    ) -> std::option::Option<&[crate::model::RepositoryExternalConnectionInfo]> {
+    pub fn external_connections(&self) -> std::option::Option<& [crate::model::RepositoryExternalConnectionInfo]> {
         self.external_connections.as_deref()
     }
 }
 /// See [`RepositoryDescription`](crate::model::RepositoryDescription).
 pub mod repository_description {
-
+    
     /// A builder for [`RepositoryDescription`](crate::model::RepositoryDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -302,10 +273,8 @@ pub mod repository_description {
         pub(crate) domain_owner: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) upstreams:
-            std::option::Option<std::vec::Vec<crate::model::UpstreamRepositoryInfo>>,
-        pub(crate) external_connections:
-            std::option::Option<std::vec::Vec<crate::model::RepositoryExternalConnectionInfo>>,
+        pub(crate) upstreams: std::option::Option<std::vec::Vec<crate::model::UpstreamRepositoryInfo>>,
+        pub(crate) external_connections: std::option::Option<std::vec::Vec<crate::model::RepositoryExternalConnectionInfo>>,
     }
     impl Builder {
         /// <p> The name of the repository. </p>
@@ -315,8 +284,7 @@ pub mod repository_description {
         }
         /// <p> The name of the repository. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that manages the repository. </p>
         pub fn administrator_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -324,12 +292,8 @@ pub mod repository_description {
             self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that manages the repository. </p>
-        pub fn set_administrator_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.administrator_account = input;
-            self
+        pub fn set_administrator_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.administrator_account = input; self
         }
         /// <p> The name of the domain that contains the repository. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -338,8 +302,7 @@ pub mod repository_description {
         }
         /// <p> The name of the domain that contains the repository. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -348,8 +311,7 @@ pub mod repository_description {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input;
-            self
+            self.domain_owner = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the repository. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -358,8 +320,7 @@ pub mod repository_description {
         }
         /// <p> The Amazon Resource Name (ARN) of the repository. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p> A text description of the repository. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -368,8 +329,7 @@ pub mod repository_description {
         }
         /// <p> A text description of the repository. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `upstreams`.
         ///
@@ -378,56 +338,53 @@ pub mod repository_description {
         /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
         pub fn upstreams(mut self, input: crate::model::UpstreamRepositoryInfo) -> Self {
             let mut v = self.upstreams.unwrap_or_default();
-            v.push(input);
-            self.upstreams = Some(v);
-            self
+                            v.push(input);
+                            self.upstreams = Some(v);
+                            self
         }
         /// <p> A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working with upstream repositories</a>. </p>
-        pub fn set_upstreams(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UpstreamRepositoryInfo>>,
-        ) -> Self {
-            self.upstreams = input;
-            self
+        pub fn set_upstreams(mut self, input: std::option::Option<std::vec::Vec<crate::model::UpstreamRepositoryInfo>>) -> Self {
+            self.upstreams = input; self
         }
         /// Appends an item to `external_connections`.
         ///
         /// To override the contents of this collection use [`set_external_connections`](Self::set_external_connections).
         ///
         /// <p> An array of external connections associated with the repository. </p>
-        pub fn external_connections(
-            mut self,
-            input: crate::model::RepositoryExternalConnectionInfo,
-        ) -> Self {
+        pub fn external_connections(mut self, input: crate::model::RepositoryExternalConnectionInfo) -> Self {
             let mut v = self.external_connections.unwrap_or_default();
-            v.push(input);
-            self.external_connections = Some(v);
-            self
+                            v.push(input);
+                            self.external_connections = Some(v);
+                            self
         }
         /// <p> An array of external connections associated with the repository. </p>
-        pub fn set_external_connections(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::RepositoryExternalConnectionInfo>,
-            >,
-        ) -> Self {
-            self.external_connections = input;
-            self
+        pub fn set_external_connections(mut self, input: std::option::Option<std::vec::Vec<crate::model::RepositoryExternalConnectionInfo>>) -> Self {
+            self.external_connections = input; self
         }
         /// Consumes the builder and constructs a [`RepositoryDescription`](crate::model::RepositoryDescription).
         pub fn build(self) -> crate::model::RepositoryDescription {
             crate::model::RepositoryDescription {
-                name: self.name,
-                administrator_account: self.administrator_account,
-                domain_name: self.domain_name,
-                domain_owner: self.domain_owner,
-                arn: self.arn,
-                description: self.description,
-                upstreams: self.upstreams,
-                external_connections: self.external_connections,
+                name: self.name
+                ,
+                administrator_account: self.administrator_account
+                ,
+                domain_name: self.domain_name
+                ,
+                domain_owner: self.domain_owner
+                ,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
+                upstreams: self.upstreams
+                ,
+                external_connections: self.external_connections
+                ,
             }
         }
     }
+    
+    
 }
 impl RepositoryDescription {
     /// Creates a new builder-style object to manufacture [`RepositoryDescription`](crate::model::RepositoryDescription).
@@ -439,16 +396,16 @@ impl RepositoryDescription {
 /// <p> Contains information about the external connection of a repository. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryExternalConnectionInfo {
+pub struct RepositoryExternalConnectionInfo  {
     /// <p> The name of the external connection associated with a repository. </p>
     #[doc(hidden)]
     pub external_connection_name: std::option::Option<std::string::String>,
-    /// <p> The package format associated with a repository's external connection. The valid package formats are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-    /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-    /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-    /// <li> <p> <code>nuget</code>: A NuGet package. </p> </li>
+    /// <p> The package format associated with a repository's external connection. The valid package formats are: </p> 
+    /// <ul> 
+    /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li> 
+    /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li> 
+    /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li> 
+    /// <li> <p> <code>nuget</code>: A NuGet package. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub package_format: std::option::Option<crate::model::PackageFormat>,
@@ -458,27 +415,27 @@ pub struct RepositoryExternalConnectionInfo {
 }
 impl RepositoryExternalConnectionInfo {
     /// <p> The name of the external connection associated with a repository. </p>
-    pub fn external_connection_name(&self) -> std::option::Option<&str> {
+    pub fn external_connection_name(&self) -> std::option::Option<& str> {
         self.external_connection_name.as_deref()
     }
-    /// <p> The package format associated with a repository's external connection. The valid package formats are: </p>
-    /// <ul>
-    /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-    /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-    /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-    /// <li> <p> <code>nuget</code>: A NuGet package. </p> </li>
+    /// <p> The package format associated with a repository's external connection. The valid package formats are: </p> 
+    /// <ul> 
+    /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li> 
+    /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li> 
+    /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li> 
+    /// <li> <p> <code>nuget</code>: A NuGet package. </p> </li> 
     /// </ul>
-    pub fn package_format(&self) -> std::option::Option<&crate::model::PackageFormat> {
+    pub fn package_format(&self) -> std::option::Option<& crate::model::PackageFormat> {
         self.package_format.as_ref()
     }
     /// <p> The status of the external connection of a repository. There is one valid value, <code>Available</code>. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ExternalConnectionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ExternalConnectionStatus> {
         self.status.as_ref()
     }
 }
 /// See [`RepositoryExternalConnectionInfo`](crate::model::RepositoryExternalConnectionInfo).
 pub mod repository_external_connection_info {
-
+    
     /// A builder for [`RepositoryExternalConnectionInfo`](crate::model::RepositoryExternalConnectionInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -493,37 +450,29 @@ pub mod repository_external_connection_info {
             self
         }
         /// <p> The name of the external connection associated with a repository. </p>
-        pub fn set_external_connection_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.external_connection_name = input;
-            self
+        pub fn set_external_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.external_connection_name = input; self
         }
-        /// <p> The package format associated with a repository's external connection. The valid package formats are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// <li> <p> <code>nuget</code>: A NuGet package. </p> </li>
+        /// <p> The package format associated with a repository's external connection. The valid package formats are: </p> 
+        /// <ul> 
+        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li> 
+        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li> 
+        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li> 
+        /// <li> <p> <code>nuget</code>: A NuGet package. </p> </li> 
         /// </ul>
         pub fn package_format(mut self, input: crate::model::PackageFormat) -> Self {
             self.package_format = Some(input);
             self
         }
-        /// <p> The package format associated with a repository's external connection. The valid package formats are: </p>
-        /// <ul>
-        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
-        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li>
-        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
-        /// <li> <p> <code>nuget</code>: A NuGet package. </p> </li>
+        /// <p> The package format associated with a repository's external connection. The valid package formats are: </p> 
+        /// <ul> 
+        /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li> 
+        /// <li> <p> <code>pypi</code>: A Python Package Index (PyPI) package. </p> </li> 
+        /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li> 
+        /// <li> <p> <code>nuget</code>: A NuGet package. </p> </li> 
         /// </ul>
-        pub fn set_package_format(
-            mut self,
-            input: std::option::Option<crate::model::PackageFormat>,
-        ) -> Self {
-            self.package_format = input;
-            self
+        pub fn set_package_format(mut self, input: std::option::Option<crate::model::PackageFormat>) -> Self {
+            self.package_format = input; self
         }
         /// <p> The status of the external connection of a repository. There is one valid value, <code>Available</code>. </p>
         pub fn status(mut self, input: crate::model::ExternalConnectionStatus) -> Self {
@@ -531,22 +480,23 @@ pub mod repository_external_connection_info {
             self
         }
         /// <p> The status of the external connection of a repository. There is one valid value, <code>Available</code>. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ExternalConnectionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ExternalConnectionStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`RepositoryExternalConnectionInfo`](crate::model::RepositoryExternalConnectionInfo).
         pub fn build(self) -> crate::model::RepositoryExternalConnectionInfo {
             crate::model::RepositoryExternalConnectionInfo {
-                external_connection_name: self.external_connection_name,
-                package_format: self.package_format,
-                status: self.status,
+                external_connection_name: self.external_connection_name
+                ,
+                package_format: self.package_format
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl RepositoryExternalConnectionInfo {
     /// Creates a new builder-style object to manufacture [`RepositoryExternalConnectionInfo`](crate::model::RepositoryExternalConnectionInfo).
@@ -561,9 +511,9 @@ impl RepositoryExternalConnectionInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let externalconnectionstatus = unimplemented!();
 /// match externalconnectionstatus {
@@ -584,56 +534,48 @@ impl RepositoryExternalConnectionInfo {
 /// Specifically, when `externalconnectionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExternalConnectionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ExternalConnectionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Available,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExternalConnectionStatus {
     fn from(s: &str) -> Self {
         match s {
             "Available" => ExternalConnectionStatus::Available,
-            other => ExternalConnectionStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ExternalConnectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ExternalConnectionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExternalConnectionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ExternalConnectionStatus::from(s))
+                }
+            }
 impl ExternalConnectionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExternalConnectionStatus::Available => "Available",
-            ExternalConnectionStatus::Unknown(value) => value.as_str(),
+            ExternalConnectionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Available"]
+        &[
+            "Available"
+        ]
     }
 }
 impl AsRef<str> for ExternalConnectionStatus {
@@ -648,9 +590,9 @@ impl AsRef<str> for ExternalConnectionStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let packageformat = unimplemented!();
 /// match packageformat {
@@ -674,22 +616,14 @@ impl AsRef<str> for ExternalConnectionStatus {
 /// Specifically, when `packageformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PackageFormat::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PackageFormat {
     #[allow(missing_docs)] // documentation missing in model
     Maven,
@@ -700,7 +634,7 @@ pub enum PackageFormat {
     #[allow(missing_docs)] // documentation missing in model
     Pypi,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PackageFormat {
     fn from(s: &str) -> Self {
@@ -709,17 +643,17 @@ impl std::convert::From<&str> for PackageFormat {
             "npm" => PackageFormat::Npm,
             "nuget" => PackageFormat::Nuget,
             "pypi" => PackageFormat::Pypi,
-            other => PackageFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PackageFormat::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PackageFormat {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PackageFormat::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PackageFormat::from(s))
+                }
+            }
 impl PackageFormat {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -728,12 +662,14 @@ impl PackageFormat {
             PackageFormat::Npm => "npm",
             PackageFormat::Nuget => "nuget",
             PackageFormat::Pypi => "pypi",
-            PackageFormat::Unknown(value) => value.as_str(),
+            PackageFormat::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["maven", "npm", "nuget", "pypi"]
+        &[
+            "maven", "npm", "nuget", "pypi"
+        ]
     }
 }
 impl AsRef<str> for PackageFormat {
@@ -745,20 +681,20 @@ impl AsRef<str> for PackageFormat {
 /// <p> Information about an upstream repository. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpstreamRepositoryInfo {
+pub struct UpstreamRepositoryInfo  {
     /// <p> The name of an upstream repository. </p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl UpstreamRepositoryInfo {
     /// <p> The name of an upstream repository. </p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
 }
 /// See [`UpstreamRepositoryInfo`](crate::model::UpstreamRepositoryInfo).
 pub mod upstream_repository_info {
-
+    
     /// A builder for [`UpstreamRepositoryInfo`](crate::model::UpstreamRepositoryInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -771,20 +707,19 @@ pub mod upstream_repository_info {
             self
         }
         /// <p> The name of an upstream repository. </p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// Consumes the builder and constructs a [`UpstreamRepositoryInfo`](crate::model::UpstreamRepositoryInfo).
         pub fn build(self) -> crate::model::UpstreamRepositoryInfo {
             crate::model::UpstreamRepositoryInfo {
-                repository_name: self.repository_name,
+                repository_name: self.repository_name
+                ,
             }
         }
     }
+    
+    
 }
 impl UpstreamRepositoryInfo {
     /// Creates a new builder-style object to manufacture [`UpstreamRepositoryInfo`](crate::model::UpstreamRepositoryInfo).
@@ -796,20 +731,20 @@ impl UpstreamRepositoryInfo {
 /// <p> Information about an upstream repository. A list of <code>UpstreamRepository</code> objects is an input parameter to <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateRepository.html">CreateRepository</a> and <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdateRepository.html">UpdateRepository</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpstreamRepository {
+pub struct UpstreamRepository  {
     /// <p> The name of an upstream repository. </p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl UpstreamRepository {
     /// <p> The name of an upstream repository. </p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
 }
 /// See [`UpstreamRepository`](crate::model::UpstreamRepository).
 pub mod upstream_repository {
-
+    
     /// A builder for [`UpstreamRepository`](crate::model::UpstreamRepository).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -822,20 +757,19 @@ pub mod upstream_repository {
             self
         }
         /// <p> The name of an upstream repository. </p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// Consumes the builder and constructs a [`UpstreamRepository`](crate::model::UpstreamRepository).
         pub fn build(self) -> crate::model::UpstreamRepository {
             crate::model::UpstreamRepository {
-                repository_name: self.repository_name,
+                repository_name: self.repository_name
+                ,
             }
         }
     }
+    
+    
 }
 impl UpstreamRepository {
     /// Creates a new builder-style object to manufacture [`UpstreamRepository`](crate::model::UpstreamRepository).
@@ -847,15 +781,15 @@ impl UpstreamRepository {
 /// <p>l An error associated with package. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackageVersionError {
-    /// <p> The error code associated with the error. Valid error codes are: </p>
-    /// <ul>
-    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
-    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
-    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
-    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
-    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
-    /// <li> <p> <code>SKIPPED</code> </p> </li>
+pub struct PackageVersionError  {
+    /// <p> The error code associated with the error. Valid error codes are: </p> 
+    /// <ul> 
+    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li> 
+    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li> 
+    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li> 
+    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li> 
+    /// <li> <p> <code>NOT_FOUND</code> </p> </li> 
+    /// <li> <p> <code>SKIPPED</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::PackageVersionErrorCode>,
@@ -864,26 +798,26 @@ pub struct PackageVersionError {
     pub error_message: std::option::Option<std::string::String>,
 }
 impl PackageVersionError {
-    /// <p> The error code associated with the error. Valid error codes are: </p>
-    /// <ul>
-    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
-    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
-    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
-    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
-    /// <li> <p> <code>NOT_FOUND</code> </p> </li>
-    /// <li> <p> <code>SKIPPED</code> </p> </li>
+    /// <p> The error code associated with the error. Valid error codes are: </p> 
+    /// <ul> 
+    /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li> 
+    /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li> 
+    /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li> 
+    /// <li> <p> <code>NOT_ALLOWED</code> </p> </li> 
+    /// <li> <p> <code>NOT_FOUND</code> </p> </li> 
+    /// <li> <p> <code>SKIPPED</code> </p> </li> 
     /// </ul>
-    pub fn error_code(&self) -> std::option::Option<&crate::model::PackageVersionErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::model::PackageVersionErrorCode> {
         self.error_code.as_ref()
     }
     /// <p> The error message associated with the error. </p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
 }
 /// See [`PackageVersionError`](crate::model::PackageVersionError).
 pub mod package_version_error {
-
+    
     /// A builder for [`PackageVersionError`](crate::model::PackageVersionError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -891,34 +825,30 @@ pub mod package_version_error {
         pub(crate) error_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The error code associated with the error. Valid error codes are: </p>
-        /// <ul>
-        /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
-        /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
-        /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
-        /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
-        /// <li> <p> <code>NOT_FOUND</code> </p> </li>
-        /// <li> <p> <code>SKIPPED</code> </p> </li>
+        /// <p> The error code associated with the error. Valid error codes are: </p> 
+        /// <ul> 
+        /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li> 
+        /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li> 
+        /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li> 
+        /// <li> <p> <code>NOT_ALLOWED</code> </p> </li> 
+        /// <li> <p> <code>NOT_FOUND</code> </p> </li> 
+        /// <li> <p> <code>SKIPPED</code> </p> </li> 
         /// </ul>
         pub fn error_code(mut self, input: crate::model::PackageVersionErrorCode) -> Self {
             self.error_code = Some(input);
             self
         }
-        /// <p> The error code associated with the error. Valid error codes are: </p>
-        /// <ul>
-        /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li>
-        /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li>
-        /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li>
-        /// <li> <p> <code>NOT_ALLOWED</code> </p> </li>
-        /// <li> <p> <code>NOT_FOUND</code> </p> </li>
-        /// <li> <p> <code>SKIPPED</code> </p> </li>
+        /// <p> The error code associated with the error. Valid error codes are: </p> 
+        /// <ul> 
+        /// <li> <p> <code>ALREADY_EXISTS</code> </p> </li> 
+        /// <li> <p> <code>MISMATCHED_REVISION</code> </p> </li> 
+        /// <li> <p> <code>MISMATCHED_STATUS</code> </p> </li> 
+        /// <li> <p> <code>NOT_ALLOWED</code> </p> </li> 
+        /// <li> <p> <code>NOT_FOUND</code> </p> </li> 
+        /// <li> <p> <code>SKIPPED</code> </p> </li> 
         /// </ul>
-        pub fn set_error_code(
-            mut self,
-            input: std::option::Option<crate::model::PackageVersionErrorCode>,
-        ) -> Self {
-            self.error_code = input;
-            self
+        pub fn set_error_code(mut self, input: std::option::Option<crate::model::PackageVersionErrorCode>) -> Self {
+            self.error_code = input; self
         }
         /// <p> The error message associated with the error. </p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -926,21 +856,21 @@ pub mod package_version_error {
             self
         }
         /// <p> The error message associated with the error. </p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// Consumes the builder and constructs a [`PackageVersionError`](crate::model::PackageVersionError).
         pub fn build(self) -> crate::model::PackageVersionError {
             crate::model::PackageVersionError {
-                error_code: self.error_code,
-                error_message: self.error_message,
+                error_code: self.error_code
+                ,
+                error_message: self.error_message
+                ,
             }
         }
     }
+    
+    
 }
 impl PackageVersionError {
     /// Creates a new builder-style object to manufacture [`PackageVersionError`](crate::model::PackageVersionError).
@@ -955,9 +885,9 @@ impl PackageVersionError {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let packageversionerrorcode = unimplemented!();
 /// match packageversionerrorcode {
@@ -983,22 +913,14 @@ impl PackageVersionError {
 /// Specifically, when `packageversionerrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PackageVersionErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PackageVersionErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AlreadyExists,
@@ -1013,7 +935,7 @@ pub enum PackageVersionErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     Skipped,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PackageVersionErrorCode {
     fn from(s: &str) -> Self {
@@ -1024,19 +946,17 @@ impl std::convert::From<&str> for PackageVersionErrorCode {
             "NOT_ALLOWED" => PackageVersionErrorCode::NotAllowed,
             "NOT_FOUND" => PackageVersionErrorCode::NotFound,
             "SKIPPED" => PackageVersionErrorCode::Skipped,
-            other => PackageVersionErrorCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PackageVersionErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PackageVersionErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PackageVersionErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PackageVersionErrorCode::from(s))
+                }
+            }
 impl PackageVersionErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1047,18 +967,13 @@ impl PackageVersionErrorCode {
             PackageVersionErrorCode::NotAllowed => "NOT_ALLOWED",
             PackageVersionErrorCode::NotFound => "NOT_FOUND",
             PackageVersionErrorCode::Skipped => "SKIPPED",
-            PackageVersionErrorCode::Unknown(value) => value.as_str(),
+            PackageVersionErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ALREADY_EXISTS",
-            "MISMATCHED_REVISION",
-            "MISMATCHED_STATUS",
-            "NOT_ALLOWED",
-            "NOT_FOUND",
-            "SKIPPED",
+            "ALREADY_EXISTS", "MISMATCHED_REVISION", "MISMATCHED_STATUS", "NOT_ALLOWED", "NOT_FOUND", "SKIPPED"
         ]
     }
 }
@@ -1071,7 +986,7 @@ impl AsRef<str> for PackageVersionErrorCode {
 /// <p> Contains the revision and status of a package version. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SuccessfulPackageVersionInfo {
+pub struct SuccessfulPackageVersionInfo  {
     /// <p> The revision of a package version. </p>
     #[doc(hidden)]
     pub revision: std::option::Option<std::string::String>,
@@ -1081,17 +996,17 @@ pub struct SuccessfulPackageVersionInfo {
 }
 impl SuccessfulPackageVersionInfo {
     /// <p> The revision of a package version. </p>
-    pub fn revision(&self) -> std::option::Option<&str> {
+    pub fn revision(&self) -> std::option::Option<& str> {
         self.revision.as_deref()
     }
     /// <p> The status of a package version. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::PackageVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::PackageVersionStatus> {
         self.status.as_ref()
     }
 }
 /// See [`SuccessfulPackageVersionInfo`](crate::model::SuccessfulPackageVersionInfo).
 pub mod successful_package_version_info {
-
+    
     /// A builder for [`SuccessfulPackageVersionInfo`](crate::model::SuccessfulPackageVersionInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1106,8 +1021,7 @@ pub mod successful_package_version_info {
         }
         /// <p> The revision of a package version. </p>
         pub fn set_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision = input;
-            self
+            self.revision = input; self
         }
         /// <p> The status of a package version. </p>
         pub fn status(mut self, input: crate::model::PackageVersionStatus) -> Self {
@@ -1115,21 +1029,21 @@ pub mod successful_package_version_info {
             self
         }
         /// <p> The status of a package version. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::PackageVersionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::PackageVersionStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`SuccessfulPackageVersionInfo`](crate::model::SuccessfulPackageVersionInfo).
         pub fn build(self) -> crate::model::SuccessfulPackageVersionInfo {
             crate::model::SuccessfulPackageVersionInfo {
-                revision: self.revision,
-                status: self.status,
+                revision: self.revision
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl SuccessfulPackageVersionInfo {
     /// Creates a new builder-style object to manufacture [`SuccessfulPackageVersionInfo`](crate::model::SuccessfulPackageVersionInfo).
@@ -1144,9 +1058,9 @@ impl SuccessfulPackageVersionInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let packageversionstatus = unimplemented!();
 /// match packageversionstatus {
@@ -1172,22 +1086,14 @@ impl SuccessfulPackageVersionInfo {
 /// Specifically, when `packageversionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PackageVersionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PackageVersionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Archived,
@@ -1202,7 +1108,7 @@ pub enum PackageVersionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Unlisted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PackageVersionStatus {
     fn from(s: &str) -> Self {
@@ -1213,19 +1119,17 @@ impl std::convert::From<&str> for PackageVersionStatus {
             "Published" => PackageVersionStatus::Published,
             "Unfinished" => PackageVersionStatus::Unfinished,
             "Unlisted" => PackageVersionStatus::Unlisted,
-            other => {
-                PackageVersionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PackageVersionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PackageVersionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PackageVersionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PackageVersionStatus::from(s))
+                }
+            }
 impl PackageVersionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1236,18 +1140,13 @@ impl PackageVersionStatus {
             PackageVersionStatus::Published => "Published",
             PackageVersionStatus::Unfinished => "Unfinished",
             PackageVersionStatus::Unlisted => "Unlisted",
-            PackageVersionStatus::Unknown(value) => value.as_str(),
+            PackageVersionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Archived",
-            "Deleted",
-            "Disposed",
-            "Published",
-            "Unfinished",
-            "Unlisted",
+            "Archived", "Deleted", "Disposed", "Published", "Unfinished", "Unlisted"
         ]
     }
 }
@@ -1260,7 +1159,7 @@ impl AsRef<str> for PackageVersionStatus {
 /// <p>A tag is a key-value pair that can be used to manage, search for, or filter resources in CodeArtifact.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The tag key.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -1270,17 +1169,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The tag key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The tag value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1295,8 +1194,7 @@ pub mod tag {
         }
         /// <p>The tag key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The tag value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1305,17 +1203,20 @@ pub mod tag {
         }
         /// <p>The tag value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -1327,7 +1228,7 @@ impl Tag {
 /// <p> An CodeArtifact resource policy that contains a resource ARN, document details, and a revision. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourcePolicy {
+pub struct ResourcePolicy  {
     /// <p> The ARN of the resource associated with the resource policy </p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -1340,21 +1241,21 @@ pub struct ResourcePolicy {
 }
 impl ResourcePolicy {
     /// <p> The ARN of the resource associated with the resource policy </p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p> The current revision of the resource policy. </p>
-    pub fn revision(&self) -> std::option::Option<&str> {
+    pub fn revision(&self) -> std::option::Option<& str> {
         self.revision.as_deref()
     }
     /// <p> The resource policy formatted in JSON. </p>
-    pub fn document(&self) -> std::option::Option<&str> {
+    pub fn document(&self) -> std::option::Option<& str> {
         self.document.as_deref()
     }
 }
 /// See [`ResourcePolicy`](crate::model::ResourcePolicy).
 pub mod resource_policy {
-
+    
     /// A builder for [`ResourcePolicy`](crate::model::ResourcePolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1370,8 +1271,7 @@ pub mod resource_policy {
         }
         /// <p> The ARN of the resource associated with the resource policy </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p> The current revision of the resource policy. </p>
         pub fn revision(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1380,8 +1280,7 @@ pub mod resource_policy {
         }
         /// <p> The current revision of the resource policy. </p>
         pub fn set_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision = input;
-            self
+            self.revision = input; self
         }
         /// <p> The resource policy formatted in JSON. </p>
         pub fn document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1390,18 +1289,22 @@ pub mod resource_policy {
         }
         /// <p> The resource policy formatted in JSON. </p>
         pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.document = input;
-            self
+            self.document = input; self
         }
         /// Consumes the builder and constructs a [`ResourcePolicy`](crate::model::ResourcePolicy).
         pub fn build(self) -> crate::model::ResourcePolicy {
             crate::model::ResourcePolicy {
-                resource_arn: self.resource_arn,
-                revision: self.revision,
-                document: self.document,
+                resource_arn: self.resource_arn
+                ,
+                revision: self.revision
+                ,
+                document: self.document
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourcePolicy {
     /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
@@ -1413,20 +1316,20 @@ impl ResourcePolicy {
 /// <p>Details about the package origin configuration of a package.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackageOriginConfiguration {
+pub struct PackageOriginConfiguration  {
     /// <p>A <code>PackageOriginRestrictions</code> object that contains information about the upstream and publish package origin configuration for the package.</p>
     #[doc(hidden)]
     pub restrictions: std::option::Option<crate::model::PackageOriginRestrictions>,
 }
 impl PackageOriginConfiguration {
     /// <p>A <code>PackageOriginRestrictions</code> object that contains information about the upstream and publish package origin configuration for the package.</p>
-    pub fn restrictions(&self) -> std::option::Option<&crate::model::PackageOriginRestrictions> {
+    pub fn restrictions(&self) -> std::option::Option<& crate::model::PackageOriginRestrictions> {
         self.restrictions.as_ref()
     }
 }
 /// See [`PackageOriginConfiguration`](crate::model::PackageOriginConfiguration).
 pub mod package_origin_configuration {
-
+    
     /// A builder for [`PackageOriginConfiguration`](crate::model::PackageOriginConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1439,20 +1342,19 @@ pub mod package_origin_configuration {
             self
         }
         /// <p>A <code>PackageOriginRestrictions</code> object that contains information about the upstream and publish package origin configuration for the package.</p>
-        pub fn set_restrictions(
-            mut self,
-            input: std::option::Option<crate::model::PackageOriginRestrictions>,
-        ) -> Self {
-            self.restrictions = input;
-            self
+        pub fn set_restrictions(mut self, input: std::option::Option<crate::model::PackageOriginRestrictions>) -> Self {
+            self.restrictions = input; self
         }
         /// Consumes the builder and constructs a [`PackageOriginConfiguration`](crate::model::PackageOriginConfiguration).
         pub fn build(self) -> crate::model::PackageOriginConfiguration {
             crate::model::PackageOriginConfiguration {
-                restrictions: self.restrictions,
+                restrictions: self.restrictions
+                ,
             }
         }
     }
+    
+    
 }
 impl PackageOriginConfiguration {
     /// Creates a new builder-style object to manufacture [`PackageOriginConfiguration`](crate::model::PackageOriginConfiguration).
@@ -1464,7 +1366,7 @@ impl PackageOriginConfiguration {
 /// <p>Details about the origin restrictions set on the package. The package origin restrictions determine how new versions of a package can be added to a specific repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackageOriginRestrictions {
+pub struct PackageOriginRestrictions  {
     /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
     #[doc(hidden)]
     pub publish: std::option::Option<crate::model::AllowPublish>,
@@ -1474,17 +1376,17 @@ pub struct PackageOriginRestrictions {
 }
 impl PackageOriginRestrictions {
     /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
-    pub fn publish(&self) -> std::option::Option<&crate::model::AllowPublish> {
+    pub fn publish(&self) -> std::option::Option<& crate::model::AllowPublish> {
         self.publish.as_ref()
     }
     /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
-    pub fn upstream(&self) -> std::option::Option<&crate::model::AllowUpstream> {
+    pub fn upstream(&self) -> std::option::Option<& crate::model::AllowUpstream> {
         self.upstream.as_ref()
     }
 }
 /// See [`PackageOriginRestrictions`](crate::model::PackageOriginRestrictions).
 pub mod package_origin_restrictions {
-
+    
     /// A builder for [`PackageOriginRestrictions`](crate::model::PackageOriginRestrictions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1498,12 +1400,8 @@ pub mod package_origin_restrictions {
             self
         }
         /// <p>The package origin configuration that determines if new versions of the package can be published directly to the repository.</p>
-        pub fn set_publish(
-            mut self,
-            input: std::option::Option<crate::model::AllowPublish>,
-        ) -> Self {
-            self.publish = input;
-            self
+        pub fn set_publish(mut self, input: std::option::Option<crate::model::AllowPublish>) -> Self {
+            self.publish = input; self
         }
         /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
         pub fn upstream(mut self, input: crate::model::AllowUpstream) -> Self {
@@ -1511,21 +1409,21 @@ pub mod package_origin_restrictions {
             self
         }
         /// <p>The package origin configuration that determines if new versions of the package can be added to the repository from an external connection or upstream source.</p>
-        pub fn set_upstream(
-            mut self,
-            input: std::option::Option<crate::model::AllowUpstream>,
-        ) -> Self {
-            self.upstream = input;
-            self
+        pub fn set_upstream(mut self, input: std::option::Option<crate::model::AllowUpstream>) -> Self {
+            self.upstream = input; self
         }
         /// Consumes the builder and constructs a [`PackageOriginRestrictions`](crate::model::PackageOriginRestrictions).
         pub fn build(self) -> crate::model::PackageOriginRestrictions {
             crate::model::PackageOriginRestrictions {
-                publish: self.publish,
-                upstream: self.upstream,
+                publish: self.publish
+                ,
+                upstream: self.upstream
+                ,
             }
         }
     }
+    
+    
 }
 impl PackageOriginRestrictions {
     /// Creates a new builder-style object to manufacture [`PackageOriginRestrictions`](crate::model::PackageOriginRestrictions).
@@ -1540,9 +1438,9 @@ impl PackageOriginRestrictions {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let allowupstream = unimplemented!();
 /// match allowupstream {
@@ -1564,58 +1462,52 @@ impl PackageOriginRestrictions {
 /// Specifically, when `allowupstream` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AllowUpstream::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AllowUpstream {
     #[allow(missing_docs)] // documentation missing in model
     Allow,
     #[allow(missing_docs)] // documentation missing in model
     Block,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AllowUpstream {
     fn from(s: &str) -> Self {
         match s {
             "ALLOW" => AllowUpstream::Allow,
             "BLOCK" => AllowUpstream::Block,
-            other => AllowUpstream::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AllowUpstream::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AllowUpstream {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AllowUpstream::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AllowUpstream::from(s))
+                }
+            }
 impl AllowUpstream {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AllowUpstream::Allow => "ALLOW",
             AllowUpstream::Block => "BLOCK",
-            AllowUpstream::Unknown(value) => value.as_str(),
+            AllowUpstream::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALLOW", "BLOCK"]
+        &[
+            "ALLOW", "BLOCK"
+        ]
     }
 }
 impl AsRef<str> for AllowUpstream {
@@ -1630,9 +1522,9 @@ impl AsRef<str> for AllowUpstream {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let allowpublish = unimplemented!();
 /// match allowpublish {
@@ -1654,58 +1546,52 @@ impl AsRef<str> for AllowUpstream {
 /// Specifically, when `allowpublish` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AllowPublish::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AllowPublish {
     #[allow(missing_docs)] // documentation missing in model
     Allow,
     #[allow(missing_docs)] // documentation missing in model
     Block,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AllowPublish {
     fn from(s: &str) -> Self {
         match s {
             "ALLOW" => AllowPublish::Allow,
             "BLOCK" => AllowPublish::Block,
-            other => AllowPublish::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AllowPublish::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AllowPublish {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AllowPublish::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AllowPublish::from(s))
+                }
+            }
 impl AllowPublish {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AllowPublish::Allow => "ALLOW",
             AllowPublish::Block => "BLOCK",
-            AllowPublish::Unknown(value) => value.as_str(),
+            AllowPublish::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALLOW", "BLOCK"]
+        &[
+            "ALLOW", "BLOCK"
+        ]
     }
 }
 impl AsRef<str> for AllowPublish {
@@ -1717,7 +1603,7 @@ impl AsRef<str> for AllowPublish {
 /// <p> Details about a repository, including its Amazon Resource Name (ARN), description, and domain information. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositories.html">ListRepositories</a> operation returns a list of <code>RepositorySummary</code> objects. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositorySummary {
+pub struct RepositorySummary  {
     /// <p> The name of the repository. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1739,33 +1625,33 @@ pub struct RepositorySummary {
 }
 impl RepositorySummary {
     /// <p> The name of the repository. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The Amazon Web Services account ID that manages the repository. </p>
-    pub fn administrator_account(&self) -> std::option::Option<&str> {
+    pub fn administrator_account(&self) -> std::option::Option<& str> {
         self.administrator_account.as_deref()
     }
     /// <p> The name of the domain that contains the repository. </p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> std::option::Option<& str> {
         self.domain_name.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<&str> {
+    pub fn domain_owner(&self) -> std::option::Option<& str> {
         self.domain_owner.as_deref()
     }
     /// <p> The ARN of the repository. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> The description of the repository. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`RepositorySummary`](crate::model::RepositorySummary).
 pub mod repository_summary {
-
+    
     /// A builder for [`RepositorySummary`](crate::model::RepositorySummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1784,8 +1670,7 @@ pub mod repository_summary {
         }
         /// <p> The name of the repository. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> The Amazon Web Services account ID that manages the repository. </p>
         pub fn administrator_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1793,12 +1678,8 @@ pub mod repository_summary {
             self
         }
         /// <p> The Amazon Web Services account ID that manages the repository. </p>
-        pub fn set_administrator_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.administrator_account = input;
-            self
+        pub fn set_administrator_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.administrator_account = input; self
         }
         /// <p> The name of the domain that contains the repository. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1807,8 +1688,7 @@ pub mod repository_summary {
         }
         /// <p> The name of the domain that contains the repository. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_name = input;
-            self
+            self.domain_name = input; self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1817,8 +1697,7 @@ pub mod repository_summary {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_owner = input;
-            self
+            self.domain_owner = input; self
         }
         /// <p> The ARN of the repository. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1827,8 +1706,7 @@ pub mod repository_summary {
         }
         /// <p> The ARN of the repository. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p> The description of the repository. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1837,21 +1715,28 @@ pub mod repository_summary {
         }
         /// <p> The description of the repository. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`RepositorySummary`](crate::model::RepositorySummary).
         pub fn build(self) -> crate::model::RepositorySummary {
             crate::model::RepositorySummary {
-                name: self.name,
-                administrator_account: self.administrator_account,
-                domain_name: self.domain_name,
-                domain_owner: self.domain_owner,
-                arn: self.arn,
-                description: self.description,
+                name: self.name
+                ,
+                administrator_account: self.administrator_account
+                ,
+                domain_name: self.domain_name
+                ,
+                domain_owner: self.domain_owner
+                ,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl RepositorySummary {
     /// Creates a new builder-style object to manufacture [`RepositorySummary`](crate::model::RepositorySummary).
@@ -1863,7 +1748,7 @@ impl RepositorySummary {
 /// <p> Details about a package version, including its status, version, and revision. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a> operation returns a list of <code>PackageVersionSummary</code> objects. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackageVersionSummary {
+pub struct PackageVersionSummary  {
     /// <p> Information about a package version. </p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
@@ -1879,25 +1764,25 @@ pub struct PackageVersionSummary {
 }
 impl PackageVersionSummary {
     /// <p> Information about a package version. </p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p> The revision associated with a package version. </p>
-    pub fn revision(&self) -> std::option::Option<&str> {
+    pub fn revision(&self) -> std::option::Option<& str> {
         self.revision.as_deref()
     }
     /// <p> A string that contains the status of the package version. It can be one of the following: </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::PackageVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::PackageVersionStatus> {
         self.status.as_ref()
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
-    pub fn origin(&self) -> std::option::Option<&crate::model::PackageVersionOrigin> {
+    pub fn origin(&self) -> std::option::Option<& crate::model::PackageVersionOrigin> {
         self.origin.as_ref()
     }
 }
 /// See [`PackageVersionSummary`](crate::model::PackageVersionSummary).
 pub mod package_version_summary {
-
+    
     /// A builder for [`PackageVersionSummary`](crate::model::PackageVersionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1914,8 +1799,7 @@ pub mod package_version_summary {
         }
         /// <p> Information about a package version. </p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p> The revision associated with a package version. </p>
         pub fn revision(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1924,8 +1808,7 @@ pub mod package_version_summary {
         }
         /// <p> The revision associated with a package version. </p>
         pub fn set_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision = input;
-            self
+            self.revision = input; self
         }
         /// <p> A string that contains the status of the package version. It can be one of the following: </p>
         pub fn status(mut self, input: crate::model::PackageVersionStatus) -> Self {
@@ -1933,12 +1816,8 @@ pub mod package_version_summary {
             self
         }
         /// <p> A string that contains the status of the package version. It can be one of the following: </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::PackageVersionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::PackageVersionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
         pub fn origin(mut self, input: crate::model::PackageVersionOrigin) -> Self {
@@ -1946,23 +1825,25 @@ pub mod package_version_summary {
             self
         }
         /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
-        pub fn set_origin(
-            mut self,
-            input: std::option::Option<crate::model::PackageVersionOrigin>,
-        ) -> Self {
-            self.origin = input;
-            self
+        pub fn set_origin(mut self, input: std::option::Option<crate::model::PackageVersionOrigin>) -> Self {
+            self.origin = input; self
         }
         /// Consumes the builder and constructs a [`PackageVersionSummary`](crate::model::PackageVersionSummary).
         pub fn build(self) -> crate::model::PackageVersionSummary {
             crate::model::PackageVersionSummary {
-                version: self.version,
-                revision: self.revision,
-                status: self.status,
-                origin: self.origin,
+                version: self.version
+                ,
+                revision: self.revision
+                ,
+                status: self.status
+                ,
+                origin: self.origin
+                ,
             }
         }
     }
+    
+    
 }
 impl PackageVersionSummary {
     /// Creates a new builder-style object to manufacture [`PackageVersionSummary`](crate::model::PackageVersionSummary).
@@ -1974,7 +1855,7 @@ impl PackageVersionSummary {
 /// <p>Information about how a package version was added to a repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackageVersionOrigin {
+pub struct PackageVersionOrigin  {
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainEntryPoint.html">DomainEntryPoint</a> object that contains information about from which repository or external connection the package version was added to the domain.</p>
     #[doc(hidden)]
     pub domain_entry_point: std::option::Option<crate::model::DomainEntryPoint>,
@@ -1984,17 +1865,17 @@ pub struct PackageVersionOrigin {
 }
 impl PackageVersionOrigin {
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainEntryPoint.html">DomainEntryPoint</a> object that contains information about from which repository or external connection the package version was added to the domain.</p>
-    pub fn domain_entry_point(&self) -> std::option::Option<&crate::model::DomainEntryPoint> {
+    pub fn domain_entry_point(&self) -> std::option::Option<& crate::model::DomainEntryPoint> {
         self.domain_entry_point.as_ref()
     }
     /// <p>Describes how the package version was originally added to the domain. An <code>INTERNAL</code> origin type means the package version was published directly to a repository in the domain. An <code>EXTERNAL</code> origin type means the package version was ingested from an external connection.</p>
-    pub fn origin_type(&self) -> std::option::Option<&crate::model::PackageVersionOriginType> {
+    pub fn origin_type(&self) -> std::option::Option<& crate::model::PackageVersionOriginType> {
         self.origin_type.as_ref()
     }
 }
 /// See [`PackageVersionOrigin`](crate::model::PackageVersionOrigin).
 pub mod package_version_origin {
-
+    
     /// A builder for [`PackageVersionOrigin`](crate::model::PackageVersionOrigin).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2008,12 +1889,8 @@ pub mod package_version_origin {
             self
         }
         /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainEntryPoint.html">DomainEntryPoint</a> object that contains information about from which repository or external connection the package version was added to the domain.</p>
-        pub fn set_domain_entry_point(
-            mut self,
-            input: std::option::Option<crate::model::DomainEntryPoint>,
-        ) -> Self {
-            self.domain_entry_point = input;
-            self
+        pub fn set_domain_entry_point(mut self, input: std::option::Option<crate::model::DomainEntryPoint>) -> Self {
+            self.domain_entry_point = input; self
         }
         /// <p>Describes how the package version was originally added to the domain. An <code>INTERNAL</code> origin type means the package version was published directly to a repository in the domain. An <code>EXTERNAL</code> origin type means the package version was ingested from an external connection.</p>
         pub fn origin_type(mut self, input: crate::model::PackageVersionOriginType) -> Self {
@@ -2021,21 +1898,21 @@ pub mod package_version_origin {
             self
         }
         /// <p>Describes how the package version was originally added to the domain. An <code>INTERNAL</code> origin type means the package version was published directly to a repository in the domain. An <code>EXTERNAL</code> origin type means the package version was ingested from an external connection.</p>
-        pub fn set_origin_type(
-            mut self,
-            input: std::option::Option<crate::model::PackageVersionOriginType>,
-        ) -> Self {
-            self.origin_type = input;
-            self
+        pub fn set_origin_type(mut self, input: std::option::Option<crate::model::PackageVersionOriginType>) -> Self {
+            self.origin_type = input; self
         }
         /// Consumes the builder and constructs a [`PackageVersionOrigin`](crate::model::PackageVersionOrigin).
         pub fn build(self) -> crate::model::PackageVersionOrigin {
             crate::model::PackageVersionOrigin {
-                domain_entry_point: self.domain_entry_point,
-                origin_type: self.origin_type,
+                domain_entry_point: self.domain_entry_point
+                ,
+                origin_type: self.origin_type
+                ,
             }
         }
     }
+    
+    
 }
 impl PackageVersionOrigin {
     /// Creates a new builder-style object to manufacture [`PackageVersionOrigin`](crate::model::PackageVersionOrigin).
@@ -2050,9 +1927,9 @@ impl PackageVersionOrigin {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let packageversionorigintype = unimplemented!();
 /// match packageversionorigintype {
@@ -2075,22 +1952,14 @@ impl PackageVersionOrigin {
 /// Specifically, when `packageversionorigintype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PackageVersionOriginType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `PackageVersionOriginType::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PackageVersionOriginType {
     #[allow(missing_docs)] // documentation missing in model
     External,
@@ -2099,7 +1968,7 @@ pub enum PackageVersionOriginType {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PackageVersionOriginType {
     fn from(s: &str) -> Self {
@@ -2107,19 +1976,17 @@ impl std::convert::From<&str> for PackageVersionOriginType {
             "EXTERNAL" => PackageVersionOriginType::External,
             "INTERNAL" => PackageVersionOriginType::Internal,
             "UNKNOWN" => PackageVersionOriginType::UnknownValue,
-            other => PackageVersionOriginType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PackageVersionOriginType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PackageVersionOriginType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PackageVersionOriginType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PackageVersionOriginType::from(s))
+                }
+            }
 impl PackageVersionOriginType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2127,12 +1994,14 @@ impl PackageVersionOriginType {
             PackageVersionOriginType::External => "EXTERNAL",
             PackageVersionOriginType::Internal => "INTERNAL",
             PackageVersionOriginType::UnknownValue => "UNKNOWN",
-            PackageVersionOriginType::Unknown(value) => value.as_str(),
+            PackageVersionOriginType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EXTERNAL", "INTERNAL", "UNKNOWN"]
+        &[
+            "EXTERNAL", "INTERNAL", "UNKNOWN"
+        ]
     }
 }
 impl AsRef<str> for PackageVersionOriginType {
@@ -2144,7 +2013,7 @@ impl AsRef<str> for PackageVersionOriginType {
 /// <p>Information about how a package originally entered the CodeArtifact domain. For packages published directly to CodeArtifact, the entry point is the repository it was published to. For packages ingested from an external repository, the entry point is the external connection that it was ingested from. An external connection is a CodeArtifact repository that is connected to an external repository such as the npm registry or NuGet gallery.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainEntryPoint {
+pub struct DomainEntryPoint  {
     /// <p>The name of the repository that a package was originally published to.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -2154,17 +2023,17 @@ pub struct DomainEntryPoint {
 }
 impl DomainEntryPoint {
     /// <p>The name of the repository that a package was originally published to.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> std::option::Option<& str> {
         self.repository_name.as_deref()
     }
     /// <p>The name of the external connection that a package was ingested from.</p>
-    pub fn external_connection_name(&self) -> std::option::Option<&str> {
+    pub fn external_connection_name(&self) -> std::option::Option<& str> {
         self.external_connection_name.as_deref()
     }
 }
 /// See [`DomainEntryPoint`](crate::model::DomainEntryPoint).
 pub mod domain_entry_point {
-
+    
     /// A builder for [`DomainEntryPoint`](crate::model::DomainEntryPoint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2178,12 +2047,8 @@ pub mod domain_entry_point {
             self
         }
         /// <p>The name of the repository that a package was originally published to.</p>
-        pub fn set_repository_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.repository_name = input;
-            self
+        pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.repository_name = input; self
         }
         /// <p>The name of the external connection that a package was ingested from.</p>
         pub fn external_connection_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2191,21 +2056,21 @@ pub mod domain_entry_point {
             self
         }
         /// <p>The name of the external connection that a package was ingested from.</p>
-        pub fn set_external_connection_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.external_connection_name = input;
-            self
+        pub fn set_external_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.external_connection_name = input; self
         }
         /// Consumes the builder and constructs a [`DomainEntryPoint`](crate::model::DomainEntryPoint).
         pub fn build(self) -> crate::model::DomainEntryPoint {
             crate::model::DomainEntryPoint {
-                repository_name: self.repository_name,
-                external_connection_name: self.external_connection_name,
+                repository_name: self.repository_name
+                ,
+                external_connection_name: self.external_connection_name
+                ,
             }
         }
     }
+    
+    
 }
 impl DomainEntryPoint {
     /// Creates a new builder-style object to manufacture [`DomainEntryPoint`](crate::model::DomainEntryPoint).
@@ -2220,9 +2085,9 @@ impl DomainEntryPoint {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let packageversionsorttype = unimplemented!();
 /// match packageversionsorttype {
@@ -2243,56 +2108,48 @@ impl DomainEntryPoint {
 /// Specifically, when `packageversionsorttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PackageVersionSortType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PackageVersionSortType {
     #[allow(missing_docs)] // documentation missing in model
     PublishedTime,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PackageVersionSortType {
     fn from(s: &str) -> Self {
         match s {
             "PUBLISHED_TIME" => PackageVersionSortType::PublishedTime,
-            other => {
-                PackageVersionSortType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PackageVersionSortType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PackageVersionSortType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PackageVersionSortType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PackageVersionSortType::from(s))
+                }
+            }
 impl PackageVersionSortType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PackageVersionSortType::PublishedTime => "PUBLISHED_TIME",
-            PackageVersionSortType::Unknown(value) => value.as_str(),
+            PackageVersionSortType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PUBLISHED_TIME"]
+        &[
+            "PUBLISHED_TIME"
+        ]
     }
 }
 impl AsRef<str> for PackageVersionSortType {
@@ -2304,27 +2161,27 @@ impl AsRef<str> for PackageVersionSortType {
 /// <p> Details about a package dependency. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackageDependency {
-    /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p>
-    /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+pub struct PackageDependency  {
+    /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p> 
+    /// <ul> 
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
     /// <p> The name of the package that this package depends on. </p>
     #[doc(hidden)]
     pub package: std::option::Option<std::string::String>,
-    /// <p> The type of a package dependency. The possible values depend on the package type.</p>
-    /// <ul>
-    /// <li> <p>npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code> </p> </li>
-    /// <li> <p>maven: <code>optional</code>, <code>parent</code>, <code>compile</code>, <code>runtime</code>, <code>test</code>, <code>system</code>, <code>provided</code>.</p> <note>
+    /// <p> The type of a package dependency. The possible values depend on the package type.</p> 
+    /// <ul> 
+    /// <li> <p>npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code> </p> </li> 
+    /// <li> <p>maven: <code>optional</code>, <code>parent</code>, <code>compile</code>, <code>runtime</code>, <code>test</code>, <code>system</code>, <code>provided</code>.</p> <note> 
     /// <p>Note that <code>parent</code> is not a regular Maven dependency type; instead this is extracted from the <code>
-    /// <parent></parent></code> element if one is defined in the package version's POM file.</p>
-    /// </note> </li>
-    /// <li> <p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p> </li>
-    /// <li> <p>pypi: <code>Requires-Dist</code> </p> </li>
+    /// <parent></parent></code> element if one is defined in the package version's POM file.</p> 
+    /// </note> </li> 
+    /// <li> <p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p> </li> 
+    /// <li> <p>pypi: <code>Requires-Dist</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub dependency_type: std::option::Option<std::string::String>,
@@ -2333,40 +2190,40 @@ pub struct PackageDependency {
     pub version_requirement: std::option::Option<std::string::String>,
 }
 impl PackageDependency {
-    /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p>
-    /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p> 
+    /// <ul> 
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p> The name of the package that this package depends on. </p>
-    pub fn package(&self) -> std::option::Option<&str> {
+    pub fn package(&self) -> std::option::Option<& str> {
         self.package.as_deref()
     }
-    /// <p> The type of a package dependency. The possible values depend on the package type.</p>
-    /// <ul>
-    /// <li> <p>npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code> </p> </li>
-    /// <li> <p>maven: <code>optional</code>, <code>parent</code>, <code>compile</code>, <code>runtime</code>, <code>test</code>, <code>system</code>, <code>provided</code>.</p> <note>
+    /// <p> The type of a package dependency. The possible values depend on the package type.</p> 
+    /// <ul> 
+    /// <li> <p>npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code> </p> </li> 
+    /// <li> <p>maven: <code>optional</code>, <code>parent</code>, <code>compile</code>, <code>runtime</code>, <code>test</code>, <code>system</code>, <code>provided</code>.</p> <note> 
     /// <p>Note that <code>parent</code> is not a regular Maven dependency type; instead this is extracted from the <code>
-    /// <parent></parent></code> element if one is defined in the package version's POM file.</p>
-    /// </note> </li>
-    /// <li> <p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p> </li>
-    /// <li> <p>pypi: <code>Requires-Dist</code> </p> </li>
+    /// <parent></parent></code> element if one is defined in the package version's POM file.</p> 
+    /// </note> </li> 
+    /// <li> <p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p> </li> 
+    /// <li> <p>pypi: <code>Requires-Dist</code> </p> </li> 
     /// </ul>
-    pub fn dependency_type(&self) -> std::option::Option<&str> {
+    pub fn dependency_type(&self) -> std::option::Option<& str> {
         self.dependency_type.as_deref()
     }
     /// <p> The required version, or version range, of the package that this package depends on. The version format is specific to the package type. For example, the following are possible valid required versions: <code>1.2.3</code>, <code>^2.3.4</code>, or <code>4.x</code>. </p>
-    pub fn version_requirement(&self) -> std::option::Option<&str> {
+    pub fn version_requirement(&self) -> std::option::Option<& str> {
         self.version_requirement.as_deref()
     }
 }
 /// See [`PackageDependency`](crate::model::PackageDependency).
 pub mod package_dependency {
-
+    
     /// A builder for [`PackageDependency`](crate::model::PackageDependency).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2376,25 +2233,24 @@ pub mod package_dependency {
         pub(crate) version_requirement: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p>
-        /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+        /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p> 
+        /// <ul> 
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p>
-        /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+        /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p> 
+        /// <ul> 
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p> The name of the package that this package depends on. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2403,39 +2259,34 @@ pub mod package_dependency {
         }
         /// <p> The name of the package that this package depends on. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package = input;
-            self
+            self.package = input; self
         }
-        /// <p> The type of a package dependency. The possible values depend on the package type.</p>
-        /// <ul>
-        /// <li> <p>npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code> </p> </li>
-        /// <li> <p>maven: <code>optional</code>, <code>parent</code>, <code>compile</code>, <code>runtime</code>, <code>test</code>, <code>system</code>, <code>provided</code>.</p> <note>
+        /// <p> The type of a package dependency. The possible values depend on the package type.</p> 
+        /// <ul> 
+        /// <li> <p>npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code> </p> </li> 
+        /// <li> <p>maven: <code>optional</code>, <code>parent</code>, <code>compile</code>, <code>runtime</code>, <code>test</code>, <code>system</code>, <code>provided</code>.</p> <note> 
         /// <p>Note that <code>parent</code> is not a regular Maven dependency type; instead this is extracted from the <code>
-        /// <parent></parent></code> element if one is defined in the package version's POM file.</p>
-        /// </note> </li>
-        /// <li> <p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p> </li>
-        /// <li> <p>pypi: <code>Requires-Dist</code> </p> </li>
+        /// <parent></parent></code> element if one is defined in the package version's POM file.</p> 
+        /// </note> </li> 
+        /// <li> <p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p> </li> 
+        /// <li> <p>pypi: <code>Requires-Dist</code> </p> </li> 
         /// </ul>
         pub fn dependency_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.dependency_type = Some(input.into());
             self
         }
-        /// <p> The type of a package dependency. The possible values depend on the package type.</p>
-        /// <ul>
-        /// <li> <p>npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code> </p> </li>
-        /// <li> <p>maven: <code>optional</code>, <code>parent</code>, <code>compile</code>, <code>runtime</code>, <code>test</code>, <code>system</code>, <code>provided</code>.</p> <note>
+        /// <p> The type of a package dependency. The possible values depend on the package type.</p> 
+        /// <ul> 
+        /// <li> <p>npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code> </p> </li> 
+        /// <li> <p>maven: <code>optional</code>, <code>parent</code>, <code>compile</code>, <code>runtime</code>, <code>test</code>, <code>system</code>, <code>provided</code>.</p> <note> 
         /// <p>Note that <code>parent</code> is not a regular Maven dependency type; instead this is extracted from the <code>
-        /// <parent></parent></code> element if one is defined in the package version's POM file.</p>
-        /// </note> </li>
-        /// <li> <p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p> </li>
-        /// <li> <p>pypi: <code>Requires-Dist</code> </p> </li>
+        /// <parent></parent></code> element if one is defined in the package version's POM file.</p> 
+        /// </note> </li> 
+        /// <li> <p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p> </li> 
+        /// <li> <p>pypi: <code>Requires-Dist</code> </p> </li> 
         /// </ul>
-        pub fn set_dependency_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dependency_type = input;
-            self
+        pub fn set_dependency_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dependency_type = input; self
         }
         /// <p> The required version, or version range, of the package that this package depends on. The version format is specific to the package type. For example, the following are possible valid required versions: <code>1.2.3</code>, <code>^2.3.4</code>, or <code>4.x</code>. </p>
         pub fn version_requirement(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2443,23 +2294,25 @@ pub mod package_dependency {
             self
         }
         /// <p> The required version, or version range, of the package that this package depends on. The version format is specific to the package type. For example, the following are possible valid required versions: <code>1.2.3</code>, <code>^2.3.4</code>, or <code>4.x</code>. </p>
-        pub fn set_version_requirement(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.version_requirement = input;
-            self
+        pub fn set_version_requirement(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_requirement = input; self
         }
         /// Consumes the builder and constructs a [`PackageDependency`](crate::model::PackageDependency).
         pub fn build(self) -> crate::model::PackageDependency {
             crate::model::PackageDependency {
-                namespace: self.namespace,
-                package: self.package,
-                dependency_type: self.dependency_type,
-                version_requirement: self.version_requirement,
+                namespace: self.namespace
+                ,
+                package: self.package
+                ,
+                dependency_type: self.dependency_type
+                ,
+                version_requirement: self.version_requirement
+                ,
             }
         }
     }
+    
+    
 }
 impl PackageDependency {
     /// Creates a new builder-style object to manufacture [`PackageDependency`](crate::model::PackageDependency).
@@ -2471,7 +2324,7 @@ impl PackageDependency {
 /// <p> Contains details about a package version asset. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetSummary {
+pub struct AssetSummary  {
     /// <p> The name of the asset. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2480,13 +2333,11 @@ pub struct AssetSummary {
     pub size: std::option::Option<i64>,
     /// <p> The hashes of the asset. </p>
     #[doc(hidden)]
-    pub hashes: std::option::Option<
-        std::collections::HashMap<crate::model::HashAlgorithm, std::string::String>,
-    >,
+    pub hashes: std::option::Option<std::collections::HashMap<crate::model::HashAlgorithm, std::string::String>>,
 }
 impl AssetSummary {
     /// <p> The name of the asset. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The size of the asset. </p>
@@ -2494,25 +2345,19 @@ impl AssetSummary {
         self.size
     }
     /// <p> The hashes of the asset. </p>
-    pub fn hashes(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::model::HashAlgorithm, std::string::String>,
-    > {
+    pub fn hashes(&self) -> std::option::Option<& std::collections::HashMap<crate::model::HashAlgorithm, std::string::String>> {
         self.hashes.as_ref()
     }
 }
 /// See [`AssetSummary`](crate::model::AssetSummary).
 pub mod asset_summary {
-
+    
     /// A builder for [`AssetSummary`](crate::model::AssetSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) size: std::option::Option<i64>,
-        pub(crate) hashes: std::option::Option<
-            std::collections::HashMap<crate::model::HashAlgorithm, std::string::String>,
-        >,
+        pub(crate) hashes: std::option::Option<std::collections::HashMap<crate::model::HashAlgorithm, std::string::String>>,
     }
     impl Builder {
         /// <p> The name of the asset. </p>
@@ -2522,8 +2367,7 @@ pub mod asset_summary {
         }
         /// <p> The name of the asset. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> The size of the asset. </p>
         pub fn size(mut self, input: i64) -> Self {
@@ -2532,43 +2376,37 @@ pub mod asset_summary {
         }
         /// <p> The size of the asset. </p>
         pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.size = input;
-            self
+            self.size = input; self
         }
         /// Adds a key-value pair to `hashes`.
         ///
         /// To override the contents of this collection use [`set_hashes`](Self::set_hashes).
         ///
         /// <p> The hashes of the asset. </p>
-        pub fn hashes(
-            mut self,
-            k: crate::model::HashAlgorithm,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn hashes(mut self, k: crate::model::HashAlgorithm, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.hashes.unwrap_or_default();
-            hash_map.insert(k, v.into());
-            self.hashes = Some(hash_map);
-            self
+                            hash_map.insert(k, v.into());
+                            self.hashes = Some(hash_map);
+                            self
         }
         /// <p> The hashes of the asset. </p>
-        pub fn set_hashes(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<crate::model::HashAlgorithm, std::string::String>,
-            >,
-        ) -> Self {
-            self.hashes = input;
-            self
+        pub fn set_hashes(mut self, input: std::option::Option<std::collections::HashMap<crate::model::HashAlgorithm, std::string::String>>) -> Self {
+            self.hashes = input; self
         }
         /// Consumes the builder and constructs a [`AssetSummary`](crate::model::AssetSummary).
         pub fn build(self) -> crate::model::AssetSummary {
             crate::model::AssetSummary {
-                name: self.name,
-                size: self.size,
-                hashes: self.hashes,
+                name: self.name
+                ,
+                size: self.size
+                ,
+                hashes: self.hashes
+                ,
             }
         }
     }
+    
+    
 }
 impl AssetSummary {
     /// Creates a new builder-style object to manufacture [`AssetSummary`](crate::model::AssetSummary).
@@ -2583,9 +2421,9 @@ impl AssetSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let hashalgorithm = unimplemented!();
 /// match hashalgorithm {
@@ -2609,22 +2447,14 @@ impl AssetSummary {
 /// Specifically, when `hashalgorithm` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HashAlgorithm::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HashAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     Md5,
@@ -2635,7 +2465,7 @@ pub enum HashAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     Sha512,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HashAlgorithm {
     fn from(s: &str) -> Self {
@@ -2644,17 +2474,17 @@ impl std::convert::From<&str> for HashAlgorithm {
             "SHA-1" => HashAlgorithm::Sha1,
             "SHA-256" => HashAlgorithm::Sha256,
             "SHA-512" => HashAlgorithm::Sha512,
-            other => HashAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => HashAlgorithm::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HashAlgorithm {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HashAlgorithm::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HashAlgorithm::from(s))
+                }
+            }
 impl HashAlgorithm {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2663,12 +2493,14 @@ impl HashAlgorithm {
             HashAlgorithm::Sha1 => "SHA-1",
             HashAlgorithm::Sha256 => "SHA-256",
             HashAlgorithm::Sha512 => "SHA-512",
-            HashAlgorithm::Unknown(value) => value.as_str(),
+            HashAlgorithm::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MD5", "SHA-1", "SHA-256", "SHA-512"]
+        &[
+            "MD5", "SHA-1", "SHA-256", "SHA-512"
+        ]
     }
 }
 impl AsRef<str> for HashAlgorithm {
@@ -2680,15 +2512,15 @@ impl AsRef<str> for HashAlgorithm {
 /// <p> Details about a package, including its format, namespace, and name. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackages.html">ListPackages</a> operation returns a list of <code>PackageSummary</code> objects. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackageSummary {
+pub struct PackageSummary  {
     /// <p> The format of the package. </p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
-    /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p> 
+    /// <ul> 
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -2701,40 +2533,37 @@ pub struct PackageSummary {
 }
 impl PackageSummary {
     /// <p> The format of the package. </p>
-    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
-    /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p> 
+    /// <ul> 
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p> The name of the package. </p>
-    pub fn package(&self) -> std::option::Option<&str> {
+    pub fn package(&self) -> std::option::Option<& str> {
         self.package.as_deref()
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the upstream and publish package origin restrictions.</p>
-    pub fn origin_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::PackageOriginConfiguration> {
+    pub fn origin_configuration(&self) -> std::option::Option<& crate::model::PackageOriginConfiguration> {
         self.origin_configuration.as_ref()
     }
 }
 /// See [`PackageSummary`](crate::model::PackageSummary).
 pub mod package_summary {
-
+    
     /// A builder for [`PackageSummary`](crate::model::PackageSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<crate::model::PackageFormat>,
         pub(crate) namespace: std::option::Option<std::string::String>,
         pub(crate) package: std::option::Option<std::string::String>,
-        pub(crate) origin_configuration:
-            std::option::Option<crate::model::PackageOriginConfiguration>,
+        pub(crate) origin_configuration: std::option::Option<crate::model::PackageOriginConfiguration>,
     }
     impl Builder {
         /// <p> The format of the package. </p>
@@ -2743,32 +2572,27 @@ pub mod package_summary {
             self
         }
         /// <p> The format of the package. </p>
-        pub fn set_format(
-            mut self,
-            input: std::option::Option<crate::model::PackageFormat>,
-        ) -> Self {
-            self.format = input;
-            self
+        pub fn set_format(mut self, input: std::option::Option<crate::model::PackageFormat>) -> Self {
+            self.format = input; self
         }
-        /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
-        /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+        /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p> 
+        /// <ul> 
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
-        /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+        /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p> 
+        /// <ul> 
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p> The name of the package. </p>
         pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2777,35 +2601,33 @@ pub mod package_summary {
         }
         /// <p> The name of the package. </p>
         pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package = input;
-            self
+            self.package = input; self
         }
         /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the upstream and publish package origin restrictions.</p>
-        pub fn origin_configuration(
-            mut self,
-            input: crate::model::PackageOriginConfiguration,
-        ) -> Self {
+        pub fn origin_configuration(mut self, input: crate::model::PackageOriginConfiguration) -> Self {
             self.origin_configuration = Some(input);
             self
         }
         /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the upstream and publish package origin restrictions.</p>
-        pub fn set_origin_configuration(
-            mut self,
-            input: std::option::Option<crate::model::PackageOriginConfiguration>,
-        ) -> Self {
-            self.origin_configuration = input;
-            self
+        pub fn set_origin_configuration(mut self, input: std::option::Option<crate::model::PackageOriginConfiguration>) -> Self {
+            self.origin_configuration = input; self
         }
         /// Consumes the builder and constructs a [`PackageSummary`](crate::model::PackageSummary).
         pub fn build(self) -> crate::model::PackageSummary {
             crate::model::PackageSummary {
-                format: self.format,
-                namespace: self.namespace,
-                package: self.package,
-                origin_configuration: self.origin_configuration,
+                format: self.format
+                ,
+                namespace: self.namespace
+                ,
+                package: self.package
+                ,
+                origin_configuration: self.origin_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl PackageSummary {
     /// Creates a new builder-style object to manufacture [`PackageSummary`](crate::model::PackageSummary).
@@ -2817,7 +2639,7 @@ impl PackageSummary {
 /// <p> Information about a domain, including its name, Amazon Resource Name (ARN), and status. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListDomains.html">ListDomains</a> operation returns a list of <code>DomainSummary</code> objects. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainSummary {
+pub struct DomainSummary  {
     /// <p> The name of the domain. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2839,33 +2661,33 @@ pub struct DomainSummary {
 }
 impl DomainSummary {
     /// <p> The name of the domain. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p> The ARN of the domain. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> A string that contains the status of the domain. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DomainStatus> {
         self.status.as_ref()
     }
     /// <p> A timestamp that contains the date and time the domain was created. </p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p> The key used to encrypt the domain. </p>
-    pub fn encryption_key(&self) -> std::option::Option<&str> {
+    pub fn encryption_key(&self) -> std::option::Option<& str> {
         self.encryption_key.as_deref()
     }
 }
 /// See [`DomainSummary`](crate::model::DomainSummary).
 pub mod domain_summary {
-
+    
     /// A builder for [`DomainSummary`](crate::model::DomainSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2884,8 +2706,7 @@ pub mod domain_summary {
         }
         /// <p> The name of the domain. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2894,8 +2715,7 @@ pub mod domain_summary {
         }
         /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// <p> The ARN of the domain. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2904,8 +2724,7 @@ pub mod domain_summary {
         }
         /// <p> The ARN of the domain. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p> A string that contains the status of the domain. </p>
         pub fn status(mut self, input: crate::model::DomainStatus) -> Self {
@@ -2913,12 +2732,8 @@ pub mod domain_summary {
             self
         }
         /// <p> A string that contains the status of the domain. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DomainStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DomainStatus>) -> Self {
+            self.status = input; self
         }
         /// <p> A timestamp that contains the date and time the domain was created. </p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2926,12 +2741,8 @@ pub mod domain_summary {
             self
         }
         /// <p> A timestamp that contains the date and time the domain was created. </p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// <p> The key used to encrypt the domain. </p>
         pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2939,25 +2750,29 @@ pub mod domain_summary {
             self
         }
         /// <p> The key used to encrypt the domain. </p>
-        pub fn set_encryption_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_key = input;
-            self
+        pub fn set_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_key = input; self
         }
         /// Consumes the builder and constructs a [`DomainSummary`](crate::model::DomainSummary).
         pub fn build(self) -> crate::model::DomainSummary {
             crate::model::DomainSummary {
-                name: self.name,
-                owner: self.owner,
-                arn: self.arn,
-                status: self.status,
-                created_time: self.created_time,
-                encryption_key: self.encryption_key,
+                name: self.name
+                ,
+                owner: self.owner
+                ,
+                arn: self.arn
+                ,
+                status: self.status
+                ,
+                created_time: self.created_time
+                ,
+                encryption_key: self.encryption_key
+                ,
             }
         }
     }
+    
+    
 }
 impl DomainSummary {
     /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::model::DomainSummary).
@@ -2972,9 +2787,9 @@ impl DomainSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let domainstatus = unimplemented!();
 /// match domainstatus {
@@ -2996,58 +2811,52 @@ impl DomainSummary {
 /// Specifically, when `domainstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DomainStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DomainStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Deleted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DomainStatus {
     fn from(s: &str) -> Self {
         match s {
             "Active" => DomainStatus::Active,
             "Deleted" => DomainStatus::Deleted,
-            other => DomainStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DomainStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DomainStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DomainStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DomainStatus::from(s))
+                }
+            }
 impl DomainStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DomainStatus::Active => "Active",
             DomainStatus::Deleted => "Deleted",
-            DomainStatus::Unknown(value) => value.as_str(),
+            DomainStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Active", "Deleted"]
+        &[
+            "Active", "Deleted"
+        ]
     }
 }
 impl AsRef<str> for DomainStatus {
@@ -3059,15 +2868,15 @@ impl AsRef<str> for DomainStatus {
 /// <p> Details about a package version. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackageVersionDescription {
+pub struct PackageVersionDescription  {
     /// <p> The format of the package version. </p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p>
-    /// <ul>
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
+    /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p> 
+    /// <ul> 
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -3107,66 +2916,66 @@ pub struct PackageVersionDescription {
 }
 impl PackageVersionDescription {
     /// <p> The format of the package version. </p>
-    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p>
-    /// <ul>
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
+    /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p> 
+    /// <ul> 
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p> The name of the requested package. </p>
-    pub fn package_name(&self) -> std::option::Option<&str> {
+    pub fn package_name(&self) -> std::option::Option<& str> {
         self.package_name.as_deref()
     }
     /// <p> The name of the package that is displayed. The <code>displayName</code> varies depending on the package version's format. For example, if an npm package is named <code>ui</code>, is in the namespace <code>vue</code>, and has the format <code>npm</code>, then the <code>displayName</code> is <code>@vue/ui</code>. </p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p> The version of the package. </p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p> A summary of the package version. The summary is extracted from the package. The information in and detail level of the summary depends on the package version's format. </p>
-    pub fn summary(&self) -> std::option::Option<&str> {
+    pub fn summary(&self) -> std::option::Option<& str> {
         self.summary.as_deref()
     }
     /// <p> The homepage associated with the package. </p>
-    pub fn home_page(&self) -> std::option::Option<&str> {
+    pub fn home_page(&self) -> std::option::Option<& str> {
         self.home_page.as_deref()
     }
     /// <p> The repository for the source code in the package version, or the source code used to build it. </p>
-    pub fn source_code_repository(&self) -> std::option::Option<&str> {
+    pub fn source_code_repository(&self) -> std::option::Option<& str> {
         self.source_code_repository.as_deref()
     }
     /// <p> A timestamp that contains the date and time the package version was published. </p>
-    pub fn published_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn published_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.published_time.as_ref()
     }
     /// <p> Information about licenses associated with the package version. </p>
-    pub fn licenses(&self) -> std::option::Option<&[crate::model::LicenseInfo]> {
+    pub fn licenses(&self) -> std::option::Option<& [crate::model::LicenseInfo]> {
         self.licenses.as_deref()
     }
     /// <p> The revision of the package version. </p>
-    pub fn revision(&self) -> std::option::Option<&str> {
+    pub fn revision(&self) -> std::option::Option<& str> {
         self.revision.as_deref()
     }
     /// <p> A string that contains the status of the package version. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::PackageVersionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::PackageVersionStatus> {
         self.status.as_ref()
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
-    pub fn origin(&self) -> std::option::Option<&crate::model::PackageVersionOrigin> {
+    pub fn origin(&self) -> std::option::Option<& crate::model::PackageVersionOrigin> {
         self.origin.as_ref()
     }
 }
 /// See [`PackageVersionDescription`](crate::model::PackageVersionDescription).
 pub mod package_version_description {
-
+    
     /// A builder for [`PackageVersionDescription`](crate::model::PackageVersionDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3191,32 +3000,27 @@ pub mod package_version_description {
             self
         }
         /// <p> The format of the package version. </p>
-        pub fn set_format(
-            mut self,
-            input: std::option::Option<crate::model::PackageFormat>,
-        ) -> Self {
-            self.format = input;
-            self
+        pub fn set_format(mut self, input: std::option::Option<crate::model::PackageFormat>) -> Self {
+            self.format = input; self
         }
-        /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p>
-        /// <ul>
-        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
-        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
+        /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p> 
+        /// <ul> 
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p>
-        /// <ul>
-        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
-        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
+        /// <p>The namespace of the package version. The package version component that specifies its namespace depends on its type. For example:</p> 
+        /// <ul> 
+        /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
+        /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
+        /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p> The name of the requested package. </p>
         pub fn package_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3225,8 +3029,7 @@ pub mod package_version_description {
         }
         /// <p> The name of the requested package. </p>
         pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.package_name = input;
-            self
+            self.package_name = input; self
         }
         /// <p> The name of the package that is displayed. The <code>displayName</code> varies depending on the package version's format. For example, if an npm package is named <code>ui</code>, is in the namespace <code>vue</code>, and has the format <code>npm</code>, then the <code>displayName</code> is <code>@vue/ui</code>. </p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3235,8 +3038,7 @@ pub mod package_version_description {
         }
         /// <p> The name of the package that is displayed. The <code>displayName</code> varies depending on the package version's format. For example, if an npm package is named <code>ui</code>, is in the namespace <code>vue</code>, and has the format <code>npm</code>, then the <code>displayName</code> is <code>@vue/ui</code>. </p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p> The version of the package. </p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3245,8 +3047,7 @@ pub mod package_version_description {
         }
         /// <p> The version of the package. </p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p> A summary of the package version. The summary is extracted from the package. The information in and detail level of the summary depends on the package version's format. </p>
         pub fn summary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3255,8 +3056,7 @@ pub mod package_version_description {
         }
         /// <p> A summary of the package version. The summary is extracted from the package. The information in and detail level of the summary depends on the package version's format. </p>
         pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.summary = input;
-            self
+            self.summary = input; self
         }
         /// <p> The homepage associated with the package. </p>
         pub fn home_page(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3265,8 +3065,7 @@ pub mod package_version_description {
         }
         /// <p> The homepage associated with the package. </p>
         pub fn set_home_page(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.home_page = input;
-            self
+            self.home_page = input; self
         }
         /// <p> The repository for the source code in the package version, or the source code used to build it. </p>
         pub fn source_code_repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3274,12 +3073,8 @@ pub mod package_version_description {
             self
         }
         /// <p> The repository for the source code in the package version, or the source code used to build it. </p>
-        pub fn set_source_code_repository(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_code_repository = input;
-            self
+        pub fn set_source_code_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_code_repository = input; self
         }
         /// <p> A timestamp that contains the date and time the package version was published. </p>
         pub fn published_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3287,12 +3082,8 @@ pub mod package_version_description {
             self
         }
         /// <p> A timestamp that contains the date and time the package version was published. </p>
-        pub fn set_published_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.published_time = input;
-            self
+        pub fn set_published_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.published_time = input; self
         }
         /// Appends an item to `licenses`.
         ///
@@ -3301,17 +3092,13 @@ pub mod package_version_description {
         /// <p> Information about licenses associated with the package version. </p>
         pub fn licenses(mut self, input: crate::model::LicenseInfo) -> Self {
             let mut v = self.licenses.unwrap_or_default();
-            v.push(input);
-            self.licenses = Some(v);
-            self
+                            v.push(input);
+                            self.licenses = Some(v);
+                            self
         }
         /// <p> Information about licenses associated with the package version. </p>
-        pub fn set_licenses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::LicenseInfo>>,
-        ) -> Self {
-            self.licenses = input;
-            self
+        pub fn set_licenses(mut self, input: std::option::Option<std::vec::Vec<crate::model::LicenseInfo>>) -> Self {
+            self.licenses = input; self
         }
         /// <p> The revision of the package version. </p>
         pub fn revision(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3320,8 +3107,7 @@ pub mod package_version_description {
         }
         /// <p> The revision of the package version. </p>
         pub fn set_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision = input;
-            self
+            self.revision = input; self
         }
         /// <p> A string that contains the status of the package version. </p>
         pub fn status(mut self, input: crate::model::PackageVersionStatus) -> Self {
@@ -3329,12 +3115,8 @@ pub mod package_version_description {
             self
         }
         /// <p> A string that contains the status of the package version. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::PackageVersionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::PackageVersionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
         pub fn origin(mut self, input: crate::model::PackageVersionOrigin) -> Self {
@@ -3342,32 +3124,43 @@ pub mod package_version_description {
             self
         }
         /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
-        pub fn set_origin(
-            mut self,
-            input: std::option::Option<crate::model::PackageVersionOrigin>,
-        ) -> Self {
-            self.origin = input;
-            self
+        pub fn set_origin(mut self, input: std::option::Option<crate::model::PackageVersionOrigin>) -> Self {
+            self.origin = input; self
         }
         /// Consumes the builder and constructs a [`PackageVersionDescription`](crate::model::PackageVersionDescription).
         pub fn build(self) -> crate::model::PackageVersionDescription {
             crate::model::PackageVersionDescription {
-                format: self.format,
-                namespace: self.namespace,
-                package_name: self.package_name,
-                display_name: self.display_name,
-                version: self.version,
-                summary: self.summary,
-                home_page: self.home_page,
-                source_code_repository: self.source_code_repository,
-                published_time: self.published_time,
-                licenses: self.licenses,
-                revision: self.revision,
-                status: self.status,
-                origin: self.origin,
+                format: self.format
+                ,
+                namespace: self.namespace
+                ,
+                package_name: self.package_name
+                ,
+                display_name: self.display_name
+                ,
+                version: self.version
+                ,
+                summary: self.summary
+                ,
+                home_page: self.home_page
+                ,
+                source_code_repository: self.source_code_repository
+                ,
+                published_time: self.published_time
+                ,
+                licenses: self.licenses
+                ,
+                revision: self.revision
+                ,
+                status: self.status
+                ,
+                origin: self.origin
+                ,
             }
         }
     }
+    
+    
 }
 impl PackageVersionDescription {
     /// Creates a new builder-style object to manufacture [`PackageVersionDescription`](crate::model::PackageVersionDescription).
@@ -3379,7 +3172,7 @@ impl PackageVersionDescription {
 /// <p> Details of the license data. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LicenseInfo {
+pub struct LicenseInfo  {
     /// <p> Name of the license. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3389,17 +3182,17 @@ pub struct LicenseInfo {
 }
 impl LicenseInfo {
     /// <p> Name of the license. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The URL for license data. </p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
 }
 /// See [`LicenseInfo`](crate::model::LicenseInfo).
 pub mod license_info {
-
+    
     /// A builder for [`LicenseInfo`](crate::model::LicenseInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3414,8 +3207,7 @@ pub mod license_info {
         }
         /// <p> Name of the license. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> The URL for license data. </p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3424,17 +3216,20 @@ pub mod license_info {
         }
         /// <p> The URL for license data. </p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// Consumes the builder and constructs a [`LicenseInfo`](crate::model::LicenseInfo).
         pub fn build(self) -> crate::model::LicenseInfo {
             crate::model::LicenseInfo {
-                name: self.name,
-                url: self.url,
+                name: self.name
+                ,
+                url: self.url
+                ,
             }
         }
     }
+    
+    
 }
 impl LicenseInfo {
     /// Creates a new builder-style object to manufacture [`LicenseInfo`](crate::model::LicenseInfo).
@@ -3446,15 +3241,15 @@ impl LicenseInfo {
 /// <p>Details about a package.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackageDescription {
+pub struct PackageDescription  {
     /// <p>A format that specifies the type of the package.</p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::model::PackageFormat>,
-    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
-    /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p> 
+    /// <ul> 
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -3467,40 +3262,37 @@ pub struct PackageDescription {
 }
 impl PackageDescription {
     /// <p>A format that specifies the type of the package.</p>
-    pub fn format(&self) -> std::option::Option<&crate::model::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::model::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
-    /// <ul>
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p> 
+    /// <ul> 
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the package.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The package origin configuration for the package.</p>
-    pub fn origin_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::PackageOriginConfiguration> {
+    pub fn origin_configuration(&self) -> std::option::Option<& crate::model::PackageOriginConfiguration> {
         self.origin_configuration.as_ref()
     }
 }
 /// See [`PackageDescription`](crate::model::PackageDescription).
 pub mod package_description {
-
+    
     /// A builder for [`PackageDescription`](crate::model::PackageDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) format: std::option::Option<crate::model::PackageFormat>,
         pub(crate) namespace: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) origin_configuration:
-            std::option::Option<crate::model::PackageOriginConfiguration>,
+        pub(crate) origin_configuration: std::option::Option<crate::model::PackageOriginConfiguration>,
     }
     impl Builder {
         /// <p>A format that specifies the type of the package.</p>
@@ -3509,32 +3301,27 @@ pub mod package_description {
             self
         }
         /// <p>A format that specifies the type of the package.</p>
-        pub fn set_format(
-            mut self,
-            input: std::option::Option<crate::model::PackageFormat>,
-        ) -> Self {
-            self.format = input;
-            self
+        pub fn set_format(mut self, input: std::option::Option<crate::model::PackageFormat>) -> Self {
+            self.format = input; self
         }
-        /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
-        /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+        /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p> 
+        /// <ul> 
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
         /// </ul>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
-        /// <ul>
-        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
-        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
-        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+        /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p> 
+        /// <ul> 
+        /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
+        /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
+        /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
         /// </ul>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>The name of the package.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3543,35 +3330,33 @@ pub mod package_description {
         }
         /// <p>The name of the package.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The package origin configuration for the package.</p>
-        pub fn origin_configuration(
-            mut self,
-            input: crate::model::PackageOriginConfiguration,
-        ) -> Self {
+        pub fn origin_configuration(mut self, input: crate::model::PackageOriginConfiguration) -> Self {
             self.origin_configuration = Some(input);
             self
         }
         /// <p>The package origin configuration for the package.</p>
-        pub fn set_origin_configuration(
-            mut self,
-            input: std::option::Option<crate::model::PackageOriginConfiguration>,
-        ) -> Self {
-            self.origin_configuration = input;
-            self
+        pub fn set_origin_configuration(mut self, input: std::option::Option<crate::model::PackageOriginConfiguration>) -> Self {
+            self.origin_configuration = input; self
         }
         /// Consumes the builder and constructs a [`PackageDescription`](crate::model::PackageDescription).
         pub fn build(self) -> crate::model::PackageDescription {
             crate::model::PackageDescription {
-                format: self.format,
-                namespace: self.namespace,
-                name: self.name,
-                origin_configuration: self.origin_configuration,
+                format: self.format
+                ,
+                namespace: self.namespace
+                ,
+                name: self.name
+                ,
+                origin_configuration: self.origin_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl PackageDescription {
     /// Creates a new builder-style object to manufacture [`PackageDescription`](crate::model::PackageDescription).
@@ -3583,7 +3368,7 @@ impl PackageDescription {
 /// <p> Information about a domain. A domain is a container for repositories. When you create a domain, it is empty until you add one or more repositories. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainDescription {
+pub struct DomainDescription  {
     /// <p> The name of the domain. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3614,27 +3399,27 @@ pub struct DomainDescription {
 }
 impl DomainDescription {
     /// <p> The name of the domain. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p> The Amazon Web Services account ID that owns the domain. </p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the domain. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p> The current status of a domain. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DomainStatus> {
         self.status.as_ref()
     }
     /// <p> A timestamp that represents the date and time the domain was created. </p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p> The ARN of an Key Management Service (KMS) key associated with a domain. </p>
-    pub fn encryption_key(&self) -> std::option::Option<&str> {
+    pub fn encryption_key(&self) -> std::option::Option<& str> {
         self.encryption_key.as_deref()
     }
     /// <p> The number of repositories in the domain. </p>
@@ -3646,13 +3431,13 @@ impl DomainDescription {
         self.asset_size_bytes
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store package assets in the domain.</p>
-    pub fn s3_bucket_arn(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_arn(&self) -> std::option::Option<& str> {
         self.s3_bucket_arn.as_deref()
     }
 }
 /// See [`DomainDescription`](crate::model::DomainDescription).
 pub mod domain_description {
-
+    
     /// A builder for [`DomainDescription`](crate::model::DomainDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3674,8 +3459,7 @@ pub mod domain_description {
         }
         /// <p> The name of the domain. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p> The Amazon Web Services account ID that owns the domain. </p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3684,8 +3468,7 @@ pub mod domain_description {
         }
         /// <p> The Amazon Web Services account ID that owns the domain. </p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// <p> The Amazon Resource Name (ARN) of the domain. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3694,8 +3477,7 @@ pub mod domain_description {
         }
         /// <p> The Amazon Resource Name (ARN) of the domain. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p> The current status of a domain. </p>
         pub fn status(mut self, input: crate::model::DomainStatus) -> Self {
@@ -3703,12 +3485,8 @@ pub mod domain_description {
             self
         }
         /// <p> The current status of a domain. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DomainStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DomainStatus>) -> Self {
+            self.status = input; self
         }
         /// <p> A timestamp that represents the date and time the domain was created. </p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3716,12 +3494,8 @@ pub mod domain_description {
             self
         }
         /// <p> A timestamp that represents the date and time the domain was created. </p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// <p> The ARN of an Key Management Service (KMS) key associated with a domain. </p>
         pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3729,12 +3503,8 @@ pub mod domain_description {
             self
         }
         /// <p> The ARN of an Key Management Service (KMS) key associated with a domain. </p>
-        pub fn set_encryption_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.encryption_key = input;
-            self
+        pub fn set_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.encryption_key = input; self
         }
         /// <p> The number of repositories in the domain. </p>
         pub fn repository_count(mut self, input: i32) -> Self {
@@ -3743,8 +3513,7 @@ pub mod domain_description {
         }
         /// <p> The number of repositories in the domain. </p>
         pub fn set_repository_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.repository_count = input;
-            self
+            self.repository_count = input; self
         }
         /// <p> The total size of all assets in the domain. </p>
         pub fn asset_size_bytes(mut self, input: i64) -> Self {
@@ -3753,8 +3522,7 @@ pub mod domain_description {
         }
         /// <p> The total size of all assets in the domain. </p>
         pub fn set_asset_size_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.asset_size_bytes = input;
-            self
+            self.asset_size_bytes = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store package assets in the domain.</p>
         pub fn s3_bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3762,28 +3530,37 @@ pub mod domain_description {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket that is used to store package assets in the domain.</p>
-        pub fn set_s3_bucket_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_bucket_arn = input;
-            self
+        pub fn set_s3_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket_arn = input; self
         }
         /// Consumes the builder and constructs a [`DomainDescription`](crate::model::DomainDescription).
         pub fn build(self) -> crate::model::DomainDescription {
             crate::model::DomainDescription {
-                name: self.name,
-                owner: self.owner,
-                arn: self.arn,
-                status: self.status,
-                created_time: self.created_time,
-                encryption_key: self.encryption_key,
-                repository_count: self.repository_count.unwrap_or_default(),
-                asset_size_bytes: self.asset_size_bytes.unwrap_or_default(),
-                s3_bucket_arn: self.s3_bucket_arn,
+                name: self.name
+                ,
+                owner: self.owner
+                ,
+                arn: self.arn
+                ,
+                status: self.status
+                ,
+                created_time: self.created_time
+                ,
+                encryption_key: self.encryption_key
+                ,
+                repository_count: self.repository_count
+                    .unwrap_or_default()
+                ,
+                asset_size_bytes: self.asset_size_bytes
+                    .unwrap_or_default()
+                ,
+                s3_bucket_arn: self.s3_bucket_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DomainDescription {
     /// Creates a new builder-style object to manufacture [`DomainDescription`](crate::model::DomainDescription).
@@ -3791,3 +3568,4 @@ impl DomainDescription {
         crate::model::domain_description::Builder::default()
     }
 }
+

@@ -2,19 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -26,19 +31,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -50,19 +60,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRecommendationFeedbackOutput {}
+pub struct PutRecommendationFeedbackOutput  {
+}
 /// See [`PutRecommendationFeedbackOutput`](crate::output::PutRecommendationFeedbackOutput).
 pub mod put_recommendation_feedback_output {
-
+    
     /// A builder for [`PutRecommendationFeedbackOutput`](crate::output::PutRecommendationFeedbackOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`PutRecommendationFeedbackOutput`](crate::output::PutRecommendationFeedbackOutput).
         pub fn build(self) -> crate::output::PutRecommendationFeedbackOutput {
-            crate::output::PutRecommendationFeedbackOutput {}
+            crate::output::PutRecommendationFeedbackOutput {
+            }
         }
     }
+    
+    
 }
 impl PutRecommendationFeedbackOutput {
     /// Creates a new builder-style object to manufacture [`PutRecommendationFeedbackOutput`](crate::output::PutRecommendationFeedbackOutput).
@@ -74,78 +89,67 @@ impl PutRecommendationFeedbackOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
-    /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
-    /// <ul>
-    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
-    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
+pub struct ListTagsForResourceOutput  {
+    /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> 
+    /// <ul> 
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> 
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
-    /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
-    /// <ul>
-    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
-    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
+    /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> 
+    /// <ul> 
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> 
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> 
     /// </ul>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
-        /// <ul>
-        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
-        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
+        /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> 
+        /// <ul> 
+        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> 
+        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> 
         /// </ul>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
-        /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
-        /// <ul>
-        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
-        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
+        /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> 
+        /// <ul> 
+        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> 
+        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> 
         /// </ul>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -157,35 +161,31 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRepositoryAssociationsOutput {
+pub struct ListRepositoryAssociationsOutput  {
     /// <p>A list of repository associations that meet the criteria of the request.</p>
     #[doc(hidden)]
-    pub repository_association_summaries:
-        std::option::Option<std::vec::Vec<crate::model::RepositoryAssociationSummary>>,
+    pub repository_association_summaries: std::option::Option<std::vec::Vec<crate::model::RepositoryAssociationSummary>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request. When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRepositoryAssociationsOutput {
     /// <p>A list of repository associations that meet the criteria of the request.</p>
-    pub fn repository_association_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::RepositoryAssociationSummary]> {
+    pub fn repository_association_summaries(&self) -> std::option::Option<& [crate::model::RepositoryAssociationSummary]> {
         self.repository_association_summaries.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request. When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListRepositoryAssociationsOutput`](crate::output::ListRepositoryAssociationsOutput).
 pub mod list_repository_associations_output {
-
+    
     /// A builder for [`ListRepositoryAssociationsOutput`](crate::output::ListRepositoryAssociationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) repository_association_summaries:
-            std::option::Option<std::vec::Vec<crate::model::RepositoryAssociationSummary>>,
+        pub(crate) repository_association_summaries: std::option::Option<std::vec::Vec<crate::model::RepositoryAssociationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -194,22 +194,15 @@ pub mod list_repository_associations_output {
         /// To override the contents of this collection use [`set_repository_association_summaries`](Self::set_repository_association_summaries).
         ///
         /// <p>A list of repository associations that meet the criteria of the request.</p>
-        pub fn repository_association_summaries(
-            mut self,
-            input: crate::model::RepositoryAssociationSummary,
-        ) -> Self {
+        pub fn repository_association_summaries(mut self, input: crate::model::RepositoryAssociationSummary) -> Self {
             let mut v = self.repository_association_summaries.unwrap_or_default();
-            v.push(input);
-            self.repository_association_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.repository_association_summaries = Some(v);
+                            self
         }
         /// <p>A list of repository associations that meet the criteria of the request.</p>
-        pub fn set_repository_association_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RepositoryAssociationSummary>>,
-        ) -> Self {
-            self.repository_association_summaries = input;
-            self
+        pub fn set_repository_association_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::RepositoryAssociationSummary>>) -> Self {
+            self.repository_association_summaries = input; self
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request. When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -218,17 +211,20 @@ pub mod list_repository_associations_output {
         }
         /// <p>The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request. When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRepositoryAssociationsOutput`](crate::output::ListRepositoryAssociationsOutput).
         pub fn build(self) -> crate::output::ListRepositoryAssociationsOutput {
             crate::output::ListRepositoryAssociationsOutput {
-                repository_association_summaries: self.repository_association_summaries,
-                next_token: self.next_token,
+                repository_association_summaries: self.repository_association_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRepositoryAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListRepositoryAssociationsOutput`](crate::output::ListRepositoryAssociationsOutput).
@@ -240,35 +236,31 @@ impl ListRepositoryAssociationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRecommendationsOutput {
+pub struct ListRecommendationsOutput  {
     /// <p>List of recommendations for the requested code review.</p>
     #[doc(hidden)]
-    pub recommendation_summaries:
-        std::option::Option<std::vec::Vec<crate::model::RecommendationSummary>>,
+    pub recommendation_summaries: std::option::Option<std::vec::Vec<crate::model::RecommendationSummary>>,
     /// <p>Pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRecommendationsOutput {
     /// <p>List of recommendations for the requested code review.</p>
-    pub fn recommendation_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::RecommendationSummary]> {
+    pub fn recommendation_summaries(&self) -> std::option::Option<& [crate::model::RecommendationSummary]> {
         self.recommendation_summaries.as_deref()
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
 pub mod list_recommendations_output {
-
+    
     /// A builder for [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) recommendation_summaries:
-            std::option::Option<std::vec::Vec<crate::model::RecommendationSummary>>,
+        pub(crate) recommendation_summaries: std::option::Option<std::vec::Vec<crate::model::RecommendationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -277,22 +269,15 @@ pub mod list_recommendations_output {
         /// To override the contents of this collection use [`set_recommendation_summaries`](Self::set_recommendation_summaries).
         ///
         /// <p>List of recommendations for the requested code review.</p>
-        pub fn recommendation_summaries(
-            mut self,
-            input: crate::model::RecommendationSummary,
-        ) -> Self {
+        pub fn recommendation_summaries(mut self, input: crate::model::RecommendationSummary) -> Self {
             let mut v = self.recommendation_summaries.unwrap_or_default();
-            v.push(input);
-            self.recommendation_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.recommendation_summaries = Some(v);
+                            self
         }
         /// <p>List of recommendations for the requested code review.</p>
-        pub fn set_recommendation_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RecommendationSummary>>,
-        ) -> Self {
-            self.recommendation_summaries = input;
-            self
+        pub fn set_recommendation_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecommendationSummary>>) -> Self {
+            self.recommendation_summaries = input; self
         }
         /// <p>Pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -301,17 +286,20 @@ pub mod list_recommendations_output {
         }
         /// <p>Pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
         pub fn build(self) -> crate::output::ListRecommendationsOutput {
             crate::output::ListRecommendationsOutput {
-                recommendation_summaries: self.recommendation_summaries,
-                next_token: self.next_token,
+                recommendation_summaries: self.recommendation_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`ListRecommendationsOutput`](crate::output::ListRecommendationsOutput).
@@ -323,35 +311,31 @@ impl ListRecommendationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRecommendationFeedbackOutput {
+pub struct ListRecommendationFeedbackOutput  {
     /// <p>Recommendation feedback summaries corresponding to the code review ARN.</p>
     #[doc(hidden)]
-    pub recommendation_feedback_summaries:
-        std::option::Option<std::vec::Vec<crate::model::RecommendationFeedbackSummary>>,
+    pub recommendation_feedback_summaries: std::option::Option<std::vec::Vec<crate::model::RecommendationFeedbackSummary>>,
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListRecommendationFeedbackOutput {
     /// <p>Recommendation feedback summaries corresponding to the code review ARN.</p>
-    pub fn recommendation_feedback_summaries(
-        &self,
-    ) -> std::option::Option<&[crate::model::RecommendationFeedbackSummary]> {
+    pub fn recommendation_feedback_summaries(&self) -> std::option::Option<& [crate::model::RecommendationFeedbackSummary]> {
         self.recommendation_feedback_summaries.as_deref()
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListRecommendationFeedbackOutput`](crate::output::ListRecommendationFeedbackOutput).
 pub mod list_recommendation_feedback_output {
-
+    
     /// A builder for [`ListRecommendationFeedbackOutput`](crate::output::ListRecommendationFeedbackOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) recommendation_feedback_summaries:
-            std::option::Option<std::vec::Vec<crate::model::RecommendationFeedbackSummary>>,
+        pub(crate) recommendation_feedback_summaries: std::option::Option<std::vec::Vec<crate::model::RecommendationFeedbackSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -360,22 +344,15 @@ pub mod list_recommendation_feedback_output {
         /// To override the contents of this collection use [`set_recommendation_feedback_summaries`](Self::set_recommendation_feedback_summaries).
         ///
         /// <p>Recommendation feedback summaries corresponding to the code review ARN.</p>
-        pub fn recommendation_feedback_summaries(
-            mut self,
-            input: crate::model::RecommendationFeedbackSummary,
-        ) -> Self {
+        pub fn recommendation_feedback_summaries(mut self, input: crate::model::RecommendationFeedbackSummary) -> Self {
             let mut v = self.recommendation_feedback_summaries.unwrap_or_default();
-            v.push(input);
-            self.recommendation_feedback_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.recommendation_feedback_summaries = Some(v);
+                            self
         }
         /// <p>Recommendation feedback summaries corresponding to the code review ARN.</p>
-        pub fn set_recommendation_feedback_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RecommendationFeedbackSummary>>,
-        ) -> Self {
-            self.recommendation_feedback_summaries = input;
-            self
+        pub fn set_recommendation_feedback_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::RecommendationFeedbackSummary>>) -> Self {
+            self.recommendation_feedback_summaries = input; self
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -384,17 +361,20 @@ pub mod list_recommendation_feedback_output {
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRecommendationFeedbackOutput`](crate::output::ListRecommendationFeedbackOutput).
         pub fn build(self) -> crate::output::ListRecommendationFeedbackOutput {
             crate::output::ListRecommendationFeedbackOutput {
-                recommendation_feedback_summaries: self.recommendation_feedback_summaries,
-                next_token: self.next_token,
+                recommendation_feedback_summaries: self.recommendation_feedback_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRecommendationFeedbackOutput {
     /// Creates a new builder-style object to manufacture [`ListRecommendationFeedbackOutput`](crate::output::ListRecommendationFeedbackOutput).
@@ -406,7 +386,7 @@ impl ListRecommendationFeedbackOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCodeReviewsOutput {
+pub struct ListCodeReviewsOutput  {
     /// <p>A list of code reviews that meet the criteria of the request.</p>
     #[doc(hidden)]
     pub code_review_summaries: std::option::Option<std::vec::Vec<crate::model::CodeReviewSummary>>,
@@ -416,22 +396,21 @@ pub struct ListCodeReviewsOutput {
 }
 impl ListCodeReviewsOutput {
     /// <p>A list of code reviews that meet the criteria of the request.</p>
-    pub fn code_review_summaries(&self) -> std::option::Option<&[crate::model::CodeReviewSummary]> {
+    pub fn code_review_summaries(&self) -> std::option::Option<& [crate::model::CodeReviewSummary]> {
         self.code_review_summaries.as_deref()
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCodeReviewsOutput`](crate::output::ListCodeReviewsOutput).
 pub mod list_code_reviews_output {
-
+    
     /// A builder for [`ListCodeReviewsOutput`](crate::output::ListCodeReviewsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) code_review_summaries:
-            std::option::Option<std::vec::Vec<crate::model::CodeReviewSummary>>,
+        pub(crate) code_review_summaries: std::option::Option<std::vec::Vec<crate::model::CodeReviewSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -442,17 +421,13 @@ pub mod list_code_reviews_output {
         /// <p>A list of code reviews that meet the criteria of the request.</p>
         pub fn code_review_summaries(mut self, input: crate::model::CodeReviewSummary) -> Self {
             let mut v = self.code_review_summaries.unwrap_or_default();
-            v.push(input);
-            self.code_review_summaries = Some(v);
-            self
+                            v.push(input);
+                            self.code_review_summaries = Some(v);
+                            self
         }
         /// <p>A list of code reviews that meet the criteria of the request.</p>
-        pub fn set_code_review_summaries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CodeReviewSummary>>,
-        ) -> Self {
-            self.code_review_summaries = input;
-            self
+        pub fn set_code_review_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::model::CodeReviewSummary>>) -> Self {
+            self.code_review_summaries = input; self
         }
         /// <p>Pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -461,17 +436,20 @@ pub mod list_code_reviews_output {
         }
         /// <p>Pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCodeReviewsOutput`](crate::output::ListCodeReviewsOutput).
         pub fn build(self) -> crate::output::ListCodeReviewsOutput {
             crate::output::ListCodeReviewsOutput {
-                code_review_summaries: self.code_review_summaries,
-                next_token: self.next_token,
+                code_review_summaries: self.code_review_summaries
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCodeReviewsOutput {
     /// Creates a new builder-style object to manufacture [`ListCodeReviewsOutput`](crate::output::ListCodeReviewsOutput).
@@ -483,107 +461,86 @@ impl ListCodeReviewsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateRepositoryOutput {
+pub struct DisassociateRepositoryOutput  {
     /// <p>Information about the disassociated repository.</p>
     #[doc(hidden)]
     pub repository_association: std::option::Option<crate::model::RepositoryAssociation>,
-    /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
-    /// <ul>
-    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
-    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
+    /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> 
+    /// <ul> 
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> 
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DisassociateRepositoryOutput {
     /// <p>Information about the disassociated repository.</p>
-    pub fn repository_association(
-        &self,
-    ) -> std::option::Option<&crate::model::RepositoryAssociation> {
+    pub fn repository_association(&self) -> std::option::Option<& crate::model::RepositoryAssociation> {
         self.repository_association.as_ref()
     }
-    /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
-    /// <ul>
-    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
-    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
+    /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> 
+    /// <ul> 
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> 
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> 
     /// </ul>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`DisassociateRepositoryOutput`](crate::output::DisassociateRepositoryOutput).
 pub mod disassociate_repository_output {
-
+    
     /// A builder for [`DisassociateRepositoryOutput`](crate::output::DisassociateRepositoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_association: std::option::Option<crate::model::RepositoryAssociation>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Information about the disassociated repository.</p>
-        pub fn repository_association(
-            mut self,
-            input: crate::model::RepositoryAssociation,
-        ) -> Self {
+        pub fn repository_association(mut self, input: crate::model::RepositoryAssociation) -> Self {
             self.repository_association = Some(input);
             self
         }
         /// <p>Information about the disassociated repository.</p>
-        pub fn set_repository_association(
-            mut self,
-            input: std::option::Option<crate::model::RepositoryAssociation>,
-        ) -> Self {
-            self.repository_association = input;
-            self
+        pub fn set_repository_association(mut self, input: std::option::Option<crate::model::RepositoryAssociation>) -> Self {
+            self.repository_association = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
-        /// <ul>
-        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
-        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
+        /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> 
+        /// <ul> 
+        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> 
+        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> 
         /// </ul>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
-        /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
-        /// <ul>
-        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
-        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
+        /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> 
+        /// <ul> 
+        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> 
+        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> 
         /// </ul>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`DisassociateRepositoryOutput`](crate::output::DisassociateRepositoryOutput).
         pub fn build(self) -> crate::output::DisassociateRepositoryOutput {
             crate::output::DisassociateRepositoryOutput {
-                repository_association: self.repository_association,
-                tags: self.tags,
+                repository_association: self.repository_association
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl DisassociateRepositoryOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateRepositoryOutput`](crate::output::DisassociateRepositoryOutput).
@@ -595,107 +552,86 @@ impl DisassociateRepositoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRepositoryAssociationOutput {
+pub struct DescribeRepositoryAssociationOutput  {
     /// <p>Information about the repository association.</p>
     #[doc(hidden)]
     pub repository_association: std::option::Option<crate::model::RepositoryAssociation>,
-    /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
-    /// <ul>
-    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
-    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
+    /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> 
+    /// <ul> 
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> 
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DescribeRepositoryAssociationOutput {
     /// <p>Information about the repository association.</p>
-    pub fn repository_association(
-        &self,
-    ) -> std::option::Option<&crate::model::RepositoryAssociation> {
+    pub fn repository_association(&self) -> std::option::Option<& crate::model::RepositoryAssociation> {
         self.repository_association.as_ref()
     }
-    /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
-    /// <ul>
-    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
-    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
+    /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> 
+    /// <ul> 
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> 
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> 
     /// </ul>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`DescribeRepositoryAssociationOutput`](crate::output::DescribeRepositoryAssociationOutput).
 pub mod describe_repository_association_output {
-
+    
     /// A builder for [`DescribeRepositoryAssociationOutput`](crate::output::DescribeRepositoryAssociationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_association: std::option::Option<crate::model::RepositoryAssociation>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Information about the repository association.</p>
-        pub fn repository_association(
-            mut self,
-            input: crate::model::RepositoryAssociation,
-        ) -> Self {
+        pub fn repository_association(mut self, input: crate::model::RepositoryAssociation) -> Self {
             self.repository_association = Some(input);
             self
         }
         /// <p>Information about the repository association.</p>
-        pub fn set_repository_association(
-            mut self,
-            input: std::option::Option<crate::model::RepositoryAssociation>,
-        ) -> Self {
-            self.repository_association = input;
-            self
+        pub fn set_repository_association(mut self, input: std::option::Option<crate::model::RepositoryAssociation>) -> Self {
+            self.repository_association = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
-        /// <ul>
-        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
-        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
+        /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> 
+        /// <ul> 
+        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> 
+        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> 
         /// </ul>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
-        /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
-        /// <ul>
-        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
-        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
+        /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> 
+        /// <ul> 
+        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> 
+        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> 
         /// </ul>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`DescribeRepositoryAssociationOutput`](crate::output::DescribeRepositoryAssociationOutput).
         pub fn build(self) -> crate::output::DescribeRepositoryAssociationOutput {
             crate::output::DescribeRepositoryAssociationOutput {
-                repository_association: self.repository_association,
-                tags: self.tags,
+                repository_association: self.repository_association
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeRepositoryAssociationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRepositoryAssociationOutput`](crate::output::DescribeRepositoryAssociationOutput).
@@ -707,52 +643,45 @@ impl DescribeRepositoryAssociationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRecommendationFeedbackOutput {
+pub struct DescribeRecommendationFeedbackOutput  {
     /// <p>The recommendation feedback given by the user.</p>
     #[doc(hidden)]
     pub recommendation_feedback: std::option::Option<crate::model::RecommendationFeedback>,
 }
 impl DescribeRecommendationFeedbackOutput {
     /// <p>The recommendation feedback given by the user.</p>
-    pub fn recommendation_feedback(
-        &self,
-    ) -> std::option::Option<&crate::model::RecommendationFeedback> {
+    pub fn recommendation_feedback(&self) -> std::option::Option<& crate::model::RecommendationFeedback> {
         self.recommendation_feedback.as_ref()
     }
 }
 /// See [`DescribeRecommendationFeedbackOutput`](crate::output::DescribeRecommendationFeedbackOutput).
 pub mod describe_recommendation_feedback_output {
-
+    
     /// A builder for [`DescribeRecommendationFeedbackOutput`](crate::output::DescribeRecommendationFeedbackOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) recommendation_feedback:
-            std::option::Option<crate::model::RecommendationFeedback>,
+        pub(crate) recommendation_feedback: std::option::Option<crate::model::RecommendationFeedback>,
     }
     impl Builder {
         /// <p>The recommendation feedback given by the user.</p>
-        pub fn recommendation_feedback(
-            mut self,
-            input: crate::model::RecommendationFeedback,
-        ) -> Self {
+        pub fn recommendation_feedback(mut self, input: crate::model::RecommendationFeedback) -> Self {
             self.recommendation_feedback = Some(input);
             self
         }
         /// <p>The recommendation feedback given by the user.</p>
-        pub fn set_recommendation_feedback(
-            mut self,
-            input: std::option::Option<crate::model::RecommendationFeedback>,
-        ) -> Self {
-            self.recommendation_feedback = input;
-            self
+        pub fn set_recommendation_feedback(mut self, input: std::option::Option<crate::model::RecommendationFeedback>) -> Self {
+            self.recommendation_feedback = input; self
         }
         /// Consumes the builder and constructs a [`DescribeRecommendationFeedbackOutput`](crate::output::DescribeRecommendationFeedbackOutput).
         pub fn build(self) -> crate::output::DescribeRecommendationFeedbackOutput {
             crate::output::DescribeRecommendationFeedbackOutput {
-                recommendation_feedback: self.recommendation_feedback,
+                recommendation_feedback: self.recommendation_feedback
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeRecommendationFeedbackOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRecommendationFeedbackOutput`](crate::output::DescribeRecommendationFeedbackOutput).
@@ -764,20 +693,20 @@ impl DescribeRecommendationFeedbackOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCodeReviewOutput {
+pub struct DescribeCodeReviewOutput  {
     /// <p>Information about the code review.</p>
     #[doc(hidden)]
     pub code_review: std::option::Option<crate::model::CodeReview>,
 }
 impl DescribeCodeReviewOutput {
     /// <p>Information about the code review.</p>
-    pub fn code_review(&self) -> std::option::Option<&crate::model::CodeReview> {
+    pub fn code_review(&self) -> std::option::Option<& crate::model::CodeReview> {
         self.code_review.as_ref()
     }
 }
 /// See [`DescribeCodeReviewOutput`](crate::output::DescribeCodeReviewOutput).
 pub mod describe_code_review_output {
-
+    
     /// A builder for [`DescribeCodeReviewOutput`](crate::output::DescribeCodeReviewOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -790,20 +719,19 @@ pub mod describe_code_review_output {
             self
         }
         /// <p>Information about the code review.</p>
-        pub fn set_code_review(
-            mut self,
-            input: std::option::Option<crate::model::CodeReview>,
-        ) -> Self {
-            self.code_review = input;
-            self
+        pub fn set_code_review(mut self, input: std::option::Option<crate::model::CodeReview>) -> Self {
+            self.code_review = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCodeReviewOutput`](crate::output::DescribeCodeReviewOutput).
         pub fn build(self) -> crate::output::DescribeCodeReviewOutput {
             crate::output::DescribeCodeReviewOutput {
-                code_review: self.code_review,
+                code_review: self.code_review
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCodeReviewOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCodeReviewOutput`](crate::output::DescribeCodeReviewOutput).
@@ -815,20 +743,20 @@ impl DescribeCodeReviewOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCodeReviewOutput {
+pub struct CreateCodeReviewOutput  {
     /// <p>Information about a code review. A code review belongs to the associated repository that contains the reviewed code.</p>
     #[doc(hidden)]
     pub code_review: std::option::Option<crate::model::CodeReview>,
 }
 impl CreateCodeReviewOutput {
     /// <p>Information about a code review. A code review belongs to the associated repository that contains the reviewed code.</p>
-    pub fn code_review(&self) -> std::option::Option<&crate::model::CodeReview> {
+    pub fn code_review(&self) -> std::option::Option<& crate::model::CodeReview> {
         self.code_review.as_ref()
     }
 }
 /// See [`CreateCodeReviewOutput`](crate::output::CreateCodeReviewOutput).
 pub mod create_code_review_output {
-
+    
     /// A builder for [`CreateCodeReviewOutput`](crate::output::CreateCodeReviewOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -841,20 +769,19 @@ pub mod create_code_review_output {
             self
         }
         /// <p>Information about a code review. A code review belongs to the associated repository that contains the reviewed code.</p>
-        pub fn set_code_review(
-            mut self,
-            input: std::option::Option<crate::model::CodeReview>,
-        ) -> Self {
-            self.code_review = input;
-            self
+        pub fn set_code_review(mut self, input: std::option::Option<crate::model::CodeReview>) -> Self {
+            self.code_review = input; self
         }
         /// Consumes the builder and constructs a [`CreateCodeReviewOutput`](crate::output::CreateCodeReviewOutput).
         pub fn build(self) -> crate::output::CreateCodeReviewOutput {
             crate::output::CreateCodeReviewOutput {
-                code_review: self.code_review,
+                code_review: self.code_review
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCodeReviewOutput {
     /// Creates a new builder-style object to manufacture [`CreateCodeReviewOutput`](crate::output::CreateCodeReviewOutput).
@@ -866,107 +793,86 @@ impl CreateCodeReviewOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateRepositoryOutput {
+pub struct AssociateRepositoryOutput  {
     /// <p>Information about the repository association.</p>
     #[doc(hidden)]
     pub repository_association: std::option::Option<crate::model::RepositoryAssociation>,
-    /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
-    /// <ul>
-    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
-    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
+    /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> 
+    /// <ul> 
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> 
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> 
     /// </ul>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl AssociateRepositoryOutput {
     /// <p>Information about the repository association.</p>
-    pub fn repository_association(
-        &self,
-    ) -> std::option::Option<&crate::model::RepositoryAssociation> {
+    pub fn repository_association(&self) -> std::option::Option<& crate::model::RepositoryAssociation> {
         self.repository_association.as_ref()
     }
-    /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
-    /// <ul>
-    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
-    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
+    /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> 
+    /// <ul> 
+    /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> 
+    /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> 
     /// </ul>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`AssociateRepositoryOutput`](crate::output::AssociateRepositoryOutput).
 pub mod associate_repository_output {
-
+    
     /// A builder for [`AssociateRepositoryOutput`](crate::output::AssociateRepositoryOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_association: std::option::Option<crate::model::RepositoryAssociation>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>Information about the repository association.</p>
-        pub fn repository_association(
-            mut self,
-            input: crate::model::RepositoryAssociation,
-        ) -> Self {
+        pub fn repository_association(mut self, input: crate::model::RepositoryAssociation) -> Self {
             self.repository_association = Some(input);
             self
         }
         /// <p>Information about the repository association.</p>
-        pub fn set_repository_association(
-            mut self,
-            input: std::option::Option<crate::model::RepositoryAssociation>,
-        ) -> Self {
-            self.repository_association = input;
-            self
+        pub fn set_repository_association(mut self, input: std::option::Option<crate::model::RepositoryAssociation>) -> Self {
+            self.repository_association = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
-        /// <ul>
-        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
-        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
+        /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> 
+        /// <ul> 
+        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> 
+        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> 
         /// </ul>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
-        /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p>
-        /// <ul>
-        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li>
-        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li>
+        /// <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> 
+        /// <ul> 
+        /// <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> 
+        /// <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> 
         /// </ul>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`AssociateRepositoryOutput`](crate::output::AssociateRepositoryOutput).
         pub fn build(self) -> crate::output::AssociateRepositoryOutput {
             crate::output::AssociateRepositoryOutput {
-                repository_association: self.repository_association,
-                tags: self.tags,
+                repository_association: self.repository_association
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl AssociateRepositoryOutput {
     /// Creates a new builder-style object to manufacture [`AssociateRepositoryOutput`](crate::output::AssociateRepositoryOutput).
@@ -974,3 +880,4 @@ impl AssociateRepositoryOutput {
         crate::output::associate_repository_output::Builder::default()
     }
 }
+

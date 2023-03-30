@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateStorageOutput {
+pub struct UpdateStorageOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct UpdateStorageOutput {
 }
 impl UpdateStorageOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_operation_arn(&self) -> std::option::Option<& str> {
         self.cluster_operation_arn.as_deref()
     }
 }
 /// See [`UpdateStorageOutput`](crate::output::UpdateStorageOutput).
 pub mod update_storage_output {
-
+    
     /// A builder for [`UpdateStorageOutput`](crate::output::UpdateStorageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -37,8 +37,7 @@ pub mod update_storage_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
         pub fn cluster_operation_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -46,21 +45,21 @@ pub mod update_storage_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-        pub fn set_cluster_operation_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_operation_arn = input;
-            self
+        pub fn set_cluster_operation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_operation_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateStorageOutput`](crate::output::UpdateStorageOutput).
         pub fn build(self) -> crate::output::UpdateStorageOutput {
             crate::output::UpdateStorageOutput {
-                cluster_arn: self.cluster_arn,
-                cluster_operation_arn: self.cluster_operation_arn,
+                cluster_arn: self.cluster_arn
+                ,
+                cluster_operation_arn: self.cluster_operation_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateStorageOutput {
     /// Creates a new builder-style object to manufacture [`UpdateStorageOutput`](crate::output::UpdateStorageOutput).
@@ -72,7 +71,7 @@ impl UpdateStorageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSecurityOutput {
+pub struct UpdateSecurityOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -82,17 +81,17 @@ pub struct UpdateSecurityOutput {
 }
 impl UpdateSecurityOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_operation_arn(&self) -> std::option::Option<& str> {
         self.cluster_operation_arn.as_deref()
     }
 }
 /// See [`UpdateSecurityOutput`](crate::output::UpdateSecurityOutput).
 pub mod update_security_output {
-
+    
     /// A builder for [`UpdateSecurityOutput`](crate::output::UpdateSecurityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -107,8 +106,7 @@ pub mod update_security_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
         pub fn cluster_operation_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,21 +114,21 @@ pub mod update_security_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-        pub fn set_cluster_operation_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_operation_arn = input;
-            self
+        pub fn set_cluster_operation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_operation_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateSecurityOutput`](crate::output::UpdateSecurityOutput).
         pub fn build(self) -> crate::output::UpdateSecurityOutput {
             crate::output::UpdateSecurityOutput {
-                cluster_arn: self.cluster_arn,
-                cluster_operation_arn: self.cluster_operation_arn,
+                cluster_arn: self.cluster_arn
+                ,
+                cluster_operation_arn: self.cluster_operation_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateSecurityOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSecurityOutput`](crate::output::UpdateSecurityOutput).
@@ -142,7 +140,7 @@ impl UpdateSecurityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMonitoringOutput {
+pub struct UpdateMonitoringOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -152,17 +150,17 @@ pub struct UpdateMonitoringOutput {
 }
 impl UpdateMonitoringOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_operation_arn(&self) -> std::option::Option<& str> {
         self.cluster_operation_arn.as_deref()
     }
 }
 /// See [`UpdateMonitoringOutput`](crate::output::UpdateMonitoringOutput).
 pub mod update_monitoring_output {
-
+    
     /// A builder for [`UpdateMonitoringOutput`](crate::output::UpdateMonitoringOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -177,8 +175,7 @@ pub mod update_monitoring_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
         pub fn cluster_operation_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -186,21 +183,21 @@ pub mod update_monitoring_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-        pub fn set_cluster_operation_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_operation_arn = input;
-            self
+        pub fn set_cluster_operation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_operation_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateMonitoringOutput`](crate::output::UpdateMonitoringOutput).
         pub fn build(self) -> crate::output::UpdateMonitoringOutput {
             crate::output::UpdateMonitoringOutput {
-                cluster_arn: self.cluster_arn,
-                cluster_operation_arn: self.cluster_operation_arn,
+                cluster_arn: self.cluster_arn
+                ,
+                cluster_operation_arn: self.cluster_operation_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateMonitoringOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMonitoringOutput`](crate::output::UpdateMonitoringOutput).
@@ -212,7 +209,7 @@ impl UpdateMonitoringOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConnectivityOutput {
+pub struct UpdateConnectivityOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -222,17 +219,17 @@ pub struct UpdateConnectivityOutput {
 }
 impl UpdateConnectivityOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_operation_arn(&self) -> std::option::Option<& str> {
         self.cluster_operation_arn.as_deref()
     }
 }
 /// See [`UpdateConnectivityOutput`](crate::output::UpdateConnectivityOutput).
 pub mod update_connectivity_output {
-
+    
     /// A builder for [`UpdateConnectivityOutput`](crate::output::UpdateConnectivityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -247,8 +244,7 @@ pub mod update_connectivity_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
         pub fn cluster_operation_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -256,21 +252,21 @@ pub mod update_connectivity_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-        pub fn set_cluster_operation_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_operation_arn = input;
-            self
+        pub fn set_cluster_operation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_operation_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateConnectivityOutput`](crate::output::UpdateConnectivityOutput).
         pub fn build(self) -> crate::output::UpdateConnectivityOutput {
             crate::output::UpdateConnectivityOutput {
-                cluster_arn: self.cluster_arn,
-                cluster_operation_arn: self.cluster_operation_arn,
+                cluster_arn: self.cluster_arn
+                ,
+                cluster_operation_arn: self.cluster_operation_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateConnectivityOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectivityOutput`](crate::output::UpdateConnectivityOutput).
@@ -282,7 +278,7 @@ impl UpdateConnectivityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfigurationOutput {
+pub struct UpdateConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -292,17 +288,17 @@ pub struct UpdateConfigurationOutput {
 }
 impl UpdateConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Latest revision of the configuration.</p>
-    pub fn latest_revision(&self) -> std::option::Option<&crate::model::ConfigurationRevision> {
+    pub fn latest_revision(&self) -> std::option::Option<& crate::model::ConfigurationRevision> {
         self.latest_revision.as_ref()
     }
 }
 /// See [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput).
 pub mod update_configuration_output {
-
+    
     /// A builder for [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -317,8 +313,7 @@ pub mod update_configuration_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Latest revision of the configuration.</p>
         pub fn latest_revision(mut self, input: crate::model::ConfigurationRevision) -> Self {
@@ -326,21 +321,21 @@ pub mod update_configuration_output {
             self
         }
         /// <p>Latest revision of the configuration.</p>
-        pub fn set_latest_revision(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationRevision>,
-        ) -> Self {
-            self.latest_revision = input;
-            self
+        pub fn set_latest_revision(mut self, input: std::option::Option<crate::model::ConfigurationRevision>) -> Self {
+            self.latest_revision = input; self
         }
         /// Consumes the builder and constructs a [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateConfigurationOutput {
             crate::output::UpdateConfigurationOutput {
-                arn: self.arn,
-                latest_revision: self.latest_revision,
+                arn: self.arn
+                ,
+                latest_revision: self.latest_revision
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigurationOutput`](crate::output::UpdateConfigurationOutput).
@@ -352,7 +347,7 @@ impl UpdateConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateClusterKafkaVersionOutput {
+pub struct UpdateClusterKafkaVersionOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -362,17 +357,17 @@ pub struct UpdateClusterKafkaVersionOutput {
 }
 impl UpdateClusterKafkaVersionOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_operation_arn(&self) -> std::option::Option<& str> {
         self.cluster_operation_arn.as_deref()
     }
 }
 /// See [`UpdateClusterKafkaVersionOutput`](crate::output::UpdateClusterKafkaVersionOutput).
 pub mod update_cluster_kafka_version_output {
-
+    
     /// A builder for [`UpdateClusterKafkaVersionOutput`](crate::output::UpdateClusterKafkaVersionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -387,8 +382,7 @@ pub mod update_cluster_kafka_version_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
         pub fn cluster_operation_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -396,21 +390,21 @@ pub mod update_cluster_kafka_version_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-        pub fn set_cluster_operation_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_operation_arn = input;
-            self
+        pub fn set_cluster_operation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_operation_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateClusterKafkaVersionOutput`](crate::output::UpdateClusterKafkaVersionOutput).
         pub fn build(self) -> crate::output::UpdateClusterKafkaVersionOutput {
             crate::output::UpdateClusterKafkaVersionOutput {
-                cluster_arn: self.cluster_arn,
-                cluster_operation_arn: self.cluster_operation_arn,
+                cluster_arn: self.cluster_arn
+                ,
+                cluster_operation_arn: self.cluster_operation_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateClusterKafkaVersionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterKafkaVersionOutput`](crate::output::UpdateClusterKafkaVersionOutput).
@@ -422,7 +416,7 @@ impl UpdateClusterKafkaVersionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateClusterConfigurationOutput {
+pub struct UpdateClusterConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -432,17 +426,17 @@ pub struct UpdateClusterConfigurationOutput {
 }
 impl UpdateClusterConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_operation_arn(&self) -> std::option::Option<& str> {
         self.cluster_operation_arn.as_deref()
     }
 }
 /// See [`UpdateClusterConfigurationOutput`](crate::output::UpdateClusterConfigurationOutput).
 pub mod update_cluster_configuration_output {
-
+    
     /// A builder for [`UpdateClusterConfigurationOutput`](crate::output::UpdateClusterConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -457,8 +451,7 @@ pub mod update_cluster_configuration_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
         pub fn cluster_operation_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -466,21 +459,21 @@ pub mod update_cluster_configuration_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-        pub fn set_cluster_operation_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_operation_arn = input;
-            self
+        pub fn set_cluster_operation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_operation_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateClusterConfigurationOutput`](crate::output::UpdateClusterConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateClusterConfigurationOutput {
             crate::output::UpdateClusterConfigurationOutput {
-                cluster_arn: self.cluster_arn,
-                cluster_operation_arn: self.cluster_operation_arn,
+                cluster_arn: self.cluster_arn
+                ,
+                cluster_operation_arn: self.cluster_operation_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateClusterConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterConfigurationOutput`](crate::output::UpdateClusterConfigurationOutput).
@@ -492,7 +485,7 @@ impl UpdateClusterConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBrokerTypeOutput {
+pub struct UpdateBrokerTypeOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -502,17 +495,17 @@ pub struct UpdateBrokerTypeOutput {
 }
 impl UpdateBrokerTypeOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_operation_arn(&self) -> std::option::Option<& str> {
         self.cluster_operation_arn.as_deref()
     }
 }
 /// See [`UpdateBrokerTypeOutput`](crate::output::UpdateBrokerTypeOutput).
 pub mod update_broker_type_output {
-
+    
     /// A builder for [`UpdateBrokerTypeOutput`](crate::output::UpdateBrokerTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -527,8 +520,7 @@ pub mod update_broker_type_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
         pub fn cluster_operation_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -536,21 +528,21 @@ pub mod update_broker_type_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-        pub fn set_cluster_operation_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_operation_arn = input;
-            self
+        pub fn set_cluster_operation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_operation_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBrokerTypeOutput`](crate::output::UpdateBrokerTypeOutput).
         pub fn build(self) -> crate::output::UpdateBrokerTypeOutput {
             crate::output::UpdateBrokerTypeOutput {
-                cluster_arn: self.cluster_arn,
-                cluster_operation_arn: self.cluster_operation_arn,
+                cluster_arn: self.cluster_arn
+                ,
+                cluster_operation_arn: self.cluster_operation_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBrokerTypeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBrokerTypeOutput`](crate::output::UpdateBrokerTypeOutput).
@@ -562,7 +554,7 @@ impl UpdateBrokerTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBrokerStorageOutput {
+pub struct UpdateBrokerStorageOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -572,17 +564,17 @@ pub struct UpdateBrokerStorageOutput {
 }
 impl UpdateBrokerStorageOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_operation_arn(&self) -> std::option::Option<& str> {
         self.cluster_operation_arn.as_deref()
     }
 }
 /// See [`UpdateBrokerStorageOutput`](crate::output::UpdateBrokerStorageOutput).
 pub mod update_broker_storage_output {
-
+    
     /// A builder for [`UpdateBrokerStorageOutput`](crate::output::UpdateBrokerStorageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -597,8 +589,7 @@ pub mod update_broker_storage_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
         pub fn cluster_operation_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -606,21 +597,21 @@ pub mod update_broker_storage_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-        pub fn set_cluster_operation_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_operation_arn = input;
-            self
+        pub fn set_cluster_operation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_operation_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBrokerStorageOutput`](crate::output::UpdateBrokerStorageOutput).
         pub fn build(self) -> crate::output::UpdateBrokerStorageOutput {
             crate::output::UpdateBrokerStorageOutput {
-                cluster_arn: self.cluster_arn,
-                cluster_operation_arn: self.cluster_operation_arn,
+                cluster_arn: self.cluster_arn
+                ,
+                cluster_operation_arn: self.cluster_operation_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBrokerStorageOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBrokerStorageOutput`](crate::output::UpdateBrokerStorageOutput).
@@ -632,7 +623,7 @@ impl UpdateBrokerStorageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBrokerCountOutput {
+pub struct UpdateBrokerCountOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -642,17 +633,17 @@ pub struct UpdateBrokerCountOutput {
 }
 impl UpdateBrokerCountOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_operation_arn(&self) -> std::option::Option<& str> {
         self.cluster_operation_arn.as_deref()
     }
 }
 /// See [`UpdateBrokerCountOutput`](crate::output::UpdateBrokerCountOutput).
 pub mod update_broker_count_output {
-
+    
     /// A builder for [`UpdateBrokerCountOutput`](crate::output::UpdateBrokerCountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -667,8 +658,7 @@ pub mod update_broker_count_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
         pub fn cluster_operation_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -676,21 +666,21 @@ pub mod update_broker_count_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-        pub fn set_cluster_operation_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_operation_arn = input;
-            self
+        pub fn set_cluster_operation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_operation_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateBrokerCountOutput`](crate::output::UpdateBrokerCountOutput).
         pub fn build(self) -> crate::output::UpdateBrokerCountOutput {
             crate::output::UpdateBrokerCountOutput {
-                cluster_arn: self.cluster_arn,
-                cluster_operation_arn: self.cluster_operation_arn,
+                cluster_arn: self.cluster_arn
+                ,
+                cluster_operation_arn: self.cluster_operation_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateBrokerCountOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBrokerCountOutput`](crate::output::UpdateBrokerCountOutput).
@@ -702,19 +692,24 @@ impl UpdateBrokerCountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -726,19 +721,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -750,7 +750,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RebootBrokerOutput {
+pub struct RebootBrokerOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -760,17 +760,17 @@ pub struct RebootBrokerOutput {
 }
 impl RebootBrokerOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-    pub fn cluster_operation_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_operation_arn(&self) -> std::option::Option<& str> {
         self.cluster_operation_arn.as_deref()
     }
 }
 /// See [`RebootBrokerOutput`](crate::output::RebootBrokerOutput).
 pub mod reboot_broker_output {
-
+    
     /// A builder for [`RebootBrokerOutput`](crate::output::RebootBrokerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -785,8 +785,7 @@ pub mod reboot_broker_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
         pub fn cluster_operation_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -794,21 +793,21 @@ pub mod reboot_broker_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster operation.</p>
-        pub fn set_cluster_operation_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.cluster_operation_arn = input;
-            self
+        pub fn set_cluster_operation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster_operation_arn = input; self
         }
         /// Consumes the builder and constructs a [`RebootBrokerOutput`](crate::output::RebootBrokerOutput).
         pub fn build(self) -> crate::output::RebootBrokerOutput {
             crate::output::RebootBrokerOutput {
-                cluster_arn: self.cluster_arn,
-                cluster_operation_arn: self.cluster_operation_arn,
+                cluster_arn: self.cluster_arn
+                ,
+                cluster_operation_arn: self.cluster_operation_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl RebootBrokerOutput {
     /// Creates a new builder-style object to manufacture [`RebootBrokerOutput`](crate::output::RebootBrokerOutput).
@@ -820,30 +819,24 @@ impl RebootBrokerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The key-value pair for the resource tag.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The key-value pair for the resource tag.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -851,31 +844,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The key-value pair for the resource tag.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The key-value pair for the resource tag.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -887,7 +875,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListScramSecretsOutput {
+pub struct ListScramSecretsOutput  {
     /// <p>Paginated results marker.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -897,17 +885,17 @@ pub struct ListScramSecretsOutput {
 }
 impl ListScramSecretsOutput {
     /// <p>Paginated results marker.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The list of scram secrets associated with the cluster.</p>
-    pub fn secret_arn_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn secret_arn_list(&self) -> std::option::Option<& [std::string::String]> {
         self.secret_arn_list.as_deref()
     }
 }
 /// See [`ListScramSecretsOutput`](crate::output::ListScramSecretsOutput).
 pub mod list_scram_secrets_output {
-
+    
     /// A builder for [`ListScramSecretsOutput`](crate::output::ListScramSecretsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -922,8 +910,7 @@ pub mod list_scram_secrets_output {
         }
         /// <p>Paginated results marker.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `secret_arn_list`.
         ///
@@ -932,26 +919,26 @@ pub mod list_scram_secrets_output {
         /// <p>The list of scram secrets associated with the cluster.</p>
         pub fn secret_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.secret_arn_list.unwrap_or_default();
-            v.push(input.into());
-            self.secret_arn_list = Some(v);
-            self
+                            v.push(input.into());
+                            self.secret_arn_list = Some(v);
+                            self
         }
         /// <p>The list of scram secrets associated with the cluster.</p>
-        pub fn set_secret_arn_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.secret_arn_list = input;
-            self
+        pub fn set_secret_arn_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.secret_arn_list = input; self
         }
         /// Consumes the builder and constructs a [`ListScramSecretsOutput`](crate::output::ListScramSecretsOutput).
         pub fn build(self) -> crate::output::ListScramSecretsOutput {
             crate::output::ListScramSecretsOutput {
-                next_token: self.next_token,
-                secret_arn_list: self.secret_arn_list,
+                next_token: self.next_token
+                ,
+                secret_arn_list: self.secret_arn_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListScramSecretsOutput {
     /// Creates a new builder-style object to manufacture [`ListScramSecretsOutput`](crate::output::ListScramSecretsOutput).
@@ -963,7 +950,7 @@ impl ListScramSecretsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListNodesOutput {
+pub struct ListNodesOutput  {
     /// <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. To get another batch of nodes, provide this token in your next request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -973,17 +960,17 @@ pub struct ListNodesOutput {
 }
 impl ListNodesOutput {
     /// <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. To get another batch of nodes, provide this token in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List containing a NodeInfo object.</p>
-    pub fn node_info_list(&self) -> std::option::Option<&[crate::model::NodeInfo]> {
+    pub fn node_info_list(&self) -> std::option::Option<& [crate::model::NodeInfo]> {
         self.node_info_list.as_deref()
     }
 }
 /// See [`ListNodesOutput`](crate::output::ListNodesOutput).
 pub mod list_nodes_output {
-
+    
     /// A builder for [`ListNodesOutput`](crate::output::ListNodesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -998,8 +985,7 @@ pub mod list_nodes_output {
         }
         /// <p>The paginated results marker. When the result of a ListNodes operation is truncated, the call returns NextToken in the response. To get another batch of nodes, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `node_info_list`.
         ///
@@ -1008,26 +994,26 @@ pub mod list_nodes_output {
         /// <p>List containing a NodeInfo object.</p>
         pub fn node_info_list(mut self, input: crate::model::NodeInfo) -> Self {
             let mut v = self.node_info_list.unwrap_or_default();
-            v.push(input);
-            self.node_info_list = Some(v);
-            self
+                            v.push(input);
+                            self.node_info_list = Some(v);
+                            self
         }
         /// <p>List containing a NodeInfo object.</p>
-        pub fn set_node_info_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::NodeInfo>>,
-        ) -> Self {
-            self.node_info_list = input;
-            self
+        pub fn set_node_info_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::NodeInfo>>) -> Self {
+            self.node_info_list = input; self
         }
         /// Consumes the builder and constructs a [`ListNodesOutput`](crate::output::ListNodesOutput).
         pub fn build(self) -> crate::output::ListNodesOutput {
             crate::output::ListNodesOutput {
-                next_token: self.next_token,
-                node_info_list: self.node_info_list,
+                next_token: self.next_token
+                ,
+                node_info_list: self.node_info_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListNodesOutput {
     /// Creates a new builder-style object to manufacture [`ListNodesOutput`](crate::output::ListNodesOutput).
@@ -1039,7 +1025,7 @@ impl ListNodesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListKafkaVersionsOutput {
+pub struct ListKafkaVersionsOutput  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub kafka_versions: std::option::Option<std::vec::Vec<crate::model::KafkaVersion>>,
@@ -1049,17 +1035,17 @@ pub struct ListKafkaVersionsOutput {
 }
 impl ListKafkaVersionsOutput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn kafka_versions(&self) -> std::option::Option<&[crate::model::KafkaVersion]> {
+    pub fn kafka_versions(&self) -> std::option::Option<& [crate::model::KafkaVersion]> {
         self.kafka_versions.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListKafkaVersionsOutput`](crate::output::ListKafkaVersionsOutput).
 pub mod list_kafka_versions_output {
-
+    
     /// A builder for [`ListKafkaVersionsOutput`](crate::output::ListKafkaVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1073,17 +1059,13 @@ pub mod list_kafka_versions_output {
         ///
         pub fn kafka_versions(mut self, input: crate::model::KafkaVersion) -> Self {
             let mut v = self.kafka_versions.unwrap_or_default();
-            v.push(input);
-            self.kafka_versions = Some(v);
-            self
+                            v.push(input);
+                            self.kafka_versions = Some(v);
+                            self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn set_kafka_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::KafkaVersion>>,
-        ) -> Self {
-            self.kafka_versions = input;
-            self
+        pub fn set_kafka_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::KafkaVersion>>) -> Self {
+            self.kafka_versions = input; self
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1092,17 +1074,20 @@ pub mod list_kafka_versions_output {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListKafkaVersionsOutput`](crate::output::ListKafkaVersionsOutput).
         pub fn build(self) -> crate::output::ListKafkaVersionsOutput {
             crate::output::ListKafkaVersionsOutput {
-                kafka_versions: self.kafka_versions,
-                next_token: self.next_token,
+                kafka_versions: self.kafka_versions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListKafkaVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListKafkaVersionsOutput`](crate::output::ListKafkaVersionsOutput).
@@ -1114,7 +1099,7 @@ impl ListKafkaVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConfigurationsOutput {
+pub struct ListConfigurationsOutput  {
     /// <p>An array of MSK configurations.</p>
     #[doc(hidden)]
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
@@ -1124,17 +1109,17 @@ pub struct ListConfigurationsOutput {
 }
 impl ListConfigurationsOutput {
     /// <p>An array of MSK configurations.</p>
-    pub fn configurations(&self) -> std::option::Option<&[crate::model::Configuration]> {
+    pub fn configurations(&self) -> std::option::Option<& [crate::model::Configuration]> {
         self.configurations.as_deref()
     }
     /// <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListConfigurationsOutput`](crate::output::ListConfigurationsOutput).
 pub mod list_configurations_output {
-
+    
     /// A builder for [`ListConfigurationsOutput`](crate::output::ListConfigurationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1149,17 +1134,13 @@ pub mod list_configurations_output {
         /// <p>An array of MSK configurations.</p>
         pub fn configurations(mut self, input: crate::model::Configuration) -> Self {
             let mut v = self.configurations.unwrap_or_default();
-            v.push(input);
-            self.configurations = Some(v);
-            self
+                            v.push(input);
+                            self.configurations = Some(v);
+                            self
         }
         /// <p>An array of MSK configurations.</p>
-        pub fn set_configurations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
-        ) -> Self {
-            self.configurations = input;
-            self
+        pub fn set_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::Configuration>>) -> Self {
+            self.configurations = input; self
         }
         /// <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1168,17 +1149,20 @@ pub mod list_configurations_output {
         }
         /// <p>The paginated results marker. When the result of a ListConfigurations operation is truncated, the call returns NextToken in the response. To get another batch of configurations, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListConfigurationsOutput`](crate::output::ListConfigurationsOutput).
         pub fn build(self) -> crate::output::ListConfigurationsOutput {
             crate::output::ListConfigurationsOutput {
-                configurations: self.configurations,
-                next_token: self.next_token,
+                configurations: self.configurations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationsOutput`](crate::output::ListConfigurationsOutput).
@@ -1190,7 +1174,7 @@ impl ListConfigurationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConfigurationRevisionsOutput {
+pub struct ListConfigurationRevisionsOutput  {
     /// <p>Paginated results marker.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1200,23 +1184,22 @@ pub struct ListConfigurationRevisionsOutput {
 }
 impl ListConfigurationRevisionsOutput {
     /// <p>Paginated results marker.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of ConfigurationRevision objects.</p>
-    pub fn revisions(&self) -> std::option::Option<&[crate::model::ConfigurationRevision]> {
+    pub fn revisions(&self) -> std::option::Option<& [crate::model::ConfigurationRevision]> {
         self.revisions.as_deref()
     }
 }
 /// See [`ListConfigurationRevisionsOutput`](crate::output::ListConfigurationRevisionsOutput).
 pub mod list_configuration_revisions_output {
-
+    
     /// A builder for [`ListConfigurationRevisionsOutput`](crate::output::ListConfigurationRevisionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) revisions:
-            std::option::Option<std::vec::Vec<crate::model::ConfigurationRevision>>,
+        pub(crate) revisions: std::option::Option<std::vec::Vec<crate::model::ConfigurationRevision>>,
     }
     impl Builder {
         /// <p>Paginated results marker.</p>
@@ -1226,8 +1209,7 @@ pub mod list_configuration_revisions_output {
         }
         /// <p>Paginated results marker.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `revisions`.
         ///
@@ -1236,26 +1218,26 @@ pub mod list_configuration_revisions_output {
         /// <p>List of ConfigurationRevision objects.</p>
         pub fn revisions(mut self, input: crate::model::ConfigurationRevision) -> Self {
             let mut v = self.revisions.unwrap_or_default();
-            v.push(input);
-            self.revisions = Some(v);
-            self
+                            v.push(input);
+                            self.revisions = Some(v);
+                            self
         }
         /// <p>List of ConfigurationRevision objects.</p>
-        pub fn set_revisions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConfigurationRevision>>,
-        ) -> Self {
-            self.revisions = input;
-            self
+        pub fn set_revisions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConfigurationRevision>>) -> Self {
+            self.revisions = input; self
         }
         /// Consumes the builder and constructs a [`ListConfigurationRevisionsOutput`](crate::output::ListConfigurationRevisionsOutput).
         pub fn build(self) -> crate::output::ListConfigurationRevisionsOutput {
             crate::output::ListConfigurationRevisionsOutput {
-                next_token: self.next_token,
-                revisions: self.revisions,
+                next_token: self.next_token
+                ,
+                revisions: self.revisions
+                ,
             }
         }
     }
+    
+    
 }
 impl ListConfigurationRevisionsOutput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationRevisionsOutput`](crate::output::ListConfigurationRevisionsOutput).
@@ -1267,7 +1249,7 @@ impl ListConfigurationRevisionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListClustersV2Output {
+pub struct ListClustersV2Output  {
     /// <p>Information on each of the MSK clusters in the response.</p>
     #[doc(hidden)]
     pub cluster_info_list: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
@@ -1277,17 +1259,17 @@ pub struct ListClustersV2Output {
 }
 impl ListClustersV2Output {
     /// <p>Information on each of the MSK clusters in the response.</p>
-    pub fn cluster_info_list(&self) -> std::option::Option<&[crate::model::Cluster]> {
+    pub fn cluster_info_list(&self) -> std::option::Option<& [crate::model::Cluster]> {
         self.cluster_info_list.as_deref()
     }
     /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListClustersV2Output`](crate::output::ListClustersV2Output).
 pub mod list_clusters_v2_output {
-
+    
     /// A builder for [`ListClustersV2Output`](crate::output::ListClustersV2Output).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1302,17 +1284,13 @@ pub mod list_clusters_v2_output {
         /// <p>Information on each of the MSK clusters in the response.</p>
         pub fn cluster_info_list(mut self, input: crate::model::Cluster) -> Self {
             let mut v = self.cluster_info_list.unwrap_or_default();
-            v.push(input);
-            self.cluster_info_list = Some(v);
-            self
+                            v.push(input);
+                            self.cluster_info_list = Some(v);
+                            self
         }
         /// <p>Information on each of the MSK clusters in the response.</p>
-        pub fn set_cluster_info_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Cluster>>,
-        ) -> Self {
-            self.cluster_info_list = input;
-            self
+        pub fn set_cluster_info_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Cluster>>) -> Self {
+            self.cluster_info_list = input; self
         }
         /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1321,17 +1299,20 @@ pub mod list_clusters_v2_output {
         }
         /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListClustersV2Output`](crate::output::ListClustersV2Output).
         pub fn build(self) -> crate::output::ListClustersV2Output {
             crate::output::ListClustersV2Output {
-                cluster_info_list: self.cluster_info_list,
-                next_token: self.next_token,
+                cluster_info_list: self.cluster_info_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListClustersV2Output {
     /// Creates a new builder-style object to manufacture [`ListClustersV2Output`](crate::output::ListClustersV2Output).
@@ -1343,7 +1324,7 @@ impl ListClustersV2Output {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListClustersOutput {
+pub struct ListClustersOutput  {
     /// <p>Information on each of the MSK clusters in the response.</p>
     #[doc(hidden)]
     pub cluster_info_list: std::option::Option<std::vec::Vec<crate::model::ClusterInfo>>,
@@ -1353,17 +1334,17 @@ pub struct ListClustersOutput {
 }
 impl ListClustersOutput {
     /// <p>Information on each of the MSK clusters in the response.</p>
-    pub fn cluster_info_list(&self) -> std::option::Option<&[crate::model::ClusterInfo]> {
+    pub fn cluster_info_list(&self) -> std::option::Option<& [crate::model::ClusterInfo]> {
         self.cluster_info_list.as_deref()
     }
     /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListClustersOutput`](crate::output::ListClustersOutput).
 pub mod list_clusters_output {
-
+    
     /// A builder for [`ListClustersOutput`](crate::output::ListClustersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1378,17 +1359,13 @@ pub mod list_clusters_output {
         /// <p>Information on each of the MSK clusters in the response.</p>
         pub fn cluster_info_list(mut self, input: crate::model::ClusterInfo) -> Self {
             let mut v = self.cluster_info_list.unwrap_or_default();
-            v.push(input);
-            self.cluster_info_list = Some(v);
-            self
+                            v.push(input);
+                            self.cluster_info_list = Some(v);
+                            self
         }
         /// <p>Information on each of the MSK clusters in the response.</p>
-        pub fn set_cluster_info_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ClusterInfo>>,
-        ) -> Self {
-            self.cluster_info_list = input;
-            self
+        pub fn set_cluster_info_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ClusterInfo>>) -> Self {
+            self.cluster_info_list = input; self
         }
         /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1397,17 +1374,20 @@ pub mod list_clusters_output {
         }
         /// <p>The paginated results marker. When the result of a ListClusters operation is truncated, the call returns NextToken in the response. To get another batch of clusters, provide this token in your next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListClustersOutput`](crate::output::ListClustersOutput).
         pub fn build(self) -> crate::output::ListClustersOutput {
             crate::output::ListClustersOutput {
-                cluster_info_list: self.cluster_info_list,
-                next_token: self.next_token,
+                cluster_info_list: self.cluster_info_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListClustersOutput {
     /// Creates a new builder-style object to manufacture [`ListClustersOutput`](crate::output::ListClustersOutput).
@@ -1419,35 +1399,31 @@ impl ListClustersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListClusterOperationsOutput {
+pub struct ListClusterOperationsOutput  {
     /// <p>An array of cluster operation information objects.</p>
     #[doc(hidden)]
-    pub cluster_operation_info_list:
-        std::option::Option<std::vec::Vec<crate::model::ClusterOperationInfo>>,
+    pub cluster_operation_info_list: std::option::Option<std::vec::Vec<crate::model::ClusterOperationInfo>>,
     /// <p>If the response of ListClusterOperations is truncated, it returns a NextToken in the response. This Nexttoken should be sent in the subsequent request to ListClusterOperations.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListClusterOperationsOutput {
     /// <p>An array of cluster operation information objects.</p>
-    pub fn cluster_operation_info_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::ClusterOperationInfo]> {
+    pub fn cluster_operation_info_list(&self) -> std::option::Option<& [crate::model::ClusterOperationInfo]> {
         self.cluster_operation_info_list.as_deref()
     }
     /// <p>If the response of ListClusterOperations is truncated, it returns a NextToken in the response. This Nexttoken should be sent in the subsequent request to ListClusterOperations.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListClusterOperationsOutput`](crate::output::ListClusterOperationsOutput).
 pub mod list_cluster_operations_output {
-
+    
     /// A builder for [`ListClusterOperationsOutput`](crate::output::ListClusterOperationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) cluster_operation_info_list:
-            std::option::Option<std::vec::Vec<crate::model::ClusterOperationInfo>>,
+        pub(crate) cluster_operation_info_list: std::option::Option<std::vec::Vec<crate::model::ClusterOperationInfo>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1456,22 +1432,15 @@ pub mod list_cluster_operations_output {
         /// To override the contents of this collection use [`set_cluster_operation_info_list`](Self::set_cluster_operation_info_list).
         ///
         /// <p>An array of cluster operation information objects.</p>
-        pub fn cluster_operation_info_list(
-            mut self,
-            input: crate::model::ClusterOperationInfo,
-        ) -> Self {
+        pub fn cluster_operation_info_list(mut self, input: crate::model::ClusterOperationInfo) -> Self {
             let mut v = self.cluster_operation_info_list.unwrap_or_default();
-            v.push(input);
-            self.cluster_operation_info_list = Some(v);
-            self
+                            v.push(input);
+                            self.cluster_operation_info_list = Some(v);
+                            self
         }
         /// <p>An array of cluster operation information objects.</p>
-        pub fn set_cluster_operation_info_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ClusterOperationInfo>>,
-        ) -> Self {
-            self.cluster_operation_info_list = input;
-            self
+        pub fn set_cluster_operation_info_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ClusterOperationInfo>>) -> Self {
+            self.cluster_operation_info_list = input; self
         }
         /// <p>If the response of ListClusterOperations is truncated, it returns a NextToken in the response. This Nexttoken should be sent in the subsequent request to ListClusterOperations.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1480,17 +1449,20 @@ pub mod list_cluster_operations_output {
         }
         /// <p>If the response of ListClusterOperations is truncated, it returns a NextToken in the response. This Nexttoken should be sent in the subsequent request to ListClusterOperations.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListClusterOperationsOutput`](crate::output::ListClusterOperationsOutput).
         pub fn build(self) -> crate::output::ListClusterOperationsOutput {
             crate::output::ListClusterOperationsOutput {
-                cluster_operation_info_list: self.cluster_operation_info_list,
-                next_token: self.next_token,
+                cluster_operation_info_list: self.cluster_operation_info_list
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListClusterOperationsOutput {
     /// Creates a new builder-style object to manufacture [`ListClusterOperationsOutput`](crate::output::ListClusterOperationsOutput).
@@ -1502,28 +1474,24 @@ impl ListClusterOperationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCompatibleKafkaVersionsOutput {
+pub struct GetCompatibleKafkaVersionsOutput  {
     /// <p>A list of CompatibleKafkaVersion objects.</p>
     #[doc(hidden)]
-    pub compatible_kafka_versions:
-        std::option::Option<std::vec::Vec<crate::model::CompatibleKafkaVersion>>,
+    pub compatible_kafka_versions: std::option::Option<std::vec::Vec<crate::model::CompatibleKafkaVersion>>,
 }
 impl GetCompatibleKafkaVersionsOutput {
     /// <p>A list of CompatibleKafkaVersion objects.</p>
-    pub fn compatible_kafka_versions(
-        &self,
-    ) -> std::option::Option<&[crate::model::CompatibleKafkaVersion]> {
+    pub fn compatible_kafka_versions(&self) -> std::option::Option<& [crate::model::CompatibleKafkaVersion]> {
         self.compatible_kafka_versions.as_deref()
     }
 }
 /// See [`GetCompatibleKafkaVersionsOutput`](crate::output::GetCompatibleKafkaVersionsOutput).
 pub mod get_compatible_kafka_versions_output {
-
+    
     /// A builder for [`GetCompatibleKafkaVersionsOutput`](crate::output::GetCompatibleKafkaVersionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) compatible_kafka_versions:
-            std::option::Option<std::vec::Vec<crate::model::CompatibleKafkaVersion>>,
+        pub(crate) compatible_kafka_versions: std::option::Option<std::vec::Vec<crate::model::CompatibleKafkaVersion>>,
     }
     impl Builder {
         /// Appends an item to `compatible_kafka_versions`.
@@ -1531,30 +1499,26 @@ pub mod get_compatible_kafka_versions_output {
         /// To override the contents of this collection use [`set_compatible_kafka_versions`](Self::set_compatible_kafka_versions).
         ///
         /// <p>A list of CompatibleKafkaVersion objects.</p>
-        pub fn compatible_kafka_versions(
-            mut self,
-            input: crate::model::CompatibleKafkaVersion,
-        ) -> Self {
+        pub fn compatible_kafka_versions(mut self, input: crate::model::CompatibleKafkaVersion) -> Self {
             let mut v = self.compatible_kafka_versions.unwrap_or_default();
-            v.push(input);
-            self.compatible_kafka_versions = Some(v);
-            self
+                            v.push(input);
+                            self.compatible_kafka_versions = Some(v);
+                            self
         }
         /// <p>A list of CompatibleKafkaVersion objects.</p>
-        pub fn set_compatible_kafka_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CompatibleKafkaVersion>>,
-        ) -> Self {
-            self.compatible_kafka_versions = input;
-            self
+        pub fn set_compatible_kafka_versions(mut self, input: std::option::Option<std::vec::Vec<crate::model::CompatibleKafkaVersion>>) -> Self {
+            self.compatible_kafka_versions = input; self
         }
         /// Consumes the builder and constructs a [`GetCompatibleKafkaVersionsOutput`](crate::output::GetCompatibleKafkaVersionsOutput).
         pub fn build(self) -> crate::output::GetCompatibleKafkaVersionsOutput {
             crate::output::GetCompatibleKafkaVersionsOutput {
-                compatible_kafka_versions: self.compatible_kafka_versions,
+                compatible_kafka_versions: self.compatible_kafka_versions
+                ,
             }
         }
     }
+    
+    
 }
 impl GetCompatibleKafkaVersionsOutput {
     /// Creates a new builder-style object to manufacture [`GetCompatibleKafkaVersionsOutput`](crate::output::GetCompatibleKafkaVersionsOutput).
@@ -1566,7 +1530,7 @@ impl GetCompatibleKafkaVersionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBootstrapBrokersOutput {
+pub struct GetBootstrapBrokersOutput  {
     /// <p>A string containing one or more hostname:port pairs.</p>
     #[doc(hidden)]
     pub bootstrap_broker_string: std::option::Option<std::string::String>,
@@ -1591,37 +1555,37 @@ pub struct GetBootstrapBrokersOutput {
 }
 impl GetBootstrapBrokersOutput {
     /// <p>A string containing one or more hostname:port pairs.</p>
-    pub fn bootstrap_broker_string(&self) -> std::option::Option<&str> {
+    pub fn bootstrap_broker_string(&self) -> std::option::Option<& str> {
         self.bootstrap_broker_string.as_deref()
     }
     /// <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
-    pub fn bootstrap_broker_string_tls(&self) -> std::option::Option<&str> {
+    pub fn bootstrap_broker_string_tls(&self) -> std::option::Option<& str> {
         self.bootstrap_broker_string_tls.as_deref()
     }
     /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
-    pub fn bootstrap_broker_string_sasl_scram(&self) -> std::option::Option<&str> {
+    pub fn bootstrap_broker_string_sasl_scram(&self) -> std::option::Option<& str> {
         self.bootstrap_broker_string_sasl_scram.as_deref()
     }
     /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
-    pub fn bootstrap_broker_string_sasl_iam(&self) -> std::option::Option<&str> {
+    pub fn bootstrap_broker_string_sasl_iam(&self) -> std::option::Option<& str> {
         self.bootstrap_broker_string_sasl_iam.as_deref()
     }
     /// <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
-    pub fn bootstrap_broker_string_public_tls(&self) -> std::option::Option<&str> {
+    pub fn bootstrap_broker_string_public_tls(&self) -> std::option::Option<& str> {
         self.bootstrap_broker_string_public_tls.as_deref()
     }
     /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
-    pub fn bootstrap_broker_string_public_sasl_scram(&self) -> std::option::Option<&str> {
+    pub fn bootstrap_broker_string_public_sasl_scram(&self) -> std::option::Option<& str> {
         self.bootstrap_broker_string_public_sasl_scram.as_deref()
     }
     /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
-    pub fn bootstrap_broker_string_public_sasl_iam(&self) -> std::option::Option<&str> {
+    pub fn bootstrap_broker_string_public_sasl_iam(&self) -> std::option::Option<& str> {
         self.bootstrap_broker_string_public_sasl_iam.as_deref()
     }
 }
 /// See [`GetBootstrapBrokersOutput`](crate::output::GetBootstrapBrokersOutput).
 pub mod get_bootstrap_brokers_output {
-
+    
     /// A builder for [`GetBootstrapBrokersOutput`](crate::output::GetBootstrapBrokersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1630,10 +1594,8 @@ pub mod get_bootstrap_brokers_output {
         pub(crate) bootstrap_broker_string_sasl_scram: std::option::Option<std::string::String>,
         pub(crate) bootstrap_broker_string_sasl_iam: std::option::Option<std::string::String>,
         pub(crate) bootstrap_broker_string_public_tls: std::option::Option<std::string::String>,
-        pub(crate) bootstrap_broker_string_public_sasl_scram:
-            std::option::Option<std::string::String>,
-        pub(crate) bootstrap_broker_string_public_sasl_iam:
-            std::option::Option<std::string::String>,
+        pub(crate) bootstrap_broker_string_public_sasl_scram: std::option::Option<std::string::String>,
+        pub(crate) bootstrap_broker_string_public_sasl_iam: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>A string containing one or more hostname:port pairs.</p>
@@ -1642,124 +1604,85 @@ pub mod get_bootstrap_brokers_output {
             self
         }
         /// <p>A string containing one or more hostname:port pairs.</p>
-        pub fn set_bootstrap_broker_string(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bootstrap_broker_string = input;
-            self
+        pub fn set_bootstrap_broker_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bootstrap_broker_string = input; self
         }
         /// <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
-        pub fn bootstrap_broker_string_tls(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn bootstrap_broker_string_tls(mut self, input: impl Into<std::string::String>) -> Self {
             self.bootstrap_broker_string_tls = Some(input.into());
             self
         }
         /// <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
-        pub fn set_bootstrap_broker_string_tls(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bootstrap_broker_string_tls = input;
-            self
+        pub fn set_bootstrap_broker_string_tls(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bootstrap_broker_string_tls = input; self
         }
         /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
-        pub fn bootstrap_broker_string_sasl_scram(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn bootstrap_broker_string_sasl_scram(mut self, input: impl Into<std::string::String>) -> Self {
             self.bootstrap_broker_string_sasl_scram = Some(input.into());
             self
         }
         /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
-        pub fn set_bootstrap_broker_string_sasl_scram(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bootstrap_broker_string_sasl_scram = input;
-            self
+        pub fn set_bootstrap_broker_string_sasl_scram(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bootstrap_broker_string_sasl_scram = input; self
         }
         /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
-        pub fn bootstrap_broker_string_sasl_iam(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn bootstrap_broker_string_sasl_iam(mut self, input: impl Into<std::string::String>) -> Self {
             self.bootstrap_broker_string_sasl_iam = Some(input.into());
             self
         }
         /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
-        pub fn set_bootstrap_broker_string_sasl_iam(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bootstrap_broker_string_sasl_iam = input;
-            self
+        pub fn set_bootstrap_broker_string_sasl_iam(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bootstrap_broker_string_sasl_iam = input; self
         }
         /// <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
-        pub fn bootstrap_broker_string_public_tls(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn bootstrap_broker_string_public_tls(mut self, input: impl Into<std::string::String>) -> Self {
             self.bootstrap_broker_string_public_tls = Some(input.into());
             self
         }
         /// <p>A string containing one or more DNS names (or IP) and TLS port pairs.</p>
-        pub fn set_bootstrap_broker_string_public_tls(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bootstrap_broker_string_public_tls = input;
-            self
+        pub fn set_bootstrap_broker_string_public_tls(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bootstrap_broker_string_public_tls = input; self
         }
         /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
-        pub fn bootstrap_broker_string_public_sasl_scram(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn bootstrap_broker_string_public_sasl_scram(mut self, input: impl Into<std::string::String>) -> Self {
             self.bootstrap_broker_string_public_sasl_scram = Some(input.into());
             self
         }
         /// <p>A string containing one or more DNS names (or IP) and Sasl Scram port pairs.</p>
-        pub fn set_bootstrap_broker_string_public_sasl_scram(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bootstrap_broker_string_public_sasl_scram = input;
-            self
+        pub fn set_bootstrap_broker_string_public_sasl_scram(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bootstrap_broker_string_public_sasl_scram = input; self
         }
         /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
-        pub fn bootstrap_broker_string_public_sasl_iam(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn bootstrap_broker_string_public_sasl_iam(mut self, input: impl Into<std::string::String>) -> Self {
             self.bootstrap_broker_string_public_sasl_iam = Some(input.into());
             self
         }
         /// <p>A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.</p>
-        pub fn set_bootstrap_broker_string_public_sasl_iam(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.bootstrap_broker_string_public_sasl_iam = input;
-            self
+        pub fn set_bootstrap_broker_string_public_sasl_iam(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bootstrap_broker_string_public_sasl_iam = input; self
         }
         /// Consumes the builder and constructs a [`GetBootstrapBrokersOutput`](crate::output::GetBootstrapBrokersOutput).
         pub fn build(self) -> crate::output::GetBootstrapBrokersOutput {
             crate::output::GetBootstrapBrokersOutput {
-                bootstrap_broker_string: self.bootstrap_broker_string,
-                bootstrap_broker_string_tls: self.bootstrap_broker_string_tls,
-                bootstrap_broker_string_sasl_scram: self.bootstrap_broker_string_sasl_scram,
-                bootstrap_broker_string_sasl_iam: self.bootstrap_broker_string_sasl_iam,
-                bootstrap_broker_string_public_tls: self.bootstrap_broker_string_public_tls,
-                bootstrap_broker_string_public_sasl_scram: self
-                    .bootstrap_broker_string_public_sasl_scram,
-                bootstrap_broker_string_public_sasl_iam: self
-                    .bootstrap_broker_string_public_sasl_iam,
+                bootstrap_broker_string: self.bootstrap_broker_string
+                ,
+                bootstrap_broker_string_tls: self.bootstrap_broker_string_tls
+                ,
+                bootstrap_broker_string_sasl_scram: self.bootstrap_broker_string_sasl_scram
+                ,
+                bootstrap_broker_string_sasl_iam: self.bootstrap_broker_string_sasl_iam
+                ,
+                bootstrap_broker_string_public_tls: self.bootstrap_broker_string_public_tls
+                ,
+                bootstrap_broker_string_public_sasl_scram: self.bootstrap_broker_string_public_sasl_scram
+                ,
+                bootstrap_broker_string_public_sasl_iam: self.bootstrap_broker_string_public_sasl_iam
+                ,
             }
         }
     }
+    
+    
 }
 impl GetBootstrapBrokersOutput {
     /// Creates a new builder-style object to manufacture [`GetBootstrapBrokersOutput`](crate::output::GetBootstrapBrokersOutput).
@@ -1771,7 +1694,7 @@ impl GetBootstrapBrokersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConfigurationRevisionOutput {
+pub struct DescribeConfigurationRevisionOutput  {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1794,15 +1717,15 @@ pub struct DescribeConfigurationRevisionOutput {
 }
 impl DescribeConfigurationRevisionOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time when the configuration was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description of the configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The revision number.</p>
@@ -1814,13 +1737,13 @@ impl DescribeConfigurationRevisionOutput {
     /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
     /// server.properties
     /// </filename> can be in plaintext.</p>
-    pub fn server_properties(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn server_properties(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.server_properties.as_ref()
     }
 }
 /// See [`DescribeConfigurationRevisionOutput`](crate::output::DescribeConfigurationRevisionOutput).
 pub mod describe_configuration_revision_output {
-
+    
     /// A builder for [`DescribeConfigurationRevisionOutput`](crate::output::DescribeConfigurationRevisionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1838,8 +1761,7 @@ pub mod describe_configuration_revision_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time when the configuration was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1847,12 +1769,8 @@ pub mod describe_configuration_revision_output {
             self
         }
         /// <p>The time when the configuration was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The description of the configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1861,8 +1779,7 @@ pub mod describe_configuration_revision_output {
         }
         /// <p>The description of the configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The revision number.</p>
         pub fn revision(mut self, input: i64) -> Self {
@@ -1871,8 +1788,7 @@ pub mod describe_configuration_revision_output {
         }
         /// <p>The revision number.</p>
         pub fn set_revision(mut self, input: std::option::Option<i64>) -> Self {
-            self.revision = input;
-            self
+            self.revision = input; self
         }
         /// <p>Contents of the <filename>
         /// server.properties
@@ -1888,24 +1804,28 @@ pub mod describe_configuration_revision_output {
         /// </filename> file. When using the API, you must ensure that the contents of the file are base64 encoded. When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>
         /// server.properties
         /// </filename> can be in plaintext.</p>
-        pub fn set_server_properties(
-            mut self,
-            input: std::option::Option<aws_smithy_types::Blob>,
-        ) -> Self {
-            self.server_properties = input;
-            self
+        pub fn set_server_properties(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+            self.server_properties = input; self
         }
         /// Consumes the builder and constructs a [`DescribeConfigurationRevisionOutput`](crate::output::DescribeConfigurationRevisionOutput).
         pub fn build(self) -> crate::output::DescribeConfigurationRevisionOutput {
             crate::output::DescribeConfigurationRevisionOutput {
-                arn: self.arn,
-                creation_time: self.creation_time,
-                description: self.description,
-                revision: self.revision.unwrap_or_default(),
-                server_properties: self.server_properties,
+                arn: self.arn
+                ,
+                creation_time: self.creation_time
+                ,
+                description: self.description
+                ,
+                revision: self.revision
+                    .unwrap_or_default()
+                ,
+                server_properties: self.server_properties
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeConfigurationRevisionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationRevisionOutput`](crate::output::DescribeConfigurationRevisionOutput).
@@ -1917,7 +1837,7 @@ impl DescribeConfigurationRevisionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConfigurationOutput {
+pub struct DescribeConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1942,37 +1862,37 @@ pub struct DescribeConfigurationOutput {
 }
 impl DescribeConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time when the configuration was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description of the configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
-    pub fn kafka_versions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn kafka_versions(&self) -> std::option::Option<& [std::string::String]> {
         self.kafka_versions.as_deref()
     }
     /// <p>Latest revision of the configuration.</p>
-    pub fn latest_revision(&self) -> std::option::Option<&crate::model::ConfigurationRevision> {
+    pub fn latest_revision(&self) -> std::option::Option<& crate::model::ConfigurationRevision> {
         self.latest_revision.as_ref()
     }
     /// <p>The name of the configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ConfigurationState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ConfigurationState> {
         self.state.as_ref()
     }
 }
 /// See [`DescribeConfigurationOutput`](crate::output::DescribeConfigurationOutput).
 pub mod describe_configuration_output {
-
+    
     /// A builder for [`DescribeConfigurationOutput`](crate::output::DescribeConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1992,8 +1912,7 @@ pub mod describe_configuration_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time when the configuration was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2001,12 +1920,8 @@ pub mod describe_configuration_output {
             self
         }
         /// <p>The time when the configuration was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The description of the configuration.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2015,8 +1930,7 @@ pub mod describe_configuration_output {
         }
         /// <p>The description of the configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Appends an item to `kafka_versions`.
         ///
@@ -2025,17 +1939,13 @@ pub mod describe_configuration_output {
         /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
         pub fn kafka_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.kafka_versions.unwrap_or_default();
-            v.push(input.into());
-            self.kafka_versions = Some(v);
-            self
+                            v.push(input.into());
+                            self.kafka_versions = Some(v);
+                            self
         }
         /// <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
-        pub fn set_kafka_versions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.kafka_versions = input;
-            self
+        pub fn set_kafka_versions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.kafka_versions = input; self
         }
         /// <p>Latest revision of the configuration.</p>
         pub fn latest_revision(mut self, input: crate::model::ConfigurationRevision) -> Self {
@@ -2043,12 +1953,8 @@ pub mod describe_configuration_output {
             self
         }
         /// <p>Latest revision of the configuration.</p>
-        pub fn set_latest_revision(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationRevision>,
-        ) -> Self {
-            self.latest_revision = input;
-            self
+        pub fn set_latest_revision(mut self, input: std::option::Option<crate::model::ConfigurationRevision>) -> Self {
+            self.latest_revision = input; self
         }
         /// <p>The name of the configuration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2057,8 +1963,7 @@ pub mod describe_configuration_output {
         }
         /// <p>The name of the configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
         pub fn state(mut self, input: crate::model::ConfigurationState) -> Self {
@@ -2066,26 +1971,31 @@ pub mod describe_configuration_output {
             self
         }
         /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ConfigurationState>) -> Self {
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`DescribeConfigurationOutput`](crate::output::DescribeConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeConfigurationOutput {
             crate::output::DescribeConfigurationOutput {
-                arn: self.arn,
-                creation_time: self.creation_time,
-                description: self.description,
-                kafka_versions: self.kafka_versions,
-                latest_revision: self.latest_revision,
-                name: self.name,
-                state: self.state,
+                arn: self.arn
+                ,
+                creation_time: self.creation_time
+                ,
+                description: self.description
+                ,
+                kafka_versions: self.kafka_versions
+                ,
+                latest_revision: self.latest_revision
+                ,
+                name: self.name
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConfigurationOutput`](crate::output::DescribeConfigurationOutput).
@@ -2097,20 +2007,20 @@ impl DescribeConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeClusterV2Output {
+pub struct DescribeClusterV2Output  {
     /// <p>The cluster information.</p>
     #[doc(hidden)]
     pub cluster_info: std::option::Option<crate::model::Cluster>,
 }
 impl DescribeClusterV2Output {
     /// <p>The cluster information.</p>
-    pub fn cluster_info(&self) -> std::option::Option<&crate::model::Cluster> {
+    pub fn cluster_info(&self) -> std::option::Option<& crate::model::Cluster> {
         self.cluster_info.as_ref()
     }
 }
 /// See [`DescribeClusterV2Output`](crate::output::DescribeClusterV2Output).
 pub mod describe_cluster_v2_output {
-
+    
     /// A builder for [`DescribeClusterV2Output`](crate::output::DescribeClusterV2Output).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2123,20 +2033,19 @@ pub mod describe_cluster_v2_output {
             self
         }
         /// <p>The cluster information.</p>
-        pub fn set_cluster_info(
-            mut self,
-            input: std::option::Option<crate::model::Cluster>,
-        ) -> Self {
-            self.cluster_info = input;
-            self
+        pub fn set_cluster_info(mut self, input: std::option::Option<crate::model::Cluster>) -> Self {
+            self.cluster_info = input; self
         }
         /// Consumes the builder and constructs a [`DescribeClusterV2Output`](crate::output::DescribeClusterV2Output).
         pub fn build(self) -> crate::output::DescribeClusterV2Output {
             crate::output::DescribeClusterV2Output {
-                cluster_info: self.cluster_info,
+                cluster_info: self.cluster_info
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeClusterV2Output {
     /// Creates a new builder-style object to manufacture [`DescribeClusterV2Output`](crate::output::DescribeClusterV2Output).
@@ -2148,22 +2057,20 @@ impl DescribeClusterV2Output {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeClusterOperationOutput {
+pub struct DescribeClusterOperationOutput  {
     /// <p>Cluster operation information</p>
     #[doc(hidden)]
     pub cluster_operation_info: std::option::Option<crate::model::ClusterOperationInfo>,
 }
 impl DescribeClusterOperationOutput {
     /// <p>Cluster operation information</p>
-    pub fn cluster_operation_info(
-        &self,
-    ) -> std::option::Option<&crate::model::ClusterOperationInfo> {
+    pub fn cluster_operation_info(&self) -> std::option::Option<& crate::model::ClusterOperationInfo> {
         self.cluster_operation_info.as_ref()
     }
 }
 /// See [`DescribeClusterOperationOutput`](crate::output::DescribeClusterOperationOutput).
 pub mod describe_cluster_operation_output {
-
+    
     /// A builder for [`DescribeClusterOperationOutput`](crate::output::DescribeClusterOperationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2176,20 +2083,19 @@ pub mod describe_cluster_operation_output {
             self
         }
         /// <p>Cluster operation information</p>
-        pub fn set_cluster_operation_info(
-            mut self,
-            input: std::option::Option<crate::model::ClusterOperationInfo>,
-        ) -> Self {
-            self.cluster_operation_info = input;
-            self
+        pub fn set_cluster_operation_info(mut self, input: std::option::Option<crate::model::ClusterOperationInfo>) -> Self {
+            self.cluster_operation_info = input; self
         }
         /// Consumes the builder and constructs a [`DescribeClusterOperationOutput`](crate::output::DescribeClusterOperationOutput).
         pub fn build(self) -> crate::output::DescribeClusterOperationOutput {
             crate::output::DescribeClusterOperationOutput {
-                cluster_operation_info: self.cluster_operation_info,
+                cluster_operation_info: self.cluster_operation_info
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeClusterOperationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterOperationOutput`](crate::output::DescribeClusterOperationOutput).
@@ -2201,20 +2107,20 @@ impl DescribeClusterOperationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeClusterOutput {
+pub struct DescribeClusterOutput  {
     /// <p>The cluster information.</p>
     #[doc(hidden)]
     pub cluster_info: std::option::Option<crate::model::ClusterInfo>,
 }
 impl DescribeClusterOutput {
     /// <p>The cluster information.</p>
-    pub fn cluster_info(&self) -> std::option::Option<&crate::model::ClusterInfo> {
+    pub fn cluster_info(&self) -> std::option::Option<& crate::model::ClusterInfo> {
         self.cluster_info.as_ref()
     }
 }
 /// See [`DescribeClusterOutput`](crate::output::DescribeClusterOutput).
 pub mod describe_cluster_output {
-
+    
     /// A builder for [`DescribeClusterOutput`](crate::output::DescribeClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2227,20 +2133,19 @@ pub mod describe_cluster_output {
             self
         }
         /// <p>The cluster information.</p>
-        pub fn set_cluster_info(
-            mut self,
-            input: std::option::Option<crate::model::ClusterInfo>,
-        ) -> Self {
-            self.cluster_info = input;
-            self
+        pub fn set_cluster_info(mut self, input: std::option::Option<crate::model::ClusterInfo>) -> Self {
+            self.cluster_info = input; self
         }
         /// Consumes the builder and constructs a [`DescribeClusterOutput`](crate::output::DescribeClusterOutput).
         pub fn build(self) -> crate::output::DescribeClusterOutput {
             crate::output::DescribeClusterOutput {
-                cluster_info: self.cluster_info,
+                cluster_info: self.cluster_info
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeClusterOutput {
     /// Creates a new builder-style object to manufacture [`DescribeClusterOutput`](crate::output::DescribeClusterOutput).
@@ -2252,7 +2157,7 @@ impl DescribeClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfigurationOutput {
+pub struct DeleteConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2262,17 +2167,17 @@ pub struct DeleteConfigurationOutput {
 }
 impl DeleteConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ConfigurationState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ConfigurationState> {
         self.state.as_ref()
     }
 }
 /// See [`DeleteConfigurationOutput`](crate::output::DeleteConfigurationOutput).
 pub mod delete_configuration_output {
-
+    
     /// A builder for [`DeleteConfigurationOutput`](crate::output::DeleteConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2287,8 +2192,7 @@ pub mod delete_configuration_output {
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
         pub fn state(mut self, input: crate::model::ConfigurationState) -> Self {
@@ -2296,21 +2200,21 @@ pub mod delete_configuration_output {
             self
         }
         /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ConfigurationState>) -> Self {
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`DeleteConfigurationOutput`](crate::output::DeleteConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteConfigurationOutput {
             crate::output::DeleteConfigurationOutput {
-                arn: self.arn,
-                state: self.state,
+                arn: self.arn
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationOutput`](crate::output::DeleteConfigurationOutput).
@@ -2322,7 +2226,7 @@ impl DeleteConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteClusterOutput {
+pub struct DeleteClusterOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -2332,17 +2236,17 @@ pub struct DeleteClusterOutput {
 }
 impl DeleteClusterOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ClusterState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ClusterState> {
         self.state.as_ref()
     }
 }
 /// See [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
 pub mod delete_cluster_output {
-
+    
     /// A builder for [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2357,8 +2261,7 @@ pub mod delete_cluster_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
         pub fn state(mut self, input: crate::model::ClusterState) -> Self {
@@ -2367,17 +2270,20 @@ pub mod delete_cluster_output {
         }
         /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ClusterState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
         pub fn build(self) -> crate::output::DeleteClusterOutput {
             crate::output::DeleteClusterOutput {
-                cluster_arn: self.cluster_arn,
-                state: self.state,
+                cluster_arn: self.cluster_arn
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteClusterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
@@ -2389,7 +2295,7 @@ impl DeleteClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConfigurationOutput {
+pub struct CreateConfigurationOutput  {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2408,29 +2314,29 @@ pub struct CreateConfigurationOutput {
 }
 impl CreateConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The time when the configuration was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Latest revision of the configuration.</p>
-    pub fn latest_revision(&self) -> std::option::Option<&crate::model::ConfigurationRevision> {
+    pub fn latest_revision(&self) -> std::option::Option<& crate::model::ConfigurationRevision> {
         self.latest_revision.as_ref()
     }
     /// <p>The name of the configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ConfigurationState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ConfigurationState> {
         self.state.as_ref()
     }
 }
 /// See [`CreateConfigurationOutput`](crate::output::CreateConfigurationOutput).
 pub mod create_configuration_output {
-
+    
     /// A builder for [`CreateConfigurationOutput`](crate::output::CreateConfigurationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2448,8 +2354,7 @@ pub mod create_configuration_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The time when the configuration was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2457,12 +2362,8 @@ pub mod create_configuration_output {
             self
         }
         /// <p>The time when the configuration was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>Latest revision of the configuration.</p>
         pub fn latest_revision(mut self, input: crate::model::ConfigurationRevision) -> Self {
@@ -2470,12 +2371,8 @@ pub mod create_configuration_output {
             self
         }
         /// <p>Latest revision of the configuration.</p>
-        pub fn set_latest_revision(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationRevision>,
-        ) -> Self {
-            self.latest_revision = input;
-            self
+        pub fn set_latest_revision(mut self, input: std::option::Option<crate::model::ConfigurationRevision>) -> Self {
+            self.latest_revision = input; self
         }
         /// <p>The name of the configuration.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2484,8 +2381,7 @@ pub mod create_configuration_output {
         }
         /// <p>The name of the configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
         pub fn state(mut self, input: crate::model::ConfigurationState) -> Self {
@@ -2493,24 +2389,27 @@ pub mod create_configuration_output {
             self
         }
         /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::ConfigurationState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::ConfigurationState>) -> Self {
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`CreateConfigurationOutput`](crate::output::CreateConfigurationOutput).
         pub fn build(self) -> crate::output::CreateConfigurationOutput {
             crate::output::CreateConfigurationOutput {
-                arn: self.arn,
-                creation_time: self.creation_time,
-                latest_revision: self.latest_revision,
-                name: self.name,
-                state: self.state,
+                arn: self.arn
+                ,
+                creation_time: self.creation_time
+                ,
+                latest_revision: self.latest_revision
+                ,
+                name: self.name
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationOutput`](crate::output::CreateConfigurationOutput).
@@ -2522,7 +2421,7 @@ impl CreateConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateClusterV2Output {
+pub struct CreateClusterV2Output  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -2538,25 +2437,25 @@ pub struct CreateClusterV2Output {
 }
 impl CreateClusterV2Output {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The name of the MSK cluster.</p>
-    pub fn cluster_name(&self) -> std::option::Option<&str> {
+    pub fn cluster_name(&self) -> std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ClusterState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ClusterState> {
         self.state.as_ref()
     }
     /// <p>The type of the cluster. The possible states are PROVISIONED or SERVERLESS.</p>
-    pub fn cluster_type(&self) -> std::option::Option<&crate::model::ClusterType> {
+    pub fn cluster_type(&self) -> std::option::Option<& crate::model::ClusterType> {
         self.cluster_type.as_ref()
     }
 }
 /// See [`CreateClusterV2Output`](crate::output::CreateClusterV2Output).
 pub mod create_cluster_v2_output {
-
+    
     /// A builder for [`CreateClusterV2Output`](crate::output::CreateClusterV2Output).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2573,8 +2472,7 @@ pub mod create_cluster_v2_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// <p>The name of the MSK cluster.</p>
         pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2583,8 +2481,7 @@ pub mod create_cluster_v2_output {
         }
         /// <p>The name of the MSK cluster.</p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_name = input;
-            self
+            self.cluster_name = input; self
         }
         /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
         pub fn state(mut self, input: crate::model::ClusterState) -> Self {
@@ -2593,8 +2490,7 @@ pub mod create_cluster_v2_output {
         }
         /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ClusterState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The type of the cluster. The possible states are PROVISIONED or SERVERLESS.</p>
         pub fn cluster_type(mut self, input: crate::model::ClusterType) -> Self {
@@ -2602,23 +2498,25 @@ pub mod create_cluster_v2_output {
             self
         }
         /// <p>The type of the cluster. The possible states are PROVISIONED or SERVERLESS.</p>
-        pub fn set_cluster_type(
-            mut self,
-            input: std::option::Option<crate::model::ClusterType>,
-        ) -> Self {
-            self.cluster_type = input;
-            self
+        pub fn set_cluster_type(mut self, input: std::option::Option<crate::model::ClusterType>) -> Self {
+            self.cluster_type = input; self
         }
         /// Consumes the builder and constructs a [`CreateClusterV2Output`](crate::output::CreateClusterV2Output).
         pub fn build(self) -> crate::output::CreateClusterV2Output {
             crate::output::CreateClusterV2Output {
-                cluster_arn: self.cluster_arn,
-                cluster_name: self.cluster_name,
-                state: self.state,
-                cluster_type: self.cluster_type,
+                cluster_arn: self.cluster_arn
+                ,
+                cluster_name: self.cluster_name
+                ,
+                state: self.state
+                ,
+                cluster_type: self.cluster_type
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateClusterV2Output {
     /// Creates a new builder-style object to manufacture [`CreateClusterV2Output`](crate::output::CreateClusterV2Output).
@@ -2630,7 +2528,7 @@ impl CreateClusterV2Output {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateClusterOutput {
+pub struct CreateClusterOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -2643,21 +2541,21 @@ pub struct CreateClusterOutput {
 }
 impl CreateClusterOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The name of the MSK cluster.</p>
-    pub fn cluster_name(&self) -> std::option::Option<&str> {
+    pub fn cluster_name(&self) -> std::option::Option<& str> {
         self.cluster_name.as_deref()
     }
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::ClusterState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::ClusterState> {
         self.state.as_ref()
     }
 }
 /// See [`CreateClusterOutput`](crate::output::CreateClusterOutput).
 pub mod create_cluster_output {
-
+    
     /// A builder for [`CreateClusterOutput`](crate::output::CreateClusterOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2673,8 +2571,7 @@ pub mod create_cluster_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// <p>The name of the MSK cluster.</p>
         pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2683,8 +2580,7 @@ pub mod create_cluster_output {
         }
         /// <p>The name of the MSK cluster.</p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_name = input;
-            self
+            self.cluster_name = input; self
         }
         /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
         pub fn state(mut self, input: crate::model::ClusterState) -> Self {
@@ -2693,18 +2589,22 @@ pub mod create_cluster_output {
         }
         /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ClusterState>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`CreateClusterOutput`](crate::output::CreateClusterOutput).
         pub fn build(self) -> crate::output::CreateClusterOutput {
             crate::output::CreateClusterOutput {
-                cluster_arn: self.cluster_arn,
-                cluster_name: self.cluster_name,
-                state: self.state,
+                cluster_arn: self.cluster_arn
+                ,
+                cluster_name: self.cluster_name
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateClusterOutput {
     /// Creates a new builder-style object to manufacture [`CreateClusterOutput`](crate::output::CreateClusterOutput).
@@ -2716,36 +2616,32 @@ impl CreateClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDisassociateScramSecretOutput {
+pub struct BatchDisassociateScramSecretOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>List of errors when disassociating secrets to cluster.</p>
     #[doc(hidden)]
-    pub unprocessed_scram_secrets:
-        std::option::Option<std::vec::Vec<crate::model::UnprocessedScramSecret>>,
+    pub unprocessed_scram_secrets: std::option::Option<std::vec::Vec<crate::model::UnprocessedScramSecret>>,
 }
 impl BatchDisassociateScramSecretOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>List of errors when disassociating secrets to cluster.</p>
-    pub fn unprocessed_scram_secrets(
-        &self,
-    ) -> std::option::Option<&[crate::model::UnprocessedScramSecret]> {
+    pub fn unprocessed_scram_secrets(&self) -> std::option::Option<& [crate::model::UnprocessedScramSecret]> {
         self.unprocessed_scram_secrets.as_deref()
     }
 }
 /// See [`BatchDisassociateScramSecretOutput`](crate::output::BatchDisassociateScramSecretOutput).
 pub mod batch_disassociate_scram_secret_output {
-
+    
     /// A builder for [`BatchDisassociateScramSecretOutput`](crate::output::BatchDisassociateScramSecretOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
-        pub(crate) unprocessed_scram_secrets:
-            std::option::Option<std::vec::Vec<crate::model::UnprocessedScramSecret>>,
+        pub(crate) unprocessed_scram_secrets: std::option::Option<std::vec::Vec<crate::model::UnprocessedScramSecret>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
@@ -2755,39 +2651,35 @@ pub mod batch_disassociate_scram_secret_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// Appends an item to `unprocessed_scram_secrets`.
         ///
         /// To override the contents of this collection use [`set_unprocessed_scram_secrets`](Self::set_unprocessed_scram_secrets).
         ///
         /// <p>List of errors when disassociating secrets to cluster.</p>
-        pub fn unprocessed_scram_secrets(
-            mut self,
-            input: crate::model::UnprocessedScramSecret,
-        ) -> Self {
+        pub fn unprocessed_scram_secrets(mut self, input: crate::model::UnprocessedScramSecret) -> Self {
             let mut v = self.unprocessed_scram_secrets.unwrap_or_default();
-            v.push(input);
-            self.unprocessed_scram_secrets = Some(v);
-            self
+                            v.push(input);
+                            self.unprocessed_scram_secrets = Some(v);
+                            self
         }
         /// <p>List of errors when disassociating secrets to cluster.</p>
-        pub fn set_unprocessed_scram_secrets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UnprocessedScramSecret>>,
-        ) -> Self {
-            self.unprocessed_scram_secrets = input;
-            self
+        pub fn set_unprocessed_scram_secrets(mut self, input: std::option::Option<std::vec::Vec<crate::model::UnprocessedScramSecret>>) -> Self {
+            self.unprocessed_scram_secrets = input; self
         }
         /// Consumes the builder and constructs a [`BatchDisassociateScramSecretOutput`](crate::output::BatchDisassociateScramSecretOutput).
         pub fn build(self) -> crate::output::BatchDisassociateScramSecretOutput {
             crate::output::BatchDisassociateScramSecretOutput {
-                cluster_arn: self.cluster_arn,
-                unprocessed_scram_secrets: self.unprocessed_scram_secrets,
+                cluster_arn: self.cluster_arn
+                ,
+                unprocessed_scram_secrets: self.unprocessed_scram_secrets
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchDisassociateScramSecretOutput {
     /// Creates a new builder-style object to manufacture [`BatchDisassociateScramSecretOutput`](crate::output::BatchDisassociateScramSecretOutput).
@@ -2799,36 +2691,32 @@ impl BatchDisassociateScramSecretOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchAssociateScramSecretOutput {
+pub struct BatchAssociateScramSecretOutput  {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>List of errors when associating secrets to cluster.</p>
     #[doc(hidden)]
-    pub unprocessed_scram_secrets:
-        std::option::Option<std::vec::Vec<crate::model::UnprocessedScramSecret>>,
+    pub unprocessed_scram_secrets: std::option::Option<std::vec::Vec<crate::model::UnprocessedScramSecret>>,
 }
 impl BatchAssociateScramSecretOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> std::option::Option<& str> {
         self.cluster_arn.as_deref()
     }
     /// <p>List of errors when associating secrets to cluster.</p>
-    pub fn unprocessed_scram_secrets(
-        &self,
-    ) -> std::option::Option<&[crate::model::UnprocessedScramSecret]> {
+    pub fn unprocessed_scram_secrets(&self) -> std::option::Option<& [crate::model::UnprocessedScramSecret]> {
         self.unprocessed_scram_secrets.as_deref()
     }
 }
 /// See [`BatchAssociateScramSecretOutput`](crate::output::BatchAssociateScramSecretOutput).
 pub mod batch_associate_scram_secret_output {
-
+    
     /// A builder for [`BatchAssociateScramSecretOutput`](crate::output::BatchAssociateScramSecretOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
-        pub(crate) unprocessed_scram_secrets:
-            std::option::Option<std::vec::Vec<crate::model::UnprocessedScramSecret>>,
+        pub(crate) unprocessed_scram_secrets: std::option::Option<std::vec::Vec<crate::model::UnprocessedScramSecret>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
@@ -2838,39 +2726,35 @@ pub mod batch_associate_scram_secret_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.cluster_arn = input;
-            self
+            self.cluster_arn = input; self
         }
         /// Appends an item to `unprocessed_scram_secrets`.
         ///
         /// To override the contents of this collection use [`set_unprocessed_scram_secrets`](Self::set_unprocessed_scram_secrets).
         ///
         /// <p>List of errors when associating secrets to cluster.</p>
-        pub fn unprocessed_scram_secrets(
-            mut self,
-            input: crate::model::UnprocessedScramSecret,
-        ) -> Self {
+        pub fn unprocessed_scram_secrets(mut self, input: crate::model::UnprocessedScramSecret) -> Self {
             let mut v = self.unprocessed_scram_secrets.unwrap_or_default();
-            v.push(input);
-            self.unprocessed_scram_secrets = Some(v);
-            self
+                            v.push(input);
+                            self.unprocessed_scram_secrets = Some(v);
+                            self
         }
         /// <p>List of errors when associating secrets to cluster.</p>
-        pub fn set_unprocessed_scram_secrets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::UnprocessedScramSecret>>,
-        ) -> Self {
-            self.unprocessed_scram_secrets = input;
-            self
+        pub fn set_unprocessed_scram_secrets(mut self, input: std::option::Option<std::vec::Vec<crate::model::UnprocessedScramSecret>>) -> Self {
+            self.unprocessed_scram_secrets = input; self
         }
         /// Consumes the builder and constructs a [`BatchAssociateScramSecretOutput`](crate::output::BatchAssociateScramSecretOutput).
         pub fn build(self) -> crate::output::BatchAssociateScramSecretOutput {
             crate::output::BatchAssociateScramSecretOutput {
-                cluster_arn: self.cluster_arn,
-                unprocessed_scram_secrets: self.unprocessed_scram_secrets,
+                cluster_arn: self.cluster_arn
+                ,
+                unprocessed_scram_secrets: self.unprocessed_scram_secrets
+                ,
             }
         }
     }
+    
+    
 }
 impl BatchAssociateScramSecretOutput {
     /// Creates a new builder-style object to manufacture [`BatchAssociateScramSecretOutput`](crate::output::BatchAssociateScramSecretOutput).
@@ -2878,3 +2762,4 @@ impl BatchAssociateScramSecretOutput {
         crate::output::batch_associate_scram_secret_output::Builder::default()
     }
 }
+

@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct StartSnapshotError {
     /// Kind of error that occurred.
-    pub kind: StartSnapshotErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StartSnapshotErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StartSnapshotError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: StartSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -36,28 +36,46 @@ pub enum StartSnapshotErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints of the EBS direct APIs.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartSnapshotErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            StartSnapshotErrorKind::ConcurrentLimitExceededException(_inner) => _inner.fmt(f),
-            StartSnapshotErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            StartSnapshotErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            StartSnapshotErrorKind::RequestThrottledException(_inner) => _inner.fmt(f),
-            StartSnapshotErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            StartSnapshotErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
-            StartSnapshotErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            StartSnapshotErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            StartSnapshotErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSnapshotErrorKind::ConcurrentLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSnapshotErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSnapshotErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSnapshotErrorKind::RequestThrottledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSnapshotErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSnapshotErrorKind::ServiceQuotaExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSnapshotErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartSnapshotErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -71,56 +89,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for StartSnapshotError {
 }
 impl StartSnapshotError {
     /// Creates a new `StartSnapshotError`.
-    pub fn new(kind: StartSnapshotErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StartSnapshotError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StartSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StartSnapshotError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StartSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StartSnapshotErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StartSnapshotError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StartSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StartSnapshotError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StartSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StartSnapshotErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(&self.kind, StartSnapshotErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `StartSnapshotErrorKind::ConcurrentLimitExceededException`.
     pub fn is_concurrent_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSnapshotErrorKind::ConcurrentLimitExceededException(_)
-        )
+        matches!(&self.kind, StartSnapshotErrorKind::ConcurrentLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `StartSnapshotErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
@@ -128,31 +143,19 @@ impl StartSnapshotError {
     }
     /// Returns `true` if the error kind is `StartSnapshotErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSnapshotErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, StartSnapshotErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `StartSnapshotErrorKind::RequestThrottledException`.
     pub fn is_request_throttled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSnapshotErrorKind::RequestThrottledException(_)
-        )
+        matches!(&self.kind, StartSnapshotErrorKind::RequestThrottledException(_))
     }
     /// Returns `true` if the error kind is `StartSnapshotErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSnapshotErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, StartSnapshotErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `StartSnapshotErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartSnapshotErrorKind::ServiceQuotaExceededException(_)
-        )
+        matches!(&self.kind, StartSnapshotErrorKind::ServiceQuotaExceededException(_))
     }
     /// Returns `true` if the error kind is `StartSnapshotErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -162,15 +165,33 @@ impl StartSnapshotError {
 impl std::error::Error for StartSnapshotError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartSnapshotErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            StartSnapshotErrorKind::ConcurrentLimitExceededException(_inner) => Some(_inner),
-            StartSnapshotErrorKind::ConflictException(_inner) => Some(_inner),
-            StartSnapshotErrorKind::InternalServerException(_inner) => Some(_inner),
-            StartSnapshotErrorKind::RequestThrottledException(_inner) => Some(_inner),
-            StartSnapshotErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            StartSnapshotErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
-            StartSnapshotErrorKind::ValidationException(_inner) => Some(_inner),
-            StartSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
+            StartSnapshotErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            StartSnapshotErrorKind::ConcurrentLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            StartSnapshotErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            StartSnapshotErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            StartSnapshotErrorKind::RequestThrottledException(_inner) =>
+            Some(_inner)
+            ,
+            StartSnapshotErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            StartSnapshotErrorKind::ServiceQuotaExceededException(_inner) =>
+            Some(_inner)
+            ,
+            StartSnapshotErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            StartSnapshotErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -178,7 +199,7 @@ impl std::error::Error for StartSnapshotError {
 /// <p>The input fails to satisfy the constraints of the EBS direct APIs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationException {
+pub struct ValidationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -188,21 +209,19 @@ pub struct ValidationException {
 }
 impl ValidationException {
     /// <p>The reason for the validation exception.</p>
-    pub fn reason(&self) -> std::option::Option<&crate::model::ValidationExceptionReason> {
+    pub fn reason(&self) -> std::option::Option<& crate::model::ValidationExceptionReason> {
         self.reason.as_ref()
     }
 }
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ValidationException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -212,7 +231,7 @@ impl std::fmt::Display for ValidationException {
 impl std::error::Error for ValidationException {}
 /// See [`ValidationException`](crate::error::ValidationException).
 pub mod validation_exception {
-
+    
     /// A builder for [`ValidationException`](crate::error::ValidationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -227,8 +246,7 @@ pub mod validation_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The reason for the validation exception.</p>
         pub fn reason(mut self, input: crate::model::ValidationExceptionReason) -> Self {
@@ -236,21 +254,21 @@ pub mod validation_exception {
             self
         }
         /// <p>The reason for the validation exception.</p>
-        pub fn set_reason(
-            mut self,
-            input: std::option::Option<crate::model::ValidationExceptionReason>,
-        ) -> Self {
-            self.reason = input;
-            self
+        pub fn set_reason(mut self, input: std::option::Option<crate::model::ValidationExceptionReason>) -> Self {
+            self.reason = input; self
         }
         /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException).
         pub fn build(self) -> crate::error::ValidationException {
             crate::error::ValidationException {
-                message: self.message,
-                reason: self.reason,
+                message: self.message
+                ,
+                reason: self.reason
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationException {
     /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException).
@@ -262,7 +280,7 @@ impl ValidationException {
 /// <p>Your current service quotas do not allow you to perform this action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceQuotaExceededException {
+pub struct ServiceQuotaExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -272,23 +290,19 @@ pub struct ServiceQuotaExceededException {
 }
 impl ServiceQuotaExceededException {
     /// <p>The reason for the exception.</p>
-    pub fn reason(
-        &self,
-    ) -> std::option::Option<&crate::model::ServiceQuotaExceededExceptionReason> {
+    pub fn reason(&self) -> std::option::Option<& crate::model::ServiceQuotaExceededExceptionReason> {
         self.reason.as_ref()
     }
 }
 impl ServiceQuotaExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceQuotaExceededException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -298,7 +312,7 @@ impl std::fmt::Display for ServiceQuotaExceededException {
 impl std::error::Error for ServiceQuotaExceededException {}
 /// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
 pub mod service_quota_exceeded_exception {
-
+    
     /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -313,8 +327,7 @@ pub mod service_quota_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The reason for the exception.</p>
         pub fn reason(mut self, input: crate::model::ServiceQuotaExceededExceptionReason) -> Self {
@@ -322,21 +335,21 @@ pub mod service_quota_exceeded_exception {
             self
         }
         /// <p>The reason for the exception.</p>
-        pub fn set_reason(
-            mut self,
-            input: std::option::Option<crate::model::ServiceQuotaExceededExceptionReason>,
-        ) -> Self {
-            self.reason = input;
-            self
+        pub fn set_reason(mut self, input: std::option::Option<crate::model::ServiceQuotaExceededExceptionReason>) -> Self {
+            self.reason = input; self
         }
         /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
         pub fn build(self) -> crate::error::ServiceQuotaExceededException {
             crate::error::ServiceQuotaExceededException {
-                message: self.message,
-                reason: self.reason,
+                message: self.message
+                ,
+                reason: self.reason
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceQuotaExceededException {
     /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
@@ -348,7 +361,7 @@ impl ServiceQuotaExceededException {
 /// <p>The specified resource does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceNotFoundException {
+pub struct ResourceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -358,21 +371,19 @@ pub struct ResourceNotFoundException {
 }
 impl ResourceNotFoundException {
     /// <p>The reason for the exception.</p>
-    pub fn reason(&self) -> std::option::Option<&crate::model::ResourceNotFoundExceptionReason> {
+    pub fn reason(&self) -> std::option::Option<& crate::model::ResourceNotFoundExceptionReason> {
         self.reason.as_ref()
     }
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -382,7 +393,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
-
+    
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -397,8 +408,7 @@ pub mod resource_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The reason for the exception.</p>
         pub fn reason(mut self, input: crate::model::ResourceNotFoundExceptionReason) -> Self {
@@ -406,21 +416,21 @@ pub mod resource_not_found_exception {
             self
         }
         /// <p>The reason for the exception.</p>
-        pub fn set_reason(
-            mut self,
-            input: std::option::Option<crate::model::ResourceNotFoundExceptionReason>,
-        ) -> Self {
-            self.reason = input;
-            self
+        pub fn set_reason(mut self, input: std::option::Option<crate::model::ResourceNotFoundExceptionReason>) -> Self {
+            self.reason = input; self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
-                message: self.message,
-                reason: self.reason,
+                message: self.message
+                ,
+                reason: self.reason
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
@@ -432,7 +442,7 @@ impl ResourceNotFoundException {
 /// <p>The number of API requests has exceed the maximum allowed API request throttling limit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestThrottledException {
+pub struct RequestThrottledException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -442,21 +452,19 @@ pub struct RequestThrottledException {
 }
 impl RequestThrottledException {
     /// <p>The reason for the exception.</p>
-    pub fn reason(&self) -> std::option::Option<&crate::model::RequestThrottledExceptionReason> {
+    pub fn reason(&self) -> std::option::Option<& crate::model::RequestThrottledExceptionReason> {
         self.reason.as_ref()
     }
 }
 impl RequestThrottledException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for RequestThrottledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RequestThrottledException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -466,7 +474,7 @@ impl std::fmt::Display for RequestThrottledException {
 impl std::error::Error for RequestThrottledException {}
 /// See [`RequestThrottledException`](crate::error::RequestThrottledException).
 pub mod request_throttled_exception {
-
+    
     /// A builder for [`RequestThrottledException`](crate::error::RequestThrottledException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -481,8 +489,7 @@ pub mod request_throttled_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The reason for the exception.</p>
         pub fn reason(mut self, input: crate::model::RequestThrottledExceptionReason) -> Self {
@@ -490,21 +497,21 @@ pub mod request_throttled_exception {
             self
         }
         /// <p>The reason for the exception.</p>
-        pub fn set_reason(
-            mut self,
-            input: std::option::Option<crate::model::RequestThrottledExceptionReason>,
-        ) -> Self {
-            self.reason = input;
-            self
+        pub fn set_reason(mut self, input: std::option::Option<crate::model::RequestThrottledExceptionReason>) -> Self {
+            self.reason = input; self
         }
         /// Consumes the builder and constructs a [`RequestThrottledException`](crate::error::RequestThrottledException).
         pub fn build(self) -> crate::error::RequestThrottledException {
             crate::error::RequestThrottledException {
-                message: self.message,
-                reason: self.reason,
+                message: self.message
+                ,
+                reason: self.reason
+                ,
             }
         }
     }
+    
+    
 }
 impl RequestThrottledException {
     /// Creates a new builder-style object to manufacture [`RequestThrottledException`](crate::error::RequestThrottledException).
@@ -516,22 +523,20 @@ impl RequestThrottledException {
 /// <p>An internal error has occurred.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServerException {
+pub struct InternalServerException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalServerException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -541,7 +546,7 @@ impl std::fmt::Display for InternalServerException {
 impl std::error::Error for InternalServerException {}
 /// See [`InternalServerException`](crate::error::InternalServerException).
 pub mod internal_server_exception {
-
+    
     /// A builder for [`InternalServerException`](crate::error::InternalServerException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -555,16 +560,18 @@ pub mod internal_server_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InternalServerException`](crate::error::InternalServerException).
         pub fn build(self) -> crate::error::InternalServerException {
             crate::error::InternalServerException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InternalServerException {
     /// Creates a new builder-style object to manufacture [`InternalServerException`](crate::error::InternalServerException).
@@ -576,22 +583,20 @@ impl InternalServerException {
 /// <p>The request uses the same client token as a previous, but non-identical request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -601,7 +606,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException).
 pub mod conflict_exception {
-
+    
     /// A builder for [`ConflictException`](crate::error::ConflictException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -615,16 +620,18 @@ pub mod conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
         pub fn build(self) -> crate::error::ConflictException {
             crate::error::ConflictException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
@@ -636,22 +643,20 @@ impl ConflictException {
 /// <p>You have reached the limit for concurrent API requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapi-performance">Optimizing performance of the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConcurrentLimitExceededException {
+pub struct ConcurrentLimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConcurrentLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConcurrentLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConcurrentLimitExceededException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -661,7 +666,7 @@ impl std::fmt::Display for ConcurrentLimitExceededException {
 impl std::error::Error for ConcurrentLimitExceededException {}
 /// See [`ConcurrentLimitExceededException`](crate::error::ConcurrentLimitExceededException).
 pub mod concurrent_limit_exceeded_exception {
-
+    
     /// A builder for [`ConcurrentLimitExceededException`](crate::error::ConcurrentLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -675,16 +680,18 @@ pub mod concurrent_limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ConcurrentLimitExceededException`](crate::error::ConcurrentLimitExceededException).
         pub fn build(self) -> crate::error::ConcurrentLimitExceededException {
             crate::error::ConcurrentLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ConcurrentLimitExceededException {
     /// Creates a new builder-style object to manufacture [`ConcurrentLimitExceededException`](crate::error::ConcurrentLimitExceededException).
@@ -696,7 +703,7 @@ impl ConcurrentLimitExceededException {
 /// <p>You do not have sufficient access to perform this action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessDeniedException {
+pub struct AccessDeniedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -706,21 +713,19 @@ pub struct AccessDeniedException {
 }
 impl AccessDeniedException {
     /// <p>The reason for the exception.</p>
-    pub fn reason(&self) -> std::option::Option<&crate::model::AccessDeniedExceptionReason> {
+    pub fn reason(&self) -> std::option::Option<& crate::model::AccessDeniedExceptionReason> {
         self.reason.as_ref()
     }
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -730,7 +735,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException).
 pub mod access_denied_exception {
-
+    
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -745,8 +750,7 @@ pub mod access_denied_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The reason for the exception.</p>
         pub fn reason(mut self, input: crate::model::AccessDeniedExceptionReason) -> Self {
@@ -754,21 +758,21 @@ pub mod access_denied_exception {
             self
         }
         /// <p>The reason for the exception.</p>
-        pub fn set_reason(
-            mut self,
-            input: std::option::Option<crate::model::AccessDeniedExceptionReason>,
-        ) -> Self {
-            self.reason = input;
-            self
+        pub fn set_reason(mut self, input: std::option::Option<crate::model::AccessDeniedExceptionReason>) -> Self {
+            self.reason = input; self
         }
         /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
         pub fn build(self) -> crate::error::AccessDeniedException {
             crate::error::AccessDeniedException {
-                message: self.message,
-                reason: self.reason,
+                message: self.message
+                ,
+                reason: self.reason
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
@@ -782,15 +786,15 @@ impl AccessDeniedException {
 #[derive(std::fmt::Debug)]
 pub struct PutSnapshotBlockError {
     /// Kind of error that occurred.
-    pub kind: PutSnapshotBlockErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutSnapshotBlockErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutSnapshotBlockError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: PutSnapshotBlockErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -810,26 +814,40 @@ pub enum PutSnapshotBlockErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints of the EBS direct APIs.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutSnapshotBlockError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutSnapshotBlockErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            PutSnapshotBlockErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            PutSnapshotBlockErrorKind::RequestThrottledException(_inner) => _inner.fmt(f),
-            PutSnapshotBlockErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            PutSnapshotBlockErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
-            PutSnapshotBlockErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            PutSnapshotBlockErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            PutSnapshotBlockErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSnapshotBlockErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSnapshotBlockErrorKind::RequestThrottledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSnapshotBlockErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSnapshotBlockErrorKind::ServiceQuotaExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSnapshotBlockErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutSnapshotBlockErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -843,99 +861,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutSnapshotBlockError {
 }
 impl PutSnapshotBlockError {
     /// Creates a new `PutSnapshotBlockError`.
-    pub fn new(kind: PutSnapshotBlockErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutSnapshotBlockError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutSnapshotBlockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutSnapshotBlockError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutSnapshotBlockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutSnapshotBlockErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutSnapshotBlockError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutSnapshotBlockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutSnapshotBlockError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutSnapshotBlockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutSnapshotBlockErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSnapshotBlockErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, PutSnapshotBlockErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `PutSnapshotBlockErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSnapshotBlockErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, PutSnapshotBlockErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `PutSnapshotBlockErrorKind::RequestThrottledException`.
     pub fn is_request_throttled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSnapshotBlockErrorKind::RequestThrottledException(_)
-        )
+        matches!(&self.kind, PutSnapshotBlockErrorKind::RequestThrottledException(_))
     }
     /// Returns `true` if the error kind is `PutSnapshotBlockErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSnapshotBlockErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, PutSnapshotBlockErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `PutSnapshotBlockErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSnapshotBlockErrorKind::ServiceQuotaExceededException(_)
-        )
+        matches!(&self.kind, PutSnapshotBlockErrorKind::ServiceQuotaExceededException(_))
     }
     /// Returns `true` if the error kind is `PutSnapshotBlockErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutSnapshotBlockErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, PutSnapshotBlockErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for PutSnapshotBlockError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutSnapshotBlockErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            PutSnapshotBlockErrorKind::InternalServerException(_inner) => Some(_inner),
-            PutSnapshotBlockErrorKind::RequestThrottledException(_inner) => Some(_inner),
-            PutSnapshotBlockErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            PutSnapshotBlockErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
-            PutSnapshotBlockErrorKind::ValidationException(_inner) => Some(_inner),
-            PutSnapshotBlockErrorKind::Unhandled(_inner) => Some(_inner),
+            PutSnapshotBlockErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            PutSnapshotBlockErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            PutSnapshotBlockErrorKind::RequestThrottledException(_inner) =>
+            Some(_inner)
+            ,
+            PutSnapshotBlockErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            PutSnapshotBlockErrorKind::ServiceQuotaExceededException(_inner) =>
+            Some(_inner)
+            ,
+            PutSnapshotBlockErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            PutSnapshotBlockErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -945,15 +959,15 @@ impl std::error::Error for PutSnapshotBlockError {
 #[derive(std::fmt::Debug)]
 pub struct ListSnapshotBlocksError {
     /// Kind of error that occurred.
-    pub kind: ListSnapshotBlocksErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListSnapshotBlocksErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListSnapshotBlocksError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListSnapshotBlocksErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -973,26 +987,40 @@ pub enum ListSnapshotBlocksErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints of the EBS direct APIs.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSnapshotBlocksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListSnapshotBlocksErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListSnapshotBlocksErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            ListSnapshotBlocksErrorKind::RequestThrottledException(_inner) => _inner.fmt(f),
-            ListSnapshotBlocksErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ListSnapshotBlocksErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
-            ListSnapshotBlocksErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListSnapshotBlocksErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListSnapshotBlocksErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSnapshotBlocksErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSnapshotBlocksErrorKind::RequestThrottledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSnapshotBlocksErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSnapshotBlocksErrorKind::ServiceQuotaExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSnapshotBlocksErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSnapshotBlocksErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1006,99 +1034,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListSnapshotBlocksError {
 }
 impl ListSnapshotBlocksError {
     /// Creates a new `ListSnapshotBlocksError`.
-    pub fn new(kind: ListSnapshotBlocksErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListSnapshotBlocksError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListSnapshotBlocksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListSnapshotBlocksError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListSnapshotBlocksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListSnapshotBlocksErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListSnapshotBlocksError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListSnapshotBlocksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListSnapshotBlocksError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListSnapshotBlocksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListSnapshotBlocksErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSnapshotBlocksErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListSnapshotBlocksErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListSnapshotBlocksErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSnapshotBlocksErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, ListSnapshotBlocksErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `ListSnapshotBlocksErrorKind::RequestThrottledException`.
     pub fn is_request_throttled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSnapshotBlocksErrorKind::RequestThrottledException(_)
-        )
+        matches!(&self.kind, ListSnapshotBlocksErrorKind::RequestThrottledException(_))
     }
     /// Returns `true` if the error kind is `ListSnapshotBlocksErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSnapshotBlocksErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ListSnapshotBlocksErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListSnapshotBlocksErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSnapshotBlocksErrorKind::ServiceQuotaExceededException(_)
-        )
+        matches!(&self.kind, ListSnapshotBlocksErrorKind::ServiceQuotaExceededException(_))
     }
     /// Returns `true` if the error kind is `ListSnapshotBlocksErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSnapshotBlocksErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ListSnapshotBlocksErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ListSnapshotBlocksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListSnapshotBlocksErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListSnapshotBlocksErrorKind::InternalServerException(_inner) => Some(_inner),
-            ListSnapshotBlocksErrorKind::RequestThrottledException(_inner) => Some(_inner),
-            ListSnapshotBlocksErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListSnapshotBlocksErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
-            ListSnapshotBlocksErrorKind::ValidationException(_inner) => Some(_inner),
-            ListSnapshotBlocksErrorKind::Unhandled(_inner) => Some(_inner),
+            ListSnapshotBlocksErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListSnapshotBlocksErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListSnapshotBlocksErrorKind::RequestThrottledException(_inner) =>
+            Some(_inner)
+            ,
+            ListSnapshotBlocksErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListSnapshotBlocksErrorKind::ServiceQuotaExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListSnapshotBlocksErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListSnapshotBlocksErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1108,15 +1132,15 @@ impl std::error::Error for ListSnapshotBlocksError {
 #[derive(std::fmt::Debug)]
 pub struct ListChangedBlocksError {
     /// Kind of error that occurred.
-    pub kind: ListChangedBlocksErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListChangedBlocksErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListChangedBlocksError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListChangedBlocksErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1136,26 +1160,40 @@ pub enum ListChangedBlocksErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints of the EBS direct APIs.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListChangedBlocksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListChangedBlocksErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListChangedBlocksErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            ListChangedBlocksErrorKind::RequestThrottledException(_inner) => _inner.fmt(f),
-            ListChangedBlocksErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ListChangedBlocksErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
-            ListChangedBlocksErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListChangedBlocksErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListChangedBlocksErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListChangedBlocksErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListChangedBlocksErrorKind::RequestThrottledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListChangedBlocksErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListChangedBlocksErrorKind::ServiceQuotaExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListChangedBlocksErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListChangedBlocksErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1169,99 +1207,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListChangedBlocksError {
 }
 impl ListChangedBlocksError {
     /// Creates a new `ListChangedBlocksError`.
-    pub fn new(kind: ListChangedBlocksErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListChangedBlocksError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListChangedBlocksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListChangedBlocksError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListChangedBlocksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListChangedBlocksErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListChangedBlocksError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListChangedBlocksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListChangedBlocksError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListChangedBlocksErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListChangedBlocksErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListChangedBlocksErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListChangedBlocksErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListChangedBlocksErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListChangedBlocksErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, ListChangedBlocksErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `ListChangedBlocksErrorKind::RequestThrottledException`.
     pub fn is_request_throttled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListChangedBlocksErrorKind::RequestThrottledException(_)
-        )
+        matches!(&self.kind, ListChangedBlocksErrorKind::RequestThrottledException(_))
     }
     /// Returns `true` if the error kind is `ListChangedBlocksErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListChangedBlocksErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ListChangedBlocksErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListChangedBlocksErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListChangedBlocksErrorKind::ServiceQuotaExceededException(_)
-        )
+        matches!(&self.kind, ListChangedBlocksErrorKind::ServiceQuotaExceededException(_))
     }
     /// Returns `true` if the error kind is `ListChangedBlocksErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListChangedBlocksErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ListChangedBlocksErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ListChangedBlocksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListChangedBlocksErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListChangedBlocksErrorKind::InternalServerException(_inner) => Some(_inner),
-            ListChangedBlocksErrorKind::RequestThrottledException(_inner) => Some(_inner),
-            ListChangedBlocksErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListChangedBlocksErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
-            ListChangedBlocksErrorKind::ValidationException(_inner) => Some(_inner),
-            ListChangedBlocksErrorKind::Unhandled(_inner) => Some(_inner),
+            ListChangedBlocksErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListChangedBlocksErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListChangedBlocksErrorKind::RequestThrottledException(_inner) =>
+            Some(_inner)
+            ,
+            ListChangedBlocksErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListChangedBlocksErrorKind::ServiceQuotaExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListChangedBlocksErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListChangedBlocksErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1271,15 +1305,15 @@ impl std::error::Error for ListChangedBlocksError {
 #[derive(std::fmt::Debug)]
 pub struct GetSnapshotBlockError {
     /// Kind of error that occurred.
-    pub kind: GetSnapshotBlockErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetSnapshotBlockErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetSnapshotBlockError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetSnapshotBlockErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1299,26 +1333,40 @@ pub enum GetSnapshotBlockErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints of the EBS direct APIs.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSnapshotBlockError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSnapshotBlockErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetSnapshotBlockErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            GetSnapshotBlockErrorKind::RequestThrottledException(_inner) => _inner.fmt(f),
-            GetSnapshotBlockErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            GetSnapshotBlockErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
-            GetSnapshotBlockErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            GetSnapshotBlockErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetSnapshotBlockErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSnapshotBlockErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSnapshotBlockErrorKind::RequestThrottledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSnapshotBlockErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSnapshotBlockErrorKind::ServiceQuotaExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSnapshotBlockErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSnapshotBlockErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1332,99 +1380,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetSnapshotBlockError {
 }
 impl GetSnapshotBlockError {
     /// Creates a new `GetSnapshotBlockError`.
-    pub fn new(kind: GetSnapshotBlockErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetSnapshotBlockError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetSnapshotBlockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetSnapshotBlockError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetSnapshotBlockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetSnapshotBlockErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetSnapshotBlockError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetSnapshotBlockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetSnapshotBlockError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetSnapshotBlockErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetSnapshotBlockErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSnapshotBlockErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetSnapshotBlockErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetSnapshotBlockErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSnapshotBlockErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, GetSnapshotBlockErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `GetSnapshotBlockErrorKind::RequestThrottledException`.
     pub fn is_request_throttled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSnapshotBlockErrorKind::RequestThrottledException(_)
-        )
+        matches!(&self.kind, GetSnapshotBlockErrorKind::RequestThrottledException(_))
     }
     /// Returns `true` if the error kind is `GetSnapshotBlockErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSnapshotBlockErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetSnapshotBlockErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetSnapshotBlockErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSnapshotBlockErrorKind::ServiceQuotaExceededException(_)
-        )
+        matches!(&self.kind, GetSnapshotBlockErrorKind::ServiceQuotaExceededException(_))
     }
     /// Returns `true` if the error kind is `GetSnapshotBlockErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSnapshotBlockErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, GetSnapshotBlockErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for GetSnapshotBlockError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSnapshotBlockErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetSnapshotBlockErrorKind::InternalServerException(_inner) => Some(_inner),
-            GetSnapshotBlockErrorKind::RequestThrottledException(_inner) => Some(_inner),
-            GetSnapshotBlockErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetSnapshotBlockErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
-            GetSnapshotBlockErrorKind::ValidationException(_inner) => Some(_inner),
-            GetSnapshotBlockErrorKind::Unhandled(_inner) => Some(_inner),
+            GetSnapshotBlockErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetSnapshotBlockErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            GetSnapshotBlockErrorKind::RequestThrottledException(_inner) =>
+            Some(_inner)
+            ,
+            GetSnapshotBlockErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetSnapshotBlockErrorKind::ServiceQuotaExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetSnapshotBlockErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            GetSnapshotBlockErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1434,15 +1478,15 @@ impl std::error::Error for GetSnapshotBlockError {
 #[derive(std::fmt::Debug)]
 pub struct CompleteSnapshotError {
     /// Kind of error that occurred.
-    pub kind: CompleteSnapshotErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CompleteSnapshotErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CompleteSnapshotError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CompleteSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1462,26 +1506,40 @@ pub enum CompleteSnapshotErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints of the EBS direct APIs.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CompleteSnapshotError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CompleteSnapshotErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            CompleteSnapshotErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            CompleteSnapshotErrorKind::RequestThrottledException(_inner) => _inner.fmt(f),
-            CompleteSnapshotErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            CompleteSnapshotErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
-            CompleteSnapshotErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            CompleteSnapshotErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CompleteSnapshotErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CompleteSnapshotErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CompleteSnapshotErrorKind::RequestThrottledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CompleteSnapshotErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CompleteSnapshotErrorKind::ServiceQuotaExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CompleteSnapshotErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CompleteSnapshotErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1495,128 +1553,125 @@ impl aws_smithy_types::retry::ProvideErrorKind for CompleteSnapshotError {
 }
 impl CompleteSnapshotError {
     /// Creates a new `CompleteSnapshotError`.
-    pub fn new(kind: CompleteSnapshotErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CompleteSnapshotError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CompleteSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CompleteSnapshotError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CompleteSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CompleteSnapshotErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CompleteSnapshotError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CompleteSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CompleteSnapshotError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CompleteSnapshotErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CompleteSnapshotErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CompleteSnapshotErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CompleteSnapshotErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CompleteSnapshotErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CompleteSnapshotErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, CompleteSnapshotErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `CompleteSnapshotErrorKind::RequestThrottledException`.
     pub fn is_request_throttled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CompleteSnapshotErrorKind::RequestThrottledException(_)
-        )
+        matches!(&self.kind, CompleteSnapshotErrorKind::RequestThrottledException(_))
     }
     /// Returns `true` if the error kind is `CompleteSnapshotErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CompleteSnapshotErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, CompleteSnapshotErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CompleteSnapshotErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CompleteSnapshotErrorKind::ServiceQuotaExceededException(_)
-        )
+        matches!(&self.kind, CompleteSnapshotErrorKind::ServiceQuotaExceededException(_))
     }
     /// Returns `true` if the error kind is `CompleteSnapshotErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CompleteSnapshotErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, CompleteSnapshotErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for CompleteSnapshotError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CompleteSnapshotErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CompleteSnapshotErrorKind::InternalServerException(_inner) => Some(_inner),
-            CompleteSnapshotErrorKind::RequestThrottledException(_inner) => Some(_inner),
-            CompleteSnapshotErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            CompleteSnapshotErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
-            CompleteSnapshotErrorKind::ValidationException(_inner) => Some(_inner),
-            CompleteSnapshotErrorKind::Unhandled(_inner) => Some(_inner),
+            CompleteSnapshotErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CompleteSnapshotErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            CompleteSnapshotErrorKind::RequestThrottledException(_inner) =>
+            Some(_inner)
+            ,
+            CompleteSnapshotErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CompleteSnapshotErrorKind::ServiceQuotaExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CompleteSnapshotErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            CompleteSnapshotErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

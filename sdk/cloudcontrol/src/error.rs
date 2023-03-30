@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UpdateResourceError {
     /// Kind of error that occurred.
-    pub kind: UpdateResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -22,7 +22,7 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateResourceError {
 pub enum UpdateResourceErrorKind {
     /// <p>The resource with the name requested already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>The specified client token has already been used in another resource request.</p>
+    /// <p>The specified client token has already been used in another resource request.</p> 
     /// <p>It's best practice for client tokens to be unique for each resource operation request. However, client token expire after 36 hours.</p>
     ClientTokenConflictException(crate::error::ClientTokenConflictException),
     /// <p>Another resource operation is currently being performed on this resource.</p>
@@ -59,39 +59,79 @@ pub enum UpdateResourceErrorKind {
     TypeNotFoundException(crate::error::TypeNotFoundException),
     /// <p>The specified resource doesn't support this resource operation.</p>
     UnsupportedActionException(crate::error::UnsupportedActionException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateResourceErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::ClientTokenConflictException(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::ConcurrentOperationException(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::GeneralServiceException(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::HandlerFailureException(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::HandlerInternalFailureException(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::InvalidCredentialsException(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::NetworkFailureException(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::NotStabilizedException(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::NotUpdatableException(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::PrivateTypeException(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::ServiceInternalErrorException(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::ServiceLimitExceededException(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::TypeNotFoundException(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::UnsupportedActionException(_inner) => _inner.fmt(f),
-            UpdateResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateResourceErrorKind::AlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateResourceErrorKind::ClientTokenConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateResourceErrorKind::ConcurrentOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateResourceErrorKind::GeneralServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateResourceErrorKind::HandlerFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateResourceErrorKind::HandlerInternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateResourceErrorKind::InvalidCredentialsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateResourceErrorKind::InvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateResourceErrorKind::NetworkFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateResourceErrorKind::NotStabilizedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateResourceErrorKind::NotUpdatableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateResourceErrorKind::PrivateTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateResourceErrorKind::ResourceConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateResourceErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateResourceErrorKind::ServiceInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateResourceErrorKind::ServiceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateResourceErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateResourceErrorKind::TypeNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateResourceErrorKind::UnsupportedActionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -105,122 +145,89 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateResourceError {
 }
 impl UpdateResourceError {
     /// Creates a new `UpdateResourceError`.
-    pub fn new(kind: UpdateResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateResourceErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateResourceErrorKind::AlreadyExistsException(_)
-        )
+        matches!(&self.kind, UpdateResourceErrorKind::AlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `UpdateResourceErrorKind::ClientTokenConflictException`.
     pub fn is_client_token_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateResourceErrorKind::ClientTokenConflictException(_)
-        )
+        matches!(&self.kind, UpdateResourceErrorKind::ClientTokenConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateResourceErrorKind::ConcurrentOperationException`.
     pub fn is_concurrent_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateResourceErrorKind::ConcurrentOperationException(_)
-        )
+        matches!(&self.kind, UpdateResourceErrorKind::ConcurrentOperationException(_))
     }
     /// Returns `true` if the error kind is `UpdateResourceErrorKind::GeneralServiceException`.
     pub fn is_general_service_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateResourceErrorKind::GeneralServiceException(_)
-        )
+        matches!(&self.kind, UpdateResourceErrorKind::GeneralServiceException(_))
     }
     /// Returns `true` if the error kind is `UpdateResourceErrorKind::HandlerFailureException`.
     pub fn is_handler_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateResourceErrorKind::HandlerFailureException(_)
-        )
+        matches!(&self.kind, UpdateResourceErrorKind::HandlerFailureException(_))
     }
     /// Returns `true` if the error kind is `UpdateResourceErrorKind::HandlerInternalFailureException`.
     pub fn is_handler_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateResourceErrorKind::HandlerInternalFailureException(_)
-        )
+        matches!(&self.kind, UpdateResourceErrorKind::HandlerInternalFailureException(_))
     }
     /// Returns `true` if the error kind is `UpdateResourceErrorKind::InvalidCredentialsException`.
     pub fn is_invalid_credentials_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateResourceErrorKind::InvalidCredentialsException(_)
-        )
+        matches!(&self.kind, UpdateResourceErrorKind::InvalidCredentialsException(_))
     }
     /// Returns `true` if the error kind is `UpdateResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateResourceErrorKind::InvalidRequestException(_)
-        )
+        matches!(&self.kind, UpdateResourceErrorKind::InvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdateResourceErrorKind::NetworkFailureException`.
     pub fn is_network_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateResourceErrorKind::NetworkFailureException(_)
-        )
+        matches!(&self.kind, UpdateResourceErrorKind::NetworkFailureException(_))
     }
     /// Returns `true` if the error kind is `UpdateResourceErrorKind::NotStabilizedException`.
     pub fn is_not_stabilized_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateResourceErrorKind::NotStabilizedException(_)
-        )
+        matches!(&self.kind, UpdateResourceErrorKind::NotStabilizedException(_))
     }
     /// Returns `true` if the error kind is `UpdateResourceErrorKind::NotUpdatableException`.
     pub fn is_not_updatable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateResourceErrorKind::NotUpdatableException(_)
-        )
+        matches!(&self.kind, UpdateResourceErrorKind::NotUpdatableException(_))
     }
     /// Returns `true` if the error kind is `UpdateResourceErrorKind::PrivateTypeException`.
     pub fn is_private_type_exception(&self) -> bool {
@@ -228,31 +235,19 @@ impl UpdateResourceError {
     }
     /// Returns `true` if the error kind is `UpdateResourceErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateResourceErrorKind::ResourceConflictException(_)
-        )
+        matches!(&self.kind, UpdateResourceErrorKind::ResourceConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateResourceErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateResourceErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateResourceErrorKind::ServiceInternalErrorException`.
     pub fn is_service_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateResourceErrorKind::ServiceInternalErrorException(_)
-        )
+        matches!(&self.kind, UpdateResourceErrorKind::ServiceInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateResourceErrorKind::ServiceLimitExceededException`.
     pub fn is_service_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateResourceErrorKind::ServiceLimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateResourceErrorKind::ServiceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -260,42 +255,76 @@ impl UpdateResourceError {
     }
     /// Returns `true` if the error kind is `UpdateResourceErrorKind::TypeNotFoundException`.
     pub fn is_type_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateResourceErrorKind::TypeNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateResourceErrorKind::TypeNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateResourceErrorKind::UnsupportedActionException`.
     pub fn is_unsupported_action_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateResourceErrorKind::UnsupportedActionException(_)
-        )
+        matches!(&self.kind, UpdateResourceErrorKind::UnsupportedActionException(_))
     }
 }
 impl std::error::Error for UpdateResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateResourceErrorKind::AlreadyExistsException(_inner) => Some(_inner),
-            UpdateResourceErrorKind::ClientTokenConflictException(_inner) => Some(_inner),
-            UpdateResourceErrorKind::ConcurrentOperationException(_inner) => Some(_inner),
-            UpdateResourceErrorKind::GeneralServiceException(_inner) => Some(_inner),
-            UpdateResourceErrorKind::HandlerFailureException(_inner) => Some(_inner),
-            UpdateResourceErrorKind::HandlerInternalFailureException(_inner) => Some(_inner),
-            UpdateResourceErrorKind::InvalidCredentialsException(_inner) => Some(_inner),
-            UpdateResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            UpdateResourceErrorKind::NetworkFailureException(_inner) => Some(_inner),
-            UpdateResourceErrorKind::NotStabilizedException(_inner) => Some(_inner),
-            UpdateResourceErrorKind::NotUpdatableException(_inner) => Some(_inner),
-            UpdateResourceErrorKind::PrivateTypeException(_inner) => Some(_inner),
-            UpdateResourceErrorKind::ResourceConflictException(_inner) => Some(_inner),
-            UpdateResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateResourceErrorKind::ServiceInternalErrorException(_inner) => Some(_inner),
-            UpdateResourceErrorKind::ServiceLimitExceededException(_inner) => Some(_inner),
-            UpdateResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateResourceErrorKind::TypeNotFoundException(_inner) => Some(_inner),
-            UpdateResourceErrorKind::UnsupportedActionException(_inner) => Some(_inner),
-            UpdateResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateResourceErrorKind::AlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateResourceErrorKind::ClientTokenConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateResourceErrorKind::ConcurrentOperationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateResourceErrorKind::GeneralServiceException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateResourceErrorKind::HandlerFailureException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateResourceErrorKind::HandlerInternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateResourceErrorKind::InvalidCredentialsException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateResourceErrorKind::InvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateResourceErrorKind::NetworkFailureException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateResourceErrorKind::NotStabilizedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateResourceErrorKind::NotUpdatableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateResourceErrorKind::PrivateTypeException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateResourceErrorKind::ResourceConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateResourceErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateResourceErrorKind::ServiceInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateResourceErrorKind::ServiceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateResourceErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateResourceErrorKind::TypeNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateResourceErrorKind::UnsupportedActionException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -303,22 +332,20 @@ impl std::error::Error for UpdateResourceError {
 /// <p>The specified resource doesn't support this resource operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsupportedActionException {
+pub struct UnsupportedActionException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnsupportedActionException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UnsupportedActionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedActionException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -328,7 +355,7 @@ impl std::fmt::Display for UnsupportedActionException {
 impl std::error::Error for UnsupportedActionException {}
 /// See [`UnsupportedActionException`](crate::error::UnsupportedActionException).
 pub mod unsupported_action_exception {
-
+    
     /// A builder for [`UnsupportedActionException`](crate::error::UnsupportedActionException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -342,16 +369,18 @@ pub mod unsupported_action_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UnsupportedActionException`](crate::error::UnsupportedActionException).
         pub fn build(self) -> crate::error::UnsupportedActionException {
             crate::error::UnsupportedActionException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UnsupportedActionException {
     /// Creates a new builder-style object to manufacture [`UnsupportedActionException`](crate::error::UnsupportedActionException).
@@ -363,22 +392,20 @@ impl UnsupportedActionException {
 /// <p>The specified extension doesn't exist in the CloudFormation registry.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TypeNotFoundException {
+pub struct TypeNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TypeNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TypeNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TypeNotFoundException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -388,7 +415,7 @@ impl std::fmt::Display for TypeNotFoundException {
 impl std::error::Error for TypeNotFoundException {}
 /// See [`TypeNotFoundException`](crate::error::TypeNotFoundException).
 pub mod type_not_found_exception {
-
+    
     /// A builder for [`TypeNotFoundException`](crate::error::TypeNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -402,16 +429,18 @@ pub mod type_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TypeNotFoundException`](crate::error::TypeNotFoundException).
         pub fn build(self) -> crate::error::TypeNotFoundException {
             crate::error::TypeNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TypeNotFoundException {
     /// Creates a new builder-style object to manufacture [`TypeNotFoundException`](crate::error::TypeNotFoundException).
@@ -423,22 +452,20 @@ impl TypeNotFoundException {
 /// <p>The request was denied due to request throttling.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThrottlingException {
+pub struct ThrottlingException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -448,7 +475,7 @@ impl std::fmt::Display for ThrottlingException {
 impl std::error::Error for ThrottlingException {}
 /// See [`ThrottlingException`](crate::error::ThrottlingException).
 pub mod throttling_exception {
-
+    
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -462,16 +489,18 @@ pub mod throttling_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
         pub fn build(self) -> crate::error::ThrottlingException {
             crate::error::ThrottlingException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ThrottlingException {
     /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
@@ -483,22 +512,20 @@ impl ThrottlingException {
 /// <p>The resource handler has returned that a non-transient resource limit was reached on the service side.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceLimitExceededException {
+pub struct ServiceLimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceLimitExceededException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -508,7 +535,7 @@ impl std::fmt::Display for ServiceLimitExceededException {
 impl std::error::Error for ServiceLimitExceededException {}
 /// See [`ServiceLimitExceededException`](crate::error::ServiceLimitExceededException).
 pub mod service_limit_exceeded_exception {
-
+    
     /// A builder for [`ServiceLimitExceededException`](crate::error::ServiceLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -522,16 +549,18 @@ pub mod service_limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServiceLimitExceededException`](crate::error::ServiceLimitExceededException).
         pub fn build(self) -> crate::error::ServiceLimitExceededException {
             crate::error::ServiceLimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceLimitExceededException {
     /// Creates a new builder-style object to manufacture [`ServiceLimitExceededException`](crate::error::ServiceLimitExceededException).
@@ -543,22 +572,20 @@ impl ServiceLimitExceededException {
 /// <p>The resource handler has returned that the downstream service returned an internal error, typically with a <code>5XX HTTP</code> status code.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceInternalErrorException {
+pub struct ServiceInternalErrorException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceInternalErrorException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceInternalErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceInternalErrorException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -568,7 +595,7 @@ impl std::fmt::Display for ServiceInternalErrorException {
 impl std::error::Error for ServiceInternalErrorException {}
 /// See [`ServiceInternalErrorException`](crate::error::ServiceInternalErrorException).
 pub mod service_internal_error_exception {
-
+    
     /// A builder for [`ServiceInternalErrorException`](crate::error::ServiceInternalErrorException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -582,16 +609,18 @@ pub mod service_internal_error_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServiceInternalErrorException`](crate::error::ServiceInternalErrorException).
         pub fn build(self) -> crate::error::ServiceInternalErrorException {
             crate::error::ServiceInternalErrorException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceInternalErrorException {
     /// Creates a new builder-style object to manufacture [`ServiceInternalErrorException`](crate::error::ServiceInternalErrorException).
@@ -603,22 +632,20 @@ impl ServiceInternalErrorException {
 /// <p>A resource with the specified identifier can't be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceNotFoundException {
+pub struct ResourceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -628,7 +655,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
-
+    
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -642,16 +669,18 @@ pub mod resource_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
@@ -663,22 +692,20 @@ impl ResourceNotFoundException {
 /// <p>The resource is temporarily unavailable to be acted upon. For example, if the resource is currently undergoing an operation and can't be acted upon until that operation is finished.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceConflictException {
+pub struct ResourceConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceConflictException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -688,7 +715,7 @@ impl std::fmt::Display for ResourceConflictException {
 impl std::error::Error for ResourceConflictException {}
 /// See [`ResourceConflictException`](crate::error::ResourceConflictException).
 pub mod resource_conflict_exception {
-
+    
     /// A builder for [`ResourceConflictException`](crate::error::ResourceConflictException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -702,16 +729,18 @@ pub mod resource_conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceConflictException`](crate::error::ResourceConflictException).
         pub fn build(self) -> crate::error::ResourceConflictException {
             crate::error::ResourceConflictException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceConflictException {
     /// Creates a new builder-style object to manufacture [`ResourceConflictException`](crate::error::ResourceConflictException).
@@ -723,22 +752,20 @@ impl ResourceConflictException {
 /// <p>Cloud Control API hasn't received a valid response from the resource handler, due to a configuration error. This includes issues such as the resource handler returning an invalid response, or timing out.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PrivateTypeException {
+pub struct PrivateTypeException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl PrivateTypeException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for PrivateTypeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PrivateTypeException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -748,7 +775,7 @@ impl std::fmt::Display for PrivateTypeException {
 impl std::error::Error for PrivateTypeException {}
 /// See [`PrivateTypeException`](crate::error::PrivateTypeException).
 pub mod private_type_exception {
-
+    
     /// A builder for [`PrivateTypeException`](crate::error::PrivateTypeException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -762,16 +789,18 @@ pub mod private_type_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`PrivateTypeException`](crate::error::PrivateTypeException).
         pub fn build(self) -> crate::error::PrivateTypeException {
             crate::error::PrivateTypeException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl PrivateTypeException {
     /// Creates a new builder-style object to manufacture [`PrivateTypeException`](crate::error::PrivateTypeException).
@@ -783,22 +812,20 @@ impl PrivateTypeException {
 /// <p>One or more properties included in this resource operation are defined as create-only, and therefore can't be updated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotUpdatableException {
+pub struct NotUpdatableException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NotUpdatableException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NotUpdatableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotUpdatableException")?;
         if let Some(inner_9) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_9)?;
             }
         }
@@ -808,7 +835,7 @@ impl std::fmt::Display for NotUpdatableException {
 impl std::error::Error for NotUpdatableException {}
 /// See [`NotUpdatableException`](crate::error::NotUpdatableException).
 pub mod not_updatable_exception {
-
+    
     /// A builder for [`NotUpdatableException`](crate::error::NotUpdatableException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -822,16 +849,18 @@ pub mod not_updatable_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NotUpdatableException`](crate::error::NotUpdatableException).
         pub fn build(self) -> crate::error::NotUpdatableException {
             crate::error::NotUpdatableException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NotUpdatableException {
     /// Creates a new builder-style object to manufacture [`NotUpdatableException`](crate::error::NotUpdatableException).
@@ -843,22 +872,20 @@ impl NotUpdatableException {
 /// <p>The resource handler has returned that the downstream resource failed to complete all of its ready-state checks.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotStabilizedException {
+pub struct NotStabilizedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NotStabilizedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NotStabilizedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotStabilizedException")?;
         if let Some(inner_10) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_10)?;
             }
         }
@@ -868,7 +895,7 @@ impl std::fmt::Display for NotStabilizedException {
 impl std::error::Error for NotStabilizedException {}
 /// See [`NotStabilizedException`](crate::error::NotStabilizedException).
 pub mod not_stabilized_exception {
-
+    
     /// A builder for [`NotStabilizedException`](crate::error::NotStabilizedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -882,16 +909,18 @@ pub mod not_stabilized_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NotStabilizedException`](crate::error::NotStabilizedException).
         pub fn build(self) -> crate::error::NotStabilizedException {
             crate::error::NotStabilizedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NotStabilizedException {
     /// Creates a new builder-style object to manufacture [`NotStabilizedException`](crate::error::NotStabilizedException).
@@ -903,22 +932,20 @@ impl NotStabilizedException {
 /// <p>The resource handler has returned that the request couldn't be completed due to networking issues, such as a failure to receive a response from the server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkFailureException {
+pub struct NetworkFailureException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NetworkFailureException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NetworkFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NetworkFailureException")?;
         if let Some(inner_11) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_11)?;
             }
         }
@@ -928,7 +955,7 @@ impl std::fmt::Display for NetworkFailureException {
 impl std::error::Error for NetworkFailureException {}
 /// See [`NetworkFailureException`](crate::error::NetworkFailureException).
 pub mod network_failure_exception {
-
+    
     /// A builder for [`NetworkFailureException`](crate::error::NetworkFailureException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -942,16 +969,18 @@ pub mod network_failure_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NetworkFailureException`](crate::error::NetworkFailureException).
         pub fn build(self) -> crate::error::NetworkFailureException {
             crate::error::NetworkFailureException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NetworkFailureException {
     /// Creates a new builder-style object to manufacture [`NetworkFailureException`](crate::error::NetworkFailureException).
@@ -963,22 +992,20 @@ impl NetworkFailureException {
 /// <p>The resource handler has returned that invalid input from the user has generated a generic exception.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidRequestException {
+pub struct InvalidRequestException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRequestException")?;
         if let Some(inner_12) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_12)?;
             }
         }
@@ -988,7 +1015,7 @@ impl std::fmt::Display for InvalidRequestException {
 impl std::error::Error for InvalidRequestException {}
 /// See [`InvalidRequestException`](crate::error::InvalidRequestException).
 pub mod invalid_request_exception {
-
+    
     /// A builder for [`InvalidRequestException`](crate::error::InvalidRequestException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1002,16 +1029,18 @@ pub mod invalid_request_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidRequestException`](crate::error::InvalidRequestException).
         pub fn build(self) -> crate::error::InvalidRequestException {
             crate::error::InvalidRequestException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidRequestException {
     /// Creates a new builder-style object to manufacture [`InvalidRequestException`](crate::error::InvalidRequestException).
@@ -1023,22 +1052,20 @@ impl InvalidRequestException {
 /// <p>The resource handler has returned that the credentials provided by the user are invalid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidCredentialsException {
+pub struct InvalidCredentialsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidCredentialsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidCredentialsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCredentialsException")?;
         if let Some(inner_13) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_13)?;
             }
         }
@@ -1048,7 +1075,7 @@ impl std::fmt::Display for InvalidCredentialsException {
 impl std::error::Error for InvalidCredentialsException {}
 /// See [`InvalidCredentialsException`](crate::error::InvalidCredentialsException).
 pub mod invalid_credentials_exception {
-
+    
     /// A builder for [`InvalidCredentialsException`](crate::error::InvalidCredentialsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1062,16 +1089,18 @@ pub mod invalid_credentials_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidCredentialsException`](crate::error::InvalidCredentialsException).
         pub fn build(self) -> crate::error::InvalidCredentialsException {
             crate::error::InvalidCredentialsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidCredentialsException {
     /// Creates a new builder-style object to manufacture [`InvalidCredentialsException`](crate::error::InvalidCredentialsException).
@@ -1083,22 +1112,20 @@ impl InvalidCredentialsException {
 /// <p>The resource handler has returned that an unexpected error occurred within the resource handler.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HandlerInternalFailureException {
+pub struct HandlerInternalFailureException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl HandlerInternalFailureException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for HandlerInternalFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HandlerInternalFailureException")?;
         if let Some(inner_14) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_14)?;
             }
         }
@@ -1108,7 +1135,7 @@ impl std::fmt::Display for HandlerInternalFailureException {
 impl std::error::Error for HandlerInternalFailureException {}
 /// See [`HandlerInternalFailureException`](crate::error::HandlerInternalFailureException).
 pub mod handler_internal_failure_exception {
-
+    
     /// A builder for [`HandlerInternalFailureException`](crate::error::HandlerInternalFailureException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1122,16 +1149,18 @@ pub mod handler_internal_failure_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`HandlerInternalFailureException`](crate::error::HandlerInternalFailureException).
         pub fn build(self) -> crate::error::HandlerInternalFailureException {
             crate::error::HandlerInternalFailureException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl HandlerInternalFailureException {
     /// Creates a new builder-style object to manufacture [`HandlerInternalFailureException`](crate::error::HandlerInternalFailureException).
@@ -1143,22 +1172,20 @@ impl HandlerInternalFailureException {
 /// <p>The resource handler has failed without a returning a more specific error code. This can include timeouts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HandlerFailureException {
+pub struct HandlerFailureException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl HandlerFailureException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for HandlerFailureException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HandlerFailureException")?;
         if let Some(inner_15) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_15)?;
             }
         }
@@ -1168,7 +1195,7 @@ impl std::fmt::Display for HandlerFailureException {
 impl std::error::Error for HandlerFailureException {}
 /// See [`HandlerFailureException`](crate::error::HandlerFailureException).
 pub mod handler_failure_exception {
-
+    
     /// A builder for [`HandlerFailureException`](crate::error::HandlerFailureException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1182,16 +1209,18 @@ pub mod handler_failure_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`HandlerFailureException`](crate::error::HandlerFailureException).
         pub fn build(self) -> crate::error::HandlerFailureException {
             crate::error::HandlerFailureException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl HandlerFailureException {
     /// Creates a new builder-style object to manufacture [`HandlerFailureException`](crate::error::HandlerFailureException).
@@ -1203,22 +1232,20 @@ impl HandlerFailureException {
 /// <p>The resource handler has returned that the downstream service generated an error that doesn't map to any other handler error code.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeneralServiceException {
+pub struct GeneralServiceException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl GeneralServiceException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for GeneralServiceException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "GeneralServiceException")?;
         if let Some(inner_16) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_16)?;
             }
         }
@@ -1228,7 +1255,7 @@ impl std::fmt::Display for GeneralServiceException {
 impl std::error::Error for GeneralServiceException {}
 /// See [`GeneralServiceException`](crate::error::GeneralServiceException).
 pub mod general_service_exception {
-
+    
     /// A builder for [`GeneralServiceException`](crate::error::GeneralServiceException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1242,16 +1269,18 @@ pub mod general_service_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`GeneralServiceException`](crate::error::GeneralServiceException).
         pub fn build(self) -> crate::error::GeneralServiceException {
             crate::error::GeneralServiceException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl GeneralServiceException {
     /// Creates a new builder-style object to manufacture [`GeneralServiceException`](crate::error::GeneralServiceException).
@@ -1263,22 +1292,20 @@ impl GeneralServiceException {
 /// <p>Another resource operation is currently being performed on this resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConcurrentOperationException {
+pub struct ConcurrentOperationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConcurrentOperationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConcurrentOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConcurrentOperationException")?;
         if let Some(inner_17) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_17)?;
             }
         }
@@ -1288,7 +1315,7 @@ impl std::fmt::Display for ConcurrentOperationException {
 impl std::error::Error for ConcurrentOperationException {}
 /// See [`ConcurrentOperationException`](crate::error::ConcurrentOperationException).
 pub mod concurrent_operation_exception {
-
+    
     /// A builder for [`ConcurrentOperationException`](crate::error::ConcurrentOperationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1302,16 +1329,18 @@ pub mod concurrent_operation_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ConcurrentOperationException`](crate::error::ConcurrentOperationException).
         pub fn build(self) -> crate::error::ConcurrentOperationException {
             crate::error::ConcurrentOperationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ConcurrentOperationException {
     /// Creates a new builder-style object to manufacture [`ConcurrentOperationException`](crate::error::ConcurrentOperationException).
@@ -1320,26 +1349,24 @@ impl ConcurrentOperationException {
     }
 }
 
-/// <p>The specified client token has already been used in another resource request.</p>
+/// <p>The specified client token has already been used in another resource request.</p> 
 /// <p>It's best practice for client tokens to be unique for each resource operation request. However, client token expire after 36 hours.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClientTokenConflictException {
+pub struct ClientTokenConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ClientTokenConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ClientTokenConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClientTokenConflictException")?;
         if let Some(inner_18) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_18)?;
             }
         }
@@ -1349,7 +1376,7 @@ impl std::fmt::Display for ClientTokenConflictException {
 impl std::error::Error for ClientTokenConflictException {}
 /// See [`ClientTokenConflictException`](crate::error::ClientTokenConflictException).
 pub mod client_token_conflict_exception {
-
+    
     /// A builder for [`ClientTokenConflictException`](crate::error::ClientTokenConflictException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1363,16 +1390,18 @@ pub mod client_token_conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ClientTokenConflictException`](crate::error::ClientTokenConflictException).
         pub fn build(self) -> crate::error::ClientTokenConflictException {
             crate::error::ClientTokenConflictException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ClientTokenConflictException {
     /// Creates a new builder-style object to manufacture [`ClientTokenConflictException`](crate::error::ClientTokenConflictException).
@@ -1384,22 +1413,20 @@ impl ClientTokenConflictException {
 /// <p>The resource with the name requested already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlreadyExistsException {
+pub struct AlreadyExistsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AlreadyExistsException")?;
         if let Some(inner_19) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_19)?;
             }
         }
@@ -1409,7 +1436,7 @@ impl std::fmt::Display for AlreadyExistsException {
 impl std::error::Error for AlreadyExistsException {}
 /// See [`AlreadyExistsException`](crate::error::AlreadyExistsException).
 pub mod already_exists_exception {
-
+    
     /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1423,16 +1450,18 @@ pub mod already_exists_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AlreadyExistsException`](crate::error::AlreadyExistsException).
         pub fn build(self) -> crate::error::AlreadyExistsException {
             crate::error::AlreadyExistsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`AlreadyExistsException`](crate::error::AlreadyExistsException).
@@ -1446,15 +1475,15 @@ impl AlreadyExistsException {
 #[derive(std::fmt::Debug)]
 pub struct ListResourcesError {
     /// Kind of error that occurred.
-    pub kind: ListResourcesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListResourcesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListResourcesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListResourcesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1496,37 +1525,73 @@ pub enum ListResourcesErrorKind {
     TypeNotFoundException(crate::error::TypeNotFoundException),
     /// <p>The specified resource doesn't support this resource operation.</p>
     UnsupportedActionException(crate::error::UnsupportedActionException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListResourcesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListResourcesErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
-            ListResourcesErrorKind::GeneralServiceException(_inner) => _inner.fmt(f),
-            ListResourcesErrorKind::HandlerFailureException(_inner) => _inner.fmt(f),
-            ListResourcesErrorKind::HandlerInternalFailureException(_inner) => _inner.fmt(f),
-            ListResourcesErrorKind::InvalidCredentialsException(_inner) => _inner.fmt(f),
-            ListResourcesErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
-            ListResourcesErrorKind::NetworkFailureException(_inner) => _inner.fmt(f),
-            ListResourcesErrorKind::NotStabilizedException(_inner) => _inner.fmt(f),
-            ListResourcesErrorKind::NotUpdatableException(_inner) => _inner.fmt(f),
-            ListResourcesErrorKind::PrivateTypeException(_inner) => _inner.fmt(f),
-            ListResourcesErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
-            ListResourcesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ListResourcesErrorKind::ServiceInternalErrorException(_inner) => _inner.fmt(f),
-            ListResourcesErrorKind::ServiceLimitExceededException(_inner) => _inner.fmt(f),
-            ListResourcesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            ListResourcesErrorKind::TypeNotFoundException(_inner) => _inner.fmt(f),
-            ListResourcesErrorKind::UnsupportedActionException(_inner) => _inner.fmt(f),
-            ListResourcesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListResourcesErrorKind::AlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesErrorKind::GeneralServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesErrorKind::HandlerFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesErrorKind::HandlerInternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesErrorKind::InvalidCredentialsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesErrorKind::InvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesErrorKind::NetworkFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesErrorKind::NotStabilizedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesErrorKind::NotUpdatableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesErrorKind::PrivateTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesErrorKind::ResourceConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesErrorKind::ServiceInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesErrorKind::ServiceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesErrorKind::TypeNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesErrorKind::UnsupportedActionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListResourcesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1540,101 +1605,77 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListResourcesError {
 }
 impl ListResourcesError {
     /// Creates a new `ListResourcesError`.
-    pub fn new(kind: ListResourcesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListResourcesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListResourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListResourcesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListResourcesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListResourcesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListResourcesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListResourcesErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourcesErrorKind::AlreadyExistsException(_)
-        )
+        matches!(&self.kind, ListResourcesErrorKind::AlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `ListResourcesErrorKind::GeneralServiceException`.
     pub fn is_general_service_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourcesErrorKind::GeneralServiceException(_)
-        )
+        matches!(&self.kind, ListResourcesErrorKind::GeneralServiceException(_))
     }
     /// Returns `true` if the error kind is `ListResourcesErrorKind::HandlerFailureException`.
     pub fn is_handler_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourcesErrorKind::HandlerFailureException(_)
-        )
+        matches!(&self.kind, ListResourcesErrorKind::HandlerFailureException(_))
     }
     /// Returns `true` if the error kind is `ListResourcesErrorKind::HandlerInternalFailureException`.
     pub fn is_handler_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourcesErrorKind::HandlerInternalFailureException(_)
-        )
+        matches!(&self.kind, ListResourcesErrorKind::HandlerInternalFailureException(_))
     }
     /// Returns `true` if the error kind is `ListResourcesErrorKind::InvalidCredentialsException`.
     pub fn is_invalid_credentials_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourcesErrorKind::InvalidCredentialsException(_)
-        )
+        matches!(&self.kind, ListResourcesErrorKind::InvalidCredentialsException(_))
     }
     /// Returns `true` if the error kind is `ListResourcesErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourcesErrorKind::InvalidRequestException(_)
-        )
+        matches!(&self.kind, ListResourcesErrorKind::InvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `ListResourcesErrorKind::NetworkFailureException`.
     pub fn is_network_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourcesErrorKind::NetworkFailureException(_)
-        )
+        matches!(&self.kind, ListResourcesErrorKind::NetworkFailureException(_))
     }
     /// Returns `true` if the error kind is `ListResourcesErrorKind::NotStabilizedException`.
     pub fn is_not_stabilized_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourcesErrorKind::NotStabilizedException(_)
-        )
+        matches!(&self.kind, ListResourcesErrorKind::NotStabilizedException(_))
     }
     /// Returns `true` if the error kind is `ListResourcesErrorKind::NotUpdatableException`.
     pub fn is_not_updatable_exception(&self) -> bool {
@@ -1646,31 +1687,19 @@ impl ListResourcesError {
     }
     /// Returns `true` if the error kind is `ListResourcesErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourcesErrorKind::ResourceConflictException(_)
-        )
+        matches!(&self.kind, ListResourcesErrorKind::ResourceConflictException(_))
     }
     /// Returns `true` if the error kind is `ListResourcesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourcesErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ListResourcesErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListResourcesErrorKind::ServiceInternalErrorException`.
     pub fn is_service_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourcesErrorKind::ServiceInternalErrorException(_)
-        )
+        matches!(&self.kind, ListResourcesErrorKind::ServiceInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `ListResourcesErrorKind::ServiceLimitExceededException`.
     pub fn is_service_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourcesErrorKind::ServiceLimitExceededException(_)
-        )
+        matches!(&self.kind, ListResourcesErrorKind::ServiceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `ListResourcesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -1682,33 +1711,66 @@ impl ListResourcesError {
     }
     /// Returns `true` if the error kind is `ListResourcesErrorKind::UnsupportedActionException`.
     pub fn is_unsupported_action_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListResourcesErrorKind::UnsupportedActionException(_)
-        )
+        matches!(&self.kind, ListResourcesErrorKind::UnsupportedActionException(_))
     }
 }
 impl std::error::Error for ListResourcesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListResourcesErrorKind::AlreadyExistsException(_inner) => Some(_inner),
-            ListResourcesErrorKind::GeneralServiceException(_inner) => Some(_inner),
-            ListResourcesErrorKind::HandlerFailureException(_inner) => Some(_inner),
-            ListResourcesErrorKind::HandlerInternalFailureException(_inner) => Some(_inner),
-            ListResourcesErrorKind::InvalidCredentialsException(_inner) => Some(_inner),
-            ListResourcesErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            ListResourcesErrorKind::NetworkFailureException(_inner) => Some(_inner),
-            ListResourcesErrorKind::NotStabilizedException(_inner) => Some(_inner),
-            ListResourcesErrorKind::NotUpdatableException(_inner) => Some(_inner),
-            ListResourcesErrorKind::PrivateTypeException(_inner) => Some(_inner),
-            ListResourcesErrorKind::ResourceConflictException(_inner) => Some(_inner),
-            ListResourcesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListResourcesErrorKind::ServiceInternalErrorException(_inner) => Some(_inner),
-            ListResourcesErrorKind::ServiceLimitExceededException(_inner) => Some(_inner),
-            ListResourcesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListResourcesErrorKind::TypeNotFoundException(_inner) => Some(_inner),
-            ListResourcesErrorKind::UnsupportedActionException(_inner) => Some(_inner),
-            ListResourcesErrorKind::Unhandled(_inner) => Some(_inner),
+            ListResourcesErrorKind::AlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesErrorKind::GeneralServiceException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesErrorKind::HandlerFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesErrorKind::HandlerInternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesErrorKind::InvalidCredentialsException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesErrorKind::InvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesErrorKind::NetworkFailureException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesErrorKind::NotStabilizedException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesErrorKind::NotUpdatableException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesErrorKind::PrivateTypeException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesErrorKind::ResourceConflictException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesErrorKind::ServiceInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesErrorKind::ServiceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesErrorKind::TypeNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesErrorKind::UnsupportedActionException(_inner) =>
+            Some(_inner)
+            ,
+            ListResourcesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1718,15 +1780,15 @@ impl std::error::Error for ListResourcesError {
 #[derive(std::fmt::Debug)]
 pub struct ListResourceRequestsError {
     /// Kind of error that occurred.
-    pub kind: ListResourceRequestsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListResourceRequestsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListResourceRequestsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListResourceRequestsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1734,20 +1796,22 @@ impl aws_smithy_http::result::CreateUnhandledError for ListResourceRequestsError
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum ListResourceRequestsErrorKind {
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListResourceRequestsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListResourceRequestsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListResourceRequestsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1761,55 +1825,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListResourceRequestsError {
 }
 impl ListResourceRequestsError {
     /// Creates a new `ListResourceRequestsError`.
-    pub fn new(kind: ListResourceRequestsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListResourceRequestsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListResourceRequestsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListResourceRequestsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListResourceRequestsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListResourceRequestsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListResourceRequestsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListResourceRequestsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListResourceRequestsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListResourceRequestsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
 }
 impl std::error::Error for ListResourceRequestsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListResourceRequestsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListResourceRequestsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1819,17 +1881,15 @@ impl std::error::Error for ListResourceRequestsError {
 #[derive(std::fmt::Debug)]
 pub struct GetResourceRequestStatusError {
     /// Kind of error that occurred.
-    pub kind: GetResourceRequestStatusErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetResourceRequestStatusErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetResourceRequestStatusError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetResourceRequestStatusErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: GetResourceRequestStatusErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1839,23 +1899,25 @@ impl aws_smithy_http::result::CreateUnhandledError for GetResourceRequestStatusE
 pub enum GetResourceRequestStatusErrorKind {
     /// <p>A resource operation with the specified request token can't be found.</p>
     RequestTokenNotFoundException(crate::error::RequestTokenNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetResourceRequestStatusError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetResourceRequestStatusErrorKind::RequestTokenNotFoundException(_inner) => {
+            GetResourceRequestStatusErrorKind::RequestTokenNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetResourceRequestStatusErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetResourceRequestStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1869,65 +1931,60 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetResourceRequestStatusError
 }
 impl GetResourceRequestStatusError {
     /// Creates a new `GetResourceRequestStatusError`.
-    pub fn new(kind: GetResourceRequestStatusErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetResourceRequestStatusError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetResourceRequestStatusErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetResourceRequestStatusError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetResourceRequestStatusErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetResourceRequestStatusErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetResourceRequestStatusError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetResourceRequestStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetResourceRequestStatusError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetResourceRequestStatusErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetResourceRequestStatusErrorKind::RequestTokenNotFoundException`.
     pub fn is_request_token_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetResourceRequestStatusErrorKind::RequestTokenNotFoundException(_)
-        )
+        matches!(&self.kind, GetResourceRequestStatusErrorKind::RequestTokenNotFoundException(_))
     }
 }
 impl std::error::Error for GetResourceRequestStatusError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetResourceRequestStatusErrorKind::RequestTokenNotFoundException(_inner) => {
+            GetResourceRequestStatusErrorKind::RequestTokenNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetResourceRequestStatusErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetResourceRequestStatusErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1935,22 +1992,20 @@ impl std::error::Error for GetResourceRequestStatusError {
 /// <p>A resource operation with the specified request token can't be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestTokenNotFoundException {
+pub struct RequestTokenNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl RequestTokenNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for RequestTokenNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RequestTokenNotFoundException")?;
         if let Some(inner_20) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_20)?;
             }
         }
@@ -1960,7 +2015,7 @@ impl std::fmt::Display for RequestTokenNotFoundException {
 impl std::error::Error for RequestTokenNotFoundException {}
 /// See [`RequestTokenNotFoundException`](crate::error::RequestTokenNotFoundException).
 pub mod request_token_not_found_exception {
-
+    
     /// A builder for [`RequestTokenNotFoundException`](crate::error::RequestTokenNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1974,16 +2029,18 @@ pub mod request_token_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`RequestTokenNotFoundException`](crate::error::RequestTokenNotFoundException).
         pub fn build(self) -> crate::error::RequestTokenNotFoundException {
             crate::error::RequestTokenNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl RequestTokenNotFoundException {
     /// Creates a new builder-style object to manufacture [`RequestTokenNotFoundException`](crate::error::RequestTokenNotFoundException).
@@ -1997,15 +2054,15 @@ impl RequestTokenNotFoundException {
 #[derive(std::fmt::Debug)]
 pub struct GetResourceError {
     /// Kind of error that occurred.
-    pub kind: GetResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2047,37 +2104,73 @@ pub enum GetResourceErrorKind {
     TypeNotFoundException(crate::error::TypeNotFoundException),
     /// <p>The specified resource doesn't support this resource operation.</p>
     UnsupportedActionException(crate::error::UnsupportedActionException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetResourceErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
-            GetResourceErrorKind::GeneralServiceException(_inner) => _inner.fmt(f),
-            GetResourceErrorKind::HandlerFailureException(_inner) => _inner.fmt(f),
-            GetResourceErrorKind::HandlerInternalFailureException(_inner) => _inner.fmt(f),
-            GetResourceErrorKind::InvalidCredentialsException(_inner) => _inner.fmt(f),
-            GetResourceErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
-            GetResourceErrorKind::NetworkFailureException(_inner) => _inner.fmt(f),
-            GetResourceErrorKind::NotStabilizedException(_inner) => _inner.fmt(f),
-            GetResourceErrorKind::NotUpdatableException(_inner) => _inner.fmt(f),
-            GetResourceErrorKind::PrivateTypeException(_inner) => _inner.fmt(f),
-            GetResourceErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
-            GetResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            GetResourceErrorKind::ServiceInternalErrorException(_inner) => _inner.fmt(f),
-            GetResourceErrorKind::ServiceLimitExceededException(_inner) => _inner.fmt(f),
-            GetResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetResourceErrorKind::TypeNotFoundException(_inner) => _inner.fmt(f),
-            GetResourceErrorKind::UnsupportedActionException(_inner) => _inner.fmt(f),
-            GetResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetResourceErrorKind::AlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetResourceErrorKind::GeneralServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetResourceErrorKind::HandlerFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetResourceErrorKind::HandlerInternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetResourceErrorKind::InvalidCredentialsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetResourceErrorKind::InvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetResourceErrorKind::NetworkFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetResourceErrorKind::NotStabilizedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetResourceErrorKind::NotUpdatableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetResourceErrorKind::PrivateTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetResourceErrorKind::ResourceConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetResourceErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetResourceErrorKind::ServiceInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetResourceErrorKind::ServiceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetResourceErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetResourceErrorKind::TypeNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetResourceErrorKind::UnsupportedActionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2091,46 +2184,46 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetResourceError {
 }
 impl GetResourceError {
     /// Creates a new `GetResourceError`.
-    pub fn new(kind: GetResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetResourceErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(&self.kind, GetResourceErrorKind::AlreadyExistsException(_))
@@ -2145,17 +2238,11 @@ impl GetResourceError {
     }
     /// Returns `true` if the error kind is `GetResourceErrorKind::HandlerInternalFailureException`.
     pub fn is_handler_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetResourceErrorKind::HandlerInternalFailureException(_)
-        )
+        matches!(&self.kind, GetResourceErrorKind::HandlerInternalFailureException(_))
     }
     /// Returns `true` if the error kind is `GetResourceErrorKind::InvalidCredentialsException`.
     pub fn is_invalid_credentials_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetResourceErrorKind::InvalidCredentialsException(_)
-        )
+        matches!(&self.kind, GetResourceErrorKind::InvalidCredentialsException(_))
     }
     /// Returns `true` if the error kind is `GetResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
@@ -2179,31 +2266,19 @@ impl GetResourceError {
     }
     /// Returns `true` if the error kind is `GetResourceErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetResourceErrorKind::ResourceConflictException(_)
-        )
+        matches!(&self.kind, GetResourceErrorKind::ResourceConflictException(_))
     }
     /// Returns `true` if the error kind is `GetResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetResourceErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetResourceErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetResourceErrorKind::ServiceInternalErrorException`.
     pub fn is_service_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetResourceErrorKind::ServiceInternalErrorException(_)
-        )
+        matches!(&self.kind, GetResourceErrorKind::ServiceInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `GetResourceErrorKind::ServiceLimitExceededException`.
     pub fn is_service_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetResourceErrorKind::ServiceLimitExceededException(_)
-        )
+        matches!(&self.kind, GetResourceErrorKind::ServiceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `GetResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -2215,33 +2290,66 @@ impl GetResourceError {
     }
     /// Returns `true` if the error kind is `GetResourceErrorKind::UnsupportedActionException`.
     pub fn is_unsupported_action_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetResourceErrorKind::UnsupportedActionException(_)
-        )
+        matches!(&self.kind, GetResourceErrorKind::UnsupportedActionException(_))
     }
 }
 impl std::error::Error for GetResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetResourceErrorKind::AlreadyExistsException(_inner) => Some(_inner),
-            GetResourceErrorKind::GeneralServiceException(_inner) => Some(_inner),
-            GetResourceErrorKind::HandlerFailureException(_inner) => Some(_inner),
-            GetResourceErrorKind::HandlerInternalFailureException(_inner) => Some(_inner),
-            GetResourceErrorKind::InvalidCredentialsException(_inner) => Some(_inner),
-            GetResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            GetResourceErrorKind::NetworkFailureException(_inner) => Some(_inner),
-            GetResourceErrorKind::NotStabilizedException(_inner) => Some(_inner),
-            GetResourceErrorKind::NotUpdatableException(_inner) => Some(_inner),
-            GetResourceErrorKind::PrivateTypeException(_inner) => Some(_inner),
-            GetResourceErrorKind::ResourceConflictException(_inner) => Some(_inner),
-            GetResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetResourceErrorKind::ServiceInternalErrorException(_inner) => Some(_inner),
-            GetResourceErrorKind::ServiceLimitExceededException(_inner) => Some(_inner),
-            GetResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetResourceErrorKind::TypeNotFoundException(_inner) => Some(_inner),
-            GetResourceErrorKind::UnsupportedActionException(_inner) => Some(_inner),
-            GetResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            GetResourceErrorKind::AlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            GetResourceErrorKind::GeneralServiceException(_inner) =>
+            Some(_inner)
+            ,
+            GetResourceErrorKind::HandlerFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetResourceErrorKind::HandlerInternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetResourceErrorKind::InvalidCredentialsException(_inner) =>
+            Some(_inner)
+            ,
+            GetResourceErrorKind::InvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetResourceErrorKind::NetworkFailureException(_inner) =>
+            Some(_inner)
+            ,
+            GetResourceErrorKind::NotStabilizedException(_inner) =>
+            Some(_inner)
+            ,
+            GetResourceErrorKind::NotUpdatableException(_inner) =>
+            Some(_inner)
+            ,
+            GetResourceErrorKind::PrivateTypeException(_inner) =>
+            Some(_inner)
+            ,
+            GetResourceErrorKind::ResourceConflictException(_inner) =>
+            Some(_inner)
+            ,
+            GetResourceErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetResourceErrorKind::ServiceInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GetResourceErrorKind::ServiceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            GetResourceErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetResourceErrorKind::TypeNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetResourceErrorKind::UnsupportedActionException(_inner) =>
+            Some(_inner)
+            ,
+            GetResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2251,15 +2359,15 @@ impl std::error::Error for GetResourceError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteResourceError {
     /// Kind of error that occurred.
-    pub kind: DeleteResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2269,7 +2377,7 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteResourceError {
 pub enum DeleteResourceErrorKind {
     /// <p>The resource with the name requested already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>The specified client token has already been used in another resource request.</p>
+    /// <p>The specified client token has already been used in another resource request.</p> 
     /// <p>It's best practice for client tokens to be unique for each resource operation request. However, client token expire after 36 hours.</p>
     ClientTokenConflictException(crate::error::ClientTokenConflictException),
     /// <p>Another resource operation is currently being performed on this resource.</p>
@@ -2306,39 +2414,79 @@ pub enum DeleteResourceErrorKind {
     TypeNotFoundException(crate::error::TypeNotFoundException),
     /// <p>The specified resource doesn't support this resource operation.</p>
     UnsupportedActionException(crate::error::UnsupportedActionException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteResourceErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::ClientTokenConflictException(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::ConcurrentOperationException(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::GeneralServiceException(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::HandlerFailureException(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::HandlerInternalFailureException(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::InvalidCredentialsException(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::NetworkFailureException(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::NotStabilizedException(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::NotUpdatableException(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::PrivateTypeException(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::ServiceInternalErrorException(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::ServiceLimitExceededException(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::TypeNotFoundException(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::UnsupportedActionException(_inner) => _inner.fmt(f),
-            DeleteResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteResourceErrorKind::AlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteResourceErrorKind::ClientTokenConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteResourceErrorKind::ConcurrentOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteResourceErrorKind::GeneralServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteResourceErrorKind::HandlerFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteResourceErrorKind::HandlerInternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteResourceErrorKind::InvalidCredentialsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteResourceErrorKind::InvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteResourceErrorKind::NetworkFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteResourceErrorKind::NotStabilizedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteResourceErrorKind::NotUpdatableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteResourceErrorKind::PrivateTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteResourceErrorKind::ResourceConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteResourceErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteResourceErrorKind::ServiceInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteResourceErrorKind::ServiceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteResourceErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteResourceErrorKind::TypeNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteResourceErrorKind::UnsupportedActionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2352,122 +2500,89 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteResourceError {
 }
 impl DeleteResourceError {
     /// Creates a new `DeleteResourceError`.
-    pub fn new(kind: DeleteResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteResourceErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteResourceErrorKind::AlreadyExistsException(_)
-        )
+        matches!(&self.kind, DeleteResourceErrorKind::AlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `DeleteResourceErrorKind::ClientTokenConflictException`.
     pub fn is_client_token_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteResourceErrorKind::ClientTokenConflictException(_)
-        )
+        matches!(&self.kind, DeleteResourceErrorKind::ClientTokenConflictException(_))
     }
     /// Returns `true` if the error kind is `DeleteResourceErrorKind::ConcurrentOperationException`.
     pub fn is_concurrent_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteResourceErrorKind::ConcurrentOperationException(_)
-        )
+        matches!(&self.kind, DeleteResourceErrorKind::ConcurrentOperationException(_))
     }
     /// Returns `true` if the error kind is `DeleteResourceErrorKind::GeneralServiceException`.
     pub fn is_general_service_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteResourceErrorKind::GeneralServiceException(_)
-        )
+        matches!(&self.kind, DeleteResourceErrorKind::GeneralServiceException(_))
     }
     /// Returns `true` if the error kind is `DeleteResourceErrorKind::HandlerFailureException`.
     pub fn is_handler_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteResourceErrorKind::HandlerFailureException(_)
-        )
+        matches!(&self.kind, DeleteResourceErrorKind::HandlerFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteResourceErrorKind::HandlerInternalFailureException`.
     pub fn is_handler_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteResourceErrorKind::HandlerInternalFailureException(_)
-        )
+        matches!(&self.kind, DeleteResourceErrorKind::HandlerInternalFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteResourceErrorKind::InvalidCredentialsException`.
     pub fn is_invalid_credentials_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteResourceErrorKind::InvalidCredentialsException(_)
-        )
+        matches!(&self.kind, DeleteResourceErrorKind::InvalidCredentialsException(_))
     }
     /// Returns `true` if the error kind is `DeleteResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteResourceErrorKind::InvalidRequestException(_)
-        )
+        matches!(&self.kind, DeleteResourceErrorKind::InvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteResourceErrorKind::NetworkFailureException`.
     pub fn is_network_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteResourceErrorKind::NetworkFailureException(_)
-        )
+        matches!(&self.kind, DeleteResourceErrorKind::NetworkFailureException(_))
     }
     /// Returns `true` if the error kind is `DeleteResourceErrorKind::NotStabilizedException`.
     pub fn is_not_stabilized_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteResourceErrorKind::NotStabilizedException(_)
-        )
+        matches!(&self.kind, DeleteResourceErrorKind::NotStabilizedException(_))
     }
     /// Returns `true` if the error kind is `DeleteResourceErrorKind::NotUpdatableException`.
     pub fn is_not_updatable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteResourceErrorKind::NotUpdatableException(_)
-        )
+        matches!(&self.kind, DeleteResourceErrorKind::NotUpdatableException(_))
     }
     /// Returns `true` if the error kind is `DeleteResourceErrorKind::PrivateTypeException`.
     pub fn is_private_type_exception(&self) -> bool {
@@ -2475,31 +2590,19 @@ impl DeleteResourceError {
     }
     /// Returns `true` if the error kind is `DeleteResourceErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteResourceErrorKind::ResourceConflictException(_)
-        )
+        matches!(&self.kind, DeleteResourceErrorKind::ResourceConflictException(_))
     }
     /// Returns `true` if the error kind is `DeleteResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteResourceErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteResourceErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteResourceErrorKind::ServiceInternalErrorException`.
     pub fn is_service_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteResourceErrorKind::ServiceInternalErrorException(_)
-        )
+        matches!(&self.kind, DeleteResourceErrorKind::ServiceInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteResourceErrorKind::ServiceLimitExceededException`.
     pub fn is_service_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteResourceErrorKind::ServiceLimitExceededException(_)
-        )
+        matches!(&self.kind, DeleteResourceErrorKind::ServiceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `DeleteResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -2507,42 +2610,76 @@ impl DeleteResourceError {
     }
     /// Returns `true` if the error kind is `DeleteResourceErrorKind::TypeNotFoundException`.
     pub fn is_type_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteResourceErrorKind::TypeNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteResourceErrorKind::TypeNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteResourceErrorKind::UnsupportedActionException`.
     pub fn is_unsupported_action_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteResourceErrorKind::UnsupportedActionException(_)
-        )
+        matches!(&self.kind, DeleteResourceErrorKind::UnsupportedActionException(_))
     }
 }
 impl std::error::Error for DeleteResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteResourceErrorKind::AlreadyExistsException(_inner) => Some(_inner),
-            DeleteResourceErrorKind::ClientTokenConflictException(_inner) => Some(_inner),
-            DeleteResourceErrorKind::ConcurrentOperationException(_inner) => Some(_inner),
-            DeleteResourceErrorKind::GeneralServiceException(_inner) => Some(_inner),
-            DeleteResourceErrorKind::HandlerFailureException(_inner) => Some(_inner),
-            DeleteResourceErrorKind::HandlerInternalFailureException(_inner) => Some(_inner),
-            DeleteResourceErrorKind::InvalidCredentialsException(_inner) => Some(_inner),
-            DeleteResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            DeleteResourceErrorKind::NetworkFailureException(_inner) => Some(_inner),
-            DeleteResourceErrorKind::NotStabilizedException(_inner) => Some(_inner),
-            DeleteResourceErrorKind::NotUpdatableException(_inner) => Some(_inner),
-            DeleteResourceErrorKind::PrivateTypeException(_inner) => Some(_inner),
-            DeleteResourceErrorKind::ResourceConflictException(_inner) => Some(_inner),
-            DeleteResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteResourceErrorKind::ServiceInternalErrorException(_inner) => Some(_inner),
-            DeleteResourceErrorKind::ServiceLimitExceededException(_inner) => Some(_inner),
-            DeleteResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            DeleteResourceErrorKind::TypeNotFoundException(_inner) => Some(_inner),
-            DeleteResourceErrorKind::UnsupportedActionException(_inner) => Some(_inner),
-            DeleteResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteResourceErrorKind::AlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteResourceErrorKind::ClientTokenConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteResourceErrorKind::ConcurrentOperationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteResourceErrorKind::GeneralServiceException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteResourceErrorKind::HandlerFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteResourceErrorKind::HandlerInternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteResourceErrorKind::InvalidCredentialsException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteResourceErrorKind::InvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteResourceErrorKind::NetworkFailureException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteResourceErrorKind::NotStabilizedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteResourceErrorKind::NotUpdatableException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteResourceErrorKind::PrivateTypeException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteResourceErrorKind::ResourceConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteResourceErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteResourceErrorKind::ServiceInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteResourceErrorKind::ServiceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteResourceErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteResourceErrorKind::TypeNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteResourceErrorKind::UnsupportedActionException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2552,15 +2689,15 @@ impl std::error::Error for DeleteResourceError {
 #[derive(std::fmt::Debug)]
 pub struct CreateResourceError {
     /// Kind of error that occurred.
-    pub kind: CreateResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2570,7 +2707,7 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateResourceError {
 pub enum CreateResourceErrorKind {
     /// <p>The resource with the name requested already exists.</p>
     AlreadyExistsException(crate::error::AlreadyExistsException),
-    /// <p>The specified client token has already been used in another resource request.</p>
+    /// <p>The specified client token has already been used in another resource request.</p> 
     /// <p>It's best practice for client tokens to be unique for each resource operation request. However, client token expire after 36 hours.</p>
     ClientTokenConflictException(crate::error::ClientTokenConflictException),
     /// <p>Another resource operation is currently being performed on this resource.</p>
@@ -2607,39 +2744,79 @@ pub enum CreateResourceErrorKind {
     TypeNotFoundException(crate::error::TypeNotFoundException),
     /// <p>The specified resource doesn't support this resource operation.</p>
     UnsupportedActionException(crate::error::UnsupportedActionException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateResourceErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::ClientTokenConflictException(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::ConcurrentOperationException(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::GeneralServiceException(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::HandlerFailureException(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::HandlerInternalFailureException(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::InvalidCredentialsException(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::NetworkFailureException(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::NotStabilizedException(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::NotUpdatableException(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::PrivateTypeException(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::ResourceConflictException(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::ServiceInternalErrorException(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::ServiceLimitExceededException(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::TypeNotFoundException(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::UnsupportedActionException(_inner) => _inner.fmt(f),
-            CreateResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateResourceErrorKind::AlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateResourceErrorKind::ClientTokenConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateResourceErrorKind::ConcurrentOperationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateResourceErrorKind::GeneralServiceException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateResourceErrorKind::HandlerFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateResourceErrorKind::HandlerInternalFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateResourceErrorKind::InvalidCredentialsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateResourceErrorKind::InvalidRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateResourceErrorKind::NetworkFailureException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateResourceErrorKind::NotStabilizedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateResourceErrorKind::NotUpdatableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateResourceErrorKind::PrivateTypeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateResourceErrorKind::ResourceConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateResourceErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateResourceErrorKind::ServiceInternalErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateResourceErrorKind::ServiceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateResourceErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateResourceErrorKind::TypeNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateResourceErrorKind::UnsupportedActionException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2653,122 +2830,89 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateResourceError {
 }
 impl CreateResourceError {
     /// Creates a new `CreateResourceError`.
-    pub fn new(kind: CreateResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateResourceErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateResourceErrorKind::AlreadyExistsException(_)
-        )
+        matches!(&self.kind, CreateResourceErrorKind::AlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `CreateResourceErrorKind::ClientTokenConflictException`.
     pub fn is_client_token_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateResourceErrorKind::ClientTokenConflictException(_)
-        )
+        matches!(&self.kind, CreateResourceErrorKind::ClientTokenConflictException(_))
     }
     /// Returns `true` if the error kind is `CreateResourceErrorKind::ConcurrentOperationException`.
     pub fn is_concurrent_operation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateResourceErrorKind::ConcurrentOperationException(_)
-        )
+        matches!(&self.kind, CreateResourceErrorKind::ConcurrentOperationException(_))
     }
     /// Returns `true` if the error kind is `CreateResourceErrorKind::GeneralServiceException`.
     pub fn is_general_service_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateResourceErrorKind::GeneralServiceException(_)
-        )
+        matches!(&self.kind, CreateResourceErrorKind::GeneralServiceException(_))
     }
     /// Returns `true` if the error kind is `CreateResourceErrorKind::HandlerFailureException`.
     pub fn is_handler_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateResourceErrorKind::HandlerFailureException(_)
-        )
+        matches!(&self.kind, CreateResourceErrorKind::HandlerFailureException(_))
     }
     /// Returns `true` if the error kind is `CreateResourceErrorKind::HandlerInternalFailureException`.
     pub fn is_handler_internal_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateResourceErrorKind::HandlerInternalFailureException(_)
-        )
+        matches!(&self.kind, CreateResourceErrorKind::HandlerInternalFailureException(_))
     }
     /// Returns `true` if the error kind is `CreateResourceErrorKind::InvalidCredentialsException`.
     pub fn is_invalid_credentials_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateResourceErrorKind::InvalidCredentialsException(_)
-        )
+        matches!(&self.kind, CreateResourceErrorKind::InvalidCredentialsException(_))
     }
     /// Returns `true` if the error kind is `CreateResourceErrorKind::InvalidRequestException`.
     pub fn is_invalid_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateResourceErrorKind::InvalidRequestException(_)
-        )
+        matches!(&self.kind, CreateResourceErrorKind::InvalidRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateResourceErrorKind::NetworkFailureException`.
     pub fn is_network_failure_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateResourceErrorKind::NetworkFailureException(_)
-        )
+        matches!(&self.kind, CreateResourceErrorKind::NetworkFailureException(_))
     }
     /// Returns `true` if the error kind is `CreateResourceErrorKind::NotStabilizedException`.
     pub fn is_not_stabilized_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateResourceErrorKind::NotStabilizedException(_)
-        )
+        matches!(&self.kind, CreateResourceErrorKind::NotStabilizedException(_))
     }
     /// Returns `true` if the error kind is `CreateResourceErrorKind::NotUpdatableException`.
     pub fn is_not_updatable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateResourceErrorKind::NotUpdatableException(_)
-        )
+        matches!(&self.kind, CreateResourceErrorKind::NotUpdatableException(_))
     }
     /// Returns `true` if the error kind is `CreateResourceErrorKind::PrivateTypeException`.
     pub fn is_private_type_exception(&self) -> bool {
@@ -2776,31 +2920,19 @@ impl CreateResourceError {
     }
     /// Returns `true` if the error kind is `CreateResourceErrorKind::ResourceConflictException`.
     pub fn is_resource_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateResourceErrorKind::ResourceConflictException(_)
-        )
+        matches!(&self.kind, CreateResourceErrorKind::ResourceConflictException(_))
     }
     /// Returns `true` if the error kind is `CreateResourceErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateResourceErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, CreateResourceErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateResourceErrorKind::ServiceInternalErrorException`.
     pub fn is_service_internal_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateResourceErrorKind::ServiceInternalErrorException(_)
-        )
+        matches!(&self.kind, CreateResourceErrorKind::ServiceInternalErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateResourceErrorKind::ServiceLimitExceededException`.
     pub fn is_service_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateResourceErrorKind::ServiceLimitExceededException(_)
-        )
+        matches!(&self.kind, CreateResourceErrorKind::ServiceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateResourceErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -2808,42 +2940,76 @@ impl CreateResourceError {
     }
     /// Returns `true` if the error kind is `CreateResourceErrorKind::TypeNotFoundException`.
     pub fn is_type_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateResourceErrorKind::TypeNotFoundException(_)
-        )
+        matches!(&self.kind, CreateResourceErrorKind::TypeNotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateResourceErrorKind::UnsupportedActionException`.
     pub fn is_unsupported_action_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateResourceErrorKind::UnsupportedActionException(_)
-        )
+        matches!(&self.kind, CreateResourceErrorKind::UnsupportedActionException(_))
     }
 }
 impl std::error::Error for CreateResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateResourceErrorKind::AlreadyExistsException(_inner) => Some(_inner),
-            CreateResourceErrorKind::ClientTokenConflictException(_inner) => Some(_inner),
-            CreateResourceErrorKind::ConcurrentOperationException(_inner) => Some(_inner),
-            CreateResourceErrorKind::GeneralServiceException(_inner) => Some(_inner),
-            CreateResourceErrorKind::HandlerFailureException(_inner) => Some(_inner),
-            CreateResourceErrorKind::HandlerInternalFailureException(_inner) => Some(_inner),
-            CreateResourceErrorKind::InvalidCredentialsException(_inner) => Some(_inner),
-            CreateResourceErrorKind::InvalidRequestException(_inner) => Some(_inner),
-            CreateResourceErrorKind::NetworkFailureException(_inner) => Some(_inner),
-            CreateResourceErrorKind::NotStabilizedException(_inner) => Some(_inner),
-            CreateResourceErrorKind::NotUpdatableException(_inner) => Some(_inner),
-            CreateResourceErrorKind::PrivateTypeException(_inner) => Some(_inner),
-            CreateResourceErrorKind::ResourceConflictException(_inner) => Some(_inner),
-            CreateResourceErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            CreateResourceErrorKind::ServiceInternalErrorException(_inner) => Some(_inner),
-            CreateResourceErrorKind::ServiceLimitExceededException(_inner) => Some(_inner),
-            CreateResourceErrorKind::ThrottlingException(_inner) => Some(_inner),
-            CreateResourceErrorKind::TypeNotFoundException(_inner) => Some(_inner),
-            CreateResourceErrorKind::UnsupportedActionException(_inner) => Some(_inner),
-            CreateResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateResourceErrorKind::AlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateResourceErrorKind::ClientTokenConflictException(_inner) =>
+            Some(_inner)
+            ,
+            CreateResourceErrorKind::ConcurrentOperationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateResourceErrorKind::GeneralServiceException(_inner) =>
+            Some(_inner)
+            ,
+            CreateResourceErrorKind::HandlerFailureException(_inner) =>
+            Some(_inner)
+            ,
+            CreateResourceErrorKind::HandlerInternalFailureException(_inner) =>
+            Some(_inner)
+            ,
+            CreateResourceErrorKind::InvalidCredentialsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateResourceErrorKind::InvalidRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateResourceErrorKind::NetworkFailureException(_inner) =>
+            Some(_inner)
+            ,
+            CreateResourceErrorKind::NotStabilizedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateResourceErrorKind::NotUpdatableException(_inner) =>
+            Some(_inner)
+            ,
+            CreateResourceErrorKind::PrivateTypeException(_inner) =>
+            Some(_inner)
+            ,
+            CreateResourceErrorKind::ResourceConflictException(_inner) =>
+            Some(_inner)
+            ,
+            CreateResourceErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateResourceErrorKind::ServiceInternalErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateResourceErrorKind::ServiceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateResourceErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            CreateResourceErrorKind::TypeNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateResourceErrorKind::UnsupportedActionException(_inner) =>
+            Some(_inner)
+            ,
+            CreateResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2853,15 +3019,15 @@ impl std::error::Error for CreateResourceError {
 #[derive(std::fmt::Debug)]
 pub struct CancelResourceRequestError {
     /// Kind of error that occurred.
-    pub kind: CancelResourceRequestErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CancelResourceRequestErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CancelResourceRequestError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CancelResourceRequestErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2873,24 +3039,28 @@ pub enum CancelResourceRequestErrorKind {
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
     /// <p>A resource operation with the specified request token can't be found.</p>
     RequestTokenNotFoundException(crate::error::RequestTokenNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CancelResourceRequestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CancelResourceRequestErrorKind::ConcurrentModificationException(_inner) => {
+            CancelResourceRequestErrorKind::ConcurrentModificationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CancelResourceRequestErrorKind::RequestTokenNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CancelResourceRequestErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CancelResourceRequestErrorKind::RequestTokenNotFoundException(_inner) => _inner.fmt(f),
-            CancelResourceRequestErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2904,71 +3074,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for CancelResourceRequestError {
 }
 impl CancelResourceRequestError {
     /// Creates a new `CancelResourceRequestError`.
-    pub fn new(kind: CancelResourceRequestErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CancelResourceRequestError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CancelResourceRequestErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CancelResourceRequestError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CancelResourceRequestErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CancelResourceRequestErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CancelResourceRequestError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CancelResourceRequestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CancelResourceRequestError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CancelResourceRequestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CancelResourceRequestErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CancelResourceRequestErrorKind::ConcurrentModificationException(_)
-        )
+        matches!(&self.kind, CancelResourceRequestErrorKind::ConcurrentModificationException(_))
     }
     /// Returns `true` if the error kind is `CancelResourceRequestErrorKind::RequestTokenNotFoundException`.
     pub fn is_request_token_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CancelResourceRequestErrorKind::RequestTokenNotFoundException(_)
-        )
+        matches!(&self.kind, CancelResourceRequestErrorKind::RequestTokenNotFoundException(_))
     }
 }
 impl std::error::Error for CancelResourceRequestError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CancelResourceRequestErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
-            CancelResourceRequestErrorKind::RequestTokenNotFoundException(_inner) => Some(_inner),
-            CancelResourceRequestErrorKind::Unhandled(_inner) => Some(_inner),
+            CancelResourceRequestErrorKind::ConcurrentModificationException(_inner) =>
+            Some(_inner)
+            ,
+            CancelResourceRequestErrorKind::RequestTokenNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CancelResourceRequestErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2976,22 +3142,20 @@ impl std::error::Error for CancelResourceRequestError {
 /// <p>The resource is currently being modified by another operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConcurrentModificationException {
+pub struct ConcurrentModificationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConcurrentModificationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConcurrentModificationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConcurrentModificationException")?;
         if let Some(inner_21) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_21)?;
             }
         }
@@ -3001,7 +3165,7 @@ impl std::fmt::Display for ConcurrentModificationException {
 impl std::error::Error for ConcurrentModificationException {}
 /// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
 pub mod concurrent_modification_exception {
-
+    
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3015,16 +3179,18 @@ pub mod concurrent_modification_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
         pub fn build(self) -> crate::error::ConcurrentModificationException {
             crate::error::ConcurrentModificationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ConcurrentModificationException {
     /// Creates a new builder-style object to manufacture [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
@@ -3033,31 +3199,32 @@ impl ConcurrentModificationException {
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

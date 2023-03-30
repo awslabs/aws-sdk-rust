@@ -4,15 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct GetSessionTokenError {
     /// Kind of error that occurred.
-    pub kind: GetSessionTokenErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetSessionTokenErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetSessionTokenError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetSessionTokenErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -22,21 +22,25 @@ impl aws_smithy_http::result::CreateUnhandledError for GetSessionTokenError {
 pub enum GetSessionTokenErrorKind {
     /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetSessionTokenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetSessionTokenErrorKind::RegionDisabledException(_inner) => _inner.fmt(f),
-            GetSessionTokenErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetSessionTokenErrorKind::RegionDisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetSessionTokenErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -50,59 +54,60 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetSessionTokenError {
 }
 impl GetSessionTokenError {
     /// Creates a new `GetSessionTokenError`.
-    pub fn new(kind: GetSessionTokenErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetSessionTokenError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetSessionTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetSessionTokenError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetSessionTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetSessionTokenErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetSessionTokenError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetSessionTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetSessionTokenError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetSessionTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetSessionTokenErrorKind::RegionDisabledException`.
     pub fn is_region_disabled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetSessionTokenErrorKind::RegionDisabledException(_)
-        )
+        matches!(&self.kind, GetSessionTokenErrorKind::RegionDisabledException(_))
     }
 }
 impl std::error::Error for GetSessionTokenError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetSessionTokenErrorKind::RegionDisabledException(_inner) => Some(_inner),
-            GetSessionTokenErrorKind::Unhandled(_inner) => Some(_inner),
+            GetSessionTokenErrorKind::RegionDisabledException(_inner) =>
+            Some(_inner)
+            ,
+            GetSessionTokenErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -110,22 +115,20 @@ impl std::error::Error for GetSessionTokenError {
 /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegionDisabledException {
+pub struct RegionDisabledException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl RegionDisabledException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for RegionDisabledException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RegionDisabledException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -135,7 +138,7 @@ impl std::fmt::Display for RegionDisabledException {
 impl std::error::Error for RegionDisabledException {}
 /// See [`RegionDisabledException`](crate::error::RegionDisabledException).
 pub mod region_disabled_exception {
-
+    
     /// A builder for [`RegionDisabledException`](crate::error::RegionDisabledException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -149,16 +152,18 @@ pub mod region_disabled_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`RegionDisabledException`](crate::error::RegionDisabledException).
         pub fn build(self) -> crate::error::RegionDisabledException {
             crate::error::RegionDisabledException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl RegionDisabledException {
     /// Creates a new builder-style object to manufacture [`RegionDisabledException`](crate::error::RegionDisabledException).
@@ -172,15 +177,15 @@ impl RegionDisabledException {
 #[derive(std::fmt::Debug)]
 pub struct GetFederationTokenError {
     /// Kind of error that occurred.
-    pub kind: GetFederationTokenErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetFederationTokenErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetFederationTokenError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetFederationTokenErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -190,28 +195,36 @@ impl aws_smithy_http::result::CreateUnhandledError for GetFederationTokenError {
 pub enum GetFederationTokenErrorKind {
     /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p> 
     /// <p>You could receive this error even though you meet other defined session policy and session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.</p>
     PackedPolicyTooLargeException(crate::error::PackedPolicyTooLargeException),
     /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetFederationTokenError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetFederationTokenErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
-            GetFederationTokenErrorKind::PackedPolicyTooLargeException(_inner) => _inner.fmt(f),
-            GetFederationTokenErrorKind::RegionDisabledException(_inner) => _inner.fmt(f),
-            GetFederationTokenErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetFederationTokenErrorKind::MalformedPolicyDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetFederationTokenErrorKind::PackedPolicyTooLargeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetFederationTokenErrorKind::RegionDisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetFederationTokenErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -225,99 +238,96 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetFederationTokenError {
 }
 impl GetFederationTokenError {
     /// Creates a new `GetFederationTokenError`.
-    pub fn new(kind: GetFederationTokenErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetFederationTokenError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetFederationTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetFederationTokenError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetFederationTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetFederationTokenErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetFederationTokenError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetFederationTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetFederationTokenError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetFederationTokenErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetFederationTokenErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetFederationTokenErrorKind::MalformedPolicyDocumentException(_)
-        )
+        matches!(&self.kind, GetFederationTokenErrorKind::MalformedPolicyDocumentException(_))
     }
     /// Returns `true` if the error kind is `GetFederationTokenErrorKind::PackedPolicyTooLargeException`.
     pub fn is_packed_policy_too_large_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetFederationTokenErrorKind::PackedPolicyTooLargeException(_)
-        )
+        matches!(&self.kind, GetFederationTokenErrorKind::PackedPolicyTooLargeException(_))
     }
     /// Returns `true` if the error kind is `GetFederationTokenErrorKind::RegionDisabledException`.
     pub fn is_region_disabled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetFederationTokenErrorKind::RegionDisabledException(_)
-        )
+        matches!(&self.kind, GetFederationTokenErrorKind::RegionDisabledException(_))
     }
 }
 impl std::error::Error for GetFederationTokenError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetFederationTokenErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
-            GetFederationTokenErrorKind::PackedPolicyTooLargeException(_inner) => Some(_inner),
-            GetFederationTokenErrorKind::RegionDisabledException(_inner) => Some(_inner),
-            GetFederationTokenErrorKind::Unhandled(_inner) => Some(_inner),
+            GetFederationTokenErrorKind::MalformedPolicyDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            GetFederationTokenErrorKind::PackedPolicyTooLargeException(_inner) =>
+            Some(_inner)
+            ,
+            GetFederationTokenErrorKind::RegionDisabledException(_inner) =>
+            Some(_inner)
+            ,
+            GetFederationTokenErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-/// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p>
+/// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p> 
 /// <p>You could receive this error even though you meet other defined session policy and session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackedPolicyTooLargeException {
+pub struct PackedPolicyTooLargeException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl PackedPolicyTooLargeException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for PackedPolicyTooLargeException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PackedPolicyTooLargeException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -327,7 +337,7 @@ impl std::fmt::Display for PackedPolicyTooLargeException {
 impl std::error::Error for PackedPolicyTooLargeException {}
 /// See [`PackedPolicyTooLargeException`](crate::error::PackedPolicyTooLargeException).
 pub mod packed_policy_too_large_exception {
-
+    
     /// A builder for [`PackedPolicyTooLargeException`](crate::error::PackedPolicyTooLargeException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -341,16 +351,18 @@ pub mod packed_policy_too_large_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`PackedPolicyTooLargeException`](crate::error::PackedPolicyTooLargeException).
         pub fn build(self) -> crate::error::PackedPolicyTooLargeException {
             crate::error::PackedPolicyTooLargeException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl PackedPolicyTooLargeException {
     /// Creates a new builder-style object to manufacture [`PackedPolicyTooLargeException`](crate::error::PackedPolicyTooLargeException).
@@ -362,22 +374,20 @@ impl PackedPolicyTooLargeException {
 /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MalformedPolicyDocumentException {
+pub struct MalformedPolicyDocumentException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl MalformedPolicyDocumentException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for MalformedPolicyDocumentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "MalformedPolicyDocumentException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -387,7 +397,7 @@ impl std::fmt::Display for MalformedPolicyDocumentException {
 impl std::error::Error for MalformedPolicyDocumentException {}
 /// See [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
 pub mod malformed_policy_document_exception {
-
+    
     /// A builder for [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -401,16 +411,18 @@ pub mod malformed_policy_document_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
         pub fn build(self) -> crate::error::MalformedPolicyDocumentException {
             crate::error::MalformedPolicyDocumentException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl MalformedPolicyDocumentException {
     /// Creates a new builder-style object to manufacture [`MalformedPolicyDocumentException`](crate::error::MalformedPolicyDocumentException).
@@ -424,15 +436,15 @@ impl MalformedPolicyDocumentException {
 #[derive(std::fmt::Debug)]
 pub struct GetCallerIdentityError {
     /// Kind of error that occurred.
-    pub kind: GetCallerIdentityErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetCallerIdentityErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetCallerIdentityError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetCallerIdentityErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -440,20 +452,22 @@ impl aws_smithy_http::result::CreateUnhandledError for GetCallerIdentityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetCallerIdentityErrorKind {
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetCallerIdentityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetCallerIdentityErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetCallerIdentityErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -467,51 +481,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetCallerIdentityError {
 }
 impl GetCallerIdentityError {
     /// Creates a new `GetCallerIdentityError`.
-    pub fn new(kind: GetCallerIdentityErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetCallerIdentityError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetCallerIdentityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetCallerIdentityError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetCallerIdentityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetCallerIdentityErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetCallerIdentityError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetCallerIdentityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetCallerIdentityError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetCallerIdentityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
 }
 impl std::error::Error for GetCallerIdentityError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetCallerIdentityErrorKind::Unhandled(_inner) => Some(_inner),
+            GetCallerIdentityErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -521,15 +537,15 @@ impl std::error::Error for GetCallerIdentityError {
 #[derive(std::fmt::Debug)]
 pub struct GetAccessKeyInfoError {
     /// Kind of error that occurred.
-    pub kind: GetAccessKeyInfoErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetAccessKeyInfoErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetAccessKeyInfoError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetAccessKeyInfoErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -537,20 +553,22 @@ impl aws_smithy_http::result::CreateUnhandledError for GetAccessKeyInfoError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccessKeyInfoErrorKind {
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAccessKeyInfoError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetAccessKeyInfoErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetAccessKeyInfoErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -564,51 +582,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetAccessKeyInfoError {
 }
 impl GetAccessKeyInfoError {
     /// Creates a new `GetAccessKeyInfoError`.
-    pub fn new(kind: GetAccessKeyInfoErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetAccessKeyInfoError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetAccessKeyInfoErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetAccessKeyInfoError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetAccessKeyInfoErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetAccessKeyInfoErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetAccessKeyInfoError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetAccessKeyInfoErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetAccessKeyInfoError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetAccessKeyInfoErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
 }
 impl std::error::Error for GetAccessKeyInfoError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetAccessKeyInfoErrorKind::Unhandled(_inner) => Some(_inner),
+            GetAccessKeyInfoErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -618,17 +638,15 @@ impl std::error::Error for GetAccessKeyInfoError {
 #[derive(std::fmt::Debug)]
 pub struct DecodeAuthorizationMessageError {
     /// Kind of error that occurred.
-    pub kind: DecodeAuthorizationMessageErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DecodeAuthorizationMessageErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DecodeAuthorizationMessageError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DecodeAuthorizationMessageErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DecodeAuthorizationMessageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -638,23 +656,25 @@ impl aws_smithy_http::result::CreateUnhandledError for DecodeAuthorizationMessag
 pub enum DecodeAuthorizationMessageErrorKind {
     /// <p>The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if the token contains invalid characters, such as linebreaks. </p>
     InvalidAuthorizationMessageException(crate::error::InvalidAuthorizationMessageException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DecodeAuthorizationMessageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageException(_inner) => {
+            DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DecodeAuthorizationMessageErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DecodeAuthorizationMessageErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -668,65 +688,60 @@ impl aws_smithy_types::retry::ProvideErrorKind for DecodeAuthorizationMessageErr
 }
 impl DecodeAuthorizationMessageError {
     /// Creates a new `DecodeAuthorizationMessageError`.
-    pub fn new(kind: DecodeAuthorizationMessageErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DecodeAuthorizationMessageError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DecodeAuthorizationMessageErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DecodeAuthorizationMessageError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DecodeAuthorizationMessageErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DecodeAuthorizationMessageErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DecodeAuthorizationMessageError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DecodeAuthorizationMessageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DecodeAuthorizationMessageError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DecodeAuthorizationMessageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageException`.
     pub fn is_invalid_authorization_message_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageException(_)
-        )
+        matches!(&self.kind, DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageException(_))
     }
 }
 impl std::error::Error for DecodeAuthorizationMessageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageException(_inner) => {
+            DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageException(_inner) =>
+            Some(_inner)
+            ,
+            DecodeAuthorizationMessageErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DecodeAuthorizationMessageErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -734,22 +749,20 @@ impl std::error::Error for DecodeAuthorizationMessageError {
 /// <p>The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if the token contains invalid characters, such as linebreaks. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidAuthorizationMessageException {
+pub struct InvalidAuthorizationMessageException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidAuthorizationMessageException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidAuthorizationMessageException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidAuthorizationMessageException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -759,7 +772,7 @@ impl std::fmt::Display for InvalidAuthorizationMessageException {
 impl std::error::Error for InvalidAuthorizationMessageException {}
 /// See [`InvalidAuthorizationMessageException`](crate::error::InvalidAuthorizationMessageException).
 pub mod invalid_authorization_message_exception {
-
+    
     /// A builder for [`InvalidAuthorizationMessageException`](crate::error::InvalidAuthorizationMessageException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -773,16 +786,18 @@ pub mod invalid_authorization_message_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidAuthorizationMessageException`](crate::error::InvalidAuthorizationMessageException).
         pub fn build(self) -> crate::error::InvalidAuthorizationMessageException {
             crate::error::InvalidAuthorizationMessageException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidAuthorizationMessageException {
     /// Creates a new builder-style object to manufacture [`InvalidAuthorizationMessageException`](crate::error::InvalidAuthorizationMessageException).
@@ -796,17 +811,15 @@ impl InvalidAuthorizationMessageException {
 #[derive(std::fmt::Debug)]
 pub struct AssumeRoleWithWebIdentityError {
     /// Kind of error that occurred.
-    pub kind: AssumeRoleWithWebIdentityErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AssumeRoleWithWebIdentityErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AssumeRoleWithWebIdentityError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: AssumeRoleWithWebIdentityErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: AssumeRoleWithWebIdentityErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -818,47 +831,55 @@ pub enum AssumeRoleWithWebIdentityErrorKind {
     ExpiredTokenException(crate::error::ExpiredTokenException),
     /// <p>The request could not be fulfilled because the identity provider (IDP) that was asked to verify the incoming identity token could not be reached. This is often a transient error caused by network conditions. Retry the request a limited number of times so that you don't exceed the request rate. If the error persists, the identity provider might be down or not responding.</p>
     IdpCommunicationErrorException(crate::error::IdpCommunicationErrorException),
-    /// <p>The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.</p>
+    /// <p>The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.</p> 
     /// <p>If this error is returned for the <code>AssumeRoleWithWebIdentity</code> operation, it can also mean that the claim has expired or has been explicitly revoked. </p>
     IdpRejectedClaimException(crate::error::IdpRejectedClaimException),
     /// <p>The web identity token that was passed could not be validated by Amazon Web Services. Get a new identity token from the identity provider and then retry the request.</p>
     InvalidIdentityTokenException(crate::error::InvalidIdentityTokenException),
     /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p> 
     /// <p>You could receive this error even though you meet other defined session policy and session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.</p>
     PackedPolicyTooLargeException(crate::error::PackedPolicyTooLargeException),
     /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssumeRoleWithWebIdentityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AssumeRoleWithWebIdentityErrorKind::ExpiredTokenException(_inner) => _inner.fmt(f),
-            AssumeRoleWithWebIdentityErrorKind::IdpCommunicationErrorException(_inner) => {
+            AssumeRoleWithWebIdentityErrorKind::ExpiredTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssumeRoleWithWebIdentityErrorKind::IdpCommunicationErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssumeRoleWithWebIdentityErrorKind::IdpRejectedClaimException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssumeRoleWithWebIdentityErrorKind::RegionDisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssumeRoleWithWebIdentityErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            AssumeRoleWithWebIdentityErrorKind::IdpRejectedClaimException(_inner) => _inner.fmt(f),
-            AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenException(_inner) => {
-                _inner.fmt(f)
-            }
-            AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentException(_inner) => {
-                _inner.fmt(f)
-            }
-            AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeException(_inner) => {
-                _inner.fmt(f)
-            }
-            AssumeRoleWithWebIdentityErrorKind::RegionDisabledException(_inner) => _inner.fmt(f),
-            AssumeRoleWithWebIdentityErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -868,128 +889,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for AssumeRoleWithWebIdentityErro
     }
     fn retryable_error_kind(&self) -> Option<aws_smithy_types::retry::ErrorKind> {
         match &self.kind {
-            AssumeRoleWithWebIdentityErrorKind::IdpCommunicationErrorException(inner) => {
-                Some(inner.retryable_error_kind())
-            }
-            _ => None,
+            AssumeRoleWithWebIdentityErrorKind::IdpCommunicationErrorException(inner) => Some(inner.retryable_error_kind()),
+            _ => None
         }
     }
 }
 impl AssumeRoleWithWebIdentityError {
     /// Creates a new `AssumeRoleWithWebIdentityError`.
-    pub fn new(kind: AssumeRoleWithWebIdentityErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AssumeRoleWithWebIdentityError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AssumeRoleWithWebIdentityErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AssumeRoleWithWebIdentityError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AssumeRoleWithWebIdentityErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AssumeRoleWithWebIdentityErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AssumeRoleWithWebIdentityError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AssumeRoleWithWebIdentityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AssumeRoleWithWebIdentityError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AssumeRoleWithWebIdentityErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AssumeRoleWithWebIdentityErrorKind::ExpiredTokenException`.
     pub fn is_expired_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssumeRoleWithWebIdentityErrorKind::ExpiredTokenException(_)
-        )
+        matches!(&self.kind, AssumeRoleWithWebIdentityErrorKind::ExpiredTokenException(_))
     }
     /// Returns `true` if the error kind is `AssumeRoleWithWebIdentityErrorKind::IdpCommunicationErrorException`.
     pub fn is_idp_communication_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssumeRoleWithWebIdentityErrorKind::IdpCommunicationErrorException(_)
-        )
+        matches!(&self.kind, AssumeRoleWithWebIdentityErrorKind::IdpCommunicationErrorException(_))
     }
     /// Returns `true` if the error kind is `AssumeRoleWithWebIdentityErrorKind::IdpRejectedClaimException`.
     pub fn is_idp_rejected_claim_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssumeRoleWithWebIdentityErrorKind::IdpRejectedClaimException(_)
-        )
+        matches!(&self.kind, AssumeRoleWithWebIdentityErrorKind::IdpRejectedClaimException(_))
     }
     /// Returns `true` if the error kind is `AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenException`.
     pub fn is_invalid_identity_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenException(_)
-        )
+        matches!(&self.kind, AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenException(_))
     }
     /// Returns `true` if the error kind is `AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentException(_)
-        )
+        matches!(&self.kind, AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentException(_))
     }
     /// Returns `true` if the error kind is `AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeException`.
     pub fn is_packed_policy_too_large_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeException(_)
-        )
+        matches!(&self.kind, AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeException(_))
     }
     /// Returns `true` if the error kind is `AssumeRoleWithWebIdentityErrorKind::RegionDisabledException`.
     pub fn is_region_disabled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssumeRoleWithWebIdentityErrorKind::RegionDisabledException(_)
-        )
+        matches!(&self.kind, AssumeRoleWithWebIdentityErrorKind::RegionDisabledException(_))
     }
 }
 impl std::error::Error for AssumeRoleWithWebIdentityError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AssumeRoleWithWebIdentityErrorKind::ExpiredTokenException(_inner) => Some(_inner),
-            AssumeRoleWithWebIdentityErrorKind::IdpCommunicationErrorException(_inner) => {
+            AssumeRoleWithWebIdentityErrorKind::ExpiredTokenException(_inner) =>
+            Some(_inner)
+            ,
+            AssumeRoleWithWebIdentityErrorKind::IdpCommunicationErrorException(_inner) =>
+            Some(_inner)
+            ,
+            AssumeRoleWithWebIdentityErrorKind::IdpRejectedClaimException(_inner) =>
+            Some(_inner)
+            ,
+            AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenException(_inner) =>
+            Some(_inner)
+            ,
+            AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeException(_inner) =>
+            Some(_inner)
+            ,
+            AssumeRoleWithWebIdentityErrorKind::RegionDisabledException(_inner) =>
+            Some(_inner)
+            ,
+            AssumeRoleWithWebIdentityErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            AssumeRoleWithWebIdentityErrorKind::IdpRejectedClaimException(_inner) => Some(_inner),
-            AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenException(_inner) => {
-                Some(_inner)
-            }
-            AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentException(_inner) => {
-                Some(_inner)
-            }
-            AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeException(_inner) => {
-                Some(_inner)
-            }
-            AssumeRoleWithWebIdentityErrorKind::RegionDisabledException(_inner) => Some(_inner),
-            AssumeRoleWithWebIdentityErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -997,22 +999,20 @@ impl std::error::Error for AssumeRoleWithWebIdentityError {
 /// <p>The web identity token that was passed could not be validated by Amazon Web Services. Get a new identity token from the identity provider and then retry the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidIdentityTokenException {
+pub struct InvalidIdentityTokenException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidIdentityTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidIdentityTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidIdentityTokenException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -1022,7 +1022,7 @@ impl std::fmt::Display for InvalidIdentityTokenException {
 impl std::error::Error for InvalidIdentityTokenException {}
 /// See [`InvalidIdentityTokenException`](crate::error::InvalidIdentityTokenException).
 pub mod invalid_identity_token_exception {
-
+    
     /// A builder for [`InvalidIdentityTokenException`](crate::error::InvalidIdentityTokenException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1036,16 +1036,18 @@ pub mod invalid_identity_token_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidIdentityTokenException`](crate::error::InvalidIdentityTokenException).
         pub fn build(self) -> crate::error::InvalidIdentityTokenException {
             crate::error::InvalidIdentityTokenException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidIdentityTokenException {
     /// Creates a new builder-style object to manufacture [`InvalidIdentityTokenException`](crate::error::InvalidIdentityTokenException).
@@ -1054,26 +1056,24 @@ impl InvalidIdentityTokenException {
     }
 }
 
-/// <p>The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.</p>
+/// <p>The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.</p> 
 /// <p>If this error is returned for the <code>AssumeRoleWithWebIdentity</code> operation, it can also mean that the claim has expired or has been explicitly revoked. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdpRejectedClaimException {
+pub struct IdpRejectedClaimException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl IdpRejectedClaimException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for IdpRejectedClaimException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IdpRejectedClaimException [IDPRejectedClaimException]")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -1083,7 +1083,7 @@ impl std::fmt::Display for IdpRejectedClaimException {
 impl std::error::Error for IdpRejectedClaimException {}
 /// See [`IdpRejectedClaimException`](crate::error::IdpRejectedClaimException).
 pub mod idp_rejected_claim_exception {
-
+    
     /// A builder for [`IdpRejectedClaimException`](crate::error::IdpRejectedClaimException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1097,16 +1097,18 @@ pub mod idp_rejected_claim_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`IdpRejectedClaimException`](crate::error::IdpRejectedClaimException).
         pub fn build(self) -> crate::error::IdpRejectedClaimException {
             crate::error::IdpRejectedClaimException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl IdpRejectedClaimException {
     /// Creates a new builder-style object to manufacture [`IdpRejectedClaimException`](crate::error::IdpRejectedClaimException).
@@ -1118,7 +1120,7 @@ impl IdpRejectedClaimException {
 /// <p>The request could not be fulfilled because the identity provider (IDP) that was asked to verify the incoming identity token could not be reached. This is often a transient error caused by network conditions. Retry the request a limited number of times so that you don't exceed the request rate. If the error persists, the identity provider might be down or not responding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdpCommunicationErrorException {
+pub struct IdpCommunicationErrorException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -1129,18 +1131,13 @@ impl IdpCommunicationErrorException {
         aws_smithy_types::retry::ErrorKind::ServerError
     }
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for IdpCommunicationErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
-            f,
-            "IdpCommunicationErrorException [IDPCommunicationErrorException]"
-        )?;
+        write!(f, "IdpCommunicationErrorException [IDPCommunicationErrorException]")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -1150,7 +1147,7 @@ impl std::fmt::Display for IdpCommunicationErrorException {
 impl std::error::Error for IdpCommunicationErrorException {}
 /// See [`IdpCommunicationErrorException`](crate::error::IdpCommunicationErrorException).
 pub mod idp_communication_error_exception {
-
+    
     /// A builder for [`IdpCommunicationErrorException`](crate::error::IdpCommunicationErrorException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1164,16 +1161,18 @@ pub mod idp_communication_error_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`IdpCommunicationErrorException`](crate::error::IdpCommunicationErrorException).
         pub fn build(self) -> crate::error::IdpCommunicationErrorException {
             crate::error::IdpCommunicationErrorException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl IdpCommunicationErrorException {
     /// Creates a new builder-style object to manufacture [`IdpCommunicationErrorException`](crate::error::IdpCommunicationErrorException).
@@ -1185,22 +1184,20 @@ impl IdpCommunicationErrorException {
 /// <p>The web identity token that was passed is expired or is not valid. Get a new identity token from the identity provider and then retry the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExpiredTokenException {
+pub struct ExpiredTokenException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ExpiredTokenException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ExpiredTokenException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ExpiredTokenException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -1210,7 +1207,7 @@ impl std::fmt::Display for ExpiredTokenException {
 impl std::error::Error for ExpiredTokenException {}
 /// See [`ExpiredTokenException`](crate::error::ExpiredTokenException).
 pub mod expired_token_exception {
-
+    
     /// A builder for [`ExpiredTokenException`](crate::error::ExpiredTokenException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1224,16 +1221,18 @@ pub mod expired_token_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ExpiredTokenException`](crate::error::ExpiredTokenException).
         pub fn build(self) -> crate::error::ExpiredTokenException {
             crate::error::ExpiredTokenException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ExpiredTokenException {
     /// Creates a new builder-style object to manufacture [`ExpiredTokenException`](crate::error::ExpiredTokenException).
@@ -1247,15 +1246,15 @@ impl ExpiredTokenException {
 #[derive(std::fmt::Debug)]
 pub struct AssumeRoleWithSAMLError {
     /// Kind of error that occurred.
-    pub kind: AssumeRoleWithSAMLErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AssumeRoleWithSAMLErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AssumeRoleWithSAMLError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: AssumeRoleWithSAMLErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1265,38 +1264,52 @@ impl aws_smithy_http::result::CreateUnhandledError for AssumeRoleWithSAMLError {
 pub enum AssumeRoleWithSAMLErrorKind {
     /// <p>The web identity token that was passed is expired or is not valid. Get a new identity token from the identity provider and then retry the request.</p>
     ExpiredTokenException(crate::error::ExpiredTokenException),
-    /// <p>The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.</p>
+    /// <p>The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.</p> 
     /// <p>If this error is returned for the <code>AssumeRoleWithWebIdentity</code> operation, it can also mean that the claim has expired or has been explicitly revoked. </p>
     IdpRejectedClaimException(crate::error::IdpRejectedClaimException),
     /// <p>The web identity token that was passed could not be validated by Amazon Web Services. Get a new identity token from the identity provider and then retry the request.</p>
     InvalidIdentityTokenException(crate::error::InvalidIdentityTokenException),
     /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p> 
     /// <p>You could receive this error even though you meet other defined session policy and session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.</p>
     PackedPolicyTooLargeException(crate::error::PackedPolicyTooLargeException),
     /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssumeRoleWithSAMLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AssumeRoleWithSAMLErrorKind::ExpiredTokenException(_inner) => _inner.fmt(f),
-            AssumeRoleWithSAMLErrorKind::IdpRejectedClaimException(_inner) => _inner.fmt(f),
-            AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenException(_inner) => _inner.fmt(f),
-            AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
-            AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeException(_inner) => _inner.fmt(f),
-            AssumeRoleWithSAMLErrorKind::RegionDisabledException(_inner) => _inner.fmt(f),
-            AssumeRoleWithSAMLErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            AssumeRoleWithSAMLErrorKind::ExpiredTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssumeRoleWithSAMLErrorKind::IdpRejectedClaimException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssumeRoleWithSAMLErrorKind::RegionDisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssumeRoleWithSAMLErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1310,99 +1323,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for AssumeRoleWithSAMLError {
 }
 impl AssumeRoleWithSAMLError {
     /// Creates a new `AssumeRoleWithSAMLError`.
-    pub fn new(kind: AssumeRoleWithSAMLErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AssumeRoleWithSAMLError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AssumeRoleWithSAMLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AssumeRoleWithSAMLError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AssumeRoleWithSAMLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AssumeRoleWithSAMLErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AssumeRoleWithSAMLError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AssumeRoleWithSAMLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AssumeRoleWithSAMLError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AssumeRoleWithSAMLErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AssumeRoleWithSAMLErrorKind::ExpiredTokenException`.
     pub fn is_expired_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssumeRoleWithSAMLErrorKind::ExpiredTokenException(_)
-        )
+        matches!(&self.kind, AssumeRoleWithSAMLErrorKind::ExpiredTokenException(_))
     }
     /// Returns `true` if the error kind is `AssumeRoleWithSAMLErrorKind::IdpRejectedClaimException`.
     pub fn is_idp_rejected_claim_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssumeRoleWithSAMLErrorKind::IdpRejectedClaimException(_)
-        )
+        matches!(&self.kind, AssumeRoleWithSAMLErrorKind::IdpRejectedClaimException(_))
     }
     /// Returns `true` if the error kind is `AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenException`.
     pub fn is_invalid_identity_token_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenException(_)
-        )
+        matches!(&self.kind, AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenException(_))
     }
     /// Returns `true` if the error kind is `AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentException(_)
-        )
+        matches!(&self.kind, AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentException(_))
     }
     /// Returns `true` if the error kind is `AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeException`.
     pub fn is_packed_policy_too_large_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeException(_)
-        )
+        matches!(&self.kind, AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeException(_))
     }
     /// Returns `true` if the error kind is `AssumeRoleWithSAMLErrorKind::RegionDisabledException`.
     pub fn is_region_disabled_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssumeRoleWithSAMLErrorKind::RegionDisabledException(_)
-        )
+        matches!(&self.kind, AssumeRoleWithSAMLErrorKind::RegionDisabledException(_))
     }
 }
 impl std::error::Error for AssumeRoleWithSAMLError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AssumeRoleWithSAMLErrorKind::ExpiredTokenException(_inner) => Some(_inner),
-            AssumeRoleWithSAMLErrorKind::IdpRejectedClaimException(_inner) => Some(_inner),
-            AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenException(_inner) => Some(_inner),
-            AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
-            AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeException(_inner) => Some(_inner),
-            AssumeRoleWithSAMLErrorKind::RegionDisabledException(_inner) => Some(_inner),
-            AssumeRoleWithSAMLErrorKind::Unhandled(_inner) => Some(_inner),
+            AssumeRoleWithSAMLErrorKind::ExpiredTokenException(_inner) =>
+            Some(_inner)
+            ,
+            AssumeRoleWithSAMLErrorKind::IdpRejectedClaimException(_inner) =>
+            Some(_inner)
+            ,
+            AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenException(_inner) =>
+            Some(_inner)
+            ,
+            AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeException(_inner) =>
+            Some(_inner)
+            ,
+            AssumeRoleWithSAMLErrorKind::RegionDisabledException(_inner) =>
+            Some(_inner)
+            ,
+            AssumeRoleWithSAMLErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1412,15 +1421,15 @@ impl std::error::Error for AssumeRoleWithSAMLError {
 #[derive(std::fmt::Debug)]
 pub struct AssumeRoleError {
     /// Kind of error that occurred.
-    pub kind: AssumeRoleErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AssumeRoleErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AssumeRoleError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: AssumeRoleErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1432,29 +1441,39 @@ pub enum AssumeRoleErrorKind {
     ExpiredTokenException(crate::error::ExpiredTokenException),
     /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::error::MalformedPolicyDocumentException),
-    /// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p> 
     /// <p>You could receive this error even though you meet other defined session policy and session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.</p>
     PackedPolicyTooLargeException(crate::error::PackedPolicyTooLargeException),
     /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::error::RegionDisabledException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssumeRoleError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AssumeRoleErrorKind::ExpiredTokenException(_inner) => _inner.fmt(f),
-            AssumeRoleErrorKind::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
-            AssumeRoleErrorKind::PackedPolicyTooLargeException(_inner) => _inner.fmt(f),
-            AssumeRoleErrorKind::RegionDisabledException(_inner) => _inner.fmt(f),
-            AssumeRoleErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            AssumeRoleErrorKind::ExpiredTokenException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssumeRoleErrorKind::MalformedPolicyDocumentException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssumeRoleErrorKind::PackedPolicyTooLargeException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssumeRoleErrorKind::RegionDisabledException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssumeRoleErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1468,63 +1487,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for AssumeRoleError {
 }
 impl AssumeRoleError {
     /// Creates a new `AssumeRoleError`.
-    pub fn new(kind: AssumeRoleErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AssumeRoleError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AssumeRoleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AssumeRoleError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AssumeRoleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AssumeRoleErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AssumeRoleError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AssumeRoleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AssumeRoleError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AssumeRoleErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AssumeRoleErrorKind::ExpiredTokenException`.
     pub fn is_expired_token_exception(&self) -> bool {
         matches!(&self.kind, AssumeRoleErrorKind::ExpiredTokenException(_))
     }
     /// Returns `true` if the error kind is `AssumeRoleErrorKind::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssumeRoleErrorKind::MalformedPolicyDocumentException(_)
-        )
+        matches!(&self.kind, AssumeRoleErrorKind::MalformedPolicyDocumentException(_))
     }
     /// Returns `true` if the error kind is `AssumeRoleErrorKind::PackedPolicyTooLargeException`.
     pub fn is_packed_policy_too_large_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssumeRoleErrorKind::PackedPolicyTooLargeException(_)
-        )
+        matches!(&self.kind, AssumeRoleErrorKind::PackedPolicyTooLargeException(_))
     }
     /// Returns `true` if the error kind is `AssumeRoleErrorKind::RegionDisabledException`.
     pub fn is_region_disabled_exception(&self) -> bool {
@@ -1534,40 +1547,51 @@ impl AssumeRoleError {
 impl std::error::Error for AssumeRoleError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AssumeRoleErrorKind::ExpiredTokenException(_inner) => Some(_inner),
-            AssumeRoleErrorKind::MalformedPolicyDocumentException(_inner) => Some(_inner),
-            AssumeRoleErrorKind::PackedPolicyTooLargeException(_inner) => Some(_inner),
-            AssumeRoleErrorKind::RegionDisabledException(_inner) => Some(_inner),
-            AssumeRoleErrorKind::Unhandled(_inner) => Some(_inner),
+            AssumeRoleErrorKind::ExpiredTokenException(_inner) =>
+            Some(_inner)
+            ,
+            AssumeRoleErrorKind::MalformedPolicyDocumentException(_inner) =>
+            Some(_inner)
+            ,
+            AssumeRoleErrorKind::PackedPolicyTooLargeException(_inner) =>
+            Some(_inner)
+            ,
+            AssumeRoleErrorKind::RegionDisabledException(_inner) =>
+            Some(_inner)
+            ,
+            AssumeRoleErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

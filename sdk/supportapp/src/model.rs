@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let notificationseveritylevel = unimplemented!();
 /// match notificationseveritylevel {
@@ -31,22 +31,14 @@
 /// Specifically, when `notificationseveritylevel` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NotificationSeverityLevel::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NotificationSeverityLevel {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -55,7 +47,7 @@ pub enum NotificationSeverityLevel {
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NotificationSeverityLevel {
     fn from(s: &str) -> Self {
@@ -63,19 +55,17 @@ impl std::convert::From<&str> for NotificationSeverityLevel {
             "all" => NotificationSeverityLevel::All,
             "high" => NotificationSeverityLevel::High,
             "none" => NotificationSeverityLevel::None,
-            other => NotificationSeverityLevel::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => NotificationSeverityLevel::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NotificationSeverityLevel {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NotificationSeverityLevel::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NotificationSeverityLevel::from(s))
+                }
+            }
 impl NotificationSeverityLevel {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -83,12 +73,14 @@ impl NotificationSeverityLevel {
             NotificationSeverityLevel::All => "all",
             NotificationSeverityLevel::High => "high",
             NotificationSeverityLevel::None => "none",
-            NotificationSeverityLevel::Unknown(value) => value.as_str(),
+            NotificationSeverityLevel::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["all", "high", "none"]
+        &[
+            "all", "high", "none"
+        ]
     }
 }
 impl AsRef<str> for NotificationSeverityLevel {
@@ -103,9 +95,9 @@ impl AsRef<str> for NotificationSeverityLevel {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accounttype = unimplemented!();
 /// match accounttype {
@@ -127,58 +119,52 @@ impl AsRef<str> for NotificationSeverityLevel {
 /// Specifically, when `accounttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccountType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccountType {
     #[allow(missing_docs)] // documentation missing in model
     Management,
     #[allow(missing_docs)] // documentation missing in model
     Member,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccountType {
     fn from(s: &str) -> Self {
         match s {
             "management" => AccountType::Management,
             "member" => AccountType::Member,
-            other => AccountType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AccountType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccountType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccountType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccountType::from(s))
+                }
+            }
 impl AccountType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccountType::Management => "management",
             AccountType::Member => "member",
-            AccountType::Unknown(value) => value.as_str(),
+            AccountType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["management", "member"]
+        &[
+            "management", "member"
+        ]
     }
 }
 impl AsRef<str> for AccountType {
@@ -190,7 +176,7 @@ impl AsRef<str> for AccountType {
 /// <p>The configuration for a Slack workspace that you added to an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlackWorkspaceConfiguration {
+pub struct SlackWorkspaceConfiguration  {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     #[doc(hidden)]
     pub team_id: std::option::Option<std::string::String>,
@@ -203,11 +189,11 @@ pub struct SlackWorkspaceConfiguration {
 }
 impl SlackWorkspaceConfiguration {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub fn team_id(&self) -> std::option::Option<&str> {
+    pub fn team_id(&self) -> std::option::Option<& str> {
         self.team_id.as_deref()
     }
     /// <p>The name of the Slack workspace.</p>
-    pub fn team_name(&self) -> std::option::Option<&str> {
+    pub fn team_name(&self) -> std::option::Option<& str> {
         self.team_name.as_deref()
     }
     /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
@@ -217,7 +203,7 @@ impl SlackWorkspaceConfiguration {
 }
 /// See [`SlackWorkspaceConfiguration`](crate::model::SlackWorkspaceConfiguration).
 pub mod slack_workspace_configuration {
-
+    
     /// A builder for [`SlackWorkspaceConfiguration`](crate::model::SlackWorkspaceConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -233,8 +219,7 @@ pub mod slack_workspace_configuration {
         }
         /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.team_id = input;
-            self
+            self.team_id = input; self
         }
         /// <p>The name of the Slack workspace.</p>
         pub fn team_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -243,8 +228,7 @@ pub mod slack_workspace_configuration {
         }
         /// <p>The name of the Slack workspace.</p>
         pub fn set_team_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.team_name = input;
-            self
+            self.team_name = input; self
         }
         /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
         pub fn allow_organization_member_account(mut self, input: bool) -> Self {
@@ -252,22 +236,23 @@ pub mod slack_workspace_configuration {
             self
         }
         /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
-        pub fn set_allow_organization_member_account(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.allow_organization_member_account = input;
-            self
+        pub fn set_allow_organization_member_account(mut self, input: std::option::Option<bool>) -> Self {
+            self.allow_organization_member_account = input; self
         }
         /// Consumes the builder and constructs a [`SlackWorkspaceConfiguration`](crate::model::SlackWorkspaceConfiguration).
         pub fn build(self) -> crate::model::SlackWorkspaceConfiguration {
             crate::model::SlackWorkspaceConfiguration {
-                team_id: self.team_id,
-                team_name: self.team_name,
-                allow_organization_member_account: self.allow_organization_member_account,
+                team_id: self.team_id
+                ,
+                team_name: self.team_name
+                ,
+                allow_organization_member_account: self.allow_organization_member_account
+                ,
             }
         }
     }
+    
+    
 }
 impl SlackWorkspaceConfiguration {
     /// Creates a new builder-style object to manufacture [`SlackWorkspaceConfiguration`](crate::model::SlackWorkspaceConfiguration).
@@ -279,7 +264,7 @@ impl SlackWorkspaceConfiguration {
 /// <p>The configuration for a Slack channel that you added for your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlackChannelConfiguration {
+pub struct SlackChannelConfiguration  {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     #[doc(hidden)]
     pub team_id: std::option::Option<std::string::String>,
@@ -307,15 +292,15 @@ pub struct SlackChannelConfiguration {
 }
 impl SlackChannelConfiguration {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub fn team_id(&self) -> std::option::Option<&str> {
+    pub fn team_id(&self) -> std::option::Option<& str> {
         self.team_id.as_deref()
     }
     /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> std::option::Option<& str> {
         self.channel_id.as_deref()
     }
     /// <p>The name of the Slack channel that you configured with the Amazon Web Services Support App for your Amazon Web Services account.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
+    pub fn channel_name(&self) -> std::option::Option<& str> {
         self.channel_name.as_deref()
     }
     /// <p>Whether you want to get notified when a support case is created or reopened.</p>
@@ -331,19 +316,17 @@ impl SlackChannelConfiguration {
         self.notify_on_resolve_case
     }
     /// <p>The case severity for a support case that you want to receive notifications.</p>
-    pub fn notify_on_case_severity(
-        &self,
-    ) -> std::option::Option<&crate::model::NotificationSeverityLevel> {
+    pub fn notify_on_case_severity(&self) -> std::option::Option<& crate::model::NotificationSeverityLevel> {
         self.notify_on_case_severity.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
-    pub fn channel_role_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_role_arn(&self) -> std::option::Option<& str> {
         self.channel_role_arn.as_deref()
     }
 }
 /// See [`SlackChannelConfiguration`](crate::model::SlackChannelConfiguration).
 pub mod slack_channel_configuration {
-
+    
     /// A builder for [`SlackChannelConfiguration`](crate::model::SlackChannelConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -353,8 +336,7 @@ pub mod slack_channel_configuration {
         pub(crate) notify_on_create_or_reopen_case: std::option::Option<bool>,
         pub(crate) notify_on_add_correspondence_to_case: std::option::Option<bool>,
         pub(crate) notify_on_resolve_case: std::option::Option<bool>,
-        pub(crate) notify_on_case_severity:
-            std::option::Option<crate::model::NotificationSeverityLevel>,
+        pub(crate) notify_on_case_severity: std::option::Option<crate::model::NotificationSeverityLevel>,
         pub(crate) channel_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -365,8 +347,7 @@ pub mod slack_channel_configuration {
         }
         /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.team_id = input;
-            self
+            self.team_id = input; self
         }
         /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
         pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -375,8 +356,7 @@ pub mod slack_channel_configuration {
         }
         /// <p>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</p>
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_id = input;
-            self
+            self.channel_id = input; self
         }
         /// <p>The name of the Slack channel that you configured with the Amazon Web Services Support App for your Amazon Web Services account.</p>
         pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -385,8 +365,7 @@ pub mod slack_channel_configuration {
         }
         /// <p>The name of the Slack channel that you configured with the Amazon Web Services Support App for your Amazon Web Services account.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.channel_name = input;
-            self
+            self.channel_name = input; self
         }
         /// <p>Whether you want to get notified when a support case is created or reopened.</p>
         pub fn notify_on_create_or_reopen_case(mut self, input: bool) -> Self {
@@ -394,12 +373,8 @@ pub mod slack_channel_configuration {
             self
         }
         /// <p>Whether you want to get notified when a support case is created or reopened.</p>
-        pub fn set_notify_on_create_or_reopen_case(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.notify_on_create_or_reopen_case = input;
-            self
+        pub fn set_notify_on_create_or_reopen_case(mut self, input: std::option::Option<bool>) -> Self {
+            self.notify_on_create_or_reopen_case = input; self
         }
         /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
         pub fn notify_on_add_correspondence_to_case(mut self, input: bool) -> Self {
@@ -407,12 +382,8 @@ pub mod slack_channel_configuration {
             self
         }
         /// <p>Whether you want to get notified when a support case has a new correspondence.</p>
-        pub fn set_notify_on_add_correspondence_to_case(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.notify_on_add_correspondence_to_case = input;
-            self
+        pub fn set_notify_on_add_correspondence_to_case(mut self, input: std::option::Option<bool>) -> Self {
+            self.notify_on_add_correspondence_to_case = input; self
         }
         /// <p>Whether you want to get notified when a support case is resolved.</p>
         pub fn notify_on_resolve_case(mut self, input: bool) -> Self {
@@ -421,24 +392,16 @@ pub mod slack_channel_configuration {
         }
         /// <p>Whether you want to get notified when a support case is resolved.</p>
         pub fn set_notify_on_resolve_case(mut self, input: std::option::Option<bool>) -> Self {
-            self.notify_on_resolve_case = input;
-            self
+            self.notify_on_resolve_case = input; self
         }
         /// <p>The case severity for a support case that you want to receive notifications.</p>
-        pub fn notify_on_case_severity(
-            mut self,
-            input: crate::model::NotificationSeverityLevel,
-        ) -> Self {
+        pub fn notify_on_case_severity(mut self, input: crate::model::NotificationSeverityLevel) -> Self {
             self.notify_on_case_severity = Some(input);
             self
         }
         /// <p>The case severity for a support case that you want to receive notifications.</p>
-        pub fn set_notify_on_case_severity(
-            mut self,
-            input: std::option::Option<crate::model::NotificationSeverityLevel>,
-        ) -> Self {
-            self.notify_on_case_severity = input;
-            self
+        pub fn set_notify_on_case_severity(mut self, input: std::option::Option<crate::model::NotificationSeverityLevel>) -> Self {
+            self.notify_on_case_severity = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
         pub fn channel_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -446,27 +409,33 @@ pub mod slack_channel_configuration {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
-        pub fn set_channel_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.channel_role_arn = input;
-            self
+        pub fn set_channel_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.channel_role_arn = input; self
         }
         /// Consumes the builder and constructs a [`SlackChannelConfiguration`](crate::model::SlackChannelConfiguration).
         pub fn build(self) -> crate::model::SlackChannelConfiguration {
             crate::model::SlackChannelConfiguration {
-                team_id: self.team_id,
-                channel_id: self.channel_id,
-                channel_name: self.channel_name,
-                notify_on_create_or_reopen_case: self.notify_on_create_or_reopen_case,
-                notify_on_add_correspondence_to_case: self.notify_on_add_correspondence_to_case,
-                notify_on_resolve_case: self.notify_on_resolve_case,
-                notify_on_case_severity: self.notify_on_case_severity,
-                channel_role_arn: self.channel_role_arn,
+                team_id: self.team_id
+                ,
+                channel_id: self.channel_id
+                ,
+                channel_name: self.channel_name
+                ,
+                notify_on_create_or_reopen_case: self.notify_on_create_or_reopen_case
+                ,
+                notify_on_add_correspondence_to_case: self.notify_on_add_correspondence_to_case
+                ,
+                notify_on_resolve_case: self.notify_on_resolve_case
+                ,
+                notify_on_case_severity: self.notify_on_case_severity
+                ,
+                channel_role_arn: self.channel_role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl SlackChannelConfiguration {
     /// Creates a new builder-style object to manufacture [`SlackChannelConfiguration`](crate::model::SlackChannelConfiguration).
@@ -474,3 +443,4 @@ impl SlackChannelConfiguration {
         crate::model::slack_channel_configuration::Builder::default()
     }
 }
+

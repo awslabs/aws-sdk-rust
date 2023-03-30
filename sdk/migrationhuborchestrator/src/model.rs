@@ -3,7 +3,7 @@
 /// <p>The summary of a step group in a workflow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkflowStepGroupSummary {
+pub struct WorkflowStepGroupSummary  {
     /// <p>The ID of the step group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -25,33 +25,33 @@ pub struct WorkflowStepGroupSummary {
 }
 impl WorkflowStepGroupSummary {
     /// <p>The ID of the step group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the step group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The owner of the step group.</p>
-    pub fn owner(&self) -> std::option::Option<&crate::model::Owner> {
+    pub fn owner(&self) -> std::option::Option<& crate::model::Owner> {
         self.owner.as_ref()
     }
     /// <p>The status of the step group.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StepGroupStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StepGroupStatus> {
         self.status.as_ref()
     }
     /// <p>The previous step group.</p>
-    pub fn previous(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn previous(&self) -> std::option::Option<& [std::string::String]> {
         self.previous.as_deref()
     }
     /// <p>The next step group.</p>
-    pub fn next(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn next(&self) -> std::option::Option<& [std::string::String]> {
         self.next.as_deref()
     }
 }
 /// See [`WorkflowStepGroupSummary`](crate::model::WorkflowStepGroupSummary).
 pub mod workflow_step_group_summary {
-
+    
     /// A builder for [`WorkflowStepGroupSummary`](crate::model::WorkflowStepGroupSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -70,8 +70,7 @@ pub mod workflow_step_group_summary {
         }
         /// <p>The ID of the step group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the step group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,8 +79,7 @@ pub mod workflow_step_group_summary {
         }
         /// <p>The name of the step group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The owner of the step group.</p>
         pub fn owner(mut self, input: crate::model::Owner) -> Self {
@@ -90,8 +88,7 @@ pub mod workflow_step_group_summary {
         }
         /// <p>The owner of the step group.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Owner>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// <p>The status of the step group.</p>
         pub fn status(mut self, input: crate::model::StepGroupStatus) -> Self {
@@ -99,12 +96,8 @@ pub mod workflow_step_group_summary {
             self
         }
         /// <p>The status of the step group.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::StepGroupStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StepGroupStatus>) -> Self {
+            self.status = input; self
         }
         /// Appends an item to `previous`.
         ///
@@ -113,17 +106,13 @@ pub mod workflow_step_group_summary {
         /// <p>The previous step group.</p>
         pub fn previous(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.previous.unwrap_or_default();
-            v.push(input.into());
-            self.previous = Some(v);
-            self
+                            v.push(input.into());
+                            self.previous = Some(v);
+                            self
         }
         /// <p>The previous step group.</p>
-        pub fn set_previous(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.previous = input;
-            self
+        pub fn set_previous(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.previous = input; self
         }
         /// Appends an item to `next`.
         ///
@@ -132,30 +121,34 @@ pub mod workflow_step_group_summary {
         /// <p>The next step group.</p>
         pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.next.unwrap_or_default();
-            v.push(input.into());
-            self.next = Some(v);
-            self
+                            v.push(input.into());
+                            self.next = Some(v);
+                            self
         }
         /// <p>The next step group.</p>
-        pub fn set_next(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.next = input;
-            self
+        pub fn set_next(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.next = input; self
         }
         /// Consumes the builder and constructs a [`WorkflowStepGroupSummary`](crate::model::WorkflowStepGroupSummary).
         pub fn build(self) -> crate::model::WorkflowStepGroupSummary {
             crate::model::WorkflowStepGroupSummary {
-                id: self.id,
-                name: self.name,
-                owner: self.owner,
-                status: self.status,
-                previous: self.previous,
-                next: self.next,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                owner: self.owner
+                ,
+                status: self.status
+                ,
+                previous: self.previous
+                ,
+                next: self.next
+                ,
             }
         }
     }
+    
+    
 }
 impl WorkflowStepGroupSummary {
     /// Creates a new builder-style object to manufacture [`WorkflowStepGroupSummary`](crate::model::WorkflowStepGroupSummary).
@@ -170,9 +163,9 @@ impl WorkflowStepGroupSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let stepgroupstatus = unimplemented!();
 /// match stepgroupstatus {
@@ -200,22 +193,14 @@ impl WorkflowStepGroupSummary {
 /// Specifically, when `stepgroupstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StepGroupStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StepGroupStatus {
     #[allow(missing_docs)] // documentation missing in model
     AwaitingDependencies,
@@ -234,7 +219,7 @@ pub enum StepGroupStatus {
     #[allow(missing_docs)] // documentation missing in model
     UserAttentionRequired,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StepGroupStatus {
     fn from(s: &str) -> Self {
@@ -247,17 +232,17 @@ impl std::convert::From<&str> for StepGroupStatus {
             "PAUSING" => StepGroupStatus::Pausing,
             "READY" => StepGroupStatus::Ready,
             "USER_ATTENTION_REQUIRED" => StepGroupStatus::UserAttentionRequired,
-            other => StepGroupStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StepGroupStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StepGroupStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StepGroupStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StepGroupStatus::from(s))
+                }
+            }
 impl StepGroupStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -270,20 +255,13 @@ impl StepGroupStatus {
             StepGroupStatus::Pausing => "PAUSING",
             StepGroupStatus::Ready => "READY",
             StepGroupStatus::UserAttentionRequired => "USER_ATTENTION_REQUIRED",
-            StepGroupStatus::Unknown(value) => value.as_str(),
+            StepGroupStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AWAITING_DEPENDENCIES",
-            "COMPLETED",
-            "FAILED",
-            "IN_PROGRESS",
-            "PAUSED",
-            "PAUSING",
-            "READY",
-            "USER_ATTENTION_REQUIRED",
+            "AWAITING_DEPENDENCIES", "COMPLETED", "FAILED", "IN_PROGRESS", "PAUSED", "PAUSING", "READY", "USER_ATTENTION_REQUIRED"
         ]
     }
 }
@@ -299,9 +277,9 @@ impl AsRef<str> for StepGroupStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let owner = unimplemented!();
 /// match owner {
@@ -323,58 +301,52 @@ impl AsRef<str> for StepGroupStatus {
 /// Specifically, when `owner` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Owner::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Owner {
     #[allow(missing_docs)] // documentation missing in model
     AwsManaged,
     #[allow(missing_docs)] // documentation missing in model
     Custom,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Owner {
     fn from(s: &str) -> Self {
         match s {
             "AWS_MANAGED" => Owner::AwsManaged,
             "CUSTOM" => Owner::Custom,
-            other => Owner::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Owner::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Owner {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Owner::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Owner::from(s))
+                }
+            }
 impl Owner {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Owner::AwsManaged => "AWS_MANAGED",
             Owner::Custom => "CUSTOM",
-            Owner::Unknown(value) => value.as_str(),
+            Owner::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_MANAGED", "CUSTOM"]
+        &[
+            "AWS_MANAGED", "CUSTOM"
+        ]
     }
 }
 impl AsRef<str> for Owner {
@@ -386,7 +358,7 @@ impl AsRef<str> for Owner {
 /// <p>List of AWS services utilized in a migration workflow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tool {
+pub struct Tool  {
     /// <p>The name of an AWS service. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -396,17 +368,17 @@ pub struct Tool {
 }
 impl Tool {
     /// <p>The name of an AWS service. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The URL of an AWS service.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
 }
 /// See [`Tool`](crate::model::Tool).
 pub mod tool {
-
+    
     /// A builder for [`Tool`](crate::model::Tool).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -421,8 +393,7 @@ pub mod tool {
         }
         /// <p>The name of an AWS service. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The URL of an AWS service.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -431,17 +402,20 @@ pub mod tool {
         }
         /// <p>The URL of an AWS service.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// Consumes the builder and constructs a [`Tool`](crate::model::Tool).
         pub fn build(self) -> crate::model::Tool {
             crate::model::Tool {
-                name: self.name,
-                url: self.url,
+                name: self.name
+                ,
+                url: self.url
+                ,
             }
         }
     }
+    
+    
 }
 impl Tool {
     /// Creates a new builder-style object to manufacture [`Tool`](crate::model::Tool).
@@ -456,9 +430,9 @@ impl Tool {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let stepstatus = unimplemented!();
 /// match stepstatus {
@@ -485,22 +459,14 @@ impl Tool {
 /// Specifically, when `stepstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StepStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StepStatus {
     #[allow(missing_docs)] // documentation missing in model
     AwaitingDependencies,
@@ -517,7 +483,7 @@ pub enum StepStatus {
     #[allow(missing_docs)] // documentation missing in model
     UserAttentionRequired,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StepStatus {
     fn from(s: &str) -> Self {
@@ -529,17 +495,17 @@ impl std::convert::From<&str> for StepStatus {
             "PAUSED" => StepStatus::Paused,
             "READY" => StepStatus::Ready,
             "USER_ATTENTION_REQUIRED" => StepStatus::UserAttentionRequired,
-            other => StepStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StepStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StepStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StepStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StepStatus::from(s))
+                }
+            }
 impl StepStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -551,19 +517,13 @@ impl StepStatus {
             StepStatus::Paused => "PAUSED",
             StepStatus::Ready => "READY",
             StepStatus::UserAttentionRequired => "USER_ATTENTION_REQUIRED",
-            StepStatus::Unknown(value) => value.as_str(),
+            StepStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AWAITING_DEPENDENCIES",
-            "COMPLETED",
-            "FAILED",
-            "IN_PROGRESS",
-            "PAUSED",
-            "READY",
-            "USER_ATTENTION_REQUIRED",
+            "AWAITING_DEPENDENCIES", "COMPLETED", "FAILED", "IN_PROGRESS", "PAUSED", "READY", "USER_ATTENTION_REQUIRED"
         ]
     }
 }
@@ -576,7 +536,7 @@ impl AsRef<str> for StepStatus {
 /// <p>The summary of the step in a migration workflow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkflowStepSummary {
+pub struct WorkflowStepSummary  {
     /// <p>The ID of the step.</p>
     #[doc(hidden)]
     pub step_id: std::option::Option<std::string::String>,
@@ -619,35 +579,35 @@ pub struct WorkflowStepSummary {
 }
 impl WorkflowStepSummary {
     /// <p>The ID of the step.</p>
-    pub fn step_id(&self) -> std::option::Option<&str> {
+    pub fn step_id(&self) -> std::option::Option<& str> {
         self.step_id.as_deref()
     }
     /// <p>The name of the step.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    pub fn step_action_type(&self) -> std::option::Option<&crate::model::StepActionType> {
+    pub fn step_action_type(&self) -> std::option::Option<& crate::model::StepActionType> {
         self.step_action_type.as_ref()
     }
     /// <p>The owner of the step.</p>
-    pub fn owner(&self) -> std::option::Option<&crate::model::Owner> {
+    pub fn owner(&self) -> std::option::Option<& crate::model::Owner> {
         self.owner.as_ref()
     }
     /// <p>The previous step.</p>
-    pub fn previous(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn previous(&self) -> std::option::Option<& [std::string::String]> {
         self.previous.as_deref()
     }
     /// <p>The next step.</p>
-    pub fn next(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn next(&self) -> std::option::Option<& [std::string::String]> {
         self.next.as_deref()
     }
     /// <p>The status of the step.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::StepStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StepStatus> {
         self.status.as_ref()
     }
     /// <p>The status message of the migration workflow.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The number of servers that have been migrated.</p>
@@ -663,17 +623,17 @@ impl WorkflowStepSummary {
         self.total_no_of_srv
     }
     /// <p>The description of the step.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The location of the script.</p>
-    pub fn script_location(&self) -> std::option::Option<&str> {
+    pub fn script_location(&self) -> std::option::Option<& str> {
         self.script_location.as_deref()
     }
 }
 /// See [`WorkflowStepSummary`](crate::model::WorkflowStepSummary).
 pub mod workflow_step_summary {
-
+    
     /// A builder for [`WorkflowStepSummary`](crate::model::WorkflowStepSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -699,8 +659,7 @@ pub mod workflow_step_summary {
         }
         /// <p>The ID of the step.</p>
         pub fn set_step_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.step_id = input;
-            self
+            self.step_id = input; self
         }
         /// <p>The name of the step.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -709,8 +668,7 @@ pub mod workflow_step_summary {
         }
         /// <p>The name of the step.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
         pub fn step_action_type(mut self, input: crate::model::StepActionType) -> Self {
@@ -718,12 +676,8 @@ pub mod workflow_step_summary {
             self
         }
         /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-        pub fn set_step_action_type(
-            mut self,
-            input: std::option::Option<crate::model::StepActionType>,
-        ) -> Self {
-            self.step_action_type = input;
-            self
+        pub fn set_step_action_type(mut self, input: std::option::Option<crate::model::StepActionType>) -> Self {
+            self.step_action_type = input; self
         }
         /// <p>The owner of the step.</p>
         pub fn owner(mut self, input: crate::model::Owner) -> Self {
@@ -732,8 +686,7 @@ pub mod workflow_step_summary {
         }
         /// <p>The owner of the step.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Owner>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// Appends an item to `previous`.
         ///
@@ -742,17 +695,13 @@ pub mod workflow_step_summary {
         /// <p>The previous step.</p>
         pub fn previous(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.previous.unwrap_or_default();
-            v.push(input.into());
-            self.previous = Some(v);
-            self
+                            v.push(input.into());
+                            self.previous = Some(v);
+                            self
         }
         /// <p>The previous step.</p>
-        pub fn set_previous(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.previous = input;
-            self
+        pub fn set_previous(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.previous = input; self
         }
         /// Appends an item to `next`.
         ///
@@ -761,17 +710,13 @@ pub mod workflow_step_summary {
         /// <p>The next step.</p>
         pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.next.unwrap_or_default();
-            v.push(input.into());
-            self.next = Some(v);
-            self
+                            v.push(input.into());
+                            self.next = Some(v);
+                            self
         }
         /// <p>The next step.</p>
-        pub fn set_next(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.next = input;
-            self
+        pub fn set_next(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.next = input; self
         }
         /// <p>The status of the step.</p>
         pub fn status(mut self, input: crate::model::StepStatus) -> Self {
@@ -780,8 +725,7 @@ pub mod workflow_step_summary {
         }
         /// <p>The status of the step.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StepStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The status message of the migration workflow.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -789,12 +733,8 @@ pub mod workflow_step_summary {
             self
         }
         /// <p>The status message of the migration workflow.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The number of servers that have been migrated.</p>
         pub fn no_of_srv_completed(mut self, input: i32) -> Self {
@@ -803,8 +743,7 @@ pub mod workflow_step_summary {
         }
         /// <p>The number of servers that have been migrated.</p>
         pub fn set_no_of_srv_completed(mut self, input: std::option::Option<i32>) -> Self {
-            self.no_of_srv_completed = input;
-            self
+            self.no_of_srv_completed = input; self
         }
         /// <p>The number of servers that have failed to migrate.</p>
         pub fn no_of_srv_failed(mut self, input: i32) -> Self {
@@ -813,8 +752,7 @@ pub mod workflow_step_summary {
         }
         /// <p>The number of servers that have failed to migrate.</p>
         pub fn set_no_of_srv_failed(mut self, input: std::option::Option<i32>) -> Self {
-            self.no_of_srv_failed = input;
-            self
+            self.no_of_srv_failed = input; self
         }
         /// <p>The total number of servers that have been migrated.</p>
         pub fn total_no_of_srv(mut self, input: i32) -> Self {
@@ -823,8 +761,7 @@ pub mod workflow_step_summary {
         }
         /// <p>The total number of servers that have been migrated.</p>
         pub fn set_total_no_of_srv(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_no_of_srv = input;
-            self
+            self.total_no_of_srv = input; self
         }
         /// <p>The description of the step.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -833,8 +770,7 @@ pub mod workflow_step_summary {
         }
         /// <p>The description of the step.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The location of the script.</p>
         pub fn script_location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -842,32 +778,43 @@ pub mod workflow_step_summary {
             self
         }
         /// <p>The location of the script.</p>
-        pub fn set_script_location(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.script_location = input;
-            self
+        pub fn set_script_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.script_location = input; self
         }
         /// Consumes the builder and constructs a [`WorkflowStepSummary`](crate::model::WorkflowStepSummary).
         pub fn build(self) -> crate::model::WorkflowStepSummary {
             crate::model::WorkflowStepSummary {
-                step_id: self.step_id,
-                name: self.name,
-                step_action_type: self.step_action_type,
-                owner: self.owner,
-                previous: self.previous,
-                next: self.next,
-                status: self.status,
-                status_message: self.status_message,
-                no_of_srv_completed: self.no_of_srv_completed,
-                no_of_srv_failed: self.no_of_srv_failed,
-                total_no_of_srv: self.total_no_of_srv,
-                description: self.description,
-                script_location: self.script_location,
+                step_id: self.step_id
+                ,
+                name: self.name
+                ,
+                step_action_type: self.step_action_type
+                ,
+                owner: self.owner
+                ,
+                previous: self.previous
+                ,
+                next: self.next
+                ,
+                status: self.status
+                ,
+                status_message: self.status_message
+                ,
+                no_of_srv_completed: self.no_of_srv_completed
+                ,
+                no_of_srv_failed: self.no_of_srv_failed
+                ,
+                total_no_of_srv: self.total_no_of_srv
+                ,
+                description: self.description
+                ,
+                script_location: self.script_location
+                ,
             }
         }
     }
+    
+    
 }
 impl WorkflowStepSummary {
     /// Creates a new builder-style object to manufacture [`WorkflowStepSummary`](crate::model::WorkflowStepSummary).
@@ -882,9 +829,9 @@ impl WorkflowStepSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let stepactiontype = unimplemented!();
 /// match stepactiontype {
@@ -906,58 +853,52 @@ impl WorkflowStepSummary {
 /// Specifically, when `stepactiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StepActionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StepActionType {
     #[allow(missing_docs)] // documentation missing in model
     Automated,
     #[allow(missing_docs)] // documentation missing in model
     Manual,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StepActionType {
     fn from(s: &str) -> Self {
         match s {
             "AUTOMATED" => StepActionType::Automated,
             "MANUAL" => StepActionType::Manual,
-            other => StepActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StepActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StepActionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StepActionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StepActionType::from(s))
+                }
+            }
 impl StepActionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StepActionType::Automated => "AUTOMATED",
             StepActionType::Manual => "MANUAL",
-            StepActionType::Unknown(value) => value.as_str(),
+            StepActionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUTOMATED", "MANUAL"]
+        &[
+            "AUTOMATED", "MANUAL"
+        ]
     }
 }
 impl AsRef<str> for StepActionType {
@@ -969,7 +910,7 @@ impl AsRef<str> for StepActionType {
 /// <p>The output of a step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkflowStepOutput {
+pub struct WorkflowStepOutput  {
     /// <p>The name of the step.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -985,11 +926,11 @@ pub struct WorkflowStepOutput {
 }
 impl WorkflowStepOutput {
     /// <p>The name of the step.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The data type of the output.</p>
-    pub fn data_type(&self) -> std::option::Option<&crate::model::DataType> {
+    pub fn data_type(&self) -> std::option::Option<& crate::model::DataType> {
         self.data_type.as_ref()
     }
     /// <p>Determine if an output is required from a step.</p>
@@ -997,13 +938,13 @@ impl WorkflowStepOutput {
         self.required
     }
     /// <p>The value of the output.</p>
-    pub fn value(&self) -> std::option::Option<&crate::model::WorkflowStepOutputUnion> {
+    pub fn value(&self) -> std::option::Option<& crate::model::WorkflowStepOutputUnion> {
         self.value.as_ref()
     }
 }
 /// See [`WorkflowStepOutput`](crate::model::WorkflowStepOutput).
 pub mod workflow_step_output {
-
+    
     /// A builder for [`WorkflowStepOutput`](crate::model::WorkflowStepOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1020,8 +961,7 @@ pub mod workflow_step_output {
         }
         /// <p>The name of the step.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The data type of the output.</p>
         pub fn data_type(mut self, input: crate::model::DataType) -> Self {
@@ -1030,8 +970,7 @@ pub mod workflow_step_output {
         }
         /// <p>The data type of the output.</p>
         pub fn set_data_type(mut self, input: std::option::Option<crate::model::DataType>) -> Self {
-            self.data_type = input;
-            self
+            self.data_type = input; self
         }
         /// <p>Determine if an output is required from a step.</p>
         pub fn required(mut self, input: bool) -> Self {
@@ -1040,8 +979,7 @@ pub mod workflow_step_output {
         }
         /// <p>Determine if an output is required from a step.</p>
         pub fn set_required(mut self, input: std::option::Option<bool>) -> Self {
-            self.required = input;
-            self
+            self.required = input; self
         }
         /// <p>The value of the output.</p>
         pub fn value(mut self, input: crate::model::WorkflowStepOutputUnion) -> Self {
@@ -1049,23 +987,25 @@ pub mod workflow_step_output {
             self
         }
         /// <p>The value of the output.</p>
-        pub fn set_value(
-            mut self,
-            input: std::option::Option<crate::model::WorkflowStepOutputUnion>,
-        ) -> Self {
-            self.value = input;
-            self
+        pub fn set_value(mut self, input: std::option::Option<crate::model::WorkflowStepOutputUnion>) -> Self {
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`WorkflowStepOutput`](crate::model::WorkflowStepOutput).
         pub fn build(self) -> crate::model::WorkflowStepOutput {
             crate::model::WorkflowStepOutput {
-                name: self.name,
-                data_type: self.data_type,
-                required: self.required,
-                value: self.value,
+                name: self.name
+                ,
+                data_type: self.data_type
+                ,
+                required: self.required
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl WorkflowStepOutput {
     /// Creates a new builder-style object to manufacture [`WorkflowStepOutput`](crate::model::WorkflowStepOutput).
@@ -1098,11 +1038,7 @@ impl WorkflowStepOutputUnion {
     /// Tries to convert the enum instance into [`IntegerValue`](crate::model::WorkflowStepOutputUnion::IntegerValue), extracting the inner [`i32`](i32).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_integer_value(&self) -> std::result::Result<&i32, &Self> {
-        if let WorkflowStepOutputUnion::IntegerValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let WorkflowStepOutputUnion::IntegerValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`IntegerValue`](crate::model::WorkflowStepOutputUnion::IntegerValue).
     pub fn is_integer_value(&self) -> bool {
@@ -1110,14 +1046,8 @@ impl WorkflowStepOutputUnion {
     }
     /// Tries to convert the enum instance into [`ListOfStringValue`](crate::model::WorkflowStepOutputUnion::ListOfStringValue), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_list_of_string_value(
-        &self,
-    ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
-        if let WorkflowStepOutputUnion::ListOfStringValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_list_of_string_value(&self) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
+        if let WorkflowStepOutputUnion::ListOfStringValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`ListOfStringValue`](crate::model::WorkflowStepOutputUnion::ListOfStringValue).
     pub fn is_list_of_string_value(&self) -> bool {
@@ -1126,11 +1056,7 @@ impl WorkflowStepOutputUnion {
     /// Tries to convert the enum instance into [`StringValue`](crate::model::WorkflowStepOutputUnion::StringValue), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let WorkflowStepOutputUnion::StringValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let WorkflowStepOutputUnion::StringValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`StringValue`](crate::model::WorkflowStepOutputUnion::StringValue).
     pub fn is_string_value(&self) -> bool {
@@ -1148,9 +1074,9 @@ impl WorkflowStepOutputUnion {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datatype = unimplemented!();
 /// match datatype {
@@ -1174,22 +1100,14 @@ impl WorkflowStepOutputUnion {
 /// Specifically, when `datatype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DataType {
     #[allow(missing_docs)] // documentation missing in model
     Integer,
@@ -1200,7 +1118,7 @@ pub enum DataType {
     #[allow(missing_docs)] // documentation missing in model
     Stringmap,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataType {
     fn from(s: &str) -> Self {
@@ -1209,17 +1127,17 @@ impl std::convert::From<&str> for DataType {
             "STRING" => DataType::String,
             "STRINGLIST" => DataType::Stringlist,
             "STRINGMAP" => DataType::Stringmap,
-            other => DataType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DataType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DataType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DataType::from(s))
+                }
+            }
 impl DataType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1228,12 +1146,14 @@ impl DataType {
             DataType::String => "STRING",
             DataType::Stringlist => "STRINGLIST",
             DataType::Stringmap => "STRINGMAP",
-            DataType::Unknown(value) => value.as_str(),
+            DataType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INTEGER", "STRING", "STRINGLIST", "STRINGMAP"]
+        &[
+            "INTEGER", "STRING", "STRINGLIST", "STRINGMAP"
+        ]
     }
 }
 impl AsRef<str> for DataType {
@@ -1245,7 +1165,7 @@ impl AsRef<str> for DataType {
 /// <p>The custom script to run tests on source or target environments.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkflowStepAutomationConfiguration {
+pub struct WorkflowStepAutomationConfiguration  {
     /// <p>The Amazon S3 bucket where the script is located.</p>
     #[doc(hidden)]
     pub script_location_s3_bucket: std::option::Option<std::string::String>,
@@ -1264,29 +1184,29 @@ pub struct WorkflowStepAutomationConfiguration {
 }
 impl WorkflowStepAutomationConfiguration {
     /// <p>The Amazon S3 bucket where the script is located.</p>
-    pub fn script_location_s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn script_location_s3_bucket(&self) -> std::option::Option<& str> {
         self.script_location_s3_bucket.as_deref()
     }
     /// <p>The Amazon S3 key for the script location.</p>
-    pub fn script_location_s3_key(&self) -> std::option::Option<&crate::model::PlatformScriptKey> {
+    pub fn script_location_s3_key(&self) -> std::option::Option<& crate::model::PlatformScriptKey> {
         self.script_location_s3_key.as_ref()
     }
     /// <p>The command required to run the script.</p>
-    pub fn command(&self) -> std::option::Option<&crate::model::PlatformCommand> {
+    pub fn command(&self) -> std::option::Option<& crate::model::PlatformCommand> {
         self.command.as_ref()
     }
     /// <p>The source or target environment.</p>
-    pub fn run_environment(&self) -> std::option::Option<&crate::model::RunEnvironment> {
+    pub fn run_environment(&self) -> std::option::Option<& crate::model::RunEnvironment> {
         self.run_environment.as_ref()
     }
     /// <p>The servers on which to run the script.</p>
-    pub fn target_type(&self) -> std::option::Option<&crate::model::TargetType> {
+    pub fn target_type(&self) -> std::option::Option<& crate::model::TargetType> {
         self.target_type.as_ref()
     }
 }
 /// See [`WorkflowStepAutomationConfiguration`](crate::model::WorkflowStepAutomationConfiguration).
 pub mod workflow_step_automation_configuration {
-
+    
     /// A builder for [`WorkflowStepAutomationConfiguration`](crate::model::WorkflowStepAutomationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1303,12 +1223,8 @@ pub mod workflow_step_automation_configuration {
             self
         }
         /// <p>The Amazon S3 bucket where the script is located.</p>
-        pub fn set_script_location_s3_bucket(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.script_location_s3_bucket = input;
-            self
+        pub fn set_script_location_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.script_location_s3_bucket = input; self
         }
         /// <p>The Amazon S3 key for the script location.</p>
         pub fn script_location_s3_key(mut self, input: crate::model::PlatformScriptKey) -> Self {
@@ -1316,12 +1232,8 @@ pub mod workflow_step_automation_configuration {
             self
         }
         /// <p>The Amazon S3 key for the script location.</p>
-        pub fn set_script_location_s3_key(
-            mut self,
-            input: std::option::Option<crate::model::PlatformScriptKey>,
-        ) -> Self {
-            self.script_location_s3_key = input;
-            self
+        pub fn set_script_location_s3_key(mut self, input: std::option::Option<crate::model::PlatformScriptKey>) -> Self {
+            self.script_location_s3_key = input; self
         }
         /// <p>The command required to run the script.</p>
         pub fn command(mut self, input: crate::model::PlatformCommand) -> Self {
@@ -1329,12 +1241,8 @@ pub mod workflow_step_automation_configuration {
             self
         }
         /// <p>The command required to run the script.</p>
-        pub fn set_command(
-            mut self,
-            input: std::option::Option<crate::model::PlatformCommand>,
-        ) -> Self {
-            self.command = input;
-            self
+        pub fn set_command(mut self, input: std::option::Option<crate::model::PlatformCommand>) -> Self {
+            self.command = input; self
         }
         /// <p>The source or target environment.</p>
         pub fn run_environment(mut self, input: crate::model::RunEnvironment) -> Self {
@@ -1342,12 +1250,8 @@ pub mod workflow_step_automation_configuration {
             self
         }
         /// <p>The source or target environment.</p>
-        pub fn set_run_environment(
-            mut self,
-            input: std::option::Option<crate::model::RunEnvironment>,
-        ) -> Self {
-            self.run_environment = input;
-            self
+        pub fn set_run_environment(mut self, input: std::option::Option<crate::model::RunEnvironment>) -> Self {
+            self.run_environment = input; self
         }
         /// <p>The servers on which to run the script.</p>
         pub fn target_type(mut self, input: crate::model::TargetType) -> Self {
@@ -1355,24 +1259,27 @@ pub mod workflow_step_automation_configuration {
             self
         }
         /// <p>The servers on which to run the script.</p>
-        pub fn set_target_type(
-            mut self,
-            input: std::option::Option<crate::model::TargetType>,
-        ) -> Self {
-            self.target_type = input;
-            self
+        pub fn set_target_type(mut self, input: std::option::Option<crate::model::TargetType>) -> Self {
+            self.target_type = input; self
         }
         /// Consumes the builder and constructs a [`WorkflowStepAutomationConfiguration`](crate::model::WorkflowStepAutomationConfiguration).
         pub fn build(self) -> crate::model::WorkflowStepAutomationConfiguration {
             crate::model::WorkflowStepAutomationConfiguration {
-                script_location_s3_bucket: self.script_location_s3_bucket,
-                script_location_s3_key: self.script_location_s3_key,
-                command: self.command,
-                run_environment: self.run_environment,
-                target_type: self.target_type,
+                script_location_s3_bucket: self.script_location_s3_bucket
+                ,
+                script_location_s3_key: self.script_location_s3_key
+                ,
+                command: self.command
+                ,
+                run_environment: self.run_environment
+                ,
+                target_type: self.target_type
+                ,
             }
         }
     }
+    
+    
 }
 impl WorkflowStepAutomationConfiguration {
     /// Creates a new builder-style object to manufacture [`WorkflowStepAutomationConfiguration`](crate::model::WorkflowStepAutomationConfiguration).
@@ -1387,9 +1294,9 @@ impl WorkflowStepAutomationConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let targettype = unimplemented!();
 /// match targettype {
@@ -1412,22 +1319,14 @@ impl WorkflowStepAutomationConfiguration {
 /// Specifically, when `targettype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TargetType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TargetType {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -1436,7 +1335,7 @@ pub enum TargetType {
     #[allow(missing_docs)] // documentation missing in model
     Single,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TargetType {
     fn from(s: &str) -> Self {
@@ -1444,17 +1343,17 @@ impl std::convert::From<&str> for TargetType {
             "ALL" => TargetType::All,
             "NONE" => TargetType::None,
             "SINGLE" => TargetType::Single,
-            other => TargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TargetType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TargetType::from(s))
+                }
+            }
 impl TargetType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1462,12 +1361,14 @@ impl TargetType {
             TargetType::All => "ALL",
             TargetType::None => "NONE",
             TargetType::Single => "SINGLE",
-            TargetType::Unknown(value) => value.as_str(),
+            TargetType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "NONE", "SINGLE"]
+        &[
+            "ALL", "NONE", "SINGLE"
+        ]
     }
 }
 impl AsRef<str> for TargetType {
@@ -1482,9 +1383,9 @@ impl AsRef<str> for TargetType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let runenvironment = unimplemented!();
 /// match runenvironment {
@@ -1506,58 +1407,52 @@ impl AsRef<str> for TargetType {
 /// Specifically, when `runenvironment` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RunEnvironment::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RunEnvironment {
     #[allow(missing_docs)] // documentation missing in model
     Aws,
     #[allow(missing_docs)] // documentation missing in model
     Onpremise,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RunEnvironment {
     fn from(s: &str) -> Self {
         match s {
             "AWS" => RunEnvironment::Aws,
             "ONPREMISE" => RunEnvironment::Onpremise,
-            other => RunEnvironment::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RunEnvironment::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RunEnvironment {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RunEnvironment::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RunEnvironment::from(s))
+                }
+            }
 impl RunEnvironment {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RunEnvironment::Aws => "AWS",
             RunEnvironment::Onpremise => "ONPREMISE",
-            RunEnvironment::Unknown(value) => value.as_str(),
+            RunEnvironment::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS", "ONPREMISE"]
+        &[
+            "AWS", "ONPREMISE"
+        ]
     }
 }
 impl AsRef<str> for RunEnvironment {
@@ -1569,7 +1464,7 @@ impl AsRef<str> for RunEnvironment {
 /// <p>Command to be run on a particular operating system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlatformCommand {
+pub struct PlatformCommand  {
     /// <p>Command for Linux.</p>
     #[doc(hidden)]
     pub linux: std::option::Option<std::string::String>,
@@ -1579,17 +1474,17 @@ pub struct PlatformCommand {
 }
 impl PlatformCommand {
     /// <p>Command for Linux.</p>
-    pub fn linux(&self) -> std::option::Option<&str> {
+    pub fn linux(&self) -> std::option::Option<& str> {
         self.linux.as_deref()
     }
     /// <p>Command for Windows.</p>
-    pub fn windows(&self) -> std::option::Option<&str> {
+    pub fn windows(&self) -> std::option::Option<& str> {
         self.windows.as_deref()
     }
 }
 /// See [`PlatformCommand`](crate::model::PlatformCommand).
 pub mod platform_command {
-
+    
     /// A builder for [`PlatformCommand`](crate::model::PlatformCommand).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1604,8 +1499,7 @@ pub mod platform_command {
         }
         /// <p>Command for Linux.</p>
         pub fn set_linux(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.linux = input;
-            self
+            self.linux = input; self
         }
         /// <p>Command for Windows.</p>
         pub fn windows(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1614,17 +1508,20 @@ pub mod platform_command {
         }
         /// <p>Command for Windows.</p>
         pub fn set_windows(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.windows = input;
-            self
+            self.windows = input; self
         }
         /// Consumes the builder and constructs a [`PlatformCommand`](crate::model::PlatformCommand).
         pub fn build(self) -> crate::model::PlatformCommand {
             crate::model::PlatformCommand {
-                linux: self.linux,
-                windows: self.windows,
+                linux: self.linux
+                ,
+                windows: self.windows
+                ,
             }
         }
     }
+    
+    
 }
 impl PlatformCommand {
     /// Creates a new builder-style object to manufacture [`PlatformCommand`](crate::model::PlatformCommand).
@@ -1636,7 +1533,7 @@ impl PlatformCommand {
 /// <p>The script location for a particular operating system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlatformScriptKey {
+pub struct PlatformScriptKey  {
     /// <p>The script location for Linux.</p>
     #[doc(hidden)]
     pub linux: std::option::Option<std::string::String>,
@@ -1646,17 +1543,17 @@ pub struct PlatformScriptKey {
 }
 impl PlatformScriptKey {
     /// <p>The script location for Linux.</p>
-    pub fn linux(&self) -> std::option::Option<&str> {
+    pub fn linux(&self) -> std::option::Option<& str> {
         self.linux.as_deref()
     }
     /// <p>The script location for Windows.</p>
-    pub fn windows(&self) -> std::option::Option<&str> {
+    pub fn windows(&self) -> std::option::Option<& str> {
         self.windows.as_deref()
     }
 }
 /// See [`PlatformScriptKey`](crate::model::PlatformScriptKey).
 pub mod platform_script_key {
-
+    
     /// A builder for [`PlatformScriptKey`](crate::model::PlatformScriptKey).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1671,8 +1568,7 @@ pub mod platform_script_key {
         }
         /// <p>The script location for Linux.</p>
         pub fn set_linux(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.linux = input;
-            self
+            self.linux = input; self
         }
         /// <p>The script location for Windows.</p>
         pub fn windows(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1681,17 +1577,20 @@ pub mod platform_script_key {
         }
         /// <p>The script location for Windows.</p>
         pub fn set_windows(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.windows = input;
-            self
+            self.windows = input; self
         }
         /// Consumes the builder and constructs a [`PlatformScriptKey`](crate::model::PlatformScriptKey).
         pub fn build(self) -> crate::model::PlatformScriptKey {
             crate::model::PlatformScriptKey {
-                linux: self.linux,
-                windows: self.windows,
+                linux: self.linux
+                ,
+                windows: self.windows
+                ,
             }
         }
     }
+    
+    
 }
 impl PlatformScriptKey {
     /// Creates a new builder-style object to manufacture [`PlatformScriptKey`](crate::model::PlatformScriptKey).
@@ -1703,7 +1602,7 @@ impl PlatformScriptKey {
 /// <p>The summary of the step group in the template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TemplateStepGroupSummary {
+pub struct TemplateStepGroupSummary  {
     /// <p>The ID of the step group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1719,25 +1618,25 @@ pub struct TemplateStepGroupSummary {
 }
 impl TemplateStepGroupSummary {
     /// <p>The ID of the step group.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the step group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The previous step group.</p>
-    pub fn previous(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn previous(&self) -> std::option::Option<& [std::string::String]> {
         self.previous.as_deref()
     }
     /// <p>The next step group.</p>
-    pub fn next(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn next(&self) -> std::option::Option<& [std::string::String]> {
         self.next.as_deref()
     }
 }
 /// See [`TemplateStepGroupSummary`](crate::model::TemplateStepGroupSummary).
 pub mod template_step_group_summary {
-
+    
     /// A builder for [`TemplateStepGroupSummary`](crate::model::TemplateStepGroupSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1754,8 +1653,7 @@ pub mod template_step_group_summary {
         }
         /// <p>The ID of the step group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the step group.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1764,8 +1662,7 @@ pub mod template_step_group_summary {
         }
         /// <p>The name of the step group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `previous`.
         ///
@@ -1774,17 +1671,13 @@ pub mod template_step_group_summary {
         /// <p>The previous step group.</p>
         pub fn previous(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.previous.unwrap_or_default();
-            v.push(input.into());
-            self.previous = Some(v);
-            self
+                            v.push(input.into());
+                            self.previous = Some(v);
+                            self
         }
         /// <p>The previous step group.</p>
-        pub fn set_previous(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.previous = input;
-            self
+        pub fn set_previous(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.previous = input; self
         }
         /// Appends an item to `next`.
         ///
@@ -1793,28 +1686,30 @@ pub mod template_step_group_summary {
         /// <p>The next step group.</p>
         pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.next.unwrap_or_default();
-            v.push(input.into());
-            self.next = Some(v);
-            self
+                            v.push(input.into());
+                            self.next = Some(v);
+                            self
         }
         /// <p>The next step group.</p>
-        pub fn set_next(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.next = input;
-            self
+        pub fn set_next(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.next = input; self
         }
         /// Consumes the builder and constructs a [`TemplateStepGroupSummary`](crate::model::TemplateStepGroupSummary).
         pub fn build(self) -> crate::model::TemplateStepGroupSummary {
             crate::model::TemplateStepGroupSummary {
-                id: self.id,
-                name: self.name,
-                previous: self.previous,
-                next: self.next,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                previous: self.previous
+                ,
+                next: self.next
+                ,
             }
         }
     }
+    
+    
 }
 impl TemplateStepGroupSummary {
     /// Creates a new builder-style object to manufacture [`TemplateStepGroupSummary`](crate::model::TemplateStepGroupSummary).
@@ -1826,7 +1721,7 @@ impl TemplateStepGroupSummary {
 /// <p>The summary of the step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TemplateStepSummary {
+pub struct TemplateStepSummary  {
     /// <p>The ID of the step.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1857,45 +1752,45 @@ pub struct TemplateStepSummary {
 }
 impl TemplateStepSummary {
     /// <p>The ID of the step.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(&self) -> std::option::Option<&str> {
+    pub fn step_group_id(&self) -> std::option::Option<& str> {
         self.step_group_id.as_deref()
     }
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The name of the step.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    pub fn step_action_type(&self) -> std::option::Option<&crate::model::StepActionType> {
+    pub fn step_action_type(&self) -> std::option::Option<& crate::model::StepActionType> {
         self.step_action_type.as_ref()
     }
     /// <p>The servers on which to run the script.</p>
-    pub fn target_type(&self) -> std::option::Option<&crate::model::TargetType> {
+    pub fn target_type(&self) -> std::option::Option<& crate::model::TargetType> {
         self.target_type.as_ref()
     }
     /// <p>The owner of the step.</p>
-    pub fn owner(&self) -> std::option::Option<&crate::model::Owner> {
+    pub fn owner(&self) -> std::option::Option<& crate::model::Owner> {
         self.owner.as_ref()
     }
     /// <p>The previous step.</p>
-    pub fn previous(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn previous(&self) -> std::option::Option<& [std::string::String]> {
         self.previous.as_deref()
     }
     /// <p>The next step.</p>
-    pub fn next(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn next(&self) -> std::option::Option<& [std::string::String]> {
         self.next.as_deref()
     }
 }
 /// See [`TemplateStepSummary`](crate::model::TemplateStepSummary).
 pub mod template_step_summary {
-
+    
     /// A builder for [`TemplateStepSummary`](crate::model::TemplateStepSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1917,8 +1812,7 @@ pub mod template_step_summary {
         }
         /// <p>The ID of the step.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ID of the step group.</p>
         pub fn step_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1926,12 +1820,8 @@ pub mod template_step_summary {
             self
         }
         /// <p>The ID of the step group.</p>
-        pub fn set_step_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.step_group_id = input;
-            self
+        pub fn set_step_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.step_group_id = input; self
         }
         /// <p>The ID of the template.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1940,8 +1830,7 @@ pub mod template_step_summary {
         }
         /// <p>The ID of the template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>The name of the step.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1950,8 +1839,7 @@ pub mod template_step_summary {
         }
         /// <p>The name of the step.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
         pub fn step_action_type(mut self, input: crate::model::StepActionType) -> Self {
@@ -1959,12 +1847,8 @@ pub mod template_step_summary {
             self
         }
         /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-        pub fn set_step_action_type(
-            mut self,
-            input: std::option::Option<crate::model::StepActionType>,
-        ) -> Self {
-            self.step_action_type = input;
-            self
+        pub fn set_step_action_type(mut self, input: std::option::Option<crate::model::StepActionType>) -> Self {
+            self.step_action_type = input; self
         }
         /// <p>The servers on which to run the script.</p>
         pub fn target_type(mut self, input: crate::model::TargetType) -> Self {
@@ -1972,12 +1856,8 @@ pub mod template_step_summary {
             self
         }
         /// <p>The servers on which to run the script.</p>
-        pub fn set_target_type(
-            mut self,
-            input: std::option::Option<crate::model::TargetType>,
-        ) -> Self {
-            self.target_type = input;
-            self
+        pub fn set_target_type(mut self, input: std::option::Option<crate::model::TargetType>) -> Self {
+            self.target_type = input; self
         }
         /// <p>The owner of the step.</p>
         pub fn owner(mut self, input: crate::model::Owner) -> Self {
@@ -1986,8 +1866,7 @@ pub mod template_step_summary {
         }
         /// <p>The owner of the step.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::Owner>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// Appends an item to `previous`.
         ///
@@ -1996,17 +1875,13 @@ pub mod template_step_summary {
         /// <p>The previous step.</p>
         pub fn previous(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.previous.unwrap_or_default();
-            v.push(input.into());
-            self.previous = Some(v);
-            self
+                            v.push(input.into());
+                            self.previous = Some(v);
+                            self
         }
         /// <p>The previous step.</p>
-        pub fn set_previous(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.previous = input;
-            self
+        pub fn set_previous(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.previous = input; self
         }
         /// Appends an item to `next`.
         ///
@@ -2015,33 +1890,40 @@ pub mod template_step_summary {
         /// <p>The next step.</p>
         pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.next.unwrap_or_default();
-            v.push(input.into());
-            self.next = Some(v);
-            self
+                            v.push(input.into());
+                            self.next = Some(v);
+                            self
         }
         /// <p>The next step.</p>
-        pub fn set_next(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.next = input;
-            self
+        pub fn set_next(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.next = input; self
         }
         /// Consumes the builder and constructs a [`TemplateStepSummary`](crate::model::TemplateStepSummary).
         pub fn build(self) -> crate::model::TemplateStepSummary {
             crate::model::TemplateStepSummary {
-                id: self.id,
-                step_group_id: self.step_group_id,
-                template_id: self.template_id,
-                name: self.name,
-                step_action_type: self.step_action_type,
-                target_type: self.target_type,
-                owner: self.owner,
-                previous: self.previous,
-                next: self.next,
+                id: self.id
+                ,
+                step_group_id: self.step_group_id
+                ,
+                template_id: self.template_id
+                ,
+                name: self.name
+                ,
+                step_action_type: self.step_action_type
+                ,
+                target_type: self.target_type
+                ,
+                owner: self.owner
+                ,
+                previous: self.previous
+                ,
+                next: self.next
+                ,
             }
         }
     }
+    
+    
 }
 impl TemplateStepSummary {
     /// Creates a new builder-style object to manufacture [`TemplateStepSummary`](crate::model::TemplateStepSummary).
@@ -2053,7 +1935,7 @@ impl TemplateStepSummary {
 /// <p>The custom script to run tests on source or target environments.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StepAutomationConfiguration {
+pub struct StepAutomationConfiguration  {
     /// <p>The Amazon S3 bucket where the script is located.</p>
     #[doc(hidden)]
     pub script_location_s3_bucket: std::option::Option<std::string::String>,
@@ -2072,29 +1954,29 @@ pub struct StepAutomationConfiguration {
 }
 impl StepAutomationConfiguration {
     /// <p>The Amazon S3 bucket where the script is located.</p>
-    pub fn script_location_s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn script_location_s3_bucket(&self) -> std::option::Option<& str> {
         self.script_location_s3_bucket.as_deref()
     }
     /// <p>The Amazon S3 key for the script location.</p>
-    pub fn script_location_s3_key(&self) -> std::option::Option<&crate::model::PlatformScriptKey> {
+    pub fn script_location_s3_key(&self) -> std::option::Option<& crate::model::PlatformScriptKey> {
         self.script_location_s3_key.as_ref()
     }
     /// <p>The command to run the script.</p>
-    pub fn command(&self) -> std::option::Option<&crate::model::PlatformCommand> {
+    pub fn command(&self) -> std::option::Option<& crate::model::PlatformCommand> {
         self.command.as_ref()
     }
     /// <p>The source or target environment.</p>
-    pub fn run_environment(&self) -> std::option::Option<&crate::model::RunEnvironment> {
+    pub fn run_environment(&self) -> std::option::Option<& crate::model::RunEnvironment> {
         self.run_environment.as_ref()
     }
     /// <p>The servers on which to run the script.</p>
-    pub fn target_type(&self) -> std::option::Option<&crate::model::TargetType> {
+    pub fn target_type(&self) -> std::option::Option<& crate::model::TargetType> {
         self.target_type.as_ref()
     }
 }
 /// See [`StepAutomationConfiguration`](crate::model::StepAutomationConfiguration).
 pub mod step_automation_configuration {
-
+    
     /// A builder for [`StepAutomationConfiguration`](crate::model::StepAutomationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2111,12 +1993,8 @@ pub mod step_automation_configuration {
             self
         }
         /// <p>The Amazon S3 bucket where the script is located.</p>
-        pub fn set_script_location_s3_bucket(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.script_location_s3_bucket = input;
-            self
+        pub fn set_script_location_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.script_location_s3_bucket = input; self
         }
         /// <p>The Amazon S3 key for the script location.</p>
         pub fn script_location_s3_key(mut self, input: crate::model::PlatformScriptKey) -> Self {
@@ -2124,12 +2002,8 @@ pub mod step_automation_configuration {
             self
         }
         /// <p>The Amazon S3 key for the script location.</p>
-        pub fn set_script_location_s3_key(
-            mut self,
-            input: std::option::Option<crate::model::PlatformScriptKey>,
-        ) -> Self {
-            self.script_location_s3_key = input;
-            self
+        pub fn set_script_location_s3_key(mut self, input: std::option::Option<crate::model::PlatformScriptKey>) -> Self {
+            self.script_location_s3_key = input; self
         }
         /// <p>The command to run the script.</p>
         pub fn command(mut self, input: crate::model::PlatformCommand) -> Self {
@@ -2137,12 +2011,8 @@ pub mod step_automation_configuration {
             self
         }
         /// <p>The command to run the script.</p>
-        pub fn set_command(
-            mut self,
-            input: std::option::Option<crate::model::PlatformCommand>,
-        ) -> Self {
-            self.command = input;
-            self
+        pub fn set_command(mut self, input: std::option::Option<crate::model::PlatformCommand>) -> Self {
+            self.command = input; self
         }
         /// <p>The source or target environment.</p>
         pub fn run_environment(mut self, input: crate::model::RunEnvironment) -> Self {
@@ -2150,12 +2020,8 @@ pub mod step_automation_configuration {
             self
         }
         /// <p>The source or target environment.</p>
-        pub fn set_run_environment(
-            mut self,
-            input: std::option::Option<crate::model::RunEnvironment>,
-        ) -> Self {
-            self.run_environment = input;
-            self
+        pub fn set_run_environment(mut self, input: std::option::Option<crate::model::RunEnvironment>) -> Self {
+            self.run_environment = input; self
         }
         /// <p>The servers on which to run the script.</p>
         pub fn target_type(mut self, input: crate::model::TargetType) -> Self {
@@ -2163,24 +2029,27 @@ pub mod step_automation_configuration {
             self
         }
         /// <p>The servers on which to run the script.</p>
-        pub fn set_target_type(
-            mut self,
-            input: std::option::Option<crate::model::TargetType>,
-        ) -> Self {
-            self.target_type = input;
-            self
+        pub fn set_target_type(mut self, input: std::option::Option<crate::model::TargetType>) -> Self {
+            self.target_type = input; self
         }
         /// Consumes the builder and constructs a [`StepAutomationConfiguration`](crate::model::StepAutomationConfiguration).
         pub fn build(self) -> crate::model::StepAutomationConfiguration {
             crate::model::StepAutomationConfiguration {
-                script_location_s3_bucket: self.script_location_s3_bucket,
-                script_location_s3_key: self.script_location_s3_key,
-                command: self.command,
-                run_environment: self.run_environment,
-                target_type: self.target_type,
+                script_location_s3_bucket: self.script_location_s3_bucket
+                ,
+                script_location_s3_key: self.script_location_s3_key
+                ,
+                command: self.command
+                ,
+                run_environment: self.run_environment
+                ,
+                target_type: self.target_type
+                ,
             }
         }
     }
+    
+    
 }
 impl StepAutomationConfiguration {
     /// Creates a new builder-style object to manufacture [`StepAutomationConfiguration`](crate::model::StepAutomationConfiguration).
@@ -2192,7 +2061,7 @@ impl StepAutomationConfiguration {
 /// <p>The output of the step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StepOutput {
+pub struct StepOutput  {
     /// <p>The name of the step.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -2205,11 +2074,11 @@ pub struct StepOutput {
 }
 impl StepOutput {
     /// <p>The name of the step.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The data type of the step output.</p>
-    pub fn data_type(&self) -> std::option::Option<&crate::model::DataType> {
+    pub fn data_type(&self) -> std::option::Option<& crate::model::DataType> {
         self.data_type.as_ref()
     }
     /// <p>Determine if an output is required from a step.</p>
@@ -2219,7 +2088,7 @@ impl StepOutput {
 }
 /// See [`StepOutput`](crate::model::StepOutput).
 pub mod step_output {
-
+    
     /// A builder for [`StepOutput`](crate::model::StepOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2235,8 +2104,7 @@ pub mod step_output {
         }
         /// <p>The name of the step.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The data type of the step output.</p>
         pub fn data_type(mut self, input: crate::model::DataType) -> Self {
@@ -2245,8 +2113,7 @@ pub mod step_output {
         }
         /// <p>The data type of the step output.</p>
         pub fn set_data_type(mut self, input: std::option::Option<crate::model::DataType>) -> Self {
-            self.data_type = input;
-            self
+            self.data_type = input; self
         }
         /// <p>Determine if an output is required from a step.</p>
         pub fn required(mut self, input: bool) -> Self {
@@ -2255,18 +2122,22 @@ pub mod step_output {
         }
         /// <p>Determine if an output is required from a step.</p>
         pub fn set_required(mut self, input: std::option::Option<bool>) -> Self {
-            self.required = input;
-            self
+            self.required = input; self
         }
         /// Consumes the builder and constructs a [`StepOutput`](crate::model::StepOutput).
         pub fn build(self) -> crate::model::StepOutput {
             crate::model::StepOutput {
-                name: self.name,
-                data_type: self.data_type,
-                required: self.required,
+                name: self.name
+                ,
+                data_type: self.data_type
+                ,
+                required: self.required
+                ,
             }
         }
     }
+    
+    
 }
 impl StepOutput {
     /// Creates a new builder-style object to manufacture [`StepOutput`](crate::model::StepOutput).
@@ -2278,7 +2149,7 @@ impl StepOutput {
 /// <p>The summary of the Migration Hub Orchestrator plugin.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PluginSummary {
+pub struct PluginSummary  {
     /// <p>The ID of the plugin.</p>
     #[doc(hidden)]
     pub plugin_id: std::option::Option<std::string::String>,
@@ -2300,33 +2171,33 @@ pub struct PluginSummary {
 }
 impl PluginSummary {
     /// <p>The ID of the plugin.</p>
-    pub fn plugin_id(&self) -> std::option::Option<&str> {
+    pub fn plugin_id(&self) -> std::option::Option<& str> {
         self.plugin_id.as_deref()
     }
     /// <p>The name of the host.</p>
-    pub fn hostname(&self) -> std::option::Option<&str> {
+    pub fn hostname(&self) -> std::option::Option<& str> {
         self.hostname.as_deref()
     }
     /// <p>The status of the plugin.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::PluginHealth> {
+    pub fn status(&self) -> std::option::Option<& crate::model::PluginHealth> {
         self.status.as_ref()
     }
     /// <p>The IP address at which the plugin is located.</p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
+    pub fn ip_address(&self) -> std::option::Option<& str> {
         self.ip_address.as_deref()
     }
     /// <p>The version of the plugin.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
     /// <p>The time at which the plugin was registered.</p>
-    pub fn registered_time(&self) -> std::option::Option<&str> {
+    pub fn registered_time(&self) -> std::option::Option<& str> {
         self.registered_time.as_deref()
     }
 }
 /// See [`PluginSummary`](crate::model::PluginSummary).
 pub mod plugin_summary {
-
+    
     /// A builder for [`PluginSummary`](crate::model::PluginSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2345,8 +2216,7 @@ pub mod plugin_summary {
         }
         /// <p>The ID of the plugin.</p>
         pub fn set_plugin_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.plugin_id = input;
-            self
+            self.plugin_id = input; self
         }
         /// <p>The name of the host.</p>
         pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2355,8 +2225,7 @@ pub mod plugin_summary {
         }
         /// <p>The name of the host.</p>
         pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hostname = input;
-            self
+            self.hostname = input; self
         }
         /// <p>The status of the plugin.</p>
         pub fn status(mut self, input: crate::model::PluginHealth) -> Self {
@@ -2364,12 +2233,8 @@ pub mod plugin_summary {
             self
         }
         /// <p>The status of the plugin.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::PluginHealth>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::PluginHealth>) -> Self {
+            self.status = input; self
         }
         /// <p>The IP address at which the plugin is located.</p>
         pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2378,8 +2243,7 @@ pub mod plugin_summary {
         }
         /// <p>The IP address at which the plugin is located.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ip_address = input;
-            self
+            self.ip_address = input; self
         }
         /// <p>The version of the plugin.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2388,8 +2252,7 @@ pub mod plugin_summary {
         }
         /// <p>The version of the plugin.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The time at which the plugin was registered.</p>
         pub fn registered_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2397,25 +2260,29 @@ pub mod plugin_summary {
             self
         }
         /// <p>The time at which the plugin was registered.</p>
-        pub fn set_registered_time(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.registered_time = input;
-            self
+        pub fn set_registered_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.registered_time = input; self
         }
         /// Consumes the builder and constructs a [`PluginSummary`](crate::model::PluginSummary).
         pub fn build(self) -> crate::model::PluginSummary {
             crate::model::PluginSummary {
-                plugin_id: self.plugin_id,
-                hostname: self.hostname,
-                status: self.status,
-                ip_address: self.ip_address,
-                version: self.version,
-                registered_time: self.registered_time,
+                plugin_id: self.plugin_id
+                ,
+                hostname: self.hostname
+                ,
+                status: self.status
+                ,
+                ip_address: self.ip_address
+                ,
+                version: self.version
+                ,
+                registered_time: self.registered_time
+                ,
             }
         }
     }
+    
+    
 }
 impl PluginSummary {
     /// Creates a new builder-style object to manufacture [`PluginSummary`](crate::model::PluginSummary).
@@ -2430,9 +2297,9 @@ impl PluginSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let pluginhealth = unimplemented!();
 /// match pluginhealth {
@@ -2454,58 +2321,52 @@ impl PluginSummary {
 /// Specifically, when `pluginhealth` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PluginHealth::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PluginHealth {
     #[allow(missing_docs)] // documentation missing in model
     PluginHealthy,
     #[allow(missing_docs)] // documentation missing in model
     PluginUnhealthy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PluginHealth {
     fn from(s: &str) -> Self {
         match s {
             "HEALTHY" => PluginHealth::PluginHealthy,
             "UNHEALTHY" => PluginHealth::PluginUnhealthy,
-            other => PluginHealth::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PluginHealth::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PluginHealth {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PluginHealth::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PluginHealth::from(s))
+                }
+            }
 impl PluginHealth {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PluginHealth::PluginHealthy => "HEALTHY",
             PluginHealth::PluginUnhealthy => "UNHEALTHY",
-            PluginHealth::Unknown(value) => value.as_str(),
+            PluginHealth::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HEALTHY", "UNHEALTHY"]
+        &[
+            "HEALTHY", "UNHEALTHY"
+        ]
     }
 }
 impl AsRef<str> for PluginHealth {
@@ -2517,7 +2378,7 @@ impl AsRef<str> for PluginHealth {
 /// <p>The summary of the template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TemplateSummary {
+pub struct TemplateSummary  {
     /// <p>The ID of the template.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2533,25 +2394,25 @@ pub struct TemplateSummary {
 }
 impl TemplateSummary {
     /// <p>The ID of the template.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The description of the template.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`TemplateSummary`](crate::model::TemplateSummary).
 pub mod template_summary {
-
+    
     /// A builder for [`TemplateSummary`](crate::model::TemplateSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2568,8 +2429,7 @@ pub mod template_summary {
         }
         /// <p>The ID of the template.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the template.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2578,8 +2438,7 @@ pub mod template_summary {
         }
         /// <p>The name of the template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the template.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2588,8 +2447,7 @@ pub mod template_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The description of the template.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2598,19 +2456,24 @@ pub mod template_summary {
         }
         /// <p>The description of the template.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`TemplateSummary`](crate::model::TemplateSummary).
         pub fn build(self) -> crate::model::TemplateSummary {
             crate::model::TemplateSummary {
-                id: self.id,
-                name: self.name,
-                arn: self.arn,
-                description: self.description,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                arn: self.arn
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl TemplateSummary {
     /// Creates a new builder-style object to manufacture [`TemplateSummary`](crate::model::TemplateSummary).
@@ -2625,9 +2488,9 @@ impl TemplateSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let templatestatus = unimplemented!();
 /// match templatestatus {
@@ -2648,54 +2511,48 @@ impl TemplateSummary {
 /// Specifically, when `templatestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TemplateStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TemplateStatus {
     #[allow(missing_docs)] // documentation missing in model
     Created,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TemplateStatus {
     fn from(s: &str) -> Self {
         match s {
             "CREATED" => TemplateStatus::Created,
-            other => TemplateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TemplateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TemplateStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TemplateStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TemplateStatus::from(s))
+                }
+            }
 impl TemplateStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TemplateStatus::Created => "CREATED",
-            TemplateStatus::Unknown(value) => value.as_str(),
+            TemplateStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATED"]
+        &[
+            "CREATED"
+        ]
     }
 }
 impl AsRef<str> for TemplateStatus {
@@ -2707,7 +2564,7 @@ impl AsRef<str> for TemplateStatus {
 /// <p>The input parameters of a template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TemplateInput {
+pub struct TemplateInput  {
     /// <p>The name of the template.</p>
     #[doc(hidden)]
     pub input_name: std::option::Option<std::string::String>,
@@ -2720,11 +2577,11 @@ pub struct TemplateInput {
 }
 impl TemplateInput {
     /// <p>The name of the template.</p>
-    pub fn input_name(&self) -> std::option::Option<&str> {
+    pub fn input_name(&self) -> std::option::Option<& str> {
         self.input_name.as_deref()
     }
     /// <p>The data type of the template input.</p>
-    pub fn data_type(&self) -> std::option::Option<&crate::model::DataType> {
+    pub fn data_type(&self) -> std::option::Option<& crate::model::DataType> {
         self.data_type.as_ref()
     }
     /// <p>Determine if an input is required from the template.</p>
@@ -2734,7 +2591,7 @@ impl TemplateInput {
 }
 /// See [`TemplateInput`](crate::model::TemplateInput).
 pub mod template_input {
-
+    
     /// A builder for [`TemplateInput`](crate::model::TemplateInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2750,8 +2607,7 @@ pub mod template_input {
         }
         /// <p>The name of the template.</p>
         pub fn set_input_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.input_name = input;
-            self
+            self.input_name = input; self
         }
         /// <p>The data type of the template input.</p>
         pub fn data_type(mut self, input: crate::model::DataType) -> Self {
@@ -2760,8 +2616,7 @@ pub mod template_input {
         }
         /// <p>The data type of the template input.</p>
         pub fn set_data_type(mut self, input: std::option::Option<crate::model::DataType>) -> Self {
-            self.data_type = input;
-            self
+            self.data_type = input; self
         }
         /// <p>Determine if an input is required from the template.</p>
         pub fn required(mut self, input: bool) -> Self {
@@ -2770,18 +2625,22 @@ pub mod template_input {
         }
         /// <p>Determine if an input is required from the template.</p>
         pub fn set_required(mut self, input: std::option::Option<bool>) -> Self {
-            self.required = input;
-            self
+            self.required = input; self
         }
         /// Consumes the builder and constructs a [`TemplateInput`](crate::model::TemplateInput).
         pub fn build(self) -> crate::model::TemplateInput {
             crate::model::TemplateInput {
-                input_name: self.input_name,
-                data_type: self.data_type,
-                required: self.required,
+                input_name: self.input_name
+                ,
+                data_type: self.data_type
+                ,
+                required: self.required
+                ,
             }
         }
     }
+    
+    
 }
 impl TemplateInput {
     /// Creates a new builder-style object to manufacture [`TemplateInput`](crate::model::TemplateInput).
@@ -2796,9 +2655,9 @@ impl TemplateInput {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let migrationworkflowstatusenum = unimplemented!();
 /// match migrationworkflowstatusenum {
@@ -2832,22 +2691,14 @@ impl TemplateInput {
 /// Specifically, when `migrationworkflowstatusenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MigrationWorkflowStatusEnum::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MigrationWorkflowStatusEnum {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -2878,7 +2729,7 @@ pub enum MigrationWorkflowStatusEnum {
     #[allow(missing_docs)] // documentation missing in model
     WorkflowFailed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MigrationWorkflowStatusEnum {
     fn from(s: &str) -> Self {
@@ -2897,19 +2748,17 @@ impl std::convert::From<&str> for MigrationWorkflowStatusEnum {
             "STARTING" => MigrationWorkflowStatusEnum::Starting,
             "USER_ATTENTION_REQUIRED" => MigrationWorkflowStatusEnum::UserAttentionRequired,
             "WORKFLOW_FAILED" => MigrationWorkflowStatusEnum::WorkflowFailed,
-            other => MigrationWorkflowStatusEnum::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => MigrationWorkflowStatusEnum::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MigrationWorkflowStatusEnum {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MigrationWorkflowStatusEnum::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MigrationWorkflowStatusEnum::from(s))
+                }
+            }
 impl MigrationWorkflowStatusEnum {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2928,26 +2777,13 @@ impl MigrationWorkflowStatusEnum {
             MigrationWorkflowStatusEnum::Starting => "STARTING",
             MigrationWorkflowStatusEnum::UserAttentionRequired => "USER_ATTENTION_REQUIRED",
             MigrationWorkflowStatusEnum::WorkflowFailed => "WORKFLOW_FAILED",
-            MigrationWorkflowStatusEnum::Unknown(value) => value.as_str(),
+            MigrationWorkflowStatusEnum::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "COMPLETED",
-            "CREATING",
-            "CREATION_FAILED",
-            "DELETED",
-            "DELETING",
-            "DELETION_FAILED",
-            "IN_PROGRESS",
-            "NOT_STARTED",
-            "PAUSED",
-            "PAUSING",
-            "PAUSING_FAILED",
-            "STARTING",
-            "USER_ATTENTION_REQUIRED",
-            "WORKFLOW_FAILED",
+            "COMPLETED", "CREATING", "CREATION_FAILED", "DELETED", "DELETING", "DELETION_FAILED", "IN_PROGRESS", "NOT_STARTED", "PAUSED", "PAUSING", "PAUSING_FAILED", "STARTING", "USER_ATTENTION_REQUIRED", "WORKFLOW_FAILED"
         ]
     }
 }
@@ -2960,7 +2796,7 @@ impl AsRef<str> for MigrationWorkflowStatusEnum {
 /// <p>The summary of a migration workflow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MigrationWorkflowSummary {
+pub struct MigrationWorkflowSummary  {
     /// <p>The ID of the migration workflow.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2994,35 +2830,35 @@ pub struct MigrationWorkflowSummary {
 }
 impl MigrationWorkflowSummary {
     /// <p>The ID of the migration workflow.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the migration workflow.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> std::option::Option<& str> {
         self.template_id.as_deref()
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    pub fn ads_application_configuration_name(&self) -> std::option::Option<&str> {
+    pub fn ads_application_configuration_name(&self) -> std::option::Option<& str> {
         self.ads_application_configuration_name.as_deref()
     }
     /// <p>The status of the migration workflow.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::MigrationWorkflowStatusEnum> {
+    pub fn status(&self) -> std::option::Option<& crate::model::MigrationWorkflowStatusEnum> {
         self.status.as_ref()
     }
     /// <p>The time at which the migration workflow was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time at which the migration workflow ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The status message of the migration workflow.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>The steps completed in the migration workflow.</p>
@@ -3036,7 +2872,7 @@ impl MigrationWorkflowSummary {
 }
 /// See [`MigrationWorkflowSummary`](crate::model::MigrationWorkflowSummary).
 pub mod migration_workflow_summary {
-
+    
     /// A builder for [`MigrationWorkflowSummary`](crate::model::MigrationWorkflowSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3059,8 +2895,7 @@ pub mod migration_workflow_summary {
         }
         /// <p>The ID of the migration workflow.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the migration workflow.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3069,8 +2904,7 @@ pub mod migration_workflow_summary {
         }
         /// <p>The name of the migration workflow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The ID of the template.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3079,24 +2913,16 @@ pub mod migration_workflow_summary {
         }
         /// <p>The ID of the template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.template_id = input;
-            self
+            self.template_id = input; self
         }
         /// <p>The name of the application configured in Application Discovery Service.</p>
-        pub fn ads_application_configuration_name(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn ads_application_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.ads_application_configuration_name = Some(input.into());
             self
         }
         /// <p>The name of the application configured in Application Discovery Service.</p>
-        pub fn set_ads_application_configuration_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ads_application_configuration_name = input;
-            self
+        pub fn set_ads_application_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ads_application_configuration_name = input; self
         }
         /// <p>The status of the migration workflow.</p>
         pub fn status(mut self, input: crate::model::MigrationWorkflowStatusEnum) -> Self {
@@ -3104,12 +2930,8 @@ pub mod migration_workflow_summary {
             self
         }
         /// <p>The status of the migration workflow.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::MigrationWorkflowStatusEnum>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::MigrationWorkflowStatusEnum>) -> Self {
+            self.status = input; self
         }
         /// <p>The time at which the migration workflow was created.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3117,12 +2939,8 @@ pub mod migration_workflow_summary {
             self
         }
         /// <p>The time at which the migration workflow was created.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>The time at which the migration workflow ended.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3130,12 +2948,8 @@ pub mod migration_workflow_summary {
             self
         }
         /// <p>The time at which the migration workflow ended.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>The status message of the migration workflow.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3143,12 +2957,8 @@ pub mod migration_workflow_summary {
             self
         }
         /// <p>The status message of the migration workflow.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>The steps completed in the migration workflow.</p>
         pub fn completed_steps(mut self, input: i32) -> Self {
@@ -3157,8 +2967,7 @@ pub mod migration_workflow_summary {
         }
         /// <p>The steps completed in the migration workflow.</p>
         pub fn set_completed_steps(mut self, input: std::option::Option<i32>) -> Self {
-            self.completed_steps = input;
-            self
+            self.completed_steps = input; self
         }
         /// <p>All the steps in a migration workflow.</p>
         pub fn total_steps(mut self, input: i32) -> Self {
@@ -3167,25 +2976,36 @@ pub mod migration_workflow_summary {
         }
         /// <p>All the steps in a migration workflow.</p>
         pub fn set_total_steps(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_steps = input;
-            self
+            self.total_steps = input; self
         }
         /// Consumes the builder and constructs a [`MigrationWorkflowSummary`](crate::model::MigrationWorkflowSummary).
         pub fn build(self) -> crate::model::MigrationWorkflowSummary {
             crate::model::MigrationWorkflowSummary {
-                id: self.id,
-                name: self.name,
-                template_id: self.template_id,
-                ads_application_configuration_name: self.ads_application_configuration_name,
-                status: self.status,
-                creation_time: self.creation_time,
-                end_time: self.end_time,
-                status_message: self.status_message,
-                completed_steps: self.completed_steps,
-                total_steps: self.total_steps,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                template_id: self.template_id
+                ,
+                ads_application_configuration_name: self.ads_application_configuration_name
+                ,
+                status: self.status
+                ,
+                creation_time: self.creation_time
+                ,
+                end_time: self.end_time
+                ,
+                status_message: self.status_message
+                ,
+                completed_steps: self.completed_steps
+                ,
+                total_steps: self.total_steps
+                ,
             }
         }
     }
+    
+    
 }
 impl MigrationWorkflowSummary {
     /// Creates a new builder-style object to manufacture [`MigrationWorkflowSummary`](crate::model::MigrationWorkflowSummary).
@@ -3220,11 +3040,7 @@ impl StepInput {
     /// Tries to convert the enum instance into [`IntegerValue`](crate::model::StepInput::IntegerValue), extracting the inner [`i32`](i32).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_integer_value(&self) -> std::result::Result<&i32, &Self> {
-        if let StepInput::IntegerValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let StepInput::IntegerValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`IntegerValue`](crate::model::StepInput::IntegerValue).
     pub fn is_integer_value(&self) -> bool {
@@ -3232,14 +3048,8 @@ impl StepInput {
     }
     /// Tries to convert the enum instance into [`ListOfStringsValue`](crate::model::StepInput::ListOfStringsValue), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_list_of_strings_value(
-        &self,
-    ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
-        if let StepInput::ListOfStringsValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_list_of_strings_value(&self) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
+        if let StepInput::ListOfStringsValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`ListOfStringsValue`](crate::model::StepInput::ListOfStringsValue).
     pub fn is_list_of_strings_value(&self) -> bool {
@@ -3247,17 +3057,8 @@ impl StepInput {
     }
     /// Tries to convert the enum instance into [`MapOfStringValue`](crate::model::StepInput::MapOfStringValue), extracting the inner [`HashMap`](std::collections::HashMap).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_map_of_string_value(
-        &self,
-    ) -> std::result::Result<
-        &std::collections::HashMap<std::string::String, std::string::String>,
-        &Self,
-    > {
-        if let StepInput::MapOfStringValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_map_of_string_value(&self) -> std::result::Result<&std::collections::HashMap<std::string::String, std::string::String>, &Self> {
+        if let StepInput::MapOfStringValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`MapOfStringValue`](crate::model::StepInput::MapOfStringValue).
     pub fn is_map_of_string_value(&self) -> bool {
@@ -3266,11 +3067,7 @@ impl StepInput {
     /// Tries to convert the enum instance into [`StringValue`](crate::model::StepInput::StringValue), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let StepInput::StringValue(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let StepInput::StringValue(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`StringValue`](crate::model::StepInput::StringValue).
     pub fn is_string_value(&self) -> bool {
@@ -3281,3 +3078,4 @@ impl StepInput {
         matches!(self, Self::Unknown)
     }
 }
+

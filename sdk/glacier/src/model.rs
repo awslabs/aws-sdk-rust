@@ -3,7 +3,7 @@
 /// <p>Represents a vault's notification configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VaultNotificationConfig {
+pub struct VaultNotificationConfig  {
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub sns_topic: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct VaultNotificationConfig {
 }
 impl VaultNotificationConfig {
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource Name (ARN).</p>
-    pub fn sns_topic(&self) -> std::option::Option<&str> {
+    pub fn sns_topic(&self) -> std::option::Option<& str> {
         self.sns_topic.as_deref()
     }
     /// <p>A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS topic.</p>
-    pub fn events(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn events(&self) -> std::option::Option<& [std::string::String]> {
         self.events.as_deref()
     }
 }
 /// See [`VaultNotificationConfig`](crate::model::VaultNotificationConfig).
 pub mod vault_notification_config {
-
+    
     /// A builder for [`VaultNotificationConfig`](crate::model::VaultNotificationConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod vault_notification_config {
         }
         /// <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource Name (ARN).</p>
         pub fn set_sns_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sns_topic = input;
-            self
+            self.sns_topic = input; self
         }
         /// Appends an item to `events`.
         ///
@@ -48,26 +47,26 @@ pub mod vault_notification_config {
         /// <p>A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS topic.</p>
         pub fn events(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.events.unwrap_or_default();
-            v.push(input.into());
-            self.events = Some(v);
-            self
+                            v.push(input.into());
+                            self.events = Some(v);
+                            self
         }
         /// <p>A list of one or more events for which Amazon S3 Glacier will send a notification to the specified Amazon SNS topic.</p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.events = input; self
         }
         /// Consumes the builder and constructs a [`VaultNotificationConfig`](crate::model::VaultNotificationConfig).
         pub fn build(self) -> crate::model::VaultNotificationConfig {
             crate::model::VaultNotificationConfig {
-                sns_topic: self.sns_topic,
-                events: self.events,
+                sns_topic: self.sns_topic
+                ,
+                events: self.events
+                ,
             }
         }
     }
+    
+    
 }
 impl VaultNotificationConfig {
     /// Creates a new builder-style object to manufacture [`VaultNotificationConfig`](crate::model::VaultNotificationConfig).
@@ -79,20 +78,20 @@ impl VaultNotificationConfig {
 /// <p>Contains the vault access policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VaultAccessPolicy {
+pub struct VaultAccessPolicy  {
     /// <p>The vault access policy.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl VaultAccessPolicy {
     /// <p>The vault access policy.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`VaultAccessPolicy`](crate::model::VaultAccessPolicy).
 pub mod vault_access_policy {
-
+    
     /// A builder for [`VaultAccessPolicy`](crate::model::VaultAccessPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -106,16 +105,18 @@ pub mod vault_access_policy {
         }
         /// <p>The vault access policy.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`VaultAccessPolicy`](crate::model::VaultAccessPolicy).
         pub fn build(self) -> crate::model::VaultAccessPolicy {
             crate::model::VaultAccessPolicy {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl VaultAccessPolicy {
     /// Creates a new builder-style object to manufacture [`VaultAccessPolicy`](crate::model::VaultAccessPolicy).
@@ -127,20 +128,20 @@ impl VaultAccessPolicy {
 /// <p>Data retrieval policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataRetrievalPolicy {
+pub struct DataRetrievalPolicy  {
     /// <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
     #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::model::DataRetrievalRule>>,
 }
 impl DataRetrievalPolicy {
     /// <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::model::DataRetrievalRule]> {
+    pub fn rules(&self) -> std::option::Option<& [crate::model::DataRetrievalRule]> {
         self.rules.as_deref()
     }
 }
 /// See [`DataRetrievalPolicy`](crate::model::DataRetrievalPolicy).
 pub mod data_retrieval_policy {
-
+    
     /// A builder for [`DataRetrievalPolicy`](crate::model::DataRetrievalPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -154,23 +155,24 @@ pub mod data_retrieval_policy {
         /// <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
         pub fn rules(mut self, input: crate::model::DataRetrievalRule) -> Self {
             let mut v = self.rules.unwrap_or_default();
-            v.push(input);
-            self.rules = Some(v);
-            self
+                            v.push(input);
+                            self.rules = Some(v);
+                            self
         }
         /// <p>The policy rule. Although this is a list type, currently there must be only one rule, which contains a Strategy field and optionally a BytesPerHour field.</p>
-        pub fn set_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataRetrievalRule>>,
-        ) -> Self {
-            self.rules = input;
-            self
+        pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataRetrievalRule>>) -> Self {
+            self.rules = input; self
         }
         /// Consumes the builder and constructs a [`DataRetrievalPolicy`](crate::model::DataRetrievalPolicy).
         pub fn build(self) -> crate::model::DataRetrievalPolicy {
-            crate::model::DataRetrievalPolicy { rules: self.rules }
+            crate::model::DataRetrievalPolicy {
+                rules: self.rules
+                ,
+            }
         }
     }
+    
+    
 }
 impl DataRetrievalPolicy {
     /// Creates a new builder-style object to manufacture [`DataRetrievalPolicy`](crate::model::DataRetrievalPolicy).
@@ -182,23 +184,23 @@ impl DataRetrievalPolicy {
 /// <p>Data retrieval policy rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataRetrievalRule {
-    /// <p>The type of data retrieval policy to set.</p>
+pub struct DataRetrievalRule  {
+    /// <p>The type of data retrieval policy to set.</p> 
     /// <p>Valid values: BytesPerHour|FreeTier|None</p>
     #[doc(hidden)]
     pub strategy: std::option::Option<std::string::String>,
-    /// <p>The maximum number of bytes that can be retrieved in an hour.</p>
+    /// <p>The maximum number of bytes that can be retrieved in an hour.</p> 
     /// <p>This field is required only if the value of the Strategy field is <code>BytesPerHour</code>. Your PUT operation will be rejected if the Strategy field is not set to <code>BytesPerHour</code> and you set this field.</p>
     #[doc(hidden)]
     pub bytes_per_hour: std::option::Option<i64>,
 }
 impl DataRetrievalRule {
-    /// <p>The type of data retrieval policy to set.</p>
+    /// <p>The type of data retrieval policy to set.</p> 
     /// <p>Valid values: BytesPerHour|FreeTier|None</p>
-    pub fn strategy(&self) -> std::option::Option<&str> {
+    pub fn strategy(&self) -> std::option::Option<& str> {
         self.strategy.as_deref()
     }
-    /// <p>The maximum number of bytes that can be retrieved in an hour.</p>
+    /// <p>The maximum number of bytes that can be retrieved in an hour.</p> 
     /// <p>This field is required only if the value of the Strategy field is <code>BytesPerHour</code>. Your PUT operation will be rejected if the Strategy field is not set to <code>BytesPerHour</code> and you set this field.</p>
     pub fn bytes_per_hour(&self) -> std::option::Option<i64> {
         self.bytes_per_hour
@@ -206,7 +208,7 @@ impl DataRetrievalRule {
 }
 /// See [`DataRetrievalRule`](crate::model::DataRetrievalRule).
 pub mod data_retrieval_rule {
-
+    
     /// A builder for [`DataRetrievalRule`](crate::model::DataRetrievalRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -214,38 +216,40 @@ pub mod data_retrieval_rule {
         pub(crate) bytes_per_hour: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The type of data retrieval policy to set.</p>
+        /// <p>The type of data retrieval policy to set.</p> 
         /// <p>Valid values: BytesPerHour|FreeTier|None</p>
         pub fn strategy(mut self, input: impl Into<std::string::String>) -> Self {
             self.strategy = Some(input.into());
             self
         }
-        /// <p>The type of data retrieval policy to set.</p>
+        /// <p>The type of data retrieval policy to set.</p> 
         /// <p>Valid values: BytesPerHour|FreeTier|None</p>
         pub fn set_strategy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.strategy = input;
-            self
+            self.strategy = input; self
         }
-        /// <p>The maximum number of bytes that can be retrieved in an hour.</p>
+        /// <p>The maximum number of bytes that can be retrieved in an hour.</p> 
         /// <p>This field is required only if the value of the Strategy field is <code>BytesPerHour</code>. Your PUT operation will be rejected if the Strategy field is not set to <code>BytesPerHour</code> and you set this field.</p>
         pub fn bytes_per_hour(mut self, input: i64) -> Self {
             self.bytes_per_hour = Some(input);
             self
         }
-        /// <p>The maximum number of bytes that can be retrieved in an hour.</p>
+        /// <p>The maximum number of bytes that can be retrieved in an hour.</p> 
         /// <p>This field is required only if the value of the Strategy field is <code>BytesPerHour</code>. Your PUT operation will be rejected if the Strategy field is not set to <code>BytesPerHour</code> and you set this field.</p>
         pub fn set_bytes_per_hour(mut self, input: std::option::Option<i64>) -> Self {
-            self.bytes_per_hour = input;
-            self
+            self.bytes_per_hour = input; self
         }
         /// Consumes the builder and constructs a [`DataRetrievalRule`](crate::model::DataRetrievalRule).
         pub fn build(self) -> crate::model::DataRetrievalRule {
             crate::model::DataRetrievalRule {
-                strategy: self.strategy,
-                bytes_per_hour: self.bytes_per_hour,
+                strategy: self.strategy
+                ,
+                bytes_per_hour: self.bytes_per_hour
+                ,
             }
         }
     }
+    
+    
 }
 impl DataRetrievalRule {
     /// Creates a new builder-style object to manufacture [`DataRetrievalRule`](crate::model::DataRetrievalRule).
@@ -257,7 +261,7 @@ impl DataRetrievalRule {
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVaultOutput {
+pub struct DescribeVaultOutput  {
     /// <p>The Amazon Resource Name (ARN) of the vault.</p>
     #[doc(hidden)]
     pub vault_arn: std::option::Option<std::string::String>,
@@ -279,19 +283,19 @@ pub struct DescribeVaultOutput {
 }
 impl DescribeVaultOutput {
     /// <p>The Amazon Resource Name (ARN) of the vault.</p>
-    pub fn vault_arn(&self) -> std::option::Option<&str> {
+    pub fn vault_arn(&self) -> std::option::Option<& str> {
         self.vault_arn.as_deref()
     }
     /// <p>The name of the vault.</p>
-    pub fn vault_name(&self) -> std::option::Option<&str> {
+    pub fn vault_name(&self) -> std::option::Option<& str> {
         self.vault_name.as_deref()
     }
     /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
-    pub fn creation_date(&self) -> std::option::Option<&str> {
+    pub fn creation_date(&self) -> std::option::Option<& str> {
         self.creation_date.as_deref()
     }
     /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
-    pub fn last_inventory_date(&self) -> std::option::Option<&str> {
+    pub fn last_inventory_date(&self) -> std::option::Option<& str> {
         self.last_inventory_date.as_deref()
     }
     /// <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example if you just created the vault.</p>
@@ -305,7 +309,7 @@ impl DescribeVaultOutput {
 }
 /// See [`DescribeVaultOutput`](crate::model::DescribeVaultOutput).
 pub mod describe_vault_output {
-
+    
     /// A builder for [`DescribeVaultOutput`](crate::model::DescribeVaultOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -324,8 +328,7 @@ pub mod describe_vault_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the vault.</p>
         pub fn set_vault_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_arn = input;
-            self
+            self.vault_arn = input; self
         }
         /// <p>The name of the vault.</p>
         pub fn vault_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -334,8 +337,7 @@ pub mod describe_vault_output {
         }
         /// <p>The name of the vault.</p>
         pub fn set_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_name = input;
-            self
+            self.vault_name = input; self
         }
         /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
         pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -343,12 +345,8 @@ pub mod describe_vault_output {
             self
         }
         /// <p>The Universal Coordinated Time (UTC) date when the vault was created. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
         pub fn last_inventory_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -356,12 +354,8 @@ pub mod describe_vault_output {
             self
         }
         /// <p>The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last vault inventory. This value should be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.</p>
-        pub fn set_last_inventory_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_inventory_date = input;
-            self
+        pub fn set_last_inventory_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_inventory_date = input; self
         }
         /// <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example if you just created the vault.</p>
         pub fn number_of_archives(mut self, input: i64) -> Self {
@@ -370,8 +364,7 @@ pub mod describe_vault_output {
         }
         /// <p>The number of archives in the vault as of the last inventory date. This field will return <code>null</code> if an inventory has not yet run on the vault, for example if you just created the vault.</p>
         pub fn set_number_of_archives(mut self, input: std::option::Option<i64>) -> Self {
-            self.number_of_archives = input;
-            self
+            self.number_of_archives = input; self
         }
         /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if an inventory has not yet run on the vault, for example if you just created the vault.</p>
         pub fn size_in_bytes(mut self, input: i64) -> Self {
@@ -380,21 +373,30 @@ pub mod describe_vault_output {
         }
         /// <p>Total size, in bytes, of the archives in the vault as of the last inventory date. This field will return null if an inventory has not yet run on the vault, for example if you just created the vault.</p>
         pub fn set_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.size_in_bytes = input;
-            self
+            self.size_in_bytes = input; self
         }
         /// Consumes the builder and constructs a [`DescribeVaultOutput`](crate::model::DescribeVaultOutput).
         pub fn build(self) -> crate::model::DescribeVaultOutput {
             crate::model::DescribeVaultOutput {
-                vault_arn: self.vault_arn,
-                vault_name: self.vault_name,
-                creation_date: self.creation_date,
-                last_inventory_date: self.last_inventory_date,
-                number_of_archives: self.number_of_archives.unwrap_or_default(),
-                size_in_bytes: self.size_in_bytes.unwrap_or_default(),
+                vault_arn: self.vault_arn
+                ,
+                vault_name: self.vault_name
+                ,
+                creation_date: self.creation_date
+                ,
+                last_inventory_date: self.last_inventory_date
+                ,
+                number_of_archives: self.number_of_archives
+                    .unwrap_or_default()
+                ,
+                size_in_bytes: self.size_in_bytes
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeVaultOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVaultOutput`](crate::model::DescribeVaultOutput).
@@ -406,7 +408,7 @@ impl DescribeVaultOutput {
 /// <p>The definition for a provisioned capacity unit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisionedCapacityDescription {
+pub struct ProvisionedCapacityDescription  {
     /// <p>The ID that identifies the provisioned capacity unit.</p>
     #[doc(hidden)]
     pub capacity_id: std::option::Option<std::string::String>,
@@ -419,21 +421,21 @@ pub struct ProvisionedCapacityDescription {
 }
 impl ProvisionedCapacityDescription {
     /// <p>The ID that identifies the provisioned capacity unit.</p>
-    pub fn capacity_id(&self) -> std::option::Option<&str> {
+    pub fn capacity_id(&self) -> std::option::Option<& str> {
         self.capacity_id.as_deref()
     }
     /// <p>The date that the provisioned capacity unit was purchased, in Universal Coordinated Time (UTC).</p>
-    pub fn start_date(&self) -> std::option::Option<&str> {
+    pub fn start_date(&self) -> std::option::Option<& str> {
         self.start_date.as_deref()
     }
     /// <p>The date that the provisioned capacity unit expires, in Universal Coordinated Time (UTC).</p>
-    pub fn expiration_date(&self) -> std::option::Option<&str> {
+    pub fn expiration_date(&self) -> std::option::Option<& str> {
         self.expiration_date.as_deref()
     }
 }
 /// See [`ProvisionedCapacityDescription`](crate::model::ProvisionedCapacityDescription).
 pub mod provisioned_capacity_description {
-
+    
     /// A builder for [`ProvisionedCapacityDescription`](crate::model::ProvisionedCapacityDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -449,8 +451,7 @@ pub mod provisioned_capacity_description {
         }
         /// <p>The ID that identifies the provisioned capacity unit.</p>
         pub fn set_capacity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.capacity_id = input;
-            self
+            self.capacity_id = input; self
         }
         /// <p>The date that the provisioned capacity unit was purchased, in Universal Coordinated Time (UTC).</p>
         pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -459,8 +460,7 @@ pub mod provisioned_capacity_description {
         }
         /// <p>The date that the provisioned capacity unit was purchased, in Universal Coordinated Time (UTC).</p>
         pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start_date = input;
-            self
+            self.start_date = input; self
         }
         /// <p>The date that the provisioned capacity unit expires, in Universal Coordinated Time (UTC).</p>
         pub fn expiration_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -468,22 +468,23 @@ pub mod provisioned_capacity_description {
             self
         }
         /// <p>The date that the provisioned capacity unit expires, in Universal Coordinated Time (UTC).</p>
-        pub fn set_expiration_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.expiration_date = input;
-            self
+        pub fn set_expiration_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expiration_date = input; self
         }
         /// Consumes the builder and constructs a [`ProvisionedCapacityDescription`](crate::model::ProvisionedCapacityDescription).
         pub fn build(self) -> crate::model::ProvisionedCapacityDescription {
             crate::model::ProvisionedCapacityDescription {
-                capacity_id: self.capacity_id,
-                start_date: self.start_date,
-                expiration_date: self.expiration_date,
+                capacity_id: self.capacity_id
+                ,
+                start_date: self.start_date
+                ,
+                expiration_date: self.expiration_date
+                ,
             }
         }
     }
+    
+    
 }
 impl ProvisionedCapacityDescription {
     /// Creates a new builder-style object to manufacture [`ProvisionedCapacityDescription`](crate::model::ProvisionedCapacityDescription).
@@ -495,7 +496,7 @@ impl ProvisionedCapacityDescription {
 /// <p>A list of the part sizes of the multipart upload.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PartListElement {
+pub struct PartListElement  {
     /// <p>The byte range of a part, inclusive of the upper value of the range.</p>
     #[doc(hidden)]
     pub range_in_bytes: std::option::Option<std::string::String>,
@@ -505,17 +506,17 @@ pub struct PartListElement {
 }
 impl PartListElement {
     /// <p>The byte range of a part, inclusive of the upper value of the range.</p>
-    pub fn range_in_bytes(&self) -> std::option::Option<&str> {
+    pub fn range_in_bytes(&self) -> std::option::Option<& str> {
         self.range_in_bytes.as_deref()
     }
     /// <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never <code>null</code>.</p>
-    pub fn sha256_tree_hash(&self) -> std::option::Option<&str> {
+    pub fn sha256_tree_hash(&self) -> std::option::Option<& str> {
         self.sha256_tree_hash.as_deref()
     }
 }
 /// See [`PartListElement`](crate::model::PartListElement).
 pub mod part_list_element {
-
+    
     /// A builder for [`PartListElement`](crate::model::PartListElement).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -529,12 +530,8 @@ pub mod part_list_element {
             self
         }
         /// <p>The byte range of a part, inclusive of the upper value of the range.</p>
-        pub fn set_range_in_bytes(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.range_in_bytes = input;
-            self
+        pub fn set_range_in_bytes(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.range_in_bytes = input; self
         }
         /// <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never <code>null</code>.</p>
         pub fn sha256_tree_hash(mut self, input: impl Into<std::string::String>) -> Self {
@@ -542,21 +539,21 @@ pub mod part_list_element {
             self
         }
         /// <p>The SHA256 tree hash value that Amazon S3 Glacier calculated for the part. This field is never <code>null</code>.</p>
-        pub fn set_sha256_tree_hash(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sha256_tree_hash = input;
-            self
+        pub fn set_sha256_tree_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sha256_tree_hash = input; self
         }
         /// Consumes the builder and constructs a [`PartListElement`](crate::model::PartListElement).
         pub fn build(self) -> crate::model::PartListElement {
             crate::model::PartListElement {
-                range_in_bytes: self.range_in_bytes,
-                sha256_tree_hash: self.sha256_tree_hash,
+                range_in_bytes: self.range_in_bytes
+                ,
+                sha256_tree_hash: self.sha256_tree_hash
+                ,
             }
         }
     }
+    
+    
 }
 impl PartListElement {
     /// Creates a new builder-style object to manufacture [`PartListElement`](crate::model::PartListElement).
@@ -568,7 +565,7 @@ impl PartListElement {
 /// <p>A list of in-progress multipart uploads for a vault.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UploadListElement {
+pub struct UploadListElement  {
     /// <p>The ID of a multipart upload.</p>
     #[doc(hidden)]
     pub multipart_upload_id: std::option::Option<std::string::String>,
@@ -587,15 +584,15 @@ pub struct UploadListElement {
 }
 impl UploadListElement {
     /// <p>The ID of a multipart upload.</p>
-    pub fn multipart_upload_id(&self) -> std::option::Option<&str> {
+    pub fn multipart_upload_id(&self) -> std::option::Option<& str> {
         self.multipart_upload_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the vault that contains the archive.</p>
-    pub fn vault_arn(&self) -> std::option::Option<&str> {
+    pub fn vault_arn(&self) -> std::option::Option<& str> {
         self.vault_arn.as_deref()
     }
     /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
-    pub fn archive_description(&self) -> std::option::Option<&str> {
+    pub fn archive_description(&self) -> std::option::Option<& str> {
         self.archive_description.as_deref()
     }
     /// <p>The part size, in bytes, specified in the Initiate Multipart Upload request. This is the size of all the parts in the upload except the last part, which may be smaller than this size.</p>
@@ -603,13 +600,13 @@ impl UploadListElement {
         self.part_size_in_bytes
     }
     /// <p>The UTC time at which the multipart upload was initiated.</p>
-    pub fn creation_date(&self) -> std::option::Option<&str> {
+    pub fn creation_date(&self) -> std::option::Option<& str> {
         self.creation_date.as_deref()
     }
 }
 /// See [`UploadListElement`](crate::model::UploadListElement).
 pub mod upload_list_element {
-
+    
     /// A builder for [`UploadListElement`](crate::model::UploadListElement).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -626,12 +623,8 @@ pub mod upload_list_element {
             self
         }
         /// <p>The ID of a multipart upload.</p>
-        pub fn set_multipart_upload_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.multipart_upload_id = input;
-            self
+        pub fn set_multipart_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.multipart_upload_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the vault that contains the archive.</p>
         pub fn vault_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -640,8 +633,7 @@ pub mod upload_list_element {
         }
         /// <p>The Amazon Resource Name (ARN) of the vault that contains the archive.</p>
         pub fn set_vault_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_arn = input;
-            self
+            self.vault_arn = input; self
         }
         /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
         pub fn archive_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -649,12 +641,8 @@ pub mod upload_list_element {
             self
         }
         /// <p>The description of the archive that was specified in the Initiate Multipart Upload request.</p>
-        pub fn set_archive_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.archive_description = input;
-            self
+        pub fn set_archive_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.archive_description = input; self
         }
         /// <p>The part size, in bytes, specified in the Initiate Multipart Upload request. This is the size of all the parts in the upload except the last part, which may be smaller than this size.</p>
         pub fn part_size_in_bytes(mut self, input: i64) -> Self {
@@ -663,8 +651,7 @@ pub mod upload_list_element {
         }
         /// <p>The part size, in bytes, specified in the Initiate Multipart Upload request. This is the size of all the parts in the upload except the last part, which may be smaller than this size.</p>
         pub fn set_part_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.part_size_in_bytes = input;
-            self
+            self.part_size_in_bytes = input; self
         }
         /// <p>The UTC time at which the multipart upload was initiated.</p>
         pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -672,24 +659,28 @@ pub mod upload_list_element {
             self
         }
         /// <p>The UTC time at which the multipart upload was initiated.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_date = input; self
         }
         /// Consumes the builder and constructs a [`UploadListElement`](crate::model::UploadListElement).
         pub fn build(self) -> crate::model::UploadListElement {
             crate::model::UploadListElement {
-                multipart_upload_id: self.multipart_upload_id,
-                vault_arn: self.vault_arn,
-                archive_description: self.archive_description,
-                part_size_in_bytes: self.part_size_in_bytes.unwrap_or_default(),
-                creation_date: self.creation_date,
+                multipart_upload_id: self.multipart_upload_id
+                ,
+                vault_arn: self.vault_arn
+                ,
+                archive_description: self.archive_description
+                ,
+                part_size_in_bytes: self.part_size_in_bytes
+                    .unwrap_or_default()
+                ,
+                creation_date: self.creation_date
+                ,
             }
         }
     }
+    
+    
 }
 impl UploadListElement {
     /// Creates a new builder-style object to manufacture [`UploadListElement`](crate::model::UploadListElement).
@@ -701,7 +692,7 @@ impl UploadListElement {
 /// <p>Contains the description of an Amazon S3 Glacier job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GlacierJobDescription {
+pub struct GlacierJobDescription  {
     /// <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -741,19 +732,19 @@ pub struct GlacierJobDescription {
     /// <p>The UTC time that the job request completed. While the job is in progress, the value is null.</p>
     #[doc(hidden)]
     pub completion_date: std::option::Option<std::string::String>,
-    /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p>
-    /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p>
-    /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
-    /// <p>This field is null for the following:</p>
-    /// <ul>
-    /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li>
-    /// </ul>
-    /// <ul>
-    /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li>
-    /// </ul>
-    /// <ul>
-    /// <li> <p>Inventory jobs</p> </li>
-    /// <li> <p>Select jobs</p> </li>
+    /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p> 
+    /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p> 
+    /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p> 
+    /// <p>This field is null for the following:</p> 
+    /// <ul> 
+    /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>Inventory jobs</p> </li> 
+    /// <li> <p>Select jobs</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub sha256_tree_hash: std::option::Option<std::string::String>,
@@ -768,8 +759,7 @@ pub struct GlacierJobDescription {
     pub tier: std::option::Option<std::string::String>,
     /// <p>Parameters used for range inventory retrieval.</p>
     #[doc(hidden)]
-    pub inventory_retrieval_parameters:
-        std::option::Option<crate::model::InventoryRetrievalJobDescription>,
+    pub inventory_retrieval_parameters: std::option::Option<crate::model::InventoryRetrievalJobDescription>,
     /// <p>Contains the job output location.</p>
     #[doc(hidden)]
     pub job_output_path: std::option::Option<std::string::String>,
@@ -782,27 +772,27 @@ pub struct GlacierJobDescription {
 }
 impl GlacierJobDescription {
     /// <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The job description provided when initiating the job.</p>
-    pub fn job_description(&self) -> std::option::Option<&str> {
+    pub fn job_description(&self) -> std::option::Option<& str> {
         self.job_description.as_deref()
     }
     /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
-    pub fn action(&self) -> std::option::Option<&crate::model::ActionCode> {
+    pub fn action(&self) -> std::option::Option<& crate::model::ActionCode> {
         self.action.as_ref()
     }
     /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.</p>
-    pub fn archive_id(&self) -> std::option::Option<&str> {
+    pub fn archive_id(&self) -> std::option::Option<& str> {
         self.archive_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.</p>
-    pub fn vault_arn(&self) -> std::option::Option<&str> {
+    pub fn vault_arn(&self) -> std::option::Option<& str> {
         self.vault_arn.as_deref()
     }
     /// <p>The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
-    pub fn creation_date(&self) -> std::option::Option<&str> {
+    pub fn creation_date(&self) -> std::option::Option<& str> {
         self.creation_date.as_deref()
     }
     /// <p>The job status. When a job is completed, you get the job's output using Get Job Output (GET output).</p>
@@ -810,11 +800,11 @@ impl GlacierJobDescription {
         self.completed
     }
     /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the status of the job.</p>
-    pub fn status_code(&self) -> std::option::Option<&crate::model::StatusCode> {
+    pub fn status_code(&self) -> std::option::Option<& crate::model::StatusCode> {
         self.status_code.as_ref()
     }
     /// <p>A friendly message that describes the job status.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> std::option::Option<& str> {
         self.status_message.as_deref()
     }
     /// <p>For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an inventory retrieval or select job, this value is null.</p>
@@ -826,64 +816,62 @@ impl GlacierJobDescription {
         self.inventory_size_in_bytes
     }
     /// <p>An Amazon SNS topic that receives notification.</p>
-    pub fn sns_topic(&self) -> std::option::Option<&str> {
+    pub fn sns_topic(&self) -> std::option::Option<& str> {
         self.sns_topic.as_deref()
     }
     /// <p>The UTC time that the job request completed. While the job is in progress, the value is null.</p>
-    pub fn completion_date(&self) -> std::option::Option<&str> {
+    pub fn completion_date(&self) -> std::option::Option<& str> {
         self.completion_date.as_deref()
     }
-    /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p>
-    /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p>
-    /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
-    /// <p>This field is null for the following:</p>
-    /// <ul>
-    /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li>
+    /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p> 
+    /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p> 
+    /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p> 
+    /// <p>This field is null for the following:</p> 
+    /// <ul> 
+    /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li> 
+    /// </ul> 
+    /// <ul> 
+    /// <li> <p>Inventory jobs</p> </li> 
+    /// <li> <p>Select jobs</p> </li> 
     /// </ul>
-    /// <ul>
-    /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li>
-    /// </ul>
-    /// <ul>
-    /// <li> <p>Inventory jobs</p> </li>
-    /// <li> <p>Select jobs</p> </li>
-    /// </ul>
-    pub fn sha256_tree_hash(&self) -> std::option::Option<&str> {
+    pub fn sha256_tree_hash(&self) -> std::option::Option<& str> {
         self.sha256_tree_hash.as_deref()
     }
     /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this field is null.</p>
-    pub fn archive_sha256_tree_hash(&self) -> std::option::Option<&str> {
+    pub fn archive_sha256_tree_hash(&self) -> std::option::Option<& str> {
         self.archive_sha256_tree_hash.as_deref()
     }
     /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
-    pub fn retrieval_byte_range(&self) -> std::option::Option<&str> {
+    pub fn retrieval_byte_range(&self) -> std::option::Option<& str> {
         self.retrieval_byte_range.as_deref()
     }
     /// <p>The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
-    pub fn tier(&self) -> std::option::Option<&str> {
+    pub fn tier(&self) -> std::option::Option<& str> {
         self.tier.as_deref()
     }
     /// <p>Parameters used for range inventory retrieval.</p>
-    pub fn inventory_retrieval_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::InventoryRetrievalJobDescription> {
+    pub fn inventory_retrieval_parameters(&self) -> std::option::Option<& crate::model::InventoryRetrievalJobDescription> {
         self.inventory_retrieval_parameters.as_ref()
     }
     /// <p>Contains the job output location.</p>
-    pub fn job_output_path(&self) -> std::option::Option<&str> {
+    pub fn job_output_path(&self) -> std::option::Option<& str> {
         self.job_output_path.as_deref()
     }
     /// <p>Contains the parameters used for a select.</p>
-    pub fn select_parameters(&self) -> std::option::Option<&crate::model::SelectParameters> {
+    pub fn select_parameters(&self) -> std::option::Option<& crate::model::SelectParameters> {
         self.select_parameters.as_ref()
     }
     /// <p>Contains the location where the data from the select job is stored.</p>
-    pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
+    pub fn output_location(&self) -> std::option::Option<& crate::model::OutputLocation> {
         self.output_location.as_ref()
     }
 }
 /// See [`GlacierJobDescription`](crate::model::GlacierJobDescription).
 pub mod glacier_job_description {
-
+    
     /// A builder for [`GlacierJobDescription`](crate::model::GlacierJobDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -904,8 +892,7 @@ pub mod glacier_job_description {
         pub(crate) archive_sha256_tree_hash: std::option::Option<std::string::String>,
         pub(crate) retrieval_byte_range: std::option::Option<std::string::String>,
         pub(crate) tier: std::option::Option<std::string::String>,
-        pub(crate) inventory_retrieval_parameters:
-            std::option::Option<crate::model::InventoryRetrievalJobDescription>,
+        pub(crate) inventory_retrieval_parameters: std::option::Option<crate::model::InventoryRetrievalJobDescription>,
         pub(crate) job_output_path: std::option::Option<std::string::String>,
         pub(crate) select_parameters: std::option::Option<crate::model::SelectParameters>,
         pub(crate) output_location: std::option::Option<crate::model::OutputLocation>,
@@ -918,8 +905,7 @@ pub mod glacier_job_description {
         }
         /// <p>An opaque string that identifies an Amazon S3 Glacier job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The job description provided when initiating the job.</p>
         pub fn job_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -927,12 +913,8 @@ pub mod glacier_job_description {
             self
         }
         /// <p>The job description provided when initiating the job.</p>
-        pub fn set_job_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.job_description = input;
-            self
+        pub fn set_job_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_description = input; self
         }
         /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
         pub fn action(mut self, input: crate::model::ActionCode) -> Self {
@@ -941,8 +923,7 @@ pub mod glacier_job_description {
         }
         /// <p>The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::ActionCode>) -> Self {
-            self.action = input;
-            self
+            self.action = input; self
         }
         /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.</p>
         pub fn archive_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -951,8 +932,7 @@ pub mod glacier_job_description {
         }
         /// <p>The archive ID requested for a select job or archive retrieval. Otherwise, this field is null.</p>
         pub fn set_archive_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.archive_id = input;
-            self
+            self.archive_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.</p>
         pub fn vault_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -961,8 +941,7 @@ pub mod glacier_job_description {
         }
         /// <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval was requested.</p>
         pub fn set_vault_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.vault_arn = input;
-            self
+            self.vault_arn = input; self
         }
         /// <p>The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
         pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -970,12 +949,8 @@ pub mod glacier_job_description {
             self
         }
         /// <p>The UTC date when the job was created. This value is a string representation of ISO 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.</p>
-        pub fn set_creation_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.creation_date = input;
-            self
+        pub fn set_creation_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.creation_date = input; self
         }
         /// <p>The job status. When a job is completed, you get the job's output using Get Job Output (GET output).</p>
         pub fn completed(mut self, input: bool) -> Self {
@@ -984,8 +959,7 @@ pub mod glacier_job_description {
         }
         /// <p>The job status. When a job is completed, you get the job's output using Get Job Output (GET output).</p>
         pub fn set_completed(mut self, input: std::option::Option<bool>) -> Self {
-            self.completed = input;
-            self
+            self.completed = input; self
         }
         /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the status of the job.</p>
         pub fn status_code(mut self, input: crate::model::StatusCode) -> Self {
@@ -993,12 +967,8 @@ pub mod glacier_job_description {
             self
         }
         /// <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>, and indicates the status of the job.</p>
-        pub fn set_status_code(
-            mut self,
-            input: std::option::Option<crate::model::StatusCode>,
-        ) -> Self {
-            self.status_code = input;
-            self
+        pub fn set_status_code(mut self, input: std::option::Option<crate::model::StatusCode>) -> Self {
+            self.status_code = input; self
         }
         /// <p>A friendly message that describes the job status.</p>
         pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1006,12 +976,8 @@ pub mod glacier_job_description {
             self
         }
         /// <p>A friendly message that describes the job status.</p>
-        pub fn set_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_message = input;
-            self
+        pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_message = input; self
         }
         /// <p>For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an inventory retrieval or select job, this value is null.</p>
         pub fn archive_size_in_bytes(mut self, input: i64) -> Self {
@@ -1020,8 +986,7 @@ pub mod glacier_job_description {
         }
         /// <p>For an archive retrieval job, this value is the size in bytes of the archive being requested for download. For an inventory retrieval or select job, this value is null.</p>
         pub fn set_archive_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.archive_size_in_bytes = input;
-            self
+            self.archive_size_in_bytes = input; self
         }
         /// <p>For an inventory retrieval job, this value is the size in bytes of the inventory requested for download. For an archive retrieval or select job, this value is null.</p>
         pub fn inventory_size_in_bytes(mut self, input: i64) -> Self {
@@ -1030,8 +995,7 @@ pub mod glacier_job_description {
         }
         /// <p>For an inventory retrieval job, this value is the size in bytes of the inventory requested for download. For an archive retrieval or select job, this value is null.</p>
         pub fn set_inventory_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.inventory_size_in_bytes = input;
-            self
+            self.inventory_size_in_bytes = input; self
         }
         /// <p>An Amazon SNS topic that receives notification.</p>
         pub fn sns_topic(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1040,8 +1004,7 @@ pub mod glacier_job_description {
         }
         /// <p>An Amazon SNS topic that receives notification.</p>
         pub fn set_sns_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sns_topic = input;
-            self
+            self.sns_topic = input; self
         }
         /// <p>The UTC time that the job request completed. While the job is in progress, the value is null.</p>
         pub fn completion_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1049,51 +1012,43 @@ pub mod glacier_job_description {
             self
         }
         /// <p>The UTC time that the job request completed. While the job is in progress, the value is null.</p>
-        pub fn set_completion_date(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.completion_date = input;
-            self
+        pub fn set_completion_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.completion_date = input; self
         }
-        /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p>
-        /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p>
-        /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
-        /// <p>This field is null for the following:</p>
-        /// <ul>
-        /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li>
-        /// </ul>
-        /// <ul>
-        /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li>
-        /// </ul>
-        /// <ul>
-        /// <li> <p>Inventory jobs</p> </li>
-        /// <li> <p>Select jobs</p> </li>
+        /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p> 
+        /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p> 
+        /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p> 
+        /// <p>This field is null for the following:</p> 
+        /// <ul> 
+        /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li> 
+        /// </ul> 
+        /// <ul> 
+        /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li> 
+        /// </ul> 
+        /// <ul> 
+        /// <li> <p>Inventory jobs</p> </li> 
+        /// <li> <p>Select jobs</p> </li> 
         /// </ul>
         pub fn sha256_tree_hash(mut self, input: impl Into<std::string::String>) -> Self {
             self.sha256_tree_hash = Some(input.into());
             self
         }
-        /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p>
-        /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p>
-        /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p>
-        /// <p>This field is null for the following:</p>
-        /// <ul>
-        /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li>
+        /// <p>For an archive retrieval job, this value is the checksum of the archive. Otherwise, this value is null.</p> 
+        /// <p>The SHA256 tree hash value for the requested range of an archive. If the <b>InitiateJob</b> request for an archive specified a tree-hash aligned range, then this field returns a value.</p> 
+        /// <p>If the whole archive is retrieved, this value is the same as the ArchiveSHA256TreeHash value.</p> 
+        /// <p>This field is null for the following:</p> 
+        /// <ul> 
+        /// <li> <p>Archive retrieval jobs that specify a range that is not tree-hash aligned</p> </li> 
+        /// </ul> 
+        /// <ul> 
+        /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li> 
+        /// </ul> 
+        /// <ul> 
+        /// <li> <p>Inventory jobs</p> </li> 
+        /// <li> <p>Select jobs</p> </li> 
         /// </ul>
-        /// <ul>
-        /// <li> <p>Archival jobs that specify a range that is equal to the whole archive, when the job status is <code>InProgress</code> </p> </li>
-        /// </ul>
-        /// <ul>
-        /// <li> <p>Inventory jobs</p> </li>
-        /// <li> <p>Select jobs</p> </li>
-        /// </ul>
-        pub fn set_sha256_tree_hash(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.sha256_tree_hash = input;
-            self
+        pub fn set_sha256_tree_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.sha256_tree_hash = input; self
         }
         /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this field is null.</p>
         pub fn archive_sha256_tree_hash(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1101,12 +1056,8 @@ pub mod glacier_job_description {
             self
         }
         /// <p>The SHA256 tree hash of the entire archive for an archive retrieval. For inventory retrieval or select jobs, this field is null.</p>
-        pub fn set_archive_sha256_tree_hash(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.archive_sha256_tree_hash = input;
-            self
+        pub fn set_archive_sha256_tree_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.archive_sha256_tree_hash = input; self
         }
         /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
         pub fn retrieval_byte_range(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1114,12 +1065,8 @@ pub mod glacier_job_description {
             self
         }
         /// <p>The retrieved byte range for archive retrieval jobs in the form <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the archive retrieval, then the whole archive is retrieved. In this case, <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the archive minus 1. For inventory retrieval or select jobs, this field is null. </p>
-        pub fn set_retrieval_byte_range(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.retrieval_byte_range = input;
-            self
+        pub fn set_retrieval_byte_range(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.retrieval_byte_range = input; self
         }
         /// <p>The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
         pub fn tier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1128,24 +1075,16 @@ pub mod glacier_job_description {
         }
         /// <p>The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
         pub fn set_tier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tier = input;
-            self
+            self.tier = input; self
         }
         /// <p>Parameters used for range inventory retrieval.</p>
-        pub fn inventory_retrieval_parameters(
-            mut self,
-            input: crate::model::InventoryRetrievalJobDescription,
-        ) -> Self {
+        pub fn inventory_retrieval_parameters(mut self, input: crate::model::InventoryRetrievalJobDescription) -> Self {
             self.inventory_retrieval_parameters = Some(input);
             self
         }
         /// <p>Parameters used for range inventory retrieval.</p>
-        pub fn set_inventory_retrieval_parameters(
-            mut self,
-            input: std::option::Option<crate::model::InventoryRetrievalJobDescription>,
-        ) -> Self {
-            self.inventory_retrieval_parameters = input;
-            self
+        pub fn set_inventory_retrieval_parameters(mut self, input: std::option::Option<crate::model::InventoryRetrievalJobDescription>) -> Self {
+            self.inventory_retrieval_parameters = input; self
         }
         /// <p>Contains the job output location.</p>
         pub fn job_output_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1153,12 +1092,8 @@ pub mod glacier_job_description {
             self
         }
         /// <p>Contains the job output location.</p>
-        pub fn set_job_output_path(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.job_output_path = input;
-            self
+        pub fn set_job_output_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.job_output_path = input; self
         }
         /// <p>Contains the parameters used for a select.</p>
         pub fn select_parameters(mut self, input: crate::model::SelectParameters) -> Self {
@@ -1166,12 +1101,8 @@ pub mod glacier_job_description {
             self
         }
         /// <p>Contains the parameters used for a select.</p>
-        pub fn set_select_parameters(
-            mut self,
-            input: std::option::Option<crate::model::SelectParameters>,
-        ) -> Self {
-            self.select_parameters = input;
-            self
+        pub fn set_select_parameters(mut self, input: std::option::Option<crate::model::SelectParameters>) -> Self {
+            self.select_parameters = input; self
         }
         /// <p>Contains the location where the data from the select job is stored.</p>
         pub fn output_location(mut self, input: crate::model::OutputLocation) -> Self {
@@ -1179,40 +1110,60 @@ pub mod glacier_job_description {
             self
         }
         /// <p>Contains the location where the data from the select job is stored.</p>
-        pub fn set_output_location(
-            mut self,
-            input: std::option::Option<crate::model::OutputLocation>,
-        ) -> Self {
-            self.output_location = input;
-            self
+        pub fn set_output_location(mut self, input: std::option::Option<crate::model::OutputLocation>) -> Self {
+            self.output_location = input; self
         }
         /// Consumes the builder and constructs a [`GlacierJobDescription`](crate::model::GlacierJobDescription).
         pub fn build(self) -> crate::model::GlacierJobDescription {
             crate::model::GlacierJobDescription {
-                job_id: self.job_id,
-                job_description: self.job_description,
-                action: self.action,
-                archive_id: self.archive_id,
-                vault_arn: self.vault_arn,
-                creation_date: self.creation_date,
-                completed: self.completed.unwrap_or_default(),
-                status_code: self.status_code,
-                status_message: self.status_message,
-                archive_size_in_bytes: self.archive_size_in_bytes,
-                inventory_size_in_bytes: self.inventory_size_in_bytes,
-                sns_topic: self.sns_topic,
-                completion_date: self.completion_date,
-                sha256_tree_hash: self.sha256_tree_hash,
-                archive_sha256_tree_hash: self.archive_sha256_tree_hash,
-                retrieval_byte_range: self.retrieval_byte_range,
-                tier: self.tier,
-                inventory_retrieval_parameters: self.inventory_retrieval_parameters,
-                job_output_path: self.job_output_path,
-                select_parameters: self.select_parameters,
-                output_location: self.output_location,
+                job_id: self.job_id
+                ,
+                job_description: self.job_description
+                ,
+                action: self.action
+                ,
+                archive_id: self.archive_id
+                ,
+                vault_arn: self.vault_arn
+                ,
+                creation_date: self.creation_date
+                ,
+                completed: self.completed
+                    .unwrap_or_default()
+                ,
+                status_code: self.status_code
+                ,
+                status_message: self.status_message
+                ,
+                archive_size_in_bytes: self.archive_size_in_bytes
+                ,
+                inventory_size_in_bytes: self.inventory_size_in_bytes
+                ,
+                sns_topic: self.sns_topic
+                ,
+                completion_date: self.completion_date
+                ,
+                sha256_tree_hash: self.sha256_tree_hash
+                ,
+                archive_sha256_tree_hash: self.archive_sha256_tree_hash
+                ,
+                retrieval_byte_range: self.retrieval_byte_range
+                ,
+                tier: self.tier
+                ,
+                inventory_retrieval_parameters: self.inventory_retrieval_parameters
+                ,
+                job_output_path: self.job_output_path
+                ,
+                select_parameters: self.select_parameters
+                ,
+                output_location: self.output_location
+                ,
             }
         }
     }
+    
+    
 }
 impl GlacierJobDescription {
     /// Creates a new builder-style object to manufacture [`GlacierJobDescription`](crate::model::GlacierJobDescription).
@@ -1224,20 +1175,20 @@ impl GlacierJobDescription {
 /// <p>Contains information about the location where the select job results are stored.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputLocation {
+pub struct OutputLocation  {
     /// <p>Describes an S3 location that will receive the results of the job request.</p>
     #[doc(hidden)]
     pub s3: std::option::Option<crate::model::S3Location>,
 }
 impl OutputLocation {
     /// <p>Describes an S3 location that will receive the results of the job request.</p>
-    pub fn s3(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn s3(&self) -> std::option::Option<& crate::model::S3Location> {
         self.s3.as_ref()
     }
 }
 /// See [`OutputLocation`](crate::model::OutputLocation).
 pub mod output_location {
-
+    
     /// A builder for [`OutputLocation`](crate::model::OutputLocation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1251,14 +1202,18 @@ pub mod output_location {
         }
         /// <p>Describes an S3 location that will receive the results of the job request.</p>
         pub fn set_s3(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
-            self.s3 = input;
-            self
+            self.s3 = input; self
         }
         /// Consumes the builder and constructs a [`OutputLocation`](crate::model::OutputLocation).
         pub fn build(self) -> crate::model::OutputLocation {
-            crate::model::OutputLocation { s3: self.s3 }
+            crate::model::OutputLocation {
+                s3: self.s3
+                ,
+            }
         }
     }
+    
+    
 }
 impl OutputLocation {
     /// Creates a new builder-style object to manufacture [`OutputLocation`](crate::model::OutputLocation).
@@ -1270,7 +1225,7 @@ impl OutputLocation {
 /// <p>Contains information about the location in Amazon S3 where the select job results are stored.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>The name of the Amazon S3 bucket where the job results are stored.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
@@ -1288,59 +1243,51 @@ pub struct S3Location {
     pub access_control_list: std::option::Option<std::vec::Vec<crate::model::Grant>>,
     /// <p>The tag-set that is applied to the job results.</p>
     #[doc(hidden)]
-    pub tagging:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tagging: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A map of metadata to store with the job results in Amazon S3.</p>
     #[doc(hidden)]
-    pub user_metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub user_metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The storage class used to store the job results.</p>
     #[doc(hidden)]
     pub storage_class: std::option::Option<crate::model::StorageClass>,
 }
 impl S3Location {
     /// <p>The name of the Amazon S3 bucket where the job results are stored.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The prefix that is prepended to the results for this request.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>Contains information about the encryption used to store the job results in Amazon S3.</p>
-    pub fn encryption(&self) -> std::option::Option<&crate::model::Encryption> {
+    pub fn encryption(&self) -> std::option::Option<& crate::model::Encryption> {
         self.encryption.as_ref()
     }
     /// <p>The canned access control list (ACL) to apply to the job results.</p>
-    pub fn canned_acl(&self) -> std::option::Option<&crate::model::CannedAcl> {
+    pub fn canned_acl(&self) -> std::option::Option<& crate::model::CannedAcl> {
         self.canned_acl.as_ref()
     }
     /// <p>A list of grants that control access to the staged results.</p>
-    pub fn access_control_list(&self) -> std::option::Option<&[crate::model::Grant]> {
+    pub fn access_control_list(&self) -> std::option::Option<& [crate::model::Grant]> {
         self.access_control_list.as_deref()
     }
     /// <p>The tag-set that is applied to the job results.</p>
-    pub fn tagging(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tagging(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tagging.as_ref()
     }
     /// <p>A map of metadata to store with the job results in Amazon S3.</p>
-    pub fn user_metadata(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn user_metadata(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.user_metadata.as_ref()
     }
     /// <p>The storage class used to store the job results.</p>
-    pub fn storage_class(&self) -> std::option::Option<&crate::model::StorageClass> {
+    pub fn storage_class(&self) -> std::option::Option<& crate::model::StorageClass> {
         self.storage_class.as_ref()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
-
+    
     /// A builder for [`S3Location`](crate::model::S3Location).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1349,12 +1296,8 @@ pub mod s3_location {
         pub(crate) encryption: std::option::Option<crate::model::Encryption>,
         pub(crate) canned_acl: std::option::Option<crate::model::CannedAcl>,
         pub(crate) access_control_list: std::option::Option<std::vec::Vec<crate::model::Grant>>,
-        pub(crate) tagging: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) user_metadata: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tagging: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) user_metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) storage_class: std::option::Option<crate::model::StorageClass>,
     }
     impl Builder {
@@ -1365,8 +1308,7 @@ pub mod s3_location {
         }
         /// <p>The name of the Amazon S3 bucket where the job results are stored.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_name = input;
-            self
+            self.bucket_name = input; self
         }
         /// <p>The prefix that is prepended to the results for this request.</p>
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1375,8 +1317,7 @@ pub mod s3_location {
         }
         /// <p>The prefix that is prepended to the results for this request.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
         /// <p>Contains information about the encryption used to store the job results in Amazon S3.</p>
         pub fn encryption(mut self, input: crate::model::Encryption) -> Self {
@@ -1384,12 +1325,8 @@ pub mod s3_location {
             self
         }
         /// <p>Contains information about the encryption used to store the job results in Amazon S3.</p>
-        pub fn set_encryption(
-            mut self,
-            input: std::option::Option<crate::model::Encryption>,
-        ) -> Self {
-            self.encryption = input;
-            self
+        pub fn set_encryption(mut self, input: std::option::Option<crate::model::Encryption>) -> Self {
+            self.encryption = input; self
         }
         /// <p>The canned access control list (ACL) to apply to the job results.</p>
         pub fn canned_acl(mut self, input: crate::model::CannedAcl) -> Self {
@@ -1397,12 +1334,8 @@ pub mod s3_location {
             self
         }
         /// <p>The canned access control list (ACL) to apply to the job results.</p>
-        pub fn set_canned_acl(
-            mut self,
-            input: std::option::Option<crate::model::CannedAcl>,
-        ) -> Self {
-            self.canned_acl = input;
-            self
+        pub fn set_canned_acl(mut self, input: std::option::Option<crate::model::CannedAcl>) -> Self {
+            self.canned_acl = input; self
         }
         /// Appends an item to `access_control_list`.
         ///
@@ -1411,67 +1344,43 @@ pub mod s3_location {
         /// <p>A list of grants that control access to the staged results.</p>
         pub fn access_control_list(mut self, input: crate::model::Grant) -> Self {
             let mut v = self.access_control_list.unwrap_or_default();
-            v.push(input);
-            self.access_control_list = Some(v);
-            self
+                            v.push(input);
+                            self.access_control_list = Some(v);
+                            self
         }
         /// <p>A list of grants that control access to the staged results.</p>
-        pub fn set_access_control_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Grant>>,
-        ) -> Self {
-            self.access_control_list = input;
-            self
+        pub fn set_access_control_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::Grant>>) -> Self {
+            self.access_control_list = input; self
         }
         /// Adds a key-value pair to `tagging`.
         ///
         /// To override the contents of this collection use [`set_tagging`](Self::set_tagging).
         ///
         /// <p>The tag-set that is applied to the job results.</p>
-        pub fn tagging(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tagging(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tagging.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tagging = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tagging = Some(hash_map);
+                            self
         }
         /// <p>The tag-set that is applied to the job results.</p>
-        pub fn set_tagging(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tagging = input;
-            self
+        pub fn set_tagging(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tagging = input; self
         }
         /// Adds a key-value pair to `user_metadata`.
         ///
         /// To override the contents of this collection use [`set_user_metadata`](Self::set_user_metadata).
         ///
         /// <p>A map of metadata to store with the job results in Amazon S3.</p>
-        pub fn user_metadata(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn user_metadata(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.user_metadata.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.user_metadata = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.user_metadata = Some(hash_map);
+                            self
         }
         /// <p>A map of metadata to store with the job results in Amazon S3.</p>
-        pub fn set_user_metadata(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.user_metadata = input;
-            self
+        pub fn set_user_metadata(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.user_metadata = input; self
         }
         /// <p>The storage class used to store the job results.</p>
         pub fn storage_class(mut self, input: crate::model::StorageClass) -> Self {
@@ -1479,27 +1388,33 @@ pub mod s3_location {
             self
         }
         /// <p>The storage class used to store the job results.</p>
-        pub fn set_storage_class(
-            mut self,
-            input: std::option::Option<crate::model::StorageClass>,
-        ) -> Self {
-            self.storage_class = input;
-            self
+        pub fn set_storage_class(mut self, input: std::option::Option<crate::model::StorageClass>) -> Self {
+            self.storage_class = input; self
         }
         /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location).
         pub fn build(self) -> crate::model::S3Location {
             crate::model::S3Location {
-                bucket_name: self.bucket_name,
-                prefix: self.prefix,
-                encryption: self.encryption,
-                canned_acl: self.canned_acl,
-                access_control_list: self.access_control_list,
-                tagging: self.tagging,
-                user_metadata: self.user_metadata,
-                storage_class: self.storage_class,
+                bucket_name: self.bucket_name
+                ,
+                prefix: self.prefix
+                ,
+                encryption: self.encryption
+                ,
+                canned_acl: self.canned_acl
+                ,
+                access_control_list: self.access_control_list
+                ,
+                tagging: self.tagging
+                ,
+                user_metadata: self.user_metadata
+                ,
+                storage_class: self.storage_class
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Location {
     /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
@@ -1514,9 +1429,9 @@ impl S3Location {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let storageclass = unimplemented!();
 /// match storageclass {
@@ -1539,22 +1454,14 @@ impl S3Location {
 /// Specifically, when `storageclass` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StorageClass::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StorageClass {
     #[allow(missing_docs)] // documentation missing in model
     ReducedRedundancy,
@@ -1563,7 +1470,7 @@ pub enum StorageClass {
     #[allow(missing_docs)] // documentation missing in model
     StandardInfrequentAccess,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StorageClass {
     fn from(s: &str) -> Self {
@@ -1571,17 +1478,17 @@ impl std::convert::From<&str> for StorageClass {
             "REDUCED_REDUNDANCY" => StorageClass::ReducedRedundancy,
             "STANDARD" => StorageClass::Standard,
             "STANDARD_IA" => StorageClass::StandardInfrequentAccess,
-            other => StorageClass::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StorageClass::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StorageClass {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StorageClass::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StorageClass::from(s))
+                }
+            }
 impl StorageClass {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1589,12 +1496,14 @@ impl StorageClass {
             StorageClass::ReducedRedundancy => "REDUCED_REDUNDANCY",
             StorageClass::Standard => "STANDARD",
             StorageClass::StandardInfrequentAccess => "STANDARD_IA",
-            StorageClass::Unknown(value) => value.as_str(),
+            StorageClass::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["REDUCED_REDUNDANCY", "STANDARD", "STANDARD_IA"]
+        &[
+            "REDUCED_REDUNDANCY", "STANDARD", "STANDARD_IA"
+        ]
     }
 }
 impl AsRef<str> for StorageClass {
@@ -1606,7 +1515,7 @@ impl AsRef<str> for StorageClass {
 /// <p>Contains information about a grant.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Grant {
+pub struct Grant  {
     /// <p>The grantee.</p>
     #[doc(hidden)]
     pub grantee: std::option::Option<crate::model::Grantee>,
@@ -1616,17 +1525,17 @@ pub struct Grant {
 }
 impl Grant {
     /// <p>The grantee.</p>
-    pub fn grantee(&self) -> std::option::Option<&crate::model::Grantee> {
+    pub fn grantee(&self) -> std::option::Option<& crate::model::Grantee> {
         self.grantee.as_ref()
     }
     /// <p>Specifies the permission given to the grantee. </p>
-    pub fn permission(&self) -> std::option::Option<&crate::model::Permission> {
+    pub fn permission(&self) -> std::option::Option<& crate::model::Permission> {
         self.permission.as_ref()
     }
 }
 /// See [`Grant`](crate::model::Grant).
 pub mod grant {
-
+    
     /// A builder for [`Grant`](crate::model::Grant).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1641,8 +1550,7 @@ pub mod grant {
         }
         /// <p>The grantee.</p>
         pub fn set_grantee(mut self, input: std::option::Option<crate::model::Grantee>) -> Self {
-            self.grantee = input;
-            self
+            self.grantee = input; self
         }
         /// <p>Specifies the permission given to the grantee. </p>
         pub fn permission(mut self, input: crate::model::Permission) -> Self {
@@ -1650,21 +1558,21 @@ pub mod grant {
             self
         }
         /// <p>Specifies the permission given to the grantee. </p>
-        pub fn set_permission(
-            mut self,
-            input: std::option::Option<crate::model::Permission>,
-        ) -> Self {
-            self.permission = input;
-            self
+        pub fn set_permission(mut self, input: std::option::Option<crate::model::Permission>) -> Self {
+            self.permission = input; self
         }
         /// Consumes the builder and constructs a [`Grant`](crate::model::Grant).
         pub fn build(self) -> crate::model::Grant {
             crate::model::Grant {
-                grantee: self.grantee,
-                permission: self.permission,
+                grantee: self.grantee
+                ,
+                permission: self.permission
+                ,
             }
         }
     }
+    
+    
 }
 impl Grant {
     /// Creates a new builder-style object to manufacture [`Grant`](crate::model::Grant).
@@ -1679,9 +1587,9 @@ impl Grant {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let permission = unimplemented!();
 /// match permission {
@@ -1706,22 +1614,14 @@ impl Grant {
 /// Specifically, when `permission` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Permission::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Permission {
     #[allow(missing_docs)] // documentation missing in model
     FullControl,
@@ -1734,7 +1634,7 @@ pub enum Permission {
     #[allow(missing_docs)] // documentation missing in model
     WriteAcp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Permission {
     fn from(s: &str) -> Self {
@@ -1744,17 +1644,17 @@ impl std::convert::From<&str> for Permission {
             "READ_ACP" => Permission::ReadAcp,
             "WRITE" => Permission::Write,
             "WRITE_ACP" => Permission::WriteAcp,
-            other => Permission::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Permission::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Permission {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Permission::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Permission::from(s))
+                }
+            }
 impl Permission {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1764,12 +1664,14 @@ impl Permission {
             Permission::ReadAcp => "READ_ACP",
             Permission::Write => "WRITE",
             Permission::WriteAcp => "WRITE_ACP",
-            Permission::Unknown(value) => value.as_str(),
+            Permission::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FULL_CONTROL", "READ", "READ_ACP", "WRITE", "WRITE_ACP"]
+        &[
+            "FULL_CONTROL", "READ", "READ_ACP", "WRITE", "WRITE_ACP"
+        ]
     }
 }
 impl AsRef<str> for Permission {
@@ -1781,7 +1683,7 @@ impl AsRef<str> for Permission {
 /// <p>Contains information about the grantee.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Grantee {
+pub struct Grantee  {
     /// <p>Type of grantee</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::Type>,
@@ -1800,29 +1702,29 @@ pub struct Grantee {
 }
 impl Grantee {
     /// <p>Type of grantee</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::Type> {
         self.r#type.as_ref()
     }
     /// <p>Screen name of the grantee.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>URI of the grantee group.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> std::option::Option<& str> {
         self.uri.as_deref()
     }
     /// <p>The canonical user ID of the grantee.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Email address of the grantee.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> std::option::Option<& str> {
         self.email_address.as_deref()
     }
 }
 /// See [`Grantee`](crate::model::Grantee).
 pub mod grantee {
-
+    
     /// A builder for [`Grantee`](crate::model::Grantee).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1840,8 +1742,7 @@ pub mod grantee {
         }
         /// <p>Type of grantee</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>Screen name of the grantee.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1850,8 +1751,7 @@ pub mod grantee {
         }
         /// <p>Screen name of the grantee.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>URI of the grantee group.</p>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1860,8 +1760,7 @@ pub mod grantee {
         }
         /// <p>URI of the grantee group.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uri = input;
-            self
+            self.uri = input; self
         }
         /// <p>The canonical user ID of the grantee.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1870,8 +1769,7 @@ pub mod grantee {
         }
         /// <p>The canonical user ID of the grantee.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>Email address of the grantee.</p>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1879,24 +1777,27 @@ pub mod grantee {
             self
         }
         /// <p>Email address of the grantee.</p>
-        pub fn set_email_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.email_address = input;
-            self
+        pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.email_address = input; self
         }
         /// Consumes the builder and constructs a [`Grantee`](crate::model::Grantee).
         pub fn build(self) -> crate::model::Grantee {
             crate::model::Grantee {
-                r#type: self.r#type,
-                display_name: self.display_name,
-                uri: self.uri,
-                id: self.id,
-                email_address: self.email_address,
+                r#type: self.r#type
+                ,
+                display_name: self.display_name
+                ,
+                uri: self.uri
+                ,
+                id: self.id
+                ,
+                email_address: self.email_address
+                ,
             }
         }
     }
+    
+    
 }
 impl Grantee {
     /// Creates a new builder-style object to manufacture [`Grantee`](crate::model::Grantee).
@@ -1911,9 +1812,9 @@ impl Grantee {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let type = unimplemented!();
 /// match type {
@@ -1936,22 +1837,14 @@ impl Grantee {
 /// Specifically, when `type` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Type::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Type {
     #[allow(missing_docs)] // documentation missing in model
     AmazonCustomerByEmail,
@@ -1960,7 +1853,7 @@ pub enum Type {
     #[allow(missing_docs)] // documentation missing in model
     Group,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Type {
     fn from(s: &str) -> Self {
@@ -1968,17 +1861,17 @@ impl std::convert::From<&str> for Type {
             "AmazonCustomerByEmail" => Type::AmazonCustomerByEmail,
             "CanonicalUser" => Type::CanonicalUser,
             "Group" => Type::Group,
-            other => Type::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Type::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Type {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Type::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Type::from(s))
+                }
+            }
 impl Type {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1986,12 +1879,14 @@ impl Type {
             Type::AmazonCustomerByEmail => "AmazonCustomerByEmail",
             Type::CanonicalUser => "CanonicalUser",
             Type::Group => "Group",
-            Type::Unknown(value) => value.as_str(),
+            Type::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AmazonCustomerByEmail", "CanonicalUser", "Group"]
+        &[
+            "AmazonCustomerByEmail", "CanonicalUser", "Group"
+        ]
     }
 }
 impl AsRef<str> for Type {
@@ -2006,9 +1901,9 @@ impl AsRef<str> for Type {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let cannedacl = unimplemented!();
 /// match cannedacl {
@@ -2035,22 +1930,14 @@ impl AsRef<str> for Type {
 /// Specifically, when `cannedacl` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CannedAcl::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CannedAcl {
     #[allow(missing_docs)] // documentation missing in model
     AuthenticatedRead,
@@ -2067,7 +1954,7 @@ pub enum CannedAcl {
     #[allow(missing_docs)] // documentation missing in model
     PublicReadWrite,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CannedAcl {
     fn from(s: &str) -> Self {
@@ -2079,17 +1966,17 @@ impl std::convert::From<&str> for CannedAcl {
             "private" => CannedAcl::Private,
             "public-read" => CannedAcl::PublicRead,
             "public-read-write" => CannedAcl::PublicReadWrite,
-            other => CannedAcl::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => CannedAcl::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CannedAcl {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CannedAcl::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CannedAcl::from(s))
+                }
+            }
 impl CannedAcl {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2101,19 +1988,13 @@ impl CannedAcl {
             CannedAcl::Private => "private",
             CannedAcl::PublicRead => "public-read",
             CannedAcl::PublicReadWrite => "public-read-write",
-            CannedAcl::Unknown(value) => value.as_str(),
+            CannedAcl::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "authenticated-read",
-            "aws-exec-read",
-            "bucket-owner-full-control",
-            "bucket-owner-read",
-            "private",
-            "public-read",
-            "public-read-write",
+            "authenticated-read", "aws-exec-read", "bucket-owner-full-control", "bucket-owner-read", "private", "public-read", "public-read-write"
         ]
     }
 }
@@ -2126,7 +2007,7 @@ impl AsRef<str> for CannedAcl {
 /// <p>Contains information about the encryption used to store the job results in Amazon S3. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Encryption {
+pub struct Encryption  {
     /// <p>The server-side encryption algorithm used when storing job results in Amazon S3, for example <code>AES256</code> or <code>aws:kms</code>.</p>
     #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
@@ -2139,21 +2020,21 @@ pub struct Encryption {
 }
 impl Encryption {
     /// <p>The server-side encryption algorithm used when storing job results in Amazon S3, for example <code>AES256</code> or <code>aws:kms</code>.</p>
-    pub fn encryption_type(&self) -> std::option::Option<&crate::model::EncryptionType> {
+    pub fn encryption_type(&self) -> std::option::Option<& crate::model::EncryptionType> {
         self.encryption_type.as_ref()
     }
     /// <p>The AWS KMS key ID to use for object encryption. All GET and PUT requests for an object protected by AWS KMS fail if not made by using Secure Sockets Layer (SSL) or Signature Version 4. </p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Optional. If the encryption type is <code>aws:kms</code>, you can use this value to specify the encryption context for the job results.</p>
-    pub fn kms_context(&self) -> std::option::Option<&str> {
+    pub fn kms_context(&self) -> std::option::Option<& str> {
         self.kms_context.as_deref()
     }
 }
 /// See [`Encryption`](crate::model::Encryption).
 pub mod encryption {
-
+    
     /// A builder for [`Encryption`](crate::model::Encryption).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2168,12 +2049,8 @@ pub mod encryption {
             self
         }
         /// <p>The server-side encryption algorithm used when storing job results in Amazon S3, for example <code>AES256</code> or <code>aws:kms</code>.</p>
-        pub fn set_encryption_type(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionType>,
-        ) -> Self {
-            self.encryption_type = input;
-            self
+        pub fn set_encryption_type(mut self, input: std::option::Option<crate::model::EncryptionType>) -> Self {
+            self.encryption_type = input; self
         }
         /// <p>The AWS KMS key ID to use for object encryption. All GET and PUT requests for an object protected by AWS KMS fail if not made by using Secure Sockets Layer (SSL) or Signature Version 4. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2182,8 +2059,7 @@ pub mod encryption {
         }
         /// <p>The AWS KMS key ID to use for object encryption. All GET and PUT requests for an object protected by AWS KMS fail if not made by using Secure Sockets Layer (SSL) or Signature Version 4. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>Optional. If the encryption type is <code>aws:kms</code>, you can use this value to specify the encryption context for the job results.</p>
         pub fn kms_context(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2192,18 +2068,22 @@ pub mod encryption {
         }
         /// <p>Optional. If the encryption type is <code>aws:kms</code>, you can use this value to specify the encryption context for the job results.</p>
         pub fn set_kms_context(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_context = input;
-            self
+            self.kms_context = input; self
         }
         /// Consumes the builder and constructs a [`Encryption`](crate::model::Encryption).
         pub fn build(self) -> crate::model::Encryption {
             crate::model::Encryption {
-                encryption_type: self.encryption_type,
-                kms_key_id: self.kms_key_id,
-                kms_context: self.kms_context,
+                encryption_type: self.encryption_type
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                kms_context: self.kms_context
+                ,
             }
         }
     }
+    
+    
 }
 impl Encryption {
     /// Creates a new builder-style object to manufacture [`Encryption`](crate::model::Encryption).
@@ -2218,9 +2098,9 @@ impl Encryption {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let encryptiontype = unimplemented!();
 /// match encryptiontype {
@@ -2242,58 +2122,52 @@ impl Encryption {
 /// Specifically, when `encryptiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EncryptionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EncryptionType {
     #[allow(missing_docs)] // documentation missing in model
     S3,
     #[allow(missing_docs)] // documentation missing in model
     Kms,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionType {
     fn from(s: &str) -> Self {
         match s {
             "AES256" => EncryptionType::S3,
             "aws:kms" => EncryptionType::Kms,
-            other => EncryptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EncryptionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EncryptionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EncryptionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EncryptionType::from(s))
+                }
+            }
 impl EncryptionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncryptionType::S3 => "AES256",
             EncryptionType::Kms => "aws:kms",
-            EncryptionType::Unknown(value) => value.as_str(),
+            EncryptionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AES256", "aws:kms"]
+        &[
+            "AES256", "aws:kms"
+        ]
     }
 }
 impl AsRef<str> for EncryptionType {
@@ -2305,7 +2179,7 @@ impl AsRef<str> for EncryptionType {
 /// <p>Contains information about the parameters used for a select.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SelectParameters {
+pub struct SelectParameters  {
     /// <p>Describes the serialization format of the object.</p>
     #[doc(hidden)]
     pub input_serialization: std::option::Option<crate::model::InputSerialization>,
@@ -2321,25 +2195,25 @@ pub struct SelectParameters {
 }
 impl SelectParameters {
     /// <p>Describes the serialization format of the object.</p>
-    pub fn input_serialization(&self) -> std::option::Option<&crate::model::InputSerialization> {
+    pub fn input_serialization(&self) -> std::option::Option<& crate::model::InputSerialization> {
         self.input_serialization.as_ref()
     }
     /// <p>The type of the provided expression, for example <code>SQL</code>.</p>
-    pub fn expression_type(&self) -> std::option::Option<&crate::model::ExpressionType> {
+    pub fn expression_type(&self) -> std::option::Option<& crate::model::ExpressionType> {
         self.expression_type.as_ref()
     }
     /// <p>The expression that is used to select the object.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> std::option::Option<& str> {
         self.expression.as_deref()
     }
     /// <p>Describes how the results of the select job are serialized.</p>
-    pub fn output_serialization(&self) -> std::option::Option<&crate::model::OutputSerialization> {
+    pub fn output_serialization(&self) -> std::option::Option<& crate::model::OutputSerialization> {
         self.output_serialization.as_ref()
     }
 }
 /// See [`SelectParameters`](crate::model::SelectParameters).
 pub mod select_parameters {
-
+    
     /// A builder for [`SelectParameters`](crate::model::SelectParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2355,12 +2229,8 @@ pub mod select_parameters {
             self
         }
         /// <p>Describes the serialization format of the object.</p>
-        pub fn set_input_serialization(
-            mut self,
-            input: std::option::Option<crate::model::InputSerialization>,
-        ) -> Self {
-            self.input_serialization = input;
-            self
+        pub fn set_input_serialization(mut self, input: std::option::Option<crate::model::InputSerialization>) -> Self {
+            self.input_serialization = input; self
         }
         /// <p>The type of the provided expression, for example <code>SQL</code>.</p>
         pub fn expression_type(mut self, input: crate::model::ExpressionType) -> Self {
@@ -2368,12 +2238,8 @@ pub mod select_parameters {
             self
         }
         /// <p>The type of the provided expression, for example <code>SQL</code>.</p>
-        pub fn set_expression_type(
-            mut self,
-            input: std::option::Option<crate::model::ExpressionType>,
-        ) -> Self {
-            self.expression_type = input;
-            self
+        pub fn set_expression_type(mut self, input: std::option::Option<crate::model::ExpressionType>) -> Self {
+            self.expression_type = input; self
         }
         /// <p>The expression that is used to select the object.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2382,8 +2248,7 @@ pub mod select_parameters {
         }
         /// <p>The expression that is used to select the object.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.expression = input;
-            self
+            self.expression = input; self
         }
         /// <p>Describes how the results of the select job are serialized.</p>
         pub fn output_serialization(mut self, input: crate::model::OutputSerialization) -> Self {
@@ -2391,23 +2256,25 @@ pub mod select_parameters {
             self
         }
         /// <p>Describes how the results of the select job are serialized.</p>
-        pub fn set_output_serialization(
-            mut self,
-            input: std::option::Option<crate::model::OutputSerialization>,
-        ) -> Self {
-            self.output_serialization = input;
-            self
+        pub fn set_output_serialization(mut self, input: std::option::Option<crate::model::OutputSerialization>) -> Self {
+            self.output_serialization = input; self
         }
         /// Consumes the builder and constructs a [`SelectParameters`](crate::model::SelectParameters).
         pub fn build(self) -> crate::model::SelectParameters {
             crate::model::SelectParameters {
-                input_serialization: self.input_serialization,
-                expression_type: self.expression_type,
-                expression: self.expression,
-                output_serialization: self.output_serialization,
+                input_serialization: self.input_serialization
+                ,
+                expression_type: self.expression_type
+                ,
+                expression: self.expression
+                ,
+                output_serialization: self.output_serialization
+                ,
             }
         }
     }
+    
+    
 }
 impl SelectParameters {
     /// Creates a new builder-style object to manufacture [`SelectParameters`](crate::model::SelectParameters).
@@ -2419,20 +2286,20 @@ impl SelectParameters {
 /// <p>Describes how the select output is serialized.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputSerialization {
+pub struct OutputSerialization  {
     /// <p>Describes the serialization of CSV-encoded query results.</p>
     #[doc(hidden)]
     pub csv: std::option::Option<crate::model::CsvOutput>,
 }
 impl OutputSerialization {
     /// <p>Describes the serialization of CSV-encoded query results.</p>
-    pub fn csv(&self) -> std::option::Option<&crate::model::CsvOutput> {
+    pub fn csv(&self) -> std::option::Option<& crate::model::CsvOutput> {
         self.csv.as_ref()
     }
 }
 /// See [`OutputSerialization`](crate::model::OutputSerialization).
 pub mod output_serialization {
-
+    
     /// A builder for [`OutputSerialization`](crate::model::OutputSerialization).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2446,14 +2313,18 @@ pub mod output_serialization {
         }
         /// <p>Describes the serialization of CSV-encoded query results.</p>
         pub fn set_csv(mut self, input: std::option::Option<crate::model::CsvOutput>) -> Self {
-            self.csv = input;
-            self
+            self.csv = input; self
         }
         /// Consumes the builder and constructs a [`OutputSerialization`](crate::model::OutputSerialization).
         pub fn build(self) -> crate::model::OutputSerialization {
-            crate::model::OutputSerialization { csv: self.csv }
+            crate::model::OutputSerialization {
+                csv: self.csv
+                ,
+            }
         }
     }
+    
+    
 }
 impl OutputSerialization {
     /// Creates a new builder-style object to manufacture [`OutputSerialization`](crate::model::OutputSerialization).
@@ -2465,7 +2336,7 @@ impl OutputSerialization {
 /// <p>Contains information about the comma-separated value (CSV) file that the job results are stored in.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CsvOutput {
+pub struct CsvOutput  {
     /// <p>A value that indicates whether all output fields should be contained within quotation marks.</p>
     #[doc(hidden)]
     pub quote_fields: std::option::Option<crate::model::QuoteFields>,
@@ -2484,29 +2355,29 @@ pub struct CsvOutput {
 }
 impl CsvOutput {
     /// <p>A value that indicates whether all output fields should be contained within quotation marks.</p>
-    pub fn quote_fields(&self) -> std::option::Option<&crate::model::QuoteFields> {
+    pub fn quote_fields(&self) -> std::option::Option<& crate::model::QuoteFields> {
         self.quote_fields.as_ref()
     }
     /// <p>A single character used for escaping the quotation-mark character inside an already escaped value.</p>
-    pub fn quote_escape_character(&self) -> std::option::Option<&str> {
+    pub fn quote_escape_character(&self) -> std::option::Option<& str> {
         self.quote_escape_character.as_deref()
     }
     /// <p>A value used to separate individual records from each other.</p>
-    pub fn record_delimiter(&self) -> std::option::Option<&str> {
+    pub fn record_delimiter(&self) -> std::option::Option<& str> {
         self.record_delimiter.as_deref()
     }
     /// <p>A value used to separate individual fields from each other within a record.</p>
-    pub fn field_delimiter(&self) -> std::option::Option<&str> {
+    pub fn field_delimiter(&self) -> std::option::Option<& str> {
         self.field_delimiter.as_deref()
     }
     /// <p>A value used as an escape character where the field delimiter is part of the value.</p>
-    pub fn quote_character(&self) -> std::option::Option<&str> {
+    pub fn quote_character(&self) -> std::option::Option<& str> {
         self.quote_character.as_deref()
     }
 }
 /// See [`CsvOutput`](crate::model::CsvOutput).
 pub mod csv_output {
-
+    
     /// A builder for [`CsvOutput`](crate::model::CsvOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2523,12 +2394,8 @@ pub mod csv_output {
             self
         }
         /// <p>A value that indicates whether all output fields should be contained within quotation marks.</p>
-        pub fn set_quote_fields(
-            mut self,
-            input: std::option::Option<crate::model::QuoteFields>,
-        ) -> Self {
-            self.quote_fields = input;
-            self
+        pub fn set_quote_fields(mut self, input: std::option::Option<crate::model::QuoteFields>) -> Self {
+            self.quote_fields = input; self
         }
         /// <p>A single character used for escaping the quotation-mark character inside an already escaped value.</p>
         pub fn quote_escape_character(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2536,12 +2403,8 @@ pub mod csv_output {
             self
         }
         /// <p>A single character used for escaping the quotation-mark character inside an already escaped value.</p>
-        pub fn set_quote_escape_character(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.quote_escape_character = input;
-            self
+        pub fn set_quote_escape_character(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.quote_escape_character = input; self
         }
         /// <p>A value used to separate individual records from each other.</p>
         pub fn record_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2549,12 +2412,8 @@ pub mod csv_output {
             self
         }
         /// <p>A value used to separate individual records from each other.</p>
-        pub fn set_record_delimiter(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.record_delimiter = input;
-            self
+        pub fn set_record_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.record_delimiter = input; self
         }
         /// <p>A value used to separate individual fields from each other within a record.</p>
         pub fn field_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2562,12 +2421,8 @@ pub mod csv_output {
             self
         }
         /// <p>A value used to separate individual fields from each other within a record.</p>
-        pub fn set_field_delimiter(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.field_delimiter = input;
-            self
+        pub fn set_field_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.field_delimiter = input; self
         }
         /// <p>A value used as an escape character where the field delimiter is part of the value.</p>
         pub fn quote_character(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2575,24 +2430,27 @@ pub mod csv_output {
             self
         }
         /// <p>A value used as an escape character where the field delimiter is part of the value.</p>
-        pub fn set_quote_character(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.quote_character = input;
-            self
+        pub fn set_quote_character(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.quote_character = input; self
         }
         /// Consumes the builder and constructs a [`CsvOutput`](crate::model::CsvOutput).
         pub fn build(self) -> crate::model::CsvOutput {
             crate::model::CsvOutput {
-                quote_fields: self.quote_fields,
-                quote_escape_character: self.quote_escape_character,
-                record_delimiter: self.record_delimiter,
-                field_delimiter: self.field_delimiter,
-                quote_character: self.quote_character,
+                quote_fields: self.quote_fields
+                ,
+                quote_escape_character: self.quote_escape_character
+                ,
+                record_delimiter: self.record_delimiter
+                ,
+                field_delimiter: self.field_delimiter
+                ,
+                quote_character: self.quote_character
+                ,
             }
         }
     }
+    
+    
 }
 impl CsvOutput {
     /// Creates a new builder-style object to manufacture [`CsvOutput`](crate::model::CsvOutput).
@@ -2607,9 +2465,9 @@ impl CsvOutput {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let quotefields = unimplemented!();
 /// match quotefields {
@@ -2631,58 +2489,52 @@ impl CsvOutput {
 /// Specifically, when `quotefields` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `QuoteFields::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum QuoteFields {
     #[allow(missing_docs)] // documentation missing in model
     Always,
     #[allow(missing_docs)] // documentation missing in model
     AsNeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for QuoteFields {
     fn from(s: &str) -> Self {
         match s {
             "ALWAYS" => QuoteFields::Always,
             "ASNEEDED" => QuoteFields::AsNeeded,
-            other => QuoteFields::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => QuoteFields::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for QuoteFields {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(QuoteFields::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(QuoteFields::from(s))
+                }
+            }
 impl QuoteFields {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             QuoteFields::Always => "ALWAYS",
             QuoteFields::AsNeeded => "ASNEEDED",
-            QuoteFields::Unknown(value) => value.as_str(),
+            QuoteFields::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALWAYS", "ASNEEDED"]
+        &[
+            "ALWAYS", "ASNEEDED"
+        ]
     }
 }
 impl AsRef<str> for QuoteFields {
@@ -2697,9 +2549,9 @@ impl AsRef<str> for QuoteFields {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let expressiontype = unimplemented!();
 /// match expressiontype {
@@ -2720,54 +2572,48 @@ impl AsRef<str> for QuoteFields {
 /// Specifically, when `expressiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExpressionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ExpressionType {
     #[allow(missing_docs)] // documentation missing in model
     Sql,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExpressionType {
     fn from(s: &str) -> Self {
         match s {
             "SQL" => ExpressionType::Sql,
-            other => ExpressionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ExpressionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ExpressionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExpressionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ExpressionType::from(s))
+                }
+            }
 impl ExpressionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExpressionType::Sql => "SQL",
-            ExpressionType::Unknown(value) => value.as_str(),
+            ExpressionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SQL"]
+        &[
+            "SQL"
+        ]
     }
 }
 impl AsRef<str> for ExpressionType {
@@ -2779,20 +2625,20 @@ impl AsRef<str> for ExpressionType {
 /// <p>Describes how the archive is serialized.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputSerialization {
+pub struct InputSerialization  {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
     #[doc(hidden)]
     pub csv: std::option::Option<crate::model::CsvInput>,
 }
 impl InputSerialization {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
-    pub fn csv(&self) -> std::option::Option<&crate::model::CsvInput> {
+    pub fn csv(&self) -> std::option::Option<& crate::model::CsvInput> {
         self.csv.as_ref()
     }
 }
 /// See [`InputSerialization`](crate::model::InputSerialization).
 pub mod input_serialization {
-
+    
     /// A builder for [`InputSerialization`](crate::model::InputSerialization).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2806,14 +2652,18 @@ pub mod input_serialization {
         }
         /// <p>Describes the serialization of a CSV-encoded object.</p>
         pub fn set_csv(mut self, input: std::option::Option<crate::model::CsvInput>) -> Self {
-            self.csv = input;
-            self
+            self.csv = input; self
         }
         /// Consumes the builder and constructs a [`InputSerialization`](crate::model::InputSerialization).
         pub fn build(self) -> crate::model::InputSerialization {
-            crate::model::InputSerialization { csv: self.csv }
+            crate::model::InputSerialization {
+                csv: self.csv
+                ,
+            }
         }
     }
+    
+    
 }
 impl InputSerialization {
     /// Creates a new builder-style object to manufacture [`InputSerialization`](crate::model::InputSerialization).
@@ -2825,7 +2675,7 @@ impl InputSerialization {
 /// <p>Contains information about the comma-separated value (CSV) file to select from.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CsvInput {
+pub struct CsvInput  {
     /// <p>Describes the first line of input. Valid values are <code>None</code>, <code>Ignore</code>, and <code>Use</code>.</p>
     #[doc(hidden)]
     pub file_header_info: std::option::Option<crate::model::FileHeaderInfo>,
@@ -2847,33 +2697,33 @@ pub struct CsvInput {
 }
 impl CsvInput {
     /// <p>Describes the first line of input. Valid values are <code>None</code>, <code>Ignore</code>, and <code>Use</code>.</p>
-    pub fn file_header_info(&self) -> std::option::Option<&crate::model::FileHeaderInfo> {
+    pub fn file_header_info(&self) -> std::option::Option<& crate::model::FileHeaderInfo> {
         self.file_header_info.as_ref()
     }
     /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row.</p>
-    pub fn comments(&self) -> std::option::Option<&str> {
+    pub fn comments(&self) -> std::option::Option<& str> {
         self.comments.as_deref()
     }
     /// <p>A single character used for escaping the quotation-mark character inside an already escaped value.</p>
-    pub fn quote_escape_character(&self) -> std::option::Option<&str> {
+    pub fn quote_escape_character(&self) -> std::option::Option<& str> {
         self.quote_escape_character.as_deref()
     }
     /// <p>A value used to separate individual records from each other.</p>
-    pub fn record_delimiter(&self) -> std::option::Option<&str> {
+    pub fn record_delimiter(&self) -> std::option::Option<& str> {
         self.record_delimiter.as_deref()
     }
     /// <p>A value used to separate individual fields from each other within a record.</p>
-    pub fn field_delimiter(&self) -> std::option::Option<&str> {
+    pub fn field_delimiter(&self) -> std::option::Option<& str> {
         self.field_delimiter.as_deref()
     }
     /// <p>A value used as an escape character where the field delimiter is part of the value.</p>
-    pub fn quote_character(&self) -> std::option::Option<&str> {
+    pub fn quote_character(&self) -> std::option::Option<& str> {
         self.quote_character.as_deref()
     }
 }
 /// See [`CsvInput`](crate::model::CsvInput).
 pub mod csv_input {
-
+    
     /// A builder for [`CsvInput`](crate::model::CsvInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2891,12 +2741,8 @@ pub mod csv_input {
             self
         }
         /// <p>Describes the first line of input. Valid values are <code>None</code>, <code>Ignore</code>, and <code>Use</code>.</p>
-        pub fn set_file_header_info(
-            mut self,
-            input: std::option::Option<crate::model::FileHeaderInfo>,
-        ) -> Self {
-            self.file_header_info = input;
-            self
+        pub fn set_file_header_info(mut self, input: std::option::Option<crate::model::FileHeaderInfo>) -> Self {
+            self.file_header_info = input; self
         }
         /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row.</p>
         pub fn comments(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2905,8 +2751,7 @@ pub mod csv_input {
         }
         /// <p>A single character used to indicate that a row should be ignored when the character is present at the start of that row.</p>
         pub fn set_comments(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.comments = input;
-            self
+            self.comments = input; self
         }
         /// <p>A single character used for escaping the quotation-mark character inside an already escaped value.</p>
         pub fn quote_escape_character(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2914,12 +2759,8 @@ pub mod csv_input {
             self
         }
         /// <p>A single character used for escaping the quotation-mark character inside an already escaped value.</p>
-        pub fn set_quote_escape_character(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.quote_escape_character = input;
-            self
+        pub fn set_quote_escape_character(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.quote_escape_character = input; self
         }
         /// <p>A value used to separate individual records from each other.</p>
         pub fn record_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2927,12 +2768,8 @@ pub mod csv_input {
             self
         }
         /// <p>A value used to separate individual records from each other.</p>
-        pub fn set_record_delimiter(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.record_delimiter = input;
-            self
+        pub fn set_record_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.record_delimiter = input; self
         }
         /// <p>A value used to separate individual fields from each other within a record.</p>
         pub fn field_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2940,12 +2777,8 @@ pub mod csv_input {
             self
         }
         /// <p>A value used to separate individual fields from each other within a record.</p>
-        pub fn set_field_delimiter(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.field_delimiter = input;
-            self
+        pub fn set_field_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.field_delimiter = input; self
         }
         /// <p>A value used as an escape character where the field delimiter is part of the value.</p>
         pub fn quote_character(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2953,25 +2786,29 @@ pub mod csv_input {
             self
         }
         /// <p>A value used as an escape character where the field delimiter is part of the value.</p>
-        pub fn set_quote_character(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.quote_character = input;
-            self
+        pub fn set_quote_character(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.quote_character = input; self
         }
         /// Consumes the builder and constructs a [`CsvInput`](crate::model::CsvInput).
         pub fn build(self) -> crate::model::CsvInput {
             crate::model::CsvInput {
-                file_header_info: self.file_header_info,
-                comments: self.comments,
-                quote_escape_character: self.quote_escape_character,
-                record_delimiter: self.record_delimiter,
-                field_delimiter: self.field_delimiter,
-                quote_character: self.quote_character,
+                file_header_info: self.file_header_info
+                ,
+                comments: self.comments
+                ,
+                quote_escape_character: self.quote_escape_character
+                ,
+                record_delimiter: self.record_delimiter
+                ,
+                field_delimiter: self.field_delimiter
+                ,
+                quote_character: self.quote_character
+                ,
             }
         }
     }
+    
+    
 }
 impl CsvInput {
     /// Creates a new builder-style object to manufacture [`CsvInput`](crate::model::CsvInput).
@@ -2986,9 +2823,9 @@ impl CsvInput {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fileheaderinfo = unimplemented!();
 /// match fileheaderinfo {
@@ -3011,22 +2848,14 @@ impl CsvInput {
 /// Specifically, when `fileheaderinfo` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FileHeaderInfo::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FileHeaderInfo {
     #[allow(missing_docs)] // documentation missing in model
     Ignore,
@@ -3035,7 +2864,7 @@ pub enum FileHeaderInfo {
     #[allow(missing_docs)] // documentation missing in model
     Use,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FileHeaderInfo {
     fn from(s: &str) -> Self {
@@ -3043,17 +2872,17 @@ impl std::convert::From<&str> for FileHeaderInfo {
             "IGNORE" => FileHeaderInfo::Ignore,
             "NONE" => FileHeaderInfo::None,
             "USE" => FileHeaderInfo::Use,
-            other => FileHeaderInfo::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FileHeaderInfo::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FileHeaderInfo {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FileHeaderInfo::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FileHeaderInfo::from(s))
+                }
+            }
 impl FileHeaderInfo {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3061,12 +2890,14 @@ impl FileHeaderInfo {
             FileHeaderInfo::Ignore => "IGNORE",
             FileHeaderInfo::None => "NONE",
             FileHeaderInfo::Use => "USE",
-            FileHeaderInfo::Unknown(value) => value.as_str(),
+            FileHeaderInfo::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IGNORE", "NONE", "USE"]
+        &[
+            "IGNORE", "NONE", "USE"
+        ]
     }
 }
 impl AsRef<str> for FileHeaderInfo {
@@ -3078,7 +2909,7 @@ impl AsRef<str> for FileHeaderInfo {
 /// <p>Describes the options for a range inventory retrieval job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InventoryRetrievalJobDescription {
+pub struct InventoryRetrievalJobDescription  {
     /// <p>The output format for the vault inventory list, which is set by the <b>InitiateJob</b> request when initiating a job to retrieve a vault inventory. Valid values are <code>CSV</code> and <code>JSON</code>.</p>
     #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
@@ -3097,29 +2928,29 @@ pub struct InventoryRetrievalJobDescription {
 }
 impl InventoryRetrievalJobDescription {
     /// <p>The output format for the vault inventory list, which is set by the <b>InitiateJob</b> request when initiating a job to retrieve a vault inventory. Valid values are <code>CSV</code> and <code>JSON</code>.</p>
-    pub fn format(&self) -> std::option::Option<&str> {
+    pub fn format(&self) -> std::option::Option<& str> {
         self.format.as_deref()
     }
     /// <p>The start of the date range in Universal Coordinated Time (UTC) for vault inventory retrieval that includes archives created on or after this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
-    pub fn start_date(&self) -> std::option::Option<&str> {
+    pub fn start_date(&self) -> std::option::Option<& str> {
         self.start_date.as_deref()
     }
     /// <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
-    pub fn end_date(&self) -> std::option::Option<&str> {
+    pub fn end_date(&self) -> std::option::Option<& str> {
         self.end_date.as_deref()
     }
     /// <p>The maximum number of inventory items returned per vault inventory retrieval request. This limit is set when initiating the job with the a <b>InitiateJob</b> request. </p>
-    pub fn limit(&self) -> std::option::Option<&str> {
+    pub fn limit(&self) -> std::option::Option<& str> {
         self.limit.as_deref()
     }
     /// <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering"> Range Inventory Retrieval</a>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`InventoryRetrievalJobDescription`](crate::model::InventoryRetrievalJobDescription).
 pub mod inventory_retrieval_job_description {
-
+    
     /// A builder for [`InventoryRetrievalJobDescription`](crate::model::InventoryRetrievalJobDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3137,8 +2968,7 @@ pub mod inventory_retrieval_job_description {
         }
         /// <p>The output format for the vault inventory list, which is set by the <b>InitiateJob</b> request when initiating a job to retrieve a vault inventory. Valid values are <code>CSV</code> and <code>JSON</code>.</p>
         pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.format = input;
-            self
+            self.format = input; self
         }
         /// <p>The start of the date range in Universal Coordinated Time (UTC) for vault inventory retrieval that includes archives created on or after this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
         pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3147,8 +2977,7 @@ pub mod inventory_retrieval_job_description {
         }
         /// <p>The start of the date range in Universal Coordinated Time (UTC) for vault inventory retrieval that includes archives created on or after this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
         pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start_date = input;
-            self
+            self.start_date = input; self
         }
         /// <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
         pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3157,8 +2986,7 @@ pub mod inventory_retrieval_job_description {
         }
         /// <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
         pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end_date = input;
-            self
+            self.end_date = input; self
         }
         /// <p>The maximum number of inventory items returned per vault inventory retrieval request. This limit is set when initiating the job with the a <b>InitiateJob</b> request. </p>
         pub fn limit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3167,8 +2995,7 @@ pub mod inventory_retrieval_job_description {
         }
         /// <p>The maximum number of inventory items returned per vault inventory retrieval request. This limit is set when initiating the job with the a <b>InitiateJob</b> request. </p>
         pub fn set_limit(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.limit = input;
-            self
+            self.limit = input; self
         }
         /// <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering"> Range Inventory Retrieval</a>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3177,20 +3004,26 @@ pub mod inventory_retrieval_job_description {
         }
         /// <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering"> Range Inventory Retrieval</a>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`InventoryRetrievalJobDescription`](crate::model::InventoryRetrievalJobDescription).
         pub fn build(self) -> crate::model::InventoryRetrievalJobDescription {
             crate::model::InventoryRetrievalJobDescription {
-                format: self.format,
-                start_date: self.start_date,
-                end_date: self.end_date,
-                limit: self.limit,
-                marker: self.marker,
+                format: self.format
+                ,
+                start_date: self.start_date
+                ,
+                end_date: self.end_date
+                ,
+                limit: self.limit
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl InventoryRetrievalJobDescription {
     /// Creates a new builder-style object to manufacture [`InventoryRetrievalJobDescription`](crate::model::InventoryRetrievalJobDescription).
@@ -3205,9 +3038,9 @@ impl InventoryRetrievalJobDescription {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let statuscode = unimplemented!();
 /// match statuscode {
@@ -3230,22 +3063,14 @@ impl InventoryRetrievalJobDescription {
 /// Specifically, when `statuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -3254,7 +3079,7 @@ pub enum StatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StatusCode {
     fn from(s: &str) -> Self {
@@ -3262,17 +3087,17 @@ impl std::convert::From<&str> for StatusCode {
             "Failed" => StatusCode::Failed,
             "InProgress" => StatusCode::InProgress,
             "Succeeded" => StatusCode::Succeeded,
-            other => StatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StatusCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StatusCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StatusCode::from(s))
+                }
+            }
 impl StatusCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3280,12 +3105,14 @@ impl StatusCode {
             StatusCode::Failed => "Failed",
             StatusCode::InProgress => "InProgress",
             StatusCode::Succeeded => "Succeeded",
-            StatusCode::Unknown(value) => value.as_str(),
+            StatusCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Failed", "InProgress", "Succeeded"]
+        &[
+            "Failed", "InProgress", "Succeeded"
+        ]
     }
 }
 impl AsRef<str> for StatusCode {
@@ -3300,9 +3127,9 @@ impl AsRef<str> for StatusCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let actioncode = unimplemented!();
 /// match actioncode {
@@ -3325,22 +3152,14 @@ impl AsRef<str> for StatusCode {
 /// Specifically, when `actioncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ActionCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ActionCode {
     #[allow(missing_docs)] // documentation missing in model
     ArchiveRetrieval,
@@ -3349,7 +3168,7 @@ pub enum ActionCode {
     #[allow(missing_docs)] // documentation missing in model
     Select,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ActionCode {
     fn from(s: &str) -> Self {
@@ -3357,17 +3176,17 @@ impl std::convert::From<&str> for ActionCode {
             "ArchiveRetrieval" => ActionCode::ArchiveRetrieval,
             "InventoryRetrieval" => ActionCode::InventoryRetrieval,
             "Select" => ActionCode::Select,
-            other => ActionCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ActionCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ActionCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ActionCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ActionCode::from(s))
+                }
+            }
 impl ActionCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3375,12 +3194,14 @@ impl ActionCode {
             ActionCode::ArchiveRetrieval => "ArchiveRetrieval",
             ActionCode::InventoryRetrieval => "InventoryRetrieval",
             ActionCode::Select => "Select",
-            ActionCode::Unknown(value) => value.as_str(),
+            ActionCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ArchiveRetrieval", "InventoryRetrieval", "Select"]
+        &[
+            "ArchiveRetrieval", "InventoryRetrieval", "Select"
+        ]
     }
 }
 impl AsRef<str> for ActionCode {
@@ -3392,20 +3213,20 @@ impl AsRef<str> for ActionCode {
 /// <p>Contains the vault lock policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VaultLockPolicy {
+pub struct VaultLockPolicy  {
     /// <p>The vault lock policy.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
 }
 impl VaultLockPolicy {
     /// <p>The vault lock policy.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> std::option::Option<& str> {
         self.policy.as_deref()
     }
 }
 /// See [`VaultLockPolicy`](crate::model::VaultLockPolicy).
 pub mod vault_lock_policy {
-
+    
     /// A builder for [`VaultLockPolicy`](crate::model::VaultLockPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3419,16 +3240,18 @@ pub mod vault_lock_policy {
         }
         /// <p>The vault lock policy.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`VaultLockPolicy`](crate::model::VaultLockPolicy).
         pub fn build(self) -> crate::model::VaultLockPolicy {
             crate::model::VaultLockPolicy {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl VaultLockPolicy {
     /// Creates a new builder-style object to manufacture [`VaultLockPolicy`](crate::model::VaultLockPolicy).
@@ -3440,7 +3263,7 @@ impl VaultLockPolicy {
 /// <p>Provides options for defining a job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobParameters {
+pub struct JobParameters  {
     /// <p>When initiating a job to retrieve a vault inventory, you can optionally add this parameter to your request to specify the output format. If you are initiating an inventory job and do not specify a Format field, JSON is the default format. Valid values are "CSV" and "JSON".</p>
     #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
@@ -3456,7 +3279,7 @@ pub struct JobParameters {
     /// <p>The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when the job is completed and the output is ready for you to download. The specified topic publishes the notification to its subscribers. The SNS topic must exist.</p>
     #[doc(hidden)]
     pub sns_topic: std::option::Option<std::string::String>,
-    /// <p>The byte range to retrieve for an archive retrieval. in the form "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the whole archive is retrieved. If specified, the byte range must be megabyte (1024*1024) aligned which means that <i>StartByteValue</i> must be divisible by 1 MB and <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the archive specified as the archive byte size value minus 1. If RetrievalByteRange is not megabyte aligned, this operation returns a 400 response. </p>
+    /// <p>The byte range to retrieve for an archive retrieval. in the form "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the whole archive is retrieved. If specified, the byte range must be megabyte (1024*1024) aligned which means that <i>StartByteValue</i> must be divisible by 1 MB and <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the archive specified as the archive byte size value minus 1. If RetrievalByteRange is not megabyte aligned, this operation returns a 400 response. </p> 
     /// <p>An error occurs if you specify this field for an inventory retrieval job request.</p>
     #[doc(hidden)]
     pub retrieval_byte_range: std::option::Option<std::string::String>,
@@ -3465,8 +3288,7 @@ pub struct JobParameters {
     pub tier: std::option::Option<std::string::String>,
     /// <p>Input parameters used for range inventory retrieval.</p>
     #[doc(hidden)]
-    pub inventory_retrieval_parameters:
-        std::option::Option<crate::model::InventoryRetrievalJobInput>,
+    pub inventory_retrieval_parameters: std::option::Option<crate::model::InventoryRetrievalJobInput>,
     /// <p>Contains the parameters that define a job.</p>
     #[doc(hidden)]
     pub select_parameters: std::option::Option<crate::model::SelectParameters>,
@@ -3476,52 +3298,50 @@ pub struct JobParameters {
 }
 impl JobParameters {
     /// <p>When initiating a job to retrieve a vault inventory, you can optionally add this parameter to your request to specify the output format. If you are initiating an inventory job and do not specify a Format field, JSON is the default format. Valid values are "CSV" and "JSON".</p>
-    pub fn format(&self) -> std::option::Option<&str> {
+    pub fn format(&self) -> std::option::Option<& str> {
         self.format.as_deref()
     }
     /// <p>The job type. You can initiate a job to perform a select query on an archive, retrieve an archive, or get an inventory of a vault. Valid values are "select", "archive-retrieval" and "inventory-retrieval".</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The ID of the archive that you want to retrieve. This field is required only if <code>Type</code> is set to <code>select</code> or <code>archive-retrieval</code>code&gt;. An error occurs if you specify this request parameter for an inventory retrieval job request. </p>
-    pub fn archive_id(&self) -> std::option::Option<&str> {
+    pub fn archive_id(&self) -> std::option::Option<& str> {
         self.archive_id.as_deref()
     }
     /// <p>The optional description for the job. The description must be less than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII without control codes-specifically, ASCII values 32-126 decimal or 0x20-0x7E hexadecimal.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when the job is completed and the output is ready for you to download. The specified topic publishes the notification to its subscribers. The SNS topic must exist.</p>
-    pub fn sns_topic(&self) -> std::option::Option<&str> {
+    pub fn sns_topic(&self) -> std::option::Option<& str> {
         self.sns_topic.as_deref()
     }
-    /// <p>The byte range to retrieve for an archive retrieval. in the form "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the whole archive is retrieved. If specified, the byte range must be megabyte (1024*1024) aligned which means that <i>StartByteValue</i> must be divisible by 1 MB and <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the archive specified as the archive byte size value minus 1. If RetrievalByteRange is not megabyte aligned, this operation returns a 400 response. </p>
+    /// <p>The byte range to retrieve for an archive retrieval. in the form "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the whole archive is retrieved. If specified, the byte range must be megabyte (1024*1024) aligned which means that <i>StartByteValue</i> must be divisible by 1 MB and <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the archive specified as the archive byte size value minus 1. If RetrievalByteRange is not megabyte aligned, this operation returns a 400 response. </p> 
     /// <p>An error occurs if you specify this field for an inventory retrieval job request.</p>
-    pub fn retrieval_byte_range(&self) -> std::option::Option<&str> {
+    pub fn retrieval_byte_range(&self) -> std::option::Option<& str> {
         self.retrieval_byte_range.as_deref()
     }
     /// <p>The tier to use for a select or an archive retrieval job. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
-    pub fn tier(&self) -> std::option::Option<&str> {
+    pub fn tier(&self) -> std::option::Option<& str> {
         self.tier.as_deref()
     }
     /// <p>Input parameters used for range inventory retrieval.</p>
-    pub fn inventory_retrieval_parameters(
-        &self,
-    ) -> std::option::Option<&crate::model::InventoryRetrievalJobInput> {
+    pub fn inventory_retrieval_parameters(&self) -> std::option::Option<& crate::model::InventoryRetrievalJobInput> {
         self.inventory_retrieval_parameters.as_ref()
     }
     /// <p>Contains the parameters that define a job.</p>
-    pub fn select_parameters(&self) -> std::option::Option<&crate::model::SelectParameters> {
+    pub fn select_parameters(&self) -> std::option::Option<& crate::model::SelectParameters> {
         self.select_parameters.as_ref()
     }
     /// <p>Contains information about the location where the select job results are stored.</p>
-    pub fn output_location(&self) -> std::option::Option<&crate::model::OutputLocation> {
+    pub fn output_location(&self) -> std::option::Option<& crate::model::OutputLocation> {
         self.output_location.as_ref()
     }
 }
 /// See [`JobParameters`](crate::model::JobParameters).
 pub mod job_parameters {
-
+    
     /// A builder for [`JobParameters`](crate::model::JobParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3532,8 +3352,7 @@ pub mod job_parameters {
         pub(crate) sns_topic: std::option::Option<std::string::String>,
         pub(crate) retrieval_byte_range: std::option::Option<std::string::String>,
         pub(crate) tier: std::option::Option<std::string::String>,
-        pub(crate) inventory_retrieval_parameters:
-            std::option::Option<crate::model::InventoryRetrievalJobInput>,
+        pub(crate) inventory_retrieval_parameters: std::option::Option<crate::model::InventoryRetrievalJobInput>,
         pub(crate) select_parameters: std::option::Option<crate::model::SelectParameters>,
         pub(crate) output_location: std::option::Option<crate::model::OutputLocation>,
     }
@@ -3545,8 +3364,7 @@ pub mod job_parameters {
         }
         /// <p>When initiating a job to retrieve a vault inventory, you can optionally add this parameter to your request to specify the output format. If you are initiating an inventory job and do not specify a Format field, JSON is the default format. Valid values are "CSV" and "JSON".</p>
         pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.format = input;
-            self
+            self.format = input; self
         }
         /// <p>The job type. You can initiate a job to perform a select query on an archive, retrieve an archive, or get an inventory of a vault. Valid values are "select", "archive-retrieval" and "inventory-retrieval".</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3555,8 +3373,7 @@ pub mod job_parameters {
         }
         /// <p>The job type. You can initiate a job to perform a select query on an archive, retrieve an archive, or get an inventory of a vault. Valid values are "select", "archive-retrieval" and "inventory-retrieval".</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The ID of the archive that you want to retrieve. This field is required only if <code>Type</code> is set to <code>select</code> or <code>archive-retrieval</code>code&gt;. An error occurs if you specify this request parameter for an inventory retrieval job request. </p>
         pub fn archive_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3565,8 +3382,7 @@ pub mod job_parameters {
         }
         /// <p>The ID of the archive that you want to retrieve. This field is required only if <code>Type</code> is set to <code>select</code> or <code>archive-retrieval</code>code&gt;. An error occurs if you specify this request parameter for an inventory retrieval job request. </p>
         pub fn set_archive_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.archive_id = input;
-            self
+            self.archive_id = input; self
         }
         /// <p>The optional description for the job. The description must be less than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII without control codes-specifically, ASCII values 32-126 decimal or 0x20-0x7E hexadecimal.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3575,8 +3391,7 @@ pub mod job_parameters {
         }
         /// <p>The optional description for the job. The description must be less than or equal to 1,024 bytes. The allowable characters are 7-bit ASCII without control codes-specifically, ASCII values 32-126 decimal or 0x20-0x7E hexadecimal.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when the job is completed and the output is ready for you to download. The specified topic publishes the notification to its subscribers. The SNS topic must exist.</p>
         pub fn sns_topic(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3585,23 +3400,18 @@ pub mod job_parameters {
         }
         /// <p>The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when the job is completed and the output is ready for you to download. The specified topic publishes the notification to its subscribers. The SNS topic must exist.</p>
         pub fn set_sns_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.sns_topic = input;
-            self
+            self.sns_topic = input; self
         }
-        /// <p>The byte range to retrieve for an archive retrieval. in the form "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the whole archive is retrieved. If specified, the byte range must be megabyte (1024*1024) aligned which means that <i>StartByteValue</i> must be divisible by 1 MB and <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the archive specified as the archive byte size value minus 1. If RetrievalByteRange is not megabyte aligned, this operation returns a 400 response. </p>
+        /// <p>The byte range to retrieve for an archive retrieval. in the form "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the whole archive is retrieved. If specified, the byte range must be megabyte (1024*1024) aligned which means that <i>StartByteValue</i> must be divisible by 1 MB and <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the archive specified as the archive byte size value minus 1. If RetrievalByteRange is not megabyte aligned, this operation returns a 400 response. </p> 
         /// <p>An error occurs if you specify this field for an inventory retrieval job request.</p>
         pub fn retrieval_byte_range(mut self, input: impl Into<std::string::String>) -> Self {
             self.retrieval_byte_range = Some(input.into());
             self
         }
-        /// <p>The byte range to retrieve for an archive retrieval. in the form "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the whole archive is retrieved. If specified, the byte range must be megabyte (1024*1024) aligned which means that <i>StartByteValue</i> must be divisible by 1 MB and <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the archive specified as the archive byte size value minus 1. If RetrievalByteRange is not megabyte aligned, this operation returns a 400 response. </p>
+        /// <p>The byte range to retrieve for an archive retrieval. in the form "<i>StartByteValue</i>-<i>EndByteValue</i>" If not specified, the whole archive is retrieved. If specified, the byte range must be megabyte (1024*1024) aligned which means that <i>StartByteValue</i> must be divisible by 1 MB and <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of the archive specified as the archive byte size value minus 1. If RetrievalByteRange is not megabyte aligned, this operation returns a 400 response. </p> 
         /// <p>An error occurs if you specify this field for an inventory retrieval job request.</p>
-        pub fn set_retrieval_byte_range(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.retrieval_byte_range = input;
-            self
+        pub fn set_retrieval_byte_range(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.retrieval_byte_range = input; self
         }
         /// <p>The tier to use for a select or an archive retrieval job. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
         pub fn tier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3610,24 +3420,16 @@ pub mod job_parameters {
         }
         /// <p>The tier to use for a select or an archive retrieval job. Valid values are <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</p>
         pub fn set_tier(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.tier = input;
-            self
+            self.tier = input; self
         }
         /// <p>Input parameters used for range inventory retrieval.</p>
-        pub fn inventory_retrieval_parameters(
-            mut self,
-            input: crate::model::InventoryRetrievalJobInput,
-        ) -> Self {
+        pub fn inventory_retrieval_parameters(mut self, input: crate::model::InventoryRetrievalJobInput) -> Self {
             self.inventory_retrieval_parameters = Some(input);
             self
         }
         /// <p>Input parameters used for range inventory retrieval.</p>
-        pub fn set_inventory_retrieval_parameters(
-            mut self,
-            input: std::option::Option<crate::model::InventoryRetrievalJobInput>,
-        ) -> Self {
-            self.inventory_retrieval_parameters = input;
-            self
+        pub fn set_inventory_retrieval_parameters(mut self, input: std::option::Option<crate::model::InventoryRetrievalJobInput>) -> Self {
+            self.inventory_retrieval_parameters = input; self
         }
         /// <p>Contains the parameters that define a job.</p>
         pub fn select_parameters(mut self, input: crate::model::SelectParameters) -> Self {
@@ -3635,12 +3437,8 @@ pub mod job_parameters {
             self
         }
         /// <p>Contains the parameters that define a job.</p>
-        pub fn set_select_parameters(
-            mut self,
-            input: std::option::Option<crate::model::SelectParameters>,
-        ) -> Self {
-            self.select_parameters = input;
-            self
+        pub fn set_select_parameters(mut self, input: std::option::Option<crate::model::SelectParameters>) -> Self {
+            self.select_parameters = input; self
         }
         /// <p>Contains information about the location where the select job results are stored.</p>
         pub fn output_location(mut self, input: crate::model::OutputLocation) -> Self {
@@ -3648,29 +3446,37 @@ pub mod job_parameters {
             self
         }
         /// <p>Contains information about the location where the select job results are stored.</p>
-        pub fn set_output_location(
-            mut self,
-            input: std::option::Option<crate::model::OutputLocation>,
-        ) -> Self {
-            self.output_location = input;
-            self
+        pub fn set_output_location(mut self, input: std::option::Option<crate::model::OutputLocation>) -> Self {
+            self.output_location = input; self
         }
         /// Consumes the builder and constructs a [`JobParameters`](crate::model::JobParameters).
         pub fn build(self) -> crate::model::JobParameters {
             crate::model::JobParameters {
-                format: self.format,
-                r#type: self.r#type,
-                archive_id: self.archive_id,
-                description: self.description,
-                sns_topic: self.sns_topic,
-                retrieval_byte_range: self.retrieval_byte_range,
-                tier: self.tier,
-                inventory_retrieval_parameters: self.inventory_retrieval_parameters,
-                select_parameters: self.select_parameters,
-                output_location: self.output_location,
+                format: self.format
+                ,
+                r#type: self.r#type
+                ,
+                archive_id: self.archive_id
+                ,
+                description: self.description
+                ,
+                sns_topic: self.sns_topic
+                ,
+                retrieval_byte_range: self.retrieval_byte_range
+                ,
+                tier: self.tier
+                ,
+                inventory_retrieval_parameters: self.inventory_retrieval_parameters
+                ,
+                select_parameters: self.select_parameters
+                ,
+                output_location: self.output_location
+                ,
             }
         }
     }
+    
+    
 }
 impl JobParameters {
     /// Creates a new builder-style object to manufacture [`JobParameters`](crate::model::JobParameters).
@@ -3682,7 +3488,7 @@ impl JobParameters {
 /// <p>Provides options for specifying a range inventory retrieval job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InventoryRetrievalJobInput {
+pub struct InventoryRetrievalJobInput  {
     /// <p>The start of the date range in UTC for vault inventory retrieval that includes archives created on or after this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
     #[doc(hidden)]
     pub start_date: std::option::Option<std::string::String>,
@@ -3698,25 +3504,25 @@ pub struct InventoryRetrievalJobInput {
 }
 impl InventoryRetrievalJobInput {
     /// <p>The start of the date range in UTC for vault inventory retrieval that includes archives created on or after this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
-    pub fn start_date(&self) -> std::option::Option<&str> {
+    pub fn start_date(&self) -> std::option::Option<& str> {
         self.start_date.as_deref()
     }
     /// <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
-    pub fn end_date(&self) -> std::option::Option<&str> {
+    pub fn end_date(&self) -> std::option::Option<& str> {
         self.end_date.as_deref()
     }
     /// <p>Specifies the maximum number of inventory items returned per vault inventory retrieval request. Valid values are greater than or equal to 1.</p>
-    pub fn limit(&self) -> std::option::Option<&str> {
+    pub fn limit(&self) -> std::option::Option<& str> {
         self.limit.as_deref()
     }
     /// <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
 }
 /// See [`InventoryRetrievalJobInput`](crate::model::InventoryRetrievalJobInput).
 pub mod inventory_retrieval_job_input {
-
+    
     /// A builder for [`InventoryRetrievalJobInput`](crate::model::InventoryRetrievalJobInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3733,8 +3539,7 @@ pub mod inventory_retrieval_job_input {
         }
         /// <p>The start of the date range in UTC for vault inventory retrieval that includes archives created on or after this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
         pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.start_date = input;
-            self
+            self.start_date = input; self
         }
         /// <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
         pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3743,8 +3548,7 @@ pub mod inventory_retrieval_job_input {
         }
         /// <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
         pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.end_date = input;
-            self
+            self.end_date = input; self
         }
         /// <p>Specifies the maximum number of inventory items returned per vault inventory retrieval request. Valid values are greater than or equal to 1.</p>
         pub fn limit(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3753,8 +3557,7 @@ pub mod inventory_retrieval_job_input {
         }
         /// <p>Specifies the maximum number of inventory items returned per vault inventory retrieval request. Valid values are greater than or equal to 1.</p>
         pub fn set_limit(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.limit = input;
-            self
+            self.limit = input; self
         }
         /// <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3763,19 +3566,24 @@ pub mod inventory_retrieval_job_input {
         }
         /// <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.marker = input;
-            self
+            self.marker = input; self
         }
         /// Consumes the builder and constructs a [`InventoryRetrievalJobInput`](crate::model::InventoryRetrievalJobInput).
         pub fn build(self) -> crate::model::InventoryRetrievalJobInput {
             crate::model::InventoryRetrievalJobInput {
-                start_date: self.start_date,
-                end_date: self.end_date,
-                limit: self.limit,
-                marker: self.marker,
+                start_date: self.start_date
+                ,
+                end_date: self.end_date
+                ,
+                limit: self.limit
+                ,
+                marker: self.marker
+                ,
             }
         }
     }
+    
+    
 }
 impl InventoryRetrievalJobInput {
     /// Creates a new builder-style object to manufacture [`InventoryRetrievalJobInput`](crate::model::InventoryRetrievalJobInput).
@@ -3783,3 +3591,4 @@ impl InventoryRetrievalJobInput {
         crate::model::inventory_retrieval_job_input::Builder::default()
     }
 }
+

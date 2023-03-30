@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let storageclass = unimplemented!();
 /// match storageclass {
@@ -29,54 +29,48 @@
 /// Specifically, when `storageclass` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StorageClass::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StorageClass {
     #[allow(missing_docs)] // documentation missing in model
     Temporal,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StorageClass {
     fn from(s: &str) -> Self {
         match s {
             "TEMPORAL" => StorageClass::Temporal,
-            other => StorageClass::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StorageClass::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StorageClass {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StorageClass::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StorageClass::from(s))
+                }
+            }
 impl StorageClass {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StorageClass::Temporal => "TEMPORAL",
-            StorageClass::Unknown(value) => value.as_str(),
+            StorageClass::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["TEMPORAL"]
+        &[
+            "TEMPORAL"
+        ]
     }
 }
 impl AsRef<str> for StorageClass {
@@ -91,9 +85,9 @@ impl AsRef<str> for StorageClass {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let uploadavailability = unimplemented!();
 /// match uploadavailability {
@@ -115,60 +109,52 @@ impl AsRef<str> for StorageClass {
 /// Specifically, when `uploadavailability` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UploadAvailability::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UploadAvailability {
     #[allow(missing_docs)] // documentation missing in model
     Standard,
     #[allow(missing_docs)] // documentation missing in model
     Streaming,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UploadAvailability {
     fn from(s: &str) -> Self {
         match s {
             "STANDARD" => UploadAvailability::Standard,
             "STREAMING" => UploadAvailability::Streaming,
-            other => {
-                UploadAvailability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => UploadAvailability::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UploadAvailability {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UploadAvailability::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UploadAvailability::from(s))
+                }
+            }
 impl UploadAvailability {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UploadAvailability::Standard => "STANDARD",
             UploadAvailability::Streaming => "STREAMING",
-            UploadAvailability::Unknown(value) => value.as_str(),
+            UploadAvailability::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["STANDARD", "STREAMING"]
+        &[
+            "STANDARD", "STREAMING"
+        ]
     }
 }
 impl AsRef<str> for UploadAvailability {
@@ -180,7 +166,7 @@ impl AsRef<str> for UploadAvailability {
 /// <p>A metadata entry for a folder or object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Item {
+pub struct Item  {
     /// <p>The name of the item.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -202,23 +188,23 @@ pub struct Item {
 }
 impl Item {
     /// <p>The name of the item.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The item type (folder or object).</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ItemType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ItemType> {
         self.r#type.as_ref()
     }
     /// <p>The ETag that represents a unique instance of the item.</p>
-    pub fn e_tag(&self) -> std::option::Option<&str> {
+    pub fn e_tag(&self) -> std::option::Option<& str> {
         self.e_tag.as_deref()
     }
     /// <p>The date and time that the item was last modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The content type of the item.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> std::option::Option<& str> {
         self.content_type.as_deref()
     }
     /// <p>The length of the item in bytes.</p>
@@ -228,7 +214,7 @@ impl Item {
 }
 /// See [`Item`](crate::model::Item).
 pub mod item {
-
+    
     /// A builder for [`Item`](crate::model::Item).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -247,8 +233,7 @@ pub mod item {
         }
         /// <p>The name of the item.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The item type (folder or object).</p>
         pub fn r#type(mut self, input: crate::model::ItemType) -> Self {
@@ -257,8 +242,7 @@ pub mod item {
         }
         /// <p>The item type (folder or object).</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ItemType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The ETag that represents a unique instance of the item.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -267,8 +251,7 @@ pub mod item {
         }
         /// <p>The ETag that represents a unique instance of the item.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.e_tag = input;
-            self
+            self.e_tag = input; self
         }
         /// <p>The date and time that the item was last modified.</p>
         pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -276,12 +259,8 @@ pub mod item {
             self
         }
         /// <p>The date and time that the item was last modified.</p>
-        pub fn set_last_modified(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_modified = input;
-            self
+        pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_modified = input; self
         }
         /// <p>The content type of the item.</p>
         pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -290,8 +269,7 @@ pub mod item {
         }
         /// <p>The content type of the item.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content_type = input;
-            self
+            self.content_type = input; self
         }
         /// <p>The length of the item in bytes.</p>
         pub fn content_length(mut self, input: i64) -> Self {
@@ -300,21 +278,28 @@ pub mod item {
         }
         /// <p>The length of the item in bytes.</p>
         pub fn set_content_length(mut self, input: std::option::Option<i64>) -> Self {
-            self.content_length = input;
-            self
+            self.content_length = input; self
         }
         /// Consumes the builder and constructs a [`Item`](crate::model::Item).
         pub fn build(self) -> crate::model::Item {
             crate::model::Item {
-                name: self.name,
-                r#type: self.r#type,
-                e_tag: self.e_tag,
-                last_modified: self.last_modified,
-                content_type: self.content_type,
-                content_length: self.content_length,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                e_tag: self.e_tag
+                ,
+                last_modified: self.last_modified
+                ,
+                content_type: self.content_type
+                ,
+                content_length: self.content_length
+                ,
             }
         }
     }
+    
+    
 }
 impl Item {
     /// Creates a new builder-style object to manufacture [`Item`](crate::model::Item).
@@ -329,9 +314,9 @@ impl Item {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let itemtype = unimplemented!();
 /// match itemtype {
@@ -353,58 +338,52 @@ impl Item {
 /// Specifically, when `itemtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ItemType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ItemType {
     #[allow(missing_docs)] // documentation missing in model
     Folder,
     #[allow(missing_docs)] // documentation missing in model
     Object,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ItemType {
     fn from(s: &str) -> Self {
         match s {
             "FOLDER" => ItemType::Folder,
             "OBJECT" => ItemType::Object,
-            other => ItemType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ItemType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ItemType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ItemType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ItemType::from(s))
+                }
+            }
 impl ItemType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ItemType::Folder => "FOLDER",
             ItemType::Object => "OBJECT",
-            ItemType::Unknown(value) => value.as_str(),
+            ItemType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FOLDER", "OBJECT"]
+        &[
+            "FOLDER", "OBJECT"
+        ]
     }
 }
 impl AsRef<str> for ItemType {
@@ -412,3 +391,4 @@ impl AsRef<str> for ItemType {
         self.as_str()
     }
 }
+

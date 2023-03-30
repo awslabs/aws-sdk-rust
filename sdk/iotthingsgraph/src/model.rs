@@ -3,7 +3,7 @@
 /// <p>A document that defines an entity. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefinitionDocument {
+pub struct DefinitionDocument  {
     /// <p>The language used to define the entity. <code>GRAPHQL</code> is the only valid value.</p>
     #[doc(hidden)]
     pub language: std::option::Option<crate::model::DefinitionLanguage>,
@@ -13,17 +13,17 @@ pub struct DefinitionDocument {
 }
 impl DefinitionDocument {
     /// <p>The language used to define the entity. <code>GRAPHQL</code> is the only valid value.</p>
-    pub fn language(&self) -> std::option::Option<&crate::model::DefinitionLanguage> {
+    pub fn language(&self) -> std::option::Option<& crate::model::DefinitionLanguage> {
         self.language.as_ref()
     }
     /// <p>The GraphQL text that defines the entity.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> std::option::Option<& str> {
         self.text.as_deref()
     }
 }
 /// See [`DefinitionDocument`](crate::model::DefinitionDocument).
 pub mod definition_document {
-
+    
     /// A builder for [`DefinitionDocument`](crate::model::DefinitionDocument).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -37,12 +37,8 @@ pub mod definition_document {
             self
         }
         /// <p>The language used to define the entity. <code>GRAPHQL</code> is the only valid value.</p>
-        pub fn set_language(
-            mut self,
-            input: std::option::Option<crate::model::DefinitionLanguage>,
-        ) -> Self {
-            self.language = input;
-            self
+        pub fn set_language(mut self, input: std::option::Option<crate::model::DefinitionLanguage>) -> Self {
+            self.language = input; self
         }
         /// <p>The GraphQL text that defines the entity.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +47,20 @@ pub mod definition_document {
         }
         /// <p>The GraphQL text that defines the entity.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.text = input;
-            self
+            self.text = input; self
         }
         /// Consumes the builder and constructs a [`DefinitionDocument`](crate::model::DefinitionDocument).
         pub fn build(self) -> crate::model::DefinitionDocument {
             crate::model::DefinitionDocument {
-                language: self.language,
-                text: self.text,
+                language: self.language
+                ,
+                text: self.text
+                ,
             }
         }
     }
+    
+    
 }
 impl DefinitionDocument {
     /// Creates a new builder-style object to manufacture [`DefinitionDocument`](crate::model::DefinitionDocument).
@@ -76,9 +75,9 @@ impl DefinitionDocument {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let definitionlanguage = unimplemented!();
 /// match definitionlanguage {
@@ -99,56 +98,48 @@ impl DefinitionDocument {
 /// Specifically, when `definitionlanguage` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DefinitionLanguage::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DefinitionLanguage {
     #[allow(missing_docs)] // documentation missing in model
     Graphql,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DefinitionLanguage {
     fn from(s: &str) -> Self {
         match s {
             "GRAPHQL" => DefinitionLanguage::Graphql,
-            other => {
-                DefinitionLanguage::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DefinitionLanguage::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DefinitionLanguage {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DefinitionLanguage::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DefinitionLanguage::from(s))
+                }
+            }
 impl DefinitionLanguage {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DefinitionLanguage::Graphql => "GRAPHQL",
-            DefinitionLanguage::Unknown(value) => value.as_str(),
+            DefinitionLanguage::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GRAPHQL"]
+        &[
+            "GRAPHQL"
+        ]
     }
 }
 impl AsRef<str> for DefinitionLanguage {
@@ -160,7 +151,7 @@ impl AsRef<str> for DefinitionLanguage {
 /// <p>An object that contains information about a system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SystemTemplateSummary {
+pub struct SystemTemplateSummary  {
     /// <p>The ID of the system.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -176,11 +167,11 @@ pub struct SystemTemplateSummary {
 }
 impl SystemTemplateSummary {
     /// <p>The ID of the system.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN of the system.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The revision number of the system.</p>
@@ -188,13 +179,13 @@ impl SystemTemplateSummary {
         self.revision_number
     }
     /// <p>The date when the system was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 /// See [`SystemTemplateSummary`](crate::model::SystemTemplateSummary).
 pub mod system_template_summary {
-
+    
     /// A builder for [`SystemTemplateSummary`](crate::model::SystemTemplateSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -211,8 +202,7 @@ pub mod system_template_summary {
         }
         /// <p>The ID of the system.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ARN of the system.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -221,8 +211,7 @@ pub mod system_template_summary {
         }
         /// <p>The ARN of the system.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The revision number of the system.</p>
         pub fn revision_number(mut self, input: i64) -> Self {
@@ -231,8 +220,7 @@ pub mod system_template_summary {
         }
         /// <p>The revision number of the system.</p>
         pub fn set_revision_number(mut self, input: std::option::Option<i64>) -> Self {
-            self.revision_number = input;
-            self
+            self.revision_number = input; self
         }
         /// <p>The date when the system was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -240,23 +228,25 @@ pub mod system_template_summary {
             self
         }
         /// <p>The date when the system was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`SystemTemplateSummary`](crate::model::SystemTemplateSummary).
         pub fn build(self) -> crate::model::SystemTemplateSummary {
             crate::model::SystemTemplateSummary {
-                id: self.id,
-                arn: self.arn,
-                revision_number: self.revision_number,
-                created_at: self.created_at,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                revision_number: self.revision_number
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl SystemTemplateSummary {
     /// Creates a new builder-style object to manufacture [`SystemTemplateSummary`](crate::model::SystemTemplateSummary).
@@ -268,7 +258,7 @@ impl SystemTemplateSummary {
 /// <p>An object that contains summary information about a workflow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FlowTemplateSummary {
+pub struct FlowTemplateSummary  {
     /// <p>The ID of the workflow.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -284,11 +274,11 @@ pub struct FlowTemplateSummary {
 }
 impl FlowTemplateSummary {
     /// <p>The ID of the workflow.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN of the workflow.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The revision number of the workflow.</p>
@@ -296,13 +286,13 @@ impl FlowTemplateSummary {
         self.revision_number
     }
     /// <p>The date when the workflow was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 /// See [`FlowTemplateSummary`](crate::model::FlowTemplateSummary).
 pub mod flow_template_summary {
-
+    
     /// A builder for [`FlowTemplateSummary`](crate::model::FlowTemplateSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -319,8 +309,7 @@ pub mod flow_template_summary {
         }
         /// <p>The ID of the workflow.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ARN of the workflow.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -329,8 +318,7 @@ pub mod flow_template_summary {
         }
         /// <p>The ARN of the workflow.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The revision number of the workflow.</p>
         pub fn revision_number(mut self, input: i64) -> Self {
@@ -339,8 +327,7 @@ pub mod flow_template_summary {
         }
         /// <p>The revision number of the workflow.</p>
         pub fn set_revision_number(mut self, input: std::option::Option<i64>) -> Self {
-            self.revision_number = input;
-            self
+            self.revision_number = input; self
         }
         /// <p>The date when the workflow was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -348,23 +335,25 @@ pub mod flow_template_summary {
             self
         }
         /// <p>The date when the workflow was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`FlowTemplateSummary`](crate::model::FlowTemplateSummary).
         pub fn build(self) -> crate::model::FlowTemplateSummary {
             crate::model::FlowTemplateSummary {
-                id: self.id,
-                arn: self.arn,
-                revision_number: self.revision_number,
-                created_at: self.created_at,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                revision_number: self.revision_number
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl FlowTemplateSummary {
     /// Creates a new builder-style object to manufacture [`FlowTemplateSummary`](crate::model::FlowTemplateSummary).
@@ -376,7 +365,7 @@ impl FlowTemplateSummary {
 /// <p>An object that contains summary information about a system instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SystemInstanceSummary {
+pub struct SystemInstanceSummary  {
     /// <p>The ID of the system instance.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -407,45 +396,45 @@ pub struct SystemInstanceSummary {
 }
 impl SystemInstanceSummary {
     /// <p>The ID of the system instance.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The ARN of the system instance.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The status of the system instance.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::SystemInstanceDeploymentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::SystemInstanceDeploymentStatus> {
         self.status.as_ref()
     }
     /// <p>The target of the system instance.</p>
-    pub fn target(&self) -> std::option::Option<&crate::model::DeploymentTarget> {
+    pub fn target(&self) -> std::option::Option<& crate::model::DeploymentTarget> {
         self.target.as_ref()
     }
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
-    pub fn greengrass_group_name(&self) -> std::option::Option<&str> {
+    pub fn greengrass_group_name(&self) -> std::option::Option<& str> {
         self.greengrass_group_name.as_deref()
     }
     /// <p>The date when the system instance was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> The date and time when the system instance was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
-    pub fn greengrass_group_id(&self) -> std::option::Option<&str> {
+    pub fn greengrass_group_id(&self) -> std::option::Option<& str> {
         self.greengrass_group_id.as_deref()
     }
     /// <p>The version of the Greengrass group where the system instance is deployed.</p>
-    pub fn greengrass_group_version_id(&self) -> std::option::Option<&str> {
+    pub fn greengrass_group_version_id(&self) -> std::option::Option<& str> {
         self.greengrass_group_version_id.as_deref()
     }
 }
 /// See [`SystemInstanceSummary`](crate::model::SystemInstanceSummary).
 pub mod system_instance_summary {
-
+    
     /// A builder for [`SystemInstanceSummary`](crate::model::SystemInstanceSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -467,8 +456,7 @@ pub mod system_instance_summary {
         }
         /// <p>The ID of the system instance.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The ARN of the system instance.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -477,8 +465,7 @@ pub mod system_instance_summary {
         }
         /// <p>The ARN of the system instance.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The status of the system instance.</p>
         pub fn status(mut self, input: crate::model::SystemInstanceDeploymentStatus) -> Self {
@@ -486,12 +473,8 @@ pub mod system_instance_summary {
             self
         }
         /// <p>The status of the system instance.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::SystemInstanceDeploymentStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::SystemInstanceDeploymentStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The target of the system instance.</p>
         pub fn target(mut self, input: crate::model::DeploymentTarget) -> Self {
@@ -499,12 +482,8 @@ pub mod system_instance_summary {
             self
         }
         /// <p>The target of the system instance.</p>
-        pub fn set_target(
-            mut self,
-            input: std::option::Option<crate::model::DeploymentTarget>,
-        ) -> Self {
-            self.target = input;
-            self
+        pub fn set_target(mut self, input: std::option::Option<crate::model::DeploymentTarget>) -> Self {
+            self.target = input; self
         }
         /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
         pub fn greengrass_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -512,12 +491,8 @@ pub mod system_instance_summary {
             self
         }
         /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
-        pub fn set_greengrass_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.greengrass_group_name = input;
-            self
+        pub fn set_greengrass_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.greengrass_group_name = input; self
         }
         /// <p>The date when the system instance was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -525,12 +500,8 @@ pub mod system_instance_summary {
             self
         }
         /// <p>The date when the system instance was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p> The date and time when the system instance was last updated.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -538,12 +509,8 @@ pub mod system_instance_summary {
             self
         }
         /// <p> The date and time when the system instance was last updated.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
         pub fn greengrass_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -551,44 +518,44 @@ pub mod system_instance_summary {
             self
         }
         /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
-        pub fn set_greengrass_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.greengrass_group_id = input;
-            self
+        pub fn set_greengrass_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.greengrass_group_id = input; self
         }
         /// <p>The version of the Greengrass group where the system instance is deployed.</p>
-        pub fn greengrass_group_version_id(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn greengrass_group_version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.greengrass_group_version_id = Some(input.into());
             self
         }
         /// <p>The version of the Greengrass group where the system instance is deployed.</p>
-        pub fn set_greengrass_group_version_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.greengrass_group_version_id = input;
-            self
+        pub fn set_greengrass_group_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.greengrass_group_version_id = input; self
         }
         /// Consumes the builder and constructs a [`SystemInstanceSummary`](crate::model::SystemInstanceSummary).
         pub fn build(self) -> crate::model::SystemInstanceSummary {
             crate::model::SystemInstanceSummary {
-                id: self.id,
-                arn: self.arn,
-                status: self.status,
-                target: self.target,
-                greengrass_group_name: self.greengrass_group_name,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
-                greengrass_group_id: self.greengrass_group_id,
-                greengrass_group_version_id: self.greengrass_group_version_id,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                status: self.status
+                ,
+                target: self.target
+                ,
+                greengrass_group_name: self.greengrass_group_name
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                greengrass_group_id: self.greengrass_group_id
+                ,
+                greengrass_group_version_id: self.greengrass_group_version_id
+                ,
             }
         }
     }
+    
+    
 }
 impl SystemInstanceSummary {
     /// Creates a new builder-style object to manufacture [`SystemInstanceSummary`](crate::model::SystemInstanceSummary).
@@ -603,9 +570,9 @@ impl SystemInstanceSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let deploymenttarget = unimplemented!();
 /// match deploymenttarget {
@@ -627,58 +594,52 @@ impl SystemInstanceSummary {
 /// Specifically, when `deploymenttarget` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeploymentTarget::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DeploymentTarget {
     #[allow(missing_docs)] // documentation missing in model
     Cloud,
     #[allow(missing_docs)] // documentation missing in model
     Greengrass,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DeploymentTarget {
     fn from(s: &str) -> Self {
         match s {
             "CLOUD" => DeploymentTarget::Cloud,
             "GREENGRASS" => DeploymentTarget::Greengrass,
-            other => DeploymentTarget::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DeploymentTarget::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DeploymentTarget {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeploymentTarget::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DeploymentTarget::from(s))
+                }
+            }
 impl DeploymentTarget {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentTarget::Cloud => "CLOUD",
             DeploymentTarget::Greengrass => "GREENGRASS",
-            DeploymentTarget::Unknown(value) => value.as_str(),
+            DeploymentTarget::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLOUD", "GREENGRASS"]
+        &[
+            "CLOUD", "GREENGRASS"
+        ]
     }
 }
 impl AsRef<str> for DeploymentTarget {
@@ -693,9 +654,9 @@ impl AsRef<str> for DeploymentTarget {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let systeminstancedeploymentstatus = unimplemented!();
 /// match systeminstancedeploymentstatus {
@@ -723,22 +684,14 @@ impl AsRef<str> for DeploymentTarget {
 /// Specifically, when `systeminstancedeploymentstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SystemInstanceDeploymentStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SystemInstanceDeploymentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Bootstrap,
@@ -757,7 +710,7 @@ pub enum SystemInstanceDeploymentStatus {
     #[allow(missing_docs)] // documentation missing in model
     UndeployInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SystemInstanceDeploymentStatus {
     fn from(s: &str) -> Self {
@@ -770,19 +723,17 @@ impl std::convert::From<&str> for SystemInstanceDeploymentStatus {
             "NOT_DEPLOYED" => SystemInstanceDeploymentStatus::NotDeployed,
             "PENDING_DELETE" => SystemInstanceDeploymentStatus::PendingDelete,
             "UNDEPLOY_IN_PROGRESS" => SystemInstanceDeploymentStatus::UndeployInProgress,
-            other => SystemInstanceDeploymentStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SystemInstanceDeploymentStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SystemInstanceDeploymentStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SystemInstanceDeploymentStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SystemInstanceDeploymentStatus::from(s))
+                }
+            }
 impl SystemInstanceDeploymentStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -795,20 +746,13 @@ impl SystemInstanceDeploymentStatus {
             SystemInstanceDeploymentStatus::NotDeployed => "NOT_DEPLOYED",
             SystemInstanceDeploymentStatus::PendingDelete => "PENDING_DELETE",
             SystemInstanceDeploymentStatus::UndeployInProgress => "UNDEPLOY_IN_PROGRESS",
-            SystemInstanceDeploymentStatus::Unknown(value) => value.as_str(),
+            SystemInstanceDeploymentStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BOOTSTRAP",
-            "DELETED_IN_TARGET",
-            "DEPLOYED_IN_TARGET",
-            "DEPLOY_IN_PROGRESS",
-            "FAILED",
-            "NOT_DEPLOYED",
-            "PENDING_DELETE",
-            "UNDEPLOY_IN_PROGRESS",
+            "BOOTSTRAP", "DELETED_IN_TARGET", "DEPLOYED_IN_TARGET", "DEPLOY_IN_PROGRESS", "FAILED", "NOT_DEPLOYED", "PENDING_DELETE", "UNDEPLOY_IN_PROGRESS"
         ]
     }
 }
@@ -821,7 +765,7 @@ impl AsRef<str> for SystemInstanceDeploymentStatus {
 /// <p>Metadata assigned to an AWS IoT Things Graph resource consisting of a key-value pair.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The required name of the tag. The string value can be from 1 to 128 Unicode characters in length.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -831,17 +775,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The required name of the tag. The string value can be from 1 to 128 Unicode characters in length.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The optional value of the tag. The string value can be from 1 to 256 Unicode characters in length.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -856,8 +800,7 @@ pub mod tag {
         }
         /// <p>The required name of the tag. The string value can be from 1 to 128 Unicode characters in length.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The optional value of the tag. The string value can be from 1 to 256 Unicode characters in length.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -866,17 +809,20 @@ pub mod tag {
         }
         /// <p>The optional value of the tag. The string value can be from 1 to 256 Unicode characters in length.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -888,7 +834,7 @@ impl Tag {
 /// <p>An AWS IoT thing.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Thing {
+pub struct Thing  {
     /// <p>The ARN of the thing.</p>
     #[doc(hidden)]
     pub thing_arn: std::option::Option<std::string::String>,
@@ -898,17 +844,17 @@ pub struct Thing {
 }
 impl Thing {
     /// <p>The ARN of the thing.</p>
-    pub fn thing_arn(&self) -> std::option::Option<&str> {
+    pub fn thing_arn(&self) -> std::option::Option<& str> {
         self.thing_arn.as_deref()
     }
     /// <p>The name of the thing.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> std::option::Option<& str> {
         self.thing_name.as_deref()
     }
 }
 /// See [`Thing`](crate::model::Thing).
 pub mod thing {
-
+    
     /// A builder for [`Thing`](crate::model::Thing).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -923,8 +869,7 @@ pub mod thing {
         }
         /// <p>The ARN of the thing.</p>
         pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.thing_arn = input;
-            self
+            self.thing_arn = input; self
         }
         /// <p>The name of the thing.</p>
         pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -933,17 +878,20 @@ pub mod thing {
         }
         /// <p>The name of the thing.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.thing_name = input;
-            self
+            self.thing_name = input; self
         }
         /// Consumes the builder and constructs a [`Thing`](crate::model::Thing).
         pub fn build(self) -> crate::model::Thing {
             crate::model::Thing {
-                thing_arn: self.thing_arn,
-                thing_name: self.thing_name,
+                thing_arn: self.thing_arn
+                ,
+                thing_name: self.thing_name
+                ,
             }
         }
     }
+    
+    
 }
 impl Thing {
     /// Creates a new builder-style object to manufacture [`Thing`](crate::model::Thing).
@@ -955,7 +903,7 @@ impl Thing {
 /// <p>An object that filters a system search.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SystemTemplateFilter {
+pub struct SystemTemplateFilter  {
     /// <p>The name of the system search filter field.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::SystemTemplateFilterName>,
@@ -965,17 +913,17 @@ pub struct SystemTemplateFilter {
 }
 impl SystemTemplateFilter {
     /// <p>The name of the system search filter field.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::SystemTemplateFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::SystemTemplateFilterName> {
         self.name.as_ref()
     }
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-    pub fn value(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn value(&self) -> std::option::Option<& [std::string::String]> {
         self.value.as_deref()
     }
 }
 /// See [`SystemTemplateFilter`](crate::model::SystemTemplateFilter).
 pub mod system_template_filter {
-
+    
     /// A builder for [`SystemTemplateFilter`](crate::model::SystemTemplateFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -989,12 +937,8 @@ pub mod system_template_filter {
             self
         }
         /// <p>The name of the system search filter field.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::SystemTemplateFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::SystemTemplateFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `value`.
         ///
@@ -1003,26 +947,26 @@ pub mod system_template_filter {
         /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.value.unwrap_or_default();
-            v.push(input.into());
-            self.value = Some(v);
-            self
+                            v.push(input.into());
+                            self.value = Some(v);
+                            self
         }
         /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-        pub fn set_value(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.value = input;
-            self
+        pub fn set_value(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`SystemTemplateFilter`](crate::model::SystemTemplateFilter).
         pub fn build(self) -> crate::model::SystemTemplateFilter {
             crate::model::SystemTemplateFilter {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl SystemTemplateFilter {
     /// Creates a new builder-style object to manufacture [`SystemTemplateFilter`](crate::model::SystemTemplateFilter).
@@ -1037,9 +981,9 @@ impl SystemTemplateFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let systemtemplatefiltername = unimplemented!();
 /// match systemtemplatefiltername {
@@ -1060,56 +1004,48 @@ impl SystemTemplateFilter {
 /// Specifically, when `systemtemplatefiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SystemTemplateFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SystemTemplateFilterName {
     #[allow(missing_docs)] // documentation missing in model
     FlowTemplateId,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SystemTemplateFilterName {
     fn from(s: &str) -> Self {
         match s {
             "FLOW_TEMPLATE_ID" => SystemTemplateFilterName::FlowTemplateId,
-            other => SystemTemplateFilterName::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SystemTemplateFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SystemTemplateFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SystemTemplateFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SystemTemplateFilterName::from(s))
+                }
+            }
 impl SystemTemplateFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SystemTemplateFilterName::FlowTemplateId => "FLOW_TEMPLATE_ID",
-            SystemTemplateFilterName::Unknown(value) => value.as_str(),
+            SystemTemplateFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FLOW_TEMPLATE_ID"]
+        &[
+            "FLOW_TEMPLATE_ID"
+        ]
     }
 }
 impl AsRef<str> for SystemTemplateFilterName {
@@ -1121,7 +1057,7 @@ impl AsRef<str> for SystemTemplateFilterName {
 /// <p>An object that filters a system instance search. Multiple filters function as OR criteria in the search. For example a search that includes a GREENGRASS_GROUP_NAME and a STATUS filter searches for system instances in the specified Greengrass group that have the specified status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SystemInstanceFilter {
+pub struct SystemInstanceFilter  {
     /// <p>The name of the search filter field.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::SystemInstanceFilterName>,
@@ -1131,17 +1067,17 @@ pub struct SystemInstanceFilter {
 }
 impl SystemInstanceFilter {
     /// <p>The name of the search filter field.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::SystemInstanceFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::SystemInstanceFilterName> {
         self.name.as_ref()
     }
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search. </p>
-    pub fn value(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn value(&self) -> std::option::Option<& [std::string::String]> {
         self.value.as_deref()
     }
 }
 /// See [`SystemInstanceFilter`](crate::model::SystemInstanceFilter).
 pub mod system_instance_filter {
-
+    
     /// A builder for [`SystemInstanceFilter`](crate::model::SystemInstanceFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1155,12 +1091,8 @@ pub mod system_instance_filter {
             self
         }
         /// <p>The name of the search filter field.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::SystemInstanceFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::SystemInstanceFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `value`.
         ///
@@ -1169,26 +1101,26 @@ pub mod system_instance_filter {
         /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search. </p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.value.unwrap_or_default();
-            v.push(input.into());
-            self.value = Some(v);
-            self
+                            v.push(input.into());
+                            self.value = Some(v);
+                            self
         }
         /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search. </p>
-        pub fn set_value(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.value = input;
-            self
+        pub fn set_value(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`SystemInstanceFilter`](crate::model::SystemInstanceFilter).
         pub fn build(self) -> crate::model::SystemInstanceFilter {
             crate::model::SystemInstanceFilter {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl SystemInstanceFilter {
     /// Creates a new builder-style object to manufacture [`SystemInstanceFilter`](crate::model::SystemInstanceFilter).
@@ -1203,9 +1135,9 @@ impl SystemInstanceFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let systeminstancefiltername = unimplemented!();
 /// match systeminstancefiltername {
@@ -1228,22 +1160,14 @@ impl SystemInstanceFilter {
 /// Specifically, when `systeminstancefiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SystemInstanceFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SystemInstanceFilterName {
     #[allow(missing_docs)] // documentation missing in model
     GreengrassGroupName,
@@ -1252,7 +1176,7 @@ pub enum SystemInstanceFilterName {
     #[allow(missing_docs)] // documentation missing in model
     SystemTemplateId,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SystemInstanceFilterName {
     fn from(s: &str) -> Self {
@@ -1260,19 +1184,17 @@ impl std::convert::From<&str> for SystemInstanceFilterName {
             "GREENGRASS_GROUP_NAME" => SystemInstanceFilterName::GreengrassGroupName,
             "STATUS" => SystemInstanceFilterName::Status,
             "SYSTEM_TEMPLATE_ID" => SystemInstanceFilterName::SystemTemplateId,
-            other => SystemInstanceFilterName::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SystemInstanceFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SystemInstanceFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SystemInstanceFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SystemInstanceFilterName::from(s))
+                }
+            }
 impl SystemInstanceFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1280,12 +1202,14 @@ impl SystemInstanceFilterName {
             SystemInstanceFilterName::GreengrassGroupName => "GREENGRASS_GROUP_NAME",
             SystemInstanceFilterName::Status => "STATUS",
             SystemInstanceFilterName::SystemTemplateId => "SYSTEM_TEMPLATE_ID",
-            SystemInstanceFilterName::Unknown(value) => value.as_str(),
+            SystemInstanceFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GREENGRASS_GROUP_NAME", "STATUS", "SYSTEM_TEMPLATE_ID"]
+        &[
+            "GREENGRASS_GROUP_NAME", "STATUS", "SYSTEM_TEMPLATE_ID"
+        ]
     }
 }
 impl AsRef<str> for SystemInstanceFilterName {
@@ -1297,7 +1221,7 @@ impl AsRef<str> for SystemInstanceFilterName {
 /// <p>An object that filters a workflow search.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FlowTemplateFilter {
+pub struct FlowTemplateFilter  {
     /// <p>The name of the search filter field.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::FlowTemplateFilterName>,
@@ -1307,17 +1231,17 @@ pub struct FlowTemplateFilter {
 }
 impl FlowTemplateFilter {
     /// <p>The name of the search filter field.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::FlowTemplateFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::FlowTemplateFilterName> {
         self.name.as_ref()
     }
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-    pub fn value(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn value(&self) -> std::option::Option<& [std::string::String]> {
         self.value.as_deref()
     }
 }
 /// See [`FlowTemplateFilter`](crate::model::FlowTemplateFilter).
 pub mod flow_template_filter {
-
+    
     /// A builder for [`FlowTemplateFilter`](crate::model::FlowTemplateFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1331,12 +1255,8 @@ pub mod flow_template_filter {
             self
         }
         /// <p>The name of the search filter field.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::FlowTemplateFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::FlowTemplateFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `value`.
         ///
@@ -1345,26 +1265,26 @@ pub mod flow_template_filter {
         /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.value.unwrap_or_default();
-            v.push(input.into());
-            self.value = Some(v);
-            self
+                            v.push(input.into());
+                            self.value = Some(v);
+                            self
         }
         /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-        pub fn set_value(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.value = input;
-            self
+        pub fn set_value(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`FlowTemplateFilter`](crate::model::FlowTemplateFilter).
         pub fn build(self) -> crate::model::FlowTemplateFilter {
             crate::model::FlowTemplateFilter {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl FlowTemplateFilter {
     /// Creates a new builder-style object to manufacture [`FlowTemplateFilter`](crate::model::FlowTemplateFilter).
@@ -1379,9 +1299,9 @@ impl FlowTemplateFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let flowtemplatefiltername = unimplemented!();
 /// match flowtemplatefiltername {
@@ -1402,56 +1322,48 @@ impl FlowTemplateFilter {
 /// Specifically, when `flowtemplatefiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FlowTemplateFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FlowTemplateFilterName {
     #[allow(missing_docs)] // documentation missing in model
     DeviceModelId,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FlowTemplateFilterName {
     fn from(s: &str) -> Self {
         match s {
             "DEVICE_MODEL_ID" => FlowTemplateFilterName::DeviceModelId,
-            other => {
-                FlowTemplateFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FlowTemplateFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FlowTemplateFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FlowTemplateFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FlowTemplateFilterName::from(s))
+                }
+            }
 impl FlowTemplateFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FlowTemplateFilterName::DeviceModelId => "DEVICE_MODEL_ID",
-            FlowTemplateFilterName::Unknown(value) => value.as_str(),
+            FlowTemplateFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEVICE_MODEL_ID"]
+        &[
+            "DEVICE_MODEL_ID"
+        ]
     }
 }
 impl AsRef<str> for FlowTemplateFilterName {
@@ -1463,7 +1375,7 @@ impl AsRef<str> for FlowTemplateFilterName {
 /// <p>An object that contains summary information about a flow execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FlowExecutionSummary {
+pub struct FlowExecutionSummary  {
     /// <p>The ID of the flow execution.</p>
     #[doc(hidden)]
     pub flow_execution_id: std::option::Option<std::string::String>,
@@ -1485,33 +1397,33 @@ pub struct FlowExecutionSummary {
 }
 impl FlowExecutionSummary {
     /// <p>The ID of the flow execution.</p>
-    pub fn flow_execution_id(&self) -> std::option::Option<&str> {
+    pub fn flow_execution_id(&self) -> std::option::Option<& str> {
         self.flow_execution_id.as_deref()
     }
     /// <p>The current status of the flow execution.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::FlowExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::FlowExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The ID of the system instance that contains the flow.</p>
-    pub fn system_instance_id(&self) -> std::option::Option<&str> {
+    pub fn system_instance_id(&self) -> std::option::Option<& str> {
         self.system_instance_id.as_deref()
     }
     /// <p>The ID of the flow.</p>
-    pub fn flow_template_id(&self) -> std::option::Option<&str> {
+    pub fn flow_template_id(&self) -> std::option::Option<& str> {
         self.flow_template_id.as_deref()
     }
     /// <p>The date and time when the flow execution summary was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time when the flow execution summary was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`FlowExecutionSummary`](crate::model::FlowExecutionSummary).
 pub mod flow_execution_summary {
-
+    
     /// A builder for [`FlowExecutionSummary`](crate::model::FlowExecutionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1529,12 +1441,8 @@ pub mod flow_execution_summary {
             self
         }
         /// <p>The ID of the flow execution.</p>
-        pub fn set_flow_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.flow_execution_id = input;
-            self
+        pub fn set_flow_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.flow_execution_id = input; self
         }
         /// <p>The current status of the flow execution.</p>
         pub fn status(mut self, input: crate::model::FlowExecutionStatus) -> Self {
@@ -1542,12 +1450,8 @@ pub mod flow_execution_summary {
             self
         }
         /// <p>The current status of the flow execution.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::FlowExecutionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::FlowExecutionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The ID of the system instance that contains the flow.</p>
         pub fn system_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1555,12 +1459,8 @@ pub mod flow_execution_summary {
             self
         }
         /// <p>The ID of the system instance that contains the flow.</p>
-        pub fn set_system_instance_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.system_instance_id = input;
-            self
+        pub fn set_system_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.system_instance_id = input; self
         }
         /// <p>The ID of the flow.</p>
         pub fn flow_template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1568,12 +1468,8 @@ pub mod flow_execution_summary {
             self
         }
         /// <p>The ID of the flow.</p>
-        pub fn set_flow_template_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.flow_template_id = input;
-            self
+        pub fn set_flow_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.flow_template_id = input; self
         }
         /// <p>The date and time when the flow execution summary was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1581,12 +1477,8 @@ pub mod flow_execution_summary {
             self
         }
         /// <p>The date and time when the flow execution summary was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The date and time when the flow execution summary was last updated.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1594,25 +1486,29 @@ pub mod flow_execution_summary {
             self
         }
         /// <p>The date and time when the flow execution summary was last updated.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`FlowExecutionSummary`](crate::model::FlowExecutionSummary).
         pub fn build(self) -> crate::model::FlowExecutionSummary {
             crate::model::FlowExecutionSummary {
-                flow_execution_id: self.flow_execution_id,
-                status: self.status,
-                system_instance_id: self.system_instance_id,
-                flow_template_id: self.flow_template_id,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
+                flow_execution_id: self.flow_execution_id
+                ,
+                status: self.status
+                ,
+                system_instance_id: self.system_instance_id
+                ,
+                flow_template_id: self.flow_template_id
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl FlowExecutionSummary {
     /// Creates a new builder-style object to manufacture [`FlowExecutionSummary`](crate::model::FlowExecutionSummary).
@@ -1627,9 +1523,9 @@ impl FlowExecutionSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let flowexecutionstatus = unimplemented!();
 /// match flowexecutionstatus {
@@ -1653,22 +1549,14 @@ impl FlowExecutionSummary {
 /// Specifically, when `flowexecutionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FlowExecutionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FlowExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Aborted,
@@ -1679,7 +1567,7 @@ pub enum FlowExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FlowExecutionStatus {
     fn from(s: &str) -> Self {
@@ -1688,19 +1576,17 @@ impl std::convert::From<&str> for FlowExecutionStatus {
             "FAILED" => FlowExecutionStatus::Failed,
             "RUNNING" => FlowExecutionStatus::Running,
             "SUCCEEDED" => FlowExecutionStatus::Succeeded,
-            other => {
-                FlowExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FlowExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FlowExecutionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FlowExecutionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FlowExecutionStatus::from(s))
+                }
+            }
 impl FlowExecutionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1709,12 +1595,14 @@ impl FlowExecutionStatus {
             FlowExecutionStatus::Failed => "FAILED",
             FlowExecutionStatus::Running => "RUNNING",
             FlowExecutionStatus::Succeeded => "SUCCEEDED",
-            FlowExecutionStatus::Unknown(value) => value.as_str(),
+            FlowExecutionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ABORTED", "FAILED", "RUNNING", "SUCCEEDED"]
+        &[
+            "ABORTED", "FAILED", "RUNNING", "SUCCEEDED"
+        ]
     }
 }
 impl AsRef<str> for FlowExecutionStatus {
@@ -1726,7 +1614,7 @@ impl AsRef<str> for FlowExecutionStatus {
 /// <p>Describes the properties of an entity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EntityDescription {
+pub struct EntityDescription  {
     /// <p>The entity ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1745,29 +1633,29 @@ pub struct EntityDescription {
 }
 impl EntityDescription {
     /// <p>The entity ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The entity ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The entity type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::EntityType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::EntityType> {
         self.r#type.as_ref()
     }
     /// <p>The time at which the entity was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The definition document of the entity.</p>
-    pub fn definition(&self) -> std::option::Option<&crate::model::DefinitionDocument> {
+    pub fn definition(&self) -> std::option::Option<& crate::model::DefinitionDocument> {
         self.definition.as_ref()
     }
 }
 /// See [`EntityDescription`](crate::model::EntityDescription).
 pub mod entity_description {
-
+    
     /// A builder for [`EntityDescription`](crate::model::EntityDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1785,8 +1673,7 @@ pub mod entity_description {
         }
         /// <p>The entity ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The entity ARN.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1795,8 +1682,7 @@ pub mod entity_description {
         }
         /// <p>The entity ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The entity type.</p>
         pub fn r#type(mut self, input: crate::model::EntityType) -> Self {
@@ -1805,8 +1691,7 @@ pub mod entity_description {
         }
         /// <p>The entity type.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::EntityType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The time at which the entity was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1814,12 +1699,8 @@ pub mod entity_description {
             self
         }
         /// <p>The time at which the entity was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The definition document of the entity.</p>
         pub fn definition(mut self, input: crate::model::DefinitionDocument) -> Self {
@@ -1827,24 +1708,27 @@ pub mod entity_description {
             self
         }
         /// <p>The definition document of the entity.</p>
-        pub fn set_definition(
-            mut self,
-            input: std::option::Option<crate::model::DefinitionDocument>,
-        ) -> Self {
-            self.definition = input;
-            self
+        pub fn set_definition(mut self, input: std::option::Option<crate::model::DefinitionDocument>) -> Self {
+            self.definition = input; self
         }
         /// Consumes the builder and constructs a [`EntityDescription`](crate::model::EntityDescription).
         pub fn build(self) -> crate::model::EntityDescription {
             crate::model::EntityDescription {
-                id: self.id,
-                arn: self.arn,
-                r#type: self.r#type,
-                created_at: self.created_at,
-                definition: self.definition,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                r#type: self.r#type
+                ,
+                created_at: self.created_at
+                ,
+                definition: self.definition
+                ,
             }
         }
     }
+    
+    
 }
 impl EntityDescription {
     /// Creates a new builder-style object to manufacture [`EntityDescription`](crate::model::EntityDescription).
@@ -1859,9 +1743,9 @@ impl EntityDescription {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let entitytype = unimplemented!();
 /// match entitytype {
@@ -1891,22 +1775,14 @@ impl EntityDescription {
 /// Specifically, when `entitytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EntityType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EntityType {
     #[allow(missing_docs)] // documentation missing in model
     Action,
@@ -1929,7 +1805,7 @@ pub enum EntityType {
     #[allow(missing_docs)] // documentation missing in model
     State,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EntityType {
     fn from(s: &str) -> Self {
@@ -1944,17 +1820,17 @@ impl std::convert::From<&str> for EntityType {
             "PROPERTY" => EntityType::Property,
             "SERVICE" => EntityType::Service,
             "STATE" => EntityType::State,
-            other => EntityType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EntityType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EntityType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EntityType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EntityType::from(s))
+                }
+            }
 impl EntityType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1969,22 +1845,13 @@ impl EntityType {
             EntityType::Property => "PROPERTY",
             EntityType::Service => "SERVICE",
             EntityType::State => "STATE",
-            EntityType::Unknown(value) => value.as_str(),
+            EntityType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACTION",
-            "CAPABILITY",
-            "DEVICE",
-            "DEVICE_MODEL",
-            "ENUM",
-            "EVENT",
-            "MAPPING",
-            "PROPERTY",
-            "SERVICE",
-            "STATE",
+            "ACTION", "CAPABILITY", "DEVICE", "DEVICE_MODEL", "ENUM", "EVENT", "MAPPING", "PROPERTY", "SERVICE", "STATE"
         ]
     }
 }
@@ -1997,7 +1864,7 @@ impl AsRef<str> for EntityType {
 /// <p>An object that filters an entity search. Multiple filters function as OR criteria in the search. For example a search that includes a <code>NAMESPACE</code> and a <code>REFERENCED_ENTITY_ID</code> filter searches for entities in the specified namespace that use the entity specified by the value of <code>REFERENCED_ENTITY_ID</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EntityFilter {
+pub struct EntityFilter  {
     /// <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::model::EntityFilterName>,
@@ -2007,17 +1874,17 @@ pub struct EntityFilter {
 }
 impl EntityFilter {
     /// <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
-    pub fn name(&self) -> std::option::Option<&crate::model::EntityFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::model::EntityFilterName> {
         self.name.as_ref()
     }
     /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-    pub fn value(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn value(&self) -> std::option::Option<& [std::string::String]> {
         self.value.as_deref()
     }
 }
 /// See [`EntityFilter`](crate::model::EntityFilter).
 pub mod entity_filter {
-
+    
     /// A builder for [`EntityFilter`](crate::model::EntityFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2031,12 +1898,8 @@ pub mod entity_filter {
             self
         }
         /// <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example, you can filter on the ID of a property that is used in a state.</p>
-        pub fn set_name(
-            mut self,
-            input: std::option::Option<crate::model::EntityFilterName>,
-        ) -> Self {
-            self.name = input;
-            self
+        pub fn set_name(mut self, input: std::option::Option<crate::model::EntityFilterName>) -> Self {
+            self.name = input; self
         }
         /// Appends an item to `value`.
         ///
@@ -2045,26 +1908,26 @@ pub mod entity_filter {
         /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.value.unwrap_or_default();
-            v.push(input.into());
-            self.value = Some(v);
-            self
+                            v.push(input.into());
+                            self.value = Some(v);
+                            self
         }
         /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
-        pub fn set_value(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.value = input;
-            self
+        pub fn set_value(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`EntityFilter`](crate::model::EntityFilter).
         pub fn build(self) -> crate::model::EntityFilter {
             crate::model::EntityFilter {
-                name: self.name,
-                value: self.value,
+                name: self.name
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl EntityFilter {
     /// Creates a new builder-style object to manufacture [`EntityFilter`](crate::model::EntityFilter).
@@ -2079,9 +1942,9 @@ impl EntityFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let entityfiltername = unimplemented!();
 /// match entityfiltername {
@@ -2105,22 +1968,14 @@ impl EntityFilter {
 /// Specifically, when `entityfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EntityFilterName::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EntityFilterName {
     #[allow(missing_docs)] // documentation missing in model
     Name,
@@ -2131,7 +1986,7 @@ pub enum EntityFilterName {
     #[allow(missing_docs)] // documentation missing in model
     SemanticTypePath,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EntityFilterName {
     fn from(s: &str) -> Self {
@@ -2140,17 +1995,17 @@ impl std::convert::From<&str> for EntityFilterName {
             "NAMESPACE" => EntityFilterName::Namespace,
             "REFERENCED_ENTITY_ID" => EntityFilterName::ReferencedEntityId,
             "SEMANTIC_TYPE_PATH" => EntityFilterName::SemanticTypePath,
-            other => EntityFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EntityFilterName::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EntityFilterName {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EntityFilterName::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EntityFilterName::from(s))
+                }
+            }
 impl EntityFilterName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2159,16 +2014,13 @@ impl EntityFilterName {
             EntityFilterName::Namespace => "NAMESPACE",
             EntityFilterName::ReferencedEntityId => "REFERENCED_ENTITY_ID",
             EntityFilterName::SemanticTypePath => "SEMANTIC_TYPE_PATH",
-            EntityFilterName::Unknown(value) => value.as_str(),
+            EntityFilterName::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "NAME",
-            "NAMESPACE",
-            "REFERENCED_ENTITY_ID",
-            "SEMANTIC_TYPE_PATH",
+            "NAME", "NAMESPACE", "REFERENCED_ENTITY_ID", "SEMANTIC_TYPE_PATH"
         ]
     }
 }
@@ -2181,7 +2033,7 @@ impl AsRef<str> for EntityFilterName {
 /// <p>An object that contains information about a flow event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FlowExecutionMessage {
+pub struct FlowExecutionMessage  {
     /// <p>The unique identifier of the message.</p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
@@ -2197,25 +2049,25 @@ pub struct FlowExecutionMessage {
 }
 impl FlowExecutionMessage {
     /// <p>The unique identifier of the message.</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> std::option::Option<& str> {
         self.message_id.as_deref()
     }
     /// <p>The type of flow event .</p>
-    pub fn event_type(&self) -> std::option::Option<&crate::model::FlowExecutionEventType> {
+    pub fn event_type(&self) -> std::option::Option<& crate::model::FlowExecutionEventType> {
         self.event_type.as_ref()
     }
     /// <p>The date and time when the message was last updated.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>A string containing information about the flow event.</p>
-    pub fn payload(&self) -> std::option::Option<&str> {
+    pub fn payload(&self) -> std::option::Option<& str> {
         self.payload.as_deref()
     }
 }
 /// See [`FlowExecutionMessage`](crate::model::FlowExecutionMessage).
 pub mod flow_execution_message {
-
+    
     /// A builder for [`FlowExecutionMessage`](crate::model::FlowExecutionMessage).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2232,8 +2084,7 @@ pub mod flow_execution_message {
         }
         /// <p>The unique identifier of the message.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message_id = input;
-            self
+            self.message_id = input; self
         }
         /// <p>The type of flow event .</p>
         pub fn event_type(mut self, input: crate::model::FlowExecutionEventType) -> Self {
@@ -2241,12 +2092,8 @@ pub mod flow_execution_message {
             self
         }
         /// <p>The type of flow event .</p>
-        pub fn set_event_type(
-            mut self,
-            input: std::option::Option<crate::model::FlowExecutionEventType>,
-        ) -> Self {
-            self.event_type = input;
-            self
+        pub fn set_event_type(mut self, input: std::option::Option<crate::model::FlowExecutionEventType>) -> Self {
+            self.event_type = input; self
         }
         /// <p>The date and time when the message was last updated.</p>
         pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2254,12 +2101,8 @@ pub mod flow_execution_message {
             self
         }
         /// <p>The date and time when the message was last updated.</p>
-        pub fn set_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.timestamp = input;
-            self
+        pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.timestamp = input; self
         }
         /// <p>A string containing information about the flow event.</p>
         pub fn payload(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2268,19 +2111,24 @@ pub mod flow_execution_message {
         }
         /// <p>A string containing information about the flow event.</p>
         pub fn set_payload(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.payload = input;
-            self
+            self.payload = input; self
         }
         /// Consumes the builder and constructs a [`FlowExecutionMessage`](crate::model::FlowExecutionMessage).
         pub fn build(self) -> crate::model::FlowExecutionMessage {
             crate::model::FlowExecutionMessage {
-                message_id: self.message_id,
-                event_type: self.event_type,
-                timestamp: self.timestamp,
-                payload: self.payload,
+                message_id: self.message_id
+                ,
+                event_type: self.event_type
+                ,
+                timestamp: self.timestamp
+                ,
+                payload: self.payload
+                ,
             }
         }
     }
+    
+    
 }
 impl FlowExecutionMessage {
     /// Creates a new builder-style object to manufacture [`FlowExecutionMessage`](crate::model::FlowExecutionMessage).
@@ -2295,9 +2143,9 @@ impl FlowExecutionMessage {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let flowexecutioneventtype = unimplemented!();
 /// match flowexecutioneventtype {
@@ -2334,22 +2182,14 @@ impl FlowExecutionMessage {
 /// Specifically, when `flowexecutioneventtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FlowExecutionEventType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FlowExecutionEventType {
     #[allow(missing_docs)] // documentation missing in model
     AcknowledgeTaskMessage,
@@ -2386,7 +2226,7 @@ pub enum FlowExecutionEventType {
     #[allow(missing_docs)] // documentation missing in model
     ThingActionTaskSucceeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FlowExecutionEventType {
     fn from(s: &str) -> Self {
@@ -2408,19 +2248,17 @@ impl std::convert::From<&str> for FlowExecutionEventType {
             "THING_ACTION_TASK" => FlowExecutionEventType::ThingActionTask,
             "THING_ACTION_TASK_FAILED" => FlowExecutionEventType::ThingActionTaskFailed,
             "THING_ACTION_TASK_SUCCEEDED" => FlowExecutionEventType::ThingActionTaskSucceeded,
-            other => {
-                FlowExecutionEventType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FlowExecutionEventType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FlowExecutionEventType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FlowExecutionEventType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FlowExecutionEventType::from(s))
+                }
+            }
 impl FlowExecutionEventType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2442,29 +2280,13 @@ impl FlowExecutionEventType {
             FlowExecutionEventType::ThingActionTask => "THING_ACTION_TASK",
             FlowExecutionEventType::ThingActionTaskFailed => "THING_ACTION_TASK_FAILED",
             FlowExecutionEventType::ThingActionTaskSucceeded => "THING_ACTION_TASK_SUCCEEDED",
-            FlowExecutionEventType::Unknown(value) => value.as_str(),
+            FlowExecutionEventType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACKNOWLEDGE_TASK_MESSAGE",
-            "ACTIVITY_FAILED",
-            "ACTIVITY_SCHEDULED",
-            "ACTIVITY_STARTED",
-            "ACTIVITY_SUCCEEDED",
-            "EXECUTION_ABORTED",
-            "EXECUTION_FAILED",
-            "EXECUTION_STARTED",
-            "EXECUTION_SUCCEEDED",
-            "SCHEDULE_NEXT_READY_STEPS_TASK",
-            "START_FLOW_EXECUTION_TASK",
-            "STEP_FAILED",
-            "STEP_STARTED",
-            "STEP_SUCCEEDED",
-            "THING_ACTION_TASK",
-            "THING_ACTION_TASK_FAILED",
-            "THING_ACTION_TASK_SUCCEEDED",
+            "ACKNOWLEDGE_TASK_MESSAGE", "ACTIVITY_FAILED", "ACTIVITY_SCHEDULED", "ACTIVITY_STARTED", "ACTIVITY_SUCCEEDED", "EXECUTION_ABORTED", "EXECUTION_FAILED", "EXECUTION_STARTED", "EXECUTION_SUCCEEDED", "SCHEDULE_NEXT_READY_STEPS_TASK", "START_FLOW_EXECUTION_TASK", "STEP_FAILED", "STEP_STARTED", "STEP_SUCCEEDED", "THING_ACTION_TASK", "THING_ACTION_TASK_FAILED", "THING_ACTION_TASK_SUCCEEDED"
         ]
     }
 }
@@ -2480,9 +2302,9 @@ impl AsRef<str> for FlowExecutionEventType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let uploadstatus = unimplemented!();
 /// match uploadstatus {
@@ -2505,22 +2327,14 @@ impl AsRef<str> for FlowExecutionEventType {
 /// Specifically, when `uploadstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UploadStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum UploadStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -2529,7 +2343,7 @@ pub enum UploadStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for UploadStatus {
     fn from(s: &str) -> Self {
@@ -2537,17 +2351,17 @@ impl std::convert::From<&str> for UploadStatus {
             "FAILED" => UploadStatus::Failed,
             "IN_PROGRESS" => UploadStatus::InProgress,
             "SUCCEEDED" => UploadStatus::Succeeded,
-            other => UploadStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => UploadStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for UploadStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UploadStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(UploadStatus::from(s))
+                }
+            }
 impl UploadStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2555,12 +2369,14 @@ impl UploadStatus {
             UploadStatus::Failed => "FAILED",
             UploadStatus::InProgress => "IN_PROGRESS",
             UploadStatus::Succeeded => "SUCCEEDED",
-            UploadStatus::Unknown(value) => value.as_str(),
+            UploadStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
+        &[
+            "FAILED", "IN_PROGRESS", "SUCCEEDED"
+        ]
     }
 }
 impl AsRef<str> for UploadStatus {
@@ -2572,7 +2388,7 @@ impl AsRef<str> for UploadStatus {
 /// <p>An object that contains a system's definition document and summary information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SystemTemplateDescription {
+pub struct SystemTemplateDescription  {
     /// <p>An object that contains summary information about a system.</p>
     #[doc(hidden)]
     pub summary: std::option::Option<crate::model::SystemTemplateSummary>,
@@ -2585,11 +2401,11 @@ pub struct SystemTemplateDescription {
 }
 impl SystemTemplateDescription {
     /// <p>An object that contains summary information about a system.</p>
-    pub fn summary(&self) -> std::option::Option<&crate::model::SystemTemplateSummary> {
+    pub fn summary(&self) -> std::option::Option<& crate::model::SystemTemplateSummary> {
         self.summary.as_ref()
     }
     /// <p>The definition document of a system.</p>
-    pub fn definition(&self) -> std::option::Option<&crate::model::DefinitionDocument> {
+    pub fn definition(&self) -> std::option::Option<& crate::model::DefinitionDocument> {
         self.definition.as_ref()
     }
     /// <p>The namespace version against which the system was validated. Use this value in your system instance.</p>
@@ -2599,7 +2415,7 @@ impl SystemTemplateDescription {
 }
 /// See [`SystemTemplateDescription`](crate::model::SystemTemplateDescription).
 pub mod system_template_description {
-
+    
     /// A builder for [`SystemTemplateDescription`](crate::model::SystemTemplateDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2614,12 +2430,8 @@ pub mod system_template_description {
             self
         }
         /// <p>An object that contains summary information about a system.</p>
-        pub fn set_summary(
-            mut self,
-            input: std::option::Option<crate::model::SystemTemplateSummary>,
-        ) -> Self {
-            self.summary = input;
-            self
+        pub fn set_summary(mut self, input: std::option::Option<crate::model::SystemTemplateSummary>) -> Self {
+            self.summary = input; self
         }
         /// <p>The definition document of a system.</p>
         pub fn definition(mut self, input: crate::model::DefinitionDocument) -> Self {
@@ -2627,12 +2439,8 @@ pub mod system_template_description {
             self
         }
         /// <p>The definition document of a system.</p>
-        pub fn set_definition(
-            mut self,
-            input: std::option::Option<crate::model::DefinitionDocument>,
-        ) -> Self {
-            self.definition = input;
-            self
+        pub fn set_definition(mut self, input: std::option::Option<crate::model::DefinitionDocument>) -> Self {
+            self.definition = input; self
         }
         /// <p>The namespace version against which the system was validated. Use this value in your system instance.</p>
         pub fn validated_namespace_version(mut self, input: i64) -> Self {
@@ -2641,18 +2449,22 @@ pub mod system_template_description {
         }
         /// <p>The namespace version against which the system was validated. Use this value in your system instance.</p>
         pub fn set_validated_namespace_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.validated_namespace_version = input;
-            self
+            self.validated_namespace_version = input; self
         }
         /// Consumes the builder and constructs a [`SystemTemplateDescription`](crate::model::SystemTemplateDescription).
         pub fn build(self) -> crate::model::SystemTemplateDescription {
             crate::model::SystemTemplateDescription {
-                summary: self.summary,
-                definition: self.definition,
-                validated_namespace_version: self.validated_namespace_version,
+                summary: self.summary
+                ,
+                definition: self.definition
+                ,
+                validated_namespace_version: self.validated_namespace_version
+                ,
             }
         }
     }
+    
+    
 }
 impl SystemTemplateDescription {
     /// Creates a new builder-style object to manufacture [`SystemTemplateDescription`](crate::model::SystemTemplateDescription).
@@ -2664,7 +2476,7 @@ impl SystemTemplateDescription {
 /// <p>An object that contains a system instance definition and summary information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SystemInstanceDescription {
+pub struct SystemInstanceDescription  {
     /// <p>An object that contains summary information about a system instance.</p>
     #[doc(hidden)]
     pub summary: std::option::Option<crate::model::SystemInstanceSummary>,
@@ -2682,29 +2494,26 @@ pub struct SystemInstanceDescription {
     pub validated_namespace_version: std::option::Option<i64>,
     /// <p>A list of objects that contain all of the IDs and revision numbers of workflows and systems that are used in a system instance.</p>
     #[doc(hidden)]
-    pub validated_dependency_revisions:
-        std::option::Option<std::vec::Vec<crate::model::DependencyRevision>>,
+    pub validated_dependency_revisions: std::option::Option<std::vec::Vec<crate::model::DependencyRevision>>,
     /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other AWS services that the flow uses.</p>
     #[doc(hidden)]
     pub flow_actions_role_arn: std::option::Option<std::string::String>,
 }
 impl SystemInstanceDescription {
     /// <p>An object that contains summary information about a system instance.</p>
-    pub fn summary(&self) -> std::option::Option<&crate::model::SystemInstanceSummary> {
+    pub fn summary(&self) -> std::option::Option<& crate::model::SystemInstanceSummary> {
         self.summary.as_ref()
     }
     /// <p>A document that defines an entity. </p>
-    pub fn definition(&self) -> std::option::Option<&crate::model::DefinitionDocument> {
+    pub fn definition(&self) -> std::option::Option<& crate::model::DefinitionDocument> {
         self.definition.as_ref()
     }
     /// <p>The Amazon Simple Storage Service bucket where information about a system instance is stored.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
-    pub fn metrics_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::MetricsConfiguration> {
+    pub fn metrics_configuration(&self) -> std::option::Option<& crate::model::MetricsConfiguration> {
         self.metrics_configuration.as_ref()
     }
     /// <p>The version of the user's namespace against which the system instance was validated.</p>
@@ -2712,19 +2521,17 @@ impl SystemInstanceDescription {
         self.validated_namespace_version
     }
     /// <p>A list of objects that contain all of the IDs and revision numbers of workflows and systems that are used in a system instance.</p>
-    pub fn validated_dependency_revisions(
-        &self,
-    ) -> std::option::Option<&[crate::model::DependencyRevision]> {
+    pub fn validated_dependency_revisions(&self) -> std::option::Option<& [crate::model::DependencyRevision]> {
         self.validated_dependency_revisions.as_deref()
     }
     /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other AWS services that the flow uses.</p>
-    pub fn flow_actions_role_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_actions_role_arn(&self) -> std::option::Option<& str> {
         self.flow_actions_role_arn.as_deref()
     }
 }
 /// See [`SystemInstanceDescription`](crate::model::SystemInstanceDescription).
 pub mod system_instance_description {
-
+    
     /// A builder for [`SystemInstanceDescription`](crate::model::SystemInstanceDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2733,8 +2540,7 @@ pub mod system_instance_description {
         pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
         pub(crate) metrics_configuration: std::option::Option<crate::model::MetricsConfiguration>,
         pub(crate) validated_namespace_version: std::option::Option<i64>,
-        pub(crate) validated_dependency_revisions:
-            std::option::Option<std::vec::Vec<crate::model::DependencyRevision>>,
+        pub(crate) validated_dependency_revisions: std::option::Option<std::vec::Vec<crate::model::DependencyRevision>>,
         pub(crate) flow_actions_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2744,12 +2550,8 @@ pub mod system_instance_description {
             self
         }
         /// <p>An object that contains summary information about a system instance.</p>
-        pub fn set_summary(
-            mut self,
-            input: std::option::Option<crate::model::SystemInstanceSummary>,
-        ) -> Self {
-            self.summary = input;
-            self
+        pub fn set_summary(mut self, input: std::option::Option<crate::model::SystemInstanceSummary>) -> Self {
+            self.summary = input; self
         }
         /// <p>A document that defines an entity. </p>
         pub fn definition(mut self, input: crate::model::DefinitionDocument) -> Self {
@@ -2757,12 +2559,8 @@ pub mod system_instance_description {
             self
         }
         /// <p>A document that defines an entity. </p>
-        pub fn set_definition(
-            mut self,
-            input: std::option::Option<crate::model::DefinitionDocument>,
-        ) -> Self {
-            self.definition = input;
-            self
+        pub fn set_definition(mut self, input: std::option::Option<crate::model::DefinitionDocument>) -> Self {
+            self.definition = input; self
         }
         /// <p>The Amazon Simple Storage Service bucket where information about a system instance is stored.</p>
         pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2770,12 +2568,8 @@ pub mod system_instance_description {
             self
         }
         /// <p>The Amazon Simple Storage Service bucket where information about a system instance is stored.</p>
-        pub fn set_s3_bucket_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.s3_bucket_name = input;
-            self
+        pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.s3_bucket_name = input; self
         }
         /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
         pub fn metrics_configuration(mut self, input: crate::model::MetricsConfiguration) -> Self {
@@ -2783,12 +2577,8 @@ pub mod system_instance_description {
             self
         }
         /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
-        pub fn set_metrics_configuration(
-            mut self,
-            input: std::option::Option<crate::model::MetricsConfiguration>,
-        ) -> Self {
-            self.metrics_configuration = input;
-            self
+        pub fn set_metrics_configuration(mut self, input: std::option::Option<crate::model::MetricsConfiguration>) -> Self {
+            self.metrics_configuration = input; self
         }
         /// <p>The version of the user's namespace against which the system instance was validated.</p>
         pub fn validated_namespace_version(mut self, input: i64) -> Self {
@@ -2797,30 +2587,22 @@ pub mod system_instance_description {
         }
         /// <p>The version of the user's namespace against which the system instance was validated.</p>
         pub fn set_validated_namespace_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.validated_namespace_version = input;
-            self
+            self.validated_namespace_version = input; self
         }
         /// Appends an item to `validated_dependency_revisions`.
         ///
         /// To override the contents of this collection use [`set_validated_dependency_revisions`](Self::set_validated_dependency_revisions).
         ///
         /// <p>A list of objects that contain all of the IDs and revision numbers of workflows and systems that are used in a system instance.</p>
-        pub fn validated_dependency_revisions(
-            mut self,
-            input: crate::model::DependencyRevision,
-        ) -> Self {
+        pub fn validated_dependency_revisions(mut self, input: crate::model::DependencyRevision) -> Self {
             let mut v = self.validated_dependency_revisions.unwrap_or_default();
-            v.push(input);
-            self.validated_dependency_revisions = Some(v);
-            self
+                            v.push(input);
+                            self.validated_dependency_revisions = Some(v);
+                            self
         }
         /// <p>A list of objects that contain all of the IDs and revision numbers of workflows and systems that are used in a system instance.</p>
-        pub fn set_validated_dependency_revisions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DependencyRevision>>,
-        ) -> Self {
-            self.validated_dependency_revisions = input;
-            self
+        pub fn set_validated_dependency_revisions(mut self, input: std::option::Option<std::vec::Vec<crate::model::DependencyRevision>>) -> Self {
+            self.validated_dependency_revisions = input; self
         }
         /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other AWS services that the flow uses.</p>
         pub fn flow_actions_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2828,26 +2610,31 @@ pub mod system_instance_description {
             self
         }
         /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other AWS services that the flow uses.</p>
-        pub fn set_flow_actions_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.flow_actions_role_arn = input;
-            self
+        pub fn set_flow_actions_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.flow_actions_role_arn = input; self
         }
         /// Consumes the builder and constructs a [`SystemInstanceDescription`](crate::model::SystemInstanceDescription).
         pub fn build(self) -> crate::model::SystemInstanceDescription {
             crate::model::SystemInstanceDescription {
-                summary: self.summary,
-                definition: self.definition,
-                s3_bucket_name: self.s3_bucket_name,
-                metrics_configuration: self.metrics_configuration,
-                validated_namespace_version: self.validated_namespace_version,
-                validated_dependency_revisions: self.validated_dependency_revisions,
-                flow_actions_role_arn: self.flow_actions_role_arn,
+                summary: self.summary
+                ,
+                definition: self.definition
+                ,
+                s3_bucket_name: self.s3_bucket_name
+                ,
+                metrics_configuration: self.metrics_configuration
+                ,
+                validated_namespace_version: self.validated_namespace_version
+                ,
+                validated_dependency_revisions: self.validated_dependency_revisions
+                ,
+                flow_actions_role_arn: self.flow_actions_role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl SystemInstanceDescription {
     /// Creates a new builder-style object to manufacture [`SystemInstanceDescription`](crate::model::SystemInstanceDescription).
@@ -2859,7 +2646,7 @@ impl SystemInstanceDescription {
 /// <p>An object that contains the ID and revision number of a workflow or system that is part of a deployment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DependencyRevision {
+pub struct DependencyRevision  {
     /// <p>The ID of the workflow or system.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2869,7 +2656,7 @@ pub struct DependencyRevision {
 }
 impl DependencyRevision {
     /// <p>The ID of the workflow or system.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The revision number of the workflow or system.</p>
@@ -2879,7 +2666,7 @@ impl DependencyRevision {
 }
 /// See [`DependencyRevision`](crate::model::DependencyRevision).
 pub mod dependency_revision {
-
+    
     /// A builder for [`DependencyRevision`](crate::model::DependencyRevision).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2894,8 +2681,7 @@ pub mod dependency_revision {
         }
         /// <p>The ID of the workflow or system.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The revision number of the workflow or system.</p>
         pub fn revision_number(mut self, input: i64) -> Self {
@@ -2904,17 +2690,20 @@ pub mod dependency_revision {
         }
         /// <p>The revision number of the workflow or system.</p>
         pub fn set_revision_number(mut self, input: std::option::Option<i64>) -> Self {
-            self.revision_number = input;
-            self
+            self.revision_number = input; self
         }
         /// Consumes the builder and constructs a [`DependencyRevision`](crate::model::DependencyRevision).
         pub fn build(self) -> crate::model::DependencyRevision {
             crate::model::DependencyRevision {
-                id: self.id,
-                revision_number: self.revision_number,
+                id: self.id
+                ,
+                revision_number: self.revision_number
+                ,
             }
         }
     }
+    
+    
 }
 impl DependencyRevision {
     /// Creates a new builder-style object to manufacture [`DependencyRevision`](crate::model::DependencyRevision).
@@ -2926,7 +2715,7 @@ impl DependencyRevision {
 /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricsConfiguration {
+pub struct MetricsConfiguration  {
     /// <p>A Boolean that specifies whether cloud metrics are collected.</p>
     #[doc(hidden)]
     pub cloud_metric_enabled: bool,
@@ -2940,13 +2729,13 @@ impl MetricsConfiguration {
         self.cloud_metric_enabled
     }
     /// <p>The ARN of the role that is used to collect cloud metrics.</p>
-    pub fn metric_rule_role_arn(&self) -> std::option::Option<&str> {
+    pub fn metric_rule_role_arn(&self) -> std::option::Option<& str> {
         self.metric_rule_role_arn.as_deref()
     }
 }
 /// See [`MetricsConfiguration`](crate::model::MetricsConfiguration).
 pub mod metrics_configuration {
-
+    
     /// A builder for [`MetricsConfiguration`](crate::model::MetricsConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2961,8 +2750,7 @@ pub mod metrics_configuration {
         }
         /// <p>A Boolean that specifies whether cloud metrics are collected.</p>
         pub fn set_cloud_metric_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.cloud_metric_enabled = input;
-            self
+            self.cloud_metric_enabled = input; self
         }
         /// <p>The ARN of the role that is used to collect cloud metrics.</p>
         pub fn metric_rule_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2970,21 +2758,22 @@ pub mod metrics_configuration {
             self
         }
         /// <p>The ARN of the role that is used to collect cloud metrics.</p>
-        pub fn set_metric_rule_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.metric_rule_role_arn = input;
-            self
+        pub fn set_metric_rule_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_rule_role_arn = input; self
         }
         /// Consumes the builder and constructs a [`MetricsConfiguration`](crate::model::MetricsConfiguration).
         pub fn build(self) -> crate::model::MetricsConfiguration {
             crate::model::MetricsConfiguration {
-                cloud_metric_enabled: self.cloud_metric_enabled.unwrap_or_default(),
-                metric_rule_role_arn: self.metric_rule_role_arn,
+                cloud_metric_enabled: self.cloud_metric_enabled
+                    .unwrap_or_default()
+                ,
+                metric_rule_role_arn: self.metric_rule_role_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl MetricsConfiguration {
     /// Creates a new builder-style object to manufacture [`MetricsConfiguration`](crate::model::MetricsConfiguration).
@@ -2999,9 +2788,9 @@ impl MetricsConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let namespacedeletionstatuserrorcodes = unimplemented!();
 /// match namespacedeletionstatuserrorcodes {
@@ -3022,56 +2811,48 @@ impl MetricsConfiguration {
 /// Specifically, when `namespacedeletionstatuserrorcodes` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NamespaceDeletionStatusErrorCodes::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NamespaceDeletionStatusErrorCodes {
     #[allow(missing_docs)] // documentation missing in model
     ValidationFailed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NamespaceDeletionStatusErrorCodes {
     fn from(s: &str) -> Self {
         match s {
             "VALIDATION_FAILED" => NamespaceDeletionStatusErrorCodes::ValidationFailed,
-            other => NamespaceDeletionStatusErrorCodes::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => NamespaceDeletionStatusErrorCodes::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NamespaceDeletionStatusErrorCodes {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NamespaceDeletionStatusErrorCodes::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NamespaceDeletionStatusErrorCodes::from(s))
+                }
+            }
 impl NamespaceDeletionStatusErrorCodes {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NamespaceDeletionStatusErrorCodes::ValidationFailed => "VALIDATION_FAILED",
-            NamespaceDeletionStatusErrorCodes::Unknown(value) => value.as_str(),
+            NamespaceDeletionStatusErrorCodes::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["VALIDATION_FAILED"]
+        &[
+            "VALIDATION_FAILED"
+        ]
     }
 }
 impl AsRef<str> for NamespaceDeletionStatusErrorCodes {
@@ -3086,9 +2867,9 @@ impl AsRef<str> for NamespaceDeletionStatusErrorCodes {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let namespacedeletionstatus = unimplemented!();
 /// match namespacedeletionstatus {
@@ -3111,22 +2892,14 @@ impl AsRef<str> for NamespaceDeletionStatusErrorCodes {
 /// Specifically, when `namespacedeletionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NamespaceDeletionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NamespaceDeletionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -3135,7 +2908,7 @@ pub enum NamespaceDeletionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NamespaceDeletionStatus {
     fn from(s: &str) -> Self {
@@ -3143,19 +2916,17 @@ impl std::convert::From<&str> for NamespaceDeletionStatus {
             "FAILED" => NamespaceDeletionStatus::Failed,
             "IN_PROGRESS" => NamespaceDeletionStatus::InProgress,
             "SUCCEEDED" => NamespaceDeletionStatus::Succeeded,
-            other => NamespaceDeletionStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => NamespaceDeletionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for NamespaceDeletionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NamespaceDeletionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NamespaceDeletionStatus::from(s))
+                }
+            }
 impl NamespaceDeletionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3163,12 +2934,14 @@ impl NamespaceDeletionStatus {
             NamespaceDeletionStatus::Failed => "FAILED",
             NamespaceDeletionStatus::InProgress => "IN_PROGRESS",
             NamespaceDeletionStatus::Succeeded => "SUCCEEDED",
-            NamespaceDeletionStatus::Unknown(value) => value.as_str(),
+            NamespaceDeletionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
+        &[
+            "FAILED", "IN_PROGRESS", "SUCCEEDED"
+        ]
     }
 }
 impl AsRef<str> for NamespaceDeletionStatus {
@@ -3180,7 +2953,7 @@ impl AsRef<str> for NamespaceDeletionStatus {
 /// <p>An object that contains a workflow's definition and summary information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FlowTemplateDescription {
+pub struct FlowTemplateDescription  {
     /// <p>An object that contains summary information about a workflow.</p>
     #[doc(hidden)]
     pub summary: std::option::Option<crate::model::FlowTemplateSummary>,
@@ -3193,11 +2966,11 @@ pub struct FlowTemplateDescription {
 }
 impl FlowTemplateDescription {
     /// <p>An object that contains summary information about a workflow.</p>
-    pub fn summary(&self) -> std::option::Option<&crate::model::FlowTemplateSummary> {
+    pub fn summary(&self) -> std::option::Option<& crate::model::FlowTemplateSummary> {
         self.summary.as_ref()
     }
     /// <p>A workflow's definition document.</p>
-    pub fn definition(&self) -> std::option::Option<&crate::model::DefinitionDocument> {
+    pub fn definition(&self) -> std::option::Option<& crate::model::DefinitionDocument> {
         self.definition.as_ref()
     }
     /// <p>The version of the user's namespace against which the workflow was validated. Use this value in your system instance.</p>
@@ -3207,7 +2980,7 @@ impl FlowTemplateDescription {
 }
 /// See [`FlowTemplateDescription`](crate::model::FlowTemplateDescription).
 pub mod flow_template_description {
-
+    
     /// A builder for [`FlowTemplateDescription`](crate::model::FlowTemplateDescription).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3222,12 +2995,8 @@ pub mod flow_template_description {
             self
         }
         /// <p>An object that contains summary information about a workflow.</p>
-        pub fn set_summary(
-            mut self,
-            input: std::option::Option<crate::model::FlowTemplateSummary>,
-        ) -> Self {
-            self.summary = input;
-            self
+        pub fn set_summary(mut self, input: std::option::Option<crate::model::FlowTemplateSummary>) -> Self {
+            self.summary = input; self
         }
         /// <p>A workflow's definition document.</p>
         pub fn definition(mut self, input: crate::model::DefinitionDocument) -> Self {
@@ -3235,12 +3004,8 @@ pub mod flow_template_description {
             self
         }
         /// <p>A workflow's definition document.</p>
-        pub fn set_definition(
-            mut self,
-            input: std::option::Option<crate::model::DefinitionDocument>,
-        ) -> Self {
-            self.definition = input;
-            self
+        pub fn set_definition(mut self, input: std::option::Option<crate::model::DefinitionDocument>) -> Self {
+            self.definition = input; self
         }
         /// <p>The version of the user's namespace against which the workflow was validated. Use this value in your system instance.</p>
         pub fn validated_namespace_version(mut self, input: i64) -> Self {
@@ -3249,18 +3014,22 @@ pub mod flow_template_description {
         }
         /// <p>The version of the user's namespace against which the workflow was validated. Use this value in your system instance.</p>
         pub fn set_validated_namespace_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.validated_namespace_version = input;
-            self
+            self.validated_namespace_version = input; self
         }
         /// Consumes the builder and constructs a [`FlowTemplateDescription`](crate::model::FlowTemplateDescription).
         pub fn build(self) -> crate::model::FlowTemplateDescription {
             crate::model::FlowTemplateDescription {
-                summary: self.summary,
-                definition: self.definition,
-                validated_namespace_version: self.validated_namespace_version,
+                summary: self.summary
+                ,
+                definition: self.definition
+                ,
+                validated_namespace_version: self.validated_namespace_version
+                ,
             }
         }
     }
+    
+    
 }
 impl FlowTemplateDescription {
     /// Creates a new builder-style object to manufacture [`FlowTemplateDescription`](crate::model::FlowTemplateDescription).
@@ -3268,3 +3037,4 @@ impl FlowTemplateDescription {
         crate::model::flow_template_description::Builder::default()
     }
 }
+

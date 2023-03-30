@@ -4,17 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UpdateRoutingControlStatesError {
     /// Kind of error that occurred.
-    pub kind: UpdateRoutingControlStatesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateRoutingControlStatesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateRoutingControlStatesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateRoutingControlStatesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: UpdateRoutingControlStatesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -38,32 +36,46 @@ pub enum UpdateRoutingControlStatesErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>There was a validation error on the request.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRoutingControlStatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateRoutingControlStatesErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            UpdateRoutingControlStatesErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            UpdateRoutingControlStatesErrorKind::EndpointTemporarilyUnavailableException(
-                _inner,
-            ) => _inner.fmt(f),
-            UpdateRoutingControlStatesErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            UpdateRoutingControlStatesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            UpdateRoutingControlStatesErrorKind::ServiceLimitExceededException(_inner) => {
+            UpdateRoutingControlStatesErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRoutingControlStatesErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRoutingControlStatesErrorKind::EndpointTemporarilyUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRoutingControlStatesErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRoutingControlStatesErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRoutingControlStatesErrorKind::ServiceLimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRoutingControlStatesErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRoutingControlStatesErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRoutingControlStatesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateRoutingControlStatesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            UpdateRoutingControlStatesErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            UpdateRoutingControlStatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -77,123 +89,109 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateRoutingControlStatesErr
 }
 impl UpdateRoutingControlStatesError {
     /// Creates a new `UpdateRoutingControlStatesError`.
-    pub fn new(kind: UpdateRoutingControlStatesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateRoutingControlStatesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateRoutingControlStatesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateRoutingControlStatesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateRoutingControlStatesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateRoutingControlStatesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateRoutingControlStatesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateRoutingControlStatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateRoutingControlStatesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateRoutingControlStatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateRoutingControlStatesErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRoutingControlStatesErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, UpdateRoutingControlStatesErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UpdateRoutingControlStatesErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRoutingControlStatesErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, UpdateRoutingControlStatesErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateRoutingControlStatesErrorKind::EndpointTemporarilyUnavailableException`.
     pub fn is_endpoint_temporarily_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRoutingControlStatesErrorKind::EndpointTemporarilyUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateRoutingControlStatesErrorKind::EndpointTemporarilyUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateRoutingControlStatesErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRoutingControlStatesErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, UpdateRoutingControlStatesErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `UpdateRoutingControlStatesErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRoutingControlStatesErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateRoutingControlStatesErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateRoutingControlStatesErrorKind::ServiceLimitExceededException`.
     pub fn is_service_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRoutingControlStatesErrorKind::ServiceLimitExceededException(_)
-        )
+        matches!(&self.kind, UpdateRoutingControlStatesErrorKind::ServiceLimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateRoutingControlStatesErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRoutingControlStatesErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, UpdateRoutingControlStatesErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `UpdateRoutingControlStatesErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRoutingControlStatesErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, UpdateRoutingControlStatesErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for UpdateRoutingControlStatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateRoutingControlStatesErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            UpdateRoutingControlStatesErrorKind::ConflictException(_inner) => Some(_inner),
-            UpdateRoutingControlStatesErrorKind::EndpointTemporarilyUnavailableException(
-                _inner,
-            ) => Some(_inner),
-            UpdateRoutingControlStatesErrorKind::InternalServerException(_inner) => Some(_inner),
-            UpdateRoutingControlStatesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateRoutingControlStatesErrorKind::ServiceLimitExceededException(_inner) => {
+            UpdateRoutingControlStatesErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRoutingControlStatesErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRoutingControlStatesErrorKind::EndpointTemporarilyUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRoutingControlStatesErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRoutingControlStatesErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRoutingControlStatesErrorKind::ServiceLimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRoutingControlStatesErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRoutingControlStatesErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRoutingControlStatesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateRoutingControlStatesErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateRoutingControlStatesErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateRoutingControlStatesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -201,7 +199,7 @@ impl std::error::Error for UpdateRoutingControlStatesError {
 /// <p>There was a validation error on the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationException {
+pub struct ValidationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -214,25 +212,23 @@ pub struct ValidationException {
 }
 impl ValidationException {
     /// Reason the request failed validation
-    pub fn reason(&self) -> std::option::Option<&crate::model::ValidationExceptionReason> {
+    pub fn reason(&self) -> std::option::Option<& crate::model::ValidationExceptionReason> {
         self.reason.as_ref()
     }
     /// The fields that caused the error, if applicable
-    pub fn fields(&self) -> std::option::Option<&[crate::model::ValidationExceptionField]> {
+    pub fn fields(&self) -> std::option::Option<& [crate::model::ValidationExceptionField]> {
         self.fields.as_deref()
     }
 }
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ValidationException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -242,14 +238,13 @@ impl std::fmt::Display for ValidationException {
 impl std::error::Error for ValidationException {}
 /// See [`ValidationException`](crate::error::ValidationException).
 pub mod validation_exception {
-
+    
     /// A builder for [`ValidationException`](crate::error::ValidationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) reason: std::option::Option<crate::model::ValidationExceptionReason>,
-        pub(crate) fields:
-            std::option::Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
+        pub(crate) fields: std::option::Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
     }
     impl Builder {
         #[allow(missing_docs)] // documentation missing in model
@@ -259,8 +254,7 @@ pub mod validation_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Reason the request failed validation
         pub fn reason(mut self, input: crate::model::ValidationExceptionReason) -> Self {
@@ -268,12 +262,8 @@ pub mod validation_exception {
             self
         }
         /// Reason the request failed validation
-        pub fn set_reason(
-            mut self,
-            input: std::option::Option<crate::model::ValidationExceptionReason>,
-        ) -> Self {
-            self.reason = input;
-            self
+        pub fn set_reason(mut self, input: std::option::Option<crate::model::ValidationExceptionReason>) -> Self {
+            self.reason = input; self
         }
         /// Appends an item to `fields`.
         ///
@@ -282,27 +272,28 @@ pub mod validation_exception {
         /// The fields that caused the error, if applicable
         pub fn fields(mut self, input: crate::model::ValidationExceptionField) -> Self {
             let mut v = self.fields.unwrap_or_default();
-            v.push(input);
-            self.fields = Some(v);
-            self
+                            v.push(input);
+                            self.fields = Some(v);
+                            self
         }
         /// The fields that caused the error, if applicable
-        pub fn set_fields(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ValidationExceptionField>>,
-        ) -> Self {
-            self.fields = input;
-            self
+        pub fn set_fields(mut self, input: std::option::Option<std::vec::Vec<crate::model::ValidationExceptionField>>) -> Self {
+            self.fields = input; self
         }
         /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException).
         pub fn build(self) -> crate::error::ValidationException {
             crate::error::ValidationException {
-                message: self.message,
-                reason: self.reason,
-                fields: self.fields,
+                message: self.message
+                ,
+                reason: self.reason
+                ,
+                fields: self.fields
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationException {
     /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException).
@@ -314,7 +305,7 @@ impl ValidationException {
 /// <p>The request was denied because of request throttling.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThrottlingException {
+pub struct ThrottlingException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -330,15 +321,13 @@ impl ThrottlingException {
 }
 impl ThrottlingException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -348,7 +337,7 @@ impl std::fmt::Display for ThrottlingException {
 impl std::error::Error for ThrottlingException {}
 /// See [`ThrottlingException`](crate::error::ThrottlingException).
 pub mod throttling_exception {
-
+    
     /// A builder for [`ThrottlingException`](crate::error::ThrottlingException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -363,8 +352,7 @@ pub mod throttling_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Advice to clients on when the call can be safely retried
         pub fn retry_after_seconds(mut self, input: i32) -> Self {
@@ -373,17 +361,21 @@ pub mod throttling_exception {
         }
         /// Advice to clients on when the call can be safely retried
         pub fn set_retry_after_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.retry_after_seconds = input;
-            self
+            self.retry_after_seconds = input; self
         }
         /// Consumes the builder and constructs a [`ThrottlingException`](crate::error::ThrottlingException).
         pub fn build(self) -> crate::error::ThrottlingException {
             crate::error::ThrottlingException {
-                message: self.message,
-                retry_after_seconds: self.retry_after_seconds.unwrap_or_default(),
+                message: self.message
+                ,
+                retry_after_seconds: self.retry_after_seconds
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ThrottlingException {
     /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::error::ThrottlingException).
@@ -395,7 +387,7 @@ impl ThrottlingException {
 /// <p>The request can't update that many routing control states at the same time. Try again with fewer routing control states.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceLimitExceededException {
+pub struct ServiceLimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -414,33 +406,31 @@ pub struct ServiceLimitExceededException {
 }
 impl ServiceLimitExceededException {
     /// <p>The resource identifier of the limit that was exceeded.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// <p>The resource type of the limit that was exceeded.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
     /// <p>The code of the limit that was exceeded.</p>
-    pub fn limit_code(&self) -> std::option::Option<&str> {
+    pub fn limit_code(&self) -> std::option::Option<& str> {
         self.limit_code.as_deref()
     }
     /// <p>The service code of the limit that was exceeded.</p>
-    pub fn service_code(&self) -> std::option::Option<&str> {
+    pub fn service_code(&self) -> std::option::Option<& str> {
         self.service_code.as_deref()
     }
 }
 impl ServiceLimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceLimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceLimitExceededException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -450,7 +440,7 @@ impl std::fmt::Display for ServiceLimitExceededException {
 impl std::error::Error for ServiceLimitExceededException {}
 /// See [`ServiceLimitExceededException`](crate::error::ServiceLimitExceededException).
 pub mod service_limit_exceeded_exception {
-
+    
     /// A builder for [`ServiceLimitExceededException`](crate::error::ServiceLimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -468,8 +458,7 @@ pub mod service_limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The resource identifier of the limit that was exceeded.</p>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -478,8 +467,7 @@ pub mod service_limit_exceeded_exception {
         }
         /// <p>The resource identifier of the limit that was exceeded.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// <p>The resource type of the limit that was exceeded.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -487,12 +475,8 @@ pub mod service_limit_exceeded_exception {
             self
         }
         /// <p>The resource type of the limit that was exceeded.</p>
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// <p>The code of the limit that was exceeded.</p>
         pub fn limit_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -501,8 +485,7 @@ pub mod service_limit_exceeded_exception {
         }
         /// <p>The code of the limit that was exceeded.</p>
         pub fn set_limit_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.limit_code = input;
-            self
+            self.limit_code = input; self
         }
         /// <p>The service code of the limit that was exceeded.</p>
         pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -511,20 +494,26 @@ pub mod service_limit_exceeded_exception {
         }
         /// <p>The service code of the limit that was exceeded.</p>
         pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_code = input;
-            self
+            self.service_code = input; self
         }
         /// Consumes the builder and constructs a [`ServiceLimitExceededException`](crate::error::ServiceLimitExceededException).
         pub fn build(self) -> crate::error::ServiceLimitExceededException {
             crate::error::ServiceLimitExceededException {
-                message: self.message,
-                resource_id: self.resource_id,
-                resource_type: self.resource_type,
-                limit_code: self.limit_code,
-                service_code: self.service_code,
+                message: self.message
+                ,
+                resource_id: self.resource_id
+                ,
+                resource_type: self.resource_type
+                ,
+                limit_code: self.limit_code
+                ,
+                service_code: self.service_code
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceLimitExceededException {
     /// Creates a new builder-style object to manufacture [`ServiceLimitExceededException`](crate::error::ServiceLimitExceededException).
@@ -536,7 +525,7 @@ impl ServiceLimitExceededException {
 /// <p>The request references a routing control or control panel that was not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceNotFoundException {
+pub struct ResourceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -549,25 +538,23 @@ pub struct ResourceNotFoundException {
 }
 impl ResourceNotFoundException {
     /// Hypothetical resource identifier that was not found
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// Hypothetical resource type that was not found
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -577,7 +564,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
-
+    
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -593,8 +580,7 @@ pub mod resource_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Hypothetical resource identifier that was not found
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -603,8 +589,7 @@ pub mod resource_not_found_exception {
         }
         /// Hypothetical resource identifier that was not found
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// Hypothetical resource type that was not found
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -612,22 +597,23 @@ pub mod resource_not_found_exception {
             self
         }
         /// Hypothetical resource type that was not found
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
-                message: self.message,
-                resource_id: self.resource_id,
-                resource_type: self.resource_type,
+                message: self.message
+                ,
+                resource_id: self.resource_id
+                ,
+                resource_type: self.resource_type
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
@@ -639,7 +625,7 @@ impl ResourceNotFoundException {
 /// <p>There was an unexpected error during processing of the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServerException {
+pub struct InternalServerException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -655,15 +641,13 @@ impl InternalServerException {
 }
 impl InternalServerException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -673,7 +657,7 @@ impl std::fmt::Display for InternalServerException {
 impl std::error::Error for InternalServerException {}
 /// See [`InternalServerException`](crate::error::InternalServerException).
 pub mod internal_server_exception {
-
+    
     /// A builder for [`InternalServerException`](crate::error::InternalServerException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -688,8 +672,7 @@ pub mod internal_server_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Advice to clients on when the call can be safely retried
         pub fn retry_after_seconds(mut self, input: i32) -> Self {
@@ -698,17 +681,21 @@ pub mod internal_server_exception {
         }
         /// Advice to clients on when the call can be safely retried
         pub fn set_retry_after_seconds(mut self, input: std::option::Option<i32>) -> Self {
-            self.retry_after_seconds = input;
-            self
+            self.retry_after_seconds = input; self
         }
         /// Consumes the builder and constructs a [`InternalServerException`](crate::error::InternalServerException).
         pub fn build(self) -> crate::error::InternalServerException {
             crate::error::InternalServerException {
-                message: self.message,
-                retry_after_seconds: self.retry_after_seconds.unwrap_or_default(),
+                message: self.message
+                ,
+                retry_after_seconds: self.retry_after_seconds
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl InternalServerException {
     /// Creates a new builder-style object to manufacture [`InternalServerException`](crate::error::InternalServerException).
@@ -720,22 +707,20 @@ impl InternalServerException {
 /// <p>The cluster endpoint isn't available. Try another cluster endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointTemporarilyUnavailableException {
+pub struct EndpointTemporarilyUnavailableException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl EndpointTemporarilyUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for EndpointTemporarilyUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointTemporarilyUnavailableException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -745,7 +730,7 @@ impl std::fmt::Display for EndpointTemporarilyUnavailableException {
 impl std::error::Error for EndpointTemporarilyUnavailableException {}
 /// See [`EndpointTemporarilyUnavailableException`](crate::error::EndpointTemporarilyUnavailableException).
 pub mod endpoint_temporarily_unavailable_exception {
-
+    
     /// A builder for [`EndpointTemporarilyUnavailableException`](crate::error::EndpointTemporarilyUnavailableException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -759,16 +744,18 @@ pub mod endpoint_temporarily_unavailable_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`EndpointTemporarilyUnavailableException`](crate::error::EndpointTemporarilyUnavailableException).
         pub fn build(self) -> crate::error::EndpointTemporarilyUnavailableException {
             crate::error::EndpointTemporarilyUnavailableException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl EndpointTemporarilyUnavailableException {
     /// Creates a new builder-style object to manufacture [`EndpointTemporarilyUnavailableException`](crate::error::EndpointTemporarilyUnavailableException).
@@ -780,7 +767,7 @@ impl EndpointTemporarilyUnavailableException {
 /// <p>There was a conflict with this request. Try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     /// Description of the ConflictException error
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -793,25 +780,23 @@ pub struct ConflictException {
 }
 impl ConflictException {
     /// Identifier of the resource in use
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> std::option::Option<& str> {
         self.resource_id.as_deref()
     }
     /// Type of the resource in use
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> std::option::Option<& str> {
         self.resource_type.as_deref()
     }
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
         if let Some(inner_7) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_7)?;
             }
         }
@@ -821,7 +806,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException).
 pub mod conflict_exception {
-
+    
     /// A builder for [`ConflictException`](crate::error::ConflictException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -837,8 +822,7 @@ pub mod conflict_exception {
         }
         /// Description of the ConflictException error
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Identifier of the resource in use
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -847,8 +831,7 @@ pub mod conflict_exception {
         }
         /// Identifier of the resource in use
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_id = input;
-            self
+            self.resource_id = input; self
         }
         /// Type of the resource in use
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -856,22 +839,23 @@ pub mod conflict_exception {
             self
         }
         /// Type of the resource in use
-        pub fn set_resource_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_type = input;
-            self
+        pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_type = input; self
         }
         /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
         pub fn build(self) -> crate::error::ConflictException {
             crate::error::ConflictException {
-                message: self.message,
-                resource_id: self.resource_id,
-                resource_type: self.resource_type,
+                message: self.message
+                ,
+                resource_id: self.resource_id
+                ,
+                resource_type: self.resource_type
+                ,
             }
         }
     }
+    
+    
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
@@ -883,22 +867,20 @@ impl ConflictException {
 /// <p>You don't have sufficient permissions to perform this action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessDeniedException {
+pub struct AccessDeniedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_8) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_8)?;
             }
         }
@@ -908,7 +890,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException).
 pub mod access_denied_exception {
-
+    
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -922,16 +904,18 @@ pub mod access_denied_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
         pub fn build(self) -> crate::error::AccessDeniedException {
             crate::error::AccessDeniedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
@@ -945,17 +929,15 @@ impl AccessDeniedException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateRoutingControlStateError {
     /// Kind of error that occurred.
-    pub kind: UpdateRoutingControlStateErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateRoutingControlStateErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateRoutingControlStateError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateRoutingControlStateErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: UpdateRoutingControlStateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -977,29 +959,43 @@ pub enum UpdateRoutingControlStateErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>There was a validation error on the request.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateRoutingControlStateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateRoutingControlStateErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            UpdateRoutingControlStateErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            UpdateRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException(_inner) => {
+            UpdateRoutingControlStateErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRoutingControlStateErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRoutingControlStateErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRoutingControlStateErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRoutingControlStateErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRoutingControlStateErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateRoutingControlStateErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateRoutingControlStateErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            UpdateRoutingControlStateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            UpdateRoutingControlStateErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            UpdateRoutingControlStateErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            UpdateRoutingControlStateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1013,113 +1009,102 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateRoutingControlStateErro
 }
 impl UpdateRoutingControlStateError {
     /// Creates a new `UpdateRoutingControlStateError`.
-    pub fn new(kind: UpdateRoutingControlStateErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateRoutingControlStateError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateRoutingControlStateErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateRoutingControlStateError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateRoutingControlStateErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateRoutingControlStateErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateRoutingControlStateError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateRoutingControlStateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateRoutingControlStateError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateRoutingControlStateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateRoutingControlStateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRoutingControlStateErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, UpdateRoutingControlStateErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UpdateRoutingControlStateErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRoutingControlStateErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, UpdateRoutingControlStateErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException`.
     pub fn is_endpoint_temporarily_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException(_)
-        )
+        matches!(&self.kind, UpdateRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException(_))
     }
     /// Returns `true` if the error kind is `UpdateRoutingControlStateErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRoutingControlStateErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, UpdateRoutingControlStateErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `UpdateRoutingControlStateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRoutingControlStateErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateRoutingControlStateErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateRoutingControlStateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRoutingControlStateErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, UpdateRoutingControlStateErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `UpdateRoutingControlStateErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateRoutingControlStateErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, UpdateRoutingControlStateErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for UpdateRoutingControlStateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateRoutingControlStateErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            UpdateRoutingControlStateErrorKind::ConflictException(_inner) => Some(_inner),
-            UpdateRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException(_inner) => {
+            UpdateRoutingControlStateErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRoutingControlStateErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRoutingControlStateErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRoutingControlStateErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRoutingControlStateErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRoutingControlStateErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateRoutingControlStateErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateRoutingControlStateErrorKind::InternalServerException(_inner) => Some(_inner),
-            UpdateRoutingControlStateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            UpdateRoutingControlStateErrorKind::ThrottlingException(_inner) => Some(_inner),
-            UpdateRoutingControlStateErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateRoutingControlStateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1129,15 +1114,15 @@ impl std::error::Error for UpdateRoutingControlStateError {
 #[derive(std::fmt::Debug)]
 pub struct ListRoutingControlsError {
     /// Kind of error that occurred.
-    pub kind: ListRoutingControlsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListRoutingControlsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListRoutingControlsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListRoutingControlsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1157,28 +1142,40 @@ pub enum ListRoutingControlsErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>There was a validation error on the request.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListRoutingControlsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListRoutingControlsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListRoutingControlsErrorKind::EndpointTemporarilyUnavailableException(_inner) => {
+            ListRoutingControlsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRoutingControlsErrorKind::EndpointTemporarilyUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRoutingControlsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRoutingControlsErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRoutingControlsErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRoutingControlsErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListRoutingControlsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListRoutingControlsErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            ListRoutingControlsErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            ListRoutingControlsErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            ListRoutingControlsErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            ListRoutingControlsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1192,101 +1189,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListRoutingControlsError {
 }
 impl ListRoutingControlsError {
     /// Creates a new `ListRoutingControlsError`.
-    pub fn new(kind: ListRoutingControlsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListRoutingControlsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListRoutingControlsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListRoutingControlsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListRoutingControlsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListRoutingControlsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListRoutingControlsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListRoutingControlsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListRoutingControlsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListRoutingControlsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListRoutingControlsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRoutingControlsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListRoutingControlsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListRoutingControlsErrorKind::EndpointTemporarilyUnavailableException`.
     pub fn is_endpoint_temporarily_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRoutingControlsErrorKind::EndpointTemporarilyUnavailableException(_)
-        )
+        matches!(&self.kind, ListRoutingControlsErrorKind::EndpointTemporarilyUnavailableException(_))
     }
     /// Returns `true` if the error kind is `ListRoutingControlsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRoutingControlsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, ListRoutingControlsErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `ListRoutingControlsErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRoutingControlsErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, ListRoutingControlsErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `ListRoutingControlsErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRoutingControlsErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, ListRoutingControlsErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `ListRoutingControlsErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListRoutingControlsErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, ListRoutingControlsErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for ListRoutingControlsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListRoutingControlsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListRoutingControlsErrorKind::EndpointTemporarilyUnavailableException(_inner) => {
+            ListRoutingControlsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListRoutingControlsErrorKind::EndpointTemporarilyUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            ListRoutingControlsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListRoutingControlsErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            ListRoutingControlsErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            ListRoutingControlsErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            ListRoutingControlsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListRoutingControlsErrorKind::InternalServerException(_inner) => Some(_inner),
-            ListRoutingControlsErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            ListRoutingControlsErrorKind::ThrottlingException(_inner) => Some(_inner),
-            ListRoutingControlsErrorKind::ValidationException(_inner) => Some(_inner),
-            ListRoutingControlsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1296,15 +1287,15 @@ impl std::error::Error for ListRoutingControlsError {
 #[derive(std::fmt::Debug)]
 pub struct GetRoutingControlStateError {
     /// Kind of error that occurred.
-    pub kind: GetRoutingControlStateErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetRoutingControlStateErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetRoutingControlStateError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetRoutingControlStateErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1324,28 +1315,40 @@ pub enum GetRoutingControlStateErrorKind {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>There was a validation error on the request.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetRoutingControlStateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetRoutingControlStateErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            GetRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException(_inner) => {
+            GetRoutingControlStateErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRoutingControlStateErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRoutingControlStateErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRoutingControlStateErrorKind::ThrottlingException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRoutingControlStateErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetRoutingControlStateErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetRoutingControlStateErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            GetRoutingControlStateErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            GetRoutingControlStateErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
-            GetRoutingControlStateErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            GetRoutingControlStateErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1359,134 +1362,125 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetRoutingControlStateError {
 }
 impl GetRoutingControlStateError {
     /// Creates a new `GetRoutingControlStateError`.
-    pub fn new(kind: GetRoutingControlStateErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetRoutingControlStateError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetRoutingControlStateErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetRoutingControlStateError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetRoutingControlStateErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetRoutingControlStateErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetRoutingControlStateError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetRoutingControlStateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetRoutingControlStateError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetRoutingControlStateErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetRoutingControlStateErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRoutingControlStateErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, GetRoutingControlStateErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException`.
     pub fn is_endpoint_temporarily_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException(_)
-        )
+        matches!(&self.kind, GetRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException(_))
     }
     /// Returns `true` if the error kind is `GetRoutingControlStateErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRoutingControlStateErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, GetRoutingControlStateErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `GetRoutingControlStateErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRoutingControlStateErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, GetRoutingControlStateErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetRoutingControlStateErrorKind::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRoutingControlStateErrorKind::ThrottlingException(_)
-        )
+        matches!(&self.kind, GetRoutingControlStateErrorKind::ThrottlingException(_))
     }
     /// Returns `true` if the error kind is `GetRoutingControlStateErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetRoutingControlStateErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, GetRoutingControlStateErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for GetRoutingControlStateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetRoutingControlStateErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            GetRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException(_inner) => {
+            GetRoutingControlStateErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            GetRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException(_inner) =>
+            Some(_inner)
+            ,
+            GetRoutingControlStateErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            GetRoutingControlStateErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetRoutingControlStateErrorKind::ThrottlingException(_inner) =>
+            Some(_inner)
+            ,
+            GetRoutingControlStateErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            GetRoutingControlStateErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetRoutingControlStateErrorKind::InternalServerException(_inner) => Some(_inner),
-            GetRoutingControlStateErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            GetRoutingControlStateErrorKind::ThrottlingException(_inner) => Some(_inner),
-            GetRoutingControlStateErrorKind::ValidationException(_inner) => Some(_inner),
-            GetRoutingControlStateErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

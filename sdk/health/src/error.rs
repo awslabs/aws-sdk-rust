@@ -4,19 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct EnableHealthServiceAccessForOrganizationError {
     /// Kind of error that occurred.
-    pub kind: EnableHealthServiceAccessForOrganizationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: EnableHealthServiceAccessForOrganizationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for EnableHealthServiceAccessForOrganizationError
-{
+impl aws_smithy_http::result::CreateUnhandledError for EnableHealthServiceAccessForOrganizationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: EnableHealthServiceAccessForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: EnableHealthServiceAccessForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -26,23 +22,25 @@ impl aws_smithy_http::result::CreateUnhandledError
 pub enum EnableHealthServiceAccessForOrganizationErrorKind {
     /// <p> <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> is already in progress. Wait for the action to complete before trying again. To get the current status, use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeHealthServiceStatusForOrganization.html">DescribeHealthServiceStatusForOrganization</a> operation.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for EnableHealthServiceAccessForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            EnableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException(
-                _inner,
-            ) => _inner.fmt(f),
-            EnableHealthServiceAccessForOrganizationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            EnableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            EnableHealthServiceAccessForOrganizationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -56,68 +54,60 @@ impl aws_smithy_types::retry::ProvideErrorKind for EnableHealthServiceAccessForO
 }
 impl EnableHealthServiceAccessForOrganizationError {
     /// Creates a new `EnableHealthServiceAccessForOrganizationError`.
-    pub fn new(
-        kind: EnableHealthServiceAccessForOrganizationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `EnableHealthServiceAccessForOrganizationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: EnableHealthServiceAccessForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `EnableHealthServiceAccessForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: EnableHealthServiceAccessForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: EnableHealthServiceAccessForOrganizationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `EnableHealthServiceAccessForOrganizationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: EnableHealthServiceAccessForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `EnableHealthServiceAccessForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: EnableHealthServiceAccessForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `EnableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            EnableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException(_)
-        )
+        matches!(&self.kind, EnableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException(_))
     }
 }
 impl std::error::Error for EnableHealthServiceAccessForOrganizationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            EnableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException(
-                _inner,
-            ) => Some(_inner),
-            EnableHealthServiceAccessForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
+            EnableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException(_inner) =>
+            Some(_inner)
+            ,
+            EnableHealthServiceAccessForOrganizationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -125,22 +115,20 @@ impl std::error::Error for EnableHealthServiceAccessForOrganizationError {
 /// <p> <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> is already in progress. Wait for the action to complete before trying again. To get the current status, use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeHealthServiceStatusForOrganization.html">DescribeHealthServiceStatusForOrganization</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConcurrentModificationException {
+pub struct ConcurrentModificationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConcurrentModificationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConcurrentModificationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConcurrentModificationException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -150,7 +138,7 @@ impl std::fmt::Display for ConcurrentModificationException {
 impl std::error::Error for ConcurrentModificationException {}
 /// See [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
 pub mod concurrent_modification_exception {
-
+    
     /// A builder for [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -164,16 +152,18 @@ pub mod concurrent_modification_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
         pub fn build(self) -> crate::error::ConcurrentModificationException {
             crate::error::ConcurrentModificationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ConcurrentModificationException {
     /// Creates a new builder-style object to manufacture [`ConcurrentModificationException`](crate::error::ConcurrentModificationException).
@@ -187,19 +177,15 @@ impl ConcurrentModificationException {
 #[derive(std::fmt::Debug)]
 pub struct DisableHealthServiceAccessForOrganizationError {
     /// Kind of error that occurred.
-    pub kind: DisableHealthServiceAccessForOrganizationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DisableHealthServiceAccessForOrganizationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for DisableHealthServiceAccessForOrganizationError
-{
+impl aws_smithy_http::result::CreateUnhandledError for DisableHealthServiceAccessForOrganizationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DisableHealthServiceAccessForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DisableHealthServiceAccessForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -209,23 +195,25 @@ impl aws_smithy_http::result::CreateUnhandledError
 pub enum DisableHealthServiceAccessForOrganizationErrorKind {
     /// <p> <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> is already in progress. Wait for the action to complete before trying again. To get the current status, use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeHealthServiceStatusForOrganization.html">DescribeHealthServiceStatusForOrganization</a> operation.</p>
     ConcurrentModificationException(crate::error::ConcurrentModificationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisableHealthServiceAccessForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DisableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException(
-                _inner,
-            ) => _inner.fmt(f),
-            DisableHealthServiceAccessForOrganizationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DisableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisableHealthServiceAccessForOrganizationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -239,68 +227,60 @@ impl aws_smithy_types::retry::ProvideErrorKind for DisableHealthServiceAccessFor
 }
 impl DisableHealthServiceAccessForOrganizationError {
     /// Creates a new `DisableHealthServiceAccessForOrganizationError`.
-    pub fn new(
-        kind: DisableHealthServiceAccessForOrganizationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DisableHealthServiceAccessForOrganizationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DisableHealthServiceAccessForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DisableHealthServiceAccessForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DisableHealthServiceAccessForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DisableHealthServiceAccessForOrganizationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DisableHealthServiceAccessForOrganizationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DisableHealthServiceAccessForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DisableHealthServiceAccessForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DisableHealthServiceAccessForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DisableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException(_)
-        )
+        matches!(&self.kind, DisableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException(_))
     }
 }
 impl std::error::Error for DisableHealthServiceAccessForOrganizationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DisableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException(
-                _inner,
-            ) => Some(_inner),
-            DisableHealthServiceAccessForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
+            DisableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException(_inner) =>
+            Some(_inner)
+            ,
+            DisableHealthServiceAccessForOrganizationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -310,19 +290,15 @@ impl std::error::Error for DisableHealthServiceAccessForOrganizationError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeHealthServiceStatusForOrganizationError {
     /// Kind of error that occurred.
-    pub kind: DescribeHealthServiceStatusForOrganizationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeHealthServiceStatusForOrganizationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for DescribeHealthServiceStatusForOrganizationError
-{
+impl aws_smithy_http::result::CreateUnhandledError for DescribeHealthServiceStatusForOrganizationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeHealthServiceStatusForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeHealthServiceStatusForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -330,20 +306,22 @@ impl aws_smithy_http::result::CreateUnhandledError
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeHealthServiceStatusForOrganizationErrorKind {
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeHealthServiceStatusForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeHealthServiceStatusForOrganizationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeHealthServiceStatusForOrganizationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -357,58 +335,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeHealthServiceStatusFo
 }
 impl DescribeHealthServiceStatusForOrganizationError {
     /// Creates a new `DescribeHealthServiceStatusForOrganizationError`.
-    pub fn new(
-        kind: DescribeHealthServiceStatusForOrganizationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeHealthServiceStatusForOrganizationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeHealthServiceStatusForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeHealthServiceStatusForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeHealthServiceStatusForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeHealthServiceStatusForOrganizationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeHealthServiceStatusForOrganizationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeHealthServiceStatusForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeHealthServiceStatusForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeHealthServiceStatusForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
 }
 impl std::error::Error for DescribeHealthServiceStatusForOrganizationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeHealthServiceStatusForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeHealthServiceStatusForOrganizationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -418,15 +391,15 @@ impl std::error::Error for DescribeHealthServiceStatusForOrganizationError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeEventTypesError {
     /// Kind of error that occurred.
-    pub kind: DescribeEventTypesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeEventTypesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeEventTypesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeEventTypesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -438,22 +411,28 @@ pub enum DescribeEventTypesErrorKind {
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEventTypesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeEventTypesErrorKind::InvalidPaginationToken(_inner) => _inner.fmt(f),
-            DescribeEventTypesErrorKind::UnsupportedLocale(_inner) => _inner.fmt(f),
-            DescribeEventTypesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeEventTypesErrorKind::InvalidPaginationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEventTypesErrorKind::UnsupportedLocale(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEventTypesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -467,67 +446,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeEventTypesError {
 }
 impl DescribeEventTypesError {
     /// Creates a new `DescribeEventTypesError`.
-    pub fn new(kind: DescribeEventTypesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeEventTypesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeEventTypesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeEventTypesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeEventTypesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeEventTypesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeEventTypesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeEventTypesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeEventTypesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeEventTypesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeEventTypesErrorKind::InvalidPaginationToken`.
     pub fn is_invalid_pagination_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEventTypesErrorKind::InvalidPaginationToken(_)
-        )
+        matches!(&self.kind, DescribeEventTypesErrorKind::InvalidPaginationToken(_))
     }
     /// Returns `true` if the error kind is `DescribeEventTypesErrorKind::UnsupportedLocale`.
     pub fn is_unsupported_locale(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEventTypesErrorKind::UnsupportedLocale(_)
-        )
+        matches!(&self.kind, DescribeEventTypesErrorKind::UnsupportedLocale(_))
     }
 }
 impl std::error::Error for DescribeEventTypesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeEventTypesErrorKind::InvalidPaginationToken(_inner) => Some(_inner),
-            DescribeEventTypesErrorKind::UnsupportedLocale(_inner) => Some(_inner),
-            DescribeEventTypesErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeEventTypesErrorKind::InvalidPaginationToken(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEventTypesErrorKind::UnsupportedLocale(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEventTypesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -535,22 +514,20 @@ impl std::error::Error for DescribeEventTypesError {
 /// <p>The specified locale is not supported.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsupportedLocale {
+pub struct UnsupportedLocale  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl UnsupportedLocale {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for UnsupportedLocale {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnsupportedLocale")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -560,7 +537,7 @@ impl std::fmt::Display for UnsupportedLocale {
 impl std::error::Error for UnsupportedLocale {}
 /// See [`UnsupportedLocale`](crate::error::UnsupportedLocale).
 pub mod unsupported_locale {
-
+    
     /// A builder for [`UnsupportedLocale`](crate::error::UnsupportedLocale).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -574,16 +551,18 @@ pub mod unsupported_locale {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`UnsupportedLocale`](crate::error::UnsupportedLocale).
         pub fn build(self) -> crate::error::UnsupportedLocale {
             crate::error::UnsupportedLocale {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl UnsupportedLocale {
     /// Creates a new builder-style object to manufacture [`UnsupportedLocale`](crate::error::UnsupportedLocale).
@@ -595,22 +574,20 @@ impl UnsupportedLocale {
 /// <p>The specified pagination token (<code>nextToken</code>) is not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidPaginationToken {
+pub struct InvalidPaginationToken  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InvalidPaginationToken {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InvalidPaginationToken {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidPaginationToken")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -620,7 +597,7 @@ impl std::fmt::Display for InvalidPaginationToken {
 impl std::error::Error for InvalidPaginationToken {}
 /// See [`InvalidPaginationToken`](crate::error::InvalidPaginationToken).
 pub mod invalid_pagination_token {
-
+    
     /// A builder for [`InvalidPaginationToken`](crate::error::InvalidPaginationToken).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -634,16 +611,18 @@ pub mod invalid_pagination_token {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InvalidPaginationToken`](crate::error::InvalidPaginationToken).
         pub fn build(self) -> crate::error::InvalidPaginationToken {
             crate::error::InvalidPaginationToken {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidPaginationToken {
     /// Creates a new builder-style object to manufacture [`InvalidPaginationToken`](crate::error::InvalidPaginationToken).
@@ -657,17 +636,15 @@ impl InvalidPaginationToken {
 #[derive(std::fmt::Debug)]
 pub struct DescribeEventsForOrganizationError {
     /// Kind of error that occurred.
-    pub kind: DescribeEventsForOrganizationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeEventsForOrganizationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeEventsForOrganizationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeEventsForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeEventsForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -679,22 +656,28 @@ pub enum DescribeEventsForOrganizationErrorKind {
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEventsForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeEventsForOrganizationErrorKind::InvalidPaginationToken(_inner) => _inner.fmt(f),
-            DescribeEventsForOrganizationErrorKind::UnsupportedLocale(_inner) => _inner.fmt(f),
-            DescribeEventsForOrganizationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeEventsForOrganizationErrorKind::InvalidPaginationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEventsForOrganizationErrorKind::UnsupportedLocale(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEventsForOrganizationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -708,74 +691,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeEventsForOrganization
 }
 impl DescribeEventsForOrganizationError {
     /// Creates a new `DescribeEventsForOrganizationError`.
-    pub fn new(
-        kind: DescribeEventsForOrganizationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeEventsForOrganizationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeEventsForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeEventsForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeEventsForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeEventsForOrganizationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeEventsForOrganizationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeEventsForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeEventsForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeEventsForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeEventsForOrganizationErrorKind::InvalidPaginationToken`.
     pub fn is_invalid_pagination_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEventsForOrganizationErrorKind::InvalidPaginationToken(_)
-        )
+        matches!(&self.kind, DescribeEventsForOrganizationErrorKind::InvalidPaginationToken(_))
     }
     /// Returns `true` if the error kind is `DescribeEventsForOrganizationErrorKind::UnsupportedLocale`.
     pub fn is_unsupported_locale(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEventsForOrganizationErrorKind::UnsupportedLocale(_)
-        )
+        matches!(&self.kind, DescribeEventsForOrganizationErrorKind::UnsupportedLocale(_))
     }
 }
 impl std::error::Error for DescribeEventsForOrganizationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeEventsForOrganizationErrorKind::InvalidPaginationToken(_inner) => Some(_inner),
-            DescribeEventsForOrganizationErrorKind::UnsupportedLocale(_inner) => Some(_inner),
-            DescribeEventsForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeEventsForOrganizationErrorKind::InvalidPaginationToken(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEventsForOrganizationErrorKind::UnsupportedLocale(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEventsForOrganizationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -785,15 +761,15 @@ impl std::error::Error for DescribeEventsForOrganizationError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeEventsError {
     /// Kind of error that occurred.
-    pub kind: DescribeEventsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeEventsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeEventsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeEventsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -805,22 +781,28 @@ pub enum DescribeEventsErrorKind {
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEventsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeEventsErrorKind::InvalidPaginationToken(_inner) => _inner.fmt(f),
-            DescribeEventsErrorKind::UnsupportedLocale(_inner) => _inner.fmt(f),
-            DescribeEventsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeEventsErrorKind::InvalidPaginationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEventsErrorKind::UnsupportedLocale(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEventsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -834,52 +816,49 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeEventsError {
 }
 impl DescribeEventsError {
     /// Creates a new `DescribeEventsError`.
-    pub fn new(kind: DescribeEventsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeEventsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeEventsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeEventsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeEventsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeEventsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeEventsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeEventsErrorKind::InvalidPaginationToken`.
     pub fn is_invalid_pagination_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEventsErrorKind::InvalidPaginationToken(_)
-        )
+        matches!(&self.kind, DescribeEventsErrorKind::InvalidPaginationToken(_))
     }
     /// Returns `true` if the error kind is `DescribeEventsErrorKind::UnsupportedLocale`.
     pub fn is_unsupported_locale(&self) -> bool {
@@ -889,9 +868,15 @@ impl DescribeEventsError {
 impl std::error::Error for DescribeEventsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeEventsErrorKind::InvalidPaginationToken(_inner) => Some(_inner),
-            DescribeEventsErrorKind::UnsupportedLocale(_inner) => Some(_inner),
-            DescribeEventsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeEventsErrorKind::InvalidPaginationToken(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEventsErrorKind::UnsupportedLocale(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEventsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -901,17 +886,15 @@ impl std::error::Error for DescribeEventsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeEventDetailsForOrganizationError {
     /// Kind of error that occurred.
-    pub kind: DescribeEventDetailsForOrganizationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeEventDetailsForOrganizationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeEventDetailsForOrganizationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeEventDetailsForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeEventDetailsForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -921,23 +904,25 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeEventDetailsForOr
 pub enum DescribeEventDetailsForOrganizationErrorKind {
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEventDetailsForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeEventDetailsForOrganizationErrorKind::UnsupportedLocale(_inner) => {
+            DescribeEventDetailsForOrganizationErrorKind::UnsupportedLocale(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEventDetailsForOrganizationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeEventDetailsForOrganizationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -951,66 +936,60 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeEventDetailsForOrgani
 }
 impl DescribeEventDetailsForOrganizationError {
     /// Creates a new `DescribeEventDetailsForOrganizationError`.
-    pub fn new(
-        kind: DescribeEventDetailsForOrganizationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeEventDetailsForOrganizationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeEventDetailsForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeEventDetailsForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeEventDetailsForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeEventDetailsForOrganizationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeEventDetailsForOrganizationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeEventDetailsForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeEventDetailsForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeEventDetailsForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeEventDetailsForOrganizationErrorKind::UnsupportedLocale`.
     pub fn is_unsupported_locale(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEventDetailsForOrganizationErrorKind::UnsupportedLocale(_)
-        )
+        matches!(&self.kind, DescribeEventDetailsForOrganizationErrorKind::UnsupportedLocale(_))
     }
 }
 impl std::error::Error for DescribeEventDetailsForOrganizationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeEventDetailsForOrganizationErrorKind::UnsupportedLocale(_inner) => Some(_inner),
-            DescribeEventDetailsForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeEventDetailsForOrganizationErrorKind::UnsupportedLocale(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEventDetailsForOrganizationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1020,15 +999,15 @@ impl std::error::Error for DescribeEventDetailsForOrganizationError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeEventDetailsError {
     /// Kind of error that occurred.
-    pub kind: DescribeEventDetailsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeEventDetailsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeEventDetailsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeEventDetailsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1038,21 +1017,25 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeEventDetailsError
 pub enum DescribeEventDetailsErrorKind {
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEventDetailsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeEventDetailsErrorKind::UnsupportedLocale(_inner) => _inner.fmt(f),
-            DescribeEventDetailsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeEventDetailsErrorKind::UnsupportedLocale(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEventDetailsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1066,63 +1049,60 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeEventDetailsError {
 }
 impl DescribeEventDetailsError {
     /// Creates a new `DescribeEventDetailsError`.
-    pub fn new(kind: DescribeEventDetailsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeEventDetailsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeEventDetailsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeEventDetailsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeEventDetailsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeEventDetailsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeEventDetailsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeEventDetailsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeEventDetailsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeEventDetailsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeEventDetailsErrorKind::UnsupportedLocale`.
     pub fn is_unsupported_locale(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEventDetailsErrorKind::UnsupportedLocale(_)
-        )
+        matches!(&self.kind, DescribeEventDetailsErrorKind::UnsupportedLocale(_))
     }
 }
 impl std::error::Error for DescribeEventDetailsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeEventDetailsErrorKind::UnsupportedLocale(_inner) => Some(_inner),
-            DescribeEventDetailsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeEventDetailsErrorKind::UnsupportedLocale(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEventDetailsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1132,15 +1112,15 @@ impl std::error::Error for DescribeEventDetailsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeEventAggregatesError {
     /// Kind of error that occurred.
-    pub kind: DescribeEventAggregatesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeEventAggregatesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeEventAggregatesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeEventAggregatesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1150,21 +1130,25 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeEventAggregatesEr
 pub enum DescribeEventAggregatesErrorKind {
     /// <p>The specified pagination token (<code>nextToken</code>) is not valid.</p>
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEventAggregatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeEventAggregatesErrorKind::InvalidPaginationToken(_inner) => _inner.fmt(f),
-            DescribeEventAggregatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeEventAggregatesErrorKind::InvalidPaginationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeEventAggregatesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1178,63 +1162,60 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeEventAggregatesError 
 }
 impl DescribeEventAggregatesError {
     /// Creates a new `DescribeEventAggregatesError`.
-    pub fn new(kind: DescribeEventAggregatesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeEventAggregatesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeEventAggregatesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeEventAggregatesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeEventAggregatesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeEventAggregatesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeEventAggregatesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeEventAggregatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeEventAggregatesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeEventAggregatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeEventAggregatesErrorKind::InvalidPaginationToken`.
     pub fn is_invalid_pagination_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeEventAggregatesErrorKind::InvalidPaginationToken(_)
-        )
+        matches!(&self.kind, DescribeEventAggregatesErrorKind::InvalidPaginationToken(_))
     }
 }
 impl std::error::Error for DescribeEventAggregatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeEventAggregatesErrorKind::InvalidPaginationToken(_inner) => Some(_inner),
-            DescribeEventAggregatesErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeEventAggregatesErrorKind::InvalidPaginationToken(_inner) =>
+            Some(_inner)
+            ,
+            DescribeEventAggregatesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1244,17 +1225,15 @@ impl std::error::Error for DescribeEventAggregatesError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeEntityAggregatesError {
     /// Kind of error that occurred.
-    pub kind: DescribeEntityAggregatesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeEntityAggregatesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeEntityAggregatesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeEntityAggregatesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeEntityAggregatesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1262,20 +1241,22 @@ impl aws_smithy_http::result::CreateUnhandledError for DescribeEntityAggregatesE
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeEntityAggregatesErrorKind {
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeEntityAggregatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeEntityAggregatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeEntityAggregatesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1289,55 +1270,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeEntityAggregatesError
 }
 impl DescribeEntityAggregatesError {
     /// Creates a new `DescribeEntityAggregatesError`.
-    pub fn new(kind: DescribeEntityAggregatesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeEntityAggregatesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeEntityAggregatesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeEntityAggregatesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeEntityAggregatesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeEntityAggregatesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeEntityAggregatesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeEntityAggregatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeEntityAggregatesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeEntityAggregatesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
 }
 impl std::error::Error for DescribeEntityAggregatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeEntityAggregatesErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeEntityAggregatesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1347,19 +1326,15 @@ impl std::error::Error for DescribeEntityAggregatesError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeAffectedEntitiesForOrganizationError {
     /// Kind of error that occurred.
-    pub kind: DescribeAffectedEntitiesForOrganizationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeAffectedEntitiesForOrganizationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for DescribeAffectedEntitiesForOrganizationError
-{
+impl aws_smithy_http::result::CreateUnhandledError for DescribeAffectedEntitiesForOrganizationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeAffectedEntitiesForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeAffectedEntitiesForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1371,26 +1346,28 @@ pub enum DescribeAffectedEntitiesForOrganizationErrorKind {
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAffectedEntitiesForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeAffectedEntitiesForOrganizationErrorKind::InvalidPaginationToken(_inner) => {
+            DescribeAffectedEntitiesForOrganizationErrorKind::InvalidPaginationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAffectedEntitiesForOrganizationErrorKind::UnsupportedLocale(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAffectedEntitiesForOrganizationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeAffectedEntitiesForOrganizationErrorKind::UnsupportedLocale(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeAffectedEntitiesForOrganizationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1404,78 +1381,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeAffectedEntitiesForOr
 }
 impl DescribeAffectedEntitiesForOrganizationError {
     /// Creates a new `DescribeAffectedEntitiesForOrganizationError`.
-    pub fn new(
-        kind: DescribeAffectedEntitiesForOrganizationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeAffectedEntitiesForOrganizationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeAffectedEntitiesForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeAffectedEntitiesForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeAffectedEntitiesForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeAffectedEntitiesForOrganizationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeAffectedEntitiesForOrganizationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeAffectedEntitiesForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeAffectedEntitiesForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeAffectedEntitiesForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeAffectedEntitiesForOrganizationErrorKind::InvalidPaginationToken`.
     pub fn is_invalid_pagination_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAffectedEntitiesForOrganizationErrorKind::InvalidPaginationToken(_)
-        )
+        matches!(&self.kind, DescribeAffectedEntitiesForOrganizationErrorKind::InvalidPaginationToken(_))
     }
     /// Returns `true` if the error kind is `DescribeAffectedEntitiesForOrganizationErrorKind::UnsupportedLocale`.
     pub fn is_unsupported_locale(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAffectedEntitiesForOrganizationErrorKind::UnsupportedLocale(_)
-        )
+        matches!(&self.kind, DescribeAffectedEntitiesForOrganizationErrorKind::UnsupportedLocale(_))
     }
 }
 impl std::error::Error for DescribeAffectedEntitiesForOrganizationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeAffectedEntitiesForOrganizationErrorKind::InvalidPaginationToken(_inner) => {
+            DescribeAffectedEntitiesForOrganizationErrorKind::InvalidPaginationToken(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAffectedEntitiesForOrganizationErrorKind::UnsupportedLocale(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAffectedEntitiesForOrganizationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeAffectedEntitiesForOrganizationErrorKind::UnsupportedLocale(_inner) => {
-                Some(_inner)
-            }
-            DescribeAffectedEntitiesForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1485,17 +1451,15 @@ impl std::error::Error for DescribeAffectedEntitiesForOrganizationError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeAffectedEntitiesError {
     /// Kind of error that occurred.
-    pub kind: DescribeAffectedEntitiesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeAffectedEntitiesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeAffectedEntitiesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeAffectedEntitiesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeAffectedEntitiesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1507,22 +1471,28 @@ pub enum DescribeAffectedEntitiesErrorKind {
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
     /// <p>The specified locale is not supported.</p>
     UnsupportedLocale(crate::error::UnsupportedLocale),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAffectedEntitiesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeAffectedEntitiesErrorKind::InvalidPaginationToken(_inner) => _inner.fmt(f),
-            DescribeAffectedEntitiesErrorKind::UnsupportedLocale(_inner) => _inner.fmt(f),
-            DescribeAffectedEntitiesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeAffectedEntitiesErrorKind::InvalidPaginationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAffectedEntitiesErrorKind::UnsupportedLocale(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAffectedEntitiesErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1536,71 +1506,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeAffectedEntitiesError
 }
 impl DescribeAffectedEntitiesError {
     /// Creates a new `DescribeAffectedEntitiesError`.
-    pub fn new(kind: DescribeAffectedEntitiesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeAffectedEntitiesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeAffectedEntitiesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeAffectedEntitiesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeAffectedEntitiesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeAffectedEntitiesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeAffectedEntitiesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeAffectedEntitiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeAffectedEntitiesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeAffectedEntitiesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeAffectedEntitiesErrorKind::InvalidPaginationToken`.
     pub fn is_invalid_pagination_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAffectedEntitiesErrorKind::InvalidPaginationToken(_)
-        )
+        matches!(&self.kind, DescribeAffectedEntitiesErrorKind::InvalidPaginationToken(_))
     }
     /// Returns `true` if the error kind is `DescribeAffectedEntitiesErrorKind::UnsupportedLocale`.
     pub fn is_unsupported_locale(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAffectedEntitiesErrorKind::UnsupportedLocale(_)
-        )
+        matches!(&self.kind, DescribeAffectedEntitiesErrorKind::UnsupportedLocale(_))
     }
 }
 impl std::error::Error for DescribeAffectedEntitiesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeAffectedEntitiesErrorKind::InvalidPaginationToken(_inner) => Some(_inner),
-            DescribeAffectedEntitiesErrorKind::UnsupportedLocale(_inner) => Some(_inner),
-            DescribeAffectedEntitiesErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeAffectedEntitiesErrorKind::InvalidPaginationToken(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAffectedEntitiesErrorKind::UnsupportedLocale(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAffectedEntitiesErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1610,19 +1576,15 @@ impl std::error::Error for DescribeAffectedEntitiesError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeAffectedAccountsForOrganizationError {
     /// Kind of error that occurred.
-    pub kind: DescribeAffectedAccountsForOrganizationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeAffectedAccountsForOrganizationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for DescribeAffectedAccountsForOrganizationError
-{
+impl aws_smithy_http::result::CreateUnhandledError for DescribeAffectedAccountsForOrganizationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeAffectedAccountsForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeAffectedAccountsForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1632,23 +1594,25 @@ impl aws_smithy_http::result::CreateUnhandledError
 pub enum DescribeAffectedAccountsForOrganizationErrorKind {
     /// <p>The specified pagination token (<code>nextToken</code>) is not valid.</p>
     InvalidPaginationToken(crate::error::InvalidPaginationToken),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeAffectedAccountsForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeAffectedAccountsForOrganizationErrorKind::InvalidPaginationToken(_inner) => {
+            DescribeAffectedAccountsForOrganizationErrorKind::InvalidPaginationToken(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeAffectedAccountsForOrganizationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeAffectedAccountsForOrganizationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1662,97 +1626,90 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeAffectedAccountsForOr
 }
 impl DescribeAffectedAccountsForOrganizationError {
     /// Creates a new `DescribeAffectedAccountsForOrganizationError`.
-    pub fn new(
-        kind: DescribeAffectedAccountsForOrganizationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeAffectedAccountsForOrganizationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeAffectedAccountsForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeAffectedAccountsForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeAffectedAccountsForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeAffectedAccountsForOrganizationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeAffectedAccountsForOrganizationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeAffectedAccountsForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeAffectedAccountsForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeAffectedAccountsForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeAffectedAccountsForOrganizationErrorKind::InvalidPaginationToken`.
     pub fn is_invalid_pagination_token(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeAffectedAccountsForOrganizationErrorKind::InvalidPaginationToken(_)
-        )
+        matches!(&self.kind, DescribeAffectedAccountsForOrganizationErrorKind::InvalidPaginationToken(_))
     }
 }
 impl std::error::Error for DescribeAffectedAccountsForOrganizationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeAffectedAccountsForOrganizationErrorKind::InvalidPaginationToken(_inner) => {
+            DescribeAffectedAccountsForOrganizationErrorKind::InvalidPaginationToken(_inner) =>
+            Some(_inner)
+            ,
+            DescribeAffectedAccountsForOrganizationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeAffectedAccountsForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

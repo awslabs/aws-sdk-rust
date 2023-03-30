@@ -3,25 +3,23 @@
 /// <p>Represents the structure of actions and stages to be performed in the pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipelineDeclaration {
+pub struct PipelineDeclaration  {
     /// <p>The name of the pipeline.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note>
-    /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
+    /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note> 
+    /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p> 
     /// </note>
     #[doc(hidden)]
     pub artifact_store: std::option::Option<crate::model::ArtifactStore>,
-    /// <p>A mapping of <code>artifactStore</code> objects and their corresponding AWS Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p> <note>
-    /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
+    /// <p>A mapping of <code>artifactStore</code> objects and their corresponding AWS Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p> <note> 
+    /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p> 
     /// </note>
     #[doc(hidden)]
-    pub artifact_stores: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ArtifactStore>,
-    >,
+    pub artifact_stores: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ArtifactStore>>,
     /// <p>The stage in which to perform the action.</p>
     #[doc(hidden)]
     pub stages: std::option::Option<std::vec::Vec<crate::model::StageDeclaration>>,
@@ -31,31 +29,27 @@ pub struct PipelineDeclaration {
 }
 impl PipelineDeclaration {
     /// <p>The name of the pipeline.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
-    /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note>
-    /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
+    /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note> 
+    /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p> 
     /// </note>
-    pub fn artifact_store(&self) -> std::option::Option<&crate::model::ArtifactStore> {
+    pub fn artifact_store(&self) -> std::option::Option<& crate::model::ArtifactStore> {
         self.artifact_store.as_ref()
     }
-    /// <p>A mapping of <code>artifactStore</code> objects and their corresponding AWS Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p> <note>
-    /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
+    /// <p>A mapping of <code>artifactStore</code> objects and their corresponding AWS Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p> <note> 
+    /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p> 
     /// </note>
-    pub fn artifact_stores(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ArtifactStore>,
-    > {
+    pub fn artifact_stores(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ArtifactStore>> {
         self.artifact_stores.as_ref()
     }
     /// <p>The stage in which to perform the action.</p>
-    pub fn stages(&self) -> std::option::Option<&[crate::model::StageDeclaration]> {
+    pub fn stages(&self) -> std::option::Option<& [crate::model::StageDeclaration]> {
         self.stages.as_deref()
     }
     /// <p>The version number of the pipeline. A new pipeline always has a version number of 1. This number is incremented when a pipeline is updated.</p>
@@ -65,16 +59,14 @@ impl PipelineDeclaration {
 }
 /// See [`PipelineDeclaration`](crate::model::PipelineDeclaration).
 pub mod pipeline_declaration {
-
+    
     /// A builder for [`PipelineDeclaration`](crate::model::PipelineDeclaration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) artifact_store: std::option::Option<crate::model::ArtifactStore>,
-        pub(crate) artifact_stores: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ArtifactStore>,
-        >,
+        pub(crate) artifact_stores: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ArtifactStore>>,
         pub(crate) stages: std::option::Option<std::vec::Vec<crate::model::StageDeclaration>>,
         pub(crate) version: std::option::Option<i32>,
     }
@@ -86,8 +78,7 @@ pub mod pipeline_declaration {
         }
         /// <p>The name of the pipeline.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,54 +87,39 @@ pub mod pipeline_declaration {
         }
         /// <p>The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform actions with no <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
-        /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note>
-        /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
+        /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note> 
+        /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p> 
         /// </note>
         pub fn artifact_store(mut self, input: crate::model::ArtifactStore) -> Self {
             self.artifact_store = Some(input);
             self
         }
-        /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note>
-        /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
+        /// <p>Represents information about the S3 bucket where artifacts are stored for the pipeline.</p> <note> 
+        /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p> 
         /// </note>
-        pub fn set_artifact_store(
-            mut self,
-            input: std::option::Option<crate::model::ArtifactStore>,
-        ) -> Self {
-            self.artifact_store = input;
-            self
+        pub fn set_artifact_store(mut self, input: std::option::Option<crate::model::ArtifactStore>) -> Self {
+            self.artifact_store = input; self
         }
         /// Adds a key-value pair to `artifact_stores`.
         ///
         /// To override the contents of this collection use [`set_artifact_stores`](Self::set_artifact_stores).
         ///
-        /// <p>A mapping of <code>artifactStore</code> objects and their corresponding AWS Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p> <note>
-        /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
+        /// <p>A mapping of <code>artifactStore</code> objects and their corresponding AWS Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p> <note> 
+        /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p> 
         /// </note>
-        pub fn artifact_stores(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ArtifactStore,
-        ) -> Self {
+        pub fn artifact_stores(mut self, k: impl Into<std::string::String>, v: crate::model::ArtifactStore) -> Self {
             let mut hash_map = self.artifact_stores.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.artifact_stores = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.artifact_stores = Some(hash_map);
+                            self
         }
-        /// <p>A mapping of <code>artifactStore</code> objects and their corresponding AWS Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p> <note>
-        /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
+        /// <p>A mapping of <code>artifactStore</code> objects and their corresponding AWS Regions. There must be an artifact store for the pipeline Region and for each cross-region action in the pipeline.</p> <note> 
+        /// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p> 
         /// </note>
-        pub fn set_artifact_stores(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::ArtifactStore>,
-            >,
-        ) -> Self {
-            self.artifact_stores = input;
-            self
+        pub fn set_artifact_stores(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ArtifactStore>>) -> Self {
+            self.artifact_stores = input; self
         }
         /// Appends an item to `stages`.
         ///
@@ -152,17 +128,13 @@ pub mod pipeline_declaration {
         /// <p>The stage in which to perform the action.</p>
         pub fn stages(mut self, input: crate::model::StageDeclaration) -> Self {
             let mut v = self.stages.unwrap_or_default();
-            v.push(input);
-            self.stages = Some(v);
-            self
+                            v.push(input);
+                            self.stages = Some(v);
+                            self
         }
         /// <p>The stage in which to perform the action.</p>
-        pub fn set_stages(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::StageDeclaration>>,
-        ) -> Self {
-            self.stages = input;
-            self
+        pub fn set_stages(mut self, input: std::option::Option<std::vec::Vec<crate::model::StageDeclaration>>) -> Self {
+            self.stages = input; self
         }
         /// <p>The version number of the pipeline. A new pipeline always has a version number of 1. This number is incremented when a pipeline is updated.</p>
         pub fn version(mut self, input: i32) -> Self {
@@ -171,21 +143,28 @@ pub mod pipeline_declaration {
         }
         /// <p>The version number of the pipeline. A new pipeline always has a version number of 1. This number is incremented when a pipeline is updated.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`PipelineDeclaration`](crate::model::PipelineDeclaration).
         pub fn build(self) -> crate::model::PipelineDeclaration {
             crate::model::PipelineDeclaration {
-                name: self.name,
-                role_arn: self.role_arn,
-                artifact_store: self.artifact_store,
-                artifact_stores: self.artifact_stores,
-                stages: self.stages,
-                version: self.version,
+                name: self.name
+                ,
+                role_arn: self.role_arn
+                ,
+                artifact_store: self.artifact_store
+                ,
+                artifact_stores: self.artifact_stores
+                ,
+                stages: self.stages
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl PipelineDeclaration {
     /// Creates a new builder-style object to manufacture [`PipelineDeclaration`](crate::model::PipelineDeclaration).
@@ -197,7 +176,7 @@ impl PipelineDeclaration {
 /// <p>Represents information about a stage and its definition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StageDeclaration {
+pub struct StageDeclaration  {
     /// <p>The name of the stage.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -210,21 +189,21 @@ pub struct StageDeclaration {
 }
 impl StageDeclaration {
     /// <p>The name of the stage.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn blockers(&self) -> std::option::Option<&[crate::model::BlockerDeclaration]> {
+    pub fn blockers(&self) -> std::option::Option<& [crate::model::BlockerDeclaration]> {
         self.blockers.as_deref()
     }
     /// <p>The actions included in a stage.</p>
-    pub fn actions(&self) -> std::option::Option<&[crate::model::ActionDeclaration]> {
+    pub fn actions(&self) -> std::option::Option<& [crate::model::ActionDeclaration]> {
         self.actions.as_deref()
     }
 }
 /// See [`StageDeclaration`](crate::model::StageDeclaration).
 pub mod stage_declaration {
-
+    
     /// A builder for [`StageDeclaration`](crate::model::StageDeclaration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -240,8 +219,7 @@ pub mod stage_declaration {
         }
         /// <p>The name of the stage.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `blockers`.
         ///
@@ -250,17 +228,13 @@ pub mod stage_declaration {
         /// <p>Reserved for future use.</p>
         pub fn blockers(mut self, input: crate::model::BlockerDeclaration) -> Self {
             let mut v = self.blockers.unwrap_or_default();
-            v.push(input);
-            self.blockers = Some(v);
-            self
+                            v.push(input);
+                            self.blockers = Some(v);
+                            self
         }
         /// <p>Reserved for future use.</p>
-        pub fn set_blockers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::BlockerDeclaration>>,
-        ) -> Self {
-            self.blockers = input;
-            self
+        pub fn set_blockers(mut self, input: std::option::Option<std::vec::Vec<crate::model::BlockerDeclaration>>) -> Self {
+            self.blockers = input; self
         }
         /// Appends an item to `actions`.
         ///
@@ -269,27 +243,28 @@ pub mod stage_declaration {
         /// <p>The actions included in a stage.</p>
         pub fn actions(mut self, input: crate::model::ActionDeclaration) -> Self {
             let mut v = self.actions.unwrap_or_default();
-            v.push(input);
-            self.actions = Some(v);
-            self
+                            v.push(input);
+                            self.actions = Some(v);
+                            self
         }
         /// <p>The actions included in a stage.</p>
-        pub fn set_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ActionDeclaration>>,
-        ) -> Self {
-            self.actions = input;
-            self
+        pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ActionDeclaration>>) -> Self {
+            self.actions = input; self
         }
         /// Consumes the builder and constructs a [`StageDeclaration`](crate::model::StageDeclaration).
         pub fn build(self) -> crate::model::StageDeclaration {
             crate::model::StageDeclaration {
-                name: self.name,
-                blockers: self.blockers,
-                actions: self.actions,
+                name: self.name
+                ,
+                blockers: self.blockers
+                ,
+                actions: self.actions
+                ,
             }
         }
     }
+    
+    
 }
 impl StageDeclaration {
     /// Creates a new builder-style object to manufacture [`StageDeclaration`](crate::model::StageDeclaration).
@@ -301,7 +276,7 @@ impl StageDeclaration {
 /// <p>Represents information about an action declaration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionDeclaration {
+pub struct ActionDeclaration  {
     /// <p>The action declaration's name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -311,13 +286,12 @@ pub struct ActionDeclaration {
     /// <p>The order in which actions are run.</p>
     #[doc(hidden)]
     pub run_order: std::option::Option<i32>,
-    /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p>
-    /// <p> <i>JSON:</i> </p>
+    /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.</p> 
+    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p> 
+    /// <p> <i>JSON:</i> </p> 
     /// <p> <code>"Configuration" : { Key : Value },</code> </p>
     #[doc(hidden)]
-    pub configuration:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub configuration: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The name or ID of the result of the action declaration, such as a test or build artifact.</p>
     #[doc(hidden)]
     pub output_artifacts: std::option::Option<std::vec::Vec<crate::model::OutputArtifact>>,
@@ -336,62 +310,56 @@ pub struct ActionDeclaration {
 }
 impl ActionDeclaration {
     /// <p>The action declaration's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specifies the action type and the provider of the action.</p>
-    pub fn action_type_id(&self) -> std::option::Option<&crate::model::ActionTypeId> {
+    pub fn action_type_id(&self) -> std::option::Option<& crate::model::ActionTypeId> {
         self.action_type_id.as_ref()
     }
     /// <p>The order in which actions are run.</p>
     pub fn run_order(&self) -> std::option::Option<i32> {
         self.run_order
     }
-    /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p>
-    /// <p> <i>JSON:</i> </p>
+    /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.</p> 
+    /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p> 
+    /// <p> <i>JSON:</i> </p> 
     /// <p> <code>"Configuration" : { Key : Value },</code> </p>
-    pub fn configuration(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn configuration(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.configuration.as_ref()
     }
     /// <p>The name or ID of the result of the action declaration, such as a test or build artifact.</p>
-    pub fn output_artifacts(&self) -> std::option::Option<&[crate::model::OutputArtifact]> {
+    pub fn output_artifacts(&self) -> std::option::Option<& [crate::model::OutputArtifact]> {
         self.output_artifacts.as_deref()
     }
     /// <p>The name or ID of the artifact consumed by the action, such as a test or build artifact.</p>
-    pub fn input_artifacts(&self) -> std::option::Option<&[crate::model::InputArtifact]> {
+    pub fn input_artifacts(&self) -> std::option::Option<& [crate::model::InputArtifact]> {
         self.input_artifacts.as_deref()
     }
     /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The action declaration's AWS Region, such as us-east-1.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>The variable namespace associated with the action. All variables produced as output by this action fall under this namespace.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
 }
 /// See [`ActionDeclaration`](crate::model::ActionDeclaration).
 pub mod action_declaration {
-
+    
     /// A builder for [`ActionDeclaration`](crate::model::ActionDeclaration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) action_type_id: std::option::Option<crate::model::ActionTypeId>,
         pub(crate) run_order: std::option::Option<i32>,
-        pub(crate) configuration: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) output_artifacts:
-            std::option::Option<std::vec::Vec<crate::model::OutputArtifact>>,
+        pub(crate) configuration: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) output_artifacts: std::option::Option<std::vec::Vec<crate::model::OutputArtifact>>,
         pub(crate) input_artifacts: std::option::Option<std::vec::Vec<crate::model::InputArtifact>>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) region: std::option::Option<std::string::String>,
@@ -405,8 +373,7 @@ pub mod action_declaration {
         }
         /// <p>The action declaration's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Specifies the action type and the provider of the action.</p>
         pub fn action_type_id(mut self, input: crate::model::ActionTypeId) -> Self {
@@ -414,12 +381,8 @@ pub mod action_declaration {
             self
         }
         /// <p>Specifies the action type and the provider of the action.</p>
-        pub fn set_action_type_id(
-            mut self,
-            input: std::option::Option<crate::model::ActionTypeId>,
-        ) -> Self {
-            self.action_type_id = input;
-            self
+        pub fn set_action_type_id(mut self, input: std::option::Option<crate::model::ActionTypeId>) -> Self {
+            self.action_type_id = input; self
         }
         /// <p>The order in which actions are run.</p>
         pub fn run_order(mut self, input: i32) -> Self {
@@ -428,39 +391,28 @@ pub mod action_declaration {
         }
         /// <p>The order in which actions are run.</p>
         pub fn set_run_order(mut self, input: std::option::Option<i32>) -> Self {
-            self.run_order = input;
-            self
+            self.run_order = input; self
         }
         /// Adds a key-value pair to `configuration`.
         ///
         /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
         ///
-        /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-        /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p>
-        /// <p> <i>JSON:</i> </p>
+        /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.</p> 
+        /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p> 
+        /// <p> <i>JSON:</i> </p> 
         /// <p> <code>"Configuration" : { Key : Value },</code> </p>
-        pub fn configuration(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn configuration(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.configuration.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.configuration = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.configuration = Some(hash_map);
+                            self
         }
-        /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.</p>
-        /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p>
-        /// <p> <i>JSON:</i> </p>
+        /// <p>The action's configuration. These are key-value pairs that specify input values for an action. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action Structure Requirements in CodePipeline</a>. For the list of configuration properties for the AWS CloudFormation action type in CodePipeline, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration Properties Reference</a> in the <i>AWS CloudFormation User Guide</i>. For template snippets with examples, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using Parameter Override Functions with CodePipeline Pipelines</a> in the <i>AWS CloudFormation User Guide</i>.</p> 
+        /// <p>The values can be represented in either JSON or YAML format. For example, the JSON configuration item format is as follows: </p> 
+        /// <p> <i>JSON:</i> </p> 
         /// <p> <code>"Configuration" : { Key : Value },</code> </p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.configuration = input; self
         }
         /// Appends an item to `output_artifacts`.
         ///
@@ -469,17 +421,13 @@ pub mod action_declaration {
         /// <p>The name or ID of the result of the action declaration, such as a test or build artifact.</p>
         pub fn output_artifacts(mut self, input: crate::model::OutputArtifact) -> Self {
             let mut v = self.output_artifacts.unwrap_or_default();
-            v.push(input);
-            self.output_artifacts = Some(v);
-            self
+                            v.push(input);
+                            self.output_artifacts = Some(v);
+                            self
         }
         /// <p>The name or ID of the result of the action declaration, such as a test or build artifact.</p>
-        pub fn set_output_artifacts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OutputArtifact>>,
-        ) -> Self {
-            self.output_artifacts = input;
-            self
+        pub fn set_output_artifacts(mut self, input: std::option::Option<std::vec::Vec<crate::model::OutputArtifact>>) -> Self {
+            self.output_artifacts = input; self
         }
         /// Appends an item to `input_artifacts`.
         ///
@@ -488,17 +436,13 @@ pub mod action_declaration {
         /// <p>The name or ID of the artifact consumed by the action, such as a test or build artifact.</p>
         pub fn input_artifacts(mut self, input: crate::model::InputArtifact) -> Self {
             let mut v = self.input_artifacts.unwrap_or_default();
-            v.push(input);
-            self.input_artifacts = Some(v);
-            self
+                            v.push(input);
+                            self.input_artifacts = Some(v);
+                            self
         }
         /// <p>The name or ID of the artifact consumed by the action, such as a test or build artifact.</p>
-        pub fn set_input_artifacts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::InputArtifact>>,
-        ) -> Self {
-            self.input_artifacts = input;
-            self
+        pub fn set_input_artifacts(mut self, input: std::option::Option<std::vec::Vec<crate::model::InputArtifact>>) -> Self {
+            self.input_artifacts = input; self
         }
         /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -507,8 +451,7 @@ pub mod action_declaration {
         }
         /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The action declaration's AWS Region, such as us-east-1.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -517,8 +460,7 @@ pub mod action_declaration {
         }
         /// <p>The action declaration's AWS Region, such as us-east-1.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>The variable namespace associated with the action. All variables produced as output by this action fall under this namespace.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -527,24 +469,34 @@ pub mod action_declaration {
         }
         /// <p>The variable namespace associated with the action. All variables produced as output by this action fall under this namespace.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// Consumes the builder and constructs a [`ActionDeclaration`](crate::model::ActionDeclaration).
         pub fn build(self) -> crate::model::ActionDeclaration {
             crate::model::ActionDeclaration {
-                name: self.name,
-                action_type_id: self.action_type_id,
-                run_order: self.run_order,
-                configuration: self.configuration,
-                output_artifacts: self.output_artifacts,
-                input_artifacts: self.input_artifacts,
-                role_arn: self.role_arn,
-                region: self.region,
-                namespace: self.namespace,
+                name: self.name
+                ,
+                action_type_id: self.action_type_id
+                ,
+                run_order: self.run_order
+                ,
+                configuration: self.configuration
+                ,
+                output_artifacts: self.output_artifacts
+                ,
+                input_artifacts: self.input_artifacts
+                ,
+                role_arn: self.role_arn
+                ,
+                region: self.region
+                ,
+                namespace: self.namespace
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionDeclaration {
     /// Creates a new builder-style object to manufacture [`ActionDeclaration`](crate::model::ActionDeclaration).
@@ -556,45 +508,49 @@ impl ActionDeclaration {
 /// <p>Represents information about an artifact to be worked on, such as a test or build artifact.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputArtifact {
-    /// <p>The name of the artifact to be worked on (for example, "My App").</p>
+pub struct InputArtifact  {
+    /// <p>The name of the artifact to be worked on (for example, "My App").</p> 
     /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl InputArtifact {
-    /// <p>The name of the artifact to be worked on (for example, "My App").</p>
+    /// <p>The name of the artifact to be worked on (for example, "My App").</p> 
     /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`InputArtifact`](crate::model::InputArtifact).
 pub mod input_artifact {
-
+    
     /// A builder for [`InputArtifact`](crate::model::InputArtifact).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the artifact to be worked on (for example, "My App").</p>
+        /// <p>The name of the artifact to be worked on (for example, "My App").</p> 
         /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the artifact to be worked on (for example, "My App").</p>
+        /// <p>The name of the artifact to be worked on (for example, "My App").</p> 
         /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`InputArtifact`](crate::model::InputArtifact).
         pub fn build(self) -> crate::model::InputArtifact {
-            crate::model::InputArtifact { name: self.name }
+            crate::model::InputArtifact {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl InputArtifact {
     /// Creates a new builder-style object to manufacture [`InputArtifact`](crate::model::InputArtifact).
@@ -606,49 +562,53 @@ impl InputArtifact {
 /// <p>Represents information about the output of an action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputArtifact {
-    /// <p>The name of the output of an artifact, such as "My App".</p>
-    /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>
+pub struct OutputArtifact  {
+    /// <p>The name of the output of an artifact, such as "My App".</p> 
+    /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p> 
     /// <p>Output artifact names must be unique within a pipeline.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl OutputArtifact {
-    /// <p>The name of the output of an artifact, such as "My App".</p>
-    /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>
+    /// <p>The name of the output of an artifact, such as "My App".</p> 
+    /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p> 
     /// <p>Output artifact names must be unique within a pipeline.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`OutputArtifact`](crate::model::OutputArtifact).
 pub mod output_artifact {
-
+    
     /// A builder for [`OutputArtifact`](crate::model::OutputArtifact).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the output of an artifact, such as "My App".</p>
-        /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>
+        /// <p>The name of the output of an artifact, such as "My App".</p> 
+        /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p> 
         /// <p>Output artifact names must be unique within a pipeline.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The name of the output of an artifact, such as "My App".</p>
-        /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p>
+        /// <p>The name of the output of an artifact, such as "My App".</p> 
+        /// <p>The input artifact of an action must exactly match the output artifact declared in a preceding action, but the input artifact does not have to be the next action in strict sequence from the action that provided the output artifact. Actions in parallel can declare different output artifacts, which are in turn consumed by different following actions.</p> 
         /// <p>Output artifact names must be unique within a pipeline.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`OutputArtifact`](crate::model::OutputArtifact).
         pub fn build(self) -> crate::model::OutputArtifact {
-            crate::model::OutputArtifact { name: self.name }
+            crate::model::OutputArtifact {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl OutputArtifact {
     /// Creates a new builder-style object to manufacture [`OutputArtifact`](crate::model::OutputArtifact).
@@ -660,15 +620,15 @@ impl OutputArtifact {
 /// <p>Represents information about an action type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionTypeId {
-    /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values. </p>
-    /// <ul>
-    /// <li> <p>Source</p> </li>
-    /// <li> <p>Build</p> </li>
-    /// <li> <p>Test</p> </li>
-    /// <li> <p>Deploy</p> </li>
-    /// <li> <p>Invoke</p> </li>
-    /// <li> <p>Approval</p> </li>
+pub struct ActionTypeId  {
+    /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values. </p> 
+    /// <ul> 
+    /// <li> <p>Source</p> </li> 
+    /// <li> <p>Build</p> </li> 
+    /// <li> <p>Test</p> </li> 
+    /// <li> <p>Deploy</p> </li> 
+    /// <li> <p>Invoke</p> </li> 
+    /// <li> <p>Approval</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub category: std::option::Option<crate::model::ActionCategory>,
@@ -683,34 +643,34 @@ pub struct ActionTypeId {
     pub version: std::option::Option<std::string::String>,
 }
 impl ActionTypeId {
-    /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values. </p>
-    /// <ul>
-    /// <li> <p>Source</p> </li>
-    /// <li> <p>Build</p> </li>
-    /// <li> <p>Test</p> </li>
-    /// <li> <p>Deploy</p> </li>
-    /// <li> <p>Invoke</p> </li>
-    /// <li> <p>Approval</p> </li>
+    /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values. </p> 
+    /// <ul> 
+    /// <li> <p>Source</p> </li> 
+    /// <li> <p>Build</p> </li> 
+    /// <li> <p>Test</p> </li> 
+    /// <li> <p>Deploy</p> </li> 
+    /// <li> <p>Invoke</p> </li> 
+    /// <li> <p>Approval</p> </li> 
     /// </ul>
-    pub fn category(&self) -> std::option::Option<&crate::model::ActionCategory> {
+    pub fn category(&self) -> std::option::Option<& crate::model::ActionCategory> {
         self.category.as_ref()
     }
     /// <p>The creator of the action being called. There are three valid values for the <code>Owner</code> field in the action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>, and <code>Custom</code>. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
-    pub fn owner(&self) -> std::option::Option<&crate::model::ActionOwner> {
+    pub fn owner(&self) -> std::option::Option<& crate::model::ActionOwner> {
         self.owner.as_ref()
     }
     /// <p>The provider of the service being called by the action. Valid providers are determined by the action category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be specified as CodeDeploy. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
-    pub fn provider(&self) -> std::option::Option<&str> {
+    pub fn provider(&self) -> std::option::Option<& str> {
         self.provider.as_deref()
     }
     /// <p>A string that describes the action version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`ActionTypeId`](crate::model::ActionTypeId).
 pub mod action_type_id {
-
+    
     /// A builder for [`ActionTypeId`](crate::model::ActionTypeId).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -720,34 +680,30 @@ pub mod action_type_id {
         pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values. </p>
-        /// <ul>
-        /// <li> <p>Source</p> </li>
-        /// <li> <p>Build</p> </li>
-        /// <li> <p>Test</p> </li>
-        /// <li> <p>Deploy</p> </li>
-        /// <li> <p>Invoke</p> </li>
-        /// <li> <p>Approval</p> </li>
+        /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values. </p> 
+        /// <ul> 
+        /// <li> <p>Source</p> </li> 
+        /// <li> <p>Build</p> </li> 
+        /// <li> <p>Test</p> </li> 
+        /// <li> <p>Deploy</p> </li> 
+        /// <li> <p>Invoke</p> </li> 
+        /// <li> <p>Approval</p> </li> 
         /// </ul>
         pub fn category(mut self, input: crate::model::ActionCategory) -> Self {
             self.category = Some(input);
             self
         }
-        /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values. </p>
-        /// <ul>
-        /// <li> <p>Source</p> </li>
-        /// <li> <p>Build</p> </li>
-        /// <li> <p>Test</p> </li>
-        /// <li> <p>Deploy</p> </li>
-        /// <li> <p>Invoke</p> </li>
-        /// <li> <p>Approval</p> </li>
+        /// <p>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the following values. </p> 
+        /// <ul> 
+        /// <li> <p>Source</p> </li> 
+        /// <li> <p>Build</p> </li> 
+        /// <li> <p>Test</p> </li> 
+        /// <li> <p>Deploy</p> </li> 
+        /// <li> <p>Invoke</p> </li> 
+        /// <li> <p>Approval</p> </li> 
         /// </ul>
-        pub fn set_category(
-            mut self,
-            input: std::option::Option<crate::model::ActionCategory>,
-        ) -> Self {
-            self.category = input;
-            self
+        pub fn set_category(mut self, input: std::option::Option<crate::model::ActionCategory>) -> Self {
+            self.category = input; self
         }
         /// <p>The creator of the action being called. There are three valid values for the <code>Owner</code> field in the action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>, and <code>Custom</code>. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
         pub fn owner(mut self, input: crate::model::ActionOwner) -> Self {
@@ -756,8 +712,7 @@ pub mod action_type_id {
         }
         /// <p>The creator of the action being called. There are three valid values for the <code>Owner</code> field in the action category section within your pipeline structure: <code>AWS</code>, <code>ThirdParty</code>, and <code>Custom</code>. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::ActionOwner>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// <p>The provider of the service being called by the action. Valid providers are determined by the action category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be specified as CodeDeploy. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
         pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
@@ -766,8 +721,7 @@ pub mod action_type_id {
         }
         /// <p>The provider of the service being called by the action. Valid providers are determined by the action category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be specified as CodeDeploy. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid Action Types and Providers in CodePipeline</a>.</p>
         pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.provider = input;
-            self
+            self.provider = input; self
         }
         /// <p>A string that describes the action version.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -776,19 +730,24 @@ pub mod action_type_id {
         }
         /// <p>A string that describes the action version.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`ActionTypeId`](crate::model::ActionTypeId).
         pub fn build(self) -> crate::model::ActionTypeId {
             crate::model::ActionTypeId {
-                category: self.category,
-                owner: self.owner,
-                provider: self.provider,
-                version: self.version,
+                category: self.category
+                ,
+                owner: self.owner
+                ,
+                provider: self.provider
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionTypeId {
     /// Creates a new builder-style object to manufacture [`ActionTypeId`](crate::model::ActionTypeId).
@@ -803,9 +762,9 @@ impl ActionTypeId {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let actionowner = unimplemented!();
 /// match actionowner {
@@ -828,22 +787,14 @@ impl ActionTypeId {
 /// Specifically, when `actionowner` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ActionOwner::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ActionOwner {
     #[allow(missing_docs)] // documentation missing in model
     Aws,
@@ -852,7 +803,7 @@ pub enum ActionOwner {
     #[allow(missing_docs)] // documentation missing in model
     ThirdParty,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ActionOwner {
     fn from(s: &str) -> Self {
@@ -860,17 +811,17 @@ impl std::convert::From<&str> for ActionOwner {
             "AWS" => ActionOwner::Aws,
             "Custom" => ActionOwner::Custom,
             "ThirdParty" => ActionOwner::ThirdParty,
-            other => ActionOwner::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ActionOwner::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ActionOwner {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ActionOwner::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ActionOwner::from(s))
+                }
+            }
 impl ActionOwner {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -878,12 +829,14 @@ impl ActionOwner {
             ActionOwner::Aws => "AWS",
             ActionOwner::Custom => "Custom",
             ActionOwner::ThirdParty => "ThirdParty",
-            ActionOwner::Unknown(value) => value.as_str(),
+            ActionOwner::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS", "Custom", "ThirdParty"]
+        &[
+            "AWS", "Custom", "ThirdParty"
+        ]
     }
 }
 impl AsRef<str> for ActionOwner {
@@ -898,9 +851,9 @@ impl AsRef<str> for ActionOwner {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let actioncategory = unimplemented!();
 /// match actioncategory {
@@ -926,22 +879,14 @@ impl AsRef<str> for ActionOwner {
 /// Specifically, when `actioncategory` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ActionCategory::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ActionCategory {
     #[allow(missing_docs)] // documentation missing in model
     Approval,
@@ -956,7 +901,7 @@ pub enum ActionCategory {
     #[allow(missing_docs)] // documentation missing in model
     Test,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ActionCategory {
     fn from(s: &str) -> Self {
@@ -967,17 +912,17 @@ impl std::convert::From<&str> for ActionCategory {
             "Invoke" => ActionCategory::Invoke,
             "Source" => ActionCategory::Source,
             "Test" => ActionCategory::Test,
-            other => ActionCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ActionCategory::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ActionCategory {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ActionCategory::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ActionCategory::from(s))
+                }
+            }
 impl ActionCategory {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -988,12 +933,14 @@ impl ActionCategory {
             ActionCategory::Invoke => "Invoke",
             ActionCategory::Source => "Source",
             ActionCategory::Test => "Test",
-            ActionCategory::Unknown(value) => value.as_str(),
+            ActionCategory::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Approval", "Build", "Deploy", "Invoke", "Source", "Test"]
+        &[
+            "Approval", "Build", "Deploy", "Invoke", "Source", "Test"
+        ]
     }
 }
 impl AsRef<str> for ActionCategory {
@@ -1005,7 +952,7 @@ impl AsRef<str> for ActionCategory {
 /// <p>Reserved for future use.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BlockerDeclaration {
+pub struct BlockerDeclaration  {
     /// <p>Reserved for future use.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1015,17 +962,17 @@ pub struct BlockerDeclaration {
 }
 impl BlockerDeclaration {
     /// <p>Reserved for future use.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::BlockerType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::BlockerType> {
         self.r#type.as_ref()
     }
 }
 /// See [`BlockerDeclaration`](crate::model::BlockerDeclaration).
 pub mod blocker_declaration {
-
+    
     /// A builder for [`BlockerDeclaration`](crate::model::BlockerDeclaration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1040,8 +987,7 @@ pub mod blocker_declaration {
         }
         /// <p>Reserved for future use.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Reserved for future use.</p>
         pub fn r#type(mut self, input: crate::model::BlockerType) -> Self {
@@ -1050,17 +996,20 @@ pub mod blocker_declaration {
         }
         /// <p>Reserved for future use.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::BlockerType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`BlockerDeclaration`](crate::model::BlockerDeclaration).
         pub fn build(self) -> crate::model::BlockerDeclaration {
             crate::model::BlockerDeclaration {
-                name: self.name,
-                r#type: self.r#type,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl BlockerDeclaration {
     /// Creates a new builder-style object to manufacture [`BlockerDeclaration`](crate::model::BlockerDeclaration).
@@ -1075,9 +1024,9 @@ impl BlockerDeclaration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let blockertype = unimplemented!();
 /// match blockertype {
@@ -1098,54 +1047,48 @@ impl BlockerDeclaration {
 /// Specifically, when `blockertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BlockerType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BlockerType {
     #[allow(missing_docs)] // documentation missing in model
     Schedule,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BlockerType {
     fn from(s: &str) -> Self {
         match s {
             "Schedule" => BlockerType::Schedule,
-            other => BlockerType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => BlockerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BlockerType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BlockerType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BlockerType::from(s))
+                }
+            }
 impl BlockerType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BlockerType::Schedule => "Schedule",
-            BlockerType::Unknown(value) => value.as_str(),
+            BlockerType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Schedule"]
+        &[
+            "Schedule"
+        ]
     }
 }
 impl AsRef<str> for BlockerType {
@@ -1154,12 +1097,12 @@ impl AsRef<str> for BlockerType {
     }
 }
 
-/// <p>The S3 bucket where artifacts for the pipeline are stored.</p> <note>
-/// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p>
+/// <p>The S3 bucket where artifacts for the pipeline are stored.</p> <note> 
+/// <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ArtifactStore {
+pub struct ArtifactStore  {
     /// <p>The type of the artifact store, such as S3.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ArtifactStoreType>,
@@ -1172,21 +1115,21 @@ pub struct ArtifactStore {
 }
 impl ArtifactStore {
     /// <p>The type of the artifact store, such as S3.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ArtifactStoreType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ArtifactStoreType> {
         self.r#type.as_ref()
     }
     /// <p>The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but not a folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the name of the pipeline. You can use any S3 bucket in the same AWS Region as the pipeline to store your pipeline artifacts.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> std::option::Option<& str> {
         self.location.as_deref()
     }
     /// <p>The encryption key used to encrypt the data in the artifact store, such as an AWS Key Management Service (AWS KMS) key. If this is undefined, the default key for Amazon S3 is used.</p>
-    pub fn encryption_key(&self) -> std::option::Option<&crate::model::EncryptionKey> {
+    pub fn encryption_key(&self) -> std::option::Option<& crate::model::EncryptionKey> {
         self.encryption_key.as_ref()
     }
 }
 /// See [`ArtifactStore`](crate::model::ArtifactStore).
 pub mod artifact_store {
-
+    
     /// A builder for [`ArtifactStore`](crate::model::ArtifactStore).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1201,12 +1144,8 @@ pub mod artifact_store {
             self
         }
         /// <p>The type of the artifact store, such as S3.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::ArtifactStoreType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ArtifactStoreType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but not a folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the name of the pipeline. You can use any S3 bucket in the same AWS Region as the pipeline to store your pipeline artifacts.</p>
         pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1215,8 +1154,7 @@ pub mod artifact_store {
         }
         /// <p>The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but not a folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the name of the pipeline. You can use any S3 bucket in the same AWS Region as the pipeline to store your pipeline artifacts.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.location = input;
-            self
+            self.location = input; self
         }
         /// <p>The encryption key used to encrypt the data in the artifact store, such as an AWS Key Management Service (AWS KMS) key. If this is undefined, the default key for Amazon S3 is used.</p>
         pub fn encryption_key(mut self, input: crate::model::EncryptionKey) -> Self {
@@ -1224,22 +1162,23 @@ pub mod artifact_store {
             self
         }
         /// <p>The encryption key used to encrypt the data in the artifact store, such as an AWS Key Management Service (AWS KMS) key. If this is undefined, the default key for Amazon S3 is used.</p>
-        pub fn set_encryption_key(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionKey>,
-        ) -> Self {
-            self.encryption_key = input;
-            self
+        pub fn set_encryption_key(mut self, input: std::option::Option<crate::model::EncryptionKey>) -> Self {
+            self.encryption_key = input; self
         }
         /// Consumes the builder and constructs a [`ArtifactStore`](crate::model::ArtifactStore).
         pub fn build(self) -> crate::model::ArtifactStore {
             crate::model::ArtifactStore {
-                r#type: self.r#type,
-                location: self.location,
-                encryption_key: self.encryption_key,
+                r#type: self.r#type
+                ,
+                location: self.location
+                ,
+                encryption_key: self.encryption_key
+                ,
             }
         }
     }
+    
+    
 }
 impl ArtifactStore {
     /// Creates a new builder-style object to manufacture [`ArtifactStore`](crate::model::ArtifactStore).
@@ -1251,9 +1190,9 @@ impl ArtifactStore {
 /// <p>Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS) key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EncryptionKey {
-    /// <p>The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias ARN.</p> <note>
-    /// <p>Aliases are recognized only in the account that created the customer master key (CMK). For cross-account actions, you can only use the key ID or key ARN to identify the key.</p>
+pub struct EncryptionKey  {
+    /// <p>The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias ARN.</p> <note> 
+    /// <p>Aliases are recognized only in the account that created the customer master key (CMK). For cross-account actions, you can only use the key ID or key ARN to identify the key.</p> 
     /// </note>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1262,20 +1201,20 @@ pub struct EncryptionKey {
     pub r#type: std::option::Option<crate::model::EncryptionKeyType>,
 }
 impl EncryptionKey {
-    /// <p>The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias ARN.</p> <note>
-    /// <p>Aliases are recognized only in the account that created the customer master key (CMK). For cross-account actions, you can only use the key ID or key ARN to identify the key.</p>
+    /// <p>The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias ARN.</p> <note> 
+    /// <p>Aliases are recognized only in the account that created the customer master key (CMK). For cross-account actions, you can only use the key ID or key ARN to identify the key.</p> 
     /// </note>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of encryption key, such as an AWS Key Management Service (AWS KMS) key. When creating or updating a pipeline, the value must be set to 'KMS'.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::EncryptionKeyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::EncryptionKeyType> {
         self.r#type.as_ref()
     }
 }
 /// See [`EncryptionKey`](crate::model::EncryptionKey).
 pub mod encryption_key {
-
+    
     /// A builder for [`EncryptionKey`](crate::model::EncryptionKey).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1283,19 +1222,18 @@ pub mod encryption_key {
         pub(crate) r#type: std::option::Option<crate::model::EncryptionKeyType>,
     }
     impl Builder {
-        /// <p>The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias ARN.</p> <note>
-        /// <p>Aliases are recognized only in the account that created the customer master key (CMK). For cross-account actions, you can only use the key ID or key ARN to identify the key.</p>
+        /// <p>The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias ARN.</p> <note> 
+        /// <p>Aliases are recognized only in the account that created the customer master key (CMK). For cross-account actions, you can only use the key ID or key ARN to identify the key.</p> 
         /// </note>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias ARN.</p> <note>
-        /// <p>Aliases are recognized only in the account that created the customer master key (CMK). For cross-account actions, you can only use the key ID or key ARN to identify the key.</p>
+        /// <p>The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias ARN.</p> <note> 
+        /// <p>Aliases are recognized only in the account that created the customer master key (CMK). For cross-account actions, you can only use the key ID or key ARN to identify the key.</p> 
         /// </note>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The type of encryption key, such as an AWS Key Management Service (AWS KMS) key. When creating or updating a pipeline, the value must be set to 'KMS'.</p>
         pub fn r#type(mut self, input: crate::model::EncryptionKeyType) -> Self {
@@ -1303,21 +1241,21 @@ pub mod encryption_key {
             self
         }
         /// <p>The type of encryption key, such as an AWS Key Management Service (AWS KMS) key. When creating or updating a pipeline, the value must be set to 'KMS'.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionKeyType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::EncryptionKeyType>) -> Self {
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`EncryptionKey`](crate::model::EncryptionKey).
         pub fn build(self) -> crate::model::EncryptionKey {
             crate::model::EncryptionKey {
-                id: self.id,
-                r#type: self.r#type,
+                id: self.id
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl EncryptionKey {
     /// Creates a new builder-style object to manufacture [`EncryptionKey`](crate::model::EncryptionKey).
@@ -1332,9 +1270,9 @@ impl EncryptionKey {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let encryptionkeytype = unimplemented!();
 /// match encryptionkeytype {
@@ -1355,56 +1293,48 @@ impl EncryptionKey {
 /// Specifically, when `encryptionkeytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EncryptionKeyType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EncryptionKeyType {
     #[allow(missing_docs)] // documentation missing in model
     Kms,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EncryptionKeyType {
     fn from(s: &str) -> Self {
         match s {
             "KMS" => EncryptionKeyType::Kms,
-            other => {
-                EncryptionKeyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => EncryptionKeyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EncryptionKeyType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EncryptionKeyType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EncryptionKeyType::from(s))
+                }
+            }
 impl EncryptionKeyType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncryptionKeyType::Kms => "KMS",
-            EncryptionKeyType::Unknown(value) => value.as_str(),
+            EncryptionKeyType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["KMS"]
+        &[
+            "KMS"
+        ]
     }
 }
 impl AsRef<str> for EncryptionKeyType {
@@ -1419,9 +1349,9 @@ impl AsRef<str> for EncryptionKeyType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let artifactstoretype = unimplemented!();
 /// match artifactstoretype {
@@ -1442,56 +1372,48 @@ impl AsRef<str> for EncryptionKeyType {
 /// Specifically, when `artifactstoretype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ArtifactStoreType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ArtifactStoreType {
     #[allow(missing_docs)] // documentation missing in model
     S3,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ArtifactStoreType {
     fn from(s: &str) -> Self {
         match s {
             "S3" => ArtifactStoreType::S3,
-            other => {
-                ArtifactStoreType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ArtifactStoreType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ArtifactStoreType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ArtifactStoreType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ArtifactStoreType::from(s))
+                }
+            }
 impl ArtifactStoreType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ArtifactStoreType::S3 => "S3",
-            ArtifactStoreType::Unknown(value) => value.as_str(),
+            ArtifactStoreType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["S3"]
+        &[
+            "S3"
+        ]
     }
 }
 impl AsRef<str> for ArtifactStoreType {
@@ -1503,7 +1425,7 @@ impl AsRef<str> for ArtifactStoreType {
 /// <p>The parameters for the action type definition that are provided when the action type is created or updated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionTypeDeclaration {
+pub struct ActionTypeDeclaration  {
     /// <p>The description for the action type to be updated.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -1531,55 +1453,49 @@ pub struct ActionTypeDeclaration {
 }
 impl ActionTypeDeclaration {
     /// <p>The description for the action type to be updated.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>Information about the executor for an action type that was created with any supported integration model.</p>
-    pub fn executor(&self) -> std::option::Option<&crate::model::ActionTypeExecutor> {
+    pub fn executor(&self) -> std::option::Option<& crate::model::ActionTypeExecutor> {
         self.executor.as_ref()
     }
     /// <p>The action category, owner, provider, and version of the action type to be updated.</p>
-    pub fn id(&self) -> std::option::Option<&crate::model::ActionTypeIdentifier> {
+    pub fn id(&self) -> std::option::Option<& crate::model::ActionTypeIdentifier> {
         self.id.as_ref()
     }
     /// <p>Details for the artifacts, such as application files, to be worked on by the action. For example, the minimum and maximum number of input artifacts allowed.</p>
-    pub fn input_artifact_details(
-        &self,
-    ) -> std::option::Option<&crate::model::ActionTypeArtifactDetails> {
+    pub fn input_artifact_details(&self) -> std::option::Option<& crate::model::ActionTypeArtifactDetails> {
         self.input_artifact_details.as_ref()
     }
     /// <p>Details for the output artifacts, such as a built application, that are the result of the action. For example, the minimum and maximum number of output artifacts allowed.</p>
-    pub fn output_artifact_details(
-        &self,
-    ) -> std::option::Option<&crate::model::ActionTypeArtifactDetails> {
+    pub fn output_artifact_details(&self) -> std::option::Option<& crate::model::ActionTypeArtifactDetails> {
         self.output_artifact_details.as_ref()
     }
     /// <p>Details identifying the accounts with permissions to use the action type.</p>
-    pub fn permissions(&self) -> std::option::Option<&crate::model::ActionTypePermissions> {
+    pub fn permissions(&self) -> std::option::Option<& crate::model::ActionTypePermissions> {
         self.permissions.as_ref()
     }
     /// <p>The properties of the action type to be updated.</p>
-    pub fn properties(&self) -> std::option::Option<&[crate::model::ActionTypeProperty]> {
+    pub fn properties(&self) -> std::option::Option<& [crate::model::ActionTypeProperty]> {
         self.properties.as_deref()
     }
     /// <p>The links associated with the action type to be updated.</p>
-    pub fn urls(&self) -> std::option::Option<&crate::model::ActionTypeUrls> {
+    pub fn urls(&self) -> std::option::Option<& crate::model::ActionTypeUrls> {
         self.urls.as_ref()
     }
 }
 /// See [`ActionTypeDeclaration`](crate::model::ActionTypeDeclaration).
 pub mod action_type_declaration {
-
+    
     /// A builder for [`ActionTypeDeclaration`](crate::model::ActionTypeDeclaration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) executor: std::option::Option<crate::model::ActionTypeExecutor>,
         pub(crate) id: std::option::Option<crate::model::ActionTypeIdentifier>,
-        pub(crate) input_artifact_details:
-            std::option::Option<crate::model::ActionTypeArtifactDetails>,
-        pub(crate) output_artifact_details:
-            std::option::Option<crate::model::ActionTypeArtifactDetails>,
+        pub(crate) input_artifact_details: std::option::Option<crate::model::ActionTypeArtifactDetails>,
+        pub(crate) output_artifact_details: std::option::Option<crate::model::ActionTypeArtifactDetails>,
         pub(crate) permissions: std::option::Option<crate::model::ActionTypePermissions>,
         pub(crate) properties: std::option::Option<std::vec::Vec<crate::model::ActionTypeProperty>>,
         pub(crate) urls: std::option::Option<crate::model::ActionTypeUrls>,
@@ -1592,8 +1508,7 @@ pub mod action_type_declaration {
         }
         /// <p>The description for the action type to be updated.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>Information about the executor for an action type that was created with any supported integration model.</p>
         pub fn executor(mut self, input: crate::model::ActionTypeExecutor) -> Self {
@@ -1601,12 +1516,8 @@ pub mod action_type_declaration {
             self
         }
         /// <p>Information about the executor for an action type that was created with any supported integration model.</p>
-        pub fn set_executor(
-            mut self,
-            input: std::option::Option<crate::model::ActionTypeExecutor>,
-        ) -> Self {
-            self.executor = input;
-            self
+        pub fn set_executor(mut self, input: std::option::Option<crate::model::ActionTypeExecutor>) -> Self {
+            self.executor = input; self
         }
         /// <p>The action category, owner, provider, and version of the action type to be updated.</p>
         pub fn id(mut self, input: crate::model::ActionTypeIdentifier) -> Self {
@@ -1614,44 +1525,26 @@ pub mod action_type_declaration {
             self
         }
         /// <p>The action category, owner, provider, and version of the action type to be updated.</p>
-        pub fn set_id(
-            mut self,
-            input: std::option::Option<crate::model::ActionTypeIdentifier>,
-        ) -> Self {
-            self.id = input;
-            self
+        pub fn set_id(mut self, input: std::option::Option<crate::model::ActionTypeIdentifier>) -> Self {
+            self.id = input; self
         }
         /// <p>Details for the artifacts, such as application files, to be worked on by the action. For example, the minimum and maximum number of input artifacts allowed.</p>
-        pub fn input_artifact_details(
-            mut self,
-            input: crate::model::ActionTypeArtifactDetails,
-        ) -> Self {
+        pub fn input_artifact_details(mut self, input: crate::model::ActionTypeArtifactDetails) -> Self {
             self.input_artifact_details = Some(input);
             self
         }
         /// <p>Details for the artifacts, such as application files, to be worked on by the action. For example, the minimum and maximum number of input artifacts allowed.</p>
-        pub fn set_input_artifact_details(
-            mut self,
-            input: std::option::Option<crate::model::ActionTypeArtifactDetails>,
-        ) -> Self {
-            self.input_artifact_details = input;
-            self
+        pub fn set_input_artifact_details(mut self, input: std::option::Option<crate::model::ActionTypeArtifactDetails>) -> Self {
+            self.input_artifact_details = input; self
         }
         /// <p>Details for the output artifacts, such as a built application, that are the result of the action. For example, the minimum and maximum number of output artifacts allowed.</p>
-        pub fn output_artifact_details(
-            mut self,
-            input: crate::model::ActionTypeArtifactDetails,
-        ) -> Self {
+        pub fn output_artifact_details(mut self, input: crate::model::ActionTypeArtifactDetails) -> Self {
             self.output_artifact_details = Some(input);
             self
         }
         /// <p>Details for the output artifacts, such as a built application, that are the result of the action. For example, the minimum and maximum number of output artifacts allowed.</p>
-        pub fn set_output_artifact_details(
-            mut self,
-            input: std::option::Option<crate::model::ActionTypeArtifactDetails>,
-        ) -> Self {
-            self.output_artifact_details = input;
-            self
+        pub fn set_output_artifact_details(mut self, input: std::option::Option<crate::model::ActionTypeArtifactDetails>) -> Self {
+            self.output_artifact_details = input; self
         }
         /// <p>Details identifying the accounts with permissions to use the action type.</p>
         pub fn permissions(mut self, input: crate::model::ActionTypePermissions) -> Self {
@@ -1659,12 +1552,8 @@ pub mod action_type_declaration {
             self
         }
         /// <p>Details identifying the accounts with permissions to use the action type.</p>
-        pub fn set_permissions(
-            mut self,
-            input: std::option::Option<crate::model::ActionTypePermissions>,
-        ) -> Self {
-            self.permissions = input;
-            self
+        pub fn set_permissions(mut self, input: std::option::Option<crate::model::ActionTypePermissions>) -> Self {
+            self.permissions = input; self
         }
         /// Appends an item to `properties`.
         ///
@@ -1673,17 +1562,13 @@ pub mod action_type_declaration {
         /// <p>The properties of the action type to be updated.</p>
         pub fn properties(mut self, input: crate::model::ActionTypeProperty) -> Self {
             let mut v = self.properties.unwrap_or_default();
-            v.push(input);
-            self.properties = Some(v);
-            self
+                            v.push(input);
+                            self.properties = Some(v);
+                            self
         }
         /// <p>The properties of the action type to be updated.</p>
-        pub fn set_properties(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ActionTypeProperty>>,
-        ) -> Self {
-            self.properties = input;
-            self
+        pub fn set_properties(mut self, input: std::option::Option<std::vec::Vec<crate::model::ActionTypeProperty>>) -> Self {
+            self.properties = input; self
         }
         /// <p>The links associated with the action type to be updated.</p>
         pub fn urls(mut self, input: crate::model::ActionTypeUrls) -> Self {
@@ -1691,27 +1576,33 @@ pub mod action_type_declaration {
             self
         }
         /// <p>The links associated with the action type to be updated.</p>
-        pub fn set_urls(
-            mut self,
-            input: std::option::Option<crate::model::ActionTypeUrls>,
-        ) -> Self {
-            self.urls = input;
-            self
+        pub fn set_urls(mut self, input: std::option::Option<crate::model::ActionTypeUrls>) -> Self {
+            self.urls = input; self
         }
         /// Consumes the builder and constructs a [`ActionTypeDeclaration`](crate::model::ActionTypeDeclaration).
         pub fn build(self) -> crate::model::ActionTypeDeclaration {
             crate::model::ActionTypeDeclaration {
-                description: self.description,
-                executor: self.executor,
-                id: self.id,
-                input_artifact_details: self.input_artifact_details,
-                output_artifact_details: self.output_artifact_details,
-                permissions: self.permissions,
-                properties: self.properties,
-                urls: self.urls,
+                description: self.description
+                ,
+                executor: self.executor
+                ,
+                id: self.id
+                ,
+                input_artifact_details: self.input_artifact_details
+                ,
+                output_artifact_details: self.output_artifact_details
+                ,
+                permissions: self.permissions
+                ,
+                properties: self.properties
+                ,
+                urls: self.urls
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionTypeDeclaration {
     /// Creates a new builder-style object to manufacture [`ActionTypeDeclaration`](crate::model::ActionTypeDeclaration).
@@ -1723,7 +1614,7 @@ impl ActionTypeDeclaration {
 /// <p>Returns information about URLs for web pages that display to customers as links on the pipeline view, such as an external configuration page for the action type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionTypeUrls {
+pub struct ActionTypeUrls  {
     /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can configure the external action.</p>
     #[doc(hidden)]
     pub configuration_url: std::option::Option<std::string::String>,
@@ -1739,25 +1630,25 @@ pub struct ActionTypeUrls {
 }
 impl ActionTypeUrls {
     /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can configure the external action.</p>
-    pub fn configuration_url(&self) -> std::option::Option<&str> {
+    pub fn configuration_url(&self) -> std::option::Option<& str> {
         self.configuration_url.as_deref()
     }
     /// <p>The URL returned to the CodePipeline console that provides a deep link to the resources of the external system, such as a status page. This link is provided as part of the action display in the pipeline.</p>
-    pub fn entity_url_template(&self) -> std::option::Option<&str> {
+    pub fn entity_url_template(&self) -> std::option::Option<& str> {
         self.entity_url_template.as_deref()
     }
     /// <p>The link to an execution page for the action type in progress. For example, for a CodeDeploy action, this link is shown on the pipeline view page in the CodePipeline console, and it links to a CodeDeploy status page.</p>
-    pub fn execution_url_template(&self) -> std::option::Option<&str> {
+    pub fn execution_url_template(&self) -> std::option::Option<& str> {
         self.execution_url_template.as_deref()
     }
     /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
-    pub fn revision_url_template(&self) -> std::option::Option<&str> {
+    pub fn revision_url_template(&self) -> std::option::Option<& str> {
         self.revision_url_template.as_deref()
     }
 }
 /// See [`ActionTypeUrls`](crate::model::ActionTypeUrls).
 pub mod action_type_urls {
-
+    
     /// A builder for [`ActionTypeUrls`](crate::model::ActionTypeUrls).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1773,12 +1664,8 @@ pub mod action_type_urls {
             self
         }
         /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can configure the external action.</p>
-        pub fn set_configuration_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.configuration_url = input;
-            self
+        pub fn set_configuration_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.configuration_url = input; self
         }
         /// <p>The URL returned to the CodePipeline console that provides a deep link to the resources of the external system, such as a status page. This link is provided as part of the action display in the pipeline.</p>
         pub fn entity_url_template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1786,12 +1673,8 @@ pub mod action_type_urls {
             self
         }
         /// <p>The URL returned to the CodePipeline console that provides a deep link to the resources of the external system, such as a status page. This link is provided as part of the action display in the pipeline.</p>
-        pub fn set_entity_url_template(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.entity_url_template = input;
-            self
+        pub fn set_entity_url_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entity_url_template = input; self
         }
         /// <p>The link to an execution page for the action type in progress. For example, for a CodeDeploy action, this link is shown on the pipeline view page in the CodePipeline console, and it links to a CodeDeploy status page.</p>
         pub fn execution_url_template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1799,12 +1682,8 @@ pub mod action_type_urls {
             self
         }
         /// <p>The link to an execution page for the action type in progress. For example, for a CodeDeploy action, this link is shown on the pipeline view page in the CodePipeline console, and it links to a CodeDeploy status page.</p>
-        pub fn set_execution_url_template(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_url_template = input;
-            self
+        pub fn set_execution_url_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_url_template = input; self
         }
         /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
         pub fn revision_url_template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1812,23 +1691,25 @@ pub mod action_type_urls {
             self
         }
         /// <p>The URL returned to the CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
-        pub fn set_revision_url_template(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.revision_url_template = input;
-            self
+        pub fn set_revision_url_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_url_template = input; self
         }
         /// Consumes the builder and constructs a [`ActionTypeUrls`](crate::model::ActionTypeUrls).
         pub fn build(self) -> crate::model::ActionTypeUrls {
             crate::model::ActionTypeUrls {
-                configuration_url: self.configuration_url,
-                entity_url_template: self.entity_url_template,
-                execution_url_template: self.execution_url_template,
-                revision_url_template: self.revision_url_template,
+                configuration_url: self.configuration_url
+                ,
+                entity_url_template: self.entity_url_template
+                ,
+                execution_url_template: self.execution_url_template
+                ,
+                revision_url_template: self.revision_url_template
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionTypeUrls {
     /// Creates a new builder-style object to manufacture [`ActionTypeUrls`](crate::model::ActionTypeUrls).
@@ -1840,7 +1721,7 @@ impl ActionTypeUrls {
 /// <p>Represents information about each property specified in the action configuration, such as the description and key name that display for the customer using the action type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionTypeProperty {
+pub struct ActionTypeProperty  {
     /// <p>The property name that is displayed to users.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1862,7 +1743,7 @@ pub struct ActionTypeProperty {
 }
 impl ActionTypeProperty {
     /// <p>The property name that is displayed to users.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Whether the configuration property is an optional value.</p>
@@ -1882,13 +1763,13 @@ impl ActionTypeProperty {
         self.queryable
     }
     /// <p>The description of the property that is displayed to users.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`ActionTypeProperty`](crate::model::ActionTypeProperty).
 pub mod action_type_property {
-
+    
     /// A builder for [`ActionTypeProperty`](crate::model::ActionTypeProperty).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1907,8 +1788,7 @@ pub mod action_type_property {
         }
         /// <p>The property name that is displayed to users.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Whether the configuration property is an optional value.</p>
         pub fn optional(mut self, input: bool) -> Self {
@@ -1917,8 +1797,7 @@ pub mod action_type_property {
         }
         /// <p>Whether the configuration property is an optional value.</p>
         pub fn set_optional(mut self, input: std::option::Option<bool>) -> Self {
-            self.optional = input;
-            self
+            self.optional = input; self
         }
         /// <p>Whether the configuration property is a key.</p>
         pub fn key(mut self, input: bool) -> Self {
@@ -1927,8 +1806,7 @@ pub mod action_type_property {
         }
         /// <p>Whether the configuration property is a key.</p>
         pub fn set_key(mut self, input: std::option::Option<bool>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>Whether to omit the field value entered by the customer in the log. If <code>true</code>, the value is not saved in CloudTrail logs for the action execution.</p>
         pub fn no_echo(mut self, input: bool) -> Self {
@@ -1937,8 +1815,7 @@ pub mod action_type_property {
         }
         /// <p>Whether to omit the field value entered by the customer in the log. If <code>true</code>, the value is not saved in CloudTrail logs for the action execution.</p>
         pub fn set_no_echo(mut self, input: std::option::Option<bool>) -> Self {
-            self.no_echo = input;
-            self
+            self.no_echo = input; self
         }
         /// <p>Indicates that the property is used with polling. An action type can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
         pub fn queryable(mut self, input: bool) -> Self {
@@ -1947,8 +1824,7 @@ pub mod action_type_property {
         }
         /// <p>Indicates that the property is used with polling. An action type can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
         pub fn set_queryable(mut self, input: std::option::Option<bool>) -> Self {
-            self.queryable = input;
-            self
+            self.queryable = input; self
         }
         /// <p>The description of the property that is displayed to users.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1957,21 +1833,32 @@ pub mod action_type_property {
         }
         /// <p>The description of the property that is displayed to users.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`ActionTypeProperty`](crate::model::ActionTypeProperty).
         pub fn build(self) -> crate::model::ActionTypeProperty {
             crate::model::ActionTypeProperty {
-                name: self.name,
-                optional: self.optional.unwrap_or_default(),
-                key: self.key.unwrap_or_default(),
-                no_echo: self.no_echo.unwrap_or_default(),
-                queryable: self.queryable.unwrap_or_default(),
-                description: self.description,
+                name: self.name
+                ,
+                optional: self.optional
+                    .unwrap_or_default()
+                ,
+                key: self.key
+                    .unwrap_or_default()
+                ,
+                no_echo: self.no_echo
+                    .unwrap_or_default()
+                ,
+                queryable: self.queryable
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionTypeProperty {
     /// Creates a new builder-style object to manufacture [`ActionTypeProperty`](crate::model::ActionTypeProperty).
@@ -1983,20 +1870,20 @@ impl ActionTypeProperty {
 /// <p>Details identifying the users with permissions to use the action type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionTypePermissions {
+pub struct ActionTypePermissions  {
     /// <p>A list of AWS account IDs with access to use the action type in their pipelines.</p>
     #[doc(hidden)]
     pub allowed_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ActionTypePermissions {
     /// <p>A list of AWS account IDs with access to use the action type in their pipelines.</p>
-    pub fn allowed_accounts(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allowed_accounts(&self) -> std::option::Option<& [std::string::String]> {
         self.allowed_accounts.as_deref()
     }
 }
 /// See [`ActionTypePermissions`](crate::model::ActionTypePermissions).
 pub mod action_type_permissions {
-
+    
     /// A builder for [`ActionTypePermissions`](crate::model::ActionTypePermissions).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2010,25 +1897,24 @@ pub mod action_type_permissions {
         /// <p>A list of AWS account IDs with access to use the action type in their pipelines.</p>
         pub fn allowed_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_accounts.unwrap_or_default();
-            v.push(input.into());
-            self.allowed_accounts = Some(v);
-            self
+                            v.push(input.into());
+                            self.allowed_accounts = Some(v);
+                            self
         }
         /// <p>A list of AWS account IDs with access to use the action type in their pipelines.</p>
-        pub fn set_allowed_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.allowed_accounts = input;
-            self
+        pub fn set_allowed_accounts(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.allowed_accounts = input; self
         }
         /// Consumes the builder and constructs a [`ActionTypePermissions`](crate::model::ActionTypePermissions).
         pub fn build(self) -> crate::model::ActionTypePermissions {
             crate::model::ActionTypePermissions {
-                allowed_accounts: self.allowed_accounts,
+                allowed_accounts: self.allowed_accounts
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionTypePermissions {
     /// Creates a new builder-style object to manufacture [`ActionTypePermissions`](crate::model::ActionTypePermissions).
@@ -2040,7 +1926,7 @@ impl ActionTypePermissions {
 /// <p>Information about parameters for artifacts associated with the action type, such as the minimum and maximum artifacts allowed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionTypeArtifactDetails {
+pub struct ActionTypeArtifactDetails  {
     /// <p>The minimum number of artifacts that can be used with the action type. For example, you should specify a minimum and maximum of zero input artifacts for an action type with a category of <code>source</code>.</p>
     #[doc(hidden)]
     pub minimum_count: i32,
@@ -2060,7 +1946,7 @@ impl ActionTypeArtifactDetails {
 }
 /// See [`ActionTypeArtifactDetails`](crate::model::ActionTypeArtifactDetails).
 pub mod action_type_artifact_details {
-
+    
     /// A builder for [`ActionTypeArtifactDetails`](crate::model::ActionTypeArtifactDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2075,8 +1961,7 @@ pub mod action_type_artifact_details {
         }
         /// <p>The minimum number of artifacts that can be used with the action type. For example, you should specify a minimum and maximum of zero input artifacts for an action type with a category of <code>source</code>.</p>
         pub fn set_minimum_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.minimum_count = input;
-            self
+            self.minimum_count = input; self
         }
         /// <p>The maximum number of artifacts that can be used with the actiontype. For example, you should specify a minimum and maximum of zero input artifacts for an action type with a category of <code>source</code>.</p>
         pub fn maximum_count(mut self, input: i32) -> Self {
@@ -2085,17 +1970,22 @@ pub mod action_type_artifact_details {
         }
         /// <p>The maximum number of artifacts that can be used with the actiontype. For example, you should specify a minimum and maximum of zero input artifacts for an action type with a category of <code>source</code>.</p>
         pub fn set_maximum_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_count = input;
-            self
+            self.maximum_count = input; self
         }
         /// Consumes the builder and constructs a [`ActionTypeArtifactDetails`](crate::model::ActionTypeArtifactDetails).
         pub fn build(self) -> crate::model::ActionTypeArtifactDetails {
             crate::model::ActionTypeArtifactDetails {
-                minimum_count: self.minimum_count.unwrap_or_default(),
-                maximum_count: self.maximum_count.unwrap_or_default(),
+                minimum_count: self.minimum_count
+                    .unwrap_or_default()
+                ,
+                maximum_count: self.maximum_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionTypeArtifactDetails {
     /// Creates a new builder-style object to manufacture [`ActionTypeArtifactDetails`](crate::model::ActionTypeArtifactDetails).
@@ -2107,15 +1997,15 @@ impl ActionTypeArtifactDetails {
 /// <p>Specifies the category, owner, provider, and version of the action type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionTypeIdentifier {
-    /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>Source</code> </p> </li>
-    /// <li> <p> <code>Build</code> </p> </li>
-    /// <li> <p> <code>Test</code> </p> </li>
-    /// <li> <p> <code>Deploy</code> </p> </li>
-    /// <li> <p> <code>Approval</code> </p> </li>
-    /// <li> <p> <code>Invoke</code> </p> </li>
+pub struct ActionTypeIdentifier  {
+    /// <p>Defines what kind of action can be taken in the stage, one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Source</code> </p> </li> 
+    /// <li> <p> <code>Build</code> </p> </li> 
+    /// <li> <p> <code>Test</code> </p> </li> 
+    /// <li> <p> <code>Deploy</code> </p> </li> 
+    /// <li> <p> <code>Approval</code> </p> </li> 
+    /// <li> <p> <code>Invoke</code> </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub category: std::option::Option<crate::model::ActionCategory>,
@@ -2130,34 +2020,34 @@ pub struct ActionTypeIdentifier {
     pub version: std::option::Option<std::string::String>,
 }
 impl ActionTypeIdentifier {
-    /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
-    /// <ul>
-    /// <li> <p> <code>Source</code> </p> </li>
-    /// <li> <p> <code>Build</code> </p> </li>
-    /// <li> <p> <code>Test</code> </p> </li>
-    /// <li> <p> <code>Deploy</code> </p> </li>
-    /// <li> <p> <code>Approval</code> </p> </li>
-    /// <li> <p> <code>Invoke</code> </p> </li>
+    /// <p>Defines what kind of action can be taken in the stage, one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Source</code> </p> </li> 
+    /// <li> <p> <code>Build</code> </p> </li> 
+    /// <li> <p> <code>Test</code> </p> </li> 
+    /// <li> <p> <code>Deploy</code> </p> </li> 
+    /// <li> <p> <code>Approval</code> </p> </li> 
+    /// <li> <p> <code>Invoke</code> </p> </li> 
     /// </ul>
-    pub fn category(&self) -> std::option::Option<&crate::model::ActionCategory> {
+    pub fn category(&self) -> std::option::Option<& crate::model::ActionCategory> {
         self.category.as_ref()
     }
     /// <p>The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> std::option::Option<& str> {
         self.owner.as_deref()
     }
     /// <p>The provider of the action type being called. The provider name is supplied when the action type is created.</p>
-    pub fn provider(&self) -> std::option::Option<&str> {
+    pub fn provider(&self) -> std::option::Option<& str> {
         self.provider.as_deref()
     }
     /// <p>A string that describes the action type version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`ActionTypeIdentifier`](crate::model::ActionTypeIdentifier).
 pub mod action_type_identifier {
-
+    
     /// A builder for [`ActionTypeIdentifier`](crate::model::ActionTypeIdentifier).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2167,34 +2057,30 @@ pub mod action_type_identifier {
         pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>Source</code> </p> </li>
-        /// <li> <p> <code>Build</code> </p> </li>
-        /// <li> <p> <code>Test</code> </p> </li>
-        /// <li> <p> <code>Deploy</code> </p> </li>
-        /// <li> <p> <code>Approval</code> </p> </li>
-        /// <li> <p> <code>Invoke</code> </p> </li>
+        /// <p>Defines what kind of action can be taken in the stage, one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Source</code> </p> </li> 
+        /// <li> <p> <code>Build</code> </p> </li> 
+        /// <li> <p> <code>Test</code> </p> </li> 
+        /// <li> <p> <code>Deploy</code> </p> </li> 
+        /// <li> <p> <code>Approval</code> </p> </li> 
+        /// <li> <p> <code>Invoke</code> </p> </li> 
         /// </ul>
         pub fn category(mut self, input: crate::model::ActionCategory) -> Self {
             self.category = Some(input);
             self
         }
-        /// <p>Defines what kind of action can be taken in the stage, one of the following:</p>
-        /// <ul>
-        /// <li> <p> <code>Source</code> </p> </li>
-        /// <li> <p> <code>Build</code> </p> </li>
-        /// <li> <p> <code>Test</code> </p> </li>
-        /// <li> <p> <code>Deploy</code> </p> </li>
-        /// <li> <p> <code>Approval</code> </p> </li>
-        /// <li> <p> <code>Invoke</code> </p> </li>
+        /// <p>Defines what kind of action can be taken in the stage, one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Source</code> </p> </li> 
+        /// <li> <p> <code>Build</code> </p> </li> 
+        /// <li> <p> <code>Test</code> </p> </li> 
+        /// <li> <p> <code>Deploy</code> </p> </li> 
+        /// <li> <p> <code>Approval</code> </p> </li> 
+        /// <li> <p> <code>Invoke</code> </p> </li> 
         /// </ul>
-        pub fn set_category(
-            mut self,
-            input: std::option::Option<crate::model::ActionCategory>,
-        ) -> Self {
-            self.category = input;
-            self
+        pub fn set_category(mut self, input: std::option::Option<crate::model::ActionCategory>) -> Self {
+            self.category = input; self
         }
         /// <p>The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2203,8 +2089,7 @@ pub mod action_type_identifier {
         }
         /// <p>The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.owner = input;
-            self
+            self.owner = input; self
         }
         /// <p>The provider of the action type being called. The provider name is supplied when the action type is created.</p>
         pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2213,8 +2098,7 @@ pub mod action_type_identifier {
         }
         /// <p>The provider of the action type being called. The provider name is supplied when the action type is created.</p>
         pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.provider = input;
-            self
+            self.provider = input; self
         }
         /// <p>A string that describes the action type version.</p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2223,19 +2107,24 @@ pub mod action_type_identifier {
         }
         /// <p>A string that describes the action type version.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`ActionTypeIdentifier`](crate::model::ActionTypeIdentifier).
         pub fn build(self) -> crate::model::ActionTypeIdentifier {
             crate::model::ActionTypeIdentifier {
-                category: self.category,
-                owner: self.owner,
-                provider: self.provider,
-                version: self.version,
+                category: self.category
+                ,
+                owner: self.owner
+                ,
+                provider: self.provider
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionTypeIdentifier {
     /// Creates a new builder-style object to manufacture [`ActionTypeIdentifier`](crate::model::ActionTypeIdentifier).
@@ -2247,16 +2136,16 @@ impl ActionTypeIdentifier {
 /// <p>The action engine, or executor, for an action type created for a provider, where the action is to be used by customers of the provider. The action engine is associated with the model used to create and update the action, such as the Lambda integration model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionTypeExecutor {
+pub struct ActionTypeExecutor  {
     /// <p>The action configuration properties for the action type. These properties are specified in the action definition when the action type is created.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::ExecutorConfiguration>,
     /// <p>The integration model used to create and update the action type, <code>Lambda</code> or <code>JobWorker</code>. </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ExecutorType>,
-    /// <p>The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed to successfully run an action.</p>
-    /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p> <note>
-    /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p>
+    /// <p>The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed to successfully run an action.</p> 
+    /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p> <note> 
+    /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p> 
     /// </note>
     #[doc(hidden)]
     pub policy_statements_template: std::option::Option<std::string::String>,
@@ -2266,18 +2155,18 @@ pub struct ActionTypeExecutor {
 }
 impl ActionTypeExecutor {
     /// <p>The action configuration properties for the action type. These properties are specified in the action definition when the action type is created.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::model::ExecutorConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::model::ExecutorConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The integration model used to create and update the action type, <code>Lambda</code> or <code>JobWorker</code>. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ExecutorType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ExecutorType> {
         self.r#type.as_ref()
     }
-    /// <p>The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed to successfully run an action.</p>
-    /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p> <note>
-    /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p>
+    /// <p>The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed to successfully run an action.</p> 
+    /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p> <note> 
+    /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p> 
     /// </note>
-    pub fn policy_statements_template(&self) -> std::option::Option<&str> {
+    pub fn policy_statements_template(&self) -> std::option::Option<& str> {
         self.policy_statements_template.as_deref()
     }
     /// <p>The timeout in seconds for the job. An action execution can have multiple jobs. This is the timeout for a single job, not the entire action execution.</p>
@@ -2287,7 +2176,7 @@ impl ActionTypeExecutor {
 }
 /// See [`ActionTypeExecutor`](crate::model::ActionTypeExecutor).
 pub mod action_type_executor {
-
+    
     /// A builder for [`ActionTypeExecutor`](crate::model::ActionTypeExecutor).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2303,12 +2192,8 @@ pub mod action_type_executor {
             self
         }
         /// <p>The action configuration properties for the action type. These properties are specified in the action definition when the action type is created.</p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ExecutorConfiguration>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<crate::model::ExecutorConfiguration>) -> Self {
+            self.configuration = input; self
         }
         /// <p>The integration model used to create and update the action type, <code>Lambda</code> or <code>JobWorker</code>. </p>
         pub fn r#type(mut self, input: crate::model::ExecutorType) -> Self {
@@ -2317,27 +2202,22 @@ pub mod action_type_executor {
         }
         /// <p>The integration model used to create and update the action type, <code>Lambda</code> or <code>JobWorker</code>. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ExecutorType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
-        /// <p>The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed to successfully run an action.</p>
-        /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p> <note>
-        /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p>
+        /// <p>The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed to successfully run an action.</p> 
+        /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p> <note> 
+        /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p> 
         /// </note>
         pub fn policy_statements_template(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_statements_template = Some(input.into());
             self
         }
-        /// <p>The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed to successfully run an action.</p>
-        /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p> <note>
-        /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p>
+        /// <p>The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed to successfully run an action.</p> 
+        /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p> <note> 
+        /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p> 
         /// </note>
-        pub fn set_policy_statements_template(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.policy_statements_template = input;
-            self
+        pub fn set_policy_statements_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_statements_template = input; self
         }
         /// <p>The timeout in seconds for the job. An action execution can have multiple jobs. This is the timeout for a single job, not the entire action execution.</p>
         pub fn job_timeout(mut self, input: i32) -> Self {
@@ -2346,19 +2226,24 @@ pub mod action_type_executor {
         }
         /// <p>The timeout in seconds for the job. An action execution can have multiple jobs. This is the timeout for a single job, not the entire action execution.</p>
         pub fn set_job_timeout(mut self, input: std::option::Option<i32>) -> Self {
-            self.job_timeout = input;
-            self
+            self.job_timeout = input; self
         }
         /// Consumes the builder and constructs a [`ActionTypeExecutor`](crate::model::ActionTypeExecutor).
         pub fn build(self) -> crate::model::ActionTypeExecutor {
             crate::model::ActionTypeExecutor {
-                configuration: self.configuration,
-                r#type: self.r#type,
-                policy_statements_template: self.policy_statements_template,
-                job_timeout: self.job_timeout,
+                configuration: self.configuration
+                ,
+                r#type: self.r#type
+                ,
+                policy_statements_template: self.policy_statements_template
+                ,
+                job_timeout: self.job_timeout
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionTypeExecutor {
     /// Creates a new builder-style object to manufacture [`ActionTypeExecutor`](crate::model::ActionTypeExecutor).
@@ -2373,9 +2258,9 @@ impl ActionTypeExecutor {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let executortype = unimplemented!();
 /// match executortype {
@@ -2397,58 +2282,52 @@ impl ActionTypeExecutor {
 /// Specifically, when `executortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExecutorType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ExecutorType {
     #[allow(missing_docs)] // documentation missing in model
     JobWorker,
     #[allow(missing_docs)] // documentation missing in model
     Lambda,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExecutorType {
     fn from(s: &str) -> Self {
         match s {
             "JobWorker" => ExecutorType::JobWorker,
             "Lambda" => ExecutorType::Lambda,
-            other => ExecutorType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ExecutorType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ExecutorType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExecutorType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ExecutorType::from(s))
+                }
+            }
 impl ExecutorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExecutorType::JobWorker => "JobWorker",
             ExecutorType::Lambda => "Lambda",
-            ExecutorType::Unknown(value) => value.as_str(),
+            ExecutorType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["JobWorker", "Lambda"]
+        &[
+            "JobWorker", "Lambda"
+        ]
     }
 }
 impl AsRef<str> for ExecutorType {
@@ -2460,82 +2339,64 @@ impl AsRef<str> for ExecutorType {
 /// <p>The action engine, or executor, related to the supported integration model used to create and update the action type. The available executor types are <code>Lambda</code> and <code>JobWorker</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecutorConfiguration {
+pub struct ExecutorConfiguration  {
     /// <p>Details about the <code>Lambda</code> executor of the action type.</p>
     #[doc(hidden)]
-    pub lambda_executor_configuration:
-        std::option::Option<crate::model::LambdaExecutorConfiguration>,
+    pub lambda_executor_configuration: std::option::Option<crate::model::LambdaExecutorConfiguration>,
     /// <p>Details about the <code>JobWorker</code> executor of the action type.</p>
     #[doc(hidden)]
-    pub job_worker_executor_configuration:
-        std::option::Option<crate::model::JobWorkerExecutorConfiguration>,
+    pub job_worker_executor_configuration: std::option::Option<crate::model::JobWorkerExecutorConfiguration>,
 }
 impl ExecutorConfiguration {
     /// <p>Details about the <code>Lambda</code> executor of the action type.</p>
-    pub fn lambda_executor_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::LambdaExecutorConfiguration> {
+    pub fn lambda_executor_configuration(&self) -> std::option::Option<& crate::model::LambdaExecutorConfiguration> {
         self.lambda_executor_configuration.as_ref()
     }
     /// <p>Details about the <code>JobWorker</code> executor of the action type.</p>
-    pub fn job_worker_executor_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::JobWorkerExecutorConfiguration> {
+    pub fn job_worker_executor_configuration(&self) -> std::option::Option<& crate::model::JobWorkerExecutorConfiguration> {
         self.job_worker_executor_configuration.as_ref()
     }
 }
 /// See [`ExecutorConfiguration`](crate::model::ExecutorConfiguration).
 pub mod executor_configuration {
-
+    
     /// A builder for [`ExecutorConfiguration`](crate::model::ExecutorConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) lambda_executor_configuration:
-            std::option::Option<crate::model::LambdaExecutorConfiguration>,
-        pub(crate) job_worker_executor_configuration:
-            std::option::Option<crate::model::JobWorkerExecutorConfiguration>,
+        pub(crate) lambda_executor_configuration: std::option::Option<crate::model::LambdaExecutorConfiguration>,
+        pub(crate) job_worker_executor_configuration: std::option::Option<crate::model::JobWorkerExecutorConfiguration>,
     }
     impl Builder {
         /// <p>Details about the <code>Lambda</code> executor of the action type.</p>
-        pub fn lambda_executor_configuration(
-            mut self,
-            input: crate::model::LambdaExecutorConfiguration,
-        ) -> Self {
+        pub fn lambda_executor_configuration(mut self, input: crate::model::LambdaExecutorConfiguration) -> Self {
             self.lambda_executor_configuration = Some(input);
             self
         }
         /// <p>Details about the <code>Lambda</code> executor of the action type.</p>
-        pub fn set_lambda_executor_configuration(
-            mut self,
-            input: std::option::Option<crate::model::LambdaExecutorConfiguration>,
-        ) -> Self {
-            self.lambda_executor_configuration = input;
-            self
+        pub fn set_lambda_executor_configuration(mut self, input: std::option::Option<crate::model::LambdaExecutorConfiguration>) -> Self {
+            self.lambda_executor_configuration = input; self
         }
         /// <p>Details about the <code>JobWorker</code> executor of the action type.</p>
-        pub fn job_worker_executor_configuration(
-            mut self,
-            input: crate::model::JobWorkerExecutorConfiguration,
-        ) -> Self {
+        pub fn job_worker_executor_configuration(mut self, input: crate::model::JobWorkerExecutorConfiguration) -> Self {
             self.job_worker_executor_configuration = Some(input);
             self
         }
         /// <p>Details about the <code>JobWorker</code> executor of the action type.</p>
-        pub fn set_job_worker_executor_configuration(
-            mut self,
-            input: std::option::Option<crate::model::JobWorkerExecutorConfiguration>,
-        ) -> Self {
-            self.job_worker_executor_configuration = input;
-            self
+        pub fn set_job_worker_executor_configuration(mut self, input: std::option::Option<crate::model::JobWorkerExecutorConfiguration>) -> Self {
+            self.job_worker_executor_configuration = input; self
         }
         /// Consumes the builder and constructs a [`ExecutorConfiguration`](crate::model::ExecutorConfiguration).
         pub fn build(self) -> crate::model::ExecutorConfiguration {
             crate::model::ExecutorConfiguration {
-                lambda_executor_configuration: self.lambda_executor_configuration,
-                job_worker_executor_configuration: self.job_worker_executor_configuration,
+                lambda_executor_configuration: self.lambda_executor_configuration
+                ,
+                job_worker_executor_configuration: self.job_worker_executor_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl ExecutorConfiguration {
     /// Creates a new builder-style object to manufacture [`ExecutorConfiguration`](crate::model::ExecutorConfiguration).
@@ -2547,7 +2408,7 @@ impl ExecutorConfiguration {
 /// <p>Details about the polling configuration for the <code>JobWorker</code> action engine, or executor.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobWorkerExecutorConfiguration {
+pub struct JobWorkerExecutorConfiguration  {
     /// <p>The accounts in which the job worker is configured and might poll for jobs as part of the action execution.</p>
     #[doc(hidden)]
     pub polling_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2557,23 +2418,22 @@ pub struct JobWorkerExecutorConfiguration {
 }
 impl JobWorkerExecutorConfiguration {
     /// <p>The accounts in which the job worker is configured and might poll for jobs as part of the action execution.</p>
-    pub fn polling_accounts(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn polling_accounts(&self) -> std::option::Option<& [std::string::String]> {
         self.polling_accounts.as_deref()
     }
     /// <p>The service Principals in which the job worker is configured and might poll for jobs as part of the action execution.</p>
-    pub fn polling_service_principals(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn polling_service_principals(&self) -> std::option::Option<& [std::string::String]> {
         self.polling_service_principals.as_deref()
     }
 }
 /// See [`JobWorkerExecutorConfiguration`](crate::model::JobWorkerExecutorConfiguration).
 pub mod job_worker_executor_configuration {
-
+    
     /// A builder for [`JobWorkerExecutorConfiguration`](crate::model::JobWorkerExecutorConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) polling_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) polling_service_principals:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) polling_service_principals: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `polling_accounts`.
@@ -2583,17 +2443,13 @@ pub mod job_worker_executor_configuration {
         /// <p>The accounts in which the job worker is configured and might poll for jobs as part of the action execution.</p>
         pub fn polling_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.polling_accounts.unwrap_or_default();
-            v.push(input.into());
-            self.polling_accounts = Some(v);
-            self
+                            v.push(input.into());
+                            self.polling_accounts = Some(v);
+                            self
         }
         /// <p>The accounts in which the job worker is configured and might poll for jobs as part of the action execution.</p>
-        pub fn set_polling_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.polling_accounts = input;
-            self
+        pub fn set_polling_accounts(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.polling_accounts = input; self
         }
         /// Appends an item to `polling_service_principals`.
         ///
@@ -2602,26 +2458,26 @@ pub mod job_worker_executor_configuration {
         /// <p>The service Principals in which the job worker is configured and might poll for jobs as part of the action execution.</p>
         pub fn polling_service_principals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.polling_service_principals.unwrap_or_default();
-            v.push(input.into());
-            self.polling_service_principals = Some(v);
-            self
+                            v.push(input.into());
+                            self.polling_service_principals = Some(v);
+                            self
         }
         /// <p>The service Principals in which the job worker is configured and might poll for jobs as part of the action execution.</p>
-        pub fn set_polling_service_principals(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.polling_service_principals = input;
-            self
+        pub fn set_polling_service_principals(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.polling_service_principals = input; self
         }
         /// Consumes the builder and constructs a [`JobWorkerExecutorConfiguration`](crate::model::JobWorkerExecutorConfiguration).
         pub fn build(self) -> crate::model::JobWorkerExecutorConfiguration {
             crate::model::JobWorkerExecutorConfiguration {
-                polling_accounts: self.polling_accounts,
-                polling_service_principals: self.polling_service_principals,
+                polling_accounts: self.polling_accounts
+                ,
+                polling_service_principals: self.polling_service_principals
+                ,
             }
         }
     }
+    
+    
 }
 impl JobWorkerExecutorConfiguration {
     /// Creates a new builder-style object to manufacture [`JobWorkerExecutorConfiguration`](crate::model::JobWorkerExecutorConfiguration).
@@ -2633,20 +2489,20 @@ impl JobWorkerExecutorConfiguration {
 /// <p>Details about the configuration for the <code>Lambda</code> action engine, or executor.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaExecutorConfiguration {
+pub struct LambdaExecutorConfiguration  {
     /// <p>The ARN of the Lambda function used by the action engine.</p>
     #[doc(hidden)]
     pub lambda_function_arn: std::option::Option<std::string::String>,
 }
 impl LambdaExecutorConfiguration {
     /// <p>The ARN of the Lambda function used by the action engine.</p>
-    pub fn lambda_function_arn(&self) -> std::option::Option<&str> {
+    pub fn lambda_function_arn(&self) -> std::option::Option<& str> {
         self.lambda_function_arn.as_deref()
     }
 }
 /// See [`LambdaExecutorConfiguration`](crate::model::LambdaExecutorConfiguration).
 pub mod lambda_executor_configuration {
-
+    
     /// A builder for [`LambdaExecutorConfiguration`](crate::model::LambdaExecutorConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2659,20 +2515,19 @@ pub mod lambda_executor_configuration {
             self
         }
         /// <p>The ARN of the Lambda function used by the action engine.</p>
-        pub fn set_lambda_function_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.lambda_function_arn = input;
-            self
+        pub fn set_lambda_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lambda_function_arn = input; self
         }
         /// Consumes the builder and constructs a [`LambdaExecutorConfiguration`](crate::model::LambdaExecutorConfiguration).
         pub fn build(self) -> crate::model::LambdaExecutorConfiguration {
             crate::model::LambdaExecutorConfiguration {
-                lambda_function_arn: self.lambda_function_arn,
+                lambda_function_arn: self.lambda_function_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl LambdaExecutorConfiguration {
     /// Creates a new builder-style object to manufacture [`LambdaExecutorConfiguration`](crate::model::LambdaExecutorConfiguration).
@@ -2684,7 +2539,7 @@ impl LambdaExecutorConfiguration {
 /// <p>A tag is a key-value pair that is used to manage the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The tag's key.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -2694,17 +2549,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The tag's key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The tag's value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2719,8 +2574,7 @@ pub mod tag {
         }
         /// <p>The tag's key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The tag's value.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2729,17 +2583,20 @@ pub mod tag {
         }
         /// <p>The tag's value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -2754,9 +2611,9 @@ impl Tag {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let stageretrymode = unimplemented!();
 /// match stageretrymode {
@@ -2777,54 +2634,48 @@ impl Tag {
 /// Specifically, when `stageretrymode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StageRetryMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StageRetryMode {
     #[allow(missing_docs)] // documentation missing in model
     FailedActions,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StageRetryMode {
     fn from(s: &str) -> Self {
         match s {
             "FAILED_ACTIONS" => StageRetryMode::FailedActions,
-            other => StageRetryMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StageRetryMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StageRetryMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StageRetryMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StageRetryMode::from(s))
+                }
+            }
 impl StageRetryMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StageRetryMode::FailedActions => "FAILED_ACTIONS",
-            StageRetryMode::Unknown(value) => value.as_str(),
+            StageRetryMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED_ACTIONS"]
+        &[
+            "FAILED_ACTIONS"
+        ]
     }
 }
 impl AsRef<str> for StageRetryMode {
@@ -2836,7 +2687,7 @@ impl AsRef<str> for StageRetryMode {
 /// <p>The detail returned for each webhook after listing webhooks, such as the webhook URL, the webhook name, and the webhook ARN.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWebhookItem {
+pub struct ListWebhookItem  {
     /// <p>The detail returned for each webhook, such as the webhook authentication type and filter rules.</p>
     #[doc(hidden)]
     pub definition: std::option::Option<crate::model::WebhookDefinition>,
@@ -2861,37 +2712,37 @@ pub struct ListWebhookItem {
 }
 impl ListWebhookItem {
     /// <p>The detail returned for each webhook, such as the webhook authentication type and filter rules.</p>
-    pub fn definition(&self) -> std::option::Option<&crate::model::WebhookDefinition> {
+    pub fn definition(&self) -> std::option::Option<& crate::model::WebhookDefinition> {
         self.definition.as_ref()
     }
     /// <p>A unique URL generated by CodePipeline. When a POST request is made to this URL, the defined pipeline is started as long as the body of the post request satisfies the defined authentication and filtering conditions. Deleting and re-creating a webhook makes the old URL invalid and generates a new one.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> std::option::Option<& str> {
         self.url.as_deref()
     }
     /// <p>The text of the error message about the webhook.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>The number code of the error.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> std::option::Option<& str> {
         self.error_code.as_deref()
     }
     /// <p>The date and time a webhook was last successfully triggered, in timestamp format.</p>
-    pub fn last_triggered(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_triggered(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_triggered.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the webhook.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Specifies the tags applied to the webhook.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListWebhookItem`](crate::model::ListWebhookItem).
 pub mod list_webhook_item {
-
+    
     /// A builder for [`ListWebhookItem`](crate::model::ListWebhookItem).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2910,12 +2761,8 @@ pub mod list_webhook_item {
             self
         }
         /// <p>The detail returned for each webhook, such as the webhook authentication type and filter rules.</p>
-        pub fn set_definition(
-            mut self,
-            input: std::option::Option<crate::model::WebhookDefinition>,
-        ) -> Self {
-            self.definition = input;
-            self
+        pub fn set_definition(mut self, input: std::option::Option<crate::model::WebhookDefinition>) -> Self {
+            self.definition = input; self
         }
         /// <p>A unique URL generated by CodePipeline. When a POST request is made to this URL, the defined pipeline is started as long as the body of the post request satisfies the defined authentication and filtering conditions. Deleting and re-creating a webhook makes the old URL invalid and generates a new one.</p>
         pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2924,8 +2771,7 @@ pub mod list_webhook_item {
         }
         /// <p>A unique URL generated by CodePipeline. When a POST request is made to this URL, the defined pipeline is started as long as the body of the post request satisfies the defined authentication and filtering conditions. Deleting and re-creating a webhook makes the old URL invalid and generates a new one.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.url = input;
-            self
+            self.url = input; self
         }
         /// <p>The text of the error message about the webhook.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2933,12 +2779,8 @@ pub mod list_webhook_item {
             self
         }
         /// <p>The text of the error message about the webhook.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// <p>The number code of the error.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2947,8 +2789,7 @@ pub mod list_webhook_item {
         }
         /// <p>The number code of the error.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.error_code = input;
-            self
+            self.error_code = input; self
         }
         /// <p>The date and time a webhook was last successfully triggered, in timestamp format.</p>
         pub fn last_triggered(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2956,12 +2797,8 @@ pub mod list_webhook_item {
             self
         }
         /// <p>The date and time a webhook was last successfully triggered, in timestamp format.</p>
-        pub fn set_last_triggered(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_triggered = input;
-            self
+        pub fn set_last_triggered(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_triggered = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the webhook.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2970,8 +2807,7 @@ pub mod list_webhook_item {
         }
         /// <p>The Amazon Resource Name (ARN) of the webhook.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -2980,31 +2816,36 @@ pub mod list_webhook_item {
         /// <p>Specifies the tags applied to the webhook.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Specifies the tags applied to the webhook.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListWebhookItem`](crate::model::ListWebhookItem).
         pub fn build(self) -> crate::model::ListWebhookItem {
             crate::model::ListWebhookItem {
-                definition: self.definition,
-                url: self.url,
-                error_message: self.error_message,
-                error_code: self.error_code,
-                last_triggered: self.last_triggered,
-                arn: self.arn,
-                tags: self.tags,
+                definition: self.definition
+                ,
+                url: self.url
+                ,
+                error_message: self.error_message
+                ,
+                error_code: self.error_code
+                ,
+                last_triggered: self.last_triggered
+                ,
+                arn: self.arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl ListWebhookItem {
     /// Creates a new builder-style object to manufacture [`ListWebhookItem`](crate::model::ListWebhookItem).
@@ -3016,7 +2857,7 @@ impl ListWebhookItem {
 /// <p>Represents information about a webhook and its definition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WebhookDefinition {
+pub struct WebhookDefinition  {
     /// <p>The name of the webhook.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3029,11 +2870,11 @@ pub struct WebhookDefinition {
     /// <p>A list of rules applied to the body/payload sent in the POST request to a webhook URL. All defined rules must pass for the request to be accepted and the pipeline started.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::model::WebhookFilterRule>>,
-    /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
-    /// <ul>
-    /// <li> <p>For information about the authentication scheme implemented by GITHUB_HMAC, see <a href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a> on the GitHub Developer website.</p> </li>
-    /// <li> <p> IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p> </li>
-    /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li>
+    /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p> 
+    /// <ul> 
+    /// <li> <p>For information about the authentication scheme implemented by GITHUB_HMAC, see <a href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a> on the GitHub Developer website.</p> </li> 
+    /// <li> <p> IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p> </li> 
+    /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub authentication: std::option::Option<crate::model::WebhookAuthenticationType>,
@@ -3043,40 +2884,38 @@ pub struct WebhookDefinition {
 }
 impl WebhookDefinition {
     /// <p>The name of the webhook.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The name of the pipeline you want to connect to the webhook.</p>
-    pub fn target_pipeline(&self) -> std::option::Option<&str> {
+    pub fn target_pipeline(&self) -> std::option::Option<& str> {
         self.target_pipeline.as_deref()
     }
     /// <p>The name of the action in a pipeline you want to connect to the webhook. The action must be from the source (first) stage of the pipeline.</p>
-    pub fn target_action(&self) -> std::option::Option<&str> {
+    pub fn target_action(&self) -> std::option::Option<& str> {
         self.target_action.as_deref()
     }
     /// <p>A list of rules applied to the body/payload sent in the POST request to a webhook URL. All defined rules must pass for the request to be accepted and the pipeline started.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::model::WebhookFilterRule]> {
+    pub fn filters(&self) -> std::option::Option<& [crate::model::WebhookFilterRule]> {
         self.filters.as_deref()
     }
-    /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
-    /// <ul>
-    /// <li> <p>For information about the authentication scheme implemented by GITHUB_HMAC, see <a href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a> on the GitHub Developer website.</p> </li>
-    /// <li> <p> IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p> </li>
-    /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li>
+    /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p> 
+    /// <ul> 
+    /// <li> <p>For information about the authentication scheme implemented by GITHUB_HMAC, see <a href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a> on the GitHub Developer website.</p> </li> 
+    /// <li> <p> IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p> </li> 
+    /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li> 
     /// </ul>
-    pub fn authentication(&self) -> std::option::Option<&crate::model::WebhookAuthenticationType> {
+    pub fn authentication(&self) -> std::option::Option<& crate::model::WebhookAuthenticationType> {
         self.authentication.as_ref()
     }
     /// <p>Properties that configure the authentication applied to incoming webhook trigger requests. The required properties depend on the authentication type. For GITHUB_HMAC, only the <code>SecretToken </code>property must be set. For IP, only the <code>AllowedIPRange </code>property must be set to a valid CIDR range. For UNAUTHENTICATED, no properties can be set.</p>
-    pub fn authentication_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::WebhookAuthConfiguration> {
+    pub fn authentication_configuration(&self) -> std::option::Option<& crate::model::WebhookAuthConfiguration> {
         self.authentication_configuration.as_ref()
     }
 }
 /// See [`WebhookDefinition`](crate::model::WebhookDefinition).
 pub mod webhook_definition {
-
+    
     /// A builder for [`WebhookDefinition`](crate::model::WebhookDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3085,8 +2924,7 @@ pub mod webhook_definition {
         pub(crate) target_action: std::option::Option<std::string::String>,
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::WebhookFilterRule>>,
         pub(crate) authentication: std::option::Option<crate::model::WebhookAuthenticationType>,
-        pub(crate) authentication_configuration:
-            std::option::Option<crate::model::WebhookAuthConfiguration>,
+        pub(crate) authentication_configuration: std::option::Option<crate::model::WebhookAuthConfiguration>,
     }
     impl Builder {
         /// <p>The name of the webhook.</p>
@@ -3096,8 +2934,7 @@ pub mod webhook_definition {
         }
         /// <p>The name of the webhook.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The name of the pipeline you want to connect to the webhook.</p>
         pub fn target_pipeline(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3105,12 +2942,8 @@ pub mod webhook_definition {
             self
         }
         /// <p>The name of the pipeline you want to connect to the webhook.</p>
-        pub fn set_target_pipeline(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_pipeline = input;
-            self
+        pub fn set_target_pipeline(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_pipeline = input; self
         }
         /// <p>The name of the action in a pipeline you want to connect to the webhook. The action must be from the source (first) stage of the pipeline.</p>
         pub fn target_action(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3118,12 +2951,8 @@ pub mod webhook_definition {
             self
         }
         /// <p>The name of the action in a pipeline you want to connect to the webhook. The action must be from the source (first) stage of the pipeline.</p>
-        pub fn set_target_action(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_action = input;
-            self
+        pub fn set_target_action(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_action = input; self
         }
         /// Appends an item to `filters`.
         ///
@@ -3132,69 +2961,62 @@ pub mod webhook_definition {
         /// <p>A list of rules applied to the body/payload sent in the POST request to a webhook URL. All defined rules must pass for the request to be accepted and the pipeline started.</p>
         pub fn filters(mut self, input: crate::model::WebhookFilterRule) -> Self {
             let mut v = self.filters.unwrap_or_default();
-            v.push(input);
-            self.filters = Some(v);
-            self
+                            v.push(input);
+                            self.filters = Some(v);
+                            self
         }
         /// <p>A list of rules applied to the body/payload sent in the POST request to a webhook URL. All defined rules must pass for the request to be accepted and the pipeline started.</p>
-        pub fn set_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WebhookFilterRule>>,
-        ) -> Self {
-            self.filters = input;
-            self
+        pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::WebhookFilterRule>>) -> Self {
+            self.filters = input; self
         }
-        /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
-        /// <ul>
-        /// <li> <p>For information about the authentication scheme implemented by GITHUB_HMAC, see <a href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a> on the GitHub Developer website.</p> </li>
-        /// <li> <p> IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p> </li>
-        /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li>
+        /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p> 
+        /// <ul> 
+        /// <li> <p>For information about the authentication scheme implemented by GITHUB_HMAC, see <a href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a> on the GitHub Developer website.</p> </li> 
+        /// <li> <p> IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p> </li> 
+        /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li> 
         /// </ul>
         pub fn authentication(mut self, input: crate::model::WebhookAuthenticationType) -> Self {
             self.authentication = Some(input);
             self
         }
-        /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
-        /// <ul>
-        /// <li> <p>For information about the authentication scheme implemented by GITHUB_HMAC, see <a href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a> on the GitHub Developer website.</p> </li>
-        /// <li> <p> IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p> </li>
-        /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li>
+        /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p> 
+        /// <ul> 
+        /// <li> <p>For information about the authentication scheme implemented by GITHUB_HMAC, see <a href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a> on the GitHub Developer website.</p> </li> 
+        /// <li> <p> IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p> </li> 
+        /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li> 
         /// </ul>
-        pub fn set_authentication(
-            mut self,
-            input: std::option::Option<crate::model::WebhookAuthenticationType>,
-        ) -> Self {
-            self.authentication = input;
-            self
+        pub fn set_authentication(mut self, input: std::option::Option<crate::model::WebhookAuthenticationType>) -> Self {
+            self.authentication = input; self
         }
         /// <p>Properties that configure the authentication applied to incoming webhook trigger requests. The required properties depend on the authentication type. For GITHUB_HMAC, only the <code>SecretToken </code>property must be set. For IP, only the <code>AllowedIPRange </code>property must be set to a valid CIDR range. For UNAUTHENTICATED, no properties can be set.</p>
-        pub fn authentication_configuration(
-            mut self,
-            input: crate::model::WebhookAuthConfiguration,
-        ) -> Self {
+        pub fn authentication_configuration(mut self, input: crate::model::WebhookAuthConfiguration) -> Self {
             self.authentication_configuration = Some(input);
             self
         }
         /// <p>Properties that configure the authentication applied to incoming webhook trigger requests. The required properties depend on the authentication type. For GITHUB_HMAC, only the <code>SecretToken </code>property must be set. For IP, only the <code>AllowedIPRange </code>property must be set to a valid CIDR range. For UNAUTHENTICATED, no properties can be set.</p>
-        pub fn set_authentication_configuration(
-            mut self,
-            input: std::option::Option<crate::model::WebhookAuthConfiguration>,
-        ) -> Self {
-            self.authentication_configuration = input;
-            self
+        pub fn set_authentication_configuration(mut self, input: std::option::Option<crate::model::WebhookAuthConfiguration>) -> Self {
+            self.authentication_configuration = input; self
         }
         /// Consumes the builder and constructs a [`WebhookDefinition`](crate::model::WebhookDefinition).
         pub fn build(self) -> crate::model::WebhookDefinition {
             crate::model::WebhookDefinition {
-                name: self.name,
-                target_pipeline: self.target_pipeline,
-                target_action: self.target_action,
-                filters: self.filters,
-                authentication: self.authentication,
-                authentication_configuration: self.authentication_configuration,
+                name: self.name
+                ,
+                target_pipeline: self.target_pipeline
+                ,
+                target_action: self.target_action
+                ,
+                filters: self.filters
+                ,
+                authentication: self.authentication
+                ,
+                authentication_configuration: self.authentication_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl WebhookDefinition {
     /// Creates a new builder-style object to manufacture [`WebhookDefinition`](crate::model::WebhookDefinition).
@@ -3206,7 +3028,7 @@ impl WebhookDefinition {
 /// <p>The authentication applied to incoming webhook trigger requests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WebhookAuthConfiguration {
+pub struct WebhookAuthConfiguration  {
     /// <p>The property used to configure acceptance of webhooks in an IP address range. For IP, only the <code>AllowedIPRange</code> property must be set. This property must be set to a valid CIDR range.</p>
     #[doc(hidden)]
     pub allowed_ip_range: std::option::Option<std::string::String>,
@@ -3216,17 +3038,17 @@ pub struct WebhookAuthConfiguration {
 }
 impl WebhookAuthConfiguration {
     /// <p>The property used to configure acceptance of webhooks in an IP address range. For IP, only the <code>AllowedIPRange</code> property must be set. This property must be set to a valid CIDR range.</p>
-    pub fn allowed_ip_range(&self) -> std::option::Option<&str> {
+    pub fn allowed_ip_range(&self) -> std::option::Option<& str> {
         self.allowed_ip_range.as_deref()
     }
     /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property must be set.</p>
-    pub fn secret_token(&self) -> std::option::Option<&str> {
+    pub fn secret_token(&self) -> std::option::Option<& str> {
         self.secret_token.as_deref()
     }
 }
 /// See [`WebhookAuthConfiguration`](crate::model::WebhookAuthConfiguration).
 pub mod webhook_auth_configuration {
-
+    
     /// A builder for [`WebhookAuthConfiguration`](crate::model::WebhookAuthConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3240,12 +3062,8 @@ pub mod webhook_auth_configuration {
             self
         }
         /// <p>The property used to configure acceptance of webhooks in an IP address range. For IP, only the <code>AllowedIPRange</code> property must be set. This property must be set to a valid CIDR range.</p>
-        pub fn set_allowed_ip_range(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.allowed_ip_range = input;
-            self
+        pub fn set_allowed_ip_range(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.allowed_ip_range = input; self
         }
         /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property must be set.</p>
         pub fn secret_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3254,17 +3072,20 @@ pub mod webhook_auth_configuration {
         }
         /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property must be set.</p>
         pub fn set_secret_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_token = input;
-            self
+            self.secret_token = input; self
         }
         /// Consumes the builder and constructs a [`WebhookAuthConfiguration`](crate::model::WebhookAuthConfiguration).
         pub fn build(self) -> crate::model::WebhookAuthConfiguration {
             crate::model::WebhookAuthConfiguration {
-                allowed_ip_range: self.allowed_ip_range,
-                secret_token: self.secret_token,
+                allowed_ip_range: self.allowed_ip_range
+                ,
+                secret_token: self.secret_token
+                ,
             }
         }
     }
+    
+    
 }
 impl WebhookAuthConfiguration {
     /// Creates a new builder-style object to manufacture [`WebhookAuthConfiguration`](crate::model::WebhookAuthConfiguration).
@@ -3279,9 +3100,9 @@ impl WebhookAuthConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let webhookauthenticationtype = unimplemented!();
 /// match webhookauthenticationtype {
@@ -3304,22 +3125,14 @@ impl WebhookAuthConfiguration {
 /// Specifically, when `webhookauthenticationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `WebhookAuthenticationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum WebhookAuthenticationType {
     #[allow(missing_docs)] // documentation missing in model
     GithubHmac,
@@ -3328,7 +3141,7 @@ pub enum WebhookAuthenticationType {
     #[allow(missing_docs)] // documentation missing in model
     Unauthenticated,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for WebhookAuthenticationType {
     fn from(s: &str) -> Self {
@@ -3336,19 +3149,17 @@ impl std::convert::From<&str> for WebhookAuthenticationType {
             "GITHUB_HMAC" => WebhookAuthenticationType::GithubHmac,
             "IP" => WebhookAuthenticationType::Ip,
             "UNAUTHENTICATED" => WebhookAuthenticationType::Unauthenticated,
-            other => WebhookAuthenticationType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => WebhookAuthenticationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for WebhookAuthenticationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WebhookAuthenticationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(WebhookAuthenticationType::from(s))
+                }
+            }
 impl WebhookAuthenticationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3356,12 +3167,14 @@ impl WebhookAuthenticationType {
             WebhookAuthenticationType::GithubHmac => "GITHUB_HMAC",
             WebhookAuthenticationType::Ip => "IP",
             WebhookAuthenticationType::Unauthenticated => "UNAUTHENTICATED",
-            WebhookAuthenticationType::Unknown(value) => value.as_str(),
+            WebhookAuthenticationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GITHUB_HMAC", "IP", "UNAUTHENTICATED"]
+        &[
+            "GITHUB_HMAC", "IP", "UNAUTHENTICATED"
+        ]
     }
 }
 impl AsRef<str> for WebhookAuthenticationType {
@@ -3373,7 +3186,7 @@ impl AsRef<str> for WebhookAuthenticationType {
 /// <p>The event criteria that specify when a webhook notification is sent to your URL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WebhookFilterRule {
+pub struct WebhookFilterRule  {
     /// <p>A JsonPath expression that is applied to the body/payload of the webhook. The value selected by the JsonPath expression must match the value specified in the <code>MatchEquals</code> field. Otherwise, the request is ignored. For more information, see <a href="https://github.com/json-path/JsonPath">Java JsonPath implementation</a> in GitHub.</p>
     #[doc(hidden)]
     pub json_path: std::option::Option<std::string::String>,
@@ -3383,17 +3196,17 @@ pub struct WebhookFilterRule {
 }
 impl WebhookFilterRule {
     /// <p>A JsonPath expression that is applied to the body/payload of the webhook. The value selected by the JsonPath expression must match the value specified in the <code>MatchEquals</code> field. Otherwise, the request is ignored. For more information, see <a href="https://github.com/json-path/JsonPath">Java JsonPath implementation</a> in GitHub.</p>
-    pub fn json_path(&self) -> std::option::Option<&str> {
+    pub fn json_path(&self) -> std::option::Option<& str> {
         self.json_path.as_deref()
     }
     /// <p>The value selected by the <code>JsonPath</code> expression must match what is supplied in the <code>MatchEquals</code> field. Otherwise, the request is ignored. Properties from the target action configuration can be included as placeholders in this value by surrounding the action configuration key with curly brackets. For example, if the value supplied here is "refs/heads/{Branch}" and the target action has an action configuration property called "Branch" with a value of "master", the <code>MatchEquals</code> value is evaluated as "refs/heads/master". For a list of action configuration properties for built-in action types, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline Structure Reference Action Requirements</a>.</p>
-    pub fn match_equals(&self) -> std::option::Option<&str> {
+    pub fn match_equals(&self) -> std::option::Option<& str> {
         self.match_equals.as_deref()
     }
 }
 /// See [`WebhookFilterRule`](crate::model::WebhookFilterRule).
 pub mod webhook_filter_rule {
-
+    
     /// A builder for [`WebhookFilterRule`](crate::model::WebhookFilterRule).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3408,8 +3221,7 @@ pub mod webhook_filter_rule {
         }
         /// <p>A JsonPath expression that is applied to the body/payload of the webhook. The value selected by the JsonPath expression must match the value specified in the <code>MatchEquals</code> field. Otherwise, the request is ignored. For more information, see <a href="https://github.com/json-path/JsonPath">Java JsonPath implementation</a> in GitHub.</p>
         pub fn set_json_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.json_path = input;
-            self
+            self.json_path = input; self
         }
         /// <p>The value selected by the <code>JsonPath</code> expression must match what is supplied in the <code>MatchEquals</code> field. Otherwise, the request is ignored. Properties from the target action configuration can be included as placeholders in this value by surrounding the action configuration key with curly brackets. For example, if the value supplied here is "refs/heads/{Branch}" and the target action has an action configuration property called "Branch" with a value of "master", the <code>MatchEquals</code> value is evaluated as "refs/heads/master". For a list of action configuration properties for built-in action types, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline Structure Reference Action Requirements</a>.</p>
         pub fn match_equals(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3418,17 +3230,20 @@ pub mod webhook_filter_rule {
         }
         /// <p>The value selected by the <code>JsonPath</code> expression must match what is supplied in the <code>MatchEquals</code> field. Otherwise, the request is ignored. Properties from the target action configuration can be included as placeholders in this value by surrounding the action configuration key with curly brackets. For example, if the value supplied here is "refs/heads/{Branch}" and the target action has an action configuration property called "Branch" with a value of "master", the <code>MatchEquals</code> value is evaluated as "refs/heads/master". For a list of action configuration properties for built-in action types, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline Structure Reference Action Requirements</a>.</p>
         pub fn set_match_equals(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.match_equals = input;
-            self
+            self.match_equals = input; self
         }
         /// Consumes the builder and constructs a [`WebhookFilterRule`](crate::model::WebhookFilterRule).
         pub fn build(self) -> crate::model::WebhookFilterRule {
             crate::model::WebhookFilterRule {
-                json_path: self.json_path,
-                match_equals: self.match_equals,
+                json_path: self.json_path
+                ,
+                match_equals: self.match_equals
+                ,
             }
         }
     }
+    
+    
 }
 impl WebhookFilterRule {
     /// Creates a new builder-style object to manufacture [`WebhookFilterRule`](crate::model::WebhookFilterRule).
@@ -3440,7 +3255,7 @@ impl WebhookFilterRule {
 /// <p>The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecutionDetails {
+pub struct ExecutionDetails  {
     /// <p>The summary of the current status of the actions.</p>
     #[doc(hidden)]
     pub summary: std::option::Option<std::string::String>,
@@ -3453,11 +3268,11 @@ pub struct ExecutionDetails {
 }
 impl ExecutionDetails {
     /// <p>The summary of the current status of the actions.</p>
-    pub fn summary(&self) -> std::option::Option<&str> {
+    pub fn summary(&self) -> std::option::Option<& str> {
         self.summary.as_deref()
     }
     /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as AWS CodeDeploy.</p>
-    pub fn external_execution_id(&self) -> std::option::Option<&str> {
+    pub fn external_execution_id(&self) -> std::option::Option<& str> {
         self.external_execution_id.as_deref()
     }
     /// <p>The percentage of work completed on the action, represented on a scale of 0 to 100 percent.</p>
@@ -3467,7 +3282,7 @@ impl ExecutionDetails {
 }
 /// See [`ExecutionDetails`](crate::model::ExecutionDetails).
 pub mod execution_details {
-
+    
     /// A builder for [`ExecutionDetails`](crate::model::ExecutionDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3483,8 +3298,7 @@ pub mod execution_details {
         }
         /// <p>The summary of the current status of the actions.</p>
         pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.summary = input;
-            self
+            self.summary = input; self
         }
         /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as AWS CodeDeploy.</p>
         pub fn external_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3492,12 +3306,8 @@ pub mod execution_details {
             self
         }
         /// <p>The system-generated unique ID of this action used to identify this job worker in any external systems, such as AWS CodeDeploy.</p>
-        pub fn set_external_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.external_execution_id = input;
-            self
+        pub fn set_external_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.external_execution_id = input; self
         }
         /// <p>The percentage of work completed on the action, represented on a scale of 0 to 100 percent.</p>
         pub fn percent_complete(mut self, input: i32) -> Self {
@@ -3506,18 +3316,22 @@ pub mod execution_details {
         }
         /// <p>The percentage of work completed on the action, represented on a scale of 0 to 100 percent.</p>
         pub fn set_percent_complete(mut self, input: std::option::Option<i32>) -> Self {
-            self.percent_complete = input;
-            self
+            self.percent_complete = input; self
         }
         /// Consumes the builder and constructs a [`ExecutionDetails`](crate::model::ExecutionDetails).
         pub fn build(self) -> crate::model::ExecutionDetails {
             crate::model::ExecutionDetails {
-                summary: self.summary,
-                external_execution_id: self.external_execution_id,
-                percent_complete: self.percent_complete,
+                summary: self.summary
+                ,
+                external_execution_id: self.external_execution_id
+                ,
+                percent_complete: self.percent_complete
+                ,
             }
         }
     }
+    
+    
 }
 impl ExecutionDetails {
     /// Creates a new builder-style object to manufacture [`ExecutionDetails`](crate::model::ExecutionDetails).
@@ -3529,7 +3343,7 @@ impl ExecutionDetails {
 /// <p>Represents information about a current revision.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CurrentRevision {
+pub struct CurrentRevision  {
     /// <p>The revision ID of the current version of an artifact.</p>
     #[doc(hidden)]
     pub revision: std::option::Option<std::string::String>,
@@ -3545,25 +3359,25 @@ pub struct CurrentRevision {
 }
 impl CurrentRevision {
     /// <p>The revision ID of the current version of an artifact.</p>
-    pub fn revision(&self) -> std::option::Option<&str> {
+    pub fn revision(&self) -> std::option::Option<& str> {
         self.revision.as_deref()
     }
     /// <p>The change identifier for the current revision.</p>
-    pub fn change_identifier(&self) -> std::option::Option<&str> {
+    pub fn change_identifier(&self) -> std::option::Option<& str> {
         self.change_identifier.as_deref()
     }
     /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The summary of the most recent revision of the artifact.</p>
-    pub fn revision_summary(&self) -> std::option::Option<&str> {
+    pub fn revision_summary(&self) -> std::option::Option<& str> {
         self.revision_summary.as_deref()
     }
 }
 /// See [`CurrentRevision`](crate::model::CurrentRevision).
 pub mod current_revision {
-
+    
     /// A builder for [`CurrentRevision`](crate::model::CurrentRevision).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3580,8 +3394,7 @@ pub mod current_revision {
         }
         /// <p>The revision ID of the current version of an artifact.</p>
         pub fn set_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision = input;
-            self
+            self.revision = input; self
         }
         /// <p>The change identifier for the current revision.</p>
         pub fn change_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3589,12 +3402,8 @@ pub mod current_revision {
             self
         }
         /// <p>The change identifier for the current revision.</p>
-        pub fn set_change_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.change_identifier = input;
-            self
+        pub fn set_change_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.change_identifier = input; self
         }
         /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
         pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3602,12 +3411,8 @@ pub mod current_revision {
             self
         }
         /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
-        pub fn set_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created = input;
-            self
+        pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created = input; self
         }
         /// <p>The summary of the most recent revision of the artifact.</p>
         pub fn revision_summary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3615,23 +3420,25 @@ pub mod current_revision {
             self
         }
         /// <p>The summary of the most recent revision of the artifact.</p>
-        pub fn set_revision_summary(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.revision_summary = input;
-            self
+        pub fn set_revision_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_summary = input; self
         }
         /// Consumes the builder and constructs a [`CurrentRevision`](crate::model::CurrentRevision).
         pub fn build(self) -> crate::model::CurrentRevision {
             crate::model::CurrentRevision {
-                revision: self.revision,
-                change_identifier: self.change_identifier,
-                created: self.created,
-                revision_summary: self.revision_summary,
+                revision: self.revision
+                ,
+                change_identifier: self.change_identifier
+                ,
+                created: self.created
+                ,
+                revision_summary: self.revision_summary
+                ,
             }
         }
     }
+    
+    
 }
 impl CurrentRevision {
     /// Creates a new builder-style object to manufacture [`CurrentRevision`](crate::model::CurrentRevision).
@@ -3643,7 +3450,7 @@ impl CurrentRevision {
 /// <p>Represents information about failure details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailureDetails {
+pub struct FailureDetails  {
     /// <p>The type of the failure.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::FailureType>,
@@ -3656,21 +3463,21 @@ pub struct FailureDetails {
 }
 impl FailureDetails {
     /// <p>The type of the failure.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::FailureType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::FailureType> {
         self.r#type.as_ref()
     }
     /// <p>The message about the failure.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The external ID of the run of the action that failed.</p>
-    pub fn external_execution_id(&self) -> std::option::Option<&str> {
+    pub fn external_execution_id(&self) -> std::option::Option<& str> {
         self.external_execution_id.as_deref()
     }
 }
 /// See [`FailureDetails`](crate::model::FailureDetails).
 pub mod failure_details {
-
+    
     /// A builder for [`FailureDetails`](crate::model::FailureDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3686,8 +3493,7 @@ pub mod failure_details {
         }
         /// <p>The type of the failure.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::FailureType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The message about the failure.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3696,8 +3502,7 @@ pub mod failure_details {
         }
         /// <p>The message about the failure.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The external ID of the run of the action that failed.</p>
         pub fn external_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3705,22 +3510,23 @@ pub mod failure_details {
             self
         }
         /// <p>The external ID of the run of the action that failed.</p>
-        pub fn set_external_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.external_execution_id = input;
-            self
+        pub fn set_external_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.external_execution_id = input; self
         }
         /// Consumes the builder and constructs a [`FailureDetails`](crate::model::FailureDetails).
         pub fn build(self) -> crate::model::FailureDetails {
             crate::model::FailureDetails {
-                r#type: self.r#type,
-                message: self.message,
-                external_execution_id: self.external_execution_id,
+                r#type: self.r#type
+                ,
+                message: self.message
+                ,
+                external_execution_id: self.external_execution_id
+                ,
             }
         }
     }
+    
+    
 }
 impl FailureDetails {
     /// Creates a new builder-style object to manufacture [`FailureDetails`](crate::model::FailureDetails).
@@ -3735,9 +3541,9 @@ impl FailureDetails {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let failuretype = unimplemented!();
 /// match failuretype {
@@ -3763,22 +3569,14 @@ impl FailureDetails {
 /// Specifically, when `failuretype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FailureType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FailureType {
     #[allow(missing_docs)] // documentation missing in model
     ConfigurationError,
@@ -3793,7 +3591,7 @@ pub enum FailureType {
     #[allow(missing_docs)] // documentation missing in model
     SystemUnavailable,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FailureType {
     fn from(s: &str) -> Self {
@@ -3804,17 +3602,17 @@ impl std::convert::From<&str> for FailureType {
             "RevisionOutOfSync" => FailureType::RevisionOutOfSync,
             "RevisionUnavailable" => FailureType::RevisionUnavailable,
             "SystemUnavailable" => FailureType::SystemUnavailable,
-            other => FailureType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FailureType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FailureType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FailureType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FailureType::from(s))
+                }
+            }
 impl FailureType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3825,18 +3623,13 @@ impl FailureType {
             FailureType::RevisionOutOfSync => "RevisionOutOfSync",
             FailureType::RevisionUnavailable => "RevisionUnavailable",
             FailureType::SystemUnavailable => "SystemUnavailable",
-            FailureType::Unknown(value) => value.as_str(),
+            FailureType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ConfigurationError",
-            "JobFailed",
-            "PermissionError",
-            "RevisionOutOfSync",
-            "RevisionUnavailable",
-            "SystemUnavailable",
+            "ConfigurationError", "JobFailed", "PermissionError", "RevisionOutOfSync", "RevisionUnavailable", "SystemUnavailable"
         ]
     }
 }
@@ -3849,7 +3642,7 @@ impl AsRef<str> for FailureType {
 /// <p>Represents information about the result of an approval request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApprovalResult {
+pub struct ApprovalResult  {
     /// <p>The summary of the current status of the approval request.</p>
     #[doc(hidden)]
     pub summary: std::option::Option<std::string::String>,
@@ -3859,17 +3652,17 @@ pub struct ApprovalResult {
 }
 impl ApprovalResult {
     /// <p>The summary of the current status of the approval request.</p>
-    pub fn summary(&self) -> std::option::Option<&str> {
+    pub fn summary(&self) -> std::option::Option<& str> {
         self.summary.as_deref()
     }
     /// <p>The response submitted by a reviewer assigned to an approval action request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ApprovalStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ApprovalStatus> {
         self.status.as_ref()
     }
 }
 /// See [`ApprovalResult`](crate::model::ApprovalResult).
 pub mod approval_result {
-
+    
     /// A builder for [`ApprovalResult`](crate::model::ApprovalResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3884,8 +3677,7 @@ pub mod approval_result {
         }
         /// <p>The summary of the current status of the approval request.</p>
         pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.summary = input;
-            self
+            self.summary = input; self
         }
         /// <p>The response submitted by a reviewer assigned to an approval action request.</p>
         pub fn status(mut self, input: crate::model::ApprovalStatus) -> Self {
@@ -3893,21 +3685,21 @@ pub mod approval_result {
             self
         }
         /// <p>The response submitted by a reviewer assigned to an approval action request.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ApprovalStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ApprovalStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`ApprovalResult`](crate::model::ApprovalResult).
         pub fn build(self) -> crate::model::ApprovalResult {
             crate::model::ApprovalResult {
-                summary: self.summary,
-                status: self.status,
+                summary: self.summary
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl ApprovalResult {
     /// Creates a new builder-style object to manufacture [`ApprovalResult`](crate::model::ApprovalResult).
@@ -3922,9 +3714,9 @@ impl ApprovalResult {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let approvalstatus = unimplemented!();
 /// match approvalstatus {
@@ -3946,58 +3738,52 @@ impl ApprovalResult {
 /// Specifically, when `approvalstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ApprovalStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ApprovalStatus {
     #[allow(missing_docs)] // documentation missing in model
     Approved,
     #[allow(missing_docs)] // documentation missing in model
     Rejected,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ApprovalStatus {
     fn from(s: &str) -> Self {
         match s {
             "Approved" => ApprovalStatus::Approved,
             "Rejected" => ApprovalStatus::Rejected,
-            other => ApprovalStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ApprovalStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ApprovalStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ApprovalStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ApprovalStatus::from(s))
+                }
+            }
 impl ApprovalStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ApprovalStatus::Approved => "Approved",
             ApprovalStatus::Rejected => "Rejected",
-            ApprovalStatus::Unknown(value) => value.as_str(),
+            ApprovalStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Approved", "Rejected"]
+        &[
+            "Approved", "Rejected"
+        ]
     }
 }
 impl AsRef<str> for ApprovalStatus {
@@ -4009,7 +3795,7 @@ impl AsRef<str> for ApprovalStatus {
 /// <p>Represents information about the version (or revision) of an action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionRevision {
+pub struct ActionRevision  {
     /// <p>The system-generated unique ID that identifies the revision number of the action.</p>
     #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
@@ -4022,21 +3808,21 @@ pub struct ActionRevision {
 }
 impl ActionRevision {
     /// <p>The system-generated unique ID that identifies the revision number of the action.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The unique identifier of the change that set the state to this revision (for example, a deployment ID or timestamp).</p>
-    pub fn revision_change_id(&self) -> std::option::Option<&str> {
+    pub fn revision_change_id(&self) -> std::option::Option<& str> {
         self.revision_change_id.as_deref()
     }
     /// <p>The date and time when the most recent version of the action was created, in timestamp format.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
 }
 /// See [`ActionRevision`](crate::model::ActionRevision).
 pub mod action_revision {
-
+    
     /// A builder for [`ActionRevision`](crate::model::ActionRevision).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4052,8 +3838,7 @@ pub mod action_revision {
         }
         /// <p>The system-generated unique ID that identifies the revision number of the action.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// <p>The unique identifier of the change that set the state to this revision (for example, a deployment ID or timestamp).</p>
         pub fn revision_change_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4061,12 +3846,8 @@ pub mod action_revision {
             self
         }
         /// <p>The unique identifier of the change that set the state to this revision (for example, a deployment ID or timestamp).</p>
-        pub fn set_revision_change_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.revision_change_id = input;
-            self
+        pub fn set_revision_change_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_change_id = input; self
         }
         /// <p>The date and time when the most recent version of the action was created, in timestamp format.</p>
         pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4074,22 +3855,23 @@ pub mod action_revision {
             self
         }
         /// <p>The date and time when the most recent version of the action was created, in timestamp format.</p>
-        pub fn set_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created = input;
-            self
+        pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created = input; self
         }
         /// Consumes the builder and constructs a [`ActionRevision`](crate::model::ActionRevision).
         pub fn build(self) -> crate::model::ActionRevision {
             crate::model::ActionRevision {
-                revision_id: self.revision_id,
-                revision_change_id: self.revision_change_id,
-                created: self.created,
+                revision_id: self.revision_id
+                ,
+                revision_change_id: self.revision_change_id
+                ,
+                created: self.created
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionRevision {
     /// Creates a new builder-style object to manufacture [`ActionRevision`](crate::model::ActionRevision).
@@ -4101,7 +3883,7 @@ impl ActionRevision {
 /// <p>A response to a <code>PollForThirdPartyJobs</code> request returned by AWS CodePipeline when there is a job to be worked on by a partner action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThirdPartyJob {
+pub struct ThirdPartyJob  {
     /// <p>The <code>clientToken</code> portion of the <code>clientId</code> and <code>clientToken</code> pair used to verify that the calling entity is allowed access to the job and its details.</p>
     #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
@@ -4111,17 +3893,17 @@ pub struct ThirdPartyJob {
 }
 impl ThirdPartyJob {
     /// <p>The <code>clientToken</code> portion of the <code>clientId</code> and <code>clientToken</code> pair used to verify that the calling entity is allowed access to the job and its details.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> std::option::Option<& str> {
         self.client_id.as_deref()
     }
     /// <p>The identifier used to identify the job in AWS CodePipeline.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`ThirdPartyJob`](crate::model::ThirdPartyJob).
 pub mod third_party_job {
-
+    
     /// A builder for [`ThirdPartyJob`](crate::model::ThirdPartyJob).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4136,8 +3918,7 @@ pub mod third_party_job {
         }
         /// <p>The <code>clientToken</code> portion of the <code>clientId</code> and <code>clientToken</code> pair used to verify that the calling entity is allowed access to the job and its details.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_id = input;
-            self
+            self.client_id = input; self
         }
         /// <p>The identifier used to identify the job in AWS CodePipeline.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4146,17 +3927,20 @@ pub mod third_party_job {
         }
         /// <p>The identifier used to identify the job in AWS CodePipeline.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`ThirdPartyJob`](crate::model::ThirdPartyJob).
         pub fn build(self) -> crate::model::ThirdPartyJob {
             crate::model::ThirdPartyJob {
-                client_id: self.client_id,
-                job_id: self.job_id,
+                client_id: self.client_id
+                ,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ThirdPartyJob {
     /// Creates a new builder-style object to manufacture [`ThirdPartyJob`](crate::model::ThirdPartyJob).
@@ -4168,7 +3952,7 @@ impl ThirdPartyJob {
 /// <p>Represents information about a job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Job {
+pub struct Job  {
     /// <p>The unique system-generated ID of the job.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -4184,25 +3968,25 @@ pub struct Job {
 }
 impl Job {
     /// <p>The unique system-generated ID of the job.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Other data about a job.</p>
-    pub fn data(&self) -> std::option::Option<&crate::model::JobData> {
+    pub fn data(&self) -> std::option::Option<& crate::model::JobData> {
         self.data.as_ref()
     }
     /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeJob</code> request.</p>
-    pub fn nonce(&self) -> std::option::Option<&str> {
+    pub fn nonce(&self) -> std::option::Option<& str> {
         self.nonce.as_deref()
     }
     /// <p>The ID of the AWS account to use when performing the job.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
 /// See [`Job`](crate::model::Job).
 pub mod job {
-
+    
     /// A builder for [`Job`](crate::model::Job).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4219,8 +4003,7 @@ pub mod job {
         }
         /// <p>The unique system-generated ID of the job.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>Other data about a job.</p>
         pub fn data(mut self, input: crate::model::JobData) -> Self {
@@ -4229,8 +4012,7 @@ pub mod job {
         }
         /// <p>Other data about a job.</p>
         pub fn set_data(mut self, input: std::option::Option<crate::model::JobData>) -> Self {
-            self.data = input;
-            self
+            self.data = input; self
         }
         /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeJob</code> request.</p>
         pub fn nonce(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4239,8 +4021,7 @@ pub mod job {
         }
         /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeJob</code> request.</p>
         pub fn set_nonce(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.nonce = input;
-            self
+            self.nonce = input; self
         }
         /// <p>The ID of the AWS account to use when performing the job.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4249,19 +4030,24 @@ pub mod job {
         }
         /// <p>The ID of the AWS account to use when performing the job.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// Consumes the builder and constructs a [`Job`](crate::model::Job).
         pub fn build(self) -> crate::model::Job {
             crate::model::Job {
-                id: self.id,
-                data: self.data,
-                nonce: self.nonce,
-                account_id: self.account_id,
+                id: self.id
+                ,
+                data: self.data
+                ,
+                nonce: self.nonce
+                ,
+                account_id: self.account_id
+                ,
             }
         }
     }
+    
+    
 }
 impl Job {
     /// Creates a new builder-style object to manufacture [`Job`](crate::model::Job).
@@ -4273,15 +4059,15 @@ impl Job {
 /// <p>Represents other information about a job required for a job worker to complete the job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct JobData {
+pub struct JobData  {
     /// <p>Represents information about an action type.</p>
     #[doc(hidden)]
     pub action_type_id: std::option::Option<crate::model::ActionTypeId>,
     /// <p>Represents information about an action configuration.</p>
     #[doc(hidden)]
     pub action_configuration: std::option::Option<crate::model::ActionConfiguration>,
-    /// <p>Represents information about a pipeline to a job worker.</p> <note>
-    /// <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom jobs.</p>
+    /// <p>Represents information about a pipeline to a job worker.</p> <note> 
+    /// <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom jobs.</p> 
     /// </note>
     #[doc(hidden)]
     pub pipeline_context: std::option::Option<crate::model::PipelineContext>,
@@ -4303,43 +4089,41 @@ pub struct JobData {
 }
 impl JobData {
     /// <p>Represents information about an action type.</p>
-    pub fn action_type_id(&self) -> std::option::Option<&crate::model::ActionTypeId> {
+    pub fn action_type_id(&self) -> std::option::Option<& crate::model::ActionTypeId> {
         self.action_type_id.as_ref()
     }
     /// <p>Represents information about an action configuration.</p>
-    pub fn action_configuration(&self) -> std::option::Option<&crate::model::ActionConfiguration> {
+    pub fn action_configuration(&self) -> std::option::Option<& crate::model::ActionConfiguration> {
         self.action_configuration.as_ref()
     }
-    /// <p>Represents information about a pipeline to a job worker.</p> <note>
-    /// <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom jobs.</p>
+    /// <p>Represents information about a pipeline to a job worker.</p> <note> 
+    /// <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom jobs.</p> 
     /// </note>
-    pub fn pipeline_context(&self) -> std::option::Option<&crate::model::PipelineContext> {
+    pub fn pipeline_context(&self) -> std::option::Option<& crate::model::PipelineContext> {
         self.pipeline_context.as_ref()
     }
     /// <p>The artifact supplied to the job.</p>
-    pub fn input_artifacts(&self) -> std::option::Option<&[crate::model::Artifact]> {
+    pub fn input_artifacts(&self) -> std::option::Option<& [crate::model::Artifact]> {
         self.input_artifacts.as_deref()
     }
     /// <p>The output of the job.</p>
-    pub fn output_artifacts(&self) -> std::option::Option<&[crate::model::Artifact]> {
+    pub fn output_artifacts(&self) -> std::option::Option<& [crate::model::Artifact]> {
         self.output_artifacts.as_deref()
     }
     /// <p>Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifacts for the pipeline in AWS CodePipeline.</p>
-    pub fn artifact_credentials(
-        &self,
-    ) -> std::option::Option<&crate::model::AwsSessionCredentials> {
+    pub fn artifact_credentials(&self) -> std::option::Option<& crate::model::AwsSessionCredentials> {
         self.artifact_credentials.as_ref()
     }
     /// <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by a job to continue the job asynchronously.</p>
-    pub fn continuation_token(&self) -> std::option::Option<&str> {
+    pub fn continuation_token(&self) -> std::option::Option<& str> {
         self.continuation_token.as_deref()
     }
     /// <p>Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS) key. </p>
-    pub fn encryption_key(&self) -> std::option::Option<&crate::model::EncryptionKey> {
+    pub fn encryption_key(&self) -> std::option::Option<& crate::model::EncryptionKey> {
         self.encryption_key.as_ref()
     }
 }
-impl std::fmt::Debug for JobData {
+impl  std::fmt::Debug for JobData  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("JobData");
         formatter.field("action_type_id", &self.action_type_id);
@@ -4355,7 +4139,7 @@ impl std::fmt::Debug for JobData {
 }
 /// See [`JobData`](crate::model::JobData).
 pub mod job_data {
-
+    
     /// A builder for [`JobData`](crate::model::JobData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4375,12 +4159,8 @@ pub mod job_data {
             self
         }
         /// <p>Represents information about an action type.</p>
-        pub fn set_action_type_id(
-            mut self,
-            input: std::option::Option<crate::model::ActionTypeId>,
-        ) -> Self {
-            self.action_type_id = input;
-            self
+        pub fn set_action_type_id(mut self, input: std::option::Option<crate::model::ActionTypeId>) -> Self {
+            self.action_type_id = input; self
         }
         /// <p>Represents information about an action configuration.</p>
         pub fn action_configuration(mut self, input: crate::model::ActionConfiguration) -> Self {
@@ -4388,29 +4168,21 @@ pub mod job_data {
             self
         }
         /// <p>Represents information about an action configuration.</p>
-        pub fn set_action_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ActionConfiguration>,
-        ) -> Self {
-            self.action_configuration = input;
-            self
+        pub fn set_action_configuration(mut self, input: std::option::Option<crate::model::ActionConfiguration>) -> Self {
+            self.action_configuration = input; self
         }
-        /// <p>Represents information about a pipeline to a job worker.</p> <note>
-        /// <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom jobs.</p>
+        /// <p>Represents information about a pipeline to a job worker.</p> <note> 
+        /// <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom jobs.</p> 
         /// </note>
         pub fn pipeline_context(mut self, input: crate::model::PipelineContext) -> Self {
             self.pipeline_context = Some(input);
             self
         }
-        /// <p>Represents information about a pipeline to a job worker.</p> <note>
-        /// <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom jobs.</p>
+        /// <p>Represents information about a pipeline to a job worker.</p> <note> 
+        /// <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom jobs.</p> 
         /// </note>
-        pub fn set_pipeline_context(
-            mut self,
-            input: std::option::Option<crate::model::PipelineContext>,
-        ) -> Self {
-            self.pipeline_context = input;
-            self
+        pub fn set_pipeline_context(mut self, input: std::option::Option<crate::model::PipelineContext>) -> Self {
+            self.pipeline_context = input; self
         }
         /// Appends an item to `input_artifacts`.
         ///
@@ -4419,17 +4191,13 @@ pub mod job_data {
         /// <p>The artifact supplied to the job.</p>
         pub fn input_artifacts(mut self, input: crate::model::Artifact) -> Self {
             let mut v = self.input_artifacts.unwrap_or_default();
-            v.push(input);
-            self.input_artifacts = Some(v);
-            self
+                            v.push(input);
+                            self.input_artifacts = Some(v);
+                            self
         }
         /// <p>The artifact supplied to the job.</p>
-        pub fn set_input_artifacts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Artifact>>,
-        ) -> Self {
-            self.input_artifacts = input;
-            self
+        pub fn set_input_artifacts(mut self, input: std::option::Option<std::vec::Vec<crate::model::Artifact>>) -> Self {
+            self.input_artifacts = input; self
         }
         /// Appends an item to `output_artifacts`.
         ///
@@ -4438,17 +4206,13 @@ pub mod job_data {
         /// <p>The output of the job.</p>
         pub fn output_artifacts(mut self, input: crate::model::Artifact) -> Self {
             let mut v = self.output_artifacts.unwrap_or_default();
-            v.push(input);
-            self.output_artifacts = Some(v);
-            self
+                            v.push(input);
+                            self.output_artifacts = Some(v);
+                            self
         }
         /// <p>The output of the job.</p>
-        pub fn set_output_artifacts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Artifact>>,
-        ) -> Self {
-            self.output_artifacts = input;
-            self
+        pub fn set_output_artifacts(mut self, input: std::option::Option<std::vec::Vec<crate::model::Artifact>>) -> Self {
+            self.output_artifacts = input; self
         }
         /// <p>Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifacts for the pipeline in AWS CodePipeline.</p>
         pub fn artifact_credentials(mut self, input: crate::model::AwsSessionCredentials) -> Self {
@@ -4456,12 +4220,8 @@ pub mod job_data {
             self
         }
         /// <p>Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifacts for the pipeline in AWS CodePipeline.</p>
-        pub fn set_artifact_credentials(
-            mut self,
-            input: std::option::Option<crate::model::AwsSessionCredentials>,
-        ) -> Self {
-            self.artifact_credentials = input;
-            self
+        pub fn set_artifact_credentials(mut self, input: std::option::Option<crate::model::AwsSessionCredentials>) -> Self {
+            self.artifact_credentials = input; self
         }
         /// <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by a job to continue the job asynchronously.</p>
         pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4469,12 +4229,8 @@ pub mod job_data {
             self
         }
         /// <p>A system-generated token, such as a AWS CodeDeploy deployment ID, required by a job to continue the job asynchronously.</p>
-        pub fn set_continuation_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.continuation_token = input;
-            self
+        pub fn set_continuation_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.continuation_token = input; self
         }
         /// <p>Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS) key. </p>
         pub fn encryption_key(mut self, input: crate::model::EncryptionKey) -> Self {
@@ -4482,24 +4238,28 @@ pub mod job_data {
             self
         }
         /// <p>Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS) key. </p>
-        pub fn set_encryption_key(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionKey>,
-        ) -> Self {
-            self.encryption_key = input;
-            self
+        pub fn set_encryption_key(mut self, input: std::option::Option<crate::model::EncryptionKey>) -> Self {
+            self.encryption_key = input; self
         }
         /// Consumes the builder and constructs a [`JobData`](crate::model::JobData).
         pub fn build(self) -> crate::model::JobData {
             crate::model::JobData {
-                action_type_id: self.action_type_id,
-                action_configuration: self.action_configuration,
-                pipeline_context: self.pipeline_context,
-                input_artifacts: self.input_artifacts,
-                output_artifacts: self.output_artifacts,
-                artifact_credentials: self.artifact_credentials,
-                continuation_token: self.continuation_token,
-                encryption_key: self.encryption_key,
+                action_type_id: self.action_type_id
+                ,
+                action_configuration: self.action_configuration
+                ,
+                pipeline_context: self.pipeline_context
+                ,
+                input_artifacts: self.input_artifacts
+                ,
+                output_artifacts: self.output_artifacts
+                ,
+                artifact_credentials: self.artifact_credentials
+                ,
+                continuation_token: self.continuation_token
+                ,
+                encryption_key: self.encryption_key
+                ,
             }
         }
     }
@@ -4517,6 +4277,8 @@ pub mod job_data {
             formatter.finish()
         }
     }
+    
+    
 }
 impl JobData {
     /// Creates a new builder-style object to manufacture [`JobData`](crate::model::JobData).
@@ -4528,7 +4290,7 @@ impl JobData {
 /// <p>Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS CodePipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AwsSessionCredentials {
+pub struct AwsSessionCredentials  {
     /// <p>The access key for the session.</p>
     #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
@@ -4541,19 +4303,19 @@ pub struct AwsSessionCredentials {
 }
 impl AwsSessionCredentials {
     /// <p>The access key for the session.</p>
-    pub fn access_key_id(&self) -> std::option::Option<&str> {
+    pub fn access_key_id(&self) -> std::option::Option<& str> {
         self.access_key_id.as_deref()
     }
     /// <p>The secret access key for the session.</p>
-    pub fn secret_access_key(&self) -> std::option::Option<&str> {
+    pub fn secret_access_key(&self) -> std::option::Option<& str> {
         self.secret_access_key.as_deref()
     }
     /// <p>The token for the session.</p>
-    pub fn session_token(&self) -> std::option::Option<&str> {
+    pub fn session_token(&self) -> std::option::Option<& str> {
         self.session_token.as_deref()
     }
 }
-impl std::fmt::Debug for AwsSessionCredentials {
+impl  std::fmt::Debug for AwsSessionCredentials  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AwsSessionCredentials");
         formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
@@ -4564,7 +4326,7 @@ impl std::fmt::Debug for AwsSessionCredentials {
 }
 /// See [`AwsSessionCredentials`](crate::model::AwsSessionCredentials).
 pub mod aws_session_credentials {
-
+    
     /// A builder for [`AwsSessionCredentials`](crate::model::AwsSessionCredentials).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4579,12 +4341,8 @@ pub mod aws_session_credentials {
             self
         }
         /// <p>The access key for the session.</p>
-        pub fn set_access_key_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_key_id = input;
-            self
+        pub fn set_access_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_key_id = input; self
         }
         /// <p>The secret access key for the session.</p>
         pub fn secret_access_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4592,12 +4350,8 @@ pub mod aws_session_credentials {
             self
         }
         /// <p>The secret access key for the session.</p>
-        pub fn set_secret_access_key(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.secret_access_key = input;
-            self
+        pub fn set_secret_access_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.secret_access_key = input; self
         }
         /// <p>The token for the session.</p>
         pub fn session_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4605,19 +4359,18 @@ pub mod aws_session_credentials {
             self
         }
         /// <p>The token for the session.</p>
-        pub fn set_session_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.session_token = input;
-            self
+        pub fn set_session_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.session_token = input; self
         }
         /// Consumes the builder and constructs a [`AwsSessionCredentials`](crate::model::AwsSessionCredentials).
         pub fn build(self) -> crate::model::AwsSessionCredentials {
             crate::model::AwsSessionCredentials {
-                access_key_id: self.access_key_id,
-                secret_access_key: self.secret_access_key,
-                session_token: self.session_token,
+                access_key_id: self.access_key_id
+                ,
+                secret_access_key: self.secret_access_key
+                ,
+                session_token: self.session_token
+                ,
             }
         }
     }
@@ -4630,6 +4383,8 @@ pub mod aws_session_credentials {
             formatter.finish()
         }
     }
+    
+    
 }
 impl AwsSessionCredentials {
     /// Creates a new builder-style object to manufacture [`AwsSessionCredentials`](crate::model::AwsSessionCredentials).
@@ -4641,7 +4396,7 @@ impl AwsSessionCredentials {
 /// <p>Represents information about an artifact that is worked on by actions in the pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Artifact {
+pub struct Artifact  {
     /// <p>The artifact's name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4654,21 +4409,21 @@ pub struct Artifact {
 }
 impl Artifact {
     /// <p>The artifact's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a revision ID (Amazon S3).</p>
-    pub fn revision(&self) -> std::option::Option<&str> {
+    pub fn revision(&self) -> std::option::Option<& str> {
         self.revision.as_deref()
     }
     /// <p>The location of an artifact.</p>
-    pub fn location(&self) -> std::option::Option<&crate::model::ArtifactLocation> {
+    pub fn location(&self) -> std::option::Option<& crate::model::ArtifactLocation> {
         self.location.as_ref()
     }
 }
 /// See [`Artifact`](crate::model::Artifact).
 pub mod artifact {
-
+    
     /// A builder for [`Artifact`](crate::model::Artifact).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4684,8 +4439,7 @@ pub mod artifact {
         }
         /// <p>The artifact's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a revision ID (Amazon S3).</p>
         pub fn revision(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4694,8 +4448,7 @@ pub mod artifact {
         }
         /// <p>The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a revision ID (Amazon S3).</p>
         pub fn set_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision = input;
-            self
+            self.revision = input; self
         }
         /// <p>The location of an artifact.</p>
         pub fn location(mut self, input: crate::model::ArtifactLocation) -> Self {
@@ -4703,22 +4456,23 @@ pub mod artifact {
             self
         }
         /// <p>The location of an artifact.</p>
-        pub fn set_location(
-            mut self,
-            input: std::option::Option<crate::model::ArtifactLocation>,
-        ) -> Self {
-            self.location = input;
-            self
+        pub fn set_location(mut self, input: std::option::Option<crate::model::ArtifactLocation>) -> Self {
+            self.location = input; self
         }
         /// Consumes the builder and constructs a [`Artifact`](crate::model::Artifact).
         pub fn build(self) -> crate::model::Artifact {
             crate::model::Artifact {
-                name: self.name,
-                revision: self.revision,
-                location: self.location,
+                name: self.name
+                ,
+                revision: self.revision
+                ,
+                location: self.location
+                ,
             }
         }
     }
+    
+    
 }
 impl Artifact {
     /// Creates a new builder-style object to manufacture [`Artifact`](crate::model::Artifact).
@@ -4730,7 +4484,7 @@ impl Artifact {
 /// <p>Represents information about the location of an artifact.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ArtifactLocation {
+pub struct ArtifactLocation  {
     /// <p>The type of artifact in the location.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ArtifactLocationType>,
@@ -4740,17 +4494,17 @@ pub struct ArtifactLocation {
 }
 impl ArtifactLocation {
     /// <p>The type of artifact in the location.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ArtifactLocationType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ArtifactLocationType> {
         self.r#type.as_ref()
     }
     /// <p>The S3 bucket that contains the artifact.</p>
-    pub fn s3_location(&self) -> std::option::Option<&crate::model::S3ArtifactLocation> {
+    pub fn s3_location(&self) -> std::option::Option<& crate::model::S3ArtifactLocation> {
         self.s3_location.as_ref()
     }
 }
 /// See [`ArtifactLocation`](crate::model::ArtifactLocation).
 pub mod artifact_location {
-
+    
     /// A builder for [`ArtifactLocation`](crate::model::ArtifactLocation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4764,12 +4518,8 @@ pub mod artifact_location {
             self
         }
         /// <p>The type of artifact in the location.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::ArtifactLocationType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ArtifactLocationType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The S3 bucket that contains the artifact.</p>
         pub fn s3_location(mut self, input: crate::model::S3ArtifactLocation) -> Self {
@@ -4777,21 +4527,21 @@ pub mod artifact_location {
             self
         }
         /// <p>The S3 bucket that contains the artifact.</p>
-        pub fn set_s3_location(
-            mut self,
-            input: std::option::Option<crate::model::S3ArtifactLocation>,
-        ) -> Self {
-            self.s3_location = input;
-            self
+        pub fn set_s3_location(mut self, input: std::option::Option<crate::model::S3ArtifactLocation>) -> Self {
+            self.s3_location = input; self
         }
         /// Consumes the builder and constructs a [`ArtifactLocation`](crate::model::ArtifactLocation).
         pub fn build(self) -> crate::model::ArtifactLocation {
             crate::model::ArtifactLocation {
-                r#type: self.r#type,
-                s3_location: self.s3_location,
+                r#type: self.r#type
+                ,
+                s3_location: self.s3_location
+                ,
             }
         }
     }
+    
+    
 }
 impl ArtifactLocation {
     /// Creates a new builder-style object to manufacture [`ArtifactLocation`](crate::model::ArtifactLocation).
@@ -4803,7 +4553,7 @@ impl ArtifactLocation {
 /// <p>The location of the S3 bucket that contains a revision.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3ArtifactLocation {
+pub struct S3ArtifactLocation  {
     /// <p>The name of the S3 bucket.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
@@ -4813,17 +4563,17 @@ pub struct S3ArtifactLocation {
 }
 impl S3ArtifactLocation {
     /// <p>The name of the S3 bucket.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> std::option::Option<& str> {
         self.bucket_name.as_deref()
     }
     /// <p>The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.</p>
-    pub fn object_key(&self) -> std::option::Option<&str> {
+    pub fn object_key(&self) -> std::option::Option<& str> {
         self.object_key.as_deref()
     }
 }
 /// See [`S3ArtifactLocation`](crate::model::S3ArtifactLocation).
 pub mod s3_artifact_location {
-
+    
     /// A builder for [`S3ArtifactLocation`](crate::model::S3ArtifactLocation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4838,8 +4588,7 @@ pub mod s3_artifact_location {
         }
         /// <p>The name of the S3 bucket.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket_name = input;
-            self
+            self.bucket_name = input; self
         }
         /// <p>The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.</p>
         pub fn object_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4848,17 +4597,20 @@ pub mod s3_artifact_location {
         }
         /// <p>The key of the object in the S3 bucket, which uniquely identifies the object in the bucket.</p>
         pub fn set_object_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.object_key = input;
-            self
+            self.object_key = input; self
         }
         /// Consumes the builder and constructs a [`S3ArtifactLocation`](crate::model::S3ArtifactLocation).
         pub fn build(self) -> crate::model::S3ArtifactLocation {
             crate::model::S3ArtifactLocation {
-                bucket_name: self.bucket_name,
-                object_key: self.object_key,
+                bucket_name: self.bucket_name
+                ,
+                object_key: self.object_key
+                ,
             }
         }
     }
+    
+    
 }
 impl S3ArtifactLocation {
     /// Creates a new builder-style object to manufacture [`S3ArtifactLocation`](crate::model::S3ArtifactLocation).
@@ -4873,9 +4625,9 @@ impl S3ArtifactLocation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let artifactlocationtype = unimplemented!();
 /// match artifactlocationtype {
@@ -4896,56 +4648,48 @@ impl S3ArtifactLocation {
 /// Specifically, when `artifactlocationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ArtifactLocationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ArtifactLocationType {
     #[allow(missing_docs)] // documentation missing in model
     S3,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ArtifactLocationType {
     fn from(s: &str) -> Self {
         match s {
             "S3" => ArtifactLocationType::S3,
-            other => {
-                ArtifactLocationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ArtifactLocationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ArtifactLocationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ArtifactLocationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ArtifactLocationType::from(s))
+                }
+            }
 impl ArtifactLocationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ArtifactLocationType::S3 => "S3",
-            ArtifactLocationType::Unknown(value) => value.as_str(),
+            ArtifactLocationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["S3"]
+        &[
+            "S3"
+        ]
     }
 }
 impl AsRef<str> for ArtifactLocationType {
@@ -4954,12 +4698,12 @@ impl AsRef<str> for ArtifactLocationType {
     }
 }
 
-/// <p>Represents information about a pipeline to a job worker.</p> <note>
-/// <p>PipelineContext contains <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom action jobs. The <code>pipelineArn</code> and <code>pipelineExecutionId</code> fields are not populated for ThirdParty action jobs.</p>
+/// <p>Represents information about a pipeline to a job worker.</p> <note> 
+/// <p>PipelineContext contains <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom action jobs. The <code>pipelineArn</code> and <code>pipelineExecutionId</code> fields are not populated for ThirdParty action jobs.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipelineContext {
+pub struct PipelineContext  {
     /// <p>The name of the pipeline. This is a user-specified value. Pipeline names must be unique across all pipeline names under an Amazon Web Services account.</p>
     #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
@@ -4978,29 +4722,29 @@ pub struct PipelineContext {
 }
 impl PipelineContext {
     /// <p>The name of the pipeline. This is a user-specified value. Pipeline names must be unique across all pipeline names under an Amazon Web Services account.</p>
-    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> std::option::Option<& str> {
         self.pipeline_name.as_deref()
     }
     /// <p>The stage of the pipeline.</p>
-    pub fn stage(&self) -> std::option::Option<&crate::model::StageContext> {
+    pub fn stage(&self) -> std::option::Option<& crate::model::StageContext> {
         self.stage.as_ref()
     }
     /// <p>The context of an action to a job worker in the stage of a pipeline.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::ActionContext> {
+    pub fn action(&self) -> std::option::Option<& crate::model::ActionContext> {
         self.action.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-    pub fn pipeline_arn(&self) -> std::option::Option<&str> {
+    pub fn pipeline_arn(&self) -> std::option::Option<& str> {
         self.pipeline_arn.as_deref()
     }
     /// <p>The execution ID of the pipeline.</p>
-    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_execution_id(&self) -> std::option::Option<& str> {
         self.pipeline_execution_id.as_deref()
     }
 }
 /// See [`PipelineContext`](crate::model::PipelineContext).
 pub mod pipeline_context {
-
+    
     /// A builder for [`PipelineContext`](crate::model::PipelineContext).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5017,12 +4761,8 @@ pub mod pipeline_context {
             self
         }
         /// <p>The name of the pipeline. This is a user-specified value. Pipeline names must be unique across all pipeline names under an Amazon Web Services account.</p>
-        pub fn set_pipeline_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pipeline_name = input;
-            self
+        pub fn set_pipeline_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pipeline_name = input; self
         }
         /// <p>The stage of the pipeline.</p>
         pub fn stage(mut self, input: crate::model::StageContext) -> Self {
@@ -5031,8 +4771,7 @@ pub mod pipeline_context {
         }
         /// <p>The stage of the pipeline.</p>
         pub fn set_stage(mut self, input: std::option::Option<crate::model::StageContext>) -> Self {
-            self.stage = input;
-            self
+            self.stage = input; self
         }
         /// <p>The context of an action to a job worker in the stage of a pipeline.</p>
         pub fn action(mut self, input: crate::model::ActionContext) -> Self {
@@ -5040,12 +4779,8 @@ pub mod pipeline_context {
             self
         }
         /// <p>The context of an action to a job worker in the stage of a pipeline.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::ActionContext>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::ActionContext>) -> Self {
+            self.action = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
         pub fn pipeline_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5054,8 +4789,7 @@ pub mod pipeline_context {
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
         pub fn set_pipeline_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pipeline_arn = input;
-            self
+            self.pipeline_arn = input; self
         }
         /// <p>The execution ID of the pipeline.</p>
         pub fn pipeline_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5063,24 +4797,27 @@ pub mod pipeline_context {
             self
         }
         /// <p>The execution ID of the pipeline.</p>
-        pub fn set_pipeline_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pipeline_execution_id = input;
-            self
+        pub fn set_pipeline_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pipeline_execution_id = input; self
         }
         /// Consumes the builder and constructs a [`PipelineContext`](crate::model::PipelineContext).
         pub fn build(self) -> crate::model::PipelineContext {
             crate::model::PipelineContext {
-                pipeline_name: self.pipeline_name,
-                stage: self.stage,
-                action: self.action,
-                pipeline_arn: self.pipeline_arn,
-                pipeline_execution_id: self.pipeline_execution_id,
+                pipeline_name: self.pipeline_name
+                ,
+                stage: self.stage
+                ,
+                action: self.action
+                ,
+                pipeline_arn: self.pipeline_arn
+                ,
+                pipeline_execution_id: self.pipeline_execution_id
+                ,
             }
         }
     }
+    
+    
 }
 impl PipelineContext {
     /// Creates a new builder-style object to manufacture [`PipelineContext`](crate::model::PipelineContext).
@@ -5092,7 +4829,7 @@ impl PipelineContext {
 /// <p>Represents the context of an action in the stage of a pipeline to a job worker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionContext {
+pub struct ActionContext  {
     /// <p>The name of the action in the context of a job.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -5102,17 +4839,17 @@ pub struct ActionContext {
 }
 impl ActionContext {
     /// <p>The name of the action in the context of a job.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The system-generated unique ID that corresponds to an action's execution.</p>
-    pub fn action_execution_id(&self) -> std::option::Option<&str> {
+    pub fn action_execution_id(&self) -> std::option::Option<& str> {
         self.action_execution_id.as_deref()
     }
 }
 /// See [`ActionContext`](crate::model::ActionContext).
 pub mod action_context {
-
+    
     /// A builder for [`ActionContext`](crate::model::ActionContext).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5127,8 +4864,7 @@ pub mod action_context {
         }
         /// <p>The name of the action in the context of a job.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The system-generated unique ID that corresponds to an action's execution.</p>
         pub fn action_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5136,21 +4872,21 @@ pub mod action_context {
             self
         }
         /// <p>The system-generated unique ID that corresponds to an action's execution.</p>
-        pub fn set_action_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.action_execution_id = input;
-            self
+        pub fn set_action_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.action_execution_id = input; self
         }
         /// Consumes the builder and constructs a [`ActionContext`](crate::model::ActionContext).
         pub fn build(self) -> crate::model::ActionContext {
             crate::model::ActionContext {
-                name: self.name,
-                action_execution_id: self.action_execution_id,
+                name: self.name
+                ,
+                action_execution_id: self.action_execution_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionContext {
     /// Creates a new builder-style object to manufacture [`ActionContext`](crate::model::ActionContext).
@@ -5162,20 +4898,20 @@ impl ActionContext {
 /// <p>Represents information about a stage to a job worker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StageContext {
+pub struct StageContext  {
     /// <p>The name of the stage.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StageContext {
     /// <p>The name of the stage.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`StageContext`](crate::model::StageContext).
 pub mod stage_context {
-
+    
     /// A builder for [`StageContext`](crate::model::StageContext).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5189,14 +4925,18 @@ pub mod stage_context {
         }
         /// <p>The name of the stage.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`StageContext`](crate::model::StageContext).
         pub fn build(self) -> crate::model::StageContext {
-            crate::model::StageContext { name: self.name }
+            crate::model::StageContext {
+                name: self.name
+                ,
+            }
         }
     }
+    
+    
 }
 impl StageContext {
     /// Creates a new builder-style object to manufacture [`StageContext`](crate::model::StageContext).
@@ -5208,30 +4948,24 @@ impl StageContext {
 /// <p>Represents information about an action configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionConfiguration {
+pub struct ActionConfiguration  {
     /// <p>The configuration data for the action.</p>
     #[doc(hidden)]
-    pub configuration:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub configuration: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ActionConfiguration {
     /// <p>The configuration data for the action.</p>
-    pub fn configuration(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn configuration(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.configuration.as_ref()
     }
 }
 /// See [`ActionConfiguration`](crate::model::ActionConfiguration).
 pub mod action_configuration {
-
+    
     /// A builder for [`ActionConfiguration`](crate::model::ActionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) configuration: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) configuration: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `configuration`.
@@ -5239,33 +4973,26 @@ pub mod action_configuration {
         /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
         ///
         /// <p>The configuration data for the action.</p>
-        pub fn configuration(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn configuration(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.configuration.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.configuration = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.configuration = Some(hash_map);
+                            self
         }
         /// <p>The configuration data for the action.</p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.configuration = input; self
         }
         /// Consumes the builder and constructs a [`ActionConfiguration`](crate::model::ActionConfiguration).
         pub fn build(self) -> crate::model::ActionConfiguration {
             crate::model::ActionConfiguration {
-                configuration: self.configuration,
+                configuration: self.configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionConfiguration {
     /// Creates a new builder-style object to manufacture [`ActionConfiguration`](crate::model::ActionConfiguration).
@@ -5277,7 +5004,7 @@ impl ActionConfiguration {
 /// <p>Returns a summary of a pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipelineSummary {
+pub struct PipelineSummary  {
     /// <p>The name of the pipeline.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -5293,7 +5020,7 @@ pub struct PipelineSummary {
 }
 impl PipelineSummary {
     /// <p>The name of the pipeline.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The version number of the pipeline.</p>
@@ -5301,17 +5028,17 @@ impl PipelineSummary {
         self.version
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date and time of the last update to the pipeline, in timestamp format.</p>
-    pub fn updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated.as_ref()
     }
 }
 /// See [`PipelineSummary`](crate::model::PipelineSummary).
 pub mod pipeline_summary {
-
+    
     /// A builder for [`PipelineSummary`](crate::model::PipelineSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5328,8 +5055,7 @@ pub mod pipeline_summary {
         }
         /// <p>The name of the pipeline.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The version number of the pipeline.</p>
         pub fn version(mut self, input: i32) -> Self {
@@ -5338,8 +5064,7 @@ pub mod pipeline_summary {
         }
         /// <p>The version number of the pipeline.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The date and time the pipeline was created, in timestamp format.</p>
         pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5347,12 +5072,8 @@ pub mod pipeline_summary {
             self
         }
         /// <p>The date and time the pipeline was created, in timestamp format.</p>
-        pub fn set_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created = input;
-            self
+        pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created = input; self
         }
         /// <p>The date and time of the last update to the pipeline, in timestamp format.</p>
         pub fn updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5360,23 +5081,25 @@ pub mod pipeline_summary {
             self
         }
         /// <p>The date and time of the last update to the pipeline, in timestamp format.</p>
-        pub fn set_updated(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated = input;
-            self
+        pub fn set_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated = input; self
         }
         /// Consumes the builder and constructs a [`PipelineSummary`](crate::model::PipelineSummary).
         pub fn build(self) -> crate::model::PipelineSummary {
             crate::model::PipelineSummary {
-                name: self.name,
-                version: self.version,
-                created: self.created,
-                updated: self.updated,
+                name: self.name
+                ,
+                version: self.version
+                ,
+                created: self.created
+                ,
+                updated: self.updated
+                ,
             }
         }
     }
+    
+    
 }
 impl PipelineSummary {
     /// Creates a new builder-style object to manufacture [`PipelineSummary`](crate::model::PipelineSummary).
@@ -5388,18 +5111,18 @@ impl PipelineSummary {
 /// <p>Summary information about a pipeline execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipelineExecutionSummary {
+pub struct PipelineExecutionSummary  {
     /// <p>The ID of the pipeline execution.</p>
     #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
-    /// <p>The status of the pipeline execution.</p>
-    /// <ul>
-    /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li>
-    /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-    /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-    /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li>
-    /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li>
-    /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
+    /// <p>The status of the pipeline execution.</p> 
+    /// <ul> 
+    /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li> 
+    /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+    /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+    /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> 
+    /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li> 
+    /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::PipelineExecutionStatus>,
@@ -5421,45 +5144,45 @@ pub struct PipelineExecutionSummary {
 }
 impl PipelineExecutionSummary {
     /// <p>The ID of the pipeline execution.</p>
-    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_execution_id(&self) -> std::option::Option<& str> {
         self.pipeline_execution_id.as_deref()
     }
-    /// <p>The status of the pipeline execution.</p>
-    /// <ul>
-    /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li>
-    /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-    /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-    /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li>
-    /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li>
-    /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
+    /// <p>The status of the pipeline execution.</p> 
+    /// <ul> 
+    /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li> 
+    /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+    /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+    /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> 
+    /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li> 
+    /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::PipelineExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::PipelineExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time of the last change to the pipeline execution, in timestamp format.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>A list of the source artifact revisions that initiated a pipeline execution.</p>
-    pub fn source_revisions(&self) -> std::option::Option<&[crate::model::SourceRevision]> {
+    pub fn source_revisions(&self) -> std::option::Option<& [crate::model::SourceRevision]> {
         self.source_revisions.as_deref()
     }
     /// <p>The interaction or event that started a pipeline execution, such as automated change detection or a <code>StartPipelineExecution</code> API call.</p>
-    pub fn trigger(&self) -> std::option::Option<&crate::model::ExecutionTrigger> {
+    pub fn trigger(&self) -> std::option::Option<& crate::model::ExecutionTrigger> {
         self.trigger.as_ref()
     }
     /// <p>The interaction that stopped a pipeline execution.</p>
-    pub fn stop_trigger(&self) -> std::option::Option<&crate::model::StopExecutionTrigger> {
+    pub fn stop_trigger(&self) -> std::option::Option<& crate::model::StopExecutionTrigger> {
         self.stop_trigger.as_ref()
     }
 }
 /// See [`PipelineExecutionSummary`](crate::model::PipelineExecutionSummary).
 pub mod pipeline_execution_summary {
-
+    
     /// A builder for [`PipelineExecutionSummary`](crate::model::PipelineExecutionSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5467,8 +5190,7 @@ pub mod pipeline_execution_summary {
         pub(crate) status: std::option::Option<crate::model::PipelineExecutionStatus>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) source_revisions:
-            std::option::Option<std::vec::Vec<crate::model::SourceRevision>>,
+        pub(crate) source_revisions: std::option::Option<std::vec::Vec<crate::model::SourceRevision>>,
         pub(crate) trigger: std::option::Option<crate::model::ExecutionTrigger>,
         pub(crate) stop_trigger: std::option::Option<crate::model::StopExecutionTrigger>,
     }
@@ -5479,41 +5201,33 @@ pub mod pipeline_execution_summary {
             self
         }
         /// <p>The ID of the pipeline execution.</p>
-        pub fn set_pipeline_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pipeline_execution_id = input;
-            self
+        pub fn set_pipeline_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pipeline_execution_id = input; self
         }
-        /// <p>The status of the pipeline execution.</p>
-        /// <ul>
-        /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li>
-        /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-        /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-        /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li>
-        /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li>
-        /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
+        /// <p>The status of the pipeline execution.</p> 
+        /// <ul> 
+        /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li> 
+        /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+        /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+        /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> 
+        /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li> 
+        /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::PipelineExecutionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the pipeline execution.</p>
-        /// <ul>
-        /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li>
-        /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-        /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-        /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li>
-        /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li>
-        /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
+        /// <p>The status of the pipeline execution.</p> 
+        /// <ul> 
+        /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li> 
+        /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+        /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+        /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> 
+        /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li> 
+        /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::PipelineExecutionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::PipelineExecutionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5521,12 +5235,8 @@ pub mod pipeline_execution_summary {
             self
         }
         /// <p>The date and time when the pipeline execution began, in timestamp format.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The date and time of the last change to the pipeline execution, in timestamp format.</p>
         pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5534,12 +5244,8 @@ pub mod pipeline_execution_summary {
             self
         }
         /// <p>The date and time of the last change to the pipeline execution, in timestamp format.</p>
-        pub fn set_last_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_time = input;
-            self
+        pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_time = input; self
         }
         /// Appends an item to `source_revisions`.
         ///
@@ -5548,17 +5254,13 @@ pub mod pipeline_execution_summary {
         /// <p>A list of the source artifact revisions that initiated a pipeline execution.</p>
         pub fn source_revisions(mut self, input: crate::model::SourceRevision) -> Self {
             let mut v = self.source_revisions.unwrap_or_default();
-            v.push(input);
-            self.source_revisions = Some(v);
-            self
+                            v.push(input);
+                            self.source_revisions = Some(v);
+                            self
         }
         /// <p>A list of the source artifact revisions that initiated a pipeline execution.</p>
-        pub fn set_source_revisions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SourceRevision>>,
-        ) -> Self {
-            self.source_revisions = input;
-            self
+        pub fn set_source_revisions(mut self, input: std::option::Option<std::vec::Vec<crate::model::SourceRevision>>) -> Self {
+            self.source_revisions = input; self
         }
         /// <p>The interaction or event that started a pipeline execution, such as automated change detection or a <code>StartPipelineExecution</code> API call.</p>
         pub fn trigger(mut self, input: crate::model::ExecutionTrigger) -> Self {
@@ -5566,12 +5268,8 @@ pub mod pipeline_execution_summary {
             self
         }
         /// <p>The interaction or event that started a pipeline execution, such as automated change detection or a <code>StartPipelineExecution</code> API call.</p>
-        pub fn set_trigger(
-            mut self,
-            input: std::option::Option<crate::model::ExecutionTrigger>,
-        ) -> Self {
-            self.trigger = input;
-            self
+        pub fn set_trigger(mut self, input: std::option::Option<crate::model::ExecutionTrigger>) -> Self {
+            self.trigger = input; self
         }
         /// <p>The interaction that stopped a pipeline execution.</p>
         pub fn stop_trigger(mut self, input: crate::model::StopExecutionTrigger) -> Self {
@@ -5579,26 +5277,31 @@ pub mod pipeline_execution_summary {
             self
         }
         /// <p>The interaction that stopped a pipeline execution.</p>
-        pub fn set_stop_trigger(
-            mut self,
-            input: std::option::Option<crate::model::StopExecutionTrigger>,
-        ) -> Self {
-            self.stop_trigger = input;
-            self
+        pub fn set_stop_trigger(mut self, input: std::option::Option<crate::model::StopExecutionTrigger>) -> Self {
+            self.stop_trigger = input; self
         }
         /// Consumes the builder and constructs a [`PipelineExecutionSummary`](crate::model::PipelineExecutionSummary).
         pub fn build(self) -> crate::model::PipelineExecutionSummary {
             crate::model::PipelineExecutionSummary {
-                pipeline_execution_id: self.pipeline_execution_id,
-                status: self.status,
-                start_time: self.start_time,
-                last_update_time: self.last_update_time,
-                source_revisions: self.source_revisions,
-                trigger: self.trigger,
-                stop_trigger: self.stop_trigger,
+                pipeline_execution_id: self.pipeline_execution_id
+                ,
+                status: self.status
+                ,
+                start_time: self.start_time
+                ,
+                last_update_time: self.last_update_time
+                ,
+                source_revisions: self.source_revisions
+                ,
+                trigger: self.trigger
+                ,
+                stop_trigger: self.stop_trigger
+                ,
             }
         }
     }
+    
+    
 }
 impl PipelineExecutionSummary {
     /// Creates a new builder-style object to manufacture [`PipelineExecutionSummary`](crate::model::PipelineExecutionSummary).
@@ -5610,20 +5313,20 @@ impl PipelineExecutionSummary {
 /// <p>The interaction that stopped a pipeline execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopExecutionTrigger {
+pub struct StopExecutionTrigger  {
     /// <p>The user-specified reason the pipeline was stopped.</p>
     #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl StopExecutionTrigger {
     /// <p>The user-specified reason the pipeline was stopped.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
 /// See [`StopExecutionTrigger`](crate::model::StopExecutionTrigger).
 pub mod stop_execution_trigger {
-
+    
     /// A builder for [`StopExecutionTrigger`](crate::model::StopExecutionTrigger).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5637,16 +5340,18 @@ pub mod stop_execution_trigger {
         }
         /// <p>The user-specified reason the pipeline was stopped.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reason = input;
-            self
+            self.reason = input; self
         }
         /// Consumes the builder and constructs a [`StopExecutionTrigger`](crate::model::StopExecutionTrigger).
         pub fn build(self) -> crate::model::StopExecutionTrigger {
             crate::model::StopExecutionTrigger {
-                reason: self.reason,
+                reason: self.reason
+                ,
             }
         }
     }
+    
+    
 }
 impl StopExecutionTrigger {
     /// Creates a new builder-style object to manufacture [`StopExecutionTrigger`](crate::model::StopExecutionTrigger).
@@ -5658,7 +5363,7 @@ impl StopExecutionTrigger {
 /// <p>The interaction or event that started a pipeline execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecutionTrigger {
+pub struct ExecutionTrigger  {
     /// <p>The type of change-detection method, command, or user interaction that started a pipeline execution.</p>
     #[doc(hidden)]
     pub trigger_type: std::option::Option<crate::model::TriggerType>,
@@ -5668,17 +5373,17 @@ pub struct ExecutionTrigger {
 }
 impl ExecutionTrigger {
     /// <p>The type of change-detection method, command, or user interaction that started a pipeline execution.</p>
-    pub fn trigger_type(&self) -> std::option::Option<&crate::model::TriggerType> {
+    pub fn trigger_type(&self) -> std::option::Option<& crate::model::TriggerType> {
         self.trigger_type.as_ref()
     }
     /// <p>Detail related to the event that started a pipeline execution, such as the webhook ARN of the webhook that triggered the pipeline execution or the user ARN for a user-initiated <code>start-pipeline-execution</code> CLI command.</p>
-    pub fn trigger_detail(&self) -> std::option::Option<&str> {
+    pub fn trigger_detail(&self) -> std::option::Option<& str> {
         self.trigger_detail.as_deref()
     }
 }
 /// See [`ExecutionTrigger`](crate::model::ExecutionTrigger).
 pub mod execution_trigger {
-
+    
     /// A builder for [`ExecutionTrigger`](crate::model::ExecutionTrigger).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5692,12 +5397,8 @@ pub mod execution_trigger {
             self
         }
         /// <p>The type of change-detection method, command, or user interaction that started a pipeline execution.</p>
-        pub fn set_trigger_type(
-            mut self,
-            input: std::option::Option<crate::model::TriggerType>,
-        ) -> Self {
-            self.trigger_type = input;
-            self
+        pub fn set_trigger_type(mut self, input: std::option::Option<crate::model::TriggerType>) -> Self {
+            self.trigger_type = input; self
         }
         /// <p>Detail related to the event that started a pipeline execution, such as the webhook ARN of the webhook that triggered the pipeline execution or the user ARN for a user-initiated <code>start-pipeline-execution</code> CLI command.</p>
         pub fn trigger_detail(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5705,21 +5406,21 @@ pub mod execution_trigger {
             self
         }
         /// <p>Detail related to the event that started a pipeline execution, such as the webhook ARN of the webhook that triggered the pipeline execution or the user ARN for a user-initiated <code>start-pipeline-execution</code> CLI command.</p>
-        pub fn set_trigger_detail(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.trigger_detail = input;
-            self
+        pub fn set_trigger_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.trigger_detail = input; self
         }
         /// Consumes the builder and constructs a [`ExecutionTrigger`](crate::model::ExecutionTrigger).
         pub fn build(self) -> crate::model::ExecutionTrigger {
             crate::model::ExecutionTrigger {
-                trigger_type: self.trigger_type,
-                trigger_detail: self.trigger_detail,
+                trigger_type: self.trigger_type
+                ,
+                trigger_detail: self.trigger_detail
+                ,
             }
         }
     }
+    
+    
 }
 impl ExecutionTrigger {
     /// Creates a new builder-style object to manufacture [`ExecutionTrigger`](crate::model::ExecutionTrigger).
@@ -5734,9 +5435,9 @@ impl ExecutionTrigger {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let triggertype = unimplemented!();
 /// match triggertype {
@@ -5762,22 +5463,14 @@ impl ExecutionTrigger {
 /// Specifically, when `triggertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TriggerType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TriggerType {
     #[allow(missing_docs)] // documentation missing in model
     CloudWatchEvent,
@@ -5792,7 +5485,7 @@ pub enum TriggerType {
     #[allow(missing_docs)] // documentation missing in model
     Webhook,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TriggerType {
     fn from(s: &str) -> Self {
@@ -5803,17 +5496,17 @@ impl std::convert::From<&str> for TriggerType {
             "PutActionRevision" => TriggerType::PutActionRevision,
             "StartPipelineExecution" => TriggerType::StartPipelineExecution,
             "Webhook" => TriggerType::Webhook,
-            other => TriggerType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TriggerType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TriggerType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TriggerType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TriggerType::from(s))
+                }
+            }
 impl TriggerType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5824,18 +5517,13 @@ impl TriggerType {
             TriggerType::PutActionRevision => "PutActionRevision",
             TriggerType::StartPipelineExecution => "StartPipelineExecution",
             TriggerType::Webhook => "Webhook",
-            TriggerType::Unknown(value) => value.as_str(),
+            TriggerType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CloudWatchEvent",
-            "CreatePipeline",
-            "PollForSourceChanges",
-            "PutActionRevision",
-            "StartPipelineExecution",
-            "Webhook",
+            "CloudWatchEvent", "CreatePipeline", "PollForSourceChanges", "PutActionRevision", "StartPipelineExecution", "Webhook"
         ]
     }
 }
@@ -5848,7 +5536,7 @@ impl AsRef<str> for TriggerType {
 /// <p>Information about the version (or revision) of a source artifact that initiated a pipeline execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceRevision {
+pub struct SourceRevision  {
     /// <p>The name of the action that processed the revision to the source artifact.</p>
     #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
@@ -5864,25 +5552,25 @@ pub struct SourceRevision {
 }
 impl SourceRevision {
     /// <p>The name of the action that processed the revision to the source artifact.</p>
-    pub fn action_name(&self) -> std::option::Option<&str> {
+    pub fn action_name(&self) -> std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>The system-generated unique ID that identifies the revision number of the artifact.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>Summary information about the most recent revision of the artifact. For GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.</p>
-    pub fn revision_summary(&self) -> std::option::Option<&str> {
+    pub fn revision_summary(&self) -> std::option::Option<& str> {
         self.revision_summary.as_deref()
     }
     /// <p>The commit ID for the artifact revision. For artifacts stored in GitHub or AWS CodeCommit repositories, the commit ID is linked to a commit details page.</p>
-    pub fn revision_url(&self) -> std::option::Option<&str> {
+    pub fn revision_url(&self) -> std::option::Option<& str> {
         self.revision_url.as_deref()
     }
 }
 /// See [`SourceRevision`](crate::model::SourceRevision).
 pub mod source_revision {
-
+    
     /// A builder for [`SourceRevision`](crate::model::SourceRevision).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5899,8 +5587,7 @@ pub mod source_revision {
         }
         /// <p>The name of the action that processed the revision to the source artifact.</p>
         pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_name = input;
-            self
+            self.action_name = input; self
         }
         /// <p>The system-generated unique ID that identifies the revision number of the artifact.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5909,8 +5596,7 @@ pub mod source_revision {
         }
         /// <p>The system-generated unique ID that identifies the revision number of the artifact.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// <p>Summary information about the most recent revision of the artifact. For GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.</p>
         pub fn revision_summary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5918,12 +5604,8 @@ pub mod source_revision {
             self
         }
         /// <p>Summary information about the most recent revision of the artifact. For GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.</p>
-        pub fn set_revision_summary(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.revision_summary = input;
-            self
+        pub fn set_revision_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_summary = input; self
         }
         /// <p>The commit ID for the artifact revision. For artifacts stored in GitHub or AWS CodeCommit repositories, the commit ID is linked to a commit details page.</p>
         pub fn revision_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5932,19 +5614,24 @@ pub mod source_revision {
         }
         /// <p>The commit ID for the artifact revision. For artifacts stored in GitHub or AWS CodeCommit repositories, the commit ID is linked to a commit details page.</p>
         pub fn set_revision_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_url = input;
-            self
+            self.revision_url = input; self
         }
         /// Consumes the builder and constructs a [`SourceRevision`](crate::model::SourceRevision).
         pub fn build(self) -> crate::model::SourceRevision {
             crate::model::SourceRevision {
-                action_name: self.action_name,
-                revision_id: self.revision_id,
-                revision_summary: self.revision_summary,
-                revision_url: self.revision_url,
+                action_name: self.action_name
+                ,
+                revision_id: self.revision_id
+                ,
+                revision_summary: self.revision_summary
+                ,
+                revision_url: self.revision_url
+                ,
             }
         }
     }
+    
+    
 }
 impl SourceRevision {
     /// Creates a new builder-style object to manufacture [`SourceRevision`](crate::model::SourceRevision).
@@ -5959,9 +5646,9 @@ impl SourceRevision {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let pipelineexecutionstatus = unimplemented!();
 /// match pipelineexecutionstatus {
@@ -5988,22 +5675,14 @@ impl SourceRevision {
 /// Specifically, when `pipelineexecutionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PipelineExecutionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PipelineExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
@@ -6020,7 +5699,7 @@ pub enum PipelineExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Superseded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PipelineExecutionStatus {
     fn from(s: &str) -> Self {
@@ -6032,19 +5711,17 @@ impl std::convert::From<&str> for PipelineExecutionStatus {
             "Stopping" => PipelineExecutionStatus::Stopping,
             "Succeeded" => PipelineExecutionStatus::Succeeded,
             "Superseded" => PipelineExecutionStatus::Superseded,
-            other => PipelineExecutionStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => PipelineExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PipelineExecutionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PipelineExecutionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PipelineExecutionStatus::from(s))
+                }
+            }
 impl PipelineExecutionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6056,19 +5733,13 @@ impl PipelineExecutionStatus {
             PipelineExecutionStatus::Stopping => "Stopping",
             PipelineExecutionStatus::Succeeded => "Succeeded",
             PipelineExecutionStatus::Superseded => "Superseded",
-            PipelineExecutionStatus::Unknown(value) => value.as_str(),
+            PipelineExecutionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Cancelled",
-            "Failed",
-            "InProgress",
-            "Stopped",
-            "Stopping",
-            "Succeeded",
-            "Superseded",
+            "Cancelled", "Failed", "InProgress", "Stopped", "Stopping", "Succeeded", "Superseded"
         ]
     }
 }
@@ -6081,7 +5752,7 @@ impl AsRef<str> for PipelineExecutionStatus {
 /// <p>Returns information about the details of an action type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionType {
+pub struct ActionType  {
     /// <p>Represents information about an action type.</p>
     #[doc(hidden)]
     pub id: std::option::Option<crate::model::ActionTypeId>,
@@ -6090,8 +5761,7 @@ pub struct ActionType {
     pub settings: std::option::Option<crate::model::ActionTypeSettings>,
     /// <p>The configuration properties for the action type.</p>
     #[doc(hidden)]
-    pub action_configuration_properties:
-        std::option::Option<std::vec::Vec<crate::model::ActionConfigurationProperty>>,
+    pub action_configuration_properties: std::option::Option<std::vec::Vec<crate::model::ActionConfigurationProperty>>,
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
     #[doc(hidden)]
     pub input_artifact_details: std::option::Option<crate::model::ArtifactDetails>,
@@ -6101,38 +5771,35 @@ pub struct ActionType {
 }
 impl ActionType {
     /// <p>Represents information about an action type.</p>
-    pub fn id(&self) -> std::option::Option<&crate::model::ActionTypeId> {
+    pub fn id(&self) -> std::option::Option<& crate::model::ActionTypeId> {
         self.id.as_ref()
     }
     /// <p>The settings for the action type.</p>
-    pub fn settings(&self) -> std::option::Option<&crate::model::ActionTypeSettings> {
+    pub fn settings(&self) -> std::option::Option<& crate::model::ActionTypeSettings> {
         self.settings.as_ref()
     }
     /// <p>The configuration properties for the action type.</p>
-    pub fn action_configuration_properties(
-        &self,
-    ) -> std::option::Option<&[crate::model::ActionConfigurationProperty]> {
+    pub fn action_configuration_properties(&self) -> std::option::Option<& [crate::model::ActionConfigurationProperty]> {
         self.action_configuration_properties.as_deref()
     }
     /// <p>The details of the input artifact for the action, such as its commit ID.</p>
-    pub fn input_artifact_details(&self) -> std::option::Option<&crate::model::ArtifactDetails> {
+    pub fn input_artifact_details(&self) -> std::option::Option<& crate::model::ArtifactDetails> {
         self.input_artifact_details.as_ref()
     }
     /// <p>The details of the output artifact of the action, such as its commit ID.</p>
-    pub fn output_artifact_details(&self) -> std::option::Option<&crate::model::ArtifactDetails> {
+    pub fn output_artifact_details(&self) -> std::option::Option<& crate::model::ArtifactDetails> {
         self.output_artifact_details.as_ref()
     }
 }
 /// See [`ActionType`](crate::model::ActionType).
 pub mod action_type {
-
+    
     /// A builder for [`ActionType`](crate::model::ActionType).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<crate::model::ActionTypeId>,
         pub(crate) settings: std::option::Option<crate::model::ActionTypeSettings>,
-        pub(crate) action_configuration_properties:
-            std::option::Option<std::vec::Vec<crate::model::ActionConfigurationProperty>>,
+        pub(crate) action_configuration_properties: std::option::Option<std::vec::Vec<crate::model::ActionConfigurationProperty>>,
         pub(crate) input_artifact_details: std::option::Option<crate::model::ArtifactDetails>,
         pub(crate) output_artifact_details: std::option::Option<crate::model::ArtifactDetails>,
     }
@@ -6144,8 +5811,7 @@ pub mod action_type {
         }
         /// <p>Represents information about an action type.</p>
         pub fn set_id(mut self, input: std::option::Option<crate::model::ActionTypeId>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The settings for the action type.</p>
         pub fn settings(mut self, input: crate::model::ActionTypeSettings) -> Self {
@@ -6153,34 +5819,23 @@ pub mod action_type {
             self
         }
         /// <p>The settings for the action type.</p>
-        pub fn set_settings(
-            mut self,
-            input: std::option::Option<crate::model::ActionTypeSettings>,
-        ) -> Self {
-            self.settings = input;
-            self
+        pub fn set_settings(mut self, input: std::option::Option<crate::model::ActionTypeSettings>) -> Self {
+            self.settings = input; self
         }
         /// Appends an item to `action_configuration_properties`.
         ///
         /// To override the contents of this collection use [`set_action_configuration_properties`](Self::set_action_configuration_properties).
         ///
         /// <p>The configuration properties for the action type.</p>
-        pub fn action_configuration_properties(
-            mut self,
-            input: crate::model::ActionConfigurationProperty,
-        ) -> Self {
+        pub fn action_configuration_properties(mut self, input: crate::model::ActionConfigurationProperty) -> Self {
             let mut v = self.action_configuration_properties.unwrap_or_default();
-            v.push(input);
-            self.action_configuration_properties = Some(v);
-            self
+                            v.push(input);
+                            self.action_configuration_properties = Some(v);
+                            self
         }
         /// <p>The configuration properties for the action type.</p>
-        pub fn set_action_configuration_properties(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ActionConfigurationProperty>>,
-        ) -> Self {
-            self.action_configuration_properties = input;
-            self
+        pub fn set_action_configuration_properties(mut self, input: std::option::Option<std::vec::Vec<crate::model::ActionConfigurationProperty>>) -> Self {
+            self.action_configuration_properties = input; self
         }
         /// <p>The details of the input artifact for the action, such as its commit ID.</p>
         pub fn input_artifact_details(mut self, input: crate::model::ArtifactDetails) -> Self {
@@ -6188,12 +5843,8 @@ pub mod action_type {
             self
         }
         /// <p>The details of the input artifact for the action, such as its commit ID.</p>
-        pub fn set_input_artifact_details(
-            mut self,
-            input: std::option::Option<crate::model::ArtifactDetails>,
-        ) -> Self {
-            self.input_artifact_details = input;
-            self
+        pub fn set_input_artifact_details(mut self, input: std::option::Option<crate::model::ArtifactDetails>) -> Self {
+            self.input_artifact_details = input; self
         }
         /// <p>The details of the output artifact of the action, such as its commit ID.</p>
         pub fn output_artifact_details(mut self, input: crate::model::ArtifactDetails) -> Self {
@@ -6201,24 +5852,27 @@ pub mod action_type {
             self
         }
         /// <p>The details of the output artifact of the action, such as its commit ID.</p>
-        pub fn set_output_artifact_details(
-            mut self,
-            input: std::option::Option<crate::model::ArtifactDetails>,
-        ) -> Self {
-            self.output_artifact_details = input;
-            self
+        pub fn set_output_artifact_details(mut self, input: std::option::Option<crate::model::ArtifactDetails>) -> Self {
+            self.output_artifact_details = input; self
         }
         /// Consumes the builder and constructs a [`ActionType`](crate::model::ActionType).
         pub fn build(self) -> crate::model::ActionType {
             crate::model::ActionType {
-                id: self.id,
-                settings: self.settings,
-                action_configuration_properties: self.action_configuration_properties,
-                input_artifact_details: self.input_artifact_details,
-                output_artifact_details: self.output_artifact_details,
+                id: self.id
+                ,
+                settings: self.settings
+                ,
+                action_configuration_properties: self.action_configuration_properties
+                ,
+                input_artifact_details: self.input_artifact_details
+                ,
+                output_artifact_details: self.output_artifact_details
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionType {
     /// Creates a new builder-style object to manufacture [`ActionType`](crate::model::ActionType).
@@ -6230,7 +5884,7 @@ impl ActionType {
 /// <p>Returns information about the details of an artifact.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ArtifactDetails {
+pub struct ArtifactDetails  {
     /// <p>The minimum number of artifacts allowed for the action type.</p>
     #[doc(hidden)]
     pub minimum_count: i32,
@@ -6250,7 +5904,7 @@ impl ArtifactDetails {
 }
 /// See [`ArtifactDetails`](crate::model::ArtifactDetails).
 pub mod artifact_details {
-
+    
     /// A builder for [`ArtifactDetails`](crate::model::ArtifactDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6265,8 +5919,7 @@ pub mod artifact_details {
         }
         /// <p>The minimum number of artifacts allowed for the action type.</p>
         pub fn set_minimum_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.minimum_count = input;
-            self
+            self.minimum_count = input; self
         }
         /// <p>The maximum number of artifacts allowed for the action type.</p>
         pub fn maximum_count(mut self, input: i32) -> Self {
@@ -6275,17 +5928,22 @@ pub mod artifact_details {
         }
         /// <p>The maximum number of artifacts allowed for the action type.</p>
         pub fn set_maximum_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.maximum_count = input;
-            self
+            self.maximum_count = input; self
         }
         /// Consumes the builder and constructs a [`ArtifactDetails`](crate::model::ArtifactDetails).
         pub fn build(self) -> crate::model::ArtifactDetails {
             crate::model::ArtifactDetails {
-                minimum_count: self.minimum_count.unwrap_or_default(),
-                maximum_count: self.maximum_count.unwrap_or_default(),
+                minimum_count: self.minimum_count
+                    .unwrap_or_default()
+                ,
+                maximum_count: self.maximum_count
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl ArtifactDetails {
     /// Creates a new builder-style object to manufacture [`ArtifactDetails`](crate::model::ArtifactDetails).
@@ -6297,7 +5955,7 @@ impl ArtifactDetails {
 /// <p>Represents information about an action configuration property.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionConfigurationProperty {
+pub struct ActionConfigurationProperty  {
     /// <p>The name of the action configuration property.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -6307,11 +5965,11 @@ pub struct ActionConfigurationProperty {
     /// <p>Whether the configuration property is a key.</p>
     #[doc(hidden)]
     pub key: bool,
-    /// <p>Whether the configuration property is secret. Secrets are hidden from all calls except for <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and <code>PollForThirdPartyJobs</code>.</p>
+    /// <p>Whether the configuration property is secret. Secrets are hidden from all calls except for <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and <code>PollForThirdPartyJobs</code>.</p> 
     /// <p>When updating a pipeline, passing * * * * * without changing any other values of the action preserves the previous value of the secret.</p>
     #[doc(hidden)]
     pub secret: bool,
-    /// <p>Indicates that the property is used with <code>PollForJobs</code>. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
+    /// <p>Indicates that the property is used with <code>PollForJobs</code>. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> 
     /// <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to other restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>
     #[doc(hidden)]
     pub queryable: bool,
@@ -6324,7 +5982,7 @@ pub struct ActionConfigurationProperty {
 }
 impl ActionConfigurationProperty {
     /// <p>The name of the action configuration property.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Whether the configuration property is a required value.</p>
@@ -6335,28 +5993,28 @@ impl ActionConfigurationProperty {
     pub fn key(&self) -> bool {
         self.key
     }
-    /// <p>Whether the configuration property is secret. Secrets are hidden from all calls except for <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and <code>PollForThirdPartyJobs</code>.</p>
+    /// <p>Whether the configuration property is secret. Secrets are hidden from all calls except for <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and <code>PollForThirdPartyJobs</code>.</p> 
     /// <p>When updating a pipeline, passing * * * * * without changing any other values of the action preserves the previous value of the secret.</p>
     pub fn secret(&self) -> bool {
         self.secret
     }
-    /// <p>Indicates that the property is used with <code>PollForJobs</code>. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
+    /// <p>Indicates that the property is used with <code>PollForJobs</code>. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> 
     /// <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to other restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>
     pub fn queryable(&self) -> bool {
         self.queryable
     }
     /// <p>The description of the action configuration property that is displayed to users.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of the configuration property.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ActionConfigurationPropertyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ActionConfigurationPropertyType> {
         self.r#type.as_ref()
     }
 }
 /// See [`ActionConfigurationProperty`](crate::model::ActionConfigurationProperty).
 pub mod action_configuration_property {
-
+    
     /// A builder for [`ActionConfigurationProperty`](crate::model::ActionConfigurationProperty).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6376,8 +6034,7 @@ pub mod action_configuration_property {
         }
         /// <p>The name of the action configuration property.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Whether the configuration property is a required value.</p>
         pub fn required(mut self, input: bool) -> Self {
@@ -6386,8 +6043,7 @@ pub mod action_configuration_property {
         }
         /// <p>Whether the configuration property is a required value.</p>
         pub fn set_required(mut self, input: std::option::Option<bool>) -> Self {
-            self.required = input;
-            self
+            self.required = input; self
         }
         /// <p>Whether the configuration property is a key.</p>
         pub fn key(mut self, input: bool) -> Self {
@@ -6396,32 +6052,29 @@ pub mod action_configuration_property {
         }
         /// <p>Whether the configuration property is a key.</p>
         pub fn set_key(mut self, input: std::option::Option<bool>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
-        /// <p>Whether the configuration property is secret. Secrets are hidden from all calls except for <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and <code>PollForThirdPartyJobs</code>.</p>
+        /// <p>Whether the configuration property is secret. Secrets are hidden from all calls except for <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and <code>PollForThirdPartyJobs</code>.</p> 
         /// <p>When updating a pipeline, passing * * * * * without changing any other values of the action preserves the previous value of the secret.</p>
         pub fn secret(mut self, input: bool) -> Self {
             self.secret = Some(input);
             self
         }
-        /// <p>Whether the configuration property is secret. Secrets are hidden from all calls except for <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and <code>PollForThirdPartyJobs</code>.</p>
+        /// <p>Whether the configuration property is secret. Secrets are hidden from all calls except for <code>GetJobDetails</code>, <code>GetThirdPartyJobDetails</code>, <code>PollForJobs</code>, and <code>PollForThirdPartyJobs</code>.</p> 
         /// <p>When updating a pipeline, passing * * * * * without changing any other values of the action preserves the previous value of the secret.</p>
         pub fn set_secret(mut self, input: std::option::Option<bool>) -> Self {
-            self.secret = input;
-            self
+            self.secret = input; self
         }
-        /// <p>Indicates that the property is used with <code>PollForJobs</code>. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
+        /// <p>Indicates that the property is used with <code>PollForJobs</code>. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> 
         /// <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to other restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>
         pub fn queryable(mut self, input: bool) -> Self {
             self.queryable = Some(input);
             self
         }
-        /// <p>Indicates that the property is used with <code>PollForJobs</code>. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
+        /// <p>Indicates that the property is used with <code>PollForJobs</code>. When creating a custom action, an action can have up to one queryable property. If it has one, that property must be both required and not secret.</p> 
         /// <p>If you create a pipeline with a custom action type, and that custom action contains a queryable property, the value for that configuration property is subject to other restrictions. The value must be less than or equal to twenty (20) characters. The value can contain only alphanumeric characters, underscores, and hyphens.</p>
         pub fn set_queryable(mut self, input: std::option::Option<bool>) -> Self {
-            self.queryable = input;
-            self
+            self.queryable = input; self
         }
         /// <p>The description of the action configuration property that is displayed to users.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6430,8 +6083,7 @@ pub mod action_configuration_property {
         }
         /// <p>The description of the action configuration property that is displayed to users.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The type of the configuration property.</p>
         pub fn r#type(mut self, input: crate::model::ActionConfigurationPropertyType) -> Self {
@@ -6439,26 +6091,35 @@ pub mod action_configuration_property {
             self
         }
         /// <p>The type of the configuration property.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::ActionConfigurationPropertyType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ActionConfigurationPropertyType>) -> Self {
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`ActionConfigurationProperty`](crate::model::ActionConfigurationProperty).
         pub fn build(self) -> crate::model::ActionConfigurationProperty {
             crate::model::ActionConfigurationProperty {
-                name: self.name,
-                required: self.required.unwrap_or_default(),
-                key: self.key.unwrap_or_default(),
-                secret: self.secret.unwrap_or_default(),
-                queryable: self.queryable.unwrap_or_default(),
-                description: self.description,
-                r#type: self.r#type,
+                name: self.name
+                ,
+                required: self.required
+                    .unwrap_or_default()
+                ,
+                key: self.key
+                    .unwrap_or_default()
+                ,
+                secret: self.secret
+                    .unwrap_or_default()
+                ,
+                queryable: self.queryable
+                    .unwrap_or_default()
+                ,
+                description: self.description
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionConfigurationProperty {
     /// Creates a new builder-style object to manufacture [`ActionConfigurationProperty`](crate::model::ActionConfigurationProperty).
@@ -6473,9 +6134,9 @@ impl ActionConfigurationProperty {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let actionconfigurationpropertytype = unimplemented!();
 /// match actionconfigurationpropertytype {
@@ -6498,22 +6159,14 @@ impl ActionConfigurationProperty {
 /// Specifically, when `actionconfigurationpropertytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ActionConfigurationPropertyType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ActionConfigurationPropertyType {
     #[allow(missing_docs)] // documentation missing in model
     Boolean,
@@ -6522,7 +6175,7 @@ pub enum ActionConfigurationPropertyType {
     #[allow(missing_docs)] // documentation missing in model
     String,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ActionConfigurationPropertyType {
     fn from(s: &str) -> Self {
@@ -6530,19 +6183,17 @@ impl std::convert::From<&str> for ActionConfigurationPropertyType {
             "Boolean" => ActionConfigurationPropertyType::Boolean,
             "Number" => ActionConfigurationPropertyType::Number,
             "String" => ActionConfigurationPropertyType::String,
-            other => ActionConfigurationPropertyType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ActionConfigurationPropertyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ActionConfigurationPropertyType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ActionConfigurationPropertyType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ActionConfigurationPropertyType::from(s))
+                }
+            }
 impl ActionConfigurationPropertyType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6550,12 +6201,14 @@ impl ActionConfigurationPropertyType {
             ActionConfigurationPropertyType::Boolean => "Boolean",
             ActionConfigurationPropertyType::Number => "Number",
             ActionConfigurationPropertyType::String => "String",
-            ActionConfigurationPropertyType::Unknown(value) => value.as_str(),
+            ActionConfigurationPropertyType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Boolean", "Number", "String"]
+        &[
+            "Boolean", "Number", "String"
+        ]
     }
 }
 impl AsRef<str> for ActionConfigurationPropertyType {
@@ -6567,7 +6220,7 @@ impl AsRef<str> for ActionConfigurationPropertyType {
 /// <p>Returns information about the settings for an action type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionTypeSettings {
+pub struct ActionTypeSettings  {
     /// <p>The URL of a sign-up page where users can sign up for an external service and perform initial configuration of the action provided by that service.</p>
     #[doc(hidden)]
     pub third_party_configuration_url: std::option::Option<std::string::String>,
@@ -6583,25 +6236,25 @@ pub struct ActionTypeSettings {
 }
 impl ActionTypeSettings {
     /// <p>The URL of a sign-up page where users can sign up for an external service and perform initial configuration of the action provided by that service.</p>
-    pub fn third_party_configuration_url(&self) -> std::option::Option<&str> {
+    pub fn third_party_configuration_url(&self) -> std::option::Option<& str> {
         self.third_party_configuration_url.as_deref()
     }
     /// <p>The URL returned to the AWS CodePipeline console that provides a deep link to the resources of the external system, such as the configuration page for an AWS CodeDeploy deployment group. This link is provided as part of the action display in the pipeline.</p>
-    pub fn entity_url_template(&self) -> std::option::Option<&str> {
+    pub fn entity_url_template(&self) -> std::option::Option<& str> {
         self.entity_url_template.as_deref()
     }
     /// <p>The URL returned to the AWS CodePipeline console that contains a link to the top-level landing page for the external system, such as the console page for AWS CodeDeploy. This link is shown on the pipeline view page in the AWS CodePipeline console and provides a link to the execution entity of the external action.</p>
-    pub fn execution_url_template(&self) -> std::option::Option<&str> {
+    pub fn execution_url_template(&self) -> std::option::Option<& str> {
         self.execution_url_template.as_deref()
     }
     /// <p>The URL returned to the AWS CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
-    pub fn revision_url_template(&self) -> std::option::Option<&str> {
+    pub fn revision_url_template(&self) -> std::option::Option<& str> {
         self.revision_url_template.as_deref()
     }
 }
 /// See [`ActionTypeSettings`](crate::model::ActionTypeSettings).
 pub mod action_type_settings {
-
+    
     /// A builder for [`ActionTypeSettings`](crate::model::ActionTypeSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6612,20 +6265,13 @@ pub mod action_type_settings {
     }
     impl Builder {
         /// <p>The URL of a sign-up page where users can sign up for an external service and perform initial configuration of the action provided by that service.</p>
-        pub fn third_party_configuration_url(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn third_party_configuration_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.third_party_configuration_url = Some(input.into());
             self
         }
         /// <p>The URL of a sign-up page where users can sign up for an external service and perform initial configuration of the action provided by that service.</p>
-        pub fn set_third_party_configuration_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.third_party_configuration_url = input;
-            self
+        pub fn set_third_party_configuration_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.third_party_configuration_url = input; self
         }
         /// <p>The URL returned to the AWS CodePipeline console that provides a deep link to the resources of the external system, such as the configuration page for an AWS CodeDeploy deployment group. This link is provided as part of the action display in the pipeline.</p>
         pub fn entity_url_template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6633,12 +6279,8 @@ pub mod action_type_settings {
             self
         }
         /// <p>The URL returned to the AWS CodePipeline console that provides a deep link to the resources of the external system, such as the configuration page for an AWS CodeDeploy deployment group. This link is provided as part of the action display in the pipeline.</p>
-        pub fn set_entity_url_template(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.entity_url_template = input;
-            self
+        pub fn set_entity_url_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.entity_url_template = input; self
         }
         /// <p>The URL returned to the AWS CodePipeline console that contains a link to the top-level landing page for the external system, such as the console page for AWS CodeDeploy. This link is shown on the pipeline view page in the AWS CodePipeline console and provides a link to the execution entity of the external action.</p>
         pub fn execution_url_template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6646,12 +6288,8 @@ pub mod action_type_settings {
             self
         }
         /// <p>The URL returned to the AWS CodePipeline console that contains a link to the top-level landing page for the external system, such as the console page for AWS CodeDeploy. This link is shown on the pipeline view page in the AWS CodePipeline console and provides a link to the execution entity of the external action.</p>
-        pub fn set_execution_url_template(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.execution_url_template = input;
-            self
+        pub fn set_execution_url_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.execution_url_template = input; self
         }
         /// <p>The URL returned to the AWS CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
         pub fn revision_url_template(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6659,23 +6297,25 @@ pub mod action_type_settings {
             self
         }
         /// <p>The URL returned to the AWS CodePipeline console that contains a link to the page where customers can update or change the configuration of the external action.</p>
-        pub fn set_revision_url_template(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.revision_url_template = input;
-            self
+        pub fn set_revision_url_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_url_template = input; self
         }
         /// Consumes the builder and constructs a [`ActionTypeSettings`](crate::model::ActionTypeSettings).
         pub fn build(self) -> crate::model::ActionTypeSettings {
             crate::model::ActionTypeSettings {
-                third_party_configuration_url: self.third_party_configuration_url,
-                entity_url_template: self.entity_url_template,
-                execution_url_template: self.execution_url_template,
-                revision_url_template: self.revision_url_template,
+                third_party_configuration_url: self.third_party_configuration_url
+                ,
+                entity_url_template: self.entity_url_template
+                ,
+                execution_url_template: self.execution_url_template
+                ,
+                revision_url_template: self.revision_url_template
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionTypeSettings {
     /// Creates a new builder-style object to manufacture [`ActionTypeSettings`](crate::model::ActionTypeSettings).
@@ -6687,7 +6327,7 @@ impl ActionTypeSettings {
 /// <p>Returns information about an execution of an action, including the action execution ID, and the name, version, and timing of the action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionExecutionDetail {
+pub struct ActionExecutionDetail  {
     /// <p>The pipeline execution ID for the action execution.</p>
     #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
@@ -6721,11 +6361,11 @@ pub struct ActionExecutionDetail {
 }
 impl ActionExecutionDetail {
     /// <p>The pipeline execution ID for the action execution.</p>
-    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_execution_id(&self) -> std::option::Option<& str> {
         self.pipeline_execution_id.as_deref()
     }
     /// <p>The action execution ID.</p>
-    pub fn action_execution_id(&self) -> std::option::Option<&str> {
+    pub fn action_execution_id(&self) -> std::option::Option<& str> {
         self.action_execution_id.as_deref()
     }
     /// <p>The version of the pipeline where the action was run.</p>
@@ -6733,37 +6373,37 @@ impl ActionExecutionDetail {
         self.pipeline_version
     }
     /// <p>The name of the stage that contains the action.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
     /// <p>The name of the action.</p>
-    pub fn action_name(&self) -> std::option::Option<&str> {
+    pub fn action_name(&self) -> std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>The start time of the action execution.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The last update time of the action execution.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p> The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ActionExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ActionExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>Input details for the action execution, such as role ARN, Region, and input artifacts.</p>
-    pub fn input(&self) -> std::option::Option<&crate::model::ActionExecutionInput> {
+    pub fn input(&self) -> std::option::Option<& crate::model::ActionExecutionInput> {
         self.input.as_ref()
     }
     /// <p>Output details for the action execution, such as the action execution result.</p>
-    pub fn output(&self) -> std::option::Option<&crate::model::ActionExecutionOutput> {
+    pub fn output(&self) -> std::option::Option<& crate::model::ActionExecutionOutput> {
         self.output.as_ref()
     }
 }
 /// See [`ActionExecutionDetail`](crate::model::ActionExecutionDetail).
 pub mod action_execution_detail {
-
+    
     /// A builder for [`ActionExecutionDetail`](crate::model::ActionExecutionDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6785,12 +6425,8 @@ pub mod action_execution_detail {
             self
         }
         /// <p>The pipeline execution ID for the action execution.</p>
-        pub fn set_pipeline_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pipeline_execution_id = input;
-            self
+        pub fn set_pipeline_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pipeline_execution_id = input; self
         }
         /// <p>The action execution ID.</p>
         pub fn action_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6798,12 +6434,8 @@ pub mod action_execution_detail {
             self
         }
         /// <p>The action execution ID.</p>
-        pub fn set_action_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.action_execution_id = input;
-            self
+        pub fn set_action_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.action_execution_id = input; self
         }
         /// <p>The version of the pipeline where the action was run.</p>
         pub fn pipeline_version(mut self, input: i32) -> Self {
@@ -6812,8 +6444,7 @@ pub mod action_execution_detail {
         }
         /// <p>The version of the pipeline where the action was run.</p>
         pub fn set_pipeline_version(mut self, input: std::option::Option<i32>) -> Self {
-            self.pipeline_version = input;
-            self
+            self.pipeline_version = input; self
         }
         /// <p>The name of the stage that contains the action.</p>
         pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6822,8 +6453,7 @@ pub mod action_execution_detail {
         }
         /// <p>The name of the stage that contains the action.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stage_name = input;
-            self
+            self.stage_name = input; self
         }
         /// <p>The name of the action.</p>
         pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6832,8 +6462,7 @@ pub mod action_execution_detail {
         }
         /// <p>The name of the action.</p>
         pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_name = input;
-            self
+            self.action_name = input; self
         }
         /// <p>The start time of the action execution.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6841,12 +6470,8 @@ pub mod action_execution_detail {
             self
         }
         /// <p>The start time of the action execution.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The last update time of the action execution.</p>
         pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -6854,12 +6479,8 @@ pub mod action_execution_detail {
             self
         }
         /// <p>The last update time of the action execution.</p>
-        pub fn set_last_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_update_time = input;
-            self
+        pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_update_time = input; self
         }
         /// <p> The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
         pub fn status(mut self, input: crate::model::ActionExecutionStatus) -> Self {
@@ -6867,12 +6488,8 @@ pub mod action_execution_detail {
             self
         }
         /// <p> The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ActionExecutionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ActionExecutionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Input details for the action execution, such as role ARN, Region, and input artifacts.</p>
         pub fn input(mut self, input: crate::model::ActionExecutionInput) -> Self {
@@ -6880,12 +6497,8 @@ pub mod action_execution_detail {
             self
         }
         /// <p>Input details for the action execution, such as role ARN, Region, and input artifacts.</p>
-        pub fn set_input(
-            mut self,
-            input: std::option::Option<crate::model::ActionExecutionInput>,
-        ) -> Self {
-            self.input = input;
-            self
+        pub fn set_input(mut self, input: std::option::Option<crate::model::ActionExecutionInput>) -> Self {
+            self.input = input; self
         }
         /// <p>Output details for the action execution, such as the action execution result.</p>
         pub fn output(mut self, input: crate::model::ActionExecutionOutput) -> Self {
@@ -6893,29 +6506,37 @@ pub mod action_execution_detail {
             self
         }
         /// <p>Output details for the action execution, such as the action execution result.</p>
-        pub fn set_output(
-            mut self,
-            input: std::option::Option<crate::model::ActionExecutionOutput>,
-        ) -> Self {
-            self.output = input;
-            self
+        pub fn set_output(mut self, input: std::option::Option<crate::model::ActionExecutionOutput>) -> Self {
+            self.output = input; self
         }
         /// Consumes the builder and constructs a [`ActionExecutionDetail`](crate::model::ActionExecutionDetail).
         pub fn build(self) -> crate::model::ActionExecutionDetail {
             crate::model::ActionExecutionDetail {
-                pipeline_execution_id: self.pipeline_execution_id,
-                action_execution_id: self.action_execution_id,
-                pipeline_version: self.pipeline_version,
-                stage_name: self.stage_name,
-                action_name: self.action_name,
-                start_time: self.start_time,
-                last_update_time: self.last_update_time,
-                status: self.status,
-                input: self.input,
-                output: self.output,
+                pipeline_execution_id: self.pipeline_execution_id
+                ,
+                action_execution_id: self.action_execution_id
+                ,
+                pipeline_version: self.pipeline_version
+                ,
+                stage_name: self.stage_name
+                ,
+                action_name: self.action_name
+                ,
+                start_time: self.start_time
+                ,
+                last_update_time: self.last_update_time
+                ,
+                status: self.status
+                ,
+                input: self.input
+                ,
+                output: self.output
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionExecutionDetail {
     /// Creates a new builder-style object to manufacture [`ActionExecutionDetail`](crate::model::ActionExecutionDetail).
@@ -6927,7 +6548,7 @@ impl ActionExecutionDetail {
 /// <p>Output details listed for an action execution, such as the action execution result.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionExecutionOutput {
+pub struct ActionExecutionOutput  {
     /// <p>Details of output artifacts of the action that correspond to the action execution.</p>
     #[doc(hidden)]
     pub output_artifacts: std::option::Option<std::vec::Vec<crate::model::ArtifactDetail>>,
@@ -6936,38 +6557,31 @@ pub struct ActionExecutionOutput {
     pub execution_result: std::option::Option<crate::model::ActionExecutionResult>,
     /// <p>The outputVariables field shows the key-value pairs that were output as part of that execution.</p>
     #[doc(hidden)]
-    pub output_variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub output_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ActionExecutionOutput {
     /// <p>Details of output artifacts of the action that correspond to the action execution.</p>
-    pub fn output_artifacts(&self) -> std::option::Option<&[crate::model::ArtifactDetail]> {
+    pub fn output_artifacts(&self) -> std::option::Option<& [crate::model::ArtifactDetail]> {
         self.output_artifacts.as_deref()
     }
     /// <p>Execution result information listed in the output details for an action execution.</p>
-    pub fn execution_result(&self) -> std::option::Option<&crate::model::ActionExecutionResult> {
+    pub fn execution_result(&self) -> std::option::Option<& crate::model::ActionExecutionResult> {
         self.execution_result.as_ref()
     }
     /// <p>The outputVariables field shows the key-value pairs that were output as part of that execution.</p>
-    pub fn output_variables(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn output_variables(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.output_variables.as_ref()
     }
 }
 /// See [`ActionExecutionOutput`](crate::model::ActionExecutionOutput).
 pub mod action_execution_output {
-
+    
     /// A builder for [`ActionExecutionOutput`](crate::model::ActionExecutionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) output_artifacts:
-            std::option::Option<std::vec::Vec<crate::model::ArtifactDetail>>,
+        pub(crate) output_artifacts: std::option::Option<std::vec::Vec<crate::model::ArtifactDetail>>,
         pub(crate) execution_result: std::option::Option<crate::model::ActionExecutionResult>,
-        pub(crate) output_variables: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) output_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `output_artifacts`.
@@ -6977,17 +6591,13 @@ pub mod action_execution_output {
         /// <p>Details of output artifacts of the action that correspond to the action execution.</p>
         pub fn output_artifacts(mut self, input: crate::model::ArtifactDetail) -> Self {
             let mut v = self.output_artifacts.unwrap_or_default();
-            v.push(input);
-            self.output_artifacts = Some(v);
-            self
+                            v.push(input);
+                            self.output_artifacts = Some(v);
+                            self
         }
         /// <p>Details of output artifacts of the action that correspond to the action execution.</p>
-        pub fn set_output_artifacts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ArtifactDetail>>,
-        ) -> Self {
-            self.output_artifacts = input;
-            self
+        pub fn set_output_artifacts(mut self, input: std::option::Option<std::vec::Vec<crate::model::ArtifactDetail>>) -> Self {
+            self.output_artifacts = input; self
         }
         /// <p>Execution result information listed in the output details for an action execution.</p>
         pub fn execution_result(mut self, input: crate::model::ActionExecutionResult) -> Self {
@@ -6995,47 +6605,38 @@ pub mod action_execution_output {
             self
         }
         /// <p>Execution result information listed in the output details for an action execution.</p>
-        pub fn set_execution_result(
-            mut self,
-            input: std::option::Option<crate::model::ActionExecutionResult>,
-        ) -> Self {
-            self.execution_result = input;
-            self
+        pub fn set_execution_result(mut self, input: std::option::Option<crate::model::ActionExecutionResult>) -> Self {
+            self.execution_result = input; self
         }
         /// Adds a key-value pair to `output_variables`.
         ///
         /// To override the contents of this collection use [`set_output_variables`](Self::set_output_variables).
         ///
         /// <p>The outputVariables field shows the key-value pairs that were output as part of that execution.</p>
-        pub fn output_variables(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn output_variables(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.output_variables.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.output_variables = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.output_variables = Some(hash_map);
+                            self
         }
         /// <p>The outputVariables field shows the key-value pairs that were output as part of that execution.</p>
-        pub fn set_output_variables(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.output_variables = input;
-            self
+        pub fn set_output_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.output_variables = input; self
         }
         /// Consumes the builder and constructs a [`ActionExecutionOutput`](crate::model::ActionExecutionOutput).
         pub fn build(self) -> crate::model::ActionExecutionOutput {
             crate::model::ActionExecutionOutput {
-                output_artifacts: self.output_artifacts,
-                execution_result: self.execution_result,
-                output_variables: self.output_variables,
+                output_artifacts: self.output_artifacts
+                ,
+                execution_result: self.execution_result
+                ,
+                output_variables: self.output_variables
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionExecutionOutput {
     /// Creates a new builder-style object to manufacture [`ActionExecutionOutput`](crate::model::ActionExecutionOutput).
@@ -7047,7 +6648,7 @@ impl ActionExecutionOutput {
 /// <p>Execution result information, such as the external execution ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionExecutionResult {
+pub struct ActionExecutionResult  {
     /// <p>The action provider's external ID for the action execution.</p>
     #[doc(hidden)]
     pub external_execution_id: std::option::Option<std::string::String>,
@@ -7060,21 +6661,21 @@ pub struct ActionExecutionResult {
 }
 impl ActionExecutionResult {
     /// <p>The action provider's external ID for the action execution.</p>
-    pub fn external_execution_id(&self) -> std::option::Option<&str> {
+    pub fn external_execution_id(&self) -> std::option::Option<& str> {
         self.external_execution_id.as_deref()
     }
     /// <p>The action provider's summary for the action execution.</p>
-    pub fn external_execution_summary(&self) -> std::option::Option<&str> {
+    pub fn external_execution_summary(&self) -> std::option::Option<& str> {
         self.external_execution_summary.as_deref()
     }
     /// <p>The deepest external link to the external resource (for example, a repository URL or deployment endpoint) that is used when running the action.</p>
-    pub fn external_execution_url(&self) -> std::option::Option<&str> {
+    pub fn external_execution_url(&self) -> std::option::Option<& str> {
         self.external_execution_url.as_deref()
     }
 }
 /// See [`ActionExecutionResult`](crate::model::ActionExecutionResult).
 pub mod action_execution_result {
-
+    
     /// A builder for [`ActionExecutionResult`](crate::model::ActionExecutionResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7089,12 +6690,8 @@ pub mod action_execution_result {
             self
         }
         /// <p>The action provider's external ID for the action execution.</p>
-        pub fn set_external_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.external_execution_id = input;
-            self
+        pub fn set_external_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.external_execution_id = input; self
         }
         /// <p>The action provider's summary for the action execution.</p>
         pub fn external_execution_summary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7102,12 +6699,8 @@ pub mod action_execution_result {
             self
         }
         /// <p>The action provider's summary for the action execution.</p>
-        pub fn set_external_execution_summary(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.external_execution_summary = input;
-            self
+        pub fn set_external_execution_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.external_execution_summary = input; self
         }
         /// <p>The deepest external link to the external resource (for example, a repository URL or deployment endpoint) that is used when running the action.</p>
         pub fn external_execution_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7115,22 +6708,23 @@ pub mod action_execution_result {
             self
         }
         /// <p>The deepest external link to the external resource (for example, a repository URL or deployment endpoint) that is used when running the action.</p>
-        pub fn set_external_execution_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.external_execution_url = input;
-            self
+        pub fn set_external_execution_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.external_execution_url = input; self
         }
         /// Consumes the builder and constructs a [`ActionExecutionResult`](crate::model::ActionExecutionResult).
         pub fn build(self) -> crate::model::ActionExecutionResult {
             crate::model::ActionExecutionResult {
-                external_execution_id: self.external_execution_id,
-                external_execution_summary: self.external_execution_summary,
-                external_execution_url: self.external_execution_url,
+                external_execution_id: self.external_execution_id
+                ,
+                external_execution_summary: self.external_execution_summary
+                ,
+                external_execution_url: self.external_execution_url
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionExecutionResult {
     /// Creates a new builder-style object to manufacture [`ActionExecutionResult`](crate::model::ActionExecutionResult).
@@ -7142,7 +6736,7 @@ impl ActionExecutionResult {
 /// <p>Artifact details for the action execution, such as the artifact location.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ArtifactDetail {
+pub struct ArtifactDetail  {
     /// <p>The artifact object name for the action execution.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -7152,17 +6746,17 @@ pub struct ArtifactDetail {
 }
 impl ArtifactDetail {
     /// <p>The artifact object name for the action execution.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon S3 artifact location for the action execution.</p>
-    pub fn s3location(&self) -> std::option::Option<&crate::model::S3Location> {
+    pub fn s3location(&self) -> std::option::Option<& crate::model::S3Location> {
         self.s3location.as_ref()
     }
 }
 /// See [`ArtifactDetail`](crate::model::ArtifactDetail).
 pub mod artifact_detail {
-
+    
     /// A builder for [`ArtifactDetail`](crate::model::ArtifactDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7177,8 +6771,7 @@ pub mod artifact_detail {
         }
         /// <p>The artifact object name for the action execution.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon S3 artifact location for the action execution.</p>
         pub fn s3location(mut self, input: crate::model::S3Location) -> Self {
@@ -7186,21 +6779,21 @@ pub mod artifact_detail {
             self
         }
         /// <p>The Amazon S3 artifact location for the action execution.</p>
-        pub fn set_s3location(
-            mut self,
-            input: std::option::Option<crate::model::S3Location>,
-        ) -> Self {
-            self.s3location = input;
-            self
+        pub fn set_s3location(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
+            self.s3location = input; self
         }
         /// Consumes the builder and constructs a [`ArtifactDetail`](crate::model::ArtifactDetail).
         pub fn build(self) -> crate::model::ArtifactDetail {
             crate::model::ArtifactDetail {
-                name: self.name,
-                s3location: self.s3location,
+                name: self.name
+                ,
+                s3location: self.s3location
+                ,
             }
         }
     }
+    
+    
 }
 impl ArtifactDetail {
     /// Creates a new builder-style object to manufacture [`ArtifactDetail`](crate::model::ArtifactDetail).
@@ -7212,7 +6805,7 @@ impl ArtifactDetail {
 /// <p>The Amazon S3 artifact location for an action's artifacts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Location {
+pub struct S3Location  {
     /// <p>The Amazon S3 artifact bucket for an action's artifacts.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -7222,17 +6815,17 @@ pub struct S3Location {
 }
 impl S3Location {
     /// <p>The Amazon S3 artifact bucket for an action's artifacts.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The artifact name.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
 }
 /// See [`S3Location`](crate::model::S3Location).
 pub mod s3_location {
-
+    
     /// A builder for [`S3Location`](crate::model::S3Location).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7247,8 +6840,7 @@ pub mod s3_location {
         }
         /// <p>The Amazon S3 artifact bucket for an action's artifacts.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>The artifact name.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7257,17 +6849,20 @@ pub mod s3_location {
         }
         /// <p>The artifact name.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// Consumes the builder and constructs a [`S3Location`](crate::model::S3Location).
         pub fn build(self) -> crate::model::S3Location {
             crate::model::S3Location {
-                bucket: self.bucket,
-                key: self.key,
+                bucket: self.bucket
+                ,
+                key: self.key
+                ,
             }
         }
     }
+    
+    
 }
 impl S3Location {
     /// Creates a new builder-style object to manufacture [`S3Location`](crate::model::S3Location).
@@ -7279,18 +6874,16 @@ impl S3Location {
 /// <p>Input information used for an action execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionExecutionInput {
+pub struct ActionExecutionInput  {
     /// <p>Represents information about an action type.</p>
     #[doc(hidden)]
     pub action_type_id: std::option::Option<crate::model::ActionTypeId>,
     /// <p>Configuration data for an action execution.</p>
     #[doc(hidden)]
-    pub configuration:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub configuration: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Configuration data for an action execution with all variable references replaced with their real values for the execution.</p>
     #[doc(hidden)]
-    pub resolved_configuration:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub resolved_configuration: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline. </p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -7306,57 +6899,46 @@ pub struct ActionExecutionInput {
 }
 impl ActionExecutionInput {
     /// <p>Represents information about an action type.</p>
-    pub fn action_type_id(&self) -> std::option::Option<&crate::model::ActionTypeId> {
+    pub fn action_type_id(&self) -> std::option::Option<& crate::model::ActionTypeId> {
         self.action_type_id.as_ref()
     }
     /// <p>Configuration data for an action execution.</p>
-    pub fn configuration(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn configuration(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.configuration.as_ref()
     }
     /// <p>Configuration data for an action execution with all variable references replaced with their real values for the execution.</p>
-    pub fn resolved_configuration(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn resolved_configuration(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.resolved_configuration.as_ref()
     }
     /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline. </p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The AWS Region for the action, such as us-east-1.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>Details of input artifacts of the action that correspond to the action execution.</p>
-    pub fn input_artifacts(&self) -> std::option::Option<&[crate::model::ArtifactDetail]> {
+    pub fn input_artifacts(&self) -> std::option::Option<& [crate::model::ArtifactDetail]> {
         self.input_artifacts.as_deref()
     }
     /// <p>The variable namespace associated with the action. All variables produced as output by this action fall under this namespace.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
 }
 /// See [`ActionExecutionInput`](crate::model::ActionExecutionInput).
 pub mod action_execution_input {
-
+    
     /// A builder for [`ActionExecutionInput`](crate::model::ActionExecutionInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action_type_id: std::option::Option<crate::model::ActionTypeId>,
-        pub(crate) configuration: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) resolved_configuration: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) configuration: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) resolved_configuration: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) region: std::option::Option<std::string::String>,
-        pub(crate) input_artifacts:
-            std::option::Option<std::vec::Vec<crate::model::ArtifactDetail>>,
+        pub(crate) input_artifacts: std::option::Option<std::vec::Vec<crate::model::ArtifactDetail>>,
         pub(crate) namespace: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -7366,62 +6948,38 @@ pub mod action_execution_input {
             self
         }
         /// <p>Represents information about an action type.</p>
-        pub fn set_action_type_id(
-            mut self,
-            input: std::option::Option<crate::model::ActionTypeId>,
-        ) -> Self {
-            self.action_type_id = input;
-            self
+        pub fn set_action_type_id(mut self, input: std::option::Option<crate::model::ActionTypeId>) -> Self {
+            self.action_type_id = input; self
         }
         /// Adds a key-value pair to `configuration`.
         ///
         /// To override the contents of this collection use [`set_configuration`](Self::set_configuration).
         ///
         /// <p>Configuration data for an action execution.</p>
-        pub fn configuration(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn configuration(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.configuration.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.configuration = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.configuration = Some(hash_map);
+                            self
         }
         /// <p>Configuration data for an action execution.</p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.configuration = input; self
         }
         /// Adds a key-value pair to `resolved_configuration`.
         ///
         /// To override the contents of this collection use [`set_resolved_configuration`](Self::set_resolved_configuration).
         ///
         /// <p>Configuration data for an action execution with all variable references replaced with their real values for the execution.</p>
-        pub fn resolved_configuration(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn resolved_configuration(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.resolved_configuration.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.resolved_configuration = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.resolved_configuration = Some(hash_map);
+                            self
         }
         /// <p>Configuration data for an action execution with all variable references replaced with their real values for the execution.</p>
-        pub fn set_resolved_configuration(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.resolved_configuration = input;
-            self
+        pub fn set_resolved_configuration(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.resolved_configuration = input; self
         }
         /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline. </p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7430,8 +6988,7 @@ pub mod action_execution_input {
         }
         /// <p>The ARN of the IAM service role that performs the declared action. This is assumed through the roleArn for the pipeline. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The AWS Region for the action, such as us-east-1.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7440,8 +6997,7 @@ pub mod action_execution_input {
         }
         /// <p>The AWS Region for the action, such as us-east-1.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// Appends an item to `input_artifacts`.
         ///
@@ -7450,17 +7006,13 @@ pub mod action_execution_input {
         /// <p>Details of input artifacts of the action that correspond to the action execution.</p>
         pub fn input_artifacts(mut self, input: crate::model::ArtifactDetail) -> Self {
             let mut v = self.input_artifacts.unwrap_or_default();
-            v.push(input);
-            self.input_artifacts = Some(v);
-            self
+                            v.push(input);
+                            self.input_artifacts = Some(v);
+                            self
         }
         /// <p>Details of input artifacts of the action that correspond to the action execution.</p>
-        pub fn set_input_artifacts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ArtifactDetail>>,
-        ) -> Self {
-            self.input_artifacts = input;
-            self
+        pub fn set_input_artifacts(mut self, input: std::option::Option<std::vec::Vec<crate::model::ArtifactDetail>>) -> Self {
+            self.input_artifacts = input; self
         }
         /// <p>The variable namespace associated with the action. All variables produced as output by this action fall under this namespace.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7469,22 +7021,30 @@ pub mod action_execution_input {
         }
         /// <p>The variable namespace associated with the action. All variables produced as output by this action fall under this namespace.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// Consumes the builder and constructs a [`ActionExecutionInput`](crate::model::ActionExecutionInput).
         pub fn build(self) -> crate::model::ActionExecutionInput {
             crate::model::ActionExecutionInput {
-                action_type_id: self.action_type_id,
-                configuration: self.configuration,
-                resolved_configuration: self.resolved_configuration,
-                role_arn: self.role_arn,
-                region: self.region,
-                input_artifacts: self.input_artifacts,
-                namespace: self.namespace,
+                action_type_id: self.action_type_id
+                ,
+                configuration: self.configuration
+                ,
+                resolved_configuration: self.resolved_configuration
+                ,
+                role_arn: self.role_arn
+                ,
+                region: self.region
+                ,
+                input_artifacts: self.input_artifacts
+                ,
+                namespace: self.namespace
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionExecutionInput {
     /// Creates a new builder-style object to manufacture [`ActionExecutionInput`](crate::model::ActionExecutionInput).
@@ -7499,9 +7059,9 @@ impl ActionExecutionInput {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let actionexecutionstatus = unimplemented!();
 /// match actionexecutionstatus {
@@ -7525,22 +7085,14 @@ impl ActionExecutionInput {
 /// Specifically, when `actionexecutionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ActionExecutionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ActionExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Abandoned,
@@ -7551,7 +7103,7 @@ pub enum ActionExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ActionExecutionStatus {
     fn from(s: &str) -> Self {
@@ -7560,19 +7112,17 @@ impl std::convert::From<&str> for ActionExecutionStatus {
             "Failed" => ActionExecutionStatus::Failed,
             "InProgress" => ActionExecutionStatus::InProgress,
             "Succeeded" => ActionExecutionStatus::Succeeded,
-            other => {
-                ActionExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ActionExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ActionExecutionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ActionExecutionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ActionExecutionStatus::from(s))
+                }
+            }
 impl ActionExecutionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -7581,12 +7131,14 @@ impl ActionExecutionStatus {
             ActionExecutionStatus::Failed => "Failed",
             ActionExecutionStatus::InProgress => "InProgress",
             ActionExecutionStatus::Succeeded => "Succeeded",
-            ActionExecutionStatus::Unknown(value) => value.as_str(),
+            ActionExecutionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Abandoned", "Failed", "InProgress", "Succeeded"]
+        &[
+            "Abandoned", "Failed", "InProgress", "Succeeded"
+        ]
     }
 }
 impl AsRef<str> for ActionExecutionStatus {
@@ -7598,20 +7150,20 @@ impl AsRef<str> for ActionExecutionStatus {
 /// <p>Filter values for the action execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionExecutionFilter {
+pub struct ActionExecutionFilter  {
     /// <p>The pipeline execution ID used to filter action execution history.</p>
     #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
 }
 impl ActionExecutionFilter {
     /// <p>The pipeline execution ID used to filter action execution history.</p>
-    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_execution_id(&self) -> std::option::Option<& str> {
         self.pipeline_execution_id.as_deref()
     }
 }
 /// See [`ActionExecutionFilter`](crate::model::ActionExecutionFilter).
 pub mod action_execution_filter {
-
+    
     /// A builder for [`ActionExecutionFilter`](crate::model::ActionExecutionFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7624,20 +7176,19 @@ pub mod action_execution_filter {
             self
         }
         /// <p>The pipeline execution ID used to filter action execution history.</p>
-        pub fn set_pipeline_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pipeline_execution_id = input;
-            self
+        pub fn set_pipeline_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pipeline_execution_id = input; self
         }
         /// Consumes the builder and constructs a [`ActionExecutionFilter`](crate::model::ActionExecutionFilter).
         pub fn build(self) -> crate::model::ActionExecutionFilter {
             crate::model::ActionExecutionFilter {
-                pipeline_execution_id: self.pipeline_execution_id,
+                pipeline_execution_id: self.pipeline_execution_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionExecutionFilter {
     /// Creates a new builder-style object to manufacture [`ActionExecutionFilter`](crate::model::ActionExecutionFilter).
@@ -7649,7 +7200,7 @@ impl ActionExecutionFilter {
 /// <p>The details of a job sent in response to a <code>GetThirdPartyJobDetails</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThirdPartyJobDetails {
+pub struct ThirdPartyJobDetails  {
     /// <p>The identifier used to identify the job details in AWS CodePipeline.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -7662,21 +7213,21 @@ pub struct ThirdPartyJobDetails {
 }
 impl ThirdPartyJobDetails {
     /// <p>The identifier used to identify the job details in AWS CodePipeline.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The data to be returned by the third party job worker.</p>
-    pub fn data(&self) -> std::option::Option<&crate::model::ThirdPartyJobData> {
+    pub fn data(&self) -> std::option::Option<& crate::model::ThirdPartyJobData> {
         self.data.as_ref()
     }
     /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeThirdPartyJob</code> request.</p>
-    pub fn nonce(&self) -> std::option::Option<&str> {
+    pub fn nonce(&self) -> std::option::Option<& str> {
         self.nonce.as_deref()
     }
 }
 /// See [`ThirdPartyJobDetails`](crate::model::ThirdPartyJobDetails).
 pub mod third_party_job_details {
-
+    
     /// A builder for [`ThirdPartyJobDetails`](crate::model::ThirdPartyJobDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7692,8 +7243,7 @@ pub mod third_party_job_details {
         }
         /// <p>The identifier used to identify the job details in AWS CodePipeline.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The data to be returned by the third party job worker.</p>
         pub fn data(mut self, input: crate::model::ThirdPartyJobData) -> Self {
@@ -7701,12 +7251,8 @@ pub mod third_party_job_details {
             self
         }
         /// <p>The data to be returned by the third party job worker.</p>
-        pub fn set_data(
-            mut self,
-            input: std::option::Option<crate::model::ThirdPartyJobData>,
-        ) -> Self {
-            self.data = input;
-            self
+        pub fn set_data(mut self, input: std::option::Option<crate::model::ThirdPartyJobData>) -> Self {
+            self.data = input; self
         }
         /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeThirdPartyJob</code> request.</p>
         pub fn nonce(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7715,18 +7261,22 @@ pub mod third_party_job_details {
         }
         /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an <code>AcknowledgeThirdPartyJob</code> request.</p>
         pub fn set_nonce(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.nonce = input;
-            self
+            self.nonce = input; self
         }
         /// Consumes the builder and constructs a [`ThirdPartyJobDetails`](crate::model::ThirdPartyJobDetails).
         pub fn build(self) -> crate::model::ThirdPartyJobDetails {
             crate::model::ThirdPartyJobDetails {
-                id: self.id,
-                data: self.data,
-                nonce: self.nonce,
+                id: self.id
+                ,
+                data: self.data
+                ,
+                nonce: self.nonce
+                ,
             }
         }
     }
+    
+    
 }
 impl ThirdPartyJobDetails {
     /// Creates a new builder-style object to manufacture [`ThirdPartyJobDetails`](crate::model::ThirdPartyJobDetails).
@@ -7738,15 +7288,15 @@ impl ThirdPartyJobDetails {
 /// <p>Represents information about the job data for a partner action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ThirdPartyJobData {
+pub struct ThirdPartyJobData  {
     /// <p>Represents information about an action type.</p>
     #[doc(hidden)]
     pub action_type_id: std::option::Option<crate::model::ActionTypeId>,
     /// <p>Represents information about an action configuration.</p>
     #[doc(hidden)]
     pub action_configuration: std::option::Option<crate::model::ActionConfiguration>,
-    /// <p>Represents information about a pipeline to a job worker.</p> <note>
-    /// <p>Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.</p>
+    /// <p>Represents information about a pipeline to a job worker.</p> <note> 
+    /// <p>Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.</p> 
     /// </note>
     #[doc(hidden)]
     pub pipeline_context: std::option::Option<crate::model::PipelineContext>,
@@ -7768,43 +7318,41 @@ pub struct ThirdPartyJobData {
 }
 impl ThirdPartyJobData {
     /// <p>Represents information about an action type.</p>
-    pub fn action_type_id(&self) -> std::option::Option<&crate::model::ActionTypeId> {
+    pub fn action_type_id(&self) -> std::option::Option<& crate::model::ActionTypeId> {
         self.action_type_id.as_ref()
     }
     /// <p>Represents information about an action configuration.</p>
-    pub fn action_configuration(&self) -> std::option::Option<&crate::model::ActionConfiguration> {
+    pub fn action_configuration(&self) -> std::option::Option<& crate::model::ActionConfiguration> {
         self.action_configuration.as_ref()
     }
-    /// <p>Represents information about a pipeline to a job worker.</p> <note>
-    /// <p>Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.</p>
+    /// <p>Represents information about a pipeline to a job worker.</p> <note> 
+    /// <p>Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.</p> 
     /// </note>
-    pub fn pipeline_context(&self) -> std::option::Option<&crate::model::PipelineContext> {
+    pub fn pipeline_context(&self) -> std::option::Option<& crate::model::PipelineContext> {
         self.pipeline_context.as_ref()
     }
     /// <p>The name of the artifact that is worked on by the action, if any. This name might be system-generated, such as "MyApp", or it might be defined by the user when the action is created. The input artifact name must match the name of an output artifact generated by an action in an earlier action or stage of the pipeline.</p>
-    pub fn input_artifacts(&self) -> std::option::Option<&[crate::model::Artifact]> {
+    pub fn input_artifacts(&self) -> std::option::Option<& [crate::model::Artifact]> {
         self.input_artifacts.as_deref()
     }
     /// <p>The name of the artifact that is the result of the action, if any. This name might be system-generated, such as "MyBuiltApp", or it might be defined by the user when the action is created.</p>
-    pub fn output_artifacts(&self) -> std::option::Option<&[crate::model::Artifact]> {
+    pub fn output_artifacts(&self) -> std::option::Option<& [crate::model::Artifact]> {
         self.output_artifacts.as_deref()
     }
     /// <p>Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS CodePipeline. </p>
-    pub fn artifact_credentials(
-        &self,
-    ) -> std::option::Option<&crate::model::AwsSessionCredentials> {
+    pub fn artifact_credentials(&self) -> std::option::Option<& crate::model::AwsSessionCredentials> {
         self.artifact_credentials.as_ref()
     }
     /// <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires to continue the job asynchronously.</p>
-    pub fn continuation_token(&self) -> std::option::Option<&str> {
+    pub fn continuation_token(&self) -> std::option::Option<& str> {
         self.continuation_token.as_deref()
     }
     /// <p>The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an AWS Key Management Service (AWS KMS) key. This is optional and might not be present.</p>
-    pub fn encryption_key(&self) -> std::option::Option<&crate::model::EncryptionKey> {
+    pub fn encryption_key(&self) -> std::option::Option<& crate::model::EncryptionKey> {
         self.encryption_key.as_ref()
     }
 }
-impl std::fmt::Debug for ThirdPartyJobData {
+impl  std::fmt::Debug for ThirdPartyJobData  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ThirdPartyJobData");
         formatter.field("action_type_id", &self.action_type_id);
@@ -7820,7 +7368,7 @@ impl std::fmt::Debug for ThirdPartyJobData {
 }
 /// See [`ThirdPartyJobData`](crate::model::ThirdPartyJobData).
 pub mod third_party_job_data {
-
+    
     /// A builder for [`ThirdPartyJobData`](crate::model::ThirdPartyJobData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -7840,12 +7388,8 @@ pub mod third_party_job_data {
             self
         }
         /// <p>Represents information about an action type.</p>
-        pub fn set_action_type_id(
-            mut self,
-            input: std::option::Option<crate::model::ActionTypeId>,
-        ) -> Self {
-            self.action_type_id = input;
-            self
+        pub fn set_action_type_id(mut self, input: std::option::Option<crate::model::ActionTypeId>) -> Self {
+            self.action_type_id = input; self
         }
         /// <p>Represents information about an action configuration.</p>
         pub fn action_configuration(mut self, input: crate::model::ActionConfiguration) -> Self {
@@ -7853,29 +7397,21 @@ pub mod third_party_job_data {
             self
         }
         /// <p>Represents information about an action configuration.</p>
-        pub fn set_action_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ActionConfiguration>,
-        ) -> Self {
-            self.action_configuration = input;
-            self
+        pub fn set_action_configuration(mut self, input: std::option::Option<crate::model::ActionConfiguration>) -> Self {
+            self.action_configuration = input; self
         }
-        /// <p>Represents information about a pipeline to a job worker.</p> <note>
-        /// <p>Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.</p>
+        /// <p>Represents information about a pipeline to a job worker.</p> <note> 
+        /// <p>Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.</p> 
         /// </note>
         pub fn pipeline_context(mut self, input: crate::model::PipelineContext) -> Self {
             self.pipeline_context = Some(input);
             self
         }
-        /// <p>Represents information about a pipeline to a job worker.</p> <note>
-        /// <p>Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.</p>
+        /// <p>Represents information about a pipeline to a job worker.</p> <note> 
+        /// <p>Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for ThirdParty jobs.</p> 
         /// </note>
-        pub fn set_pipeline_context(
-            mut self,
-            input: std::option::Option<crate::model::PipelineContext>,
-        ) -> Self {
-            self.pipeline_context = input;
-            self
+        pub fn set_pipeline_context(mut self, input: std::option::Option<crate::model::PipelineContext>) -> Self {
+            self.pipeline_context = input; self
         }
         /// Appends an item to `input_artifacts`.
         ///
@@ -7884,17 +7420,13 @@ pub mod third_party_job_data {
         /// <p>The name of the artifact that is worked on by the action, if any. This name might be system-generated, such as "MyApp", or it might be defined by the user when the action is created. The input artifact name must match the name of an output artifact generated by an action in an earlier action or stage of the pipeline.</p>
         pub fn input_artifacts(mut self, input: crate::model::Artifact) -> Self {
             let mut v = self.input_artifacts.unwrap_or_default();
-            v.push(input);
-            self.input_artifacts = Some(v);
-            self
+                            v.push(input);
+                            self.input_artifacts = Some(v);
+                            self
         }
         /// <p>The name of the artifact that is worked on by the action, if any. This name might be system-generated, such as "MyApp", or it might be defined by the user when the action is created. The input artifact name must match the name of an output artifact generated by an action in an earlier action or stage of the pipeline.</p>
-        pub fn set_input_artifacts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Artifact>>,
-        ) -> Self {
-            self.input_artifacts = input;
-            self
+        pub fn set_input_artifacts(mut self, input: std::option::Option<std::vec::Vec<crate::model::Artifact>>) -> Self {
+            self.input_artifacts = input; self
         }
         /// Appends an item to `output_artifacts`.
         ///
@@ -7903,17 +7435,13 @@ pub mod third_party_job_data {
         /// <p>The name of the artifact that is the result of the action, if any. This name might be system-generated, such as "MyBuiltApp", or it might be defined by the user when the action is created.</p>
         pub fn output_artifacts(mut self, input: crate::model::Artifact) -> Self {
             let mut v = self.output_artifacts.unwrap_or_default();
-            v.push(input);
-            self.output_artifacts = Some(v);
-            self
+                            v.push(input);
+                            self.output_artifacts = Some(v);
+                            self
         }
         /// <p>The name of the artifact that is the result of the action, if any. This name might be system-generated, such as "MyBuiltApp", or it might be defined by the user when the action is created.</p>
-        pub fn set_output_artifacts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Artifact>>,
-        ) -> Self {
-            self.output_artifacts = input;
-            self
+        pub fn set_output_artifacts(mut self, input: std::option::Option<std::vec::Vec<crate::model::Artifact>>) -> Self {
+            self.output_artifacts = input; self
         }
         /// <p>Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS CodePipeline. </p>
         pub fn artifact_credentials(mut self, input: crate::model::AwsSessionCredentials) -> Self {
@@ -7921,12 +7449,8 @@ pub mod third_party_job_data {
             self
         }
         /// <p>Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS CodePipeline. </p>
-        pub fn set_artifact_credentials(
-            mut self,
-            input: std::option::Option<crate::model::AwsSessionCredentials>,
-        ) -> Self {
-            self.artifact_credentials = input;
-            self
+        pub fn set_artifact_credentials(mut self, input: std::option::Option<crate::model::AwsSessionCredentials>) -> Self {
+            self.artifact_credentials = input; self
         }
         /// <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires to continue the job asynchronously.</p>
         pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7934,12 +7458,8 @@ pub mod third_party_job_data {
             self
         }
         /// <p>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires to continue the job asynchronously.</p>
-        pub fn set_continuation_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.continuation_token = input;
-            self
+        pub fn set_continuation_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.continuation_token = input; self
         }
         /// <p>The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an AWS Key Management Service (AWS KMS) key. This is optional and might not be present.</p>
         pub fn encryption_key(mut self, input: crate::model::EncryptionKey) -> Self {
@@ -7947,24 +7467,28 @@ pub mod third_party_job_data {
             self
         }
         /// <p>The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an AWS Key Management Service (AWS KMS) key. This is optional and might not be present.</p>
-        pub fn set_encryption_key(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionKey>,
-        ) -> Self {
-            self.encryption_key = input;
-            self
+        pub fn set_encryption_key(mut self, input: std::option::Option<crate::model::EncryptionKey>) -> Self {
+            self.encryption_key = input; self
         }
         /// Consumes the builder and constructs a [`ThirdPartyJobData`](crate::model::ThirdPartyJobData).
         pub fn build(self) -> crate::model::ThirdPartyJobData {
             crate::model::ThirdPartyJobData {
-                action_type_id: self.action_type_id,
-                action_configuration: self.action_configuration,
-                pipeline_context: self.pipeline_context,
-                input_artifacts: self.input_artifacts,
-                output_artifacts: self.output_artifacts,
-                artifact_credentials: self.artifact_credentials,
-                continuation_token: self.continuation_token,
-                encryption_key: self.encryption_key,
+                action_type_id: self.action_type_id
+                ,
+                action_configuration: self.action_configuration
+                ,
+                pipeline_context: self.pipeline_context
+                ,
+                input_artifacts: self.input_artifacts
+                ,
+                output_artifacts: self.output_artifacts
+                ,
+                artifact_credentials: self.artifact_credentials
+                ,
+                continuation_token: self.continuation_token
+                ,
+                encryption_key: self.encryption_key
+                ,
             }
         }
     }
@@ -7982,6 +7506,8 @@ pub mod third_party_job_data {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ThirdPartyJobData {
     /// Creates a new builder-style object to manufacture [`ThirdPartyJobData`](crate::model::ThirdPartyJobData).
@@ -7993,7 +7519,7 @@ impl ThirdPartyJobData {
 /// <p>Represents information about the state of the stage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StageState {
+pub struct StageState  {
     /// <p>The name of the stage.</p>
     #[doc(hidden)]
     pub stage_name: std::option::Option<std::string::String>,
@@ -8012,29 +7538,29 @@ pub struct StageState {
 }
 impl StageState {
     /// <p>The name of the stage.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> std::option::Option<& str> {
         self.stage_name.as_deref()
     }
     /// <p>Represents information about the run of a stage.</p>
-    pub fn inbound_execution(&self) -> std::option::Option<&crate::model::StageExecution> {
+    pub fn inbound_execution(&self) -> std::option::Option<& crate::model::StageExecution> {
         self.inbound_execution.as_ref()
     }
     /// <p>The state of the inbound transition, which is either enabled or disabled.</p>
-    pub fn inbound_transition_state(&self) -> std::option::Option<&crate::model::TransitionState> {
+    pub fn inbound_transition_state(&self) -> std::option::Option<& crate::model::TransitionState> {
         self.inbound_transition_state.as_ref()
     }
     /// <p>The state of the stage.</p>
-    pub fn action_states(&self) -> std::option::Option<&[crate::model::ActionState]> {
+    pub fn action_states(&self) -> std::option::Option<& [crate::model::ActionState]> {
         self.action_states.as_deref()
     }
     /// <p>Information about the latest execution in the stage, including its ID and status.</p>
-    pub fn latest_execution(&self) -> std::option::Option<&crate::model::StageExecution> {
+    pub fn latest_execution(&self) -> std::option::Option<& crate::model::StageExecution> {
         self.latest_execution.as_ref()
     }
 }
 /// See [`StageState`](crate::model::StageState).
 pub mod stage_state {
-
+    
     /// A builder for [`StageState`](crate::model::StageState).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8052,8 +7578,7 @@ pub mod stage_state {
         }
         /// <p>The name of the stage.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stage_name = input;
-            self
+            self.stage_name = input; self
         }
         /// <p>Represents information about the run of a stage.</p>
         pub fn inbound_execution(mut self, input: crate::model::StageExecution) -> Self {
@@ -8061,12 +7586,8 @@ pub mod stage_state {
             self
         }
         /// <p>Represents information about the run of a stage.</p>
-        pub fn set_inbound_execution(
-            mut self,
-            input: std::option::Option<crate::model::StageExecution>,
-        ) -> Self {
-            self.inbound_execution = input;
-            self
+        pub fn set_inbound_execution(mut self, input: std::option::Option<crate::model::StageExecution>) -> Self {
+            self.inbound_execution = input; self
         }
         /// <p>The state of the inbound transition, which is either enabled or disabled.</p>
         pub fn inbound_transition_state(mut self, input: crate::model::TransitionState) -> Self {
@@ -8074,12 +7595,8 @@ pub mod stage_state {
             self
         }
         /// <p>The state of the inbound transition, which is either enabled or disabled.</p>
-        pub fn set_inbound_transition_state(
-            mut self,
-            input: std::option::Option<crate::model::TransitionState>,
-        ) -> Self {
-            self.inbound_transition_state = input;
-            self
+        pub fn set_inbound_transition_state(mut self, input: std::option::Option<crate::model::TransitionState>) -> Self {
+            self.inbound_transition_state = input; self
         }
         /// Appends an item to `action_states`.
         ///
@@ -8088,17 +7605,13 @@ pub mod stage_state {
         /// <p>The state of the stage.</p>
         pub fn action_states(mut self, input: crate::model::ActionState) -> Self {
             let mut v = self.action_states.unwrap_or_default();
-            v.push(input);
-            self.action_states = Some(v);
-            self
+                            v.push(input);
+                            self.action_states = Some(v);
+                            self
         }
         /// <p>The state of the stage.</p>
-        pub fn set_action_states(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ActionState>>,
-        ) -> Self {
-            self.action_states = input;
-            self
+        pub fn set_action_states(mut self, input: std::option::Option<std::vec::Vec<crate::model::ActionState>>) -> Self {
+            self.action_states = input; self
         }
         /// <p>Information about the latest execution in the stage, including its ID and status.</p>
         pub fn latest_execution(mut self, input: crate::model::StageExecution) -> Self {
@@ -8106,24 +7619,27 @@ pub mod stage_state {
             self
         }
         /// <p>Information about the latest execution in the stage, including its ID and status.</p>
-        pub fn set_latest_execution(
-            mut self,
-            input: std::option::Option<crate::model::StageExecution>,
-        ) -> Self {
-            self.latest_execution = input;
-            self
+        pub fn set_latest_execution(mut self, input: std::option::Option<crate::model::StageExecution>) -> Self {
+            self.latest_execution = input; self
         }
         /// Consumes the builder and constructs a [`StageState`](crate::model::StageState).
         pub fn build(self) -> crate::model::StageState {
             crate::model::StageState {
-                stage_name: self.stage_name,
-                inbound_execution: self.inbound_execution,
-                inbound_transition_state: self.inbound_transition_state,
-                action_states: self.action_states,
-                latest_execution: self.latest_execution,
+                stage_name: self.stage_name
+                ,
+                inbound_execution: self.inbound_execution
+                ,
+                inbound_transition_state: self.inbound_transition_state
+                ,
+                action_states: self.action_states
+                ,
+                latest_execution: self.latest_execution
+                ,
             }
         }
     }
+    
+    
 }
 impl StageState {
     /// Creates a new builder-style object to manufacture [`StageState`](crate::model::StageState).
@@ -8135,31 +7651,31 @@ impl StageState {
 /// <p>Represents information about the run of a stage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StageExecution {
+pub struct StageExecution  {
     /// <p>The ID of the pipeline execution associated with the stage.</p>
     #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
-    /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p> <note>
-    /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p>
+    /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p> <note> 
+    /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p> 
     /// </note>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::StageExecutionStatus>,
 }
 impl StageExecution {
     /// <p>The ID of the pipeline execution associated with the stage.</p>
-    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_execution_id(&self) -> std::option::Option<& str> {
         self.pipeline_execution_id.as_deref()
     }
-    /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p> <note>
-    /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p>
+    /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p> <note> 
+    /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p> 
     /// </note>
-    pub fn status(&self) -> std::option::Option<&crate::model::StageExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::StageExecutionStatus> {
         self.status.as_ref()
     }
 }
 /// See [`StageExecution`](crate::model::StageExecution).
 pub mod stage_execution {
-
+    
     /// A builder for [`StageExecution`](crate::model::StageExecution).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8173,38 +7689,34 @@ pub mod stage_execution {
             self
         }
         /// <p>The ID of the pipeline execution associated with the stage.</p>
-        pub fn set_pipeline_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pipeline_execution_id = input;
-            self
+        pub fn set_pipeline_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pipeline_execution_id = input; self
         }
-        /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p> <note>
-        /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p>
+        /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p> <note> 
+        /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p> 
         /// </note>
         pub fn status(mut self, input: crate::model::StageExecutionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p> <note>
-        /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p>
+        /// <p>The status of the stage, or for a completed stage, the last status of the stage.</p> <note> 
+        /// <p>A status of cancelled means that the pipeline’s definition was updated before the stage execution could be completed.</p> 
         /// </note>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::StageExecutionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::StageExecutionStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`StageExecution`](crate::model::StageExecution).
         pub fn build(self) -> crate::model::StageExecution {
             crate::model::StageExecution {
-                pipeline_execution_id: self.pipeline_execution_id,
-                status: self.status,
+                pipeline_execution_id: self.pipeline_execution_id
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl StageExecution {
     /// Creates a new builder-style object to manufacture [`StageExecution`](crate::model::StageExecution).
@@ -8219,9 +7731,9 @@ impl StageExecution {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let stageexecutionstatus = unimplemented!();
 /// match stageexecutionstatus {
@@ -8247,22 +7759,14 @@ impl StageExecution {
 /// Specifically, when `stageexecutionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StageExecutionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StageExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
@@ -8277,7 +7781,7 @@ pub enum StageExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StageExecutionStatus {
     fn from(s: &str) -> Self {
@@ -8288,19 +7792,17 @@ impl std::convert::From<&str> for StageExecutionStatus {
             "Stopped" => StageExecutionStatus::Stopped,
             "Stopping" => StageExecutionStatus::Stopping,
             "Succeeded" => StageExecutionStatus::Succeeded,
-            other => {
-                StageExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => StageExecutionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StageExecutionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StageExecutionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StageExecutionStatus::from(s))
+                }
+            }
 impl StageExecutionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8311,18 +7813,13 @@ impl StageExecutionStatus {
             StageExecutionStatus::Stopped => "Stopped",
             StageExecutionStatus::Stopping => "Stopping",
             StageExecutionStatus::Succeeded => "Succeeded",
-            StageExecutionStatus::Unknown(value) => value.as_str(),
+            StageExecutionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Cancelled",
-            "Failed",
-            "InProgress",
-            "Stopped",
-            "Stopping",
-            "Succeeded",
+            "Cancelled", "Failed", "InProgress", "Stopped", "Stopping", "Succeeded"
         ]
     }
 }
@@ -8335,7 +7832,7 @@ impl AsRef<str> for StageExecutionStatus {
 /// <p>Represents information about the state of an action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionState {
+pub struct ActionState  {
     /// <p>The name of the action.</p>
     #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
@@ -8354,29 +7851,29 @@ pub struct ActionState {
 }
 impl ActionState {
     /// <p>The name of the action.</p>
-    pub fn action_name(&self) -> std::option::Option<&str> {
+    pub fn action_name(&self) -> std::option::Option<& str> {
         self.action_name.as_deref()
     }
     /// <p>Represents information about the version (or revision) of an action.</p>
-    pub fn current_revision(&self) -> std::option::Option<&crate::model::ActionRevision> {
+    pub fn current_revision(&self) -> std::option::Option<& crate::model::ActionRevision> {
         self.current_revision.as_ref()
     }
     /// <p>Represents information about the run of an action.</p>
-    pub fn latest_execution(&self) -> std::option::Option<&crate::model::ActionExecution> {
+    pub fn latest_execution(&self) -> std::option::Option<& crate::model::ActionExecution> {
         self.latest_execution.as_ref()
     }
     /// <p>A URL link for more information about the state of the action, such as a deployment group details page.</p>
-    pub fn entity_url(&self) -> std::option::Option<&str> {
+    pub fn entity_url(&self) -> std::option::Option<& str> {
         self.entity_url.as_deref()
     }
     /// <p>A URL link for more information about the revision, such as a commit details page.</p>
-    pub fn revision_url(&self) -> std::option::Option<&str> {
+    pub fn revision_url(&self) -> std::option::Option<& str> {
         self.revision_url.as_deref()
     }
 }
 /// See [`ActionState`](crate::model::ActionState).
 pub mod action_state {
-
+    
     /// A builder for [`ActionState`](crate::model::ActionState).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8394,8 +7891,7 @@ pub mod action_state {
         }
         /// <p>The name of the action.</p>
         pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action_name = input;
-            self
+            self.action_name = input; self
         }
         /// <p>Represents information about the version (or revision) of an action.</p>
         pub fn current_revision(mut self, input: crate::model::ActionRevision) -> Self {
@@ -8403,12 +7899,8 @@ pub mod action_state {
             self
         }
         /// <p>Represents information about the version (or revision) of an action.</p>
-        pub fn set_current_revision(
-            mut self,
-            input: std::option::Option<crate::model::ActionRevision>,
-        ) -> Self {
-            self.current_revision = input;
-            self
+        pub fn set_current_revision(mut self, input: std::option::Option<crate::model::ActionRevision>) -> Self {
+            self.current_revision = input; self
         }
         /// <p>Represents information about the run of an action.</p>
         pub fn latest_execution(mut self, input: crate::model::ActionExecution) -> Self {
@@ -8416,12 +7908,8 @@ pub mod action_state {
             self
         }
         /// <p>Represents information about the run of an action.</p>
-        pub fn set_latest_execution(
-            mut self,
-            input: std::option::Option<crate::model::ActionExecution>,
-        ) -> Self {
-            self.latest_execution = input;
-            self
+        pub fn set_latest_execution(mut self, input: std::option::Option<crate::model::ActionExecution>) -> Self {
+            self.latest_execution = input; self
         }
         /// <p>A URL link for more information about the state of the action, such as a deployment group details page.</p>
         pub fn entity_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8430,8 +7918,7 @@ pub mod action_state {
         }
         /// <p>A URL link for more information about the state of the action, such as a deployment group details page.</p>
         pub fn set_entity_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.entity_url = input;
-            self
+            self.entity_url = input; self
         }
         /// <p>A URL link for more information about the revision, such as a commit details page.</p>
         pub fn revision_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8440,20 +7927,26 @@ pub mod action_state {
         }
         /// <p>A URL link for more information about the revision, such as a commit details page.</p>
         pub fn set_revision_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_url = input;
-            self
+            self.revision_url = input; self
         }
         /// Consumes the builder and constructs a [`ActionState`](crate::model::ActionState).
         pub fn build(self) -> crate::model::ActionState {
             crate::model::ActionState {
-                action_name: self.action_name,
-                current_revision: self.current_revision,
-                latest_execution: self.latest_execution,
-                entity_url: self.entity_url,
-                revision_url: self.revision_url,
+                action_name: self.action_name
+                ,
+                current_revision: self.current_revision
+                ,
+                latest_execution: self.latest_execution
+                ,
+                entity_url: self.entity_url
+                ,
+                revision_url: self.revision_url
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionState {
     /// Creates a new builder-style object to manufacture [`ActionState`](crate::model::ActionState).
@@ -8465,9 +7958,9 @@ impl ActionState {
 /// <p>Represents information about the run of an action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionExecution {
-    /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p> <note>
-    /// <p>For older executions, this field might be empty. The action execution ID is available for executions run on or after March 2020.</p>
+pub struct ActionExecution  {
+    /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p> <note> 
+    /// <p>For older executions, this field might be empty. The action execution ID is available for executions run on or after March 2020.</p> 
     /// </note>
     #[doc(hidden)]
     pub action_execution_id: std::option::Option<std::string::String>,
@@ -8500,38 +7993,38 @@ pub struct ActionExecution {
     pub error_details: std::option::Option<crate::model::ErrorDetails>,
 }
 impl ActionExecution {
-    /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p> <note>
-    /// <p>For older executions, this field might be empty. The action execution ID is available for executions run on or after March 2020.</p>
+    /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p> <note> 
+    /// <p>For older executions, this field might be empty. The action execution ID is available for executions run on or after March 2020.</p> 
     /// </note>
-    pub fn action_execution_id(&self) -> std::option::Option<&str> {
+    pub fn action_execution_id(&self) -> std::option::Option<& str> {
         self.action_execution_id.as_deref()
     }
     /// <p>The status of the action, or for a completed action, the last status of the action.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ActionExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ActionExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>A summary of the run of the action.</p>
-    pub fn summary(&self) -> std::option::Option<&str> {
+    pub fn summary(&self) -> std::option::Option<& str> {
         self.summary.as_deref()
     }
     /// <p>The last status change of the action.</p>
-    pub fn last_status_change(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_status_change(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_status_change.as_ref()
     }
     /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> command. It is used to validate that the approval request corresponding to this token is still valid.</p>
-    pub fn token(&self) -> std::option::Option<&str> {
+    pub fn token(&self) -> std::option::Option<& str> {
         self.token.as_deref()
     }
     /// <p>The ARN of the user who last changed the pipeline.</p>
-    pub fn last_updated_by(&self) -> std::option::Option<&str> {
+    pub fn last_updated_by(&self) -> std::option::Option<& str> {
         self.last_updated_by.as_deref()
     }
     /// <p>The external ID of the run of the action.</p>
-    pub fn external_execution_id(&self) -> std::option::Option<&str> {
+    pub fn external_execution_id(&self) -> std::option::Option<& str> {
         self.external_execution_id.as_deref()
     }
     /// <p>The URL of a resource external to AWS that is used when running the action (for example, an external repository URL).</p>
-    pub fn external_execution_url(&self) -> std::option::Option<&str> {
+    pub fn external_execution_url(&self) -> std::option::Option<& str> {
         self.external_execution_url.as_deref()
     }
     /// <p>A percentage of completeness of the action as it runs.</p>
@@ -8539,13 +8032,13 @@ impl ActionExecution {
         self.percent_complete
     }
     /// <p>The details of an error returned by a URL external to AWS.</p>
-    pub fn error_details(&self) -> std::option::Option<&crate::model::ErrorDetails> {
+    pub fn error_details(&self) -> std::option::Option<& crate::model::ErrorDetails> {
         self.error_details.as_ref()
     }
 }
 /// See [`ActionExecution`](crate::model::ActionExecution).
 pub mod action_execution {
-
+    
     /// A builder for [`ActionExecution`](crate::model::ActionExecution).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8561,22 +8054,18 @@ pub mod action_execution {
         pub(crate) error_details: std::option::Option<crate::model::ErrorDetails>,
     }
     impl Builder {
-        /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p> <note>
-        /// <p>For older executions, this field might be empty. The action execution ID is available for executions run on or after March 2020.</p>
+        /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p> <note> 
+        /// <p>For older executions, this field might be empty. The action execution ID is available for executions run on or after March 2020.</p> 
         /// </note>
         pub fn action_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.action_execution_id = Some(input.into());
             self
         }
-        /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p> <note>
-        /// <p>For older executions, this field might be empty. The action execution ID is available for executions run on or after March 2020.</p>
+        /// <p>ID of the workflow action execution in the current stage. Use the <code>GetPipelineState</code> action to retrieve the current action execution details of the current stage.</p> <note> 
+        /// <p>For older executions, this field might be empty. The action execution ID is available for executions run on or after March 2020.</p> 
         /// </note>
-        pub fn set_action_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.action_execution_id = input;
-            self
+        pub fn set_action_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.action_execution_id = input; self
         }
         /// <p>The status of the action, or for a completed action, the last status of the action.</p>
         pub fn status(mut self, input: crate::model::ActionExecutionStatus) -> Self {
@@ -8584,12 +8073,8 @@ pub mod action_execution {
             self
         }
         /// <p>The status of the action, or for a completed action, the last status of the action.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ActionExecutionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ActionExecutionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A summary of the run of the action.</p>
         pub fn summary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8598,8 +8083,7 @@ pub mod action_execution {
         }
         /// <p>A summary of the run of the action.</p>
         pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.summary = input;
-            self
+            self.summary = input; self
         }
         /// <p>The last status change of the action.</p>
         pub fn last_status_change(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8607,12 +8091,8 @@ pub mod action_execution {
             self
         }
         /// <p>The last status change of the action.</p>
-        pub fn set_last_status_change(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_status_change = input;
-            self
+        pub fn set_last_status_change(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_status_change = input; self
         }
         /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> command. It is used to validate that the approval request corresponding to this token is still valid.</p>
         pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8621,8 +8101,7 @@ pub mod action_execution {
         }
         /// <p>The system-generated token used to identify a unique approval request. The token for each open approval request can be obtained using the <code>GetPipelineState</code> command. It is used to validate that the approval request corresponding to this token is still valid.</p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.token = input;
-            self
+            self.token = input; self
         }
         /// <p>The ARN of the user who last changed the pipeline.</p>
         pub fn last_updated_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8630,12 +8109,8 @@ pub mod action_execution {
             self
         }
         /// <p>The ARN of the user who last changed the pipeline.</p>
-        pub fn set_last_updated_by(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_by = input;
-            self
+        pub fn set_last_updated_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_by = input; self
         }
         /// <p>The external ID of the run of the action.</p>
         pub fn external_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8643,12 +8118,8 @@ pub mod action_execution {
             self
         }
         /// <p>The external ID of the run of the action.</p>
-        pub fn set_external_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.external_execution_id = input;
-            self
+        pub fn set_external_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.external_execution_id = input; self
         }
         /// <p>The URL of a resource external to AWS that is used when running the action (for example, an external repository URL).</p>
         pub fn external_execution_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8656,12 +8127,8 @@ pub mod action_execution {
             self
         }
         /// <p>The URL of a resource external to AWS that is used when running the action (for example, an external repository URL).</p>
-        pub fn set_external_execution_url(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.external_execution_url = input;
-            self
+        pub fn set_external_execution_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.external_execution_url = input; self
         }
         /// <p>A percentage of completeness of the action as it runs.</p>
         pub fn percent_complete(mut self, input: i32) -> Self {
@@ -8670,8 +8137,7 @@ pub mod action_execution {
         }
         /// <p>A percentage of completeness of the action as it runs.</p>
         pub fn set_percent_complete(mut self, input: std::option::Option<i32>) -> Self {
-            self.percent_complete = input;
-            self
+            self.percent_complete = input; self
         }
         /// <p>The details of an error returned by a URL external to AWS.</p>
         pub fn error_details(mut self, input: crate::model::ErrorDetails) -> Self {
@@ -8679,29 +8145,37 @@ pub mod action_execution {
             self
         }
         /// <p>The details of an error returned by a URL external to AWS.</p>
-        pub fn set_error_details(
-            mut self,
-            input: std::option::Option<crate::model::ErrorDetails>,
-        ) -> Self {
-            self.error_details = input;
-            self
+        pub fn set_error_details(mut self, input: std::option::Option<crate::model::ErrorDetails>) -> Self {
+            self.error_details = input; self
         }
         /// Consumes the builder and constructs a [`ActionExecution`](crate::model::ActionExecution).
         pub fn build(self) -> crate::model::ActionExecution {
             crate::model::ActionExecution {
-                action_execution_id: self.action_execution_id,
-                status: self.status,
-                summary: self.summary,
-                last_status_change: self.last_status_change,
-                token: self.token,
-                last_updated_by: self.last_updated_by,
-                external_execution_id: self.external_execution_id,
-                external_execution_url: self.external_execution_url,
-                percent_complete: self.percent_complete,
-                error_details: self.error_details,
+                action_execution_id: self.action_execution_id
+                ,
+                status: self.status
+                ,
+                summary: self.summary
+                ,
+                last_status_change: self.last_status_change
+                ,
+                token: self.token
+                ,
+                last_updated_by: self.last_updated_by
+                ,
+                external_execution_id: self.external_execution_id
+                ,
+                external_execution_url: self.external_execution_url
+                ,
+                percent_complete: self.percent_complete
+                ,
+                error_details: self.error_details
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionExecution {
     /// Creates a new builder-style object to manufacture [`ActionExecution`](crate::model::ActionExecution).
@@ -8713,7 +8187,7 @@ impl ActionExecution {
 /// <p>Represents information about an error in AWS CodePipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ErrorDetails {
+pub struct ErrorDetails  {
     /// <p>The system ID or number code of the error.</p>
     #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
@@ -8723,17 +8197,17 @@ pub struct ErrorDetails {
 }
 impl ErrorDetails {
     /// <p>The system ID or number code of the error.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>The text of the error message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ErrorDetails`](crate::model::ErrorDetails).
 pub mod error_details {
-
+    
     /// A builder for [`ErrorDetails`](crate::model::ErrorDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8748,8 +8222,7 @@ pub mod error_details {
         }
         /// <p>The system ID or number code of the error.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// <p>The text of the error message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8758,17 +8231,20 @@ pub mod error_details {
         }
         /// <p>The text of the error message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ErrorDetails`](crate::model::ErrorDetails).
         pub fn build(self) -> crate::model::ErrorDetails {
             crate::model::ErrorDetails {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ErrorDetails {
     /// Creates a new builder-style object to manufacture [`ErrorDetails`](crate::model::ErrorDetails).
@@ -8780,7 +8256,7 @@ impl ErrorDetails {
 /// <p>Represents information about the state of transitions between one stage and another stage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransitionState {
+pub struct TransitionState  {
     /// <p>Whether the transition between stages is enabled (true) or disabled (false).</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -8800,21 +8276,21 @@ impl TransitionState {
         self.enabled
     }
     /// <p>The ID of the user who last changed the transition state.</p>
-    pub fn last_changed_by(&self) -> std::option::Option<&str> {
+    pub fn last_changed_by(&self) -> std::option::Option<& str> {
         self.last_changed_by.as_deref()
     }
     /// <p>The timestamp when the transition state was last changed.</p>
-    pub fn last_changed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_changed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_changed_at.as_ref()
     }
     /// <p>The user-specified reason why the transition between two stages of a pipeline was disabled.</p>
-    pub fn disabled_reason(&self) -> std::option::Option<&str> {
+    pub fn disabled_reason(&self) -> std::option::Option<& str> {
         self.disabled_reason.as_deref()
     }
 }
 /// See [`TransitionState`](crate::model::TransitionState).
 pub mod transition_state {
-
+    
     /// A builder for [`TransitionState`](crate::model::TransitionState).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8831,8 +8307,7 @@ pub mod transition_state {
         }
         /// <p>Whether the transition between stages is enabled (true) or disabled (false).</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>The ID of the user who last changed the transition state.</p>
         pub fn last_changed_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8840,12 +8315,8 @@ pub mod transition_state {
             self
         }
         /// <p>The ID of the user who last changed the transition state.</p>
-        pub fn set_last_changed_by(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_changed_by = input;
-            self
+        pub fn set_last_changed_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_changed_by = input; self
         }
         /// <p>The timestamp when the transition state was last changed.</p>
         pub fn last_changed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -8853,12 +8324,8 @@ pub mod transition_state {
             self
         }
         /// <p>The timestamp when the transition state was last changed.</p>
-        pub fn set_last_changed_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_changed_at = input;
-            self
+        pub fn set_last_changed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_changed_at = input; self
         }
         /// <p>The user-specified reason why the transition between two stages of a pipeline was disabled.</p>
         pub fn disabled_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8866,23 +8333,26 @@ pub mod transition_state {
             self
         }
         /// <p>The user-specified reason why the transition between two stages of a pipeline was disabled.</p>
-        pub fn set_disabled_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.disabled_reason = input;
-            self
+        pub fn set_disabled_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.disabled_reason = input; self
         }
         /// Consumes the builder and constructs a [`TransitionState`](crate::model::TransitionState).
         pub fn build(self) -> crate::model::TransitionState {
             crate::model::TransitionState {
-                enabled: self.enabled.unwrap_or_default(),
-                last_changed_by: self.last_changed_by,
-                last_changed_at: self.last_changed_at,
-                disabled_reason: self.disabled_reason,
+                enabled: self.enabled
+                    .unwrap_or_default()
+                ,
+                last_changed_by: self.last_changed_by
+                ,
+                last_changed_at: self.last_changed_at
+                ,
+                disabled_reason: self.disabled_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl TransitionState {
     /// Creates a new builder-style object to manufacture [`TransitionState`](crate::model::TransitionState).
@@ -8894,7 +8364,7 @@ impl TransitionState {
 /// <p>Represents information about an execution of a pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipelineExecution {
+pub struct PipelineExecution  {
     /// <p>The name of the pipeline with the specified pipeline execution.</p>
     #[doc(hidden)]
     pub pipeline_name: std::option::Option<std::string::String>,
@@ -8904,15 +8374,15 @@ pub struct PipelineExecution {
     /// <p>The ID of the pipeline execution.</p>
     #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
-    /// <p>The status of the pipeline execution.</p>
-    /// <ul>
-    /// <li> <p>Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.</p> </li>
-    /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li>
-    /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-    /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-    /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li>
-    /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li>
-    /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
+    /// <p>The status of the pipeline execution.</p> 
+    /// <ul> 
+    /// <li> <p>Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.</p> </li> 
+    /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li> 
+    /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+    /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+    /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> 
+    /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li> 
+    /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::PipelineExecutionStatus>,
@@ -8925,7 +8395,7 @@ pub struct PipelineExecution {
 }
 impl PipelineExecution {
     /// <p>The name of the pipeline with the specified pipeline execution.</p>
-    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> std::option::Option<& str> {
         self.pipeline_name.as_deref()
     }
     /// <p>The version number of the pipeline with the specified pipeline execution.</p>
@@ -8933,34 +8403,34 @@ impl PipelineExecution {
         self.pipeline_version
     }
     /// <p>The ID of the pipeline execution.</p>
-    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_execution_id(&self) -> std::option::Option<& str> {
         self.pipeline_execution_id.as_deref()
     }
-    /// <p>The status of the pipeline execution.</p>
-    /// <ul>
-    /// <li> <p>Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.</p> </li>
-    /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li>
-    /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-    /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-    /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li>
-    /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li>
-    /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
+    /// <p>The status of the pipeline execution.</p> 
+    /// <ul> 
+    /// <li> <p>Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.</p> </li> 
+    /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li> 
+    /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+    /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+    /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> 
+    /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li> 
+    /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> 
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::model::PipelineExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::PipelineExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>A summary that contains a description of the pipeline execution status.</p>
-    pub fn status_summary(&self) -> std::option::Option<&str> {
+    pub fn status_summary(&self) -> std::option::Option<& str> {
         self.status_summary.as_deref()
     }
     /// <p>A list of <code>ArtifactRevision</code> objects included in a pipeline execution.</p>
-    pub fn artifact_revisions(&self) -> std::option::Option<&[crate::model::ArtifactRevision]> {
+    pub fn artifact_revisions(&self) -> std::option::Option<& [crate::model::ArtifactRevision]> {
         self.artifact_revisions.as_deref()
     }
 }
 /// See [`PipelineExecution`](crate::model::PipelineExecution).
 pub mod pipeline_execution {
-
+    
     /// A builder for [`PipelineExecution`](crate::model::PipelineExecution).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8969,8 +8439,7 @@ pub mod pipeline_execution {
         pub(crate) pipeline_execution_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::PipelineExecutionStatus>,
         pub(crate) status_summary: std::option::Option<std::string::String>,
-        pub(crate) artifact_revisions:
-            std::option::Option<std::vec::Vec<crate::model::ArtifactRevision>>,
+        pub(crate) artifact_revisions: std::option::Option<std::vec::Vec<crate::model::ArtifactRevision>>,
     }
     impl Builder {
         /// <p>The name of the pipeline with the specified pipeline execution.</p>
@@ -8979,12 +8448,8 @@ pub mod pipeline_execution {
             self
         }
         /// <p>The name of the pipeline with the specified pipeline execution.</p>
-        pub fn set_pipeline_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pipeline_name = input;
-            self
+        pub fn set_pipeline_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pipeline_name = input; self
         }
         /// <p>The version number of the pipeline with the specified pipeline execution.</p>
         pub fn pipeline_version(mut self, input: i32) -> Self {
@@ -8993,8 +8458,7 @@ pub mod pipeline_execution {
         }
         /// <p>The version number of the pipeline with the specified pipeline execution.</p>
         pub fn set_pipeline_version(mut self, input: std::option::Option<i32>) -> Self {
-            self.pipeline_version = input;
-            self
+            self.pipeline_version = input; self
         }
         /// <p>The ID of the pipeline execution.</p>
         pub fn pipeline_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9002,43 +8466,35 @@ pub mod pipeline_execution {
             self
         }
         /// <p>The ID of the pipeline execution.</p>
-        pub fn set_pipeline_execution_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.pipeline_execution_id = input;
-            self
+        pub fn set_pipeline_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.pipeline_execution_id = input; self
         }
-        /// <p>The status of the pipeline execution.</p>
-        /// <ul>
-        /// <li> <p>Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.</p> </li>
-        /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li>
-        /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-        /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-        /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li>
-        /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li>
-        /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
+        /// <p>The status of the pipeline execution.</p> 
+        /// <ul> 
+        /// <li> <p>Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.</p> </li> 
+        /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li> 
+        /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+        /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+        /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> 
+        /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li> 
+        /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> 
         /// </ul>
         pub fn status(mut self, input: crate::model::PipelineExecutionStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The status of the pipeline execution.</p>
-        /// <ul>
-        /// <li> <p>Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.</p> </li>
-        /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li>
-        /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-        /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li>
-        /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li>
-        /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li>
-        /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li>
+        /// <p>The status of the pipeline execution.</p> 
+        /// <ul> 
+        /// <li> <p>Cancelled: The pipeline’s definition was updated before the pipeline execution could be completed.</p> </li> 
+        /// <li> <p>InProgress: The pipeline execution is currently running.</p> </li> 
+        /// <li> <p>Stopped: The pipeline execution was manually stopped. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+        /// <li> <p>Stopping: The pipeline execution received a request to be manually stopped. Depending on the selected stop mode, the execution is either completing or abandoning in-progress actions. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped Executions</a>.</p> </li> 
+        /// <li> <p>Succeeded: The pipeline execution was completed successfully. </p> </li> 
+        /// <li> <p>Superseded: While this pipeline execution was waiting for the next stage to be completed, a newer pipeline execution advanced and continued through the pipeline instead. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded Executions</a>.</p> </li> 
+        /// <li> <p>Failed: The pipeline execution was not completed successfully.</p> </li> 
         /// </ul>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::PipelineExecutionStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::PipelineExecutionStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A summary that contains a description of the pipeline execution status.</p>
         pub fn status_summary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9046,12 +8502,8 @@ pub mod pipeline_execution {
             self
         }
         /// <p>A summary that contains a description of the pipeline execution status.</p>
-        pub fn set_status_summary(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_summary = input;
-            self
+        pub fn set_status_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_summary = input; self
         }
         /// Appends an item to `artifact_revisions`.
         ///
@@ -9060,30 +8512,34 @@ pub mod pipeline_execution {
         /// <p>A list of <code>ArtifactRevision</code> objects included in a pipeline execution.</p>
         pub fn artifact_revisions(mut self, input: crate::model::ArtifactRevision) -> Self {
             let mut v = self.artifact_revisions.unwrap_or_default();
-            v.push(input);
-            self.artifact_revisions = Some(v);
-            self
+                            v.push(input);
+                            self.artifact_revisions = Some(v);
+                            self
         }
         /// <p>A list of <code>ArtifactRevision</code> objects included in a pipeline execution.</p>
-        pub fn set_artifact_revisions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ArtifactRevision>>,
-        ) -> Self {
-            self.artifact_revisions = input;
-            self
+        pub fn set_artifact_revisions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ArtifactRevision>>) -> Self {
+            self.artifact_revisions = input; self
         }
         /// Consumes the builder and constructs a [`PipelineExecution`](crate::model::PipelineExecution).
         pub fn build(self) -> crate::model::PipelineExecution {
             crate::model::PipelineExecution {
-                pipeline_name: self.pipeline_name,
-                pipeline_version: self.pipeline_version,
-                pipeline_execution_id: self.pipeline_execution_id,
-                status: self.status,
-                status_summary: self.status_summary,
-                artifact_revisions: self.artifact_revisions,
+                pipeline_name: self.pipeline_name
+                ,
+                pipeline_version: self.pipeline_version
+                ,
+                pipeline_execution_id: self.pipeline_execution_id
+                ,
+                status: self.status
+                ,
+                status_summary: self.status_summary
+                ,
+                artifact_revisions: self.artifact_revisions
+                ,
             }
         }
     }
+    
+    
 }
 impl PipelineExecution {
     /// Creates a new builder-style object to manufacture [`PipelineExecution`](crate::model::PipelineExecution).
@@ -9095,7 +8551,7 @@ impl PipelineExecution {
 /// <p>Represents revision details of an artifact. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ArtifactRevision {
+pub struct ArtifactRevision  {
     /// <p>The name of an artifact. This name might be system-generated, such as "MyApp", or defined by the user when an action is created.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -9117,33 +8573,33 @@ pub struct ArtifactRevision {
 }
 impl ArtifactRevision {
     /// <p>The name of an artifact. This name might be system-generated, such as "MyApp", or defined by the user when an action is created.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The revision ID of the artifact.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>An additional identifier for a revision, such as a commit date or, for artifacts stored in Amazon S3 buckets, the ETag value.</p>
-    pub fn revision_change_identifier(&self) -> std::option::Option<&str> {
+    pub fn revision_change_identifier(&self) -> std::option::Option<& str> {
         self.revision_change_identifier.as_deref()
     }
     /// <p>Summary information about the most recent revision of the artifact. For GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.</p>
-    pub fn revision_summary(&self) -> std::option::Option<&str> {
+    pub fn revision_summary(&self) -> std::option::Option<& str> {
         self.revision_summary.as_deref()
     }
     /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The commit ID for the artifact revision. For artifacts stored in GitHub or AWS CodeCommit repositories, the commit ID is linked to a commit details page.</p>
-    pub fn revision_url(&self) -> std::option::Option<&str> {
+    pub fn revision_url(&self) -> std::option::Option<& str> {
         self.revision_url.as_deref()
     }
 }
 /// See [`ArtifactRevision`](crate::model::ArtifactRevision).
 pub mod artifact_revision {
-
+    
     /// A builder for [`ArtifactRevision`](crate::model::ArtifactRevision).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9162,8 +8618,7 @@ pub mod artifact_revision {
         }
         /// <p>The name of an artifact. This name might be system-generated, such as "MyApp", or defined by the user when an action is created.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The revision ID of the artifact.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9172,8 +8627,7 @@ pub mod artifact_revision {
         }
         /// <p>The revision ID of the artifact.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// <p>An additional identifier for a revision, such as a commit date or, for artifacts stored in Amazon S3 buckets, the ETag value.</p>
         pub fn revision_change_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9181,12 +8635,8 @@ pub mod artifact_revision {
             self
         }
         /// <p>An additional identifier for a revision, such as a commit date or, for artifacts stored in Amazon S3 buckets, the ETag value.</p>
-        pub fn set_revision_change_identifier(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.revision_change_identifier = input;
-            self
+        pub fn set_revision_change_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_change_identifier = input; self
         }
         /// <p>Summary information about the most recent revision of the artifact. For GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.</p>
         pub fn revision_summary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9194,12 +8644,8 @@ pub mod artifact_revision {
             self
         }
         /// <p>Summary information about the most recent revision of the artifact. For GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the user-provided content of a <code>codepipeline-artifact-revision-summary</code> key specified in the object metadata.</p>
-        pub fn set_revision_summary(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.revision_summary = input;
-            self
+        pub fn set_revision_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revision_summary = input; self
         }
         /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
         pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9207,12 +8653,8 @@ pub mod artifact_revision {
             self
         }
         /// <p>The date and time when the most recent revision of the artifact was created, in timestamp format.</p>
-        pub fn set_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created = input;
-            self
+        pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created = input; self
         }
         /// <p>The commit ID for the artifact revision. For artifacts stored in GitHub or AWS CodeCommit repositories, the commit ID is linked to a commit details page.</p>
         pub fn revision_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9221,21 +8663,28 @@ pub mod artifact_revision {
         }
         /// <p>The commit ID for the artifact revision. For artifacts stored in GitHub or AWS CodeCommit repositories, the commit ID is linked to a commit details page.</p>
         pub fn set_revision_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_url = input;
-            self
+            self.revision_url = input; self
         }
         /// Consumes the builder and constructs a [`ArtifactRevision`](crate::model::ArtifactRevision).
         pub fn build(self) -> crate::model::ArtifactRevision {
             crate::model::ArtifactRevision {
-                name: self.name,
-                revision_id: self.revision_id,
-                revision_change_identifier: self.revision_change_identifier,
-                revision_summary: self.revision_summary,
-                created: self.created,
-                revision_url: self.revision_url,
+                name: self.name
+                ,
+                revision_id: self.revision_id
+                ,
+                revision_change_identifier: self.revision_change_identifier
+                ,
+                revision_summary: self.revision_summary
+                ,
+                created: self.created
+                ,
+                revision_url: self.revision_url
+                ,
             }
         }
     }
+    
+    
 }
 impl ArtifactRevision {
     /// Creates a new builder-style object to manufacture [`ArtifactRevision`](crate::model::ArtifactRevision).
@@ -9247,7 +8696,7 @@ impl ArtifactRevision {
 /// <p>Information about a pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipelineMetadata {
+pub struct PipelineMetadata  {
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
     #[doc(hidden)]
     pub pipeline_arn: std::option::Option<std::string::String>,
@@ -9260,21 +8709,21 @@ pub struct PipelineMetadata {
 }
 impl PipelineMetadata {
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-    pub fn pipeline_arn(&self) -> std::option::Option<&str> {
+    pub fn pipeline_arn(&self) -> std::option::Option<& str> {
         self.pipeline_arn.as_deref()
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
-    pub fn updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated.as_ref()
     }
 }
 /// See [`PipelineMetadata`](crate::model::PipelineMetadata).
 pub mod pipeline_metadata {
-
+    
     /// A builder for [`PipelineMetadata`](crate::model::PipelineMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9290,8 +8739,7 @@ pub mod pipeline_metadata {
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
         pub fn set_pipeline_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.pipeline_arn = input;
-            self
+            self.pipeline_arn = input; self
         }
         /// <p>The date and time the pipeline was created, in timestamp format.</p>
         pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9299,12 +8747,8 @@ pub mod pipeline_metadata {
             self
         }
         /// <p>The date and time the pipeline was created, in timestamp format.</p>
-        pub fn set_created(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created = input;
-            self
+        pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created = input; self
         }
         /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
         pub fn updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9312,22 +8756,23 @@ pub mod pipeline_metadata {
             self
         }
         /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
-        pub fn set_updated(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated = input;
-            self
+        pub fn set_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated = input; self
         }
         /// Consumes the builder and constructs a [`PipelineMetadata`](crate::model::PipelineMetadata).
         pub fn build(self) -> crate::model::PipelineMetadata {
             crate::model::PipelineMetadata {
-                pipeline_arn: self.pipeline_arn,
-                created: self.created,
-                updated: self.updated,
+                pipeline_arn: self.pipeline_arn
+                ,
+                created: self.created
+                ,
+                updated: self.updated
+                ,
             }
         }
     }
+    
+    
 }
 impl PipelineMetadata {
     /// Creates a new builder-style object to manufacture [`PipelineMetadata`](crate::model::PipelineMetadata).
@@ -9339,7 +8784,7 @@ impl PipelineMetadata {
 /// <p>Represents information about the details of a job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobDetails {
+pub struct JobDetails  {
     /// <p>The unique system-generated ID of the job.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -9352,21 +8797,21 @@ pub struct JobDetails {
 }
 impl JobDetails {
     /// <p>The unique system-generated ID of the job.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>Represents other information about a job required for a job worker to complete the job. </p>
-    pub fn data(&self) -> std::option::Option<&crate::model::JobData> {
+    pub fn data(&self) -> std::option::Option<& crate::model::JobData> {
         self.data.as_ref()
     }
     /// <p>The AWS account ID associated with the job.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
 }
 /// See [`JobDetails`](crate::model::JobDetails).
 pub mod job_details {
-
+    
     /// A builder for [`JobDetails`](crate::model::JobDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9382,8 +8827,7 @@ pub mod job_details {
         }
         /// <p>The unique system-generated ID of the job.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>Represents other information about a job required for a job worker to complete the job. </p>
         pub fn data(mut self, input: crate::model::JobData) -> Self {
@@ -9392,8 +8836,7 @@ pub mod job_details {
         }
         /// <p>Represents other information about a job required for a job worker to complete the job. </p>
         pub fn set_data(mut self, input: std::option::Option<crate::model::JobData>) -> Self {
-            self.data = input;
-            self
+            self.data = input; self
         }
         /// <p>The AWS account ID associated with the job.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9402,18 +8845,22 @@ pub mod job_details {
         }
         /// <p>The AWS account ID associated with the job.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// Consumes the builder and constructs a [`JobDetails`](crate::model::JobDetails).
         pub fn build(self) -> crate::model::JobDetails {
             crate::model::JobDetails {
-                id: self.id,
-                data: self.data,
-                account_id: self.account_id,
+                id: self.id
+                ,
+                data: self.data
+                ,
+                account_id: self.account_id
+                ,
             }
         }
     }
+    
+    
 }
 impl JobDetails {
     /// Creates a new builder-style object to manufacture [`JobDetails`](crate::model::JobDetails).
@@ -9428,9 +8875,9 @@ impl JobDetails {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let stagetransitiontype = unimplemented!();
 /// match stagetransitiontype {
@@ -9452,60 +8899,52 @@ impl JobDetails {
 /// Specifically, when `stagetransitiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StageTransitionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StageTransitionType {
     #[allow(missing_docs)] // documentation missing in model
     Inbound,
     #[allow(missing_docs)] // documentation missing in model
     Outbound,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StageTransitionType {
     fn from(s: &str) -> Self {
         match s {
             "Inbound" => StageTransitionType::Inbound,
             "Outbound" => StageTransitionType::Outbound,
-            other => {
-                StageTransitionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => StageTransitionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StageTransitionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StageTransitionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StageTransitionType::from(s))
+                }
+            }
 impl StageTransitionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StageTransitionType::Inbound => "Inbound",
             StageTransitionType::Outbound => "Outbound",
-            StageTransitionType::Unknown(value) => value.as_str(),
+            StageTransitionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Inbound", "Outbound"]
+        &[
+            "Inbound", "Outbound"
+        ]
     }
 }
 impl AsRef<str> for StageTransitionType {
@@ -9520,9 +8959,9 @@ impl AsRef<str> for StageTransitionType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let jobstatus = unimplemented!();
 /// match jobstatus {
@@ -9549,22 +8988,14 @@ impl AsRef<str> for StageTransitionType {
 /// Specifically, when `jobstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `JobStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum JobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Created,
@@ -9581,7 +9012,7 @@ pub enum JobStatus {
     #[allow(missing_docs)] // documentation missing in model
     TimedOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for JobStatus {
     fn from(s: &str) -> Self {
@@ -9593,17 +9024,17 @@ impl std::convert::From<&str> for JobStatus {
             "Queued" => JobStatus::Queued,
             "Succeeded" => JobStatus::Succeeded,
             "TimedOut" => JobStatus::TimedOut,
-            other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => JobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for JobStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(JobStatus::from(s))
+                }
+            }
 impl JobStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9615,19 +9046,13 @@ impl JobStatus {
             JobStatus::Queued => "Queued",
             JobStatus::Succeeded => "Succeeded",
             JobStatus::TimedOut => "TimedOut",
-            JobStatus::Unknown(value) => value.as_str(),
+            JobStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Created",
-            "Dispatched",
-            "Failed",
-            "InProgress",
-            "Queued",
-            "Succeeded",
-            "TimedOut",
+            "Created", "Dispatched", "Failed", "InProgress", "Queued", "Succeeded", "TimedOut"
         ]
     }
 }
@@ -9636,3 +9061,4 @@ impl AsRef<str> for JobStatus {
         self.as_str()
     }
 }
+

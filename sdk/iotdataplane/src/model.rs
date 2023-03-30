@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let payloadformatindicator = unimplemented!();
 /// match payloadformatindicator {
@@ -30,60 +30,52 @@
 /// Specifically, when `payloadformatindicator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PayloadFormatIndicator::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PayloadFormatIndicator {
     #[allow(missing_docs)] // documentation missing in model
     UnspecifiedBytes,
     #[allow(missing_docs)] // documentation missing in model
     Utf8Data,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PayloadFormatIndicator {
     fn from(s: &str) -> Self {
         match s {
             "UNSPECIFIED_BYTES" => PayloadFormatIndicator::UnspecifiedBytes,
             "UTF8_DATA" => PayloadFormatIndicator::Utf8Data,
-            other => {
-                PayloadFormatIndicator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => PayloadFormatIndicator::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PayloadFormatIndicator {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PayloadFormatIndicator::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PayloadFormatIndicator::from(s))
+                }
+            }
 impl PayloadFormatIndicator {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PayloadFormatIndicator::UnspecifiedBytes => "UNSPECIFIED_BYTES",
             PayloadFormatIndicator::Utf8Data => "UTF8_DATA",
-            PayloadFormatIndicator::Unknown(value) => value.as_str(),
+            PayloadFormatIndicator::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["UNSPECIFIED_BYTES", "UTF8_DATA"]
+        &[
+            "UNSPECIFIED_BYTES", "UTF8_DATA"
+        ]
     }
 }
 impl AsRef<str> for PayloadFormatIndicator {
@@ -95,7 +87,7 @@ impl AsRef<str> for PayloadFormatIndicator {
 /// <p>Information about a single retained message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RetainedMessageSummary {
+pub struct RetainedMessageSummary  {
     /// <p>The topic name to which the retained message was published.</p>
     #[doc(hidden)]
     pub topic: std::option::Option<std::string::String>,
@@ -111,7 +103,7 @@ pub struct RetainedMessageSummary {
 }
 impl RetainedMessageSummary {
     /// <p>The topic name to which the retained message was published.</p>
-    pub fn topic(&self) -> std::option::Option<&str> {
+    pub fn topic(&self) -> std::option::Option<& str> {
         self.topic.as_deref()
     }
     /// <p>The size of the retained message's payload in bytes.</p>
@@ -129,7 +121,7 @@ impl RetainedMessageSummary {
 }
 /// See [`RetainedMessageSummary`](crate::model::RetainedMessageSummary).
 pub mod retained_message_summary {
-
+    
     /// A builder for [`RetainedMessageSummary`](crate::model::RetainedMessageSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -146,8 +138,7 @@ pub mod retained_message_summary {
         }
         /// <p>The topic name to which the retained message was published.</p>
         pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.topic = input;
-            self
+            self.topic = input; self
         }
         /// <p>The size of the retained message's payload in bytes.</p>
         pub fn payload_size(mut self, input: i64) -> Self {
@@ -156,8 +147,7 @@ pub mod retained_message_summary {
         }
         /// <p>The size of the retained message's payload in bytes.</p>
         pub fn set_payload_size(mut self, input: std::option::Option<i64>) -> Self {
-            self.payload_size = input;
-            self
+            self.payload_size = input; self
         }
         /// <p>The quality of service (QoS) level used to publish the retained message.</p>
         pub fn qos(mut self, input: i32) -> Self {
@@ -166,8 +156,7 @@ pub mod retained_message_summary {
         }
         /// <p>The quality of service (QoS) level used to publish the retained message.</p>
         pub fn set_qos(mut self, input: std::option::Option<i32>) -> Self {
-            self.qos = input;
-            self
+            self.qos = input; self
         }
         /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
         pub fn last_modified_time(mut self, input: i64) -> Self {
@@ -176,19 +165,27 @@ pub mod retained_message_summary {
         }
         /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
         pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_modified_time = input;
-            self
+            self.last_modified_time = input; self
         }
         /// Consumes the builder and constructs a [`RetainedMessageSummary`](crate::model::RetainedMessageSummary).
         pub fn build(self) -> crate::model::RetainedMessageSummary {
             crate::model::RetainedMessageSummary {
-                topic: self.topic,
-                payload_size: self.payload_size.unwrap_or_default(),
-                qos: self.qos.unwrap_or_default(),
-                last_modified_time: self.last_modified_time.unwrap_or_default(),
+                topic: self.topic
+                ,
+                payload_size: self.payload_size
+                    .unwrap_or_default()
+                ,
+                qos: self.qos
+                    .unwrap_or_default()
+                ,
+                last_modified_time: self.last_modified_time
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl RetainedMessageSummary {
     /// Creates a new builder-style object to manufacture [`RetainedMessageSummary`](crate::model::RetainedMessageSummary).
@@ -196,3 +193,4 @@ impl RetainedMessageSummary {
         crate::model::retained_message_summary::Builder::default()
     }
 }
+

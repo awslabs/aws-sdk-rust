@@ -4,17 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UpdateConfigurationSetEventDestinationError {
     /// Kind of error that occurred.
-    pub kind: UpdateConfigurationSetEventDestinationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateConfigurationSetEventDestinationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateConfigurationSetEventDestinationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateConfigurationSetEventDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: UpdateConfigurationSetEventDestinationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -30,32 +28,34 @@ pub enum UpdateConfigurationSetEventDestinationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateConfigurationSetEventDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateConfigurationSetEventDestinationErrorKind::BadRequestException(_inner) => {
+            UpdateConfigurationSetEventDestinationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateConfigurationSetEventDestinationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(
-                _inner,
-            ) => _inner.fmt(f),
-            UpdateConfigurationSetEventDestinationErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -69,98 +69,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateConfigurationSetEventDe
 }
 impl UpdateConfigurationSetEventDestinationError {
     /// Creates a new `UpdateConfigurationSetEventDestinationError`.
-    pub fn new(
-        kind: UpdateConfigurationSetEventDestinationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateConfigurationSetEventDestinationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateConfigurationSetEventDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateConfigurationSetEventDestinationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateConfigurationSetEventDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateConfigurationSetEventDestinationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateConfigurationSetEventDestinationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateConfigurationSetEventDestinationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateConfigurationSetEventDestinationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateConfigurationSetEventDestinationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateConfigurationSetEventDestinationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, UpdateConfigurationSetEventDestinationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, UpdateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateConfigurationSetEventDestinationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, UpdateConfigurationSetEventDestinationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for UpdateConfigurationSetEventDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateConfigurationSetEventDestinationErrorKind::BadRequestException(_inner) => {
+            UpdateConfigurationSetEventDestinationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateConfigurationSetEventDestinationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(
-                _inner,
-            ) => Some(_inner),
-            UpdateConfigurationSetEventDestinationErrorKind::NotFoundException(_inner) => {
-                Some(_inner)
-            }
-            UpdateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) => {
-                Some(_inner)
-            }
-            UpdateConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -168,22 +151,20 @@ impl std::error::Error for UpdateConfigurationSetEventDestinationError {
 /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TooManyRequestsException {
+pub struct TooManyRequestsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TooManyRequestsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyRequestsException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -193,7 +174,7 @@ impl std::fmt::Display for TooManyRequestsException {
 impl std::error::Error for TooManyRequestsException {}
 /// See [`TooManyRequestsException`](crate::error::TooManyRequestsException).
 pub mod too_many_requests_exception {
-
+    
     /// A builder for [`TooManyRequestsException`](crate::error::TooManyRequestsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -207,16 +188,18 @@ pub mod too_many_requests_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TooManyRequestsException`](crate::error::TooManyRequestsException).
         pub fn build(self) -> crate::error::TooManyRequestsException {
             crate::error::TooManyRequestsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TooManyRequestsException {
     /// Creates a new builder-style object to manufacture [`TooManyRequestsException`](crate::error::TooManyRequestsException).
@@ -228,22 +211,20 @@ impl TooManyRequestsException {
 /// The resource you attempted to access doesn't exist.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotFoundException {
+pub struct NotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl NotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for NotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NotFoundException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -253,7 +234,7 @@ impl std::fmt::Display for NotFoundException {
 impl std::error::Error for NotFoundException {}
 /// See [`NotFoundException`](crate::error::NotFoundException).
 pub mod not_found_exception {
-
+    
     /// A builder for [`NotFoundException`](crate::error::NotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -267,16 +248,18 @@ pub mod not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`NotFoundException`](crate::error::NotFoundException).
         pub fn build(self) -> crate::error::NotFoundException {
             crate::error::NotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl NotFoundException {
     /// Creates a new builder-style object to manufacture [`NotFoundException`](crate::error::NotFoundException).
@@ -288,22 +271,20 @@ impl NotFoundException {
 /// The API encountered an unexpected error and couldn't complete the request. You might be able to successfully issue the request again in the future.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServiceErrorException {
+pub struct InternalServiceErrorException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalServiceErrorException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalServiceErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServiceErrorException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -313,7 +294,7 @@ impl std::fmt::Display for InternalServiceErrorException {
 impl std::error::Error for InternalServiceErrorException {}
 /// See [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
 pub mod internal_service_error_exception {
-
+    
     /// A builder for [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -327,16 +308,18 @@ pub mod internal_service_error_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
         pub fn build(self) -> crate::error::InternalServiceErrorException {
             crate::error::InternalServiceErrorException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InternalServiceErrorException {
     /// Creates a new builder-style object to manufacture [`InternalServiceErrorException`](crate::error::InternalServiceErrorException).
@@ -348,22 +331,20 @@ impl InternalServiceErrorException {
 /// The input you provided is invalid.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BadRequestException {
+pub struct BadRequestException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl BadRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BadRequestException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -373,7 +354,7 @@ impl std::fmt::Display for BadRequestException {
 impl std::error::Error for BadRequestException {}
 /// See [`BadRequestException`](crate::error::BadRequestException).
 pub mod bad_request_exception {
-
+    
     /// A builder for [`BadRequestException`](crate::error::BadRequestException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -387,16 +368,18 @@ pub mod bad_request_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`BadRequestException`](crate::error::BadRequestException).
         pub fn build(self) -> crate::error::BadRequestException {
             crate::error::BadRequestException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl BadRequestException {
     /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException).
@@ -410,15 +393,15 @@ impl BadRequestException {
 #[derive(std::fmt::Debug)]
 pub struct SendVoiceMessageError {
     /// Kind of error that occurred.
-    pub kind: SendVoiceMessageErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: SendVoiceMessageErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for SendVoiceMessageError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: SendVoiceMessageErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -432,23 +415,31 @@ pub enum SendVoiceMessageErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for SendVoiceMessageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            SendVoiceMessageErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            SendVoiceMessageErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            SendVoiceMessageErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            SendVoiceMessageErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            SendVoiceMessageErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendVoiceMessageErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendVoiceMessageErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            SendVoiceMessageErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -462,75 +453,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for SendVoiceMessageError {
 }
 impl SendVoiceMessageError {
     /// Creates a new `SendVoiceMessageError`.
-    pub fn new(kind: SendVoiceMessageErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `SendVoiceMessageError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: SendVoiceMessageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `SendVoiceMessageError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: SendVoiceMessageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: SendVoiceMessageErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `SendVoiceMessageError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: SendVoiceMessageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `SendVoiceMessageError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: SendVoiceMessageErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `SendVoiceMessageErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SendVoiceMessageErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, SendVoiceMessageErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `SendVoiceMessageErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SendVoiceMessageErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, SendVoiceMessageErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `SendVoiceMessageErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            SendVoiceMessageErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, SendVoiceMessageErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for SendVoiceMessageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            SendVoiceMessageErrorKind::BadRequestException(_inner) => Some(_inner),
-            SendVoiceMessageErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            SendVoiceMessageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            SendVoiceMessageErrorKind::Unhandled(_inner) => Some(_inner),
+            SendVoiceMessageErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            SendVoiceMessageErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            SendVoiceMessageErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            SendVoiceMessageErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -540,15 +530,15 @@ impl std::error::Error for SendVoiceMessageError {
 #[derive(std::fmt::Debug)]
 pub struct ListConfigurationSetsError {
     /// Kind of error that occurred.
-    pub kind: ListConfigurationSetsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListConfigurationSetsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListConfigurationSetsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ListConfigurationSetsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -562,23 +552,31 @@ pub enum ListConfigurationSetsErrorKind {
     InternalServiceErrorException(crate::error::InternalServiceErrorException),
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListConfigurationSetsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListConfigurationSetsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            ListConfigurationSetsErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            ListConfigurationSetsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            ListConfigurationSetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ListConfigurationSetsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListConfigurationSetsErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListConfigurationSetsErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListConfigurationSetsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -592,79 +590,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListConfigurationSetsError {
 }
 impl ListConfigurationSetsError {
     /// Creates a new `ListConfigurationSetsError`.
-    pub fn new(kind: ListConfigurationSetsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListConfigurationSetsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListConfigurationSetsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListConfigurationSetsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListConfigurationSetsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListConfigurationSetsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListConfigurationSetsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListConfigurationSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListConfigurationSetsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListConfigurationSetsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListConfigurationSetsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListConfigurationSetsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, ListConfigurationSetsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `ListConfigurationSetsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListConfigurationSetsErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, ListConfigurationSetsErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `ListConfigurationSetsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListConfigurationSetsErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, ListConfigurationSetsErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for ListConfigurationSetsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListConfigurationSetsErrorKind::BadRequestException(_inner) => Some(_inner),
-            ListConfigurationSetsErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            ListConfigurationSetsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            ListConfigurationSetsErrorKind::Unhandled(_inner) => Some(_inner),
+            ListConfigurationSetsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            ListConfigurationSetsErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            ListConfigurationSetsErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            ListConfigurationSetsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -674,17 +667,15 @@ impl std::error::Error for ListConfigurationSetsError {
 #[derive(std::fmt::Debug)]
 pub struct GetConfigurationSetEventDestinationsError {
     /// Kind of error that occurred.
-    pub kind: GetConfigurationSetEventDestinationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetConfigurationSetEventDestinationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetConfigurationSetEventDestinationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: GetConfigurationSetEventDestinationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: GetConfigurationSetEventDestinationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -700,32 +691,34 @@ pub enum GetConfigurationSetEventDestinationsErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetConfigurationSetEventDestinationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetConfigurationSetEventDestinationsErrorKind::BadRequestException(_inner) => {
+            GetConfigurationSetEventDestinationsErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetConfigurationSetEventDestinationsErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetConfigurationSetEventDestinationsErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetConfigurationSetEventDestinationsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            GetConfigurationSetEventDestinationsErrorKind::InternalServiceErrorException(
-                _inner,
-            ) => _inner.fmt(f),
-            GetConfigurationSetEventDestinationsErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsException(_inner) => {
-                _inner.fmt(f)
-            }
-            GetConfigurationSetEventDestinationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -739,98 +732,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetConfigurationSetEventDesti
 }
 impl GetConfigurationSetEventDestinationsError {
     /// Creates a new `GetConfigurationSetEventDestinationsError`.
-    pub fn new(
-        kind: GetConfigurationSetEventDestinationsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetConfigurationSetEventDestinationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetConfigurationSetEventDestinationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetConfigurationSetEventDestinationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetConfigurationSetEventDestinationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetConfigurationSetEventDestinationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetConfigurationSetEventDestinationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetConfigurationSetEventDestinationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetConfigurationSetEventDestinationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetConfigurationSetEventDestinationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetConfigurationSetEventDestinationsErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetConfigurationSetEventDestinationsErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, GetConfigurationSetEventDestinationsErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `GetConfigurationSetEventDestinationsErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetConfigurationSetEventDestinationsErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, GetConfigurationSetEventDestinationsErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `GetConfigurationSetEventDestinationsErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetConfigurationSetEventDestinationsErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, GetConfigurationSetEventDestinationsErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for GetConfigurationSetEventDestinationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetConfigurationSetEventDestinationsErrorKind::BadRequestException(_inner) => {
+            GetConfigurationSetEventDestinationsErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            GetConfigurationSetEventDestinationsErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            GetConfigurationSetEventDestinationsErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            GetConfigurationSetEventDestinationsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            GetConfigurationSetEventDestinationsErrorKind::InternalServiceErrorException(
-                _inner,
-            ) => Some(_inner),
-            GetConfigurationSetEventDestinationsErrorKind::NotFoundException(_inner) => {
-                Some(_inner)
-            }
-            GetConfigurationSetEventDestinationsErrorKind::TooManyRequestsException(_inner) => {
-                Some(_inner)
-            }
-            GetConfigurationSetEventDestinationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -840,17 +816,15 @@ impl std::error::Error for GetConfigurationSetEventDestinationsError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteConfigurationSetEventDestinationError {
     /// Kind of error that occurred.
-    pub kind: DeleteConfigurationSetEventDestinationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteConfigurationSetEventDestinationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteConfigurationSetEventDestinationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteConfigurationSetEventDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DeleteConfigurationSetEventDestinationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -866,32 +840,34 @@ pub enum DeleteConfigurationSetEventDestinationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteConfigurationSetEventDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteConfigurationSetEventDestinationErrorKind::BadRequestException(_inner) => {
+            DeleteConfigurationSetEventDestinationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteConfigurationSetEventDestinationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(
-                _inner,
-            ) => _inner.fmt(f),
-            DeleteConfigurationSetEventDestinationErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -905,98 +881,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteConfigurationSetEventDe
 }
 impl DeleteConfigurationSetEventDestinationError {
     /// Creates a new `DeleteConfigurationSetEventDestinationError`.
-    pub fn new(
-        kind: DeleteConfigurationSetEventDestinationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteConfigurationSetEventDestinationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteConfigurationSetEventDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteConfigurationSetEventDestinationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteConfigurationSetEventDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteConfigurationSetEventDestinationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteConfigurationSetEventDestinationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteConfigurationSetEventDestinationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteConfigurationSetEventDestinationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteConfigurationSetEventDestinationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteConfigurationSetEventDestinationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteConfigurationSetEventDestinationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, DeleteConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteConfigurationSetEventDestinationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteConfigurationSetEventDestinationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DeleteConfigurationSetEventDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteConfigurationSetEventDestinationErrorKind::BadRequestException(_inner) => {
+            DeleteConfigurationSetEventDestinationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteConfigurationSetEventDestinationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(
-                _inner,
-            ) => Some(_inner),
-            DeleteConfigurationSetEventDestinationErrorKind::NotFoundException(_inner) => {
-                Some(_inner)
-            }
-            DeleteConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) => {
-                Some(_inner)
-            }
-            DeleteConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1006,15 +965,15 @@ impl std::error::Error for DeleteConfigurationSetEventDestinationError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteConfigurationSetError {
     /// Kind of error that occurred.
-    pub kind: DeleteConfigurationSetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteConfigurationSetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteConfigurationSetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1030,24 +989,34 @@ pub enum DeleteConfigurationSetErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteConfigurationSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteConfigurationSetErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            DeleteConfigurationSetErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            DeleteConfigurationSetErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            DeleteConfigurationSetErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            DeleteConfigurationSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteConfigurationSetErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteConfigurationSetErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteConfigurationSetErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteConfigurationSetErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteConfigurationSetErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1061,87 +1030,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteConfigurationSetError {
 }
 impl DeleteConfigurationSetError {
     /// Creates a new `DeleteConfigurationSetError`.
-    pub fn new(kind: DeleteConfigurationSetErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteConfigurationSetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteConfigurationSetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteConfigurationSetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteConfigurationSetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteConfigurationSetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteConfigurationSetErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteConfigurationSetErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, DeleteConfigurationSetErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `DeleteConfigurationSetErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteConfigurationSetErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, DeleteConfigurationSetErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `DeleteConfigurationSetErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteConfigurationSetErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, DeleteConfigurationSetErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteConfigurationSetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteConfigurationSetErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, DeleteConfigurationSetErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for DeleteConfigurationSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteConfigurationSetErrorKind::BadRequestException(_inner) => Some(_inner),
-            DeleteConfigurationSetErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            DeleteConfigurationSetErrorKind::NotFoundException(_inner) => Some(_inner),
-            DeleteConfigurationSetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            DeleteConfigurationSetErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteConfigurationSetErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteConfigurationSetErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteConfigurationSetErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteConfigurationSetErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteConfigurationSetErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1151,17 +1114,15 @@ impl std::error::Error for DeleteConfigurationSetError {
 #[derive(std::fmt::Debug)]
 pub struct CreateConfigurationSetEventDestinationError {
     /// Kind of error that occurred.
-    pub kind: CreateConfigurationSetEventDestinationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateConfigurationSetEventDestinationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateConfigurationSetEventDestinationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateConfigurationSetEventDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: CreateConfigurationSetEventDestinationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1181,38 +1142,40 @@ pub enum CreateConfigurationSetEventDestinationErrorKind {
     NotFoundException(crate::error::NotFoundException),
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateConfigurationSetEventDestinationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsException(_inner) => {
+            CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateConfigurationSetEventDestinationErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateConfigurationSetEventDestinationErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateConfigurationSetEventDestinationErrorKind::NotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateConfigurationSetEventDestinationErrorKind::BadRequestException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(
-                _inner,
-            ) => _inner.fmt(f),
-            CreateConfigurationSetEventDestinationErrorKind::LimitExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateConfigurationSetEventDestinationErrorKind::NotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1226,118 +1189,95 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateConfigurationSetEventDe
 }
 impl CreateConfigurationSetEventDestinationError {
     /// Creates a new `CreateConfigurationSetEventDestinationError`.
-    pub fn new(
-        kind: CreateConfigurationSetEventDestinationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateConfigurationSetEventDestinationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateConfigurationSetEventDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateConfigurationSetEventDestinationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateConfigurationSetEventDestinationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateConfigurationSetEventDestinationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateConfigurationSetEventDestinationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateConfigurationSetEventDestinationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateConfigurationSetEventDestinationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateConfigurationSetEventDestinationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsException(_)
-        )
+        matches!(&self.kind, CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateConfigurationSetEventDestinationErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreateConfigurationSetEventDestinationErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, CreateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateConfigurationSetEventDestinationErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, CreateConfigurationSetEventDestinationErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::NotFoundException`.
     pub fn is_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateConfigurationSetEventDestinationErrorKind::NotFoundException(_)
-        )
+        matches!(&self.kind, CreateConfigurationSetEventDestinationErrorKind::NotFoundException(_))
     }
     /// Returns `true` if the error kind is `CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for CreateConfigurationSetEventDestinationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsException(_inner) => {
+            CreateConfigurationSetEventDestinationErrorKind::AlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateConfigurationSetEventDestinationErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateConfigurationSetEventDestinationErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateConfigurationSetEventDestinationErrorKind::NotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateConfigurationSetEventDestinationErrorKind::BadRequestException(_inner) => {
-                Some(_inner)
-            }
-            CreateConfigurationSetEventDestinationErrorKind::InternalServiceErrorException(
-                _inner,
-            ) => Some(_inner),
-            CreateConfigurationSetEventDestinationErrorKind::LimitExceededException(_inner) => {
-                Some(_inner)
-            }
-            CreateConfigurationSetEventDestinationErrorKind::NotFoundException(_inner) => {
-                Some(_inner)
-            }
-            CreateConfigurationSetEventDestinationErrorKind::TooManyRequestsException(_inner) => {
-                Some(_inner)
-            }
-            CreateConfigurationSetEventDestinationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1345,22 +1285,20 @@ impl std::error::Error for CreateConfigurationSetEventDestinationError {
 /// There are too many instances of the specified resource type.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LimitExceededException {
+pub struct LimitExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl LimitExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for LimitExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "LimitExceededException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -1370,7 +1308,7 @@ impl std::fmt::Display for LimitExceededException {
 impl std::error::Error for LimitExceededException {}
 /// See [`LimitExceededException`](crate::error::LimitExceededException).
 pub mod limit_exceeded_exception {
-
+    
     /// A builder for [`LimitExceededException`](crate::error::LimitExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1384,16 +1322,18 @@ pub mod limit_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException).
         pub fn build(self) -> crate::error::LimitExceededException {
             crate::error::LimitExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl LimitExceededException {
     /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException).
@@ -1405,22 +1345,20 @@ impl LimitExceededException {
 /// The resource specified in your request already exists.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlreadyExistsException {
+pub struct AlreadyExistsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AlreadyExistsException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -1430,7 +1368,7 @@ impl std::fmt::Display for AlreadyExistsException {
 impl std::error::Error for AlreadyExistsException {}
 /// See [`AlreadyExistsException`](crate::error::AlreadyExistsException).
 pub mod already_exists_exception {
-
+    
     /// A builder for [`AlreadyExistsException`](crate::error::AlreadyExistsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1444,16 +1382,18 @@ pub mod already_exists_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AlreadyExistsException`](crate::error::AlreadyExistsException).
         pub fn build(self) -> crate::error::AlreadyExistsException {
             crate::error::AlreadyExistsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`AlreadyExistsException`](crate::error::AlreadyExistsException).
@@ -1467,15 +1407,15 @@ impl AlreadyExistsException {
 #[derive(std::fmt::Debug)]
 pub struct CreateConfigurationSetError {
     /// Kind of error that occurred.
-    pub kind: CreateConfigurationSetErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateConfigurationSetErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateConfigurationSetError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1493,25 +1433,37 @@ pub enum CreateConfigurationSetErrorKind {
     LimitExceededException(crate::error::LimitExceededException),
     /// You've issued too many requests to the resource. Wait a few minutes, and then try again.
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateConfigurationSetError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateConfigurationSetErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
-            CreateConfigurationSetErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            CreateConfigurationSetErrorKind::InternalServiceErrorException(_inner) => _inner.fmt(f),
-            CreateConfigurationSetErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
-            CreateConfigurationSetErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
-            CreateConfigurationSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateConfigurationSetErrorKind::AlreadyExistsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateConfigurationSetErrorKind::BadRequestException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateConfigurationSetErrorKind::InternalServiceErrorException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateConfigurationSetErrorKind::LimitExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateConfigurationSetErrorKind::TooManyRequestsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateConfigurationSetErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1525,124 +1477,118 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateConfigurationSetError {
 }
 impl CreateConfigurationSetError {
     /// Creates a new `CreateConfigurationSetError`.
-    pub fn new(kind: CreateConfigurationSetErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateConfigurationSetError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateConfigurationSetError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateConfigurationSetErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateConfigurationSetError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateConfigurationSetError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateConfigurationSetErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateConfigurationSetErrorKind::AlreadyExistsException`.
     pub fn is_already_exists_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateConfigurationSetErrorKind::AlreadyExistsException(_)
-        )
+        matches!(&self.kind, CreateConfigurationSetErrorKind::AlreadyExistsException(_))
     }
     /// Returns `true` if the error kind is `CreateConfigurationSetErrorKind::BadRequestException`.
     pub fn is_bad_request_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateConfigurationSetErrorKind::BadRequestException(_)
-        )
+        matches!(&self.kind, CreateConfigurationSetErrorKind::BadRequestException(_))
     }
     /// Returns `true` if the error kind is `CreateConfigurationSetErrorKind::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateConfigurationSetErrorKind::InternalServiceErrorException(_)
-        )
+        matches!(&self.kind, CreateConfigurationSetErrorKind::InternalServiceErrorException(_))
     }
     /// Returns `true` if the error kind is `CreateConfigurationSetErrorKind::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateConfigurationSetErrorKind::LimitExceededException(_)
-        )
+        matches!(&self.kind, CreateConfigurationSetErrorKind::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateConfigurationSetErrorKind::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateConfigurationSetErrorKind::TooManyRequestsException(_)
-        )
+        matches!(&self.kind, CreateConfigurationSetErrorKind::TooManyRequestsException(_))
     }
 }
 impl std::error::Error for CreateConfigurationSetError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateConfigurationSetErrorKind::AlreadyExistsException(_inner) => Some(_inner),
-            CreateConfigurationSetErrorKind::BadRequestException(_inner) => Some(_inner),
-            CreateConfigurationSetErrorKind::InternalServiceErrorException(_inner) => Some(_inner),
-            CreateConfigurationSetErrorKind::LimitExceededException(_inner) => Some(_inner),
-            CreateConfigurationSetErrorKind::TooManyRequestsException(_inner) => Some(_inner),
-            CreateConfigurationSetErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateConfigurationSetErrorKind::AlreadyExistsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateConfigurationSetErrorKind::BadRequestException(_inner) =>
+            Some(_inner)
+            ,
+            CreateConfigurationSetErrorKind::InternalServiceErrorException(_inner) =>
+            Some(_inner)
+            ,
+            CreateConfigurationSetErrorKind::LimitExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateConfigurationSetErrorKind::TooManyRequestsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateConfigurationSetErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

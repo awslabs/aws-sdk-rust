@@ -3,7 +3,7 @@
 /// <p>A theme is a collection of style settings that apply globally to the components associated with an Amplify application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Theme {
+pub struct Theme  {
     /// <p>The unique ID for the Amplify app associated with the theme.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -30,53 +30,49 @@ pub struct Theme {
     pub overrides: std::option::Option<std::vec::Vec<crate::model::ThemeValues>>,
     /// <p>One or more key-value pairs to use when tagging the theme.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Theme {
     /// <p>The unique ID for the Amplify app associated with the theme.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The ID for the theme.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the theme.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time that the theme was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time that the theme was modified.</p>
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
     /// <p>A list of key-value pairs that defines the properties of the theme.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::model::ThemeValues]> {
+    pub fn values(&self) -> std::option::Option<& [crate::model::ThemeValues]> {
         self.values.as_deref()
     }
     /// <p>Describes the properties that can be overriden to customize a theme.</p>
-    pub fn overrides(&self) -> std::option::Option<&[crate::model::ThemeValues]> {
+    pub fn overrides(&self) -> std::option::Option<& [crate::model::ThemeValues]> {
         self.overrides.as_deref()
     }
     /// <p>One or more key-value pairs to use when tagging the theme.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`Theme`](crate::model::Theme).
 pub mod theme {
-
+    
     /// A builder for [`Theme`](crate::model::Theme).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -88,9 +84,7 @@ pub mod theme {
         pub(crate) modified_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) values: std::option::Option<std::vec::Vec<crate::model::ThemeValues>>,
         pub(crate) overrides: std::option::Option<std::vec::Vec<crate::model::ThemeValues>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The unique ID for the Amplify app associated with the theme.</p>
@@ -100,8 +94,7 @@ pub mod theme {
         }
         /// <p>The unique ID for the Amplify app associated with the theme.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment that is a part of the Amplify app.</p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,12 +102,8 @@ pub mod theme {
             self
         }
         /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
         /// <p>The ID for the theme.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,8 +112,7 @@ pub mod theme {
         }
         /// <p>The ID for the theme.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the theme.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,8 +121,7 @@ pub mod theme {
         }
         /// <p>The name of the theme.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The time that the theme was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -142,12 +129,8 @@ pub mod theme {
             self
         }
         /// <p>The time that the theme was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time that the theme was modified.</p>
         pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -155,12 +138,8 @@ pub mod theme {
             self
         }
         /// <p>The time that the theme was modified.</p>
-        pub fn set_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.modified_at = input;
-            self
+        pub fn set_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.modified_at = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -169,17 +148,13 @@ pub mod theme {
         /// <p>A list of key-value pairs that defines the properties of the theme.</p>
         pub fn values(mut self, input: crate::model::ThemeValues) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input);
-            self.values = Some(v);
-            self
+                            v.push(input);
+                            self.values = Some(v);
+                            self
         }
         /// <p>A list of key-value pairs that defines the properties of the theme.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ThemeValues>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::ThemeValues>>) -> Self {
+            self.values = input; self
         }
         /// Appends an item to `overrides`.
         ///
@@ -188,58 +163,55 @@ pub mod theme {
         /// <p>Describes the properties that can be overriden to customize a theme.</p>
         pub fn overrides(mut self, input: crate::model::ThemeValues) -> Self {
             let mut v = self.overrides.unwrap_or_default();
-            v.push(input);
-            self.overrides = Some(v);
-            self
+                            v.push(input);
+                            self.overrides = Some(v);
+                            self
         }
         /// <p>Describes the properties that can be overriden to customize a theme.</p>
-        pub fn set_overrides(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ThemeValues>>,
-        ) -> Self {
-            self.overrides = input;
-            self
+        pub fn set_overrides(mut self, input: std::option::Option<std::vec::Vec<crate::model::ThemeValues>>) -> Self {
+            self.overrides = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more key-value pairs to use when tagging the theme.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>One or more key-value pairs to use when tagging the theme.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`Theme`](crate::model::Theme).
         pub fn build(self) -> crate::model::Theme {
             crate::model::Theme {
-                app_id: self.app_id,
-                environment_name: self.environment_name,
-                id: self.id,
-                name: self.name,
-                created_at: self.created_at,
-                modified_at: self.modified_at,
-                values: self.values,
-                overrides: self.overrides,
-                tags: self.tags,
+                app_id: self.app_id
+                ,
+                environment_name: self.environment_name
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                created_at: self.created_at
+                ,
+                modified_at: self.modified_at
+                ,
+                values: self.values
+                ,
+                overrides: self.overrides
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl Theme {
     /// Creates a new builder-style object to manufacture [`Theme`](crate::model::Theme).
@@ -251,7 +223,7 @@ impl Theme {
 /// <p>A key-value pair that defines a property of a theme.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThemeValues {
+pub struct ThemeValues  {
     /// <p>The name of the property.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -261,17 +233,17 @@ pub struct ThemeValues {
 }
 impl ThemeValues {
     /// <p>The name of the property.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the property.</p>
-    pub fn value(&self) -> std::option::Option<&crate::model::ThemeValue> {
+    pub fn value(&self) -> std::option::Option<& crate::model::ThemeValue> {
         self.value.as_ref()
     }
 }
 /// See [`ThemeValues`](crate::model::ThemeValues).
 pub mod theme_values {
-
+    
     /// A builder for [`ThemeValues`](crate::model::ThemeValues).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -286,8 +258,7 @@ pub mod theme_values {
         }
         /// <p>The name of the property.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value of the property.</p>
         pub fn value(mut self, input: crate::model::ThemeValue) -> Self {
@@ -296,17 +267,20 @@ pub mod theme_values {
         }
         /// <p>The value of the property.</p>
         pub fn set_value(mut self, input: std::option::Option<crate::model::ThemeValue>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`ThemeValues`](crate::model::ThemeValues).
         pub fn build(self) -> crate::model::ThemeValues {
             crate::model::ThemeValues {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl ThemeValues {
     /// Creates a new builder-style object to manufacture [`ThemeValues`](crate::model::ThemeValues).
@@ -318,7 +292,7 @@ impl ThemeValues {
 /// <p>Describes the configuration of a theme's properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThemeValue {
+pub struct ThemeValue  {
     /// <p>The value of a theme property.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
@@ -328,17 +302,17 @@ pub struct ThemeValue {
 }
 impl ThemeValue {
     /// <p>The value of a theme property.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>A list of key-value pairs that define the theme's properties.</p>
-    pub fn children(&self) -> std::option::Option<&[crate::model::ThemeValues]> {
+    pub fn children(&self) -> std::option::Option<& [crate::model::ThemeValues]> {
         self.children.as_deref()
     }
 }
 /// See [`ThemeValue`](crate::model::ThemeValue).
 pub mod theme_value {
-
+    
     /// A builder for [`ThemeValue`](crate::model::ThemeValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -353,8 +327,7 @@ pub mod theme_value {
         }
         /// <p>The value of a theme property.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Appends an item to `children`.
         ///
@@ -363,26 +336,26 @@ pub mod theme_value {
         /// <p>A list of key-value pairs that define the theme's properties.</p>
         pub fn children(mut self, input: crate::model::ThemeValues) -> Self {
             let mut v = self.children.unwrap_or_default();
-            v.push(input);
-            self.children = Some(v);
-            self
+                            v.push(input);
+                            self.children = Some(v);
+                            self
         }
         /// <p>A list of key-value pairs that define the theme's properties.</p>
-        pub fn set_children(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ThemeValues>>,
-        ) -> Self {
-            self.children = input;
-            self
+        pub fn set_children(mut self, input: std::option::Option<std::vec::Vec<crate::model::ThemeValues>>) -> Self {
+            self.children = input; self
         }
         /// Consumes the builder and constructs a [`ThemeValue`](crate::model::ThemeValue).
         pub fn build(self) -> crate::model::ThemeValue {
             crate::model::ThemeValue {
-                value: self.value,
-                children: self.children,
+                value: self.value
+                ,
+                children: self.children
+                ,
             }
         }
     }
+    
+    
 }
 impl ThemeValue {
     /// Creates a new builder-style object to manufacture [`ThemeValue`](crate::model::ThemeValue).
@@ -394,7 +367,7 @@ impl ThemeValue {
 /// <p>Describes the basic information about a theme.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThemeSummary {
+pub struct ThemeSummary  {
     /// <p>The unique ID for the app associated with the theme summary.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -410,25 +383,25 @@ pub struct ThemeSummary {
 }
 impl ThemeSummary {
     /// <p>The unique ID for the app associated with the theme summary.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The ID of the theme.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the theme.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`ThemeSummary`](crate::model::ThemeSummary).
 pub mod theme_summary {
-
+    
     /// A builder for [`ThemeSummary`](crate::model::ThemeSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -445,8 +418,7 @@ pub mod theme_summary {
         }
         /// <p>The unique ID for the app associated with the theme summary.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment that is part of the Amplify app.</p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -454,12 +426,8 @@ pub mod theme_summary {
             self
         }
         /// <p>The name of the backend environment that is part of the Amplify app.</p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
         /// <p>The ID of the theme.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -468,8 +436,7 @@ pub mod theme_summary {
         }
         /// <p>The ID of the theme.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the theme.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -478,19 +445,24 @@ pub mod theme_summary {
         }
         /// <p>The name of the theme.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`ThemeSummary`](crate::model::ThemeSummary).
         pub fn build(self) -> crate::model::ThemeSummary {
             crate::model::ThemeSummary {
-                app_id: self.app_id,
-                environment_name: self.environment_name,
-                id: self.id,
-                name: self.name,
+                app_id: self.app_id
+                ,
+                environment_name: self.environment_name
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl ThemeSummary {
     /// Creates a new builder-style object to manufacture [`ThemeSummary`](crate::model::ThemeSummary).
@@ -502,7 +474,7 @@ impl ThemeSummary {
 /// <p>Represents all of the information that is required to create a theme.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateThemeData {
+pub struct CreateThemeData  {
     /// <p>The name of the theme.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -514,42 +486,36 @@ pub struct CreateThemeData {
     pub overrides: std::option::Option<std::vec::Vec<crate::model::ThemeValues>>,
     /// <p>One or more key-value pairs to use when tagging the theme data.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateThemeData {
     /// <p>The name of the theme.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::model::ThemeValues]> {
+    pub fn values(&self) -> std::option::Option<& [crate::model::ThemeValues]> {
         self.values.as_deref()
     }
     /// <p>Describes the properties that can be overriden to customize an instance of the theme.</p>
-    pub fn overrides(&self) -> std::option::Option<&[crate::model::ThemeValues]> {
+    pub fn overrides(&self) -> std::option::Option<& [crate::model::ThemeValues]> {
         self.overrides.as_deref()
     }
     /// <p>One or more key-value pairs to use when tagging the theme data.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`CreateThemeData`](crate::model::CreateThemeData).
 pub mod create_theme_data {
-
+    
     /// A builder for [`CreateThemeData`](crate::model::CreateThemeData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) values: std::option::Option<std::vec::Vec<crate::model::ThemeValues>>,
         pub(crate) overrides: std::option::Option<std::vec::Vec<crate::model::ThemeValues>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the theme.</p>
@@ -559,8 +525,7 @@ pub mod create_theme_data {
         }
         /// <p>The name of the theme.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -569,17 +534,13 @@ pub mod create_theme_data {
         /// <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
         pub fn values(mut self, input: crate::model::ThemeValues) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input);
-            self.values = Some(v);
-            self
+                            v.push(input);
+                            self.values = Some(v);
+                            self
         }
         /// <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ThemeValues>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::ThemeValues>>) -> Self {
+            self.values = input; self
         }
         /// Appends an item to `overrides`.
         ///
@@ -588,53 +549,45 @@ pub mod create_theme_data {
         /// <p>Describes the properties that can be overriden to customize an instance of the theme.</p>
         pub fn overrides(mut self, input: crate::model::ThemeValues) -> Self {
             let mut v = self.overrides.unwrap_or_default();
-            v.push(input);
-            self.overrides = Some(v);
-            self
+                            v.push(input);
+                            self.overrides = Some(v);
+                            self
         }
         /// <p>Describes the properties that can be overriden to customize an instance of the theme.</p>
-        pub fn set_overrides(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ThemeValues>>,
-        ) -> Self {
-            self.overrides = input;
-            self
+        pub fn set_overrides(mut self, input: std::option::Option<std::vec::Vec<crate::model::ThemeValues>>) -> Self {
+            self.overrides = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more key-value pairs to use when tagging the theme data.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>One or more key-value pairs to use when tagging the theme data.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateThemeData`](crate::model::CreateThemeData).
         pub fn build(self) -> crate::model::CreateThemeData {
             crate::model::CreateThemeData {
-                name: self.name,
-                values: self.values,
-                overrides: self.overrides,
-                tags: self.tags,
+                name: self.name
+                ,
+                values: self.values
+                ,
+                overrides: self.overrides
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateThemeData {
     /// Creates a new builder-style object to manufacture [`CreateThemeData`](crate::model::CreateThemeData).
@@ -646,7 +599,7 @@ impl CreateThemeData {
 /// <p>Saves the data binding information for a theme.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateThemeData {
+pub struct UpdateThemeData  {
     /// <p>The unique ID of the theme to update.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -662,25 +615,25 @@ pub struct UpdateThemeData {
 }
 impl UpdateThemeData {
     /// <p>The unique ID of the theme to update.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the theme to update.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A list of key-value pairs that define the theme's properties.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::model::ThemeValues]> {
+    pub fn values(&self) -> std::option::Option<& [crate::model::ThemeValues]> {
         self.values.as_deref()
     }
     /// <p>Describes the properties that can be overriden to customize the theme.</p>
-    pub fn overrides(&self) -> std::option::Option<&[crate::model::ThemeValues]> {
+    pub fn overrides(&self) -> std::option::Option<& [crate::model::ThemeValues]> {
         self.overrides.as_deref()
     }
 }
 /// See [`UpdateThemeData`](crate::model::UpdateThemeData).
 pub mod update_theme_data {
-
+    
     /// A builder for [`UpdateThemeData`](crate::model::UpdateThemeData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -697,8 +650,7 @@ pub mod update_theme_data {
         }
         /// <p>The unique ID of the theme to update.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the theme to update.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -707,8 +659,7 @@ pub mod update_theme_data {
         }
         /// <p>The name of the theme to update.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `values`.
         ///
@@ -717,17 +668,13 @@ pub mod update_theme_data {
         /// <p>A list of key-value pairs that define the theme's properties.</p>
         pub fn values(mut self, input: crate::model::ThemeValues) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input);
-            self.values = Some(v);
-            self
+                            v.push(input);
+                            self.values = Some(v);
+                            self
         }
         /// <p>A list of key-value pairs that define the theme's properties.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ThemeValues>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::ThemeValues>>) -> Self {
+            self.values = input; self
         }
         /// Appends an item to `overrides`.
         ///
@@ -736,28 +683,30 @@ pub mod update_theme_data {
         /// <p>Describes the properties that can be overriden to customize the theme.</p>
         pub fn overrides(mut self, input: crate::model::ThemeValues) -> Self {
             let mut v = self.overrides.unwrap_or_default();
-            v.push(input);
-            self.overrides = Some(v);
-            self
+                            v.push(input);
+                            self.overrides = Some(v);
+                            self
         }
         /// <p>Describes the properties that can be overriden to customize the theme.</p>
-        pub fn set_overrides(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ThemeValues>>,
-        ) -> Self {
-            self.overrides = input;
-            self
+        pub fn set_overrides(mut self, input: std::option::Option<std::vec::Vec<crate::model::ThemeValues>>) -> Self {
+            self.overrides = input; self
         }
         /// Consumes the builder and constructs a [`UpdateThemeData`](crate::model::UpdateThemeData).
         pub fn build(self) -> crate::model::UpdateThemeData {
             crate::model::UpdateThemeData {
-                id: self.id,
-                name: self.name,
-                values: self.values,
-                overrides: self.overrides,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                values: self.values
+                ,
+                overrides: self.overrides
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateThemeData {
     /// Creates a new builder-style object to manufacture [`UpdateThemeData`](crate::model::UpdateThemeData).
@@ -769,7 +718,7 @@ impl UpdateThemeData {
 /// <p>Contains the configuration settings for a <code>Form</code> user interface (UI) element for an Amplify app. A form is a component you can add to your project by specifying a data source as the default configuration for the form.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Form {
+pub struct Form  {
     /// <p>The unique ID of the Amplify app associated with the form.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -793,89 +742,73 @@ pub struct Form {
     pub data_type: std::option::Option<crate::model::FormDataTypeConfig>,
     /// <p>Stores the information about the form's fields.</p>
     #[doc(hidden)]
-    pub fields: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
-    >,
+    pub fields: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FieldConfig>>,
     /// <p>Stores the visual helper elements for the form that are not associated with any data.</p>
     #[doc(hidden)]
-    pub sectional_elements: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
-    >,
+    pub sectional_elements: std::option::Option<std::collections::HashMap<std::string::String, crate::model::SectionalElement>>,
     /// <p>The schema version of the form when it was imported.</p>
     #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>One or more key-value pairs to use when tagging the form.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Stores the call to action configuration for the form.</p>
     #[doc(hidden)]
     pub cta: std::option::Option<crate::model::FormCta>,
 }
 impl Form {
     /// <p>The unique ID of the Amplify app associated with the form.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The unique ID of the form.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the form.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The operation to perform on the specified form.</p>
-    pub fn form_action_type(&self) -> std::option::Option<&crate::model::FormActionType> {
+    pub fn form_action_type(&self) -> std::option::Option<& crate::model::FormActionType> {
         self.form_action_type.as_ref()
     }
     /// <p>Stores the configuration for the form's style.</p>
-    pub fn style(&self) -> std::option::Option<&crate::model::FormStyle> {
+    pub fn style(&self) -> std::option::Option<& crate::model::FormStyle> {
         self.style.as_ref()
     }
     /// <p>The type of data source to use to create the form.</p>
-    pub fn data_type(&self) -> std::option::Option<&crate::model::FormDataTypeConfig> {
+    pub fn data_type(&self) -> std::option::Option<& crate::model::FormDataTypeConfig> {
         self.data_type.as_ref()
     }
     /// <p>Stores the information about the form's fields.</p>
-    pub fn fields(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
-    > {
+    pub fn fields(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::FieldConfig>> {
         self.fields.as_ref()
     }
     /// <p>Stores the visual helper elements for the form that are not associated with any data.</p>
-    pub fn sectional_elements(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
-    > {
+    pub fn sectional_elements(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::SectionalElement>> {
         self.sectional_elements.as_ref()
     }
     /// <p>The schema version of the form when it was imported.</p>
-    pub fn schema_version(&self) -> std::option::Option<&str> {
+    pub fn schema_version(&self) -> std::option::Option<& str> {
         self.schema_version.as_deref()
     }
     /// <p>One or more key-value pairs to use when tagging the form.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Stores the call to action configuration for the form.</p>
-    pub fn cta(&self) -> std::option::Option<&crate::model::FormCta> {
+    pub fn cta(&self) -> std::option::Option<& crate::model::FormCta> {
         self.cta.as_ref()
     }
 }
 /// See [`Form`](crate::model::Form).
 pub mod form {
-
+    
     /// A builder for [`Form`](crate::model::Form).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -886,16 +819,10 @@ pub mod form {
         pub(crate) form_action_type: std::option::Option<crate::model::FormActionType>,
         pub(crate) style: std::option::Option<crate::model::FormStyle>,
         pub(crate) data_type: std::option::Option<crate::model::FormDataTypeConfig>,
-        pub(crate) fields: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
-        >,
-        pub(crate) sectional_elements: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
-        >,
+        pub(crate) fields: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FieldConfig>>,
+        pub(crate) sectional_elements: std::option::Option<std::collections::HashMap<std::string::String, crate::model::SectionalElement>>,
         pub(crate) schema_version: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) cta: std::option::Option<crate::model::FormCta>,
     }
     impl Builder {
@@ -906,8 +833,7 @@ pub mod form {
         }
         /// <p>The unique ID of the Amplify app associated with the form.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment that is a part of the Amplify app.</p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -915,12 +841,8 @@ pub mod form {
             self
         }
         /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
         /// <p>The unique ID of the form.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -929,8 +851,7 @@ pub mod form {
         }
         /// <p>The unique ID of the form.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the form.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -939,8 +860,7 @@ pub mod form {
         }
         /// <p>The name of the form.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The operation to perform on the specified form.</p>
         pub fn form_action_type(mut self, input: crate::model::FormActionType) -> Self {
@@ -948,12 +868,8 @@ pub mod form {
             self
         }
         /// <p>The operation to perform on the specified form.</p>
-        pub fn set_form_action_type(
-            mut self,
-            input: std::option::Option<crate::model::FormActionType>,
-        ) -> Self {
-            self.form_action_type = input;
-            self
+        pub fn set_form_action_type(mut self, input: std::option::Option<crate::model::FormActionType>) -> Self {
+            self.form_action_type = input; self
         }
         /// <p>Stores the configuration for the form's style.</p>
         pub fn style(mut self, input: crate::model::FormStyle) -> Self {
@@ -962,8 +878,7 @@ pub mod form {
         }
         /// <p>Stores the configuration for the form's style.</p>
         pub fn set_style(mut self, input: std::option::Option<crate::model::FormStyle>) -> Self {
-            self.style = input;
-            self
+            self.style = input; self
         }
         /// <p>The type of data source to use to create the form.</p>
         pub fn data_type(mut self, input: crate::model::FormDataTypeConfig) -> Self {
@@ -971,62 +886,38 @@ pub mod form {
             self
         }
         /// <p>The type of data source to use to create the form.</p>
-        pub fn set_data_type(
-            mut self,
-            input: std::option::Option<crate::model::FormDataTypeConfig>,
-        ) -> Self {
-            self.data_type = input;
-            self
+        pub fn set_data_type(mut self, input: std::option::Option<crate::model::FormDataTypeConfig>) -> Self {
+            self.data_type = input; self
         }
         /// Adds a key-value pair to `fields`.
         ///
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>Stores the information about the form's fields.</p>
-        pub fn fields(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::FieldConfig,
-        ) -> Self {
+        pub fn fields(mut self, k: impl Into<std::string::String>, v: crate::model::FieldConfig) -> Self {
             let mut hash_map = self.fields.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.fields = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.fields = Some(hash_map);
+                            self
         }
         /// <p>Stores the information about the form's fields.</p>
-        pub fn set_fields(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
-            >,
-        ) -> Self {
-            self.fields = input;
-            self
+        pub fn set_fields(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FieldConfig>>) -> Self {
+            self.fields = input; self
         }
         /// Adds a key-value pair to `sectional_elements`.
         ///
         /// To override the contents of this collection use [`set_sectional_elements`](Self::set_sectional_elements).
         ///
         /// <p>Stores the visual helper elements for the form that are not associated with any data.</p>
-        pub fn sectional_elements(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::SectionalElement,
-        ) -> Self {
+        pub fn sectional_elements(mut self, k: impl Into<std::string::String>, v: crate::model::SectionalElement) -> Self {
             let mut hash_map = self.sectional_elements.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.sectional_elements = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.sectional_elements = Some(hash_map);
+                            self
         }
         /// <p>Stores the visual helper elements for the form that are not associated with any data.</p>
-        pub fn set_sectional_elements(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
-            >,
-        ) -> Self {
-            self.sectional_elements = input;
-            self
+        pub fn set_sectional_elements(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::SectionalElement>>) -> Self {
+            self.sectional_elements = input; self
         }
         /// <p>The schema version of the form when it was imported.</p>
         pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1034,37 +925,23 @@ pub mod form {
             self
         }
         /// <p>The schema version of the form when it was imported.</p>
-        pub fn set_schema_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schema_version = input;
-            self
+        pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_version = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more key-value pairs to use when tagging the form.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>One or more key-value pairs to use when tagging the form.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Stores the call to action configuration for the form.</p>
         pub fn cta(mut self, input: crate::model::FormCta) -> Self {
@@ -1073,27 +950,40 @@ pub mod form {
         }
         /// <p>Stores the call to action configuration for the form.</p>
         pub fn set_cta(mut self, input: std::option::Option<crate::model::FormCta>) -> Self {
-            self.cta = input;
-            self
+            self.cta = input; self
         }
         /// Consumes the builder and constructs a [`Form`](crate::model::Form).
         pub fn build(self) -> crate::model::Form {
             crate::model::Form {
-                app_id: self.app_id,
-                environment_name: self.environment_name,
-                id: self.id,
-                name: self.name,
-                form_action_type: self.form_action_type,
-                style: self.style,
-                data_type: self.data_type,
-                fields: self.fields,
-                sectional_elements: self.sectional_elements,
-                schema_version: self.schema_version,
-                tags: self.tags,
-                cta: self.cta,
+                app_id: self.app_id
+                ,
+                environment_name: self.environment_name
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                form_action_type: self.form_action_type
+                ,
+                style: self.style
+                ,
+                data_type: self.data_type
+                ,
+                fields: self.fields
+                ,
+                sectional_elements: self.sectional_elements
+                ,
+                schema_version: self.schema_version
+                ,
+                tags: self.tags
+                ,
+                cta: self.cta
+                ,
             }
         }
     }
+    
+    
 }
 impl Form {
     /// Creates a new builder-style object to manufacture [`Form`](crate::model::Form).
@@ -1105,7 +995,7 @@ impl Form {
 /// <p>Describes the call to action button configuration for the form.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FormCta {
+pub struct FormCta  {
     /// <p>The position of the button.</p>
     #[doc(hidden)]
     pub position: std::option::Option<crate::model::FormButtonsPosition>,
@@ -1121,25 +1011,25 @@ pub struct FormCta {
 }
 impl FormCta {
     /// <p>The position of the button.</p>
-    pub fn position(&self) -> std::option::Option<&crate::model::FormButtonsPosition> {
+    pub fn position(&self) -> std::option::Option<& crate::model::FormButtonsPosition> {
         self.position.as_ref()
     }
     /// <p>Displays a clear button.</p>
-    pub fn clear(&self) -> std::option::Option<&crate::model::FormButton> {
+    pub fn clear(&self) -> std::option::Option<& crate::model::FormButton> {
         self.clear.as_ref()
     }
     /// <p>Displays a cancel button.</p>
-    pub fn cancel(&self) -> std::option::Option<&crate::model::FormButton> {
+    pub fn cancel(&self) -> std::option::Option<& crate::model::FormButton> {
         self.cancel.as_ref()
     }
     /// <p>Displays a submit button.</p>
-    pub fn submit(&self) -> std::option::Option<&crate::model::FormButton> {
+    pub fn submit(&self) -> std::option::Option<& crate::model::FormButton> {
         self.submit.as_ref()
     }
 }
 /// See [`FormCta`](crate::model::FormCta).
 pub mod form_cta {
-
+    
     /// A builder for [`FormCta`](crate::model::FormCta).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1155,12 +1045,8 @@ pub mod form_cta {
             self
         }
         /// <p>The position of the button.</p>
-        pub fn set_position(
-            mut self,
-            input: std::option::Option<crate::model::FormButtonsPosition>,
-        ) -> Self {
-            self.position = input;
-            self
+        pub fn set_position(mut self, input: std::option::Option<crate::model::FormButtonsPosition>) -> Self {
+            self.position = input; self
         }
         /// <p>Displays a clear button.</p>
         pub fn clear(mut self, input: crate::model::FormButton) -> Self {
@@ -1169,8 +1055,7 @@ pub mod form_cta {
         }
         /// <p>Displays a clear button.</p>
         pub fn set_clear(mut self, input: std::option::Option<crate::model::FormButton>) -> Self {
-            self.clear = input;
-            self
+            self.clear = input; self
         }
         /// <p>Displays a cancel button.</p>
         pub fn cancel(mut self, input: crate::model::FormButton) -> Self {
@@ -1179,8 +1064,7 @@ pub mod form_cta {
         }
         /// <p>Displays a cancel button.</p>
         pub fn set_cancel(mut self, input: std::option::Option<crate::model::FormButton>) -> Self {
-            self.cancel = input;
-            self
+            self.cancel = input; self
         }
         /// <p>Displays a submit button.</p>
         pub fn submit(mut self, input: crate::model::FormButton) -> Self {
@@ -1189,19 +1073,24 @@ pub mod form_cta {
         }
         /// <p>Displays a submit button.</p>
         pub fn set_submit(mut self, input: std::option::Option<crate::model::FormButton>) -> Self {
-            self.submit = input;
-            self
+            self.submit = input; self
         }
         /// Consumes the builder and constructs a [`FormCta`](crate::model::FormCta).
         pub fn build(self) -> crate::model::FormCta {
             crate::model::FormCta {
-                position: self.position,
-                clear: self.clear,
-                cancel: self.cancel,
-                submit: self.submit,
+                position: self.position
+                ,
+                clear: self.clear
+                ,
+                cancel: self.cancel
+                ,
+                submit: self.submit
+                ,
             }
         }
     }
+    
+    
 }
 impl FormCta {
     /// Creates a new builder-style object to manufacture [`FormCta`](crate::model::FormCta).
@@ -1213,7 +1102,7 @@ impl FormCta {
 /// <p>Describes the configuration for a button UI element that is a part of a form.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FormButton {
+pub struct FormButton  {
     /// <p>Specifies whether the button is visible on the form.</p>
     #[doc(hidden)]
     pub excluded: std::option::Option<bool>,
@@ -1230,17 +1119,17 @@ impl FormButton {
         self.excluded
     }
     /// <p>Describes the button's properties.</p>
-    pub fn children(&self) -> std::option::Option<&str> {
+    pub fn children(&self) -> std::option::Option<& str> {
         self.children.as_deref()
     }
     /// <p>The position of the button.</p>
-    pub fn position(&self) -> std::option::Option<&crate::model::FieldPosition> {
+    pub fn position(&self) -> std::option::Option<& crate::model::FieldPosition> {
         self.position.as_ref()
     }
 }
 /// See [`FormButton`](crate::model::FormButton).
 pub mod form_button {
-
+    
     /// A builder for [`FormButton`](crate::model::FormButton).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1256,8 +1145,7 @@ pub mod form_button {
         }
         /// <p>Specifies whether the button is visible on the form.</p>
         pub fn set_excluded(mut self, input: std::option::Option<bool>) -> Self {
-            self.excluded = input;
-            self
+            self.excluded = input; self
         }
         /// <p>Describes the button's properties.</p>
         pub fn children(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1266,8 +1154,7 @@ pub mod form_button {
         }
         /// <p>Describes the button's properties.</p>
         pub fn set_children(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.children = input;
-            self
+            self.children = input; self
         }
         /// <p>The position of the button.</p>
         pub fn position(mut self, input: crate::model::FieldPosition) -> Self {
@@ -1275,22 +1162,23 @@ pub mod form_button {
             self
         }
         /// <p>The position of the button.</p>
-        pub fn set_position(
-            mut self,
-            input: std::option::Option<crate::model::FieldPosition>,
-        ) -> Self {
-            self.position = input;
-            self
+        pub fn set_position(mut self, input: std::option::Option<crate::model::FieldPosition>) -> Self {
+            self.position = input; self
         }
         /// Consumes the builder and constructs a [`FormButton`](crate::model::FormButton).
         pub fn build(self) -> crate::model::FormButton {
             crate::model::FormButton {
-                excluded: self.excluded,
-                children: self.children,
-                position: self.position,
+                excluded: self.excluded
+                ,
+                children: self.children
+                ,
+                position: self.position
+                ,
             }
         }
     }
+    
+    
 }
 impl FormButton {
     /// Creates a new builder-style object to manufacture [`FormButton`](crate::model::FormButton).
@@ -1323,11 +1211,7 @@ impl FieldPosition {
     /// Tries to convert the enum instance into [`Below`](crate::model::FieldPosition::Below), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_below(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let FieldPosition::Below(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let FieldPosition::Below(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Below`](crate::model::FieldPosition::Below).
     pub fn is_below(&self) -> bool {
@@ -1336,11 +1220,7 @@ impl FieldPosition {
     /// Tries to convert the enum instance into [`Fixed`](crate::model::FieldPosition::Fixed), extracting the inner [`FixedPosition`](crate::model::FixedPosition).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_fixed(&self) -> std::result::Result<&crate::model::FixedPosition, &Self> {
-        if let FieldPosition::Fixed(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let FieldPosition::Fixed(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Fixed`](crate::model::FieldPosition::Fixed).
     pub fn is_fixed(&self) -> bool {
@@ -1349,11 +1229,7 @@ impl FieldPosition {
     /// Tries to convert the enum instance into [`RightOf`](crate::model::FieldPosition::RightOf), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_right_of(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let FieldPosition::RightOf(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let FieldPosition::RightOf(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`RightOf`](crate::model::FieldPosition::RightOf).
     pub fn is_right_of(&self) -> bool {
@@ -1371,9 +1247,9 @@ impl FieldPosition {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fixedposition = unimplemented!();
 /// match fixedposition {
@@ -1394,54 +1270,48 @@ impl FieldPosition {
 /// Specifically, when `fixedposition` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FixedPosition::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FixedPosition {
     #[allow(missing_docs)] // documentation missing in model
     First,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FixedPosition {
     fn from(s: &str) -> Self {
         match s {
             "first" => FixedPosition::First,
-            other => FixedPosition::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FixedPosition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FixedPosition {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FixedPosition::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FixedPosition::from(s))
+                }
+            }
 impl FixedPosition {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FixedPosition::First => "first",
-            FixedPosition::Unknown(value) => value.as_str(),
+            FixedPosition::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["first"]
+        &[
+            "first"
+        ]
     }
 }
 impl AsRef<str> for FixedPosition {
@@ -1456,9 +1326,9 @@ impl AsRef<str> for FixedPosition {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let formbuttonsposition = unimplemented!();
 /// match formbuttonsposition {
@@ -1481,22 +1351,14 @@ impl AsRef<str> for FixedPosition {
 /// Specifically, when `formbuttonsposition` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FormButtonsPosition::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FormButtonsPosition {
     #[allow(missing_docs)] // documentation missing in model
     Bottom,
@@ -1505,7 +1367,7 @@ pub enum FormButtonsPosition {
     #[allow(missing_docs)] // documentation missing in model
     TopAndBottom,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FormButtonsPosition {
     fn from(s: &str) -> Self {
@@ -1513,19 +1375,17 @@ impl std::convert::From<&str> for FormButtonsPosition {
             "bottom" => FormButtonsPosition::Bottom,
             "top" => FormButtonsPosition::Top,
             "top_and_bottom" => FormButtonsPosition::TopAndBottom,
-            other => {
-                FormButtonsPosition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FormButtonsPosition::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FormButtonsPosition {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FormButtonsPosition::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FormButtonsPosition::from(s))
+                }
+            }
 impl FormButtonsPosition {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1533,12 +1393,14 @@ impl FormButtonsPosition {
             FormButtonsPosition::Bottom => "bottom",
             FormButtonsPosition::Top => "top",
             FormButtonsPosition::TopAndBottom => "top_and_bottom",
-            FormButtonsPosition::Unknown(value) => value.as_str(),
+            FormButtonsPosition::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["bottom", "top", "top_and_bottom"]
+        &[
+            "bottom", "top", "top_and_bottom"
+        ]
     }
 }
 impl AsRef<str> for FormButtonsPosition {
@@ -1550,7 +1412,7 @@ impl AsRef<str> for FormButtonsPosition {
 /// <p>Stores the configuration information for a visual helper element for a form. A sectional element can be a header, a text block, or a divider. These elements are static and not associated with any data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SectionalElement {
+pub struct SectionalElement  {
     /// <p>The type of sectional element. Valid values are <code>Heading</code>, <code>Text</code>, and <code>Divider</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -1569,15 +1431,15 @@ pub struct SectionalElement {
 }
 impl SectionalElement {
     /// <p>The type of sectional element. Valid values are <code>Heading</code>, <code>Text</code>, and <code>Divider</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Specifies the position of the text in a field for a <code>Text</code> sectional element.</p>
-    pub fn position(&self) -> std::option::Option<&crate::model::FieldPosition> {
+    pub fn position(&self) -> std::option::Option<& crate::model::FieldPosition> {
         self.position.as_ref()
     }
     /// <p>The text for a <code>Text</code> sectional element.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> std::option::Option<& str> {
         self.text.as_deref()
     }
     /// <p>Specifies the size of the font for a <code>Heading</code> sectional element. Valid values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.</p>
@@ -1585,13 +1447,13 @@ impl SectionalElement {
         self.level
     }
     /// <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid values are <code>horizontal</code> or <code>vertical</code>.</p>
-    pub fn orientation(&self) -> std::option::Option<&str> {
+    pub fn orientation(&self) -> std::option::Option<& str> {
         self.orientation.as_deref()
     }
 }
 /// See [`SectionalElement`](crate::model::SectionalElement).
 pub mod sectional_element {
-
+    
     /// A builder for [`SectionalElement`](crate::model::SectionalElement).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1609,8 +1471,7 @@ pub mod sectional_element {
         }
         /// <p>The type of sectional element. Valid values are <code>Heading</code>, <code>Text</code>, and <code>Divider</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>Specifies the position of the text in a field for a <code>Text</code> sectional element.</p>
         pub fn position(mut self, input: crate::model::FieldPosition) -> Self {
@@ -1618,12 +1479,8 @@ pub mod sectional_element {
             self
         }
         /// <p>Specifies the position of the text in a field for a <code>Text</code> sectional element.</p>
-        pub fn set_position(
-            mut self,
-            input: std::option::Option<crate::model::FieldPosition>,
-        ) -> Self {
-            self.position = input;
-            self
+        pub fn set_position(mut self, input: std::option::Option<crate::model::FieldPosition>) -> Self {
+            self.position = input; self
         }
         /// <p>The text for a <code>Text</code> sectional element.</p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1632,8 +1489,7 @@ pub mod sectional_element {
         }
         /// <p>The text for a <code>Text</code> sectional element.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.text = input;
-            self
+            self.text = input; self
         }
         /// <p>Specifies the size of the font for a <code>Heading</code> sectional element. Valid values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.</p>
         pub fn level(mut self, input: i32) -> Self {
@@ -1642,8 +1498,7 @@ pub mod sectional_element {
         }
         /// <p>Specifies the size of the font for a <code>Heading</code> sectional element. Valid values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.</p>
         pub fn set_level(mut self, input: std::option::Option<i32>) -> Self {
-            self.level = input;
-            self
+            self.level = input; self
         }
         /// <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid values are <code>horizontal</code> or <code>vertical</code>.</p>
         pub fn orientation(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1652,20 +1507,26 @@ pub mod sectional_element {
         }
         /// <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid values are <code>horizontal</code> or <code>vertical</code>.</p>
         pub fn set_orientation(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.orientation = input;
-            self
+            self.orientation = input; self
         }
         /// Consumes the builder and constructs a [`SectionalElement`](crate::model::SectionalElement).
         pub fn build(self) -> crate::model::SectionalElement {
             crate::model::SectionalElement {
-                r#type: self.r#type,
-                position: self.position,
-                text: self.text,
-                level: self.level,
-                orientation: self.orientation,
+                r#type: self.r#type
+                ,
+                position: self.position
+                ,
+                text: self.text
+                ,
+                level: self.level
+                ,
+                orientation: self.orientation
+                ,
             }
         }
     }
+    
+    
 }
 impl SectionalElement {
     /// Creates a new builder-style object to manufacture [`SectionalElement`](crate::model::SectionalElement).
@@ -1677,7 +1538,7 @@ impl SectionalElement {
 /// <p>Describes the configuration information for a field in a table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FieldConfig {
+pub struct FieldConfig  {
     /// <p>The label for the field.</p>
     #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
@@ -1696,11 +1557,11 @@ pub struct FieldConfig {
 }
 impl FieldConfig {
     /// <p>The label for the field.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> std::option::Option<& str> {
         self.label.as_deref()
     }
     /// <p>Specifies the field position.</p>
-    pub fn position(&self) -> std::option::Option<&crate::model::FieldPosition> {
+    pub fn position(&self) -> std::option::Option<& crate::model::FieldPosition> {
         self.position.as_ref()
     }
     /// <p>Specifies whether to hide a field.</p>
@@ -1708,19 +1569,17 @@ impl FieldConfig {
         self.excluded
     }
     /// <p>Describes the configuration for the default input value to display for a field.</p>
-    pub fn input_type(&self) -> std::option::Option<&crate::model::FieldInputConfig> {
+    pub fn input_type(&self) -> std::option::Option<& crate::model::FieldInputConfig> {
         self.input_type.as_ref()
     }
     /// <p>The validations to perform on the value in the field.</p>
-    pub fn validations(
-        &self,
-    ) -> std::option::Option<&[crate::model::FieldValidationConfiguration]> {
+    pub fn validations(&self) -> std::option::Option<& [crate::model::FieldValidationConfiguration]> {
         self.validations.as_deref()
     }
 }
 /// See [`FieldConfig`](crate::model::FieldConfig).
 pub mod field_config {
-
+    
     /// A builder for [`FieldConfig`](crate::model::FieldConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1728,8 +1587,7 @@ pub mod field_config {
         pub(crate) position: std::option::Option<crate::model::FieldPosition>,
         pub(crate) excluded: std::option::Option<bool>,
         pub(crate) input_type: std::option::Option<crate::model::FieldInputConfig>,
-        pub(crate) validations:
-            std::option::Option<std::vec::Vec<crate::model::FieldValidationConfiguration>>,
+        pub(crate) validations: std::option::Option<std::vec::Vec<crate::model::FieldValidationConfiguration>>,
     }
     impl Builder {
         /// <p>The label for the field.</p>
@@ -1739,8 +1597,7 @@ pub mod field_config {
         }
         /// <p>The label for the field.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.label = input;
-            self
+            self.label = input; self
         }
         /// <p>Specifies the field position.</p>
         pub fn position(mut self, input: crate::model::FieldPosition) -> Self {
@@ -1748,12 +1605,8 @@ pub mod field_config {
             self
         }
         /// <p>Specifies the field position.</p>
-        pub fn set_position(
-            mut self,
-            input: std::option::Option<crate::model::FieldPosition>,
-        ) -> Self {
-            self.position = input;
-            self
+        pub fn set_position(mut self, input: std::option::Option<crate::model::FieldPosition>) -> Self {
+            self.position = input; self
         }
         /// <p>Specifies whether to hide a field.</p>
         pub fn excluded(mut self, input: bool) -> Self {
@@ -1762,8 +1615,7 @@ pub mod field_config {
         }
         /// <p>Specifies whether to hide a field.</p>
         pub fn set_excluded(mut self, input: std::option::Option<bool>) -> Self {
-            self.excluded = input;
-            self
+            self.excluded = input; self
         }
         /// <p>Describes the configuration for the default input value to display for a field.</p>
         pub fn input_type(mut self, input: crate::model::FieldInputConfig) -> Self {
@@ -1771,12 +1623,8 @@ pub mod field_config {
             self
         }
         /// <p>Describes the configuration for the default input value to display for a field.</p>
-        pub fn set_input_type(
-            mut self,
-            input: std::option::Option<crate::model::FieldInputConfig>,
-        ) -> Self {
-            self.input_type = input;
-            self
+        pub fn set_input_type(mut self, input: std::option::Option<crate::model::FieldInputConfig>) -> Self {
+            self.input_type = input; self
         }
         /// Appends an item to `validations`.
         ///
@@ -1785,29 +1633,32 @@ pub mod field_config {
         /// <p>The validations to perform on the value in the field.</p>
         pub fn validations(mut self, input: crate::model::FieldValidationConfiguration) -> Self {
             let mut v = self.validations.unwrap_or_default();
-            v.push(input);
-            self.validations = Some(v);
-            self
+                            v.push(input);
+                            self.validations = Some(v);
+                            self
         }
         /// <p>The validations to perform on the value in the field.</p>
-        pub fn set_validations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FieldValidationConfiguration>>,
-        ) -> Self {
-            self.validations = input;
-            self
+        pub fn set_validations(mut self, input: std::option::Option<std::vec::Vec<crate::model::FieldValidationConfiguration>>) -> Self {
+            self.validations = input; self
         }
         /// Consumes the builder and constructs a [`FieldConfig`](crate::model::FieldConfig).
         pub fn build(self) -> crate::model::FieldConfig {
             crate::model::FieldConfig {
-                label: self.label,
-                position: self.position,
-                excluded: self.excluded,
-                input_type: self.input_type,
-                validations: self.validations,
+                label: self.label
+                ,
+                position: self.position
+                ,
+                excluded: self.excluded
+                ,
+                input_type: self.input_type
+                ,
+                validations: self.validations
+                ,
             }
         }
     }
+    
+    
 }
 impl FieldConfig {
     /// Creates a new builder-style object to manufacture [`FieldConfig`](crate::model::FieldConfig).
@@ -1819,7 +1670,7 @@ impl FieldConfig {
 /// <p>Describes the validation configuration for a field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FieldValidationConfiguration {
+pub struct FieldValidationConfiguration  {
     /// <p>The validation to perform on an object type.<code></code> </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -1835,25 +1686,25 @@ pub struct FieldValidationConfiguration {
 }
 impl FieldValidationConfiguration {
     /// <p>The validation to perform on an object type.<code></code> </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The validation to perform on a string value.</p>
-    pub fn str_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn str_values(&self) -> std::option::Option<& [std::string::String]> {
         self.str_values.as_deref()
     }
     /// <p>The validation to perform on a number value.</p>
-    pub fn num_values(&self) -> std::option::Option<&[i32]> {
+    pub fn num_values(&self) -> std::option::Option<& [i32]> {
         self.num_values.as_deref()
     }
     /// <p>The validation message to display.</p>
-    pub fn validation_message(&self) -> std::option::Option<&str> {
+    pub fn validation_message(&self) -> std::option::Option<& str> {
         self.validation_message.as_deref()
     }
 }
 /// See [`FieldValidationConfiguration`](crate::model::FieldValidationConfiguration).
 pub mod field_validation_configuration {
-
+    
     /// A builder for [`FieldValidationConfiguration`](crate::model::FieldValidationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1870,8 +1721,7 @@ pub mod field_validation_configuration {
         }
         /// <p>The validation to perform on an object type.<code></code> </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Appends an item to `str_values`.
         ///
@@ -1880,17 +1730,13 @@ pub mod field_validation_configuration {
         /// <p>The validation to perform on a string value.</p>
         pub fn str_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.str_values.unwrap_or_default();
-            v.push(input.into());
-            self.str_values = Some(v);
-            self
+                            v.push(input.into());
+                            self.str_values = Some(v);
+                            self
         }
         /// <p>The validation to perform on a string value.</p>
-        pub fn set_str_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.str_values = input;
-            self
+        pub fn set_str_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.str_values = input; self
         }
         /// Appends an item to `num_values`.
         ///
@@ -1899,14 +1745,13 @@ pub mod field_validation_configuration {
         /// <p>The validation to perform on a number value.</p>
         pub fn num_values(mut self, input: i32) -> Self {
             let mut v = self.num_values.unwrap_or_default();
-            v.push(input);
-            self.num_values = Some(v);
-            self
+                            v.push(input);
+                            self.num_values = Some(v);
+                            self
         }
         /// <p>The validation to perform on a number value.</p>
         pub fn set_num_values(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
-            self.num_values = input;
-            self
+            self.num_values = input; self
         }
         /// <p>The validation message to display.</p>
         pub fn validation_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1914,23 +1759,25 @@ pub mod field_validation_configuration {
             self
         }
         /// <p>The validation message to display.</p>
-        pub fn set_validation_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.validation_message = input;
-            self
+        pub fn set_validation_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.validation_message = input; self
         }
         /// Consumes the builder and constructs a [`FieldValidationConfiguration`](crate::model::FieldValidationConfiguration).
         pub fn build(self) -> crate::model::FieldValidationConfiguration {
             crate::model::FieldValidationConfiguration {
-                r#type: self.r#type,
-                str_values: self.str_values,
-                num_values: self.num_values,
-                validation_message: self.validation_message,
+                r#type: self.r#type
+                ,
+                str_values: self.str_values
+                ,
+                num_values: self.num_values
+                ,
+                validation_message: self.validation_message
+                ,
             }
         }
     }
+    
+    
 }
 impl FieldValidationConfiguration {
     /// Creates a new builder-style object to manufacture [`FieldValidationConfiguration`](crate::model::FieldValidationConfiguration).
@@ -1942,7 +1789,7 @@ impl FieldValidationConfiguration {
 /// <p>Describes the configuration for the default input values to display for a field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FieldInputConfig {
+pub struct FieldInputConfig  {
     /// <p>The input type for the field. </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -1991,7 +1838,7 @@ pub struct FieldInputConfig {
 }
 impl FieldInputConfig {
     /// <p>The input type for the field. </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Specifies a field that requires input.</p>
@@ -2003,15 +1850,15 @@ impl FieldInputConfig {
         self.read_only
     }
     /// <p>The text to display as a placeholder for the field.</p>
-    pub fn placeholder(&self) -> std::option::Option<&str> {
+    pub fn placeholder(&self) -> std::option::Option<& str> {
         self.placeholder.as_deref()
     }
     /// <p>The default value for the field.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
     /// <p>The text to display to describe the field.</p>
-    pub fn descriptive_text(&self) -> std::option::Option<&str> {
+    pub fn descriptive_text(&self) -> std::option::Option<& str> {
         self.descriptive_text.as_deref()
     }
     /// <p>Specifies whether a field has a default value.</p>
@@ -2019,15 +1866,15 @@ impl FieldInputConfig {
         self.default_checked
     }
     /// <p>The default country code for a phone number.</p>
-    pub fn default_country_code(&self) -> std::option::Option<&str> {
+    pub fn default_country_code(&self) -> std::option::Option<& str> {
         self.default_country_code.as_deref()
     }
     /// <p>The information to use to customize the input fields with data at runtime.</p>
-    pub fn value_mappings(&self) -> std::option::Option<&crate::model::ValueMappings> {
+    pub fn value_mappings(&self) -> std::option::Option<& crate::model::ValueMappings> {
         self.value_mappings.as_ref()
     }
     /// <p>The name of the field.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The minimum value to display for the field.</p>
@@ -2043,7 +1890,7 @@ impl FieldInputConfig {
         self.step
     }
     /// <p>The value for the field.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>Specifies whether to render the field as an array. This property is ignored if the <code>dataSourceType</code> for the form is a Data Store.</p>
@@ -2053,7 +1900,7 @@ impl FieldInputConfig {
 }
 /// See [`FieldInputConfig`](crate::model::FieldInputConfig).
 pub mod field_input_config {
-
+    
     /// A builder for [`FieldInputConfig`](crate::model::FieldInputConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2081,8 +1928,7 @@ pub mod field_input_config {
         }
         /// <p>The input type for the field. </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>Specifies a field that requires input.</p>
         pub fn required(mut self, input: bool) -> Self {
@@ -2091,8 +1937,7 @@ pub mod field_input_config {
         }
         /// <p>Specifies a field that requires input.</p>
         pub fn set_required(mut self, input: std::option::Option<bool>) -> Self {
-            self.required = input;
-            self
+            self.required = input; self
         }
         /// <p>Specifies a read only field.</p>
         pub fn read_only(mut self, input: bool) -> Self {
@@ -2101,8 +1946,7 @@ pub mod field_input_config {
         }
         /// <p>Specifies a read only field.</p>
         pub fn set_read_only(mut self, input: std::option::Option<bool>) -> Self {
-            self.read_only = input;
-            self
+            self.read_only = input; self
         }
         /// <p>The text to display as a placeholder for the field.</p>
         pub fn placeholder(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2111,8 +1955,7 @@ pub mod field_input_config {
         }
         /// <p>The text to display as a placeholder for the field.</p>
         pub fn set_placeholder(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.placeholder = input;
-            self
+            self.placeholder = input; self
         }
         /// <p>The default value for the field.</p>
         pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2120,12 +1963,8 @@ pub mod field_input_config {
             self
         }
         /// <p>The default value for the field.</p>
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_value = input; self
         }
         /// <p>The text to display to describe the field.</p>
         pub fn descriptive_text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2133,12 +1972,8 @@ pub mod field_input_config {
             self
         }
         /// <p>The text to display to describe the field.</p>
-        pub fn set_descriptive_text(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.descriptive_text = input;
-            self
+        pub fn set_descriptive_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.descriptive_text = input; self
         }
         /// <p>Specifies whether a field has a default value.</p>
         pub fn default_checked(mut self, input: bool) -> Self {
@@ -2147,8 +1982,7 @@ pub mod field_input_config {
         }
         /// <p>Specifies whether a field has a default value.</p>
         pub fn set_default_checked(mut self, input: std::option::Option<bool>) -> Self {
-            self.default_checked = input;
-            self
+            self.default_checked = input; self
         }
         /// <p>The default country code for a phone number.</p>
         pub fn default_country_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2156,12 +1990,8 @@ pub mod field_input_config {
             self
         }
         /// <p>The default country code for a phone number.</p>
-        pub fn set_default_country_code(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_country_code = input;
-            self
+        pub fn set_default_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_country_code = input; self
         }
         /// <p>The information to use to customize the input fields with data at runtime.</p>
         pub fn value_mappings(mut self, input: crate::model::ValueMappings) -> Self {
@@ -2169,12 +1999,8 @@ pub mod field_input_config {
             self
         }
         /// <p>The information to use to customize the input fields with data at runtime.</p>
-        pub fn set_value_mappings(
-            mut self,
-            input: std::option::Option<crate::model::ValueMappings>,
-        ) -> Self {
-            self.value_mappings = input;
-            self
+        pub fn set_value_mappings(mut self, input: std::option::Option<crate::model::ValueMappings>) -> Self {
+            self.value_mappings = input; self
         }
         /// <p>The name of the field.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2183,8 +2009,7 @@ pub mod field_input_config {
         }
         /// <p>The name of the field.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The minimum value to display for the field.</p>
         pub fn min_value(mut self, input: f32) -> Self {
@@ -2193,8 +2018,7 @@ pub mod field_input_config {
         }
         /// <p>The minimum value to display for the field.</p>
         pub fn set_min_value(mut self, input: std::option::Option<f32>) -> Self {
-            self.min_value = input;
-            self
+            self.min_value = input; self
         }
         /// <p>The maximum value to display for the field.</p>
         pub fn max_value(mut self, input: f32) -> Self {
@@ -2203,8 +2027,7 @@ pub mod field_input_config {
         }
         /// <p>The maximum value to display for the field.</p>
         pub fn set_max_value(mut self, input: std::option::Option<f32>) -> Self {
-            self.max_value = input;
-            self
+            self.max_value = input; self
         }
         /// <p>The stepping increment for a numeric value in a field.</p>
         pub fn step(mut self, input: f32) -> Self {
@@ -2213,8 +2036,7 @@ pub mod field_input_config {
         }
         /// <p>The stepping increment for a numeric value in a field.</p>
         pub fn set_step(mut self, input: std::option::Option<f32>) -> Self {
-            self.step = input;
-            self
+            self.step = input; self
         }
         /// <p>The value for the field.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2223,8 +2045,7 @@ pub mod field_input_config {
         }
         /// <p>The value for the field.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>Specifies whether to render the field as an array. This property is ignored if the <code>dataSourceType</code> for the form is a Data Store.</p>
         pub fn is_array(mut self, input: bool) -> Self {
@@ -2233,30 +2054,46 @@ pub mod field_input_config {
         }
         /// <p>Specifies whether to render the field as an array. This property is ignored if the <code>dataSourceType</code> for the form is a Data Store.</p>
         pub fn set_is_array(mut self, input: std::option::Option<bool>) -> Self {
-            self.is_array = input;
-            self
+            self.is_array = input; self
         }
         /// Consumes the builder and constructs a [`FieldInputConfig`](crate::model::FieldInputConfig).
         pub fn build(self) -> crate::model::FieldInputConfig {
             crate::model::FieldInputConfig {
-                r#type: self.r#type,
-                required: self.required,
-                read_only: self.read_only,
-                placeholder: self.placeholder,
-                default_value: self.default_value,
-                descriptive_text: self.descriptive_text,
-                default_checked: self.default_checked,
-                default_country_code: self.default_country_code,
-                value_mappings: self.value_mappings,
-                name: self.name,
-                min_value: self.min_value,
-                max_value: self.max_value,
-                step: self.step,
-                value: self.value,
-                is_array: self.is_array,
+                r#type: self.r#type
+                ,
+                required: self.required
+                ,
+                read_only: self.read_only
+                ,
+                placeholder: self.placeholder
+                ,
+                default_value: self.default_value
+                ,
+                descriptive_text: self.descriptive_text
+                ,
+                default_checked: self.default_checked
+                ,
+                default_country_code: self.default_country_code
+                ,
+                value_mappings: self.value_mappings
+                ,
+                name: self.name
+                ,
+                min_value: self.min_value
+                ,
+                max_value: self.max_value
+                ,
+                step: self.step
+                ,
+                value: self.value
+                ,
+                is_array: self.is_array
+                ,
             }
         }
     }
+    
+    
 }
 impl FieldInputConfig {
     /// Creates a new builder-style object to manufacture [`FieldInputConfig`](crate::model::FieldInputConfig).
@@ -2268,20 +2105,20 @@ impl FieldInputConfig {
 /// <p>Represents the data binding configuration for a value map.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValueMappings {
+pub struct ValueMappings  {
     /// <p>The value and display value pairs.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<crate::model::ValueMapping>>,
 }
 impl ValueMappings {
     /// <p>The value and display value pairs.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::model::ValueMapping]> {
+    pub fn values(&self) -> std::option::Option<& [crate::model::ValueMapping]> {
         self.values.as_deref()
     }
 }
 /// See [`ValueMappings`](crate::model::ValueMappings).
 pub mod value_mappings {
-
+    
     /// A builder for [`ValueMappings`](crate::model::ValueMappings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2295,25 +2132,24 @@ pub mod value_mappings {
         /// <p>The value and display value pairs.</p>
         pub fn values(mut self, input: crate::model::ValueMapping) -> Self {
             let mut v = self.values.unwrap_or_default();
-            v.push(input);
-            self.values = Some(v);
-            self
+                            v.push(input);
+                            self.values = Some(v);
+                            self
         }
         /// <p>The value and display value pairs.</p>
-        pub fn set_values(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ValueMapping>>,
-        ) -> Self {
-            self.values = input;
-            self
+        pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::model::ValueMapping>>) -> Self {
+            self.values = input; self
         }
         /// Consumes the builder and constructs a [`ValueMappings`](crate::model::ValueMappings).
         pub fn build(self) -> crate::model::ValueMappings {
             crate::model::ValueMappings {
-                values: self.values,
+                values: self.values
+                ,
             }
         }
     }
+    
+    
 }
 impl ValueMappings {
     /// Creates a new builder-style object to manufacture [`ValueMappings`](crate::model::ValueMappings).
@@ -2325,7 +2161,7 @@ impl ValueMappings {
 /// <p>Associates a complex object with a display value. Use <code>ValueMapping</code> to store how to represent complex objects when they are displayed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValueMapping {
+pub struct ValueMapping  {
     /// <p>The value to display for the complex object.</p>
     #[doc(hidden)]
     pub display_value: std::option::Option<crate::model::FormInputValueProperty>,
@@ -2335,17 +2171,17 @@ pub struct ValueMapping {
 }
 impl ValueMapping {
     /// <p>The value to display for the complex object.</p>
-    pub fn display_value(&self) -> std::option::Option<&crate::model::FormInputValueProperty> {
+    pub fn display_value(&self) -> std::option::Option<& crate::model::FormInputValueProperty> {
         self.display_value.as_ref()
     }
     /// <p>The complex object.</p>
-    pub fn value(&self) -> std::option::Option<&crate::model::FormInputValueProperty> {
+    pub fn value(&self) -> std::option::Option<& crate::model::FormInputValueProperty> {
         self.value.as_ref()
     }
 }
 /// See [`ValueMapping`](crate::model::ValueMapping).
 pub mod value_mapping {
-
+    
     /// A builder for [`ValueMapping`](crate::model::ValueMapping).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2359,12 +2195,8 @@ pub mod value_mapping {
             self
         }
         /// <p>The value to display for the complex object.</p>
-        pub fn set_display_value(
-            mut self,
-            input: std::option::Option<crate::model::FormInputValueProperty>,
-        ) -> Self {
-            self.display_value = input;
-            self
+        pub fn set_display_value(mut self, input: std::option::Option<crate::model::FormInputValueProperty>) -> Self {
+            self.display_value = input; self
         }
         /// <p>The complex object.</p>
         pub fn value(mut self, input: crate::model::FormInputValueProperty) -> Self {
@@ -2372,21 +2204,21 @@ pub mod value_mapping {
             self
         }
         /// <p>The complex object.</p>
-        pub fn set_value(
-            mut self,
-            input: std::option::Option<crate::model::FormInputValueProperty>,
-        ) -> Self {
-            self.value = input;
-            self
+        pub fn set_value(mut self, input: std::option::Option<crate::model::FormInputValueProperty>) -> Self {
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`ValueMapping`](crate::model::ValueMapping).
         pub fn build(self) -> crate::model::ValueMapping {
             crate::model::ValueMapping {
-                display_value: self.display_value,
-                value: self.value,
+                display_value: self.display_value
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl ValueMapping {
     /// Creates a new builder-style object to manufacture [`ValueMapping`](crate::model::ValueMapping).
@@ -2398,20 +2230,20 @@ impl ValueMapping {
 /// <p>Describes the configuration for an input field on a form. Use <code>FormInputValueProperty</code> to specify the values to render or bind by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FormInputValueProperty {
+pub struct FormInputValueProperty  {
     /// <p>The value to assign to the input field.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl FormInputValueProperty {
     /// <p>The value to assign to the input field.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`FormInputValueProperty`](crate::model::FormInputValueProperty).
 pub mod form_input_value_property {
-
+    
     /// A builder for [`FormInputValueProperty`](crate::model::FormInputValueProperty).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2425,14 +2257,18 @@ pub mod form_input_value_property {
         }
         /// <p>The value to assign to the input field.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`FormInputValueProperty`](crate::model::FormInputValueProperty).
         pub fn build(self) -> crate::model::FormInputValueProperty {
-            crate::model::FormInputValueProperty { value: self.value }
+            crate::model::FormInputValueProperty {
+                value: self.value
+                ,
+            }
         }
     }
+    
+    
 }
 impl FormInputValueProperty {
     /// Creates a new builder-style object to manufacture [`FormInputValueProperty`](crate::model::FormInputValueProperty).
@@ -2444,7 +2280,7 @@ impl FormInputValueProperty {
 /// <p>Describes the data type configuration for the data source associated with a form.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FormDataTypeConfig {
+pub struct FormDataTypeConfig  {
     /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
     #[doc(hidden)]
     pub data_source_type: std::option::Option<crate::model::FormDataSourceType>,
@@ -2454,17 +2290,17 @@ pub struct FormDataTypeConfig {
 }
 impl FormDataTypeConfig {
     /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
-    pub fn data_source_type(&self) -> std::option::Option<&crate::model::FormDataSourceType> {
+    pub fn data_source_type(&self) -> std::option::Option<& crate::model::FormDataSourceType> {
         self.data_source_type.as_ref()
     }
     /// <p>The unique name of the data type you are using as the data source for the form.</p>
-    pub fn data_type_name(&self) -> std::option::Option<&str> {
+    pub fn data_type_name(&self) -> std::option::Option<& str> {
         self.data_type_name.as_deref()
     }
 }
 /// See [`FormDataTypeConfig`](crate::model::FormDataTypeConfig).
 pub mod form_data_type_config {
-
+    
     /// A builder for [`FormDataTypeConfig`](crate::model::FormDataTypeConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2478,12 +2314,8 @@ pub mod form_data_type_config {
             self
         }
         /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
-        pub fn set_data_source_type(
-            mut self,
-            input: std::option::Option<crate::model::FormDataSourceType>,
-        ) -> Self {
-            self.data_source_type = input;
-            self
+        pub fn set_data_source_type(mut self, input: std::option::Option<crate::model::FormDataSourceType>) -> Self {
+            self.data_source_type = input; self
         }
         /// <p>The unique name of the data type you are using as the data source for the form.</p>
         pub fn data_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2491,21 +2323,21 @@ pub mod form_data_type_config {
             self
         }
         /// <p>The unique name of the data type you are using as the data source for the form.</p>
-        pub fn set_data_type_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_type_name = input;
-            self
+        pub fn set_data_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_type_name = input; self
         }
         /// Consumes the builder and constructs a [`FormDataTypeConfig`](crate::model::FormDataTypeConfig).
         pub fn build(self) -> crate::model::FormDataTypeConfig {
             crate::model::FormDataTypeConfig {
-                data_source_type: self.data_source_type,
-                data_type_name: self.data_type_name,
+                data_source_type: self.data_source_type
+                ,
+                data_type_name: self.data_type_name
+                ,
             }
         }
     }
+    
+    
 }
 impl FormDataTypeConfig {
     /// Creates a new builder-style object to manufacture [`FormDataTypeConfig`](crate::model::FormDataTypeConfig).
@@ -2520,9 +2352,9 @@ impl FormDataTypeConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let formdatasourcetype = unimplemented!();
 /// match formdatasourcetype {
@@ -2544,60 +2376,52 @@ impl FormDataTypeConfig {
 /// Specifically, when `formdatasourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FormDataSourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FormDataSourceType {
     /// Will use passed in hooks to use when creating a form from scratch
     Custom,
     /// Will use a provided Amplify DataStore enabled API
     Datastore,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FormDataSourceType {
     fn from(s: &str) -> Self {
         match s {
             "Custom" => FormDataSourceType::Custom,
             "DataStore" => FormDataSourceType::Datastore,
-            other => {
-                FormDataSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FormDataSourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FormDataSourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FormDataSourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FormDataSourceType::from(s))
+                }
+            }
 impl FormDataSourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FormDataSourceType::Custom => "Custom",
             FormDataSourceType::Datastore => "DataStore",
-            FormDataSourceType::Unknown(value) => value.as_str(),
+            FormDataSourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Custom", "DataStore"]
+        &[
+            "Custom", "DataStore"
+        ]
     }
 }
 impl AsRef<str> for FormDataSourceType {
@@ -2609,7 +2433,7 @@ impl AsRef<str> for FormDataSourceType {
 /// <p>Describes the configuration for the form's style.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FormStyle {
+pub struct FormStyle  {
     /// <p>The spacing for the horizontal gap.</p>
     #[doc(hidden)]
     pub horizontal_gap: std::option::Option<crate::model::FormStyleConfig>,
@@ -2622,21 +2446,21 @@ pub struct FormStyle {
 }
 impl FormStyle {
     /// <p>The spacing for the horizontal gap.</p>
-    pub fn horizontal_gap(&self) -> std::option::Option<&crate::model::FormStyleConfig> {
+    pub fn horizontal_gap(&self) -> std::option::Option<& crate::model::FormStyleConfig> {
         self.horizontal_gap.as_ref()
     }
     /// <p>The spacing for the vertical gap.</p>
-    pub fn vertical_gap(&self) -> std::option::Option<&crate::model::FormStyleConfig> {
+    pub fn vertical_gap(&self) -> std::option::Option<& crate::model::FormStyleConfig> {
         self.vertical_gap.as_ref()
     }
     /// <p>The size of the outer padding for the form.</p>
-    pub fn outer_padding(&self) -> std::option::Option<&crate::model::FormStyleConfig> {
+    pub fn outer_padding(&self) -> std::option::Option<& crate::model::FormStyleConfig> {
         self.outer_padding.as_ref()
     }
 }
 /// See [`FormStyle`](crate::model::FormStyle).
 pub mod form_style {
-
+    
     /// A builder for [`FormStyle`](crate::model::FormStyle).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2651,12 +2475,8 @@ pub mod form_style {
             self
         }
         /// <p>The spacing for the horizontal gap.</p>
-        pub fn set_horizontal_gap(
-            mut self,
-            input: std::option::Option<crate::model::FormStyleConfig>,
-        ) -> Self {
-            self.horizontal_gap = input;
-            self
+        pub fn set_horizontal_gap(mut self, input: std::option::Option<crate::model::FormStyleConfig>) -> Self {
+            self.horizontal_gap = input; self
         }
         /// <p>The spacing for the vertical gap.</p>
         pub fn vertical_gap(mut self, input: crate::model::FormStyleConfig) -> Self {
@@ -2664,12 +2484,8 @@ pub mod form_style {
             self
         }
         /// <p>The spacing for the vertical gap.</p>
-        pub fn set_vertical_gap(
-            mut self,
-            input: std::option::Option<crate::model::FormStyleConfig>,
-        ) -> Self {
-            self.vertical_gap = input;
-            self
+        pub fn set_vertical_gap(mut self, input: std::option::Option<crate::model::FormStyleConfig>) -> Self {
+            self.vertical_gap = input; self
         }
         /// <p>The size of the outer padding for the form.</p>
         pub fn outer_padding(mut self, input: crate::model::FormStyleConfig) -> Self {
@@ -2677,22 +2493,23 @@ pub mod form_style {
             self
         }
         /// <p>The size of the outer padding for the form.</p>
-        pub fn set_outer_padding(
-            mut self,
-            input: std::option::Option<crate::model::FormStyleConfig>,
-        ) -> Self {
-            self.outer_padding = input;
-            self
+        pub fn set_outer_padding(mut self, input: std::option::Option<crate::model::FormStyleConfig>) -> Self {
+            self.outer_padding = input; self
         }
         /// Consumes the builder and constructs a [`FormStyle`](crate::model::FormStyle).
         pub fn build(self) -> crate::model::FormStyle {
             crate::model::FormStyle {
-                horizontal_gap: self.horizontal_gap,
-                vertical_gap: self.vertical_gap,
-                outer_padding: self.outer_padding,
+                horizontal_gap: self.horizontal_gap
+                ,
+                vertical_gap: self.vertical_gap
+                ,
+                outer_padding: self.outer_padding
+                ,
             }
         }
     }
+    
+    
 }
 impl FormStyle {
     /// Creates a new builder-style object to manufacture [`FormStyle`](crate::model::FormStyle).
@@ -2723,11 +2540,7 @@ impl FormStyleConfig {
     /// Tries to convert the enum instance into [`TokenReference`](crate::model::FormStyleConfig::TokenReference), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_token_reference(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let FormStyleConfig::TokenReference(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let FormStyleConfig::TokenReference(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`TokenReference`](crate::model::FormStyleConfig::TokenReference).
     pub fn is_token_reference(&self) -> bool {
@@ -2736,11 +2549,7 @@ impl FormStyleConfig {
     /// Tries to convert the enum instance into [`Value`](crate::model::FormStyleConfig::Value), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_value(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let FormStyleConfig::Value(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let FormStyleConfig::Value(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Value`](crate::model::FormStyleConfig::Value).
     pub fn is_value(&self) -> bool {
@@ -2758,9 +2567,9 @@ impl FormStyleConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let formactiontype = unimplemented!();
 /// match formactiontype {
@@ -2782,58 +2591,52 @@ impl FormStyleConfig {
 /// Specifically, when `formactiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FormActionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FormActionType {
     #[allow(missing_docs)] // documentation missing in model
     Create,
     #[allow(missing_docs)] // documentation missing in model
     Update,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FormActionType {
     fn from(s: &str) -> Self {
         match s {
             "create" => FormActionType::Create,
             "update" => FormActionType::Update,
-            other => FormActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => FormActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FormActionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FormActionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FormActionType::from(s))
+                }
+            }
 impl FormActionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FormActionType::Create => "create",
             FormActionType::Update => "update",
-            FormActionType::Unknown(value) => value.as_str(),
+            FormActionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["create", "update"]
+        &[
+            "create", "update"
+        ]
     }
 }
 impl AsRef<str> for FormActionType {
@@ -2845,7 +2648,7 @@ impl AsRef<str> for FormActionType {
 /// <p>Describes the basic information about a form.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FormSummary {
+pub struct FormSummary  {
     /// <p>The unique ID for the app associated with the form summary.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -2867,33 +2670,33 @@ pub struct FormSummary {
 }
 impl FormSummary {
     /// <p>The unique ID for the app associated with the form summary.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The form's data source type.</p>
-    pub fn data_type(&self) -> std::option::Option<&crate::model::FormDataTypeConfig> {
+    pub fn data_type(&self) -> std::option::Option<& crate::model::FormDataTypeConfig> {
         self.data_type.as_ref()
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The type of operation to perform on the form.</p>
-    pub fn form_action_type(&self) -> std::option::Option<&crate::model::FormActionType> {
+    pub fn form_action_type(&self) -> std::option::Option<& crate::model::FormActionType> {
         self.form_action_type.as_ref()
     }
     /// <p>The ID of the form.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the form.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`FormSummary`](crate::model::FormSummary).
 pub mod form_summary {
-
+    
     /// A builder for [`FormSummary`](crate::model::FormSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2912,8 +2715,7 @@ pub mod form_summary {
         }
         /// <p>The unique ID for the app associated with the form summary.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The form's data source type.</p>
         pub fn data_type(mut self, input: crate::model::FormDataTypeConfig) -> Self {
@@ -2921,12 +2723,8 @@ pub mod form_summary {
             self
         }
         /// <p>The form's data source type.</p>
-        pub fn set_data_type(
-            mut self,
-            input: std::option::Option<crate::model::FormDataTypeConfig>,
-        ) -> Self {
-            self.data_type = input;
-            self
+        pub fn set_data_type(mut self, input: std::option::Option<crate::model::FormDataTypeConfig>) -> Self {
+            self.data_type = input; self
         }
         /// <p>The name of the backend environment that is part of the Amplify app.</p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2934,12 +2732,8 @@ pub mod form_summary {
             self
         }
         /// <p>The name of the backend environment that is part of the Amplify app.</p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
         /// <p>The type of operation to perform on the form.</p>
         pub fn form_action_type(mut self, input: crate::model::FormActionType) -> Self {
@@ -2947,12 +2741,8 @@ pub mod form_summary {
             self
         }
         /// <p>The type of operation to perform on the form.</p>
-        pub fn set_form_action_type(
-            mut self,
-            input: std::option::Option<crate::model::FormActionType>,
-        ) -> Self {
-            self.form_action_type = input;
-            self
+        pub fn set_form_action_type(mut self, input: std::option::Option<crate::model::FormActionType>) -> Self {
+            self.form_action_type = input; self
         }
         /// <p>The ID of the form.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2961,8 +2751,7 @@ pub mod form_summary {
         }
         /// <p>The ID of the form.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the form.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2971,21 +2760,28 @@ pub mod form_summary {
         }
         /// <p>The name of the form.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`FormSummary`](crate::model::FormSummary).
         pub fn build(self) -> crate::model::FormSummary {
             crate::model::FormSummary {
-                app_id: self.app_id,
-                data_type: self.data_type,
-                environment_name: self.environment_name,
-                form_action_type: self.form_action_type,
-                id: self.id,
-                name: self.name,
+                app_id: self.app_id
+                ,
+                data_type: self.data_type
+                ,
+                environment_name: self.environment_name
+                ,
+                form_action_type: self.form_action_type
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl FormSummary {
     /// Creates a new builder-style object to manufacture [`FormSummary`](crate::model::FormSummary).
@@ -2997,7 +2793,7 @@ impl FormSummary {
 /// <p>Represents all of the information that is required to create a form.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFormData {
+pub struct CreateFormData  {
     /// <p>The name of the form.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3009,17 +2805,13 @@ pub struct CreateFormData {
     pub form_action_type: std::option::Option<crate::model::FormActionType>,
     /// <p>The configuration information for the form's fields.</p>
     #[doc(hidden)]
-    pub fields: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
-    >,
+    pub fields: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FieldConfig>>,
     /// <p>The configuration for the form's style.</p>
     #[doc(hidden)]
     pub style: std::option::Option<crate::model::FormStyle>,
     /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
     #[doc(hidden)]
-    pub sectional_elements: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
-    >,
+    pub sectional_elements: std::option::Option<std::collections::HashMap<std::string::String, crate::model::SectionalElement>>,
     /// <p>The schema version of the form.</p>
     #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
@@ -3028,79 +2820,61 @@ pub struct CreateFormData {
     pub cta: std::option::Option<crate::model::FormCta>,
     /// <p>One or more key-value pairs to use when tagging the form data.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateFormData {
     /// <p>The name of the form.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of data source to use to create the form.</p>
-    pub fn data_type(&self) -> std::option::Option<&crate::model::FormDataTypeConfig> {
+    pub fn data_type(&self) -> std::option::Option<& crate::model::FormDataTypeConfig> {
         self.data_type.as_ref()
     }
     /// <p>Specifies whether to perform a create or update action on the form.</p>
-    pub fn form_action_type(&self) -> std::option::Option<&crate::model::FormActionType> {
+    pub fn form_action_type(&self) -> std::option::Option<& crate::model::FormActionType> {
         self.form_action_type.as_ref()
     }
     /// <p>The configuration information for the form's fields.</p>
-    pub fn fields(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
-    > {
+    pub fn fields(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::FieldConfig>> {
         self.fields.as_ref()
     }
     /// <p>The configuration for the form's style.</p>
-    pub fn style(&self) -> std::option::Option<&crate::model::FormStyle> {
+    pub fn style(&self) -> std::option::Option<& crate::model::FormStyle> {
         self.style.as_ref()
     }
     /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
-    pub fn sectional_elements(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
-    > {
+    pub fn sectional_elements(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::SectionalElement>> {
         self.sectional_elements.as_ref()
     }
     /// <p>The schema version of the form.</p>
-    pub fn schema_version(&self) -> std::option::Option<&str> {
+    pub fn schema_version(&self) -> std::option::Option<& str> {
         self.schema_version.as_deref()
     }
     /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
-    pub fn cta(&self) -> std::option::Option<&crate::model::FormCta> {
+    pub fn cta(&self) -> std::option::Option<& crate::model::FormCta> {
         self.cta.as_ref()
     }
     /// <p>One or more key-value pairs to use when tagging the form data.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`CreateFormData`](crate::model::CreateFormData).
 pub mod create_form_data {
-
+    
     /// A builder for [`CreateFormData`](crate::model::CreateFormData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) data_type: std::option::Option<crate::model::FormDataTypeConfig>,
         pub(crate) form_action_type: std::option::Option<crate::model::FormActionType>,
-        pub(crate) fields: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
-        >,
+        pub(crate) fields: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FieldConfig>>,
         pub(crate) style: std::option::Option<crate::model::FormStyle>,
-        pub(crate) sectional_elements: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
-        >,
+        pub(crate) sectional_elements: std::option::Option<std::collections::HashMap<std::string::String, crate::model::SectionalElement>>,
         pub(crate) schema_version: std::option::Option<std::string::String>,
         pub(crate) cta: std::option::Option<crate::model::FormCta>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The name of the form.</p>
@@ -3110,8 +2884,7 @@ pub mod create_form_data {
         }
         /// <p>The name of the form.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of data source to use to create the form.</p>
         pub fn data_type(mut self, input: crate::model::FormDataTypeConfig) -> Self {
@@ -3119,12 +2892,8 @@ pub mod create_form_data {
             self
         }
         /// <p>The type of data source to use to create the form.</p>
-        pub fn set_data_type(
-            mut self,
-            input: std::option::Option<crate::model::FormDataTypeConfig>,
-        ) -> Self {
-            self.data_type = input;
-            self
+        pub fn set_data_type(mut self, input: std::option::Option<crate::model::FormDataTypeConfig>) -> Self {
+            self.data_type = input; self
         }
         /// <p>Specifies whether to perform a create or update action on the form.</p>
         pub fn form_action_type(mut self, input: crate::model::FormActionType) -> Self {
@@ -3132,37 +2901,23 @@ pub mod create_form_data {
             self
         }
         /// <p>Specifies whether to perform a create or update action on the form.</p>
-        pub fn set_form_action_type(
-            mut self,
-            input: std::option::Option<crate::model::FormActionType>,
-        ) -> Self {
-            self.form_action_type = input;
-            self
+        pub fn set_form_action_type(mut self, input: std::option::Option<crate::model::FormActionType>) -> Self {
+            self.form_action_type = input; self
         }
         /// Adds a key-value pair to `fields`.
         ///
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>The configuration information for the form's fields.</p>
-        pub fn fields(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::FieldConfig,
-        ) -> Self {
+        pub fn fields(mut self, k: impl Into<std::string::String>, v: crate::model::FieldConfig) -> Self {
             let mut hash_map = self.fields.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.fields = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.fields = Some(hash_map);
+                            self
         }
         /// <p>The configuration information for the form's fields.</p>
-        pub fn set_fields(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
-            >,
-        ) -> Self {
-            self.fields = input;
-            self
+        pub fn set_fields(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FieldConfig>>) -> Self {
+            self.fields = input; self
         }
         /// <p>The configuration for the form's style.</p>
         pub fn style(mut self, input: crate::model::FormStyle) -> Self {
@@ -3171,33 +2926,22 @@ pub mod create_form_data {
         }
         /// <p>The configuration for the form's style.</p>
         pub fn set_style(mut self, input: std::option::Option<crate::model::FormStyle>) -> Self {
-            self.style = input;
-            self
+            self.style = input; self
         }
         /// Adds a key-value pair to `sectional_elements`.
         ///
         /// To override the contents of this collection use [`set_sectional_elements`](Self::set_sectional_elements).
         ///
         /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
-        pub fn sectional_elements(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::SectionalElement,
-        ) -> Self {
+        pub fn sectional_elements(mut self, k: impl Into<std::string::String>, v: crate::model::SectionalElement) -> Self {
             let mut hash_map = self.sectional_elements.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.sectional_elements = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.sectional_elements = Some(hash_map);
+                            self
         }
         /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
-        pub fn set_sectional_elements(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
-            >,
-        ) -> Self {
-            self.sectional_elements = input;
-            self
+        pub fn set_sectional_elements(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::SectionalElement>>) -> Self {
+            self.sectional_elements = input; self
         }
         /// <p>The schema version of the form.</p>
         pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3205,12 +2949,8 @@ pub mod create_form_data {
             self
         }
         /// <p>The schema version of the form.</p>
-        pub fn set_schema_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schema_version = input;
-            self
+        pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_version = input; self
         }
         /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
         pub fn cta(mut self, input: crate::model::FormCta) -> Self {
@@ -3219,49 +2959,49 @@ pub mod create_form_data {
         }
         /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
         pub fn set_cta(mut self, input: std::option::Option<crate::model::FormCta>) -> Self {
-            self.cta = input;
-            self
+            self.cta = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more key-value pairs to use when tagging the form data.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>One or more key-value pairs to use when tagging the form data.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateFormData`](crate::model::CreateFormData).
         pub fn build(self) -> crate::model::CreateFormData {
             crate::model::CreateFormData {
-                name: self.name,
-                data_type: self.data_type,
-                form_action_type: self.form_action_type,
-                fields: self.fields,
-                style: self.style,
-                sectional_elements: self.sectional_elements,
-                schema_version: self.schema_version,
-                cta: self.cta,
-                tags: self.tags,
+                name: self.name
+                ,
+                data_type: self.data_type
+                ,
+                form_action_type: self.form_action_type
+                ,
+                fields: self.fields
+                ,
+                style: self.style
+                ,
+                sectional_elements: self.sectional_elements
+                ,
+                schema_version: self.schema_version
+                ,
+                cta: self.cta
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFormData {
     /// Creates a new builder-style object to manufacture [`CreateFormData`](crate::model::CreateFormData).
@@ -3273,7 +3013,7 @@ impl CreateFormData {
 /// <p>Updates and saves all of the information about a form, based on form ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFormData {
+pub struct UpdateFormData  {
     /// <p>The name of the form.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3285,17 +3025,13 @@ pub struct UpdateFormData {
     pub form_action_type: std::option::Option<crate::model::FormActionType>,
     /// <p>The configuration information for the form's fields.</p>
     #[doc(hidden)]
-    pub fields: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
-    >,
+    pub fields: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FieldConfig>>,
     /// <p>The configuration for the form's style.</p>
     #[doc(hidden)]
     pub style: std::option::Option<crate::model::FormStyle>,
     /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
     #[doc(hidden)]
-    pub sectional_elements: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
-    >,
+    pub sectional_elements: std::option::Option<std::collections::HashMap<std::string::String, crate::model::SectionalElement>>,
     /// <p>The schema version of the form.</p>
     #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
@@ -3305,62 +3041,50 @@ pub struct UpdateFormData {
 }
 impl UpdateFormData {
     /// <p>The name of the form.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of data source to use to create the form.</p>
-    pub fn data_type(&self) -> std::option::Option<&crate::model::FormDataTypeConfig> {
+    pub fn data_type(&self) -> std::option::Option<& crate::model::FormDataTypeConfig> {
         self.data_type.as_ref()
     }
     /// <p>Specifies whether to perform a create or update action on the form.</p>
-    pub fn form_action_type(&self) -> std::option::Option<&crate::model::FormActionType> {
+    pub fn form_action_type(&self) -> std::option::Option<& crate::model::FormActionType> {
         self.form_action_type.as_ref()
     }
     /// <p>The configuration information for the form's fields.</p>
-    pub fn fields(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
-    > {
+    pub fn fields(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::FieldConfig>> {
         self.fields.as_ref()
     }
     /// <p>The configuration for the form's style.</p>
-    pub fn style(&self) -> std::option::Option<&crate::model::FormStyle> {
+    pub fn style(&self) -> std::option::Option<& crate::model::FormStyle> {
         self.style.as_ref()
     }
     /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
-    pub fn sectional_elements(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
-    > {
+    pub fn sectional_elements(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::SectionalElement>> {
         self.sectional_elements.as_ref()
     }
     /// <p>The schema version of the form.</p>
-    pub fn schema_version(&self) -> std::option::Option<&str> {
+    pub fn schema_version(&self) -> std::option::Option<& str> {
         self.schema_version.as_deref()
     }
     /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
-    pub fn cta(&self) -> std::option::Option<&crate::model::FormCta> {
+    pub fn cta(&self) -> std::option::Option<& crate::model::FormCta> {
         self.cta.as_ref()
     }
 }
 /// See [`UpdateFormData`](crate::model::UpdateFormData).
 pub mod update_form_data {
-
+    
     /// A builder for [`UpdateFormData`](crate::model::UpdateFormData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) data_type: std::option::Option<crate::model::FormDataTypeConfig>,
         pub(crate) form_action_type: std::option::Option<crate::model::FormActionType>,
-        pub(crate) fields: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
-        >,
+        pub(crate) fields: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FieldConfig>>,
         pub(crate) style: std::option::Option<crate::model::FormStyle>,
-        pub(crate) sectional_elements: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
-        >,
+        pub(crate) sectional_elements: std::option::Option<std::collections::HashMap<std::string::String, crate::model::SectionalElement>>,
         pub(crate) schema_version: std::option::Option<std::string::String>,
         pub(crate) cta: std::option::Option<crate::model::FormCta>,
     }
@@ -3372,8 +3096,7 @@ pub mod update_form_data {
         }
         /// <p>The name of the form.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of data source to use to create the form.</p>
         pub fn data_type(mut self, input: crate::model::FormDataTypeConfig) -> Self {
@@ -3381,12 +3104,8 @@ pub mod update_form_data {
             self
         }
         /// <p>The type of data source to use to create the form.</p>
-        pub fn set_data_type(
-            mut self,
-            input: std::option::Option<crate::model::FormDataTypeConfig>,
-        ) -> Self {
-            self.data_type = input;
-            self
+        pub fn set_data_type(mut self, input: std::option::Option<crate::model::FormDataTypeConfig>) -> Self {
+            self.data_type = input; self
         }
         /// <p>Specifies whether to perform a create or update action on the form.</p>
         pub fn form_action_type(mut self, input: crate::model::FormActionType) -> Self {
@@ -3394,37 +3113,23 @@ pub mod update_form_data {
             self
         }
         /// <p>Specifies whether to perform a create or update action on the form.</p>
-        pub fn set_form_action_type(
-            mut self,
-            input: std::option::Option<crate::model::FormActionType>,
-        ) -> Self {
-            self.form_action_type = input;
-            self
+        pub fn set_form_action_type(mut self, input: std::option::Option<crate::model::FormActionType>) -> Self {
+            self.form_action_type = input; self
         }
         /// Adds a key-value pair to `fields`.
         ///
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>The configuration information for the form's fields.</p>
-        pub fn fields(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::FieldConfig,
-        ) -> Self {
+        pub fn fields(mut self, k: impl Into<std::string::String>, v: crate::model::FieldConfig) -> Self {
             let mut hash_map = self.fields.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.fields = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.fields = Some(hash_map);
+                            self
         }
         /// <p>The configuration information for the form's fields.</p>
-        pub fn set_fields(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::FieldConfig>,
-            >,
-        ) -> Self {
-            self.fields = input;
-            self
+        pub fn set_fields(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FieldConfig>>) -> Self {
+            self.fields = input; self
         }
         /// <p>The configuration for the form's style.</p>
         pub fn style(mut self, input: crate::model::FormStyle) -> Self {
@@ -3433,33 +3138,22 @@ pub mod update_form_data {
         }
         /// <p>The configuration for the form's style.</p>
         pub fn set_style(mut self, input: std::option::Option<crate::model::FormStyle>) -> Self {
-            self.style = input;
-            self
+            self.style = input; self
         }
         /// Adds a key-value pair to `sectional_elements`.
         ///
         /// To override the contents of this collection use [`set_sectional_elements`](Self::set_sectional_elements).
         ///
         /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
-        pub fn sectional_elements(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::SectionalElement,
-        ) -> Self {
+        pub fn sectional_elements(mut self, k: impl Into<std::string::String>, v: crate::model::SectionalElement) -> Self {
             let mut hash_map = self.sectional_elements.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.sectional_elements = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.sectional_elements = Some(hash_map);
+                            self
         }
         /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
-        pub fn set_sectional_elements(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::SectionalElement>,
-            >,
-        ) -> Self {
-            self.sectional_elements = input;
-            self
+        pub fn set_sectional_elements(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::SectionalElement>>) -> Self {
+            self.sectional_elements = input; self
         }
         /// <p>The schema version of the form.</p>
         pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3467,12 +3161,8 @@ pub mod update_form_data {
             self
         }
         /// <p>The schema version of the form.</p>
-        pub fn set_schema_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schema_version = input;
-            self
+        pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_version = input; self
         }
         /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
         pub fn cta(mut self, input: crate::model::FormCta) -> Self {
@@ -3481,23 +3171,32 @@ pub mod update_form_data {
         }
         /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
         pub fn set_cta(mut self, input: std::option::Option<crate::model::FormCta>) -> Self {
-            self.cta = input;
-            self
+            self.cta = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFormData`](crate::model::UpdateFormData).
         pub fn build(self) -> crate::model::UpdateFormData {
             crate::model::UpdateFormData {
-                name: self.name,
-                data_type: self.data_type,
-                form_action_type: self.form_action_type,
-                fields: self.fields,
-                style: self.style,
-                sectional_elements: self.sectional_elements,
-                schema_version: self.schema_version,
-                cta: self.cta,
+                name: self.name
+                ,
+                data_type: self.data_type
+                ,
+                form_action_type: self.form_action_type
+                ,
+                fields: self.fields
+                ,
+                style: self.style
+                ,
+                sectional_elements: self.sectional_elements
+                ,
+                schema_version: self.schema_version
+                ,
+                cta: self.cta
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFormData {
     /// Creates a new builder-style object to manufacture [`UpdateFormData`](crate::model::UpdateFormData).
@@ -3509,7 +3208,7 @@ impl UpdateFormData {
 /// <p>Contains the configuration settings for a user interface (UI) element for an Amplify app. A component is configured as a primary, stand-alone UI element. Use <code>ComponentChild</code> to configure an instance of a <code>Component</code>. A <code>ComponentChild</code> instance inherits the configuration of the main <code>Component</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Component {
+pub struct Component  {
     /// <p>The unique ID of the Amplify app associated with the component.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -3530,9 +3229,7 @@ pub struct Component {
     pub component_type: std::option::Option<std::string::String>,
     /// <p>Describes the component's properties. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
     #[doc(hidden)]
-    pub properties: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ComponentProperty>,
-    >,
+    pub properties: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentProperty>>,
     /// <p>A list of the component's <code>ComponentChild</code> instances.</p>
     #[doc(hidden)]
     pub children: std::option::Option<std::vec::Vec<crate::model::ComponentChild>>,
@@ -3541,26 +3238,14 @@ pub struct Component {
     pub variants: std::option::Option<std::vec::Vec<crate::model::ComponentVariant>>,
     /// <p>Describes the component's properties that can be overriden in a customized instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
     #[doc(hidden)]
-    pub overrides: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    >,
-    /// <p>The information to connect a component's properties to data at runtime. You can't specify <code>tags</code> as a valid property for <code>bindingProperties</code>.</p>
+    pub overrides: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::string::String>>>,
+    /// <p>The information to connect a component's properties to data at runtime. You can't specify <code>tags</code> as a valid property for <code>bindingProperties</code>.</p> 
     /// <p></p>
     #[doc(hidden)]
-    pub binding_properties: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            crate::model::ComponentBindingPropertiesValue,
-        >,
-    >,
+    pub binding_properties: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentBindingPropertiesValue>>,
     /// <p>The data binding configuration for the component's properties. Use this for a collection component. You can't specify <code>tags</code> as a valid property for <code>collectionProperties</code>.</p>
     #[doc(hidden)]
-    pub collection_properties: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ComponentDataConfiguration>,
-    >,
+    pub collection_properties: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentDataConfiguration>>,
     /// <p>The time that the component was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -3569,120 +3254,88 @@ pub struct Component {
     pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>One or more key-value pairs to use when tagging the component.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Describes the events that can be raised on the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
     #[doc(hidden)]
-    pub events: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ComponentEvent>,
-    >,
+    pub events: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentEvent>>,
     /// <p>The schema version of the component when it was imported.</p>
     #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
 }
 impl Component {
     /// <p>The unique ID of the Amplify app associated with the component.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The unique ID of the component in its original source system, such as Figma.</p>
-    pub fn source_id(&self) -> std::option::Option<&str> {
+    pub fn source_id(&self) -> std::option::Option<& str> {
         self.source_id.as_deref()
     }
     /// <p>The unique ID of the component.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the component. This can be an Amplify custom UI component or another custom component.</p>
-    pub fn component_type(&self) -> std::option::Option<&str> {
+    pub fn component_type(&self) -> std::option::Option<& str> {
         self.component_type.as_deref()
     }
     /// <p>Describes the component's properties. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
-    pub fn properties(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ComponentProperty>,
-    > {
+    pub fn properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ComponentProperty>> {
         self.properties.as_ref()
     }
     /// <p>A list of the component's <code>ComponentChild</code> instances.</p>
-    pub fn children(&self) -> std::option::Option<&[crate::model::ComponentChild]> {
+    pub fn children(&self) -> std::option::Option<& [crate::model::ComponentChild]> {
         self.children.as_deref()
     }
     /// <p>A list of the component's variants. A variant is a unique style configuration of a main component.</p>
-    pub fn variants(&self) -> std::option::Option<&[crate::model::ComponentVariant]> {
+    pub fn variants(&self) -> std::option::Option<& [crate::model::ComponentVariant]> {
         self.variants.as_deref()
     }
     /// <p>Describes the component's properties that can be overriden in a customized instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
-    pub fn overrides(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    > {
+    pub fn overrides(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::string::String>>> {
         self.overrides.as_ref()
     }
-    /// <p>The information to connect a component's properties to data at runtime. You can't specify <code>tags</code> as a valid property for <code>bindingProperties</code>.</p>
+    /// <p>The information to connect a component's properties to data at runtime. You can't specify <code>tags</code> as a valid property for <code>bindingProperties</code>.</p> 
     /// <p></p>
-    pub fn binding_properties(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            crate::model::ComponentBindingPropertiesValue,
-        >,
-    > {
+    pub fn binding_properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ComponentBindingPropertiesValue>> {
         self.binding_properties.as_ref()
     }
     /// <p>The data binding configuration for the component's properties. Use this for a collection component. You can't specify <code>tags</code> as a valid property for <code>collectionProperties</code>.</p>
-    pub fn collection_properties(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ComponentDataConfiguration>,
-    > {
+    pub fn collection_properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ComponentDataConfiguration>> {
         self.collection_properties.as_ref()
     }
     /// <p>The time that the component was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time that the component was modified.</p>
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
     /// <p>One or more key-value pairs to use when tagging the component.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Describes the events that can be raised on the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-    pub fn events(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ComponentEvent>,
-    > {
+    pub fn events(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ComponentEvent>> {
         self.events.as_ref()
     }
     /// <p>The schema version of the component when it was imported.</p>
-    pub fn schema_version(&self) -> std::option::Option<&str> {
+    pub fn schema_version(&self) -> std::option::Option<& str> {
         self.schema_version.as_deref()
     }
 }
 /// See [`Component`](crate::model::Component).
 pub mod component {
-
+    
     /// A builder for [`Component`](crate::model::Component).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3692,37 +3345,16 @@ pub mod component {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) component_type: std::option::Option<std::string::String>,
-        pub(crate) properties: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ComponentProperty>,
-        >,
+        pub(crate) properties: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentProperty>>,
         pub(crate) children: std::option::Option<std::vec::Vec<crate::model::ComponentChild>>,
         pub(crate) variants: std::option::Option<std::vec::Vec<crate::model::ComponentVariant>>,
-        pub(crate) overrides: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        >,
-        pub(crate) binding_properties: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                crate::model::ComponentBindingPropertiesValue,
-            >,
-        >,
-        pub(crate) collection_properties: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                crate::model::ComponentDataConfiguration,
-            >,
-        >,
+        pub(crate) overrides: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::string::String>>>,
+        pub(crate) binding_properties: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentBindingPropertiesValue>>,
+        pub(crate) collection_properties: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentDataConfiguration>>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) modified_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) events: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ComponentEvent>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) events: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentEvent>>,
         pub(crate) schema_version: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3733,8 +3365,7 @@ pub mod component {
         }
         /// <p>The unique ID of the Amplify app associated with the component.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment that is a part of the Amplify app.</p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3742,12 +3373,8 @@ pub mod component {
             self
         }
         /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
         /// <p>The unique ID of the component in its original source system, such as Figma.</p>
         pub fn source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3756,8 +3383,7 @@ pub mod component {
         }
         /// <p>The unique ID of the component in its original source system, such as Figma.</p>
         pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_id = input;
-            self
+            self.source_id = input; self
         }
         /// <p>The unique ID of the component.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3766,8 +3392,7 @@ pub mod component {
         }
         /// <p>The unique ID of the component.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the component.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3776,8 +3401,7 @@ pub mod component {
         }
         /// <p>The name of the component.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of the component. This can be an Amplify custom UI component or another custom component.</p>
         pub fn component_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3785,37 +3409,23 @@ pub mod component {
             self
         }
         /// <p>The type of the component. This can be an Amplify custom UI component or another custom component.</p>
-        pub fn set_component_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_type = input;
-            self
+        pub fn set_component_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_type = input; self
         }
         /// Adds a key-value pair to `properties`.
         ///
         /// To override the contents of this collection use [`set_properties`](Self::set_properties).
         ///
         /// <p>Describes the component's properties. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
-        pub fn properties(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ComponentProperty,
-        ) -> Self {
+        pub fn properties(mut self, k: impl Into<std::string::String>, v: crate::model::ComponentProperty) -> Self {
             let mut hash_map = self.properties.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.properties = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.properties = Some(hash_map);
+                            self
         }
         /// <p>Describes the component's properties. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
-        pub fn set_properties(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::ComponentProperty>,
-            >,
-        ) -> Self {
-            self.properties = input;
-            self
+        pub fn set_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentProperty>>) -> Self {
+            self.properties = input; self
         }
         /// Appends an item to `children`.
         ///
@@ -3824,17 +3434,13 @@ pub mod component {
         /// <p>A list of the component's <code>ComponentChild</code> instances.</p>
         pub fn children(mut self, input: crate::model::ComponentChild) -> Self {
             let mut v = self.children.unwrap_or_default();
-            v.push(input);
-            self.children = Some(v);
-            self
+                            v.push(input);
+                            self.children = Some(v);
+                            self
         }
         /// <p>A list of the component's <code>ComponentChild</code> instances.</p>
-        pub fn set_children(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ComponentChild>>,
-        ) -> Self {
-            self.children = input;
-            self
+        pub fn set_children(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComponentChild>>) -> Self {
+            self.children = input; self
         }
         /// Appends an item to `variants`.
         ///
@@ -3843,103 +3449,60 @@ pub mod component {
         /// <p>A list of the component's variants. A variant is a unique style configuration of a main component.</p>
         pub fn variants(mut self, input: crate::model::ComponentVariant) -> Self {
             let mut v = self.variants.unwrap_or_default();
-            v.push(input);
-            self.variants = Some(v);
-            self
+                            v.push(input);
+                            self.variants = Some(v);
+                            self
         }
         /// <p>A list of the component's variants. A variant is a unique style configuration of a main component.</p>
-        pub fn set_variants(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ComponentVariant>>,
-        ) -> Self {
-            self.variants = input;
-            self
+        pub fn set_variants(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComponentVariant>>) -> Self {
+            self.variants = input; self
         }
         /// Adds a key-value pair to `overrides`.
         ///
         /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).
         ///
         /// <p>Describes the component's properties that can be overriden in a customized instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
-        pub fn overrides(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::collections::HashMap<std::string::String, std::string::String>,
-        ) -> Self {
+        pub fn overrides(mut self, k: impl Into<std::string::String>, v: std::collections::HashMap<std::string::String, std::string::String>) -> Self {
             let mut hash_map = self.overrides.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.overrides = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.overrides = Some(hash_map);
+                            self
         }
         /// <p>Describes the component's properties that can be overriden in a customized instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
-        pub fn set_overrides(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::collections::HashMap<std::string::String, std::string::String>,
-                >,
-            >,
-        ) -> Self {
-            self.overrides = input;
-            self
+        pub fn set_overrides(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::string::String>>>) -> Self {
+            self.overrides = input; self
         }
         /// Adds a key-value pair to `binding_properties`.
         ///
         /// To override the contents of this collection use [`set_binding_properties`](Self::set_binding_properties).
         ///
-        /// <p>The information to connect a component's properties to data at runtime. You can't specify <code>tags</code> as a valid property for <code>bindingProperties</code>.</p>
+        /// <p>The information to connect a component's properties to data at runtime. You can't specify <code>tags</code> as a valid property for <code>bindingProperties</code>.</p> 
         /// <p></p>
-        pub fn binding_properties(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ComponentBindingPropertiesValue,
-        ) -> Self {
+        pub fn binding_properties(mut self, k: impl Into<std::string::String>, v: crate::model::ComponentBindingPropertiesValue) -> Self {
             let mut hash_map = self.binding_properties.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.binding_properties = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.binding_properties = Some(hash_map);
+                            self
         }
-        /// <p>The information to connect a component's properties to data at runtime. You can't specify <code>tags</code> as a valid property for <code>bindingProperties</code>.</p>
+        /// <p>The information to connect a component's properties to data at runtime. You can't specify <code>tags</code> as a valid property for <code>bindingProperties</code>.</p> 
         /// <p></p>
-        pub fn set_binding_properties(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::ComponentBindingPropertiesValue,
-                >,
-            >,
-        ) -> Self {
-            self.binding_properties = input;
-            self
+        pub fn set_binding_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentBindingPropertiesValue>>) -> Self {
+            self.binding_properties = input; self
         }
         /// Adds a key-value pair to `collection_properties`.
         ///
         /// To override the contents of this collection use [`set_collection_properties`](Self::set_collection_properties).
         ///
         /// <p>The data binding configuration for the component's properties. Use this for a collection component. You can't specify <code>tags</code> as a valid property for <code>collectionProperties</code>.</p>
-        pub fn collection_properties(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ComponentDataConfiguration,
-        ) -> Self {
+        pub fn collection_properties(mut self, k: impl Into<std::string::String>, v: crate::model::ComponentDataConfiguration) -> Self {
             let mut hash_map = self.collection_properties.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.collection_properties = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.collection_properties = Some(hash_map);
+                            self
         }
         /// <p>The data binding configuration for the component's properties. Use this for a collection component. You can't specify <code>tags</code> as a valid property for <code>collectionProperties</code>.</p>
-        pub fn set_collection_properties(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::ComponentDataConfiguration,
-                >,
-            >,
-        ) -> Self {
-            self.collection_properties = input;
-            self
+        pub fn set_collection_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentDataConfiguration>>) -> Self {
+            self.collection_properties = input; self
         }
         /// <p>The time that the component was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3947,12 +3510,8 @@ pub mod component {
             self
         }
         /// <p>The time that the component was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The time that the component was modified.</p>
         pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3960,62 +3519,38 @@ pub mod component {
             self
         }
         /// <p>The time that the component was modified.</p>
-        pub fn set_modified_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.modified_at = input;
-            self
+        pub fn set_modified_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.modified_at = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more key-value pairs to use when tagging the component.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>One or more key-value pairs to use when tagging the component.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Adds a key-value pair to `events`.
         ///
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>Describes the events that can be raised on the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-        pub fn events(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ComponentEvent,
-        ) -> Self {
+        pub fn events(mut self, k: impl Into<std::string::String>, v: crate::model::ComponentEvent) -> Self {
             let mut hash_map = self.events.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.events = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.events = Some(hash_map);
+                            self
         }
         /// <p>Describes the events that can be raised on the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::ComponentEvent>,
-            >,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentEvent>>) -> Self {
+            self.events = input; self
         }
         /// <p>The schema version of the component when it was imported.</p>
         pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4023,36 +3558,51 @@ pub mod component {
             self
         }
         /// <p>The schema version of the component when it was imported.</p>
-        pub fn set_schema_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schema_version = input;
-            self
+        pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_version = input; self
         }
         /// Consumes the builder and constructs a [`Component`](crate::model::Component).
         pub fn build(self) -> crate::model::Component {
             crate::model::Component {
-                app_id: self.app_id,
-                environment_name: self.environment_name,
-                source_id: self.source_id,
-                id: self.id,
-                name: self.name,
-                component_type: self.component_type,
-                properties: self.properties,
-                children: self.children,
-                variants: self.variants,
-                overrides: self.overrides,
-                binding_properties: self.binding_properties,
-                collection_properties: self.collection_properties,
-                created_at: self.created_at,
-                modified_at: self.modified_at,
-                tags: self.tags,
-                events: self.events,
-                schema_version: self.schema_version,
+                app_id: self.app_id
+                ,
+                environment_name: self.environment_name
+                ,
+                source_id: self.source_id
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                component_type: self.component_type
+                ,
+                properties: self.properties
+                ,
+                children: self.children
+                ,
+                variants: self.variants
+                ,
+                overrides: self.overrides
+                ,
+                binding_properties: self.binding_properties
+                ,
+                collection_properties: self.collection_properties
+                ,
+                created_at: self.created_at
+                ,
+                modified_at: self.modified_at
+                ,
+                tags: self.tags
+                ,
+                events: self.events
+                ,
+                schema_version: self.schema_version
+                ,
             }
         }
     }
+    
+    
 }
 impl Component {
     /// Creates a new builder-style object to manufacture [`Component`](crate::model::Component).
@@ -4064,7 +3614,7 @@ impl Component {
 /// <p>Describes the configuration of an event. You can bind an event and a corresponding action to a <code>Component</code> or a <code>ComponentChild</code>. A button click is an example of an event. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentEvent {
+pub struct ComponentEvent  {
     /// <p>The action to perform when a specific event is raised.</p>
     #[doc(hidden)]
     pub action: std::option::Option<std::string::String>,
@@ -4077,21 +3627,21 @@ pub struct ComponentEvent {
 }
 impl ComponentEvent {
     /// <p>The action to perform when a specific event is raised.</p>
-    pub fn action(&self) -> std::option::Option<&str> {
+    pub fn action(&self) -> std::option::Option<& str> {
         self.action.as_deref()
     }
     /// <p>Describes information about the action.</p>
-    pub fn parameters(&self) -> std::option::Option<&crate::model::ActionParameters> {
+    pub fn parameters(&self) -> std::option::Option<& crate::model::ActionParameters> {
         self.parameters.as_ref()
     }
     /// <p>Binds an event to an action on a component. When you specify a <code>bindingEvent</code>, the event is called when the action is performed.</p>
-    pub fn binding_event(&self) -> std::option::Option<&str> {
+    pub fn binding_event(&self) -> std::option::Option<& str> {
         self.binding_event.as_deref()
     }
 }
 /// See [`ComponentEvent`](crate::model::ComponentEvent).
 pub mod component_event {
-
+    
     /// A builder for [`ComponentEvent`](crate::model::ComponentEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4107,8 +3657,7 @@ pub mod component_event {
         }
         /// <p>The action to perform when a specific event is raised.</p>
         pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.action = input;
-            self
+            self.action = input; self
         }
         /// <p>Describes information about the action.</p>
         pub fn parameters(mut self, input: crate::model::ActionParameters) -> Self {
@@ -4116,12 +3665,8 @@ pub mod component_event {
             self
         }
         /// <p>Describes information about the action.</p>
-        pub fn set_parameters(
-            mut self,
-            input: std::option::Option<crate::model::ActionParameters>,
-        ) -> Self {
-            self.parameters = input;
-            self
+        pub fn set_parameters(mut self, input: std::option::Option<crate::model::ActionParameters>) -> Self {
+            self.parameters = input; self
         }
         /// <p>Binds an event to an action on a component. When you specify a <code>bindingEvent</code>, the event is called when the action is performed.</p>
         pub fn binding_event(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4129,22 +3674,23 @@ pub mod component_event {
             self
         }
         /// <p>Binds an event to an action on a component. When you specify a <code>bindingEvent</code>, the event is called when the action is performed.</p>
-        pub fn set_binding_event(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.binding_event = input;
-            self
+        pub fn set_binding_event(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.binding_event = input; self
         }
         /// Consumes the builder and constructs a [`ComponentEvent`](crate::model::ComponentEvent).
         pub fn build(self) -> crate::model::ComponentEvent {
             crate::model::ComponentEvent {
-                action: self.action,
-                parameters: self.parameters,
-                binding_event: self.binding_event,
+                action: self.action
+                ,
+                parameters: self.parameters
+                ,
+                binding_event: self.binding_event
+                ,
             }
         }
     }
+    
+    
 }
 impl ComponentEvent {
     /// Creates a new builder-style object to manufacture [`ComponentEvent`](crate::model::ComponentEvent).
@@ -4156,7 +3702,7 @@ impl ComponentEvent {
 /// <p>Represents the event action configuration for an element of a <code>Component</code> or <code>ComponentChild</code>. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components. <code>ActionParameters</code> defines the action that is performed when an event occurs on the component.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionParameters {
+pub struct ActionParameters  {
     /// <p>The type of navigation action. Valid values are <code>url</code> and <code>anchor</code>. This value is required for a navigation action.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::ComponentProperty>,
@@ -4180,58 +3726,52 @@ pub struct ActionParameters {
     pub id: std::option::Option<crate::model::ComponentProperty>,
     /// <p>A dictionary of key-value pairs mapping Amplify Studio properties to fields in a data model. Use when the action performs an operation on an Amplify DataStore model.</p>
     #[doc(hidden)]
-    pub fields: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ComponentProperty>,
-    >,
+    pub fields: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentProperty>>,
     /// <p>A key-value pair that specifies the state property name and its initial value.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::MutationActionSetStateParameter>,
 }
 impl ActionParameters {
     /// <p>The type of navigation action. Valid values are <code>url</code> and <code>anchor</code>. This value is required for a navigation action.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ComponentProperty> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ComponentProperty> {
         self.r#type.as_ref()
     }
     /// <p>The URL to the location to open. Specify this value for a navigation action.</p>
-    pub fn url(&self) -> std::option::Option<&crate::model::ComponentProperty> {
+    pub fn url(&self) -> std::option::Option<& crate::model::ComponentProperty> {
         self.url.as_ref()
     }
     /// <p>The HTML anchor link to the location to open. Specify this value for a navigation action.</p>
-    pub fn anchor(&self) -> std::option::Option<&crate::model::ComponentProperty> {
+    pub fn anchor(&self) -> std::option::Option<& crate::model::ComponentProperty> {
         self.anchor.as_ref()
     }
     /// <p>The element within the same component to modify when the action occurs.</p>
-    pub fn target(&self) -> std::option::Option<&crate::model::ComponentProperty> {
+    pub fn target(&self) -> std::option::Option<& crate::model::ComponentProperty> {
         self.target.as_ref()
     }
     /// <p>Specifies whether the user should be signed out globally. Specify this value for an auth sign out action.</p>
-    pub fn global(&self) -> std::option::Option<&crate::model::ComponentProperty> {
+    pub fn global(&self) -> std::option::Option<& crate::model::ComponentProperty> {
         self.global.as_ref()
     }
     /// <p>The name of the data model. Use when the action performs an operation on an Amplify DataStore model.</p>
-    pub fn model(&self) -> std::option::Option<&str> {
+    pub fn model(&self) -> std::option::Option<& str> {
         self.model.as_deref()
     }
     /// <p>The unique ID of the component that the <code>ActionParameters</code> apply to.</p>
-    pub fn id(&self) -> std::option::Option<&crate::model::ComponentProperty> {
+    pub fn id(&self) -> std::option::Option<& crate::model::ComponentProperty> {
         self.id.as_ref()
     }
     /// <p>A dictionary of key-value pairs mapping Amplify Studio properties to fields in a data model. Use when the action performs an operation on an Amplify DataStore model.</p>
-    pub fn fields(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ComponentProperty>,
-    > {
+    pub fn fields(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ComponentProperty>> {
         self.fields.as_ref()
     }
     /// <p>A key-value pair that specifies the state property name and its initial value.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::MutationActionSetStateParameter> {
+    pub fn state(&self) -> std::option::Option<& crate::model::MutationActionSetStateParameter> {
         self.state.as_ref()
     }
 }
 /// See [`ActionParameters`](crate::model::ActionParameters).
 pub mod action_parameters {
-
+    
     /// A builder for [`ActionParameters`](crate::model::ActionParameters).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4242,9 +3782,7 @@ pub mod action_parameters {
         pub(crate) global: std::option::Option<crate::model::ComponentProperty>,
         pub(crate) model: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<crate::model::ComponentProperty>,
-        pub(crate) fields: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ComponentProperty>,
-        >,
+        pub(crate) fields: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentProperty>>,
         pub(crate) state: std::option::Option<crate::model::MutationActionSetStateParameter>,
     }
     impl Builder {
@@ -4254,12 +3792,8 @@ pub mod action_parameters {
             self
         }
         /// <p>The type of navigation action. Valid values are <code>url</code> and <code>anchor</code>. This value is required for a navigation action.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::ComponentProperty>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::ComponentProperty>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The URL to the location to open. Specify this value for a navigation action.</p>
         pub fn url(mut self, input: crate::model::ComponentProperty) -> Self {
@@ -4267,12 +3801,8 @@ pub mod action_parameters {
             self
         }
         /// <p>The URL to the location to open. Specify this value for a navigation action.</p>
-        pub fn set_url(
-            mut self,
-            input: std::option::Option<crate::model::ComponentProperty>,
-        ) -> Self {
-            self.url = input;
-            self
+        pub fn set_url(mut self, input: std::option::Option<crate::model::ComponentProperty>) -> Self {
+            self.url = input; self
         }
         /// <p>The HTML anchor link to the location to open. Specify this value for a navigation action.</p>
         pub fn anchor(mut self, input: crate::model::ComponentProperty) -> Self {
@@ -4280,12 +3810,8 @@ pub mod action_parameters {
             self
         }
         /// <p>The HTML anchor link to the location to open. Specify this value for a navigation action.</p>
-        pub fn set_anchor(
-            mut self,
-            input: std::option::Option<crate::model::ComponentProperty>,
-        ) -> Self {
-            self.anchor = input;
-            self
+        pub fn set_anchor(mut self, input: std::option::Option<crate::model::ComponentProperty>) -> Self {
+            self.anchor = input; self
         }
         /// <p>The element within the same component to modify when the action occurs.</p>
         pub fn target(mut self, input: crate::model::ComponentProperty) -> Self {
@@ -4293,12 +3819,8 @@ pub mod action_parameters {
             self
         }
         /// <p>The element within the same component to modify when the action occurs.</p>
-        pub fn set_target(
-            mut self,
-            input: std::option::Option<crate::model::ComponentProperty>,
-        ) -> Self {
-            self.target = input;
-            self
+        pub fn set_target(mut self, input: std::option::Option<crate::model::ComponentProperty>) -> Self {
+            self.target = input; self
         }
         /// <p>Specifies whether the user should be signed out globally. Specify this value for an auth sign out action.</p>
         pub fn global(mut self, input: crate::model::ComponentProperty) -> Self {
@@ -4306,12 +3828,8 @@ pub mod action_parameters {
             self
         }
         /// <p>Specifies whether the user should be signed out globally. Specify this value for an auth sign out action.</p>
-        pub fn set_global(
-            mut self,
-            input: std::option::Option<crate::model::ComponentProperty>,
-        ) -> Self {
-            self.global = input;
-            self
+        pub fn set_global(mut self, input: std::option::Option<crate::model::ComponentProperty>) -> Self {
+            self.global = input; self
         }
         /// <p>The name of the data model. Use when the action performs an operation on an Amplify DataStore model.</p>
         pub fn model(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4320,8 +3838,7 @@ pub mod action_parameters {
         }
         /// <p>The name of the data model. Use when the action performs an operation on an Amplify DataStore model.</p>
         pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model = input;
-            self
+            self.model = input; self
         }
         /// <p>The unique ID of the component that the <code>ActionParameters</code> apply to.</p>
         pub fn id(mut self, input: crate::model::ComponentProperty) -> Self {
@@ -4329,37 +3846,23 @@ pub mod action_parameters {
             self
         }
         /// <p>The unique ID of the component that the <code>ActionParameters</code> apply to.</p>
-        pub fn set_id(
-            mut self,
-            input: std::option::Option<crate::model::ComponentProperty>,
-        ) -> Self {
-            self.id = input;
-            self
+        pub fn set_id(mut self, input: std::option::Option<crate::model::ComponentProperty>) -> Self {
+            self.id = input; self
         }
         /// Adds a key-value pair to `fields`.
         ///
         /// To override the contents of this collection use [`set_fields`](Self::set_fields).
         ///
         /// <p>A dictionary of key-value pairs mapping Amplify Studio properties to fields in a data model. Use when the action performs an operation on an Amplify DataStore model.</p>
-        pub fn fields(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ComponentProperty,
-        ) -> Self {
+        pub fn fields(mut self, k: impl Into<std::string::String>, v: crate::model::ComponentProperty) -> Self {
             let mut hash_map = self.fields.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.fields = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.fields = Some(hash_map);
+                            self
         }
         /// <p>A dictionary of key-value pairs mapping Amplify Studio properties to fields in a data model. Use when the action performs an operation on an Amplify DataStore model.</p>
-        pub fn set_fields(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::ComponentProperty>,
-            >,
-        ) -> Self {
-            self.fields = input;
-            self
+        pub fn set_fields(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentProperty>>) -> Self {
+            self.fields = input; self
         }
         /// <p>A key-value pair that specifies the state property name and its initial value.</p>
         pub fn state(mut self, input: crate::model::MutationActionSetStateParameter) -> Self {
@@ -4367,28 +3870,35 @@ pub mod action_parameters {
             self
         }
         /// <p>A key-value pair that specifies the state property name and its initial value.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::MutationActionSetStateParameter>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::MutationActionSetStateParameter>) -> Self {
+            self.state = input; self
         }
         /// Consumes the builder and constructs a [`ActionParameters`](crate::model::ActionParameters).
         pub fn build(self) -> crate::model::ActionParameters {
             crate::model::ActionParameters {
-                r#type: self.r#type,
-                url: self.url,
-                anchor: self.anchor,
-                target: self.target,
-                global: self.global,
-                model: self.model,
-                id: self.id,
-                fields: self.fields,
-                state: self.state,
+                r#type: self.r#type
+                ,
+                url: self.url
+                ,
+                anchor: self.anchor
+                ,
+                target: self.target
+                ,
+                global: self.global
+                ,
+                model: self.model
+                ,
+                id: self.id
+                ,
+                fields: self.fields
+                ,
+                state: self.state
+                ,
             }
         }
     }
+    
+    
 }
 impl ActionParameters {
     /// Creates a new builder-style object to manufacture [`ActionParameters`](crate::model::ActionParameters).
@@ -4400,7 +3910,7 @@ impl ActionParameters {
 /// <p>Represents the state configuration when an action modifies a property of another element within the same component.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MutationActionSetStateParameter {
+pub struct MutationActionSetStateParameter  {
     /// <p>The name of the component that is being modified.</p>
     #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
@@ -4413,21 +3923,21 @@ pub struct MutationActionSetStateParameter {
 }
 impl MutationActionSetStateParameter {
     /// <p>The name of the component that is being modified.</p>
-    pub fn component_name(&self) -> std::option::Option<&str> {
+    pub fn component_name(&self) -> std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>The name of the component property to apply the state configuration to.</p>
-    pub fn property(&self) -> std::option::Option<&str> {
+    pub fn property(&self) -> std::option::Option<& str> {
         self.property.as_deref()
     }
     /// <p>The state configuration to assign to the property.</p>
-    pub fn set(&self) -> std::option::Option<&crate::model::ComponentProperty> {
+    pub fn set(&self) -> std::option::Option<& crate::model::ComponentProperty> {
         self.set.as_ref()
     }
 }
 /// See [`MutationActionSetStateParameter`](crate::model::MutationActionSetStateParameter).
 pub mod mutation_action_set_state_parameter {
-
+    
     /// A builder for [`MutationActionSetStateParameter`](crate::model::MutationActionSetStateParameter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4442,12 +3952,8 @@ pub mod mutation_action_set_state_parameter {
             self
         }
         /// <p>The name of the component that is being modified.</p>
-        pub fn set_component_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_name = input;
-            self
+        pub fn set_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_name = input; self
         }
         /// <p>The name of the component property to apply the state configuration to.</p>
         pub fn property(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4456,8 +3962,7 @@ pub mod mutation_action_set_state_parameter {
         }
         /// <p>The name of the component property to apply the state configuration to.</p>
         pub fn set_property(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.property = input;
-            self
+            self.property = input; self
         }
         /// <p>The state configuration to assign to the property.</p>
         pub fn set(mut self, input: crate::model::ComponentProperty) -> Self {
@@ -4465,22 +3970,23 @@ pub mod mutation_action_set_state_parameter {
             self
         }
         /// <p>The state configuration to assign to the property.</p>
-        pub fn set_set(
-            mut self,
-            input: std::option::Option<crate::model::ComponentProperty>,
-        ) -> Self {
-            self.set = input;
-            self
+        pub fn set_set(mut self, input: std::option::Option<crate::model::ComponentProperty>) -> Self {
+            self.set = input; self
         }
         /// Consumes the builder and constructs a [`MutationActionSetStateParameter`](crate::model::MutationActionSetStateParameter).
         pub fn build(self) -> crate::model::MutationActionSetStateParameter {
             crate::model::MutationActionSetStateParameter {
-                component_name: self.component_name,
-                property: self.property,
-                set: self.set,
+                component_name: self.component_name
+                ,
+                property: self.property
+                ,
+                set: self.set
+                ,
             }
         }
     }
+    
+    
 }
 impl MutationActionSetStateParameter {
     /// Creates a new builder-style object to manufacture [`MutationActionSetStateParameter`](crate::model::MutationActionSetStateParameter).
@@ -4492,7 +3998,7 @@ impl MutationActionSetStateParameter {
 /// <p>Describes the configuration for all of a component's properties. Use <code>ComponentProperty</code> to specify the values to render or bind by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentProperty {
+pub struct ComponentProperty  {
     /// <p>The value to assign to the component property.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
@@ -4501,8 +4007,7 @@ pub struct ComponentProperty {
     pub binding_properties: std::option::Option<crate::model::ComponentPropertyBindingProperties>,
     /// <p>The information to bind the component property to data at runtime. Use this for collection components.</p>
     #[doc(hidden)]
-    pub collection_binding_properties:
-        std::option::Option<crate::model::ComponentPropertyBindingProperties>,
+    pub collection_binding_properties: std::option::Option<crate::model::ComponentPropertyBindingProperties>,
     /// <p>The default value to assign to the component property.</p>
     #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
@@ -4511,9 +4016,7 @@ pub struct ComponentProperty {
     pub model: std::option::Option<std::string::String>,
     /// <p>The information to bind the component property to form data.</p>
     #[doc(hidden)]
-    pub bindings: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::FormBindingElement>,
-    >,
+    pub bindings: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FormBindingElement>>,
     /// <p>An event that occurs in your app. Use this for workflow data binding.</p>
     #[doc(hidden)]
     pub event: std::option::Option<std::string::String>,
@@ -4544,51 +4047,43 @@ pub struct ComponentProperty {
 }
 impl ComponentProperty {
     /// <p>The value to assign to the component property.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The information to bind the component property to data at runtime.</p>
-    pub fn binding_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::ComponentPropertyBindingProperties> {
+    pub fn binding_properties(&self) -> std::option::Option<& crate::model::ComponentPropertyBindingProperties> {
         self.binding_properties.as_ref()
     }
     /// <p>The information to bind the component property to data at runtime. Use this for collection components.</p>
-    pub fn collection_binding_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::ComponentPropertyBindingProperties> {
+    pub fn collection_binding_properties(&self) -> std::option::Option<& crate::model::ComponentPropertyBindingProperties> {
         self.collection_binding_properties.as_ref()
     }
     /// <p>The default value to assign to the component property.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
     /// <p>The data model to use to assign a value to the component property.</p>
-    pub fn model(&self) -> std::option::Option<&str> {
+    pub fn model(&self) -> std::option::Option<& str> {
         self.model.as_deref()
     }
     /// <p>The information to bind the component property to form data.</p>
-    pub fn bindings(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::FormBindingElement>,
-    > {
+    pub fn bindings(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::FormBindingElement>> {
         self.bindings.as_ref()
     }
     /// <p>An event that occurs in your app. Use this for workflow data binding.</p>
-    pub fn event(&self) -> std::option::Option<&str> {
+    pub fn event(&self) -> std::option::Option<& str> {
         self.event.as_deref()
     }
     /// <p>An authenticated user attribute to use to assign a value to the component property.</p>
-    pub fn user_attribute(&self) -> std::option::Option<&str> {
+    pub fn user_attribute(&self) -> std::option::Option<& str> {
         self.user_attribute.as_deref()
     }
     /// <p>A list of component properties to concatenate to create the value to assign to this component property.</p>
-    pub fn concat(&self) -> std::option::Option<&[crate::model::ComponentProperty]> {
+    pub fn concat(&self) -> std::option::Option<& [crate::model::ComponentProperty]> {
         self.concat.as_deref()
     }
     /// <p>The conditional expression to use to assign a value to the component property.</p>
-    pub fn condition(&self) -> std::option::Option<&crate::model::ComponentConditionProperty> {
+    pub fn condition(&self) -> std::option::Option<& crate::model::ComponentConditionProperty> {
         self.condition.as_ref()
     }
     /// <p>Specifies whether the user configured the property in Amplify Studio after importing it.</p>
@@ -4596,38 +4091,34 @@ impl ComponentProperty {
         self.configured
     }
     /// <p>The component type.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>The default value assigned to the property when the component is imported into an app.</p>
-    pub fn imported_value(&self) -> std::option::Option<&str> {
+    pub fn imported_value(&self) -> std::option::Option<& str> {
         self.imported_value.as_deref()
     }
     /// <p>The name of the component that is affected by an event.</p>
-    pub fn component_name(&self) -> std::option::Option<&str> {
+    pub fn component_name(&self) -> std::option::Option<& str> {
         self.component_name.as_deref()
     }
     /// <p>The name of the component's property that is affected by an event.</p>
-    pub fn property(&self) -> std::option::Option<&str> {
+    pub fn property(&self) -> std::option::Option<& str> {
         self.property.as_deref()
     }
 }
 /// See [`ComponentProperty`](crate::model::ComponentProperty).
 pub mod component_property {
-
+    
     /// A builder for [`ComponentProperty`](crate::model::ComponentProperty).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) value: std::option::Option<std::string::String>,
-        pub(crate) binding_properties:
-            std::option::Option<crate::model::ComponentPropertyBindingProperties>,
-        pub(crate) collection_binding_properties:
-            std::option::Option<crate::model::ComponentPropertyBindingProperties>,
+        pub(crate) binding_properties: std::option::Option<crate::model::ComponentPropertyBindingProperties>,
+        pub(crate) collection_binding_properties: std::option::Option<crate::model::ComponentPropertyBindingProperties>,
         pub(crate) default_value: std::option::Option<std::string::String>,
         pub(crate) model: std::option::Option<std::string::String>,
-        pub(crate) bindings: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::FormBindingElement>,
-        >,
+        pub(crate) bindings: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FormBindingElement>>,
         pub(crate) event: std::option::Option<std::string::String>,
         pub(crate) user_attribute: std::option::Option<std::string::String>,
         pub(crate) concat: std::option::Option<std::vec::Vec<crate::model::ComponentProperty>>,
@@ -4646,40 +4137,25 @@ pub mod component_property {
         }
         /// <p>The value to assign to the component property.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>The information to bind the component property to data at runtime.</p>
-        pub fn binding_properties(
-            mut self,
-            input: crate::model::ComponentPropertyBindingProperties,
-        ) -> Self {
+        pub fn binding_properties(mut self, input: crate::model::ComponentPropertyBindingProperties) -> Self {
             self.binding_properties = Some(input);
             self
         }
         /// <p>The information to bind the component property to data at runtime.</p>
-        pub fn set_binding_properties(
-            mut self,
-            input: std::option::Option<crate::model::ComponentPropertyBindingProperties>,
-        ) -> Self {
-            self.binding_properties = input;
-            self
+        pub fn set_binding_properties(mut self, input: std::option::Option<crate::model::ComponentPropertyBindingProperties>) -> Self {
+            self.binding_properties = input; self
         }
         /// <p>The information to bind the component property to data at runtime. Use this for collection components.</p>
-        pub fn collection_binding_properties(
-            mut self,
-            input: crate::model::ComponentPropertyBindingProperties,
-        ) -> Self {
+        pub fn collection_binding_properties(mut self, input: crate::model::ComponentPropertyBindingProperties) -> Self {
             self.collection_binding_properties = Some(input);
             self
         }
         /// <p>The information to bind the component property to data at runtime. Use this for collection components.</p>
-        pub fn set_collection_binding_properties(
-            mut self,
-            input: std::option::Option<crate::model::ComponentPropertyBindingProperties>,
-        ) -> Self {
-            self.collection_binding_properties = input;
-            self
+        pub fn set_collection_binding_properties(mut self, input: std::option::Option<crate::model::ComponentPropertyBindingProperties>) -> Self {
+            self.collection_binding_properties = input; self
         }
         /// <p>The default value to assign to the component property.</p>
         pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4687,12 +4163,8 @@ pub mod component_property {
             self
         }
         /// <p>The default value to assign to the component property.</p>
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_value = input; self
         }
         /// <p>The data model to use to assign a value to the component property.</p>
         pub fn model(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4701,33 +4173,22 @@ pub mod component_property {
         }
         /// <p>The data model to use to assign a value to the component property.</p>
         pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model = input;
-            self
+            self.model = input; self
         }
         /// Adds a key-value pair to `bindings`.
         ///
         /// To override the contents of this collection use [`set_bindings`](Self::set_bindings).
         ///
         /// <p>The information to bind the component property to form data.</p>
-        pub fn bindings(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::FormBindingElement,
-        ) -> Self {
+        pub fn bindings(mut self, k: impl Into<std::string::String>, v: crate::model::FormBindingElement) -> Self {
             let mut hash_map = self.bindings.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.bindings = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.bindings = Some(hash_map);
+                            self
         }
         /// <p>The information to bind the component property to form data.</p>
-        pub fn set_bindings(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::FormBindingElement>,
-            >,
-        ) -> Self {
-            self.bindings = input;
-            self
+        pub fn set_bindings(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::FormBindingElement>>) -> Self {
+            self.bindings = input; self
         }
         /// <p>An event that occurs in your app. Use this for workflow data binding.</p>
         pub fn event(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4736,8 +4197,7 @@ pub mod component_property {
         }
         /// <p>An event that occurs in your app. Use this for workflow data binding.</p>
         pub fn set_event(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event = input;
-            self
+            self.event = input; self
         }
         /// <p>An authenticated user attribute to use to assign a value to the component property.</p>
         pub fn user_attribute(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4745,12 +4205,8 @@ pub mod component_property {
             self
         }
         /// <p>An authenticated user attribute to use to assign a value to the component property.</p>
-        pub fn set_user_attribute(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.user_attribute = input;
-            self
+        pub fn set_user_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_attribute = input; self
         }
         /// Appends an item to `concat`.
         ///
@@ -4759,17 +4215,13 @@ pub mod component_property {
         /// <p>A list of component properties to concatenate to create the value to assign to this component property.</p>
         pub fn concat(mut self, input: crate::model::ComponentProperty) -> Self {
             let mut v = self.concat.unwrap_or_default();
-            v.push(input);
-            self.concat = Some(v);
-            self
+                            v.push(input);
+                            self.concat = Some(v);
+                            self
         }
         /// <p>A list of component properties to concatenate to create the value to assign to this component property.</p>
-        pub fn set_concat(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ComponentProperty>>,
-        ) -> Self {
-            self.concat = input;
-            self
+        pub fn set_concat(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComponentProperty>>) -> Self {
+            self.concat = input; self
         }
         /// <p>The conditional expression to use to assign a value to the component property.</p>
         pub fn condition(mut self, input: crate::model::ComponentConditionProperty) -> Self {
@@ -4777,12 +4229,8 @@ pub mod component_property {
             self
         }
         /// <p>The conditional expression to use to assign a value to the component property.</p>
-        pub fn set_condition(
-            mut self,
-            input: std::option::Option<crate::model::ComponentConditionProperty>,
-        ) -> Self {
-            self.condition = input;
-            self
+        pub fn set_condition(mut self, input: std::option::Option<crate::model::ComponentConditionProperty>) -> Self {
+            self.condition = input; self
         }
         /// <p>Specifies whether the user configured the property in Amplify Studio after importing it.</p>
         pub fn configured(mut self, input: bool) -> Self {
@@ -4791,8 +4239,7 @@ pub mod component_property {
         }
         /// <p>Specifies whether the user configured the property in Amplify Studio after importing it.</p>
         pub fn set_configured(mut self, input: std::option::Option<bool>) -> Self {
-            self.configured = input;
-            self
+            self.configured = input; self
         }
         /// <p>The component type.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4801,8 +4248,7 @@ pub mod component_property {
         }
         /// <p>The component type.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The default value assigned to the property when the component is imported into an app.</p>
         pub fn imported_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4810,12 +4256,8 @@ pub mod component_property {
             self
         }
         /// <p>The default value assigned to the property when the component is imported into an app.</p>
-        pub fn set_imported_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.imported_value = input;
-            self
+        pub fn set_imported_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.imported_value = input; self
         }
         /// <p>The name of the component that is affected by an event.</p>
         pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4823,12 +4265,8 @@ pub mod component_property {
             self
         }
         /// <p>The name of the component that is affected by an event.</p>
-        pub fn set_component_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_name = input;
-            self
+        pub fn set_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_name = input; self
         }
         /// <p>The name of the component's property that is affected by an event.</p>
         pub fn property(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4837,30 +4275,46 @@ pub mod component_property {
         }
         /// <p>The name of the component's property that is affected by an event.</p>
         pub fn set_property(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.property = input;
-            self
+            self.property = input; self
         }
         /// Consumes the builder and constructs a [`ComponentProperty`](crate::model::ComponentProperty).
         pub fn build(self) -> crate::model::ComponentProperty {
             crate::model::ComponentProperty {
-                value: self.value,
-                binding_properties: self.binding_properties,
-                collection_binding_properties: self.collection_binding_properties,
-                default_value: self.default_value,
-                model: self.model,
-                bindings: self.bindings,
-                event: self.event,
-                user_attribute: self.user_attribute,
-                concat: self.concat,
-                condition: self.condition,
-                configured: self.configured,
-                r#type: self.r#type,
-                imported_value: self.imported_value,
-                component_name: self.component_name,
-                property: self.property,
+                value: self.value
+                ,
+                binding_properties: self.binding_properties
+                ,
+                collection_binding_properties: self.collection_binding_properties
+                ,
+                default_value: self.default_value
+                ,
+                model: self.model
+                ,
+                bindings: self.bindings
+                ,
+                event: self.event
+                ,
+                user_attribute: self.user_attribute
+                ,
+                concat: self.concat
+                ,
+                condition: self.condition
+                ,
+                configured: self.configured
+                ,
+                r#type: self.r#type
+                ,
+                imported_value: self.imported_value
+                ,
+                component_name: self.component_name
+                ,
+                property: self.property
+                ,
             }
         }
     }
+    
+    
 }
 impl ComponentProperty {
     /// Creates a new builder-style object to manufacture [`ComponentProperty`](crate::model::ComponentProperty).
@@ -4872,7 +4326,7 @@ impl ComponentProperty {
 /// <p>Represents a conditional expression to set a component property. Use <code>ComponentConditionProperty</code> to set a property to different values conditionally, based on the value of another property.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentConditionProperty {
+pub struct ComponentConditionProperty  {
     /// <p>The name of the conditional property.</p>
     #[doc(hidden)]
     pub property: std::option::Option<std::string::String>,
@@ -4897,37 +4351,37 @@ pub struct ComponentConditionProperty {
 }
 impl ComponentConditionProperty {
     /// <p>The name of the conditional property.</p>
-    pub fn property(&self) -> std::option::Option<&str> {
+    pub fn property(&self) -> std::option::Option<& str> {
         self.property.as_deref()
     }
     /// <p>The name of a field. Specify this when the property is a data model.</p>
-    pub fn field(&self) -> std::option::Option<&str> {
+    pub fn field(&self) -> std::option::Option<& str> {
         self.field.as_deref()
     }
     /// <p>The operator to use to perform the evaluation, such as <code>eq</code> to represent equals.</p>
-    pub fn operator(&self) -> std::option::Option<&str> {
+    pub fn operator(&self) -> std::option::Option<& str> {
         self.operator.as_deref()
     }
     /// <p>The value of the property to evaluate.</p>
-    pub fn operand(&self) -> std::option::Option<&str> {
+    pub fn operand(&self) -> std::option::Option<& str> {
         self.operand.as_deref()
     }
     /// <p>The value to assign to the property if the condition is met.</p>
-    pub fn then(&self) -> std::option::Option<&crate::model::ComponentProperty> {
+    pub fn then(&self) -> std::option::Option<& crate::model::ComponentProperty> {
         self.then.as_deref()
     }
     /// <p>The value to assign to the property if the condition is not met.</p>
-    pub fn r#else(&self) -> std::option::Option<&crate::model::ComponentProperty> {
+    pub fn r#else(&self) -> std::option::Option<& crate::model::ComponentProperty> {
         self.r#else.as_deref()
     }
     /// <p>The type of the property to evaluate.</p>
-    pub fn operand_type(&self) -> std::option::Option<&str> {
+    pub fn operand_type(&self) -> std::option::Option<& str> {
         self.operand_type.as_deref()
     }
 }
 /// See [`ComponentConditionProperty`](crate::model::ComponentConditionProperty).
 pub mod component_condition_property {
-
+    
     /// A builder for [`ComponentConditionProperty`](crate::model::ComponentConditionProperty).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4947,8 +4401,7 @@ pub mod component_condition_property {
         }
         /// <p>The name of the conditional property.</p>
         pub fn set_property(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.property = input;
-            self
+            self.property = input; self
         }
         /// <p>The name of a field. Specify this when the property is a data model.</p>
         pub fn field(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4957,8 +4410,7 @@ pub mod component_condition_property {
         }
         /// <p>The name of a field. Specify this when the property is a data model.</p>
         pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.field = input;
-            self
+            self.field = input; self
         }
         /// <p>The operator to use to perform the evaluation, such as <code>eq</code> to represent equals.</p>
         pub fn operator(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4967,8 +4419,7 @@ pub mod component_condition_property {
         }
         /// <p>The operator to use to perform the evaluation, such as <code>eq</code> to represent equals.</p>
         pub fn set_operator(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operator = input;
-            self
+            self.operator = input; self
         }
         /// <p>The value of the property to evaluate.</p>
         pub fn operand(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4977,40 +4428,25 @@ pub mod component_condition_property {
         }
         /// <p>The value of the property to evaluate.</p>
         pub fn set_operand(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operand = input;
-            self
+            self.operand = input; self
         }
         /// <p>The value to assign to the property if the condition is met.</p>
-        pub fn then(
-            mut self,
-            input: impl Into<std::boxed::Box<crate::model::ComponentProperty>>,
-        ) -> Self {
+        pub fn then(mut self, input: impl Into<std::boxed::Box<crate::model::ComponentProperty>>) -> Self {
             self.then = Some(input.into());
             self
         }
         /// <p>The value to assign to the property if the condition is met.</p>
-        pub fn set_then(
-            mut self,
-            input: std::option::Option<std::boxed::Box<crate::model::ComponentProperty>>,
-        ) -> Self {
-            self.then = input;
-            self
+        pub fn set_then(mut self, input: std::option::Option<std::boxed::Box<crate::model::ComponentProperty>>) -> Self {
+            self.then = input; self
         }
         /// <p>The value to assign to the property if the condition is not met.</p>
-        pub fn r#else(
-            mut self,
-            input: impl Into<std::boxed::Box<crate::model::ComponentProperty>>,
-        ) -> Self {
+        pub fn r#else(mut self, input: impl Into<std::boxed::Box<crate::model::ComponentProperty>>) -> Self {
             self.r#else = Some(input.into());
             self
         }
         /// <p>The value to assign to the property if the condition is not met.</p>
-        pub fn set_else(
-            mut self,
-            input: std::option::Option<std::boxed::Box<crate::model::ComponentProperty>>,
-        ) -> Self {
-            self.r#else = input;
-            self
+        pub fn set_else(mut self, input: std::option::Option<std::boxed::Box<crate::model::ComponentProperty>>) -> Self {
+            self.r#else = input; self
         }
         /// <p>The type of the property to evaluate.</p>
         pub fn operand_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5019,22 +4455,30 @@ pub mod component_condition_property {
         }
         /// <p>The type of the property to evaluate.</p>
         pub fn set_operand_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operand_type = input;
-            self
+            self.operand_type = input; self
         }
         /// Consumes the builder and constructs a [`ComponentConditionProperty`](crate::model::ComponentConditionProperty).
         pub fn build(self) -> crate::model::ComponentConditionProperty {
             crate::model::ComponentConditionProperty {
-                property: self.property,
-                field: self.field,
-                operator: self.operator,
-                operand: self.operand,
-                then: self.then,
-                r#else: self.r#else,
-                operand_type: self.operand_type,
+                property: self.property
+                ,
+                field: self.field
+                ,
+                operator: self.operator
+                ,
+                operand: self.operand
+                ,
+                then: self.then
+                ,
+                r#else: self.r#else
+                ,
+                operand_type: self.operand_type
+                ,
             }
         }
     }
+    
+    
 }
 impl ComponentConditionProperty {
     /// Creates a new builder-style object to manufacture [`ComponentConditionProperty`](crate::model::ComponentConditionProperty).
@@ -5046,7 +4490,7 @@ impl ComponentConditionProperty {
 /// <p>Describes how to bind a component property to form data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FormBindingElement {
+pub struct FormBindingElement  {
     /// <p>The name of the component to retrieve a value from.</p>
     #[doc(hidden)]
     pub element: std::option::Option<std::string::String>,
@@ -5056,17 +4500,17 @@ pub struct FormBindingElement {
 }
 impl FormBindingElement {
     /// <p>The name of the component to retrieve a value from.</p>
-    pub fn element(&self) -> std::option::Option<&str> {
+    pub fn element(&self) -> std::option::Option<& str> {
         self.element.as_deref()
     }
     /// <p>The property to retrieve a value from.</p>
-    pub fn property(&self) -> std::option::Option<&str> {
+    pub fn property(&self) -> std::option::Option<& str> {
         self.property.as_deref()
     }
 }
 /// See [`FormBindingElement`](crate::model::FormBindingElement).
 pub mod form_binding_element {
-
+    
     /// A builder for [`FormBindingElement`](crate::model::FormBindingElement).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5081,8 +4525,7 @@ pub mod form_binding_element {
         }
         /// <p>The name of the component to retrieve a value from.</p>
         pub fn set_element(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.element = input;
-            self
+            self.element = input; self
         }
         /// <p>The property to retrieve a value from.</p>
         pub fn property(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5091,17 +4534,20 @@ pub mod form_binding_element {
         }
         /// <p>The property to retrieve a value from.</p>
         pub fn set_property(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.property = input;
-            self
+            self.property = input; self
         }
         /// Consumes the builder and constructs a [`FormBindingElement`](crate::model::FormBindingElement).
         pub fn build(self) -> crate::model::FormBindingElement {
             crate::model::FormBindingElement {
-                element: self.element,
-                property: self.property,
+                element: self.element
+                ,
+                property: self.property
+                ,
             }
         }
     }
+    
+    
 }
 impl FormBindingElement {
     /// Creates a new builder-style object to manufacture [`FormBindingElement`](crate::model::FormBindingElement).
@@ -5113,7 +4559,7 @@ impl FormBindingElement {
 /// <p>Associates a component property to a binding property. This enables exposed properties on the top level component to propagate data to the component's property values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentPropertyBindingProperties {
+pub struct ComponentPropertyBindingProperties  {
     /// <p>The component property to bind to the data field.</p>
     #[doc(hidden)]
     pub property: std::option::Option<std::string::String>,
@@ -5123,17 +4569,17 @@ pub struct ComponentPropertyBindingProperties {
 }
 impl ComponentPropertyBindingProperties {
     /// <p>The component property to bind to the data field.</p>
-    pub fn property(&self) -> std::option::Option<&str> {
+    pub fn property(&self) -> std::option::Option<& str> {
         self.property.as_deref()
     }
     /// <p>The data field to bind the property to.</p>
-    pub fn field(&self) -> std::option::Option<&str> {
+    pub fn field(&self) -> std::option::Option<& str> {
         self.field.as_deref()
     }
 }
 /// See [`ComponentPropertyBindingProperties`](crate::model::ComponentPropertyBindingProperties).
 pub mod component_property_binding_properties {
-
+    
     /// A builder for [`ComponentPropertyBindingProperties`](crate::model::ComponentPropertyBindingProperties).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5148,8 +4594,7 @@ pub mod component_property_binding_properties {
         }
         /// <p>The component property to bind to the data field.</p>
         pub fn set_property(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.property = input;
-            self
+            self.property = input; self
         }
         /// <p>The data field to bind the property to.</p>
         pub fn field(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5158,17 +4603,20 @@ pub mod component_property_binding_properties {
         }
         /// <p>The data field to bind the property to.</p>
         pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.field = input;
-            self
+            self.field = input; self
         }
         /// Consumes the builder and constructs a [`ComponentPropertyBindingProperties`](crate::model::ComponentPropertyBindingProperties).
         pub fn build(self) -> crate::model::ComponentPropertyBindingProperties {
             crate::model::ComponentPropertyBindingProperties {
-                property: self.property,
-                field: self.field,
+                property: self.property
+                ,
+                field: self.field
+                ,
             }
         }
     }
+    
+    
 }
 impl ComponentPropertyBindingProperties {
     /// Creates a new builder-style object to manufacture [`ComponentPropertyBindingProperties`](crate::model::ComponentPropertyBindingProperties).
@@ -5180,7 +4628,7 @@ impl ComponentPropertyBindingProperties {
 /// <p>Describes the configuration for binding a component's properties to data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentDataConfiguration {
+pub struct ComponentDataConfiguration  {
     /// <p>The name of the data model to use to bind data to a component.</p>
     #[doc(hidden)]
     pub model: std::option::Option<std::string::String>,
@@ -5196,25 +4644,25 @@ pub struct ComponentDataConfiguration {
 }
 impl ComponentDataConfiguration {
     /// <p>The name of the data model to use to bind data to a component.</p>
-    pub fn model(&self) -> std::option::Option<&str> {
+    pub fn model(&self) -> std::option::Option<& str> {
         self.model.as_deref()
     }
     /// <p>Describes how to sort the component's properties.</p>
-    pub fn sort(&self) -> std::option::Option<&[crate::model::SortProperty]> {
+    pub fn sort(&self) -> std::option::Option<& [crate::model::SortProperty]> {
         self.sort.as_deref()
     }
     /// <p>Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a subset of the data in a collection.</p>
-    pub fn predicate(&self) -> std::option::Option<&crate::model::Predicate> {
+    pub fn predicate(&self) -> std::option::Option<& crate::model::Predicate> {
         self.predicate.as_ref()
     }
     /// <p>A list of IDs to use to bind data to a component. Use this property to bind specifically chosen data, rather than data retrieved from a query.</p>
-    pub fn identifiers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn identifiers(&self) -> std::option::Option<& [std::string::String]> {
         self.identifiers.as_deref()
     }
 }
 /// See [`ComponentDataConfiguration`](crate::model::ComponentDataConfiguration).
 pub mod component_data_configuration {
-
+    
     /// A builder for [`ComponentDataConfiguration`](crate::model::ComponentDataConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5231,8 +4679,7 @@ pub mod component_data_configuration {
         }
         /// <p>The name of the data model to use to bind data to a component.</p>
         pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model = input;
-            self
+            self.model = input; self
         }
         /// Appends an item to `sort`.
         ///
@@ -5241,17 +4688,13 @@ pub mod component_data_configuration {
         /// <p>Describes how to sort the component's properties.</p>
         pub fn sort(mut self, input: crate::model::SortProperty) -> Self {
             let mut v = self.sort.unwrap_or_default();
-            v.push(input);
-            self.sort = Some(v);
-            self
+                            v.push(input);
+                            self.sort = Some(v);
+                            self
         }
         /// <p>Describes how to sort the component's properties.</p>
-        pub fn set_sort(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SortProperty>>,
-        ) -> Self {
-            self.sort = input;
-            self
+        pub fn set_sort(mut self, input: std::option::Option<std::vec::Vec<crate::model::SortProperty>>) -> Self {
+            self.sort = input; self
         }
         /// <p>Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a subset of the data in a collection.</p>
         pub fn predicate(mut self, input: crate::model::Predicate) -> Self {
@@ -5259,12 +4702,8 @@ pub mod component_data_configuration {
             self
         }
         /// <p>Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a subset of the data in a collection.</p>
-        pub fn set_predicate(
-            mut self,
-            input: std::option::Option<crate::model::Predicate>,
-        ) -> Self {
-            self.predicate = input;
-            self
+        pub fn set_predicate(mut self, input: std::option::Option<crate::model::Predicate>) -> Self {
+            self.predicate = input; self
         }
         /// Appends an item to `identifiers`.
         ///
@@ -5273,28 +4712,30 @@ pub mod component_data_configuration {
         /// <p>A list of IDs to use to bind data to a component. Use this property to bind specifically chosen data, rather than data retrieved from a query.</p>
         pub fn identifiers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.identifiers.unwrap_or_default();
-            v.push(input.into());
-            self.identifiers = Some(v);
-            self
+                            v.push(input.into());
+                            self.identifiers = Some(v);
+                            self
         }
         /// <p>A list of IDs to use to bind data to a component. Use this property to bind specifically chosen data, rather than data retrieved from a query.</p>
-        pub fn set_identifiers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.identifiers = input;
-            self
+        pub fn set_identifiers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.identifiers = input; self
         }
         /// Consumes the builder and constructs a [`ComponentDataConfiguration`](crate::model::ComponentDataConfiguration).
         pub fn build(self) -> crate::model::ComponentDataConfiguration {
             crate::model::ComponentDataConfiguration {
-                model: self.model,
-                sort: self.sort,
-                predicate: self.predicate,
-                identifiers: self.identifiers,
+                model: self.model
+                ,
+                sort: self.sort
+                ,
+                predicate: self.predicate
+                ,
+                identifiers: self.identifiers
+                ,
             }
         }
     }
+    
+    
 }
 impl ComponentDataConfiguration {
     /// Creates a new builder-style object to manufacture [`ComponentDataConfiguration`](crate::model::ComponentDataConfiguration).
@@ -5306,7 +4747,7 @@ impl ComponentDataConfiguration {
 /// <p>Stores information for generating Amplify DataStore queries. Use a <code>Predicate</code> to retrieve a subset of the data in a collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Predicate {
+pub struct Predicate  {
     /// <p>A list of predicates to combine logically.</p>
     #[doc(hidden)]
     pub or: std::option::Option<std::vec::Vec<crate::model::Predicate>>,
@@ -5325,29 +4766,29 @@ pub struct Predicate {
 }
 impl Predicate {
     /// <p>A list of predicates to combine logically.</p>
-    pub fn or(&self) -> std::option::Option<&[crate::model::Predicate]> {
+    pub fn or(&self) -> std::option::Option<& [crate::model::Predicate]> {
         self.or.as_deref()
     }
     /// <p>A list of predicates to combine logically.</p>
-    pub fn and(&self) -> std::option::Option<&[crate::model::Predicate]> {
+    pub fn and(&self) -> std::option::Option<& [crate::model::Predicate]> {
         self.and.as_deref()
     }
     /// <p>The field to query.</p>
-    pub fn field(&self) -> std::option::Option<&str> {
+    pub fn field(&self) -> std::option::Option<& str> {
         self.field.as_deref()
     }
     /// <p>The operator to use to perform the evaluation.</p>
-    pub fn operator(&self) -> std::option::Option<&str> {
+    pub fn operator(&self) -> std::option::Option<& str> {
         self.operator.as_deref()
     }
     /// <p>The value to use when performing the evaluation.</p>
-    pub fn operand(&self) -> std::option::Option<&str> {
+    pub fn operand(&self) -> std::option::Option<& str> {
         self.operand.as_deref()
     }
 }
 /// See [`Predicate`](crate::model::Predicate).
 pub mod predicate {
-
+    
     /// A builder for [`Predicate`](crate::model::Predicate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5365,17 +4806,13 @@ pub mod predicate {
         /// <p>A list of predicates to combine logically.</p>
         pub fn or(mut self, input: crate::model::Predicate) -> Self {
             let mut v = self.or.unwrap_or_default();
-            v.push(input);
-            self.or = Some(v);
-            self
+                            v.push(input);
+                            self.or = Some(v);
+                            self
         }
         /// <p>A list of predicates to combine logically.</p>
-        pub fn set_or(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Predicate>>,
-        ) -> Self {
-            self.or = input;
-            self
+        pub fn set_or(mut self, input: std::option::Option<std::vec::Vec<crate::model::Predicate>>) -> Self {
+            self.or = input; self
         }
         /// Appends an item to `and`.
         ///
@@ -5384,17 +4821,13 @@ pub mod predicate {
         /// <p>A list of predicates to combine logically.</p>
         pub fn and(mut self, input: crate::model::Predicate) -> Self {
             let mut v = self.and.unwrap_or_default();
-            v.push(input);
-            self.and = Some(v);
-            self
+                            v.push(input);
+                            self.and = Some(v);
+                            self
         }
         /// <p>A list of predicates to combine logically.</p>
-        pub fn set_and(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Predicate>>,
-        ) -> Self {
-            self.and = input;
-            self
+        pub fn set_and(mut self, input: std::option::Option<std::vec::Vec<crate::model::Predicate>>) -> Self {
+            self.and = input; self
         }
         /// <p>The field to query.</p>
         pub fn field(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5403,8 +4836,7 @@ pub mod predicate {
         }
         /// <p>The field to query.</p>
         pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.field = input;
-            self
+            self.field = input; self
         }
         /// <p>The operator to use to perform the evaluation.</p>
         pub fn operator(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5413,8 +4845,7 @@ pub mod predicate {
         }
         /// <p>The operator to use to perform the evaluation.</p>
         pub fn set_operator(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operator = input;
-            self
+            self.operator = input; self
         }
         /// <p>The value to use when performing the evaluation.</p>
         pub fn operand(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5423,20 +4854,26 @@ pub mod predicate {
         }
         /// <p>The value to use when performing the evaluation.</p>
         pub fn set_operand(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.operand = input;
-            self
+            self.operand = input; self
         }
         /// Consumes the builder and constructs a [`Predicate`](crate::model::Predicate).
         pub fn build(self) -> crate::model::Predicate {
             crate::model::Predicate {
-                or: self.or,
-                and: self.and,
-                field: self.field,
-                operator: self.operator,
-                operand: self.operand,
+                or: self.or
+                ,
+                and: self.and
+                ,
+                field: self.field
+                ,
+                operator: self.operator
+                ,
+                operand: self.operand
+                ,
             }
         }
     }
+    
+    
 }
 impl Predicate {
     /// Creates a new builder-style object to manufacture [`Predicate`](crate::model::Predicate).
@@ -5448,7 +4885,7 @@ impl Predicate {
 /// <p>Describes how to sort the data that you bind to a component.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SortProperty {
+pub struct SortProperty  {
     /// <p>The field to perform the sort on.</p>
     #[doc(hidden)]
     pub field: std::option::Option<std::string::String>,
@@ -5458,17 +4895,17 @@ pub struct SortProperty {
 }
 impl SortProperty {
     /// <p>The field to perform the sort on.</p>
-    pub fn field(&self) -> std::option::Option<&str> {
+    pub fn field(&self) -> std::option::Option<& str> {
         self.field.as_deref()
     }
     /// <p>The direction of the sort, either ascending or descending.</p>
-    pub fn direction(&self) -> std::option::Option<&crate::model::SortDirection> {
+    pub fn direction(&self) -> std::option::Option<& crate::model::SortDirection> {
         self.direction.as_ref()
     }
 }
 /// See [`SortProperty`](crate::model::SortProperty).
 pub mod sort_property {
-
+    
     /// A builder for [`SortProperty`](crate::model::SortProperty).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5483,8 +4920,7 @@ pub mod sort_property {
         }
         /// <p>The field to perform the sort on.</p>
         pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.field = input;
-            self
+            self.field = input; self
         }
         /// <p>The direction of the sort, either ascending or descending.</p>
         pub fn direction(mut self, input: crate::model::SortDirection) -> Self {
@@ -5492,21 +4928,21 @@ pub mod sort_property {
             self
         }
         /// <p>The direction of the sort, either ascending or descending.</p>
-        pub fn set_direction(
-            mut self,
-            input: std::option::Option<crate::model::SortDirection>,
-        ) -> Self {
-            self.direction = input;
-            self
+        pub fn set_direction(mut self, input: std::option::Option<crate::model::SortDirection>) -> Self {
+            self.direction = input; self
         }
         /// Consumes the builder and constructs a [`SortProperty`](crate::model::SortProperty).
         pub fn build(self) -> crate::model::SortProperty {
             crate::model::SortProperty {
-                field: self.field,
-                direction: self.direction,
+                field: self.field
+                ,
+                direction: self.direction
+                ,
             }
         }
     }
+    
+    
 }
 impl SortProperty {
     /// Creates a new builder-style object to manufacture [`SortProperty`](crate::model::SortProperty).
@@ -5517,15 +4953,7 @@ impl SortProperty {
 
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub struct SortDirection(String);
 impl SortDirection {
     /// Returns the `&str` value of the enum member.
@@ -5534,13 +4962,12 @@ impl SortDirection {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ASC", "DESC"]
+        &[
+            "ASC", "DESC"
+        ]
     }
 }
-impl<T> std::convert::From<T> for SortDirection
-where
-    T: std::convert::AsRef<str>,
-{
+impl <T> std::convert::From<T> for SortDirection where T: std::convert::AsRef<str> {
     fn from(s: T) -> Self {
         SortDirection(s.as_ref().to_owned())
     }
@@ -5549,43 +4976,39 @@ where
 /// <p>Represents the data binding configuration for a component at runtime. You can use <code>ComponentBindingPropertiesValue</code> to add exposed properties to a component to allow different values to be entered when a component is reused in different places in an app.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentBindingPropertiesValue {
+pub struct ComponentBindingPropertiesValue  {
     /// <p>The property type.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
     /// <p>Describes the properties to customize with data at runtime.</p>
     #[doc(hidden)]
-    pub binding_properties:
-        std::option::Option<crate::model::ComponentBindingPropertiesValueProperties>,
+    pub binding_properties: std::option::Option<crate::model::ComponentBindingPropertiesValueProperties>,
     /// <p>The default value of the property.</p>
     #[doc(hidden)]
     pub default_value: std::option::Option<std::string::String>,
 }
 impl ComponentBindingPropertiesValue {
     /// <p>The property type.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> std::option::Option<& str> {
         self.r#type.as_deref()
     }
     /// <p>Describes the properties to customize with data at runtime.</p>
-    pub fn binding_properties(
-        &self,
-    ) -> std::option::Option<&crate::model::ComponentBindingPropertiesValueProperties> {
+    pub fn binding_properties(&self) -> std::option::Option<& crate::model::ComponentBindingPropertiesValueProperties> {
         self.binding_properties.as_ref()
     }
     /// <p>The default value of the property.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
 }
 /// See [`ComponentBindingPropertiesValue`](crate::model::ComponentBindingPropertiesValue).
 pub mod component_binding_properties_value {
-
+    
     /// A builder for [`ComponentBindingPropertiesValue`](crate::model::ComponentBindingPropertiesValue).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<std::string::String>,
-        pub(crate) binding_properties:
-            std::option::Option<crate::model::ComponentBindingPropertiesValueProperties>,
+        pub(crate) binding_properties: std::option::Option<crate::model::ComponentBindingPropertiesValueProperties>,
         pub(crate) default_value: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5596,24 +5019,16 @@ pub mod component_binding_properties_value {
         }
         /// <p>The property type.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>Describes the properties to customize with data at runtime.</p>
-        pub fn binding_properties(
-            mut self,
-            input: crate::model::ComponentBindingPropertiesValueProperties,
-        ) -> Self {
+        pub fn binding_properties(mut self, input: crate::model::ComponentBindingPropertiesValueProperties) -> Self {
             self.binding_properties = Some(input);
             self
         }
         /// <p>Describes the properties to customize with data at runtime.</p>
-        pub fn set_binding_properties(
-            mut self,
-            input: std::option::Option<crate::model::ComponentBindingPropertiesValueProperties>,
-        ) -> Self {
-            self.binding_properties = input;
-            self
+        pub fn set_binding_properties(mut self, input: std::option::Option<crate::model::ComponentBindingPropertiesValueProperties>) -> Self {
+            self.binding_properties = input; self
         }
         /// <p>The default value of the property.</p>
         pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5621,22 +5036,23 @@ pub mod component_binding_properties_value {
             self
         }
         /// <p>The default value of the property.</p>
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_value = input; self
         }
         /// Consumes the builder and constructs a [`ComponentBindingPropertiesValue`](crate::model::ComponentBindingPropertiesValue).
         pub fn build(self) -> crate::model::ComponentBindingPropertiesValue {
             crate::model::ComponentBindingPropertiesValue {
-                r#type: self.r#type,
-                binding_properties: self.binding_properties,
-                default_value: self.default_value,
+                r#type: self.r#type
+                ,
+                binding_properties: self.binding_properties
+                ,
+                default_value: self.default_value
+                ,
             }
         }
     }
+    
+    
 }
 impl ComponentBindingPropertiesValue {
     /// Creates a new builder-style object to manufacture [`ComponentBindingPropertiesValue`](crate::model::ComponentBindingPropertiesValue).
@@ -5648,7 +5064,7 @@ impl ComponentBindingPropertiesValue {
 /// <p>Represents the data binding configuration for a specific property using data stored in Amazon Web Services. For Amazon Web Services connected properties, you can bind a property to data stored in an Amazon S3 bucket, an Amplify DataStore model or an authenticated user attribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentBindingPropertiesValueProperties {
+pub struct ComponentBindingPropertiesValueProperties  {
     /// <p>An Amplify DataStore model.</p>
     #[doc(hidden)]
     pub model: std::option::Option<std::string::String>,
@@ -5676,41 +5092,41 @@ pub struct ComponentBindingPropertiesValueProperties {
 }
 impl ComponentBindingPropertiesValueProperties {
     /// <p>An Amplify DataStore model.</p>
-    pub fn model(&self) -> std::option::Option<&str> {
+    pub fn model(&self) -> std::option::Option<& str> {
         self.model.as_deref()
     }
     /// <p>The field to bind the data to.</p>
-    pub fn field(&self) -> std::option::Option<&str> {
+    pub fn field(&self) -> std::option::Option<& str> {
         self.field.as_deref()
     }
     /// <p>A list of predicates for binding a component's properties to data.</p>
-    pub fn predicates(&self) -> std::option::Option<&[crate::model::Predicate]> {
+    pub fn predicates(&self) -> std::option::Option<& [crate::model::Predicate]> {
         self.predicates.as_deref()
     }
     /// <p>An authenticated user attribute.</p>
-    pub fn user_attribute(&self) -> std::option::Option<&str> {
+    pub fn user_attribute(&self) -> std::option::Option<& str> {
         self.user_attribute.as_deref()
     }
     /// <p>An Amazon S3 bucket.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>The storage key for an Amazon S3 bucket.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The default value to assign to the property.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> std::option::Option<& str> {
         self.default_value.as_deref()
     }
     /// <p>The name of a component slot.</p>
-    pub fn slot_name(&self) -> std::option::Option<&str> {
+    pub fn slot_name(&self) -> std::option::Option<& str> {
         self.slot_name.as_deref()
     }
 }
 /// See [`ComponentBindingPropertiesValueProperties`](crate::model::ComponentBindingPropertiesValueProperties).
 pub mod component_binding_properties_value_properties {
-
+    
     /// A builder for [`ComponentBindingPropertiesValueProperties`](crate::model::ComponentBindingPropertiesValueProperties).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5731,8 +5147,7 @@ pub mod component_binding_properties_value_properties {
         }
         /// <p>An Amplify DataStore model.</p>
         pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.model = input;
-            self
+            self.model = input; self
         }
         /// <p>The field to bind the data to.</p>
         pub fn field(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5741,8 +5156,7 @@ pub mod component_binding_properties_value_properties {
         }
         /// <p>The field to bind the data to.</p>
         pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.field = input;
-            self
+            self.field = input; self
         }
         /// Appends an item to `predicates`.
         ///
@@ -5751,17 +5165,13 @@ pub mod component_binding_properties_value_properties {
         /// <p>A list of predicates for binding a component's properties to data.</p>
         pub fn predicates(mut self, input: crate::model::Predicate) -> Self {
             let mut v = self.predicates.unwrap_or_default();
-            v.push(input);
-            self.predicates = Some(v);
-            self
+                            v.push(input);
+                            self.predicates = Some(v);
+                            self
         }
         /// <p>A list of predicates for binding a component's properties to data.</p>
-        pub fn set_predicates(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Predicate>>,
-        ) -> Self {
-            self.predicates = input;
-            self
+        pub fn set_predicates(mut self, input: std::option::Option<std::vec::Vec<crate::model::Predicate>>) -> Self {
+            self.predicates = input; self
         }
         /// <p>An authenticated user attribute.</p>
         pub fn user_attribute(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5769,12 +5179,8 @@ pub mod component_binding_properties_value_properties {
             self
         }
         /// <p>An authenticated user attribute.</p>
-        pub fn set_user_attribute(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.user_attribute = input;
-            self
+        pub fn set_user_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_attribute = input; self
         }
         /// <p>An Amazon S3 bucket.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5783,8 +5189,7 @@ pub mod component_binding_properties_value_properties {
         }
         /// <p>An Amazon S3 bucket.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.bucket = input;
-            self
+            self.bucket = input; self
         }
         /// <p>The storage key for an Amazon S3 bucket.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5793,8 +5198,7 @@ pub mod component_binding_properties_value_properties {
         }
         /// <p>The storage key for an Amazon S3 bucket.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The default value to assign to the property.</p>
         pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5802,12 +5206,8 @@ pub mod component_binding_properties_value_properties {
             self
         }
         /// <p>The default value to assign to the property.</p>
-        pub fn set_default_value(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.default_value = input;
-            self
+        pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.default_value = input; self
         }
         /// <p>The name of a component slot.</p>
         pub fn slot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5816,23 +5216,32 @@ pub mod component_binding_properties_value_properties {
         }
         /// <p>The name of a component slot.</p>
         pub fn set_slot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.slot_name = input;
-            self
+            self.slot_name = input; self
         }
         /// Consumes the builder and constructs a [`ComponentBindingPropertiesValueProperties`](crate::model::ComponentBindingPropertiesValueProperties).
         pub fn build(self) -> crate::model::ComponentBindingPropertiesValueProperties {
             crate::model::ComponentBindingPropertiesValueProperties {
-                model: self.model,
-                field: self.field,
-                predicates: self.predicates,
-                user_attribute: self.user_attribute,
-                bucket: self.bucket,
-                key: self.key,
-                default_value: self.default_value,
-                slot_name: self.slot_name,
+                model: self.model
+                ,
+                field: self.field
+                ,
+                predicates: self.predicates
+                ,
+                user_attribute: self.user_attribute
+                ,
+                bucket: self.bucket
+                ,
+                key: self.key
+                ,
+                default_value: self.default_value
+                ,
+                slot_name: self.slot_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ComponentBindingPropertiesValueProperties {
     /// Creates a new builder-style object to manufacture [`ComponentBindingPropertiesValueProperties`](crate::model::ComponentBindingPropertiesValueProperties).
@@ -5844,55 +5253,32 @@ impl ComponentBindingPropertiesValueProperties {
 /// <p>Describes the style configuration of a unique variation of a main component.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentVariant {
+pub struct ComponentVariant  {
     /// <p>The combination of variants that comprise this variant. You can't specify <code>tags</code> as a valid property for <code>variantValues</code>.</p>
     #[doc(hidden)]
-    pub variant_values:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub variant_values: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The properties of the component variant that can be overriden when customizing an instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
     #[doc(hidden)]
-    pub overrides: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    >,
+    pub overrides: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::string::String>>>,
 }
 impl ComponentVariant {
     /// <p>The combination of variants that comprise this variant. You can't specify <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-    pub fn variant_values(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn variant_values(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.variant_values.as_ref()
     }
     /// <p>The properties of the component variant that can be overriden when customizing an instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
-    pub fn overrides(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    > {
+    pub fn overrides(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::string::String>>> {
         self.overrides.as_ref()
     }
 }
 /// See [`ComponentVariant`](crate::model::ComponentVariant).
 pub mod component_variant {
-
+    
     /// A builder for [`ComponentVariant`](crate::model::ComponentVariant).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) variant_values: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) overrides: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        >,
+        pub(crate) variant_values: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) overrides: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::string::String>>>,
     }
     impl Builder {
         /// Adds a key-value pair to `variant_values`.
@@ -5900,62 +5286,43 @@ pub mod component_variant {
         /// To override the contents of this collection use [`set_variant_values`](Self::set_variant_values).
         ///
         /// <p>The combination of variants that comprise this variant. You can't specify <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-        pub fn variant_values(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn variant_values(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.variant_values.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.variant_values = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.variant_values = Some(hash_map);
+                            self
         }
         /// <p>The combination of variants that comprise this variant. You can't specify <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-        pub fn set_variant_values(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.variant_values = input;
-            self
+        pub fn set_variant_values(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.variant_values = input; self
         }
         /// Adds a key-value pair to `overrides`.
         ///
         /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).
         ///
         /// <p>The properties of the component variant that can be overriden when customizing an instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
-        pub fn overrides(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::collections::HashMap<std::string::String, std::string::String>,
-        ) -> Self {
+        pub fn overrides(mut self, k: impl Into<std::string::String>, v: std::collections::HashMap<std::string::String, std::string::String>) -> Self {
             let mut hash_map = self.overrides.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.overrides = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.overrides = Some(hash_map);
+                            self
         }
         /// <p>The properties of the component variant that can be overriden when customizing an instance of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.</p>
-        pub fn set_overrides(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::collections::HashMap<std::string::String, std::string::String>,
-                >,
-            >,
-        ) -> Self {
-            self.overrides = input;
-            self
+        pub fn set_overrides(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::string::String>>>) -> Self {
+            self.overrides = input; self
         }
         /// Consumes the builder and constructs a [`ComponentVariant`](crate::model::ComponentVariant).
         pub fn build(self) -> crate::model::ComponentVariant {
             crate::model::ComponentVariant {
-                variant_values: self.variant_values,
-                overrides: self.overrides,
+                variant_values: self.variant_values
+                ,
+                overrides: self.overrides
+                ,
             }
         }
     }
+    
+    
 }
 impl ComponentVariant {
     /// Creates a new builder-style object to manufacture [`ComponentVariant`](crate::model::ComponentVariant).
@@ -5967,7 +5334,7 @@ impl ComponentVariant {
 /// <p>A nested UI configuration within a parent <code>Component</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentChild {
+pub struct ComponentChild  {
     /// <p>The type of the child component. </p>
     #[doc(hidden)]
     pub component_type: std::option::Option<std::string::String>,
@@ -5976,70 +5343,54 @@ pub struct ComponentChild {
     pub name: std::option::Option<std::string::String>,
     /// <p>Describes the properties of the child component. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
     #[doc(hidden)]
-    pub properties: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ComponentProperty>,
-    >,
+    pub properties: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentProperty>>,
     /// <p>The list of <code>ComponentChild</code> instances for this component.</p>
     #[doc(hidden)]
     pub children: std::option::Option<std::vec::Vec<crate::model::ComponentChild>>,
     /// <p>Describes the events that can be raised on the child component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
     #[doc(hidden)]
-    pub events: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ComponentEvent>,
-    >,
+    pub events: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentEvent>>,
     /// <p>The unique ID of the child component in its original source system, such as Figma.</p>
     #[doc(hidden)]
     pub source_id: std::option::Option<std::string::String>,
 }
 impl ComponentChild {
     /// <p>The type of the child component. </p>
-    pub fn component_type(&self) -> std::option::Option<&str> {
+    pub fn component_type(&self) -> std::option::Option<& str> {
         self.component_type.as_deref()
     }
     /// <p>The name of the child component.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Describes the properties of the child component. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
-    pub fn properties(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ComponentProperty>,
-    > {
+    pub fn properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ComponentProperty>> {
         self.properties.as_ref()
     }
     /// <p>The list of <code>ComponentChild</code> instances for this component.</p>
-    pub fn children(&self) -> std::option::Option<&[crate::model::ComponentChild]> {
+    pub fn children(&self) -> std::option::Option<& [crate::model::ComponentChild]> {
         self.children.as_deref()
     }
     /// <p>Describes the events that can be raised on the child component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-    pub fn events(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ComponentEvent>,
-    > {
+    pub fn events(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ComponentEvent>> {
         self.events.as_ref()
     }
     /// <p>The unique ID of the child component in its original source system, such as Figma.</p>
-    pub fn source_id(&self) -> std::option::Option<&str> {
+    pub fn source_id(&self) -> std::option::Option<& str> {
         self.source_id.as_deref()
     }
 }
 /// See [`ComponentChild`](crate::model::ComponentChild).
 pub mod component_child {
-
+    
     /// A builder for [`ComponentChild`](crate::model::ComponentChild).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_type: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) properties: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ComponentProperty>,
-        >,
+        pub(crate) properties: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentProperty>>,
         pub(crate) children: std::option::Option<std::vec::Vec<crate::model::ComponentChild>>,
-        pub(crate) events: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ComponentEvent>,
-        >,
+        pub(crate) events: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentEvent>>,
         pub(crate) source_id: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6049,12 +5400,8 @@ pub mod component_child {
             self
         }
         /// <p>The type of the child component. </p>
-        pub fn set_component_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_type = input;
-            self
+        pub fn set_component_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_type = input; self
         }
         /// <p>The name of the child component.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6063,33 +5410,22 @@ pub mod component_child {
         }
         /// <p>The name of the child component.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Adds a key-value pair to `properties`.
         ///
         /// To override the contents of this collection use [`set_properties`](Self::set_properties).
         ///
         /// <p>Describes the properties of the child component. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
-        pub fn properties(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ComponentProperty,
-        ) -> Self {
+        pub fn properties(mut self, k: impl Into<std::string::String>, v: crate::model::ComponentProperty) -> Self {
             let mut hash_map = self.properties.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.properties = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.properties = Some(hash_map);
+                            self
         }
         /// <p>Describes the properties of the child component. You can't specify <code>tags</code> as a valid property for <code>properties</code>.</p>
-        pub fn set_properties(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::ComponentProperty>,
-            >,
-        ) -> Self {
-            self.properties = input;
-            self
+        pub fn set_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentProperty>>) -> Self {
+            self.properties = input; self
         }
         /// Appends an item to `children`.
         ///
@@ -6098,42 +5434,28 @@ pub mod component_child {
         /// <p>The list of <code>ComponentChild</code> instances for this component.</p>
         pub fn children(mut self, input: crate::model::ComponentChild) -> Self {
             let mut v = self.children.unwrap_or_default();
-            v.push(input);
-            self.children = Some(v);
-            self
+                            v.push(input);
+                            self.children = Some(v);
+                            self
         }
         /// <p>The list of <code>ComponentChild</code> instances for this component.</p>
-        pub fn set_children(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ComponentChild>>,
-        ) -> Self {
-            self.children = input;
-            self
+        pub fn set_children(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComponentChild>>) -> Self {
+            self.children = input; self
         }
         /// Adds a key-value pair to `events`.
         ///
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>Describes the events that can be raised on the child component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-        pub fn events(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ComponentEvent,
-        ) -> Self {
+        pub fn events(mut self, k: impl Into<std::string::String>, v: crate::model::ComponentEvent) -> Self {
             let mut hash_map = self.events.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.events = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.events = Some(hash_map);
+                            self
         }
         /// <p>Describes the events that can be raised on the child component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::ComponentEvent>,
-            >,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentEvent>>) -> Self {
+            self.events = input; self
         }
         /// <p>The unique ID of the child component in its original source system, such as Figma.</p>
         pub fn source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6142,21 +5464,28 @@ pub mod component_child {
         }
         /// <p>The unique ID of the child component in its original source system, such as Figma.</p>
         pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_id = input;
-            self
+            self.source_id = input; self
         }
         /// Consumes the builder and constructs a [`ComponentChild`](crate::model::ComponentChild).
         pub fn build(self) -> crate::model::ComponentChild {
             crate::model::ComponentChild {
-                component_type: self.component_type,
-                name: self.name,
-                properties: self.properties,
-                children: self.children,
-                events: self.events,
-                source_id: self.source_id,
+                component_type: self.component_type
+                ,
+                name: self.name
+                ,
+                properties: self.properties
+                ,
+                children: self.children
+                ,
+                events: self.events
+                ,
+                source_id: self.source_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ComponentChild {
     /// Creates a new builder-style object to manufacture [`ComponentChild`](crate::model::ComponentChild).
@@ -6168,7 +5497,7 @@ impl ComponentChild {
 /// <p>Contains a summary of a component. This is a read-only data type that is returned by <code>ListComponents</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentSummary {
+pub struct ComponentSummary  {
     /// <p>The unique ID of the Amplify app associated with the component.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -6187,29 +5516,29 @@ pub struct ComponentSummary {
 }
 impl ComponentSummary {
     /// <p>The unique ID of the Amplify app associated with the component.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> std::option::Option<& str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> std::option::Option<& str> {
         self.environment_name.as_deref()
     }
     /// <p>The unique ID of the component.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The component type.</p>
-    pub fn component_type(&self) -> std::option::Option<&str> {
+    pub fn component_type(&self) -> std::option::Option<& str> {
         self.component_type.as_deref()
     }
 }
 /// See [`ComponentSummary`](crate::model::ComponentSummary).
 pub mod component_summary {
-
+    
     /// A builder for [`ComponentSummary`](crate::model::ComponentSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6227,8 +5556,7 @@ pub mod component_summary {
         }
         /// <p>The unique ID of the Amplify app associated with the component.</p>
         pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.app_id = input;
-            self
+            self.app_id = input; self
         }
         /// <p>The name of the backend environment that is a part of the Amplify app.</p>
         pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6236,12 +5564,8 @@ pub mod component_summary {
             self
         }
         /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-        pub fn set_environment_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.environment_name = input;
-            self
+        pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.environment_name = input; self
         }
         /// <p>The unique ID of the component.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6250,8 +5574,7 @@ pub mod component_summary {
         }
         /// <p>The unique ID of the component.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the component.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6260,8 +5583,7 @@ pub mod component_summary {
         }
         /// <p>The name of the component.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The component type.</p>
         pub fn component_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6269,24 +5591,27 @@ pub mod component_summary {
             self
         }
         /// <p>The component type.</p>
-        pub fn set_component_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_type = input;
-            self
+        pub fn set_component_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_type = input; self
         }
         /// Consumes the builder and constructs a [`ComponentSummary`](crate::model::ComponentSummary).
         pub fn build(self) -> crate::model::ComponentSummary {
             crate::model::ComponentSummary {
-                app_id: self.app_id,
-                environment_name: self.environment_name,
-                id: self.id,
-                name: self.name,
-                component_type: self.component_type,
+                app_id: self.app_id
+                ,
+                environment_name: self.environment_name
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                component_type: self.component_type
+                ,
             }
         }
     }
+    
+    
 }
 impl ComponentSummary {
     /// Creates a new builder-style object to manufacture [`ComponentSummary`](crate::model::ComponentSummary).
@@ -6298,7 +5623,7 @@ impl ComponentSummary {
 /// <p>Represents all of the information that is required to create a component.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateComponentData {
+pub struct CreateComponentData  {
     /// <p>The name of the component</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -6310,9 +5635,7 @@ pub struct CreateComponentData {
     pub component_type: std::option::Option<std::string::String>,
     /// <p>Describes the component's properties.</p>
     #[doc(hidden)]
-    pub properties: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ComponentProperty>,
-    >,
+    pub properties: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentProperty>>,
     /// <p>A list of child components that are instances of the main component.</p>
     #[doc(hidden)]
     pub children: std::option::Option<std::vec::Vec<crate::model::ComponentChild>>,
@@ -6321,155 +5644,90 @@ pub struct CreateComponentData {
     pub variants: std::option::Option<std::vec::Vec<crate::model::ComponentVariant>>,
     /// <p>Describes the component properties that can be overriden to customize an instance of the component.</p>
     #[doc(hidden)]
-    pub overrides: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    >,
+    pub overrides: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::string::String>>>,
     /// <p>The data binding information for the component's properties.</p>
     #[doc(hidden)]
-    pub binding_properties: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            crate::model::ComponentBindingPropertiesValue,
-        >,
-    >,
+    pub binding_properties: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentBindingPropertiesValue>>,
     /// <p>The data binding configuration for customizing a component's properties. Use this for a collection component.</p>
     #[doc(hidden)]
-    pub collection_properties: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ComponentDataConfiguration>,
-    >,
+    pub collection_properties: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentDataConfiguration>>,
     /// <p>One or more key-value pairs to use when tagging the component data.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
     #[doc(hidden)]
-    pub events: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ComponentEvent>,
-    >,
+    pub events: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentEvent>>,
     /// <p>The schema version of the component when it was imported.</p>
     #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
 }
 impl CreateComponentData {
     /// <p>The name of the component</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique ID of the component in its original source system, such as Figma.</p>
-    pub fn source_id(&self) -> std::option::Option<&str> {
+    pub fn source_id(&self) -> std::option::Option<& str> {
         self.source_id.as_deref()
     }
     /// <p>The component type. This can be an Amplify custom UI component or another custom component.</p>
-    pub fn component_type(&self) -> std::option::Option<&str> {
+    pub fn component_type(&self) -> std::option::Option<& str> {
         self.component_type.as_deref()
     }
     /// <p>Describes the component's properties.</p>
-    pub fn properties(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ComponentProperty>,
-    > {
+    pub fn properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ComponentProperty>> {
         self.properties.as_ref()
     }
     /// <p>A list of child components that are instances of the main component.</p>
-    pub fn children(&self) -> std::option::Option<&[crate::model::ComponentChild]> {
+    pub fn children(&self) -> std::option::Option<& [crate::model::ComponentChild]> {
         self.children.as_deref()
     }
     /// <p>A list of the unique variants of this component.</p>
-    pub fn variants(&self) -> std::option::Option<&[crate::model::ComponentVariant]> {
+    pub fn variants(&self) -> std::option::Option<& [crate::model::ComponentVariant]> {
         self.variants.as_deref()
     }
     /// <p>Describes the component properties that can be overriden to customize an instance of the component.</p>
-    pub fn overrides(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    > {
+    pub fn overrides(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::string::String>>> {
         self.overrides.as_ref()
     }
     /// <p>The data binding information for the component's properties.</p>
-    pub fn binding_properties(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            crate::model::ComponentBindingPropertiesValue,
-        >,
-    > {
+    pub fn binding_properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ComponentBindingPropertiesValue>> {
         self.binding_properties.as_ref()
     }
     /// <p>The data binding configuration for customizing a component's properties. Use this for a collection component.</p>
-    pub fn collection_properties(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ComponentDataConfiguration>,
-    > {
+    pub fn collection_properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ComponentDataConfiguration>> {
         self.collection_properties.as_ref()
     }
     /// <p>One or more key-value pairs to use when tagging the component data.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-    pub fn events(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ComponentEvent>,
-    > {
+    pub fn events(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ComponentEvent>> {
         self.events.as_ref()
     }
     /// <p>The schema version of the component when it was imported.</p>
-    pub fn schema_version(&self) -> std::option::Option<&str> {
+    pub fn schema_version(&self) -> std::option::Option<& str> {
         self.schema_version.as_deref()
     }
 }
 /// See [`CreateComponentData`](crate::model::CreateComponentData).
 pub mod create_component_data {
-
+    
     /// A builder for [`CreateComponentData`](crate::model::CreateComponentData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) source_id: std::option::Option<std::string::String>,
         pub(crate) component_type: std::option::Option<std::string::String>,
-        pub(crate) properties: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ComponentProperty>,
-        >,
+        pub(crate) properties: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentProperty>>,
         pub(crate) children: std::option::Option<std::vec::Vec<crate::model::ComponentChild>>,
         pub(crate) variants: std::option::Option<std::vec::Vec<crate::model::ComponentVariant>>,
-        pub(crate) overrides: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        >,
-        pub(crate) binding_properties: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                crate::model::ComponentBindingPropertiesValue,
-            >,
-        >,
-        pub(crate) collection_properties: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                crate::model::ComponentDataConfiguration,
-            >,
-        >,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) events: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ComponentEvent>,
-        >,
+        pub(crate) overrides: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::string::String>>>,
+        pub(crate) binding_properties: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentBindingPropertiesValue>>,
+        pub(crate) collection_properties: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentDataConfiguration>>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) events: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentEvent>>,
         pub(crate) schema_version: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6480,8 +5738,7 @@ pub mod create_component_data {
         }
         /// <p>The name of the component</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The unique ID of the component in its original source system, such as Figma.</p>
         pub fn source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6490,8 +5747,7 @@ pub mod create_component_data {
         }
         /// <p>The unique ID of the component in its original source system, such as Figma.</p>
         pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_id = input;
-            self
+            self.source_id = input; self
         }
         /// <p>The component type. This can be an Amplify custom UI component or another custom component.</p>
         pub fn component_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6499,37 +5755,23 @@ pub mod create_component_data {
             self
         }
         /// <p>The component type. This can be an Amplify custom UI component or another custom component.</p>
-        pub fn set_component_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_type = input;
-            self
+        pub fn set_component_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_type = input; self
         }
         /// Adds a key-value pair to `properties`.
         ///
         /// To override the contents of this collection use [`set_properties`](Self::set_properties).
         ///
         /// <p>Describes the component's properties.</p>
-        pub fn properties(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ComponentProperty,
-        ) -> Self {
+        pub fn properties(mut self, k: impl Into<std::string::String>, v: crate::model::ComponentProperty) -> Self {
             let mut hash_map = self.properties.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.properties = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.properties = Some(hash_map);
+                            self
         }
         /// <p>Describes the component's properties.</p>
-        pub fn set_properties(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::ComponentProperty>,
-            >,
-        ) -> Self {
-            self.properties = input;
-            self
+        pub fn set_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentProperty>>) -> Self {
+            self.properties = input; self
         }
         /// Appends an item to `children`.
         ///
@@ -6538,17 +5780,13 @@ pub mod create_component_data {
         /// <p>A list of child components that are instances of the main component.</p>
         pub fn children(mut self, input: crate::model::ComponentChild) -> Self {
             let mut v = self.children.unwrap_or_default();
-            v.push(input);
-            self.children = Some(v);
-            self
+                            v.push(input);
+                            self.children = Some(v);
+                            self
         }
         /// <p>A list of child components that are instances of the main component.</p>
-        pub fn set_children(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ComponentChild>>,
-        ) -> Self {
-            self.children = input;
-            self
+        pub fn set_children(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComponentChild>>) -> Self {
+            self.children = input; self
         }
         /// Appends an item to `variants`.
         ///
@@ -6557,151 +5795,88 @@ pub mod create_component_data {
         /// <p>A list of the unique variants of this component.</p>
         pub fn variants(mut self, input: crate::model::ComponentVariant) -> Self {
             let mut v = self.variants.unwrap_or_default();
-            v.push(input);
-            self.variants = Some(v);
-            self
+                            v.push(input);
+                            self.variants = Some(v);
+                            self
         }
         /// <p>A list of the unique variants of this component.</p>
-        pub fn set_variants(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ComponentVariant>>,
-        ) -> Self {
-            self.variants = input;
-            self
+        pub fn set_variants(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComponentVariant>>) -> Self {
+            self.variants = input; self
         }
         /// Adds a key-value pair to `overrides`.
         ///
         /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).
         ///
         /// <p>Describes the component properties that can be overriden to customize an instance of the component.</p>
-        pub fn overrides(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::collections::HashMap<std::string::String, std::string::String>,
-        ) -> Self {
+        pub fn overrides(mut self, k: impl Into<std::string::String>, v: std::collections::HashMap<std::string::String, std::string::String>) -> Self {
             let mut hash_map = self.overrides.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.overrides = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.overrides = Some(hash_map);
+                            self
         }
         /// <p>Describes the component properties that can be overriden to customize an instance of the component.</p>
-        pub fn set_overrides(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::collections::HashMap<std::string::String, std::string::String>,
-                >,
-            >,
-        ) -> Self {
-            self.overrides = input;
-            self
+        pub fn set_overrides(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::string::String>>>) -> Self {
+            self.overrides = input; self
         }
         /// Adds a key-value pair to `binding_properties`.
         ///
         /// To override the contents of this collection use [`set_binding_properties`](Self::set_binding_properties).
         ///
         /// <p>The data binding information for the component's properties.</p>
-        pub fn binding_properties(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ComponentBindingPropertiesValue,
-        ) -> Self {
+        pub fn binding_properties(mut self, k: impl Into<std::string::String>, v: crate::model::ComponentBindingPropertiesValue) -> Self {
             let mut hash_map = self.binding_properties.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.binding_properties = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.binding_properties = Some(hash_map);
+                            self
         }
         /// <p>The data binding information for the component's properties.</p>
-        pub fn set_binding_properties(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::ComponentBindingPropertiesValue,
-                >,
-            >,
-        ) -> Self {
-            self.binding_properties = input;
-            self
+        pub fn set_binding_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentBindingPropertiesValue>>) -> Self {
+            self.binding_properties = input; self
         }
         /// Adds a key-value pair to `collection_properties`.
         ///
         /// To override the contents of this collection use [`set_collection_properties`](Self::set_collection_properties).
         ///
         /// <p>The data binding configuration for customizing a component's properties. Use this for a collection component.</p>
-        pub fn collection_properties(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ComponentDataConfiguration,
-        ) -> Self {
+        pub fn collection_properties(mut self, k: impl Into<std::string::String>, v: crate::model::ComponentDataConfiguration) -> Self {
             let mut hash_map = self.collection_properties.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.collection_properties = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.collection_properties = Some(hash_map);
+                            self
         }
         /// <p>The data binding configuration for customizing a component's properties. Use this for a collection component.</p>
-        pub fn set_collection_properties(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::ComponentDataConfiguration,
-                >,
-            >,
-        ) -> Self {
-            self.collection_properties = input;
-            self
+        pub fn set_collection_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentDataConfiguration>>) -> Self {
+            self.collection_properties = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>One or more key-value pairs to use when tagging the component data.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>One or more key-value pairs to use when tagging the component data.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Adds a key-value pair to `events`.
         ///
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-        pub fn events(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ComponentEvent,
-        ) -> Self {
+        pub fn events(mut self, k: impl Into<std::string::String>, v: crate::model::ComponentEvent) -> Self {
             let mut hash_map = self.events.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.events = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.events = Some(hash_map);
+                            self
         }
         /// <p>The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::ComponentEvent>,
-            >,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentEvent>>) -> Self {
+            self.events = input; self
         }
         /// <p>The schema version of the component when it was imported.</p>
         pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6709,31 +5884,41 @@ pub mod create_component_data {
             self
         }
         /// <p>The schema version of the component when it was imported.</p>
-        pub fn set_schema_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schema_version = input;
-            self
+        pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_version = input; self
         }
         /// Consumes the builder and constructs a [`CreateComponentData`](crate::model::CreateComponentData).
         pub fn build(self) -> crate::model::CreateComponentData {
             crate::model::CreateComponentData {
-                name: self.name,
-                source_id: self.source_id,
-                component_type: self.component_type,
-                properties: self.properties,
-                children: self.children,
-                variants: self.variants,
-                overrides: self.overrides,
-                binding_properties: self.binding_properties,
-                collection_properties: self.collection_properties,
-                tags: self.tags,
-                events: self.events,
-                schema_version: self.schema_version,
+                name: self.name
+                ,
+                source_id: self.source_id
+                ,
+                component_type: self.component_type
+                ,
+                properties: self.properties
+                ,
+                children: self.children
+                ,
+                variants: self.variants
+                ,
+                overrides: self.overrides
+                ,
+                binding_properties: self.binding_properties
+                ,
+                collection_properties: self.collection_properties
+                ,
+                tags: self.tags
+                ,
+                events: self.events
+                ,
+                schema_version: self.schema_version
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateComponentData {
     /// Creates a new builder-style object to manufacture [`CreateComponentData`](crate::model::CreateComponentData).
@@ -6745,7 +5930,7 @@ impl CreateComponentData {
 /// <p>Updates and saves all of the information about a component, based on component ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateComponentData {
+pub struct UpdateComponentData  {
     /// <p>The unique ID of the component to update.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -6760,9 +5945,7 @@ pub struct UpdateComponentData {
     pub component_type: std::option::Option<std::string::String>,
     /// <p>Describes the component's properties.</p>
     #[doc(hidden)]
-    pub properties: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ComponentProperty>,
-    >,
+    pub properties: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentProperty>>,
     /// <p>The components that are instances of the main component.</p>
     #[doc(hidden)]
     pub children: std::option::Option<std::vec::Vec<crate::model::ComponentChild>>,
@@ -6771,113 +5954,73 @@ pub struct UpdateComponentData {
     pub variants: std::option::Option<std::vec::Vec<crate::model::ComponentVariant>>,
     /// <p>Describes the properties that can be overriden to customize the component.</p>
     #[doc(hidden)]
-    pub overrides: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    >,
+    pub overrides: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::string::String>>>,
     /// <p>The data binding information for the component's properties.</p>
     #[doc(hidden)]
-    pub binding_properties: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            crate::model::ComponentBindingPropertiesValue,
-        >,
-    >,
+    pub binding_properties: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentBindingPropertiesValue>>,
     /// <p>The configuration for binding a component's properties to a data model. Use this for a collection component.</p>
     #[doc(hidden)]
-    pub collection_properties: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ComponentDataConfiguration>,
-    >,
+    pub collection_properties: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentDataConfiguration>>,
     /// <p>The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
     #[doc(hidden)]
-    pub events: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::model::ComponentEvent>,
-    >,
+    pub events: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentEvent>>,
     /// <p>The schema version of the component when it was imported.</p>
     #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
 }
 impl UpdateComponentData {
     /// <p>The unique ID of the component to update.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the component to update.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique ID of the component in its original source system, such as Figma.</p>
-    pub fn source_id(&self) -> std::option::Option<&str> {
+    pub fn source_id(&self) -> std::option::Option<& str> {
         self.source_id.as_deref()
     }
     /// <p>The type of the component. This can be an Amplify custom UI component or another custom component.</p>
-    pub fn component_type(&self) -> std::option::Option<&str> {
+    pub fn component_type(&self) -> std::option::Option<& str> {
         self.component_type.as_deref()
     }
     /// <p>Describes the component's properties.</p>
-    pub fn properties(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ComponentProperty>,
-    > {
+    pub fn properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ComponentProperty>> {
         self.properties.as_ref()
     }
     /// <p>The components that are instances of the main component.</p>
-    pub fn children(&self) -> std::option::Option<&[crate::model::ComponentChild]> {
+    pub fn children(&self) -> std::option::Option<& [crate::model::ComponentChild]> {
         self.children.as_deref()
     }
     /// <p>A list of the unique variants of the main component being updated.</p>
-    pub fn variants(&self) -> std::option::Option<&[crate::model::ComponentVariant]> {
+    pub fn variants(&self) -> std::option::Option<& [crate::model::ComponentVariant]> {
         self.variants.as_deref()
     }
     /// <p>Describes the properties that can be overriden to customize the component.</p>
-    pub fn overrides(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-    > {
+    pub fn overrides(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::string::String>>> {
         self.overrides.as_ref()
     }
     /// <p>The data binding information for the component's properties.</p>
-    pub fn binding_properties(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            crate::model::ComponentBindingPropertiesValue,
-        >,
-    > {
+    pub fn binding_properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ComponentBindingPropertiesValue>> {
         self.binding_properties.as_ref()
     }
     /// <p>The configuration for binding a component's properties to a data model. Use this for a collection component.</p>
-    pub fn collection_properties(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ComponentDataConfiguration>,
-    > {
+    pub fn collection_properties(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ComponentDataConfiguration>> {
         self.collection_properties.as_ref()
     }
     /// <p>The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-    pub fn events(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::model::ComponentEvent>,
-    > {
+    pub fn events(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::model::ComponentEvent>> {
         self.events.as_ref()
     }
     /// <p>The schema version of the component when it was imported.</p>
-    pub fn schema_version(&self) -> std::option::Option<&str> {
+    pub fn schema_version(&self) -> std::option::Option<& str> {
         self.schema_version.as_deref()
     }
 }
 /// See [`UpdateComponentData`](crate::model::UpdateComponentData).
 pub mod update_component_data {
-
+    
     /// A builder for [`UpdateComponentData`](crate::model::UpdateComponentData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6885,32 +6028,13 @@ pub mod update_component_data {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) source_id: std::option::Option<std::string::String>,
         pub(crate) component_type: std::option::Option<std::string::String>,
-        pub(crate) properties: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ComponentProperty>,
-        >,
+        pub(crate) properties: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentProperty>>,
         pub(crate) children: std::option::Option<std::vec::Vec<crate::model::ComponentChild>>,
         pub(crate) variants: std::option::Option<std::vec::Vec<crate::model::ComponentVariant>>,
-        pub(crate) overrides: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        >,
-        pub(crate) binding_properties: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                crate::model::ComponentBindingPropertiesValue,
-            >,
-        >,
-        pub(crate) collection_properties: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                crate::model::ComponentDataConfiguration,
-            >,
-        >,
-        pub(crate) events: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::model::ComponentEvent>,
-        >,
+        pub(crate) overrides: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::string::String>>>,
+        pub(crate) binding_properties: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentBindingPropertiesValue>>,
+        pub(crate) collection_properties: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentDataConfiguration>>,
+        pub(crate) events: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentEvent>>,
         pub(crate) schema_version: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -6921,8 +6045,7 @@ pub mod update_component_data {
         }
         /// <p>The unique ID of the component to update.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the component to update.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6931,8 +6054,7 @@ pub mod update_component_data {
         }
         /// <p>The name of the component to update.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The unique ID of the component in its original source system, such as Figma.</p>
         pub fn source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6941,8 +6063,7 @@ pub mod update_component_data {
         }
         /// <p>The unique ID of the component in its original source system, such as Figma.</p>
         pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_id = input;
-            self
+            self.source_id = input; self
         }
         /// <p>The type of the component. This can be an Amplify custom UI component or another custom component.</p>
         pub fn component_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6950,37 +6071,23 @@ pub mod update_component_data {
             self
         }
         /// <p>The type of the component. This can be an Amplify custom UI component or another custom component.</p>
-        pub fn set_component_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.component_type = input;
-            self
+        pub fn set_component_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.component_type = input; self
         }
         /// Adds a key-value pair to `properties`.
         ///
         /// To override the contents of this collection use [`set_properties`](Self::set_properties).
         ///
         /// <p>Describes the component's properties.</p>
-        pub fn properties(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ComponentProperty,
-        ) -> Self {
+        pub fn properties(mut self, k: impl Into<std::string::String>, v: crate::model::ComponentProperty) -> Self {
             let mut hash_map = self.properties.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.properties = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.properties = Some(hash_map);
+                            self
         }
         /// <p>Describes the component's properties.</p>
-        pub fn set_properties(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::ComponentProperty>,
-            >,
-        ) -> Self {
-            self.properties = input;
-            self
+        pub fn set_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentProperty>>) -> Self {
+            self.properties = input; self
         }
         /// Appends an item to `children`.
         ///
@@ -6989,17 +6096,13 @@ pub mod update_component_data {
         /// <p>The components that are instances of the main component.</p>
         pub fn children(mut self, input: crate::model::ComponentChild) -> Self {
             let mut v = self.children.unwrap_or_default();
-            v.push(input);
-            self.children = Some(v);
-            self
+                            v.push(input);
+                            self.children = Some(v);
+                            self
         }
         /// <p>The components that are instances of the main component.</p>
-        pub fn set_children(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ComponentChild>>,
-        ) -> Self {
-            self.children = input;
-            self
+        pub fn set_children(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComponentChild>>) -> Self {
+            self.children = input; self
         }
         /// Appends an item to `variants`.
         ///
@@ -7008,126 +6111,73 @@ pub mod update_component_data {
         /// <p>A list of the unique variants of the main component being updated.</p>
         pub fn variants(mut self, input: crate::model::ComponentVariant) -> Self {
             let mut v = self.variants.unwrap_or_default();
-            v.push(input);
-            self.variants = Some(v);
-            self
+                            v.push(input);
+                            self.variants = Some(v);
+                            self
         }
         /// <p>A list of the unique variants of the main component being updated.</p>
-        pub fn set_variants(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ComponentVariant>>,
-        ) -> Self {
-            self.variants = input;
-            self
+        pub fn set_variants(mut self, input: std::option::Option<std::vec::Vec<crate::model::ComponentVariant>>) -> Self {
+            self.variants = input; self
         }
         /// Adds a key-value pair to `overrides`.
         ///
         /// To override the contents of this collection use [`set_overrides`](Self::set_overrides).
         ///
         /// <p>Describes the properties that can be overriden to customize the component.</p>
-        pub fn overrides(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::collections::HashMap<std::string::String, std::string::String>,
-        ) -> Self {
+        pub fn overrides(mut self, k: impl Into<std::string::String>, v: std::collections::HashMap<std::string::String, std::string::String>) -> Self {
             let mut hash_map = self.overrides.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.overrides = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.overrides = Some(hash_map);
+                            self
         }
         /// <p>Describes the properties that can be overriden to customize the component.</p>
-        pub fn set_overrides(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::collections::HashMap<std::string::String, std::string::String>,
-                >,
-            >,
-        ) -> Self {
-            self.overrides = input;
-            self
+        pub fn set_overrides(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::string::String>>>) -> Self {
+            self.overrides = input; self
         }
         /// Adds a key-value pair to `binding_properties`.
         ///
         /// To override the contents of this collection use [`set_binding_properties`](Self::set_binding_properties).
         ///
         /// <p>The data binding information for the component's properties.</p>
-        pub fn binding_properties(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ComponentBindingPropertiesValue,
-        ) -> Self {
+        pub fn binding_properties(mut self, k: impl Into<std::string::String>, v: crate::model::ComponentBindingPropertiesValue) -> Self {
             let mut hash_map = self.binding_properties.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.binding_properties = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.binding_properties = Some(hash_map);
+                            self
         }
         /// <p>The data binding information for the component's properties.</p>
-        pub fn set_binding_properties(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::ComponentBindingPropertiesValue,
-                >,
-            >,
-        ) -> Self {
-            self.binding_properties = input;
-            self
+        pub fn set_binding_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentBindingPropertiesValue>>) -> Self {
+            self.binding_properties = input; self
         }
         /// Adds a key-value pair to `collection_properties`.
         ///
         /// To override the contents of this collection use [`set_collection_properties`](Self::set_collection_properties).
         ///
         /// <p>The configuration for binding a component's properties to a data model. Use this for a collection component.</p>
-        pub fn collection_properties(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ComponentDataConfiguration,
-        ) -> Self {
+        pub fn collection_properties(mut self, k: impl Into<std::string::String>, v: crate::model::ComponentDataConfiguration) -> Self {
             let mut hash_map = self.collection_properties.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.collection_properties = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.collection_properties = Some(hash_map);
+                            self
         }
         /// <p>The configuration for binding a component's properties to a data model. Use this for a collection component.</p>
-        pub fn set_collection_properties(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    crate::model::ComponentDataConfiguration,
-                >,
-            >,
-        ) -> Self {
-            self.collection_properties = input;
-            self
+        pub fn set_collection_properties(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentDataConfiguration>>) -> Self {
+            self.collection_properties = input; self
         }
         /// Adds a key-value pair to `events`.
         ///
         /// To override the contents of this collection use [`set_events`](Self::set_events).
         ///
         /// <p>The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-        pub fn events(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: crate::model::ComponentEvent,
-        ) -> Self {
+        pub fn events(mut self, k: impl Into<std::string::String>, v: crate::model::ComponentEvent) -> Self {
             let mut hash_map = self.events.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.events = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.events = Some(hash_map);
+                            self
         }
         /// <p>The event configuration for the component. Use for the workflow feature in Amplify Studio that allows you to bind events and actions to components.</p>
-        pub fn set_events(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, crate::model::ComponentEvent>,
-            >,
-        ) -> Self {
-            self.events = input;
-            self
+        pub fn set_events(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::model::ComponentEvent>>) -> Self {
+            self.events = input; self
         }
         /// <p>The schema version of the component when it was imported.</p>
         pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7135,31 +6185,41 @@ pub mod update_component_data {
             self
         }
         /// <p>The schema version of the component when it was imported.</p>
-        pub fn set_schema_version(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schema_version = input;
-            self
+        pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.schema_version = input; self
         }
         /// Consumes the builder and constructs a [`UpdateComponentData`](crate::model::UpdateComponentData).
         pub fn build(self) -> crate::model::UpdateComponentData {
             crate::model::UpdateComponentData {
-                id: self.id,
-                name: self.name,
-                source_id: self.source_id,
-                component_type: self.component_type,
-                properties: self.properties,
-                children: self.children,
-                variants: self.variants,
-                overrides: self.overrides,
-                binding_properties: self.binding_properties,
-                collection_properties: self.collection_properties,
-                events: self.events,
-                schema_version: self.schema_version,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                source_id: self.source_id
+                ,
+                component_type: self.component_type
+                ,
+                properties: self.properties
+                ,
+                children: self.children
+                ,
+                variants: self.variants
+                ,
+                overrides: self.overrides
+                ,
+                binding_properties: self.binding_properties
+                ,
+                collection_properties: self.collection_properties
+                ,
+                events: self.events
+                ,
+                schema_version: self.schema_version
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateComponentData {
     /// Creates a new builder-style object to manufacture [`UpdateComponentData`](crate::model::UpdateComponentData).
@@ -7171,18 +6231,18 @@ impl UpdateComponentData {
 /// <p>Describes a refresh token.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RefreshTokenRequestBody {
+pub struct RefreshTokenRequestBody  {
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
     #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
 }
 impl RefreshTokenRequestBody {
     /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
-    pub fn token(&self) -> std::option::Option<&str> {
+    pub fn token(&self) -> std::option::Option<& str> {
         self.token.as_deref()
     }
 }
-impl std::fmt::Debug for RefreshTokenRequestBody {
+impl  std::fmt::Debug for RefreshTokenRequestBody  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RefreshTokenRequestBody");
         formatter.field("token", &"*** Sensitive Data Redacted ***");
@@ -7191,7 +6251,7 @@ impl std::fmt::Debug for RefreshTokenRequestBody {
 }
 /// See [`RefreshTokenRequestBody`](crate::model::RefreshTokenRequestBody).
 pub mod refresh_token_request_body {
-
+    
     /// A builder for [`RefreshTokenRequestBody`](crate::model::RefreshTokenRequestBody).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -7205,12 +6265,14 @@ pub mod refresh_token_request_body {
         }
         /// <p>The token to use to refresh a previously issued access token that might have expired.</p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.token = input;
-            self
+            self.token = input; self
         }
         /// Consumes the builder and constructs a [`RefreshTokenRequestBody`](crate::model::RefreshTokenRequestBody).
         pub fn build(self) -> crate::model::RefreshTokenRequestBody {
-            crate::model::RefreshTokenRequestBody { token: self.token }
+            crate::model::RefreshTokenRequestBody {
+                token: self.token
+                ,
+            }
         }
     }
     impl std::fmt::Debug for Builder {
@@ -7220,6 +6282,8 @@ pub mod refresh_token_request_body {
             formatter.finish()
         }
     }
+    
+    
 }
 impl RefreshTokenRequestBody {
     /// Creates a new builder-style object to manufacture [`RefreshTokenRequestBody`](crate::model::RefreshTokenRequestBody).
@@ -7234,9 +6298,9 @@ impl RefreshTokenRequestBody {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let tokenproviders = unimplemented!();
 /// match tokenproviders {
@@ -7257,54 +6321,48 @@ impl RefreshTokenRequestBody {
 /// Specifically, when `tokenproviders` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TokenProviders::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TokenProviders {
     /// The figma token provider.
     Figma,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TokenProviders {
     fn from(s: &str) -> Self {
         match s {
             "figma" => TokenProviders::Figma,
-            other => TokenProviders::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TokenProviders::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TokenProviders {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TokenProviders::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TokenProviders::from(s))
+                }
+            }
 impl TokenProviders {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TokenProviders::Figma => "figma",
-            TokenProviders::Unknown(value) => value.as_str(),
+            TokenProviders::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["figma"]
+        &[
+            "figma"
+        ]
     }
 }
 impl AsRef<str> for TokenProviders {
@@ -7316,20 +6374,20 @@ impl AsRef<str> for TokenProviders {
 /// <p>Stores the metadata information about a feature on a form or view.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutMetadataFlagBody {
+pub struct PutMetadataFlagBody  {
     /// <p>The new information to store.</p>
     #[doc(hidden)]
     pub new_value: std::option::Option<std::string::String>,
 }
 impl PutMetadataFlagBody {
     /// <p>The new information to store.</p>
-    pub fn new_value(&self) -> std::option::Option<&str> {
+    pub fn new_value(&self) -> std::option::Option<& str> {
         self.new_value.as_deref()
     }
 }
 /// See [`PutMetadataFlagBody`](crate::model::PutMetadataFlagBody).
 pub mod put_metadata_flag_body {
-
+    
     /// A builder for [`PutMetadataFlagBody`](crate::model::PutMetadataFlagBody).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7343,16 +6401,18 @@ pub mod put_metadata_flag_body {
         }
         /// <p>The new information to store.</p>
         pub fn set_new_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.new_value = input;
-            self
+            self.new_value = input; self
         }
         /// Consumes the builder and constructs a [`PutMetadataFlagBody`](crate::model::PutMetadataFlagBody).
         pub fn build(self) -> crate::model::PutMetadataFlagBody {
             crate::model::PutMetadataFlagBody {
-                new_value: self.new_value,
+                new_value: self.new_value
+                ,
             }
         }
     }
+    
+    
 }
 impl PutMetadataFlagBody {
     /// Creates a new builder-style object to manufacture [`PutMetadataFlagBody`](crate::model::PutMetadataFlagBody).
@@ -7364,7 +6424,7 @@ impl PutMetadataFlagBody {
 /// <p>Describes the configuration of a request to exchange an access code for a token.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ExchangeCodeForTokenRequestBody {
+pub struct ExchangeCodeForTokenRequestBody  {
     /// <p>The access code to send in the request.</p>
     #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
@@ -7374,15 +6434,15 @@ pub struct ExchangeCodeForTokenRequestBody {
 }
 impl ExchangeCodeForTokenRequestBody {
     /// <p>The access code to send in the request.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> std::option::Option<& str> {
         self.code.as_deref()
     }
     /// <p>The location of the application that will receive the access code.</p>
-    pub fn redirect_uri(&self) -> std::option::Option<&str> {
+    pub fn redirect_uri(&self) -> std::option::Option<& str> {
         self.redirect_uri.as_deref()
     }
 }
-impl std::fmt::Debug for ExchangeCodeForTokenRequestBody {
+impl  std::fmt::Debug for ExchangeCodeForTokenRequestBody  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ExchangeCodeForTokenRequestBody");
         formatter.field("code", &"*** Sensitive Data Redacted ***");
@@ -7392,7 +6452,7 @@ impl std::fmt::Debug for ExchangeCodeForTokenRequestBody {
 }
 /// See [`ExchangeCodeForTokenRequestBody`](crate::model::ExchangeCodeForTokenRequestBody).
 pub mod exchange_code_for_token_request_body {
-
+    
     /// A builder for [`ExchangeCodeForTokenRequestBody`](crate::model::ExchangeCodeForTokenRequestBody).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -7407,8 +6467,7 @@ pub mod exchange_code_for_token_request_body {
         }
         /// <p>The access code to send in the request.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.code = input;
-            self
+            self.code = input; self
         }
         /// <p>The location of the application that will receive the access code.</p>
         pub fn redirect_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7417,14 +6476,15 @@ pub mod exchange_code_for_token_request_body {
         }
         /// <p>The location of the application that will receive the access code.</p>
         pub fn set_redirect_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.redirect_uri = input;
-            self
+            self.redirect_uri = input; self
         }
         /// Consumes the builder and constructs a [`ExchangeCodeForTokenRequestBody`](crate::model::ExchangeCodeForTokenRequestBody).
         pub fn build(self) -> crate::model::ExchangeCodeForTokenRequestBody {
             crate::model::ExchangeCodeForTokenRequestBody {
-                code: self.code,
-                redirect_uri: self.redirect_uri,
+                code: self.code
+                ,
+                redirect_uri: self.redirect_uri
+                ,
             }
         }
     }
@@ -7436,6 +6496,8 @@ pub mod exchange_code_for_token_request_body {
             formatter.finish()
         }
     }
+    
+    
 }
 impl ExchangeCodeForTokenRequestBody {
     /// Creates a new builder-style object to manufacture [`ExchangeCodeForTokenRequestBody`](crate::model::ExchangeCodeForTokenRequestBody).
@@ -7443,3 +6505,4 @@ impl ExchangeCodeForTokenRequestBody {
         crate::model::exchange_code_for_token_request_body::Builder::default()
     }
 }
+

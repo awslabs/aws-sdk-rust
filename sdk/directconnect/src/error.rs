@@ -4,17 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UpdateVirtualInterfaceAttributesError {
     /// Kind of error that occurred.
-    pub kind: UpdateVirtualInterfaceAttributesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateVirtualInterfaceAttributesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateVirtualInterfaceAttributesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateVirtualInterfaceAttributesErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: UpdateVirtualInterfaceAttributesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -26,26 +24,28 @@ pub enum UpdateVirtualInterfaceAttributesErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateVirtualInterfaceAttributesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateVirtualInterfaceAttributesErrorKind::DirectConnectClientException(_inner) => {
+            UpdateVirtualInterfaceAttributesErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualInterfaceAttributesErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateVirtualInterfaceAttributesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateVirtualInterfaceAttributesErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateVirtualInterfaceAttributesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -59,78 +59,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateVirtualInterfaceAttribu
 }
 impl UpdateVirtualInterfaceAttributesError {
     /// Creates a new `UpdateVirtualInterfaceAttributesError`.
-    pub fn new(
-        kind: UpdateVirtualInterfaceAttributesErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateVirtualInterfaceAttributesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateVirtualInterfaceAttributesErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateVirtualInterfaceAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateVirtualInterfaceAttributesErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateVirtualInterfaceAttributesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateVirtualInterfaceAttributesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateVirtualInterfaceAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateVirtualInterfaceAttributesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateVirtualInterfaceAttributesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateVirtualInterfaceAttributesErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualInterfaceAttributesErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, UpdateVirtualInterfaceAttributesErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateVirtualInterfaceAttributesErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateVirtualInterfaceAttributesErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, UpdateVirtualInterfaceAttributesErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for UpdateVirtualInterfaceAttributesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateVirtualInterfaceAttributesErrorKind::DirectConnectClientException(_inner) => {
+            UpdateVirtualInterfaceAttributesErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualInterfaceAttributesErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateVirtualInterfaceAttributesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateVirtualInterfaceAttributesErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            UpdateVirtualInterfaceAttributesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -138,22 +127,20 @@ impl std::error::Error for UpdateVirtualInterfaceAttributesError {
 /// <p>A server-side error occurred.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DirectConnectServerException {
+pub struct DirectConnectServerException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DirectConnectServerException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DirectConnectServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DirectConnectServerException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -163,7 +150,7 @@ impl std::fmt::Display for DirectConnectServerException {
 impl std::error::Error for DirectConnectServerException {}
 /// See [`DirectConnectServerException`](crate::error::DirectConnectServerException).
 pub mod direct_connect_server_exception {
-
+    
     /// A builder for [`DirectConnectServerException`](crate::error::DirectConnectServerException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -177,16 +164,18 @@ pub mod direct_connect_server_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DirectConnectServerException`](crate::error::DirectConnectServerException).
         pub fn build(self) -> crate::error::DirectConnectServerException {
             crate::error::DirectConnectServerException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DirectConnectServerException {
     /// Creates a new builder-style object to manufacture [`DirectConnectServerException`](crate::error::DirectConnectServerException).
@@ -198,22 +187,20 @@ impl DirectConnectServerException {
 /// <p>One or more parameters are not valid.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DirectConnectClientException {
+pub struct DirectConnectClientException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DirectConnectClientException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DirectConnectClientException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DirectConnectClientException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -223,7 +210,7 @@ impl std::fmt::Display for DirectConnectClientException {
 impl std::error::Error for DirectConnectClientException {}
 /// See [`DirectConnectClientException`](crate::error::DirectConnectClientException).
 pub mod direct_connect_client_exception {
-
+    
     /// A builder for [`DirectConnectClientException`](crate::error::DirectConnectClientException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -237,16 +224,18 @@ pub mod direct_connect_client_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DirectConnectClientException`](crate::error::DirectConnectClientException).
         pub fn build(self) -> crate::error::DirectConnectClientException {
             crate::error::DirectConnectClientException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DirectConnectClientException {
     /// Creates a new builder-style object to manufacture [`DirectConnectClientException`](crate::error::DirectConnectClientException).
@@ -260,15 +249,15 @@ impl DirectConnectClientException {
 #[derive(std::fmt::Debug)]
 pub struct UpdateLagError {
     /// Kind of error that occurred.
-    pub kind: UpdateLagErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateLagErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateLagError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateLagErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -280,22 +269,28 @@ pub enum UpdateLagErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateLagError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateLagErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            UpdateLagErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            UpdateLagErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateLagErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLagErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateLagErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -309,67 +304,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateLagError {
 }
 impl UpdateLagError {
     /// Creates a new `UpdateLagError`.
-    pub fn new(kind: UpdateLagErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateLagError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateLagError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateLagErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateLagError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateLagError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateLagErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLagErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, UpdateLagErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateLagErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateLagErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, UpdateLagErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for UpdateLagError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateLagErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            UpdateLagErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            UpdateLagErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateLagErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLagErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateLagErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -379,17 +374,15 @@ impl std::error::Error for UpdateLagError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateDirectConnectGatewayAssociationError {
     /// Kind of error that occurred.
-    pub kind: UpdateDirectConnectGatewayAssociationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateDirectConnectGatewayAssociationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateDirectConnectGatewayAssociationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateDirectConnectGatewayAssociationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: UpdateDirectConnectGatewayAssociationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -401,26 +394,28 @@ pub enum UpdateDirectConnectGatewayAssociationErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDirectConnectGatewayAssociationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(
-                _inner,
-            ) => _inner.fmt(f),
-            UpdateDirectConnectGatewayAssociationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDirectConnectGatewayAssociationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -434,78 +429,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateDirectConnectGatewayAss
 }
 impl UpdateDirectConnectGatewayAssociationError {
     /// Creates a new `UpdateDirectConnectGatewayAssociationError`.
-    pub fn new(
-        kind: UpdateDirectConnectGatewayAssociationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateDirectConnectGatewayAssociationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateDirectConnectGatewayAssociationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateDirectConnectGatewayAssociationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateDirectConnectGatewayAssociationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateDirectConnectGatewayAssociationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateDirectConnectGatewayAssociationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateDirectConnectGatewayAssociationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateDirectConnectGatewayAssociationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateDirectConnectGatewayAssociationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for UpdateDirectConnectGatewayAssociationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(
-                _inner,
-            ) => Some(_inner),
-            UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(
-                _inner,
-            ) => Some(_inner),
-            UpdateDirectConnectGatewayAssociationErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDirectConnectGatewayAssociationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -515,17 +499,15 @@ impl std::error::Error for UpdateDirectConnectGatewayAssociationError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateDirectConnectGatewayError {
     /// Kind of error that occurred.
-    pub kind: UpdateDirectConnectGatewayErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateDirectConnectGatewayErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateDirectConnectGatewayError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: UpdateDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -537,26 +519,28 @@ pub enum UpdateDirectConnectGatewayErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateDirectConnectGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateDirectConnectGatewayErrorKind::DirectConnectClientException(_inner) => {
+            UpdateDirectConnectGatewayErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDirectConnectGatewayErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateDirectConnectGatewayErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateDirectConnectGatewayErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateDirectConnectGatewayErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -570,75 +554,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateDirectConnectGatewayErr
 }
 impl UpdateDirectConnectGatewayError {
     /// Creates a new `UpdateDirectConnectGatewayError`.
-    pub fn new(kind: UpdateDirectConnectGatewayErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateDirectConnectGatewayError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateDirectConnectGatewayError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateDirectConnectGatewayErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateDirectConnectGatewayError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateDirectConnectGatewayError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateDirectConnectGatewayErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDirectConnectGatewayErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, UpdateDirectConnectGatewayErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateDirectConnectGatewayErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateDirectConnectGatewayErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, UpdateDirectConnectGatewayErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for UpdateDirectConnectGatewayError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateDirectConnectGatewayErrorKind::DirectConnectClientException(_inner) => {
+            UpdateDirectConnectGatewayErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDirectConnectGatewayErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateDirectConnectGatewayErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateDirectConnectGatewayErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            UpdateDirectConnectGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -648,15 +624,15 @@ impl std::error::Error for UpdateDirectConnectGatewayError {
 #[derive(std::fmt::Debug)]
 pub struct UpdateConnectionError {
     /// Kind of error that occurred.
-    pub kind: UpdateConnectionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateConnectionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateConnectionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UpdateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -668,22 +644,28 @@ pub enum UpdateConnectionErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateConnectionErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            UpdateConnectionErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            UpdateConnectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UpdateConnectionErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateConnectionErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateConnectionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -697,67 +679,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateConnectionError {
 }
 impl UpdateConnectionError {
     /// Creates a new `UpdateConnectionError`.
-    pub fn new(kind: UpdateConnectionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateConnectionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateConnectionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateConnectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateConnectionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateConnectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateConnectionErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateConnectionErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, UpdateConnectionErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `UpdateConnectionErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateConnectionErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, UpdateConnectionErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for UpdateConnectionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateConnectionErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            UpdateConnectionErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            UpdateConnectionErrorKind::Unhandled(_inner) => Some(_inner),
+            UpdateConnectionErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateConnectionErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateConnectionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -767,15 +749,15 @@ impl std::error::Error for UpdateConnectionError {
 #[derive(std::fmt::Debug)]
 pub struct UntagResourceError {
     /// Kind of error that occurred.
-    pub kind: UntagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UntagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UntagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -787,22 +769,28 @@ pub enum UntagResourceErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UntagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UntagResourceErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            UntagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -816,67 +804,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
 }
 impl UntagResourceError {
     /// Creates a new `UntagResourceError`.
-    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UntagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UntagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UntagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `UntagResourceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UntagResourceErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, UntagResourceErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for UntagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UntagResourceErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            UntagResourceErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            UntagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            UntagResourceErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            UntagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -886,15 +874,15 @@ impl std::error::Error for UntagResourceError {
 #[derive(std::fmt::Debug)]
 pub struct TagResourceError {
     /// Kind of error that occurred.
-    pub kind: TagResourceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: TagResourceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for TagResourceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -910,24 +898,34 @@ pub enum TagResourceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for TagResourceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            TagResourceErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::DuplicateTagKeysException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            TagResourceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            TagResourceErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::DuplicateTagKeysException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -941,66 +939,57 @@ impl aws_smithy_types::retry::ProvideErrorKind for TagResourceError {
 }
 impl TagResourceError {
     /// Creates a new `TagResourceError`.
-    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: TagResourceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `TagResourceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: TagResourceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `TagResourceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::DirectConnectServerException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            TagResourceErrorKind::DuplicateTagKeysException(_)
-        )
+        matches!(&self.kind, TagResourceErrorKind::DuplicateTagKeysException(_))
     }
     /// Returns `true` if the error kind is `TagResourceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
@@ -1010,11 +999,21 @@ impl TagResourceError {
 impl std::error::Error for TagResourceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            TagResourceErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            TagResourceErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            TagResourceErrorKind::DuplicateTagKeysException(_inner) => Some(_inner),
-            TagResourceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            TagResourceErrorKind::Unhandled(_inner) => Some(_inner),
+            TagResourceErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::DuplicateTagKeysException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            TagResourceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1022,22 +1021,20 @@ impl std::error::Error for TagResourceError {
 /// <p>You have reached the limit on the number of tags that can be assigned.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TooManyTagsException {
+pub struct TooManyTagsException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl TooManyTagsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for TooManyTagsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TooManyTagsException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -1047,7 +1044,7 @@ impl std::fmt::Display for TooManyTagsException {
 impl std::error::Error for TooManyTagsException {}
 /// See [`TooManyTagsException`](crate::error::TooManyTagsException).
 pub mod too_many_tags_exception {
-
+    
     /// A builder for [`TooManyTagsException`](crate::error::TooManyTagsException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1061,16 +1058,18 @@ pub mod too_many_tags_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`TooManyTagsException`](crate::error::TooManyTagsException).
         pub fn build(self) -> crate::error::TooManyTagsException {
             crate::error::TooManyTagsException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl TooManyTagsException {
     /// Creates a new builder-style object to manufacture [`TooManyTagsException`](crate::error::TooManyTagsException).
@@ -1082,22 +1081,20 @@ impl TooManyTagsException {
 /// <p>A tag key was specified more than once.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DuplicateTagKeysException {
+pub struct DuplicateTagKeysException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl DuplicateTagKeysException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for DuplicateTagKeysException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DuplicateTagKeysException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -1107,7 +1104,7 @@ impl std::fmt::Display for DuplicateTagKeysException {
 impl std::error::Error for DuplicateTagKeysException {}
 /// See [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException).
 pub mod duplicate_tag_keys_exception {
-
+    
     /// A builder for [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1121,16 +1118,18 @@ pub mod duplicate_tag_keys_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException).
         pub fn build(self) -> crate::error::DuplicateTagKeysException {
             crate::error::DuplicateTagKeysException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl DuplicateTagKeysException {
     /// Creates a new builder-style object to manufacture [`DuplicateTagKeysException`](crate::error::DuplicateTagKeysException).
@@ -1144,15 +1143,15 @@ impl DuplicateTagKeysException {
 #[derive(std::fmt::Debug)]
 pub struct StopBgpFailoverTestError {
     /// Kind of error that occurred.
-    pub kind: StopBgpFailoverTestErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StopBgpFailoverTestErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StopBgpFailoverTestError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: StopBgpFailoverTestErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1164,22 +1163,28 @@ pub enum StopBgpFailoverTestErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StopBgpFailoverTestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StopBgpFailoverTestErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            StopBgpFailoverTestErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            StopBgpFailoverTestErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            StopBgpFailoverTestErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopBgpFailoverTestErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StopBgpFailoverTestErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1193,67 +1198,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for StopBgpFailoverTestError {
 }
 impl StopBgpFailoverTestError {
     /// Creates a new `StopBgpFailoverTestError`.
-    pub fn new(kind: StopBgpFailoverTestErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StopBgpFailoverTestError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StopBgpFailoverTestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StopBgpFailoverTestError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StopBgpFailoverTestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StopBgpFailoverTestErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StopBgpFailoverTestError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StopBgpFailoverTestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StopBgpFailoverTestError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StopBgpFailoverTestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StopBgpFailoverTestErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopBgpFailoverTestErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, StopBgpFailoverTestErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `StopBgpFailoverTestErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StopBgpFailoverTestErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, StopBgpFailoverTestErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for StopBgpFailoverTestError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StopBgpFailoverTestErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            StopBgpFailoverTestErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            StopBgpFailoverTestErrorKind::Unhandled(_inner) => Some(_inner),
+            StopBgpFailoverTestErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            StopBgpFailoverTestErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            StopBgpFailoverTestErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1263,15 +1268,15 @@ impl std::error::Error for StopBgpFailoverTestError {
 #[derive(std::fmt::Debug)]
 pub struct StartBgpFailoverTestError {
     /// Kind of error that occurred.
-    pub kind: StartBgpFailoverTestErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: StartBgpFailoverTestErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for StartBgpFailoverTestError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: StartBgpFailoverTestErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1283,22 +1288,28 @@ pub enum StartBgpFailoverTestErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for StartBgpFailoverTestError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            StartBgpFailoverTestErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            StartBgpFailoverTestErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            StartBgpFailoverTestErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            StartBgpFailoverTestErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartBgpFailoverTestErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            StartBgpFailoverTestErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1312,71 +1323,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for StartBgpFailoverTestError {
 }
 impl StartBgpFailoverTestError {
     /// Creates a new `StartBgpFailoverTestError`.
-    pub fn new(kind: StartBgpFailoverTestErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `StartBgpFailoverTestError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: StartBgpFailoverTestErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `StartBgpFailoverTestError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: StartBgpFailoverTestErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: StartBgpFailoverTestErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `StartBgpFailoverTestError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: StartBgpFailoverTestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `StartBgpFailoverTestError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: StartBgpFailoverTestErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `StartBgpFailoverTestErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartBgpFailoverTestErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, StartBgpFailoverTestErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `StartBgpFailoverTestErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            StartBgpFailoverTestErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, StartBgpFailoverTestErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for StartBgpFailoverTestError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            StartBgpFailoverTestErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            StartBgpFailoverTestErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            StartBgpFailoverTestErrorKind::Unhandled(_inner) => Some(_inner),
+            StartBgpFailoverTestErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            StartBgpFailoverTestErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            StartBgpFailoverTestErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1386,17 +1393,15 @@ impl std::error::Error for StartBgpFailoverTestError {
 #[derive(std::fmt::Debug)]
 pub struct ListVirtualInterfaceTestHistoryError {
     /// Kind of error that occurred.
-    pub kind: ListVirtualInterfaceTestHistoryErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListVirtualInterfaceTestHistoryErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListVirtualInterfaceTestHistoryError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListVirtualInterfaceTestHistoryErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ListVirtualInterfaceTestHistoryErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1408,26 +1413,28 @@ pub enum ListVirtualInterfaceTestHistoryErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListVirtualInterfaceTestHistoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListVirtualInterfaceTestHistoryErrorKind::DirectConnectClientException(_inner) => {
+            ListVirtualInterfaceTestHistoryErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualInterfaceTestHistoryErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListVirtualInterfaceTestHistoryErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListVirtualInterfaceTestHistoryErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListVirtualInterfaceTestHistoryErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1441,78 +1448,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListVirtualInterfaceTestHisto
 }
 impl ListVirtualInterfaceTestHistoryError {
     /// Creates a new `ListVirtualInterfaceTestHistoryError`.
-    pub fn new(
-        kind: ListVirtualInterfaceTestHistoryErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListVirtualInterfaceTestHistoryError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListVirtualInterfaceTestHistoryErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListVirtualInterfaceTestHistoryError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListVirtualInterfaceTestHistoryErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListVirtualInterfaceTestHistoryErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListVirtualInterfaceTestHistoryError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListVirtualInterfaceTestHistoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListVirtualInterfaceTestHistoryError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListVirtualInterfaceTestHistoryErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListVirtualInterfaceTestHistoryErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualInterfaceTestHistoryErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, ListVirtualInterfaceTestHistoryErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `ListVirtualInterfaceTestHistoryErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListVirtualInterfaceTestHistoryErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, ListVirtualInterfaceTestHistoryErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for ListVirtualInterfaceTestHistoryError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListVirtualInterfaceTestHistoryErrorKind::DirectConnectClientException(_inner) => {
+            ListVirtualInterfaceTestHistoryErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualInterfaceTestHistoryErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListVirtualInterfaceTestHistoryErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListVirtualInterfaceTestHistoryErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            ListVirtualInterfaceTestHistoryErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1522,15 +1518,15 @@ impl std::error::Error for ListVirtualInterfaceTestHistoryError {
 #[derive(std::fmt::Debug)]
 pub struct DisassociateMacSecKeyError {
     /// Kind of error that occurred.
-    pub kind: DisassociateMacSecKeyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DisassociateMacSecKeyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DisassociateMacSecKeyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DisassociateMacSecKeyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1542,22 +1538,28 @@ pub enum DisassociateMacSecKeyErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateMacSecKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DisassociateMacSecKeyErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            DisassociateMacSecKeyErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            DisassociateMacSecKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DisassociateMacSecKeyErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisassociateMacSecKeyErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisassociateMacSecKeyErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1571,71 +1573,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DisassociateMacSecKeyError {
 }
 impl DisassociateMacSecKeyError {
     /// Creates a new `DisassociateMacSecKeyError`.
-    pub fn new(kind: DisassociateMacSecKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DisassociateMacSecKeyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DisassociateMacSecKeyErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DisassociateMacSecKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DisassociateMacSecKeyErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DisassociateMacSecKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DisassociateMacSecKeyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DisassociateMacSecKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DisassociateMacSecKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DisassociateMacSecKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DisassociateMacSecKeyErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociateMacSecKeyErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DisassociateMacSecKeyErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DisassociateMacSecKeyErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociateMacSecKeyErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DisassociateMacSecKeyErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DisassociateMacSecKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DisassociateMacSecKeyErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            DisassociateMacSecKeyErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DisassociateMacSecKeyErrorKind::Unhandled(_inner) => Some(_inner),
+            DisassociateMacSecKeyErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DisassociateMacSecKeyErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DisassociateMacSecKeyErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1645,17 +1643,15 @@ impl std::error::Error for DisassociateMacSecKeyError {
 #[derive(std::fmt::Debug)]
 pub struct DisassociateConnectionFromLagError {
     /// Kind of error that occurred.
-    pub kind: DisassociateConnectionFromLagErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DisassociateConnectionFromLagErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DisassociateConnectionFromLagError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DisassociateConnectionFromLagErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DisassociateConnectionFromLagErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1667,26 +1663,28 @@ pub enum DisassociateConnectionFromLagErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DisassociateConnectionFromLagError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DisassociateConnectionFromLagErrorKind::DirectConnectClientException(_inner) => {
+            DisassociateConnectionFromLagErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisassociateConnectionFromLagErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DisassociateConnectionFromLagErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DisassociateConnectionFromLagErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            DisassociateConnectionFromLagErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1700,78 +1698,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DisassociateConnectionFromLag
 }
 impl DisassociateConnectionFromLagError {
     /// Creates a new `DisassociateConnectionFromLagError`.
-    pub fn new(
-        kind: DisassociateConnectionFromLagErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DisassociateConnectionFromLagError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DisassociateConnectionFromLagErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DisassociateConnectionFromLagError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DisassociateConnectionFromLagErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DisassociateConnectionFromLagErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DisassociateConnectionFromLagError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DisassociateConnectionFromLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DisassociateConnectionFromLagError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DisassociateConnectionFromLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DisassociateConnectionFromLagErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociateConnectionFromLagErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DisassociateConnectionFromLagErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DisassociateConnectionFromLagErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DisassociateConnectionFromLagErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DisassociateConnectionFromLagErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DisassociateConnectionFromLagError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DisassociateConnectionFromLagErrorKind::DirectConnectClientException(_inner) => {
+            DisassociateConnectionFromLagErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DisassociateConnectionFromLagErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DisassociateConnectionFromLagErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DisassociateConnectionFromLagErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            DisassociateConnectionFromLagErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1781,17 +1768,15 @@ impl std::error::Error for DisassociateConnectionFromLagError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeVirtualInterfacesError {
     /// Kind of error that occurred.
-    pub kind: DescribeVirtualInterfacesErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeVirtualInterfacesErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeVirtualInterfacesError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeVirtualInterfacesErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeVirtualInterfacesErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1803,26 +1788,28 @@ pub enum DescribeVirtualInterfacesErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeVirtualInterfacesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeVirtualInterfacesErrorKind::DirectConnectClientException(_inner) => {
+            DescribeVirtualInterfacesErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualInterfacesErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualInterfacesErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeVirtualInterfacesErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeVirtualInterfacesErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1836,75 +1823,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeVirtualInterfacesErro
 }
 impl DescribeVirtualInterfacesError {
     /// Creates a new `DescribeVirtualInterfacesError`.
-    pub fn new(kind: DescribeVirtualInterfacesErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeVirtualInterfacesError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeVirtualInterfacesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeVirtualInterfacesError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeVirtualInterfacesErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeVirtualInterfacesErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeVirtualInterfacesError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeVirtualInterfacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeVirtualInterfacesError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeVirtualInterfacesErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeVirtualInterfacesErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualInterfacesErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DescribeVirtualInterfacesErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualInterfacesErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualInterfacesErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DescribeVirtualInterfacesErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DescribeVirtualInterfacesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeVirtualInterfacesErrorKind::DirectConnectClientException(_inner) => {
+            DescribeVirtualInterfacesErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualInterfacesErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualInterfacesErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeVirtualInterfacesErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            DescribeVirtualInterfacesErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1914,15 +1893,15 @@ impl std::error::Error for DescribeVirtualInterfacesError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeVirtualGatewaysError {
     /// Kind of error that occurred.
-    pub kind: DescribeVirtualGatewaysErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeVirtualGatewaysErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeVirtualGatewaysError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeVirtualGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1934,22 +1913,28 @@ pub enum DescribeVirtualGatewaysErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeVirtualGatewaysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeVirtualGatewaysErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            DescribeVirtualGatewaysErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            DescribeVirtualGatewaysErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeVirtualGatewaysErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualGatewaysErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeVirtualGatewaysErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1963,71 +1948,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeVirtualGatewaysError 
 }
 impl DescribeVirtualGatewaysError {
     /// Creates a new `DescribeVirtualGatewaysError`.
-    pub fn new(kind: DescribeVirtualGatewaysErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeVirtualGatewaysError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeVirtualGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeVirtualGatewaysError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeVirtualGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeVirtualGatewaysErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeVirtualGatewaysError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeVirtualGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeVirtualGatewaysError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeVirtualGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeVirtualGatewaysErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualGatewaysErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DescribeVirtualGatewaysErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeVirtualGatewaysErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeVirtualGatewaysErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DescribeVirtualGatewaysErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DescribeVirtualGatewaysError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeVirtualGatewaysErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            DescribeVirtualGatewaysErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DescribeVirtualGatewaysErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeVirtualGatewaysErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualGatewaysErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeVirtualGatewaysErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2037,15 +2018,15 @@ impl std::error::Error for DescribeVirtualGatewaysError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeTagsError {
     /// Kind of error that occurred.
-    pub kind: DescribeTagsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeTagsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeTagsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeTagsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2057,22 +2038,28 @@ pub enum DescribeTagsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeTagsErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            DescribeTagsErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            DescribeTagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeTagsErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTagsErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeTagsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2086,67 +2073,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeTagsError {
 }
 impl DescribeTagsError {
     /// Creates a new `DescribeTagsError`.
-    pub fn new(kind: DescribeTagsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeTagsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeTagsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeTagsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeTagsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeTagsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeTagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeTagsErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTagsErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DescribeTagsErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeTagsErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeTagsErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DescribeTagsErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DescribeTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeTagsErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            DescribeTagsErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DescribeTagsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeTagsErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTagsErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeTagsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2156,17 +2143,15 @@ impl std::error::Error for DescribeTagsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeRouterConfigurationError {
     /// Kind of error that occurred.
-    pub kind: DescribeRouterConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeRouterConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeRouterConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeRouterConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeRouterConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2178,26 +2163,28 @@ pub enum DescribeRouterConfigurationErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeRouterConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeRouterConfigurationErrorKind::DirectConnectClientException(_inner) => {
+            DescribeRouterConfigurationErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeRouterConfigurationErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeRouterConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeRouterConfigurationErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeRouterConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2211,75 +2198,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeRouterConfigurationEr
 }
 impl DescribeRouterConfigurationError {
     /// Creates a new `DescribeRouterConfigurationError`.
-    pub fn new(kind: DescribeRouterConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeRouterConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeRouterConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeRouterConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeRouterConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeRouterConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeRouterConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeRouterConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeRouterConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeRouterConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeRouterConfigurationErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeRouterConfigurationErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DescribeRouterConfigurationErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeRouterConfigurationErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeRouterConfigurationErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DescribeRouterConfigurationErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DescribeRouterConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeRouterConfigurationErrorKind::DirectConnectClientException(_inner) => {
+            DescribeRouterConfigurationErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeRouterConfigurationErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeRouterConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeRouterConfigurationErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            DescribeRouterConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -2289,15 +2268,15 @@ impl std::error::Error for DescribeRouterConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeLocationsError {
     /// Kind of error that occurred.
-    pub kind: DescribeLocationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeLocationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeLocationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeLocationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2309,22 +2288,28 @@ pub enum DescribeLocationsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLocationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeLocationsErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            DescribeLocationsErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            DescribeLocationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeLocationsErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeLocationsErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeLocationsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2338,67 +2323,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeLocationsError {
 }
 impl DescribeLocationsError {
     /// Creates a new `DescribeLocationsError`.
-    pub fn new(kind: DescribeLocationsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeLocationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeLocationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeLocationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeLocationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeLocationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeLocationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeLocationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeLocationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeLocationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeLocationsErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeLocationsErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DescribeLocationsErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeLocationsErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeLocationsErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DescribeLocationsErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DescribeLocationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeLocationsErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            DescribeLocationsErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DescribeLocationsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeLocationsErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeLocationsErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeLocationsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2408,15 +2393,15 @@ impl std::error::Error for DescribeLocationsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeLoaError {
     /// Kind of error that occurred.
-    pub kind: DescribeLoaErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeLoaErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeLoaError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeLoaErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2428,22 +2413,28 @@ pub enum DescribeLoaErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLoaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeLoaErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            DescribeLoaErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            DescribeLoaErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeLoaErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeLoaErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeLoaErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2457,67 +2448,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeLoaError {
 }
 impl DescribeLoaError {
     /// Creates a new `DescribeLoaError`.
-    pub fn new(kind: DescribeLoaErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeLoaError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeLoaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeLoaError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeLoaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeLoaErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeLoaError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeLoaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeLoaError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeLoaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeLoaErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeLoaErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DescribeLoaErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeLoaErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeLoaErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DescribeLoaErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DescribeLoaError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeLoaErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            DescribeLoaErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DescribeLoaErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeLoaErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeLoaErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeLoaErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2527,15 +2518,15 @@ impl std::error::Error for DescribeLoaError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeLagsError {
     /// Kind of error that occurred.
-    pub kind: DescribeLagsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeLagsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeLagsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeLagsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2547,22 +2538,28 @@ pub enum DescribeLagsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeLagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeLagsErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            DescribeLagsErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            DescribeLagsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeLagsErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeLagsErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeLagsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2576,67 +2573,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeLagsError {
 }
 impl DescribeLagsError {
     /// Creates a new `DescribeLagsError`.
-    pub fn new(kind: DescribeLagsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeLagsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeLagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeLagsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeLagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeLagsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeLagsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeLagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeLagsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeLagsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeLagsErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeLagsErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DescribeLagsErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeLagsErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeLagsErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DescribeLagsErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DescribeLagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeLagsErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            DescribeLagsErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DescribeLagsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeLagsErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeLagsErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeLagsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2646,15 +2643,15 @@ impl std::error::Error for DescribeLagsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeInterconnectsError {
     /// Kind of error that occurred.
-    pub kind: DescribeInterconnectsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeInterconnectsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeInterconnectsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeInterconnectsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2666,22 +2663,28 @@ pub enum DescribeInterconnectsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeInterconnectsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeInterconnectsErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            DescribeInterconnectsErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            DescribeInterconnectsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeInterconnectsErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeInterconnectsErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeInterconnectsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2695,71 +2698,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeInterconnectsError {
 }
 impl DescribeInterconnectsError {
     /// Creates a new `DescribeInterconnectsError`.
-    pub fn new(kind: DescribeInterconnectsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeInterconnectsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeInterconnectsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeInterconnectsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeInterconnectsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeInterconnectsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeInterconnectsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeInterconnectsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeInterconnectsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeInterconnectsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeInterconnectsErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeInterconnectsErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DescribeInterconnectsErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeInterconnectsErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeInterconnectsErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DescribeInterconnectsErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DescribeInterconnectsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeInterconnectsErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            DescribeInterconnectsErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DescribeInterconnectsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeInterconnectsErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeInterconnectsErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeInterconnectsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2769,15 +2768,15 @@ impl std::error::Error for DescribeInterconnectsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeInterconnectLoaError {
     /// Kind of error that occurred.
-    pub kind: DescribeInterconnectLoaErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeInterconnectLoaErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeInterconnectLoaError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeInterconnectLoaErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -2789,22 +2788,28 @@ pub enum DescribeInterconnectLoaErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeInterconnectLoaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeInterconnectLoaErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            DescribeInterconnectLoaErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            DescribeInterconnectLoaErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeInterconnectLoaErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeInterconnectLoaErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeInterconnectLoaErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -2818,71 +2823,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeInterconnectLoaError 
 }
 impl DescribeInterconnectLoaError {
     /// Creates a new `DescribeInterconnectLoaError`.
-    pub fn new(kind: DescribeInterconnectLoaErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeInterconnectLoaError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeInterconnectLoaErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeInterconnectLoaError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeInterconnectLoaErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeInterconnectLoaErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeInterconnectLoaError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeInterconnectLoaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeInterconnectLoaError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeInterconnectLoaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeInterconnectLoaErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeInterconnectLoaErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DescribeInterconnectLoaErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeInterconnectLoaErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeInterconnectLoaErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DescribeInterconnectLoaErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DescribeInterconnectLoaError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeInterconnectLoaErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            DescribeInterconnectLoaErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DescribeInterconnectLoaErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeInterconnectLoaErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeInterconnectLoaErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeInterconnectLoaErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -2892,17 +2893,15 @@ impl std::error::Error for DescribeInterconnectLoaError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeHostedConnectionsError {
     /// Kind of error that occurred.
-    pub kind: DescribeHostedConnectionsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeHostedConnectionsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeHostedConnectionsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeHostedConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeHostedConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -2914,26 +2913,28 @@ pub enum DescribeHostedConnectionsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeHostedConnectionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeHostedConnectionsErrorKind::DirectConnectClientException(_inner) => {
+            DescribeHostedConnectionsErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeHostedConnectionsErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeHostedConnectionsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeHostedConnectionsErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeHostedConnectionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -2947,75 +2948,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeHostedConnectionsErro
 }
 impl DescribeHostedConnectionsError {
     /// Creates a new `DescribeHostedConnectionsError`.
-    pub fn new(kind: DescribeHostedConnectionsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeHostedConnectionsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeHostedConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeHostedConnectionsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeHostedConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeHostedConnectionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeHostedConnectionsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeHostedConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeHostedConnectionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeHostedConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeHostedConnectionsErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeHostedConnectionsErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DescribeHostedConnectionsErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeHostedConnectionsErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeHostedConnectionsErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DescribeHostedConnectionsErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DescribeHostedConnectionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeHostedConnectionsErrorKind::DirectConnectClientException(_inner) => {
+            DescribeHostedConnectionsErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeHostedConnectionsErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeHostedConnectionsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeHostedConnectionsErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            DescribeHostedConnectionsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3025,17 +3018,15 @@ impl std::error::Error for DescribeHostedConnectionsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewaysError {
     /// Kind of error that occurred.
-    pub kind: DescribeDirectConnectGatewaysErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeDirectConnectGatewaysErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeDirectConnectGatewaysError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeDirectConnectGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeDirectConnectGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3047,26 +3038,28 @@ pub enum DescribeDirectConnectGatewaysErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDirectConnectGatewaysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDirectConnectGatewaysErrorKind::DirectConnectClientException(_inner) => {
+            DescribeDirectConnectGatewaysErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeDirectConnectGatewaysErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeDirectConnectGatewaysErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeDirectConnectGatewaysErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeDirectConnectGatewaysErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3080,78 +3073,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeDirectConnectGateways
 }
 impl DescribeDirectConnectGatewaysError {
     /// Creates a new `DescribeDirectConnectGatewaysError`.
-    pub fn new(
-        kind: DescribeDirectConnectGatewaysErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeDirectConnectGatewaysError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeDirectConnectGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeDirectConnectGatewaysError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeDirectConnectGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeDirectConnectGatewaysErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeDirectConnectGatewaysError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeDirectConnectGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeDirectConnectGatewaysError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeDirectConnectGatewaysErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeDirectConnectGatewaysErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeDirectConnectGatewaysErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DescribeDirectConnectGatewaysErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeDirectConnectGatewaysErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeDirectConnectGatewaysErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DescribeDirectConnectGatewaysErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DescribeDirectConnectGatewaysError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDirectConnectGatewaysErrorKind::DirectConnectClientException(_inner) => {
+            DescribeDirectConnectGatewaysErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeDirectConnectGatewaysErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeDirectConnectGatewaysErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeDirectConnectGatewaysErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            DescribeDirectConnectGatewaysErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3161,19 +3143,15 @@ impl std::error::Error for DescribeDirectConnectGatewaysError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAttachmentsError {
     /// Kind of error that occurred.
-    pub kind: DescribeDirectConnectGatewayAttachmentsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeDirectConnectGatewayAttachmentsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for DescribeDirectConnectGatewayAttachmentsError
-{
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDirectConnectGatewayAttachmentsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeDirectConnectGatewayAttachmentsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeDirectConnectGatewayAttachmentsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3185,26 +3163,28 @@ pub enum DescribeDirectConnectGatewayAttachmentsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDirectConnectGatewayAttachmentsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectServerException(
-                _inner,
-            ) => _inner.fmt(f),
-            DescribeDirectConnectGatewayAttachmentsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeDirectConnectGatewayAttachmentsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3218,78 +3198,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeDirectConnectGatewayA
 }
 impl DescribeDirectConnectGatewayAttachmentsError {
     /// Creates a new `DescribeDirectConnectGatewayAttachmentsError`.
-    pub fn new(
-        kind: DescribeDirectConnectGatewayAttachmentsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeDirectConnectGatewayAttachmentsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeDirectConnectGatewayAttachmentsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeDirectConnectGatewayAttachmentsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeDirectConnectGatewayAttachmentsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeDirectConnectGatewayAttachmentsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeDirectConnectGatewayAttachmentsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeDirectConnectGatewayAttachmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeDirectConnectGatewayAttachmentsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeDirectConnectGatewayAttachmentsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DescribeDirectConnectGatewayAttachmentsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectClientException(
-                _inner,
-            ) => Some(_inner),
-            DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectServerException(
-                _inner,
-            ) => Some(_inner),
-            DescribeDirectConnectGatewayAttachmentsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeDirectConnectGatewayAttachmentsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3299,19 +3268,15 @@ impl std::error::Error for DescribeDirectConnectGatewayAttachmentsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAssociationsError {
     /// Kind of error that occurred.
-    pub kind: DescribeDirectConnectGatewayAssociationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeDirectConnectGatewayAssociationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for DescribeDirectConnectGatewayAssociationsError
-{
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDirectConnectGatewayAssociationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeDirectConnectGatewayAssociationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeDirectConnectGatewayAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3323,26 +3288,28 @@ pub enum DescribeDirectConnectGatewayAssociationsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDirectConnectGatewayAssociationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectServerException(
-                _inner,
-            ) => _inner.fmt(f),
-            DescribeDirectConnectGatewayAssociationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeDirectConnectGatewayAssociationsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3356,78 +3323,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeDirectConnectGatewayA
 }
 impl DescribeDirectConnectGatewayAssociationsError {
     /// Creates a new `DescribeDirectConnectGatewayAssociationsError`.
-    pub fn new(
-        kind: DescribeDirectConnectGatewayAssociationsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeDirectConnectGatewayAssociationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeDirectConnectGatewayAssociationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeDirectConnectGatewayAssociationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeDirectConnectGatewayAssociationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeDirectConnectGatewayAssociationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeDirectConnectGatewayAssociationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeDirectConnectGatewayAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeDirectConnectGatewayAssociationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeDirectConnectGatewayAssociationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DescribeDirectConnectGatewayAssociationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectClientException(
-                _inner,
-            ) => Some(_inner),
-            DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectServerException(
-                _inner,
-            ) => Some(_inner),
-            DescribeDirectConnectGatewayAssociationsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeDirectConnectGatewayAssociationsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3437,19 +3393,15 @@ impl std::error::Error for DescribeDirectConnectGatewayAssociationsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAssociationProposalsError {
     /// Kind of error that occurred.
-    pub kind: DescribeDirectConnectGatewayAssociationProposalsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeDirectConnectGatewayAssociationProposalsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for DescribeDirectConnectGatewayAssociationProposalsError
-{
+impl aws_smithy_http::result::CreateUnhandledError for DescribeDirectConnectGatewayAssociationProposalsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeDirectConnectGatewayAssociationProposalsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeDirectConnectGatewayAssociationProposalsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3461,14 +3413,14 @@ pub enum DescribeDirectConnectGatewayAssociationProposalsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeDirectConnectGatewayAssociationProposalsError {
@@ -3486,9 +3438,7 @@ impl std::fmt::Display for DescribeDirectConnectGatewayAssociationProposalsError
         }
     }
 }
-impl aws_smithy_types::retry::ProvideErrorKind
-    for DescribeDirectConnectGatewayAssociationProposalsError
-{
+impl aws_smithy_types::retry::ProvideErrorKind for DescribeDirectConnectGatewayAssociationProposalsError {
     fn code(&self) -> Option<&str> {
         DescribeDirectConnectGatewayAssociationProposalsError::code(self)
     }
@@ -3498,70 +3448,53 @@ impl aws_smithy_types::retry::ProvideErrorKind
 }
 impl DescribeDirectConnectGatewayAssociationProposalsError {
     /// Creates a new `DescribeDirectConnectGatewayAssociationProposalsError`.
-    pub fn new(
-        kind: DescribeDirectConnectGatewayAssociationProposalsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeDirectConnectGatewayAssociationProposalsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeDirectConnectGatewayAssociationProposalsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeDirectConnectGatewayAssociationProposalsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeDirectConnectGatewayAssociationProposalsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeDirectConnectGatewayAssociationProposalsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeDirectConnectGatewayAssociationProposalsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeDirectConnectGatewayAssociationProposalsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeDirectConnectGatewayAssociationProposalsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeDirectConnectGatewayAssociationProposalsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeDirectConnectGatewayAssociationProposalsErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeDirectConnectGatewayAssociationProposalsErrorKind::DirectConnectClientException(
-                _
-            )
-        )
+        matches!(&self.kind, DescribeDirectConnectGatewayAssociationProposalsErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeDirectConnectGatewayAssociationProposalsErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeDirectConnectGatewayAssociationProposalsErrorKind::DirectConnectServerException(
-                _
-            )
-        )
+        matches!(&self.kind, DescribeDirectConnectGatewayAssociationProposalsErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DescribeDirectConnectGatewayAssociationProposalsError {
@@ -3585,17 +3518,15 @@ impl std::error::Error for DescribeDirectConnectGatewayAssociationProposalsError
 #[derive(std::fmt::Debug)]
 pub struct DescribeCustomerMetadataError {
     /// Kind of error that occurred.
-    pub kind: DescribeCustomerMetadataErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeCustomerMetadataErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeCustomerMetadataError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeCustomerMetadataErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DescribeCustomerMetadataErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3607,26 +3538,28 @@ pub enum DescribeCustomerMetadataErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeCustomerMetadataError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeCustomerMetadataErrorKind::DirectConnectClientException(_inner) => {
+            DescribeCustomerMetadataErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCustomerMetadataErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeCustomerMetadataErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeCustomerMetadataErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeCustomerMetadataErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3640,71 +3573,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeCustomerMetadataError
 }
 impl DescribeCustomerMetadataError {
     /// Creates a new `DescribeCustomerMetadataError`.
-    pub fn new(kind: DescribeCustomerMetadataErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeCustomerMetadataError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeCustomerMetadataErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeCustomerMetadataError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeCustomerMetadataErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeCustomerMetadataErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeCustomerMetadataError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeCustomerMetadataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeCustomerMetadataError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeCustomerMetadataErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeCustomerMetadataErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCustomerMetadataErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DescribeCustomerMetadataErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeCustomerMetadataErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeCustomerMetadataErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DescribeCustomerMetadataErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DescribeCustomerMetadataError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeCustomerMetadataErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            DescribeCustomerMetadataErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DescribeCustomerMetadataErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeCustomerMetadataErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCustomerMetadataErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeCustomerMetadataErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3714,17 +3643,15 @@ impl std::error::Error for DescribeCustomerMetadataError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeConnectionsOnInterconnectError {
     /// Kind of error that occurred.
-    pub kind: DescribeConnectionsOnInterconnectErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeConnectionsOnInterconnectErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeConnectionsOnInterconnectError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DescribeConnectionsOnInterconnectErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DescribeConnectionsOnInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -3736,26 +3663,28 @@ pub enum DescribeConnectionsOnInterconnectErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeConnectionsOnInterconnectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeConnectionsOnInterconnectErrorKind::DirectConnectClientException(_inner) => {
+            DescribeConnectionsOnInterconnectErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeConnectionsOnInterconnectErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeConnectionsOnInterconnectErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DescribeConnectionsOnInterconnectErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            DescribeConnectionsOnInterconnectErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -3769,78 +3698,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeConnectionsOnIntercon
 }
 impl DescribeConnectionsOnInterconnectError {
     /// Creates a new `DescribeConnectionsOnInterconnectError`.
-    pub fn new(
-        kind: DescribeConnectionsOnInterconnectErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeConnectionsOnInterconnectError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeConnectionsOnInterconnectErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeConnectionsOnInterconnectError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeConnectionsOnInterconnectErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeConnectionsOnInterconnectErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeConnectionsOnInterconnectError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeConnectionsOnInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeConnectionsOnInterconnectError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeConnectionsOnInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeConnectionsOnInterconnectErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeConnectionsOnInterconnectErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DescribeConnectionsOnInterconnectErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeConnectionsOnInterconnectErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeConnectionsOnInterconnectErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DescribeConnectionsOnInterconnectErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DescribeConnectionsOnInterconnectError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeConnectionsOnInterconnectErrorKind::DirectConnectClientException(_inner) => {
+            DescribeConnectionsOnInterconnectErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeConnectionsOnInterconnectErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeConnectionsOnInterconnectErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DescribeConnectionsOnInterconnectErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            DescribeConnectionsOnInterconnectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -3850,15 +3768,15 @@ impl std::error::Error for DescribeConnectionsOnInterconnectError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeConnectionsError {
     /// Kind of error that occurred.
-    pub kind: DescribeConnectionsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeConnectionsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeConnectionsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3870,22 +3788,28 @@ pub enum DescribeConnectionsErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeConnectionsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeConnectionsErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            DescribeConnectionsErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            DescribeConnectionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeConnectionsErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeConnectionsErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeConnectionsErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -3899,67 +3823,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeConnectionsError {
 }
 impl DescribeConnectionsError {
     /// Creates a new `DescribeConnectionsError`.
-    pub fn new(kind: DescribeConnectionsErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeConnectionsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeConnectionsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeConnectionsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeConnectionsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeConnectionsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeConnectionsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeConnectionsErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeConnectionsErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DescribeConnectionsErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeConnectionsErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeConnectionsErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DescribeConnectionsErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DescribeConnectionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeConnectionsErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            DescribeConnectionsErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DescribeConnectionsErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeConnectionsErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeConnectionsErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeConnectionsErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -3969,15 +3893,15 @@ impl std::error::Error for DescribeConnectionsError {
 #[derive(std::fmt::Debug)]
 pub struct DescribeConnectionLoaError {
     /// Kind of error that occurred.
-    pub kind: DescribeConnectionLoaErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DescribeConnectionLoaErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DescribeConnectionLoaError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DescribeConnectionLoaErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -3989,22 +3913,28 @@ pub enum DescribeConnectionLoaErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DescribeConnectionLoaError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DescribeConnectionLoaErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            DescribeConnectionLoaErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            DescribeConnectionLoaErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DescribeConnectionLoaErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeConnectionLoaErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DescribeConnectionLoaErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4018,71 +3948,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DescribeConnectionLoaError {
 }
 impl DescribeConnectionLoaError {
     /// Creates a new `DescribeConnectionLoaError`.
-    pub fn new(kind: DescribeConnectionLoaErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DescribeConnectionLoaError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DescribeConnectionLoaErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DescribeConnectionLoaError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DescribeConnectionLoaErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DescribeConnectionLoaErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DescribeConnectionLoaError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DescribeConnectionLoaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DescribeConnectionLoaError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DescribeConnectionLoaErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DescribeConnectionLoaErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeConnectionLoaErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DescribeConnectionLoaErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DescribeConnectionLoaErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DescribeConnectionLoaErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DescribeConnectionLoaErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DescribeConnectionLoaError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DescribeConnectionLoaErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            DescribeConnectionLoaErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DescribeConnectionLoaErrorKind::Unhandled(_inner) => Some(_inner),
+            DescribeConnectionLoaErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeConnectionLoaErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DescribeConnectionLoaErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4092,15 +4018,15 @@ impl std::error::Error for DescribeConnectionLoaError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteVirtualInterfaceError {
     /// Kind of error that occurred.
-    pub kind: DeleteVirtualInterfaceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteVirtualInterfaceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteVirtualInterfaceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4112,22 +4038,28 @@ pub enum DeleteVirtualInterfaceErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            DeleteVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            DeleteVirtualInterfaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteVirtualInterfaceErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4141,71 +4073,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteVirtualInterfaceError {
 }
 impl DeleteVirtualInterfaceError {
     /// Creates a new `DeleteVirtualInterfaceError`.
-    pub fn new(kind: DeleteVirtualInterfaceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteVirtualInterfaceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteVirtualInterfaceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteVirtualInterfaceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualInterfaceErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DeleteVirtualInterfaceErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteVirtualInterfaceErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DeleteVirtualInterfaceErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DeleteVirtualInterfaceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            DeleteVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DeleteVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteVirtualInterfaceErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4215,15 +4143,15 @@ impl std::error::Error for DeleteVirtualInterfaceError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteLagError {
     /// Kind of error that occurred.
-    pub kind: DeleteLagErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteLagErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteLagError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteLagErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4235,22 +4163,28 @@ pub enum DeleteLagErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteLagError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteLagErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            DeleteLagErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            DeleteLagErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteLagErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLagErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteLagErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4264,67 +4198,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteLagError {
 }
 impl DeleteLagError {
     /// Creates a new `DeleteLagError`.
-    pub fn new(kind: DeleteLagErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteLagError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteLagError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteLagErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteLagError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteLagError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteLagErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLagErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DeleteLagErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteLagErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteLagErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DeleteLagErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DeleteLagError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteLagErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            DeleteLagErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DeleteLagErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteLagErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLagErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteLagErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4334,15 +4268,15 @@ impl std::error::Error for DeleteLagError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteInterconnectError {
     /// Kind of error that occurred.
-    pub kind: DeleteInterconnectErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteInterconnectErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteInterconnectError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4354,22 +4288,28 @@ pub enum DeleteInterconnectErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteInterconnectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteInterconnectErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            DeleteInterconnectErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            DeleteInterconnectErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteInterconnectErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteInterconnectErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteInterconnectErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4383,67 +4323,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteInterconnectError {
 }
 impl DeleteInterconnectError {
     /// Creates a new `DeleteInterconnectError`.
-    pub fn new(kind: DeleteInterconnectErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteInterconnectError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteInterconnectError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteInterconnectErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteInterconnectError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteInterconnectError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteInterconnectErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteInterconnectErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DeleteInterconnectErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteInterconnectErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteInterconnectErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DeleteInterconnectErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DeleteInterconnectError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteInterconnectErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            DeleteInterconnectErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DeleteInterconnectErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteInterconnectErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteInterconnectErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteInterconnectErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4453,19 +4393,15 @@ impl std::error::Error for DeleteInterconnectError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteDirectConnectGatewayAssociationProposalError {
     /// Kind of error that occurred.
-    pub kind: DeleteDirectConnectGatewayAssociationProposalErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteDirectConnectGatewayAssociationProposalErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for DeleteDirectConnectGatewayAssociationProposalError
-{
+impl aws_smithy_http::result::CreateUnhandledError for DeleteDirectConnectGatewayAssociationProposalError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteDirectConnectGatewayAssociationProposalErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DeleteDirectConnectGatewayAssociationProposalErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4477,14 +4413,14 @@ pub enum DeleteDirectConnectGatewayAssociationProposalErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDirectConnectGatewayAssociationProposalError {
@@ -4502,9 +4438,7 @@ impl std::fmt::Display for DeleteDirectConnectGatewayAssociationProposalError {
         }
     }
 }
-impl aws_smithy_types::retry::ProvideErrorKind
-    for DeleteDirectConnectGatewayAssociationProposalError
-{
+impl aws_smithy_types::retry::ProvideErrorKind for DeleteDirectConnectGatewayAssociationProposalError {
     fn code(&self) -> Option<&str> {
         DeleteDirectConnectGatewayAssociationProposalError::code(self)
     }
@@ -4514,66 +4448,53 @@ impl aws_smithy_types::retry::ProvideErrorKind
 }
 impl DeleteDirectConnectGatewayAssociationProposalError {
     /// Creates a new `DeleteDirectConnectGatewayAssociationProposalError`.
-    pub fn new(
-        kind: DeleteDirectConnectGatewayAssociationProposalErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteDirectConnectGatewayAssociationProposalError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteDirectConnectGatewayAssociationProposalErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteDirectConnectGatewayAssociationProposalError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteDirectConnectGatewayAssociationProposalErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteDirectConnectGatewayAssociationProposalErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteDirectConnectGatewayAssociationProposalError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteDirectConnectGatewayAssociationProposalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteDirectConnectGatewayAssociationProposalError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteDirectConnectGatewayAssociationProposalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DeleteDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DeleteDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DeleteDirectConnectGatewayAssociationProposalError {
@@ -4597,17 +4518,15 @@ impl std::error::Error for DeleteDirectConnectGatewayAssociationProposalError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteDirectConnectGatewayAssociationError {
     /// Kind of error that occurred.
-    pub kind: DeleteDirectConnectGatewayAssociationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteDirectConnectGatewayAssociationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteDirectConnectGatewayAssociationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteDirectConnectGatewayAssociationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DeleteDirectConnectGatewayAssociationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4619,26 +4538,28 @@ pub enum DeleteDirectConnectGatewayAssociationErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDirectConnectGatewayAssociationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(
-                _inner,
-            ) => _inner.fmt(f),
-            DeleteDirectConnectGatewayAssociationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteDirectConnectGatewayAssociationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4652,78 +4573,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteDirectConnectGatewayAss
 }
 impl DeleteDirectConnectGatewayAssociationError {
     /// Creates a new `DeleteDirectConnectGatewayAssociationError`.
-    pub fn new(
-        kind: DeleteDirectConnectGatewayAssociationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteDirectConnectGatewayAssociationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteDirectConnectGatewayAssociationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteDirectConnectGatewayAssociationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteDirectConnectGatewayAssociationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteDirectConnectGatewayAssociationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteDirectConnectGatewayAssociationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteDirectConnectGatewayAssociationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteDirectConnectGatewayAssociationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteDirectConnectGatewayAssociationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DeleteDirectConnectGatewayAssociationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(
-                _inner,
-            ) => Some(_inner),
-            DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(
-                _inner,
-            ) => Some(_inner),
-            DeleteDirectConnectGatewayAssociationErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteDirectConnectGatewayAssociationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4733,17 +4643,15 @@ impl std::error::Error for DeleteDirectConnectGatewayAssociationError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteDirectConnectGatewayError {
     /// Kind of error that occurred.
-    pub kind: DeleteDirectConnectGatewayErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteDirectConnectGatewayErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteDirectConnectGatewayError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: DeleteDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -4755,26 +4663,28 @@ pub enum DeleteDirectConnectGatewayErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteDirectConnectGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteDirectConnectGatewayErrorKind::DirectConnectClientException(_inner) => {
+            DeleteDirectConnectGatewayErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteDirectConnectGatewayErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteDirectConnectGatewayErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteDirectConnectGatewayErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteDirectConnectGatewayErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -4788,75 +4698,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteDirectConnectGatewayErr
 }
 impl DeleteDirectConnectGatewayError {
     /// Creates a new `DeleteDirectConnectGatewayError`.
-    pub fn new(kind: DeleteDirectConnectGatewayErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteDirectConnectGatewayError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteDirectConnectGatewayError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteDirectConnectGatewayErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteDirectConnectGatewayError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteDirectConnectGatewayError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteDirectConnectGatewayErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteDirectConnectGatewayErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DeleteDirectConnectGatewayErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteDirectConnectGatewayErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteDirectConnectGatewayErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DeleteDirectConnectGatewayErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DeleteDirectConnectGatewayError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteDirectConnectGatewayErrorKind::DirectConnectClientException(_inner) => {
+            DeleteDirectConnectGatewayErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteDirectConnectGatewayErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteDirectConnectGatewayErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteDirectConnectGatewayErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            DeleteDirectConnectGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -4866,15 +4768,15 @@ impl std::error::Error for DeleteDirectConnectGatewayError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteConnectionError {
     /// Kind of error that occurred.
-    pub kind: DeleteConnectionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteConnectionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteConnectionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteConnectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -4886,22 +4788,28 @@ pub enum DeleteConnectionErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteConnectionErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            DeleteConnectionErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            DeleteConnectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteConnectionErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteConnectionErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteConnectionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -4915,67 +4823,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteConnectionError {
 }
 impl DeleteConnectionError {
     /// Creates a new `DeleteConnectionError`.
-    pub fn new(kind: DeleteConnectionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteConnectionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteConnectionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteConnectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteConnectionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteConnectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteConnectionErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteConnectionErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DeleteConnectionErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteConnectionErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteConnectionErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DeleteConnectionErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DeleteConnectionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteConnectionErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            DeleteConnectionErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DeleteConnectionErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteConnectionErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteConnectionErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteConnectionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -4985,15 +4893,15 @@ impl std::error::Error for DeleteConnectionError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteBGPPeerError {
     /// Kind of error that occurred.
-    pub kind: DeleteBGPPeerErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteBGPPeerErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteBGPPeerError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteBGPPeerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5005,22 +4913,28 @@ pub enum DeleteBGPPeerErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteBGPPeerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteBGPPeerErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            DeleteBGPPeerErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            DeleteBGPPeerErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteBGPPeerErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBGPPeerErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteBGPPeerErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5034,67 +4948,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteBGPPeerError {
 }
 impl DeleteBGPPeerError {
     /// Creates a new `DeleteBGPPeerError`.
-    pub fn new(kind: DeleteBGPPeerErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteBGPPeerError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteBGPPeerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteBGPPeerError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteBGPPeerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteBGPPeerErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteBGPPeerError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteBGPPeerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteBGPPeerError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteBGPPeerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteBGPPeerErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteBGPPeerErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, DeleteBGPPeerErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `DeleteBGPPeerErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteBGPPeerErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, DeleteBGPPeerErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for DeleteBGPPeerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteBGPPeerErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            DeleteBGPPeerErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            DeleteBGPPeerErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteBGPPeerErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBGPPeerErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteBGPPeerErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5104,17 +5018,15 @@ impl std::error::Error for DeleteBGPPeerError {
 #[derive(std::fmt::Debug)]
 pub struct CreateTransitVirtualInterfaceError {
     /// Kind of error that occurred.
-    pub kind: CreateTransitVirtualInterfaceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateTransitVirtualInterfaceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateTransitVirtualInterfaceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: CreateTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -5130,30 +5042,34 @@ pub enum CreateTransitVirtualInterfaceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateTransitVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateTransitVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => {
+            CreateTransitVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTransitVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTransitVirtualInterfaceErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateTransitVirtualInterfaceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateTransitVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateTransitVirtualInterfaceErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            CreateTransitVirtualInterfaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -5167,96 +5083,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateTransitVirtualInterface
 }
 impl CreateTransitVirtualInterfaceError {
     /// Creates a new `CreateTransitVirtualInterfaceError`.
-    pub fn new(
-        kind: CreateTransitVirtualInterfaceErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateTransitVirtualInterfaceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateTransitVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateTransitVirtualInterfaceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateTransitVirtualInterfaceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateTransitVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateTransitVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateTransitVirtualInterfaceErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, CreateTransitVirtualInterfaceErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `CreateTransitVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateTransitVirtualInterfaceErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, CreateTransitVirtualInterfaceErrorKind::DirectConnectServerException(_))
     }
     /// Returns `true` if the error kind is `CreateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException(_)
-        )
+        matches!(&self.kind, CreateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException(_))
     }
     /// Returns `true` if the error kind is `CreateTransitVirtualInterfaceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateTransitVirtualInterfaceErrorKind::TooManyTagsException(_)
-        )
+        matches!(&self.kind, CreateTransitVirtualInterfaceErrorKind::TooManyTagsException(_))
     }
 }
 impl std::error::Error for CreateTransitVirtualInterfaceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateTransitVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => {
+            CreateTransitVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTransitVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTransitVirtualInterfaceErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateTransitVirtualInterfaceErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateTransitVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            CreateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) => {
-                Some(_inner)
-            }
-            CreateTransitVirtualInterfaceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateTransitVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5266,17 +5167,15 @@ impl std::error::Error for CreateTransitVirtualInterfaceError {
 #[derive(std::fmt::Debug)]
 pub struct CreatePublicVirtualInterfaceError {
     /// Kind of error that occurred.
-    pub kind: CreatePublicVirtualInterfaceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreatePublicVirtualInterfaceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreatePublicVirtualInterfaceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreatePublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: CreatePublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -5292,30 +5191,34 @@ pub enum CreatePublicVirtualInterfaceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePublicVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreatePublicVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => {
+            CreatePublicVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreatePublicVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreatePublicVirtualInterfaceErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreatePublicVirtualInterfaceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreatePublicVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreatePublicVirtualInterfaceErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            CreatePublicVirtualInterfaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -5329,93 +5232,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreatePublicVirtualInterfaceE
 }
 impl CreatePublicVirtualInterfaceError {
     /// Creates a new `CreatePublicVirtualInterfaceError`.
-    pub fn new(kind: CreatePublicVirtualInterfaceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreatePublicVirtualInterfaceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreatePublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreatePublicVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreatePublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreatePublicVirtualInterfaceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreatePublicVirtualInterfaceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreatePublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreatePublicVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreatePublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreatePublicVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreatePublicVirtualInterfaceErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, CreatePublicVirtualInterfaceErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `CreatePublicVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreatePublicVirtualInterfaceErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, CreatePublicVirtualInterfaceErrorKind::DirectConnectServerException(_))
     }
     /// Returns `true` if the error kind is `CreatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException(_)
-        )
+        matches!(&self.kind, CreatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException(_))
     }
     /// Returns `true` if the error kind is `CreatePublicVirtualInterfaceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreatePublicVirtualInterfaceErrorKind::TooManyTagsException(_)
-        )
+        matches!(&self.kind, CreatePublicVirtualInterfaceErrorKind::TooManyTagsException(_))
     }
 }
 impl std::error::Error for CreatePublicVirtualInterfaceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreatePublicVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => {
+            CreatePublicVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreatePublicVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            CreatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) =>
+            Some(_inner)
+            ,
+            CreatePublicVirtualInterfaceErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            CreatePublicVirtualInterfaceErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreatePublicVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            CreatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) => {
-                Some(_inner)
-            }
-            CreatePublicVirtualInterfaceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreatePublicVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5425,17 +5316,15 @@ impl std::error::Error for CreatePublicVirtualInterfaceError {
 #[derive(std::fmt::Debug)]
 pub struct CreatePrivateVirtualInterfaceError {
     /// Kind of error that occurred.
-    pub kind: CreatePrivateVirtualInterfaceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreatePrivateVirtualInterfaceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreatePrivateVirtualInterfaceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreatePrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: CreatePrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -5451,30 +5340,34 @@ pub enum CreatePrivateVirtualInterfaceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreatePrivateVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreatePrivateVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => {
+            CreatePrivateVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreatePrivateVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreatePrivateVirtualInterfaceErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreatePrivateVirtualInterfaceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreatePrivateVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreatePrivateVirtualInterfaceErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            CreatePrivateVirtualInterfaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -5488,96 +5381,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreatePrivateVirtualInterface
 }
 impl CreatePrivateVirtualInterfaceError {
     /// Creates a new `CreatePrivateVirtualInterfaceError`.
-    pub fn new(
-        kind: CreatePrivateVirtualInterfaceErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreatePrivateVirtualInterfaceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreatePrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreatePrivateVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreatePrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreatePrivateVirtualInterfaceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreatePrivateVirtualInterfaceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreatePrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreatePrivateVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreatePrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreatePrivateVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreatePrivateVirtualInterfaceErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, CreatePrivateVirtualInterfaceErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `CreatePrivateVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreatePrivateVirtualInterfaceErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, CreatePrivateVirtualInterfaceErrorKind::DirectConnectServerException(_))
     }
     /// Returns `true` if the error kind is `CreatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException(_)
-        )
+        matches!(&self.kind, CreatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException(_))
     }
     /// Returns `true` if the error kind is `CreatePrivateVirtualInterfaceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreatePrivateVirtualInterfaceErrorKind::TooManyTagsException(_)
-        )
+        matches!(&self.kind, CreatePrivateVirtualInterfaceErrorKind::TooManyTagsException(_))
     }
 }
 impl std::error::Error for CreatePrivateVirtualInterfaceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreatePrivateVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => {
+            CreatePrivateVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreatePrivateVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            CreatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) =>
+            Some(_inner)
+            ,
+            CreatePrivateVirtualInterfaceErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            CreatePrivateVirtualInterfaceErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreatePrivateVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            CreatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) => {
-                Some(_inner)
-            }
-            CreatePrivateVirtualInterfaceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreatePrivateVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -5587,15 +5465,15 @@ impl std::error::Error for CreatePrivateVirtualInterfaceError {
 #[derive(std::fmt::Debug)]
 pub struct CreateLagError {
     /// Kind of error that occurred.
-    pub kind: CreateLagErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateLagErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateLagError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateLagErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5611,24 +5489,34 @@ pub enum CreateLagErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateLagError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateLagErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            CreateLagErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            CreateLagErrorKind::DuplicateTagKeysException(_inner) => _inner.fmt(f),
-            CreateLagErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            CreateLagErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateLagErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLagErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLagErrorKind::DuplicateTagKeysException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLagErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateLagErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5642,59 +5530,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateLagError {
 }
 impl CreateLagError {
     /// Creates a new `CreateLagError`.
-    pub fn new(kind: CreateLagErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateLagError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateLagError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateLagErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateLagError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateLagError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateLagErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLagErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, CreateLagErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `CreateLagErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateLagErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, CreateLagErrorKind::DirectConnectServerException(_))
     }
     /// Returns `true` if the error kind is `CreateLagErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
@@ -5708,11 +5590,21 @@ impl CreateLagError {
 impl std::error::Error for CreateLagError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateLagErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            CreateLagErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            CreateLagErrorKind::DuplicateTagKeysException(_inner) => Some(_inner),
-            CreateLagErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateLagErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateLagErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLagErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLagErrorKind::DuplicateTagKeysException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLagErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateLagErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5722,15 +5614,15 @@ impl std::error::Error for CreateLagError {
 #[derive(std::fmt::Debug)]
 pub struct CreateInterconnectError {
     /// Kind of error that occurred.
-    pub kind: CreateInterconnectErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateInterconnectErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateInterconnectError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -5746,24 +5638,34 @@ pub enum CreateInterconnectErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateInterconnectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateInterconnectErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            CreateInterconnectErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            CreateInterconnectErrorKind::DuplicateTagKeysException(_inner) => _inner.fmt(f),
-            CreateInterconnectErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            CreateInterconnectErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateInterconnectErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateInterconnectErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateInterconnectErrorKind::DuplicateTagKeysException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateInterconnectErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateInterconnectErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -5777,83 +5679,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateInterconnectError {
 }
 impl CreateInterconnectError {
     /// Creates a new `CreateInterconnectError`.
-    pub fn new(kind: CreateInterconnectErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateInterconnectError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateInterconnectError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateInterconnectErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateInterconnectError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateInterconnectError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateInterconnectErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateInterconnectErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, CreateInterconnectErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `CreateInterconnectErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateInterconnectErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, CreateInterconnectErrorKind::DirectConnectServerException(_))
     }
     /// Returns `true` if the error kind is `CreateInterconnectErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateInterconnectErrorKind::DuplicateTagKeysException(_)
-        )
+        matches!(&self.kind, CreateInterconnectErrorKind::DuplicateTagKeysException(_))
     }
     /// Returns `true` if the error kind is `CreateInterconnectErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateInterconnectErrorKind::TooManyTagsException(_)
-        )
+        matches!(&self.kind, CreateInterconnectErrorKind::TooManyTagsException(_))
     }
 }
 impl std::error::Error for CreateInterconnectError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateInterconnectErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            CreateInterconnectErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            CreateInterconnectErrorKind::DuplicateTagKeysException(_inner) => Some(_inner),
-            CreateInterconnectErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateInterconnectErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateInterconnectErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateInterconnectErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            CreateInterconnectErrorKind::DuplicateTagKeysException(_inner) =>
+            Some(_inner)
+            ,
+            CreateInterconnectErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateInterconnectErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -5863,19 +5763,15 @@ impl std::error::Error for CreateInterconnectError {
 #[derive(std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayAssociationProposalError {
     /// Kind of error that occurred.
-    pub kind: CreateDirectConnectGatewayAssociationProposalErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateDirectConnectGatewayAssociationProposalErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for CreateDirectConnectGatewayAssociationProposalError
-{
+impl aws_smithy_http::result::CreateUnhandledError for CreateDirectConnectGatewayAssociationProposalError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateDirectConnectGatewayAssociationProposalErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: CreateDirectConnectGatewayAssociationProposalErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -5887,14 +5783,14 @@ pub enum CreateDirectConnectGatewayAssociationProposalErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDirectConnectGatewayAssociationProposalError {
@@ -5912,9 +5808,7 @@ impl std::fmt::Display for CreateDirectConnectGatewayAssociationProposalError {
         }
     }
 }
-impl aws_smithy_types::retry::ProvideErrorKind
-    for CreateDirectConnectGatewayAssociationProposalError
-{
+impl aws_smithy_types::retry::ProvideErrorKind for CreateDirectConnectGatewayAssociationProposalError {
     fn code(&self) -> Option<&str> {
         CreateDirectConnectGatewayAssociationProposalError::code(self)
     }
@@ -5924,66 +5818,53 @@ impl aws_smithy_types::retry::ProvideErrorKind
 }
 impl CreateDirectConnectGatewayAssociationProposalError {
     /// Creates a new `CreateDirectConnectGatewayAssociationProposalError`.
-    pub fn new(
-        kind: CreateDirectConnectGatewayAssociationProposalErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateDirectConnectGatewayAssociationProposalError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateDirectConnectGatewayAssociationProposalErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateDirectConnectGatewayAssociationProposalError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateDirectConnectGatewayAssociationProposalErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateDirectConnectGatewayAssociationProposalErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateDirectConnectGatewayAssociationProposalError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateDirectConnectGatewayAssociationProposalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateDirectConnectGatewayAssociationProposalError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateDirectConnectGatewayAssociationProposalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, CreateDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `CreateDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, CreateDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for CreateDirectConnectGatewayAssociationProposalError {
@@ -6007,17 +5888,15 @@ impl std::error::Error for CreateDirectConnectGatewayAssociationProposalError {
 #[derive(std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayAssociationError {
     /// Kind of error that occurred.
-    pub kind: CreateDirectConnectGatewayAssociationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateDirectConnectGatewayAssociationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateDirectConnectGatewayAssociationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateDirectConnectGatewayAssociationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: CreateDirectConnectGatewayAssociationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6029,26 +5908,28 @@ pub enum CreateDirectConnectGatewayAssociationErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDirectConnectGatewayAssociationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(
-                _inner,
-            ) => _inner.fmt(f),
-            CreateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(
-                _inner,
-            ) => _inner.fmt(f),
-            CreateDirectConnectGatewayAssociationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDirectConnectGatewayAssociationErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6062,78 +5943,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateDirectConnectGatewayAss
 }
 impl CreateDirectConnectGatewayAssociationError {
     /// Creates a new `CreateDirectConnectGatewayAssociationError`.
-    pub fn new(
-        kind: CreateDirectConnectGatewayAssociationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateDirectConnectGatewayAssociationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateDirectConnectGatewayAssociationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateDirectConnectGatewayAssociationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateDirectConnectGatewayAssociationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateDirectConnectGatewayAssociationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateDirectConnectGatewayAssociationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateDirectConnectGatewayAssociationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateDirectConnectGatewayAssociationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateDirectConnectGatewayAssociationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, CreateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `CreateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, CreateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for CreateDirectConnectGatewayAssociationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(
-                _inner,
-            ) => Some(_inner),
-            CreateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(
-                _inner,
-            ) => Some(_inner),
-            CreateDirectConnectGatewayAssociationErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDirectConnectGatewayAssociationErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6143,17 +6013,15 @@ impl std::error::Error for CreateDirectConnectGatewayAssociationError {
 #[derive(std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayError {
     /// Kind of error that occurred.
-    pub kind: CreateDirectConnectGatewayErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateDirectConnectGatewayErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateDirectConnectGatewayError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: CreateDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6165,26 +6033,28 @@ pub enum CreateDirectConnectGatewayErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateDirectConnectGatewayError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateDirectConnectGatewayErrorKind::DirectConnectClientException(_inner) => {
+            CreateDirectConnectGatewayErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDirectConnectGatewayErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateDirectConnectGatewayErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateDirectConnectGatewayErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateDirectConnectGatewayErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6198,75 +6068,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateDirectConnectGatewayErr
 }
 impl CreateDirectConnectGatewayError {
     /// Creates a new `CreateDirectConnectGatewayError`.
-    pub fn new(kind: CreateDirectConnectGatewayErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateDirectConnectGatewayError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateDirectConnectGatewayError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateDirectConnectGatewayErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateDirectConnectGatewayError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateDirectConnectGatewayError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateDirectConnectGatewayErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateDirectConnectGatewayErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDirectConnectGatewayErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, CreateDirectConnectGatewayErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `CreateDirectConnectGatewayErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateDirectConnectGatewayErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, CreateDirectConnectGatewayErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for CreateDirectConnectGatewayError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateDirectConnectGatewayErrorKind::DirectConnectClientException(_inner) => {
+            CreateDirectConnectGatewayErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDirectConnectGatewayErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            CreateDirectConnectGatewayErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateDirectConnectGatewayErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            CreateDirectConnectGatewayErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6276,15 +6138,15 @@ impl std::error::Error for CreateDirectConnectGatewayError {
 #[derive(std::fmt::Debug)]
 pub struct CreateConnectionError {
     /// Kind of error that occurred.
-    pub kind: CreateConnectionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateConnectionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateConnectionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6300,24 +6162,34 @@ pub enum CreateConnectionErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateConnectionErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            CreateConnectionErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            CreateConnectionErrorKind::DuplicateTagKeysException(_inner) => _inner.fmt(f),
-            CreateConnectionErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            CreateConnectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateConnectionErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateConnectionErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateConnectionErrorKind::DuplicateTagKeysException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateConnectionErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateConnectionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6331,83 +6203,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateConnectionError {
 }
 impl CreateConnectionError {
     /// Creates a new `CreateConnectionError`.
-    pub fn new(kind: CreateConnectionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateConnectionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateConnectionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateConnectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateConnectionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateConnectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateConnectionErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateConnectionErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, CreateConnectionErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `CreateConnectionErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateConnectionErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, CreateConnectionErrorKind::DirectConnectServerException(_))
     }
     /// Returns `true` if the error kind is `CreateConnectionErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateConnectionErrorKind::DuplicateTagKeysException(_)
-        )
+        matches!(&self.kind, CreateConnectionErrorKind::DuplicateTagKeysException(_))
     }
     /// Returns `true` if the error kind is `CreateConnectionErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateConnectionErrorKind::TooManyTagsException(_)
-        )
+        matches!(&self.kind, CreateConnectionErrorKind::TooManyTagsException(_))
     }
 }
 impl std::error::Error for CreateConnectionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateConnectionErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            CreateConnectionErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            CreateConnectionErrorKind::DuplicateTagKeysException(_inner) => Some(_inner),
-            CreateConnectionErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            CreateConnectionErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateConnectionErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateConnectionErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            CreateConnectionErrorKind::DuplicateTagKeysException(_inner) =>
+            Some(_inner)
+            ,
+            CreateConnectionErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            CreateConnectionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6417,15 +6287,15 @@ impl std::error::Error for CreateConnectionError {
 #[derive(std::fmt::Debug)]
 pub struct CreateBGPPeerError {
     /// Kind of error that occurred.
-    pub kind: CreateBGPPeerErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateBGPPeerErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateBGPPeerError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: CreateBGPPeerErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -6437,22 +6307,28 @@ pub enum CreateBGPPeerErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateBGPPeerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateBGPPeerErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            CreateBGPPeerErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            CreateBGPPeerErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            CreateBGPPeerErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBGPPeerErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateBGPPeerErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -6466,67 +6342,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateBGPPeerError {
 }
 impl CreateBGPPeerError {
     /// Creates a new `CreateBGPPeerError`.
-    pub fn new(kind: CreateBGPPeerErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateBGPPeerError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateBGPPeerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateBGPPeerError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateBGPPeerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateBGPPeerErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateBGPPeerError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateBGPPeerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateBGPPeerError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateBGPPeerErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateBGPPeerErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateBGPPeerErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, CreateBGPPeerErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `CreateBGPPeerErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateBGPPeerErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, CreateBGPPeerErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for CreateBGPPeerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateBGPPeerErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            CreateBGPPeerErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            CreateBGPPeerErrorKind::Unhandled(_inner) => Some(_inner),
+            CreateBGPPeerErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBGPPeerErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            CreateBGPPeerErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -6536,17 +6412,15 @@ impl std::error::Error for CreateBGPPeerError {
 #[derive(std::fmt::Debug)]
 pub struct ConfirmTransitVirtualInterfaceError {
     /// Kind of error that occurred.
-    pub kind: ConfirmTransitVirtualInterfaceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ConfirmTransitVirtualInterfaceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ConfirmTransitVirtualInterfaceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ConfirmTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ConfirmTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6558,26 +6432,28 @@ pub enum ConfirmTransitVirtualInterfaceErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ConfirmTransitVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ConfirmTransitVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => {
+            ConfirmTransitVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ConfirmTransitVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ConfirmTransitVirtualInterfaceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ConfirmTransitVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            ConfirmTransitVirtualInterfaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6591,78 +6467,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ConfirmTransitVirtualInterfac
 }
 impl ConfirmTransitVirtualInterfaceError {
     /// Creates a new `ConfirmTransitVirtualInterfaceError`.
-    pub fn new(
-        kind: ConfirmTransitVirtualInterfaceErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ConfirmTransitVirtualInterfaceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ConfirmTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ConfirmTransitVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ConfirmTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ConfirmTransitVirtualInterfaceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ConfirmTransitVirtualInterfaceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ConfirmTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ConfirmTransitVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ConfirmTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ConfirmTransitVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ConfirmTransitVirtualInterfaceErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, ConfirmTransitVirtualInterfaceErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `ConfirmTransitVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ConfirmTransitVirtualInterfaceErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, ConfirmTransitVirtualInterfaceErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for ConfirmTransitVirtualInterfaceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ConfirmTransitVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => {
+            ConfirmTransitVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            ConfirmTransitVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            ConfirmTransitVirtualInterfaceErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ConfirmTransitVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            ConfirmTransitVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6672,17 +6537,15 @@ impl std::error::Error for ConfirmTransitVirtualInterfaceError {
 #[derive(std::fmt::Debug)]
 pub struct ConfirmPublicVirtualInterfaceError {
     /// Kind of error that occurred.
-    pub kind: ConfirmPublicVirtualInterfaceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ConfirmPublicVirtualInterfaceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ConfirmPublicVirtualInterfaceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ConfirmPublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ConfirmPublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6694,26 +6557,28 @@ pub enum ConfirmPublicVirtualInterfaceErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ConfirmPublicVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ConfirmPublicVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => {
+            ConfirmPublicVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ConfirmPublicVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ConfirmPublicVirtualInterfaceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ConfirmPublicVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            ConfirmPublicVirtualInterfaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6727,78 +6592,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ConfirmPublicVirtualInterface
 }
 impl ConfirmPublicVirtualInterfaceError {
     /// Creates a new `ConfirmPublicVirtualInterfaceError`.
-    pub fn new(
-        kind: ConfirmPublicVirtualInterfaceErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ConfirmPublicVirtualInterfaceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ConfirmPublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ConfirmPublicVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ConfirmPublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ConfirmPublicVirtualInterfaceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ConfirmPublicVirtualInterfaceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ConfirmPublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ConfirmPublicVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ConfirmPublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ConfirmPublicVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ConfirmPublicVirtualInterfaceErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, ConfirmPublicVirtualInterfaceErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `ConfirmPublicVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ConfirmPublicVirtualInterfaceErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, ConfirmPublicVirtualInterfaceErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for ConfirmPublicVirtualInterfaceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ConfirmPublicVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => {
+            ConfirmPublicVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            ConfirmPublicVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            ConfirmPublicVirtualInterfaceErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ConfirmPublicVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            ConfirmPublicVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6808,17 +6662,15 @@ impl std::error::Error for ConfirmPublicVirtualInterfaceError {
 #[derive(std::fmt::Debug)]
 pub struct ConfirmPrivateVirtualInterfaceError {
     /// Kind of error that occurred.
-    pub kind: ConfirmPrivateVirtualInterfaceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ConfirmPrivateVirtualInterfaceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ConfirmPrivateVirtualInterfaceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ConfirmPrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ConfirmPrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6830,26 +6682,28 @@ pub enum ConfirmPrivateVirtualInterfaceErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ConfirmPrivateVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => {
+            ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ConfirmPrivateVirtualInterfaceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            ConfirmPrivateVirtualInterfaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6863,78 +6717,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ConfirmPrivateVirtualInterfac
 }
 impl ConfirmPrivateVirtualInterfaceError {
     /// Creates a new `ConfirmPrivateVirtualInterfaceError`.
-    pub fn new(
-        kind: ConfirmPrivateVirtualInterfaceErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ConfirmPrivateVirtualInterfaceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ConfirmPrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ConfirmPrivateVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ConfirmPrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ConfirmPrivateVirtualInterfaceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ConfirmPrivateVirtualInterfaceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ConfirmPrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ConfirmPrivateVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ConfirmPrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for ConfirmPrivateVirtualInterfaceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => {
+            ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            ConfirmPrivateVirtualInterfaceErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            ConfirmPrivateVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -6944,17 +6787,15 @@ impl std::error::Error for ConfirmPrivateVirtualInterfaceError {
 #[derive(std::fmt::Debug)]
 pub struct ConfirmCustomerAgreementError {
     /// Kind of error that occurred.
-    pub kind: ConfirmCustomerAgreementErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ConfirmCustomerAgreementErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ConfirmCustomerAgreementError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ConfirmCustomerAgreementErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ConfirmCustomerAgreementErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -6966,26 +6807,28 @@ pub enum ConfirmCustomerAgreementErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ConfirmCustomerAgreementError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ConfirmCustomerAgreementErrorKind::DirectConnectClientException(_inner) => {
+            ConfirmCustomerAgreementErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ConfirmCustomerAgreementErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ConfirmCustomerAgreementErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ConfirmCustomerAgreementErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            ConfirmCustomerAgreementErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -6999,71 +6842,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ConfirmCustomerAgreementError
 }
 impl ConfirmCustomerAgreementError {
     /// Creates a new `ConfirmCustomerAgreementError`.
-    pub fn new(kind: ConfirmCustomerAgreementErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ConfirmCustomerAgreementError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ConfirmCustomerAgreementErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ConfirmCustomerAgreementError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ConfirmCustomerAgreementErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ConfirmCustomerAgreementErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ConfirmCustomerAgreementError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ConfirmCustomerAgreementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ConfirmCustomerAgreementError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ConfirmCustomerAgreementErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ConfirmCustomerAgreementErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ConfirmCustomerAgreementErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, ConfirmCustomerAgreementErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `ConfirmCustomerAgreementErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ConfirmCustomerAgreementErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, ConfirmCustomerAgreementErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for ConfirmCustomerAgreementError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ConfirmCustomerAgreementErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            ConfirmCustomerAgreementErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            ConfirmCustomerAgreementErrorKind::Unhandled(_inner) => Some(_inner),
+            ConfirmCustomerAgreementErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            ConfirmCustomerAgreementErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            ConfirmCustomerAgreementErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7073,15 +6912,15 @@ impl std::error::Error for ConfirmCustomerAgreementError {
 #[derive(std::fmt::Debug)]
 pub struct ConfirmConnectionError {
     /// Kind of error that occurred.
-    pub kind: ConfirmConnectionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ConfirmConnectionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ConfirmConnectionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: ConfirmConnectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7093,22 +6932,28 @@ pub enum ConfirmConnectionErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ConfirmConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ConfirmConnectionErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            ConfirmConnectionErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            ConfirmConnectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            ConfirmConnectionErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ConfirmConnectionErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ConfirmConnectionErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7122,67 +6967,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ConfirmConnectionError {
 }
 impl ConfirmConnectionError {
     /// Creates a new `ConfirmConnectionError`.
-    pub fn new(kind: ConfirmConnectionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ConfirmConnectionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ConfirmConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ConfirmConnectionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ConfirmConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ConfirmConnectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ConfirmConnectionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ConfirmConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ConfirmConnectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ConfirmConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ConfirmConnectionErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ConfirmConnectionErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, ConfirmConnectionErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `ConfirmConnectionErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ConfirmConnectionErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, ConfirmConnectionErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for ConfirmConnectionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ConfirmConnectionErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            ConfirmConnectionErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            ConfirmConnectionErrorKind::Unhandled(_inner) => Some(_inner),
+            ConfirmConnectionErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            ConfirmConnectionErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            ConfirmConnectionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7192,17 +7037,15 @@ impl std::error::Error for ConfirmConnectionError {
 #[derive(std::fmt::Debug)]
 pub struct AssociateVirtualInterfaceError {
     /// Kind of error that occurred.
-    pub kind: AssociateVirtualInterfaceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AssociateVirtualInterfaceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AssociateVirtualInterfaceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: AssociateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: AssociateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7214,26 +7057,28 @@ pub enum AssociateVirtualInterfaceErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AssociateVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => {
+            AssociateVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociateVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociateVirtualInterfaceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            AssociateVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            AssociateVirtualInterfaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7247,75 +7092,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for AssociateVirtualInterfaceErro
 }
 impl AssociateVirtualInterfaceError {
     /// Creates a new `AssociateVirtualInterfaceError`.
-    pub fn new(kind: AssociateVirtualInterfaceErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AssociateVirtualInterfaceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AssociateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AssociateVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AssociateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AssociateVirtualInterfaceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AssociateVirtualInterfaceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AssociateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AssociateVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AssociateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AssociateVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociateVirtualInterfaceErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, AssociateVirtualInterfaceErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `AssociateVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociateVirtualInterfaceErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, AssociateVirtualInterfaceErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for AssociateVirtualInterfaceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AssociateVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => {
+            AssociateVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            AssociateVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            AssociateVirtualInterfaceErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            AssociateVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            AssociateVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7325,15 +7162,15 @@ impl std::error::Error for AssociateVirtualInterfaceError {
 #[derive(std::fmt::Debug)]
 pub struct AssociateMacSecKeyError {
     /// Kind of error that occurred.
-    pub kind: AssociateMacSecKeyErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AssociateMacSecKeyErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AssociateMacSecKeyError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: AssociateMacSecKeyErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -7345,22 +7182,28 @@ pub enum AssociateMacSecKeyErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateMacSecKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AssociateMacSecKeyErrorKind::DirectConnectClientException(_inner) => _inner.fmt(f),
-            AssociateMacSecKeyErrorKind::DirectConnectServerException(_inner) => _inner.fmt(f),
-            AssociateMacSecKeyErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            AssociateMacSecKeyErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociateMacSecKeyErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociateMacSecKeyErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -7374,67 +7217,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for AssociateMacSecKeyError {
 }
 impl AssociateMacSecKeyError {
     /// Creates a new `AssociateMacSecKeyError`.
-    pub fn new(kind: AssociateMacSecKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AssociateMacSecKeyError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AssociateMacSecKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AssociateMacSecKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AssociateMacSecKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AssociateMacSecKeyErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AssociateMacSecKeyError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AssociateMacSecKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AssociateMacSecKeyError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AssociateMacSecKeyErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AssociateMacSecKeyErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociateMacSecKeyErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, AssociateMacSecKeyErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `AssociateMacSecKeyErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociateMacSecKeyErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, AssociateMacSecKeyErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for AssociateMacSecKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AssociateMacSecKeyErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            AssociateMacSecKeyErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            AssociateMacSecKeyErrorKind::Unhandled(_inner) => Some(_inner),
+            AssociateMacSecKeyErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            AssociateMacSecKeyErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            AssociateMacSecKeyErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -7444,17 +7287,15 @@ impl std::error::Error for AssociateMacSecKeyError {
 #[derive(std::fmt::Debug)]
 pub struct AssociateHostedConnectionError {
     /// Kind of error that occurred.
-    pub kind: AssociateHostedConnectionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AssociateHostedConnectionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AssociateHostedConnectionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: AssociateHostedConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: AssociateHostedConnectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7466,26 +7307,28 @@ pub enum AssociateHostedConnectionErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateHostedConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AssociateHostedConnectionErrorKind::DirectConnectClientException(_inner) => {
+            AssociateHostedConnectionErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociateHostedConnectionErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociateHostedConnectionErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            AssociateHostedConnectionErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            AssociateHostedConnectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7499,75 +7342,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for AssociateHostedConnectionErro
 }
 impl AssociateHostedConnectionError {
     /// Creates a new `AssociateHostedConnectionError`.
-    pub fn new(kind: AssociateHostedConnectionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AssociateHostedConnectionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AssociateHostedConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AssociateHostedConnectionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AssociateHostedConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AssociateHostedConnectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AssociateHostedConnectionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AssociateHostedConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AssociateHostedConnectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AssociateHostedConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AssociateHostedConnectionErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociateHostedConnectionErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, AssociateHostedConnectionErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `AssociateHostedConnectionErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociateHostedConnectionErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, AssociateHostedConnectionErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for AssociateHostedConnectionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AssociateHostedConnectionErrorKind::DirectConnectClientException(_inner) => {
+            AssociateHostedConnectionErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            AssociateHostedConnectionErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            AssociateHostedConnectionErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            AssociateHostedConnectionErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            AssociateHostedConnectionErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7577,17 +7412,15 @@ impl std::error::Error for AssociateHostedConnectionError {
 #[derive(std::fmt::Debug)]
 pub struct AssociateConnectionWithLagError {
     /// Kind of error that occurred.
-    pub kind: AssociateConnectionWithLagErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AssociateConnectionWithLagErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AssociateConnectionWithLagError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: AssociateConnectionWithLagErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: AssociateConnectionWithLagErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7599,26 +7432,28 @@ pub enum AssociateConnectionWithLagErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AssociateConnectionWithLagError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AssociateConnectionWithLagErrorKind::DirectConnectClientException(_inner) => {
+            AssociateConnectionWithLagErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociateConnectionWithLagErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AssociateConnectionWithLagErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            AssociateConnectionWithLagErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            AssociateConnectionWithLagErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7632,75 +7467,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for AssociateConnectionWithLagErr
 }
 impl AssociateConnectionWithLagError {
     /// Creates a new `AssociateConnectionWithLagError`.
-    pub fn new(kind: AssociateConnectionWithLagErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AssociateConnectionWithLagError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AssociateConnectionWithLagErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AssociateConnectionWithLagError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AssociateConnectionWithLagErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AssociateConnectionWithLagErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AssociateConnectionWithLagError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AssociateConnectionWithLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AssociateConnectionWithLagError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AssociateConnectionWithLagErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AssociateConnectionWithLagErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociateConnectionWithLagErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, AssociateConnectionWithLagErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `AssociateConnectionWithLagErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AssociateConnectionWithLagErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, AssociateConnectionWithLagErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for AssociateConnectionWithLagError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AssociateConnectionWithLagErrorKind::DirectConnectClientException(_inner) => {
+            AssociateConnectionWithLagErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            AssociateConnectionWithLagErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            AssociateConnectionWithLagErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            AssociateConnectionWithLagErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            AssociateConnectionWithLagErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7710,17 +7537,15 @@ impl std::error::Error for AssociateConnectionWithLagError {
 #[derive(std::fmt::Debug)]
 pub struct AllocateTransitVirtualInterfaceError {
     /// Kind of error that occurred.
-    pub kind: AllocateTransitVirtualInterfaceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AllocateTransitVirtualInterfaceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AllocateTransitVirtualInterfaceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: AllocateTransitVirtualInterfaceErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: AllocateTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7736,30 +7561,34 @@ pub enum AllocateTransitVirtualInterfaceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AllocateTransitVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AllocateTransitVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => {
+            AllocateTransitVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllocateTransitVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllocateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllocateTransitVirtualInterfaceErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllocateTransitVirtualInterfaceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            AllocateTransitVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            AllocateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) => {
-                _inner.fmt(f)
-            }
-            AllocateTransitVirtualInterfaceErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            AllocateTransitVirtualInterfaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7773,96 +7602,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for AllocateTransitVirtualInterfa
 }
 impl AllocateTransitVirtualInterfaceError {
     /// Creates a new `AllocateTransitVirtualInterfaceError`.
-    pub fn new(
-        kind: AllocateTransitVirtualInterfaceErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AllocateTransitVirtualInterfaceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AllocateTransitVirtualInterfaceErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AllocateTransitVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AllocateTransitVirtualInterfaceErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AllocateTransitVirtualInterfaceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AllocateTransitVirtualInterfaceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AllocateTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AllocateTransitVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AllocateTransitVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AllocateTransitVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllocateTransitVirtualInterfaceErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, AllocateTransitVirtualInterfaceErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `AllocateTransitVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllocateTransitVirtualInterfaceErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, AllocateTransitVirtualInterfaceErrorKind::DirectConnectServerException(_))
     }
     /// Returns `true` if the error kind is `AllocateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllocateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException(_)
-        )
+        matches!(&self.kind, AllocateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException(_))
     }
     /// Returns `true` if the error kind is `AllocateTransitVirtualInterfaceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllocateTransitVirtualInterfaceErrorKind::TooManyTagsException(_)
-        )
+        matches!(&self.kind, AllocateTransitVirtualInterfaceErrorKind::TooManyTagsException(_))
     }
 }
 impl std::error::Error for AllocateTransitVirtualInterfaceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AllocateTransitVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => {
+            AllocateTransitVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            AllocateTransitVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            AllocateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) =>
+            Some(_inner)
+            ,
+            AllocateTransitVirtualInterfaceErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            AllocateTransitVirtualInterfaceErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            AllocateTransitVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            AllocateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) => {
-                Some(_inner)
-            }
-            AllocateTransitVirtualInterfaceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            AllocateTransitVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -7872,17 +7686,15 @@ impl std::error::Error for AllocateTransitVirtualInterfaceError {
 #[derive(std::fmt::Debug)]
 pub struct AllocatePublicVirtualInterfaceError {
     /// Kind of error that occurred.
-    pub kind: AllocatePublicVirtualInterfaceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AllocatePublicVirtualInterfaceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AllocatePublicVirtualInterfaceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: AllocatePublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: AllocatePublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -7898,30 +7710,34 @@ pub enum AllocatePublicVirtualInterfaceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AllocatePublicVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AllocatePublicVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => {
+            AllocatePublicVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllocatePublicVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllocatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllocatePublicVirtualInterfaceErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllocatePublicVirtualInterfaceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            AllocatePublicVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            AllocatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) => {
-                _inner.fmt(f)
-            }
-            AllocatePublicVirtualInterfaceErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            AllocatePublicVirtualInterfaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -7935,96 +7751,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for AllocatePublicVirtualInterfac
 }
 impl AllocatePublicVirtualInterfaceError {
     /// Creates a new `AllocatePublicVirtualInterfaceError`.
-    pub fn new(
-        kind: AllocatePublicVirtualInterfaceErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AllocatePublicVirtualInterfaceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AllocatePublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AllocatePublicVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AllocatePublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AllocatePublicVirtualInterfaceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AllocatePublicVirtualInterfaceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AllocatePublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AllocatePublicVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AllocatePublicVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AllocatePublicVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllocatePublicVirtualInterfaceErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, AllocatePublicVirtualInterfaceErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `AllocatePublicVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllocatePublicVirtualInterfaceErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, AllocatePublicVirtualInterfaceErrorKind::DirectConnectServerException(_))
     }
     /// Returns `true` if the error kind is `AllocatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllocatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException(_)
-        )
+        matches!(&self.kind, AllocatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException(_))
     }
     /// Returns `true` if the error kind is `AllocatePublicVirtualInterfaceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllocatePublicVirtualInterfaceErrorKind::TooManyTagsException(_)
-        )
+        matches!(&self.kind, AllocatePublicVirtualInterfaceErrorKind::TooManyTagsException(_))
     }
 }
 impl std::error::Error for AllocatePublicVirtualInterfaceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AllocatePublicVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => {
+            AllocatePublicVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            AllocatePublicVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            AllocatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) =>
+            Some(_inner)
+            ,
+            AllocatePublicVirtualInterfaceErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            AllocatePublicVirtualInterfaceErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            AllocatePublicVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            AllocatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) => {
-                Some(_inner)
-            }
-            AllocatePublicVirtualInterfaceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            AllocatePublicVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8034,17 +7835,15 @@ impl std::error::Error for AllocatePublicVirtualInterfaceError {
 #[derive(std::fmt::Debug)]
 pub struct AllocatePrivateVirtualInterfaceError {
     /// Kind of error that occurred.
-    pub kind: AllocatePrivateVirtualInterfaceErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AllocatePrivateVirtualInterfaceErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AllocatePrivateVirtualInterfaceError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: AllocatePrivateVirtualInterfaceErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: AllocatePrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -8060,30 +7859,34 @@ pub enum AllocatePrivateVirtualInterfaceErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AllocatePrivateVirtualInterfaceError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AllocatePrivateVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => {
+            AllocatePrivateVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllocatePrivateVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllocatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllocatePrivateVirtualInterfaceErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllocatePrivateVirtualInterfaceErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            AllocatePrivateVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            AllocatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) => {
-                _inner.fmt(f)
-            }
-            AllocatePrivateVirtualInterfaceErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            AllocatePrivateVirtualInterfaceErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8097,96 +7900,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for AllocatePrivateVirtualInterfa
 }
 impl AllocatePrivateVirtualInterfaceError {
     /// Creates a new `AllocatePrivateVirtualInterfaceError`.
-    pub fn new(
-        kind: AllocatePrivateVirtualInterfaceErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AllocatePrivateVirtualInterfaceError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AllocatePrivateVirtualInterfaceErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AllocatePrivateVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AllocatePrivateVirtualInterfaceErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AllocatePrivateVirtualInterfaceErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AllocatePrivateVirtualInterfaceError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AllocatePrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AllocatePrivateVirtualInterfaceError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AllocatePrivateVirtualInterfaceErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AllocatePrivateVirtualInterfaceErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllocatePrivateVirtualInterfaceErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, AllocatePrivateVirtualInterfaceErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `AllocatePrivateVirtualInterfaceErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllocatePrivateVirtualInterfaceErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, AllocatePrivateVirtualInterfaceErrorKind::DirectConnectServerException(_))
     }
     /// Returns `true` if the error kind is `AllocatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllocatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException(_)
-        )
+        matches!(&self.kind, AllocatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException(_))
     }
     /// Returns `true` if the error kind is `AllocatePrivateVirtualInterfaceErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllocatePrivateVirtualInterfaceErrorKind::TooManyTagsException(_)
-        )
+        matches!(&self.kind, AllocatePrivateVirtualInterfaceErrorKind::TooManyTagsException(_))
     }
 }
 impl std::error::Error for AllocatePrivateVirtualInterfaceError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AllocatePrivateVirtualInterfaceErrorKind::DirectConnectClientException(_inner) => {
+            AllocatePrivateVirtualInterfaceErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            AllocatePrivateVirtualInterfaceErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            AllocatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) =>
+            Some(_inner)
+            ,
+            AllocatePrivateVirtualInterfaceErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            AllocatePrivateVirtualInterfaceErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            AllocatePrivateVirtualInterfaceErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            AllocatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException(_inner) => {
-                Some(_inner)
-            }
-            AllocatePrivateVirtualInterfaceErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            AllocatePrivateVirtualInterfaceErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8196,17 +7984,15 @@ impl std::error::Error for AllocatePrivateVirtualInterfaceError {
 #[derive(std::fmt::Debug)]
 pub struct AllocateHostedConnectionError {
     /// Kind of error that occurred.
-    pub kind: AllocateHostedConnectionErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AllocateHostedConnectionErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AllocateHostedConnectionError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: AllocateHostedConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: AllocateHostedConnectionErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -8222,28 +8008,34 @@ pub enum AllocateHostedConnectionErrorKind {
     DuplicateTagKeysException(crate::error::DuplicateTagKeysException),
     /// <p>You have reached the limit on the number of tags that can be assigned.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AllocateHostedConnectionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AllocateHostedConnectionErrorKind::DirectConnectClientException(_inner) => {
+            AllocateHostedConnectionErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllocateHostedConnectionErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllocateHostedConnectionErrorKind::DuplicateTagKeysException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllocateHostedConnectionErrorKind::TooManyTagsException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllocateHostedConnectionErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            AllocateHostedConnectionErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            AllocateHostedConnectionErrorKind::DuplicateTagKeysException(_inner) => _inner.fmt(f),
-            AllocateHostedConnectionErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
-            AllocateHostedConnectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8257,87 +8049,81 @@ impl aws_smithy_types::retry::ProvideErrorKind for AllocateHostedConnectionError
 }
 impl AllocateHostedConnectionError {
     /// Creates a new `AllocateHostedConnectionError`.
-    pub fn new(kind: AllocateHostedConnectionErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AllocateHostedConnectionError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AllocateHostedConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AllocateHostedConnectionError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AllocateHostedConnectionErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AllocateHostedConnectionErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AllocateHostedConnectionError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AllocateHostedConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AllocateHostedConnectionError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AllocateHostedConnectionErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AllocateHostedConnectionErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllocateHostedConnectionErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, AllocateHostedConnectionErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `AllocateHostedConnectionErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllocateHostedConnectionErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, AllocateHostedConnectionErrorKind::DirectConnectServerException(_))
     }
     /// Returns `true` if the error kind is `AllocateHostedConnectionErrorKind::DuplicateTagKeysException`.
     pub fn is_duplicate_tag_keys_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllocateHostedConnectionErrorKind::DuplicateTagKeysException(_)
-        )
+        matches!(&self.kind, AllocateHostedConnectionErrorKind::DuplicateTagKeysException(_))
     }
     /// Returns `true` if the error kind is `AllocateHostedConnectionErrorKind::TooManyTagsException`.
     pub fn is_too_many_tags_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllocateHostedConnectionErrorKind::TooManyTagsException(_)
-        )
+        matches!(&self.kind, AllocateHostedConnectionErrorKind::TooManyTagsException(_))
     }
 }
 impl std::error::Error for AllocateHostedConnectionError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AllocateHostedConnectionErrorKind::DirectConnectClientException(_inner) => Some(_inner),
-            AllocateHostedConnectionErrorKind::DirectConnectServerException(_inner) => Some(_inner),
-            AllocateHostedConnectionErrorKind::DuplicateTagKeysException(_inner) => Some(_inner),
-            AllocateHostedConnectionErrorKind::TooManyTagsException(_inner) => Some(_inner),
-            AllocateHostedConnectionErrorKind::Unhandled(_inner) => Some(_inner),
+            AllocateHostedConnectionErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            AllocateHostedConnectionErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            AllocateHostedConnectionErrorKind::DuplicateTagKeysException(_inner) =>
+            Some(_inner)
+            ,
+            AllocateHostedConnectionErrorKind::TooManyTagsException(_inner) =>
+            Some(_inner)
+            ,
+            AllocateHostedConnectionErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -8347,17 +8133,15 @@ impl std::error::Error for AllocateHostedConnectionError {
 #[derive(std::fmt::Debug)]
 pub struct AllocateConnectionOnInterconnectError {
     /// Kind of error that occurred.
-    pub kind: AllocateConnectionOnInterconnectErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AllocateConnectionOnInterconnectErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for AllocateConnectionOnInterconnectError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: AllocateConnectionOnInterconnectErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: AllocateConnectionOnInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -8369,26 +8153,28 @@ pub enum AllocateConnectionOnInterconnectErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AllocateConnectionOnInterconnectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            AllocateConnectionOnInterconnectErrorKind::DirectConnectClientException(_inner) => {
+            AllocateConnectionOnInterconnectErrorKind::DirectConnectClientException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllocateConnectionOnInterconnectErrorKind::DirectConnectServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            AllocateConnectionOnInterconnectErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            AllocateConnectionOnInterconnectErrorKind::DirectConnectServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            AllocateConnectionOnInterconnectErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -8402,78 +8188,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for AllocateConnectionOnInterconn
 }
 impl AllocateConnectionOnInterconnectError {
     /// Creates a new `AllocateConnectionOnInterconnectError`.
-    pub fn new(
-        kind: AllocateConnectionOnInterconnectErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AllocateConnectionOnInterconnectError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AllocateConnectionOnInterconnectErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AllocateConnectionOnInterconnectError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AllocateConnectionOnInterconnectErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AllocateConnectionOnInterconnectErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AllocateConnectionOnInterconnectError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AllocateConnectionOnInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AllocateConnectionOnInterconnectError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AllocateConnectionOnInterconnectErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AllocateConnectionOnInterconnectErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllocateConnectionOnInterconnectErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, AllocateConnectionOnInterconnectErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `AllocateConnectionOnInterconnectErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AllocateConnectionOnInterconnectErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, AllocateConnectionOnInterconnectErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for AllocateConnectionOnInterconnectError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            AllocateConnectionOnInterconnectErrorKind::DirectConnectClientException(_inner) => {
+            AllocateConnectionOnInterconnectErrorKind::DirectConnectClientException(_inner) =>
+            Some(_inner)
+            ,
+            AllocateConnectionOnInterconnectErrorKind::DirectConnectServerException(_inner) =>
+            Some(_inner)
+            ,
+            AllocateConnectionOnInterconnectErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            AllocateConnectionOnInterconnectErrorKind::DirectConnectServerException(_inner) => {
-                Some(_inner)
-            }
-            AllocateConnectionOnInterconnectErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -8483,19 +8258,15 @@ impl std::error::Error for AllocateConnectionOnInterconnectError {
 #[derive(std::fmt::Debug)]
 pub struct AcceptDirectConnectGatewayAssociationProposalError {
     /// Kind of error that occurred.
-    pub kind: AcceptDirectConnectGatewayAssociationProposalErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: AcceptDirectConnectGatewayAssociationProposalErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
-impl aws_smithy_http::result::CreateUnhandledError
-    for AcceptDirectConnectGatewayAssociationProposalError
-{
+impl aws_smithy_http::result::CreateUnhandledError for AcceptDirectConnectGatewayAssociationProposalError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: AcceptDirectConnectGatewayAssociationProposalErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: AcceptDirectConnectGatewayAssociationProposalErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -8507,14 +8278,14 @@ pub enum AcceptDirectConnectGatewayAssociationProposalErrorKind {
     DirectConnectClientException(crate::error::DirectConnectClientException),
     /// <p>A server-side error occurred.</p>
     DirectConnectServerException(crate::error::DirectConnectServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for AcceptDirectConnectGatewayAssociationProposalError {
@@ -8532,9 +8303,7 @@ impl std::fmt::Display for AcceptDirectConnectGatewayAssociationProposalError {
         }
     }
 }
-impl aws_smithy_types::retry::ProvideErrorKind
-    for AcceptDirectConnectGatewayAssociationProposalError
-{
+impl aws_smithy_types::retry::ProvideErrorKind for AcceptDirectConnectGatewayAssociationProposalError {
     fn code(&self) -> Option<&str> {
         AcceptDirectConnectGatewayAssociationProposalError::code(self)
     }
@@ -8544,66 +8313,53 @@ impl aws_smithy_types::retry::ProvideErrorKind
 }
 impl AcceptDirectConnectGatewayAssociationProposalError {
     /// Creates a new `AcceptDirectConnectGatewayAssociationProposalError`.
-    pub fn new(
-        kind: AcceptDirectConnectGatewayAssociationProposalErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `AcceptDirectConnectGatewayAssociationProposalError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: AcceptDirectConnectGatewayAssociationProposalErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `AcceptDirectConnectGatewayAssociationProposalError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: AcceptDirectConnectGatewayAssociationProposalErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: AcceptDirectConnectGatewayAssociationProposalErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `AcceptDirectConnectGatewayAssociationProposalError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: AcceptDirectConnectGatewayAssociationProposalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `AcceptDirectConnectGatewayAssociationProposalError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: AcceptDirectConnectGatewayAssociationProposalErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `AcceptDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException`.
     pub fn is_direct_connect_client_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AcceptDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException(_)
-        )
+        matches!(&self.kind, AcceptDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException(_))
     }
     /// Returns `true` if the error kind is `AcceptDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException`.
     pub fn is_direct_connect_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            AcceptDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException(_)
-        )
+        matches!(&self.kind, AcceptDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException(_))
     }
 }
 impl std::error::Error for AcceptDirectConnectGatewayAssociationProposalError {
@@ -8622,31 +8378,32 @@ impl std::error::Error for AcceptDirectConnectGatewayAssociationProposalError {
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

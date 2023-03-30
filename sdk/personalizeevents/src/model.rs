@@ -3,27 +3,27 @@
 /// <p>Represents user metadata added to a Users dataset using the <code>PutUsers</code> API. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing Users Incrementally</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct User {
+pub struct User  {
     /// <p>The ID associated with the user.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
-    /// <p>A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfVideosWatched": "45"}</code>.</p>
+    /// <p>A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfVideosWatched": "45"}</code>.</p> 
     /// <p>The keys use camel case names that match the fields in the schema for the Users dataset. In the previous example, the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema. For categorical string data, to include multiple categories for a single user, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Member|Frequent shopper\"</code>.</p>
     #[doc(hidden)]
     pub properties: std::option::Option<std::string::String>,
 }
 impl User {
     /// <p>The ID associated with the user.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
-    /// <p>A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfVideosWatched": "45"}</code>.</p>
+    /// <p>A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfVideosWatched": "45"}</code>.</p> 
     /// <p>The keys use camel case names that match the fields in the schema for the Users dataset. In the previous example, the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema. For categorical string data, to include multiple categories for a single user, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Member|Frequent shopper\"</code>.</p>
-    pub fn properties(&self) -> std::option::Option<&str> {
+    pub fn properties(&self) -> std::option::Option<& str> {
         self.properties.as_deref()
     }
 }
-impl std::fmt::Debug for User {
+impl  std::fmt::Debug for User  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("User");
         formatter.field("user_id", &self.user_id);
@@ -33,7 +33,7 @@ impl std::fmt::Debug for User {
 }
 /// See [`User`](crate::model::User).
 pub mod user {
-
+    
     /// A builder for [`User`](crate::model::User).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -48,26 +48,26 @@ pub mod user {
         }
         /// <p>The ID associated with the user.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_id = input;
-            self
+            self.user_id = input; self
         }
-        /// <p>A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfVideosWatched": "45"}</code>.</p>
+        /// <p>A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfVideosWatched": "45"}</code>.</p> 
         /// <p>The keys use camel case names that match the fields in the schema for the Users dataset. In the previous example, the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema. For categorical string data, to include multiple categories for a single user, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Member|Frequent shopper\"</code>.</p>
         pub fn properties(mut self, input: impl Into<std::string::String>) -> Self {
             self.properties = Some(input.into());
             self
         }
-        /// <p>A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfVideosWatched": "45"}</code>.</p>
+        /// <p>A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfVideosWatched": "45"}</code>.</p> 
         /// <p>The keys use camel case names that match the fields in the schema for the Users dataset. In the previous example, the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema. For categorical string data, to include multiple categories for a single user, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Member|Frequent shopper\"</code>.</p>
         pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.properties = input;
-            self
+            self.properties = input; self
         }
         /// Consumes the builder and constructs a [`User`](crate::model::User).
         pub fn build(self) -> crate::model::User {
             crate::model::User {
-                user_id: self.user_id,
-                properties: self.properties,
+                user_id: self.user_id
+                ,
+                properties: self.properties
+                ,
             }
         }
     }
@@ -79,6 +79,8 @@ pub mod user {
             formatter.finish()
         }
     }
+    
+    
 }
 impl User {
     /// Creates a new builder-style object to manufacture [`User`](crate::model::User).
@@ -90,27 +92,27 @@ impl User {
 /// <p>Represents item metadata added to an Items dataset using the <code>PutItems</code> API. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing Items Incrementally</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Item {
+pub struct Item  {
     /// <p>The ID associated with the item.</p>
     #[doc(hidden)]
     pub item_id: std::option::Option<std::string::String>,
-    /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p>
+    /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p> 
     /// <p>The keys use camel case names that match the fields in the schema for the Items dataset. In the previous example, the <code>numberOfRatings</code> matches the 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string data, to include multiple categories for a single item, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Horror|Action\"</code>.</p>
     #[doc(hidden)]
     pub properties: std::option::Option<std::string::String>,
 }
 impl Item {
     /// <p>The ID associated with the item.</p>
-    pub fn item_id(&self) -> std::option::Option<&str> {
+    pub fn item_id(&self) -> std::option::Option<& str> {
         self.item_id.as_deref()
     }
-    /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p>
+    /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p> 
     /// <p>The keys use camel case names that match the fields in the schema for the Items dataset. In the previous example, the <code>numberOfRatings</code> matches the 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string data, to include multiple categories for a single item, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Horror|Action\"</code>.</p>
-    pub fn properties(&self) -> std::option::Option<&str> {
+    pub fn properties(&self) -> std::option::Option<& str> {
         self.properties.as_deref()
     }
 }
-impl std::fmt::Debug for Item {
+impl  std::fmt::Debug for Item  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Item");
         formatter.field("item_id", &self.item_id);
@@ -120,7 +122,7 @@ impl std::fmt::Debug for Item {
 }
 /// See [`Item`](crate::model::Item).
 pub mod item {
-
+    
     /// A builder for [`Item`](crate::model::Item).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -135,26 +137,26 @@ pub mod item {
         }
         /// <p>The ID associated with the item.</p>
         pub fn set_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.item_id = input;
-            self
+            self.item_id = input; self
         }
-        /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p>
+        /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p> 
         /// <p>The keys use camel case names that match the fields in the schema for the Items dataset. In the previous example, the <code>numberOfRatings</code> matches the 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string data, to include multiple categories for a single item, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Horror|Action\"</code>.</p>
         pub fn properties(mut self, input: impl Into<std::string::String>) -> Self {
             self.properties = Some(input.into());
             self
         }
-        /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p>
+        /// <p>A string map of item-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfRatings": "12"}</code>.</p> 
         /// <p>The keys use camel case names that match the fields in the schema for the Items dataset. In the previous example, the <code>numberOfRatings</code> matches the 'NUMBER_OF_RATINGS' field defined in the Items schema. For categorical string data, to include multiple categories for a single item, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Horror|Action\"</code>.</p>
         pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.properties = input;
-            self
+            self.properties = input; self
         }
         /// Consumes the builder and constructs a [`Item`](crate::model::Item).
         pub fn build(self) -> crate::model::Item {
             crate::model::Item {
-                item_id: self.item_id,
-                properties: self.properties,
+                item_id: self.item_id
+                ,
+                properties: self.properties
+                ,
             }
         }
     }
@@ -166,6 +168,8 @@ pub mod item {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Item {
     /// Creates a new builder-style object to manufacture [`Item`](crate::model::Item).
@@ -177,7 +181,7 @@ impl Item {
 /// <p>Represents user interaction event information sent using the <code>PutEvents</code> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Event {
+pub struct Event  {
     /// <p>An ID associated with the event. If an event ID is not provided, Amazon Personalize generates a unique ID for the event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to distinquish unique events. Any subsequent events after the first with the same event ID are not used in model training.</p>
     #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
@@ -190,16 +194,16 @@ pub struct Event {
     /// <p>The item ID key that corresponds to the <code>ITEM_ID</code> field of the Interactions schema.</p>
     #[doc(hidden)]
     pub item_id: std::option::Option<std::string::String>,
-    /// <p>A string map of event-specific data that you might choose to record. For example, if a user rates a movie on your site, other than movie ID (<code>itemId</code>) and rating (<code>eventValue</code>) , you might also send the number of movie ratings made by the user.</p>
-    /// <p>Each item in the map consists of a key-value pair. For example,</p>
-    /// <p> <code>{"numberOfRatings": "12"}</code> </p>
+    /// <p>A string map of event-specific data that you might choose to record. For example, if a user rates a movie on your site, other than movie ID (<code>itemId</code>) and rating (<code>eventValue</code>) , you might also send the number of movie ratings made by the user.</p> 
+    /// <p>Each item in the map consists of a key-value pair. For example,</p> 
+    /// <p> <code>{"numberOfRatings": "12"}</code> </p> 
     /// <p>The keys use camel case names that match the fields in the Interactions schema. In the above example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Interactions schema.</p>
     #[doc(hidden)]
     pub properties: std::option::Option<std::string::String>,
     /// <p>The timestamp (in Unix time) on the client side when the event occurred.</p>
     #[doc(hidden)]
     pub sent_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The ID of the list of recommendations that contains the item the user interacted with. Provide a <code>recommendationId</code> to have Amazon Personalize implicitly record the recommendations you show your user as impressions data. Or provide a <code>recommendationId</code> if you use a metric attribution to measure the impact of recommendations. </p>
+    /// <p>The ID of the list of recommendations that contains the item the user interacted with. Provide a <code>recommendationId</code> to have Amazon Personalize implicitly record the recommendations you show your user as impressions data. Or provide a <code>recommendationId</code> if you use a metric attribution to measure the impact of recommendations. </p> 
     /// <p> For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>. For more information on creating a metric attribution see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>. </p>
     #[doc(hidden)]
     pub recommendation_id: std::option::Option<std::string::String>,
@@ -212,11 +216,11 @@ pub struct Event {
 }
 impl Event {
     /// <p>An ID associated with the event. If an event ID is not provided, Amazon Personalize generates a unique ID for the event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to distinquish unique events. Any subsequent events after the first with the same event ID are not used in model training.</p>
-    pub fn event_id(&self) -> std::option::Option<&str> {
+    pub fn event_id(&self) -> std::option::Option<& str> {
         self.event_id.as_deref()
     }
     /// <p>The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the types of events you are tracking.</p>
-    pub fn event_type(&self) -> std::option::Option<&str> {
+    pub fn event_type(&self) -> std::option::Option<& str> {
         self.event_type.as_deref()
     }
     /// <p>The event value that corresponds to the <code>EVENT_VALUE</code> field of the Interactions schema.</p>
@@ -224,35 +228,35 @@ impl Event {
         self.event_value
     }
     /// <p>The item ID key that corresponds to the <code>ITEM_ID</code> field of the Interactions schema.</p>
-    pub fn item_id(&self) -> std::option::Option<&str> {
+    pub fn item_id(&self) -> std::option::Option<& str> {
         self.item_id.as_deref()
     }
-    /// <p>A string map of event-specific data that you might choose to record. For example, if a user rates a movie on your site, other than movie ID (<code>itemId</code>) and rating (<code>eventValue</code>) , you might also send the number of movie ratings made by the user.</p>
-    /// <p>Each item in the map consists of a key-value pair. For example,</p>
-    /// <p> <code>{"numberOfRatings": "12"}</code> </p>
+    /// <p>A string map of event-specific data that you might choose to record. For example, if a user rates a movie on your site, other than movie ID (<code>itemId</code>) and rating (<code>eventValue</code>) , you might also send the number of movie ratings made by the user.</p> 
+    /// <p>Each item in the map consists of a key-value pair. For example,</p> 
+    /// <p> <code>{"numberOfRatings": "12"}</code> </p> 
     /// <p>The keys use camel case names that match the fields in the Interactions schema. In the above example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Interactions schema.</p>
-    pub fn properties(&self) -> std::option::Option<&str> {
+    pub fn properties(&self) -> std::option::Option<& str> {
         self.properties.as_deref()
     }
     /// <p>The timestamp (in Unix time) on the client side when the event occurred.</p>
-    pub fn sent_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn sent_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.sent_at.as_ref()
     }
-    /// <p>The ID of the list of recommendations that contains the item the user interacted with. Provide a <code>recommendationId</code> to have Amazon Personalize implicitly record the recommendations you show your user as impressions data. Or provide a <code>recommendationId</code> if you use a metric attribution to measure the impact of recommendations. </p>
+    /// <p>The ID of the list of recommendations that contains the item the user interacted with. Provide a <code>recommendationId</code> to have Amazon Personalize implicitly record the recommendations you show your user as impressions data. Or provide a <code>recommendationId</code> if you use a metric attribution to measure the impact of recommendations. </p> 
     /// <p> For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>. For more information on creating a metric attribution see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>. </p>
-    pub fn recommendation_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_id(&self) -> std::option::Option<& str> {
         self.recommendation_id.as_deref()
     }
     /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items to manually record impressions data for an event. For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>. </p>
-    pub fn impression(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn impression(&self) -> std::option::Option<& [std::string::String]> {
         self.impression.as_deref()
     }
     /// <p>Contains information about the metric attribution associated with an event. For more information about metric attributions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
-    pub fn metric_attribution(&self) -> std::option::Option<&crate::model::MetricAttribution> {
+    pub fn metric_attribution(&self) -> std::option::Option<& crate::model::MetricAttribution> {
         self.metric_attribution.as_ref()
     }
 }
-impl std::fmt::Debug for Event {
+impl  std::fmt::Debug for Event  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Event");
         formatter.field("event_id", &"*** Sensitive Data Redacted ***");
@@ -269,7 +273,7 @@ impl std::fmt::Debug for Event {
 }
 /// See [`Event`](crate::model::Event).
 pub mod event {
-
+    
     /// A builder for [`Event`](crate::model::Event).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -291,8 +295,7 @@ pub mod event {
         }
         /// <p>An ID associated with the event. If an event ID is not provided, Amazon Personalize generates a unique ID for the event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to distinquish unique events. Any subsequent events after the first with the same event ID are not used in model training.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_id = input;
-            self
+            self.event_id = input; self
         }
         /// <p>The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the types of events you are tracking.</p>
         pub fn event_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -301,8 +304,7 @@ pub mod event {
         }
         /// <p>The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the types of events you are tracking.</p>
         pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_type = input;
-            self
+            self.event_type = input; self
         }
         /// <p>The event value that corresponds to the <code>EVENT_VALUE</code> field of the Interactions schema.</p>
         pub fn event_value(mut self, input: f32) -> Self {
@@ -311,8 +313,7 @@ pub mod event {
         }
         /// <p>The event value that corresponds to the <code>EVENT_VALUE</code> field of the Interactions schema.</p>
         pub fn set_event_value(mut self, input: std::option::Option<f32>) -> Self {
-            self.event_value = input;
-            self
+            self.event_value = input; self
         }
         /// <p>The item ID key that corresponds to the <code>ITEM_ID</code> field of the Interactions schema.</p>
         pub fn item_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -321,24 +322,22 @@ pub mod event {
         }
         /// <p>The item ID key that corresponds to the <code>ITEM_ID</code> field of the Interactions schema.</p>
         pub fn set_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.item_id = input;
-            self
+            self.item_id = input; self
         }
-        /// <p>A string map of event-specific data that you might choose to record. For example, if a user rates a movie on your site, other than movie ID (<code>itemId</code>) and rating (<code>eventValue</code>) , you might also send the number of movie ratings made by the user.</p>
-        /// <p>Each item in the map consists of a key-value pair. For example,</p>
-        /// <p> <code>{"numberOfRatings": "12"}</code> </p>
+        /// <p>A string map of event-specific data that you might choose to record. For example, if a user rates a movie on your site, other than movie ID (<code>itemId</code>) and rating (<code>eventValue</code>) , you might also send the number of movie ratings made by the user.</p> 
+        /// <p>Each item in the map consists of a key-value pair. For example,</p> 
+        /// <p> <code>{"numberOfRatings": "12"}</code> </p> 
         /// <p>The keys use camel case names that match the fields in the Interactions schema. In the above example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Interactions schema.</p>
         pub fn properties(mut self, input: impl Into<std::string::String>) -> Self {
             self.properties = Some(input.into());
             self
         }
-        /// <p>A string map of event-specific data that you might choose to record. For example, if a user rates a movie on your site, other than movie ID (<code>itemId</code>) and rating (<code>eventValue</code>) , you might also send the number of movie ratings made by the user.</p>
-        /// <p>Each item in the map consists of a key-value pair. For example,</p>
-        /// <p> <code>{"numberOfRatings": "12"}</code> </p>
+        /// <p>A string map of event-specific data that you might choose to record. For example, if a user rates a movie on your site, other than movie ID (<code>itemId</code>) and rating (<code>eventValue</code>) , you might also send the number of movie ratings made by the user.</p> 
+        /// <p>Each item in the map consists of a key-value pair. For example,</p> 
+        /// <p> <code>{"numberOfRatings": "12"}</code> </p> 
         /// <p>The keys use camel case names that match the fields in the Interactions schema. In the above example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Interactions schema.</p>
         pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.properties = input;
-            self
+            self.properties = input; self
         }
         /// <p>The timestamp (in Unix time) on the client side when the event occurred.</p>
         pub fn sent_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -346,27 +345,19 @@ pub mod event {
             self
         }
         /// <p>The timestamp (in Unix time) on the client side when the event occurred.</p>
-        pub fn set_sent_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.sent_at = input;
-            self
+        pub fn set_sent_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.sent_at = input; self
         }
-        /// <p>The ID of the list of recommendations that contains the item the user interacted with. Provide a <code>recommendationId</code> to have Amazon Personalize implicitly record the recommendations you show your user as impressions data. Or provide a <code>recommendationId</code> if you use a metric attribution to measure the impact of recommendations. </p>
+        /// <p>The ID of the list of recommendations that contains the item the user interacted with. Provide a <code>recommendationId</code> to have Amazon Personalize implicitly record the recommendations you show your user as impressions data. Or provide a <code>recommendationId</code> if you use a metric attribution to measure the impact of recommendations. </p> 
         /// <p> For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>. For more information on creating a metric attribution see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>. </p>
         pub fn recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.recommendation_id = Some(input.into());
             self
         }
-        /// <p>The ID of the list of recommendations that contains the item the user interacted with. Provide a <code>recommendationId</code> to have Amazon Personalize implicitly record the recommendations you show your user as impressions data. Or provide a <code>recommendationId</code> if you use a metric attribution to measure the impact of recommendations. </p>
+        /// <p>The ID of the list of recommendations that contains the item the user interacted with. Provide a <code>recommendationId</code> to have Amazon Personalize implicitly record the recommendations you show your user as impressions data. Or provide a <code>recommendationId</code> if you use a metric attribution to measure the impact of recommendations. </p> 
         /// <p> For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>. For more information on creating a metric attribution see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>. </p>
-        pub fn set_recommendation_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.recommendation_id = input;
-            self
+        pub fn set_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.recommendation_id = input; self
         }
         /// Appends an item to `impression`.
         ///
@@ -375,17 +366,13 @@ pub mod event {
         /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items to manually record impressions data for an event. For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>. </p>
         pub fn impression(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.impression.unwrap_or_default();
-            v.push(input.into());
-            self.impression = Some(v);
-            self
+                            v.push(input.into());
+                            self.impression = Some(v);
+                            self
         }
         /// <p>A list of item IDs that represents the sequence of items you have shown the user. For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items to manually record impressions data for an event. For more information on recording impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording impressions data</a>. </p>
-        pub fn set_impression(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.impression = input;
-            self
+        pub fn set_impression(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.impression = input; self
         }
         /// <p>Contains information about the metric attribution associated with an event. For more information about metric attributions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
         pub fn metric_attribution(mut self, input: crate::model::MetricAttribution) -> Self {
@@ -393,25 +380,30 @@ pub mod event {
             self
         }
         /// <p>Contains information about the metric attribution associated with an event. For more information about metric attributions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
-        pub fn set_metric_attribution(
-            mut self,
-            input: std::option::Option<crate::model::MetricAttribution>,
-        ) -> Self {
-            self.metric_attribution = input;
-            self
+        pub fn set_metric_attribution(mut self, input: std::option::Option<crate::model::MetricAttribution>) -> Self {
+            self.metric_attribution = input; self
         }
         /// Consumes the builder and constructs a [`Event`](crate::model::Event).
         pub fn build(self) -> crate::model::Event {
             crate::model::Event {
-                event_id: self.event_id,
-                event_type: self.event_type,
-                event_value: self.event_value,
-                item_id: self.item_id,
-                properties: self.properties,
-                sent_at: self.sent_at,
-                recommendation_id: self.recommendation_id,
-                impression: self.impression,
-                metric_attribution: self.metric_attribution,
+                event_id: self.event_id
+                ,
+                event_type: self.event_type
+                ,
+                event_value: self.event_value
+                ,
+                item_id: self.item_id
+                ,
+                properties: self.properties
+                ,
+                sent_at: self.sent_at
+                ,
+                recommendation_id: self.recommendation_id
+                ,
+                impression: self.impression
+                ,
+                metric_attribution: self.metric_attribution
+                ,
             }
         }
     }
@@ -430,6 +422,8 @@ pub mod event {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Event {
     /// Creates a new builder-style object to manufacture [`Event`](crate::model::Event).
@@ -441,20 +435,20 @@ impl Event {
 /// <p>Contains information about a metric attribution associated with an event. For more information about metric attributions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricAttribution {
+pub struct MetricAttribution  {
     /// <p>The source of the event, such as a third party.</p>
     #[doc(hidden)]
     pub event_attribution_source: std::option::Option<std::string::String>,
 }
 impl MetricAttribution {
     /// <p>The source of the event, such as a third party.</p>
-    pub fn event_attribution_source(&self) -> std::option::Option<&str> {
+    pub fn event_attribution_source(&self) -> std::option::Option<& str> {
         self.event_attribution_source.as_deref()
     }
 }
 /// See [`MetricAttribution`](crate::model::MetricAttribution).
 pub mod metric_attribution {
-
+    
     /// A builder for [`MetricAttribution`](crate::model::MetricAttribution).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -467,20 +461,19 @@ pub mod metric_attribution {
             self
         }
         /// <p>The source of the event, such as a third party.</p>
-        pub fn set_event_attribution_source(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_attribution_source = input;
-            self
+        pub fn set_event_attribution_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_attribution_source = input; self
         }
         /// Consumes the builder and constructs a [`MetricAttribution`](crate::model::MetricAttribution).
         pub fn build(self) -> crate::model::MetricAttribution {
             crate::model::MetricAttribution {
-                event_attribution_source: self.event_attribution_source,
+                event_attribution_source: self.event_attribution_source
+                ,
             }
         }
     }
+    
+    
 }
 impl MetricAttribution {
     /// Creates a new builder-style object to manufacture [`MetricAttribution`](crate::model::MetricAttribution).
@@ -488,3 +481,4 @@ impl MetricAttribution {
         crate::model::metric_attribution::Builder::default()
     }
 }
+

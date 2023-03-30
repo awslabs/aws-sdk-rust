@@ -3,7 +3,7 @@ use std::fmt::Write;
 
 /// See [`DeleteAlarmsInput`](crate::input::DeleteAlarmsInput).
 pub mod delete_alarms_input {
-
+    
     /// A builder for [`DeleteAlarmsInput`](crate::input::DeleteAlarmsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -17,147 +17,94 @@ pub mod delete_alarms_input {
         /// <p>The alarms to be deleted.</p>
         pub fn alarm_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.alarm_names.unwrap_or_default();
-            v.push(input.into());
-            self.alarm_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.alarm_names = Some(v);
+                            self
         }
         /// <p>The alarms to be deleted.</p>
-        pub fn set_alarm_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.alarm_names = input;
-            self
+        pub fn set_alarm_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.alarm_names = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAlarmsInput`](crate::input::DeleteAlarmsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteAlarmsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DeleteAlarmsInput {
-                alarm_names: self.alarm_names,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteAlarmsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteAlarmsInput {
+                    alarm_names: self.alarm_names
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteAlarmsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAlarms`](crate::operation::DeleteAlarms)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteAlarms,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteAlarms, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteAlarmsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteAlarmsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteAlarmsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteAlarmsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_alarms(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_alarms(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteAlarms::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteAlarms",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteAlarms::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteAlarms", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -169,7 +116,7 @@ impl DeleteAlarmsInput {
 
 /// See [`DeleteAnomalyDetectorInput`](crate::input::DeleteAnomalyDetectorInput).
 pub mod delete_anomaly_detector_input {
-
+    
     /// A builder for [`DeleteAnomalyDetectorInput`](crate::input::DeleteAnomalyDetectorInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -177,10 +124,8 @@ pub mod delete_anomaly_detector_input {
         pub(crate) metric_name: std::option::Option<std::string::String>,
         pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
         pub(crate) stat: std::option::Option<std::string::String>,
-        pub(crate) single_metric_anomaly_detector:
-            std::option::Option<crate::model::SingleMetricAnomalyDetector>,
-        pub(crate) metric_math_anomaly_detector:
-            std::option::Option<crate::model::MetricMathAnomalyDetector>,
+        pub(crate) single_metric_anomaly_detector: std::option::Option<crate::model::SingleMetricAnomalyDetector>,
+        pub(crate) metric_math_anomaly_detector: std::option::Option<crate::model::MetricMathAnomalyDetector>,
     }
     impl Builder {
         /// <p>The namespace associated with the anomaly detection model to delete.</p>
@@ -192,8 +137,7 @@ pub mod delete_anomaly_detector_input {
         /// <p>The namespace associated with the anomaly detection model to delete.</p>
         #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>The metric name associated with the anomaly detection model to delete.</p>
         #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
@@ -204,8 +148,7 @@ pub mod delete_anomaly_detector_input {
         /// <p>The metric name associated with the anomaly detection model to delete.</p>
         #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// Appends an item to `dimensions`.
         ///
@@ -215,18 +158,14 @@ pub mod delete_anomaly_detector_input {
         #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input);
-            self.dimensions = Some(v);
-            self
+                            v.push(input);
+                            self.dimensions = Some(v);
+                            self
         }
         /// <p>The metric dimensions associated with the anomaly detection model to delete.</p>
         #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-        pub fn set_dimensions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
-        ) -> Self {
-            self.dimensions = input;
-            self
+        pub fn set_dimensions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Dimension>>) -> Self {
+            self.dimensions = input; self
         }
         /// <p>The statistic associated with the anomaly detection model to delete.</p>
         #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
@@ -237,215 +176,152 @@ pub mod delete_anomaly_detector_input {
         /// <p>The statistic associated with the anomaly detection model to delete.</p>
         #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn set_stat(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stat = input;
-            self
+            self.stat = input; self
         }
-        /// <p>A single metric anomaly detector to be deleted.</p>
-        /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
-        /// <ul>
-        /// <li> <p> <code>Dimensions</code>,</p> </li>
-        /// <li> <p> <code>MetricName</code> </p> </li>
-        /// <li> <p> <code>Namespace</code> </p> </li>
-        /// <li> <p> <code>Stat</code> </p> </li>
-        /// <li> <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
-        /// </ul>
+        /// <p>A single metric anomaly detector to be deleted.</p> 
+        /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Dimensions</code>,</p> </li> 
+        /// <li> <p> <code>MetricName</code> </p> </li> 
+        /// <li> <p> <code>Namespace</code> </p> </li> 
+        /// <li> <p> <code>Stat</code> </p> </li> 
+        /// <li> <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li> 
+        /// </ul> 
         /// <p>Instead, specify the single metric anomaly detector attributes as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
-        pub fn single_metric_anomaly_detector(
-            mut self,
-            input: crate::model::SingleMetricAnomalyDetector,
-        ) -> Self {
+        pub fn single_metric_anomaly_detector(mut self, input: crate::model::SingleMetricAnomalyDetector) -> Self {
             self.single_metric_anomaly_detector = Some(input);
             self
         }
-        /// <p>A single metric anomaly detector to be deleted.</p>
-        /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
-        /// <ul>
-        /// <li> <p> <code>Dimensions</code>,</p> </li>
-        /// <li> <p> <code>MetricName</code> </p> </li>
-        /// <li> <p> <code>Namespace</code> </p> </li>
-        /// <li> <p> <code>Stat</code> </p> </li>
-        /// <li> <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
-        /// </ul>
+        /// <p>A single metric anomaly detector to be deleted.</p> 
+        /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Dimensions</code>,</p> </li> 
+        /// <li> <p> <code>MetricName</code> </p> </li> 
+        /// <li> <p> <code>Namespace</code> </p> </li> 
+        /// <li> <p> <code>Stat</code> </p> </li> 
+        /// <li> <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li> 
+        /// </ul> 
         /// <p>Instead, specify the single metric anomaly detector attributes as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
-        pub fn set_single_metric_anomaly_detector(
-            mut self,
-            input: std::option::Option<crate::model::SingleMetricAnomalyDetector>,
-        ) -> Self {
-            self.single_metric_anomaly_detector = input;
-            self
+        pub fn set_single_metric_anomaly_detector(mut self, input: std::option::Option<crate::model::SingleMetricAnomalyDetector>) -> Self {
+            self.single_metric_anomaly_detector = input; self
         }
-        /// <p>The metric math anomaly detector to be deleted.</p>
-        /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>
-        /// <ul>
-        /// <li> <p> <code>Dimensions</code>,</p> </li>
-        /// <li> <p> <code>MetricName</code> </p> </li>
-        /// <li> <p> <code>Namespace</code> </p> </li>
-        /// <li> <p> <code>Stat</code> </p> </li>
-        /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
-        /// </ul>
+        /// <p>The metric math anomaly detector to be deleted.</p> 
+        /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Dimensions</code>,</p> </li> 
+        /// <li> <p> <code>MetricName</code> </p> </li> 
+        /// <li> <p> <code>Namespace</code> </p> </li> 
+        /// <li> <p> <code>Stat</code> </p> </li> 
+        /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li> 
+        /// </ul> 
         /// <p>Instead, specify the metric math anomaly detector attributes as part of the <code>MetricMathAnomalyDetector</code> property.</p>
-        pub fn metric_math_anomaly_detector(
-            mut self,
-            input: crate::model::MetricMathAnomalyDetector,
-        ) -> Self {
+        pub fn metric_math_anomaly_detector(mut self, input: crate::model::MetricMathAnomalyDetector) -> Self {
             self.metric_math_anomaly_detector = Some(input);
             self
         }
-        /// <p>The metric math anomaly detector to be deleted.</p>
-        /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>
-        /// <ul>
-        /// <li> <p> <code>Dimensions</code>,</p> </li>
-        /// <li> <p> <code>MetricName</code> </p> </li>
-        /// <li> <p> <code>Namespace</code> </p> </li>
-        /// <li> <p> <code>Stat</code> </p> </li>
-        /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
-        /// </ul>
+        /// <p>The metric math anomaly detector to be deleted.</p> 
+        /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Dimensions</code>,</p> </li> 
+        /// <li> <p> <code>MetricName</code> </p> </li> 
+        /// <li> <p> <code>Namespace</code> </p> </li> 
+        /// <li> <p> <code>Stat</code> </p> </li> 
+        /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li> 
+        /// </ul> 
         /// <p>Instead, specify the metric math anomaly detector attributes as part of the <code>MetricMathAnomalyDetector</code> property.</p>
-        pub fn set_metric_math_anomaly_detector(
-            mut self,
-            input: std::option::Option<crate::model::MetricMathAnomalyDetector>,
-        ) -> Self {
-            self.metric_math_anomaly_detector = input;
-            self
+        pub fn set_metric_math_anomaly_detector(mut self, input: std::option::Option<crate::model::MetricMathAnomalyDetector>) -> Self {
+            self.metric_math_anomaly_detector = input; self
         }
         /// Consumes the builder and constructs a [`DeleteAnomalyDetectorInput`](crate::input::DeleteAnomalyDetectorInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteAnomalyDetectorInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteAnomalyDetectorInput {
-                namespace: self.namespace,
-                metric_name: self.metric_name,
-                dimensions: self.dimensions,
-                stat: self.stat,
-                single_metric_anomaly_detector: self.single_metric_anomaly_detector,
-                metric_math_anomaly_detector: self.metric_math_anomaly_detector,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteAnomalyDetectorInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteAnomalyDetectorInput {
+                    namespace: self.namespace
+                    ,
+                    metric_name: self.metric_name
+                    ,
+                    dimensions: self.dimensions
+                    ,
+                    stat: self.stat
+                    ,
+                    single_metric_anomaly_detector: self.single_metric_anomaly_detector
+                    ,
+                    metric_math_anomaly_detector: self.metric_math_anomaly_detector
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteAnomalyDetectorInput {
     /// Consumes the builder and constructs an Operation<[`DeleteAnomalyDetector`](crate::operation::DeleteAnomalyDetector)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteAnomalyDetector,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteAnomalyDetector, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteAnomalyDetectorInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteAnomalyDetectorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteAnomalyDetectorInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteAnomalyDetectorInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_anomaly_detector(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_anomaly_detector(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteAnomalyDetector::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteAnomalyDetector",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteAnomalyDetector::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteAnomalyDetector", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -457,7 +333,7 @@ impl DeleteAnomalyDetectorInput {
 
 /// See [`DeleteDashboardsInput`](crate::input::DeleteDashboardsInput).
 pub mod delete_dashboards_input {
-
+    
     /// A builder for [`DeleteDashboardsInput`](crate::input::DeleteDashboardsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -471,149 +347,94 @@ pub mod delete_dashboards_input {
         /// <p>The dashboards to be deleted. This parameter is required.</p>
         pub fn dashboard_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dashboard_names.unwrap_or_default();
-            v.push(input.into());
-            self.dashboard_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.dashboard_names = Some(v);
+                            self
         }
         /// <p>The dashboards to be deleted. This parameter is required.</p>
-        pub fn set_dashboard_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.dashboard_names = input;
-            self
+        pub fn set_dashboard_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.dashboard_names = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDashboardsInput`](crate::input::DeleteDashboardsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteDashboardsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteDashboardsInput {
-                dashboard_names: self.dashboard_names,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteDashboardsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteDashboardsInput {
+                    dashboard_names: self.dashboard_names
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteDashboardsInput {
     /// Consumes the builder and constructs an Operation<[`DeleteDashboards`](crate::operation::DeleteDashboards)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteDashboards,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteDashboards, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteDashboardsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteDashboardsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteDashboardsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteDashboardsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_dashboards(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_dashboards(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteDashboards::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteDashboards",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteDashboards::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteDashboards", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -625,7 +446,7 @@ impl DeleteDashboardsInput {
 
 /// See [`DeleteInsightRulesInput`](crate::input::DeleteInsightRulesInput).
 pub mod delete_insight_rules_input {
-
+    
     /// A builder for [`DeleteInsightRulesInput`](crate::input::DeleteInsightRulesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -639,149 +460,94 @@ pub mod delete_insight_rules_input {
         /// <p>An array of the rule names to delete. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
         pub fn rule_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rule_names.unwrap_or_default();
-            v.push(input.into());
-            self.rule_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.rule_names = Some(v);
+                            self
         }
         /// <p>An array of the rule names to delete. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-        pub fn set_rule_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.rule_names = input;
-            self
+        pub fn set_rule_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.rule_names = input; self
         }
         /// Consumes the builder and constructs a [`DeleteInsightRulesInput`](crate::input::DeleteInsightRulesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteInsightRulesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteInsightRulesInput {
-                rule_names: self.rule_names,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteInsightRulesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteInsightRulesInput {
+                    rule_names: self.rule_names
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteInsightRulesInput {
     /// Consumes the builder and constructs an Operation<[`DeleteInsightRules`](crate::operation::DeleteInsightRules)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteInsightRules,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteInsightRules, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteInsightRulesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteInsightRulesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteInsightRulesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteInsightRulesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_insight_rules(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_insight_rules(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteInsightRules::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteInsightRules",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteInsightRules::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteInsightRules", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -793,7 +559,7 @@ impl DeleteInsightRulesInput {
 
 /// See [`DeleteMetricStreamInput`](crate::input::DeleteMetricStreamInput).
 pub mod delete_metric_stream_input {
-
+    
     /// A builder for [`DeleteMetricStreamInput`](crate::input::DeleteMetricStreamInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -807,138 +573,88 @@ pub mod delete_metric_stream_input {
         }
         /// <p>The name of the metric stream to delete.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteMetricStreamInput`](crate::input::DeleteMetricStreamInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DeleteMetricStreamInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DeleteMetricStreamInput { name: self.name })
+        pub fn build(self) -> Result<crate::input::DeleteMetricStreamInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteMetricStreamInput {
+                    name: self.name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteMetricStreamInput {
     /// Consumes the builder and constructs an Operation<[`DeleteMetricStream`](crate::operation::DeleteMetricStream)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteMetricStream,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteMetricStream, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteMetricStreamInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteMetricStreamInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteMetricStreamInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteMetricStreamInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_metric_stream(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_metric_stream(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteMetricStream::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteMetricStream",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteMetricStream::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteMetricStream", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -950,7 +666,7 @@ impl DeleteMetricStreamInput {
 
 /// See [`DescribeAlarmHistoryInput`](crate::input::DescribeAlarmHistoryInput).
 pub mod describe_alarm_history_input {
-
+    
     /// A builder for [`DescribeAlarmHistoryInput`](crate::input::DescribeAlarmHistoryInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -971,8 +687,7 @@ pub mod describe_alarm_history_input {
         }
         /// <p>The name of the alarm.</p>
         pub fn set_alarm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alarm_name = input;
-            self
+            self.alarm_name = input; self
         }
         /// Appends an item to `alarm_types`.
         ///
@@ -981,17 +696,13 @@ pub mod describe_alarm_history_input {
         /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
         pub fn alarm_types(mut self, input: crate::model::AlarmType) -> Self {
             let mut v = self.alarm_types.unwrap_or_default();
-            v.push(input);
-            self.alarm_types = Some(v);
-            self
+                            v.push(input);
+                            self.alarm_types = Some(v);
+                            self
         }
         /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
-        pub fn set_alarm_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AlarmType>>,
-        ) -> Self {
-            self.alarm_types = input;
-            self
+        pub fn set_alarm_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::AlarmType>>) -> Self {
+            self.alarm_types = input; self
         }
         /// <p>The type of alarm histories to retrieve.</p>
         pub fn history_item_type(mut self, input: crate::model::HistoryItemType) -> Self {
@@ -999,12 +710,8 @@ pub mod describe_alarm_history_input {
             self
         }
         /// <p>The type of alarm histories to retrieve.</p>
-        pub fn set_history_item_type(
-            mut self,
-            input: std::option::Option<crate::model::HistoryItemType>,
-        ) -> Self {
-            self.history_item_type = input;
-            self
+        pub fn set_history_item_type(mut self, input: std::option::Option<crate::model::HistoryItemType>) -> Self {
+            self.history_item_type = input; self
         }
         /// <p>The starting date to retrieve alarm history.</p>
         pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1012,12 +719,8 @@ pub mod describe_alarm_history_input {
             self
         }
         /// <p>The starting date to retrieve alarm history.</p>
-        pub fn set_start_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_date = input;
-            self
+        pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_date = input; self
         }
         /// <p>The ending date to retrieve alarm history.</p>
         pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1025,12 +728,8 @@ pub mod describe_alarm_history_input {
             self
         }
         /// <p>The ending date to retrieve alarm history.</p>
-        pub fn set_end_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_date = input;
-            self
+        pub fn set_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_date = input; self
         }
         /// <p>The maximum number of alarm history records to retrieve.</p>
         pub fn max_records(mut self, input: i32) -> Self {
@@ -1039,8 +738,7 @@ pub mod describe_alarm_history_input {
         }
         /// <p>The maximum number of alarm history records to retrieve.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_records = input;
-            self
+            self.max_records = input; self
         }
         /// <p>The token returned by a previous call to indicate that there is more data available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1049,8 +747,7 @@ pub mod describe_alarm_history_input {
         }
         /// <p>The token returned by a previous call to indicate that there is more data available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest history returned first.</p>
         pub fn scan_by(mut self, input: crate::model::ScanBy) -> Self {
@@ -1059,149 +756,102 @@ pub mod describe_alarm_history_input {
         }
         /// <p>Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest history returned first.</p>
         pub fn set_scan_by(mut self, input: std::option::Option<crate::model::ScanBy>) -> Self {
-            self.scan_by = input;
-            self
+            self.scan_by = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAlarmHistoryInput`](crate::input::DescribeAlarmHistoryInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeAlarmHistoryInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeAlarmHistoryInput {
-                alarm_name: self.alarm_name,
-                alarm_types: self.alarm_types,
-                history_item_type: self.history_item_type,
-                start_date: self.start_date,
-                end_date: self.end_date,
-                max_records: self.max_records,
-                next_token: self.next_token,
-                scan_by: self.scan_by,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeAlarmHistoryInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeAlarmHistoryInput {
+                    alarm_name: self.alarm_name
+                    ,
+                    alarm_types: self.alarm_types
+                    ,
+                    history_item_type: self.history_item_type
+                    ,
+                    start_date: self.start_date
+                    ,
+                    end_date: self.end_date
+                    ,
+                    max_records: self.max_records
+                    ,
+                    next_token: self.next_token
+                    ,
+                    scan_by: self.scan_by
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeAlarmHistoryInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAlarmHistory`](crate::operation::DescribeAlarmHistory)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeAlarmHistory,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeAlarmHistory, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeAlarmHistoryInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeAlarmHistoryInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeAlarmHistoryInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeAlarmHistoryInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_alarm_history(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_alarm_history(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeAlarmHistory::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeAlarmHistory",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeAlarmHistory::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeAlarmHistory", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1213,7 +863,7 @@ impl DescribeAlarmHistoryInput {
 
 /// See [`DescribeAlarmsInput`](crate::input::DescribeAlarmsInput).
 pub mod describe_alarms_input {
-
+    
     /// A builder for [`DescribeAlarmsInput`](crate::input::DescribeAlarmsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1235,32 +885,24 @@ pub mod describe_alarms_input {
         /// <p>The names of the alarms to retrieve information about.</p>
         pub fn alarm_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.alarm_names.unwrap_or_default();
-            v.push(input.into());
-            self.alarm_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.alarm_names = Some(v);
+                            self
         }
         /// <p>The names of the alarms to retrieve information about.</p>
-        pub fn set_alarm_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.alarm_names = input;
-            self
+        pub fn set_alarm_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.alarm_names = input; self
         }
-        /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p>
+        /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p> 
         /// <p>If this parameter is specified, you cannot specify <code>AlarmNames</code>.</p>
         pub fn alarm_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.alarm_name_prefix = Some(input.into());
             self
         }
-        /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p>
+        /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p> 
         /// <p>If this parameter is specified, you cannot specify <code>AlarmNames</code>.</p>
-        pub fn set_alarm_name_prefix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_name_prefix = input;
-            self
+        pub fn set_alarm_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_name_prefix = input; self
         }
         /// Appends an item to `alarm_types`.
         ///
@@ -1269,55 +911,43 @@ pub mod describe_alarms_input {
         /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
         pub fn alarm_types(mut self, input: crate::model::AlarmType) -> Self {
             let mut v = self.alarm_types.unwrap_or_default();
-            v.push(input);
-            self.alarm_types = Some(v);
-            self
+                            v.push(input);
+                            self.alarm_types = Some(v);
+                            self
         }
         /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
-        pub fn set_alarm_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AlarmType>>,
-        ) -> Self {
-            self.alarm_types = input;
-            self
+        pub fn set_alarm_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::AlarmType>>) -> Self {
+            self.alarm_types = input; self
         }
-        /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns information about the "children" alarms of the alarm you specify. These are the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not returned.</p>
-        /// <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>
-        /// <p>Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
+        /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns information about the "children" alarms of the alarm you specify. These are the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not returned.</p> 
+        /// <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note> 
+        /// <p>Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p> 
         /// </note>
         pub fn children_of_alarm_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.children_of_alarm_name = Some(input.into());
             self
         }
-        /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns information about the "children" alarms of the alarm you specify. These are the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not returned.</p>
-        /// <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>
-        /// <p>Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
+        /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns information about the "children" alarms of the alarm you specify. These are the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not returned.</p> 
+        /// <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note> 
+        /// <p>Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p> 
         /// </note>
-        pub fn set_children_of_alarm_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.children_of_alarm_name = input;
-            self
+        pub fn set_children_of_alarm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.children_of_alarm_name = input; self
         }
-        /// <p>If you use this parameter and specify the name of a metric or composite alarm, the operation returns information about the "parent" alarms of the alarm you specify. These are the composite alarms that have <code>AlarmRule</code> parameters that reference the alarm named in <code>ParentsOfAlarmName</code>. Information about the alarm that you specify in <code>ParentsOfAlarmName</code> is not returned.</p>
-        /// <p>If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>
-        /// <p>Only the Alarm Name and ARN are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
+        /// <p>If you use this parameter and specify the name of a metric or composite alarm, the operation returns information about the "parent" alarms of the alarm you specify. These are the composite alarms that have <code>AlarmRule</code> parameters that reference the alarm named in <code>ParentsOfAlarmName</code>. Information about the alarm that you specify in <code>ParentsOfAlarmName</code> is not returned.</p> 
+        /// <p>If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note> 
+        /// <p>Only the Alarm Name and ARN are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p> 
         /// </note>
         pub fn parents_of_alarm_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.parents_of_alarm_name = Some(input.into());
             self
         }
-        /// <p>If you use this parameter and specify the name of a metric or composite alarm, the operation returns information about the "parent" alarms of the alarm you specify. These are the composite alarms that have <code>AlarmRule</code> parameters that reference the alarm named in <code>ParentsOfAlarmName</code>. Information about the alarm that you specify in <code>ParentsOfAlarmName</code> is not returned.</p>
-        /// <p>If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>
-        /// <p>Only the Alarm Name and ARN are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
+        /// <p>If you use this parameter and specify the name of a metric or composite alarm, the operation returns information about the "parent" alarms of the alarm you specify. These are the composite alarms that have <code>AlarmRule</code> parameters that reference the alarm named in <code>ParentsOfAlarmName</code>. Information about the alarm that you specify in <code>ParentsOfAlarmName</code> is not returned.</p> 
+        /// <p>If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note> 
+        /// <p>Only the Alarm Name and ARN are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p> 
         /// </note>
-        pub fn set_parents_of_alarm_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parents_of_alarm_name = input;
-            self
+        pub fn set_parents_of_alarm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parents_of_alarm_name = input; self
         }
         /// <p>Specify this parameter to receive information only about alarms that are currently in the state that you specify.</p>
         pub fn state_value(mut self, input: crate::model::StateValue) -> Self {
@@ -1325,12 +955,8 @@ pub mod describe_alarms_input {
             self
         }
         /// <p>Specify this parameter to receive information only about alarms that are currently in the state that you specify.</p>
-        pub fn set_state_value(
-            mut self,
-            input: std::option::Option<crate::model::StateValue>,
-        ) -> Self {
-            self.state_value = input;
-            self
+        pub fn set_state_value(mut self, input: std::option::Option<crate::model::StateValue>) -> Self {
+            self.state_value = input; self
         }
         /// <p>Use this parameter to filter the results of the operation to only those alarms that use a certain alarm action. For example, you could specify the ARN of an SNS topic to find all alarms that send notifications to that topic.</p>
         pub fn action_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1338,12 +964,8 @@ pub mod describe_alarms_input {
             self
         }
         /// <p>Use this parameter to filter the results of the operation to only those alarms that use a certain alarm action. For example, you could specify the ARN of an SNS topic to find all alarms that send notifications to that topic.</p>
-        pub fn set_action_prefix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.action_prefix = input;
-            self
+        pub fn set_action_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.action_prefix = input; self
         }
         /// <p>The maximum number of alarm descriptions to retrieve.</p>
         pub fn max_records(mut self, input: i32) -> Self {
@@ -1352,8 +974,7 @@ pub mod describe_alarms_input {
         }
         /// <p>The maximum number of alarm descriptions to retrieve.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_records = input;
-            self
+            self.max_records = input; self
         }
         /// <p>The token returned by a previous call to indicate that there is more data available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1362,146 +983,104 @@ pub mod describe_alarms_input {
         }
         /// <p>The token returned by a previous call to indicate that there is more data available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAlarmsInput`](crate::input::DescribeAlarmsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DescribeAlarmsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DescribeAlarmsInput {
-                alarm_names: self.alarm_names,
-                alarm_name_prefix: self.alarm_name_prefix,
-                alarm_types: self.alarm_types,
-                children_of_alarm_name: self.children_of_alarm_name,
-                parents_of_alarm_name: self.parents_of_alarm_name,
-                state_value: self.state_value,
-                action_prefix: self.action_prefix,
-                max_records: self.max_records,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeAlarmsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeAlarmsInput {
+                    alarm_names: self.alarm_names
+                    ,
+                    alarm_name_prefix: self.alarm_name_prefix
+                    ,
+                    alarm_types: self.alarm_types
+                    ,
+                    children_of_alarm_name: self.children_of_alarm_name
+                    ,
+                    parents_of_alarm_name: self.parents_of_alarm_name
+                    ,
+                    state_value: self.state_value
+                    ,
+                    action_prefix: self.action_prefix
+                    ,
+                    max_records: self.max_records
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeAlarmsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAlarms`](crate::operation::DescribeAlarms)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeAlarms,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeAlarms, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeAlarmsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeAlarmsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeAlarmsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeAlarmsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_alarms(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_alarms(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeAlarms::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeAlarms",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeAlarms::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeAlarms", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1513,7 +1092,7 @@ impl DescribeAlarmsInput {
 
 /// See [`DescribeAlarmsForMetricInput`](crate::input::DescribeAlarmsForMetricInput).
 pub mod describe_alarms_for_metric_input {
-
+    
     /// A builder for [`DescribeAlarmsForMetricInput`](crate::input::DescribeAlarmsForMetricInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1533,8 +1112,7 @@ pub mod describe_alarms_for_metric_input {
         }
         /// <p>The name of the metric.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// <p>The namespace of the metric.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1543,8 +1121,7 @@ pub mod describe_alarms_for_metric_input {
         }
         /// <p>The namespace of the metric.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>The statistic for the metric, other than percentiles. For percentile statistics, use <code>ExtendedStatistics</code>.</p>
         pub fn statistic(mut self, input: crate::model::Statistic) -> Self {
@@ -1552,12 +1129,8 @@ pub mod describe_alarms_for_metric_input {
             self
         }
         /// <p>The statistic for the metric, other than percentiles. For percentile statistics, use <code>ExtendedStatistics</code>.</p>
-        pub fn set_statistic(
-            mut self,
-            input: std::option::Option<crate::model::Statistic>,
-        ) -> Self {
-            self.statistic = input;
-            self
+        pub fn set_statistic(mut self, input: std::option::Option<crate::model::Statistic>) -> Self {
+            self.statistic = input; self
         }
         /// <p>The percentile statistic for the metric. Specify a value between p0.0 and p100.</p>
         pub fn extended_statistic(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1565,12 +1138,8 @@ pub mod describe_alarms_for_metric_input {
             self
         }
         /// <p>The percentile statistic for the metric. Specify a value between p0.0 and p100.</p>
-        pub fn set_extended_statistic(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.extended_statistic = input;
-            self
+        pub fn set_extended_statistic(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.extended_statistic = input; self
         }
         /// Appends an item to `dimensions`.
         ///
@@ -1579,17 +1148,13 @@ pub mod describe_alarms_for_metric_input {
         /// <p>The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in order for the call to succeed.</p>
         pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input);
-            self.dimensions = Some(v);
-            self
+                            v.push(input);
+                            self.dimensions = Some(v);
+                            self
         }
         /// <p>The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in order for the call to succeed.</p>
-        pub fn set_dimensions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
-        ) -> Self {
-            self.dimensions = input;
-            self
+        pub fn set_dimensions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Dimension>>) -> Self {
+            self.dimensions = input; self
         }
         /// <p>The period, in seconds, over which the statistic is applied.</p>
         pub fn period(mut self, input: i32) -> Self {
@@ -1598,8 +1163,7 @@ pub mod describe_alarms_for_metric_input {
         }
         /// <p>The period, in seconds, over which the statistic is applied.</p>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
-            self.period = input;
-            self
+            self.period = input; self
         }
         /// <p>The unit for the metric.</p>
         pub fn unit(mut self, input: crate::model::StandardUnit) -> Self {
@@ -1608,148 +1172,100 @@ pub mod describe_alarms_for_metric_input {
         }
         /// <p>The unit for the metric.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::StandardUnit>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAlarmsForMetricInput`](crate::input::DescribeAlarmsForMetricInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeAlarmsForMetricInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeAlarmsForMetricInput {
-                metric_name: self.metric_name,
-                namespace: self.namespace,
-                statistic: self.statistic,
-                extended_statistic: self.extended_statistic,
-                dimensions: self.dimensions,
-                period: self.period,
-                unit: self.unit,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeAlarmsForMetricInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeAlarmsForMetricInput {
+                    metric_name: self.metric_name
+                    ,
+                    namespace: self.namespace
+                    ,
+                    statistic: self.statistic
+                    ,
+                    extended_statistic: self.extended_statistic
+                    ,
+                    dimensions: self.dimensions
+                    ,
+                    period: self.period
+                    ,
+                    unit: self.unit
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeAlarmsForMetricInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAlarmsForMetric`](crate::operation::DescribeAlarmsForMetric)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeAlarmsForMetric,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeAlarmsForMetric, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeAlarmsForMetricInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeAlarmsForMetricInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeAlarmsForMetricInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeAlarmsForMetricInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_alarms_for_metric(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_alarms_for_metric(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeAlarmsForMetric::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeAlarmsForMetric",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeAlarmsForMetric::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeAlarmsForMetric", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1761,7 +1277,7 @@ impl DescribeAlarmsForMetricInput {
 
 /// See [`DescribeAnomalyDetectorsInput`](crate::input::DescribeAnomalyDetectorsInput).
 pub mod describe_anomaly_detectors_input {
-
+    
     /// A builder for [`DescribeAnomalyDetectorsInput`](crate::input::DescribeAnomalyDetectorsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1770,8 +1286,7 @@ pub mod describe_anomaly_detectors_input {
         pub(crate) namespace: std::option::Option<std::string::String>,
         pub(crate) metric_name: std::option::Option<std::string::String>,
         pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
-        pub(crate) anomaly_detector_types:
-            std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorType>>,
+        pub(crate) anomaly_detector_types: std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorType>>,
     }
     impl Builder {
         /// <p>Use the token returned by the previous operation to request the next page of results.</p>
@@ -1781,20 +1296,18 @@ pub mod describe_anomaly_detectors_input {
         }
         /// <p>Use the token returned by the previous operation to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
-        /// <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p>
+        /// <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p> 
         /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
         }
-        /// <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p>
+        /// <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p> 
         /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>Limits the results to only the anomaly detection models that are associated with the specified namespace.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1803,8 +1316,7 @@ pub mod describe_anomaly_detectors_input {
         }
         /// <p>Limits the results to only the anomaly detection models that are associated with the specified namespace.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric name. If there are multiple metrics with this name in different namespaces that have anomaly detection models, they're all returned.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1813,8 +1325,7 @@ pub mod describe_anomaly_detectors_input {
         }
         /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric name. If there are multiple metrics with this name in different namespaces that have anomaly detection models, they're all returned.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// Appends an item to `dimensions`.
         ///
@@ -1823,17 +1334,13 @@ pub mod describe_anomaly_detectors_input {
         /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric dimensions. If there are multiple metrics that have these dimensions and have anomaly detection models associated, they're all returned.</p>
         pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input);
-            self.dimensions = Some(v);
-            self
+                            v.push(input);
+                            self.dimensions = Some(v);
+                            self
         }
         /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric dimensions. If there are multiple metrics that have these dimensions and have anomaly detection models associated, they're all returned.</p>
-        pub fn set_dimensions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
-        ) -> Self {
-            self.dimensions = input;
-            self
+        pub fn set_dimensions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Dimension>>) -> Self {
+            self.dimensions = input; self
         }
         /// Appends an item to `anomaly_detector_types`.
         ///
@@ -1842,156 +1349,104 @@ pub mod describe_anomaly_detectors_input {
         /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to <code>SINGLE_METRIC</code>.</p>
         pub fn anomaly_detector_types(mut self, input: crate::model::AnomalyDetectorType) -> Self {
             let mut v = self.anomaly_detector_types.unwrap_or_default();
-            v.push(input);
-            self.anomaly_detector_types = Some(v);
-            self
+                            v.push(input);
+                            self.anomaly_detector_types = Some(v);
+                            self
         }
         /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to <code>SINGLE_METRIC</code>.</p>
-        pub fn set_anomaly_detector_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorType>>,
-        ) -> Self {
-            self.anomaly_detector_types = input;
-            self
+        pub fn set_anomaly_detector_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorType>>) -> Self {
+            self.anomaly_detector_types = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAnomalyDetectorsInput`](crate::input::DescribeAnomalyDetectorsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeAnomalyDetectorsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeAnomalyDetectorsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                namespace: self.namespace,
-                metric_name: self.metric_name,
-                dimensions: self.dimensions,
-                anomaly_detector_types: self.anomaly_detector_types,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeAnomalyDetectorsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeAnomalyDetectorsInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                    namespace: self.namespace
+                    ,
+                    metric_name: self.metric_name
+                    ,
+                    dimensions: self.dimensions
+                    ,
+                    anomaly_detector_types: self.anomaly_detector_types
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeAnomalyDetectorsInput {
     /// Consumes the builder and constructs an Operation<[`DescribeAnomalyDetectors`](crate::operation::DescribeAnomalyDetectors)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeAnomalyDetectors,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeAnomalyDetectors, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeAnomalyDetectorsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeAnomalyDetectorsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeAnomalyDetectorsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeAnomalyDetectorsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_anomaly_detectors(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_anomaly_detectors(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeAnomalyDetectors::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeAnomalyDetectors",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeAnomalyDetectors::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeAnomalyDetectors", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2003,7 +1458,7 @@ impl DescribeAnomalyDetectorsInput {
 
 /// See [`DescribeInsightRulesInput`](crate::input::DescribeInsightRulesInput).
 pub mod describe_insight_rules_input {
-
+    
     /// A builder for [`DescribeInsightRulesInput`](crate::input::DescribeInsightRulesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2018,8 +1473,7 @@ pub mod describe_insight_rules_input {
         }
         /// <p>Include this value, if it was returned by the previous operation, to get the next set of rules.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default of 500 is used.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -2028,143 +1482,90 @@ pub mod describe_insight_rules_input {
         }
         /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default of 500 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`DescribeInsightRulesInput`](crate::input::DescribeInsightRulesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DescribeInsightRulesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DescribeInsightRulesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::DescribeInsightRulesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DescribeInsightRulesInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DescribeInsightRulesInput {
     /// Consumes the builder and constructs an Operation<[`DescribeInsightRules`](crate::operation::DescribeInsightRules)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DescribeInsightRules,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DescribeInsightRules, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DescribeInsightRulesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DescribeInsightRulesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DescribeInsightRulesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DescribeInsightRulesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_describe_insight_rules(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_describe_insight_rules(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DescribeInsightRules::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DescribeInsightRules",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DescribeInsightRules::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DescribeInsightRules", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2176,7 +1577,7 @@ impl DescribeInsightRulesInput {
 
 /// See [`DisableAlarmActionsInput`](crate::input::DisableAlarmActionsInput).
 pub mod disable_alarm_actions_input {
-
+    
     /// A builder for [`DisableAlarmActionsInput`](crate::input::DisableAlarmActionsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2190,149 +1591,94 @@ pub mod disable_alarm_actions_input {
         /// <p>The names of the alarms.</p>
         pub fn alarm_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.alarm_names.unwrap_or_default();
-            v.push(input.into());
-            self.alarm_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.alarm_names = Some(v);
+                            self
         }
         /// <p>The names of the alarms.</p>
-        pub fn set_alarm_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.alarm_names = input;
-            self
+        pub fn set_alarm_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.alarm_names = input; self
         }
         /// Consumes the builder and constructs a [`DisableAlarmActionsInput`](crate::input::DisableAlarmActionsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DisableAlarmActionsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DisableAlarmActionsInput {
-                alarm_names: self.alarm_names,
-            })
+        pub fn build(self) -> Result<crate::input::DisableAlarmActionsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DisableAlarmActionsInput {
+                    alarm_names: self.alarm_names
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DisableAlarmActionsInput {
     /// Consumes the builder and constructs an Operation<[`DisableAlarmActions`](crate::operation::DisableAlarmActions)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DisableAlarmActions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DisableAlarmActions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DisableAlarmActionsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DisableAlarmActionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DisableAlarmActionsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DisableAlarmActionsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_disable_alarm_actions(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_disable_alarm_actions(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DisableAlarmActions::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DisableAlarmActions",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DisableAlarmActions::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DisableAlarmActions", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2344,7 +1690,7 @@ impl DisableAlarmActionsInput {
 
 /// See [`DisableInsightRulesInput`](crate::input::DisableInsightRulesInput).
 pub mod disable_insight_rules_input {
-
+    
     /// A builder for [`DisableInsightRulesInput`](crate::input::DisableInsightRulesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2358,149 +1704,94 @@ pub mod disable_insight_rules_input {
         /// <p>An array of the rule names to disable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
         pub fn rule_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rule_names.unwrap_or_default();
-            v.push(input.into());
-            self.rule_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.rule_names = Some(v);
+                            self
         }
         /// <p>An array of the rule names to disable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-        pub fn set_rule_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.rule_names = input;
-            self
+        pub fn set_rule_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.rule_names = input; self
         }
         /// Consumes the builder and constructs a [`DisableInsightRulesInput`](crate::input::DisableInsightRulesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::DisableInsightRulesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::DisableInsightRulesInput {
-                rule_names: self.rule_names,
-            })
+        pub fn build(self) -> Result<crate::input::DisableInsightRulesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DisableInsightRulesInput {
+                    rule_names: self.rule_names
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DisableInsightRulesInput {
     /// Consumes the builder and constructs an Operation<[`DisableInsightRules`](crate::operation::DisableInsightRules)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DisableInsightRules,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DisableInsightRules, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DisableInsightRulesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DisableInsightRulesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DisableInsightRulesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DisableInsightRulesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_disable_insight_rules(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_disable_insight_rules(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DisableInsightRules::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DisableInsightRules",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DisableInsightRules::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DisableInsightRules", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2512,7 +1803,7 @@ impl DisableInsightRulesInput {
 
 /// See [`EnableAlarmActionsInput`](crate::input::EnableAlarmActionsInput).
 pub mod enable_alarm_actions_input {
-
+    
     /// A builder for [`EnableAlarmActionsInput`](crate::input::EnableAlarmActionsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2526,149 +1817,94 @@ pub mod enable_alarm_actions_input {
         /// <p>The names of the alarms.</p>
         pub fn alarm_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.alarm_names.unwrap_or_default();
-            v.push(input.into());
-            self.alarm_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.alarm_names = Some(v);
+                            self
         }
         /// <p>The names of the alarms.</p>
-        pub fn set_alarm_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.alarm_names = input;
-            self
+        pub fn set_alarm_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.alarm_names = input; self
         }
         /// Consumes the builder and constructs a [`EnableAlarmActionsInput`](crate::input::EnableAlarmActionsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::EnableAlarmActionsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::EnableAlarmActionsInput {
-                alarm_names: self.alarm_names,
-            })
+        pub fn build(self) -> Result<crate::input::EnableAlarmActionsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::EnableAlarmActionsInput {
+                    alarm_names: self.alarm_names
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl EnableAlarmActionsInput {
     /// Consumes the builder and constructs an Operation<[`EnableAlarmActions`](crate::operation::EnableAlarmActions)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::EnableAlarmActions,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::EnableAlarmActions, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::EnableAlarmActionsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::EnableAlarmActionsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::EnableAlarmActionsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::EnableAlarmActionsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_enable_alarm_actions(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_enable_alarm_actions(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::EnableAlarmActions::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "EnableAlarmActions",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::EnableAlarmActions::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("EnableAlarmActions", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2680,7 +1916,7 @@ impl EnableAlarmActionsInput {
 
 /// See [`EnableInsightRulesInput`](crate::input::EnableInsightRulesInput).
 pub mod enable_insight_rules_input {
-
+    
     /// A builder for [`EnableInsightRulesInput`](crate::input::EnableInsightRulesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2694,149 +1930,94 @@ pub mod enable_insight_rules_input {
         /// <p>An array of the rule names to enable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
         pub fn rule_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.rule_names.unwrap_or_default();
-            v.push(input.into());
-            self.rule_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.rule_names = Some(v);
+                            self
         }
         /// <p>An array of the rule names to enable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-        pub fn set_rule_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.rule_names = input;
-            self
+        pub fn set_rule_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.rule_names = input; self
         }
         /// Consumes the builder and constructs a [`EnableInsightRulesInput`](crate::input::EnableInsightRulesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::EnableInsightRulesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::EnableInsightRulesInput {
-                rule_names: self.rule_names,
-            })
+        pub fn build(self) -> Result<crate::input::EnableInsightRulesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::EnableInsightRulesInput {
+                    rule_names: self.rule_names
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl EnableInsightRulesInput {
     /// Consumes the builder and constructs an Operation<[`EnableInsightRules`](crate::operation::EnableInsightRules)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::EnableInsightRules,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::EnableInsightRules, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::EnableInsightRulesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::EnableInsightRulesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::EnableInsightRulesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::EnableInsightRulesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_enable_insight_rules(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_enable_insight_rules(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::EnableInsightRules::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "EnableInsightRules",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::EnableInsightRules::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("EnableInsightRules", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2848,7 +2029,7 @@ impl EnableInsightRulesInput {
 
 /// See [`GetDashboardInput`](crate::input::GetDashboardInput).
 pub mod get_dashboard_input {
-
+    
     /// A builder for [`GetDashboardInput`](crate::input::GetDashboardInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2861,142 +2042,89 @@ pub mod get_dashboard_input {
             self
         }
         /// <p>The name of the dashboard to be described.</p>
-        pub fn set_dashboard_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dashboard_name = input;
-            self
+        pub fn set_dashboard_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dashboard_name = input; self
         }
         /// Consumes the builder and constructs a [`GetDashboardInput`](crate::input::GetDashboardInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetDashboardInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetDashboardInput {
-                dashboard_name: self.dashboard_name,
-            })
+        pub fn build(self) -> Result<crate::input::GetDashboardInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetDashboardInput {
+                    dashboard_name: self.dashboard_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetDashboardInput {
     /// Consumes the builder and constructs an Operation<[`GetDashboard`](crate::operation::GetDashboard)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetDashboard,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetDashboard, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetDashboardInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetDashboardInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetDashboardInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetDashboardInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_dashboard(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_get_dashboard(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetDashboard::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetDashboard",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetDashboard::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetDashboard", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3008,7 +2136,7 @@ impl GetDashboardInput {
 
 /// See [`GetInsightRuleReportInput`](crate::input::GetInsightRuleReportInput).
 pub mod get_insight_rule_report_input {
-
+    
     /// A builder for [`GetInsightRuleReportInput`](crate::input::GetInsightRuleReportInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3028,8 +2156,7 @@ pub mod get_insight_rule_report_input {
         }
         /// <p>The name of the rule that you want to see data from.</p>
         pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_name = input;
-            self
+            self.rule_name = input; self
         }
         /// <p>The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3037,12 +2164,8 @@ pub mod get_insight_rule_report_input {
             self
         }
         /// <p>The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3050,12 +2173,8 @@ pub mod get_insight_rule_report_input {
             self
         }
         /// <p>The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>The period, in seconds, to use for the statistics in the <code>InsightRuleMetricDatapoint</code> results.</p>
         pub fn period(mut self, input: i32) -> Self {
@@ -3064,8 +2183,7 @@ pub mod get_insight_rule_report_input {
         }
         /// <p>The period, in seconds, to use for the statistics in the <code>InsightRuleMetricDatapoint</code> results.</p>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
-            self.period = input;
-            self
+            self.period = input; self
         }
         /// <p>The maximum number of contributors to include in the report. The range is 1 to 100. If you omit this, the default of 10 is used.</p>
         pub fn max_contributor_count(mut self, input: i32) -> Self {
@@ -3074,45 +2192,40 @@ pub mod get_insight_rule_report_input {
         }
         /// <p>The maximum number of contributors to include in the report. The range is 1 to 100. If you omit this, the default of 10 is used.</p>
         pub fn set_max_contributor_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_contributor_count = input;
-            self
+            self.max_contributor_count = input; self
         }
         /// Appends an item to `metrics`.
         ///
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
-        /// <p>Specifies which metrics to use for aggregation of contributor values for the report. You can specify one or more of the following metrics:</p>
-        /// <ul>
-        /// <li> <p> <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p> </li>
-        /// <li> <p> <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p> </li>
-        /// <li> <p> <code>SampleCount</code> -- the number of data points matched by the rule.</p> </li>
-        /// <li> <p> <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p> </li>
-        /// <li> <p> <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p> </li>
-        /// <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li>
-        /// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li>
+        /// <p>Specifies which metrics to use for aggregation of contributor values for the report. You can specify one or more of the following metrics:</p> 
+        /// <ul> 
+        /// <li> <p> <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p> </li> 
+        /// <li> <p> <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p> </li> 
+        /// <li> <p> <code>SampleCount</code> -- the number of data points matched by the rule.</p> </li> 
+        /// <li> <p> <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p> </li> 
+        /// <li> <p> <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p> </li> 
+        /// <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li> 
+        /// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li> 
         /// </ul>
         pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.metrics.unwrap_or_default();
-            v.push(input.into());
-            self.metrics = Some(v);
-            self
+                            v.push(input.into());
+                            self.metrics = Some(v);
+                            self
         }
-        /// <p>Specifies which metrics to use for aggregation of contributor values for the report. You can specify one or more of the following metrics:</p>
-        /// <ul>
-        /// <li> <p> <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p> </li>
-        /// <li> <p> <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p> </li>
-        /// <li> <p> <code>SampleCount</code> -- the number of data points matched by the rule.</p> </li>
-        /// <li> <p> <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p> </li>
-        /// <li> <p> <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p> </li>
-        /// <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li>
-        /// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li>
+        /// <p>Specifies which metrics to use for aggregation of contributor values for the report. You can specify one or more of the following metrics:</p> 
+        /// <ul> 
+        /// <li> <p> <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p> </li> 
+        /// <li> <p> <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p> </li> 
+        /// <li> <p> <code>SampleCount</code> -- the number of data points matched by the rule.</p> </li> 
+        /// <li> <p> <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p> </li> 
+        /// <li> <p> <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p> </li> 
+        /// <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li> 
+        /// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li> 
         /// </ul>
-        pub fn set_metrics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.metrics = input;
-            self
+        pub fn set_metrics(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.metrics = input; self
         }
         /// <p>Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.</p>
         pub fn order_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3121,148 +2234,100 @@ pub mod get_insight_rule_report_input {
         }
         /// <p>Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.</p>
         pub fn set_order_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.order_by = input;
-            self
+            self.order_by = input; self
         }
         /// Consumes the builder and constructs a [`GetInsightRuleReportInput`](crate::input::GetInsightRuleReportInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetInsightRuleReportInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetInsightRuleReportInput {
-                rule_name: self.rule_name,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                period: self.period,
-                max_contributor_count: self.max_contributor_count,
-                metrics: self.metrics,
-                order_by: self.order_by,
-            })
+        pub fn build(self) -> Result<crate::input::GetInsightRuleReportInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetInsightRuleReportInput {
+                    rule_name: self.rule_name
+                    ,
+                    start_time: self.start_time
+                    ,
+                    end_time: self.end_time
+                    ,
+                    period: self.period
+                    ,
+                    max_contributor_count: self.max_contributor_count
+                    ,
+                    metrics: self.metrics
+                    ,
+                    order_by: self.order_by
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetInsightRuleReportInput {
     /// Consumes the builder and constructs an Operation<[`GetInsightRuleReport`](crate::operation::GetInsightRuleReport)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetInsightRuleReport,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetInsightRuleReport, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetInsightRuleReportInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetInsightRuleReportInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetInsightRuleReportInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetInsightRuleReportInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_insight_rule_report(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_get_insight_rule_report(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetInsightRuleReport::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetInsightRuleReport",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetInsightRuleReport::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetInsightRuleReport", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3274,12 +2339,11 @@ impl GetInsightRuleReportInput {
 
 /// See [`GetMetricDataInput`](crate::input::GetMetricDataInput).
 pub mod get_metric_data_input {
-
+    
     /// A builder for [`GetMetricDataInput`](crate::input::GetMetricDataInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) metric_data_queries:
-            std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
+        pub(crate) metric_data_queries: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
         pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -3295,65 +2359,53 @@ pub mod get_metric_data_input {
         /// <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, a Metrics Insights query, or a math expression to perform on retrieved data. </p>
         pub fn metric_data_queries(mut self, input: crate::model::MetricDataQuery) -> Self {
             let mut v = self.metric_data_queries.unwrap_or_default();
-            v.push(input);
-            self.metric_data_queries = Some(v);
-            self
+                            v.push(input);
+                            self.metric_data_queries = Some(v);
+                            self
         }
         /// <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, a Metrics Insights query, or a math expression to perform on retrieved data. </p>
-        pub fn set_metric_data_queries(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
-        ) -> Self {
-            self.metric_data_queries = input;
-            self
+        pub fn set_metric_data_queries(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>) -> Self {
+            self.metric_data_queries = input; self
         }
-        /// <p>The time stamp indicating the earliest data to be returned.</p>
-        /// <p>The value specified is inclusive; results include data points with the specified time stamp. </p>
-        /// <p>CloudWatch rounds the specified time stamp as follows:</p>
-        /// <ul>
-        /// <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li>
-        /// <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li>
-        /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li>
-        /// </ul>
-        /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a period of 5 seconds, you receive data timestamped between 15:02:15 and 15:07:15. </p>
+        /// <p>The time stamp indicating the earliest data to be returned.</p> 
+        /// <p>The value specified is inclusive; results include data points with the specified time stamp. </p> 
+        /// <p>CloudWatch rounds the specified time stamp as follows:</p> 
+        /// <ul> 
+        /// <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li> 
+        /// <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li> 
+        /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li> 
+        /// </ul> 
+        /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a period of 5 seconds, you receive data timestamped between 15:02:15 and 15:07:15. </p> 
         /// <p>For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a faster response from CloudWatch than setting 12:07 or 12:29 as the <code>StartTime</code>.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The time stamp indicating the earliest data to be returned.</p>
-        /// <p>The value specified is inclusive; results include data points with the specified time stamp. </p>
-        /// <p>CloudWatch rounds the specified time stamp as follows:</p>
-        /// <ul>
-        /// <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li>
-        /// <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li>
-        /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li>
-        /// </ul>
-        /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a period of 5 seconds, you receive data timestamped between 15:02:15 and 15:07:15. </p>
+        /// <p>The time stamp indicating the earliest data to be returned.</p> 
+        /// <p>The value specified is inclusive; results include data points with the specified time stamp. </p> 
+        /// <p>CloudWatch rounds the specified time stamp as follows:</p> 
+        /// <ul> 
+        /// <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li> 
+        /// <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li> 
+        /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li> 
+        /// </ul> 
+        /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a period of 5 seconds, you receive data timestamped between 15:02:15 and 15:07:15. </p> 
         /// <p>For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a faster response from CloudWatch than setting 12:07 or 12:29 as the <code>StartTime</code>.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
-        /// <p>The time stamp indicating the latest data to be returned.</p>
-        /// <p>The value specified is exclusive; results include data points up to the specified time stamp.</p>
+        /// <p>The time stamp indicating the latest data to be returned.</p> 
+        /// <p>The value specified is exclusive; results include data points up to the specified time stamp.</p> 
         /// <p>For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster response from CloudWatch than setting 12:07 or 12:29 as the <code>EndTime</code>.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The time stamp indicating the latest data to be returned.</p>
-        /// <p>The value specified is exclusive; results include data points up to the specified time stamp.</p>
+        /// <p>The time stamp indicating the latest data to be returned.</p> 
+        /// <p>The value specified is exclusive; results include data points up to the specified time stamp.</p> 
         /// <p>For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster response from CloudWatch than setting 12:07 or 12:29 as the <code>EndTime</code>.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>Include this value, if it was returned by the previous <code>GetMetricData</code> operation, to get the next set of data points.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3362,8 +2414,7 @@ pub mod get_metric_data_input {
         }
         /// <p>Include this value, if it was returned by the previous <code>GetMetricData</code> operation, to get the next set of data points.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The order in which data points should be returned. <code>TimestampDescending</code> returns the newest data first and paginates when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the oldest data first and paginates when the <code>MaxDatapoints</code> limit is reached.</p>
         pub fn scan_by(mut self, input: crate::model::ScanBy) -> Self {
@@ -3372,8 +2423,7 @@ pub mod get_metric_data_input {
         }
         /// <p>The order in which data points should be returned. <code>TimestampDescending</code> returns the newest data first and paginates when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the oldest data first and paginates when the <code>MaxDatapoints</code> limit is reached.</p>
         pub fn set_scan_by(mut self, input: std::option::Option<crate::model::ScanBy>) -> Self {
-            self.scan_by = input;
-            self
+            self.scan_by = input; self
         }
         /// <p>The maximum number of data points the request should return before paginating. If you omit this, the default of 100,800 is used.</p>
         pub fn max_datapoints(mut self, input: i32) -> Self {
@@ -3382,8 +2432,7 @@ pub mod get_metric_data_input {
         }
         /// <p>The maximum number of data points the request should return before paginating. If you omit this, the default of 100,800 is used.</p>
         pub fn set_max_datapoints(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_datapoints = input;
-            self
+            self.max_datapoints = input; self
         }
         /// <p>This structure includes the <code>Timezone</code> parameter, which you can use to specify your time zone so that the labels of returned data display the correct time for your time zone. </p>
         pub fn label_options(mut self, input: crate::model::LabelOptions) -> Self {
@@ -3391,148 +2440,101 @@ pub mod get_metric_data_input {
             self
         }
         /// <p>This structure includes the <code>Timezone</code> parameter, which you can use to specify your time zone so that the labels of returned data display the correct time for your time zone. </p>
-        pub fn set_label_options(
-            mut self,
-            input: std::option::Option<crate::model::LabelOptions>,
-        ) -> Self {
-            self.label_options = input;
-            self
+        pub fn set_label_options(mut self, input: std::option::Option<crate::model::LabelOptions>) -> Self {
+            self.label_options = input; self
         }
         /// Consumes the builder and constructs a [`GetMetricDataInput`](crate::input::GetMetricDataInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetMetricDataInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetMetricDataInput {
-                metric_data_queries: self.metric_data_queries,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                next_token: self.next_token,
-                scan_by: self.scan_by,
-                max_datapoints: self.max_datapoints,
-                label_options: self.label_options,
-            })
+        pub fn build(self) -> Result<crate::input::GetMetricDataInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetMetricDataInput {
+                    metric_data_queries: self.metric_data_queries
+                    ,
+                    start_time: self.start_time
+                    ,
+                    end_time: self.end_time
+                    ,
+                    next_token: self.next_token
+                    ,
+                    scan_by: self.scan_by
+                    ,
+                    max_datapoints: self.max_datapoints
+                    ,
+                    label_options: self.label_options
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetMetricDataInput {
     /// Consumes the builder and constructs an Operation<[`GetMetricData`](crate::operation::GetMetricData)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetMetricData,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetMetricData, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetMetricDataInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetMetricDataInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetMetricDataInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetMetricDataInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_metric_data(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_get_metric_data(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetMetricData::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetMetricData",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetMetricData::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetMetricData", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3544,7 +2546,7 @@ impl GetMetricDataInput {
 
 /// See [`GetMetricStatisticsInput`](crate::input::GetMetricStatisticsInput).
 pub mod get_metric_statistics_input {
-
+    
     /// A builder for [`GetMetricStatisticsInput`](crate::input::GetMetricStatisticsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3566,8 +2568,7 @@ pub mod get_metric_statistics_input {
         }
         /// <p>The namespace of the metric, with or without spaces.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>The name of the metric, with or without spaces.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3576,8 +2577,7 @@ pub mod get_metric_statistics_input {
         }
         /// <p>The name of the metric, with or without spaces.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// Appends an item to `dimensions`.
         ///
@@ -3586,83 +2586,70 @@ pub mod get_metric_statistics_input {
         /// <p>The dimensions. If the metric contains multiple dimensions, you must include a value for each dimension. CloudWatch treats each unique combination of dimensions as a separate metric. If a specific combination of dimensions was not published, you can't retrieve statistics for it. You must specify the same dimensions that were used when the metrics were created. For an example, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
         pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input);
-            self.dimensions = Some(v);
-            self
+                            v.push(input);
+                            self.dimensions = Some(v);
+                            self
         }
         /// <p>The dimensions. If the metric contains multiple dimensions, you must include a value for each dimension. CloudWatch treats each unique combination of dimensions as a separate metric. If a specific combination of dimensions was not published, you can't retrieve statistics for it. You must specify the same dimensions that were used when the metrics were created. For an example, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-        pub fn set_dimensions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
-        ) -> Self {
-            self.dimensions = input;
-            self
+        pub fn set_dimensions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Dimension>>) -> Self {
+            self.dimensions = input; self
         }
-        /// <p>The time stamp that determines the first data point to return. Start times are evaluated relative to the time that CloudWatch receives the request.</p>
-        /// <p>The value specified is inclusive; results include data points with the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).</p>
-        /// <p>CloudWatch rounds the specified time stamp as follows:</p>
-        /// <ul>
-        /// <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li>
-        /// <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li>
-        /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li>
-        /// </ul>
+        /// <p>The time stamp that determines the first data point to return. Start times are evaluated relative to the time that CloudWatch receives the request.</p> 
+        /// <p>The value specified is inclusive; results include data points with the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).</p> 
+        /// <p>CloudWatch rounds the specified time stamp as follows:</p> 
+        /// <ul> 
+        /// <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li> 
+        /// <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li> 
+        /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li> 
+        /// </ul> 
         /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a period of 5 seconds, you receive data timestamped between 15:02:15 and 15:07:15. </p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.start_time = Some(input);
             self
         }
-        /// <p>The time stamp that determines the first data point to return. Start times are evaluated relative to the time that CloudWatch receives the request.</p>
-        /// <p>The value specified is inclusive; results include data points with the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).</p>
-        /// <p>CloudWatch rounds the specified time stamp as follows:</p>
-        /// <ul>
-        /// <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li>
-        /// <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li>
-        /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li>
-        /// </ul>
+        /// <p>The time stamp that determines the first data point to return. Start times are evaluated relative to the time that CloudWatch receives the request.</p> 
+        /// <p>The value specified is inclusive; results include data points with the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).</p> 
+        /// <p>CloudWatch rounds the specified time stamp as follows:</p> 
+        /// <ul> 
+        /// <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li> 
+        /// <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li> 
+        /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li> 
+        /// </ul> 
         /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a period of 5 seconds, you receive data timestamped between 15:02:15 and 15:07:15. </p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
-        /// <p>The time stamp that determines the last data point to return.</p>
+        /// <p>The time stamp that determines the last data point to return.</p> 
         /// <p>The value specified is exclusive; results include data points up to the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.end_time = Some(input);
             self
         }
-        /// <p>The time stamp that determines the last data point to return.</p>
+        /// <p>The time stamp that determines the last data point to return.</p> 
         /// <p>The value specified is exclusive; results include data points up to the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
-        /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>
-        /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>
-        /// <ul>
-        /// <li> <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p> </li>
-        /// <li> <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li>
-        /// <li> <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li>
+        /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p> 
+        /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p> 
+        /// <ul> 
+        /// <li> <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p> </li> 
+        /// <li> <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li> 
+        /// <li> <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li> 
         /// </ul>
         pub fn period(mut self, input: i32) -> Self {
             self.period = Some(input);
             self
         }
-        /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>
-        /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>
-        /// <ul>
-        /// <li> <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p> </li>
-        /// <li> <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li>
-        /// <li> <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li>
+        /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p> 
+        /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p> 
+        /// <ul> 
+        /// <li> <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p> </li> 
+        /// <li> <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li> 
+        /// <li> <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li> 
         /// </ul>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
-            self.period = input;
-            self
+            self.period = input; self
         }
         /// Appends an item to `statistics`.
         ///
@@ -3671,17 +2658,13 @@ pub mod get_metric_statistics_input {
         /// <p>The metric statistics, other than percentile. For percentile statistics, use <code>ExtendedStatistics</code>. When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
         pub fn statistics(mut self, input: crate::model::Statistic) -> Self {
             let mut v = self.statistics.unwrap_or_default();
-            v.push(input);
-            self.statistics = Some(v);
-            self
+                            v.push(input);
+                            self.statistics = Some(v);
+                            self
         }
         /// <p>The metric statistics, other than percentile. For percentile statistics, use <code>ExtendedStatistics</code>. When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
-        pub fn set_statistics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Statistic>>,
-        ) -> Self {
-            self.statistics = input;
-            self
+        pub fn set_statistics(mut self, input: std::option::Option<std::vec::Vec<crate::model::Statistic>>) -> Self {
+            self.statistics = input; self
         }
         /// Appends an item to `extended_statistics`.
         ///
@@ -3690,17 +2673,13 @@ pub mod get_metric_statistics_input {
         /// <p>The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both. Percentile statistics are not available for metrics when any of the metric values are negative numbers.</p>
         pub fn extended_statistics(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.extended_statistics.unwrap_or_default();
-            v.push(input.into());
-            self.extended_statistics = Some(v);
-            self
+                            v.push(input.into());
+                            self.extended_statistics = Some(v);
+                            self
         }
         /// <p>The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both. Percentile statistics are not available for metrics when any of the metric values are negative numbers.</p>
-        pub fn set_extended_statistics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.extended_statistics = input;
-            self
+        pub fn set_extended_statistics(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.extended_statistics = input; self
         }
         /// <p>The unit for a given metric. If you omit <code>Unit</code>, all data that was collected with any unit is returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified. If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
         pub fn unit(mut self, input: crate::model::StandardUnit) -> Self {
@@ -3709,148 +2688,104 @@ pub mod get_metric_statistics_input {
         }
         /// <p>The unit for a given metric. If you omit <code>Unit</code>, all data that was collected with any unit is returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified. If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::StandardUnit>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// Consumes the builder and constructs a [`GetMetricStatisticsInput`](crate::input::GetMetricStatisticsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetMetricStatisticsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetMetricStatisticsInput {
-                namespace: self.namespace,
-                metric_name: self.metric_name,
-                dimensions: self.dimensions,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                period: self.period,
-                statistics: self.statistics,
-                extended_statistics: self.extended_statistics,
-                unit: self.unit,
-            })
+        pub fn build(self) -> Result<crate::input::GetMetricStatisticsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetMetricStatisticsInput {
+                    namespace: self.namespace
+                    ,
+                    metric_name: self.metric_name
+                    ,
+                    dimensions: self.dimensions
+                    ,
+                    start_time: self.start_time
+                    ,
+                    end_time: self.end_time
+                    ,
+                    period: self.period
+                    ,
+                    statistics: self.statistics
+                    ,
+                    extended_statistics: self.extended_statistics
+                    ,
+                    unit: self.unit
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetMetricStatisticsInput {
     /// Consumes the builder and constructs an Operation<[`GetMetricStatistics`](crate::operation::GetMetricStatistics)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetMetricStatistics,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetMetricStatistics, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetMetricStatisticsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetMetricStatisticsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetMetricStatisticsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetMetricStatisticsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_metric_statistics(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_get_metric_statistics(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetMetricStatistics::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetMetricStatistics",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetMetricStatistics::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetMetricStatistics", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -3862,7 +2797,7 @@ impl GetMetricStatisticsInput {
 
 /// See [`GetMetricStreamInput`](crate::input::GetMetricStreamInput).
 pub mod get_metric_stream_input {
-
+    
     /// A builder for [`GetMetricStreamInput`](crate::input::GetMetricStreamInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3876,136 +2811,88 @@ pub mod get_metric_stream_input {
         }
         /// <p>The name of the metric stream to retrieve information about.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`GetMetricStreamInput`](crate::input::GetMetricStreamInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetMetricStreamInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetMetricStreamInput { name: self.name })
+        pub fn build(self) -> Result<crate::input::GetMetricStreamInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetMetricStreamInput {
+                    name: self.name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetMetricStreamInput {
     /// Consumes the builder and constructs an Operation<[`GetMetricStream`](crate::operation::GetMetricStream)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetMetricStream,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetMetricStream, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetMetricStreamInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetMetricStreamInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetMetricStreamInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetMetricStreamInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_metric_stream(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_get_metric_stream(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetMetricStream::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetMetricStream",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetMetricStream::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetMetricStream", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4017,7 +2904,7 @@ impl GetMetricStreamInput {
 
 /// See [`GetMetricWidgetImageInput`](crate::input::GetMetricWidgetImageInput).
 pub mod get_metric_widget_image_input {
-
+    
     /// A builder for [`GetMetricWidgetImageInput`](crate::input::GetMetricWidgetImageInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4025,212 +2912,152 @@ pub mod get_metric_widget_image_input {
         pub(crate) output_format: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A JSON string that defines the bitmap graph to be retrieved. The string includes the metrics to include in the graph, statistics, annotations, title, axis limits, and so on. You can include only one <code>MetricWidget</code> parameter in each <code>GetMetricWidgetImage</code> call.</p>
-        /// <p>For more information about the syntax of <code>MetricWidget</code> see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Metric-Widget-Structure.html">GetMetricWidgetImage: Metric Widget Structure and Syntax</a>.</p>
+        /// <p>A JSON string that defines the bitmap graph to be retrieved. The string includes the metrics to include in the graph, statistics, annotations, title, axis limits, and so on. You can include only one <code>MetricWidget</code> parameter in each <code>GetMetricWidgetImage</code> call.</p> 
+        /// <p>For more information about the syntax of <code>MetricWidget</code> see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Metric-Widget-Structure.html">GetMetricWidgetImage: Metric Widget Structure and Syntax</a>.</p> 
         /// <p>If any metric on the graph could not load all the requested data points, an orange triangle with an exclamation point appears next to the graph legend.</p>
         pub fn metric_widget(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_widget = Some(input.into());
             self
         }
-        /// <p>A JSON string that defines the bitmap graph to be retrieved. The string includes the metrics to include in the graph, statistics, annotations, title, axis limits, and so on. You can include only one <code>MetricWidget</code> parameter in each <code>GetMetricWidgetImage</code> call.</p>
-        /// <p>For more information about the syntax of <code>MetricWidget</code> see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Metric-Widget-Structure.html">GetMetricWidgetImage: Metric Widget Structure and Syntax</a>.</p>
+        /// <p>A JSON string that defines the bitmap graph to be retrieved. The string includes the metrics to include in the graph, statistics, annotations, title, axis limits, and so on. You can include only one <code>MetricWidget</code> parameter in each <code>GetMetricWidgetImage</code> call.</p> 
+        /// <p>For more information about the syntax of <code>MetricWidget</code> see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Metric-Widget-Structure.html">GetMetricWidgetImage: Metric Widget Structure and Syntax</a>.</p> 
         /// <p>If any metric on the graph could not load all the requested data points, an orange triangle with an exclamation point appears next to the graph legend.</p>
-        pub fn set_metric_widget(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.metric_widget = input;
-            self
+        pub fn set_metric_widget(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_widget = input; self
         }
-        /// <p>The format of the resulting image. Only PNG images are supported.</p>
-        /// <p>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the content-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code> field. For example:</p>
-        /// <p> <code>
+        /// <p>The format of the resulting image. Only PNG images are supported.</p> 
+        /// <p>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the content-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code> field. For example:</p> 
+        /// <p> <code> 
         /// <getmetricwidgetimageresponse xmlns="<URLstring">
         /// &gt;
-        /// </getmetricwidgetimageresponse></code> </p>
-        /// <p> <code>
-        /// <getmetricwidgetimageresult></getmetricwidgetimageresult></code> </p>
-        /// <p> <code>
-        /// <metricwidgetimage></metricwidgetimage></code> </p>
-        /// <p> <code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p>
-        /// <p> <code> </code> </p>
-        /// <p> <code> </code> </p>
-        /// <p> <code>
-        /// <responsemetadata></responsemetadata></code> </p>
-        /// <p> <code>
+        /// </getmetricwidgetimageresponse></code> </p> 
+        /// <p> <code> 
+        /// <getmetricwidgetimageresult></getmetricwidgetimageresult></code> </p> 
+        /// <p> <code> 
+        /// <metricwidgetimage></metricwidgetimage></code> </p> 
+        /// <p> <code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p> 
+        /// <p> <code> </code> </p> 
+        /// <p> <code> </code> </p> 
+        /// <p> <code> 
+        /// <responsemetadata></responsemetadata></code> </p> 
+        /// <p> <code> 
         /// <requestid>
         /// 6f0d4192-4d42-11e8-82c1-f539a07e0e3b
-        /// </requestid></code> </p>
-        /// <p> <code> </code> </p>
-        /// <p> <code></code> </p>
+        /// </requestid></code> </p> 
+        /// <p> <code> </code> </p> 
+        /// <p> <code></code> </p> 
         /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image. </p>
         pub fn output_format(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_format = Some(input.into());
             self
         }
-        /// <p>The format of the resulting image. Only PNG images are supported.</p>
-        /// <p>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the content-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code> field. For example:</p>
-        /// <p> <code>
+        /// <p>The format of the resulting image. Only PNG images are supported.</p> 
+        /// <p>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the content-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code> field. For example:</p> 
+        /// <p> <code> 
         /// <getmetricwidgetimageresponse xmlns="<URLstring">
         /// &gt;
-        /// </getmetricwidgetimageresponse></code> </p>
-        /// <p> <code>
-        /// <getmetricwidgetimageresult></getmetricwidgetimageresult></code> </p>
-        /// <p> <code>
-        /// <metricwidgetimage></metricwidgetimage></code> </p>
-        /// <p> <code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p>
-        /// <p> <code> </code> </p>
-        /// <p> <code> </code> </p>
-        /// <p> <code>
-        /// <responsemetadata></responsemetadata></code> </p>
-        /// <p> <code>
+        /// </getmetricwidgetimageresponse></code> </p> 
+        /// <p> <code> 
+        /// <getmetricwidgetimageresult></getmetricwidgetimageresult></code> </p> 
+        /// <p> <code> 
+        /// <metricwidgetimage></metricwidgetimage></code> </p> 
+        /// <p> <code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p> 
+        /// <p> <code> </code> </p> 
+        /// <p> <code> </code> </p> 
+        /// <p> <code> 
+        /// <responsemetadata></responsemetadata></code> </p> 
+        /// <p> <code> 
         /// <requestid>
         /// 6f0d4192-4d42-11e8-82c1-f539a07e0e3b
-        /// </requestid></code> </p>
-        /// <p> <code> </code> </p>
-        /// <p> <code></code> </p>
+        /// </requestid></code> </p> 
+        /// <p> <code> </code> </p> 
+        /// <p> <code></code> </p> 
         /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image. </p>
-        pub fn set_output_format(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.output_format = input;
-            self
+        pub fn set_output_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.output_format = input; self
         }
         /// Consumes the builder and constructs a [`GetMetricWidgetImageInput`](crate::input::GetMetricWidgetImageInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::GetMetricWidgetImageInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::GetMetricWidgetImageInput {
-                metric_widget: self.metric_widget,
-                output_format: self.output_format,
-            })
+        pub fn build(self) -> Result<crate::input::GetMetricWidgetImageInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetMetricWidgetImageInput {
+                    metric_widget: self.metric_widget
+                    ,
+                    output_format: self.output_format
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetMetricWidgetImageInput {
     /// Consumes the builder and constructs an Operation<[`GetMetricWidgetImage`](crate::operation::GetMetricWidgetImage)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetMetricWidgetImage,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetMetricWidgetImage, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetMetricWidgetImageInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetMetricWidgetImageInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetMetricWidgetImageInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetMetricWidgetImageInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_metric_widget_image(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_get_metric_widget_image(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetMetricWidgetImage::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetMetricWidgetImage",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetMetricWidgetImage::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetMetricWidgetImage", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4242,7 +3069,7 @@ impl GetMetricWidgetImageInput {
 
 /// See [`ListDashboardsInput`](crate::input::ListDashboardsInput).
 pub mod list_dashboards_input {
-
+    
     /// A builder for [`ListDashboardsInput`](crate::input::ListDashboardsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4256,12 +3083,8 @@ pub mod list_dashboards_input {
             self
         }
         /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_". </p>
-        pub fn set_dashboard_name_prefix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dashboard_name_prefix = input;
-            self
+        pub fn set_dashboard_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dashboard_name_prefix = input; self
         }
         /// <p>The token returned by a previous call to indicate that there is more data available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4270,139 +3093,90 @@ pub mod list_dashboards_input {
         }
         /// <p>The token returned by a previous call to indicate that there is more data available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDashboardsInput`](crate::input::ListDashboardsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListDashboardsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListDashboardsInput {
-                dashboard_name_prefix: self.dashboard_name_prefix,
-                next_token: self.next_token,
-            })
+        pub fn build(self) -> Result<crate::input::ListDashboardsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListDashboardsInput {
+                    dashboard_name_prefix: self.dashboard_name_prefix
+                    ,
+                    next_token: self.next_token
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListDashboardsInput {
     /// Consumes the builder and constructs an Operation<[`ListDashboards`](crate::operation::ListDashboards)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListDashboards,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListDashboards, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListDashboardsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListDashboardsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListDashboardsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListDashboardsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_dashboards(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_dashboards(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListDashboards::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListDashboards",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListDashboards::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListDashboards", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4414,7 +3188,7 @@ impl ListDashboardsInput {
 
 /// See [`ListManagedInsightRulesInput`](crate::input::ListManagedInsightRulesInput).
 pub mod list_managed_insight_rules_input {
-
+    
     /// A builder for [`ListManagedInsightRulesInput`](crate::input::ListManagedInsightRulesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4430,8 +3204,7 @@ pub mod list_managed_insight_rules_input {
         }
         /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4440,8 +3213,7 @@ pub mod list_managed_insight_rules_input {
         }
         /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p> The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>. </p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4450,144 +3222,92 @@ pub mod list_managed_insight_rules_input {
         }
         /// <p> The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListManagedInsightRulesInput`](crate::input::ListManagedInsightRulesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListManagedInsightRulesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListManagedInsightRulesInput {
-                resource_arn: self.resource_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListManagedInsightRulesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListManagedInsightRulesInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListManagedInsightRulesInput {
     /// Consumes the builder and constructs an Operation<[`ListManagedInsightRules`](crate::operation::ListManagedInsightRules)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListManagedInsightRules,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListManagedInsightRules, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListManagedInsightRulesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListManagedInsightRulesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListManagedInsightRulesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListManagedInsightRulesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_managed_insight_rules(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_list_managed_insight_rules(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListManagedInsightRules::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListManagedInsightRules",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListManagedInsightRules::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListManagedInsightRules", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4599,7 +3319,7 @@ impl ListManagedInsightRulesInput {
 
 /// See [`ListMetricsInput`](crate::input::ListMetricsInput).
 pub mod list_metrics_input {
-
+    
     /// A builder for [`ListMetricsInput`](crate::input::ListMetricsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4619,8 +3339,7 @@ pub mod list_metrics_input {
         }
         /// <p>The metric namespace to filter against. Only the namespace that matches exactly will be returned.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>The name of the metric to filter against. Only the metrics with names that match exactly will be returned.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4629,8 +3348,7 @@ pub mod list_metrics_input {
         }
         /// <p>The name of the metric to filter against. Only the metrics with names that match exactly will be returned.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// Appends an item to `dimensions`.
         ///
@@ -4639,17 +3357,13 @@ pub mod list_metrics_input {
         /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
         pub fn dimensions(mut self, input: crate::model::DimensionFilter) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input);
-            self.dimensions = Some(v);
-            self
+                            v.push(input);
+                            self.dimensions = Some(v);
+                            self
         }
         /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
-        pub fn set_dimensions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DimensionFilter>>,
-        ) -> Self {
-            self.dimensions = input;
-            self
+        pub fn set_dimensions(mut self, input: std::option::Option<std::vec::Vec<crate::model::DimensionFilter>>) -> Self {
+            self.dimensions = input; self
         }
         /// <p>The token returned by a previous call to indicate that there is more data available.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4658,35 +3372,29 @@ pub mod list_metrics_input {
         }
         /// <p>The token returned by a previous call to indicate that there is more data available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
-        /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p>
+        /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p> 
         /// <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 40 minutes more than the specified time interval.</p>
         pub fn recently_active(mut self, input: crate::model::RecentlyActive) -> Self {
             self.recently_active = Some(input);
             self
         }
-        /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p>
+        /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p> 
         /// <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 40 minutes more than the specified time interval.</p>
-        pub fn set_recently_active(
-            mut self,
-            input: std::option::Option<crate::model::RecentlyActive>,
-        ) -> Self {
-            self.recently_active = input;
-            self
+        pub fn set_recently_active(mut self, input: std::option::Option<crate::model::RecentlyActive>) -> Self {
+            self.recently_active = input; self
         }
-        /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p>
+        /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p> 
         /// <p>The default is <code>false</code>.</p>
         pub fn include_linked_accounts(mut self, input: bool) -> Self {
             self.include_linked_accounts = Some(input);
             self
         }
-        /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p>
+        /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p> 
         /// <p>The default is <code>false</code>.</p>
         pub fn set_include_linked_accounts(mut self, input: std::option::Option<bool>) -> Self {
-            self.include_linked_accounts = input;
-            self
+            self.include_linked_accounts = input; self
         }
         /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
         pub fn owning_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4694,148 +3402,102 @@ pub mod list_metrics_input {
             self
         }
         /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
-        pub fn set_owning_account(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.owning_account = input;
-            self
+        pub fn set_owning_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owning_account = input; self
         }
         /// Consumes the builder and constructs a [`ListMetricsInput`](crate::input::ListMetricsInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListMetricsInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListMetricsInput {
-                namespace: self.namespace,
-                metric_name: self.metric_name,
-                dimensions: self.dimensions,
-                next_token: self.next_token,
-                recently_active: self.recently_active,
-                include_linked_accounts: self.include_linked_accounts.unwrap_or_default(),
-                owning_account: self.owning_account,
-            })
+        pub fn build(self) -> Result<crate::input::ListMetricsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListMetricsInput {
+                    namespace: self.namespace
+                    ,
+                    metric_name: self.metric_name
+                    ,
+                    dimensions: self.dimensions
+                    ,
+                    next_token: self.next_token
+                    ,
+                    recently_active: self.recently_active
+                    ,
+                    include_linked_accounts: self.include_linked_accounts
+                        .unwrap_or_default()
+                    ,
+                    owning_account: self.owning_account
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListMetricsInput {
     /// Consumes the builder and constructs an Operation<[`ListMetrics`](crate::operation::ListMetrics)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListMetrics,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListMetrics, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListMetricsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListMetricsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListMetricsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListMetricsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_metrics(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_metrics(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListMetrics::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListMetrics",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListMetrics::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListMetrics", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -4847,7 +3509,7 @@ impl ListMetricsInput {
 
 /// See [`ListMetricStreamsInput`](crate::input::ListMetricStreamsInput).
 pub mod list_metric_streams_input {
-
+    
     /// A builder for [`ListMetricStreamsInput`](crate::input::ListMetricStreamsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4862,8 +3524,7 @@ pub mod list_metric_streams_input {
         }
         /// <p>Include this value, if it was returned by the previous call, to get the next set of metric streams.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The maximum number of results to return in one operation.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -4872,141 +3533,90 @@ pub mod list_metric_streams_input {
         }
         /// <p>The maximum number of results to return in one operation.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListMetricStreamsInput`](crate::input::ListMetricStreamsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListMetricStreamsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListMetricStreamsInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListMetricStreamsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListMetricStreamsInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListMetricStreamsInput {
     /// Consumes the builder and constructs an Operation<[`ListMetricStreams`](crate::operation::ListMetricStreams)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListMetricStreams,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListMetricStreams, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListMetricStreamsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListMetricStreamsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListMetricStreamsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListMetricStreamsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_metric_streams(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_metric_streams(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListMetricStreams::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListMetricStreams",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListMetricStreams::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListMetricStreams", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5018,162 +3628,108 @@ impl ListMetricStreamsInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-
+    
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the CloudWatch resource that you want to view tags for.</p>
-        /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
-        /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>
+        /// <p>The ARN of the CloudWatch resource that you want to view tags for.</p> 
+        /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p> 
+        /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p> 
         /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the CloudWatch resource that you want to view tags for.</p>
-        /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
-        /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>
+        /// <p>The ARN of the CloudWatch resource that you want to view tags for.</p> 
+        /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p> 
+        /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p> 
         /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListTagsForResourceInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn,
-            })
+        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListTagsForResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTagsForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTagsForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListTagsForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListTagsForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTagsForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTagsForResource",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5185,7 +3741,7 @@ impl ListTagsForResourceInput {
 
 /// See [`PutAnomalyDetectorInput`](crate::input::PutAnomalyDetectorInput).
 pub mod put_anomaly_detector_input {
-
+    
     /// A builder for [`PutAnomalyDetectorInput`](crate::input::PutAnomalyDetectorInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5194,10 +3750,8 @@ pub mod put_anomaly_detector_input {
         pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
         pub(crate) stat: std::option::Option<std::string::String>,
         pub(crate) configuration: std::option::Option<crate::model::AnomalyDetectorConfiguration>,
-        pub(crate) single_metric_anomaly_detector:
-            std::option::Option<crate::model::SingleMetricAnomalyDetector>,
-        pub(crate) metric_math_anomaly_detector:
-            std::option::Option<crate::model::MetricMathAnomalyDetector>,
+        pub(crate) single_metric_anomaly_detector: std::option::Option<crate::model::SingleMetricAnomalyDetector>,
+        pub(crate) metric_math_anomaly_detector: std::option::Option<crate::model::MetricMathAnomalyDetector>,
     }
     impl Builder {
         /// <p>The namespace of the metric to create the anomaly detection model for.</p>
@@ -5209,8 +3763,7 @@ pub mod put_anomaly_detector_input {
         /// <p>The namespace of the metric to create the anomaly detection model for.</p>
         #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>The name of the metric to create the anomaly detection model for.</p>
         #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
@@ -5221,8 +3774,7 @@ pub mod put_anomaly_detector_input {
         /// <p>The name of the metric to create the anomaly detection model for.</p>
         #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// Appends an item to `dimensions`.
         ///
@@ -5232,18 +3784,14 @@ pub mod put_anomaly_detector_input {
         #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input);
-            self.dimensions = Some(v);
-            self
+                            v.push(input);
+                            self.dimensions = Some(v);
+                            self
         }
         /// <p>The metric dimensions to create the anomaly detection model for.</p>
         #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-        pub fn set_dimensions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
-        ) -> Self {
-            self.dimensions = input;
-            self
+        pub fn set_dimensions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Dimension>>) -> Self {
+            self.dimensions = input; self
         }
         /// <p>The statistic to use for the metric and the anomaly detection model.</p>
         #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
@@ -5254,229 +3802,165 @@ pub mod put_anomaly_detector_input {
         /// <p>The statistic to use for the metric and the anomaly detection model.</p>
         #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
         pub fn set_stat(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.stat = input;
-            self
+            self.stat = input; self
         }
-        /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude when training and updating the model. You can specify as many as 10 time ranges.</p>
+        /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude when training and updating the model. You can specify as many as 10 time ranges.</p> 
         /// <p>The configuration can also include the time zone to use for the metric.</p>
         pub fn configuration(mut self, input: crate::model::AnomalyDetectorConfiguration) -> Self {
             self.configuration = Some(input);
             self
         }
-        /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude when training and updating the model. You can specify as many as 10 time ranges.</p>
+        /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude when training and updating the model. You can specify as many as 10 time ranges.</p> 
         /// <p>The configuration can also include the time zone to use for the metric.</p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<crate::model::AnomalyDetectorConfiguration>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<crate::model::AnomalyDetectorConfiguration>) -> Self {
+            self.configuration = input; self
         }
-        /// <p>A single metric anomaly detector to be created.</p>
-        /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
-        /// <ul>
-        /// <li> <p> <code>Dimensions</code> </p> </li>
-        /// <li> <p> <code>MetricName</code> </p> </li>
-        /// <li> <p> <code>Namespace</code> </p> </li>
-        /// <li> <p> <code>Stat</code> </p> </li>
-        /// <li> <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
-        /// </ul>
+        /// <p>A single metric anomaly detector to be created.</p> 
+        /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Dimensions</code> </p> </li> 
+        /// <li> <p> <code>MetricName</code> </p> </li> 
+        /// <li> <p> <code>Namespace</code> </p> </li> 
+        /// <li> <p> <code>Stat</code> </p> </li> 
+        /// <li> <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li> 
+        /// </ul> 
         /// <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
-        pub fn single_metric_anomaly_detector(
-            mut self,
-            input: crate::model::SingleMetricAnomalyDetector,
-        ) -> Self {
+        pub fn single_metric_anomaly_detector(mut self, input: crate::model::SingleMetricAnomalyDetector) -> Self {
             self.single_metric_anomaly_detector = Some(input);
             self
         }
-        /// <p>A single metric anomaly detector to be created.</p>
-        /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
-        /// <ul>
-        /// <li> <p> <code>Dimensions</code> </p> </li>
-        /// <li> <p> <code>MetricName</code> </p> </li>
-        /// <li> <p> <code>Namespace</code> </p> </li>
-        /// <li> <p> <code>Stat</code> </p> </li>
-        /// <li> <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
-        /// </ul>
+        /// <p>A single metric anomaly detector to be created.</p> 
+        /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Dimensions</code> </p> </li> 
+        /// <li> <p> <code>MetricName</code> </p> </li> 
+        /// <li> <p> <code>Namespace</code> </p> </li> 
+        /// <li> <p> <code>Stat</code> </p> </li> 
+        /// <li> <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li> 
+        /// </ul> 
         /// <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
-        pub fn set_single_metric_anomaly_detector(
-            mut self,
-            input: std::option::Option<crate::model::SingleMetricAnomalyDetector>,
-        ) -> Self {
-            self.single_metric_anomaly_detector = input;
-            self
+        pub fn set_single_metric_anomaly_detector(mut self, input: std::option::Option<crate::model::SingleMetricAnomalyDetector>) -> Self {
+            self.single_metric_anomaly_detector = input; self
         }
-        /// <p>The metric math anomaly detector to be created.</p>
-        /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
-        /// <ul>
-        /// <li> <p> <code>Dimensions</code> </p> </li>
-        /// <li> <p> <code>MetricName</code> </p> </li>
-        /// <li> <p> <code>Namespace</code> </p> </li>
-        /// <li> <p> <code>Stat</code> </p> </li>
-        /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
-        /// </ul>
+        /// <p>The metric math anomaly detector to be created.</p> 
+        /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Dimensions</code> </p> </li> 
+        /// <li> <p> <code>MetricName</code> </p> </li> 
+        /// <li> <p> <code>Namespace</code> </p> </li> 
+        /// <li> <p> <code>Stat</code> </p> </li> 
+        /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li> 
+        /// </ul> 
         /// <p>Instead, specify the metric math anomaly detector attributes as part of the property <code>MetricMathAnomalyDetector</code>.</p>
-        pub fn metric_math_anomaly_detector(
-            mut self,
-            input: crate::model::MetricMathAnomalyDetector,
-        ) -> Self {
+        pub fn metric_math_anomaly_detector(mut self, input: crate::model::MetricMathAnomalyDetector) -> Self {
             self.metric_math_anomaly_detector = Some(input);
             self
         }
-        /// <p>The metric math anomaly detector to be created.</p>
-        /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
-        /// <ul>
-        /// <li> <p> <code>Dimensions</code> </p> </li>
-        /// <li> <p> <code>MetricName</code> </p> </li>
-        /// <li> <p> <code>Namespace</code> </p> </li>
-        /// <li> <p> <code>Stat</code> </p> </li>
-        /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
-        /// </ul>
+        /// <p>The metric math anomaly detector to be created.</p> 
+        /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p> 
+        /// <ul> 
+        /// <li> <p> <code>Dimensions</code> </p> </li> 
+        /// <li> <p> <code>MetricName</code> </p> </li> 
+        /// <li> <p> <code>Namespace</code> </p> </li> 
+        /// <li> <p> <code>Stat</code> </p> </li> 
+        /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li> 
+        /// </ul> 
         /// <p>Instead, specify the metric math anomaly detector attributes as part of the property <code>MetricMathAnomalyDetector</code>.</p>
-        pub fn set_metric_math_anomaly_detector(
-            mut self,
-            input: std::option::Option<crate::model::MetricMathAnomalyDetector>,
-        ) -> Self {
-            self.metric_math_anomaly_detector = input;
-            self
+        pub fn set_metric_math_anomaly_detector(mut self, input: std::option::Option<crate::model::MetricMathAnomalyDetector>) -> Self {
+            self.metric_math_anomaly_detector = input; self
         }
         /// Consumes the builder and constructs a [`PutAnomalyDetectorInput`](crate::input::PutAnomalyDetectorInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PutAnomalyDetectorInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::PutAnomalyDetectorInput {
-                namespace: self.namespace,
-                metric_name: self.metric_name,
-                dimensions: self.dimensions,
-                stat: self.stat,
-                configuration: self.configuration,
-                single_metric_anomaly_detector: self.single_metric_anomaly_detector,
-                metric_math_anomaly_detector: self.metric_math_anomaly_detector,
-            })
+        pub fn build(self) -> Result<crate::input::PutAnomalyDetectorInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PutAnomalyDetectorInput {
+                    namespace: self.namespace
+                    ,
+                    metric_name: self.metric_name
+                    ,
+                    dimensions: self.dimensions
+                    ,
+                    stat: self.stat
+                    ,
+                    configuration: self.configuration
+                    ,
+                    single_metric_anomaly_detector: self.single_metric_anomaly_detector
+                    ,
+                    metric_math_anomaly_detector: self.metric_math_anomaly_detector
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutAnomalyDetectorInput {
     /// Consumes the builder and constructs an Operation<[`PutAnomalyDetector`](crate::operation::PutAnomalyDetector)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutAnomalyDetector,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutAnomalyDetector, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutAnomalyDetectorInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PutAnomalyDetectorInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PutAnomalyDetectorInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PutAnomalyDetectorInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_anomaly_detector(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_put_anomaly_detector(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutAnomalyDetector::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutAnomalyDetector",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutAnomalyDetector::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutAnomalyDetector", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5488,7 +3972,7 @@ impl PutAnomalyDetectorInput {
 
 /// See [`PutCompositeAlarmInput`](crate::input::PutCompositeAlarmInput).
 pub mod put_composite_alarm_input {
-
+    
     /// A builder for [`PutCompositeAlarmInput`](crate::input::PutCompositeAlarmInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5497,8 +3981,7 @@ pub mod put_composite_alarm_input {
         pub(crate) alarm_description: std::option::Option<std::string::String>,
         pub(crate) alarm_name: std::option::Option<std::string::String>,
         pub(crate) alarm_rule: std::option::Option<std::string::String>,
-        pub(crate) insufficient_data_actions:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) insufficient_data_actions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) ok_actions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) actions_suppressor: std::option::Option<std::string::String>,
@@ -5513,29 +3996,24 @@ pub mod put_composite_alarm_input {
         }
         /// <p>Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. The default is <code>TRUE</code>.</p>
         pub fn set_actions_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.actions_enabled = input;
-            self
+            self.actions_enabled = input; self
         }
         /// Appends an item to `alarm_actions`.
         ///
         /// To override the contents of this collection use [`set_alarm_actions`](Self::set_alarm_actions).
         ///
-        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
         /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> </p>
         pub fn alarm_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.alarm_actions.unwrap_or_default();
-            v.push(input.into());
-            self.alarm_actions = Some(v);
-            self
+                            v.push(input.into());
+                            self.alarm_actions = Some(v);
+                            self
         }
-        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
         /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> </p>
-        pub fn set_alarm_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.alarm_actions = input;
-            self
+        pub fn set_alarm_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.alarm_actions = input; self
         }
         /// <p>The description for the composite alarm.</p>
         pub fn alarm_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5543,12 +4021,8 @@ pub mod put_composite_alarm_input {
             self
         }
         /// <p>The description for the composite alarm.</p>
-        pub fn set_alarm_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_description = input;
-            self
+        pub fn set_alarm_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_description = input; self
         }
         /// <p>The name for the composite alarm. This name must be unique within the Region.</p>
         pub fn alarm_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5557,117 +4031,103 @@ pub mod put_composite_alarm_input {
         }
         /// <p>The name for the composite alarm. This name must be unique within the Region.</p>
         pub fn set_alarm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alarm_name = input;
-            self
+            self.alarm_name = input; self
         }
-        /// <p>An expression that specifies which other alarms are to be evaluated to determine this composite alarm's state. For each alarm that you reference, you designate a function that specifies whether that alarm needs to be in ALARM state, OK state, or INSUFFICIENT_DATA state. You can use operators (AND, OR and NOT) to combine multiple functions in a single expression. You can use parenthesis to logically group the functions in your expression.</p>
-        /// <p>You can use either alarm names or ARNs to reference the other alarms that are to be evaluated.</p>
-        /// <p>Functions can include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>ALARM("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in ALARM state.</p> </li>
-        /// <li> <p> <code>OK("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in OK state.</p> </li>
-        /// <li> <p> <code>INSUFFICIENT_DATA("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in INSUFFICIENT_DATA state.</p> </li>
-        /// <li> <p> <code>TRUE</code> always evaluates to TRUE.</p> </li>
-        /// <li> <p> <code>FALSE</code> always evaluates to FALSE.</p> </li>
-        /// </ul>
-        /// <p>TRUE and FALSE are useful for testing a complex <code>AlarmRule</code> structure, and for testing your alarm actions.</p>
-        /// <p>Alarm names specified in <code>AlarmRule</code> can be surrounded with double-quotes ("), but do not have to be.</p>
-        /// <p>The following are some examples of <code>AlarmRule</code>:</p>
-        /// <ul>
-        /// <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND ALARM(DiskReadOpsTooHigh)</code> specifies that the composite alarm goes into ALARM state only if both CPUUtilizationTooHigh and DiskReadOpsTooHigh alarms are in ALARM state.</p> </li>
-        /// <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND NOT ALARM(DeploymentInProgress)</code> specifies that the alarm goes to ALARM state if CPUUtilizationTooHigh is in ALARM state and DeploymentInProgress is not in ALARM state. This example reduces alarm noise during a known deployment window.</p> </li>
-        /// <li> <p> <code>(ALARM(CPUUtilizationTooHigh) OR ALARM(DiskReadOpsTooHigh)) AND OK(NetworkOutTooHigh)</code> goes into ALARM state if CPUUtilizationTooHigh OR DiskReadOpsTooHigh is in ALARM state, and if NetworkOutTooHigh is in OK state. This provides another example of using a composite alarm to prevent noise. This rule ensures that you are not notified with an alarm action on high CPU or disk usage if a known network problem is also occurring.</p> </li>
-        /// </ul>
+        /// <p>An expression that specifies which other alarms are to be evaluated to determine this composite alarm's state. For each alarm that you reference, you designate a function that specifies whether that alarm needs to be in ALARM state, OK state, or INSUFFICIENT_DATA state. You can use operators (AND, OR and NOT) to combine multiple functions in a single expression. You can use parenthesis to logically group the functions in your expression.</p> 
+        /// <p>You can use either alarm names or ARNs to reference the other alarms that are to be evaluated.</p> 
+        /// <p>Functions can include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ALARM("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in ALARM state.</p> </li> 
+        /// <li> <p> <code>OK("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in OK state.</p> </li> 
+        /// <li> <p> <code>INSUFFICIENT_DATA("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in INSUFFICIENT_DATA state.</p> </li> 
+        /// <li> <p> <code>TRUE</code> always evaluates to TRUE.</p> </li> 
+        /// <li> <p> <code>FALSE</code> always evaluates to FALSE.</p> </li> 
+        /// </ul> 
+        /// <p>TRUE and FALSE are useful for testing a complex <code>AlarmRule</code> structure, and for testing your alarm actions.</p> 
+        /// <p>Alarm names specified in <code>AlarmRule</code> can be surrounded with double-quotes ("), but do not have to be.</p> 
+        /// <p>The following are some examples of <code>AlarmRule</code>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND ALARM(DiskReadOpsTooHigh)</code> specifies that the composite alarm goes into ALARM state only if both CPUUtilizationTooHigh and DiskReadOpsTooHigh alarms are in ALARM state.</p> </li> 
+        /// <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND NOT ALARM(DeploymentInProgress)</code> specifies that the alarm goes to ALARM state if CPUUtilizationTooHigh is in ALARM state and DeploymentInProgress is not in ALARM state. This example reduces alarm noise during a known deployment window.</p> </li> 
+        /// <li> <p> <code>(ALARM(CPUUtilizationTooHigh) OR ALARM(DiskReadOpsTooHigh)) AND OK(NetworkOutTooHigh)</code> goes into ALARM state if CPUUtilizationTooHigh OR DiskReadOpsTooHigh is in ALARM state, and if NetworkOutTooHigh is in OK state. This provides another example of using a composite alarm to prevent noise. This rule ensures that you are not notified with an alarm action on high CPU or disk usage if a known network problem is also occurring.</p> </li> 
+        /// </ul> 
         /// <p>The <code>AlarmRule</code> can specify as many as 100 "children" alarms. The <code>AlarmRule</code> expression can have as many as 500 elements. Elements are child alarms, TRUE or FALSE statements, and parentheses.</p>
         pub fn alarm_rule(mut self, input: impl Into<std::string::String>) -> Self {
             self.alarm_rule = Some(input.into());
             self
         }
-        /// <p>An expression that specifies which other alarms are to be evaluated to determine this composite alarm's state. For each alarm that you reference, you designate a function that specifies whether that alarm needs to be in ALARM state, OK state, or INSUFFICIENT_DATA state. You can use operators (AND, OR and NOT) to combine multiple functions in a single expression. You can use parenthesis to logically group the functions in your expression.</p>
-        /// <p>You can use either alarm names or ARNs to reference the other alarms that are to be evaluated.</p>
-        /// <p>Functions can include the following:</p>
-        /// <ul>
-        /// <li> <p> <code>ALARM("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in ALARM state.</p> </li>
-        /// <li> <p> <code>OK("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in OK state.</p> </li>
-        /// <li> <p> <code>INSUFFICIENT_DATA("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in INSUFFICIENT_DATA state.</p> </li>
-        /// <li> <p> <code>TRUE</code> always evaluates to TRUE.</p> </li>
-        /// <li> <p> <code>FALSE</code> always evaluates to FALSE.</p> </li>
-        /// </ul>
-        /// <p>TRUE and FALSE are useful for testing a complex <code>AlarmRule</code> structure, and for testing your alarm actions.</p>
-        /// <p>Alarm names specified in <code>AlarmRule</code> can be surrounded with double-quotes ("), but do not have to be.</p>
-        /// <p>The following are some examples of <code>AlarmRule</code>:</p>
-        /// <ul>
-        /// <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND ALARM(DiskReadOpsTooHigh)</code> specifies that the composite alarm goes into ALARM state only if both CPUUtilizationTooHigh and DiskReadOpsTooHigh alarms are in ALARM state.</p> </li>
-        /// <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND NOT ALARM(DeploymentInProgress)</code> specifies that the alarm goes to ALARM state if CPUUtilizationTooHigh is in ALARM state and DeploymentInProgress is not in ALARM state. This example reduces alarm noise during a known deployment window.</p> </li>
-        /// <li> <p> <code>(ALARM(CPUUtilizationTooHigh) OR ALARM(DiskReadOpsTooHigh)) AND OK(NetworkOutTooHigh)</code> goes into ALARM state if CPUUtilizationTooHigh OR DiskReadOpsTooHigh is in ALARM state, and if NetworkOutTooHigh is in OK state. This provides another example of using a composite alarm to prevent noise. This rule ensures that you are not notified with an alarm action on high CPU or disk usage if a known network problem is also occurring.</p> </li>
-        /// </ul>
+        /// <p>An expression that specifies which other alarms are to be evaluated to determine this composite alarm's state. For each alarm that you reference, you designate a function that specifies whether that alarm needs to be in ALARM state, OK state, or INSUFFICIENT_DATA state. You can use operators (AND, OR and NOT) to combine multiple functions in a single expression. You can use parenthesis to logically group the functions in your expression.</p> 
+        /// <p>You can use either alarm names or ARNs to reference the other alarms that are to be evaluated.</p> 
+        /// <p>Functions can include the following:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ALARM("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in ALARM state.</p> </li> 
+        /// <li> <p> <code>OK("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in OK state.</p> </li> 
+        /// <li> <p> <code>INSUFFICIENT_DATA("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in INSUFFICIENT_DATA state.</p> </li> 
+        /// <li> <p> <code>TRUE</code> always evaluates to TRUE.</p> </li> 
+        /// <li> <p> <code>FALSE</code> always evaluates to FALSE.</p> </li> 
+        /// </ul> 
+        /// <p>TRUE and FALSE are useful for testing a complex <code>AlarmRule</code> structure, and for testing your alarm actions.</p> 
+        /// <p>Alarm names specified in <code>AlarmRule</code> can be surrounded with double-quotes ("), but do not have to be.</p> 
+        /// <p>The following are some examples of <code>AlarmRule</code>:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND ALARM(DiskReadOpsTooHigh)</code> specifies that the composite alarm goes into ALARM state only if both CPUUtilizationTooHigh and DiskReadOpsTooHigh alarms are in ALARM state.</p> </li> 
+        /// <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND NOT ALARM(DeploymentInProgress)</code> specifies that the alarm goes to ALARM state if CPUUtilizationTooHigh is in ALARM state and DeploymentInProgress is not in ALARM state. This example reduces alarm noise during a known deployment window.</p> </li> 
+        /// <li> <p> <code>(ALARM(CPUUtilizationTooHigh) OR ALARM(DiskReadOpsTooHigh)) AND OK(NetworkOutTooHigh)</code> goes into ALARM state if CPUUtilizationTooHigh OR DiskReadOpsTooHigh is in ALARM state, and if NetworkOutTooHigh is in OK state. This provides another example of using a composite alarm to prevent noise. This rule ensures that you are not notified with an alarm action on high CPU or disk usage if a known network problem is also occurring.</p> </li> 
+        /// </ul> 
         /// <p>The <code>AlarmRule</code> can specify as many as 100 "children" alarms. The <code>AlarmRule</code> expression can have as many as 500 elements. Elements are child alarms, TRUE or FALSE statements, and parentheses.</p>
         pub fn set_alarm_rule(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alarm_rule = input;
-            self
+            self.alarm_rule = input; self
         }
         /// Appends an item to `insufficient_data_actions`.
         ///
         /// To override the contents of this collection use [`set_insufficient_data_actions`](Self::set_insufficient_data_actions).
         ///
-        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
         /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
         pub fn insufficient_data_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.insufficient_data_actions.unwrap_or_default();
-            v.push(input.into());
-            self.insufficient_data_actions = Some(v);
-            self
+                            v.push(input.into());
+                            self.insufficient_data_actions = Some(v);
+                            self
         }
-        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
         /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
-        pub fn set_insufficient_data_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.insufficient_data_actions = input;
-            self
+        pub fn set_insufficient_data_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.insufficient_data_actions = input; self
         }
         /// Appends an item to `ok_actions`.
         ///
         /// To override the contents of this collection use [`set_ok_actions`](Self::set_ok_actions).
         ///
-        /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
         /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
         pub fn ok_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ok_actions.unwrap_or_default();
-            v.push(input.into());
-            self.ok_actions = Some(v);
-            self
+                            v.push(input.into());
+                            self.ok_actions = Some(v);
+                            self
         }
-        /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+        /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
         /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
-        pub fn set_ok_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.ok_actions = input;
-            self
+        pub fn set_ok_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.ok_actions = input; self
         }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p>
+        /// <p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p> 
         /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
-        /// <p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p>
+        /// <p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p> 
         /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. </p>
         pub fn actions_suppressor(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5675,188 +4135,135 @@ pub mod put_composite_alarm_input {
             self
         }
         /// <p> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. </p>
-        pub fn set_actions_suppressor(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.actions_suppressor = input;
-            self
+        pub fn set_actions_suppressor(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.actions_suppressor = input; self
         }
-        /// <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
-        /// <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+        /// <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important> 
+        /// <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p> 
         /// </important>
         pub fn actions_suppressor_wait_period(mut self, input: i32) -> Self {
             self.actions_suppressor_wait_period = Some(input);
             self
         }
-        /// <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
-        /// <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+        /// <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important> 
+        /// <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p> 
         /// </important>
-        pub fn set_actions_suppressor_wait_period(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.actions_suppressor_wait_period = input;
-            self
+        pub fn set_actions_suppressor_wait_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.actions_suppressor_wait_period = input; self
         }
-        /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
-        /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+        /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important> 
+        /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p> 
         /// </important>
         pub fn actions_suppressor_extension_period(mut self, input: i32) -> Self {
             self.actions_suppressor_extension_period = Some(input);
             self
         }
-        /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
-        /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+        /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important> 
+        /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p> 
         /// </important>
-        pub fn set_actions_suppressor_extension_period(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.actions_suppressor_extension_period = input;
-            self
+        pub fn set_actions_suppressor_extension_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.actions_suppressor_extension_period = input; self
         }
         /// Consumes the builder and constructs a [`PutCompositeAlarmInput`](crate::input::PutCompositeAlarmInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PutCompositeAlarmInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::PutCompositeAlarmInput {
-                actions_enabled: self.actions_enabled,
-                alarm_actions: self.alarm_actions,
-                alarm_description: self.alarm_description,
-                alarm_name: self.alarm_name,
-                alarm_rule: self.alarm_rule,
-                insufficient_data_actions: self.insufficient_data_actions,
-                ok_actions: self.ok_actions,
-                tags: self.tags,
-                actions_suppressor: self.actions_suppressor,
-                actions_suppressor_wait_period: self.actions_suppressor_wait_period,
-                actions_suppressor_extension_period: self.actions_suppressor_extension_period,
-            })
+        pub fn build(self) -> Result<crate::input::PutCompositeAlarmInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PutCompositeAlarmInput {
+                    actions_enabled: self.actions_enabled
+                    ,
+                    alarm_actions: self.alarm_actions
+                    ,
+                    alarm_description: self.alarm_description
+                    ,
+                    alarm_name: self.alarm_name
+                    ,
+                    alarm_rule: self.alarm_rule
+                    ,
+                    insufficient_data_actions: self.insufficient_data_actions
+                    ,
+                    ok_actions: self.ok_actions
+                    ,
+                    tags: self.tags
+                    ,
+                    actions_suppressor: self.actions_suppressor
+                    ,
+                    actions_suppressor_wait_period: self.actions_suppressor_wait_period
+                    ,
+                    actions_suppressor_extension_period: self.actions_suppressor_extension_period
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutCompositeAlarmInput {
     /// Consumes the builder and constructs an Operation<[`PutCompositeAlarm`](crate::operation::PutCompositeAlarm)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutCompositeAlarm,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutCompositeAlarm, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutCompositeAlarmInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PutCompositeAlarmInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PutCompositeAlarmInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PutCompositeAlarmInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_composite_alarm(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_put_composite_alarm(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutCompositeAlarm::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutCompositeAlarm",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutCompositeAlarm::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutCompositeAlarm", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -5868,7 +4275,7 @@ impl PutCompositeAlarmInput {
 
 /// See [`PutDashboardInput`](crate::input::PutDashboardInput).
 pub mod put_dashboard_input {
-
+    
     /// A builder for [`PutDashboardInput`](crate::input::PutDashboardInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5882,158 +4289,102 @@ pub mod put_dashboard_input {
             self
         }
         /// <p>The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard, replacing its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, "-", and "_". This parameter is required.</p>
-        pub fn set_dashboard_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dashboard_name = input;
-            self
+        pub fn set_dashboard_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dashboard_name = input; self
         }
-        /// <p>The detailed information about the dashboard in JSON format, including the widgets to include and their location on the dashboard. This parameter is required.</p>
+        /// <p>The detailed information about the dashboard in JSON format, including the widgets to include and their location on the dashboard. This parameter is required.</p> 
         /// <p>For more information about the syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>.</p>
         pub fn dashboard_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.dashboard_body = Some(input.into());
             self
         }
-        /// <p>The detailed information about the dashboard in JSON format, including the widgets to include and their location on the dashboard. This parameter is required.</p>
+        /// <p>The detailed information about the dashboard in JSON format, including the widgets to include and their location on the dashboard. This parameter is required.</p> 
         /// <p>For more information about the syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>.</p>
-        pub fn set_dashboard_body(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dashboard_body = input;
-            self
+        pub fn set_dashboard_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dashboard_body = input; self
         }
         /// Consumes the builder and constructs a [`PutDashboardInput`](crate::input::PutDashboardInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::PutDashboardInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::PutDashboardInput {
-                dashboard_name: self.dashboard_name,
-                dashboard_body: self.dashboard_body,
-            })
+        pub fn build(self) -> Result<crate::input::PutDashboardInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PutDashboardInput {
+                    dashboard_name: self.dashboard_name
+                    ,
+                    dashboard_body: self.dashboard_body
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutDashboardInput {
     /// Consumes the builder and constructs an Operation<[`PutDashboard`](crate::operation::PutDashboard)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutDashboard,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutDashboard, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutDashboardInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PutDashboardInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PutDashboardInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PutDashboardInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_dashboard(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_put_dashboard(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutDashboard::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutDashboard",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutDashboard::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutDashboard", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6045,7 +4396,7 @@ impl PutDashboardInput {
 
 /// See [`PutInsightRuleInput`](crate::input::PutInsightRuleInput).
 pub mod put_insight_rule_input {
-
+    
     /// A builder for [`PutInsightRuleInput`](crate::input::PutInsightRuleInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6062,8 +4413,7 @@ pub mod put_insight_rule_input {
         }
         /// <p>A unique name for the rule.</p>
         pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_name = input;
-            self
+            self.rule_name = input; self
         }
         /// <p>The state of the rule. Valid values are ENABLED and DISABLED.</p>
         pub fn rule_state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6072,8 +4422,7 @@ pub mod put_insight_rule_input {
         }
         /// <p>The state of the rule. Valid values are ENABLED and DISABLED.</p>
         pub fn set_rule_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.rule_state = input;
-            self
+            self.rule_state = input; self
         }
         /// <p>The definition of the rule, as a JSON object. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
         pub fn rule_definition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6081,170 +4430,116 @@ pub mod put_insight_rule_input {
             self
         }
         /// <p>The definition of the rule, as a JSON object. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
-        pub fn set_rule_definition(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.rule_definition = input;
-            self
+        pub fn set_rule_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.rule_definition = input; self
         }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50 tags with a rule.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
-        /// <p>To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.</p>
+        /// <p>A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50 tags with a rule.</p> 
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p> 
+        /// <p>To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.</p> 
         /// <p>If you are using this operation to update an existing Contributor Insights rule, any tags you specify in this parameter are ignored. To change the tags of an existing rule, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
-        /// <p>A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50 tags with a rule.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
-        /// <p>To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.</p>
+        /// <p>A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50 tags with a rule.</p> 
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p> 
+        /// <p>To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.</p> 
         /// <p>If you are using this operation to update an existing Contributor Insights rule, any tags you specify in this parameter are ignored. To change the tags of an existing rule, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`PutInsightRuleInput`](crate::input::PutInsightRuleInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::PutInsightRuleInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::PutInsightRuleInput {
-                rule_name: self.rule_name,
-                rule_state: self.rule_state,
-                rule_definition: self.rule_definition,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::PutInsightRuleInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PutInsightRuleInput {
+                    rule_name: self.rule_name
+                    ,
+                    rule_state: self.rule_state
+                    ,
+                    rule_definition: self.rule_definition
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutInsightRuleInput {
     /// Consumes the builder and constructs an Operation<[`PutInsightRule`](crate::operation::PutInsightRule)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutInsightRule,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutInsightRule, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutInsightRuleInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PutInsightRuleInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PutInsightRuleInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PutInsightRuleInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_insight_rule(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_put_insight_rule(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutInsightRule::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutInsightRule",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutInsightRule::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutInsightRule", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6256,7 +4551,7 @@ impl PutInsightRuleInput {
 
 /// See [`PutManagedInsightRulesInput`](crate::input::PutManagedInsightRulesInput).
 pub mod put_managed_insight_rules_input {
-
+    
     /// A builder for [`PutManagedInsightRulesInput`](crate::input::PutManagedInsightRulesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6270,151 +4565,94 @@ pub mod put_managed_insight_rules_input {
         /// <p> A list of <code>ManagedRules</code> to enable. </p>
         pub fn managed_rules(mut self, input: crate::model::ManagedRule) -> Self {
             let mut v = self.managed_rules.unwrap_or_default();
-            v.push(input);
-            self.managed_rules = Some(v);
-            self
+                            v.push(input);
+                            self.managed_rules = Some(v);
+                            self
         }
         /// <p> A list of <code>ManagedRules</code> to enable. </p>
-        pub fn set_managed_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ManagedRule>>,
-        ) -> Self {
-            self.managed_rules = input;
-            self
+        pub fn set_managed_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::ManagedRule>>) -> Self {
+            self.managed_rules = input; self
         }
         /// Consumes the builder and constructs a [`PutManagedInsightRulesInput`](crate::input::PutManagedInsightRulesInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::PutManagedInsightRulesInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::PutManagedInsightRulesInput {
-                managed_rules: self.managed_rules,
-            })
+        pub fn build(self) -> Result<crate::input::PutManagedInsightRulesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PutManagedInsightRulesInput {
+                    managed_rules: self.managed_rules
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutManagedInsightRulesInput {
     /// Consumes the builder and constructs an Operation<[`PutManagedInsightRules`](crate::operation::PutManagedInsightRules)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutManagedInsightRules,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutManagedInsightRules, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutManagedInsightRulesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PutManagedInsightRulesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PutManagedInsightRulesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PutManagedInsightRulesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_managed_insight_rules(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_put_managed_insight_rules(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutManagedInsightRules::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutManagedInsightRules",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutManagedInsightRules::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutManagedInsightRules", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6426,7 +4664,7 @@ impl PutManagedInsightRulesInput {
 
 /// See [`PutMetricAlarmInput`](crate::input::PutMetricAlarmInput).
 pub mod put_metric_alarm_input {
-
+    
     /// A builder for [`PutMetricAlarmInput`](crate::input::PutMetricAlarmInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6435,8 +4673,7 @@ pub mod put_metric_alarm_input {
         pub(crate) actions_enabled: std::option::Option<bool>,
         pub(crate) ok_actions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) alarm_actions: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) insufficient_data_actions:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) insufficient_data_actions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) metric_name: std::option::Option<std::string::String>,
         pub(crate) namespace: std::option::Option<std::string::String>,
         pub(crate) statistic: std::option::Option<crate::model::Statistic>,
@@ -6462,8 +4699,7 @@ pub mod put_metric_alarm_input {
         }
         /// <p>The name for the alarm. This name must be unique within the Region.</p>
         pub fn set_alarm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alarm_name = input;
-            self
+            self.alarm_name = input; self
         }
         /// <p>The description for the alarm.</p>
         pub fn alarm_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6471,12 +4707,8 @@ pub mod put_metric_alarm_input {
             self
         }
         /// <p>The description for the alarm.</p>
-        pub fn set_alarm_description(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.alarm_description = input;
-            self
+        pub fn set_alarm_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alarm_description = input; self
         }
         /// <p>Indicates whether actions should be executed during any changes to the alarm state. The default is <code>TRUE</code>.</p>
         pub fn actions_enabled(mut self, input: bool) -> Self {
@@ -6485,89 +4717,75 @@ pub mod put_metric_alarm_input {
         }
         /// <p>Indicates whether actions should be executed during any changes to the alarm state. The default is <code>TRUE</code>.</p>
         pub fn set_actions_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.actions_enabled = input;
-            self
+            self.actions_enabled = input; self
         }
         /// Appends an item to `ok_actions`.
         ///
         /// To override the contents of this collection use [`set_ok_actions`](Self::set_ok_actions).
         ///
-        /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p>
+        /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
+        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> 
         /// <p>Valid Values (for use with IAM roles): <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code> </p>
         pub fn ok_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ok_actions.unwrap_or_default();
-            v.push(input.into());
-            self.ok_actions = Some(v);
-            self
+                            v.push(input.into());
+                            self.ok_actions = Some(v);
+                            self
         }
-        /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p>
+        /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
+        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> 
         /// <p>Valid Values (for use with IAM roles): <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code> </p>
-        pub fn set_ok_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.ok_actions = input;
-            self
+        pub fn set_ok_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.ok_actions = input; self
         }
         /// Appends an item to `alarm_actions`.
         ///
         /// To override the contents of this collection use [`set_alarm_actions`](Self::set_alarm_actions).
         ///
-        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> | <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i> </code> </p>
+        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
+        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> | <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i> </code> </p> 
         /// <p>Valid Values (for use with IAM roles): <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code> </p>
         pub fn alarm_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.alarm_actions.unwrap_or_default();
-            v.push(input.into());
-            self.alarm_actions = Some(v);
-            self
+                            v.push(input.into());
+                            self.alarm_actions = Some(v);
+                            self
         }
-        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> | <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i> </code> </p>
+        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
+        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> | <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i> </code> </p> 
         /// <p>Valid Values (for use with IAM roles): <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code> </p>
-        pub fn set_alarm_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.alarm_actions = input;
-            self
+        pub fn set_alarm_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.alarm_actions = input; self
         }
         /// Appends an item to `insufficient_data_actions`.
         ///
         /// To override the contents of this collection use [`set_insufficient_data_actions`](Self::set_insufficient_data_actions).
         ///
-        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p>
+        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
+        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> 
         /// <p>Valid Values (for use with IAM roles): <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> </p>
         pub fn insufficient_data_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.insufficient_data_actions.unwrap_or_default();
-            v.push(input.into());
-            self.insufficient_data_actions = Some(v);
-            self
+                            v.push(input.into());
+                            self.insufficient_data_actions = Some(v);
+                            self
         }
-        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p>
+        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
+        /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> 
         /// <p>Valid Values (for use with IAM roles): <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> </p>
-        pub fn set_insufficient_data_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.insufficient_data_actions = input;
-            self
+        pub fn set_insufficient_data_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.insufficient_data_actions = input; self
         }
-        /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
+        /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p> 
         /// <p>If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code> array.</p>
         pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.metric_name = Some(input.into());
             self
         }
-        /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
+        /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p> 
         /// <p>If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code> array.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// <p>The namespace for the metric associated specified in <code>MetricName</code>.</p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6576,8 +4794,7 @@ pub mod put_metric_alarm_input {
         }
         /// <p>The namespace for the metric associated specified in <code>MetricName</code>.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// <p>The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
         pub fn statistic(mut self, input: crate::model::Statistic) -> Self {
@@ -6585,12 +4802,8 @@ pub mod put_metric_alarm_input {
             self
         }
         /// <p>The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
-        pub fn set_statistic(
-            mut self,
-            input: std::option::Option<crate::model::Statistic>,
-        ) -> Self {
-            self.statistic = input;
-            self
+        pub fn set_statistic(mut self, input: std::option::Option<crate::model::Statistic>) -> Self {
+            self.statistic = input; self
         }
         /// <p>The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
         pub fn extended_statistic(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6598,12 +4811,8 @@ pub mod put_metric_alarm_input {
             self
         }
         /// <p>The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
-        pub fn set_extended_statistic(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.extended_statistic = input;
-            self
+        pub fn set_extended_statistic(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.extended_statistic = input; self
         }
         /// Appends an item to `dimensions`.
         ///
@@ -6612,61 +4821,54 @@ pub mod put_metric_alarm_input {
         /// <p>The dimensions for the metric specified in <code>MetricName</code>.</p>
         pub fn dimensions(mut self, input: crate::model::Dimension) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
-            v.push(input);
-            self.dimensions = Some(v);
-            self
+                            v.push(input);
+                            self.dimensions = Some(v);
+                            self
         }
         /// <p>The dimensions for the metric specified in <code>MetricName</code>.</p>
-        pub fn set_dimensions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
-        ) -> Self {
-            self.dimensions = input;
-            self
+        pub fn set_dimensions(mut self, input: std::option::Option<std::vec::Vec<crate::model::Dimension>>) -> Self {
+            self.dimensions = input; self
         }
-        /// <p>The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple of 60.</p>
-        /// <p> <code>Period</code> is required for alarms based on static thresholds. If you are creating an alarm based on a metric math expression, you specify the period for each metric within the objects in the <code>Metrics</code> array.</p>
-        /// <p>Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case, it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+        /// <p>The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple of 60.</p> 
+        /// <p> <code>Period</code> is required for alarms based on static thresholds. If you are creating an alarm based on a metric math expression, you specify the period for each metric within the objects in the <code>Metrics</code> array.</p> 
+        /// <p>Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case, it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p> 
         /// <p>An alarm's total current evaluation period can be no longer than one day, so <code>Period</code> multiplied by <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.</p>
         pub fn period(mut self, input: i32) -> Self {
             self.period = Some(input);
             self
         }
-        /// <p>The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple of 60.</p>
-        /// <p> <code>Period</code> is required for alarms based on static thresholds. If you are creating an alarm based on a metric math expression, you specify the period for each metric within the objects in the <code>Metrics</code> array.</p>
-        /// <p>Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case, it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+        /// <p>The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple of 60.</p> 
+        /// <p> <code>Period</code> is required for alarms based on static thresholds. If you are creating an alarm based on a metric math expression, you specify the period for each metric within the objects in the <code>Metrics</code> array.</p> 
+        /// <p>Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case, it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p> 
         /// <p>An alarm's total current evaluation period can be no longer than one day, so <code>Period</code> multiplied by <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.</p>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
-            self.period = input;
-            self
+            self.period = input; self
         }
-        /// <p>The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p>
-        /// <p>If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works as intended.</p>
-        /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
+        /// <p>The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p> 
+        /// <p>If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works as intended.</p> 
+        /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves unpredictably.</p> 
         /// <p>We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is not published for this metric. Doing so causes the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
         pub fn unit(mut self, input: crate::model::StandardUnit) -> Self {
             self.unit = Some(input);
             self
         }
-        /// <p>The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p>
-        /// <p>If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works as intended.</p>
-        /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
+        /// <p>The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p> 
+        /// <p>If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works as intended.</p> 
+        /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves unpredictably.</p> 
         /// <p>We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is not published for this metric. Doing so causes the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::StandardUnit>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
-        /// <p>The number of periods over which data is compared to the specified threshold. If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p>
+        /// <p>The number of periods over which data is compared to the specified threshold. If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p> 
         /// <p>An alarm's total current evaluation period can be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>
         pub fn evaluation_periods(mut self, input: i32) -> Self {
             self.evaluation_periods = Some(input);
             self
         }
-        /// <p>The number of periods over which data is compared to the specified threshold. If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p>
+        /// <p>The number of periods over which data is compared to the specified threshold. If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p> 
         /// <p>An alarm's total current evaluation period can be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>
         pub fn set_evaluation_periods(mut self, input: std::option::Option<i32>) -> Self {
-            self.evaluation_periods = input;
-            self
+            self.evaluation_periods = input; self
         }
         /// <p>The number of data points that must be breaching to trigger the alarm. This is used only if you are setting an "M out of N" alarm. In that case, this value is the M. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
         pub fn datapoints_to_alarm(mut self, input: i32) -> Self {
@@ -6675,288 +4877,231 @@ pub mod put_metric_alarm_input {
         }
         /// <p>The number of data points that must be breaching to trigger the alarm. This is used only if you are setting an "M out of N" alarm. In that case, this value is the M. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
         pub fn set_datapoints_to_alarm(mut self, input: std::option::Option<i32>) -> Self {
-            self.datapoints_to_alarm = input;
-            self
+            self.datapoints_to_alarm = input; self
         }
-        /// <p>The value against which the specified statistic is compared.</p>
+        /// <p>The value against which the specified statistic is compared.</p> 
         /// <p>This parameter is required for alarms based on static thresholds, but should not be used for alarms based on anomaly detection models.</p>
         pub fn threshold(mut self, input: f64) -> Self {
             self.threshold = Some(input);
             self
         }
-        /// <p>The value against which the specified statistic is compared.</p>
+        /// <p>The value against which the specified statistic is compared.</p> 
         /// <p>This parameter is required for alarms based on static thresholds, but should not be used for alarms based on anomaly detection models.</p>
         pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
-            self.threshold = input;
-            self
+            self.threshold = input; self
         }
-        /// <p> The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>
+        /// <p> The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p> 
         /// <p>The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.</p>
         pub fn comparison_operator(mut self, input: crate::model::ComparisonOperator) -> Self {
             self.comparison_operator = Some(input);
             self
         }
-        /// <p> The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>
+        /// <p> The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p> 
         /// <p>The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.</p>
-        pub fn set_comparison_operator(
-            mut self,
-            input: std::option::Option<crate::model::ComparisonOperator>,
-        ) -> Self {
-            self.comparison_operator = input;
-            self
+        pub fn set_comparison_operator(mut self, input: std::option::Option<crate::model::ComparisonOperator>) -> Self {
+            self.comparison_operator = input; self
         }
-        /// <p> Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring How CloudWatch Alarms Treats Missing Data</a>.</p>
-        /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p> <note>
-        /// <p>Alarms that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always <code>ignore</code> missing data even if you choose a different option for <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has missing data, alarms that evaluate that metric remain in their current state.</p>
+        /// <p> Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring How CloudWatch Alarms Treats Missing Data</a>.</p> 
+        /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p> <note> 
+        /// <p>Alarms that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always <code>ignore</code> missing data even if you choose a different option for <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has missing data, alarms that evaluate that metric remain in their current state.</p> 
         /// </note>
         pub fn treat_missing_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.treat_missing_data = Some(input.into());
             self
         }
-        /// <p> Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring How CloudWatch Alarms Treats Missing Data</a>.</p>
-        /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p> <note>
-        /// <p>Alarms that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always <code>ignore</code> missing data even if you choose a different option for <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has missing data, alarms that evaluate that metric remain in their current state.</p>
+        /// <p> Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring How CloudWatch Alarms Treats Missing Data</a>.</p> 
+        /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p> <note> 
+        /// <p>Alarms that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always <code>ignore</code> missing data even if you choose a different option for <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has missing data, alarms that evaluate that metric remain in their current state.</p> 
         /// </note>
-        pub fn set_treat_missing_data(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.treat_missing_data = input;
-            self
+        pub fn set_treat_missing_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.treat_missing_data = input; self
         }
-        /// <p> Used only for alarms based on percentiles. If you specify <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If you specify <code>evaluate</code> or omit this parameter, the alarm is always evaluated and possibly changes state no matter how many data points are available. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based CloudWatch Alarms and Low Data Samples</a>.</p>
+        /// <p> Used only for alarms based on percentiles. If you specify <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If you specify <code>evaluate</code> or omit this parameter, the alarm is always evaluated and possibly changes state no matter how many data points are available. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based CloudWatch Alarms and Low Data Samples</a>.</p> 
         /// <p>Valid Values: <code>evaluate | ignore</code> </p>
-        pub fn evaluate_low_sample_count_percentile(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn evaluate_low_sample_count_percentile(mut self, input: impl Into<std::string::String>) -> Self {
             self.evaluate_low_sample_count_percentile = Some(input.into());
             self
         }
-        /// <p> Used only for alarms based on percentiles. If you specify <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If you specify <code>evaluate</code> or omit this parameter, the alarm is always evaluated and possibly changes state no matter how many data points are available. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based CloudWatch Alarms and Low Data Samples</a>.</p>
+        /// <p> Used only for alarms based on percentiles. If you specify <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If you specify <code>evaluate</code> or omit this parameter, the alarm is always evaluated and possibly changes state no matter how many data points are available. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based CloudWatch Alarms and Low Data Samples</a>.</p> 
         /// <p>Valid Values: <code>evaluate | ignore</code> </p>
-        pub fn set_evaluate_low_sample_count_percentile(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.evaluate_low_sample_count_percentile = input;
-            self
+        pub fn set_evaluate_low_sample_count_percentile(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.evaluate_low_sample_count_percentile = input; self
         }
         /// Appends an item to `metrics`.
         ///
         /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
         ///
-        /// <p>An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a metric math expression. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
-        /// <p>Each item in the <code>Metrics</code> array either retrieves a metric or performs a math expression.</p>
-        /// <p>One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
+        /// <p>An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a metric math expression. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p> 
+        /// <p>Each item in the <code>Metrics</code> array either retrieves a metric or performs a math expression.</p> 
+        /// <p>One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p> 
         /// <p>If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.</p>
         pub fn metrics(mut self, input: crate::model::MetricDataQuery) -> Self {
             let mut v = self.metrics.unwrap_or_default();
-            v.push(input);
-            self.metrics = Some(v);
-            self
+                            v.push(input);
+                            self.metrics = Some(v);
+                            self
         }
-        /// <p>An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a metric math expression. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
-        /// <p>Each item in the <code>Metrics</code> array either retrieves a metric or performs a math expression.</p>
-        /// <p>One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
+        /// <p>An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a metric math expression. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p> 
+        /// <p>Each item in the <code>Metrics</code> array either retrieves a metric or performs a math expression.</p> 
+        /// <p>One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p> 
         /// <p>If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.</p>
-        pub fn set_metrics(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
-        ) -> Self {
-            self.metrics = input;
-            self
+        pub fn set_metrics(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>) -> Self {
+            self.metrics = input; self
         }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+        /// <p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.</p> 
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p> 
         /// <p>If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored. To change the tags of an existing alarm, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
-        /// <p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+        /// <p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.</p> 
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p> 
         /// <p>If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored. To change the tags of an existing alarm, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
-        /// <p>If this is an alarm based on an anomaly detection model, make this value match the ID of the <code>ANOMALY_DETECTION_BAND</code> function.</p>
-        /// <p>For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.</p>
+        /// <p>If this is an alarm based on an anomaly detection model, make this value match the ID of the <code>ANOMALY_DETECTION_BAND</code> function.</p> 
+        /// <p>For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.</p> 
         /// <p>If your alarm uses this parameter, it cannot have Auto Scaling actions.</p>
         pub fn threshold_metric_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.threshold_metric_id = Some(input.into());
             self
         }
-        /// <p>If this is an alarm based on an anomaly detection model, make this value match the ID of the <code>ANOMALY_DETECTION_BAND</code> function.</p>
-        /// <p>For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.</p>
+        /// <p>If this is an alarm based on an anomaly detection model, make this value match the ID of the <code>ANOMALY_DETECTION_BAND</code> function.</p> 
+        /// <p>For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.</p> 
         /// <p>If your alarm uses this parameter, it cannot have Auto Scaling actions.</p>
-        pub fn set_threshold_metric_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.threshold_metric_id = input;
-            self
+        pub fn set_threshold_metric_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.threshold_metric_id = input; self
         }
         /// Consumes the builder and constructs a [`PutMetricAlarmInput`](crate::input::PutMetricAlarmInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::PutMetricAlarmInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::PutMetricAlarmInput {
-                alarm_name: self.alarm_name,
-                alarm_description: self.alarm_description,
-                actions_enabled: self.actions_enabled,
-                ok_actions: self.ok_actions,
-                alarm_actions: self.alarm_actions,
-                insufficient_data_actions: self.insufficient_data_actions,
-                metric_name: self.metric_name,
-                namespace: self.namespace,
-                statistic: self.statistic,
-                extended_statistic: self.extended_statistic,
-                dimensions: self.dimensions,
-                period: self.period,
-                unit: self.unit,
-                evaluation_periods: self.evaluation_periods,
-                datapoints_to_alarm: self.datapoints_to_alarm,
-                threshold: self.threshold,
-                comparison_operator: self.comparison_operator,
-                treat_missing_data: self.treat_missing_data,
-                evaluate_low_sample_count_percentile: self.evaluate_low_sample_count_percentile,
-                metrics: self.metrics,
-                tags: self.tags,
-                threshold_metric_id: self.threshold_metric_id,
-            })
+        pub fn build(self) -> Result<crate::input::PutMetricAlarmInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PutMetricAlarmInput {
+                    alarm_name: self.alarm_name
+                    ,
+                    alarm_description: self.alarm_description
+                    ,
+                    actions_enabled: self.actions_enabled
+                    ,
+                    ok_actions: self.ok_actions
+                    ,
+                    alarm_actions: self.alarm_actions
+                    ,
+                    insufficient_data_actions: self.insufficient_data_actions
+                    ,
+                    metric_name: self.metric_name
+                    ,
+                    namespace: self.namespace
+                    ,
+                    statistic: self.statistic
+                    ,
+                    extended_statistic: self.extended_statistic
+                    ,
+                    dimensions: self.dimensions
+                    ,
+                    period: self.period
+                    ,
+                    unit: self.unit
+                    ,
+                    evaluation_periods: self.evaluation_periods
+                    ,
+                    datapoints_to_alarm: self.datapoints_to_alarm
+                    ,
+                    threshold: self.threshold
+                    ,
+                    comparison_operator: self.comparison_operator
+                    ,
+                    treat_missing_data: self.treat_missing_data
+                    ,
+                    evaluate_low_sample_count_percentile: self.evaluate_low_sample_count_percentile
+                    ,
+                    metrics: self.metrics
+                    ,
+                    tags: self.tags
+                    ,
+                    threshold_metric_id: self.threshold_metric_id
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutMetricAlarmInput {
     /// Consumes the builder and constructs an Operation<[`PutMetricAlarm`](crate::operation::PutMetricAlarm)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutMetricAlarm,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutMetricAlarm, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutMetricAlarmInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PutMetricAlarmInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PutMetricAlarmInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PutMetricAlarmInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_metric_alarm(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_put_metric_alarm(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutMetricAlarm::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutMetricAlarm",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutMetricAlarm::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutMetricAlarm", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -6968,7 +5113,7 @@ impl PutMetricAlarmInput {
 
 /// See [`PutMetricDataInput`](crate::input::PutMetricDataInput).
 pub mod put_metric_data_input {
-
+    
     /// A builder for [`PutMetricDataInput`](crate::input::PutMetricDataInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6976,17 +5121,16 @@ pub mod put_metric_data_input {
         pub(crate) metric_data: std::option::Option<std::vec::Vec<crate::model::MetricDatum>>,
     }
     impl Builder {
-        /// <p>The namespace for the metric data.</p>
+        /// <p>The namespace for the metric data.</p> 
         /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.namespace = Some(input.into());
             self
         }
-        /// <p>The namespace for the metric data.</p>
+        /// <p>The namespace for the metric data.</p> 
         /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.namespace = input;
-            self
+            self.namespace = input; self
         }
         /// Appends an item to `metric_data`.
         ///
@@ -6995,148 +5139,96 @@ pub mod put_metric_data_input {
         /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
         pub fn metric_data(mut self, input: crate::model::MetricDatum) -> Self {
             let mut v = self.metric_data.unwrap_or_default();
-            v.push(input);
-            self.metric_data = Some(v);
-            self
+                            v.push(input);
+                            self.metric_data = Some(v);
+                            self
         }
         /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
-        pub fn set_metric_data(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricDatum>>,
-        ) -> Self {
-            self.metric_data = input;
-            self
+        pub fn set_metric_data(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricDatum>>) -> Self {
+            self.metric_data = input; self
         }
         /// Consumes the builder and constructs a [`PutMetricDataInput`](crate::input::PutMetricDataInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::PutMetricDataInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::PutMetricDataInput {
-                namespace: self.namespace,
-                metric_data: self.metric_data,
-            })
+        pub fn build(self) -> Result<crate::input::PutMetricDataInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PutMetricDataInput {
+                    namespace: self.namespace
+                    ,
+                    metric_data: self.metric_data
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutMetricDataInput {
     /// Consumes the builder and constructs an Operation<[`PutMetricData`](crate::operation::PutMetricData)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutMetricData,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutMetricData, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutMetricDataInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PutMetricDataInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PutMetricDataInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PutMetricDataInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_metric_data(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_put_metric_data(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutMetricData::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutMetricData",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutMetricData::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutMetricData", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7148,79 +5240,67 @@ impl PutMetricDataInput {
 
 /// See [`PutMetricStreamInput`](crate::input::PutMetricStreamInput).
 pub mod put_metric_stream_input {
-
+    
     /// A builder for [`PutMetricStreamInput`](crate::input::PutMetricStreamInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) include_filters:
-            std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
-        pub(crate) exclude_filters:
-            std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
+        pub(crate) include_filters: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
+        pub(crate) exclude_filters: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
         pub(crate) firehose_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
         pub(crate) output_format: std::option::Option<crate::model::MetricStreamOutputFormat>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        pub(crate) statistics_configurations:
-            std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>>,
+        pub(crate) statistics_configurations: std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>>,
         pub(crate) include_linked_accounts_metrics: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>If you are creating a new metric stream, this is the name for the new stream. The name must be different than the names of other metric streams in this account and Region.</p>
-        /// <p>If you are updating a metric stream, specify the name of that stream here.</p>
+        /// <p>If you are creating a new metric stream, this is the name for the new stream. The name must be different than the names of other metric streams in this account and Region.</p> 
+        /// <p>If you are updating a metric stream, specify the name of that stream here.</p> 
         /// <p>Valid characters are A-Z, a-z, 0-9, "-" and "_".</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>If you are creating a new metric stream, this is the name for the new stream. The name must be different than the names of other metric streams in this account and Region.</p>
-        /// <p>If you are updating a metric stream, specify the name of that stream here.</p>
+        /// <p>If you are creating a new metric stream, this is the name for the new stream. The name must be different than the names of other metric streams in this account and Region.</p> 
+        /// <p>If you are updating a metric stream, specify the name of that stream here.</p> 
         /// <p>Valid characters are A-Z, a-z, 0-9, "-" and "_".</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `include_filters`.
         ///
         /// To override the contents of this collection use [`set_include_filters`](Self::set_include_filters).
         ///
-        /// <p>If you specify this parameter, the stream sends only the metrics from the metric namespaces that you specify here.</p>
+        /// <p>If you specify this parameter, the stream sends only the metrics from the metric namespaces that you specify here.</p> 
         /// <p>You cannot include <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same operation.</p>
         pub fn include_filters(mut self, input: crate::model::MetricStreamFilter) -> Self {
             let mut v = self.include_filters.unwrap_or_default();
-            v.push(input);
-            self.include_filters = Some(v);
-            self
+                            v.push(input);
+                            self.include_filters = Some(v);
+                            self
         }
-        /// <p>If you specify this parameter, the stream sends only the metrics from the metric namespaces that you specify here.</p>
+        /// <p>If you specify this parameter, the stream sends only the metrics from the metric namespaces that you specify here.</p> 
         /// <p>You cannot include <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same operation.</p>
-        pub fn set_include_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
-        ) -> Self {
-            self.include_filters = input;
-            self
+        pub fn set_include_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>) -> Self {
+            self.include_filters = input; self
         }
         /// Appends an item to `exclude_filters`.
         ///
         /// To override the contents of this collection use [`set_exclude_filters`](Self::set_exclude_filters).
         ///
-        /// <p>If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces that you specify here.</p>
+        /// <p>If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces that you specify here.</p> 
         /// <p>You cannot include <code>ExcludeFilters</code> and <code>IncludeFilters</code> in the same operation.</p>
         pub fn exclude_filters(mut self, input: crate::model::MetricStreamFilter) -> Self {
             let mut v = self.exclude_filters.unwrap_or_default();
-            v.push(input);
-            self.exclude_filters = Some(v);
-            self
+                            v.push(input);
+                            self.exclude_filters = Some(v);
+                            self
         }
-        /// <p>If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces that you specify here.</p>
+        /// <p>If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces that you specify here.</p> 
         /// <p>You cannot include <code>ExcludeFilters</code> and <code>IncludeFilters</code> in the same operation.</p>
-        pub fn set_exclude_filters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
-        ) -> Self {
-            self.exclude_filters = input;
-            self
+        pub fn set_exclude_filters(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>) -> Self {
+            self.exclude_filters = input; self
         }
         /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon Kinesis Data Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
         pub fn firehose_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7229,26 +5309,24 @@ pub mod put_metric_stream_input {
         }
         /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon Kinesis Data Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
         pub fn set_firehose_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.firehose_arn = input;
-            self
+            self.firehose_arn = input; self
         }
-        /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
-        /// <ul>
-        /// <li> <p>firehose:PutRecord</p> </li>
-        /// <li> <p>firehose:PutRecordBatch</p> </li>
+        /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p> 
+        /// <ul> 
+        /// <li> <p>firehose:PutRecord</p> </li> 
+        /// <li> <p>firehose:PutRecordBatch</p> </li> 
         /// </ul>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
-        /// <ul>
-        /// <li> <p>firehose:PutRecord</p> </li>
-        /// <li> <p>firehose:PutRecordBatch</p> </li>
+        /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p> 
+        /// <ul> 
+        /// <li> <p>firehose:PutRecord</p> </li> 
+        /// <li> <p>firehose:PutRecordBatch</p> </li> 
         /// </ul>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
         pub fn output_format(mut self, input: crate::model::MetricStreamOutputFormat) -> Self {
@@ -7256,61 +5334,44 @@ pub mod put_metric_stream_input {
             self
         }
         /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
-        pub fn set_output_format(
-            mut self,
-            input: std::option::Option<crate::model::MetricStreamOutputFormat>,
-        ) -> Self {
-            self.output_format = input;
-            self
+        pub fn set_output_format(mut self, input: std::option::Option<crate::model::MetricStreamOutputFormat>) -> Self {
+            self.output_format = input; self
         }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pairs to associate with the metric stream. You can associate as many as 50 tags with a metric stream.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+        /// <p>A list of key-value pairs to associate with the metric stream. You can associate as many as 50 tags with a metric stream.</p> 
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p> 
         /// <p>You can use this parameter only when you are creating a new metric stream. If you are using this operation to update an existing metric stream, any tags you specify in this parameter are ignored. To change the tags of an existing metric stream, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
-        /// <p>A list of key-value pairs to associate with the metric stream. You can associate as many as 50 tags with a metric stream.</p>
-        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+        /// <p>A list of key-value pairs to associate with the metric stream. You can associate as many as 50 tags with a metric stream.</p> 
+        /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p> 
         /// <p>You can use this parameter only when you are creating a new metric stream. If you are using this operation to update an existing metric stream, any tags you specify in this parameter are ignored. To change the tags of an existing metric stream, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Appends an item to `statistics_configurations`.
         ///
         /// To override the contents of this collection use [`set_statistics_configurations`](Self::set_statistics_configurations).
         ///
-        /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>
+        /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p> 
         /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9, and so on.</p>
-        pub fn statistics_configurations(
-            mut self,
-            input: crate::model::MetricStreamStatisticsConfiguration,
-        ) -> Self {
+        pub fn statistics_configurations(mut self, input: crate::model::MetricStreamStatisticsConfiguration) -> Self {
             let mut v = self.statistics_configurations.unwrap_or_default();
-            v.push(input);
-            self.statistics_configurations = Some(v);
-            self
+                            v.push(input);
+                            self.statistics_configurations = Some(v);
+                            self
         }
-        /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>
+        /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p> 
         /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9, and so on.</p>
-        pub fn set_statistics_configurations(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>,
-            >,
-        ) -> Self {
-            self.statistics_configurations = input;
-            self
+        pub fn set_statistics_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>>) -> Self {
+            self.statistics_configurations = input; self
         }
         /// <p>If you are creating a metric stream in a monitoring account, specify <code>true</code> to include metrics from source accounts in the metric stream.</p>
         pub fn include_linked_accounts_metrics(mut self, input: bool) -> Self {
@@ -7318,150 +5379,105 @@ pub mod put_metric_stream_input {
             self
         }
         /// <p>If you are creating a metric stream in a monitoring account, specify <code>true</code> to include metrics from source accounts in the metric stream.</p>
-        pub fn set_include_linked_accounts_metrics(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.include_linked_accounts_metrics = input;
-            self
+        pub fn set_include_linked_accounts_metrics(mut self, input: std::option::Option<bool>) -> Self {
+            self.include_linked_accounts_metrics = input; self
         }
         /// Consumes the builder and constructs a [`PutMetricStreamInput`](crate::input::PutMetricStreamInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::PutMetricStreamInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::PutMetricStreamInput {
-                name: self.name,
-                include_filters: self.include_filters,
-                exclude_filters: self.exclude_filters,
-                firehose_arn: self.firehose_arn,
-                role_arn: self.role_arn,
-                output_format: self.output_format,
-                tags: self.tags,
-                statistics_configurations: self.statistics_configurations,
-                include_linked_accounts_metrics: self.include_linked_accounts_metrics,
-            })
+        pub fn build(self) -> Result<crate::input::PutMetricStreamInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::PutMetricStreamInput {
+                    name: self.name
+                    ,
+                    include_filters: self.include_filters
+                    ,
+                    exclude_filters: self.exclude_filters
+                    ,
+                    firehose_arn: self.firehose_arn
+                    ,
+                    role_arn: self.role_arn
+                    ,
+                    output_format: self.output_format
+                    ,
+                    tags: self.tags
+                    ,
+                    statistics_configurations: self.statistics_configurations
+                    ,
+                    include_linked_accounts_metrics: self.include_linked_accounts_metrics
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl PutMetricStreamInput {
     /// Consumes the builder and constructs an Operation<[`PutMetricStream`](crate::operation::PutMetricStream)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::PutMetricStream,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::PutMetricStream, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::PutMetricStreamInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::PutMetricStreamInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::PutMetricStreamInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::PutMetricStreamInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_put_metric_stream(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_put_metric_stream(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::PutMetricStream::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "PutMetricStream",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::PutMetricStream::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("PutMetricStream", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7473,7 +5489,7 @@ impl PutMetricStreamInput {
 
 /// See [`SetAlarmStateInput`](crate::input::SetAlarmStateInput).
 pub mod set_alarm_state_input {
-
+    
     /// A builder for [`SetAlarmStateInput`](crate::input::SetAlarmStateInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7490,8 +5506,7 @@ pub mod set_alarm_state_input {
         }
         /// <p>The name of the alarm.</p>
         pub fn set_alarm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alarm_name = input;
-            self
+            self.alarm_name = input; self
         }
         /// <p>The value of the state.</p>
         pub fn state_value(mut self, input: crate::model::StateValue) -> Self {
@@ -7499,12 +5514,8 @@ pub mod set_alarm_state_input {
             self
         }
         /// <p>The value of the state.</p>
-        pub fn set_state_value(
-            mut self,
-            input: std::option::Option<crate::model::StateValue>,
-        ) -> Self {
-            self.state_value = input;
-            self
+        pub fn set_state_value(mut self, input: std::option::Option<crate::model::StateValue>) -> Self {
+            self.state_value = input; self
         }
         /// <p>The reason that this alarm is set to this specific state, in text format.</p>
         pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7513,156 +5524,105 @@ pub mod set_alarm_state_input {
         }
         /// <p>The reason that this alarm is set to this specific state, in text format.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.state_reason = input;
-            self
+            self.state_reason = input; self
         }
-        /// <p>The reason that this alarm is set to this specific state, in JSON format.</p>
+        /// <p>The reason that this alarm is set to this specific state, in JSON format.</p> 
         /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
         pub fn state_reason_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.state_reason_data = Some(input.into());
             self
         }
-        /// <p>The reason that this alarm is set to this specific state, in JSON format.</p>
+        /// <p>The reason that this alarm is set to this specific state, in JSON format.</p> 
         /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
-        pub fn set_state_reason_data(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.state_reason_data = input;
-            self
+        pub fn set_state_reason_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.state_reason_data = input; self
         }
         /// Consumes the builder and constructs a [`SetAlarmStateInput`](crate::input::SetAlarmStateInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::SetAlarmStateInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::SetAlarmStateInput {
-                alarm_name: self.alarm_name,
-                state_value: self.state_value,
-                state_reason: self.state_reason,
-                state_reason_data: self.state_reason_data,
-            })
+        pub fn build(self) -> Result<crate::input::SetAlarmStateInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::SetAlarmStateInput {
+                    alarm_name: self.alarm_name
+                    ,
+                    state_value: self.state_value
+                    ,
+                    state_reason: self.state_reason
+                    ,
+                    state_reason_data: self.state_reason_data
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl SetAlarmStateInput {
     /// Consumes the builder and constructs an Operation<[`SetAlarmState`](crate::operation::SetAlarmState)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::SetAlarmState,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::SetAlarmState, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::SetAlarmStateInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::SetAlarmStateInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::SetAlarmStateInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::SetAlarmStateInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_set_alarm_state(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_set_alarm_state(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::SetAlarmState::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "SetAlarmState",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::SetAlarmState::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("SetAlarmState", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7674,7 +5634,7 @@ impl SetAlarmStateInput {
 
 /// See [`StartMetricStreamsInput`](crate::input::StartMetricStreamsInput).
 pub mod start_metric_streams_input {
-
+    
     /// A builder for [`StartMetricStreamsInput`](crate::input::StartMetricStreamsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7685,152 +5645,99 @@ pub mod start_metric_streams_input {
         ///
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
-        /// <p>The array of the names of metric streams to start streaming.</p>
+        /// <p>The array of the names of metric streams to start streaming.</p> 
         /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will start streaming.</p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
-            v.push(input.into());
-            self.names = Some(v);
-            self
+                            v.push(input.into());
+                            self.names = Some(v);
+                            self
         }
-        /// <p>The array of the names of metric streams to start streaming.</p>
+        /// <p>The array of the names of metric streams to start streaming.</p> 
         /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will start streaming.</p>
-        pub fn set_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.names = input;
-            self
+        pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.names = input; self
         }
         /// Consumes the builder and constructs a [`StartMetricStreamsInput`](crate::input::StartMetricStreamsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::StartMetricStreamsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::StartMetricStreamsInput { names: self.names })
+        pub fn build(self) -> Result<crate::input::StartMetricStreamsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::StartMetricStreamsInput {
+                    names: self.names
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StartMetricStreamsInput {
     /// Consumes the builder and constructs an Operation<[`StartMetricStreams`](crate::operation::StartMetricStreams)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StartMetricStreams,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StartMetricStreams, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StartMetricStreamsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::StartMetricStreamsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::StartMetricStreamsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::StartMetricStreamsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_start_metric_streams(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_start_metric_streams(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StartMetricStreams::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StartMetricStreams",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StartMetricStreams::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StartMetricStreams", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -7842,7 +5749,7 @@ impl StartMetricStreamsInput {
 
 /// See [`StopMetricStreamsInput`](crate::input::StopMetricStreamsInput).
 pub mod stop_metric_streams_input {
-
+    
     /// A builder for [`StopMetricStreamsInput`](crate::input::StopMetricStreamsInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7853,152 +5760,99 @@ pub mod stop_metric_streams_input {
         ///
         /// To override the contents of this collection use [`set_names`](Self::set_names).
         ///
-        /// <p>The array of the names of metric streams to stop streaming.</p>
+        /// <p>The array of the names of metric streams to stop streaming.</p> 
         /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will stop streaming.</p>
         pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.names.unwrap_or_default();
-            v.push(input.into());
-            self.names = Some(v);
-            self
+                            v.push(input.into());
+                            self.names = Some(v);
+                            self
         }
-        /// <p>The array of the names of metric streams to stop streaming.</p>
+        /// <p>The array of the names of metric streams to stop streaming.</p> 
         /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will stop streaming.</p>
-        pub fn set_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.names = input;
-            self
+        pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.names = input; self
         }
         /// Consumes the builder and constructs a [`StopMetricStreamsInput`](crate::input::StopMetricStreamsInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::StopMetricStreamsInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::StopMetricStreamsInput { names: self.names })
+        pub fn build(self) -> Result<crate::input::StopMetricStreamsInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::StopMetricStreamsInput {
+                    names: self.names
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl StopMetricStreamsInput {
     /// Consumes the builder and constructs an Operation<[`StopMetricStreams`](crate::operation::StopMetricStreams)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::StopMetricStreams,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::StopMetricStreams, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::StopMetricStreamsInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::StopMetricStreamsInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::StopMetricStreamsInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::StopMetricStreamsInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_stop_metric_streams(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_stop_metric_streams(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::StopMetricStreams::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "StopMetricStreams",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::StopMetricStreams::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("StopMetricStreams", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8010,7 +5864,7 @@ impl StopMetricStreamsInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-
+    
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8018,21 +5872,20 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The ARN of the CloudWatch resource that you're adding tags to.</p>
-        /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
-        /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>
+        /// <p>The ARN of the CloudWatch resource that you're adding tags to.</p> 
+        /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p> 
+        /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p> 
         /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the CloudWatch resource that you're adding tags to.</p>
-        /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
-        /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>
+        /// <p>The ARN of the CloudWatch resource that you're adding tags to.</p> 
+        /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p> 
+        /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p> 
         /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -8041,148 +5894,96 @@ pub mod tag_resource_input {
         /// <p>The list of key-value pairs to associate with the alarm.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The list of key-value pairs to associate with the alarm.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::TagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::TagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::TagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::TagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::TagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::TagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "TagResource",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8194,7 +5995,7 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-
+    
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8202,21 +6003,20 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The ARN of the CloudWatch resource that you're removing tags from.</p>
-        /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
-        /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>
+        /// <p>The ARN of the CloudWatch resource that you're removing tags from.</p> 
+        /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p> 
+        /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p> 
         /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
         }
-        /// <p>The ARN of the CloudWatch resource that you're removing tags from.</p>
-        /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
-        /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>
+        /// <p>The ARN of the CloudWatch resource that you're removing tags from.</p> 
+        /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p> 
+        /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p> 
         /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tag_keys`.
         ///
@@ -8225,148 +6025,96 @@ pub mod untag_resource_input {
         /// <p>The list of tag keys to remove from the resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
-            v.push(input.into());
-            self.tag_keys = Some(v);
-            self
+                            v.push(input.into());
+                            self.tag_keys = Some(v);
+                            self
         }
         /// <p>The list of tag keys to remove from the resource.</p>
-        pub fn set_tag_keys(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.tag_keys = input;
-            self
+        pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.tag_keys = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn,
-                tag_keys: self.tag_keys,
-            })
+        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UntagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tag_keys: self.tag_keys
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UntagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UntagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UntagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UntagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-www-form-urlencoded",
-            );
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UntagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UntagResource",
-            "cloudwatch",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "cloudwatch"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -8379,10 +6127,10 @@ impl UntagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceInput {
-    /// <p>The ARN of the CloudWatch resource that you're removing tags from.</p>
-    /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
-    /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>
+pub struct UntagResourceInput  {
+    /// <p>The ARN of the CloudWatch resource that you're removing tags from.</p> 
+    /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p> 
+    /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p> 
     /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -8391,15 +6139,15 @@ pub struct UntagResourceInput {
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UntagResourceInput {
-    /// <p>The ARN of the CloudWatch resource that you're removing tags from.</p>
-    /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
-    /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>
+    /// <p>The ARN of the CloudWatch resource that you're removing tags from.</p> 
+    /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p> 
+    /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p> 
     /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The list of tag keys to remove from the resource.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -8407,10 +6155,10 @@ impl UntagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceInput {
-    /// <p>The ARN of the CloudWatch resource that you're adding tags to.</p>
-    /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
-    /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>
+pub struct TagResourceInput  {
+    /// <p>The ARN of the CloudWatch resource that you're adding tags to.</p> 
+    /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p> 
+    /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p> 
     /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -8419,15 +6167,15 @@ pub struct TagResourceInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl TagResourceInput {
-    /// <p>The ARN of the CloudWatch resource that you're adding tags to.</p>
-    /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
-    /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>
+    /// <p>The ARN of the CloudWatch resource that you're adding tags to.</p> 
+    /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p> 
+    /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p> 
     /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The list of key-value pairs to associate with the alarm.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -8435,16 +6183,16 @@ impl TagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopMetricStreamsInput {
-    /// <p>The array of the names of metric streams to stop streaming.</p>
+pub struct StopMetricStreamsInput  {
+    /// <p>The array of the names of metric streams to stop streaming.</p> 
     /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will stop streaming.</p>
     #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StopMetricStreamsInput {
-    /// <p>The array of the names of metric streams to stop streaming.</p>
+    /// <p>The array of the names of metric streams to stop streaming.</p> 
     /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will stop streaming.</p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
         self.names.as_deref()
     }
 }
@@ -8452,16 +6200,16 @@ impl StopMetricStreamsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartMetricStreamsInput {
-    /// <p>The array of the names of metric streams to start streaming.</p>
+pub struct StartMetricStreamsInput  {
+    /// <p>The array of the names of metric streams to start streaming.</p> 
     /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will start streaming.</p>
     #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StartMetricStreamsInput {
-    /// <p>The array of the names of metric streams to start streaming.</p>
+    /// <p>The array of the names of metric streams to start streaming.</p> 
     /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will start streaming.</p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
         self.names.as_deref()
     }
 }
@@ -8469,7 +6217,7 @@ impl StartMetricStreamsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetAlarmStateInput {
+pub struct SetAlarmStateInput  {
     /// <p>The name of the alarm.</p>
     #[doc(hidden)]
     pub alarm_name: std::option::Option<std::string::String>,
@@ -8479,27 +6227,27 @@ pub struct SetAlarmStateInput {
     /// <p>The reason that this alarm is set to this specific state, in text format.</p>
     #[doc(hidden)]
     pub state_reason: std::option::Option<std::string::String>,
-    /// <p>The reason that this alarm is set to this specific state, in JSON format.</p>
+    /// <p>The reason that this alarm is set to this specific state, in JSON format.</p> 
     /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
     #[doc(hidden)]
     pub state_reason_data: std::option::Option<std::string::String>,
 }
 impl SetAlarmStateInput {
     /// <p>The name of the alarm.</p>
-    pub fn alarm_name(&self) -> std::option::Option<&str> {
+    pub fn alarm_name(&self) -> std::option::Option<& str> {
         self.alarm_name.as_deref()
     }
     /// <p>The value of the state.</p>
-    pub fn state_value(&self) -> std::option::Option<&crate::model::StateValue> {
+    pub fn state_value(&self) -> std::option::Option<& crate::model::StateValue> {
         self.state_value.as_ref()
     }
     /// <p>The reason that this alarm is set to this specific state, in text format.</p>
-    pub fn state_reason(&self) -> std::option::Option<&str> {
+    pub fn state_reason(&self) -> std::option::Option<& str> {
         self.state_reason.as_deref()
     }
-    /// <p>The reason that this alarm is set to this specific state, in JSON format.</p>
+    /// <p>The reason that this alarm is set to this specific state, in JSON format.</p> 
     /// <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
-    pub fn state_reason_data(&self) -> std::option::Option<&str> {
+    pub fn state_reason_data(&self) -> std::option::Option<& str> {
         self.state_reason_data.as_deref()
     }
 }
@@ -8507,91 +6255,88 @@ impl SetAlarmStateInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutMetricStreamInput {
-    /// <p>If you are creating a new metric stream, this is the name for the new stream. The name must be different than the names of other metric streams in this account and Region.</p>
-    /// <p>If you are updating a metric stream, specify the name of that stream here.</p>
+pub struct PutMetricStreamInput  {
+    /// <p>If you are creating a new metric stream, this is the name for the new stream. The name must be different than the names of other metric streams in this account and Region.</p> 
+    /// <p>If you are updating a metric stream, specify the name of that stream here.</p> 
     /// <p>Valid characters are A-Z, a-z, 0-9, "-" and "_".</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>If you specify this parameter, the stream sends only the metrics from the metric namespaces that you specify here.</p>
+    /// <p>If you specify this parameter, the stream sends only the metrics from the metric namespaces that you specify here.</p> 
     /// <p>You cannot include <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same operation.</p>
     #[doc(hidden)]
     pub include_filters: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
-    /// <p>If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces that you specify here.</p>
+    /// <p>If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces that you specify here.</p> 
     /// <p>You cannot include <code>ExcludeFilters</code> and <code>IncludeFilters</code> in the same operation.</p>
     #[doc(hidden)]
     pub exclude_filters: std::option::Option<std::vec::Vec<crate::model::MetricStreamFilter>>,
     /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon Kinesis Data Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
     #[doc(hidden)]
     pub firehose_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
-    /// <ul>
-    /// <li> <p>firehose:PutRecord</p> </li>
-    /// <li> <p>firehose:PutRecordBatch</p> </li>
+    /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p> 
+    /// <ul> 
+    /// <li> <p>firehose:PutRecord</p> </li> 
+    /// <li> <p>firehose:PutRecordBatch</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
     #[doc(hidden)]
     pub output_format: std::option::Option<crate::model::MetricStreamOutputFormat>,
-    /// <p>A list of key-value pairs to associate with the metric stream. You can associate as many as 50 tags with a metric stream.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>A list of key-value pairs to associate with the metric stream. You can associate as many as 50 tags with a metric stream.</p> 
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p> 
     /// <p>You can use this parameter only when you are creating a new metric stream. If you are using this operation to update an existing metric stream, any tags you specify in this parameter are ignored. To change the tags of an existing metric stream, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>
+    /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p> 
     /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9, and so on.</p>
     #[doc(hidden)]
-    pub statistics_configurations:
-        std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>>,
+    pub statistics_configurations: std::option::Option<std::vec::Vec<crate::model::MetricStreamStatisticsConfiguration>>,
     /// <p>If you are creating a metric stream in a monitoring account, specify <code>true</code> to include metrics from source accounts in the metric stream.</p>
     #[doc(hidden)]
     pub include_linked_accounts_metrics: std::option::Option<bool>,
 }
 impl PutMetricStreamInput {
-    /// <p>If you are creating a new metric stream, this is the name for the new stream. The name must be different than the names of other metric streams in this account and Region.</p>
-    /// <p>If you are updating a metric stream, specify the name of that stream here.</p>
+    /// <p>If you are creating a new metric stream, this is the name for the new stream. The name must be different than the names of other metric streams in this account and Region.</p> 
+    /// <p>If you are updating a metric stream, specify the name of that stream here.</p> 
     /// <p>Valid characters are A-Z, a-z, 0-9, "-" and "_".</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>If you specify this parameter, the stream sends only the metrics from the metric namespaces that you specify here.</p>
+    /// <p>If you specify this parameter, the stream sends only the metrics from the metric namespaces that you specify here.</p> 
     /// <p>You cannot include <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same operation.</p>
-    pub fn include_filters(&self) -> std::option::Option<&[crate::model::MetricStreamFilter]> {
+    pub fn include_filters(&self) -> std::option::Option<& [crate::model::MetricStreamFilter]> {
         self.include_filters.as_deref()
     }
-    /// <p>If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces that you specify here.</p>
+    /// <p>If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces that you specify here.</p> 
     /// <p>You cannot include <code>ExcludeFilters</code> and <code>IncludeFilters</code> in the same operation.</p>
-    pub fn exclude_filters(&self) -> std::option::Option<&[crate::model::MetricStreamFilter]> {
+    pub fn exclude_filters(&self) -> std::option::Option<& [crate::model::MetricStreamFilter]> {
         self.exclude_filters.as_deref()
     }
     /// <p>The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon Kinesis Data Firehose delivery stream must already exist and must be in the same account as the metric stream.</p>
-    pub fn firehose_arn(&self) -> std::option::Option<&str> {
+    pub fn firehose_arn(&self) -> std::option::Option<& str> {
         self.firehose_arn.as_deref()
     }
-    /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p>
-    /// <ul>
-    /// <li> <p>firehose:PutRecord</p> </li>
-    /// <li> <p>firehose:PutRecordBatch</p> </li>
+    /// <p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p> 
+    /// <ul> 
+    /// <li> <p>firehose:PutRecord</p> </li> 
+    /// <li> <p>firehose:PutRecordBatch</p> </li> 
     /// </ul>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.</p>
-    pub fn output_format(&self) -> std::option::Option<&crate::model::MetricStreamOutputFormat> {
+    pub fn output_format(&self) -> std::option::Option<& crate::model::MetricStreamOutputFormat> {
         self.output_format.as_ref()
     }
-    /// <p>A list of key-value pairs to associate with the metric stream. You can associate as many as 50 tags with a metric stream.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>A list of key-value pairs to associate with the metric stream. You can associate as many as 50 tags with a metric stream.</p> 
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p> 
     /// <p>You can use this parameter only when you are creating a new metric stream. If you are using this operation to update an existing metric stream, any tags you specify in this parameter are ignored. To change the tags of an existing metric stream, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p>
+    /// <p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p> 
     /// <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9, and so on.</p>
-    pub fn statistics_configurations(
-        &self,
-    ) -> std::option::Option<&[crate::model::MetricStreamStatisticsConfiguration]> {
+    pub fn statistics_configurations(&self) -> std::option::Option<& [crate::model::MetricStreamStatisticsConfiguration]> {
         self.statistics_configurations.as_deref()
     }
     /// <p>If you are creating a metric stream in a monitoring account, specify <code>true</code> to include metrics from source accounts in the metric stream.</p>
@@ -8603,8 +6348,8 @@ impl PutMetricStreamInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutMetricDataInput {
-    /// <p>The namespace for the metric data.</p>
+pub struct PutMetricDataInput  {
+    /// <p>The namespace for the metric data.</p> 
     /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -8613,13 +6358,13 @@ pub struct PutMetricDataInput {
     pub metric_data: std::option::Option<std::vec::Vec<crate::model::MetricDatum>>,
 }
 impl PutMetricDataInput {
-    /// <p>The namespace for the metric data.</p>
+    /// <p>The namespace for the metric data.</p> 
     /// <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The data for the metric. The array can include no more than 1000 metrics per call.</p>
-    pub fn metric_data(&self) -> std::option::Option<&[crate::model::MetricDatum]> {
+    pub fn metric_data(&self) -> std::option::Option<& [crate::model::MetricDatum]> {
         self.metric_data.as_deref()
     }
 }
@@ -8627,7 +6372,7 @@ impl PutMetricDataInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutMetricAlarmInput {
+pub struct PutMetricAlarmInput  {
     /// <p>The name for the alarm. This name must be unique within the Region.</p>
     #[doc(hidden)]
     pub alarm_name: std::option::Option<std::string::String>,
@@ -8637,22 +6382,22 @@ pub struct PutMetricAlarmInput {
     /// <p>Indicates whether actions should be executed during any changes to the alarm state. The default is <code>TRUE</code>.</p>
     #[doc(hidden)]
     pub actions_enabled: std::option::Option<bool>,
-    /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p>
+    /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
+    /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> 
     /// <p>Valid Values (for use with IAM roles): <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code> </p>
     #[doc(hidden)]
     pub ok_actions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> | <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i> </code> </p>
+    /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
+    /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> | <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i> </code> </p> 
     /// <p>Valid Values (for use with IAM roles): <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code> </p>
     #[doc(hidden)]
     pub alarm_actions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p>
+    /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
+    /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> 
     /// <p>Valid Values (for use with IAM roles): <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> </p>
     #[doc(hidden)]
     pub insufficient_data_actions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
+    /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p> 
     /// <p>If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code> array.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
@@ -8668,127 +6413,127 @@ pub struct PutMetricAlarmInput {
     /// <p>The dimensions for the metric specified in <code>MetricName</code>.</p>
     #[doc(hidden)]
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
-    /// <p>The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple of 60.</p>
-    /// <p> <code>Period</code> is required for alarms based on static thresholds. If you are creating an alarm based on a metric math expression, you specify the period for each metric within the objects in the <code>Metrics</code> array.</p>
-    /// <p>Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case, it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+    /// <p>The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple of 60.</p> 
+    /// <p> <code>Period</code> is required for alarms based on static thresholds. If you are creating an alarm based on a metric math expression, you specify the period for each metric within the objects in the <code>Metrics</code> array.</p> 
+    /// <p>Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case, it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p> 
     /// <p>An alarm's total current evaluation period can be no longer than one day, so <code>Period</code> multiplied by <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.</p>
     #[doc(hidden)]
     pub period: std::option::Option<i32>,
-    /// <p>The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p>
-    /// <p>If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works as intended.</p>
-    /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
+    /// <p>The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p> 
+    /// <p>If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works as intended.</p> 
+    /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves unpredictably.</p> 
     /// <p>We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is not published for this metric. Doing so causes the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
     #[doc(hidden)]
     pub unit: std::option::Option<crate::model::StandardUnit>,
-    /// <p>The number of periods over which data is compared to the specified threshold. If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p>
+    /// <p>The number of periods over which data is compared to the specified threshold. If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p> 
     /// <p>An alarm's total current evaluation period can be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>
     #[doc(hidden)]
     pub evaluation_periods: std::option::Option<i32>,
     /// <p>The number of data points that must be breaching to trigger the alarm. This is used only if you are setting an "M out of N" alarm. In that case, this value is the M. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     #[doc(hidden)]
     pub datapoints_to_alarm: std::option::Option<i32>,
-    /// <p>The value against which the specified statistic is compared.</p>
+    /// <p>The value against which the specified statistic is compared.</p> 
     /// <p>This parameter is required for alarms based on static thresholds, but should not be used for alarms based on anomaly detection models.</p>
     #[doc(hidden)]
     pub threshold: std::option::Option<f64>,
-    /// <p> The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>
+    /// <p> The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p> 
     /// <p>The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.</p>
     #[doc(hidden)]
     pub comparison_operator: std::option::Option<crate::model::ComparisonOperator>,
-    /// <p> Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring How CloudWatch Alarms Treats Missing Data</a>.</p>
-    /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p> <note>
-    /// <p>Alarms that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always <code>ignore</code> missing data even if you choose a different option for <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has missing data, alarms that evaluate that metric remain in their current state.</p>
+    /// <p> Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring How CloudWatch Alarms Treats Missing Data</a>.</p> 
+    /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p> <note> 
+    /// <p>Alarms that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always <code>ignore</code> missing data even if you choose a different option for <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has missing data, alarms that evaluate that metric remain in their current state.</p> 
     /// </note>
     #[doc(hidden)]
     pub treat_missing_data: std::option::Option<std::string::String>,
-    /// <p> Used only for alarms based on percentiles. If you specify <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If you specify <code>evaluate</code> or omit this parameter, the alarm is always evaluated and possibly changes state no matter how many data points are available. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based CloudWatch Alarms and Low Data Samples</a>.</p>
+    /// <p> Used only for alarms based on percentiles. If you specify <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If you specify <code>evaluate</code> or omit this parameter, the alarm is always evaluated and possibly changes state no matter how many data points are available. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based CloudWatch Alarms and Low Data Samples</a>.</p> 
     /// <p>Valid Values: <code>evaluate | ignore</code> </p>
     #[doc(hidden)]
     pub evaluate_low_sample_count_percentile: std::option::Option<std::string::String>,
-    /// <p>An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a metric math expression. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
-    /// <p>Each item in the <code>Metrics</code> array either retrieves a metric or performs a math expression.</p>
-    /// <p>One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
+    /// <p>An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a metric math expression. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p> 
+    /// <p>Each item in the <code>Metrics</code> array either retrieves a metric or performs a math expression.</p> 
+    /// <p>One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p> 
     /// <p>If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.</p>
     #[doc(hidden)]
     pub metrics: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
-    /// <p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.</p> 
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p> 
     /// <p>If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored. To change the tags of an existing alarm, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>If this is an alarm based on an anomaly detection model, make this value match the ID of the <code>ANOMALY_DETECTION_BAND</code> function.</p>
-    /// <p>For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.</p>
+    /// <p>If this is an alarm based on an anomaly detection model, make this value match the ID of the <code>ANOMALY_DETECTION_BAND</code> function.</p> 
+    /// <p>For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.</p> 
     /// <p>If your alarm uses this parameter, it cannot have Auto Scaling actions.</p>
     #[doc(hidden)]
     pub threshold_metric_id: std::option::Option<std::string::String>,
 }
 impl PutMetricAlarmInput {
     /// <p>The name for the alarm. This name must be unique within the Region.</p>
-    pub fn alarm_name(&self) -> std::option::Option<&str> {
+    pub fn alarm_name(&self) -> std::option::Option<& str> {
         self.alarm_name.as_deref()
     }
     /// <p>The description for the alarm.</p>
-    pub fn alarm_description(&self) -> std::option::Option<&str> {
+    pub fn alarm_description(&self) -> std::option::Option<& str> {
         self.alarm_description.as_deref()
     }
     /// <p>Indicates whether actions should be executed during any changes to the alarm state. The default is <code>TRUE</code>.</p>
     pub fn actions_enabled(&self) -> std::option::Option<bool> {
         self.actions_enabled
     }
-    /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p>
+    /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
+    /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> 
     /// <p>Valid Values (for use with IAM roles): <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code> </p>
-    pub fn ok_actions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ok_actions(&self) -> std::option::Option<& [std::string::String]> {
         self.ok_actions.as_deref()
     }
-    /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> | <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i> </code> </p>
+    /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
+    /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> | <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i> </code> </p> 
     /// <p>Valid Values (for use with IAM roles): <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code> </p>
-    pub fn alarm_actions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn alarm_actions(&self) -> std::option::Option<& [std::string::String]> {
         self.alarm_actions.as_deref()
     }
-    /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
-    /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p>
+    /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
+    /// <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> 
     /// <p>Valid Values (for use with IAM roles): <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> </p>
-    pub fn insufficient_data_actions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn insufficient_data_actions(&self) -> std::option::Option<& [std::string::String]> {
         self.insufficient_data_actions.as_deref()
     }
-    /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
+    /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p> 
     /// <p>If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code> array.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The namespace for the metric associated specified in <code>MetricName</code>.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
-    pub fn statistic(&self) -> std::option::Option<&crate::model::Statistic> {
+    pub fn statistic(&self) -> std::option::Option<& crate::model::Statistic> {
         self.statistic.as_ref()
     }
     /// <p>The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
-    pub fn extended_statistic(&self) -> std::option::Option<&str> {
+    pub fn extended_statistic(&self) -> std::option::Option<& str> {
         self.extended_statistic.as_deref()
     }
     /// <p>The dimensions for the metric specified in <code>MetricName</code>.</p>
-    pub fn dimensions(&self) -> std::option::Option<&[crate::model::Dimension]> {
+    pub fn dimensions(&self) -> std::option::Option<& [crate::model::Dimension]> {
         self.dimensions.as_deref()
     }
-    /// <p>The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple of 60.</p>
-    /// <p> <code>Period</code> is required for alarms based on static thresholds. If you are creating an alarm based on a metric math expression, you specify the period for each metric within the objects in the <code>Metrics</code> array.</p>
-    /// <p>Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case, it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+    /// <p>The length, in seconds, used each time the metric specified in <code>MetricName</code> is evaluated. Valid values are 10, 30, and any multiple of 60.</p> 
+    /// <p> <code>Period</code> is required for alarms based on static thresholds. If you are creating an alarm based on a metric math expression, you specify the period for each metric within the objects in the <code>Metrics</code> array.</p> 
+    /// <p>Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case, it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p> 
     /// <p>An alarm's total current evaluation period can be no longer than one day, so <code>Period</code> multiplied by <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.</p>
     pub fn period(&self) -> std::option::Option<i32> {
         self.period
     }
-    /// <p>The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p>
-    /// <p>If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works as intended.</p>
-    /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
+    /// <p>The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p> 
+    /// <p>If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works as intended.</p> 
+    /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves unpredictably.</p> 
     /// <p>We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is not published for this metric. Doing so causes the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::model::StandardUnit> {
+    pub fn unit(&self) -> std::option::Option<& crate::model::StandardUnit> {
         self.unit.as_ref()
     }
-    /// <p>The number of periods over which data is compared to the specified threshold. If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p>
+    /// <p>The number of periods over which data is compared to the specified threshold. If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p> 
     /// <p>An alarm's total current evaluation period can be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>
     pub fn evaluation_periods(&self) -> std::option::Option<i32> {
         self.evaluation_periods
@@ -8797,45 +6542,45 @@ impl PutMetricAlarmInput {
     pub fn datapoints_to_alarm(&self) -> std::option::Option<i32> {
         self.datapoints_to_alarm
     }
-    /// <p>The value against which the specified statistic is compared.</p>
+    /// <p>The value against which the specified statistic is compared.</p> 
     /// <p>This parameter is required for alarms based on static thresholds, but should not be used for alarms based on anomaly detection models.</p>
     pub fn threshold(&self) -> std::option::Option<f64> {
         self.threshold
     }
-    /// <p> The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p>
+    /// <p> The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p> 
     /// <p>The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.</p>
-    pub fn comparison_operator(&self) -> std::option::Option<&crate::model::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> std::option::Option<& crate::model::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
-    /// <p> Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring How CloudWatch Alarms Treats Missing Data</a>.</p>
-    /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p> <note>
-    /// <p>Alarms that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always <code>ignore</code> missing data even if you choose a different option for <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has missing data, alarms that evaluate that metric remain in their current state.</p>
+    /// <p> Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring How CloudWatch Alarms Treats Missing Data</a>.</p> 
+    /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p> <note> 
+    /// <p>Alarms that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always <code>ignore</code> missing data even if you choose a different option for <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has missing data, alarms that evaluate that metric remain in their current state.</p> 
     /// </note>
-    pub fn treat_missing_data(&self) -> std::option::Option<&str> {
+    pub fn treat_missing_data(&self) -> std::option::Option<& str> {
         self.treat_missing_data.as_deref()
     }
-    /// <p> Used only for alarms based on percentiles. If you specify <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If you specify <code>evaluate</code> or omit this parameter, the alarm is always evaluated and possibly changes state no matter how many data points are available. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based CloudWatch Alarms and Low Data Samples</a>.</p>
+    /// <p> Used only for alarms based on percentiles. If you specify <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If you specify <code>evaluate</code> or omit this parameter, the alarm is always evaluated and possibly changes state no matter how many data points are available. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based CloudWatch Alarms and Low Data Samples</a>.</p> 
     /// <p>Valid Values: <code>evaluate | ignore</code> </p>
-    pub fn evaluate_low_sample_count_percentile(&self) -> std::option::Option<&str> {
+    pub fn evaluate_low_sample_count_percentile(&self) -> std::option::Option<& str> {
         self.evaluate_low_sample_count_percentile.as_deref()
     }
-    /// <p>An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a metric math expression. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
-    /// <p>Each item in the <code>Metrics</code> array either retrieves a metric or performs a math expression.</p>
-    /// <p>One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p>
+    /// <p>An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a metric math expression. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p> 
+    /// <p>Each item in the <code>Metrics</code> array either retrieves a metric or performs a math expression.</p> 
+    /// <p>One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p> 
     /// <p>If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.</p>
-    pub fn metrics(&self) -> std::option::Option<&[crate::model::MetricDataQuery]> {
+    pub fn metrics(&self) -> std::option::Option<& [crate::model::MetricDataQuery]> {
         self.metrics.as_deref()
     }
-    /// <p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.</p> 
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p> 
     /// <p>If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored. To change the tags of an existing alarm, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>If this is an alarm based on an anomaly detection model, make this value match the ID of the <code>ANOMALY_DETECTION_BAND</code> function.</p>
-    /// <p>For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.</p>
+    /// <p>If this is an alarm based on an anomaly detection model, make this value match the ID of the <code>ANOMALY_DETECTION_BAND</code> function.</p> 
+    /// <p>For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.</p> 
     /// <p>If your alarm uses this parameter, it cannot have Auto Scaling actions.</p>
-    pub fn threshold_metric_id(&self) -> std::option::Option<&str> {
+    pub fn threshold_metric_id(&self) -> std::option::Option<& str> {
         self.threshold_metric_id.as_deref()
     }
 }
@@ -8843,14 +6588,14 @@ impl PutMetricAlarmInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutManagedInsightRulesInput {
+pub struct PutManagedInsightRulesInput  {
     /// <p> A list of <code>ManagedRules</code> to enable. </p>
     #[doc(hidden)]
     pub managed_rules: std::option::Option<std::vec::Vec<crate::model::ManagedRule>>,
 }
 impl PutManagedInsightRulesInput {
     /// <p> A list of <code>ManagedRules</code> to enable. </p>
-    pub fn managed_rules(&self) -> std::option::Option<&[crate::model::ManagedRule]> {
+    pub fn managed_rules(&self) -> std::option::Option<& [crate::model::ManagedRule]> {
         self.managed_rules.as_deref()
     }
 }
@@ -8858,7 +6603,7 @@ impl PutManagedInsightRulesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutInsightRuleInput {
+pub struct PutInsightRuleInput  {
     /// <p>A unique name for the rule.</p>
     #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
@@ -8868,31 +6613,31 @@ pub struct PutInsightRuleInput {
     /// <p>The definition of the rule, as a JSON object. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
     #[doc(hidden)]
     pub rule_definition: std::option::Option<std::string::String>,
-    /// <p>A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50 tags with a rule.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
-    /// <p>To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.</p>
+    /// <p>A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50 tags with a rule.</p> 
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p> 
+    /// <p>To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.</p> 
     /// <p>If you are using this operation to update an existing Contributor Insights rule, any tags you specify in this parameter are ignored. To change the tags of an existing rule, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl PutInsightRuleInput {
     /// <p>A unique name for the rule.</p>
-    pub fn rule_name(&self) -> std::option::Option<&str> {
+    pub fn rule_name(&self) -> std::option::Option<& str> {
         self.rule_name.as_deref()
     }
     /// <p>The state of the rule. Valid values are ENABLED and DISABLED.</p>
-    pub fn rule_state(&self) -> std::option::Option<&str> {
+    pub fn rule_state(&self) -> std::option::Option<& str> {
         self.rule_state.as_deref()
     }
     /// <p>The definition of the rule, as a JSON object. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
-    pub fn rule_definition(&self) -> std::option::Option<&str> {
+    pub fn rule_definition(&self) -> std::option::Option<& str> {
         self.rule_definition.as_deref()
     }
-    /// <p>A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50 tags with a rule.</p>
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
-    /// <p>To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.</p>
+    /// <p>A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50 tags with a rule.</p> 
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p> 
+    /// <p>To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.</p> 
     /// <p>If you are using this operation to update an existing Contributor Insights rule, any tags you specify in this parameter are ignored. To change the tags of an existing rule, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -8900,23 +6645,23 @@ impl PutInsightRuleInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutDashboardInput {
+pub struct PutDashboardInput  {
     /// <p>The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard, replacing its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, "-", and "_". This parameter is required.</p>
     #[doc(hidden)]
     pub dashboard_name: std::option::Option<std::string::String>,
-    /// <p>The detailed information about the dashboard in JSON format, including the widgets to include and their location on the dashboard. This parameter is required.</p>
+    /// <p>The detailed information about the dashboard in JSON format, including the widgets to include and their location on the dashboard. This parameter is required.</p> 
     /// <p>For more information about the syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>.</p>
     #[doc(hidden)]
     pub dashboard_body: std::option::Option<std::string::String>,
 }
 impl PutDashboardInput {
     /// <p>The name of the dashboard. If a dashboard with this name already exists, this call modifies that dashboard, replacing its current contents. Otherwise, a new dashboard is created. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, "-", and "_". This parameter is required.</p>
-    pub fn dashboard_name(&self) -> std::option::Option<&str> {
+    pub fn dashboard_name(&self) -> std::option::Option<& str> {
         self.dashboard_name.as_deref()
     }
-    /// <p>The detailed information about the dashboard in JSON format, including the widgets to include and their location on the dashboard. This parameter is required.</p>
+    /// <p>The detailed information about the dashboard in JSON format, including the widgets to include and their location on the dashboard. This parameter is required.</p> 
     /// <p>For more information about the syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard Body Structure and Syntax</a>.</p>
-    pub fn dashboard_body(&self) -> std::option::Option<&str> {
+    pub fn dashboard_body(&self) -> std::option::Option<& str> {
         self.dashboard_body.as_deref()
     }
 }
@@ -8924,11 +6669,11 @@ impl PutDashboardInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutCompositeAlarmInput {
+pub struct PutCompositeAlarmInput  {
     /// <p>Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. The default is <code>TRUE</code>.</p>
     #[doc(hidden)]
     pub actions_enabled: std::option::Option<bool>,
-    /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
     /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> </p>
     #[doc(hidden)]
     pub alarm_actions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8938,49 +6683,49 @@ pub struct PutCompositeAlarmInput {
     /// <p>The name for the composite alarm. This name must be unique within the Region.</p>
     #[doc(hidden)]
     pub alarm_name: std::option::Option<std::string::String>,
-    /// <p>An expression that specifies which other alarms are to be evaluated to determine this composite alarm's state. For each alarm that you reference, you designate a function that specifies whether that alarm needs to be in ALARM state, OK state, or INSUFFICIENT_DATA state. You can use operators (AND, OR and NOT) to combine multiple functions in a single expression. You can use parenthesis to logically group the functions in your expression.</p>
-    /// <p>You can use either alarm names or ARNs to reference the other alarms that are to be evaluated.</p>
-    /// <p>Functions can include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ALARM("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in ALARM state.</p> </li>
-    /// <li> <p> <code>OK("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in OK state.</p> </li>
-    /// <li> <p> <code>INSUFFICIENT_DATA("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in INSUFFICIENT_DATA state.</p> </li>
-    /// <li> <p> <code>TRUE</code> always evaluates to TRUE.</p> </li>
-    /// <li> <p> <code>FALSE</code> always evaluates to FALSE.</p> </li>
-    /// </ul>
-    /// <p>TRUE and FALSE are useful for testing a complex <code>AlarmRule</code> structure, and for testing your alarm actions.</p>
-    /// <p>Alarm names specified in <code>AlarmRule</code> can be surrounded with double-quotes ("), but do not have to be.</p>
-    /// <p>The following are some examples of <code>AlarmRule</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND ALARM(DiskReadOpsTooHigh)</code> specifies that the composite alarm goes into ALARM state only if both CPUUtilizationTooHigh and DiskReadOpsTooHigh alarms are in ALARM state.</p> </li>
-    /// <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND NOT ALARM(DeploymentInProgress)</code> specifies that the alarm goes to ALARM state if CPUUtilizationTooHigh is in ALARM state and DeploymentInProgress is not in ALARM state. This example reduces alarm noise during a known deployment window.</p> </li>
-    /// <li> <p> <code>(ALARM(CPUUtilizationTooHigh) OR ALARM(DiskReadOpsTooHigh)) AND OK(NetworkOutTooHigh)</code> goes into ALARM state if CPUUtilizationTooHigh OR DiskReadOpsTooHigh is in ALARM state, and if NetworkOutTooHigh is in OK state. This provides another example of using a composite alarm to prevent noise. This rule ensures that you are not notified with an alarm action on high CPU or disk usage if a known network problem is also occurring.</p> </li>
-    /// </ul>
+    /// <p>An expression that specifies which other alarms are to be evaluated to determine this composite alarm's state. For each alarm that you reference, you designate a function that specifies whether that alarm needs to be in ALARM state, OK state, or INSUFFICIENT_DATA state. You can use operators (AND, OR and NOT) to combine multiple functions in a single expression. You can use parenthesis to logically group the functions in your expression.</p> 
+    /// <p>You can use either alarm names or ARNs to reference the other alarms that are to be evaluated.</p> 
+    /// <p>Functions can include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALARM("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in ALARM state.</p> </li> 
+    /// <li> <p> <code>OK("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in OK state.</p> </li> 
+    /// <li> <p> <code>INSUFFICIENT_DATA("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in INSUFFICIENT_DATA state.</p> </li> 
+    /// <li> <p> <code>TRUE</code> always evaluates to TRUE.</p> </li> 
+    /// <li> <p> <code>FALSE</code> always evaluates to FALSE.</p> </li> 
+    /// </ul> 
+    /// <p>TRUE and FALSE are useful for testing a complex <code>AlarmRule</code> structure, and for testing your alarm actions.</p> 
+    /// <p>Alarm names specified in <code>AlarmRule</code> can be surrounded with double-quotes ("), but do not have to be.</p> 
+    /// <p>The following are some examples of <code>AlarmRule</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND ALARM(DiskReadOpsTooHigh)</code> specifies that the composite alarm goes into ALARM state only if both CPUUtilizationTooHigh and DiskReadOpsTooHigh alarms are in ALARM state.</p> </li> 
+    /// <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND NOT ALARM(DeploymentInProgress)</code> specifies that the alarm goes to ALARM state if CPUUtilizationTooHigh is in ALARM state and DeploymentInProgress is not in ALARM state. This example reduces alarm noise during a known deployment window.</p> </li> 
+    /// <li> <p> <code>(ALARM(CPUUtilizationTooHigh) OR ALARM(DiskReadOpsTooHigh)) AND OK(NetworkOutTooHigh)</code> goes into ALARM state if CPUUtilizationTooHigh OR DiskReadOpsTooHigh is in ALARM state, and if NetworkOutTooHigh is in OK state. This provides another example of using a composite alarm to prevent noise. This rule ensures that you are not notified with an alarm action on high CPU or disk usage if a known network problem is also occurring.</p> </li> 
+    /// </ul> 
     /// <p>The <code>AlarmRule</code> can specify as many as 100 "children" alarms. The <code>AlarmRule</code> expression can have as many as 500 elements. Elements are child alarms, TRUE or FALSE statements, and parentheses.</p>
     #[doc(hidden)]
     pub alarm_rule: std::option::Option<std::string::String>,
-    /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
     /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
     #[doc(hidden)]
     pub insufficient_data_actions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
     /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
     #[doc(hidden)]
     pub ok_actions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p>
+    /// <p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p> 
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. </p>
     #[doc(hidden)]
     pub actions_suppressor: std::option::Option<std::string::String>,
-    /// <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
-    /// <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+    /// <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important> 
+    /// <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p> 
     /// </important>
     #[doc(hidden)]
     pub actions_suppressor_wait_period: std::option::Option<i32>,
-    /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
-    /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+    /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important> 
+    /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p> 
     /// </important>
     #[doc(hidden)]
     pub actions_suppressor_extension_period: std::option::Option<i32>,
@@ -8990,68 +6735,68 @@ impl PutCompositeAlarmInput {
     pub fn actions_enabled(&self) -> std::option::Option<bool> {
         self.actions_enabled
     }
-    /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
     /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> </p>
-    pub fn alarm_actions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn alarm_actions(&self) -> std::option::Option<& [std::string::String]> {
         self.alarm_actions.as_deref()
     }
     /// <p>The description for the composite alarm.</p>
-    pub fn alarm_description(&self) -> std::option::Option<&str> {
+    pub fn alarm_description(&self) -> std::option::Option<& str> {
         self.alarm_description.as_deref()
     }
     /// <p>The name for the composite alarm. This name must be unique within the Region.</p>
-    pub fn alarm_name(&self) -> std::option::Option<&str> {
+    pub fn alarm_name(&self) -> std::option::Option<& str> {
         self.alarm_name.as_deref()
     }
-    /// <p>An expression that specifies which other alarms are to be evaluated to determine this composite alarm's state. For each alarm that you reference, you designate a function that specifies whether that alarm needs to be in ALARM state, OK state, or INSUFFICIENT_DATA state. You can use operators (AND, OR and NOT) to combine multiple functions in a single expression. You can use parenthesis to logically group the functions in your expression.</p>
-    /// <p>You can use either alarm names or ARNs to reference the other alarms that are to be evaluated.</p>
-    /// <p>Functions can include the following:</p>
-    /// <ul>
-    /// <li> <p> <code>ALARM("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in ALARM state.</p> </li>
-    /// <li> <p> <code>OK("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in OK state.</p> </li>
-    /// <li> <p> <code>INSUFFICIENT_DATA("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in INSUFFICIENT_DATA state.</p> </li>
-    /// <li> <p> <code>TRUE</code> always evaluates to TRUE.</p> </li>
-    /// <li> <p> <code>FALSE</code> always evaluates to FALSE.</p> </li>
-    /// </ul>
-    /// <p>TRUE and FALSE are useful for testing a complex <code>AlarmRule</code> structure, and for testing your alarm actions.</p>
-    /// <p>Alarm names specified in <code>AlarmRule</code> can be surrounded with double-quotes ("), but do not have to be.</p>
-    /// <p>The following are some examples of <code>AlarmRule</code>:</p>
-    /// <ul>
-    /// <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND ALARM(DiskReadOpsTooHigh)</code> specifies that the composite alarm goes into ALARM state only if both CPUUtilizationTooHigh and DiskReadOpsTooHigh alarms are in ALARM state.</p> </li>
-    /// <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND NOT ALARM(DeploymentInProgress)</code> specifies that the alarm goes to ALARM state if CPUUtilizationTooHigh is in ALARM state and DeploymentInProgress is not in ALARM state. This example reduces alarm noise during a known deployment window.</p> </li>
-    /// <li> <p> <code>(ALARM(CPUUtilizationTooHigh) OR ALARM(DiskReadOpsTooHigh)) AND OK(NetworkOutTooHigh)</code> goes into ALARM state if CPUUtilizationTooHigh OR DiskReadOpsTooHigh is in ALARM state, and if NetworkOutTooHigh is in OK state. This provides another example of using a composite alarm to prevent noise. This rule ensures that you are not notified with an alarm action on high CPU or disk usage if a known network problem is also occurring.</p> </li>
-    /// </ul>
+    /// <p>An expression that specifies which other alarms are to be evaluated to determine this composite alarm's state. For each alarm that you reference, you designate a function that specifies whether that alarm needs to be in ALARM state, OK state, or INSUFFICIENT_DATA state. You can use operators (AND, OR and NOT) to combine multiple functions in a single expression. You can use parenthesis to logically group the functions in your expression.</p> 
+    /// <p>You can use either alarm names or ARNs to reference the other alarms that are to be evaluated.</p> 
+    /// <p>Functions can include the following:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALARM("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in ALARM state.</p> </li> 
+    /// <li> <p> <code>OK("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in OK state.</p> </li> 
+    /// <li> <p> <code>INSUFFICIENT_DATA("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in INSUFFICIENT_DATA state.</p> </li> 
+    /// <li> <p> <code>TRUE</code> always evaluates to TRUE.</p> </li> 
+    /// <li> <p> <code>FALSE</code> always evaluates to FALSE.</p> </li> 
+    /// </ul> 
+    /// <p>TRUE and FALSE are useful for testing a complex <code>AlarmRule</code> structure, and for testing your alarm actions.</p> 
+    /// <p>Alarm names specified in <code>AlarmRule</code> can be surrounded with double-quotes ("), but do not have to be.</p> 
+    /// <p>The following are some examples of <code>AlarmRule</code>:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND ALARM(DiskReadOpsTooHigh)</code> specifies that the composite alarm goes into ALARM state only if both CPUUtilizationTooHigh and DiskReadOpsTooHigh alarms are in ALARM state.</p> </li> 
+    /// <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND NOT ALARM(DeploymentInProgress)</code> specifies that the alarm goes to ALARM state if CPUUtilizationTooHigh is in ALARM state and DeploymentInProgress is not in ALARM state. This example reduces alarm noise during a known deployment window.</p> </li> 
+    /// <li> <p> <code>(ALARM(CPUUtilizationTooHigh) OR ALARM(DiskReadOpsTooHigh)) AND OK(NetworkOutTooHigh)</code> goes into ALARM state if CPUUtilizationTooHigh OR DiskReadOpsTooHigh is in ALARM state, and if NetworkOutTooHigh is in OK state. This provides another example of using a composite alarm to prevent noise. This rule ensures that you are not notified with an alarm action on high CPU or disk usage if a known network problem is also occurring.</p> </li> 
+    /// </ul> 
     /// <p>The <code>AlarmRule</code> can specify as many as 100 "children" alarms. The <code>AlarmRule</code> expression can have as many as 500 elements. Elements are child alarms, TRUE or FALSE statements, and parentheses.</p>
-    pub fn alarm_rule(&self) -> std::option::Option<&str> {
+    pub fn alarm_rule(&self) -> std::option::Option<& str> {
         self.alarm_rule.as_deref()
     }
-    /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
     /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
-    pub fn insufficient_data_actions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn insufficient_data_actions(&self) -> std::option::Option<& [std::string::String]> {
         self.insufficient_data_actions.as_deref()
     }
-    /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+    /// <p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> 
     /// <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
-    pub fn ok_actions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ok_actions(&self) -> std::option::Option<& [std::string::String]> {
         self.ok_actions.as_deref()
     }
-    /// <p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p>
+    /// <p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p> 
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. </p>
-    pub fn actions_suppressor(&self) -> std::option::Option<&str> {
+    pub fn actions_suppressor(&self) -> std::option::Option<& str> {
         self.actions_suppressor.as_deref()
     }
-    /// <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
-    /// <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+    /// <p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important> 
+    /// <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p> 
     /// </important>
     pub fn actions_suppressor_wait_period(&self) -> std::option::Option<i32> {
         self.actions_suppressor_wait_period
     }
-    /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important>
-    /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p>
+    /// <p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important> 
+    /// <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p> 
     /// </important>
     pub fn actions_suppressor_extension_period(&self) -> std::option::Option<i32> {
         self.actions_suppressor_extension_period
@@ -9061,7 +6806,7 @@ impl PutCompositeAlarmInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAnomalyDetectorInput {
+pub struct PutAnomalyDetectorInput  {
     /// <p>The namespace of the metric to create the anomaly detection model for.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
     #[doc(hidden)]
@@ -9078,32 +6823,31 @@ pub struct PutAnomalyDetectorInput {
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
     #[doc(hidden)]
     pub stat: std::option::Option<std::string::String>,
-    /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude when training and updating the model. You can specify as many as 10 time ranges.</p>
+    /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude when training and updating the model. You can specify as many as 10 time ranges.</p> 
     /// <p>The configuration can also include the time zone to use for the metric.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::AnomalyDetectorConfiguration>,
-    /// <p>A single metric anomaly detector to be created.</p>
-    /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
-    /// <ul>
-    /// <li> <p> <code>Dimensions</code> </p> </li>
-    /// <li> <p> <code>MetricName</code> </p> </li>
-    /// <li> <p> <code>Namespace</code> </p> </li>
-    /// <li> <p> <code>Stat</code> </p> </li>
-    /// <li> <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
-    /// </ul>
+    /// <p>A single metric anomaly detector to be created.</p> 
+    /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Dimensions</code> </p> </li> 
+    /// <li> <p> <code>MetricName</code> </p> </li> 
+    /// <li> <p> <code>Namespace</code> </p> </li> 
+    /// <li> <p> <code>Stat</code> </p> </li> 
+    /// <li> <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li> 
+    /// </ul> 
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
     #[doc(hidden)]
-    pub single_metric_anomaly_detector:
-        std::option::Option<crate::model::SingleMetricAnomalyDetector>,
-    /// <p>The metric math anomaly detector to be created.</p>
-    /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
-    /// <ul>
-    /// <li> <p> <code>Dimensions</code> </p> </li>
-    /// <li> <p> <code>MetricName</code> </p> </li>
-    /// <li> <p> <code>Namespace</code> </p> </li>
-    /// <li> <p> <code>Stat</code> </p> </li>
-    /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
-    /// </ul>
+    pub single_metric_anomaly_detector: std::option::Option<crate::model::SingleMetricAnomalyDetector>,
+    /// <p>The metric math anomaly detector to be created.</p> 
+    /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Dimensions</code> </p> </li> 
+    /// <li> <p> <code>MetricName</code> </p> </li> 
+    /// <li> <p> <code>Namespace</code> </p> </li> 
+    /// <li> <p> <code>Stat</code> </p> </li> 
+    /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li> 
+    /// </ul> 
     /// <p>Instead, specify the metric math anomaly detector attributes as part of the property <code>MetricMathAnomalyDetector</code>.</p>
     #[doc(hidden)]
     pub metric_math_anomaly_detector: std::option::Option<crate::model::MetricMathAnomalyDetector>,
@@ -9111,59 +6855,53 @@ pub struct PutAnomalyDetectorInput {
 impl PutAnomalyDetectorInput {
     /// <p>The namespace of the metric to create the anomaly detection model for.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the metric to create the anomaly detection model for.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The metric dimensions to create the anomaly detection model for.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    pub fn dimensions(&self) -> std::option::Option<&[crate::model::Dimension]> {
+    pub fn dimensions(&self) -> std::option::Option<& [crate::model::Dimension]> {
         self.dimensions.as_deref()
     }
     /// <p>The statistic to use for the metric and the anomaly detection model.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    pub fn stat(&self) -> std::option::Option<&str> {
+    pub fn stat(&self) -> std::option::Option<& str> {
         self.stat.as_deref()
     }
-    /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude when training and updating the model. You can specify as many as 10 time ranges.</p>
+    /// <p>The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude when training and updating the model. You can specify as many as 10 time ranges.</p> 
     /// <p>The configuration can also include the time zone to use for the metric.</p>
-    pub fn configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::AnomalyDetectorConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::model::AnomalyDetectorConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>A single metric anomaly detector to be created.</p>
-    /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
-    /// <ul>
-    /// <li> <p> <code>Dimensions</code> </p> </li>
-    /// <li> <p> <code>MetricName</code> </p> </li>
-    /// <li> <p> <code>Namespace</code> </p> </li>
-    /// <li> <p> <code>Stat</code> </p> </li>
-    /// <li> <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
-    /// </ul>
+    /// <p>A single metric anomaly detector to be created.</p> 
+    /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Dimensions</code> </p> </li> 
+    /// <li> <p> <code>MetricName</code> </p> </li> 
+    /// <li> <p> <code>Namespace</code> </p> </li> 
+    /// <li> <p> <code>Stat</code> </p> </li> 
+    /// <li> <p>the <code>MetricMatchAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li> 
+    /// </ul> 
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
-    pub fn single_metric_anomaly_detector(
-        &self,
-    ) -> std::option::Option<&crate::model::SingleMetricAnomalyDetector> {
+    pub fn single_metric_anomaly_detector(&self) -> std::option::Option<& crate::model::SingleMetricAnomalyDetector> {
         self.single_metric_anomaly_detector.as_ref()
     }
-    /// <p>The metric math anomaly detector to be created.</p>
-    /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
-    /// <ul>
-    /// <li> <p> <code>Dimensions</code> </p> </li>
-    /// <li> <p> <code>MetricName</code> </p> </li>
-    /// <li> <p> <code>Namespace</code> </p> </li>
-    /// <li> <p> <code>Stat</code> </p> </li>
-    /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li>
-    /// </ul>
+    /// <p>The metric math anomaly detector to be created.</p> 
+    /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Dimensions</code> </p> </li> 
+    /// <li> <p> <code>MetricName</code> </p> </li> 
+    /// <li> <p> <code>Namespace</code> </p> </li> 
+    /// <li> <p> <code>Stat</code> </p> </li> 
+    /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>PutAnomalyDetectorInput</code> </p> </li> 
+    /// </ul> 
     /// <p>Instead, specify the metric math anomaly detector attributes as part of the property <code>MetricMathAnomalyDetector</code>.</p>
-    pub fn metric_math_anomaly_detector(
-        &self,
-    ) -> std::option::Option<&crate::model::MetricMathAnomalyDetector> {
+    pub fn metric_math_anomaly_detector(&self) -> std::option::Option<& crate::model::MetricMathAnomalyDetector> {
         self.metric_math_anomaly_detector.as_ref()
     }
 }
@@ -9171,20 +6909,20 @@ impl PutAnomalyDetectorInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceInput {
-    /// <p>The ARN of the CloudWatch resource that you want to view tags for.</p>
-    /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
-    /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>
+pub struct ListTagsForResourceInput  {
+    /// <p>The ARN of the CloudWatch resource that you want to view tags for.</p> 
+    /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p> 
+    /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p> 
     /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl ListTagsForResourceInput {
-    /// <p>The ARN of the CloudWatch resource that you want to view tags for.</p>
-    /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p>
-    /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p>
+    /// <p>The ARN of the CloudWatch resource that you want to view tags for.</p> 
+    /// <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p> 
+    /// <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p> 
     /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
 }
@@ -9192,7 +6930,7 @@ impl ListTagsForResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMetricStreamsInput {
+pub struct ListMetricStreamsInput  {
     /// <p>Include this value, if it was returned by the previous call, to get the next set of metric streams.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -9202,7 +6940,7 @@ pub struct ListMetricStreamsInput {
 }
 impl ListMetricStreamsInput {
     /// <p>Include this value, if it was returned by the previous call, to get the next set of metric streams.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in one operation.</p>
@@ -9214,7 +6952,7 @@ impl ListMetricStreamsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMetricsInput {
+pub struct ListMetricsInput  {
     /// <p>The metric namespace to filter against. Only the namespace that matches exactly will be returned.</p>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -9227,11 +6965,11 @@ pub struct ListMetricsInput {
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p>
+    /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p> 
     /// <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 40 minutes more than the specified time interval.</p>
     #[doc(hidden)]
     pub recently_active: std::option::Option<crate::model::RecentlyActive>,
-    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p>
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p> 
     /// <p>The default is <code>false</code>.</p>
     #[doc(hidden)]
     pub include_linked_accounts: bool,
@@ -9241,33 +6979,33 @@ pub struct ListMetricsInput {
 }
 impl ListMetricsInput {
     /// <p>The metric namespace to filter against. Only the namespace that matches exactly will be returned.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the metric to filter against. Only the metrics with names that match exactly will be returned.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The dimensions to filter against. Only the dimensions that match exactly will be returned.</p>
-    pub fn dimensions(&self) -> std::option::Option<&[crate::model::DimensionFilter]> {
+    pub fn dimensions(&self) -> std::option::Option<& [crate::model::DimensionFilter]> {
         self.dimensions.as_deref()
     }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p>
+    /// <p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p> 
     /// <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 40 minutes more than the specified time interval.</p>
-    pub fn recently_active(&self) -> std::option::Option<&crate::model::RecentlyActive> {
+    pub fn recently_active(&self) -> std::option::Option<& crate::model::RecentlyActive> {
         self.recently_active.as_ref()
     }
-    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p>
+    /// <p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p> 
     /// <p>The default is <code>false</code>.</p>
     pub fn include_linked_accounts(&self) -> bool {
         self.include_linked_accounts
     }
     /// <p>When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.</p>
-    pub fn owning_account(&self) -> std::option::Option<&str> {
+    pub fn owning_account(&self) -> std::option::Option<& str> {
         self.owning_account.as_deref()
     }
 }
@@ -9275,7 +7013,7 @@ impl ListMetricsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListManagedInsightRulesInput {
+pub struct ListManagedInsightRulesInput  {
     /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -9288,11 +7026,11 @@ pub struct ListManagedInsightRulesInput {
 }
 impl ListManagedInsightRulesInput {
     /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p> Include this value to get the next set of rules if the value was returned by the previous operation. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>. </p>
@@ -9304,7 +7042,7 @@ impl ListManagedInsightRulesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDashboardsInput {
+pub struct ListDashboardsInput  {
     /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_". </p>
     #[doc(hidden)]
     pub dashboard_name_prefix: std::option::Option<std::string::String>,
@@ -9314,11 +7052,11 @@ pub struct ListDashboardsInput {
 }
 impl ListDashboardsInput {
     /// <p>If you specify this parameter, only the dashboards with names starting with the specified string are listed. The maximum length is 255, and valid characters are A-Z, a-z, 0-9, ".", "-", and "_". </p>
-    pub fn dashboard_name_prefix(&self) -> std::option::Option<&str> {
+    pub fn dashboard_name_prefix(&self) -> std::option::Option<& str> {
         self.dashboard_name_prefix.as_deref()
     }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -9326,67 +7064,67 @@ impl ListDashboardsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMetricWidgetImageInput {
-    /// <p>A JSON string that defines the bitmap graph to be retrieved. The string includes the metrics to include in the graph, statistics, annotations, title, axis limits, and so on. You can include only one <code>MetricWidget</code> parameter in each <code>GetMetricWidgetImage</code> call.</p>
-    /// <p>For more information about the syntax of <code>MetricWidget</code> see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Metric-Widget-Structure.html">GetMetricWidgetImage: Metric Widget Structure and Syntax</a>.</p>
+pub struct GetMetricWidgetImageInput  {
+    /// <p>A JSON string that defines the bitmap graph to be retrieved. The string includes the metrics to include in the graph, statistics, annotations, title, axis limits, and so on. You can include only one <code>MetricWidget</code> parameter in each <code>GetMetricWidgetImage</code> call.</p> 
+    /// <p>For more information about the syntax of <code>MetricWidget</code> see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Metric-Widget-Structure.html">GetMetricWidgetImage: Metric Widget Structure and Syntax</a>.</p> 
     /// <p>If any metric on the graph could not load all the requested data points, an orange triangle with an exclamation point appears next to the graph legend.</p>
     #[doc(hidden)]
     pub metric_widget: std::option::Option<std::string::String>,
-    /// <p>The format of the resulting image. Only PNG images are supported.</p>
-    /// <p>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the content-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code> field. For example:</p>
-    /// <p> <code>
+    /// <p>The format of the resulting image. Only PNG images are supported.</p> 
+    /// <p>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the content-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code> field. For example:</p> 
+    /// <p> <code> 
     /// <getmetricwidgetimageresponse xmlns="<URLstring">
     /// &gt;
-    /// </getmetricwidgetimageresponse></code> </p>
-    /// <p> <code>
-    /// <getmetricwidgetimageresult></getmetricwidgetimageresult></code> </p>
-    /// <p> <code>
-    /// <metricwidgetimage></metricwidgetimage></code> </p>
-    /// <p> <code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p>
-    /// <p> <code> </code> </p>
-    /// <p> <code> </code> </p>
-    /// <p> <code>
-    /// <responsemetadata></responsemetadata></code> </p>
-    /// <p> <code>
+    /// </getmetricwidgetimageresponse></code> </p> 
+    /// <p> <code> 
+    /// <getmetricwidgetimageresult></getmetricwidgetimageresult></code> </p> 
+    /// <p> <code> 
+    /// <metricwidgetimage></metricwidgetimage></code> </p> 
+    /// <p> <code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p> 
+    /// <p> <code> </code> </p> 
+    /// <p> <code> </code> </p> 
+    /// <p> <code> 
+    /// <responsemetadata></responsemetadata></code> </p> 
+    /// <p> <code> 
     /// <requestid>
     /// 6f0d4192-4d42-11e8-82c1-f539a07e0e3b
-    /// </requestid></code> </p>
-    /// <p> <code> </code> </p>
-    /// <p> <code></code> </p>
+    /// </requestid></code> </p> 
+    /// <p> <code> </code> </p> 
+    /// <p> <code></code> </p> 
     /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image. </p>
     #[doc(hidden)]
     pub output_format: std::option::Option<std::string::String>,
 }
 impl GetMetricWidgetImageInput {
-    /// <p>A JSON string that defines the bitmap graph to be retrieved. The string includes the metrics to include in the graph, statistics, annotations, title, axis limits, and so on. You can include only one <code>MetricWidget</code> parameter in each <code>GetMetricWidgetImage</code> call.</p>
-    /// <p>For more information about the syntax of <code>MetricWidget</code> see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Metric-Widget-Structure.html">GetMetricWidgetImage: Metric Widget Structure and Syntax</a>.</p>
+    /// <p>A JSON string that defines the bitmap graph to be retrieved. The string includes the metrics to include in the graph, statistics, annotations, title, axis limits, and so on. You can include only one <code>MetricWidget</code> parameter in each <code>GetMetricWidgetImage</code> call.</p> 
+    /// <p>For more information about the syntax of <code>MetricWidget</code> see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Metric-Widget-Structure.html">GetMetricWidgetImage: Metric Widget Structure and Syntax</a>.</p> 
     /// <p>If any metric on the graph could not load all the requested data points, an orange triangle with an exclamation point appears next to the graph legend.</p>
-    pub fn metric_widget(&self) -> std::option::Option<&str> {
+    pub fn metric_widget(&self) -> std::option::Option<& str> {
         self.metric_widget.as_deref()
     }
-    /// <p>The format of the resulting image. Only PNG images are supported.</p>
-    /// <p>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the content-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code> field. For example:</p>
-    /// <p> <code>
+    /// <p>The format of the resulting image. Only PNG images are supported.</p> 
+    /// <p>The default is <code>png</code>. If you specify <code>png</code>, the API returns an HTTP response with the content-type set to <code>text/xml</code>. The image data is in a <code>MetricWidgetImage</code> field. For example:</p> 
+    /// <p> <code> 
     /// <getmetricwidgetimageresponse xmlns="<URLstring">
     /// &gt;
-    /// </getmetricwidgetimageresponse></code> </p>
-    /// <p> <code>
-    /// <getmetricwidgetimageresult></getmetricwidgetimageresult></code> </p>
-    /// <p> <code>
-    /// <metricwidgetimage></metricwidgetimage></code> </p>
-    /// <p> <code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p>
-    /// <p> <code> </code> </p>
-    /// <p> <code> </code> </p>
-    /// <p> <code>
-    /// <responsemetadata></responsemetadata></code> </p>
-    /// <p> <code>
+    /// </getmetricwidgetimageresponse></code> </p> 
+    /// <p> <code> 
+    /// <getmetricwidgetimageresult></getmetricwidgetimageresult></code> </p> 
+    /// <p> <code> 
+    /// <metricwidgetimage></metricwidgetimage></code> </p> 
+    /// <p> <code> iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p> 
+    /// <p> <code> </code> </p> 
+    /// <p> <code> </code> </p> 
+    /// <p> <code> 
+    /// <responsemetadata></responsemetadata></code> </p> 
+    /// <p> <code> 
     /// <requestid>
     /// 6f0d4192-4d42-11e8-82c1-f539a07e0e3b
-    /// </requestid></code> </p>
-    /// <p> <code> </code> </p>
-    /// <p> <code></code> </p>
+    /// </requestid></code> </p> 
+    /// <p> <code> </code> </p> 
+    /// <p> <code></code> </p> 
     /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>, and the body of the response is a PNG image. </p>
-    pub fn output_format(&self) -> std::option::Option<&str> {
+    pub fn output_format(&self) -> std::option::Option<& str> {
         self.output_format.as_deref()
     }
 }
@@ -9394,14 +7132,14 @@ impl GetMetricWidgetImageInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMetricStreamInput {
+pub struct GetMetricStreamInput  {
     /// <p>The name of the metric stream to retrieve information about.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetMetricStreamInput {
     /// <p>The name of the metric stream to retrieve information about.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -9409,7 +7147,7 @@ impl GetMetricStreamInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMetricStatisticsInput {
+pub struct GetMetricStatisticsInput  {
     /// <p>The namespace of the metric, with or without spaces.</p>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -9419,27 +7157,27 @@ pub struct GetMetricStatisticsInput {
     /// <p>The dimensions. If the metric contains multiple dimensions, you must include a value for each dimension. CloudWatch treats each unique combination of dimensions as a separate metric. If a specific combination of dimensions was not published, you can't retrieve statistics for it. You must specify the same dimensions that were used when the metrics were created. For an example, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
     #[doc(hidden)]
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
-    /// <p>The time stamp that determines the first data point to return. Start times are evaluated relative to the time that CloudWatch receives the request.</p>
-    /// <p>The value specified is inclusive; results include data points with the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).</p>
-    /// <p>CloudWatch rounds the specified time stamp as follows:</p>
-    /// <ul>
-    /// <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li>
-    /// <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li>
-    /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li>
-    /// </ul>
+    /// <p>The time stamp that determines the first data point to return. Start times are evaluated relative to the time that CloudWatch receives the request.</p> 
+    /// <p>The value specified is inclusive; results include data points with the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).</p> 
+    /// <p>CloudWatch rounds the specified time stamp as follows:</p> 
+    /// <ul> 
+    /// <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li> 
+    /// <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li> 
+    /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li> 
+    /// </ul> 
     /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a period of 5 seconds, you receive data timestamped between 15:02:15 and 15:07:15. </p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time stamp that determines the last data point to return.</p>
+    /// <p>The time stamp that determines the last data point to return.</p> 
     /// <p>The value specified is exclusive; results include data points up to the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>
-    /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>
-    /// <ul>
-    /// <li> <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p> </li>
-    /// <li> <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li>
-    /// <li> <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li>
+    /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p> 
+    /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p> 
+    /// <ul> 
+    /// <li> <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p> </li> 
+    /// <li> <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li> 
+    /// <li> <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub period: std::option::Option<i32>,
@@ -9455,54 +7193,54 @@ pub struct GetMetricStatisticsInput {
 }
 impl GetMetricStatisticsInput {
     /// <p>The namespace of the metric, with or without spaces.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the metric, with or without spaces.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The dimensions. If the metric contains multiple dimensions, you must include a value for each dimension. CloudWatch treats each unique combination of dimensions as a separate metric. If a specific combination of dimensions was not published, you can't retrieve statistics for it. You must specify the same dimensions that were used when the metrics were created. For an example, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-    pub fn dimensions(&self) -> std::option::Option<&[crate::model::Dimension]> {
+    pub fn dimensions(&self) -> std::option::Option<& [crate::model::Dimension]> {
         self.dimensions.as_deref()
     }
-    /// <p>The time stamp that determines the first data point to return. Start times are evaluated relative to the time that CloudWatch receives the request.</p>
-    /// <p>The value specified is inclusive; results include data points with the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).</p>
-    /// <p>CloudWatch rounds the specified time stamp as follows:</p>
-    /// <ul>
-    /// <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li>
-    /// <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li>
-    /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li>
-    /// </ul>
+    /// <p>The time stamp that determines the first data point to return. Start times are evaluated relative to the time that CloudWatch receives the request.</p> 
+    /// <p>The value specified is inclusive; results include data points with the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-03T23:00:00Z).</p> 
+    /// <p>CloudWatch rounds the specified time stamp as follows:</p> 
+    /// <ul> 
+    /// <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li> 
+    /// <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li> 
+    /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li> 
+    /// </ul> 
     /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a period of 5 seconds, you receive data timestamped between 15:02:15 and 15:07:15. </p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The time stamp that determines the last data point to return.</p>
+    /// <p>The time stamp that determines the last data point to return.</p> 
     /// <p>The value specified is exclusive; results include data points up to the specified time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example, 2016-10-10T23:00:00Z).</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>
-    /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>
-    /// <ul>
-    /// <li> <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p> </li>
-    /// <li> <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li>
-    /// <li> <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li>
+    /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p> 
+    /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p> 
+    /// <ul> 
+    /// <li> <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p> </li> 
+    /// <li> <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p> </li> 
+    /// <li> <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p> </li> 
     /// </ul>
     pub fn period(&self) -> std::option::Option<i32> {
         self.period
     }
     /// <p>The metric statistics, other than percentile. For percentile statistics, use <code>ExtendedStatistics</code>. When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
-    pub fn statistics(&self) -> std::option::Option<&[crate::model::Statistic]> {
+    pub fn statistics(&self) -> std::option::Option<& [crate::model::Statistic]> {
         self.statistics.as_deref()
     }
     /// <p>The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both. Percentile statistics are not available for metrics when any of the metric values are negative numbers.</p>
-    pub fn extended_statistics(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn extended_statistics(&self) -> std::option::Option<& [std::string::String]> {
         self.extended_statistics.as_deref()
     }
     /// <p>The unit for a given metric. If you omit <code>Unit</code>, all data that was collected with any unit is returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified. If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::model::StandardUnit> {
+    pub fn unit(&self) -> std::option::Option<& crate::model::StandardUnit> {
         self.unit.as_ref()
     }
 }
@@ -9510,24 +7248,24 @@ impl GetMetricStatisticsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMetricDataInput {
+pub struct GetMetricDataInput  {
     /// <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, a Metrics Insights query, or a math expression to perform on retrieved data. </p>
     #[doc(hidden)]
     pub metric_data_queries: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
-    /// <p>The time stamp indicating the earliest data to be returned.</p>
-    /// <p>The value specified is inclusive; results include data points with the specified time stamp. </p>
-    /// <p>CloudWatch rounds the specified time stamp as follows:</p>
-    /// <ul>
-    /// <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li>
-    /// <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li>
-    /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li>
-    /// </ul>
-    /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a period of 5 seconds, you receive data timestamped between 15:02:15 and 15:07:15. </p>
+    /// <p>The time stamp indicating the earliest data to be returned.</p> 
+    /// <p>The value specified is inclusive; results include data points with the specified time stamp. </p> 
+    /// <p>CloudWatch rounds the specified time stamp as follows:</p> 
+    /// <ul> 
+    /// <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li> 
+    /// <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li> 
+    /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li> 
+    /// </ul> 
+    /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a period of 5 seconds, you receive data timestamped between 15:02:15 and 15:07:15. </p> 
     /// <p>For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a faster response from CloudWatch than setting 12:07 or 12:29 as the <code>StartTime</code>.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time stamp indicating the latest data to be returned.</p>
-    /// <p>The value specified is exclusive; results include data points up to the specified time stamp.</p>
+    /// <p>The time stamp indicating the latest data to be returned.</p> 
+    /// <p>The value specified is exclusive; results include data points up to the specified time stamp.</p> 
     /// <p>For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster response from CloudWatch than setting 12:07 or 12:29 as the <code>EndTime</code>.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -9546,34 +7284,34 @@ pub struct GetMetricDataInput {
 }
 impl GetMetricDataInput {
     /// <p>The metric queries to be returned. A single <code>GetMetricData</code> call can include as many as 500 <code>MetricDataQuery</code> structures. Each of these structures can specify either a metric to retrieve, a Metrics Insights query, or a math expression to perform on retrieved data. </p>
-    pub fn metric_data_queries(&self) -> std::option::Option<&[crate::model::MetricDataQuery]> {
+    pub fn metric_data_queries(&self) -> std::option::Option<& [crate::model::MetricDataQuery]> {
         self.metric_data_queries.as_deref()
     }
-    /// <p>The time stamp indicating the earliest data to be returned.</p>
-    /// <p>The value specified is inclusive; results include data points with the specified time stamp. </p>
-    /// <p>CloudWatch rounds the specified time stamp as follows:</p>
-    /// <ul>
-    /// <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li>
-    /// <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li>
-    /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li>
-    /// </ul>
-    /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a period of 5 seconds, you receive data timestamped between 15:02:15 and 15:07:15. </p>
+    /// <p>The time stamp indicating the earliest data to be returned.</p> 
+    /// <p>The value specified is inclusive; results include data points with the specified time stamp. </p> 
+    /// <p>CloudWatch rounds the specified time stamp as follows:</p> 
+    /// <ul> 
+    /// <li> <p>Start time less than 15 days ago - Round down to the nearest whole minute. For example, 12:32:34 is rounded down to 12:32:00.</p> </li> 
+    /// <li> <p>Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval. For example, 12:32:34 is rounded down to 12:30:00.</p> </li> 
+    /// <li> <p>Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval. For example, 12:32:34 is rounded down to 12:00:00.</p> </li> 
+    /// </ul> 
+    /// <p>If you set <code>Period</code> to 5, 10, or 30, the start time of your request is rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous 10-second period, the start time of your request is rounded down and you receive data from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes of data, using a period of 5 seconds, you receive data timestamped between 15:02:15 and 15:07:15. </p> 
     /// <p>For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a faster response from CloudWatch than setting 12:07 or 12:29 as the <code>StartTime</code>.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The time stamp indicating the latest data to be returned.</p>
-    /// <p>The value specified is exclusive; results include data points up to the specified time stamp.</p>
+    /// <p>The time stamp indicating the latest data to be returned.</p> 
+    /// <p>The value specified is exclusive; results include data points up to the specified time stamp.</p> 
     /// <p>For better performance, specify <code>StartTime</code> and <code>EndTime</code> values that align with the value of the metric's <code>Period</code> and sync up with the beginning and end of an hour. For example, if the <code>Period</code> of a metric is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster response from CloudWatch than setting 12:07 or 12:29 as the <code>EndTime</code>.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Include this value, if it was returned by the previous <code>GetMetricData</code> operation, to get the next set of data points.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The order in which data points should be returned. <code>TimestampDescending</code> returns the newest data first and paginates when the <code>MaxDatapoints</code> limit is reached. <code>TimestampAscending</code> returns the oldest data first and paginates when the <code>MaxDatapoints</code> limit is reached.</p>
-    pub fn scan_by(&self) -> std::option::Option<&crate::model::ScanBy> {
+    pub fn scan_by(&self) -> std::option::Option<& crate::model::ScanBy> {
         self.scan_by.as_ref()
     }
     /// <p>The maximum number of data points the request should return before paginating. If you omit this, the default of 100,800 is used.</p>
@@ -9581,7 +7319,7 @@ impl GetMetricDataInput {
         self.max_datapoints
     }
     /// <p>This structure includes the <code>Timezone</code> parameter, which you can use to specify your time zone so that the labels of returned data display the correct time for your time zone. </p>
-    pub fn label_options(&self) -> std::option::Option<&crate::model::LabelOptions> {
+    pub fn label_options(&self) -> std::option::Option<& crate::model::LabelOptions> {
         self.label_options.as_ref()
     }
 }
@@ -9589,7 +7327,7 @@ impl GetMetricDataInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInsightRuleReportInput {
+pub struct GetInsightRuleReportInput  {
     /// <p>The name of the rule that you want to see data from.</p>
     #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
@@ -9605,15 +7343,15 @@ pub struct GetInsightRuleReportInput {
     /// <p>The maximum number of contributors to include in the report. The range is 1 to 100. If you omit this, the default of 10 is used.</p>
     #[doc(hidden)]
     pub max_contributor_count: std::option::Option<i32>,
-    /// <p>Specifies which metrics to use for aggregation of contributor values for the report. You can specify one or more of the following metrics:</p>
-    /// <ul>
-    /// <li> <p> <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p> </li>
-    /// <li> <p> <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p> </li>
-    /// <li> <p> <code>SampleCount</code> -- the number of data points matched by the rule.</p> </li>
-    /// <li> <p> <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p> </li>
-    /// <li> <p> <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p> </li>
-    /// <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li>
-    /// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li>
+    /// <p>Specifies which metrics to use for aggregation of contributor values for the report. You can specify one or more of the following metrics:</p> 
+    /// <ul> 
+    /// <li> <p> <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p> </li> 
+    /// <li> <p> <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p> </li> 
+    /// <li> <p> <code>SampleCount</code> -- the number of data points matched by the rule.</p> </li> 
+    /// <li> <p> <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p> </li> 
+    /// <li> <p> <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p> </li> 
+    /// <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li> 
+    /// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub metrics: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9623,15 +7361,15 @@ pub struct GetInsightRuleReportInput {
 }
 impl GetInsightRuleReportInput {
     /// <p>The name of the rule that you want to see data from.</p>
-    pub fn rule_name(&self) -> std::option::Option<&str> {
+    pub fn rule_name(&self) -> std::option::Option<& str> {
         self.rule_name.as_deref()
     }
     /// <p>The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The period, in seconds, to use for the statistics in the <code>InsightRuleMetricDatapoint</code> results.</p>
@@ -9642,21 +7380,21 @@ impl GetInsightRuleReportInput {
     pub fn max_contributor_count(&self) -> std::option::Option<i32> {
         self.max_contributor_count
     }
-    /// <p>Specifies which metrics to use for aggregation of contributor values for the report. You can specify one or more of the following metrics:</p>
-    /// <ul>
-    /// <li> <p> <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p> </li>
-    /// <li> <p> <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p> </li>
-    /// <li> <p> <code>SampleCount</code> -- the number of data points matched by the rule.</p> </li>
-    /// <li> <p> <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p> </li>
-    /// <li> <p> <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p> </li>
-    /// <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li>
-    /// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li>
+    /// <p>Specifies which metrics to use for aggregation of contributor values for the report. You can specify one or more of the following metrics:</p> 
+    /// <ul> 
+    /// <li> <p> <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p> </li> 
+    /// <li> <p> <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p> </li> 
+    /// <li> <p> <code>SampleCount</code> -- the number of data points matched by the rule.</p> </li> 
+    /// <li> <p> <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p> </li> 
+    /// <li> <p> <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p> </li> 
+    /// <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li> 
+    /// <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li> 
     /// </ul>
-    pub fn metrics(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn metrics(&self) -> std::option::Option<& [std::string::String]> {
         self.metrics.as_deref()
     }
     /// <p>Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.</p>
-    pub fn order_by(&self) -> std::option::Option<&str> {
+    pub fn order_by(&self) -> std::option::Option<& str> {
         self.order_by.as_deref()
     }
 }
@@ -9664,14 +7402,14 @@ impl GetInsightRuleReportInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDashboardInput {
+pub struct GetDashboardInput  {
     /// <p>The name of the dashboard to be described.</p>
     #[doc(hidden)]
     pub dashboard_name: std::option::Option<std::string::String>,
 }
 impl GetDashboardInput {
     /// <p>The name of the dashboard to be described.</p>
-    pub fn dashboard_name(&self) -> std::option::Option<&str> {
+    pub fn dashboard_name(&self) -> std::option::Option<& str> {
         self.dashboard_name.as_deref()
     }
 }
@@ -9679,14 +7417,14 @@ impl GetDashboardInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableInsightRulesInput {
+pub struct EnableInsightRulesInput  {
     /// <p>An array of the rule names to enable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
     #[doc(hidden)]
     pub rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EnableInsightRulesInput {
     /// <p>An array of the rule names to enable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-    pub fn rule_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn rule_names(&self) -> std::option::Option<& [std::string::String]> {
         self.rule_names.as_deref()
     }
 }
@@ -9694,14 +7432,14 @@ impl EnableInsightRulesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableAlarmActionsInput {
+pub struct EnableAlarmActionsInput  {
     /// <p>The names of the alarms.</p>
     #[doc(hidden)]
     pub alarm_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EnableAlarmActionsInput {
     /// <p>The names of the alarms.</p>
-    pub fn alarm_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn alarm_names(&self) -> std::option::Option<& [std::string::String]> {
         self.alarm_names.as_deref()
     }
 }
@@ -9709,14 +7447,14 @@ impl EnableAlarmActionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableInsightRulesInput {
+pub struct DisableInsightRulesInput  {
     /// <p>An array of the rule names to disable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
     #[doc(hidden)]
     pub rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisableInsightRulesInput {
     /// <p>An array of the rule names to disable. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-    pub fn rule_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn rule_names(&self) -> std::option::Option<& [std::string::String]> {
         self.rule_names.as_deref()
     }
 }
@@ -9724,14 +7462,14 @@ impl DisableInsightRulesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableAlarmActionsInput {
+pub struct DisableAlarmActionsInput  {
     /// <p>The names of the alarms.</p>
     #[doc(hidden)]
     pub alarm_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DisableAlarmActionsInput {
     /// <p>The names of the alarms.</p>
-    pub fn alarm_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn alarm_names(&self) -> std::option::Option<& [std::string::String]> {
         self.alarm_names.as_deref()
     }
 }
@@ -9739,7 +7477,7 @@ impl DisableAlarmActionsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInsightRulesInput {
+pub struct DescribeInsightRulesInput  {
     /// <p>Include this value, if it was returned by the previous operation, to get the next set of rules.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -9749,7 +7487,7 @@ pub struct DescribeInsightRulesInput {
 }
 impl DescribeInsightRulesInput {
     /// <p>Include this value, if it was returned by the previous operation, to get the next set of rules.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in one operation. If you omit this parameter, the default of 500 is used.</p>
@@ -9761,11 +7499,11 @@ impl DescribeInsightRulesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAnomalyDetectorsInput {
+pub struct DescribeAnomalyDetectorsInput  {
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p>
+    /// <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p> 
     /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -9780,35 +7518,32 @@ pub struct DescribeAnomalyDetectorsInput {
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
     /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to <code>SINGLE_METRIC</code>.</p>
     #[doc(hidden)]
-    pub anomaly_detector_types:
-        std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorType>>,
+    pub anomaly_detector_types: std::option::Option<std::vec::Vec<crate::model::AnomalyDetectorType>>,
 }
 impl DescribeAnomalyDetectorsInput {
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p>
+    /// <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p> 
     /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>Limits the results to only the anomaly detection models that are associated with the specified namespace.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric name. If there are multiple metrics with this name in different namespaces that have anomaly detection models, they're all returned.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric dimensions. If there are multiple metrics that have these dimensions and have anomaly detection models associated, they're all returned.</p>
-    pub fn dimensions(&self) -> std::option::Option<&[crate::model::Dimension]> {
+    pub fn dimensions(&self) -> std::option::Option<& [crate::model::Dimension]> {
         self.dimensions.as_deref()
     }
     /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to <code>SINGLE_METRIC</code>.</p>
-    pub fn anomaly_detector_types(
-        &self,
-    ) -> std::option::Option<&[crate::model::AnomalyDetectorType]> {
+    pub fn anomaly_detector_types(&self) -> std::option::Option<& [crate::model::AnomalyDetectorType]> {
         self.anomaly_detector_types.as_deref()
     }
 }
@@ -9816,7 +7551,7 @@ impl DescribeAnomalyDetectorsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAlarmsForMetricInput {
+pub struct DescribeAlarmsForMetricInput  {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
@@ -9841,23 +7576,23 @@ pub struct DescribeAlarmsForMetricInput {
 }
 impl DescribeAlarmsForMetricInput {
     /// <p>The name of the metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The namespace of the metric.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The statistic for the metric, other than percentiles. For percentile statistics, use <code>ExtendedStatistics</code>.</p>
-    pub fn statistic(&self) -> std::option::Option<&crate::model::Statistic> {
+    pub fn statistic(&self) -> std::option::Option<& crate::model::Statistic> {
         self.statistic.as_ref()
     }
     /// <p>The percentile statistic for the metric. Specify a value between p0.0 and p100.</p>
-    pub fn extended_statistic(&self) -> std::option::Option<&str> {
+    pub fn extended_statistic(&self) -> std::option::Option<& str> {
         self.extended_statistic.as_deref()
     }
     /// <p>The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in order for the call to succeed.</p>
-    pub fn dimensions(&self) -> std::option::Option<&[crate::model::Dimension]> {
+    pub fn dimensions(&self) -> std::option::Option<& [crate::model::Dimension]> {
         self.dimensions.as_deref()
     }
     /// <p>The period, in seconds, over which the statistic is applied.</p>
@@ -9865,7 +7600,7 @@ impl DescribeAlarmsForMetricInput {
         self.period
     }
     /// <p>The unit for the metric.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::model::StandardUnit> {
+    pub fn unit(&self) -> std::option::Option<& crate::model::StandardUnit> {
         self.unit.as_ref()
     }
 }
@@ -9873,26 +7608,26 @@ impl DescribeAlarmsForMetricInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAlarmsInput {
+pub struct DescribeAlarmsInput  {
     /// <p>The names of the alarms to retrieve information about.</p>
     #[doc(hidden)]
     pub alarm_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p>
+    /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p> 
     /// <p>If this parameter is specified, you cannot specify <code>AlarmNames</code>.</p>
     #[doc(hidden)]
     pub alarm_name_prefix: std::option::Option<std::string::String>,
     /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
     #[doc(hidden)]
     pub alarm_types: std::option::Option<std::vec::Vec<crate::model::AlarmType>>,
-    /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns information about the "children" alarms of the alarm you specify. These are the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not returned.</p>
-    /// <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>
-    /// <p>Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
+    /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns information about the "children" alarms of the alarm you specify. These are the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not returned.</p> 
+    /// <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note> 
+    /// <p>Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p> 
     /// </note>
     #[doc(hidden)]
     pub children_of_alarm_name: std::option::Option<std::string::String>,
-    /// <p>If you use this parameter and specify the name of a metric or composite alarm, the operation returns information about the "parent" alarms of the alarm you specify. These are the composite alarms that have <code>AlarmRule</code> parameters that reference the alarm named in <code>ParentsOfAlarmName</code>. Information about the alarm that you specify in <code>ParentsOfAlarmName</code> is not returned.</p>
-    /// <p>If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>
-    /// <p>Only the Alarm Name and ARN are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
+    /// <p>If you use this parameter and specify the name of a metric or composite alarm, the operation returns information about the "parent" alarms of the alarm you specify. These are the composite alarms that have <code>AlarmRule</code> parameters that reference the alarm named in <code>ParentsOfAlarmName</code>. Information about the alarm that you specify in <code>ParentsOfAlarmName</code> is not returned.</p> 
+    /// <p>If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note> 
+    /// <p>Only the Alarm Name and ARN are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p> 
     /// </note>
     #[doc(hidden)]
     pub parents_of_alarm_name: std::option::Option<std::string::String>,
@@ -9911,38 +7646,38 @@ pub struct DescribeAlarmsInput {
 }
 impl DescribeAlarmsInput {
     /// <p>The names of the alarms to retrieve information about.</p>
-    pub fn alarm_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn alarm_names(&self) -> std::option::Option<& [std::string::String]> {
         self.alarm_names.as_deref()
     }
-    /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p>
+    /// <p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p> 
     /// <p>If this parameter is specified, you cannot specify <code>AlarmNames</code>.</p>
-    pub fn alarm_name_prefix(&self) -> std::option::Option<&str> {
+    pub fn alarm_name_prefix(&self) -> std::option::Option<& str> {
         self.alarm_name_prefix.as_deref()
     }
     /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
-    pub fn alarm_types(&self) -> std::option::Option<&[crate::model::AlarmType]> {
+    pub fn alarm_types(&self) -> std::option::Option<& [crate::model::AlarmType]> {
         self.alarm_types.as_deref()
     }
-    /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns information about the "children" alarms of the alarm you specify. These are the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not returned.</p>
-    /// <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>
-    /// <p>Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
+    /// <p>If you use this parameter and specify the name of a composite alarm, the operation returns information about the "children" alarms of the alarm you specify. These are the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not returned.</p> 
+    /// <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note> 
+    /// <p>Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p> 
     /// </note>
-    pub fn children_of_alarm_name(&self) -> std::option::Option<&str> {
+    pub fn children_of_alarm_name(&self) -> std::option::Option<& str> {
         self.children_of_alarm_name.as_deref()
     }
-    /// <p>If you use this parameter and specify the name of a metric or composite alarm, the operation returns information about the "parent" alarms of the alarm you specify. These are the composite alarms that have <code>AlarmRule</code> parameters that reference the alarm named in <code>ParentsOfAlarmName</code>. Information about the alarm that you specify in <code>ParentsOfAlarmName</code> is not returned.</p>
-    /// <p>If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note>
-    /// <p>Only the Alarm Name and ARN are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p>
+    /// <p>If you use this parameter and specify the name of a metric or composite alarm, the operation returns information about the "parent" alarms of the alarm you specify. These are the composite alarms that have <code>AlarmRule</code> parameters that reference the alarm named in <code>ParentsOfAlarmName</code>. Information about the alarm that you specify in <code>ParentsOfAlarmName</code> is not returned.</p> 
+    /// <p>If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note> 
+    /// <p>Only the Alarm Name and ARN are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p> 
     /// </note>
-    pub fn parents_of_alarm_name(&self) -> std::option::Option<&str> {
+    pub fn parents_of_alarm_name(&self) -> std::option::Option<& str> {
         self.parents_of_alarm_name.as_deref()
     }
     /// <p>Specify this parameter to receive information only about alarms that are currently in the state that you specify.</p>
-    pub fn state_value(&self) -> std::option::Option<&crate::model::StateValue> {
+    pub fn state_value(&self) -> std::option::Option<& crate::model::StateValue> {
         self.state_value.as_ref()
     }
     /// <p>Use this parameter to filter the results of the operation to only those alarms that use a certain alarm action. For example, you could specify the ARN of an SNS topic to find all alarms that send notifications to that topic.</p>
-    pub fn action_prefix(&self) -> std::option::Option<&str> {
+    pub fn action_prefix(&self) -> std::option::Option<& str> {
         self.action_prefix.as_deref()
     }
     /// <p>The maximum number of alarm descriptions to retrieve.</p>
@@ -9950,7 +7685,7 @@ impl DescribeAlarmsInput {
         self.max_records
     }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -9958,7 +7693,7 @@ impl DescribeAlarmsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAlarmHistoryInput {
+pub struct DescribeAlarmHistoryInput  {
     /// <p>The name of the alarm.</p>
     #[doc(hidden)]
     pub alarm_name: std::option::Option<std::string::String>,
@@ -9986,23 +7721,23 @@ pub struct DescribeAlarmHistoryInput {
 }
 impl DescribeAlarmHistoryInput {
     /// <p>The name of the alarm.</p>
-    pub fn alarm_name(&self) -> std::option::Option<&str> {
+    pub fn alarm_name(&self) -> std::option::Option<& str> {
         self.alarm_name.as_deref()
     }
     /// <p>Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</p>
-    pub fn alarm_types(&self) -> std::option::Option<&[crate::model::AlarmType]> {
+    pub fn alarm_types(&self) -> std::option::Option<& [crate::model::AlarmType]> {
         self.alarm_types.as_deref()
     }
     /// <p>The type of alarm histories to retrieve.</p>
-    pub fn history_item_type(&self) -> std::option::Option<&crate::model::HistoryItemType> {
+    pub fn history_item_type(&self) -> std::option::Option<& crate::model::HistoryItemType> {
         self.history_item_type.as_ref()
     }
     /// <p>The starting date to retrieve alarm history.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The ending date to retrieve alarm history.</p>
-    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
     /// <p>The maximum number of alarm history records to retrieve.</p>
@@ -10010,11 +7745,11 @@ impl DescribeAlarmHistoryInput {
         self.max_records
     }
     /// <p>The token returned by a previous call to indicate that there is more data available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Specified whether to return the newest or oldest alarm history first. Specify <code>TimestampDescending</code> to have the newest event history returned first, and specify <code>TimestampAscending</code> to have the oldest history returned first.</p>
-    pub fn scan_by(&self) -> std::option::Option<&crate::model::ScanBy> {
+    pub fn scan_by(&self) -> std::option::Option<& crate::model::ScanBy> {
         self.scan_by.as_ref()
     }
 }
@@ -10022,14 +7757,14 @@ impl DescribeAlarmHistoryInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMetricStreamInput {
+pub struct DeleteMetricStreamInput  {
     /// <p>The name of the metric stream to delete.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteMetricStreamInput {
     /// <p>The name of the metric stream to delete.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
@@ -10037,14 +7772,14 @@ impl DeleteMetricStreamInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInsightRulesInput {
+pub struct DeleteInsightRulesInput  {
     /// <p>An array of the rule names to delete. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
     #[doc(hidden)]
     pub rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteInsightRulesInput {
     /// <p>An array of the rule names to delete. If you need to find out the names of your rules, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeInsightRules.html">DescribeInsightRules</a>.</p>
-    pub fn rule_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn rule_names(&self) -> std::option::Option<& [std::string::String]> {
         self.rule_names.as_deref()
     }
 }
@@ -10052,14 +7787,14 @@ impl DeleteInsightRulesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDashboardsInput {
+pub struct DeleteDashboardsInput  {
     /// <p>The dashboards to be deleted. This parameter is required.</p>
     #[doc(hidden)]
     pub dashboard_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteDashboardsInput {
     /// <p>The dashboards to be deleted. This parameter is required.</p>
-    pub fn dashboard_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn dashboard_names(&self) -> std::option::Option<& [std::string::String]> {
         self.dashboard_names.as_deref()
     }
 }
@@ -10067,7 +7802,7 @@ impl DeleteDashboardsInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAnomalyDetectorInput {
+pub struct DeleteAnomalyDetectorInput  {
     /// <p>The namespace associated with the anomaly detection model to delete.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
     #[doc(hidden)]
@@ -10084,28 +7819,27 @@ pub struct DeleteAnomalyDetectorInput {
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
     #[doc(hidden)]
     pub stat: std::option::Option<std::string::String>,
-    /// <p>A single metric anomaly detector to be deleted.</p>
-    /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
-    /// <ul>
-    /// <li> <p> <code>Dimensions</code>,</p> </li>
-    /// <li> <p> <code>MetricName</code> </p> </li>
-    /// <li> <p> <code>Namespace</code> </p> </li>
-    /// <li> <p> <code>Stat</code> </p> </li>
-    /// <li> <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
-    /// </ul>
+    /// <p>A single metric anomaly detector to be deleted.</p> 
+    /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Dimensions</code>,</p> </li> 
+    /// <li> <p> <code>MetricName</code> </p> </li> 
+    /// <li> <p> <code>Namespace</code> </p> </li> 
+    /// <li> <p> <code>Stat</code> </p> </li> 
+    /// <li> <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li> 
+    /// </ul> 
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
     #[doc(hidden)]
-    pub single_metric_anomaly_detector:
-        std::option::Option<crate::model::SingleMetricAnomalyDetector>,
-    /// <p>The metric math anomaly detector to be deleted.</p>
-    /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>
-    /// <ul>
-    /// <li> <p> <code>Dimensions</code>,</p> </li>
-    /// <li> <p> <code>MetricName</code> </p> </li>
-    /// <li> <p> <code>Namespace</code> </p> </li>
-    /// <li> <p> <code>Stat</code> </p> </li>
-    /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
-    /// </ul>
+    pub single_metric_anomaly_detector: std::option::Option<crate::model::SingleMetricAnomalyDetector>,
+    /// <p>The metric math anomaly detector to be deleted.</p> 
+    /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Dimensions</code>,</p> </li> 
+    /// <li> <p> <code>MetricName</code> </p> </li> 
+    /// <li> <p> <code>Namespace</code> </p> </li> 
+    /// <li> <p> <code>Stat</code> </p> </li> 
+    /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li> 
+    /// </ul> 
     /// <p>Instead, specify the metric math anomaly detector attributes as part of the <code>MetricMathAnomalyDetector</code> property.</p>
     #[doc(hidden)]
     pub metric_math_anomaly_detector: std::option::Option<crate::model::MetricMathAnomalyDetector>,
@@ -10113,52 +7847,48 @@ pub struct DeleteAnomalyDetectorInput {
 impl DeleteAnomalyDetectorInput {
     /// <p>The namespace associated with the anomaly detection model to delete.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> std::option::Option<& str> {
         self.namespace.as_deref()
     }
     /// <p>The metric name associated with the anomaly detection model to delete.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>The metric dimensions associated with the anomaly detection model to delete.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    pub fn dimensions(&self) -> std::option::Option<&[crate::model::Dimension]> {
+    pub fn dimensions(&self) -> std::option::Option<& [crate::model::Dimension]> {
         self.dimensions.as_deref()
     }
     /// <p>The statistic associated with the anomaly detection model to delete.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    pub fn stat(&self) -> std::option::Option<&str> {
+    pub fn stat(&self) -> std::option::Option<& str> {
         self.stat.as_deref()
     }
-    /// <p>A single metric anomaly detector to be deleted.</p>
-    /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p>
-    /// <ul>
-    /// <li> <p> <code>Dimensions</code>,</p> </li>
-    /// <li> <p> <code>MetricName</code> </p> </li>
-    /// <li> <p> <code>Namespace</code> </p> </li>
-    /// <li> <p> <code>Stat</code> </p> </li>
-    /// <li> <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
-    /// </ul>
+    /// <p>A single metric anomaly detector to be deleted.</p> 
+    /// <p>When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following parameters in the same operation:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Dimensions</code>,</p> </li> 
+    /// <li> <p> <code>MetricName</code> </p> </li> 
+    /// <li> <p> <code>Namespace</code> </p> </li> 
+    /// <li> <p> <code>Stat</code> </p> </li> 
+    /// <li> <p>the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li> 
+    /// </ul> 
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the <code>SingleMetricAnomalyDetector</code> property.</p>
-    pub fn single_metric_anomaly_detector(
-        &self,
-    ) -> std::option::Option<&crate::model::SingleMetricAnomalyDetector> {
+    pub fn single_metric_anomaly_detector(&self) -> std::option::Option<& crate::model::SingleMetricAnomalyDetector> {
         self.single_metric_anomaly_detector.as_ref()
     }
-    /// <p>The metric math anomaly detector to be deleted.</p>
-    /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p>
-    /// <ul>
-    /// <li> <p> <code>Dimensions</code>,</p> </li>
-    /// <li> <p> <code>MetricName</code> </p> </li>
-    /// <li> <p> <code>Namespace</code> </p> </li>
-    /// <li> <p> <code>Stat</code> </p> </li>
-    /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li>
-    /// </ul>
+    /// <p>The metric math anomaly detector to be deleted.</p> 
+    /// <p>When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters in the same operation:</p> 
+    /// <ul> 
+    /// <li> <p> <code>Dimensions</code>,</p> </li> 
+    /// <li> <p> <code>MetricName</code> </p> </li> 
+    /// <li> <p> <code>Namespace</code> </p> </li> 
+    /// <li> <p> <code>Stat</code> </p> </li> 
+    /// <li> <p>the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code> </p> </li> 
+    /// </ul> 
     /// <p>Instead, specify the metric math anomaly detector attributes as part of the <code>MetricMathAnomalyDetector</code> property.</p>
-    pub fn metric_math_anomaly_detector(
-        &self,
-    ) -> std::option::Option<&crate::model::MetricMathAnomalyDetector> {
+    pub fn metric_math_anomaly_detector(&self) -> std::option::Option<& crate::model::MetricMathAnomalyDetector> {
         self.metric_math_anomaly_detector.as_ref()
     }
 }
@@ -10166,14 +7896,15 @@ impl DeleteAnomalyDetectorInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAlarmsInput {
+pub struct DeleteAlarmsInput  {
     /// <p>The alarms to be deleted.</p>
     #[doc(hidden)]
     pub alarm_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DeleteAlarmsInput {
     /// <p>The alarms to be deleted.</p>
-    pub fn alarm_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn alarm_names(&self) -> std::option::Option<& [std::string::String]> {
         self.alarm_names.as_deref()
     }
 }
+

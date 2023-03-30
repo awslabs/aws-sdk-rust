@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSatellitesOutput {
+pub struct ListSatellitesOutput  {
     /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct ListSatellitesOutput {
 }
 impl ListSatellitesOutput {
     /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of satellites.</p>
-    pub fn satellites(&self) -> std::option::Option<&[crate::model::SatelliteListItem]> {
+    pub fn satellites(&self) -> std::option::Option<& [crate::model::SatelliteListItem]> {
         self.satellites.as_deref()
     }
 }
 /// See [`ListSatellitesOutput`](crate::output::ListSatellitesOutput).
 pub mod list_satellites_output {
-
+    
     /// A builder for [`ListSatellitesOutput`](crate::output::ListSatellitesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,8 +38,7 @@ pub mod list_satellites_output {
         }
         /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `satellites`.
         ///
@@ -48,26 +47,26 @@ pub mod list_satellites_output {
         /// <p>List of satellites.</p>
         pub fn satellites(mut self, input: crate::model::SatelliteListItem) -> Self {
             let mut v = self.satellites.unwrap_or_default();
-            v.push(input);
-            self.satellites = Some(v);
-            self
+                            v.push(input);
+                            self.satellites = Some(v);
+                            self
         }
         /// <p>List of satellites.</p>
-        pub fn set_satellites(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SatelliteListItem>>,
-        ) -> Self {
-            self.satellites = input;
-            self
+        pub fn set_satellites(mut self, input: std::option::Option<std::vec::Vec<crate::model::SatelliteListItem>>) -> Self {
+            self.satellites = input; self
         }
         /// Consumes the builder and constructs a [`ListSatellitesOutput`](crate::output::ListSatellitesOutput).
         pub fn build(self) -> crate::output::ListSatellitesOutput {
             crate::output::ListSatellitesOutput {
-                next_token: self.next_token,
-                satellites: self.satellites,
+                next_token: self.next_token
+                ,
+                satellites: self.satellites
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSatellitesOutput {
     /// Creates a new builder-style object to manufacture [`ListSatellitesOutput`](crate::output::ListSatellitesOutput).
@@ -79,7 +78,7 @@ impl ListSatellitesOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSatelliteOutput {
+pub struct GetSatelliteOutput  {
     /// <p>UUID of a satellite.</p>
     #[doc(hidden)]
     pub satellite_id: std::option::Option<std::string::String>,
@@ -98,11 +97,11 @@ pub struct GetSatelliteOutput {
 }
 impl GetSatelliteOutput {
     /// <p>UUID of a satellite.</p>
-    pub fn satellite_id(&self) -> std::option::Option<&str> {
+    pub fn satellite_id(&self) -> std::option::Option<& str> {
         self.satellite_id.as_deref()
     }
     /// <p>ARN of a satellite.</p>
-    pub fn satellite_arn(&self) -> std::option::Option<&str> {
+    pub fn satellite_arn(&self) -> std::option::Option<& str> {
         self.satellite_arn.as_deref()
     }
     /// <p>NORAD satellite ID number.</p>
@@ -110,17 +109,17 @@ impl GetSatelliteOutput {
         self.norad_satellite_id
     }
     /// <p>A list of ground stations to which the satellite is on-boarded.</p>
-    pub fn ground_stations(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ground_stations(&self) -> std::option::Option<& [std::string::String]> {
         self.ground_stations.as_deref()
     }
     /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
-    pub fn current_ephemeris(&self) -> std::option::Option<&crate::model::EphemerisMetaData> {
+    pub fn current_ephemeris(&self) -> std::option::Option<& crate::model::EphemerisMetaData> {
         self.current_ephemeris.as_ref()
     }
 }
 /// See [`GetSatelliteOutput`](crate::output::GetSatelliteOutput).
 pub mod get_satellite_output {
-
+    
     /// A builder for [`GetSatelliteOutput`](crate::output::GetSatelliteOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -138,8 +137,7 @@ pub mod get_satellite_output {
         }
         /// <p>UUID of a satellite.</p>
         pub fn set_satellite_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.satellite_id = input;
-            self
+            self.satellite_id = input; self
         }
         /// <p>ARN of a satellite.</p>
         pub fn satellite_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,12 +145,8 @@ pub mod get_satellite_output {
             self
         }
         /// <p>ARN of a satellite.</p>
-        pub fn set_satellite_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.satellite_arn = input;
-            self
+        pub fn set_satellite_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.satellite_arn = input; self
         }
         /// <p>NORAD satellite ID number.</p>
         pub fn norad_satellite_id(mut self, input: i32) -> Self {
@@ -161,8 +155,7 @@ pub mod get_satellite_output {
         }
         /// <p>NORAD satellite ID number.</p>
         pub fn set_norad_satellite_id(mut self, input: std::option::Option<i32>) -> Self {
-            self.norad_satellite_id = input;
-            self
+            self.norad_satellite_id = input; self
         }
         /// Appends an item to `ground_stations`.
         ///
@@ -171,17 +164,13 @@ pub mod get_satellite_output {
         /// <p>A list of ground stations to which the satellite is on-boarded.</p>
         pub fn ground_stations(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ground_stations.unwrap_or_default();
-            v.push(input.into());
-            self.ground_stations = Some(v);
-            self
+                            v.push(input.into());
+                            self.ground_stations = Some(v);
+                            self
         }
         /// <p>A list of ground stations to which the satellite is on-boarded.</p>
-        pub fn set_ground_stations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.ground_stations = input;
-            self
+        pub fn set_ground_stations(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.ground_stations = input; self
         }
         /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
         pub fn current_ephemeris(mut self, input: crate::model::EphemerisMetaData) -> Self {
@@ -189,24 +178,28 @@ pub mod get_satellite_output {
             self
         }
         /// <p>The current ephemeris being used to compute the trajectory of the satellite.</p>
-        pub fn set_current_ephemeris(
-            mut self,
-            input: std::option::Option<crate::model::EphemerisMetaData>,
-        ) -> Self {
-            self.current_ephemeris = input;
-            self
+        pub fn set_current_ephemeris(mut self, input: std::option::Option<crate::model::EphemerisMetaData>) -> Self {
+            self.current_ephemeris = input; self
         }
         /// Consumes the builder and constructs a [`GetSatelliteOutput`](crate::output::GetSatelliteOutput).
         pub fn build(self) -> crate::output::GetSatelliteOutput {
             crate::output::GetSatelliteOutput {
-                satellite_id: self.satellite_id,
-                satellite_arn: self.satellite_arn,
-                norad_satellite_id: self.norad_satellite_id.unwrap_or_default(),
-                ground_stations: self.ground_stations,
-                current_ephemeris: self.current_ephemeris,
+                satellite_id: self.satellite_id
+                ,
+                satellite_arn: self.satellite_arn
+                ,
+                norad_satellite_id: self.norad_satellite_id
+                    .unwrap_or_default()
+                ,
+                ground_stations: self.ground_stations
+                ,
+                current_ephemeris: self.current_ephemeris
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSatelliteOutput {
     /// Creates a new builder-style object to manufacture [`GetSatelliteOutput`](crate::output::GetSatelliteOutput).
@@ -218,36 +211,32 @@ impl GetSatelliteOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMissionProfilesOutput {
+pub struct ListMissionProfilesOutput  {
     /// <p>Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>List of mission profiles.</p>
     #[doc(hidden)]
-    pub mission_profile_list:
-        std::option::Option<std::vec::Vec<crate::model::MissionProfileListItem>>,
+    pub mission_profile_list: std::option::Option<std::vec::Vec<crate::model::MissionProfileListItem>>,
 }
 impl ListMissionProfilesOutput {
     /// <p>Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of mission profiles.</p>
-    pub fn mission_profile_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::MissionProfileListItem]> {
+    pub fn mission_profile_list(&self) -> std::option::Option<& [crate::model::MissionProfileListItem]> {
         self.mission_profile_list.as_deref()
     }
 }
 /// See [`ListMissionProfilesOutput`](crate::output::ListMissionProfilesOutput).
 pub mod list_mission_profiles_output {
-
+    
     /// A builder for [`ListMissionProfilesOutput`](crate::output::ListMissionProfilesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) mission_profile_list:
-            std::option::Option<std::vec::Vec<crate::model::MissionProfileListItem>>,
+        pub(crate) mission_profile_list: std::option::Option<std::vec::Vec<crate::model::MissionProfileListItem>>,
     }
     impl Builder {
         /// <p>Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
@@ -257,8 +246,7 @@ pub mod list_mission_profiles_output {
         }
         /// <p>Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `mission_profile_list`.
         ///
@@ -267,26 +255,26 @@ pub mod list_mission_profiles_output {
         /// <p>List of mission profiles.</p>
         pub fn mission_profile_list(mut self, input: crate::model::MissionProfileListItem) -> Self {
             let mut v = self.mission_profile_list.unwrap_or_default();
-            v.push(input);
-            self.mission_profile_list = Some(v);
-            self
+                            v.push(input);
+                            self.mission_profile_list = Some(v);
+                            self
         }
         /// <p>List of mission profiles.</p>
-        pub fn set_mission_profile_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MissionProfileListItem>>,
-        ) -> Self {
-            self.mission_profile_list = input;
-            self
+        pub fn set_mission_profile_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::MissionProfileListItem>>) -> Self {
+            self.mission_profile_list = input; self
         }
         /// Consumes the builder and constructs a [`ListMissionProfilesOutput`](crate::output::ListMissionProfilesOutput).
         pub fn build(self) -> crate::output::ListMissionProfilesOutput {
             crate::output::ListMissionProfilesOutput {
-                next_token: self.next_token,
-                mission_profile_list: self.mission_profile_list,
+                next_token: self.next_token
+                ,
+                mission_profile_list: self.mission_profile_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListMissionProfilesOutput {
     /// Creates a new builder-style object to manufacture [`ListMissionProfilesOutput`](crate::output::ListMissionProfilesOutput).
@@ -298,20 +286,20 @@ impl ListMissionProfilesOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMissionProfileOutput {
+pub struct CreateMissionProfileOutput  {
     /// <p>UUID of a mission profile.</p>
     #[doc(hidden)]
     pub mission_profile_id: std::option::Option<std::string::String>,
 }
 impl CreateMissionProfileOutput {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(&self) -> std::option::Option<&str> {
+    pub fn mission_profile_id(&self) -> std::option::Option<& str> {
         self.mission_profile_id.as_deref()
     }
 }
 /// See [`CreateMissionProfileOutput`](crate::output::CreateMissionProfileOutput).
 pub mod create_mission_profile_output {
-
+    
     /// A builder for [`CreateMissionProfileOutput`](crate::output::CreateMissionProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -324,20 +312,19 @@ pub mod create_mission_profile_output {
             self
         }
         /// <p>UUID of a mission profile.</p>
-        pub fn set_mission_profile_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.mission_profile_id = input;
-            self
+        pub fn set_mission_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mission_profile_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateMissionProfileOutput`](crate::output::CreateMissionProfileOutput).
         pub fn build(self) -> crate::output::CreateMissionProfileOutput {
             crate::output::CreateMissionProfileOutput {
-                mission_profile_id: self.mission_profile_id,
+                mission_profile_id: self.mission_profile_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateMissionProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateMissionProfileOutput`](crate::output::CreateMissionProfileOutput).
@@ -349,20 +336,20 @@ impl CreateMissionProfileOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMissionProfileOutput {
+pub struct DeleteMissionProfileOutput  {
     /// <p>UUID of a mission profile.</p>
     #[doc(hidden)]
     pub mission_profile_id: std::option::Option<std::string::String>,
 }
 impl DeleteMissionProfileOutput {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(&self) -> std::option::Option<&str> {
+    pub fn mission_profile_id(&self) -> std::option::Option<& str> {
         self.mission_profile_id.as_deref()
     }
 }
 /// See [`DeleteMissionProfileOutput`](crate::output::DeleteMissionProfileOutput).
 pub mod delete_mission_profile_output {
-
+    
     /// A builder for [`DeleteMissionProfileOutput`](crate::output::DeleteMissionProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -375,20 +362,19 @@ pub mod delete_mission_profile_output {
             self
         }
         /// <p>UUID of a mission profile.</p>
-        pub fn set_mission_profile_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.mission_profile_id = input;
-            self
+        pub fn set_mission_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mission_profile_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteMissionProfileOutput`](crate::output::DeleteMissionProfileOutput).
         pub fn build(self) -> crate::output::DeleteMissionProfileOutput {
             crate::output::DeleteMissionProfileOutput {
-                mission_profile_id: self.mission_profile_id,
+                mission_profile_id: self.mission_profile_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteMissionProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteMissionProfileOutput`](crate::output::DeleteMissionProfileOutput).
@@ -400,20 +386,20 @@ impl DeleteMissionProfileOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMissionProfileOutput {
+pub struct UpdateMissionProfileOutput  {
     /// <p>UUID of a mission profile.</p>
     #[doc(hidden)]
     pub mission_profile_id: std::option::Option<std::string::String>,
 }
 impl UpdateMissionProfileOutput {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(&self) -> std::option::Option<&str> {
+    pub fn mission_profile_id(&self) -> std::option::Option<& str> {
         self.mission_profile_id.as_deref()
     }
 }
 /// See [`UpdateMissionProfileOutput`](crate::output::UpdateMissionProfileOutput).
 pub mod update_mission_profile_output {
-
+    
     /// A builder for [`UpdateMissionProfileOutput`](crate::output::UpdateMissionProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -426,20 +412,19 @@ pub mod update_mission_profile_output {
             self
         }
         /// <p>UUID of a mission profile.</p>
-        pub fn set_mission_profile_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.mission_profile_id = input;
-            self
+        pub fn set_mission_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mission_profile_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateMissionProfileOutput`](crate::output::UpdateMissionProfileOutput).
         pub fn build(self) -> crate::output::UpdateMissionProfileOutput {
             crate::output::UpdateMissionProfileOutput {
-                mission_profile_id: self.mission_profile_id,
+                mission_profile_id: self.mission_profile_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateMissionProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMissionProfileOutput`](crate::output::UpdateMissionProfileOutput).
@@ -451,7 +436,7 @@ impl UpdateMissionProfileOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMissionProfileOutput {
+pub struct GetMissionProfileOutput  {
     /// <p>UUID of a mission profile.</p>
     #[doc(hidden)]
     pub mission_profile_id: std::option::Option<std::string::String>,
@@ -481,24 +466,23 @@ pub struct GetMissionProfileOutput {
     pub tracking_config_arn: std::option::Option<std::string::String>,
     /// <p>Tags assigned to a mission profile.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetMissionProfileOutput {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(&self) -> std::option::Option<&str> {
+    pub fn mission_profile_id(&self) -> std::option::Option<& str> {
         self.mission_profile_id.as_deref()
     }
     /// <p>ARN of a mission profile.</p>
-    pub fn mission_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn mission_profile_arn(&self) -> std::option::Option<& str> {
         self.mission_profile_arn.as_deref()
     }
     /// <p>Name of a mission profile.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Region of a mission profile.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
@@ -514,24 +498,21 @@ impl GetMissionProfileOutput {
         self.minimum_viable_contact_duration_seconds
     }
     /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
-    pub fn dataflow_edges(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+    pub fn dataflow_edges(&self) -> std::option::Option<& [std::vec::Vec<std::string::String>]> {
         self.dataflow_edges.as_deref()
     }
     /// <p>ARN of a tracking <code>Config</code>.</p>
-    pub fn tracking_config_arn(&self) -> std::option::Option<&str> {
+    pub fn tracking_config_arn(&self) -> std::option::Option<& str> {
         self.tracking_config_arn.as_deref()
     }
     /// <p>Tags assigned to a mission profile.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetMissionProfileOutput`](crate::output::GetMissionProfileOutput).
 pub mod get_mission_profile_output {
-
+    
     /// A builder for [`GetMissionProfileOutput`](crate::output::GetMissionProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -542,12 +523,9 @@ pub mod get_mission_profile_output {
         pub(crate) contact_pre_pass_duration_seconds: std::option::Option<i32>,
         pub(crate) contact_post_pass_duration_seconds: std::option::Option<i32>,
         pub(crate) minimum_viable_contact_duration_seconds: std::option::Option<i32>,
-        pub(crate) dataflow_edges:
-            std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        pub(crate) dataflow_edges: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
         pub(crate) tracking_config_arn: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>UUID of a mission profile.</p>
@@ -556,12 +534,8 @@ pub mod get_mission_profile_output {
             self
         }
         /// <p>UUID of a mission profile.</p>
-        pub fn set_mission_profile_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.mission_profile_id = input;
-            self
+        pub fn set_mission_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mission_profile_id = input; self
         }
         /// <p>ARN of a mission profile.</p>
         pub fn mission_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -569,12 +543,8 @@ pub mod get_mission_profile_output {
             self
         }
         /// <p>ARN of a mission profile.</p>
-        pub fn set_mission_profile_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.mission_profile_arn = input;
-            self
+        pub fn set_mission_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mission_profile_arn = input; self
         }
         /// <p>Name of a mission profile.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -583,8 +553,7 @@ pub mod get_mission_profile_output {
         }
         /// <p>Name of a mission profile.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Region of a mission profile.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -593,8 +562,7 @@ pub mod get_mission_profile_output {
         }
         /// <p>Region of a mission profile.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
         pub fn contact_pre_pass_duration_seconds(mut self, input: i32) -> Self {
@@ -602,12 +570,8 @@ pub mod get_mission_profile_output {
             self
         }
         /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-        pub fn set_contact_pre_pass_duration_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.contact_pre_pass_duration_seconds = input;
-            self
+        pub fn set_contact_pre_pass_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.contact_pre_pass_duration_seconds = input; self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
         pub fn contact_post_pass_duration_seconds(mut self, input: i32) -> Self {
@@ -615,12 +579,8 @@ pub mod get_mission_profile_output {
             self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-        pub fn set_contact_post_pass_duration_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.contact_post_pass_duration_seconds = input;
-            self
+        pub fn set_contact_post_pass_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.contact_post_pass_duration_seconds = input; self
         }
         /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
         pub fn minimum_viable_contact_duration_seconds(mut self, input: i32) -> Self {
@@ -628,12 +588,8 @@ pub mod get_mission_profile_output {
             self
         }
         /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
-        pub fn set_minimum_viable_contact_duration_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.minimum_viable_contact_duration_seconds = input;
-            self
+        pub fn set_minimum_viable_contact_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.minimum_viable_contact_duration_seconds = input; self
         }
         /// Appends an item to `dataflow_edges`.
         ///
@@ -642,17 +598,13 @@ pub mod get_mission_profile_output {
         /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
         pub fn dataflow_edges(mut self, input: std::vec::Vec<std::string::String>) -> Self {
             let mut v = self.dataflow_edges.unwrap_or_default();
-            v.push(input);
-            self.dataflow_edges = Some(v);
-            self
+                            v.push(input);
+                            self.dataflow_edges = Some(v);
+                            self
         }
         /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
-        pub fn set_dataflow_edges(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
-        ) -> Self {
-            self.dataflow_edges = input;
-            self
+        pub fn set_dataflow_edges(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>) -> Self {
+            self.dataflow_edges = input; self
         }
         /// <p>ARN of a tracking <code>Config</code>.</p>
         pub fn tracking_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -660,55 +612,52 @@ pub mod get_mission_profile_output {
             self
         }
         /// <p>ARN of a tracking <code>Config</code>.</p>
-        pub fn set_tracking_config_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.tracking_config_arn = input;
-            self
+        pub fn set_tracking_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tracking_config_arn = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags assigned to a mission profile.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags assigned to a mission profile.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetMissionProfileOutput`](crate::output::GetMissionProfileOutput).
         pub fn build(self) -> crate::output::GetMissionProfileOutput {
             crate::output::GetMissionProfileOutput {
-                mission_profile_id: self.mission_profile_id,
-                mission_profile_arn: self.mission_profile_arn,
-                name: self.name,
-                region: self.region,
-                contact_pre_pass_duration_seconds: self.contact_pre_pass_duration_seconds,
-                contact_post_pass_duration_seconds: self.contact_post_pass_duration_seconds,
-                minimum_viable_contact_duration_seconds: self
-                    .minimum_viable_contact_duration_seconds,
-                dataflow_edges: self.dataflow_edges,
-                tracking_config_arn: self.tracking_config_arn,
-                tags: self.tags,
+                mission_profile_id: self.mission_profile_id
+                ,
+                mission_profile_arn: self.mission_profile_arn
+                ,
+                name: self.name
+                ,
+                region: self.region
+                ,
+                contact_pre_pass_duration_seconds: self.contact_pre_pass_duration_seconds
+                ,
+                contact_post_pass_duration_seconds: self.contact_post_pass_duration_seconds
+                ,
+                minimum_viable_contact_duration_seconds: self.minimum_viable_contact_duration_seconds
+                ,
+                dataflow_edges: self.dataflow_edges
+                ,
+                tracking_config_arn: self.tracking_config_arn
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMissionProfileOutput {
     /// Creates a new builder-style object to manufacture [`GetMissionProfileOutput`](crate::output::GetMissionProfileOutput).
@@ -720,7 +669,7 @@ impl GetMissionProfileOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGroundStationsOutput {
+pub struct ListGroundStationsOutput  {
     /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -730,23 +679,22 @@ pub struct ListGroundStationsOutput {
 }
 impl ListGroundStationsOutput {
     /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of ground stations.</p>
-    pub fn ground_station_list(&self) -> std::option::Option<&[crate::model::GroundStationData]> {
+    pub fn ground_station_list(&self) -> std::option::Option<& [crate::model::GroundStationData]> {
         self.ground_station_list.as_deref()
     }
 }
 /// See [`ListGroundStationsOutput`](crate::output::ListGroundStationsOutput).
 pub mod list_ground_stations_output {
-
+    
     /// A builder for [`ListGroundStationsOutput`](crate::output::ListGroundStationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) ground_station_list:
-            std::option::Option<std::vec::Vec<crate::model::GroundStationData>>,
+        pub(crate) ground_station_list: std::option::Option<std::vec::Vec<crate::model::GroundStationData>>,
     }
     impl Builder {
         /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
@@ -756,8 +704,7 @@ pub mod list_ground_stations_output {
         }
         /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `ground_station_list`.
         ///
@@ -766,26 +713,26 @@ pub mod list_ground_stations_output {
         /// <p>List of ground stations.</p>
         pub fn ground_station_list(mut self, input: crate::model::GroundStationData) -> Self {
             let mut v = self.ground_station_list.unwrap_or_default();
-            v.push(input);
-            self.ground_station_list = Some(v);
-            self
+                            v.push(input);
+                            self.ground_station_list = Some(v);
+                            self
         }
         /// <p>List of ground stations.</p>
-        pub fn set_ground_station_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GroundStationData>>,
-        ) -> Self {
-            self.ground_station_list = input;
-            self
+        pub fn set_ground_station_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::GroundStationData>>) -> Self {
+            self.ground_station_list = input; self
         }
         /// Consumes the builder and constructs a [`ListGroundStationsOutput`](crate::output::ListGroundStationsOutput).
         pub fn build(self) -> crate::output::ListGroundStationsOutput {
             crate::output::ListGroundStationsOutput {
-                next_token: self.next_token,
-                ground_station_list: self.ground_station_list,
+                next_token: self.next_token
+                ,
+                ground_station_list: self.ground_station_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListGroundStationsOutput {
     /// Creates a new builder-style object to manufacture [`ListGroundStationsOutput`](crate::output::ListGroundStationsOutput).
@@ -797,7 +744,7 @@ impl ListGroundStationsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEphemeridesOutput {
+pub struct ListEphemeridesOutput  {
     /// <p>Pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -807,17 +754,17 @@ pub struct ListEphemeridesOutput {
 }
 impl ListEphemeridesOutput {
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of ephemerides.</p>
-    pub fn ephemerides(&self) -> std::option::Option<&[crate::model::EphemerisItem]> {
+    pub fn ephemerides(&self) -> std::option::Option<& [crate::model::EphemerisItem]> {
         self.ephemerides.as_deref()
     }
 }
 /// See [`ListEphemeridesOutput`](crate::output::ListEphemeridesOutput).
 pub mod list_ephemerides_output {
-
+    
     /// A builder for [`ListEphemeridesOutput`](crate::output::ListEphemeridesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -832,8 +779,7 @@ pub mod list_ephemerides_output {
         }
         /// <p>Pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `ephemerides`.
         ///
@@ -842,26 +788,26 @@ pub mod list_ephemerides_output {
         /// <p>List of ephemerides.</p>
         pub fn ephemerides(mut self, input: crate::model::EphemerisItem) -> Self {
             let mut v = self.ephemerides.unwrap_or_default();
-            v.push(input);
-            self.ephemerides = Some(v);
-            self
+                            v.push(input);
+                            self.ephemerides = Some(v);
+                            self
         }
         /// <p>List of ephemerides.</p>
-        pub fn set_ephemerides(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EphemerisItem>>,
-        ) -> Self {
-            self.ephemerides = input;
-            self
+        pub fn set_ephemerides(mut self, input: std::option::Option<std::vec::Vec<crate::model::EphemerisItem>>) -> Self {
+            self.ephemerides = input; self
         }
         /// Consumes the builder and constructs a [`ListEphemeridesOutput`](crate::output::ListEphemeridesOutput).
         pub fn build(self) -> crate::output::ListEphemeridesOutput {
             crate::output::ListEphemeridesOutput {
-                next_token: self.next_token,
-                ephemerides: self.ephemerides,
+                next_token: self.next_token
+                ,
+                ephemerides: self.ephemerides
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEphemeridesOutput {
     /// Creates a new builder-style object to manufacture [`ListEphemeridesOutput`](crate::output::ListEphemeridesOutput).
@@ -873,20 +819,20 @@ impl ListEphemeridesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEphemerisOutput {
+pub struct CreateEphemerisOutput  {
     /// <p>The AWS Ground Station ephemeris ID.</p>
     #[doc(hidden)]
     pub ephemeris_id: std::option::Option<std::string::String>,
 }
 impl CreateEphemerisOutput {
     /// <p>The AWS Ground Station ephemeris ID.</p>
-    pub fn ephemeris_id(&self) -> std::option::Option<&str> {
+    pub fn ephemeris_id(&self) -> std::option::Option<& str> {
         self.ephemeris_id.as_deref()
     }
 }
 /// See [`CreateEphemerisOutput`](crate::output::CreateEphemerisOutput).
 pub mod create_ephemeris_output {
-
+    
     /// A builder for [`CreateEphemerisOutput`](crate::output::CreateEphemerisOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -900,16 +846,18 @@ pub mod create_ephemeris_output {
         }
         /// <p>The AWS Ground Station ephemeris ID.</p>
         pub fn set_ephemeris_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ephemeris_id = input;
-            self
+            self.ephemeris_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateEphemerisOutput`](crate::output::CreateEphemerisOutput).
         pub fn build(self) -> crate::output::CreateEphemerisOutput {
             crate::output::CreateEphemerisOutput {
-                ephemeris_id: self.ephemeris_id,
+                ephemeris_id: self.ephemeris_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateEphemerisOutput {
     /// Creates a new builder-style object to manufacture [`CreateEphemerisOutput`](crate::output::CreateEphemerisOutput).
@@ -921,20 +869,20 @@ impl CreateEphemerisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEphemerisOutput {
+pub struct DeleteEphemerisOutput  {
     /// <p>The AWS Ground Station ephemeris ID.</p>
     #[doc(hidden)]
     pub ephemeris_id: std::option::Option<std::string::String>,
 }
 impl DeleteEphemerisOutput {
     /// <p>The AWS Ground Station ephemeris ID.</p>
-    pub fn ephemeris_id(&self) -> std::option::Option<&str> {
+    pub fn ephemeris_id(&self) -> std::option::Option<& str> {
         self.ephemeris_id.as_deref()
     }
 }
 /// See [`DeleteEphemerisOutput`](crate::output::DeleteEphemerisOutput).
 pub mod delete_ephemeris_output {
-
+    
     /// A builder for [`DeleteEphemerisOutput`](crate::output::DeleteEphemerisOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -948,16 +896,18 @@ pub mod delete_ephemeris_output {
         }
         /// <p>The AWS Ground Station ephemeris ID.</p>
         pub fn set_ephemeris_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ephemeris_id = input;
-            self
+            self.ephemeris_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteEphemerisOutput`](crate::output::DeleteEphemerisOutput).
         pub fn build(self) -> crate::output::DeleteEphemerisOutput {
             crate::output::DeleteEphemerisOutput {
-                ephemeris_id: self.ephemeris_id,
+                ephemeris_id: self.ephemeris_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteEphemerisOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEphemerisOutput`](crate::output::DeleteEphemerisOutput).
@@ -969,20 +919,20 @@ impl DeleteEphemerisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEphemerisOutput {
+pub struct UpdateEphemerisOutput  {
     /// <p>The AWS Ground Station ephemeris ID.</p>
     #[doc(hidden)]
     pub ephemeris_id: std::option::Option<std::string::String>,
 }
 impl UpdateEphemerisOutput {
     /// <p>The AWS Ground Station ephemeris ID.</p>
-    pub fn ephemeris_id(&self) -> std::option::Option<&str> {
+    pub fn ephemeris_id(&self) -> std::option::Option<& str> {
         self.ephemeris_id.as_deref()
     }
 }
 /// See [`UpdateEphemerisOutput`](crate::output::UpdateEphemerisOutput).
 pub mod update_ephemeris_output {
-
+    
     /// A builder for [`UpdateEphemerisOutput`](crate::output::UpdateEphemerisOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -996,16 +946,18 @@ pub mod update_ephemeris_output {
         }
         /// <p>The AWS Ground Station ephemeris ID.</p>
         pub fn set_ephemeris_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ephemeris_id = input;
-            self
+            self.ephemeris_id = input; self
         }
         /// Consumes the builder and constructs a [`UpdateEphemerisOutput`](crate::output::UpdateEphemerisOutput).
         pub fn build(self) -> crate::output::UpdateEphemerisOutput {
             crate::output::UpdateEphemerisOutput {
-                ephemeris_id: self.ephemeris_id,
+                ephemeris_id: self.ephemeris_id
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateEphemerisOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEphemerisOutput`](crate::output::UpdateEphemerisOutput).
@@ -1017,7 +969,7 @@ impl UpdateEphemerisOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEphemerisOutput {
+pub struct DescribeEphemerisOutput  {
     /// <p>The AWS Ground Station ephemeris ID.</p>
     #[doc(hidden)]
     pub ephemeris_id: std::option::Option<std::string::String>,
@@ -1027,8 +979,8 @@ pub struct DescribeEphemerisOutput {
     /// <p>The status of the ephemeris.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::EphemerisStatus>,
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p> 
+    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p> 
     /// <p>Priority must be 1 or greater</p>
     #[doc(hidden)]
     pub priority: std::option::Option<i32>,
@@ -1043,8 +995,7 @@ pub struct DescribeEphemerisOutput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Tags assigned to an ephemeris.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Supplied ephemeris data.</p>
     #[doc(hidden)]
     pub supplied_data: std::option::Option<crate::model::EphemerisTypeDescription>,
@@ -1054,25 +1005,25 @@ pub struct DescribeEphemerisOutput {
 }
 impl DescribeEphemerisOutput {
     /// <p>The AWS Ground Station ephemeris ID.</p>
-    pub fn ephemeris_id(&self) -> std::option::Option<&str> {
+    pub fn ephemeris_id(&self) -> std::option::Option<& str> {
         self.ephemeris_id.as_deref()
     }
     /// <p>The AWS Ground Station satellite ID associated with ephemeris.</p>
-    pub fn satellite_id(&self) -> std::option::Option<&str> {
+    pub fn satellite_id(&self) -> std::option::Option<& str> {
         self.satellite_id.as_deref()
     }
     /// <p>The status of the ephemeris.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::EphemerisStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::EphemerisStatus> {
         self.status.as_ref()
     }
-    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+    /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p> 
+    /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p> 
     /// <p>Priority must be 1 or greater</p>
     pub fn priority(&self) -> std::option::Option<i32> {
         self.priority
     }
     /// <p>The time the ephemeris was uploaded in UTC.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Whether or not the ephemeris is enabled.</p>
@@ -1080,28 +1031,25 @@ impl DescribeEphemerisOutput {
         self.enabled
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Tags assigned to an ephemeris.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Supplied ephemeris data.</p>
-    pub fn supplied_data(&self) -> std::option::Option<&crate::model::EphemerisTypeDescription> {
+    pub fn supplied_data(&self) -> std::option::Option<& crate::model::EphemerisTypeDescription> {
         self.supplied_data.as_ref()
     }
     /// <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
-    pub fn invalid_reason(&self) -> std::option::Option<&crate::model::EphemerisInvalidReason> {
+    pub fn invalid_reason(&self) -> std::option::Option<& crate::model::EphemerisInvalidReason> {
         self.invalid_reason.as_ref()
     }
 }
 /// See [`DescribeEphemerisOutput`](crate::output::DescribeEphemerisOutput).
 pub mod describe_ephemeris_output {
-
+    
     /// A builder for [`DescribeEphemerisOutput`](crate::output::DescribeEphemerisOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1112,9 +1060,7 @@ pub mod describe_ephemeris_output {
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) enabled: std::option::Option<bool>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) supplied_data: std::option::Option<crate::model::EphemerisTypeDescription>,
         pub(crate) invalid_reason: std::option::Option<crate::model::EphemerisInvalidReason>,
     }
@@ -1126,8 +1072,7 @@ pub mod describe_ephemeris_output {
         }
         /// <p>The AWS Ground Station ephemeris ID.</p>
         pub fn set_ephemeris_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.ephemeris_id = input;
-            self
+            self.ephemeris_id = input; self
         }
         /// <p>The AWS Ground Station satellite ID associated with ephemeris.</p>
         pub fn satellite_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1136,8 +1081,7 @@ pub mod describe_ephemeris_output {
         }
         /// <p>The AWS Ground Station satellite ID associated with ephemeris.</p>
         pub fn set_satellite_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.satellite_id = input;
-            self
+            self.satellite_id = input; self
         }
         /// <p>The status of the ephemeris.</p>
         pub fn status(mut self, input: crate::model::EphemerisStatus) -> Self {
@@ -1145,26 +1089,21 @@ pub mod describe_ephemeris_output {
             self
         }
         /// <p>The status of the ephemeris.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::EphemerisStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::EphemerisStatus>) -> Self {
+            self.status = input; self
         }
-        /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-        /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+        /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p> 
+        /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p> 
         /// <p>Priority must be 1 or greater</p>
         pub fn priority(mut self, input: i32) -> Self {
             self.priority = Some(input);
             self
         }
-        /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
-        /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
+        /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p> 
+        /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p> 
         /// <p>Priority must be 1 or greater</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-            self.priority = input;
-            self
+            self.priority = input; self
         }
         /// <p>The time the ephemeris was uploaded in UTC.</p>
         pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1172,12 +1111,8 @@ pub mod describe_ephemeris_output {
             self
         }
         /// <p>The time the ephemeris was uploaded in UTC.</p>
-        pub fn set_creation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.creation_time = input;
-            self
+        pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.creation_time = input; self
         }
         /// <p>Whether or not the ephemeris is enabled.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -1186,8 +1121,7 @@ pub mod describe_ephemeris_output {
         }
         /// <p>Whether or not the ephemeris is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-            self.enabled = input;
-            self
+            self.enabled = input; self
         }
         /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1196,33 +1130,22 @@ pub mod describe_ephemeris_output {
         }
         /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags assigned to an ephemeris.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags assigned to an ephemeris.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Supplied ephemeris data.</p>
         pub fn supplied_data(mut self, input: crate::model::EphemerisTypeDescription) -> Self {
@@ -1230,12 +1153,8 @@ pub mod describe_ephemeris_output {
             self
         }
         /// <p>Supplied ephemeris data.</p>
-        pub fn set_supplied_data(
-            mut self,
-            input: std::option::Option<crate::model::EphemerisTypeDescription>,
-        ) -> Self {
-            self.supplied_data = input;
-            self
+        pub fn set_supplied_data(mut self, input: std::option::Option<crate::model::EphemerisTypeDescription>) -> Self {
+            self.supplied_data = input; self
         }
         /// <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
         pub fn invalid_reason(mut self, input: crate::model::EphemerisInvalidReason) -> Self {
@@ -1243,29 +1162,37 @@ pub mod describe_ephemeris_output {
             self
         }
         /// <p>Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code> status.</p>
-        pub fn set_invalid_reason(
-            mut self,
-            input: std::option::Option<crate::model::EphemerisInvalidReason>,
-        ) -> Self {
-            self.invalid_reason = input;
-            self
+        pub fn set_invalid_reason(mut self, input: std::option::Option<crate::model::EphemerisInvalidReason>) -> Self {
+            self.invalid_reason = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEphemerisOutput`](crate::output::DescribeEphemerisOutput).
         pub fn build(self) -> crate::output::DescribeEphemerisOutput {
             crate::output::DescribeEphemerisOutput {
-                ephemeris_id: self.ephemeris_id,
-                satellite_id: self.satellite_id,
-                status: self.status,
-                priority: self.priority,
-                creation_time: self.creation_time,
-                enabled: self.enabled,
-                name: self.name,
-                tags: self.tags,
-                supplied_data: self.supplied_data,
-                invalid_reason: self.invalid_reason,
+                ephemeris_id: self.ephemeris_id
+                ,
+                satellite_id: self.satellite_id
+                ,
+                status: self.status
+                ,
+                priority: self.priority
+                ,
+                creation_time: self.creation_time
+                ,
+                enabled: self.enabled
+                ,
+                name: self.name
+                ,
+                tags: self.tags
+                ,
+                supplied_data: self.supplied_data
+                ,
+                invalid_reason: self.invalid_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEphemerisOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEphemerisOutput`](crate::output::DescribeEphemerisOutput).
@@ -1277,36 +1204,32 @@ impl DescribeEphemerisOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDataflowEndpointGroupsOutput {
+pub struct ListDataflowEndpointGroupsOutput  {
     /// <p>Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of dataflow endpoint groups.</p>
     #[doc(hidden)]
-    pub dataflow_endpoint_group_list:
-        std::option::Option<std::vec::Vec<crate::model::DataflowEndpointListItem>>,
+    pub dataflow_endpoint_group_list: std::option::Option<std::vec::Vec<crate::model::DataflowEndpointListItem>>,
 }
 impl ListDataflowEndpointGroupsOutput {
     /// <p>Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>A list of dataflow endpoint groups.</p>
-    pub fn dataflow_endpoint_group_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::DataflowEndpointListItem]> {
+    pub fn dataflow_endpoint_group_list(&self) -> std::option::Option<& [crate::model::DataflowEndpointListItem]> {
         self.dataflow_endpoint_group_list.as_deref()
     }
 }
 /// See [`ListDataflowEndpointGroupsOutput`](crate::output::ListDataflowEndpointGroupsOutput).
 pub mod list_dataflow_endpoint_groups_output {
-
+    
     /// A builder for [`ListDataflowEndpointGroupsOutput`](crate::output::ListDataflowEndpointGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) dataflow_endpoint_group_list:
-            std::option::Option<std::vec::Vec<crate::model::DataflowEndpointListItem>>,
+        pub(crate) dataflow_endpoint_group_list: std::option::Option<std::vec::Vec<crate::model::DataflowEndpointListItem>>,
     }
     impl Builder {
         /// <p>Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
@@ -1316,39 +1239,35 @@ pub mod list_dataflow_endpoint_groups_output {
         }
         /// <p>Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `dataflow_endpoint_group_list`.
         ///
         /// To override the contents of this collection use [`set_dataflow_endpoint_group_list`](Self::set_dataflow_endpoint_group_list).
         ///
         /// <p>A list of dataflow endpoint groups.</p>
-        pub fn dataflow_endpoint_group_list(
-            mut self,
-            input: crate::model::DataflowEndpointListItem,
-        ) -> Self {
+        pub fn dataflow_endpoint_group_list(mut self, input: crate::model::DataflowEndpointListItem) -> Self {
             let mut v = self.dataflow_endpoint_group_list.unwrap_or_default();
-            v.push(input);
-            self.dataflow_endpoint_group_list = Some(v);
-            self
+                            v.push(input);
+                            self.dataflow_endpoint_group_list = Some(v);
+                            self
         }
         /// <p>A list of dataflow endpoint groups.</p>
-        pub fn set_dataflow_endpoint_group_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataflowEndpointListItem>>,
-        ) -> Self {
-            self.dataflow_endpoint_group_list = input;
-            self
+        pub fn set_dataflow_endpoint_group_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataflowEndpointListItem>>) -> Self {
+            self.dataflow_endpoint_group_list = input; self
         }
         /// Consumes the builder and constructs a [`ListDataflowEndpointGroupsOutput`](crate::output::ListDataflowEndpointGroupsOutput).
         pub fn build(self) -> crate::output::ListDataflowEndpointGroupsOutput {
             crate::output::ListDataflowEndpointGroupsOutput {
-                next_token: self.next_token,
-                dataflow_endpoint_group_list: self.dataflow_endpoint_group_list,
+                next_token: self.next_token
+                ,
+                dataflow_endpoint_group_list: self.dataflow_endpoint_group_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDataflowEndpointGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataflowEndpointGroupsOutput`](crate::output::ListDataflowEndpointGroupsOutput).
@@ -1360,20 +1279,20 @@ impl ListDataflowEndpointGroupsOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDataflowEndpointGroupOutput {
+pub struct CreateDataflowEndpointGroupOutput  {
     /// <p>UUID of a dataflow endpoint group.</p>
     #[doc(hidden)]
     pub dataflow_endpoint_group_id: std::option::Option<std::string::String>,
 }
 impl CreateDataflowEndpointGroupOutput {
     /// <p>UUID of a dataflow endpoint group.</p>
-    pub fn dataflow_endpoint_group_id(&self) -> std::option::Option<&str> {
+    pub fn dataflow_endpoint_group_id(&self) -> std::option::Option<& str> {
         self.dataflow_endpoint_group_id.as_deref()
     }
 }
 /// See [`CreateDataflowEndpointGroupOutput`](crate::output::CreateDataflowEndpointGroupOutput).
 pub mod create_dataflow_endpoint_group_output {
-
+    
     /// A builder for [`CreateDataflowEndpointGroupOutput`](crate::output::CreateDataflowEndpointGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1386,20 +1305,19 @@ pub mod create_dataflow_endpoint_group_output {
             self
         }
         /// <p>UUID of a dataflow endpoint group.</p>
-        pub fn set_dataflow_endpoint_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataflow_endpoint_group_id = input;
-            self
+        pub fn set_dataflow_endpoint_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataflow_endpoint_group_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateDataflowEndpointGroupOutput`](crate::output::CreateDataflowEndpointGroupOutput).
         pub fn build(self) -> crate::output::CreateDataflowEndpointGroupOutput {
             crate::output::CreateDataflowEndpointGroupOutput {
-                dataflow_endpoint_group_id: self.dataflow_endpoint_group_id,
+                dataflow_endpoint_group_id: self.dataflow_endpoint_group_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDataflowEndpointGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataflowEndpointGroupOutput`](crate::output::CreateDataflowEndpointGroupOutput).
@@ -1411,20 +1329,20 @@ impl CreateDataflowEndpointGroupOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDataflowEndpointGroupOutput {
+pub struct DeleteDataflowEndpointGroupOutput  {
     /// <p>UUID of a dataflow endpoint group.</p>
     #[doc(hidden)]
     pub dataflow_endpoint_group_id: std::option::Option<std::string::String>,
 }
 impl DeleteDataflowEndpointGroupOutput {
     /// <p>UUID of a dataflow endpoint group.</p>
-    pub fn dataflow_endpoint_group_id(&self) -> std::option::Option<&str> {
+    pub fn dataflow_endpoint_group_id(&self) -> std::option::Option<& str> {
         self.dataflow_endpoint_group_id.as_deref()
     }
 }
 /// See [`DeleteDataflowEndpointGroupOutput`](crate::output::DeleteDataflowEndpointGroupOutput).
 pub mod delete_dataflow_endpoint_group_output {
-
+    
     /// A builder for [`DeleteDataflowEndpointGroupOutput`](crate::output::DeleteDataflowEndpointGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1437,20 +1355,19 @@ pub mod delete_dataflow_endpoint_group_output {
             self
         }
         /// <p>UUID of a dataflow endpoint group.</p>
-        pub fn set_dataflow_endpoint_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataflow_endpoint_group_id = input;
-            self
+        pub fn set_dataflow_endpoint_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataflow_endpoint_group_id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDataflowEndpointGroupOutput`](crate::output::DeleteDataflowEndpointGroupOutput).
         pub fn build(self) -> crate::output::DeleteDataflowEndpointGroupOutput {
             crate::output::DeleteDataflowEndpointGroupOutput {
-                dataflow_endpoint_group_id: self.dataflow_endpoint_group_id,
+                dataflow_endpoint_group_id: self.dataflow_endpoint_group_id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDataflowEndpointGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDataflowEndpointGroupOutput`](crate::output::DeleteDataflowEndpointGroupOutput).
@@ -1462,7 +1379,7 @@ impl DeleteDataflowEndpointGroupOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDataflowEndpointGroupOutput {
+pub struct GetDataflowEndpointGroupOutput  {
     /// <p>UUID of a dataflow endpoint group.</p>
     #[doc(hidden)]
     pub dataflow_endpoint_group_id: std::option::Option<std::string::String>,
@@ -1474,8 +1391,7 @@ pub struct GetDataflowEndpointGroupOutput {
     pub endpoints_details: std::option::Option<std::vec::Vec<crate::model::EndpointDetails>>,
     /// <p>Tags assigned to a dataflow endpoint group.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Amount of time, in seconds, prior to contact start for the contact to remain in a <code>PREPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>PREPASS</code> state.</p>
     #[doc(hidden)]
     pub contact_pre_pass_duration_seconds: std::option::Option<i32>,
@@ -1485,22 +1401,19 @@ pub struct GetDataflowEndpointGroupOutput {
 }
 impl GetDataflowEndpointGroupOutput {
     /// <p>UUID of a dataflow endpoint group.</p>
-    pub fn dataflow_endpoint_group_id(&self) -> std::option::Option<&str> {
+    pub fn dataflow_endpoint_group_id(&self) -> std::option::Option<& str> {
         self.dataflow_endpoint_group_id.as_deref()
     }
     /// <p>ARN of a dataflow endpoint group.</p>
-    pub fn dataflow_endpoint_group_arn(&self) -> std::option::Option<&str> {
+    pub fn dataflow_endpoint_group_arn(&self) -> std::option::Option<& str> {
         self.dataflow_endpoint_group_arn.as_deref()
     }
     /// <p>Details of a dataflow endpoint.</p>
-    pub fn endpoints_details(&self) -> std::option::Option<&[crate::model::EndpointDetails]> {
+    pub fn endpoints_details(&self) -> std::option::Option<& [crate::model::EndpointDetails]> {
         self.endpoints_details.as_deref()
     }
     /// <p>Tags assigned to a dataflow endpoint group.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Amount of time, in seconds, prior to contact start for the contact to remain in a <code>PREPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>PREPASS</code> state.</p>
@@ -1514,17 +1427,14 @@ impl GetDataflowEndpointGroupOutput {
 }
 /// See [`GetDataflowEndpointGroupOutput`](crate::output::GetDataflowEndpointGroupOutput).
 pub mod get_dataflow_endpoint_group_output {
-
+    
     /// A builder for [`GetDataflowEndpointGroupOutput`](crate::output::GetDataflowEndpointGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataflow_endpoint_group_id: std::option::Option<std::string::String>,
         pub(crate) dataflow_endpoint_group_arn: std::option::Option<std::string::String>,
-        pub(crate) endpoints_details:
-            std::option::Option<std::vec::Vec<crate::model::EndpointDetails>>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) endpoints_details: std::option::Option<std::vec::Vec<crate::model::EndpointDetails>>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) contact_pre_pass_duration_seconds: std::option::Option<i32>,
         pub(crate) contact_post_pass_duration_seconds: std::option::Option<i32>,
     }
@@ -1535,28 +1445,17 @@ pub mod get_dataflow_endpoint_group_output {
             self
         }
         /// <p>UUID of a dataflow endpoint group.</p>
-        pub fn set_dataflow_endpoint_group_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataflow_endpoint_group_id = input;
-            self
+        pub fn set_dataflow_endpoint_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataflow_endpoint_group_id = input; self
         }
         /// <p>ARN of a dataflow endpoint group.</p>
-        pub fn dataflow_endpoint_group_arn(
-            mut self,
-            input: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn dataflow_endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataflow_endpoint_group_arn = Some(input.into());
             self
         }
         /// <p>ARN of a dataflow endpoint group.</p>
-        pub fn set_dataflow_endpoint_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.dataflow_endpoint_group_arn = input;
-            self
+        pub fn set_dataflow_endpoint_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.dataflow_endpoint_group_arn = input; self
         }
         /// Appends an item to `endpoints_details`.
         ///
@@ -1565,42 +1464,28 @@ pub mod get_dataflow_endpoint_group_output {
         /// <p>Details of a dataflow endpoint.</p>
         pub fn endpoints_details(mut self, input: crate::model::EndpointDetails) -> Self {
             let mut v = self.endpoints_details.unwrap_or_default();
-            v.push(input);
-            self.endpoints_details = Some(v);
-            self
+                            v.push(input);
+                            self.endpoints_details = Some(v);
+                            self
         }
         /// <p>Details of a dataflow endpoint.</p>
-        pub fn set_endpoints_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EndpointDetails>>,
-        ) -> Self {
-            self.endpoints_details = input;
-            self
+        pub fn set_endpoints_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::EndpointDetails>>) -> Self {
+            self.endpoints_details = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags assigned to a dataflow endpoint group.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags assigned to a dataflow endpoint group.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Amount of time, in seconds, prior to contact start for the contact to remain in a <code>PREPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>PREPASS</code> state.</p>
         pub fn contact_pre_pass_duration_seconds(mut self, input: i32) -> Self {
@@ -1608,12 +1493,8 @@ pub mod get_dataflow_endpoint_group_output {
             self
         }
         /// <p>Amount of time, in seconds, prior to contact start for the contact to remain in a <code>PREPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>PREPASS</code> state.</p>
-        pub fn set_contact_pre_pass_duration_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.contact_pre_pass_duration_seconds = input;
-            self
+        pub fn set_contact_pre_pass_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.contact_pre_pass_duration_seconds = input; self
         }
         /// <p>Amount of time, in seconds, after a contact ends for the contact to remain in a <code>POSTPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>POSTPASS</code> state.</p>
         pub fn contact_post_pass_duration_seconds(mut self, input: i32) -> Self {
@@ -1621,25 +1502,29 @@ pub mod get_dataflow_endpoint_group_output {
             self
         }
         /// <p>Amount of time, in seconds, after a contact ends for the contact to remain in a <code>POSTPASS</code> state. A CloudWatch event is emitted when the contact enters and exits the <code>POSTPASS</code> state.</p>
-        pub fn set_contact_post_pass_duration_seconds(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.contact_post_pass_duration_seconds = input;
-            self
+        pub fn set_contact_post_pass_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.contact_post_pass_duration_seconds = input; self
         }
         /// Consumes the builder and constructs a [`GetDataflowEndpointGroupOutput`](crate::output::GetDataflowEndpointGroupOutput).
         pub fn build(self) -> crate::output::GetDataflowEndpointGroupOutput {
             crate::output::GetDataflowEndpointGroupOutput {
-                dataflow_endpoint_group_id: self.dataflow_endpoint_group_id,
-                dataflow_endpoint_group_arn: self.dataflow_endpoint_group_arn,
-                endpoints_details: self.endpoints_details,
-                tags: self.tags,
-                contact_pre_pass_duration_seconds: self.contact_pre_pass_duration_seconds,
-                contact_post_pass_duration_seconds: self.contact_post_pass_duration_seconds,
+                dataflow_endpoint_group_id: self.dataflow_endpoint_group_id
+                ,
+                dataflow_endpoint_group_arn: self.dataflow_endpoint_group_arn
+                ,
+                endpoints_details: self.endpoints_details
+                ,
+                tags: self.tags
+                ,
+                contact_pre_pass_duration_seconds: self.contact_pre_pass_duration_seconds
+                ,
+                contact_post_pass_duration_seconds: self.contact_post_pass_duration_seconds
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDataflowEndpointGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetDataflowEndpointGroupOutput`](crate::output::GetDataflowEndpointGroupOutput).
@@ -1651,7 +1536,7 @@ impl GetDataflowEndpointGroupOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContactsOutput {
+pub struct ListContactsOutput  {
     /// <p>Next token returned in the response of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1661,17 +1546,17 @@ pub struct ListContactsOutput {
 }
 impl ListContactsOutput {
     /// <p>Next token returned in the response of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of contacts.</p>
-    pub fn contact_list(&self) -> std::option::Option<&[crate::model::ContactData]> {
+    pub fn contact_list(&self) -> std::option::Option<& [crate::model::ContactData]> {
         self.contact_list.as_deref()
     }
 }
 /// See [`ListContactsOutput`](crate::output::ListContactsOutput).
 pub mod list_contacts_output {
-
+    
     /// A builder for [`ListContactsOutput`](crate::output::ListContactsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1686,8 +1571,7 @@ pub mod list_contacts_output {
         }
         /// <p>Next token returned in the response of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `contact_list`.
         ///
@@ -1696,26 +1580,26 @@ pub mod list_contacts_output {
         /// <p>List of contacts.</p>
         pub fn contact_list(mut self, input: crate::model::ContactData) -> Self {
             let mut v = self.contact_list.unwrap_or_default();
-            v.push(input);
-            self.contact_list = Some(v);
-            self
+                            v.push(input);
+                            self.contact_list = Some(v);
+                            self
         }
         /// <p>List of contacts.</p>
-        pub fn set_contact_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ContactData>>,
-        ) -> Self {
-            self.contact_list = input;
-            self
+        pub fn set_contact_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ContactData>>) -> Self {
+            self.contact_list = input; self
         }
         /// Consumes the builder and constructs a [`ListContactsOutput`](crate::output::ListContactsOutput).
         pub fn build(self) -> crate::output::ListContactsOutput {
             crate::output::ListContactsOutput {
-                next_token: self.next_token,
-                contact_list: self.contact_list,
+                next_token: self.next_token
+                ,
+                contact_list: self.contact_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListContactsOutput {
     /// Creates a new builder-style object to manufacture [`ListContactsOutput`](crate::output::ListContactsOutput).
@@ -1727,20 +1611,20 @@ impl ListContactsOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReserveContactOutput {
+pub struct ReserveContactOutput  {
     /// <p>UUID of a contact.</p>
     #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
 }
 impl ReserveContactOutput {
     /// <p>UUID of a contact.</p>
-    pub fn contact_id(&self) -> std::option::Option<&str> {
+    pub fn contact_id(&self) -> std::option::Option<& str> {
         self.contact_id.as_deref()
     }
 }
 /// See [`ReserveContactOutput`](crate::output::ReserveContactOutput).
 pub mod reserve_contact_output {
-
+    
     /// A builder for [`ReserveContactOutput`](crate::output::ReserveContactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1754,16 +1638,18 @@ pub mod reserve_contact_output {
         }
         /// <p>UUID of a contact.</p>
         pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.contact_id = input;
-            self
+            self.contact_id = input; self
         }
         /// Consumes the builder and constructs a [`ReserveContactOutput`](crate::output::ReserveContactOutput).
         pub fn build(self) -> crate::output::ReserveContactOutput {
             crate::output::ReserveContactOutput {
-                contact_id: self.contact_id,
+                contact_id: self.contact_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ReserveContactOutput {
     /// Creates a new builder-style object to manufacture [`ReserveContactOutput`](crate::output::ReserveContactOutput).
@@ -1775,20 +1661,20 @@ impl ReserveContactOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelContactOutput {
+pub struct CancelContactOutput  {
     /// <p>UUID of a contact.</p>
     #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
 }
 impl CancelContactOutput {
     /// <p>UUID of a contact.</p>
-    pub fn contact_id(&self) -> std::option::Option<&str> {
+    pub fn contact_id(&self) -> std::option::Option<& str> {
         self.contact_id.as_deref()
     }
 }
 /// See [`CancelContactOutput`](crate::output::CancelContactOutput).
 pub mod cancel_contact_output {
-
+    
     /// A builder for [`CancelContactOutput`](crate::output::CancelContactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1802,16 +1688,18 @@ pub mod cancel_contact_output {
         }
         /// <p>UUID of a contact.</p>
         pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.contact_id = input;
-            self
+            self.contact_id = input; self
         }
         /// Consumes the builder and constructs a [`CancelContactOutput`](crate::output::CancelContactOutput).
         pub fn build(self) -> crate::output::CancelContactOutput {
             crate::output::CancelContactOutput {
-                contact_id: self.contact_id,
+                contact_id: self.contact_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CancelContactOutput {
     /// Creates a new builder-style object to manufacture [`CancelContactOutput`](crate::output::CancelContactOutput).
@@ -1823,7 +1711,7 @@ impl CancelContactOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeContactOutput {
+pub struct DescribeContactOutput  {
     /// <p>UUID of a contact.</p>
     #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
@@ -1859,8 +1747,7 @@ pub struct DescribeContactOutput {
     pub maximum_elevation: std::option::Option<crate::model::Elevation>,
     /// <p>Tags assigned to a contact.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Region of a contact.</p>
     #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
@@ -1870,68 +1757,65 @@ pub struct DescribeContactOutput {
 }
 impl DescribeContactOutput {
     /// <p>UUID of a contact.</p>
-    pub fn contact_id(&self) -> std::option::Option<&str> {
+    pub fn contact_id(&self) -> std::option::Option<& str> {
         self.contact_id.as_deref()
     }
     /// <p>ARN of a mission profile.</p>
-    pub fn mission_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn mission_profile_arn(&self) -> std::option::Option<& str> {
         self.mission_profile_arn.as_deref()
     }
     /// <p>ARN of a satellite.</p>
-    pub fn satellite_arn(&self) -> std::option::Option<&str> {
+    pub fn satellite_arn(&self) -> std::option::Option<& str> {
         self.satellite_arn.as_deref()
     }
     /// <p>Start time of a contact in UTC.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>End time of a contact in UTC.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-    pub fn pre_pass_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn pre_pass_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.pre_pass_start_time.as_ref()
     }
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    pub fn post_pass_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn post_pass_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.post_pass_end_time.as_ref()
     }
     /// <p>Ground station for a contact.</p>
-    pub fn ground_station(&self) -> std::option::Option<&str> {
+    pub fn ground_station(&self) -> std::option::Option<& str> {
         self.ground_station.as_deref()
     }
     /// <p>Status of a contact.</p>
-    pub fn contact_status(&self) -> std::option::Option<&crate::model::ContactStatus> {
+    pub fn contact_status(&self) -> std::option::Option<& crate::model::ContactStatus> {
         self.contact_status.as_ref()
     }
     /// <p>Error message for a contact.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>Maximum elevation angle of a contact.</p>
-    pub fn maximum_elevation(&self) -> std::option::Option<&crate::model::Elevation> {
+    pub fn maximum_elevation(&self) -> std::option::Option<& crate::model::Elevation> {
         self.maximum_elevation.as_ref()
     }
     /// <p>Tags assigned to a contact.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Region of a contact.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> std::option::Option<& str> {
         self.region.as_deref()
     }
     /// <p>List describing source and destination details for each dataflow edge.</p>
-    pub fn dataflow_list(&self) -> std::option::Option<&[crate::model::DataflowDetail]> {
+    pub fn dataflow_list(&self) -> std::option::Option<& [crate::model::DataflowDetail]> {
         self.dataflow_list.as_deref()
     }
 }
 /// See [`DescribeContactOutput`](crate::output::DescribeContactOutput).
 pub mod describe_contact_output {
-
+    
     /// A builder for [`DescribeContactOutput`](crate::output::DescribeContactOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1946,9 +1830,7 @@ pub mod describe_contact_output {
         pub(crate) contact_status: std::option::Option<crate::model::ContactStatus>,
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) maximum_elevation: std::option::Option<crate::model::Elevation>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) dataflow_list: std::option::Option<std::vec::Vec<crate::model::DataflowDetail>>,
     }
@@ -1960,8 +1842,7 @@ pub mod describe_contact_output {
         }
         /// <p>UUID of a contact.</p>
         pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.contact_id = input;
-            self
+            self.contact_id = input; self
         }
         /// <p>ARN of a mission profile.</p>
         pub fn mission_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1969,12 +1850,8 @@ pub mod describe_contact_output {
             self
         }
         /// <p>ARN of a mission profile.</p>
-        pub fn set_mission_profile_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.mission_profile_arn = input;
-            self
+        pub fn set_mission_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.mission_profile_arn = input; self
         }
         /// <p>ARN of a satellite.</p>
         pub fn satellite_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1982,12 +1859,8 @@ pub mod describe_contact_output {
             self
         }
         /// <p>ARN of a satellite.</p>
-        pub fn set_satellite_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.satellite_arn = input;
-            self
+        pub fn set_satellite_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.satellite_arn = input; self
         }
         /// <p>Start time of a contact in UTC.</p>
         pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1995,12 +1868,8 @@ pub mod describe_contact_output {
             self
         }
         /// <p>Start time of a contact in UTC.</p>
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.start_time = input;
-            self
+        pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.start_time = input; self
         }
         /// <p>End time of a contact in UTC.</p>
         pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2008,12 +1877,8 @@ pub mod describe_contact_output {
             self
         }
         /// <p>End time of a contact in UTC.</p>
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.end_time = input;
-            self
+        pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.end_time = input; self
         }
         /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
         pub fn pre_pass_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2021,12 +1886,8 @@ pub mod describe_contact_output {
             self
         }
         /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-        pub fn set_pre_pass_start_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.pre_pass_start_time = input;
-            self
+        pub fn set_pre_pass_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.pre_pass_start_time = input; self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
         pub fn post_pass_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2034,12 +1895,8 @@ pub mod describe_contact_output {
             self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-        pub fn set_post_pass_end_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.post_pass_end_time = input;
-            self
+        pub fn set_post_pass_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.post_pass_end_time = input; self
         }
         /// <p>Ground station for a contact.</p>
         pub fn ground_station(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2047,12 +1904,8 @@ pub mod describe_contact_output {
             self
         }
         /// <p>Ground station for a contact.</p>
-        pub fn set_ground_station(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.ground_station = input;
-            self
+        pub fn set_ground_station(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ground_station = input; self
         }
         /// <p>Status of a contact.</p>
         pub fn contact_status(mut self, input: crate::model::ContactStatus) -> Self {
@@ -2060,12 +1913,8 @@ pub mod describe_contact_output {
             self
         }
         /// <p>Status of a contact.</p>
-        pub fn set_contact_status(
-            mut self,
-            input: std::option::Option<crate::model::ContactStatus>,
-        ) -> Self {
-            self.contact_status = input;
-            self
+        pub fn set_contact_status(mut self, input: std::option::Option<crate::model::ContactStatus>) -> Self {
+            self.contact_status = input; self
         }
         /// <p>Error message for a contact.</p>
         pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2073,12 +1922,8 @@ pub mod describe_contact_output {
             self
         }
         /// <p>Error message for a contact.</p>
-        pub fn set_error_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.error_message = input;
-            self
+        pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_message = input; self
         }
         /// <p>Maximum elevation angle of a contact.</p>
         pub fn maximum_elevation(mut self, input: crate::model::Elevation) -> Self {
@@ -2086,37 +1931,23 @@ pub mod describe_contact_output {
             self
         }
         /// <p>Maximum elevation angle of a contact.</p>
-        pub fn set_maximum_elevation(
-            mut self,
-            input: std::option::Option<crate::model::Elevation>,
-        ) -> Self {
-            self.maximum_elevation = input;
-            self
+        pub fn set_maximum_elevation(mut self, input: std::option::Option<crate::model::Elevation>) -> Self {
+            self.maximum_elevation = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags assigned to a contact.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags assigned to a contact.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Region of a contact.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2125,8 +1956,7 @@ pub mod describe_contact_output {
         }
         /// <p>Region of a contact.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region = input;
-            self
+            self.region = input; self
         }
         /// Appends an item to `dataflow_list`.
         ///
@@ -2135,38 +1965,50 @@ pub mod describe_contact_output {
         /// <p>List describing source and destination details for each dataflow edge.</p>
         pub fn dataflow_list(mut self, input: crate::model::DataflowDetail) -> Self {
             let mut v = self.dataflow_list.unwrap_or_default();
-            v.push(input);
-            self.dataflow_list = Some(v);
-            self
+                            v.push(input);
+                            self.dataflow_list = Some(v);
+                            self
         }
         /// <p>List describing source and destination details for each dataflow edge.</p>
-        pub fn set_dataflow_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataflowDetail>>,
-        ) -> Self {
-            self.dataflow_list = input;
-            self
+        pub fn set_dataflow_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataflowDetail>>) -> Self {
+            self.dataflow_list = input; self
         }
         /// Consumes the builder and constructs a [`DescribeContactOutput`](crate::output::DescribeContactOutput).
         pub fn build(self) -> crate::output::DescribeContactOutput {
             crate::output::DescribeContactOutput {
-                contact_id: self.contact_id,
-                mission_profile_arn: self.mission_profile_arn,
-                satellite_arn: self.satellite_arn,
-                start_time: self.start_time,
-                end_time: self.end_time,
-                pre_pass_start_time: self.pre_pass_start_time,
-                post_pass_end_time: self.post_pass_end_time,
-                ground_station: self.ground_station,
-                contact_status: self.contact_status,
-                error_message: self.error_message,
-                maximum_elevation: self.maximum_elevation,
-                tags: self.tags,
-                region: self.region,
-                dataflow_list: self.dataflow_list,
+                contact_id: self.contact_id
+                ,
+                mission_profile_arn: self.mission_profile_arn
+                ,
+                satellite_arn: self.satellite_arn
+                ,
+                start_time: self.start_time
+                ,
+                end_time: self.end_time
+                ,
+                pre_pass_start_time: self.pre_pass_start_time
+                ,
+                post_pass_end_time: self.post_pass_end_time
+                ,
+                ground_station: self.ground_station
+                ,
+                contact_status: self.contact_status
+                ,
+                error_message: self.error_message
+                ,
+                maximum_elevation: self.maximum_elevation
+                ,
+                tags: self.tags
+                ,
+                region: self.region
+                ,
+                dataflow_list: self.dataflow_list
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeContactOutput {
     /// Creates a new builder-style object to manufacture [`DescribeContactOutput`](crate::output::DescribeContactOutput).
@@ -2178,7 +2020,7 @@ impl DescribeContactOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConfigsOutput {
+pub struct ListConfigsOutput  {
     /// <p>Next token returned in the response of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -2188,17 +2030,17 @@ pub struct ListConfigsOutput {
 }
 impl ListConfigsOutput {
     /// <p>Next token returned in the response of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>List of <code>Config</code> items.</p>
-    pub fn config_list(&self) -> std::option::Option<&[crate::model::ConfigListItem]> {
+    pub fn config_list(&self) -> std::option::Option<& [crate::model::ConfigListItem]> {
         self.config_list.as_deref()
     }
 }
 /// See [`ListConfigsOutput`](crate::output::ListConfigsOutput).
 pub mod list_configs_output {
-
+    
     /// A builder for [`ListConfigsOutput`](crate::output::ListConfigsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2213,8 +2055,7 @@ pub mod list_configs_output {
         }
         /// <p>Next token returned in the response of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `config_list`.
         ///
@@ -2223,26 +2064,26 @@ pub mod list_configs_output {
         /// <p>List of <code>Config</code> items.</p>
         pub fn config_list(mut self, input: crate::model::ConfigListItem) -> Self {
             let mut v = self.config_list.unwrap_or_default();
-            v.push(input);
-            self.config_list = Some(v);
-            self
+                            v.push(input);
+                            self.config_list = Some(v);
+                            self
         }
         /// <p>List of <code>Config</code> items.</p>
-        pub fn set_config_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConfigListItem>>,
-        ) -> Self {
-            self.config_list = input;
-            self
+        pub fn set_config_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConfigListItem>>) -> Self {
+            self.config_list = input; self
         }
         /// Consumes the builder and constructs a [`ListConfigsOutput`](crate::output::ListConfigsOutput).
         pub fn build(self) -> crate::output::ListConfigsOutput {
             crate::output::ListConfigsOutput {
-                next_token: self.next_token,
-                config_list: self.config_list,
+                next_token: self.next_token
+                ,
+                config_list: self.config_list
+                ,
             }
         }
     }
+    
+    
 }
 impl ListConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListConfigsOutput`](crate::output::ListConfigsOutput).
@@ -2254,7 +2095,7 @@ impl ListConfigsOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConfigOutput {
+pub struct CreateConfigOutput  {
     /// <p>UUID of a <code>Config</code>.</p>
     #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
@@ -2267,21 +2108,21 @@ pub struct CreateConfigOutput {
 }
 impl CreateConfigOutput {
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn config_id(&self) -> std::option::Option<&str> {
+    pub fn config_id(&self) -> std::option::Option<& str> {
         self.config_id.as_deref()
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn config_type(&self) -> std::option::Option<&crate::model::ConfigCapabilityType> {
+    pub fn config_type(&self) -> std::option::Option<& crate::model::ConfigCapabilityType> {
         self.config_type.as_ref()
     }
     /// <p>ARN of a <code>Config</code>.</p>
-    pub fn config_arn(&self) -> std::option::Option<&str> {
+    pub fn config_arn(&self) -> std::option::Option<& str> {
         self.config_arn.as_deref()
     }
 }
 /// See [`CreateConfigOutput`](crate::output::CreateConfigOutput).
 pub mod create_config_output {
-
+    
     /// A builder for [`CreateConfigOutput`](crate::output::CreateConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2297,8 +2138,7 @@ pub mod create_config_output {
         }
         /// <p>UUID of a <code>Config</code>.</p>
         pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.config_id = input;
-            self
+            self.config_id = input; self
         }
         /// <p>Type of a <code>Config</code>.</p>
         pub fn config_type(mut self, input: crate::model::ConfigCapabilityType) -> Self {
@@ -2306,12 +2146,8 @@ pub mod create_config_output {
             self
         }
         /// <p>Type of a <code>Config</code>.</p>
-        pub fn set_config_type(
-            mut self,
-            input: std::option::Option<crate::model::ConfigCapabilityType>,
-        ) -> Self {
-            self.config_type = input;
-            self
+        pub fn set_config_type(mut self, input: std::option::Option<crate::model::ConfigCapabilityType>) -> Self {
+            self.config_type = input; self
         }
         /// <p>ARN of a <code>Config</code>.</p>
         pub fn config_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2320,18 +2156,22 @@ pub mod create_config_output {
         }
         /// <p>ARN of a <code>Config</code>.</p>
         pub fn set_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.config_arn = input;
-            self
+            self.config_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateConfigOutput`](crate::output::CreateConfigOutput).
         pub fn build(self) -> crate::output::CreateConfigOutput {
             crate::output::CreateConfigOutput {
-                config_id: self.config_id,
-                config_type: self.config_type,
-                config_arn: self.config_arn,
+                config_id: self.config_id
+                ,
+                config_type: self.config_type
+                ,
+                config_arn: self.config_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateConfigOutput {
     /// Creates a new builder-style object to manufacture [`CreateConfigOutput`](crate::output::CreateConfigOutput).
@@ -2343,7 +2183,7 @@ impl CreateConfigOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfigOutput {
+pub struct DeleteConfigOutput  {
     /// <p>UUID of a <code>Config</code>.</p>
     #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
@@ -2356,21 +2196,21 @@ pub struct DeleteConfigOutput {
 }
 impl DeleteConfigOutput {
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn config_id(&self) -> std::option::Option<&str> {
+    pub fn config_id(&self) -> std::option::Option<& str> {
         self.config_id.as_deref()
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn config_type(&self) -> std::option::Option<&crate::model::ConfigCapabilityType> {
+    pub fn config_type(&self) -> std::option::Option<& crate::model::ConfigCapabilityType> {
         self.config_type.as_ref()
     }
     /// <p>ARN of a <code>Config</code>.</p>
-    pub fn config_arn(&self) -> std::option::Option<&str> {
+    pub fn config_arn(&self) -> std::option::Option<& str> {
         self.config_arn.as_deref()
     }
 }
 /// See [`DeleteConfigOutput`](crate::output::DeleteConfigOutput).
 pub mod delete_config_output {
-
+    
     /// A builder for [`DeleteConfigOutput`](crate::output::DeleteConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2386,8 +2226,7 @@ pub mod delete_config_output {
         }
         /// <p>UUID of a <code>Config</code>.</p>
         pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.config_id = input;
-            self
+            self.config_id = input; self
         }
         /// <p>Type of a <code>Config</code>.</p>
         pub fn config_type(mut self, input: crate::model::ConfigCapabilityType) -> Self {
@@ -2395,12 +2234,8 @@ pub mod delete_config_output {
             self
         }
         /// <p>Type of a <code>Config</code>.</p>
-        pub fn set_config_type(
-            mut self,
-            input: std::option::Option<crate::model::ConfigCapabilityType>,
-        ) -> Self {
-            self.config_type = input;
-            self
+        pub fn set_config_type(mut self, input: std::option::Option<crate::model::ConfigCapabilityType>) -> Self {
+            self.config_type = input; self
         }
         /// <p>ARN of a <code>Config</code>.</p>
         pub fn config_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2409,18 +2244,22 @@ pub mod delete_config_output {
         }
         /// <p>ARN of a <code>Config</code>.</p>
         pub fn set_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.config_arn = input;
-            self
+            self.config_arn = input; self
         }
         /// Consumes the builder and constructs a [`DeleteConfigOutput`](crate::output::DeleteConfigOutput).
         pub fn build(self) -> crate::output::DeleteConfigOutput {
             crate::output::DeleteConfigOutput {
-                config_id: self.config_id,
-                config_type: self.config_type,
-                config_arn: self.config_arn,
+                config_id: self.config_id
+                ,
+                config_type: self.config_type
+                ,
+                config_arn: self.config_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigOutput`](crate::output::DeleteConfigOutput).
@@ -2432,7 +2271,7 @@ impl DeleteConfigOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfigOutput {
+pub struct UpdateConfigOutput  {
     /// <p>UUID of a <code>Config</code>.</p>
     #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
@@ -2445,21 +2284,21 @@ pub struct UpdateConfigOutput {
 }
 impl UpdateConfigOutput {
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn config_id(&self) -> std::option::Option<&str> {
+    pub fn config_id(&self) -> std::option::Option<& str> {
         self.config_id.as_deref()
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn config_type(&self) -> std::option::Option<&crate::model::ConfigCapabilityType> {
+    pub fn config_type(&self) -> std::option::Option<& crate::model::ConfigCapabilityType> {
         self.config_type.as_ref()
     }
     /// <p>ARN of a <code>Config</code>.</p>
-    pub fn config_arn(&self) -> std::option::Option<&str> {
+    pub fn config_arn(&self) -> std::option::Option<& str> {
         self.config_arn.as_deref()
     }
 }
 /// See [`UpdateConfigOutput`](crate::output::UpdateConfigOutput).
 pub mod update_config_output {
-
+    
     /// A builder for [`UpdateConfigOutput`](crate::output::UpdateConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2475,8 +2314,7 @@ pub mod update_config_output {
         }
         /// <p>UUID of a <code>Config</code>.</p>
         pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.config_id = input;
-            self
+            self.config_id = input; self
         }
         /// <p>Type of a <code>Config</code>.</p>
         pub fn config_type(mut self, input: crate::model::ConfigCapabilityType) -> Self {
@@ -2484,12 +2322,8 @@ pub mod update_config_output {
             self
         }
         /// <p>Type of a <code>Config</code>.</p>
-        pub fn set_config_type(
-            mut self,
-            input: std::option::Option<crate::model::ConfigCapabilityType>,
-        ) -> Self {
-            self.config_type = input;
-            self
+        pub fn set_config_type(mut self, input: std::option::Option<crate::model::ConfigCapabilityType>) -> Self {
+            self.config_type = input; self
         }
         /// <p>ARN of a <code>Config</code>.</p>
         pub fn config_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2498,18 +2332,22 @@ pub mod update_config_output {
         }
         /// <p>ARN of a <code>Config</code>.</p>
         pub fn set_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.config_arn = input;
-            self
+            self.config_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateConfigOutput`](crate::output::UpdateConfigOutput).
         pub fn build(self) -> crate::output::UpdateConfigOutput {
             crate::output::UpdateConfigOutput {
-                config_id: self.config_id,
-                config_type: self.config_type,
-                config_arn: self.config_arn,
+                config_id: self.config_id
+                ,
+                config_type: self.config_type
+                ,
+                config_arn: self.config_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConfigOutput`](crate::output::UpdateConfigOutput).
@@ -2521,7 +2359,7 @@ impl UpdateConfigOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConfigOutput {
+pub struct GetConfigOutput  {
     /// <p>UUID of a <code>Config</code>.</p>
     #[doc(hidden)]
     pub config_id: std::option::Option<std::string::String>,
@@ -2539,41 +2377,37 @@ pub struct GetConfigOutput {
     pub config_data: std::option::Option<crate::model::ConfigTypeData>,
     /// <p>Tags assigned to a <code>Config</code>.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl GetConfigOutput {
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn config_id(&self) -> std::option::Option<&str> {
+    pub fn config_id(&self) -> std::option::Option<& str> {
         self.config_id.as_deref()
     }
     /// <p>ARN of a <code>Config</code> </p>
-    pub fn config_arn(&self) -> std::option::Option<&str> {
+    pub fn config_arn(&self) -> std::option::Option<& str> {
         self.config_arn.as_deref()
     }
     /// <p>Name of a <code>Config</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn config_type(&self) -> std::option::Option<&crate::model::ConfigCapabilityType> {
+    pub fn config_type(&self) -> std::option::Option<& crate::model::ConfigCapabilityType> {
         self.config_type.as_ref()
     }
     /// <p>Data elements in a <code>Config</code>.</p>
-    pub fn config_data(&self) -> std::option::Option<&crate::model::ConfigTypeData> {
+    pub fn config_data(&self) -> std::option::Option<& crate::model::ConfigTypeData> {
         self.config_data.as_ref()
     }
     /// <p>Tags assigned to a <code>Config</code>.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`GetConfigOutput`](crate::output::GetConfigOutput).
 pub mod get_config_output {
-
+    
     /// A builder for [`GetConfigOutput`](crate::output::GetConfigOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2582,9 +2416,7 @@ pub mod get_config_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) config_type: std::option::Option<crate::model::ConfigCapabilityType>,
         pub(crate) config_data: std::option::Option<crate::model::ConfigTypeData>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>UUID of a <code>Config</code>.</p>
@@ -2594,8 +2426,7 @@ pub mod get_config_output {
         }
         /// <p>UUID of a <code>Config</code>.</p>
         pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.config_id = input;
-            self
+            self.config_id = input; self
         }
         /// <p>ARN of a <code>Config</code> </p>
         pub fn config_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2604,8 +2435,7 @@ pub mod get_config_output {
         }
         /// <p>ARN of a <code>Config</code> </p>
         pub fn set_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.config_arn = input;
-            self
+            self.config_arn = input; self
         }
         /// <p>Name of a <code>Config</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2614,8 +2444,7 @@ pub mod get_config_output {
         }
         /// <p>Name of a <code>Config</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Type of a <code>Config</code>.</p>
         pub fn config_type(mut self, input: crate::model::ConfigCapabilityType) -> Self {
@@ -2623,12 +2452,8 @@ pub mod get_config_output {
             self
         }
         /// <p>Type of a <code>Config</code>.</p>
-        pub fn set_config_type(
-            mut self,
-            input: std::option::Option<crate::model::ConfigCapabilityType>,
-        ) -> Self {
-            self.config_type = input;
-            self
+        pub fn set_config_type(mut self, input: std::option::Option<crate::model::ConfigCapabilityType>) -> Self {
+            self.config_type = input; self
         }
         /// <p>Data elements in a <code>Config</code>.</p>
         pub fn config_data(mut self, input: crate::model::ConfigTypeData) -> Self {
@@ -2636,50 +2461,44 @@ pub mod get_config_output {
             self
         }
         /// <p>Data elements in a <code>Config</code>.</p>
-        pub fn set_config_data(
-            mut self,
-            input: std::option::Option<crate::model::ConfigTypeData>,
-        ) -> Self {
-            self.config_data = input;
-            self
+        pub fn set_config_data(mut self, input: std::option::Option<crate::model::ConfigTypeData>) -> Self {
+            self.config_data = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags assigned to a <code>Config</code>.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags assigned to a <code>Config</code>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`GetConfigOutput`](crate::output::GetConfigOutput).
         pub fn build(self) -> crate::output::GetConfigOutput {
             crate::output::GetConfigOutput {
-                config_id: self.config_id,
-                config_arn: self.config_arn,
-                name: self.name,
-                config_type: self.config_type,
-                config_data: self.config_data,
-                tags: self.tags,
+                config_id: self.config_id
+                ,
+                config_arn: self.config_arn
+                ,
+                name: self.name
+                ,
+                config_type: self.config_type
+                ,
+                config_data: self.config_data
+                ,
+                tags: self.tags
+                ,
             }
         }
     }
+    
+    
 }
 impl GetConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetConfigOutput`](crate::output::GetConfigOutput).
@@ -2691,19 +2510,24 @@ impl GetConfigOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -2715,19 +2539,24 @@ impl UntagResourceOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -2739,30 +2568,24 @@ impl TagResourceOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>Tags assigned to a resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Tags assigned to a resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -2770,31 +2593,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>Tags assigned to a resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>Tags assigned to a resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -2806,7 +2624,7 @@ impl ListTagsForResourceOutput {
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMinuteUsageOutput {
+pub struct GetMinuteUsageOutput  {
     /// <p>Returns whether or not an account has signed up for the reserved minutes pricing plan, specific to the month being requested.</p>
     #[doc(hidden)]
     pub is_reserved_minutes_customer: std::option::Option<bool>,
@@ -2847,7 +2665,7 @@ impl GetMinuteUsageOutput {
 }
 /// See [`GetMinuteUsageOutput`](crate::output::GetMinuteUsageOutput).
 pub mod get_minute_usage_output {
-
+    
     /// A builder for [`GetMinuteUsageOutput`](crate::output::GetMinuteUsageOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2864,12 +2682,8 @@ pub mod get_minute_usage_output {
             self
         }
         /// <p>Returns whether or not an account has signed up for the reserved minutes pricing plan, specific to the month being requested.</p>
-        pub fn set_is_reserved_minutes_customer(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.is_reserved_minutes_customer = input;
-            self
+        pub fn set_is_reserved_minutes_customer(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_reserved_minutes_customer = input; self
         }
         /// <p>Total number of reserved minutes allocated, specific to the month being requested.</p>
         pub fn total_reserved_minute_allocation(mut self, input: i32) -> Self {
@@ -2877,12 +2691,8 @@ pub mod get_minute_usage_output {
             self
         }
         /// <p>Total number of reserved minutes allocated, specific to the month being requested.</p>
-        pub fn set_total_reserved_minute_allocation(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.total_reserved_minute_allocation = input;
-            self
+        pub fn set_total_reserved_minute_allocation(mut self, input: std::option::Option<i32>) -> Self {
+            self.total_reserved_minute_allocation = input; self
         }
         /// <p>Upcoming minutes scheduled for an account, specific to the month being requested.</p>
         pub fn upcoming_minutes_scheduled(mut self, input: i32) -> Self {
@@ -2891,8 +2701,7 @@ pub mod get_minute_usage_output {
         }
         /// <p>Upcoming minutes scheduled for an account, specific to the month being requested.</p>
         pub fn set_upcoming_minutes_scheduled(mut self, input: std::option::Option<i32>) -> Self {
-            self.upcoming_minutes_scheduled = input;
-            self
+            self.upcoming_minutes_scheduled = input; self
         }
         /// <p>Total scheduled minutes for an account, specific to the month being requested.</p>
         pub fn total_scheduled_minutes(mut self, input: i32) -> Self {
@@ -2901,8 +2710,7 @@ pub mod get_minute_usage_output {
         }
         /// <p>Total scheduled minutes for an account, specific to the month being requested.</p>
         pub fn set_total_scheduled_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.total_scheduled_minutes = input;
-            self
+            self.total_scheduled_minutes = input; self
         }
         /// <p>Estimated number of minutes remaining for an account, specific to the month being requested.</p>
         pub fn estimated_minutes_remaining(mut self, input: i32) -> Self {
@@ -2911,20 +2719,26 @@ pub mod get_minute_usage_output {
         }
         /// <p>Estimated number of minutes remaining for an account, specific to the month being requested.</p>
         pub fn set_estimated_minutes_remaining(mut self, input: std::option::Option<i32>) -> Self {
-            self.estimated_minutes_remaining = input;
-            self
+            self.estimated_minutes_remaining = input; self
         }
         /// Consumes the builder and constructs a [`GetMinuteUsageOutput`](crate::output::GetMinuteUsageOutput).
         pub fn build(self) -> crate::output::GetMinuteUsageOutput {
             crate::output::GetMinuteUsageOutput {
-                is_reserved_minutes_customer: self.is_reserved_minutes_customer,
-                total_reserved_minute_allocation: self.total_reserved_minute_allocation,
-                upcoming_minutes_scheduled: self.upcoming_minutes_scheduled,
-                total_scheduled_minutes: self.total_scheduled_minutes,
-                estimated_minutes_remaining: self.estimated_minutes_remaining,
+                is_reserved_minutes_customer: self.is_reserved_minutes_customer
+                ,
+                total_reserved_minute_allocation: self.total_reserved_minute_allocation
+                ,
+                upcoming_minutes_scheduled: self.upcoming_minutes_scheduled
+                ,
+                total_scheduled_minutes: self.total_scheduled_minutes
+                ,
+                estimated_minutes_remaining: self.estimated_minutes_remaining
+                ,
             }
         }
     }
+    
+    
 }
 impl GetMinuteUsageOutput {
     /// Creates a new builder-style object to manufacture [`GetMinuteUsageOutput`](crate::output::GetMinuteUsageOutput).
@@ -2932,3 +2746,4 @@ impl GetMinuteUsageOutput {
         crate::output::get_minute_usage_output::Builder::default()
     }
 }
+

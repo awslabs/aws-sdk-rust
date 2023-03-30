@@ -3,7 +3,7 @@
 /// <p>An object that represents a service mesh returned by a list operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MeshRef {
+pub struct MeshRef  {
     /// <p>The name of the service mesh.</p>
     #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
@@ -28,19 +28,19 @@ pub struct MeshRef {
 }
 impl MeshRef {
     /// <p>The name of the service mesh.</p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+    pub fn mesh_owner(&self) -> std::option::Option<& str> {
         self.mesh_owner.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn resource_owner(&self) -> std::option::Option<&str> {
+    pub fn resource_owner(&self) -> std::option::Option<& str> {
         self.resource_owner.as_deref()
     }
     /// <p>The full Amazon Resource Name (ARN) of the service mesh.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
@@ -48,17 +48,17 @@ impl MeshRef {
         self.version
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
 /// See [`MeshRef`](crate::model::MeshRef).
 pub mod mesh_ref {
-
+    
     /// A builder for [`MeshRef`](crate::model::MeshRef).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -78,8 +78,7 @@ pub mod mesh_ref {
         }
         /// <p>The name of the service mesh.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_name = input;
-            self
+            self.mesh_name = input; self
         }
         /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +87,7 @@ pub mod mesh_ref {
         }
         /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_owner = input;
-            self
+            self.mesh_owner = input; self
         }
         /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,12 +95,8 @@ pub mod mesh_ref {
             self
         }
         /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn set_resource_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_owner = input;
-            self
+        pub fn set_resource_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_owner = input; self
         }
         /// <p>The full Amazon Resource Name (ARN) of the service mesh.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,8 +105,7 @@ pub mod mesh_ref {
         }
         /// <p>The full Amazon Resource Name (ARN) of the service mesh.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
         pub fn version(mut self, input: i64) -> Self {
@@ -121,8 +114,7 @@ pub mod mesh_ref {
         }
         /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -130,12 +122,8 @@ pub mod mesh_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -143,26 +131,31 @@ pub mod mesh_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Consumes the builder and constructs a [`MeshRef`](crate::model::MeshRef).
         pub fn build(self) -> crate::model::MeshRef {
             crate::model::MeshRef {
-                mesh_name: self.mesh_name,
-                mesh_owner: self.mesh_owner,
-                resource_owner: self.resource_owner,
-                arn: self.arn,
-                version: self.version,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
+                mesh_name: self.mesh_name
+                ,
+                mesh_owner: self.mesh_owner
+                ,
+                resource_owner: self.resource_owner
+                ,
+                arn: self.arn
+                ,
+                version: self.version
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl MeshRef {
     /// Creates a new builder-style object to manufacture [`MeshRef`](crate::model::MeshRef).
@@ -174,7 +167,7 @@ impl MeshRef {
 /// <p>An object that represents a service mesh returned by a describe operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MeshData {
+pub struct MeshData  {
     /// <p>The name of the service mesh.</p>
     #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
@@ -190,25 +183,25 @@ pub struct MeshData {
 }
 impl MeshData {
     /// <p>The name of the service mesh.</p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The associated specification for the service mesh.</p>
-    pub fn spec(&self) -> std::option::Option<&crate::model::MeshSpec> {
+    pub fn spec(&self) -> std::option::Option<& crate::model::MeshSpec> {
         self.spec.as_ref()
     }
     /// <p>The associated metadata for the service mesh.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::model::ResourceMetadata> {
+    pub fn metadata(&self) -> std::option::Option<& crate::model::ResourceMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The status of the service mesh.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::MeshStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::MeshStatus> {
         self.status.as_ref()
     }
 }
 /// See [`MeshData`](crate::model::MeshData).
 pub mod mesh_data {
-
+    
     /// A builder for [`MeshData`](crate::model::MeshData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -225,8 +218,7 @@ pub mod mesh_data {
         }
         /// <p>The name of the service mesh.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_name = input;
-            self
+            self.mesh_name = input; self
         }
         /// <p>The associated specification for the service mesh.</p>
         pub fn spec(mut self, input: crate::model::MeshSpec) -> Self {
@@ -235,8 +227,7 @@ pub mod mesh_data {
         }
         /// <p>The associated specification for the service mesh.</p>
         pub fn set_spec(mut self, input: std::option::Option<crate::model::MeshSpec>) -> Self {
-            self.spec = input;
-            self
+            self.spec = input; self
         }
         /// <p>The associated metadata for the service mesh.</p>
         pub fn metadata(mut self, input: crate::model::ResourceMetadata) -> Self {
@@ -244,12 +235,8 @@ pub mod mesh_data {
             self
         }
         /// <p>The associated metadata for the service mesh.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<crate::model::ResourceMetadata>,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<crate::model::ResourceMetadata>) -> Self {
+            self.metadata = input; self
         }
         /// <p>The status of the service mesh.</p>
         pub fn status(mut self, input: crate::model::MeshStatus) -> Self {
@@ -258,19 +245,24 @@ pub mod mesh_data {
         }
         /// <p>The status of the service mesh.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::MeshStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`MeshData`](crate::model::MeshData).
         pub fn build(self) -> crate::model::MeshData {
             crate::model::MeshData {
-                mesh_name: self.mesh_name,
-                spec: self.spec,
-                metadata: self.metadata,
-                status: self.status,
+                mesh_name: self.mesh_name
+                ,
+                spec: self.spec
+                ,
+                metadata: self.metadata
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl MeshData {
     /// Creates a new builder-style object to manufacture [`MeshData`](crate::model::MeshData).
@@ -282,20 +274,20 @@ impl MeshData {
 /// <p>An object that represents the status of a service mesh.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MeshStatus {
+pub struct MeshStatus  {
     /// <p>The current mesh status.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::MeshStatusCode>,
 }
 impl MeshStatus {
     /// <p>The current mesh status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::MeshStatusCode> {
+    pub fn status(&self) -> std::option::Option<& crate::model::MeshStatusCode> {
         self.status.as_ref()
     }
 }
 /// See [`MeshStatus`](crate::model::MeshStatus).
 pub mod mesh_status {
-
+    
     /// A builder for [`MeshStatus`](crate::model::MeshStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -308,20 +300,19 @@ pub mod mesh_status {
             self
         }
         /// <p>The current mesh status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::MeshStatusCode>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::MeshStatusCode>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`MeshStatus`](crate::model::MeshStatus).
         pub fn build(self) -> crate::model::MeshStatus {
             crate::model::MeshStatus {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl MeshStatus {
     /// Creates a new builder-style object to manufacture [`MeshStatus`](crate::model::MeshStatus).
@@ -336,9 +327,9 @@ impl MeshStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let meshstatuscode = unimplemented!();
 /// match meshstatuscode {
@@ -361,22 +352,14 @@ impl MeshStatus {
 /// Specifically, when `meshstatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MeshStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MeshStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -385,7 +368,7 @@ pub enum MeshStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MeshStatusCode {
     fn from(s: &str) -> Self {
@@ -393,17 +376,17 @@ impl std::convert::From<&str> for MeshStatusCode {
             "ACTIVE" => MeshStatusCode::Active,
             "DELETED" => MeshStatusCode::Deleted,
             "INACTIVE" => MeshStatusCode::Inactive,
-            other => MeshStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MeshStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MeshStatusCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MeshStatusCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MeshStatusCode::from(s))
+                }
+            }
 impl MeshStatusCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -411,12 +394,14 @@ impl MeshStatusCode {
             MeshStatusCode::Active => "ACTIVE",
             MeshStatusCode::Deleted => "DELETED",
             MeshStatusCode::Inactive => "INACTIVE",
-            MeshStatusCode::Unknown(value) => value.as_str(),
+            MeshStatusCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DELETED", "INACTIVE"]
+        &[
+            "ACTIVE", "DELETED", "INACTIVE"
+        ]
     }
 }
 impl AsRef<str> for MeshStatusCode {
@@ -428,7 +413,7 @@ impl AsRef<str> for MeshStatusCode {
 /// <p>An object that represents metadata for a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceMetadata {
+pub struct ResourceMetadata  {
     /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -453,7 +438,7 @@ pub struct ResourceMetadata {
 }
 impl ResourceMetadata {
     /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
@@ -461,29 +446,29 @@ impl ResourceMetadata {
         self.version
     }
     /// <p>The unique identifier for the resource.</p>
-    pub fn uid(&self) -> std::option::Option<&str> {
+    pub fn uid(&self) -> std::option::Option<& str> {
         self.uid.as_deref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+    pub fn mesh_owner(&self) -> std::option::Option<& str> {
         self.mesh_owner.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn resource_owner(&self) -> std::option::Option<&str> {
+    pub fn resource_owner(&self) -> std::option::Option<& str> {
         self.resource_owner.as_deref()
     }
 }
 /// See [`ResourceMetadata`](crate::model::ResourceMetadata).
 pub mod resource_metadata {
-
+    
     /// A builder for [`ResourceMetadata`](crate::model::ResourceMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -503,8 +488,7 @@ pub mod resource_metadata {
         }
         /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
         pub fn version(mut self, input: i64) -> Self {
@@ -513,8 +497,7 @@ pub mod resource_metadata {
         }
         /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The unique identifier for the resource.</p>
         pub fn uid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -523,8 +506,7 @@ pub mod resource_metadata {
         }
         /// <p>The unique identifier for the resource.</p>
         pub fn set_uid(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.uid = input;
-            self
+            self.uid = input; self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -532,12 +514,8 @@ pub mod resource_metadata {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -545,12 +523,8 @@ pub mod resource_metadata {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -559,8 +533,7 @@ pub mod resource_metadata {
         }
         /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_owner = input;
-            self
+            self.mesh_owner = input; self
         }
         /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -568,26 +541,31 @@ pub mod resource_metadata {
             self
         }
         /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn set_resource_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_owner = input;
-            self
+        pub fn set_resource_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_owner = input; self
         }
         /// Consumes the builder and constructs a [`ResourceMetadata`](crate::model::ResourceMetadata).
         pub fn build(self) -> crate::model::ResourceMetadata {
             crate::model::ResourceMetadata {
-                arn: self.arn,
-                version: self.version,
-                uid: self.uid,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
-                mesh_owner: self.mesh_owner,
-                resource_owner: self.resource_owner,
+                arn: self.arn
+                ,
+                version: self.version
+                ,
+                uid: self.uid
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                mesh_owner: self.mesh_owner
+                ,
+                resource_owner: self.resource_owner
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceMetadata {
     /// Creates a new builder-style object to manufacture [`ResourceMetadata`](crate::model::ResourceMetadata).
@@ -599,7 +577,7 @@ impl ResourceMetadata {
 /// <p>An object that represents the specification of a service mesh.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MeshSpec {
+pub struct MeshSpec  {
     /// <p>The egress filter rules for the service mesh.</p>
     #[doc(hidden)]
     pub egress_filter: std::option::Option<crate::model::EgressFilter>,
@@ -609,17 +587,17 @@ pub struct MeshSpec {
 }
 impl MeshSpec {
     /// <p>The egress filter rules for the service mesh.</p>
-    pub fn egress_filter(&self) -> std::option::Option<&crate::model::EgressFilter> {
+    pub fn egress_filter(&self) -> std::option::Option<& crate::model::EgressFilter> {
         self.egress_filter.as_ref()
     }
     /// <p>An object that represents the service discovery information for a service mesh.</p>
-    pub fn service_discovery(&self) -> std::option::Option<&crate::model::MeshServiceDiscovery> {
+    pub fn service_discovery(&self) -> std::option::Option<& crate::model::MeshServiceDiscovery> {
         self.service_discovery.as_ref()
     }
 }
 /// See [`MeshSpec`](crate::model::MeshSpec).
 pub mod mesh_spec {
-
+    
     /// A builder for [`MeshSpec`](crate::model::MeshSpec).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -633,12 +611,8 @@ pub mod mesh_spec {
             self
         }
         /// <p>The egress filter rules for the service mesh.</p>
-        pub fn set_egress_filter(
-            mut self,
-            input: std::option::Option<crate::model::EgressFilter>,
-        ) -> Self {
-            self.egress_filter = input;
-            self
+        pub fn set_egress_filter(mut self, input: std::option::Option<crate::model::EgressFilter>) -> Self {
+            self.egress_filter = input; self
         }
         /// <p>An object that represents the service discovery information for a service mesh.</p>
         pub fn service_discovery(mut self, input: crate::model::MeshServiceDiscovery) -> Self {
@@ -646,21 +620,21 @@ pub mod mesh_spec {
             self
         }
         /// <p>An object that represents the service discovery information for a service mesh.</p>
-        pub fn set_service_discovery(
-            mut self,
-            input: std::option::Option<crate::model::MeshServiceDiscovery>,
-        ) -> Self {
-            self.service_discovery = input;
-            self
+        pub fn set_service_discovery(mut self, input: std::option::Option<crate::model::MeshServiceDiscovery>) -> Self {
+            self.service_discovery = input; self
         }
         /// Consumes the builder and constructs a [`MeshSpec`](crate::model::MeshSpec).
         pub fn build(self) -> crate::model::MeshSpec {
             crate::model::MeshSpec {
-                egress_filter: self.egress_filter,
-                service_discovery: self.service_discovery,
+                egress_filter: self.egress_filter
+                ,
+                service_discovery: self.service_discovery
+                ,
             }
         }
     }
+    
+    
 }
 impl MeshSpec {
     /// Creates a new builder-style object to manufacture [`MeshSpec`](crate::model::MeshSpec).
@@ -672,20 +646,20 @@ impl MeshSpec {
 /// <p>An object that represents the service discovery information for a service mesh.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MeshServiceDiscovery {
+pub struct MeshServiceDiscovery  {
     /// <p>The IP version to use to control traffic within the mesh.</p>
     #[doc(hidden)]
     pub ip_preference: std::option::Option<crate::model::IpPreference>,
 }
 impl MeshServiceDiscovery {
     /// <p>The IP version to use to control traffic within the mesh.</p>
-    pub fn ip_preference(&self) -> std::option::Option<&crate::model::IpPreference> {
+    pub fn ip_preference(&self) -> std::option::Option<& crate::model::IpPreference> {
         self.ip_preference.as_ref()
     }
 }
 /// See [`MeshServiceDiscovery`](crate::model::MeshServiceDiscovery).
 pub mod mesh_service_discovery {
-
+    
     /// A builder for [`MeshServiceDiscovery`](crate::model::MeshServiceDiscovery).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -698,20 +672,19 @@ pub mod mesh_service_discovery {
             self
         }
         /// <p>The IP version to use to control traffic within the mesh.</p>
-        pub fn set_ip_preference(
-            mut self,
-            input: std::option::Option<crate::model::IpPreference>,
-        ) -> Self {
-            self.ip_preference = input;
-            self
+        pub fn set_ip_preference(mut self, input: std::option::Option<crate::model::IpPreference>) -> Self {
+            self.ip_preference = input; self
         }
         /// Consumes the builder and constructs a [`MeshServiceDiscovery`](crate::model::MeshServiceDiscovery).
         pub fn build(self) -> crate::model::MeshServiceDiscovery {
             crate::model::MeshServiceDiscovery {
-                ip_preference: self.ip_preference,
+                ip_preference: self.ip_preference
+                ,
             }
         }
     }
+    
+    
 }
 impl MeshServiceDiscovery {
     /// Creates a new builder-style object to manufacture [`MeshServiceDiscovery`](crate::model::MeshServiceDiscovery).
@@ -726,9 +699,9 @@ impl MeshServiceDiscovery {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let ippreference = unimplemented!();
 /// match ippreference {
@@ -752,22 +725,14 @@ impl MeshServiceDiscovery {
 /// Specifically, when `ippreference` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IpPreference::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IpPreference {
     #[allow(missing_docs)] // documentation missing in model
     IPv4Only,
@@ -778,7 +743,7 @@ pub enum IpPreference {
     #[allow(missing_docs)] // documentation missing in model
     IPv6Preferred,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IpPreference {
     fn from(s: &str) -> Self {
@@ -787,17 +752,17 @@ impl std::convert::From<&str> for IpPreference {
             "IPv4_PREFERRED" => IpPreference::IPv4Preferred,
             "IPv6_ONLY" => IpPreference::IPv6Only,
             "IPv6_PREFERRED" => IpPreference::IPv6Preferred,
-            other => IpPreference::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => IpPreference::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for IpPreference {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IpPreference::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IpPreference::from(s))
+                }
+            }
 impl IpPreference {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -806,12 +771,14 @@ impl IpPreference {
             IpPreference::IPv4Preferred => "IPv4_PREFERRED",
             IpPreference::IPv6Only => "IPv6_ONLY",
             IpPreference::IPv6Preferred => "IPv6_PREFERRED",
-            IpPreference::Unknown(value) => value.as_str(),
+            IpPreference::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IPv4_ONLY", "IPv4_PREFERRED", "IPv6_ONLY", "IPv6_PREFERRED"]
+        &[
+            "IPv4_ONLY", "IPv4_PREFERRED", "IPv6_ONLY", "IPv6_PREFERRED"
+        ]
     }
 }
 impl AsRef<str> for IpPreference {
@@ -823,20 +790,20 @@ impl AsRef<str> for IpPreference {
 /// <p>An object that represents the egress filter rules for a service mesh.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EgressFilter {
+pub struct EgressFilter  {
     /// <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from virtual nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the service mesh.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::EgressFilterType>,
 }
 impl EgressFilter {
     /// <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from virtual nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the service mesh.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::EgressFilterType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::EgressFilterType> {
         self.r#type.as_ref()
     }
 }
 /// See [`EgressFilter`](crate::model::EgressFilter).
 pub mod egress_filter {
-
+    
     /// A builder for [`EgressFilter`](crate::model::EgressFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -849,20 +816,19 @@ pub mod egress_filter {
             self
         }
         /// <p>The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows egress only from virtual nodes to other defined resources in the service mesh (and any traffic to <code>*.amazonaws.com</code> for Amazon Web Services API calls). You can set the egress filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside of the service mesh.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::EgressFilterType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::EgressFilterType>) -> Self {
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`EgressFilter`](crate::model::EgressFilter).
         pub fn build(self) -> crate::model::EgressFilter {
             crate::model::EgressFilter {
-                r#type: self.r#type,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl EgressFilter {
     /// Creates a new builder-style object to manufacture [`EgressFilter`](crate::model::EgressFilter).
@@ -877,9 +843,9 @@ impl EgressFilter {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let egressfiltertype = unimplemented!();
 /// match egressfiltertype {
@@ -901,58 +867,52 @@ impl EgressFilter {
 /// Specifically, when `egressfiltertype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EgressFilterType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EgressFilterType {
     #[allow(missing_docs)] // documentation missing in model
     AllowAll,
     #[allow(missing_docs)] // documentation missing in model
     DropAll,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EgressFilterType {
     fn from(s: &str) -> Self {
         match s {
             "ALLOW_ALL" => EgressFilterType::AllowAll,
             "DROP_ALL" => EgressFilterType::DropAll,
-            other => EgressFilterType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EgressFilterType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EgressFilterType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EgressFilterType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EgressFilterType::from(s))
+                }
+            }
 impl EgressFilterType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EgressFilterType::AllowAll => "ALLOW_ALL",
             EgressFilterType::DropAll => "DROP_ALL",
-            EgressFilterType::Unknown(value) => value.as_str(),
+            EgressFilterType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALLOW_ALL", "DROP_ALL"]
+        &[
+            "ALLOW_ALL", "DROP_ALL"
+        ]
     }
 }
 impl AsRef<str> for EgressFilterType {
@@ -964,7 +924,7 @@ impl AsRef<str> for EgressFilterType {
 /// <p>Optional metadata that you apply to a resource to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagRef {
+pub struct TagRef  {
     /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -974,17 +934,17 @@ pub struct TagRef {
 }
 impl TagRef {
     /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a descriptor within a tag category (key).</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`TagRef`](crate::model::TagRef).
 pub mod tag_ref {
-
+    
     /// A builder for [`TagRef`](crate::model::TagRef).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -999,8 +959,7 @@ pub mod tag_ref {
         }
         /// <p>One part of a key-value pair that make up a tag. A <code>key</code> is a general label that acts like a category for more specific tag values.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a descriptor within a tag category (key).</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1009,17 +968,20 @@ pub mod tag_ref {
         }
         /// <p>The optional part of a key-value pair that make up a tag. A <code>value</code> acts as a descriptor within a tag category (key).</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`TagRef`](crate::model::TagRef).
         pub fn build(self) -> crate::model::TagRef {
             crate::model::TagRef {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl TagRef {
     /// Creates a new builder-style object to manufacture [`TagRef`](crate::model::TagRef).
@@ -1031,7 +993,7 @@ impl TagRef {
 /// <p>An object that represents a virtual service returned by a list operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualServiceRef {
+pub struct VirtualServiceRef  {
     /// <p>The name of the service mesh that the virtual service resides in.</p>
     #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
@@ -1059,23 +1021,23 @@ pub struct VirtualServiceRef {
 }
 impl VirtualServiceRef {
     /// <p>The name of the service mesh that the virtual service resides in.</p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The name of the virtual service.</p>
-    pub fn virtual_service_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_service_name(&self) -> std::option::Option<& str> {
         self.virtual_service_name.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+    pub fn mesh_owner(&self) -> std::option::Option<& str> {
         self.mesh_owner.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn resource_owner(&self) -> std::option::Option<&str> {
+    pub fn resource_owner(&self) -> std::option::Option<& str> {
         self.resource_owner.as_deref()
     }
     /// <p>The full Amazon Resource Name (ARN) for the virtual service.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
@@ -1083,17 +1045,17 @@ impl VirtualServiceRef {
         self.version
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
 /// See [`VirtualServiceRef`](crate::model::VirtualServiceRef).
 pub mod virtual_service_ref {
-
+    
     /// A builder for [`VirtualServiceRef`](crate::model::VirtualServiceRef).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1114,8 +1076,7 @@ pub mod virtual_service_ref {
         }
         /// <p>The name of the service mesh that the virtual service resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_name = input;
-            self
+            self.mesh_name = input; self
         }
         /// <p>The name of the virtual service.</p>
         pub fn virtual_service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1123,12 +1084,8 @@ pub mod virtual_service_ref {
             self
         }
         /// <p>The name of the virtual service.</p>
-        pub fn set_virtual_service_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_service_name = input;
-            self
+        pub fn set_virtual_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_service_name = input; self
         }
         /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1137,8 +1094,7 @@ pub mod virtual_service_ref {
         }
         /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_owner = input;
-            self
+            self.mesh_owner = input; self
         }
         /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1146,12 +1102,8 @@ pub mod virtual_service_ref {
             self
         }
         /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn set_resource_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_owner = input;
-            self
+        pub fn set_resource_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_owner = input; self
         }
         /// <p>The full Amazon Resource Name (ARN) for the virtual service.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1160,8 +1112,7 @@ pub mod virtual_service_ref {
         }
         /// <p>The full Amazon Resource Name (ARN) for the virtual service.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
         pub fn version(mut self, input: i64) -> Self {
@@ -1170,8 +1121,7 @@ pub mod virtual_service_ref {
         }
         /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1179,12 +1129,8 @@ pub mod virtual_service_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1192,27 +1138,33 @@ pub mod virtual_service_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Consumes the builder and constructs a [`VirtualServiceRef`](crate::model::VirtualServiceRef).
         pub fn build(self) -> crate::model::VirtualServiceRef {
             crate::model::VirtualServiceRef {
-                mesh_name: self.mesh_name,
-                virtual_service_name: self.virtual_service_name,
-                mesh_owner: self.mesh_owner,
-                resource_owner: self.resource_owner,
-                arn: self.arn,
-                version: self.version,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
+                mesh_name: self.mesh_name
+                ,
+                virtual_service_name: self.virtual_service_name
+                ,
+                mesh_owner: self.mesh_owner
+                ,
+                resource_owner: self.resource_owner
+                ,
+                arn: self.arn
+                ,
+                version: self.version
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualServiceRef {
     /// Creates a new builder-style object to manufacture [`VirtualServiceRef`](crate::model::VirtualServiceRef).
@@ -1224,7 +1176,7 @@ impl VirtualServiceRef {
 /// <p>An object that represents a virtual service returned by a describe operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualServiceData {
+pub struct VirtualServiceData  {
     /// <p>The name of the service mesh that the virtual service resides in.</p>
     #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
@@ -1243,29 +1195,29 @@ pub struct VirtualServiceData {
 }
 impl VirtualServiceData {
     /// <p>The name of the service mesh that the virtual service resides in.</p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The name of the virtual service.</p>
-    pub fn virtual_service_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_service_name(&self) -> std::option::Option<& str> {
         self.virtual_service_name.as_deref()
     }
     /// <p>The specifications of the virtual service.</p>
-    pub fn spec(&self) -> std::option::Option<&crate::model::VirtualServiceSpec> {
+    pub fn spec(&self) -> std::option::Option<& crate::model::VirtualServiceSpec> {
         self.spec.as_ref()
     }
     /// <p>An object that represents metadata for a resource.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::model::ResourceMetadata> {
+    pub fn metadata(&self) -> std::option::Option<& crate::model::ResourceMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The current status of the virtual service.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::VirtualServiceStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::VirtualServiceStatus> {
         self.status.as_ref()
     }
 }
 /// See [`VirtualServiceData`](crate::model::VirtualServiceData).
 pub mod virtual_service_data {
-
+    
     /// A builder for [`VirtualServiceData`](crate::model::VirtualServiceData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1283,8 +1235,7 @@ pub mod virtual_service_data {
         }
         /// <p>The name of the service mesh that the virtual service resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_name = input;
-            self
+            self.mesh_name = input; self
         }
         /// <p>The name of the virtual service.</p>
         pub fn virtual_service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1292,12 +1243,8 @@ pub mod virtual_service_data {
             self
         }
         /// <p>The name of the virtual service.</p>
-        pub fn set_virtual_service_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_service_name = input;
-            self
+        pub fn set_virtual_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_service_name = input; self
         }
         /// <p>The specifications of the virtual service.</p>
         pub fn spec(mut self, input: crate::model::VirtualServiceSpec) -> Self {
@@ -1305,12 +1252,8 @@ pub mod virtual_service_data {
             self
         }
         /// <p>The specifications of the virtual service.</p>
-        pub fn set_spec(
-            mut self,
-            input: std::option::Option<crate::model::VirtualServiceSpec>,
-        ) -> Self {
-            self.spec = input;
-            self
+        pub fn set_spec(mut self, input: std::option::Option<crate::model::VirtualServiceSpec>) -> Self {
+            self.spec = input; self
         }
         /// <p>An object that represents metadata for a resource.</p>
         pub fn metadata(mut self, input: crate::model::ResourceMetadata) -> Self {
@@ -1318,12 +1261,8 @@ pub mod virtual_service_data {
             self
         }
         /// <p>An object that represents metadata for a resource.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<crate::model::ResourceMetadata>,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<crate::model::ResourceMetadata>) -> Self {
+            self.metadata = input; self
         }
         /// <p>The current status of the virtual service.</p>
         pub fn status(mut self, input: crate::model::VirtualServiceStatus) -> Self {
@@ -1331,24 +1270,27 @@ pub mod virtual_service_data {
             self
         }
         /// <p>The current status of the virtual service.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::VirtualServiceStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::VirtualServiceStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`VirtualServiceData`](crate::model::VirtualServiceData).
         pub fn build(self) -> crate::model::VirtualServiceData {
             crate::model::VirtualServiceData {
-                mesh_name: self.mesh_name,
-                virtual_service_name: self.virtual_service_name,
-                spec: self.spec,
-                metadata: self.metadata,
-                status: self.status,
+                mesh_name: self.mesh_name
+                ,
+                virtual_service_name: self.virtual_service_name
+                ,
+                spec: self.spec
+                ,
+                metadata: self.metadata
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualServiceData {
     /// Creates a new builder-style object to manufacture [`VirtualServiceData`](crate::model::VirtualServiceData).
@@ -1360,20 +1302,20 @@ impl VirtualServiceData {
 /// <p>An object that represents the status of a virtual service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualServiceStatus {
+pub struct VirtualServiceStatus  {
     /// <p>The current status of the virtual service.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::VirtualServiceStatusCode>,
 }
 impl VirtualServiceStatus {
     /// <p>The current status of the virtual service.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::VirtualServiceStatusCode> {
+    pub fn status(&self) -> std::option::Option<& crate::model::VirtualServiceStatusCode> {
         self.status.as_ref()
     }
 }
 /// See [`VirtualServiceStatus`](crate::model::VirtualServiceStatus).
 pub mod virtual_service_status {
-
+    
     /// A builder for [`VirtualServiceStatus`](crate::model::VirtualServiceStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1386,20 +1328,19 @@ pub mod virtual_service_status {
             self
         }
         /// <p>The current status of the virtual service.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::VirtualServiceStatusCode>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::VirtualServiceStatusCode>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`VirtualServiceStatus`](crate::model::VirtualServiceStatus).
         pub fn build(self) -> crate::model::VirtualServiceStatus {
             crate::model::VirtualServiceStatus {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualServiceStatus {
     /// Creates a new builder-style object to manufacture [`VirtualServiceStatus`](crate::model::VirtualServiceStatus).
@@ -1414,9 +1355,9 @@ impl VirtualServiceStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let virtualservicestatuscode = unimplemented!();
 /// match virtualservicestatuscode {
@@ -1439,22 +1380,14 @@ impl VirtualServiceStatus {
 /// Specifically, when `virtualservicestatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VirtualServiceStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VirtualServiceStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -1463,7 +1396,7 @@ pub enum VirtualServiceStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VirtualServiceStatusCode {
     fn from(s: &str) -> Self {
@@ -1471,19 +1404,17 @@ impl std::convert::From<&str> for VirtualServiceStatusCode {
             "ACTIVE" => VirtualServiceStatusCode::Active,
             "DELETED" => VirtualServiceStatusCode::Deleted,
             "INACTIVE" => VirtualServiceStatusCode::Inactive,
-            other => VirtualServiceStatusCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => VirtualServiceStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VirtualServiceStatusCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VirtualServiceStatusCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VirtualServiceStatusCode::from(s))
+                }
+            }
 impl VirtualServiceStatusCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1491,12 +1422,14 @@ impl VirtualServiceStatusCode {
             VirtualServiceStatusCode::Active => "ACTIVE",
             VirtualServiceStatusCode::Deleted => "DELETED",
             VirtualServiceStatusCode::Inactive => "INACTIVE",
-            VirtualServiceStatusCode::Unknown(value) => value.as_str(),
+            VirtualServiceStatusCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DELETED", "INACTIVE"]
+        &[
+            "ACTIVE", "DELETED", "INACTIVE"
+        ]
     }
 }
 impl AsRef<str> for VirtualServiceStatusCode {
@@ -1508,20 +1441,20 @@ impl AsRef<str> for VirtualServiceStatusCode {
 /// <p>An object that represents the specification of a virtual service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualServiceSpec {
+pub struct VirtualServiceSpec  {
     /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.</p>
     #[doc(hidden)]
     pub provider: std::option::Option<crate::model::VirtualServiceProvider>,
 }
 impl VirtualServiceSpec {
     /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.</p>
-    pub fn provider(&self) -> std::option::Option<&crate::model::VirtualServiceProvider> {
+    pub fn provider(&self) -> std::option::Option<& crate::model::VirtualServiceProvider> {
         self.provider.as_ref()
     }
 }
 /// See [`VirtualServiceSpec`](crate::model::VirtualServiceSpec).
 pub mod virtual_service_spec {
-
+    
     /// A builder for [`VirtualServiceSpec`](crate::model::VirtualServiceSpec).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1534,20 +1467,19 @@ pub mod virtual_service_spec {
             self
         }
         /// <p>The App Mesh object that is acting as the provider for a virtual service. You can specify a single virtual node or virtual router.</p>
-        pub fn set_provider(
-            mut self,
-            input: std::option::Option<crate::model::VirtualServiceProvider>,
-        ) -> Self {
-            self.provider = input;
-            self
+        pub fn set_provider(mut self, input: std::option::Option<crate::model::VirtualServiceProvider>) -> Self {
+            self.provider = input; self
         }
         /// Consumes the builder and constructs a [`VirtualServiceSpec`](crate::model::VirtualServiceSpec).
         pub fn build(self) -> crate::model::VirtualServiceSpec {
             crate::model::VirtualServiceSpec {
-                provider: self.provider,
+                provider: self.provider
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualServiceSpec {
     /// Creates a new builder-style object to manufacture [`VirtualServiceSpec`](crate::model::VirtualServiceSpec).
@@ -1577,14 +1509,8 @@ pub enum VirtualServiceProvider {
 impl VirtualServiceProvider {
     /// Tries to convert the enum instance into [`VirtualNode`](crate::model::VirtualServiceProvider::VirtualNode), extracting the inner [`VirtualNodeServiceProvider`](crate::model::VirtualNodeServiceProvider).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_virtual_node(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualNodeServiceProvider, &Self> {
-        if let VirtualServiceProvider::VirtualNode(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_virtual_node(&self) -> std::result::Result<&crate::model::VirtualNodeServiceProvider, &Self> {
+        if let VirtualServiceProvider::VirtualNode(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`VirtualNode`](crate::model::VirtualServiceProvider::VirtualNode).
     pub fn is_virtual_node(&self) -> bool {
@@ -1592,14 +1518,8 @@ impl VirtualServiceProvider {
     }
     /// Tries to convert the enum instance into [`VirtualRouter`](crate::model::VirtualServiceProvider::VirtualRouter), extracting the inner [`VirtualRouterServiceProvider`](crate::model::VirtualRouterServiceProvider).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_virtual_router(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualRouterServiceProvider, &Self> {
-        if let VirtualServiceProvider::VirtualRouter(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_virtual_router(&self) -> std::result::Result<&crate::model::VirtualRouterServiceProvider, &Self> {
+        if let VirtualServiceProvider::VirtualRouter(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`VirtualRouter`](crate::model::VirtualServiceProvider::VirtualRouter).
     pub fn is_virtual_router(&self) -> bool {
@@ -1614,20 +1534,20 @@ impl VirtualServiceProvider {
 /// <p>An object that represents a virtual node service provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualRouterServiceProvider {
+pub struct VirtualRouterServiceProvider  {
     /// <p>The name of the virtual router that is acting as a service provider.</p>
     #[doc(hidden)]
     pub virtual_router_name: std::option::Option<std::string::String>,
 }
 impl VirtualRouterServiceProvider {
     /// <p>The name of the virtual router that is acting as a service provider.</p>
-    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_router_name(&self) -> std::option::Option<& str> {
         self.virtual_router_name.as_deref()
     }
 }
 /// See [`VirtualRouterServiceProvider`](crate::model::VirtualRouterServiceProvider).
 pub mod virtual_router_service_provider {
-
+    
     /// A builder for [`VirtualRouterServiceProvider`](crate::model::VirtualRouterServiceProvider).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1640,20 +1560,19 @@ pub mod virtual_router_service_provider {
             self
         }
         /// <p>The name of the virtual router that is acting as a service provider.</p>
-        pub fn set_virtual_router_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_router_name = input;
-            self
+        pub fn set_virtual_router_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_router_name = input; self
         }
         /// Consumes the builder and constructs a [`VirtualRouterServiceProvider`](crate::model::VirtualRouterServiceProvider).
         pub fn build(self) -> crate::model::VirtualRouterServiceProvider {
             crate::model::VirtualRouterServiceProvider {
-                virtual_router_name: self.virtual_router_name,
+                virtual_router_name: self.virtual_router_name
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualRouterServiceProvider {
     /// Creates a new builder-style object to manufacture [`VirtualRouterServiceProvider`](crate::model::VirtualRouterServiceProvider).
@@ -1665,20 +1584,20 @@ impl VirtualRouterServiceProvider {
 /// <p>An object that represents a virtual node service provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualNodeServiceProvider {
+pub struct VirtualNodeServiceProvider  {
     /// <p>The name of the virtual node that is acting as a service provider.</p>
     #[doc(hidden)]
     pub virtual_node_name: std::option::Option<std::string::String>,
 }
 impl VirtualNodeServiceProvider {
     /// <p>The name of the virtual node that is acting as a service provider.</p>
-    pub fn virtual_node_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_node_name(&self) -> std::option::Option<& str> {
         self.virtual_node_name.as_deref()
     }
 }
 /// See [`VirtualNodeServiceProvider`](crate::model::VirtualNodeServiceProvider).
 pub mod virtual_node_service_provider {
-
+    
     /// A builder for [`VirtualNodeServiceProvider`](crate::model::VirtualNodeServiceProvider).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1691,20 +1610,19 @@ pub mod virtual_node_service_provider {
             self
         }
         /// <p>The name of the virtual node that is acting as a service provider.</p>
-        pub fn set_virtual_node_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_node_name = input;
-            self
+        pub fn set_virtual_node_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_node_name = input; self
         }
         /// Consumes the builder and constructs a [`VirtualNodeServiceProvider`](crate::model::VirtualNodeServiceProvider).
         pub fn build(self) -> crate::model::VirtualNodeServiceProvider {
             crate::model::VirtualNodeServiceProvider {
-                virtual_node_name: self.virtual_node_name,
+                virtual_node_name: self.virtual_node_name
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualNodeServiceProvider {
     /// Creates a new builder-style object to manufacture [`VirtualNodeServiceProvider`](crate::model::VirtualNodeServiceProvider).
@@ -1716,7 +1634,7 @@ impl VirtualNodeServiceProvider {
 /// <p>An object that represents a virtual router returned by a list operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualRouterRef {
+pub struct VirtualRouterRef  {
     /// <p>The name of the service mesh that the virtual router resides in.</p>
     #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
@@ -1744,23 +1662,23 @@ pub struct VirtualRouterRef {
 }
 impl VirtualRouterRef {
     /// <p>The name of the service mesh that the virtual router resides in.</p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The name of the virtual router.</p>
-    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_router_name(&self) -> std::option::Option<& str> {
         self.virtual_router_name.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+    pub fn mesh_owner(&self) -> std::option::Option<& str> {
         self.mesh_owner.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn resource_owner(&self) -> std::option::Option<&str> {
+    pub fn resource_owner(&self) -> std::option::Option<& str> {
         self.resource_owner.as_deref()
     }
     /// <p>The full Amazon Resource Name (ARN) for the virtual router.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
@@ -1768,17 +1686,17 @@ impl VirtualRouterRef {
         self.version
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
 /// See [`VirtualRouterRef`](crate::model::VirtualRouterRef).
 pub mod virtual_router_ref {
-
+    
     /// A builder for [`VirtualRouterRef`](crate::model::VirtualRouterRef).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1799,8 +1717,7 @@ pub mod virtual_router_ref {
         }
         /// <p>The name of the service mesh that the virtual router resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_name = input;
-            self
+            self.mesh_name = input; self
         }
         /// <p>The name of the virtual router.</p>
         pub fn virtual_router_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1808,12 +1725,8 @@ pub mod virtual_router_ref {
             self
         }
         /// <p>The name of the virtual router.</p>
-        pub fn set_virtual_router_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_router_name = input;
-            self
+        pub fn set_virtual_router_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_router_name = input; self
         }
         /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1822,8 +1735,7 @@ pub mod virtual_router_ref {
         }
         /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_owner = input;
-            self
+            self.mesh_owner = input; self
         }
         /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1831,12 +1743,8 @@ pub mod virtual_router_ref {
             self
         }
         /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn set_resource_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_owner = input;
-            self
+        pub fn set_resource_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_owner = input; self
         }
         /// <p>The full Amazon Resource Name (ARN) for the virtual router.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1845,8 +1753,7 @@ pub mod virtual_router_ref {
         }
         /// <p>The full Amazon Resource Name (ARN) for the virtual router.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
         pub fn version(mut self, input: i64) -> Self {
@@ -1855,8 +1762,7 @@ pub mod virtual_router_ref {
         }
         /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1864,12 +1770,8 @@ pub mod virtual_router_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1877,27 +1779,33 @@ pub mod virtual_router_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Consumes the builder and constructs a [`VirtualRouterRef`](crate::model::VirtualRouterRef).
         pub fn build(self) -> crate::model::VirtualRouterRef {
             crate::model::VirtualRouterRef {
-                mesh_name: self.mesh_name,
-                virtual_router_name: self.virtual_router_name,
-                mesh_owner: self.mesh_owner,
-                resource_owner: self.resource_owner,
-                arn: self.arn,
-                version: self.version,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
+                mesh_name: self.mesh_name
+                ,
+                virtual_router_name: self.virtual_router_name
+                ,
+                mesh_owner: self.mesh_owner
+                ,
+                resource_owner: self.resource_owner
+                ,
+                arn: self.arn
+                ,
+                version: self.version
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualRouterRef {
     /// Creates a new builder-style object to manufacture [`VirtualRouterRef`](crate::model::VirtualRouterRef).
@@ -1909,7 +1817,7 @@ impl VirtualRouterRef {
 /// <p>An object that represents a virtual router returned by a describe operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualRouterData {
+pub struct VirtualRouterData  {
     /// <p>The name of the service mesh that the virtual router resides in.</p>
     #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
@@ -1928,29 +1836,29 @@ pub struct VirtualRouterData {
 }
 impl VirtualRouterData {
     /// <p>The name of the service mesh that the virtual router resides in.</p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The name of the virtual router.</p>
-    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_router_name(&self) -> std::option::Option<& str> {
         self.virtual_router_name.as_deref()
     }
     /// <p>The specifications of the virtual router.</p>
-    pub fn spec(&self) -> std::option::Option<&crate::model::VirtualRouterSpec> {
+    pub fn spec(&self) -> std::option::Option<& crate::model::VirtualRouterSpec> {
         self.spec.as_ref()
     }
     /// <p>The associated metadata for the virtual router.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::model::ResourceMetadata> {
+    pub fn metadata(&self) -> std::option::Option<& crate::model::ResourceMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The current status of the virtual router.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::VirtualRouterStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::VirtualRouterStatus> {
         self.status.as_ref()
     }
 }
 /// See [`VirtualRouterData`](crate::model::VirtualRouterData).
 pub mod virtual_router_data {
-
+    
     /// A builder for [`VirtualRouterData`](crate::model::VirtualRouterData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1968,8 +1876,7 @@ pub mod virtual_router_data {
         }
         /// <p>The name of the service mesh that the virtual router resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_name = input;
-            self
+            self.mesh_name = input; self
         }
         /// <p>The name of the virtual router.</p>
         pub fn virtual_router_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1977,12 +1884,8 @@ pub mod virtual_router_data {
             self
         }
         /// <p>The name of the virtual router.</p>
-        pub fn set_virtual_router_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_router_name = input;
-            self
+        pub fn set_virtual_router_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_router_name = input; self
         }
         /// <p>The specifications of the virtual router.</p>
         pub fn spec(mut self, input: crate::model::VirtualRouterSpec) -> Self {
@@ -1990,12 +1893,8 @@ pub mod virtual_router_data {
             self
         }
         /// <p>The specifications of the virtual router.</p>
-        pub fn set_spec(
-            mut self,
-            input: std::option::Option<crate::model::VirtualRouterSpec>,
-        ) -> Self {
-            self.spec = input;
-            self
+        pub fn set_spec(mut self, input: std::option::Option<crate::model::VirtualRouterSpec>) -> Self {
+            self.spec = input; self
         }
         /// <p>The associated metadata for the virtual router.</p>
         pub fn metadata(mut self, input: crate::model::ResourceMetadata) -> Self {
@@ -2003,12 +1902,8 @@ pub mod virtual_router_data {
             self
         }
         /// <p>The associated metadata for the virtual router.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<crate::model::ResourceMetadata>,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<crate::model::ResourceMetadata>) -> Self {
+            self.metadata = input; self
         }
         /// <p>The current status of the virtual router.</p>
         pub fn status(mut self, input: crate::model::VirtualRouterStatus) -> Self {
@@ -2016,24 +1911,27 @@ pub mod virtual_router_data {
             self
         }
         /// <p>The current status of the virtual router.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::VirtualRouterStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::VirtualRouterStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`VirtualRouterData`](crate::model::VirtualRouterData).
         pub fn build(self) -> crate::model::VirtualRouterData {
             crate::model::VirtualRouterData {
-                mesh_name: self.mesh_name,
-                virtual_router_name: self.virtual_router_name,
-                spec: self.spec,
-                metadata: self.metadata,
-                status: self.status,
+                mesh_name: self.mesh_name
+                ,
+                virtual_router_name: self.virtual_router_name
+                ,
+                spec: self.spec
+                ,
+                metadata: self.metadata
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualRouterData {
     /// Creates a new builder-style object to manufacture [`VirtualRouterData`](crate::model::VirtualRouterData).
@@ -2045,20 +1943,20 @@ impl VirtualRouterData {
 /// <p>An object that represents the status of a virtual router. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualRouterStatus {
+pub struct VirtualRouterStatus  {
     /// <p>The current status of the virtual router.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::VirtualRouterStatusCode>,
 }
 impl VirtualRouterStatus {
     /// <p>The current status of the virtual router.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::VirtualRouterStatusCode> {
+    pub fn status(&self) -> std::option::Option<& crate::model::VirtualRouterStatusCode> {
         self.status.as_ref()
     }
 }
 /// See [`VirtualRouterStatus`](crate::model::VirtualRouterStatus).
 pub mod virtual_router_status {
-
+    
     /// A builder for [`VirtualRouterStatus`](crate::model::VirtualRouterStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2071,20 +1969,19 @@ pub mod virtual_router_status {
             self
         }
         /// <p>The current status of the virtual router.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::VirtualRouterStatusCode>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::VirtualRouterStatusCode>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`VirtualRouterStatus`](crate::model::VirtualRouterStatus).
         pub fn build(self) -> crate::model::VirtualRouterStatus {
             crate::model::VirtualRouterStatus {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualRouterStatus {
     /// Creates a new builder-style object to manufacture [`VirtualRouterStatus`](crate::model::VirtualRouterStatus).
@@ -2099,9 +1996,9 @@ impl VirtualRouterStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let virtualrouterstatuscode = unimplemented!();
 /// match virtualrouterstatuscode {
@@ -2124,22 +2021,14 @@ impl VirtualRouterStatus {
 /// Specifically, when `virtualrouterstatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VirtualRouterStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VirtualRouterStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -2148,7 +2037,7 @@ pub enum VirtualRouterStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VirtualRouterStatusCode {
     fn from(s: &str) -> Self {
@@ -2156,19 +2045,17 @@ impl std::convert::From<&str> for VirtualRouterStatusCode {
             "ACTIVE" => VirtualRouterStatusCode::Active,
             "DELETED" => VirtualRouterStatusCode::Deleted,
             "INACTIVE" => VirtualRouterStatusCode::Inactive,
-            other => VirtualRouterStatusCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => VirtualRouterStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VirtualRouterStatusCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VirtualRouterStatusCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VirtualRouterStatusCode::from(s))
+                }
+            }
 impl VirtualRouterStatusCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2176,12 +2063,14 @@ impl VirtualRouterStatusCode {
             VirtualRouterStatusCode::Active => "ACTIVE",
             VirtualRouterStatusCode::Deleted => "DELETED",
             VirtualRouterStatusCode::Inactive => "INACTIVE",
-            VirtualRouterStatusCode::Unknown(value) => value.as_str(),
+            VirtualRouterStatusCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DELETED", "INACTIVE"]
+        &[
+            "ACTIVE", "DELETED", "INACTIVE"
+        ]
     }
 }
 impl AsRef<str> for VirtualRouterStatusCode {
@@ -2193,25 +2082,24 @@ impl AsRef<str> for VirtualRouterStatusCode {
 /// <p>An object that represents the specification of a virtual router.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualRouterSpec {
+pub struct VirtualRouterSpec  {
     /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
     #[doc(hidden)]
     pub listeners: std::option::Option<std::vec::Vec<crate::model::VirtualRouterListener>>,
 }
 impl VirtualRouterSpec {
     /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
-    pub fn listeners(&self) -> std::option::Option<&[crate::model::VirtualRouterListener]> {
+    pub fn listeners(&self) -> std::option::Option<& [crate::model::VirtualRouterListener]> {
         self.listeners.as_deref()
     }
 }
 /// See [`VirtualRouterSpec`](crate::model::VirtualRouterSpec).
 pub mod virtual_router_spec {
-
+    
     /// A builder for [`VirtualRouterSpec`](crate::model::VirtualRouterSpec).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) listeners:
-            std::option::Option<std::vec::Vec<crate::model::VirtualRouterListener>>,
+        pub(crate) listeners: std::option::Option<std::vec::Vec<crate::model::VirtualRouterListener>>,
     }
     impl Builder {
         /// Appends an item to `listeners`.
@@ -2221,25 +2109,24 @@ pub mod virtual_router_spec {
         /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
         pub fn listeners(mut self, input: crate::model::VirtualRouterListener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-            v.push(input);
-            self.listeners = Some(v);
-            self
+                            v.push(input);
+                            self.listeners = Some(v);
+                            self
         }
         /// <p>The listeners that the virtual router is expected to receive inbound traffic from. You can specify one listener.</p>
-        pub fn set_listeners(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VirtualRouterListener>>,
-        ) -> Self {
-            self.listeners = input;
-            self
+        pub fn set_listeners(mut self, input: std::option::Option<std::vec::Vec<crate::model::VirtualRouterListener>>) -> Self {
+            self.listeners = input; self
         }
         /// Consumes the builder and constructs a [`VirtualRouterSpec`](crate::model::VirtualRouterSpec).
         pub fn build(self) -> crate::model::VirtualRouterSpec {
             crate::model::VirtualRouterSpec {
-                listeners: self.listeners,
+                listeners: self.listeners
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualRouterSpec {
     /// Creates a new builder-style object to manufacture [`VirtualRouterSpec`](crate::model::VirtualRouterSpec).
@@ -2251,20 +2138,20 @@ impl VirtualRouterSpec {
 /// <p>An object that represents a virtual router listener.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualRouterListener {
+pub struct VirtualRouterListener  {
     /// <p>An object that represents a port mapping.</p>
     #[doc(hidden)]
     pub port_mapping: std::option::Option<crate::model::PortMapping>,
 }
 impl VirtualRouterListener {
     /// <p>An object that represents a port mapping.</p>
-    pub fn port_mapping(&self) -> std::option::Option<&crate::model::PortMapping> {
+    pub fn port_mapping(&self) -> std::option::Option<& crate::model::PortMapping> {
         self.port_mapping.as_ref()
     }
 }
 /// See [`VirtualRouterListener`](crate::model::VirtualRouterListener).
 pub mod virtual_router_listener {
-
+    
     /// A builder for [`VirtualRouterListener`](crate::model::VirtualRouterListener).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2277,20 +2164,19 @@ pub mod virtual_router_listener {
             self
         }
         /// <p>An object that represents a port mapping.</p>
-        pub fn set_port_mapping(
-            mut self,
-            input: std::option::Option<crate::model::PortMapping>,
-        ) -> Self {
-            self.port_mapping = input;
-            self
+        pub fn set_port_mapping(mut self, input: std::option::Option<crate::model::PortMapping>) -> Self {
+            self.port_mapping = input; self
         }
         /// Consumes the builder and constructs a [`VirtualRouterListener`](crate::model::VirtualRouterListener).
         pub fn build(self) -> crate::model::VirtualRouterListener {
             crate::model::VirtualRouterListener {
-                port_mapping: self.port_mapping,
+                port_mapping: self.port_mapping
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualRouterListener {
     /// Creates a new builder-style object to manufacture [`VirtualRouterListener`](crate::model::VirtualRouterListener).
@@ -2302,7 +2188,7 @@ impl VirtualRouterListener {
 /// <p>An object that represents a port mapping.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PortMapping {
+pub struct PortMapping  {
     /// <p>The port used for the port mapping.</p>
     #[doc(hidden)]
     pub port: i32,
@@ -2316,13 +2202,13 @@ impl PortMapping {
         self.port
     }
     /// <p>The protocol used for the port mapping. Specify one protocol.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::model::PortProtocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::model::PortProtocol> {
         self.protocol.as_ref()
     }
 }
 /// See [`PortMapping`](crate::model::PortMapping).
 pub mod port_mapping {
-
+    
     /// A builder for [`PortMapping`](crate::model::PortMapping).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2337,8 +2223,7 @@ pub mod port_mapping {
         }
         /// <p>The port used for the port mapping.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// <p>The protocol used for the port mapping. Specify one protocol.</p>
         pub fn protocol(mut self, input: crate::model::PortProtocol) -> Self {
@@ -2346,21 +2231,22 @@ pub mod port_mapping {
             self
         }
         /// <p>The protocol used for the port mapping. Specify one protocol.</p>
-        pub fn set_protocol(
-            mut self,
-            input: std::option::Option<crate::model::PortProtocol>,
-        ) -> Self {
-            self.protocol = input;
-            self
+        pub fn set_protocol(mut self, input: std::option::Option<crate::model::PortProtocol>) -> Self {
+            self.protocol = input; self
         }
         /// Consumes the builder and constructs a [`PortMapping`](crate::model::PortMapping).
         pub fn build(self) -> crate::model::PortMapping {
             crate::model::PortMapping {
-                port: self.port.unwrap_or_default(),
-                protocol: self.protocol,
+                port: self.port
+                    .unwrap_or_default()
+                ,
+                protocol: self.protocol
+                ,
             }
         }
     }
+    
+    
 }
 impl PortMapping {
     /// Creates a new builder-style object to manufacture [`PortMapping`](crate::model::PortMapping).
@@ -2375,9 +2261,9 @@ impl PortMapping {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let portprotocol = unimplemented!();
 /// match portprotocol {
@@ -2401,22 +2287,14 @@ impl PortMapping {
 /// Specifically, when `portprotocol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PortProtocol::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PortProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Grpc,
@@ -2427,7 +2305,7 @@ pub enum PortProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Tcp,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PortProtocol {
     fn from(s: &str) -> Self {
@@ -2436,17 +2314,17 @@ impl std::convert::From<&str> for PortProtocol {
             "http" => PortProtocol::Http,
             "http2" => PortProtocol::Http2,
             "tcp" => PortProtocol::Tcp,
-            other => PortProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PortProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PortProtocol {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PortProtocol::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PortProtocol::from(s))
+                }
+            }
 impl PortProtocol {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2455,12 +2333,14 @@ impl PortProtocol {
             PortProtocol::Http => "http",
             PortProtocol::Http2 => "http2",
             PortProtocol::Tcp => "tcp",
-            PortProtocol::Unknown(value) => value.as_str(),
+            PortProtocol::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["grpc", "http", "http2", "tcp"]
+        &[
+            "grpc", "http", "http2", "tcp"
+        ]
     }
 }
 impl AsRef<str> for PortProtocol {
@@ -2472,7 +2352,7 @@ impl AsRef<str> for PortProtocol {
 /// <p>An object that represents a route returned by a list operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RouteRef {
+pub struct RouteRef  {
     /// <p>The name of the service mesh that the route resides in.</p>
     #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
@@ -2503,27 +2383,27 @@ pub struct RouteRef {
 }
 impl RouteRef {
     /// <p>The name of the service mesh that the route resides in.</p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The virtual router that the route is associated with.</p>
-    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_router_name(&self) -> std::option::Option<& str> {
         self.virtual_router_name.as_deref()
     }
     /// <p>The name of the route.</p>
-    pub fn route_name(&self) -> std::option::Option<&str> {
+    pub fn route_name(&self) -> std::option::Option<& str> {
         self.route_name.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+    pub fn mesh_owner(&self) -> std::option::Option<& str> {
         self.mesh_owner.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn resource_owner(&self) -> std::option::Option<&str> {
+    pub fn resource_owner(&self) -> std::option::Option<& str> {
         self.resource_owner.as_deref()
     }
     /// <p>The full Amazon Resource Name (ARN) for the route.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
@@ -2531,17 +2411,17 @@ impl RouteRef {
         self.version
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
 /// See [`RouteRef`](crate::model::RouteRef).
 pub mod route_ref {
-
+    
     /// A builder for [`RouteRef`](crate::model::RouteRef).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2563,8 +2443,7 @@ pub mod route_ref {
         }
         /// <p>The name of the service mesh that the route resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_name = input;
-            self
+            self.mesh_name = input; self
         }
         /// <p>The virtual router that the route is associated with.</p>
         pub fn virtual_router_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2572,12 +2451,8 @@ pub mod route_ref {
             self
         }
         /// <p>The virtual router that the route is associated with.</p>
-        pub fn set_virtual_router_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_router_name = input;
-            self
+        pub fn set_virtual_router_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_router_name = input; self
         }
         /// <p>The name of the route.</p>
         pub fn route_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2586,8 +2461,7 @@ pub mod route_ref {
         }
         /// <p>The name of the route.</p>
         pub fn set_route_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.route_name = input;
-            self
+            self.route_name = input; self
         }
         /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2596,8 +2470,7 @@ pub mod route_ref {
         }
         /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_owner = input;
-            self
+            self.mesh_owner = input; self
         }
         /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2605,12 +2478,8 @@ pub mod route_ref {
             self
         }
         /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn set_resource_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_owner = input;
-            self
+        pub fn set_resource_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_owner = input; self
         }
         /// <p>The full Amazon Resource Name (ARN) for the route.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2619,8 +2488,7 @@ pub mod route_ref {
         }
         /// <p>The full Amazon Resource Name (ARN) for the route.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
         pub fn version(mut self, input: i64) -> Self {
@@ -2629,8 +2497,7 @@ pub mod route_ref {
         }
         /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2638,12 +2505,8 @@ pub mod route_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2651,28 +2514,35 @@ pub mod route_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Consumes the builder and constructs a [`RouteRef`](crate::model::RouteRef).
         pub fn build(self) -> crate::model::RouteRef {
             crate::model::RouteRef {
-                mesh_name: self.mesh_name,
-                virtual_router_name: self.virtual_router_name,
-                route_name: self.route_name,
-                mesh_owner: self.mesh_owner,
-                resource_owner: self.resource_owner,
-                arn: self.arn,
-                version: self.version,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
+                mesh_name: self.mesh_name
+                ,
+                virtual_router_name: self.virtual_router_name
+                ,
+                route_name: self.route_name
+                ,
+                mesh_owner: self.mesh_owner
+                ,
+                resource_owner: self.resource_owner
+                ,
+                arn: self.arn
+                ,
+                version: self.version
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl RouteRef {
     /// Creates a new builder-style object to manufacture [`RouteRef`](crate::model::RouteRef).
@@ -2684,7 +2554,7 @@ impl RouteRef {
 /// <p>An object that represents a route returned by a describe operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RouteData {
+pub struct RouteData  {
     /// <p>The name of the service mesh that the route resides in.</p>
     #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
@@ -2706,33 +2576,33 @@ pub struct RouteData {
 }
 impl RouteData {
     /// <p>The name of the service mesh that the route resides in.</p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The virtual router that the route is associated with.</p>
-    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_router_name(&self) -> std::option::Option<& str> {
         self.virtual_router_name.as_deref()
     }
     /// <p>The name of the route.</p>
-    pub fn route_name(&self) -> std::option::Option<&str> {
+    pub fn route_name(&self) -> std::option::Option<& str> {
         self.route_name.as_deref()
     }
     /// <p>The specifications of the route.</p>
-    pub fn spec(&self) -> std::option::Option<&crate::model::RouteSpec> {
+    pub fn spec(&self) -> std::option::Option<& crate::model::RouteSpec> {
         self.spec.as_ref()
     }
     /// <p>The associated metadata for the route.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::model::ResourceMetadata> {
+    pub fn metadata(&self) -> std::option::Option<& crate::model::ResourceMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The status of the route.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::RouteStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::RouteStatus> {
         self.status.as_ref()
     }
 }
 /// See [`RouteData`](crate::model::RouteData).
 pub mod route_data {
-
+    
     /// A builder for [`RouteData`](crate::model::RouteData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2751,8 +2621,7 @@ pub mod route_data {
         }
         /// <p>The name of the service mesh that the route resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_name = input;
-            self
+            self.mesh_name = input; self
         }
         /// <p>The virtual router that the route is associated with.</p>
         pub fn virtual_router_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2760,12 +2629,8 @@ pub mod route_data {
             self
         }
         /// <p>The virtual router that the route is associated with.</p>
-        pub fn set_virtual_router_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_router_name = input;
-            self
+        pub fn set_virtual_router_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_router_name = input; self
         }
         /// <p>The name of the route.</p>
         pub fn route_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2774,8 +2639,7 @@ pub mod route_data {
         }
         /// <p>The name of the route.</p>
         pub fn set_route_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.route_name = input;
-            self
+            self.route_name = input; self
         }
         /// <p>The specifications of the route.</p>
         pub fn spec(mut self, input: crate::model::RouteSpec) -> Self {
@@ -2784,8 +2648,7 @@ pub mod route_data {
         }
         /// <p>The specifications of the route.</p>
         pub fn set_spec(mut self, input: std::option::Option<crate::model::RouteSpec>) -> Self {
-            self.spec = input;
-            self
+            self.spec = input; self
         }
         /// <p>The associated metadata for the route.</p>
         pub fn metadata(mut self, input: crate::model::ResourceMetadata) -> Self {
@@ -2793,12 +2656,8 @@ pub mod route_data {
             self
         }
         /// <p>The associated metadata for the route.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<crate::model::ResourceMetadata>,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<crate::model::ResourceMetadata>) -> Self {
+            self.metadata = input; self
         }
         /// <p>The status of the route.</p>
         pub fn status(mut self, input: crate::model::RouteStatus) -> Self {
@@ -2807,21 +2666,28 @@ pub mod route_data {
         }
         /// <p>The status of the route.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::RouteStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`RouteData`](crate::model::RouteData).
         pub fn build(self) -> crate::model::RouteData {
             crate::model::RouteData {
-                mesh_name: self.mesh_name,
-                virtual_router_name: self.virtual_router_name,
-                route_name: self.route_name,
-                spec: self.spec,
-                metadata: self.metadata,
-                status: self.status,
+                mesh_name: self.mesh_name
+                ,
+                virtual_router_name: self.virtual_router_name
+                ,
+                route_name: self.route_name
+                ,
+                spec: self.spec
+                ,
+                metadata: self.metadata
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl RouteData {
     /// Creates a new builder-style object to manufacture [`RouteData`](crate::model::RouteData).
@@ -2833,20 +2699,20 @@ impl RouteData {
 /// <p>An object that represents the current status of a route.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RouteStatus {
+pub struct RouteStatus  {
     /// <p>The current status for the route.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::RouteStatusCode>,
 }
 impl RouteStatus {
     /// <p>The current status for the route.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::RouteStatusCode> {
+    pub fn status(&self) -> std::option::Option<& crate::model::RouteStatusCode> {
         self.status.as_ref()
     }
 }
 /// See [`RouteStatus`](crate::model::RouteStatus).
 pub mod route_status {
-
+    
     /// A builder for [`RouteStatus`](crate::model::RouteStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2859,20 +2725,19 @@ pub mod route_status {
             self
         }
         /// <p>The current status for the route.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::RouteStatusCode>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::RouteStatusCode>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`RouteStatus`](crate::model::RouteStatus).
         pub fn build(self) -> crate::model::RouteStatus {
             crate::model::RouteStatus {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl RouteStatus {
     /// Creates a new builder-style object to manufacture [`RouteStatus`](crate::model::RouteStatus).
@@ -2887,9 +2752,9 @@ impl RouteStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let routestatuscode = unimplemented!();
 /// match routestatuscode {
@@ -2912,22 +2777,14 @@ impl RouteStatus {
 /// Specifically, when `routestatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RouteStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum RouteStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -2936,7 +2793,7 @@ pub enum RouteStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for RouteStatusCode {
     fn from(s: &str) -> Self {
@@ -2944,17 +2801,17 @@ impl std::convert::From<&str> for RouteStatusCode {
             "ACTIVE" => RouteStatusCode::Active,
             "DELETED" => RouteStatusCode::Deleted,
             "INACTIVE" => RouteStatusCode::Inactive,
-            other => RouteStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => RouteStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for RouteStatusCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RouteStatusCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(RouteStatusCode::from(s))
+                }
+            }
 impl RouteStatusCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2962,12 +2819,14 @@ impl RouteStatusCode {
             RouteStatusCode::Active => "ACTIVE",
             RouteStatusCode::Deleted => "DELETED",
             RouteStatusCode::Inactive => "INACTIVE",
-            RouteStatusCode::Unknown(value) => value.as_str(),
+            RouteStatusCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DELETED", "INACTIVE"]
+        &[
+            "ACTIVE", "DELETED", "INACTIVE"
+        ]
     }
 }
 impl AsRef<str> for RouteStatusCode {
@@ -2979,7 +2838,7 @@ impl AsRef<str> for RouteStatusCode {
 /// <p>An object that represents a route specification. Specify one route type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RouteSpec {
+pub struct RouteSpec  {
     /// <p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>
     #[doc(hidden)]
     pub priority: std::option::Option<i32>,
@@ -3002,25 +2861,25 @@ impl RouteSpec {
         self.priority
     }
     /// <p>An object that represents the specification of an HTTP route.</p>
-    pub fn http_route(&self) -> std::option::Option<&crate::model::HttpRoute> {
+    pub fn http_route(&self) -> std::option::Option<& crate::model::HttpRoute> {
         self.http_route.as_ref()
     }
     /// <p>An object that represents the specification of a TCP route.</p>
-    pub fn tcp_route(&self) -> std::option::Option<&crate::model::TcpRoute> {
+    pub fn tcp_route(&self) -> std::option::Option<& crate::model::TcpRoute> {
         self.tcp_route.as_ref()
     }
     /// <p>An object that represents the specification of an HTTP/2 route.</p>
-    pub fn http2_route(&self) -> std::option::Option<&crate::model::HttpRoute> {
+    pub fn http2_route(&self) -> std::option::Option<& crate::model::HttpRoute> {
         self.http2_route.as_ref()
     }
     /// <p>An object that represents the specification of a gRPC route.</p>
-    pub fn grpc_route(&self) -> std::option::Option<&crate::model::GrpcRoute> {
+    pub fn grpc_route(&self) -> std::option::Option<& crate::model::GrpcRoute> {
         self.grpc_route.as_ref()
     }
 }
 /// See [`RouteSpec`](crate::model::RouteSpec).
 pub mod route_spec {
-
+    
     /// A builder for [`RouteSpec`](crate::model::RouteSpec).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3038,8 +2897,7 @@ pub mod route_spec {
         }
         /// <p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-            self.priority = input;
-            self
+            self.priority = input; self
         }
         /// <p>An object that represents the specification of an HTTP route.</p>
         pub fn http_route(mut self, input: crate::model::HttpRoute) -> Self {
@@ -3047,12 +2905,8 @@ pub mod route_spec {
             self
         }
         /// <p>An object that represents the specification of an HTTP route.</p>
-        pub fn set_http_route(
-            mut self,
-            input: std::option::Option<crate::model::HttpRoute>,
-        ) -> Self {
-            self.http_route = input;
-            self
+        pub fn set_http_route(mut self, input: std::option::Option<crate::model::HttpRoute>) -> Self {
+            self.http_route = input; self
         }
         /// <p>An object that represents the specification of a TCP route.</p>
         pub fn tcp_route(mut self, input: crate::model::TcpRoute) -> Self {
@@ -3061,8 +2915,7 @@ pub mod route_spec {
         }
         /// <p>An object that represents the specification of a TCP route.</p>
         pub fn set_tcp_route(mut self, input: std::option::Option<crate::model::TcpRoute>) -> Self {
-            self.tcp_route = input;
-            self
+            self.tcp_route = input; self
         }
         /// <p>An object that represents the specification of an HTTP/2 route.</p>
         pub fn http2_route(mut self, input: crate::model::HttpRoute) -> Self {
@@ -3070,12 +2923,8 @@ pub mod route_spec {
             self
         }
         /// <p>An object that represents the specification of an HTTP/2 route.</p>
-        pub fn set_http2_route(
-            mut self,
-            input: std::option::Option<crate::model::HttpRoute>,
-        ) -> Self {
-            self.http2_route = input;
-            self
+        pub fn set_http2_route(mut self, input: std::option::Option<crate::model::HttpRoute>) -> Self {
+            self.http2_route = input; self
         }
         /// <p>An object that represents the specification of a gRPC route.</p>
         pub fn grpc_route(mut self, input: crate::model::GrpcRoute) -> Self {
@@ -3083,24 +2932,27 @@ pub mod route_spec {
             self
         }
         /// <p>An object that represents the specification of a gRPC route.</p>
-        pub fn set_grpc_route(
-            mut self,
-            input: std::option::Option<crate::model::GrpcRoute>,
-        ) -> Self {
-            self.grpc_route = input;
-            self
+        pub fn set_grpc_route(mut self, input: std::option::Option<crate::model::GrpcRoute>) -> Self {
+            self.grpc_route = input; self
         }
         /// Consumes the builder and constructs a [`RouteSpec`](crate::model::RouteSpec).
         pub fn build(self) -> crate::model::RouteSpec {
             crate::model::RouteSpec {
-                priority: self.priority,
-                http_route: self.http_route,
-                tcp_route: self.tcp_route,
-                http2_route: self.http2_route,
-                grpc_route: self.grpc_route,
+                priority: self.priority
+                ,
+                http_route: self.http_route
+                ,
+                tcp_route: self.tcp_route
+                ,
+                http2_route: self.http2_route
+                ,
+                grpc_route: self.grpc_route
+                ,
             }
         }
     }
+    
+    
 }
 impl RouteSpec {
     /// Creates a new builder-style object to manufacture [`RouteSpec`](crate::model::RouteSpec).
@@ -3112,7 +2964,7 @@ impl RouteSpec {
 /// <p>An object that represents a gRPC route type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrpcRoute {
+pub struct GrpcRoute  {
     /// <p>An object that represents the action to take if a match is determined.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::GrpcRouteAction>,
@@ -3128,25 +2980,25 @@ pub struct GrpcRoute {
 }
 impl GrpcRoute {
     /// <p>An object that represents the action to take if a match is determined.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::GrpcRouteAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::GrpcRouteAction> {
         self.action.as_ref()
     }
     /// <p>An object that represents the criteria for determining a request match.</p>
-    pub fn r#match(&self) -> std::option::Option<&crate::model::GrpcRouteMatch> {
+    pub fn r#match(&self) -> std::option::Option<& crate::model::GrpcRouteMatch> {
         self.r#match.as_ref()
     }
     /// <p>An object that represents a retry policy.</p>
-    pub fn retry_policy(&self) -> std::option::Option<&crate::model::GrpcRetryPolicy> {
+    pub fn retry_policy(&self) -> std::option::Option<& crate::model::GrpcRetryPolicy> {
         self.retry_policy.as_ref()
     }
     /// <p>An object that represents types of timeouts. </p>
-    pub fn timeout(&self) -> std::option::Option<&crate::model::GrpcTimeout> {
+    pub fn timeout(&self) -> std::option::Option<& crate::model::GrpcTimeout> {
         self.timeout.as_ref()
     }
 }
 /// See [`GrpcRoute`](crate::model::GrpcRoute).
 pub mod grpc_route {
-
+    
     /// A builder for [`GrpcRoute`](crate::model::GrpcRoute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3162,12 +3014,8 @@ pub mod grpc_route {
             self
         }
         /// <p>An object that represents the action to take if a match is determined.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::GrpcRouteAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::GrpcRouteAction>) -> Self {
+            self.action = input; self
         }
         /// <p>An object that represents the criteria for determining a request match.</p>
         pub fn r#match(mut self, input: crate::model::GrpcRouteMatch) -> Self {
@@ -3175,12 +3023,8 @@ pub mod grpc_route {
             self
         }
         /// <p>An object that represents the criteria for determining a request match.</p>
-        pub fn set_match(
-            mut self,
-            input: std::option::Option<crate::model::GrpcRouteMatch>,
-        ) -> Self {
-            self.r#match = input;
-            self
+        pub fn set_match(mut self, input: std::option::Option<crate::model::GrpcRouteMatch>) -> Self {
+            self.r#match = input; self
         }
         /// <p>An object that represents a retry policy.</p>
         pub fn retry_policy(mut self, input: crate::model::GrpcRetryPolicy) -> Self {
@@ -3188,12 +3032,8 @@ pub mod grpc_route {
             self
         }
         /// <p>An object that represents a retry policy.</p>
-        pub fn set_retry_policy(
-            mut self,
-            input: std::option::Option<crate::model::GrpcRetryPolicy>,
-        ) -> Self {
-            self.retry_policy = input;
-            self
+        pub fn set_retry_policy(mut self, input: std::option::Option<crate::model::GrpcRetryPolicy>) -> Self {
+            self.retry_policy = input; self
         }
         /// <p>An object that represents types of timeouts. </p>
         pub fn timeout(mut self, input: crate::model::GrpcTimeout) -> Self {
@@ -3201,23 +3041,25 @@ pub mod grpc_route {
             self
         }
         /// <p>An object that represents types of timeouts. </p>
-        pub fn set_timeout(
-            mut self,
-            input: std::option::Option<crate::model::GrpcTimeout>,
-        ) -> Self {
-            self.timeout = input;
-            self
+        pub fn set_timeout(mut self, input: std::option::Option<crate::model::GrpcTimeout>) -> Self {
+            self.timeout = input; self
         }
         /// Consumes the builder and constructs a [`GrpcRoute`](crate::model::GrpcRoute).
         pub fn build(self) -> crate::model::GrpcRoute {
             crate::model::GrpcRoute {
-                action: self.action,
-                r#match: self.r#match,
-                retry_policy: self.retry_policy,
-                timeout: self.timeout,
+                action: self.action
+                ,
+                r#match: self.r#match
+                ,
+                retry_policy: self.retry_policy
+                ,
+                timeout: self.timeout
+                ,
             }
         }
     }
+    
+    
 }
 impl GrpcRoute {
     /// Creates a new builder-style object to manufacture [`GrpcRoute`](crate::model::GrpcRoute).
@@ -3229,7 +3071,7 @@ impl GrpcRoute {
 /// <p>An object that represents types of timeouts. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrpcTimeout {
+pub struct GrpcTimeout  {
     /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
     #[doc(hidden)]
     pub per_request: std::option::Option<crate::model::Duration>,
@@ -3239,17 +3081,17 @@ pub struct GrpcTimeout {
 }
 impl GrpcTimeout {
     /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
-    pub fn per_request(&self) -> std::option::Option<&crate::model::Duration> {
+    pub fn per_request(&self) -> std::option::Option<& crate::model::Duration> {
         self.per_request.as_ref()
     }
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
-    pub fn idle(&self) -> std::option::Option<&crate::model::Duration> {
+    pub fn idle(&self) -> std::option::Option<& crate::model::Duration> {
         self.idle.as_ref()
     }
 }
 /// See [`GrpcTimeout`](crate::model::GrpcTimeout).
 pub mod grpc_timeout {
-
+    
     /// A builder for [`GrpcTimeout`](crate::model::GrpcTimeout).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3263,12 +3105,8 @@ pub mod grpc_timeout {
             self
         }
         /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
-        pub fn set_per_request(
-            mut self,
-            input: std::option::Option<crate::model::Duration>,
-        ) -> Self {
-            self.per_request = input;
-            self
+        pub fn set_per_request(mut self, input: std::option::Option<crate::model::Duration>) -> Self {
+            self.per_request = input; self
         }
         /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
         pub fn idle(mut self, input: crate::model::Duration) -> Self {
@@ -3277,17 +3115,20 @@ pub mod grpc_timeout {
         }
         /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
         pub fn set_idle(mut self, input: std::option::Option<crate::model::Duration>) -> Self {
-            self.idle = input;
-            self
+            self.idle = input; self
         }
         /// Consumes the builder and constructs a [`GrpcTimeout`](crate::model::GrpcTimeout).
         pub fn build(self) -> crate::model::GrpcTimeout {
             crate::model::GrpcTimeout {
-                per_request: self.per_request,
-                idle: self.idle,
+                per_request: self.per_request
+                ,
+                idle: self.idle
+                ,
             }
         }
     }
+    
+    
 }
 impl GrpcTimeout {
     /// Creates a new builder-style object to manufacture [`GrpcTimeout`](crate::model::GrpcTimeout).
@@ -3299,7 +3140,7 @@ impl GrpcTimeout {
 /// <p>An object that represents a duration of time.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Duration {
+pub struct Duration  {
     /// <p>A number of time units.</p>
     #[doc(hidden)]
     pub value: std::option::Option<i64>,
@@ -3313,13 +3154,13 @@ impl Duration {
         self.value
     }
     /// <p>A unit of time.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::model::DurationUnit> {
+    pub fn unit(&self) -> std::option::Option<& crate::model::DurationUnit> {
         self.unit.as_ref()
     }
 }
 /// See [`Duration`](crate::model::Duration).
 pub mod duration {
-
+    
     /// A builder for [`Duration`](crate::model::Duration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3334,8 +3175,7 @@ pub mod duration {
         }
         /// <p>A number of time units.</p>
         pub fn set_value(mut self, input: std::option::Option<i64>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// <p>A unit of time.</p>
         pub fn unit(mut self, input: crate::model::DurationUnit) -> Self {
@@ -3344,17 +3184,20 @@ pub mod duration {
         }
         /// <p>A unit of time.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::DurationUnit>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// Consumes the builder and constructs a [`Duration`](crate::model::Duration).
         pub fn build(self) -> crate::model::Duration {
             crate::model::Duration {
-                value: self.value,
-                unit: self.unit,
+                value: self.value
+                ,
+                unit: self.unit
+                ,
             }
         }
     }
+    
+    
 }
 impl Duration {
     /// Creates a new builder-style object to manufacture [`Duration`](crate::model::Duration).
@@ -3369,9 +3212,9 @@ impl Duration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let durationunit = unimplemented!();
 /// match durationunit {
@@ -3393,58 +3236,52 @@ impl Duration {
 /// Specifically, when `durationunit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DurationUnit::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DurationUnit {
     #[allow(missing_docs)] // documentation missing in model
     Ms,
     #[allow(missing_docs)] // documentation missing in model
     S,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DurationUnit {
     fn from(s: &str) -> Self {
         match s {
             "ms" => DurationUnit::Ms,
             "s" => DurationUnit::S,
-            other => DurationUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DurationUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DurationUnit {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DurationUnit::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DurationUnit::from(s))
+                }
+            }
 impl DurationUnit {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DurationUnit::Ms => "ms",
             DurationUnit::S => "s",
-            DurationUnit::Unknown(value) => value.as_str(),
+            DurationUnit::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ms", "s"]
+        &[
+            "ms", "s"
+        ]
     }
 }
 impl AsRef<str> for DurationUnit {
@@ -3456,19 +3293,19 @@ impl AsRef<str> for DurationUnit {
 /// <p>An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. Both <code>server-error</code> and <code>gateway-error</code> under <code>httpRetryEvents</code> include the Envoy <code>reset</code> policy. For more information on the <code>reset</code> policy, see the <a href="https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/router_filter#x-envoy-retry-on">Envoy documentation</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrpcRetryPolicy {
+pub struct GrpcRetryPolicy  {
     /// <p>The timeout for each retry attempt.</p>
     #[doc(hidden)]
     pub per_retry_timeout: std::option::Option<crate::model::Duration>,
     /// <p>The maximum number of retry attempts.</p>
     #[doc(hidden)]
     pub max_retries: std::option::Option<i64>,
-    /// <p>Specify at least one of the following values.</p>
-    /// <ul>
-    /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li>
-    /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li>
-    /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
-    /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
+    /// <p>Specify at least one of the following values.</p> 
+    /// <ul> 
+    /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li> 
+    /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li> 
+    /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li> 
+    /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub http_retry_events: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3481,45 +3318,43 @@ pub struct GrpcRetryPolicy {
 }
 impl GrpcRetryPolicy {
     /// <p>The timeout for each retry attempt.</p>
-    pub fn per_retry_timeout(&self) -> std::option::Option<&crate::model::Duration> {
+    pub fn per_retry_timeout(&self) -> std::option::Option<& crate::model::Duration> {
         self.per_retry_timeout.as_ref()
     }
     /// <p>The maximum number of retry attempts.</p>
     pub fn max_retries(&self) -> std::option::Option<i64> {
         self.max_retries
     }
-    /// <p>Specify at least one of the following values.</p>
-    /// <ul>
-    /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li>
-    /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li>
-    /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
-    /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
+    /// <p>Specify at least one of the following values.</p> 
+    /// <ul> 
+    /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li> 
+    /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li> 
+    /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li> 
+    /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li> 
     /// </ul>
-    pub fn http_retry_events(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn http_retry_events(&self) -> std::option::Option<& [std::string::String]> {
         self.http_retry_events.as_deref()
     }
     /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
-    pub fn tcp_retry_events(&self) -> std::option::Option<&[crate::model::TcpRetryPolicyEvent]> {
+    pub fn tcp_retry_events(&self) -> std::option::Option<& [crate::model::TcpRetryPolicyEvent]> {
         self.tcp_retry_events.as_deref()
     }
     /// <p>Specify at least one of the valid values.</p>
-    pub fn grpc_retry_events(&self) -> std::option::Option<&[crate::model::GrpcRetryPolicyEvent]> {
+    pub fn grpc_retry_events(&self) -> std::option::Option<& [crate::model::GrpcRetryPolicyEvent]> {
         self.grpc_retry_events.as_deref()
     }
 }
 /// See [`GrpcRetryPolicy`](crate::model::GrpcRetryPolicy).
 pub mod grpc_retry_policy {
-
+    
     /// A builder for [`GrpcRetryPolicy`](crate::model::GrpcRetryPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) per_retry_timeout: std::option::Option<crate::model::Duration>,
         pub(crate) max_retries: std::option::Option<i64>,
         pub(crate) http_retry_events: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) tcp_retry_events:
-            std::option::Option<std::vec::Vec<crate::model::TcpRetryPolicyEvent>>,
-        pub(crate) grpc_retry_events:
-            std::option::Option<std::vec::Vec<crate::model::GrpcRetryPolicyEvent>>,
+        pub(crate) tcp_retry_events: std::option::Option<std::vec::Vec<crate::model::TcpRetryPolicyEvent>>,
+        pub(crate) grpc_retry_events: std::option::Option<std::vec::Vec<crate::model::GrpcRetryPolicyEvent>>,
     }
     impl Builder {
         /// <p>The timeout for each retry attempt.</p>
@@ -3528,12 +3363,8 @@ pub mod grpc_retry_policy {
             self
         }
         /// <p>The timeout for each retry attempt.</p>
-        pub fn set_per_retry_timeout(
-            mut self,
-            input: std::option::Option<crate::model::Duration>,
-        ) -> Self {
-            self.per_retry_timeout = input;
-            self
+        pub fn set_per_retry_timeout(mut self, input: std::option::Option<crate::model::Duration>) -> Self {
+            self.per_retry_timeout = input; self
         }
         /// <p>The maximum number of retry attempts.</p>
         pub fn max_retries(mut self, input: i64) -> Self {
@@ -3542,39 +3373,34 @@ pub mod grpc_retry_policy {
         }
         /// <p>The maximum number of retry attempts.</p>
         pub fn set_max_retries(mut self, input: std::option::Option<i64>) -> Self {
-            self.max_retries = input;
-            self
+            self.max_retries = input; self
         }
         /// Appends an item to `http_retry_events`.
         ///
         /// To override the contents of this collection use [`set_http_retry_events`](Self::set_http_retry_events).
         ///
-        /// <p>Specify at least one of the following values.</p>
-        /// <ul>
-        /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li>
-        /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li>
-        /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
-        /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
+        /// <p>Specify at least one of the following values.</p> 
+        /// <ul> 
+        /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li> 
+        /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li> 
+        /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li> 
+        /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li> 
         /// </ul>
         pub fn http_retry_events(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.http_retry_events.unwrap_or_default();
-            v.push(input.into());
-            self.http_retry_events = Some(v);
-            self
+                            v.push(input.into());
+                            self.http_retry_events = Some(v);
+                            self
         }
-        /// <p>Specify at least one of the following values.</p>
-        /// <ul>
-        /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li>
-        /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li>
-        /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
-        /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
+        /// <p>Specify at least one of the following values.</p> 
+        /// <ul> 
+        /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li> 
+        /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li> 
+        /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li> 
+        /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li> 
         /// </ul>
-        pub fn set_http_retry_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.http_retry_events = input;
-            self
+        pub fn set_http_retry_events(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.http_retry_events = input; self
         }
         /// Appends an item to `tcp_retry_events`.
         ///
@@ -3583,17 +3409,13 @@ pub mod grpc_retry_policy {
         /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
         pub fn tcp_retry_events(mut self, input: crate::model::TcpRetryPolicyEvent) -> Self {
             let mut v = self.tcp_retry_events.unwrap_or_default();
-            v.push(input);
-            self.tcp_retry_events = Some(v);
-            self
+                            v.push(input);
+                            self.tcp_retry_events = Some(v);
+                            self
         }
         /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
-        pub fn set_tcp_retry_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TcpRetryPolicyEvent>>,
-        ) -> Self {
-            self.tcp_retry_events = input;
-            self
+        pub fn set_tcp_retry_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::TcpRetryPolicyEvent>>) -> Self {
+            self.tcp_retry_events = input; self
         }
         /// Appends an item to `grpc_retry_events`.
         ///
@@ -3602,29 +3424,32 @@ pub mod grpc_retry_policy {
         /// <p>Specify at least one of the valid values.</p>
         pub fn grpc_retry_events(mut self, input: crate::model::GrpcRetryPolicyEvent) -> Self {
             let mut v = self.grpc_retry_events.unwrap_or_default();
-            v.push(input);
-            self.grpc_retry_events = Some(v);
-            self
+                            v.push(input);
+                            self.grpc_retry_events = Some(v);
+                            self
         }
         /// <p>Specify at least one of the valid values.</p>
-        pub fn set_grpc_retry_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GrpcRetryPolicyEvent>>,
-        ) -> Self {
-            self.grpc_retry_events = input;
-            self
+        pub fn set_grpc_retry_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::GrpcRetryPolicyEvent>>) -> Self {
+            self.grpc_retry_events = input; self
         }
         /// Consumes the builder and constructs a [`GrpcRetryPolicy`](crate::model::GrpcRetryPolicy).
         pub fn build(self) -> crate::model::GrpcRetryPolicy {
             crate::model::GrpcRetryPolicy {
-                per_retry_timeout: self.per_retry_timeout,
-                max_retries: self.max_retries,
-                http_retry_events: self.http_retry_events,
-                tcp_retry_events: self.tcp_retry_events,
-                grpc_retry_events: self.grpc_retry_events,
+                per_retry_timeout: self.per_retry_timeout
+                ,
+                max_retries: self.max_retries
+                ,
+                http_retry_events: self.http_retry_events
+                ,
+                tcp_retry_events: self.tcp_retry_events
+                ,
+                grpc_retry_events: self.grpc_retry_events
+                ,
             }
         }
     }
+    
+    
 }
 impl GrpcRetryPolicy {
     /// Creates a new builder-style object to manufacture [`GrpcRetryPolicy`](crate::model::GrpcRetryPolicy).
@@ -3639,9 +3464,9 @@ impl GrpcRetryPolicy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let grpcretrypolicyevent = unimplemented!();
 /// match grpcretrypolicyevent {
@@ -3666,22 +3491,14 @@ impl GrpcRetryPolicy {
 /// Specifically, when `grpcretrypolicyevent` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GrpcRetryPolicyEvent::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum GrpcRetryPolicyEvent {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
@@ -3694,7 +3511,7 @@ pub enum GrpcRetryPolicyEvent {
     #[allow(missing_docs)] // documentation missing in model
     Unavailable,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GrpcRetryPolicyEvent {
     fn from(s: &str) -> Self {
@@ -3704,19 +3521,17 @@ impl std::convert::From<&str> for GrpcRetryPolicyEvent {
             "internal" => GrpcRetryPolicyEvent::Internal,
             "resource-exhausted" => GrpcRetryPolicyEvent::ResourceExhausted,
             "unavailable" => GrpcRetryPolicyEvent::Unavailable,
-            other => {
-                GrpcRetryPolicyEvent::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => GrpcRetryPolicyEvent::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for GrpcRetryPolicyEvent {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GrpcRetryPolicyEvent::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(GrpcRetryPolicyEvent::from(s))
+                }
+            }
 impl GrpcRetryPolicyEvent {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3726,17 +3541,13 @@ impl GrpcRetryPolicyEvent {
             GrpcRetryPolicyEvent::Internal => "internal",
             GrpcRetryPolicyEvent::ResourceExhausted => "resource-exhausted",
             GrpcRetryPolicyEvent::Unavailable => "unavailable",
-            GrpcRetryPolicyEvent::Unknown(value) => value.as_str(),
+            GrpcRetryPolicyEvent::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "cancelled",
-            "deadline-exceeded",
-            "internal",
-            "resource-exhausted",
-            "unavailable",
+            "cancelled", "deadline-exceeded", "internal", "resource-exhausted", "unavailable"
         ]
     }
 }
@@ -3752,9 +3563,9 @@ impl AsRef<str> for GrpcRetryPolicyEvent {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let tcpretrypolicyevent = unimplemented!();
 /// match tcpretrypolicyevent {
@@ -3775,56 +3586,48 @@ impl AsRef<str> for GrpcRetryPolicyEvent {
 /// Specifically, when `tcpretrypolicyevent` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TcpRetryPolicyEvent::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TcpRetryPolicyEvent {
     #[allow(missing_docs)] // documentation missing in model
     ConnectionError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TcpRetryPolicyEvent {
     fn from(s: &str) -> Self {
         match s {
             "connection-error" => TcpRetryPolicyEvent::ConnectionError,
-            other => {
-                TcpRetryPolicyEvent::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => TcpRetryPolicyEvent::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TcpRetryPolicyEvent {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TcpRetryPolicyEvent::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TcpRetryPolicyEvent::from(s))
+                }
+            }
 impl TcpRetryPolicyEvent {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TcpRetryPolicyEvent::ConnectionError => "connection-error",
-            TcpRetryPolicyEvent::Unknown(value) => value.as_str(),
+            TcpRetryPolicyEvent::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["connection-error"]
+        &[
+            "connection-error"
+        ]
     }
 }
 impl AsRef<str> for TcpRetryPolicyEvent {
@@ -3836,7 +3639,7 @@ impl AsRef<str> for TcpRetryPolicyEvent {
 /// <p>An object that represents the criteria for determining a request match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrpcRouteMatch {
+pub struct GrpcRouteMatch  {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
@@ -3852,15 +3655,15 @@ pub struct GrpcRouteMatch {
 }
 impl GrpcRouteMatch {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The method name to match from the request. If you specify a name, you must also specify a <code>serviceName</code>.</p>
-    pub fn method_name(&self) -> std::option::Option<&str> {
+    pub fn method_name(&self) -> std::option::Option<& str> {
         self.method_name.as_deref()
     }
     /// <p>An object that represents the data to match from the request.</p>
-    pub fn metadata(&self) -> std::option::Option<&[crate::model::GrpcRouteMetadata]> {
+    pub fn metadata(&self) -> std::option::Option<& [crate::model::GrpcRouteMetadata]> {
         self.metadata.as_deref()
     }
     /// <p>The port number to match on.</p>
@@ -3870,7 +3673,7 @@ impl GrpcRouteMatch {
 }
 /// See [`GrpcRouteMatch`](crate::model::GrpcRouteMatch).
 pub mod grpc_route_match {
-
+    
     /// A builder for [`GrpcRouteMatch`](crate::model::GrpcRouteMatch).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3887,8 +3690,7 @@ pub mod grpc_route_match {
         }
         /// <p>The fully qualified domain name for the service to match from the request.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_name = input;
-            self
+            self.service_name = input; self
         }
         /// <p>The method name to match from the request. If you specify a name, you must also specify a <code>serviceName</code>.</p>
         pub fn method_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3897,8 +3699,7 @@ pub mod grpc_route_match {
         }
         /// <p>The method name to match from the request. If you specify a name, you must also specify a <code>serviceName</code>.</p>
         pub fn set_method_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.method_name = input;
-            self
+            self.method_name = input; self
         }
         /// Appends an item to `metadata`.
         ///
@@ -3907,17 +3708,13 @@ pub mod grpc_route_match {
         /// <p>An object that represents the data to match from the request.</p>
         pub fn metadata(mut self, input: crate::model::GrpcRouteMetadata) -> Self {
             let mut v = self.metadata.unwrap_or_default();
-            v.push(input);
-            self.metadata = Some(v);
-            self
+                            v.push(input);
+                            self.metadata = Some(v);
+                            self
         }
         /// <p>An object that represents the data to match from the request.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GrpcRouteMetadata>>,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::model::GrpcRouteMetadata>>) -> Self {
+            self.metadata = input; self
         }
         /// <p>The port number to match on.</p>
         pub fn port(mut self, input: i32) -> Self {
@@ -3926,19 +3723,24 @@ pub mod grpc_route_match {
         }
         /// <p>The port number to match on.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// Consumes the builder and constructs a [`GrpcRouteMatch`](crate::model::GrpcRouteMatch).
         pub fn build(self) -> crate::model::GrpcRouteMatch {
             crate::model::GrpcRouteMatch {
-                service_name: self.service_name,
-                method_name: self.method_name,
-                metadata: self.metadata,
-                port: self.port,
+                service_name: self.service_name
+                ,
+                method_name: self.method_name
+                ,
+                metadata: self.metadata
+                ,
+                port: self.port
+                ,
             }
         }
     }
+    
+    
 }
 impl GrpcRouteMatch {
     /// Creates a new builder-style object to manufacture [`GrpcRouteMatch`](crate::model::GrpcRouteMatch).
@@ -3950,7 +3752,7 @@ impl GrpcRouteMatch {
 /// <p>An object that represents the match metadata for the route.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrpcRouteMetadata {
+pub struct GrpcRouteMetadata  {
     /// <p>The name of the route.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -3963,7 +3765,7 @@ pub struct GrpcRouteMetadata {
 }
 impl GrpcRouteMetadata {
     /// <p>The name of the route.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
@@ -3971,13 +3773,13 @@ impl GrpcRouteMetadata {
         self.invert
     }
     /// <p>An object that represents the data to match from the request.</p>
-    pub fn r#match(&self) -> std::option::Option<&crate::model::GrpcRouteMetadataMatchMethod> {
+    pub fn r#match(&self) -> std::option::Option<& crate::model::GrpcRouteMetadataMatchMethod> {
         self.r#match.as_ref()
     }
 }
 /// See [`GrpcRouteMetadata`](crate::model::GrpcRouteMetadata).
 pub mod grpc_route_metadata {
-
+    
     /// A builder for [`GrpcRouteMetadata`](crate::model::GrpcRouteMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3993,8 +3795,7 @@ pub mod grpc_route_metadata {
         }
         /// <p>The name of the route.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
         pub fn invert(mut self, input: bool) -> Self {
@@ -4003,8 +3804,7 @@ pub mod grpc_route_metadata {
         }
         /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
         pub fn set_invert(mut self, input: std::option::Option<bool>) -> Self {
-            self.invert = input;
-            self
+            self.invert = input; self
         }
         /// <p>An object that represents the data to match from the request.</p>
         pub fn r#match(mut self, input: crate::model::GrpcRouteMetadataMatchMethod) -> Self {
@@ -4012,22 +3812,23 @@ pub mod grpc_route_metadata {
             self
         }
         /// <p>An object that represents the data to match from the request.</p>
-        pub fn set_match(
-            mut self,
-            input: std::option::Option<crate::model::GrpcRouteMetadataMatchMethod>,
-        ) -> Self {
-            self.r#match = input;
-            self
+        pub fn set_match(mut self, input: std::option::Option<crate::model::GrpcRouteMetadataMatchMethod>) -> Self {
+            self.r#match = input; self
         }
         /// Consumes the builder and constructs a [`GrpcRouteMetadata`](crate::model::GrpcRouteMetadata).
         pub fn build(self) -> crate::model::GrpcRouteMetadata {
             crate::model::GrpcRouteMetadata {
-                name: self.name,
-                invert: self.invert,
-                r#match: self.r#match,
+                name: self.name
+                ,
+                invert: self.invert
+                ,
+                r#match: self.r#match
+                ,
             }
         }
     }
+    
+    
 }
 impl GrpcRouteMetadata {
     /// Creates a new builder-style object to manufacture [`GrpcRouteMetadata`](crate::model::GrpcRouteMetadata).
@@ -4064,11 +3865,7 @@ impl GrpcRouteMetadataMatchMethod {
     /// Tries to convert the enum instance into [`Exact`](crate::model::GrpcRouteMetadataMatchMethod::Exact), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_exact(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let GrpcRouteMetadataMatchMethod::Exact(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let GrpcRouteMetadataMatchMethod::Exact(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Exact`](crate::model::GrpcRouteMetadataMatchMethod::Exact).
     pub fn is_exact(&self) -> bool {
@@ -4077,11 +3874,7 @@ impl GrpcRouteMetadataMatchMethod {
     /// Tries to convert the enum instance into [`Prefix`](crate::model::GrpcRouteMetadataMatchMethod::Prefix), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let GrpcRouteMetadataMatchMethod::Prefix(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let GrpcRouteMetadataMatchMethod::Prefix(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Prefix`](crate::model::GrpcRouteMetadataMatchMethod::Prefix).
     pub fn is_prefix(&self) -> bool {
@@ -4090,11 +3883,7 @@ impl GrpcRouteMetadataMatchMethod {
     /// Tries to convert the enum instance into [`Range`](crate::model::GrpcRouteMetadataMatchMethod::Range), extracting the inner [`MatchRange`](crate::model::MatchRange).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_range(&self) -> std::result::Result<&crate::model::MatchRange, &Self> {
-        if let GrpcRouteMetadataMatchMethod::Range(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let GrpcRouteMetadataMatchMethod::Range(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Range`](crate::model::GrpcRouteMetadataMatchMethod::Range).
     pub fn is_range(&self) -> bool {
@@ -4103,11 +3892,7 @@ impl GrpcRouteMetadataMatchMethod {
     /// Tries to convert the enum instance into [`Regex`](crate::model::GrpcRouteMetadataMatchMethod::Regex), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_regex(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let GrpcRouteMetadataMatchMethod::Regex(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let GrpcRouteMetadataMatchMethod::Regex(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Regex`](crate::model::GrpcRouteMetadataMatchMethod::Regex).
     pub fn is_regex(&self) -> bool {
@@ -4116,11 +3901,7 @@ impl GrpcRouteMetadataMatchMethod {
     /// Tries to convert the enum instance into [`Suffix`](crate::model::GrpcRouteMetadataMatchMethod::Suffix), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_suffix(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let GrpcRouteMetadataMatchMethod::Suffix(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let GrpcRouteMetadataMatchMethod::Suffix(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Suffix`](crate::model::GrpcRouteMetadataMatchMethod::Suffix).
     pub fn is_suffix(&self) -> bool {
@@ -4135,7 +3916,7 @@ impl GrpcRouteMetadataMatchMethod {
 /// <p>An object that represents the range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MatchRange {
+pub struct MatchRange  {
     /// <p>The start of the range.</p>
     #[doc(hidden)]
     pub start: std::option::Option<i64>,
@@ -4155,7 +3936,7 @@ impl MatchRange {
 }
 /// See [`MatchRange`](crate::model::MatchRange).
 pub mod match_range {
-
+    
     /// A builder for [`MatchRange`](crate::model::MatchRange).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4170,8 +3951,7 @@ pub mod match_range {
         }
         /// <p>The start of the range.</p>
         pub fn set_start(mut self, input: std::option::Option<i64>) -> Self {
-            self.start = input;
-            self
+            self.start = input; self
         }
         /// <p>The end of the range.</p>
         pub fn end(mut self, input: i64) -> Self {
@@ -4180,17 +3960,20 @@ pub mod match_range {
         }
         /// <p>The end of the range.</p>
         pub fn set_end(mut self, input: std::option::Option<i64>) -> Self {
-            self.end = input;
-            self
+            self.end = input; self
         }
         /// Consumes the builder and constructs a [`MatchRange`](crate::model::MatchRange).
         pub fn build(self) -> crate::model::MatchRange {
             crate::model::MatchRange {
-                start: self.start,
-                end: self.end,
+                start: self.start
+                ,
+                end: self.end
+                ,
             }
         }
     }
+    
+    
 }
 impl MatchRange {
     /// Creates a new builder-style object to manufacture [`MatchRange`](crate::model::MatchRange).
@@ -4202,25 +3985,24 @@ impl MatchRange {
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrpcRouteAction {
+pub struct GrpcRouteAction  {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
     #[doc(hidden)]
     pub weighted_targets: std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
 }
 impl GrpcRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
-    pub fn weighted_targets(&self) -> std::option::Option<&[crate::model::WeightedTarget]> {
+    pub fn weighted_targets(&self) -> std::option::Option<& [crate::model::WeightedTarget]> {
         self.weighted_targets.as_deref()
     }
 }
 /// See [`GrpcRouteAction`](crate::model::GrpcRouteAction).
 pub mod grpc_route_action {
-
+    
     /// A builder for [`GrpcRouteAction`](crate::model::GrpcRouteAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) weighted_targets:
-            std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
+        pub(crate) weighted_targets: std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
     }
     impl Builder {
         /// Appends an item to `weighted_targets`.
@@ -4230,25 +4012,24 @@ pub mod grpc_route_action {
         /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
         pub fn weighted_targets(mut self, input: crate::model::WeightedTarget) -> Self {
             let mut v = self.weighted_targets.unwrap_or_default();
-            v.push(input);
-            self.weighted_targets = Some(v);
-            self
+                            v.push(input);
+                            self.weighted_targets = Some(v);
+                            self
         }
         /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
-        pub fn set_weighted_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
-        ) -> Self {
-            self.weighted_targets = input;
-            self
+        pub fn set_weighted_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>) -> Self {
+            self.weighted_targets = input; self
         }
         /// Consumes the builder and constructs a [`GrpcRouteAction`](crate::model::GrpcRouteAction).
         pub fn build(self) -> crate::model::GrpcRouteAction {
             crate::model::GrpcRouteAction {
-                weighted_targets: self.weighted_targets,
+                weighted_targets: self.weighted_targets
+                ,
             }
         }
     }
+    
+    
 }
 impl GrpcRouteAction {
     /// Creates a new builder-style object to manufacture [`GrpcRouteAction`](crate::model::GrpcRouteAction).
@@ -4260,7 +4041,7 @@ impl GrpcRouteAction {
 /// <p>An object that represents a target and its relative weight. Traffic is distributed across targets according to their relative weight. For example, a weighted target with a relative weight of 50 receives five times as much traffic as one with a relative weight of 10. The total weight for all targets combined must be less than or equal to 100.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WeightedTarget {
+pub struct WeightedTarget  {
     /// <p>The virtual node to associate with the weighted target.</p>
     #[doc(hidden)]
     pub virtual_node: std::option::Option<std::string::String>,
@@ -4273,7 +4054,7 @@ pub struct WeightedTarget {
 }
 impl WeightedTarget {
     /// <p>The virtual node to associate with the weighted target.</p>
-    pub fn virtual_node(&self) -> std::option::Option<&str> {
+    pub fn virtual_node(&self) -> std::option::Option<& str> {
         self.virtual_node.as_deref()
     }
     /// <p>The relative weight of the weighted target.</p>
@@ -4287,7 +4068,7 @@ impl WeightedTarget {
 }
 /// See [`WeightedTarget`](crate::model::WeightedTarget).
 pub mod weighted_target {
-
+    
     /// A builder for [`WeightedTarget`](crate::model::WeightedTarget).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4303,8 +4084,7 @@ pub mod weighted_target {
         }
         /// <p>The virtual node to associate with the weighted target.</p>
         pub fn set_virtual_node(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.virtual_node = input;
-            self
+            self.virtual_node = input; self
         }
         /// <p>The relative weight of the weighted target.</p>
         pub fn weight(mut self, input: i32) -> Self {
@@ -4313,8 +4093,7 @@ pub mod weighted_target {
         }
         /// <p>The relative weight of the weighted target.</p>
         pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
-            self.weight = input;
-            self
+            self.weight = input; self
         }
         /// <p>The targeted port of the weighted object.</p>
         pub fn port(mut self, input: i32) -> Self {
@@ -4323,18 +4102,23 @@ pub mod weighted_target {
         }
         /// <p>The targeted port of the weighted object.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// Consumes the builder and constructs a [`WeightedTarget`](crate::model::WeightedTarget).
         pub fn build(self) -> crate::model::WeightedTarget {
             crate::model::WeightedTarget {
-                virtual_node: self.virtual_node,
-                weight: self.weight.unwrap_or_default(),
-                port: self.port,
+                virtual_node: self.virtual_node
+                ,
+                weight: self.weight
+                    .unwrap_or_default()
+                ,
+                port: self.port
+                ,
             }
         }
     }
+    
+    
 }
 impl WeightedTarget {
     /// Creates a new builder-style object to manufacture [`WeightedTarget`](crate::model::WeightedTarget).
@@ -4346,7 +4130,7 @@ impl WeightedTarget {
 /// <p>An object that represents an HTTP or HTTP/2 route type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpRoute {
+pub struct HttpRoute  {
     /// <p>An object that represents the criteria for determining a request match.</p>
     #[doc(hidden)]
     pub r#match: std::option::Option<crate::model::HttpRouteMatch>,
@@ -4362,25 +4146,25 @@ pub struct HttpRoute {
 }
 impl HttpRoute {
     /// <p>An object that represents the criteria for determining a request match.</p>
-    pub fn r#match(&self) -> std::option::Option<&crate::model::HttpRouteMatch> {
+    pub fn r#match(&self) -> std::option::Option<& crate::model::HttpRouteMatch> {
         self.r#match.as_ref()
     }
     /// <p>An object that represents the action to take if a match is determined.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::HttpRouteAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::HttpRouteAction> {
         self.action.as_ref()
     }
     /// <p>An object that represents a retry policy.</p>
-    pub fn retry_policy(&self) -> std::option::Option<&crate::model::HttpRetryPolicy> {
+    pub fn retry_policy(&self) -> std::option::Option<& crate::model::HttpRetryPolicy> {
         self.retry_policy.as_ref()
     }
     /// <p>An object that represents types of timeouts. </p>
-    pub fn timeout(&self) -> std::option::Option<&crate::model::HttpTimeout> {
+    pub fn timeout(&self) -> std::option::Option<& crate::model::HttpTimeout> {
         self.timeout.as_ref()
     }
 }
 /// See [`HttpRoute`](crate::model::HttpRoute).
 pub mod http_route {
-
+    
     /// A builder for [`HttpRoute`](crate::model::HttpRoute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4396,12 +4180,8 @@ pub mod http_route {
             self
         }
         /// <p>An object that represents the criteria for determining a request match.</p>
-        pub fn set_match(
-            mut self,
-            input: std::option::Option<crate::model::HttpRouteMatch>,
-        ) -> Self {
-            self.r#match = input;
-            self
+        pub fn set_match(mut self, input: std::option::Option<crate::model::HttpRouteMatch>) -> Self {
+            self.r#match = input; self
         }
         /// <p>An object that represents the action to take if a match is determined.</p>
         pub fn action(mut self, input: crate::model::HttpRouteAction) -> Self {
@@ -4409,12 +4189,8 @@ pub mod http_route {
             self
         }
         /// <p>An object that represents the action to take if a match is determined.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::HttpRouteAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::HttpRouteAction>) -> Self {
+            self.action = input; self
         }
         /// <p>An object that represents a retry policy.</p>
         pub fn retry_policy(mut self, input: crate::model::HttpRetryPolicy) -> Self {
@@ -4422,12 +4198,8 @@ pub mod http_route {
             self
         }
         /// <p>An object that represents a retry policy.</p>
-        pub fn set_retry_policy(
-            mut self,
-            input: std::option::Option<crate::model::HttpRetryPolicy>,
-        ) -> Self {
-            self.retry_policy = input;
-            self
+        pub fn set_retry_policy(mut self, input: std::option::Option<crate::model::HttpRetryPolicy>) -> Self {
+            self.retry_policy = input; self
         }
         /// <p>An object that represents types of timeouts. </p>
         pub fn timeout(mut self, input: crate::model::HttpTimeout) -> Self {
@@ -4435,23 +4207,25 @@ pub mod http_route {
             self
         }
         /// <p>An object that represents types of timeouts. </p>
-        pub fn set_timeout(
-            mut self,
-            input: std::option::Option<crate::model::HttpTimeout>,
-        ) -> Self {
-            self.timeout = input;
-            self
+        pub fn set_timeout(mut self, input: std::option::Option<crate::model::HttpTimeout>) -> Self {
+            self.timeout = input; self
         }
         /// Consumes the builder and constructs a [`HttpRoute`](crate::model::HttpRoute).
         pub fn build(self) -> crate::model::HttpRoute {
             crate::model::HttpRoute {
-                r#match: self.r#match,
-                action: self.action,
-                retry_policy: self.retry_policy,
-                timeout: self.timeout,
+                r#match: self.r#match
+                ,
+                action: self.action
+                ,
+                retry_policy: self.retry_policy
+                ,
+                timeout: self.timeout
+                ,
             }
         }
     }
+    
+    
 }
 impl HttpRoute {
     /// Creates a new builder-style object to manufacture [`HttpRoute`](crate::model::HttpRoute).
@@ -4463,7 +4237,7 @@ impl HttpRoute {
 /// <p>An object that represents types of timeouts. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpTimeout {
+pub struct HttpTimeout  {
     /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
     #[doc(hidden)]
     pub per_request: std::option::Option<crate::model::Duration>,
@@ -4473,17 +4247,17 @@ pub struct HttpTimeout {
 }
 impl HttpTimeout {
     /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
-    pub fn per_request(&self) -> std::option::Option<&crate::model::Duration> {
+    pub fn per_request(&self) -> std::option::Option<& crate::model::Duration> {
         self.per_request.as_ref()
     }
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
-    pub fn idle(&self) -> std::option::Option<&crate::model::Duration> {
+    pub fn idle(&self) -> std::option::Option<& crate::model::Duration> {
         self.idle.as_ref()
     }
 }
 /// See [`HttpTimeout`](crate::model::HttpTimeout).
 pub mod http_timeout {
-
+    
     /// A builder for [`HttpTimeout`](crate::model::HttpTimeout).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4497,12 +4271,8 @@ pub mod http_timeout {
             self
         }
         /// <p>An object that represents a per request timeout. The default value is 15 seconds. If you set a higher timeout, then make sure that the higher value is set for each App Mesh resource in a conversation. For example, if a virtual node backend uses a virtual router provider to route to another virtual node, then the timeout should be greater than 15 seconds for the source and destination virtual node and the route.</p>
-        pub fn set_per_request(
-            mut self,
-            input: std::option::Option<crate::model::Duration>,
-        ) -> Self {
-            self.per_request = input;
-            self
+        pub fn set_per_request(mut self, input: std::option::Option<crate::model::Duration>) -> Self {
+            self.per_request = input; self
         }
         /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
         pub fn idle(mut self, input: crate::model::Duration) -> Self {
@@ -4511,17 +4281,20 @@ pub mod http_timeout {
         }
         /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
         pub fn set_idle(mut self, input: std::option::Option<crate::model::Duration>) -> Self {
-            self.idle = input;
-            self
+            self.idle = input; self
         }
         /// Consumes the builder and constructs a [`HttpTimeout`](crate::model::HttpTimeout).
         pub fn build(self) -> crate::model::HttpTimeout {
             crate::model::HttpTimeout {
-                per_request: self.per_request,
-                idle: self.idle,
+                per_request: self.per_request
+                ,
+                idle: self.idle
+                ,
             }
         }
     }
+    
+    
 }
 impl HttpTimeout {
     /// Creates a new builder-style object to manufacture [`HttpTimeout`](crate::model::HttpTimeout).
@@ -4533,19 +4306,19 @@ impl HttpTimeout {
 /// <p>An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. Both <code>server-error</code> and <code>gateway-error</code> under <code>httpRetryEvents</code> include the Envoy <code>reset</code> policy. For more information on the <code>reset</code> policy, see the <a href="https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/router_filter#x-envoy-retry-on">Envoy documentation</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpRetryPolicy {
+pub struct HttpRetryPolicy  {
     /// <p>The timeout for each retry attempt.</p>
     #[doc(hidden)]
     pub per_retry_timeout: std::option::Option<crate::model::Duration>,
     /// <p>The maximum number of retry attempts.</p>
     #[doc(hidden)]
     pub max_retries: std::option::Option<i64>,
-    /// <p>Specify at least one of the following values.</p>
-    /// <ul>
-    /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li>
-    /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li>
-    /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
-    /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
+    /// <p>Specify at least one of the following values.</p> 
+    /// <ul> 
+    /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li> 
+    /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li> 
+    /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li> 
+    /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub http_retry_events: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4555,39 +4328,38 @@ pub struct HttpRetryPolicy {
 }
 impl HttpRetryPolicy {
     /// <p>The timeout for each retry attempt.</p>
-    pub fn per_retry_timeout(&self) -> std::option::Option<&crate::model::Duration> {
+    pub fn per_retry_timeout(&self) -> std::option::Option<& crate::model::Duration> {
         self.per_retry_timeout.as_ref()
     }
     /// <p>The maximum number of retry attempts.</p>
     pub fn max_retries(&self) -> std::option::Option<i64> {
         self.max_retries
     }
-    /// <p>Specify at least one of the following values.</p>
-    /// <ul>
-    /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li>
-    /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li>
-    /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
-    /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
+    /// <p>Specify at least one of the following values.</p> 
+    /// <ul> 
+    /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li> 
+    /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li> 
+    /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li> 
+    /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li> 
     /// </ul>
-    pub fn http_retry_events(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn http_retry_events(&self) -> std::option::Option<& [std::string::String]> {
         self.http_retry_events.as_deref()
     }
     /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
-    pub fn tcp_retry_events(&self) -> std::option::Option<&[crate::model::TcpRetryPolicyEvent]> {
+    pub fn tcp_retry_events(&self) -> std::option::Option<& [crate::model::TcpRetryPolicyEvent]> {
         self.tcp_retry_events.as_deref()
     }
 }
 /// See [`HttpRetryPolicy`](crate::model::HttpRetryPolicy).
 pub mod http_retry_policy {
-
+    
     /// A builder for [`HttpRetryPolicy`](crate::model::HttpRetryPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) per_retry_timeout: std::option::Option<crate::model::Duration>,
         pub(crate) max_retries: std::option::Option<i64>,
         pub(crate) http_retry_events: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) tcp_retry_events:
-            std::option::Option<std::vec::Vec<crate::model::TcpRetryPolicyEvent>>,
+        pub(crate) tcp_retry_events: std::option::Option<std::vec::Vec<crate::model::TcpRetryPolicyEvent>>,
     }
     impl Builder {
         /// <p>The timeout for each retry attempt.</p>
@@ -4596,12 +4368,8 @@ pub mod http_retry_policy {
             self
         }
         /// <p>The timeout for each retry attempt.</p>
-        pub fn set_per_retry_timeout(
-            mut self,
-            input: std::option::Option<crate::model::Duration>,
-        ) -> Self {
-            self.per_retry_timeout = input;
-            self
+        pub fn set_per_retry_timeout(mut self, input: std::option::Option<crate::model::Duration>) -> Self {
+            self.per_retry_timeout = input; self
         }
         /// <p>The maximum number of retry attempts.</p>
         pub fn max_retries(mut self, input: i64) -> Self {
@@ -4610,39 +4378,34 @@ pub mod http_retry_policy {
         }
         /// <p>The maximum number of retry attempts.</p>
         pub fn set_max_retries(mut self, input: std::option::Option<i64>) -> Self {
-            self.max_retries = input;
-            self
+            self.max_retries = input; self
         }
         /// Appends an item to `http_retry_events`.
         ///
         /// To override the contents of this collection use [`set_http_retry_events`](Self::set_http_retry_events).
         ///
-        /// <p>Specify at least one of the following values.</p>
-        /// <ul>
-        /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li>
-        /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li>
-        /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
-        /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
+        /// <p>Specify at least one of the following values.</p> 
+        /// <ul> 
+        /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li> 
+        /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li> 
+        /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li> 
+        /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li> 
         /// </ul>
         pub fn http_retry_events(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.http_retry_events.unwrap_or_default();
-            v.push(input.into());
-            self.http_retry_events = Some(v);
-            self
+                            v.push(input.into());
+                            self.http_retry_events = Some(v);
+                            self
         }
-        /// <p>Specify at least one of the following values.</p>
-        /// <ul>
-        /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li>
-        /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li>
-        /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li>
-        /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li>
+        /// <p>Specify at least one of the following values.</p> 
+        /// <ul> 
+        /// <li> <p> <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, and 511</p> </li> 
+        /// <li> <p> <b>gateway-error</b> – HTTP status codes 502, 503, and 504</p> </li> 
+        /// <li> <p> <b>client-error</b> – HTTP status code 409</p> </li> 
+        /// <li> <p> <b>stream-error</b> – Retry on refused stream</p> </li> 
         /// </ul>
-        pub fn set_http_retry_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.http_retry_events = input;
-            self
+        pub fn set_http_retry_events(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.http_retry_events = input; self
         }
         /// Appends an item to `tcp_retry_events`.
         ///
@@ -4651,28 +4414,30 @@ pub mod http_retry_policy {
         /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
         pub fn tcp_retry_events(mut self, input: crate::model::TcpRetryPolicyEvent) -> Self {
             let mut v = self.tcp_retry_events.unwrap_or_default();
-            v.push(input);
-            self.tcp_retry_events = Some(v);
-            self
+                            v.push(input);
+                            self.tcp_retry_events = Some(v);
+                            self
         }
         /// <p>Specify a valid value. The event occurs before any processing of a request has started and is encountered when the upstream is temporarily or permanently unavailable.</p>
-        pub fn set_tcp_retry_events(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::TcpRetryPolicyEvent>>,
-        ) -> Self {
-            self.tcp_retry_events = input;
-            self
+        pub fn set_tcp_retry_events(mut self, input: std::option::Option<std::vec::Vec<crate::model::TcpRetryPolicyEvent>>) -> Self {
+            self.tcp_retry_events = input; self
         }
         /// Consumes the builder and constructs a [`HttpRetryPolicy`](crate::model::HttpRetryPolicy).
         pub fn build(self) -> crate::model::HttpRetryPolicy {
             crate::model::HttpRetryPolicy {
-                per_retry_timeout: self.per_retry_timeout,
-                max_retries: self.max_retries,
-                http_retry_events: self.http_retry_events,
-                tcp_retry_events: self.tcp_retry_events,
+                per_retry_timeout: self.per_retry_timeout
+                ,
+                max_retries: self.max_retries
+                ,
+                http_retry_events: self.http_retry_events
+                ,
+                tcp_retry_events: self.tcp_retry_events
+                ,
             }
         }
     }
+    
+    
 }
 impl HttpRetryPolicy {
     /// Creates a new builder-style object to manufacture [`HttpRetryPolicy`](crate::model::HttpRetryPolicy).
@@ -4684,25 +4449,24 @@ impl HttpRetryPolicy {
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpRouteAction {
+pub struct HttpRouteAction  {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
     #[doc(hidden)]
     pub weighted_targets: std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
 }
 impl HttpRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
-    pub fn weighted_targets(&self) -> std::option::Option<&[crate::model::WeightedTarget]> {
+    pub fn weighted_targets(&self) -> std::option::Option<& [crate::model::WeightedTarget]> {
         self.weighted_targets.as_deref()
     }
 }
 /// See [`HttpRouteAction`](crate::model::HttpRouteAction).
 pub mod http_route_action {
-
+    
     /// A builder for [`HttpRouteAction`](crate::model::HttpRouteAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) weighted_targets:
-            std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
+        pub(crate) weighted_targets: std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
     }
     impl Builder {
         /// Appends an item to `weighted_targets`.
@@ -4712,25 +4476,24 @@ pub mod http_route_action {
         /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
         pub fn weighted_targets(mut self, input: crate::model::WeightedTarget) -> Self {
             let mut v = self.weighted_targets.unwrap_or_default();
-            v.push(input);
-            self.weighted_targets = Some(v);
-            self
+                            v.push(input);
+                            self.weighted_targets = Some(v);
+                            self
         }
         /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
-        pub fn set_weighted_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
-        ) -> Self {
-            self.weighted_targets = input;
-            self
+        pub fn set_weighted_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>) -> Self {
+            self.weighted_targets = input; self
         }
         /// Consumes the builder and constructs a [`HttpRouteAction`](crate::model::HttpRouteAction).
         pub fn build(self) -> crate::model::HttpRouteAction {
             crate::model::HttpRouteAction {
-                weighted_targets: self.weighted_targets,
+                weighted_targets: self.weighted_targets
+                ,
             }
         }
     }
+    
+    
 }
 impl HttpRouteAction {
     /// Creates a new builder-style object to manufacture [`HttpRouteAction`](crate::model::HttpRouteAction).
@@ -4742,7 +4505,7 @@ impl HttpRouteAction {
 /// <p>An object that represents the requirements for a route to match HTTP requests for a virtual router.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpRouteMatch {
+pub struct HttpRouteMatch  {
     /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
     #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
@@ -4767,27 +4530,27 @@ pub struct HttpRouteMatch {
 }
 impl HttpRouteMatch {
     /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>The client request path to match on.</p>
-    pub fn path(&self) -> std::option::Option<&crate::model::HttpPathMatch> {
+    pub fn path(&self) -> std::option::Option<& crate::model::HttpPathMatch> {
         self.path.as_ref()
     }
     /// <p>The client request query parameters to match on.</p>
-    pub fn query_parameters(&self) -> std::option::Option<&[crate::model::HttpQueryParameter]> {
+    pub fn query_parameters(&self) -> std::option::Option<& [crate::model::HttpQueryParameter]> {
         self.query_parameters.as_deref()
     }
     /// <p>The client request method to match on. Specify only one.</p>
-    pub fn method(&self) -> std::option::Option<&crate::model::HttpMethod> {
+    pub fn method(&self) -> std::option::Option<& crate::model::HttpMethod> {
         self.method.as_ref()
     }
     /// <p>The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.</p>
-    pub fn scheme(&self) -> std::option::Option<&crate::model::HttpScheme> {
+    pub fn scheme(&self) -> std::option::Option<& crate::model::HttpScheme> {
         self.scheme.as_ref()
     }
     /// <p>The client request headers to match on.</p>
-    pub fn headers(&self) -> std::option::Option<&[crate::model::HttpRouteHeader]> {
+    pub fn headers(&self) -> std::option::Option<& [crate::model::HttpRouteHeader]> {
         self.headers.as_deref()
     }
     /// <p>The port number to match on.</p>
@@ -4797,14 +4560,13 @@ impl HttpRouteMatch {
 }
 /// See [`HttpRouteMatch`](crate::model::HttpRouteMatch).
 pub mod http_route_match {
-
+    
     /// A builder for [`HttpRouteMatch`](crate::model::HttpRouteMatch).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prefix: std::option::Option<std::string::String>,
         pub(crate) path: std::option::Option<crate::model::HttpPathMatch>,
-        pub(crate) query_parameters:
-            std::option::Option<std::vec::Vec<crate::model::HttpQueryParameter>>,
+        pub(crate) query_parameters: std::option::Option<std::vec::Vec<crate::model::HttpQueryParameter>>,
         pub(crate) method: std::option::Option<crate::model::HttpMethod>,
         pub(crate) scheme: std::option::Option<crate::model::HttpScheme>,
         pub(crate) headers: std::option::Option<std::vec::Vec<crate::model::HttpRouteHeader>>,
@@ -4818,8 +4580,7 @@ pub mod http_route_match {
         }
         /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
         /// <p>The client request path to match on.</p>
         pub fn path(mut self, input: crate::model::HttpPathMatch) -> Self {
@@ -4828,8 +4589,7 @@ pub mod http_route_match {
         }
         /// <p>The client request path to match on.</p>
         pub fn set_path(mut self, input: std::option::Option<crate::model::HttpPathMatch>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// Appends an item to `query_parameters`.
         ///
@@ -4838,17 +4598,13 @@ pub mod http_route_match {
         /// <p>The client request query parameters to match on.</p>
         pub fn query_parameters(mut self, input: crate::model::HttpQueryParameter) -> Self {
             let mut v = self.query_parameters.unwrap_or_default();
-            v.push(input);
-            self.query_parameters = Some(v);
-            self
+                            v.push(input);
+                            self.query_parameters = Some(v);
+                            self
         }
         /// <p>The client request query parameters to match on.</p>
-        pub fn set_query_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HttpQueryParameter>>,
-        ) -> Self {
-            self.query_parameters = input;
-            self
+        pub fn set_query_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::HttpQueryParameter>>) -> Self {
+            self.query_parameters = input; self
         }
         /// <p>The client request method to match on. Specify only one.</p>
         pub fn method(mut self, input: crate::model::HttpMethod) -> Self {
@@ -4857,8 +4613,7 @@ pub mod http_route_match {
         }
         /// <p>The client request method to match on. Specify only one.</p>
         pub fn set_method(mut self, input: std::option::Option<crate::model::HttpMethod>) -> Self {
-            self.method = input;
-            self
+            self.method = input; self
         }
         /// <p>The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.</p>
         pub fn scheme(mut self, input: crate::model::HttpScheme) -> Self {
@@ -4867,8 +4622,7 @@ pub mod http_route_match {
         }
         /// <p>The client request scheme to match on. Specify only one. Applicable only for HTTP2 routes.</p>
         pub fn set_scheme(mut self, input: std::option::Option<crate::model::HttpScheme>) -> Self {
-            self.scheme = input;
-            self
+            self.scheme = input; self
         }
         /// Appends an item to `headers`.
         ///
@@ -4877,17 +4631,13 @@ pub mod http_route_match {
         /// <p>The client request headers to match on.</p>
         pub fn headers(mut self, input: crate::model::HttpRouteHeader) -> Self {
             let mut v = self.headers.unwrap_or_default();
-            v.push(input);
-            self.headers = Some(v);
-            self
+                            v.push(input);
+                            self.headers = Some(v);
+                            self
         }
         /// <p>The client request headers to match on.</p>
-        pub fn set_headers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HttpRouteHeader>>,
-        ) -> Self {
-            self.headers = input;
-            self
+        pub fn set_headers(mut self, input: std::option::Option<std::vec::Vec<crate::model::HttpRouteHeader>>) -> Self {
+            self.headers = input; self
         }
         /// <p>The port number to match on.</p>
         pub fn port(mut self, input: i32) -> Self {
@@ -4896,22 +4646,30 @@ pub mod http_route_match {
         }
         /// <p>The port number to match on.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// Consumes the builder and constructs a [`HttpRouteMatch`](crate::model::HttpRouteMatch).
         pub fn build(self) -> crate::model::HttpRouteMatch {
             crate::model::HttpRouteMatch {
-                prefix: self.prefix,
-                path: self.path,
-                query_parameters: self.query_parameters,
-                method: self.method,
-                scheme: self.scheme,
-                headers: self.headers,
-                port: self.port,
+                prefix: self.prefix
+                ,
+                path: self.path
+                ,
+                query_parameters: self.query_parameters
+                ,
+                method: self.method
+                ,
+                scheme: self.scheme
+                ,
+                headers: self.headers
+                ,
+                port: self.port
+                ,
             }
         }
     }
+    
+    
 }
 impl HttpRouteMatch {
     /// Creates a new builder-style object to manufacture [`HttpRouteMatch`](crate::model::HttpRouteMatch).
@@ -4923,7 +4681,7 @@ impl HttpRouteMatch {
 /// <p>An object that represents the HTTP header in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpRouteHeader {
+pub struct HttpRouteHeader  {
     /// <p>A name for the HTTP header in the client request that will be matched on.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4936,7 +4694,7 @@ pub struct HttpRouteHeader {
 }
 impl HttpRouteHeader {
     /// <p>A name for the HTTP header in the client request that will be matched on.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
@@ -4944,13 +4702,13 @@ impl HttpRouteHeader {
         self.invert
     }
     /// <p>The <code>HeaderMatchMethod</code> object.</p>
-    pub fn r#match(&self) -> std::option::Option<&crate::model::HeaderMatchMethod> {
+    pub fn r#match(&self) -> std::option::Option<& crate::model::HeaderMatchMethod> {
         self.r#match.as_ref()
     }
 }
 /// See [`HttpRouteHeader`](crate::model::HttpRouteHeader).
 pub mod http_route_header {
-
+    
     /// A builder for [`HttpRouteHeader`](crate::model::HttpRouteHeader).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4966,8 +4724,7 @@ pub mod http_route_header {
         }
         /// <p>A name for the HTTP header in the client request that will be matched on.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
         pub fn invert(mut self, input: bool) -> Self {
@@ -4976,8 +4733,7 @@ pub mod http_route_header {
         }
         /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
         pub fn set_invert(mut self, input: std::option::Option<bool>) -> Self {
-            self.invert = input;
-            self
+            self.invert = input; self
         }
         /// <p>The <code>HeaderMatchMethod</code> object.</p>
         pub fn r#match(mut self, input: crate::model::HeaderMatchMethod) -> Self {
@@ -4985,22 +4741,23 @@ pub mod http_route_header {
             self
         }
         /// <p>The <code>HeaderMatchMethod</code> object.</p>
-        pub fn set_match(
-            mut self,
-            input: std::option::Option<crate::model::HeaderMatchMethod>,
-        ) -> Self {
-            self.r#match = input;
-            self
+        pub fn set_match(mut self, input: std::option::Option<crate::model::HeaderMatchMethod>) -> Self {
+            self.r#match = input; self
         }
         /// Consumes the builder and constructs a [`HttpRouteHeader`](crate::model::HttpRouteHeader).
         pub fn build(self) -> crate::model::HttpRouteHeader {
             crate::model::HttpRouteHeader {
-                name: self.name,
-                invert: self.invert,
-                r#match: self.r#match,
+                name: self.name
+                ,
+                invert: self.invert
+                ,
+                r#match: self.r#match
+                ,
             }
         }
     }
+    
+    
 }
 impl HttpRouteHeader {
     /// Creates a new builder-style object to manufacture [`HttpRouteHeader`](crate::model::HttpRouteHeader).
@@ -5037,11 +4794,7 @@ impl HeaderMatchMethod {
     /// Tries to convert the enum instance into [`Exact`](crate::model::HeaderMatchMethod::Exact), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_exact(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let HeaderMatchMethod::Exact(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let HeaderMatchMethod::Exact(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Exact`](crate::model::HeaderMatchMethod::Exact).
     pub fn is_exact(&self) -> bool {
@@ -5050,11 +4803,7 @@ impl HeaderMatchMethod {
     /// Tries to convert the enum instance into [`Prefix`](crate::model::HeaderMatchMethod::Prefix), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let HeaderMatchMethod::Prefix(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let HeaderMatchMethod::Prefix(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Prefix`](crate::model::HeaderMatchMethod::Prefix).
     pub fn is_prefix(&self) -> bool {
@@ -5063,11 +4812,7 @@ impl HeaderMatchMethod {
     /// Tries to convert the enum instance into [`Range`](crate::model::HeaderMatchMethod::Range), extracting the inner [`MatchRange`](crate::model::MatchRange).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_range(&self) -> std::result::Result<&crate::model::MatchRange, &Self> {
-        if let HeaderMatchMethod::Range(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let HeaderMatchMethod::Range(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Range`](crate::model::HeaderMatchMethod::Range).
     pub fn is_range(&self) -> bool {
@@ -5076,11 +4821,7 @@ impl HeaderMatchMethod {
     /// Tries to convert the enum instance into [`Regex`](crate::model::HeaderMatchMethod::Regex), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_regex(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let HeaderMatchMethod::Regex(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let HeaderMatchMethod::Regex(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Regex`](crate::model::HeaderMatchMethod::Regex).
     pub fn is_regex(&self) -> bool {
@@ -5089,11 +4830,7 @@ impl HeaderMatchMethod {
     /// Tries to convert the enum instance into [`Suffix`](crate::model::HeaderMatchMethod::Suffix), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_suffix(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let HeaderMatchMethod::Suffix(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let HeaderMatchMethod::Suffix(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Suffix`](crate::model::HeaderMatchMethod::Suffix).
     pub fn is_suffix(&self) -> bool {
@@ -5111,9 +4848,9 @@ impl HeaderMatchMethod {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let httpscheme = unimplemented!();
 /// match httpscheme {
@@ -5135,58 +4872,52 @@ impl HeaderMatchMethod {
 /// Specifically, when `httpscheme` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HttpScheme::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HttpScheme {
     #[allow(missing_docs)] // documentation missing in model
     Http,
     #[allow(missing_docs)] // documentation missing in model
     Https,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HttpScheme {
     fn from(s: &str) -> Self {
         match s {
             "http" => HttpScheme::Http,
             "https" => HttpScheme::Https,
-            other => HttpScheme::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => HttpScheme::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HttpScheme {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HttpScheme::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HttpScheme::from(s))
+                }
+            }
 impl HttpScheme {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HttpScheme::Http => "http",
             HttpScheme::Https => "https",
-            HttpScheme::Unknown(value) => value.as_str(),
+            HttpScheme::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["http", "https"]
+        &[
+            "http", "https"
+        ]
     }
 }
 impl AsRef<str> for HttpScheme {
@@ -5201,9 +4932,9 @@ impl AsRef<str> for HttpScheme {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let httpmethod = unimplemented!();
 /// match httpmethod {
@@ -5232,22 +4963,14 @@ impl AsRef<str> for HttpScheme {
 /// Specifically, when `httpmethod` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HttpMethod::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HttpMethod {
     #[allow(missing_docs)] // documentation missing in model
     Connect,
@@ -5268,7 +4991,7 @@ pub enum HttpMethod {
     #[allow(missing_docs)] // documentation missing in model
     Trace,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HttpMethod {
     fn from(s: &str) -> Self {
@@ -5282,17 +5005,17 @@ impl std::convert::From<&str> for HttpMethod {
             "POST" => HttpMethod::Post,
             "PUT" => HttpMethod::Put,
             "TRACE" => HttpMethod::Trace,
-            other => HttpMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => HttpMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HttpMethod {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HttpMethod::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HttpMethod::from(s))
+                }
+            }
 impl HttpMethod {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5306,13 +5029,13 @@ impl HttpMethod {
             HttpMethod::Post => "POST",
             HttpMethod::Put => "PUT",
             HttpMethod::Trace => "TRACE",
-            HttpMethod::Unknown(value) => value.as_str(),
+            HttpMethod::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CONNECT", "DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT", "TRACE",
+            "CONNECT", "DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT", "TRACE"
         ]
     }
 }
@@ -5325,7 +5048,7 @@ impl AsRef<str> for HttpMethod {
 /// <p>An object that represents the query parameter in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpQueryParameter {
+pub struct HttpQueryParameter  {
     /// <p>A name for the query parameter that will be matched on.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -5335,17 +5058,17 @@ pub struct HttpQueryParameter {
 }
 impl HttpQueryParameter {
     /// <p>A name for the query parameter that will be matched on.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The query parameter to match on.</p>
-    pub fn r#match(&self) -> std::option::Option<&crate::model::QueryParameterMatch> {
+    pub fn r#match(&self) -> std::option::Option<& crate::model::QueryParameterMatch> {
         self.r#match.as_ref()
     }
 }
 /// See [`HttpQueryParameter`](crate::model::HttpQueryParameter).
 pub mod http_query_parameter {
-
+    
     /// A builder for [`HttpQueryParameter`](crate::model::HttpQueryParameter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5360,8 +5083,7 @@ pub mod http_query_parameter {
         }
         /// <p>A name for the query parameter that will be matched on.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The query parameter to match on.</p>
         pub fn r#match(mut self, input: crate::model::QueryParameterMatch) -> Self {
@@ -5369,21 +5091,21 @@ pub mod http_query_parameter {
             self
         }
         /// <p>The query parameter to match on.</p>
-        pub fn set_match(
-            mut self,
-            input: std::option::Option<crate::model::QueryParameterMatch>,
-        ) -> Self {
-            self.r#match = input;
-            self
+        pub fn set_match(mut self, input: std::option::Option<crate::model::QueryParameterMatch>) -> Self {
+            self.r#match = input; self
         }
         /// Consumes the builder and constructs a [`HttpQueryParameter`](crate::model::HttpQueryParameter).
         pub fn build(self) -> crate::model::HttpQueryParameter {
             crate::model::HttpQueryParameter {
-                name: self.name,
-                r#match: self.r#match,
+                name: self.name
+                ,
+                r#match: self.r#match
+                ,
             }
         }
     }
+    
+    
 }
 impl HttpQueryParameter {
     /// Creates a new builder-style object to manufacture [`HttpQueryParameter`](crate::model::HttpQueryParameter).
@@ -5395,20 +5117,20 @@ impl HttpQueryParameter {
 /// <p>An object representing the query parameter to match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryParameterMatch {
+pub struct QueryParameterMatch  {
     /// <p>The exact query parameter to match on.</p>
     #[doc(hidden)]
     pub exact: std::option::Option<std::string::String>,
 }
 impl QueryParameterMatch {
     /// <p>The exact query parameter to match on.</p>
-    pub fn exact(&self) -> std::option::Option<&str> {
+    pub fn exact(&self) -> std::option::Option<& str> {
         self.exact.as_deref()
     }
 }
 /// See [`QueryParameterMatch`](crate::model::QueryParameterMatch).
 pub mod query_parameter_match {
-
+    
     /// A builder for [`QueryParameterMatch`](crate::model::QueryParameterMatch).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5422,14 +5144,18 @@ pub mod query_parameter_match {
         }
         /// <p>The exact query parameter to match on.</p>
         pub fn set_exact(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.exact = input;
-            self
+            self.exact = input; self
         }
         /// Consumes the builder and constructs a [`QueryParameterMatch`](crate::model::QueryParameterMatch).
         pub fn build(self) -> crate::model::QueryParameterMatch {
-            crate::model::QueryParameterMatch { exact: self.exact }
+            crate::model::QueryParameterMatch {
+                exact: self.exact
+                ,
+            }
         }
     }
+    
+    
 }
 impl QueryParameterMatch {
     /// Creates a new builder-style object to manufacture [`QueryParameterMatch`](crate::model::QueryParameterMatch).
@@ -5441,7 +5167,7 @@ impl QueryParameterMatch {
 /// <p>An object representing the path to match in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpPathMatch {
+pub struct HttpPathMatch  {
     /// <p>The exact path to match on.</p>
     #[doc(hidden)]
     pub exact: std::option::Option<std::string::String>,
@@ -5451,17 +5177,17 @@ pub struct HttpPathMatch {
 }
 impl HttpPathMatch {
     /// <p>The exact path to match on.</p>
-    pub fn exact(&self) -> std::option::Option<&str> {
+    pub fn exact(&self) -> std::option::Option<& str> {
         self.exact.as_deref()
     }
     /// <p>The regex used to match the path.</p>
-    pub fn regex(&self) -> std::option::Option<&str> {
+    pub fn regex(&self) -> std::option::Option<& str> {
         self.regex.as_deref()
     }
 }
 /// See [`HttpPathMatch`](crate::model::HttpPathMatch).
 pub mod http_path_match {
-
+    
     /// A builder for [`HttpPathMatch`](crate::model::HttpPathMatch).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5476,8 +5202,7 @@ pub mod http_path_match {
         }
         /// <p>The exact path to match on.</p>
         pub fn set_exact(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.exact = input;
-            self
+            self.exact = input; self
         }
         /// <p>The regex used to match the path.</p>
         pub fn regex(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5486,17 +5211,20 @@ pub mod http_path_match {
         }
         /// <p>The regex used to match the path.</p>
         pub fn set_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.regex = input;
-            self
+            self.regex = input; self
         }
         /// Consumes the builder and constructs a [`HttpPathMatch`](crate::model::HttpPathMatch).
         pub fn build(self) -> crate::model::HttpPathMatch {
             crate::model::HttpPathMatch {
-                exact: self.exact,
-                regex: self.regex,
+                exact: self.exact
+                ,
+                regex: self.regex
+                ,
             }
         }
     }
+    
+    
 }
 impl HttpPathMatch {
     /// Creates a new builder-style object to manufacture [`HttpPathMatch`](crate::model::HttpPathMatch).
@@ -5508,7 +5236,7 @@ impl HttpPathMatch {
 /// <p>An object that represents a TCP route type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TcpRoute {
+pub struct TcpRoute  {
     /// <p>The action to take if a match is determined.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::TcpRouteAction>,
@@ -5521,21 +5249,21 @@ pub struct TcpRoute {
 }
 impl TcpRoute {
     /// <p>The action to take if a match is determined.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::TcpRouteAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::TcpRouteAction> {
         self.action.as_ref()
     }
     /// <p>An object that represents types of timeouts. </p>
-    pub fn timeout(&self) -> std::option::Option<&crate::model::TcpTimeout> {
+    pub fn timeout(&self) -> std::option::Option<& crate::model::TcpTimeout> {
         self.timeout.as_ref()
     }
     /// <p>An object that represents the criteria for determining a request match.</p>
-    pub fn r#match(&self) -> std::option::Option<&crate::model::TcpRouteMatch> {
+    pub fn r#match(&self) -> std::option::Option<& crate::model::TcpRouteMatch> {
         self.r#match.as_ref()
     }
 }
 /// See [`TcpRoute`](crate::model::TcpRoute).
 pub mod tcp_route {
-
+    
     /// A builder for [`TcpRoute`](crate::model::TcpRoute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5550,12 +5278,8 @@ pub mod tcp_route {
             self
         }
         /// <p>The action to take if a match is determined.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::TcpRouteAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::TcpRouteAction>) -> Self {
+            self.action = input; self
         }
         /// <p>An object that represents types of timeouts. </p>
         pub fn timeout(mut self, input: crate::model::TcpTimeout) -> Self {
@@ -5564,8 +5288,7 @@ pub mod tcp_route {
         }
         /// <p>An object that represents types of timeouts. </p>
         pub fn set_timeout(mut self, input: std::option::Option<crate::model::TcpTimeout>) -> Self {
-            self.timeout = input;
-            self
+            self.timeout = input; self
         }
         /// <p>An object that represents the criteria for determining a request match.</p>
         pub fn r#match(mut self, input: crate::model::TcpRouteMatch) -> Self {
@@ -5573,22 +5296,23 @@ pub mod tcp_route {
             self
         }
         /// <p>An object that represents the criteria for determining a request match.</p>
-        pub fn set_match(
-            mut self,
-            input: std::option::Option<crate::model::TcpRouteMatch>,
-        ) -> Self {
-            self.r#match = input;
-            self
+        pub fn set_match(mut self, input: std::option::Option<crate::model::TcpRouteMatch>) -> Self {
+            self.r#match = input; self
         }
         /// Consumes the builder and constructs a [`TcpRoute`](crate::model::TcpRoute).
         pub fn build(self) -> crate::model::TcpRoute {
             crate::model::TcpRoute {
-                action: self.action,
-                timeout: self.timeout,
-                r#match: self.r#match,
+                action: self.action
+                ,
+                timeout: self.timeout
+                ,
+                r#match: self.r#match
+                ,
             }
         }
     }
+    
+    
 }
 impl TcpRoute {
     /// Creates a new builder-style object to manufacture [`TcpRoute`](crate::model::TcpRoute).
@@ -5600,7 +5324,7 @@ impl TcpRoute {
 /// <p>An object representing the TCP route to match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TcpRouteMatch {
+pub struct TcpRouteMatch  {
     /// <p>The port number to match on.</p>
     #[doc(hidden)]
     pub port: std::option::Option<i32>,
@@ -5613,7 +5337,7 @@ impl TcpRouteMatch {
 }
 /// See [`TcpRouteMatch`](crate::model::TcpRouteMatch).
 pub mod tcp_route_match {
-
+    
     /// A builder for [`TcpRouteMatch`](crate::model::TcpRouteMatch).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5627,14 +5351,18 @@ pub mod tcp_route_match {
         }
         /// <p>The port number to match on.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// Consumes the builder and constructs a [`TcpRouteMatch`](crate::model::TcpRouteMatch).
         pub fn build(self) -> crate::model::TcpRouteMatch {
-            crate::model::TcpRouteMatch { port: self.port }
+            crate::model::TcpRouteMatch {
+                port: self.port
+                ,
+            }
         }
     }
+    
+    
 }
 impl TcpRouteMatch {
     /// Creates a new builder-style object to manufacture [`TcpRouteMatch`](crate::model::TcpRouteMatch).
@@ -5646,20 +5374,20 @@ impl TcpRouteMatch {
 /// <p>An object that represents types of timeouts. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TcpTimeout {
+pub struct TcpTimeout  {
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
     #[doc(hidden)]
     pub idle: std::option::Option<crate::model::Duration>,
 }
 impl TcpTimeout {
     /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
-    pub fn idle(&self) -> std::option::Option<&crate::model::Duration> {
+    pub fn idle(&self) -> std::option::Option<& crate::model::Duration> {
         self.idle.as_ref()
     }
 }
 /// See [`TcpTimeout`](crate::model::TcpTimeout).
 pub mod tcp_timeout {
-
+    
     /// A builder for [`TcpTimeout`](crate::model::TcpTimeout).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5673,14 +5401,18 @@ pub mod tcp_timeout {
         }
         /// <p>An object that represents an idle timeout. An idle timeout bounds the amount of time that a connection may be idle. The default value is none.</p>
         pub fn set_idle(mut self, input: std::option::Option<crate::model::Duration>) -> Self {
-            self.idle = input;
-            self
+            self.idle = input; self
         }
         /// Consumes the builder and constructs a [`TcpTimeout`](crate::model::TcpTimeout).
         pub fn build(self) -> crate::model::TcpTimeout {
-            crate::model::TcpTimeout { idle: self.idle }
+            crate::model::TcpTimeout {
+                idle: self.idle
+                ,
+            }
         }
     }
+    
+    
 }
 impl TcpTimeout {
     /// Creates a new builder-style object to manufacture [`TcpTimeout`](crate::model::TcpTimeout).
@@ -5692,25 +5424,24 @@ impl TcpTimeout {
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TcpRouteAction {
+pub struct TcpRouteAction  {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
     #[doc(hidden)]
     pub weighted_targets: std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
 }
 impl TcpRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
-    pub fn weighted_targets(&self) -> std::option::Option<&[crate::model::WeightedTarget]> {
+    pub fn weighted_targets(&self) -> std::option::Option<& [crate::model::WeightedTarget]> {
         self.weighted_targets.as_deref()
     }
 }
 /// See [`TcpRouteAction`](crate::model::TcpRouteAction).
 pub mod tcp_route_action {
-
+    
     /// A builder for [`TcpRouteAction`](crate::model::TcpRouteAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) weighted_targets:
-            std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
+        pub(crate) weighted_targets: std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
     }
     impl Builder {
         /// Appends an item to `weighted_targets`.
@@ -5720,25 +5451,24 @@ pub mod tcp_route_action {
         /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
         pub fn weighted_targets(mut self, input: crate::model::WeightedTarget) -> Self {
             let mut v = self.weighted_targets.unwrap_or_default();
-            v.push(input);
-            self.weighted_targets = Some(v);
-            self
+                            v.push(input);
+                            self.weighted_targets = Some(v);
+                            self
         }
         /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
-        pub fn set_weighted_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>,
-        ) -> Self {
-            self.weighted_targets = input;
-            self
+        pub fn set_weighted_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::WeightedTarget>>) -> Self {
+            self.weighted_targets = input; self
         }
         /// Consumes the builder and constructs a [`TcpRouteAction`](crate::model::TcpRouteAction).
         pub fn build(self) -> crate::model::TcpRouteAction {
             crate::model::TcpRouteAction {
-                weighted_targets: self.weighted_targets,
+                weighted_targets: self.weighted_targets
+                ,
             }
         }
     }
+    
+    
 }
 impl TcpRouteAction {
     /// Creates a new builder-style object to manufacture [`TcpRouteAction`](crate::model::TcpRouteAction).
@@ -5750,7 +5480,7 @@ impl TcpRouteAction {
 /// <p>An object that represents a virtual node returned by a list operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualNodeRef {
+pub struct VirtualNodeRef  {
     /// <p>The name of the service mesh that the virtual node resides in.</p>
     #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
@@ -5778,23 +5508,23 @@ pub struct VirtualNodeRef {
 }
 impl VirtualNodeRef {
     /// <p>The name of the service mesh that the virtual node resides in.</p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The name of the virtual node.</p>
-    pub fn virtual_node_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_node_name(&self) -> std::option::Option<& str> {
         self.virtual_node_name.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+    pub fn mesh_owner(&self) -> std::option::Option<& str> {
         self.mesh_owner.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn resource_owner(&self) -> std::option::Option<&str> {
+    pub fn resource_owner(&self) -> std::option::Option<& str> {
         self.resource_owner.as_deref()
     }
     /// <p>The full Amazon Resource Name (ARN) for the virtual node.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
@@ -5802,17 +5532,17 @@ impl VirtualNodeRef {
         self.version
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
 /// See [`VirtualNodeRef`](crate::model::VirtualNodeRef).
 pub mod virtual_node_ref {
-
+    
     /// A builder for [`VirtualNodeRef`](crate::model::VirtualNodeRef).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5833,8 +5563,7 @@ pub mod virtual_node_ref {
         }
         /// <p>The name of the service mesh that the virtual node resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_name = input;
-            self
+            self.mesh_name = input; self
         }
         /// <p>The name of the virtual node.</p>
         pub fn virtual_node_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5842,12 +5571,8 @@ pub mod virtual_node_ref {
             self
         }
         /// <p>The name of the virtual node.</p>
-        pub fn set_virtual_node_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_node_name = input;
-            self
+        pub fn set_virtual_node_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_node_name = input; self
         }
         /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5856,8 +5581,7 @@ pub mod virtual_node_ref {
         }
         /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_owner = input;
-            self
+            self.mesh_owner = input; self
         }
         /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5865,12 +5589,8 @@ pub mod virtual_node_ref {
             self
         }
         /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn set_resource_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_owner = input;
-            self
+        pub fn set_resource_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_owner = input; self
         }
         /// <p>The full Amazon Resource Name (ARN) for the virtual node.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5879,8 +5599,7 @@ pub mod virtual_node_ref {
         }
         /// <p>The full Amazon Resource Name (ARN) for the virtual node.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
         pub fn version(mut self, input: i64) -> Self {
@@ -5889,8 +5608,7 @@ pub mod virtual_node_ref {
         }
         /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5898,12 +5616,8 @@ pub mod virtual_node_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5911,27 +5625,33 @@ pub mod virtual_node_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Consumes the builder and constructs a [`VirtualNodeRef`](crate::model::VirtualNodeRef).
         pub fn build(self) -> crate::model::VirtualNodeRef {
             crate::model::VirtualNodeRef {
-                mesh_name: self.mesh_name,
-                virtual_node_name: self.virtual_node_name,
-                mesh_owner: self.mesh_owner,
-                resource_owner: self.resource_owner,
-                arn: self.arn,
-                version: self.version,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
+                mesh_name: self.mesh_name
+                ,
+                virtual_node_name: self.virtual_node_name
+                ,
+                mesh_owner: self.mesh_owner
+                ,
+                resource_owner: self.resource_owner
+                ,
+                arn: self.arn
+                ,
+                version: self.version
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualNodeRef {
     /// Creates a new builder-style object to manufacture [`VirtualNodeRef`](crate::model::VirtualNodeRef).
@@ -5943,7 +5663,7 @@ impl VirtualNodeRef {
 /// <p>An object that represents a virtual node returned by a describe operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualNodeData {
+pub struct VirtualNodeData  {
     /// <p>The name of the service mesh that the virtual node resides in.</p>
     #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
@@ -5962,29 +5682,29 @@ pub struct VirtualNodeData {
 }
 impl VirtualNodeData {
     /// <p>The name of the service mesh that the virtual node resides in.</p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The name of the virtual node.</p>
-    pub fn virtual_node_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_node_name(&self) -> std::option::Option<& str> {
         self.virtual_node_name.as_deref()
     }
     /// <p>The specifications of the virtual node.</p>
-    pub fn spec(&self) -> std::option::Option<&crate::model::VirtualNodeSpec> {
+    pub fn spec(&self) -> std::option::Option<& crate::model::VirtualNodeSpec> {
         self.spec.as_ref()
     }
     /// <p>The associated metadata for the virtual node.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::model::ResourceMetadata> {
+    pub fn metadata(&self) -> std::option::Option<& crate::model::ResourceMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The current status for the virtual node.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::VirtualNodeStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::VirtualNodeStatus> {
         self.status.as_ref()
     }
 }
 /// See [`VirtualNodeData`](crate::model::VirtualNodeData).
 pub mod virtual_node_data {
-
+    
     /// A builder for [`VirtualNodeData`](crate::model::VirtualNodeData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6002,8 +5722,7 @@ pub mod virtual_node_data {
         }
         /// <p>The name of the service mesh that the virtual node resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_name = input;
-            self
+            self.mesh_name = input; self
         }
         /// <p>The name of the virtual node.</p>
         pub fn virtual_node_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6011,12 +5730,8 @@ pub mod virtual_node_data {
             self
         }
         /// <p>The name of the virtual node.</p>
-        pub fn set_virtual_node_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_node_name = input;
-            self
+        pub fn set_virtual_node_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_node_name = input; self
         }
         /// <p>The specifications of the virtual node.</p>
         pub fn spec(mut self, input: crate::model::VirtualNodeSpec) -> Self {
@@ -6024,12 +5739,8 @@ pub mod virtual_node_data {
             self
         }
         /// <p>The specifications of the virtual node.</p>
-        pub fn set_spec(
-            mut self,
-            input: std::option::Option<crate::model::VirtualNodeSpec>,
-        ) -> Self {
-            self.spec = input;
-            self
+        pub fn set_spec(mut self, input: std::option::Option<crate::model::VirtualNodeSpec>) -> Self {
+            self.spec = input; self
         }
         /// <p>The associated metadata for the virtual node.</p>
         pub fn metadata(mut self, input: crate::model::ResourceMetadata) -> Self {
@@ -6037,12 +5748,8 @@ pub mod virtual_node_data {
             self
         }
         /// <p>The associated metadata for the virtual node.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<crate::model::ResourceMetadata>,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<crate::model::ResourceMetadata>) -> Self {
+            self.metadata = input; self
         }
         /// <p>The current status for the virtual node.</p>
         pub fn status(mut self, input: crate::model::VirtualNodeStatus) -> Self {
@@ -6050,24 +5757,27 @@ pub mod virtual_node_data {
             self
         }
         /// <p>The current status for the virtual node.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::VirtualNodeStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::VirtualNodeStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`VirtualNodeData`](crate::model::VirtualNodeData).
         pub fn build(self) -> crate::model::VirtualNodeData {
             crate::model::VirtualNodeData {
-                mesh_name: self.mesh_name,
-                virtual_node_name: self.virtual_node_name,
-                spec: self.spec,
-                metadata: self.metadata,
-                status: self.status,
+                mesh_name: self.mesh_name
+                ,
+                virtual_node_name: self.virtual_node_name
+                ,
+                spec: self.spec
+                ,
+                metadata: self.metadata
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualNodeData {
     /// Creates a new builder-style object to manufacture [`VirtualNodeData`](crate::model::VirtualNodeData).
@@ -6079,20 +5789,20 @@ impl VirtualNodeData {
 /// <p>An object that represents the current status of the virtual node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualNodeStatus {
+pub struct VirtualNodeStatus  {
     /// <p>The current status of the virtual node.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::VirtualNodeStatusCode>,
 }
 impl VirtualNodeStatus {
     /// <p>The current status of the virtual node.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::VirtualNodeStatusCode> {
+    pub fn status(&self) -> std::option::Option<& crate::model::VirtualNodeStatusCode> {
         self.status.as_ref()
     }
 }
 /// See [`VirtualNodeStatus`](crate::model::VirtualNodeStatus).
 pub mod virtual_node_status {
-
+    
     /// A builder for [`VirtualNodeStatus`](crate::model::VirtualNodeStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6105,20 +5815,19 @@ pub mod virtual_node_status {
             self
         }
         /// <p>The current status of the virtual node.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::VirtualNodeStatusCode>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::VirtualNodeStatusCode>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`VirtualNodeStatus`](crate::model::VirtualNodeStatus).
         pub fn build(self) -> crate::model::VirtualNodeStatus {
             crate::model::VirtualNodeStatus {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualNodeStatus {
     /// Creates a new builder-style object to manufacture [`VirtualNodeStatus`](crate::model::VirtualNodeStatus).
@@ -6133,9 +5842,9 @@ impl VirtualNodeStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let virtualnodestatuscode = unimplemented!();
 /// match virtualnodestatuscode {
@@ -6158,22 +5867,14 @@ impl VirtualNodeStatus {
 /// Specifically, when `virtualnodestatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VirtualNodeStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VirtualNodeStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -6182,7 +5883,7 @@ pub enum VirtualNodeStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VirtualNodeStatusCode {
     fn from(s: &str) -> Self {
@@ -6190,19 +5891,17 @@ impl std::convert::From<&str> for VirtualNodeStatusCode {
             "ACTIVE" => VirtualNodeStatusCode::Active,
             "DELETED" => VirtualNodeStatusCode::Deleted,
             "INACTIVE" => VirtualNodeStatusCode::Inactive,
-            other => {
-                VirtualNodeStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => VirtualNodeStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VirtualNodeStatusCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VirtualNodeStatusCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VirtualNodeStatusCode::from(s))
+                }
+            }
 impl VirtualNodeStatusCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -6210,12 +5909,14 @@ impl VirtualNodeStatusCode {
             VirtualNodeStatusCode::Active => "ACTIVE",
             VirtualNodeStatusCode::Deleted => "DELETED",
             VirtualNodeStatusCode::Inactive => "INACTIVE",
-            VirtualNodeStatusCode::Unknown(value) => value.as_str(),
+            VirtualNodeStatusCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DELETED", "INACTIVE"]
+        &[
+            "ACTIVE", "DELETED", "INACTIVE"
+        ]
     }
 }
 impl AsRef<str> for VirtualNodeStatusCode {
@@ -6227,7 +5928,7 @@ impl AsRef<str> for VirtualNodeStatusCode {
 /// <p>An object that represents the specification of a virtual node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualNodeSpec {
+pub struct VirtualNodeSpec  {
     /// <p>The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you can omit this parameter. If you specify a <code>listener</code>, then you must specify service discovery information.</p>
     #[doc(hidden)]
     pub service_discovery: std::option::Option<crate::model::ServiceDiscovery>,
@@ -6246,29 +5947,29 @@ pub struct VirtualNodeSpec {
 }
 impl VirtualNodeSpec {
     /// <p>The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you can omit this parameter. If you specify a <code>listener</code>, then you must specify service discovery information.</p>
-    pub fn service_discovery(&self) -> std::option::Option<&crate::model::ServiceDiscovery> {
+    pub fn service_discovery(&self) -> std::option::Option<& crate::model::ServiceDiscovery> {
         self.service_discovery.as_ref()
     }
     /// <p>The listener that the virtual node is expected to receive inbound traffic from. You can specify one listener.</p>
-    pub fn listeners(&self) -> std::option::Option<&[crate::model::Listener]> {
+    pub fn listeners(&self) -> std::option::Option<& [crate::model::Listener]> {
         self.listeners.as_deref()
     }
     /// <p>The backends that the virtual node is expected to send outbound traffic to.</p>
-    pub fn backends(&self) -> std::option::Option<&[crate::model::Backend]> {
+    pub fn backends(&self) -> std::option::Option<& [crate::model::Backend]> {
         self.backends.as_deref()
     }
     /// <p>A reference to an object that represents the defaults for backends.</p>
-    pub fn backend_defaults(&self) -> std::option::Option<&crate::model::BackendDefaults> {
+    pub fn backend_defaults(&self) -> std::option::Option<& crate::model::BackendDefaults> {
         self.backend_defaults.as_ref()
     }
     /// <p>The inbound and outbound access logging information for the virtual node.</p>
-    pub fn logging(&self) -> std::option::Option<&crate::model::Logging> {
+    pub fn logging(&self) -> std::option::Option<& crate::model::Logging> {
         self.logging.as_ref()
     }
 }
 /// See [`VirtualNodeSpec`](crate::model::VirtualNodeSpec).
 pub mod virtual_node_spec {
-
+    
     /// A builder for [`VirtualNodeSpec`](crate::model::VirtualNodeSpec).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6285,12 +5986,8 @@ pub mod virtual_node_spec {
             self
         }
         /// <p>The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you can omit this parameter. If you specify a <code>listener</code>, then you must specify service discovery information.</p>
-        pub fn set_service_discovery(
-            mut self,
-            input: std::option::Option<crate::model::ServiceDiscovery>,
-        ) -> Self {
-            self.service_discovery = input;
-            self
+        pub fn set_service_discovery(mut self, input: std::option::Option<crate::model::ServiceDiscovery>) -> Self {
+            self.service_discovery = input; self
         }
         /// Appends an item to `listeners`.
         ///
@@ -6299,17 +5996,13 @@ pub mod virtual_node_spec {
         /// <p>The listener that the virtual node is expected to receive inbound traffic from. You can specify one listener.</p>
         pub fn listeners(mut self, input: crate::model::Listener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-            v.push(input);
-            self.listeners = Some(v);
-            self
+                            v.push(input);
+                            self.listeners = Some(v);
+                            self
         }
         /// <p>The listener that the virtual node is expected to receive inbound traffic from. You can specify one listener.</p>
-        pub fn set_listeners(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Listener>>,
-        ) -> Self {
-            self.listeners = input;
-            self
+        pub fn set_listeners(mut self, input: std::option::Option<std::vec::Vec<crate::model::Listener>>) -> Self {
+            self.listeners = input; self
         }
         /// Appends an item to `backends`.
         ///
@@ -6318,17 +6011,13 @@ pub mod virtual_node_spec {
         /// <p>The backends that the virtual node is expected to send outbound traffic to.</p>
         pub fn backends(mut self, input: crate::model::Backend) -> Self {
             let mut v = self.backends.unwrap_or_default();
-            v.push(input);
-            self.backends = Some(v);
-            self
+                            v.push(input);
+                            self.backends = Some(v);
+                            self
         }
         /// <p>The backends that the virtual node is expected to send outbound traffic to.</p>
-        pub fn set_backends(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Backend>>,
-        ) -> Self {
-            self.backends = input;
-            self
+        pub fn set_backends(mut self, input: std::option::Option<std::vec::Vec<crate::model::Backend>>) -> Self {
+            self.backends = input; self
         }
         /// <p>A reference to an object that represents the defaults for backends.</p>
         pub fn backend_defaults(mut self, input: crate::model::BackendDefaults) -> Self {
@@ -6336,12 +6025,8 @@ pub mod virtual_node_spec {
             self
         }
         /// <p>A reference to an object that represents the defaults for backends.</p>
-        pub fn set_backend_defaults(
-            mut self,
-            input: std::option::Option<crate::model::BackendDefaults>,
-        ) -> Self {
-            self.backend_defaults = input;
-            self
+        pub fn set_backend_defaults(mut self, input: std::option::Option<crate::model::BackendDefaults>) -> Self {
+            self.backend_defaults = input; self
         }
         /// <p>The inbound and outbound access logging information for the virtual node.</p>
         pub fn logging(mut self, input: crate::model::Logging) -> Self {
@@ -6350,20 +6035,26 @@ pub mod virtual_node_spec {
         }
         /// <p>The inbound and outbound access logging information for the virtual node.</p>
         pub fn set_logging(mut self, input: std::option::Option<crate::model::Logging>) -> Self {
-            self.logging = input;
-            self
+            self.logging = input; self
         }
         /// Consumes the builder and constructs a [`VirtualNodeSpec`](crate::model::VirtualNodeSpec).
         pub fn build(self) -> crate::model::VirtualNodeSpec {
             crate::model::VirtualNodeSpec {
-                service_discovery: self.service_discovery,
-                listeners: self.listeners,
-                backends: self.backends,
-                backend_defaults: self.backend_defaults,
-                logging: self.logging,
+                service_discovery: self.service_discovery
+                ,
+                listeners: self.listeners
+                ,
+                backends: self.backends
+                ,
+                backend_defaults: self.backend_defaults
+                ,
+                logging: self.logging
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualNodeSpec {
     /// Creates a new builder-style object to manufacture [`VirtualNodeSpec`](crate::model::VirtualNodeSpec).
@@ -6375,20 +6066,20 @@ impl VirtualNodeSpec {
 /// <p>An object that represents the logging information for a virtual node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Logging {
+pub struct Logging  {
     /// <p>The access log configuration for a virtual node.</p>
     #[doc(hidden)]
     pub access_log: std::option::Option<crate::model::AccessLog>,
 }
 impl Logging {
     /// <p>The access log configuration for a virtual node.</p>
-    pub fn access_log(&self) -> std::option::Option<&crate::model::AccessLog> {
+    pub fn access_log(&self) -> std::option::Option<& crate::model::AccessLog> {
         self.access_log.as_ref()
     }
 }
 /// See [`Logging`](crate::model::Logging).
 pub mod logging {
-
+    
     /// A builder for [`Logging`](crate::model::Logging).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6401,20 +6092,19 @@ pub mod logging {
             self
         }
         /// <p>The access log configuration for a virtual node.</p>
-        pub fn set_access_log(
-            mut self,
-            input: std::option::Option<crate::model::AccessLog>,
-        ) -> Self {
-            self.access_log = input;
-            self
+        pub fn set_access_log(mut self, input: std::option::Option<crate::model::AccessLog>) -> Self {
+            self.access_log = input; self
         }
         /// Consumes the builder and constructs a [`Logging`](crate::model::Logging).
         pub fn build(self) -> crate::model::Logging {
             crate::model::Logging {
-                access_log: self.access_log,
+                access_log: self.access_log
+                ,
             }
         }
     }
+    
+    
 }
 impl Logging {
     /// Creates a new builder-style object to manufacture [`Logging`](crate::model::Logging).
@@ -6444,11 +6134,7 @@ impl AccessLog {
     /// Tries to convert the enum instance into [`File`](crate::model::AccessLog::File), extracting the inner [`FileAccessLog`](crate::model::FileAccessLog).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(&self) -> std::result::Result<&crate::model::FileAccessLog, &Self> {
-        if let AccessLog::File(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let AccessLog::File(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`File`](crate::model::AccessLog::File).
     pub fn is_file(&self) -> bool {
@@ -6463,9 +6149,9 @@ impl AccessLog {
 /// <p>An object that represents an access log file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileAccessLog {
-    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
-    /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p>
+pub struct FileAccessLog  {
+    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note> 
+    /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p> 
     /// </note>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
@@ -6474,20 +6160,20 @@ pub struct FileAccessLog {
     pub format: std::option::Option<crate::model::LoggingFormat>,
 }
 impl FileAccessLog {
-    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
-    /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p>
+    /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note> 
+    /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p> 
     /// </note>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The specified format for the logs. The format is either <code>json_format</code> or <code>text_format</code>.</p>
-    pub fn format(&self) -> std::option::Option<&crate::model::LoggingFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::model::LoggingFormat> {
         self.format.as_ref()
     }
 }
 /// See [`FileAccessLog`](crate::model::FileAccessLog).
 pub mod file_access_log {
-
+    
     /// A builder for [`FileAccessLog`](crate::model::FileAccessLog).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6495,19 +6181,18 @@ pub mod file_access_log {
         pub(crate) format: std::option::Option<crate::model::LoggingFormat>,
     }
     impl Builder {
-        /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
-        /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p>
+        /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note> 
+        /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p> 
         /// </note>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
             self.path = Some(input.into());
             self
         }
-        /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note>
-        /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p>
+        /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p> <note> 
+        /// <p>The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.</p> 
         /// </note>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// <p>The specified format for the logs. The format is either <code>json_format</code> or <code>text_format</code>.</p>
         pub fn format(mut self, input: crate::model::LoggingFormat) -> Self {
@@ -6515,21 +6200,21 @@ pub mod file_access_log {
             self
         }
         /// <p>The specified format for the logs. The format is either <code>json_format</code> or <code>text_format</code>.</p>
-        pub fn set_format(
-            mut self,
-            input: std::option::Option<crate::model::LoggingFormat>,
-        ) -> Self {
-            self.format = input;
-            self
+        pub fn set_format(mut self, input: std::option::Option<crate::model::LoggingFormat>) -> Self {
+            self.format = input; self
         }
         /// Consumes the builder and constructs a [`FileAccessLog`](crate::model::FileAccessLog).
         pub fn build(self) -> crate::model::FileAccessLog {
             crate::model::FileAccessLog {
-                path: self.path,
-                format: self.format,
+                path: self.path
+                ,
+                format: self.format
+                ,
             }
         }
     }
+    
+    
 }
 impl FileAccessLog {
     /// Creates a new builder-style object to manufacture [`FileAccessLog`](crate::model::FileAccessLog).
@@ -6559,14 +6244,8 @@ pub enum LoggingFormat {
 impl LoggingFormat {
     /// Tries to convert the enum instance into [`Json`](crate::model::LoggingFormat::Json), extracting the inner [`Vec`](std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_json(
-        &self,
-    ) -> std::result::Result<&std::vec::Vec<crate::model::JsonFormatRef>, &Self> {
-        if let LoggingFormat::Json(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_json(&self) -> std::result::Result<&std::vec::Vec<crate::model::JsonFormatRef>, &Self> {
+        if let LoggingFormat::Json(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Json`](crate::model::LoggingFormat::Json).
     pub fn is_json(&self) -> bool {
@@ -6575,11 +6254,7 @@ impl LoggingFormat {
     /// Tries to convert the enum instance into [`Text`](crate::model::LoggingFormat::Text), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_text(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let LoggingFormat::Text(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let LoggingFormat::Text(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Text`](crate::model::LoggingFormat::Text).
     pub fn is_text(&self) -> bool {
@@ -6594,7 +6269,7 @@ impl LoggingFormat {
 /// <p>An object that represents the key value pairs for the JSON.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JsonFormatRef {
+pub struct JsonFormatRef  {
     /// <p>The specified key for the JSON.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -6604,17 +6279,17 @@ pub struct JsonFormatRef {
 }
 impl JsonFormatRef {
     /// <p>The specified key for the JSON.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The specified value for the JSON.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`JsonFormatRef`](crate::model::JsonFormatRef).
 pub mod json_format_ref {
-
+    
     /// A builder for [`JsonFormatRef`](crate::model::JsonFormatRef).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6629,8 +6304,7 @@ pub mod json_format_ref {
         }
         /// <p>The specified key for the JSON.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The specified value for the JSON.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6639,17 +6313,20 @@ pub mod json_format_ref {
         }
         /// <p>The specified value for the JSON.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`JsonFormatRef`](crate::model::JsonFormatRef).
         pub fn build(self) -> crate::model::JsonFormatRef {
             crate::model::JsonFormatRef {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl JsonFormatRef {
     /// Creates a new builder-style object to manufacture [`JsonFormatRef`](crate::model::JsonFormatRef).
@@ -6661,20 +6338,20 @@ impl JsonFormatRef {
 /// <p>An object that represents the default properties for a backend.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackendDefaults {
+pub struct BackendDefaults  {
     /// <p>A reference to an object that represents a client policy.</p>
     #[doc(hidden)]
     pub client_policy: std::option::Option<crate::model::ClientPolicy>,
 }
 impl BackendDefaults {
     /// <p>A reference to an object that represents a client policy.</p>
-    pub fn client_policy(&self) -> std::option::Option<&crate::model::ClientPolicy> {
+    pub fn client_policy(&self) -> std::option::Option<& crate::model::ClientPolicy> {
         self.client_policy.as_ref()
     }
 }
 /// See [`BackendDefaults`](crate::model::BackendDefaults).
 pub mod backend_defaults {
-
+    
     /// A builder for [`BackendDefaults`](crate::model::BackendDefaults).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6687,20 +6364,19 @@ pub mod backend_defaults {
             self
         }
         /// <p>A reference to an object that represents a client policy.</p>
-        pub fn set_client_policy(
-            mut self,
-            input: std::option::Option<crate::model::ClientPolicy>,
-        ) -> Self {
-            self.client_policy = input;
-            self
+        pub fn set_client_policy(mut self, input: std::option::Option<crate::model::ClientPolicy>) -> Self {
+            self.client_policy = input; self
         }
         /// Consumes the builder and constructs a [`BackendDefaults`](crate::model::BackendDefaults).
         pub fn build(self) -> crate::model::BackendDefaults {
             crate::model::BackendDefaults {
-                client_policy: self.client_policy,
+                client_policy: self.client_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl BackendDefaults {
     /// Creates a new builder-style object to manufacture [`BackendDefaults`](crate::model::BackendDefaults).
@@ -6712,20 +6388,20 @@ impl BackendDefaults {
 /// <p>An object that represents a client policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClientPolicy {
+pub struct ClientPolicy  {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
     #[doc(hidden)]
     pub tls: std::option::Option<crate::model::ClientPolicyTls>,
 }
 impl ClientPolicy {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
-    pub fn tls(&self) -> std::option::Option<&crate::model::ClientPolicyTls> {
+    pub fn tls(&self) -> std::option::Option<& crate::model::ClientPolicyTls> {
         self.tls.as_ref()
     }
 }
 /// See [`ClientPolicy`](crate::model::ClientPolicy).
 pub mod client_policy {
-
+    
     /// A builder for [`ClientPolicy`](crate::model::ClientPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6738,18 +6414,19 @@ pub mod client_policy {
             self
         }
         /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
-        pub fn set_tls(
-            mut self,
-            input: std::option::Option<crate::model::ClientPolicyTls>,
-        ) -> Self {
-            self.tls = input;
-            self
+        pub fn set_tls(mut self, input: std::option::Option<crate::model::ClientPolicyTls>) -> Self {
+            self.tls = input; self
         }
         /// Consumes the builder and constructs a [`ClientPolicy`](crate::model::ClientPolicy).
         pub fn build(self) -> crate::model::ClientPolicy {
-            crate::model::ClientPolicy { tls: self.tls }
+            crate::model::ClientPolicy {
+                tls: self.tls
+                ,
+            }
         }
     }
+    
+    
 }
 impl ClientPolicy {
     /// Creates a new builder-style object to manufacture [`ClientPolicy`](crate::model::ClientPolicy).
@@ -6761,7 +6438,7 @@ impl ClientPolicy {
 /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClientPolicyTls {
+pub struct ClientPolicyTls  {
     /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't specified.</p>
     #[doc(hidden)]
     pub enforce: std::option::Option<bool>,
@@ -6781,21 +6458,21 @@ impl ClientPolicyTls {
         self.enforce
     }
     /// <p>One or more ports that the policy is enforced for.</p>
-    pub fn ports(&self) -> std::option::Option<&[i32]> {
+    pub fn ports(&self) -> std::option::Option<& [i32]> {
         self.ports.as_deref()
     }
     /// <p>A reference to an object that represents a client's TLS certificate.</p>
-    pub fn certificate(&self) -> std::option::Option<&crate::model::ClientTlsCertificate> {
+    pub fn certificate(&self) -> std::option::Option<& crate::model::ClientTlsCertificate> {
         self.certificate.as_ref()
     }
     /// <p>A reference to an object that represents a TLS validation context.</p>
-    pub fn validation(&self) -> std::option::Option<&crate::model::TlsValidationContext> {
+    pub fn validation(&self) -> std::option::Option<& crate::model::TlsValidationContext> {
         self.validation.as_ref()
     }
 }
 /// See [`ClientPolicyTls`](crate::model::ClientPolicyTls).
 pub mod client_policy_tls {
-
+    
     /// A builder for [`ClientPolicyTls`](crate::model::ClientPolicyTls).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6812,8 +6489,7 @@ pub mod client_policy_tls {
         }
         /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't specified.</p>
         pub fn set_enforce(mut self, input: std::option::Option<bool>) -> Self {
-            self.enforce = input;
-            self
+            self.enforce = input; self
         }
         /// Appends an item to `ports`.
         ///
@@ -6822,14 +6498,13 @@ pub mod client_policy_tls {
         /// <p>One or more ports that the policy is enforced for.</p>
         pub fn ports(mut self, input: i32) -> Self {
             let mut v = self.ports.unwrap_or_default();
-            v.push(input);
-            self.ports = Some(v);
-            self
+                            v.push(input);
+                            self.ports = Some(v);
+                            self
         }
         /// <p>One or more ports that the policy is enforced for.</p>
         pub fn set_ports(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
-            self.ports = input;
-            self
+            self.ports = input; self
         }
         /// <p>A reference to an object that represents a client's TLS certificate.</p>
         pub fn certificate(mut self, input: crate::model::ClientTlsCertificate) -> Self {
@@ -6837,12 +6512,8 @@ pub mod client_policy_tls {
             self
         }
         /// <p>A reference to an object that represents a client's TLS certificate.</p>
-        pub fn set_certificate(
-            mut self,
-            input: std::option::Option<crate::model::ClientTlsCertificate>,
-        ) -> Self {
-            self.certificate = input;
-            self
+        pub fn set_certificate(mut self, input: std::option::Option<crate::model::ClientTlsCertificate>) -> Self {
+            self.certificate = input; self
         }
         /// <p>A reference to an object that represents a TLS validation context.</p>
         pub fn validation(mut self, input: crate::model::TlsValidationContext) -> Self {
@@ -6850,23 +6521,25 @@ pub mod client_policy_tls {
             self
         }
         /// <p>A reference to an object that represents a TLS validation context.</p>
-        pub fn set_validation(
-            mut self,
-            input: std::option::Option<crate::model::TlsValidationContext>,
-        ) -> Self {
-            self.validation = input;
-            self
+        pub fn set_validation(mut self, input: std::option::Option<crate::model::TlsValidationContext>) -> Self {
+            self.validation = input; self
         }
         /// Consumes the builder and constructs a [`ClientPolicyTls`](crate::model::ClientPolicyTls).
         pub fn build(self) -> crate::model::ClientPolicyTls {
             crate::model::ClientPolicyTls {
-                enforce: self.enforce,
-                ports: self.ports,
-                certificate: self.certificate,
-                validation: self.validation,
+                enforce: self.enforce
+                ,
+                ports: self.ports
+                ,
+                certificate: self.certificate
+                ,
+                validation: self.validation
+                ,
             }
         }
     }
+    
+    
 }
 impl ClientPolicyTls {
     /// Creates a new builder-style object to manufacture [`ClientPolicyTls`](crate::model::ClientPolicyTls).
@@ -6878,7 +6551,7 @@ impl ClientPolicyTls {
 /// <p>An object that represents how the proxy will validate its peer during Transport Layer Security (TLS) negotiation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TlsValidationContext {
+pub struct TlsValidationContext  {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     #[doc(hidden)]
     pub trust: std::option::Option<crate::model::TlsValidationContextTrust>,
@@ -6888,25 +6561,22 @@ pub struct TlsValidationContext {
 }
 impl TlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
-    pub fn trust(&self) -> std::option::Option<&crate::model::TlsValidationContextTrust> {
+    pub fn trust(&self) -> std::option::Option<& crate::model::TlsValidationContextTrust> {
         self.trust.as_ref()
     }
     /// <p>A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context. If you don't specify SANs on the <i>terminating</i> mesh endpoint, the Envoy proxy for that node doesn't verify the SAN on a peer client certificate. If you don't specify SANs on the <i>originating</i> mesh endpoint, the SAN on the certificate provided by the terminating endpoint must match the mesh endpoint service discovery configuration. Since SPIRE vended certificates have a SPIFFE ID as a name, you must set the SAN since the name doesn't match the service discovery name.</p>
-    pub fn subject_alternative_names(
-        &self,
-    ) -> std::option::Option<&crate::model::SubjectAlternativeNames> {
+    pub fn subject_alternative_names(&self) -> std::option::Option<& crate::model::SubjectAlternativeNames> {
         self.subject_alternative_names.as_ref()
     }
 }
 /// See [`TlsValidationContext`](crate::model::TlsValidationContext).
 pub mod tls_validation_context {
-
+    
     /// A builder for [`TlsValidationContext`](crate::model::TlsValidationContext).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust: std::option::Option<crate::model::TlsValidationContextTrust>,
-        pub(crate) subject_alternative_names:
-            std::option::Option<crate::model::SubjectAlternativeNames>,
+        pub(crate) subject_alternative_names: std::option::Option<crate::model::SubjectAlternativeNames>,
     }
     impl Builder {
         /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
@@ -6915,37 +6585,30 @@ pub mod tls_validation_context {
             self
         }
         /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
-        pub fn set_trust(
-            mut self,
-            input: std::option::Option<crate::model::TlsValidationContextTrust>,
-        ) -> Self {
-            self.trust = input;
-            self
+        pub fn set_trust(mut self, input: std::option::Option<crate::model::TlsValidationContextTrust>) -> Self {
+            self.trust = input; self
         }
         /// <p>A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context. If you don't specify SANs on the <i>terminating</i> mesh endpoint, the Envoy proxy for that node doesn't verify the SAN on a peer client certificate. If you don't specify SANs on the <i>originating</i> mesh endpoint, the SAN on the certificate provided by the terminating endpoint must match the mesh endpoint service discovery configuration. Since SPIRE vended certificates have a SPIFFE ID as a name, you must set the SAN since the name doesn't match the service discovery name.</p>
-        pub fn subject_alternative_names(
-            mut self,
-            input: crate::model::SubjectAlternativeNames,
-        ) -> Self {
+        pub fn subject_alternative_names(mut self, input: crate::model::SubjectAlternativeNames) -> Self {
             self.subject_alternative_names = Some(input);
             self
         }
         /// <p>A reference to an object that represents the SANs for a Transport Layer Security (TLS) validation context. If you don't specify SANs on the <i>terminating</i> mesh endpoint, the Envoy proxy for that node doesn't verify the SAN on a peer client certificate. If you don't specify SANs on the <i>originating</i> mesh endpoint, the SAN on the certificate provided by the terminating endpoint must match the mesh endpoint service discovery configuration. Since SPIRE vended certificates have a SPIFFE ID as a name, you must set the SAN since the name doesn't match the service discovery name.</p>
-        pub fn set_subject_alternative_names(
-            mut self,
-            input: std::option::Option<crate::model::SubjectAlternativeNames>,
-        ) -> Self {
-            self.subject_alternative_names = input;
-            self
+        pub fn set_subject_alternative_names(mut self, input: std::option::Option<crate::model::SubjectAlternativeNames>) -> Self {
+            self.subject_alternative_names = input; self
         }
         /// Consumes the builder and constructs a [`TlsValidationContext`](crate::model::TlsValidationContext).
         pub fn build(self) -> crate::model::TlsValidationContext {
             crate::model::TlsValidationContext {
-                trust: self.trust,
-                subject_alternative_names: self.subject_alternative_names,
+                trust: self.trust
+                ,
+                subject_alternative_names: self.subject_alternative_names
+                ,
             }
         }
     }
+    
+    
 }
 impl TlsValidationContext {
     /// Creates a new builder-style object to manufacture [`TlsValidationContext`](crate::model::TlsValidationContext).
@@ -6957,20 +6620,20 @@ impl TlsValidationContext {
 /// <p>An object that represents the subject alternative names secured by the certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubjectAlternativeNames {
+pub struct SubjectAlternativeNames  {
     /// <p>An object that represents the criteria for determining a SANs match.</p>
     #[doc(hidden)]
     pub r#match: std::option::Option<crate::model::SubjectAlternativeNameMatchers>,
 }
 impl SubjectAlternativeNames {
     /// <p>An object that represents the criteria for determining a SANs match.</p>
-    pub fn r#match(&self) -> std::option::Option<&crate::model::SubjectAlternativeNameMatchers> {
+    pub fn r#match(&self) -> std::option::Option<& crate::model::SubjectAlternativeNameMatchers> {
         self.r#match.as_ref()
     }
 }
 /// See [`SubjectAlternativeNames`](crate::model::SubjectAlternativeNames).
 pub mod subject_alternative_names {
-
+    
     /// A builder for [`SubjectAlternativeNames`](crate::model::SubjectAlternativeNames).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -6983,20 +6646,19 @@ pub mod subject_alternative_names {
             self
         }
         /// <p>An object that represents the criteria for determining a SANs match.</p>
-        pub fn set_match(
-            mut self,
-            input: std::option::Option<crate::model::SubjectAlternativeNameMatchers>,
-        ) -> Self {
-            self.r#match = input;
-            self
+        pub fn set_match(mut self, input: std::option::Option<crate::model::SubjectAlternativeNameMatchers>) -> Self {
+            self.r#match = input; self
         }
         /// Consumes the builder and constructs a [`SubjectAlternativeNames`](crate::model::SubjectAlternativeNames).
         pub fn build(self) -> crate::model::SubjectAlternativeNames {
             crate::model::SubjectAlternativeNames {
-                r#match: self.r#match,
+                r#match: self.r#match
+                ,
             }
         }
     }
+    
+    
 }
 impl SubjectAlternativeNames {
     /// Creates a new builder-style object to manufacture [`SubjectAlternativeNames`](crate::model::SubjectAlternativeNames).
@@ -7008,20 +6670,20 @@ impl SubjectAlternativeNames {
 /// <p>An object that represents the methods by which a subject alternative name on a peer Transport Layer Security (TLS) certificate can be matched.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubjectAlternativeNameMatchers {
+pub struct SubjectAlternativeNameMatchers  {
     /// <p>The values sent must match the specified values exactly.</p>
     #[doc(hidden)]
     pub exact: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SubjectAlternativeNameMatchers {
     /// <p>The values sent must match the specified values exactly.</p>
-    pub fn exact(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn exact(&self) -> std::option::Option<& [std::string::String]> {
         self.exact.as_deref()
     }
 }
 /// See [`SubjectAlternativeNameMatchers`](crate::model::SubjectAlternativeNameMatchers).
 pub mod subject_alternative_name_matchers {
-
+    
     /// A builder for [`SubjectAlternativeNameMatchers`](crate::model::SubjectAlternativeNameMatchers).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7035,23 +6697,24 @@ pub mod subject_alternative_name_matchers {
         /// <p>The values sent must match the specified values exactly.</p>
         pub fn exact(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exact.unwrap_or_default();
-            v.push(input.into());
-            self.exact = Some(v);
-            self
+                            v.push(input.into());
+                            self.exact = Some(v);
+                            self
         }
         /// <p>The values sent must match the specified values exactly.</p>
-        pub fn set_exact(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.exact = input;
-            self
+        pub fn set_exact(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.exact = input; self
         }
         /// Consumes the builder and constructs a [`SubjectAlternativeNameMatchers`](crate::model::SubjectAlternativeNameMatchers).
         pub fn build(self) -> crate::model::SubjectAlternativeNameMatchers {
-            crate::model::SubjectAlternativeNameMatchers { exact: self.exact }
+            crate::model::SubjectAlternativeNameMatchers {
+                exact: self.exact
+                ,
+            }
         }
     }
+    
+    
 }
 impl SubjectAlternativeNameMatchers {
     /// Creates a new builder-style object to manufacture [`SubjectAlternativeNameMatchers`](crate::model::SubjectAlternativeNameMatchers).
@@ -7083,14 +6746,8 @@ pub enum TlsValidationContextTrust {
 impl TlsValidationContextTrust {
     /// Tries to convert the enum instance into [`Acm`](crate::model::TlsValidationContextTrust::Acm), extracting the inner [`TlsValidationContextAcmTrust`](crate::model::TlsValidationContextAcmTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_acm(
-        &self,
-    ) -> std::result::Result<&crate::model::TlsValidationContextAcmTrust, &Self> {
-        if let TlsValidationContextTrust::Acm(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_acm(&self) -> std::result::Result<&crate::model::TlsValidationContextAcmTrust, &Self> {
+        if let TlsValidationContextTrust::Acm(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Acm`](crate::model::TlsValidationContextTrust::Acm).
     pub fn is_acm(&self) -> bool {
@@ -7098,14 +6755,8 @@ impl TlsValidationContextTrust {
     }
     /// Tries to convert the enum instance into [`File`](crate::model::TlsValidationContextTrust::File), extracting the inner [`TlsValidationContextFileTrust`](crate::model::TlsValidationContextFileTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_file(
-        &self,
-    ) -> std::result::Result<&crate::model::TlsValidationContextFileTrust, &Self> {
-        if let TlsValidationContextTrust::File(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_file(&self) -> std::result::Result<&crate::model::TlsValidationContextFileTrust, &Self> {
+        if let TlsValidationContextTrust::File(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`File`](crate::model::TlsValidationContextTrust::File).
     pub fn is_file(&self) -> bool {
@@ -7113,14 +6764,8 @@ impl TlsValidationContextTrust {
     }
     /// Tries to convert the enum instance into [`Sds`](crate::model::TlsValidationContextTrust::Sds), extracting the inner [`TlsValidationContextSdsTrust`](crate::model::TlsValidationContextSdsTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sds(
-        &self,
-    ) -> std::result::Result<&crate::model::TlsValidationContextSdsTrust, &Self> {
-        if let TlsValidationContextTrust::Sds(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_sds(&self) -> std::result::Result<&crate::model::TlsValidationContextSdsTrust, &Self> {
+        if let TlsValidationContextTrust::Sds(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Sds`](crate::model::TlsValidationContextTrust::Sds).
     pub fn is_sds(&self) -> bool {
@@ -7135,20 +6780,20 @@ impl TlsValidationContextTrust {
 /// <p>An object that represents a Transport Layer Security (TLS) Secret Discovery Service validation context trust. The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a> for more info.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TlsValidationContextSdsTrust {
+pub struct TlsValidationContextSdsTrust  {
     /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
     #[doc(hidden)]
     pub secret_name: std::option::Option<std::string::String>,
 }
 impl TlsValidationContextSdsTrust {
     /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
-    pub fn secret_name(&self) -> std::option::Option<&str> {
+    pub fn secret_name(&self) -> std::option::Option<& str> {
         self.secret_name.as_deref()
     }
 }
 /// See [`TlsValidationContextSdsTrust`](crate::model::TlsValidationContextSdsTrust).
 pub mod tls_validation_context_sds_trust {
-
+    
     /// A builder for [`TlsValidationContextSdsTrust`](crate::model::TlsValidationContextSdsTrust).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7162,16 +6807,18 @@ pub mod tls_validation_context_sds_trust {
         }
         /// <p>A reference to an object that represents the name of the secret for a Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
         pub fn set_secret_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_name = input;
-            self
+            self.secret_name = input; self
         }
         /// Consumes the builder and constructs a [`TlsValidationContextSdsTrust`](crate::model::TlsValidationContextSdsTrust).
         pub fn build(self) -> crate::model::TlsValidationContextSdsTrust {
             crate::model::TlsValidationContextSdsTrust {
-                secret_name: self.secret_name,
+                secret_name: self.secret_name
+                ,
             }
         }
     }
+    
+    
 }
 impl TlsValidationContextSdsTrust {
     /// Creates a new builder-style object to manufacture [`TlsValidationContextSdsTrust`](crate::model::TlsValidationContextSdsTrust).
@@ -7183,20 +6830,20 @@ impl TlsValidationContextSdsTrust {
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for a local file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TlsValidationContextFileTrust {
+pub struct TlsValidationContextFileTrust  {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     #[doc(hidden)]
     pub certificate_chain: std::option::Option<std::string::String>,
 }
 impl TlsValidationContextFileTrust {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
-    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+    pub fn certificate_chain(&self) -> std::option::Option<& str> {
         self.certificate_chain.as_deref()
     }
 }
 /// See [`TlsValidationContextFileTrust`](crate::model::TlsValidationContextFileTrust).
 pub mod tls_validation_context_file_trust {
-
+    
     /// A builder for [`TlsValidationContextFileTrust`](crate::model::TlsValidationContextFileTrust).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7209,20 +6856,19 @@ pub mod tls_validation_context_file_trust {
             self
         }
         /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
-        pub fn set_certificate_chain(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_chain = input;
-            self
+        pub fn set_certificate_chain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_chain = input; self
         }
         /// Consumes the builder and constructs a [`TlsValidationContextFileTrust`](crate::model::TlsValidationContextFileTrust).
         pub fn build(self) -> crate::model::TlsValidationContextFileTrust {
             crate::model::TlsValidationContextFileTrust {
-                certificate_chain: self.certificate_chain,
+                certificate_chain: self.certificate_chain
+                ,
             }
         }
     }
+    
+    
 }
 impl TlsValidationContextFileTrust {
     /// Creates a new builder-style object to manufacture [`TlsValidationContextFileTrust`](crate::model::TlsValidationContextFileTrust).
@@ -7234,25 +6880,24 @@ impl TlsValidationContextFileTrust {
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TlsValidationContextAcmTrust {
+pub struct TlsValidationContextAcmTrust  {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
     #[doc(hidden)]
     pub certificate_authority_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TlsValidationContextAcmTrust {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-    pub fn certificate_authority_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn certificate_authority_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.certificate_authority_arns.as_deref()
     }
 }
 /// See [`TlsValidationContextAcmTrust`](crate::model::TlsValidationContextAcmTrust).
 pub mod tls_validation_context_acm_trust {
-
+    
     /// A builder for [`TlsValidationContextAcmTrust`](crate::model::TlsValidationContextAcmTrust).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) certificate_authority_arns:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) certificate_authority_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `certificate_authority_arns`.
@@ -7262,25 +6907,24 @@ pub mod tls_validation_context_acm_trust {
         /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
         pub fn certificate_authority_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.certificate_authority_arns.unwrap_or_default();
-            v.push(input.into());
-            self.certificate_authority_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.certificate_authority_arns = Some(v);
+                            self
         }
         /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-        pub fn set_certificate_authority_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.certificate_authority_arns = input;
-            self
+        pub fn set_certificate_authority_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.certificate_authority_arns = input; self
         }
         /// Consumes the builder and constructs a [`TlsValidationContextAcmTrust`](crate::model::TlsValidationContextAcmTrust).
         pub fn build(self) -> crate::model::TlsValidationContextAcmTrust {
             crate::model::TlsValidationContextAcmTrust {
-                certificate_authority_arns: self.certificate_authority_arns,
+                certificate_authority_arns: self.certificate_authority_arns
+                ,
             }
         }
     }
+    
+    
 }
 impl TlsValidationContextAcmTrust {
     /// Creates a new builder-style object to manufacture [`TlsValidationContextAcmTrust`](crate::model::TlsValidationContextAcmTrust).
@@ -7311,11 +6955,7 @@ impl ClientTlsCertificate {
     /// Tries to convert the enum instance into [`File`](crate::model::ClientTlsCertificate::File), extracting the inner [`ListenerTlsFileCertificate`](crate::model::ListenerTlsFileCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(&self) -> std::result::Result<&crate::model::ListenerTlsFileCertificate, &Self> {
-        if let ClientTlsCertificate::File(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ClientTlsCertificate::File(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`File`](crate::model::ClientTlsCertificate::File).
     pub fn is_file(&self) -> bool {
@@ -7324,11 +6964,7 @@ impl ClientTlsCertificate {
     /// Tries to convert the enum instance into [`Sds`](crate::model::ClientTlsCertificate::Sds), extracting the inner [`ListenerTlsSdsCertificate`](crate::model::ListenerTlsSdsCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sds(&self) -> std::result::Result<&crate::model::ListenerTlsSdsCertificate, &Self> {
-        if let ClientTlsCertificate::Sds(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ClientTlsCertificate::Sds(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Sds`](crate::model::ClientTlsCertificate::Sds).
     pub fn is_sds(&self) -> bool {
@@ -7343,20 +6979,20 @@ impl ClientTlsCertificate {
 /// <p>An object that represents the listener's Secret Discovery Service certificate. The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a> for more info.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListenerTlsSdsCertificate {
+pub struct ListenerTlsSdsCertificate  {
     /// <p>A reference to an object that represents the name of the secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
     #[doc(hidden)]
     pub secret_name: std::option::Option<std::string::String>,
 }
 impl ListenerTlsSdsCertificate {
     /// <p>A reference to an object that represents the name of the secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
-    pub fn secret_name(&self) -> std::option::Option<&str> {
+    pub fn secret_name(&self) -> std::option::Option<& str> {
         self.secret_name.as_deref()
     }
 }
 /// See [`ListenerTlsSdsCertificate`](crate::model::ListenerTlsSdsCertificate).
 pub mod listener_tls_sds_certificate {
-
+    
     /// A builder for [`ListenerTlsSdsCertificate`](crate::model::ListenerTlsSdsCertificate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7370,16 +7006,18 @@ pub mod listener_tls_sds_certificate {
         }
         /// <p>A reference to an object that represents the name of the secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
         pub fn set_secret_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_name = input;
-            self
+            self.secret_name = input; self
         }
         /// Consumes the builder and constructs a [`ListenerTlsSdsCertificate`](crate::model::ListenerTlsSdsCertificate).
         pub fn build(self) -> crate::model::ListenerTlsSdsCertificate {
             crate::model::ListenerTlsSdsCertificate {
-                secret_name: self.secret_name,
+                secret_name: self.secret_name
+                ,
             }
         }
     }
+    
+    
 }
 impl ListenerTlsSdsCertificate {
     /// Creates a new builder-style object to manufacture [`ListenerTlsSdsCertificate`](crate::model::ListenerTlsSdsCertificate).
@@ -7391,7 +7029,7 @@ impl ListenerTlsSdsCertificate {
 /// <p>An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListenerTlsFileCertificate {
+pub struct ListenerTlsFileCertificate  {
     /// <p>The certificate chain for the certificate.</p>
     #[doc(hidden)]
     pub certificate_chain: std::option::Option<std::string::String>,
@@ -7401,17 +7039,17 @@ pub struct ListenerTlsFileCertificate {
 }
 impl ListenerTlsFileCertificate {
     /// <p>The certificate chain for the certificate.</p>
-    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+    pub fn certificate_chain(&self) -> std::option::Option<& str> {
         self.certificate_chain.as_deref()
     }
     /// <p>The private key for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
-    pub fn private_key(&self) -> std::option::Option<&str> {
+    pub fn private_key(&self) -> std::option::Option<& str> {
         self.private_key.as_deref()
     }
 }
 /// See [`ListenerTlsFileCertificate`](crate::model::ListenerTlsFileCertificate).
 pub mod listener_tls_file_certificate {
-
+    
     /// A builder for [`ListenerTlsFileCertificate`](crate::model::ListenerTlsFileCertificate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7425,12 +7063,8 @@ pub mod listener_tls_file_certificate {
             self
         }
         /// <p>The certificate chain for the certificate.</p>
-        pub fn set_certificate_chain(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_chain = input;
-            self
+        pub fn set_certificate_chain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_chain = input; self
         }
         /// <p>The private key for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
         pub fn private_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7439,17 +7073,20 @@ pub mod listener_tls_file_certificate {
         }
         /// <p>The private key for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
         pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.private_key = input;
-            self
+            self.private_key = input; self
         }
         /// Consumes the builder and constructs a [`ListenerTlsFileCertificate`](crate::model::ListenerTlsFileCertificate).
         pub fn build(self) -> crate::model::ListenerTlsFileCertificate {
             crate::model::ListenerTlsFileCertificate {
-                certificate_chain: self.certificate_chain,
-                private_key: self.private_key,
+                certificate_chain: self.certificate_chain
+                ,
+                private_key: self.private_key
+                ,
             }
         }
     }
+    
+    
 }
 impl ListenerTlsFileCertificate {
     /// Creates a new builder-style object to manufacture [`ListenerTlsFileCertificate`](crate::model::ListenerTlsFileCertificate).
@@ -7478,14 +7115,8 @@ impl Backend {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`VirtualService`](crate::model::Backend::VirtualService), extracting the inner [`VirtualServiceBackend`](crate::model::VirtualServiceBackend).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_virtual_service(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualServiceBackend, &Self> {
-        if let Backend::VirtualService(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_virtual_service(&self) -> std::result::Result<&crate::model::VirtualServiceBackend, &Self> {
+        if let Backend::VirtualService(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`VirtualService`](crate::model::Backend::VirtualService).
     pub fn is_virtual_service(&self) -> bool {
@@ -7500,7 +7131,7 @@ impl Backend {
 /// <p>An object that represents a virtual service backend for a virtual node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualServiceBackend {
+pub struct VirtualServiceBackend  {
     /// <p>The name of the virtual service that is acting as a virtual node backend.</p>
     #[doc(hidden)]
     pub virtual_service_name: std::option::Option<std::string::String>,
@@ -7510,17 +7141,17 @@ pub struct VirtualServiceBackend {
 }
 impl VirtualServiceBackend {
     /// <p>The name of the virtual service that is acting as a virtual node backend.</p>
-    pub fn virtual_service_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_service_name(&self) -> std::option::Option<& str> {
         self.virtual_service_name.as_deref()
     }
     /// <p>A reference to an object that represents the client policy for a backend.</p>
-    pub fn client_policy(&self) -> std::option::Option<&crate::model::ClientPolicy> {
+    pub fn client_policy(&self) -> std::option::Option<& crate::model::ClientPolicy> {
         self.client_policy.as_ref()
     }
 }
 /// See [`VirtualServiceBackend`](crate::model::VirtualServiceBackend).
 pub mod virtual_service_backend {
-
+    
     /// A builder for [`VirtualServiceBackend`](crate::model::VirtualServiceBackend).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7534,12 +7165,8 @@ pub mod virtual_service_backend {
             self
         }
         /// <p>The name of the virtual service that is acting as a virtual node backend.</p>
-        pub fn set_virtual_service_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_service_name = input;
-            self
+        pub fn set_virtual_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_service_name = input; self
         }
         /// <p>A reference to an object that represents the client policy for a backend.</p>
         pub fn client_policy(mut self, input: crate::model::ClientPolicy) -> Self {
@@ -7547,21 +7174,21 @@ pub mod virtual_service_backend {
             self
         }
         /// <p>A reference to an object that represents the client policy for a backend.</p>
-        pub fn set_client_policy(
-            mut self,
-            input: std::option::Option<crate::model::ClientPolicy>,
-        ) -> Self {
-            self.client_policy = input;
-            self
+        pub fn set_client_policy(mut self, input: std::option::Option<crate::model::ClientPolicy>) -> Self {
+            self.client_policy = input; self
         }
         /// Consumes the builder and constructs a [`VirtualServiceBackend`](crate::model::VirtualServiceBackend).
         pub fn build(self) -> crate::model::VirtualServiceBackend {
             crate::model::VirtualServiceBackend {
-                virtual_service_name: self.virtual_service_name,
-                client_policy: self.client_policy,
+                virtual_service_name: self.virtual_service_name
+                ,
+                client_policy: self.client_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualServiceBackend {
     /// Creates a new builder-style object to manufacture [`VirtualServiceBackend`](crate::model::VirtualServiceBackend).
@@ -7573,7 +7200,7 @@ impl VirtualServiceBackend {
 /// <p>An object that represents a listener for a virtual node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Listener {
+pub struct Listener  {
     /// <p>The port mapping information for the listener.</p>
     #[doc(hidden)]
     pub port_mapping: std::option::Option<crate::model::PortMapping>,
@@ -7595,33 +7222,33 @@ pub struct Listener {
 }
 impl Listener {
     /// <p>The port mapping information for the listener.</p>
-    pub fn port_mapping(&self) -> std::option::Option<&crate::model::PortMapping> {
+    pub fn port_mapping(&self) -> std::option::Option<& crate::model::PortMapping> {
         self.port_mapping.as_ref()
     }
     /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for a listener.</p>
-    pub fn tls(&self) -> std::option::Option<&crate::model::ListenerTls> {
+    pub fn tls(&self) -> std::option::Option<& crate::model::ListenerTls> {
         self.tls.as_ref()
     }
     /// <p>The health check information for the listener.</p>
-    pub fn health_check(&self) -> std::option::Option<&crate::model::HealthCheckPolicy> {
+    pub fn health_check(&self) -> std::option::Option<& crate::model::HealthCheckPolicy> {
         self.health_check.as_ref()
     }
     /// <p>An object that represents timeouts for different protocols.</p>
-    pub fn timeout(&self) -> std::option::Option<&crate::model::ListenerTimeout> {
+    pub fn timeout(&self) -> std::option::Option<& crate::model::ListenerTimeout> {
         self.timeout.as_ref()
     }
     /// <p>The outlier detection information for the listener.</p>
-    pub fn outlier_detection(&self) -> std::option::Option<&crate::model::OutlierDetection> {
+    pub fn outlier_detection(&self) -> std::option::Option<& crate::model::OutlierDetection> {
         self.outlier_detection.as_ref()
     }
     /// <p>The connection pool information for the listener.</p>
-    pub fn connection_pool(&self) -> std::option::Option<&crate::model::VirtualNodeConnectionPool> {
+    pub fn connection_pool(&self) -> std::option::Option<& crate::model::VirtualNodeConnectionPool> {
         self.connection_pool.as_ref()
     }
 }
 /// See [`Listener`](crate::model::Listener).
 pub mod listener {
-
+    
     /// A builder for [`Listener`](crate::model::Listener).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7639,12 +7266,8 @@ pub mod listener {
             self
         }
         /// <p>The port mapping information for the listener.</p>
-        pub fn set_port_mapping(
-            mut self,
-            input: std::option::Option<crate::model::PortMapping>,
-        ) -> Self {
-            self.port_mapping = input;
-            self
+        pub fn set_port_mapping(mut self, input: std::option::Option<crate::model::PortMapping>) -> Self {
+            self.port_mapping = input; self
         }
         /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for a listener.</p>
         pub fn tls(mut self, input: crate::model::ListenerTls) -> Self {
@@ -7653,8 +7276,7 @@ pub mod listener {
         }
         /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for a listener.</p>
         pub fn set_tls(mut self, input: std::option::Option<crate::model::ListenerTls>) -> Self {
-            self.tls = input;
-            self
+            self.tls = input; self
         }
         /// <p>The health check information for the listener.</p>
         pub fn health_check(mut self, input: crate::model::HealthCheckPolicy) -> Self {
@@ -7662,12 +7284,8 @@ pub mod listener {
             self
         }
         /// <p>The health check information for the listener.</p>
-        pub fn set_health_check(
-            mut self,
-            input: std::option::Option<crate::model::HealthCheckPolicy>,
-        ) -> Self {
-            self.health_check = input;
-            self
+        pub fn set_health_check(mut self, input: std::option::Option<crate::model::HealthCheckPolicy>) -> Self {
+            self.health_check = input; self
         }
         /// <p>An object that represents timeouts for different protocols.</p>
         pub fn timeout(mut self, input: crate::model::ListenerTimeout) -> Self {
@@ -7675,12 +7293,8 @@ pub mod listener {
             self
         }
         /// <p>An object that represents timeouts for different protocols.</p>
-        pub fn set_timeout(
-            mut self,
-            input: std::option::Option<crate::model::ListenerTimeout>,
-        ) -> Self {
-            self.timeout = input;
-            self
+        pub fn set_timeout(mut self, input: std::option::Option<crate::model::ListenerTimeout>) -> Self {
+            self.timeout = input; self
         }
         /// <p>The outlier detection information for the listener.</p>
         pub fn outlier_detection(mut self, input: crate::model::OutlierDetection) -> Self {
@@ -7688,12 +7302,8 @@ pub mod listener {
             self
         }
         /// <p>The outlier detection information for the listener.</p>
-        pub fn set_outlier_detection(
-            mut self,
-            input: std::option::Option<crate::model::OutlierDetection>,
-        ) -> Self {
-            self.outlier_detection = input;
-            self
+        pub fn set_outlier_detection(mut self, input: std::option::Option<crate::model::OutlierDetection>) -> Self {
+            self.outlier_detection = input; self
         }
         /// <p>The connection pool information for the listener.</p>
         pub fn connection_pool(mut self, input: crate::model::VirtualNodeConnectionPool) -> Self {
@@ -7701,25 +7311,29 @@ pub mod listener {
             self
         }
         /// <p>The connection pool information for the listener.</p>
-        pub fn set_connection_pool(
-            mut self,
-            input: std::option::Option<crate::model::VirtualNodeConnectionPool>,
-        ) -> Self {
-            self.connection_pool = input;
-            self
+        pub fn set_connection_pool(mut self, input: std::option::Option<crate::model::VirtualNodeConnectionPool>) -> Self {
+            self.connection_pool = input; self
         }
         /// Consumes the builder and constructs a [`Listener`](crate::model::Listener).
         pub fn build(self) -> crate::model::Listener {
             crate::model::Listener {
-                port_mapping: self.port_mapping,
-                tls: self.tls,
-                health_check: self.health_check,
-                timeout: self.timeout,
-                outlier_detection: self.outlier_detection,
-                connection_pool: self.connection_pool,
+                port_mapping: self.port_mapping
+                ,
+                tls: self.tls
+                ,
+                health_check: self.health_check
+                ,
+                timeout: self.timeout
+                ,
+                outlier_detection: self.outlier_detection
+                ,
+                connection_pool: self.connection_pool
+                ,
             }
         }
     }
+    
+    
 }
 impl Listener {
     /// Creates a new builder-style object to manufacture [`Listener`](crate::model::Listener).
@@ -7728,9 +7342,9 @@ impl Listener {
     }
 }
 
-/// <p>An object that represents the type of virtual node connection pool.</p>
-/// <p>Only one protocol is used at a time and should be the same protocol as the one chosen under port mapping.</p>
-/// <p>If not present the default value for <code>maxPendingRequests</code> is <code>2147483647</code>.</p>
+/// <p>An object that represents the type of virtual node connection pool.</p> 
+/// <p>Only one protocol is used at a time and should be the same protocol as the one chosen under port mapping.</p> 
+/// <p>If not present the default value for <code>maxPendingRequests</code> is <code>2147483647</code>.</p> 
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -7756,14 +7370,8 @@ pub enum VirtualNodeConnectionPool {
 impl VirtualNodeConnectionPool {
     /// Tries to convert the enum instance into [`Grpc`](crate::model::VirtualNodeConnectionPool::Grpc), extracting the inner [`VirtualNodeGrpcConnectionPool`](crate::model::VirtualNodeGrpcConnectionPool).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_grpc(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualNodeGrpcConnectionPool, &Self> {
-        if let VirtualNodeConnectionPool::Grpc(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_grpc(&self) -> std::result::Result<&crate::model::VirtualNodeGrpcConnectionPool, &Self> {
+        if let VirtualNodeConnectionPool::Grpc(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Grpc`](crate::model::VirtualNodeConnectionPool::Grpc).
     pub fn is_grpc(&self) -> bool {
@@ -7771,14 +7379,8 @@ impl VirtualNodeConnectionPool {
     }
     /// Tries to convert the enum instance into [`Http`](crate::model::VirtualNodeConnectionPool::Http), extracting the inner [`VirtualNodeHttpConnectionPool`](crate::model::VirtualNodeHttpConnectionPool).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_http(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualNodeHttpConnectionPool, &Self> {
-        if let VirtualNodeConnectionPool::Http(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_http(&self) -> std::result::Result<&crate::model::VirtualNodeHttpConnectionPool, &Self> {
+        if let VirtualNodeConnectionPool::Http(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Http`](crate::model::VirtualNodeConnectionPool::Http).
     pub fn is_http(&self) -> bool {
@@ -7786,14 +7388,8 @@ impl VirtualNodeConnectionPool {
     }
     /// Tries to convert the enum instance into [`Http2`](crate::model::VirtualNodeConnectionPool::Http2), extracting the inner [`VirtualNodeHttp2ConnectionPool`](crate::model::VirtualNodeHttp2ConnectionPool).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_http2(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualNodeHttp2ConnectionPool, &Self> {
-        if let VirtualNodeConnectionPool::Http2(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_http2(&self) -> std::result::Result<&crate::model::VirtualNodeHttp2ConnectionPool, &Self> {
+        if let VirtualNodeConnectionPool::Http2(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Http2`](crate::model::VirtualNodeConnectionPool::Http2).
     pub fn is_http2(&self) -> bool {
@@ -7801,14 +7397,8 @@ impl VirtualNodeConnectionPool {
     }
     /// Tries to convert the enum instance into [`Tcp`](crate::model::VirtualNodeConnectionPool::Tcp), extracting the inner [`VirtualNodeTcpConnectionPool`](crate::model::VirtualNodeTcpConnectionPool).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_tcp(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualNodeTcpConnectionPool, &Self> {
-        if let VirtualNodeConnectionPool::Tcp(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_tcp(&self) -> std::result::Result<&crate::model::VirtualNodeTcpConnectionPool, &Self> {
+        if let VirtualNodeConnectionPool::Tcp(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Tcp`](crate::model::VirtualNodeConnectionPool::Tcp).
     pub fn is_tcp(&self) -> bool {
@@ -7823,7 +7413,7 @@ impl VirtualNodeConnectionPool {
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualNodeGrpcConnectionPool {
+pub struct VirtualNodeGrpcConnectionPool  {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     #[doc(hidden)]
     pub max_requests: i32,
@@ -7836,7 +7426,7 @@ impl VirtualNodeGrpcConnectionPool {
 }
 /// See [`VirtualNodeGrpcConnectionPool`](crate::model::VirtualNodeGrpcConnectionPool).
 pub mod virtual_node_grpc_connection_pool {
-
+    
     /// A builder for [`VirtualNodeGrpcConnectionPool`](crate::model::VirtualNodeGrpcConnectionPool).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7850,16 +7440,19 @@ pub mod virtual_node_grpc_connection_pool {
         }
         /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
         pub fn set_max_requests(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_requests = input;
-            self
+            self.max_requests = input; self
         }
         /// Consumes the builder and constructs a [`VirtualNodeGrpcConnectionPool`](crate::model::VirtualNodeGrpcConnectionPool).
         pub fn build(self) -> crate::model::VirtualNodeGrpcConnectionPool {
             crate::model::VirtualNodeGrpcConnectionPool {
-                max_requests: self.max_requests.unwrap_or_default(),
+                max_requests: self.max_requests
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualNodeGrpcConnectionPool {
     /// Creates a new builder-style object to manufacture [`VirtualNodeGrpcConnectionPool`](crate::model::VirtualNodeGrpcConnectionPool).
@@ -7871,7 +7464,7 @@ impl VirtualNodeGrpcConnectionPool {
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualNodeHttp2ConnectionPool {
+pub struct VirtualNodeHttp2ConnectionPool  {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     #[doc(hidden)]
     pub max_requests: i32,
@@ -7884,7 +7477,7 @@ impl VirtualNodeHttp2ConnectionPool {
 }
 /// See [`VirtualNodeHttp2ConnectionPool`](crate::model::VirtualNodeHttp2ConnectionPool).
 pub mod virtual_node_http2_connection_pool {
-
+    
     /// A builder for [`VirtualNodeHttp2ConnectionPool`](crate::model::VirtualNodeHttp2ConnectionPool).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7898,16 +7491,19 @@ pub mod virtual_node_http2_connection_pool {
         }
         /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
         pub fn set_max_requests(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_requests = input;
-            self
+            self.max_requests = input; self
         }
         /// Consumes the builder and constructs a [`VirtualNodeHttp2ConnectionPool`](crate::model::VirtualNodeHttp2ConnectionPool).
         pub fn build(self) -> crate::model::VirtualNodeHttp2ConnectionPool {
             crate::model::VirtualNodeHttp2ConnectionPool {
-                max_requests: self.max_requests.unwrap_or_default(),
+                max_requests: self.max_requests
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualNodeHttp2ConnectionPool {
     /// Creates a new builder-style object to manufacture [`VirtualNodeHttp2ConnectionPool`](crate::model::VirtualNodeHttp2ConnectionPool).
@@ -7919,7 +7515,7 @@ impl VirtualNodeHttp2ConnectionPool {
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualNodeHttpConnectionPool {
+pub struct VirtualNodeHttpConnectionPool  {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     #[doc(hidden)]
     pub max_connections: i32,
@@ -7939,7 +7535,7 @@ impl VirtualNodeHttpConnectionPool {
 }
 /// See [`VirtualNodeHttpConnectionPool`](crate::model::VirtualNodeHttpConnectionPool).
 pub mod virtual_node_http_connection_pool {
-
+    
     /// A builder for [`VirtualNodeHttpConnectionPool`](crate::model::VirtualNodeHttpConnectionPool).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -7954,8 +7550,7 @@ pub mod virtual_node_http_connection_pool {
         }
         /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
         pub fn set_max_connections(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_connections = input;
-            self
+            self.max_connections = input; self
         }
         /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
         pub fn max_pending_requests(mut self, input: i32) -> Self {
@@ -7964,17 +7559,21 @@ pub mod virtual_node_http_connection_pool {
         }
         /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
         pub fn set_max_pending_requests(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_pending_requests = input;
-            self
+            self.max_pending_requests = input; self
         }
         /// Consumes the builder and constructs a [`VirtualNodeHttpConnectionPool`](crate::model::VirtualNodeHttpConnectionPool).
         pub fn build(self) -> crate::model::VirtualNodeHttpConnectionPool {
             crate::model::VirtualNodeHttpConnectionPool {
-                max_connections: self.max_connections.unwrap_or_default(),
-                max_pending_requests: self.max_pending_requests,
+                max_connections: self.max_connections
+                    .unwrap_or_default()
+                ,
+                max_pending_requests: self.max_pending_requests
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualNodeHttpConnectionPool {
     /// Creates a new builder-style object to manufacture [`VirtualNodeHttpConnectionPool`](crate::model::VirtualNodeHttpConnectionPool).
@@ -7986,7 +7585,7 @@ impl VirtualNodeHttpConnectionPool {
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualNodeTcpConnectionPool {
+pub struct VirtualNodeTcpConnectionPool  {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     #[doc(hidden)]
     pub max_connections: i32,
@@ -7999,7 +7598,7 @@ impl VirtualNodeTcpConnectionPool {
 }
 /// See [`VirtualNodeTcpConnectionPool`](crate::model::VirtualNodeTcpConnectionPool).
 pub mod virtual_node_tcp_connection_pool {
-
+    
     /// A builder for [`VirtualNodeTcpConnectionPool`](crate::model::VirtualNodeTcpConnectionPool).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8013,16 +7612,19 @@ pub mod virtual_node_tcp_connection_pool {
         }
         /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
         pub fn set_max_connections(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_connections = input;
-            self
+            self.max_connections = input; self
         }
         /// Consumes the builder and constructs a [`VirtualNodeTcpConnectionPool`](crate::model::VirtualNodeTcpConnectionPool).
         pub fn build(self) -> crate::model::VirtualNodeTcpConnectionPool {
             crate::model::VirtualNodeTcpConnectionPool {
-                max_connections: self.max_connections.unwrap_or_default(),
+                max_connections: self.max_connections
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualNodeTcpConnectionPool {
     /// Creates a new builder-style object to manufacture [`VirtualNodeTcpConnectionPool`](crate::model::VirtualNodeTcpConnectionPool).
@@ -8034,7 +7636,7 @@ impl VirtualNodeTcpConnectionPool {
 /// <p>An object that represents the outlier detection for a virtual node's listener.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutlierDetection {
+pub struct OutlierDetection  {
     /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
     #[doc(hidden)]
     pub max_server_errors: std::option::Option<i64>,
@@ -8054,11 +7656,11 @@ impl OutlierDetection {
         self.max_server_errors
     }
     /// <p>The time interval between ejection sweep analysis.</p>
-    pub fn interval(&self) -> std::option::Option<&crate::model::Duration> {
+    pub fn interval(&self) -> std::option::Option<& crate::model::Duration> {
         self.interval.as_ref()
     }
     /// <p>The base amount of time for which a host is ejected.</p>
-    pub fn base_ejection_duration(&self) -> std::option::Option<&crate::model::Duration> {
+    pub fn base_ejection_duration(&self) -> std::option::Option<& crate::model::Duration> {
         self.base_ejection_duration.as_ref()
     }
     /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
@@ -8068,7 +7670,7 @@ impl OutlierDetection {
 }
 /// See [`OutlierDetection`](crate::model::OutlierDetection).
 pub mod outlier_detection {
-
+    
     /// A builder for [`OutlierDetection`](crate::model::OutlierDetection).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8085,8 +7687,7 @@ pub mod outlier_detection {
         }
         /// <p>Number of consecutive <code>5xx</code> errors required for ejection. </p>
         pub fn set_max_server_errors(mut self, input: std::option::Option<i64>) -> Self {
-            self.max_server_errors = input;
-            self
+            self.max_server_errors = input; self
         }
         /// <p>The time interval between ejection sweep analysis.</p>
         pub fn interval(mut self, input: crate::model::Duration) -> Self {
@@ -8095,8 +7696,7 @@ pub mod outlier_detection {
         }
         /// <p>The time interval between ejection sweep analysis.</p>
         pub fn set_interval(mut self, input: std::option::Option<crate::model::Duration>) -> Self {
-            self.interval = input;
-            self
+            self.interval = input; self
         }
         /// <p>The base amount of time for which a host is ejected.</p>
         pub fn base_ejection_duration(mut self, input: crate::model::Duration) -> Self {
@@ -8104,12 +7704,8 @@ pub mod outlier_detection {
             self
         }
         /// <p>The base amount of time for which a host is ejected.</p>
-        pub fn set_base_ejection_duration(
-            mut self,
-            input: std::option::Option<crate::model::Duration>,
-        ) -> Self {
-            self.base_ejection_duration = input;
-            self
+        pub fn set_base_ejection_duration(mut self, input: std::option::Option<crate::model::Duration>) -> Self {
+            self.base_ejection_duration = input; self
         }
         /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
         pub fn max_ejection_percent(mut self, input: i32) -> Self {
@@ -8118,19 +7714,24 @@ pub mod outlier_detection {
         }
         /// <p>Maximum percentage of hosts in load balancing pool for upstream service that can be ejected. Will eject at least one host regardless of the value.</p>
         pub fn set_max_ejection_percent(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_ejection_percent = input;
-            self
+            self.max_ejection_percent = input; self
         }
         /// Consumes the builder and constructs a [`OutlierDetection`](crate::model::OutlierDetection).
         pub fn build(self) -> crate::model::OutlierDetection {
             crate::model::OutlierDetection {
-                max_server_errors: self.max_server_errors,
-                interval: self.interval,
-                base_ejection_duration: self.base_ejection_duration,
-                max_ejection_percent: self.max_ejection_percent,
+                max_server_errors: self.max_server_errors
+                ,
+                interval: self.interval
+                ,
+                base_ejection_duration: self.base_ejection_duration
+                ,
+                max_ejection_percent: self.max_ejection_percent
+                ,
             }
         }
     }
+    
+    
 }
 impl OutlierDetection {
     /// Creates a new builder-style object to manufacture [`OutlierDetection`](crate::model::OutlierDetection).
@@ -8165,11 +7766,7 @@ impl ListenerTimeout {
     /// Tries to convert the enum instance into [`Grpc`](crate::model::ListenerTimeout::Grpc), extracting the inner [`GrpcTimeout`](crate::model::GrpcTimeout).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_grpc(&self) -> std::result::Result<&crate::model::GrpcTimeout, &Self> {
-        if let ListenerTimeout::Grpc(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ListenerTimeout::Grpc(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Grpc`](crate::model::ListenerTimeout::Grpc).
     pub fn is_grpc(&self) -> bool {
@@ -8178,11 +7775,7 @@ impl ListenerTimeout {
     /// Tries to convert the enum instance into [`Http`](crate::model::ListenerTimeout::Http), extracting the inner [`HttpTimeout`](crate::model::HttpTimeout).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_http(&self) -> std::result::Result<&crate::model::HttpTimeout, &Self> {
-        if let ListenerTimeout::Http(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ListenerTimeout::Http(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Http`](crate::model::ListenerTimeout::Http).
     pub fn is_http(&self) -> bool {
@@ -8191,11 +7784,7 @@ impl ListenerTimeout {
     /// Tries to convert the enum instance into [`Http2`](crate::model::ListenerTimeout::Http2), extracting the inner [`HttpTimeout`](crate::model::HttpTimeout).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_http2(&self) -> std::result::Result<&crate::model::HttpTimeout, &Self> {
-        if let ListenerTimeout::Http2(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ListenerTimeout::Http2(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Http2`](crate::model::ListenerTimeout::Http2).
     pub fn is_http2(&self) -> bool {
@@ -8204,11 +7793,7 @@ impl ListenerTimeout {
     /// Tries to convert the enum instance into [`Tcp`](crate::model::ListenerTimeout::Tcp), extracting the inner [`TcpTimeout`](crate::model::TcpTimeout).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tcp(&self) -> std::result::Result<&crate::model::TcpTimeout, &Self> {
-        if let ListenerTimeout::Tcp(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ListenerTimeout::Tcp(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Tcp`](crate::model::ListenerTimeout::Tcp).
     pub fn is_tcp(&self) -> bool {
@@ -8223,7 +7808,7 @@ impl ListenerTimeout {
 /// <p>An object that represents the health check policy for a virtual node's listener.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HealthCheckPolicy {
+pub struct HealthCheckPolicy  {
     /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
     #[doc(hidden)]
     pub timeout_millis: std::option::Option<i64>,
@@ -8256,7 +7841,7 @@ impl HealthCheckPolicy {
         self.interval_millis
     }
     /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::model::PortProtocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::model::PortProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
@@ -8264,7 +7849,7 @@ impl HealthCheckPolicy {
         self.port
     }
     /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The number of consecutive successful health checks that must occur before declaring listener healthy.</p>
@@ -8278,7 +7863,7 @@ impl HealthCheckPolicy {
 }
 /// See [`HealthCheckPolicy`](crate::model::HealthCheckPolicy).
 pub mod health_check_policy {
-
+    
     /// A builder for [`HealthCheckPolicy`](crate::model::HealthCheckPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8298,8 +7883,7 @@ pub mod health_check_policy {
         }
         /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
         pub fn set_timeout_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.timeout_millis = input;
-            self
+            self.timeout_millis = input; self
         }
         /// <p>The time period in milliseconds between each health check execution.</p>
         pub fn interval_millis(mut self, input: i64) -> Self {
@@ -8308,8 +7892,7 @@ pub mod health_check_policy {
         }
         /// <p>The time period in milliseconds between each health check execution.</p>
         pub fn set_interval_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.interval_millis = input;
-            self
+            self.interval_millis = input; self
         }
         /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
         pub fn protocol(mut self, input: crate::model::PortProtocol) -> Self {
@@ -8317,12 +7900,8 @@ pub mod health_check_policy {
             self
         }
         /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
-        pub fn set_protocol(
-            mut self,
-            input: std::option::Option<crate::model::PortProtocol>,
-        ) -> Self {
-            self.protocol = input;
-            self
+        pub fn set_protocol(mut self, input: std::option::Option<crate::model::PortProtocol>) -> Self {
+            self.protocol = input; self
         }
         /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
         pub fn port(mut self, input: i32) -> Self {
@@ -8331,8 +7910,7 @@ pub mod health_check_policy {
         }
         /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8341,8 +7919,7 @@ pub mod health_check_policy {
         }
         /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// <p>The number of consecutive successful health checks that must occur before declaring listener healthy.</p>
         pub fn healthy_threshold(mut self, input: i32) -> Self {
@@ -8351,8 +7928,7 @@ pub mod health_check_policy {
         }
         /// <p>The number of consecutive successful health checks that must occur before declaring listener healthy.</p>
         pub fn set_healthy_threshold(mut self, input: std::option::Option<i32>) -> Self {
-            self.healthy_threshold = input;
-            self
+            self.healthy_threshold = input; self
         }
         /// <p>The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy. </p>
         pub fn unhealthy_threshold(mut self, input: i32) -> Self {
@@ -8361,22 +7937,33 @@ pub mod health_check_policy {
         }
         /// <p>The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy. </p>
         pub fn set_unhealthy_threshold(mut self, input: std::option::Option<i32>) -> Self {
-            self.unhealthy_threshold = input;
-            self
+            self.unhealthy_threshold = input; self
         }
         /// Consumes the builder and constructs a [`HealthCheckPolicy`](crate::model::HealthCheckPolicy).
         pub fn build(self) -> crate::model::HealthCheckPolicy {
             crate::model::HealthCheckPolicy {
-                timeout_millis: self.timeout_millis,
-                interval_millis: self.interval_millis,
-                protocol: self.protocol,
-                port: self.port.unwrap_or_default(),
-                path: self.path,
-                healthy_threshold: self.healthy_threshold.unwrap_or_default(),
-                unhealthy_threshold: self.unhealthy_threshold.unwrap_or_default(),
+                timeout_millis: self.timeout_millis
+                ,
+                interval_millis: self.interval_millis
+                ,
+                protocol: self.protocol
+                ,
+                port: self.port
+                    .unwrap_or_default()
+                ,
+                path: self.path
+                ,
+                healthy_threshold: self.healthy_threshold
+                    .unwrap_or_default()
+                ,
+                unhealthy_threshold: self.unhealthy_threshold
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl HealthCheckPolicy {
     /// Creates a new builder-style object to manufacture [`HealthCheckPolicy`](crate::model::HealthCheckPolicy).
@@ -8388,12 +7975,12 @@ impl HealthCheckPolicy {
 /// <p>An object that represents the Transport Layer Security (TLS) properties for a listener.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListenerTls {
-    /// <p>Specify one of the following modes.</p>
-    /// <ul>
-    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+pub struct ListenerTls  {
+    /// <p>Specify one of the following modes.</p> 
+    /// <ul> 
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li> 
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li> 
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub mode: std::option::Option<crate::model::ListenerTlsMode>,
@@ -8405,27 +7992,27 @@ pub struct ListenerTls {
     pub validation: std::option::Option<crate::model::ListenerTlsValidationContext>,
 }
 impl ListenerTls {
-    /// <p>Specify one of the following modes.</p>
-    /// <ul>
-    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+    /// <p>Specify one of the following modes.</p> 
+    /// <ul> 
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li> 
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li> 
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li> 
     /// </ul>
-    pub fn mode(&self) -> std::option::Option<&crate::model::ListenerTlsMode> {
+    pub fn mode(&self) -> std::option::Option<& crate::model::ListenerTlsMode> {
         self.mode.as_ref()
     }
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.</p>
-    pub fn certificate(&self) -> std::option::Option<&crate::model::ListenerTlsCertificate> {
+    pub fn certificate(&self) -> std::option::Option<& crate::model::ListenerTlsCertificate> {
         self.certificate.as_ref()
     }
     /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.</p>
-    pub fn validation(&self) -> std::option::Option<&crate::model::ListenerTlsValidationContext> {
+    pub fn validation(&self) -> std::option::Option<& crate::model::ListenerTlsValidationContext> {
         self.validation.as_ref()
     }
 }
 /// See [`ListenerTls`](crate::model::ListenerTls).
 pub mod listener_tls {
-
+    
     /// A builder for [`ListenerTls`](crate::model::ListenerTls).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8434,28 +8021,24 @@ pub mod listener_tls {
         pub(crate) validation: std::option::Option<crate::model::ListenerTlsValidationContext>,
     }
     impl Builder {
-        /// <p>Specify one of the following modes.</p>
-        /// <ul>
-        /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-        /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-        /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+        /// <p>Specify one of the following modes.</p> 
+        /// <ul> 
+        /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li> 
+        /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li> 
+        /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li> 
         /// </ul>
         pub fn mode(mut self, input: crate::model::ListenerTlsMode) -> Self {
             self.mode = Some(input);
             self
         }
-        /// <p>Specify one of the following modes.</p>
-        /// <ul>
-        /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-        /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-        /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+        /// <p>Specify one of the following modes.</p> 
+        /// <ul> 
+        /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li> 
+        /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li> 
+        /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li> 
         /// </ul>
-        pub fn set_mode(
-            mut self,
-            input: std::option::Option<crate::model::ListenerTlsMode>,
-        ) -> Self {
-            self.mode = input;
-            self
+        pub fn set_mode(mut self, input: std::option::Option<crate::model::ListenerTlsMode>) -> Self {
+            self.mode = input; self
         }
         /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.</p>
         pub fn certificate(mut self, input: crate::model::ListenerTlsCertificate) -> Self {
@@ -8463,12 +8046,8 @@ pub mod listener_tls {
             self
         }
         /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) certificate.</p>
-        pub fn set_certificate(
-            mut self,
-            input: std::option::Option<crate::model::ListenerTlsCertificate>,
-        ) -> Self {
-            self.certificate = input;
-            self
+        pub fn set_certificate(mut self, input: std::option::Option<crate::model::ListenerTlsCertificate>) -> Self {
+            self.certificate = input; self
         }
         /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.</p>
         pub fn validation(mut self, input: crate::model::ListenerTlsValidationContext) -> Self {
@@ -8476,22 +8055,23 @@ pub mod listener_tls {
             self
         }
         /// <p>A reference to an object that represents a listener's Transport Layer Security (TLS) validation context.</p>
-        pub fn set_validation(
-            mut self,
-            input: std::option::Option<crate::model::ListenerTlsValidationContext>,
-        ) -> Self {
-            self.validation = input;
-            self
+        pub fn set_validation(mut self, input: std::option::Option<crate::model::ListenerTlsValidationContext>) -> Self {
+            self.validation = input; self
         }
         /// Consumes the builder and constructs a [`ListenerTls`](crate::model::ListenerTls).
         pub fn build(self) -> crate::model::ListenerTls {
             crate::model::ListenerTls {
-                mode: self.mode,
-                certificate: self.certificate,
-                validation: self.validation,
+                mode: self.mode
+                ,
+                certificate: self.certificate
+                ,
+                validation: self.validation
+                ,
             }
         }
     }
+    
+    
 }
 impl ListenerTls {
     /// Creates a new builder-style object to manufacture [`ListenerTls`](crate::model::ListenerTls).
@@ -8503,7 +8083,7 @@ impl ListenerTls {
 /// <p>An object that represents a listener's Transport Layer Security (TLS) validation context.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListenerTlsValidationContext {
+pub struct ListenerTlsValidationContext  {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     #[doc(hidden)]
     pub trust: std::option::Option<crate::model::ListenerTlsValidationContextTrust>,
@@ -8513,25 +8093,22 @@ pub struct ListenerTlsValidationContext {
 }
 impl ListenerTlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
-    pub fn trust(&self) -> std::option::Option<&crate::model::ListenerTlsValidationContextTrust> {
+    pub fn trust(&self) -> std::option::Option<& crate::model::ListenerTlsValidationContextTrust> {
         self.trust.as_ref()
     }
     /// <p>A reference to an object that represents the SANs for a listener's Transport Layer Security (TLS) validation context.</p>
-    pub fn subject_alternative_names(
-        &self,
-    ) -> std::option::Option<&crate::model::SubjectAlternativeNames> {
+    pub fn subject_alternative_names(&self) -> std::option::Option<& crate::model::SubjectAlternativeNames> {
         self.subject_alternative_names.as_ref()
     }
 }
 /// See [`ListenerTlsValidationContext`](crate::model::ListenerTlsValidationContext).
 pub mod listener_tls_validation_context {
-
+    
     /// A builder for [`ListenerTlsValidationContext`](crate::model::ListenerTlsValidationContext).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) trust: std::option::Option<crate::model::ListenerTlsValidationContextTrust>,
-        pub(crate) subject_alternative_names:
-            std::option::Option<crate::model::SubjectAlternativeNames>,
+        pub(crate) subject_alternative_names: std::option::Option<crate::model::SubjectAlternativeNames>,
     }
     impl Builder {
         /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
@@ -8540,37 +8117,30 @@ pub mod listener_tls_validation_context {
             self
         }
         /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
-        pub fn set_trust(
-            mut self,
-            input: std::option::Option<crate::model::ListenerTlsValidationContextTrust>,
-        ) -> Self {
-            self.trust = input;
-            self
+        pub fn set_trust(mut self, input: std::option::Option<crate::model::ListenerTlsValidationContextTrust>) -> Self {
+            self.trust = input; self
         }
         /// <p>A reference to an object that represents the SANs for a listener's Transport Layer Security (TLS) validation context.</p>
-        pub fn subject_alternative_names(
-            mut self,
-            input: crate::model::SubjectAlternativeNames,
-        ) -> Self {
+        pub fn subject_alternative_names(mut self, input: crate::model::SubjectAlternativeNames) -> Self {
             self.subject_alternative_names = Some(input);
             self
         }
         /// <p>A reference to an object that represents the SANs for a listener's Transport Layer Security (TLS) validation context.</p>
-        pub fn set_subject_alternative_names(
-            mut self,
-            input: std::option::Option<crate::model::SubjectAlternativeNames>,
-        ) -> Self {
-            self.subject_alternative_names = input;
-            self
+        pub fn set_subject_alternative_names(mut self, input: std::option::Option<crate::model::SubjectAlternativeNames>) -> Self {
+            self.subject_alternative_names = input; self
         }
         /// Consumes the builder and constructs a [`ListenerTlsValidationContext`](crate::model::ListenerTlsValidationContext).
         pub fn build(self) -> crate::model::ListenerTlsValidationContext {
             crate::model::ListenerTlsValidationContext {
-                trust: self.trust,
-                subject_alternative_names: self.subject_alternative_names,
+                trust: self.trust
+                ,
+                subject_alternative_names: self.subject_alternative_names
+                ,
             }
         }
     }
+    
+    
 }
 impl ListenerTlsValidationContext {
     /// Creates a new builder-style object to manufacture [`ListenerTlsValidationContext`](crate::model::ListenerTlsValidationContext).
@@ -8600,14 +8170,8 @@ pub enum ListenerTlsValidationContextTrust {
 impl ListenerTlsValidationContextTrust {
     /// Tries to convert the enum instance into [`File`](crate::model::ListenerTlsValidationContextTrust::File), extracting the inner [`TlsValidationContextFileTrust`](crate::model::TlsValidationContextFileTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_file(
-        &self,
-    ) -> std::result::Result<&crate::model::TlsValidationContextFileTrust, &Self> {
-        if let ListenerTlsValidationContextTrust::File(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_file(&self) -> std::result::Result<&crate::model::TlsValidationContextFileTrust, &Self> {
+        if let ListenerTlsValidationContextTrust::File(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`File`](crate::model::ListenerTlsValidationContextTrust::File).
     pub fn is_file(&self) -> bool {
@@ -8615,14 +8179,8 @@ impl ListenerTlsValidationContextTrust {
     }
     /// Tries to convert the enum instance into [`Sds`](crate::model::ListenerTlsValidationContextTrust::Sds), extracting the inner [`TlsValidationContextSdsTrust`](crate::model::TlsValidationContextSdsTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sds(
-        &self,
-    ) -> std::result::Result<&crate::model::TlsValidationContextSdsTrust, &Self> {
-        if let ListenerTlsValidationContextTrust::Sds(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_sds(&self) -> std::result::Result<&crate::model::TlsValidationContextSdsTrust, &Self> {
+        if let ListenerTlsValidationContextTrust::Sds(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Sds`](crate::model::ListenerTlsValidationContextTrust::Sds).
     pub fn is_sds(&self) -> bool {
@@ -8658,11 +8216,7 @@ impl ListenerTlsCertificate {
     /// Tries to convert the enum instance into [`Acm`](crate::model::ListenerTlsCertificate::Acm), extracting the inner [`ListenerTlsAcmCertificate`](crate::model::ListenerTlsAcmCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_acm(&self) -> std::result::Result<&crate::model::ListenerTlsAcmCertificate, &Self> {
-        if let ListenerTlsCertificate::Acm(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ListenerTlsCertificate::Acm(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Acm`](crate::model::ListenerTlsCertificate::Acm).
     pub fn is_acm(&self) -> bool {
@@ -8671,11 +8225,7 @@ impl ListenerTlsCertificate {
     /// Tries to convert the enum instance into [`File`](crate::model::ListenerTlsCertificate::File), extracting the inner [`ListenerTlsFileCertificate`](crate::model::ListenerTlsFileCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(&self) -> std::result::Result<&crate::model::ListenerTlsFileCertificate, &Self> {
-        if let ListenerTlsCertificate::File(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ListenerTlsCertificate::File(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`File`](crate::model::ListenerTlsCertificate::File).
     pub fn is_file(&self) -> bool {
@@ -8684,11 +8234,7 @@ impl ListenerTlsCertificate {
     /// Tries to convert the enum instance into [`Sds`](crate::model::ListenerTlsCertificate::Sds), extracting the inner [`ListenerTlsSdsCertificate`](crate::model::ListenerTlsSdsCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sds(&self) -> std::result::Result<&crate::model::ListenerTlsSdsCertificate, &Self> {
-        if let ListenerTlsCertificate::Sds(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ListenerTlsCertificate::Sds(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Sds`](crate::model::ListenerTlsCertificate::Sds).
     pub fn is_sds(&self) -> bool {
@@ -8703,20 +8249,20 @@ impl ListenerTlsCertificate {
 /// <p>An object that represents an Certificate Manager certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListenerTlsAcmCertificate {
+pub struct ListenerTlsAcmCertificate  {
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
     #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl ListenerTlsAcmCertificate {
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
 }
 /// See [`ListenerTlsAcmCertificate`](crate::model::ListenerTlsAcmCertificate).
 pub mod listener_tls_acm_certificate {
-
+    
     /// A builder for [`ListenerTlsAcmCertificate`](crate::model::ListenerTlsAcmCertificate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -8729,20 +8275,19 @@ pub mod listener_tls_acm_certificate {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
-        pub fn set_certificate_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_arn = input;
-            self
+        pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_arn = input; self
         }
         /// Consumes the builder and constructs a [`ListenerTlsAcmCertificate`](crate::model::ListenerTlsAcmCertificate).
         pub fn build(self) -> crate::model::ListenerTlsAcmCertificate {
             crate::model::ListenerTlsAcmCertificate {
-                certificate_arn: self.certificate_arn,
+                certificate_arn: self.certificate_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ListenerTlsAcmCertificate {
     /// Creates a new builder-style object to manufacture [`ListenerTlsAcmCertificate`](crate::model::ListenerTlsAcmCertificate).
@@ -8757,9 +8302,9 @@ impl ListenerTlsAcmCertificate {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let listenertlsmode = unimplemented!();
 /// match listenertlsmode {
@@ -8782,22 +8327,14 @@ impl ListenerTlsAcmCertificate {
 /// Specifically, when `listenertlsmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ListenerTlsMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ListenerTlsMode {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
@@ -8806,7 +8343,7 @@ pub enum ListenerTlsMode {
     #[allow(missing_docs)] // documentation missing in model
     Strict,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ListenerTlsMode {
     fn from(s: &str) -> Self {
@@ -8814,17 +8351,17 @@ impl std::convert::From<&str> for ListenerTlsMode {
             "DISABLED" => ListenerTlsMode::Disabled,
             "PERMISSIVE" => ListenerTlsMode::Permissive,
             "STRICT" => ListenerTlsMode::Strict,
-            other => ListenerTlsMode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ListenerTlsMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ListenerTlsMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ListenerTlsMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ListenerTlsMode::from(s))
+                }
+            }
 impl ListenerTlsMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -8832,12 +8369,14 @@ impl ListenerTlsMode {
             ListenerTlsMode::Disabled => "DISABLED",
             ListenerTlsMode::Permissive => "PERMISSIVE",
             ListenerTlsMode::Strict => "STRICT",
-            ListenerTlsMode::Unknown(value) => value.as_str(),
+            ListenerTlsMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "PERMISSIVE", "STRICT"]
+        &[
+            "DISABLED", "PERMISSIVE", "STRICT"
+        ]
     }
 }
 impl AsRef<str> for ListenerTlsMode {
@@ -8867,14 +8406,8 @@ pub enum ServiceDiscovery {
 impl ServiceDiscovery {
     /// Tries to convert the enum instance into [`AwsCloudMap`](crate::model::ServiceDiscovery::AwsCloudMap), extracting the inner [`AwsCloudMapServiceDiscovery`](crate::model::AwsCloudMapServiceDiscovery).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_aws_cloud_map(
-        &self,
-    ) -> std::result::Result<&crate::model::AwsCloudMapServiceDiscovery, &Self> {
-        if let ServiceDiscovery::AwsCloudMap(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_aws_cloud_map(&self) -> std::result::Result<&crate::model::AwsCloudMapServiceDiscovery, &Self> {
+        if let ServiceDiscovery::AwsCloudMap(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`AwsCloudMap`](crate::model::ServiceDiscovery::AwsCloudMap).
     pub fn is_aws_cloud_map(&self) -> bool {
@@ -8883,11 +8416,7 @@ impl ServiceDiscovery {
     /// Tries to convert the enum instance into [`Dns`](crate::model::ServiceDiscovery::Dns), extracting the inner [`DnsServiceDiscovery`](crate::model::DnsServiceDiscovery).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dns(&self) -> std::result::Result<&crate::model::DnsServiceDiscovery, &Self> {
-        if let ServiceDiscovery::Dns(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let ServiceDiscovery::Dns(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Dns`](crate::model::ServiceDiscovery::Dns).
     pub fn is_dns(&self) -> bool {
@@ -8899,12 +8428,12 @@ impl ServiceDiscovery {
     }
 }
 
-/// <p>An object that represents the Cloud Map service discovery information for your virtual node.</p> <note>
-/// <p>Cloud Map is not available in the eu-south-1 Region.</p>
+/// <p>An object that represents the Cloud Map service discovery information for your virtual node.</p> <note> 
+/// <p>Cloud Map is not available in the eu-south-1 Region.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsCloudMapServiceDiscovery {
+pub struct AwsCloudMapServiceDiscovery  {
     /// <p>The name of the Cloud Map namespace to use.</p>
     #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
@@ -8920,32 +8449,31 @@ pub struct AwsCloudMapServiceDiscovery {
 }
 impl AwsCloudMapServiceDiscovery {
     /// <p>The name of the Cloud Map namespace to use.</p>
-    pub fn namespace_name(&self) -> std::option::Option<&str> {
+    pub fn namespace_name(&self) -> std::option::Option<& str> {
         self.namespace_name.as_deref()
     }
     /// <p>The name of the Cloud Map service to use.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>A string map that contains attributes with values that you can use to filter instances by any custom attribute that you specified when you registered the instance. Only instances that match all of the specified key/value pairs will be returned.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::model::AwsCloudMapInstanceAttribute]> {
+    pub fn attributes(&self) -> std::option::Option<& [crate::model::AwsCloudMapInstanceAttribute]> {
         self.attributes.as_deref()
     }
     /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
-    pub fn ip_preference(&self) -> std::option::Option<&crate::model::IpPreference> {
+    pub fn ip_preference(&self) -> std::option::Option<& crate::model::IpPreference> {
         self.ip_preference.as_ref()
     }
 }
 /// See [`AwsCloudMapServiceDiscovery`](crate::model::AwsCloudMapServiceDiscovery).
 pub mod aws_cloud_map_service_discovery {
-
+    
     /// A builder for [`AwsCloudMapServiceDiscovery`](crate::model::AwsCloudMapServiceDiscovery).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) namespace_name: std::option::Option<std::string::String>,
         pub(crate) service_name: std::option::Option<std::string::String>,
-        pub(crate) attributes:
-            std::option::Option<std::vec::Vec<crate::model::AwsCloudMapInstanceAttribute>>,
+        pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::AwsCloudMapInstanceAttribute>>,
         pub(crate) ip_preference: std::option::Option<crate::model::IpPreference>,
     }
     impl Builder {
@@ -8955,12 +8483,8 @@ pub mod aws_cloud_map_service_discovery {
             self
         }
         /// <p>The name of the Cloud Map namespace to use.</p>
-        pub fn set_namespace_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.namespace_name = input;
-            self
+        pub fn set_namespace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.namespace_name = input; self
         }
         /// <p>The name of the Cloud Map service to use.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8969,8 +8493,7 @@ pub mod aws_cloud_map_service_discovery {
         }
         /// <p>The name of the Cloud Map service to use.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_name = input;
-            self
+            self.service_name = input; self
         }
         /// Appends an item to `attributes`.
         ///
@@ -8979,17 +8502,13 @@ pub mod aws_cloud_map_service_discovery {
         /// <p>A string map that contains attributes with values that you can use to filter instances by any custom attribute that you specified when you registered the instance. Only instances that match all of the specified key/value pairs will be returned.</p>
         pub fn attributes(mut self, input: crate::model::AwsCloudMapInstanceAttribute) -> Self {
             let mut v = self.attributes.unwrap_or_default();
-            v.push(input);
-            self.attributes = Some(v);
-            self
+                            v.push(input);
+                            self.attributes = Some(v);
+                            self
         }
         /// <p>A string map that contains attributes with values that you can use to filter instances by any custom attribute that you specified when you registered the instance. Only instances that match all of the specified key/value pairs will be returned.</p>
-        pub fn set_attributes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AwsCloudMapInstanceAttribute>>,
-        ) -> Self {
-            self.attributes = input;
-            self
+        pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::model::AwsCloudMapInstanceAttribute>>) -> Self {
+            self.attributes = input; self
         }
         /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
         pub fn ip_preference(mut self, input: crate::model::IpPreference) -> Self {
@@ -8997,23 +8516,25 @@ pub mod aws_cloud_map_service_discovery {
             self
         }
         /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
-        pub fn set_ip_preference(
-            mut self,
-            input: std::option::Option<crate::model::IpPreference>,
-        ) -> Self {
-            self.ip_preference = input;
-            self
+        pub fn set_ip_preference(mut self, input: std::option::Option<crate::model::IpPreference>) -> Self {
+            self.ip_preference = input; self
         }
         /// Consumes the builder and constructs a [`AwsCloudMapServiceDiscovery`](crate::model::AwsCloudMapServiceDiscovery).
         pub fn build(self) -> crate::model::AwsCloudMapServiceDiscovery {
             crate::model::AwsCloudMapServiceDiscovery {
-                namespace_name: self.namespace_name,
-                service_name: self.service_name,
-                attributes: self.attributes,
-                ip_preference: self.ip_preference,
+                namespace_name: self.namespace_name
+                ,
+                service_name: self.service_name
+                ,
+                attributes: self.attributes
+                ,
+                ip_preference: self.ip_preference
+                ,
             }
         }
     }
+    
+    
 }
 impl AwsCloudMapServiceDiscovery {
     /// Creates a new builder-style object to manufacture [`AwsCloudMapServiceDiscovery`](crate::model::AwsCloudMapServiceDiscovery).
@@ -9022,12 +8543,12 @@ impl AwsCloudMapServiceDiscovery {
     }
 }
 
-/// <p>An object that represents the Cloud Map attribute information for your virtual node.</p> <note>
-/// <p>Cloud Map is not available in the eu-south-1 Region.</p>
+/// <p>An object that represents the Cloud Map attribute information for your virtual node.</p> <note> 
+/// <p>Cloud Map is not available in the eu-south-1 Region.</p> 
 /// </note>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsCloudMapInstanceAttribute {
+pub struct AwsCloudMapInstanceAttribute  {
     /// <p>The name of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -9037,17 +8558,17 @@ pub struct AwsCloudMapInstanceAttribute {
 }
 impl AwsCloudMapInstanceAttribute {
     /// <p>The name of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`AwsCloudMapInstanceAttribute`](crate::model::AwsCloudMapInstanceAttribute).
 pub mod aws_cloud_map_instance_attribute {
-
+    
     /// A builder for [`AwsCloudMapInstanceAttribute`](crate::model::AwsCloudMapInstanceAttribute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9062,8 +8583,7 @@ pub mod aws_cloud_map_instance_attribute {
         }
         /// <p>The name of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9072,17 +8592,20 @@ pub mod aws_cloud_map_instance_attribute {
         }
         /// <p>The value of an Cloud Map service instance attribute key. Any Cloud Map service instance that contains the specified key and value is returned.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`AwsCloudMapInstanceAttribute`](crate::model::AwsCloudMapInstanceAttribute).
         pub fn build(self) -> crate::model::AwsCloudMapInstanceAttribute {
             crate::model::AwsCloudMapInstanceAttribute {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl AwsCloudMapInstanceAttribute {
     /// Creates a new builder-style object to manufacture [`AwsCloudMapInstanceAttribute`](crate::model::AwsCloudMapInstanceAttribute).
@@ -9094,7 +8617,7 @@ impl AwsCloudMapInstanceAttribute {
 /// <p>An object that represents the DNS service discovery information for your virtual node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DnsServiceDiscovery {
+pub struct DnsServiceDiscovery  {
     /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
     #[doc(hidden)]
     pub hostname: std::option::Option<std::string::String>,
@@ -9107,21 +8630,21 @@ pub struct DnsServiceDiscovery {
 }
 impl DnsServiceDiscovery {
     /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
-    pub fn hostname(&self) -> std::option::Option<&str> {
+    pub fn hostname(&self) -> std::option::Option<& str> {
         self.hostname.as_deref()
     }
     /// <p>Specifies the DNS response type for the virtual node.</p>
-    pub fn response_type(&self) -> std::option::Option<&crate::model::DnsResponseType> {
+    pub fn response_type(&self) -> std::option::Option<& crate::model::DnsResponseType> {
         self.response_type.as_ref()
     }
     /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
-    pub fn ip_preference(&self) -> std::option::Option<&crate::model::IpPreference> {
+    pub fn ip_preference(&self) -> std::option::Option<& crate::model::IpPreference> {
         self.ip_preference.as_ref()
     }
 }
 /// See [`DnsServiceDiscovery`](crate::model::DnsServiceDiscovery).
 pub mod dns_service_discovery {
-
+    
     /// A builder for [`DnsServiceDiscovery`](crate::model::DnsServiceDiscovery).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9137,8 +8660,7 @@ pub mod dns_service_discovery {
         }
         /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
         pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.hostname = input;
-            self
+            self.hostname = input; self
         }
         /// <p>Specifies the DNS response type for the virtual node.</p>
         pub fn response_type(mut self, input: crate::model::DnsResponseType) -> Self {
@@ -9146,12 +8668,8 @@ pub mod dns_service_discovery {
             self
         }
         /// <p>Specifies the DNS response type for the virtual node.</p>
-        pub fn set_response_type(
-            mut self,
-            input: std::option::Option<crate::model::DnsResponseType>,
-        ) -> Self {
-            self.response_type = input;
-            self
+        pub fn set_response_type(mut self, input: std::option::Option<crate::model::DnsResponseType>) -> Self {
+            self.response_type = input; self
         }
         /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
         pub fn ip_preference(mut self, input: crate::model::IpPreference) -> Self {
@@ -9159,22 +8677,23 @@ pub mod dns_service_discovery {
             self
         }
         /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
-        pub fn set_ip_preference(
-            mut self,
-            input: std::option::Option<crate::model::IpPreference>,
-        ) -> Self {
-            self.ip_preference = input;
-            self
+        pub fn set_ip_preference(mut self, input: std::option::Option<crate::model::IpPreference>) -> Self {
+            self.ip_preference = input; self
         }
         /// Consumes the builder and constructs a [`DnsServiceDiscovery`](crate::model::DnsServiceDiscovery).
         pub fn build(self) -> crate::model::DnsServiceDiscovery {
             crate::model::DnsServiceDiscovery {
-                hostname: self.hostname,
-                response_type: self.response_type,
-                ip_preference: self.ip_preference,
+                hostname: self.hostname
+                ,
+                response_type: self.response_type
+                ,
+                ip_preference: self.ip_preference
+                ,
             }
         }
     }
+    
+    
 }
 impl DnsServiceDiscovery {
     /// Creates a new builder-style object to manufacture [`DnsServiceDiscovery`](crate::model::DnsServiceDiscovery).
@@ -9189,9 +8708,9 @@ impl DnsServiceDiscovery {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dnsresponsetype = unimplemented!();
 /// match dnsresponsetype {
@@ -9213,58 +8732,52 @@ impl DnsServiceDiscovery {
 /// Specifically, when `dnsresponsetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DnsResponseType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DnsResponseType {
     #[allow(missing_docs)] // documentation missing in model
     Endpoints,
     #[allow(missing_docs)] // documentation missing in model
     Loadbalancer,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DnsResponseType {
     fn from(s: &str) -> Self {
         match s {
             "ENDPOINTS" => DnsResponseType::Endpoints,
             "LOADBALANCER" => DnsResponseType::Loadbalancer,
-            other => DnsResponseType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DnsResponseType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DnsResponseType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DnsResponseType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DnsResponseType::from(s))
+                }
+            }
 impl DnsResponseType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DnsResponseType::Endpoints => "ENDPOINTS",
             DnsResponseType::Loadbalancer => "LOADBALANCER",
-            DnsResponseType::Unknown(value) => value.as_str(),
+            DnsResponseType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ENDPOINTS", "LOADBALANCER"]
+        &[
+            "ENDPOINTS", "LOADBALANCER"
+        ]
     }
 }
 impl AsRef<str> for DnsResponseType {
@@ -9276,7 +8789,7 @@ impl AsRef<str> for DnsResponseType {
 /// <p>An object that represents a virtual gateway returned by a list operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayRef {
+pub struct VirtualGatewayRef  {
     /// <p>The name of the service mesh that the resource resides in.</p>
     #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
@@ -9304,23 +8817,23 @@ pub struct VirtualGatewayRef {
 }
 impl VirtualGatewayRef {
     /// <p>The name of the service mesh that the resource resides in.</p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The name of the resource.</p>
-    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_name(&self) -> std::option::Option<& str> {
         self.virtual_gateway_name.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+    pub fn mesh_owner(&self) -> std::option::Option<& str> {
         self.mesh_owner.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn resource_owner(&self) -> std::option::Option<&str> {
+    pub fn resource_owner(&self) -> std::option::Option<& str> {
         self.resource_owner.as_deref()
     }
     /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
@@ -9328,17 +8841,17 @@ impl VirtualGatewayRef {
         self.version
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
 /// See [`VirtualGatewayRef`](crate::model::VirtualGatewayRef).
 pub mod virtual_gateway_ref {
-
+    
     /// A builder for [`VirtualGatewayRef`](crate::model::VirtualGatewayRef).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9359,8 +8872,7 @@ pub mod virtual_gateway_ref {
         }
         /// <p>The name of the service mesh that the resource resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_name = input;
-            self
+            self.mesh_name = input; self
         }
         /// <p>The name of the resource.</p>
         pub fn virtual_gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9368,12 +8880,8 @@ pub mod virtual_gateway_ref {
             self
         }
         /// <p>The name of the resource.</p>
-        pub fn set_virtual_gateway_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_gateway_name = input;
-            self
+        pub fn set_virtual_gateway_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_gateway_name = input; self
         }
         /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9382,8 +8890,7 @@ pub mod virtual_gateway_ref {
         }
         /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_owner = input;
-            self
+            self.mesh_owner = input; self
         }
         /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9391,12 +8898,8 @@ pub mod virtual_gateway_ref {
             self
         }
         /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn set_resource_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_owner = input;
-            self
+        pub fn set_resource_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_owner = input; self
         }
         /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9405,8 +8908,7 @@ pub mod virtual_gateway_ref {
         }
         /// <p>The full Amazon Resource Name (ARN) for the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
         pub fn version(mut self, input: i64) -> Self {
@@ -9415,8 +8917,7 @@ pub mod virtual_gateway_ref {
         }
         /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9424,12 +8925,8 @@ pub mod virtual_gateway_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -9437,27 +8934,33 @@ pub mod virtual_gateway_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayRef`](crate::model::VirtualGatewayRef).
         pub fn build(self) -> crate::model::VirtualGatewayRef {
             crate::model::VirtualGatewayRef {
-                mesh_name: self.mesh_name,
-                virtual_gateway_name: self.virtual_gateway_name,
-                mesh_owner: self.mesh_owner,
-                resource_owner: self.resource_owner,
-                arn: self.arn,
-                version: self.version,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
+                mesh_name: self.mesh_name
+                ,
+                virtual_gateway_name: self.virtual_gateway_name
+                ,
+                mesh_owner: self.mesh_owner
+                ,
+                resource_owner: self.resource_owner
+                ,
+                arn: self.arn
+                ,
+                version: self.version
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayRef {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayRef`](crate::model::VirtualGatewayRef).
@@ -9469,7 +8972,7 @@ impl VirtualGatewayRef {
 /// <p>An object that represents a virtual gateway returned by a describe operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayData {
+pub struct VirtualGatewayData  {
     /// <p>The name of the service mesh that the virtual gateway resides in.</p>
     #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
@@ -9488,29 +8991,29 @@ pub struct VirtualGatewayData {
 }
 impl VirtualGatewayData {
     /// <p>The name of the service mesh that the virtual gateway resides in.</p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The name of the virtual gateway.</p>
-    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_name(&self) -> std::option::Option<& str> {
         self.virtual_gateway_name.as_deref()
     }
     /// <p>The specifications of the virtual gateway.</p>
-    pub fn spec(&self) -> std::option::Option<&crate::model::VirtualGatewaySpec> {
+    pub fn spec(&self) -> std::option::Option<& crate::model::VirtualGatewaySpec> {
         self.spec.as_ref()
     }
     /// <p>An object that represents metadata for a resource.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::model::ResourceMetadata> {
+    pub fn metadata(&self) -> std::option::Option<& crate::model::ResourceMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The current status of the virtual gateway.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::VirtualGatewayStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::VirtualGatewayStatus> {
         self.status.as_ref()
     }
 }
 /// See [`VirtualGatewayData`](crate::model::VirtualGatewayData).
 pub mod virtual_gateway_data {
-
+    
     /// A builder for [`VirtualGatewayData`](crate::model::VirtualGatewayData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9528,8 +9031,7 @@ pub mod virtual_gateway_data {
         }
         /// <p>The name of the service mesh that the virtual gateway resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_name = input;
-            self
+            self.mesh_name = input; self
         }
         /// <p>The name of the virtual gateway.</p>
         pub fn virtual_gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9537,12 +9039,8 @@ pub mod virtual_gateway_data {
             self
         }
         /// <p>The name of the virtual gateway.</p>
-        pub fn set_virtual_gateway_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_gateway_name = input;
-            self
+        pub fn set_virtual_gateway_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_gateway_name = input; self
         }
         /// <p>The specifications of the virtual gateway.</p>
         pub fn spec(mut self, input: crate::model::VirtualGatewaySpec) -> Self {
@@ -9550,12 +9048,8 @@ pub mod virtual_gateway_data {
             self
         }
         /// <p>The specifications of the virtual gateway.</p>
-        pub fn set_spec(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewaySpec>,
-        ) -> Self {
-            self.spec = input;
-            self
+        pub fn set_spec(mut self, input: std::option::Option<crate::model::VirtualGatewaySpec>) -> Self {
+            self.spec = input; self
         }
         /// <p>An object that represents metadata for a resource.</p>
         pub fn metadata(mut self, input: crate::model::ResourceMetadata) -> Self {
@@ -9563,12 +9057,8 @@ pub mod virtual_gateway_data {
             self
         }
         /// <p>An object that represents metadata for a resource.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<crate::model::ResourceMetadata>,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<crate::model::ResourceMetadata>) -> Self {
+            self.metadata = input; self
         }
         /// <p>The current status of the virtual gateway.</p>
         pub fn status(mut self, input: crate::model::VirtualGatewayStatus) -> Self {
@@ -9576,24 +9066,27 @@ pub mod virtual_gateway_data {
             self
         }
         /// <p>The current status of the virtual gateway.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::VirtualGatewayStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayData`](crate::model::VirtualGatewayData).
         pub fn build(self) -> crate::model::VirtualGatewayData {
             crate::model::VirtualGatewayData {
-                mesh_name: self.mesh_name,
-                virtual_gateway_name: self.virtual_gateway_name,
-                spec: self.spec,
-                metadata: self.metadata,
-                status: self.status,
+                mesh_name: self.mesh_name
+                ,
+                virtual_gateway_name: self.virtual_gateway_name
+                ,
+                spec: self.spec
+                ,
+                metadata: self.metadata
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayData {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayData`](crate::model::VirtualGatewayData).
@@ -9605,20 +9098,20 @@ impl VirtualGatewayData {
 /// <p>An object that represents the status of the mesh resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayStatus {
+pub struct VirtualGatewayStatus  {
     /// <p>The current status.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::VirtualGatewayStatusCode>,
 }
 impl VirtualGatewayStatus {
     /// <p>The current status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::VirtualGatewayStatusCode> {
+    pub fn status(&self) -> std::option::Option<& crate::model::VirtualGatewayStatusCode> {
         self.status.as_ref()
     }
 }
 /// See [`VirtualGatewayStatus`](crate::model::VirtualGatewayStatus).
 pub mod virtual_gateway_status {
-
+    
     /// A builder for [`VirtualGatewayStatus`](crate::model::VirtualGatewayStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9631,20 +9124,19 @@ pub mod virtual_gateway_status {
             self
         }
         /// <p>The current status.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayStatusCode>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::VirtualGatewayStatusCode>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayStatus`](crate::model::VirtualGatewayStatus).
         pub fn build(self) -> crate::model::VirtualGatewayStatus {
             crate::model::VirtualGatewayStatus {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayStatus {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayStatus`](crate::model::VirtualGatewayStatus).
@@ -9659,9 +9151,9 @@ impl VirtualGatewayStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let virtualgatewaystatuscode = unimplemented!();
 /// match virtualgatewaystatuscode {
@@ -9684,22 +9176,14 @@ impl VirtualGatewayStatus {
 /// Specifically, when `virtualgatewaystatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VirtualGatewayStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VirtualGatewayStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -9708,7 +9192,7 @@ pub enum VirtualGatewayStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VirtualGatewayStatusCode {
     fn from(s: &str) -> Self {
@@ -9716,19 +9200,17 @@ impl std::convert::From<&str> for VirtualGatewayStatusCode {
             "ACTIVE" => VirtualGatewayStatusCode::Active,
             "DELETED" => VirtualGatewayStatusCode::Deleted,
             "INACTIVE" => VirtualGatewayStatusCode::Inactive,
-            other => VirtualGatewayStatusCode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => VirtualGatewayStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VirtualGatewayStatusCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VirtualGatewayStatusCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VirtualGatewayStatusCode::from(s))
+                }
+            }
 impl VirtualGatewayStatusCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -9736,12 +9218,14 @@ impl VirtualGatewayStatusCode {
             VirtualGatewayStatusCode::Active => "ACTIVE",
             VirtualGatewayStatusCode::Deleted => "DELETED",
             VirtualGatewayStatusCode::Inactive => "INACTIVE",
-            VirtualGatewayStatusCode::Unknown(value) => value.as_str(),
+            VirtualGatewayStatusCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DELETED", "INACTIVE"]
+        &[
+            "ACTIVE", "DELETED", "INACTIVE"
+        ]
     }
 }
 impl AsRef<str> for VirtualGatewayStatusCode {
@@ -9753,7 +9237,7 @@ impl AsRef<str> for VirtualGatewayStatusCode {
 /// <p>An object that represents the specification of a service mesh resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewaySpec {
+pub struct VirtualGatewaySpec  {
     /// <p>A reference to an object that represents the defaults for backends.</p>
     #[doc(hidden)]
     pub backend_defaults: std::option::Option<crate::model::VirtualGatewayBackendDefaults>,
@@ -9766,48 +9250,37 @@ pub struct VirtualGatewaySpec {
 }
 impl VirtualGatewaySpec {
     /// <p>A reference to an object that represents the defaults for backends.</p>
-    pub fn backend_defaults(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualGatewayBackendDefaults> {
+    pub fn backend_defaults(&self) -> std::option::Option<& crate::model::VirtualGatewayBackendDefaults> {
         self.backend_defaults.as_ref()
     }
     /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener.</p>
-    pub fn listeners(&self) -> std::option::Option<&[crate::model::VirtualGatewayListener]> {
+    pub fn listeners(&self) -> std::option::Option<& [crate::model::VirtualGatewayListener]> {
         self.listeners.as_deref()
     }
     /// <p>An object that represents logging information.</p>
-    pub fn logging(&self) -> std::option::Option<&crate::model::VirtualGatewayLogging> {
+    pub fn logging(&self) -> std::option::Option<& crate::model::VirtualGatewayLogging> {
         self.logging.as_ref()
     }
 }
 /// See [`VirtualGatewaySpec`](crate::model::VirtualGatewaySpec).
 pub mod virtual_gateway_spec {
-
+    
     /// A builder for [`VirtualGatewaySpec`](crate::model::VirtualGatewaySpec).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) backend_defaults:
-            std::option::Option<crate::model::VirtualGatewayBackendDefaults>,
-        pub(crate) listeners:
-            std::option::Option<std::vec::Vec<crate::model::VirtualGatewayListener>>,
+        pub(crate) backend_defaults: std::option::Option<crate::model::VirtualGatewayBackendDefaults>,
+        pub(crate) listeners: std::option::Option<std::vec::Vec<crate::model::VirtualGatewayListener>>,
         pub(crate) logging: std::option::Option<crate::model::VirtualGatewayLogging>,
     }
     impl Builder {
         /// <p>A reference to an object that represents the defaults for backends.</p>
-        pub fn backend_defaults(
-            mut self,
-            input: crate::model::VirtualGatewayBackendDefaults,
-        ) -> Self {
+        pub fn backend_defaults(mut self, input: crate::model::VirtualGatewayBackendDefaults) -> Self {
             self.backend_defaults = Some(input);
             self
         }
         /// <p>A reference to an object that represents the defaults for backends.</p>
-        pub fn set_backend_defaults(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayBackendDefaults>,
-        ) -> Self {
-            self.backend_defaults = input;
-            self
+        pub fn set_backend_defaults(mut self, input: std::option::Option<crate::model::VirtualGatewayBackendDefaults>) -> Self {
+            self.backend_defaults = input; self
         }
         /// Appends an item to `listeners`.
         ///
@@ -9816,17 +9289,13 @@ pub mod virtual_gateway_spec {
         /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener.</p>
         pub fn listeners(mut self, input: crate::model::VirtualGatewayListener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-            v.push(input);
-            self.listeners = Some(v);
-            self
+                            v.push(input);
+                            self.listeners = Some(v);
+                            self
         }
         /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener.</p>
-        pub fn set_listeners(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::VirtualGatewayListener>>,
-        ) -> Self {
-            self.listeners = input;
-            self
+        pub fn set_listeners(mut self, input: std::option::Option<std::vec::Vec<crate::model::VirtualGatewayListener>>) -> Self {
+            self.listeners = input; self
         }
         /// <p>An object that represents logging information.</p>
         pub fn logging(mut self, input: crate::model::VirtualGatewayLogging) -> Self {
@@ -9834,22 +9303,23 @@ pub mod virtual_gateway_spec {
             self
         }
         /// <p>An object that represents logging information.</p>
-        pub fn set_logging(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayLogging>,
-        ) -> Self {
-            self.logging = input;
-            self
+        pub fn set_logging(mut self, input: std::option::Option<crate::model::VirtualGatewayLogging>) -> Self {
+            self.logging = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewaySpec`](crate::model::VirtualGatewaySpec).
         pub fn build(self) -> crate::model::VirtualGatewaySpec {
             crate::model::VirtualGatewaySpec {
-                backend_defaults: self.backend_defaults,
-                listeners: self.listeners,
-                logging: self.logging,
+                backend_defaults: self.backend_defaults
+                ,
+                listeners: self.listeners
+                ,
+                logging: self.logging
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewaySpec {
     /// Creates a new builder-style object to manufacture [`VirtualGatewaySpec`](crate::model::VirtualGatewaySpec).
@@ -9861,20 +9331,20 @@ impl VirtualGatewaySpec {
 /// <p>An object that represents logging information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayLogging {
+pub struct VirtualGatewayLogging  {
     /// <p>The access log configuration.</p>
     #[doc(hidden)]
     pub access_log: std::option::Option<crate::model::VirtualGatewayAccessLog>,
 }
 impl VirtualGatewayLogging {
     /// <p>The access log configuration.</p>
-    pub fn access_log(&self) -> std::option::Option<&crate::model::VirtualGatewayAccessLog> {
+    pub fn access_log(&self) -> std::option::Option<& crate::model::VirtualGatewayAccessLog> {
         self.access_log.as_ref()
     }
 }
 /// See [`VirtualGatewayLogging`](crate::model::VirtualGatewayLogging).
 pub mod virtual_gateway_logging {
-
+    
     /// A builder for [`VirtualGatewayLogging`](crate::model::VirtualGatewayLogging).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9887,20 +9357,19 @@ pub mod virtual_gateway_logging {
             self
         }
         /// <p>The access log configuration.</p>
-        pub fn set_access_log(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayAccessLog>,
-        ) -> Self {
-            self.access_log = input;
-            self
+        pub fn set_access_log(mut self, input: std::option::Option<crate::model::VirtualGatewayAccessLog>) -> Self {
+            self.access_log = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayLogging`](crate::model::VirtualGatewayLogging).
         pub fn build(self) -> crate::model::VirtualGatewayLogging {
             crate::model::VirtualGatewayLogging {
-                access_log: self.access_log,
+                access_log: self.access_log
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayLogging {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayLogging`](crate::model::VirtualGatewayLogging).
@@ -9929,14 +9398,8 @@ impl VirtualGatewayAccessLog {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`File`](crate::model::VirtualGatewayAccessLog::File), extracting the inner [`VirtualGatewayFileAccessLog`](crate::model::VirtualGatewayFileAccessLog).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_file(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualGatewayFileAccessLog, &Self> {
-        if let VirtualGatewayAccessLog::File(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_file(&self) -> std::result::Result<&crate::model::VirtualGatewayFileAccessLog, &Self> {
+        if let VirtualGatewayAccessLog::File(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`File`](crate::model::VirtualGatewayAccessLog::File).
     pub fn is_file(&self) -> bool {
@@ -9951,7 +9414,7 @@ impl VirtualGatewayAccessLog {
 /// <p>An object that represents an access log file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayFileAccessLog {
+pub struct VirtualGatewayFileAccessLog  {
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
@@ -9961,17 +9424,17 @@ pub struct VirtualGatewayFileAccessLog {
 }
 impl VirtualGatewayFileAccessLog {
     /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or <code>text_format</code>.</p>
-    pub fn format(&self) -> std::option::Option<&crate::model::LoggingFormat> {
+    pub fn format(&self) -> std::option::Option<& crate::model::LoggingFormat> {
         self.format.as_ref()
     }
 }
 /// See [`VirtualGatewayFileAccessLog`](crate::model::VirtualGatewayFileAccessLog).
 pub mod virtual_gateway_file_access_log {
-
+    
     /// A builder for [`VirtualGatewayFileAccessLog`](crate::model::VirtualGatewayFileAccessLog).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -9986,8 +9449,7 @@ pub mod virtual_gateway_file_access_log {
         }
         /// <p>The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// <p>The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or <code>text_format</code>.</p>
         pub fn format(mut self, input: crate::model::LoggingFormat) -> Self {
@@ -9995,21 +9457,21 @@ pub mod virtual_gateway_file_access_log {
             self
         }
         /// <p>The specified format for the virtual gateway access logs. It can be either <code>json_format</code> or <code>text_format</code>.</p>
-        pub fn set_format(
-            mut self,
-            input: std::option::Option<crate::model::LoggingFormat>,
-        ) -> Self {
-            self.format = input;
-            self
+        pub fn set_format(mut self, input: std::option::Option<crate::model::LoggingFormat>) -> Self {
+            self.format = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayFileAccessLog`](crate::model::VirtualGatewayFileAccessLog).
         pub fn build(self) -> crate::model::VirtualGatewayFileAccessLog {
             crate::model::VirtualGatewayFileAccessLog {
-                path: self.path,
-                format: self.format,
+                path: self.path
+                ,
+                format: self.format
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayFileAccessLog {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayFileAccessLog`](crate::model::VirtualGatewayFileAccessLog).
@@ -10021,7 +9483,7 @@ impl VirtualGatewayFileAccessLog {
 /// <p>An object that represents a listener for a virtual gateway.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayListener {
+pub struct VirtualGatewayListener  {
     /// <p>The health check information for the listener.</p>
     #[doc(hidden)]
     pub health_check: std::option::Option<crate::model::VirtualGatewayHealthCheckPolicy>,
@@ -10037,29 +9499,25 @@ pub struct VirtualGatewayListener {
 }
 impl VirtualGatewayListener {
     /// <p>The health check information for the listener.</p>
-    pub fn health_check(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualGatewayHealthCheckPolicy> {
+    pub fn health_check(&self) -> std::option::Option<& crate::model::VirtualGatewayHealthCheckPolicy> {
         self.health_check.as_ref()
     }
     /// <p>The port mapping information for the listener.</p>
-    pub fn port_mapping(&self) -> std::option::Option<&crate::model::VirtualGatewayPortMapping> {
+    pub fn port_mapping(&self) -> std::option::Option<& crate::model::VirtualGatewayPortMapping> {
         self.port_mapping.as_ref()
     }
     /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for the listener.</p>
-    pub fn tls(&self) -> std::option::Option<&crate::model::VirtualGatewayListenerTls> {
+    pub fn tls(&self) -> std::option::Option<& crate::model::VirtualGatewayListenerTls> {
         self.tls.as_ref()
     }
     /// <p>The connection pool information for the virtual gateway listener.</p>
-    pub fn connection_pool(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualGatewayConnectionPool> {
+    pub fn connection_pool(&self) -> std::option::Option<& crate::model::VirtualGatewayConnectionPool> {
         self.connection_pool.as_ref()
     }
 }
 /// See [`VirtualGatewayListener`](crate::model::VirtualGatewayListener).
 pub mod virtual_gateway_listener {
-
+    
     /// A builder for [`VirtualGatewayListener`](crate::model::VirtualGatewayListener).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10070,20 +9528,13 @@ pub mod virtual_gateway_listener {
     }
     impl Builder {
         /// <p>The health check information for the listener.</p>
-        pub fn health_check(
-            mut self,
-            input: crate::model::VirtualGatewayHealthCheckPolicy,
-        ) -> Self {
+        pub fn health_check(mut self, input: crate::model::VirtualGatewayHealthCheckPolicy) -> Self {
             self.health_check = Some(input);
             self
         }
         /// <p>The health check information for the listener.</p>
-        pub fn set_health_check(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayHealthCheckPolicy>,
-        ) -> Self {
-            self.health_check = input;
-            self
+        pub fn set_health_check(mut self, input: std::option::Option<crate::model::VirtualGatewayHealthCheckPolicy>) -> Self {
+            self.health_check = input; self
         }
         /// <p>The port mapping information for the listener.</p>
         pub fn port_mapping(mut self, input: crate::model::VirtualGatewayPortMapping) -> Self {
@@ -10091,12 +9542,8 @@ pub mod virtual_gateway_listener {
             self
         }
         /// <p>The port mapping information for the listener.</p>
-        pub fn set_port_mapping(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayPortMapping>,
-        ) -> Self {
-            self.port_mapping = input;
-            self
+        pub fn set_port_mapping(mut self, input: std::option::Option<crate::model::VirtualGatewayPortMapping>) -> Self {
+            self.port_mapping = input; self
         }
         /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for the listener.</p>
         pub fn tls(mut self, input: crate::model::VirtualGatewayListenerTls) -> Self {
@@ -10104,39 +9551,34 @@ pub mod virtual_gateway_listener {
             self
         }
         /// <p>A reference to an object that represents the Transport Layer Security (TLS) properties for the listener.</p>
-        pub fn set_tls(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayListenerTls>,
-        ) -> Self {
-            self.tls = input;
-            self
+        pub fn set_tls(mut self, input: std::option::Option<crate::model::VirtualGatewayListenerTls>) -> Self {
+            self.tls = input; self
         }
         /// <p>The connection pool information for the virtual gateway listener.</p>
-        pub fn connection_pool(
-            mut self,
-            input: crate::model::VirtualGatewayConnectionPool,
-        ) -> Self {
+        pub fn connection_pool(mut self, input: crate::model::VirtualGatewayConnectionPool) -> Self {
             self.connection_pool = Some(input);
             self
         }
         /// <p>The connection pool information for the virtual gateway listener.</p>
-        pub fn set_connection_pool(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayConnectionPool>,
-        ) -> Self {
-            self.connection_pool = input;
-            self
+        pub fn set_connection_pool(mut self, input: std::option::Option<crate::model::VirtualGatewayConnectionPool>) -> Self {
+            self.connection_pool = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayListener`](crate::model::VirtualGatewayListener).
         pub fn build(self) -> crate::model::VirtualGatewayListener {
             crate::model::VirtualGatewayListener {
-                health_check: self.health_check,
-                port_mapping: self.port_mapping,
-                tls: self.tls,
-                connection_pool: self.connection_pool,
+                health_check: self.health_check
+                ,
+                port_mapping: self.port_mapping
+                ,
+                tls: self.tls
+                ,
+                connection_pool: self.connection_pool
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayListener {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayListener`](crate::model::VirtualGatewayListener).
@@ -10145,8 +9587,8 @@ impl VirtualGatewayListener {
     }
 }
 
-/// <p>An object that represents the type of virtual gateway connection pool.</p>
-/// <p>Only one protocol is used at a time and should be the same protocol as the one chosen under port mapping.</p>
+/// <p>An object that represents the type of virtual gateway connection pool.</p> 
+/// <p>Only one protocol is used at a time and should be the same protocol as the one chosen under port mapping.</p> 
 /// <p>If not present the default value for <code>maxPendingRequests</code> is <code>2147483647</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
@@ -10170,14 +9612,8 @@ pub enum VirtualGatewayConnectionPool {
 impl VirtualGatewayConnectionPool {
     /// Tries to convert the enum instance into [`Grpc`](crate::model::VirtualGatewayConnectionPool::Grpc), extracting the inner [`VirtualGatewayGrpcConnectionPool`](crate::model::VirtualGatewayGrpcConnectionPool).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_grpc(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualGatewayGrpcConnectionPool, &Self> {
-        if let VirtualGatewayConnectionPool::Grpc(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_grpc(&self) -> std::result::Result<&crate::model::VirtualGatewayGrpcConnectionPool, &Self> {
+        if let VirtualGatewayConnectionPool::Grpc(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Grpc`](crate::model::VirtualGatewayConnectionPool::Grpc).
     pub fn is_grpc(&self) -> bool {
@@ -10185,14 +9621,8 @@ impl VirtualGatewayConnectionPool {
     }
     /// Tries to convert the enum instance into [`Http`](crate::model::VirtualGatewayConnectionPool::Http), extracting the inner [`VirtualGatewayHttpConnectionPool`](crate::model::VirtualGatewayHttpConnectionPool).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_http(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualGatewayHttpConnectionPool, &Self> {
-        if let VirtualGatewayConnectionPool::Http(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_http(&self) -> std::result::Result<&crate::model::VirtualGatewayHttpConnectionPool, &Self> {
+        if let VirtualGatewayConnectionPool::Http(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Http`](crate::model::VirtualGatewayConnectionPool::Http).
     pub fn is_http(&self) -> bool {
@@ -10200,14 +9630,8 @@ impl VirtualGatewayConnectionPool {
     }
     /// Tries to convert the enum instance into [`Http2`](crate::model::VirtualGatewayConnectionPool::Http2), extracting the inner [`VirtualGatewayHttp2ConnectionPool`](crate::model::VirtualGatewayHttp2ConnectionPool).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_http2(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualGatewayHttp2ConnectionPool, &Self> {
-        if let VirtualGatewayConnectionPool::Http2(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_http2(&self) -> std::result::Result<&crate::model::VirtualGatewayHttp2ConnectionPool, &Self> {
+        if let VirtualGatewayConnectionPool::Http2(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Http2`](crate::model::VirtualGatewayConnectionPool::Http2).
     pub fn is_http2(&self) -> bool {
@@ -10222,7 +9646,7 @@ impl VirtualGatewayConnectionPool {
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayGrpcConnectionPool {
+pub struct VirtualGatewayGrpcConnectionPool  {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     #[doc(hidden)]
     pub max_requests: i32,
@@ -10235,7 +9659,7 @@ impl VirtualGatewayGrpcConnectionPool {
 }
 /// See [`VirtualGatewayGrpcConnectionPool`](crate::model::VirtualGatewayGrpcConnectionPool).
 pub mod virtual_gateway_grpc_connection_pool {
-
+    
     /// A builder for [`VirtualGatewayGrpcConnectionPool`](crate::model::VirtualGatewayGrpcConnectionPool).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10249,16 +9673,19 @@ pub mod virtual_gateway_grpc_connection_pool {
         }
         /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
         pub fn set_max_requests(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_requests = input;
-            self
+            self.max_requests = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayGrpcConnectionPool`](crate::model::VirtualGatewayGrpcConnectionPool).
         pub fn build(self) -> crate::model::VirtualGatewayGrpcConnectionPool {
             crate::model::VirtualGatewayGrpcConnectionPool {
-                max_requests: self.max_requests.unwrap_or_default(),
+                max_requests: self.max_requests
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayGrpcConnectionPool {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayGrpcConnectionPool`](crate::model::VirtualGatewayGrpcConnectionPool).
@@ -10270,7 +9697,7 @@ impl VirtualGatewayGrpcConnectionPool {
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayHttp2ConnectionPool {
+pub struct VirtualGatewayHttp2ConnectionPool  {
     /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
     #[doc(hidden)]
     pub max_requests: i32,
@@ -10283,7 +9710,7 @@ impl VirtualGatewayHttp2ConnectionPool {
 }
 /// See [`VirtualGatewayHttp2ConnectionPool`](crate::model::VirtualGatewayHttp2ConnectionPool).
 pub mod virtual_gateway_http2_connection_pool {
-
+    
     /// A builder for [`VirtualGatewayHttp2ConnectionPool`](crate::model::VirtualGatewayHttp2ConnectionPool).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10297,16 +9724,19 @@ pub mod virtual_gateway_http2_connection_pool {
         }
         /// <p>Maximum number of inflight requests Envoy can concurrently support across hosts in upstream cluster.</p>
         pub fn set_max_requests(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_requests = input;
-            self
+            self.max_requests = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayHttp2ConnectionPool`](crate::model::VirtualGatewayHttp2ConnectionPool).
         pub fn build(self) -> crate::model::VirtualGatewayHttp2ConnectionPool {
             crate::model::VirtualGatewayHttp2ConnectionPool {
-                max_requests: self.max_requests.unwrap_or_default(),
+                max_requests: self.max_requests
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayHttp2ConnectionPool {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayHttp2ConnectionPool`](crate::model::VirtualGatewayHttp2ConnectionPool).
@@ -10318,7 +9748,7 @@ impl VirtualGatewayHttp2ConnectionPool {
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayHttpConnectionPool {
+pub struct VirtualGatewayHttpConnectionPool  {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     #[doc(hidden)]
     pub max_connections: i32,
@@ -10338,7 +9768,7 @@ impl VirtualGatewayHttpConnectionPool {
 }
 /// See [`VirtualGatewayHttpConnectionPool`](crate::model::VirtualGatewayHttpConnectionPool).
 pub mod virtual_gateway_http_connection_pool {
-
+    
     /// A builder for [`VirtualGatewayHttpConnectionPool`](crate::model::VirtualGatewayHttpConnectionPool).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10353,8 +9783,7 @@ pub mod virtual_gateway_http_connection_pool {
         }
         /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
         pub fn set_max_connections(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_connections = input;
-            self
+            self.max_connections = input; self
         }
         /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
         pub fn max_pending_requests(mut self, input: i32) -> Self {
@@ -10363,17 +9792,21 @@ pub mod virtual_gateway_http_connection_pool {
         }
         /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
         pub fn set_max_pending_requests(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_pending_requests = input;
-            self
+            self.max_pending_requests = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayHttpConnectionPool`](crate::model::VirtualGatewayHttpConnectionPool).
         pub fn build(self) -> crate::model::VirtualGatewayHttpConnectionPool {
             crate::model::VirtualGatewayHttpConnectionPool {
-                max_connections: self.max_connections.unwrap_or_default(),
-                max_pending_requests: self.max_pending_requests,
+                max_connections: self.max_connections
+                    .unwrap_or_default()
+                ,
+                max_pending_requests: self.max_pending_requests
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayHttpConnectionPool {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayHttpConnectionPool`](crate::model::VirtualGatewayHttpConnectionPool).
@@ -10385,12 +9818,12 @@ impl VirtualGatewayHttpConnectionPool {
 /// <p>An object that represents the Transport Layer Security (TLS) properties for a listener.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayListenerTls {
-    /// <p>Specify one of the following modes.</p>
-    /// <ul>
-    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+pub struct VirtualGatewayListenerTls  {
+    /// <p>Specify one of the following modes.</p> 
+    /// <ul> 
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li> 
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li> 
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub mode: std::option::Option<crate::model::VirtualGatewayListenerTlsMode>,
@@ -10402,105 +9835,86 @@ pub struct VirtualGatewayListenerTls {
     pub certificate: std::option::Option<crate::model::VirtualGatewayListenerTlsCertificate>,
 }
 impl VirtualGatewayListenerTls {
-    /// <p>Specify one of the following modes.</p>
-    /// <ul>
-    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+    /// <p>Specify one of the following modes.</p> 
+    /// <ul> 
+    /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li> 
+    /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li> 
+    /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li> 
     /// </ul>
-    pub fn mode(&self) -> std::option::Option<&crate::model::VirtualGatewayListenerTlsMode> {
+    pub fn mode(&self) -> std::option::Option<& crate::model::VirtualGatewayListenerTlsMode> {
         self.mode.as_ref()
     }
     /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
-    pub fn validation(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualGatewayListenerTlsValidationContext> {
+    pub fn validation(&self) -> std::option::Option<& crate::model::VirtualGatewayListenerTlsValidationContext> {
         self.validation.as_ref()
     }
     /// <p>An object that represents a Transport Layer Security (TLS) certificate.</p>
-    pub fn certificate(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualGatewayListenerTlsCertificate> {
+    pub fn certificate(&self) -> std::option::Option<& crate::model::VirtualGatewayListenerTlsCertificate> {
         self.certificate.as_ref()
     }
 }
 /// See [`VirtualGatewayListenerTls`](crate::model::VirtualGatewayListenerTls).
 pub mod virtual_gateway_listener_tls {
-
+    
     /// A builder for [`VirtualGatewayListenerTls`](crate::model::VirtualGatewayListenerTls).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mode: std::option::Option<crate::model::VirtualGatewayListenerTlsMode>,
-        pub(crate) validation:
-            std::option::Option<crate::model::VirtualGatewayListenerTlsValidationContext>,
-        pub(crate) certificate:
-            std::option::Option<crate::model::VirtualGatewayListenerTlsCertificate>,
+        pub(crate) validation: std::option::Option<crate::model::VirtualGatewayListenerTlsValidationContext>,
+        pub(crate) certificate: std::option::Option<crate::model::VirtualGatewayListenerTlsCertificate>,
     }
     impl Builder {
-        /// <p>Specify one of the following modes.</p>
-        /// <ul>
-        /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-        /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-        /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+        /// <p>Specify one of the following modes.</p> 
+        /// <ul> 
+        /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li> 
+        /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li> 
+        /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li> 
         /// </ul>
         pub fn mode(mut self, input: crate::model::VirtualGatewayListenerTlsMode) -> Self {
             self.mode = Some(input);
             self
         }
-        /// <p>Specify one of the following modes.</p>
-        /// <ul>
-        /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li>
-        /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li>
-        /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li>
+        /// <p>Specify one of the following modes.</p> 
+        /// <ul> 
+        /// <li> <p> <b></b>STRICT – Listener only accepts connections with TLS enabled. </p> </li> 
+        /// <li> <p> <b></b>PERMISSIVE – Listener accepts connections with or without TLS enabled.</p> </li> 
+        /// <li> <p> <b></b>DISABLED – Listener only accepts connections without TLS. </p> </li> 
         /// </ul>
-        pub fn set_mode(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayListenerTlsMode>,
-        ) -> Self {
-            self.mode = input;
-            self
+        pub fn set_mode(mut self, input: std::option::Option<crate::model::VirtualGatewayListenerTlsMode>) -> Self {
+            self.mode = input; self
         }
         /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
-        pub fn validation(
-            mut self,
-            input: crate::model::VirtualGatewayListenerTlsValidationContext,
-        ) -> Self {
+        pub fn validation(mut self, input: crate::model::VirtualGatewayListenerTlsValidationContext) -> Self {
             self.validation = Some(input);
             self
         }
         /// <p>A reference to an object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
-        pub fn set_validation(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayListenerTlsValidationContext>,
-        ) -> Self {
-            self.validation = input;
-            self
+        pub fn set_validation(mut self, input: std::option::Option<crate::model::VirtualGatewayListenerTlsValidationContext>) -> Self {
+            self.validation = input; self
         }
         /// <p>An object that represents a Transport Layer Security (TLS) certificate.</p>
-        pub fn certificate(
-            mut self,
-            input: crate::model::VirtualGatewayListenerTlsCertificate,
-        ) -> Self {
+        pub fn certificate(mut self, input: crate::model::VirtualGatewayListenerTlsCertificate) -> Self {
             self.certificate = Some(input);
             self
         }
         /// <p>An object that represents a Transport Layer Security (TLS) certificate.</p>
-        pub fn set_certificate(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayListenerTlsCertificate>,
-        ) -> Self {
-            self.certificate = input;
-            self
+        pub fn set_certificate(mut self, input: std::option::Option<crate::model::VirtualGatewayListenerTlsCertificate>) -> Self {
+            self.certificate = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayListenerTls`](crate::model::VirtualGatewayListenerTls).
         pub fn build(self) -> crate::model::VirtualGatewayListenerTls {
             crate::model::VirtualGatewayListenerTls {
-                mode: self.mode,
-                validation: self.validation,
-                certificate: self.certificate,
+                mode: self.mode
+                ,
+                validation: self.validation
+                ,
+                certificate: self.certificate
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayListenerTls {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayListenerTls`](crate::model::VirtualGatewayListenerTls).
@@ -10532,14 +9946,8 @@ pub enum VirtualGatewayListenerTlsCertificate {
 impl VirtualGatewayListenerTlsCertificate {
     /// Tries to convert the enum instance into [`Acm`](crate::model::VirtualGatewayListenerTlsCertificate::Acm), extracting the inner [`VirtualGatewayListenerTlsAcmCertificate`](crate::model::VirtualGatewayListenerTlsAcmCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_acm(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsAcmCertificate, &Self> {
-        if let VirtualGatewayListenerTlsCertificate::Acm(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_acm(&self) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsAcmCertificate, &Self> {
+        if let VirtualGatewayListenerTlsCertificate::Acm(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Acm`](crate::model::VirtualGatewayListenerTlsCertificate::Acm).
     pub fn is_acm(&self) -> bool {
@@ -10547,14 +9955,8 @@ impl VirtualGatewayListenerTlsCertificate {
     }
     /// Tries to convert the enum instance into [`File`](crate::model::VirtualGatewayListenerTlsCertificate::File), extracting the inner [`VirtualGatewayListenerTlsFileCertificate`](crate::model::VirtualGatewayListenerTlsFileCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_file(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsFileCertificate, &Self> {
-        if let VirtualGatewayListenerTlsCertificate::File(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_file(&self) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsFileCertificate, &Self> {
+        if let VirtualGatewayListenerTlsCertificate::File(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`File`](crate::model::VirtualGatewayListenerTlsCertificate::File).
     pub fn is_file(&self) -> bool {
@@ -10562,14 +9964,8 @@ impl VirtualGatewayListenerTlsCertificate {
     }
     /// Tries to convert the enum instance into [`Sds`](crate::model::VirtualGatewayListenerTlsCertificate::Sds), extracting the inner [`VirtualGatewayListenerTlsSdsCertificate`](crate::model::VirtualGatewayListenerTlsSdsCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sds(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsSdsCertificate, &Self> {
-        if let VirtualGatewayListenerTlsCertificate::Sds(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_sds(&self) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsSdsCertificate, &Self> {
+        if let VirtualGatewayListenerTlsCertificate::Sds(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Sds`](crate::model::VirtualGatewayListenerTlsCertificate::Sds).
     pub fn is_sds(&self) -> bool {
@@ -10584,20 +9980,20 @@ impl VirtualGatewayListenerTlsCertificate {
 /// <p>An object that represents the virtual gateway's listener's Secret Discovery Service certificate.The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh<a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a> for more info. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayListenerTlsSdsCertificate {
+pub struct VirtualGatewayListenerTlsSdsCertificate  {
     /// <p>A reference to an object that represents the name of the secret secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
     #[doc(hidden)]
     pub secret_name: std::option::Option<std::string::String>,
 }
 impl VirtualGatewayListenerTlsSdsCertificate {
     /// <p>A reference to an object that represents the name of the secret secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
-    pub fn secret_name(&self) -> std::option::Option<&str> {
+    pub fn secret_name(&self) -> std::option::Option<& str> {
         self.secret_name.as_deref()
     }
 }
 /// See [`VirtualGatewayListenerTlsSdsCertificate`](crate::model::VirtualGatewayListenerTlsSdsCertificate).
 pub mod virtual_gateway_listener_tls_sds_certificate {
-
+    
     /// A builder for [`VirtualGatewayListenerTlsSdsCertificate`](crate::model::VirtualGatewayListenerTlsSdsCertificate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10611,16 +10007,18 @@ pub mod virtual_gateway_listener_tls_sds_certificate {
         }
         /// <p>A reference to an object that represents the name of the secret secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
         pub fn set_secret_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_name = input;
-            self
+            self.secret_name = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayListenerTlsSdsCertificate`](crate::model::VirtualGatewayListenerTlsSdsCertificate).
         pub fn build(self) -> crate::model::VirtualGatewayListenerTlsSdsCertificate {
             crate::model::VirtualGatewayListenerTlsSdsCertificate {
-                secret_name: self.secret_name,
+                secret_name: self.secret_name
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayListenerTlsSdsCertificate {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayListenerTlsSdsCertificate`](crate::model::VirtualGatewayListenerTlsSdsCertificate).
@@ -10632,7 +10030,7 @@ impl VirtualGatewayListenerTlsSdsCertificate {
 /// <p>An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayListenerTlsFileCertificate {
+pub struct VirtualGatewayListenerTlsFileCertificate  {
     /// <p>The certificate chain for the certificate.</p>
     #[doc(hidden)]
     pub certificate_chain: std::option::Option<std::string::String>,
@@ -10642,17 +10040,17 @@ pub struct VirtualGatewayListenerTlsFileCertificate {
 }
 impl VirtualGatewayListenerTlsFileCertificate {
     /// <p>The certificate chain for the certificate.</p>
-    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+    pub fn certificate_chain(&self) -> std::option::Option<& str> {
         self.certificate_chain.as_deref()
     }
     /// <p>The private key for a certificate stored on the file system of the mesh endpoint that the proxy is running on.</p>
-    pub fn private_key(&self) -> std::option::Option<&str> {
+    pub fn private_key(&self) -> std::option::Option<& str> {
         self.private_key.as_deref()
     }
 }
 /// See [`VirtualGatewayListenerTlsFileCertificate`](crate::model::VirtualGatewayListenerTlsFileCertificate).
 pub mod virtual_gateway_listener_tls_file_certificate {
-
+    
     /// A builder for [`VirtualGatewayListenerTlsFileCertificate`](crate::model::VirtualGatewayListenerTlsFileCertificate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10666,12 +10064,8 @@ pub mod virtual_gateway_listener_tls_file_certificate {
             self
         }
         /// <p>The certificate chain for the certificate.</p>
-        pub fn set_certificate_chain(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_chain = input;
-            self
+        pub fn set_certificate_chain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_chain = input; self
         }
         /// <p>The private key for a certificate stored on the file system of the mesh endpoint that the proxy is running on.</p>
         pub fn private_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10680,17 +10074,20 @@ pub mod virtual_gateway_listener_tls_file_certificate {
         }
         /// <p>The private key for a certificate stored on the file system of the mesh endpoint that the proxy is running on.</p>
         pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.private_key = input;
-            self
+            self.private_key = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayListenerTlsFileCertificate`](crate::model::VirtualGatewayListenerTlsFileCertificate).
         pub fn build(self) -> crate::model::VirtualGatewayListenerTlsFileCertificate {
             crate::model::VirtualGatewayListenerTlsFileCertificate {
-                certificate_chain: self.certificate_chain,
-                private_key: self.private_key,
+                certificate_chain: self.certificate_chain
+                ,
+                private_key: self.private_key
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayListenerTlsFileCertificate {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayListenerTlsFileCertificate`](crate::model::VirtualGatewayListenerTlsFileCertificate).
@@ -10702,20 +10099,20 @@ impl VirtualGatewayListenerTlsFileCertificate {
 /// <p>An object that represents an Certificate Manager certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayListenerTlsAcmCertificate {
+pub struct VirtualGatewayListenerTlsAcmCertificate  {
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
     #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
 }
 impl VirtualGatewayListenerTlsAcmCertificate {
     /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
 }
 /// See [`VirtualGatewayListenerTlsAcmCertificate`](crate::model::VirtualGatewayListenerTlsAcmCertificate).
 pub mod virtual_gateway_listener_tls_acm_certificate {
-
+    
     /// A builder for [`VirtualGatewayListenerTlsAcmCertificate`](crate::model::VirtualGatewayListenerTlsAcmCertificate).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10728,20 +10125,19 @@ pub mod virtual_gateway_listener_tls_acm_certificate {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport Layer Security (TLS)</a>.</p>
-        pub fn set_certificate_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_arn = input;
-            self
+        pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_arn = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayListenerTlsAcmCertificate`](crate::model::VirtualGatewayListenerTlsAcmCertificate).
         pub fn build(self) -> crate::model::VirtualGatewayListenerTlsAcmCertificate {
             crate::model::VirtualGatewayListenerTlsAcmCertificate {
-                certificate_arn: self.certificate_arn,
+                certificate_arn: self.certificate_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayListenerTlsAcmCertificate {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayListenerTlsAcmCertificate`](crate::model::VirtualGatewayListenerTlsAcmCertificate).
@@ -10753,7 +10149,7 @@ impl VirtualGatewayListenerTlsAcmCertificate {
 /// <p>An object that represents a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayListenerTlsValidationContext {
+pub struct VirtualGatewayListenerTlsValidationContext  {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     #[doc(hidden)]
     pub trust: std::option::Option<crate::model::VirtualGatewayListenerTlsValidationContextTrust>,
@@ -10763,72 +10159,54 @@ pub struct VirtualGatewayListenerTlsValidationContext {
 }
 impl VirtualGatewayListenerTlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
-    pub fn trust(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualGatewayListenerTlsValidationContextTrust> {
+    pub fn trust(&self) -> std::option::Option<& crate::model::VirtualGatewayListenerTlsValidationContextTrust> {
         self.trust.as_ref()
     }
     /// <p>A reference to an object that represents the SANs for a virtual gateway listener's Transport Layer Security (TLS) validation context.</p>
-    pub fn subject_alternative_names(
-        &self,
-    ) -> std::option::Option<&crate::model::SubjectAlternativeNames> {
+    pub fn subject_alternative_names(&self) -> std::option::Option<& crate::model::SubjectAlternativeNames> {
         self.subject_alternative_names.as_ref()
     }
 }
 /// See [`VirtualGatewayListenerTlsValidationContext`](crate::model::VirtualGatewayListenerTlsValidationContext).
 pub mod virtual_gateway_listener_tls_validation_context {
-
+    
     /// A builder for [`VirtualGatewayListenerTlsValidationContext`](crate::model::VirtualGatewayListenerTlsValidationContext).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) trust:
-            std::option::Option<crate::model::VirtualGatewayListenerTlsValidationContextTrust>,
-        pub(crate) subject_alternative_names:
-            std::option::Option<crate::model::SubjectAlternativeNames>,
+        pub(crate) trust: std::option::Option<crate::model::VirtualGatewayListenerTlsValidationContextTrust>,
+        pub(crate) subject_alternative_names: std::option::Option<crate::model::SubjectAlternativeNames>,
     }
     impl Builder {
         /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
-        pub fn trust(
-            mut self,
-            input: crate::model::VirtualGatewayListenerTlsValidationContextTrust,
-        ) -> Self {
+        pub fn trust(mut self, input: crate::model::VirtualGatewayListenerTlsValidationContextTrust) -> Self {
             self.trust = Some(input);
             self
         }
         /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
-        pub fn set_trust(
-            mut self,
-            input: std::option::Option<
-                crate::model::VirtualGatewayListenerTlsValidationContextTrust,
-            >,
-        ) -> Self {
-            self.trust = input;
-            self
+        pub fn set_trust(mut self, input: std::option::Option<crate::model::VirtualGatewayListenerTlsValidationContextTrust>) -> Self {
+            self.trust = input; self
         }
         /// <p>A reference to an object that represents the SANs for a virtual gateway listener's Transport Layer Security (TLS) validation context.</p>
-        pub fn subject_alternative_names(
-            mut self,
-            input: crate::model::SubjectAlternativeNames,
-        ) -> Self {
+        pub fn subject_alternative_names(mut self, input: crate::model::SubjectAlternativeNames) -> Self {
             self.subject_alternative_names = Some(input);
             self
         }
         /// <p>A reference to an object that represents the SANs for a virtual gateway listener's Transport Layer Security (TLS) validation context.</p>
-        pub fn set_subject_alternative_names(
-            mut self,
-            input: std::option::Option<crate::model::SubjectAlternativeNames>,
-        ) -> Self {
-            self.subject_alternative_names = input;
-            self
+        pub fn set_subject_alternative_names(mut self, input: std::option::Option<crate::model::SubjectAlternativeNames>) -> Self {
+            self.subject_alternative_names = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayListenerTlsValidationContext`](crate::model::VirtualGatewayListenerTlsValidationContext).
         pub fn build(self) -> crate::model::VirtualGatewayListenerTlsValidationContext {
             crate::model::VirtualGatewayListenerTlsValidationContext {
-                trust: self.trust,
-                subject_alternative_names: self.subject_alternative_names,
+                trust: self.trust
+                ,
+                subject_alternative_names: self.subject_alternative_names
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayListenerTlsValidationContext {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayListenerTlsValidationContext`](crate::model::VirtualGatewayListenerTlsValidationContext).
@@ -10858,15 +10236,8 @@ pub enum VirtualGatewayListenerTlsValidationContextTrust {
 impl VirtualGatewayListenerTlsValidationContextTrust {
     /// Tries to convert the enum instance into [`File`](crate::model::VirtualGatewayListenerTlsValidationContextTrust::File), extracting the inner [`VirtualGatewayTlsValidationContextFileTrust`](crate::model::VirtualGatewayTlsValidationContextFileTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_file(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextFileTrust, &Self>
-    {
-        if let VirtualGatewayListenerTlsValidationContextTrust::File(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_file(&self) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextFileTrust, &Self> {
+        if let VirtualGatewayListenerTlsValidationContextTrust::File(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`File`](crate::model::VirtualGatewayListenerTlsValidationContextTrust::File).
     pub fn is_file(&self) -> bool {
@@ -10874,14 +10245,8 @@ impl VirtualGatewayListenerTlsValidationContextTrust {
     }
     /// Tries to convert the enum instance into [`Sds`](crate::model::VirtualGatewayListenerTlsValidationContextTrust::Sds), extracting the inner [`VirtualGatewayTlsValidationContextSdsTrust`](crate::model::VirtualGatewayTlsValidationContextSdsTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sds(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextSdsTrust, &Self> {
-        if let VirtualGatewayListenerTlsValidationContextTrust::Sds(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_sds(&self) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextSdsTrust, &Self> {
+        if let VirtualGatewayListenerTlsValidationContextTrust::Sds(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Sds`](crate::model::VirtualGatewayListenerTlsValidationContextTrust::Sds).
     pub fn is_sds(&self) -> bool {
@@ -10896,20 +10261,20 @@ impl VirtualGatewayListenerTlsValidationContextTrust {
 /// <p>An object that represents a virtual gateway's listener's Transport Layer Security (TLS) Secret Discovery Service validation context trust. The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a> for more info.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayTlsValidationContextSdsTrust {
+pub struct VirtualGatewayTlsValidationContextSdsTrust  {
     /// <p>A reference to an object that represents the name of the secret for a virtual gateway's Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
     #[doc(hidden)]
     pub secret_name: std::option::Option<std::string::String>,
 }
 impl VirtualGatewayTlsValidationContextSdsTrust {
     /// <p>A reference to an object that represents the name of the secret for a virtual gateway's Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
-    pub fn secret_name(&self) -> std::option::Option<&str> {
+    pub fn secret_name(&self) -> std::option::Option<& str> {
         self.secret_name.as_deref()
     }
 }
 /// See [`VirtualGatewayTlsValidationContextSdsTrust`](crate::model::VirtualGatewayTlsValidationContextSdsTrust).
 pub mod virtual_gateway_tls_validation_context_sds_trust {
-
+    
     /// A builder for [`VirtualGatewayTlsValidationContextSdsTrust`](crate::model::VirtualGatewayTlsValidationContextSdsTrust).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10923,16 +10288,18 @@ pub mod virtual_gateway_tls_validation_context_sds_trust {
         }
         /// <p>A reference to an object that represents the name of the secret for a virtual gateway's Transport Layer Security (TLS) Secret Discovery Service validation context trust.</p>
         pub fn set_secret_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret_name = input;
-            self
+            self.secret_name = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayTlsValidationContextSdsTrust`](crate::model::VirtualGatewayTlsValidationContextSdsTrust).
         pub fn build(self) -> crate::model::VirtualGatewayTlsValidationContextSdsTrust {
             crate::model::VirtualGatewayTlsValidationContextSdsTrust {
-                secret_name: self.secret_name,
+                secret_name: self.secret_name
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayTlsValidationContextSdsTrust {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayTlsValidationContextSdsTrust`](crate::model::VirtualGatewayTlsValidationContextSdsTrust).
@@ -10944,20 +10311,20 @@ impl VirtualGatewayTlsValidationContextSdsTrust {
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for a local file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayTlsValidationContextFileTrust {
+pub struct VirtualGatewayTlsValidationContextFileTrust  {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
     #[doc(hidden)]
     pub certificate_chain: std::option::Option<std::string::String>,
 }
 impl VirtualGatewayTlsValidationContextFileTrust {
     /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
-    pub fn certificate_chain(&self) -> std::option::Option<&str> {
+    pub fn certificate_chain(&self) -> std::option::Option<& str> {
         self.certificate_chain.as_deref()
     }
 }
 /// See [`VirtualGatewayTlsValidationContextFileTrust`](crate::model::VirtualGatewayTlsValidationContextFileTrust).
 pub mod virtual_gateway_tls_validation_context_file_trust {
-
+    
     /// A builder for [`VirtualGatewayTlsValidationContextFileTrust`](crate::model::VirtualGatewayTlsValidationContextFileTrust).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -10970,20 +10337,19 @@ pub mod virtual_gateway_tls_validation_context_file_trust {
             self
         }
         /// <p>The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.</p>
-        pub fn set_certificate_chain(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.certificate_chain = input;
-            self
+        pub fn set_certificate_chain(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.certificate_chain = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayTlsValidationContextFileTrust`](crate::model::VirtualGatewayTlsValidationContextFileTrust).
         pub fn build(self) -> crate::model::VirtualGatewayTlsValidationContextFileTrust {
             crate::model::VirtualGatewayTlsValidationContextFileTrust {
-                certificate_chain: self.certificate_chain,
+                certificate_chain: self.certificate_chain
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayTlsValidationContextFileTrust {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayTlsValidationContextFileTrust`](crate::model::VirtualGatewayTlsValidationContextFileTrust).
@@ -10998,9 +10364,9 @@ impl VirtualGatewayTlsValidationContextFileTrust {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let virtualgatewaylistenertlsmode = unimplemented!();
 /// match virtualgatewaylistenertlsmode {
@@ -11023,22 +10389,14 @@ impl VirtualGatewayTlsValidationContextFileTrust {
 /// Specifically, when `virtualgatewaylistenertlsmode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VirtualGatewayListenerTlsMode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VirtualGatewayListenerTlsMode {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
@@ -11047,7 +10405,7 @@ pub enum VirtualGatewayListenerTlsMode {
     #[allow(missing_docs)] // documentation missing in model
     Strict,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VirtualGatewayListenerTlsMode {
     fn from(s: &str) -> Self {
@@ -11055,19 +10413,17 @@ impl std::convert::From<&str> for VirtualGatewayListenerTlsMode {
             "DISABLED" => VirtualGatewayListenerTlsMode::Disabled,
             "PERMISSIVE" => VirtualGatewayListenerTlsMode::Permissive,
             "STRICT" => VirtualGatewayListenerTlsMode::Strict,
-            other => VirtualGatewayListenerTlsMode::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => VirtualGatewayListenerTlsMode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VirtualGatewayListenerTlsMode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VirtualGatewayListenerTlsMode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VirtualGatewayListenerTlsMode::from(s))
+                }
+            }
 impl VirtualGatewayListenerTlsMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -11075,12 +10431,14 @@ impl VirtualGatewayListenerTlsMode {
             VirtualGatewayListenerTlsMode::Disabled => "DISABLED",
             VirtualGatewayListenerTlsMode::Permissive => "PERMISSIVE",
             VirtualGatewayListenerTlsMode::Strict => "STRICT",
-            VirtualGatewayListenerTlsMode::Unknown(value) => value.as_str(),
+            VirtualGatewayListenerTlsMode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "PERMISSIVE", "STRICT"]
+        &[
+            "DISABLED", "PERMISSIVE", "STRICT"
+        ]
     }
 }
 impl AsRef<str> for VirtualGatewayListenerTlsMode {
@@ -11092,7 +10450,7 @@ impl AsRef<str> for VirtualGatewayListenerTlsMode {
 /// <p>An object that represents a port mapping.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayPortMapping {
+pub struct VirtualGatewayPortMapping  {
     /// <p>The port used for the port mapping. Specify one protocol.</p>
     #[doc(hidden)]
     pub port: i32,
@@ -11106,13 +10464,13 @@ impl VirtualGatewayPortMapping {
         self.port
     }
     /// <p>The protocol used for the port mapping.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::model::VirtualGatewayPortProtocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::model::VirtualGatewayPortProtocol> {
         self.protocol.as_ref()
     }
 }
 /// See [`VirtualGatewayPortMapping`](crate::model::VirtualGatewayPortMapping).
 pub mod virtual_gateway_port_mapping {
-
+    
     /// A builder for [`VirtualGatewayPortMapping`](crate::model::VirtualGatewayPortMapping).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11127,8 +10485,7 @@ pub mod virtual_gateway_port_mapping {
         }
         /// <p>The port used for the port mapping. Specify one protocol.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// <p>The protocol used for the port mapping.</p>
         pub fn protocol(mut self, input: crate::model::VirtualGatewayPortProtocol) -> Self {
@@ -11136,21 +10493,22 @@ pub mod virtual_gateway_port_mapping {
             self
         }
         /// <p>The protocol used for the port mapping.</p>
-        pub fn set_protocol(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayPortProtocol>,
-        ) -> Self {
-            self.protocol = input;
-            self
+        pub fn set_protocol(mut self, input: std::option::Option<crate::model::VirtualGatewayPortProtocol>) -> Self {
+            self.protocol = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayPortMapping`](crate::model::VirtualGatewayPortMapping).
         pub fn build(self) -> crate::model::VirtualGatewayPortMapping {
             crate::model::VirtualGatewayPortMapping {
-                port: self.port.unwrap_or_default(),
-                protocol: self.protocol,
+                port: self.port
+                    .unwrap_or_default()
+                ,
+                protocol: self.protocol
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayPortMapping {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayPortMapping`](crate::model::VirtualGatewayPortMapping).
@@ -11165,9 +10523,9 @@ impl VirtualGatewayPortMapping {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let virtualgatewayportprotocol = unimplemented!();
 /// match virtualgatewayportprotocol {
@@ -11190,22 +10548,14 @@ impl VirtualGatewayPortMapping {
 /// Specifically, when `virtualgatewayportprotocol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VirtualGatewayPortProtocol::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum VirtualGatewayPortProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Grpc,
@@ -11214,7 +10564,7 @@ pub enum VirtualGatewayPortProtocol {
     #[allow(missing_docs)] // documentation missing in model
     Http2,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for VirtualGatewayPortProtocol {
     fn from(s: &str) -> Self {
@@ -11222,19 +10572,17 @@ impl std::convert::From<&str> for VirtualGatewayPortProtocol {
             "grpc" => VirtualGatewayPortProtocol::Grpc,
             "http" => VirtualGatewayPortProtocol::Http,
             "http2" => VirtualGatewayPortProtocol::Http2,
-            other => VirtualGatewayPortProtocol::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => VirtualGatewayPortProtocol::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for VirtualGatewayPortProtocol {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VirtualGatewayPortProtocol::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(VirtualGatewayPortProtocol::from(s))
+                }
+            }
 impl VirtualGatewayPortProtocol {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -11242,12 +10590,14 @@ impl VirtualGatewayPortProtocol {
             VirtualGatewayPortProtocol::Grpc => "grpc",
             VirtualGatewayPortProtocol::Http => "http",
             VirtualGatewayPortProtocol::Http2 => "http2",
-            VirtualGatewayPortProtocol::Unknown(value) => value.as_str(),
+            VirtualGatewayPortProtocol::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["grpc", "http", "http2"]
+        &[
+            "grpc", "http", "http2"
+        ]
     }
 }
 impl AsRef<str> for VirtualGatewayPortProtocol {
@@ -11259,7 +10609,7 @@ impl AsRef<str> for VirtualGatewayPortProtocol {
 /// <p>An object that represents the health check policy for a virtual gateway's listener.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayHealthCheckPolicy {
+pub struct VirtualGatewayHealthCheckPolicy  {
     /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
     #[doc(hidden)]
     pub timeout_millis: std::option::Option<i64>,
@@ -11292,7 +10642,7 @@ impl VirtualGatewayHealthCheckPolicy {
         self.interval_millis
     }
     /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::model::VirtualGatewayPortProtocol> {
+    pub fn protocol(&self) -> std::option::Option<& crate::model::VirtualGatewayPortProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
@@ -11300,7 +10650,7 @@ impl VirtualGatewayHealthCheckPolicy {
         self.port
     }
     /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> std::option::Option<& str> {
         self.path.as_deref()
     }
     /// <p>The number of consecutive successful health checks that must occur before declaring the listener healthy.</p>
@@ -11314,7 +10664,7 @@ impl VirtualGatewayHealthCheckPolicy {
 }
 /// See [`VirtualGatewayHealthCheckPolicy`](crate::model::VirtualGatewayHealthCheckPolicy).
 pub mod virtual_gateway_health_check_policy {
-
+    
     /// A builder for [`VirtualGatewayHealthCheckPolicy`](crate::model::VirtualGatewayHealthCheckPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11334,8 +10684,7 @@ pub mod virtual_gateway_health_check_policy {
         }
         /// <p>The amount of time to wait when receiving a response from the health check, in milliseconds.</p>
         pub fn set_timeout_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.timeout_millis = input;
-            self
+            self.timeout_millis = input; self
         }
         /// <p>The time period in milliseconds between each health check execution.</p>
         pub fn interval_millis(mut self, input: i64) -> Self {
@@ -11344,8 +10693,7 @@ pub mod virtual_gateway_health_check_policy {
         }
         /// <p>The time period in milliseconds between each health check execution.</p>
         pub fn set_interval_millis(mut self, input: std::option::Option<i64>) -> Self {
-            self.interval_millis = input;
-            self
+            self.interval_millis = input; self
         }
         /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
         pub fn protocol(mut self, input: crate::model::VirtualGatewayPortProtocol) -> Self {
@@ -11353,12 +10701,8 @@ pub mod virtual_gateway_health_check_policy {
             self
         }
         /// <p>The protocol for the health check request. If you specify <code>grpc</code>, then your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC Health Checking Protocol</a>.</p>
-        pub fn set_protocol(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayPortProtocol>,
-        ) -> Self {
-            self.protocol = input;
-            self
+        pub fn set_protocol(mut self, input: std::option::Option<crate::model::VirtualGatewayPortProtocol>) -> Self {
+            self.protocol = input; self
         }
         /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
         pub fn port(mut self, input: i32) -> Self {
@@ -11367,8 +10711,7 @@ pub mod virtual_gateway_health_check_policy {
         }
         /// <p>The destination port for the health check request. This port must match the port defined in the <code>PortMapping</code> for the listener.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11377,8 +10720,7 @@ pub mod virtual_gateway_health_check_policy {
         }
         /// <p>The destination path for the health check request. This value is only used if the specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// <p>The number of consecutive successful health checks that must occur before declaring the listener healthy.</p>
         pub fn healthy_threshold(mut self, input: i32) -> Self {
@@ -11387,8 +10729,7 @@ pub mod virtual_gateway_health_check_policy {
         }
         /// <p>The number of consecutive successful health checks that must occur before declaring the listener healthy.</p>
         pub fn set_healthy_threshold(mut self, input: std::option::Option<i32>) -> Self {
-            self.healthy_threshold = input;
-            self
+            self.healthy_threshold = input; self
         }
         /// <p>The number of consecutive failed health checks that must occur before declaring a virtual gateway unhealthy.</p>
         pub fn unhealthy_threshold(mut self, input: i32) -> Self {
@@ -11397,22 +10738,33 @@ pub mod virtual_gateway_health_check_policy {
         }
         /// <p>The number of consecutive failed health checks that must occur before declaring a virtual gateway unhealthy.</p>
         pub fn set_unhealthy_threshold(mut self, input: std::option::Option<i32>) -> Self {
-            self.unhealthy_threshold = input;
-            self
+            self.unhealthy_threshold = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayHealthCheckPolicy`](crate::model::VirtualGatewayHealthCheckPolicy).
         pub fn build(self) -> crate::model::VirtualGatewayHealthCheckPolicy {
             crate::model::VirtualGatewayHealthCheckPolicy {
-                timeout_millis: self.timeout_millis,
-                interval_millis: self.interval_millis,
-                protocol: self.protocol,
-                port: self.port.unwrap_or_default(),
-                path: self.path,
-                healthy_threshold: self.healthy_threshold.unwrap_or_default(),
-                unhealthy_threshold: self.unhealthy_threshold.unwrap_or_default(),
+                timeout_millis: self.timeout_millis
+                ,
+                interval_millis: self.interval_millis
+                ,
+                protocol: self.protocol
+                ,
+                port: self.port
+                    .unwrap_or_default()
+                ,
+                path: self.path
+                ,
+                healthy_threshold: self.healthy_threshold
+                    .unwrap_or_default()
+                ,
+                unhealthy_threshold: self.unhealthy_threshold
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayHealthCheckPolicy {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayHealthCheckPolicy`](crate::model::VirtualGatewayHealthCheckPolicy).
@@ -11424,20 +10776,20 @@ impl VirtualGatewayHealthCheckPolicy {
 /// <p>An object that represents the default properties for a backend.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayBackendDefaults {
+pub struct VirtualGatewayBackendDefaults  {
     /// <p>A reference to an object that represents a client policy.</p>
     #[doc(hidden)]
     pub client_policy: std::option::Option<crate::model::VirtualGatewayClientPolicy>,
 }
 impl VirtualGatewayBackendDefaults {
     /// <p>A reference to an object that represents a client policy.</p>
-    pub fn client_policy(&self) -> std::option::Option<&crate::model::VirtualGatewayClientPolicy> {
+    pub fn client_policy(&self) -> std::option::Option<& crate::model::VirtualGatewayClientPolicy> {
         self.client_policy.as_ref()
     }
 }
 /// See [`VirtualGatewayBackendDefaults`](crate::model::VirtualGatewayBackendDefaults).
 pub mod virtual_gateway_backend_defaults {
-
+    
     /// A builder for [`VirtualGatewayBackendDefaults`](crate::model::VirtualGatewayBackendDefaults).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11450,20 +10802,19 @@ pub mod virtual_gateway_backend_defaults {
             self
         }
         /// <p>A reference to an object that represents a client policy.</p>
-        pub fn set_client_policy(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayClientPolicy>,
-        ) -> Self {
-            self.client_policy = input;
-            self
+        pub fn set_client_policy(mut self, input: std::option::Option<crate::model::VirtualGatewayClientPolicy>) -> Self {
+            self.client_policy = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayBackendDefaults`](crate::model::VirtualGatewayBackendDefaults).
         pub fn build(self) -> crate::model::VirtualGatewayBackendDefaults {
             crate::model::VirtualGatewayBackendDefaults {
-                client_policy: self.client_policy,
+                client_policy: self.client_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayBackendDefaults {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayBackendDefaults`](crate::model::VirtualGatewayBackendDefaults).
@@ -11475,20 +10826,20 @@ impl VirtualGatewayBackendDefaults {
 /// <p>An object that represents a client policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayClientPolicy {
+pub struct VirtualGatewayClientPolicy  {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
     #[doc(hidden)]
     pub tls: std::option::Option<crate::model::VirtualGatewayClientPolicyTls>,
 }
 impl VirtualGatewayClientPolicy {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
-    pub fn tls(&self) -> std::option::Option<&crate::model::VirtualGatewayClientPolicyTls> {
+    pub fn tls(&self) -> std::option::Option<& crate::model::VirtualGatewayClientPolicyTls> {
         self.tls.as_ref()
     }
 }
 /// See [`VirtualGatewayClientPolicy`](crate::model::VirtualGatewayClientPolicy).
 pub mod virtual_gateway_client_policy {
-
+    
     /// A builder for [`VirtualGatewayClientPolicy`](crate::model::VirtualGatewayClientPolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -11501,18 +10852,19 @@ pub mod virtual_gateway_client_policy {
             self
         }
         /// <p>A reference to an object that represents a Transport Layer Security (TLS) client policy.</p>
-        pub fn set_tls(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayClientPolicyTls>,
-        ) -> Self {
-            self.tls = input;
-            self
+        pub fn set_tls(mut self, input: std::option::Option<crate::model::VirtualGatewayClientPolicyTls>) -> Self {
+            self.tls = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayClientPolicy`](crate::model::VirtualGatewayClientPolicy).
         pub fn build(self) -> crate::model::VirtualGatewayClientPolicy {
-            crate::model::VirtualGatewayClientPolicy { tls: self.tls }
+            crate::model::VirtualGatewayClientPolicy {
+                tls: self.tls
+                ,
+            }
         }
     }
+    
+    
 }
 impl VirtualGatewayClientPolicy {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayClientPolicy`](crate::model::VirtualGatewayClientPolicy).
@@ -11524,7 +10876,7 @@ impl VirtualGatewayClientPolicy {
 /// <p>An object that represents a Transport Layer Security (TLS) client policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayClientPolicyTls {
+pub struct VirtualGatewayClientPolicyTls  {
     /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't specified.</p>
     #[doc(hidden)]
     pub enforce: std::option::Option<bool>,
@@ -11544,34 +10896,28 @@ impl VirtualGatewayClientPolicyTls {
         self.enforce
     }
     /// <p>One or more ports that the policy is enforced for.</p>
-    pub fn ports(&self) -> std::option::Option<&[i32]> {
+    pub fn ports(&self) -> std::option::Option<& [i32]> {
         self.ports.as_deref()
     }
     /// <p>A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS) certificate.</p>
-    pub fn certificate(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualGatewayClientTlsCertificate> {
+    pub fn certificate(&self) -> std::option::Option<& crate::model::VirtualGatewayClientTlsCertificate> {
         self.certificate.as_ref()
     }
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context.</p>
-    pub fn validation(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualGatewayTlsValidationContext> {
+    pub fn validation(&self) -> std::option::Option<& crate::model::VirtualGatewayTlsValidationContext> {
         self.validation.as_ref()
     }
 }
 /// See [`VirtualGatewayClientPolicyTls`](crate::model::VirtualGatewayClientPolicyTls).
 pub mod virtual_gateway_client_policy_tls {
-
+    
     /// A builder for [`VirtualGatewayClientPolicyTls`](crate::model::VirtualGatewayClientPolicyTls).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) enforce: std::option::Option<bool>,
         pub(crate) ports: std::option::Option<std::vec::Vec<i32>>,
-        pub(crate) certificate:
-            std::option::Option<crate::model::VirtualGatewayClientTlsCertificate>,
-        pub(crate) validation:
-            std::option::Option<crate::model::VirtualGatewayTlsValidationContext>,
+        pub(crate) certificate: std::option::Option<crate::model::VirtualGatewayClientTlsCertificate>,
+        pub(crate) validation: std::option::Option<crate::model::VirtualGatewayTlsValidationContext>,
     }
     impl Builder {
         /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't specified.</p>
@@ -11581,8 +10927,7 @@ pub mod virtual_gateway_client_policy_tls {
         }
         /// <p>Whether the policy is enforced. The default is <code>True</code>, if a value isn't specified.</p>
         pub fn set_enforce(mut self, input: std::option::Option<bool>) -> Self {
-            self.enforce = input;
-            self
+            self.enforce = input; self
         }
         /// Appends an item to `ports`.
         ///
@@ -11591,57 +10936,48 @@ pub mod virtual_gateway_client_policy_tls {
         /// <p>One or more ports that the policy is enforced for.</p>
         pub fn ports(mut self, input: i32) -> Self {
             let mut v = self.ports.unwrap_or_default();
-            v.push(input);
-            self.ports = Some(v);
-            self
+                            v.push(input);
+                            self.ports = Some(v);
+                            self
         }
         /// <p>One or more ports that the policy is enforced for.</p>
         pub fn set_ports(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
-            self.ports = input;
-            self
+            self.ports = input; self
         }
         /// <p>A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS) certificate.</p>
-        pub fn certificate(
-            mut self,
-            input: crate::model::VirtualGatewayClientTlsCertificate,
-        ) -> Self {
+        pub fn certificate(mut self, input: crate::model::VirtualGatewayClientTlsCertificate) -> Self {
             self.certificate = Some(input);
             self
         }
         /// <p>A reference to an object that represents a virtual gateway's client's Transport Layer Security (TLS) certificate.</p>
-        pub fn set_certificate(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayClientTlsCertificate>,
-        ) -> Self {
-            self.certificate = input;
-            self
+        pub fn set_certificate(mut self, input: std::option::Option<crate::model::VirtualGatewayClientTlsCertificate>) -> Self {
+            self.certificate = input; self
         }
         /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context.</p>
-        pub fn validation(
-            mut self,
-            input: crate::model::VirtualGatewayTlsValidationContext,
-        ) -> Self {
+        pub fn validation(mut self, input: crate::model::VirtualGatewayTlsValidationContext) -> Self {
             self.validation = Some(input);
             self
         }
         /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context.</p>
-        pub fn set_validation(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayTlsValidationContext>,
-        ) -> Self {
-            self.validation = input;
-            self
+        pub fn set_validation(mut self, input: std::option::Option<crate::model::VirtualGatewayTlsValidationContext>) -> Self {
+            self.validation = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayClientPolicyTls`](crate::model::VirtualGatewayClientPolicyTls).
         pub fn build(self) -> crate::model::VirtualGatewayClientPolicyTls {
             crate::model::VirtualGatewayClientPolicyTls {
-                enforce: self.enforce,
-                ports: self.ports,
-                certificate: self.certificate,
-                validation: self.validation,
+                enforce: self.enforce
+                ,
+                ports: self.ports
+                ,
+                certificate: self.certificate
+                ,
+                validation: self.validation
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayClientPolicyTls {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayClientPolicyTls`](crate::model::VirtualGatewayClientPolicyTls).
@@ -11653,7 +10989,7 @@ impl VirtualGatewayClientPolicyTls {
 /// <p>An object that represents a Transport Layer Security (TLS) validation context.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayTlsValidationContext {
+pub struct VirtualGatewayTlsValidationContext  {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     #[doc(hidden)]
     pub trust: std::option::Option<crate::model::VirtualGatewayTlsValidationContextTrust>,
@@ -11663,70 +10999,54 @@ pub struct VirtualGatewayTlsValidationContext {
 }
 impl VirtualGatewayTlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
-    pub fn trust(
-        &self,
-    ) -> std::option::Option<&crate::model::VirtualGatewayTlsValidationContextTrust> {
+    pub fn trust(&self) -> std::option::Option<& crate::model::VirtualGatewayTlsValidationContextTrust> {
         self.trust.as_ref()
     }
     /// <p>A reference to an object that represents the SANs for a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
-    pub fn subject_alternative_names(
-        &self,
-    ) -> std::option::Option<&crate::model::SubjectAlternativeNames> {
+    pub fn subject_alternative_names(&self) -> std::option::Option<& crate::model::SubjectAlternativeNames> {
         self.subject_alternative_names.as_ref()
     }
 }
 /// See [`VirtualGatewayTlsValidationContext`](crate::model::VirtualGatewayTlsValidationContext).
 pub mod virtual_gateway_tls_validation_context {
-
+    
     /// A builder for [`VirtualGatewayTlsValidationContext`](crate::model::VirtualGatewayTlsValidationContext).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) trust:
-            std::option::Option<crate::model::VirtualGatewayTlsValidationContextTrust>,
-        pub(crate) subject_alternative_names:
-            std::option::Option<crate::model::SubjectAlternativeNames>,
+        pub(crate) trust: std::option::Option<crate::model::VirtualGatewayTlsValidationContextTrust>,
+        pub(crate) subject_alternative_names: std::option::Option<crate::model::SubjectAlternativeNames>,
     }
     impl Builder {
         /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
-        pub fn trust(
-            mut self,
-            input: crate::model::VirtualGatewayTlsValidationContextTrust,
-        ) -> Self {
+        pub fn trust(mut self, input: crate::model::VirtualGatewayTlsValidationContextTrust) -> Self {
             self.trust = Some(input);
             self
         }
         /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
-        pub fn set_trust(
-            mut self,
-            input: std::option::Option<crate::model::VirtualGatewayTlsValidationContextTrust>,
-        ) -> Self {
-            self.trust = input;
-            self
+        pub fn set_trust(mut self, input: std::option::Option<crate::model::VirtualGatewayTlsValidationContextTrust>) -> Self {
+            self.trust = input; self
         }
         /// <p>A reference to an object that represents the SANs for a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
-        pub fn subject_alternative_names(
-            mut self,
-            input: crate::model::SubjectAlternativeNames,
-        ) -> Self {
+        pub fn subject_alternative_names(mut self, input: crate::model::SubjectAlternativeNames) -> Self {
             self.subject_alternative_names = Some(input);
             self
         }
         /// <p>A reference to an object that represents the SANs for a virtual gateway's listener's Transport Layer Security (TLS) validation context.</p>
-        pub fn set_subject_alternative_names(
-            mut self,
-            input: std::option::Option<crate::model::SubjectAlternativeNames>,
-        ) -> Self {
-            self.subject_alternative_names = input;
-            self
+        pub fn set_subject_alternative_names(mut self, input: std::option::Option<crate::model::SubjectAlternativeNames>) -> Self {
+            self.subject_alternative_names = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayTlsValidationContext`](crate::model::VirtualGatewayTlsValidationContext).
         pub fn build(self) -> crate::model::VirtualGatewayTlsValidationContext {
             crate::model::VirtualGatewayTlsValidationContext {
-                trust: self.trust,
-                subject_alternative_names: self.subject_alternative_names,
+                trust: self.trust
+                ,
+                subject_alternative_names: self.subject_alternative_names
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayTlsValidationContext {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayTlsValidationContext`](crate::model::VirtualGatewayTlsValidationContext).
@@ -11758,14 +11078,8 @@ pub enum VirtualGatewayTlsValidationContextTrust {
 impl VirtualGatewayTlsValidationContextTrust {
     /// Tries to convert the enum instance into [`Acm`](crate::model::VirtualGatewayTlsValidationContextTrust::Acm), extracting the inner [`VirtualGatewayTlsValidationContextAcmTrust`](crate::model::VirtualGatewayTlsValidationContextAcmTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_acm(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextAcmTrust, &Self> {
-        if let VirtualGatewayTlsValidationContextTrust::Acm(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_acm(&self) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextAcmTrust, &Self> {
+        if let VirtualGatewayTlsValidationContextTrust::Acm(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Acm`](crate::model::VirtualGatewayTlsValidationContextTrust::Acm).
     pub fn is_acm(&self) -> bool {
@@ -11773,15 +11087,8 @@ impl VirtualGatewayTlsValidationContextTrust {
     }
     /// Tries to convert the enum instance into [`File`](crate::model::VirtualGatewayTlsValidationContextTrust::File), extracting the inner [`VirtualGatewayTlsValidationContextFileTrust`](crate::model::VirtualGatewayTlsValidationContextFileTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_file(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextFileTrust, &Self>
-    {
-        if let VirtualGatewayTlsValidationContextTrust::File(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_file(&self) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextFileTrust, &Self> {
+        if let VirtualGatewayTlsValidationContextTrust::File(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`File`](crate::model::VirtualGatewayTlsValidationContextTrust::File).
     pub fn is_file(&self) -> bool {
@@ -11789,14 +11096,8 @@ impl VirtualGatewayTlsValidationContextTrust {
     }
     /// Tries to convert the enum instance into [`Sds`](crate::model::VirtualGatewayTlsValidationContextTrust::Sds), extracting the inner [`VirtualGatewayTlsValidationContextSdsTrust`](crate::model::VirtualGatewayTlsValidationContextSdsTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sds(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextSdsTrust, &Self> {
-        if let VirtualGatewayTlsValidationContextTrust::Sds(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_sds(&self) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextSdsTrust, &Self> {
+        if let VirtualGatewayTlsValidationContextTrust::Sds(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Sds`](crate::model::VirtualGatewayTlsValidationContextTrust::Sds).
     pub fn is_sds(&self) -> bool {
@@ -11811,25 +11112,24 @@ impl VirtualGatewayTlsValidationContextTrust {
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewayTlsValidationContextAcmTrust {
+pub struct VirtualGatewayTlsValidationContextAcmTrust  {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
     #[doc(hidden)]
     pub certificate_authority_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl VirtualGatewayTlsValidationContextAcmTrust {
     /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-    pub fn certificate_authority_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn certificate_authority_arns(&self) -> std::option::Option<& [std::string::String]> {
         self.certificate_authority_arns.as_deref()
     }
 }
 /// See [`VirtualGatewayTlsValidationContextAcmTrust`](crate::model::VirtualGatewayTlsValidationContextAcmTrust).
 pub mod virtual_gateway_tls_validation_context_acm_trust {
-
+    
     /// A builder for [`VirtualGatewayTlsValidationContextAcmTrust`](crate::model::VirtualGatewayTlsValidationContextAcmTrust).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) certificate_authority_arns:
-            std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) certificate_authority_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// Appends an item to `certificate_authority_arns`.
@@ -11839,25 +11139,24 @@ pub mod virtual_gateway_tls_validation_context_acm_trust {
         /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
         pub fn certificate_authority_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.certificate_authority_arns.unwrap_or_default();
-            v.push(input.into());
-            self.certificate_authority_arns = Some(v);
-            self
+                            v.push(input.into());
+                            self.certificate_authority_arns = Some(v);
+                            self
         }
         /// <p>One or more ACM Amazon Resource Name (ARN)s.</p>
-        pub fn set_certificate_authority_arns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.certificate_authority_arns = input;
-            self
+        pub fn set_certificate_authority_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.certificate_authority_arns = input; self
         }
         /// Consumes the builder and constructs a [`VirtualGatewayTlsValidationContextAcmTrust`](crate::model::VirtualGatewayTlsValidationContextAcmTrust).
         pub fn build(self) -> crate::model::VirtualGatewayTlsValidationContextAcmTrust {
             crate::model::VirtualGatewayTlsValidationContextAcmTrust {
-                certificate_authority_arns: self.certificate_authority_arns,
+                certificate_authority_arns: self.certificate_authority_arns
+                ,
             }
         }
     }
+    
+    
 }
 impl VirtualGatewayTlsValidationContextAcmTrust {
     /// Creates a new builder-style object to manufacture [`VirtualGatewayTlsValidationContextAcmTrust`](crate::model::VirtualGatewayTlsValidationContextAcmTrust).
@@ -11887,14 +11186,8 @@ pub enum VirtualGatewayClientTlsCertificate {
 impl VirtualGatewayClientTlsCertificate {
     /// Tries to convert the enum instance into [`File`](crate::model::VirtualGatewayClientTlsCertificate::File), extracting the inner [`VirtualGatewayListenerTlsFileCertificate`](crate::model::VirtualGatewayListenerTlsFileCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_file(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsFileCertificate, &Self> {
-        if let VirtualGatewayClientTlsCertificate::File(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_file(&self) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsFileCertificate, &Self> {
+        if let VirtualGatewayClientTlsCertificate::File(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`File`](crate::model::VirtualGatewayClientTlsCertificate::File).
     pub fn is_file(&self) -> bool {
@@ -11902,14 +11195,8 @@ impl VirtualGatewayClientTlsCertificate {
     }
     /// Tries to convert the enum instance into [`Sds`](crate::model::VirtualGatewayClientTlsCertificate::Sds), extracting the inner [`VirtualGatewayListenerTlsSdsCertificate`](crate::model::VirtualGatewayListenerTlsSdsCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sds(
-        &self,
-    ) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsSdsCertificate, &Self> {
-        if let VirtualGatewayClientTlsCertificate::Sds(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_sds(&self) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsSdsCertificate, &Self> {
+        if let VirtualGatewayClientTlsCertificate::Sds(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Sds`](crate::model::VirtualGatewayClientTlsCertificate::Sds).
     pub fn is_sds(&self) -> bool {
@@ -11924,7 +11211,7 @@ impl VirtualGatewayClientTlsCertificate {
 /// <p>An object that represents a gateway route returned by a list operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewayRouteRef {
+pub struct GatewayRouteRef  {
     /// <p>The name of the service mesh that the resource resides in. </p>
     #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
@@ -11955,27 +11242,27 @@ pub struct GatewayRouteRef {
 }
 impl GatewayRouteRef {
     /// <p>The name of the service mesh that the resource resides in. </p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The name of the gateway route.</p>
-    pub fn gateway_route_name(&self) -> std::option::Option<&str> {
+    pub fn gateway_route_name(&self) -> std::option::Option<& str> {
         self.gateway_route_name.as_deref()
     }
     /// <p>The virtual gateway that the gateway route is associated with.</p>
-    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_name(&self) -> std::option::Option<& str> {
         self.virtual_gateway_name.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn mesh_owner(&self) -> std::option::Option<&str> {
+    pub fn mesh_owner(&self) -> std::option::Option<& str> {
         self.mesh_owner.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-    pub fn resource_owner(&self) -> std::option::Option<&str> {
+    pub fn resource_owner(&self) -> std::option::Option<& str> {
         self.resource_owner.as_deref()
     }
     /// <p>The full Amazon Resource Name (ARN) for the gateway route.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
@@ -11983,17 +11270,17 @@ impl GatewayRouteRef {
         self.version
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
 /// See [`GatewayRouteRef`](crate::model::GatewayRouteRef).
 pub mod gateway_route_ref {
-
+    
     /// A builder for [`GatewayRouteRef`](crate::model::GatewayRouteRef).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12015,8 +11302,7 @@ pub mod gateway_route_ref {
         }
         /// <p>The name of the service mesh that the resource resides in. </p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_name = input;
-            self
+            self.mesh_name = input; self
         }
         /// <p>The name of the gateway route.</p>
         pub fn gateway_route_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12024,12 +11310,8 @@ pub mod gateway_route_ref {
             self
         }
         /// <p>The name of the gateway route.</p>
-        pub fn set_gateway_route_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.gateway_route_name = input;
-            self
+        pub fn set_gateway_route_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.gateway_route_name = input; self
         }
         /// <p>The virtual gateway that the gateway route is associated with.</p>
         pub fn virtual_gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12037,12 +11319,8 @@ pub mod gateway_route_ref {
             self
         }
         /// <p>The virtual gateway that the gateway route is associated with.</p>
-        pub fn set_virtual_gateway_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_gateway_name = input;
-            self
+        pub fn set_virtual_gateway_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_gateway_name = input; self
         }
         /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12051,8 +11329,7 @@ pub mod gateway_route_ref {
         }
         /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_owner = input;
-            self
+            self.mesh_owner = input; self
         }
         /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12060,12 +11337,8 @@ pub mod gateway_route_ref {
             self
         }
         /// <p>The Amazon Web Services IAM account ID of the resource owner. If the account ID is not your own, then it's the ID of the mesh owner or of another account that the mesh is shared with. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn set_resource_owner(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.resource_owner = input;
-            self
+        pub fn set_resource_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_owner = input; self
         }
         /// <p>The full Amazon Resource Name (ARN) for the gateway route.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12074,8 +11347,7 @@ pub mod gateway_route_ref {
         }
         /// <p>The full Amazon Resource Name (ARN) for the gateway route.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
         pub fn version(mut self, input: i64) -> Self {
@@ -12084,8 +11356,7 @@ pub mod gateway_route_ref {
         }
         /// <p>The version of the resource. Resources are created at version 1, and this version is incremented each time that they're updated.</p>
         pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -12093,12 +11364,8 @@ pub mod gateway_route_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -12106,28 +11373,35 @@ pub mod gateway_route_ref {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the resource was last updated.</p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// Consumes the builder and constructs a [`GatewayRouteRef`](crate::model::GatewayRouteRef).
         pub fn build(self) -> crate::model::GatewayRouteRef {
             crate::model::GatewayRouteRef {
-                mesh_name: self.mesh_name,
-                gateway_route_name: self.gateway_route_name,
-                virtual_gateway_name: self.virtual_gateway_name,
-                mesh_owner: self.mesh_owner,
-                resource_owner: self.resource_owner,
-                arn: self.arn,
-                version: self.version,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
+                mesh_name: self.mesh_name
+                ,
+                gateway_route_name: self.gateway_route_name
+                ,
+                virtual_gateway_name: self.virtual_gateway_name
+                ,
+                mesh_owner: self.mesh_owner
+                ,
+                resource_owner: self.resource_owner
+                ,
+                arn: self.arn
+                ,
+                version: self.version
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl GatewayRouteRef {
     /// Creates a new builder-style object to manufacture [`GatewayRouteRef`](crate::model::GatewayRouteRef).
@@ -12139,7 +11413,7 @@ impl GatewayRouteRef {
 /// <p>An object that represents a gateway route returned by a describe operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewayRouteData {
+pub struct GatewayRouteData  {
     /// <p>The name of the service mesh that the resource resides in. </p>
     #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
@@ -12161,33 +11435,33 @@ pub struct GatewayRouteData {
 }
 impl GatewayRouteData {
     /// <p>The name of the service mesh that the resource resides in. </p>
-    pub fn mesh_name(&self) -> std::option::Option<&str> {
+    pub fn mesh_name(&self) -> std::option::Option<& str> {
         self.mesh_name.as_deref()
     }
     /// <p>The name of the gateway route.</p>
-    pub fn gateway_route_name(&self) -> std::option::Option<&str> {
+    pub fn gateway_route_name(&self) -> std::option::Option<& str> {
         self.gateway_route_name.as_deref()
     }
     /// <p>The virtual gateway that the gateway route is associated with.</p>
-    pub fn virtual_gateway_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_name(&self) -> std::option::Option<& str> {
         self.virtual_gateway_name.as_deref()
     }
     /// <p>The specifications of the gateway route.</p>
-    pub fn spec(&self) -> std::option::Option<&crate::model::GatewayRouteSpec> {
+    pub fn spec(&self) -> std::option::Option<& crate::model::GatewayRouteSpec> {
         self.spec.as_ref()
     }
     /// <p>An object that represents metadata for a resource.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::model::ResourceMetadata> {
+    pub fn metadata(&self) -> std::option::Option<& crate::model::ResourceMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The status of the gateway route.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::GatewayRouteStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::GatewayRouteStatus> {
         self.status.as_ref()
     }
 }
 /// See [`GatewayRouteData`](crate::model::GatewayRouteData).
 pub mod gateway_route_data {
-
+    
     /// A builder for [`GatewayRouteData`](crate::model::GatewayRouteData).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12206,8 +11480,7 @@ pub mod gateway_route_data {
         }
         /// <p>The name of the service mesh that the resource resides in. </p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.mesh_name = input;
-            self
+            self.mesh_name = input; self
         }
         /// <p>The name of the gateway route.</p>
         pub fn gateway_route_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12215,12 +11488,8 @@ pub mod gateway_route_data {
             self
         }
         /// <p>The name of the gateway route.</p>
-        pub fn set_gateway_route_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.gateway_route_name = input;
-            self
+        pub fn set_gateway_route_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.gateway_route_name = input; self
         }
         /// <p>The virtual gateway that the gateway route is associated with.</p>
         pub fn virtual_gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12228,12 +11497,8 @@ pub mod gateway_route_data {
             self
         }
         /// <p>The virtual gateway that the gateway route is associated with.</p>
-        pub fn set_virtual_gateway_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_gateway_name = input;
-            self
+        pub fn set_virtual_gateway_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_gateway_name = input; self
         }
         /// <p>The specifications of the gateway route.</p>
         pub fn spec(mut self, input: crate::model::GatewayRouteSpec) -> Self {
@@ -12241,12 +11506,8 @@ pub mod gateway_route_data {
             self
         }
         /// <p>The specifications of the gateway route.</p>
-        pub fn set_spec(
-            mut self,
-            input: std::option::Option<crate::model::GatewayRouteSpec>,
-        ) -> Self {
-            self.spec = input;
-            self
+        pub fn set_spec(mut self, input: std::option::Option<crate::model::GatewayRouteSpec>) -> Self {
+            self.spec = input; self
         }
         /// <p>An object that represents metadata for a resource.</p>
         pub fn metadata(mut self, input: crate::model::ResourceMetadata) -> Self {
@@ -12254,12 +11515,8 @@ pub mod gateway_route_data {
             self
         }
         /// <p>An object that represents metadata for a resource.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<crate::model::ResourceMetadata>,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<crate::model::ResourceMetadata>) -> Self {
+            self.metadata = input; self
         }
         /// <p>The status of the gateway route.</p>
         pub fn status(mut self, input: crate::model::GatewayRouteStatus) -> Self {
@@ -12267,25 +11524,29 @@ pub mod gateway_route_data {
             self
         }
         /// <p>The status of the gateway route.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::GatewayRouteStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::GatewayRouteStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`GatewayRouteData`](crate::model::GatewayRouteData).
         pub fn build(self) -> crate::model::GatewayRouteData {
             crate::model::GatewayRouteData {
-                mesh_name: self.mesh_name,
-                gateway_route_name: self.gateway_route_name,
-                virtual_gateway_name: self.virtual_gateway_name,
-                spec: self.spec,
-                metadata: self.metadata,
-                status: self.status,
+                mesh_name: self.mesh_name
+                ,
+                gateway_route_name: self.gateway_route_name
+                ,
+                virtual_gateway_name: self.virtual_gateway_name
+                ,
+                spec: self.spec
+                ,
+                metadata: self.metadata
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl GatewayRouteData {
     /// Creates a new builder-style object to manufacture [`GatewayRouteData`](crate::model::GatewayRouteData).
@@ -12297,20 +11558,20 @@ impl GatewayRouteData {
 /// <p>An object that represents the current status of a gateway route.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewayRouteStatus {
+pub struct GatewayRouteStatus  {
     /// <p>The current status for the gateway route.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::GatewayRouteStatusCode>,
 }
 impl GatewayRouteStatus {
     /// <p>The current status for the gateway route.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::GatewayRouteStatusCode> {
+    pub fn status(&self) -> std::option::Option<& crate::model::GatewayRouteStatusCode> {
         self.status.as_ref()
     }
 }
 /// See [`GatewayRouteStatus`](crate::model::GatewayRouteStatus).
 pub mod gateway_route_status {
-
+    
     /// A builder for [`GatewayRouteStatus`](crate::model::GatewayRouteStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12323,20 +11584,19 @@ pub mod gateway_route_status {
             self
         }
         /// <p>The current status for the gateway route.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::GatewayRouteStatusCode>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::GatewayRouteStatusCode>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`GatewayRouteStatus`](crate::model::GatewayRouteStatus).
         pub fn build(self) -> crate::model::GatewayRouteStatus {
             crate::model::GatewayRouteStatus {
-                status: self.status,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl GatewayRouteStatus {
     /// Creates a new builder-style object to manufacture [`GatewayRouteStatus`](crate::model::GatewayRouteStatus).
@@ -12351,9 +11611,9 @@ impl GatewayRouteStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let gatewayroutestatuscode = unimplemented!();
 /// match gatewayroutestatuscode {
@@ -12376,22 +11636,14 @@ impl GatewayRouteStatus {
 /// Specifically, when `gatewayroutestatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GatewayRouteStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum GatewayRouteStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -12400,7 +11652,7 @@ pub enum GatewayRouteStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for GatewayRouteStatusCode {
     fn from(s: &str) -> Self {
@@ -12408,19 +11660,17 @@ impl std::convert::From<&str> for GatewayRouteStatusCode {
             "ACTIVE" => GatewayRouteStatusCode::Active,
             "DELETED" => GatewayRouteStatusCode::Deleted,
             "INACTIVE" => GatewayRouteStatusCode::Inactive,
-            other => {
-                GatewayRouteStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => GatewayRouteStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for GatewayRouteStatusCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GatewayRouteStatusCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(GatewayRouteStatusCode::from(s))
+                }
+            }
 impl GatewayRouteStatusCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -12428,12 +11678,14 @@ impl GatewayRouteStatusCode {
             GatewayRouteStatusCode::Active => "ACTIVE",
             GatewayRouteStatusCode::Deleted => "DELETED",
             GatewayRouteStatusCode::Inactive => "INACTIVE",
-            GatewayRouteStatusCode::Unknown(value) => value.as_str(),
+            GatewayRouteStatusCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DELETED", "INACTIVE"]
+        &[
+            "ACTIVE", "DELETED", "INACTIVE"
+        ]
     }
 }
 impl AsRef<str> for GatewayRouteStatusCode {
@@ -12445,7 +11697,7 @@ impl AsRef<str> for GatewayRouteStatusCode {
 /// <p>An object that represents a gateway route specification. Specify one gateway route type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewayRouteSpec {
+pub struct GatewayRouteSpec  {
     /// <p>The ordering of the gateway routes spec.</p>
     #[doc(hidden)]
     pub priority: std::option::Option<i32>,
@@ -12465,21 +11717,21 @@ impl GatewayRouteSpec {
         self.priority
     }
     /// <p>An object that represents the specification of an HTTP gateway route.</p>
-    pub fn http_route(&self) -> std::option::Option<&crate::model::HttpGatewayRoute> {
+    pub fn http_route(&self) -> std::option::Option<& crate::model::HttpGatewayRoute> {
         self.http_route.as_ref()
     }
     /// <p>An object that represents the specification of an HTTP/2 gateway route.</p>
-    pub fn http2_route(&self) -> std::option::Option<&crate::model::HttpGatewayRoute> {
+    pub fn http2_route(&self) -> std::option::Option<& crate::model::HttpGatewayRoute> {
         self.http2_route.as_ref()
     }
     /// <p>An object that represents the specification of a gRPC gateway route.</p>
-    pub fn grpc_route(&self) -> std::option::Option<&crate::model::GrpcGatewayRoute> {
+    pub fn grpc_route(&self) -> std::option::Option<& crate::model::GrpcGatewayRoute> {
         self.grpc_route.as_ref()
     }
 }
 /// See [`GatewayRouteSpec`](crate::model::GatewayRouteSpec).
 pub mod gateway_route_spec {
-
+    
     /// A builder for [`GatewayRouteSpec`](crate::model::GatewayRouteSpec).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12496,8 +11748,7 @@ pub mod gateway_route_spec {
         }
         /// <p>The ordering of the gateway routes spec.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-            self.priority = input;
-            self
+            self.priority = input; self
         }
         /// <p>An object that represents the specification of an HTTP gateway route.</p>
         pub fn http_route(mut self, input: crate::model::HttpGatewayRoute) -> Self {
@@ -12505,12 +11756,8 @@ pub mod gateway_route_spec {
             self
         }
         /// <p>An object that represents the specification of an HTTP gateway route.</p>
-        pub fn set_http_route(
-            mut self,
-            input: std::option::Option<crate::model::HttpGatewayRoute>,
-        ) -> Self {
-            self.http_route = input;
-            self
+        pub fn set_http_route(mut self, input: std::option::Option<crate::model::HttpGatewayRoute>) -> Self {
+            self.http_route = input; self
         }
         /// <p>An object that represents the specification of an HTTP/2 gateway route.</p>
         pub fn http2_route(mut self, input: crate::model::HttpGatewayRoute) -> Self {
@@ -12518,12 +11765,8 @@ pub mod gateway_route_spec {
             self
         }
         /// <p>An object that represents the specification of an HTTP/2 gateway route.</p>
-        pub fn set_http2_route(
-            mut self,
-            input: std::option::Option<crate::model::HttpGatewayRoute>,
-        ) -> Self {
-            self.http2_route = input;
-            self
+        pub fn set_http2_route(mut self, input: std::option::Option<crate::model::HttpGatewayRoute>) -> Self {
+            self.http2_route = input; self
         }
         /// <p>An object that represents the specification of a gRPC gateway route.</p>
         pub fn grpc_route(mut self, input: crate::model::GrpcGatewayRoute) -> Self {
@@ -12531,23 +11774,25 @@ pub mod gateway_route_spec {
             self
         }
         /// <p>An object that represents the specification of a gRPC gateway route.</p>
-        pub fn set_grpc_route(
-            mut self,
-            input: std::option::Option<crate::model::GrpcGatewayRoute>,
-        ) -> Self {
-            self.grpc_route = input;
-            self
+        pub fn set_grpc_route(mut self, input: std::option::Option<crate::model::GrpcGatewayRoute>) -> Self {
+            self.grpc_route = input; self
         }
         /// Consumes the builder and constructs a [`GatewayRouteSpec`](crate::model::GatewayRouteSpec).
         pub fn build(self) -> crate::model::GatewayRouteSpec {
             crate::model::GatewayRouteSpec {
-                priority: self.priority,
-                http_route: self.http_route,
-                http2_route: self.http2_route,
-                grpc_route: self.grpc_route,
+                priority: self.priority
+                ,
+                http_route: self.http_route
+                ,
+                http2_route: self.http2_route
+                ,
+                grpc_route: self.grpc_route
+                ,
             }
         }
     }
+    
+    
 }
 impl GatewayRouteSpec {
     /// Creates a new builder-style object to manufacture [`GatewayRouteSpec`](crate::model::GatewayRouteSpec).
@@ -12559,7 +11804,7 @@ impl GatewayRouteSpec {
 /// <p>An object that represents a gRPC gateway route.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrpcGatewayRoute {
+pub struct GrpcGatewayRoute  {
     /// <p>An object that represents the criteria for determining a request match.</p>
     #[doc(hidden)]
     pub r#match: std::option::Option<crate::model::GrpcGatewayRouteMatch>,
@@ -12569,17 +11814,17 @@ pub struct GrpcGatewayRoute {
 }
 impl GrpcGatewayRoute {
     /// <p>An object that represents the criteria for determining a request match.</p>
-    pub fn r#match(&self) -> std::option::Option<&crate::model::GrpcGatewayRouteMatch> {
+    pub fn r#match(&self) -> std::option::Option<& crate::model::GrpcGatewayRouteMatch> {
         self.r#match.as_ref()
     }
     /// <p>An object that represents the action to take if a match is determined.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::GrpcGatewayRouteAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::GrpcGatewayRouteAction> {
         self.action.as_ref()
     }
 }
 /// See [`GrpcGatewayRoute`](crate::model::GrpcGatewayRoute).
 pub mod grpc_gateway_route {
-
+    
     /// A builder for [`GrpcGatewayRoute`](crate::model::GrpcGatewayRoute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12593,12 +11838,8 @@ pub mod grpc_gateway_route {
             self
         }
         /// <p>An object that represents the criteria for determining a request match.</p>
-        pub fn set_match(
-            mut self,
-            input: std::option::Option<crate::model::GrpcGatewayRouteMatch>,
-        ) -> Self {
-            self.r#match = input;
-            self
+        pub fn set_match(mut self, input: std::option::Option<crate::model::GrpcGatewayRouteMatch>) -> Self {
+            self.r#match = input; self
         }
         /// <p>An object that represents the action to take if a match is determined.</p>
         pub fn action(mut self, input: crate::model::GrpcGatewayRouteAction) -> Self {
@@ -12606,21 +11847,21 @@ pub mod grpc_gateway_route {
             self
         }
         /// <p>An object that represents the action to take if a match is determined.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::GrpcGatewayRouteAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::GrpcGatewayRouteAction>) -> Self {
+            self.action = input; self
         }
         /// Consumes the builder and constructs a [`GrpcGatewayRoute`](crate::model::GrpcGatewayRoute).
         pub fn build(self) -> crate::model::GrpcGatewayRoute {
             crate::model::GrpcGatewayRoute {
-                r#match: self.r#match,
-                action: self.action,
+                r#match: self.r#match
+                ,
+                action: self.action
+                ,
             }
         }
     }
+    
+    
 }
 impl GrpcGatewayRoute {
     /// Creates a new builder-style object to manufacture [`GrpcGatewayRoute`](crate::model::GrpcGatewayRoute).
@@ -12632,7 +11873,7 @@ impl GrpcGatewayRoute {
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrpcGatewayRouteAction {
+pub struct GrpcGatewayRouteAction  {
     /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
     #[doc(hidden)]
     pub target: std::option::Option<crate::model::GatewayRouteTarget>,
@@ -12642,17 +11883,17 @@ pub struct GrpcGatewayRouteAction {
 }
 impl GrpcGatewayRouteAction {
     /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
-    pub fn target(&self) -> std::option::Option<&crate::model::GatewayRouteTarget> {
+    pub fn target(&self) -> std::option::Option<& crate::model::GatewayRouteTarget> {
         self.target.as_ref()
     }
     /// <p>The gateway route action to rewrite.</p>
-    pub fn rewrite(&self) -> std::option::Option<&crate::model::GrpcGatewayRouteRewrite> {
+    pub fn rewrite(&self) -> std::option::Option<& crate::model::GrpcGatewayRouteRewrite> {
         self.rewrite.as_ref()
     }
 }
 /// See [`GrpcGatewayRouteAction`](crate::model::GrpcGatewayRouteAction).
 pub mod grpc_gateway_route_action {
-
+    
     /// A builder for [`GrpcGatewayRouteAction`](crate::model::GrpcGatewayRouteAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12666,12 +11907,8 @@ pub mod grpc_gateway_route_action {
             self
         }
         /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
-        pub fn set_target(
-            mut self,
-            input: std::option::Option<crate::model::GatewayRouteTarget>,
-        ) -> Self {
-            self.target = input;
-            self
+        pub fn set_target(mut self, input: std::option::Option<crate::model::GatewayRouteTarget>) -> Self {
+            self.target = input; self
         }
         /// <p>The gateway route action to rewrite.</p>
         pub fn rewrite(mut self, input: crate::model::GrpcGatewayRouteRewrite) -> Self {
@@ -12679,21 +11916,21 @@ pub mod grpc_gateway_route_action {
             self
         }
         /// <p>The gateway route action to rewrite.</p>
-        pub fn set_rewrite(
-            mut self,
-            input: std::option::Option<crate::model::GrpcGatewayRouteRewrite>,
-        ) -> Self {
-            self.rewrite = input;
-            self
+        pub fn set_rewrite(mut self, input: std::option::Option<crate::model::GrpcGatewayRouteRewrite>) -> Self {
+            self.rewrite = input; self
         }
         /// Consumes the builder and constructs a [`GrpcGatewayRouteAction`](crate::model::GrpcGatewayRouteAction).
         pub fn build(self) -> crate::model::GrpcGatewayRouteAction {
             crate::model::GrpcGatewayRouteAction {
-                target: self.target,
-                rewrite: self.rewrite,
+                target: self.target
+                ,
+                rewrite: self.rewrite
+                ,
             }
         }
     }
+    
+    
 }
 impl GrpcGatewayRouteAction {
     /// Creates a new builder-style object to manufacture [`GrpcGatewayRouteAction`](crate::model::GrpcGatewayRouteAction).
@@ -12705,20 +11942,20 @@ impl GrpcGatewayRouteAction {
 /// <p>An object that represents the gateway route to rewrite.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrpcGatewayRouteRewrite {
+pub struct GrpcGatewayRouteRewrite  {
     /// <p>The host name of the gateway route to rewrite.</p>
     #[doc(hidden)]
     pub hostname: std::option::Option<crate::model::GatewayRouteHostnameRewrite>,
 }
 impl GrpcGatewayRouteRewrite {
     /// <p>The host name of the gateway route to rewrite.</p>
-    pub fn hostname(&self) -> std::option::Option<&crate::model::GatewayRouteHostnameRewrite> {
+    pub fn hostname(&self) -> std::option::Option<& crate::model::GatewayRouteHostnameRewrite> {
         self.hostname.as_ref()
     }
 }
 /// See [`GrpcGatewayRouteRewrite`](crate::model::GrpcGatewayRouteRewrite).
 pub mod grpc_gateway_route_rewrite {
-
+    
     /// A builder for [`GrpcGatewayRouteRewrite`](crate::model::GrpcGatewayRouteRewrite).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12731,20 +11968,19 @@ pub mod grpc_gateway_route_rewrite {
             self
         }
         /// <p>The host name of the gateway route to rewrite.</p>
-        pub fn set_hostname(
-            mut self,
-            input: std::option::Option<crate::model::GatewayRouteHostnameRewrite>,
-        ) -> Self {
-            self.hostname = input;
-            self
+        pub fn set_hostname(mut self, input: std::option::Option<crate::model::GatewayRouteHostnameRewrite>) -> Self {
+            self.hostname = input; self
         }
         /// Consumes the builder and constructs a [`GrpcGatewayRouteRewrite`](crate::model::GrpcGatewayRouteRewrite).
         pub fn build(self) -> crate::model::GrpcGatewayRouteRewrite {
             crate::model::GrpcGatewayRouteRewrite {
-                hostname: self.hostname,
+                hostname: self.hostname
+                ,
             }
         }
     }
+    
+    
 }
 impl GrpcGatewayRouteRewrite {
     /// Creates a new builder-style object to manufacture [`GrpcGatewayRouteRewrite`](crate::model::GrpcGatewayRouteRewrite).
@@ -12756,52 +11992,45 @@ impl GrpcGatewayRouteRewrite {
 /// <p>An object representing the gateway route host name to rewrite.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewayRouteHostnameRewrite {
+pub struct GatewayRouteHostnameRewrite  {
     /// <p>The default target host name to write to.</p>
     #[doc(hidden)]
     pub default_target_hostname: std::option::Option<crate::model::DefaultGatewayRouteRewrite>,
 }
 impl GatewayRouteHostnameRewrite {
     /// <p>The default target host name to write to.</p>
-    pub fn default_target_hostname(
-        &self,
-    ) -> std::option::Option<&crate::model::DefaultGatewayRouteRewrite> {
+    pub fn default_target_hostname(&self) -> std::option::Option<& crate::model::DefaultGatewayRouteRewrite> {
         self.default_target_hostname.as_ref()
     }
 }
 /// See [`GatewayRouteHostnameRewrite`](crate::model::GatewayRouteHostnameRewrite).
 pub mod gateway_route_hostname_rewrite {
-
+    
     /// A builder for [`GatewayRouteHostnameRewrite`](crate::model::GatewayRouteHostnameRewrite).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) default_target_hostname:
-            std::option::Option<crate::model::DefaultGatewayRouteRewrite>,
+        pub(crate) default_target_hostname: std::option::Option<crate::model::DefaultGatewayRouteRewrite>,
     }
     impl Builder {
         /// <p>The default target host name to write to.</p>
-        pub fn default_target_hostname(
-            mut self,
-            input: crate::model::DefaultGatewayRouteRewrite,
-        ) -> Self {
+        pub fn default_target_hostname(mut self, input: crate::model::DefaultGatewayRouteRewrite) -> Self {
             self.default_target_hostname = Some(input);
             self
         }
         /// <p>The default target host name to write to.</p>
-        pub fn set_default_target_hostname(
-            mut self,
-            input: std::option::Option<crate::model::DefaultGatewayRouteRewrite>,
-        ) -> Self {
-            self.default_target_hostname = input;
-            self
+        pub fn set_default_target_hostname(mut self, input: std::option::Option<crate::model::DefaultGatewayRouteRewrite>) -> Self {
+            self.default_target_hostname = input; self
         }
         /// Consumes the builder and constructs a [`GatewayRouteHostnameRewrite`](crate::model::GatewayRouteHostnameRewrite).
         pub fn build(self) -> crate::model::GatewayRouteHostnameRewrite {
             crate::model::GatewayRouteHostnameRewrite {
-                default_target_hostname: self.default_target_hostname,
+                default_target_hostname: self.default_target_hostname
+                ,
             }
         }
     }
+    
+    
 }
 impl GatewayRouteHostnameRewrite {
     /// Creates a new builder-style object to manufacture [`GatewayRouteHostnameRewrite`](crate::model::GatewayRouteHostnameRewrite).
@@ -12816,9 +12045,9 @@ impl GatewayRouteHostnameRewrite {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let defaultgatewayrouterewrite = unimplemented!();
 /// match defaultgatewayrouterewrite {
@@ -12840,60 +12069,52 @@ impl GatewayRouteHostnameRewrite {
 /// Specifically, when `defaultgatewayrouterewrite` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DefaultGatewayRouteRewrite::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DefaultGatewayRouteRewrite {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DefaultGatewayRouteRewrite {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => DefaultGatewayRouteRewrite::Disabled,
             "ENABLED" => DefaultGatewayRouteRewrite::Enabled,
-            other => DefaultGatewayRouteRewrite::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DefaultGatewayRouteRewrite::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DefaultGatewayRouteRewrite {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DefaultGatewayRouteRewrite::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DefaultGatewayRouteRewrite::from(s))
+                }
+            }
 impl DefaultGatewayRouteRewrite {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DefaultGatewayRouteRewrite::Disabled => "DISABLED",
             DefaultGatewayRouteRewrite::Enabled => "ENABLED",
-            DefaultGatewayRouteRewrite::Unknown(value) => value.as_str(),
+            DefaultGatewayRouteRewrite::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "ENABLED"]
+        &[
+            "DISABLED", "ENABLED"
+        ]
     }
 }
 impl AsRef<str> for DefaultGatewayRouteRewrite {
@@ -12905,7 +12126,7 @@ impl AsRef<str> for DefaultGatewayRouteRewrite {
 /// <p>An object that represents a gateway route target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewayRouteTarget {
+pub struct GatewayRouteTarget  {
     /// <p>An object that represents a virtual service gateway route target.</p>
     #[doc(hidden)]
     pub virtual_service: std::option::Option<crate::model::GatewayRouteVirtualService>,
@@ -12915,9 +12136,7 @@ pub struct GatewayRouteTarget {
 }
 impl GatewayRouteTarget {
     /// <p>An object that represents a virtual service gateway route target.</p>
-    pub fn virtual_service(
-        &self,
-    ) -> std::option::Option<&crate::model::GatewayRouteVirtualService> {
+    pub fn virtual_service(&self) -> std::option::Option<& crate::model::GatewayRouteVirtualService> {
         self.virtual_service.as_ref()
     }
     /// <p>The port number of the gateway route target.</p>
@@ -12927,7 +12146,7 @@ impl GatewayRouteTarget {
 }
 /// See [`GatewayRouteTarget`](crate::model::GatewayRouteTarget).
 pub mod gateway_route_target {
-
+    
     /// A builder for [`GatewayRouteTarget`](crate::model::GatewayRouteTarget).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -12941,12 +12160,8 @@ pub mod gateway_route_target {
             self
         }
         /// <p>An object that represents a virtual service gateway route target.</p>
-        pub fn set_virtual_service(
-            mut self,
-            input: std::option::Option<crate::model::GatewayRouteVirtualService>,
-        ) -> Self {
-            self.virtual_service = input;
-            self
+        pub fn set_virtual_service(mut self, input: std::option::Option<crate::model::GatewayRouteVirtualService>) -> Self {
+            self.virtual_service = input; self
         }
         /// <p>The port number of the gateway route target.</p>
         pub fn port(mut self, input: i32) -> Self {
@@ -12955,17 +12170,20 @@ pub mod gateway_route_target {
         }
         /// <p>The port number of the gateway route target.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// Consumes the builder and constructs a [`GatewayRouteTarget`](crate::model::GatewayRouteTarget).
         pub fn build(self) -> crate::model::GatewayRouteTarget {
             crate::model::GatewayRouteTarget {
-                virtual_service: self.virtual_service,
-                port: self.port,
+                virtual_service: self.virtual_service
+                ,
+                port: self.port
+                ,
             }
         }
     }
+    
+    
 }
 impl GatewayRouteTarget {
     /// Creates a new builder-style object to manufacture [`GatewayRouteTarget`](crate::model::GatewayRouteTarget).
@@ -12977,20 +12195,20 @@ impl GatewayRouteTarget {
 /// <p>An object that represents the virtual service that traffic is routed to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewayRouteVirtualService {
+pub struct GatewayRouteVirtualService  {
     /// <p>The name of the virtual service that traffic is routed to.</p>
     #[doc(hidden)]
     pub virtual_service_name: std::option::Option<std::string::String>,
 }
 impl GatewayRouteVirtualService {
     /// <p>The name of the virtual service that traffic is routed to.</p>
-    pub fn virtual_service_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_service_name(&self) -> std::option::Option<& str> {
         self.virtual_service_name.as_deref()
     }
 }
 /// See [`GatewayRouteVirtualService`](crate::model::GatewayRouteVirtualService).
 pub mod gateway_route_virtual_service {
-
+    
     /// A builder for [`GatewayRouteVirtualService`](crate::model::GatewayRouteVirtualService).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13003,20 +12221,19 @@ pub mod gateway_route_virtual_service {
             self
         }
         /// <p>The name of the virtual service that traffic is routed to.</p>
-        pub fn set_virtual_service_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.virtual_service_name = input;
-            self
+        pub fn set_virtual_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.virtual_service_name = input; self
         }
         /// Consumes the builder and constructs a [`GatewayRouteVirtualService`](crate::model::GatewayRouteVirtualService).
         pub fn build(self) -> crate::model::GatewayRouteVirtualService {
             crate::model::GatewayRouteVirtualService {
-                virtual_service_name: self.virtual_service_name,
+                virtual_service_name: self.virtual_service_name
+                ,
             }
         }
     }
+    
+    
 }
 impl GatewayRouteVirtualService {
     /// Creates a new builder-style object to manufacture [`GatewayRouteVirtualService`](crate::model::GatewayRouteVirtualService).
@@ -13028,7 +12245,7 @@ impl GatewayRouteVirtualService {
 /// <p>An object that represents the criteria for determining a request match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrpcGatewayRouteMatch {
+pub struct GrpcGatewayRouteMatch  {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
@@ -13044,15 +12261,15 @@ pub struct GrpcGatewayRouteMatch {
 }
 impl GrpcGatewayRouteMatch {
     /// <p>The fully qualified domain name for the service to match from the request.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> std::option::Option<& str> {
         self.service_name.as_deref()
     }
     /// <p>The gateway route host name to be matched on.</p>
-    pub fn hostname(&self) -> std::option::Option<&crate::model::GatewayRouteHostnameMatch> {
+    pub fn hostname(&self) -> std::option::Option<& crate::model::GatewayRouteHostnameMatch> {
         self.hostname.as_ref()
     }
     /// <p>The gateway route metadata to be matched on.</p>
-    pub fn metadata(&self) -> std::option::Option<&[crate::model::GrpcGatewayRouteMetadata]> {
+    pub fn metadata(&self) -> std::option::Option<& [crate::model::GrpcGatewayRouteMetadata]> {
         self.metadata.as_deref()
     }
     /// <p>The port number to match from the request.</p>
@@ -13062,14 +12279,13 @@ impl GrpcGatewayRouteMatch {
 }
 /// See [`GrpcGatewayRouteMatch`](crate::model::GrpcGatewayRouteMatch).
 pub mod grpc_gateway_route_match {
-
+    
     /// A builder for [`GrpcGatewayRouteMatch`](crate::model::GrpcGatewayRouteMatch).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
         pub(crate) hostname: std::option::Option<crate::model::GatewayRouteHostnameMatch>,
-        pub(crate) metadata:
-            std::option::Option<std::vec::Vec<crate::model::GrpcGatewayRouteMetadata>>,
+        pub(crate) metadata: std::option::Option<std::vec::Vec<crate::model::GrpcGatewayRouteMetadata>>,
         pub(crate) port: std::option::Option<i32>,
     }
     impl Builder {
@@ -13080,8 +12296,7 @@ pub mod grpc_gateway_route_match {
         }
         /// <p>The fully qualified domain name for the service to match from the request.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.service_name = input;
-            self
+            self.service_name = input; self
         }
         /// <p>The gateway route host name to be matched on.</p>
         pub fn hostname(mut self, input: crate::model::GatewayRouteHostnameMatch) -> Self {
@@ -13089,12 +12304,8 @@ pub mod grpc_gateway_route_match {
             self
         }
         /// <p>The gateway route host name to be matched on.</p>
-        pub fn set_hostname(
-            mut self,
-            input: std::option::Option<crate::model::GatewayRouteHostnameMatch>,
-        ) -> Self {
-            self.hostname = input;
-            self
+        pub fn set_hostname(mut self, input: std::option::Option<crate::model::GatewayRouteHostnameMatch>) -> Self {
+            self.hostname = input; self
         }
         /// Appends an item to `metadata`.
         ///
@@ -13103,17 +12314,13 @@ pub mod grpc_gateway_route_match {
         /// <p>The gateway route metadata to be matched on.</p>
         pub fn metadata(mut self, input: crate::model::GrpcGatewayRouteMetadata) -> Self {
             let mut v = self.metadata.unwrap_or_default();
-            v.push(input);
-            self.metadata = Some(v);
-            self
+                            v.push(input);
+                            self.metadata = Some(v);
+                            self
         }
         /// <p>The gateway route metadata to be matched on.</p>
-        pub fn set_metadata(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::GrpcGatewayRouteMetadata>>,
-        ) -> Self {
-            self.metadata = input;
-            self
+        pub fn set_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::model::GrpcGatewayRouteMetadata>>) -> Self {
+            self.metadata = input; self
         }
         /// <p>The port number to match from the request.</p>
         pub fn port(mut self, input: i32) -> Self {
@@ -13122,19 +12329,24 @@ pub mod grpc_gateway_route_match {
         }
         /// <p>The port number to match from the request.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// Consumes the builder and constructs a [`GrpcGatewayRouteMatch`](crate::model::GrpcGatewayRouteMatch).
         pub fn build(self) -> crate::model::GrpcGatewayRouteMatch {
             crate::model::GrpcGatewayRouteMatch {
-                service_name: self.service_name,
-                hostname: self.hostname,
-                metadata: self.metadata,
-                port: self.port,
+                service_name: self.service_name
+                ,
+                hostname: self.hostname
+                ,
+                metadata: self.metadata
+                ,
+                port: self.port
+                ,
             }
         }
     }
+    
+    
 }
 impl GrpcGatewayRouteMatch {
     /// Creates a new builder-style object to manufacture [`GrpcGatewayRouteMatch`](crate::model::GrpcGatewayRouteMatch).
@@ -13146,7 +12358,7 @@ impl GrpcGatewayRouteMatch {
 /// <p>An object representing the metadata of the gateway route.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrpcGatewayRouteMetadata {
+pub struct GrpcGatewayRouteMetadata  {
     /// <p>A name for the gateway route metadata.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13159,7 +12371,7 @@ pub struct GrpcGatewayRouteMetadata {
 }
 impl GrpcGatewayRouteMetadata {
     /// <p>A name for the gateway route metadata.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
@@ -13167,13 +12379,13 @@ impl GrpcGatewayRouteMetadata {
         self.invert
     }
     /// <p>The criteria for determining a metadata match.</p>
-    pub fn r#match(&self) -> std::option::Option<&crate::model::GrpcMetadataMatchMethod> {
+    pub fn r#match(&self) -> std::option::Option<& crate::model::GrpcMetadataMatchMethod> {
         self.r#match.as_ref()
     }
 }
 /// See [`GrpcGatewayRouteMetadata`](crate::model::GrpcGatewayRouteMetadata).
 pub mod grpc_gateway_route_metadata {
-
+    
     /// A builder for [`GrpcGatewayRouteMetadata`](crate::model::GrpcGatewayRouteMetadata).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13189,8 +12401,7 @@ pub mod grpc_gateway_route_metadata {
         }
         /// <p>A name for the gateway route metadata.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
         pub fn invert(mut self, input: bool) -> Self {
@@ -13199,8 +12410,7 @@ pub mod grpc_gateway_route_metadata {
         }
         /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
         pub fn set_invert(mut self, input: std::option::Option<bool>) -> Self {
-            self.invert = input;
-            self
+            self.invert = input; self
         }
         /// <p>The criteria for determining a metadata match.</p>
         pub fn r#match(mut self, input: crate::model::GrpcMetadataMatchMethod) -> Self {
@@ -13208,22 +12418,23 @@ pub mod grpc_gateway_route_metadata {
             self
         }
         /// <p>The criteria for determining a metadata match.</p>
-        pub fn set_match(
-            mut self,
-            input: std::option::Option<crate::model::GrpcMetadataMatchMethod>,
-        ) -> Self {
-            self.r#match = input;
-            self
+        pub fn set_match(mut self, input: std::option::Option<crate::model::GrpcMetadataMatchMethod>) -> Self {
+            self.r#match = input; self
         }
         /// Consumes the builder and constructs a [`GrpcGatewayRouteMetadata`](crate::model::GrpcGatewayRouteMetadata).
         pub fn build(self) -> crate::model::GrpcGatewayRouteMetadata {
             crate::model::GrpcGatewayRouteMetadata {
-                name: self.name,
-                invert: self.invert,
-                r#match: self.r#match,
+                name: self.name
+                ,
+                invert: self.invert
+                ,
+                r#match: self.r#match
+                ,
             }
         }
     }
+    
+    
 }
 impl GrpcGatewayRouteMetadata {
     /// Creates a new builder-style object to manufacture [`GrpcGatewayRouteMetadata`](crate::model::GrpcGatewayRouteMetadata).
@@ -13260,11 +12471,7 @@ impl GrpcMetadataMatchMethod {
     /// Tries to convert the enum instance into [`Exact`](crate::model::GrpcMetadataMatchMethod::Exact), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_exact(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let GrpcMetadataMatchMethod::Exact(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let GrpcMetadataMatchMethod::Exact(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Exact`](crate::model::GrpcMetadataMatchMethod::Exact).
     pub fn is_exact(&self) -> bool {
@@ -13273,11 +12480,7 @@ impl GrpcMetadataMatchMethod {
     /// Tries to convert the enum instance into [`Prefix`](crate::model::GrpcMetadataMatchMethod::Prefix), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let GrpcMetadataMatchMethod::Prefix(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let GrpcMetadataMatchMethod::Prefix(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Prefix`](crate::model::GrpcMetadataMatchMethod::Prefix).
     pub fn is_prefix(&self) -> bool {
@@ -13286,11 +12489,7 @@ impl GrpcMetadataMatchMethod {
     /// Tries to convert the enum instance into [`Range`](crate::model::GrpcMetadataMatchMethod::Range), extracting the inner [`MatchRange`](crate::model::MatchRange).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_range(&self) -> std::result::Result<&crate::model::MatchRange, &Self> {
-        if let GrpcMetadataMatchMethod::Range(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let GrpcMetadataMatchMethod::Range(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Range`](crate::model::GrpcMetadataMatchMethod::Range).
     pub fn is_range(&self) -> bool {
@@ -13299,11 +12498,7 @@ impl GrpcMetadataMatchMethod {
     /// Tries to convert the enum instance into [`Regex`](crate::model::GrpcMetadataMatchMethod::Regex), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_regex(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let GrpcMetadataMatchMethod::Regex(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let GrpcMetadataMatchMethod::Regex(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Regex`](crate::model::GrpcMetadataMatchMethod::Regex).
     pub fn is_regex(&self) -> bool {
@@ -13312,11 +12507,7 @@ impl GrpcMetadataMatchMethod {
     /// Tries to convert the enum instance into [`Suffix`](crate::model::GrpcMetadataMatchMethod::Suffix), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_suffix(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let GrpcMetadataMatchMethod::Suffix(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+        if let GrpcMetadataMatchMethod::Suffix(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`Suffix`](crate::model::GrpcMetadataMatchMethod::Suffix).
     pub fn is_suffix(&self) -> bool {
@@ -13331,7 +12522,7 @@ impl GrpcMetadataMatchMethod {
 /// <p>An object representing the gateway route host name to match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewayRouteHostnameMatch {
+pub struct GatewayRouteHostnameMatch  {
     /// <p>The exact host name to match on.</p>
     #[doc(hidden)]
     pub exact: std::option::Option<std::string::String>,
@@ -13341,17 +12532,17 @@ pub struct GatewayRouteHostnameMatch {
 }
 impl GatewayRouteHostnameMatch {
     /// <p>The exact host name to match on.</p>
-    pub fn exact(&self) -> std::option::Option<&str> {
+    pub fn exact(&self) -> std::option::Option<& str> {
         self.exact.as_deref()
     }
     /// <p>The specified ending characters of the host name to match on.</p>
-    pub fn suffix(&self) -> std::option::Option<&str> {
+    pub fn suffix(&self) -> std::option::Option<& str> {
         self.suffix.as_deref()
     }
 }
 /// See [`GatewayRouteHostnameMatch`](crate::model::GatewayRouteHostnameMatch).
 pub mod gateway_route_hostname_match {
-
+    
     /// A builder for [`GatewayRouteHostnameMatch`](crate::model::GatewayRouteHostnameMatch).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13366,8 +12557,7 @@ pub mod gateway_route_hostname_match {
         }
         /// <p>The exact host name to match on.</p>
         pub fn set_exact(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.exact = input;
-            self
+            self.exact = input; self
         }
         /// <p>The specified ending characters of the host name to match on.</p>
         pub fn suffix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13376,17 +12566,20 @@ pub mod gateway_route_hostname_match {
         }
         /// <p>The specified ending characters of the host name to match on.</p>
         pub fn set_suffix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.suffix = input;
-            self
+            self.suffix = input; self
         }
         /// Consumes the builder and constructs a [`GatewayRouteHostnameMatch`](crate::model::GatewayRouteHostnameMatch).
         pub fn build(self) -> crate::model::GatewayRouteHostnameMatch {
             crate::model::GatewayRouteHostnameMatch {
-                exact: self.exact,
-                suffix: self.suffix,
+                exact: self.exact
+                ,
+                suffix: self.suffix
+                ,
             }
         }
     }
+    
+    
 }
 impl GatewayRouteHostnameMatch {
     /// Creates a new builder-style object to manufacture [`GatewayRouteHostnameMatch`](crate::model::GatewayRouteHostnameMatch).
@@ -13398,7 +12591,7 @@ impl GatewayRouteHostnameMatch {
 /// <p>An object that represents an HTTP gateway route.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpGatewayRoute {
+pub struct HttpGatewayRoute  {
     /// <p>An object that represents the criteria for determining a request match.</p>
     #[doc(hidden)]
     pub r#match: std::option::Option<crate::model::HttpGatewayRouteMatch>,
@@ -13408,17 +12601,17 @@ pub struct HttpGatewayRoute {
 }
 impl HttpGatewayRoute {
     /// <p>An object that represents the criteria for determining a request match.</p>
-    pub fn r#match(&self) -> std::option::Option<&crate::model::HttpGatewayRouteMatch> {
+    pub fn r#match(&self) -> std::option::Option<& crate::model::HttpGatewayRouteMatch> {
         self.r#match.as_ref()
     }
     /// <p>An object that represents the action to take if a match is determined.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::HttpGatewayRouteAction> {
+    pub fn action(&self) -> std::option::Option<& crate::model::HttpGatewayRouteAction> {
         self.action.as_ref()
     }
 }
 /// See [`HttpGatewayRoute`](crate::model::HttpGatewayRoute).
 pub mod http_gateway_route {
-
+    
     /// A builder for [`HttpGatewayRoute`](crate::model::HttpGatewayRoute).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13432,12 +12625,8 @@ pub mod http_gateway_route {
             self
         }
         /// <p>An object that represents the criteria for determining a request match.</p>
-        pub fn set_match(
-            mut self,
-            input: std::option::Option<crate::model::HttpGatewayRouteMatch>,
-        ) -> Self {
-            self.r#match = input;
-            self
+        pub fn set_match(mut self, input: std::option::Option<crate::model::HttpGatewayRouteMatch>) -> Self {
+            self.r#match = input; self
         }
         /// <p>An object that represents the action to take if a match is determined.</p>
         pub fn action(mut self, input: crate::model::HttpGatewayRouteAction) -> Self {
@@ -13445,21 +12634,21 @@ pub mod http_gateway_route {
             self
         }
         /// <p>An object that represents the action to take if a match is determined.</p>
-        pub fn set_action(
-            mut self,
-            input: std::option::Option<crate::model::HttpGatewayRouteAction>,
-        ) -> Self {
-            self.action = input;
-            self
+        pub fn set_action(mut self, input: std::option::Option<crate::model::HttpGatewayRouteAction>) -> Self {
+            self.action = input; self
         }
         /// Consumes the builder and constructs a [`HttpGatewayRoute`](crate::model::HttpGatewayRoute).
         pub fn build(self) -> crate::model::HttpGatewayRoute {
             crate::model::HttpGatewayRoute {
-                r#match: self.r#match,
-                action: self.action,
+                r#match: self.r#match
+                ,
+                action: self.action
+                ,
             }
         }
     }
+    
+    
 }
 impl HttpGatewayRoute {
     /// Creates a new builder-style object to manufacture [`HttpGatewayRoute`](crate::model::HttpGatewayRoute).
@@ -13471,7 +12660,7 @@ impl HttpGatewayRoute {
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpGatewayRouteAction {
+pub struct HttpGatewayRouteAction  {
     /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
     #[doc(hidden)]
     pub target: std::option::Option<crate::model::GatewayRouteTarget>,
@@ -13481,17 +12670,17 @@ pub struct HttpGatewayRouteAction {
 }
 impl HttpGatewayRouteAction {
     /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
-    pub fn target(&self) -> std::option::Option<&crate::model::GatewayRouteTarget> {
+    pub fn target(&self) -> std::option::Option<& crate::model::GatewayRouteTarget> {
         self.target.as_ref()
     }
     /// <p>The gateway route action to rewrite.</p>
-    pub fn rewrite(&self) -> std::option::Option<&crate::model::HttpGatewayRouteRewrite> {
+    pub fn rewrite(&self) -> std::option::Option<& crate::model::HttpGatewayRouteRewrite> {
         self.rewrite.as_ref()
     }
 }
 /// See [`HttpGatewayRouteAction`](crate::model::HttpGatewayRouteAction).
 pub mod http_gateway_route_action {
-
+    
     /// A builder for [`HttpGatewayRouteAction`](crate::model::HttpGatewayRouteAction).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13505,12 +12694,8 @@ pub mod http_gateway_route_action {
             self
         }
         /// <p>An object that represents the target that traffic is routed to when a request matches the gateway route.</p>
-        pub fn set_target(
-            mut self,
-            input: std::option::Option<crate::model::GatewayRouteTarget>,
-        ) -> Self {
-            self.target = input;
-            self
+        pub fn set_target(mut self, input: std::option::Option<crate::model::GatewayRouteTarget>) -> Self {
+            self.target = input; self
         }
         /// <p>The gateway route action to rewrite.</p>
         pub fn rewrite(mut self, input: crate::model::HttpGatewayRouteRewrite) -> Self {
@@ -13518,21 +12703,21 @@ pub mod http_gateway_route_action {
             self
         }
         /// <p>The gateway route action to rewrite.</p>
-        pub fn set_rewrite(
-            mut self,
-            input: std::option::Option<crate::model::HttpGatewayRouteRewrite>,
-        ) -> Self {
-            self.rewrite = input;
-            self
+        pub fn set_rewrite(mut self, input: std::option::Option<crate::model::HttpGatewayRouteRewrite>) -> Self {
+            self.rewrite = input; self
         }
         /// Consumes the builder and constructs a [`HttpGatewayRouteAction`](crate::model::HttpGatewayRouteAction).
         pub fn build(self) -> crate::model::HttpGatewayRouteAction {
             crate::model::HttpGatewayRouteAction {
-                target: self.target,
-                rewrite: self.rewrite,
+                target: self.target
+                ,
+                rewrite: self.rewrite
+                ,
             }
         }
     }
+    
+    
 }
 impl HttpGatewayRouteAction {
     /// Creates a new builder-style object to manufacture [`HttpGatewayRouteAction`](crate::model::HttpGatewayRouteAction).
@@ -13544,7 +12729,7 @@ impl HttpGatewayRouteAction {
 /// <p>An object representing the gateway route to rewrite.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpGatewayRouteRewrite {
+pub struct HttpGatewayRouteRewrite  {
     /// <p>The specified beginning characters to rewrite.</p>
     #[doc(hidden)]
     pub prefix: std::option::Option<crate::model::HttpGatewayRoutePrefixRewrite>,
@@ -13557,21 +12742,21 @@ pub struct HttpGatewayRouteRewrite {
 }
 impl HttpGatewayRouteRewrite {
     /// <p>The specified beginning characters to rewrite.</p>
-    pub fn prefix(&self) -> std::option::Option<&crate::model::HttpGatewayRoutePrefixRewrite> {
+    pub fn prefix(&self) -> std::option::Option<& crate::model::HttpGatewayRoutePrefixRewrite> {
         self.prefix.as_ref()
     }
     /// <p>The path to rewrite.</p>
-    pub fn path(&self) -> std::option::Option<&crate::model::HttpGatewayRoutePathRewrite> {
+    pub fn path(&self) -> std::option::Option<& crate::model::HttpGatewayRoutePathRewrite> {
         self.path.as_ref()
     }
     /// <p>The host name to rewrite.</p>
-    pub fn hostname(&self) -> std::option::Option<&crate::model::GatewayRouteHostnameRewrite> {
+    pub fn hostname(&self) -> std::option::Option<& crate::model::GatewayRouteHostnameRewrite> {
         self.hostname.as_ref()
     }
 }
 /// See [`HttpGatewayRouteRewrite`](crate::model::HttpGatewayRouteRewrite).
 pub mod http_gateway_route_rewrite {
-
+    
     /// A builder for [`HttpGatewayRouteRewrite`](crate::model::HttpGatewayRouteRewrite).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13586,12 +12771,8 @@ pub mod http_gateway_route_rewrite {
             self
         }
         /// <p>The specified beginning characters to rewrite.</p>
-        pub fn set_prefix(
-            mut self,
-            input: std::option::Option<crate::model::HttpGatewayRoutePrefixRewrite>,
-        ) -> Self {
-            self.prefix = input;
-            self
+        pub fn set_prefix(mut self, input: std::option::Option<crate::model::HttpGatewayRoutePrefixRewrite>) -> Self {
+            self.prefix = input; self
         }
         /// <p>The path to rewrite.</p>
         pub fn path(mut self, input: crate::model::HttpGatewayRoutePathRewrite) -> Self {
@@ -13599,12 +12780,8 @@ pub mod http_gateway_route_rewrite {
             self
         }
         /// <p>The path to rewrite.</p>
-        pub fn set_path(
-            mut self,
-            input: std::option::Option<crate::model::HttpGatewayRoutePathRewrite>,
-        ) -> Self {
-            self.path = input;
-            self
+        pub fn set_path(mut self, input: std::option::Option<crate::model::HttpGatewayRoutePathRewrite>) -> Self {
+            self.path = input; self
         }
         /// <p>The host name to rewrite.</p>
         pub fn hostname(mut self, input: crate::model::GatewayRouteHostnameRewrite) -> Self {
@@ -13612,22 +12789,23 @@ pub mod http_gateway_route_rewrite {
             self
         }
         /// <p>The host name to rewrite.</p>
-        pub fn set_hostname(
-            mut self,
-            input: std::option::Option<crate::model::GatewayRouteHostnameRewrite>,
-        ) -> Self {
-            self.hostname = input;
-            self
+        pub fn set_hostname(mut self, input: std::option::Option<crate::model::GatewayRouteHostnameRewrite>) -> Self {
+            self.hostname = input; self
         }
         /// Consumes the builder and constructs a [`HttpGatewayRouteRewrite`](crate::model::HttpGatewayRouteRewrite).
         pub fn build(self) -> crate::model::HttpGatewayRouteRewrite {
             crate::model::HttpGatewayRouteRewrite {
-                prefix: self.prefix,
-                path: self.path,
-                hostname: self.hostname,
+                prefix: self.prefix
+                ,
+                path: self.path
+                ,
+                hostname: self.hostname
+                ,
             }
         }
     }
+    
+    
 }
 impl HttpGatewayRouteRewrite {
     /// Creates a new builder-style object to manufacture [`HttpGatewayRouteRewrite`](crate::model::HttpGatewayRouteRewrite).
@@ -13639,20 +12817,20 @@ impl HttpGatewayRouteRewrite {
 /// <p>An object that represents the path to rewrite.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpGatewayRoutePathRewrite {
+pub struct HttpGatewayRoutePathRewrite  {
     /// <p>The exact path to rewrite.</p>
     #[doc(hidden)]
     pub exact: std::option::Option<std::string::String>,
 }
 impl HttpGatewayRoutePathRewrite {
     /// <p>The exact path to rewrite.</p>
-    pub fn exact(&self) -> std::option::Option<&str> {
+    pub fn exact(&self) -> std::option::Option<& str> {
         self.exact.as_deref()
     }
 }
 /// See [`HttpGatewayRoutePathRewrite`](crate::model::HttpGatewayRoutePathRewrite).
 pub mod http_gateway_route_path_rewrite {
-
+    
     /// A builder for [`HttpGatewayRoutePathRewrite`](crate::model::HttpGatewayRoutePathRewrite).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13666,14 +12844,18 @@ pub mod http_gateway_route_path_rewrite {
         }
         /// <p>The exact path to rewrite.</p>
         pub fn set_exact(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.exact = input;
-            self
+            self.exact = input; self
         }
         /// Consumes the builder and constructs a [`HttpGatewayRoutePathRewrite`](crate::model::HttpGatewayRoutePathRewrite).
         pub fn build(self) -> crate::model::HttpGatewayRoutePathRewrite {
-            crate::model::HttpGatewayRoutePathRewrite { exact: self.exact }
+            crate::model::HttpGatewayRoutePathRewrite {
+                exact: self.exact
+                ,
+            }
         }
     }
+    
+    
 }
 impl HttpGatewayRoutePathRewrite {
     /// Creates a new builder-style object to manufacture [`HttpGatewayRoutePathRewrite`](crate::model::HttpGatewayRoutePathRewrite).
@@ -13685,7 +12867,7 @@ impl HttpGatewayRoutePathRewrite {
 /// <p>An object representing the beginning characters of the route to rewrite.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpGatewayRoutePrefixRewrite {
+pub struct HttpGatewayRoutePrefixRewrite  {
     /// <p>The default prefix used to replace the incoming route prefix when rewritten.</p>
     #[doc(hidden)]
     pub default_prefix: std::option::Option<crate::model::DefaultGatewayRouteRewrite>,
@@ -13695,17 +12877,17 @@ pub struct HttpGatewayRoutePrefixRewrite {
 }
 impl HttpGatewayRoutePrefixRewrite {
     /// <p>The default prefix used to replace the incoming route prefix when rewritten.</p>
-    pub fn default_prefix(&self) -> std::option::Option<&crate::model::DefaultGatewayRouteRewrite> {
+    pub fn default_prefix(&self) -> std::option::Option<& crate::model::DefaultGatewayRouteRewrite> {
         self.default_prefix.as_ref()
     }
     /// <p>The value used to replace the incoming route prefix when rewritten.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`HttpGatewayRoutePrefixRewrite`](crate::model::HttpGatewayRoutePrefixRewrite).
 pub mod http_gateway_route_prefix_rewrite {
-
+    
     /// A builder for [`HttpGatewayRoutePrefixRewrite`](crate::model::HttpGatewayRoutePrefixRewrite).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13719,12 +12901,8 @@ pub mod http_gateway_route_prefix_rewrite {
             self
         }
         /// <p>The default prefix used to replace the incoming route prefix when rewritten.</p>
-        pub fn set_default_prefix(
-            mut self,
-            input: std::option::Option<crate::model::DefaultGatewayRouteRewrite>,
-        ) -> Self {
-            self.default_prefix = input;
-            self
+        pub fn set_default_prefix(mut self, input: std::option::Option<crate::model::DefaultGatewayRouteRewrite>) -> Self {
+            self.default_prefix = input; self
         }
         /// <p>The value used to replace the incoming route prefix when rewritten.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -13733,17 +12911,20 @@ pub mod http_gateway_route_prefix_rewrite {
         }
         /// <p>The value used to replace the incoming route prefix when rewritten.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`HttpGatewayRoutePrefixRewrite`](crate::model::HttpGatewayRoutePrefixRewrite).
         pub fn build(self) -> crate::model::HttpGatewayRoutePrefixRewrite {
             crate::model::HttpGatewayRoutePrefixRewrite {
-                default_prefix: self.default_prefix,
-                value: self.value,
+                default_prefix: self.default_prefix
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl HttpGatewayRoutePrefixRewrite {
     /// Creates a new builder-style object to manufacture [`HttpGatewayRoutePrefixRewrite`](crate::model::HttpGatewayRoutePrefixRewrite).
@@ -13755,7 +12936,7 @@ impl HttpGatewayRoutePrefixRewrite {
 /// <p>An object that represents the criteria for determining a request match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpGatewayRouteMatch {
+pub struct HttpGatewayRouteMatch  {
     /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
     #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
@@ -13780,27 +12961,27 @@ pub struct HttpGatewayRouteMatch {
 }
 impl HttpGatewayRouteMatch {
     /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
     /// <p>The path to match on.</p>
-    pub fn path(&self) -> std::option::Option<&crate::model::HttpPathMatch> {
+    pub fn path(&self) -> std::option::Option<& crate::model::HttpPathMatch> {
         self.path.as_ref()
     }
     /// <p>The query parameter to match on.</p>
-    pub fn query_parameters(&self) -> std::option::Option<&[crate::model::HttpQueryParameter]> {
+    pub fn query_parameters(&self) -> std::option::Option<& [crate::model::HttpQueryParameter]> {
         self.query_parameters.as_deref()
     }
     /// <p>The method to match on.</p>
-    pub fn method(&self) -> std::option::Option<&crate::model::HttpMethod> {
+    pub fn method(&self) -> std::option::Option<& crate::model::HttpMethod> {
         self.method.as_ref()
     }
     /// <p>The host name to match on.</p>
-    pub fn hostname(&self) -> std::option::Option<&crate::model::GatewayRouteHostnameMatch> {
+    pub fn hostname(&self) -> std::option::Option<& crate::model::GatewayRouteHostnameMatch> {
         self.hostname.as_ref()
     }
     /// <p>The client request headers to match on.</p>
-    pub fn headers(&self) -> std::option::Option<&[crate::model::HttpGatewayRouteHeader]> {
+    pub fn headers(&self) -> std::option::Option<& [crate::model::HttpGatewayRouteHeader]> {
         self.headers.as_deref()
     }
     /// <p>The port number to match on.</p>
@@ -13810,18 +12991,16 @@ impl HttpGatewayRouteMatch {
 }
 /// See [`HttpGatewayRouteMatch`](crate::model::HttpGatewayRouteMatch).
 pub mod http_gateway_route_match {
-
+    
     /// A builder for [`HttpGatewayRouteMatch`](crate::model::HttpGatewayRouteMatch).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) prefix: std::option::Option<std::string::String>,
         pub(crate) path: std::option::Option<crate::model::HttpPathMatch>,
-        pub(crate) query_parameters:
-            std::option::Option<std::vec::Vec<crate::model::HttpQueryParameter>>,
+        pub(crate) query_parameters: std::option::Option<std::vec::Vec<crate::model::HttpQueryParameter>>,
         pub(crate) method: std::option::Option<crate::model::HttpMethod>,
         pub(crate) hostname: std::option::Option<crate::model::GatewayRouteHostnameMatch>,
-        pub(crate) headers:
-            std::option::Option<std::vec::Vec<crate::model::HttpGatewayRouteHeader>>,
+        pub(crate) headers: std::option::Option<std::vec::Vec<crate::model::HttpGatewayRouteHeader>>,
         pub(crate) port: std::option::Option<i32>,
     }
     impl Builder {
@@ -13832,8 +13011,7 @@ pub mod http_gateway_route_match {
         }
         /// <p>Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests to <code>my-service.local/metrics</code>, your prefix should be <code>/metrics</code>.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.prefix = input;
-            self
+            self.prefix = input; self
         }
         /// <p>The path to match on.</p>
         pub fn path(mut self, input: crate::model::HttpPathMatch) -> Self {
@@ -13842,8 +13020,7 @@ pub mod http_gateway_route_match {
         }
         /// <p>The path to match on.</p>
         pub fn set_path(mut self, input: std::option::Option<crate::model::HttpPathMatch>) -> Self {
-            self.path = input;
-            self
+            self.path = input; self
         }
         /// Appends an item to `query_parameters`.
         ///
@@ -13852,17 +13029,13 @@ pub mod http_gateway_route_match {
         /// <p>The query parameter to match on.</p>
         pub fn query_parameters(mut self, input: crate::model::HttpQueryParameter) -> Self {
             let mut v = self.query_parameters.unwrap_or_default();
-            v.push(input);
-            self.query_parameters = Some(v);
-            self
+                            v.push(input);
+                            self.query_parameters = Some(v);
+                            self
         }
         /// <p>The query parameter to match on.</p>
-        pub fn set_query_parameters(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HttpQueryParameter>>,
-        ) -> Self {
-            self.query_parameters = input;
-            self
+        pub fn set_query_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::model::HttpQueryParameter>>) -> Self {
+            self.query_parameters = input; self
         }
         /// <p>The method to match on.</p>
         pub fn method(mut self, input: crate::model::HttpMethod) -> Self {
@@ -13871,8 +13044,7 @@ pub mod http_gateway_route_match {
         }
         /// <p>The method to match on.</p>
         pub fn set_method(mut self, input: std::option::Option<crate::model::HttpMethod>) -> Self {
-            self.method = input;
-            self
+            self.method = input; self
         }
         /// <p>The host name to match on.</p>
         pub fn hostname(mut self, input: crate::model::GatewayRouteHostnameMatch) -> Self {
@@ -13880,12 +13052,8 @@ pub mod http_gateway_route_match {
             self
         }
         /// <p>The host name to match on.</p>
-        pub fn set_hostname(
-            mut self,
-            input: std::option::Option<crate::model::GatewayRouteHostnameMatch>,
-        ) -> Self {
-            self.hostname = input;
-            self
+        pub fn set_hostname(mut self, input: std::option::Option<crate::model::GatewayRouteHostnameMatch>) -> Self {
+            self.hostname = input; self
         }
         /// Appends an item to `headers`.
         ///
@@ -13894,17 +13062,13 @@ pub mod http_gateway_route_match {
         /// <p>The client request headers to match on.</p>
         pub fn headers(mut self, input: crate::model::HttpGatewayRouteHeader) -> Self {
             let mut v = self.headers.unwrap_or_default();
-            v.push(input);
-            self.headers = Some(v);
-            self
+                            v.push(input);
+                            self.headers = Some(v);
+                            self
         }
         /// <p>The client request headers to match on.</p>
-        pub fn set_headers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HttpGatewayRouteHeader>>,
-        ) -> Self {
-            self.headers = input;
-            self
+        pub fn set_headers(mut self, input: std::option::Option<std::vec::Vec<crate::model::HttpGatewayRouteHeader>>) -> Self {
+            self.headers = input; self
         }
         /// <p>The port number to match on.</p>
         pub fn port(mut self, input: i32) -> Self {
@@ -13913,22 +13077,30 @@ pub mod http_gateway_route_match {
         }
         /// <p>The port number to match on.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-            self.port = input;
-            self
+            self.port = input; self
         }
         /// Consumes the builder and constructs a [`HttpGatewayRouteMatch`](crate::model::HttpGatewayRouteMatch).
         pub fn build(self) -> crate::model::HttpGatewayRouteMatch {
             crate::model::HttpGatewayRouteMatch {
-                prefix: self.prefix,
-                path: self.path,
-                query_parameters: self.query_parameters,
-                method: self.method,
-                hostname: self.hostname,
-                headers: self.headers,
-                port: self.port,
+                prefix: self.prefix
+                ,
+                path: self.path
+                ,
+                query_parameters: self.query_parameters
+                ,
+                method: self.method
+                ,
+                hostname: self.hostname
+                ,
+                headers: self.headers
+                ,
+                port: self.port
+                ,
             }
         }
     }
+    
+    
 }
 impl HttpGatewayRouteMatch {
     /// Creates a new builder-style object to manufacture [`HttpGatewayRouteMatch`](crate::model::HttpGatewayRouteMatch).
@@ -13940,7 +13112,7 @@ impl HttpGatewayRouteMatch {
 /// <p>An object that represents the HTTP header in the gateway route.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpGatewayRouteHeader {
+pub struct HttpGatewayRouteHeader  {
     /// <p>A name for the HTTP header in the gateway route that will be matched on.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13953,7 +13125,7 @@ pub struct HttpGatewayRouteHeader {
 }
 impl HttpGatewayRouteHeader {
     /// <p>A name for the HTTP header in the gateway route that will be matched on.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
@@ -13961,13 +13133,13 @@ impl HttpGatewayRouteHeader {
         self.invert
     }
     /// <p>An object that represents the method and value to match with the header value sent in a request. Specify one match method.</p>
-    pub fn r#match(&self) -> std::option::Option<&crate::model::HeaderMatchMethod> {
+    pub fn r#match(&self) -> std::option::Option<& crate::model::HeaderMatchMethod> {
         self.r#match.as_ref()
     }
 }
 /// See [`HttpGatewayRouteHeader`](crate::model::HttpGatewayRouteHeader).
 pub mod http_gateway_route_header {
-
+    
     /// A builder for [`HttpGatewayRouteHeader`](crate::model::HttpGatewayRouteHeader).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -13983,8 +13155,7 @@ pub mod http_gateway_route_header {
         }
         /// <p>A name for the HTTP header in the gateway route that will be matched on.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
         pub fn invert(mut self, input: bool) -> Self {
@@ -13993,8 +13164,7 @@ pub mod http_gateway_route_header {
         }
         /// <p>Specify <code>True</code> to match anything except the match criteria. The default value is <code>False</code>.</p>
         pub fn set_invert(mut self, input: std::option::Option<bool>) -> Self {
-            self.invert = input;
-            self
+            self.invert = input; self
         }
         /// <p>An object that represents the method and value to match with the header value sent in a request. Specify one match method.</p>
         pub fn r#match(mut self, input: crate::model::HeaderMatchMethod) -> Self {
@@ -14002,22 +13172,23 @@ pub mod http_gateway_route_header {
             self
         }
         /// <p>An object that represents the method and value to match with the header value sent in a request. Specify one match method.</p>
-        pub fn set_match(
-            mut self,
-            input: std::option::Option<crate::model::HeaderMatchMethod>,
-        ) -> Self {
-            self.r#match = input;
-            self
+        pub fn set_match(mut self, input: std::option::Option<crate::model::HeaderMatchMethod>) -> Self {
+            self.r#match = input; self
         }
         /// Consumes the builder and constructs a [`HttpGatewayRouteHeader`](crate::model::HttpGatewayRouteHeader).
         pub fn build(self) -> crate::model::HttpGatewayRouteHeader {
             crate::model::HttpGatewayRouteHeader {
-                name: self.name,
-                invert: self.invert,
-                r#match: self.r#match,
+                name: self.name
+                ,
+                invert: self.invert
+                ,
+                r#match: self.r#match
+                ,
             }
         }
     }
+    
+    
 }
 impl HttpGatewayRouteHeader {
     /// Creates a new builder-style object to manufacture [`HttpGatewayRouteHeader`](crate::model::HttpGatewayRouteHeader).
@@ -14025,3 +13196,4 @@ impl HttpGatewayRouteHeader {
         crate::model::http_gateway_route_header::Builder::default()
     }
 }
+

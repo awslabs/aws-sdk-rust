@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WithdrawByoipCidrOutput {
+pub struct WithdrawByoipCidrOutput  {
     /// <p>Information about the address pool.</p>
     #[doc(hidden)]
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
 impl WithdrawByoipCidrOutput {
     /// <p>Information about the address pool.</p>
-    pub fn byoip_cidr(&self) -> std::option::Option<&crate::model::ByoipCidr> {
+    pub fn byoip_cidr(&self) -> std::option::Option<& crate::model::ByoipCidr> {
         self.byoip_cidr.as_ref()
     }
 }
 /// See [`WithdrawByoipCidrOutput`](crate::output::WithdrawByoipCidrOutput).
 pub mod withdraw_byoip_cidr_output {
-
+    
     /// A builder for [`WithdrawByoipCidrOutput`](crate::output::WithdrawByoipCidrOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -28,20 +28,19 @@ pub mod withdraw_byoip_cidr_output {
             self
         }
         /// <p>Information about the address pool.</p>
-        pub fn set_byoip_cidr(
-            mut self,
-            input: std::option::Option<crate::model::ByoipCidr>,
-        ) -> Self {
-            self.byoip_cidr = input;
-            self
+        pub fn set_byoip_cidr(mut self, input: std::option::Option<crate::model::ByoipCidr>) -> Self {
+            self.byoip_cidr = input; self
         }
         /// Consumes the builder and constructs a [`WithdrawByoipCidrOutput`](crate::output::WithdrawByoipCidrOutput).
         pub fn build(self) -> crate::output::WithdrawByoipCidrOutput {
             crate::output::WithdrawByoipCidrOutput {
-                byoip_cidr: self.byoip_cidr,
+                byoip_cidr: self.byoip_cidr
+                ,
             }
         }
     }
+    
+    
 }
 impl WithdrawByoipCidrOutput {
     /// Creates a new builder-style object to manufacture [`WithdrawByoipCidrOutput`](crate::output::WithdrawByoipCidrOutput).
@@ -53,20 +52,20 @@ impl WithdrawByoipCidrOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateListenerOutput {
+pub struct UpdateListenerOutput  {
     /// <p>Information for the updated listener.</p>
     #[doc(hidden)]
     pub listener: std::option::Option<crate::model::Listener>,
 }
 impl UpdateListenerOutput {
     /// <p>Information for the updated listener.</p>
-    pub fn listener(&self) -> std::option::Option<&crate::model::Listener> {
+    pub fn listener(&self) -> std::option::Option<& crate::model::Listener> {
         self.listener.as_ref()
     }
 }
 /// See [`UpdateListenerOutput`](crate::output::UpdateListenerOutput).
 pub mod update_listener_output {
-
+    
     /// A builder for [`UpdateListenerOutput`](crate::output::UpdateListenerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -80,16 +79,18 @@ pub mod update_listener_output {
         }
         /// <p>Information for the updated listener.</p>
         pub fn set_listener(mut self, input: std::option::Option<crate::model::Listener>) -> Self {
-            self.listener = input;
-            self
+            self.listener = input; self
         }
         /// Consumes the builder and constructs a [`UpdateListenerOutput`](crate::output::UpdateListenerOutput).
         pub fn build(self) -> crate::output::UpdateListenerOutput {
             crate::output::UpdateListenerOutput {
-                listener: self.listener,
+                listener: self.listener
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateListenerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateListenerOutput`](crate::output::UpdateListenerOutput).
@@ -101,20 +102,20 @@ impl UpdateListenerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEndpointGroupOutput {
+pub struct UpdateEndpointGroupOutput  {
     /// <p>The information about the endpoint group that was updated.</p>
     #[doc(hidden)]
     pub endpoint_group: std::option::Option<crate::model::EndpointGroup>,
 }
 impl UpdateEndpointGroupOutput {
     /// <p>The information about the endpoint group that was updated.</p>
-    pub fn endpoint_group(&self) -> std::option::Option<&crate::model::EndpointGroup> {
+    pub fn endpoint_group(&self) -> std::option::Option<& crate::model::EndpointGroup> {
         self.endpoint_group.as_ref()
     }
 }
 /// See [`UpdateEndpointGroupOutput`](crate::output::UpdateEndpointGroupOutput).
 pub mod update_endpoint_group_output {
-
+    
     /// A builder for [`UpdateEndpointGroupOutput`](crate::output::UpdateEndpointGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -127,20 +128,19 @@ pub mod update_endpoint_group_output {
             self
         }
         /// <p>The information about the endpoint group that was updated.</p>
-        pub fn set_endpoint_group(
-            mut self,
-            input: std::option::Option<crate::model::EndpointGroup>,
-        ) -> Self {
-            self.endpoint_group = input;
-            self
+        pub fn set_endpoint_group(mut self, input: std::option::Option<crate::model::EndpointGroup>) -> Self {
+            self.endpoint_group = input; self
         }
         /// Consumes the builder and constructs a [`UpdateEndpointGroupOutput`](crate::output::UpdateEndpointGroupOutput).
         pub fn build(self) -> crate::output::UpdateEndpointGroupOutput {
             crate::output::UpdateEndpointGroupOutput {
-                endpoint_group: self.endpoint_group,
+                endpoint_group: self.endpoint_group
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateEndpointGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEndpointGroupOutput`](crate::output::UpdateEndpointGroupOutput).
@@ -152,20 +152,20 @@ impl UpdateEndpointGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCustomRoutingListenerOutput {
+pub struct UpdateCustomRoutingListenerOutput  {
     /// <p>Information for the updated listener for a custom routing accelerator.</p>
     #[doc(hidden)]
     pub listener: std::option::Option<crate::model::CustomRoutingListener>,
 }
 impl UpdateCustomRoutingListenerOutput {
     /// <p>Information for the updated listener for a custom routing accelerator.</p>
-    pub fn listener(&self) -> std::option::Option<&crate::model::CustomRoutingListener> {
+    pub fn listener(&self) -> std::option::Option<& crate::model::CustomRoutingListener> {
         self.listener.as_ref()
     }
 }
 /// See [`UpdateCustomRoutingListenerOutput`](crate::output::UpdateCustomRoutingListenerOutput).
 pub mod update_custom_routing_listener_output {
-
+    
     /// A builder for [`UpdateCustomRoutingListenerOutput`](crate::output::UpdateCustomRoutingListenerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -178,20 +178,19 @@ pub mod update_custom_routing_listener_output {
             self
         }
         /// <p>Information for the updated listener for a custom routing accelerator.</p>
-        pub fn set_listener(
-            mut self,
-            input: std::option::Option<crate::model::CustomRoutingListener>,
-        ) -> Self {
-            self.listener = input;
-            self
+        pub fn set_listener(mut self, input: std::option::Option<crate::model::CustomRoutingListener>) -> Self {
+            self.listener = input; self
         }
         /// Consumes the builder and constructs a [`UpdateCustomRoutingListenerOutput`](crate::output::UpdateCustomRoutingListenerOutput).
         pub fn build(self) -> crate::output::UpdateCustomRoutingListenerOutput {
             crate::output::UpdateCustomRoutingListenerOutput {
-                listener: self.listener,
+                listener: self.listener
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateCustomRoutingListenerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingListenerOutput`](crate::output::UpdateCustomRoutingListenerOutput).
@@ -203,58 +202,49 @@ impl UpdateCustomRoutingListenerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCustomRoutingAcceleratorAttributesOutput {
+pub struct UpdateCustomRoutingAcceleratorAttributesOutput  {
     /// <p>Updated custom routing accelerator.</p>
     #[doc(hidden)]
-    pub accelerator_attributes:
-        std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>,
+    pub accelerator_attributes: std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>,
 }
 impl UpdateCustomRoutingAcceleratorAttributesOutput {
     /// <p>Updated custom routing accelerator.</p>
-    pub fn accelerator_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::CustomRoutingAcceleratorAttributes> {
+    pub fn accelerator_attributes(&self) -> std::option::Option<& crate::model::CustomRoutingAcceleratorAttributes> {
         self.accelerator_attributes.as_ref()
     }
 }
 /// See [`UpdateCustomRoutingAcceleratorAttributesOutput`](crate::output::UpdateCustomRoutingAcceleratorAttributesOutput).
 pub mod update_custom_routing_accelerator_attributes_output {
-
+    
     /// A builder for [`UpdateCustomRoutingAcceleratorAttributesOutput`](crate::output::UpdateCustomRoutingAcceleratorAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) accelerator_attributes:
-            std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>,
+        pub(crate) accelerator_attributes: std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>,
     }
     impl Builder {
         /// <p>Updated custom routing accelerator.</p>
-        pub fn accelerator_attributes(
-            mut self,
-            input: crate::model::CustomRoutingAcceleratorAttributes,
-        ) -> Self {
+        pub fn accelerator_attributes(mut self, input: crate::model::CustomRoutingAcceleratorAttributes) -> Self {
             self.accelerator_attributes = Some(input);
             self
         }
         /// <p>Updated custom routing accelerator.</p>
-        pub fn set_accelerator_attributes(
-            mut self,
-            input: std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>,
-        ) -> Self {
-            self.accelerator_attributes = input;
-            self
+        pub fn set_accelerator_attributes(mut self, input: std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>) -> Self {
+            self.accelerator_attributes = input; self
         }
         /// Consumes the builder and constructs a [`UpdateCustomRoutingAcceleratorAttributesOutput`](crate::output::UpdateCustomRoutingAcceleratorAttributesOutput).
         pub fn build(self) -> crate::output::UpdateCustomRoutingAcceleratorAttributesOutput {
             crate::output::UpdateCustomRoutingAcceleratorAttributesOutput {
-                accelerator_attributes: self.accelerator_attributes,
+                accelerator_attributes: self.accelerator_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateCustomRoutingAcceleratorAttributesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingAcceleratorAttributesOutput`](crate::output::UpdateCustomRoutingAcceleratorAttributesOutput).
-    pub fn builder() -> crate::output::update_custom_routing_accelerator_attributes_output::Builder
-    {
+    pub fn builder() -> crate::output::update_custom_routing_accelerator_attributes_output::Builder {
         crate::output::update_custom_routing_accelerator_attributes_output::Builder::default()
     }
 }
@@ -262,20 +252,20 @@ impl UpdateCustomRoutingAcceleratorAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCustomRoutingAcceleratorOutput {
+pub struct UpdateCustomRoutingAcceleratorOutput  {
     /// <p>Information about the updated custom routing accelerator.</p>
     #[doc(hidden)]
     pub accelerator: std::option::Option<crate::model::CustomRoutingAccelerator>,
 }
 impl UpdateCustomRoutingAcceleratorOutput {
     /// <p>Information about the updated custom routing accelerator.</p>
-    pub fn accelerator(&self) -> std::option::Option<&crate::model::CustomRoutingAccelerator> {
+    pub fn accelerator(&self) -> std::option::Option<& crate::model::CustomRoutingAccelerator> {
         self.accelerator.as_ref()
     }
 }
 /// See [`UpdateCustomRoutingAcceleratorOutput`](crate::output::UpdateCustomRoutingAcceleratorOutput).
 pub mod update_custom_routing_accelerator_output {
-
+    
     /// A builder for [`UpdateCustomRoutingAcceleratorOutput`](crate::output::UpdateCustomRoutingAcceleratorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -288,20 +278,19 @@ pub mod update_custom_routing_accelerator_output {
             self
         }
         /// <p>Information about the updated custom routing accelerator.</p>
-        pub fn set_accelerator(
-            mut self,
-            input: std::option::Option<crate::model::CustomRoutingAccelerator>,
-        ) -> Self {
-            self.accelerator = input;
-            self
+        pub fn set_accelerator(mut self, input: std::option::Option<crate::model::CustomRoutingAccelerator>) -> Self {
+            self.accelerator = input; self
         }
         /// Consumes the builder and constructs a [`UpdateCustomRoutingAcceleratorOutput`](crate::output::UpdateCustomRoutingAcceleratorOutput).
         pub fn build(self) -> crate::output::UpdateCustomRoutingAcceleratorOutput {
             crate::output::UpdateCustomRoutingAcceleratorOutput {
-                accelerator: self.accelerator,
+                accelerator: self.accelerator
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateCustomRoutingAcceleratorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCustomRoutingAcceleratorOutput`](crate::output::UpdateCustomRoutingAcceleratorOutput).
@@ -313,22 +302,20 @@ impl UpdateCustomRoutingAcceleratorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAcceleratorAttributesOutput {
+pub struct UpdateAcceleratorAttributesOutput  {
     /// <p>Updated attributes for the accelerator.</p>
     #[doc(hidden)]
     pub accelerator_attributes: std::option::Option<crate::model::AcceleratorAttributes>,
 }
 impl UpdateAcceleratorAttributesOutput {
     /// <p>Updated attributes for the accelerator.</p>
-    pub fn accelerator_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::AcceleratorAttributes> {
+    pub fn accelerator_attributes(&self) -> std::option::Option<& crate::model::AcceleratorAttributes> {
         self.accelerator_attributes.as_ref()
     }
 }
 /// See [`UpdateAcceleratorAttributesOutput`](crate::output::UpdateAcceleratorAttributesOutput).
 pub mod update_accelerator_attributes_output {
-
+    
     /// A builder for [`UpdateAcceleratorAttributesOutput`](crate::output::UpdateAcceleratorAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -336,28 +323,24 @@ pub mod update_accelerator_attributes_output {
     }
     impl Builder {
         /// <p>Updated attributes for the accelerator.</p>
-        pub fn accelerator_attributes(
-            mut self,
-            input: crate::model::AcceleratorAttributes,
-        ) -> Self {
+        pub fn accelerator_attributes(mut self, input: crate::model::AcceleratorAttributes) -> Self {
             self.accelerator_attributes = Some(input);
             self
         }
         /// <p>Updated attributes for the accelerator.</p>
-        pub fn set_accelerator_attributes(
-            mut self,
-            input: std::option::Option<crate::model::AcceleratorAttributes>,
-        ) -> Self {
-            self.accelerator_attributes = input;
-            self
+        pub fn set_accelerator_attributes(mut self, input: std::option::Option<crate::model::AcceleratorAttributes>) -> Self {
+            self.accelerator_attributes = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAcceleratorAttributesOutput`](crate::output::UpdateAcceleratorAttributesOutput).
         pub fn build(self) -> crate::output::UpdateAcceleratorAttributesOutput {
             crate::output::UpdateAcceleratorAttributesOutput {
-                accelerator_attributes: self.accelerator_attributes,
+                accelerator_attributes: self.accelerator_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAcceleratorAttributesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAcceleratorAttributesOutput`](crate::output::UpdateAcceleratorAttributesOutput).
@@ -369,20 +352,20 @@ impl UpdateAcceleratorAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAcceleratorOutput {
+pub struct UpdateAcceleratorOutput  {
     /// <p>Information about the updated accelerator.</p>
     #[doc(hidden)]
     pub accelerator: std::option::Option<crate::model::Accelerator>,
 }
 impl UpdateAcceleratorOutput {
     /// <p>Information about the updated accelerator.</p>
-    pub fn accelerator(&self) -> std::option::Option<&crate::model::Accelerator> {
+    pub fn accelerator(&self) -> std::option::Option<& crate::model::Accelerator> {
         self.accelerator.as_ref()
     }
 }
 /// See [`UpdateAcceleratorOutput`](crate::output::UpdateAcceleratorOutput).
 pub mod update_accelerator_output {
-
+    
     /// A builder for [`UpdateAcceleratorOutput`](crate::output::UpdateAcceleratorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -395,20 +378,19 @@ pub mod update_accelerator_output {
             self
         }
         /// <p>Information about the updated accelerator.</p>
-        pub fn set_accelerator(
-            mut self,
-            input: std::option::Option<crate::model::Accelerator>,
-        ) -> Self {
-            self.accelerator = input;
-            self
+        pub fn set_accelerator(mut self, input: std::option::Option<crate::model::Accelerator>) -> Self {
+            self.accelerator = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAcceleratorOutput`](crate::output::UpdateAcceleratorOutput).
         pub fn build(self) -> crate::output::UpdateAcceleratorOutput {
             crate::output::UpdateAcceleratorOutput {
-                accelerator: self.accelerator,
+                accelerator: self.accelerator
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAcceleratorOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAcceleratorOutput`](crate::output::UpdateAcceleratorOutput).
@@ -420,19 +402,24 @@ impl UpdateAcceleratorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -444,19 +431,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -468,19 +460,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveEndpointsOutput {}
+pub struct RemoveEndpointsOutput  {
+}
 /// See [`RemoveEndpointsOutput`](crate::output::RemoveEndpointsOutput).
 pub mod remove_endpoints_output {
-
+    
     /// A builder for [`RemoveEndpointsOutput`](crate::output::RemoveEndpointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveEndpointsOutput`](crate::output::RemoveEndpointsOutput).
         pub fn build(self) -> crate::output::RemoveEndpointsOutput {
-            crate::output::RemoveEndpointsOutput {}
+            crate::output::RemoveEndpointsOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`RemoveEndpointsOutput`](crate::output::RemoveEndpointsOutput).
@@ -492,19 +489,24 @@ impl RemoveEndpointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveCustomRoutingEndpointsOutput {}
+pub struct RemoveCustomRoutingEndpointsOutput  {
+}
 /// See [`RemoveCustomRoutingEndpointsOutput`](crate::output::RemoveCustomRoutingEndpointsOutput).
 pub mod remove_custom_routing_endpoints_output {
-
+    
     /// A builder for [`RemoveCustomRoutingEndpointsOutput`](crate::output::RemoveCustomRoutingEndpointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveCustomRoutingEndpointsOutput`](crate::output::RemoveCustomRoutingEndpointsOutput).
         pub fn build(self) -> crate::output::RemoveCustomRoutingEndpointsOutput {
-            crate::output::RemoveCustomRoutingEndpointsOutput {}
+            crate::output::RemoveCustomRoutingEndpointsOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveCustomRoutingEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`RemoveCustomRoutingEndpointsOutput`](crate::output::RemoveCustomRoutingEndpointsOutput).
@@ -516,20 +518,20 @@ impl RemoveCustomRoutingEndpointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisionByoipCidrOutput {
+pub struct ProvisionByoipCidrOutput  {
     /// <p>Information about the address range.</p>
     #[doc(hidden)]
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
 impl ProvisionByoipCidrOutput {
     /// <p>Information about the address range.</p>
-    pub fn byoip_cidr(&self) -> std::option::Option<&crate::model::ByoipCidr> {
+    pub fn byoip_cidr(&self) -> std::option::Option<& crate::model::ByoipCidr> {
         self.byoip_cidr.as_ref()
     }
 }
 /// See [`ProvisionByoipCidrOutput`](crate::output::ProvisionByoipCidrOutput).
 pub mod provision_byoip_cidr_output {
-
+    
     /// A builder for [`ProvisionByoipCidrOutput`](crate::output::ProvisionByoipCidrOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -542,20 +544,19 @@ pub mod provision_byoip_cidr_output {
             self
         }
         /// <p>Information about the address range.</p>
-        pub fn set_byoip_cidr(
-            mut self,
-            input: std::option::Option<crate::model::ByoipCidr>,
-        ) -> Self {
-            self.byoip_cidr = input;
-            self
+        pub fn set_byoip_cidr(mut self, input: std::option::Option<crate::model::ByoipCidr>) -> Self {
+            self.byoip_cidr = input; self
         }
         /// Consumes the builder and constructs a [`ProvisionByoipCidrOutput`](crate::output::ProvisionByoipCidrOutput).
         pub fn build(self) -> crate::output::ProvisionByoipCidrOutput {
             crate::output::ProvisionByoipCidrOutput {
-                byoip_cidr: self.byoip_cidr,
+                byoip_cidr: self.byoip_cidr
+                ,
             }
         }
     }
+    
+    
 }
 impl ProvisionByoipCidrOutput {
     /// Creates a new builder-style object to manufacture [`ProvisionByoipCidrOutput`](crate::output::ProvisionByoipCidrOutput).
@@ -567,20 +568,20 @@ impl ProvisionByoipCidrOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>Root level tag for the Tags parameters.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Root level tag for the Tags parameters.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -594,23 +595,24 @@ pub mod list_tags_for_resource_output {
         /// <p>Root level tag for the Tags parameters.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>Root level tag for the Tags parameters.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -622,7 +624,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListListenersOutput {
+pub struct ListListenersOutput  {
     /// <p>The list of listeners for an accelerator.</p>
     #[doc(hidden)]
     pub listeners: std::option::Option<std::vec::Vec<crate::model::Listener>>,
@@ -632,17 +634,17 @@ pub struct ListListenersOutput {
 }
 impl ListListenersOutput {
     /// <p>The list of listeners for an accelerator.</p>
-    pub fn listeners(&self) -> std::option::Option<&[crate::model::Listener]> {
+    pub fn listeners(&self) -> std::option::Option<& [crate::model::Listener]> {
         self.listeners.as_deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListListenersOutput`](crate::output::ListListenersOutput).
 pub mod list_listeners_output {
-
+    
     /// A builder for [`ListListenersOutput`](crate::output::ListListenersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -657,17 +659,13 @@ pub mod list_listeners_output {
         /// <p>The list of listeners for an accelerator.</p>
         pub fn listeners(mut self, input: crate::model::Listener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-            v.push(input);
-            self.listeners = Some(v);
-            self
+                            v.push(input);
+                            self.listeners = Some(v);
+                            self
         }
         /// <p>The list of listeners for an accelerator.</p>
-        pub fn set_listeners(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Listener>>,
-        ) -> Self {
-            self.listeners = input;
-            self
+        pub fn set_listeners(mut self, input: std::option::Option<std::vec::Vec<crate::model::Listener>>) -> Self {
+            self.listeners = input; self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -676,17 +674,20 @@ pub mod list_listeners_output {
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListListenersOutput`](crate::output::ListListenersOutput).
         pub fn build(self) -> crate::output::ListListenersOutput {
             crate::output::ListListenersOutput {
-                listeners: self.listeners,
-                next_token: self.next_token,
+                listeners: self.listeners
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListListenersOutput {
     /// Creates a new builder-style object to manufacture [`ListListenersOutput`](crate::output::ListListenersOutput).
@@ -698,7 +699,7 @@ impl ListListenersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEndpointGroupsOutput {
+pub struct ListEndpointGroupsOutput  {
     /// <p>The list of the endpoint groups associated with a listener.</p>
     #[doc(hidden)]
     pub endpoint_groups: std::option::Option<std::vec::Vec<crate::model::EndpointGroup>>,
@@ -708,17 +709,17 @@ pub struct ListEndpointGroupsOutput {
 }
 impl ListEndpointGroupsOutput {
     /// <p>The list of the endpoint groups associated with a listener.</p>
-    pub fn endpoint_groups(&self) -> std::option::Option<&[crate::model::EndpointGroup]> {
+    pub fn endpoint_groups(&self) -> std::option::Option<& [crate::model::EndpointGroup]> {
         self.endpoint_groups.as_deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEndpointGroupsOutput`](crate::output::ListEndpointGroupsOutput).
 pub mod list_endpoint_groups_output {
-
+    
     /// A builder for [`ListEndpointGroupsOutput`](crate::output::ListEndpointGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -733,17 +734,13 @@ pub mod list_endpoint_groups_output {
         /// <p>The list of the endpoint groups associated with a listener.</p>
         pub fn endpoint_groups(mut self, input: crate::model::EndpointGroup) -> Self {
             let mut v = self.endpoint_groups.unwrap_or_default();
-            v.push(input);
-            self.endpoint_groups = Some(v);
-            self
+                            v.push(input);
+                            self.endpoint_groups = Some(v);
+                            self
         }
         /// <p>The list of the endpoint groups associated with a listener.</p>
-        pub fn set_endpoint_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EndpointGroup>>,
-        ) -> Self {
-            self.endpoint_groups = input;
-            self
+        pub fn set_endpoint_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::EndpointGroup>>) -> Self {
+            self.endpoint_groups = input; self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -752,17 +749,20 @@ pub mod list_endpoint_groups_output {
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEndpointGroupsOutput`](crate::output::ListEndpointGroupsOutput).
         pub fn build(self) -> crate::output::ListEndpointGroupsOutput {
             crate::output::ListEndpointGroupsOutput {
-                endpoint_groups: self.endpoint_groups,
-                next_token: self.next_token,
+                endpoint_groups: self.endpoint_groups
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEndpointGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListEndpointGroupsOutput`](crate::output::ListEndpointGroupsOutput).
@@ -774,35 +774,31 @@ impl ListEndpointGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomRoutingPortMappingsByDestinationOutput {
+pub struct ListCustomRoutingPortMappingsByDestinationOutput  {
     /// <p>The port mappings for the endpoint IP address that you specified in the request.</p>
     #[doc(hidden)]
-    pub destination_port_mappings:
-        std::option::Option<std::vec::Vec<crate::model::DestinationPortMapping>>,
+    pub destination_port_mappings: std::option::Option<std::vec::Vec<crate::model::DestinationPortMapping>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomRoutingPortMappingsByDestinationOutput {
     /// <p>The port mappings for the endpoint IP address that you specified in the request.</p>
-    pub fn destination_port_mappings(
-        &self,
-    ) -> std::option::Option<&[crate::model::DestinationPortMapping]> {
+    pub fn destination_port_mappings(&self) -> std::option::Option<& [crate::model::DestinationPortMapping]> {
         self.destination_port_mappings.as_deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCustomRoutingPortMappingsByDestinationOutput`](crate::output::ListCustomRoutingPortMappingsByDestinationOutput).
 pub mod list_custom_routing_port_mappings_by_destination_output {
-
+    
     /// A builder for [`ListCustomRoutingPortMappingsByDestinationOutput`](crate::output::ListCustomRoutingPortMappingsByDestinationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) destination_port_mappings:
-            std::option::Option<std::vec::Vec<crate::model::DestinationPortMapping>>,
+        pub(crate) destination_port_mappings: std::option::Option<std::vec::Vec<crate::model::DestinationPortMapping>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -811,22 +807,15 @@ pub mod list_custom_routing_port_mappings_by_destination_output {
         /// To override the contents of this collection use [`set_destination_port_mappings`](Self::set_destination_port_mappings).
         ///
         /// <p>The port mappings for the endpoint IP address that you specified in the request.</p>
-        pub fn destination_port_mappings(
-            mut self,
-            input: crate::model::DestinationPortMapping,
-        ) -> Self {
+        pub fn destination_port_mappings(mut self, input: crate::model::DestinationPortMapping) -> Self {
             let mut v = self.destination_port_mappings.unwrap_or_default();
-            v.push(input);
-            self.destination_port_mappings = Some(v);
-            self
+                            v.push(input);
+                            self.destination_port_mappings = Some(v);
+                            self
         }
         /// <p>The port mappings for the endpoint IP address that you specified in the request.</p>
-        pub fn set_destination_port_mappings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DestinationPortMapping>>,
-        ) -> Self {
-            self.destination_port_mappings = input;
-            self
+        pub fn set_destination_port_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::model::DestinationPortMapping>>) -> Self {
+            self.destination_port_mappings = input; self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -835,22 +824,24 @@ pub mod list_custom_routing_port_mappings_by_destination_output {
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCustomRoutingPortMappingsByDestinationOutput`](crate::output::ListCustomRoutingPortMappingsByDestinationOutput).
         pub fn build(self) -> crate::output::ListCustomRoutingPortMappingsByDestinationOutput {
             crate::output::ListCustomRoutingPortMappingsByDestinationOutput {
-                destination_port_mappings: self.destination_port_mappings,
-                next_token: self.next_token,
+                destination_port_mappings: self.destination_port_mappings
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCustomRoutingPortMappingsByDestinationOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingPortMappingsByDestinationOutput`](crate::output::ListCustomRoutingPortMappingsByDestinationOutput).
-    pub fn builder(
-    ) -> crate::output::list_custom_routing_port_mappings_by_destination_output::Builder {
+    pub fn builder() -> crate::output::list_custom_routing_port_mappings_by_destination_output::Builder {
         crate::output::list_custom_routing_port_mappings_by_destination_output::Builder::default()
     }
 }
@@ -858,7 +849,7 @@ impl ListCustomRoutingPortMappingsByDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomRoutingPortMappingsOutput {
+pub struct ListCustomRoutingPortMappingsOutput  {
     /// <p>The port mappings for a custom routing accelerator.</p>
     #[doc(hidden)]
     pub port_mappings: std::option::Option<std::vec::Vec<crate::model::PortMapping>>,
@@ -868,17 +859,17 @@ pub struct ListCustomRoutingPortMappingsOutput {
 }
 impl ListCustomRoutingPortMappingsOutput {
     /// <p>The port mappings for a custom routing accelerator.</p>
-    pub fn port_mappings(&self) -> std::option::Option<&[crate::model::PortMapping]> {
+    pub fn port_mappings(&self) -> std::option::Option<& [crate::model::PortMapping]> {
         self.port_mappings.as_deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCustomRoutingPortMappingsOutput`](crate::output::ListCustomRoutingPortMappingsOutput).
 pub mod list_custom_routing_port_mappings_output {
-
+    
     /// A builder for [`ListCustomRoutingPortMappingsOutput`](crate::output::ListCustomRoutingPortMappingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -893,17 +884,13 @@ pub mod list_custom_routing_port_mappings_output {
         /// <p>The port mappings for a custom routing accelerator.</p>
         pub fn port_mappings(mut self, input: crate::model::PortMapping) -> Self {
             let mut v = self.port_mappings.unwrap_or_default();
-            v.push(input);
-            self.port_mappings = Some(v);
-            self
+                            v.push(input);
+                            self.port_mappings = Some(v);
+                            self
         }
         /// <p>The port mappings for a custom routing accelerator.</p>
-        pub fn set_port_mappings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PortMapping>>,
-        ) -> Self {
-            self.port_mappings = input;
-            self
+        pub fn set_port_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::model::PortMapping>>) -> Self {
+            self.port_mappings = input; self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -912,17 +899,20 @@ pub mod list_custom_routing_port_mappings_output {
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCustomRoutingPortMappingsOutput`](crate::output::ListCustomRoutingPortMappingsOutput).
         pub fn build(self) -> crate::output::ListCustomRoutingPortMappingsOutput {
             crate::output::ListCustomRoutingPortMappingsOutput {
-                port_mappings: self.port_mappings,
-                next_token: self.next_token,
+                port_mappings: self.port_mappings
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCustomRoutingPortMappingsOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingPortMappingsOutput`](crate::output::ListCustomRoutingPortMappingsOutput).
@@ -934,7 +924,7 @@ impl ListCustomRoutingPortMappingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomRoutingListenersOutput {
+pub struct ListCustomRoutingListenersOutput  {
     /// <p>The list of listeners for a custom routing accelerator.</p>
     #[doc(hidden)]
     pub listeners: std::option::Option<std::vec::Vec<crate::model::CustomRoutingListener>>,
@@ -944,22 +934,21 @@ pub struct ListCustomRoutingListenersOutput {
 }
 impl ListCustomRoutingListenersOutput {
     /// <p>The list of listeners for a custom routing accelerator.</p>
-    pub fn listeners(&self) -> std::option::Option<&[crate::model::CustomRoutingListener]> {
+    pub fn listeners(&self) -> std::option::Option<& [crate::model::CustomRoutingListener]> {
         self.listeners.as_deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCustomRoutingListenersOutput`](crate::output::ListCustomRoutingListenersOutput).
 pub mod list_custom_routing_listeners_output {
-
+    
     /// A builder for [`ListCustomRoutingListenersOutput`](crate::output::ListCustomRoutingListenersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) listeners:
-            std::option::Option<std::vec::Vec<crate::model::CustomRoutingListener>>,
+        pub(crate) listeners: std::option::Option<std::vec::Vec<crate::model::CustomRoutingListener>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -970,17 +959,13 @@ pub mod list_custom_routing_listeners_output {
         /// <p>The list of listeners for a custom routing accelerator.</p>
         pub fn listeners(mut self, input: crate::model::CustomRoutingListener) -> Self {
             let mut v = self.listeners.unwrap_or_default();
-            v.push(input);
-            self.listeners = Some(v);
-            self
+                            v.push(input);
+                            self.listeners = Some(v);
+                            self
         }
         /// <p>The list of listeners for a custom routing accelerator.</p>
-        pub fn set_listeners(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CustomRoutingListener>>,
-        ) -> Self {
-            self.listeners = input;
-            self
+        pub fn set_listeners(mut self, input: std::option::Option<std::vec::Vec<crate::model::CustomRoutingListener>>) -> Self {
+            self.listeners = input; self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -989,17 +974,20 @@ pub mod list_custom_routing_listeners_output {
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCustomRoutingListenersOutput`](crate::output::ListCustomRoutingListenersOutput).
         pub fn build(self) -> crate::output::ListCustomRoutingListenersOutput {
             crate::output::ListCustomRoutingListenersOutput {
-                listeners: self.listeners,
-                next_token: self.next_token,
+                listeners: self.listeners
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCustomRoutingListenersOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingListenersOutput`](crate::output::ListCustomRoutingListenersOutput).
@@ -1011,35 +999,31 @@ impl ListCustomRoutingListenersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomRoutingEndpointGroupsOutput {
+pub struct ListCustomRoutingEndpointGroupsOutput  {
     /// <p>The list of the endpoint groups associated with a listener for a custom routing accelerator.</p>
     #[doc(hidden)]
-    pub endpoint_groups:
-        std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointGroup>>,
+    pub endpoint_groups: std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointGroup>>,
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCustomRoutingEndpointGroupsOutput {
     /// <p>The list of the endpoint groups associated with a listener for a custom routing accelerator.</p>
-    pub fn endpoint_groups(
-        &self,
-    ) -> std::option::Option<&[crate::model::CustomRoutingEndpointGroup]> {
+    pub fn endpoint_groups(&self) -> std::option::Option<& [crate::model::CustomRoutingEndpointGroup]> {
         self.endpoint_groups.as_deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCustomRoutingEndpointGroupsOutput`](crate::output::ListCustomRoutingEndpointGroupsOutput).
 pub mod list_custom_routing_endpoint_groups_output {
-
+    
     /// A builder for [`ListCustomRoutingEndpointGroupsOutput`](crate::output::ListCustomRoutingEndpointGroupsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) endpoint_groups:
-            std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointGroup>>,
+        pub(crate) endpoint_groups: std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointGroup>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1050,17 +1034,13 @@ pub mod list_custom_routing_endpoint_groups_output {
         /// <p>The list of the endpoint groups associated with a listener for a custom routing accelerator.</p>
         pub fn endpoint_groups(mut self, input: crate::model::CustomRoutingEndpointGroup) -> Self {
             let mut v = self.endpoint_groups.unwrap_or_default();
-            v.push(input);
-            self.endpoint_groups = Some(v);
-            self
+                            v.push(input);
+                            self.endpoint_groups = Some(v);
+                            self
         }
         /// <p>The list of the endpoint groups associated with a listener for a custom routing accelerator.</p>
-        pub fn set_endpoint_groups(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointGroup>>,
-        ) -> Self {
-            self.endpoint_groups = input;
-            self
+        pub fn set_endpoint_groups(mut self, input: std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointGroup>>) -> Self {
+            self.endpoint_groups = input; self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1069,17 +1049,20 @@ pub mod list_custom_routing_endpoint_groups_output {
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCustomRoutingEndpointGroupsOutput`](crate::output::ListCustomRoutingEndpointGroupsOutput).
         pub fn build(self) -> crate::output::ListCustomRoutingEndpointGroupsOutput {
             crate::output::ListCustomRoutingEndpointGroupsOutput {
-                endpoint_groups: self.endpoint_groups,
-                next_token: self.next_token,
+                endpoint_groups: self.endpoint_groups
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCustomRoutingEndpointGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingEndpointGroupsOutput`](crate::output::ListCustomRoutingEndpointGroupsOutput).
@@ -1091,7 +1074,7 @@ impl ListCustomRoutingEndpointGroupsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomRoutingAcceleratorsOutput {
+pub struct ListCustomRoutingAcceleratorsOutput  {
     /// <p>The list of custom routing accelerators for a customer account.</p>
     #[doc(hidden)]
     pub accelerators: std::option::Option<std::vec::Vec<crate::model::CustomRoutingAccelerator>>,
@@ -1101,22 +1084,21 @@ pub struct ListCustomRoutingAcceleratorsOutput {
 }
 impl ListCustomRoutingAcceleratorsOutput {
     /// <p>The list of custom routing accelerators for a customer account.</p>
-    pub fn accelerators(&self) -> std::option::Option<&[crate::model::CustomRoutingAccelerator]> {
+    pub fn accelerators(&self) -> std::option::Option<& [crate::model::CustomRoutingAccelerator]> {
         self.accelerators.as_deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCustomRoutingAcceleratorsOutput`](crate::output::ListCustomRoutingAcceleratorsOutput).
 pub mod list_custom_routing_accelerators_output {
-
+    
     /// A builder for [`ListCustomRoutingAcceleratorsOutput`](crate::output::ListCustomRoutingAcceleratorsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) accelerators:
-            std::option::Option<std::vec::Vec<crate::model::CustomRoutingAccelerator>>,
+        pub(crate) accelerators: std::option::Option<std::vec::Vec<crate::model::CustomRoutingAccelerator>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1127,17 +1109,13 @@ pub mod list_custom_routing_accelerators_output {
         /// <p>The list of custom routing accelerators for a customer account.</p>
         pub fn accelerators(mut self, input: crate::model::CustomRoutingAccelerator) -> Self {
             let mut v = self.accelerators.unwrap_or_default();
-            v.push(input);
-            self.accelerators = Some(v);
-            self
+                            v.push(input);
+                            self.accelerators = Some(v);
+                            self
         }
         /// <p>The list of custom routing accelerators for a customer account.</p>
-        pub fn set_accelerators(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CustomRoutingAccelerator>>,
-        ) -> Self {
-            self.accelerators = input;
-            self
+        pub fn set_accelerators(mut self, input: std::option::Option<std::vec::Vec<crate::model::CustomRoutingAccelerator>>) -> Self {
+            self.accelerators = input; self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1146,17 +1124,20 @@ pub mod list_custom_routing_accelerators_output {
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCustomRoutingAcceleratorsOutput`](crate::output::ListCustomRoutingAcceleratorsOutput).
         pub fn build(self) -> crate::output::ListCustomRoutingAcceleratorsOutput {
             crate::output::ListCustomRoutingAcceleratorsOutput {
-                accelerators: self.accelerators,
-                next_token: self.next_token,
+                accelerators: self.accelerators
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCustomRoutingAcceleratorsOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingAcceleratorsOutput`](crate::output::ListCustomRoutingAcceleratorsOutput).
@@ -1168,7 +1149,7 @@ impl ListCustomRoutingAcceleratorsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListByoipCidrsOutput {
+pub struct ListByoipCidrsOutput  {
     /// <p>Information about your address ranges.</p>
     #[doc(hidden)]
     pub byoip_cidrs: std::option::Option<std::vec::Vec<crate::model::ByoipCidr>>,
@@ -1178,17 +1159,17 @@ pub struct ListByoipCidrsOutput {
 }
 impl ListByoipCidrsOutput {
     /// <p>Information about your address ranges.</p>
-    pub fn byoip_cidrs(&self) -> std::option::Option<&[crate::model::ByoipCidr]> {
+    pub fn byoip_cidrs(&self) -> std::option::Option<& [crate::model::ByoipCidr]> {
         self.byoip_cidrs.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListByoipCidrsOutput`](crate::output::ListByoipCidrsOutput).
 pub mod list_byoip_cidrs_output {
-
+    
     /// A builder for [`ListByoipCidrsOutput`](crate::output::ListByoipCidrsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1203,17 +1184,13 @@ pub mod list_byoip_cidrs_output {
         /// <p>Information about your address ranges.</p>
         pub fn byoip_cidrs(mut self, input: crate::model::ByoipCidr) -> Self {
             let mut v = self.byoip_cidrs.unwrap_or_default();
-            v.push(input);
-            self.byoip_cidrs = Some(v);
-            self
+                            v.push(input);
+                            self.byoip_cidrs = Some(v);
+                            self
         }
         /// <p>Information about your address ranges.</p>
-        pub fn set_byoip_cidrs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ByoipCidr>>,
-        ) -> Self {
-            self.byoip_cidrs = input;
-            self
+        pub fn set_byoip_cidrs(mut self, input: std::option::Option<std::vec::Vec<crate::model::ByoipCidr>>) -> Self {
+            self.byoip_cidrs = input; self
         }
         /// <p>The token for the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1222,17 +1199,20 @@ pub mod list_byoip_cidrs_output {
         }
         /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListByoipCidrsOutput`](crate::output::ListByoipCidrsOutput).
         pub fn build(self) -> crate::output::ListByoipCidrsOutput {
             crate::output::ListByoipCidrsOutput {
-                byoip_cidrs: self.byoip_cidrs,
-                next_token: self.next_token,
+                byoip_cidrs: self.byoip_cidrs
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListByoipCidrsOutput {
     /// Creates a new builder-style object to manufacture [`ListByoipCidrsOutput`](crate::output::ListByoipCidrsOutput).
@@ -1244,7 +1224,7 @@ impl ListByoipCidrsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAcceleratorsOutput {
+pub struct ListAcceleratorsOutput  {
     /// <p>The list of accelerators for a customer account.</p>
     #[doc(hidden)]
     pub accelerators: std::option::Option<std::vec::Vec<crate::model::Accelerator>>,
@@ -1254,17 +1234,17 @@ pub struct ListAcceleratorsOutput {
 }
 impl ListAcceleratorsOutput {
     /// <p>The list of accelerators for a customer account.</p>
-    pub fn accelerators(&self) -> std::option::Option<&[crate::model::Accelerator]> {
+    pub fn accelerators(&self) -> std::option::Option<& [crate::model::Accelerator]> {
         self.accelerators.as_deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAcceleratorsOutput`](crate::output::ListAcceleratorsOutput).
 pub mod list_accelerators_output {
-
+    
     /// A builder for [`ListAcceleratorsOutput`](crate::output::ListAcceleratorsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1279,17 +1259,13 @@ pub mod list_accelerators_output {
         /// <p>The list of accelerators for a customer account.</p>
         pub fn accelerators(mut self, input: crate::model::Accelerator) -> Self {
             let mut v = self.accelerators.unwrap_or_default();
-            v.push(input);
-            self.accelerators = Some(v);
-            self
+                            v.push(input);
+                            self.accelerators = Some(v);
+                            self
         }
         /// <p>The list of accelerators for a customer account.</p>
-        pub fn set_accelerators(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Accelerator>>,
-        ) -> Self {
-            self.accelerators = input;
-            self
+        pub fn set_accelerators(mut self, input: std::option::Option<std::vec::Vec<crate::model::Accelerator>>) -> Self {
+            self.accelerators = input; self
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1298,17 +1274,20 @@ pub mod list_accelerators_output {
         }
         /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAcceleratorsOutput`](crate::output::ListAcceleratorsOutput).
         pub fn build(self) -> crate::output::ListAcceleratorsOutput {
             crate::output::ListAcceleratorsOutput {
-                accelerators: self.accelerators,
-                next_token: self.next_token,
+                accelerators: self.accelerators
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAcceleratorsOutput {
     /// Creates a new builder-style object to manufacture [`ListAcceleratorsOutput`](crate::output::ListAcceleratorsOutput).
@@ -1320,20 +1299,20 @@ impl ListAcceleratorsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeListenerOutput {
+pub struct DescribeListenerOutput  {
     /// <p>The description of a listener.</p>
     #[doc(hidden)]
     pub listener: std::option::Option<crate::model::Listener>,
 }
 impl DescribeListenerOutput {
     /// <p>The description of a listener.</p>
-    pub fn listener(&self) -> std::option::Option<&crate::model::Listener> {
+    pub fn listener(&self) -> std::option::Option<& crate::model::Listener> {
         self.listener.as_ref()
     }
 }
 /// See [`DescribeListenerOutput`](crate::output::DescribeListenerOutput).
 pub mod describe_listener_output {
-
+    
     /// A builder for [`DescribeListenerOutput`](crate::output::DescribeListenerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1347,16 +1326,18 @@ pub mod describe_listener_output {
         }
         /// <p>The description of a listener.</p>
         pub fn set_listener(mut self, input: std::option::Option<crate::model::Listener>) -> Self {
-            self.listener = input;
-            self
+            self.listener = input; self
         }
         /// Consumes the builder and constructs a [`DescribeListenerOutput`](crate::output::DescribeListenerOutput).
         pub fn build(self) -> crate::output::DescribeListenerOutput {
             crate::output::DescribeListenerOutput {
-                listener: self.listener,
+                listener: self.listener
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeListenerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeListenerOutput`](crate::output::DescribeListenerOutput).
@@ -1368,20 +1349,20 @@ impl DescribeListenerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEndpointGroupOutput {
+pub struct DescribeEndpointGroupOutput  {
     /// <p>The description of an endpoint group.</p>
     #[doc(hidden)]
     pub endpoint_group: std::option::Option<crate::model::EndpointGroup>,
 }
 impl DescribeEndpointGroupOutput {
     /// <p>The description of an endpoint group.</p>
-    pub fn endpoint_group(&self) -> std::option::Option<&crate::model::EndpointGroup> {
+    pub fn endpoint_group(&self) -> std::option::Option<& crate::model::EndpointGroup> {
         self.endpoint_group.as_ref()
     }
 }
 /// See [`DescribeEndpointGroupOutput`](crate::output::DescribeEndpointGroupOutput).
 pub mod describe_endpoint_group_output {
-
+    
     /// A builder for [`DescribeEndpointGroupOutput`](crate::output::DescribeEndpointGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1394,20 +1375,19 @@ pub mod describe_endpoint_group_output {
             self
         }
         /// <p>The description of an endpoint group.</p>
-        pub fn set_endpoint_group(
-            mut self,
-            input: std::option::Option<crate::model::EndpointGroup>,
-        ) -> Self {
-            self.endpoint_group = input;
-            self
+        pub fn set_endpoint_group(mut self, input: std::option::Option<crate::model::EndpointGroup>) -> Self {
+            self.endpoint_group = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEndpointGroupOutput`](crate::output::DescribeEndpointGroupOutput).
         pub fn build(self) -> crate::output::DescribeEndpointGroupOutput {
             crate::output::DescribeEndpointGroupOutput {
-                endpoint_group: self.endpoint_group,
+                endpoint_group: self.endpoint_group
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEndpointGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointGroupOutput`](crate::output::DescribeEndpointGroupOutput).
@@ -1419,20 +1399,20 @@ impl DescribeEndpointGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCustomRoutingListenerOutput {
+pub struct DescribeCustomRoutingListenerOutput  {
     /// <p>The description of a listener for a custom routing accelerator.</p>
     #[doc(hidden)]
     pub listener: std::option::Option<crate::model::CustomRoutingListener>,
 }
 impl DescribeCustomRoutingListenerOutput {
     /// <p>The description of a listener for a custom routing accelerator.</p>
-    pub fn listener(&self) -> std::option::Option<&crate::model::CustomRoutingListener> {
+    pub fn listener(&self) -> std::option::Option<& crate::model::CustomRoutingListener> {
         self.listener.as_ref()
     }
 }
 /// See [`DescribeCustomRoutingListenerOutput`](crate::output::DescribeCustomRoutingListenerOutput).
 pub mod describe_custom_routing_listener_output {
-
+    
     /// A builder for [`DescribeCustomRoutingListenerOutput`](crate::output::DescribeCustomRoutingListenerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1445,20 +1425,19 @@ pub mod describe_custom_routing_listener_output {
             self
         }
         /// <p>The description of a listener for a custom routing accelerator.</p>
-        pub fn set_listener(
-            mut self,
-            input: std::option::Option<crate::model::CustomRoutingListener>,
-        ) -> Self {
-            self.listener = input;
-            self
+        pub fn set_listener(mut self, input: std::option::Option<crate::model::CustomRoutingListener>) -> Self {
+            self.listener = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCustomRoutingListenerOutput`](crate::output::DescribeCustomRoutingListenerOutput).
         pub fn build(self) -> crate::output::DescribeCustomRoutingListenerOutput {
             crate::output::DescribeCustomRoutingListenerOutput {
-                listener: self.listener,
+                listener: self.listener
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCustomRoutingListenerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingListenerOutput`](crate::output::DescribeCustomRoutingListenerOutput).
@@ -1470,20 +1449,20 @@ impl DescribeCustomRoutingListenerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCustomRoutingEndpointGroupOutput {
+pub struct DescribeCustomRoutingEndpointGroupOutput  {
     /// <p>The description of an endpoint group for a custom routing accelerator.</p>
     #[doc(hidden)]
     pub endpoint_group: std::option::Option<crate::model::CustomRoutingEndpointGroup>,
 }
 impl DescribeCustomRoutingEndpointGroupOutput {
     /// <p>The description of an endpoint group for a custom routing accelerator.</p>
-    pub fn endpoint_group(&self) -> std::option::Option<&crate::model::CustomRoutingEndpointGroup> {
+    pub fn endpoint_group(&self) -> std::option::Option<& crate::model::CustomRoutingEndpointGroup> {
         self.endpoint_group.as_ref()
     }
 }
 /// See [`DescribeCustomRoutingEndpointGroupOutput`](crate::output::DescribeCustomRoutingEndpointGroupOutput).
 pub mod describe_custom_routing_endpoint_group_output {
-
+    
     /// A builder for [`DescribeCustomRoutingEndpointGroupOutput`](crate::output::DescribeCustomRoutingEndpointGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1496,20 +1475,19 @@ pub mod describe_custom_routing_endpoint_group_output {
             self
         }
         /// <p>The description of an endpoint group for a custom routing accelerator.</p>
-        pub fn set_endpoint_group(
-            mut self,
-            input: std::option::Option<crate::model::CustomRoutingEndpointGroup>,
-        ) -> Self {
-            self.endpoint_group = input;
-            self
+        pub fn set_endpoint_group(mut self, input: std::option::Option<crate::model::CustomRoutingEndpointGroup>) -> Self {
+            self.endpoint_group = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCustomRoutingEndpointGroupOutput`](crate::output::DescribeCustomRoutingEndpointGroupOutput).
         pub fn build(self) -> crate::output::DescribeCustomRoutingEndpointGroupOutput {
             crate::output::DescribeCustomRoutingEndpointGroupOutput {
-                endpoint_group: self.endpoint_group,
+                endpoint_group: self.endpoint_group
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCustomRoutingEndpointGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingEndpointGroupOutput`](crate::output::DescribeCustomRoutingEndpointGroupOutput).
@@ -1521,58 +1499,49 @@ impl DescribeCustomRoutingEndpointGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCustomRoutingAcceleratorAttributesOutput {
+pub struct DescribeCustomRoutingAcceleratorAttributesOutput  {
     /// <p>The attributes of the custom routing accelerator.</p>
     #[doc(hidden)]
-    pub accelerator_attributes:
-        std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>,
+    pub accelerator_attributes: std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>,
 }
 impl DescribeCustomRoutingAcceleratorAttributesOutput {
     /// <p>The attributes of the custom routing accelerator.</p>
-    pub fn accelerator_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::CustomRoutingAcceleratorAttributes> {
+    pub fn accelerator_attributes(&self) -> std::option::Option<& crate::model::CustomRoutingAcceleratorAttributes> {
         self.accelerator_attributes.as_ref()
     }
 }
 /// See [`DescribeCustomRoutingAcceleratorAttributesOutput`](crate::output::DescribeCustomRoutingAcceleratorAttributesOutput).
 pub mod describe_custom_routing_accelerator_attributes_output {
-
+    
     /// A builder for [`DescribeCustomRoutingAcceleratorAttributesOutput`](crate::output::DescribeCustomRoutingAcceleratorAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) accelerator_attributes:
-            std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>,
+        pub(crate) accelerator_attributes: std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>,
     }
     impl Builder {
         /// <p>The attributes of the custom routing accelerator.</p>
-        pub fn accelerator_attributes(
-            mut self,
-            input: crate::model::CustomRoutingAcceleratorAttributes,
-        ) -> Self {
+        pub fn accelerator_attributes(mut self, input: crate::model::CustomRoutingAcceleratorAttributes) -> Self {
             self.accelerator_attributes = Some(input);
             self
         }
         /// <p>The attributes of the custom routing accelerator.</p>
-        pub fn set_accelerator_attributes(
-            mut self,
-            input: std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>,
-        ) -> Self {
-            self.accelerator_attributes = input;
-            self
+        pub fn set_accelerator_attributes(mut self, input: std::option::Option<crate::model::CustomRoutingAcceleratorAttributes>) -> Self {
+            self.accelerator_attributes = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCustomRoutingAcceleratorAttributesOutput`](crate::output::DescribeCustomRoutingAcceleratorAttributesOutput).
         pub fn build(self) -> crate::output::DescribeCustomRoutingAcceleratorAttributesOutput {
             crate::output::DescribeCustomRoutingAcceleratorAttributesOutput {
-                accelerator_attributes: self.accelerator_attributes,
+                accelerator_attributes: self.accelerator_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCustomRoutingAcceleratorAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingAcceleratorAttributesOutput`](crate::output::DescribeCustomRoutingAcceleratorAttributesOutput).
-    pub fn builder() -> crate::output::describe_custom_routing_accelerator_attributes_output::Builder
-    {
+    pub fn builder() -> crate::output::describe_custom_routing_accelerator_attributes_output::Builder {
         crate::output::describe_custom_routing_accelerator_attributes_output::Builder::default()
     }
 }
@@ -1580,20 +1549,20 @@ impl DescribeCustomRoutingAcceleratorAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCustomRoutingAcceleratorOutput {
+pub struct DescribeCustomRoutingAcceleratorOutput  {
     /// <p>The description of the custom routing accelerator.</p>
     #[doc(hidden)]
     pub accelerator: std::option::Option<crate::model::CustomRoutingAccelerator>,
 }
 impl DescribeCustomRoutingAcceleratorOutput {
     /// <p>The description of the custom routing accelerator.</p>
-    pub fn accelerator(&self) -> std::option::Option<&crate::model::CustomRoutingAccelerator> {
+    pub fn accelerator(&self) -> std::option::Option<& crate::model::CustomRoutingAccelerator> {
         self.accelerator.as_ref()
     }
 }
 /// See [`DescribeCustomRoutingAcceleratorOutput`](crate::output::DescribeCustomRoutingAcceleratorOutput).
 pub mod describe_custom_routing_accelerator_output {
-
+    
     /// A builder for [`DescribeCustomRoutingAcceleratorOutput`](crate::output::DescribeCustomRoutingAcceleratorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1606,20 +1575,19 @@ pub mod describe_custom_routing_accelerator_output {
             self
         }
         /// <p>The description of the custom routing accelerator.</p>
-        pub fn set_accelerator(
-            mut self,
-            input: std::option::Option<crate::model::CustomRoutingAccelerator>,
-        ) -> Self {
-            self.accelerator = input;
-            self
+        pub fn set_accelerator(mut self, input: std::option::Option<crate::model::CustomRoutingAccelerator>) -> Self {
+            self.accelerator = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCustomRoutingAcceleratorOutput`](crate::output::DescribeCustomRoutingAcceleratorOutput).
         pub fn build(self) -> crate::output::DescribeCustomRoutingAcceleratorOutput {
             crate::output::DescribeCustomRoutingAcceleratorOutput {
-                accelerator: self.accelerator,
+                accelerator: self.accelerator
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCustomRoutingAcceleratorOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingAcceleratorOutput`](crate::output::DescribeCustomRoutingAcceleratorOutput).
@@ -1631,22 +1599,20 @@ impl DescribeCustomRoutingAcceleratorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAcceleratorAttributesOutput {
+pub struct DescribeAcceleratorAttributesOutput  {
     /// <p>The attributes of the accelerator.</p>
     #[doc(hidden)]
     pub accelerator_attributes: std::option::Option<crate::model::AcceleratorAttributes>,
 }
 impl DescribeAcceleratorAttributesOutput {
     /// <p>The attributes of the accelerator.</p>
-    pub fn accelerator_attributes(
-        &self,
-    ) -> std::option::Option<&crate::model::AcceleratorAttributes> {
+    pub fn accelerator_attributes(&self) -> std::option::Option<& crate::model::AcceleratorAttributes> {
         self.accelerator_attributes.as_ref()
     }
 }
 /// See [`DescribeAcceleratorAttributesOutput`](crate::output::DescribeAcceleratorAttributesOutput).
 pub mod describe_accelerator_attributes_output {
-
+    
     /// A builder for [`DescribeAcceleratorAttributesOutput`](crate::output::DescribeAcceleratorAttributesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1654,28 +1620,24 @@ pub mod describe_accelerator_attributes_output {
     }
     impl Builder {
         /// <p>The attributes of the accelerator.</p>
-        pub fn accelerator_attributes(
-            mut self,
-            input: crate::model::AcceleratorAttributes,
-        ) -> Self {
+        pub fn accelerator_attributes(mut self, input: crate::model::AcceleratorAttributes) -> Self {
             self.accelerator_attributes = Some(input);
             self
         }
         /// <p>The attributes of the accelerator.</p>
-        pub fn set_accelerator_attributes(
-            mut self,
-            input: std::option::Option<crate::model::AcceleratorAttributes>,
-        ) -> Self {
-            self.accelerator_attributes = input;
-            self
+        pub fn set_accelerator_attributes(mut self, input: std::option::Option<crate::model::AcceleratorAttributes>) -> Self {
+            self.accelerator_attributes = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAcceleratorAttributesOutput`](crate::output::DescribeAcceleratorAttributesOutput).
         pub fn build(self) -> crate::output::DescribeAcceleratorAttributesOutput {
             crate::output::DescribeAcceleratorAttributesOutput {
-                accelerator_attributes: self.accelerator_attributes,
+                accelerator_attributes: self.accelerator_attributes
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAcceleratorAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAcceleratorAttributesOutput`](crate::output::DescribeAcceleratorAttributesOutput).
@@ -1687,20 +1649,20 @@ impl DescribeAcceleratorAttributesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAcceleratorOutput {
+pub struct DescribeAcceleratorOutput  {
     /// <p>The description of the accelerator.</p>
     #[doc(hidden)]
     pub accelerator: std::option::Option<crate::model::Accelerator>,
 }
 impl DescribeAcceleratorOutput {
     /// <p>The description of the accelerator.</p>
-    pub fn accelerator(&self) -> std::option::Option<&crate::model::Accelerator> {
+    pub fn accelerator(&self) -> std::option::Option<& crate::model::Accelerator> {
         self.accelerator.as_ref()
     }
 }
 /// See [`DescribeAcceleratorOutput`](crate::output::DescribeAcceleratorOutput).
 pub mod describe_accelerator_output {
-
+    
     /// A builder for [`DescribeAcceleratorOutput`](crate::output::DescribeAcceleratorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1713,20 +1675,19 @@ pub mod describe_accelerator_output {
             self
         }
         /// <p>The description of the accelerator.</p>
-        pub fn set_accelerator(
-            mut self,
-            input: std::option::Option<crate::model::Accelerator>,
-        ) -> Self {
-            self.accelerator = input;
-            self
+        pub fn set_accelerator(mut self, input: std::option::Option<crate::model::Accelerator>) -> Self {
+            self.accelerator = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAcceleratorOutput`](crate::output::DescribeAcceleratorOutput).
         pub fn build(self) -> crate::output::DescribeAcceleratorOutput {
             crate::output::DescribeAcceleratorOutput {
-                accelerator: self.accelerator,
+                accelerator: self.accelerator
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAcceleratorOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAcceleratorOutput`](crate::output::DescribeAcceleratorOutput).
@@ -1738,20 +1699,20 @@ impl DescribeAcceleratorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeprovisionByoipCidrOutput {
+pub struct DeprovisionByoipCidrOutput  {
     /// <p>Information about the address range.</p>
     #[doc(hidden)]
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
 impl DeprovisionByoipCidrOutput {
     /// <p>Information about the address range.</p>
-    pub fn byoip_cidr(&self) -> std::option::Option<&crate::model::ByoipCidr> {
+    pub fn byoip_cidr(&self) -> std::option::Option<& crate::model::ByoipCidr> {
         self.byoip_cidr.as_ref()
     }
 }
 /// See [`DeprovisionByoipCidrOutput`](crate::output::DeprovisionByoipCidrOutput).
 pub mod deprovision_byoip_cidr_output {
-
+    
     /// A builder for [`DeprovisionByoipCidrOutput`](crate::output::DeprovisionByoipCidrOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1764,20 +1725,19 @@ pub mod deprovision_byoip_cidr_output {
             self
         }
         /// <p>Information about the address range.</p>
-        pub fn set_byoip_cidr(
-            mut self,
-            input: std::option::Option<crate::model::ByoipCidr>,
-        ) -> Self {
-            self.byoip_cidr = input;
-            self
+        pub fn set_byoip_cidr(mut self, input: std::option::Option<crate::model::ByoipCidr>) -> Self {
+            self.byoip_cidr = input; self
         }
         /// Consumes the builder and constructs a [`DeprovisionByoipCidrOutput`](crate::output::DeprovisionByoipCidrOutput).
         pub fn build(self) -> crate::output::DeprovisionByoipCidrOutput {
             crate::output::DeprovisionByoipCidrOutput {
-                byoip_cidr: self.byoip_cidr,
+                byoip_cidr: self.byoip_cidr
+                ,
             }
         }
     }
+    
+    
 }
 impl DeprovisionByoipCidrOutput {
     /// Creates a new builder-style object to manufacture [`DeprovisionByoipCidrOutput`](crate::output::DeprovisionByoipCidrOutput).
@@ -1789,19 +1749,24 @@ impl DeprovisionByoipCidrOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DenyCustomRoutingTrafficOutput {}
+pub struct DenyCustomRoutingTrafficOutput  {
+}
 /// See [`DenyCustomRoutingTrafficOutput`](crate::output::DenyCustomRoutingTrafficOutput).
 pub mod deny_custom_routing_traffic_output {
-
+    
     /// A builder for [`DenyCustomRoutingTrafficOutput`](crate::output::DenyCustomRoutingTrafficOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DenyCustomRoutingTrafficOutput`](crate::output::DenyCustomRoutingTrafficOutput).
         pub fn build(self) -> crate::output::DenyCustomRoutingTrafficOutput {
-            crate::output::DenyCustomRoutingTrafficOutput {}
+            crate::output::DenyCustomRoutingTrafficOutput {
+            }
         }
     }
+    
+    
 }
 impl DenyCustomRoutingTrafficOutput {
     /// Creates a new builder-style object to manufacture [`DenyCustomRoutingTrafficOutput`](crate::output::DenyCustomRoutingTrafficOutput).
@@ -1813,19 +1778,24 @@ impl DenyCustomRoutingTrafficOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteListenerOutput {}
+pub struct DeleteListenerOutput  {
+}
 /// See [`DeleteListenerOutput`](crate::output::DeleteListenerOutput).
 pub mod delete_listener_output {
-
+    
     /// A builder for [`DeleteListenerOutput`](crate::output::DeleteListenerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteListenerOutput`](crate::output::DeleteListenerOutput).
         pub fn build(self) -> crate::output::DeleteListenerOutput {
-            crate::output::DeleteListenerOutput {}
+            crate::output::DeleteListenerOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteListenerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteListenerOutput`](crate::output::DeleteListenerOutput).
@@ -1837,19 +1807,24 @@ impl DeleteListenerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEndpointGroupOutput {}
+pub struct DeleteEndpointGroupOutput  {
+}
 /// See [`DeleteEndpointGroupOutput`](crate::output::DeleteEndpointGroupOutput).
 pub mod delete_endpoint_group_output {
-
+    
     /// A builder for [`DeleteEndpointGroupOutput`](crate::output::DeleteEndpointGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEndpointGroupOutput`](crate::output::DeleteEndpointGroupOutput).
         pub fn build(self) -> crate::output::DeleteEndpointGroupOutput {
-            crate::output::DeleteEndpointGroupOutput {}
+            crate::output::DeleteEndpointGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteEndpointGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEndpointGroupOutput`](crate::output::DeleteEndpointGroupOutput).
@@ -1861,19 +1836,24 @@ impl DeleteEndpointGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCustomRoutingListenerOutput {}
+pub struct DeleteCustomRoutingListenerOutput  {
+}
 /// See [`DeleteCustomRoutingListenerOutput`](crate::output::DeleteCustomRoutingListenerOutput).
 pub mod delete_custom_routing_listener_output {
-
+    
     /// A builder for [`DeleteCustomRoutingListenerOutput`](crate::output::DeleteCustomRoutingListenerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCustomRoutingListenerOutput`](crate::output::DeleteCustomRoutingListenerOutput).
         pub fn build(self) -> crate::output::DeleteCustomRoutingListenerOutput {
-            crate::output::DeleteCustomRoutingListenerOutput {}
+            crate::output::DeleteCustomRoutingListenerOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteCustomRoutingListenerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingListenerOutput`](crate::output::DeleteCustomRoutingListenerOutput).
@@ -1885,19 +1865,24 @@ impl DeleteCustomRoutingListenerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCustomRoutingEndpointGroupOutput {}
+pub struct DeleteCustomRoutingEndpointGroupOutput  {
+}
 /// See [`DeleteCustomRoutingEndpointGroupOutput`](crate::output::DeleteCustomRoutingEndpointGroupOutput).
 pub mod delete_custom_routing_endpoint_group_output {
-
+    
     /// A builder for [`DeleteCustomRoutingEndpointGroupOutput`](crate::output::DeleteCustomRoutingEndpointGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCustomRoutingEndpointGroupOutput`](crate::output::DeleteCustomRoutingEndpointGroupOutput).
         pub fn build(self) -> crate::output::DeleteCustomRoutingEndpointGroupOutput {
-            crate::output::DeleteCustomRoutingEndpointGroupOutput {}
+            crate::output::DeleteCustomRoutingEndpointGroupOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteCustomRoutingEndpointGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingEndpointGroupOutput`](crate::output::DeleteCustomRoutingEndpointGroupOutput).
@@ -1909,19 +1894,24 @@ impl DeleteCustomRoutingEndpointGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCustomRoutingAcceleratorOutput {}
+pub struct DeleteCustomRoutingAcceleratorOutput  {
+}
 /// See [`DeleteCustomRoutingAcceleratorOutput`](crate::output::DeleteCustomRoutingAcceleratorOutput).
 pub mod delete_custom_routing_accelerator_output {
-
+    
     /// A builder for [`DeleteCustomRoutingAcceleratorOutput`](crate::output::DeleteCustomRoutingAcceleratorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteCustomRoutingAcceleratorOutput`](crate::output::DeleteCustomRoutingAcceleratorOutput).
         pub fn build(self) -> crate::output::DeleteCustomRoutingAcceleratorOutput {
-            crate::output::DeleteCustomRoutingAcceleratorOutput {}
+            crate::output::DeleteCustomRoutingAcceleratorOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteCustomRoutingAcceleratorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomRoutingAcceleratorOutput`](crate::output::DeleteCustomRoutingAcceleratorOutput).
@@ -1933,19 +1923,24 @@ impl DeleteCustomRoutingAcceleratorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAcceleratorOutput {}
+pub struct DeleteAcceleratorOutput  {
+}
 /// See [`DeleteAcceleratorOutput`](crate::output::DeleteAcceleratorOutput).
 pub mod delete_accelerator_output {
-
+    
     /// A builder for [`DeleteAcceleratorOutput`](crate::output::DeleteAcceleratorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAcceleratorOutput`](crate::output::DeleteAcceleratorOutput).
         pub fn build(self) -> crate::output::DeleteAcceleratorOutput {
-            crate::output::DeleteAcceleratorOutput {}
+            crate::output::DeleteAcceleratorOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAcceleratorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAcceleratorOutput`](crate::output::DeleteAcceleratorOutput).
@@ -1957,20 +1952,20 @@ impl DeleteAcceleratorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateListenerOutput {
+pub struct CreateListenerOutput  {
     /// <p>The listener that you've created.</p>
     #[doc(hidden)]
     pub listener: std::option::Option<crate::model::Listener>,
 }
 impl CreateListenerOutput {
     /// <p>The listener that you've created.</p>
-    pub fn listener(&self) -> std::option::Option<&crate::model::Listener> {
+    pub fn listener(&self) -> std::option::Option<& crate::model::Listener> {
         self.listener.as_ref()
     }
 }
 /// See [`CreateListenerOutput`](crate::output::CreateListenerOutput).
 pub mod create_listener_output {
-
+    
     /// A builder for [`CreateListenerOutput`](crate::output::CreateListenerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1984,16 +1979,18 @@ pub mod create_listener_output {
         }
         /// <p>The listener that you've created.</p>
         pub fn set_listener(mut self, input: std::option::Option<crate::model::Listener>) -> Self {
-            self.listener = input;
-            self
+            self.listener = input; self
         }
         /// Consumes the builder and constructs a [`CreateListenerOutput`](crate::output::CreateListenerOutput).
         pub fn build(self) -> crate::output::CreateListenerOutput {
             crate::output::CreateListenerOutput {
-                listener: self.listener,
+                listener: self.listener
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateListenerOutput {
     /// Creates a new builder-style object to manufacture [`CreateListenerOutput`](crate::output::CreateListenerOutput).
@@ -2005,20 +2002,20 @@ impl CreateListenerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEndpointGroupOutput {
+pub struct CreateEndpointGroupOutput  {
     /// <p>The information about the endpoint group that was created.</p>
     #[doc(hidden)]
     pub endpoint_group: std::option::Option<crate::model::EndpointGroup>,
 }
 impl CreateEndpointGroupOutput {
     /// <p>The information about the endpoint group that was created.</p>
-    pub fn endpoint_group(&self) -> std::option::Option<&crate::model::EndpointGroup> {
+    pub fn endpoint_group(&self) -> std::option::Option<& crate::model::EndpointGroup> {
         self.endpoint_group.as_ref()
     }
 }
 /// See [`CreateEndpointGroupOutput`](crate::output::CreateEndpointGroupOutput).
 pub mod create_endpoint_group_output {
-
+    
     /// A builder for [`CreateEndpointGroupOutput`](crate::output::CreateEndpointGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2031,20 +2028,19 @@ pub mod create_endpoint_group_output {
             self
         }
         /// <p>The information about the endpoint group that was created.</p>
-        pub fn set_endpoint_group(
-            mut self,
-            input: std::option::Option<crate::model::EndpointGroup>,
-        ) -> Self {
-            self.endpoint_group = input;
-            self
+        pub fn set_endpoint_group(mut self, input: std::option::Option<crate::model::EndpointGroup>) -> Self {
+            self.endpoint_group = input; self
         }
         /// Consumes the builder and constructs a [`CreateEndpointGroupOutput`](crate::output::CreateEndpointGroupOutput).
         pub fn build(self) -> crate::output::CreateEndpointGroupOutput {
             crate::output::CreateEndpointGroupOutput {
-                endpoint_group: self.endpoint_group,
+                endpoint_group: self.endpoint_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateEndpointGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateEndpointGroupOutput`](crate::output::CreateEndpointGroupOutput).
@@ -2056,20 +2052,20 @@ impl CreateEndpointGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCustomRoutingListenerOutput {
+pub struct CreateCustomRoutingListenerOutput  {
     /// <p>The listener that you've created for a custom routing accelerator.</p>
     #[doc(hidden)]
     pub listener: std::option::Option<crate::model::CustomRoutingListener>,
 }
 impl CreateCustomRoutingListenerOutput {
     /// <p>The listener that you've created for a custom routing accelerator.</p>
-    pub fn listener(&self) -> std::option::Option<&crate::model::CustomRoutingListener> {
+    pub fn listener(&self) -> std::option::Option<& crate::model::CustomRoutingListener> {
         self.listener.as_ref()
     }
 }
 /// See [`CreateCustomRoutingListenerOutput`](crate::output::CreateCustomRoutingListenerOutput).
 pub mod create_custom_routing_listener_output {
-
+    
     /// A builder for [`CreateCustomRoutingListenerOutput`](crate::output::CreateCustomRoutingListenerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2082,20 +2078,19 @@ pub mod create_custom_routing_listener_output {
             self
         }
         /// <p>The listener that you've created for a custom routing accelerator.</p>
-        pub fn set_listener(
-            mut self,
-            input: std::option::Option<crate::model::CustomRoutingListener>,
-        ) -> Self {
-            self.listener = input;
-            self
+        pub fn set_listener(mut self, input: std::option::Option<crate::model::CustomRoutingListener>) -> Self {
+            self.listener = input; self
         }
         /// Consumes the builder and constructs a [`CreateCustomRoutingListenerOutput`](crate::output::CreateCustomRoutingListenerOutput).
         pub fn build(self) -> crate::output::CreateCustomRoutingListenerOutput {
             crate::output::CreateCustomRoutingListenerOutput {
-                listener: self.listener,
+                listener: self.listener
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCustomRoutingListenerOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomRoutingListenerOutput`](crate::output::CreateCustomRoutingListenerOutput).
@@ -2107,20 +2102,20 @@ impl CreateCustomRoutingListenerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCustomRoutingEndpointGroupOutput {
+pub struct CreateCustomRoutingEndpointGroupOutput  {
     /// <p>The information about the endpoint group created for a custom routing accelerator.</p>
     #[doc(hidden)]
     pub endpoint_group: std::option::Option<crate::model::CustomRoutingEndpointGroup>,
 }
 impl CreateCustomRoutingEndpointGroupOutput {
     /// <p>The information about the endpoint group created for a custom routing accelerator.</p>
-    pub fn endpoint_group(&self) -> std::option::Option<&crate::model::CustomRoutingEndpointGroup> {
+    pub fn endpoint_group(&self) -> std::option::Option<& crate::model::CustomRoutingEndpointGroup> {
         self.endpoint_group.as_ref()
     }
 }
 /// See [`CreateCustomRoutingEndpointGroupOutput`](crate::output::CreateCustomRoutingEndpointGroupOutput).
 pub mod create_custom_routing_endpoint_group_output {
-
+    
     /// A builder for [`CreateCustomRoutingEndpointGroupOutput`](crate::output::CreateCustomRoutingEndpointGroupOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2133,20 +2128,19 @@ pub mod create_custom_routing_endpoint_group_output {
             self
         }
         /// <p>The information about the endpoint group created for a custom routing accelerator.</p>
-        pub fn set_endpoint_group(
-            mut self,
-            input: std::option::Option<crate::model::CustomRoutingEndpointGroup>,
-        ) -> Self {
-            self.endpoint_group = input;
-            self
+        pub fn set_endpoint_group(mut self, input: std::option::Option<crate::model::CustomRoutingEndpointGroup>) -> Self {
+            self.endpoint_group = input; self
         }
         /// Consumes the builder and constructs a [`CreateCustomRoutingEndpointGroupOutput`](crate::output::CreateCustomRoutingEndpointGroupOutput).
         pub fn build(self) -> crate::output::CreateCustomRoutingEndpointGroupOutput {
             crate::output::CreateCustomRoutingEndpointGroupOutput {
-                endpoint_group: self.endpoint_group,
+                endpoint_group: self.endpoint_group
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCustomRoutingEndpointGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomRoutingEndpointGroupOutput`](crate::output::CreateCustomRoutingEndpointGroupOutput).
@@ -2158,20 +2152,20 @@ impl CreateCustomRoutingEndpointGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCustomRoutingAcceleratorOutput {
+pub struct CreateCustomRoutingAcceleratorOutput  {
     /// <p>The accelerator that is created.</p>
     #[doc(hidden)]
     pub accelerator: std::option::Option<crate::model::CustomRoutingAccelerator>,
 }
 impl CreateCustomRoutingAcceleratorOutput {
     /// <p>The accelerator that is created.</p>
-    pub fn accelerator(&self) -> std::option::Option<&crate::model::CustomRoutingAccelerator> {
+    pub fn accelerator(&self) -> std::option::Option<& crate::model::CustomRoutingAccelerator> {
         self.accelerator.as_ref()
     }
 }
 /// See [`CreateCustomRoutingAcceleratorOutput`](crate::output::CreateCustomRoutingAcceleratorOutput).
 pub mod create_custom_routing_accelerator_output {
-
+    
     /// A builder for [`CreateCustomRoutingAcceleratorOutput`](crate::output::CreateCustomRoutingAcceleratorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2184,20 +2178,19 @@ pub mod create_custom_routing_accelerator_output {
             self
         }
         /// <p>The accelerator that is created.</p>
-        pub fn set_accelerator(
-            mut self,
-            input: std::option::Option<crate::model::CustomRoutingAccelerator>,
-        ) -> Self {
-            self.accelerator = input;
-            self
+        pub fn set_accelerator(mut self, input: std::option::Option<crate::model::CustomRoutingAccelerator>) -> Self {
+            self.accelerator = input; self
         }
         /// Consumes the builder and constructs a [`CreateCustomRoutingAcceleratorOutput`](crate::output::CreateCustomRoutingAcceleratorOutput).
         pub fn build(self) -> crate::output::CreateCustomRoutingAcceleratorOutput {
             crate::output::CreateCustomRoutingAcceleratorOutput {
-                accelerator: self.accelerator,
+                accelerator: self.accelerator
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateCustomRoutingAcceleratorOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomRoutingAcceleratorOutput`](crate::output::CreateCustomRoutingAcceleratorOutput).
@@ -2209,20 +2202,20 @@ impl CreateCustomRoutingAcceleratorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAcceleratorOutput {
+pub struct CreateAcceleratorOutput  {
     /// <p>The accelerator that is created by specifying a listener and the supported IP address types.</p>
     #[doc(hidden)]
     pub accelerator: std::option::Option<crate::model::Accelerator>,
 }
 impl CreateAcceleratorOutput {
     /// <p>The accelerator that is created by specifying a listener and the supported IP address types.</p>
-    pub fn accelerator(&self) -> std::option::Option<&crate::model::Accelerator> {
+    pub fn accelerator(&self) -> std::option::Option<& crate::model::Accelerator> {
         self.accelerator.as_ref()
     }
 }
 /// See [`CreateAcceleratorOutput`](crate::output::CreateAcceleratorOutput).
 pub mod create_accelerator_output {
-
+    
     /// A builder for [`CreateAcceleratorOutput`](crate::output::CreateAcceleratorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2235,20 +2228,19 @@ pub mod create_accelerator_output {
             self
         }
         /// <p>The accelerator that is created by specifying a listener and the supported IP address types.</p>
-        pub fn set_accelerator(
-            mut self,
-            input: std::option::Option<crate::model::Accelerator>,
-        ) -> Self {
-            self.accelerator = input;
-            self
+        pub fn set_accelerator(mut self, input: std::option::Option<crate::model::Accelerator>) -> Self {
+            self.accelerator = input; self
         }
         /// Consumes the builder and constructs a [`CreateAcceleratorOutput`](crate::output::CreateAcceleratorOutput).
         pub fn build(self) -> crate::output::CreateAcceleratorOutput {
             crate::output::CreateAcceleratorOutput {
-                accelerator: self.accelerator,
+                accelerator: self.accelerator
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAcceleratorOutput {
     /// Creates a new builder-style object to manufacture [`CreateAcceleratorOutput`](crate::output::CreateAcceleratorOutput).
@@ -2260,19 +2252,24 @@ impl CreateAcceleratorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AllowCustomRoutingTrafficOutput {}
+pub struct AllowCustomRoutingTrafficOutput  {
+}
 /// See [`AllowCustomRoutingTrafficOutput`](crate::output::AllowCustomRoutingTrafficOutput).
 pub mod allow_custom_routing_traffic_output {
-
+    
     /// A builder for [`AllowCustomRoutingTrafficOutput`](crate::output::AllowCustomRoutingTrafficOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AllowCustomRoutingTrafficOutput`](crate::output::AllowCustomRoutingTrafficOutput).
         pub fn build(self) -> crate::output::AllowCustomRoutingTrafficOutput {
-            crate::output::AllowCustomRoutingTrafficOutput {}
+            crate::output::AllowCustomRoutingTrafficOutput {
+            }
         }
     }
+    
+    
 }
 impl AllowCustomRoutingTrafficOutput {
     /// Creates a new builder-style object to manufacture [`AllowCustomRoutingTrafficOutput`](crate::output::AllowCustomRoutingTrafficOutput).
@@ -2284,20 +2281,20 @@ impl AllowCustomRoutingTrafficOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AdvertiseByoipCidrOutput {
+pub struct AdvertiseByoipCidrOutput  {
     /// <p>Information about the address range.</p>
     #[doc(hidden)]
     pub byoip_cidr: std::option::Option<crate::model::ByoipCidr>,
 }
 impl AdvertiseByoipCidrOutput {
     /// <p>Information about the address range.</p>
-    pub fn byoip_cidr(&self) -> std::option::Option<&crate::model::ByoipCidr> {
+    pub fn byoip_cidr(&self) -> std::option::Option<& crate::model::ByoipCidr> {
         self.byoip_cidr.as_ref()
     }
 }
 /// See [`AdvertiseByoipCidrOutput`](crate::output::AdvertiseByoipCidrOutput).
 pub mod advertise_byoip_cidr_output {
-
+    
     /// A builder for [`AdvertiseByoipCidrOutput`](crate::output::AdvertiseByoipCidrOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2310,20 +2307,19 @@ pub mod advertise_byoip_cidr_output {
             self
         }
         /// <p>Information about the address range.</p>
-        pub fn set_byoip_cidr(
-            mut self,
-            input: std::option::Option<crate::model::ByoipCidr>,
-        ) -> Self {
-            self.byoip_cidr = input;
-            self
+        pub fn set_byoip_cidr(mut self, input: std::option::Option<crate::model::ByoipCidr>) -> Self {
+            self.byoip_cidr = input; self
         }
         /// Consumes the builder and constructs a [`AdvertiseByoipCidrOutput`](crate::output::AdvertiseByoipCidrOutput).
         pub fn build(self) -> crate::output::AdvertiseByoipCidrOutput {
             crate::output::AdvertiseByoipCidrOutput {
-                byoip_cidr: self.byoip_cidr,
+                byoip_cidr: self.byoip_cidr
+                ,
             }
         }
     }
+    
+    
 }
 impl AdvertiseByoipCidrOutput {
     /// Creates a new builder-style object to manufacture [`AdvertiseByoipCidrOutput`](crate::output::AdvertiseByoipCidrOutput).
@@ -2335,35 +2331,31 @@ impl AdvertiseByoipCidrOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddEndpointsOutput {
+pub struct AddEndpointsOutput  {
     /// <p>The list of endpoint objects.</p>
     #[doc(hidden)]
-    pub endpoint_descriptions:
-        std::option::Option<std::vec::Vec<crate::model::EndpointDescription>>,
+    pub endpoint_descriptions: std::option::Option<std::vec::Vec<crate::model::EndpointDescription>>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     #[doc(hidden)]
     pub endpoint_group_arn: std::option::Option<std::string::String>,
 }
 impl AddEndpointsOutput {
     /// <p>The list of endpoint objects.</p>
-    pub fn endpoint_descriptions(
-        &self,
-    ) -> std::option::Option<&[crate::model::EndpointDescription]> {
+    pub fn endpoint_descriptions(&self) -> std::option::Option<& [crate::model::EndpointDescription]> {
         self.endpoint_descriptions.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+    pub fn endpoint_group_arn(&self) -> std::option::Option<& str> {
         self.endpoint_group_arn.as_deref()
     }
 }
 /// See [`AddEndpointsOutput`](crate::output::AddEndpointsOutput).
 pub mod add_endpoints_output {
-
+    
     /// A builder for [`AddEndpointsOutput`](crate::output::AddEndpointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) endpoint_descriptions:
-            std::option::Option<std::vec::Vec<crate::model::EndpointDescription>>,
+        pub(crate) endpoint_descriptions: std::option::Option<std::vec::Vec<crate::model::EndpointDescription>>,
         pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2374,17 +2366,13 @@ pub mod add_endpoints_output {
         /// <p>The list of endpoint objects.</p>
         pub fn endpoint_descriptions(mut self, input: crate::model::EndpointDescription) -> Self {
             let mut v = self.endpoint_descriptions.unwrap_or_default();
-            v.push(input);
-            self.endpoint_descriptions = Some(v);
-            self
+                            v.push(input);
+                            self.endpoint_descriptions = Some(v);
+                            self
         }
         /// <p>The list of endpoint objects.</p>
-        pub fn set_endpoint_descriptions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EndpointDescription>>,
-        ) -> Self {
-            self.endpoint_descriptions = input;
-            self
+        pub fn set_endpoint_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::EndpointDescription>>) -> Self {
+            self.endpoint_descriptions = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
         pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2392,21 +2380,21 @@ pub mod add_endpoints_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-        pub fn set_endpoint_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.endpoint_group_arn = input;
-            self
+        pub fn set_endpoint_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_group_arn = input; self
         }
         /// Consumes the builder and constructs a [`AddEndpointsOutput`](crate::output::AddEndpointsOutput).
         pub fn build(self) -> crate::output::AddEndpointsOutput {
             crate::output::AddEndpointsOutput {
-                endpoint_descriptions: self.endpoint_descriptions,
-                endpoint_group_arn: self.endpoint_group_arn,
+                endpoint_descriptions: self.endpoint_descriptions
+                ,
+                endpoint_group_arn: self.endpoint_group_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl AddEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`AddEndpointsOutput`](crate::output::AddEndpointsOutput).
@@ -2418,35 +2406,31 @@ impl AddEndpointsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddCustomRoutingEndpointsOutput {
+pub struct AddCustomRoutingEndpointsOutput  {
     /// <p>The endpoint objects added to the custom routing accelerator.</p>
     #[doc(hidden)]
-    pub endpoint_descriptions:
-        std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointDescription>>,
+    pub endpoint_descriptions: std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointDescription>>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
     #[doc(hidden)]
     pub endpoint_group_arn: std::option::Option<std::string::String>,
 }
 impl AddCustomRoutingEndpointsOutput {
     /// <p>The endpoint objects added to the custom routing accelerator.</p>
-    pub fn endpoint_descriptions(
-        &self,
-    ) -> std::option::Option<&[crate::model::CustomRoutingEndpointDescription]> {
+    pub fn endpoint_descriptions(&self) -> std::option::Option<& [crate::model::CustomRoutingEndpointDescription]> {
         self.endpoint_descriptions.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
-    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+    pub fn endpoint_group_arn(&self) -> std::option::Option<& str> {
         self.endpoint_group_arn.as_deref()
     }
 }
 /// See [`AddCustomRoutingEndpointsOutput`](crate::output::AddCustomRoutingEndpointsOutput).
 pub mod add_custom_routing_endpoints_output {
-
+    
     /// A builder for [`AddCustomRoutingEndpointsOutput`](crate::output::AddCustomRoutingEndpointsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) endpoint_descriptions:
-            std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointDescription>>,
+        pub(crate) endpoint_descriptions: std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointDescription>>,
         pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2455,24 +2439,15 @@ pub mod add_custom_routing_endpoints_output {
         /// To override the contents of this collection use [`set_endpoint_descriptions`](Self::set_endpoint_descriptions).
         ///
         /// <p>The endpoint objects added to the custom routing accelerator.</p>
-        pub fn endpoint_descriptions(
-            mut self,
-            input: crate::model::CustomRoutingEndpointDescription,
-        ) -> Self {
+        pub fn endpoint_descriptions(mut self, input: crate::model::CustomRoutingEndpointDescription) -> Self {
             let mut v = self.endpoint_descriptions.unwrap_or_default();
-            v.push(input);
-            self.endpoint_descriptions = Some(v);
-            self
+                            v.push(input);
+                            self.endpoint_descriptions = Some(v);
+                            self
         }
         /// <p>The endpoint objects added to the custom routing accelerator.</p>
-        pub fn set_endpoint_descriptions(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::CustomRoutingEndpointDescription>,
-            >,
-        ) -> Self {
-            self.endpoint_descriptions = input;
-            self
+        pub fn set_endpoint_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::model::CustomRoutingEndpointDescription>>) -> Self {
+            self.endpoint_descriptions = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
         pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2480,21 +2455,21 @@ pub mod add_custom_routing_endpoints_output {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
-        pub fn set_endpoint_group_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.endpoint_group_arn = input;
-            self
+        pub fn set_endpoint_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.endpoint_group_arn = input; self
         }
         /// Consumes the builder and constructs a [`AddCustomRoutingEndpointsOutput`](crate::output::AddCustomRoutingEndpointsOutput).
         pub fn build(self) -> crate::output::AddCustomRoutingEndpointsOutput {
             crate::output::AddCustomRoutingEndpointsOutput {
-                endpoint_descriptions: self.endpoint_descriptions,
-                endpoint_group_arn: self.endpoint_group_arn,
+                endpoint_descriptions: self.endpoint_descriptions
+                ,
+                endpoint_group_arn: self.endpoint_group_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl AddCustomRoutingEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`AddCustomRoutingEndpointsOutput`](crate::output::AddCustomRoutingEndpointsOutput).
@@ -2502,3 +2477,4 @@ impl AddCustomRoutingEndpointsOutput {
         crate::output::add_custom_routing_endpoints_output::Builder::default()
     }
 }
+

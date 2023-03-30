@@ -4,17 +4,15 @@
 #[derive(std::fmt::Debug)]
 pub struct UpdateSlackChannelConfigurationError {
     /// Kind of error that occurred.
-    pub kind: UpdateSlackChannelConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: UpdateSlackChannelConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateSlackChannelConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: UpdateSlackChannelConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: UpdateSlackChannelConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -24,14 +22,14 @@ impl aws_smithy_http::result::CreateUnhandledError for UpdateSlackChannelConfigu
 pub enum UpdateSlackChannelConfigurationErrorKind {
     /// <p>You don't have sufficient permission to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Your request has a conflict. For example, you might receive this error if you try the following:</p>
-    /// <ul>
-    /// <li> <p>Add, update, or delete a Slack channel configuration before you add a Slack workspace to your Amazon Web Services account.</p> </li>
-    /// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li>
-    /// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li>
-    /// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li>
-    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li>
-    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li>
+    /// <p>Your request has a conflict. For example, you might receive this error if you try the following:</p> 
+    /// <ul> 
+    /// <li> <p>Add, update, or delete a Slack channel configuration before you add a Slack workspace to your Amazon Web Services account.</p> </li> 
+    /// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li> 
+    /// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li> 
+    /// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li> 
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li> 
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li> 
     /// </ul>
     ConflictException(crate::error::ConflictException),
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
@@ -40,31 +38,37 @@ pub enum UpdateSlackChannelConfigurationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your request input doesn't meet the constraints that the Amazon Web Services Support App specifies.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for UpdateSlackChannelConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            UpdateSlackChannelConfigurationErrorKind::AccessDeniedException(_inner) => {
+            UpdateSlackChannelConfigurationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSlackChannelConfigurationErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSlackChannelConfigurationErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSlackChannelConfigurationErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSlackChannelConfigurationErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            UpdateSlackChannelConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            UpdateSlackChannelConfigurationErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            UpdateSlackChannelConfigurationErrorKind::InternalServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateSlackChannelConfigurationErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            UpdateSlackChannelConfigurationErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            UpdateSlackChannelConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -78,102 +82,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateSlackChannelConfigurati
 }
 impl UpdateSlackChannelConfigurationError {
     /// Creates a new `UpdateSlackChannelConfigurationError`.
-    pub fn new(
-        kind: UpdateSlackChannelConfigurationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `UpdateSlackChannelConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: UpdateSlackChannelConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `UpdateSlackChannelConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: UpdateSlackChannelConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: UpdateSlackChannelConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `UpdateSlackChannelConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: UpdateSlackChannelConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `UpdateSlackChannelConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: UpdateSlackChannelConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `UpdateSlackChannelConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSlackChannelConfigurationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, UpdateSlackChannelConfigurationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `UpdateSlackChannelConfigurationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSlackChannelConfigurationErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, UpdateSlackChannelConfigurationErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateSlackChannelConfigurationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSlackChannelConfigurationErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, UpdateSlackChannelConfigurationErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `UpdateSlackChannelConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSlackChannelConfigurationErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, UpdateSlackChannelConfigurationErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `UpdateSlackChannelConfigurationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            UpdateSlackChannelConfigurationErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, UpdateSlackChannelConfigurationErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for UpdateSlackChannelConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            UpdateSlackChannelConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            UpdateSlackChannelConfigurationErrorKind::ConflictException(_inner) => Some(_inner),
-            UpdateSlackChannelConfigurationErrorKind::InternalServerException(_inner) => {
+            UpdateSlackChannelConfigurationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSlackChannelConfigurationErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSlackChannelConfigurationErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSlackChannelConfigurationErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSlackChannelConfigurationErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            UpdateSlackChannelConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            UpdateSlackChannelConfigurationErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            UpdateSlackChannelConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
-            UpdateSlackChannelConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -181,22 +171,20 @@ impl std::error::Error for UpdateSlackChannelConfigurationError {
 /// <p>Your request input doesn't meet the constraints that the Amazon Web Services Support App specifies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationException {
+pub struct ValidationException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ValidationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ValidationException")?;
         if let Some(inner_1) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -206,7 +194,7 @@ impl std::fmt::Display for ValidationException {
 impl std::error::Error for ValidationException {}
 /// See [`ValidationException`](crate::error::ValidationException).
 pub mod validation_exception {
-
+    
     /// A builder for [`ValidationException`](crate::error::ValidationException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -220,16 +208,18 @@ pub mod validation_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ValidationException`](crate::error::ValidationException).
         pub fn build(self) -> crate::error::ValidationException {
             crate::error::ValidationException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidationException {
     /// Creates a new builder-style object to manufacture [`ValidationException`](crate::error::ValidationException).
@@ -241,22 +231,20 @@ impl ValidationException {
 /// <p>The specified resource is missing or doesn't exist, such as an account alias, Slack channel configuration, or Slack workspace configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceNotFoundException {
+pub struct ResourceNotFoundException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ResourceNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ResourceNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundException")?;
         if let Some(inner_2) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_2)?;
             }
         }
@@ -266,7 +254,7 @@ impl std::fmt::Display for ResourceNotFoundException {
 impl std::error::Error for ResourceNotFoundException {}
 /// See [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
 pub mod resource_not_found_exception {
-
+    
     /// A builder for [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -280,16 +268,18 @@ pub mod resource_not_found_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
         pub fn build(self) -> crate::error::ResourceNotFoundException {
             crate::error::ResourceNotFoundException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourceNotFoundException {
     /// Creates a new builder-style object to manufacture [`ResourceNotFoundException`](crate::error::ResourceNotFoundException).
@@ -301,22 +291,20 @@ impl ResourceNotFoundException {
 /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServerException {
+pub struct InternalServerException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl InternalServerException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for InternalServerException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerException")?;
         if let Some(inner_3) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_3)?;
             }
         }
@@ -326,7 +314,7 @@ impl std::fmt::Display for InternalServerException {
 impl std::error::Error for InternalServerException {}
 /// See [`InternalServerException`](crate::error::InternalServerException).
 pub mod internal_server_exception {
-
+    
     /// A builder for [`InternalServerException`](crate::error::InternalServerException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -340,16 +328,18 @@ pub mod internal_server_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InternalServerException`](crate::error::InternalServerException).
         pub fn build(self) -> crate::error::InternalServerException {
             crate::error::InternalServerException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InternalServerException {
     /// Creates a new builder-style object to manufacture [`InternalServerException`](crate::error::InternalServerException).
@@ -358,33 +348,31 @@ impl InternalServerException {
     }
 }
 
-/// <p>Your request has a conflict. For example, you might receive this error if you try the following:</p>
-/// <ul>
-/// <li> <p>Add, update, or delete a Slack channel configuration before you add a Slack workspace to your Amazon Web Services account.</p> </li>
-/// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li>
-/// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li>
-/// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li>
-/// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li>
-/// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li>
+/// <p>Your request has a conflict. For example, you might receive this error if you try the following:</p> 
+/// <ul> 
+/// <li> <p>Add, update, or delete a Slack channel configuration before you add a Slack workspace to your Amazon Web Services account.</p> </li> 
+/// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li> 
+/// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li> 
+/// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li> 
+/// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li> 
+/// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictException {
+pub struct ConflictException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ConflictException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
         if let Some(inner_4) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_4)?;
             }
         }
@@ -394,7 +382,7 @@ impl std::fmt::Display for ConflictException {
 impl std::error::Error for ConflictException {}
 /// See [`ConflictException`](crate::error::ConflictException).
 pub mod conflict_exception {
-
+    
     /// A builder for [`ConflictException`](crate::error::ConflictException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -408,16 +396,18 @@ pub mod conflict_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ConflictException`](crate::error::ConflictException).
         pub fn build(self) -> crate::error::ConflictException {
             crate::error::ConflictException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ConflictException {
     /// Creates a new builder-style object to manufacture [`ConflictException`](crate::error::ConflictException).
@@ -429,22 +419,20 @@ impl ConflictException {
 /// <p>You don't have sufficient permission to perform this action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessDeniedException {
+pub struct AccessDeniedException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessDeniedException")?;
         if let Some(inner_5) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_5)?;
             }
         }
@@ -454,7 +442,7 @@ impl std::fmt::Display for AccessDeniedException {
 impl std::error::Error for AccessDeniedException {}
 /// See [`AccessDeniedException`](crate::error::AccessDeniedException).
 pub mod access_denied_exception {
-
+    
     /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -468,16 +456,18 @@ pub mod access_denied_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException).
         pub fn build(self) -> crate::error::AccessDeniedException {
             crate::error::AccessDeniedException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl AccessDeniedException {
     /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException).
@@ -491,17 +481,15 @@ impl AccessDeniedException {
 #[derive(std::fmt::Debug)]
 pub struct RegisterSlackWorkspaceForOrganizationError {
     /// Kind of error that occurred.
-    pub kind: RegisterSlackWorkspaceForOrganizationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: RegisterSlackWorkspaceForOrganizationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for RegisterSlackWorkspaceForOrganizationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: RegisterSlackWorkspaceForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: RegisterSlackWorkspaceForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -511,14 +499,14 @@ impl aws_smithy_http::result::CreateUnhandledError for RegisterSlackWorkspaceFor
 pub enum RegisterSlackWorkspaceForOrganizationErrorKind {
     /// <p>You don't have sufficient permission to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Your request has a conflict. For example, you might receive this error if you try the following:</p>
-    /// <ul>
-    /// <li> <p>Add, update, or delete a Slack channel configuration before you add a Slack workspace to your Amazon Web Services account.</p> </li>
-    /// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li>
-    /// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li>
-    /// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li>
-    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li>
-    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li>
+    /// <p>Your request has a conflict. For example, you might receive this error if you try the following:</p> 
+    /// <ul> 
+    /// <li> <p>Add, update, or delete a Slack channel configuration before you add a Slack workspace to your Amazon Web Services account.</p> </li> 
+    /// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li> 
+    /// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li> 
+    /// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li> 
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li> 
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li> 
     /// </ul>
     ConflictException(crate::error::ConflictException),
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
@@ -527,35 +515,37 @@ pub enum RegisterSlackWorkspaceForOrganizationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your request input doesn't meet the constraints that the Amazon Web Services Support App specifies.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for RegisterSlackWorkspaceForOrganizationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            RegisterSlackWorkspaceForOrganizationErrorKind::AccessDeniedException(_inner) => {
+            RegisterSlackWorkspaceForOrganizationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterSlackWorkspaceForOrganizationErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterSlackWorkspaceForOrganizationErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterSlackWorkspaceForOrganizationErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterSlackWorkspaceForOrganizationErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            RegisterSlackWorkspaceForOrganizationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            RegisterSlackWorkspaceForOrganizationErrorKind::ConflictException(_inner) => {
-                _inner.fmt(f)
-            }
-            RegisterSlackWorkspaceForOrganizationErrorKind::InternalServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            RegisterSlackWorkspaceForOrganizationErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            RegisterSlackWorkspaceForOrganizationErrorKind::ValidationException(_inner) => {
-                _inner.fmt(f)
-            }
-            RegisterSlackWorkspaceForOrganizationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -569,108 +559,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for RegisterSlackWorkspaceForOrga
 }
 impl RegisterSlackWorkspaceForOrganizationError {
     /// Creates a new `RegisterSlackWorkspaceForOrganizationError`.
-    pub fn new(
-        kind: RegisterSlackWorkspaceForOrganizationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `RegisterSlackWorkspaceForOrganizationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: RegisterSlackWorkspaceForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `RegisterSlackWorkspaceForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: RegisterSlackWorkspaceForOrganizationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: RegisterSlackWorkspaceForOrganizationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `RegisterSlackWorkspaceForOrganizationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: RegisterSlackWorkspaceForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `RegisterSlackWorkspaceForOrganizationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: RegisterSlackWorkspaceForOrganizationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `RegisterSlackWorkspaceForOrganizationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterSlackWorkspaceForOrganizationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, RegisterSlackWorkspaceForOrganizationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `RegisterSlackWorkspaceForOrganizationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterSlackWorkspaceForOrganizationErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, RegisterSlackWorkspaceForOrganizationErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `RegisterSlackWorkspaceForOrganizationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterSlackWorkspaceForOrganizationErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, RegisterSlackWorkspaceForOrganizationErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `RegisterSlackWorkspaceForOrganizationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterSlackWorkspaceForOrganizationErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, RegisterSlackWorkspaceForOrganizationErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `RegisterSlackWorkspaceForOrganizationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            RegisterSlackWorkspaceForOrganizationErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, RegisterSlackWorkspaceForOrganizationErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for RegisterSlackWorkspaceForOrganizationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            RegisterSlackWorkspaceForOrganizationErrorKind::AccessDeniedException(_inner) => {
+            RegisterSlackWorkspaceForOrganizationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterSlackWorkspaceForOrganizationErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterSlackWorkspaceForOrganizationErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterSlackWorkspaceForOrganizationErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterSlackWorkspaceForOrganizationErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            RegisterSlackWorkspaceForOrganizationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            RegisterSlackWorkspaceForOrganizationErrorKind::ConflictException(_inner) => {
-                Some(_inner)
-            }
-            RegisterSlackWorkspaceForOrganizationErrorKind::InternalServerException(_inner) => {
-                Some(_inner)
-            }
-            RegisterSlackWorkspaceForOrganizationErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            RegisterSlackWorkspaceForOrganizationErrorKind::ValidationException(_inner) => {
-                Some(_inner)
-            }
-            RegisterSlackWorkspaceForOrganizationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -680,15 +650,15 @@ impl std::error::Error for RegisterSlackWorkspaceForOrganizationError {
 #[derive(std::fmt::Debug)]
 pub struct PutAccountAliasError {
     /// Kind of error that occurred.
-    pub kind: PutAccountAliasErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: PutAccountAliasErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for PutAccountAliasError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: PutAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -702,23 +672,31 @@ pub enum PutAccountAliasErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>Your request input doesn't meet the constraints that the Amazon Web Services Support App specifies.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for PutAccountAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            PutAccountAliasErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            PutAccountAliasErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            PutAccountAliasErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            PutAccountAliasErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            PutAccountAliasErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAccountAliasErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAccountAliasErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            PutAccountAliasErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -732,59 +710,53 @@ impl aws_smithy_types::retry::ProvideErrorKind for PutAccountAliasError {
 }
 impl PutAccountAliasError {
     /// Creates a new `PutAccountAliasError`.
-    pub fn new(kind: PutAccountAliasErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `PutAccountAliasError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: PutAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `PutAccountAliasError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: PutAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: PutAccountAliasErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `PutAccountAliasError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: PutAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `PutAccountAliasError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: PutAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `PutAccountAliasErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutAccountAliasErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, PutAccountAliasErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `PutAccountAliasErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            PutAccountAliasErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, PutAccountAliasErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `PutAccountAliasErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
@@ -794,10 +766,18 @@ impl PutAccountAliasError {
 impl std::error::Error for PutAccountAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            PutAccountAliasErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            PutAccountAliasErrorKind::InternalServerException(_inner) => Some(_inner),
-            PutAccountAliasErrorKind::ValidationException(_inner) => Some(_inner),
-            PutAccountAliasErrorKind::Unhandled(_inner) => Some(_inner),
+            PutAccountAliasErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            PutAccountAliasErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            PutAccountAliasErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            PutAccountAliasErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -807,17 +787,15 @@ impl std::error::Error for PutAccountAliasError {
 #[derive(std::fmt::Debug)]
 pub struct ListSlackWorkspaceConfigurationsError {
     /// Kind of error that occurred.
-    pub kind: ListSlackWorkspaceConfigurationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListSlackWorkspaceConfigurationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListSlackWorkspaceConfigurationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListSlackWorkspaceConfigurationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: ListSlackWorkspaceConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -829,26 +807,28 @@ pub enum ListSlackWorkspaceConfigurationsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSlackWorkspaceConfigurationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListSlackWorkspaceConfigurationsErrorKind::AccessDeniedException(_inner) => {
+            ListSlackWorkspaceConfigurationsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSlackWorkspaceConfigurationsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSlackWorkspaceConfigurationsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListSlackWorkspaceConfigurationsErrorKind::InternalServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            ListSlackWorkspaceConfigurationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -862,78 +842,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListSlackWorkspaceConfigurati
 }
 impl ListSlackWorkspaceConfigurationsError {
     /// Creates a new `ListSlackWorkspaceConfigurationsError`.
-    pub fn new(
-        kind: ListSlackWorkspaceConfigurationsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListSlackWorkspaceConfigurationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListSlackWorkspaceConfigurationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListSlackWorkspaceConfigurationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListSlackWorkspaceConfigurationsErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListSlackWorkspaceConfigurationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListSlackWorkspaceConfigurationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListSlackWorkspaceConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListSlackWorkspaceConfigurationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListSlackWorkspaceConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListSlackWorkspaceConfigurationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSlackWorkspaceConfigurationsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListSlackWorkspaceConfigurationsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListSlackWorkspaceConfigurationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSlackWorkspaceConfigurationsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, ListSlackWorkspaceConfigurationsErrorKind::InternalServerException(_))
     }
 }
 impl std::error::Error for ListSlackWorkspaceConfigurationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListSlackWorkspaceConfigurationsErrorKind::AccessDeniedException(_inner) => {
+            ListSlackWorkspaceConfigurationsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListSlackWorkspaceConfigurationsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListSlackWorkspaceConfigurationsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListSlackWorkspaceConfigurationsErrorKind::InternalServerException(_inner) => {
-                Some(_inner)
-            }
-            ListSlackWorkspaceConfigurationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -943,17 +912,15 @@ impl std::error::Error for ListSlackWorkspaceConfigurationsError {
 #[derive(std::fmt::Debug)]
 pub struct ListSlackChannelConfigurationsError {
     /// Kind of error that occurred.
-    pub kind: ListSlackChannelConfigurationsErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: ListSlackChannelConfigurationsErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for ListSlackChannelConfigurationsError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: ListSlackChannelConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                source,
-            )),
-            meta: Default::default(),
+            kind: ListSlackChannelConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -965,24 +932,28 @@ pub enum ListSlackChannelConfigurationsErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for ListSlackChannelConfigurationsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            ListSlackChannelConfigurationsErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            ListSlackChannelConfigurationsErrorKind::InternalServerException(_inner) => {
+            ListSlackChannelConfigurationsErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSlackChannelConfigurationsErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            ListSlackChannelConfigurationsErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            ListSlackChannelConfigurationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -996,76 +967,67 @@ impl aws_smithy_types::retry::ProvideErrorKind for ListSlackChannelConfiguration
 }
 impl ListSlackChannelConfigurationsError {
     /// Creates a new `ListSlackChannelConfigurationsError`.
-    pub fn new(
-        kind: ListSlackChannelConfigurationsErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `ListSlackChannelConfigurationsError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: ListSlackChannelConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `ListSlackChannelConfigurationsError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: ListSlackChannelConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(
-                err.into(),
-            )),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: ListSlackChannelConfigurationsErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `ListSlackChannelConfigurationsError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: ListSlackChannelConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `ListSlackChannelConfigurationsError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: ListSlackChannelConfigurationsErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `ListSlackChannelConfigurationsErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSlackChannelConfigurationsErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, ListSlackChannelConfigurationsErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListSlackChannelConfigurationsErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            ListSlackChannelConfigurationsErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, ListSlackChannelConfigurationsErrorKind::InternalServerException(_))
     }
 }
 impl std::error::Error for ListSlackChannelConfigurationsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            ListSlackChannelConfigurationsErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            ListSlackChannelConfigurationsErrorKind::InternalServerException(_inner) => {
+            ListSlackChannelConfigurationsErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            ListSlackChannelConfigurationsErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            ListSlackChannelConfigurationsErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            ListSlackChannelConfigurationsErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1075,15 +1037,15 @@ impl std::error::Error for ListSlackChannelConfigurationsError {
 #[derive(std::fmt::Debug)]
 pub struct GetAccountAliasError {
     /// Kind of error that occurred.
-    pub kind: GetAccountAliasErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: GetAccountAliasErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetAccountAliasError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: GetAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1093,21 +1055,25 @@ impl aws_smithy_http::result::CreateUnhandledError for GetAccountAliasError {
 pub enum GetAccountAliasErrorKind {
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
     InternalServerException(crate::error::InternalServerException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for GetAccountAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            GetAccountAliasErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            GetAccountAliasErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            GetAccountAliasErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            GetAccountAliasErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1121,59 +1087,60 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetAccountAliasError {
 }
 impl GetAccountAliasError {
     /// Creates a new `GetAccountAliasError`.
-    pub fn new(kind: GetAccountAliasErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `GetAccountAliasError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: GetAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `GetAccountAliasError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: GetAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: GetAccountAliasErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `GetAccountAliasError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: GetAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `GetAccountAliasError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: GetAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `GetAccountAliasErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetAccountAliasErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, GetAccountAliasErrorKind::InternalServerException(_))
     }
 }
 impl std::error::Error for GetAccountAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            GetAccountAliasErrorKind::InternalServerException(_inner) => Some(_inner),
-            GetAccountAliasErrorKind::Unhandled(_inner) => Some(_inner),
+            GetAccountAliasErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            GetAccountAliasErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1183,17 +1150,15 @@ impl std::error::Error for GetAccountAliasError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteSlackWorkspaceConfigurationError {
     /// Kind of error that occurred.
-    pub kind: DeleteSlackWorkspaceConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteSlackWorkspaceConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteSlackWorkspaceConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteSlackWorkspaceConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DeleteSlackWorkspaceConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1203,14 +1168,14 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteSlackWorkspaceConfi
 pub enum DeleteSlackWorkspaceConfigurationErrorKind {
     /// <p>You don't have sufficient permission to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Your request has a conflict. For example, you might receive this error if you try the following:</p>
-    /// <ul>
-    /// <li> <p>Add, update, or delete a Slack channel configuration before you add a Slack workspace to your Amazon Web Services account.</p> </li>
-    /// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li>
-    /// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li>
-    /// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li>
-    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li>
-    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li>
+    /// <p>Your request has a conflict. For example, you might receive this error if you try the following:</p> 
+    /// <ul> 
+    /// <li> <p>Add, update, or delete a Slack channel configuration before you add a Slack workspace to your Amazon Web Services account.</p> </li> 
+    /// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li> 
+    /// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li> 
+    /// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li> 
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li> 
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li> 
     /// </ul>
     ConflictException(crate::error::ConflictException),
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
@@ -1219,33 +1184,37 @@ pub enum DeleteSlackWorkspaceConfigurationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your request input doesn't meet the constraints that the Amazon Web Services Support App specifies.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSlackWorkspaceConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteSlackWorkspaceConfigurationErrorKind::AccessDeniedException(_inner) => {
+            DeleteSlackWorkspaceConfigurationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSlackWorkspaceConfigurationErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSlackWorkspaceConfigurationErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSlackWorkspaceConfigurationErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSlackWorkspaceConfigurationErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSlackWorkspaceConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteSlackWorkspaceConfigurationErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            DeleteSlackWorkspaceConfigurationErrorKind::InternalServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteSlackWorkspaceConfigurationErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteSlackWorkspaceConfigurationErrorKind::ValidationException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteSlackWorkspaceConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1259,104 +1228,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteSlackWorkspaceConfigura
 }
 impl DeleteSlackWorkspaceConfigurationError {
     /// Creates a new `DeleteSlackWorkspaceConfigurationError`.
-    pub fn new(
-        kind: DeleteSlackWorkspaceConfigurationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteSlackWorkspaceConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteSlackWorkspaceConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteSlackWorkspaceConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteSlackWorkspaceConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteSlackWorkspaceConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteSlackWorkspaceConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteSlackWorkspaceConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteSlackWorkspaceConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteSlackWorkspaceConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteSlackWorkspaceConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSlackWorkspaceConfigurationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DeleteSlackWorkspaceConfigurationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeleteSlackWorkspaceConfigurationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSlackWorkspaceConfigurationErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, DeleteSlackWorkspaceConfigurationErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DeleteSlackWorkspaceConfigurationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSlackWorkspaceConfigurationErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, DeleteSlackWorkspaceConfigurationErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `DeleteSlackWorkspaceConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSlackWorkspaceConfigurationErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteSlackWorkspaceConfigurationErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteSlackWorkspaceConfigurationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSlackWorkspaceConfigurationErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, DeleteSlackWorkspaceConfigurationErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for DeleteSlackWorkspaceConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteSlackWorkspaceConfigurationErrorKind::AccessDeniedException(_inner) => {
+            DeleteSlackWorkspaceConfigurationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSlackWorkspaceConfigurationErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSlackWorkspaceConfigurationErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSlackWorkspaceConfigurationErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSlackWorkspaceConfigurationErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSlackWorkspaceConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteSlackWorkspaceConfigurationErrorKind::ConflictException(_inner) => Some(_inner),
-            DeleteSlackWorkspaceConfigurationErrorKind::InternalServerException(_inner) => {
-                Some(_inner)
-            }
-            DeleteSlackWorkspaceConfigurationErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            DeleteSlackWorkspaceConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteSlackWorkspaceConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1366,17 +1319,15 @@ impl std::error::Error for DeleteSlackWorkspaceConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteSlackChannelConfigurationError {
     /// Kind of error that occurred.
-    pub kind: DeleteSlackChannelConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteSlackChannelConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteSlackChannelConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: DeleteSlackChannelConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: DeleteSlackChannelConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1386,14 +1337,14 @@ impl aws_smithy_http::result::CreateUnhandledError for DeleteSlackChannelConfigu
 pub enum DeleteSlackChannelConfigurationErrorKind {
     /// <p>You don't have sufficient permission to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Your request has a conflict. For example, you might receive this error if you try the following:</p>
-    /// <ul>
-    /// <li> <p>Add, update, or delete a Slack channel configuration before you add a Slack workspace to your Amazon Web Services account.</p> </li>
-    /// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li>
-    /// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li>
-    /// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li>
-    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li>
-    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li>
+    /// <p>Your request has a conflict. For example, you might receive this error if you try the following:</p> 
+    /// <ul> 
+    /// <li> <p>Add, update, or delete a Slack channel configuration before you add a Slack workspace to your Amazon Web Services account.</p> </li> 
+    /// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li> 
+    /// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li> 
+    /// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li> 
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li> 
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li> 
     /// </ul>
     ConflictException(crate::error::ConflictException),
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
@@ -1402,31 +1353,37 @@ pub enum DeleteSlackChannelConfigurationErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>Your request input doesn't meet the constraints that the Amazon Web Services Support App specifies.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteSlackChannelConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteSlackChannelConfigurationErrorKind::AccessDeniedException(_inner) => {
+            DeleteSlackChannelConfigurationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSlackChannelConfigurationErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSlackChannelConfigurationErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSlackChannelConfigurationErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSlackChannelConfigurationErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteSlackChannelConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            DeleteSlackChannelConfigurationErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            DeleteSlackChannelConfigurationErrorKind::InternalServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteSlackChannelConfigurationErrorKind::ResourceNotFoundException(_inner) => {
-                _inner.fmt(f)
-            }
-            DeleteSlackChannelConfigurationErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            DeleteSlackChannelConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1440,102 +1397,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteSlackChannelConfigurati
 }
 impl DeleteSlackChannelConfigurationError {
     /// Creates a new `DeleteSlackChannelConfigurationError`.
-    pub fn new(
-        kind: DeleteSlackChannelConfigurationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteSlackChannelConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteSlackChannelConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteSlackChannelConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteSlackChannelConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteSlackChannelConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteSlackChannelConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteSlackChannelConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteSlackChannelConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteSlackChannelConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteSlackChannelConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSlackChannelConfigurationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DeleteSlackChannelConfigurationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeleteSlackChannelConfigurationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSlackChannelConfigurationErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, DeleteSlackChannelConfigurationErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `DeleteSlackChannelConfigurationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSlackChannelConfigurationErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, DeleteSlackChannelConfigurationErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `DeleteSlackChannelConfigurationErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSlackChannelConfigurationErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteSlackChannelConfigurationErrorKind::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `DeleteSlackChannelConfigurationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteSlackChannelConfigurationErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, DeleteSlackChannelConfigurationErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for DeleteSlackChannelConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteSlackChannelConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DeleteSlackChannelConfigurationErrorKind::ConflictException(_inner) => Some(_inner),
-            DeleteSlackChannelConfigurationErrorKind::InternalServerException(_inner) => {
+            DeleteSlackChannelConfigurationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSlackChannelConfigurationErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSlackChannelConfigurationErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSlackChannelConfigurationErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSlackChannelConfigurationErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteSlackChannelConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            DeleteSlackChannelConfigurationErrorKind::ResourceNotFoundException(_inner) => {
-                Some(_inner)
-            }
-            DeleteSlackChannelConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
-            DeleteSlackChannelConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1545,15 +1488,15 @@ impl std::error::Error for DeleteSlackChannelConfigurationError {
 #[derive(std::fmt::Debug)]
 pub struct DeleteAccountAliasError {
     /// Kind of error that occurred.
-    pub kind: DeleteAccountAliasErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: DeleteAccountAliasErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for DeleteAccountAliasError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
             kind: DeleteAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(source)),
-            meta: Default::default(),
+            meta: Default::default()
         }
     }
 }
@@ -1567,23 +1510,31 @@ pub enum DeleteAccountAliasErrorKind {
     InternalServerException(crate::error::InternalServerException),
     /// <p>The specified resource is missing or doesn't exist, such as an account alias, Slack channel configuration, or Slack workspace configuration.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for DeleteAccountAliasError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            DeleteAccountAliasErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
-            DeleteAccountAliasErrorKind::InternalServerException(_inner) => _inner.fmt(f),
-            DeleteAccountAliasErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
-            DeleteAccountAliasErrorKind::Unhandled(_inner) => _inner.fmt(f),
+            DeleteAccountAliasErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAccountAliasErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAccountAliasErrorKind::ResourceNotFoundException(_inner) =>
+            _inner.fmt(f)
+            ,
+            DeleteAccountAliasErrorKind::Unhandled(_inner) => {
+                _inner.fmt(f)
+            }
         }
     }
 }
@@ -1597,75 +1548,74 @@ impl aws_smithy_types::retry::ProvideErrorKind for DeleteAccountAliasError {
 }
 impl DeleteAccountAliasError {
     /// Creates a new `DeleteAccountAliasError`.
-    pub fn new(kind: DeleteAccountAliasErrorKind, meta: aws_smithy_types::Error) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `DeleteAccountAliasError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: DeleteAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `DeleteAccountAliasError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: DeleteAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: DeleteAccountAliasErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `DeleteAccountAliasError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: DeleteAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `DeleteAccountAliasError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: DeleteAccountAliasErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `DeleteAccountAliasErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAccountAliasErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, DeleteAccountAliasErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `DeleteAccountAliasErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAccountAliasErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, DeleteAccountAliasErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `DeleteAccountAliasErrorKind::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            DeleteAccountAliasErrorKind::ResourceNotFoundException(_)
-        )
+        matches!(&self.kind, DeleteAccountAliasErrorKind::ResourceNotFoundException(_))
     }
 }
 impl std::error::Error for DeleteAccountAliasError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            DeleteAccountAliasErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            DeleteAccountAliasErrorKind::InternalServerException(_inner) => Some(_inner),
-            DeleteAccountAliasErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
-            DeleteAccountAliasErrorKind::Unhandled(_inner) => Some(_inner),
+            DeleteAccountAliasErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAccountAliasErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAccountAliasErrorKind::ResourceNotFoundException(_inner) =>
+            Some(_inner)
+            ,
+            DeleteAccountAliasErrorKind::Unhandled(_inner) => {
+                Some(_inner)
+            }
         }
     }
 }
@@ -1675,17 +1625,15 @@ impl std::error::Error for DeleteAccountAliasError {
 #[derive(std::fmt::Debug)]
 pub struct CreateSlackChannelConfigurationError {
     /// Kind of error that occurred.
-    pub kind: CreateSlackChannelConfigurationErrorKind,
-    /// Additional metadata about the error, including error code, message, and request ID.
-    pub(crate) meta: aws_smithy_types::Error,
+                    pub kind: CreateSlackChannelConfigurationErrorKind,
+                    /// Additional metadata about the error, including error code, message, and request ID.
+                    pub (crate) meta: aws_smithy_types::Error
 }
 impl aws_smithy_http::result::CreateUnhandledError for CreateSlackChannelConfigurationError {
     fn create_unhandled_error(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
         Self {
-            kind: CreateSlackChannelConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(source),
-            ),
-            meta: Default::default(),
+            kind: CreateSlackChannelConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(source)),
+            meta: Default::default()
         }
     }
 }
@@ -1695,14 +1643,14 @@ impl aws_smithy_http::result::CreateUnhandledError for CreateSlackChannelConfigu
 pub enum CreateSlackChannelConfigurationErrorKind {
     /// <p>You don't have sufficient permission to perform this action.</p>
     AccessDeniedException(crate::error::AccessDeniedException),
-    /// <p>Your request has a conflict. For example, you might receive this error if you try the following:</p>
-    /// <ul>
-    /// <li> <p>Add, update, or delete a Slack channel configuration before you add a Slack workspace to your Amazon Web Services account.</p> </li>
-    /// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li>
-    /// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li>
-    /// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li>
-    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li>
-    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li>
+    /// <p>Your request has a conflict. For example, you might receive this error if you try the following:</p> 
+    /// <ul> 
+    /// <li> <p>Add, update, or delete a Slack channel configuration before you add a Slack workspace to your Amazon Web Services account.</p> </li> 
+    /// <li> <p>Add a Slack channel configuration that already exists in your Amazon Web Services account.</p> </li> 
+    /// <li> <p>Delete a Slack channel configuration for a live chat channel.</p> </li> 
+    /// <li> <p>Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.</p> </li> 
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't belong to an organization.</p> </li> 
+    /// <li> <p>Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account hasn't registered that workspace yet for the organization.</p> </li> 
     /// </ul>
     ConflictException(crate::error::ConflictException),
     /// <p>We can’t process your request right now because of a server issue. Try again later.</p>
@@ -1711,31 +1659,37 @@ pub enum CreateSlackChannelConfigurationErrorKind {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>Your request input doesn't meet the constraints that the Amazon Web Services Support App specifies.</p>
     ValidationException(crate::error::ValidationException),
-    ///
+    /// 
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
+    /// 
     /// When logging an error from the SDK, it is recommended that you either wrap the error in
     /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
     /// error reporter library that visits the error's cause/source chain, or call
     /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
+    /// 
     Unhandled(crate::error::Unhandled),
 }
 impl std::fmt::Display for CreateSlackChannelConfigurationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
-            CreateSlackChannelConfigurationErrorKind::AccessDeniedException(_inner) => {
+            CreateSlackChannelConfigurationErrorKind::AccessDeniedException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSlackChannelConfigurationErrorKind::ConflictException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSlackChannelConfigurationErrorKind::InternalServerException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSlackChannelConfigurationErrorKind::ServiceQuotaExceededException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSlackChannelConfigurationErrorKind::ValidationException(_inner) =>
+            _inner.fmt(f)
+            ,
+            CreateSlackChannelConfigurationErrorKind::Unhandled(_inner) => {
                 _inner.fmt(f)
             }
-            CreateSlackChannelConfigurationErrorKind::ConflictException(_inner) => _inner.fmt(f),
-            CreateSlackChannelConfigurationErrorKind::InternalServerException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateSlackChannelConfigurationErrorKind::ServiceQuotaExceededException(_inner) => {
-                _inner.fmt(f)
-            }
-            CreateSlackChannelConfigurationErrorKind::ValidationException(_inner) => _inner.fmt(f),
-            CreateSlackChannelConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -1749,102 +1703,88 @@ impl aws_smithy_types::retry::ProvideErrorKind for CreateSlackChannelConfigurati
 }
 impl CreateSlackChannelConfigurationError {
     /// Creates a new `CreateSlackChannelConfigurationError`.
-    pub fn new(
-        kind: CreateSlackChannelConfigurationErrorKind,
-        meta: aws_smithy_types::Error,
-    ) -> Self {
-        Self { kind, meta }
-    }
-
-    /// Creates the `CreateSlackChannelConfigurationError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-        Self {
-            kind: CreateSlackChannelConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-            meta: Default::default(),
-        }
-    }
-
-    /// Creates the `CreateSlackChannelConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
-    pub fn generic(err: aws_smithy_types::Error) -> Self {
-        Self {
-            meta: err.clone(),
-            kind: CreateSlackChannelConfigurationErrorKind::Unhandled(
-                crate::error::Unhandled::new(err.into()),
-            ),
-        }
-    }
-
-    /// Returns the error message if one is available.
-    pub fn message(&self) -> Option<&str> {
-        self.meta.message()
-    }
-
-    /// Returns error metadata, which includes the error code, message,
-    /// request ID, and potentially additional information.
-    pub fn meta(&self) -> &aws_smithy_types::Error {
-        &self.meta
-    }
-
-    /// Returns the request ID if it's available.
-    pub fn request_id(&self) -> Option<&str> {
-        self.meta.request_id()
-    }
-
-    /// Returns the error code if it's available.
-    pub fn code(&self) -> Option<&str> {
-        self.meta.code()
-    }
+                    pub fn new(kind: CreateSlackChannelConfigurationErrorKind, meta: aws_smithy_types::Error) -> Self {
+                        Self { kind, meta }
+                    }
+    
+                    /// Creates the `CreateSlackChannelConfigurationError::Unhandled` variant from any error type.
+                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+                        Self {
+                            kind: CreateSlackChannelConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                            meta: Default::default()
+                        }
+                    }
+    
+                    /// Creates the `CreateSlackChannelConfigurationError::Unhandled` variant from a `aws_smithy_types::Error`.
+                    pub fn generic(err: aws_smithy_types::Error) -> Self {
+                        Self {
+                            meta: err.clone(),
+                            kind: CreateSlackChannelConfigurationErrorKind::Unhandled(crate::error::Unhandled::new(err.into())),
+                        }
+                    }
+    
+                    /// Returns the error message if one is available.
+                    pub fn message(&self) -> Option<&str> {
+                        self.meta.message()
+                    }
+    
+                    /// Returns error metadata, which includes the error code, message,
+                    /// request ID, and potentially additional information.
+                    pub fn meta(&self) -> &aws_smithy_types::Error {
+                        &self.meta
+                    }
+    
+                    /// Returns the request ID if it's available.
+                    pub fn request_id(&self) -> Option<&str> {
+                        self.meta.request_id()
+                    }
+    
+                    /// Returns the error code if it's available.
+                    pub fn code(&self) -> Option<&str> {
+                        self.meta.code()
+                    }
     /// Returns `true` if the error kind is `CreateSlackChannelConfigurationErrorKind::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSlackChannelConfigurationErrorKind::AccessDeniedException(_)
-        )
+        matches!(&self.kind, CreateSlackChannelConfigurationErrorKind::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `CreateSlackChannelConfigurationErrorKind::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSlackChannelConfigurationErrorKind::ConflictException(_)
-        )
+        matches!(&self.kind, CreateSlackChannelConfigurationErrorKind::ConflictException(_))
     }
     /// Returns `true` if the error kind is `CreateSlackChannelConfigurationErrorKind::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSlackChannelConfigurationErrorKind::InternalServerException(_)
-        )
+        matches!(&self.kind, CreateSlackChannelConfigurationErrorKind::InternalServerException(_))
     }
     /// Returns `true` if the error kind is `CreateSlackChannelConfigurationErrorKind::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSlackChannelConfigurationErrorKind::ServiceQuotaExceededException(_)
-        )
+        matches!(&self.kind, CreateSlackChannelConfigurationErrorKind::ServiceQuotaExceededException(_))
     }
     /// Returns `true` if the error kind is `CreateSlackChannelConfigurationErrorKind::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            CreateSlackChannelConfigurationErrorKind::ValidationException(_)
-        )
+        matches!(&self.kind, CreateSlackChannelConfigurationErrorKind::ValidationException(_))
     }
 }
 impl std::error::Error for CreateSlackChannelConfigurationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
-            CreateSlackChannelConfigurationErrorKind::AccessDeniedException(_inner) => Some(_inner),
-            CreateSlackChannelConfigurationErrorKind::ConflictException(_inner) => Some(_inner),
-            CreateSlackChannelConfigurationErrorKind::InternalServerException(_inner) => {
+            CreateSlackChannelConfigurationErrorKind::AccessDeniedException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSlackChannelConfigurationErrorKind::ConflictException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSlackChannelConfigurationErrorKind::InternalServerException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSlackChannelConfigurationErrorKind::ServiceQuotaExceededException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSlackChannelConfigurationErrorKind::ValidationException(_inner) =>
+            Some(_inner)
+            ,
+            CreateSlackChannelConfigurationErrorKind::Unhandled(_inner) => {
                 Some(_inner)
             }
-            CreateSlackChannelConfigurationErrorKind::ServiceQuotaExceededException(_inner) => {
-                Some(_inner)
-            }
-            CreateSlackChannelConfigurationErrorKind::ValidationException(_inner) => Some(_inner),
-            CreateSlackChannelConfigurationErrorKind::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1852,22 +1792,20 @@ impl std::error::Error for CreateSlackChannelConfigurationError {
 /// <p>Your Service Quotas request exceeds the quota for the service. For example, your Service Quotas request to Amazon Web Services Support App might exceed the maximum number of workspaces or channels per account, or the maximum number of accounts per Slack channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceQuotaExceededException {
+pub struct ServiceQuotaExceededException  {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
 }
 impl ServiceQuotaExceededException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
-        self.message.as_deref()
-    }
+                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
 }
 impl std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceQuotaExceededException")?;
         if let Some(inner_6) = &self.message {
-            {
+             {
                 write!(f, ": {}", inner_6)?;
             }
         }
@@ -1877,7 +1815,7 @@ impl std::fmt::Display for ServiceQuotaExceededException {
 impl std::error::Error for ServiceQuotaExceededException {}
 /// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
 pub mod service_quota_exceeded_exception {
-
+    
     /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1891,16 +1829,18 @@ pub mod service_quota_exceeded_exception {
         }
         #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
         pub fn build(self) -> crate::error::ServiceQuotaExceededException {
             crate::error::ServiceQuotaExceededException {
-                message: self.message,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServiceQuotaExceededException {
     /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException).
@@ -1909,31 +1849,32 @@ impl ServiceQuotaExceededException {
     }
 }
 
-///
+/// 
 /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-///
+/// 
 /// When logging an error from the SDK, it is recommended that you either wrap the error in
 /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
 /// error reporter library that visits the error's cause/source chain, or call
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-///
+/// 
 #[derive(Debug)]
-pub struct Unhandled {
-    source: Box<dyn std::error::Error + Send + Sync + 'static>,
-}
-impl Unhandled {
-    #[allow(unused)]
-    pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
-        Self { source }
-    }
-}
-impl std::fmt::Display for Unhandled {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
-        write!(f, "unhandled error")
-    }
-}
-impl std::error::Error for Unhandled {
-    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
-        Some(self.source.as_ref() as _)
-    }
-}
+        pub struct Unhandled {
+            source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        }
+        impl Unhandled {
+            #[allow(unused)]
+            pub(crate) fn new(source: Box<dyn std::error::Error + Send + Sync + 'static>) -> Self {
+                Self { source }
+            }
+        }
+        impl std::fmt::Display for Unhandled {
+            fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
+                write!(f, "unhandled error")
+            }
+        }
+        impl std::error::Error for Unhandled {
+            fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+                Some(self.source.as_ref() as _)
+            }
+        }
+

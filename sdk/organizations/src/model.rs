@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let invalidinputexceptionreason = unimplemented!();
 /// match invalidinputexceptionreason {
@@ -56,22 +56,14 @@
 /// Specifically, when `invalidinputexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InvalidInputExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InvalidInputExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     DuplicateTagKey,
@@ -130,7 +122,7 @@ pub enum InvalidInputExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     UnsupportedResourceInResourcePolicy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InvalidInputExceptionReason {
     fn from(s: &str) -> Self {
@@ -138,9 +130,7 @@ impl std::convert::From<&str> for InvalidInputExceptionReason {
             "DUPLICATE_TAG_KEY" => InvalidInputExceptionReason::DuplicateTagKey,
             "IMMUTABLE_POLICY" => InvalidInputExceptionReason::ImmutablePolicy,
             "INPUT_REQUIRED" => InvalidInputExceptionReason::InputRequired,
-            "INVALID_EMAIL_ADDRESS_TARGET" => {
-                InvalidInputExceptionReason::InvalidEmailAddressTarget
-            }
+            "INVALID_EMAIL_ADDRESS_TARGET" => InvalidInputExceptionReason::InvalidEmailAddressTarget,
             "INVALID_ENUM" => InvalidInputExceptionReason::InvalidEnum,
             "INVALID_ENUM_POLICY_TYPE" => InvalidInputExceptionReason::InvalidEnumPolicyType,
             "INVALID_FULL_NAME_TARGET" => InvalidInputExceptionReason::InvalidFullNameTarget,
@@ -149,51 +139,33 @@ impl std::convert::From<&str> for InvalidInputExceptionReason {
             "INVALID_PARTY_TYPE_TARGET" => InvalidInputExceptionReason::InvalidPartyTypeTarget,
             "INVALID_PATTERN" => InvalidInputExceptionReason::InvalidPattern,
             "INVALID_PATTERN_TARGET_ID" => InvalidInputExceptionReason::InvalidPatternTargetId,
-            "INVALID_RESOURCE_POLICY_JSON" => {
-                InvalidInputExceptionReason::InvalidResourcePolicyJson
-            }
+            "INVALID_RESOURCE_POLICY_JSON" => InvalidInputExceptionReason::InvalidResourcePolicyJson,
             "INVALID_ROLE_NAME" => InvalidInputExceptionReason::InvalidRoleName,
-            "INVALID_SYNTAX_ORGANIZATION_ARN" => {
-                InvalidInputExceptionReason::InvalidSyntaxOrganization
-            }
+            "INVALID_SYNTAX_ORGANIZATION_ARN" => InvalidInputExceptionReason::InvalidSyntaxOrganization,
             "INVALID_SYNTAX_POLICY_ID" => InvalidInputExceptionReason::InvalidSyntaxPolicy,
-            "INVALID_SYSTEM_TAGS_PARAMETER" => {
-                InvalidInputExceptionReason::InvalidSystemTagsParameter
-            }
+            "INVALID_SYSTEM_TAGS_PARAMETER" => InvalidInputExceptionReason::InvalidSystemTagsParameter,
             "MAX_LENGTH_EXCEEDED" => InvalidInputExceptionReason::MaxLengthExceeded,
             "MAX_LIMIT_EXCEEDED_FILTER" => InvalidInputExceptionReason::MaxFilterLimitExceeded,
             "MAX_VALUE_EXCEEDED" => InvalidInputExceptionReason::MaxValueExceeded,
             "MIN_LENGTH_EXCEEDED" => InvalidInputExceptionReason::MinLengthExceeded,
             "MIN_VALUE_EXCEEDED" => InvalidInputExceptionReason::MinValueExceeded,
-            "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS" => {
-                InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots
-            }
+            "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS" => InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots,
             "TARGET_NOT_SUPPORTED" => InvalidInputExceptionReason::TargetNotSupported,
-            "UNRECOGNIZED_SERVICE_PRINCIPAL" => {
-                InvalidInputExceptionReason::UnrecognizedServicePrincipal
-            }
-            "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY" => {
-                InvalidInputExceptionReason::UnsupportedActionInResourcePolicy
-            }
-            "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY" => {
-                InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy
-            }
-            "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY" => {
-                InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy
-            }
-            other => InvalidInputExceptionReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "UNRECOGNIZED_SERVICE_PRINCIPAL" => InvalidInputExceptionReason::UnrecognizedServicePrincipal,
+            "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY" => InvalidInputExceptionReason::UnsupportedActionInResourcePolicy,
+            "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY" => InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy,
+            "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY" => InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy,
+            other => InvalidInputExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InvalidInputExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InvalidInputExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InvalidInputExceptionReason::from(s))
+                }
+            }
 impl InvalidInputExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -201,9 +173,7 @@ impl InvalidInputExceptionReason {
             InvalidInputExceptionReason::DuplicateTagKey => "DUPLICATE_TAG_KEY",
             InvalidInputExceptionReason::ImmutablePolicy => "IMMUTABLE_POLICY",
             InvalidInputExceptionReason::InputRequired => "INPUT_REQUIRED",
-            InvalidInputExceptionReason::InvalidEmailAddressTarget => {
-                "INVALID_EMAIL_ADDRESS_TARGET"
-            }
+            InvalidInputExceptionReason::InvalidEmailAddressTarget => "INVALID_EMAIL_ADDRESS_TARGET",
             InvalidInputExceptionReason::InvalidEnum => "INVALID_ENUM",
             InvalidInputExceptionReason::InvalidEnumPolicyType => "INVALID_ENUM_POLICY_TYPE",
             InvalidInputExceptionReason::InvalidFullNameTarget => "INVALID_FULL_NAME_TARGET",
@@ -212,72 +182,29 @@ impl InvalidInputExceptionReason {
             InvalidInputExceptionReason::InvalidPartyTypeTarget => "INVALID_PARTY_TYPE_TARGET",
             InvalidInputExceptionReason::InvalidPattern => "INVALID_PATTERN",
             InvalidInputExceptionReason::InvalidPatternTargetId => "INVALID_PATTERN_TARGET_ID",
-            InvalidInputExceptionReason::InvalidResourcePolicyJson => {
-                "INVALID_RESOURCE_POLICY_JSON"
-            }
+            InvalidInputExceptionReason::InvalidResourcePolicyJson => "INVALID_RESOURCE_POLICY_JSON",
             InvalidInputExceptionReason::InvalidRoleName => "INVALID_ROLE_NAME",
-            InvalidInputExceptionReason::InvalidSyntaxOrganization => {
-                "INVALID_SYNTAX_ORGANIZATION_ARN"
-            }
+            InvalidInputExceptionReason::InvalidSyntaxOrganization => "INVALID_SYNTAX_ORGANIZATION_ARN",
             InvalidInputExceptionReason::InvalidSyntaxPolicy => "INVALID_SYNTAX_POLICY_ID",
-            InvalidInputExceptionReason::InvalidSystemTagsParameter => {
-                "INVALID_SYSTEM_TAGS_PARAMETER"
-            }
+            InvalidInputExceptionReason::InvalidSystemTagsParameter => "INVALID_SYSTEM_TAGS_PARAMETER",
             InvalidInputExceptionReason::MaxLengthExceeded => "MAX_LENGTH_EXCEEDED",
             InvalidInputExceptionReason::MaxFilterLimitExceeded => "MAX_LIMIT_EXCEEDED_FILTER",
             InvalidInputExceptionReason::MaxValueExceeded => "MAX_VALUE_EXCEEDED",
             InvalidInputExceptionReason::MinLengthExceeded => "MIN_LENGTH_EXCEEDED",
             InvalidInputExceptionReason::MinValueExceeded => "MIN_VALUE_EXCEEDED",
-            InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots => {
-                "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS"
-            }
+            InvalidInputExceptionReason::MovingAccountBetweenDifferentRoots => "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS",
             InvalidInputExceptionReason::TargetNotSupported => "TARGET_NOT_SUPPORTED",
-            InvalidInputExceptionReason::UnrecognizedServicePrincipal => {
-                "UNRECOGNIZED_SERVICE_PRINCIPAL"
-            }
-            InvalidInputExceptionReason::UnsupportedActionInResourcePolicy => {
-                "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY"
-            }
-            InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy => {
-                "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY"
-            }
-            InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy => {
-                "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY"
-            }
-            InvalidInputExceptionReason::Unknown(value) => value.as_str(),
+            InvalidInputExceptionReason::UnrecognizedServicePrincipal => "UNRECOGNIZED_SERVICE_PRINCIPAL",
+            InvalidInputExceptionReason::UnsupportedActionInResourcePolicy => "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY",
+            InvalidInputExceptionReason::UnsupportedPolicyTypeInResourcePolicy => "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY",
+            InvalidInputExceptionReason::UnsupportedResourceInResourcePolicy => "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY",
+            InvalidInputExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "DUPLICATE_TAG_KEY",
-            "IMMUTABLE_POLICY",
-            "INPUT_REQUIRED",
-            "INVALID_EMAIL_ADDRESS_TARGET",
-            "INVALID_ENUM",
-            "INVALID_ENUM_POLICY_TYPE",
-            "INVALID_FULL_NAME_TARGET",
-            "INVALID_LIST_MEMBER",
-            "INVALID_NEXT_TOKEN",
-            "INVALID_PARTY_TYPE_TARGET",
-            "INVALID_PATTERN",
-            "INVALID_PATTERN_TARGET_ID",
-            "INVALID_RESOURCE_POLICY_JSON",
-            "INVALID_ROLE_NAME",
-            "INVALID_SYNTAX_ORGANIZATION_ARN",
-            "INVALID_SYNTAX_POLICY_ID",
-            "INVALID_SYSTEM_TAGS_PARAMETER",
-            "MAX_LENGTH_EXCEEDED",
-            "MAX_LIMIT_EXCEEDED_FILTER",
-            "MAX_VALUE_EXCEEDED",
-            "MIN_LENGTH_EXCEEDED",
-            "MIN_VALUE_EXCEEDED",
-            "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS",
-            "TARGET_NOT_SUPPORTED",
-            "UNRECOGNIZED_SERVICE_PRINCIPAL",
-            "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY",
-            "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY",
-            "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY",
+            "DUPLICATE_TAG_KEY", "IMMUTABLE_POLICY", "INPUT_REQUIRED", "INVALID_EMAIL_ADDRESS_TARGET", "INVALID_ENUM", "INVALID_ENUM_POLICY_TYPE", "INVALID_FULL_NAME_TARGET", "INVALID_LIST_MEMBER", "INVALID_NEXT_TOKEN", "INVALID_PARTY_TYPE_TARGET", "INVALID_PATTERN", "INVALID_PATTERN_TARGET_ID", "INVALID_RESOURCE_POLICY_JSON", "INVALID_ROLE_NAME", "INVALID_SYNTAX_ORGANIZATION_ARN", "INVALID_SYNTAX_POLICY_ID", "INVALID_SYSTEM_TAGS_PARAMETER", "MAX_LENGTH_EXCEEDED", "MAX_LIMIT_EXCEEDED_FILTER", "MAX_VALUE_EXCEEDED", "MIN_LENGTH_EXCEEDED", "MIN_VALUE_EXCEEDED", "MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS", "TARGET_NOT_SUPPORTED", "UNRECOGNIZED_SERVICE_PRINCIPAL", "UNSUPPORTED_ACTION_IN_RESOURCE_POLICY", "UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY", "UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY"
         ]
     }
 }
@@ -293,9 +220,9 @@ impl AsRef<str> for InvalidInputExceptionReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let constraintviolationexceptionreason = unimplemented!();
 /// match constraintviolationexceptionreason {
@@ -348,22 +275,14 @@ impl AsRef<str> for InvalidInputExceptionReason {
 /// Specifically, when `constraintviolationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConstraintViolationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConstraintViolationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     AccountCannotLeaveOrganization,
@@ -432,7 +351,7 @@ pub enum ConstraintViolationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     WaitPeriodActive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConstraintViolationExceptionReason {
     fn from(s: &str) -> Self {
@@ -475,12 +394,12 @@ impl std::convert::From<&str> for ConstraintViolationExceptionReason {
     }
 }
 impl std::str::FromStr for ConstraintViolationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConstraintViolationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConstraintViolationExceptionReason::from(s))
+                }
+            }
 impl ConstraintViolationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -524,39 +443,7 @@ impl ConstraintViolationExceptionReason {
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACCOUNT_CANNOT_LEAVE_ORGANIZATION",
-            "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA",
-            "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION",
-            "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED",
-            "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
-            "CANNOT_CLOSE_MANAGEMENT_ACCOUNT",
-            "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR",
-            "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG",
-            "CLOSE_ACCOUNT_QUOTA_EXCEEDED",
-            "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED",
-            "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION",
-            "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE",
-            "EMAIL_VERIFICATION_CODE_EXPIRED",
-            "HANDSHAKE_RATE_LIMIT_EXCEEDED",
-            "INVALID_PAYMENT_INSTRUMENT",
-            "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE",
-            "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE",
-            "MASTER_ACCOUNT_MISSING_CONTACT_INFO",
-            "MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED",
-            "MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED",
-            "MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED",
-            "MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED",
-            "MAX_TAG_LIMIT_EXCEEDED",
-            "MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED",
-            "MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED",
-            "ORGANIZATION_NOT_IN_ALL_FEATURES_MODE",
-            "OU_DEPTH_LIMIT_EXCEEDED",
-            "OU_NUMBER_LIMIT_EXCEEDED",
-            "POLICY_CONTENT_LIMIT_EXCEEDED",
-            "POLICY_NUMBER_LIMIT_EXCEEDED",
-            "SERVICE_ACCESS_NOT_ENABLED",
-            "TAG_POLICY_VIOLATION",
-            "WAIT_PERIOD_ACTIVE",
+            "ACCOUNT_CANNOT_LEAVE_ORGANIZATION", "ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA", "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION", "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED", "ACCOUNT_NUMBER_LIMIT_EXCEEDED", "CANNOT_CLOSE_MANAGEMENT_ACCOUNT", "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR", "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG", "CLOSE_ACCOUNT_QUOTA_EXCEEDED", "CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED", "CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION", "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE", "EMAIL_VERIFICATION_CODE_EXPIRED", "HANDSHAKE_RATE_LIMIT_EXCEEDED", "INVALID_PAYMENT_INSTRUMENT", "MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE", "MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE", "MASTER_ACCOUNT_MISSING_CONTACT_INFO", "MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED", "MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED", "MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED", "MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED", "MAX_TAG_LIMIT_EXCEEDED", "MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED", "MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED", "ORGANIZATION_NOT_IN_ALL_FEATURES_MODE", "OU_DEPTH_LIMIT_EXCEEDED", "OU_NUMBER_LIMIT_EXCEEDED", "POLICY_CONTENT_LIMIT_EXCEEDED", "POLICY_NUMBER_LIMIT_EXCEEDED", "SERVICE_ACCESS_NOT_ENABLED", "TAG_POLICY_VIOLATION", "WAIT_PERIOD_ACTIVE"
         ]
     }
 }
@@ -569,7 +456,7 @@ impl AsRef<str> for ConstraintViolationExceptionReason {
 /// <p>Contains rules to be applied to the affected accounts. Policies can be attached directly to accounts, or to roots and OUs to affect all accounts in those hierarchies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Policy {
+pub struct Policy  {
     /// <p>A structure that contains additional details about the policy.</p>
     #[doc(hidden)]
     pub policy_summary: std::option::Option<crate::model::PolicySummary>,
@@ -579,17 +466,17 @@ pub struct Policy {
 }
 impl Policy {
     /// <p>A structure that contains additional details about the policy.</p>
-    pub fn policy_summary(&self) -> std::option::Option<&crate::model::PolicySummary> {
+    pub fn policy_summary(&self) -> std::option::Option<& crate::model::PolicySummary> {
         self.policy_summary.as_ref()
     }
     /// <p>The text content of the policy.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
 }
 /// See [`Policy`](crate::model::Policy).
 pub mod policy {
-
+    
     /// A builder for [`Policy`](crate::model::Policy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -603,12 +490,8 @@ pub mod policy {
             self
         }
         /// <p>A structure that contains additional details about the policy.</p>
-        pub fn set_policy_summary(
-            mut self,
-            input: std::option::Option<crate::model::PolicySummary>,
-        ) -> Self {
-            self.policy_summary = input;
-            self
+        pub fn set_policy_summary(mut self, input: std::option::Option<crate::model::PolicySummary>) -> Self {
+            self.policy_summary = input; self
         }
         /// <p>The text content of the policy.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -617,17 +500,20 @@ pub mod policy {
         }
         /// <p>The text content of the policy.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
         /// Consumes the builder and constructs a [`Policy`](crate::model::Policy).
         pub fn build(self) -> crate::model::Policy {
             crate::model::Policy {
-                policy_summary: self.policy_summary,
-                content: self.content,
+                policy_summary: self.policy_summary
+                ,
+                content: self.content
+                ,
             }
         }
     }
+    
+    
 }
 impl Policy {
     /// Creates a new builder-style object to manufacture [`Policy`](crate::model::Policy).
@@ -639,16 +525,16 @@ impl Policy {
 /// <p>Contains information about a policy, but does not include the content. To see the content of a policy, see <code>DescribePolicy</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicySummary {
-    /// <p>The unique identifier (ID) of the policy.</p>
+pub struct PolicySummary  {
+    /// <p>The unique identifier (ID) of the policy.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the policy.</p> 
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The friendly name of the policy.</p>
+    /// <p>The friendly name of the policy.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -663,27 +549,27 @@ pub struct PolicySummary {
     pub aws_managed: bool,
 }
 impl PolicySummary {
-    /// <p>The unique identifier (ID) of the policy.</p>
+    /// <p>The unique identifier (ID) of the policy.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the policy.</p> 
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <p>The friendly name of the policy.</p>
+    /// <p>The friendly name of the policy.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The description of the policy.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The type of policy.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PolicyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::PolicyType> {
         self.r#type.as_ref()
     }
     /// <p>A boolean value that indicates whether the specified policy is an Amazon Web Services managed policy. If true, then you can attach the policy to roots, OUs, or accounts, but you cannot edit it.</p>
@@ -693,7 +579,7 @@ impl PolicySummary {
 }
 /// See [`PolicySummary`](crate::model::PolicySummary).
 pub mod policy_summary {
-
+    
     /// A builder for [`PolicySummary`](crate::model::PolicySummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -705,41 +591,38 @@ pub mod policy_summary {
         pub(crate) aws_managed: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the policy.</p>
+        /// <p>The unique identifier (ID) of the policy.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the policy.</p>
+        /// <p>The unique identifier (ID) of the policy.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the policy.</p> 
         /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the policy.</p> 
         /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
-        /// <p>The friendly name of the policy.</p>
+        /// <p>The friendly name of the policy.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The friendly name of the policy.</p>
+        /// <p>The friendly name of the policy.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The description of the policy.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -748,8 +631,7 @@ pub mod policy_summary {
         }
         /// <p>The description of the policy.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The type of policy.</p>
         pub fn r#type(mut self, input: crate::model::PolicyType) -> Self {
@@ -758,8 +640,7 @@ pub mod policy_summary {
         }
         /// <p>The type of policy.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::PolicyType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>A boolean value that indicates whether the specified policy is an Amazon Web Services managed policy. If true, then you can attach the policy to roots, OUs, or accounts, but you cannot edit it.</p>
         pub fn aws_managed(mut self, input: bool) -> Self {
@@ -768,21 +649,29 @@ pub mod policy_summary {
         }
         /// <p>A boolean value that indicates whether the specified policy is an Amazon Web Services managed policy. If true, then you can attach the policy to roots, OUs, or accounts, but you cannot edit it.</p>
         pub fn set_aws_managed(mut self, input: std::option::Option<bool>) -> Self {
-            self.aws_managed = input;
-            self
+            self.aws_managed = input; self
         }
         /// Consumes the builder and constructs a [`PolicySummary`](crate::model::PolicySummary).
         pub fn build(self) -> crate::model::PolicySummary {
             crate::model::PolicySummary {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                r#type: self.r#type,
-                aws_managed: self.aws_managed.unwrap_or_default(),
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                r#type: self.r#type
+                ,
+                aws_managed: self.aws_managed
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl PolicySummary {
     /// Creates a new builder-style object to manufacture [`PolicySummary`](crate::model::PolicySummary).
@@ -797,9 +686,9 @@ impl PolicySummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let policytype = unimplemented!();
 /// match policytype {
@@ -823,22 +712,14 @@ impl PolicySummary {
 /// Specifically, when `policytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PolicyType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PolicyType {
     #[allow(missing_docs)] // documentation missing in model
     AiservicesOptOutPolicy,
@@ -849,7 +730,7 @@ pub enum PolicyType {
     #[allow(missing_docs)] // documentation missing in model
     TagPolicy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PolicyType {
     fn from(s: &str) -> Self {
@@ -858,17 +739,17 @@ impl std::convert::From<&str> for PolicyType {
             "BACKUP_POLICY" => PolicyType::BackupPolicy,
             "SERVICE_CONTROL_POLICY" => PolicyType::ServiceControlPolicy,
             "TAG_POLICY" => PolicyType::TagPolicy,
-            other => PolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PolicyType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PolicyType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PolicyType::from(s))
+                }
+            }
 impl PolicyType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -877,16 +758,13 @@ impl PolicyType {
             PolicyType::BackupPolicy => "BACKUP_POLICY",
             PolicyType::ServiceControlPolicy => "SERVICE_CONTROL_POLICY",
             PolicyType::TagPolicy => "TAG_POLICY",
-            PolicyType::Unknown(value) => value.as_str(),
+            PolicyType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AISERVICES_OPT_OUT_POLICY",
-            "BACKUP_POLICY",
-            "SERVICE_CONTROL_POLICY",
-            "TAG_POLICY",
+            "AISERVICES_OPT_OUT_POLICY", "BACKUP_POLICY", "SERVICE_CONTROL_POLICY", "TAG_POLICY"
         ]
     }
 }
@@ -899,40 +777,40 @@ impl AsRef<str> for PolicyType {
 /// <p>Contains details about an organizational unit (OU). An OU is a container of Amazon Web Services accounts within a root of an organization. Policies that are attached to an OU apply to all accounts contained in that OU and in any child OUs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OrganizationalUnit {
-    /// <p>The unique identifier (ID) associated with this OU.</p>
+pub struct OrganizationalUnit  {
+    /// <p>The unique identifier (ID) associated with this OU.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of this OU.</p>
+    /// <p>The Amazon Resource Name (ARN) of this OU.</p> 
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The friendly name of this OU.</p>
+    /// <p>The friendly name of this OU.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl OrganizationalUnit {
-    /// <p>The unique identifier (ID) associated with this OU.</p>
+    /// <p>The unique identifier (ID) associated with this OU.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of this OU.</p>
+    /// <p>The Amazon Resource Name (ARN) of this OU.</p> 
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <p>The friendly name of this OU.</p>
+    /// <p>The friendly name of this OU.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
 /// See [`OrganizationalUnit`](crate::model::OrganizationalUnit).
 pub mod organizational_unit {
-
+    
     /// A builder for [`OrganizationalUnit`](crate::model::OrganizationalUnit).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -941,51 +819,53 @@ pub mod organizational_unit {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) associated with this OU.</p>
+        /// <p>The unique identifier (ID) associated with this OU.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) associated with this OU.</p>
+        /// <p>The unique identifier (ID) associated with this OU.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of this OU.</p>
+        /// <p>The Amazon Resource Name (ARN) of this OU.</p> 
         /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of this OU.</p>
+        /// <p>The Amazon Resource Name (ARN) of this OU.</p> 
         /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
-        /// <p>The friendly name of this OU.</p>
+        /// <p>The friendly name of this OU.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The friendly name of this OU.</p>
+        /// <p>The friendly name of this OU.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`OrganizationalUnit`](crate::model::OrganizationalUnit).
         pub fn build(self) -> crate::model::OrganizationalUnit {
             crate::model::OrganizationalUnit {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
+    
+    
 }
 impl OrganizationalUnit {
     /// Creates a new builder-style object to manufacture [`OrganizationalUnit`](crate::model::OrganizationalUnit).
@@ -994,17 +874,17 @@ impl OrganizationalUnit {
     }
 }
 
-/// <p>A custom key-value pair associated with a resource within your organization.</p>
-/// <p>You can attach tags to any of the following organization resources.</p>
-/// <ul>
-/// <li> <p>Amazon Web Services account</p> </li>
-/// <li> <p>Organizational unit (OU)</p> </li>
-/// <li> <p>Organization root</p> </li>
-/// <li> <p>Policy</p> </li>
+/// <p>A custom key-value pair associated with a resource within your organization.</p> 
+/// <p>You can attach tags to any of the following organization resources.</p> 
+/// <ul> 
+/// <li> <p>Amazon Web Services account</p> </li> 
+/// <li> <p>Organizational unit (OU)</p> </li> 
+/// <li> <p>Organization root</p> </li> 
+/// <li> <p>Policy</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key identifier, or name, of the tag.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -1014,17 +894,17 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key identifier, or name, of the tag.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The string value that's associated with the key of the tag. You can set the value of a tag to an empty string, but you can't set the value of a tag to null.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1039,8 +919,7 @@ pub mod tag {
         }
         /// <p>The key identifier, or name, of the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The string value that's associated with the key of the tag. You can set the value of a tag to an empty string, but you can't set the value of a tag to null.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1049,17 +928,20 @@ pub mod tag {
         }
         /// <p>The string value that's associated with the key of the tag. You can set the value of a tag to an empty string, but you can't set the value of a tag to null.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -1071,7 +953,7 @@ impl Tag {
 /// <p>A structure that contains details about a resource policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourcePolicy {
+pub struct ResourcePolicy  {
     /// <p>A structure that contains resource policy ID and Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub resource_policy_summary: std::option::Option<crate::model::ResourcePolicySummary>,
@@ -1081,42 +963,32 @@ pub struct ResourcePolicy {
 }
 impl ResourcePolicy {
     /// <p>A structure that contains resource policy ID and Amazon Resource Name (ARN).</p>
-    pub fn resource_policy_summary(
-        &self,
-    ) -> std::option::Option<&crate::model::ResourcePolicySummary> {
+    pub fn resource_policy_summary(&self) -> std::option::Option<& crate::model::ResourcePolicySummary> {
         self.resource_policy_summary.as_ref()
     }
     /// <p>The policy text of the resource policy.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> std::option::Option<& str> {
         self.content.as_deref()
     }
 }
 /// See [`ResourcePolicy`](crate::model::ResourcePolicy).
 pub mod resource_policy {
-
+    
     /// A builder for [`ResourcePolicy`](crate::model::ResourcePolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) resource_policy_summary:
-            std::option::Option<crate::model::ResourcePolicySummary>,
+        pub(crate) resource_policy_summary: std::option::Option<crate::model::ResourcePolicySummary>,
         pub(crate) content: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>A structure that contains resource policy ID and Amazon Resource Name (ARN).</p>
-        pub fn resource_policy_summary(
-            mut self,
-            input: crate::model::ResourcePolicySummary,
-        ) -> Self {
+        pub fn resource_policy_summary(mut self, input: crate::model::ResourcePolicySummary) -> Self {
             self.resource_policy_summary = Some(input);
             self
         }
         /// <p>A structure that contains resource policy ID and Amazon Resource Name (ARN).</p>
-        pub fn set_resource_policy_summary(
-            mut self,
-            input: std::option::Option<crate::model::ResourcePolicySummary>,
-        ) -> Self {
-            self.resource_policy_summary = input;
-            self
+        pub fn set_resource_policy_summary(mut self, input: std::option::Option<crate::model::ResourcePolicySummary>) -> Self {
+            self.resource_policy_summary = input; self
         }
         /// <p>The policy text of the resource policy.</p>
         pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1125,17 +997,20 @@ pub mod resource_policy {
         }
         /// <p>The policy text of the resource policy.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.content = input;
-            self
+            self.content = input; self
         }
         /// Consumes the builder and constructs a [`ResourcePolicy`](crate::model::ResourcePolicy).
         pub fn build(self) -> crate::model::ResourcePolicy {
             crate::model::ResourcePolicy {
-                resource_policy_summary: self.resource_policy_summary,
-                content: self.content,
+                resource_policy_summary: self.resource_policy_summary
+                ,
+                content: self.content
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourcePolicy {
     /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
@@ -1147,7 +1022,7 @@ impl ResourcePolicy {
 /// <p>A structure that contains resource policy ID and Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourcePolicySummary {
+pub struct ResourcePolicySummary  {
     /// <p>The unique identifier (ID) of the resource policy.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1157,17 +1032,17 @@ pub struct ResourcePolicySummary {
 }
 impl ResourcePolicySummary {
     /// <p>The unique identifier (ID) of the resource policy.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource policy.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`ResourcePolicySummary`](crate::model::ResourcePolicySummary).
 pub mod resource_policy_summary {
-
+    
     /// A builder for [`ResourcePolicySummary`](crate::model::ResourcePolicySummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1182,8 +1057,7 @@ pub mod resource_policy_summary {
         }
         /// <p>The unique identifier (ID) of the resource policy.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource policy.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1192,17 +1066,20 @@ pub mod resource_policy_summary {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource policy.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`ResourcePolicySummary`](crate::model::ResourcePolicySummary).
         pub fn build(self) -> crate::model::ResourcePolicySummary {
             crate::model::ResourcePolicySummary {
-                id: self.id,
-                arn: self.arn,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourcePolicySummary {
     /// Creates a new builder-style object to manufacture [`ResourcePolicySummary`](crate::model::ResourcePolicySummary).
@@ -1214,21 +1091,21 @@ impl ResourcePolicySummary {
 /// <p>Contains information about a root, OU, or account that a policy is attached to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicyTargetSummary {
-    /// <p>The unique identifier (ID) of the policy target.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
-    /// <ul>
-    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
-    /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
-    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
+pub struct PolicyTargetSummary  {
+    /// <p>The unique identifier (ID) of the policy target.</p> 
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li> 
+    /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li> 
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub target_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the policy target.</p>
+    /// <p>The Amazon Resource Name (ARN) of the policy target.</p> 
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The friendly name of the policy target.</p>
+    /// <p>The friendly name of the policy target.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1237,34 +1114,34 @@ pub struct PolicyTargetSummary {
     pub r#type: std::option::Option<crate::model::TargetType>,
 }
 impl PolicyTargetSummary {
-    /// <p>The unique identifier (ID) of the policy target.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
-    /// <ul>
-    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
-    /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
-    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
+    /// <p>The unique identifier (ID) of the policy target.</p> 
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li> 
+    /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li> 
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li> 
     /// </ul>
-    pub fn target_id(&self) -> std::option::Option<&str> {
+    pub fn target_id(&self) -> std::option::Option<& str> {
         self.target_id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the policy target.</p>
+    /// <p>The Amazon Resource Name (ARN) of the policy target.</p> 
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <p>The friendly name of the policy target.</p>
+    /// <p>The friendly name of the policy target.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the policy target.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::TargetType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::TargetType> {
         self.r#type.as_ref()
     }
 }
 /// See [`PolicyTargetSummary`](crate::model::PolicyTargetSummary).
 pub mod policy_target_summary {
-
+    
     /// A builder for [`PolicyTargetSummary`](crate::model::PolicyTargetSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1274,51 +1151,48 @@ pub mod policy_target_summary {
         pub(crate) r#type: std::option::Option<crate::model::TargetType>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the policy target.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
-        /// <ul>
-        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
-        /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
-        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
+        /// <p>The unique identifier (ID) of the policy target.</p> 
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li> 
+        /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li> 
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li> 
         /// </ul>
         pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the policy target.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p>
-        /// <ul>
-        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
-        /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
-        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
+        /// <p>The unique identifier (ID) of the policy target.</p> 
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li> 
+        /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li> 
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li> 
         /// </ul>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target_id = input;
-            self
+            self.target_id = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the policy target.</p>
+        /// <p>The Amazon Resource Name (ARN) of the policy target.</p> 
         /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the policy target.</p>
+        /// <p>The Amazon Resource Name (ARN) of the policy target.</p> 
         /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
-        /// <p>The friendly name of the policy target.</p>
+        /// <p>The friendly name of the policy target.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The friendly name of the policy target.</p>
+        /// <p>The friendly name of the policy target.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of the policy target.</p>
         pub fn r#type(mut self, input: crate::model::TargetType) -> Self {
@@ -1327,19 +1201,24 @@ pub mod policy_target_summary {
         }
         /// <p>The type of the policy target.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::TargetType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`PolicyTargetSummary`](crate::model::PolicyTargetSummary).
         pub fn build(self) -> crate::model::PolicyTargetSummary {
             crate::model::PolicyTargetSummary {
-                target_id: self.target_id,
-                arn: self.arn,
-                name: self.name,
-                r#type: self.r#type,
+                target_id: self.target_id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl PolicyTargetSummary {
     /// Creates a new builder-style object to manufacture [`PolicyTargetSummary`](crate::model::PolicyTargetSummary).
@@ -1354,9 +1233,9 @@ impl PolicyTargetSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let targettype = unimplemented!();
 /// match targettype {
@@ -1379,22 +1258,14 @@ impl PolicyTargetSummary {
 /// Specifically, when `targettype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TargetType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum TargetType {
     #[allow(missing_docs)] // documentation missing in model
     Account,
@@ -1403,7 +1274,7 @@ pub enum TargetType {
     #[allow(missing_docs)] // documentation missing in model
     Root,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for TargetType {
     fn from(s: &str) -> Self {
@@ -1411,17 +1282,17 @@ impl std::convert::From<&str> for TargetType {
             "ACCOUNT" => TargetType::Account,
             "ORGANIZATIONAL_UNIT" => TargetType::OrganizationalUnit,
             "ROOT" => TargetType::Root,
-            other => TargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => TargetType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for TargetType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(TargetType::from(s))
+                }
+            }
 impl TargetType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1429,12 +1300,14 @@ impl TargetType {
             TargetType::Account => "ACCOUNT",
             TargetType::OrganizationalUnit => "ORGANIZATIONAL_UNIT",
             TargetType::Root => "ROOT",
-            TargetType::Unknown(value) => value.as_str(),
+            TargetType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCOUNT", "ORGANIZATIONAL_UNIT", "ROOT"]
+        &[
+            "ACCOUNT", "ORGANIZATIONAL_UNIT", "ROOT"
+        ]
     }
 }
 impl AsRef<str> for TargetType {
@@ -1446,130 +1319,128 @@ impl AsRef<str> for TargetType {
 /// <p>Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain organizational units (OUs) and accounts. The root contains every Amazon Web Services account in the organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Root {
-    /// <p>The unique identifier (ID) for the root.</p>
+pub struct Root  {
+    /// <p>The unique identifier (ID) for the root.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the root.</p>
+    /// <p>The Amazon Resource Name (ARN) of the root.</p> 
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The friendly name of the root.</p>
+    /// <p>The friendly name of the root.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p> <note>
-    /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p>
+    /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p> <note> 
+    /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p> 
     /// </note>
     #[doc(hidden)]
     pub policy_types: std::option::Option<std::vec::Vec<crate::model::PolicyTypeSummary>>,
 }
 impl Root {
-    /// <p>The unique identifier (ID) for the root.</p>
+    /// <p>The unique identifier (ID) for the root.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the root.</p>
+    /// <p>The Amazon Resource Name (ARN) of the root.</p> 
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <p>The friendly name of the root.</p>
+    /// <p>The friendly name of the root.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
-    /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p> <note>
-    /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p>
+    /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p> <note> 
+    /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p> 
     /// </note>
-    pub fn policy_types(&self) -> std::option::Option<&[crate::model::PolicyTypeSummary]> {
+    pub fn policy_types(&self) -> std::option::Option<& [crate::model::PolicyTypeSummary]> {
         self.policy_types.as_deref()
     }
 }
 /// See [`Root`](crate::model::Root).
 pub mod root {
-
+    
     /// A builder for [`Root`](crate::model::Root).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) policy_types:
-            std::option::Option<std::vec::Vec<crate::model::PolicyTypeSummary>>,
+        pub(crate) policy_types: std::option::Option<std::vec::Vec<crate::model::PolicyTypeSummary>>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) for the root.</p>
+        /// <p>The unique identifier (ID) for the root.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) for the root.</p>
+        /// <p>The unique identifier (ID) for the root.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the root.</p>
+        /// <p>The Amazon Resource Name (ARN) of the root.</p> 
         /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the root.</p>
+        /// <p>The Amazon Resource Name (ARN) of the root.</p> 
         /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
-        /// <p>The friendly name of the root.</p>
+        /// <p>The friendly name of the root.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The friendly name of the root.</p>
+        /// <p>The friendly name of the root.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Appends an item to `policy_types`.
         ///
         /// To override the contents of this collection use [`set_policy_types`](Self::set_policy_types).
         ///
-        /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p> <note>
-        /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p>
+        /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p> <note> 
+        /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p> 
         /// </note>
         pub fn policy_types(mut self, input: crate::model::PolicyTypeSummary) -> Self {
             let mut v = self.policy_types.unwrap_or_default();
-            v.push(input);
-            self.policy_types = Some(v);
-            self
+                            v.push(input);
+                            self.policy_types = Some(v);
+                            self
         }
-        /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p> <note>
-        /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p>
+        /// <p>The types of policies that are currently enabled for the root and therefore can be attached to the root or to its OUs or accounts.</p> <note> 
+        /// <p>Even if a policy type is shown as available in the organization, you can separately enable and disable them at the root level by using <code>EnablePolicyType</code> and <code>DisablePolicyType</code>. Use <code>DescribeOrganization</code> to see the availability of the policy types in that organization.</p> 
         /// </note>
-        pub fn set_policy_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PolicyTypeSummary>>,
-        ) -> Self {
-            self.policy_types = input;
-            self
+        pub fn set_policy_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicyTypeSummary>>) -> Self {
+            self.policy_types = input; self
         }
         /// Consumes the builder and constructs a [`Root`](crate::model::Root).
         pub fn build(self) -> crate::model::Root {
             crate::model::Root {
-                id: self.id,
-                arn: self.arn,
-                name: self.name,
-                policy_types: self.policy_types,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                policy_types: self.policy_types
+                ,
             }
         }
     }
+    
+    
 }
 impl Root {
     /// Creates a new builder-style object to manufacture [`Root`](crate::model::Root).
@@ -1581,7 +1452,7 @@ impl Root {
 /// <p>Contains information about a policy type and its status in the associated root.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicyTypeSummary {
+pub struct PolicyTypeSummary  {
     /// <p>The name of the policy type.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::PolicyType>,
@@ -1591,17 +1462,17 @@ pub struct PolicyTypeSummary {
 }
 impl PolicyTypeSummary {
     /// <p>The name of the policy type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::PolicyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::PolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The status of the policy type as it relates to the associated root. To attach a policy of the specified type to a root or to an OU or account in that root, it must be available in the organization and enabled for that root.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::PolicyTypeStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::PolicyTypeStatus> {
         self.status.as_ref()
     }
 }
 /// See [`PolicyTypeSummary`](crate::model::PolicyTypeSummary).
 pub mod policy_type_summary {
-
+    
     /// A builder for [`PolicyTypeSummary`](crate::model::PolicyTypeSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1616,8 +1487,7 @@ pub mod policy_type_summary {
         }
         /// <p>The name of the policy type.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::PolicyType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The status of the policy type as it relates to the associated root. To attach a policy of the specified type to a root or to an OU or account in that root, it must be available in the organization and enabled for that root.</p>
         pub fn status(mut self, input: crate::model::PolicyTypeStatus) -> Self {
@@ -1625,21 +1495,21 @@ pub mod policy_type_summary {
             self
         }
         /// <p>The status of the policy type as it relates to the associated root. To attach a policy of the specified type to a root or to an OU or account in that root, it must be available in the organization and enabled for that root.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::PolicyTypeStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::PolicyTypeStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`PolicyTypeSummary`](crate::model::PolicyTypeSummary).
         pub fn build(self) -> crate::model::PolicyTypeSummary {
             crate::model::PolicyTypeSummary {
-                r#type: self.r#type,
-                status: self.status,
+                r#type: self.r#type
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl PolicyTypeSummary {
     /// Creates a new builder-style object to manufacture [`PolicyTypeSummary`](crate::model::PolicyTypeSummary).
@@ -1654,9 +1524,9 @@ impl PolicyTypeSummary {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let policytypestatus = unimplemented!();
 /// match policytypestatus {
@@ -1679,22 +1549,14 @@ impl PolicyTypeSummary {
 /// Specifically, when `policytypestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PolicyTypeStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum PolicyTypeStatus {
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
@@ -1703,7 +1565,7 @@ pub enum PolicyTypeStatus {
     #[allow(missing_docs)] // documentation missing in model
     PendingEnable,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for PolicyTypeStatus {
     fn from(s: &str) -> Self {
@@ -1711,17 +1573,17 @@ impl std::convert::From<&str> for PolicyTypeStatus {
             "ENABLED" => PolicyTypeStatus::Enabled,
             "PENDING_DISABLE" => PolicyTypeStatus::PendingDisable,
             "PENDING_ENABLE" => PolicyTypeStatus::PendingEnable,
-            other => PolicyTypeStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => PolicyTypeStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for PolicyTypeStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PolicyTypeStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(PolicyTypeStatus::from(s))
+                }
+            }
 impl PolicyTypeStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1729,12 +1591,14 @@ impl PolicyTypeStatus {
             PolicyTypeStatus::Enabled => "ENABLED",
             PolicyTypeStatus::PendingDisable => "PENDING_DISABLE",
             PolicyTypeStatus::PendingEnable => "PENDING_ENABLE",
-            PolicyTypeStatus::Unknown(value) => value.as_str(),
+            PolicyTypeStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ENABLED", "PENDING_DISABLE", "PENDING_ENABLE"]
+        &[
+            "ENABLED", "PENDING_DISABLE", "PENDING_ENABLE"
+        ]
     }
 }
 impl AsRef<str> for PolicyTypeStatus {
@@ -1746,12 +1610,12 @@ impl AsRef<str> for PolicyTypeStatus {
 /// <p>Contains information about either a root or an organizational unit (OU) that can contain OUs or accounts in an organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Parent {
-    /// <p>The unique identifier (ID) of the parent entity.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
-    /// <ul>
-    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
-    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
+pub struct Parent  {
+    /// <p>The unique identifier (ID) of the parent entity.</p> 
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li> 
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1760,23 +1624,23 @@ pub struct Parent {
     pub r#type: std::option::Option<crate::model::ParentType>,
 }
 impl Parent {
-    /// <p>The unique identifier (ID) of the parent entity.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
-    /// <ul>
-    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
-    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
+    /// <p>The unique identifier (ID) of the parent entity.</p> 
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li> 
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li> 
     /// </ul>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of the parent entity.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ParentType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ParentType> {
         self.r#type.as_ref()
     }
 }
 /// See [`Parent`](crate::model::Parent).
 pub mod parent {
-
+    
     /// A builder for [`Parent`](crate::model::Parent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1784,25 +1648,24 @@ pub mod parent {
         pub(crate) r#type: std::option::Option<crate::model::ParentType>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the parent entity.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
-        /// <ul>
-        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
-        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
+        /// <p>The unique identifier (ID) of the parent entity.</p> 
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li> 
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li> 
         /// </ul>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the parent entity.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p>
-        /// <ul>
-        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li>
-        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
+        /// <p>The unique identifier (ID) of the parent entity.</p> 
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string requires one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Root</b> - A string that begins with "r-" followed by from 4 to 32 lowercase letters or digits.</p> </li> 
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that the OU is in). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li> 
         /// </ul>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The type of the parent entity.</p>
         pub fn r#type(mut self, input: crate::model::ParentType) -> Self {
@@ -1811,17 +1674,20 @@ pub mod parent {
         }
         /// <p>The type of the parent entity.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ParentType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`Parent`](crate::model::Parent).
         pub fn build(self) -> crate::model::Parent {
             crate::model::Parent {
-                id: self.id,
-                r#type: self.r#type,
+                id: self.id
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl Parent {
     /// Creates a new builder-style object to manufacture [`Parent`](crate::model::Parent).
@@ -1836,9 +1702,9 @@ impl Parent {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let parenttype = unimplemented!();
 /// match parenttype {
@@ -1860,58 +1726,52 @@ impl Parent {
 /// Specifically, when `parenttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ParentType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ParentType {
     #[allow(missing_docs)] // documentation missing in model
     OrganizationalUnit,
     #[allow(missing_docs)] // documentation missing in model
     Root,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ParentType {
     fn from(s: &str) -> Self {
         match s {
             "ORGANIZATIONAL_UNIT" => ParentType::OrganizationalUnit,
             "ROOT" => ParentType::Root,
-            other => ParentType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ParentType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ParentType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ParentType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ParentType::from(s))
+                }
+            }
 impl ParentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ParentType::OrganizationalUnit => "ORGANIZATIONAL_UNIT",
             ParentType::Root => "ROOT",
-            ParentType::Unknown(value) => value.as_str(),
+            ParentType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ORGANIZATIONAL_UNIT", "ROOT"]
+        &[
+            "ORGANIZATIONAL_UNIT", "ROOT"
+        ]
     }
 }
 impl AsRef<str> for ParentType {
@@ -1920,30 +1780,30 @@ impl AsRef<str> for ParentType {
     }
 }
 
-/// <p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a management account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p>
+/// <p>Contains information that must be exchanged to securely establish a relationship between two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a management account (the originator) invites another account (the recipient) to join its organization, the two accounts exchange information as a series of handshake requests and responses.</p> 
 /// <p> <b>Note:</b> Handshakes that are <code>CANCELED</code>, <code>ACCEPTED</code>, <code>DECLINED</code>, or <code>EXPIRED</code> show up in lists for only 30 days after entering that state After that they are deleted.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Handshake {
-    /// <p>The unique identifier (ID) of a handshake. The originating account creates the ID when it initiates the handshake.</p>
+pub struct Handshake  {
+    /// <p>The unique identifier (ID) of a handshake. The originating account creates the ID when it initiates the handshake.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of a handshake.</p>
+    /// <p>The Amazon Resource Name (ARN) of a handshake.</p> 
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Information about the two accounts that are participating in the handshake.</p>
     #[doc(hidden)]
     pub parties: std::option::Option<std::vec::Vec<crate::model::HandshakeParty>>,
-    /// <p>The current state of the handshake. Use the state to trace the flow of the handshake through the process from its creation to its acceptance. The meaning of each of the valid values is as follows:</p>
-    /// <ul>
-    /// <li> <p> <b>REQUESTED</b>: This handshake was sent to multiple recipients (applicable to only some handshake types) and not all recipients have responded yet. The request stays in this state until all recipients respond.</p> </li>
-    /// <li> <p> <b>OPEN</b>: This handshake was sent to multiple recipients (applicable to only some policy types) and all recipients have responded, allowing the originator to complete the handshake action.</p> </li>
-    /// <li> <p> <b>CANCELED</b>: This handshake is no longer active because it was canceled by the originating account.</p> </li>
-    /// <li> <p> <b>ACCEPTED</b>: This handshake is complete because it has been accepted by the recipient.</p> </li>
-    /// <li> <p> <b>DECLINED</b>: This handshake is no longer active because it was declined by the recipient account.</p> </li>
-    /// <li> <p> <b>EXPIRED</b>: This handshake is no longer active because the originator did not receive a response of any kind from the recipient before the expiration time (15 days).</p> </li>
+    /// <p>The current state of the handshake. Use the state to trace the flow of the handshake through the process from its creation to its acceptance. The meaning of each of the valid values is as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <b>REQUESTED</b>: This handshake was sent to multiple recipients (applicable to only some handshake types) and not all recipients have responded yet. The request stays in this state until all recipients respond.</p> </li> 
+    /// <li> <p> <b>OPEN</b>: This handshake was sent to multiple recipients (applicable to only some policy types) and all recipients have responded, allowing the originator to complete the handshake action.</p> </li> 
+    /// <li> <p> <b>CANCELED</b>: This handshake is no longer active because it was canceled by the originating account.</p> </li> 
+    /// <li> <p> <b>ACCEPTED</b>: This handshake is complete because it has been accepted by the recipient.</p> </li> 
+    /// <li> <p> <b>DECLINED</b>: This handshake is no longer active because it was declined by the recipient account.</p> </li> 
+    /// <li> <p> <b>EXPIRED</b>: This handshake is no longer active because the originator did not receive a response of any kind from the recipient before the expiration time (15 days).</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::HandshakeState>,
@@ -1953,11 +1813,11 @@ pub struct Handshake {
     /// <p>The date and time that the handshake expires. If the recipient of the handshake request fails to respond before the specified date and time, the handshake becomes inactive and is no longer valid.</p>
     #[doc(hidden)]
     pub expiration_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The type of handshake, indicating what action occurs when the recipient accepts the handshake. The following handshake types are supported:</p>
-    /// <ul>
-    /// <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the management account to only non-member accounts.</p> </li>
-    /// <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an organization. It is always sent from the management account to only <i>invited</i> member accounts. Created accounts do not receive this because those accounts were created by the organization's management account and approval is inferred.</p> </li>
-    /// <li> <p> <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management account and signals the master that it can finalize the process to enable all features.</p> </li>
+    /// <p>The type of handshake, indicating what action occurs when the recipient accepts the handshake. The following handshake types are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the management account to only non-member accounts.</p> </li> 
+    /// <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an organization. It is always sent from the management account to only <i>invited</i> member accounts. Created accounts do not receive this because those accounts were created by the organization's management account and approval is inferred.</p> </li> 
+    /// <li> <p> <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management account and signals the master that it can finalize the process to enable all features.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::ActionType>,
@@ -1966,57 +1826,57 @@ pub struct Handshake {
     pub resources: std::option::Option<std::vec::Vec<crate::model::HandshakeResource>>,
 }
 impl Handshake {
-    /// <p>The unique identifier (ID) of a handshake. The originating account creates the ID when it initiates the handshake.</p>
+    /// <p>The unique identifier (ID) of a handshake. The originating account creates the ID when it initiates the handshake.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of a handshake.</p>
+    /// <p>The Amazon Resource Name (ARN) of a handshake.</p> 
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Information about the two accounts that are participating in the handshake.</p>
-    pub fn parties(&self) -> std::option::Option<&[crate::model::HandshakeParty]> {
+    pub fn parties(&self) -> std::option::Option<& [crate::model::HandshakeParty]> {
         self.parties.as_deref()
     }
-    /// <p>The current state of the handshake. Use the state to trace the flow of the handshake through the process from its creation to its acceptance. The meaning of each of the valid values is as follows:</p>
-    /// <ul>
-    /// <li> <p> <b>REQUESTED</b>: This handshake was sent to multiple recipients (applicable to only some handshake types) and not all recipients have responded yet. The request stays in this state until all recipients respond.</p> </li>
-    /// <li> <p> <b>OPEN</b>: This handshake was sent to multiple recipients (applicable to only some policy types) and all recipients have responded, allowing the originator to complete the handshake action.</p> </li>
-    /// <li> <p> <b>CANCELED</b>: This handshake is no longer active because it was canceled by the originating account.</p> </li>
-    /// <li> <p> <b>ACCEPTED</b>: This handshake is complete because it has been accepted by the recipient.</p> </li>
-    /// <li> <p> <b>DECLINED</b>: This handshake is no longer active because it was declined by the recipient account.</p> </li>
-    /// <li> <p> <b>EXPIRED</b>: This handshake is no longer active because the originator did not receive a response of any kind from the recipient before the expiration time (15 days).</p> </li>
+    /// <p>The current state of the handshake. Use the state to trace the flow of the handshake through the process from its creation to its acceptance. The meaning of each of the valid values is as follows:</p> 
+    /// <ul> 
+    /// <li> <p> <b>REQUESTED</b>: This handshake was sent to multiple recipients (applicable to only some handshake types) and not all recipients have responded yet. The request stays in this state until all recipients respond.</p> </li> 
+    /// <li> <p> <b>OPEN</b>: This handshake was sent to multiple recipients (applicable to only some policy types) and all recipients have responded, allowing the originator to complete the handshake action.</p> </li> 
+    /// <li> <p> <b>CANCELED</b>: This handshake is no longer active because it was canceled by the originating account.</p> </li> 
+    /// <li> <p> <b>ACCEPTED</b>: This handshake is complete because it has been accepted by the recipient.</p> </li> 
+    /// <li> <p> <b>DECLINED</b>: This handshake is no longer active because it was declined by the recipient account.</p> </li> 
+    /// <li> <p> <b>EXPIRED</b>: This handshake is no longer active because the originator did not receive a response of any kind from the recipient before the expiration time (15 days).</p> </li> 
     /// </ul>
-    pub fn state(&self) -> std::option::Option<&crate::model::HandshakeState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::HandshakeState> {
         self.state.as_ref()
     }
     /// <p>The date and time that the handshake request was made.</p>
-    pub fn requested_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn requested_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.requested_timestamp.as_ref()
     }
     /// <p>The date and time that the handshake expires. If the recipient of the handshake request fails to respond before the specified date and time, the handshake becomes inactive and is no longer valid.</p>
-    pub fn expiration_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expiration_timestamp.as_ref()
     }
-    /// <p>The type of handshake, indicating what action occurs when the recipient accepts the handshake. The following handshake types are supported:</p>
-    /// <ul>
-    /// <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the management account to only non-member accounts.</p> </li>
-    /// <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an organization. It is always sent from the management account to only <i>invited</i> member accounts. Created accounts do not receive this because those accounts were created by the organization's management account and approval is inferred.</p> </li>
-    /// <li> <p> <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management account and signals the master that it can finalize the process to enable all features.</p> </li>
+    /// <p>The type of handshake, indicating what action occurs when the recipient accepts the handshake. The following handshake types are supported:</p> 
+    /// <ul> 
+    /// <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the management account to only non-member accounts.</p> </li> 
+    /// <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an organization. It is always sent from the management account to only <i>invited</i> member accounts. Created accounts do not receive this because those accounts were created by the organization's management account and approval is inferred.</p> </li> 
+    /// <li> <p> <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management account and signals the master that it can finalize the process to enable all features.</p> </li> 
     /// </ul>
-    pub fn action(&self) -> std::option::Option<&crate::model::ActionType> {
+    pub fn action(&self) -> std::option::Option<& crate::model::ActionType> {
         self.action.as_ref()
     }
     /// <p>Additional information that is needed to process the handshake.</p>
-    pub fn resources(&self) -> std::option::Option<&[crate::model::HandshakeResource]> {
+    pub fn resources(&self) -> std::option::Option<& [crate::model::HandshakeResource]> {
         self.resources.as_deref()
     }
 }
 /// See [`Handshake`](crate::model::Handshake).
 pub mod handshake {
-
+    
     /// A builder for [`Handshake`](crate::model::Handshake).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2030,29 +1890,27 @@ pub mod handshake {
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::HandshakeResource>>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of a handshake. The originating account creates the ID when it initiates the handshake.</p>
+        /// <p>The unique identifier (ID) of a handshake. The originating account creates the ID when it initiates the handshake.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of a handshake. The originating account creates the ID when it initiates the handshake.</p>
+        /// <p>The unique identifier (ID) of a handshake. The originating account creates the ID when it initiates the handshake.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of a handshake.</p>
+        /// <p>The Amazon Resource Name (ARN) of a handshake.</p> 
         /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a handshake.</p>
+        /// <p>The Amazon Resource Name (ARN) of a handshake.</p> 
         /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Appends an item to `parties`.
         ///
@@ -2061,46 +1919,38 @@ pub mod handshake {
         /// <p>Information about the two accounts that are participating in the handshake.</p>
         pub fn parties(mut self, input: crate::model::HandshakeParty) -> Self {
             let mut v = self.parties.unwrap_or_default();
-            v.push(input);
-            self.parties = Some(v);
-            self
+                            v.push(input);
+                            self.parties = Some(v);
+                            self
         }
         /// <p>Information about the two accounts that are participating in the handshake.</p>
-        pub fn set_parties(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HandshakeParty>>,
-        ) -> Self {
-            self.parties = input;
-            self
+        pub fn set_parties(mut self, input: std::option::Option<std::vec::Vec<crate::model::HandshakeParty>>) -> Self {
+            self.parties = input; self
         }
-        /// <p>The current state of the handshake. Use the state to trace the flow of the handshake through the process from its creation to its acceptance. The meaning of each of the valid values is as follows:</p>
-        /// <ul>
-        /// <li> <p> <b>REQUESTED</b>: This handshake was sent to multiple recipients (applicable to only some handshake types) and not all recipients have responded yet. The request stays in this state until all recipients respond.</p> </li>
-        /// <li> <p> <b>OPEN</b>: This handshake was sent to multiple recipients (applicable to only some policy types) and all recipients have responded, allowing the originator to complete the handshake action.</p> </li>
-        /// <li> <p> <b>CANCELED</b>: This handshake is no longer active because it was canceled by the originating account.</p> </li>
-        /// <li> <p> <b>ACCEPTED</b>: This handshake is complete because it has been accepted by the recipient.</p> </li>
-        /// <li> <p> <b>DECLINED</b>: This handshake is no longer active because it was declined by the recipient account.</p> </li>
-        /// <li> <p> <b>EXPIRED</b>: This handshake is no longer active because the originator did not receive a response of any kind from the recipient before the expiration time (15 days).</p> </li>
+        /// <p>The current state of the handshake. Use the state to trace the flow of the handshake through the process from its creation to its acceptance. The meaning of each of the valid values is as follows:</p> 
+        /// <ul> 
+        /// <li> <p> <b>REQUESTED</b>: This handshake was sent to multiple recipients (applicable to only some handshake types) and not all recipients have responded yet. The request stays in this state until all recipients respond.</p> </li> 
+        /// <li> <p> <b>OPEN</b>: This handshake was sent to multiple recipients (applicable to only some policy types) and all recipients have responded, allowing the originator to complete the handshake action.</p> </li> 
+        /// <li> <p> <b>CANCELED</b>: This handshake is no longer active because it was canceled by the originating account.</p> </li> 
+        /// <li> <p> <b>ACCEPTED</b>: This handshake is complete because it has been accepted by the recipient.</p> </li> 
+        /// <li> <p> <b>DECLINED</b>: This handshake is no longer active because it was declined by the recipient account.</p> </li> 
+        /// <li> <p> <b>EXPIRED</b>: This handshake is no longer active because the originator did not receive a response of any kind from the recipient before the expiration time (15 days).</p> </li> 
         /// </ul>
         pub fn state(mut self, input: crate::model::HandshakeState) -> Self {
             self.state = Some(input);
             self
         }
-        /// <p>The current state of the handshake. Use the state to trace the flow of the handshake through the process from its creation to its acceptance. The meaning of each of the valid values is as follows:</p>
-        /// <ul>
-        /// <li> <p> <b>REQUESTED</b>: This handshake was sent to multiple recipients (applicable to only some handshake types) and not all recipients have responded yet. The request stays in this state until all recipients respond.</p> </li>
-        /// <li> <p> <b>OPEN</b>: This handshake was sent to multiple recipients (applicable to only some policy types) and all recipients have responded, allowing the originator to complete the handshake action.</p> </li>
-        /// <li> <p> <b>CANCELED</b>: This handshake is no longer active because it was canceled by the originating account.</p> </li>
-        /// <li> <p> <b>ACCEPTED</b>: This handshake is complete because it has been accepted by the recipient.</p> </li>
-        /// <li> <p> <b>DECLINED</b>: This handshake is no longer active because it was declined by the recipient account.</p> </li>
-        /// <li> <p> <b>EXPIRED</b>: This handshake is no longer active because the originator did not receive a response of any kind from the recipient before the expiration time (15 days).</p> </li>
+        /// <p>The current state of the handshake. Use the state to trace the flow of the handshake through the process from its creation to its acceptance. The meaning of each of the valid values is as follows:</p> 
+        /// <ul> 
+        /// <li> <p> <b>REQUESTED</b>: This handshake was sent to multiple recipients (applicable to only some handshake types) and not all recipients have responded yet. The request stays in this state until all recipients respond.</p> </li> 
+        /// <li> <p> <b>OPEN</b>: This handshake was sent to multiple recipients (applicable to only some policy types) and all recipients have responded, allowing the originator to complete the handshake action.</p> </li> 
+        /// <li> <p> <b>CANCELED</b>: This handshake is no longer active because it was canceled by the originating account.</p> </li> 
+        /// <li> <p> <b>ACCEPTED</b>: This handshake is complete because it has been accepted by the recipient.</p> </li> 
+        /// <li> <p> <b>DECLINED</b>: This handshake is no longer active because it was declined by the recipient account.</p> </li> 
+        /// <li> <p> <b>EXPIRED</b>: This handshake is no longer active because the originator did not receive a response of any kind from the recipient before the expiration time (15 days).</p> </li> 
         /// </ul>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::HandshakeState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::HandshakeState>) -> Self {
+            self.state = input; self
         }
         /// <p>The date and time that the handshake request was made.</p>
         pub fn requested_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2108,12 +1958,8 @@ pub mod handshake {
             self
         }
         /// <p>The date and time that the handshake request was made.</p>
-        pub fn set_requested_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.requested_timestamp = input;
-            self
+        pub fn set_requested_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.requested_timestamp = input; self
         }
         /// <p>The date and time that the handshake expires. If the recipient of the handshake request fails to respond before the specified date and time, the handshake becomes inactive and is no longer valid.</p>
         pub fn expiration_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2121,32 +1967,27 @@ pub mod handshake {
             self
         }
         /// <p>The date and time that the handshake expires. If the recipient of the handshake request fails to respond before the specified date and time, the handshake becomes inactive and is no longer valid.</p>
-        pub fn set_expiration_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.expiration_timestamp = input;
-            self
+        pub fn set_expiration_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.expiration_timestamp = input; self
         }
-        /// <p>The type of handshake, indicating what action occurs when the recipient accepts the handshake. The following handshake types are supported:</p>
-        /// <ul>
-        /// <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the management account to only non-member accounts.</p> </li>
-        /// <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an organization. It is always sent from the management account to only <i>invited</i> member accounts. Created accounts do not receive this because those accounts were created by the organization's management account and approval is inferred.</p> </li>
-        /// <li> <p> <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management account and signals the master that it can finalize the process to enable all features.</p> </li>
+        /// <p>The type of handshake, indicating what action occurs when the recipient accepts the handshake. The following handshake types are supported:</p> 
+        /// <ul> 
+        /// <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the management account to only non-member accounts.</p> </li> 
+        /// <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an organization. It is always sent from the management account to only <i>invited</i> member accounts. Created accounts do not receive this because those accounts were created by the organization's management account and approval is inferred.</p> </li> 
+        /// <li> <p> <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management account and signals the master that it can finalize the process to enable all features.</p> </li> 
         /// </ul>
         pub fn action(mut self, input: crate::model::ActionType) -> Self {
             self.action = Some(input);
             self
         }
-        /// <p>The type of handshake, indicating what action occurs when the recipient accepts the handshake. The following handshake types are supported:</p>
-        /// <ul>
-        /// <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the management account to only non-member accounts.</p> </li>
-        /// <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an organization. It is always sent from the management account to only <i>invited</i> member accounts. Created accounts do not receive this because those accounts were created by the organization's management account and approval is inferred.</p> </li>
-        /// <li> <p> <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management account and signals the master that it can finalize the process to enable all features.</p> </li>
+        /// <p>The type of handshake, indicating what action occurs when the recipient accepts the handshake. The following handshake types are supported:</p> 
+        /// <ul> 
+        /// <li> <p> <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the management account to only non-member accounts.</p> </li> 
+        /// <li> <p> <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an organization. It is always sent from the management account to only <i>invited</i> member accounts. Created accounts do not receive this because those accounts were created by the organization's management account and approval is inferred.</p> </li> 
+        /// <li> <p> <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management account and signals the master that it can finalize the process to enable all features.</p> </li> 
         /// </ul>
         pub fn set_action(mut self, input: std::option::Option<crate::model::ActionType>) -> Self {
-            self.action = input;
-            self
+            self.action = input; self
         }
         /// Appends an item to `resources`.
         ///
@@ -2155,32 +1996,38 @@ pub mod handshake {
         /// <p>Additional information that is needed to process the handshake.</p>
         pub fn resources(mut self, input: crate::model::HandshakeResource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input);
-            self.resources = Some(v);
-            self
+                            v.push(input);
+                            self.resources = Some(v);
+                            self
         }
         /// <p>Additional information that is needed to process the handshake.</p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HandshakeResource>>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::HandshakeResource>>) -> Self {
+            self.resources = input; self
         }
         /// Consumes the builder and constructs a [`Handshake`](crate::model::Handshake).
         pub fn build(self) -> crate::model::Handshake {
             crate::model::Handshake {
-                id: self.id,
-                arn: self.arn,
-                parties: self.parties,
-                state: self.state,
-                requested_timestamp: self.requested_timestamp,
-                expiration_timestamp: self.expiration_timestamp,
-                action: self.action,
-                resources: self.resources,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                parties: self.parties
+                ,
+                state: self.state
+                ,
+                requested_timestamp: self.requested_timestamp
+                ,
+                expiration_timestamp: self.expiration_timestamp
+                ,
+                action: self.action
+                ,
+                resources: self.resources
+                ,
             }
         }
     }
+    
+    
 }
 impl Handshake {
     /// Creates a new builder-style object to manufacture [`Handshake`](crate::model::Handshake).
@@ -2192,18 +2039,18 @@ impl Handshake {
 /// <p>Contains additional data that is needed to process a handshake.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HandshakeResource {
+pub struct HandshakeResource  {
     /// <p>The information that is passed to the other party in the handshake. The format of the value string must match the requirements of the specified type.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
-    /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p>
-    /// <ul>
-    /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li>
-    /// <li> <p> <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li>
-    /// <li> <p> <code>EMAIL</code> - Specifies the email address that is associated with the account that receives the handshake. </p> </li>
-    /// <li> <p> <code>OWNER_EMAIL</code> - Specifies the email address associated with the management account. Included as information about an organization. </p> </li>
-    /// <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the management account. Included as information about an organization. </p> </li>
-    /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li>
+    /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li> 
+    /// <li> <p> <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li> 
+    /// <li> <p> <code>EMAIL</code> - Specifies the email address that is associated with the account that receives the handshake. </p> </li> 
+    /// <li> <p> <code>OWNER_EMAIL</code> - Specifies the email address associated with the management account. Included as information about an organization. </p> </li> 
+    /// <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the management account. Included as information about an organization. </p> </li> 
+    /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::model::HandshakeResourceType>,
@@ -2213,27 +2060,27 @@ pub struct HandshakeResource {
 }
 impl HandshakeResource {
     /// <p>The information that is passed to the other party in the handshake. The format of the value string must match the requirements of the specified type.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
-    /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p>
-    /// <ul>
-    /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li>
-    /// <li> <p> <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li>
-    /// <li> <p> <code>EMAIL</code> - Specifies the email address that is associated with the account that receives the handshake. </p> </li>
-    /// <li> <p> <code>OWNER_EMAIL</code> - Specifies the email address associated with the management account. Included as information about an organization. </p> </li>
-    /// <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the management account. Included as information about an organization. </p> </li>
-    /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li>
+    /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li> 
+    /// <li> <p> <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li> 
+    /// <li> <p> <code>EMAIL</code> - Specifies the email address that is associated with the account that receives the handshake. </p> </li> 
+    /// <li> <p> <code>OWNER_EMAIL</code> - Specifies the email address associated with the management account. Included as information about an organization. </p> </li> 
+    /// <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the management account. Included as information about an organization. </p> </li> 
+    /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::HandshakeResourceType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::HandshakeResourceType> {
         self.r#type.as_ref()
     }
     /// <p>When needed, contains an additional array of <code>HandshakeResource</code> objects.</p>
-    pub fn resources(&self) -> std::option::Option<&[crate::model::HandshakeResource]> {
+    pub fn resources(&self) -> std::option::Option<& [crate::model::HandshakeResource]> {
         self.resources.as_deref()
     }
 }
-impl std::fmt::Debug for HandshakeResource {
+impl  std::fmt::Debug for HandshakeResource  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HandshakeResource");
         formatter.field("value", &"*** Sensitive Data Redacted ***");
@@ -2244,7 +2091,7 @@ impl std::fmt::Debug for HandshakeResource {
 }
 /// See [`HandshakeResource`](crate::model::HandshakeResource).
 pub mod handshake_resource {
-
+    
     /// A builder for [`HandshakeResource`](crate::model::HandshakeResource).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2260,37 +2107,32 @@ pub mod handshake_resource {
         }
         /// <p>The information that is passed to the other party in the handshake. The format of the value string must match the requirements of the specified type.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
-        /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p>
-        /// <ul>
-        /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li>
-        /// <li> <p> <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li>
-        /// <li> <p> <code>EMAIL</code> - Specifies the email address that is associated with the account that receives the handshake. </p> </li>
-        /// <li> <p> <code>OWNER_EMAIL</code> - Specifies the email address associated with the management account. Included as information about an organization. </p> </li>
-        /// <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the management account. Included as information about an organization. </p> </li>
-        /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li>
+        /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li> 
+        /// <li> <p> <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li> 
+        /// <li> <p> <code>EMAIL</code> - Specifies the email address that is associated with the account that receives the handshake. </p> </li> 
+        /// <li> <p> <code>OWNER_EMAIL</code> - Specifies the email address associated with the management account. Included as information about an organization. </p> </li> 
+        /// <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the management account. Included as information about an organization. </p> </li> 
+        /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li> 
         /// </ul>
         pub fn r#type(mut self, input: crate::model::HandshakeResourceType) -> Self {
             self.r#type = Some(input);
             self
         }
-        /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p>
-        /// <ul>
-        /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li>
-        /// <li> <p> <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li>
-        /// <li> <p> <code>EMAIL</code> - Specifies the email address that is associated with the account that receives the handshake. </p> </li>
-        /// <li> <p> <code>OWNER_EMAIL</code> - Specifies the email address associated with the management account. Included as information about an organization. </p> </li>
-        /// <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the management account. Included as information about an organization. </p> </li>
-        /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li>
+        /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li> 
+        /// <li> <p> <code>ORGANIZATION</code> - Specifies an organization ID number.</p> </li> 
+        /// <li> <p> <code>EMAIL</code> - Specifies the email address that is associated with the account that receives the handshake. </p> </li> 
+        /// <li> <p> <code>OWNER_EMAIL</code> - Specifies the email address associated with the management account. Included as information about an organization. </p> </li> 
+        /// <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the management account. Included as information about an organization. </p> </li> 
+        /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li> 
         /// </ul>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::HandshakeResourceType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::HandshakeResourceType>) -> Self {
+            self.r#type = input; self
         }
         /// Appends an item to `resources`.
         ///
@@ -2299,24 +2141,23 @@ pub mod handshake_resource {
         /// <p>When needed, contains an additional array of <code>HandshakeResource</code> objects.</p>
         pub fn resources(mut self, input: crate::model::HandshakeResource) -> Self {
             let mut v = self.resources.unwrap_or_default();
-            v.push(input);
-            self.resources = Some(v);
-            self
+                            v.push(input);
+                            self.resources = Some(v);
+                            self
         }
         /// <p>When needed, contains an additional array of <code>HandshakeResource</code> objects.</p>
-        pub fn set_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::HandshakeResource>>,
-        ) -> Self {
-            self.resources = input;
-            self
+        pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::HandshakeResource>>) -> Self {
+            self.resources = input; self
         }
         /// Consumes the builder and constructs a [`HandshakeResource`](crate::model::HandshakeResource).
         pub fn build(self) -> crate::model::HandshakeResource {
             crate::model::HandshakeResource {
-                value: self.value,
-                r#type: self.r#type,
-                resources: self.resources,
+                value: self.value
+                ,
+                r#type: self.r#type
+                ,
+                resources: self.resources
+                ,
             }
         }
     }
@@ -2329,6 +2170,8 @@ pub mod handshake_resource {
             formatter.finish()
         }
     }
+    
+    
 }
 impl HandshakeResource {
     /// Creates a new builder-style object to manufacture [`HandshakeResource`](crate::model::HandshakeResource).
@@ -2343,9 +2186,9 @@ impl HandshakeResource {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let handshakeresourcetype = unimplemented!();
 /// match handshakeresourcetype {
@@ -2373,22 +2216,14 @@ impl HandshakeResource {
 /// Specifically, when `handshakeresourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HandshakeResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HandshakeResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Account,
@@ -2407,7 +2242,7 @@ pub enum HandshakeResourceType {
     #[allow(missing_docs)] // documentation missing in model
     ParentHandshake,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HandshakeResourceType {
     fn from(s: &str) -> Self {
@@ -2420,19 +2255,17 @@ impl std::convert::From<&str> for HandshakeResourceType {
             "ORGANIZATION" => HandshakeResourceType::Organization,
             "ORGANIZATION_FEATURE_SET" => HandshakeResourceType::OrganizationFeatureSet,
             "PARENT_HANDSHAKE" => HandshakeResourceType::ParentHandshake,
-            other => {
-                HandshakeResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => HandshakeResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HandshakeResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HandshakeResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HandshakeResourceType::from(s))
+                }
+            }
 impl HandshakeResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2445,20 +2278,13 @@ impl HandshakeResourceType {
             HandshakeResourceType::Organization => "ORGANIZATION",
             HandshakeResourceType::OrganizationFeatureSet => "ORGANIZATION_FEATURE_SET",
             HandshakeResourceType::ParentHandshake => "PARENT_HANDSHAKE",
-            HandshakeResourceType::Unknown(value) => value.as_str(),
+            HandshakeResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACCOUNT",
-            "EMAIL",
-            "MASTER_EMAIL",
-            "MASTER_NAME",
-            "NOTES",
-            "ORGANIZATION",
-            "ORGANIZATION_FEATURE_SET",
-            "PARENT_HANDSHAKE",
+            "ACCOUNT", "EMAIL", "MASTER_EMAIL", "MASTER_NAME", "NOTES", "ORGANIZATION", "ORGANIZATION_FEATURE_SET", "PARENT_HANDSHAKE"
         ]
     }
 }
@@ -2474,9 +2300,9 @@ impl AsRef<str> for HandshakeResourceType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let actiontype = unimplemented!();
 /// match actiontype {
@@ -2500,22 +2326,14 @@ impl AsRef<str> for HandshakeResourceType {
 /// Specifically, when `actiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ActionType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ActionType {
     #[allow(missing_docs)] // documentation missing in model
     AddOrganizationsServiceLinkedRole,
@@ -2526,48 +2344,41 @@ pub enum ActionType {
     #[allow(missing_docs)] // documentation missing in model
     InviteAccountToOrganization,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ActionType {
     fn from(s: &str) -> Self {
         match s {
-            "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE" => {
-                ActionType::AddOrganizationsServiceLinkedRole
-            }
+            "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE" => ActionType::AddOrganizationsServiceLinkedRole,
             "APPROVE_ALL_FEATURES" => ActionType::ApproveAllFeatures,
             "ENABLE_ALL_FEATURES" => ActionType::EnableAllFeatures,
             "INVITE" => ActionType::InviteAccountToOrganization,
-            other => ActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ActionType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ActionType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ActionType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ActionType::from(s))
+                }
+            }
 impl ActionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            ActionType::AddOrganizationsServiceLinkedRole => {
-                "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE"
-            }
+            ActionType::AddOrganizationsServiceLinkedRole => "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE",
             ActionType::ApproveAllFeatures => "APPROVE_ALL_FEATURES",
             ActionType::EnableAllFeatures => "ENABLE_ALL_FEATURES",
             ActionType::InviteAccountToOrganization => "INVITE",
-            ActionType::Unknown(value) => value.as_str(),
+            ActionType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE",
-            "APPROVE_ALL_FEATURES",
-            "ENABLE_ALL_FEATURES",
-            "INVITE",
+            "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE", "APPROVE_ALL_FEATURES", "ENABLE_ALL_FEATURES", "INVITE"
         ]
     }
 }
@@ -2583,9 +2394,9 @@ impl AsRef<str> for ActionType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let handshakestate = unimplemented!();
 /// match handshakestate {
@@ -2611,22 +2422,14 @@ impl AsRef<str> for ActionType {
 /// Specifically, when `handshakestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HandshakeState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HandshakeState {
     #[allow(missing_docs)] // documentation missing in model
     Accepted,
@@ -2641,7 +2444,7 @@ pub enum HandshakeState {
     #[allow(missing_docs)] // documentation missing in model
     Requested,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HandshakeState {
     fn from(s: &str) -> Self {
@@ -2652,17 +2455,17 @@ impl std::convert::From<&str> for HandshakeState {
             "EXPIRED" => HandshakeState::Expired,
             "OPEN" => HandshakeState::Open,
             "REQUESTED" => HandshakeState::Requested,
-            other => HandshakeState::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => HandshakeState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HandshakeState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HandshakeState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HandshakeState::from(s))
+                }
+            }
 impl HandshakeState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2673,18 +2476,13 @@ impl HandshakeState {
             HandshakeState::Expired => "EXPIRED",
             HandshakeState::Open => "OPEN",
             HandshakeState::Requested => "REQUESTED",
-            HandshakeState::Unknown(value) => value.as_str(),
+            HandshakeState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACCEPTED",
-            "CANCELED",
-            "DECLINED",
-            "EXPIRED",
-            "OPEN",
-            "REQUESTED",
+            "ACCEPTED", "CANCELED", "DECLINED", "EXPIRED", "OPEN", "REQUESTED"
         ]
     }
 }
@@ -2697,8 +2495,8 @@ impl AsRef<str> for HandshakeState {
 /// <p>Identifies a participant in a handshake.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HandshakeParty {
-    /// <p>The unique identifier (ID) for the party.</p>
+pub struct HandshakeParty  {
+    /// <p>The unique identifier (ID) for the party.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -2707,17 +2505,17 @@ pub struct HandshakeParty {
     pub r#type: std::option::Option<crate::model::HandshakePartyType>,
 }
 impl HandshakeParty {
-    /// <p>The unique identifier (ID) for the party.</p>
+    /// <p>The unique identifier (ID) for the party.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of party.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::HandshakePartyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::HandshakePartyType> {
         self.r#type.as_ref()
     }
 }
-impl std::fmt::Debug for HandshakeParty {
+impl  std::fmt::Debug for HandshakeParty  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HandshakeParty");
         formatter.field("id", &"*** Sensitive Data Redacted ***");
@@ -2727,7 +2525,7 @@ impl std::fmt::Debug for HandshakeParty {
 }
 /// See [`HandshakeParty`](crate::model::HandshakeParty).
 pub mod handshake_party {
-
+    
     /// A builder for [`HandshakeParty`](crate::model::HandshakeParty).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2735,17 +2533,16 @@ pub mod handshake_party {
         pub(crate) r#type: std::option::Option<crate::model::HandshakePartyType>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) for the party.</p>
+        /// <p>The unique identifier (ID) for the party.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) for the party.</p>
+        /// <p>The unique identifier (ID) for the party.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The type of party.</p>
         pub fn r#type(mut self, input: crate::model::HandshakePartyType) -> Self {
@@ -2753,18 +2550,16 @@ pub mod handshake_party {
             self
         }
         /// <p>The type of party.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::HandshakePartyType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::HandshakePartyType>) -> Self {
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`HandshakeParty`](crate::model::HandshakeParty).
         pub fn build(self) -> crate::model::HandshakeParty {
             crate::model::HandshakeParty {
-                id: self.id,
-                r#type: self.r#type,
+                id: self.id
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
@@ -2776,6 +2571,8 @@ pub mod handshake_party {
             formatter.finish()
         }
     }
+    
+    
 }
 impl HandshakeParty {
     /// Creates a new builder-style object to manufacture [`HandshakeParty`](crate::model::HandshakeParty).
@@ -2790,9 +2587,9 @@ impl HandshakeParty {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let handshakepartytype = unimplemented!();
 /// match handshakepartytype {
@@ -2815,22 +2612,14 @@ impl HandshakeParty {
 /// Specifically, when `handshakepartytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HandshakePartyType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HandshakePartyType {
     #[allow(missing_docs)] // documentation missing in model
     Account,
@@ -2839,7 +2628,7 @@ pub enum HandshakePartyType {
     #[allow(missing_docs)] // documentation missing in model
     Organization,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HandshakePartyType {
     fn from(s: &str) -> Self {
@@ -2847,19 +2636,17 @@ impl std::convert::From<&str> for HandshakePartyType {
             "ACCOUNT" => HandshakePartyType::Account,
             "EMAIL" => HandshakePartyType::Email,
             "ORGANIZATION" => HandshakePartyType::Organization,
-            other => {
-                HandshakePartyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => HandshakePartyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for HandshakePartyType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HandshakePartyType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HandshakePartyType::from(s))
+                }
+            }
 impl HandshakePartyType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2867,12 +2654,14 @@ impl HandshakePartyType {
             HandshakePartyType::Account => "ACCOUNT",
             HandshakePartyType::Email => "EMAIL",
             HandshakePartyType::Organization => "ORGANIZATION",
-            HandshakePartyType::Unknown(value) => value.as_str(),
+            HandshakePartyType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCOUNT", "EMAIL", "ORGANIZATION"]
+        &[
+            "ACCOUNT", "EMAIL", "ORGANIZATION"
+        ]
     }
 }
 impl AsRef<str> for HandshakePartyType {
@@ -2884,33 +2673,33 @@ impl AsRef<str> for HandshakePartyType {
 /// <p>Specifies the criteria that are used to select the handshakes for the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HandshakeFilter {
-    /// <p>Specifies the type of handshake action.</p>
+pub struct HandshakeFilter  {
+    /// <p>Specifies the type of handshake action.</p> 
     /// <p>If you specify <code>ActionType</code>, you cannot also specify <code>ParentHandshakeId</code>.</p>
     #[doc(hidden)]
     pub action_type: std::option::Option<crate::model::ActionType>,
-    /// <p>Specifies the parent handshake. Only used for handshake types that are a child of another type.</p>
-    /// <p>If you specify <code>ParentHandshakeId</code>, you cannot also specify <code>ActionType</code>.</p>
+    /// <p>Specifies the parent handshake. Only used for handshake types that are a child of another type.</p> 
+    /// <p>If you specify <code>ParentHandshakeId</code>, you cannot also specify <code>ActionType</code>.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     #[doc(hidden)]
     pub parent_handshake_id: std::option::Option<std::string::String>,
 }
 impl HandshakeFilter {
-    /// <p>Specifies the type of handshake action.</p>
+    /// <p>Specifies the type of handshake action.</p> 
     /// <p>If you specify <code>ActionType</code>, you cannot also specify <code>ParentHandshakeId</code>.</p>
-    pub fn action_type(&self) -> std::option::Option<&crate::model::ActionType> {
+    pub fn action_type(&self) -> std::option::Option<& crate::model::ActionType> {
         self.action_type.as_ref()
     }
-    /// <p>Specifies the parent handshake. Only used for handshake types that are a child of another type.</p>
-    /// <p>If you specify <code>ParentHandshakeId</code>, you cannot also specify <code>ActionType</code>.</p>
+    /// <p>Specifies the parent handshake. Only used for handshake types that are a child of another type.</p> 
+    /// <p>If you specify <code>ParentHandshakeId</code>, you cannot also specify <code>ActionType</code>.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub fn parent_handshake_id(&self) -> std::option::Option<&str> {
+    pub fn parent_handshake_id(&self) -> std::option::Option<& str> {
         self.parent_handshake_id.as_deref()
     }
 }
 /// See [`HandshakeFilter`](crate::model::HandshakeFilter).
 pub mod handshake_filter {
-
+    
     /// A builder for [`HandshakeFilter`](crate::model::HandshakeFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2918,46 +2707,42 @@ pub mod handshake_filter {
         pub(crate) parent_handshake_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the type of handshake action.</p>
+        /// <p>Specifies the type of handshake action.</p> 
         /// <p>If you specify <code>ActionType</code>, you cannot also specify <code>ParentHandshakeId</code>.</p>
         pub fn action_type(mut self, input: crate::model::ActionType) -> Self {
             self.action_type = Some(input);
             self
         }
-        /// <p>Specifies the type of handshake action.</p>
+        /// <p>Specifies the type of handshake action.</p> 
         /// <p>If you specify <code>ActionType</code>, you cannot also specify <code>ParentHandshakeId</code>.</p>
-        pub fn set_action_type(
-            mut self,
-            input: std::option::Option<crate::model::ActionType>,
-        ) -> Self {
-            self.action_type = input;
-            self
+        pub fn set_action_type(mut self, input: std::option::Option<crate::model::ActionType>) -> Self {
+            self.action_type = input; self
         }
-        /// <p>Specifies the parent handshake. Only used for handshake types that are a child of another type.</p>
-        /// <p>If you specify <code>ParentHandshakeId</code>, you cannot also specify <code>ActionType</code>.</p>
+        /// <p>Specifies the parent handshake. Only used for handshake types that are a child of another type.</p> 
+        /// <p>If you specify <code>ParentHandshakeId</code>, you cannot also specify <code>ActionType</code>.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
         pub fn parent_handshake_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.parent_handshake_id = Some(input.into());
             self
         }
-        /// <p>Specifies the parent handshake. Only used for handshake types that are a child of another type.</p>
-        /// <p>If you specify <code>ParentHandshakeId</code>, you cannot also specify <code>ActionType</code>.</p>
+        /// <p>Specifies the parent handshake. Only used for handshake types that are a child of another type.</p> 
+        /// <p>If you specify <code>ParentHandshakeId</code>, you cannot also specify <code>ActionType</code>.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-        pub fn set_parent_handshake_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.parent_handshake_id = input;
-            self
+        pub fn set_parent_handshake_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.parent_handshake_id = input; self
         }
         /// Consumes the builder and constructs a [`HandshakeFilter`](crate::model::HandshakeFilter).
         pub fn build(self) -> crate::model::HandshakeFilter {
             crate::model::HandshakeFilter {
-                action_type: self.action_type,
-                parent_handshake_id: self.parent_handshake_id,
+                action_type: self.action_type
+                ,
+                parent_handshake_id: self.parent_handshake_id
+                ,
             }
         }
     }
+    
+    
 }
 impl HandshakeFilter {
     /// Creates a new builder-style object to manufacture [`HandshakeFilter`](crate::model::HandshakeFilter).
@@ -2969,7 +2754,7 @@ impl HandshakeFilter {
 /// <p>Contains information about the Amazon Web Services service for which the account is a delegated administrator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DelegatedService {
+pub struct DelegatedService  {
     /// <p>The name of an Amazon Web Services service that can request an operation for the specified service. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
     #[doc(hidden)]
     pub service_principal: std::option::Option<std::string::String>,
@@ -2979,17 +2764,17 @@ pub struct DelegatedService {
 }
 impl DelegatedService {
     /// <p>The name of an Amazon Web Services service that can request an operation for the specified service. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
-    pub fn service_principal(&self) -> std::option::Option<&str> {
+    pub fn service_principal(&self) -> std::option::Option<& str> {
         self.service_principal.as_deref()
     }
     /// <p>The date that the account became a delegated administrator for this service. </p>
-    pub fn delegation_enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn delegation_enabled_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.delegation_enabled_date.as_ref()
     }
 }
 /// See [`DelegatedService`](crate::model::DelegatedService).
 pub mod delegated_service {
-
+    
     /// A builder for [`DelegatedService`](crate::model::DelegatedService).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3003,12 +2788,8 @@ pub mod delegated_service {
             self
         }
         /// <p>The name of an Amazon Web Services service that can request an operation for the specified service. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
-        pub fn set_service_principal(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_principal = input;
-            self
+        pub fn set_service_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_principal = input; self
         }
         /// <p>The date that the account became a delegated administrator for this service. </p>
         pub fn delegation_enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3016,21 +2797,21 @@ pub mod delegated_service {
             self
         }
         /// <p>The date that the account became a delegated administrator for this service. </p>
-        pub fn set_delegation_enabled_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.delegation_enabled_date = input;
-            self
+        pub fn set_delegation_enabled_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.delegation_enabled_date = input; self
         }
         /// Consumes the builder and constructs a [`DelegatedService`](crate::model::DelegatedService).
         pub fn build(self) -> crate::model::DelegatedService {
             crate::model::DelegatedService {
-                service_principal: self.service_principal,
-                delegation_enabled_date: self.delegation_enabled_date,
+                service_principal: self.service_principal
+                ,
+                delegation_enabled_date: self.delegation_enabled_date
+                ,
             }
         }
     }
+    
+    
 }
 impl DelegatedService {
     /// Creates a new builder-style object to manufacture [`DelegatedService`](crate::model::DelegatedService).
@@ -3042,7 +2823,7 @@ impl DelegatedService {
 /// <p>Contains information about the delegated administrator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DelegatedAdministrator {
+pub struct DelegatedAdministrator  {
     /// <p>The unique identifier (ID) of the delegated administrator's account.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3070,39 +2851,39 @@ pub struct DelegatedAdministrator {
 }
 impl DelegatedAdministrator {
     /// <p>The unique identifier (ID) of the delegated administrator's account.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the delegated administrator's account.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The email address that is associated with the delegated administrator's Amazon Web Services account.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> std::option::Option<& str> {
         self.email.as_deref()
     }
     /// <p>The friendly name of the delegated administrator's account.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the delegated administrator's account in the organization.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AccountStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AccountStatus> {
         self.status.as_ref()
     }
     /// <p>The method by which the delegated administrator's account joined the organization.</p>
-    pub fn joined_method(&self) -> std::option::Option<&crate::model::AccountJoinedMethod> {
+    pub fn joined_method(&self) -> std::option::Option<& crate::model::AccountJoinedMethod> {
         self.joined_method.as_ref()
     }
     /// <p>The date when the delegated administrator's account became a part of the organization.</p>
-    pub fn joined_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn joined_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.joined_timestamp.as_ref()
     }
     /// <p>The date when the account was made a delegated administrator.</p>
-    pub fn delegation_enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn delegation_enabled_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.delegation_enabled_date.as_ref()
     }
 }
-impl std::fmt::Debug for DelegatedAdministrator {
+impl  std::fmt::Debug for DelegatedAdministrator  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DelegatedAdministrator");
         formatter.field("id", &self.id);
@@ -3118,7 +2899,7 @@ impl std::fmt::Debug for DelegatedAdministrator {
 }
 /// See [`DelegatedAdministrator`](crate::model::DelegatedAdministrator).
 pub mod delegated_administrator {
-
+    
     /// A builder for [`DelegatedAdministrator`](crate::model::DelegatedAdministrator).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3139,8 +2920,7 @@ pub mod delegated_administrator {
         }
         /// <p>The unique identifier (ID) of the delegated administrator's account.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the delegated administrator's account.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3149,8 +2929,7 @@ pub mod delegated_administrator {
         }
         /// <p>The Amazon Resource Name (ARN) of the delegated administrator's account.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The email address that is associated with the delegated administrator's Amazon Web Services account.</p>
         pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3159,8 +2938,7 @@ pub mod delegated_administrator {
         }
         /// <p>The email address that is associated with the delegated administrator's Amazon Web Services account.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.email = input;
-            self
+            self.email = input; self
         }
         /// <p>The friendly name of the delegated administrator's account.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3169,8 +2947,7 @@ pub mod delegated_administrator {
         }
         /// <p>The friendly name of the delegated administrator's account.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The status of the delegated administrator's account in the organization.</p>
         pub fn status(mut self, input: crate::model::AccountStatus) -> Self {
@@ -3178,12 +2955,8 @@ pub mod delegated_administrator {
             self
         }
         /// <p>The status of the delegated administrator's account in the organization.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AccountStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AccountStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The method by which the delegated administrator's account joined the organization.</p>
         pub fn joined_method(mut self, input: crate::model::AccountJoinedMethod) -> Self {
@@ -3191,12 +2964,8 @@ pub mod delegated_administrator {
             self
         }
         /// <p>The method by which the delegated administrator's account joined the organization.</p>
-        pub fn set_joined_method(
-            mut self,
-            input: std::option::Option<crate::model::AccountJoinedMethod>,
-        ) -> Self {
-            self.joined_method = input;
-            self
+        pub fn set_joined_method(mut self, input: std::option::Option<crate::model::AccountJoinedMethod>) -> Self {
+            self.joined_method = input; self
         }
         /// <p>The date when the delegated administrator's account became a part of the organization.</p>
         pub fn joined_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3204,12 +2973,8 @@ pub mod delegated_administrator {
             self
         }
         /// <p>The date when the delegated administrator's account became a part of the organization.</p>
-        pub fn set_joined_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.joined_timestamp = input;
-            self
+        pub fn set_joined_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.joined_timestamp = input; self
         }
         /// <p>The date when the account was made a delegated administrator.</p>
         pub fn delegation_enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3217,24 +2982,28 @@ pub mod delegated_administrator {
             self
         }
         /// <p>The date when the account was made a delegated administrator.</p>
-        pub fn set_delegation_enabled_date(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.delegation_enabled_date = input;
-            self
+        pub fn set_delegation_enabled_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.delegation_enabled_date = input; self
         }
         /// Consumes the builder and constructs a [`DelegatedAdministrator`](crate::model::DelegatedAdministrator).
         pub fn build(self) -> crate::model::DelegatedAdministrator {
             crate::model::DelegatedAdministrator {
-                id: self.id,
-                arn: self.arn,
-                email: self.email,
-                name: self.name,
-                status: self.status,
-                joined_method: self.joined_method,
-                joined_timestamp: self.joined_timestamp,
-                delegation_enabled_date: self.delegation_enabled_date,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                email: self.email
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                joined_method: self.joined_method
+                ,
+                joined_timestamp: self.joined_timestamp
+                ,
+                delegation_enabled_date: self.delegation_enabled_date
+                ,
             }
         }
     }
@@ -3252,6 +3021,8 @@ pub mod delegated_administrator {
             formatter.finish()
         }
     }
+    
+    
 }
 impl DelegatedAdministrator {
     /// Creates a new builder-style object to manufacture [`DelegatedAdministrator`](crate::model::DelegatedAdministrator).
@@ -3266,9 +3037,9 @@ impl DelegatedAdministrator {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accountjoinedmethod = unimplemented!();
 /// match accountjoinedmethod {
@@ -3290,60 +3061,52 @@ impl DelegatedAdministrator {
 /// Specifically, when `accountjoinedmethod` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccountJoinedMethod::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccountJoinedMethod {
     #[allow(missing_docs)] // documentation missing in model
     Created,
     #[allow(missing_docs)] // documentation missing in model
     Invited,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccountJoinedMethod {
     fn from(s: &str) -> Self {
         match s {
             "CREATED" => AccountJoinedMethod::Created,
             "INVITED" => AccountJoinedMethod::Invited,
-            other => {
-                AccountJoinedMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AccountJoinedMethod::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccountJoinedMethod {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccountJoinedMethod::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccountJoinedMethod::from(s))
+                }
+            }
 impl AccountJoinedMethod {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccountJoinedMethod::Created => "CREATED",
             AccountJoinedMethod::Invited => "INVITED",
-            AccountJoinedMethod::Unknown(value) => value.as_str(),
+            AccountJoinedMethod::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATED", "INVITED"]
+        &[
+            "CREATED", "INVITED"
+        ]
     }
 }
 impl AsRef<str> for AccountJoinedMethod {
@@ -3358,9 +3121,9 @@ impl AsRef<str> for AccountJoinedMethod {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accountstatus = unimplemented!();
 /// match accountstatus {
@@ -3383,22 +3146,14 @@ impl AsRef<str> for AccountJoinedMethod {
 /// Specifically, when `accountstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccountStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccountStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -3407,7 +3162,7 @@ pub enum AccountStatus {
     #[allow(missing_docs)] // documentation missing in model
     Suspended,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccountStatus {
     fn from(s: &str) -> Self {
@@ -3415,17 +3170,17 @@ impl std::convert::From<&str> for AccountStatus {
             "ACTIVE" => AccountStatus::Active,
             "PENDING_CLOSURE" => AccountStatus::PendingClosure,
             "SUSPENDED" => AccountStatus::Suspended,
-            other => AccountStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AccountStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccountStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccountStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccountStatus::from(s))
+                }
+            }
 impl AccountStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3433,12 +3188,14 @@ impl AccountStatus {
             AccountStatus::Active => "ACTIVE",
             AccountStatus::PendingClosure => "PENDING_CLOSURE",
             AccountStatus::Suspended => "SUSPENDED",
-            AccountStatus::Unknown(value) => value.as_str(),
+            AccountStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "PENDING_CLOSURE", "SUSPENDED"]
+        &[
+            "ACTIVE", "PENDING_CLOSURE", "SUSPENDED"
+        ]
     }
 }
 impl AsRef<str> for AccountStatus {
@@ -3450,8 +3207,8 @@ impl AsRef<str> for AccountStatus {
 /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateAccountStatus {
-    /// <p>The unique identifier (ID) that references this request. You get this value from the response of the initial <code>CreateAccount</code> request to create the account.</p>
+pub struct CreateAccountStatus  {
+    /// <p>The unique identifier (ID) that references this request. You get this value from the response of the initial <code>CreateAccount</code> request to create the account.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -3467,86 +3224,86 @@ pub struct CreateAccountStatus {
     /// <p>The date and time that the account was created and the request completed.</p>
     #[doc(hidden)]
     pub completed_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>If the account was created successfully, the unique identifier (ID) of the new account.</p>
+    /// <p>If the account was created successfully, the unique identifier (ID) of the new account.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
     /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
     #[doc(hidden)]
     pub gov_cloud_account_id: std::option::Option<std::string::String>,
-    /// <p>If the request failed, a description of the reason for the failure.</p>
-    /// <ul>
-    /// <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of accounts in your organization.</p> </li>
-    /// <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.</p> </li>
-    /// <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another Amazon Web Services account with that email address already exists.</p> </li>
-    /// <li> <p>FAILED_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization failed to receive business license validation.</p> </li>
-    /// <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the Amazon Web Services GovCloud (US) Region could not be created because this Region already includes an account with that email address.</p> </li>
-    /// <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization can't complete business license validation because it doesn't have valid identity data.</p> </li>
-    /// <li> <p>INVALID_ADDRESS: The account could not be created because the address you provided is not valid.</p> </li>
-    /// <li> <p>INVALID_EMAIL: The account could not be created because the email address you provided is not valid.</p> </li>
-    /// <li> <p>INVALID_PAYMENT_INSTRUMENT: The Amazon Web Services account that owns your organization does not have a supported payment method associated with the account. Amazon Web Services does not support cards issued by financial institutions in Russia or Belarus. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing your Amazon Web Services payments</a>.</p> </li>
-    /// <li> <p>INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the problem persists, contact Amazon Web Services Customer Support.</p> </li>
-    /// <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has not received Business Validation.</p> </li>
-    /// <li> <p> MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as a credit card.</p> </li>
-    /// <li> <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization is still in the process of completing business license validation.</p> </li>
-    /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has an unknown issue with business license validation.</p> </li>
+    /// <p>If the request failed, a description of the reason for the failure.</p> 
+    /// <ul> 
+    /// <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of accounts in your organization.</p> </li> 
+    /// <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.</p> </li> 
+    /// <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another Amazon Web Services account with that email address already exists.</p> </li> 
+    /// <li> <p>FAILED_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization failed to receive business license validation.</p> </li> 
+    /// <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the Amazon Web Services GovCloud (US) Region could not be created because this Region already includes an account with that email address.</p> </li> 
+    /// <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization can't complete business license validation because it doesn't have valid identity data.</p> </li> 
+    /// <li> <p>INVALID_ADDRESS: The account could not be created because the address you provided is not valid.</p> </li> 
+    /// <li> <p>INVALID_EMAIL: The account could not be created because the email address you provided is not valid.</p> </li> 
+    /// <li> <p>INVALID_PAYMENT_INSTRUMENT: The Amazon Web Services account that owns your organization does not have a supported payment method associated with the account. Amazon Web Services does not support cards issued by financial institutions in Russia or Belarus. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing your Amazon Web Services payments</a>.</p> </li> 
+    /// <li> <p>INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the problem persists, contact Amazon Web Services Customer Support.</p> </li> 
+    /// <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has not received Business Validation.</p> </li> 
+    /// <li> <p> MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as a credit card.</p> </li> 
+    /// <li> <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization is still in the process of completing business license validation.</p> </li> 
+    /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has an unknown issue with business license validation.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub failure_reason: std::option::Option<crate::model::CreateAccountFailureReason>,
 }
 impl CreateAccountStatus {
-    /// <p>The unique identifier (ID) that references this request. You get this value from the response of the initial <code>CreateAccount</code> request to create the account.</p>
+    /// <p>The unique identifier (ID) that references this request. You get this value from the response of the initial <code>CreateAccount</code> request to create the account.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The account name given to the account when it was created.</p>
-    pub fn account_name(&self) -> std::option::Option<&str> {
+    pub fn account_name(&self) -> std::option::Option<& str> {
         self.account_name.as_deref()
     }
     /// <p>The status of the asynchronous request to create an Amazon Web Services account.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::CreateAccountState> {
+    pub fn state(&self) -> std::option::Option<& crate::model::CreateAccountState> {
         self.state.as_ref()
     }
     /// <p>The date and time that the request was made for the account creation.</p>
-    pub fn requested_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn requested_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.requested_timestamp.as_ref()
     }
     /// <p>The date and time that the account was created and the request completed.</p>
-    pub fn completed_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completed_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.completed_timestamp.as_ref()
     }
-    /// <p>If the account was created successfully, the unique identifier (ID) of the new account.</p>
+    /// <p>If the account was created successfully, the unique identifier (ID) of the new account.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
-    pub fn gov_cloud_account_id(&self) -> std::option::Option<&str> {
+    pub fn gov_cloud_account_id(&self) -> std::option::Option<& str> {
         self.gov_cloud_account_id.as_deref()
     }
-    /// <p>If the request failed, a description of the reason for the failure.</p>
-    /// <ul>
-    /// <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of accounts in your organization.</p> </li>
-    /// <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.</p> </li>
-    /// <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another Amazon Web Services account with that email address already exists.</p> </li>
-    /// <li> <p>FAILED_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization failed to receive business license validation.</p> </li>
-    /// <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the Amazon Web Services GovCloud (US) Region could not be created because this Region already includes an account with that email address.</p> </li>
-    /// <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization can't complete business license validation because it doesn't have valid identity data.</p> </li>
-    /// <li> <p>INVALID_ADDRESS: The account could not be created because the address you provided is not valid.</p> </li>
-    /// <li> <p>INVALID_EMAIL: The account could not be created because the email address you provided is not valid.</p> </li>
-    /// <li> <p>INVALID_PAYMENT_INSTRUMENT: The Amazon Web Services account that owns your organization does not have a supported payment method associated with the account. Amazon Web Services does not support cards issued by financial institutions in Russia or Belarus. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing your Amazon Web Services payments</a>.</p> </li>
-    /// <li> <p>INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the problem persists, contact Amazon Web Services Customer Support.</p> </li>
-    /// <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has not received Business Validation.</p> </li>
-    /// <li> <p> MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as a credit card.</p> </li>
-    /// <li> <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization is still in the process of completing business license validation.</p> </li>
-    /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has an unknown issue with business license validation.</p> </li>
+    /// <p>If the request failed, a description of the reason for the failure.</p> 
+    /// <ul> 
+    /// <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of accounts in your organization.</p> </li> 
+    /// <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.</p> </li> 
+    /// <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another Amazon Web Services account with that email address already exists.</p> </li> 
+    /// <li> <p>FAILED_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization failed to receive business license validation.</p> </li> 
+    /// <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the Amazon Web Services GovCloud (US) Region could not be created because this Region already includes an account with that email address.</p> </li> 
+    /// <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization can't complete business license validation because it doesn't have valid identity data.</p> </li> 
+    /// <li> <p>INVALID_ADDRESS: The account could not be created because the address you provided is not valid.</p> </li> 
+    /// <li> <p>INVALID_EMAIL: The account could not be created because the email address you provided is not valid.</p> </li> 
+    /// <li> <p>INVALID_PAYMENT_INSTRUMENT: The Amazon Web Services account that owns your organization does not have a supported payment method associated with the account. Amazon Web Services does not support cards issued by financial institutions in Russia or Belarus. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing your Amazon Web Services payments</a>.</p> </li> 
+    /// <li> <p>INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the problem persists, contact Amazon Web Services Customer Support.</p> </li> 
+    /// <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has not received Business Validation.</p> </li> 
+    /// <li> <p> MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as a credit card.</p> </li> 
+    /// <li> <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization is still in the process of completing business license validation.</p> </li> 
+    /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has an unknown issue with business license validation.</p> </li> 
     /// </ul>
-    pub fn failure_reason(&self) -> std::option::Option<&crate::model::CreateAccountFailureReason> {
+    pub fn failure_reason(&self) -> std::option::Option<& crate::model::CreateAccountFailureReason> {
         self.failure_reason.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAccountStatus {
+impl  std::fmt::Debug for CreateAccountStatus  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAccountStatus");
         formatter.field("id", &self.id);
@@ -3562,7 +3319,7 @@ impl std::fmt::Debug for CreateAccountStatus {
 }
 /// See [`CreateAccountStatus`](crate::model::CreateAccountStatus).
 pub mod create_account_status {
-
+    
     /// A builder for [`CreateAccountStatus`](crate::model::CreateAccountStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3576,17 +3333,16 @@ pub mod create_account_status {
         pub(crate) failure_reason: std::option::Option<crate::model::CreateAccountFailureReason>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) that references this request. You get this value from the response of the initial <code>CreateAccount</code> request to create the account.</p>
+        /// <p>The unique identifier (ID) that references this request. You get this value from the response of the initial <code>CreateAccount</code> request to create the account.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) that references this request. You get this value from the response of the initial <code>CreateAccount</code> request to create the account.</p>
+        /// <p>The unique identifier (ID) that references this request. You get this value from the response of the initial <code>CreateAccount</code> request to create the account.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The account name given to the account when it was created.</p>
         pub fn account_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3595,8 +3351,7 @@ pub mod create_account_status {
         }
         /// <p>The account name given to the account when it was created.</p>
         pub fn set_account_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_name = input;
-            self
+            self.account_name = input; self
         }
         /// <p>The status of the asynchronous request to create an Amazon Web Services account.</p>
         pub fn state(mut self, input: crate::model::CreateAccountState) -> Self {
@@ -3604,12 +3359,8 @@ pub mod create_account_status {
             self
         }
         /// <p>The status of the asynchronous request to create an Amazon Web Services account.</p>
-        pub fn set_state(
-            mut self,
-            input: std::option::Option<crate::model::CreateAccountState>,
-        ) -> Self {
-            self.state = input;
-            self
+        pub fn set_state(mut self, input: std::option::Option<crate::model::CreateAccountState>) -> Self {
+            self.state = input; self
         }
         /// <p>The date and time that the request was made for the account creation.</p>
         pub fn requested_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3617,12 +3368,8 @@ pub mod create_account_status {
             self
         }
         /// <p>The date and time that the request was made for the account creation.</p>
-        pub fn set_requested_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.requested_timestamp = input;
-            self
+        pub fn set_requested_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.requested_timestamp = input; self
         }
         /// <p>The date and time that the account was created and the request completed.</p>
         pub fn completed_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3630,24 +3377,19 @@ pub mod create_account_status {
             self
         }
         /// <p>The date and time that the account was created and the request completed.</p>
-        pub fn set_completed_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.completed_timestamp = input;
-            self
+        pub fn set_completed_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.completed_timestamp = input; self
         }
-        /// <p>If the account was created successfully, the unique identifier (ID) of the new account.</p>
+        /// <p>If the account was created successfully, the unique identifier (ID) of the new account.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
         }
-        /// <p>If the account was created successfully, the unique identifier (ID) of the new account.</p>
+        /// <p>If the account was created successfully, the unique identifier (ID) of the new account.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
         pub fn gov_cloud_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3655,69 +3397,69 @@ pub mod create_account_status {
             self
         }
         /// <p>If the account was created successfully, the unique identifier (ID) of the new account in the Amazon Web Services GovCloud (US) Region.</p>
-        pub fn set_gov_cloud_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.gov_cloud_account_id = input;
-            self
+        pub fn set_gov_cloud_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.gov_cloud_account_id = input; self
         }
-        /// <p>If the request failed, a description of the reason for the failure.</p>
-        /// <ul>
-        /// <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of accounts in your organization.</p> </li>
-        /// <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.</p> </li>
-        /// <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another Amazon Web Services account with that email address already exists.</p> </li>
-        /// <li> <p>FAILED_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization failed to receive business license validation.</p> </li>
-        /// <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the Amazon Web Services GovCloud (US) Region could not be created because this Region already includes an account with that email address.</p> </li>
-        /// <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization can't complete business license validation because it doesn't have valid identity data.</p> </li>
-        /// <li> <p>INVALID_ADDRESS: The account could not be created because the address you provided is not valid.</p> </li>
-        /// <li> <p>INVALID_EMAIL: The account could not be created because the email address you provided is not valid.</p> </li>
-        /// <li> <p>INVALID_PAYMENT_INSTRUMENT: The Amazon Web Services account that owns your organization does not have a supported payment method associated with the account. Amazon Web Services does not support cards issued by financial institutions in Russia or Belarus. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing your Amazon Web Services payments</a>.</p> </li>
-        /// <li> <p>INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the problem persists, contact Amazon Web Services Customer Support.</p> </li>
-        /// <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has not received Business Validation.</p> </li>
-        /// <li> <p> MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as a credit card.</p> </li>
-        /// <li> <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization is still in the process of completing business license validation.</p> </li>
-        /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has an unknown issue with business license validation.</p> </li>
+        /// <p>If the request failed, a description of the reason for the failure.</p> 
+        /// <ul> 
+        /// <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of accounts in your organization.</p> </li> 
+        /// <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.</p> </li> 
+        /// <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another Amazon Web Services account with that email address already exists.</p> </li> 
+        /// <li> <p>FAILED_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization failed to receive business license validation.</p> </li> 
+        /// <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the Amazon Web Services GovCloud (US) Region could not be created because this Region already includes an account with that email address.</p> </li> 
+        /// <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization can't complete business license validation because it doesn't have valid identity data.</p> </li> 
+        /// <li> <p>INVALID_ADDRESS: The account could not be created because the address you provided is not valid.</p> </li> 
+        /// <li> <p>INVALID_EMAIL: The account could not be created because the email address you provided is not valid.</p> </li> 
+        /// <li> <p>INVALID_PAYMENT_INSTRUMENT: The Amazon Web Services account that owns your organization does not have a supported payment method associated with the account. Amazon Web Services does not support cards issued by financial institutions in Russia or Belarus. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing your Amazon Web Services payments</a>.</p> </li> 
+        /// <li> <p>INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the problem persists, contact Amazon Web Services Customer Support.</p> </li> 
+        /// <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has not received Business Validation.</p> </li> 
+        /// <li> <p> MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as a credit card.</p> </li> 
+        /// <li> <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization is still in the process of completing business license validation.</p> </li> 
+        /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has an unknown issue with business license validation.</p> </li> 
         /// </ul>
         pub fn failure_reason(mut self, input: crate::model::CreateAccountFailureReason) -> Self {
             self.failure_reason = Some(input);
             self
         }
-        /// <p>If the request failed, a description of the reason for the failure.</p>
-        /// <ul>
-        /// <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of accounts in your organization.</p> </li>
-        /// <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.</p> </li>
-        /// <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another Amazon Web Services account with that email address already exists.</p> </li>
-        /// <li> <p>FAILED_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization failed to receive business license validation.</p> </li>
-        /// <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the Amazon Web Services GovCloud (US) Region could not be created because this Region already includes an account with that email address.</p> </li>
-        /// <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization can't complete business license validation because it doesn't have valid identity data.</p> </li>
-        /// <li> <p>INVALID_ADDRESS: The account could not be created because the address you provided is not valid.</p> </li>
-        /// <li> <p>INVALID_EMAIL: The account could not be created because the email address you provided is not valid.</p> </li>
-        /// <li> <p>INVALID_PAYMENT_INSTRUMENT: The Amazon Web Services account that owns your organization does not have a supported payment method associated with the account. Amazon Web Services does not support cards issued by financial institutions in Russia or Belarus. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing your Amazon Web Services payments</a>.</p> </li>
-        /// <li> <p>INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the problem persists, contact Amazon Web Services Customer Support.</p> </li>
-        /// <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has not received Business Validation.</p> </li>
-        /// <li> <p> MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as a credit card.</p> </li>
-        /// <li> <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization is still in the process of completing business license validation.</p> </li>
-        /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has an unknown issue with business license validation.</p> </li>
+        /// <p>If the request failed, a description of the reason for the failure.</p> 
+        /// <ul> 
+        /// <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of accounts in your organization.</p> </li> 
+        /// <li> <p>CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.</p> </li> 
+        /// <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another Amazon Web Services account with that email address already exists.</p> </li> 
+        /// <li> <p>FAILED_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization failed to receive business license validation.</p> </li> 
+        /// <li> <p>GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the Amazon Web Services GovCloud (US) Region could not be created because this Region already includes an account with that email address.</p> </li> 
+        /// <li> <p>IDENTITY_INVALID_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization can't complete business license validation because it doesn't have valid identity data.</p> </li> 
+        /// <li> <p>INVALID_ADDRESS: The account could not be created because the address you provided is not valid.</p> </li> 
+        /// <li> <p>INVALID_EMAIL: The account could not be created because the email address you provided is not valid.</p> </li> 
+        /// <li> <p>INVALID_PAYMENT_INSTRUMENT: The Amazon Web Services account that owns your organization does not have a supported payment method associated with the account. Amazon Web Services does not support cards issued by financial institutions in Russia or Belarus. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-general.html">Managing your Amazon Web Services payments</a>.</p> </li> 
+        /// <li> <p>INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the problem persists, contact Amazon Web Services Customer Support.</p> </li> 
+        /// <li> <p>MISSING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has not received Business Validation.</p> </li> 
+        /// <li> <p> MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid payment method, such as a credit card.</p> </li> 
+        /// <li> <p>PENDING_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization is still in the process of completing business license validation.</p> </li> 
+        /// <li> <p>UNKNOWN_BUSINESS_VALIDATION: The Amazon Web Services account that owns your organization has an unknown issue with business license validation.</p> </li> 
         /// </ul>
-        pub fn set_failure_reason(
-            mut self,
-            input: std::option::Option<crate::model::CreateAccountFailureReason>,
-        ) -> Self {
-            self.failure_reason = input;
-            self
+        pub fn set_failure_reason(mut self, input: std::option::Option<crate::model::CreateAccountFailureReason>) -> Self {
+            self.failure_reason = input; self
         }
         /// Consumes the builder and constructs a [`CreateAccountStatus`](crate::model::CreateAccountStatus).
         pub fn build(self) -> crate::model::CreateAccountStatus {
             crate::model::CreateAccountStatus {
-                id: self.id,
-                account_name: self.account_name,
-                state: self.state,
-                requested_timestamp: self.requested_timestamp,
-                completed_timestamp: self.completed_timestamp,
-                account_id: self.account_id,
-                gov_cloud_account_id: self.gov_cloud_account_id,
-                failure_reason: self.failure_reason,
+                id: self.id
+                ,
+                account_name: self.account_name
+                ,
+                state: self.state
+                ,
+                requested_timestamp: self.requested_timestamp
+                ,
+                completed_timestamp: self.completed_timestamp
+                ,
+                account_id: self.account_id
+                ,
+                gov_cloud_account_id: self.gov_cloud_account_id
+                ,
+                failure_reason: self.failure_reason
+                ,
             }
         }
     }
@@ -3735,6 +3477,8 @@ pub mod create_account_status {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreateAccountStatus {
     /// Creates a new builder-style object to manufacture [`CreateAccountStatus`](crate::model::CreateAccountStatus).
@@ -3749,9 +3493,9 @@ impl CreateAccountStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let createaccountfailurereason = unimplemented!();
 /// match createaccountfailurereason {
@@ -3786,22 +3530,14 @@ impl CreateAccountStatus {
 /// Specifically, when `createaccountfailurereason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CreateAccountFailureReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CreateAccountFailureReason {
     #[allow(missing_docs)] // documentation missing in model
     AccountLimitExceeded,
@@ -3834,95 +3570,63 @@ pub enum CreateAccountFailureReason {
     #[allow(missing_docs)] // documentation missing in model
     UpdateExistingResourcePolicyWithTagsNotSupported,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CreateAccountFailureReason {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT_LIMIT_EXCEEDED" => CreateAccountFailureReason::AccountLimitExceeded,
-            "CONCURRENT_ACCOUNT_MODIFICATION" => {
-                CreateAccountFailureReason::ConcurrentAccountModification
-            }
+            "CONCURRENT_ACCOUNT_MODIFICATION" => CreateAccountFailureReason::ConcurrentAccountModification,
             "EMAIL_ALREADY_EXISTS" => CreateAccountFailureReason::EmailAlreadyExists,
             "FAILED_BUSINESS_VALIDATION" => CreateAccountFailureReason::FailedBusinessValidation,
-            "GOVCLOUD_ACCOUNT_ALREADY_EXISTS" => {
-                CreateAccountFailureReason::GovcloudAccountAlreadyExists
-            }
+            "GOVCLOUD_ACCOUNT_ALREADY_EXISTS" => CreateAccountFailureReason::GovcloudAccountAlreadyExists,
             "INTERNAL_FAILURE" => CreateAccountFailureReason::InternalFailure,
             "INVALID_ADDRESS" => CreateAccountFailureReason::InvalidAddress,
             "INVALID_EMAIL" => CreateAccountFailureReason::InvalidEmail,
-            "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION" => {
-                CreateAccountFailureReason::InvalidIdentityForBusinessValidation
-            }
+            "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION" => CreateAccountFailureReason::InvalidIdentityForBusinessValidation,
             "INVALID_PAYMENT_INSTRUMENT" => CreateAccountFailureReason::InvalidPaymentInstrument,
             "MISSING_BUSINESS_VALIDATION" => CreateAccountFailureReason::MissingBusinessValidation,
             "MISSING_PAYMENT_INSTRUMENT" => CreateAccountFailureReason::MissingPaymentInstrument,
             "PENDING_BUSINESS_VALIDATION" => CreateAccountFailureReason::PendingBusinessValidatioNv,
             "UNKNOWN_BUSINESS_VALIDATION" => CreateAccountFailureReason::UnknownBusinessValidation,
-            "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED" => {
-                CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported
-            }
-            other => CreateAccountFailureReason::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED" => CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported,
+            other => CreateAccountFailureReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CreateAccountFailureReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CreateAccountFailureReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CreateAccountFailureReason::from(s))
+                }
+            }
 impl CreateAccountFailureReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CreateAccountFailureReason::AccountLimitExceeded => "ACCOUNT_LIMIT_EXCEEDED",
-            CreateAccountFailureReason::ConcurrentAccountModification => {
-                "CONCURRENT_ACCOUNT_MODIFICATION"
-            }
+            CreateAccountFailureReason::ConcurrentAccountModification => "CONCURRENT_ACCOUNT_MODIFICATION",
             CreateAccountFailureReason::EmailAlreadyExists => "EMAIL_ALREADY_EXISTS",
             CreateAccountFailureReason::FailedBusinessValidation => "FAILED_BUSINESS_VALIDATION",
-            CreateAccountFailureReason::GovcloudAccountAlreadyExists => {
-                "GOVCLOUD_ACCOUNT_ALREADY_EXISTS"
-            }
+            CreateAccountFailureReason::GovcloudAccountAlreadyExists => "GOVCLOUD_ACCOUNT_ALREADY_EXISTS",
             CreateAccountFailureReason::InternalFailure => "INTERNAL_FAILURE",
             CreateAccountFailureReason::InvalidAddress => "INVALID_ADDRESS",
             CreateAccountFailureReason::InvalidEmail => "INVALID_EMAIL",
-            CreateAccountFailureReason::InvalidIdentityForBusinessValidation => {
-                "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION"
-            }
+            CreateAccountFailureReason::InvalidIdentityForBusinessValidation => "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION",
             CreateAccountFailureReason::InvalidPaymentInstrument => "INVALID_PAYMENT_INSTRUMENT",
             CreateAccountFailureReason::MissingBusinessValidation => "MISSING_BUSINESS_VALIDATION",
             CreateAccountFailureReason::MissingPaymentInstrument => "MISSING_PAYMENT_INSTRUMENT",
             CreateAccountFailureReason::PendingBusinessValidatioNv => "PENDING_BUSINESS_VALIDATION",
             CreateAccountFailureReason::UnknownBusinessValidation => "UNKNOWN_BUSINESS_VALIDATION",
-            CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported => {
-                "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED"
-            }
-            CreateAccountFailureReason::Unknown(value) => value.as_str(),
+            CreateAccountFailureReason::UpdateExistingResourcePolicyWithTagsNotSupported => "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED",
+            CreateAccountFailureReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACCOUNT_LIMIT_EXCEEDED",
-            "CONCURRENT_ACCOUNT_MODIFICATION",
-            "EMAIL_ALREADY_EXISTS",
-            "FAILED_BUSINESS_VALIDATION",
-            "GOVCLOUD_ACCOUNT_ALREADY_EXISTS",
-            "INTERNAL_FAILURE",
-            "INVALID_ADDRESS",
-            "INVALID_EMAIL",
-            "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION",
-            "INVALID_PAYMENT_INSTRUMENT",
-            "MISSING_BUSINESS_VALIDATION",
-            "MISSING_PAYMENT_INSTRUMENT",
-            "PENDING_BUSINESS_VALIDATION",
-            "UNKNOWN_BUSINESS_VALIDATION",
-            "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED",
+            "ACCOUNT_LIMIT_EXCEEDED", "CONCURRENT_ACCOUNT_MODIFICATION", "EMAIL_ALREADY_EXISTS", "FAILED_BUSINESS_VALIDATION", "GOVCLOUD_ACCOUNT_ALREADY_EXISTS", "INTERNAL_FAILURE", "INVALID_ADDRESS", "INVALID_EMAIL", "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION", "INVALID_PAYMENT_INSTRUMENT", "MISSING_BUSINESS_VALIDATION", "MISSING_PAYMENT_INSTRUMENT", "PENDING_BUSINESS_VALIDATION", "UNKNOWN_BUSINESS_VALIDATION", "UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED"
         ]
     }
 }
@@ -3938,9 +3642,9 @@ impl AsRef<str> for CreateAccountFailureReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let createaccountstate = unimplemented!();
 /// match createaccountstate {
@@ -3963,22 +3667,14 @@ impl AsRef<str> for CreateAccountFailureReason {
 /// Specifically, when `createaccountstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CreateAccountState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum CreateAccountState {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -3987,7 +3683,7 @@ pub enum CreateAccountState {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for CreateAccountState {
     fn from(s: &str) -> Self {
@@ -3995,19 +3691,17 @@ impl std::convert::From<&str> for CreateAccountState {
             "FAILED" => CreateAccountState::Failed,
             "IN_PROGRESS" => CreateAccountState::InProgress,
             "SUCCEEDED" => CreateAccountState::Succeeded,
-            other => {
-                CreateAccountState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => CreateAccountState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for CreateAccountState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CreateAccountState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(CreateAccountState::from(s))
+                }
+            }
 impl CreateAccountState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4015,12 +3709,14 @@ impl CreateAccountState {
             CreateAccountState::Failed => "FAILED",
             CreateAccountState::InProgress => "IN_PROGRESS",
             CreateAccountState::Succeeded => "SUCCEEDED",
-            CreateAccountState::Unknown(value) => value.as_str(),
+            CreateAccountState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
+        &[
+            "FAILED", "IN_PROGRESS", "SUCCEEDED"
+        ]
     }
 }
 impl AsRef<str> for CreateAccountState {
@@ -4032,12 +3728,12 @@ impl AsRef<str> for CreateAccountState {
 /// <p>Contains a list of child entities, either OUs or accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Child {
-    /// <p>The unique identifier (ID) of this child entity.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the following:</p>
-    /// <ul>
-    /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
-    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
+pub struct Child  {
+    /// <p>The unique identifier (ID) of this child entity.</p> 
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li> 
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -4046,23 +3742,23 @@ pub struct Child {
     pub r#type: std::option::Option<crate::model::ChildType>,
 }
 impl Child {
-    /// <p>The unique identifier (ID) of this child entity.</p>
-    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the following:</p>
-    /// <ul>
-    /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
-    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
+    /// <p>The unique identifier (ID) of this child entity.</p> 
+    /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the following:</p> 
+    /// <ul> 
+    /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li> 
+    /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li> 
     /// </ul>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The type of this child entity.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::ChildType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::ChildType> {
         self.r#type.as_ref()
     }
 }
 /// See [`Child`](crate::model::Child).
 pub mod child {
-
+    
     /// A builder for [`Child`](crate::model::Child).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4070,25 +3766,24 @@ pub mod child {
         pub(crate) r#type: std::option::Option<crate::model::ChildType>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of this child entity.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the following:</p>
-        /// <ul>
-        /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
-        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
+        /// <p>The unique identifier (ID) of this child entity.</p> 
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li> 
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li> 
         /// </ul>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of this child entity.</p>
-        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the following:</p>
-        /// <ul>
-        /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li>
-        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li>
+        /// <p>The unique identifier (ID) of this child entity.</p> 
+        /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string requires one of the following:</p> 
+        /// <ul> 
+        /// <li> <p> <b>Account</b> - A string that consists of exactly 12 digits.</p> </li> 
+        /// <li> <p> <b>Organizational unit (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters or digits.</p> </li> 
         /// </ul>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The type of this child entity.</p>
         pub fn r#type(mut self, input: crate::model::ChildType) -> Self {
@@ -4097,17 +3792,20 @@ pub mod child {
         }
         /// <p>The type of this child entity.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChildType>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// Consumes the builder and constructs a [`Child`](crate::model::Child).
         pub fn build(self) -> crate::model::Child {
             crate::model::Child {
-                id: self.id,
-                r#type: self.r#type,
+                id: self.id
+                ,
+                r#type: self.r#type
+                ,
             }
         }
     }
+    
+    
 }
 impl Child {
     /// Creates a new builder-style object to manufacture [`Child`](crate::model::Child).
@@ -4122,9 +3820,9 @@ impl Child {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let childtype = unimplemented!();
 /// match childtype {
@@ -4146,58 +3844,52 @@ impl Child {
 /// Specifically, when `childtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChildType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ChildType {
     #[allow(missing_docs)] // documentation missing in model
     Account,
     #[allow(missing_docs)] // documentation missing in model
     OrganizationalUnit,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ChildType {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT" => ChildType::Account,
             "ORGANIZATIONAL_UNIT" => ChildType::OrganizationalUnit,
-            other => ChildType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ChildType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ChildType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChildType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ChildType::from(s))
+                }
+            }
 impl ChildType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChildType::Account => "ACCOUNT",
             ChildType::OrganizationalUnit => "ORGANIZATIONAL_UNIT",
-            ChildType::Unknown(value) => value.as_str(),
+            ChildType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCOUNT", "ORGANIZATIONAL_UNIT"]
+        &[
+            "ACCOUNT", "ORGANIZATIONAL_UNIT"
+        ]
     }
 }
 impl AsRef<str> for ChildType {
@@ -4209,7 +3901,7 @@ impl AsRef<str> for ChildType {
 /// <p>A structure that contains details of a service principal that represents an Amazon Web Services service that is enabled to integrate with Organizations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnabledServicePrincipal {
+pub struct EnabledServicePrincipal  {
     /// <p>The name of the service principal. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
     #[doc(hidden)]
     pub service_principal: std::option::Option<std::string::String>,
@@ -4219,17 +3911,17 @@ pub struct EnabledServicePrincipal {
 }
 impl EnabledServicePrincipal {
     /// <p>The name of the service principal. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
-    pub fn service_principal(&self) -> std::option::Option<&str> {
+    pub fn service_principal(&self) -> std::option::Option<& str> {
         self.service_principal.as_deref()
     }
     /// <p>The date that the service principal was enabled for integration with Organizations.</p>
-    pub fn date_enabled(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_enabled(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.date_enabled.as_ref()
     }
 }
 /// See [`EnabledServicePrincipal`](crate::model::EnabledServicePrincipal).
 pub mod enabled_service_principal {
-
+    
     /// A builder for [`EnabledServicePrincipal`](crate::model::EnabledServicePrincipal).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4243,12 +3935,8 @@ pub mod enabled_service_principal {
             self
         }
         /// <p>The name of the service principal. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
-        pub fn set_service_principal(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.service_principal = input;
-            self
+        pub fn set_service_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_principal = input; self
         }
         /// <p>The date that the service principal was enabled for integration with Organizations.</p>
         pub fn date_enabled(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4256,21 +3944,21 @@ pub mod enabled_service_principal {
             self
         }
         /// <p>The date that the service principal was enabled for integration with Organizations.</p>
-        pub fn set_date_enabled(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.date_enabled = input;
-            self
+        pub fn set_date_enabled(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.date_enabled = input; self
         }
         /// Consumes the builder and constructs a [`EnabledServicePrincipal`](crate::model::EnabledServicePrincipal).
         pub fn build(self) -> crate::model::EnabledServicePrincipal {
             crate::model::EnabledServicePrincipal {
-                service_principal: self.service_principal,
-                date_enabled: self.date_enabled,
+                service_principal: self.service_principal
+                ,
+                date_enabled: self.date_enabled
+                ,
             }
         }
     }
+    
+    
 }
 impl EnabledServicePrincipal {
     /// Creates a new builder-style object to manufacture [`EnabledServicePrincipal`](crate::model::EnabledServicePrincipal).
@@ -4282,20 +3970,20 @@ impl EnabledServicePrincipal {
 /// <p>Contains information about an Amazon Web Services account that is a member of an organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Account {
-    /// <p>The unique identifier (ID) of the account.</p>
+pub struct Account  {
+    /// <p>The unique identifier (ID) of the account.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the account.</p> 
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The email address associated with the Amazon Web Services account.</p>
+    /// <p>The email address associated with the Amazon Web Services account.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that represents a standard internet email address.</p>
     #[doc(hidden)]
     pub email: std::option::Option<std::string::String>,
-    /// <p>The friendly name of the account.</p>
+    /// <p>The friendly name of the account.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -4310,40 +3998,40 @@ pub struct Account {
     pub joined_timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Account {
-    /// <p>The unique identifier (ID) of the account.</p>
+    /// <p>The unique identifier (ID) of the account.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the account.</p>
+    /// <p>The Amazon Resource Name (ARN) of the account.</p> 
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <p>The email address associated with the Amazon Web Services account.</p>
+    /// <p>The email address associated with the Amazon Web Services account.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that represents a standard internet email address.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> std::option::Option<& str> {
         self.email.as_deref()
     }
-    /// <p>The friendly name of the account.</p>
+    /// <p>The friendly name of the account.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The status of the account in the organization.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::AccountStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::AccountStatus> {
         self.status.as_ref()
     }
     /// <p>The method by which the account joined the organization.</p>
-    pub fn joined_method(&self) -> std::option::Option<&crate::model::AccountJoinedMethod> {
+    pub fn joined_method(&self) -> std::option::Option<& crate::model::AccountJoinedMethod> {
         self.joined_method.as_ref()
     }
     /// <p>The date the account became a part of the organization.</p>
-    pub fn joined_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn joined_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.joined_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for Account {
+impl  std::fmt::Debug for Account  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Account");
         formatter.field("id", &self.id);
@@ -4358,7 +4046,7 @@ impl std::fmt::Debug for Account {
 }
 /// See [`Account`](crate::model::Account).
 pub mod account {
-
+    
     /// A builder for [`Account`](crate::model::Account).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4371,53 +4059,49 @@ pub mod account {
         pub(crate) joined_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of the account.</p>
+        /// <p>The unique identifier (ID) of the account.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the account.</p>
+        /// <p>The unique identifier (ID) of the account.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the account.</p> 
         /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the account.</p>
+        /// <p>The Amazon Resource Name (ARN) of the account.</p> 
         /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
-        /// <p>The email address associated with the Amazon Web Services account.</p>
+        /// <p>The email address associated with the Amazon Web Services account.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that represents a standard internet email address.</p>
         pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
             self.email = Some(input.into());
             self
         }
-        /// <p>The email address associated with the Amazon Web Services account.</p>
+        /// <p>The email address associated with the Amazon Web Services account.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that represents a standard internet email address.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.email = input;
-            self
+            self.email = input; self
         }
-        /// <p>The friendly name of the account.</p>
+        /// <p>The friendly name of the account.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
         }
-        /// <p>The friendly name of the account.</p>
+        /// <p>The friendly name of the account.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The status of the account in the organization.</p>
         pub fn status(mut self, input: crate::model::AccountStatus) -> Self {
@@ -4425,12 +4109,8 @@ pub mod account {
             self
         }
         /// <p>The status of the account in the organization.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::AccountStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::AccountStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The method by which the account joined the organization.</p>
         pub fn joined_method(mut self, input: crate::model::AccountJoinedMethod) -> Self {
@@ -4438,12 +4118,8 @@ pub mod account {
             self
         }
         /// <p>The method by which the account joined the organization.</p>
-        pub fn set_joined_method(
-            mut self,
-            input: std::option::Option<crate::model::AccountJoinedMethod>,
-        ) -> Self {
-            self.joined_method = input;
-            self
+        pub fn set_joined_method(mut self, input: std::option::Option<crate::model::AccountJoinedMethod>) -> Self {
+            self.joined_method = input; self
         }
         /// <p>The date the account became a part of the organization.</p>
         pub fn joined_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4451,23 +4127,26 @@ pub mod account {
             self
         }
         /// <p>The date the account became a part of the organization.</p>
-        pub fn set_joined_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.joined_timestamp = input;
-            self
+        pub fn set_joined_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.joined_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`Account`](crate::model::Account).
         pub fn build(self) -> crate::model::Account {
             crate::model::Account {
-                id: self.id,
-                arn: self.arn,
-                email: self.email,
-                name: self.name,
-                status: self.status,
-                joined_method: self.joined_method,
-                joined_timestamp: self.joined_timestamp,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                email: self.email
+                ,
+                name: self.name
+                ,
+                status: self.status
+                ,
+                joined_method: self.joined_method
+                ,
+                joined_timestamp: self.joined_timestamp
+                ,
             }
         }
     }
@@ -4484,6 +4163,8 @@ pub mod account {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Account {
     /// Creates a new builder-style object to manufacture [`Account`](crate::model::Account).
@@ -4498,9 +4179,9 @@ impl Account {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let handshakeconstraintviolationexceptionreason = unimplemented!();
 /// match handshakeconstraintviolationexceptionreason {
@@ -4530,22 +4211,14 @@ impl Account {
 /// Specifically, when `handshakeconstraintviolationexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HandshakeConstraintViolationExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum HandshakeConstraintViolationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     AccountNumberLimitExceeded,
@@ -4568,7 +4241,7 @@ pub enum HandshakeConstraintViolationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     PaymentInstrumentRequired,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for HandshakeConstraintViolationExceptionReason {
     fn from(s: &str) -> Self {
@@ -4588,12 +4261,12 @@ impl std::convert::From<&str> for HandshakeConstraintViolationExceptionReason {
     }
 }
 impl std::str::FromStr for HandshakeConstraintViolationExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HandshakeConstraintViolationExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(HandshakeConstraintViolationExceptionReason::from(s))
+                }
+            }
 impl HandshakeConstraintViolationExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4614,16 +4287,7 @@ impl HandshakeConstraintViolationExceptionReason {
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
-            "ALREADY_IN_AN_ORGANIZATION",
-            "HANDSHAKE_RATE_LIMIT_EXCEEDED",
-            "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES",
-            "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED",
-            "ORGANIZATION_ALREADY_HAS_ALL_FEATURES",
-            "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD",
-            "ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION",
-            "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED",
-            "PAYMENT_INSTRUMENT_REQUIRED",
+            "ACCOUNT_NUMBER_LIMIT_EXCEEDED", "ALREADY_IN_AN_ORGANIZATION", "HANDSHAKE_RATE_LIMIT_EXCEEDED", "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES", "MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED", "ORGANIZATION_ALREADY_HAS_ALL_FEATURES", "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD", "ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION", "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED", "PAYMENT_INSTRUMENT_REQUIRED"
         ]
     }
 }
@@ -4636,76 +4300,74 @@ impl AsRef<str> for HandshakeConstraintViolationExceptionReason {
 /// <p>Contains details about an organization. An organization is a collection of accounts that are centrally managed together using consolidated billing, organized hierarchically with organizational units (OUs), and controlled with policies .</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Organization {
-    /// <p>The unique identifier (ID) of an organization.</p>
+pub struct Organization  {
+    /// <p>The unique identifier (ID) of an organization.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires "o-" followed by from 10 to 32 lowercase letters or digits.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an organization.</p>
+    /// <p>The Amazon Resource Name (ARN) of an organization.</p> 
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>Specifies the functionality that currently is available to the organization. If set to "ALL", then all features are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
     #[doc(hidden)]
     pub feature_set: std::option::Option<crate::model::OrganizationFeatureSet>,
-    /// <p>The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.</p>
+    /// <p>The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.</p> 
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
     #[doc(hidden)]
     pub master_account_arn: std::option::Option<std::string::String>,
-    /// <p>The unique identifier (ID) of the management account of an organization.</p>
+    /// <p>The unique identifier (ID) of the management account of an organization.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
     #[doc(hidden)]
     pub master_account_id: std::option::Option<std::string::String>,
     /// <p>The email address that is associated with the Amazon Web Services account that is designated as the management account for the organization.</p>
     #[doc(hidden)]
     pub master_account_email: std::option::Option<std::string::String>,
-    /// <important>
-    /// <p>Do not use. This field is deprecated and doesn't provide complete information about the policies in your organization.</p>
-    /// </important>
+    /// <important> 
+    /// <p>Do not use. This field is deprecated and doesn't provide complete information about the policies in your organization.</p> 
+    /// </important> 
     /// <p>To determine the policies that are enabled and available for use in your organization, use the <code>ListRoots</code> operation instead.</p>
     #[doc(hidden)]
     pub available_policy_types: std::option::Option<std::vec::Vec<crate::model::PolicyTypeSummary>>,
 }
 impl Organization {
-    /// <p>The unique identifier (ID) of an organization.</p>
+    /// <p>The unique identifier (ID) of an organization.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires "o-" followed by from 10 to 32 lowercase letters or digits.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of an organization.</p>
+    /// <p>The Amazon Resource Name (ARN) of an organization.</p> 
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Specifies the functionality that currently is available to the organization. If set to "ALL", then all features are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
-    pub fn feature_set(&self) -> std::option::Option<&crate::model::OrganizationFeatureSet> {
+    pub fn feature_set(&self) -> std::option::Option<& crate::model::OrganizationFeatureSet> {
         self.feature_set.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.</p>
+    /// <p>The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.</p> 
     /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
-    pub fn master_account_arn(&self) -> std::option::Option<&str> {
+    pub fn master_account_arn(&self) -> std::option::Option<& str> {
         self.master_account_arn.as_deref()
     }
-    /// <p>The unique identifier (ID) of the management account of an organization.</p>
+    /// <p>The unique identifier (ID) of the management account of an organization.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
-    pub fn master_account_id(&self) -> std::option::Option<&str> {
+    pub fn master_account_id(&self) -> std::option::Option<& str> {
         self.master_account_id.as_deref()
     }
     /// <p>The email address that is associated with the Amazon Web Services account that is designated as the management account for the organization.</p>
-    pub fn master_account_email(&self) -> std::option::Option<&str> {
+    pub fn master_account_email(&self) -> std::option::Option<& str> {
         self.master_account_email.as_deref()
     }
-    /// <important>
-    /// <p>Do not use. This field is deprecated and doesn't provide complete information about the policies in your organization.</p>
-    /// </important>
+    /// <important> 
+    /// <p>Do not use. This field is deprecated and doesn't provide complete information about the policies in your organization.</p> 
+    /// </important> 
     /// <p>To determine the policies that are enabled and available for use in your organization, use the <code>ListRoots</code> operation instead.</p>
-    pub fn available_policy_types(
-        &self,
-    ) -> std::option::Option<&[crate::model::PolicyTypeSummary]> {
+    pub fn available_policy_types(&self) -> std::option::Option<& [crate::model::PolicyTypeSummary]> {
         self.available_policy_types.as_deref()
     }
 }
-impl std::fmt::Debug for Organization {
+impl  std::fmt::Debug for Organization  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Organization");
         formatter.field("id", &self.id);
@@ -4720,7 +4382,7 @@ impl std::fmt::Debug for Organization {
 }
 /// See [`Organization`](crate::model::Organization).
 pub mod organization {
-
+    
     /// A builder for [`Organization`](crate::model::Organization).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4730,33 +4392,30 @@ pub mod organization {
         pub(crate) master_account_arn: std::option::Option<std::string::String>,
         pub(crate) master_account_id: std::option::Option<std::string::String>,
         pub(crate) master_account_email: std::option::Option<std::string::String>,
-        pub(crate) available_policy_types:
-            std::option::Option<std::vec::Vec<crate::model::PolicyTypeSummary>>,
+        pub(crate) available_policy_types: std::option::Option<std::vec::Vec<crate::model::PolicyTypeSummary>>,
     }
     impl Builder {
-        /// <p>The unique identifier (ID) of an organization.</p>
+        /// <p>The unique identifier (ID) of an organization.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires "o-" followed by from 10 to 32 lowercase letters or digits.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of an organization.</p>
+        /// <p>The unique identifier (ID) of an organization.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires "o-" followed by from 10 to 32 lowercase letters or digits.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of an organization.</p>
+        /// <p>The Amazon Resource Name (ARN) of an organization.</p> 
         /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an organization.</p>
+        /// <p>The Amazon Resource Name (ARN) of an organization.</p> 
         /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Specifies the functionality that currently is available to the organization. If set to "ALL", then all features are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
         pub fn feature_set(mut self, input: crate::model::OrganizationFeatureSet) -> Self {
@@ -4764,42 +4423,30 @@ pub mod organization {
             self
         }
         /// <p>Specifies the functionality that currently is available to the organization. If set to "ALL", then all features are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
-        pub fn set_feature_set(
-            mut self,
-            input: std::option::Option<crate::model::OrganizationFeatureSet>,
-        ) -> Self {
-            self.feature_set = input;
-            self
+        pub fn set_feature_set(mut self, input: std::option::Option<crate::model::OrganizationFeatureSet>) -> Self {
+            self.feature_set = input; self
         }
-        /// <p>The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.</p>
+        /// <p>The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.</p> 
         /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
         pub fn master_account_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_account_arn = Some(input.into());
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.</p>
+        /// <p>The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.</p> 
         /// <p>For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN Formats Supported by Organizations</a> in the <i>Amazon Web Services Service Authorization Reference</i>.</p>
-        pub fn set_master_account_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.master_account_arn = input;
-            self
+        pub fn set_master_account_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.master_account_arn = input; self
         }
-        /// <p>The unique identifier (ID) of the management account of an organization.</p>
+        /// <p>The unique identifier (ID) of the management account of an organization.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
         pub fn master_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_account_id = Some(input.into());
             self
         }
-        /// <p>The unique identifier (ID) of the management account of an organization.</p>
+        /// <p>The unique identifier (ID) of the management account of an organization.</p> 
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12 digits.</p>
-        pub fn set_master_account_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.master_account_id = input;
-            self
+        pub fn set_master_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.master_account_id = input; self
         }
         /// <p>The email address that is associated with the Amazon Web Services account that is designated as the management account for the organization.</p>
         pub fn master_account_email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4807,48 +4454,47 @@ pub mod organization {
             self
         }
         /// <p>The email address that is associated with the Amazon Web Services account that is designated as the management account for the organization.</p>
-        pub fn set_master_account_email(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.master_account_email = input;
-            self
+        pub fn set_master_account_email(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.master_account_email = input; self
         }
         /// Appends an item to `available_policy_types`.
         ///
         /// To override the contents of this collection use [`set_available_policy_types`](Self::set_available_policy_types).
         ///
-        /// <important>
-        /// <p>Do not use. This field is deprecated and doesn't provide complete information about the policies in your organization.</p>
-        /// </important>
+        /// <important> 
+        /// <p>Do not use. This field is deprecated and doesn't provide complete information about the policies in your organization.</p> 
+        /// </important> 
         /// <p>To determine the policies that are enabled and available for use in your organization, use the <code>ListRoots</code> operation instead.</p>
         pub fn available_policy_types(mut self, input: crate::model::PolicyTypeSummary) -> Self {
             let mut v = self.available_policy_types.unwrap_or_default();
-            v.push(input);
-            self.available_policy_types = Some(v);
-            self
+                            v.push(input);
+                            self.available_policy_types = Some(v);
+                            self
         }
-        /// <important>
-        /// <p>Do not use. This field is deprecated and doesn't provide complete information about the policies in your organization.</p>
-        /// </important>
+        /// <important> 
+        /// <p>Do not use. This field is deprecated and doesn't provide complete information about the policies in your organization.</p> 
+        /// </important> 
         /// <p>To determine the policies that are enabled and available for use in your organization, use the <code>ListRoots</code> operation instead.</p>
-        pub fn set_available_policy_types(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PolicyTypeSummary>>,
-        ) -> Self {
-            self.available_policy_types = input;
-            self
+        pub fn set_available_policy_types(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicyTypeSummary>>) -> Self {
+            self.available_policy_types = input; self
         }
         /// Consumes the builder and constructs a [`Organization`](crate::model::Organization).
         pub fn build(self) -> crate::model::Organization {
             crate::model::Organization {
-                id: self.id,
-                arn: self.arn,
-                feature_set: self.feature_set,
-                master_account_arn: self.master_account_arn,
-                master_account_id: self.master_account_id,
-                master_account_email: self.master_account_email,
-                available_policy_types: self.available_policy_types,
+                id: self.id
+                ,
+                arn: self.arn
+                ,
+                feature_set: self.feature_set
+                ,
+                master_account_arn: self.master_account_arn
+                ,
+                master_account_id: self.master_account_id
+                ,
+                master_account_email: self.master_account_email
+                ,
+                available_policy_types: self.available_policy_types
+                ,
             }
         }
     }
@@ -4865,6 +4511,8 @@ pub mod organization {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Organization {
     /// Creates a new builder-style object to manufacture [`Organization`](crate::model::Organization).
@@ -4879,9 +4527,9 @@ impl Organization {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let organizationfeatureset = unimplemented!();
 /// match organizationfeatureset {
@@ -4903,60 +4551,52 @@ impl Organization {
 /// Specifically, when `organizationfeatureset` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OrganizationFeatureSet::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OrganizationFeatureSet {
     #[allow(missing_docs)] // documentation missing in model
     All,
     #[allow(missing_docs)] // documentation missing in model
     ConsolidatedBilling,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrganizationFeatureSet {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => OrganizationFeatureSet::All,
             "CONSOLIDATED_BILLING" => OrganizationFeatureSet::ConsolidatedBilling,
-            other => {
-                OrganizationFeatureSet::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => OrganizationFeatureSet::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OrganizationFeatureSet {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OrganizationFeatureSet::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OrganizationFeatureSet::from(s))
+                }
+            }
 impl OrganizationFeatureSet {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrganizationFeatureSet::All => "ALL",
             OrganizationFeatureSet::ConsolidatedBilling => "CONSOLIDATED_BILLING",
-            OrganizationFeatureSet::Unknown(value) => value.as_str(),
+            OrganizationFeatureSet::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "CONSOLIDATED_BILLING"]
+        &[
+            "ALL", "CONSOLIDATED_BILLING"
+        ]
     }
 }
 impl AsRef<str> for OrganizationFeatureSet {
@@ -4968,7 +4608,7 @@ impl AsRef<str> for OrganizationFeatureSet {
 /// <p>Contains rules to be applied to the affected accounts. The effective policy is the aggregation of any policies the account inherits, plus any policy directly attached to the account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EffectivePolicy {
+pub struct EffectivePolicy  {
     /// <p>The text content of the policy.</p>
     #[doc(hidden)]
     pub policy_content: std::option::Option<std::string::String>,
@@ -4984,25 +4624,25 @@ pub struct EffectivePolicy {
 }
 impl EffectivePolicy {
     /// <p>The text content of the policy.</p>
-    pub fn policy_content(&self) -> std::option::Option<&str> {
+    pub fn policy_content(&self) -> std::option::Option<& str> {
         self.policy_content.as_deref()
     }
     /// <p>The time of the last update to this policy.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The account ID of the policy target. </p>
-    pub fn target_id(&self) -> std::option::Option<&str> {
+    pub fn target_id(&self) -> std::option::Option<& str> {
         self.target_id.as_deref()
     }
     /// <p>The policy type.</p>
-    pub fn policy_type(&self) -> std::option::Option<&crate::model::EffectivePolicyType> {
+    pub fn policy_type(&self) -> std::option::Option<& crate::model::EffectivePolicyType> {
         self.policy_type.as_ref()
     }
 }
 /// See [`EffectivePolicy`](crate::model::EffectivePolicy).
 pub mod effective_policy {
-
+    
     /// A builder for [`EffectivePolicy`](crate::model::EffectivePolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -5018,12 +4658,8 @@ pub mod effective_policy {
             self
         }
         /// <p>The text content of the policy.</p>
-        pub fn set_policy_content(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.policy_content = input;
-            self
+        pub fn set_policy_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_content = input; self
         }
         /// <p>The time of the last update to this policy.</p>
         pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -5031,12 +4667,8 @@ pub mod effective_policy {
             self
         }
         /// <p>The time of the last update to this policy.</p>
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// <p>The account ID of the policy target. </p>
         pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5045,8 +4677,7 @@ pub mod effective_policy {
         }
         /// <p>The account ID of the policy target. </p>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target_id = input;
-            self
+            self.target_id = input; self
         }
         /// <p>The policy type.</p>
         pub fn policy_type(mut self, input: crate::model::EffectivePolicyType) -> Self {
@@ -5054,23 +4685,25 @@ pub mod effective_policy {
             self
         }
         /// <p>The policy type.</p>
-        pub fn set_policy_type(
-            mut self,
-            input: std::option::Option<crate::model::EffectivePolicyType>,
-        ) -> Self {
-            self.policy_type = input;
-            self
+        pub fn set_policy_type(mut self, input: std::option::Option<crate::model::EffectivePolicyType>) -> Self {
+            self.policy_type = input; self
         }
         /// Consumes the builder and constructs a [`EffectivePolicy`](crate::model::EffectivePolicy).
         pub fn build(self) -> crate::model::EffectivePolicy {
             crate::model::EffectivePolicy {
-                policy_content: self.policy_content,
-                last_updated_timestamp: self.last_updated_timestamp,
-                target_id: self.target_id,
-                policy_type: self.policy_type,
+                policy_content: self.policy_content
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                target_id: self.target_id
+                ,
+                policy_type: self.policy_type
+                ,
             }
         }
     }
+    
+    
 }
 impl EffectivePolicy {
     /// Creates a new builder-style object to manufacture [`EffectivePolicy`](crate::model::EffectivePolicy).
@@ -5085,9 +4718,9 @@ impl EffectivePolicy {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let effectivepolicytype = unimplemented!();
 /// match effectivepolicytype {
@@ -5110,22 +4743,14 @@ impl EffectivePolicy {
 /// Specifically, when `effectivepolicytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EffectivePolicyType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EffectivePolicyType {
     #[allow(missing_docs)] // documentation missing in model
     AiservicesOptOutPolicy,
@@ -5134,7 +4759,7 @@ pub enum EffectivePolicyType {
     #[allow(missing_docs)] // documentation missing in model
     TagPolicy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EffectivePolicyType {
     fn from(s: &str) -> Self {
@@ -5142,19 +4767,17 @@ impl std::convert::From<&str> for EffectivePolicyType {
             "AISERVICES_OPT_OUT_POLICY" => EffectivePolicyType::AiservicesOptOutPolicy,
             "BACKUP_POLICY" => EffectivePolicyType::BackupPolicy,
             "TAG_POLICY" => EffectivePolicyType::TagPolicy,
-            other => {
-                EffectivePolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => EffectivePolicyType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EffectivePolicyType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EffectivePolicyType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EffectivePolicyType::from(s))
+                }
+            }
 impl EffectivePolicyType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -5162,12 +4785,14 @@ impl EffectivePolicyType {
             EffectivePolicyType::AiservicesOptOutPolicy => "AISERVICES_OPT_OUT_POLICY",
             EffectivePolicyType::BackupPolicy => "BACKUP_POLICY",
             EffectivePolicyType::TagPolicy => "TAG_POLICY",
-            EffectivePolicyType::Unknown(value) => value.as_str(),
+            EffectivePolicyType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AISERVICES_OPT_OUT_POLICY", "BACKUP_POLICY", "TAG_POLICY"]
+        &[
+            "AISERVICES_OPT_OUT_POLICY", "BACKUP_POLICY", "TAG_POLICY"
+        ]
     }
 }
 impl AsRef<str> for EffectivePolicyType {
@@ -5182,9 +4807,9 @@ impl AsRef<str> for EffectivePolicyType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let accessdeniedfordependencyexceptionreason = unimplemented!();
 /// match accessdeniedfordependencyexceptionreason {
@@ -5205,60 +4830,48 @@ impl AsRef<str> for EffectivePolicyType {
 /// Specifically, when `accessdeniedfordependencyexceptionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccessDeniedForDependencyExceptionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AccessDeniedForDependencyExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     AccessDeniedDuringCreateServiceLinkedRole,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AccessDeniedForDependencyExceptionReason {
     fn from(s: &str) -> Self {
         match s {
-            "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE" => {
-                AccessDeniedForDependencyExceptionReason::AccessDeniedDuringCreateServiceLinkedRole
-            }
-            other => AccessDeniedForDependencyExceptionReason::Unknown(
-                crate::types::UnknownVariantValue(other.to_owned()),
-            ),
+            "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE" => AccessDeniedForDependencyExceptionReason::AccessDeniedDuringCreateServiceLinkedRole,
+            other => AccessDeniedForDependencyExceptionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AccessDeniedForDependencyExceptionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccessDeniedForDependencyExceptionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AccessDeniedForDependencyExceptionReason::from(s))
+                }
+            }
 impl AccessDeniedForDependencyExceptionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
-            AccessDeniedForDependencyExceptionReason::AccessDeniedDuringCreateServiceLinkedRole => {
-                "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE"
-            }
-            AccessDeniedForDependencyExceptionReason::Unknown(value) => value.as_str(),
+            AccessDeniedForDependencyExceptionReason::AccessDeniedDuringCreateServiceLinkedRole => "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE",
+            AccessDeniedForDependencyExceptionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE"]
+        &[
+            "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE"
+        ]
     }
 }
 impl AsRef<str> for AccessDeniedForDependencyExceptionReason {
@@ -5273,9 +4886,9 @@ impl AsRef<str> for AccessDeniedForDependencyExceptionReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let iamuseraccesstobilling = unimplemented!();
 /// match iamuseraccesstobilling {
@@ -5297,60 +4910,52 @@ impl AsRef<str> for AccessDeniedForDependencyExceptionReason {
 /// Specifically, when `iamuseraccesstobilling` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IamUserAccessToBilling::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum IamUserAccessToBilling {
     #[allow(missing_docs)] // documentation missing in model
     Allow,
     #[allow(missing_docs)] // documentation missing in model
     Deny,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for IamUserAccessToBilling {
     fn from(s: &str) -> Self {
         match s {
             "ALLOW" => IamUserAccessToBilling::Allow,
             "DENY" => IamUserAccessToBilling::Deny,
-            other => {
-                IamUserAccessToBilling::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => IamUserAccessToBilling::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for IamUserAccessToBilling {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IamUserAccessToBilling::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(IamUserAccessToBilling::from(s))
+                }
+            }
 impl IamUserAccessToBilling {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IamUserAccessToBilling::Allow => "ALLOW",
             IamUserAccessToBilling::Deny => "DENY",
-            IamUserAccessToBilling::Unknown(value) => value.as_str(),
+            IamUserAccessToBilling::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALLOW", "DENY"]
+        &[
+            "ALLOW", "DENY"
+        ]
     }
 }
 impl AsRef<str> for IamUserAccessToBilling {
@@ -5358,3 +4963,4 @@ impl AsRef<str> for IamUserAccessToBilling {
         self.as_str()
     }
 }
+

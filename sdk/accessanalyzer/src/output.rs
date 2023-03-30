@@ -3,7 +3,7 @@
 /// <p>The response to the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAnalyzersOutput {
+pub struct ListAnalyzersOutput  {
     /// <p>The analyzers retrieved.</p>
     #[doc(hidden)]
     pub analyzers: std::option::Option<std::vec::Vec<crate::model::AnalyzerSummary>>,
@@ -13,17 +13,17 @@ pub struct ListAnalyzersOutput {
 }
 impl ListAnalyzersOutput {
     /// <p>The analyzers retrieved.</p>
-    pub fn analyzers(&self) -> std::option::Option<&[crate::model::AnalyzerSummary]> {
+    pub fn analyzers(&self) -> std::option::Option<& [crate::model::AnalyzerSummary]> {
         self.analyzers.as_deref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAnalyzersOutput`](crate::output::ListAnalyzersOutput).
 pub mod list_analyzers_output {
-
+    
     /// A builder for [`ListAnalyzersOutput`](crate::output::ListAnalyzersOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -38,17 +38,13 @@ pub mod list_analyzers_output {
         /// <p>The analyzers retrieved.</p>
         pub fn analyzers(mut self, input: crate::model::AnalyzerSummary) -> Self {
             let mut v = self.analyzers.unwrap_or_default();
-            v.push(input);
-            self.analyzers = Some(v);
-            self
+                            v.push(input);
+                            self.analyzers = Some(v);
+                            self
         }
         /// <p>The analyzers retrieved.</p>
-        pub fn set_analyzers(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnalyzerSummary>>,
-        ) -> Self {
-            self.analyzers = input;
-            self
+        pub fn set_analyzers(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnalyzerSummary>>) -> Self {
+            self.analyzers = input; self
         }
         /// <p>A token used for pagination of results returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,17 +53,20 @@ pub mod list_analyzers_output {
         }
         /// <p>A token used for pagination of results returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAnalyzersOutput`](crate::output::ListAnalyzersOutput).
         pub fn build(self) -> crate::output::ListAnalyzersOutput {
             crate::output::ListAnalyzersOutput {
-                analyzers: self.analyzers,
-                next_token: self.next_token,
+                analyzers: self.analyzers
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAnalyzersOutput {
     /// Creates a new builder-style object to manufacture [`ListAnalyzersOutput`](crate::output::ListAnalyzersOutput).
@@ -79,20 +78,20 @@ impl ListAnalyzersOutput {
 /// <p>The response to the request to create an analyzer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAnalyzerOutput {
+pub struct CreateAnalyzerOutput  {
     /// <p>The ARN of the analyzer that was created by the request.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl CreateAnalyzerOutput {
     /// <p>The ARN of the analyzer that was created by the request.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
 }
 /// See [`CreateAnalyzerOutput`](crate::output::CreateAnalyzerOutput).
 pub mod create_analyzer_output {
-
+    
     /// A builder for [`CreateAnalyzerOutput`](crate::output::CreateAnalyzerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -106,14 +105,18 @@ pub mod create_analyzer_output {
         }
         /// <p>The ARN of the analyzer that was created by the request.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateAnalyzerOutput`](crate::output::CreateAnalyzerOutput).
         pub fn build(self) -> crate::output::CreateAnalyzerOutput {
-            crate::output::CreateAnalyzerOutput { arn: self.arn }
+            crate::output::CreateAnalyzerOutput {
+                arn: self.arn
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateAnalyzerOutput {
     /// Creates a new builder-style object to manufacture [`CreateAnalyzerOutput`](crate::output::CreateAnalyzerOutput).
@@ -125,19 +128,24 @@ impl CreateAnalyzerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAnalyzerOutput {}
+pub struct DeleteAnalyzerOutput  {
+}
 /// See [`DeleteAnalyzerOutput`](crate::output::DeleteAnalyzerOutput).
 pub mod delete_analyzer_output {
-
+    
     /// A builder for [`DeleteAnalyzerOutput`](crate::output::DeleteAnalyzerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAnalyzerOutput`](crate::output::DeleteAnalyzerOutput).
         pub fn build(self) -> crate::output::DeleteAnalyzerOutput {
-            crate::output::DeleteAnalyzerOutput {}
+            crate::output::DeleteAnalyzerOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAnalyzerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAnalyzerOutput`](crate::output::DeleteAnalyzerOutput).
@@ -149,20 +157,20 @@ impl DeleteAnalyzerOutput {
 /// <p>The response to the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAnalyzerOutput {
+pub struct GetAnalyzerOutput  {
     /// <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
     #[doc(hidden)]
     pub analyzer: std::option::Option<crate::model::AnalyzerSummary>,
 }
 impl GetAnalyzerOutput {
     /// <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
-    pub fn analyzer(&self) -> std::option::Option<&crate::model::AnalyzerSummary> {
+    pub fn analyzer(&self) -> std::option::Option<& crate::model::AnalyzerSummary> {
         self.analyzer.as_ref()
     }
 }
 /// See [`GetAnalyzerOutput`](crate::output::GetAnalyzerOutput).
 pub mod get_analyzer_output {
-
+    
     /// A builder for [`GetAnalyzerOutput`](crate::output::GetAnalyzerOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -175,20 +183,19 @@ pub mod get_analyzer_output {
             self
         }
         /// <p>An <code>AnalyzerSummary</code> object that contains information about the analyzer.</p>
-        pub fn set_analyzer(
-            mut self,
-            input: std::option::Option<crate::model::AnalyzerSummary>,
-        ) -> Self {
-            self.analyzer = input;
-            self
+        pub fn set_analyzer(mut self, input: std::option::Option<crate::model::AnalyzerSummary>) -> Self {
+            self.analyzer = input; self
         }
         /// Consumes the builder and constructs a [`GetAnalyzerOutput`](crate::output::GetAnalyzerOutput).
         pub fn build(self) -> crate::output::GetAnalyzerOutput {
             crate::output::GetAnalyzerOutput {
-                analyzer: self.analyzer,
+                analyzer: self.analyzer
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAnalyzerOutput {
     /// Creates a new builder-style object to manufacture [`GetAnalyzerOutput`](crate::output::GetAnalyzerOutput).
@@ -200,7 +207,7 @@ impl GetAnalyzerOutput {
 /// <p>The response to the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListArchiveRulesOutput {
+pub struct ListArchiveRulesOutput  {
     /// <p>A list of archive rules created for the specified analyzer.</p>
     #[doc(hidden)]
     pub archive_rules: std::option::Option<std::vec::Vec<crate::model::ArchiveRuleSummary>>,
@@ -210,22 +217,21 @@ pub struct ListArchiveRulesOutput {
 }
 impl ListArchiveRulesOutput {
     /// <p>A list of archive rules created for the specified analyzer.</p>
-    pub fn archive_rules(&self) -> std::option::Option<&[crate::model::ArchiveRuleSummary]> {
+    pub fn archive_rules(&self) -> std::option::Option<& [crate::model::ArchiveRuleSummary]> {
         self.archive_rules.as_deref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListArchiveRulesOutput`](crate::output::ListArchiveRulesOutput).
 pub mod list_archive_rules_output {
-
+    
     /// A builder for [`ListArchiveRulesOutput`](crate::output::ListArchiveRulesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) archive_rules:
-            std::option::Option<std::vec::Vec<crate::model::ArchiveRuleSummary>>,
+        pub(crate) archive_rules: std::option::Option<std::vec::Vec<crate::model::ArchiveRuleSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -236,17 +242,13 @@ pub mod list_archive_rules_output {
         /// <p>A list of archive rules created for the specified analyzer.</p>
         pub fn archive_rules(mut self, input: crate::model::ArchiveRuleSummary) -> Self {
             let mut v = self.archive_rules.unwrap_or_default();
-            v.push(input);
-            self.archive_rules = Some(v);
-            self
+                            v.push(input);
+                            self.archive_rules = Some(v);
+                            self
         }
         /// <p>A list of archive rules created for the specified analyzer.</p>
-        pub fn set_archive_rules(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ArchiveRuleSummary>>,
-        ) -> Self {
-            self.archive_rules = input;
-            self
+        pub fn set_archive_rules(mut self, input: std::option::Option<std::vec::Vec<crate::model::ArchiveRuleSummary>>) -> Self {
+            self.archive_rules = input; self
         }
         /// <p>A token used for pagination of results returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -255,17 +257,20 @@ pub mod list_archive_rules_output {
         }
         /// <p>A token used for pagination of results returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListArchiveRulesOutput`](crate::output::ListArchiveRulesOutput).
         pub fn build(self) -> crate::output::ListArchiveRulesOutput {
             crate::output::ListArchiveRulesOutput {
-                archive_rules: self.archive_rules,
-                next_token: self.next_token,
+                archive_rules: self.archive_rules
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListArchiveRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListArchiveRulesOutput`](crate::output::ListArchiveRulesOutput).
@@ -277,19 +282,24 @@ impl ListArchiveRulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateArchiveRuleOutput {}
+pub struct CreateArchiveRuleOutput  {
+}
 /// See [`CreateArchiveRuleOutput`](crate::output::CreateArchiveRuleOutput).
 pub mod create_archive_rule_output {
-
+    
     /// A builder for [`CreateArchiveRuleOutput`](crate::output::CreateArchiveRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CreateArchiveRuleOutput`](crate::output::CreateArchiveRuleOutput).
         pub fn build(self) -> crate::output::CreateArchiveRuleOutput {
-            crate::output::CreateArchiveRuleOutput {}
+            crate::output::CreateArchiveRuleOutput {
+            }
         }
     }
+    
+    
 }
 impl CreateArchiveRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreateArchiveRuleOutput`](crate::output::CreateArchiveRuleOutput).
@@ -301,19 +311,24 @@ impl CreateArchiveRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteArchiveRuleOutput {}
+pub struct DeleteArchiveRuleOutput  {
+}
 /// See [`DeleteArchiveRuleOutput`](crate::output::DeleteArchiveRuleOutput).
 pub mod delete_archive_rule_output {
-
+    
     /// A builder for [`DeleteArchiveRuleOutput`](crate::output::DeleteArchiveRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteArchiveRuleOutput`](crate::output::DeleteArchiveRuleOutput).
         pub fn build(self) -> crate::output::DeleteArchiveRuleOutput {
-            crate::output::DeleteArchiveRuleOutput {}
+            crate::output::DeleteArchiveRuleOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteArchiveRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteArchiveRuleOutput`](crate::output::DeleteArchiveRuleOutput).
@@ -325,19 +340,24 @@ impl DeleteArchiveRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateArchiveRuleOutput {}
+pub struct UpdateArchiveRuleOutput  {
+}
 /// See [`UpdateArchiveRuleOutput`](crate::output::UpdateArchiveRuleOutput).
 pub mod update_archive_rule_output {
-
+    
     /// A builder for [`UpdateArchiveRuleOutput`](crate::output::UpdateArchiveRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateArchiveRuleOutput`](crate::output::UpdateArchiveRuleOutput).
         pub fn build(self) -> crate::output::UpdateArchiveRuleOutput {
-            crate::output::UpdateArchiveRuleOutput {}
+            crate::output::UpdateArchiveRuleOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateArchiveRuleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateArchiveRuleOutput`](crate::output::UpdateArchiveRuleOutput).
@@ -349,20 +369,20 @@ impl UpdateArchiveRuleOutput {
 /// <p>The response to the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetArchiveRuleOutput {
+pub struct GetArchiveRuleOutput  {
     /// <p>Contains information about an archive rule.</p>
     #[doc(hidden)]
     pub archive_rule: std::option::Option<crate::model::ArchiveRuleSummary>,
 }
 impl GetArchiveRuleOutput {
     /// <p>Contains information about an archive rule.</p>
-    pub fn archive_rule(&self) -> std::option::Option<&crate::model::ArchiveRuleSummary> {
+    pub fn archive_rule(&self) -> std::option::Option<& crate::model::ArchiveRuleSummary> {
         self.archive_rule.as_ref()
     }
 }
 /// See [`GetArchiveRuleOutput`](crate::output::GetArchiveRuleOutput).
 pub mod get_archive_rule_output {
-
+    
     /// A builder for [`GetArchiveRuleOutput`](crate::output::GetArchiveRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -375,20 +395,19 @@ pub mod get_archive_rule_output {
             self
         }
         /// <p>Contains information about an archive rule.</p>
-        pub fn set_archive_rule(
-            mut self,
-            input: std::option::Option<crate::model::ArchiveRuleSummary>,
-        ) -> Self {
-            self.archive_rule = input;
-            self
+        pub fn set_archive_rule(mut self, input: std::option::Option<crate::model::ArchiveRuleSummary>) -> Self {
+            self.archive_rule = input; self
         }
         /// Consumes the builder and constructs a [`GetArchiveRuleOutput`](crate::output::GetArchiveRuleOutput).
         pub fn build(self) -> crate::output::GetArchiveRuleOutput {
             crate::output::GetArchiveRuleOutput {
-                archive_rule: self.archive_rule,
+                archive_rule: self.archive_rule
+                ,
             }
         }
     }
+    
+    
 }
 impl GetArchiveRuleOutput {
     /// Creates a new builder-style object to manufacture [`GetArchiveRuleOutput`](crate::output::GetArchiveRuleOutput).
@@ -400,7 +419,7 @@ impl GetArchiveRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidatePolicyOutput {
+pub struct ValidatePolicyOutput  {
     /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy checks.</p>
     #[doc(hidden)]
     pub findings: std::option::Option<std::vec::Vec<crate::model::ValidatePolicyFinding>>,
@@ -410,22 +429,21 @@ pub struct ValidatePolicyOutput {
 }
 impl ValidatePolicyOutput {
     /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy checks.</p>
-    pub fn findings(&self) -> std::option::Option<&[crate::model::ValidatePolicyFinding]> {
+    pub fn findings(&self) -> std::option::Option<& [crate::model::ValidatePolicyFinding]> {
         self.findings.as_deref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ValidatePolicyOutput`](crate::output::ValidatePolicyOutput).
 pub mod validate_policy_output {
-
+    
     /// A builder for [`ValidatePolicyOutput`](crate::output::ValidatePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) findings:
-            std::option::Option<std::vec::Vec<crate::model::ValidatePolicyFinding>>,
+        pub(crate) findings: std::option::Option<std::vec::Vec<crate::model::ValidatePolicyFinding>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -436,17 +454,13 @@ pub mod validate_policy_output {
         /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy checks.</p>
         pub fn findings(mut self, input: crate::model::ValidatePolicyFinding) -> Self {
             let mut v = self.findings.unwrap_or_default();
-            v.push(input);
-            self.findings = Some(v);
-            self
+                            v.push(input);
+                            self.findings = Some(v);
+                            self
         }
         /// <p>The list of findings in a policy returned by IAM Access Analyzer based on its suite of policy checks.</p>
-        pub fn set_findings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ValidatePolicyFinding>>,
-        ) -> Self {
-            self.findings = input;
-            self
+        pub fn set_findings(mut self, input: std::option::Option<std::vec::Vec<crate::model::ValidatePolicyFinding>>) -> Self {
+            self.findings = input; self
         }
         /// <p>A token used for pagination of results returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -455,17 +469,20 @@ pub mod validate_policy_output {
         }
         /// <p>A token used for pagination of results returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ValidatePolicyOutput`](crate::output::ValidatePolicyOutput).
         pub fn build(self) -> crate::output::ValidatePolicyOutput {
             crate::output::ValidatePolicyOutput {
-                findings: self.findings,
-                next_token: self.next_token,
+                findings: self.findings
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ValidatePolicyOutput {
     /// Creates a new builder-style object to manufacture [`ValidatePolicyOutput`](crate::output::ValidatePolicyOutput).
@@ -477,19 +494,24 @@ impl ValidatePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFindingsOutput {}
+pub struct UpdateFindingsOutput  {
+}
 /// See [`UpdateFindingsOutput`](crate::output::UpdateFindingsOutput).
 pub mod update_findings_output {
-
+    
     /// A builder for [`UpdateFindingsOutput`](crate::output::UpdateFindingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UpdateFindingsOutput`](crate::output::UpdateFindingsOutput).
         pub fn build(self) -> crate::output::UpdateFindingsOutput {
-            crate::output::UpdateFindingsOutput {}
+            crate::output::UpdateFindingsOutput {
+            }
         }
     }
+    
+    
 }
 impl UpdateFindingsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFindingsOutput`](crate::output::UpdateFindingsOutput).
@@ -501,19 +523,24 @@ impl UpdateFindingsOutput {
 /// <p>The response to the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -525,19 +552,24 @@ impl UntagResourceOutput {
 /// <p>The response to the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -549,19 +581,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartResourceScanOutput {}
+pub struct StartResourceScanOutput  {
+}
 /// See [`StartResourceScanOutput`](crate::output::StartResourceScanOutput).
 pub mod start_resource_scan_output {
-
+    
     /// A builder for [`StartResourceScanOutput`](crate::output::StartResourceScanOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StartResourceScanOutput`](crate::output::StartResourceScanOutput).
         pub fn build(self) -> crate::output::StartResourceScanOutput {
-            crate::output::StartResourceScanOutput {}
+            crate::output::StartResourceScanOutput {
+            }
         }
     }
+    
+    
 }
 impl StartResourceScanOutput {
     /// Creates a new builder-style object to manufacture [`StartResourceScanOutput`](crate::output::StartResourceScanOutput).
@@ -573,20 +610,20 @@ impl StartResourceScanOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartPolicyGenerationOutput {
+pub struct StartPolicyGenerationOutput  {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StartPolicyGenerationOutput {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
 }
 /// See [`StartPolicyGenerationOutput`](crate::output::StartPolicyGenerationOutput).
 pub mod start_policy_generation_output {
-
+    
     /// A builder for [`StartPolicyGenerationOutput`](crate::output::StartPolicyGenerationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -600,16 +637,18 @@ pub mod start_policy_generation_output {
         }
         /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// Consumes the builder and constructs a [`StartPolicyGenerationOutput`](crate::output::StartPolicyGenerationOutput).
         pub fn build(self) -> crate::output::StartPolicyGenerationOutput {
             crate::output::StartPolicyGenerationOutput {
-                job_id: self.job_id,
+                job_id: self.job_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartPolicyGenerationOutput {
     /// Creates a new builder-style object to manufacture [`StartPolicyGenerationOutput`](crate::output::StartPolicyGenerationOutput).
@@ -621,30 +660,24 @@ impl StartPolicyGenerationOutput {
 /// <p>The response to the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags that are applied to the specified resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags that are applied to the specified resource.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -652,31 +685,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags that are applied to the specified resource.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags that are applied to the specified resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -688,7 +716,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPolicyGenerationsOutput {
+pub struct ListPolicyGenerationsOutput  {
     /// <p>A <code>PolicyGeneration</code> object that contains details about the generated policy.</p>
     #[doc(hidden)]
     pub policy_generations: std::option::Option<std::vec::Vec<crate::model::PolicyGeneration>>,
@@ -698,22 +726,21 @@ pub struct ListPolicyGenerationsOutput {
 }
 impl ListPolicyGenerationsOutput {
     /// <p>A <code>PolicyGeneration</code> object that contains details about the generated policy.</p>
-    pub fn policy_generations(&self) -> std::option::Option<&[crate::model::PolicyGeneration]> {
+    pub fn policy_generations(&self) -> std::option::Option<& [crate::model::PolicyGeneration]> {
         self.policy_generations.as_deref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPolicyGenerationsOutput`](crate::output::ListPolicyGenerationsOutput).
 pub mod list_policy_generations_output {
-
+    
     /// A builder for [`ListPolicyGenerationsOutput`](crate::output::ListPolicyGenerationsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) policy_generations:
-            std::option::Option<std::vec::Vec<crate::model::PolicyGeneration>>,
+        pub(crate) policy_generations: std::option::Option<std::vec::Vec<crate::model::PolicyGeneration>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -724,17 +751,13 @@ pub mod list_policy_generations_output {
         /// <p>A <code>PolicyGeneration</code> object that contains details about the generated policy.</p>
         pub fn policy_generations(mut self, input: crate::model::PolicyGeneration) -> Self {
             let mut v = self.policy_generations.unwrap_or_default();
-            v.push(input);
-            self.policy_generations = Some(v);
-            self
+                            v.push(input);
+                            self.policy_generations = Some(v);
+                            self
         }
         /// <p>A <code>PolicyGeneration</code> object that contains details about the generated policy.</p>
-        pub fn set_policy_generations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PolicyGeneration>>,
-        ) -> Self {
-            self.policy_generations = input;
-            self
+        pub fn set_policy_generations(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicyGeneration>>) -> Self {
+            self.policy_generations = input; self
         }
         /// <p>A token used for pagination of results returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -743,17 +766,20 @@ pub mod list_policy_generations_output {
         }
         /// <p>A token used for pagination of results returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPolicyGenerationsOutput`](crate::output::ListPolicyGenerationsOutput).
         pub fn build(self) -> crate::output::ListPolicyGenerationsOutput {
             crate::output::ListPolicyGenerationsOutput {
-                policy_generations: self.policy_generations,
-                next_token: self.next_token,
+                policy_generations: self.policy_generations
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPolicyGenerationsOutput {
     /// Creates a new builder-style object to manufacture [`ListPolicyGenerationsOutput`](crate::output::ListPolicyGenerationsOutput).
@@ -765,7 +791,7 @@ impl ListPolicyGenerationsOutput {
 /// <p>The response to the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFindingsOutput {
+pub struct ListFindingsOutput  {
     /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
     #[doc(hidden)]
     pub findings: std::option::Option<std::vec::Vec<crate::model::FindingSummary>>,
@@ -775,17 +801,17 @@ pub struct ListFindingsOutput {
 }
 impl ListFindingsOutput {
     /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
-    pub fn findings(&self) -> std::option::Option<&[crate::model::FindingSummary]> {
+    pub fn findings(&self) -> std::option::Option<& [crate::model::FindingSummary]> {
         self.findings.as_deref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFindingsOutput`](crate::output::ListFindingsOutput).
 pub mod list_findings_output {
-
+    
     /// A builder for [`ListFindingsOutput`](crate::output::ListFindingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -800,17 +826,13 @@ pub mod list_findings_output {
         /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
         pub fn findings(mut self, input: crate::model::FindingSummary) -> Self {
             let mut v = self.findings.unwrap_or_default();
-            v.push(input);
-            self.findings = Some(v);
-            self
+                            v.push(input);
+                            self.findings = Some(v);
+                            self
         }
         /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
-        pub fn set_findings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FindingSummary>>,
-        ) -> Self {
-            self.findings = input;
-            self
+        pub fn set_findings(mut self, input: std::option::Option<std::vec::Vec<crate::model::FindingSummary>>) -> Self {
+            self.findings = input; self
         }
         /// <p>A token used for pagination of results returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -819,17 +841,20 @@ pub mod list_findings_output {
         }
         /// <p>A token used for pagination of results returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFindingsOutput`](crate::output::ListFindingsOutput).
         pub fn build(self) -> crate::output::ListFindingsOutput {
             crate::output::ListFindingsOutput {
-                findings: self.findings,
-                next_token: self.next_token,
+                findings: self.findings
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFindingsOutput {
     /// Creates a new builder-style object to manufacture [`ListFindingsOutput`](crate::output::ListFindingsOutput).
@@ -841,35 +866,31 @@ impl ListFindingsOutput {
 /// <p>The response to the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAnalyzedResourcesOutput {
+pub struct ListAnalyzedResourcesOutput  {
     /// <p>A list of resources that were analyzed.</p>
     #[doc(hidden)]
-    pub analyzed_resources:
-        std::option::Option<std::vec::Vec<crate::model::AnalyzedResourceSummary>>,
+    pub analyzed_resources: std::option::Option<std::vec::Vec<crate::model::AnalyzedResourceSummary>>,
     /// <p>A token used for pagination of results returned.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAnalyzedResourcesOutput {
     /// <p>A list of resources that were analyzed.</p>
-    pub fn analyzed_resources(
-        &self,
-    ) -> std::option::Option<&[crate::model::AnalyzedResourceSummary]> {
+    pub fn analyzed_resources(&self) -> std::option::Option<& [crate::model::AnalyzedResourceSummary]> {
         self.analyzed_resources.as_deref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAnalyzedResourcesOutput`](crate::output::ListAnalyzedResourcesOutput).
 pub mod list_analyzed_resources_output {
-
+    
     /// A builder for [`ListAnalyzedResourcesOutput`](crate::output::ListAnalyzedResourcesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) analyzed_resources:
-            std::option::Option<std::vec::Vec<crate::model::AnalyzedResourceSummary>>,
+        pub(crate) analyzed_resources: std::option::Option<std::vec::Vec<crate::model::AnalyzedResourceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -880,17 +901,13 @@ pub mod list_analyzed_resources_output {
         /// <p>A list of resources that were analyzed.</p>
         pub fn analyzed_resources(mut self, input: crate::model::AnalyzedResourceSummary) -> Self {
             let mut v = self.analyzed_resources.unwrap_or_default();
-            v.push(input);
-            self.analyzed_resources = Some(v);
-            self
+                            v.push(input);
+                            self.analyzed_resources = Some(v);
+                            self
         }
         /// <p>A list of resources that were analyzed.</p>
-        pub fn set_analyzed_resources(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AnalyzedResourceSummary>>,
-        ) -> Self {
-            self.analyzed_resources = input;
-            self
+        pub fn set_analyzed_resources(mut self, input: std::option::Option<std::vec::Vec<crate::model::AnalyzedResourceSummary>>) -> Self {
+            self.analyzed_resources = input; self
         }
         /// <p>A token used for pagination of results returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -899,17 +916,20 @@ pub mod list_analyzed_resources_output {
         }
         /// <p>A token used for pagination of results returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAnalyzedResourcesOutput`](crate::output::ListAnalyzedResourcesOutput).
         pub fn build(self) -> crate::output::ListAnalyzedResourcesOutput {
             crate::output::ListAnalyzedResourcesOutput {
-                analyzed_resources: self.analyzed_resources,
-                next_token: self.next_token,
+                analyzed_resources: self.analyzed_resources
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAnalyzedResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListAnalyzedResourcesOutput`](crate::output::ListAnalyzedResourcesOutput).
@@ -921,7 +941,7 @@ impl ListAnalyzedResourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccessPreviewsOutput {
+pub struct ListAccessPreviewsOutput  {
     /// <p>A list of access previews retrieved for the analyzer.</p>
     #[doc(hidden)]
     pub access_previews: std::option::Option<std::vec::Vec<crate::model::AccessPreviewSummary>>,
@@ -931,22 +951,21 @@ pub struct ListAccessPreviewsOutput {
 }
 impl ListAccessPreviewsOutput {
     /// <p>A list of access previews retrieved for the analyzer.</p>
-    pub fn access_previews(&self) -> std::option::Option<&[crate::model::AccessPreviewSummary]> {
+    pub fn access_previews(&self) -> std::option::Option<& [crate::model::AccessPreviewSummary]> {
         self.access_previews.as_deref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAccessPreviewsOutput`](crate::output::ListAccessPreviewsOutput).
 pub mod list_access_previews_output {
-
+    
     /// A builder for [`ListAccessPreviewsOutput`](crate::output::ListAccessPreviewsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) access_previews:
-            std::option::Option<std::vec::Vec<crate::model::AccessPreviewSummary>>,
+        pub(crate) access_previews: std::option::Option<std::vec::Vec<crate::model::AccessPreviewSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -957,17 +976,13 @@ pub mod list_access_previews_output {
         /// <p>A list of access previews retrieved for the analyzer.</p>
         pub fn access_previews(mut self, input: crate::model::AccessPreviewSummary) -> Self {
             let mut v = self.access_previews.unwrap_or_default();
-            v.push(input);
-            self.access_previews = Some(v);
-            self
+                            v.push(input);
+                            self.access_previews = Some(v);
+                            self
         }
         /// <p>A list of access previews retrieved for the analyzer.</p>
-        pub fn set_access_previews(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccessPreviewSummary>>,
-        ) -> Self {
-            self.access_previews = input;
-            self
+        pub fn set_access_previews(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccessPreviewSummary>>) -> Self {
+            self.access_previews = input; self
         }
         /// <p>A token used for pagination of results returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -976,17 +991,20 @@ pub mod list_access_previews_output {
         }
         /// <p>A token used for pagination of results returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAccessPreviewsOutput`](crate::output::ListAccessPreviewsOutput).
         pub fn build(self) -> crate::output::ListAccessPreviewsOutput {
             crate::output::ListAccessPreviewsOutput {
-                access_previews: self.access_previews,
-                next_token: self.next_token,
+                access_previews: self.access_previews
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAccessPreviewsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessPreviewsOutput`](crate::output::ListAccessPreviewsOutput).
@@ -998,7 +1016,7 @@ impl ListAccessPreviewsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccessPreviewFindingsOutput {
+pub struct ListAccessPreviewFindingsOutput  {
     /// <p>A list of access preview findings that match the specified filter criteria.</p>
     #[doc(hidden)]
     pub findings: std::option::Option<std::vec::Vec<crate::model::AccessPreviewFinding>>,
@@ -1008,17 +1026,17 @@ pub struct ListAccessPreviewFindingsOutput {
 }
 impl ListAccessPreviewFindingsOutput {
     /// <p>A list of access preview findings that match the specified filter criteria.</p>
-    pub fn findings(&self) -> std::option::Option<&[crate::model::AccessPreviewFinding]> {
+    pub fn findings(&self) -> std::option::Option<& [crate::model::AccessPreviewFinding]> {
         self.findings.as_deref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAccessPreviewFindingsOutput`](crate::output::ListAccessPreviewFindingsOutput).
 pub mod list_access_preview_findings_output {
-
+    
     /// A builder for [`ListAccessPreviewFindingsOutput`](crate::output::ListAccessPreviewFindingsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1033,17 +1051,13 @@ pub mod list_access_preview_findings_output {
         /// <p>A list of access preview findings that match the specified filter criteria.</p>
         pub fn findings(mut self, input: crate::model::AccessPreviewFinding) -> Self {
             let mut v = self.findings.unwrap_or_default();
-            v.push(input);
-            self.findings = Some(v);
-            self
+                            v.push(input);
+                            self.findings = Some(v);
+                            self
         }
         /// <p>A list of access preview findings that match the specified filter criteria.</p>
-        pub fn set_findings(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccessPreviewFinding>>,
-        ) -> Self {
-            self.findings = input;
-            self
+        pub fn set_findings(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccessPreviewFinding>>) -> Self {
+            self.findings = input; self
         }
         /// <p>A token used for pagination of results returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1052,17 +1066,20 @@ pub mod list_access_preview_findings_output {
         }
         /// <p>A token used for pagination of results returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAccessPreviewFindingsOutput`](crate::output::ListAccessPreviewFindingsOutput).
         pub fn build(self) -> crate::output::ListAccessPreviewFindingsOutput {
             crate::output::ListAccessPreviewFindingsOutput {
-                findings: self.findings,
-                next_token: self.next_token,
+                findings: self.findings
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAccessPreviewFindingsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessPreviewFindingsOutput`](crate::output::ListAccessPreviewFindingsOutput).
@@ -1074,7 +1091,7 @@ impl ListAccessPreviewFindingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGeneratedPolicyOutput {
+pub struct GetGeneratedPolicyOutput  {
     /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated policy.</p>
     #[doc(hidden)]
     pub job_details: std::option::Option<crate::model::JobDetails>,
@@ -1084,25 +1101,22 @@ pub struct GetGeneratedPolicyOutput {
 }
 impl GetGeneratedPolicyOutput {
     /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated policy.</p>
-    pub fn job_details(&self) -> std::option::Option<&crate::model::JobDetails> {
+    pub fn job_details(&self) -> std::option::Option<& crate::model::JobDetails> {
         self.job_details.as_ref()
     }
     /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.</p>
-    pub fn generated_policy_result(
-        &self,
-    ) -> std::option::Option<&crate::model::GeneratedPolicyResult> {
+    pub fn generated_policy_result(&self) -> std::option::Option<& crate::model::GeneratedPolicyResult> {
         self.generated_policy_result.as_ref()
     }
 }
 /// See [`GetGeneratedPolicyOutput`](crate::output::GetGeneratedPolicyOutput).
 pub mod get_generated_policy_output {
-
+    
     /// A builder for [`GetGeneratedPolicyOutput`](crate::output::GetGeneratedPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_details: std::option::Option<crate::model::JobDetails>,
-        pub(crate) generated_policy_result:
-            std::option::Option<crate::model::GeneratedPolicyResult>,
+        pub(crate) generated_policy_result: std::option::Option<crate::model::GeneratedPolicyResult>,
     }
     impl Builder {
         /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated policy.</p>
@@ -1111,37 +1125,30 @@ pub mod get_generated_policy_output {
             self
         }
         /// <p>A <code>GeneratedPolicyDetails</code> object that contains details about the generated policy.</p>
-        pub fn set_job_details(
-            mut self,
-            input: std::option::Option<crate::model::JobDetails>,
-        ) -> Self {
-            self.job_details = input;
-            self
+        pub fn set_job_details(mut self, input: std::option::Option<crate::model::JobDetails>) -> Self {
+            self.job_details = input; self
         }
         /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.</p>
-        pub fn generated_policy_result(
-            mut self,
-            input: crate::model::GeneratedPolicyResult,
-        ) -> Self {
+        pub fn generated_policy_result(mut self, input: crate::model::GeneratedPolicyResult) -> Self {
             self.generated_policy_result = Some(input);
             self
         }
         /// <p>A <code>GeneratedPolicyResult</code> object that contains the generated policies and associated details.</p>
-        pub fn set_generated_policy_result(
-            mut self,
-            input: std::option::Option<crate::model::GeneratedPolicyResult>,
-        ) -> Self {
-            self.generated_policy_result = input;
-            self
+        pub fn set_generated_policy_result(mut self, input: std::option::Option<crate::model::GeneratedPolicyResult>) -> Self {
+            self.generated_policy_result = input; self
         }
         /// Consumes the builder and constructs a [`GetGeneratedPolicyOutput`](crate::output::GetGeneratedPolicyOutput).
         pub fn build(self) -> crate::output::GetGeneratedPolicyOutput {
             crate::output::GetGeneratedPolicyOutput {
-                job_details: self.job_details,
-                generated_policy_result: self.generated_policy_result,
+                job_details: self.job_details
+                ,
+                generated_policy_result: self.generated_policy_result
+                ,
             }
         }
     }
+    
+    
 }
 impl GetGeneratedPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetGeneratedPolicyOutput`](crate::output::GetGeneratedPolicyOutput).
@@ -1153,20 +1160,20 @@ impl GetGeneratedPolicyOutput {
 /// <p>The response to the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFindingOutput {
+pub struct GetFindingOutput  {
     /// <p>A <code>finding</code> object that contains finding details.</p>
     #[doc(hidden)]
     pub finding: std::option::Option<crate::model::Finding>,
 }
 impl GetFindingOutput {
     /// <p>A <code>finding</code> object that contains finding details.</p>
-    pub fn finding(&self) -> std::option::Option<&crate::model::Finding> {
+    pub fn finding(&self) -> std::option::Option<& crate::model::Finding> {
         self.finding.as_ref()
     }
 }
 /// See [`GetFindingOutput`](crate::output::GetFindingOutput).
 pub mod get_finding_output {
-
+    
     /// A builder for [`GetFindingOutput`](crate::output::GetFindingOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1180,16 +1187,18 @@ pub mod get_finding_output {
         }
         /// <p>A <code>finding</code> object that contains finding details.</p>
         pub fn set_finding(mut self, input: std::option::Option<crate::model::Finding>) -> Self {
-            self.finding = input;
-            self
+            self.finding = input; self
         }
         /// Consumes the builder and constructs a [`GetFindingOutput`](crate::output::GetFindingOutput).
         pub fn build(self) -> crate::output::GetFindingOutput {
             crate::output::GetFindingOutput {
-                finding: self.finding,
+                finding: self.finding
+                ,
             }
         }
     }
+    
+    
 }
 impl GetFindingOutput {
     /// Creates a new builder-style object to manufacture [`GetFindingOutput`](crate::output::GetFindingOutput).
@@ -1201,20 +1210,20 @@ impl GetFindingOutput {
 /// <p>The response to the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAnalyzedResourceOutput {
+pub struct GetAnalyzedResourceOutput  {
     /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer found when it analyzed the resource.</p>
     #[doc(hidden)]
     pub resource: std::option::Option<crate::model::AnalyzedResource>,
 }
 impl GetAnalyzedResourceOutput {
     /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer found when it analyzed the resource.</p>
-    pub fn resource(&self) -> std::option::Option<&crate::model::AnalyzedResource> {
+    pub fn resource(&self) -> std::option::Option<& crate::model::AnalyzedResource> {
         self.resource.as_ref()
     }
 }
 /// See [`GetAnalyzedResourceOutput`](crate::output::GetAnalyzedResourceOutput).
 pub mod get_analyzed_resource_output {
-
+    
     /// A builder for [`GetAnalyzedResourceOutput`](crate::output::GetAnalyzedResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1227,20 +1236,19 @@ pub mod get_analyzed_resource_output {
             self
         }
         /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer found when it analyzed the resource.</p>
-        pub fn set_resource(
-            mut self,
-            input: std::option::Option<crate::model::AnalyzedResource>,
-        ) -> Self {
-            self.resource = input;
-            self
+        pub fn set_resource(mut self, input: std::option::Option<crate::model::AnalyzedResource>) -> Self {
+            self.resource = input; self
         }
         /// Consumes the builder and constructs a [`GetAnalyzedResourceOutput`](crate::output::GetAnalyzedResourceOutput).
         pub fn build(self) -> crate::output::GetAnalyzedResourceOutput {
             crate::output::GetAnalyzedResourceOutput {
-                resource: self.resource,
+                resource: self.resource
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAnalyzedResourceOutput {
     /// Creates a new builder-style object to manufacture [`GetAnalyzedResourceOutput`](crate::output::GetAnalyzedResourceOutput).
@@ -1252,20 +1260,20 @@ impl GetAnalyzedResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccessPreviewOutput {
+pub struct GetAccessPreviewOutput  {
     /// <p>An object that contains information about the access preview.</p>
     #[doc(hidden)]
     pub access_preview: std::option::Option<crate::model::AccessPreview>,
 }
 impl GetAccessPreviewOutput {
     /// <p>An object that contains information about the access preview.</p>
-    pub fn access_preview(&self) -> std::option::Option<&crate::model::AccessPreview> {
+    pub fn access_preview(&self) -> std::option::Option<& crate::model::AccessPreview> {
         self.access_preview.as_ref()
     }
 }
 /// See [`GetAccessPreviewOutput`](crate::output::GetAccessPreviewOutput).
 pub mod get_access_preview_output {
-
+    
     /// A builder for [`GetAccessPreviewOutput`](crate::output::GetAccessPreviewOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1278,20 +1286,19 @@ pub mod get_access_preview_output {
             self
         }
         /// <p>An object that contains information about the access preview.</p>
-        pub fn set_access_preview(
-            mut self,
-            input: std::option::Option<crate::model::AccessPreview>,
-        ) -> Self {
-            self.access_preview = input;
-            self
+        pub fn set_access_preview(mut self, input: std::option::Option<crate::model::AccessPreview>) -> Self {
+            self.access_preview = input; self
         }
         /// Consumes the builder and constructs a [`GetAccessPreviewOutput`](crate::output::GetAccessPreviewOutput).
         pub fn build(self) -> crate::output::GetAccessPreviewOutput {
             crate::output::GetAccessPreviewOutput {
-                access_preview: self.access_preview,
+                access_preview: self.access_preview
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAccessPreviewOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessPreviewOutput`](crate::output::GetAccessPreviewOutput).
@@ -1303,20 +1310,20 @@ impl GetAccessPreviewOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAccessPreviewOutput {
+pub struct CreateAccessPreviewOutput  {
     /// <p>The unique ID for the access preview.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl CreateAccessPreviewOutput {
     /// <p>The unique ID for the access preview.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`CreateAccessPreviewOutput`](crate::output::CreateAccessPreviewOutput).
 pub mod create_access_preview_output {
-
+    
     /// A builder for [`CreateAccessPreviewOutput`](crate::output::CreateAccessPreviewOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1330,14 +1337,18 @@ pub mod create_access_preview_output {
         }
         /// <p>The unique ID for the access preview.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`CreateAccessPreviewOutput`](crate::output::CreateAccessPreviewOutput).
         pub fn build(self) -> crate::output::CreateAccessPreviewOutput {
-            crate::output::CreateAccessPreviewOutput { id: self.id }
+            crate::output::CreateAccessPreviewOutput {
+                id: self.id
+                ,
+            }
         }
     }
+    
+    
 }
 impl CreateAccessPreviewOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessPreviewOutput`](crate::output::CreateAccessPreviewOutput).
@@ -1349,19 +1360,24 @@ impl CreateAccessPreviewOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelPolicyGenerationOutput {}
+pub struct CancelPolicyGenerationOutput  {
+}
 /// See [`CancelPolicyGenerationOutput`](crate::output::CancelPolicyGenerationOutput).
 pub mod cancel_policy_generation_output {
-
+    
     /// A builder for [`CancelPolicyGenerationOutput`](crate::output::CancelPolicyGenerationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CancelPolicyGenerationOutput`](crate::output::CancelPolicyGenerationOutput).
         pub fn build(self) -> crate::output::CancelPolicyGenerationOutput {
-            crate::output::CancelPolicyGenerationOutput {}
+            crate::output::CancelPolicyGenerationOutput {
+            }
         }
     }
+    
+    
 }
 impl CancelPolicyGenerationOutput {
     /// Creates a new builder-style object to manufacture [`CancelPolicyGenerationOutput`](crate::output::CancelPolicyGenerationOutput).
@@ -1373,19 +1389,24 @@ impl CancelPolicyGenerationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplyArchiveRuleOutput {}
+pub struct ApplyArchiveRuleOutput  {
+}
 /// See [`ApplyArchiveRuleOutput`](crate::output::ApplyArchiveRuleOutput).
 pub mod apply_archive_rule_output {
-
+    
     /// A builder for [`ApplyArchiveRuleOutput`](crate::output::ApplyArchiveRuleOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`ApplyArchiveRuleOutput`](crate::output::ApplyArchiveRuleOutput).
         pub fn build(self) -> crate::output::ApplyArchiveRuleOutput {
-            crate::output::ApplyArchiveRuleOutput {}
+            crate::output::ApplyArchiveRuleOutput {
+            }
         }
     }
+    
+    
 }
 impl ApplyArchiveRuleOutput {
     /// Creates a new builder-style object to manufacture [`ApplyArchiveRuleOutput`](crate::output::ApplyArchiveRuleOutput).
@@ -1393,3 +1414,4 @@ impl ApplyArchiveRuleOutput {
         crate::output::apply_archive_rule_output::Builder::default()
     }
 }
+

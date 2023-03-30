@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let errorcode = unimplemented!();
 /// match errorcode {
@@ -43,22 +43,14 @@
 /// Specifically, when `errorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -91,7 +83,7 @@ pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     VoiceConnectorGroupAssociationsExist,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ErrorCode {
     fn from(s: &str) -> Self {
@@ -110,20 +102,18 @@ impl std::convert::From<&str> for ErrorCode {
             "Throttling" => ErrorCode::Throttling,
             "Unauthorized" => ErrorCode::Unauthorized,
             "Unprocessable" => ErrorCode::Unprocessable,
-            "VoiceConnectorGroupAssociationsExist" => {
-                ErrorCode::VoiceConnectorGroupAssociationsExist
-            }
-            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            "VoiceConnectorGroupAssociationsExist" => ErrorCode::VoiceConnectorGroupAssociationsExist,
+            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ErrorCode::from(s))
+                }
+            }
 impl ErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -142,30 +132,14 @@ impl ErrorCode {
             ErrorCode::Throttling => "Throttling",
             ErrorCode::Unauthorized => "Unauthorized",
             ErrorCode::Unprocessable => "Unprocessable",
-            ErrorCode::VoiceConnectorGroupAssociationsExist => {
-                "VoiceConnectorGroupAssociationsExist"
-            }
-            ErrorCode::Unknown(value) => value.as_str(),
+            ErrorCode::VoiceConnectorGroupAssociationsExist => "VoiceConnectorGroupAssociationsExist",
+            ErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AccessDenied",
-            "BadRequest",
-            "Conflict",
-            "Forbidden",
-            "NotFound",
-            "PhoneNumberAssociationsExist",
-            "PreconditionFailed",
-            "ResourceLimitExceeded",
-            "ServiceFailure",
-            "ServiceUnavailable",
-            "Throttled",
-            "Throttling",
-            "Unauthorized",
-            "Unprocessable",
-            "VoiceConnectorGroupAssociationsExist",
+            "AccessDenied", "BadRequest", "Conflict", "Forbidden", "NotFound", "PhoneNumberAssociationsExist", "PreconditionFailed", "ResourceLimitExceeded", "ServiceFailure", "ServiceUnavailable", "Throttled", "Throttling", "Unauthorized", "Unprocessable", "VoiceConnectorGroupAssociationsExist"
         ]
     }
 }
@@ -181,9 +155,9 @@ impl AsRef<str> for ErrorCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let allowmessages = unimplemented!();
 /// match allowmessages {
@@ -205,58 +179,52 @@ impl AsRef<str> for ErrorCode {
 /// Specifically, when `allowmessages` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AllowMessages::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AllowMessages {
     #[allow(missing_docs)] // documentation missing in model
     All,
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AllowMessages {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => AllowMessages::All,
             "NONE" => AllowMessages::None,
-            other => AllowMessages::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => AllowMessages::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AllowMessages {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AllowMessages::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AllowMessages::from(s))
+                }
+            }
 impl AllowMessages {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AllowMessages::All => "ALL",
             AllowMessages::None => "NONE",
-            AllowMessages::Unknown(value) => value.as_str(),
+            AllowMessages::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL", "NONE"]
+        &[
+            "ALL", "NONE"
+        ]
     }
 }
 impl AsRef<str> for AllowMessages {
@@ -268,7 +236,7 @@ impl AsRef<str> for AllowMessages {
 /// <p>A tag object containing a key-value pair.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The key in a tag.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -278,15 +246,15 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The key in a tag.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value in a tag.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
+impl  std::fmt::Debug for Tag  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
@@ -296,7 +264,7 @@ impl std::fmt::Debug for Tag {
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -311,8 +279,7 @@ pub mod tag {
         }
         /// <p>The key in a tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The value in a tag.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -321,14 +288,15 @@ pub mod tag {
         }
         /// <p>The value in a tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
@@ -340,6 +308,8 @@ pub mod tag {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -351,7 +321,7 @@ impl Tag {
 /// <p>The attributes of an <code>Endpoint</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct EndpointAttributes {
+pub struct EndpointAttributes  {
     /// <p>The device token for the GCM, APNS, and APNS_SANDBOX endpoint types.</p>
     #[doc(hidden)]
     pub device_token: std::option::Option<std::string::String>,
@@ -361,15 +331,15 @@ pub struct EndpointAttributes {
 }
 impl EndpointAttributes {
     /// <p>The device token for the GCM, APNS, and APNS_SANDBOX endpoint types.</p>
-    pub fn device_token(&self) -> std::option::Option<&str> {
+    pub fn device_token(&self) -> std::option::Option<& str> {
         self.device_token.as_deref()
     }
     /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
-    pub fn voip_device_token(&self) -> std::option::Option<&str> {
+    pub fn voip_device_token(&self) -> std::option::Option<& str> {
         self.voip_device_token.as_deref()
     }
 }
-impl std::fmt::Debug for EndpointAttributes {
+impl  std::fmt::Debug for EndpointAttributes  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("EndpointAttributes");
         formatter.field("device_token", &"*** Sensitive Data Redacted ***");
@@ -379,7 +349,7 @@ impl std::fmt::Debug for EndpointAttributes {
 }
 /// See [`EndpointAttributes`](crate::model::EndpointAttributes).
 pub mod endpoint_attributes {
-
+    
     /// A builder for [`EndpointAttributes`](crate::model::EndpointAttributes).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -394,8 +364,7 @@ pub mod endpoint_attributes {
         }
         /// <p>The device token for the GCM, APNS, and APNS_SANDBOX endpoint types.</p>
         pub fn set_device_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.device_token = input;
-            self
+            self.device_token = input; self
         }
         /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
         pub fn voip_device_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -403,18 +372,16 @@ pub mod endpoint_attributes {
             self
         }
         /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
-        pub fn set_voip_device_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.voip_device_token = input;
-            self
+        pub fn set_voip_device_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.voip_device_token = input; self
         }
         /// Consumes the builder and constructs a [`EndpointAttributes`](crate::model::EndpointAttributes).
         pub fn build(self) -> crate::model::EndpointAttributes {
             crate::model::EndpointAttributes {
-                device_token: self.device_token,
-                voip_device_token: self.voip_device_token,
+                device_token: self.device_token
+                ,
+                voip_device_token: self.voip_device_token
+                ,
             }
         }
     }
@@ -426,6 +393,8 @@ pub mod endpoint_attributes {
             formatter.finish()
         }
     }
+    
+    
 }
 impl EndpointAttributes {
     /// Creates a new builder-style object to manufacture [`EndpointAttributes`](crate::model::EndpointAttributes).
@@ -440,9 +409,9 @@ impl EndpointAttributes {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let appinstanceuserendpointtype = unimplemented!();
 /// match appinstanceuserendpointtype {
@@ -465,22 +434,14 @@ impl EndpointAttributes {
 /// Specifically, when `appinstanceuserendpointtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AppInstanceUserEndpointType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AppInstanceUserEndpointType {
     #[allow(missing_docs)] // documentation missing in model
     Apns,
@@ -489,7 +450,7 @@ pub enum AppInstanceUserEndpointType {
     #[allow(missing_docs)] // documentation missing in model
     Gcm,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AppInstanceUserEndpointType {
     fn from(s: &str) -> Self {
@@ -497,19 +458,17 @@ impl std::convert::From<&str> for AppInstanceUserEndpointType {
             "APNS" => AppInstanceUserEndpointType::Apns,
             "APNS_SANDBOX" => AppInstanceUserEndpointType::ApnsSandbox,
             "GCM" => AppInstanceUserEndpointType::Gcm,
-            other => AppInstanceUserEndpointType::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => AppInstanceUserEndpointType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AppInstanceUserEndpointType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppInstanceUserEndpointType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AppInstanceUserEndpointType::from(s))
+                }
+            }
 impl AppInstanceUserEndpointType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -517,12 +476,14 @@ impl AppInstanceUserEndpointType {
             AppInstanceUserEndpointType::Apns => "APNS",
             AppInstanceUserEndpointType::ApnsSandbox => "APNS_SANDBOX",
             AppInstanceUserEndpointType::Gcm => "GCM",
-            AppInstanceUserEndpointType::Unknown(value) => value.as_str(),
+            AppInstanceUserEndpointType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["APNS", "APNS_SANDBOX", "GCM"]
+        &[
+            "APNS", "APNS_SANDBOX", "GCM"
+        ]
     }
 }
 impl AsRef<str> for AppInstanceUserEndpointType {
@@ -534,52 +495,45 @@ impl AsRef<str> for AppInstanceUserEndpointType {
 /// <p>The details of the data-retention settings for an <code>AppInstance</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppInstanceRetentionSettings {
+pub struct AppInstanceRetentionSettings  {
     /// <p>The length of time in days to retain the messages in a channel.</p>
     #[doc(hidden)]
     pub channel_retention_settings: std::option::Option<crate::model::ChannelRetentionSettings>,
 }
 impl AppInstanceRetentionSettings {
     /// <p>The length of time in days to retain the messages in a channel.</p>
-    pub fn channel_retention_settings(
-        &self,
-    ) -> std::option::Option<&crate::model::ChannelRetentionSettings> {
+    pub fn channel_retention_settings(&self) -> std::option::Option<& crate::model::ChannelRetentionSettings> {
         self.channel_retention_settings.as_ref()
     }
 }
 /// See [`AppInstanceRetentionSettings`](crate::model::AppInstanceRetentionSettings).
 pub mod app_instance_retention_settings {
-
+    
     /// A builder for [`AppInstanceRetentionSettings`](crate::model::AppInstanceRetentionSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) channel_retention_settings:
-            std::option::Option<crate::model::ChannelRetentionSettings>,
+        pub(crate) channel_retention_settings: std::option::Option<crate::model::ChannelRetentionSettings>,
     }
     impl Builder {
         /// <p>The length of time in days to retain the messages in a channel.</p>
-        pub fn channel_retention_settings(
-            mut self,
-            input: crate::model::ChannelRetentionSettings,
-        ) -> Self {
+        pub fn channel_retention_settings(mut self, input: crate::model::ChannelRetentionSettings) -> Self {
             self.channel_retention_settings = Some(input);
             self
         }
         /// <p>The length of time in days to retain the messages in a channel.</p>
-        pub fn set_channel_retention_settings(
-            mut self,
-            input: std::option::Option<crate::model::ChannelRetentionSettings>,
-        ) -> Self {
-            self.channel_retention_settings = input;
-            self
+        pub fn set_channel_retention_settings(mut self, input: std::option::Option<crate::model::ChannelRetentionSettings>) -> Self {
+            self.channel_retention_settings = input; self
         }
         /// Consumes the builder and constructs a [`AppInstanceRetentionSettings`](crate::model::AppInstanceRetentionSettings).
         pub fn build(self) -> crate::model::AppInstanceRetentionSettings {
             crate::model::AppInstanceRetentionSettings {
-                channel_retention_settings: self.channel_retention_settings,
+                channel_retention_settings: self.channel_retention_settings
+                ,
             }
         }
     }
+    
+    
 }
 impl AppInstanceRetentionSettings {
     /// Creates a new builder-style object to manufacture [`AppInstanceRetentionSettings`](crate::model::AppInstanceRetentionSettings).
@@ -591,7 +545,7 @@ impl AppInstanceRetentionSettings {
 /// <p>The details of the retention settings for a channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChannelRetentionSettings {
+pub struct ChannelRetentionSettings  {
     /// <p>The time in days to retain the messages in a channel.</p>
     #[doc(hidden)]
     pub retention_days: std::option::Option<i32>,
@@ -604,7 +558,7 @@ impl ChannelRetentionSettings {
 }
 /// See [`ChannelRetentionSettings`](crate::model::ChannelRetentionSettings).
 pub mod channel_retention_settings {
-
+    
     /// A builder for [`ChannelRetentionSettings`](crate::model::ChannelRetentionSettings).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -618,16 +572,18 @@ pub mod channel_retention_settings {
         }
         /// <p>The time in days to retain the messages in a channel.</p>
         pub fn set_retention_days(mut self, input: std::option::Option<i32>) -> Self {
-            self.retention_days = input;
-            self
+            self.retention_days = input; self
         }
         /// Consumes the builder and constructs a [`ChannelRetentionSettings`](crate::model::ChannelRetentionSettings).
         pub fn build(self) -> crate::model::ChannelRetentionSettings {
             crate::model::ChannelRetentionSettings {
-                retention_days: self.retention_days,
+                retention_days: self.retention_days
+                ,
             }
         }
     }
+    
+    
 }
 impl ChannelRetentionSettings {
     /// Creates a new builder-style object to manufacture [`ChannelRetentionSettings`](crate::model::ChannelRetentionSettings).
@@ -639,7 +595,7 @@ impl ChannelRetentionSettings {
 /// <p>Summary of the details of an <code>AppInstanceUser</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AppInstanceUserSummary {
+pub struct AppInstanceUserSummary  {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
@@ -652,19 +608,19 @@ pub struct AppInstanceUserSummary {
 }
 impl AppInstanceUserSummary {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+    pub fn app_instance_user_arn(&self) -> std::option::Option<& str> {
         self.app_instance_user_arn.as_deref()
     }
     /// <p>The name of an <code>AppInstanceUser</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
-    pub fn metadata(&self) -> std::option::Option<&str> {
+    pub fn metadata(&self) -> std::option::Option<& str> {
         self.metadata.as_deref()
     }
 }
-impl std::fmt::Debug for AppInstanceUserSummary {
+impl  std::fmt::Debug for AppInstanceUserSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceUserSummary");
         formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
@@ -675,7 +631,7 @@ impl std::fmt::Debug for AppInstanceUserSummary {
 }
 /// See [`AppInstanceUserSummary`](crate::model::AppInstanceUserSummary).
 pub mod app_instance_user_summary {
-
+    
     /// A builder for [`AppInstanceUserSummary`](crate::model::AppInstanceUserSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -690,12 +646,8 @@ pub mod app_instance_user_summary {
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-        pub fn set_app_instance_user_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_instance_user_arn = input;
-            self
+        pub fn set_app_instance_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_instance_user_arn = input; self
         }
         /// <p>The name of an <code>AppInstanceUser</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -704,8 +656,7 @@ pub mod app_instance_user_summary {
         }
         /// <p>The name of an <code>AppInstanceUser</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
         pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
@@ -714,15 +665,17 @@ pub mod app_instance_user_summary {
         }
         /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
         pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metadata = input;
-            self
+            self.metadata = input; self
         }
         /// Consumes the builder and constructs a [`AppInstanceUserSummary`](crate::model::AppInstanceUserSummary).
         pub fn build(self) -> crate::model::AppInstanceUserSummary {
             crate::model::AppInstanceUserSummary {
-                app_instance_user_arn: self.app_instance_user_arn,
-                name: self.name,
-                metadata: self.metadata,
+                app_instance_user_arn: self.app_instance_user_arn
+                ,
+                name: self.name
+                ,
+                metadata: self.metadata
+                ,
             }
         }
     }
@@ -735,6 +688,8 @@ pub mod app_instance_user_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl AppInstanceUserSummary {
     /// Creates a new builder-style object to manufacture [`AppInstanceUserSummary`](crate::model::AppInstanceUserSummary).
@@ -746,7 +701,7 @@ impl AppInstanceUserSummary {
 /// <p>Summary of the details of an <code>AppInstanceUserEndpoint</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AppInstanceUserEndpointSummary {
+pub struct AppInstanceUserEndpointSummary  {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
@@ -768,31 +723,31 @@ pub struct AppInstanceUserEndpointSummary {
 }
 impl AppInstanceUserEndpointSummary {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+    pub fn app_instance_user_arn(&self) -> std::option::Option<& str> {
         self.app_instance_user_arn.as_deref()
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn endpoint_id(&self) -> std::option::Option<& str> {
         self.endpoint_id.as_deref()
     }
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::AppInstanceUserEndpointType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::AppInstanceUserEndpointType> {
         self.r#type.as_ref()
     }
     /// <p>BBoolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
-    pub fn allow_messages(&self) -> std::option::Option<&crate::model::AllowMessages> {
+    pub fn allow_messages(&self) -> std::option::Option<& crate::model::AllowMessages> {
         self.allow_messages.as_ref()
     }
     /// <p>A read-only field that represent the state of an <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn endpoint_state(&self) -> std::option::Option<&crate::model::EndpointState> {
+    pub fn endpoint_state(&self) -> std::option::Option<& crate::model::EndpointState> {
         self.endpoint_state.as_ref()
     }
 }
-impl std::fmt::Debug for AppInstanceUserEndpointSummary {
+impl  std::fmt::Debug for AppInstanceUserEndpointSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceUserEndpointSummary");
         formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
@@ -806,7 +761,7 @@ impl std::fmt::Debug for AppInstanceUserEndpointSummary {
 }
 /// See [`AppInstanceUserEndpointSummary`](crate::model::AppInstanceUserEndpointSummary).
 pub mod app_instance_user_endpoint_summary {
-
+    
     /// A builder for [`AppInstanceUserEndpointSummary`](crate::model::AppInstanceUserEndpointSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -824,12 +779,8 @@ pub mod app_instance_user_endpoint_summary {
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-        pub fn set_app_instance_user_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_instance_user_arn = input;
-            self
+        pub fn set_app_instance_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_instance_user_arn = input; self
         }
         /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
         pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -838,8 +789,7 @@ pub mod app_instance_user_endpoint_summary {
         }
         /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
         pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.endpoint_id = input;
-            self
+            self.endpoint_id = input; self
         }
         /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -848,8 +798,7 @@ pub mod app_instance_user_endpoint_summary {
         }
         /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of the <code>AppInstanceUserEndpoint</code>.</p>
         pub fn r#type(mut self, input: crate::model::AppInstanceUserEndpointType) -> Self {
@@ -857,12 +806,8 @@ pub mod app_instance_user_endpoint_summary {
             self
         }
         /// <p>The type of the <code>AppInstanceUserEndpoint</code>.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::AppInstanceUserEndpointType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::AppInstanceUserEndpointType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>BBoolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
         pub fn allow_messages(mut self, input: crate::model::AllowMessages) -> Self {
@@ -870,12 +815,8 @@ pub mod app_instance_user_endpoint_summary {
             self
         }
         /// <p>BBoolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
-        pub fn set_allow_messages(
-            mut self,
-            input: std::option::Option<crate::model::AllowMessages>,
-        ) -> Self {
-            self.allow_messages = input;
-            self
+        pub fn set_allow_messages(mut self, input: std::option::Option<crate::model::AllowMessages>) -> Self {
+            self.allow_messages = input; self
         }
         /// <p>A read-only field that represent the state of an <code>AppInstanceUserEndpoint</code>.</p>
         pub fn endpoint_state(mut self, input: crate::model::EndpointState) -> Self {
@@ -883,22 +824,24 @@ pub mod app_instance_user_endpoint_summary {
             self
         }
         /// <p>A read-only field that represent the state of an <code>AppInstanceUserEndpoint</code>.</p>
-        pub fn set_endpoint_state(
-            mut self,
-            input: std::option::Option<crate::model::EndpointState>,
-        ) -> Self {
-            self.endpoint_state = input;
-            self
+        pub fn set_endpoint_state(mut self, input: std::option::Option<crate::model::EndpointState>) -> Self {
+            self.endpoint_state = input; self
         }
         /// Consumes the builder and constructs a [`AppInstanceUserEndpointSummary`](crate::model::AppInstanceUserEndpointSummary).
         pub fn build(self) -> crate::model::AppInstanceUserEndpointSummary {
             crate::model::AppInstanceUserEndpointSummary {
-                app_instance_user_arn: self.app_instance_user_arn,
-                endpoint_id: self.endpoint_id,
-                name: self.name,
-                r#type: self.r#type,
-                allow_messages: self.allow_messages,
-                endpoint_state: self.endpoint_state,
+                app_instance_user_arn: self.app_instance_user_arn
+                ,
+                endpoint_id: self.endpoint_id
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                allow_messages: self.allow_messages
+                ,
+                endpoint_state: self.endpoint_state
+                ,
             }
         }
     }
@@ -914,6 +857,8 @@ pub mod app_instance_user_endpoint_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl AppInstanceUserEndpointSummary {
     /// Creates a new builder-style object to manufacture [`AppInstanceUserEndpointSummary`](crate::model::AppInstanceUserEndpointSummary).
@@ -922,16 +867,16 @@ impl AppInstanceUserEndpointSummary {
     }
 }
 
-/// <p>A read-only field that represents the state of an <code>AppInstanceUserEndpoint</code>. Supported values:</p>
-/// <ul>
-/// <li> <p> <code>ACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is active and able to receive messages. When <code>ACTIVE</code>, the <code>EndpointStatusReason</code> remains empty.</p> </li>
-/// <li> <p> <code>INACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is inactive and can't receive message. When INACTIVE, the corresponding reason will be conveyed through EndpointStatusReason.</p> </li>
-/// <li> <p> <code>INVALID_DEVICE_TOKEN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to invalid device token</p> </li>
-/// <li> <p> <code>INVALID_PINPOINT_ARN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to an invalid pinpoint ARN that was input through the <code>ResourceArn</code> field.</p> </li>
+/// <p>A read-only field that represents the state of an <code>AppInstanceUserEndpoint</code>. Supported values:</p> 
+/// <ul> 
+/// <li> <p> <code>ACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is active and able to receive messages. When <code>ACTIVE</code>, the <code>EndpointStatusReason</code> remains empty.</p> </li> 
+/// <li> <p> <code>INACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is inactive and can't receive message. When INACTIVE, the corresponding reason will be conveyed through EndpointStatusReason.</p> </li> 
+/// <li> <p> <code>INVALID_DEVICE_TOKEN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to invalid device token</p> </li> 
+/// <li> <p> <code>INVALID_PINPOINT_ARN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to an invalid pinpoint ARN that was input through the <code>ResourceArn</code> field.</p> </li> 
 /// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointState {
+pub struct EndpointState  {
     /// <p>Enum that indicates the Status of an <code>AppInstanceUserEndpoint</code>.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::EndpointStatus>,
@@ -941,17 +886,17 @@ pub struct EndpointState {
 }
 impl EndpointState {
     /// <p>Enum that indicates the Status of an <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::EndpointStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::EndpointStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the <code>EndpointStatus</code>.</p>
-    pub fn status_reason(&self) -> std::option::Option<&crate::model::EndpointStatusReason> {
+    pub fn status_reason(&self) -> std::option::Option<& crate::model::EndpointStatusReason> {
         self.status_reason.as_ref()
     }
 }
 /// See [`EndpointState`](crate::model::EndpointState).
 pub mod endpoint_state {
-
+    
     /// A builder for [`EndpointState`](crate::model::EndpointState).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -965,12 +910,8 @@ pub mod endpoint_state {
             self
         }
         /// <p>Enum that indicates the Status of an <code>AppInstanceUserEndpoint</code>.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::EndpointStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::EndpointStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The reason for the <code>EndpointStatus</code>.</p>
         pub fn status_reason(mut self, input: crate::model::EndpointStatusReason) -> Self {
@@ -978,21 +919,21 @@ pub mod endpoint_state {
             self
         }
         /// <p>The reason for the <code>EndpointStatus</code>.</p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<crate::model::EndpointStatusReason>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<crate::model::EndpointStatusReason>) -> Self {
+            self.status_reason = input; self
         }
         /// Consumes the builder and constructs a [`EndpointState`](crate::model::EndpointState).
         pub fn build(self) -> crate::model::EndpointState {
             crate::model::EndpointState {
-                status: self.status,
-                status_reason: self.status_reason,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
             }
         }
     }
+    
+    
 }
 impl EndpointState {
     /// Creates a new builder-style object to manufacture [`EndpointState`](crate::model::EndpointState).
@@ -1007,9 +948,9 @@ impl EndpointState {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let endpointstatusreason = unimplemented!();
 /// match endpointstatusreason {
@@ -1031,60 +972,52 @@ impl EndpointState {
 /// Specifically, when `endpointstatusreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EndpointStatusReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EndpointStatusReason {
     #[allow(missing_docs)] // documentation missing in model
     InvalidDeviceToken,
     #[allow(missing_docs)] // documentation missing in model
     InvalidPinpointArn,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EndpointStatusReason {
     fn from(s: &str) -> Self {
         match s {
             "INVALID_DEVICE_TOKEN" => EndpointStatusReason::InvalidDeviceToken,
             "INVALID_PINPOINT_ARN" => EndpointStatusReason::InvalidPinpointArn,
-            other => {
-                EndpointStatusReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => EndpointStatusReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EndpointStatusReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EndpointStatusReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EndpointStatusReason::from(s))
+                }
+            }
 impl EndpointStatusReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EndpointStatusReason::InvalidDeviceToken => "INVALID_DEVICE_TOKEN",
             EndpointStatusReason::InvalidPinpointArn => "INVALID_PINPOINT_ARN",
-            EndpointStatusReason::Unknown(value) => value.as_str(),
+            EndpointStatusReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INVALID_DEVICE_TOKEN", "INVALID_PINPOINT_ARN"]
+        &[
+            "INVALID_DEVICE_TOKEN", "INVALID_PINPOINT_ARN"
+        ]
     }
 }
 impl AsRef<str> for EndpointStatusReason {
@@ -1099,9 +1032,9 @@ impl AsRef<str> for EndpointStatusReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let endpointstatus = unimplemented!();
 /// match endpointstatus {
@@ -1123,58 +1056,52 @@ impl AsRef<str> for EndpointStatusReason {
 /// Specifically, when `endpointstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EndpointStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum EndpointStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for EndpointStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => EndpointStatus::Active,
             "INACTIVE" => EndpointStatus::Inactive,
-            other => EndpointStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => EndpointStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for EndpointStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EndpointStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(EndpointStatus::from(s))
+                }
+            }
 impl EndpointStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EndpointStatus::Active => "ACTIVE",
             EndpointStatus::Inactive => "INACTIVE",
-            EndpointStatus::Unknown(value) => value.as_str(),
+            EndpointStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "INACTIVE"]
+        &[
+            "ACTIVE", "INACTIVE"
+        ]
     }
 }
 impl AsRef<str> for EndpointStatus {
@@ -1186,7 +1113,7 @@ impl AsRef<str> for EndpointStatus {
 /// <p>Summary of the data for an <code>AppInstance</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AppInstanceSummary {
+pub struct AppInstanceSummary  {
     /// <p>The <code>AppInstance</code> ARN.</p>
     #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
@@ -1199,19 +1126,19 @@ pub struct AppInstanceSummary {
 }
 impl AppInstanceSummary {
     /// <p>The <code>AppInstance</code> ARN.</p>
-    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn app_instance_arn(&self) -> std::option::Option<& str> {
         self.app_instance_arn.as_deref()
     }
     /// <p>The name of the <code>AppInstance</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The metadata of the <code>AppInstance</code>.</p>
-    pub fn metadata(&self) -> std::option::Option<&str> {
+    pub fn metadata(&self) -> std::option::Option<& str> {
         self.metadata.as_deref()
     }
 }
-impl std::fmt::Debug for AppInstanceSummary {
+impl  std::fmt::Debug for AppInstanceSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceSummary");
         formatter.field("app_instance_arn", &self.app_instance_arn);
@@ -1222,7 +1149,7 @@ impl std::fmt::Debug for AppInstanceSummary {
 }
 /// See [`AppInstanceSummary`](crate::model::AppInstanceSummary).
 pub mod app_instance_summary {
-
+    
     /// A builder for [`AppInstanceSummary`](crate::model::AppInstanceSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1237,12 +1164,8 @@ pub mod app_instance_summary {
             self
         }
         /// <p>The <code>AppInstance</code> ARN.</p>
-        pub fn set_app_instance_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_instance_arn = input;
-            self
+        pub fn set_app_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_instance_arn = input; self
         }
         /// <p>The name of the <code>AppInstance</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1251,8 +1174,7 @@ pub mod app_instance_summary {
         }
         /// <p>The name of the <code>AppInstance</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The metadata of the <code>AppInstance</code>.</p>
         pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1261,15 +1183,17 @@ pub mod app_instance_summary {
         }
         /// <p>The metadata of the <code>AppInstance</code>.</p>
         pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metadata = input;
-            self
+            self.metadata = input; self
         }
         /// Consumes the builder and constructs a [`AppInstanceSummary`](crate::model::AppInstanceSummary).
         pub fn build(self) -> crate::model::AppInstanceSummary {
             crate::model::AppInstanceSummary {
-                app_instance_arn: self.app_instance_arn,
-                name: self.name,
-                metadata: self.metadata,
+                app_instance_arn: self.app_instance_arn
+                ,
+                name: self.name
+                ,
+                metadata: self.metadata
+                ,
             }
         }
     }
@@ -1282,6 +1206,8 @@ pub mod app_instance_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl AppInstanceSummary {
     /// Creates a new builder-style object to manufacture [`AppInstanceSummary`](crate::model::AppInstanceSummary).
@@ -1293,20 +1219,20 @@ impl AppInstanceSummary {
 /// <p>Summary of the details of an <code>AppInstanceAdmin</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppInstanceAdminSummary {
+pub struct AppInstanceAdminSummary  {
     /// <p>The details of the <code>AppInstanceAdmin</code>.</p>
     #[doc(hidden)]
     pub admin: std::option::Option<crate::model::Identity>,
 }
 impl AppInstanceAdminSummary {
     /// <p>The details of the <code>AppInstanceAdmin</code>.</p>
-    pub fn admin(&self) -> std::option::Option<&crate::model::Identity> {
+    pub fn admin(&self) -> std::option::Option<& crate::model::Identity> {
         self.admin.as_ref()
     }
 }
 /// See [`AppInstanceAdminSummary`](crate::model::AppInstanceAdminSummary).
 pub mod app_instance_admin_summary {
-
+    
     /// A builder for [`AppInstanceAdminSummary`](crate::model::AppInstanceAdminSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1320,14 +1246,18 @@ pub mod app_instance_admin_summary {
         }
         /// <p>The details of the <code>AppInstanceAdmin</code>.</p>
         pub fn set_admin(mut self, input: std::option::Option<crate::model::Identity>) -> Self {
-            self.admin = input;
-            self
+            self.admin = input; self
         }
         /// Consumes the builder and constructs a [`AppInstanceAdminSummary`](crate::model::AppInstanceAdminSummary).
         pub fn build(self) -> crate::model::AppInstanceAdminSummary {
-            crate::model::AppInstanceAdminSummary { admin: self.admin }
+            crate::model::AppInstanceAdminSummary {
+                admin: self.admin
+                ,
+            }
         }
     }
+    
+    
 }
 impl AppInstanceAdminSummary {
     /// Creates a new builder-style object to manufacture [`AppInstanceAdminSummary`](crate::model::AppInstanceAdminSummary).
@@ -1339,7 +1269,7 @@ impl AppInstanceAdminSummary {
 /// <p>The details of a user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Identity {
+pub struct Identity  {
     /// <p>The ARN in an Identity.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1349,15 +1279,15 @@ pub struct Identity {
 }
 impl Identity {
     /// <p>The ARN in an Identity.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The name in an Identity.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for Identity {
+impl  std::fmt::Debug for Identity  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Identity");
         formatter.field("arn", &self.arn);
@@ -1367,7 +1297,7 @@ impl std::fmt::Debug for Identity {
 }
 /// See [`Identity`](crate::model::Identity).
 pub mod identity {
-
+    
     /// A builder for [`Identity`](crate::model::Identity).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1382,8 +1312,7 @@ pub mod identity {
         }
         /// <p>The ARN in an Identity.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The name in an Identity.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1392,14 +1321,15 @@ pub mod identity {
         }
         /// <p>The name in an Identity.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// Consumes the builder and constructs a [`Identity`](crate::model::Identity).
         pub fn build(self) -> crate::model::Identity {
             crate::model::Identity {
-                arn: self.arn,
-                name: self.name,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
             }
         }
     }
@@ -1411,6 +1341,8 @@ pub mod identity {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Identity {
     /// Creates a new builder-style object to manufacture [`Identity`](crate::model::Identity).
@@ -1422,7 +1354,7 @@ impl Identity {
 /// <p>An endpoint under an Amazon Chime <code>AppInstanceUser</code> that receives messages for a user. For push notifications, the endpoint is a mobile device used to receive mobile push notifications for a user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AppInstanceUserEndpoint {
+pub struct AppInstanceUserEndpoint  {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
@@ -1450,65 +1382,65 @@ pub struct AppInstanceUserEndpoint {
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
     #[doc(hidden)]
     pub allow_messages: std::option::Option<crate::model::AllowMessages>,
-    /// <p>A read-only field that represents the state of an <code>AppInstanceUserEndpoint</code>. Supported values:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is active and able to receive messages. When <code>ACTIVE</code>, the <code>EndpointStatusReason</code> remains empty.</p> </li>
-    /// <li> <p> <code>INACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is inactive and can't receive message. When <code>INACTIVE</code>, the corresponding reason will be conveyed through <code>EndpointStatusReason</code>.</p> </li>
-    /// <li> <p> <code>INVALID_DEVICE_TOKEN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to invalid device token</p> </li>
-    /// <li> <p> <code>INVALID_PINPOINT_ARN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to an invalid pinpoint ARN that was input through the <code>ResourceArn</code> field.</p> </li>
+    /// <p>A read-only field that represents the state of an <code>AppInstanceUserEndpoint</code>. Supported values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is active and able to receive messages. When <code>ACTIVE</code>, the <code>EndpointStatusReason</code> remains empty.</p> </li> 
+    /// <li> <p> <code>INACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is inactive and can't receive message. When <code>INACTIVE</code>, the corresponding reason will be conveyed through <code>EndpointStatusReason</code>.</p> </li> 
+    /// <li> <p> <code>INVALID_DEVICE_TOKEN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to invalid device token</p> </li> 
+    /// <li> <p> <code>INVALID_PINPOINT_ARN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to an invalid pinpoint ARN that was input through the <code>ResourceArn</code> field.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub endpoint_state: std::option::Option<crate::model::EndpointState>,
 }
 impl AppInstanceUserEndpoint {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+    pub fn app_instance_user_arn(&self) -> std::option::Option<& str> {
         self.app_instance_user_arn.as_deref()
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn endpoint_id(&self) -> std::option::Option<& str> {
         self.endpoint_id.as_deref()
     }
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::AppInstanceUserEndpointType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::AppInstanceUserEndpointType> {
         self.r#type.as_ref()
     }
     /// <p>The ARN of the resource to which the endpoint belongs.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The attributes of an <code>Endpoint</code>.</p>
-    pub fn endpoint_attributes(&self) -> std::option::Option<&crate::model::EndpointAttributes> {
+    pub fn endpoint_attributes(&self) -> std::option::Option<& crate::model::EndpointAttributes> {
         self.endpoint_attributes.as_ref()
     }
     /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
-    pub fn allow_messages(&self) -> std::option::Option<&crate::model::AllowMessages> {
+    pub fn allow_messages(&self) -> std::option::Option<& crate::model::AllowMessages> {
         self.allow_messages.as_ref()
     }
-    /// <p>A read-only field that represents the state of an <code>AppInstanceUserEndpoint</code>. Supported values:</p>
-    /// <ul>
-    /// <li> <p> <code>ACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is active and able to receive messages. When <code>ACTIVE</code>, the <code>EndpointStatusReason</code> remains empty.</p> </li>
-    /// <li> <p> <code>INACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is inactive and can't receive message. When <code>INACTIVE</code>, the corresponding reason will be conveyed through <code>EndpointStatusReason</code>.</p> </li>
-    /// <li> <p> <code>INVALID_DEVICE_TOKEN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to invalid device token</p> </li>
-    /// <li> <p> <code>INVALID_PINPOINT_ARN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to an invalid pinpoint ARN that was input through the <code>ResourceArn</code> field.</p> </li>
+    /// <p>A read-only field that represents the state of an <code>AppInstanceUserEndpoint</code>. Supported values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>ACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is active and able to receive messages. When <code>ACTIVE</code>, the <code>EndpointStatusReason</code> remains empty.</p> </li> 
+    /// <li> <p> <code>INACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is inactive and can't receive message. When <code>INACTIVE</code>, the corresponding reason will be conveyed through <code>EndpointStatusReason</code>.</p> </li> 
+    /// <li> <p> <code>INVALID_DEVICE_TOKEN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to invalid device token</p> </li> 
+    /// <li> <p> <code>INVALID_PINPOINT_ARN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to an invalid pinpoint ARN that was input through the <code>ResourceArn</code> field.</p> </li> 
     /// </ul>
-    pub fn endpoint_state(&self) -> std::option::Option<&crate::model::EndpointState> {
+    pub fn endpoint_state(&self) -> std::option::Option<& crate::model::EndpointState> {
         self.endpoint_state.as_ref()
     }
 }
-impl std::fmt::Debug for AppInstanceUserEndpoint {
+impl  std::fmt::Debug for AppInstanceUserEndpoint  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceUserEndpoint");
         formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
@@ -1526,7 +1458,7 @@ impl std::fmt::Debug for AppInstanceUserEndpoint {
 }
 /// See [`AppInstanceUserEndpoint`](crate::model::AppInstanceUserEndpoint).
 pub mod app_instance_user_endpoint {
-
+    
     /// A builder for [`AppInstanceUserEndpoint`](crate::model::AppInstanceUserEndpoint).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1548,12 +1480,8 @@ pub mod app_instance_user_endpoint {
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-        pub fn set_app_instance_user_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_instance_user_arn = input;
-            self
+        pub fn set_app_instance_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_instance_user_arn = input; self
         }
         /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
         pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1562,8 +1490,7 @@ pub mod app_instance_user_endpoint {
         }
         /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
         pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.endpoint_id = input;
-            self
+            self.endpoint_id = input; self
         }
         /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1572,8 +1499,7 @@ pub mod app_instance_user_endpoint {
         }
         /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The type of the <code>AppInstanceUserEndpoint</code>.</p>
         pub fn r#type(mut self, input: crate::model::AppInstanceUserEndpointType) -> Self {
@@ -1581,12 +1507,8 @@ pub mod app_instance_user_endpoint {
             self
         }
         /// <p>The type of the <code>AppInstanceUserEndpoint</code>.</p>
-        pub fn set_type(
-            mut self,
-            input: std::option::Option<crate::model::AppInstanceUserEndpointType>,
-        ) -> Self {
-            self.r#type = input;
-            self
+        pub fn set_type(mut self, input: std::option::Option<crate::model::AppInstanceUserEndpointType>) -> Self {
+            self.r#type = input; self
         }
         /// <p>The ARN of the resource to which the endpoint belongs.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1595,8 +1517,7 @@ pub mod app_instance_user_endpoint {
         }
         /// <p>The ARN of the resource to which the endpoint belongs.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The attributes of an <code>Endpoint</code>.</p>
         pub fn endpoint_attributes(mut self, input: crate::model::EndpointAttributes) -> Self {
@@ -1604,12 +1525,8 @@ pub mod app_instance_user_endpoint {
             self
         }
         /// <p>The attributes of an <code>Endpoint</code>.</p>
-        pub fn set_endpoint_attributes(
-            mut self,
-            input: std::option::Option<crate::model::EndpointAttributes>,
-        ) -> Self {
-            self.endpoint_attributes = input;
-            self
+        pub fn set_endpoint_attributes(mut self, input: std::option::Option<crate::model::EndpointAttributes>) -> Self {
+            self.endpoint_attributes = input; self
         }
         /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was created.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1617,12 +1534,8 @@ pub mod app_instance_user_endpoint {
             self
         }
         /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was created.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was last updated.</p>
         pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1630,12 +1543,8 @@ pub mod app_instance_user_endpoint {
             self
         }
         /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was last updated.</p>
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
         pub fn allow_messages(mut self, input: crate::model::AllowMessages) -> Self {
@@ -1643,51 +1552,53 @@ pub mod app_instance_user_endpoint {
             self
         }
         /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
-        pub fn set_allow_messages(
-            mut self,
-            input: std::option::Option<crate::model::AllowMessages>,
-        ) -> Self {
-            self.allow_messages = input;
-            self
+        pub fn set_allow_messages(mut self, input: std::option::Option<crate::model::AllowMessages>) -> Self {
+            self.allow_messages = input; self
         }
-        /// <p>A read-only field that represents the state of an <code>AppInstanceUserEndpoint</code>. Supported values:</p>
-        /// <ul>
-        /// <li> <p> <code>ACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is active and able to receive messages. When <code>ACTIVE</code>, the <code>EndpointStatusReason</code> remains empty.</p> </li>
-        /// <li> <p> <code>INACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is inactive and can't receive message. When <code>INACTIVE</code>, the corresponding reason will be conveyed through <code>EndpointStatusReason</code>.</p> </li>
-        /// <li> <p> <code>INVALID_DEVICE_TOKEN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to invalid device token</p> </li>
-        /// <li> <p> <code>INVALID_PINPOINT_ARN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to an invalid pinpoint ARN that was input through the <code>ResourceArn</code> field.</p> </li>
+        /// <p>A read-only field that represents the state of an <code>AppInstanceUserEndpoint</code>. Supported values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is active and able to receive messages. When <code>ACTIVE</code>, the <code>EndpointStatusReason</code> remains empty.</p> </li> 
+        /// <li> <p> <code>INACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is inactive and can't receive message. When <code>INACTIVE</code>, the corresponding reason will be conveyed through <code>EndpointStatusReason</code>.</p> </li> 
+        /// <li> <p> <code>INVALID_DEVICE_TOKEN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to invalid device token</p> </li> 
+        /// <li> <p> <code>INVALID_PINPOINT_ARN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to an invalid pinpoint ARN that was input through the <code>ResourceArn</code> field.</p> </li> 
         /// </ul>
         pub fn endpoint_state(mut self, input: crate::model::EndpointState) -> Self {
             self.endpoint_state = Some(input);
             self
         }
-        /// <p>A read-only field that represents the state of an <code>AppInstanceUserEndpoint</code>. Supported values:</p>
-        /// <ul>
-        /// <li> <p> <code>ACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is active and able to receive messages. When <code>ACTIVE</code>, the <code>EndpointStatusReason</code> remains empty.</p> </li>
-        /// <li> <p> <code>INACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is inactive and can't receive message. When <code>INACTIVE</code>, the corresponding reason will be conveyed through <code>EndpointStatusReason</code>.</p> </li>
-        /// <li> <p> <code>INVALID_DEVICE_TOKEN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to invalid device token</p> </li>
-        /// <li> <p> <code>INVALID_PINPOINT_ARN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to an invalid pinpoint ARN that was input through the <code>ResourceArn</code> field.</p> </li>
+        /// <p>A read-only field that represents the state of an <code>AppInstanceUserEndpoint</code>. Supported values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>ACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is active and able to receive messages. When <code>ACTIVE</code>, the <code>EndpointStatusReason</code> remains empty.</p> </li> 
+        /// <li> <p> <code>INACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is inactive and can't receive message. When <code>INACTIVE</code>, the corresponding reason will be conveyed through <code>EndpointStatusReason</code>.</p> </li> 
+        /// <li> <p> <code>INVALID_DEVICE_TOKEN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to invalid device token</p> </li> 
+        /// <li> <p> <code>INVALID_PINPOINT_ARN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to an invalid pinpoint ARN that was input through the <code>ResourceArn</code> field.</p> </li> 
         /// </ul>
-        pub fn set_endpoint_state(
-            mut self,
-            input: std::option::Option<crate::model::EndpointState>,
-        ) -> Self {
-            self.endpoint_state = input;
-            self
+        pub fn set_endpoint_state(mut self, input: std::option::Option<crate::model::EndpointState>) -> Self {
+            self.endpoint_state = input; self
         }
         /// Consumes the builder and constructs a [`AppInstanceUserEndpoint`](crate::model::AppInstanceUserEndpoint).
         pub fn build(self) -> crate::model::AppInstanceUserEndpoint {
             crate::model::AppInstanceUserEndpoint {
-                app_instance_user_arn: self.app_instance_user_arn,
-                endpoint_id: self.endpoint_id,
-                name: self.name,
-                r#type: self.r#type,
-                resource_arn: self.resource_arn,
-                endpoint_attributes: self.endpoint_attributes,
-                created_timestamp: self.created_timestamp,
-                last_updated_timestamp: self.last_updated_timestamp,
-                allow_messages: self.allow_messages,
-                endpoint_state: self.endpoint_state,
+                app_instance_user_arn: self.app_instance_user_arn
+                ,
+                endpoint_id: self.endpoint_id
+                ,
+                name: self.name
+                ,
+                r#type: self.r#type
+                ,
+                resource_arn: self.resource_arn
+                ,
+                endpoint_attributes: self.endpoint_attributes
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                allow_messages: self.allow_messages
+                ,
+                endpoint_state: self.endpoint_state
+                ,
             }
         }
     }
@@ -1707,6 +1618,8 @@ pub mod app_instance_user_endpoint {
             formatter.finish()
         }
     }
+    
+    
 }
 impl AppInstanceUserEndpoint {
     /// Creates a new builder-style object to manufacture [`AppInstanceUserEndpoint`](crate::model::AppInstanceUserEndpoint).
@@ -1718,7 +1631,7 @@ impl AppInstanceUserEndpoint {
 /// <p>The details of an <code>AppInstanceUser</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AppInstanceUser {
+pub struct AppInstanceUser  {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
@@ -1737,27 +1650,27 @@ pub struct AppInstanceUser {
 }
 impl AppInstanceUser {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+    pub fn app_instance_user_arn(&self) -> std::option::Option<& str> {
         self.app_instance_user_arn.as_deref()
     }
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
-    pub fn metadata(&self) -> std::option::Option<&str> {
+    pub fn metadata(&self) -> std::option::Option<& str> {
         self.metadata.as_deref()
     }
     /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
 }
-impl std::fmt::Debug for AppInstanceUser {
+impl  std::fmt::Debug for AppInstanceUser  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceUser");
         formatter.field("app_instance_user_arn", &self.app_instance_user_arn);
@@ -1770,7 +1683,7 @@ impl std::fmt::Debug for AppInstanceUser {
 }
 /// See [`AppInstanceUser`](crate::model::AppInstanceUser).
 pub mod app_instance_user {
-
+    
     /// A builder for [`AppInstanceUser`](crate::model::AppInstanceUser).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1787,12 +1700,8 @@ pub mod app_instance_user {
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-        pub fn set_app_instance_user_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_instance_user_arn = input;
-            self
+        pub fn set_app_instance_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_instance_user_arn = input; self
         }
         /// <p>The name of the <code>AppInstanceUser</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1801,8 +1710,7 @@ pub mod app_instance_user {
         }
         /// <p>The name of the <code>AppInstanceUser</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
         pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1811,8 +1719,7 @@ pub mod app_instance_user {
         }
         /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
         pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metadata = input;
-            self
+            self.metadata = input; self
         }
         /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1820,12 +1727,8 @@ pub mod app_instance_user {
             self
         }
         /// <p>The time at which the <code>AppInstanceUser</code> was created.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
         pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1833,21 +1736,22 @@ pub mod app_instance_user {
             self
         }
         /// <p>The time at which the <code>AppInstanceUser</code> was last updated.</p>
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`AppInstanceUser`](crate::model::AppInstanceUser).
         pub fn build(self) -> crate::model::AppInstanceUser {
             crate::model::AppInstanceUser {
-                app_instance_user_arn: self.app_instance_user_arn,
-                name: self.name,
-                metadata: self.metadata,
-                created_timestamp: self.created_timestamp,
-                last_updated_timestamp: self.last_updated_timestamp,
+                app_instance_user_arn: self.app_instance_user_arn
+                ,
+                name: self.name
+                ,
+                metadata: self.metadata
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
             }
         }
     }
@@ -1862,6 +1766,8 @@ pub mod app_instance_user {
             formatter.finish()
         }
     }
+    
+    
 }
 impl AppInstanceUser {
     /// Creates a new builder-style object to manufacture [`AppInstanceUser`](crate::model::AppInstanceUser).
@@ -1873,7 +1779,7 @@ impl AppInstanceUser {
 /// <p>The details of an <code>AppInstanceAdmin</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppInstanceAdmin {
+pub struct AppInstanceAdmin  {
     /// <p>The <code>AppInstanceAdmin</code> data.</p>
     #[doc(hidden)]
     pub admin: std::option::Option<crate::model::Identity>,
@@ -1886,21 +1792,21 @@ pub struct AppInstanceAdmin {
 }
 impl AppInstanceAdmin {
     /// <p>The <code>AppInstanceAdmin</code> data.</p>
-    pub fn admin(&self) -> std::option::Option<&crate::model::Identity> {
+    pub fn admin(&self) -> std::option::Option<& crate::model::Identity> {
         self.admin.as_ref()
     }
     /// <p>The ARN of the <code>AppInstance</code> for which the user is an administrator.</p>
-    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn app_instance_arn(&self) -> std::option::Option<& str> {
         self.app_instance_arn.as_deref()
     }
     /// <p>The time at which an administrator was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 /// See [`AppInstanceAdmin`](crate::model::AppInstanceAdmin).
 pub mod app_instance_admin {
-
+    
     /// A builder for [`AppInstanceAdmin`](crate::model::AppInstanceAdmin).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1916,8 +1822,7 @@ pub mod app_instance_admin {
         }
         /// <p>The <code>AppInstanceAdmin</code> data.</p>
         pub fn set_admin(mut self, input: std::option::Option<crate::model::Identity>) -> Self {
-            self.admin = input;
-            self
+            self.admin = input; self
         }
         /// <p>The ARN of the <code>AppInstance</code> for which the user is an administrator.</p>
         pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1925,12 +1830,8 @@ pub mod app_instance_admin {
             self
         }
         /// <p>The ARN of the <code>AppInstance</code> for which the user is an administrator.</p>
-        pub fn set_app_instance_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_instance_arn = input;
-            self
+        pub fn set_app_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_instance_arn = input; self
         }
         /// <p>The time at which an administrator was created.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1938,22 +1839,23 @@ pub mod app_instance_admin {
             self
         }
         /// <p>The time at which an administrator was created.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// Consumes the builder and constructs a [`AppInstanceAdmin`](crate::model::AppInstanceAdmin).
         pub fn build(self) -> crate::model::AppInstanceAdmin {
             crate::model::AppInstanceAdmin {
-                admin: self.admin,
-                app_instance_arn: self.app_instance_arn,
-                created_timestamp: self.created_timestamp,
+                admin: self.admin
+                ,
+                app_instance_arn: self.app_instance_arn
+                ,
+                created_timestamp: self.created_timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl AppInstanceAdmin {
     /// Creates a new builder-style object to manufacture [`AppInstanceAdmin`](crate::model::AppInstanceAdmin).
@@ -1965,7 +1867,7 @@ impl AppInstanceAdmin {
 /// <p>The details of an <code>AppInstance</code>, an instance of an Amazon Chime SDK messaging application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AppInstance {
+pub struct AppInstance  {
     /// <p>The ARN of the messaging instance.</p>
     #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
@@ -1984,27 +1886,27 @@ pub struct AppInstance {
 }
 impl AppInstance {
     /// <p>The ARN of the messaging instance.</p>
-    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn app_instance_arn(&self) -> std::option::Option<& str> {
         self.app_instance_arn.as_deref()
     }
     /// <p>The name of an <code>AppInstance</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time at which an <code>AppInstance</code> was created. In epoch milliseconds.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time an <code>AppInstance</code> was last updated. In epoch milliseconds.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>The metadata of an <code>AppInstance</code>.</p>
-    pub fn metadata(&self) -> std::option::Option<&str> {
+    pub fn metadata(&self) -> std::option::Option<& str> {
         self.metadata.as_deref()
     }
 }
-impl std::fmt::Debug for AppInstance {
+impl  std::fmt::Debug for AppInstance  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstance");
         formatter.field("app_instance_arn", &self.app_instance_arn);
@@ -2017,7 +1919,7 @@ impl std::fmt::Debug for AppInstance {
 }
 /// See [`AppInstance`](crate::model::AppInstance).
 pub mod app_instance {
-
+    
     /// A builder for [`AppInstance`](crate::model::AppInstance).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2034,12 +1936,8 @@ pub mod app_instance {
             self
         }
         /// <p>The ARN of the messaging instance.</p>
-        pub fn set_app_instance_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.app_instance_arn = input;
-            self
+        pub fn set_app_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.app_instance_arn = input; self
         }
         /// <p>The name of an <code>AppInstance</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2048,8 +1946,7 @@ pub mod app_instance {
         }
         /// <p>The name of an <code>AppInstance</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The time at which an <code>AppInstance</code> was created. In epoch milliseconds.</p>
         pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2057,12 +1954,8 @@ pub mod app_instance {
             self
         }
         /// <p>The time at which an <code>AppInstance</code> was created. In epoch milliseconds.</p>
-        pub fn set_created_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_timestamp = input;
-            self
+        pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_timestamp = input; self
         }
         /// <p>The time an <code>AppInstance</code> was last updated. In epoch milliseconds.</p>
         pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2070,12 +1963,8 @@ pub mod app_instance {
             self
         }
         /// <p>The time an <code>AppInstance</code> was last updated. In epoch milliseconds.</p>
-        pub fn set_last_updated_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_timestamp = input;
-            self
+        pub fn set_last_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_timestamp = input; self
         }
         /// <p>The metadata of an <code>AppInstance</code>.</p>
         pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2084,17 +1973,21 @@ pub mod app_instance {
         }
         /// <p>The metadata of an <code>AppInstance</code>.</p>
         pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metadata = input;
-            self
+            self.metadata = input; self
         }
         /// Consumes the builder and constructs a [`AppInstance`](crate::model::AppInstance).
         pub fn build(self) -> crate::model::AppInstance {
             crate::model::AppInstance {
-                app_instance_arn: self.app_instance_arn,
-                name: self.name,
-                created_timestamp: self.created_timestamp,
-                last_updated_timestamp: self.last_updated_timestamp,
-                metadata: self.metadata,
+                app_instance_arn: self.app_instance_arn
+                ,
+                name: self.name
+                ,
+                created_timestamp: self.created_timestamp
+                ,
+                last_updated_timestamp: self.last_updated_timestamp
+                ,
+                metadata: self.metadata
+                ,
             }
         }
     }
@@ -2109,6 +2002,8 @@ pub mod app_instance {
             formatter.finish()
         }
     }
+    
+    
 }
 impl AppInstance {
     /// Creates a new builder-style object to manufacture [`AppInstance`](crate::model::AppInstance).
@@ -2116,3 +2011,4 @@ impl AppInstance {
         crate::model::app_instance::Builder::default()
     }
 }
+

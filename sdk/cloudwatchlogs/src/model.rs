@@ -3,7 +3,7 @@
 /// <p>Represents a matched event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricFilterMatchRecord {
+pub struct MetricFilterMatchRecord  {
     /// <p>The event number.</p>
     #[doc(hidden)]
     pub event_number: i64,
@@ -12,8 +12,7 @@ pub struct MetricFilterMatchRecord {
     pub event_message: std::option::Option<std::string::String>,
     /// <p>The values extracted from the event data by the filter.</p>
     #[doc(hidden)]
-    pub extracted_values:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub extracted_values: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl MetricFilterMatchRecord {
     /// <p>The event number.</p>
@@ -21,28 +20,23 @@ impl MetricFilterMatchRecord {
         self.event_number
     }
     /// <p>The raw event data.</p>
-    pub fn event_message(&self) -> std::option::Option<&str> {
+    pub fn event_message(&self) -> std::option::Option<& str> {
         self.event_message.as_deref()
     }
     /// <p>The values extracted from the event data by the filter.</p>
-    pub fn extracted_values(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn extracted_values(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.extracted_values.as_ref()
     }
 }
 /// See [`MetricFilterMatchRecord`](crate::model::MetricFilterMatchRecord).
 pub mod metric_filter_match_record {
-
+    
     /// A builder for [`MetricFilterMatchRecord`](crate::model::MetricFilterMatchRecord).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_number: std::option::Option<i64>,
         pub(crate) event_message: std::option::Option<std::string::String>,
-        pub(crate) extracted_values: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) extracted_values: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The event number.</p>
@@ -52,8 +46,7 @@ pub mod metric_filter_match_record {
         }
         /// <p>The event number.</p>
         pub fn set_event_number(mut self, input: std::option::Option<i64>) -> Self {
-            self.event_number = input;
-            self
+            self.event_number = input; self
         }
         /// <p>The raw event data.</p>
         pub fn event_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,47 +54,39 @@ pub mod metric_filter_match_record {
             self
         }
         /// <p>The raw event data.</p>
-        pub fn set_event_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.event_message = input;
-            self
+        pub fn set_event_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.event_message = input; self
         }
         /// Adds a key-value pair to `extracted_values`.
         ///
         /// To override the contents of this collection use [`set_extracted_values`](Self::set_extracted_values).
         ///
         /// <p>The values extracted from the event data by the filter.</p>
-        pub fn extracted_values(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn extracted_values(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.extracted_values.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.extracted_values = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.extracted_values = Some(hash_map);
+                            self
         }
         /// <p>The values extracted from the event data by the filter.</p>
-        pub fn set_extracted_values(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.extracted_values = input;
-            self
+        pub fn set_extracted_values(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.extracted_values = input; self
         }
         /// Consumes the builder and constructs a [`MetricFilterMatchRecord`](crate::model::MetricFilterMatchRecord).
         pub fn build(self) -> crate::model::MetricFilterMatchRecord {
             crate::model::MetricFilterMatchRecord {
-                event_number: self.event_number.unwrap_or_default(),
-                event_message: self.event_message,
-                extracted_values: self.extracted_values,
+                event_number: self.event_number
+                    .unwrap_or_default()
+                ,
+                event_message: self.event_message
+                ,
+                extracted_values: self.extracted_values
+                ,
             }
         }
     }
+    
+    
 }
 impl MetricFilterMatchRecord {
     /// Creates a new builder-style object to manufacture [`MetricFilterMatchRecord`](crate::model::MetricFilterMatchRecord).
@@ -113,7 +98,7 @@ impl MetricFilterMatchRecord {
 /// <p>Reserved.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryCompileError {
+pub struct QueryCompileError  {
     /// <p>Reserved.</p>
     #[doc(hidden)]
     pub location: std::option::Option<crate::model::QueryCompileErrorLocation>,
@@ -123,17 +108,17 @@ pub struct QueryCompileError {
 }
 impl QueryCompileError {
     /// <p>Reserved.</p>
-    pub fn location(&self) -> std::option::Option<&crate::model::QueryCompileErrorLocation> {
+    pub fn location(&self) -> std::option::Option<& crate::model::QueryCompileErrorLocation> {
         self.location.as_ref()
     }
     /// <p>Reserved.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`QueryCompileError`](crate::model::QueryCompileError).
 pub mod query_compile_error {
-
+    
     /// A builder for [`QueryCompileError`](crate::model::QueryCompileError).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -147,12 +132,8 @@ pub mod query_compile_error {
             self
         }
         /// <p>Reserved.</p>
-        pub fn set_location(
-            mut self,
-            input: std::option::Option<crate::model::QueryCompileErrorLocation>,
-        ) -> Self {
-            self.location = input;
-            self
+        pub fn set_location(mut self, input: std::option::Option<crate::model::QueryCompileErrorLocation>) -> Self {
+            self.location = input; self
         }
         /// <p>Reserved.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -161,17 +142,20 @@ pub mod query_compile_error {
         }
         /// <p>Reserved.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`QueryCompileError`](crate::model::QueryCompileError).
         pub fn build(self) -> crate::model::QueryCompileError {
             crate::model::QueryCompileError {
-                location: self.location,
-                message: self.message,
+                location: self.location
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl QueryCompileError {
     /// Creates a new builder-style object to manufacture [`QueryCompileError`](crate::model::QueryCompileError).
@@ -183,7 +167,7 @@ impl QueryCompileError {
 /// <p>Reserved.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryCompileErrorLocation {
+pub struct QueryCompileErrorLocation  {
     /// <p>Reserved.</p>
     #[doc(hidden)]
     pub start_char_offset: std::option::Option<i32>,
@@ -203,7 +187,7 @@ impl QueryCompileErrorLocation {
 }
 /// See [`QueryCompileErrorLocation`](crate::model::QueryCompileErrorLocation).
 pub mod query_compile_error_location {
-
+    
     /// A builder for [`QueryCompileErrorLocation`](crate::model::QueryCompileErrorLocation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -218,8 +202,7 @@ pub mod query_compile_error_location {
         }
         /// <p>Reserved.</p>
         pub fn set_start_char_offset(mut self, input: std::option::Option<i32>) -> Self {
-            self.start_char_offset = input;
-            self
+            self.start_char_offset = input; self
         }
         /// <p>Reserved.</p>
         pub fn end_char_offset(mut self, input: i32) -> Self {
@@ -228,17 +211,20 @@ pub mod query_compile_error_location {
         }
         /// <p>Reserved.</p>
         pub fn set_end_char_offset(mut self, input: std::option::Option<i32>) -> Self {
-            self.end_char_offset = input;
-            self
+            self.end_char_offset = input; self
         }
         /// Consumes the builder and constructs a [`QueryCompileErrorLocation`](crate::model::QueryCompileErrorLocation).
         pub fn build(self) -> crate::model::QueryCompileErrorLocation {
             crate::model::QueryCompileErrorLocation {
-                start_char_offset: self.start_char_offset,
-                end_char_offset: self.end_char_offset,
+                start_char_offset: self.start_char_offset
+                ,
+                end_char_offset: self.end_char_offset
+                ,
             }
         }
     }
+    
+    
 }
 impl QueryCompileErrorLocation {
     /// Creates a new builder-style object to manufacture [`QueryCompileErrorLocation`](crate::model::QueryCompileErrorLocation).
@@ -253,9 +239,9 @@ impl QueryCompileErrorLocation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let distribution = unimplemented!();
 /// match distribution {
@@ -277,7 +263,7 @@ impl QueryCompileErrorLocation {
 /// Specifically, when `distribution` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Distribution::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -285,51 +271,45 @@ impl QueryCompileErrorLocation {
 /// <p>The method used to distribute log data to the destination, which can be either
 /// random or grouped by log stream.</p>
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum Distribution {
     #[allow(missing_docs)] // documentation missing in model
     ByLogStream,
     #[allow(missing_docs)] // documentation missing in model
     Random,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for Distribution {
     fn from(s: &str) -> Self {
         match s {
             "ByLogStream" => Distribution::ByLogStream,
             "Random" => Distribution::Random,
-            other => Distribution::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => Distribution::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for Distribution {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Distribution::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(Distribution::from(s))
+                }
+            }
 impl Distribution {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Distribution::ByLogStream => "ByLogStream",
             Distribution::Random => "Random",
-            Distribution::Unknown(value) => value.as_str(),
+            Distribution::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ByLogStream", "Random"]
+        &[
+            "ByLogStream", "Random"
+        ]
     }
 }
 impl AsRef<str> for Distribution {
@@ -341,7 +321,7 @@ impl AsRef<str> for Distribution {
 /// <p>A policy enabling one or more entities to put logs to a log group in this account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourcePolicy {
+pub struct ResourcePolicy  {
     /// <p>The name of the resource policy.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
@@ -354,11 +334,11 @@ pub struct ResourcePolicy {
 }
 impl ResourcePolicy {
     /// <p>The name of the resource policy.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> std::option::Option<& str> {
         self.policy_name.as_deref()
     }
     /// <p>The details of the policy.</p>
-    pub fn policy_document(&self) -> std::option::Option<&str> {
+    pub fn policy_document(&self) -> std::option::Option<& str> {
         self.policy_document.as_deref()
     }
     /// <p>Timestamp showing when this policy was last updated, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
@@ -368,7 +348,7 @@ impl ResourcePolicy {
 }
 /// See [`ResourcePolicy`](crate::model::ResourcePolicy).
 pub mod resource_policy {
-
+    
     /// A builder for [`ResourcePolicy`](crate::model::ResourcePolicy).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -384,8 +364,7 @@ pub mod resource_policy {
         }
         /// <p>The name of the resource policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.policy_name = input;
-            self
+            self.policy_name = input; self
         }
         /// <p>The details of the policy.</p>
         pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
@@ -393,12 +372,8 @@ pub mod resource_policy {
             self
         }
         /// <p>The details of the policy.</p>
-        pub fn set_policy_document(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.policy_document = input;
-            self
+        pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.policy_document = input; self
         }
         /// <p>Timestamp showing when this policy was last updated, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn last_updated_time(mut self, input: i64) -> Self {
@@ -407,18 +382,22 @@ pub mod resource_policy {
         }
         /// <p>Timestamp showing when this policy was last updated, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_last_updated_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_updated_time = input;
-            self
+            self.last_updated_time = input; self
         }
         /// Consumes the builder and constructs a [`ResourcePolicy`](crate::model::ResourcePolicy).
         pub fn build(self) -> crate::model::ResourcePolicy {
             crate::model::ResourcePolicy {
-                policy_name: self.policy_name,
-                policy_document: self.policy_document,
-                last_updated_time: self.last_updated_time,
+                policy_name: self.policy_name
+                ,
+                policy_document: self.policy_document
+                ,
+                last_updated_time: self.last_updated_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ResourcePolicy {
     /// Creates a new builder-style object to manufacture [`ResourcePolicy`](crate::model::ResourcePolicy).
@@ -430,7 +409,7 @@ impl ResourcePolicy {
 /// <p>Indicates how to transform ingested log events to metric data in a CloudWatch metric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricTransformation {
+pub struct MetricTransformation  {
     /// <p>The name of the CloudWatch metric.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
@@ -443,54 +422,50 @@ pub struct MetricTransformation {
     /// <p>(Optional) The value to emit when a filter pattern does not match a log event. This value can be null.</p>
     #[doc(hidden)]
     pub default_value: std::option::Option<f64>,
-    /// <p>The fields to use as dimensions for the metric. One metric filter can include as many as three dimensions.</p> <important>
-    /// <p>Metrics extracted from log events are charged as custom metrics. To prevent unexpected high charges, do not specify high-cardinality fields such as <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different value found for a dimension is treated as a separate metric and accrues charges as a separate custom metric. </p>
-    /// <p>CloudWatch Logs disables a metric filter if it generates 1000 different name/value pairs for your specified dimensions within a certain amount of time. This helps to prevent accidental high charges.</p>
-    /// <p>You can also set up a billing alarm to alert you if your charges are higher than expected. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html"> Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>. </p>
+    /// <p>The fields to use as dimensions for the metric. One metric filter can include as many as three dimensions.</p> <important> 
+    /// <p>Metrics extracted from log events are charged as custom metrics. To prevent unexpected high charges, do not specify high-cardinality fields such as <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different value found for a dimension is treated as a separate metric and accrues charges as a separate custom metric. </p> 
+    /// <p>CloudWatch Logs disables a metric filter if it generates 1000 different name/value pairs for your specified dimensions within a certain amount of time. This helps to prevent accidental high charges.</p> 
+    /// <p>You can also set up a billing alarm to alert you if your charges are higher than expected. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html"> Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>. </p> 
     /// </important>
     #[doc(hidden)]
-    pub dimensions:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub dimensions: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The unit to assign to the metric. If you omit this, the unit is set as <code>None</code>.</p>
     #[doc(hidden)]
     pub unit: std::option::Option<crate::model::StandardUnit>,
 }
 impl MetricTransformation {
     /// <p>The name of the CloudWatch metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> std::option::Option<& str> {
         self.metric_name.as_deref()
     }
     /// <p>A custom namespace to contain your metric in CloudWatch. Use namespaces to group together metrics that are similar. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">Namespaces</a>.</p>
-    pub fn metric_namespace(&self) -> std::option::Option<&str> {
+    pub fn metric_namespace(&self) -> std::option::Option<& str> {
         self.metric_namespace.as_deref()
     }
     /// <p>The value to publish to the CloudWatch metric when a filter pattern matches a log event.</p>
-    pub fn metric_value(&self) -> std::option::Option<&str> {
+    pub fn metric_value(&self) -> std::option::Option<& str> {
         self.metric_value.as_deref()
     }
     /// <p>(Optional) The value to emit when a filter pattern does not match a log event. This value can be null.</p>
     pub fn default_value(&self) -> std::option::Option<f64> {
         self.default_value
     }
-    /// <p>The fields to use as dimensions for the metric. One metric filter can include as many as three dimensions.</p> <important>
-    /// <p>Metrics extracted from log events are charged as custom metrics. To prevent unexpected high charges, do not specify high-cardinality fields such as <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different value found for a dimension is treated as a separate metric and accrues charges as a separate custom metric. </p>
-    /// <p>CloudWatch Logs disables a metric filter if it generates 1000 different name/value pairs for your specified dimensions within a certain amount of time. This helps to prevent accidental high charges.</p>
-    /// <p>You can also set up a billing alarm to alert you if your charges are higher than expected. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html"> Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>. </p>
+    /// <p>The fields to use as dimensions for the metric. One metric filter can include as many as three dimensions.</p> <important> 
+    /// <p>Metrics extracted from log events are charged as custom metrics. To prevent unexpected high charges, do not specify high-cardinality fields such as <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different value found for a dimension is treated as a separate metric and accrues charges as a separate custom metric. </p> 
+    /// <p>CloudWatch Logs disables a metric filter if it generates 1000 different name/value pairs for your specified dimensions within a certain amount of time. This helps to prevent accidental high charges.</p> 
+    /// <p>You can also set up a billing alarm to alert you if your charges are higher than expected. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html"> Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>. </p> 
     /// </important>
-    pub fn dimensions(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn dimensions(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.dimensions.as_ref()
     }
     /// <p>The unit to assign to the metric. If you omit this, the unit is set as <code>None</code>.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::model::StandardUnit> {
+    pub fn unit(&self) -> std::option::Option<& crate::model::StandardUnit> {
         self.unit.as_ref()
     }
 }
 /// See [`MetricTransformation`](crate::model::MetricTransformation).
 pub mod metric_transformation {
-
+    
     /// A builder for [`MetricTransformation`](crate::model::MetricTransformation).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -498,9 +473,7 @@ pub mod metric_transformation {
         pub(crate) metric_namespace: std::option::Option<std::string::String>,
         pub(crate) metric_value: std::option::Option<std::string::String>,
         pub(crate) default_value: std::option::Option<f64>,
-        pub(crate) dimensions: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) dimensions: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) unit: std::option::Option<crate::model::StandardUnit>,
     }
     impl Builder {
@@ -511,8 +484,7 @@ pub mod metric_transformation {
         }
         /// <p>The name of the CloudWatch metric.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_name = input;
-            self
+            self.metric_name = input; self
         }
         /// <p>A custom namespace to contain your metric in CloudWatch. Use namespaces to group together metrics that are similar. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">Namespaces</a>.</p>
         pub fn metric_namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -520,12 +492,8 @@ pub mod metric_transformation {
             self
         }
         /// <p>A custom namespace to contain your metric in CloudWatch. Use namespaces to group together metrics that are similar. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">Namespaces</a>.</p>
-        pub fn set_metric_namespace(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.metric_namespace = input;
-            self
+        pub fn set_metric_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.metric_namespace = input; self
         }
         /// <p>The value to publish to the CloudWatch metric when a filter pattern matches a log event.</p>
         pub fn metric_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -534,8 +502,7 @@ pub mod metric_transformation {
         }
         /// <p>The value to publish to the CloudWatch metric when a filter pattern matches a log event.</p>
         pub fn set_metric_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.metric_value = input;
-            self
+            self.metric_value = input; self
         }
         /// <p>(Optional) The value to emit when a filter pattern does not match a log event. This value can be null.</p>
         pub fn default_value(mut self, input: f64) -> Self {
@@ -544,41 +511,30 @@ pub mod metric_transformation {
         }
         /// <p>(Optional) The value to emit when a filter pattern does not match a log event. This value can be null.</p>
         pub fn set_default_value(mut self, input: std::option::Option<f64>) -> Self {
-            self.default_value = input;
-            self
+            self.default_value = input; self
         }
         /// Adds a key-value pair to `dimensions`.
         ///
         /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
         ///
-        /// <p>The fields to use as dimensions for the metric. One metric filter can include as many as three dimensions.</p> <important>
-        /// <p>Metrics extracted from log events are charged as custom metrics. To prevent unexpected high charges, do not specify high-cardinality fields such as <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different value found for a dimension is treated as a separate metric and accrues charges as a separate custom metric. </p>
-        /// <p>CloudWatch Logs disables a metric filter if it generates 1000 different name/value pairs for your specified dimensions within a certain amount of time. This helps to prevent accidental high charges.</p>
-        /// <p>You can also set up a billing alarm to alert you if your charges are higher than expected. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html"> Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>. </p>
+        /// <p>The fields to use as dimensions for the metric. One metric filter can include as many as three dimensions.</p> <important> 
+        /// <p>Metrics extracted from log events are charged as custom metrics. To prevent unexpected high charges, do not specify high-cardinality fields such as <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different value found for a dimension is treated as a separate metric and accrues charges as a separate custom metric. </p> 
+        /// <p>CloudWatch Logs disables a metric filter if it generates 1000 different name/value pairs for your specified dimensions within a certain amount of time. This helps to prevent accidental high charges.</p> 
+        /// <p>You can also set up a billing alarm to alert you if your charges are higher than expected. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html"> Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>. </p> 
         /// </important>
-        pub fn dimensions(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn dimensions(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.dimensions.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.dimensions = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.dimensions = Some(hash_map);
+                            self
         }
-        /// <p>The fields to use as dimensions for the metric. One metric filter can include as many as three dimensions.</p> <important>
-        /// <p>Metrics extracted from log events are charged as custom metrics. To prevent unexpected high charges, do not specify high-cardinality fields such as <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different value found for a dimension is treated as a separate metric and accrues charges as a separate custom metric. </p>
-        /// <p>CloudWatch Logs disables a metric filter if it generates 1000 different name/value pairs for your specified dimensions within a certain amount of time. This helps to prevent accidental high charges.</p>
-        /// <p>You can also set up a billing alarm to alert you if your charges are higher than expected. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html"> Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>. </p>
+        /// <p>The fields to use as dimensions for the metric. One metric filter can include as many as three dimensions.</p> <important> 
+        /// <p>Metrics extracted from log events are charged as custom metrics. To prevent unexpected high charges, do not specify high-cardinality fields such as <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different value found for a dimension is treated as a separate metric and accrues charges as a separate custom metric. </p> 
+        /// <p>CloudWatch Logs disables a metric filter if it generates 1000 different name/value pairs for your specified dimensions within a certain amount of time. This helps to prevent accidental high charges.</p> 
+        /// <p>You can also set up a billing alarm to alert you if your charges are higher than expected. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html"> Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>. </p> 
         /// </important>
-        pub fn set_dimensions(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.dimensions = input;
-            self
+        pub fn set_dimensions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.dimensions = input; self
         }
         /// <p>The unit to assign to the metric. If you omit this, the unit is set as <code>None</code>.</p>
         pub fn unit(mut self, input: crate::model::StandardUnit) -> Self {
@@ -587,21 +543,28 @@ pub mod metric_transformation {
         }
         /// <p>The unit to assign to the metric. If you omit this, the unit is set as <code>None</code>.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::StandardUnit>) -> Self {
-            self.unit = input;
-            self
+            self.unit = input; self
         }
         /// Consumes the builder and constructs a [`MetricTransformation`](crate::model::MetricTransformation).
         pub fn build(self) -> crate::model::MetricTransformation {
             crate::model::MetricTransformation {
-                metric_name: self.metric_name,
-                metric_namespace: self.metric_namespace,
-                metric_value: self.metric_value,
-                default_value: self.default_value,
-                dimensions: self.dimensions,
-                unit: self.unit,
+                metric_name: self.metric_name
+                ,
+                metric_namespace: self.metric_namespace
+                ,
+                metric_value: self.metric_value
+                ,
+                default_value: self.default_value
+                ,
+                dimensions: self.dimensions
+                ,
+                unit: self.unit
+                ,
             }
         }
     }
+    
+    
 }
 impl MetricTransformation {
     /// Creates a new builder-style object to manufacture [`MetricTransformation`](crate::model::MetricTransformation).
@@ -616,9 +579,9 @@ impl MetricTransformation {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let standardunit = unimplemented!();
 /// match standardunit {
@@ -665,22 +628,14 @@ impl MetricTransformation {
 /// Specifically, when `standardunit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StandardUnit::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StandardUnit {
     #[allow(missing_docs)] // documentation missing in model
     Bits,
@@ -737,7 +692,7 @@ pub enum StandardUnit {
     #[allow(missing_docs)] // documentation missing in model
     TerabytesSecond,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StandardUnit {
     fn from(s: &str) -> Self {
@@ -769,17 +724,17 @@ impl std::convert::From<&str> for StandardUnit {
             "Terabits/Second" => StandardUnit::TerabitsSecond,
             "Terabytes" => StandardUnit::Terabytes,
             "Terabytes/Second" => StandardUnit::TerabytesSecond,
-            other => StandardUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StandardUnit::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StandardUnit {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StandardUnit::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StandardUnit::from(s))
+                }
+            }
 impl StandardUnit {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -811,39 +766,13 @@ impl StandardUnit {
             StandardUnit::TerabitsSecond => "Terabits/Second",
             StandardUnit::Terabytes => "Terabytes",
             StandardUnit::TerabytesSecond => "Terabytes/Second",
-            StandardUnit::Unknown(value) => value.as_str(),
+            StandardUnit::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Bits",
-            "Bits/Second",
-            "Bytes",
-            "Bytes/Second",
-            "Count",
-            "Count/Second",
-            "Gigabits",
-            "Gigabits/Second",
-            "Gigabytes",
-            "Gigabytes/Second",
-            "Kilobits",
-            "Kilobits/Second",
-            "Kilobytes",
-            "Kilobytes/Second",
-            "Megabits",
-            "Megabits/Second",
-            "Megabytes",
-            "Megabytes/Second",
-            "Microseconds",
-            "Milliseconds",
-            "None",
-            "Percent",
-            "Seconds",
-            "Terabits",
-            "Terabits/Second",
-            "Terabytes",
-            "Terabytes/Second",
+            "Bits", "Bits/Second", "Bytes", "Bytes/Second", "Count", "Count/Second", "Gigabits", "Gigabits/Second", "Gigabytes", "Gigabytes/Second", "Kilobits", "Kilobits/Second", "Kilobytes", "Kilobytes/Second", "Megabits", "Megabits/Second", "Megabytes", "Megabytes/Second", "Microseconds", "Milliseconds", "None", "Percent", "Seconds", "Terabits", "Terabits/Second", "Terabytes", "Terabytes/Second"
         ]
     }
 }
@@ -856,7 +785,7 @@ impl AsRef<str> for StandardUnit {
 /// <p>Represents the rejected events.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectedLogEventsInfo {
+pub struct RejectedLogEventsInfo  {
     /// <p>The log events that are too new.</p>
     #[doc(hidden)]
     pub too_new_log_event_start_index: std::option::Option<i32>,
@@ -883,7 +812,7 @@ impl RejectedLogEventsInfo {
 }
 /// See [`RejectedLogEventsInfo`](crate::model::RejectedLogEventsInfo).
 pub mod rejected_log_events_info {
-
+    
     /// A builder for [`RejectedLogEventsInfo`](crate::model::RejectedLogEventsInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -898,12 +827,8 @@ pub mod rejected_log_events_info {
             self
         }
         /// <p>The log events that are too new.</p>
-        pub fn set_too_new_log_event_start_index(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.too_new_log_event_start_index = input;
-            self
+        pub fn set_too_new_log_event_start_index(mut self, input: std::option::Option<i32>) -> Self {
+            self.too_new_log_event_start_index = input; self
         }
         /// <p>The log events that are dated too far in the past.</p>
         pub fn too_old_log_event_end_index(mut self, input: i32) -> Self {
@@ -912,8 +837,7 @@ pub mod rejected_log_events_info {
         }
         /// <p>The log events that are dated too far in the past.</p>
         pub fn set_too_old_log_event_end_index(mut self, input: std::option::Option<i32>) -> Self {
-            self.too_old_log_event_end_index = input;
-            self
+            self.too_old_log_event_end_index = input; self
         }
         /// <p>The expired log events.</p>
         pub fn expired_log_event_end_index(mut self, input: i32) -> Self {
@@ -922,18 +846,22 @@ pub mod rejected_log_events_info {
         }
         /// <p>The expired log events.</p>
         pub fn set_expired_log_event_end_index(mut self, input: std::option::Option<i32>) -> Self {
-            self.expired_log_event_end_index = input;
-            self
+            self.expired_log_event_end_index = input; self
         }
         /// Consumes the builder and constructs a [`RejectedLogEventsInfo`](crate::model::RejectedLogEventsInfo).
         pub fn build(self) -> crate::model::RejectedLogEventsInfo {
             crate::model::RejectedLogEventsInfo {
-                too_new_log_event_start_index: self.too_new_log_event_start_index,
-                too_old_log_event_end_index: self.too_old_log_event_end_index,
-                expired_log_event_end_index: self.expired_log_event_end_index,
+                too_new_log_event_start_index: self.too_new_log_event_start_index
+                ,
+                too_old_log_event_end_index: self.too_old_log_event_end_index
+                ,
+                expired_log_event_end_index: self.expired_log_event_end_index
+                ,
             }
         }
     }
+    
+    
 }
 impl RejectedLogEventsInfo {
     /// Creates a new builder-style object to manufacture [`RejectedLogEventsInfo`](crate::model::RejectedLogEventsInfo).
@@ -945,7 +873,7 @@ impl RejectedLogEventsInfo {
 /// <p>Represents a log event, which is a record of activity that was recorded by the application or resource being monitored.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputLogEvent {
+pub struct InputLogEvent  {
     /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub timestamp: std::option::Option<i64>,
@@ -959,13 +887,13 @@ impl InputLogEvent {
         self.timestamp
     }
     /// <p>The raw event message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`InputLogEvent`](crate::model::InputLogEvent).
 pub mod input_log_event {
-
+    
     /// A builder for [`InputLogEvent`](crate::model::InputLogEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -980,8 +908,7 @@ pub mod input_log_event {
         }
         /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-            self.timestamp = input;
-            self
+            self.timestamp = input; self
         }
         /// <p>The raw event message.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -990,17 +917,20 @@ pub mod input_log_event {
         }
         /// <p>The raw event message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`InputLogEvent`](crate::model::InputLogEvent).
         pub fn build(self) -> crate::model::InputLogEvent {
             crate::model::InputLogEvent {
-                timestamp: self.timestamp,
-                message: self.message,
+                timestamp: self.timestamp
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl InputLogEvent {
     /// Creates a new builder-style object to manufacture [`InputLogEvent`](crate::model::InputLogEvent).
@@ -1012,7 +942,7 @@ impl InputLogEvent {
 /// <p>Represents a cross-account destination that receives subscription log events.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Destination {
+pub struct Destination  {
     /// <p>The name of the destination.</p>
     #[doc(hidden)]
     pub destination_name: std::option::Option<std::string::String>,
@@ -1034,23 +964,23 @@ pub struct Destination {
 }
 impl Destination {
     /// <p>The name of the destination.</p>
-    pub fn destination_name(&self) -> std::option::Option<&str> {
+    pub fn destination_name(&self) -> std::option::Option<& str> {
         self.destination_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the physical target where the log events are delivered (for example, a Kinesis stream).</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> std::option::Option<& str> {
         self.target_arn.as_deref()
     }
     /// <p>A role for impersonation, used when delivering log events to the target.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>An IAM policy document that governs which Amazon Web Services accounts can create subscription filters against this destination.</p>
-    pub fn access_policy(&self) -> std::option::Option<&str> {
+    pub fn access_policy(&self) -> std::option::Option<& str> {
         self.access_policy.as_deref()
     }
     /// <p>The ARN of this destination.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
@@ -1060,7 +990,7 @@ impl Destination {
 }
 /// See [`Destination`](crate::model::Destination).
 pub mod destination {
-
+    
     /// A builder for [`Destination`](crate::model::Destination).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1078,12 +1008,8 @@ pub mod destination {
             self
         }
         /// <p>The name of the destination.</p>
-        pub fn set_destination_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_name = input;
-            self
+        pub fn set_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_name = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the physical target where the log events are delivered (for example, a Kinesis stream).</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1092,8 +1018,7 @@ pub mod destination {
         }
         /// <p>The Amazon Resource Name (ARN) of the physical target where the log events are delivered (for example, a Kinesis stream).</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.target_arn = input;
-            self
+            self.target_arn = input; self
         }
         /// <p>A role for impersonation, used when delivering log events to the target.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1102,8 +1027,7 @@ pub mod destination {
         }
         /// <p>A role for impersonation, used when delivering log events to the target.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>An IAM policy document that governs which Amazon Web Services accounts can create subscription filters against this destination.</p>
         pub fn access_policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1111,12 +1035,8 @@ pub mod destination {
             self
         }
         /// <p>An IAM policy document that governs which Amazon Web Services accounts can create subscription filters against this destination.</p>
-        pub fn set_access_policy(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.access_policy = input;
-            self
+        pub fn set_access_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.access_policy = input; self
         }
         /// <p>The ARN of this destination.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1125,8 +1045,7 @@ pub mod destination {
         }
         /// <p>The ARN of this destination.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
         pub fn creation_time(mut self, input: i64) -> Self {
@@ -1135,21 +1054,28 @@ pub mod destination {
         }
         /// <p>The creation time of the destination, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
         pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.creation_time = input;
-            self
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`Destination`](crate::model::Destination).
         pub fn build(self) -> crate::model::Destination {
             crate::model::Destination {
-                destination_name: self.destination_name,
-                target_arn: self.target_arn,
-                role_arn: self.role_arn,
-                access_policy: self.access_policy,
-                arn: self.arn,
-                creation_time: self.creation_time,
+                destination_name: self.destination_name
+                ,
+                target_arn: self.target_arn
+                ,
+                role_arn: self.role_arn
+                ,
+                access_policy: self.access_policy
+                ,
+                arn: self.arn
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Destination {
     /// Creates a new builder-style object to manufacture [`Destination`](crate::model::Destination).
@@ -1164,9 +1090,9 @@ impl Destination {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let querystatus = unimplemented!();
 /// match querystatus {
@@ -1193,22 +1119,14 @@ impl Destination {
 /// Specifically, when `querystatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `QueryStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `QueryStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum QueryStatus {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
@@ -1225,7 +1143,7 @@ pub enum QueryStatus {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for QueryStatus {
     fn from(s: &str) -> Self {
@@ -1237,17 +1155,17 @@ impl std::convert::From<&str> for QueryStatus {
             "Scheduled" => QueryStatus::Scheduled,
             "Timeout" => QueryStatus::Timeout,
             "Unknown" => QueryStatus::UnknownValue,
-            other => QueryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => QueryStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for QueryStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(QueryStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(QueryStatus::from(s))
+                }
+            }
 impl QueryStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1259,19 +1177,13 @@ impl QueryStatus {
             QueryStatus::Scheduled => "Scheduled",
             QueryStatus::Timeout => "Timeout",
             QueryStatus::UnknownValue => "Unknown",
-            QueryStatus::Unknown(value) => value.as_str(),
+            QueryStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Cancelled",
-            "Complete",
-            "Failed",
-            "Running",
-            "Scheduled",
-            "Timeout",
-            "Unknown",
+            "Cancelled", "Complete", "Failed", "Running", "Scheduled", "Timeout", "Unknown"
         ]
     }
 }
@@ -1284,7 +1196,7 @@ impl AsRef<str> for QueryStatus {
 /// <p>Contains the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the log events that were scanned.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryStatistics {
+pub struct QueryStatistics  {
     /// <p>The number of log events that matched the query string.</p>
     #[doc(hidden)]
     pub records_matched: f64,
@@ -1311,7 +1223,7 @@ impl QueryStatistics {
 }
 /// See [`QueryStatistics`](crate::model::QueryStatistics).
 pub mod query_statistics {
-
+    
     /// A builder for [`QueryStatistics`](crate::model::QueryStatistics).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1327,8 +1239,7 @@ pub mod query_statistics {
         }
         /// <p>The number of log events that matched the query string.</p>
         pub fn set_records_matched(mut self, input: std::option::Option<f64>) -> Self {
-            self.records_matched = input;
-            self
+            self.records_matched = input; self
         }
         /// <p>The total number of log events scanned during the query.</p>
         pub fn records_scanned(mut self, input: f64) -> Self {
@@ -1337,8 +1248,7 @@ pub mod query_statistics {
         }
         /// <p>The total number of log events scanned during the query.</p>
         pub fn set_records_scanned(mut self, input: std::option::Option<f64>) -> Self {
-            self.records_scanned = input;
-            self
+            self.records_scanned = input; self
         }
         /// <p>The total number of bytes in the log events scanned during the query.</p>
         pub fn bytes_scanned(mut self, input: f64) -> Self {
@@ -1347,18 +1257,25 @@ pub mod query_statistics {
         }
         /// <p>The total number of bytes in the log events scanned during the query.</p>
         pub fn set_bytes_scanned(mut self, input: std::option::Option<f64>) -> Self {
-            self.bytes_scanned = input;
-            self
+            self.bytes_scanned = input; self
         }
         /// Consumes the builder and constructs a [`QueryStatistics`](crate::model::QueryStatistics).
         pub fn build(self) -> crate::model::QueryStatistics {
             crate::model::QueryStatistics {
-                records_matched: self.records_matched.unwrap_or_default(),
-                records_scanned: self.records_scanned.unwrap_or_default(),
-                bytes_scanned: self.bytes_scanned.unwrap_or_default(),
+                records_matched: self.records_matched
+                    .unwrap_or_default()
+                ,
+                records_scanned: self.records_scanned
+                    .unwrap_or_default()
+                ,
+                bytes_scanned: self.bytes_scanned
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl QueryStatistics {
     /// Creates a new builder-style object to manufacture [`QueryStatistics`](crate::model::QueryStatistics).
@@ -1367,11 +1284,11 @@ impl QueryStatistics {
     }
 }
 
-/// <p>Contains one field from one log event returned by a CloudWatch Logs Insights query, along with the value of that field.</p>
+/// <p>Contains one field from one log event returned by a CloudWatch Logs Insights query, along with the value of that field.</p> 
 /// <p>For more information about the fields that are generated by CloudWatch logs, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html">Supported Logs and Discovered Fields</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResultField {
+pub struct ResultField  {
     /// <p>The log event field.</p>
     #[doc(hidden)]
     pub field: std::option::Option<std::string::String>,
@@ -1381,17 +1298,17 @@ pub struct ResultField {
 }
 impl ResultField {
     /// <p>The log event field.</p>
-    pub fn field(&self) -> std::option::Option<&str> {
+    pub fn field(&self) -> std::option::Option<& str> {
         self.field.as_deref()
     }
     /// <p>The value of this field.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
 /// See [`ResultField`](crate::model::ResultField).
 pub mod result_field {
-
+    
     /// A builder for [`ResultField`](crate::model::ResultField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1406,8 +1323,7 @@ pub mod result_field {
         }
         /// <p>The log event field.</p>
         pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.field = input;
-            self
+            self.field = input; self
         }
         /// <p>The value of this field.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1416,17 +1332,20 @@ pub mod result_field {
         }
         /// <p>The value of this field.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`ResultField`](crate::model::ResultField).
         pub fn build(self) -> crate::model::ResultField {
             crate::model::ResultField {
-                field: self.field,
-                value: self.value,
+                field: self.field
+                ,
+                value: self.value
+                ,
             }
         }
     }
+    
+    
 }
 impl ResultField {
     /// Creates a new builder-style object to manufacture [`ResultField`](crate::model::ResultField).
@@ -1438,7 +1357,7 @@ impl ResultField {
 /// <p>The fields contained in log events found by a <code>GetLogGroupFields</code> operation, along with the percentage of queried log events in which each field appears.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogGroupField {
+pub struct LogGroupField  {
     /// <p>The name of a log field.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -1448,7 +1367,7 @@ pub struct LogGroupField {
 }
 impl LogGroupField {
     /// <p>The name of a log field.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The percentage of log events queried that contained the field.</p>
@@ -1458,7 +1377,7 @@ impl LogGroupField {
 }
 /// See [`LogGroupField`](crate::model::LogGroupField).
 pub mod log_group_field {
-
+    
     /// A builder for [`LogGroupField`](crate::model::LogGroupField).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1473,8 +1392,7 @@ pub mod log_group_field {
         }
         /// <p>The name of a log field.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The percentage of log events queried that contained the field.</p>
         pub fn percent(mut self, input: i32) -> Self {
@@ -1483,17 +1401,21 @@ pub mod log_group_field {
         }
         /// <p>The percentage of log events queried that contained the field.</p>
         pub fn set_percent(mut self, input: std::option::Option<i32>) -> Self {
-            self.percent = input;
-            self
+            self.percent = input; self
         }
         /// Consumes the builder and constructs a [`LogGroupField`](crate::model::LogGroupField).
         pub fn build(self) -> crate::model::LogGroupField {
             crate::model::LogGroupField {
-                name: self.name,
-                percent: self.percent.unwrap_or_default(),
+                name: self.name
+                ,
+                percent: self.percent
+                    .unwrap_or_default()
+                ,
             }
         }
     }
+    
+    
 }
 impl LogGroupField {
     /// Creates a new builder-style object to manufacture [`LogGroupField`](crate::model::LogGroupField).
@@ -1505,7 +1427,7 @@ impl LogGroupField {
 /// <p>Represents a log event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputLogEvent {
+pub struct OutputLogEvent  {
     /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub timestamp: std::option::Option<i64>,
@@ -1522,7 +1444,7 @@ impl OutputLogEvent {
         self.timestamp
     }
     /// <p>The data contained in the log event.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
@@ -1532,7 +1454,7 @@ impl OutputLogEvent {
 }
 /// See [`OutputLogEvent`](crate::model::OutputLogEvent).
 pub mod output_log_event {
-
+    
     /// A builder for [`OutputLogEvent`](crate::model::OutputLogEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1548,8 +1470,7 @@ pub mod output_log_event {
         }
         /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-            self.timestamp = input;
-            self
+            self.timestamp = input; self
         }
         /// <p>The data contained in the log event.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1558,8 +1479,7 @@ pub mod output_log_event {
         }
         /// <p>The data contained in the log event.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn ingestion_time(mut self, input: i64) -> Self {
@@ -1568,18 +1488,22 @@ pub mod output_log_event {
         }
         /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_ingestion_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.ingestion_time = input;
-            self
+            self.ingestion_time = input; self
         }
         /// Consumes the builder and constructs a [`OutputLogEvent`](crate::model::OutputLogEvent).
         pub fn build(self) -> crate::model::OutputLogEvent {
             crate::model::OutputLogEvent {
-                timestamp: self.timestamp,
-                message: self.message,
-                ingestion_time: self.ingestion_time,
+                timestamp: self.timestamp
+                ,
+                message: self.message
+                ,
+                ingestion_time: self.ingestion_time
+                ,
             }
         }
     }
+    
+    
 }
 impl OutputLogEvent {
     /// Creates a new builder-style object to manufacture [`OutputLogEvent`](crate::model::OutputLogEvent).
@@ -1591,7 +1515,7 @@ impl OutputLogEvent {
 /// <p>Represents the search status of a log stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchedLogStream {
+pub struct SearchedLogStream  {
     /// <p>The name of the log stream.</p>
     #[doc(hidden)]
     pub log_stream_name: std::option::Option<std::string::String>,
@@ -1601,7 +1525,7 @@ pub struct SearchedLogStream {
 }
 impl SearchedLogStream {
     /// <p>The name of the log stream.</p>
-    pub fn log_stream_name(&self) -> std::option::Option<&str> {
+    pub fn log_stream_name(&self) -> std::option::Option<& str> {
         self.log_stream_name.as_deref()
     }
     /// <p>Indicates whether all the events in this log stream were searched.</p>
@@ -1611,7 +1535,7 @@ impl SearchedLogStream {
 }
 /// See [`SearchedLogStream`](crate::model::SearchedLogStream).
 pub mod searched_log_stream {
-
+    
     /// A builder for [`SearchedLogStream`](crate::model::SearchedLogStream).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1625,12 +1549,8 @@ pub mod searched_log_stream {
             self
         }
         /// <p>The name of the log stream.</p>
-        pub fn set_log_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_stream_name = input;
-            self
+        pub fn set_log_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_stream_name = input; self
         }
         /// <p>Indicates whether all the events in this log stream were searched.</p>
         pub fn searched_completely(mut self, input: bool) -> Self {
@@ -1639,17 +1559,20 @@ pub mod searched_log_stream {
         }
         /// <p>Indicates whether all the events in this log stream were searched.</p>
         pub fn set_searched_completely(mut self, input: std::option::Option<bool>) -> Self {
-            self.searched_completely = input;
-            self
+            self.searched_completely = input; self
         }
         /// Consumes the builder and constructs a [`SearchedLogStream`](crate::model::SearchedLogStream).
         pub fn build(self) -> crate::model::SearchedLogStream {
             crate::model::SearchedLogStream {
-                log_stream_name: self.log_stream_name,
-                searched_completely: self.searched_completely,
+                log_stream_name: self.log_stream_name
+                ,
+                searched_completely: self.searched_completely
+                ,
             }
         }
     }
+    
+    
 }
 impl SearchedLogStream {
     /// Creates a new builder-style object to manufacture [`SearchedLogStream`](crate::model::SearchedLogStream).
@@ -1661,7 +1584,7 @@ impl SearchedLogStream {
 /// <p>Represents a matched event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilteredLogEvent {
+pub struct FilteredLogEvent  {
     /// <p>The name of the log stream to which this event belongs.</p>
     #[doc(hidden)]
     pub log_stream_name: std::option::Option<std::string::String>,
@@ -1680,7 +1603,7 @@ pub struct FilteredLogEvent {
 }
 impl FilteredLogEvent {
     /// <p>The name of the log stream to which this event belongs.</p>
-    pub fn log_stream_name(&self) -> std::option::Option<&str> {
+    pub fn log_stream_name(&self) -> std::option::Option<& str> {
         self.log_stream_name.as_deref()
     }
     /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
@@ -1688,7 +1611,7 @@ impl FilteredLogEvent {
         self.timestamp
     }
     /// <p>The data contained in the log event.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
     /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
@@ -1696,13 +1619,13 @@ impl FilteredLogEvent {
         self.ingestion_time
     }
     /// <p>The ID of the event.</p>
-    pub fn event_id(&self) -> std::option::Option<&str> {
+    pub fn event_id(&self) -> std::option::Option<& str> {
         self.event_id.as_deref()
     }
 }
 /// See [`FilteredLogEvent`](crate::model::FilteredLogEvent).
 pub mod filtered_log_event {
-
+    
     /// A builder for [`FilteredLogEvent`](crate::model::FilteredLogEvent).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1719,12 +1642,8 @@ pub mod filtered_log_event {
             self
         }
         /// <p>The name of the log stream to which this event belongs.</p>
-        pub fn set_log_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_stream_name = input;
-            self
+        pub fn set_log_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_stream_name = input; self
         }
         /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn timestamp(mut self, input: i64) -> Self {
@@ -1733,8 +1652,7 @@ pub mod filtered_log_event {
         }
         /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-            self.timestamp = input;
-            self
+            self.timestamp = input; self
         }
         /// <p>The data contained in the log event.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1743,8 +1661,7 @@ pub mod filtered_log_event {
         }
         /// <p>The data contained in the log event.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn ingestion_time(mut self, input: i64) -> Self {
@@ -1753,8 +1670,7 @@ pub mod filtered_log_event {
         }
         /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_ingestion_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.ingestion_time = input;
-            self
+            self.ingestion_time = input; self
         }
         /// <p>The ID of the event.</p>
         pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1763,20 +1679,26 @@ pub mod filtered_log_event {
         }
         /// <p>The ID of the event.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.event_id = input;
-            self
+            self.event_id = input; self
         }
         /// Consumes the builder and constructs a [`FilteredLogEvent`](crate::model::FilteredLogEvent).
         pub fn build(self) -> crate::model::FilteredLogEvent {
             crate::model::FilteredLogEvent {
-                log_stream_name: self.log_stream_name,
-                timestamp: self.timestamp,
-                message: self.message,
-                ingestion_time: self.ingestion_time,
-                event_id: self.event_id,
+                log_stream_name: self.log_stream_name
+                ,
+                timestamp: self.timestamp
+                ,
+                message: self.message
+                ,
+                ingestion_time: self.ingestion_time
+                ,
+                event_id: self.event_id
+                ,
             }
         }
     }
+    
+    
 }
 impl FilteredLogEvent {
     /// Creates a new builder-style object to manufacture [`FilteredLogEvent`](crate::model::FilteredLogEvent).
@@ -1788,7 +1710,7 @@ impl FilteredLogEvent {
 /// <p>Represents a subscription filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubscriptionFilter {
+pub struct SubscriptionFilter  {
     /// <p>The name of the subscription filter.</p>
     #[doc(hidden)]
     pub filter_name: std::option::Option<std::string::String>,
@@ -1813,27 +1735,27 @@ pub struct SubscriptionFilter {
 }
 impl SubscriptionFilter {
     /// <p>The name of the subscription filter.</p>
-    pub fn filter_name(&self) -> std::option::Option<&str> {
+    pub fn filter_name(&self) -> std::option::Option<& str> {
         self.filter_name.as_deref()
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(&self) -> std::option::Option<&str> {
+    pub fn log_group_name(&self) -> std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
     /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
-    pub fn filter_pattern(&self) -> std::option::Option<&str> {
+    pub fn filter_pattern(&self) -> std::option::Option<& str> {
         self.filter_pattern.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    pub fn destination_arn(&self) -> std::option::Option<&str> {
+    pub fn destination_arn(&self) -> std::option::Option<& str> {
         self.destination_arn.as_deref()
     }
     /// <p></p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> std::option::Option<& str> {
         self.role_arn.as_deref()
     }
     /// <p>The method used to distribute log data to the destination, which can be either random or grouped by log stream.</p>
-    pub fn distribution(&self) -> std::option::Option<&crate::model::Distribution> {
+    pub fn distribution(&self) -> std::option::Option<& crate::model::Distribution> {
         self.distribution.as_ref()
     }
     /// <p>The creation time of the subscription filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
@@ -1843,7 +1765,7 @@ impl SubscriptionFilter {
 }
 /// See [`SubscriptionFilter`](crate::model::SubscriptionFilter).
 pub mod subscription_filter {
-
+    
     /// A builder for [`SubscriptionFilter`](crate::model::SubscriptionFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1863,8 +1785,7 @@ pub mod subscription_filter {
         }
         /// <p>The name of the subscription filter.</p>
         pub fn set_filter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.filter_name = input;
-            self
+            self.filter_name = input; self
         }
         /// <p>The name of the log group.</p>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1872,12 +1793,8 @@ pub mod subscription_filter {
             self
         }
         /// <p>The name of the log group.</p>
-        pub fn set_log_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_group_name = input;
-            self
+        pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_group_name = input; self
         }
         /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
         pub fn filter_pattern(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1885,12 +1802,8 @@ pub mod subscription_filter {
             self
         }
         /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
-        pub fn set_filter_pattern(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.filter_pattern = input;
-            self
+        pub fn set_filter_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.filter_pattern = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the destination.</p>
         pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1898,12 +1811,8 @@ pub mod subscription_filter {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-        pub fn set_destination_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_arn = input;
-            self
+        pub fn set_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_arn = input; self
         }
         /// <p></p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1912,8 +1821,7 @@ pub mod subscription_filter {
         }
         /// <p></p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.role_arn = input;
-            self
+            self.role_arn = input; self
         }
         /// <p>The method used to distribute log data to the destination, which can be either random or grouped by log stream.</p>
         pub fn distribution(mut self, input: crate::model::Distribution) -> Self {
@@ -1921,12 +1829,8 @@ pub mod subscription_filter {
             self
         }
         /// <p>The method used to distribute log data to the destination, which can be either random or grouped by log stream.</p>
-        pub fn set_distribution(
-            mut self,
-            input: std::option::Option<crate::model::Distribution>,
-        ) -> Self {
-            self.distribution = input;
-            self
+        pub fn set_distribution(mut self, input: std::option::Option<crate::model::Distribution>) -> Self {
+            self.distribution = input; self
         }
         /// <p>The creation time of the subscription filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn creation_time(mut self, input: i64) -> Self {
@@ -1935,22 +1839,30 @@ pub mod subscription_filter {
         }
         /// <p>The creation time of the subscription filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.creation_time = input;
-            self
+            self.creation_time = input; self
         }
         /// Consumes the builder and constructs a [`SubscriptionFilter`](crate::model::SubscriptionFilter).
         pub fn build(self) -> crate::model::SubscriptionFilter {
             crate::model::SubscriptionFilter {
-                filter_name: self.filter_name,
-                log_group_name: self.log_group_name,
-                filter_pattern: self.filter_pattern,
-                destination_arn: self.destination_arn,
-                role_arn: self.role_arn,
-                distribution: self.distribution,
-                creation_time: self.creation_time,
+                filter_name: self.filter_name
+                ,
+                log_group_name: self.log_group_name
+                ,
+                filter_pattern: self.filter_pattern
+                ,
+                destination_arn: self.destination_arn
+                ,
+                role_arn: self.role_arn
+                ,
+                distribution: self.distribution
+                ,
+                creation_time: self.creation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl SubscriptionFilter {
     /// Creates a new builder-style object to manufacture [`SubscriptionFilter`](crate::model::SubscriptionFilter).
@@ -1962,7 +1874,7 @@ impl SubscriptionFilter {
 /// <p>This structure contains details about a saved CloudWatch Logs Insights query definition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryDefinition {
+pub struct QueryDefinition  {
     /// <p>The unique ID of the query definition.</p>
     #[doc(hidden)]
     pub query_definition_id: std::option::Option<std::string::String>,
@@ -1981,15 +1893,15 @@ pub struct QueryDefinition {
 }
 impl QueryDefinition {
     /// <p>The unique ID of the query definition.</p>
-    pub fn query_definition_id(&self) -> std::option::Option<&str> {
+    pub fn query_definition_id(&self) -> std::option::Option<& str> {
         self.query_definition_id.as_deref()
     }
     /// <p>The name of the query definition.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
-    pub fn query_string(&self) -> std::option::Option<&str> {
+    pub fn query_string(&self) -> std::option::Option<& str> {
         self.query_string.as_deref()
     }
     /// <p>The date that the query definition was most recently modified.</p>
@@ -1997,13 +1909,13 @@ impl QueryDefinition {
         self.last_modified
     }
     /// <p>If this query definition contains a list of log groups that it is limited to, that list appears here.</p>
-    pub fn log_group_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn log_group_names(&self) -> std::option::Option<& [std::string::String]> {
         self.log_group_names.as_deref()
     }
 }
 /// See [`QueryDefinition`](crate::model::QueryDefinition).
 pub mod query_definition {
-
+    
     /// A builder for [`QueryDefinition`](crate::model::QueryDefinition).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2020,12 +1932,8 @@ pub mod query_definition {
             self
         }
         /// <p>The unique ID of the query definition.</p>
-        pub fn set_query_definition_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.query_definition_id = input;
-            self
+        pub fn set_query_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.query_definition_id = input; self
         }
         /// <p>The name of the query definition.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2034,8 +1942,7 @@ pub mod query_definition {
         }
         /// <p>The name of the query definition.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
         pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2044,8 +1951,7 @@ pub mod query_definition {
         }
         /// <p>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights Query Syntax</a>.</p>
         pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.query_string = input;
-            self
+            self.query_string = input; self
         }
         /// <p>The date that the query definition was most recently modified.</p>
         pub fn last_modified(mut self, input: i64) -> Self {
@@ -2054,8 +1960,7 @@ pub mod query_definition {
         }
         /// <p>The date that the query definition was most recently modified.</p>
         pub fn set_last_modified(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_modified = input;
-            self
+            self.last_modified = input; self
         }
         /// Appends an item to `log_group_names`.
         ///
@@ -2064,29 +1969,32 @@ pub mod query_definition {
         /// <p>If this query definition contains a list of log groups that it is limited to, that list appears here.</p>
         pub fn log_group_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.log_group_names.unwrap_or_default();
-            v.push(input.into());
-            self.log_group_names = Some(v);
-            self
+                            v.push(input.into());
+                            self.log_group_names = Some(v);
+                            self
         }
         /// <p>If this query definition contains a list of log groups that it is limited to, that list appears here.</p>
-        pub fn set_log_group_names(
-            mut self,
-            input: std::option::Option<std::vec::Vec<std::string::String>>,
-        ) -> Self {
-            self.log_group_names = input;
-            self
+        pub fn set_log_group_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+            self.log_group_names = input; self
         }
         /// Consumes the builder and constructs a [`QueryDefinition`](crate::model::QueryDefinition).
         pub fn build(self) -> crate::model::QueryDefinition {
             crate::model::QueryDefinition {
-                query_definition_id: self.query_definition_id,
-                name: self.name,
-                query_string: self.query_string,
-                last_modified: self.last_modified,
-                log_group_names: self.log_group_names,
+                query_definition_id: self.query_definition_id
+                ,
+                name: self.name
+                ,
+                query_string: self.query_string
+                ,
+                last_modified: self.last_modified
+                ,
+                log_group_names: self.log_group_names
+                ,
             }
         }
     }
+    
+    
 }
 impl QueryDefinition {
     /// Creates a new builder-style object to manufacture [`QueryDefinition`](crate::model::QueryDefinition).
@@ -2098,7 +2006,7 @@ impl QueryDefinition {
 /// <p>Information about one CloudWatch Logs Insights query that matches the request in a <code>DescribeQueries</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryInfo {
+pub struct QueryInfo  {
     /// <p>The unique ID number of this query.</p>
     #[doc(hidden)]
     pub query_id: std::option::Option<std::string::String>,
@@ -2117,15 +2025,15 @@ pub struct QueryInfo {
 }
 impl QueryInfo {
     /// <p>The unique ID number of this query.</p>
-    pub fn query_id(&self) -> std::option::Option<&str> {
+    pub fn query_id(&self) -> std::option::Option<& str> {
         self.query_id.as_deref()
     }
     /// <p>The query string used in this query.</p>
-    pub fn query_string(&self) -> std::option::Option<&str> {
+    pub fn query_string(&self) -> std::option::Option<& str> {
         self.query_string.as_deref()
     }
     /// <p>The status of this query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, and <code>Unknown</code>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::QueryStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::QueryStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time that this query was created.</p>
@@ -2133,13 +2041,13 @@ impl QueryInfo {
         self.create_time
     }
     /// <p>The name of the log group scanned by this query.</p>
-    pub fn log_group_name(&self) -> std::option::Option<&str> {
+    pub fn log_group_name(&self) -> std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
 }
 /// See [`QueryInfo`](crate::model::QueryInfo).
 pub mod query_info {
-
+    
     /// A builder for [`QueryInfo`](crate::model::QueryInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2157,8 +2065,7 @@ pub mod query_info {
         }
         /// <p>The unique ID number of this query.</p>
         pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.query_id = input;
-            self
+            self.query_id = input; self
         }
         /// <p>The query string used in this query.</p>
         pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2167,8 +2074,7 @@ pub mod query_info {
         }
         /// <p>The query string used in this query.</p>
         pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.query_string = input;
-            self
+            self.query_string = input; self
         }
         /// <p>The status of this query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, and <code>Unknown</code>.</p>
         pub fn status(mut self, input: crate::model::QueryStatus) -> Self {
@@ -2177,8 +2083,7 @@ pub mod query_info {
         }
         /// <p>The status of this query. Possible values are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, and <code>Unknown</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::QueryStatus>) -> Self {
-            self.status = input;
-            self
+            self.status = input; self
         }
         /// <p>The date and time that this query was created.</p>
         pub fn create_time(mut self, input: i64) -> Self {
@@ -2187,8 +2092,7 @@ pub mod query_info {
         }
         /// <p>The date and time that this query was created.</p>
         pub fn set_create_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.create_time = input;
-            self
+            self.create_time = input; self
         }
         /// <p>The name of the log group scanned by this query.</p>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2196,24 +2100,27 @@ pub mod query_info {
             self
         }
         /// <p>The name of the log group scanned by this query.</p>
-        pub fn set_log_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_group_name = input;
-            self
+        pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_group_name = input; self
         }
         /// Consumes the builder and constructs a [`QueryInfo`](crate::model::QueryInfo).
         pub fn build(self) -> crate::model::QueryInfo {
             crate::model::QueryInfo {
-                query_id: self.query_id,
-                query_string: self.query_string,
-                status: self.status,
-                create_time: self.create_time,
-                log_group_name: self.log_group_name,
+                query_id: self.query_id
+                ,
+                query_string: self.query_string
+                ,
+                status: self.status
+                ,
+                create_time: self.create_time
+                ,
+                log_group_name: self.log_group_name
+                ,
             }
         }
     }
+    
+    
 }
 impl QueryInfo {
     /// Creates a new builder-style object to manufacture [`QueryInfo`](crate::model::QueryInfo).
@@ -2225,7 +2132,7 @@ impl QueryInfo {
 /// <p>Metric filters express how CloudWatch Logs would extract metric observations from ingested log events and transform them into metric data in a CloudWatch metric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricFilter {
+pub struct MetricFilter  {
     /// <p>The name of the metric filter.</p>
     #[doc(hidden)]
     pub filter_name: std::option::Option<std::string::String>,
@@ -2234,8 +2141,7 @@ pub struct MetricFilter {
     pub filter_pattern: std::option::Option<std::string::String>,
     /// <p>The metric transformations.</p>
     #[doc(hidden)]
-    pub metric_transformations:
-        std::option::Option<std::vec::Vec<crate::model::MetricTransformation>>,
+    pub metric_transformations: std::option::Option<std::vec::Vec<crate::model::MetricTransformation>>,
     /// <p>The creation time of the metric filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<i64>,
@@ -2245,17 +2151,15 @@ pub struct MetricFilter {
 }
 impl MetricFilter {
     /// <p>The name of the metric filter.</p>
-    pub fn filter_name(&self) -> std::option::Option<&str> {
+    pub fn filter_name(&self) -> std::option::Option<& str> {
         self.filter_name.as_deref()
     }
     /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
-    pub fn filter_pattern(&self) -> std::option::Option<&str> {
+    pub fn filter_pattern(&self) -> std::option::Option<& str> {
         self.filter_pattern.as_deref()
     }
     /// <p>The metric transformations.</p>
-    pub fn metric_transformations(
-        &self,
-    ) -> std::option::Option<&[crate::model::MetricTransformation]> {
+    pub fn metric_transformations(&self) -> std::option::Option<& [crate::model::MetricTransformation]> {
         self.metric_transformations.as_deref()
     }
     /// <p>The creation time of the metric filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
@@ -2263,20 +2167,19 @@ impl MetricFilter {
         self.creation_time
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(&self) -> std::option::Option<&str> {
+    pub fn log_group_name(&self) -> std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
 }
 /// See [`MetricFilter`](crate::model::MetricFilter).
 pub mod metric_filter {
-
+    
     /// A builder for [`MetricFilter`](crate::model::MetricFilter).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) filter_name: std::option::Option<std::string::String>,
         pub(crate) filter_pattern: std::option::Option<std::string::String>,
-        pub(crate) metric_transformations:
-            std::option::Option<std::vec::Vec<crate::model::MetricTransformation>>,
+        pub(crate) metric_transformations: std::option::Option<std::vec::Vec<crate::model::MetricTransformation>>,
         pub(crate) creation_time: std::option::Option<i64>,
         pub(crate) log_group_name: std::option::Option<std::string::String>,
     }
@@ -2288,8 +2191,7 @@ pub mod metric_filter {
         }
         /// <p>The name of the metric filter.</p>
         pub fn set_filter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.filter_name = input;
-            self
+            self.filter_name = input; self
         }
         /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
         pub fn filter_pattern(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2297,12 +2199,8 @@ pub mod metric_filter {
             self
         }
         /// <p>A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.</p>
-        pub fn set_filter_pattern(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.filter_pattern = input;
-            self
+        pub fn set_filter_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.filter_pattern = input; self
         }
         /// Appends an item to `metric_transformations`.
         ///
@@ -2311,17 +2209,13 @@ pub mod metric_filter {
         /// <p>The metric transformations.</p>
         pub fn metric_transformations(mut self, input: crate::model::MetricTransformation) -> Self {
             let mut v = self.metric_transformations.unwrap_or_default();
-            v.push(input);
-            self.metric_transformations = Some(v);
-            self
+                            v.push(input);
+                            self.metric_transformations = Some(v);
+                            self
         }
         /// <p>The metric transformations.</p>
-        pub fn set_metric_transformations(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetricTransformation>>,
-        ) -> Self {
-            self.metric_transformations = input;
-            self
+        pub fn set_metric_transformations(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetricTransformation>>) -> Self {
+            self.metric_transformations = input; self
         }
         /// <p>The creation time of the metric filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn creation_time(mut self, input: i64) -> Self {
@@ -2330,8 +2224,7 @@ pub mod metric_filter {
         }
         /// <p>The creation time of the metric filter, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.creation_time = input;
-            self
+            self.creation_time = input; self
         }
         /// <p>The name of the log group.</p>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2339,24 +2232,27 @@ pub mod metric_filter {
             self
         }
         /// <p>The name of the log group.</p>
-        pub fn set_log_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_group_name = input;
-            self
+        pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_group_name = input; self
         }
         /// Consumes the builder and constructs a [`MetricFilter`](crate::model::MetricFilter).
         pub fn build(self) -> crate::model::MetricFilter {
             crate::model::MetricFilter {
-                filter_name: self.filter_name,
-                filter_pattern: self.filter_pattern,
-                metric_transformations: self.metric_transformations,
-                creation_time: self.creation_time,
-                log_group_name: self.log_group_name,
+                filter_name: self.filter_name
+                ,
+                filter_pattern: self.filter_pattern
+                ,
+                metric_transformations: self.metric_transformations
+                ,
+                creation_time: self.creation_time
+                ,
+                log_group_name: self.log_group_name
+                ,
             }
         }
     }
+    
+    
 }
 impl MetricFilter {
     /// Creates a new builder-style object to manufacture [`MetricFilter`](crate::model::MetricFilter).
@@ -2368,7 +2264,7 @@ impl MetricFilter {
 /// <p>Represents a log stream, which is a sequence of log events from a single emitter of logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogStream {
+pub struct LogStream  {
     /// <p>The name of the log stream.</p>
     #[doc(hidden)]
     pub log_stream_name: std::option::Option<std::string::String>,
@@ -2384,25 +2280,23 @@ pub struct LogStream {
     /// <p>The ingestion time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code> The <code>lastIngestionTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour after ingestion, but in rare situations might take longer.</p>
     #[doc(hidden)]
     pub last_ingestion_time: std::option::Option<i64>,
-    /// <p>The sequence token.</p> <important>
-    /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p>
+    /// <p>The sequence token.</p> <important> 
+    /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p> 
     /// </important>
     #[doc(hidden)]
     pub upload_sequence_token: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the log stream.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The number of bytes stored.</p>
+    /// <p>The number of bytes stored.</p> 
     /// <p> <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
-    #[deprecated(
-        note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
-    )]
+    #[deprecated(note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected.")]
     #[doc(hidden)]
     pub stored_bytes: std::option::Option<i64>,
 }
 impl LogStream {
     /// <p>The name of the log stream.</p>
-    pub fn log_stream_name(&self) -> std::option::Option<&str> {
+    pub fn log_stream_name(&self) -> std::option::Option<& str> {
         self.log_stream_name.as_deref()
     }
     /// <p>The creation time of the stream, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
@@ -2421,28 +2315,26 @@ impl LogStream {
     pub fn last_ingestion_time(&self) -> std::option::Option<i64> {
         self.last_ingestion_time
     }
-    /// <p>The sequence token.</p> <important>
-    /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p>
+    /// <p>The sequence token.</p> <important> 
+    /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p> 
     /// </important>
-    pub fn upload_sequence_token(&self) -> std::option::Option<&str> {
+    pub fn upload_sequence_token(&self) -> std::option::Option<& str> {
         self.upload_sequence_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the log stream.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
-    /// <p>The number of bytes stored.</p>
+    /// <p>The number of bytes stored.</p> 
     /// <p> <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
-    #[deprecated(
-        note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
-    )]
+    #[deprecated(note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected.")]
     pub fn stored_bytes(&self) -> std::option::Option<i64> {
         self.stored_bytes
     }
 }
 /// See [`LogStream`](crate::model::LogStream).
 pub mod log_stream {
-
+    
     /// A builder for [`LogStream`](crate::model::LogStream).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2462,12 +2354,8 @@ pub mod log_stream {
             self
         }
         /// <p>The name of the log stream.</p>
-        pub fn set_log_stream_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_stream_name = input;
-            self
+        pub fn set_log_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_stream_name = input; self
         }
         /// <p>The creation time of the stream, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn creation_time(mut self, input: i64) -> Self {
@@ -2476,8 +2364,7 @@ pub mod log_stream {
         }
         /// <p>The creation time of the stream, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.creation_time = input;
-            self
+            self.creation_time = input; self
         }
         /// <p>The time of the first event, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn first_event_timestamp(mut self, input: i64) -> Self {
@@ -2486,8 +2373,7 @@ pub mod log_stream {
         }
         /// <p>The time of the first event, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_first_event_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-            self.first_event_timestamp = input;
-            self
+            self.first_event_timestamp = input; self
         }
         /// <p>The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. The <code>lastEventTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
         pub fn last_event_timestamp(mut self, input: i64) -> Self {
@@ -2496,8 +2382,7 @@ pub mod log_stream {
         }
         /// <p>The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. The <code>lastEventTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.</p>
         pub fn set_last_event_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_event_timestamp = input;
-            self
+            self.last_event_timestamp = input; self
         }
         /// <p>The ingestion time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code> The <code>lastIngestionTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour after ingestion, but in rare situations might take longer.</p>
         pub fn last_ingestion_time(mut self, input: i64) -> Self {
@@ -2506,25 +2391,20 @@ pub mod log_stream {
         }
         /// <p>The ingestion time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code> The <code>lastIngestionTime</code> value updates on an eventual consistency basis. It typically updates in less than an hour after ingestion, but in rare situations might take longer.</p>
         pub fn set_last_ingestion_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.last_ingestion_time = input;
-            self
+            self.last_ingestion_time = input; self
         }
-        /// <p>The sequence token.</p> <important>
-        /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p>
+        /// <p>The sequence token.</p> <important> 
+        /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p> 
         /// </important>
         pub fn upload_sequence_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.upload_sequence_token = Some(input.into());
             self
         }
-        /// <p>The sequence token.</p> <important>
-        /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p>
+        /// <p>The sequence token.</p> <important> 
+        /// <p>The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are always accepted regardless of receiving an invalid sequence token. You don't need to obtain <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.</p> 
         /// </important>
-        pub fn set_upload_sequence_token(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.upload_sequence_token = input;
-            self
+        pub fn set_upload_sequence_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.upload_sequence_token = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the log stream.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2533,41 +2413,45 @@ pub mod log_stream {
         }
         /// <p>The Amazon Resource Name (ARN) of the log stream.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
-        /// <p>The number of bytes stored.</p>
+        /// <p>The number of bytes stored.</p> 
         /// <p> <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
-        #[deprecated(
-            note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
-        )]
+        #[deprecated(note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected.")]
         pub fn stored_bytes(mut self, input: i64) -> Self {
             self.stored_bytes = Some(input);
             self
         }
-        /// <p>The number of bytes stored.</p>
+        /// <p>The number of bytes stored.</p> 
         /// <p> <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not affected.</p>
-        #[deprecated(
-            note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected."
-        )]
+        #[deprecated(note = "Starting on June 17, 2019, this parameter will be deprecated for log streams, and will be reported as zero. This change applies only to log streams. The storedBytes parameter for log groups is not affected.")]
         pub fn set_stored_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.stored_bytes = input;
-            self
+            self.stored_bytes = input; self
         }
         /// Consumes the builder and constructs a [`LogStream`](crate::model::LogStream).
         pub fn build(self) -> crate::model::LogStream {
             crate::model::LogStream {
-                log_stream_name: self.log_stream_name,
-                creation_time: self.creation_time,
-                first_event_timestamp: self.first_event_timestamp,
-                last_event_timestamp: self.last_event_timestamp,
-                last_ingestion_time: self.last_ingestion_time,
-                upload_sequence_token: self.upload_sequence_token,
-                arn: self.arn,
-                stored_bytes: self.stored_bytes,
+                log_stream_name: self.log_stream_name
+                ,
+                creation_time: self.creation_time
+                ,
+                first_event_timestamp: self.first_event_timestamp
+                ,
+                last_event_timestamp: self.last_event_timestamp
+                ,
+                last_ingestion_time: self.last_ingestion_time
+                ,
+                upload_sequence_token: self.upload_sequence_token
+                ,
+                arn: self.arn
+                ,
+                stored_bytes: self.stored_bytes
+                ,
             }
         }
     }
+    
+    
 }
 impl LogStream {
     /// Creates a new builder-style object to manufacture [`LogStream`](crate::model::LogStream).
@@ -2582,9 +2466,9 @@ impl LogStream {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let orderby = unimplemented!();
 /// match orderby {
@@ -2606,58 +2490,52 @@ impl LogStream {
 /// Specifically, when `orderby` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OrderBy::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum OrderBy {
     #[allow(missing_docs)] // documentation missing in model
     LastEventTime,
     #[allow(missing_docs)] // documentation missing in model
     LogStreamName,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for OrderBy {
     fn from(s: &str) -> Self {
         match s {
             "LastEventTime" => OrderBy::LastEventTime,
             "LogStreamName" => OrderBy::LogStreamName,
-            other => OrderBy::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => OrderBy::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for OrderBy {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OrderBy::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(OrderBy::from(s))
+                }
+            }
 impl OrderBy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrderBy::LastEventTime => "LastEventTime",
             OrderBy::LogStreamName => "LogStreamName",
-            OrderBy::Unknown(value) => value.as_str(),
+            OrderBy::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LastEventTime", "LogStreamName"]
+        &[
+            "LastEventTime", "LogStreamName"
+        ]
     }
 }
 impl AsRef<str> for OrderBy {
@@ -2669,14 +2547,14 @@ impl AsRef<str> for OrderBy {
 /// <p>Represents a log group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogGroup {
+pub struct LogGroup  {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>The creation time of the log group, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<i64>,
-    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
+    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p> 
     /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     #[doc(hidden)]
     pub retention_in_days: std::option::Option<i32>,
@@ -2698,14 +2576,14 @@ pub struct LogGroup {
 }
 impl LogGroup {
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(&self) -> std::option::Option<&str> {
+    pub fn log_group_name(&self) -> std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
     /// <p>The creation time of the log group, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
     pub fn creation_time(&self) -> std::option::Option<i64> {
         self.creation_time
     }
-    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
+    /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p> 
     /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
     pub fn retention_in_days(&self) -> std::option::Option<i32> {
         self.retention_in_days
@@ -2715,7 +2593,7 @@ impl LogGroup {
         self.metric_filter_count
     }
     /// <p>The Amazon Resource Name (ARN) of the log group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The number of bytes stored.</p>
@@ -2723,19 +2601,17 @@ impl LogGroup {
         self.stored_bytes
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Displays whether this log group has a protection policy, or whether it had one in the past. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
-    pub fn data_protection_status(
-        &self,
-    ) -> std::option::Option<&crate::model::DataProtectionStatus> {
+    pub fn data_protection_status(&self) -> std::option::Option<& crate::model::DataProtectionStatus> {
         self.data_protection_status.as_ref()
     }
 }
 /// See [`LogGroup`](crate::model::LogGroup).
 pub mod log_group {
-
+    
     /// A builder for [`LogGroup`](crate::model::LogGroup).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2755,12 +2631,8 @@ pub mod log_group {
             self
         }
         /// <p>The name of the log group.</p>
-        pub fn set_log_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_group_name = input;
-            self
+        pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_group_name = input; self
         }
         /// <p>The creation time of the log group, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
         pub fn creation_time(mut self, input: i64) -> Self {
@@ -2769,20 +2641,18 @@ pub mod log_group {
         }
         /// <p>The creation time of the log group, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
         pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.creation_time = input;
-            self
+            self.creation_time = input; self
         }
-        /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
+        /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p> 
         /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
         pub fn retention_in_days(mut self, input: i32) -> Self {
             self.retention_in_days = Some(input);
             self
         }
-        /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p>
+        /// <p>The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 2192, 2557, 2922, 3288, and 3653.</p> 
         /// <p>To set a log group so that its log events do not expire, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>. </p>
         pub fn set_retention_in_days(mut self, input: std::option::Option<i32>) -> Self {
-            self.retention_in_days = input;
-            self
+            self.retention_in_days = input; self
         }
         /// <p>The number of metric filters.</p>
         pub fn metric_filter_count(mut self, input: i32) -> Self {
@@ -2791,8 +2661,7 @@ pub mod log_group {
         }
         /// <p>The number of metric filters.</p>
         pub fn set_metric_filter_count(mut self, input: std::option::Option<i32>) -> Self {
-            self.metric_filter_count = input;
-            self
+            self.metric_filter_count = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the log group.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2801,8 +2670,7 @@ pub mod log_group {
         }
         /// <p>The Amazon Resource Name (ARN) of the log group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The number of bytes stored.</p>
         pub fn stored_bytes(mut self, input: i64) -> Self {
@@ -2811,8 +2679,7 @@ pub mod log_group {
         }
         /// <p>The number of bytes stored.</p>
         pub fn set_stored_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.stored_bytes = input;
-            self
+            self.stored_bytes = input; self
         }
         /// <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2821,8 +2688,7 @@ pub mod log_group {
         }
         /// <p>The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// <p>Displays whether this log group has a protection policy, or whether it had one in the past. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
         pub fn data_protection_status(mut self, input: crate::model::DataProtectionStatus) -> Self {
@@ -2830,27 +2696,33 @@ pub mod log_group {
             self
         }
         /// <p>Displays whether this log group has a protection policy, or whether it had one in the past. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>.</p>
-        pub fn set_data_protection_status(
-            mut self,
-            input: std::option::Option<crate::model::DataProtectionStatus>,
-        ) -> Self {
-            self.data_protection_status = input;
-            self
+        pub fn set_data_protection_status(mut self, input: std::option::Option<crate::model::DataProtectionStatus>) -> Self {
+            self.data_protection_status = input; self
         }
         /// Consumes the builder and constructs a [`LogGroup`](crate::model::LogGroup).
         pub fn build(self) -> crate::model::LogGroup {
             crate::model::LogGroup {
-                log_group_name: self.log_group_name,
-                creation_time: self.creation_time,
-                retention_in_days: self.retention_in_days,
-                metric_filter_count: self.metric_filter_count,
-                arn: self.arn,
-                stored_bytes: self.stored_bytes,
-                kms_key_id: self.kms_key_id,
-                data_protection_status: self.data_protection_status,
+                log_group_name: self.log_group_name
+                ,
+                creation_time: self.creation_time
+                ,
+                retention_in_days: self.retention_in_days
+                ,
+                metric_filter_count: self.metric_filter_count
+                ,
+                arn: self.arn
+                ,
+                stored_bytes: self.stored_bytes
+                ,
+                kms_key_id: self.kms_key_id
+                ,
+                data_protection_status: self.data_protection_status
+                ,
             }
         }
     }
+    
+    
 }
 impl LogGroup {
     /// Creates a new builder-style object to manufacture [`LogGroup`](crate::model::LogGroup).
@@ -2865,9 +2737,9 @@ impl LogGroup {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let dataprotectionstatus = unimplemented!();
 /// match dataprotectionstatus {
@@ -2891,22 +2763,14 @@ impl LogGroup {
 /// Specifically, when `dataprotectionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataProtectionStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DataProtectionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Activated,
@@ -2917,7 +2781,7 @@ pub enum DataProtectionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DataProtectionStatus {
     fn from(s: &str) -> Self {
@@ -2926,19 +2790,17 @@ impl std::convert::From<&str> for DataProtectionStatus {
             "ARCHIVED" => DataProtectionStatus::Archived,
             "DELETED" => DataProtectionStatus::Deleted,
             "DISABLED" => DataProtectionStatus::Disabled,
-            other => {
-                DataProtectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DataProtectionStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DataProtectionStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataProtectionStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DataProtectionStatus::from(s))
+                }
+            }
 impl DataProtectionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2947,12 +2809,14 @@ impl DataProtectionStatus {
             DataProtectionStatus::Archived => "ARCHIVED",
             DataProtectionStatus::Deleted => "DELETED",
             DataProtectionStatus::Disabled => "DISABLED",
-            DataProtectionStatus::Unknown(value) => value.as_str(),
+            DataProtectionStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVATED", "ARCHIVED", "DELETED", "DISABLED"]
+        &[
+            "ACTIVATED", "ARCHIVED", "DELETED", "DISABLED"
+        ]
     }
 }
 impl AsRef<str> for DataProtectionStatus {
@@ -2964,7 +2828,7 @@ impl AsRef<str> for DataProtectionStatus {
 /// <p>Represents an export task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportTask {
+pub struct ExportTask  {
     /// <p>The ID of the export task.</p>
     #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
@@ -2995,15 +2859,15 @@ pub struct ExportTask {
 }
 impl ExportTask {
     /// <p>The ID of the export task.</p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> std::option::Option<& str> {
         self.task_id.as_deref()
     }
     /// <p>The name of the export task.</p>
-    pub fn task_name(&self) -> std::option::Option<&str> {
+    pub fn task_name(&self) -> std::option::Option<& str> {
         self.task_name.as_deref()
     }
     /// <p>The name of the log group from which logs data was exported.</p>
-    pub fn log_group_name(&self) -> std::option::Option<&str> {
+    pub fn log_group_name(&self) -> std::option::Option<& str> {
         self.log_group_name.as_deref()
     }
     /// <p>The start time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not exported.</p>
@@ -3015,25 +2879,25 @@ impl ExportTask {
         self.to
     }
     /// <p>The name of the S3 bucket to which the log data was exported.</p>
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> std::option::Option<& str> {
         self.destination.as_deref()
     }
     /// <p>The prefix that was used as the start of Amazon S3 key for every object exported.</p>
-    pub fn destination_prefix(&self) -> std::option::Option<&str> {
+    pub fn destination_prefix(&self) -> std::option::Option<& str> {
         self.destination_prefix.as_deref()
     }
     /// <p>The status of the export task.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::ExportTaskStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::ExportTaskStatus> {
         self.status.as_ref()
     }
     /// <p>Execution information about the export task.</p>
-    pub fn execution_info(&self) -> std::option::Option<&crate::model::ExportTaskExecutionInfo> {
+    pub fn execution_info(&self) -> std::option::Option<& crate::model::ExportTaskExecutionInfo> {
         self.execution_info.as_ref()
     }
 }
 /// See [`ExportTask`](crate::model::ExportTask).
 pub mod export_task {
-
+    
     /// A builder for [`ExportTask`](crate::model::ExportTask).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3055,8 +2919,7 @@ pub mod export_task {
         }
         /// <p>The ID of the export task.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_id = input;
-            self
+            self.task_id = input; self
         }
         /// <p>The name of the export task.</p>
         pub fn task_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3065,8 +2928,7 @@ pub mod export_task {
         }
         /// <p>The name of the export task.</p>
         pub fn set_task_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.task_name = input;
-            self
+            self.task_name = input; self
         }
         /// <p>The name of the log group from which logs data was exported.</p>
         pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3074,12 +2936,8 @@ pub mod export_task {
             self
         }
         /// <p>The name of the log group from which logs data was exported.</p>
-        pub fn set_log_group_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.log_group_name = input;
-            self
+        pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.log_group_name = input; self
         }
         /// <p>The start time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not exported.</p>
         pub fn from(mut self, input: i64) -> Self {
@@ -3088,8 +2946,7 @@ pub mod export_task {
         }
         /// <p>The start time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not exported.</p>
         pub fn set_from(mut self, input: std::option::Option<i64>) -> Self {
-            self.from = input;
-            self
+            self.from = input; self
         }
         /// <p>The end time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p>
         pub fn to(mut self, input: i64) -> Self {
@@ -3098,8 +2955,7 @@ pub mod export_task {
         }
         /// <p>The end time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not exported.</p>
         pub fn set_to(mut self, input: std::option::Option<i64>) -> Self {
-            self.to = input;
-            self
+            self.to = input; self
         }
         /// <p>The name of the S3 bucket to which the log data was exported.</p>
         pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3108,8 +2964,7 @@ pub mod export_task {
         }
         /// <p>The name of the S3 bucket to which the log data was exported.</p>
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.destination = input;
-            self
+            self.destination = input; self
         }
         /// <p>The prefix that was used as the start of Amazon S3 key for every object exported.</p>
         pub fn destination_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3117,12 +2972,8 @@ pub mod export_task {
             self
         }
         /// <p>The prefix that was used as the start of Amazon S3 key for every object exported.</p>
-        pub fn set_destination_prefix(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.destination_prefix = input;
-            self
+        pub fn set_destination_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.destination_prefix = input; self
         }
         /// <p>The status of the export task.</p>
         pub fn status(mut self, input: crate::model::ExportTaskStatus) -> Self {
@@ -3130,12 +2981,8 @@ pub mod export_task {
             self
         }
         /// <p>The status of the export task.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::ExportTaskStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::ExportTaskStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>Execution information about the export task.</p>
         pub fn execution_info(mut self, input: crate::model::ExportTaskExecutionInfo) -> Self {
@@ -3143,28 +2990,35 @@ pub mod export_task {
             self
         }
         /// <p>Execution information about the export task.</p>
-        pub fn set_execution_info(
-            mut self,
-            input: std::option::Option<crate::model::ExportTaskExecutionInfo>,
-        ) -> Self {
-            self.execution_info = input;
-            self
+        pub fn set_execution_info(mut self, input: std::option::Option<crate::model::ExportTaskExecutionInfo>) -> Self {
+            self.execution_info = input; self
         }
         /// Consumes the builder and constructs a [`ExportTask`](crate::model::ExportTask).
         pub fn build(self) -> crate::model::ExportTask {
             crate::model::ExportTask {
-                task_id: self.task_id,
-                task_name: self.task_name,
-                log_group_name: self.log_group_name,
-                from: self.from,
-                to: self.to,
-                destination: self.destination,
-                destination_prefix: self.destination_prefix,
-                status: self.status,
-                execution_info: self.execution_info,
+                task_id: self.task_id
+                ,
+                task_name: self.task_name
+                ,
+                log_group_name: self.log_group_name
+                ,
+                from: self.from
+                ,
+                to: self.to
+                ,
+                destination: self.destination
+                ,
+                destination_prefix: self.destination_prefix
+                ,
+                status: self.status
+                ,
+                execution_info: self.execution_info
+                ,
             }
         }
     }
+    
+    
 }
 impl ExportTask {
     /// Creates a new builder-style object to manufacture [`ExportTask`](crate::model::ExportTask).
@@ -3176,7 +3030,7 @@ impl ExportTask {
 /// <p>Represents the status of an export task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportTaskExecutionInfo {
+pub struct ExportTaskExecutionInfo  {
     /// <p>The creation time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<i64>,
@@ -3196,7 +3050,7 @@ impl ExportTaskExecutionInfo {
 }
 /// See [`ExportTaskExecutionInfo`](crate::model::ExportTaskExecutionInfo).
 pub mod export_task_execution_info {
-
+    
     /// A builder for [`ExportTaskExecutionInfo`](crate::model::ExportTaskExecutionInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3211,8 +3065,7 @@ pub mod export_task_execution_info {
         }
         /// <p>The creation time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.creation_time = input;
-            self
+            self.creation_time = input; self
         }
         /// <p>The completion time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn completion_time(mut self, input: i64) -> Self {
@@ -3221,17 +3074,20 @@ pub mod export_task_execution_info {
         }
         /// <p>The completion time of the export task, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
         pub fn set_completion_time(mut self, input: std::option::Option<i64>) -> Self {
-            self.completion_time = input;
-            self
+            self.completion_time = input; self
         }
         /// Consumes the builder and constructs a [`ExportTaskExecutionInfo`](crate::model::ExportTaskExecutionInfo).
         pub fn build(self) -> crate::model::ExportTaskExecutionInfo {
             crate::model::ExportTaskExecutionInfo {
-                creation_time: self.creation_time,
-                completion_time: self.completion_time,
+                creation_time: self.creation_time
+                ,
+                completion_time: self.completion_time
+                ,
             }
         }
     }
+    
+    
 }
 impl ExportTaskExecutionInfo {
     /// Creates a new builder-style object to manufacture [`ExportTaskExecutionInfo`](crate::model::ExportTaskExecutionInfo).
@@ -3243,7 +3099,7 @@ impl ExportTaskExecutionInfo {
 /// <p>Represents the status of an export task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportTaskStatus {
+pub struct ExportTaskStatus  {
     /// <p>The status code of the export task.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::model::ExportTaskStatusCode>,
@@ -3253,17 +3109,17 @@ pub struct ExportTaskStatus {
 }
 impl ExportTaskStatus {
     /// <p>The status code of the export task.</p>
-    pub fn code(&self) -> std::option::Option<&crate::model::ExportTaskStatusCode> {
+    pub fn code(&self) -> std::option::Option<& crate::model::ExportTaskStatusCode> {
         self.code.as_ref()
     }
     /// <p>The status message related to the status code.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ExportTaskStatus`](crate::model::ExportTaskStatus).
 pub mod export_task_status {
-
+    
     /// A builder for [`ExportTaskStatus`](crate::model::ExportTaskStatus).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3277,12 +3133,8 @@ pub mod export_task_status {
             self
         }
         /// <p>The status code of the export task.</p>
-        pub fn set_code(
-            mut self,
-            input: std::option::Option<crate::model::ExportTaskStatusCode>,
-        ) -> Self {
-            self.code = input;
-            self
+        pub fn set_code(mut self, input: std::option::Option<crate::model::ExportTaskStatusCode>) -> Self {
+            self.code = input; self
         }
         /// <p>The status message related to the status code.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3291,17 +3143,20 @@ pub mod export_task_status {
         }
         /// <p>The status message related to the status code.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ExportTaskStatus`](crate::model::ExportTaskStatus).
         pub fn build(self) -> crate::model::ExportTaskStatus {
             crate::model::ExportTaskStatus {
-                code: self.code,
-                message: self.message,
+                code: self.code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ExportTaskStatus {
     /// Creates a new builder-style object to manufacture [`ExportTaskStatus`](crate::model::ExportTaskStatus).
@@ -3316,9 +3171,9 @@ impl ExportTaskStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let exporttaskstatuscode = unimplemented!();
 /// match exporttaskstatuscode {
@@ -3344,22 +3199,14 @@ impl ExportTaskStatus {
 /// Specifically, when `exporttaskstatuscode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExportTaskStatusCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ExportTaskStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Cancelled,
@@ -3374,7 +3221,7 @@ pub enum ExportTaskStatusCode {
     #[allow(missing_docs)] // documentation missing in model
     Running,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExportTaskStatusCode {
     fn from(s: &str) -> Self {
@@ -3385,19 +3232,17 @@ impl std::convert::From<&str> for ExportTaskStatusCode {
             "PENDING" => ExportTaskStatusCode::Pending,
             "PENDING_CANCEL" => ExportTaskStatusCode::PendingCancel,
             "RUNNING" => ExportTaskStatusCode::Running,
-            other => {
-                ExportTaskStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => ExportTaskStatusCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ExportTaskStatusCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExportTaskStatusCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ExportTaskStatusCode::from(s))
+                }
+            }
 impl ExportTaskStatusCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3408,18 +3253,13 @@ impl ExportTaskStatusCode {
             ExportTaskStatusCode::Pending => "PENDING",
             ExportTaskStatusCode::PendingCancel => "PENDING_CANCEL",
             ExportTaskStatusCode::Running => "RUNNING",
-            ExportTaskStatusCode::Unknown(value) => value.as_str(),
+            ExportTaskStatusCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "CANCELLED",
-            "COMPLETED",
-            "FAILED",
-            "PENDING",
-            "PENDING_CANCEL",
-            "RUNNING",
+            "CANCELLED", "COMPLETED", "FAILED", "PENDING", "PENDING_CANCEL", "RUNNING"
         ]
     }
 }
@@ -3428,3 +3268,4 @@ impl AsRef<str> for ExportTaskStatusCode {
         self.as_str()
     }
 }
+

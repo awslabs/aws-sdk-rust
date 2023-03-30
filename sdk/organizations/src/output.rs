@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePolicyOutput {
+pub struct UpdatePolicyOutput  {
     /// <p>A structure that contains details about the updated policy, showing the requested changes.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
 }
 impl UpdatePolicyOutput {
     /// <p>A structure that contains details about the updated policy, showing the requested changes.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
+    pub fn policy(&self) -> std::option::Option<& crate::model::Policy> {
         self.policy.as_ref()
     }
 }
 /// See [`UpdatePolicyOutput`](crate::output::UpdatePolicyOutput).
 pub mod update_policy_output {
-
+    
     /// A builder for [`UpdatePolicyOutput`](crate::output::UpdatePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -29,16 +29,18 @@ pub mod update_policy_output {
         }
         /// <p>A structure that contains details about the updated policy, showing the requested changes.</p>
         pub fn set_policy(mut self, input: std::option::Option<crate::model::Policy>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`UpdatePolicyOutput`](crate::output::UpdatePolicyOutput).
         pub fn build(self) -> crate::output::UpdatePolicyOutput {
             crate::output::UpdatePolicyOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdatePolicyOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePolicyOutput`](crate::output::UpdatePolicyOutput).
@@ -50,20 +52,20 @@ impl UpdatePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateOrganizationalUnitOutput {
+pub struct UpdateOrganizationalUnitOutput  {
     /// <p>A structure that contains the details about the specified OU, including its new name.</p>
     #[doc(hidden)]
     pub organizational_unit: std::option::Option<crate::model::OrganizationalUnit>,
 }
 impl UpdateOrganizationalUnitOutput {
     /// <p>A structure that contains the details about the specified OU, including its new name.</p>
-    pub fn organizational_unit(&self) -> std::option::Option<&crate::model::OrganizationalUnit> {
+    pub fn organizational_unit(&self) -> std::option::Option<& crate::model::OrganizationalUnit> {
         self.organizational_unit.as_ref()
     }
 }
 /// See [`UpdateOrganizationalUnitOutput`](crate::output::UpdateOrganizationalUnitOutput).
 pub mod update_organizational_unit_output {
-
+    
     /// A builder for [`UpdateOrganizationalUnitOutput`](crate::output::UpdateOrganizationalUnitOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -76,20 +78,19 @@ pub mod update_organizational_unit_output {
             self
         }
         /// <p>A structure that contains the details about the specified OU, including its new name.</p>
-        pub fn set_organizational_unit(
-            mut self,
-            input: std::option::Option<crate::model::OrganizationalUnit>,
-        ) -> Self {
-            self.organizational_unit = input;
-            self
+        pub fn set_organizational_unit(mut self, input: std::option::Option<crate::model::OrganizationalUnit>) -> Self {
+            self.organizational_unit = input; self
         }
         /// Consumes the builder and constructs a [`UpdateOrganizationalUnitOutput`](crate::output::UpdateOrganizationalUnitOutput).
         pub fn build(self) -> crate::output::UpdateOrganizationalUnitOutput {
             crate::output::UpdateOrganizationalUnitOutput {
-                organizational_unit: self.organizational_unit,
+                organizational_unit: self.organizational_unit
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateOrganizationalUnitOutput {
     /// Creates a new builder-style object to manufacture [`UpdateOrganizationalUnitOutput`](crate::output::UpdateOrganizationalUnitOutput).
@@ -101,19 +102,24 @@ impl UpdateOrganizationalUnitOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -125,19 +131,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -149,19 +160,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveAccountFromOrganizationOutput {}
+pub struct RemoveAccountFromOrganizationOutput  {
+}
 /// See [`RemoveAccountFromOrganizationOutput`](crate::output::RemoveAccountFromOrganizationOutput).
 pub mod remove_account_from_organization_output {
-
+    
     /// A builder for [`RemoveAccountFromOrganizationOutput`](crate::output::RemoveAccountFromOrganizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RemoveAccountFromOrganizationOutput`](crate::output::RemoveAccountFromOrganizationOutput).
         pub fn build(self) -> crate::output::RemoveAccountFromOrganizationOutput {
-            crate::output::RemoveAccountFromOrganizationOutput {}
+            crate::output::RemoveAccountFromOrganizationOutput {
+            }
         }
     }
+    
+    
 }
 impl RemoveAccountFromOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`RemoveAccountFromOrganizationOutput`](crate::output::RemoveAccountFromOrganizationOutput).
@@ -173,19 +189,24 @@ impl RemoveAccountFromOrganizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterDelegatedAdministratorOutput {}
+pub struct RegisterDelegatedAdministratorOutput  {
+}
 /// See [`RegisterDelegatedAdministratorOutput`](crate::output::RegisterDelegatedAdministratorOutput).
 pub mod register_delegated_administrator_output {
-
+    
     /// A builder for [`RegisterDelegatedAdministratorOutput`](crate::output::RegisterDelegatedAdministratorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`RegisterDelegatedAdministratorOutput`](crate::output::RegisterDelegatedAdministratorOutput).
         pub fn build(self) -> crate::output::RegisterDelegatedAdministratorOutput {
-            crate::output::RegisterDelegatedAdministratorOutput {}
+            crate::output::RegisterDelegatedAdministratorOutput {
+            }
         }
     }
+    
+    
 }
 impl RegisterDelegatedAdministratorOutput {
     /// Creates a new builder-style object to manufacture [`RegisterDelegatedAdministratorOutput`](crate::output::RegisterDelegatedAdministratorOutput).
@@ -197,20 +218,20 @@ impl RegisterDelegatedAdministratorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutResourcePolicyOutput {
+pub struct PutResourcePolicyOutput  {
     /// <p>A structure that contains details about the resource policy.</p>
     #[doc(hidden)]
     pub resource_policy: std::option::Option<crate::model::ResourcePolicy>,
 }
 impl PutResourcePolicyOutput {
     /// <p>A structure that contains details about the resource policy.</p>
-    pub fn resource_policy(&self) -> std::option::Option<&crate::model::ResourcePolicy> {
+    pub fn resource_policy(&self) -> std::option::Option<& crate::model::ResourcePolicy> {
         self.resource_policy.as_ref()
     }
 }
 /// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
 pub mod put_resource_policy_output {
-
+    
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -223,20 +244,19 @@ pub mod put_resource_policy_output {
             self
         }
         /// <p>A structure that contains details about the resource policy.</p>
-        pub fn set_resource_policy(
-            mut self,
-            input: std::option::Option<crate::model::ResourcePolicy>,
-        ) -> Self {
-            self.resource_policy = input;
-            self
+        pub fn set_resource_policy(mut self, input: std::option::Option<crate::model::ResourcePolicy>) -> Self {
+            self.resource_policy = input; self
         }
         /// Consumes the builder and constructs a [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
         pub fn build(self) -> crate::output::PutResourcePolicyOutput {
             crate::output::PutResourcePolicyOutput {
-                resource_policy: self.resource_policy,
+                resource_policy: self.resource_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl PutResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
@@ -248,19 +268,24 @@ impl PutResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MoveAccountOutput {}
+pub struct MoveAccountOutput  {
+}
 /// See [`MoveAccountOutput`](crate::output::MoveAccountOutput).
 pub mod move_account_output {
-
+    
     /// A builder for [`MoveAccountOutput`](crate::output::MoveAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`MoveAccountOutput`](crate::output::MoveAccountOutput).
         pub fn build(self) -> crate::output::MoveAccountOutput {
-            crate::output::MoveAccountOutput {}
+            crate::output::MoveAccountOutput {
+            }
         }
     }
+    
+    
 }
 impl MoveAccountOutput {
     /// Creates a new builder-style object to manufacture [`MoveAccountOutput`](crate::output::MoveAccountOutput).
@@ -272,7 +297,7 @@ impl MoveAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTargetsForPolicyOutput {
+pub struct ListTargetsForPolicyOutput  {
     /// <p>A list of structures, each of which contains details about one of the entities to which the specified policy is attached.</p>
     #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::model::PolicyTargetSummary>>,
@@ -282,17 +307,17 @@ pub struct ListTargetsForPolicyOutput {
 }
 impl ListTargetsForPolicyOutput {
     /// <p>A list of structures, each of which contains details about one of the entities to which the specified policy is attached.</p>
-    pub fn targets(&self) -> std::option::Option<&[crate::model::PolicyTargetSummary]> {
+    pub fn targets(&self) -> std::option::Option<& [crate::model::PolicyTargetSummary]> {
         self.targets.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTargetsForPolicyOutput`](crate::output::ListTargetsForPolicyOutput).
 pub mod list_targets_for_policy_output {
-
+    
     /// A builder for [`ListTargetsForPolicyOutput`](crate::output::ListTargetsForPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -307,17 +332,13 @@ pub mod list_targets_for_policy_output {
         /// <p>A list of structures, each of which contains details about one of the entities to which the specified policy is attached.</p>
         pub fn targets(mut self, input: crate::model::PolicyTargetSummary) -> Self {
             let mut v = self.targets.unwrap_or_default();
-            v.push(input);
-            self.targets = Some(v);
-            self
+                            v.push(input);
+                            self.targets = Some(v);
+                            self
         }
         /// <p>A list of structures, each of which contains details about one of the entities to which the specified policy is attached.</p>
-        pub fn set_targets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PolicyTargetSummary>>,
-        ) -> Self {
-            self.targets = input;
-            self
+        pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicyTargetSummary>>) -> Self {
+            self.targets = input; self
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -326,17 +347,20 @@ pub mod list_targets_for_policy_output {
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTargetsForPolicyOutput`](crate::output::ListTargetsForPolicyOutput).
         pub fn build(self) -> crate::output::ListTargetsForPolicyOutput {
             crate::output::ListTargetsForPolicyOutput {
-                targets: self.targets,
-                next_token: self.next_token,
+                targets: self.targets
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTargetsForPolicyOutput {
     /// Creates a new builder-style object to manufacture [`ListTargetsForPolicyOutput`](crate::output::ListTargetsForPolicyOutput).
@@ -348,7 +372,7 @@ impl ListTargetsForPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>The tags that are assigned to the resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -358,17 +382,17 @@ pub struct ListTagsForResourceOutput {
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags that are assigned to the resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -383,17 +407,13 @@ pub mod list_tags_for_resource_output {
         /// <p>The tags that are assigned to the resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags that are assigned to the resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -402,17 +422,20 @@ pub mod list_tags_for_resource_output {
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
-                tags: self.tags,
-                next_token: self.next_token,
+                tags: self.tags
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -424,7 +447,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRootsOutput {
+pub struct ListRootsOutput  {
     /// <p>A list of roots that are defined in an organization.</p>
     #[doc(hidden)]
     pub roots: std::option::Option<std::vec::Vec<crate::model::Root>>,
@@ -434,17 +457,17 @@ pub struct ListRootsOutput {
 }
 impl ListRootsOutput {
     /// <p>A list of roots that are defined in an organization.</p>
-    pub fn roots(&self) -> std::option::Option<&[crate::model::Root]> {
+    pub fn roots(&self) -> std::option::Option<& [crate::model::Root]> {
         self.roots.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListRootsOutput`](crate::output::ListRootsOutput).
 pub mod list_roots_output {
-
+    
     /// A builder for [`ListRootsOutput`](crate::output::ListRootsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -459,17 +482,13 @@ pub mod list_roots_output {
         /// <p>A list of roots that are defined in an organization.</p>
         pub fn roots(mut self, input: crate::model::Root) -> Self {
             let mut v = self.roots.unwrap_or_default();
-            v.push(input);
-            self.roots = Some(v);
-            self
+                            v.push(input);
+                            self.roots = Some(v);
+                            self
         }
         /// <p>A list of roots that are defined in an organization.</p>
-        pub fn set_roots(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Root>>,
-        ) -> Self {
-            self.roots = input;
-            self
+        pub fn set_roots(mut self, input: std::option::Option<std::vec::Vec<crate::model::Root>>) -> Self {
+            self.roots = input; self
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -478,17 +497,20 @@ pub mod list_roots_output {
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRootsOutput`](crate::output::ListRootsOutput).
         pub fn build(self) -> crate::output::ListRootsOutput {
             crate::output::ListRootsOutput {
-                roots: self.roots,
-                next_token: self.next_token,
+                roots: self.roots
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRootsOutput {
     /// Creates a new builder-style object to manufacture [`ListRootsOutput`](crate::output::ListRootsOutput).
@@ -500,7 +522,7 @@ impl ListRootsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPoliciesForTargetOutput {
+pub struct ListPoliciesForTargetOutput  {
     /// <p>The list of policies that match the criteria in the request.</p>
     #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::model::PolicySummary>>,
@@ -510,17 +532,17 @@ pub struct ListPoliciesForTargetOutput {
 }
 impl ListPoliciesForTargetOutput {
     /// <p>The list of policies that match the criteria in the request.</p>
-    pub fn policies(&self) -> std::option::Option<&[crate::model::PolicySummary]> {
+    pub fn policies(&self) -> std::option::Option<& [crate::model::PolicySummary]> {
         self.policies.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPoliciesForTargetOutput`](crate::output::ListPoliciesForTargetOutput).
 pub mod list_policies_for_target_output {
-
+    
     /// A builder for [`ListPoliciesForTargetOutput`](crate::output::ListPoliciesForTargetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -535,17 +557,13 @@ pub mod list_policies_for_target_output {
         /// <p>The list of policies that match the criteria in the request.</p>
         pub fn policies(mut self, input: crate::model::PolicySummary) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input);
-            self.policies = Some(v);
-            self
+                            v.push(input);
+                            self.policies = Some(v);
+                            self
         }
         /// <p>The list of policies that match the criteria in the request.</p>
-        pub fn set_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PolicySummary>>,
-        ) -> Self {
-            self.policies = input;
-            self
+        pub fn set_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicySummary>>) -> Self {
+            self.policies = input; self
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -554,17 +572,20 @@ pub mod list_policies_for_target_output {
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPoliciesForTargetOutput`](crate::output::ListPoliciesForTargetOutput).
         pub fn build(self) -> crate::output::ListPoliciesForTargetOutput {
             crate::output::ListPoliciesForTargetOutput {
-                policies: self.policies,
-                next_token: self.next_token,
+                policies: self.policies
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPoliciesForTargetOutput {
     /// Creates a new builder-style object to manufacture [`ListPoliciesForTargetOutput`](crate::output::ListPoliciesForTargetOutput).
@@ -576,7 +597,7 @@ impl ListPoliciesForTargetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPoliciesOutput {
+pub struct ListPoliciesOutput  {
     /// <p>A list of policies that match the filter criteria in the request. The output list doesn't include the policy contents. To see the content for a policy, see <code>DescribePolicy</code>.</p>
     #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::model::PolicySummary>>,
@@ -586,17 +607,17 @@ pub struct ListPoliciesOutput {
 }
 impl ListPoliciesOutput {
     /// <p>A list of policies that match the filter criteria in the request. The output list doesn't include the policy contents. To see the content for a policy, see <code>DescribePolicy</code>.</p>
-    pub fn policies(&self) -> std::option::Option<&[crate::model::PolicySummary]> {
+    pub fn policies(&self) -> std::option::Option<& [crate::model::PolicySummary]> {
         self.policies.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListPoliciesOutput`](crate::output::ListPoliciesOutput).
 pub mod list_policies_output {
-
+    
     /// A builder for [`ListPoliciesOutput`](crate::output::ListPoliciesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -611,17 +632,13 @@ pub mod list_policies_output {
         /// <p>A list of policies that match the filter criteria in the request. The output list doesn't include the policy contents. To see the content for a policy, see <code>DescribePolicy</code>.</p>
         pub fn policies(mut self, input: crate::model::PolicySummary) -> Self {
             let mut v = self.policies.unwrap_or_default();
-            v.push(input);
-            self.policies = Some(v);
-            self
+                            v.push(input);
+                            self.policies = Some(v);
+                            self
         }
         /// <p>A list of policies that match the filter criteria in the request. The output list doesn't include the policy contents. To see the content for a policy, see <code>DescribePolicy</code>.</p>
-        pub fn set_policies(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::PolicySummary>>,
-        ) -> Self {
-            self.policies = input;
-            self
+        pub fn set_policies(mut self, input: std::option::Option<std::vec::Vec<crate::model::PolicySummary>>) -> Self {
+            self.policies = input; self
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -630,17 +647,20 @@ pub mod list_policies_output {
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListPoliciesOutput`](crate::output::ListPoliciesOutput).
         pub fn build(self) -> crate::output::ListPoliciesOutput {
             crate::output::ListPoliciesOutput {
-                policies: self.policies,
-                next_token: self.next_token,
+                policies: self.policies
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListPoliciesOutput`](crate::output::ListPoliciesOutput).
@@ -652,7 +672,7 @@ impl ListPoliciesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListParentsOutput {
+pub struct ListParentsOutput  {
     /// <p>A list of parents for the specified child account or OU.</p>
     #[doc(hidden)]
     pub parents: std::option::Option<std::vec::Vec<crate::model::Parent>>,
@@ -662,17 +682,17 @@ pub struct ListParentsOutput {
 }
 impl ListParentsOutput {
     /// <p>A list of parents for the specified child account or OU.</p>
-    pub fn parents(&self) -> std::option::Option<&[crate::model::Parent]> {
+    pub fn parents(&self) -> std::option::Option<& [crate::model::Parent]> {
         self.parents.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListParentsOutput`](crate::output::ListParentsOutput).
 pub mod list_parents_output {
-
+    
     /// A builder for [`ListParentsOutput`](crate::output::ListParentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -687,17 +707,13 @@ pub mod list_parents_output {
         /// <p>A list of parents for the specified child account or OU.</p>
         pub fn parents(mut self, input: crate::model::Parent) -> Self {
             let mut v = self.parents.unwrap_or_default();
-            v.push(input);
-            self.parents = Some(v);
-            self
+                            v.push(input);
+                            self.parents = Some(v);
+                            self
         }
         /// <p>A list of parents for the specified child account or OU.</p>
-        pub fn set_parents(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Parent>>,
-        ) -> Self {
-            self.parents = input;
-            self
+        pub fn set_parents(mut self, input: std::option::Option<std::vec::Vec<crate::model::Parent>>) -> Self {
+            self.parents = input; self
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -706,17 +722,20 @@ pub mod list_parents_output {
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListParentsOutput`](crate::output::ListParentsOutput).
         pub fn build(self) -> crate::output::ListParentsOutput {
             crate::output::ListParentsOutput {
-                parents: self.parents,
-                next_token: self.next_token,
+                parents: self.parents
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListParentsOutput {
     /// Creates a new builder-style object to manufacture [`ListParentsOutput`](crate::output::ListParentsOutput).
@@ -728,7 +747,7 @@ impl ListParentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOrganizationalUnitsForParentOutput {
+pub struct ListOrganizationalUnitsForParentOutput  {
     /// <p>A list of the OUs in the specified root or parent OU.</p>
     #[doc(hidden)]
     pub organizational_units: std::option::Option<std::vec::Vec<crate::model::OrganizationalUnit>>,
@@ -738,22 +757,21 @@ pub struct ListOrganizationalUnitsForParentOutput {
 }
 impl ListOrganizationalUnitsForParentOutput {
     /// <p>A list of the OUs in the specified root or parent OU.</p>
-    pub fn organizational_units(&self) -> std::option::Option<&[crate::model::OrganizationalUnit]> {
+    pub fn organizational_units(&self) -> std::option::Option<& [crate::model::OrganizationalUnit]> {
         self.organizational_units.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListOrganizationalUnitsForParentOutput`](crate::output::ListOrganizationalUnitsForParentOutput).
 pub mod list_organizational_units_for_parent_output {
-
+    
     /// A builder for [`ListOrganizationalUnitsForParentOutput`](crate::output::ListOrganizationalUnitsForParentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) organizational_units:
-            std::option::Option<std::vec::Vec<crate::model::OrganizationalUnit>>,
+        pub(crate) organizational_units: std::option::Option<std::vec::Vec<crate::model::OrganizationalUnit>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -764,17 +782,13 @@ pub mod list_organizational_units_for_parent_output {
         /// <p>A list of the OUs in the specified root or parent OU.</p>
         pub fn organizational_units(mut self, input: crate::model::OrganizationalUnit) -> Self {
             let mut v = self.organizational_units.unwrap_or_default();
-            v.push(input);
-            self.organizational_units = Some(v);
-            self
+                            v.push(input);
+                            self.organizational_units = Some(v);
+                            self
         }
         /// <p>A list of the OUs in the specified root or parent OU.</p>
-        pub fn set_organizational_units(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::OrganizationalUnit>>,
-        ) -> Self {
-            self.organizational_units = input;
-            self
+        pub fn set_organizational_units(mut self, input: std::option::Option<std::vec::Vec<crate::model::OrganizationalUnit>>) -> Self {
+            self.organizational_units = input; self
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -783,17 +797,20 @@ pub mod list_organizational_units_for_parent_output {
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListOrganizationalUnitsForParentOutput`](crate::output::ListOrganizationalUnitsForParentOutput).
         pub fn build(self) -> crate::output::ListOrganizationalUnitsForParentOutput {
             crate::output::ListOrganizationalUnitsForParentOutput {
-                organizational_units: self.organizational_units,
-                next_token: self.next_token,
+                organizational_units: self.organizational_units
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListOrganizationalUnitsForParentOutput {
     /// Creates a new builder-style object to manufacture [`ListOrganizationalUnitsForParentOutput`](crate::output::ListOrganizationalUnitsForParentOutput).
@@ -805,7 +822,7 @@ impl ListOrganizationalUnitsForParentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHandshakesForOrganizationOutput {
+pub struct ListHandshakesForOrganizationOutput  {
     /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that are associated with an organization.</p>
     #[doc(hidden)]
     pub handshakes: std::option::Option<std::vec::Vec<crate::model::Handshake>>,
@@ -815,17 +832,17 @@ pub struct ListHandshakesForOrganizationOutput {
 }
 impl ListHandshakesForOrganizationOutput {
     /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that are associated with an organization.</p>
-    pub fn handshakes(&self) -> std::option::Option<&[crate::model::Handshake]> {
+    pub fn handshakes(&self) -> std::option::Option<& [crate::model::Handshake]> {
         self.handshakes.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListHandshakesForOrganizationOutput`](crate::output::ListHandshakesForOrganizationOutput).
 pub mod list_handshakes_for_organization_output {
-
+    
     /// A builder for [`ListHandshakesForOrganizationOutput`](crate::output::ListHandshakesForOrganizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -840,17 +857,13 @@ pub mod list_handshakes_for_organization_output {
         /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that are associated with an organization.</p>
         pub fn handshakes(mut self, input: crate::model::Handshake) -> Self {
             let mut v = self.handshakes.unwrap_or_default();
-            v.push(input);
-            self.handshakes = Some(v);
-            self
+                            v.push(input);
+                            self.handshakes = Some(v);
+                            self
         }
         /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that are associated with an organization.</p>
-        pub fn set_handshakes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Handshake>>,
-        ) -> Self {
-            self.handshakes = input;
-            self
+        pub fn set_handshakes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Handshake>>) -> Self {
+            self.handshakes = input; self
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -859,17 +872,20 @@ pub mod list_handshakes_for_organization_output {
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListHandshakesForOrganizationOutput`](crate::output::ListHandshakesForOrganizationOutput).
         pub fn build(self) -> crate::output::ListHandshakesForOrganizationOutput {
             crate::output::ListHandshakesForOrganizationOutput {
-                handshakes: self.handshakes,
-                next_token: self.next_token,
+                handshakes: self.handshakes
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListHandshakesForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`ListHandshakesForOrganizationOutput`](crate::output::ListHandshakesForOrganizationOutput).
@@ -881,7 +897,7 @@ impl ListHandshakesForOrganizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHandshakesForAccountOutput {
+pub struct ListHandshakesForAccountOutput  {
     /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that is associated with the specified account.</p>
     #[doc(hidden)]
     pub handshakes: std::option::Option<std::vec::Vec<crate::model::Handshake>>,
@@ -891,17 +907,17 @@ pub struct ListHandshakesForAccountOutput {
 }
 impl ListHandshakesForAccountOutput {
     /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that is associated with the specified account.</p>
-    pub fn handshakes(&self) -> std::option::Option<&[crate::model::Handshake]> {
+    pub fn handshakes(&self) -> std::option::Option<& [crate::model::Handshake]> {
         self.handshakes.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListHandshakesForAccountOutput`](crate::output::ListHandshakesForAccountOutput).
 pub mod list_handshakes_for_account_output {
-
+    
     /// A builder for [`ListHandshakesForAccountOutput`](crate::output::ListHandshakesForAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -916,17 +932,13 @@ pub mod list_handshakes_for_account_output {
         /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that is associated with the specified account.</p>
         pub fn handshakes(mut self, input: crate::model::Handshake) -> Self {
             let mut v = self.handshakes.unwrap_or_default();
-            v.push(input);
-            self.handshakes = Some(v);
-            self
+                            v.push(input);
+                            self.handshakes = Some(v);
+                            self
         }
         /// <p>A list of <code>Handshake</code> objects with details about each of the handshakes that is associated with the specified account.</p>
-        pub fn set_handshakes(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Handshake>>,
-        ) -> Self {
-            self.handshakes = input;
-            self
+        pub fn set_handshakes(mut self, input: std::option::Option<std::vec::Vec<crate::model::Handshake>>) -> Self {
+            self.handshakes = input; self
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -935,17 +947,20 @@ pub mod list_handshakes_for_account_output {
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListHandshakesForAccountOutput`](crate::output::ListHandshakesForAccountOutput).
         pub fn build(self) -> crate::output::ListHandshakesForAccountOutput {
             crate::output::ListHandshakesForAccountOutput {
-                handshakes: self.handshakes,
-                next_token: self.next_token,
+                handshakes: self.handshakes
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListHandshakesForAccountOutput {
     /// Creates a new builder-style object to manufacture [`ListHandshakesForAccountOutput`](crate::output::ListHandshakesForAccountOutput).
@@ -957,7 +972,7 @@ impl ListHandshakesForAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDelegatedServicesForAccountOutput {
+pub struct ListDelegatedServicesForAccountOutput  {
     /// <p>The services for which the account is a delegated administrator.</p>
     #[doc(hidden)]
     pub delegated_services: std::option::Option<std::vec::Vec<crate::model::DelegatedService>>,
@@ -967,22 +982,21 @@ pub struct ListDelegatedServicesForAccountOutput {
 }
 impl ListDelegatedServicesForAccountOutput {
     /// <p>The services for which the account is a delegated administrator.</p>
-    pub fn delegated_services(&self) -> std::option::Option<&[crate::model::DelegatedService]> {
+    pub fn delegated_services(&self) -> std::option::Option<& [crate::model::DelegatedService]> {
         self.delegated_services.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDelegatedServicesForAccountOutput`](crate::output::ListDelegatedServicesForAccountOutput).
 pub mod list_delegated_services_for_account_output {
-
+    
     /// A builder for [`ListDelegatedServicesForAccountOutput`](crate::output::ListDelegatedServicesForAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) delegated_services:
-            std::option::Option<std::vec::Vec<crate::model::DelegatedService>>,
+        pub(crate) delegated_services: std::option::Option<std::vec::Vec<crate::model::DelegatedService>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -993,17 +1007,13 @@ pub mod list_delegated_services_for_account_output {
         /// <p>The services for which the account is a delegated administrator.</p>
         pub fn delegated_services(mut self, input: crate::model::DelegatedService) -> Self {
             let mut v = self.delegated_services.unwrap_or_default();
-            v.push(input);
-            self.delegated_services = Some(v);
-            self
+                            v.push(input);
+                            self.delegated_services = Some(v);
+                            self
         }
         /// <p>The services for which the account is a delegated administrator.</p>
-        pub fn set_delegated_services(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DelegatedService>>,
-        ) -> Self {
-            self.delegated_services = input;
-            self
+        pub fn set_delegated_services(mut self, input: std::option::Option<std::vec::Vec<crate::model::DelegatedService>>) -> Self {
+            self.delegated_services = input; self
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1012,17 +1022,20 @@ pub mod list_delegated_services_for_account_output {
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDelegatedServicesForAccountOutput`](crate::output::ListDelegatedServicesForAccountOutput).
         pub fn build(self) -> crate::output::ListDelegatedServicesForAccountOutput {
             crate::output::ListDelegatedServicesForAccountOutput {
-                delegated_services: self.delegated_services,
-                next_token: self.next_token,
+                delegated_services: self.delegated_services
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDelegatedServicesForAccountOutput {
     /// Creates a new builder-style object to manufacture [`ListDelegatedServicesForAccountOutput`](crate::output::ListDelegatedServicesForAccountOutput).
@@ -1034,35 +1047,31 @@ impl ListDelegatedServicesForAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDelegatedAdministratorsOutput {
+pub struct ListDelegatedAdministratorsOutput  {
     /// <p>The list of delegated administrators in your organization.</p>
     #[doc(hidden)]
-    pub delegated_administrators:
-        std::option::Option<std::vec::Vec<crate::model::DelegatedAdministrator>>,
+    pub delegated_administrators: std::option::Option<std::vec::Vec<crate::model::DelegatedAdministrator>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListDelegatedAdministratorsOutput {
     /// <p>The list of delegated administrators in your organization.</p>
-    pub fn delegated_administrators(
-        &self,
-    ) -> std::option::Option<&[crate::model::DelegatedAdministrator]> {
+    pub fn delegated_administrators(&self) -> std::option::Option<& [crate::model::DelegatedAdministrator]> {
         self.delegated_administrators.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDelegatedAdministratorsOutput`](crate::output::ListDelegatedAdministratorsOutput).
 pub mod list_delegated_administrators_output {
-
+    
     /// A builder for [`ListDelegatedAdministratorsOutput`](crate::output::ListDelegatedAdministratorsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) delegated_administrators:
-            std::option::Option<std::vec::Vec<crate::model::DelegatedAdministrator>>,
+        pub(crate) delegated_administrators: std::option::Option<std::vec::Vec<crate::model::DelegatedAdministrator>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1071,22 +1080,15 @@ pub mod list_delegated_administrators_output {
         /// To override the contents of this collection use [`set_delegated_administrators`](Self::set_delegated_administrators).
         ///
         /// <p>The list of delegated administrators in your organization.</p>
-        pub fn delegated_administrators(
-            mut self,
-            input: crate::model::DelegatedAdministrator,
-        ) -> Self {
+        pub fn delegated_administrators(mut self, input: crate::model::DelegatedAdministrator) -> Self {
             let mut v = self.delegated_administrators.unwrap_or_default();
-            v.push(input);
-            self.delegated_administrators = Some(v);
-            self
+                            v.push(input);
+                            self.delegated_administrators = Some(v);
+                            self
         }
         /// <p>The list of delegated administrators in your organization.</p>
-        pub fn set_delegated_administrators(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DelegatedAdministrator>>,
-        ) -> Self {
-            self.delegated_administrators = input;
-            self
+        pub fn set_delegated_administrators(mut self, input: std::option::Option<std::vec::Vec<crate::model::DelegatedAdministrator>>) -> Self {
+            self.delegated_administrators = input; self
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1095,17 +1097,20 @@ pub mod list_delegated_administrators_output {
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDelegatedAdministratorsOutput`](crate::output::ListDelegatedAdministratorsOutput).
         pub fn build(self) -> crate::output::ListDelegatedAdministratorsOutput {
             crate::output::ListDelegatedAdministratorsOutput {
-                delegated_administrators: self.delegated_administrators,
-                next_token: self.next_token,
+                delegated_administrators: self.delegated_administrators
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDelegatedAdministratorsOutput {
     /// Creates a new builder-style object to manufacture [`ListDelegatedAdministratorsOutput`](crate::output::ListDelegatedAdministratorsOutput).
@@ -1117,35 +1122,31 @@ impl ListDelegatedAdministratorsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCreateAccountStatusOutput {
+pub struct ListCreateAccountStatusOutput  {
     /// <p>A list of objects with details about the requests. Certain elements, such as the accountId number, are present in the output only after the account has been successfully created.</p>
     #[doc(hidden)]
-    pub create_account_statuses:
-        std::option::Option<std::vec::Vec<crate::model::CreateAccountStatus>>,
+    pub create_account_statuses: std::option::Option<std::vec::Vec<crate::model::CreateAccountStatus>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListCreateAccountStatusOutput {
     /// <p>A list of objects with details about the requests. Certain elements, such as the accountId number, are present in the output only after the account has been successfully created.</p>
-    pub fn create_account_statuses(
-        &self,
-    ) -> std::option::Option<&[crate::model::CreateAccountStatus]> {
+    pub fn create_account_statuses(&self) -> std::option::Option<& [crate::model::CreateAccountStatus]> {
         self.create_account_statuses.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListCreateAccountStatusOutput`](crate::output::ListCreateAccountStatusOutput).
 pub mod list_create_account_status_output {
-
+    
     /// A builder for [`ListCreateAccountStatusOutput`](crate::output::ListCreateAccountStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) create_account_statuses:
-            std::option::Option<std::vec::Vec<crate::model::CreateAccountStatus>>,
+        pub(crate) create_account_statuses: std::option::Option<std::vec::Vec<crate::model::CreateAccountStatus>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1156,17 +1157,13 @@ pub mod list_create_account_status_output {
         /// <p>A list of objects with details about the requests. Certain elements, such as the accountId number, are present in the output only after the account has been successfully created.</p>
         pub fn create_account_statuses(mut self, input: crate::model::CreateAccountStatus) -> Self {
             let mut v = self.create_account_statuses.unwrap_or_default();
-            v.push(input);
-            self.create_account_statuses = Some(v);
-            self
+                            v.push(input);
+                            self.create_account_statuses = Some(v);
+                            self
         }
         /// <p>A list of objects with details about the requests. Certain elements, such as the accountId number, are present in the output only after the account has been successfully created.</p>
-        pub fn set_create_account_statuses(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::CreateAccountStatus>>,
-        ) -> Self {
-            self.create_account_statuses = input;
-            self
+        pub fn set_create_account_statuses(mut self, input: std::option::Option<std::vec::Vec<crate::model::CreateAccountStatus>>) -> Self {
+            self.create_account_statuses = input; self
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1175,17 +1172,20 @@ pub mod list_create_account_status_output {
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListCreateAccountStatusOutput`](crate::output::ListCreateAccountStatusOutput).
         pub fn build(self) -> crate::output::ListCreateAccountStatusOutput {
             crate::output::ListCreateAccountStatusOutput {
-                create_account_statuses: self.create_account_statuses,
-                next_token: self.next_token,
+                create_account_statuses: self.create_account_statuses
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListCreateAccountStatusOutput {
     /// Creates a new builder-style object to manufacture [`ListCreateAccountStatusOutput`](crate::output::ListCreateAccountStatusOutput).
@@ -1197,7 +1197,7 @@ impl ListCreateAccountStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListChildrenOutput {
+pub struct ListChildrenOutput  {
     /// <p>The list of children of the specified parent container.</p>
     #[doc(hidden)]
     pub children: std::option::Option<std::vec::Vec<crate::model::Child>>,
@@ -1207,17 +1207,17 @@ pub struct ListChildrenOutput {
 }
 impl ListChildrenOutput {
     /// <p>The list of children of the specified parent container.</p>
-    pub fn children(&self) -> std::option::Option<&[crate::model::Child]> {
+    pub fn children(&self) -> std::option::Option<& [crate::model::Child]> {
         self.children.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListChildrenOutput`](crate::output::ListChildrenOutput).
 pub mod list_children_output {
-
+    
     /// A builder for [`ListChildrenOutput`](crate::output::ListChildrenOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1232,17 +1232,13 @@ pub mod list_children_output {
         /// <p>The list of children of the specified parent container.</p>
         pub fn children(mut self, input: crate::model::Child) -> Self {
             let mut v = self.children.unwrap_or_default();
-            v.push(input);
-            self.children = Some(v);
-            self
+                            v.push(input);
+                            self.children = Some(v);
+                            self
         }
         /// <p>The list of children of the specified parent container.</p>
-        pub fn set_children(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Child>>,
-        ) -> Self {
-            self.children = input;
-            self
+        pub fn set_children(mut self, input: std::option::Option<std::vec::Vec<crate::model::Child>>) -> Self {
+            self.children = input; self
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1251,17 +1247,20 @@ pub mod list_children_output {
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListChildrenOutput`](crate::output::ListChildrenOutput).
         pub fn build(self) -> crate::output::ListChildrenOutput {
             crate::output::ListChildrenOutput {
-                children: self.children,
-                next_token: self.next_token,
+                children: self.children
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListChildrenOutput {
     /// Creates a new builder-style object to manufacture [`ListChildrenOutput`](crate::output::ListChildrenOutput).
@@ -1273,35 +1272,31 @@ impl ListChildrenOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAwsServiceAccessForOrganizationOutput {
+pub struct ListAwsServiceAccessForOrganizationOutput  {
     /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with Organizations.</p>
     #[doc(hidden)]
-    pub enabled_service_principals:
-        std::option::Option<std::vec::Vec<crate::model::EnabledServicePrincipal>>,
+    pub enabled_service_principals: std::option::Option<std::vec::Vec<crate::model::EnabledServicePrincipal>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListAwsServiceAccessForOrganizationOutput {
     /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with Organizations.</p>
-    pub fn enabled_service_principals(
-        &self,
-    ) -> std::option::Option<&[crate::model::EnabledServicePrincipal]> {
+    pub fn enabled_service_principals(&self) -> std::option::Option<& [crate::model::EnabledServicePrincipal]> {
         self.enabled_service_principals.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAwsServiceAccessForOrganizationOutput`](crate::output::ListAwsServiceAccessForOrganizationOutput).
 pub mod list_aws_service_access_for_organization_output {
-
+    
     /// A builder for [`ListAwsServiceAccessForOrganizationOutput`](crate::output::ListAwsServiceAccessForOrganizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) enabled_service_principals:
-            std::option::Option<std::vec::Vec<crate::model::EnabledServicePrincipal>>,
+        pub(crate) enabled_service_principals: std::option::Option<std::vec::Vec<crate::model::EnabledServicePrincipal>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1310,22 +1305,15 @@ pub mod list_aws_service_access_for_organization_output {
         /// To override the contents of this collection use [`set_enabled_service_principals`](Self::set_enabled_service_principals).
         ///
         /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with Organizations.</p>
-        pub fn enabled_service_principals(
-            mut self,
-            input: crate::model::EnabledServicePrincipal,
-        ) -> Self {
+        pub fn enabled_service_principals(mut self, input: crate::model::EnabledServicePrincipal) -> Self {
             let mut v = self.enabled_service_principals.unwrap_or_default();
-            v.push(input);
-            self.enabled_service_principals = Some(v);
-            self
+                            v.push(input);
+                            self.enabled_service_principals = Some(v);
+                            self
         }
         /// <p>A list of the service principals for the services that are enabled to integrate with your organization. Each principal is a structure that includes the name and the date that it was enabled for integration with Organizations.</p>
-        pub fn set_enabled_service_principals(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EnabledServicePrincipal>>,
-        ) -> Self {
-            self.enabled_service_principals = input;
-            self
+        pub fn set_enabled_service_principals(mut self, input: std::option::Option<std::vec::Vec<crate::model::EnabledServicePrincipal>>) -> Self {
+            self.enabled_service_principals = input; self
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1334,17 +1322,20 @@ pub mod list_aws_service_access_for_organization_output {
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAwsServiceAccessForOrganizationOutput`](crate::output::ListAwsServiceAccessForOrganizationOutput).
         pub fn build(self) -> crate::output::ListAwsServiceAccessForOrganizationOutput {
             crate::output::ListAwsServiceAccessForOrganizationOutput {
-                enabled_service_principals: self.enabled_service_principals,
-                next_token: self.next_token,
+                enabled_service_principals: self.enabled_service_principals
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAwsServiceAccessForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`ListAwsServiceAccessForOrganizationOutput`](crate::output::ListAwsServiceAccessForOrganizationOutput).
@@ -1356,7 +1347,7 @@ impl ListAwsServiceAccessForOrganizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccountsForParentOutput {
+pub struct ListAccountsForParentOutput  {
     /// <p>A list of the accounts in the specified root or OU.</p>
     #[doc(hidden)]
     pub accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
@@ -1366,17 +1357,17 @@ pub struct ListAccountsForParentOutput {
 }
 impl ListAccountsForParentOutput {
     /// <p>A list of the accounts in the specified root or OU.</p>
-    pub fn accounts(&self) -> std::option::Option<&[crate::model::Account]> {
+    pub fn accounts(&self) -> std::option::Option<& [crate::model::Account]> {
         self.accounts.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAccountsForParentOutput`](crate::output::ListAccountsForParentOutput).
 pub mod list_accounts_for_parent_output {
-
+    
     /// A builder for [`ListAccountsForParentOutput`](crate::output::ListAccountsForParentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1391,17 +1382,13 @@ pub mod list_accounts_for_parent_output {
         /// <p>A list of the accounts in the specified root or OU.</p>
         pub fn accounts(mut self, input: crate::model::Account) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(input);
-            self.accounts = Some(v);
-            self
+                            v.push(input);
+                            self.accounts = Some(v);
+                            self
         }
         /// <p>A list of the accounts in the specified root or OU.</p>
-        pub fn set_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Account>>,
-        ) -> Self {
-            self.accounts = input;
-            self
+        pub fn set_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::Account>>) -> Self {
+            self.accounts = input; self
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1410,17 +1397,20 @@ pub mod list_accounts_for_parent_output {
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAccountsForParentOutput`](crate::output::ListAccountsForParentOutput).
         pub fn build(self) -> crate::output::ListAccountsForParentOutput {
             crate::output::ListAccountsForParentOutput {
-                accounts: self.accounts,
-                next_token: self.next_token,
+                accounts: self.accounts
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAccountsForParentOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountsForParentOutput`](crate::output::ListAccountsForParentOutput).
@@ -1432,7 +1422,7 @@ impl ListAccountsForParentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccountsOutput {
+pub struct ListAccountsOutput  {
     /// <p>A list of objects in the organization.</p>
     #[doc(hidden)]
     pub accounts: std::option::Option<std::vec::Vec<crate::model::Account>>,
@@ -1442,17 +1432,17 @@ pub struct ListAccountsOutput {
 }
 impl ListAccountsOutput {
     /// <p>A list of objects in the organization.</p>
-    pub fn accounts(&self) -> std::option::Option<&[crate::model::Account]> {
+    pub fn accounts(&self) -> std::option::Option<& [crate::model::Account]> {
         self.accounts.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAccountsOutput`](crate::output::ListAccountsOutput).
 pub mod list_accounts_output {
-
+    
     /// A builder for [`ListAccountsOutput`](crate::output::ListAccountsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1467,17 +1457,13 @@ pub mod list_accounts_output {
         /// <p>A list of objects in the organization.</p>
         pub fn accounts(mut self, input: crate::model::Account) -> Self {
             let mut v = self.accounts.unwrap_or_default();
-            v.push(input);
-            self.accounts = Some(v);
-            self
+                            v.push(input);
+                            self.accounts = Some(v);
+                            self
         }
         /// <p>A list of objects in the organization.</p>
-        pub fn set_accounts(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Account>>,
-        ) -> Self {
-            self.accounts = input;
-            self
+        pub fn set_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::model::Account>>) -> Self {
+            self.accounts = input; self
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1486,17 +1472,20 @@ pub mod list_accounts_output {
         }
         /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAccountsOutput`](crate::output::ListAccountsOutput).
         pub fn build(self) -> crate::output::ListAccountsOutput {
             crate::output::ListAccountsOutput {
-                accounts: self.accounts,
-                next_token: self.next_token,
+                accounts: self.accounts
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAccountsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountsOutput`](crate::output::ListAccountsOutput).
@@ -1508,19 +1497,24 @@ impl ListAccountsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LeaveOrganizationOutput {}
+pub struct LeaveOrganizationOutput  {
+}
 /// See [`LeaveOrganizationOutput`](crate::output::LeaveOrganizationOutput).
 pub mod leave_organization_output {
-
+    
     /// A builder for [`LeaveOrganizationOutput`](crate::output::LeaveOrganizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`LeaveOrganizationOutput`](crate::output::LeaveOrganizationOutput).
         pub fn build(self) -> crate::output::LeaveOrganizationOutput {
-            crate::output::LeaveOrganizationOutput {}
+            crate::output::LeaveOrganizationOutput {
+            }
         }
     }
+    
+    
 }
 impl LeaveOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`LeaveOrganizationOutput`](crate::output::LeaveOrganizationOutput).
@@ -1532,20 +1526,20 @@ impl LeaveOrganizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InviteAccountToOrganizationOutput {
+pub struct InviteAccountToOrganizationOutput  {
     /// <p>A structure that contains details about the handshake that is created to support this invitation request.</p>
     #[doc(hidden)]
     pub handshake: std::option::Option<crate::model::Handshake>,
 }
 impl InviteAccountToOrganizationOutput {
     /// <p>A structure that contains details about the handshake that is created to support this invitation request.</p>
-    pub fn handshake(&self) -> std::option::Option<&crate::model::Handshake> {
+    pub fn handshake(&self) -> std::option::Option<& crate::model::Handshake> {
         self.handshake.as_ref()
     }
 }
 /// See [`InviteAccountToOrganizationOutput`](crate::output::InviteAccountToOrganizationOutput).
 pub mod invite_account_to_organization_output {
-
+    
     /// A builder for [`InviteAccountToOrganizationOutput`](crate::output::InviteAccountToOrganizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1558,20 +1552,19 @@ pub mod invite_account_to_organization_output {
             self
         }
         /// <p>A structure that contains details about the handshake that is created to support this invitation request.</p>
-        pub fn set_handshake(
-            mut self,
-            input: std::option::Option<crate::model::Handshake>,
-        ) -> Self {
-            self.handshake = input;
-            self
+        pub fn set_handshake(mut self, input: std::option::Option<crate::model::Handshake>) -> Self {
+            self.handshake = input; self
         }
         /// Consumes the builder and constructs a [`InviteAccountToOrganizationOutput`](crate::output::InviteAccountToOrganizationOutput).
         pub fn build(self) -> crate::output::InviteAccountToOrganizationOutput {
             crate::output::InviteAccountToOrganizationOutput {
-                handshake: self.handshake,
+                handshake: self.handshake
+                ,
             }
         }
     }
+    
+    
 }
 impl InviteAccountToOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`InviteAccountToOrganizationOutput`](crate::output::InviteAccountToOrganizationOutput).
@@ -1583,20 +1576,20 @@ impl InviteAccountToOrganizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnablePolicyTypeOutput {
+pub struct EnablePolicyTypeOutput  {
     /// <p>A structure that shows the root with the updated list of enabled policy types.</p>
     #[doc(hidden)]
     pub root: std::option::Option<crate::model::Root>,
 }
 impl EnablePolicyTypeOutput {
     /// <p>A structure that shows the root with the updated list of enabled policy types.</p>
-    pub fn root(&self) -> std::option::Option<&crate::model::Root> {
+    pub fn root(&self) -> std::option::Option<& crate::model::Root> {
         self.root.as_ref()
     }
 }
 /// See [`EnablePolicyTypeOutput`](crate::output::EnablePolicyTypeOutput).
 pub mod enable_policy_type_output {
-
+    
     /// A builder for [`EnablePolicyTypeOutput`](crate::output::EnablePolicyTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1610,14 +1603,18 @@ pub mod enable_policy_type_output {
         }
         /// <p>A structure that shows the root with the updated list of enabled policy types.</p>
         pub fn set_root(mut self, input: std::option::Option<crate::model::Root>) -> Self {
-            self.root = input;
-            self
+            self.root = input; self
         }
         /// Consumes the builder and constructs a [`EnablePolicyTypeOutput`](crate::output::EnablePolicyTypeOutput).
         pub fn build(self) -> crate::output::EnablePolicyTypeOutput {
-            crate::output::EnablePolicyTypeOutput { root: self.root }
+            crate::output::EnablePolicyTypeOutput {
+                root: self.root
+                ,
+            }
         }
     }
+    
+    
 }
 impl EnablePolicyTypeOutput {
     /// Creates a new builder-style object to manufacture [`EnablePolicyTypeOutput`](crate::output::EnablePolicyTypeOutput).
@@ -1629,19 +1626,24 @@ impl EnablePolicyTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableAwsServiceAccessOutput {}
+pub struct EnableAwsServiceAccessOutput  {
+}
 /// See [`EnableAwsServiceAccessOutput`](crate::output::EnableAwsServiceAccessOutput).
 pub mod enable_aws_service_access_output {
-
+    
     /// A builder for [`EnableAwsServiceAccessOutput`](crate::output::EnableAwsServiceAccessOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`EnableAwsServiceAccessOutput`](crate::output::EnableAwsServiceAccessOutput).
         pub fn build(self) -> crate::output::EnableAwsServiceAccessOutput {
-            crate::output::EnableAwsServiceAccessOutput {}
+            crate::output::EnableAwsServiceAccessOutput {
+            }
         }
     }
+    
+    
 }
 impl EnableAwsServiceAccessOutput {
     /// Creates a new builder-style object to manufacture [`EnableAwsServiceAccessOutput`](crate::output::EnableAwsServiceAccessOutput).
@@ -1653,20 +1655,20 @@ impl EnableAwsServiceAccessOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableAllFeaturesOutput {
+pub struct EnableAllFeaturesOutput  {
     /// <p>A structure that contains details about the handshake created to support this request to enable all features in the organization.</p>
     #[doc(hidden)]
     pub handshake: std::option::Option<crate::model::Handshake>,
 }
 impl EnableAllFeaturesOutput {
     /// <p>A structure that contains details about the handshake created to support this request to enable all features in the organization.</p>
-    pub fn handshake(&self) -> std::option::Option<&crate::model::Handshake> {
+    pub fn handshake(&self) -> std::option::Option<& crate::model::Handshake> {
         self.handshake.as_ref()
     }
 }
 /// See [`EnableAllFeaturesOutput`](crate::output::EnableAllFeaturesOutput).
 pub mod enable_all_features_output {
-
+    
     /// A builder for [`EnableAllFeaturesOutput`](crate::output::EnableAllFeaturesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1679,20 +1681,19 @@ pub mod enable_all_features_output {
             self
         }
         /// <p>A structure that contains details about the handshake created to support this request to enable all features in the organization.</p>
-        pub fn set_handshake(
-            mut self,
-            input: std::option::Option<crate::model::Handshake>,
-        ) -> Self {
-            self.handshake = input;
-            self
+        pub fn set_handshake(mut self, input: std::option::Option<crate::model::Handshake>) -> Self {
+            self.handshake = input; self
         }
         /// Consumes the builder and constructs a [`EnableAllFeaturesOutput`](crate::output::EnableAllFeaturesOutput).
         pub fn build(self) -> crate::output::EnableAllFeaturesOutput {
             crate::output::EnableAllFeaturesOutput {
-                handshake: self.handshake,
+                handshake: self.handshake
+                ,
             }
         }
     }
+    
+    
 }
 impl EnableAllFeaturesOutput {
     /// Creates a new builder-style object to manufacture [`EnableAllFeaturesOutput`](crate::output::EnableAllFeaturesOutput).
@@ -1704,20 +1705,20 @@ impl EnableAllFeaturesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisablePolicyTypeOutput {
+pub struct DisablePolicyTypeOutput  {
     /// <p>A structure that shows the root with the updated list of enabled policy types.</p>
     #[doc(hidden)]
     pub root: std::option::Option<crate::model::Root>,
 }
 impl DisablePolicyTypeOutput {
     /// <p>A structure that shows the root with the updated list of enabled policy types.</p>
-    pub fn root(&self) -> std::option::Option<&crate::model::Root> {
+    pub fn root(&self) -> std::option::Option<& crate::model::Root> {
         self.root.as_ref()
     }
 }
 /// See [`DisablePolicyTypeOutput`](crate::output::DisablePolicyTypeOutput).
 pub mod disable_policy_type_output {
-
+    
     /// A builder for [`DisablePolicyTypeOutput`](crate::output::DisablePolicyTypeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1731,14 +1732,18 @@ pub mod disable_policy_type_output {
         }
         /// <p>A structure that shows the root with the updated list of enabled policy types.</p>
         pub fn set_root(mut self, input: std::option::Option<crate::model::Root>) -> Self {
-            self.root = input;
-            self
+            self.root = input; self
         }
         /// Consumes the builder and constructs a [`DisablePolicyTypeOutput`](crate::output::DisablePolicyTypeOutput).
         pub fn build(self) -> crate::output::DisablePolicyTypeOutput {
-            crate::output::DisablePolicyTypeOutput { root: self.root }
+            crate::output::DisablePolicyTypeOutput {
+                root: self.root
+                ,
+            }
         }
     }
+    
+    
 }
 impl DisablePolicyTypeOutput {
     /// Creates a new builder-style object to manufacture [`DisablePolicyTypeOutput`](crate::output::DisablePolicyTypeOutput).
@@ -1750,19 +1755,24 @@ impl DisablePolicyTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableAwsServiceAccessOutput {}
+pub struct DisableAwsServiceAccessOutput  {
+}
 /// See [`DisableAwsServiceAccessOutput`](crate::output::DisableAwsServiceAccessOutput).
 pub mod disable_aws_service_access_output {
-
+    
     /// A builder for [`DisableAwsServiceAccessOutput`](crate::output::DisableAwsServiceAccessOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DisableAwsServiceAccessOutput`](crate::output::DisableAwsServiceAccessOutput).
         pub fn build(self) -> crate::output::DisableAwsServiceAccessOutput {
-            crate::output::DisableAwsServiceAccessOutput {}
+            crate::output::DisableAwsServiceAccessOutput {
+            }
         }
     }
+    
+    
 }
 impl DisableAwsServiceAccessOutput {
     /// Creates a new builder-style object to manufacture [`DisableAwsServiceAccessOutput`](crate::output::DisableAwsServiceAccessOutput).
@@ -1774,19 +1784,24 @@ impl DisableAwsServiceAccessOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachPolicyOutput {}
+pub struct DetachPolicyOutput  {
+}
 /// See [`DetachPolicyOutput`](crate::output::DetachPolicyOutput).
 pub mod detach_policy_output {
-
+    
     /// A builder for [`DetachPolicyOutput`](crate::output::DetachPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DetachPolicyOutput`](crate::output::DetachPolicyOutput).
         pub fn build(self) -> crate::output::DetachPolicyOutput {
-            crate::output::DetachPolicyOutput {}
+            crate::output::DetachPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DetachPolicyOutput {
     /// Creates a new builder-style object to manufacture [`DetachPolicyOutput`](crate::output::DetachPolicyOutput).
@@ -1798,20 +1813,20 @@ impl DetachPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeResourcePolicyOutput {
+pub struct DescribeResourcePolicyOutput  {
     /// <p>A structure that contains details about the resource policy.</p>
     #[doc(hidden)]
     pub resource_policy: std::option::Option<crate::model::ResourcePolicy>,
 }
 impl DescribeResourcePolicyOutput {
     /// <p>A structure that contains details about the resource policy.</p>
-    pub fn resource_policy(&self) -> std::option::Option<&crate::model::ResourcePolicy> {
+    pub fn resource_policy(&self) -> std::option::Option<& crate::model::ResourcePolicy> {
         self.resource_policy.as_ref()
     }
 }
 /// See [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
 pub mod describe_resource_policy_output {
-
+    
     /// A builder for [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1824,20 +1839,19 @@ pub mod describe_resource_policy_output {
             self
         }
         /// <p>A structure that contains details about the resource policy.</p>
-        pub fn set_resource_policy(
-            mut self,
-            input: std::option::Option<crate::model::ResourcePolicy>,
-        ) -> Self {
-            self.resource_policy = input;
-            self
+        pub fn set_resource_policy(mut self, input: std::option::Option<crate::model::ResourcePolicy>) -> Self {
+            self.resource_policy = input; self
         }
         /// Consumes the builder and constructs a [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
         pub fn build(self) -> crate::output::DescribeResourcePolicyOutput {
             crate::output::DescribeResourcePolicyOutput {
-                resource_policy: self.resource_policy,
+                resource_policy: self.resource_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeResourcePolicyOutput`](crate::output::DescribeResourcePolicyOutput).
@@ -1849,20 +1863,20 @@ impl DescribeResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePolicyOutput {
+pub struct DescribePolicyOutput  {
     /// <p>A structure that contains details about the specified policy.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
 }
 impl DescribePolicyOutput {
     /// <p>A structure that contains details about the specified policy.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
+    pub fn policy(&self) -> std::option::Option<& crate::model::Policy> {
         self.policy.as_ref()
     }
 }
 /// See [`DescribePolicyOutput`](crate::output::DescribePolicyOutput).
 pub mod describe_policy_output {
-
+    
     /// A builder for [`DescribePolicyOutput`](crate::output::DescribePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1876,16 +1890,18 @@ pub mod describe_policy_output {
         }
         /// <p>A structure that contains details about the specified policy.</p>
         pub fn set_policy(mut self, input: std::option::Option<crate::model::Policy>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`DescribePolicyOutput`](crate::output::DescribePolicyOutput).
         pub fn build(self) -> crate::output::DescribePolicyOutput {
             crate::output::DescribePolicyOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribePolicyOutput`](crate::output::DescribePolicyOutput).
@@ -1897,20 +1913,20 @@ impl DescribePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOrganizationalUnitOutput {
+pub struct DescribeOrganizationalUnitOutput  {
     /// <p>A structure that contains details about the specified OU.</p>
     #[doc(hidden)]
     pub organizational_unit: std::option::Option<crate::model::OrganizationalUnit>,
 }
 impl DescribeOrganizationalUnitOutput {
     /// <p>A structure that contains details about the specified OU.</p>
-    pub fn organizational_unit(&self) -> std::option::Option<&crate::model::OrganizationalUnit> {
+    pub fn organizational_unit(&self) -> std::option::Option<& crate::model::OrganizationalUnit> {
         self.organizational_unit.as_ref()
     }
 }
 /// See [`DescribeOrganizationalUnitOutput`](crate::output::DescribeOrganizationalUnitOutput).
 pub mod describe_organizational_unit_output {
-
+    
     /// A builder for [`DescribeOrganizationalUnitOutput`](crate::output::DescribeOrganizationalUnitOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1923,20 +1939,19 @@ pub mod describe_organizational_unit_output {
             self
         }
         /// <p>A structure that contains details about the specified OU.</p>
-        pub fn set_organizational_unit(
-            mut self,
-            input: std::option::Option<crate::model::OrganizationalUnit>,
-        ) -> Self {
-            self.organizational_unit = input;
-            self
+        pub fn set_organizational_unit(mut self, input: std::option::Option<crate::model::OrganizationalUnit>) -> Self {
+            self.organizational_unit = input; self
         }
         /// Consumes the builder and constructs a [`DescribeOrganizationalUnitOutput`](crate::output::DescribeOrganizationalUnitOutput).
         pub fn build(self) -> crate::output::DescribeOrganizationalUnitOutput {
             crate::output::DescribeOrganizationalUnitOutput {
-                organizational_unit: self.organizational_unit,
+                organizational_unit: self.organizational_unit
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeOrganizationalUnitOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationalUnitOutput`](crate::output::DescribeOrganizationalUnitOutput).
@@ -1948,54 +1963,53 @@ impl DescribeOrganizationalUnitOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOrganizationOutput {
-    /// <p>A structure that contains information about the organization.</p> <important>
-    /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p>
+pub struct DescribeOrganizationOutput  {
+    /// <p>A structure that contains information about the organization.</p> <important> 
+    /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p> 
     /// </important>
     #[doc(hidden)]
     pub organization: std::option::Option<crate::model::Organization>,
 }
 impl DescribeOrganizationOutput {
-    /// <p>A structure that contains information about the organization.</p> <important>
-    /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p>
+    /// <p>A structure that contains information about the organization.</p> <important> 
+    /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p> 
     /// </important>
-    pub fn organization(&self) -> std::option::Option<&crate::model::Organization> {
+    pub fn organization(&self) -> std::option::Option<& crate::model::Organization> {
         self.organization.as_ref()
     }
 }
 /// See [`DescribeOrganizationOutput`](crate::output::DescribeOrganizationOutput).
 pub mod describe_organization_output {
-
+    
     /// A builder for [`DescribeOrganizationOutput`](crate::output::DescribeOrganizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) organization: std::option::Option<crate::model::Organization>,
     }
     impl Builder {
-        /// <p>A structure that contains information about the organization.</p> <important>
-        /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p>
+        /// <p>A structure that contains information about the organization.</p> <important> 
+        /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p> 
         /// </important>
         pub fn organization(mut self, input: crate::model::Organization) -> Self {
             self.organization = Some(input);
             self
         }
-        /// <p>A structure that contains information about the organization.</p> <important>
-        /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p>
+        /// <p>A structure that contains information about the organization.</p> <important> 
+        /// <p>The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you shouldn't use it in your apps. It doesn't include any policy type supported by Organizations other than SCPs. To determine which policy types are enabled in your organization, use the <code> <code>ListRoots</code> </code> operation.</p> 
         /// </important>
-        pub fn set_organization(
-            mut self,
-            input: std::option::Option<crate::model::Organization>,
-        ) -> Self {
-            self.organization = input;
-            self
+        pub fn set_organization(mut self, input: std::option::Option<crate::model::Organization>) -> Self {
+            self.organization = input; self
         }
         /// Consumes the builder and constructs a [`DescribeOrganizationOutput`](crate::output::DescribeOrganizationOutput).
         pub fn build(self) -> crate::output::DescribeOrganizationOutput {
             crate::output::DescribeOrganizationOutput {
-                organization: self.organization,
+                organization: self.organization
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationOutput`](crate::output::DescribeOrganizationOutput).
@@ -2007,20 +2021,20 @@ impl DescribeOrganizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeHandshakeOutput {
+pub struct DescribeHandshakeOutput  {
     /// <p>A structure that contains information about the specified handshake.</p>
     #[doc(hidden)]
     pub handshake: std::option::Option<crate::model::Handshake>,
 }
 impl DescribeHandshakeOutput {
     /// <p>A structure that contains information about the specified handshake.</p>
-    pub fn handshake(&self) -> std::option::Option<&crate::model::Handshake> {
+    pub fn handshake(&self) -> std::option::Option<& crate::model::Handshake> {
         self.handshake.as_ref()
     }
 }
 /// See [`DescribeHandshakeOutput`](crate::output::DescribeHandshakeOutput).
 pub mod describe_handshake_output {
-
+    
     /// A builder for [`DescribeHandshakeOutput`](crate::output::DescribeHandshakeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2033,20 +2047,19 @@ pub mod describe_handshake_output {
             self
         }
         /// <p>A structure that contains information about the specified handshake.</p>
-        pub fn set_handshake(
-            mut self,
-            input: std::option::Option<crate::model::Handshake>,
-        ) -> Self {
-            self.handshake = input;
-            self
+        pub fn set_handshake(mut self, input: std::option::Option<crate::model::Handshake>) -> Self {
+            self.handshake = input; self
         }
         /// Consumes the builder and constructs a [`DescribeHandshakeOutput`](crate::output::DescribeHandshakeOutput).
         pub fn build(self) -> crate::output::DescribeHandshakeOutput {
             crate::output::DescribeHandshakeOutput {
-                handshake: self.handshake,
+                handshake: self.handshake
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeHandshakeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHandshakeOutput`](crate::output::DescribeHandshakeOutput).
@@ -2058,20 +2071,20 @@ impl DescribeHandshakeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEffectivePolicyOutput {
+pub struct DescribeEffectivePolicyOutput  {
     /// <p>The contents of the effective policy.</p>
     #[doc(hidden)]
     pub effective_policy: std::option::Option<crate::model::EffectivePolicy>,
 }
 impl DescribeEffectivePolicyOutput {
     /// <p>The contents of the effective policy.</p>
-    pub fn effective_policy(&self) -> std::option::Option<&crate::model::EffectivePolicy> {
+    pub fn effective_policy(&self) -> std::option::Option<& crate::model::EffectivePolicy> {
         self.effective_policy.as_ref()
     }
 }
 /// See [`DescribeEffectivePolicyOutput`](crate::output::DescribeEffectivePolicyOutput).
 pub mod describe_effective_policy_output {
-
+    
     /// A builder for [`DescribeEffectivePolicyOutput`](crate::output::DescribeEffectivePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2084,20 +2097,19 @@ pub mod describe_effective_policy_output {
             self
         }
         /// <p>The contents of the effective policy.</p>
-        pub fn set_effective_policy(
-            mut self,
-            input: std::option::Option<crate::model::EffectivePolicy>,
-        ) -> Self {
-            self.effective_policy = input;
-            self
+        pub fn set_effective_policy(mut self, input: std::option::Option<crate::model::EffectivePolicy>) -> Self {
+            self.effective_policy = input; self
         }
         /// Consumes the builder and constructs a [`DescribeEffectivePolicyOutput`](crate::output::DescribeEffectivePolicyOutput).
         pub fn build(self) -> crate::output::DescribeEffectivePolicyOutput {
             crate::output::DescribeEffectivePolicyOutput {
-                effective_policy: self.effective_policy,
+                effective_policy: self.effective_policy
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeEffectivePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEffectivePolicyOutput`](crate::output::DescribeEffectivePolicyOutput).
@@ -2109,20 +2121,20 @@ impl DescribeEffectivePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCreateAccountStatusOutput {
+pub struct DescribeCreateAccountStatusOutput  {
     /// <p>A structure that contains the current status of an account creation request.</p>
     #[doc(hidden)]
     pub create_account_status: std::option::Option<crate::model::CreateAccountStatus>,
 }
 impl DescribeCreateAccountStatusOutput {
     /// <p>A structure that contains the current status of an account creation request.</p>
-    pub fn create_account_status(&self) -> std::option::Option<&crate::model::CreateAccountStatus> {
+    pub fn create_account_status(&self) -> std::option::Option<& crate::model::CreateAccountStatus> {
         self.create_account_status.as_ref()
     }
 }
 /// See [`DescribeCreateAccountStatusOutput`](crate::output::DescribeCreateAccountStatusOutput).
 pub mod describe_create_account_status_output {
-
+    
     /// A builder for [`DescribeCreateAccountStatusOutput`](crate::output::DescribeCreateAccountStatusOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2135,20 +2147,19 @@ pub mod describe_create_account_status_output {
             self
         }
         /// <p>A structure that contains the current status of an account creation request.</p>
-        pub fn set_create_account_status(
-            mut self,
-            input: std::option::Option<crate::model::CreateAccountStatus>,
-        ) -> Self {
-            self.create_account_status = input;
-            self
+        pub fn set_create_account_status(mut self, input: std::option::Option<crate::model::CreateAccountStatus>) -> Self {
+            self.create_account_status = input; self
         }
         /// Consumes the builder and constructs a [`DescribeCreateAccountStatusOutput`](crate::output::DescribeCreateAccountStatusOutput).
         pub fn build(self) -> crate::output::DescribeCreateAccountStatusOutput {
             crate::output::DescribeCreateAccountStatusOutput {
-                create_account_status: self.create_account_status,
+                create_account_status: self.create_account_status
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeCreateAccountStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCreateAccountStatusOutput`](crate::output::DescribeCreateAccountStatusOutput).
@@ -2160,20 +2171,20 @@ impl DescribeCreateAccountStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccountOutput {
+pub struct DescribeAccountOutput  {
     /// <p>A structure that contains information about the requested account.</p>
     #[doc(hidden)]
     pub account: std::option::Option<crate::model::Account>,
 }
 impl DescribeAccountOutput {
     /// <p>A structure that contains information about the requested account.</p>
-    pub fn account(&self) -> std::option::Option<&crate::model::Account> {
+    pub fn account(&self) -> std::option::Option<& crate::model::Account> {
         self.account.as_ref()
     }
 }
 /// See [`DescribeAccountOutput`](crate::output::DescribeAccountOutput).
 pub mod describe_account_output {
-
+    
     /// A builder for [`DescribeAccountOutput`](crate::output::DescribeAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2187,16 +2198,18 @@ pub mod describe_account_output {
         }
         /// <p>A structure that contains information about the requested account.</p>
         pub fn set_account(mut self, input: std::option::Option<crate::model::Account>) -> Self {
-            self.account = input;
-            self
+            self.account = input; self
         }
         /// Consumes the builder and constructs a [`DescribeAccountOutput`](crate::output::DescribeAccountOutput).
         pub fn build(self) -> crate::output::DescribeAccountOutput {
             crate::output::DescribeAccountOutput {
-                account: self.account,
+                account: self.account
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeAccountOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccountOutput`](crate::output::DescribeAccountOutput).
@@ -2208,19 +2221,24 @@ impl DescribeAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterDelegatedAdministratorOutput {}
+pub struct DeregisterDelegatedAdministratorOutput  {
+}
 /// See [`DeregisterDelegatedAdministratorOutput`](crate::output::DeregisterDelegatedAdministratorOutput).
 pub mod deregister_delegated_administrator_output {
-
+    
     /// A builder for [`DeregisterDelegatedAdministratorOutput`](crate::output::DeregisterDelegatedAdministratorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeregisterDelegatedAdministratorOutput`](crate::output::DeregisterDelegatedAdministratorOutput).
         pub fn build(self) -> crate::output::DeregisterDelegatedAdministratorOutput {
-            crate::output::DeregisterDelegatedAdministratorOutput {}
+            crate::output::DeregisterDelegatedAdministratorOutput {
+            }
         }
     }
+    
+    
 }
 impl DeregisterDelegatedAdministratorOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterDelegatedAdministratorOutput`](crate::output::DeregisterDelegatedAdministratorOutput).
@@ -2232,19 +2250,24 @@ impl DeregisterDelegatedAdministratorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourcePolicyOutput {}
+pub struct DeleteResourcePolicyOutput  {
+}
 /// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
 pub mod delete_resource_policy_output {
-
+    
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
         pub fn build(self) -> crate::output::DeleteResourcePolicyOutput {
-            crate::output::DeleteResourcePolicyOutput {}
+            crate::output::DeleteResourcePolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
@@ -2256,19 +2279,24 @@ impl DeleteResourcePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePolicyOutput {}
+pub struct DeletePolicyOutput  {
+}
 /// See [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
 pub mod delete_policy_output {
-
+    
     /// A builder for [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
         pub fn build(self) -> crate::output::DeletePolicyOutput {
-            crate::output::DeletePolicyOutput {}
+            crate::output::DeletePolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl DeletePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DeletePolicyOutput`](crate::output::DeletePolicyOutput).
@@ -2280,19 +2308,24 @@ impl DeletePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteOrganizationalUnitOutput {}
+pub struct DeleteOrganizationalUnitOutput  {
+}
 /// See [`DeleteOrganizationalUnitOutput`](crate::output::DeleteOrganizationalUnitOutput).
 pub mod delete_organizational_unit_output {
-
+    
     /// A builder for [`DeleteOrganizationalUnitOutput`](crate::output::DeleteOrganizationalUnitOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteOrganizationalUnitOutput`](crate::output::DeleteOrganizationalUnitOutput).
         pub fn build(self) -> crate::output::DeleteOrganizationalUnitOutput {
-            crate::output::DeleteOrganizationalUnitOutput {}
+            crate::output::DeleteOrganizationalUnitOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteOrganizationalUnitOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOrganizationalUnitOutput`](crate::output::DeleteOrganizationalUnitOutput).
@@ -2304,19 +2337,24 @@ impl DeleteOrganizationalUnitOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteOrganizationOutput {}
+pub struct DeleteOrganizationOutput  {
+}
 /// See [`DeleteOrganizationOutput`](crate::output::DeleteOrganizationOutput).
 pub mod delete_organization_output {
-
+    
     /// A builder for [`DeleteOrganizationOutput`](crate::output::DeleteOrganizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteOrganizationOutput`](crate::output::DeleteOrganizationOutput).
         pub fn build(self) -> crate::output::DeleteOrganizationOutput {
-            crate::output::DeleteOrganizationOutput {}
+            crate::output::DeleteOrganizationOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteOrganizationOutput`](crate::output::DeleteOrganizationOutput).
@@ -2328,20 +2366,20 @@ impl DeleteOrganizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeclineHandshakeOutput {
+pub struct DeclineHandshakeOutput  {
     /// <p>A structure that contains details about the declined handshake. The state is updated to show the value <code>DECLINED</code>.</p>
     #[doc(hidden)]
     pub handshake: std::option::Option<crate::model::Handshake>,
 }
 impl DeclineHandshakeOutput {
     /// <p>A structure that contains details about the declined handshake. The state is updated to show the value <code>DECLINED</code>.</p>
-    pub fn handshake(&self) -> std::option::Option<&crate::model::Handshake> {
+    pub fn handshake(&self) -> std::option::Option<& crate::model::Handshake> {
         self.handshake.as_ref()
     }
 }
 /// See [`DeclineHandshakeOutput`](crate::output::DeclineHandshakeOutput).
 pub mod decline_handshake_output {
-
+    
     /// A builder for [`DeclineHandshakeOutput`](crate::output::DeclineHandshakeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2354,20 +2392,19 @@ pub mod decline_handshake_output {
             self
         }
         /// <p>A structure that contains details about the declined handshake. The state is updated to show the value <code>DECLINED</code>.</p>
-        pub fn set_handshake(
-            mut self,
-            input: std::option::Option<crate::model::Handshake>,
-        ) -> Self {
-            self.handshake = input;
-            self
+        pub fn set_handshake(mut self, input: std::option::Option<crate::model::Handshake>) -> Self {
+            self.handshake = input; self
         }
         /// Consumes the builder and constructs a [`DeclineHandshakeOutput`](crate::output::DeclineHandshakeOutput).
         pub fn build(self) -> crate::output::DeclineHandshakeOutput {
             crate::output::DeclineHandshakeOutput {
-                handshake: self.handshake,
+                handshake: self.handshake
+                ,
             }
         }
     }
+    
+    
 }
 impl DeclineHandshakeOutput {
     /// Creates a new builder-style object to manufacture [`DeclineHandshakeOutput`](crate::output::DeclineHandshakeOutput).
@@ -2379,20 +2416,20 @@ impl DeclineHandshakeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePolicyOutput {
+pub struct CreatePolicyOutput  {
     /// <p>A structure that contains details about the newly created policy.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::Policy>,
 }
 impl CreatePolicyOutput {
     /// <p>A structure that contains details about the newly created policy.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::model::Policy> {
+    pub fn policy(&self) -> std::option::Option<& crate::model::Policy> {
         self.policy.as_ref()
     }
 }
 /// See [`CreatePolicyOutput`](crate::output::CreatePolicyOutput).
 pub mod create_policy_output {
-
+    
     /// A builder for [`CreatePolicyOutput`](crate::output::CreatePolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2406,16 +2443,18 @@ pub mod create_policy_output {
         }
         /// <p>A structure that contains details about the newly created policy.</p>
         pub fn set_policy(mut self, input: std::option::Option<crate::model::Policy>) -> Self {
-            self.policy = input;
-            self
+            self.policy = input; self
         }
         /// Consumes the builder and constructs a [`CreatePolicyOutput`](crate::output::CreatePolicyOutput).
         pub fn build(self) -> crate::output::CreatePolicyOutput {
             crate::output::CreatePolicyOutput {
-                policy: self.policy,
+                policy: self.policy
+                ,
             }
         }
     }
+    
+    
 }
 impl CreatePolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreatePolicyOutput`](crate::output::CreatePolicyOutput).
@@ -2427,20 +2466,20 @@ impl CreatePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateOrganizationalUnitOutput {
+pub struct CreateOrganizationalUnitOutput  {
     /// <p>A structure that contains details about the newly created OU.</p>
     #[doc(hidden)]
     pub organizational_unit: std::option::Option<crate::model::OrganizationalUnit>,
 }
 impl CreateOrganizationalUnitOutput {
     /// <p>A structure that contains details about the newly created OU.</p>
-    pub fn organizational_unit(&self) -> std::option::Option<&crate::model::OrganizationalUnit> {
+    pub fn organizational_unit(&self) -> std::option::Option<& crate::model::OrganizationalUnit> {
         self.organizational_unit.as_ref()
     }
 }
 /// See [`CreateOrganizationalUnitOutput`](crate::output::CreateOrganizationalUnitOutput).
 pub mod create_organizational_unit_output {
-
+    
     /// A builder for [`CreateOrganizationalUnitOutput`](crate::output::CreateOrganizationalUnitOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2453,20 +2492,19 @@ pub mod create_organizational_unit_output {
             self
         }
         /// <p>A structure that contains details about the newly created OU.</p>
-        pub fn set_organizational_unit(
-            mut self,
-            input: std::option::Option<crate::model::OrganizationalUnit>,
-        ) -> Self {
-            self.organizational_unit = input;
-            self
+        pub fn set_organizational_unit(mut self, input: std::option::Option<crate::model::OrganizationalUnit>) -> Self {
+            self.organizational_unit = input; self
         }
         /// Consumes the builder and constructs a [`CreateOrganizationalUnitOutput`](crate::output::CreateOrganizationalUnitOutput).
         pub fn build(self) -> crate::output::CreateOrganizationalUnitOutput {
             crate::output::CreateOrganizationalUnitOutput {
-                organizational_unit: self.organizational_unit,
+                organizational_unit: self.organizational_unit
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateOrganizationalUnitOutput {
     /// Creates a new builder-style object to manufacture [`CreateOrganizationalUnitOutput`](crate::output::CreateOrganizationalUnitOutput).
@@ -2478,20 +2516,20 @@ impl CreateOrganizationalUnitOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateOrganizationOutput {
+pub struct CreateOrganizationOutput  {
     /// <p>A structure that contains details about the newly created organization.</p>
     #[doc(hidden)]
     pub organization: std::option::Option<crate::model::Organization>,
 }
 impl CreateOrganizationOutput {
     /// <p>A structure that contains details about the newly created organization.</p>
-    pub fn organization(&self) -> std::option::Option<&crate::model::Organization> {
+    pub fn organization(&self) -> std::option::Option<& crate::model::Organization> {
         self.organization.as_ref()
     }
 }
 /// See [`CreateOrganizationOutput`](crate::output::CreateOrganizationOutput).
 pub mod create_organization_output {
-
+    
     /// A builder for [`CreateOrganizationOutput`](crate::output::CreateOrganizationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2504,20 +2542,19 @@ pub mod create_organization_output {
             self
         }
         /// <p>A structure that contains details about the newly created organization.</p>
-        pub fn set_organization(
-            mut self,
-            input: std::option::Option<crate::model::Organization>,
-        ) -> Self {
-            self.organization = input;
-            self
+        pub fn set_organization(mut self, input: std::option::Option<crate::model::Organization>) -> Self {
+            self.organization = input; self
         }
         /// Consumes the builder and constructs a [`CreateOrganizationOutput`](crate::output::CreateOrganizationOutput).
         pub fn build(self) -> crate::output::CreateOrganizationOutput {
             crate::output::CreateOrganizationOutput {
-                organization: self.organization,
+                organization: self.organization
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`CreateOrganizationOutput`](crate::output::CreateOrganizationOutput).
@@ -2529,20 +2566,20 @@ impl CreateOrganizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGovCloudAccountOutput {
+pub struct CreateGovCloudAccountOutput  {
     /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.</p>
     #[doc(hidden)]
     pub create_account_status: std::option::Option<crate::model::CreateAccountStatus>,
 }
 impl CreateGovCloudAccountOutput {
     /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.</p>
-    pub fn create_account_status(&self) -> std::option::Option<&crate::model::CreateAccountStatus> {
+    pub fn create_account_status(&self) -> std::option::Option<& crate::model::CreateAccountStatus> {
         self.create_account_status.as_ref()
     }
 }
 /// See [`CreateGovCloudAccountOutput`](crate::output::CreateGovCloudAccountOutput).
 pub mod create_gov_cloud_account_output {
-
+    
     /// A builder for [`CreateGovCloudAccountOutput`](crate::output::CreateGovCloudAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2555,20 +2592,19 @@ pub mod create_gov_cloud_account_output {
             self
         }
         /// <p>Contains the status about a <code>CreateAccount</code> or <code>CreateGovCloudAccount</code> request to create an Amazon Web Services account or an Amazon Web Services GovCloud (US) account in an organization.</p>
-        pub fn set_create_account_status(
-            mut self,
-            input: std::option::Option<crate::model::CreateAccountStatus>,
-        ) -> Self {
-            self.create_account_status = input;
-            self
+        pub fn set_create_account_status(mut self, input: std::option::Option<crate::model::CreateAccountStatus>) -> Self {
+            self.create_account_status = input; self
         }
         /// Consumes the builder and constructs a [`CreateGovCloudAccountOutput`](crate::output::CreateGovCloudAccountOutput).
         pub fn build(self) -> crate::output::CreateGovCloudAccountOutput {
             crate::output::CreateGovCloudAccountOutput {
-                create_account_status: self.create_account_status,
+                create_account_status: self.create_account_status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateGovCloudAccountOutput {
     /// Creates a new builder-style object to manufacture [`CreateGovCloudAccountOutput`](crate::output::CreateGovCloudAccountOutput).
@@ -2580,20 +2616,20 @@ impl CreateGovCloudAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAccountOutput {
+pub struct CreateAccountOutput  {
     /// <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
     #[doc(hidden)]
     pub create_account_status: std::option::Option<crate::model::CreateAccountStatus>,
 }
 impl CreateAccountOutput {
     /// <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
-    pub fn create_account_status(&self) -> std::option::Option<&crate::model::CreateAccountStatus> {
+    pub fn create_account_status(&self) -> std::option::Option<& crate::model::CreateAccountStatus> {
         self.create_account_status.as_ref()
     }
 }
 /// See [`CreateAccountOutput`](crate::output::CreateAccountOutput).
 pub mod create_account_output {
-
+    
     /// A builder for [`CreateAccountOutput`](crate::output::CreateAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2606,20 +2642,19 @@ pub mod create_account_output {
             self
         }
         /// <p>A structure that contains details about the request to create an account. This response structure might not be fully populated when you first receive it because account creation is an asynchronous process. You can pass the returned <code>CreateAccountStatus</code> ID as a parameter to <code>DescribeCreateAccountStatus</code> to get status about the progress of the request at later times. You can also check the CloudTrail log for the <code>CreateAccountResult</code> event. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in Your Organization</a> in the <i>Organizations User Guide</i>.</p>
-        pub fn set_create_account_status(
-            mut self,
-            input: std::option::Option<crate::model::CreateAccountStatus>,
-        ) -> Self {
-            self.create_account_status = input;
-            self
+        pub fn set_create_account_status(mut self, input: std::option::Option<crate::model::CreateAccountStatus>) -> Self {
+            self.create_account_status = input; self
         }
         /// Consumes the builder and constructs a [`CreateAccountOutput`](crate::output::CreateAccountOutput).
         pub fn build(self) -> crate::output::CreateAccountOutput {
             crate::output::CreateAccountOutput {
-                create_account_status: self.create_account_status,
+                create_account_status: self.create_account_status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateAccountOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccountOutput`](crate::output::CreateAccountOutput).
@@ -2631,19 +2666,24 @@ impl CreateAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloseAccountOutput {}
+pub struct CloseAccountOutput  {
+}
 /// See [`CloseAccountOutput`](crate::output::CloseAccountOutput).
 pub mod close_account_output {
-
+    
     /// A builder for [`CloseAccountOutput`](crate::output::CloseAccountOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CloseAccountOutput`](crate::output::CloseAccountOutput).
         pub fn build(self) -> crate::output::CloseAccountOutput {
-            crate::output::CloseAccountOutput {}
+            crate::output::CloseAccountOutput {
+            }
         }
     }
+    
+    
 }
 impl CloseAccountOutput {
     /// Creates a new builder-style object to manufacture [`CloseAccountOutput`](crate::output::CloseAccountOutput).
@@ -2655,20 +2695,20 @@ impl CloseAccountOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelHandshakeOutput {
+pub struct CancelHandshakeOutput  {
     /// <p>A structure that contains details about the handshake that you canceled.</p>
     #[doc(hidden)]
     pub handshake: std::option::Option<crate::model::Handshake>,
 }
 impl CancelHandshakeOutput {
     /// <p>A structure that contains details about the handshake that you canceled.</p>
-    pub fn handshake(&self) -> std::option::Option<&crate::model::Handshake> {
+    pub fn handshake(&self) -> std::option::Option<& crate::model::Handshake> {
         self.handshake.as_ref()
     }
 }
 /// See [`CancelHandshakeOutput`](crate::output::CancelHandshakeOutput).
 pub mod cancel_handshake_output {
-
+    
     /// A builder for [`CancelHandshakeOutput`](crate::output::CancelHandshakeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2681,20 +2721,19 @@ pub mod cancel_handshake_output {
             self
         }
         /// <p>A structure that contains details about the handshake that you canceled.</p>
-        pub fn set_handshake(
-            mut self,
-            input: std::option::Option<crate::model::Handshake>,
-        ) -> Self {
-            self.handshake = input;
-            self
+        pub fn set_handshake(mut self, input: std::option::Option<crate::model::Handshake>) -> Self {
+            self.handshake = input; self
         }
         /// Consumes the builder and constructs a [`CancelHandshakeOutput`](crate::output::CancelHandshakeOutput).
         pub fn build(self) -> crate::output::CancelHandshakeOutput {
             crate::output::CancelHandshakeOutput {
-                handshake: self.handshake,
+                handshake: self.handshake
+                ,
             }
         }
     }
+    
+    
 }
 impl CancelHandshakeOutput {
     /// Creates a new builder-style object to manufacture [`CancelHandshakeOutput`](crate::output::CancelHandshakeOutput).
@@ -2706,19 +2745,24 @@ impl CancelHandshakeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachPolicyOutput {}
+pub struct AttachPolicyOutput  {
+}
 /// See [`AttachPolicyOutput`](crate::output::AttachPolicyOutput).
 pub mod attach_policy_output {
-
+    
     /// A builder for [`AttachPolicyOutput`](crate::output::AttachPolicyOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`AttachPolicyOutput`](crate::output::AttachPolicyOutput).
         pub fn build(self) -> crate::output::AttachPolicyOutput {
-            crate::output::AttachPolicyOutput {}
+            crate::output::AttachPolicyOutput {
+            }
         }
     }
+    
+    
 }
 impl AttachPolicyOutput {
     /// Creates a new builder-style object to manufacture [`AttachPolicyOutput`](crate::output::AttachPolicyOutput).
@@ -2730,20 +2774,20 @@ impl AttachPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptHandshakeOutput {
+pub struct AcceptHandshakeOutput  {
     /// <p>A structure that contains details about the accepted handshake.</p>
     #[doc(hidden)]
     pub handshake: std::option::Option<crate::model::Handshake>,
 }
 impl AcceptHandshakeOutput {
     /// <p>A structure that contains details about the accepted handshake.</p>
-    pub fn handshake(&self) -> std::option::Option<&crate::model::Handshake> {
+    pub fn handshake(&self) -> std::option::Option<& crate::model::Handshake> {
         self.handshake.as_ref()
     }
 }
 /// See [`AcceptHandshakeOutput`](crate::output::AcceptHandshakeOutput).
 pub mod accept_handshake_output {
-
+    
     /// A builder for [`AcceptHandshakeOutput`](crate::output::AcceptHandshakeOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2756,20 +2800,19 @@ pub mod accept_handshake_output {
             self
         }
         /// <p>A structure that contains details about the accepted handshake.</p>
-        pub fn set_handshake(
-            mut self,
-            input: std::option::Option<crate::model::Handshake>,
-        ) -> Self {
-            self.handshake = input;
-            self
+        pub fn set_handshake(mut self, input: std::option::Option<crate::model::Handshake>) -> Self {
+            self.handshake = input; self
         }
         /// Consumes the builder and constructs a [`AcceptHandshakeOutput`](crate::output::AcceptHandshakeOutput).
         pub fn build(self) -> crate::output::AcceptHandshakeOutput {
             crate::output::AcceptHandshakeOutput {
-                handshake: self.handshake,
+                handshake: self.handshake
+                ,
             }
         }
     }
+    
+    
 }
 impl AcceptHandshakeOutput {
     /// Creates a new builder-style object to manufacture [`AcceptHandshakeOutput`](crate::output::AcceptHandshakeOutput).
@@ -2777,3 +2820,4 @@ impl AcceptHandshakeOutput {
         crate::output::accept_handshake_output::Builder::default()
     }
 }
+

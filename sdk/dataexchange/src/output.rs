@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRevisionOutput {
+pub struct UpdateRevisionOutput  {
     /// <p>The ARN for the revision.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -39,19 +39,19 @@ pub struct UpdateRevisionOutput {
 }
 impl UpdateRevisionOutput {
     /// <p>The ARN for the revision.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>An optional comment about the revision.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The unique identifier for the data set associated with the data set revision.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
@@ -59,19 +59,19 @@ impl UpdateRevisionOutput {
         self.finalized
     }
     /// <p>The unique identifier for the revision.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
-    pub fn source_id(&self) -> std::option::Option<&str> {
+    pub fn source_id(&self) -> std::option::Option<& str> {
         self.source_id.as_deref()
     }
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
-    pub fn revocation_comment(&self) -> std::option::Option<&str> {
+    pub fn revocation_comment(&self) -> std::option::Option<& str> {
         self.revocation_comment.as_deref()
     }
     /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
@@ -79,13 +79,13 @@ impl UpdateRevisionOutput {
         self.revoked
     }
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
-    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn revoked_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.revoked_at.as_ref()
     }
 }
 /// See [`UpdateRevisionOutput`](crate::output::UpdateRevisionOutput).
 pub mod update_revision_output {
-
+    
     /// A builder for [`UpdateRevisionOutput`](crate::output::UpdateRevisionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -109,8 +109,7 @@ pub mod update_revision_output {
         }
         /// <p>The ARN for the revision.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>An optional comment about the revision.</p>
         pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,8 +118,7 @@ pub mod update_revision_output {
         }
         /// <p>An optional comment about the revision.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.comment = input;
-            self
+            self.comment = input; self
         }
         /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -128,12 +126,8 @@ pub mod update_revision_output {
             self
         }
         /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The unique identifier for the data set associated with the data set revision.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,8 +136,7 @@ pub mod update_revision_output {
         }
         /// <p>The unique identifier for the data set associated with the data set revision.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_set_id = input;
-            self
+            self.data_set_id = input; self
         }
         /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
         pub fn finalized(mut self, input: bool) -> Self {
@@ -152,8 +145,7 @@ pub mod update_revision_output {
         }
         /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
         pub fn set_finalized(mut self, input: std::option::Option<bool>) -> Self {
-            self.finalized = input;
-            self
+            self.finalized = input; self
         }
         /// <p>The unique identifier for the revision.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -162,8 +154,7 @@ pub mod update_revision_output {
         }
         /// <p>The unique identifier for the revision.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
         pub fn source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -172,8 +163,7 @@ pub mod update_revision_output {
         }
         /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
         pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_id = input;
-            self
+            self.source_id = input; self
         }
         /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -181,12 +171,8 @@ pub mod update_revision_output {
             self
         }
         /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
         pub fn revocation_comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -194,12 +180,8 @@ pub mod update_revision_output {
             self
         }
         /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
-        pub fn set_revocation_comment(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.revocation_comment = input;
-            self
+        pub fn set_revocation_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revocation_comment = input; self
         }
         /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
         pub fn revoked(mut self, input: bool) -> Self {
@@ -208,8 +190,7 @@ pub mod update_revision_output {
         }
         /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
         pub fn set_revoked(mut self, input: std::option::Option<bool>) -> Self {
-            self.revoked = input;
-            self
+            self.revoked = input; self
         }
         /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
         pub fn revoked_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -217,30 +198,41 @@ pub mod update_revision_output {
             self
         }
         /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
-        pub fn set_revoked_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.revoked_at = input;
-            self
+        pub fn set_revoked_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.revoked_at = input; self
         }
         /// Consumes the builder and constructs a [`UpdateRevisionOutput`](crate::output::UpdateRevisionOutput).
         pub fn build(self) -> crate::output::UpdateRevisionOutput {
             crate::output::UpdateRevisionOutput {
-                arn: self.arn,
-                comment: self.comment,
-                created_at: self.created_at,
-                data_set_id: self.data_set_id,
-                finalized: self.finalized.unwrap_or_default(),
-                id: self.id,
-                source_id: self.source_id,
-                updated_at: self.updated_at,
-                revocation_comment: self.revocation_comment,
-                revoked: self.revoked.unwrap_or_default(),
-                revoked_at: self.revoked_at,
+                arn: self.arn
+                ,
+                comment: self.comment
+                ,
+                created_at: self.created_at
+                ,
+                data_set_id: self.data_set_id
+                ,
+                finalized: self.finalized
+                    .unwrap_or_default()
+                ,
+                id: self.id
+                ,
+                source_id: self.source_id
+                ,
+                updated_at: self.updated_at
+                ,
+                revocation_comment: self.revocation_comment
+                ,
+                revoked: self.revoked
+                    .unwrap_or_default()
+                ,
+                revoked_at: self.revoked_at
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateRevisionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRevisionOutput`](crate::output::UpdateRevisionOutput).
@@ -252,7 +244,7 @@ impl UpdateRevisionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEventActionOutput {
+pub struct UpdateEventActionOutput  {
     /// <p>What occurs after a certain event.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
@@ -274,33 +266,33 @@ pub struct UpdateEventActionOutput {
 }
 impl UpdateEventActionOutput {
     /// <p>What occurs after a certain event.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+    pub fn action(&self) -> std::option::Option<& crate::model::Action> {
         self.action.as_ref()
     }
     /// <p>The ARN for the event action.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>What occurs to start an action.</p>
-    pub fn event(&self) -> std::option::Option<&crate::model::Event> {
+    pub fn event(&self) -> std::option::Option<& crate::model::Event> {
         self.event.as_ref()
     }
     /// <p>The unique identifier for the event action.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`UpdateEventActionOutput`](crate::output::UpdateEventActionOutput).
 pub mod update_event_action_output {
-
+    
     /// A builder for [`UpdateEventActionOutput`](crate::output::UpdateEventActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -319,8 +311,7 @@ pub mod update_event_action_output {
         }
         /// <p>What occurs after a certain event.</p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
-            self.action = input;
-            self
+            self.action = input; self
         }
         /// <p>The ARN for the event action.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -329,8 +320,7 @@ pub mod update_event_action_output {
         }
         /// <p>The ARN for the event action.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -338,12 +328,8 @@ pub mod update_event_action_output {
             self
         }
         /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>What occurs to start an action.</p>
         pub fn event(mut self, input: crate::model::Event) -> Self {
@@ -352,8 +338,7 @@ pub mod update_event_action_output {
         }
         /// <p>What occurs to start an action.</p>
         pub fn set_event(mut self, input: std::option::Option<crate::model::Event>) -> Self {
-            self.event = input;
-            self
+            self.event = input; self
         }
         /// <p>The unique identifier for the event action.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -362,8 +347,7 @@ pub mod update_event_action_output {
         }
         /// <p>The unique identifier for the event action.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -371,25 +355,29 @@ pub mod update_event_action_output {
             self
         }
         /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`UpdateEventActionOutput`](crate::output::UpdateEventActionOutput).
         pub fn build(self) -> crate::output::UpdateEventActionOutput {
             crate::output::UpdateEventActionOutput {
-                action: self.action,
-                arn: self.arn,
-                created_at: self.created_at,
-                event: self.event,
-                id: self.id,
-                updated_at: self.updated_at,
+                action: self.action
+                ,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                event: self.event
+                ,
+                id: self.id
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateEventActionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEventActionOutput`](crate::output::UpdateEventActionOutput).
@@ -401,7 +389,7 @@ impl UpdateEventActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDataSetOutput {
+pub struct UpdateDataSetOutput  {
     /// <p>The ARN for the data set.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -435,49 +423,49 @@ pub struct UpdateDataSetOutput {
 }
 impl UpdateDataSetOutput {
     /// <p>The ARN for the data set.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The type of asset that is added to a data set.</p>
-    pub fn asset_type(&self) -> std::option::Option<&crate::model::AssetType> {
+    pub fn asset_type(&self) -> std::option::Option<& crate::model::AssetType> {
         self.asset_type.as_ref()
     }
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The description for the data set.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier for the data set.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the data set.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
-    pub fn origin(&self) -> std::option::Option<&crate::model::Origin> {
+    pub fn origin(&self) -> std::option::Option<& crate::model::Origin> {
         self.origin.as_ref()
     }
     /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
-    pub fn origin_details(&self) -> std::option::Option<&crate::model::OriginDetails> {
+    pub fn origin_details(&self) -> std::option::Option<& crate::model::OriginDetails> {
         self.origin_details.as_ref()
     }
     /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
-    pub fn source_id(&self) -> std::option::Option<&str> {
+    pub fn source_id(&self) -> std::option::Option<& str> {
         self.source_id.as_deref()
     }
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`UpdateDataSetOutput`](crate::output::UpdateDataSetOutput).
 pub mod update_data_set_output {
-
+    
     /// A builder for [`UpdateDataSetOutput`](crate::output::UpdateDataSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -500,8 +488,7 @@ pub mod update_data_set_output {
         }
         /// <p>The ARN for the data set.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The type of asset that is added to a data set.</p>
         pub fn asset_type(mut self, input: crate::model::AssetType) -> Self {
@@ -509,12 +496,8 @@ pub mod update_data_set_output {
             self
         }
         /// <p>The type of asset that is added to a data set.</p>
-        pub fn set_asset_type(
-            mut self,
-            input: std::option::Option<crate::model::AssetType>,
-        ) -> Self {
-            self.asset_type = input;
-            self
+        pub fn set_asset_type(mut self, input: std::option::Option<crate::model::AssetType>) -> Self {
+            self.asset_type = input; self
         }
         /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -522,12 +505,8 @@ pub mod update_data_set_output {
             self
         }
         /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The description for the data set.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -536,8 +515,7 @@ pub mod update_data_set_output {
         }
         /// <p>The description for the data set.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The unique identifier for the data set.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -546,8 +524,7 @@ pub mod update_data_set_output {
         }
         /// <p>The unique identifier for the data set.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the data set.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -556,8 +533,7 @@ pub mod update_data_set_output {
         }
         /// <p>The name of the data set.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
         pub fn origin(mut self, input: crate::model::Origin) -> Self {
@@ -566,8 +542,7 @@ pub mod update_data_set_output {
         }
         /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
         pub fn set_origin(mut self, input: std::option::Option<crate::model::Origin>) -> Self {
-            self.origin = input;
-            self
+            self.origin = input; self
         }
         /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
         pub fn origin_details(mut self, input: crate::model::OriginDetails) -> Self {
@@ -575,12 +550,8 @@ pub mod update_data_set_output {
             self
         }
         /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
-        pub fn set_origin_details(
-            mut self,
-            input: std::option::Option<crate::model::OriginDetails>,
-        ) -> Self {
-            self.origin_details = input;
-            self
+        pub fn set_origin_details(mut self, input: std::option::Option<crate::model::OriginDetails>) -> Self {
+            self.origin_details = input; self
         }
         /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
         pub fn source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -589,8 +560,7 @@ pub mod update_data_set_output {
         }
         /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
         pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_id = input;
-            self
+            self.source_id = input; self
         }
         /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -598,29 +568,37 @@ pub mod update_data_set_output {
             self
         }
         /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDataSetOutput`](crate::output::UpdateDataSetOutput).
         pub fn build(self) -> crate::output::UpdateDataSetOutput {
             crate::output::UpdateDataSetOutput {
-                arn: self.arn,
-                asset_type: self.asset_type,
-                created_at: self.created_at,
-                description: self.description,
-                id: self.id,
-                name: self.name,
-                origin: self.origin,
-                origin_details: self.origin_details,
-                source_id: self.source_id,
-                updated_at: self.updated_at,
+                arn: self.arn
+                ,
+                asset_type: self.asset_type
+                ,
+                created_at: self.created_at
+                ,
+                description: self.description
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                origin: self.origin
+                ,
+                origin_details: self.origin_details
+                ,
+                source_id: self.source_id
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDataSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDataSetOutput`](crate::output::UpdateDataSetOutput).
@@ -632,7 +610,7 @@ impl UpdateDataSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAssetOutput {
+pub struct UpdateAssetOutput  {
     /// <p>The ARN for the asset.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -666,49 +644,49 @@ pub struct UpdateAssetOutput {
 }
 impl UpdateAssetOutput {
     /// <p>The ARN for the asset.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Details about the asset.</p>
-    pub fn asset_details(&self) -> std::option::Option<&crate::model::AssetDetails> {
+    pub fn asset_details(&self) -> std::option::Option<& crate::model::AssetDetails> {
         self.asset_details.as_ref()
     }
     /// <p>The type of asset that is added to a data set.</p>
-    pub fn asset_type(&self) -> std::option::Option<&crate::model::AssetType> {
+    pub fn asset_type(&self) -> std::option::Option<& crate::model::AssetType> {
         self.asset_type.as_ref()
     }
     /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The unique identifier for the data set associated with this asset.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>The unique identifier for the asset.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in the LF-tag policy"- or "Table(s) included in LF-tag policy" are used as the asset name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier for the revision associated with this asset.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
-    pub fn source_id(&self) -> std::option::Option<&str> {
+    pub fn source_id(&self) -> std::option::Option<& str> {
         self.source_id.as_deref()
     }
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`UpdateAssetOutput`](crate::output::UpdateAssetOutput).
 pub mod update_asset_output {
-
+    
     /// A builder for [`UpdateAssetOutput`](crate::output::UpdateAssetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -731,8 +709,7 @@ pub mod update_asset_output {
         }
         /// <p>The ARN for the asset.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Details about the asset.</p>
         pub fn asset_details(mut self, input: crate::model::AssetDetails) -> Self {
@@ -740,12 +717,8 @@ pub mod update_asset_output {
             self
         }
         /// <p>Details about the asset.</p>
-        pub fn set_asset_details(
-            mut self,
-            input: std::option::Option<crate::model::AssetDetails>,
-        ) -> Self {
-            self.asset_details = input;
-            self
+        pub fn set_asset_details(mut self, input: std::option::Option<crate::model::AssetDetails>) -> Self {
+            self.asset_details = input; self
         }
         /// <p>The type of asset that is added to a data set.</p>
         pub fn asset_type(mut self, input: crate::model::AssetType) -> Self {
@@ -753,12 +726,8 @@ pub mod update_asset_output {
             self
         }
         /// <p>The type of asset that is added to a data set.</p>
-        pub fn set_asset_type(
-            mut self,
-            input: std::option::Option<crate::model::AssetType>,
-        ) -> Self {
-            self.asset_type = input;
-            self
+        pub fn set_asset_type(mut self, input: std::option::Option<crate::model::AssetType>) -> Self {
+            self.asset_type = input; self
         }
         /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -766,12 +735,8 @@ pub mod update_asset_output {
             self
         }
         /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The unique identifier for the data set associated with this asset.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -780,8 +745,7 @@ pub mod update_asset_output {
         }
         /// <p>The unique identifier for the data set associated with this asset.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_set_id = input;
-            self
+            self.data_set_id = input; self
         }
         /// <p>The unique identifier for the asset.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -790,8 +754,7 @@ pub mod update_asset_output {
         }
         /// <p>The unique identifier for the asset.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in the LF-tag policy"- or "Table(s) included in LF-tag policy" are used as the asset name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -800,8 +763,7 @@ pub mod update_asset_output {
         }
         /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in the LF-tag policy"- or "Table(s) included in LF-tag policy" are used as the asset name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The unique identifier for the revision associated with this asset.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -810,8 +772,7 @@ pub mod update_asset_output {
         }
         /// <p>The unique identifier for the revision associated with this asset.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
         pub fn source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -820,8 +781,7 @@ pub mod update_asset_output {
         }
         /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
         pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_id = input;
-            self
+            self.source_id = input; self
         }
         /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -829,29 +789,37 @@ pub mod update_asset_output {
             self
         }
         /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`UpdateAssetOutput`](crate::output::UpdateAssetOutput).
         pub fn build(self) -> crate::output::UpdateAssetOutput {
             crate::output::UpdateAssetOutput {
-                arn: self.arn,
-                asset_details: self.asset_details,
-                asset_type: self.asset_type,
-                created_at: self.created_at,
-                data_set_id: self.data_set_id,
-                id: self.id,
-                name: self.name,
-                revision_id: self.revision_id,
-                source_id: self.source_id,
-                updated_at: self.updated_at,
+                arn: self.arn
+                ,
+                asset_details: self.asset_details
+                ,
+                asset_type: self.asset_type
+                ,
+                created_at: self.created_at
+                ,
+                data_set_id: self.data_set_id
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                revision_id: self.revision_id
+                ,
+                source_id: self.source_id
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateAssetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAssetOutput`](crate::output::UpdateAssetOutput).
@@ -863,19 +831,24 @@ impl UpdateAssetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -887,19 +860,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -911,19 +889,24 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartJobOutput {}
+pub struct StartJobOutput  {
+}
 /// See [`StartJobOutput`](crate::output::StartJobOutput).
 pub mod start_job_output {
-
+    
     /// A builder for [`StartJobOutput`](crate::output::StartJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`StartJobOutput`](crate::output::StartJobOutput).
         pub fn build(self) -> crate::output::StartJobOutput {
-            crate::output::StartJobOutput {}
+            crate::output::StartJobOutput {
+            }
         }
     }
+    
+    
 }
 impl StartJobOutput {
     /// Creates a new builder-style object to manufacture [`StartJobOutput`](crate::output::StartJobOutput).
@@ -935,38 +918,32 @@ impl StartJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendApiAssetOutput {
+pub struct SendApiAssetOutput  {
     /// <p>The response body from the underlying API tracked by the API asset.</p>
     #[doc(hidden)]
     pub body: std::option::Option<std::string::String>,
     /// <p>The response headers from the underlying API tracked by the API asset.</p>
     #[doc(hidden)]
-    pub response_headers:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub response_headers: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl SendApiAssetOutput {
     /// <p>The response body from the underlying API tracked by the API asset.</p>
-    pub fn body(&self) -> std::option::Option<&str> {
+    pub fn body(&self) -> std::option::Option<& str> {
         self.body.as_deref()
     }
     /// <p>The response headers from the underlying API tracked by the API asset.</p>
-    pub fn response_headers(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn response_headers(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.response_headers.as_ref()
     }
 }
 /// See [`SendApiAssetOutput`](crate::output::SendApiAssetOutput).
 pub mod send_api_asset_output {
-
+    
     /// A builder for [`SendApiAssetOutput`](crate::output::SendApiAssetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) body: std::option::Option<std::string::String>,
-        pub(crate) response_headers: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) response_headers: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// <p>The response body from the underlying API tracked by the API asset.</p>
@@ -976,42 +953,35 @@ pub mod send_api_asset_output {
         }
         /// <p>The response body from the underlying API tracked by the API asset.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.body = input;
-            self
+            self.body = input; self
         }
         /// Adds a key-value pair to `response_headers`.
         ///
         /// To override the contents of this collection use [`set_response_headers`](Self::set_response_headers).
         ///
         /// <p>The response headers from the underlying API tracked by the API asset.</p>
-        pub fn response_headers(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn response_headers(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.response_headers.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.response_headers = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.response_headers = Some(hash_map);
+                            self
         }
         /// <p>The response headers from the underlying API tracked by the API asset.</p>
-        pub fn set_response_headers(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.response_headers = input;
-            self
+        pub fn set_response_headers(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.response_headers = input; self
         }
         /// Consumes the builder and constructs a [`SendApiAssetOutput`](crate::output::SendApiAssetOutput).
         pub fn build(self) -> crate::output::SendApiAssetOutput {
             crate::output::SendApiAssetOutput {
-                body: self.body,
-                response_headers: self.response_headers,
+                body: self.body
+                ,
+                response_headers: self.response_headers
+                ,
             }
         }
     }
+    
+    
 }
 impl SendApiAssetOutput {
     /// Creates a new builder-style object to manufacture [`SendApiAssetOutput`](crate::output::SendApiAssetOutput).
@@ -1023,7 +993,7 @@ impl SendApiAssetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RevokeRevisionOutput {
+pub struct RevokeRevisionOutput  {
     /// <p>The ARN for the revision.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1060,19 +1030,19 @@ pub struct RevokeRevisionOutput {
 }
 impl RevokeRevisionOutput {
     /// <p>The ARN for the revision.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>An optional comment about the revision.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The unique identifier for the data set associated with the data set revision.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
@@ -1080,19 +1050,19 @@ impl RevokeRevisionOutput {
         self.finalized
     }
     /// <p>The unique identifier for the revision.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
-    pub fn source_id(&self) -> std::option::Option<&str> {
+    pub fn source_id(&self) -> std::option::Option<& str> {
         self.source_id.as_deref()
     }
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
-    pub fn revocation_comment(&self) -> std::option::Option<&str> {
+    pub fn revocation_comment(&self) -> std::option::Option<& str> {
         self.revocation_comment.as_deref()
     }
     /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
@@ -1100,13 +1070,13 @@ impl RevokeRevisionOutput {
         self.revoked
     }
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
-    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn revoked_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.revoked_at.as_ref()
     }
 }
 /// See [`RevokeRevisionOutput`](crate::output::RevokeRevisionOutput).
 pub mod revoke_revision_output {
-
+    
     /// A builder for [`RevokeRevisionOutput`](crate::output::RevokeRevisionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1130,8 +1100,7 @@ pub mod revoke_revision_output {
         }
         /// <p>The ARN for the revision.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>An optional comment about the revision.</p>
         pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1140,8 +1109,7 @@ pub mod revoke_revision_output {
         }
         /// <p>An optional comment about the revision.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.comment = input;
-            self
+            self.comment = input; self
         }
         /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1149,12 +1117,8 @@ pub mod revoke_revision_output {
             self
         }
         /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The unique identifier for the data set associated with the data set revision.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1163,8 +1127,7 @@ pub mod revoke_revision_output {
         }
         /// <p>The unique identifier for the data set associated with the data set revision.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_set_id = input;
-            self
+            self.data_set_id = input; self
         }
         /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
         pub fn finalized(mut self, input: bool) -> Self {
@@ -1173,8 +1136,7 @@ pub mod revoke_revision_output {
         }
         /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
         pub fn set_finalized(mut self, input: std::option::Option<bool>) -> Self {
-            self.finalized = input;
-            self
+            self.finalized = input; self
         }
         /// <p>The unique identifier for the revision.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1183,8 +1145,7 @@ pub mod revoke_revision_output {
         }
         /// <p>The unique identifier for the revision.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
         pub fn source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1193,8 +1154,7 @@ pub mod revoke_revision_output {
         }
         /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
         pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_id = input;
-            self
+            self.source_id = input; self
         }
         /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1202,12 +1162,8 @@ pub mod revoke_revision_output {
             self
         }
         /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
         pub fn revocation_comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1215,12 +1171,8 @@ pub mod revoke_revision_output {
             self
         }
         /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
-        pub fn set_revocation_comment(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.revocation_comment = input;
-            self
+        pub fn set_revocation_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revocation_comment = input; self
         }
         /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
         pub fn revoked(mut self, input: bool) -> Self {
@@ -1229,8 +1181,7 @@ pub mod revoke_revision_output {
         }
         /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
         pub fn set_revoked(mut self, input: std::option::Option<bool>) -> Self {
-            self.revoked = input;
-            self
+            self.revoked = input; self
         }
         /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
         pub fn revoked_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1238,30 +1189,41 @@ pub mod revoke_revision_output {
             self
         }
         /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
-        pub fn set_revoked_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.revoked_at = input;
-            self
+        pub fn set_revoked_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.revoked_at = input; self
         }
         /// Consumes the builder and constructs a [`RevokeRevisionOutput`](crate::output::RevokeRevisionOutput).
         pub fn build(self) -> crate::output::RevokeRevisionOutput {
             crate::output::RevokeRevisionOutput {
-                arn: self.arn,
-                comment: self.comment,
-                created_at: self.created_at,
-                data_set_id: self.data_set_id,
-                finalized: self.finalized.unwrap_or_default(),
-                id: self.id,
-                source_id: self.source_id,
-                updated_at: self.updated_at,
-                revocation_comment: self.revocation_comment,
-                revoked: self.revoked.unwrap_or_default(),
-                revoked_at: self.revoked_at,
+                arn: self.arn
+                ,
+                comment: self.comment
+                ,
+                created_at: self.created_at
+                ,
+                data_set_id: self.data_set_id
+                ,
+                finalized: self.finalized
+                    .unwrap_or_default()
+                ,
+                id: self.id
+                ,
+                source_id: self.source_id
+                ,
+                updated_at: self.updated_at
+                ,
+                revocation_comment: self.revocation_comment
+                ,
+                revoked: self.revoked
+                    .unwrap_or_default()
+                ,
+                revoked_at: self.revoked_at
+                ,
             }
         }
     }
+    
+    
 }
 impl RevokeRevisionOutput {
     /// Creates a new builder-style object to manufacture [`RevokeRevisionOutput`](crate::output::RevokeRevisionOutput).
@@ -1273,30 +1235,24 @@ impl RevokeRevisionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p>A label that consists of a customer-defined key and an optional value.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A label that consists of a customer-defined key and an optional value.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -1304,31 +1260,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>A label that consists of a customer-defined key and an optional value.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>A label that consists of a customer-defined key and an optional value.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1340,7 +1291,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRevisionAssetsOutput {
+pub struct ListRevisionAssetsOutput  {
     /// <p>The asset objects listed by the request.</p>
     #[doc(hidden)]
     pub assets: std::option::Option<std::vec::Vec<crate::model::AssetEntry>>,
@@ -1350,17 +1301,17 @@ pub struct ListRevisionAssetsOutput {
 }
 impl ListRevisionAssetsOutput {
     /// <p>The asset objects listed by the request.</p>
-    pub fn assets(&self) -> std::option::Option<&[crate::model::AssetEntry]> {
+    pub fn assets(&self) -> std::option::Option<& [crate::model::AssetEntry]> {
         self.assets.as_deref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListRevisionAssetsOutput`](crate::output::ListRevisionAssetsOutput).
 pub mod list_revision_assets_output {
-
+    
     /// A builder for [`ListRevisionAssetsOutput`](crate::output::ListRevisionAssetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1375,17 +1326,13 @@ pub mod list_revision_assets_output {
         /// <p>The asset objects listed by the request.</p>
         pub fn assets(mut self, input: crate::model::AssetEntry) -> Self {
             let mut v = self.assets.unwrap_or_default();
-            v.push(input);
-            self.assets = Some(v);
-            self
+                            v.push(input);
+                            self.assets = Some(v);
+                            self
         }
         /// <p>The asset objects listed by the request.</p>
-        pub fn set_assets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AssetEntry>>,
-        ) -> Self {
-            self.assets = input;
-            self
+        pub fn set_assets(mut self, input: std::option::Option<std::vec::Vec<crate::model::AssetEntry>>) -> Self {
+            self.assets = input; self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1394,17 +1341,20 @@ pub mod list_revision_assets_output {
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListRevisionAssetsOutput`](crate::output::ListRevisionAssetsOutput).
         pub fn build(self) -> crate::output::ListRevisionAssetsOutput {
             crate::output::ListRevisionAssetsOutput {
-                assets: self.assets,
-                next_token: self.next_token,
+                assets: self.assets
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListRevisionAssetsOutput {
     /// Creates a new builder-style object to manufacture [`ListRevisionAssetsOutput`](crate::output::ListRevisionAssetsOutput).
@@ -1416,7 +1366,7 @@ impl ListRevisionAssetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobsOutput {
+pub struct ListJobsOutput  {
     /// <p>The jobs listed by the request.</p>
     #[doc(hidden)]
     pub jobs: std::option::Option<std::vec::Vec<crate::model::JobEntry>>,
@@ -1426,17 +1376,17 @@ pub struct ListJobsOutput {
 }
 impl ListJobsOutput {
     /// <p>The jobs listed by the request.</p>
-    pub fn jobs(&self) -> std::option::Option<&[crate::model::JobEntry]> {
+    pub fn jobs(&self) -> std::option::Option<& [crate::model::JobEntry]> {
         self.jobs.as_deref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListJobsOutput`](crate::output::ListJobsOutput).
 pub mod list_jobs_output {
-
+    
     /// A builder for [`ListJobsOutput`](crate::output::ListJobsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1451,17 +1401,13 @@ pub mod list_jobs_output {
         /// <p>The jobs listed by the request.</p>
         pub fn jobs(mut self, input: crate::model::JobEntry) -> Self {
             let mut v = self.jobs.unwrap_or_default();
-            v.push(input);
-            self.jobs = Some(v);
-            self
+                            v.push(input);
+                            self.jobs = Some(v);
+                            self
         }
         /// <p>The jobs listed by the request.</p>
-        pub fn set_jobs(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::JobEntry>>,
-        ) -> Self {
-            self.jobs = input;
-            self
+        pub fn set_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::model::JobEntry>>) -> Self {
+            self.jobs = input; self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1470,17 +1416,20 @@ pub mod list_jobs_output {
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListJobsOutput`](crate::output::ListJobsOutput).
         pub fn build(self) -> crate::output::ListJobsOutput {
             crate::output::ListJobsOutput {
-                jobs: self.jobs,
-                next_token: self.next_token,
+                jobs: self.jobs
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListJobsOutput`](crate::output::ListJobsOutput).
@@ -1492,7 +1441,7 @@ impl ListJobsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEventActionsOutput {
+pub struct ListEventActionsOutput  {
     /// <p>The event action objects listed by the request.</p>
     #[doc(hidden)]
     pub event_actions: std::option::Option<std::vec::Vec<crate::model::EventActionEntry>>,
@@ -1502,22 +1451,21 @@ pub struct ListEventActionsOutput {
 }
 impl ListEventActionsOutput {
     /// <p>The event action objects listed by the request.</p>
-    pub fn event_actions(&self) -> std::option::Option<&[crate::model::EventActionEntry]> {
+    pub fn event_actions(&self) -> std::option::Option<& [crate::model::EventActionEntry]> {
         self.event_actions.as_deref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListEventActionsOutput`](crate::output::ListEventActionsOutput).
 pub mod list_event_actions_output {
-
+    
     /// A builder for [`ListEventActionsOutput`](crate::output::ListEventActionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) event_actions:
-            std::option::Option<std::vec::Vec<crate::model::EventActionEntry>>,
+        pub(crate) event_actions: std::option::Option<std::vec::Vec<crate::model::EventActionEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1528,17 +1476,13 @@ pub mod list_event_actions_output {
         /// <p>The event action objects listed by the request.</p>
         pub fn event_actions(mut self, input: crate::model::EventActionEntry) -> Self {
             let mut v = self.event_actions.unwrap_or_default();
-            v.push(input);
-            self.event_actions = Some(v);
-            self
+                            v.push(input);
+                            self.event_actions = Some(v);
+                            self
         }
         /// <p>The event action objects listed by the request.</p>
-        pub fn set_event_actions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventActionEntry>>,
-        ) -> Self {
-            self.event_actions = input;
-            self
+        pub fn set_event_actions(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventActionEntry>>) -> Self {
+            self.event_actions = input; self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1547,17 +1491,20 @@ pub mod list_event_actions_output {
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListEventActionsOutput`](crate::output::ListEventActionsOutput).
         pub fn build(self) -> crate::output::ListEventActionsOutput {
             crate::output::ListEventActionsOutput {
-                event_actions: self.event_actions,
-                next_token: self.next_token,
+                event_actions: self.event_actions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEventActionsOutput {
     /// Creates a new builder-style object to manufacture [`ListEventActionsOutput`](crate::output::ListEventActionsOutput).
@@ -1569,7 +1516,7 @@ impl ListEventActionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDataSetsOutput {
+pub struct ListDataSetsOutput  {
     /// <p>The data set objects listed by the request.</p>
     #[doc(hidden)]
     pub data_sets: std::option::Option<std::vec::Vec<crate::model::DataSetEntry>>,
@@ -1579,17 +1526,17 @@ pub struct ListDataSetsOutput {
 }
 impl ListDataSetsOutput {
     /// <p>The data set objects listed by the request.</p>
-    pub fn data_sets(&self) -> std::option::Option<&[crate::model::DataSetEntry]> {
+    pub fn data_sets(&self) -> std::option::Option<& [crate::model::DataSetEntry]> {
         self.data_sets.as_deref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDataSetsOutput`](crate::output::ListDataSetsOutput).
 pub mod list_data_sets_output {
-
+    
     /// A builder for [`ListDataSetsOutput`](crate::output::ListDataSetsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1604,17 +1551,13 @@ pub mod list_data_sets_output {
         /// <p>The data set objects listed by the request.</p>
         pub fn data_sets(mut self, input: crate::model::DataSetEntry) -> Self {
             let mut v = self.data_sets.unwrap_or_default();
-            v.push(input);
-            self.data_sets = Some(v);
-            self
+                            v.push(input);
+                            self.data_sets = Some(v);
+                            self
         }
         /// <p>The data set objects listed by the request.</p>
-        pub fn set_data_sets(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DataSetEntry>>,
-        ) -> Self {
-            self.data_sets = input;
-            self
+        pub fn set_data_sets(mut self, input: std::option::Option<std::vec::Vec<crate::model::DataSetEntry>>) -> Self {
+            self.data_sets = input; self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1623,17 +1566,20 @@ pub mod list_data_sets_output {
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDataSetsOutput`](crate::output::ListDataSetsOutput).
         pub fn build(self) -> crate::output::ListDataSetsOutput {
             crate::output::ListDataSetsOutput {
-                data_sets: self.data_sets,
-                next_token: self.next_token,
+                data_sets: self.data_sets
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDataSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataSetsOutput`](crate::output::ListDataSetsOutput).
@@ -1645,7 +1591,7 @@ impl ListDataSetsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDataSetRevisionsOutput {
+pub struct ListDataSetRevisionsOutput  {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1655,17 +1601,17 @@ pub struct ListDataSetRevisionsOutput {
 }
 impl ListDataSetRevisionsOutput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The asset objects listed by the request.</p>
-    pub fn revisions(&self) -> std::option::Option<&[crate::model::RevisionEntry]> {
+    pub fn revisions(&self) -> std::option::Option<& [crate::model::RevisionEntry]> {
         self.revisions.as_deref()
     }
 }
 /// See [`ListDataSetRevisionsOutput`](crate::output::ListDataSetRevisionsOutput).
 pub mod list_data_set_revisions_output {
-
+    
     /// A builder for [`ListDataSetRevisionsOutput`](crate::output::ListDataSetRevisionsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1680,8 +1626,7 @@ pub mod list_data_set_revisions_output {
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `revisions`.
         ///
@@ -1690,26 +1635,26 @@ pub mod list_data_set_revisions_output {
         /// <p>The asset objects listed by the request.</p>
         pub fn revisions(mut self, input: crate::model::RevisionEntry) -> Self {
             let mut v = self.revisions.unwrap_or_default();
-            v.push(input);
-            self.revisions = Some(v);
-            self
+                            v.push(input);
+                            self.revisions = Some(v);
+                            self
         }
         /// <p>The asset objects listed by the request.</p>
-        pub fn set_revisions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::RevisionEntry>>,
-        ) -> Self {
-            self.revisions = input;
-            self
+        pub fn set_revisions(mut self, input: std::option::Option<std::vec::Vec<crate::model::RevisionEntry>>) -> Self {
+            self.revisions = input; self
         }
         /// Consumes the builder and constructs a [`ListDataSetRevisionsOutput`](crate::output::ListDataSetRevisionsOutput).
         pub fn build(self) -> crate::output::ListDataSetRevisionsOutput {
             crate::output::ListDataSetRevisionsOutput {
-                next_token: self.next_token,
-                revisions: self.revisions,
+                next_token: self.next_token
+                ,
+                revisions: self.revisions
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDataSetRevisionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataSetRevisionsOutput`](crate::output::ListDataSetRevisionsOutput).
@@ -1721,7 +1666,7 @@ impl ListDataSetRevisionsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRevisionOutput {
+pub struct GetRevisionOutput  {
     /// <p>The ARN for the revision.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1745,8 +1690,7 @@ pub struct GetRevisionOutput {
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The tags for the revision.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -1762,19 +1706,19 @@ pub struct GetRevisionOutput {
 }
 impl GetRevisionOutput {
     /// <p>The ARN for the revision.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>An optional comment about the revision.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The unique identifier for the data set associated with the data set revision.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
@@ -1782,26 +1726,23 @@ impl GetRevisionOutput {
         self.finalized
     }
     /// <p>The unique identifier for the revision.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
-    pub fn source_id(&self) -> std::option::Option<&str> {
+    pub fn source_id(&self) -> std::option::Option<& str> {
         self.source_id.as_deref()
     }
     /// <p>The tags for the revision.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
-    pub fn revocation_comment(&self) -> std::option::Option<&str> {
+    pub fn revocation_comment(&self) -> std::option::Option<& str> {
         self.revocation_comment.as_deref()
     }
     /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
@@ -1809,13 +1750,13 @@ impl GetRevisionOutput {
         self.revoked
     }
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
-    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn revoked_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.revoked_at.as_ref()
     }
 }
 /// See [`GetRevisionOutput`](crate::output::GetRevisionOutput).
 pub mod get_revision_output {
-
+    
     /// A builder for [`GetRevisionOutput`](crate::output::GetRevisionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1826,9 +1767,7 @@ pub mod get_revision_output {
         pub(crate) finalized: std::option::Option<bool>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) source_id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) revocation_comment: std::option::Option<std::string::String>,
         pub(crate) revoked: std::option::Option<bool>,
@@ -1842,8 +1781,7 @@ pub mod get_revision_output {
         }
         /// <p>The ARN for the revision.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>An optional comment about the revision.</p>
         pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1852,8 +1790,7 @@ pub mod get_revision_output {
         }
         /// <p>An optional comment about the revision.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.comment = input;
-            self
+            self.comment = input; self
         }
         /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1861,12 +1798,8 @@ pub mod get_revision_output {
             self
         }
         /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The unique identifier for the data set associated with the data set revision.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1875,8 +1808,7 @@ pub mod get_revision_output {
         }
         /// <p>The unique identifier for the data set associated with the data set revision.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_set_id = input;
-            self
+            self.data_set_id = input; self
         }
         /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
         pub fn finalized(mut self, input: bool) -> Self {
@@ -1885,8 +1817,7 @@ pub mod get_revision_output {
         }
         /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
         pub fn set_finalized(mut self, input: std::option::Option<bool>) -> Self {
-            self.finalized = input;
-            self
+            self.finalized = input; self
         }
         /// <p>The unique identifier for the revision.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1895,8 +1826,7 @@ pub mod get_revision_output {
         }
         /// <p>The unique identifier for the revision.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
         pub fn source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1905,33 +1835,22 @@ pub mod get_revision_output {
         }
         /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
         pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_id = input;
-            self
+            self.source_id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the revision.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags for the revision.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1939,12 +1858,8 @@ pub mod get_revision_output {
             self
         }
         /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
         pub fn revocation_comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1952,12 +1867,8 @@ pub mod get_revision_output {
             self
         }
         /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
-        pub fn set_revocation_comment(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.revocation_comment = input;
-            self
+        pub fn set_revocation_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revocation_comment = input; self
         }
         /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
         pub fn revoked(mut self, input: bool) -> Self {
@@ -1966,8 +1877,7 @@ pub mod get_revision_output {
         }
         /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
         pub fn set_revoked(mut self, input: std::option::Option<bool>) -> Self {
-            self.revoked = input;
-            self
+            self.revoked = input; self
         }
         /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
         pub fn revoked_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1975,31 +1885,43 @@ pub mod get_revision_output {
             self
         }
         /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
-        pub fn set_revoked_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.revoked_at = input;
-            self
+        pub fn set_revoked_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.revoked_at = input; self
         }
         /// Consumes the builder and constructs a [`GetRevisionOutput`](crate::output::GetRevisionOutput).
         pub fn build(self) -> crate::output::GetRevisionOutput {
             crate::output::GetRevisionOutput {
-                arn: self.arn,
-                comment: self.comment,
-                created_at: self.created_at,
-                data_set_id: self.data_set_id,
-                finalized: self.finalized.unwrap_or_default(),
-                id: self.id,
-                source_id: self.source_id,
-                tags: self.tags,
-                updated_at: self.updated_at,
-                revocation_comment: self.revocation_comment,
-                revoked: self.revoked.unwrap_or_default(),
-                revoked_at: self.revoked_at,
+                arn: self.arn
+                ,
+                comment: self.comment
+                ,
+                created_at: self.created_at
+                ,
+                data_set_id: self.data_set_id
+                ,
+                finalized: self.finalized
+                    .unwrap_or_default()
+                ,
+                id: self.id
+                ,
+                source_id: self.source_id
+                ,
+                tags: self.tags
+                ,
+                updated_at: self.updated_at
+                ,
+                revocation_comment: self.revocation_comment
+                ,
+                revoked: self.revoked
+                    .unwrap_or_default()
+                ,
+                revoked_at: self.revoked_at
+                ,
             }
         }
     }
+    
+    
 }
 impl GetRevisionOutput {
     /// Creates a new builder-style object to manufacture [`GetRevisionOutput`](crate::output::GetRevisionOutput).
@@ -2011,7 +1933,7 @@ impl GetRevisionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJobOutput {
+pub struct GetJobOutput  {
     /// <p>The ARN for the job.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2039,41 +1961,41 @@ pub struct GetJobOutput {
 }
 impl GetJobOutput {
     /// <p>The ARN for the job.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Details about the job.</p>
-    pub fn details(&self) -> std::option::Option<&crate::model::ResponseDetails> {
+    pub fn details(&self) -> std::option::Option<& crate::model::ResponseDetails> {
         self.details.as_ref()
     }
     /// <p>The errors associated with jobs.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::JobError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::JobError]> {
         self.errors.as_deref()
     }
     /// <p>The unique identifier for the job.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The state of the job.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+    pub fn state(&self) -> std::option::Option<& crate::model::State> {
         self.state.as_ref()
     }
     /// <p>The job type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::Type> {
         self.r#type.as_ref()
     }
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`GetJobOutput`](crate::output::GetJobOutput).
 pub mod get_job_output {
-
+    
     /// A builder for [`GetJobOutput`](crate::output::GetJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2094,8 +2016,7 @@ pub mod get_job_output {
         }
         /// <p>The ARN for the job.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The date and time that the job was created, in ISO 8601 format.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2103,12 +2024,8 @@ pub mod get_job_output {
             self
         }
         /// <p>The date and time that the job was created, in ISO 8601 format.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>Details about the job.</p>
         pub fn details(mut self, input: crate::model::ResponseDetails) -> Self {
@@ -2116,12 +2033,8 @@ pub mod get_job_output {
             self
         }
         /// <p>Details about the job.</p>
-        pub fn set_details(
-            mut self,
-            input: std::option::Option<crate::model::ResponseDetails>,
-        ) -> Self {
-            self.details = input;
-            self
+        pub fn set_details(mut self, input: std::option::Option<crate::model::ResponseDetails>) -> Self {
+            self.details = input; self
         }
         /// Appends an item to `errors`.
         ///
@@ -2130,17 +2043,13 @@ pub mod get_job_output {
         /// <p>The errors associated with jobs.</p>
         pub fn errors(mut self, input: crate::model::JobError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>The errors associated with jobs.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::JobError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::JobError>>) -> Self {
+            self.errors = input; self
         }
         /// <p>The unique identifier for the job.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2149,8 +2058,7 @@ pub mod get_job_output {
         }
         /// <p>The unique identifier for the job.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The state of the job.</p>
         pub fn state(mut self, input: crate::model::State) -> Self {
@@ -2159,8 +2067,7 @@ pub mod get_job_output {
         }
         /// <p>The state of the job.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The job type.</p>
         pub fn r#type(mut self, input: crate::model::Type) -> Self {
@@ -2169,8 +2076,7 @@ pub mod get_job_output {
         }
         /// <p>The job type.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2178,27 +2084,33 @@ pub mod get_job_output {
             self
         }
         /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`GetJobOutput`](crate::output::GetJobOutput).
         pub fn build(self) -> crate::output::GetJobOutput {
             crate::output::GetJobOutput {
-                arn: self.arn,
-                created_at: self.created_at,
-                details: self.details,
-                errors: self.errors,
-                id: self.id,
-                state: self.state,
-                r#type: self.r#type,
-                updated_at: self.updated_at,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                details: self.details
+                ,
+                errors: self.errors
+                ,
+                id: self.id
+                ,
+                state: self.state
+                ,
+                r#type: self.r#type
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl GetJobOutput {
     /// Creates a new builder-style object to manufacture [`GetJobOutput`](crate::output::GetJobOutput).
@@ -2210,7 +2122,7 @@ impl GetJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEventActionOutput {
+pub struct GetEventActionOutput  {
     /// <p>What occurs after a certain event.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
@@ -2232,33 +2144,33 @@ pub struct GetEventActionOutput {
 }
 impl GetEventActionOutput {
     /// <p>What occurs after a certain event.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+    pub fn action(&self) -> std::option::Option<& crate::model::Action> {
         self.action.as_ref()
     }
     /// <p>The ARN for the event action.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>What occurs to start an action.</p>
-    pub fn event(&self) -> std::option::Option<&crate::model::Event> {
+    pub fn event(&self) -> std::option::Option<& crate::model::Event> {
         self.event.as_ref()
     }
     /// <p>The unique identifier for the event action.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`GetEventActionOutput`](crate::output::GetEventActionOutput).
 pub mod get_event_action_output {
-
+    
     /// A builder for [`GetEventActionOutput`](crate::output::GetEventActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2277,8 +2189,7 @@ pub mod get_event_action_output {
         }
         /// <p>What occurs after a certain event.</p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
-            self.action = input;
-            self
+            self.action = input; self
         }
         /// <p>The ARN for the event action.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2287,8 +2198,7 @@ pub mod get_event_action_output {
         }
         /// <p>The ARN for the event action.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2296,12 +2206,8 @@ pub mod get_event_action_output {
             self
         }
         /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>What occurs to start an action.</p>
         pub fn event(mut self, input: crate::model::Event) -> Self {
@@ -2310,8 +2216,7 @@ pub mod get_event_action_output {
         }
         /// <p>What occurs to start an action.</p>
         pub fn set_event(mut self, input: std::option::Option<crate::model::Event>) -> Self {
-            self.event = input;
-            self
+            self.event = input; self
         }
         /// <p>The unique identifier for the event action.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2320,8 +2225,7 @@ pub mod get_event_action_output {
         }
         /// <p>The unique identifier for the event action.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2329,25 +2233,29 @@ pub mod get_event_action_output {
             self
         }
         /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`GetEventActionOutput`](crate::output::GetEventActionOutput).
         pub fn build(self) -> crate::output::GetEventActionOutput {
             crate::output::GetEventActionOutput {
-                action: self.action,
-                arn: self.arn,
-                created_at: self.created_at,
-                event: self.event,
-                id: self.id,
-                updated_at: self.updated_at,
+                action: self.action
+                ,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                event: self.event
+                ,
+                id: self.id
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl GetEventActionOutput {
     /// Creates a new builder-style object to manufacture [`GetEventActionOutput`](crate::output::GetEventActionOutput).
@@ -2359,7 +2267,7 @@ impl GetEventActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDataSetOutput {
+pub struct GetDataSetOutput  {
     /// <p>The ARN for the data set.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2389,64 +2297,60 @@ pub struct GetDataSetOutput {
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The tags for the data set.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl GetDataSetOutput {
     /// <p>The ARN for the data set.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The type of asset that is added to a data set.</p>
-    pub fn asset_type(&self) -> std::option::Option<&crate::model::AssetType> {
+    pub fn asset_type(&self) -> std::option::Option<& crate::model::AssetType> {
         self.asset_type.as_ref()
     }
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The description for the data set.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier for the data set.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the data set.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
-    pub fn origin(&self) -> std::option::Option<&crate::model::Origin> {
+    pub fn origin(&self) -> std::option::Option<& crate::model::Origin> {
         self.origin.as_ref()
     }
     /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
-    pub fn origin_details(&self) -> std::option::Option<&crate::model::OriginDetails> {
+    pub fn origin_details(&self) -> std::option::Option<& crate::model::OriginDetails> {
         self.origin_details.as_ref()
     }
     /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
-    pub fn source_id(&self) -> std::option::Option<&str> {
+    pub fn source_id(&self) -> std::option::Option<& str> {
         self.source_id.as_deref()
     }
     /// <p>The tags for the data set.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`GetDataSetOutput`](crate::output::GetDataSetOutput).
 pub mod get_data_set_output {
-
+    
     /// A builder for [`GetDataSetOutput`](crate::output::GetDataSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2459,9 +2363,7 @@ pub mod get_data_set_output {
         pub(crate) origin: std::option::Option<crate::model::Origin>,
         pub(crate) origin_details: std::option::Option<crate::model::OriginDetails>,
         pub(crate) source_id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
@@ -2472,8 +2374,7 @@ pub mod get_data_set_output {
         }
         /// <p>The ARN for the data set.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The type of asset that is added to a data set.</p>
         pub fn asset_type(mut self, input: crate::model::AssetType) -> Self {
@@ -2481,12 +2382,8 @@ pub mod get_data_set_output {
             self
         }
         /// <p>The type of asset that is added to a data set.</p>
-        pub fn set_asset_type(
-            mut self,
-            input: std::option::Option<crate::model::AssetType>,
-        ) -> Self {
-            self.asset_type = input;
-            self
+        pub fn set_asset_type(mut self, input: std::option::Option<crate::model::AssetType>) -> Self {
+            self.asset_type = input; self
         }
         /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2494,12 +2391,8 @@ pub mod get_data_set_output {
             self
         }
         /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The description for the data set.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2508,8 +2401,7 @@ pub mod get_data_set_output {
         }
         /// <p>The description for the data set.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The unique identifier for the data set.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2518,8 +2410,7 @@ pub mod get_data_set_output {
         }
         /// <p>The unique identifier for the data set.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the data set.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2528,8 +2419,7 @@ pub mod get_data_set_output {
         }
         /// <p>The name of the data set.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
         pub fn origin(mut self, input: crate::model::Origin) -> Self {
@@ -2538,8 +2428,7 @@ pub mod get_data_set_output {
         }
         /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
         pub fn set_origin(mut self, input: std::option::Option<crate::model::Origin>) -> Self {
-            self.origin = input;
-            self
+            self.origin = input; self
         }
         /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
         pub fn origin_details(mut self, input: crate::model::OriginDetails) -> Self {
@@ -2547,12 +2436,8 @@ pub mod get_data_set_output {
             self
         }
         /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
-        pub fn set_origin_details(
-            mut self,
-            input: std::option::Option<crate::model::OriginDetails>,
-        ) -> Self {
-            self.origin_details = input;
-            self
+        pub fn set_origin_details(mut self, input: std::option::Option<crate::model::OriginDetails>) -> Self {
+            self.origin_details = input; self
         }
         /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
         pub fn source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2561,33 +2446,22 @@ pub mod get_data_set_output {
         }
         /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
         pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_id = input;
-            self
+            self.source_id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the data set.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags for the data set.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2595,30 +2469,39 @@ pub mod get_data_set_output {
             self
         }
         /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`GetDataSetOutput`](crate::output::GetDataSetOutput).
         pub fn build(self) -> crate::output::GetDataSetOutput {
             crate::output::GetDataSetOutput {
-                arn: self.arn,
-                asset_type: self.asset_type,
-                created_at: self.created_at,
-                description: self.description,
-                id: self.id,
-                name: self.name,
-                origin: self.origin,
-                origin_details: self.origin_details,
-                source_id: self.source_id,
-                tags: self.tags,
-                updated_at: self.updated_at,
+                arn: self.arn
+                ,
+                asset_type: self.asset_type
+                ,
+                created_at: self.created_at
+                ,
+                description: self.description
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                origin: self.origin
+                ,
+                origin_details: self.origin_details
+                ,
+                source_id: self.source_id
+                ,
+                tags: self.tags
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDataSetOutput {
     /// Creates a new builder-style object to manufacture [`GetDataSetOutput`](crate::output::GetDataSetOutput).
@@ -2630,7 +2513,7 @@ impl GetDataSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssetOutput {
+pub struct GetAssetOutput  {
     /// <p>The ARN for the asset.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2664,49 +2547,49 @@ pub struct GetAssetOutput {
 }
 impl GetAssetOutput {
     /// <p>The ARN for the asset.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>Details about the asset.</p>
-    pub fn asset_details(&self) -> std::option::Option<&crate::model::AssetDetails> {
+    pub fn asset_details(&self) -> std::option::Option<& crate::model::AssetDetails> {
         self.asset_details.as_ref()
     }
     /// <p>The type of asset that is added to a data set.</p>
-    pub fn asset_type(&self) -> std::option::Option<&crate::model::AssetType> {
+    pub fn asset_type(&self) -> std::option::Option<& crate::model::AssetType> {
         self.asset_type.as_ref()
     }
     /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The unique identifier for the data set associated with this asset.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>The unique identifier for the asset.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in the LF-tag policy" or "Table(s) included in the LF-tag policy" are used as the asset name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier for the revision associated with this asset.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> std::option::Option<& str> {
         self.revision_id.as_deref()
     }
     /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
-    pub fn source_id(&self) -> std::option::Option<&str> {
+    pub fn source_id(&self) -> std::option::Option<& str> {
         self.source_id.as_deref()
     }
     /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`GetAssetOutput`](crate::output::GetAssetOutput).
 pub mod get_asset_output {
-
+    
     /// A builder for [`GetAssetOutput`](crate::output::GetAssetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2729,8 +2612,7 @@ pub mod get_asset_output {
         }
         /// <p>The ARN for the asset.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>Details about the asset.</p>
         pub fn asset_details(mut self, input: crate::model::AssetDetails) -> Self {
@@ -2738,12 +2620,8 @@ pub mod get_asset_output {
             self
         }
         /// <p>Details about the asset.</p>
-        pub fn set_asset_details(
-            mut self,
-            input: std::option::Option<crate::model::AssetDetails>,
-        ) -> Self {
-            self.asset_details = input;
-            self
+        pub fn set_asset_details(mut self, input: std::option::Option<crate::model::AssetDetails>) -> Self {
+            self.asset_details = input; self
         }
         /// <p>The type of asset that is added to a data set.</p>
         pub fn asset_type(mut self, input: crate::model::AssetType) -> Self {
@@ -2751,12 +2629,8 @@ pub mod get_asset_output {
             self
         }
         /// <p>The type of asset that is added to a data set.</p>
-        pub fn set_asset_type(
-            mut self,
-            input: std::option::Option<crate::model::AssetType>,
-        ) -> Self {
-            self.asset_type = input;
-            self
+        pub fn set_asset_type(mut self, input: std::option::Option<crate::model::AssetType>) -> Self {
+            self.asset_type = input; self
         }
         /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2764,12 +2638,8 @@ pub mod get_asset_output {
             self
         }
         /// <p>The date and time that the asset was created, in ISO 8601 format.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The unique identifier for the data set associated with this asset.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2778,8 +2648,7 @@ pub mod get_asset_output {
         }
         /// <p>The unique identifier for the data set associated with this asset.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_set_id = input;
-            self
+            self.data_set_id = input; self
         }
         /// <p>The unique identifier for the asset.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2788,8 +2657,7 @@ pub mod get_asset_output {
         }
         /// <p>The unique identifier for the asset.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in the LF-tag policy" or "Table(s) included in the LF-tag policy" are used as the asset name.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2798,8 +2666,7 @@ pub mod get_asset_output {
         }
         /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target Amazon S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name. When importing from AWS Lake Formation, the static values of "Database(s) included in the LF-tag policy" or "Table(s) included in the LF-tag policy" are used as the asset name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The unique identifier for the revision associated with this asset.</p>
         pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2808,8 +2675,7 @@ pub mod get_asset_output {
         }
         /// <p>The unique identifier for the revision associated with this asset.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.revision_id = input;
-            self
+            self.revision_id = input; self
         }
         /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
         pub fn source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2818,8 +2684,7 @@ pub mod get_asset_output {
         }
         /// <p>The asset ID of the owned asset corresponding to the entitled asset being viewed. This parameter is returned when an asset owner is viewing the entitled copy of its owned asset.</p>
         pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_id = input;
-            self
+            self.source_id = input; self
         }
         /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2827,29 +2692,37 @@ pub mod get_asset_output {
             self
         }
         /// <p>The date and time that the asset was last updated, in ISO 8601 format.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`GetAssetOutput`](crate::output::GetAssetOutput).
         pub fn build(self) -> crate::output::GetAssetOutput {
             crate::output::GetAssetOutput {
-                arn: self.arn,
-                asset_details: self.asset_details,
-                asset_type: self.asset_type,
-                created_at: self.created_at,
-                data_set_id: self.data_set_id,
-                id: self.id,
-                name: self.name,
-                revision_id: self.revision_id,
-                source_id: self.source_id,
-                updated_at: self.updated_at,
+                arn: self.arn
+                ,
+                asset_details: self.asset_details
+                ,
+                asset_type: self.asset_type
+                ,
+                created_at: self.created_at
+                ,
+                data_set_id: self.data_set_id
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                revision_id: self.revision_id
+                ,
+                source_id: self.source_id
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl GetAssetOutput {
     /// Creates a new builder-style object to manufacture [`GetAssetOutput`](crate::output::GetAssetOutput).
@@ -2861,19 +2734,24 @@ impl GetAssetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRevisionOutput {}
+pub struct DeleteRevisionOutput  {
+}
 /// See [`DeleteRevisionOutput`](crate::output::DeleteRevisionOutput).
 pub mod delete_revision_output {
-
+    
     /// A builder for [`DeleteRevisionOutput`](crate::output::DeleteRevisionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteRevisionOutput`](crate::output::DeleteRevisionOutput).
         pub fn build(self) -> crate::output::DeleteRevisionOutput {
-            crate::output::DeleteRevisionOutput {}
+            crate::output::DeleteRevisionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteRevisionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRevisionOutput`](crate::output::DeleteRevisionOutput).
@@ -2885,19 +2763,24 @@ impl DeleteRevisionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEventActionOutput {}
+pub struct DeleteEventActionOutput  {
+}
 /// See [`DeleteEventActionOutput`](crate::output::DeleteEventActionOutput).
 pub mod delete_event_action_output {
-
+    
     /// A builder for [`DeleteEventActionOutput`](crate::output::DeleteEventActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteEventActionOutput`](crate::output::DeleteEventActionOutput).
         pub fn build(self) -> crate::output::DeleteEventActionOutput {
-            crate::output::DeleteEventActionOutput {}
+            crate::output::DeleteEventActionOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteEventActionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEventActionOutput`](crate::output::DeleteEventActionOutput).
@@ -2909,19 +2792,24 @@ impl DeleteEventActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDataSetOutput {}
+pub struct DeleteDataSetOutput  {
+}
 /// See [`DeleteDataSetOutput`](crate::output::DeleteDataSetOutput).
 pub mod delete_data_set_output {
-
+    
     /// A builder for [`DeleteDataSetOutput`](crate::output::DeleteDataSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteDataSetOutput`](crate::output::DeleteDataSetOutput).
         pub fn build(self) -> crate::output::DeleteDataSetOutput {
-            crate::output::DeleteDataSetOutput {}
+            crate::output::DeleteDataSetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteDataSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDataSetOutput`](crate::output::DeleteDataSetOutput).
@@ -2933,19 +2821,24 @@ impl DeleteDataSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAssetOutput {}
+pub struct DeleteAssetOutput  {
+}
 /// See [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
 pub mod delete_asset_output {
-
+    
     /// A builder for [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
         pub fn build(self) -> crate::output::DeleteAssetOutput {
-            crate::output::DeleteAssetOutput {}
+            crate::output::DeleteAssetOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAssetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAssetOutput`](crate::output::DeleteAssetOutput).
@@ -2957,7 +2850,7 @@ impl DeleteAssetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRevisionOutput {
+pub struct CreateRevisionOutput  {
     /// <p>The ARN for the revision.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -2981,8 +2874,7 @@ pub struct CreateRevisionOutput {
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The tags for the revision.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -2998,19 +2890,19 @@ pub struct CreateRevisionOutput {
 }
 impl CreateRevisionOutput {
     /// <p>The ARN for the revision.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>An optional comment about the revision.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> std::option::Option<& str> {
         self.comment.as_deref()
     }
     /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The unique identifier for the data set associated with the data set revision.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> std::option::Option<& str> {
         self.data_set_id.as_deref()
     }
     /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
@@ -3018,26 +2910,23 @@ impl CreateRevisionOutput {
         self.finalized
     }
     /// <p>The unique identifier for the revision.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
-    pub fn source_id(&self) -> std::option::Option<&str> {
+    pub fn source_id(&self) -> std::option::Option<& str> {
         self.source_id.as_deref()
     }
     /// <p>The tags for the revision.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
-    pub fn revocation_comment(&self) -> std::option::Option<&str> {
+    pub fn revocation_comment(&self) -> std::option::Option<& str> {
         self.revocation_comment.as_deref()
     }
     /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
@@ -3045,13 +2934,13 @@ impl CreateRevisionOutput {
         self.revoked
     }
     /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
-    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn revoked_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.revoked_at.as_ref()
     }
 }
 /// See [`CreateRevisionOutput`](crate::output::CreateRevisionOutput).
 pub mod create_revision_output {
-
+    
     /// A builder for [`CreateRevisionOutput`](crate::output::CreateRevisionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3062,9 +2951,7 @@ pub mod create_revision_output {
         pub(crate) finalized: std::option::Option<bool>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) source_id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) revocation_comment: std::option::Option<std::string::String>,
         pub(crate) revoked: std::option::Option<bool>,
@@ -3078,8 +2965,7 @@ pub mod create_revision_output {
         }
         /// <p>The ARN for the revision.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>An optional comment about the revision.</p>
         pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3088,8 +2974,7 @@ pub mod create_revision_output {
         }
         /// <p>An optional comment about the revision.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.comment = input;
-            self
+            self.comment = input; self
         }
         /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3097,12 +2982,8 @@ pub mod create_revision_output {
             self
         }
         /// <p>The date and time that the revision was created, in ISO 8601 format.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The unique identifier for the data set associated with the data set revision.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3111,8 +2992,7 @@ pub mod create_revision_output {
         }
         /// <p>The unique identifier for the data set associated with the data set revision.</p>
         pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.data_set_id = input;
-            self
+            self.data_set_id = input; self
         }
         /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
         pub fn finalized(mut self, input: bool) -> Self {
@@ -3121,8 +3001,7 @@ pub mod create_revision_output {
         }
         /// <p>To publish a revision to a data set in a product, the revision must first be finalized. Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products. Finalized revisions can be published through the AWS Data Exchange console or the AWS Marketplace Catalog API, using the StartChangeSet AWS Marketplace Catalog API action. When using the API, revisions are uniquely identified by their ARN.</p>
         pub fn set_finalized(mut self, input: std::option::Option<bool>) -> Self {
-            self.finalized = input;
-            self
+            self.finalized = input; self
         }
         /// <p>The unique identifier for the revision.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3131,8 +3010,7 @@ pub mod create_revision_output {
         }
         /// <p>The unique identifier for the revision.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
         pub fn source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3141,33 +3019,22 @@ pub mod create_revision_output {
         }
         /// <p>The revision ID of the owned revision corresponding to the entitled revision being viewed. This parameter is returned when a revision owner is viewing the entitled copy of its owned revision.</p>
         pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_id = input;
-            self
+            self.source_id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the revision.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags for the revision.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3175,12 +3042,8 @@ pub mod create_revision_output {
             self
         }
         /// <p>The date and time that the revision was last updated, in ISO 8601 format.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
         pub fn revocation_comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3188,12 +3051,8 @@ pub mod create_revision_output {
             self
         }
         /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
-        pub fn set_revocation_comment(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.revocation_comment = input;
-            self
+        pub fn set_revocation_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.revocation_comment = input; self
         }
         /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
         pub fn revoked(mut self, input: bool) -> Self {
@@ -3202,8 +3061,7 @@ pub mod create_revision_output {
         }
         /// <p>A status indicating that subscribers' access to the revision was revoked.</p>
         pub fn set_revoked(mut self, input: std::option::Option<bool>) -> Self {
-            self.revoked = input;
-            self
+            self.revoked = input; self
         }
         /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
         pub fn revoked_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3211,31 +3069,43 @@ pub mod create_revision_output {
             self
         }
         /// <p>The date and time that the revision was revoked, in ISO 8601 format.</p>
-        pub fn set_revoked_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.revoked_at = input;
-            self
+        pub fn set_revoked_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.revoked_at = input; self
         }
         /// Consumes the builder and constructs a [`CreateRevisionOutput`](crate::output::CreateRevisionOutput).
         pub fn build(self) -> crate::output::CreateRevisionOutput {
             crate::output::CreateRevisionOutput {
-                arn: self.arn,
-                comment: self.comment,
-                created_at: self.created_at,
-                data_set_id: self.data_set_id,
-                finalized: self.finalized.unwrap_or_default(),
-                id: self.id,
-                source_id: self.source_id,
-                tags: self.tags,
-                updated_at: self.updated_at,
-                revocation_comment: self.revocation_comment,
-                revoked: self.revoked.unwrap_or_default(),
-                revoked_at: self.revoked_at,
+                arn: self.arn
+                ,
+                comment: self.comment
+                ,
+                created_at: self.created_at
+                ,
+                data_set_id: self.data_set_id
+                ,
+                finalized: self.finalized
+                    .unwrap_or_default()
+                ,
+                id: self.id
+                ,
+                source_id: self.source_id
+                ,
+                tags: self.tags
+                ,
+                updated_at: self.updated_at
+                ,
+                revocation_comment: self.revocation_comment
+                ,
+                revoked: self.revoked
+                    .unwrap_or_default()
+                ,
+                revoked_at: self.revoked_at
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateRevisionOutput {
     /// Creates a new builder-style object to manufacture [`CreateRevisionOutput`](crate::output::CreateRevisionOutput).
@@ -3247,7 +3117,7 @@ impl CreateRevisionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateJobOutput {
+pub struct CreateJobOutput  {
     /// <p>The ARN for the job.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -3275,41 +3145,41 @@ pub struct CreateJobOutput {
 }
 impl CreateJobOutput {
     /// <p>The ARN for the job.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Details about the job.</p>
-    pub fn details(&self) -> std::option::Option<&crate::model::ResponseDetails> {
+    pub fn details(&self) -> std::option::Option<& crate::model::ResponseDetails> {
         self.details.as_ref()
     }
     /// <p>The errors associated with jobs.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::model::JobError]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::model::JobError]> {
         self.errors.as_deref()
     }
     /// <p>The unique identifier for the job.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The state of the job.</p>
-    pub fn state(&self) -> std::option::Option<&crate::model::State> {
+    pub fn state(&self) -> std::option::Option<& crate::model::State> {
         self.state.as_ref()
     }
     /// <p>The job type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::model::Type> {
+    pub fn r#type(&self) -> std::option::Option<& crate::model::Type> {
         self.r#type.as_ref()
     }
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`CreateJobOutput`](crate::output::CreateJobOutput).
 pub mod create_job_output {
-
+    
     /// A builder for [`CreateJobOutput`](crate::output::CreateJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3330,8 +3200,7 @@ pub mod create_job_output {
         }
         /// <p>The ARN for the job.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The date and time that the job was created, in ISO 8601 format.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3339,12 +3208,8 @@ pub mod create_job_output {
             self
         }
         /// <p>The date and time that the job was created, in ISO 8601 format.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>Details about the job.</p>
         pub fn details(mut self, input: crate::model::ResponseDetails) -> Self {
@@ -3352,12 +3217,8 @@ pub mod create_job_output {
             self
         }
         /// <p>Details about the job.</p>
-        pub fn set_details(
-            mut self,
-            input: std::option::Option<crate::model::ResponseDetails>,
-        ) -> Self {
-            self.details = input;
-            self
+        pub fn set_details(mut self, input: std::option::Option<crate::model::ResponseDetails>) -> Self {
+            self.details = input; self
         }
         /// Appends an item to `errors`.
         ///
@@ -3366,17 +3227,13 @@ pub mod create_job_output {
         /// <p>The errors associated with jobs.</p>
         pub fn errors(mut self, input: crate::model::JobError) -> Self {
             let mut v = self.errors.unwrap_or_default();
-            v.push(input);
-            self.errors = Some(v);
-            self
+                            v.push(input);
+                            self.errors = Some(v);
+                            self
         }
         /// <p>The errors associated with jobs.</p>
-        pub fn set_errors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::JobError>>,
-        ) -> Self {
-            self.errors = input;
-            self
+        pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::model::JobError>>) -> Self {
+            self.errors = input; self
         }
         /// <p>The unique identifier for the job.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3385,8 +3242,7 @@ pub mod create_job_output {
         }
         /// <p>The unique identifier for the job.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The state of the job.</p>
         pub fn state(mut self, input: crate::model::State) -> Self {
@@ -3395,8 +3251,7 @@ pub mod create_job_output {
         }
         /// <p>The state of the job.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
-            self.state = input;
-            self
+            self.state = input; self
         }
         /// <p>The job type.</p>
         pub fn r#type(mut self, input: crate::model::Type) -> Self {
@@ -3405,8 +3260,7 @@ pub mod create_job_output {
         }
         /// <p>The job type.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
-            self.r#type = input;
-            self
+            self.r#type = input; self
         }
         /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3414,27 +3268,33 @@ pub mod create_job_output {
             self
         }
         /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`CreateJobOutput`](crate::output::CreateJobOutput).
         pub fn build(self) -> crate::output::CreateJobOutput {
             crate::output::CreateJobOutput {
-                arn: self.arn,
-                created_at: self.created_at,
-                details: self.details,
-                errors: self.errors,
-                id: self.id,
-                state: self.state,
-                r#type: self.r#type,
-                updated_at: self.updated_at,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                details: self.details
+                ,
+                errors: self.errors
+                ,
+                id: self.id
+                ,
+                state: self.state
+                ,
+                r#type: self.r#type
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateJobOutput {
     /// Creates a new builder-style object to manufacture [`CreateJobOutput`](crate::output::CreateJobOutput).
@@ -3446,7 +3306,7 @@ impl CreateJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEventActionOutput {
+pub struct CreateEventActionOutput  {
     /// <p>What occurs after a certain event.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
@@ -3468,33 +3328,33 @@ pub struct CreateEventActionOutput {
 }
 impl CreateEventActionOutput {
     /// <p>What occurs after a certain event.</p>
-    pub fn action(&self) -> std::option::Option<&crate::model::Action> {
+    pub fn action(&self) -> std::option::Option<& crate::model::Action> {
         self.action.as_ref()
     }
     /// <p>The ARN for the event action.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>What occurs to start an action.</p>
-    pub fn event(&self) -> std::option::Option<&crate::model::Event> {
+    pub fn event(&self) -> std::option::Option<& crate::model::Event> {
         self.event.as_ref()
     }
     /// <p>The unique identifier for the event action.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`CreateEventActionOutput`](crate::output::CreateEventActionOutput).
 pub mod create_event_action_output {
-
+    
     /// A builder for [`CreateEventActionOutput`](crate::output::CreateEventActionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3513,8 +3373,7 @@ pub mod create_event_action_output {
         }
         /// <p>What occurs after a certain event.</p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
-            self.action = input;
-            self
+            self.action = input; self
         }
         /// <p>The ARN for the event action.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3523,8 +3382,7 @@ pub mod create_event_action_output {
         }
         /// <p>The ARN for the event action.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3532,12 +3390,8 @@ pub mod create_event_action_output {
             self
         }
         /// <p>The date and time that the event action was created, in ISO 8601 format.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>What occurs to start an action.</p>
         pub fn event(mut self, input: crate::model::Event) -> Self {
@@ -3546,8 +3400,7 @@ pub mod create_event_action_output {
         }
         /// <p>What occurs to start an action.</p>
         pub fn set_event(mut self, input: std::option::Option<crate::model::Event>) -> Self {
-            self.event = input;
-            self
+            self.event = input; self
         }
         /// <p>The unique identifier for the event action.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3556,8 +3409,7 @@ pub mod create_event_action_output {
         }
         /// <p>The unique identifier for the event action.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3565,25 +3417,29 @@ pub mod create_event_action_output {
             self
         }
         /// <p>The date and time that the event action was last updated, in ISO 8601 format.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`CreateEventActionOutput`](crate::output::CreateEventActionOutput).
         pub fn build(self) -> crate::output::CreateEventActionOutput {
             crate::output::CreateEventActionOutput {
-                action: self.action,
-                arn: self.arn,
-                created_at: self.created_at,
-                event: self.event,
-                id: self.id,
-                updated_at: self.updated_at,
+                action: self.action
+                ,
+                arn: self.arn
+                ,
+                created_at: self.created_at
+                ,
+                event: self.event
+                ,
+                id: self.id
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateEventActionOutput {
     /// Creates a new builder-style object to manufacture [`CreateEventActionOutput`](crate::output::CreateEventActionOutput).
@@ -3595,7 +3451,7 @@ impl CreateEventActionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDataSetOutput {
+pub struct CreateDataSetOutput  {
     /// <p>The ARN for the data set.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -3625,64 +3481,60 @@ pub struct CreateDataSetOutput {
     pub source_id: std::option::Option<std::string::String>,
     /// <p>The tags for the data set.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl CreateDataSetOutput {
     /// <p>The ARN for the data set.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The type of asset that is added to a data set.</p>
-    pub fn asset_type(&self) -> std::option::Option<&crate::model::AssetType> {
+    pub fn asset_type(&self) -> std::option::Option<& crate::model::AssetType> {
         self.asset_type.as_ref()
     }
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The description for the data set.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier for the data set.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the data set.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
-    pub fn origin(&self) -> std::option::Option<&crate::model::Origin> {
+    pub fn origin(&self) -> std::option::Option<& crate::model::Origin> {
         self.origin.as_ref()
     }
     /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
-    pub fn origin_details(&self) -> std::option::Option<&crate::model::OriginDetails> {
+    pub fn origin_details(&self) -> std::option::Option<& crate::model::OriginDetails> {
         self.origin_details.as_ref()
     }
     /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
-    pub fn source_id(&self) -> std::option::Option<&str> {
+    pub fn source_id(&self) -> std::option::Option<& str> {
         self.source_id.as_deref()
     }
     /// <p>The tags for the data set.</p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 /// See [`CreateDataSetOutput`](crate::output::CreateDataSetOutput).
 pub mod create_data_set_output {
-
+    
     /// A builder for [`CreateDataSetOutput`](crate::output::CreateDataSetOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3695,9 +3547,7 @@ pub mod create_data_set_output {
         pub(crate) origin: std::option::Option<crate::model::Origin>,
         pub(crate) origin_details: std::option::Option<crate::model::OriginDetails>,
         pub(crate) source_id: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     }
     impl Builder {
@@ -3708,8 +3558,7 @@ pub mod create_data_set_output {
         }
         /// <p>The ARN for the data set.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The type of asset that is added to a data set.</p>
         pub fn asset_type(mut self, input: crate::model::AssetType) -> Self {
@@ -3717,12 +3566,8 @@ pub mod create_data_set_output {
             self
         }
         /// <p>The type of asset that is added to a data set.</p>
-        pub fn set_asset_type(
-            mut self,
-            input: std::option::Option<crate::model::AssetType>,
-        ) -> Self {
-            self.asset_type = input;
-            self
+        pub fn set_asset_type(mut self, input: std::option::Option<crate::model::AssetType>) -> Self {
+            self.asset_type = input; self
         }
         /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3730,12 +3575,8 @@ pub mod create_data_set_output {
             self
         }
         /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The description for the data set.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3744,8 +3585,7 @@ pub mod create_data_set_output {
         }
         /// <p>The description for the data set.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The unique identifier for the data set.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3754,8 +3594,7 @@ pub mod create_data_set_output {
         }
         /// <p>The unique identifier for the data set.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the data set.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3764,8 +3603,7 @@ pub mod create_data_set_output {
         }
         /// <p>The name of the data set.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
         pub fn origin(mut self, input: crate::model::Origin) -> Self {
@@ -3774,8 +3612,7 @@ pub mod create_data_set_output {
         }
         /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
         pub fn set_origin(mut self, input: std::option::Option<crate::model::Origin>) -> Self {
-            self.origin = input;
-            self
+            self.origin = input; self
         }
         /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
         pub fn origin_details(mut self, input: crate::model::OriginDetails) -> Self {
@@ -3783,12 +3620,8 @@ pub mod create_data_set_output {
             self
         }
         /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
-        pub fn set_origin_details(
-            mut self,
-            input: std::option::Option<crate::model::OriginDetails>,
-        ) -> Self {
-            self.origin_details = input;
-            self
+        pub fn set_origin_details(mut self, input: std::option::Option<crate::model::OriginDetails>) -> Self {
+            self.origin_details = input; self
         }
         /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
         pub fn source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3797,33 +3630,22 @@ pub mod create_data_set_output {
         }
         /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
         pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.source_id = input;
-            self
+            self.source_id = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p>The tags for the data set.</p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p>The tags for the data set.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3831,30 +3653,39 @@ pub mod create_data_set_output {
             self
         }
         /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// Consumes the builder and constructs a [`CreateDataSetOutput`](crate::output::CreateDataSetOutput).
         pub fn build(self) -> crate::output::CreateDataSetOutput {
             crate::output::CreateDataSetOutput {
-                arn: self.arn,
-                asset_type: self.asset_type,
-                created_at: self.created_at,
-                description: self.description,
-                id: self.id,
-                name: self.name,
-                origin: self.origin,
-                origin_details: self.origin_details,
-                source_id: self.source_id,
-                tags: self.tags,
-                updated_at: self.updated_at,
+                arn: self.arn
+                ,
+                asset_type: self.asset_type
+                ,
+                created_at: self.created_at
+                ,
+                description: self.description
+                ,
+                id: self.id
+                ,
+                name: self.name
+                ,
+                origin: self.origin
+                ,
+                origin_details: self.origin_details
+                ,
+                source_id: self.source_id
+                ,
+                tags: self.tags
+                ,
+                updated_at: self.updated_at
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDataSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataSetOutput`](crate::output::CreateDataSetOutput).
@@ -3866,19 +3697,24 @@ impl CreateDataSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelJobOutput {}
+pub struct CancelJobOutput  {
+}
 /// See [`CancelJobOutput`](crate::output::CancelJobOutput).
 pub mod cancel_job_output {
-
+    
     /// A builder for [`CancelJobOutput`](crate::output::CancelJobOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`CancelJobOutput`](crate::output::CancelJobOutput).
         pub fn build(self) -> crate::output::CancelJobOutput {
-            crate::output::CancelJobOutput {}
+            crate::output::CancelJobOutput {
+            }
         }
     }
+    
+    
 }
 impl CancelJobOutput {
     /// Creates a new builder-style object to manufacture [`CancelJobOutput`](crate::output::CancelJobOutput).
@@ -3886,3 +3722,4 @@ impl CancelJobOutput {
         crate::output::cancel_job_output::Builder::default()
     }
 }
+

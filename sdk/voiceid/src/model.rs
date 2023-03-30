@@ -3,7 +3,7 @@
 /// <p>Contains a summary of information about a domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DomainSummary {
+pub struct DomainSummary  {
     /// <p>The service-generated identifier for the domain.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -21,8 +21,7 @@ pub struct DomainSummary {
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
     /// <p>The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt your data.</p>
     #[doc(hidden)]
-    pub server_side_encryption_configuration:
-        std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
+    pub server_side_encryption_configuration: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     /// <p>The timestamp showing when the domain is created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -31,52 +30,47 @@ pub struct DomainSummary {
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain's data can only be accessed using the new KMS key.</p>
     #[doc(hidden)]
-    pub server_side_encryption_update_details:
-        std::option::Option<crate::model::ServerSideEncryptionUpdateDetails>,
+    pub server_side_encryption_update_details: std::option::Option<crate::model::ServerSideEncryptionUpdateDetails>,
 }
 impl DomainSummary {
     /// <p>The service-generated identifier for the domain.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the domain.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The client-provided name for the domain.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The client-provided description of the domain.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The current status of the domain.</p>
-    pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+    pub fn domain_status(&self) -> std::option::Option<& crate::model::DomainStatus> {
         self.domain_status.as_ref()
     }
     /// <p>The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt your data.</p>
-    pub fn server_side_encryption_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(&self) -> std::option::Option<& crate::model::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
     /// <p>The timestamp showing when the domain is created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp showing the domain's last update.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain's data can only be accessed using the new KMS key.</p>
-    pub fn server_side_encryption_update_details(
-        &self,
-    ) -> std::option::Option<&crate::model::ServerSideEncryptionUpdateDetails> {
+    pub fn server_side_encryption_update_details(&self) -> std::option::Option<& crate::model::ServerSideEncryptionUpdateDetails> {
         self.server_side_encryption_update_details.as_ref()
     }
 }
-impl std::fmt::Debug for DomainSummary {
+impl  std::fmt::Debug for DomainSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DomainSummary");
         formatter.field("domain_id", &self.domain_id);
@@ -84,22 +78,16 @@ impl std::fmt::Debug for DomainSummary {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("domain_status", &self.domain_status);
-        formatter.field(
-            "server_side_encryption_configuration",
-            &self.server_side_encryption_configuration,
-        );
+        formatter.field("server_side_encryption_configuration", &self.server_side_encryption_configuration);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
-        formatter.field(
-            "server_side_encryption_update_details",
-            &self.server_side_encryption_update_details,
-        );
+        formatter.field("server_side_encryption_update_details", &self.server_side_encryption_update_details);
         formatter.finish()
     }
 }
 /// See [`DomainSummary`](crate::model::DomainSummary).
 pub mod domain_summary {
-
+    
     /// A builder for [`DomainSummary`](crate::model::DomainSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -108,12 +96,10 @@ pub mod domain_summary {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) domain_status: std::option::Option<crate::model::DomainStatus>,
-        pub(crate) server_side_encryption_configuration:
-            std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
+        pub(crate) server_side_encryption_configuration: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) server_side_encryption_update_details:
-            std::option::Option<crate::model::ServerSideEncryptionUpdateDetails>,
+        pub(crate) server_side_encryption_update_details: std::option::Option<crate::model::ServerSideEncryptionUpdateDetails>,
     }
     impl Builder {
         /// <p>The service-generated identifier for the domain.</p>
@@ -123,8 +109,7 @@ pub mod domain_summary {
         }
         /// <p>The service-generated identifier for the domain.</p>
         pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_id = input;
-            self
+            self.domain_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the domain.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,8 +118,7 @@ pub mod domain_summary {
         }
         /// <p>The Amazon Resource Name (ARN) for the domain.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The client-provided name for the domain.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,8 +127,7 @@ pub mod domain_summary {
         }
         /// <p>The client-provided name for the domain.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The client-provided description of the domain.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,8 +136,7 @@ pub mod domain_summary {
         }
         /// <p>The client-provided description of the domain.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The current status of the domain.</p>
         pub fn domain_status(mut self, input: crate::model::DomainStatus) -> Self {
@@ -162,28 +144,17 @@ pub mod domain_summary {
             self
         }
         /// <p>The current status of the domain.</p>
-        pub fn set_domain_status(
-            mut self,
-            input: std::option::Option<crate::model::DomainStatus>,
-        ) -> Self {
-            self.domain_status = input;
-            self
+        pub fn set_domain_status(mut self, input: std::option::Option<crate::model::DomainStatus>) -> Self {
+            self.domain_status = input; self
         }
         /// <p>The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt your data.</p>
-        pub fn server_side_encryption_configuration(
-            mut self,
-            input: crate::model::ServerSideEncryptionConfiguration,
-        ) -> Self {
+        pub fn server_side_encryption_configuration(mut self, input: crate::model::ServerSideEncryptionConfiguration) -> Self {
             self.server_side_encryption_configuration = Some(input);
             self
         }
         /// <p>The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt your data.</p>
-        pub fn set_server_side_encryption_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
-        ) -> Self {
-            self.server_side_encryption_configuration = input;
-            self
+        pub fn set_server_side_encryption_configuration(mut self, input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>) -> Self {
+            self.server_side_encryption_configuration = input; self
         }
         /// <p>The timestamp showing when the domain is created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -191,12 +162,8 @@ pub mod domain_summary {
             self
         }
         /// <p>The timestamp showing when the domain is created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The timestamp showing the domain's last update.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -204,41 +171,39 @@ pub mod domain_summary {
             self
         }
         /// <p>The timestamp showing the domain's last update.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain's data can only be accessed using the new KMS key.</p>
-        pub fn server_side_encryption_update_details(
-            mut self,
-            input: crate::model::ServerSideEncryptionUpdateDetails,
-        ) -> Self {
+        pub fn server_side_encryption_update_details(mut self, input: crate::model::ServerSideEncryptionUpdateDetails) -> Self {
             self.server_side_encryption_update_details = Some(input);
             self
         }
         /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain's data can only be accessed using the new KMS key.</p>
-        pub fn set_server_side_encryption_update_details(
-            mut self,
-            input: std::option::Option<crate::model::ServerSideEncryptionUpdateDetails>,
-        ) -> Self {
-            self.server_side_encryption_update_details = input;
-            self
+        pub fn set_server_side_encryption_update_details(mut self, input: std::option::Option<crate::model::ServerSideEncryptionUpdateDetails>) -> Self {
+            self.server_side_encryption_update_details = input; self
         }
         /// Consumes the builder and constructs a [`DomainSummary`](crate::model::DomainSummary).
         pub fn build(self) -> crate::model::DomainSummary {
             crate::model::DomainSummary {
-                domain_id: self.domain_id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                domain_status: self.domain_status,
-                server_side_encryption_configuration: self.server_side_encryption_configuration,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
-                server_side_encryption_update_details: self.server_side_encryption_update_details,
+                domain_id: self.domain_id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                domain_status: self.domain_status
+                ,
+                server_side_encryption_configuration: self.server_side_encryption_configuration
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                server_side_encryption_update_details: self.server_side_encryption_update_details
+                ,
             }
         }
     }
@@ -250,19 +215,15 @@ pub mod domain_summary {
             formatter.field("name", &"*** Sensitive Data Redacted ***");
             formatter.field("description", &"*** Sensitive Data Redacted ***");
             formatter.field("domain_status", &self.domain_status);
-            formatter.field(
-                "server_side_encryption_configuration",
-                &self.server_side_encryption_configuration,
-            );
+            formatter.field("server_side_encryption_configuration", &self.server_side_encryption_configuration);
             formatter.field("created_at", &self.created_at);
             formatter.field("updated_at", &self.updated_at);
-            formatter.field(
-                "server_side_encryption_update_details",
-                &self.server_side_encryption_update_details,
-            );
+            formatter.field("server_side_encryption_update_details", &self.server_side_encryption_update_details);
             formatter.finish()
         }
     }
+    
+    
 }
 impl DomainSummary {
     /// Creates a new builder-style object to manufacture [`DomainSummary`](crate::model::DomainSummary).
@@ -274,7 +235,7 @@ impl DomainSummary {
 /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain’s data can only be accessed using the new KMS key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServerSideEncryptionUpdateDetails {
+pub struct ServerSideEncryptionUpdateDetails  {
     /// <p>The previous KMS key ID the domain was encrypted with, before ServerSideEncryptionConfiguration was updated to a new KMS key ID.</p>
     #[doc(hidden)]
     pub old_kms_key_id: std::option::Option<std::string::String>,
@@ -287,29 +248,26 @@ pub struct ServerSideEncryptionUpdateDetails {
 }
 impl ServerSideEncryptionUpdateDetails {
     /// <p>The previous KMS key ID the domain was encrypted with, before ServerSideEncryptionConfiguration was updated to a new KMS key ID.</p>
-    pub fn old_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn old_kms_key_id(&self) -> std::option::Option<& str> {
         self.old_kms_key_id.as_deref()
     }
     /// <p>Status of the server-side encryption update. During an update, if there is an issue with the domain's current or old KMS key ID, such as an inaccessible or disabled key, then the status is FAILED. In order to resolve this, the key needs to be made accessible, and then an UpdateDomain call with the existing server-side encryption configuration will re-attempt this update process.</p>
-    pub fn update_status(
-        &self,
-    ) -> std::option::Option<&crate::model::ServerSideEncryptionUpdateStatus> {
+    pub fn update_status(&self) -> std::option::Option<& crate::model::ServerSideEncryptionUpdateStatus> {
         self.update_status.as_ref()
     }
     /// <p>Message explaining the current UpdateStatus. When the UpdateStatus is FAILED, this message explains the cause of the failure.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`ServerSideEncryptionUpdateDetails`](crate::model::ServerSideEncryptionUpdateDetails).
 pub mod server_side_encryption_update_details {
-
+    
     /// A builder for [`ServerSideEncryptionUpdateDetails`](crate::model::ServerSideEncryptionUpdateDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) old_kms_key_id: std::option::Option<std::string::String>,
-        pub(crate) update_status:
-            std::option::Option<crate::model::ServerSideEncryptionUpdateStatus>,
+        pub(crate) update_status: std::option::Option<crate::model::ServerSideEncryptionUpdateStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -319,28 +277,17 @@ pub mod server_side_encryption_update_details {
             self
         }
         /// <p>The previous KMS key ID the domain was encrypted with, before ServerSideEncryptionConfiguration was updated to a new KMS key ID.</p>
-        pub fn set_old_kms_key_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.old_kms_key_id = input;
-            self
+        pub fn set_old_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.old_kms_key_id = input; self
         }
         /// <p>Status of the server-side encryption update. During an update, if there is an issue with the domain's current or old KMS key ID, such as an inaccessible or disabled key, then the status is FAILED. In order to resolve this, the key needs to be made accessible, and then an UpdateDomain call with the existing server-side encryption configuration will re-attempt this update process.</p>
-        pub fn update_status(
-            mut self,
-            input: crate::model::ServerSideEncryptionUpdateStatus,
-        ) -> Self {
+        pub fn update_status(mut self, input: crate::model::ServerSideEncryptionUpdateStatus) -> Self {
             self.update_status = Some(input);
             self
         }
         /// <p>Status of the server-side encryption update. During an update, if there is an issue with the domain's current or old KMS key ID, such as an inaccessible or disabled key, then the status is FAILED. In order to resolve this, the key needs to be made accessible, and then an UpdateDomain call with the existing server-side encryption configuration will re-attempt this update process.</p>
-        pub fn set_update_status(
-            mut self,
-            input: std::option::Option<crate::model::ServerSideEncryptionUpdateStatus>,
-        ) -> Self {
-            self.update_status = input;
-            self
+        pub fn set_update_status(mut self, input: std::option::Option<crate::model::ServerSideEncryptionUpdateStatus>) -> Self {
+            self.update_status = input; self
         }
         /// <p>Message explaining the current UpdateStatus. When the UpdateStatus is FAILED, this message explains the cause of the failure.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -349,18 +296,22 @@ pub mod server_side_encryption_update_details {
         }
         /// <p>Message explaining the current UpdateStatus. When the UpdateStatus is FAILED, this message explains the cause of the failure.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`ServerSideEncryptionUpdateDetails`](crate::model::ServerSideEncryptionUpdateDetails).
         pub fn build(self) -> crate::model::ServerSideEncryptionUpdateDetails {
             crate::model::ServerSideEncryptionUpdateDetails {
-                old_kms_key_id: self.old_kms_key_id,
-                update_status: self.update_status,
-                message: self.message,
+                old_kms_key_id: self.old_kms_key_id
+                ,
+                update_status: self.update_status
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl ServerSideEncryptionUpdateDetails {
     /// Creates a new builder-style object to manufacture [`ServerSideEncryptionUpdateDetails`](crate::model::ServerSideEncryptionUpdateDetails).
@@ -375,9 +326,9 @@ impl ServerSideEncryptionUpdateDetails {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let serversideencryptionupdatestatus = unimplemented!();
 /// match serversideencryptionupdatestatus {
@@ -400,22 +351,14 @@ impl ServerSideEncryptionUpdateDetails {
 /// Specifically, when `serversideencryptionupdatestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServerSideEncryptionUpdateStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ServerSideEncryptionUpdateStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -424,7 +367,7 @@ pub enum ServerSideEncryptionUpdateStatus {
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ServerSideEncryptionUpdateStatus {
     fn from(s: &str) -> Self {
@@ -432,19 +375,17 @@ impl std::convert::From<&str> for ServerSideEncryptionUpdateStatus {
             "COMPLETED" => ServerSideEncryptionUpdateStatus::Completed,
             "FAILED" => ServerSideEncryptionUpdateStatus::Failed,
             "IN_PROGRESS" => ServerSideEncryptionUpdateStatus::InProgress,
-            other => ServerSideEncryptionUpdateStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ServerSideEncryptionUpdateStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ServerSideEncryptionUpdateStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServerSideEncryptionUpdateStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ServerSideEncryptionUpdateStatus::from(s))
+                }
+            }
 impl ServerSideEncryptionUpdateStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -452,12 +393,14 @@ impl ServerSideEncryptionUpdateStatus {
             ServerSideEncryptionUpdateStatus::Completed => "COMPLETED",
             ServerSideEncryptionUpdateStatus::Failed => "FAILED",
             ServerSideEncryptionUpdateStatus::InProgress => "IN_PROGRESS",
-            ServerSideEncryptionUpdateStatus::Unknown(value) => value.as_str(),
+            ServerSideEncryptionUpdateStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "FAILED", "IN_PROGRESS"]
+        &[
+            "COMPLETED", "FAILED", "IN_PROGRESS"
+        ]
     }
 }
 impl AsRef<str> for ServerSideEncryptionUpdateStatus {
@@ -469,20 +412,20 @@ impl AsRef<str> for ServerSideEncryptionUpdateStatus {
 /// <p>The configuration containing information about the customer managed key used for encrypting customer data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServerSideEncryptionConfiguration {
+pub struct ServerSideEncryptionConfiguration  {
     /// <p>The identifier of the KMS key to use to encrypt data stored by Voice ID. Voice ID doesn't support asymmetric customer managed keys. </p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl ServerSideEncryptionConfiguration {
     /// <p>The identifier of the KMS key to use to encrypt data stored by Voice ID. Voice ID doesn't support asymmetric customer managed keys. </p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
 /// See [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
 pub mod server_side_encryption_configuration {
-
+    
     /// A builder for [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -496,16 +439,18 @@ pub mod server_side_encryption_configuration {
         }
         /// <p>The identifier of the KMS key to use to encrypt data stored by Voice ID. Voice ID doesn't support asymmetric customer managed keys. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Consumes the builder and constructs a [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
         pub fn build(self) -> crate::model::ServerSideEncryptionConfiguration {
             crate::model::ServerSideEncryptionConfiguration {
-                kms_key_id: self.kms_key_id,
+                kms_key_id: self.kms_key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl ServerSideEncryptionConfiguration {
     /// Creates a new builder-style object to manufacture [`ServerSideEncryptionConfiguration`](crate::model::ServerSideEncryptionConfiguration).
@@ -520,9 +465,9 @@ impl ServerSideEncryptionConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let domainstatus = unimplemented!();
 /// match domainstatus {
@@ -545,22 +490,14 @@ impl ServerSideEncryptionConfiguration {
 /// Specifically, when `domainstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DomainStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DomainStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -569,7 +506,7 @@ pub enum DomainStatus {
     #[allow(missing_docs)] // documentation missing in model
     Suspended,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DomainStatus {
     fn from(s: &str) -> Self {
@@ -577,17 +514,17 @@ impl std::convert::From<&str> for DomainStatus {
             "ACTIVE" => DomainStatus::Active,
             "PENDING" => DomainStatus::Pending,
             "SUSPENDED" => DomainStatus::Suspended,
-            other => DomainStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => DomainStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DomainStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DomainStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DomainStatus::from(s))
+                }
+            }
 impl DomainStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -595,12 +532,14 @@ impl DomainStatus {
             DomainStatus::Active => "ACTIVE",
             DomainStatus::Pending => "PENDING",
             DomainStatus::Suspended => "SUSPENDED",
-            DomainStatus::Unknown(value) => value.as_str(),
+            DomainStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "PENDING", "SUSPENDED"]
+        &[
+            "ACTIVE", "PENDING", "SUSPENDED"
+        ]
     }
 }
 impl AsRef<str> for DomainStatus {
@@ -615,9 +554,9 @@ impl AsRef<str> for DomainStatus {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -643,22 +582,14 @@ impl AsRef<str> for DomainStatus {
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     BatchJob,
@@ -673,7 +604,7 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Speaker,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
@@ -684,17 +615,17 @@ impl std::convert::From<&str> for ResourceType {
             "FRAUDSTER" => ResourceType::Fraudster,
             "SESSION" => ResourceType::Session,
             "SPEAKER" => ResourceType::Speaker,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -705,18 +636,13 @@ impl ResourceType {
             ResourceType::Fraudster => "FRAUDSTER",
             ResourceType::Session => "SESSION",
             ResourceType::Speaker => "SPEAKER",
-            ResourceType::Unknown(value) => value.as_str(),
+            ResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "BATCH_JOB",
-            "COMPLIANCE_CONSENT",
-            "DOMAIN",
-            "FRAUDSTER",
-            "SESSION",
-            "SPEAKER",
+            "BATCH_JOB", "COMPLIANCE_CONSENT", "DOMAIN", "FRAUDSTER", "SESSION", "SPEAKER"
         ]
     }
 }
@@ -732,9 +658,9 @@ impl AsRef<str> for ResourceType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let conflicttype = unimplemented!();
 /// match conflicttype {
@@ -762,22 +688,14 @@ impl AsRef<str> for ResourceType {
 /// Specifically, when `conflicttype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConflictType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ConflictType {
     #[allow(missing_docs)] // documentation missing in model
     AnotherActiveStream,
@@ -796,64 +714,49 @@ pub enum ConflictType {
     #[allow(missing_docs)] // documentation missing in model
     SpeakerOptedOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ConflictType {
     fn from(s: &str) -> Self {
         match s {
             "ANOTHER_ACTIVE_STREAM" => ConflictType::AnotherActiveStream,
-            "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT" => {
-                ConflictType::CannotChangeSpeakerAfterEnrollment
-            }
+            "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT" => ConflictType::CannotChangeSpeakerAfterEnrollment,
             "CONCURRENT_CHANGES" => ConflictType::ConcurrentChanges,
-            "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES" => {
-                ConflictType::DomainLockedFromEncryptionUpdates
-            }
+            "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES" => ConflictType::DomainLockedFromEncryptionUpdates,
             "DOMAIN_NOT_ACTIVE" => ConflictType::DomainNotActive,
             "ENROLLMENT_ALREADY_EXISTS" => ConflictType::EnrollmentAlreadyExists,
             "SPEAKER_NOT_SET" => ConflictType::SpeakerNotSet,
             "SPEAKER_OPTED_OUT" => ConflictType::SpeakerOptedOut,
-            other => ConflictType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ConflictType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ConflictType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConflictType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ConflictType::from(s))
+                }
+            }
 impl ConflictType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConflictType::AnotherActiveStream => "ANOTHER_ACTIVE_STREAM",
-            ConflictType::CannotChangeSpeakerAfterEnrollment => {
-                "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT"
-            }
+            ConflictType::CannotChangeSpeakerAfterEnrollment => "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT",
             ConflictType::ConcurrentChanges => "CONCURRENT_CHANGES",
-            ConflictType::DomainLockedFromEncryptionUpdates => {
-                "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES"
-            }
+            ConflictType::DomainLockedFromEncryptionUpdates => "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES",
             ConflictType::DomainNotActive => "DOMAIN_NOT_ACTIVE",
             ConflictType::EnrollmentAlreadyExists => "ENROLLMENT_ALREADY_EXISTS",
             ConflictType::SpeakerNotSet => "SPEAKER_NOT_SET",
             ConflictType::SpeakerOptedOut => "SPEAKER_OPTED_OUT",
-            ConflictType::Unknown(value) => value.as_str(),
+            ConflictType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ANOTHER_ACTIVE_STREAM",
-            "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT",
-            "CONCURRENT_CHANGES",
-            "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES",
-            "DOMAIN_NOT_ACTIVE",
-            "ENROLLMENT_ALREADY_EXISTS",
-            "SPEAKER_NOT_SET",
-            "SPEAKER_OPTED_OUT",
+            "ANOTHER_ACTIVE_STREAM", "CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT", "CONCURRENT_CHANGES", "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES", "DOMAIN_NOT_ACTIVE", "ENROLLMENT_ALREADY_EXISTS", "SPEAKER_NOT_SET", "SPEAKER_OPTED_OUT"
         ]
     }
 }
@@ -866,7 +769,7 @@ impl AsRef<str> for ConflictType {
 /// <p>Contains all the information about a domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Domain {
+pub struct Domain  {
     /// <p>The service-generated identifier for the domain.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -884,8 +787,7 @@ pub struct Domain {
     pub domain_status: std::option::Option<crate::model::DomainStatus>,
     /// <p>The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt your data.</p>
     #[doc(hidden)]
-    pub server_side_encryption_configuration:
-        std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
+    pub server_side_encryption_configuration: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
     /// <p>The timestamp at which the domain is created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -894,52 +796,47 @@ pub struct Domain {
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain's data can only be accessed using the new KMS key.</p>
     #[doc(hidden)]
-    pub server_side_encryption_update_details:
-        std::option::Option<crate::model::ServerSideEncryptionUpdateDetails>,
+    pub server_side_encryption_update_details: std::option::Option<crate::model::ServerSideEncryptionUpdateDetails>,
 }
 impl Domain {
     /// <p>The service-generated identifier for the domain.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the domain.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The client-provided name for the domain.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The client-provided description of the domain.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p>The current status of the domain.</p>
-    pub fn domain_status(&self) -> std::option::Option<&crate::model::DomainStatus> {
+    pub fn domain_status(&self) -> std::option::Option<& crate::model::DomainStatus> {
         self.domain_status.as_ref()
     }
     /// <p>The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt your data.</p>
-    pub fn server_side_encryption_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(&self) -> std::option::Option<& crate::model::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
     /// <p>The timestamp at which the domain is created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The timestamp showing the domain's last update.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain's data can only be accessed using the new KMS key.</p>
-    pub fn server_side_encryption_update_details(
-        &self,
-    ) -> std::option::Option<&crate::model::ServerSideEncryptionUpdateDetails> {
+    pub fn server_side_encryption_update_details(&self) -> std::option::Option<& crate::model::ServerSideEncryptionUpdateDetails> {
         self.server_side_encryption_update_details.as_ref()
     }
 }
-impl std::fmt::Debug for Domain {
+impl  std::fmt::Debug for Domain  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Domain");
         formatter.field("domain_id", &self.domain_id);
@@ -947,22 +844,16 @@ impl std::fmt::Debug for Domain {
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("domain_status", &self.domain_status);
-        formatter.field(
-            "server_side_encryption_configuration",
-            &self.server_side_encryption_configuration,
-        );
+        formatter.field("server_side_encryption_configuration", &self.server_side_encryption_configuration);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
-        formatter.field(
-            "server_side_encryption_update_details",
-            &self.server_side_encryption_update_details,
-        );
+        formatter.field("server_side_encryption_update_details", &self.server_side_encryption_update_details);
         formatter.finish()
     }
 }
 /// See [`Domain`](crate::model::Domain).
 pub mod domain {
-
+    
     /// A builder for [`Domain`](crate::model::Domain).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -971,12 +862,10 @@ pub mod domain {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) domain_status: std::option::Option<crate::model::DomainStatus>,
-        pub(crate) server_side_encryption_configuration:
-            std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
+        pub(crate) server_side_encryption_configuration: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) server_side_encryption_update_details:
-            std::option::Option<crate::model::ServerSideEncryptionUpdateDetails>,
+        pub(crate) server_side_encryption_update_details: std::option::Option<crate::model::ServerSideEncryptionUpdateDetails>,
     }
     impl Builder {
         /// <p>The service-generated identifier for the domain.</p>
@@ -986,8 +875,7 @@ pub mod domain {
         }
         /// <p>The service-generated identifier for the domain.</p>
         pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_id = input;
-            self
+            self.domain_id = input; self
         }
         /// <p>The Amazon Resource Name (ARN) for the domain.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -996,8 +884,7 @@ pub mod domain {
         }
         /// <p>The Amazon Resource Name (ARN) for the domain.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The client-provided name for the domain.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1006,8 +893,7 @@ pub mod domain {
         }
         /// <p>The client-provided name for the domain.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The client-provided description of the domain.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1016,8 +902,7 @@ pub mod domain {
         }
         /// <p>The client-provided description of the domain.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p>The current status of the domain.</p>
         pub fn domain_status(mut self, input: crate::model::DomainStatus) -> Self {
@@ -1025,28 +910,17 @@ pub mod domain {
             self
         }
         /// <p>The current status of the domain.</p>
-        pub fn set_domain_status(
-            mut self,
-            input: std::option::Option<crate::model::DomainStatus>,
-        ) -> Self {
-            self.domain_status = input;
-            self
+        pub fn set_domain_status(mut self, input: std::option::Option<crate::model::DomainStatus>) -> Self {
+            self.domain_status = input; self
         }
         /// <p>The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt your data.</p>
-        pub fn server_side_encryption_configuration(
-            mut self,
-            input: crate::model::ServerSideEncryptionConfiguration,
-        ) -> Self {
+        pub fn server_side_encryption_configuration(mut self, input: crate::model::ServerSideEncryptionConfiguration) -> Self {
             self.server_side_encryption_configuration = Some(input);
             self
         }
         /// <p>The server-side encryption configuration containing the KMS key identifier you want Voice ID to use to encrypt your data.</p>
-        pub fn set_server_side_encryption_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
-        ) -> Self {
-            self.server_side_encryption_configuration = input;
-            self
+        pub fn set_server_side_encryption_configuration(mut self, input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>) -> Self {
+            self.server_side_encryption_configuration = input; self
         }
         /// <p>The timestamp at which the domain is created.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1054,12 +928,8 @@ pub mod domain {
             self
         }
         /// <p>The timestamp at which the domain is created.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>The timestamp showing the domain's last update.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1067,41 +937,39 @@ pub mod domain {
             self
         }
         /// <p>The timestamp showing the domain's last update.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain's data can only be accessed using the new KMS key.</p>
-        pub fn server_side_encryption_update_details(
-            mut self,
-            input: crate::model::ServerSideEncryptionUpdateDetails,
-        ) -> Self {
+        pub fn server_side_encryption_update_details(mut self, input: crate::model::ServerSideEncryptionUpdateDetails) -> Self {
             self.server_side_encryption_update_details = Some(input);
             self
         }
         /// <p>Details about the most recent server-side encryption configuration update. When the server-side encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this update is complete, the domain's data can only be accessed using the new KMS key.</p>
-        pub fn set_server_side_encryption_update_details(
-            mut self,
-            input: std::option::Option<crate::model::ServerSideEncryptionUpdateDetails>,
-        ) -> Self {
-            self.server_side_encryption_update_details = input;
-            self
+        pub fn set_server_side_encryption_update_details(mut self, input: std::option::Option<crate::model::ServerSideEncryptionUpdateDetails>) -> Self {
+            self.server_side_encryption_update_details = input; self
         }
         /// Consumes the builder and constructs a [`Domain`](crate::model::Domain).
         pub fn build(self) -> crate::model::Domain {
             crate::model::Domain {
-                domain_id: self.domain_id,
-                arn: self.arn,
-                name: self.name,
-                description: self.description,
-                domain_status: self.domain_status,
-                server_side_encryption_configuration: self.server_side_encryption_configuration,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
-                server_side_encryption_update_details: self.server_side_encryption_update_details,
+                domain_id: self.domain_id
+                ,
+                arn: self.arn
+                ,
+                name: self.name
+                ,
+                description: self.description
+                ,
+                domain_status: self.domain_status
+                ,
+                server_side_encryption_configuration: self.server_side_encryption_configuration
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                server_side_encryption_update_details: self.server_side_encryption_update_details
+                ,
             }
         }
     }
@@ -1113,19 +981,15 @@ pub mod domain {
             formatter.field("name", &"*** Sensitive Data Redacted ***");
             formatter.field("description", &"*** Sensitive Data Redacted ***");
             formatter.field("domain_status", &self.domain_status);
-            formatter.field(
-                "server_side_encryption_configuration",
-                &self.server_side_encryption_configuration,
-            );
+            formatter.field("server_side_encryption_configuration", &self.server_side_encryption_configuration);
             formatter.field("created_at", &self.created_at);
             formatter.field("updated_at", &self.updated_at);
-            formatter.field(
-                "server_side_encryption_update_details",
-                &self.server_side_encryption_update_details,
-            );
+            formatter.field("server_side_encryption_update_details", &self.server_side_encryption_update_details);
             formatter.finish()
         }
     }
+    
+    
 }
 impl Domain {
     /// Creates a new builder-style object to manufacture [`Domain`](crate::model::Domain).
@@ -1137,7 +1001,7 @@ impl Domain {
 /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Tag {
+pub struct Tag  {
     /// <p>The first part of a key:value pair that forms a tag associated with a given resource. For example, in the tag 'Department':'Sales', the key is 'Department'. </p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -1147,15 +1011,15 @@ pub struct Tag {
 }
 impl Tag {
     /// <p>The first part of a key:value pair that forms a tag associated with a given resource. For example, in the tag 'Department':'Sales', the key is 'Department'. </p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The second part of a key:value pair that forms a tag associated with a given resource. For example, in the tag 'Department':'Sales', the value is 'Sales'. </p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for Tag {
+impl  std::fmt::Debug for Tag  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
@@ -1165,7 +1029,7 @@ impl std::fmt::Debug for Tag {
 }
 /// See [`Tag`](crate::model::Tag).
 pub mod tag {
-
+    
     /// A builder for [`Tag`](crate::model::Tag).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1180,8 +1044,7 @@ pub mod tag {
         }
         /// <p>The first part of a key:value pair that forms a tag associated with a given resource. For example, in the tag 'Department':'Sales', the key is 'Department'. </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.key = input;
-            self
+            self.key = input; self
         }
         /// <p>The second part of a key:value pair that forms a tag associated with a given resource. For example, in the tag 'Department':'Sales', the value is 'Sales'. </p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1190,14 +1053,15 @@ pub mod tag {
         }
         /// <p>The second part of a key:value pair that forms a tag associated with a given resource. For example, in the tag 'Department':'Sales', the value is 'Sales'. </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.value = input;
-            self
+            self.value = input; self
         }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag).
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
-                key: self.key,
-                value: self.value,
+                key: self.key
+                ,
+                value: self.value
+                ,
             }
         }
     }
@@ -1209,6 +1073,8 @@ pub mod tag {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Tag {
     /// Creates a new builder-style object to manufacture [`Tag`](crate::model::Tag).
@@ -1220,7 +1086,7 @@ impl Tag {
 /// <p>Contains all the information about a speaker enrollment job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SpeakerEnrollmentJob {
+pub struct SpeakerEnrollmentJob  {
     /// <p>The client-provided name for the speaker enrollment job.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
@@ -1260,55 +1126,55 @@ pub struct SpeakerEnrollmentJob {
 }
 impl SpeakerEnrollmentJob {
     /// <p>The client-provided name for the speaker enrollment job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The service-generated identifier for the speaker enrollment job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The current status of the speaker enrollment job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::SpeakerEnrollmentJobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::SpeakerEnrollmentJobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The identifier of the domain that contains the speaker enrollment job.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
-    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>The configuration that defines the action to take when the speaker is already enrolled in Voice ID, and the <code>FraudDetectionConfig</code> to use.</p>
-    pub fn enrollment_config(&self) -> std::option::Option<&crate::model::EnrollmentConfig> {
+    pub fn enrollment_config(&self) -> std::option::Option<& crate::model::EnrollmentConfig> {
         self.enrollment_config.as_ref()
     }
     /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of speaker enrollment job requests.</p>
-    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+    pub fn input_data_config(&self) -> std::option::Option<& crate::model::InputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
-    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+    pub fn output_data_config(&self) -> std::option::Option<& crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>A timestamp showing the creation of the speaker enrollment job.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A timestamp showing when the speaker enrollment job ended. </p>
-    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn ended_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
-    pub fn failure_details(&self) -> std::option::Option<&crate::model::FailureDetails> {
+    pub fn failure_details(&self) -> std::option::Option<& crate::model::FailureDetails> {
         self.failure_details.as_ref()
     }
     /// <p>Provides details on job progress. This field shows the completed percentage of registration requests listed in the input file.</p>
-    pub fn job_progress(&self) -> std::option::Option<&crate::model::JobProgress> {
+    pub fn job_progress(&self) -> std::option::Option<& crate::model::JobProgress> {
         self.job_progress.as_ref()
     }
 }
-impl std::fmt::Debug for SpeakerEnrollmentJob {
+impl  std::fmt::Debug for SpeakerEnrollmentJob  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SpeakerEnrollmentJob");
         formatter.field("job_name", &"*** Sensitive Data Redacted ***");
@@ -1328,7 +1194,7 @@ impl std::fmt::Debug for SpeakerEnrollmentJob {
 }
 /// See [`SpeakerEnrollmentJob`](crate::model::SpeakerEnrollmentJob).
 pub mod speaker_enrollment_job {
-
+    
     /// A builder for [`SpeakerEnrollmentJob`](crate::model::SpeakerEnrollmentJob).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1353,8 +1219,7 @@ pub mod speaker_enrollment_job {
         }
         /// <p>The client-provided name for the speaker enrollment job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_name = input;
-            self
+            self.job_name = input; self
         }
         /// <p>The service-generated identifier for the speaker enrollment job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1363,8 +1228,7 @@ pub mod speaker_enrollment_job {
         }
         /// <p>The service-generated identifier for the speaker enrollment job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The current status of the speaker enrollment job.</p>
         pub fn job_status(mut self, input: crate::model::SpeakerEnrollmentJobStatus) -> Self {
@@ -1372,12 +1236,8 @@ pub mod speaker_enrollment_job {
             self
         }
         /// <p>The current status of the speaker enrollment job.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::SpeakerEnrollmentJobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::SpeakerEnrollmentJobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// <p>The identifier of the domain that contains the speaker enrollment job.</p>
         pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1386,8 +1246,7 @@ pub mod speaker_enrollment_job {
         }
         /// <p>The identifier of the domain that contains the speaker enrollment job.</p>
         pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_id = input;
-            self
+            self.domain_id = input; self
         }
         /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1395,12 +1254,8 @@ pub mod speaker_enrollment_job {
             self
         }
         /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
-        pub fn set_data_access_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_access_role_arn = input;
-            self
+        pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_access_role_arn = input; self
         }
         /// <p>The configuration that defines the action to take when the speaker is already enrolled in Voice ID, and the <code>FraudDetectionConfig</code> to use.</p>
         pub fn enrollment_config(mut self, input: crate::model::EnrollmentConfig) -> Self {
@@ -1408,12 +1263,8 @@ pub mod speaker_enrollment_job {
             self
         }
         /// <p>The configuration that defines the action to take when the speaker is already enrolled in Voice ID, and the <code>FraudDetectionConfig</code> to use.</p>
-        pub fn set_enrollment_config(
-            mut self,
-            input: std::option::Option<crate::model::EnrollmentConfig>,
-        ) -> Self {
-            self.enrollment_config = input;
-            self
+        pub fn set_enrollment_config(mut self, input: std::option::Option<crate::model::EnrollmentConfig>) -> Self {
+            self.enrollment_config = input; self
         }
         /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of speaker enrollment job requests.</p>
         pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
@@ -1421,12 +1272,8 @@ pub mod speaker_enrollment_job {
             self
         }
         /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of speaker enrollment job requests.</p>
-        pub fn set_input_data_config(
-            mut self,
-            input: std::option::Option<crate::model::InputDataConfig>,
-        ) -> Self {
-            self.input_data_config = input;
-            self
+        pub fn set_input_data_config(mut self, input: std::option::Option<crate::model::InputDataConfig>) -> Self {
+            self.input_data_config = input; self
         }
         /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
         pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
@@ -1434,12 +1281,8 @@ pub mod speaker_enrollment_job {
             self
         }
         /// <p>The output data config containing the S3 location where Voice ID writes the job output file; you must also include a KMS key ID to encrypt the file.</p>
-        pub fn set_output_data_config(
-            mut self,
-            input: std::option::Option<crate::model::OutputDataConfig>,
-        ) -> Self {
-            self.output_data_config = input;
-            self
+        pub fn set_output_data_config(mut self, input: std::option::Option<crate::model::OutputDataConfig>) -> Self {
+            self.output_data_config = input; self
         }
         /// <p>A timestamp showing the creation of the speaker enrollment job.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1447,12 +1290,8 @@ pub mod speaker_enrollment_job {
             self
         }
         /// <p>A timestamp showing the creation of the speaker enrollment job.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>A timestamp showing when the speaker enrollment job ended. </p>
         pub fn ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1460,12 +1299,8 @@ pub mod speaker_enrollment_job {
             self
         }
         /// <p>A timestamp showing when the speaker enrollment job ended. </p>
-        pub fn set_ended_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.ended_at = input;
-            self
+        pub fn set_ended_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.ended_at = input; self
         }
         /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
         pub fn failure_details(mut self, input: crate::model::FailureDetails) -> Self {
@@ -1473,12 +1308,8 @@ pub mod speaker_enrollment_job {
             self
         }
         /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
-        pub fn set_failure_details(
-            mut self,
-            input: std::option::Option<crate::model::FailureDetails>,
-        ) -> Self {
-            self.failure_details = input;
-            self
+        pub fn set_failure_details(mut self, input: std::option::Option<crate::model::FailureDetails>) -> Self {
+            self.failure_details = input; self
         }
         /// <p>Provides details on job progress. This field shows the completed percentage of registration requests listed in the input file.</p>
         pub fn job_progress(mut self, input: crate::model::JobProgress) -> Self {
@@ -1486,28 +1317,36 @@ pub mod speaker_enrollment_job {
             self
         }
         /// <p>Provides details on job progress. This field shows the completed percentage of registration requests listed in the input file.</p>
-        pub fn set_job_progress(
-            mut self,
-            input: std::option::Option<crate::model::JobProgress>,
-        ) -> Self {
-            self.job_progress = input;
-            self
+        pub fn set_job_progress(mut self, input: std::option::Option<crate::model::JobProgress>) -> Self {
+            self.job_progress = input; self
         }
         /// Consumes the builder and constructs a [`SpeakerEnrollmentJob`](crate::model::SpeakerEnrollmentJob).
         pub fn build(self) -> crate::model::SpeakerEnrollmentJob {
             crate::model::SpeakerEnrollmentJob {
-                job_name: self.job_name,
-                job_id: self.job_id,
-                job_status: self.job_status,
-                domain_id: self.domain_id,
-                data_access_role_arn: self.data_access_role_arn,
-                enrollment_config: self.enrollment_config,
-                input_data_config: self.input_data_config,
-                output_data_config: self.output_data_config,
-                created_at: self.created_at,
-                ended_at: self.ended_at,
-                failure_details: self.failure_details,
-                job_progress: self.job_progress,
+                job_name: self.job_name
+                ,
+                job_id: self.job_id
+                ,
+                job_status: self.job_status
+                ,
+                domain_id: self.domain_id
+                ,
+                data_access_role_arn: self.data_access_role_arn
+                ,
+                enrollment_config: self.enrollment_config
+                ,
+                input_data_config: self.input_data_config
+                ,
+                output_data_config: self.output_data_config
+                ,
+                created_at: self.created_at
+                ,
+                ended_at: self.ended_at
+                ,
+                failure_details: self.failure_details
+                ,
+                job_progress: self.job_progress
+                ,
             }
         }
     }
@@ -1529,6 +1368,8 @@ pub mod speaker_enrollment_job {
             formatter.finish()
         }
     }
+    
+    
 }
 impl SpeakerEnrollmentJob {
     /// Creates a new builder-style object to manufacture [`SpeakerEnrollmentJob`](crate::model::SpeakerEnrollmentJob).
@@ -1540,7 +1381,7 @@ impl SpeakerEnrollmentJob {
 /// <p>Indicates the completion progress for a batch job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobProgress {
+pub struct JobProgress  {
     /// <p>Shows the completed percentage of enrollment or registration requests listed in the input file.</p>
     #[doc(hidden)]
     pub percent_complete: std::option::Option<i32>,
@@ -1553,7 +1394,7 @@ impl JobProgress {
 }
 /// See [`JobProgress`](crate::model::JobProgress).
 pub mod job_progress {
-
+    
     /// A builder for [`JobProgress`](crate::model::JobProgress).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1567,16 +1408,18 @@ pub mod job_progress {
         }
         /// <p>Shows the completed percentage of enrollment or registration requests listed in the input file.</p>
         pub fn set_percent_complete(mut self, input: std::option::Option<i32>) -> Self {
-            self.percent_complete = input;
-            self
+            self.percent_complete = input; self
         }
         /// Consumes the builder and constructs a [`JobProgress`](crate::model::JobProgress).
         pub fn build(self) -> crate::model::JobProgress {
             crate::model::JobProgress {
-                percent_complete: self.percent_complete,
+                percent_complete: self.percent_complete
+                ,
             }
         }
     }
+    
+    
 }
 impl JobProgress {
     /// Creates a new builder-style object to manufacture [`JobProgress`](crate::model::JobProgress).
@@ -1588,7 +1431,7 @@ impl JobProgress {
 /// <p>Contains error details for a failed batch job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailureDetails {
+pub struct FailureDetails  {
     /// <p>An HTTP status code representing the nature of the error.</p>
     #[doc(hidden)]
     pub status_code: std::option::Option<i32>,
@@ -1602,13 +1445,13 @@ impl FailureDetails {
         self.status_code
     }
     /// <p>A description of the error that caused the batch job failure.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> std::option::Option<& str> {
         self.message.as_deref()
     }
 }
 /// See [`FailureDetails`](crate::model::FailureDetails).
 pub mod failure_details {
-
+    
     /// A builder for [`FailureDetails`](crate::model::FailureDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1623,8 +1466,7 @@ pub mod failure_details {
         }
         /// <p>An HTTP status code representing the nature of the error.</p>
         pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
-            self.status_code = input;
-            self
+            self.status_code = input; self
         }
         /// <p>A description of the error that caused the batch job failure.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1633,17 +1475,20 @@ pub mod failure_details {
         }
         /// <p>A description of the error that caused the batch job failure.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
+            self.message = input; self
         }
         /// Consumes the builder and constructs a [`FailureDetails`](crate::model::FailureDetails).
         pub fn build(self) -> crate::model::FailureDetails {
             crate::model::FailureDetails {
-                status_code: self.status_code,
-                message: self.message,
+                status_code: self.status_code
+                ,
+                message: self.message
+                ,
             }
         }
     }
+    
+    
 }
 impl FailureDetails {
     /// Creates a new builder-style object to manufacture [`FailureDetails`](crate::model::FailureDetails).
@@ -1655,7 +1500,7 @@ impl FailureDetails {
 /// <p>The configuration containing output file information for a batch job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputDataConfig {
+pub struct OutputDataConfig  {
     /// <p>The S3 path of the folder where Voice ID writes the job output file. It has a <code>*.out</code> extension. For example, if the input file name is <code>input-file.json</code> and the output folder path is <code>s3://output-bucket/output-folder</code>, the full output file path is <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
     #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
@@ -1665,17 +1510,17 @@ pub struct OutputDataConfig {
 }
 impl OutputDataConfig {
     /// <p>The S3 path of the folder where Voice ID writes the job output file. It has a <code>*.out</code> extension. For example, if the input file name is <code>input-file.json</code> and the output folder path is <code>s3://output-bucket/output-folder</code>, the full output file path is <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
-    pub fn s3_uri(&self) -> std::option::Option<&str> {
+    pub fn s3_uri(&self) -> std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
     /// <p>The identifier of the KMS key you want Voice ID to use to encrypt the output file of a speaker enrollment job/fraudster registration job. </p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> std::option::Option<& str> {
         self.kms_key_id.as_deref()
     }
 }
 /// See [`OutputDataConfig`](crate::model::OutputDataConfig).
 pub mod output_data_config {
-
+    
     /// A builder for [`OutputDataConfig`](crate::model::OutputDataConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1690,8 +1535,7 @@ pub mod output_data_config {
         }
         /// <p>The S3 path of the folder where Voice ID writes the job output file. It has a <code>*.out</code> extension. For example, if the input file name is <code>input-file.json</code> and the output folder path is <code>s3://output-bucket/output-folder</code>, the full output file path is <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_uri = input;
-            self
+            self.s3_uri = input; self
         }
         /// <p>The identifier of the KMS key you want Voice ID to use to encrypt the output file of a speaker enrollment job/fraudster registration job. </p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1700,17 +1544,20 @@ pub mod output_data_config {
         }
         /// <p>The identifier of the KMS key you want Voice ID to use to encrypt the output file of a speaker enrollment job/fraudster registration job. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_key_id = input;
-            self
+            self.kms_key_id = input; self
         }
         /// Consumes the builder and constructs a [`OutputDataConfig`](crate::model::OutputDataConfig).
         pub fn build(self) -> crate::model::OutputDataConfig {
             crate::model::OutputDataConfig {
-                s3_uri: self.s3_uri,
-                kms_key_id: self.kms_key_id,
+                s3_uri: self.s3_uri
+                ,
+                kms_key_id: self.kms_key_id
+                ,
             }
         }
     }
+    
+    
 }
 impl OutputDataConfig {
     /// Creates a new builder-style object to manufacture [`OutputDataConfig`](crate::model::OutputDataConfig).
@@ -1722,20 +1569,20 @@ impl OutputDataConfig {
 /// <p>The configuration containing input file information for a batch job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputDataConfig {
+pub struct InputDataConfig  {
     /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration job requests.</p>
     #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
 }
 impl InputDataConfig {
     /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration job requests.</p>
-    pub fn s3_uri(&self) -> std::option::Option<&str> {
+    pub fn s3_uri(&self) -> std::option::Option<& str> {
         self.s3_uri.as_deref()
     }
 }
 /// See [`InputDataConfig`](crate::model::InputDataConfig).
 pub mod input_data_config {
-
+    
     /// A builder for [`InputDataConfig`](crate::model::InputDataConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1749,16 +1596,18 @@ pub mod input_data_config {
         }
         /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration job requests.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.s3_uri = input;
-            self
+            self.s3_uri = input; self
         }
         /// Consumes the builder and constructs a [`InputDataConfig`](crate::model::InputDataConfig).
         pub fn build(self) -> crate::model::InputDataConfig {
             crate::model::InputDataConfig {
-                s3_uri: self.s3_uri,
+                s3_uri: self.s3_uri
+                ,
             }
         }
     }
+    
+    
 }
 impl InputDataConfig {
     /// Creates a new builder-style object to manufacture [`InputDataConfig`](crate::model::InputDataConfig).
@@ -1770,81 +1619,64 @@ impl InputDataConfig {
 /// <p>Contains configurations defining enrollment behavior for the batch job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnrollmentConfig {
+pub struct EnrollmentConfig  {
     /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
     #[doc(hidden)]
     pub existing_enrollment_action: std::option::Option<crate::model::ExistingEnrollmentAction>,
     /// <p>The fraud detection configuration to use for the speaker enrollment job.</p>
     #[doc(hidden)]
-    pub fraud_detection_config:
-        std::option::Option<crate::model::EnrollmentJobFraudDetectionConfig>,
+    pub fraud_detection_config: std::option::Option<crate::model::EnrollmentJobFraudDetectionConfig>,
 }
 impl EnrollmentConfig {
     /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
-    pub fn existing_enrollment_action(
-        &self,
-    ) -> std::option::Option<&crate::model::ExistingEnrollmentAction> {
+    pub fn existing_enrollment_action(&self) -> std::option::Option<& crate::model::ExistingEnrollmentAction> {
         self.existing_enrollment_action.as_ref()
     }
     /// <p>The fraud detection configuration to use for the speaker enrollment job.</p>
-    pub fn fraud_detection_config(
-        &self,
-    ) -> std::option::Option<&crate::model::EnrollmentJobFraudDetectionConfig> {
+    pub fn fraud_detection_config(&self) -> std::option::Option<& crate::model::EnrollmentJobFraudDetectionConfig> {
         self.fraud_detection_config.as_ref()
     }
 }
 /// See [`EnrollmentConfig`](crate::model::EnrollmentConfig).
 pub mod enrollment_config {
-
+    
     /// A builder for [`EnrollmentConfig`](crate::model::EnrollmentConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) existing_enrollment_action:
-            std::option::Option<crate::model::ExistingEnrollmentAction>,
-        pub(crate) fraud_detection_config:
-            std::option::Option<crate::model::EnrollmentJobFraudDetectionConfig>,
+        pub(crate) existing_enrollment_action: std::option::Option<crate::model::ExistingEnrollmentAction>,
+        pub(crate) fraud_detection_config: std::option::Option<crate::model::EnrollmentJobFraudDetectionConfig>,
     }
     impl Builder {
         /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
-        pub fn existing_enrollment_action(
-            mut self,
-            input: crate::model::ExistingEnrollmentAction,
-        ) -> Self {
+        pub fn existing_enrollment_action(mut self, input: crate::model::ExistingEnrollmentAction) -> Self {
             self.existing_enrollment_action = Some(input);
             self
         }
         /// <p> The action to take when the specified speaker is already enrolled in the specified domain. The default value is <code>SKIP</code>, which skips the enrollment for the existing speaker. Setting the value to <code>OVERWRITE</code> replaces the existing voice prints and enrollment audio stored for that speaker with new data generated from the latest audio.</p>
-        pub fn set_existing_enrollment_action(
-            mut self,
-            input: std::option::Option<crate::model::ExistingEnrollmentAction>,
-        ) -> Self {
-            self.existing_enrollment_action = input;
-            self
+        pub fn set_existing_enrollment_action(mut self, input: std::option::Option<crate::model::ExistingEnrollmentAction>) -> Self {
+            self.existing_enrollment_action = input; self
         }
         /// <p>The fraud detection configuration to use for the speaker enrollment job.</p>
-        pub fn fraud_detection_config(
-            mut self,
-            input: crate::model::EnrollmentJobFraudDetectionConfig,
-        ) -> Self {
+        pub fn fraud_detection_config(mut self, input: crate::model::EnrollmentJobFraudDetectionConfig) -> Self {
             self.fraud_detection_config = Some(input);
             self
         }
         /// <p>The fraud detection configuration to use for the speaker enrollment job.</p>
-        pub fn set_fraud_detection_config(
-            mut self,
-            input: std::option::Option<crate::model::EnrollmentJobFraudDetectionConfig>,
-        ) -> Self {
-            self.fraud_detection_config = input;
-            self
+        pub fn set_fraud_detection_config(mut self, input: std::option::Option<crate::model::EnrollmentJobFraudDetectionConfig>) -> Self {
+            self.fraud_detection_config = input; self
         }
         /// Consumes the builder and constructs a [`EnrollmentConfig`](crate::model::EnrollmentConfig).
         pub fn build(self) -> crate::model::EnrollmentConfig {
             crate::model::EnrollmentConfig {
-                existing_enrollment_action: self.existing_enrollment_action,
-                fraud_detection_config: self.fraud_detection_config,
+                existing_enrollment_action: self.existing_enrollment_action
+                ,
+                fraud_detection_config: self.fraud_detection_config
+                ,
             }
         }
     }
+    
+    
 }
 impl EnrollmentConfig {
     /// Creates a new builder-style object to manufacture [`EnrollmentConfig`](crate::model::EnrollmentConfig).
@@ -1856,7 +1688,7 @@ impl EnrollmentConfig {
 /// <p>The configuration defining the action to take when a speaker is flagged by the fraud detection system during a batch speaker enrollment job, and the risk threshold to use for identification.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnrollmentJobFraudDetectionConfig {
+pub struct EnrollmentJobFraudDetectionConfig  {
     /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code> results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
     #[doc(hidden)]
     pub fraud_detection_action: std::option::Option<crate::model::FraudDetectionAction>,
@@ -1866,9 +1698,7 @@ pub struct EnrollmentJobFraudDetectionConfig {
 }
 impl EnrollmentJobFraudDetectionConfig {
     /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code> results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
-    pub fn fraud_detection_action(
-        &self,
-    ) -> std::option::Option<&crate::model::FraudDetectionAction> {
+    pub fn fraud_detection_action(&self) -> std::option::Option<& crate::model::FraudDetectionAction> {
         self.fraud_detection_action.as_ref()
     }
     /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
@@ -1878,7 +1708,7 @@ impl EnrollmentJobFraudDetectionConfig {
 }
 /// See [`EnrollmentJobFraudDetectionConfig`](crate::model::EnrollmentJobFraudDetectionConfig).
 pub mod enrollment_job_fraud_detection_config {
-
+    
     /// A builder for [`EnrollmentJobFraudDetectionConfig`](crate::model::EnrollmentJobFraudDetectionConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1892,12 +1722,8 @@ pub mod enrollment_job_fraud_detection_config {
             self
         }
         /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code> results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
-        pub fn set_fraud_detection_action(
-            mut self,
-            input: std::option::Option<crate::model::FraudDetectionAction>,
-        ) -> Self {
-            self.fraud_detection_action = input;
-            self
+        pub fn set_fraud_detection_action(mut self, input: std::option::Option<crate::model::FraudDetectionAction>) -> Self {
+            self.fraud_detection_action = input; self
         }
         /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
         pub fn risk_threshold(mut self, input: i32) -> Self {
@@ -1906,17 +1732,20 @@ pub mod enrollment_job_fraud_detection_config {
         }
         /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
         pub fn set_risk_threshold(mut self, input: std::option::Option<i32>) -> Self {
-            self.risk_threshold = input;
-            self
+            self.risk_threshold = input; self
         }
         /// Consumes the builder and constructs a [`EnrollmentJobFraudDetectionConfig`](crate::model::EnrollmentJobFraudDetectionConfig).
         pub fn build(self) -> crate::model::EnrollmentJobFraudDetectionConfig {
             crate::model::EnrollmentJobFraudDetectionConfig {
-                fraud_detection_action: self.fraud_detection_action,
-                risk_threshold: self.risk_threshold,
+                fraud_detection_action: self.fraud_detection_action
+                ,
+                risk_threshold: self.risk_threshold
+                ,
             }
         }
     }
+    
+    
 }
 impl EnrollmentJobFraudDetectionConfig {
     /// Creates a new builder-style object to manufacture [`EnrollmentJobFraudDetectionConfig`](crate::model::EnrollmentJobFraudDetectionConfig).
@@ -1931,9 +1760,9 @@ impl EnrollmentJobFraudDetectionConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let frauddetectionaction = unimplemented!();
 /// match frauddetectionaction {
@@ -1955,60 +1784,52 @@ impl EnrollmentJobFraudDetectionConfig {
 /// Specifically, when `frauddetectionaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FraudDetectionAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FraudDetectionAction {
     #[allow(missing_docs)] // documentation missing in model
     Fail,
     #[allow(missing_docs)] // documentation missing in model
     Ignore,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FraudDetectionAction {
     fn from(s: &str) -> Self {
         match s {
             "FAIL" => FraudDetectionAction::Fail,
             "IGNORE" => FraudDetectionAction::Ignore,
-            other => {
-                FraudDetectionAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FraudDetectionAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FraudDetectionAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FraudDetectionAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FraudDetectionAction::from(s))
+                }
+            }
 impl FraudDetectionAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FraudDetectionAction::Fail => "FAIL",
             FraudDetectionAction::Ignore => "IGNORE",
-            FraudDetectionAction::Unknown(value) => value.as_str(),
+            FraudDetectionAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAIL", "IGNORE"]
+        &[
+            "FAIL", "IGNORE"
+        ]
     }
 }
 impl AsRef<str> for FraudDetectionAction {
@@ -2023,9 +1844,9 @@ impl AsRef<str> for FraudDetectionAction {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let existingenrollmentaction = unimplemented!();
 /// match existingenrollmentaction {
@@ -2047,60 +1868,52 @@ impl AsRef<str> for FraudDetectionAction {
 /// Specifically, when `existingenrollmentaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExistingEnrollmentAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ExistingEnrollmentAction {
     #[allow(missing_docs)] // documentation missing in model
     Overwrite,
     #[allow(missing_docs)] // documentation missing in model
     Skip,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ExistingEnrollmentAction {
     fn from(s: &str) -> Self {
         match s {
             "OVERWRITE" => ExistingEnrollmentAction::Overwrite,
             "SKIP" => ExistingEnrollmentAction::Skip,
-            other => ExistingEnrollmentAction::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => ExistingEnrollmentAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ExistingEnrollmentAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExistingEnrollmentAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ExistingEnrollmentAction::from(s))
+                }
+            }
 impl ExistingEnrollmentAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExistingEnrollmentAction::Overwrite => "OVERWRITE",
             ExistingEnrollmentAction::Skip => "SKIP",
-            ExistingEnrollmentAction::Unknown(value) => value.as_str(),
+            ExistingEnrollmentAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OVERWRITE", "SKIP"]
+        &[
+            "OVERWRITE", "SKIP"
+        ]
     }
 }
 impl AsRef<str> for ExistingEnrollmentAction {
@@ -2115,9 +1928,9 @@ impl AsRef<str> for ExistingEnrollmentAction {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let speakerenrollmentjobstatus = unimplemented!();
 /// match speakerenrollmentjobstatus {
@@ -2142,22 +1955,14 @@ impl AsRef<str> for ExistingEnrollmentAction {
 /// Specifically, when `speakerenrollmentjobstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SpeakerEnrollmentJobStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SpeakerEnrollmentJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -2170,7 +1975,7 @@ pub enum SpeakerEnrollmentJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Submitted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SpeakerEnrollmentJobStatus {
     fn from(s: &str) -> Self {
@@ -2180,19 +1985,17 @@ impl std::convert::From<&str> for SpeakerEnrollmentJobStatus {
             "FAILED" => SpeakerEnrollmentJobStatus::Failed,
             "IN_PROGRESS" => SpeakerEnrollmentJobStatus::InProgress,
             "SUBMITTED" => SpeakerEnrollmentJobStatus::Submitted,
-            other => SpeakerEnrollmentJobStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => SpeakerEnrollmentJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SpeakerEnrollmentJobStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SpeakerEnrollmentJobStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SpeakerEnrollmentJobStatus::from(s))
+                }
+            }
 impl SpeakerEnrollmentJobStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2202,17 +2005,13 @@ impl SpeakerEnrollmentJobStatus {
             SpeakerEnrollmentJobStatus::Failed => "FAILED",
             SpeakerEnrollmentJobStatus::InProgress => "IN_PROGRESS",
             SpeakerEnrollmentJobStatus::Submitted => "SUBMITTED",
-            SpeakerEnrollmentJobStatus::Unknown(value) => value.as_str(),
+            SpeakerEnrollmentJobStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "COMPLETED",
-            "COMPLETED_WITH_ERRORS",
-            "FAILED",
-            "IN_PROGRESS",
-            "SUBMITTED",
+            "COMPLETED", "COMPLETED_WITH_ERRORS", "FAILED", "IN_PROGRESS", "SUBMITTED"
         ]
     }
 }
@@ -2225,7 +2024,7 @@ impl AsRef<str> for SpeakerEnrollmentJobStatus {
 /// <p>Contains all the information about a fraudster registration job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct FraudsterRegistrationJob {
+pub struct FraudsterRegistrationJob  {
     /// <p>The client-provided name for the fraudster registration job.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
@@ -2265,55 +2064,55 @@ pub struct FraudsterRegistrationJob {
 }
 impl FraudsterRegistrationJob {
     /// <p>The client-provided name for the fraudster registration job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The service-generated identifier for the fraudster registration job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The current status of the fraudster registration job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::FraudsterRegistrationJobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::FraudsterRegistrationJobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The identifier of the domain containing the fraudster registration job.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
-    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> std::option::Option<& str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
-    pub fn registration_config(&self) -> std::option::Option<&crate::model::RegistrationConfig> {
+    pub fn registration_config(&self) -> std::option::Option<& crate::model::RegistrationConfig> {
         self.registration_config.as_ref()
     }
     /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration job requests.</p>
-    pub fn input_data_config(&self) -> std::option::Option<&crate::model::InputDataConfig> {
+    pub fn input_data_config(&self) -> std::option::Option<& crate::model::InputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p>The output data config containing the S3 location where you want Voice ID to write your job output file; you must also include a KMS key ID in order to encrypt the file.</p>
-    pub fn output_data_config(&self) -> std::option::Option<&crate::model::OutputDataConfig> {
+    pub fn output_data_config(&self) -> std::option::Option<& crate::model::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>A timestamp showing the creation time of the fraudster registration job.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A timestamp showing when the fraudster registration job ended.</p>
-    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn ended_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
-    pub fn failure_details(&self) -> std::option::Option<&crate::model::FailureDetails> {
+    pub fn failure_details(&self) -> std::option::Option<& crate::model::FailureDetails> {
         self.failure_details.as_ref()
     }
     /// <p>Shows the completed percentage of registration requests listed in the input file.</p>
-    pub fn job_progress(&self) -> std::option::Option<&crate::model::JobProgress> {
+    pub fn job_progress(&self) -> std::option::Option<& crate::model::JobProgress> {
         self.job_progress.as_ref()
     }
 }
-impl std::fmt::Debug for FraudsterRegistrationJob {
+impl  std::fmt::Debug for FraudsterRegistrationJob  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FraudsterRegistrationJob");
         formatter.field("job_name", &"*** Sensitive Data Redacted ***");
@@ -2333,7 +2132,7 @@ impl std::fmt::Debug for FraudsterRegistrationJob {
 }
 /// See [`FraudsterRegistrationJob`](crate::model::FraudsterRegistrationJob).
 pub mod fraudster_registration_job {
-
+    
     /// A builder for [`FraudsterRegistrationJob`](crate::model::FraudsterRegistrationJob).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2358,8 +2157,7 @@ pub mod fraudster_registration_job {
         }
         /// <p>The client-provided name for the fraudster registration job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_name = input;
-            self
+            self.job_name = input; self
         }
         /// <p>The service-generated identifier for the fraudster registration job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2368,8 +2166,7 @@ pub mod fraudster_registration_job {
         }
         /// <p>The service-generated identifier for the fraudster registration job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The current status of the fraudster registration job.</p>
         pub fn job_status(mut self, input: crate::model::FraudsterRegistrationJobStatus) -> Self {
@@ -2377,12 +2174,8 @@ pub mod fraudster_registration_job {
             self
         }
         /// <p>The current status of the fraudster registration job.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::FraudsterRegistrationJobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::FraudsterRegistrationJobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// <p>The identifier of the domain containing the fraudster registration job.</p>
         pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2391,8 +2184,7 @@ pub mod fraudster_registration_job {
         }
         /// <p>The identifier of the domain containing the fraudster registration job.</p>
         pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_id = input;
-            self
+            self.domain_id = input; self
         }
         /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
         pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2400,12 +2192,8 @@ pub mod fraudster_registration_job {
             self
         }
         /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file.</p>
-        pub fn set_data_access_role_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_access_role_arn = input;
-            self
+        pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.data_access_role_arn = input; self
         }
         /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
         pub fn registration_config(mut self, input: crate::model::RegistrationConfig) -> Self {
@@ -2413,12 +2201,8 @@ pub mod fraudster_registration_job {
             self
         }
         /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster.</p>
-        pub fn set_registration_config(
-            mut self,
-            input: std::option::Option<crate::model::RegistrationConfig>,
-        ) -> Self {
-            self.registration_config = input;
-            self
+        pub fn set_registration_config(mut self, input: std::option::Option<crate::model::RegistrationConfig>) -> Self {
+            self.registration_config = input; self
         }
         /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration job requests.</p>
         pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
@@ -2426,12 +2210,8 @@ pub mod fraudster_registration_job {
             self
         }
         /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration job requests.</p>
-        pub fn set_input_data_config(
-            mut self,
-            input: std::option::Option<crate::model::InputDataConfig>,
-        ) -> Self {
-            self.input_data_config = input;
-            self
+        pub fn set_input_data_config(mut self, input: std::option::Option<crate::model::InputDataConfig>) -> Self {
+            self.input_data_config = input; self
         }
         /// <p>The output data config containing the S3 location where you want Voice ID to write your job output file; you must also include a KMS key ID in order to encrypt the file.</p>
         pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
@@ -2439,12 +2219,8 @@ pub mod fraudster_registration_job {
             self
         }
         /// <p>The output data config containing the S3 location where you want Voice ID to write your job output file; you must also include a KMS key ID in order to encrypt the file.</p>
-        pub fn set_output_data_config(
-            mut self,
-            input: std::option::Option<crate::model::OutputDataConfig>,
-        ) -> Self {
-            self.output_data_config = input;
-            self
+        pub fn set_output_data_config(mut self, input: std::option::Option<crate::model::OutputDataConfig>) -> Self {
+            self.output_data_config = input; self
         }
         /// <p>A timestamp showing the creation time of the fraudster registration job.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2452,12 +2228,8 @@ pub mod fraudster_registration_job {
             self
         }
         /// <p>A timestamp showing the creation time of the fraudster registration job.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>A timestamp showing when the fraudster registration job ended.</p>
         pub fn ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2465,12 +2237,8 @@ pub mod fraudster_registration_job {
             self
         }
         /// <p>A timestamp showing when the fraudster registration job ended.</p>
-        pub fn set_ended_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.ended_at = input;
-            self
+        pub fn set_ended_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.ended_at = input; self
         }
         /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
         pub fn failure_details(mut self, input: crate::model::FailureDetails) -> Self {
@@ -2478,12 +2246,8 @@ pub mod fraudster_registration_job {
             self
         }
         /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
-        pub fn set_failure_details(
-            mut self,
-            input: std::option::Option<crate::model::FailureDetails>,
-        ) -> Self {
-            self.failure_details = input;
-            self
+        pub fn set_failure_details(mut self, input: std::option::Option<crate::model::FailureDetails>) -> Self {
+            self.failure_details = input; self
         }
         /// <p>Shows the completed percentage of registration requests listed in the input file.</p>
         pub fn job_progress(mut self, input: crate::model::JobProgress) -> Self {
@@ -2491,28 +2255,36 @@ pub mod fraudster_registration_job {
             self
         }
         /// <p>Shows the completed percentage of registration requests listed in the input file.</p>
-        pub fn set_job_progress(
-            mut self,
-            input: std::option::Option<crate::model::JobProgress>,
-        ) -> Self {
-            self.job_progress = input;
-            self
+        pub fn set_job_progress(mut self, input: std::option::Option<crate::model::JobProgress>) -> Self {
+            self.job_progress = input; self
         }
         /// Consumes the builder and constructs a [`FraudsterRegistrationJob`](crate::model::FraudsterRegistrationJob).
         pub fn build(self) -> crate::model::FraudsterRegistrationJob {
             crate::model::FraudsterRegistrationJob {
-                job_name: self.job_name,
-                job_id: self.job_id,
-                job_status: self.job_status,
-                domain_id: self.domain_id,
-                data_access_role_arn: self.data_access_role_arn,
-                registration_config: self.registration_config,
-                input_data_config: self.input_data_config,
-                output_data_config: self.output_data_config,
-                created_at: self.created_at,
-                ended_at: self.ended_at,
-                failure_details: self.failure_details,
-                job_progress: self.job_progress,
+                job_name: self.job_name
+                ,
+                job_id: self.job_id
+                ,
+                job_status: self.job_status
+                ,
+                domain_id: self.domain_id
+                ,
+                data_access_role_arn: self.data_access_role_arn
+                ,
+                registration_config: self.registration_config
+                ,
+                input_data_config: self.input_data_config
+                ,
+                output_data_config: self.output_data_config
+                ,
+                created_at: self.created_at
+                ,
+                ended_at: self.ended_at
+                ,
+                failure_details: self.failure_details
+                ,
+                job_progress: self.job_progress
+                ,
             }
         }
     }
@@ -2534,6 +2306,8 @@ pub mod fraudster_registration_job {
             formatter.finish()
         }
     }
+    
+    
 }
 impl FraudsterRegistrationJob {
     /// Creates a new builder-style object to manufacture [`FraudsterRegistrationJob`](crate::model::FraudsterRegistrationJob).
@@ -2545,20 +2319,17 @@ impl FraudsterRegistrationJob {
 /// <p>The configuration defining the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster during a batch fraudster registration job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegistrationConfig {
+pub struct RegistrationConfig  {
     /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
     #[doc(hidden)]
-    pub duplicate_registration_action:
-        std::option::Option<crate::model::DuplicateRegistrationAction>,
+    pub duplicate_registration_action: std::option::Option<crate::model::DuplicateRegistrationAction>,
     /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
     #[doc(hidden)]
     pub fraudster_similarity_threshold: std::option::Option<i32>,
 }
 impl RegistrationConfig {
     /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
-    pub fn duplicate_registration_action(
-        &self,
-    ) -> std::option::Option<&crate::model::DuplicateRegistrationAction> {
+    pub fn duplicate_registration_action(&self) -> std::option::Option<& crate::model::DuplicateRegistrationAction> {
         self.duplicate_registration_action.as_ref()
     }
     /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
@@ -2568,30 +2339,22 @@ impl RegistrationConfig {
 }
 /// See [`RegistrationConfig`](crate::model::RegistrationConfig).
 pub mod registration_config {
-
+    
     /// A builder for [`RegistrationConfig`](crate::model::RegistrationConfig).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) duplicate_registration_action:
-            std::option::Option<crate::model::DuplicateRegistrationAction>,
+        pub(crate) duplicate_registration_action: std::option::Option<crate::model::DuplicateRegistrationAction>,
         pub(crate) fraudster_similarity_threshold: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
-        pub fn duplicate_registration_action(
-            mut self,
-            input: crate::model::DuplicateRegistrationAction,
-        ) -> Self {
+        pub fn duplicate_registration_action(mut self, input: crate::model::DuplicateRegistrationAction) -> Self {
             self.duplicate_registration_action = Some(input);
             self
         }
         /// <p>The action to take when a fraudster is identified as a duplicate. The default action is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified domain.</p>
-        pub fn set_duplicate_registration_action(
-            mut self,
-            input: std::option::Option<crate::model::DuplicateRegistrationAction>,
-        ) -> Self {
-            self.duplicate_registration_action = input;
-            self
+        pub fn set_duplicate_registration_action(mut self, input: std::option::Option<crate::model::DuplicateRegistrationAction>) -> Self {
+            self.duplicate_registration_action = input; self
         }
         /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
         pub fn fraudster_similarity_threshold(mut self, input: i32) -> Self {
@@ -2599,21 +2362,21 @@ pub mod registration_config {
             self
         }
         /// <p>The minimum similarity score between the new and old fraudsters in order to consider the new fraudster a duplicate.</p>
-        pub fn set_fraudster_similarity_threshold(
-            mut self,
-            input: std::option::Option<i32>,
-        ) -> Self {
-            self.fraudster_similarity_threshold = input;
-            self
+        pub fn set_fraudster_similarity_threshold(mut self, input: std::option::Option<i32>) -> Self {
+            self.fraudster_similarity_threshold = input; self
         }
         /// Consumes the builder and constructs a [`RegistrationConfig`](crate::model::RegistrationConfig).
         pub fn build(self) -> crate::model::RegistrationConfig {
             crate::model::RegistrationConfig {
-                duplicate_registration_action: self.duplicate_registration_action,
-                fraudster_similarity_threshold: self.fraudster_similarity_threshold,
+                duplicate_registration_action: self.duplicate_registration_action
+                ,
+                fraudster_similarity_threshold: self.fraudster_similarity_threshold
+                ,
             }
         }
     }
+    
+    
 }
 impl RegistrationConfig {
     /// Creates a new builder-style object to manufacture [`RegistrationConfig`](crate::model::RegistrationConfig).
@@ -2628,9 +2391,9 @@ impl RegistrationConfig {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let duplicateregistrationaction = unimplemented!();
 /// match duplicateregistrationaction {
@@ -2652,60 +2415,52 @@ impl RegistrationConfig {
 /// Specifically, when `duplicateregistrationaction` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DuplicateRegistrationAction::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DuplicateRegistrationAction {
     #[allow(missing_docs)] // documentation missing in model
     RegisterAsNew,
     #[allow(missing_docs)] // documentation missing in model
     Skip,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DuplicateRegistrationAction {
     fn from(s: &str) -> Self {
         match s {
             "REGISTER_AS_NEW" => DuplicateRegistrationAction::RegisterAsNew,
             "SKIP" => DuplicateRegistrationAction::Skip,
-            other => DuplicateRegistrationAction::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DuplicateRegistrationAction::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DuplicateRegistrationAction {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DuplicateRegistrationAction::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DuplicateRegistrationAction::from(s))
+                }
+            }
 impl DuplicateRegistrationAction {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DuplicateRegistrationAction::RegisterAsNew => "REGISTER_AS_NEW",
             DuplicateRegistrationAction::Skip => "SKIP",
-            DuplicateRegistrationAction::Unknown(value) => value.as_str(),
+            DuplicateRegistrationAction::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["REGISTER_AS_NEW", "SKIP"]
+        &[
+            "REGISTER_AS_NEW", "SKIP"
+        ]
     }
 }
 impl AsRef<str> for DuplicateRegistrationAction {
@@ -2720,9 +2475,9 @@ impl AsRef<str> for DuplicateRegistrationAction {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let fraudsterregistrationjobstatus = unimplemented!();
 /// match fraudsterregistrationjobstatus {
@@ -2747,22 +2502,14 @@ impl AsRef<str> for DuplicateRegistrationAction {
 /// Specifically, when `fraudsterregistrationjobstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FraudsterRegistrationJobStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FraudsterRegistrationJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -2775,7 +2522,7 @@ pub enum FraudsterRegistrationJobStatus {
     #[allow(missing_docs)] // documentation missing in model
     Submitted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FraudsterRegistrationJobStatus {
     fn from(s: &str) -> Self {
@@ -2785,19 +2532,17 @@ impl std::convert::From<&str> for FraudsterRegistrationJobStatus {
             "FAILED" => FraudsterRegistrationJobStatus::Failed,
             "IN_PROGRESS" => FraudsterRegistrationJobStatus::InProgress,
             "SUBMITTED" => FraudsterRegistrationJobStatus::Submitted,
-            other => FraudsterRegistrationJobStatus::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => FraudsterRegistrationJobStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FraudsterRegistrationJobStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FraudsterRegistrationJobStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FraudsterRegistrationJobStatus::from(s))
+                }
+            }
 impl FraudsterRegistrationJobStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -2807,17 +2552,13 @@ impl FraudsterRegistrationJobStatus {
             FraudsterRegistrationJobStatus::Failed => "FAILED",
             FraudsterRegistrationJobStatus::InProgress => "IN_PROGRESS",
             FraudsterRegistrationJobStatus::Submitted => "SUBMITTED",
-            FraudsterRegistrationJobStatus::Unknown(value) => value.as_str(),
+            FraudsterRegistrationJobStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "COMPLETED",
-            "COMPLETED_WITH_ERRORS",
-            "FAILED",
-            "IN_PROGRESS",
-            "SUBMITTED",
+            "COMPLETED", "COMPLETED_WITH_ERRORS", "FAILED", "IN_PROGRESS", "SUBMITTED"
         ]
     }
 }
@@ -2830,7 +2571,7 @@ impl AsRef<str> for FraudsterRegistrationJobStatus {
 /// <p>Contains all the information about a speaker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Speaker {
+pub struct Speaker  {
     /// <p>The identifier of the domain that contains the speaker.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -2855,35 +2596,35 @@ pub struct Speaker {
 }
 impl Speaker {
     /// <p>The identifier of the domain that contains the speaker.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The client-provided identifier for the speaker.</p>
-    pub fn customer_speaker_id(&self) -> std::option::Option<&str> {
+    pub fn customer_speaker_id(&self) -> std::option::Option<& str> {
         self.customer_speaker_id.as_deref()
     }
     /// <p>The service-generated identifier for the speaker.</p>
-    pub fn generated_speaker_id(&self) -> std::option::Option<&str> {
+    pub fn generated_speaker_id(&self) -> std::option::Option<& str> {
         self.generated_speaker_id.as_deref()
     }
     /// <p>The current status of the speaker.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::SpeakerStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::SpeakerStatus> {
         self.status.as_ref()
     }
     /// <p>A timestamp showing when the speaker is created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A timestamp showing the speaker's last update.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
-    pub fn last_accessed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_accessed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_accessed_at.as_ref()
     }
 }
-impl std::fmt::Debug for Speaker {
+impl  std::fmt::Debug for Speaker  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Speaker");
         formatter.field("domain_id", &self.domain_id);
@@ -2898,7 +2639,7 @@ impl std::fmt::Debug for Speaker {
 }
 /// See [`Speaker`](crate::model::Speaker).
 pub mod speaker {
-
+    
     /// A builder for [`Speaker`](crate::model::Speaker).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2918,8 +2659,7 @@ pub mod speaker {
         }
         /// <p>The identifier of the domain that contains the speaker.</p>
         pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_id = input;
-            self
+            self.domain_id = input; self
         }
         /// <p>The client-provided identifier for the speaker.</p>
         pub fn customer_speaker_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2927,12 +2667,8 @@ pub mod speaker {
             self
         }
         /// <p>The client-provided identifier for the speaker.</p>
-        pub fn set_customer_speaker_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.customer_speaker_id = input;
-            self
+        pub fn set_customer_speaker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_speaker_id = input; self
         }
         /// <p>The service-generated identifier for the speaker.</p>
         pub fn generated_speaker_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2940,12 +2676,8 @@ pub mod speaker {
             self
         }
         /// <p>The service-generated identifier for the speaker.</p>
-        pub fn set_generated_speaker_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.generated_speaker_id = input;
-            self
+        pub fn set_generated_speaker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.generated_speaker_id = input; self
         }
         /// <p>The current status of the speaker.</p>
         pub fn status(mut self, input: crate::model::SpeakerStatus) -> Self {
@@ -2953,12 +2685,8 @@ pub mod speaker {
             self
         }
         /// <p>The current status of the speaker.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::SpeakerStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::SpeakerStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A timestamp showing when the speaker is created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2966,12 +2694,8 @@ pub mod speaker {
             self
         }
         /// <p>A timestamp showing when the speaker is created. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>A timestamp showing the speaker's last update.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2979,12 +2703,8 @@ pub mod speaker {
             self
         }
         /// <p>A timestamp showing the speaker's last update.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
         pub fn last_accessed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2992,23 +2712,26 @@ pub mod speaker {
             self
         }
         /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
-        pub fn set_last_accessed_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_accessed_at = input;
-            self
+        pub fn set_last_accessed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_accessed_at = input; self
         }
         /// Consumes the builder and constructs a [`Speaker`](crate::model::Speaker).
         pub fn build(self) -> crate::model::Speaker {
             crate::model::Speaker {
-                domain_id: self.domain_id,
-                customer_speaker_id: self.customer_speaker_id,
-                generated_speaker_id: self.generated_speaker_id,
-                status: self.status,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
-                last_accessed_at: self.last_accessed_at,
+                domain_id: self.domain_id
+                ,
+                customer_speaker_id: self.customer_speaker_id
+                ,
+                generated_speaker_id: self.generated_speaker_id
+                ,
+                status: self.status
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                last_accessed_at: self.last_accessed_at
+                ,
             }
         }
     }
@@ -3025,6 +2748,8 @@ pub mod speaker {
             formatter.finish()
         }
     }
+    
+    
 }
 impl Speaker {
     /// Creates a new builder-style object to manufacture [`Speaker`](crate::model::Speaker).
@@ -3039,9 +2764,9 @@ impl Speaker {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let speakerstatus = unimplemented!();
 /// match speakerstatus {
@@ -3065,22 +2790,14 @@ impl Speaker {
 /// Specifically, when `speakerstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SpeakerStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum SpeakerStatus {
     #[allow(missing_docs)] // documentation missing in model
     Enrolled,
@@ -3091,7 +2808,7 @@ pub enum SpeakerStatus {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for SpeakerStatus {
     fn from(s: &str) -> Self {
@@ -3100,17 +2817,17 @@ impl std::convert::From<&str> for SpeakerStatus {
             "EXPIRED" => SpeakerStatus::Expired,
             "OPTED_OUT" => SpeakerStatus::OptedOut,
             "PENDING" => SpeakerStatus::Pending,
-            other => SpeakerStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => SpeakerStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for SpeakerStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SpeakerStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(SpeakerStatus::from(s))
+                }
+            }
 impl SpeakerStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -3119,12 +2836,14 @@ impl SpeakerStatus {
             SpeakerStatus::Expired => "EXPIRED",
             SpeakerStatus::OptedOut => "OPTED_OUT",
             SpeakerStatus::Pending => "PENDING",
-            SpeakerStatus::Unknown(value) => value.as_str(),
+            SpeakerStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ENROLLED", "EXPIRED", "OPTED_OUT", "PENDING"]
+        &[
+            "ENROLLED", "EXPIRED", "OPTED_OUT", "PENDING"
+        ]
     }
 }
 impl AsRef<str> for SpeakerStatus {
@@ -3136,7 +2855,7 @@ impl AsRef<str> for SpeakerStatus {
 /// <p>Contains a summary of information about a speaker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SpeakerSummary {
+pub struct SpeakerSummary  {
     /// <p>The identifier of the domain that contains the speaker.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -3161,35 +2880,35 @@ pub struct SpeakerSummary {
 }
 impl SpeakerSummary {
     /// <p>The identifier of the domain that contains the speaker.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The client-provided identifier for the speaker.</p>
-    pub fn customer_speaker_id(&self) -> std::option::Option<&str> {
+    pub fn customer_speaker_id(&self) -> std::option::Option<& str> {
         self.customer_speaker_id.as_deref()
     }
     /// <p>The service-generated identifier for the speaker. </p>
-    pub fn generated_speaker_id(&self) -> std::option::Option<&str> {
+    pub fn generated_speaker_id(&self) -> std::option::Option<& str> {
         self.generated_speaker_id.as_deref()
     }
     /// <p>The current status of the speaker.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::SpeakerStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::SpeakerStatus> {
         self.status.as_ref()
     }
     /// <p>A timestamp showing the speaker's creation time. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A timestamp showing the speaker's last update.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
-    pub fn last_accessed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_accessed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_accessed_at.as_ref()
     }
 }
-impl std::fmt::Debug for SpeakerSummary {
+impl  std::fmt::Debug for SpeakerSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SpeakerSummary");
         formatter.field("domain_id", &self.domain_id);
@@ -3204,7 +2923,7 @@ impl std::fmt::Debug for SpeakerSummary {
 }
 /// See [`SpeakerSummary`](crate::model::SpeakerSummary).
 pub mod speaker_summary {
-
+    
     /// A builder for [`SpeakerSummary`](crate::model::SpeakerSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3224,8 +2943,7 @@ pub mod speaker_summary {
         }
         /// <p>The identifier of the domain that contains the speaker.</p>
         pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_id = input;
-            self
+            self.domain_id = input; self
         }
         /// <p>The client-provided identifier for the speaker.</p>
         pub fn customer_speaker_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3233,12 +2951,8 @@ pub mod speaker_summary {
             self
         }
         /// <p>The client-provided identifier for the speaker.</p>
-        pub fn set_customer_speaker_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.customer_speaker_id = input;
-            self
+        pub fn set_customer_speaker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_speaker_id = input; self
         }
         /// <p>The service-generated identifier for the speaker. </p>
         pub fn generated_speaker_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3246,12 +2960,8 @@ pub mod speaker_summary {
             self
         }
         /// <p>The service-generated identifier for the speaker. </p>
-        pub fn set_generated_speaker_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.generated_speaker_id = input;
-            self
+        pub fn set_generated_speaker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.generated_speaker_id = input; self
         }
         /// <p>The current status of the speaker.</p>
         pub fn status(mut self, input: crate::model::SpeakerStatus) -> Self {
@@ -3259,12 +2969,8 @@ pub mod speaker_summary {
             self
         }
         /// <p>The current status of the speaker.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::SpeakerStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::SpeakerStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>A timestamp showing the speaker's creation time. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3272,12 +2978,8 @@ pub mod speaker_summary {
             self
         }
         /// <p>A timestamp showing the speaker's creation time. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>A timestamp showing the speaker's last update.</p>
         pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3285,12 +2987,8 @@ pub mod speaker_summary {
             self
         }
         /// <p>A timestamp showing the speaker's last update.</p>
-        pub fn set_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_at = input;
-            self
+        pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_at = input; self
         }
         /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
         pub fn last_accessed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3298,23 +2996,26 @@ pub mod speaker_summary {
             self
         }
         /// <p>The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication. This timestamp is accurate to one hour.</p>
-        pub fn set_last_accessed_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_accessed_at = input;
-            self
+        pub fn set_last_accessed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_accessed_at = input; self
         }
         /// Consumes the builder and constructs a [`SpeakerSummary`](crate::model::SpeakerSummary).
         pub fn build(self) -> crate::model::SpeakerSummary {
             crate::model::SpeakerSummary {
-                domain_id: self.domain_id,
-                customer_speaker_id: self.customer_speaker_id,
-                generated_speaker_id: self.generated_speaker_id,
-                status: self.status,
-                created_at: self.created_at,
-                updated_at: self.updated_at,
-                last_accessed_at: self.last_accessed_at,
+                domain_id: self.domain_id
+                ,
+                customer_speaker_id: self.customer_speaker_id
+                ,
+                generated_speaker_id: self.generated_speaker_id
+                ,
+                status: self.status
+                ,
+                created_at: self.created_at
+                ,
+                updated_at: self.updated_at
+                ,
+                last_accessed_at: self.last_accessed_at
+                ,
             }
         }
     }
@@ -3331,6 +3032,8 @@ pub mod speaker_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl SpeakerSummary {
     /// Creates a new builder-style object to manufacture [`SpeakerSummary`](crate::model::SpeakerSummary).
@@ -3342,7 +3045,7 @@ impl SpeakerSummary {
 /// <p>Contains a summary of information about a speaker enrollment job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SpeakerEnrollmentJobSummary {
+pub struct SpeakerEnrollmentJobSummary  {
     /// <p>The client-provided name for the speaker enrollment job.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
@@ -3370,39 +3073,39 @@ pub struct SpeakerEnrollmentJobSummary {
 }
 impl SpeakerEnrollmentJobSummary {
     /// <p>The client-provided name for the speaker enrollment job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The service-generated identifier for the speaker enrollment job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The current status of the speaker enrollment job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::SpeakerEnrollmentJobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::SpeakerEnrollmentJobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The identifier of the domain that contains the speaker enrollment job.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>A timestamp showing the creation time of the speaker enrollment job.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A timestamp showing when the speaker enrollment job ended.</p>
-    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn ended_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
-    pub fn failure_details(&self) -> std::option::Option<&crate::model::FailureDetails> {
+    pub fn failure_details(&self) -> std::option::Option<& crate::model::FailureDetails> {
         self.failure_details.as_ref()
     }
     /// <p>Provides details regarding job progress. This field shows the completed percentage of enrollment requests listed in the input file.</p>
-    pub fn job_progress(&self) -> std::option::Option<&crate::model::JobProgress> {
+    pub fn job_progress(&self) -> std::option::Option<& crate::model::JobProgress> {
         self.job_progress.as_ref()
     }
 }
-impl std::fmt::Debug for SpeakerEnrollmentJobSummary {
+impl  std::fmt::Debug for SpeakerEnrollmentJobSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SpeakerEnrollmentJobSummary");
         formatter.field("job_name", &"*** Sensitive Data Redacted ***");
@@ -3418,7 +3121,7 @@ impl std::fmt::Debug for SpeakerEnrollmentJobSummary {
 }
 /// See [`SpeakerEnrollmentJobSummary`](crate::model::SpeakerEnrollmentJobSummary).
 pub mod speaker_enrollment_job_summary {
-
+    
     /// A builder for [`SpeakerEnrollmentJobSummary`](crate::model::SpeakerEnrollmentJobSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3439,8 +3142,7 @@ pub mod speaker_enrollment_job_summary {
         }
         /// <p>The client-provided name for the speaker enrollment job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_name = input;
-            self
+            self.job_name = input; self
         }
         /// <p>The service-generated identifier for the speaker enrollment job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3449,8 +3151,7 @@ pub mod speaker_enrollment_job_summary {
         }
         /// <p>The service-generated identifier for the speaker enrollment job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The current status of the speaker enrollment job.</p>
         pub fn job_status(mut self, input: crate::model::SpeakerEnrollmentJobStatus) -> Self {
@@ -3458,12 +3159,8 @@ pub mod speaker_enrollment_job_summary {
             self
         }
         /// <p>The current status of the speaker enrollment job.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::SpeakerEnrollmentJobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::SpeakerEnrollmentJobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// <p>The identifier of the domain that contains the speaker enrollment job.</p>
         pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3472,8 +3169,7 @@ pub mod speaker_enrollment_job_summary {
         }
         /// <p>The identifier of the domain that contains the speaker enrollment job.</p>
         pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_id = input;
-            self
+            self.domain_id = input; self
         }
         /// <p>A timestamp showing the creation time of the speaker enrollment job.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3481,12 +3177,8 @@ pub mod speaker_enrollment_job_summary {
             self
         }
         /// <p>A timestamp showing the creation time of the speaker enrollment job.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>A timestamp showing when the speaker enrollment job ended.</p>
         pub fn ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3494,12 +3186,8 @@ pub mod speaker_enrollment_job_summary {
             self
         }
         /// <p>A timestamp showing when the speaker enrollment job ended.</p>
-        pub fn set_ended_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.ended_at = input;
-            self
+        pub fn set_ended_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.ended_at = input; self
         }
         /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
         pub fn failure_details(mut self, input: crate::model::FailureDetails) -> Self {
@@ -3507,12 +3195,8 @@ pub mod speaker_enrollment_job_summary {
             self
         }
         /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
-        pub fn set_failure_details(
-            mut self,
-            input: std::option::Option<crate::model::FailureDetails>,
-        ) -> Self {
-            self.failure_details = input;
-            self
+        pub fn set_failure_details(mut self, input: std::option::Option<crate::model::FailureDetails>) -> Self {
+            self.failure_details = input; self
         }
         /// <p>Provides details regarding job progress. This field shows the completed percentage of enrollment requests listed in the input file.</p>
         pub fn job_progress(mut self, input: crate::model::JobProgress) -> Self {
@@ -3520,24 +3204,28 @@ pub mod speaker_enrollment_job_summary {
             self
         }
         /// <p>Provides details regarding job progress. This field shows the completed percentage of enrollment requests listed in the input file.</p>
-        pub fn set_job_progress(
-            mut self,
-            input: std::option::Option<crate::model::JobProgress>,
-        ) -> Self {
-            self.job_progress = input;
-            self
+        pub fn set_job_progress(mut self, input: std::option::Option<crate::model::JobProgress>) -> Self {
+            self.job_progress = input; self
         }
         /// Consumes the builder and constructs a [`SpeakerEnrollmentJobSummary`](crate::model::SpeakerEnrollmentJobSummary).
         pub fn build(self) -> crate::model::SpeakerEnrollmentJobSummary {
             crate::model::SpeakerEnrollmentJobSummary {
-                job_name: self.job_name,
-                job_id: self.job_id,
-                job_status: self.job_status,
-                domain_id: self.domain_id,
-                created_at: self.created_at,
-                ended_at: self.ended_at,
-                failure_details: self.failure_details,
-                job_progress: self.job_progress,
+                job_name: self.job_name
+                ,
+                job_id: self.job_id
+                ,
+                job_status: self.job_status
+                ,
+                domain_id: self.domain_id
+                ,
+                created_at: self.created_at
+                ,
+                ended_at: self.ended_at
+                ,
+                failure_details: self.failure_details
+                ,
+                job_progress: self.job_progress
+                ,
             }
         }
     }
@@ -3555,6 +3243,8 @@ pub mod speaker_enrollment_job_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl SpeakerEnrollmentJobSummary {
     /// Creates a new builder-style object to manufacture [`SpeakerEnrollmentJobSummary`](crate::model::SpeakerEnrollmentJobSummary).
@@ -3566,7 +3256,7 @@ impl SpeakerEnrollmentJobSummary {
 /// <p>Contains a summary of information about a fraudster registration job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct FraudsterRegistrationJobSummary {
+pub struct FraudsterRegistrationJobSummary  {
     /// <p>The client-provided name for the fraudster registration job.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
@@ -3594,39 +3284,39 @@ pub struct FraudsterRegistrationJobSummary {
 }
 impl FraudsterRegistrationJobSummary {
     /// <p>The client-provided name for the fraudster registration job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> std::option::Option<& str> {
         self.job_name.as_deref()
     }
     /// <p>The service-generated identifier for the fraudster registration job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> std::option::Option<& str> {
         self.job_id.as_deref()
     }
     /// <p>The current status of the fraudster registration job.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::model::FraudsterRegistrationJobStatus> {
+    pub fn job_status(&self) -> std::option::Option<& crate::model::FraudsterRegistrationJobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The identifier of the domain containing the fraudster registration job.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>A timestamp showing when the fraudster registration job is created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>A timestamp showing when the fraudster registration job ended.</p>
-    pub fn ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn ended_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
     /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
-    pub fn failure_details(&self) -> std::option::Option<&crate::model::FailureDetails> {
+    pub fn failure_details(&self) -> std::option::Option<& crate::model::FailureDetails> {
         self.failure_details.as_ref()
     }
     /// <p>Shows the completed percentage of registration requests listed in the input file.</p>
-    pub fn job_progress(&self) -> std::option::Option<&crate::model::JobProgress> {
+    pub fn job_progress(&self) -> std::option::Option<& crate::model::JobProgress> {
         self.job_progress.as_ref()
     }
 }
-impl std::fmt::Debug for FraudsterRegistrationJobSummary {
+impl  std::fmt::Debug for FraudsterRegistrationJobSummary  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FraudsterRegistrationJobSummary");
         formatter.field("job_name", &"*** Sensitive Data Redacted ***");
@@ -3642,7 +3332,7 @@ impl std::fmt::Debug for FraudsterRegistrationJobSummary {
 }
 /// See [`FraudsterRegistrationJobSummary`](crate::model::FraudsterRegistrationJobSummary).
 pub mod fraudster_registration_job_summary {
-
+    
     /// A builder for [`FraudsterRegistrationJobSummary`](crate::model::FraudsterRegistrationJobSummary).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -3663,8 +3353,7 @@ pub mod fraudster_registration_job_summary {
         }
         /// <p>The client-provided name for the fraudster registration job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_name = input;
-            self
+            self.job_name = input; self
         }
         /// <p>The service-generated identifier for the fraudster registration job.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3673,8 +3362,7 @@ pub mod fraudster_registration_job_summary {
         }
         /// <p>The service-generated identifier for the fraudster registration job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.job_id = input;
-            self
+            self.job_id = input; self
         }
         /// <p>The current status of the fraudster registration job.</p>
         pub fn job_status(mut self, input: crate::model::FraudsterRegistrationJobStatus) -> Self {
@@ -3682,12 +3370,8 @@ pub mod fraudster_registration_job_summary {
             self
         }
         /// <p>The current status of the fraudster registration job.</p>
-        pub fn set_job_status(
-            mut self,
-            input: std::option::Option<crate::model::FraudsterRegistrationJobStatus>,
-        ) -> Self {
-            self.job_status = input;
-            self
+        pub fn set_job_status(mut self, input: std::option::Option<crate::model::FraudsterRegistrationJobStatus>) -> Self {
+            self.job_status = input; self
         }
         /// <p>The identifier of the domain containing the fraudster registration job.</p>
         pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3696,8 +3380,7 @@ pub mod fraudster_registration_job_summary {
         }
         /// <p>The identifier of the domain containing the fraudster registration job.</p>
         pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_id = input;
-            self
+            self.domain_id = input; self
         }
         /// <p>A timestamp showing when the fraudster registration job is created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3705,12 +3388,8 @@ pub mod fraudster_registration_job_summary {
             self
         }
         /// <p>A timestamp showing when the fraudster registration job is created. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p>A timestamp showing when the fraudster registration job ended.</p>
         pub fn ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3718,12 +3397,8 @@ pub mod fraudster_registration_job_summary {
             self
         }
         /// <p>A timestamp showing when the fraudster registration job ended.</p>
-        pub fn set_ended_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.ended_at = input;
-            self
+        pub fn set_ended_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.ended_at = input; self
         }
         /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
         pub fn failure_details(mut self, input: crate::model::FailureDetails) -> Self {
@@ -3731,12 +3406,8 @@ pub mod fraudster_registration_job_summary {
             self
         }
         /// <p>Contains details that are populated when an entire batch job fails. In cases of individual registration job failures, the batch job as a whole doesn't fail; it is completed with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the job output file to identify the individual registration requests that failed.</p>
-        pub fn set_failure_details(
-            mut self,
-            input: std::option::Option<crate::model::FailureDetails>,
-        ) -> Self {
-            self.failure_details = input;
-            self
+        pub fn set_failure_details(mut self, input: std::option::Option<crate::model::FailureDetails>) -> Self {
+            self.failure_details = input; self
         }
         /// <p>Shows the completed percentage of registration requests listed in the input file.</p>
         pub fn job_progress(mut self, input: crate::model::JobProgress) -> Self {
@@ -3744,24 +3415,28 @@ pub mod fraudster_registration_job_summary {
             self
         }
         /// <p>Shows the completed percentage of registration requests listed in the input file.</p>
-        pub fn set_job_progress(
-            mut self,
-            input: std::option::Option<crate::model::JobProgress>,
-        ) -> Self {
-            self.job_progress = input;
-            self
+        pub fn set_job_progress(mut self, input: std::option::Option<crate::model::JobProgress>) -> Self {
+            self.job_progress = input; self
         }
         /// Consumes the builder and constructs a [`FraudsterRegistrationJobSummary`](crate::model::FraudsterRegistrationJobSummary).
         pub fn build(self) -> crate::model::FraudsterRegistrationJobSummary {
             crate::model::FraudsterRegistrationJobSummary {
-                job_name: self.job_name,
-                job_id: self.job_id,
-                job_status: self.job_status,
-                domain_id: self.domain_id,
-                created_at: self.created_at,
-                ended_at: self.ended_at,
-                failure_details: self.failure_details,
-                job_progress: self.job_progress,
+                job_name: self.job_name
+                ,
+                job_id: self.job_id
+                ,
+                job_status: self.job_status
+                ,
+                domain_id: self.domain_id
+                ,
+                created_at: self.created_at
+                ,
+                ended_at: self.ended_at
+                ,
+                failure_details: self.failure_details
+                ,
+                job_progress: self.job_progress
+                ,
             }
         }
     }
@@ -3779,6 +3454,8 @@ pub mod fraudster_registration_job_summary {
             formatter.finish()
         }
     }
+    
+    
 }
 impl FraudsterRegistrationJobSummary {
     /// Creates a new builder-style object to manufacture [`FraudsterRegistrationJobSummary`](crate::model::FraudsterRegistrationJobSummary).
@@ -3790,7 +3467,7 @@ impl FraudsterRegistrationJobSummary {
 /// <p>The fraud detection result produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FraudDetectionResult {
+pub struct FraudDetectionResult  {
     /// <p>The unique identifier for this fraud detection result. Given there can be multiple fraud detections for a given session, this field helps in identifying if the returned result is from previous streaming activity or a new result. Note that in the absence of any new streaming activity or risk threshold changes, Voice ID always returns cached Fraud Detection result for this API.</p>
     #[doc(hidden)]
     pub fraud_detection_result_id: std::option::Option<std::string::String>,
@@ -3815,37 +3492,37 @@ pub struct FraudDetectionResult {
 }
 impl FraudDetectionResult {
     /// <p>The unique identifier for this fraud detection result. Given there can be multiple fraud detections for a given session, this field helps in identifying if the returned result is from previous streaming activity or a new result. Note that in the absence of any new streaming activity or risk threshold changes, Voice ID always returns cached Fraud Detection result for this API.</p>
-    pub fn fraud_detection_result_id(&self) -> std::option::Option<&str> {
+    pub fn fraud_detection_result_id(&self) -> std::option::Option<& str> {
         self.fraud_detection_result_id.as_deref()
     }
     /// <p>A timestamp indicating when audio aggregation started for this fraud detection result.</p>
-    pub fn audio_aggregation_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn audio_aggregation_started_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.audio_aggregation_started_at.as_ref()
     }
     /// <p>A timestamp indicating when audio aggregation ended for this fraud detection result.</p>
-    pub fn audio_aggregation_ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn audio_aggregation_ended_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.audio_aggregation_ended_at.as_ref()
     }
     /// <p>The <code>FraudDetectionConfiguration</code> used to generate this fraud detection result.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::model::FraudDetectionConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::model::FraudDetectionConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The fraud detection decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
-    pub fn decision(&self) -> std::option::Option<&crate::model::FraudDetectionDecision> {
+    pub fn decision(&self) -> std::option::Option<& crate::model::FraudDetectionDecision> {
         self.decision.as_ref()
     }
     /// <p>The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection Decision is <code>HIGH_RISK</code>, and the following possible values: <code>KNOWN_FRAUDSTER</code> and <code>VOICE_SPOOFING</code>.</p>
-    pub fn reasons(&self) -> std::option::Option<&[crate::model::FraudDetectionReason]> {
+    pub fn reasons(&self) -> std::option::Option<& [crate::model::FraudDetectionReason]> {
         self.reasons.as_deref()
     }
     /// <p>Details about each risk analyzed for this speaker. Currently, this contains KnownFraudsterRisk and VoiceSpoofingRisk details.</p>
-    pub fn risk_details(&self) -> std::option::Option<&crate::model::FraudRiskDetails> {
+    pub fn risk_details(&self) -> std::option::Option<& crate::model::FraudRiskDetails> {
         self.risk_details.as_ref()
     }
 }
 /// See [`FraudDetectionResult`](crate::model::FraudDetectionResult).
 pub mod fraud_detection_result {
-
+    
     /// A builder for [`FraudDetectionResult`](crate::model::FraudDetectionResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -3864,12 +3541,8 @@ pub mod fraud_detection_result {
             self
         }
         /// <p>The unique identifier for this fraud detection result. Given there can be multiple fraud detections for a given session, this field helps in identifying if the returned result is from previous streaming activity or a new result. Note that in the absence of any new streaming activity or risk threshold changes, Voice ID always returns cached Fraud Detection result for this API.</p>
-        pub fn set_fraud_detection_result_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.fraud_detection_result_id = input;
-            self
+        pub fn set_fraud_detection_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.fraud_detection_result_id = input; self
         }
         /// <p>A timestamp indicating when audio aggregation started for this fraud detection result.</p>
         pub fn audio_aggregation_started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3877,12 +3550,8 @@ pub mod fraud_detection_result {
             self
         }
         /// <p>A timestamp indicating when audio aggregation started for this fraud detection result.</p>
-        pub fn set_audio_aggregation_started_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.audio_aggregation_started_at = input;
-            self
+        pub fn set_audio_aggregation_started_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.audio_aggregation_started_at = input; self
         }
         /// <p>A timestamp indicating when audio aggregation ended for this fraud detection result.</p>
         pub fn audio_aggregation_ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -3890,12 +3559,8 @@ pub mod fraud_detection_result {
             self
         }
         /// <p>A timestamp indicating when audio aggregation ended for this fraud detection result.</p>
-        pub fn set_audio_aggregation_ended_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.audio_aggregation_ended_at = input;
-            self
+        pub fn set_audio_aggregation_ended_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.audio_aggregation_ended_at = input; self
         }
         /// <p>The <code>FraudDetectionConfiguration</code> used to generate this fraud detection result.</p>
         pub fn configuration(mut self, input: crate::model::FraudDetectionConfiguration) -> Self {
@@ -3903,12 +3568,8 @@ pub mod fraud_detection_result {
             self
         }
         /// <p>The <code>FraudDetectionConfiguration</code> used to generate this fraud detection result.</p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<crate::model::FraudDetectionConfiguration>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<crate::model::FraudDetectionConfiguration>) -> Self {
+            self.configuration = input; self
         }
         /// <p>The fraud detection decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
         pub fn decision(mut self, input: crate::model::FraudDetectionDecision) -> Self {
@@ -3916,12 +3577,8 @@ pub mod fraud_detection_result {
             self
         }
         /// <p>The fraud detection decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
-        pub fn set_decision(
-            mut self,
-            input: std::option::Option<crate::model::FraudDetectionDecision>,
-        ) -> Self {
-            self.decision = input;
-            self
+        pub fn set_decision(mut self, input: std::option::Option<crate::model::FraudDetectionDecision>) -> Self {
+            self.decision = input; self
         }
         /// Appends an item to `reasons`.
         ///
@@ -3930,17 +3587,13 @@ pub mod fraud_detection_result {
         /// <p>The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection Decision is <code>HIGH_RISK</code>, and the following possible values: <code>KNOWN_FRAUDSTER</code> and <code>VOICE_SPOOFING</code>.</p>
         pub fn reasons(mut self, input: crate::model::FraudDetectionReason) -> Self {
             let mut v = self.reasons.unwrap_or_default();
-            v.push(input);
-            self.reasons = Some(v);
-            self
+                            v.push(input);
+                            self.reasons = Some(v);
+                            self
         }
         /// <p>The reason speaker was flagged by the fraud detection system. This is only be populated if fraud detection Decision is <code>HIGH_RISK</code>, and the following possible values: <code>KNOWN_FRAUDSTER</code> and <code>VOICE_SPOOFING</code>.</p>
-        pub fn set_reasons(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FraudDetectionReason>>,
-        ) -> Self {
-            self.reasons = input;
-            self
+        pub fn set_reasons(mut self, input: std::option::Option<std::vec::Vec<crate::model::FraudDetectionReason>>) -> Self {
+            self.reasons = input; self
         }
         /// <p>Details about each risk analyzed for this speaker. Currently, this contains KnownFraudsterRisk and VoiceSpoofingRisk details.</p>
         pub fn risk_details(mut self, input: crate::model::FraudRiskDetails) -> Self {
@@ -3948,26 +3601,31 @@ pub mod fraud_detection_result {
             self
         }
         /// <p>Details about each risk analyzed for this speaker. Currently, this contains KnownFraudsterRisk and VoiceSpoofingRisk details.</p>
-        pub fn set_risk_details(
-            mut self,
-            input: std::option::Option<crate::model::FraudRiskDetails>,
-        ) -> Self {
-            self.risk_details = input;
-            self
+        pub fn set_risk_details(mut self, input: std::option::Option<crate::model::FraudRiskDetails>) -> Self {
+            self.risk_details = input; self
         }
         /// Consumes the builder and constructs a [`FraudDetectionResult`](crate::model::FraudDetectionResult).
         pub fn build(self) -> crate::model::FraudDetectionResult {
             crate::model::FraudDetectionResult {
-                fraud_detection_result_id: self.fraud_detection_result_id,
-                audio_aggregation_started_at: self.audio_aggregation_started_at,
-                audio_aggregation_ended_at: self.audio_aggregation_ended_at,
-                configuration: self.configuration,
-                decision: self.decision,
-                reasons: self.reasons,
-                risk_details: self.risk_details,
+                fraud_detection_result_id: self.fraud_detection_result_id
+                ,
+                audio_aggregation_started_at: self.audio_aggregation_started_at
+                ,
+                audio_aggregation_ended_at: self.audio_aggregation_ended_at
+                ,
+                configuration: self.configuration
+                ,
+                decision: self.decision
+                ,
+                reasons: self.reasons
+                ,
+                risk_details: self.risk_details
+                ,
             }
         }
     }
+    
+    
 }
 impl FraudDetectionResult {
     /// Creates a new builder-style object to manufacture [`FraudDetectionResult`](crate::model::FraudDetectionResult).
@@ -3979,7 +3637,7 @@ impl FraudDetectionResult {
 /// <p>Details regarding various fraud risk analyses performed against the current session state and streamed audio of the speaker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FraudRiskDetails {
+pub struct FraudRiskDetails  {
     /// <p>The details resulting from 'Known Fraudster Risk' analysis of the speaker.</p>
     #[doc(hidden)]
     pub known_fraudster_risk: std::option::Option<crate::model::KnownFraudsterRisk>,
@@ -3989,17 +3647,17 @@ pub struct FraudRiskDetails {
 }
 impl FraudRiskDetails {
     /// <p>The details resulting from 'Known Fraudster Risk' analysis of the speaker.</p>
-    pub fn known_fraudster_risk(&self) -> std::option::Option<&crate::model::KnownFraudsterRisk> {
+    pub fn known_fraudster_risk(&self) -> std::option::Option<& crate::model::KnownFraudsterRisk> {
         self.known_fraudster_risk.as_ref()
     }
     /// <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
-    pub fn voice_spoofing_risk(&self) -> std::option::Option<&crate::model::VoiceSpoofingRisk> {
+    pub fn voice_spoofing_risk(&self) -> std::option::Option<& crate::model::VoiceSpoofingRisk> {
         self.voice_spoofing_risk.as_ref()
     }
 }
 /// See [`FraudRiskDetails`](crate::model::FraudRiskDetails).
 pub mod fraud_risk_details {
-
+    
     /// A builder for [`FraudRiskDetails`](crate::model::FraudRiskDetails).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4013,12 +3671,8 @@ pub mod fraud_risk_details {
             self
         }
         /// <p>The details resulting from 'Known Fraudster Risk' analysis of the speaker.</p>
-        pub fn set_known_fraudster_risk(
-            mut self,
-            input: std::option::Option<crate::model::KnownFraudsterRisk>,
-        ) -> Self {
-            self.known_fraudster_risk = input;
-            self
+        pub fn set_known_fraudster_risk(mut self, input: std::option::Option<crate::model::KnownFraudsterRisk>) -> Self {
+            self.known_fraudster_risk = input; self
         }
         /// <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
         pub fn voice_spoofing_risk(mut self, input: crate::model::VoiceSpoofingRisk) -> Self {
@@ -4026,21 +3680,21 @@ pub mod fraud_risk_details {
             self
         }
         /// <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
-        pub fn set_voice_spoofing_risk(
-            mut self,
-            input: std::option::Option<crate::model::VoiceSpoofingRisk>,
-        ) -> Self {
-            self.voice_spoofing_risk = input;
-            self
+        pub fn set_voice_spoofing_risk(mut self, input: std::option::Option<crate::model::VoiceSpoofingRisk>) -> Self {
+            self.voice_spoofing_risk = input; self
         }
         /// Consumes the builder and constructs a [`FraudRiskDetails`](crate::model::FraudRiskDetails).
         pub fn build(self) -> crate::model::FraudRiskDetails {
             crate::model::FraudRiskDetails {
-                known_fraudster_risk: self.known_fraudster_risk,
-                voice_spoofing_risk: self.voice_spoofing_risk,
+                known_fraudster_risk: self.known_fraudster_risk
+                ,
+                voice_spoofing_risk: self.voice_spoofing_risk
+                ,
             }
         }
     }
+    
+    
 }
 impl FraudRiskDetails {
     /// Creates a new builder-style object to manufacture [`FraudRiskDetails`](crate::model::FraudRiskDetails).
@@ -4052,7 +3706,7 @@ impl FraudRiskDetails {
 /// <p>The details resulting from 'Voice Spoofing Risk' analysis of the speaker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VoiceSpoofingRisk {
+pub struct VoiceSpoofingRisk  {
     /// <p>The score indicating the likelihood of speaker’s voice being spoofed.</p>
     #[doc(hidden)]
     pub risk_score: std::option::Option<i32>,
@@ -4065,7 +3719,7 @@ impl VoiceSpoofingRisk {
 }
 /// See [`VoiceSpoofingRisk`](crate::model::VoiceSpoofingRisk).
 pub mod voice_spoofing_risk {
-
+    
     /// A builder for [`VoiceSpoofingRisk`](crate::model::VoiceSpoofingRisk).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4079,16 +3733,18 @@ pub mod voice_spoofing_risk {
         }
         /// <p>The score indicating the likelihood of speaker’s voice being spoofed.</p>
         pub fn set_risk_score(mut self, input: std::option::Option<i32>) -> Self {
-            self.risk_score = input;
-            self
+            self.risk_score = input; self
         }
         /// Consumes the builder and constructs a [`VoiceSpoofingRisk`](crate::model::VoiceSpoofingRisk).
         pub fn build(self) -> crate::model::VoiceSpoofingRisk {
             crate::model::VoiceSpoofingRisk {
-                risk_score: self.risk_score,
+                risk_score: self.risk_score
+                ,
             }
         }
     }
+    
+    
 }
 impl VoiceSpoofingRisk {
     /// Creates a new builder-style object to manufacture [`VoiceSpoofingRisk`](crate::model::VoiceSpoofingRisk).
@@ -4100,7 +3756,7 @@ impl VoiceSpoofingRisk {
 /// <p>Contains details produced as a result of performing known fraudster risk analysis on a speaker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KnownFraudsterRisk {
+pub struct KnownFraudsterRisk  {
     /// <p>The score indicating the likelihood the speaker is a known fraudster.</p>
     #[doc(hidden)]
     pub risk_score: std::option::Option<i32>,
@@ -4114,13 +3770,13 @@ impl KnownFraudsterRisk {
         self.risk_score
     }
     /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
-    pub fn generated_fraudster_id(&self) -> std::option::Option<&str> {
+    pub fn generated_fraudster_id(&self) -> std::option::Option<& str> {
         self.generated_fraudster_id.as_deref()
     }
 }
 /// See [`KnownFraudsterRisk`](crate::model::KnownFraudsterRisk).
 pub mod known_fraudster_risk {
-
+    
     /// A builder for [`KnownFraudsterRisk`](crate::model::KnownFraudsterRisk).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4135,8 +3791,7 @@ pub mod known_fraudster_risk {
         }
         /// <p>The score indicating the likelihood the speaker is a known fraudster.</p>
         pub fn set_risk_score(mut self, input: std::option::Option<i32>) -> Self {
-            self.risk_score = input;
-            self
+            self.risk_score = input; self
         }
         /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
         pub fn generated_fraudster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4144,21 +3799,21 @@ pub mod known_fraudster_risk {
             self
         }
         /// <p>The identifier of the fraudster that is the closest match to the speaker. If there are no fraudsters registered in a given domain, or if there are no fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
-        pub fn set_generated_fraudster_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.generated_fraudster_id = input;
-            self
+        pub fn set_generated_fraudster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.generated_fraudster_id = input; self
         }
         /// Consumes the builder and constructs a [`KnownFraudsterRisk`](crate::model::KnownFraudsterRisk).
         pub fn build(self) -> crate::model::KnownFraudsterRisk {
             crate::model::KnownFraudsterRisk {
-                risk_score: self.risk_score,
-                generated_fraudster_id: self.generated_fraudster_id,
+                risk_score: self.risk_score
+                ,
+                generated_fraudster_id: self.generated_fraudster_id
+                ,
             }
         }
     }
+    
+    
 }
 impl KnownFraudsterRisk {
     /// Creates a new builder-style object to manufacture [`KnownFraudsterRisk`](crate::model::KnownFraudsterRisk).
@@ -4173,9 +3828,9 @@ impl KnownFraudsterRisk {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let frauddetectionreason = unimplemented!();
 /// match frauddetectionreason {
@@ -4197,60 +3852,52 @@ impl KnownFraudsterRisk {
 /// Specifically, when `frauddetectionreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FraudDetectionReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FraudDetectionReason {
     #[allow(missing_docs)] // documentation missing in model
     KnownFraudster,
     #[allow(missing_docs)] // documentation missing in model
     VoiceSpoofing,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FraudDetectionReason {
     fn from(s: &str) -> Self {
         match s {
             "KNOWN_FRAUDSTER" => FraudDetectionReason::KnownFraudster,
             "VOICE_SPOOFING" => FraudDetectionReason::VoiceSpoofing,
-            other => {
-                FraudDetectionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FraudDetectionReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FraudDetectionReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FraudDetectionReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FraudDetectionReason::from(s))
+                }
+            }
 impl FraudDetectionReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FraudDetectionReason::KnownFraudster => "KNOWN_FRAUDSTER",
             FraudDetectionReason::VoiceSpoofing => "VOICE_SPOOFING",
-            FraudDetectionReason::Unknown(value) => value.as_str(),
+            FraudDetectionReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["KNOWN_FRAUDSTER", "VOICE_SPOOFING"]
+        &[
+            "KNOWN_FRAUDSTER", "VOICE_SPOOFING"
+        ]
     }
 }
 impl AsRef<str> for FraudDetectionReason {
@@ -4265,9 +3912,9 @@ impl AsRef<str> for FraudDetectionReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let frauddetectiondecision = unimplemented!();
 /// match frauddetectiondecision {
@@ -4290,22 +3937,14 @@ impl AsRef<str> for FraudDetectionReason {
 /// Specifically, when `frauddetectiondecision` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FraudDetectionDecision::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FraudDetectionDecision {
     #[allow(missing_docs)] // documentation missing in model
     HighRisk,
@@ -4314,7 +3953,7 @@ pub enum FraudDetectionDecision {
     #[allow(missing_docs)] // documentation missing in model
     NotEnoughSpeech,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FraudDetectionDecision {
     fn from(s: &str) -> Self {
@@ -4322,19 +3961,17 @@ impl std::convert::From<&str> for FraudDetectionDecision {
             "HIGH_RISK" => FraudDetectionDecision::HighRisk,
             "LOW_RISK" => FraudDetectionDecision::LowRisk,
             "NOT_ENOUGH_SPEECH" => FraudDetectionDecision::NotEnoughSpeech,
-            other => {
-                FraudDetectionDecision::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => FraudDetectionDecision::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for FraudDetectionDecision {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FraudDetectionDecision::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FraudDetectionDecision::from(s))
+                }
+            }
 impl FraudDetectionDecision {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4342,12 +3979,14 @@ impl FraudDetectionDecision {
             FraudDetectionDecision::HighRisk => "HIGH_RISK",
             FraudDetectionDecision::LowRisk => "LOW_RISK",
             FraudDetectionDecision::NotEnoughSpeech => "NOT_ENOUGH_SPEECH",
-            FraudDetectionDecision::Unknown(value) => value.as_str(),
+            FraudDetectionDecision::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HIGH_RISK", "LOW_RISK", "NOT_ENOUGH_SPEECH"]
+        &[
+            "HIGH_RISK", "LOW_RISK", "NOT_ENOUGH_SPEECH"
+        ]
     }
 }
 impl AsRef<str> for FraudDetectionDecision {
@@ -4359,7 +3998,7 @@ impl AsRef<str> for FraudDetectionDecision {
 /// <p>The configuration used for performing fraud detection over a speaker during a session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FraudDetectionConfiguration {
+pub struct FraudDetectionConfiguration  {
     /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
     #[doc(hidden)]
     pub risk_threshold: std::option::Option<i32>,
@@ -4372,7 +4011,7 @@ impl FraudDetectionConfiguration {
 }
 /// See [`FraudDetectionConfiguration`](crate::model::FraudDetectionConfiguration).
 pub mod fraud_detection_configuration {
-
+    
     /// A builder for [`FraudDetectionConfiguration`](crate::model::FraudDetectionConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4386,16 +4025,18 @@ pub mod fraud_detection_configuration {
         }
         /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
         pub fn set_risk_threshold(mut self, input: std::option::Option<i32>) -> Self {
-            self.risk_threshold = input;
-            self
+            self.risk_threshold = input; self
         }
         /// Consumes the builder and constructs a [`FraudDetectionConfiguration`](crate::model::FraudDetectionConfiguration).
         pub fn build(self) -> crate::model::FraudDetectionConfiguration {
             crate::model::FraudDetectionConfiguration {
-                risk_threshold: self.risk_threshold,
+                risk_threshold: self.risk_threshold
+                ,
             }
         }
     }
+    
+    
 }
 impl FraudDetectionConfiguration {
     /// Creates a new builder-style object to manufacture [`FraudDetectionConfiguration`](crate::model::FraudDetectionConfiguration).
@@ -4407,7 +4048,7 @@ impl FraudDetectionConfiguration {
 /// <p>The authentication result produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AuthenticationResult {
+pub struct AuthenticationResult  {
     /// <p>The unique identifier for this authentication result. Because there can be multiple authentications for a given session, this field helps to identify if the returned result is from a previous streaming activity or a new result. Note that in absence of any new streaming activity, <code>AcceptanceThreshold</code> changes, or <code>SpeakerId</code> changes, Voice ID always returns cached Authentication Result for this API.</p>
     #[doc(hidden)]
     pub authentication_result_id: std::option::Option<std::string::String>,
@@ -4435,27 +4076,27 @@ pub struct AuthenticationResult {
 }
 impl AuthenticationResult {
     /// <p>The unique identifier for this authentication result. Because there can be multiple authentications for a given session, this field helps to identify if the returned result is from a previous streaming activity or a new result. Note that in absence of any new streaming activity, <code>AcceptanceThreshold</code> changes, or <code>SpeakerId</code> changes, Voice ID always returns cached Authentication Result for this API.</p>
-    pub fn authentication_result_id(&self) -> std::option::Option<&str> {
+    pub fn authentication_result_id(&self) -> std::option::Option<& str> {
         self.authentication_result_id.as_deref()
     }
     /// <p>A timestamp indicating when audio aggregation started for this authentication result.</p>
-    pub fn audio_aggregation_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn audio_aggregation_started_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.audio_aggregation_started_at.as_ref()
     }
     /// <p>A timestamp indicating when audio aggregation ended for this authentication result.</p>
-    pub fn audio_aggregation_ended_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn audio_aggregation_ended_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.audio_aggregation_ended_at.as_ref()
     }
     /// <p>The client-provided identifier for the speaker whose authentication result is produced. Only present if a <code>SpeakerId</code> is provided for the session.</p>
-    pub fn customer_speaker_id(&self) -> std::option::Option<&str> {
+    pub fn customer_speaker_id(&self) -> std::option::Option<& str> {
         self.customer_speaker_id.as_deref()
     }
     /// <p>The service-generated identifier for the speaker whose authentication result is produced.</p>
-    pub fn generated_speaker_id(&self) -> std::option::Option<&str> {
+    pub fn generated_speaker_id(&self) -> std::option::Option<& str> {
         self.generated_speaker_id.as_deref()
     }
     /// <p>The authentication decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
-    pub fn decision(&self) -> std::option::Option<&crate::model::AuthenticationDecision> {
+    pub fn decision(&self) -> std::option::Option<& crate::model::AuthenticationDecision> {
         self.decision.as_ref()
     }
     /// <p>The authentication score for the speaker whose authentication result is produced. This value is only present if the authentication decision is either <code>ACCEPT</code> or <code>REJECT</code>.</p>
@@ -4463,22 +4104,16 @@ impl AuthenticationResult {
         self.score
     }
     /// <p>The <code>AuthenticationConfiguration</code> used to generate this authentication result.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::model::AuthenticationConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<& crate::model::AuthenticationConfiguration> {
         self.configuration.as_ref()
     }
 }
-impl std::fmt::Debug for AuthenticationResult {
+impl  std::fmt::Debug for AuthenticationResult  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AuthenticationResult");
         formatter.field("authentication_result_id", &self.authentication_result_id);
-        formatter.field(
-            "audio_aggregation_started_at",
-            &self.audio_aggregation_started_at,
-        );
-        formatter.field(
-            "audio_aggregation_ended_at",
-            &self.audio_aggregation_ended_at,
-        );
+        formatter.field("audio_aggregation_started_at", &self.audio_aggregation_started_at);
+        formatter.field("audio_aggregation_ended_at", &self.audio_aggregation_ended_at);
         formatter.field("customer_speaker_id", &"*** Sensitive Data Redacted ***");
         formatter.field("generated_speaker_id", &self.generated_speaker_id);
         formatter.field("decision", &self.decision);
@@ -4489,7 +4124,7 @@ impl std::fmt::Debug for AuthenticationResult {
 }
 /// See [`AuthenticationResult`](crate::model::AuthenticationResult).
 pub mod authentication_result {
-
+    
     /// A builder for [`AuthenticationResult`](crate::model::AuthenticationResult).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -4509,12 +4144,8 @@ pub mod authentication_result {
             self
         }
         /// <p>The unique identifier for this authentication result. Because there can be multiple authentications for a given session, this field helps to identify if the returned result is from a previous streaming activity or a new result. Note that in absence of any new streaming activity, <code>AcceptanceThreshold</code> changes, or <code>SpeakerId</code> changes, Voice ID always returns cached Authentication Result for this API.</p>
-        pub fn set_authentication_result_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.authentication_result_id = input;
-            self
+        pub fn set_authentication_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.authentication_result_id = input; self
         }
         /// <p>A timestamp indicating when audio aggregation started for this authentication result.</p>
         pub fn audio_aggregation_started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4522,12 +4153,8 @@ pub mod authentication_result {
             self
         }
         /// <p>A timestamp indicating when audio aggregation started for this authentication result.</p>
-        pub fn set_audio_aggregation_started_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.audio_aggregation_started_at = input;
-            self
+        pub fn set_audio_aggregation_started_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.audio_aggregation_started_at = input; self
         }
         /// <p>A timestamp indicating when audio aggregation ended for this authentication result.</p>
         pub fn audio_aggregation_ended_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4535,12 +4162,8 @@ pub mod authentication_result {
             self
         }
         /// <p>A timestamp indicating when audio aggregation ended for this authentication result.</p>
-        pub fn set_audio_aggregation_ended_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.audio_aggregation_ended_at = input;
-            self
+        pub fn set_audio_aggregation_ended_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.audio_aggregation_ended_at = input; self
         }
         /// <p>The client-provided identifier for the speaker whose authentication result is produced. Only present if a <code>SpeakerId</code> is provided for the session.</p>
         pub fn customer_speaker_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4548,12 +4171,8 @@ pub mod authentication_result {
             self
         }
         /// <p>The client-provided identifier for the speaker whose authentication result is produced. Only present if a <code>SpeakerId</code> is provided for the session.</p>
-        pub fn set_customer_speaker_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.customer_speaker_id = input;
-            self
+        pub fn set_customer_speaker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.customer_speaker_id = input; self
         }
         /// <p>The service-generated identifier for the speaker whose authentication result is produced.</p>
         pub fn generated_speaker_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4561,12 +4180,8 @@ pub mod authentication_result {
             self
         }
         /// <p>The service-generated identifier for the speaker whose authentication result is produced.</p>
-        pub fn set_generated_speaker_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.generated_speaker_id = input;
-            self
+        pub fn set_generated_speaker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.generated_speaker_id = input; self
         }
         /// <p>The authentication decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
         pub fn decision(mut self, input: crate::model::AuthenticationDecision) -> Self {
@@ -4574,12 +4189,8 @@ pub mod authentication_result {
             self
         }
         /// <p>The authentication decision produced by Voice ID, processed against the current session state and streamed audio of the speaker.</p>
-        pub fn set_decision(
-            mut self,
-            input: std::option::Option<crate::model::AuthenticationDecision>,
-        ) -> Self {
-            self.decision = input;
-            self
+        pub fn set_decision(mut self, input: std::option::Option<crate::model::AuthenticationDecision>) -> Self {
+            self.decision = input; self
         }
         /// <p>The authentication score for the speaker whose authentication result is produced. This value is only present if the authentication decision is either <code>ACCEPT</code> or <code>REJECT</code>.</p>
         pub fn score(mut self, input: i32) -> Self {
@@ -4588,8 +4199,7 @@ pub mod authentication_result {
         }
         /// <p>The authentication score for the speaker whose authentication result is produced. This value is only present if the authentication decision is either <code>ACCEPT</code> or <code>REJECT</code>.</p>
         pub fn set_score(mut self, input: std::option::Option<i32>) -> Self {
-            self.score = input;
-            self
+            self.score = input; self
         }
         /// <p>The <code>AuthenticationConfiguration</code> used to generate this authentication result.</p>
         pub fn configuration(mut self, input: crate::model::AuthenticationConfiguration) -> Self {
@@ -4597,24 +4207,28 @@ pub mod authentication_result {
             self
         }
         /// <p>The <code>AuthenticationConfiguration</code> used to generate this authentication result.</p>
-        pub fn set_configuration(
-            mut self,
-            input: std::option::Option<crate::model::AuthenticationConfiguration>,
-        ) -> Self {
-            self.configuration = input;
-            self
+        pub fn set_configuration(mut self, input: std::option::Option<crate::model::AuthenticationConfiguration>) -> Self {
+            self.configuration = input; self
         }
         /// Consumes the builder and constructs a [`AuthenticationResult`](crate::model::AuthenticationResult).
         pub fn build(self) -> crate::model::AuthenticationResult {
             crate::model::AuthenticationResult {
-                authentication_result_id: self.authentication_result_id,
-                audio_aggregation_started_at: self.audio_aggregation_started_at,
-                audio_aggregation_ended_at: self.audio_aggregation_ended_at,
-                customer_speaker_id: self.customer_speaker_id,
-                generated_speaker_id: self.generated_speaker_id,
-                decision: self.decision,
-                score: self.score,
-                configuration: self.configuration,
+                authentication_result_id: self.authentication_result_id
+                ,
+                audio_aggregation_started_at: self.audio_aggregation_started_at
+                ,
+                audio_aggregation_ended_at: self.audio_aggregation_ended_at
+                ,
+                customer_speaker_id: self.customer_speaker_id
+                ,
+                generated_speaker_id: self.generated_speaker_id
+                ,
+                decision: self.decision
+                ,
+                score: self.score
+                ,
+                configuration: self.configuration
+                ,
             }
         }
     }
@@ -4622,14 +4236,8 @@ pub mod authentication_result {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("authentication_result_id", &self.authentication_result_id);
-            formatter.field(
-                "audio_aggregation_started_at",
-                &self.audio_aggregation_started_at,
-            );
-            formatter.field(
-                "audio_aggregation_ended_at",
-                &self.audio_aggregation_ended_at,
-            );
+            formatter.field("audio_aggregation_started_at", &self.audio_aggregation_started_at);
+            formatter.field("audio_aggregation_ended_at", &self.audio_aggregation_ended_at);
             formatter.field("customer_speaker_id", &"*** Sensitive Data Redacted ***");
             formatter.field("generated_speaker_id", &self.generated_speaker_id);
             formatter.field("decision", &self.decision);
@@ -4638,6 +4246,8 @@ pub mod authentication_result {
             formatter.finish()
         }
     }
+    
+    
 }
 impl AuthenticationResult {
     /// Creates a new builder-style object to manufacture [`AuthenticationResult`](crate::model::AuthenticationResult).
@@ -4649,7 +4259,7 @@ impl AuthenticationResult {
 /// <p>The configuration used to authenticate a speaker during a session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthenticationConfiguration {
+pub struct AuthenticationConfiguration  {
     /// <p>The minimum threshold needed to successfully authenticate a speaker.</p>
     #[doc(hidden)]
     pub acceptance_threshold: std::option::Option<i32>,
@@ -4662,7 +4272,7 @@ impl AuthenticationConfiguration {
 }
 /// See [`AuthenticationConfiguration`](crate::model::AuthenticationConfiguration).
 pub mod authentication_configuration {
-
+    
     /// A builder for [`AuthenticationConfiguration`](crate::model::AuthenticationConfiguration).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4676,16 +4286,18 @@ pub mod authentication_configuration {
         }
         /// <p>The minimum threshold needed to successfully authenticate a speaker.</p>
         pub fn set_acceptance_threshold(mut self, input: std::option::Option<i32>) -> Self {
-            self.acceptance_threshold = input;
-            self
+            self.acceptance_threshold = input; self
         }
         /// Consumes the builder and constructs a [`AuthenticationConfiguration`](crate::model::AuthenticationConfiguration).
         pub fn build(self) -> crate::model::AuthenticationConfiguration {
             crate::model::AuthenticationConfiguration {
-                acceptance_threshold: self.acceptance_threshold,
+                acceptance_threshold: self.acceptance_threshold
+                ,
             }
         }
     }
+    
+    
 }
 impl AuthenticationConfiguration {
     /// Creates a new builder-style object to manufacture [`AuthenticationConfiguration`](crate::model::AuthenticationConfiguration).
@@ -4700,9 +4312,9 @@ impl AuthenticationConfiguration {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let authenticationdecision = unimplemented!();
 /// match authenticationdecision {
@@ -4729,22 +4341,14 @@ impl AuthenticationConfiguration {
 /// Specifically, when `authenticationdecision` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AuthenticationDecision::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum AuthenticationDecision {
     #[allow(missing_docs)] // documentation missing in model
     Accept,
@@ -4761,7 +4365,7 @@ pub enum AuthenticationDecision {
     #[allow(missing_docs)] // documentation missing in model
     SpeakerOptedOut,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for AuthenticationDecision {
     fn from(s: &str) -> Self {
@@ -4773,19 +4377,17 @@ impl std::convert::From<&str> for AuthenticationDecision {
             "SPEAKER_ID_NOT_PROVIDED" => AuthenticationDecision::SpeakerIdNotProvided,
             "SPEAKER_NOT_ENROLLED" => AuthenticationDecision::SpeakerNotEnrolled,
             "SPEAKER_OPTED_OUT" => AuthenticationDecision::SpeakerOptedOut,
-            other => {
-                AuthenticationDecision::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => AuthenticationDecision::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for AuthenticationDecision {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuthenticationDecision::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(AuthenticationDecision::from(s))
+                }
+            }
 impl AuthenticationDecision {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4797,19 +4399,13 @@ impl AuthenticationDecision {
             AuthenticationDecision::SpeakerIdNotProvided => "SPEAKER_ID_NOT_PROVIDED",
             AuthenticationDecision::SpeakerNotEnrolled => "SPEAKER_NOT_ENROLLED",
             AuthenticationDecision::SpeakerOptedOut => "SPEAKER_OPTED_OUT",
-            AuthenticationDecision::Unknown(value) => value.as_str(),
+            AuthenticationDecision::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACCEPT",
-            "NOT_ENOUGH_SPEECH",
-            "REJECT",
-            "SPEAKER_EXPIRED",
-            "SPEAKER_ID_NOT_PROVIDED",
-            "SPEAKER_NOT_ENROLLED",
-            "SPEAKER_OPTED_OUT",
+            "ACCEPT", "NOT_ENOUGH_SPEECH", "REJECT", "SPEAKER_EXPIRED", "SPEAKER_ID_NOT_PROVIDED", "SPEAKER_NOT_ENROLLED", "SPEAKER_OPTED_OUT"
         ]
     }
 }
@@ -4825,9 +4421,9 @@ impl AsRef<str> for AuthenticationDecision {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let streamingstatus = unimplemented!();
 /// match streamingstatus {
@@ -4850,22 +4446,14 @@ impl AsRef<str> for AuthenticationDecision {
 /// Specifically, when `streamingstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StreamingStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum StreamingStatus {
     #[allow(missing_docs)] // documentation missing in model
     Ended,
@@ -4874,7 +4462,7 @@ pub enum StreamingStatus {
     #[allow(missing_docs)] // documentation missing in model
     PendingConfiguration,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for StreamingStatus {
     fn from(s: &str) -> Self {
@@ -4882,17 +4470,17 @@ impl std::convert::From<&str> for StreamingStatus {
             "ENDED" => StreamingStatus::Ended,
             "ONGOING" => StreamingStatus::Ongoing,
             "PENDING_CONFIGURATION" => StreamingStatus::PendingConfiguration,
-            other => StreamingStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => StreamingStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for StreamingStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StreamingStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(StreamingStatus::from(s))
+                }
+            }
 impl StreamingStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -4900,12 +4488,14 @@ impl StreamingStatus {
             StreamingStatus::Ended => "ENDED",
             StreamingStatus::Ongoing => "ONGOING",
             StreamingStatus::PendingConfiguration => "PENDING_CONFIGURATION",
-            StreamingStatus::Unknown(value) => value.as_str(),
+            StreamingStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ENDED", "ONGOING", "PENDING_CONFIGURATION"]
+        &[
+            "ENDED", "ONGOING", "PENDING_CONFIGURATION"
+        ]
     }
 }
 impl AsRef<str> for StreamingStatus {
@@ -4917,7 +4507,7 @@ impl AsRef<str> for StreamingStatus {
 /// <p>Contains all the information about a fraudster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Fraudster {
+pub struct Fraudster  {
     /// <p>The identifier for the domain containing the fraudster.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -4930,21 +4520,21 @@ pub struct Fraudster {
 }
 impl Fraudster {
     /// <p>The identifier for the domain containing the fraudster.</p>
-    pub fn domain_id(&self) -> std::option::Option<&str> {
+    pub fn domain_id(&self) -> std::option::Option<& str> {
         self.domain_id.as_deref()
     }
     /// <p>The service-generated identifier for the fraudster.</p>
-    pub fn generated_fraudster_id(&self) -> std::option::Option<&str> {
+    pub fn generated_fraudster_id(&self) -> std::option::Option<& str> {
         self.generated_fraudster_id.as_deref()
     }
     /// <p>The timestamp when Voice ID identified the fraudster.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
 /// See [`Fraudster`](crate::model::Fraudster).
 pub mod fraudster {
-
+    
     /// A builder for [`Fraudster`](crate::model::Fraudster).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -4960,8 +4550,7 @@ pub mod fraudster {
         }
         /// <p>The identifier for the domain containing the fraudster.</p>
         pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.domain_id = input;
-            self
+            self.domain_id = input; self
         }
         /// <p>The service-generated identifier for the fraudster.</p>
         pub fn generated_fraudster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4969,12 +4558,8 @@ pub mod fraudster {
             self
         }
         /// <p>The service-generated identifier for the fraudster.</p>
-        pub fn set_generated_fraudster_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.generated_fraudster_id = input;
-            self
+        pub fn set_generated_fraudster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.generated_fraudster_id = input; self
         }
         /// <p>The timestamp when Voice ID identified the fraudster.</p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -4982,22 +4567,23 @@ pub mod fraudster {
             self
         }
         /// <p>The timestamp when Voice ID identified the fraudster.</p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// Consumes the builder and constructs a [`Fraudster`](crate::model::Fraudster).
         pub fn build(self) -> crate::model::Fraudster {
             crate::model::Fraudster {
-                domain_id: self.domain_id,
-                generated_fraudster_id: self.generated_fraudster_id,
-                created_at: self.created_at,
+                domain_id: self.domain_id
+                ,
+                generated_fraudster_id: self.generated_fraudster_id
+                ,
+                created_at: self.created_at
+                ,
             }
         }
     }
+    
+    
 }
 impl Fraudster {
     /// Creates a new builder-style object to manufacture [`Fraudster`](crate::model::Fraudster).
@@ -5005,3 +4591,4 @@ impl Fraudster {
         crate::model::fraudster::Builder::default()
     }
 }
+

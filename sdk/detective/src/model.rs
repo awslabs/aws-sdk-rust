@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let errorcode = unimplemented!();
 /// match errorcode {
@@ -31,22 +31,14 @@
 /// Specifically, when `errorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ErrorCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     InternalError,
@@ -55,7 +47,7 @@ pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     InvalidRequestBody,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ErrorCode {
     fn from(s: &str) -> Self {
@@ -63,17 +55,17 @@ impl std::convert::From<&str> for ErrorCode {
             "INTERNAL_ERROR" => ErrorCode::InternalError,
             "INVALID_GRAPH_ARN" => ErrorCode::InvalidGraphArn,
             "INVALID_REQUEST_BODY" => ErrorCode::InvalidRequestBody,
-            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ErrorCode::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ErrorCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ErrorCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ErrorCode::from(s))
+                }
+            }
 impl ErrorCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -81,15 +73,13 @@ impl ErrorCode {
             ErrorCode::InternalError => "INTERNAL_ERROR",
             ErrorCode::InvalidGraphArn => "INVALID_GRAPH_ARN",
             ErrorCode::InvalidRequestBody => "INVALID_REQUEST_BODY",
-            ErrorCode::Unknown(value) => value.as_str(),
+            ErrorCode::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "INTERNAL_ERROR",
-            "INVALID_GRAPH_ARN",
-            "INVALID_REQUEST_BODY",
+            "INTERNAL_ERROR", "INVALID_GRAPH_ARN", "INVALID_REQUEST_BODY"
         ]
     }
 }
@@ -105,9 +95,9 @@ impl AsRef<str> for ErrorCode {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datasourcepackage = unimplemented!();
 /// match datasourcepackage {
@@ -129,60 +119,52 @@ impl AsRef<str> for ErrorCode {
 /// Specifically, when `datasourcepackage` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DatasourcePackage::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DatasourcePackage {
     #[allow(missing_docs)] // documentation missing in model
     DetectiveCore,
     #[allow(missing_docs)] // documentation missing in model
     EksAudit,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DatasourcePackage {
     fn from(s: &str) -> Self {
         match s {
             "DETECTIVE_CORE" => DatasourcePackage::DetectiveCore,
             "EKS_AUDIT" => DatasourcePackage::EksAudit,
-            other => {
-                DatasourcePackage::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => DatasourcePackage::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DatasourcePackage {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DatasourcePackage::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DatasourcePackage::from(s))
+                }
+            }
 impl DatasourcePackage {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DatasourcePackage::DetectiveCore => "DETECTIVE_CORE",
             DatasourcePackage::EksAudit => "EKS_AUDIT",
-            DatasourcePackage::Unknown(value) => value.as_str(),
+            DatasourcePackage::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DETECTIVE_CORE", "EKS_AUDIT"]
+        &[
+            "DETECTIVE_CORE", "EKS_AUDIT"
+        ]
     }
 }
 impl AsRef<str> for DatasourcePackage {
@@ -194,7 +176,7 @@ impl AsRef<str> for DatasourcePackage {
 /// <p>Information about the Detective administrator account for an organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Administrator {
+pub struct Administrator  {
     /// <p>The Amazon Web Services account identifier of the Detective administrator account for the organization.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -207,21 +189,21 @@ pub struct Administrator {
 }
 impl Administrator {
     /// <p>The Amazon Web Services account identifier of the Detective administrator account for the organization.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ARN of the organization behavior graph.</p>
-    pub fn graph_arn(&self) -> std::option::Option<&str> {
+    pub fn graph_arn(&self) -> std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
     /// <p>The date and time when the Detective administrator account was enabled. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn delegation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn delegation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.delegation_time.as_ref()
     }
 }
 /// See [`Administrator`](crate::model::Administrator).
 pub mod administrator {
-
+    
     /// A builder for [`Administrator`](crate::model::Administrator).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -237,8 +219,7 @@ pub mod administrator {
         }
         /// <p>The Amazon Web Services account identifier of the Detective administrator account for the organization.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The ARN of the organization behavior graph.</p>
         pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -247,8 +228,7 @@ pub mod administrator {
         }
         /// <p>The ARN of the organization behavior graph.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.graph_arn = input;
-            self
+            self.graph_arn = input; self
         }
         /// <p>The date and time when the Detective administrator account was enabled. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
         pub fn delegation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -256,22 +236,23 @@ pub mod administrator {
             self
         }
         /// <p>The date and time when the Detective administrator account was enabled. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-        pub fn set_delegation_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.delegation_time = input;
-            self
+        pub fn set_delegation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.delegation_time = input; self
         }
         /// Consumes the builder and constructs a [`Administrator`](crate::model::Administrator).
         pub fn build(self) -> crate::model::Administrator {
             crate::model::Administrator {
-                account_id: self.account_id,
-                graph_arn: self.graph_arn,
-                delegation_time: self.delegation_time,
+                account_id: self.account_id
+                ,
+                graph_arn: self.graph_arn
+                ,
+                delegation_time: self.delegation_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Administrator {
     /// Creates a new builder-style object to manufacture [`Administrator`](crate::model::Administrator).
@@ -283,7 +264,7 @@ impl Administrator {
 /// <p>Details about a member account in a behavior graph.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MemberDetail {
+pub struct MemberDetail  {
     /// <p>The Amazon Web Services account identifier for the member account.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -300,22 +281,22 @@ pub struct MemberDetail {
     /// <p>The Amazon Web Services account identifier of the administrator account for the behavior graph.</p>
     #[doc(hidden)]
     pub administrator_id: std::option::Option<std::string::String>,
-    /// <p>The current membership status of the member account. The status can have one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>INVITED</code> - For invited accounts only. Indicates that the member was sent an invitation but has not yet responded.</p> </li>
-    /// <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - For invited accounts only, indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p> <p>For organization accounts in the organization behavior graph, indicates that Detective is verifying that the account belongs to the organization.</p> </li>
-    /// <li> <p> <code>VERIFICATION_FAILED</code> - For invited accounts only. Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p> </li>
-    /// <li> <p> <code>ENABLED</code> - Indicates that the member account currently contributes data to the behavior graph. For invited accounts, the member account accepted the invitation. For organization accounts in the organization behavior graph, the Detective administrator account enabled the organization account as a member account.</p> </li>
-    /// <li> <p> <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was enabled by the Detective administrator account, but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p> </li>
-    /// </ul>
+    /// <p>The current membership status of the member account. The status can have one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>INVITED</code> - For invited accounts only. Indicates that the member was sent an invitation but has not yet responded.</p> </li> 
+    /// <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - For invited accounts only, indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p> <p>For organization accounts in the organization behavior graph, indicates that Detective is verifying that the account belongs to the organization.</p> </li> 
+    /// <li> <p> <code>VERIFICATION_FAILED</code> - For invited accounts only. Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p> </li> 
+    /// <li> <p> <code>ENABLED</code> - Indicates that the member account currently contributes data to the behavior graph. For invited accounts, the member account accepted the invitation. For organization accounts in the organization behavior graph, the Detective administrator account enabled the organization account as a member account.</p> </li> 
+    /// <li> <p> <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was enabled by the Detective administrator account, but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p> </li> 
+    /// </ul> 
     /// <p>Invited accounts that declined an invitation or that were removed from the behavior graph are not included. In the organization behavior graph, organization accounts that the Detective administrator account did not enable are not included.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::MemberStatus>,
-    /// <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is not enabled.</p>
-    /// <p>The reason can have one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p> </li>
-    /// <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty. </p> </li>
+    /// <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is not enabled.</p> 
+    /// <p>The reason can have one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p> </li> 
+    /// <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty. </p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub disabled_reason: std::option::Option<crate::model::MemberDisabledReason>,
@@ -326,102 +307,84 @@ pub struct MemberDetail {
     #[doc(hidden)]
     pub updated_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The data volume in bytes per day for the member account.</p>
-    #[deprecated(
-        note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
-    )]
+    #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
     #[doc(hidden)]
     pub volume_usage_in_bytes: std::option::Option<i64>,
     /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    #[deprecated(
-        note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
-    )]
+    #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
     #[doc(hidden)]
     pub volume_usage_updated_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p>
-    /// <p>Note that this is not the percentage of the behavior graph data volume.</p>
+    /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p> 
+    /// <p>Note that this is not the percentage of the behavior graph data volume.</p> 
     /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume. </p>
-    #[deprecated(
-        note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
-    )]
+    #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
     #[doc(hidden)]
     pub percent_of_graph_utilization: std::option::Option<f64>,
     /// <p>The date and time when the graph utilization percentage was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    #[deprecated(
-        note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
-    )]
+    #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
     #[doc(hidden)]
     pub percent_of_graph_utilization_updated_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The type of behavior graph membership.</p>
-    /// <p>For an organization account in the organization behavior graph, the type is <code>ORGANIZATION</code>.</p>
+    /// <p>The type of behavior graph membership.</p> 
+    /// <p>For an organization account in the organization behavior graph, the type is <code>ORGANIZATION</code>.</p> 
     /// <p>For an account that was invited to a behavior graph, the type is <code>INVITATION</code>. </p>
     #[doc(hidden)]
     pub invitation_type: std::option::Option<crate::model::InvitationType>,
     /// <p>Details on the volume of usage for each data source package in a behavior graph.</p>
     #[doc(hidden)]
-    pub volume_usage_by_datasource_package: std::option::Option<
-        std::collections::HashMap<
-            crate::model::DatasourcePackage,
-            crate::model::DatasourcePackageUsageInfo,
-        >,
-    >,
+    pub volume_usage_by_datasource_package: std::option::Option<std::collections::HashMap<crate::model::DatasourcePackage, crate::model::DatasourcePackageUsageInfo>>,
     /// <p>The state of a data source package for the behavior graph.</p>
     #[doc(hidden)]
-    pub datasource_package_ingest_states: std::option::Option<
-        std::collections::HashMap<
-            crate::model::DatasourcePackage,
-            crate::model::DatasourcePackageIngestState,
-        >,
-    >,
+    pub datasource_package_ingest_states: std::option::Option<std::collections::HashMap<crate::model::DatasourcePackage, crate::model::DatasourcePackageIngestState>>,
 }
 impl MemberDetail {
     /// <p>The Amazon Web Services account identifier for the member account.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Web Services account root user email address for the member account.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> std::option::Option<& str> {
         self.email_address.as_deref()
     }
     /// <p>The ARN of the behavior graph.</p>
-    pub fn graph_arn(&self) -> std::option::Option<&str> {
+    pub fn graph_arn(&self) -> std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
     /// <p>The Amazon Web Services account identifier of the administrator account for the behavior graph.</p>
     #[deprecated(note = "This property is deprecated. Use AdministratorId instead.")]
-    pub fn master_id(&self) -> std::option::Option<&str> {
+    pub fn master_id(&self) -> std::option::Option<& str> {
         self.master_id.as_deref()
     }
     /// <p>The Amazon Web Services account identifier of the administrator account for the behavior graph.</p>
-    pub fn administrator_id(&self) -> std::option::Option<&str> {
+    pub fn administrator_id(&self) -> std::option::Option<& str> {
         self.administrator_id.as_deref()
     }
-    /// <p>The current membership status of the member account. The status can have one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>INVITED</code> - For invited accounts only. Indicates that the member was sent an invitation but has not yet responded.</p> </li>
-    /// <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - For invited accounts only, indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p> <p>For organization accounts in the organization behavior graph, indicates that Detective is verifying that the account belongs to the organization.</p> </li>
-    /// <li> <p> <code>VERIFICATION_FAILED</code> - For invited accounts only. Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p> </li>
-    /// <li> <p> <code>ENABLED</code> - Indicates that the member account currently contributes data to the behavior graph. For invited accounts, the member account accepted the invitation. For organization accounts in the organization behavior graph, the Detective administrator account enabled the organization account as a member account.</p> </li>
-    /// <li> <p> <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was enabled by the Detective administrator account, but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p> </li>
-    /// </ul>
+    /// <p>The current membership status of the member account. The status can have one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>INVITED</code> - For invited accounts only. Indicates that the member was sent an invitation but has not yet responded.</p> </li> 
+    /// <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - For invited accounts only, indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p> <p>For organization accounts in the organization behavior graph, indicates that Detective is verifying that the account belongs to the organization.</p> </li> 
+    /// <li> <p> <code>VERIFICATION_FAILED</code> - For invited accounts only. Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p> </li> 
+    /// <li> <p> <code>ENABLED</code> - Indicates that the member account currently contributes data to the behavior graph. For invited accounts, the member account accepted the invitation. For organization accounts in the organization behavior graph, the Detective administrator account enabled the organization account as a member account.</p> </li> 
+    /// <li> <p> <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was enabled by the Detective administrator account, but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p> </li> 
+    /// </ul> 
     /// <p>Invited accounts that declined an invitation or that were removed from the behavior graph are not included. In the organization behavior graph, organization accounts that the Detective administrator account did not enable are not included.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::MemberStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::MemberStatus> {
         self.status.as_ref()
     }
-    /// <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is not enabled.</p>
-    /// <p>The reason can have one of the following values:</p>
-    /// <ul>
-    /// <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p> </li>
-    /// <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty. </p> </li>
+    /// <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is not enabled.</p> 
+    /// <p>The reason can have one of the following values:</p> 
+    /// <ul> 
+    /// <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p> </li> 
+    /// <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty. </p> </li> 
     /// </ul>
-    pub fn disabled_reason(&self) -> std::option::Option<&crate::model::MemberDisabledReason> {
+    pub fn disabled_reason(&self) -> std::option::Option<& crate::model::MemberDisabledReason> {
         self.disabled_reason.as_ref()
     }
     /// <p>For invited accounts, the date and time that Detective sent the invitation to the account. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn invited_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn invited_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.invited_time.as_ref()
     }
     /// <p>The date and time that the member account was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.updated_time.as_ref()
     }
     /// <p>The data volume in bytes per day for the member account.</p>
@@ -431,11 +394,11 @@ impl MemberDetail {
     }
     /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
-    pub fn volume_usage_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn volume_usage_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.volume_usage_updated_time.as_ref()
     }
-    /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p>
-    /// <p>Note that this is not the percentage of the behavior graph data volume.</p>
+    /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p> 
+    /// <p>Note that this is not the percentage of the behavior graph data volume.</p> 
     /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume. </p>
     #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
     pub fn percent_of_graph_utilization(&self) -> std::option::Option<f64> {
@@ -443,43 +406,27 @@ impl MemberDetail {
     }
     /// <p>The date and time when the graph utilization percentage was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
-    pub fn percent_of_graph_utilization_updated_time(
-        &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn percent_of_graph_utilization_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.percent_of_graph_utilization_updated_time.as_ref()
     }
-    /// <p>The type of behavior graph membership.</p>
-    /// <p>For an organization account in the organization behavior graph, the type is <code>ORGANIZATION</code>.</p>
+    /// <p>The type of behavior graph membership.</p> 
+    /// <p>For an organization account in the organization behavior graph, the type is <code>ORGANIZATION</code>.</p> 
     /// <p>For an account that was invited to a behavior graph, the type is <code>INVITATION</code>. </p>
-    pub fn invitation_type(&self) -> std::option::Option<&crate::model::InvitationType> {
+    pub fn invitation_type(&self) -> std::option::Option<& crate::model::InvitationType> {
         self.invitation_type.as_ref()
     }
     /// <p>Details on the volume of usage for each data source package in a behavior graph.</p>
-    pub fn volume_usage_by_datasource_package(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            crate::model::DatasourcePackage,
-            crate::model::DatasourcePackageUsageInfo,
-        >,
-    > {
+    pub fn volume_usage_by_datasource_package(&self) -> std::option::Option<& std::collections::HashMap<crate::model::DatasourcePackage, crate::model::DatasourcePackageUsageInfo>> {
         self.volume_usage_by_datasource_package.as_ref()
     }
     /// <p>The state of a data source package for the behavior graph.</p>
-    pub fn datasource_package_ingest_states(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            crate::model::DatasourcePackage,
-            crate::model::DatasourcePackageIngestState,
-        >,
-    > {
+    pub fn datasource_package_ingest_states(&self) -> std::option::Option<& std::collections::HashMap<crate::model::DatasourcePackage, crate::model::DatasourcePackageIngestState>> {
         self.datasource_package_ingest_states.as_ref()
     }
 }
 /// See [`MemberDetail`](crate::model::MemberDetail).
 pub mod member_detail {
-
+    
     /// A builder for [`MemberDetail`](crate::model::MemberDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -495,21 +442,10 @@ pub mod member_detail {
         pub(crate) volume_usage_in_bytes: std::option::Option<i64>,
         pub(crate) volume_usage_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) percent_of_graph_utilization: std::option::Option<f64>,
-        pub(crate) percent_of_graph_utilization_updated_time:
-            std::option::Option<aws_smithy_types::DateTime>,
+        pub(crate) percent_of_graph_utilization_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) invitation_type: std::option::Option<crate::model::InvitationType>,
-        pub(crate) volume_usage_by_datasource_package: std::option::Option<
-            std::collections::HashMap<
-                crate::model::DatasourcePackage,
-                crate::model::DatasourcePackageUsageInfo,
-            >,
-        >,
-        pub(crate) datasource_package_ingest_states: std::option::Option<
-            std::collections::HashMap<
-                crate::model::DatasourcePackage,
-                crate::model::DatasourcePackageIngestState,
-            >,
-        >,
+        pub(crate) volume_usage_by_datasource_package: std::option::Option<std::collections::HashMap<crate::model::DatasourcePackage, crate::model::DatasourcePackageUsageInfo>>,
+        pub(crate) datasource_package_ingest_states: std::option::Option<std::collections::HashMap<crate::model::DatasourcePackage, crate::model::DatasourcePackageIngestState>>,
     }
     impl Builder {
         /// <p>The Amazon Web Services account identifier for the member account.</p>
@@ -519,8 +455,7 @@ pub mod member_detail {
         }
         /// <p>The Amazon Web Services account identifier for the member account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The Amazon Web Services account root user email address for the member account.</p>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -528,12 +463,8 @@ pub mod member_detail {
             self
         }
         /// <p>The Amazon Web Services account root user email address for the member account.</p>
-        pub fn set_email_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.email_address = input;
-            self
+        pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.email_address = input; self
         }
         /// <p>The ARN of the behavior graph.</p>
         pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -542,8 +473,7 @@ pub mod member_detail {
         }
         /// <p>The ARN of the behavior graph.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.graph_arn = input;
-            self
+            self.graph_arn = input; self
         }
         /// <p>The Amazon Web Services account identifier of the administrator account for the behavior graph.</p>
         #[deprecated(note = "This property is deprecated. Use AdministratorId instead.")]
@@ -554,8 +484,7 @@ pub mod member_detail {
         /// <p>The Amazon Web Services account identifier of the administrator account for the behavior graph.</p>
         #[deprecated(note = "This property is deprecated. Use AdministratorId instead.")]
         pub fn set_master_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.master_id = input;
-            self
+            self.master_id = input; self
         }
         /// <p>The Amazon Web Services account identifier of the administrator account for the behavior graph.</p>
         pub fn administrator_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -563,64 +492,52 @@ pub mod member_detail {
             self
         }
         /// <p>The Amazon Web Services account identifier of the administrator account for the behavior graph.</p>
-        pub fn set_administrator_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.administrator_id = input;
-            self
+        pub fn set_administrator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.administrator_id = input; self
         }
-        /// <p>The current membership status of the member account. The status can have one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>INVITED</code> - For invited accounts only. Indicates that the member was sent an invitation but has not yet responded.</p> </li>
-        /// <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - For invited accounts only, indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p> <p>For organization accounts in the organization behavior graph, indicates that Detective is verifying that the account belongs to the organization.</p> </li>
-        /// <li> <p> <code>VERIFICATION_FAILED</code> - For invited accounts only. Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p> </li>
-        /// <li> <p> <code>ENABLED</code> - Indicates that the member account currently contributes data to the behavior graph. For invited accounts, the member account accepted the invitation. For organization accounts in the organization behavior graph, the Detective administrator account enabled the organization account as a member account.</p> </li>
-        /// <li> <p> <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was enabled by the Detective administrator account, but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p> </li>
-        /// </ul>
+        /// <p>The current membership status of the member account. The status can have one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>INVITED</code> - For invited accounts only. Indicates that the member was sent an invitation but has not yet responded.</p> </li> 
+        /// <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - For invited accounts only, indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p> <p>For organization accounts in the organization behavior graph, indicates that Detective is verifying that the account belongs to the organization.</p> </li> 
+        /// <li> <p> <code>VERIFICATION_FAILED</code> - For invited accounts only. Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p> </li> 
+        /// <li> <p> <code>ENABLED</code> - Indicates that the member account currently contributes data to the behavior graph. For invited accounts, the member account accepted the invitation. For organization accounts in the organization behavior graph, the Detective administrator account enabled the organization account as a member account.</p> </li> 
+        /// <li> <p> <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was enabled by the Detective administrator account, but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p> </li> 
+        /// </ul> 
         /// <p>Invited accounts that declined an invitation or that were removed from the behavior graph are not included. In the organization behavior graph, organization accounts that the Detective administrator account did not enable are not included.</p>
         pub fn status(mut self, input: crate::model::MemberStatus) -> Self {
             self.status = Some(input);
             self
         }
-        /// <p>The current membership status of the member account. The status can have one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>INVITED</code> - For invited accounts only. Indicates that the member was sent an invitation but has not yet responded.</p> </li>
-        /// <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - For invited accounts only, indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p> <p>For organization accounts in the organization behavior graph, indicates that Detective is verifying that the account belongs to the organization.</p> </li>
-        /// <li> <p> <code>VERIFICATION_FAILED</code> - For invited accounts only. Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p> </li>
-        /// <li> <p> <code>ENABLED</code> - Indicates that the member account currently contributes data to the behavior graph. For invited accounts, the member account accepted the invitation. For organization accounts in the organization behavior graph, the Detective administrator account enabled the organization account as a member account.</p> </li>
-        /// <li> <p> <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was enabled by the Detective administrator account, but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p> </li>
-        /// </ul>
+        /// <p>The current membership status of the member account. The status can have one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>INVITED</code> - For invited accounts only. Indicates that the member was sent an invitation but has not yet responded.</p> </li> 
+        /// <li> <p> <code>VERIFICATION_IN_PROGRESS</code> - For invited accounts only, indicates that Detective is verifying that the account identifier and email address provided for the member account match. If they do match, then Detective sends the invitation. If the email address and account identifier don't match, then the member cannot be added to the behavior graph.</p> <p>For organization accounts in the organization behavior graph, indicates that Detective is verifying that the account belongs to the organization.</p> </li> 
+        /// <li> <p> <code>VERIFICATION_FAILED</code> - For invited accounts only. Indicates that the account and email address provided for the member account do not match, and Detective did not send an invitation to the account.</p> </li> 
+        /// <li> <p> <code>ENABLED</code> - Indicates that the member account currently contributes data to the behavior graph. For invited accounts, the member account accepted the invitation. For organization accounts in the organization behavior graph, the Detective administrator account enabled the organization account as a member account.</p> </li> 
+        /// <li> <p> <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was enabled by the Detective administrator account, but is prevented from contributing data to the behavior graph. <code>DisabledReason</code> provides the reason why the member account is not enabled.</p> </li> 
+        /// </ul> 
         /// <p>Invited accounts that declined an invitation or that were removed from the behavior graph are not included. In the organization behavior graph, organization accounts that the Detective administrator account did not enable are not included.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::MemberStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::MemberStatus>) -> Self {
+            self.status = input; self
         }
-        /// <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is not enabled.</p>
-        /// <p>The reason can have one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p> </li>
-        /// <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty. </p> </li>
+        /// <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is not enabled.</p> 
+        /// <p>The reason can have one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p> </li> 
+        /// <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty. </p> </li> 
         /// </ul>
         pub fn disabled_reason(mut self, input: crate::model::MemberDisabledReason) -> Self {
             self.disabled_reason = Some(input);
             self
         }
-        /// <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is not enabled.</p>
-        /// <p>The reason can have one of the following values:</p>
-        /// <ul>
-        /// <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p> </li>
-        /// <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty. </p> </li>
+        /// <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that the member account is not enabled.</p> 
+        /// <p>The reason can have one of the following values:</p> 
+        /// <ul> 
+        /// <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause the data volume for the behavior graph to be too high.</p> </li> 
+        /// <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data volume for the member account. This is usually because the member account is not enrolled in Amazon GuardDuty. </p> </li> 
         /// </ul>
-        pub fn set_disabled_reason(
-            mut self,
-            input: std::option::Option<crate::model::MemberDisabledReason>,
-        ) -> Self {
-            self.disabled_reason = input;
-            self
+        pub fn set_disabled_reason(mut self, input: std::option::Option<crate::model::MemberDisabledReason>) -> Self {
+            self.disabled_reason = input; self
         }
         /// <p>For invited accounts, the date and time that Detective sent the invitation to the account. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
         pub fn invited_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -628,12 +545,8 @@ pub mod member_detail {
             self
         }
         /// <p>For invited accounts, the date and time that Detective sent the invitation to the account. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-        pub fn set_invited_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.invited_time = input;
-            self
+        pub fn set_invited_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.invited_time = input; self
         }
         /// <p>The date and time that the member account was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
         pub fn updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -641,186 +554,140 @@ pub mod member_detail {
             self
         }
         /// <p>The date and time that the member account was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-        pub fn set_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.updated_time = input;
-            self
+        pub fn set_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.updated_time = input; self
         }
         /// <p>The data volume in bytes per day for the member account.</p>
-        #[deprecated(
-            note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
-        )]
+        #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
         pub fn volume_usage_in_bytes(mut self, input: i64) -> Self {
             self.volume_usage_in_bytes = Some(input);
             self
         }
         /// <p>The data volume in bytes per day for the member account.</p>
-        #[deprecated(
-            note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
-        )]
+        #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
         pub fn set_volume_usage_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.volume_usage_in_bytes = input;
-            self
+            self.volume_usage_in_bytes = input; self
         }
         /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-        #[deprecated(
-            note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
-        )]
+        #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
         pub fn volume_usage_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.volume_usage_updated_time = Some(input);
             self
         }
         /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-        #[deprecated(
-            note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
-        )]
-        pub fn set_volume_usage_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.volume_usage_updated_time = input;
-            self
+        #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
+        pub fn set_volume_usage_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.volume_usage_updated_time = input; self
         }
-        /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p>
-        /// <p>Note that this is not the percentage of the behavior graph data volume.</p>
+        /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p> 
+        /// <p>Note that this is not the percentage of the behavior graph data volume.</p> 
         /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume. </p>
-        #[deprecated(
-            note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
-        )]
+        #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
         pub fn percent_of_graph_utilization(mut self, input: f64) -> Self {
             self.percent_of_graph_utilization = Some(input);
             self
         }
-        /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p>
-        /// <p>Note that this is not the percentage of the behavior graph data volume.</p>
+        /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p> 
+        /// <p>Note that this is not the percentage of the behavior graph data volume.</p> 
         /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume. </p>
-        #[deprecated(
-            note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
-        )]
+        #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
         pub fn set_percent_of_graph_utilization(mut self, input: std::option::Option<f64>) -> Self {
-            self.percent_of_graph_utilization = input;
-            self
+            self.percent_of_graph_utilization = input; self
         }
         /// <p>The date and time when the graph utilization percentage was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-        #[deprecated(
-            note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
-        )]
-        pub fn percent_of_graph_utilization_updated_time(
-            mut self,
-            input: aws_smithy_types::DateTime,
-        ) -> Self {
+        #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
+        pub fn percent_of_graph_utilization_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
             self.percent_of_graph_utilization_updated_time = Some(input);
             self
         }
         /// <p>The date and time when the graph utilization percentage was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-        #[deprecated(
-            note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead."
-        )]
-        pub fn set_percent_of_graph_utilization_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.percent_of_graph_utilization_updated_time = input;
-            self
+        #[deprecated(note = "This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
+        pub fn set_percent_of_graph_utilization_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.percent_of_graph_utilization_updated_time = input; self
         }
-        /// <p>The type of behavior graph membership.</p>
-        /// <p>For an organization account in the organization behavior graph, the type is <code>ORGANIZATION</code>.</p>
+        /// <p>The type of behavior graph membership.</p> 
+        /// <p>For an organization account in the organization behavior graph, the type is <code>ORGANIZATION</code>.</p> 
         /// <p>For an account that was invited to a behavior graph, the type is <code>INVITATION</code>. </p>
         pub fn invitation_type(mut self, input: crate::model::InvitationType) -> Self {
             self.invitation_type = Some(input);
             self
         }
-        /// <p>The type of behavior graph membership.</p>
-        /// <p>For an organization account in the organization behavior graph, the type is <code>ORGANIZATION</code>.</p>
+        /// <p>The type of behavior graph membership.</p> 
+        /// <p>For an organization account in the organization behavior graph, the type is <code>ORGANIZATION</code>.</p> 
         /// <p>For an account that was invited to a behavior graph, the type is <code>INVITATION</code>. </p>
-        pub fn set_invitation_type(
-            mut self,
-            input: std::option::Option<crate::model::InvitationType>,
-        ) -> Self {
-            self.invitation_type = input;
-            self
+        pub fn set_invitation_type(mut self, input: std::option::Option<crate::model::InvitationType>) -> Self {
+            self.invitation_type = input; self
         }
         /// Adds a key-value pair to `volume_usage_by_datasource_package`.
         ///
         /// To override the contents of this collection use [`set_volume_usage_by_datasource_package`](Self::set_volume_usage_by_datasource_package).
         ///
         /// <p>Details on the volume of usage for each data source package in a behavior graph.</p>
-        pub fn volume_usage_by_datasource_package(
-            mut self,
-            k: crate::model::DatasourcePackage,
-            v: crate::model::DatasourcePackageUsageInfo,
-        ) -> Self {
+        pub fn volume_usage_by_datasource_package(mut self, k: crate::model::DatasourcePackage, v: crate::model::DatasourcePackageUsageInfo) -> Self {
             let mut hash_map = self.volume_usage_by_datasource_package.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.volume_usage_by_datasource_package = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.volume_usage_by_datasource_package = Some(hash_map);
+                            self
         }
         /// <p>Details on the volume of usage for each data source package in a behavior graph.</p>
-        pub fn set_volume_usage_by_datasource_package(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    crate::model::DatasourcePackage,
-                    crate::model::DatasourcePackageUsageInfo,
-                >,
-            >,
-        ) -> Self {
-            self.volume_usage_by_datasource_package = input;
-            self
+        pub fn set_volume_usage_by_datasource_package(mut self, input: std::option::Option<std::collections::HashMap<crate::model::DatasourcePackage, crate::model::DatasourcePackageUsageInfo>>) -> Self {
+            self.volume_usage_by_datasource_package = input; self
         }
         /// Adds a key-value pair to `datasource_package_ingest_states`.
         ///
         /// To override the contents of this collection use [`set_datasource_package_ingest_states`](Self::set_datasource_package_ingest_states).
         ///
         /// <p>The state of a data source package for the behavior graph.</p>
-        pub fn datasource_package_ingest_states(
-            mut self,
-            k: crate::model::DatasourcePackage,
-            v: crate::model::DatasourcePackageIngestState,
-        ) -> Self {
+        pub fn datasource_package_ingest_states(mut self, k: crate::model::DatasourcePackage, v: crate::model::DatasourcePackageIngestState) -> Self {
             let mut hash_map = self.datasource_package_ingest_states.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.datasource_package_ingest_states = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.datasource_package_ingest_states = Some(hash_map);
+                            self
         }
         /// <p>The state of a data source package for the behavior graph.</p>
-        pub fn set_datasource_package_ingest_states(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    crate::model::DatasourcePackage,
-                    crate::model::DatasourcePackageIngestState,
-                >,
-            >,
-        ) -> Self {
-            self.datasource_package_ingest_states = input;
-            self
+        pub fn set_datasource_package_ingest_states(mut self, input: std::option::Option<std::collections::HashMap<crate::model::DatasourcePackage, crate::model::DatasourcePackageIngestState>>) -> Self {
+            self.datasource_package_ingest_states = input; self
         }
         /// Consumes the builder and constructs a [`MemberDetail`](crate::model::MemberDetail).
         pub fn build(self) -> crate::model::MemberDetail {
             crate::model::MemberDetail {
-                account_id: self.account_id,
-                email_address: self.email_address,
-                graph_arn: self.graph_arn,
-                master_id: self.master_id,
-                administrator_id: self.administrator_id,
-                status: self.status,
-                disabled_reason: self.disabled_reason,
-                invited_time: self.invited_time,
-                updated_time: self.updated_time,
-                volume_usage_in_bytes: self.volume_usage_in_bytes,
-                volume_usage_updated_time: self.volume_usage_updated_time,
-                percent_of_graph_utilization: self.percent_of_graph_utilization,
-                percent_of_graph_utilization_updated_time: self
-                    .percent_of_graph_utilization_updated_time,
-                invitation_type: self.invitation_type,
-                volume_usage_by_datasource_package: self.volume_usage_by_datasource_package,
-                datasource_package_ingest_states: self.datasource_package_ingest_states,
+                account_id: self.account_id
+                ,
+                email_address: self.email_address
+                ,
+                graph_arn: self.graph_arn
+                ,
+                master_id: self.master_id
+                ,
+                administrator_id: self.administrator_id
+                ,
+                status: self.status
+                ,
+                disabled_reason: self.disabled_reason
+                ,
+                invited_time: self.invited_time
+                ,
+                updated_time: self.updated_time
+                ,
+                volume_usage_in_bytes: self.volume_usage_in_bytes
+                ,
+                volume_usage_updated_time: self.volume_usage_updated_time
+                ,
+                percent_of_graph_utilization: self.percent_of_graph_utilization
+                ,
+                percent_of_graph_utilization_updated_time: self.percent_of_graph_utilization_updated_time
+                ,
+                invitation_type: self.invitation_type
+                ,
+                volume_usage_by_datasource_package: self.volume_usage_by_datasource_package
+                ,
+                datasource_package_ingest_states: self.datasource_package_ingest_states
+                ,
             }
         }
     }
+    
+    
 }
 impl MemberDetail {
     /// Creates a new builder-style object to manufacture [`MemberDetail`](crate::model::MemberDetail).
@@ -835,9 +702,9 @@ impl MemberDetail {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let datasourcepackageingeststate = unimplemented!();
 /// match datasourcepackageingeststate {
@@ -860,22 +727,14 @@ impl MemberDetail {
 /// Specifically, when `datasourcepackageingeststate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DatasourcePackageIngestState::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum DatasourcePackageIngestState {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
@@ -884,7 +743,7 @@ pub enum DatasourcePackageIngestState {
     #[allow(missing_docs)] // documentation missing in model
     Stopped,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for DatasourcePackageIngestState {
     fn from(s: &str) -> Self {
@@ -892,19 +751,17 @@ impl std::convert::From<&str> for DatasourcePackageIngestState {
             "DISABLED" => DatasourcePackageIngestState::Disabled,
             "STARTED" => DatasourcePackageIngestState::Started,
             "STOPPED" => DatasourcePackageIngestState::Stopped,
-            other => DatasourcePackageIngestState::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => DatasourcePackageIngestState::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for DatasourcePackageIngestState {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DatasourcePackageIngestState::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(DatasourcePackageIngestState::from(s))
+                }
+            }
 impl DatasourcePackageIngestState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -912,12 +769,14 @@ impl DatasourcePackageIngestState {
             DatasourcePackageIngestState::Disabled => "DISABLED",
             DatasourcePackageIngestState::Started => "STARTED",
             DatasourcePackageIngestState::Stopped => "STOPPED",
-            DatasourcePackageIngestState::Unknown(value) => value.as_str(),
+            DatasourcePackageIngestState::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISABLED", "STARTED", "STOPPED"]
+        &[
+            "DISABLED", "STARTED", "STOPPED"
+        ]
     }
 }
 impl AsRef<str> for DatasourcePackageIngestState {
@@ -929,7 +788,7 @@ impl AsRef<str> for DatasourcePackageIngestState {
 /// <p>Information on the usage of a data source package in the behavior graph.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasourcePackageUsageInfo {
+pub struct DatasourcePackageUsageInfo  {
     /// <p>Total volume of data in bytes per day ingested for a given data source package.</p>
     #[doc(hidden)]
     pub volume_usage_in_bytes: std::option::Option<i64>,
@@ -943,13 +802,13 @@ impl DatasourcePackageUsageInfo {
         self.volume_usage_in_bytes
     }
     /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn volume_usage_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn volume_usage_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.volume_usage_update_time.as_ref()
     }
 }
 /// See [`DatasourcePackageUsageInfo`](crate::model::DatasourcePackageUsageInfo).
 pub mod datasource_package_usage_info {
-
+    
     /// A builder for [`DatasourcePackageUsageInfo`](crate::model::DatasourcePackageUsageInfo).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -964,8 +823,7 @@ pub mod datasource_package_usage_info {
         }
         /// <p>Total volume of data in bytes per day ingested for a given data source package.</p>
         pub fn set_volume_usage_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-            self.volume_usage_in_bytes = input;
-            self
+            self.volume_usage_in_bytes = input; self
         }
         /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
         pub fn volume_usage_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -973,21 +831,21 @@ pub mod datasource_package_usage_info {
             self
         }
         /// <p>The data and time when the member account data volume was last updated. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-        pub fn set_volume_usage_update_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.volume_usage_update_time = input;
-            self
+        pub fn set_volume_usage_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.volume_usage_update_time = input; self
         }
         /// Consumes the builder and constructs a [`DatasourcePackageUsageInfo`](crate::model::DatasourcePackageUsageInfo).
         pub fn build(self) -> crate::model::DatasourcePackageUsageInfo {
             crate::model::DatasourcePackageUsageInfo {
-                volume_usage_in_bytes: self.volume_usage_in_bytes,
-                volume_usage_update_time: self.volume_usage_update_time,
+                volume_usage_in_bytes: self.volume_usage_in_bytes
+                ,
+                volume_usage_update_time: self.volume_usage_update_time
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasourcePackageUsageInfo {
     /// Creates a new builder-style object to manufacture [`DatasourcePackageUsageInfo`](crate::model::DatasourcePackageUsageInfo).
@@ -1002,9 +860,9 @@ impl DatasourcePackageUsageInfo {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let invitationtype = unimplemented!();
 /// match invitationtype {
@@ -1026,58 +884,52 @@ impl DatasourcePackageUsageInfo {
 /// Specifically, when `invitationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InvitationType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InvitationType {
     #[allow(missing_docs)] // documentation missing in model
     Invitation,
     #[allow(missing_docs)] // documentation missing in model
     Organization,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InvitationType {
     fn from(s: &str) -> Self {
         match s {
             "INVITATION" => InvitationType::Invitation,
             "ORGANIZATION" => InvitationType::Organization,
-            other => InvitationType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => InvitationType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InvitationType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InvitationType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InvitationType::from(s))
+                }
+            }
 impl InvitationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InvitationType::Invitation => "INVITATION",
             InvitationType::Organization => "ORGANIZATION",
-            InvitationType::Unknown(value) => value.as_str(),
+            InvitationType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INVITATION", "ORGANIZATION"]
+        &[
+            "INVITATION", "ORGANIZATION"
+        ]
     }
 }
 impl AsRef<str> for InvitationType {
@@ -1092,9 +944,9 @@ impl AsRef<str> for InvitationType {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let memberdisabledreason = unimplemented!();
 /// match memberdisabledreason {
@@ -1116,60 +968,52 @@ impl AsRef<str> for InvitationType {
 /// Specifically, when `memberdisabledreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MemberDisabledReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MemberDisabledReason {
     #[allow(missing_docs)] // documentation missing in model
     VolumeTooHigh,
     #[allow(missing_docs)] // documentation missing in model
     VolumeUnknown,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MemberDisabledReason {
     fn from(s: &str) -> Self {
         match s {
             "VOLUME_TOO_HIGH" => MemberDisabledReason::VolumeTooHigh,
             "VOLUME_UNKNOWN" => MemberDisabledReason::VolumeUnknown,
-            other => {
-                MemberDisabledReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
-            }
+            other => MemberDisabledReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MemberDisabledReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MemberDisabledReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MemberDisabledReason::from(s))
+                }
+            }
 impl MemberDisabledReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MemberDisabledReason::VolumeTooHigh => "VOLUME_TOO_HIGH",
             MemberDisabledReason::VolumeUnknown => "VOLUME_UNKNOWN",
-            MemberDisabledReason::Unknown(value) => value.as_str(),
+            MemberDisabledReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["VOLUME_TOO_HIGH", "VOLUME_UNKNOWN"]
+        &[
+            "VOLUME_TOO_HIGH", "VOLUME_UNKNOWN"
+        ]
     }
 }
 impl AsRef<str> for MemberDisabledReason {
@@ -1184,9 +1028,9 @@ impl AsRef<str> for MemberDisabledReason {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let memberstatus = unimplemented!();
 /// match memberstatus {
@@ -1211,22 +1055,14 @@ impl AsRef<str> for MemberDisabledReason {
 /// Specifically, when `memberstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MemberStatus::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum MemberStatus {
     #[allow(missing_docs)] // documentation missing in model
     AcceptedButDisabled,
@@ -1239,7 +1075,7 @@ pub enum MemberStatus {
     #[allow(missing_docs)] // documentation missing in model
     VerificationInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for MemberStatus {
     fn from(s: &str) -> Self {
@@ -1249,17 +1085,17 @@ impl std::convert::From<&str> for MemberStatus {
             "INVITED" => MemberStatus::Invited,
             "VERIFICATION_FAILED" => MemberStatus::VerificationFailed,
             "VERIFICATION_IN_PROGRESS" => MemberStatus::VerificationInProgress,
-            other => MemberStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => MemberStatus::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for MemberStatus {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MemberStatus::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(MemberStatus::from(s))
+                }
+            }
 impl MemberStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -1269,17 +1105,13 @@ impl MemberStatus {
             MemberStatus::Invited => "INVITED",
             MemberStatus::VerificationFailed => "VERIFICATION_FAILED",
             MemberStatus::VerificationInProgress => "VERIFICATION_IN_PROGRESS",
-            MemberStatus::Unknown(value) => value.as_str(),
+            MemberStatus::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "ACCEPTED_BUT_DISABLED",
-            "ENABLED",
-            "INVITED",
-            "VERIFICATION_FAILED",
-            "VERIFICATION_IN_PROGRESS",
+            "ACCEPTED_BUT_DISABLED", "ENABLED", "INVITED", "VERIFICATION_FAILED", "VERIFICATION_IN_PROGRESS"
         ]
     }
 }
@@ -1292,7 +1124,7 @@ impl AsRef<str> for MemberStatus {
 /// <p>A behavior graph in Detective.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Graph {
+pub struct Graph  {
     /// <p>The ARN of the behavior graph.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -1302,17 +1134,17 @@ pub struct Graph {
 }
 impl Graph {
     /// <p>The ARN of the behavior graph.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> std::option::Option<& str> {
         self.arn.as_deref()
     }
     /// <p>The date and time that the behavior graph was created. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
 /// See [`Graph`](crate::model::Graph).
 pub mod graph {
-
+    
     /// A builder for [`Graph`](crate::model::Graph).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1327,8 +1159,7 @@ pub mod graph {
         }
         /// <p>The ARN of the behavior graph.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.arn = input;
-            self
+            self.arn = input; self
         }
         /// <p>The date and time that the behavior graph was created. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
         pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1336,21 +1167,21 @@ pub mod graph {
             self
         }
         /// <p>The date and time that the behavior graph was created. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-        pub fn set_created_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_time = input;
-            self
+        pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_time = input; self
         }
         /// Consumes the builder and constructs a [`Graph`](crate::model::Graph).
         pub fn build(self) -> crate::model::Graph {
             crate::model::Graph {
-                arn: self.arn,
-                created_time: self.created_time,
+                arn: self.arn
+                ,
+                created_time: self.created_time
+                ,
             }
         }
     }
+    
+    
 }
 impl Graph {
     /// Creates a new builder-style object to manufacture [`Graph`](crate::model::Graph).
@@ -1362,107 +1193,70 @@ impl Graph {
 /// <p>Details about the data source packages ingested by your behavior graph.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasourcePackageIngestDetail {
+pub struct DatasourcePackageIngestDetail  {
     /// <p>Details on which data source packages are ingested for a member account.</p>
     #[doc(hidden)]
-    pub datasource_package_ingest_state:
-        std::option::Option<crate::model::DatasourcePackageIngestState>,
+    pub datasource_package_ingest_state: std::option::Option<crate::model::DatasourcePackageIngestState>,
     /// <p>The date a data source package was enabled for this account</p>
     #[doc(hidden)]
-    pub last_ingest_state_change: std::option::Option<
-        std::collections::HashMap<
-            crate::model::DatasourcePackageIngestState,
-            crate::model::TimestampForCollection,
-        >,
-    >,
+    pub last_ingest_state_change: std::option::Option<std::collections::HashMap<crate::model::DatasourcePackageIngestState, crate::model::TimestampForCollection>>,
 }
 impl DatasourcePackageIngestDetail {
     /// <p>Details on which data source packages are ingested for a member account.</p>
-    pub fn datasource_package_ingest_state(
-        &self,
-    ) -> std::option::Option<&crate::model::DatasourcePackageIngestState> {
+    pub fn datasource_package_ingest_state(&self) -> std::option::Option<& crate::model::DatasourcePackageIngestState> {
         self.datasource_package_ingest_state.as_ref()
     }
     /// <p>The date a data source package was enabled for this account</p>
-    pub fn last_ingest_state_change(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            crate::model::DatasourcePackageIngestState,
-            crate::model::TimestampForCollection,
-        >,
-    > {
+    pub fn last_ingest_state_change(&self) -> std::option::Option<& std::collections::HashMap<crate::model::DatasourcePackageIngestState, crate::model::TimestampForCollection>> {
         self.last_ingest_state_change.as_ref()
     }
 }
 /// See [`DatasourcePackageIngestDetail`](crate::model::DatasourcePackageIngestDetail).
 pub mod datasource_package_ingest_detail {
-
+    
     /// A builder for [`DatasourcePackageIngestDetail`](crate::model::DatasourcePackageIngestDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) datasource_package_ingest_state:
-            std::option::Option<crate::model::DatasourcePackageIngestState>,
-        pub(crate) last_ingest_state_change: std::option::Option<
-            std::collections::HashMap<
-                crate::model::DatasourcePackageIngestState,
-                crate::model::TimestampForCollection,
-            >,
-        >,
+        pub(crate) datasource_package_ingest_state: std::option::Option<crate::model::DatasourcePackageIngestState>,
+        pub(crate) last_ingest_state_change: std::option::Option<std::collections::HashMap<crate::model::DatasourcePackageIngestState, crate::model::TimestampForCollection>>,
     }
     impl Builder {
         /// <p>Details on which data source packages are ingested for a member account.</p>
-        pub fn datasource_package_ingest_state(
-            mut self,
-            input: crate::model::DatasourcePackageIngestState,
-        ) -> Self {
+        pub fn datasource_package_ingest_state(mut self, input: crate::model::DatasourcePackageIngestState) -> Self {
             self.datasource_package_ingest_state = Some(input);
             self
         }
         /// <p>Details on which data source packages are ingested for a member account.</p>
-        pub fn set_datasource_package_ingest_state(
-            mut self,
-            input: std::option::Option<crate::model::DatasourcePackageIngestState>,
-        ) -> Self {
-            self.datasource_package_ingest_state = input;
-            self
+        pub fn set_datasource_package_ingest_state(mut self, input: std::option::Option<crate::model::DatasourcePackageIngestState>) -> Self {
+            self.datasource_package_ingest_state = input; self
         }
         /// Adds a key-value pair to `last_ingest_state_change`.
         ///
         /// To override the contents of this collection use [`set_last_ingest_state_change`](Self::set_last_ingest_state_change).
         ///
         /// <p>The date a data source package was enabled for this account</p>
-        pub fn last_ingest_state_change(
-            mut self,
-            k: crate::model::DatasourcePackageIngestState,
-            v: crate::model::TimestampForCollection,
-        ) -> Self {
+        pub fn last_ingest_state_change(mut self, k: crate::model::DatasourcePackageIngestState, v: crate::model::TimestampForCollection) -> Self {
             let mut hash_map = self.last_ingest_state_change.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.last_ingest_state_change = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.last_ingest_state_change = Some(hash_map);
+                            self
         }
         /// <p>The date a data source package was enabled for this account</p>
-        pub fn set_last_ingest_state_change(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    crate::model::DatasourcePackageIngestState,
-                    crate::model::TimestampForCollection,
-                >,
-            >,
-        ) -> Self {
-            self.last_ingest_state_change = input;
-            self
+        pub fn set_last_ingest_state_change(mut self, input: std::option::Option<std::collections::HashMap<crate::model::DatasourcePackageIngestState, crate::model::TimestampForCollection>>) -> Self {
+            self.last_ingest_state_change = input; self
         }
         /// Consumes the builder and constructs a [`DatasourcePackageIngestDetail`](crate::model::DatasourcePackageIngestDetail).
         pub fn build(self) -> crate::model::DatasourcePackageIngestDetail {
             crate::model::DatasourcePackageIngestDetail {
-                datasource_package_ingest_state: self.datasource_package_ingest_state,
-                last_ingest_state_change: self.last_ingest_state_change,
+                datasource_package_ingest_state: self.datasource_package_ingest_state
+                ,
+                last_ingest_state_change: self.last_ingest_state_change
+                ,
             }
         }
     }
+    
+    
 }
 impl DatasourcePackageIngestDetail {
     /// Creates a new builder-style object to manufacture [`DatasourcePackageIngestDetail`](crate::model::DatasourcePackageIngestDetail).
@@ -1474,20 +1268,20 @@ impl DatasourcePackageIngestDetail {
 /// <p>Details on when data collection began for a source package.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimestampForCollection {
+pub struct TimestampForCollection  {
     /// <p>The data and time when data collection began for a source package. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
     #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl TimestampForCollection {
     /// <p>The data and time when data collection began for a source package. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
 /// See [`TimestampForCollection`](crate::model::TimestampForCollection).
 pub mod timestamp_for_collection {
-
+    
     /// A builder for [`TimestampForCollection`](crate::model::TimestampForCollection).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1500,20 +1294,19 @@ pub mod timestamp_for_collection {
             self
         }
         /// <p>The data and time when data collection began for a source package. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.</p>
-        pub fn set_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.timestamp = input;
-            self
+        pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.timestamp = input; self
         }
         /// Consumes the builder and constructs a [`TimestampForCollection`](crate::model::TimestampForCollection).
         pub fn build(self) -> crate::model::TimestampForCollection {
             crate::model::TimestampForCollection {
-                timestamp: self.timestamp,
+                timestamp: self.timestamp
+                ,
             }
         }
     }
+    
+    
 }
 impl TimestampForCollection {
     /// Creates a new builder-style object to manufacture [`TimestampForCollection`](crate::model::TimestampForCollection).
@@ -1525,7 +1318,7 @@ impl TimestampForCollection {
 /// <p>A member account that was included in a request but for which the request could not be processed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnprocessedAccount {
+pub struct UnprocessedAccount  {
     /// <p>The Amazon Web Services account identifier of the member account that was not processed.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -1535,17 +1328,17 @@ pub struct UnprocessedAccount {
 }
 impl UnprocessedAccount {
     /// <p>The Amazon Web Services account identifier of the member account that was not processed.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The reason that the member account request could not be processed.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
 /// See [`UnprocessedAccount`](crate::model::UnprocessedAccount).
 pub mod unprocessed_account {
-
+    
     /// A builder for [`UnprocessedAccount`](crate::model::UnprocessedAccount).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1560,8 +1353,7 @@ pub mod unprocessed_account {
         }
         /// <p>The Amazon Web Services account identifier of the member account that was not processed.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The reason that the member account request could not be processed.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1570,17 +1362,20 @@ pub mod unprocessed_account {
         }
         /// <p>The reason that the member account request could not be processed.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reason = input;
-            self
+            self.reason = input; self
         }
         /// Consumes the builder and constructs a [`UnprocessedAccount`](crate::model::UnprocessedAccount).
         pub fn build(self) -> crate::model::UnprocessedAccount {
             crate::model::UnprocessedAccount {
-                account_id: self.account_id,
-                reason: self.reason,
+                account_id: self.account_id
+                ,
+                reason: self.reason
+                ,
             }
         }
     }
+    
+    
 }
 impl UnprocessedAccount {
     /// Creates a new builder-style object to manufacture [`UnprocessedAccount`](crate::model::UnprocessedAccount).
@@ -1592,7 +1387,7 @@ impl UnprocessedAccount {
 /// <p>An Amazon Web Services account that is the administrator account of or a member of a behavior graph.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Account {
+pub struct Account  {
     /// <p>The account identifier of the Amazon Web Services account.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -1602,17 +1397,17 @@ pub struct Account {
 }
 impl Account {
     /// <p>The account identifier of the Amazon Web Services account.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Web Services account root user email address for the Amazon Web Services account.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> std::option::Option<& str> {
         self.email_address.as_deref()
     }
 }
 /// See [`Account`](crate::model::Account).
 pub mod account {
-
+    
     /// A builder for [`Account`](crate::model::Account).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1627,8 +1422,7 @@ pub mod account {
         }
         /// <p>The account identifier of the Amazon Web Services account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The Amazon Web Services account root user email address for the Amazon Web Services account.</p>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1636,21 +1430,21 @@ pub mod account {
             self
         }
         /// <p>The Amazon Web Services account root user email address for the Amazon Web Services account.</p>
-        pub fn set_email_address(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.email_address = input;
-            self
+        pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.email_address = input; self
         }
         /// Consumes the builder and constructs a [`Account`](crate::model::Account).
         pub fn build(self) -> crate::model::Account {
             crate::model::Account {
-                account_id: self.account_id,
-                email_address: self.email_address,
+                account_id: self.account_id
+                ,
+                email_address: self.email_address
+                ,
             }
         }
     }
+    
+    
 }
 impl Account {
     /// Creates a new builder-style object to manufacture [`Account`](crate::model::Account).
@@ -1662,7 +1456,7 @@ impl Account {
 /// <p>Behavior graphs that could not be processed in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnprocessedGraph {
+pub struct UnprocessedGraph  {
     /// <p>The ARN of the organization behavior graph.</p>
     #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
@@ -1672,17 +1466,17 @@ pub struct UnprocessedGraph {
 }
 impl UnprocessedGraph {
     /// <p>The ARN of the organization behavior graph.</p>
-    pub fn graph_arn(&self) -> std::option::Option<&str> {
+    pub fn graph_arn(&self) -> std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
     /// <p>The reason data source package information could not be processed for a behavior graph.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> std::option::Option<& str> {
         self.reason.as_deref()
     }
 }
 /// See [`UnprocessedGraph`](crate::model::UnprocessedGraph).
 pub mod unprocessed_graph {
-
+    
     /// A builder for [`UnprocessedGraph`](crate::model::UnprocessedGraph).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1697,8 +1491,7 @@ pub mod unprocessed_graph {
         }
         /// <p>The ARN of the organization behavior graph.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.graph_arn = input;
-            self
+            self.graph_arn = input; self
         }
         /// <p>The reason data source package information could not be processed for a behavior graph.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1707,17 +1500,20 @@ pub mod unprocessed_graph {
         }
         /// <p>The reason data source package information could not be processed for a behavior graph.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.reason = input;
-            self
+            self.reason = input; self
         }
         /// Consumes the builder and constructs a [`UnprocessedGraph`](crate::model::UnprocessedGraph).
         pub fn build(self) -> crate::model::UnprocessedGraph {
             crate::model::UnprocessedGraph {
-                graph_arn: self.graph_arn,
-                reason: self.reason,
+                graph_arn: self.graph_arn
+                ,
+                reason: self.reason
+                ,
             }
         }
     }
+    
+    
 }
 impl UnprocessedGraph {
     /// Creates a new builder-style object to manufacture [`UnprocessedGraph`](crate::model::UnprocessedGraph).
@@ -1729,7 +1525,7 @@ impl UnprocessedGraph {
 /// <p>Details on data source packages for members of the behavior graph.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MembershipDatasources {
+pub struct MembershipDatasources  {
     /// <p>The account identifier of the Amazon Web Services account.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -1738,57 +1534,31 @@ pub struct MembershipDatasources {
     pub graph_arn: std::option::Option<std::string::String>,
     /// <p>Details on when a data source package was added to a behavior graph.</p>
     #[doc(hidden)]
-    pub datasource_package_ingest_history: std::option::Option<
-        std::collections::HashMap<
-            crate::model::DatasourcePackage,
-            std::collections::HashMap<
-                crate::model::DatasourcePackageIngestState,
-                crate::model::TimestampForCollection,
-            >,
-        >,
-    >,
+    pub datasource_package_ingest_history: std::option::Option<std::collections::HashMap<crate::model::DatasourcePackage, std::collections::HashMap<crate::model::DatasourcePackageIngestState, crate::model::TimestampForCollection>>>,
 }
 impl MembershipDatasources {
     /// <p>The account identifier of the Amazon Web Services account.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> std::option::Option<& str> {
         self.account_id.as_deref()
     }
     /// <p>The ARN of the organization behavior graph.</p>
-    pub fn graph_arn(&self) -> std::option::Option<&str> {
+    pub fn graph_arn(&self) -> std::option::Option<& str> {
         self.graph_arn.as_deref()
     }
     /// <p>Details on when a data source package was added to a behavior graph.</p>
-    pub fn datasource_package_ingest_history(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            crate::model::DatasourcePackage,
-            std::collections::HashMap<
-                crate::model::DatasourcePackageIngestState,
-                crate::model::TimestampForCollection,
-            >,
-        >,
-    > {
+    pub fn datasource_package_ingest_history(&self) -> std::option::Option<& std::collections::HashMap<crate::model::DatasourcePackage, std::collections::HashMap<crate::model::DatasourcePackageIngestState, crate::model::TimestampForCollection>>> {
         self.datasource_package_ingest_history.as_ref()
     }
 }
 /// See [`MembershipDatasources`](crate::model::MembershipDatasources).
 pub mod membership_datasources {
-
+    
     /// A builder for [`MembershipDatasources`](crate::model::MembershipDatasources).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) graph_arn: std::option::Option<std::string::String>,
-        pub(crate) datasource_package_ingest_history: std::option::Option<
-            std::collections::HashMap<
-                crate::model::DatasourcePackage,
-                std::collections::HashMap<
-                    crate::model::DatasourcePackageIngestState,
-                    crate::model::TimestampForCollection,
-                >,
-            >,
-        >,
+        pub(crate) datasource_package_ingest_history: std::option::Option<std::collections::HashMap<crate::model::DatasourcePackage, std::collections::HashMap<crate::model::DatasourcePackageIngestState, crate::model::TimestampForCollection>>>,
     }
     impl Builder {
         /// <p>The account identifier of the Amazon Web Services account.</p>
@@ -1798,8 +1568,7 @@ pub mod membership_datasources {
         }
         /// <p>The account identifier of the Amazon Web Services account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.account_id = input;
-            self
+            self.account_id = input; self
         }
         /// <p>The ARN of the organization behavior graph.</p>
         pub fn graph_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1808,52 +1577,37 @@ pub mod membership_datasources {
         }
         /// <p>The ARN of the organization behavior graph.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.graph_arn = input;
-            self
+            self.graph_arn = input; self
         }
         /// Adds a key-value pair to `datasource_package_ingest_history`.
         ///
         /// To override the contents of this collection use [`set_datasource_package_ingest_history`](Self::set_datasource_package_ingest_history).
         ///
         /// <p>Details on when a data source package was added to a behavior graph.</p>
-        pub fn datasource_package_ingest_history(
-            mut self,
-            k: crate::model::DatasourcePackage,
-            v: std::collections::HashMap<
-                crate::model::DatasourcePackageIngestState,
-                crate::model::TimestampForCollection,
-            >,
-        ) -> Self {
+        pub fn datasource_package_ingest_history(mut self, k: crate::model::DatasourcePackage, v: std::collections::HashMap<crate::model::DatasourcePackageIngestState, crate::model::TimestampForCollection>) -> Self {
             let mut hash_map = self.datasource_package_ingest_history.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.datasource_package_ingest_history = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.datasource_package_ingest_history = Some(hash_map);
+                            self
         }
         /// <p>Details on when a data source package was added to a behavior graph.</p>
-        pub fn set_datasource_package_ingest_history(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    crate::model::DatasourcePackage,
-                    std::collections::HashMap<
-                        crate::model::DatasourcePackageIngestState,
-                        crate::model::TimestampForCollection,
-                    >,
-                >,
-            >,
-        ) -> Self {
-            self.datasource_package_ingest_history = input;
-            self
+        pub fn set_datasource_package_ingest_history(mut self, input: std::option::Option<std::collections::HashMap<crate::model::DatasourcePackage, std::collections::HashMap<crate::model::DatasourcePackageIngestState, crate::model::TimestampForCollection>>>) -> Self {
+            self.datasource_package_ingest_history = input; self
         }
         /// Consumes the builder and constructs a [`MembershipDatasources`](crate::model::MembershipDatasources).
         pub fn build(self) -> crate::model::MembershipDatasources {
             crate::model::MembershipDatasources {
-                account_id: self.account_id,
-                graph_arn: self.graph_arn,
-                datasource_package_ingest_history: self.datasource_package_ingest_history,
+                account_id: self.account_id
+                ,
+                graph_arn: self.graph_arn
+                ,
+                datasource_package_ingest_history: self.datasource_package_ingest_history
+                ,
             }
         }
     }
+    
+    
 }
 impl MembershipDatasources {
     /// Creates a new builder-style object to manufacture [`MembershipDatasources`](crate::model::MembershipDatasources).
@@ -1861,3 +1615,4 @@ impl MembershipDatasources {
         crate::model::membership_datasources::Builder::default()
     }
 }
+

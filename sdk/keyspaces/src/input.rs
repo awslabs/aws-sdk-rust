@@ -3,7 +3,7 @@ use std::fmt::Write;
 
 /// See [`CreateKeyspaceInput`](crate::input::CreateKeyspaceInput).
 pub mod create_keyspace_input {
-
+    
     /// A builder for [`CreateKeyspaceInput`](crate::input::CreateKeyspaceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -17,169 +17,113 @@ pub mod create_keyspace_input {
             self
         }
         /// <p>The name of the keyspace to be created.</p>
-        pub fn set_keyspace_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.keyspace_name = input;
-            self
+        pub fn set_keyspace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.keyspace_name = input; self
         }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pair tags to be attached to the keyspace.</p>
+        /// <p>A list of key-value pair tags to be attached to the keyspace.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
-        /// <p>A list of key-value pair tags to be attached to the keyspace.</p>
+        /// <p>A list of key-value pair tags to be attached to the keyspace.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateKeyspaceInput`](crate::input::CreateKeyspaceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateKeyspaceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CreateKeyspaceInput {
-                keyspace_name: self.keyspace_name,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateKeyspaceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateKeyspaceInput {
+                    keyspace_name: self.keyspace_name
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateKeyspaceInput {
     /// Consumes the builder and constructs an Operation<[`CreateKeyspace`](crate::operation::CreateKeyspace)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateKeyspace,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateKeyspace, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateKeyspaceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateKeyspaceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateKeyspaceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateKeyspaceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "KeyspacesService.CreateKeyspace",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "KeyspacesService.CreateKeyspace"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_keyspace(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_keyspace(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateKeyspace::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateKeyspace",
-            "keyspaces",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateKeyspace::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateKeyspace", "keyspaces"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -191,7 +135,7 @@ impl CreateKeyspaceInput {
 
 /// See [`CreateTableInput`](crate::input::CreateTableInput).
 pub mod create_table_input {
-
+    
     /// A builder for [`CreateTableInput`](crate::input::CreateTableInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -200,8 +144,7 @@ pub mod create_table_input {
         pub(crate) schema_definition: std::option::Option<crate::model::SchemaDefinition>,
         pub(crate) comment: std::option::Option<crate::model::Comment>,
         pub(crate) capacity_specification: std::option::Option<crate::model::CapacitySpecification>,
-        pub(crate) encryption_specification:
-            std::option::Option<crate::model::EncryptionSpecification>,
+        pub(crate) encryption_specification: std::option::Option<crate::model::EncryptionSpecification>,
         pub(crate) point_in_time_recovery: std::option::Option<crate::model::PointInTimeRecovery>,
         pub(crate) ttl: std::option::Option<crate::model::TimeToLive>,
         pub(crate) default_time_to_live: std::option::Option<i32>,
@@ -214,12 +157,8 @@ pub mod create_table_input {
             self
         }
         /// <p>The name of the keyspace that the table is going to be created in.</p>
-        pub fn set_keyspace_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.keyspace_name = input;
-            self
+        pub fn set_keyspace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.keyspace_name = input; self
         }
         /// <p>The name of the table.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -228,45 +167,40 @@ pub mod create_table_input {
         }
         /// <p>The name of the table.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
-        /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
-        /// <p>For each column to be created:</p>
-        /// <p>• <code>name</code> - The name of the column.</p>
-        /// <p>• <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        /// <p>The primary key of the table consists of the following columns:</p>
-        /// <p>• <code>partitionKeys</code> - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.</p>
-        /// <p>• <code>name</code> - The name of each partition key column.</p>
-        /// <p>• <code>clusteringKeys</code> - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p>
-        /// <p>• <code>name</code> - The name of the clustering column. </p>
-        /// <p>• <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
-        /// <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p>
-        /// <p>• <code>name</code> - The name of the column.</p>
+        /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p> 
+        /// <p>For each column to be created:</p> 
+        /// <p>• <code>name</code> - The name of the column.</p> 
+        /// <p>• <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> 
+        /// <p>The primary key of the table consists of the following columns:</p> 
+        /// <p>• <code>partitionKeys</code> - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.</p> 
+        /// <p>• <code>name</code> - The name of each partition key column.</p> 
+        /// <p>• <code>clusteringKeys</code> - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p> 
+        /// <p>• <code>name</code> - The name of the clustering column. </p> 
+        /// <p>• <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p> 
+        /// <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p> 
+        /// <p>• <code>name</code> - The name of the column.</p> 
         /// <p>• <code>type</code> - An Amazon Keyspaces data type.</p>
         pub fn schema_definition(mut self, input: crate::model::SchemaDefinition) -> Self {
             self.schema_definition = Some(input);
             self
         }
-        /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
-        /// <p>For each column to be created:</p>
-        /// <p>• <code>name</code> - The name of the column.</p>
-        /// <p>• <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        /// <p>The primary key of the table consists of the following columns:</p>
-        /// <p>• <code>partitionKeys</code> - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.</p>
-        /// <p>• <code>name</code> - The name of each partition key column.</p>
-        /// <p>• <code>clusteringKeys</code> - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p>
-        /// <p>• <code>name</code> - The name of the clustering column. </p>
-        /// <p>• <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
-        /// <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p>
-        /// <p>• <code>name</code> - The name of the column.</p>
+        /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p> 
+        /// <p>For each column to be created:</p> 
+        /// <p>• <code>name</code> - The name of the column.</p> 
+        /// <p>• <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> 
+        /// <p>The primary key of the table consists of the following columns:</p> 
+        /// <p>• <code>partitionKeys</code> - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.</p> 
+        /// <p>• <code>name</code> - The name of each partition key column.</p> 
+        /// <p>• <code>clusteringKeys</code> - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p> 
+        /// <p>• <code>name</code> - The name of the clustering column. </p> 
+        /// <p>• <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p> 
+        /// <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p> 
+        /// <p>• <code>name</code> - The name of the column.</p> 
         /// <p>• <code>type</code> - An Amazon Keyspaces data type.</p>
-        pub fn set_schema_definition(
-            mut self,
-            input: std::option::Option<crate::model::SchemaDefinition>,
-        ) -> Self {
-            self.schema_definition = input;
-            self
+        pub fn set_schema_definition(mut self, input: std::option::Option<crate::model::SchemaDefinition>) -> Self {
+            self.schema_definition = input; self
         }
         /// <p>This parameter allows to enter a description of the table.</p>
         pub fn comment(mut self, input: crate::model::Comment) -> Self {
@@ -275,272 +209,207 @@ pub mod create_table_input {
         }
         /// <p>This parameter allows to enter a description of the table.</p>
         pub fn set_comment(mut self, input: std::option::Option<crate::model::Comment>) -> Self {
-            self.comment = input;
-            self
+            self.comment = input; self
         }
-        /// <p>Specifies the read/write throughput capacity mode for the table. The options are:</p>
-        /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p>
-        /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
-        /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
+        /// <p>Specifies the read/write throughput capacity mode for the table. The options are:</p> 
+        /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p> 
+        /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> 
+        /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        pub fn capacity_specification(
-            mut self,
-            input: crate::model::CapacitySpecification,
-        ) -> Self {
+        pub fn capacity_specification(mut self, input: crate::model::CapacitySpecification) -> Self {
             self.capacity_specification = Some(input);
             self
         }
-        /// <p>Specifies the read/write throughput capacity mode for the table. The options are:</p>
-        /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p>
-        /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
-        /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
+        /// <p>Specifies the read/write throughput capacity mode for the table. The options are:</p> 
+        /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p> 
+        /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> 
+        /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        pub fn set_capacity_specification(
-            mut self,
-            input: std::option::Option<crate::model::CapacitySpecification>,
-        ) -> Self {
-            self.capacity_specification = input;
-            self
+        pub fn set_capacity_specification(mut self, input: std::option::Option<crate::model::CapacitySpecification>) -> Self {
+            self.capacity_specification = input; self
         }
-        /// <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p>
-        /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
-        /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p>
-        /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p>
+        /// <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p> 
+        /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> 
+        /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p> 
+        /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        pub fn encryption_specification(
-            mut self,
-            input: crate::model::EncryptionSpecification,
-        ) -> Self {
+        pub fn encryption_specification(mut self, input: crate::model::EncryptionSpecification) -> Self {
             self.encryption_specification = Some(input);
             self
         }
-        /// <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p>
-        /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
-        /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p>
-        /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p>
+        /// <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p> 
+        /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> 
+        /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p> 
+        /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        pub fn set_encryption_specification(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionSpecification>,
-        ) -> Self {
-            self.encryption_specification = input;
-            self
+        pub fn set_encryption_specification(mut self, input: std::option::Option<crate::model::EncryptionSpecification>) -> Self {
+            self.encryption_specification = input; self
         }
-        /// <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p>
-        /// <p>• <code>ENABLED</code> </p>
-        /// <p>• <code>DISABLED</code> </p>
-        /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
+        /// <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p> 
+        /// <p>• <code>ENABLED</code> </p> 
+        /// <p>• <code>DISABLED</code> </p> 
+        /// <p>If it's not specified, the default is <code>DISABLED</code>.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
         pub fn point_in_time_recovery(mut self, input: crate::model::PointInTimeRecovery) -> Self {
             self.point_in_time_recovery = Some(input);
             self
         }
-        /// <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p>
-        /// <p>• <code>ENABLED</code> </p>
-        /// <p>• <code>DISABLED</code> </p>
-        /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
+        /// <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p> 
+        /// <p>• <code>ENABLED</code> </p> 
+        /// <p>• <code>DISABLED</code> </p> 
+        /// <p>If it's not specified, the default is <code>DISABLED</code>.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        pub fn set_point_in_time_recovery(
-            mut self,
-            input: std::option::Option<crate::model::PointInTimeRecovery>,
-        ) -> Self {
-            self.point_in_time_recovery = input;
-            self
+        pub fn set_point_in_time_recovery(mut self, input: std::option::Option<crate::model::PointInTimeRecovery>) -> Self {
+            self.point_in_time_recovery = input; self
         }
-        /// <p>Enables Time to Live custom settings for the table. The options are:</p>
-        /// <p>• <code>status:enabled</code> </p>
-        /// <p>• <code>status:disabled</code> </p>
-        /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
+        /// <p>Enables Time to Live custom settings for the table. The options are:</p> 
+        /// <p>• <code>status:enabled</code> </p> 
+        /// <p>• <code>status:disabled</code> </p> 
+        /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
         pub fn ttl(mut self, input: crate::model::TimeToLive) -> Self {
             self.ttl = Some(input);
             self
         }
-        /// <p>Enables Time to Live custom settings for the table. The options are:</p>
-        /// <p>• <code>status:enabled</code> </p>
-        /// <p>• <code>status:disabled</code> </p>
-        /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
+        /// <p>Enables Time to Live custom settings for the table. The options are:</p> 
+        /// <p>• <code>status:enabled</code> </p> 
+        /// <p>• <code>status:disabled</code> </p> 
+        /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
         pub fn set_ttl(mut self, input: std::option::Option<crate::model::TimeToLive>) -> Self {
-            self.ttl = input;
-            self
+            self.ttl = input; self
         }
-        /// <p>The default Time to Live setting in seconds for the table.</p>
+        /// <p>The default Time to Live setting in seconds for the table.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
         pub fn default_time_to_live(mut self, input: i32) -> Self {
             self.default_time_to_live = Some(input);
             self
         }
-        /// <p>The default Time to Live setting in seconds for the table.</p>
+        /// <p>The default Time to Live setting in seconds for the table.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
         pub fn set_default_time_to_live(mut self, input: std::option::Option<i32>) -> Self {
-            self.default_time_to_live = input;
-            self
+            self.default_time_to_live = input; self
         }
         /// Appends an item to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
-        /// <p>A list of key-value pair tags to be attached to the resource. </p>
+        /// <p>A list of key-value pair tags to be attached to the resource. </p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
-        /// <p>A list of key-value pair tags to be attached to the resource. </p>
+        /// <p>A list of key-value pair tags to be attached to the resource. </p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`CreateTableInput`](crate::input::CreateTableInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::CreateTableInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::CreateTableInput {
-                keyspace_name: self.keyspace_name,
-                table_name: self.table_name,
-                schema_definition: self.schema_definition,
-                comment: self.comment,
-                capacity_specification: self.capacity_specification,
-                encryption_specification: self.encryption_specification,
-                point_in_time_recovery: self.point_in_time_recovery,
-                ttl: self.ttl,
-                default_time_to_live: self.default_time_to_live,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::CreateTableInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::CreateTableInput {
+                    keyspace_name: self.keyspace_name
+                    ,
+                    table_name: self.table_name
+                    ,
+                    schema_definition: self.schema_definition
+                    ,
+                    comment: self.comment
+                    ,
+                    capacity_specification: self.capacity_specification
+                    ,
+                    encryption_specification: self.encryption_specification
+                    ,
+                    point_in_time_recovery: self.point_in_time_recovery
+                    ,
+                    ttl: self.ttl
+                    ,
+                    default_time_to_live: self.default_time_to_live
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl CreateTableInput {
     /// Consumes the builder and constructs an Operation<[`CreateTable`](crate::operation::CreateTable)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::CreateTable,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::CreateTable, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::CreateTableInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::CreateTableInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::CreateTableInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::CreateTableInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "KeyspacesService.CreateTable",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "KeyspacesService.CreateTable"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_create_table(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_create_table(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::CreateTable::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "CreateTable",
-            "keyspaces",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::CreateTable::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("CreateTable", "keyspaces"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -552,7 +421,7 @@ impl CreateTableInput {
 
 /// See [`DeleteKeyspaceInput`](crate::input::DeleteKeyspaceInput).
 pub mod delete_keyspace_input {
-
+    
     /// A builder for [`DeleteKeyspaceInput`](crate::input::DeleteKeyspaceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -565,147 +434,94 @@ pub mod delete_keyspace_input {
             self
         }
         /// <p>The name of the keyspace to be deleted.</p>
-        pub fn set_keyspace_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.keyspace_name = input;
-            self
+        pub fn set_keyspace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.keyspace_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteKeyspaceInput`](crate::input::DeleteKeyspaceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteKeyspaceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DeleteKeyspaceInput {
-                keyspace_name: self.keyspace_name,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteKeyspaceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteKeyspaceInput {
+                    keyspace_name: self.keyspace_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteKeyspaceInput {
     /// Consumes the builder and constructs an Operation<[`DeleteKeyspace`](crate::operation::DeleteKeyspace)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteKeyspace,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteKeyspace, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteKeyspaceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteKeyspaceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteKeyspaceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteKeyspaceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "KeyspacesService.DeleteKeyspace",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "KeyspacesService.DeleteKeyspace"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_keyspace(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_keyspace(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteKeyspace::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteKeyspace",
-            "keyspaces",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteKeyspace::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteKeyspace", "keyspaces"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -717,7 +533,7 @@ impl DeleteKeyspaceInput {
 
 /// See [`DeleteTableInput`](crate::input::DeleteTableInput).
 pub mod delete_table_input {
-
+    
     /// A builder for [`DeleteTableInput`](crate::input::DeleteTableInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -731,12 +547,8 @@ pub mod delete_table_input {
             self
         }
         /// <p>The name of the keyspace of the to be deleted table.</p>
-        pub fn set_keyspace_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.keyspace_name = input;
-            self
+        pub fn set_keyspace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.keyspace_name = input; self
         }
         /// <p>The name of the table to be deleted.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -745,144 +557,95 @@ pub mod delete_table_input {
         }
         /// <p>The name of the table to be deleted.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// Consumes the builder and constructs a [`DeleteTableInput`](crate::input::DeleteTableInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::DeleteTableInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::DeleteTableInput {
-                keyspace_name: self.keyspace_name,
-                table_name: self.table_name,
-            })
+        pub fn build(self) -> Result<crate::input::DeleteTableInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::DeleteTableInput {
+                    keyspace_name: self.keyspace_name
+                    ,
+                    table_name: self.table_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl DeleteTableInput {
     /// Consumes the builder and constructs an Operation<[`DeleteTable`](crate::operation::DeleteTable)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::DeleteTable,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::DeleteTable, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::DeleteTableInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::DeleteTableInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::DeleteTableInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::DeleteTableInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "KeyspacesService.DeleteTable",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "KeyspacesService.DeleteTable"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_delete_table(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_delete_table(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::DeleteTable::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "DeleteTable",
-            "keyspaces",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteTable::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("DeleteTable", "keyspaces"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -894,7 +657,7 @@ impl DeleteTableInput {
 
 /// See [`GetKeyspaceInput`](crate::input::GetKeyspaceInput).
 pub mod get_keyspace_input {
-
+    
     /// A builder for [`GetKeyspaceInput`](crate::input::GetKeyspaceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -907,147 +670,94 @@ pub mod get_keyspace_input {
             self
         }
         /// <p>The name of the keyspace.</p>
-        pub fn set_keyspace_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.keyspace_name = input;
-            self
+        pub fn set_keyspace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.keyspace_name = input; self
         }
         /// Consumes the builder and constructs a [`GetKeyspaceInput`](crate::input::GetKeyspaceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetKeyspaceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetKeyspaceInput {
-                keyspace_name: self.keyspace_name,
-            })
+        pub fn build(self) -> Result<crate::input::GetKeyspaceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetKeyspaceInput {
+                    keyspace_name: self.keyspace_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetKeyspaceInput {
     /// Consumes the builder and constructs an Operation<[`GetKeyspace`](crate::operation::GetKeyspace)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetKeyspace,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetKeyspace, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetKeyspaceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetKeyspaceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetKeyspaceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetKeyspaceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "KeyspacesService.GetKeyspace",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "KeyspacesService.GetKeyspace"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_keyspace(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_get_keyspace(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::GetKeyspace::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "GetKeyspace",
-            "keyspaces",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetKeyspace::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetKeyspace", "keyspaces"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1059,7 +769,7 @@ impl GetKeyspaceInput {
 
 /// See [`GetTableInput`](crate::input::GetTableInput).
 pub mod get_table_input {
-
+    
     /// A builder for [`GetTableInput`](crate::input::GetTableInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1073,12 +783,8 @@ pub mod get_table_input {
             self
         }
         /// <p>The name of the keyspace that the table is stored in.</p>
-        pub fn set_keyspace_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.keyspace_name = input;
-            self
+        pub fn set_keyspace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.keyspace_name = input; self
         }
         /// <p>The name of the table.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1087,142 +793,95 @@ pub mod get_table_input {
         }
         /// <p>The name of the table.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// Consumes the builder and constructs a [`GetTableInput`](crate::input::GetTableInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::GetTableInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::GetTableInput {
-                keyspace_name: self.keyspace_name,
-                table_name: self.table_name,
-            })
+        pub fn build(self) -> Result<crate::input::GetTableInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::GetTableInput {
+                    keyspace_name: self.keyspace_name
+                    ,
+                    table_name: self.table_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl GetTableInput {
     /// Consumes the builder and constructs an Operation<[`GetTable`](crate::operation::GetTable)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::GetTable,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::GetTable, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::GetTableInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::GetTableInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::GetTableInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::GetTableInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "KeyspacesService.GetTable",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "KeyspacesService.GetTable"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_get_table(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_get_table(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op =
-            aws_smithy_http::operation::Operation::new(request, crate::operation::GetTable::new())
-                .with_metadata(aws_smithy_http::operation::Metadata::new(
-                    "GetTable",
-                    "keyspaces",
-                ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::GetTable::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetTable", "keyspaces"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1234,7 +893,7 @@ impl GetTableInput {
 
 /// See [`ListKeyspacesInput`](crate::input::ListKeyspacesInput).
 pub mod list_keyspaces_input {
-
+    
     /// A builder for [`ListKeyspacesInput`](crate::input::ListKeyspacesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1249,8 +908,7 @@ pub mod list_keyspaces_input {
         }
         /// <p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as argument of a subsequent API invocation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The total number of keyspaces to return in the output. If the total number of keyspaces available is more than the value specified, a <code>NextToken</code> is provided in the output. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1259,144 +917,95 @@ pub mod list_keyspaces_input {
         }
         /// <p>The total number of keyspaces to return in the output. If the total number of keyspaces available is more than the value specified, a <code>NextToken</code> is provided in the output. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListKeyspacesInput`](crate::input::ListKeyspacesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListKeyspacesInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListKeyspacesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListKeyspacesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListKeyspacesInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListKeyspacesInput {
     /// Consumes the builder and constructs an Operation<[`ListKeyspaces`](crate::operation::ListKeyspaces)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListKeyspaces,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListKeyspaces, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListKeyspacesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListKeyspacesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListKeyspacesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListKeyspacesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "KeyspacesService.ListKeyspaces",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "KeyspacesService.ListKeyspaces"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_keyspaces(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_keyspaces(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListKeyspaces::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListKeyspaces",
-            "keyspaces",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListKeyspaces::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListKeyspaces", "keyspaces"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1408,7 +1017,7 @@ impl ListKeyspacesInput {
 
 /// See [`ListTablesInput`](crate::input::ListTablesInput).
 pub mod list_tables_input {
-
+    
     /// A builder for [`ListTablesInput`](crate::input::ListTablesInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1424,8 +1033,7 @@ pub mod list_tables_input {
         }
         /// <p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The total number of tables to return in the output. If the total number of tables available is more than the value specified, a <code>NextToken</code> is provided in the output. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1434,8 +1042,7 @@ pub mod list_tables_input {
         }
         /// <p>The total number of tables to return in the output. If the total number of tables available is more than the value specified, a <code>NextToken</code> is provided in the output. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// <p>The name of the keyspace.</p>
         pub fn keyspace_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1443,149 +1050,98 @@ pub mod list_tables_input {
             self
         }
         /// <p>The name of the keyspace.</p>
-        pub fn set_keyspace_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.keyspace_name = input;
-            self
+        pub fn set_keyspace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.keyspace_name = input; self
         }
         /// Consumes the builder and constructs a [`ListTablesInput`](crate::input::ListTablesInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::ListTablesInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::ListTablesInput {
-                next_token: self.next_token,
-                max_results: self.max_results,
-                keyspace_name: self.keyspace_name,
-            })
+        pub fn build(self) -> Result<crate::input::ListTablesInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListTablesInput {
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                    keyspace_name: self.keyspace_name
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTablesInput {
     /// Consumes the builder and constructs an Operation<[`ListTables`](crate::operation::ListTables)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTables,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTables, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTablesInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListTablesInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListTablesInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListTablesInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "KeyspacesService.ListTables",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "KeyspacesService.ListTables"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_tables(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_list_tables(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTables::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTables",
-            "keyspaces",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTables::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTables", "keyspaces"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1597,7 +1153,7 @@ impl ListTablesInput {
 
 /// See [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
 pub mod list_tags_for_resource_input {
-
+    
     /// A builder for [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1613,8 +1169,7 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Keyspaces resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// <p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as argument of a subsequent API invocation.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1623,8 +1178,7 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as argument of a subsequent API invocation.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// <p>The total number of tags to return in the output. If the total number of tags available is more than the value specified, a <code>NextToken</code> is provided in the output. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1633,149 +1187,97 @@ pub mod list_tags_for_resource_input {
         }
         /// <p>The total number of tags to return in the output. If the total number of tags available is more than the value specified, a <code>NextToken</code> is provided in the output. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-            self.max_results = input;
-            self
+            self.max_results = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<
-            crate::input::ListTagsForResourceInput,
-            aws_smithy_http::operation::error::BuildError,
-        > {
-            Ok(crate::input::ListTagsForResourceInput {
-                resource_arn: self.resource_arn,
-                next_token: self.next_token,
-                max_results: self.max_results,
-            })
+        pub fn build(self) -> Result<crate::input::ListTagsForResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::ListTagsForResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    next_token: self.next_token
+                    ,
+                    max_results: self.max_results
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl ListTagsForResourceInput {
     /// Consumes the builder and constructs an Operation<[`ListTagsForResource`](crate::operation::ListTagsForResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::ListTagsForResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::ListTagsForResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::ListTagsForResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::ListTagsForResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::ListTagsForResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "KeyspacesService.ListTagsForResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "KeyspacesService.ListTagsForResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(
-                &self,
-            )?,
+            crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::ListTagsForResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "ListTagsForResource",
-            "keyspaces",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::ListTagsForResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("ListTagsForResource", "keyspaces"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -1787,7 +1289,7 @@ impl ListTagsForResourceInput {
 
 /// See [`RestoreTableInput`](crate::input::RestoreTableInput).
 pub mod restore_table_input {
-
+    
     /// A builder for [`RestoreTableInput`](crate::input::RestoreTableInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1796,12 +1298,9 @@ pub mod restore_table_input {
         pub(crate) target_keyspace_name: std::option::Option<std::string::String>,
         pub(crate) target_table_name: std::option::Option<std::string::String>,
         pub(crate) restore_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-        pub(crate) capacity_specification_override:
-            std::option::Option<crate::model::CapacitySpecification>,
-        pub(crate) encryption_specification_override:
-            std::option::Option<crate::model::EncryptionSpecification>,
-        pub(crate) point_in_time_recovery_override:
-            std::option::Option<crate::model::PointInTimeRecovery>,
+        pub(crate) capacity_specification_override: std::option::Option<crate::model::CapacitySpecification>,
+        pub(crate) encryption_specification_override: std::option::Option<crate::model::EncryptionSpecification>,
+        pub(crate) point_in_time_recovery_override: std::option::Option<crate::model::PointInTimeRecovery>,
         pub(crate) tags_override: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -1811,12 +1310,8 @@ pub mod restore_table_input {
             self
         }
         /// <p>The keyspace name of the source table.</p>
-        pub fn set_source_keyspace_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_keyspace_name = input;
-            self
+        pub fn set_source_keyspace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_keyspace_name = input; self
         }
         /// <p>The name of the source table.</p>
         pub fn source_table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1824,12 +1319,8 @@ pub mod restore_table_input {
             self
         }
         /// <p>The name of the source table.</p>
-        pub fn set_source_table_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.source_table_name = input;
-            self
+        pub fn set_source_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_table_name = input; self
         }
         /// <p>The name of the target keyspace.</p>
         pub fn target_keyspace_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1837,12 +1328,8 @@ pub mod restore_table_input {
             self
         }
         /// <p>The name of the target keyspace.</p>
-        pub fn set_target_keyspace_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_keyspace_name = input;
-            self
+        pub fn set_target_keyspace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_keyspace_name = input; self
         }
         /// <p>The name of the target table.</p>
         pub fn target_table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1850,12 +1337,8 @@ pub mod restore_table_input {
             self
         }
         /// <p>The name of the target table.</p>
-        pub fn set_target_table_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.target_table_name = input;
-            self
+        pub fn set_target_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.target_table_name = input; self
         }
         /// <p>The restore timestamp in ISO 8601 format.</p>
         pub fn restore_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1863,248 +1346,178 @@ pub mod restore_table_input {
             self
         }
         /// <p>The restore timestamp in ISO 8601 format.</p>
-        pub fn set_restore_timestamp(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.restore_timestamp = input;
-            self
+        pub fn set_restore_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.restore_timestamp = input; self
         }
-        /// <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p>
-        /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p>
-        /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
-        /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
+        /// <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p> 
+        /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p> 
+        /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> 
+        /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        pub fn capacity_specification_override(
-            mut self,
-            input: crate::model::CapacitySpecification,
-        ) -> Self {
+        pub fn capacity_specification_override(mut self, input: crate::model::CapacitySpecification) -> Self {
             self.capacity_specification_override = Some(input);
             self
         }
-        /// <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p>
-        /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p>
-        /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
-        /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
+        /// <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p> 
+        /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p> 
+        /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> 
+        /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        pub fn set_capacity_specification_override(
-            mut self,
-            input: std::option::Option<crate::model::CapacitySpecification>,
-        ) -> Self {
-            self.capacity_specification_override = input;
-            self
+        pub fn set_capacity_specification_override(mut self, input: std::option::Option<crate::model::CapacitySpecification>) -> Self {
+            self.capacity_specification_override = input; self
         }
-        /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p>
-        /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
-        /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p>
-        /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
+        /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p> 
+        /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> 
+        /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p> 
+        /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        pub fn encryption_specification_override(
-            mut self,
-            input: crate::model::EncryptionSpecification,
-        ) -> Self {
+        pub fn encryption_specification_override(mut self, input: crate::model::EncryptionSpecification) -> Self {
             self.encryption_specification_override = Some(input);
             self
         }
-        /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p>
-        /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
-        /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p>
-        /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
+        /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p> 
+        /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> 
+        /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p> 
+        /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        pub fn set_encryption_specification_override(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionSpecification>,
-        ) -> Self {
-            self.encryption_specification_override = input;
-            self
+        pub fn set_encryption_specification_override(mut self, input: std::option::Option<crate::model::EncryptionSpecification>) -> Self {
+            self.encryption_specification_override = input; self
         }
-        /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
-        /// <p>• <code>ENABLED</code> </p>
-        /// <p>• <code>DISABLED</code> </p>
-        /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
+        /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p> 
+        /// <p>• <code>ENABLED</code> </p> 
+        /// <p>• <code>DISABLED</code> </p> 
+        /// <p>If it's not specified, the default is <code>DISABLED</code>.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        pub fn point_in_time_recovery_override(
-            mut self,
-            input: crate::model::PointInTimeRecovery,
-        ) -> Self {
+        pub fn point_in_time_recovery_override(mut self, input: crate::model::PointInTimeRecovery) -> Self {
             self.point_in_time_recovery_override = Some(input);
             self
         }
-        /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
-        /// <p>• <code>ENABLED</code> </p>
-        /// <p>• <code>DISABLED</code> </p>
-        /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
+        /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p> 
+        /// <p>• <code>ENABLED</code> </p> 
+        /// <p>• <code>DISABLED</code> </p> 
+        /// <p>If it's not specified, the default is <code>DISABLED</code>.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        pub fn set_point_in_time_recovery_override(
-            mut self,
-            input: std::option::Option<crate::model::PointInTimeRecovery>,
-        ) -> Self {
-            self.point_in_time_recovery_override = input;
-            self
+        pub fn set_point_in_time_recovery_override(mut self, input: std::option::Option<crate::model::PointInTimeRecovery>) -> Self {
+            self.point_in_time_recovery_override = input; self
         }
         /// Appends an item to `tags_override`.
         ///
         /// To override the contents of this collection use [`set_tags_override`](Self::set_tags_override).
         ///
-        /// <p>A list of key-value pair tags to be attached to the restored table. </p>
+        /// <p>A list of key-value pair tags to be attached to the restored table. </p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
         pub fn tags_override(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags_override.unwrap_or_default();
-            v.push(input);
-            self.tags_override = Some(v);
-            self
+                            v.push(input);
+                            self.tags_override = Some(v);
+                            self
         }
-        /// <p>A list of key-value pair tags to be attached to the restored table. </p>
+        /// <p>A list of key-value pair tags to be attached to the restored table. </p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        pub fn set_tags_override(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags_override = input;
-            self
+        pub fn set_tags_override(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags_override = input; self
         }
         /// Consumes the builder and constructs a [`RestoreTableInput`](crate::input::RestoreTableInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::RestoreTableInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::RestoreTableInput {
-                source_keyspace_name: self.source_keyspace_name,
-                source_table_name: self.source_table_name,
-                target_keyspace_name: self.target_keyspace_name,
-                target_table_name: self.target_table_name,
-                restore_timestamp: self.restore_timestamp,
-                capacity_specification_override: self.capacity_specification_override,
-                encryption_specification_override: self.encryption_specification_override,
-                point_in_time_recovery_override: self.point_in_time_recovery_override,
-                tags_override: self.tags_override,
-            })
+        pub fn build(self) -> Result<crate::input::RestoreTableInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::RestoreTableInput {
+                    source_keyspace_name: self.source_keyspace_name
+                    ,
+                    source_table_name: self.source_table_name
+                    ,
+                    target_keyspace_name: self.target_keyspace_name
+                    ,
+                    target_table_name: self.target_table_name
+                    ,
+                    restore_timestamp: self.restore_timestamp
+                    ,
+                    capacity_specification_override: self.capacity_specification_override
+                    ,
+                    encryption_specification_override: self.encryption_specification_override
+                    ,
+                    point_in_time_recovery_override: self.point_in_time_recovery_override
+                    ,
+                    tags_override: self.tags_override
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl RestoreTableInput {
     /// Consumes the builder and constructs an Operation<[`RestoreTable`](crate::operation::RestoreTable)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::RestoreTable,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::RestoreTable, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::RestoreTableInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::RestoreTableInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::RestoreTableInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::RestoreTableInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "KeyspacesService.RestoreTable",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "KeyspacesService.RestoreTable"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_restore_table(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_restore_table(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::RestoreTable::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "RestoreTable",
-            "keyspaces",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::RestoreTable::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("RestoreTable", "keyspaces"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2116,7 +1529,7 @@ impl RestoreTableInput {
 
 /// See [`TagResourceInput`](crate::input::TagResourceInput).
 pub mod tag_resource_input {
-
+    
     /// A builder for [`TagResourceInput`](crate::input::TagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2131,8 +1544,7 @@ pub mod tag_resource_input {
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Keyspaces resource to which to add tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -2141,153 +1553,101 @@ pub mod tag_resource_input {
         /// <p>The tags to be assigned to the Amazon Keyspaces resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>The tags to be assigned to the Amazon Keyspaces resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::TagResourceInput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::TagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::TagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl TagResourceInput {
     /// Consumes the builder and constructs an Operation<[`TagResource`](crate::operation::TagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::TagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::TagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::TagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::TagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::TagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::TagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "KeyspacesService.TagResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "KeyspacesService.TagResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::TagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "TagResource",
-            "keyspaces",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("TagResource", "keyspaces"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2299,7 +1659,7 @@ impl TagResourceInput {
 
 /// See [`UntagResourceInput`](crate::input::UntagResourceInput).
 pub mod untag_resource_input {
-
+    
     /// A builder for [`UntagResourceInput`](crate::input::UntagResourceInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2314,8 +1674,7 @@ pub mod untag_resource_input {
         }
         /// <p>The Amazon Keyspaces resource that the tags will be removed from. This value is an Amazon Resource Name (ARN).</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.resource_arn = input;
-            self
+            self.resource_arn = input; self
         }
         /// Appends an item to `tags`.
         ///
@@ -2324,153 +1683,101 @@ pub mod untag_resource_input {
         /// <p>A list of existing tags to be removed from the Amazon Keyspaces resource.</p>
         pub fn tags(mut self, input: crate::model::Tag) -> Self {
             let mut v = self.tags.unwrap_or_default();
-            v.push(input);
-            self.tags = Some(v);
-            self
+                            v.push(input);
+                            self.tags = Some(v);
+                            self
         }
         /// <p>A list of existing tags to be removed from the Amazon Keyspaces resource.</p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::model::Tag>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UntagResourceInput {
-                resource_arn: self.resource_arn,
-                tags: self.tags,
-            })
+        pub fn build(self) -> Result<crate::input::UntagResourceInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UntagResourceInput {
+                    resource_arn: self.resource_arn
+                    ,
+                    tags: self.tags
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UntagResourceInput {
     /// Consumes the builder and constructs an Operation<[`UntagResource`](crate::operation::UntagResource)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UntagResource,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UntagResource, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UntagResourceInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UntagResourceInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UntagResourceInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UntagResourceInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "KeyspacesService.UntagResource",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "KeyspacesService.UntagResource"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UntagResource::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UntagResource",
-            "keyspaces",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UntagResource", "keyspaces"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2482,7 +1789,7 @@ impl UntagResourceInput {
 
 /// See [`UpdateTableInput`](crate::input::UpdateTableInput).
 pub mod update_table_input {
-
+    
     /// A builder for [`UpdateTableInput`](crate::input::UpdateTableInput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2490,8 +1797,7 @@ pub mod update_table_input {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) add_columns: std::option::Option<std::vec::Vec<crate::model::ColumnDefinition>>,
         pub(crate) capacity_specification: std::option::Option<crate::model::CapacitySpecification>,
-        pub(crate) encryption_specification:
-            std::option::Option<crate::model::EncryptionSpecification>,
+        pub(crate) encryption_specification: std::option::Option<crate::model::EncryptionSpecification>,
         pub(crate) point_in_time_recovery: std::option::Option<crate::model::PointInTimeRecovery>,
         pub(crate) ttl: std::option::Option<crate::model::TimeToLive>,
         pub(crate) default_time_to_live: std::option::Option<i32>,
@@ -2503,12 +1809,8 @@ pub mod update_table_input {
             self
         }
         /// <p>The name of the keyspace the specified table is stored in.</p>
-        pub fn set_keyspace_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.keyspace_name = input;
-            self
+        pub fn set_keyspace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.keyspace_name = input; self
         }
         /// <p>The name of the table.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2517,272 +1819,205 @@ pub mod update_table_input {
         }
         /// <p>The name of the table.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.table_name = input;
-            self
+            self.table_name = input; self
         }
         /// Appends an item to `add_columns`.
         ///
         /// To override the contents of this collection use [`set_add_columns`](Self::set_add_columns).
         ///
-        /// <p>For each column to be added to the specified table:</p>
-        /// <p>• <code>name</code> - The name of the column.</p>
+        /// <p>For each column to be added to the specified table:</p> 
+        /// <p>• <code>name</code> - The name of the column.</p> 
         /// <p>• <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
         pub fn add_columns(mut self, input: crate::model::ColumnDefinition) -> Self {
             let mut v = self.add_columns.unwrap_or_default();
-            v.push(input);
-            self.add_columns = Some(v);
-            self
+                            v.push(input);
+                            self.add_columns = Some(v);
+                            self
         }
-        /// <p>For each column to be added to the specified table:</p>
-        /// <p>• <code>name</code> - The name of the column.</p>
+        /// <p>For each column to be added to the specified table:</p> 
+        /// <p>• <code>name</code> - The name of the column.</p> 
         /// <p>• <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        pub fn set_add_columns(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ColumnDefinition>>,
-        ) -> Self {
-            self.add_columns = input;
-            self
+        pub fn set_add_columns(mut self, input: std::option::Option<std::vec::Vec<crate::model::ColumnDefinition>>) -> Self {
+            self.add_columns = input; self
         }
-        /// <p>Modifies the read/write throughput capacity mode for the table. The options are:</p>
-        /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p>
-        /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
-        /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
+        /// <p>Modifies the read/write throughput capacity mode for the table. The options are:</p> 
+        /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p> 
+        /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> 
+        /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        pub fn capacity_specification(
-            mut self,
-            input: crate::model::CapacitySpecification,
-        ) -> Self {
+        pub fn capacity_specification(mut self, input: crate::model::CapacitySpecification) -> Self {
             self.capacity_specification = Some(input);
             self
         }
-        /// <p>Modifies the read/write throughput capacity mode for the table. The options are:</p>
-        /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p>
-        /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
-        /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
+        /// <p>Modifies the read/write throughput capacity mode for the table. The options are:</p> 
+        /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p> 
+        /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> 
+        /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        pub fn set_capacity_specification(
-            mut self,
-            input: std::option::Option<crate::model::CapacitySpecification>,
-        ) -> Self {
-            self.capacity_specification = input;
-            self
+        pub fn set_capacity_specification(mut self, input: std::option::Option<crate::model::CapacitySpecification>) -> Self {
+            self.capacity_specification = input; self
         }
-        /// <p>Modifies the encryption settings of the table. You can choose one of the following KMS key (KMS key):</p>
-        /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
-        /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p>
-        /// <p>The default is <code>AWS_OWNED_KMS_KEY</code>.</p>
+        /// <p>Modifies the encryption settings of the table. You can choose one of the following KMS key (KMS key):</p> 
+        /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> 
+        /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p> 
+        /// <p>The default is <code>AWS_OWNED_KMS_KEY</code>.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        pub fn encryption_specification(
-            mut self,
-            input: crate::model::EncryptionSpecification,
-        ) -> Self {
+        pub fn encryption_specification(mut self, input: crate::model::EncryptionSpecification) -> Self {
             self.encryption_specification = Some(input);
             self
         }
-        /// <p>Modifies the encryption settings of the table. You can choose one of the following KMS key (KMS key):</p>
-        /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
-        /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p>
-        /// <p>The default is <code>AWS_OWNED_KMS_KEY</code>.</p>
+        /// <p>Modifies the encryption settings of the table. You can choose one of the following KMS key (KMS key):</p> 
+        /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> 
+        /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p> 
+        /// <p>The default is <code>AWS_OWNED_KMS_KEY</code>.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        pub fn set_encryption_specification(
-            mut self,
-            input: std::option::Option<crate::model::EncryptionSpecification>,
-        ) -> Self {
-            self.encryption_specification = input;
-            self
+        pub fn set_encryption_specification(mut self, input: std::option::Option<crate::model::EncryptionSpecification>) -> Self {
+            self.encryption_specification = input; self
         }
-        /// <p>Modifies the <code>pointInTimeRecovery</code> settings of the table. The options are:</p>
-        /// <p>• <code>ENABLED</code> </p>
-        /// <p>• <code>DISABLED</code> </p>
-        /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
+        /// <p>Modifies the <code>pointInTimeRecovery</code> settings of the table. The options are:</p> 
+        /// <p>• <code>ENABLED</code> </p> 
+        /// <p>• <code>DISABLED</code> </p> 
+        /// <p>If it's not specified, the default is <code>DISABLED</code>.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
         pub fn point_in_time_recovery(mut self, input: crate::model::PointInTimeRecovery) -> Self {
             self.point_in_time_recovery = Some(input);
             self
         }
-        /// <p>Modifies the <code>pointInTimeRecovery</code> settings of the table. The options are:</p>
-        /// <p>• <code>ENABLED</code> </p>
-        /// <p>• <code>DISABLED</code> </p>
-        /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
+        /// <p>Modifies the <code>pointInTimeRecovery</code> settings of the table. The options are:</p> 
+        /// <p>• <code>ENABLED</code> </p> 
+        /// <p>• <code>DISABLED</code> </p> 
+        /// <p>If it's not specified, the default is <code>DISABLED</code>.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-        pub fn set_point_in_time_recovery(
-            mut self,
-            input: std::option::Option<crate::model::PointInTimeRecovery>,
-        ) -> Self {
-            self.point_in_time_recovery = input;
-            self
+        pub fn set_point_in_time_recovery(mut self, input: std::option::Option<crate::model::PointInTimeRecovery>) -> Self {
+            self.point_in_time_recovery = input; self
         }
-        /// <p>Modifies Time to Live custom settings for the table. The options are:</p>
-        /// <p>• <code>status:enabled</code> </p>
-        /// <p>• <code>status:disabled</code> </p>
-        /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
+        /// <p>Modifies Time to Live custom settings for the table. The options are:</p> 
+        /// <p>• <code>status:enabled</code> </p> 
+        /// <p>• <code>status:disabled</code> </p> 
+        /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
         pub fn ttl(mut self, input: crate::model::TimeToLive) -> Self {
             self.ttl = Some(input);
             self
         }
-        /// <p>Modifies Time to Live custom settings for the table. The options are:</p>
-        /// <p>• <code>status:enabled</code> </p>
-        /// <p>• <code>status:disabled</code> </p>
-        /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
+        /// <p>Modifies Time to Live custom settings for the table. The options are:</p> 
+        /// <p>• <code>status:enabled</code> </p> 
+        /// <p>• <code>status:disabled</code> </p> 
+        /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
         pub fn set_ttl(mut self, input: std::option::Option<crate::model::TimeToLive>) -> Self {
-            self.ttl = input;
-            self
+            self.ttl = input; self
         }
-        /// <p>The default Time to Live setting in seconds for the table.</p>
+        /// <p>The default Time to Live setting in seconds for the table.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
         pub fn default_time_to_live(mut self, input: i32) -> Self {
             self.default_time_to_live = Some(input);
             self
         }
-        /// <p>The default Time to Live setting in seconds for the table.</p>
+        /// <p>The default Time to Live setting in seconds for the table.</p> 
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
         pub fn set_default_time_to_live(mut self, input: std::option::Option<i32>) -> Self {
-            self.default_time_to_live = input;
-            self
+            self.default_time_to_live = input; self
         }
         /// Consumes the builder and constructs a [`UpdateTableInput`](crate::input::UpdateTableInput).
-        pub fn build(
-            self,
-        ) -> Result<crate::input::UpdateTableInput, aws_smithy_http::operation::error::BuildError>
-        {
-            Ok(crate::input::UpdateTableInput {
-                keyspace_name: self.keyspace_name,
-                table_name: self.table_name,
-                add_columns: self.add_columns,
-                capacity_specification: self.capacity_specification,
-                encryption_specification: self.encryption_specification,
-                point_in_time_recovery: self.point_in_time_recovery,
-                ttl: self.ttl,
-                default_time_to_live: self.default_time_to_live,
-            })
+        pub fn build(self) -> Result<crate::input::UpdateTableInput, aws_smithy_http::operation::error::BuildError> {
+            Ok(
+                crate::input::UpdateTableInput {
+                    keyspace_name: self.keyspace_name
+                    ,
+                    table_name: self.table_name
+                    ,
+                    add_columns: self.add_columns
+                    ,
+                    capacity_specification: self.capacity_specification
+                    ,
+                    encryption_specification: self.encryption_specification
+                    ,
+                    point_in_time_recovery: self.point_in_time_recovery
+                    ,
+                    ttl: self.ttl
+                    ,
+                    default_time_to_live: self.default_time_to_live
+                    ,
+                }
+            )
         }
     }
+    
+    
 }
 impl UpdateTableInput {
     /// Consumes the builder and constructs an Operation<[`UpdateTable`](crate::operation::UpdateTable)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(
-        &self,
-        _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
-            crate::operation::UpdateTable,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        let params_result = crate::endpoint::Params::builder()
-            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
-            .set_use_dual_stack(_config.use_dual_stack)
-            .set_use_fips(_config.use_fips)
-            .set_endpoint(_config.endpoint_url.clone())
-            .build()
-            .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
-                    "could not construct endpoint parameters",
-                    err,
-                )
-            });
-        let (endpoint_result, params) = match params_result {
-            Ok(params) => (
-                _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
-            ),
-            Err(e) => (Err(e), None),
-        };
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::UpdateTable, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
+        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
+        .set_use_dual_stack(_config.use_dual_stack)
+        .set_use_fips(_config.use_fips)
+        .set_endpoint(_config.endpoint_url
+        .clone()).build()
+                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
+                                let (endpoint_result, params) = match params_result {
+                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
+                                    Err(e) => (Err(e), None)
+                                };
         let mut request = {
-            fn uri_base(
-                _input: &crate::input::UpdateTableInput,
-                output: &mut String,
-            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(_input: &crate::input::UpdateTableInput, output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                input: &crate::input::UpdateTableInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
-            > {
+                            input: &crate::input::UpdateTableInput,
+                            builder: http::request::Builder
+                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-amz-json-1.0");
             builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::CONTENT_TYPE,
-                "application/x-amz-json-1.0",
-            );
-            builder = aws_smithy_http::header::set_request_header_if_absent(
-                builder,
-                http::header::HeaderName::from_static("x-amz-target"),
-                "KeyspacesService.UpdateTable",
-            );
+                                builder,
+                                http::header::HeaderName::from_static("x-amz-target"),
+                                "KeyspacesService.UpdateTable"
+                            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::operation_ser::serialize_operation_crate_operation_update_table(&self)?,
+            crate::operation_ser::serialize_operation_crate_operation_update_table(&self)?
         );
         if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
-                request,
-                http::header::CONTENT_LENGTH,
-                content_length,
-            );
-        }
+                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
+                            }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
-            request.properties_mut().insert(params);
-        }
-        request
-            .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params { request.properties_mut().insert(params); }
+        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
-            crate::API_METADATA.clone(),
-        );
-        if let Some(app_name) = _config.app_name() {
-            user_agent = user_agent.with_app_name(app_name.clone());
-        }
-        request.properties_mut().insert(user_agent);
+                                aws_types::os_shim_internal::Env::real(),
+                                crate::API_METADATA.clone(),
+                            );
+                            if let Some(app_name) = _config.app_name() {
+                                user_agent = user_agent.with_app_name(app_name.clone());
+                            }
+                            request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-        request
-            .properties_mut()
-            .insert(aws_types::SigningService::from_static(
-                _config.signing_service(),
-            ));
+                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
+                            if let Some(region) = &_config.region {
+                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
+                            }
         if let Some(region) = &_config.region {
-            request
-                .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
-        }
-        if let Some(region) = &_config.region {
-            request.properties_mut().insert(region.clone());
-        }
-        aws_http::auth::set_credentials_cache(
-            &mut request.properties_mut(),
-            _config.credentials_cache.clone(),
-        );
-        let op = aws_smithy_http::operation::Operation::new(
-            request,
-            crate::operation::UpdateTable::new(),
-        )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
-            "UpdateTable",
-            "keyspaces",
-        ));
+                                request.properties_mut().insert(region.clone());
+                            }
+        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
+        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateTable::new())
+                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateTable", "keyspaces"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -2795,105 +2030,99 @@ impl UpdateTableInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTableInput {
+pub struct UpdateTableInput  {
     /// <p>The name of the keyspace the specified table is stored in.</p>
     #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
     /// <p>The name of the table.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>For each column to be added to the specified table:</p>
-    /// <p>• <code>name</code> - The name of the column.</p>
+    /// <p>For each column to be added to the specified table:</p> 
+    /// <p>• <code>name</code> - The name of the column.</p> 
     /// <p>• <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub add_columns: std::option::Option<std::vec::Vec<crate::model::ColumnDefinition>>,
-    /// <p>Modifies the read/write throughput capacity mode for the table. The options are:</p>
-    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p>
-    /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
-    /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
+    /// <p>Modifies the read/write throughput capacity mode for the table. The options are:</p> 
+    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p> 
+    /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> 
+    /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub capacity_specification: std::option::Option<crate::model::CapacitySpecification>,
-    /// <p>Modifies the encryption settings of the table. You can choose one of the following KMS key (KMS key):</p>
-    /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
-    /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p>
-    /// <p>The default is <code>AWS_OWNED_KMS_KEY</code>.</p>
+    /// <p>Modifies the encryption settings of the table. You can choose one of the following KMS key (KMS key):</p> 
+    /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> 
+    /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p> 
+    /// <p>The default is <code>AWS_OWNED_KMS_KEY</code>.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub encryption_specification: std::option::Option<crate::model::EncryptionSpecification>,
-    /// <p>Modifies the <code>pointInTimeRecovery</code> settings of the table. The options are:</p>
-    /// <p>• <code>ENABLED</code> </p>
-    /// <p>• <code>DISABLED</code> </p>
-    /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
+    /// <p>Modifies the <code>pointInTimeRecovery</code> settings of the table. The options are:</p> 
+    /// <p>• <code>ENABLED</code> </p> 
+    /// <p>• <code>DISABLED</code> </p> 
+    /// <p>If it's not specified, the default is <code>DISABLED</code>.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub point_in_time_recovery: std::option::Option<crate::model::PointInTimeRecovery>,
-    /// <p>Modifies Time to Live custom settings for the table. The options are:</p>
-    /// <p>• <code>status:enabled</code> </p>
-    /// <p>• <code>status:disabled</code> </p>
-    /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
+    /// <p>Modifies Time to Live custom settings for the table. The options are:</p> 
+    /// <p>• <code>status:enabled</code> </p> 
+    /// <p>• <code>status:disabled</code> </p> 
+    /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub ttl: std::option::Option<crate::model::TimeToLive>,
-    /// <p>The default Time to Live setting in seconds for the table.</p>
+    /// <p>The default Time to Live setting in seconds for the table.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub default_time_to_live: std::option::Option<i32>,
 }
 impl UpdateTableInput {
     /// <p>The name of the keyspace the specified table is stored in.</p>
-    pub fn keyspace_name(&self) -> std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> std::option::Option<& str> {
         self.keyspace_name.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
-    /// <p>For each column to be added to the specified table:</p>
-    /// <p>• <code>name</code> - The name of the column.</p>
+    /// <p>For each column to be added to the specified table:</p> 
+    /// <p>• <code>name</code> - The name of the column.</p> 
     /// <p>• <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn add_columns(&self) -> std::option::Option<&[crate::model::ColumnDefinition]> {
+    pub fn add_columns(&self) -> std::option::Option<& [crate::model::ColumnDefinition]> {
         self.add_columns.as_deref()
     }
-    /// <p>Modifies the read/write throughput capacity mode for the table. The options are:</p>
-    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p>
-    /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
-    /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
+    /// <p>Modifies the read/write throughput capacity mode for the table. The options are:</p> 
+    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p> 
+    /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> 
+    /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn capacity_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::CapacitySpecification> {
+    pub fn capacity_specification(&self) -> std::option::Option<& crate::model::CapacitySpecification> {
         self.capacity_specification.as_ref()
     }
-    /// <p>Modifies the encryption settings of the table. You can choose one of the following KMS key (KMS key):</p>
-    /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
-    /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p>
-    /// <p>The default is <code>AWS_OWNED_KMS_KEY</code>.</p>
+    /// <p>Modifies the encryption settings of the table. You can choose one of the following KMS key (KMS key):</p> 
+    /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> 
+    /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p> 
+    /// <p>The default is <code>AWS_OWNED_KMS_KEY</code>.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn encryption_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::EncryptionSpecification> {
+    pub fn encryption_specification(&self) -> std::option::Option<& crate::model::EncryptionSpecification> {
         self.encryption_specification.as_ref()
     }
-    /// <p>Modifies the <code>pointInTimeRecovery</code> settings of the table. The options are:</p>
-    /// <p>• <code>ENABLED</code> </p>
-    /// <p>• <code>DISABLED</code> </p>
-    /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
+    /// <p>Modifies the <code>pointInTimeRecovery</code> settings of the table. The options are:</p> 
+    /// <p>• <code>ENABLED</code> </p> 
+    /// <p>• <code>DISABLED</code> </p> 
+    /// <p>If it's not specified, the default is <code>DISABLED</code>.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn point_in_time_recovery(
-        &self,
-    ) -> std::option::Option<&crate::model::PointInTimeRecovery> {
+    pub fn point_in_time_recovery(&self) -> std::option::Option<& crate::model::PointInTimeRecovery> {
         self.point_in_time_recovery.as_ref()
     }
-    /// <p>Modifies Time to Live custom settings for the table. The options are:</p>
-    /// <p>• <code>status:enabled</code> </p>
-    /// <p>• <code>status:disabled</code> </p>
-    /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
+    /// <p>Modifies Time to Live custom settings for the table. The options are:</p> 
+    /// <p>• <code>status:enabled</code> </p> 
+    /// <p>• <code>status:disabled</code> </p> 
+    /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn ttl(&self) -> std::option::Option<&crate::model::TimeToLive> {
+    pub fn ttl(&self) -> std::option::Option<& crate::model::TimeToLive> {
         self.ttl.as_ref()
     }
-    /// <p>The default Time to Live setting in seconds for the table.</p>
+    /// <p>The default Time to Live setting in seconds for the table.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn default_time_to_live(&self) -> std::option::Option<i32> {
         self.default_time_to_live
@@ -2903,7 +2132,7 @@ impl UpdateTableInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceInput {
+pub struct UntagResourceInput  {
     /// <p>The Amazon Keyspaces resource that the tags will be removed from. This value is an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -2913,11 +2142,11 @@ pub struct UntagResourceInput {
 }
 impl UntagResourceInput {
     /// <p>The Amazon Keyspaces resource that the tags will be removed from. This value is an Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>A list of existing tags to be removed from the Amazon Keyspaces resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -2925,7 +2154,7 @@ impl UntagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceInput {
+pub struct TagResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Keyspaces resource to which to add tags.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -2935,11 +2164,11 @@ pub struct TagResourceInput {
 }
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Keyspaces resource to which to add tags.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The tags to be assigned to the Amazon Keyspaces resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -2947,7 +2176,7 @@ impl TagResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreTableInput {
+pub struct RestoreTableInput  {
     /// <p>The keyspace name of the source table.</p>
     #[doc(hidden)]
     pub source_keyspace_name: std::option::Option<std::string::String>,
@@ -2963,87 +2192,80 @@ pub struct RestoreTableInput {
     /// <p>The restore timestamp in ISO 8601 format.</p>
     #[doc(hidden)]
     pub restore_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p>
-    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p>
-    /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
-    /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
+    /// <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p> 
+    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p> 
+    /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> 
+    /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub capacity_specification_override: std::option::Option<crate::model::CapacitySpecification>,
-    /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p>
-    /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
-    /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p>
-    /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
+    /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p> 
+    /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> 
+    /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p> 
+    /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub encryption_specification_override:
-        std::option::Option<crate::model::EncryptionSpecification>,
-    /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
-    /// <p>• <code>ENABLED</code> </p>
-    /// <p>• <code>DISABLED</code> </p>
-    /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
+    pub encryption_specification_override: std::option::Option<crate::model::EncryptionSpecification>,
+    /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p> 
+    /// <p>• <code>ENABLED</code> </p> 
+    /// <p>• <code>DISABLED</code> </p> 
+    /// <p>If it's not specified, the default is <code>DISABLED</code>.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub point_in_time_recovery_override: std::option::Option<crate::model::PointInTimeRecovery>,
-    /// <p>A list of key-value pair tags to be attached to the restored table. </p>
+    /// <p>A list of key-value pair tags to be attached to the restored table. </p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub tags_override: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl RestoreTableInput {
     /// <p>The keyspace name of the source table.</p>
-    pub fn source_keyspace_name(&self) -> std::option::Option<&str> {
+    pub fn source_keyspace_name(&self) -> std::option::Option<& str> {
         self.source_keyspace_name.as_deref()
     }
     /// <p>The name of the source table.</p>
-    pub fn source_table_name(&self) -> std::option::Option<&str> {
+    pub fn source_table_name(&self) -> std::option::Option<& str> {
         self.source_table_name.as_deref()
     }
     /// <p>The name of the target keyspace.</p>
-    pub fn target_keyspace_name(&self) -> std::option::Option<&str> {
+    pub fn target_keyspace_name(&self) -> std::option::Option<& str> {
         self.target_keyspace_name.as_deref()
     }
     /// <p>The name of the target table.</p>
-    pub fn target_table_name(&self) -> std::option::Option<&str> {
+    pub fn target_table_name(&self) -> std::option::Option<& str> {
         self.target_table_name.as_deref()
     }
     /// <p>The restore timestamp in ISO 8601 format.</p>
-    pub fn restore_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn restore_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.restore_timestamp.as_ref()
     }
-    /// <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p>
-    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p>
-    /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
-    /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
+    /// <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p> 
+    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> </p> 
+    /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> 
+    /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn capacity_specification_override(
-        &self,
-    ) -> std::option::Option<&crate::model::CapacitySpecification> {
+    pub fn capacity_specification_override(&self) -> std::option::Option<& crate::model::CapacitySpecification> {
         self.capacity_specification_override.as_ref()
     }
-    /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p>
-    /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
-    /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p>
-    /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p>
+    /// <p>Specifies the encryption settings for the target table. You can choose one of the following KMS key (KMS key):</p> 
+    /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> 
+    /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input. </p> 
+    /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn encryption_specification_override(
-        &self,
-    ) -> std::option::Option<&crate::model::EncryptionSpecification> {
+    pub fn encryption_specification_override(&self) -> std::option::Option<& crate::model::EncryptionSpecification> {
         self.encryption_specification_override.as_ref()
     }
-    /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p>
-    /// <p>• <code>ENABLED</code> </p>
-    /// <p>• <code>DISABLED</code> </p>
-    /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
+    /// <p>Specifies the <code>pointInTimeRecovery</code> settings for the target table. The options are:</p> 
+    /// <p>• <code>ENABLED</code> </p> 
+    /// <p>• <code>DISABLED</code> </p> 
+    /// <p>If it's not specified, the default is <code>DISABLED</code>.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn point_in_time_recovery_override(
-        &self,
-    ) -> std::option::Option<&crate::model::PointInTimeRecovery> {
+    pub fn point_in_time_recovery_override(&self) -> std::option::Option<& crate::model::PointInTimeRecovery> {
         self.point_in_time_recovery_override.as_ref()
     }
-    /// <p>A list of key-value pair tags to be attached to the restored table. </p>
+    /// <p>A list of key-value pair tags to be attached to the restored table. </p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn tags_override(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags_override(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags_override.as_deref()
     }
 }
@@ -3051,7 +2273,7 @@ impl RestoreTableInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceInput {
+pub struct ListTagsForResourceInput  {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Keyspaces resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -3064,11 +2286,11 @@ pub struct ListTagsForResourceInput {
 }
 impl ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Keyspaces resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> std::option::Option<& str> {
         self.resource_arn.as_deref()
     }
     /// <p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as argument of a subsequent API invocation.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of tags to return in the output. If the total number of tags available is more than the value specified, a <code>NextToken</code> is provided in the output. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
@@ -3080,7 +2302,7 @@ impl ListTagsForResourceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTablesInput {
+pub struct ListTablesInput  {
     /// <p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -3093,7 +2315,7 @@ pub struct ListTablesInput {
 }
 impl ListTablesInput {
     /// <p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of tables to return in the output. If the total number of tables available is more than the value specified, a <code>NextToken</code> is provided in the output. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
@@ -3101,7 +2323,7 @@ impl ListTablesInput {
         self.max_results
     }
     /// <p>The name of the keyspace.</p>
-    pub fn keyspace_name(&self) -> std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> std::option::Option<& str> {
         self.keyspace_name.as_deref()
     }
 }
@@ -3109,7 +2331,7 @@ impl ListTablesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListKeyspacesInput {
+pub struct ListKeyspacesInput  {
     /// <p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as argument of a subsequent API invocation.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -3119,7 +2341,7 @@ pub struct ListKeyspacesInput {
 }
 impl ListKeyspacesInput {
     /// <p>The pagination token. To resume pagination, provide the <code>NextToken</code> value as argument of a subsequent API invocation.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of keyspaces to return in the output. If the total number of keyspaces available is more than the value specified, a <code>NextToken</code> is provided in the output. To resume pagination, provide the <code>NextToken</code> value as an argument of a subsequent API invocation.</p>
@@ -3131,7 +2353,7 @@ impl ListKeyspacesInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTableInput {
+pub struct GetTableInput  {
     /// <p>The name of the keyspace that the table is stored in.</p>
     #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
@@ -3141,11 +2363,11 @@ pub struct GetTableInput {
 }
 impl GetTableInput {
     /// <p>The name of the keyspace that the table is stored in.</p>
-    pub fn keyspace_name(&self) -> std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> std::option::Option<& str> {
         self.keyspace_name.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
 }
@@ -3153,14 +2375,14 @@ impl GetTableInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetKeyspaceInput {
+pub struct GetKeyspaceInput  {
     /// <p>The name of the keyspace.</p>
     #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
 }
 impl GetKeyspaceInput {
     /// <p>The name of the keyspace.</p>
-    pub fn keyspace_name(&self) -> std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> std::option::Option<& str> {
         self.keyspace_name.as_deref()
     }
 }
@@ -3168,7 +2390,7 @@ impl GetKeyspaceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTableInput {
+pub struct DeleteTableInput  {
     /// <p>The name of the keyspace of the to be deleted table.</p>
     #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
@@ -3178,11 +2400,11 @@ pub struct DeleteTableInput {
 }
 impl DeleteTableInput {
     /// <p>The name of the keyspace of the to be deleted table.</p>
-    pub fn keyspace_name(&self) -> std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> std::option::Option<& str> {
         self.keyspace_name.as_deref()
     }
     /// <p>The name of the table to be deleted.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
 }
@@ -3190,14 +2412,14 @@ impl DeleteTableInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteKeyspaceInput {
+pub struct DeleteKeyspaceInput  {
     /// <p>The name of the keyspace to be deleted.</p>
     #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
 }
 impl DeleteKeyspaceInput {
     /// <p>The name of the keyspace to be deleted.</p>
-    pub fn keyspace_name(&self) -> std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> std::option::Option<& str> {
         self.keyspace_name.as_deref()
     }
 }
@@ -3205,143 +2427,137 @@ impl DeleteKeyspaceInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTableInput {
+pub struct CreateTableInput  {
     /// <p>The name of the keyspace that the table is going to be created in.</p>
     #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
     /// <p>The name of the table.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
-    /// <p>For each column to be created:</p>
-    /// <p>• <code>name</code> - The name of the column.</p>
-    /// <p>• <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    /// <p>The primary key of the table consists of the following columns:</p>
-    /// <p>• <code>partitionKeys</code> - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.</p>
-    /// <p>• <code>name</code> - The name of each partition key column.</p>
-    /// <p>• <code>clusteringKeys</code> - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p>
-    /// <p>• <code>name</code> - The name of the clustering column. </p>
-    /// <p>• <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
-    /// <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p>
-    /// <p>• <code>name</code> - The name of the column.</p>
+    /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p> 
+    /// <p>For each column to be created:</p> 
+    /// <p>• <code>name</code> - The name of the column.</p> 
+    /// <p>• <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> 
+    /// <p>The primary key of the table consists of the following columns:</p> 
+    /// <p>• <code>partitionKeys</code> - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.</p> 
+    /// <p>• <code>name</code> - The name of each partition key column.</p> 
+    /// <p>• <code>clusteringKeys</code> - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p> 
+    /// <p>• <code>name</code> - The name of the clustering column. </p> 
+    /// <p>• <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p> 
+    /// <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p> 
+    /// <p>• <code>name</code> - The name of the column.</p> 
     /// <p>• <code>type</code> - An Amazon Keyspaces data type.</p>
     #[doc(hidden)]
     pub schema_definition: std::option::Option<crate::model::SchemaDefinition>,
     /// <p>This parameter allows to enter a description of the table.</p>
     #[doc(hidden)]
     pub comment: std::option::Option<crate::model::Comment>,
-    /// <p>Specifies the read/write throughput capacity mode for the table. The options are:</p>
-    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p>
-    /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
-    /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
+    /// <p>Specifies the read/write throughput capacity mode for the table. The options are:</p> 
+    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p> 
+    /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> 
+    /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub capacity_specification: std::option::Option<crate::model::CapacitySpecification>,
-    /// <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p>
-    /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
-    /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p>
-    /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p>
+    /// <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p> 
+    /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> 
+    /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p> 
+    /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub encryption_specification: std::option::Option<crate::model::EncryptionSpecification>,
-    /// <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p>
-    /// <p>• <code>ENABLED</code> </p>
-    /// <p>• <code>DISABLED</code> </p>
-    /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
+    /// <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p> 
+    /// <p>• <code>ENABLED</code> </p> 
+    /// <p>• <code>DISABLED</code> </p> 
+    /// <p>If it's not specified, the default is <code>DISABLED</code>.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub point_in_time_recovery: std::option::Option<crate::model::PointInTimeRecovery>,
-    /// <p>Enables Time to Live custom settings for the table. The options are:</p>
-    /// <p>• <code>status:enabled</code> </p>
-    /// <p>• <code>status:disabled</code> </p>
-    /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
+    /// <p>Enables Time to Live custom settings for the table. The options are:</p> 
+    /// <p>• <code>status:enabled</code> </p> 
+    /// <p>• <code>status:disabled</code> </p> 
+    /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub ttl: std::option::Option<crate::model::TimeToLive>,
-    /// <p>The default Time to Live setting in seconds for the table.</p>
+    /// <p>The default Time to Live setting in seconds for the table.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub default_time_to_live: std::option::Option<i32>,
-    /// <p>A list of key-value pair tags to be attached to the resource. </p>
+    /// <p>A list of key-value pair tags to be attached to the resource. </p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateTableInput {
     /// <p>The name of the keyspace that the table is going to be created in.</p>
-    pub fn keyspace_name(&self) -> std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> std::option::Option<& str> {
         self.keyspace_name.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> std::option::Option<& str> {
         self.table_name.as_deref()
     }
-    /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p>
-    /// <p>For each column to be created:</p>
-    /// <p>• <code>name</code> - The name of the column.</p>
-    /// <p>• <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    /// <p>The primary key of the table consists of the following columns:</p>
-    /// <p>• <code>partitionKeys</code> - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.</p>
-    /// <p>• <code>name</code> - The name of each partition key column.</p>
-    /// <p>• <code>clusteringKeys</code> - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p>
-    /// <p>• <code>name</code> - The name of the clustering column. </p>
-    /// <p>• <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
-    /// <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p>
-    /// <p>• <code>name</code> - The name of the column.</p>
+    /// <p>The <code>schemaDefinition</code> consists of the following parameters.</p> 
+    /// <p>For each column to be created:</p> 
+    /// <p>• <code>name</code> - The name of the column.</p> 
+    /// <p>• <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data types</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p> 
+    /// <p>The primary key of the table consists of the following columns:</p> 
+    /// <p>• <code>partitionKeys</code> - The partition key can be a single column, or it can be a compound value composed of two or more columns. The partition key portion of the primary key is required and determines how Amazon Keyspaces stores your data.</p> 
+    /// <p>• <code>name</code> - The name of each partition key column.</p> 
+    /// <p>• <code>clusteringKeys</code> - The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p> 
+    /// <p>• <code>name</code> - The name of the clustering column. </p> 
+    /// <p>• <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p> 
+    /// <p>To define a column as static use <code>staticColumns</code> - Static columns store values that are shared by all rows in the same partition:</p> 
+    /// <p>• <code>name</code> - The name of the column.</p> 
     /// <p>• <code>type</code> - An Amazon Keyspaces data type.</p>
-    pub fn schema_definition(&self) -> std::option::Option<&crate::model::SchemaDefinition> {
+    pub fn schema_definition(&self) -> std::option::Option<& crate::model::SchemaDefinition> {
         self.schema_definition.as_ref()
     }
     /// <p>This parameter allows to enter a description of the table.</p>
-    pub fn comment(&self) -> std::option::Option<&crate::model::Comment> {
+    pub fn comment(&self) -> std::option::Option<& crate::model::Comment> {
         self.comment.as_ref()
     }
-    /// <p>Specifies the read/write throughput capacity mode for the table. The options are:</p>
-    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p>
-    /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p>
-    /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
+    /// <p>Specifies the read/write throughput capacity mode for the table. The options are:</p> 
+    /// <p>• <code>throughputMode:PAY_PER_REQUEST</code> and </p> 
+    /// <p>• <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code> and <code>writeCapacityUnits</code> as input.</p> 
+    /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn capacity_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::CapacitySpecification> {
+    pub fn capacity_specification(&self) -> std::option::Option<& crate::model::CapacitySpecification> {
         self.capacity_specification.as_ref()
     }
-    /// <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p>
-    /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p>
-    /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p>
-    /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p>
+    /// <p>Specifies how the encryption key for encryption at rest is managed for the table. You can choose one of the following KMS key (KMS key):</p> 
+    /// <p>• <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. </p> 
+    /// <p>• <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code> of the KMS key in Amazon Resource Name (ARN) format as input.</p> 
+    /// <p>The default is <code>type:AWS_OWNED_KMS_KEY</code>. </p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn encryption_specification(
-        &self,
-    ) -> std::option::Option<&crate::model::EncryptionSpecification> {
+    pub fn encryption_specification(&self) -> std::option::Option<& crate::model::EncryptionSpecification> {
         self.encryption_specification.as_ref()
     }
-    /// <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p>
-    /// <p>• <code>ENABLED</code> </p>
-    /// <p>• <code>DISABLED</code> </p>
-    /// <p>If it's not specified, the default is <code>DISABLED</code>.</p>
+    /// <p>Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table. The options are:</p> 
+    /// <p>• <code>ENABLED</code> </p> 
+    /// <p>• <code>DISABLED</code> </p> 
+    /// <p>If it's not specified, the default is <code>DISABLED</code>.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn point_in_time_recovery(
-        &self,
-    ) -> std::option::Option<&crate::model::PointInTimeRecovery> {
+    pub fn point_in_time_recovery(&self) -> std::option::Option<& crate::model::PointInTimeRecovery> {
         self.point_in_time_recovery.as_ref()
     }
-    /// <p>Enables Time to Live custom settings for the table. The options are:</p>
-    /// <p>• <code>status:enabled</code> </p>
-    /// <p>• <code>status:disabled</code> </p>
-    /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p>
+    /// <p>Enables Time to Live custom settings for the table. The options are:</p> 
+    /// <p>• <code>status:enabled</code> </p> 
+    /// <p>• <code>status:disabled</code> </p> 
+    /// <p>The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you can't disable it for the table.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL.html">Expiring data by using Amazon Keyspaces Time to Live (TTL)</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn ttl(&self) -> std::option::Option<&crate::model::TimeToLive> {
+    pub fn ttl(&self) -> std::option::Option<& crate::model::TimeToLive> {
         self.ttl.as_ref()
     }
-    /// <p>The default Time to Live setting in seconds for the table.</p>
+    /// <p>The default Time to Live setting in seconds for the table.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/TTL-how-it-works.html#ttl-howitworks_default_ttl">Setting the default TTL value for a table</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn default_time_to_live(&self) -> std::option::Option<i32> {
         self.default_time_to_live
     }
-    /// <p>A list of key-value pair tags to be attached to the resource. </p>
+    /// <p>A list of key-value pair tags to be attached to the resource. </p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -3349,23 +2565,24 @@ impl CreateTableInput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateKeyspaceInput {
+pub struct CreateKeyspaceInput  {
     /// <p>The name of the keyspace to be created.</p>
     #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
-    /// <p>A list of key-value pair tags to be attached to the keyspace.</p>
+    /// <p>A list of key-value pair tags to be attached to the keyspace.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl CreateKeyspaceInput {
     /// <p>The name of the keyspace to be created.</p>
-    pub fn keyspace_name(&self) -> std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> std::option::Option<& str> {
         self.keyspace_name.as_deref()
     }
-    /// <p>A list of key-value pair tags to be attached to the keyspace.</p>
+    /// <p>A list of key-value pair tags to be attached to the keyspace.</p> 
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::model::Tag]> {
         self.tags.as_deref()
     }
 }
+

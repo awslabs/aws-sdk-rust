@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSpacesOutput {
+pub struct ListSpacesOutput  {
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct ListSpacesOutput {
 }
 impl ListSpacesOutput {
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the space. </p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::SpaceSummary]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::SpaceSummary]> {
         self.items.as_deref()
     }
 }
 /// See [`ListSpacesOutput`](crate::output::ListSpacesOutput).
 pub mod list_spaces_output {
-
+    
     /// A builder for [`ListSpacesOutput`](crate::output::ListSpacesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -37,8 +37,7 @@ pub mod list_spaces_output {
         }
         /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `items`.
         ///
@@ -47,26 +46,26 @@ pub mod list_spaces_output {
         /// <p>Information about the space. </p>
         pub fn items(mut self, input: crate::model::SpaceSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>Information about the space. </p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::SpaceSummary>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::SpaceSummary>>) -> Self {
+            self.items = input; self
         }
         /// Consumes the builder and constructs a [`ListSpacesOutput`](crate::output::ListSpacesOutput).
         pub fn build(self) -> crate::output::ListSpacesOutput {
             crate::output::ListSpacesOutput {
-                next_token: self.next_token,
-                items: self.items,
+                next_token: self.next_token
+                ,
+                items: self.items
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSpacesOutput {
     /// Creates a new builder-style object to manufacture [`ListSpacesOutput`](crate::output::ListSpacesOutput).
@@ -78,7 +77,7 @@ impl ListSpacesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSpaceOutput {
+pub struct GetSpaceOutput  {
     /// <p>The name of the space.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -94,25 +93,25 @@ pub struct GetSpaceOutput {
 }
 impl GetSpaceOutput {
     /// <p>The name of the space.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Web Services Region where the space exists.</p>
-    pub fn region_name(&self) -> std::option::Option<&str> {
+    pub fn region_name(&self) -> std::option::Option<& str> {
         self.region_name.as_deref()
     }
     /// <p>The friendly name of the space displayed to users.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the space.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`GetSpaceOutput`](crate::output::GetSpaceOutput).
 pub mod get_space_output {
-
+    
     /// A builder for [`GetSpaceOutput`](crate::output::GetSpaceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -129,8 +128,7 @@ pub mod get_space_output {
         }
         /// <p>The name of the space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The Amazon Web Services Region where the space exists.</p>
         pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,8 +137,7 @@ pub mod get_space_output {
         }
         /// <p>The Amazon Web Services Region where the space exists.</p>
         pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.region_name = input;
-            self
+            self.region_name = input; self
         }
         /// <p>The friendly name of the space displayed to users.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,8 +146,7 @@ pub mod get_space_output {
         }
         /// <p>The friendly name of the space displayed to users.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The description of the space.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,19 +155,24 @@ pub mod get_space_output {
         }
         /// <p>The description of the space.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`GetSpaceOutput`](crate::output::GetSpaceOutput).
         pub fn build(self) -> crate::output::GetSpaceOutput {
             crate::output::GetSpaceOutput {
-                name: self.name,
-                region_name: self.region_name,
-                display_name: self.display_name,
-                description: self.description,
+                name: self.name
+                ,
+                region_name: self.region_name
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSpaceOutput {
     /// Creates a new builder-style object to manufacture [`GetSpaceOutput`](crate::output::GetSpaceOutput).
@@ -183,7 +184,7 @@ impl GetSpaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSubscriptionOutput {
+pub struct GetSubscriptionOutput  {
     /// <p>The type of the billing plan for the space.</p>
     #[doc(hidden)]
     pub subscription_type: std::option::Option<std::string::String>,
@@ -193,17 +194,17 @@ pub struct GetSubscriptionOutput {
 }
 impl GetSubscriptionOutput {
     /// <p>The type of the billing plan for the space.</p>
-    pub fn subscription_type(&self) -> std::option::Option<&str> {
+    pub fn subscription_type(&self) -> std::option::Option<& str> {
         self.subscription_type.as_deref()
     }
     /// <p>The display name of the Amazon Web Services account used for billing for the space.</p>
-    pub fn aws_account_name(&self) -> std::option::Option<&str> {
+    pub fn aws_account_name(&self) -> std::option::Option<& str> {
         self.aws_account_name.as_deref()
     }
 }
 /// See [`GetSubscriptionOutput`](crate::output::GetSubscriptionOutput).
 pub mod get_subscription_output {
-
+    
     /// A builder for [`GetSubscriptionOutput`](crate::output::GetSubscriptionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -217,12 +218,8 @@ pub mod get_subscription_output {
             self
         }
         /// <p>The type of the billing plan for the space.</p>
-        pub fn set_subscription_type(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.subscription_type = input;
-            self
+        pub fn set_subscription_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subscription_type = input; self
         }
         /// <p>The display name of the Amazon Web Services account used for billing for the space.</p>
         pub fn aws_account_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -230,21 +227,21 @@ pub mod get_subscription_output {
             self
         }
         /// <p>The display name of the Amazon Web Services account used for billing for the space.</p>
-        pub fn set_aws_account_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.aws_account_name = input;
-            self
+        pub fn set_aws_account_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.aws_account_name = input; self
         }
         /// Consumes the builder and constructs a [`GetSubscriptionOutput`](crate::output::GetSubscriptionOutput).
         pub fn build(self) -> crate::output::GetSubscriptionOutput {
             crate::output::GetSubscriptionOutput {
-                subscription_type: self.subscription_type,
-                aws_account_name: self.aws_account_name,
+                subscription_type: self.subscription_type
+                ,
+                aws_account_name: self.aws_account_name
+                ,
             }
         }
     }
+    
+    
 }
 impl GetSubscriptionOutput {
     /// Creates a new builder-style object to manufacture [`GetSubscriptionOutput`](crate::output::GetSubscriptionOutput).
@@ -256,7 +253,7 @@ impl GetSubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProjectsOutput {
+pub struct ListProjectsOutput  {
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -266,17 +263,17 @@ pub struct ListProjectsOutput {
 }
 impl ListProjectsOutput {
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the projects.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::ProjectSummary]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::ProjectSummary]> {
         self.items.as_deref()
     }
 }
 /// See [`ListProjectsOutput`](crate::output::ListProjectsOutput).
 pub mod list_projects_output {
-
+    
     /// A builder for [`ListProjectsOutput`](crate::output::ListProjectsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -291,8 +288,7 @@ pub mod list_projects_output {
         }
         /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `items`.
         ///
@@ -301,26 +297,26 @@ pub mod list_projects_output {
         /// <p>Information about the projects.</p>
         pub fn items(mut self, input: crate::model::ProjectSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>Information about the projects.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>) -> Self {
+            self.items = input; self
         }
         /// Consumes the builder and constructs a [`ListProjectsOutput`](crate::output::ListProjectsOutput).
         pub fn build(self) -> crate::output::ListProjectsOutput {
             crate::output::ListProjectsOutput {
-                next_token: self.next_token,
-                items: self.items,
+                next_token: self.next_token
+                ,
+                items: self.items
+                ,
             }
         }
     }
+    
+    
 }
 impl ListProjectsOutput {
     /// Creates a new builder-style object to manufacture [`ListProjectsOutput`](crate::output::ListProjectsOutput).
@@ -332,7 +328,7 @@ impl ListProjectsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProjectOutput {
+pub struct CreateProjectOutput  {
     /// <p>The name of the space.</p>
     #[doc(hidden)]
     pub space_name: std::option::Option<std::string::String>,
@@ -348,25 +344,25 @@ pub struct CreateProjectOutput {
 }
 impl CreateProjectOutput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> std::option::Option<&str> {
+    pub fn space_name(&self) -> std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The friendly name of the project.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the project.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`CreateProjectOutput`](crate::output::CreateProjectOutput).
 pub mod create_project_output {
-
+    
     /// A builder for [`CreateProjectOutput`](crate::output::CreateProjectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -383,8 +379,7 @@ pub mod create_project_output {
         }
         /// <p>The name of the space.</p>
         pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.space_name = input;
-            self
+            self.space_name = input; self
         }
         /// <p>The name of the project in the space.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -393,8 +388,7 @@ pub mod create_project_output {
         }
         /// <p>The name of the project in the space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The friendly name of the project.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -403,8 +397,7 @@ pub mod create_project_output {
         }
         /// <p>The friendly name of the project.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The description of the project.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -413,19 +406,24 @@ pub mod create_project_output {
         }
         /// <p>The description of the project.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`CreateProjectOutput`](crate::output::CreateProjectOutput).
         pub fn build(self) -> crate::output::CreateProjectOutput {
             crate::output::CreateProjectOutput {
-                space_name: self.space_name,
-                name: self.name,
-                display_name: self.display_name,
-                description: self.description,
+                space_name: self.space_name
+                ,
+                name: self.name
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateProjectOutput {
     /// Creates a new builder-style object to manufacture [`CreateProjectOutput`](crate::output::CreateProjectOutput).
@@ -437,7 +435,7 @@ impl CreateProjectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetProjectOutput {
+pub struct GetProjectOutput  {
     /// <p>The name of the space.</p>
     #[doc(hidden)]
     pub space_name: std::option::Option<std::string::String>,
@@ -453,25 +451,25 @@ pub struct GetProjectOutput {
 }
 impl GetProjectOutput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> std::option::Option<&str> {
+    pub fn space_name(&self) -> std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The friendly name of the project displayed to users in Amazon CodeCatalyst.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the project.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
 }
 /// See [`GetProjectOutput`](crate::output::GetProjectOutput).
 pub mod get_project_output {
-
+    
     /// A builder for [`GetProjectOutput`](crate::output::GetProjectOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -488,8 +486,7 @@ pub mod get_project_output {
         }
         /// <p>The name of the space.</p>
         pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.space_name = input;
-            self
+            self.space_name = input; self
         }
         /// <p>The name of the project in the space.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -498,8 +495,7 @@ pub mod get_project_output {
         }
         /// <p>The name of the project in the space.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The friendly name of the project displayed to users in Amazon CodeCatalyst.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -508,8 +504,7 @@ pub mod get_project_output {
         }
         /// <p>The friendly name of the project displayed to users in Amazon CodeCatalyst.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The description of the project.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -518,19 +513,24 @@ pub mod get_project_output {
         }
         /// <p>The description of the project.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// Consumes the builder and constructs a [`GetProjectOutput`](crate::output::GetProjectOutput).
         pub fn build(self) -> crate::output::GetProjectOutput {
             crate::output::GetProjectOutput {
-                space_name: self.space_name,
-                name: self.name,
-                display_name: self.display_name,
-                description: self.description,
+                space_name: self.space_name
+                ,
+                name: self.name
+                ,
+                display_name: self.display_name
+                ,
+                description: self.description
+                ,
             }
         }
     }
+    
+    
 }
 impl GetProjectOutput {
     /// Creates a new builder-style object to manufacture [`GetProjectOutput`](crate::output::GetProjectOutput).
@@ -542,20 +542,20 @@ impl GetProjectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSourceRepositoryCloneUrlsOutput {
+pub struct GetSourceRepositoryCloneUrlsOutput  {
     /// <p>The HTTPS URL to use when cloning the source repository.</p>
     #[doc(hidden)]
     pub https: std::option::Option<std::string::String>,
 }
 impl GetSourceRepositoryCloneUrlsOutput {
     /// <p>The HTTPS URL to use when cloning the source repository.</p>
-    pub fn https(&self) -> std::option::Option<&str> {
+    pub fn https(&self) -> std::option::Option<& str> {
         self.https.as_deref()
     }
 }
 /// See [`GetSourceRepositoryCloneUrlsOutput`](crate::output::GetSourceRepositoryCloneUrlsOutput).
 pub mod get_source_repository_clone_urls_output {
-
+    
     /// A builder for [`GetSourceRepositoryCloneUrlsOutput`](crate::output::GetSourceRepositoryCloneUrlsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -569,14 +569,18 @@ pub mod get_source_repository_clone_urls_output {
         }
         /// <p>The HTTPS URL to use when cloning the source repository.</p>
         pub fn set_https(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.https = input;
-            self
+            self.https = input; self
         }
         /// Consumes the builder and constructs a [`GetSourceRepositoryCloneUrlsOutput`](crate::output::GetSourceRepositoryCloneUrlsOutput).
         pub fn build(self) -> crate::output::GetSourceRepositoryCloneUrlsOutput {
-            crate::output::GetSourceRepositoryCloneUrlsOutput { https: self.https }
+            crate::output::GetSourceRepositoryCloneUrlsOutput {
+                https: self.https
+                ,
+            }
         }
     }
+    
+    
 }
 impl GetSourceRepositoryCloneUrlsOutput {
     /// Creates a new builder-style object to manufacture [`GetSourceRepositoryCloneUrlsOutput`](crate::output::GetSourceRepositoryCloneUrlsOutput).
@@ -588,7 +592,7 @@ impl GetSourceRepositoryCloneUrlsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSourceRepositoriesOutput {
+pub struct ListSourceRepositoriesOutput  {
     /// <p>Information about the source repositories.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::ListSourceRepositoriesItem>>,
@@ -598,22 +602,21 @@ pub struct ListSourceRepositoriesOutput {
 }
 impl ListSourceRepositoriesOutput {
     /// <p>Information about the source repositories.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::ListSourceRepositoriesItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::ListSourceRepositoriesItem]> {
         self.items.as_deref()
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListSourceRepositoriesOutput`](crate::output::ListSourceRepositoriesOutput).
 pub mod list_source_repositories_output {
-
+    
     /// A builder for [`ListSourceRepositoriesOutput`](crate::output::ListSourceRepositoriesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) items:
-            std::option::Option<std::vec::Vec<crate::model::ListSourceRepositoriesItem>>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ListSourceRepositoriesItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -624,17 +627,13 @@ pub mod list_source_repositories_output {
         /// <p>Information about the source repositories.</p>
         pub fn items(mut self, input: crate::model::ListSourceRepositoriesItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>Information about the source repositories.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ListSourceRepositoriesItem>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListSourceRepositoriesItem>>) -> Self {
+            self.items = input; self
         }
         /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -643,17 +642,20 @@ pub mod list_source_repositories_output {
         }
         /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListSourceRepositoriesOutput`](crate::output::ListSourceRepositoriesOutput).
         pub fn build(self) -> crate::output::ListSourceRepositoriesOutput {
             crate::output::ListSourceRepositoriesOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSourceRepositoriesOutput {
     /// Creates a new builder-style object to manufacture [`ListSourceRepositoriesOutput`](crate::output::ListSourceRepositoriesOutput).
@@ -665,7 +667,7 @@ impl ListSourceRepositoriesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSourceRepositoryBranchesOutput {
+pub struct ListSourceRepositoryBranchesOutput  {
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -675,23 +677,22 @@ pub struct ListSourceRepositoryBranchesOutput {
 }
 impl ListSourceRepositoryBranchesOutput {
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the source branches.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::ListSourceRepositoryBranchesItem]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::ListSourceRepositoryBranchesItem]> {
         self.items.as_deref()
     }
 }
 /// See [`ListSourceRepositoryBranchesOutput`](crate::output::ListSourceRepositoryBranchesOutput).
 pub mod list_source_repository_branches_output {
-
+    
     /// A builder for [`ListSourceRepositoryBranchesOutput`](crate::output::ListSourceRepositoryBranchesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) items:
-            std::option::Option<std::vec::Vec<crate::model::ListSourceRepositoryBranchesItem>>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ListSourceRepositoryBranchesItem>>,
     }
     impl Builder {
         /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
@@ -701,8 +702,7 @@ pub mod list_source_repository_branches_output {
         }
         /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `items`.
         ///
@@ -711,28 +711,26 @@ pub mod list_source_repository_branches_output {
         /// <p>Information about the source branches.</p>
         pub fn items(mut self, input: crate::model::ListSourceRepositoryBranchesItem) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>Information about the source branches.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::ListSourceRepositoryBranchesItem>,
-            >,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::ListSourceRepositoryBranchesItem>>) -> Self {
+            self.items = input; self
         }
         /// Consumes the builder and constructs a [`ListSourceRepositoryBranchesOutput`](crate::output::ListSourceRepositoryBranchesOutput).
         pub fn build(self) -> crate::output::ListSourceRepositoryBranchesOutput {
             crate::output::ListSourceRepositoryBranchesOutput {
-                next_token: self.next_token,
-                items: self.items,
+                next_token: self.next_token
+                ,
+                items: self.items
+                ,
             }
         }
     }
+    
+    
 }
 impl ListSourceRepositoryBranchesOutput {
     /// Creates a new builder-style object to manufacture [`ListSourceRepositoryBranchesOutput`](crate::output::ListSourceRepositoryBranchesOutput).
@@ -744,7 +742,7 @@ impl ListSourceRepositoryBranchesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSourceRepositoryBranchOutput {
+pub struct CreateSourceRepositoryBranchOutput  {
     /// <p>The Git reference name of the branch.</p>
     #[doc(hidden)]
     pub r#ref: std::option::Option<std::string::String>,
@@ -760,25 +758,25 @@ pub struct CreateSourceRepositoryBranchOutput {
 }
 impl CreateSourceRepositoryBranchOutput {
     /// <p>The Git reference name of the branch.</p>
-    pub fn r#ref(&self) -> std::option::Option<&str> {
+    pub fn r#ref(&self) -> std::option::Option<& str> {
         self.r#ref.as_deref()
     }
     /// <p>The name of the newly created branch.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The time the branch was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The commit ID of the tip of the newly created branch.</p>
-    pub fn head_commit_id(&self) -> std::option::Option<&str> {
+    pub fn head_commit_id(&self) -> std::option::Option<& str> {
         self.head_commit_id.as_deref()
     }
 }
 /// See [`CreateSourceRepositoryBranchOutput`](crate::output::CreateSourceRepositoryBranchOutput).
 pub mod create_source_repository_branch_output {
-
+    
     /// A builder for [`CreateSourceRepositoryBranchOutput`](crate::output::CreateSourceRepositoryBranchOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -795,8 +793,7 @@ pub mod create_source_repository_branch_output {
         }
         /// <p>The Git reference name of the branch.</p>
         pub fn set_ref(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#ref = input;
-            self
+            self.r#ref = input; self
         }
         /// <p>The name of the newly created branch.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -805,8 +802,7 @@ pub mod create_source_repository_branch_output {
         }
         /// <p>The name of the newly created branch.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The time the branch was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -814,12 +810,8 @@ pub mod create_source_repository_branch_output {
             self
         }
         /// <p>The time the branch was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>The commit ID of the tip of the newly created branch.</p>
         pub fn head_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -827,23 +819,25 @@ pub mod create_source_repository_branch_output {
             self
         }
         /// <p>The commit ID of the tip of the newly created branch.</p>
-        pub fn set_head_commit_id(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.head_commit_id = input;
-            self
+        pub fn set_head_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.head_commit_id = input; self
         }
         /// Consumes the builder and constructs a [`CreateSourceRepositoryBranchOutput`](crate::output::CreateSourceRepositoryBranchOutput).
         pub fn build(self) -> crate::output::CreateSourceRepositoryBranchOutput {
             crate::output::CreateSourceRepositoryBranchOutput {
-                r#ref: self.r#ref,
-                name: self.name,
-                last_updated_time: self.last_updated_time,
-                head_commit_id: self.head_commit_id,
+                r#ref: self.r#ref
+                ,
+                name: self.name
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                head_commit_id: self.head_commit_id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateSourceRepositoryBranchOutput {
     /// Creates a new builder-style object to manufacture [`CreateSourceRepositoryBranchOutput`](crate::output::CreateSourceRepositoryBranchOutput).
@@ -855,7 +849,7 @@ impl CreateSourceRepositoryBranchOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopDevEnvironmentOutput {
+pub struct StopDevEnvironmentOutput  {
     /// <p>The name of the space.</p>
     #[doc(hidden)]
     pub space_name: std::option::Option<std::string::String>,
@@ -871,25 +865,25 @@ pub struct StopDevEnvironmentOutput {
 }
 impl StopDevEnvironmentOutput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> std::option::Option<&str> {
+    pub fn space_name(&self) -> std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The status of the Dev Environment. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DevEnvironmentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DevEnvironmentStatus> {
         self.status.as_ref()
     }
 }
 /// See [`StopDevEnvironmentOutput`](crate::output::StopDevEnvironmentOutput).
 pub mod stop_dev_environment_output {
-
+    
     /// A builder for [`StopDevEnvironmentOutput`](crate::output::StopDevEnvironmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -906,8 +900,7 @@ pub mod stop_dev_environment_output {
         }
         /// <p>The name of the space.</p>
         pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.space_name = input;
-            self
+            self.space_name = input; self
         }
         /// <p>The name of the project in the space.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -916,8 +909,7 @@ pub mod stop_dev_environment_output {
         }
         /// <p>The name of the project in the space.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_name = input;
-            self
+            self.project_name = input; self
         }
         /// <p>The system-generated unique ID of the Dev Environment. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -926,8 +918,7 @@ pub mod stop_dev_environment_output {
         }
         /// <p>The system-generated unique ID of the Dev Environment. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The status of the Dev Environment. </p>
         pub fn status(mut self, input: crate::model::DevEnvironmentStatus) -> Self {
@@ -935,23 +926,25 @@ pub mod stop_dev_environment_output {
             self
         }
         /// <p>The status of the Dev Environment. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DevEnvironmentStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DevEnvironmentStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`StopDevEnvironmentOutput`](crate::output::StopDevEnvironmentOutput).
         pub fn build(self) -> crate::output::StopDevEnvironmentOutput {
             crate::output::StopDevEnvironmentOutput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                id: self.id,
-                status: self.status,
+                space_name: self.space_name
+                ,
+                project_name: self.project_name
+                ,
+                id: self.id
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl StopDevEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`StopDevEnvironmentOutput`](crate::output::StopDevEnvironmentOutput).
@@ -963,7 +956,7 @@ impl StopDevEnvironmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StartDevEnvironmentSessionOutput {
+pub struct StartDevEnvironmentSessionOutput  {
     /// <p>Information about connection details for a Dev Environment.</p>
     #[doc(hidden)]
     pub access_details: std::option::Option<crate::model::DevEnvironmentAccessDetails>,
@@ -982,29 +975,27 @@ pub struct StartDevEnvironmentSessionOutput {
 }
 impl StartDevEnvironmentSessionOutput {
     /// <p>Information about connection details for a Dev Environment.</p>
-    pub fn access_details(
-        &self,
-    ) -> std::option::Option<&crate::model::DevEnvironmentAccessDetails> {
+    pub fn access_details(&self) -> std::option::Option<& crate::model::DevEnvironmentAccessDetails> {
         self.access_details.as_ref()
     }
     /// <p>The system-generated unique ID of the Dev Environment session.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> std::option::Option<& str> {
         self.session_id.as_deref()
     }
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> std::option::Option<&str> {
+    pub fn space_name(&self) -> std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for StartDevEnvironmentSessionOutput {
+impl  std::fmt::Debug for StartDevEnvironmentSessionOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartDevEnvironmentSessionOutput");
         formatter.field("access_details", &"*** Sensitive Data Redacted ***");
@@ -1017,7 +1008,7 @@ impl std::fmt::Debug for StartDevEnvironmentSessionOutput {
 }
 /// See [`StartDevEnvironmentSessionOutput`](crate::output::StartDevEnvironmentSessionOutput).
 pub mod start_dev_environment_session_output {
-
+    
     /// A builder for [`StartDevEnvironmentSessionOutput`](crate::output::StartDevEnvironmentSessionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -1034,12 +1025,8 @@ pub mod start_dev_environment_session_output {
             self
         }
         /// <p>Information about connection details for a Dev Environment.</p>
-        pub fn set_access_details(
-            mut self,
-            input: std::option::Option<crate::model::DevEnvironmentAccessDetails>,
-        ) -> Self {
-            self.access_details = input;
-            self
+        pub fn set_access_details(mut self, input: std::option::Option<crate::model::DevEnvironmentAccessDetails>) -> Self {
+            self.access_details = input; self
         }
         /// <p>The system-generated unique ID of the Dev Environment session.</p>
         pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1048,8 +1035,7 @@ pub mod start_dev_environment_session_output {
         }
         /// <p>The system-generated unique ID of the Dev Environment session.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.session_id = input;
-            self
+            self.session_id = input; self
         }
         /// <p>The name of the space.</p>
         pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1058,8 +1044,7 @@ pub mod start_dev_environment_session_output {
         }
         /// <p>The name of the space.</p>
         pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.space_name = input;
-            self
+            self.space_name = input; self
         }
         /// <p>The name of the project in the space.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1068,8 +1053,7 @@ pub mod start_dev_environment_session_output {
         }
         /// <p>The name of the project in the space.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_name = input;
-            self
+            self.project_name = input; self
         }
         /// <p>The system-generated unique ID of the Dev Environment.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1078,17 +1062,21 @@ pub mod start_dev_environment_session_output {
         }
         /// <p>The system-generated unique ID of the Dev Environment.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`StartDevEnvironmentSessionOutput`](crate::output::StartDevEnvironmentSessionOutput).
         pub fn build(self) -> crate::output::StartDevEnvironmentSessionOutput {
             crate::output::StartDevEnvironmentSessionOutput {
-                access_details: self.access_details,
-                session_id: self.session_id,
-                space_name: self.space_name,
-                project_name: self.project_name,
-                id: self.id,
+                access_details: self.access_details
+                ,
+                session_id: self.session_id
+                ,
+                space_name: self.space_name
+                ,
+                project_name: self.project_name
+                ,
+                id: self.id
+                ,
             }
         }
     }
@@ -1103,6 +1091,8 @@ pub mod start_dev_environment_session_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl StartDevEnvironmentSessionOutput {
     /// Creates a new builder-style object to manufacture [`StartDevEnvironmentSessionOutput`](crate::output::StartDevEnvironmentSessionOutput).
@@ -1114,7 +1104,7 @@ impl StartDevEnvironmentSessionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDevEnvironmentOutput {
+pub struct StartDevEnvironmentOutput  {
     /// <p>The name of the space.</p>
     #[doc(hidden)]
     pub space_name: std::option::Option<std::string::String>,
@@ -1130,25 +1120,25 @@ pub struct StartDevEnvironmentOutput {
 }
 impl StartDevEnvironmentOutput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> std::option::Option<&str> {
+    pub fn space_name(&self) -> std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The status of the Dev Environment. </p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DevEnvironmentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DevEnvironmentStatus> {
         self.status.as_ref()
     }
 }
 /// See [`StartDevEnvironmentOutput`](crate::output::StartDevEnvironmentOutput).
 pub mod start_dev_environment_output {
-
+    
     /// A builder for [`StartDevEnvironmentOutput`](crate::output::StartDevEnvironmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1165,8 +1155,7 @@ pub mod start_dev_environment_output {
         }
         /// <p>The name of the space.</p>
         pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.space_name = input;
-            self
+            self.space_name = input; self
         }
         /// <p>The name of the project in the space.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1175,8 +1164,7 @@ pub mod start_dev_environment_output {
         }
         /// <p>The name of the project in the space.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_name = input;
-            self
+            self.project_name = input; self
         }
         /// <p>The system-generated unique ID of the Dev Environment. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1185,8 +1173,7 @@ pub mod start_dev_environment_output {
         }
         /// <p>The system-generated unique ID of the Dev Environment. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The status of the Dev Environment. </p>
         pub fn status(mut self, input: crate::model::DevEnvironmentStatus) -> Self {
@@ -1194,23 +1181,25 @@ pub mod start_dev_environment_output {
             self
         }
         /// <p>The status of the Dev Environment. </p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DevEnvironmentStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DevEnvironmentStatus>) -> Self {
+            self.status = input; self
         }
         /// Consumes the builder and constructs a [`StartDevEnvironmentOutput`](crate::output::StartDevEnvironmentOutput).
         pub fn build(self) -> crate::output::StartDevEnvironmentOutput {
             crate::output::StartDevEnvironmentOutput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                id: self.id,
-                status: self.status,
+                space_name: self.space_name
+                ,
+                project_name: self.project_name
+                ,
+                id: self.id
+                ,
+                status: self.status
+                ,
             }
         }
     }
+    
+    
 }
 impl StartDevEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`StartDevEnvironmentOutput`](crate::output::StartDevEnvironmentOutput).
@@ -1222,7 +1211,7 @@ impl StartDevEnvironmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDevEnvironmentsOutput {
+pub struct ListDevEnvironmentsOutput  {
     /// <p>Information about the Dev Environments in a project.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::DevEnvironmentSummary>>,
@@ -1232,17 +1221,17 @@ pub struct ListDevEnvironmentsOutput {
 }
 impl ListDevEnvironmentsOutput {
     /// <p>Information about the Dev Environments in a project.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::DevEnvironmentSummary]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::DevEnvironmentSummary]> {
         self.items.as_deref()
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListDevEnvironmentsOutput`](crate::output::ListDevEnvironmentsOutput).
 pub mod list_dev_environments_output {
-
+    
     /// A builder for [`ListDevEnvironmentsOutput`](crate::output::ListDevEnvironmentsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1257,17 +1246,13 @@ pub mod list_dev_environments_output {
         /// <p>Information about the Dev Environments in a project.</p>
         pub fn items(mut self, input: crate::model::DevEnvironmentSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>Information about the Dev Environments in a project.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DevEnvironmentSummary>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::DevEnvironmentSummary>>) -> Self {
+            self.items = input; self
         }
         /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1276,17 +1261,20 @@ pub mod list_dev_environments_output {
         }
         /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListDevEnvironmentsOutput`](crate::output::ListDevEnvironmentsOutput).
         pub fn build(self) -> crate::output::ListDevEnvironmentsOutput {
             crate::output::ListDevEnvironmentsOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListDevEnvironmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListDevEnvironmentsOutput`](crate::output::ListDevEnvironmentsOutput).
@@ -1298,7 +1286,7 @@ impl ListDevEnvironmentsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDevEnvironmentOutput {
+pub struct CreateDevEnvironmentOutput  {
     /// <p>The name of the space.</p>
     #[doc(hidden)]
     pub space_name: std::option::Option<std::string::String>,
@@ -1311,21 +1299,21 @@ pub struct CreateDevEnvironmentOutput {
 }
 impl CreateDevEnvironmentOutput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> std::option::Option<&str> {
+    pub fn space_name(&self) -> std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`CreateDevEnvironmentOutput`](crate::output::CreateDevEnvironmentOutput).
 pub mod create_dev_environment_output {
-
+    
     /// A builder for [`CreateDevEnvironmentOutput`](crate::output::CreateDevEnvironmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1341,8 +1329,7 @@ pub mod create_dev_environment_output {
         }
         /// <p>The name of the space.</p>
         pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.space_name = input;
-            self
+            self.space_name = input; self
         }
         /// <p>The name of the project in the space.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1351,8 +1338,7 @@ pub mod create_dev_environment_output {
         }
         /// <p>The name of the project in the space.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_name = input;
-            self
+            self.project_name = input; self
         }
         /// <p>The system-generated unique ID of the Dev Environment. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1361,18 +1347,22 @@ pub mod create_dev_environment_output {
         }
         /// <p>The system-generated unique ID of the Dev Environment. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`CreateDevEnvironmentOutput`](crate::output::CreateDevEnvironmentOutput).
         pub fn build(self) -> crate::output::CreateDevEnvironmentOutput {
             crate::output::CreateDevEnvironmentOutput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                id: self.id,
+                space_name: self.space_name
+                ,
+                project_name: self.project_name
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateDevEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateDevEnvironmentOutput`](crate::output::CreateDevEnvironmentOutput).
@@ -1384,7 +1374,7 @@ impl CreateDevEnvironmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDevEnvironmentOutput {
+pub struct DeleteDevEnvironmentOutput  {
     /// <p>The name of the space.</p>
     #[doc(hidden)]
     pub space_name: std::option::Option<std::string::String>,
@@ -1397,21 +1387,21 @@ pub struct DeleteDevEnvironmentOutput {
 }
 impl DeleteDevEnvironmentOutput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> std::option::Option<&str> {
+    pub fn space_name(&self) -> std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The system-generated unique ID of the deleted Dev Environment. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 /// See [`DeleteDevEnvironmentOutput`](crate::output::DeleteDevEnvironmentOutput).
 pub mod delete_dev_environment_output {
-
+    
     /// A builder for [`DeleteDevEnvironmentOutput`](crate::output::DeleteDevEnvironmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1427,8 +1417,7 @@ pub mod delete_dev_environment_output {
         }
         /// <p>The name of the space.</p>
         pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.space_name = input;
-            self
+            self.space_name = input; self
         }
         /// <p>The name of the project in the space.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1437,8 +1426,7 @@ pub mod delete_dev_environment_output {
         }
         /// <p>The name of the project in the space.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_name = input;
-            self
+            self.project_name = input; self
         }
         /// <p>The system-generated unique ID of the deleted Dev Environment. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1447,18 +1435,22 @@ pub mod delete_dev_environment_output {
         }
         /// <p>The system-generated unique ID of the deleted Dev Environment. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// Consumes the builder and constructs a [`DeleteDevEnvironmentOutput`](crate::output::DeleteDevEnvironmentOutput).
         pub fn build(self) -> crate::output::DeleteDevEnvironmentOutput {
             crate::output::DeleteDevEnvironmentOutput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                id: self.id,
+                space_name: self.space_name
+                ,
+                project_name: self.project_name
+                ,
+                id: self.id
+                ,
             }
         }
     }
+    
+    
 }
 impl DeleteDevEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDevEnvironmentOutput`](crate::output::DeleteDevEnvironmentOutput).
@@ -1470,7 +1462,7 @@ impl DeleteDevEnvironmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDevEnvironmentOutput {
+pub struct UpdateDevEnvironmentOutput  {
     /// <p>The system-generated unique ID of the Dev Environment. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -1498,27 +1490,27 @@ pub struct UpdateDevEnvironmentOutput {
 }
 impl UpdateDevEnvironmentOutput {
     /// <p>The system-generated unique ID of the Dev Environment. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> std::option::Option<&str> {
+    pub fn space_name(&self) -> std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The user-specified alias for the Dev Environment.</p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment.</p>
-    pub fn ides(&self) -> std::option::Option<&[crate::model::IdeConfiguration]> {
+    pub fn ides(&self) -> std::option::Option<& [crate::model::IdeConfiguration]> {
         self.ides.as_deref()
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-    pub fn instance_type(&self) -> std::option::Option<&crate::model::InstanceType> {
+    pub fn instance_type(&self) -> std::option::Option<& crate::model::InstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. </p>
@@ -1526,13 +1518,13 @@ impl UpdateDevEnvironmentOutput {
         self.inactivity_timeout_minutes
     }
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> std::option::Option<& str> {
         self.client_token.as_deref()
     }
 }
 /// See [`UpdateDevEnvironmentOutput`](crate::output::UpdateDevEnvironmentOutput).
 pub mod update_dev_environment_output {
-
+    
     /// A builder for [`UpdateDevEnvironmentOutput`](crate::output::UpdateDevEnvironmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1553,8 +1545,7 @@ pub mod update_dev_environment_output {
         }
         /// <p>The system-generated unique ID of the Dev Environment. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The name of the space.</p>
         pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1563,8 +1554,7 @@ pub mod update_dev_environment_output {
         }
         /// <p>The name of the space.</p>
         pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.space_name = input;
-            self
+            self.space_name = input; self
         }
         /// <p>The name of the project in the space.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1573,8 +1563,7 @@ pub mod update_dev_environment_output {
         }
         /// <p>The name of the project in the space.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_name = input;
-            self
+            self.project_name = input; self
         }
         /// <p>The user-specified alias for the Dev Environment.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1583,8 +1572,7 @@ pub mod update_dev_environment_output {
         }
         /// <p>The user-specified alias for the Dev Environment.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// Appends an item to `ides`.
         ///
@@ -1593,17 +1581,13 @@ pub mod update_dev_environment_output {
         /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment.</p>
         pub fn ides(mut self, input: crate::model::IdeConfiguration) -> Self {
             let mut v = self.ides.unwrap_or_default();
-            v.push(input);
-            self.ides = Some(v);
-            self
+                            v.push(input);
+                            self.ides = Some(v);
+                            self
         }
         /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment.</p>
-        pub fn set_ides(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::IdeConfiguration>>,
-        ) -> Self {
-            self.ides = input;
-            self
+        pub fn set_ides(mut self, input: std::option::Option<std::vec::Vec<crate::model::IdeConfiguration>>) -> Self {
+            self.ides = input; self
         }
         /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
         pub fn instance_type(mut self, input: crate::model::InstanceType) -> Self {
@@ -1611,12 +1595,8 @@ pub mod update_dev_environment_output {
             self
         }
         /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<crate::model::InstanceType>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<crate::model::InstanceType>) -> Self {
+            self.instance_type = input; self
         }
         /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. </p>
         pub fn inactivity_timeout_minutes(mut self, input: i32) -> Self {
@@ -1625,8 +1605,7 @@ pub mod update_dev_environment_output {
         }
         /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. </p>
         pub fn set_inactivity_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.inactivity_timeout_minutes = input;
-            self
+            self.inactivity_timeout_minutes = input; self
         }
         /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1635,23 +1614,33 @@ pub mod update_dev_environment_output {
         }
         /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.client_token = input;
-            self
+            self.client_token = input; self
         }
         /// Consumes the builder and constructs a [`UpdateDevEnvironmentOutput`](crate::output::UpdateDevEnvironmentOutput).
         pub fn build(self) -> crate::output::UpdateDevEnvironmentOutput {
             crate::output::UpdateDevEnvironmentOutput {
-                id: self.id,
-                space_name: self.space_name,
-                project_name: self.project_name,
-                alias: self.alias,
-                ides: self.ides,
-                instance_type: self.instance_type,
-                inactivity_timeout_minutes: self.inactivity_timeout_minutes.unwrap_or_default(),
-                client_token: self.client_token,
+                id: self.id
+                ,
+                space_name: self.space_name
+                ,
+                project_name: self.project_name
+                ,
+                alias: self.alias
+                ,
+                ides: self.ides
+                ,
+                instance_type: self.instance_type
+                ,
+                inactivity_timeout_minutes: self.inactivity_timeout_minutes
+                    .unwrap_or_default()
+                ,
+                client_token: self.client_token
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateDevEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDevEnvironmentOutput`](crate::output::UpdateDevEnvironmentOutput).
@@ -1663,7 +1652,7 @@ impl UpdateDevEnvironmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDevEnvironmentOutput {
+pub struct GetDevEnvironmentOutput  {
     /// <p>The name of the space.</p>
     #[doc(hidden)]
     pub space_name: std::option::Option<std::string::String>,
@@ -1687,8 +1676,7 @@ pub struct GetDevEnvironmentOutput {
     pub status_reason: std::option::Option<std::string::String>,
     /// <p>The source repository that contains the branch cloned into the Dev Environment. </p>
     #[doc(hidden)]
-    pub repositories:
-        std::option::Option<std::vec::Vec<crate::model::DevEnvironmentRepositorySummary>>,
+    pub repositories: std::option::Option<std::vec::Vec<crate::model::DevEnvironmentRepositorySummary>>,
     /// <p>The user-specified alias for the Dev Environment. </p>
     #[doc(hidden)]
     pub alias: std::option::Option<std::string::String>,
@@ -1707,49 +1695,47 @@ pub struct GetDevEnvironmentOutput {
 }
 impl GetDevEnvironmentOutput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> std::option::Option<&str> {
+    pub fn space_name(&self) -> std::option::Option<& str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> std::option::Option<& str> {
         self.project_name.as_deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The time when the Dev Environment was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The system-generated unique ID of the user who created the Dev Environment. </p>
-    pub fn creator_id(&self) -> std::option::Option<&str> {
+    pub fn creator_id(&self) -> std::option::Option<& str> {
         self.creator_id.as_deref()
     }
     /// <p>The current status of the Dev Environment.</p>
-    pub fn status(&self) -> std::option::Option<&crate::model::DevEnvironmentStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::model::DevEnvironmentStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the status.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> std::option::Option<& str> {
         self.status_reason.as_deref()
     }
     /// <p>The source repository that contains the branch cloned into the Dev Environment. </p>
-    pub fn repositories(
-        &self,
-    ) -> std::option::Option<&[crate::model::DevEnvironmentRepositorySummary]> {
+    pub fn repositories(&self) -> std::option::Option<& [crate::model::DevEnvironmentRepositorySummary]> {
         self.repositories.as_deref()
     }
     /// <p>The user-specified alias for the Dev Environment. </p>
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> std::option::Option<& str> {
         self.alias.as_deref()
     }
     /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment. </p>
-    pub fn ides(&self) -> std::option::Option<&[crate::model::Ide]> {
+    pub fn ides(&self) -> std::option::Option<& [crate::model::Ide]> {
         self.ides.as_deref()
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-    pub fn instance_type(&self) -> std::option::Option<&crate::model::InstanceType> {
+    pub fn instance_type(&self) -> std::option::Option<& crate::model::InstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes.</p>
@@ -1757,13 +1743,13 @@ impl GetDevEnvironmentOutput {
         self.inactivity_timeout_minutes
     }
     /// <p>Information about the amount of storage allocated to the Dev Environment. By default, a Dev Environment is configured to have 16GB of persistent storage.</p>
-    pub fn persistent_storage(&self) -> std::option::Option<&crate::model::PersistentStorage> {
+    pub fn persistent_storage(&self) -> std::option::Option<& crate::model::PersistentStorage> {
         self.persistent_storage.as_ref()
     }
 }
 /// See [`GetDevEnvironmentOutput`](crate::output::GetDevEnvironmentOutput).
 pub mod get_dev_environment_output {
-
+    
     /// A builder for [`GetDevEnvironmentOutput`](crate::output::GetDevEnvironmentOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1774,8 +1760,7 @@ pub mod get_dev_environment_output {
         pub(crate) creator_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DevEnvironmentStatus>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
-        pub(crate) repositories:
-            std::option::Option<std::vec::Vec<crate::model::DevEnvironmentRepositorySummary>>,
+        pub(crate) repositories: std::option::Option<std::vec::Vec<crate::model::DevEnvironmentRepositorySummary>>,
         pub(crate) alias: std::option::Option<std::string::String>,
         pub(crate) ides: std::option::Option<std::vec::Vec<crate::model::Ide>>,
         pub(crate) instance_type: std::option::Option<crate::model::InstanceType>,
@@ -1790,8 +1775,7 @@ pub mod get_dev_environment_output {
         }
         /// <p>The name of the space.</p>
         pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.space_name = input;
-            self
+            self.space_name = input; self
         }
         /// <p>The name of the project in the space.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1800,8 +1784,7 @@ pub mod get_dev_environment_output {
         }
         /// <p>The name of the project in the space.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.project_name = input;
-            self
+            self.project_name = input; self
         }
         /// <p>The system-generated unique ID of the Dev Environment. </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1810,8 +1793,7 @@ pub mod get_dev_environment_output {
         }
         /// <p>The system-generated unique ID of the Dev Environment. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.id = input;
-            self
+            self.id = input; self
         }
         /// <p>The time when the Dev Environment was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
         pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1819,12 +1801,8 @@ pub mod get_dev_environment_output {
             self
         }
         /// <p>The time when the Dev Environment was last updated, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
-        pub fn set_last_updated_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_time = input;
-            self
+        pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_time = input; self
         }
         /// <p>The system-generated unique ID of the user who created the Dev Environment. </p>
         pub fn creator_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1833,8 +1811,7 @@ pub mod get_dev_environment_output {
         }
         /// <p>The system-generated unique ID of the user who created the Dev Environment. </p>
         pub fn set_creator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.creator_id = input;
-            self
+            self.creator_id = input; self
         }
         /// <p>The current status of the Dev Environment.</p>
         pub fn status(mut self, input: crate::model::DevEnvironmentStatus) -> Self {
@@ -1842,12 +1819,8 @@ pub mod get_dev_environment_output {
             self
         }
         /// <p>The current status of the Dev Environment.</p>
-        pub fn set_status(
-            mut self,
-            input: std::option::Option<crate::model::DevEnvironmentStatus>,
-        ) -> Self {
-            self.status = input;
-            self
+        pub fn set_status(mut self, input: std::option::Option<crate::model::DevEnvironmentStatus>) -> Self {
+            self.status = input; self
         }
         /// <p>The reason for the status.</p>
         pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1855,36 +1828,23 @@ pub mod get_dev_environment_output {
             self
         }
         /// <p>The reason for the status.</p>
-        pub fn set_status_reason(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.status_reason = input;
-            self
+        pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status_reason = input; self
         }
         /// Appends an item to `repositories`.
         ///
         /// To override the contents of this collection use [`set_repositories`](Self::set_repositories).
         ///
         /// <p>The source repository that contains the branch cloned into the Dev Environment. </p>
-        pub fn repositories(
-            mut self,
-            input: crate::model::DevEnvironmentRepositorySummary,
-        ) -> Self {
+        pub fn repositories(mut self, input: crate::model::DevEnvironmentRepositorySummary) -> Self {
             let mut v = self.repositories.unwrap_or_default();
-            v.push(input);
-            self.repositories = Some(v);
-            self
+                            v.push(input);
+                            self.repositories = Some(v);
+                            self
         }
         /// <p>The source repository that contains the branch cloned into the Dev Environment. </p>
-        pub fn set_repositories(
-            mut self,
-            input: std::option::Option<
-                std::vec::Vec<crate::model::DevEnvironmentRepositorySummary>,
-            >,
-        ) -> Self {
-            self.repositories = input;
-            self
+        pub fn set_repositories(mut self, input: std::option::Option<std::vec::Vec<crate::model::DevEnvironmentRepositorySummary>>) -> Self {
+            self.repositories = input; self
         }
         /// <p>The user-specified alias for the Dev Environment. </p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1893,8 +1853,7 @@ pub mod get_dev_environment_output {
         }
         /// <p>The user-specified alias for the Dev Environment. </p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.alias = input;
-            self
+            self.alias = input; self
         }
         /// Appends an item to `ides`.
         ///
@@ -1903,17 +1862,13 @@ pub mod get_dev_environment_output {
         /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment. </p>
         pub fn ides(mut self, input: crate::model::Ide) -> Self {
             let mut v = self.ides.unwrap_or_default();
-            v.push(input);
-            self.ides = Some(v);
-            self
+                            v.push(input);
+                            self.ides = Some(v);
+                            self
         }
         /// <p>Information about the integrated development environment (IDE) configured for the Dev Environment. </p>
-        pub fn set_ides(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Ide>>,
-        ) -> Self {
-            self.ides = input;
-            self
+        pub fn set_ides(mut self, input: std::option::Option<std::vec::Vec<crate::model::Ide>>) -> Self {
+            self.ides = input; self
         }
         /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
         pub fn instance_type(mut self, input: crate::model::InstanceType) -> Self {
@@ -1921,12 +1876,8 @@ pub mod get_dev_environment_output {
             self
         }
         /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-        pub fn set_instance_type(
-            mut self,
-            input: std::option::Option<crate::model::InstanceType>,
-        ) -> Self {
-            self.instance_type = input;
-            self
+        pub fn set_instance_type(mut self, input: std::option::Option<crate::model::InstanceType>) -> Self {
+            self.instance_type = input; self
         }
         /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes.</p>
         pub fn inactivity_timeout_minutes(mut self, input: i32) -> Self {
@@ -1935,8 +1886,7 @@ pub mod get_dev_environment_output {
         }
         /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes.</p>
         pub fn set_inactivity_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.inactivity_timeout_minutes = input;
-            self
+            self.inactivity_timeout_minutes = input; self
         }
         /// <p>Information about the amount of storage allocated to the Dev Environment. By default, a Dev Environment is configured to have 16GB of persistent storage.</p>
         pub fn persistent_storage(mut self, input: crate::model::PersistentStorage) -> Self {
@@ -1944,32 +1894,44 @@ pub mod get_dev_environment_output {
             self
         }
         /// <p>Information about the amount of storage allocated to the Dev Environment. By default, a Dev Environment is configured to have 16GB of persistent storage.</p>
-        pub fn set_persistent_storage(
-            mut self,
-            input: std::option::Option<crate::model::PersistentStorage>,
-        ) -> Self {
-            self.persistent_storage = input;
-            self
+        pub fn set_persistent_storage(mut self, input: std::option::Option<crate::model::PersistentStorage>) -> Self {
+            self.persistent_storage = input; self
         }
         /// Consumes the builder and constructs a [`GetDevEnvironmentOutput`](crate::output::GetDevEnvironmentOutput).
         pub fn build(self) -> crate::output::GetDevEnvironmentOutput {
             crate::output::GetDevEnvironmentOutput {
-                space_name: self.space_name,
-                project_name: self.project_name,
-                id: self.id,
-                last_updated_time: self.last_updated_time,
-                creator_id: self.creator_id,
-                status: self.status,
-                status_reason: self.status_reason,
-                repositories: self.repositories,
-                alias: self.alias,
-                ides: self.ides,
-                instance_type: self.instance_type,
-                inactivity_timeout_minutes: self.inactivity_timeout_minutes.unwrap_or_default(),
-                persistent_storage: self.persistent_storage,
+                space_name: self.space_name
+                ,
+                project_name: self.project_name
+                ,
+                id: self.id
+                ,
+                last_updated_time: self.last_updated_time
+                ,
+                creator_id: self.creator_id
+                ,
+                status: self.status
+                ,
+                status_reason: self.status_reason
+                ,
+                repositories: self.repositories
+                ,
+                alias: self.alias
+                ,
+                ides: self.ides
+                ,
+                instance_type: self.instance_type
+                ,
+                inactivity_timeout_minutes: self.inactivity_timeout_minutes
+                    .unwrap_or_default()
+                ,
+                persistent_storage: self.persistent_storage
+                ,
             }
         }
     }
+    
+    
 }
 impl GetDevEnvironmentOutput {
     /// Creates a new builder-style object to manufacture [`GetDevEnvironmentOutput`](crate::output::GetDevEnvironmentOutput).
@@ -1981,7 +1943,7 @@ impl GetDevEnvironmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEventLogsOutput {
+pub struct ListEventLogsOutput  {
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -1991,17 +1953,17 @@ pub struct ListEventLogsOutput {
 }
 impl ListEventLogsOutput {
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
     /// <p>Information about each event retrieved in the list.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::EventLogEntry]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::EventLogEntry]> {
         self.items.as_deref()
     }
 }
 /// See [`ListEventLogsOutput`](crate::output::ListEventLogsOutput).
 pub mod list_event_logs_output {
-
+    
     /// A builder for [`ListEventLogsOutput`](crate::output::ListEventLogsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2016,8 +1978,7 @@ pub mod list_event_logs_output {
         }
         /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Appends an item to `items`.
         ///
@@ -2026,26 +1987,26 @@ pub mod list_event_logs_output {
         /// <p>Information about each event retrieved in the list.</p>
         pub fn items(mut self, input: crate::model::EventLogEntry) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>Information about each event retrieved in the list.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::EventLogEntry>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::EventLogEntry>>) -> Self {
+            self.items = input; self
         }
         /// Consumes the builder and constructs a [`ListEventLogsOutput`](crate::output::ListEventLogsOutput).
         pub fn build(self) -> crate::output::ListEventLogsOutput {
             crate::output::ListEventLogsOutput {
-                next_token: self.next_token,
-                items: self.items,
+                next_token: self.next_token
+                ,
+                items: self.items
+                ,
             }
         }
     }
+    
+    
 }
 impl ListEventLogsOutput {
     /// Creates a new builder-style object to manufacture [`ListEventLogsOutput`](crate::output::ListEventLogsOutput).
@@ -2057,7 +2018,7 @@ impl ListEventLogsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccessTokensOutput {
+pub struct ListAccessTokensOutput  {
     /// <p>A list of personal access tokens (PATs) associated with the calling user.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::model::AccessTokenSummary>>,
@@ -2067,17 +2028,17 @@ pub struct ListAccessTokensOutput {
 }
 impl ListAccessTokensOutput {
     /// <p>A list of personal access tokens (PATs) associated with the calling user.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::model::AccessTokenSummary]> {
+    pub fn items(&self) -> std::option::Option<& [crate::model::AccessTokenSummary]> {
         self.items.as_deref()
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListAccessTokensOutput`](crate::output::ListAccessTokensOutput).
 pub mod list_access_tokens_output {
-
+    
     /// A builder for [`ListAccessTokensOutput`](crate::output::ListAccessTokensOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2092,17 +2053,13 @@ pub mod list_access_tokens_output {
         /// <p>A list of personal access tokens (PATs) associated with the calling user.</p>
         pub fn items(mut self, input: crate::model::AccessTokenSummary) -> Self {
             let mut v = self.items.unwrap_or_default();
-            v.push(input);
-            self.items = Some(v);
-            self
+                            v.push(input);
+                            self.items = Some(v);
+                            self
         }
         /// <p>A list of personal access tokens (PATs) associated with the calling user.</p>
-        pub fn set_items(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::AccessTokenSummary>>,
-        ) -> Self {
-            self.items = input;
-            self
+        pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::model::AccessTokenSummary>>) -> Self {
+            self.items = input; self
         }
         /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2111,17 +2068,20 @@ pub mod list_access_tokens_output {
         }
         /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListAccessTokensOutput`](crate::output::ListAccessTokensOutput).
         pub fn build(self) -> crate::output::ListAccessTokensOutput {
             crate::output::ListAccessTokensOutput {
-                items: self.items,
-                next_token: self.next_token,
+                items: self.items
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListAccessTokensOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessTokensOutput`](crate::output::ListAccessTokensOutput).
@@ -2133,7 +2093,7 @@ impl ListAccessTokensOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateAccessTokenOutput {
+pub struct CreateAccessTokenOutput  {
     /// <p>The secret value of the personal access token.</p>
     #[doc(hidden)]
     pub secret: std::option::Option<std::string::String>,
@@ -2146,19 +2106,19 @@ pub struct CreateAccessTokenOutput {
 }
 impl CreateAccessTokenOutput {
     /// <p>The secret value of the personal access token.</p>
-    pub fn secret(&self) -> std::option::Option<&str> {
+    pub fn secret(&self) -> std::option::Option<& str> {
         self.secret.as_deref()
     }
     /// <p>The friendly name of the personal access token.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>. If not specified, the default is one year from creation.</p>
-    pub fn expires_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expires_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.expires_time.as_ref()
     }
 }
-impl std::fmt::Debug for CreateAccessTokenOutput {
+impl  std::fmt::Debug for CreateAccessTokenOutput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAccessTokenOutput");
         formatter.field("secret", &"*** Sensitive Data Redacted ***");
@@ -2169,7 +2129,7 @@ impl std::fmt::Debug for CreateAccessTokenOutput {
 }
 /// See [`CreateAccessTokenOutput`](crate::output::CreateAccessTokenOutput).
 pub mod create_access_token_output {
-
+    
     /// A builder for [`CreateAccessTokenOutput`](crate::output::CreateAccessTokenOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
@@ -2185,8 +2145,7 @@ pub mod create_access_token_output {
         }
         /// <p>The secret value of the personal access token.</p>
         pub fn set_secret(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.secret = input;
-            self
+            self.secret = input; self
         }
         /// <p>The friendly name of the personal access token.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2195,8 +2154,7 @@ pub mod create_access_token_output {
         }
         /// <p>The friendly name of the personal access token.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.name = input;
-            self
+            self.name = input; self
         }
         /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>. If not specified, the default is one year from creation.</p>
         pub fn expires_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -2204,19 +2162,18 @@ pub mod create_access_token_output {
             self
         }
         /// <p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>. If not specified, the default is one year from creation.</p>
-        pub fn set_expires_time(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.expires_time = input;
-            self
+        pub fn set_expires_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.expires_time = input; self
         }
         /// Consumes the builder and constructs a [`CreateAccessTokenOutput`](crate::output::CreateAccessTokenOutput).
         pub fn build(self) -> crate::output::CreateAccessTokenOutput {
             crate::output::CreateAccessTokenOutput {
-                secret: self.secret,
-                name: self.name,
-                expires_time: self.expires_time,
+                secret: self.secret
+                ,
+                name: self.name
+                ,
+                expires_time: self.expires_time
+                ,
             }
         }
     }
@@ -2229,6 +2186,8 @@ pub mod create_access_token_output {
             formatter.finish()
         }
     }
+    
+    
 }
 impl CreateAccessTokenOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessTokenOutput`](crate::output::CreateAccessTokenOutput).
@@ -2240,19 +2199,24 @@ impl CreateAccessTokenOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccessTokenOutput {}
+pub struct DeleteAccessTokenOutput  {
+}
 /// See [`DeleteAccessTokenOutput`](crate::output::DeleteAccessTokenOutput).
 pub mod delete_access_token_output {
-
+    
     /// A builder for [`DeleteAccessTokenOutput`](crate::output::DeleteAccessTokenOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteAccessTokenOutput`](crate::output::DeleteAccessTokenOutput).
         pub fn build(self) -> crate::output::DeleteAccessTokenOutput {
-            crate::output::DeleteAccessTokenOutput {}
+            crate::output::DeleteAccessTokenOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteAccessTokenOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessTokenOutput`](crate::output::DeleteAccessTokenOutput).
@@ -2264,20 +2228,20 @@ impl DeleteAccessTokenOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VerifySessionOutput {
+pub struct VerifySessionOutput  {
     /// <p>The system-generated unique ID of the user in Amazon CodeCatalyst.</p>
     #[doc(hidden)]
     pub identity: std::option::Option<std::string::String>,
 }
 impl VerifySessionOutput {
     /// <p>The system-generated unique ID of the user in Amazon CodeCatalyst.</p>
-    pub fn identity(&self) -> std::option::Option<&str> {
+    pub fn identity(&self) -> std::option::Option<& str> {
         self.identity.as_deref()
     }
 }
 /// See [`VerifySessionOutput`](crate::output::VerifySessionOutput).
 pub mod verify_session_output {
-
+    
     /// A builder for [`VerifySessionOutput`](crate::output::VerifySessionOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2291,16 +2255,18 @@ pub mod verify_session_output {
         }
         /// <p>The system-generated unique ID of the user in Amazon CodeCatalyst.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.identity = input;
-            self
+            self.identity = input; self
         }
         /// Consumes the builder and constructs a [`VerifySessionOutput`](crate::output::VerifySessionOutput).
         pub fn build(self) -> crate::output::VerifySessionOutput {
             crate::output::VerifySessionOutput {
-                identity: self.identity,
+                identity: self.identity
+                ,
             }
         }
     }
+    
+    
 }
 impl VerifySessionOutput {
     /// Creates a new builder-style object to manufacture [`VerifySessionOutput`](crate::output::VerifySessionOutput).
@@ -2312,7 +2278,7 @@ impl VerifySessionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUserDetailsOutput {
+pub struct GetUserDetailsOutput  {
     /// <p>The system-generated unique ID of the user.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
@@ -2331,29 +2297,29 @@ pub struct GetUserDetailsOutput {
 }
 impl GetUserDetailsOutput {
     /// <p>The system-generated unique ID of the user.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> std::option::Option<& str> {
         self.user_id.as_deref()
     }
     /// <p>The name of the user as displayed in Amazon CodeCatalyst.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> std::option::Option<& str> {
         self.user_name.as_deref()
     }
     /// <p>The friendly name displayed for the user in Amazon CodeCatalyst.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> std::option::Option<& str> {
         self.display_name.as_deref()
     }
     /// <p>The email address provided by the user when they signed up.</p>
-    pub fn primary_email(&self) -> std::option::Option<&crate::model::EmailAddress> {
+    pub fn primary_email(&self) -> std::option::Option<& crate::model::EmailAddress> {
         self.primary_email.as_ref()
     }
     /// <p></p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> std::option::Option<& str> {
         self.version.as_deref()
     }
 }
 /// See [`GetUserDetailsOutput`](crate::output::GetUserDetailsOutput).
 pub mod get_user_details_output {
-
+    
     /// A builder for [`GetUserDetailsOutput`](crate::output::GetUserDetailsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -2371,8 +2337,7 @@ pub mod get_user_details_output {
         }
         /// <p>The system-generated unique ID of the user.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_id = input;
-            self
+            self.user_id = input; self
         }
         /// <p>The name of the user as displayed in Amazon CodeCatalyst.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2381,8 +2346,7 @@ pub mod get_user_details_output {
         }
         /// <p>The name of the user as displayed in Amazon CodeCatalyst.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.user_name = input;
-            self
+            self.user_name = input; self
         }
         /// <p>The friendly name displayed for the user in Amazon CodeCatalyst.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2391,8 +2355,7 @@ pub mod get_user_details_output {
         }
         /// <p>The friendly name displayed for the user in Amazon CodeCatalyst.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.display_name = input;
-            self
+            self.display_name = input; self
         }
         /// <p>The email address provided by the user when they signed up.</p>
         pub fn primary_email(mut self, input: crate::model::EmailAddress) -> Self {
@@ -2400,12 +2363,8 @@ pub mod get_user_details_output {
             self
         }
         /// <p>The email address provided by the user when they signed up.</p>
-        pub fn set_primary_email(
-            mut self,
-            input: std::option::Option<crate::model::EmailAddress>,
-        ) -> Self {
-            self.primary_email = input;
-            self
+        pub fn set_primary_email(mut self, input: std::option::Option<crate::model::EmailAddress>) -> Self {
+            self.primary_email = input; self
         }
         /// <p></p>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2414,20 +2373,26 @@ pub mod get_user_details_output {
         }
         /// <p></p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.version = input;
-            self
+            self.version = input; self
         }
         /// Consumes the builder and constructs a [`GetUserDetailsOutput`](crate::output::GetUserDetailsOutput).
         pub fn build(self) -> crate::output::GetUserDetailsOutput {
             crate::output::GetUserDetailsOutput {
-                user_id: self.user_id,
-                user_name: self.user_name,
-                display_name: self.display_name,
-                primary_email: self.primary_email,
-                version: self.version,
+                user_id: self.user_id
+                ,
+                user_name: self.user_name
+                ,
+                display_name: self.display_name
+                ,
+                primary_email: self.primary_email
+                ,
+                version: self.version
+                ,
             }
         }
     }
+    
+    
 }
 impl GetUserDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetUserDetailsOutput`](crate::output::GetUserDetailsOutput).
@@ -2435,3 +2400,4 @@ impl GetUserDetailsOutput {
         crate::output::get_user_details_output::Builder::default()
     }
 }
+

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFlowOutput {
+pub struct UpdateFlowOutput  {
     /// <p>Indicates the current status of the flow. </p>
     #[doc(hidden)]
     pub flow_status: std::option::Option<crate::model::FlowStatus>,
 }
 impl UpdateFlowOutput {
     /// <p>Indicates the current status of the flow. </p>
-    pub fn flow_status(&self) -> std::option::Option<&crate::model::FlowStatus> {
+    pub fn flow_status(&self) -> std::option::Option<& crate::model::FlowStatus> {
         self.flow_status.as_ref()
     }
 }
 /// See [`UpdateFlowOutput`](crate::output::UpdateFlowOutput).
 pub mod update_flow_output {
-
+    
     /// A builder for [`UpdateFlowOutput`](crate::output::UpdateFlowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -28,20 +28,19 @@ pub mod update_flow_output {
             self
         }
         /// <p>Indicates the current status of the flow. </p>
-        pub fn set_flow_status(
-            mut self,
-            input: std::option::Option<crate::model::FlowStatus>,
-        ) -> Self {
-            self.flow_status = input;
-            self
+        pub fn set_flow_status(mut self, input: std::option::Option<crate::model::FlowStatus>) -> Self {
+            self.flow_status = input; self
         }
         /// Consumes the builder and constructs a [`UpdateFlowOutput`](crate::output::UpdateFlowOutput).
         pub fn build(self) -> crate::output::UpdateFlowOutput {
             crate::output::UpdateFlowOutput {
-                flow_status: self.flow_status,
+                flow_status: self.flow_status
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateFlowOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowOutput`](crate::output::UpdateFlowOutput).
@@ -53,20 +52,20 @@ impl UpdateFlowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConnectorRegistrationOutput {
+pub struct UpdateConnectorRegistrationOutput  {
     /// <p>The ARN of the connector being updated.</p>
     #[doc(hidden)]
     pub connector_arn: std::option::Option<std::string::String>,
 }
 impl UpdateConnectorRegistrationOutput {
     /// <p>The ARN of the connector being updated.</p>
-    pub fn connector_arn(&self) -> std::option::Option<&str> {
+    pub fn connector_arn(&self) -> std::option::Option<& str> {
         self.connector_arn.as_deref()
     }
 }
 /// See [`UpdateConnectorRegistrationOutput`](crate::output::UpdateConnectorRegistrationOutput).
 pub mod update_connector_registration_output {
-
+    
     /// A builder for [`UpdateConnectorRegistrationOutput`](crate::output::UpdateConnectorRegistrationOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -79,20 +78,19 @@ pub mod update_connector_registration_output {
             self
         }
         /// <p>The ARN of the connector being updated.</p>
-        pub fn set_connector_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connector_arn = input;
-            self
+        pub fn set_connector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connector_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateConnectorRegistrationOutput`](crate::output::UpdateConnectorRegistrationOutput).
         pub fn build(self) -> crate::output::UpdateConnectorRegistrationOutput {
             crate::output::UpdateConnectorRegistrationOutput {
-                connector_arn: self.connector_arn,
+                connector_arn: self.connector_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateConnectorRegistrationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectorRegistrationOutput`](crate::output::UpdateConnectorRegistrationOutput).
@@ -104,20 +102,20 @@ impl UpdateConnectorRegistrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConnectorProfileOutput {
+pub struct UpdateConnectorProfileOutput  {
     /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
     #[doc(hidden)]
     pub connector_profile_arn: std::option::Option<std::string::String>,
 }
 impl UpdateConnectorProfileOutput {
     /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
-    pub fn connector_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn connector_profile_arn(&self) -> std::option::Option<& str> {
         self.connector_profile_arn.as_deref()
     }
 }
 /// See [`UpdateConnectorProfileOutput`](crate::output::UpdateConnectorProfileOutput).
 pub mod update_connector_profile_output {
-
+    
     /// A builder for [`UpdateConnectorProfileOutput`](crate::output::UpdateConnectorProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -130,20 +128,19 @@ pub mod update_connector_profile_output {
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
-        pub fn set_connector_profile_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connector_profile_arn = input;
-            self
+        pub fn set_connector_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connector_profile_arn = input; self
         }
         /// Consumes the builder and constructs a [`UpdateConnectorProfileOutput`](crate::output::UpdateConnectorProfileOutput).
         pub fn build(self) -> crate::output::UpdateConnectorProfileOutput {
             crate::output::UpdateConnectorProfileOutput {
-                connector_profile_arn: self.connector_profile_arn,
+                connector_profile_arn: self.connector_profile_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl UpdateConnectorProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectorProfileOutput`](crate::output::UpdateConnectorProfileOutput).
@@ -155,19 +152,24 @@ impl UpdateConnectorProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput  {
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
-
+    
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl UntagResourceOutput {
     /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -179,19 +181,24 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnregisterConnectorOutput {}
+pub struct UnregisterConnectorOutput  {
+}
 /// See [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput).
 pub mod unregister_connector_output {
-
+    
     /// A builder for [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput).
         pub fn build(self) -> crate::output::UnregisterConnectorOutput {
-            crate::output::UnregisterConnectorOutput {}
+            crate::output::UnregisterConnectorOutput {
+            }
         }
     }
+    
+    
 }
 impl UnregisterConnectorOutput {
     /// Creates a new builder-style object to manufacture [`UnregisterConnectorOutput`](crate::output::UnregisterConnectorOutput).
@@ -203,19 +210,24 @@ impl UnregisterConnectorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput  {
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
-
+    
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+            }
         }
     }
+    
+    
 }
 impl TagResourceOutput {
     /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -227,7 +239,7 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopFlowOutput {
+pub struct StopFlowOutput  {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -237,17 +249,17 @@ pub struct StopFlowOutput {
 }
 impl StopFlowOutput {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// <p> Indicates the current status of the flow. </p>
-    pub fn flow_status(&self) -> std::option::Option<&crate::model::FlowStatus> {
+    pub fn flow_status(&self) -> std::option::Option<& crate::model::FlowStatus> {
         self.flow_status.as_ref()
     }
 }
 /// See [`StopFlowOutput`](crate::output::StopFlowOutput).
 pub mod stop_flow_output {
-
+    
     /// A builder for [`StopFlowOutput`](crate::output::StopFlowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -262,8 +274,7 @@ pub mod stop_flow_output {
         }
         /// <p> The flow's Amazon Resource Name (ARN). </p>
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// <p> Indicates the current status of the flow. </p>
         pub fn flow_status(mut self, input: crate::model::FlowStatus) -> Self {
@@ -271,21 +282,21 @@ pub mod stop_flow_output {
             self
         }
         /// <p> Indicates the current status of the flow. </p>
-        pub fn set_flow_status(
-            mut self,
-            input: std::option::Option<crate::model::FlowStatus>,
-        ) -> Self {
-            self.flow_status = input;
-            self
+        pub fn set_flow_status(mut self, input: std::option::Option<crate::model::FlowStatus>) -> Self {
+            self.flow_status = input; self
         }
         /// Consumes the builder and constructs a [`StopFlowOutput`](crate::output::StopFlowOutput).
         pub fn build(self) -> crate::output::StopFlowOutput {
             crate::output::StopFlowOutput {
-                flow_arn: self.flow_arn,
-                flow_status: self.flow_status,
+                flow_arn: self.flow_arn
+                ,
+                flow_status: self.flow_status
+                ,
             }
         }
     }
+    
+    
 }
 impl StopFlowOutput {
     /// Creates a new builder-style object to manufacture [`StopFlowOutput`](crate::output::StopFlowOutput).
@@ -297,7 +308,7 @@ impl StopFlowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartFlowOutput {
+pub struct StartFlowOutput  {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -310,21 +321,21 @@ pub struct StartFlowOutput {
 }
 impl StartFlowOutput {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// <p> Indicates the current status of the flow. </p>
-    pub fn flow_status(&self) -> std::option::Option<&crate::model::FlowStatus> {
+    pub fn flow_status(&self) -> std::option::Option<& crate::model::FlowStatus> {
         self.flow_status.as_ref()
     }
     /// <p> Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or event-triggered flows, this value is null. </p>
-    pub fn execution_id(&self) -> std::option::Option<&str> {
+    pub fn execution_id(&self) -> std::option::Option<& str> {
         self.execution_id.as_deref()
     }
 }
 /// See [`StartFlowOutput`](crate::output::StartFlowOutput).
 pub mod start_flow_output {
-
+    
     /// A builder for [`StartFlowOutput`](crate::output::StartFlowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -340,8 +351,7 @@ pub mod start_flow_output {
         }
         /// <p> The flow's Amazon Resource Name (ARN). </p>
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// <p> Indicates the current status of the flow. </p>
         pub fn flow_status(mut self, input: crate::model::FlowStatus) -> Self {
@@ -349,12 +359,8 @@ pub mod start_flow_output {
             self
         }
         /// <p> Indicates the current status of the flow. </p>
-        pub fn set_flow_status(
-            mut self,
-            input: std::option::Option<crate::model::FlowStatus>,
-        ) -> Self {
-            self.flow_status = input;
-            self
+        pub fn set_flow_status(mut self, input: std::option::Option<crate::model::FlowStatus>) -> Self {
+            self.flow_status = input; self
         }
         /// <p> Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or event-triggered flows, this value is null. </p>
         pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -363,18 +369,22 @@ pub mod start_flow_output {
         }
         /// <p> Returns the internal execution ID of an on-demand flow when the flow is started. For scheduled or event-triggered flows, this value is null. </p>
         pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.execution_id = input;
-            self
+            self.execution_id = input; self
         }
         /// Consumes the builder and constructs a [`StartFlowOutput`](crate::output::StartFlowOutput).
         pub fn build(self) -> crate::output::StartFlowOutput {
             crate::output::StartFlowOutput {
-                flow_arn: self.flow_arn,
-                flow_status: self.flow_status,
-                execution_id: self.execution_id,
+                flow_arn: self.flow_arn
+                ,
+                flow_status: self.flow_status
+                ,
+                execution_id: self.execution_id
+                ,
             }
         }
     }
+    
+    
 }
 impl StartFlowOutput {
     /// Creates a new builder-style object to manufacture [`StartFlowOutput`](crate::output::StartFlowOutput).
@@ -386,20 +396,20 @@ impl StartFlowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterConnectorOutput {
+pub struct RegisterConnectorOutput  {
     /// <p>The ARN of the connector being registered.</p>
     #[doc(hidden)]
     pub connector_arn: std::option::Option<std::string::String>,
 }
 impl RegisterConnectorOutput {
     /// <p>The ARN of the connector being registered.</p>
-    pub fn connector_arn(&self) -> std::option::Option<&str> {
+    pub fn connector_arn(&self) -> std::option::Option<& str> {
         self.connector_arn.as_deref()
     }
 }
 /// See [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput).
 pub mod register_connector_output {
-
+    
     /// A builder for [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -412,20 +422,19 @@ pub mod register_connector_output {
             self
         }
         /// <p>The ARN of the connector being registered.</p>
-        pub fn set_connector_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connector_arn = input;
-            self
+        pub fn set_connector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connector_arn = input; self
         }
         /// Consumes the builder and constructs a [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput).
         pub fn build(self) -> crate::output::RegisterConnectorOutput {
             crate::output::RegisterConnectorOutput {
-                connector_arn: self.connector_arn,
+                connector_arn: self.connector_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl RegisterConnectorOutput {
     /// Creates a new builder-style object to manufacture [`RegisterConnectorOutput`](crate::output::RegisterConnectorOutput).
@@ -437,30 +446,24 @@ impl RegisterConnectorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceOutput {
+pub struct ListTagsForResourceOutput  {
     /// <p> The tags used to organize, track, or control access for your flow. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListTagsForResourceOutput {
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
-
+    
     /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -468,31 +471,26 @@ pub mod list_tags_for_resource_output {
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The tags used to organize, track, or control access for your flow. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The tags used to organize, track, or control access for your flow. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags
+                ,
+            }
         }
     }
+    
+    
 }
 impl ListTagsForResourceOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -504,7 +502,7 @@ impl ListTagsForResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFlowsOutput {
+pub struct ListFlowsOutput  {
     /// <p> The list of flows associated with your account. </p>
     #[doc(hidden)]
     pub flows: std::option::Option<std::vec::Vec<crate::model::FlowDefinition>>,
@@ -514,17 +512,17 @@ pub struct ListFlowsOutput {
 }
 impl ListFlowsOutput {
     /// <p> The list of flows associated with your account. </p>
-    pub fn flows(&self) -> std::option::Option<&[crate::model::FlowDefinition]> {
+    pub fn flows(&self) -> std::option::Option<& [crate::model::FlowDefinition]> {
         self.flows.as_deref()
     }
     /// <p> The pagination token for next page of data. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListFlowsOutput`](crate::output::ListFlowsOutput).
 pub mod list_flows_output {
-
+    
     /// A builder for [`ListFlowsOutput`](crate::output::ListFlowsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -539,17 +537,13 @@ pub mod list_flows_output {
         /// <p> The list of flows associated with your account. </p>
         pub fn flows(mut self, input: crate::model::FlowDefinition) -> Self {
             let mut v = self.flows.unwrap_or_default();
-            v.push(input);
-            self.flows = Some(v);
-            self
+                            v.push(input);
+                            self.flows = Some(v);
+                            self
         }
         /// <p> The list of flows associated with your account. </p>
-        pub fn set_flows(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::FlowDefinition>>,
-        ) -> Self {
-            self.flows = input;
-            self
+        pub fn set_flows(mut self, input: std::option::Option<std::vec::Vec<crate::model::FlowDefinition>>) -> Self {
+            self.flows = input; self
         }
         /// <p> The pagination token for next page of data. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -558,17 +552,20 @@ pub mod list_flows_output {
         }
         /// <p> The pagination token for next page of data. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListFlowsOutput`](crate::output::ListFlowsOutput).
         pub fn build(self) -> crate::output::ListFlowsOutput {
             crate::output::ListFlowsOutput {
-                flows: self.flows,
-                next_token: self.next_token,
+                flows: self.flows
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListFlowsOutput {
     /// Creates a new builder-style object to manufacture [`ListFlowsOutput`](crate::output::ListFlowsOutput).
@@ -580,7 +577,7 @@ impl ListFlowsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConnectorsOutput {
+pub struct ListConnectorsOutput  {
     /// <p>Contains information about the connectors supported by Amazon AppFlow.</p>
     #[doc(hidden)]
     pub connectors: std::option::Option<std::vec::Vec<crate::model::ConnectorDetail>>,
@@ -590,17 +587,17 @@ pub struct ListConnectorsOutput {
 }
 impl ListConnectorsOutput {
     /// <p>Contains information about the connectors supported by Amazon AppFlow.</p>
-    pub fn connectors(&self) -> std::option::Option<&[crate::model::ConnectorDetail]> {
+    pub fn connectors(&self) -> std::option::Option<& [crate::model::ConnectorDetail]> {
         self.connectors.as_deref()
     }
     /// <p>The pagination token for the next page of data. If nextToken=null, this means that all records have been fetched.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
 pub mod list_connectors_output {
-
+    
     /// A builder for [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -615,17 +612,13 @@ pub mod list_connectors_output {
         /// <p>Contains information about the connectors supported by Amazon AppFlow.</p>
         pub fn connectors(mut self, input: crate::model::ConnectorDetail) -> Self {
             let mut v = self.connectors.unwrap_or_default();
-            v.push(input);
-            self.connectors = Some(v);
-            self
+                            v.push(input);
+                            self.connectors = Some(v);
+                            self
         }
         /// <p>Contains information about the connectors supported by Amazon AppFlow.</p>
-        pub fn set_connectors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConnectorDetail>>,
-        ) -> Self {
-            self.connectors = input;
-            self
+        pub fn set_connectors(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConnectorDetail>>) -> Self {
+            self.connectors = input; self
         }
         /// <p>The pagination token for the next page of data. If nextToken=null, this means that all records have been fetched.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -634,17 +627,20 @@ pub mod list_connectors_output {
         }
         /// <p>The pagination token for the next page of data. If nextToken=null, this means that all records have been fetched.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
         pub fn build(self) -> crate::output::ListConnectorsOutput {
             crate::output::ListConnectorsOutput {
-                connectors: self.connectors,
-                next_token: self.next_token,
+                connectors: self.connectors
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListConnectorsOutput {
     /// Creates a new builder-style object to manufacture [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
@@ -656,48 +652,31 @@ impl ListConnectorsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConnectorEntitiesOutput {
+pub struct ListConnectorEntitiesOutput  {
     /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category. This map's key represents the group name, and its value contains the list of entities belonging to that group. </p>
     #[doc(hidden)]
-    pub connector_entity_map: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::ConnectorEntity>,
-        >,
-    >,
+    pub connector_entity_map: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ConnectorEntity>>>,
     /// <p>A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the response is too big for the page size.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListConnectorEntitiesOutput {
     /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category. This map's key represents the group name, and its value contains the list of entities belonging to that group. </p>
-    pub fn connector_entity_map(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
-            std::vec::Vec<crate::model::ConnectorEntity>,
-        >,
-    > {
+    pub fn connector_entity_map(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ConnectorEntity>>> {
         self.connector_entity_map.as_ref()
     }
     /// <p>A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the response is too big for the page size.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput).
 pub mod list_connector_entities_output {
-
+    
     /// A builder for [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) connector_entity_map: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::model::ConnectorEntity>,
-            >,
-        >,
+        pub(crate) connector_entity_map: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ConnectorEntity>>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -706,28 +685,15 @@ pub mod list_connector_entities_output {
         /// To override the contents of this collection use [`set_connector_entity_map`](Self::set_connector_entity_map).
         ///
         /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category. This map's key represents the group name, and its value contains the list of entities belonging to that group. </p>
-        pub fn connector_entity_map(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: std::vec::Vec<crate::model::ConnectorEntity>,
-        ) -> Self {
+        pub fn connector_entity_map(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<crate::model::ConnectorEntity>) -> Self {
             let mut hash_map = self.connector_entity_map.unwrap_or_default();
-            hash_map.insert(k.into(), v);
-            self.connector_entity_map = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v);
+                            self.connector_entity_map = Some(hash_map);
+                            self
         }
         /// <p> The response of <code>ListConnectorEntities</code> lists entities grouped by category. This map's key represents the group name, and its value contains the list of entities belonging to that group. </p>
-        pub fn set_connector_entity_map(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    std::string::String,
-                    std::vec::Vec<crate::model::ConnectorEntity>,
-                >,
-            >,
-        ) -> Self {
-            self.connector_entity_map = input;
-            self
+        pub fn set_connector_entity_map(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::ConnectorEntity>>>) -> Self {
+            self.connector_entity_map = input; self
         }
         /// <p>A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the response is too big for the page size.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -736,17 +702,20 @@ pub mod list_connector_entities_output {
         }
         /// <p>A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the response is too big for the page size.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput).
         pub fn build(self) -> crate::output::ListConnectorEntitiesOutput {
             crate::output::ListConnectorEntitiesOutput {
-                connector_entity_map: self.connector_entity_map,
-                next_token: self.next_token,
+                connector_entity_map: self.connector_entity_map
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl ListConnectorEntitiesOutput {
     /// Creates a new builder-style object to manufacture [`ListConnectorEntitiesOutput`](crate::output::ListConnectorEntitiesOutput).
@@ -758,7 +727,7 @@ impl ListConnectorEntitiesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFlowExecutionRecordsOutput {
+pub struct DescribeFlowExecutionRecordsOutput  {
     /// <p> Returns a list of all instances when this flow was run. </p>
     #[doc(hidden)]
     pub flow_executions: std::option::Option<std::vec::Vec<crate::model::ExecutionRecord>>,
@@ -768,22 +737,21 @@ pub struct DescribeFlowExecutionRecordsOutput {
 }
 impl DescribeFlowExecutionRecordsOutput {
     /// <p> Returns a list of all instances when this flow was run. </p>
-    pub fn flow_executions(&self) -> std::option::Option<&[crate::model::ExecutionRecord]> {
+    pub fn flow_executions(&self) -> std::option::Option<& [crate::model::ExecutionRecord]> {
         self.flow_executions.as_deref()
     }
     /// <p> The pagination token for the next page of data. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeFlowExecutionRecordsOutput`](crate::output::DescribeFlowExecutionRecordsOutput).
 pub mod describe_flow_execution_records_output {
-
+    
     /// A builder for [`DescribeFlowExecutionRecordsOutput`](crate::output::DescribeFlowExecutionRecordsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) flow_executions:
-            std::option::Option<std::vec::Vec<crate::model::ExecutionRecord>>,
+        pub(crate) flow_executions: std::option::Option<std::vec::Vec<crate::model::ExecutionRecord>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -794,17 +762,13 @@ pub mod describe_flow_execution_records_output {
         /// <p> Returns a list of all instances when this flow was run. </p>
         pub fn flow_executions(mut self, input: crate::model::ExecutionRecord) -> Self {
             let mut v = self.flow_executions.unwrap_or_default();
-            v.push(input);
-            self.flow_executions = Some(v);
-            self
+                            v.push(input);
+                            self.flow_executions = Some(v);
+                            self
         }
         /// <p> Returns a list of all instances when this flow was run. </p>
-        pub fn set_flow_executions(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ExecutionRecord>>,
-        ) -> Self {
-            self.flow_executions = input;
-            self
+        pub fn set_flow_executions(mut self, input: std::option::Option<std::vec::Vec<crate::model::ExecutionRecord>>) -> Self {
+            self.flow_executions = input; self
         }
         /// <p> The pagination token for the next page of data. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -813,17 +777,20 @@ pub mod describe_flow_execution_records_output {
         }
         /// <p> The pagination token for the next page of data. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFlowExecutionRecordsOutput`](crate::output::DescribeFlowExecutionRecordsOutput).
         pub fn build(self) -> crate::output::DescribeFlowExecutionRecordsOutput {
             crate::output::DescribeFlowExecutionRecordsOutput {
-                flow_executions: self.flow_executions,
-                next_token: self.next_token,
+                flow_executions: self.flow_executions
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFlowExecutionRecordsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFlowExecutionRecordsOutput`](crate::output::DescribeFlowExecutionRecordsOutput).
@@ -835,7 +802,7 @@ impl DescribeFlowExecutionRecordsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFlowOutput {
+pub struct DescribeFlowOutput  {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -859,8 +826,7 @@ pub struct DescribeFlowOutput {
     pub source_flow_config: std::option::Option<crate::model::SourceFlowConfig>,
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
     #[doc(hidden)]
-    pub destination_flow_config_list:
-        std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
+    pub destination_flow_config_list: std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
     /// <p> Describes the details of the most recent flow run. </p>
     #[doc(hidden)]
     pub last_run_execution_details: std::option::Option<crate::model::ExecutionDetails>,
@@ -884,113 +850,100 @@ pub struct DescribeFlowOutput {
     pub last_updated_by: std::option::Option<std::string::String>,
     /// <p> The tags used to organize, track, or control access for your flow. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
     #[doc(hidden)]
     pub metadata_catalog_config: std::option::Option<crate::model::MetadataCatalogConfig>,
     /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
     #[doc(hidden)]
-    pub last_run_metadata_catalog_details:
-        std::option::Option<std::vec::Vec<crate::model::MetadataCatalogDetail>>,
-    /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
-    /// <ul>
-    /// <li> <p>Source-to-destination field mappings</p> </li>
-    /// <li> <p>Field data types</p> </li>
-    /// <li> <p>Partition keys</p> </li>
+    pub last_run_metadata_catalog_details: std::option::Option<std::vec::Vec<crate::model::MetadataCatalogDetail>>,
+    /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p> 
+    /// <ul> 
+    /// <li> <p>Source-to-destination field mappings</p> </li> 
+    /// <li> <p>Field data types</p> </li> 
+    /// <li> <p>Partition keys</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub schema_version: std::option::Option<i64>,
 }
 impl DescribeFlowOutput {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// <p> A description of the flow. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> std::option::Option<& str> {
         self.description.as_deref()
     }
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    pub fn flow_name(&self) -> std::option::Option<&str> {
+    pub fn flow_name(&self) -> std::option::Option<& str> {
         self.flow_name.as_deref()
     }
     /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
-    pub fn kms_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_arn(&self) -> std::option::Option<& str> {
         self.kms_arn.as_deref()
     }
     /// <p> Indicates the current status of the flow. </p>
-    pub fn flow_status(&self) -> std::option::Option<&crate::model::FlowStatus> {
+    pub fn flow_status(&self) -> std::option::Option<& crate::model::FlowStatus> {
         self.flow_status.as_ref()
     }
     /// <p> Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows. </p>
-    pub fn flow_status_message(&self) -> std::option::Option<&str> {
+    pub fn flow_status_message(&self) -> std::option::Option<& str> {
         self.flow_status_message.as_deref()
     }
     /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
-    pub fn source_flow_config(&self) -> std::option::Option<&crate::model::SourceFlowConfig> {
+    pub fn source_flow_config(&self) -> std::option::Option<& crate::model::SourceFlowConfig> {
         self.source_flow_config.as_ref()
     }
     /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-    pub fn destination_flow_config_list(
-        &self,
-    ) -> std::option::Option<&[crate::model::DestinationFlowConfig]> {
+    pub fn destination_flow_config_list(&self) -> std::option::Option<& [crate::model::DestinationFlowConfig]> {
         self.destination_flow_config_list.as_deref()
     }
     /// <p> Describes the details of the most recent flow run. </p>
-    pub fn last_run_execution_details(
-        &self,
-    ) -> std::option::Option<&crate::model::ExecutionDetails> {
+    pub fn last_run_execution_details(&self) -> std::option::Option<& crate::model::ExecutionDetails> {
         self.last_run_execution_details.as_ref()
     }
     /// <p> The trigger settings that determine how and when the flow runs. </p>
-    pub fn trigger_config(&self) -> std::option::Option<&crate::model::TriggerConfig> {
+    pub fn trigger_config(&self) -> std::option::Option<& crate::model::TriggerConfig> {
         self.trigger_config.as_ref()
     }
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-    pub fn tasks(&self) -> std::option::Option<&[crate::model::Task]> {
+    pub fn tasks(&self) -> std::option::Option<& [crate::model::Task]> {
         self.tasks.as_deref()
     }
     /// <p> Specifies when the flow was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> Specifies when the flow was last updated. </p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p> The ARN of the user who created the flow. </p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> std::option::Option<& str> {
         self.created_by.as_deref()
     }
     /// <p> Specifies the user name of the account that performed the most recent update. </p>
-    pub fn last_updated_by(&self) -> std::option::Option<&str> {
+    pub fn last_updated_by(&self) -> std::option::Option<& str> {
         self.last_updated_by.as_deref()
     }
     /// <p> The tags used to organize, track, or control access for your flow. </p>
-    pub fn tags(
-        &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
-    pub fn metadata_catalog_config(
-        &self,
-    ) -> std::option::Option<&crate::model::MetadataCatalogConfig> {
+    pub fn metadata_catalog_config(&self) -> std::option::Option<& crate::model::MetadataCatalogConfig> {
         self.metadata_catalog_config.as_ref()
     }
     /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
-    pub fn last_run_metadata_catalog_details(
-        &self,
-    ) -> std::option::Option<&[crate::model::MetadataCatalogDetail]> {
+    pub fn last_run_metadata_catalog_details(&self) -> std::option::Option<& [crate::model::MetadataCatalogDetail]> {
         self.last_run_metadata_catalog_details.as_deref()
     }
-    /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
-    /// <ul>
-    /// <li> <p>Source-to-destination field mappings</p> </li>
-    /// <li> <p>Field data types</p> </li>
-    /// <li> <p>Partition keys</p> </li>
+    /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p> 
+    /// <ul> 
+    /// <li> <p>Source-to-destination field mappings</p> </li> 
+    /// <li> <p>Field data types</p> </li> 
+    /// <li> <p>Partition keys</p> </li> 
     /// </ul>
     pub fn schema_version(&self) -> std::option::Option<i64> {
         self.schema_version
@@ -998,7 +951,7 @@ impl DescribeFlowOutput {
 }
 /// See [`DescribeFlowOutput`](crate::output::DescribeFlowOutput).
 pub mod describe_flow_output {
-
+    
     /// A builder for [`DescribeFlowOutput`](crate::output::DescribeFlowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1009,8 +962,7 @@ pub mod describe_flow_output {
         pub(crate) flow_status: std::option::Option<crate::model::FlowStatus>,
         pub(crate) flow_status_message: std::option::Option<std::string::String>,
         pub(crate) source_flow_config: std::option::Option<crate::model::SourceFlowConfig>,
-        pub(crate) destination_flow_config_list:
-            std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
+        pub(crate) destination_flow_config_list: std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
         pub(crate) last_run_execution_details: std::option::Option<crate::model::ExecutionDetails>,
         pub(crate) trigger_config: std::option::Option<crate::model::TriggerConfig>,
         pub(crate) tasks: std::option::Option<std::vec::Vec<crate::model::Task>>,
@@ -1018,13 +970,9 @@ pub mod describe_flow_output {
         pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_by: std::option::Option<std::string::String>,
         pub(crate) last_updated_by: std::option::Option<std::string::String>,
-        pub(crate) tags: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
-        >,
-        pub(crate) metadata_catalog_config:
-            std::option::Option<crate::model::MetadataCatalogConfig>,
-        pub(crate) last_run_metadata_catalog_details:
-            std::option::Option<std::vec::Vec<crate::model::MetadataCatalogDetail>>,
+        pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        pub(crate) metadata_catalog_config: std::option::Option<crate::model::MetadataCatalogConfig>,
+        pub(crate) last_run_metadata_catalog_details: std::option::Option<std::vec::Vec<crate::model::MetadataCatalogDetail>>,
         pub(crate) schema_version: std::option::Option<i64>,
     }
     impl Builder {
@@ -1035,8 +983,7 @@ pub mod describe_flow_output {
         }
         /// <p> The flow's Amazon Resource Name (ARN). </p>
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// <p> A description of the flow. </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1045,8 +992,7 @@ pub mod describe_flow_output {
         }
         /// <p> A description of the flow. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.description = input;
-            self
+            self.description = input; self
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1055,8 +1001,7 @@ pub mod describe_flow_output {
         }
         /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_name = input;
-            self
+            self.flow_name = input; self
         }
         /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
         pub fn kms_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1065,8 +1010,7 @@ pub mod describe_flow_output {
         }
         /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
         pub fn set_kms_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.kms_arn = input;
-            self
+            self.kms_arn = input; self
         }
         /// <p> Indicates the current status of the flow. </p>
         pub fn flow_status(mut self, input: crate::model::FlowStatus) -> Self {
@@ -1074,12 +1018,8 @@ pub mod describe_flow_output {
             self
         }
         /// <p> Indicates the current status of the flow. </p>
-        pub fn set_flow_status(
-            mut self,
-            input: std::option::Option<crate::model::FlowStatus>,
-        ) -> Self {
-            self.flow_status = input;
-            self
+        pub fn set_flow_status(mut self, input: std::option::Option<crate::model::FlowStatus>) -> Self {
+            self.flow_status = input; self
         }
         /// <p> Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows. </p>
         pub fn flow_status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1087,12 +1027,8 @@ pub mod describe_flow_output {
             self
         }
         /// <p> Contains an error message if the flow status is in a suspended or error state. This applies only to scheduled or event-triggered flows. </p>
-        pub fn set_flow_status_message(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.flow_status_message = input;
-            self
+        pub fn set_flow_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.flow_status_message = input; self
         }
         /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
         pub fn source_flow_config(mut self, input: crate::model::SourceFlowConfig) -> Self {
@@ -1100,34 +1036,23 @@ pub mod describe_flow_output {
             self
         }
         /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
-        pub fn set_source_flow_config(
-            mut self,
-            input: std::option::Option<crate::model::SourceFlowConfig>,
-        ) -> Self {
-            self.source_flow_config = input;
-            self
+        pub fn set_source_flow_config(mut self, input: std::option::Option<crate::model::SourceFlowConfig>) -> Self {
+            self.source_flow_config = input; self
         }
         /// Appends an item to `destination_flow_config_list`.
         ///
         /// To override the contents of this collection use [`set_destination_flow_config_list`](Self::set_destination_flow_config_list).
         ///
         /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-        pub fn destination_flow_config_list(
-            mut self,
-            input: crate::model::DestinationFlowConfig,
-        ) -> Self {
+        pub fn destination_flow_config_list(mut self, input: crate::model::DestinationFlowConfig) -> Self {
             let mut v = self.destination_flow_config_list.unwrap_or_default();
-            v.push(input);
-            self.destination_flow_config_list = Some(v);
-            self
+                            v.push(input);
+                            self.destination_flow_config_list = Some(v);
+                            self
         }
         /// <p> The configuration that controls how Amazon AppFlow transfers data to the destination connector. </p>
-        pub fn set_destination_flow_config_list(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>,
-        ) -> Self {
-            self.destination_flow_config_list = input;
-            self
+        pub fn set_destination_flow_config_list(mut self, input: std::option::Option<std::vec::Vec<crate::model::DestinationFlowConfig>>) -> Self {
+            self.destination_flow_config_list = input; self
         }
         /// <p> Describes the details of the most recent flow run. </p>
         pub fn last_run_execution_details(mut self, input: crate::model::ExecutionDetails) -> Self {
@@ -1135,12 +1060,8 @@ pub mod describe_flow_output {
             self
         }
         /// <p> Describes the details of the most recent flow run. </p>
-        pub fn set_last_run_execution_details(
-            mut self,
-            input: std::option::Option<crate::model::ExecutionDetails>,
-        ) -> Self {
-            self.last_run_execution_details = input;
-            self
+        pub fn set_last_run_execution_details(mut self, input: std::option::Option<crate::model::ExecutionDetails>) -> Self {
+            self.last_run_execution_details = input; self
         }
         /// <p> The trigger settings that determine how and when the flow runs. </p>
         pub fn trigger_config(mut self, input: crate::model::TriggerConfig) -> Self {
@@ -1148,12 +1069,8 @@ pub mod describe_flow_output {
             self
         }
         /// <p> The trigger settings that determine how and when the flow runs. </p>
-        pub fn set_trigger_config(
-            mut self,
-            input: std::option::Option<crate::model::TriggerConfig>,
-        ) -> Self {
-            self.trigger_config = input;
-            self
+        pub fn set_trigger_config(mut self, input: std::option::Option<crate::model::TriggerConfig>) -> Self {
+            self.trigger_config = input; self
         }
         /// Appends an item to `tasks`.
         ///
@@ -1162,17 +1079,13 @@ pub mod describe_flow_output {
         /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
         pub fn tasks(mut self, input: crate::model::Task) -> Self {
             let mut v = self.tasks.unwrap_or_default();
-            v.push(input);
-            self.tasks = Some(v);
-            self
+                            v.push(input);
+                            self.tasks = Some(v);
+                            self
         }
         /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
-        pub fn set_tasks(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::Task>>,
-        ) -> Self {
-            self.tasks = input;
-            self
+        pub fn set_tasks(mut self, input: std::option::Option<std::vec::Vec<crate::model::Task>>) -> Self {
+            self.tasks = input; self
         }
         /// <p> Specifies when the flow was created. </p>
         pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1180,12 +1093,8 @@ pub mod describe_flow_output {
             self
         }
         /// <p> Specifies when the flow was created. </p>
-        pub fn set_created_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.created_at = input;
-            self
+        pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.created_at = input; self
         }
         /// <p> Specifies when the flow was last updated. </p>
         pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -1193,12 +1102,8 @@ pub mod describe_flow_output {
             self
         }
         /// <p> Specifies when the flow was last updated. </p>
-        pub fn set_last_updated_at(
-            mut self,
-            input: std::option::Option<aws_smithy_types::DateTime>,
-        ) -> Self {
-            self.last_updated_at = input;
-            self
+        pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+            self.last_updated_at = input; self
         }
         /// <p> The ARN of the user who created the flow. </p>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1207,8 +1112,7 @@ pub mod describe_flow_output {
         }
         /// <p> The ARN of the user who created the flow. </p>
         pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.created_by = input;
-            self
+            self.created_by = input; self
         }
         /// <p> Specifies the user name of the account that performed the most recent update. </p>
         pub fn last_updated_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1216,121 +1120,113 @@ pub mod describe_flow_output {
             self
         }
         /// <p> Specifies the user name of the account that performed the most recent update. </p>
-        pub fn set_last_updated_by(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.last_updated_by = input;
-            self
+        pub fn set_last_updated_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.last_updated_by = input; self
         }
         /// Adds a key-value pair to `tags`.
         ///
         /// To override the contents of this collection use [`set_tags`](Self::set_tags).
         ///
         /// <p> The tags used to organize, track, or control access for your flow. </p>
-        pub fn tags(
-            mut self,
-            k: impl Into<std::string::String>,
-            v: impl Into<std::string::String>,
-        ) -> Self {
+        pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
             let mut hash_map = self.tags.unwrap_or_default();
-            hash_map.insert(k.into(), v.into());
-            self.tags = Some(hash_map);
-            self
+                            hash_map.insert(k.into(), v.into());
+                            self.tags = Some(hash_map);
+                            self
         }
         /// <p> The tags used to organize, track, or control access for your flow. </p>
-        pub fn set_tags(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<std::string::String, std::string::String>,
-            >,
-        ) -> Self {
-            self.tags = input;
-            self
+        pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+            self.tags = input; self
         }
         /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
-        pub fn metadata_catalog_config(
-            mut self,
-            input: crate::model::MetadataCatalogConfig,
-        ) -> Self {
+        pub fn metadata_catalog_config(mut self, input: crate::model::MetadataCatalogConfig) -> Self {
             self.metadata_catalog_config = Some(input);
             self
         }
         /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
-        pub fn set_metadata_catalog_config(
-            mut self,
-            input: std::option::Option<crate::model::MetadataCatalogConfig>,
-        ) -> Self {
-            self.metadata_catalog_config = input;
-            self
+        pub fn set_metadata_catalog_config(mut self, input: std::option::Option<crate::model::MetadataCatalogConfig>) -> Self {
+            self.metadata_catalog_config = input; self
         }
         /// Appends an item to `last_run_metadata_catalog_details`.
         ///
         /// To override the contents of this collection use [`set_last_run_metadata_catalog_details`](Self::set_last_run_metadata_catalog_details).
         ///
         /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
-        pub fn last_run_metadata_catalog_details(
-            mut self,
-            input: crate::model::MetadataCatalogDetail,
-        ) -> Self {
+        pub fn last_run_metadata_catalog_details(mut self, input: crate::model::MetadataCatalogDetail) -> Self {
             let mut v = self.last_run_metadata_catalog_details.unwrap_or_default();
-            v.push(input);
-            self.last_run_metadata_catalog_details = Some(v);
-            self
+                            v.push(input);
+                            self.last_run_metadata_catalog_details = Some(v);
+                            self
         }
         /// <p>Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated flow run.</p>
-        pub fn set_last_run_metadata_catalog_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::MetadataCatalogDetail>>,
-        ) -> Self {
-            self.last_run_metadata_catalog_details = input;
-            self
+        pub fn set_last_run_metadata_catalog_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::MetadataCatalogDetail>>) -> Self {
+            self.last_run_metadata_catalog_details = input; self
         }
-        /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
-        /// <ul>
-        /// <li> <p>Source-to-destination field mappings</p> </li>
-        /// <li> <p>Field data types</p> </li>
-        /// <li> <p>Partition keys</p> </li>
+        /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p> 
+        /// <ul> 
+        /// <li> <p>Source-to-destination field mappings</p> </li> 
+        /// <li> <p>Field data types</p> </li> 
+        /// <li> <p>Partition keys</p> </li> 
         /// </ul>
         pub fn schema_version(mut self, input: i64) -> Self {
             self.schema_version = Some(input);
             self
         }
-        /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p>
-        /// <ul>
-        /// <li> <p>Source-to-destination field mappings</p> </li>
-        /// <li> <p>Field data types</p> </li>
-        /// <li> <p>Partition keys</p> </li>
+        /// <p>The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases by one when you change any of the following settings in your flow configuration:</p> 
+        /// <ul> 
+        /// <li> <p>Source-to-destination field mappings</p> </li> 
+        /// <li> <p>Field data types</p> </li> 
+        /// <li> <p>Partition keys</p> </li> 
         /// </ul>
         pub fn set_schema_version(mut self, input: std::option::Option<i64>) -> Self {
-            self.schema_version = input;
-            self
+            self.schema_version = input; self
         }
         /// Consumes the builder and constructs a [`DescribeFlowOutput`](crate::output::DescribeFlowOutput).
         pub fn build(self) -> crate::output::DescribeFlowOutput {
             crate::output::DescribeFlowOutput {
-                flow_arn: self.flow_arn,
-                description: self.description,
-                flow_name: self.flow_name,
-                kms_arn: self.kms_arn,
-                flow_status: self.flow_status,
-                flow_status_message: self.flow_status_message,
-                source_flow_config: self.source_flow_config,
-                destination_flow_config_list: self.destination_flow_config_list,
-                last_run_execution_details: self.last_run_execution_details,
-                trigger_config: self.trigger_config,
-                tasks: self.tasks,
-                created_at: self.created_at,
-                last_updated_at: self.last_updated_at,
-                created_by: self.created_by,
-                last_updated_by: self.last_updated_by,
-                tags: self.tags,
-                metadata_catalog_config: self.metadata_catalog_config,
-                last_run_metadata_catalog_details: self.last_run_metadata_catalog_details,
-                schema_version: self.schema_version,
+                flow_arn: self.flow_arn
+                ,
+                description: self.description
+                ,
+                flow_name: self.flow_name
+                ,
+                kms_arn: self.kms_arn
+                ,
+                flow_status: self.flow_status
+                ,
+                flow_status_message: self.flow_status_message
+                ,
+                source_flow_config: self.source_flow_config
+                ,
+                destination_flow_config_list: self.destination_flow_config_list
+                ,
+                last_run_execution_details: self.last_run_execution_details
+                ,
+                trigger_config: self.trigger_config
+                ,
+                tasks: self.tasks
+                ,
+                created_at: self.created_at
+                ,
+                last_updated_at: self.last_updated_at
+                ,
+                created_by: self.created_by
+                ,
+                last_updated_by: self.last_updated_by
+                ,
+                tags: self.tags
+                ,
+                metadata_catalog_config: self.metadata_catalog_config
+                ,
+                last_run_metadata_catalog_details: self.last_run_metadata_catalog_details
+                ,
+                schema_version: self.schema_version
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeFlowOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFlowOutput`](crate::output::DescribeFlowOutput).
@@ -1342,15 +1238,10 @@ impl DescribeFlowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConnectorsOutput {
+pub struct DescribeConnectorsOutput  {
     /// <p> The configuration that is applied to the connectors used in the flow. </p>
     #[doc(hidden)]
-    pub connector_configurations: std::option::Option<
-        std::collections::HashMap<
-            crate::model::ConnectorType,
-            crate::model::ConnectorConfiguration,
-        >,
-    >,
+    pub connector_configurations: std::option::Option<std::collections::HashMap<crate::model::ConnectorType, crate::model::ConnectorConfiguration>>,
     /// <p>Information about the connectors supported in Amazon AppFlow.</p>
     #[doc(hidden)]
     pub connectors: std::option::Option<std::vec::Vec<crate::model::ConnectorDetail>>,
@@ -1360,37 +1251,25 @@ pub struct DescribeConnectorsOutput {
 }
 impl DescribeConnectorsOutput {
     /// <p> The configuration that is applied to the connectors used in the flow. </p>
-    pub fn connector_configurations(
-        &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            crate::model::ConnectorType,
-            crate::model::ConnectorConfiguration,
-        >,
-    > {
+    pub fn connector_configurations(&self) -> std::option::Option<& std::collections::HashMap<crate::model::ConnectorType, crate::model::ConnectorConfiguration>> {
         self.connector_configurations.as_ref()
     }
     /// <p>Information about the connectors supported in Amazon AppFlow.</p>
-    pub fn connectors(&self) -> std::option::Option<&[crate::model::ConnectorDetail]> {
+    pub fn connectors(&self) -> std::option::Option<& [crate::model::ConnectorDetail]> {
         self.connectors.as_deref()
     }
     /// <p> The pagination token for the next page of data. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeConnectorsOutput`](crate::output::DescribeConnectorsOutput).
 pub mod describe_connectors_output {
-
+    
     /// A builder for [`DescribeConnectorsOutput`](crate::output::DescribeConnectorsOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) connector_configurations: std::option::Option<
-            std::collections::HashMap<
-                crate::model::ConnectorType,
-                crate::model::ConnectorConfiguration,
-            >,
-        >,
+        pub(crate) connector_configurations: std::option::Option<std::collections::HashMap<crate::model::ConnectorType, crate::model::ConnectorConfiguration>>,
         pub(crate) connectors: std::option::Option<std::vec::Vec<crate::model::ConnectorDetail>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
@@ -1400,28 +1279,15 @@ pub mod describe_connectors_output {
         /// To override the contents of this collection use [`set_connector_configurations`](Self::set_connector_configurations).
         ///
         /// <p> The configuration that is applied to the connectors used in the flow. </p>
-        pub fn connector_configurations(
-            mut self,
-            k: crate::model::ConnectorType,
-            v: crate::model::ConnectorConfiguration,
-        ) -> Self {
+        pub fn connector_configurations(mut self, k: crate::model::ConnectorType, v: crate::model::ConnectorConfiguration) -> Self {
             let mut hash_map = self.connector_configurations.unwrap_or_default();
-            hash_map.insert(k, v);
-            self.connector_configurations = Some(hash_map);
-            self
+                            hash_map.insert(k, v);
+                            self.connector_configurations = Some(hash_map);
+                            self
         }
         /// <p> The configuration that is applied to the connectors used in the flow. </p>
-        pub fn set_connector_configurations(
-            mut self,
-            input: std::option::Option<
-                std::collections::HashMap<
-                    crate::model::ConnectorType,
-                    crate::model::ConnectorConfiguration,
-                >,
-            >,
-        ) -> Self {
-            self.connector_configurations = input;
-            self
+        pub fn set_connector_configurations(mut self, input: std::option::Option<std::collections::HashMap<crate::model::ConnectorType, crate::model::ConnectorConfiguration>>) -> Self {
+            self.connector_configurations = input; self
         }
         /// Appends an item to `connectors`.
         ///
@@ -1430,17 +1296,13 @@ pub mod describe_connectors_output {
         /// <p>Information about the connectors supported in Amazon AppFlow.</p>
         pub fn connectors(mut self, input: crate::model::ConnectorDetail) -> Self {
             let mut v = self.connectors.unwrap_or_default();
-            v.push(input);
-            self.connectors = Some(v);
-            self
+                            v.push(input);
+                            self.connectors = Some(v);
+                            self
         }
         /// <p>Information about the connectors supported in Amazon AppFlow.</p>
-        pub fn set_connectors(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConnectorDetail>>,
-        ) -> Self {
-            self.connectors = input;
-            self
+        pub fn set_connectors(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConnectorDetail>>) -> Self {
+            self.connectors = input; self
         }
         /// <p> The pagination token for the next page of data. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1449,18 +1311,22 @@ pub mod describe_connectors_output {
         }
         /// <p> The pagination token for the next page of data. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeConnectorsOutput`](crate::output::DescribeConnectorsOutput).
         pub fn build(self) -> crate::output::DescribeConnectorsOutput {
             crate::output::DescribeConnectorsOutput {
-                connector_configurations: self.connector_configurations,
-                connectors: self.connectors,
-                next_token: self.next_token,
+                connector_configurations: self.connector_configurations
+                ,
+                connectors: self.connectors
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeConnectorsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectorsOutput`](crate::output::DescribeConnectorsOutput).
@@ -1472,35 +1338,31 @@ impl DescribeConnectorsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConnectorProfilesOutput {
+pub struct DescribeConnectorProfilesOutput  {
     /// <p> Returns information about the connector profiles associated with the flow. </p>
     #[doc(hidden)]
-    pub connector_profile_details:
-        std::option::Option<std::vec::Vec<crate::model::ConnectorProfile>>,
+    pub connector_profile_details: std::option::Option<std::vec::Vec<crate::model::ConnectorProfile>>,
     /// <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl DescribeConnectorProfilesOutput {
     /// <p> Returns information about the connector profiles associated with the flow. </p>
-    pub fn connector_profile_details(
-        &self,
-    ) -> std::option::Option<&[crate::model::ConnectorProfile]> {
+    pub fn connector_profile_details(&self) -> std::option::Option<& [crate::model::ConnectorProfile]> {
         self.connector_profile_details.as_deref()
     }
     /// <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
 /// See [`DescribeConnectorProfilesOutput`](crate::output::DescribeConnectorProfilesOutput).
 pub mod describe_connector_profiles_output {
-
+    
     /// A builder for [`DescribeConnectorProfilesOutput`](crate::output::DescribeConnectorProfilesOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) connector_profile_details:
-            std::option::Option<std::vec::Vec<crate::model::ConnectorProfile>>,
+        pub(crate) connector_profile_details: std::option::Option<std::vec::Vec<crate::model::ConnectorProfile>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1511,17 +1373,13 @@ pub mod describe_connector_profiles_output {
         /// <p> Returns information about the connector profiles associated with the flow. </p>
         pub fn connector_profile_details(mut self, input: crate::model::ConnectorProfile) -> Self {
             let mut v = self.connector_profile_details.unwrap_or_default();
-            v.push(input);
-            self.connector_profile_details = Some(v);
-            self
+                            v.push(input);
+                            self.connector_profile_details = Some(v);
+                            self
         }
         /// <p> Returns information about the connector profiles associated with the flow. </p>
-        pub fn set_connector_profile_details(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConnectorProfile>>,
-        ) -> Self {
-            self.connector_profile_details = input;
-            self
+        pub fn set_connector_profile_details(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConnectorProfile>>) -> Self {
+            self.connector_profile_details = input; self
         }
         /// <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1530,17 +1388,20 @@ pub mod describe_connector_profiles_output {
         }
         /// <p> The pagination token for the next page of data. If <code>nextToken=null</code>, this means that all records have been fetched. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.next_token = input;
-            self
+            self.next_token = input; self
         }
         /// Consumes the builder and constructs a [`DescribeConnectorProfilesOutput`](crate::output::DescribeConnectorProfilesOutput).
         pub fn build(self) -> crate::output::DescribeConnectorProfilesOutput {
             crate::output::DescribeConnectorProfilesOutput {
-                connector_profile_details: self.connector_profile_details,
-                next_token: self.next_token,
+                connector_profile_details: self.connector_profile_details
+                ,
+                next_token: self.next_token
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeConnectorProfilesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectorProfilesOutput`](crate::output::DescribeConnectorProfilesOutput).
@@ -1552,28 +1413,24 @@ impl DescribeConnectorProfilesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConnectorEntityOutput {
+pub struct DescribeConnectorEntityOutput  {
     /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
     #[doc(hidden)]
-    pub connector_entity_fields:
-        std::option::Option<std::vec::Vec<crate::model::ConnectorEntityField>>,
+    pub connector_entity_fields: std::option::Option<std::vec::Vec<crate::model::ConnectorEntityField>>,
 }
 impl DescribeConnectorEntityOutput {
     /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
-    pub fn connector_entity_fields(
-        &self,
-    ) -> std::option::Option<&[crate::model::ConnectorEntityField]> {
+    pub fn connector_entity_fields(&self) -> std::option::Option<& [crate::model::ConnectorEntityField]> {
         self.connector_entity_fields.as_deref()
     }
 }
 /// See [`DescribeConnectorEntityOutput`](crate::output::DescribeConnectorEntityOutput).
 pub mod describe_connector_entity_output {
-
+    
     /// A builder for [`DescribeConnectorEntityOutput`](crate::output::DescribeConnectorEntityOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) connector_entity_fields:
-            std::option::Option<std::vec::Vec<crate::model::ConnectorEntityField>>,
+        pub(crate) connector_entity_fields: std::option::Option<std::vec::Vec<crate::model::ConnectorEntityField>>,
     }
     impl Builder {
         /// Appends an item to `connector_entity_fields`.
@@ -1581,30 +1438,26 @@ pub mod describe_connector_entity_output {
         /// To override the contents of this collection use [`set_connector_entity_fields`](Self::set_connector_entity_fields).
         ///
         /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
-        pub fn connector_entity_fields(
-            mut self,
-            input: crate::model::ConnectorEntityField,
-        ) -> Self {
+        pub fn connector_entity_fields(mut self, input: crate::model::ConnectorEntityField) -> Self {
             let mut v = self.connector_entity_fields.unwrap_or_default();
-            v.push(input);
-            self.connector_entity_fields = Some(v);
-            self
+                            v.push(input);
+                            self.connector_entity_fields = Some(v);
+                            self
         }
         /// <p> Describes the fields for that connector entity. For example, for an <i>account</i> entity, the fields would be <i>account name</i>, <i>account ID</i>, and so on. </p>
-        pub fn set_connector_entity_fields(
-            mut self,
-            input: std::option::Option<std::vec::Vec<crate::model::ConnectorEntityField>>,
-        ) -> Self {
-            self.connector_entity_fields = input;
-            self
+        pub fn set_connector_entity_fields(mut self, input: std::option::Option<std::vec::Vec<crate::model::ConnectorEntityField>>) -> Self {
+            self.connector_entity_fields = input; self
         }
         /// Consumes the builder and constructs a [`DescribeConnectorEntityOutput`](crate::output::DescribeConnectorEntityOutput).
         pub fn build(self) -> crate::output::DescribeConnectorEntityOutput {
             crate::output::DescribeConnectorEntityOutput {
-                connector_entity_fields: self.connector_entity_fields,
+                connector_entity_fields: self.connector_entity_fields
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeConnectorEntityOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectorEntityOutput`](crate::output::DescribeConnectorEntityOutput).
@@ -1616,52 +1469,45 @@ impl DescribeConnectorEntityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConnectorOutput {
+pub struct DescribeConnectorOutput  {
     /// <p>Configuration info of all the connectors that the user requested.</p>
     #[doc(hidden)]
     pub connector_configuration: std::option::Option<crate::model::ConnectorConfiguration>,
 }
 impl DescribeConnectorOutput {
     /// <p>Configuration info of all the connectors that the user requested.</p>
-    pub fn connector_configuration(
-        &self,
-    ) -> std::option::Option<&crate::model::ConnectorConfiguration> {
+    pub fn connector_configuration(&self) -> std::option::Option<& crate::model::ConnectorConfiguration> {
         self.connector_configuration.as_ref()
     }
 }
 /// See [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
 pub mod describe_connector_output {
-
+    
     /// A builder for [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) connector_configuration:
-            std::option::Option<crate::model::ConnectorConfiguration>,
+        pub(crate) connector_configuration: std::option::Option<crate::model::ConnectorConfiguration>,
     }
     impl Builder {
         /// <p>Configuration info of all the connectors that the user requested.</p>
-        pub fn connector_configuration(
-            mut self,
-            input: crate::model::ConnectorConfiguration,
-        ) -> Self {
+        pub fn connector_configuration(mut self, input: crate::model::ConnectorConfiguration) -> Self {
             self.connector_configuration = Some(input);
             self
         }
         /// <p>Configuration info of all the connectors that the user requested.</p>
-        pub fn set_connector_configuration(
-            mut self,
-            input: std::option::Option<crate::model::ConnectorConfiguration>,
-        ) -> Self {
-            self.connector_configuration = input;
-            self
+        pub fn set_connector_configuration(mut self, input: std::option::Option<crate::model::ConnectorConfiguration>) -> Self {
+            self.connector_configuration = input; self
         }
         /// Consumes the builder and constructs a [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
         pub fn build(self) -> crate::output::DescribeConnectorOutput {
             crate::output::DescribeConnectorOutput {
-                connector_configuration: self.connector_configuration,
+                connector_configuration: self.connector_configuration
+                ,
             }
         }
     }
+    
+    
 }
 impl DescribeConnectorOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
@@ -1673,19 +1519,24 @@ impl DescribeConnectorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFlowOutput {}
+pub struct DeleteFlowOutput  {
+}
 /// See [`DeleteFlowOutput`](crate::output::DeleteFlowOutput).
 pub mod delete_flow_output {
-
+    
     /// A builder for [`DeleteFlowOutput`](crate::output::DeleteFlowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteFlowOutput`](crate::output::DeleteFlowOutput).
         pub fn build(self) -> crate::output::DeleteFlowOutput {
-            crate::output::DeleteFlowOutput {}
+            crate::output::DeleteFlowOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteFlowOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFlowOutput`](crate::output::DeleteFlowOutput).
@@ -1697,19 +1548,24 @@ impl DeleteFlowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConnectorProfileOutput {}
+pub struct DeleteConnectorProfileOutput  {
+}
 /// See [`DeleteConnectorProfileOutput`](crate::output::DeleteConnectorProfileOutput).
 pub mod delete_connector_profile_output {
-
+    
     /// A builder for [`DeleteConnectorProfileOutput`](crate::output::DeleteConnectorProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+    }
     impl Builder {
         /// Consumes the builder and constructs a [`DeleteConnectorProfileOutput`](crate::output::DeleteConnectorProfileOutput).
         pub fn build(self) -> crate::output::DeleteConnectorProfileOutput {
-            crate::output::DeleteConnectorProfileOutput {}
+            crate::output::DeleteConnectorProfileOutput {
+            }
         }
     }
+    
+    
 }
 impl DeleteConnectorProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectorProfileOutput`](crate::output::DeleteConnectorProfileOutput).
@@ -1721,7 +1577,7 @@ impl DeleteConnectorProfileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFlowOutput {
+pub struct CreateFlowOutput  {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -1731,17 +1587,17 @@ pub struct CreateFlowOutput {
 }
 impl CreateFlowOutput {
     /// <p> The flow's Amazon Resource Name (ARN). </p>
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> std::option::Option<& str> {
         self.flow_arn.as_deref()
     }
     /// <p> Indicates the current status of the flow. </p>
-    pub fn flow_status(&self) -> std::option::Option<&crate::model::FlowStatus> {
+    pub fn flow_status(&self) -> std::option::Option<& crate::model::FlowStatus> {
         self.flow_status.as_ref()
     }
 }
 /// See [`CreateFlowOutput`](crate::output::CreateFlowOutput).
 pub mod create_flow_output {
-
+    
     /// A builder for [`CreateFlowOutput`](crate::output::CreateFlowOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1756,8 +1612,7 @@ pub mod create_flow_output {
         }
         /// <p> The flow's Amazon Resource Name (ARN). </p>
         pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.flow_arn = input;
-            self
+            self.flow_arn = input; self
         }
         /// <p> Indicates the current status of the flow. </p>
         pub fn flow_status(mut self, input: crate::model::FlowStatus) -> Self {
@@ -1765,21 +1620,21 @@ pub mod create_flow_output {
             self
         }
         /// <p> Indicates the current status of the flow. </p>
-        pub fn set_flow_status(
-            mut self,
-            input: std::option::Option<crate::model::FlowStatus>,
-        ) -> Self {
-            self.flow_status = input;
-            self
+        pub fn set_flow_status(mut self, input: std::option::Option<crate::model::FlowStatus>) -> Self {
+            self.flow_status = input; self
         }
         /// Consumes the builder and constructs a [`CreateFlowOutput`](crate::output::CreateFlowOutput).
         pub fn build(self) -> crate::output::CreateFlowOutput {
             crate::output::CreateFlowOutput {
-                flow_arn: self.flow_arn,
-                flow_status: self.flow_status,
+                flow_arn: self.flow_arn
+                ,
+                flow_status: self.flow_status
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateFlowOutput {
     /// Creates a new builder-style object to manufacture [`CreateFlowOutput`](crate::output::CreateFlowOutput).
@@ -1791,20 +1646,20 @@ impl CreateFlowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConnectorProfileOutput {
+pub struct CreateConnectorProfileOutput  {
     /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
     #[doc(hidden)]
     pub connector_profile_arn: std::option::Option<std::string::String>,
 }
 impl CreateConnectorProfileOutput {
     /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
-    pub fn connector_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn connector_profile_arn(&self) -> std::option::Option<& str> {
         self.connector_profile_arn.as_deref()
     }
 }
 /// See [`CreateConnectorProfileOutput`](crate::output::CreateConnectorProfileOutput).
 pub mod create_connector_profile_output {
-
+    
     /// A builder for [`CreateConnectorProfileOutput`](crate::output::CreateConnectorProfileOutput).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -1817,20 +1672,19 @@ pub mod create_connector_profile_output {
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the connector profile. </p>
-        pub fn set_connector_profile_arn(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.connector_profile_arn = input;
-            self
+        pub fn set_connector_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.connector_profile_arn = input; self
         }
         /// Consumes the builder and constructs a [`CreateConnectorProfileOutput`](crate::output::CreateConnectorProfileOutput).
         pub fn build(self) -> crate::output::CreateConnectorProfileOutput {
             crate::output::CreateConnectorProfileOutput {
-                connector_profile_arn: self.connector_profile_arn,
+                connector_profile_arn: self.connector_profile_arn
+                ,
             }
         }
     }
+    
+    
 }
 impl CreateConnectorProfileOutput {
     /// Creates a new builder-style object to manufacture [`CreateConnectorProfileOutput`](crate::output::CreateConnectorProfileOutput).
@@ -1838,3 +1692,4 @@ impl CreateConnectorProfileOutput {
         crate::output::create_connector_profile_output::Builder::default()
     }
 }
+

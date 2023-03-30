@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -33,22 +33,14 @@
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum ResourceType {
     /// Resource type value for the Application resource.
     Application,
@@ -61,7 +53,7 @@ pub enum ResourceType {
     /// Resource type value for the Environment resource.
     Environment,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
@@ -71,17 +63,17 @@ impl std::convert::From<&str> for ResourceType {
             "ConfigurationProfile" => ResourceType::ConfigurationProfile,
             "Deployment" => ResourceType::Deployment,
             "Environment" => ResourceType::Environment,
-            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => ResourceType::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for ResourceType {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceType::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(ResourceType::from(s))
+                }
+            }
 impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -91,17 +83,13 @@ impl ResourceType {
             ResourceType::ConfigurationProfile => "ConfigurationProfile",
             ResourceType::Deployment => "Deployment",
             ResourceType::Environment => "Environment",
-            ResourceType::Unknown(value) => value.as_str(),
+            ResourceType::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "Application",
-            "Configuration",
-            "ConfigurationProfile",
-            "Deployment",
-            "Environment",
+            "Application", "Configuration", "ConfigurationProfile", "Deployment", "Environment"
         ]
     }
 }
@@ -116,9 +104,7 @@ impl AsRef<str> for ResourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum BadRequestDetails {
     /// <p>One or more specified parameters are not valid for the call.</p>
-    InvalidParameters(
-        std::collections::HashMap<std::string::String, crate::model::InvalidParameterDetail>,
-    ),
+    InvalidParameters(std::collections::HashMap<std::string::String, crate::model::InvalidParameterDetail>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -133,17 +119,8 @@ impl BadRequestDetails {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`InvalidParameters`](crate::model::BadRequestDetails::InvalidParameters), extracting the inner [`HashMap`](std::collections::HashMap).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_invalid_parameters(
-        &self,
-    ) -> std::result::Result<
-        &std::collections::HashMap<std::string::String, crate::model::InvalidParameterDetail>,
-        &Self,
-    > {
-        if let BadRequestDetails::InvalidParameters(val) = &self {
-            Ok(val)
-        } else {
-            Err(self)
-        }
+    pub fn as_invalid_parameters(&self) -> std::result::Result<&std::collections::HashMap<std::string::String, crate::model::InvalidParameterDetail>, &Self> {
+        if let BadRequestDetails::InvalidParameters(val) = &self { Ok(val) } else { Err(self) }
     }
     /// Returns true if this is a [`InvalidParameters`](crate::model::BadRequestDetails::InvalidParameters).
     pub fn is_invalid_parameters(&self) -> bool {
@@ -158,20 +135,20 @@ impl BadRequestDetails {
 /// <p>Information about an invalid parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidParameterDetail {
+pub struct InvalidParameterDetail  {
     /// <p>The reason the parameter is invalid.</p>
     #[doc(hidden)]
     pub problem: std::option::Option<crate::model::InvalidParameterProblem>,
 }
 impl InvalidParameterDetail {
     /// <p>The reason the parameter is invalid.</p>
-    pub fn problem(&self) -> std::option::Option<&crate::model::InvalidParameterProblem> {
+    pub fn problem(&self) -> std::option::Option<& crate::model::InvalidParameterProblem> {
         self.problem.as_ref()
     }
 }
 /// See [`InvalidParameterDetail`](crate::model::InvalidParameterDetail).
 pub mod invalid_parameter_detail {
-
+    
     /// A builder for [`InvalidParameterDetail`](crate::model::InvalidParameterDetail).
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
@@ -184,20 +161,19 @@ pub mod invalid_parameter_detail {
             self
         }
         /// <p>The reason the parameter is invalid.</p>
-        pub fn set_problem(
-            mut self,
-            input: std::option::Option<crate::model::InvalidParameterProblem>,
-        ) -> Self {
-            self.problem = input;
-            self
+        pub fn set_problem(mut self, input: std::option::Option<crate::model::InvalidParameterProblem>) -> Self {
+            self.problem = input; self
         }
         /// Consumes the builder and constructs a [`InvalidParameterDetail`](crate::model::InvalidParameterDetail).
         pub fn build(self) -> crate::model::InvalidParameterDetail {
             crate::model::InvalidParameterDetail {
-                problem: self.problem,
+                problem: self.problem
+                ,
             }
         }
     }
+    
+    
 }
 impl InvalidParameterDetail {
     /// Creates a new builder-style object to manufacture [`InvalidParameterDetail`](crate::model::InvalidParameterDetail).
@@ -212,9 +188,9 @@ impl InvalidParameterDetail {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let invalidparameterproblem = unimplemented!();
 /// match invalidparameterproblem {
@@ -237,22 +213,14 @@ impl InvalidParameterDetail {
 /// Specifically, when `invalidparameterproblem` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InvalidParameterProblem::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum InvalidParameterProblem {
     /// The parameter was corrupted and could not be understood by the service.
     Corrupted,
@@ -261,7 +229,7 @@ pub enum InvalidParameterProblem {
     /// The client called the service before the time specified in the poll interval.
     PollIntervalNotSatisfied,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for InvalidParameterProblem {
     fn from(s: &str) -> Self {
@@ -269,19 +237,17 @@ impl std::convert::From<&str> for InvalidParameterProblem {
             "Corrupted" => InvalidParameterProblem::Corrupted,
             "Expired" => InvalidParameterProblem::Expired,
             "PollIntervalNotSatisfied" => InvalidParameterProblem::PollIntervalNotSatisfied,
-            other => InvalidParameterProblem::Unknown(crate::types::UnknownVariantValue(
-                other.to_owned(),
-            )),
+            other => InvalidParameterProblem::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for InvalidParameterProblem {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InvalidParameterProblem::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(InvalidParameterProblem::from(s))
+                }
+            }
 impl InvalidParameterProblem {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
@@ -289,12 +255,14 @@ impl InvalidParameterProblem {
             InvalidParameterProblem::Corrupted => "Corrupted",
             InvalidParameterProblem::Expired => "Expired",
             InvalidParameterProblem::PollIntervalNotSatisfied => "PollIntervalNotSatisfied",
-            InvalidParameterProblem::Unknown(value) => value.as_str(),
+            InvalidParameterProblem::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Corrupted", "Expired", "PollIntervalNotSatisfied"]
+        &[
+            "Corrupted", "Expired", "PollIntervalNotSatisfied"
+        ]
     }
 }
 impl AsRef<str> for InvalidParameterProblem {
@@ -309,9 +277,9 @@ impl AsRef<str> for InvalidParameterProblem {
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let badrequestreason = unimplemented!();
 /// match badrequestreason {
@@ -332,55 +300,49 @@ impl AsRef<str> for InvalidParameterProblem {
 /// Specifically, when `badrequestreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BadRequestReason::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum BadRequestReason {
     /// Indicates there was a problem with one or more of the parameters.
     /// See InvalidParameters in the BadRequestDetails for more information.
     InvalidParameters,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::types::UnknownVariantValue),
+    Unknown(crate::types::UnknownVariantValue)
 }
 impl std::convert::From<&str> for BadRequestReason {
     fn from(s: &str) -> Self {
         match s {
             "InvalidParameters" => BadRequestReason::InvalidParameters,
-            other => BadRequestReason::Unknown(crate::types::UnknownVariantValue(other.to_owned())),
+            other => BadRequestReason::Unknown(crate::types::UnknownVariantValue(other.to_owned()))
         }
     }
 }
 impl std::str::FromStr for BadRequestReason {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BadRequestReason::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(BadRequestReason::from(s))
+                }
+            }
 impl BadRequestReason {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BadRequestReason::InvalidParameters => "InvalidParameters",
-            BadRequestReason::Unknown(value) => value.as_str(),
+            BadRequestReason::Unknown(value) => value.as_str()
         }
     }
     /// Returns all the `&str` values of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["InvalidParameters"]
+        &[
+            "InvalidParameters"
+        ]
     }
 }
 impl AsRef<str> for BadRequestReason {
@@ -388,3 +350,4 @@ impl AsRef<str> for BadRequestReason {
         self.as_str()
     }
 }
+
